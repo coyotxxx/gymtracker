@@ -1,0 +1,207 @@
+{
+  "id": "dumbbell-standing-alternate-hammer-curl-and-press",
+  "name": "Dumbbell Standing Alternate Hammer Curl and Press",
+  "namePl": "Hammer curl + wyciskanie nad głowę z hantlami naprzemiennie w staniu",
+  "aliases": ["alternating hammer curl to press", "hammer curl and shoulder press", "standing dumbbell curl and press", "hammer curl press combo"],
+  "aliasesPl": ["naprzemienne uginanie młotkowe z wyciskaniem nad głową", "hammer curl z wyciskaniem żołnierskim", "combo bicepsy-barki z hantlami", "uginanie młotkowe i wyciskanie OHP naprzemiennie"],
+
+  "description": "Compound combination exercise blending a hammer curl with an overhead press, executed one arm at a time in alternating fashion. Each rep starts with a neutral-grip (palms-facing-body) curl that contracts the brachialis, brachioradialis and the lateral head of biceps brachii, transitions through a rotation at the shoulder into a unilateral overhead press driven by the anterior and lateral deltoids, and finishes with elbow lockout from the triceps. The alternating tempo creates a continuous time-under-tension stimulus on the working side while the resting arm holds an isometric hang. Popular in upper-body conditioning, functional and bodybuilding circuits because it trains two big movement patterns (elbow flexion + vertical push) in a single efficient stack.",
+  "descriptionPl": "Złożone ćwiczenie łączące hammer curl (uginanie młotkowe) z wyciskaniem nad głowę, wykonywane jedną ręką na raz na zmianę. Każde powtórzenie zaczyna się od uginania chwytem neutralnym (dłonie skierowane do ciała), które angażuje mięsień ramienny, ramienno-promieniowy i głowę boczną dwugłowego ramienia, przechodzi przez rotację w stawie barkowym do jednostronnego wyciskania nad głowę napędzanego przedni i bocznym aktonem mięśnia naramiennego, a kończy się pełnym wyprostem łokcia za sprawą tricepsa. Naprzemienne tempo zapewnia ciągłe napięcie strony pracującej, podczas gdy ręka odpoczywająca utrzymuje izometryczny zwis. Ćwiczenie popularne w treningach funkcjonalnych, obwodach i programach kulturystycznych, bo w jednym ruchu trenuje dwa duże wzorce: zginanie łokcia i pionowe pchanie.",
+
+  "instructions": [
+    "Stand tall with feet hip- to shoulder-width apart, knees soft. Hold a dumbbell in each hand with arms hanging at your sides in a neutral grip — palms facing your thighs.",
+    "Brace your core, tuck your ribs, set the shoulders back and down. This is the start position.",
+    "Curl the right dumbbell upward by flexing at the elbow only, keeping the wrist neutral (palm facing inward — never rotating to a regular curl). Pin the right elbow to the side of the torso so only the forearm moves.",
+    "When the dumbbell reaches the front of the shoulder and the biceps/brachialis are fully contracted, rotate the elbow outward so the dumbbell sits at shoulder height in a press start position (palm still facing forward-inward, neutral or slightly pronated).",
+    "Press the right dumbbell straight up overhead until the elbow is fully locked out, the dumbbell sits over the mid-line of the head and the arm is vertical. Exhale through the press.",
+    "Reverse the path under control: lower the dumbbell back to shoulder height, rotate the elbow back inward to a neutral hammer position, then lower the dumbbell all the way down to a fully extended arm at your side. Inhale on the descent.",
+    "Without pausing, repeat the entire curl + press sequence with the left arm. Count one rep per side, or one full rep as one curl-press on each arm depending on programming.",
+    "Throughout the set keep the torso vertical and motionless — no leg drive, no leaning back into the press, no swinging the hips."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder lub barków, kolana lekko ugięte. W każdej ręce trzymaj hantel, ramiona swobodnie w dół, chwyt neutralny — dłonie skierowane do ud.",
+    "Napnij brzuch, schowaj żebra, ściągnij barki w tył i w dół. To jest pozycja wyjściowa.",
+    "Prawą ręką ugnij hantel do góry zginając wyłącznie w stawie łokciowym, nadgarstek pozostaje neutralny (dłoń cały czas skierowana do wewnątrz — nie rotuj jej do klasycznego podchwytu). Prawy łokieć przyklejony do boku tułowia — pracuje tylko przedramię.",
+    "Gdy hantel dotrze na wysokość przedniego aktonu barku, a mięsień ramienny i biceps są w pełnym skurczu, wyrotuj łokieć na zewnątrz tak, by hantel znalazł się na wysokości barku w pozycji startowej do wyciskania (dłoń wciąż neutralna lub lekko nawrócona).",
+    "Wyciśnij hantel prosto nad głowę aż do pełnego wyprostu w łokciu — hantel powinien znaleźć się nad środkiem czaszki, ramię pionowo. Wydech podczas wyciskania.",
+    "Wracaj tą samą drogą w sposób kontrolowany: opuść hantel do wysokości barku, rotuj łokieć z powrotem do pozycji młotkowej, a następnie opuść hantel do pełnego wyprostu w łokciu wzdłuż ciała. Wdech podczas opuszczania.",
+    "Bez przerwy powtórz całą sekwencję curl + press lewą ręką. W zależności od planu licz jedno powtórzenie na stronę lub całe powtórzenie jako curl-press każdą ręką po jednej.",
+    "Przez całą serię tułów pozostaje pionowy i nieruchomy — bez napędu z nóg, bez odchylania się w fazie wyciskania, bez bujania biodrami."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "brachialis", "anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps_brachii", "brachioradialis"],
+    "stabilizers": ["upper_trapezius", "serratus_anterior", "rotator_cuff", "core", "obliques", "glutes", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P7",
+    "brachialis": "P8",
+    "anterior_deltoid": "P8",
+    "lateral_deltoid": "P7",
+    "triceps_brachii": "S6",
+    "brachioradialis": "S6",
+    "upper_trapezius": "T5",
+    "serratus_anterior": "T4",
+    "rotator_cuff": "T4",
+    "core": "T4",
+    "obliques": "T4",
+    "glutes": "T2",
+    "forearm_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["hammer-curl", "dumbbell-shoulder-press"],
+    "progression_to": ["dumbbell-clean-and-press", "dumbbell-arnold-press", "kettlebell-clean-and-press", "dumbbell-thruster"],
+    "alternatives": ["dumbbell-curl-to-press", "dumbbell-arnold-press", "hammer-curl", "dumbbell-shoulder-press", "kettlebell-clean-and-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip- to shoulder-width, knees soft",
+      "Neutral hammer grip — palms facing your thighs",
+      "Ribs down, glutes squeezed, core braced",
+      "Elbows pinned to the sides at the start",
+      "Pick lighter dumbbells than your hammer curl — the press is the limiting factor"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder/barków, kolana lekko ugięte",
+      "Chwyt neutralny młotkowy — dłonie skierowane do ud",
+      "Żebra schowane, pośladki napięte, brzuch usztywniony",
+      "Łokcie przyklejone do boków na starcie",
+      "Wybierz lżejsze hantle niż do hammer curl — wyciskanie jest ogniwem ograniczającym"
+    ],
+    "execution_cues": [
+      "Curl with the elbow, not the shoulder — only the forearm moves up",
+      "Keep the wrist locked in hammer position — palm never rotates to supination",
+      "Rotate the elbow out only after full biceps contraction at shoulder height",
+      "Press straight up — finish with the dumbbell over the ear, not in front of it",
+      "Lock the elbow at the top; control the descent through both phases"
+    ],
+    "execution_cues_pl": [
+      "Uginaj łokciem, nie barkiem — w górę porusza się wyłącznie przedramię",
+      "Nadgarstek zablokowany w pozycji młotkowej — dłoń nigdy nie obraca się do podchwytu",
+      "Wyrotuj łokieć na zewnątrz dopiero po pełnym skurczu bicepsa na wysokości barku",
+      "Wyciskaj prosto w górę — kończ z hantlem nad uchem, nie przed twarzą",
+      "Zablokuj łokieć w pełnym wyproście; kontroluj opuszczanie w obu fazach"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using leg drive or hip thrust to start the press",
+        "faultPl": "Pomaganie nogami lub biodrami w starcie wyciskania",
+        "cause": "Dumbbells too heavy for strict pressing, treating the move like a push press",
+        "causePl": "Zbyt ciężkie hantle do ścisłego wyciskania, traktowanie ruchu jak push press",
+        "cue": "Reduce weight. If you cannot press strictly, you are doing a different exercise.",
+        "cuePl": "Zmniejsz ciężar. Jeśli nie potrafisz wycisnąć ścisło, robisz już inne ćwiczenie."
+      },
+      {
+        "fault": "Wrist rotates to supination during the curl",
+        "faultPl": "Nadgarstek rotuje do podchwytu w fazie curlu",
+        "cause": "Default biceps motor pattern, weak brachialis, or attempting more biceps activation",
+        "causePl": "Domyślny wzorzec ruchowy bicepsa, słaby ramienny, lub próba większej aktywacji bicepsa",
+        "cue": "Pretend you're holding a hammer the entire time. Knuckles point forward through the press.",
+        "cuePl": "Wyobraź sobie, że trzymasz młotek przez cały czas. Knykcie skierowane do przodu przez całe wyciskanie."
+      },
+      {
+        "fault": "Leaning back during the press (lumbar hyperextension)",
+        "faultPl": "Odchylanie się w tył w fazie wyciskania (przeprost odcinka lędźwiowego)",
+        "cause": "Tight lats/pecs limiting overhead range, anterior pelvic tilt, or load too heavy",
+        "causePl": "Spięte najszersze i piersiowe ograniczają zakres nad głową, przodopochylenie miednicy, lub zbyt duży ciężar",
+        "cue": "Tuck the ribs and squeeze the glutes. The dumbbell should pass next to your ear, not curve forward.",
+        "cuePl": "Schowaj żebra i napnij pośladki. Hantel powinien mijać ucho, a nie zataczać łuk do przodu."
+      },
+      {
+        "fault": "Pressing both arms together instead of alternating",
+        "faultPl": "Wyciskanie obu rąk jednocześnie zamiast naprzemiennie",
+        "cause": "Fatigue late in the set, or rushing the tempo",
+        "causePl": "Zmęczenie pod koniec serii lub zbyt szybkie tempo",
+        "cue": "One arm fully finishes (curl, press, lower) before the other arm begins. Slow down.",
+        "cuePl": "Jedna ręka kończy cały ruch (curl, press, opuszczenie) zanim druga zacznie. Zwolnij tempo."
+      },
+      {
+        "fault": "Pressing the dumbbell in front of the face instead of over the head",
+        "faultPl": "Wyciskanie hantla przed twarzą zamiast nad głowę",
+        "cause": "Lack of shoulder mobility, weak overhead position, or trying to keep the dumbbell visible",
+        "causePl": "Słaba mobilność barku, słaba pozycja nad głową, lub próba utrzymania hantla w polu widzenia",
+        "cue": "At lockout the bicep should touch (or nearly touch) your ear. The dumbbell sits over the heel of your foot.",
+        "cuePl": "W pełnym wyproście biceps powinien dotykać (lub prawie dotykać) ucha. Hantel nad piętą stopy."
+      }
+    ],
+    "breathing": "Inhale at the bottom with arm fully extended. Brace and exhale through the curl + press transition. A second exhale on press lockout is fine for heavier loads. Inhale during the controlled descent back to the side.",
+    "breathingPl": "Wdech w dole z wyprostowanym ramieniem. Napnij brzuch i wydychaj przez fazę curl + przejście do wyciskania. Przy cięższych ciężarach można dodać drugi wydech w fazie blokady łokcia. Wdech podczas kontrolowanego opuszczania do boku ciała."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_pathology",
+      "severity": "modify",
+      "modification": "Overhead pressing under load aggravates subacromial impingement. Substitute landmine press or floor press in the neutral arc, and keep curls below shoulder height.",
+      "modificationPl": "Wyciskanie nad głową z obciążeniem nasila konflikt podbarkowy. Zastąp landmine press lub floor press w neutralnym łuku, a uginanie utrzymuj poniżej wysokości barku.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_hyperlordosis",
+      "severity": "modify",
+      "modification": "Standing OHP requires strict anti-extension bracing. Perform seated against a vertical bench to remove lumbar loading, or split the movement into hammer curl and seated press as separate exercises.",
+      "modificationPl": "Wyciskanie nad głowę stojąc wymaga ścisłej kontroli anty-wyprostnej. Wykonuj siedząc z plecami na pionowym oparciu, lub rozdziel ruch na hammer curl i seated press jako osobne ćwiczenia.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    },
+    {
+      "condition": "wrist_or_elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "Reduce load and volume. Slow the eccentric to 3-4 seconds. Avoid grinding through painful range — if wrist or elbow flares, stop.",
+      "modificationPl": "Zmniejsz ciężar i objętość. Wydłuż fazę negatywną do 3-4 sekund. Nie forsuj bolesnego zakresu — jeśli nadgarstek lub łokieć protestuje, przerwij.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "modify",
+      "modification": "Overhead pressing with held breath spikes blood pressure significantly. Avoid heavy loads, focus on continuous breathing (no Valsalva), use moderate weights and reps 12-15.",
+      "modificationPl": "Wyciskanie nad głowę z zatrzymanym oddechem znacznie podwyższa ciśnienie. Unikaj dużych ciężarów, oddychaj ciągle (bez chwytu Valsalvy), używaj umiarkowanych obciążeń i zakresów 12-15 powtórzeń.",
+      "alternative": "hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy) | 3x6-8 per arm (strength-endurance combo) | 2-3x12-15 per arm (conditioning/circuit)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "dumbbell-standing-alternate-hammer-curl-and-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-alternate-hammer-curl-and-press/frame_0_start.png",
+      "frames/dumbbell-standing-alternate-hammer-curl-and-press/frame_1_early.png",
+      "frames/dumbbell-standing-alternate-hammer-curl-and-press/frame_2_mid.png",
+      "frames/dumbbell-standing-alternate-hammer-curl-and-press/frame_3_late.png",
+      "frames/dumbbell-standing-alternate-hammer-curl-and-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-standing-alternate-hammer-curl-and-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem wszystkie 5 wyekstrahowanych klatek z GIFa jahel. Frame 0 (start): obie ręce w dole, chwyt neutralny młotkowy (dłonie skierowane do ud), hantle przy udach, podświetlone na czerwono biceps/ramienny — pozycja wyjściowa. Frame 1 (early): prawa ręka w pełnym hammer curl na wysokości barku, łokieć przyklejony do boku, lewa ręka odpoczywa w dole — czerwone bicepsy i przedni akton barku prawej strony. Frame 2 (mid): prawa ręka w pełnym wyciskaniu nad głowę, łokieć zablokowany, hantel nad uchem, podświetlone bocznych aktonów barku, triceps i bark — klasyczna pozycja overhead lockout. Frame 3 (late): wciąż w fazie wyciskania, podświetlone obszary potwierdzają zaangażowanie deltoid + triceps; lewa ręka nadal w dole (potwierdzenie naprzemiennego wykonania). Frame 4 (end): powrót do pozycji wyjściowej z widocznym 'ghostem' fazy szczytowej powyżej głowy. GIF jednoznacznie pokazuje combo: hammer curl → rotacja na pozycję press → overhead press → odwrotnie do startu, naprzemiennie. Tułów stoi nieruchomo, brak napędu z nóg — modelowe ścisłe wykonanie. Wszystkie pola PL napisane od zera (nie tłumaczenie maszynowe).",
+
+  "tags": ["bodybuilding", "functional", "compound", "arms", "shoulders", "biceps", "brachialis", "deltoid", "dumbbell", "unilateral", "alternating", "upper_body", "combo_movement"]
+}

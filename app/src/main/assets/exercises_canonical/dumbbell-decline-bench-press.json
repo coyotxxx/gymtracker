@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-decline-bench-press",
+  "name": "Dumbbell Decline Bench Press",
+  "namePl": "Wyciskanie hantli na ławce skośnej ujemnej",
+  "aliases": ["decline DB bench", "decline dumbbell press", "DB decline press", "negative angle DB bench"],
+  "aliasesPl": ["wyciskanie hantli na skosie ujemnym", "wyciskanie hantli głową w dół", "DB decline press", "wyciskanie hantli na ławce ujemnej"],
+
+  "description": "Horizontal pressing variation performed lying on a decline bench (head lower than hips, feet hooked under pads) with a dumbbell in each hand. The negative torso angle (~15-30° below horizontal) shifts emphasis to the sternocostal (lower) head of the pectoralis major and reduces involvement of the anterior deltoid compared to flat or incline pressing. Dumbbells allow each arm to work independently with a deeper stretch at the bottom than barbell decline, and the position is often friendlier on the shoulder joint than flat or incline benching for trainees with impingement issues.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany leżąc na ławce skośnej ujemnej (głowa niżej niż biodra, stopy zaczepione pod wałkami), z hantlem w każdej ręce. Ujemny kąt tułowia (~15-30° poniżej poziomu) przenosi nacisk na głowę mostkowo-żebrową (dolną) klatki piersiowej i ogranicza zaangażowanie przedniego aktona barku w porównaniu do wyciskania na ławce poziomej lub skośnej dodatniej. Hantle pozwalają każdej ręce pracować niezależnie z głębszym rozciągnięciem na dole niż przy sztandze, a pozycja jest często łagodniejsza dla stawu barkowego niż wyciskanie poziome lub skośne u osób z problemami impingementu.",
+
+  "instructions": [
+    "Set the decline bench to ~15-30° below horizontal. Place a dumbbell on each side of the bench within reach.",
+    "Sit on the bench, hook your feet under the foot pads at the high end, and lie back. Have a partner hand you the dumbbells, or carefully kick them up from your thighs as you lie down.",
+    "Start with the dumbbells at chest level, palms facing toward your feet (pronated grip), elbows bent. Shoulder blades retracted and pressed into the bench.",
+    "Press the dumbbells up over your lower chest until arms are extended — elbows NOT locked rigid. This is the starting position.",
+    "Inhale, brace the core, and lower the dumbbells in a controlled arc down to lower chest level. Elbows tracked at ~45-60° from torso, NOT flared to 90°.",
+    "Stop when the dumbbells reach the lower chest / upper abs line — do NOT continue past the chest plane (no point, and you lose pec tension).",
+    "Press the dumbbells back up over the lower chest, slightly inward but without clanging them together at the top. Exhale through the press.",
+    "Maintain shoulder blade retraction throughout the set. To finish: lower dumbbells to chest, drop them to the floor on each side (do NOT sit up with heavy dumbbells from a decline position — it's unsafe)."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę na ~15-30° poniżej poziomu. Hantle na podłodze po obu stronach w zasięgu ręki.",
+    "Usiądź na ławce, zaczep stopy pod wałkami przy górnej krawędzi i połóż się. Najlepiej poproś partnera o podanie hantli lub ostrożnie wybij je z ud kładąc się.",
+    "Start: hantle na wysokości klatki, dłonie zwrócone w stronę stóp (chwyt pronowany), łokcie zgięte. Łopatki ściągnięte i wciśnięte w ławkę.",
+    "Wyciśnij hantle w górę nad dolną klatkę aż ramiona wyprostowane — łokcie BEZ sztywnego lock-out. To jest pozycja startowa.",
+    "Wdech, napięcie brzucha, opuszczaj hantle kontrolowanym łukiem do poziomu dolnej klatki. Łokcie pod kątem ~45-60° od tułowia, NIE rozsunięte na 90°.",
+    "Zatrzymaj się gdy hantle dojdą do linii dolnej klatki / górnych mięśni brzucha — NIE schodź poniżej poziomu klatki (nie ma sensu, tracisz napięcie klatki).",
+    "Wyciśnij hantle z powrotem nad dolną klatkę, lekko do środka, ale bez stukania nimi na szczycie. Wydech przy wyciskaniu.",
+    "Łopatki ściągnięte przez cały set. Zakończenie: opuść hantle do klatki, zrzuć je na podłogę po bokach (NIE próbuj wstawać z ciężkimi hantlami z pozycji decline — niebezpieczne)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lower_pectoralis", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "lower_pectoralis": "P10",
+    "triceps": "P8",
+    "anterior_deltoids": "P6",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "core": "T4",
+    "upper_back": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "decline_bench"],
+    "optional": ["spotter", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "push-up"],
+    "progression_to": ["barbell-decline-bench-press", "weighted-decline-bench-press"],
+    "alternatives": ["barbell-decline-bench-press", "dip", "machine-decline-chest-press", "dumbbell-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Set bench to ~15-30° decline — too steep and the lift becomes awkward and dangerous",
+      "Hook feet SECURELY under foot pads BEFORE taking the dumbbells",
+      "Have a partner hand you the dumbbells, OR kick them up from thighs carefully",
+      "Shoulder blades retracted and pressed into the bench BEFORE pressing",
+      "Start with dumbbells over the LOWER chest, pronated grip, elbows slightly bent"
+    ],
+    "setup_cues_pl": [
+      "Ustaw ławkę na ~15-30° decline — za stromo i ruch staje się niewygodny i niebezpieczny",
+      "Stopy mocno zaczepione pod wałkami PRZED wzięciem hantli",
+      "Najlepiej partner poda hantle LUB wybij je z ud ostrożnie",
+      "Łopatki ściągnięte i wciśnięte w ławkę PRZED wyciskaniem",
+      "Start z hantlami nad DOLNĄ klatką, chwyt pronowany, łokcie lekko zgięte"
+    ],
+    "execution_cues": [
+      "Lower with control to LOWER chest level — head-down position gives a strong stretch quickly",
+      "Stop AT the chest line, NOT below it — going lower kills pec tension and stresses shoulders",
+      "Keep elbows at ~45-60° from torso — head-down position tempts elbows to flare, resist it",
+      "Press up and slightly inward over the LOWER chest, not over the face",
+      "Eccentric ~2-3 seconds, concentric explosive but controlled — no bouncing dumbbells off chest"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj z kontrolą do poziomu DOLNEJ klatki — pozycja głową w dół daje mocne rozciągnięcie szybciej",
+      "Stop NA linii klatki, NIE poniżej — schodzenie głębiej zabija napięcie klatki i obciąża barki",
+      "Łokcie pod kątem ~45-60° od tułowia — pozycja głową w dół kusi do rozsunięcia łokci, opieraj się temu",
+      "Wyciskaj w górę i lekko do środka nad DOLNĄ klatką, NIE nad twarzą",
+      "Faza ekscentryczna ~2-3 sekundy, koncentryczna wybuchowa ale kontrolowana — bez odbijania hantli od klatki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Stopping dumbbells too high above the chest (short ROM)",
+        "faultPl": "Zatrzymywanie hantli za wysoko nad klatką (skrócony ROM)",
+        "cause": "Fear of weight near face/neck, ego with too heavy weight, lack of stretch awareness",
+        "causePl": "Strach przed ciężarem blisko twarzy/szyi, ego ze zbyt ciężkim ciężarem, brak świadomości rozciągnięcia",
+        "cue": "Dumbbells must reach the lower chest line — that's where the lower-pec stretch happens. Reduce weight if you can't reach it safely.",
+        "cuePl": "Hantle muszą dojść do linii dolnej klatki — tam właśnie rozciąga się dolna klatka. Zmniejsz ciężar jeśli nie możesz dojść bezpiecznie."
+      },
+      {
+        "fault": "Asymmetry between arms (one side pressing faster/higher)",
+        "faultPl": "Asymetria między rękoma (jedna strona wyciska szybciej/wyżej)",
+        "cause": "Dominant side compensating; weak stabilizers on non-dominant side; decline position amplifies imbalances",
+        "causePl": "Strona dominująca kompensuje; słabe stabilizatory po stronie niedominującej; pozycja decline wzmacnia asymetrie",
+        "cue": "Move both dumbbells in sync, watch them in your peripheral vision. If gap is large, regress to flat DB bench until balanced.",
+        "cuePl": "Ruszaj oba hantle synchronicznie, obserwuj je peryferyjnie. Jeśli różnica duża, wróć do flat DB bench aż wyrównasz."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Head-down position invites elbow flare; treating press like a fly; lack of awareness",
+        "causePl": "Pozycja głową w dół zachęca do rozsuwania łokci; traktowanie wyciskania jak rozpiętek; brak świadomości",
+        "cue": "Tuck elbows to ~45-60°. 'Hide your armpits from the ceiling'. Critical on decline because shoulders are already in a compromised position.",
+        "cuePl": "Schowaj łokcie do ~45-60°. 'Schowaj pachy przed sufitem'. Kluczowe na decline bo barki są już w kompromisowej pozycji."
+      },
+      {
+        "fault": "No eccentric control — dropping the dumbbells (especially dangerous on decline)",
+        "faultPl": "Brak kontroli ekscentrycznej — opuszczanie hantli niekontrolowanie (szczególnie niebezpieczne na decline)",
+        "cause": "Ego lifting, focus only on concentric, weight too heavy — gravity helps more on decline because head is down",
+        "causePl": "Ego lifting, skupienie tylko na fazie koncentrycznej, za ciężki ciężar — grawitacja pomaga bardziej na decline bo głowa jest w dół",
+        "cue": "Lower for 2-3 seconds. On decline, a dropped dumbbell goes straight to your face/neck — control matters more than on flat.",
+        "cuePl": "Opuszczaj 2-3 sekundy. Na decline upuszczony hantel leci prosto w twarz/szyję — kontrola liczy się bardziej niż na ławce poziomej."
+      },
+      {
+        "fault": "Pressing over the face instead of the lower chest",
+        "faultPl": "Wyciskanie nad twarz zamiast nad dolną klatkę",
+        "cause": "Habit from flat bench, misorienting in decline position, not setting up start position correctly",
+        "causePl": "Nawyk z flat bench, dezorientacja w pozycji decline, nieprawidłowe ustawienie pozycji startowej",
+        "cue": "Bar/dumbbells should travel over the LOWER chest, not over the face. The line is angled vs. flat bench because torso is angled.",
+        "cuePl": "Hantle powinny iść nad DOLNĄ klatką, nie nad twarzą. Linia jest pochylona w przeciwieństwie do flat bench bo tułów jest pochylony."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale on the press up. Bracing is extra important on decline because blood pools toward the head.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę. Napięcie szczególnie ważne na decline bo krew nabiega do głowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hypertension",
+      "severity": "avoid",
+      "modification": "Head-down position raises intracranial and blood pressure significantly. If you have uncontrolled hypertension or are at cardiovascular risk, avoid decline entirely.",
+      "modificationPl": "Pozycja głową w dół znacząco podnosi ciśnienie wewnątrzczaszkowe i tętnicze. Jeśli masz niekontrolowane nadciśnienie lub ryzyko sercowo-naczyniowe, unikaj decline całkowicie.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Decline is usually friendlier than flat or incline (less anterior delt involvement), but use neutral grip and stop above chest if pain.",
+      "modificationPl": "Decline zazwyczaj jest łagodniejszy niż flat lub incline (mniej zaangażowania przedniego aktona), ale użyj chwytu neutralnego i zatrzymaj się powyżej klatki przy bólu.",
+      "alternative": "machine-decline-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy decline DB pressing destabilizes the shoulder under load while inverted. Switch to fixed-path machine until cleared by physio.",
+      "modificationPl": "Ciężkie wyciskanie hantli na decline destabilizuje bark pod obciążeniem przy odwróconej pozycji. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-decline-chest-press"
+    },
+    {
+      "condition": "acid_reflux_gerd",
+      "severity": "modify",
+      "modification": "Head-down position aggravates reflux. Train decline on empty stomach, or substitute with dip or low-cable fly for lower-chest emphasis.",
+      "modificationPl": "Pozycja głową w dół drażni refluks. Trenuj decline na czczo lub zastąp dipami albo świecami z dolnych wyciągów dla nacisku na dolną klatkę.",
+      "alternative": "dip"
+    }
+  ],
+
+  "typical_sets_reps": "4x8-10 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x10-12 (volume) — typically programmed as secondary chest movement after a primary flat/incline press",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-decline-bench-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-decline-bench-press/frame_0_start.png",
+      "frames/dumbbell-decline-bench-press/frame_1_early.png",
+      "frames/dumbbell-decline-bench-press/frame_2_mid.png",
+      "frames/dumbbell-decline-bench-press/frame_3_late.png",
+      "frames/dumbbell-decline-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-decline-bench-press",
+    "glowupp_id": "dumbbell_decline_bench_press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Frame 0 (dół/start): hantle na poziomie klatki, łokcie zgięte ~90°, chwyt pronowany (dłonie w stronę stóp), wyraźna pozycja decline — głowa niżej niż biodra, stopy zaczepione pod wałkami przy górze ławki. Frame 2 (góra): pełne wyciśnięcie, hantle nad dolną klatką, ramiona wyprostowane. Frame 4 (powrót z motion blur): kontrolowane opuszczanie. Anatomicznie podświetlony JEST tylko dolny aktor klatki piersiowej (sternocostal head) — to potwierdza specyfikę decline vs. flat (gdzie podświetlone są też przednie delty). Klasyczny pronated grip, stopy mocno zaparte pod wałkami. PL nazwa zgodna z polskim standardem fitness ('Wyciskanie hantli na ławce skośnej ujemnej'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Difficulty 6 (intermediate) zgodnie ze specyfikacją — setup z hantlami w pozycji decline wymaga doświadczenia.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "lower_chest", "dumbbell", "chest", "decline", "intermediate", "shoulder_friendly"]
+}

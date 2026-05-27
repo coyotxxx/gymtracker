@@ -1,0 +1,200 @@
+{
+  "id": "cable-pushdown-with-rope-attachment",
+  "name": "Cable Pushdown with Rope Attachment",
+  "namePl": "Prostowanie ramion na wyciągu z liną",
+  "aliases": ["rope pushdown", "rope tricep pushdown", "cable rope tricep extension", "tricep rope pressdown", "rope cable pushdown"],
+  "aliasesPl": ["pushdown z liną na triceps", "wyciskanie liny na wyciągu", "prostowanie ramion z linką na wyciągu", "triceps pushdown z liną", "rozciąganie liny na triceps na wyciągu"],
+
+  "description": "Bilateral isolation exercise for the triceps performed on a high cable pulley with a rope attachment. The dual-strand rope allows the hands to spread apart at full elbow extension, creating a peak contraction that biases the lateral head of the triceps. The neutral grip is wrist-friendly and the constant cable tension loads the muscle through the full range of motion. One of the most popular and effective triceps isolation exercises in bodybuilding programs.",
+  "descriptionPl": "Dwustronne ćwiczenie izolowane na triceps wykonywane na wyciągu górnym z uchwytem liną. Dwie końcówki liny pozwalają rozdzielić dłonie w pełnym wyproście łokci, tworząc szczytowy skurcz, który mocniej angażuje głowę boczną tricepsa. Chwyt neutralny jest przyjazny dla nadgarstków, a stałe napięcie linki obciąża mięsień w pełnym zakresie ruchu. Jedno z najpopularniejszych i najskuteczniejszych ćwiczeń izolowanych na triceps w treningu kulturystycznym.",
+
+  "instructions": [
+    "Set the cable pulley to the highest position and attach a rope. Select your working weight on the stack.",
+    "Stand facing the machine, feet hip-width apart, with a slight stagger or one foot slightly back for balance. Grip both ends of the rope with a neutral grip (palms facing each other), thumbs on top.",
+    "Step back half a step so the cable is under tension in the start position. Pin both elbows tightly to your sides and keep them there for the entire set.",
+    "Start with elbows flexed to roughly 90 degrees, forearms parallel to the floor, knuckles of the rope at chest height. Brace your core, chest up, slight forward lean of about 5-10 degrees from the ankles.",
+    "Press the rope downward by extending only at the elbows. As the elbows approach full extension, spread the rope ends apart, rotating the wrists outward so the palms finish facing the floor at the bottom.",
+    "Squeeze the triceps hard for a 1-second pause at the bottom with the hands separated near the thighs.",
+    "Slowly return the rope upward to the starting 90-degree position over 2-3 seconds, allowing the hands to come back together naturally as the elbows flex. Keep both elbows glued to your sides.",
+    "Inhale on the way up, exhale on the way down. Do not let the cable yank your arms upward at the top."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg w najwyższej pozycji i przypnij linę. Wybierz ciężar roboczy na stosie.",
+    "Stań twarzą do maszyny, stopy na szerokość bioder, jedna stopa lekko wysunięta lub cofnięta dla równowagi. Chwyć oba końce liny chwytem neutralnym (dłonie do siebie), kciuki na górze.",
+    "Cofnij się pół kroku, aby linka była naciągnięta w pozycji startowej. Mocno przyklej oba łokcie do boków tułowia i utrzymaj je tam przez całą serię.",
+    "Pozycja startowa: łokcie ugięte około 90 stopni, przedramiona równolegle do podłogi, węzły liny na wysokości klatki. Napnij brzuch, klatka uniesiona, lekkie pochylenie tułowia 5-10 stopni od kostek.",
+    "Wyciśnij linę w dół, prostując wyłącznie w łokciach. Gdy łokcie zbliżają się do pełnego wyprostu, rozciągnij końce liny na boki, rotując nadgarstki na zewnątrz, tak by dłonie kończyły ruch skierowane wnętrzem do podłogi.",
+    "Mocno spinaj triceps przez 1 sekundę w pozycji dolnej z dłońmi rozdzielonymi blisko ud.",
+    "Powoli wracaj liną w górę do pozycji startowej 90 stopni przez 2-3 sekundy, pozwalając dłoniom zbliżyć się z powrotem do siebie wraz ze zginaniem łokci. Trzymaj oba łokcie przyklejone do boków.",
+    "Wdech podczas powrotu, wydech podczas prostowania. Nie pozwól, by linka szarpnęła ramiona w górę u szczytu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["forearm_extensors", "anterior_deltoid", "core", "latissimus_dorsi", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "triceps_lateral_head": "P9",
+    "anconeus": "S5",
+    "forearm_extensors": "T4",
+    "anterior_deltoid": "T3",
+    "latissimus_dorsi": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope_attachment"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["cable-one-arm-tricep-pushdown", "cable-overhead-triceps-extension-rope-attachment", "cable-incline-pushdown"],
+    "alternatives": ["cable-triceps-pushdown-v-bar", "cable-reverse-grip-pushdown", "cable-one-arm-tricep-pushdown", "dumbbell-one-arm-triceps-extension-on-bench"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulley at the top, rope attached, ends even",
+      "Face the stack, feet hip-width, slight stagger",
+      "Both elbows pinned to your ribs",
+      "Start with elbows at 90 degrees, knuckles at chest height",
+      "Chest up, core braced, slight forward lean from the ankles"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg w górnej pozycji, lina przypięta, końce równe",
+      "Twarzą do stosu, stopy na szerokość bioder, lekki rozkrok",
+      "Oba łokcie przyklejone do żeber",
+      "Start: łokcie ugięte 90 stopni, węzły liny na wysokości klatki",
+      "Klatka uniesiona, brzuch napięty, lekkie pochylenie z kostek"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay nailed to your sides",
+      "At the bottom, pull the rope ends apart and rotate palms down — peak contraction",
+      "Squeeze the lateral head hard for 1 second at full extension",
+      "Return slowly — let the rope come back together as the elbows flex",
+      "Keep wrists neutral on the way down, do not curl them"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciami przyklejone do boków",
+      "Na dole rozdziel końce liny i obróć dłonie do podłogi — szczytowy skurcz",
+      "Mocno spinaj głowę boczną przez 1 sekundę w pełnym wyproście",
+      "Wracaj wolno — pozwól by lina łączyła się przy zginaniu łokci",
+      "Nadgarstki neutralne w dół — nie zginaj ich"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drifting forward and away from the torso",
+        "faultPl": "Łokcie uciekają do przodu i odklejają się od tułowia",
+        "cause": "Load too heavy, front delts and lats taking over the press",
+        "causePl": "Zbyt duży ciężar, przejmują pracę przednie aktony barków i mięśnie najszersze",
+        "cue": "Pin elbows to your ribs. If they drift, reduce the weight by 20-30%.",
+        "cuePl": "Przyklej łokcie do żeber. Jeśli uciekają, zmniejsz ciężar o 20-30%."
+      },
+      {
+        "fault": "Leaning the torso forward to push the rope down with bodyweight",
+        "faultPl": "Pochylanie tułowia do przodu by wyciskać linę masą ciała",
+        "cause": "Ego lifting, weak triceps, load exceeds true strength",
+        "causePl": "Ego, słaby triceps, ciężar przekracza realną siłę",
+        "cue": "Stay near vertical — ears over hips. Only a slight 5-10 degree lean is allowed.",
+        "cuePl": "Trzymaj się pionu — uszy nad biodrami. Dozwolone jest tylko lekkie pochylenie 5-10 stopni."
+      },
+      {
+        "fault": "Not spreading the rope at the bottom (hands stay together)",
+        "faultPl": "Brak rozdzielenia liny na dole (dłonie pozostają razem)",
+        "cause": "Habit from using a straight bar, no awareness of peak contraction",
+        "causePl": "Nawyk z prostego drążka, brak świadomości szczytowego skurczu",
+        "cue": "At full lockout, pull the rope ends apart toward your thighs — that is the rope advantage.",
+        "cuePl": "W pełnym wyproście rozciągnij końce liny w stronę ud — to jest cała przewaga liny."
+      },
+      {
+        "fault": "Incomplete lockout — stopping short of full extension",
+        "faultPl": "Niepełny wyprost — zatrzymanie przed pełnym wyprostem",
+        "cause": "Ego lifting or fatigue toward the end of the set",
+        "causePl": "Ego lub zmęczenie pod koniec serii",
+        "cue": "Fully straighten both arms and squeeze every rep — no half reps.",
+        "cuePl": "W pełni wyprostuj oba ramiona i spinaj triceps przy każdym powtórzeniu — żadnych połówek."
+      },
+      {
+        "fault": "Shoulders rolling forward / scapulae protracting",
+        "faultPl": "Barki rolujące do przodu / protrakcja łopatek",
+        "cause": "Trying to involve chest and front delts to move more weight",
+        "causePl": "Próba angażowania klatki i przednich aktonów barku by ruszyć większy ciężar",
+        "cue": "Pull shoulders back and down before each rep. Chest open, scapulae set.",
+        "cuePl": "Ściągnij barki w tył i w dół przed każdym powtórzeniem. Klatka otwarta, łopatki ustabilizowane."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pressing and spreading the rope down). Inhale during the eccentric (returning to 90 degrees). Light core brace throughout the set.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wyciskanie i rozciąganie liny w dół). Wdech w fazie ekscentrycznej (powrót do 90 stopni). Lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Although the neutral rope grip is gentler than a pronated bar, the wrist pronation at the bottom can still irritate the lateral epicondyle. Stop short of full pronation, use lighter weight (40-50% of normal) and 15-20 reps in pain-free range.",
+      "modificationPl": "Choć neutralny chwyt liny jest łagodniejszy niż chwyt nachwytem na drążku, pronacja nadgarstka u dołu może drażnić nadkłykieć boczny. Nie kończ ruchu w pełnej pronacji, używaj lżejszego ciężaru (40-50% normalnego) i 15-20 powtórzeń w zakresie bez bólu.",
+      "alternative": "cable-reverse-grip-pushdown"
+    },
+    {
+      "condition": "triceps_tendinopathy_at_olecranon",
+      "severity": "modify",
+      "modification": "Avoid forceful snap-lockouts. Stop just short of full elbow extension (around 170 degrees) to reduce traction on the distal triceps tendon. Use higher reps (15-20) with controlled tempo.",
+      "modificationPl": "Unikaj forsownych blokad łokci. Zatrzymuj się tuż przed pełnym wyprostem (około 170 stopni), by zmniejszyć obciążenie ścięgna tricepsa na wyrostku łokciowym. Używaj większej liczby powtórzeń (15-20) w kontrolowanym tempie.",
+      "alternative": "tricep-dumbbell-kickback"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Keep the shoulders packed (down and back) and do not let them roll forward during the press. Avoid excessive forward lean which closes the subacromial space. A pulley set slightly lower (eye level) reduces shoulder flexion demand.",
+      "modificationPl": "Trzymaj barki spakowane (w dół i w tył), nie pozwól im rolować do przodu podczas prostowania. Unikaj nadmiernego pochylenia do przodu, które zamyka przestrzeń podbarkową. Bloczek ustawiony nieco niżej (wysokość oczu) zmniejsza zgięcie barku."
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The rope's neutral grip is typically wrist-friendly, but the final pronation at the bottom may aggravate symptoms. Keep wrists neutral throughout (skip the spread/pronation) or use wrist wraps. Reduce load until pain-free.",
+      "modificationPl": "Neutralny chwyt liny jest zwykle przyjazny dla nadgarstków, ale końcowa pronacja u dołu może nasilać objawy. Trzymaj nadgarstki neutralnie przez cały ruch (pomiń rozdzielanie/pronację) lub załóż opaski. Zmniejsz ciężar do zakresu bez bólu."
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x12-20 (pump/burnout) | 4-5x8-12 (strength accessory) | 2-3x15-20 (rehabilitation)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-pushdown-with-rope-attachment.gif",
+    "frames_extracted": [
+      "frames/cable-pushdown-with-rope-attachment/frame_0_start.png",
+      "frames/cable-pushdown-with-rope-attachment/frame_1_early.png",
+      "frames/cable-pushdown-with-rope-attachment/frame_2_mid.png",
+      "frames/cable-pushdown-with-rope-attachment/frame_3_late.png",
+      "frames/cable-pushdown-with-rope-attachment/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-pushdown-with-rope-attachment"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja startowa — postać stoi twarzą do wyciągu, obie ręce trzymają końce liny chwytem neutralnym na wysokości klatki/barku, łokcie ugięte około 90 stopni i przyklejone do boków tułowia. Triceps obu ramion podświetlony na czerwono (oba primary). Frame 2: faza początku prostowania — łokcie zaczynają się prostować, lina schodzi w dół, ale dłonie nadal blisko siebie. Frame 4: pełny wyprost ramion — łokcie wyprostowane, dłonie rozdzielone na boki na wysokości ud (peak contraction tricepsa, akcent na lateral head). Tułów pionowo z minimalnym pochyleniem, łokcie w trakcie całego ruchu pozostają przy bokach. Modelowa technika rope pushdown. Wyciąg w pozycji górnej. Wszystkie pola PL napisane od zera, nie tłumaczone z EN dosłownie.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "lateral_head", "isolation", "cable", "rope", "bilateral", "upper_body", "accessory", "rehab_friendly", "popular"]
+}

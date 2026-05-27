@@ -1,0 +1,206 @@
+{
+  "id": "cable-shoulder-press",
+  "name": "Cable Shoulder Press",
+  "namePl": "Wyciskanie nad głowę na wyciągu",
+  "aliases": ["cable overhead press", "low cable shoulder press", "cable OHP", "standing cable shoulder press", "double cable shoulder press"],
+  "aliasesPl": ["wyciskanie barków na wyciągu", "OHP na wyciągu", "wyciskanie nad głowę na linkach", "cable OHP", "wyciskanie żołnierskie na wyciągu"],
+
+  "description": "Bilateral overhead press performed standing with single handles attached to two low cable pulleys — one on each side of the body. Cables pull diagonally downward, creating constant tension throughout the entire ROM (unlike free weights, where tension drops at the top of the lockout). Compared to dumbbell OHP, cables provide smoother resistance curves, less wrist stress, and stronger eccentric loading on the deltoids. Lower absolute load than barbell/DB OHP, but excellent for hypertrophy, mind-muscle connection, and shoulder-friendly pressing for those with mobility limits. Open kinetic chain bilateral compound.",
+  "descriptionPl": "Dwustronne wyciskanie nad głowę wykonywane stojąc z pojedynczymi uchwytami zaczepionymi do dwóch dolnych bloczków wyciągu — po jednym z każdej strony ciała. Linki ciągną po skosie w dół, tworząc ciągłe napięcie przez cały zakres ruchu (w przeciwieństwie do wolnych ciężarów, gdzie napięcie spada na szczycie lock-out). W porównaniu do hantli, kable dają płynniejszą krzywą oporu, mniejsze obciążenie nadgarstków i silniejsze obciążenie ekscentryczne deltoidów. Niższe obciążenie maksymalne niż w barbell/DB OHP, ale doskonałe do hipertrofii, mind-muscle connection i wyciskania przyjaznego dla osób z ograniczoną mobilnością. Open kinetic chain, bilateral, compound.",
+
+  "instructions": [
+    "Set both cable pulleys to the LOWEST position. Attach a single handle to each side.",
+    "Stand between the two cable stacks, feet hip- to shoulder-width apart. Grab one handle in each hand.",
+    "Bring handles to shoulder level — elbows bent ~90°, palms facing forward (pronated) or semi-neutral. Cables should run diagonally down to the pulleys at your sides.",
+    "Brace core HARD, squeeze glutes, ribs DOWN. Maintain neutral spine — do not lean back to compensate.",
+    "Inhale, hold the brace, and press both handles straight up overhead simultaneously against the constant cable tension.",
+    "At the top: arms fully locked out, handles slightly closer (but not touching), wrists stacked over shoulders, biceps near ears.",
+    "Lower with control — cables will pull harder on the eccentric, so resist actively. Return handles to shoulder height (slightly below ear).",
+    "Keep wrists straight and stacked over elbows throughout the lift. No leg drive — this is strict press.",
+    "Exhale at the top of each rep."
+  ],
+  "instructionsPl": [
+    "Ustaw oba bloczki w NAJNIŻSZEJ pozycji. Przypnij pojedynczy uchwyt do każdej strony.",
+    "Stań pomiędzy dwoma wyciągami, stopy na szerokość bioder do barków. Chwyć po jednym uchwycie w każdą rękę.",
+    "Podnieś uchwyty na wysokość barków — łokcie zgięte ~90°, dłonie skierowane do przodu (pronacja) lub półneutralnie. Linki powinny biec po skosie w dół do bloczków po bokach.",
+    "Napnij MOCNO brzuch, ściśnij pośladki, żebra W DÓŁ. Utrzymaj neutralny kręgosłup — nie odchylaj się do tyłu by skompensować.",
+    "Wdech, trzymaj napięcie, wyciśnij oba uchwyty prosto w górę jednocześnie wbrew ciągłemu napięciu kabli.",
+    "Na szczycie: ramiona w pełnym lock-out, uchwyty bliżej siebie (ale nie dotykają), nadgarstki nad barkami, bicepsy przy uszach.",
+    "Opuszczaj kontrolowanym ruchem — kable mocniej ciągną w ekscentryku, więc aktywnie się opieraj. Wróć uchwyty na wysokość barków (lekko poniżej ucha).",
+    "Nadgarstki proste i nad łokciami przez cały ruch. Bez napędu z nóg — to strict press.",
+    "Wydech na szczycie każdego powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "triceps"],
+    "secondary": ["upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P8",
+    "triceps": "P7",
+    "upper_chest": "S5",
+    "trapezius": "S5",
+    "serratus_anterior": "S6",
+    "core": "S7",
+    "glutes": "S5",
+    "rotator_cuff": "S6"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handles"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner-intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["machine-shoulder-press", "seated-dumbbell-shoulder-press"],
+    "progression_to": ["dumbbell-standing-overhead-press", "barbell-overhead-press", "single-arm-cable-shoulder-press", "push-press"],
+    "alternatives": ["dumbbell-standing-overhead-press", "machine-shoulder-press", "seated-dumbbell-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both pulleys at LOWEST setting, single handles attached",
+      "Stand centered between cable stacks, feet hip- to shoulder-width",
+      "Handles at shoulder level, elbows under wrists at start",
+      "Squeeze glutes, brace core HARD — standing demands bracing",
+      "Ribs DOWN, eyes forward, neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Oba bloczki w NAJNIŻSZEJ pozycji, pojedyncze uchwyty przypięte",
+      "Stań centralnie pomiędzy wyciągami, stopy na szerokość bioder do barków",
+      "Uchwyty na wysokości barków, łokcie pod nadgarstkami na starcie",
+      "Ściśnij pośladki, napnij MOCNO brzuch — pozycja stojąca wymaga napięcia",
+      "Żebra W DÓŁ, wzrok do przodu, szyja neutralna"
+    ],
+    "execution_cues": [
+      "Press both handles simultaneously — symmetrical bar path against constant tension",
+      "Feel the cables pulling DOWN — actively resist on the eccentric",
+      "Wrists stacked over elbows, elbows over shoulders at lockout",
+      "Biceps by ears at the top — full lockout with handles slightly converging",
+      "No leg drive, no lean-back — strict press only"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj oba uchwyty jednocześnie — symetryczna ścieżka wbrew ciągłemu napięciu",
+      "Czuj jak kable ciągną W DÓŁ — aktywnie opieraj się w ekscentryku",
+      "Nadgarstki nad łokciami, łokcie nad barkami w lock-out",
+      "Bicepsy przy uszach na szczycie — pełen lock-out, uchwyty lekko zbliżone",
+      "Bez napędu nóg, bez odchylania pleców — tylko strict press"
+    ],
+    "common_faults": [
+      {
+        "fault": "Excessive lower back arching (lumbar hyperextension)",
+        "faultPl": "Nadmierne wygięcie dolnych pleców (przeprost lędźwiowy)",
+        "cause": "Weight too heavy, weak core, no glute engagement, cables pulling backward when stack-position is poorly aligned, limited overhead mobility compensated by lumbar extension",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, brak napięcia pośladków, kable ciągną do tyłu przy złym ustawieniu względem stacji, ograniczona mobilność overhead kompensowana lordozą lędźwiową",
+        "cue": "Squeeze glutes HARD. Ribs DOWN. Step slightly forward of the cables to keep tension vertical. Reduce weight.",
+        "cuePl": "Ściśnij MOCNO pośladki. Żebra W DÓŁ. Stań lekko przed osią kabli by napięcie szło pionowo. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Asymmetry between arms (one handle higher / faster)",
+        "faultPl": "Asymetria między rękami (jeden uchwyt wyżej / szybciej)",
+        "cause": "Strength imbalance, dominant side compensates, uneven foot/stance positioning relative to pulleys",
+        "causePl": "Dysproporcja siły, dominująca strona kompensuje, nierówne ustawienie stóp/pozycji względem bloczków",
+        "cue": "Stand perfectly centered between pulleys. Match tempo of the weaker arm. Consider single-arm cable press if imbalance is large.",
+        "cuePl": "Stań idealnie centralnie pomiędzy bloczkami. Dopasuj tempo do słabszej ręki. Rozważ wersję jednorącz jeśli dysproporcja jest duża."
+      },
+      {
+        "fault": "Pressing forward instead of overhead (handles end in front of head)",
+        "faultPl": "Wyciskanie do przodu zamiast nad głowę (uchwyty kończą przed głową)",
+        "cause": "Limited overhead mobility, fear of cables pulling backward, elbows drift forward",
+        "causePl": "Ograniczona mobilność overhead, obawa że kable ciągną do tyłu, łokcie uciekają do przodu",
+        "cue": "Finish with handles DIRECTLY over shoulders (side view). Use mirror or video to check bar path.",
+        "cuePl": "Zakończ z uchwytami BEZPOŚREDNIO nad barkami (widok boczny). Użyj lustra lub nagrania by sprawdzić ścieżkę."
+      },
+      {
+        "fault": "Letting the cables snap back on the eccentric (no control)",
+        "faultPl": "Pozwalanie kablom szarpnąć w ekscentryku (brak kontroli)",
+        "cause": "Treating cable like free weight, focusing only on concentric, fatigue at end of set",
+        "causePl": "Traktowanie kabla jak wolnego ciężaru, skupianie się tylko na koncentryku, zmęczenie pod koniec serii",
+        "cue": "Eccentric is GOLD on cables — 2-3 second lowering. Don't let the stack yank you down.",
+        "cuePl": "Ekscentryk to ZŁOTO na wyciągu — opuszczaj 2-3 sekundy. Nie pozwól stosowi cię szarpnąć."
+      },
+      {
+        "fault": "Incomplete lockout (stopping short of full extension)",
+        "faultPl": "Niepełen lock-out (zatrzymanie przed pełnym wyprostem)",
+        "cause": "Weak triceps, poor overhead mobility, weight too heavy for full ROM, cable tension feels harder at top",
+        "causePl": "Słabe tricepsy, słaba mobilność overhead, zbyt duży ciężar dla pełnego ROM, napięcie kabli silniejsze na szczycie",
+        "cue": "Lock out HARD — elbows fully extended, biceps by ears. Cables are toughest at lockout — that's the point. Reduce weight if needed.",
+        "cuePl": "Mocno wyprostuj — łokcie w pełnym wyproście, bicepsy przy uszach. Kable są najcięższe w lock-out — o to chodzi. Zmniejsz ciężar jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale and brace before each rep. Hold during the press. Exhale at the top (lockout) or on the way down. Strong bracing critical — standing position with backward cable pull demands stiffness.",
+    "breathingPl": "Wdech i napięcie przed każdym powtórzeniem. Trzymaj podczas wyciskania. Wydech na szczycie (lock-out) lub w dół. Mocne napięcie krytyczne — pozycja stojąca z kablami ciągnącymi do tyłu wymaga sztywności."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) by rotating handles inward. Reduce ROM if pain persists. Try cable lateral raises and front raises as build-up before pressing.",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie do siebie) rotując uchwyty do wewnątrz. Zmniejsz ROM jeśli ból nie ustępuje. Jako rozgrzewka cable lateral raises i front raises przed wyciskaniem.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Cables are gentler than barbell/DB but still demand overhead ROM. Work thoracic/shoulder mobility drills. Use seated machine shoulder press until full lockout is achievable.",
+      "modificationPl": "Kable są łagodniejsze niż sztanga/hantle, ale wciąż wymagają ROM overhead. Pracuj nad mobilnością piersiową/barku. Używaj siedzącej maszyny shoulder press do uzyskania pełnego lock-out.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Cables pulling diagonally can stress the lower back when bracing is poor. Switch to seated cable shoulder press with adjustable bench, or use machine shoulder press with back support.",
+      "modificationPl": "Kable ciągnące po skosie mogą obciążać dolny krzyż gdy napięcie jest słabe. Przejdź na seated cable shoulder press z ławką regulowaną, lub używaj machine shoulder press z oparciem.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid bilateral overhead pressing until cleared by physio. Resume with machine shoulder press (controlled fixed path) and high-rep low-weight rehab work for the cuff.",
+      "modificationPl": "Unikaj dwustronnego wyciskania overhead do zgody fizjoterapeuty. Wróć przez machine shoulder press (kontrolowana stała ścieżka) i wysokopowtórzeniową rehabilitację rotatorów.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy, constant tension shines) | 3x12-15 (endurance/burnout, often as a finisher) | 4x8-10 (strength-hypertrophy, harder progression)",
+  "calories_per_kg_per_hour": 4.8,
+
+  "media": {
+    "primary": "cable-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/cable-shoulder-press/frame_0_start.png",
+      "frames/cable-shoulder-press/frame_1_early.png",
+      "frames/cable-shoulder-press/frame_2_mid.png",
+      "frames/cable-shoulder-press/frame_3_late.png",
+      "frames/cable-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-shoulder-press",
+    "master_slug": "cable-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Frame 0 (start): postawa stojąca centralnie, stopy ~na szerokość barków, pojedyncze uchwyty trzymane na wysokości barków, łokcie pod nadgarstkami w pozycji ~90°, linki biegną przekątnie w dół po obu stronach do dolnych bloczków, podświetlone przednie/lateralne delty i górna część klatki. Frame 1/2/3 (mid/szczyt): wyciskanie symetryczne, oba uchwyty unoszone jednocześnie nad głowę aż do pełnego lock-out — ramiona w pełnym wyproście, bicepsy przy uszach, tricepsy aktywnie podświetlone, linki ciągle naciągnięte w dół tworząc constant tension przez cały ruch. Widać charakterystyczne motion blur kabli wskazujący na płynne pchnięcie wbrew oporowi. Frame 4 (powrót): uchwyty z powrotem na wysokości barków, faza ekscentryczna z aktywnym oporem na kable, ścieżka prosta pionowa. Klasyczny standing cable OHP z dwóch dolnych bloczków — bilateral, constant tension, open chain. Pasuje 1:1 do specyfikacji: equipment cable_machine + single_handles, primary anterior_deltoids P10 (dominują), lateral_deltoids P8, triceps P7.",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "cable", "compound", "bilateral", "constant_tension", "stabilization_demand", "shoulder_friendly"]
+}

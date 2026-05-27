@@ -1,0 +1,205 @@
+{
+  "id": "bridge-mountain-climber-cross-body",
+  "name": "Bridge Mountain Climber Cross Body",
+  "namePl": "Mountain climber krzyżowy",
+  "aliases": ["cross body mountain climber", "cross-body mountain climber", "twisting mountain climber", "rotational mountain climber", "elbow-to-opposite-knee mountain climber"],
+  "aliasesPl": ["mountain climber naprzemienny", "wspinaczka krzyżowa", "wspinaczka skośna", "mountain climber ze skrętem", "alpinista krzyżowy"],
+
+  "description": "A dynamic bodyweight core exercise performed from a high plank position. The lifter alternates driving each knee diagonally across the body toward the opposite elbow, combining anti-extension plank stability with rotational core work. The hips stay low and level — no piking, no bouncing. A powerful drill for the obliques and rectus abdominis that doubles as a moderate conditioning stimulus. Hands stay grounded under the shoulders throughout; only the lower body moves rhythmically. No equipment required.",
+  "descriptionPl": "Dynamiczne ćwiczenie core z masą ciała wykonywane z pozycji wysokiej deski (plank). Ćwiczący naprzemiennie prowadzi kolana po skosie w poprzek ciała w kierunku przeciwnego łokcia, łącząc anty-wyprostną stabilizację deski z pracą rotacyjną core. Biodra pozostają nisko i poziomo — bez zadzierania, bez odbijania. Mocny bodziec dla mięśni skośnych i prostego brzucha, dodatkowo średnie obciążenie kondycyjne. Dłonie stoją pod barkami przez cały ruch; pracuje tylko dolna połowa ciała w rytmicznym tempie. Bez sprzętu.",
+
+  "instructions": [
+    "Set up in a high plank: hands directly under shoulders, arms straight, body forming a straight line from head to heels.",
+    "Brace the core and squeeze the glutes — the trunk must not sag or pike up. Hips stay level with the shoulders.",
+    "Shift weight slightly forward so the shoulders are just past the wrists.",
+    "Drive one knee diagonally ACROSS the body toward the OPPOSITE elbow (e.g. right knee → left elbow). Rotate through the hip and lower core, not just by lifting the foot.",
+    "Return that foot to the start position with control.",
+    "Immediately drive the other knee toward the opposite elbow (left knee → right elbow). Alternate rhythmically.",
+    "Maintain a controlled tempo — typically 1 knee drive per second. The faster you go, the easier it is to lose hip position.",
+    "Keep breathing rhythmically; do not hold the breath. Stop the set when form breaks (hips rise or rotation disappears), not when the legs burn."
+  ],
+  "instructionsPl": [
+    "Ustaw się w wysokiej desce: dłonie dokładnie pod barkami, ramiona wyprostowane, ciało tworzy prostą linię od głowy do pięt.",
+    "Napnij brzuch i pośladki — tułów nie może opadać ani się zadzierać. Biodra na poziomie barków.",
+    "Przenieś ciężar lekko do przodu, tak aby barki były nieco za nadgarstkami.",
+    "Prowadź jedno kolano po skosie W POPRZEK ciała w kierunku PRZECIWNEGO łokcia (np. prawe kolano → lewy łokieć). Skręcaj przez biodro i dolne partie core, nie tylko unosząc stopę.",
+    "Wróć tą stopą do pozycji wyjściowej z kontrolą.",
+    "Natychmiast prowadź drugie kolano do przeciwnego łokcia (lewe kolano → prawy łokieć). Naprzemiennie i rytmicznie.",
+    "Utrzymuj kontrolowane tempo — zwykle 1 kolano na sekundę. Im szybciej, tym łatwiej stracić pozycję bioder.",
+    "Oddychaj rytmicznie; nie wstrzymuj oddechu. Zakończ serię gdy łamie się technika (biodra w górę lub znika rotacja), nie gdy palą nogi."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "static",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis", "hip_flexors"],
+    "secondary": ["transverse_abdominis", "anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["pectoralis_major", "triceps_brachii", "quadriceps", "erector_spinae", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "rectus_abdominis": "P8",
+    "hip_flexors": "P7",
+    "transverse_abdominis": "S6",
+    "anterior_deltoids": "S5",
+    "serratus_anterior": "S5",
+    "pectoralis_major": "T4",
+    "triceps_brachii": "T4",
+    "quadriceps": "T4",
+    "erector_spinae": "T3",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["plank", "mountain-climber", "dead-bug"],
+    "progression_to": ["spider-plank", "mountain-climber-with-sliders", "burpee"],
+    "alternatives": ["mountain-climber", "spider-plank", "bicycle-crunch", "plank-with-hip-rotation"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands directly under the shoulders, fingers spread wide",
+      "Shoulders stacked just past the wrists, weight forward",
+      "Body forms one straight line — head, hips, heels aligned",
+      "Brace the core BEFORE the first knee drive",
+      "Squeeze the glutes to lock the pelvis neutral"
+    ],
+    "setup_cues_pl": [
+      "Dłonie dokładnie pod barkami, palce szeroko rozłożone",
+      "Barki ustaw lekko za nadgarstkami, ciężar do przodu",
+      "Ciało tworzy jedną prostą linię — głowa, biodra, pięty",
+      "Napnij brzuch ZANIM ruszysz pierwsze kolano",
+      "Ściśnij pośladki, aby zablokować miednicę w pozycji neutralnej"
+    ],
+    "execution_cues": [
+      "Drive the knee DIAGONALLY across — toward the opposite elbow, not toward the chest",
+      "Rotate through the hip and lower core, not just by lifting the foot",
+      "Keep the hips LOW and LEVEL — no piking up, no sagging down",
+      "Shoulders stay still and over the wrists — only the legs move",
+      "Match the tempo to your control — speed is not the goal, rotation is"
+    ],
+    "execution_cues_pl": [
+      "Prowadź kolano PO SKOSIE w poprzek — do przeciwnego łokcia, nie do klatki",
+      "Skręcaj przez biodro i dolne partie core, nie tylko unosząc stopę",
+      "Trzymaj biodra NISKO i POZIOMO — bez zadzierania w górę, bez opadania",
+      "Barki nieruchome nad nadgarstkami — pracują tylko nogi",
+      "Dopasuj tempo do swojej kontroli — celem nie jest szybkość, tylko rotacja"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips piking up (forming an upside-down V)",
+        "faultPl": "Biodra zadzierają się do góry (tworząc odwrócone V)",
+        "cause": "Weak core failing to anti-extend; the lifter uses the hip flexors to whip the knee forward instead of bracing",
+        "causePl": "Słaby core nie utrzymuje anty-wyprostu; ćwiczący szarpie kolanem w przód używając zginaczy biodra zamiast napięcia",
+        "cue": "Imagine a coin on your lower back — keep it from falling. Slow the tempo until you can hold the hip line. Stop short of full knee range if needed.",
+        "cuePl": "Wyobraź sobie monetę na dole pleców — nie pozwól jej spaść. Zwolnij tempo aż utrzymasz linię bioder. Skróć zakres ruchu kolana jeśli trzeba."
+      },
+      {
+        "fault": "Knee driven straight toward the chest (no cross-body rotation)",
+        "faultPl": "Kolano prowadzone prosto do klatki (bez skrętu w poprzek)",
+        "cause": "Treating it like a regular mountain climber; missing the rotational component that targets obliques",
+        "causePl": "Traktowanie jak zwykłego mountain climbera; pominięcie rotacji która angażuje skośne",
+        "cue": "Aim the knee at the OPPOSITE elbow — see it in your peripheral vision. The hip must rotate, not just lift.",
+        "cuePl": "Celuj kolanem w PRZECIWNY łokieć — patrz na niego kątem oka. Biodro musi się obrócić, nie tylko unieść."
+      },
+      {
+        "fault": "Bouncing or shrugging through the shoulders",
+        "faultPl": "Odbijanie lub unoszenie barków (zaciskanie karku)",
+        "cause": "Losing shoulder pack as the legs accelerate; weight not centered over the wrists",
+        "causePl": "Utrata stabilizacji barków gdy nogi przyspieszają; ciężar nie ustawiony nad nadgarstkami",
+        "cue": "Push the floor away with straight arms. Long neck, ears away from shoulders. Slow the legs to let the shoulders re-stabilize.",
+        "cuePl": "Odpychaj podłogę wyprostowanymi ramionami. Długa szyja, uszy daleko od barków. Zwolnij nogi, aby barki się ustabilizowały."
+      },
+      {
+        "fault": "Foot slamming back to the floor with no control",
+        "faultPl": "Stopa walona z powrotem na podłogę bez kontroli",
+        "cause": "Reliance on momentum; the eccentric (return) phase is skipped, so the obliques never load on the way back",
+        "causePl": "Poleganie na rozpędzie; faza ekscentryczna (powrót) pomijana, więc skośne nie pracują przy powrocie",
+        "cue": "Place the foot back — don't drop it. Control both directions. If you can't, halve the tempo.",
+        "cuePl": "Odstaw stopę — nie upuszczaj. Kontroluj oba kierunki. Jeśli nie umiesz, zmniejsz tempo o połowę."
+      },
+      {
+        "fault": "Lower back sagging (hammock position)",
+        "faultPl": "Opadanie dolnego odcinka pleców (pozycja hamaka)",
+        "cause": "Glutes and transverse abdominis not engaged; pelvis tilts anteriorly under fatigue",
+        "causePl": "Pośladki i mięsień poprzeczny brzucha nie są napięte; miednica przechyla się do przodu pod wpływem zmęczenia",
+        "cue": "Squeeze the glutes hard and pull the navel toward the spine. End the set the moment the lower back drops — quality over quantity.",
+        "cuePl": "Mocno ściśnij pośladki i wciągnij pępek w stronę kręgosłupa. Zakończ serię w momencie gdy dół pleców opada — jakość ponad ilość."
+      }
+    ],
+    "breathing": "Breathe rhythmically — typically one exhale per knee drive, or one full breath cycle per two drives. Never hold the breath; that destabilizes the core and spikes blood pressure. Match breath to tempo; if you can't breathe smoothly, you're going too fast.",
+    "breathingPl": "Oddychaj rytmicznie — zwykle jeden wydech na każdy ruch kolanem, lub jeden pełny oddech na dwa ruchy. Nie wstrzymuj oddechu; to destabilizuje core i podnosi ciśnienie. Dopasuj oddech do tempa; jeśli nie umiesz oddychać płynnie, jesteś za szybko."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Loaded wrist extension under bodyweight may aggravate strains, tendinopathy, or carpal tunnel. Perform on fists, on push-up handles, or on forearms (plank position with shoulder taps as alternative). Reduce duration.",
+      "modificationPl": "Obciążenie nadgarstków w pozycji wyprostu pod masą ciała może nasilać naciągnięcia, tendinopatie lub zespół cieśni nadgarstka. Wykonuj na pięściach, na uchwytach do pompek lub na przedramionach (plank z dotknięciem barku jako alternatywa). Skróć czas trwania.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "modify",
+      "modification": "Avoid dynamic flexion + rotation under load during acute flare-ups. Switch to anti-rotation work (dead-bug, pallof press, side plank holds) until pain settles.",
+      "modificationPl": "Unikaj dynamicznego zgięcia ze skrętem pod obciążeniem w ostrej fazie bólu. Przerzuć się na ćwiczenia anty-rotacyjne (dead-bug, pallof press, side plank statyczny) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Sustained closed-chain shoulder loading can irritate impingement. Perform on forearms (forearm plank knee drives) or shorten sets significantly. Stop if shoulder pain appears.",
+      "modificationPl": "Stałe obciążenie barku w łańcuchu zamkniętym może drażnić impingement. Wykonuj na przedramionach (plank z kolanem na przedramieniu) lub znacznie skróć serie. Przerwij jeśli pojawi się ból barku.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "abdominal_diastasis",
+      "severity": "avoid",
+      "modification": "Postpartum diastasis recti — high-intensity bracing + rotation under load can worsen the gap. Avoid until cleared by a pelvic-floor specialist; use connection-breath core work meanwhile.",
+      "modificationPl": "Rozejście kresy białej po porodzie — intensywne napięcie ze skrętem pod obciążeniem może pogłębić rozejście. Unikaj do czasu konsultacji z fizjoterapeutą uroginekologicznym; w międzyczasie używaj ćwiczeń oddechowo-stabilizacyjnych core.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-40 sec | 3x20-30 reps total (alternating) | 4x15 reps per side",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "bridge-mountain-climber-cross-body.gif",
+    "frames_extracted": [
+      "frames/bridge-mountain-climber-cross-body/frame_0_start.png",
+      "frames/bridge-mountain-climber-cross-body/frame_1_early.png",
+      "frames/bridge-mountain-climber-cross-body/frame_2_mid.png",
+      "frames/bridge-mountain-climber-cross-body/frame_3_late.png",
+      "frames/bridge-mountain-climber-cross-body/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/bridge-mountain-climber-cross-body"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (24 ramki w GIFie). frame_0_start: wysoka deska (high plank) na wyprostowanych ramionach z dłońmi pod barkami — podświetlone obliques i rectus_abdominis jako baseline napięcia anty-wyprostnego. frame_1_early: prawe kolano podciągnięte skośnie w poprzek ciała w kierunku lewego łokcia — wyraźnie widać rotację przez biodro i dolne partie core; dłonie i barki nieruchome, lewa noga prosta. frame_2_mid: powrót do plank position (przed drugą stroną). frame_3_late: lewe kolano w drodze do prawego łokcia (lustrzane odbicie frame_1) — analogiczna mechanika po drugiej stronie. frame_4_end: faded sylwetka pokazuje pełną amplitudę skrętu. Mocna rotacja w płaszczyźnie poprzecznej (plane: transverse) + naprzemienność (laterality: alternating) + force: static (tułów statyczny, nogi dynamiczne — to nie jest klasyczne push/pull). Difficulty 5: trudniejsze niż klasyczny mountain climber (4) i cross-body crunch (3), bo łączy stabilizację deski z rotacją. Hip flexors P7 bo aktywny knee drive pod kątem. Polskie nazewnictwo: 'mountain climber krzyżowy' to najpopularniejsza nazwa w polskim fitness (alias 'wspinaczka krzyżowa' używany rzadziej). Wszystkie pola PL napisane od zera po polsku (skośne, prosty brzucha, anty-wyprost, wysoka deska, biodra poziomo) — brak tłumaczenia maszynowego.",
+
+  "tags": ["core", "obliques", "rotation", "bodyweight", "no_equipment", "high_intensity", "conditioning", "alternating", "plank_variation", "compound", "intermediate", "ab_isolation"]
+}

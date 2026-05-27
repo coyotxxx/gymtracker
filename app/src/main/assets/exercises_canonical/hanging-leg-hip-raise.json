@@ -1,0 +1,198 @@
+{
+  "id": "hanging-leg-hip-raise",
+  "name": "Hanging Leg Hip Raise",
+  "namePl": "Uniesienie bioder w zwisie",
+  "aliases": ["hanging hip raise", "hanging pelvic raise", "hanging reverse crunch", "hanging knee tuck to hips"],
+  "aliasesPl": ["uniesienie bioder w zwisie", "podwijanie miednicy w zwisie", "odwrócony crunch w zwisie", "hip raise na drążku", "podciąganie bioder do drążka"],
+
+  "description": "Advanced hanging core exercise that targets the lower portion of the rectus abdominis through posterior pelvic tilt. Hanging from a pull-up bar with knees slightly bent, the lifter curls the pelvis upward and tucks the hips toward the bar — the key distinction from a hanging leg raise is that the movement is driven by spinal/pelvic flexion (ab work) rather than hip flexion (hip flexor work). Range of motion is short but contraction on the lower abs is intense.",
+  "descriptionPl": "Zaawansowane ćwiczenie na brzuch w zwisie skupione na dolnej części mięśnia prostego brzucha poprzez tylne pochylenie miednicy. W zwisie na drążku z lekko ugiętymi kolanami ćwiczący podwija miednicę w górę i unosi biodra w kierunku drążka — kluczowa różnica względem unoszenia nóg w zwisie polega na tym, że ruch generowany jest przez zgięcie kręgosłupa/miednicy (praca brzucha), a nie przez zgięcie biodra (praca zginaczy biodrowych). Zakres ruchu jest krótki, ale skurcz dolnych partii brzucha bardzo intensywny.",
+
+  "instructions": [
+    "Hang from a pull-up bar with an overhand, shoulder-width grip. Engage the lats lightly to depress and pack the shoulder blades — the shoulders should not shrug up to the ears.",
+    "Bend the knees to about 90 degrees so the shins point down and the thighs hang roughly perpendicular to the floor. This is the starting position.",
+    "Inhale and brace the core. Keep the upper body still — no swinging.",
+    "Exhale and forcefully tilt the pelvis posteriorly (tuck the tailbone forward and up), curling the hips up toward the chest and the bar. The lower back rounds slightly and the hips lift, not just the knees.",
+    "At the peak the pelvis is tucked, the lower abs are maximally shortened, and the hips have visibly risen toward the bar. Pause and squeeze for one second.",
+    "Inhale and lower the hips under control back to the start — knees still bent, hips returned to neutral hang. Do not let the body swing.",
+    "Reset and repeat for the prescribed reps without using momentum."
+  ],
+  "instructionsPl": [
+    "Zawiśnij na drążku chwytem nachwytem na szerokość barków. Lekko napnij mięśnie grzbietu (najszersze), by ściągnąć i ustawić łopatki — barki nie mogą podjeżdżać do uszu.",
+    "Ugnij kolana do około 90 stopni — golenie skierowane w dół, uda mniej więcej prostopadle do podłogi. To pozycja wyjściowa.",
+    "Wdech i napnij brzuch. Górna część ciała pozostaje nieruchoma — żadnego rozkołysania.",
+    "Wydech — mocnym ruchem pochyl miednicę do tyłu (kość ogonowa podwija się do przodu i w górę), zwijając biodra w kierunku klatki i drążka. Dolne plecy lekko się zaokrąglają, biodra unoszą się — nie tylko kolana.",
+    "W szczycie miednica jest podwinięta, dolne partie brzucha maksymalnie skrócone, biodra widocznie uniesione w stronę drążka. Zatrzymaj się na sekundę i mocno ściśnij brzuch.",
+    "Wdech i opuść biodra kontrolowanym ruchem do pozycji wyjściowej — kolana nadal ugięte, biodra wracają do neutralnego zwisu. Ciało nie może się kołysać.",
+    "Ustabilizuj się i powtórz zadaną liczbę powtórzeń bez wykorzystywania rozpędu."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques", "lats"],
+    "stabilizers": ["forearms", "transverse_abdominis", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "obliques": "S6",
+    "lats": "S5",
+    "forearms": "T5",
+    "transverse_abdominis": "T4",
+    "serratus_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["wrist_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["hanging-knee-raise", "hanging-leg-raise", "reverse-crunch"],
+    "progression_to": ["toes-to-bar", "windshield-wipers", "front-lever-tuck"],
+    "alternatives": ["reverse-crunch", "hanging-knee-raise", "captain-chair-leg-raise", "lying-leg-hip-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dead hang with packed shoulders — depress the scapulae",
+      "Overhand grip shoulder-width, full thumb wrap",
+      "Knees bent ~90 degrees, shins pointing down",
+      "Ribs down, slight tension in the core to stop swing",
+      "Inhale and pre-brace before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Zwis aktywny ze ściągniętymi łopatkami — barki dociśnięte w dół",
+      "Nachwyt na szerokość barków, pełny chwyt z kciukiem",
+      "Kolana ugięte około 90 stopni, golenie skierowane w dół",
+      "Żebra w dół, lekkie napięcie brzucha by zatrzymać kołysanie",
+      "Wdech i wstępne napięcie brzucha przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Tuck the tailbone — pelvis curls up, not just knees up",
+      "Exhale forcefully and crunch the lower abs",
+      "Lift the hips toward the bar, not the knees toward the chest",
+      "Pause one second at the top with the pelvis fully tucked",
+      "Lower with control — 2 seconds eccentric, no drop"
+    ],
+    "execution_cues_pl": [
+      "Podwiń kość ogonową — miednica zwija się w górę, nie tylko kolana",
+      "Mocny wydech i ściśnij dolne partie brzucha",
+      "Unoś biodra w kierunku drążka, a nie kolana do klatki",
+      "Sekunda pauzy w górze przy pełnym podwinięciu miednicy",
+      "Opuszczaj kontrolowanie — 2 sekundy fazy ekscentrycznej, bez opadania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting only the knees without tucking the pelvis (turns into hanging knee raise)",
+        "faultPl": "Unoszenie tylko kolan bez podwijania miednicy (zmienia się w zwykłe podciąganie kolan w zwisie)",
+        "cause": "Hip flexors take over because the lower abs are weak or cue is misunderstood",
+        "causePl": "Zginacze biodra przejmują pracę, bo dolne partie brzucha są słabe lub cue jest źle zrozumiane",
+        "cue": "Imagine pulling the belt buckle up to the chin — the hips must clear higher than the knees",
+        "cuePl": "Wyobraź sobie, że klamra paska wędruje do brody — biodra muszą wyjść wyżej niż kolana"
+      },
+      {
+        "fault": "Body swinging back and forth (kipping)",
+        "faultPl": "Kołysanie ciałem do przodu i tyłu (kipping)",
+        "cause": "Using momentum to substitute for ab strength; lats not packed",
+        "causePl": "Wykorzystywanie rozpędu jako substytutu siły brzucha; niedociągnięte łopatki",
+        "cue": "Pause 1 sec at bottom and top — kill the swing. Activate lats to anchor the torso.",
+        "cuePl": "Pauza 1 sek na dole i na górze — wyeliminuj kołysanie. Napnij najszersze grzbietu, by zakotwiczyć tułów."
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears (passive hang)",
+        "faultPl": "Barki podjeżdżają do uszu (zwis pasywny)",
+        "cause": "Lats and lower trapezius not engaged — passive hang stresses the shoulder capsule",
+        "causePl": "Najszersze grzbietu i dolny czworoboczny nieaktywne — zwis pasywny obciąża torebkę barku",
+        "cue": "Pull shoulders down and back before every rep — long neck, packed scapulae",
+        "cuePl": "Ściągnij barki w dół i do tyłu przed każdym powtórzeniem — długa szyja, dociśnięte łopatki"
+      },
+      {
+        "fault": "Grip fails before the abs do",
+        "faultPl": "Chwyt puszcza wcześniej niż brzuch",
+        "cause": "Underdeveloped forearm endurance, sweaty hands, or no chalk",
+        "causePl": "Słaba wytrzymałość przedramion, spocone dłonie lub brak magnezji",
+        "cue": "Use wrist straps or chalk so the ab stimulus is the limiter, not the grip",
+        "cuePl": "Użyj pasków lub magnezji, by ograniczeniem była siła brzucha, a nie chwyt"
+      },
+      {
+        "fault": "Holding breath through the whole set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Tension habit from heavy lifts carried over to hanging core work",
+        "causePl": "Nawyk z ciężkich bojów przeniesiony na ćwiczenia brzucha w zwisie",
+        "cue": "Forceful exhale on the way up (rib compression), inhale on the way down",
+        "cuePl": "Mocny wydech podczas unoszenia (ściśnięcie żeber), wdech podczas opuszczania"
+      }
+    ],
+    "breathing": "Inhale during the lowering phase as the hips return to neutral. Forceful exhale during the lift — ribs compress and the lower abs shorten maximally at the top.",
+    "breathingPl": "Wdech podczas opuszczania, gdy biodra wracają do neutralnego zwisu. Mocny wydech podczas unoszenia — żebra dociskają się, a dolne partie brzucha maksymalnie skracają się w szczycie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Spinal flexion under load (especially in the loaded posterior pelvic tilt) can aggravate disc pathology. Switch to anti-extension work (planks, dead bug) until pain-free.",
+      "modificationPl": "Zginanie kręgosłupa pod obciążeniem (zwłaszcza w tylnym pochyleniu miednicy z obciążeniem) może nasilić problemy dyskowe. Przejdź na ćwiczenia anty-ekstensji (deska, dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Overhead hang loads the rotator cuff and capsule. Use a captain's chair (elbow-supported) variant or perform reverse crunches on the floor.",
+      "modificationPl": "Zwis w pozycji nad głową obciąża stożek rotatorów i torebkę barku. Użyj poręczy do brzucha (oparcie na łokciach) lub wykonuj odwrócone crunche na podłodze.",
+      "alternative": "captain-chair-leg-raise"
+    },
+    {
+      "condition": "wrist_or_grip_injury",
+      "severity": "modify",
+      "modification": "Dead hang loads the wrist and forearm. Use wrist straps or switch to a captain's chair / floor-based reverse crunch.",
+      "modificationPl": "Zwis obciąża nadgarstek i przedramię. Użyj pasków nadgarstkowych lub przejdź na poręcze do brzucha / odwrócony crunch na podłodze.",
+      "alternative": "reverse-crunch"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Heavy rectus abdominis crunching can worsen midline separation (postpartum or otherwise). Rebuild with transverse-abdominis-focused work first.",
+      "modificationPl": "Mocne zwijanie mięśnia prostego brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Zacznij od ćwiczeń skupionych na mięśniu poprzecznym brzucha.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x6-10 (strength) | 3x8-12 (hypertrophy) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "hanging-leg-hip-raise.gif",
+    "frames_extracted": [
+      "frames/hanging-leg-hip-raise/frame_0_start.png",
+      "frames/hanging-leg-hip-raise/frame_1_early.png",
+      "frames/hanging-leg-hip-raise/frame_2_mid.png",
+      "frames/hanging-leg-hip-raise/frame_3_late.png",
+      "frames/hanging-leg-hip-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/hanging-leg-hip-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): pełny zwis na drążku, nogi razem, kolana lekko ugięte, anatomia podświetla mięsień prosty brzucha (cała kolumna). Klatka 2 (mid): kluczowa pozycja — kolana podciągnięte, ale przede wszystkim BIODRA wyraźnie uniesione w kierunku drążka, miednica podwinięta, dolne plecy zaokrąglone, dolna część brzucha plus skośne (obliques) silnie podświetlone — to nie zwykłe hanging leg raise, tylko hip raise z posterior pelvic tilt. Klatka 4 (end): powrót do zwisu. Ruch potwierdzony: krótki zakres, ale generowany przez zgięcie miednicy/kręgosłupa, nie przez zgięcie biodra. Klasyfikacja: core_flexion + isolation (jeden 'staw' — odcinek lędźwiowo-miedniczny), bilateral, sagittal, force=pull, open kinetic chain. Mięsień główny: rectus_abdominis P10 (dolna część maksymalnie aktywna w PPT). Secondary: obliques (stabilizacja anty-rotacyjna + asysta w zwijaniu), lats (packing barków, anty-swing). Stabilizatory: forearms (chwyt), TVA, serratus anterior. Difficulty=8, level=advanced (wymaga grip strength + kontroli miednicy + braku swingu — początkujący zazwyczaj zamieniają to w hanging knee raise). Prerequisites: hanging-knee-raise, hanging-leg-raise, reverse-crunch (nauka PPT na podłodze). Nazwa PL: 'Uniesienie bioder w zwisie' opisowa i precyzyjna — kluczowe że to BIODRA, nie nogi. Wszystkie pola PL napisane od zera, podkreślają różnicę względem hanging leg raise.",
+
+  "tags": ["bodyweight", "core", "abs", "lower_abs", "advanced", "hanging", "pull_up_bar", "isolation"]
+}

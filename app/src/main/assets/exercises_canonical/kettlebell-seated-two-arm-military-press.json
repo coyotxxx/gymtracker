@@ -1,0 +1,202 @@
+{
+  "id": "kettlebell-seated-two-arm-military-press",
+  "name": "Kettlebell Seated Two-Arm Military Press",
+  "namePl": "Military press z kettlebellami oburącz w siadzie",
+  "aliases": ["kettlebell seated overhead press", "seated double KB press", "two kettlebell seated press", "KB seated strict press"],
+  "aliasesPl": ["wyciskanie kettlebelli nad głowę w siadzie", "siedzący military press z kettlebellami", "wyciskanie dwóch kettli w siadzie", "strict press z kettlami siedząc"],
+
+  "description": "Strict overhead press with two kettlebells in seated position on a flat bench. Bilateral compound movement — bells start in front-rack (handles by shoulders, bells resting on forearms/outside of wrists), pressed straight up to lockout overhead. Seated position eliminates leg drive entirely and removes lower-body involvement, isolating the shoulder press pattern more than the standing version. Kettlebells (vs dumbbells) shift load slightly behind the wrist, demanding stronger anterior deltoid and core stabilization. Excellent for hypertrophy of anterior/lateral deltoids with reduced lower-back load.",
+  "descriptionPl": "Strict wyciskanie nad głowę dwóch kettlebelli w pozycji siedzącej na płaskiej ławce. Dwustronny ruch wielostawowy — kettle startują w pozycji front rack (uchwyty przy barkach, kule oparte o przedramiona/zewnętrzną stronę nadgarstków), wyciskane prosto w górę do lock-out overhead. Pozycja siedząca całkowicie eliminuje napęd z nóg i wyłącza dolne ciało — izoluje wzorzec wyciskania bardziej niż wersja stojąca. Kettle (w odróżnieniu od hantli) przesuwają środek ciężkości lekko za nadgarstek — wymagają silniejszego napięcia przedniego aktonu i brzucha. Świetne na hipertrofię przednich/bocznych aktonów przy zmniejszonym obciążeniu dolnego kręgosłupa.",
+
+  "instructions": [
+    "Sit on a flat bench (no back support, or upright back pad). Feet flat on floor, hip-width apart.",
+    "Clean two kettlebells to the front-rack position: handles by shoulders, bells resting on the back of the forearms / outside of wrists, elbows tucked.",
+    "Brace core HARD. Sit tall — neutral spine, chest up, ribs down (no excessive lumbar arch).",
+    "Inhale, then press both kettlebells straight up overhead simultaneously. The wrists rotate naturally as the bells travel up.",
+    "At lockout: arms fully extended, bells stacked over shoulders, biceps near ears. Wrists neutral and aligned with forearms.",
+    "Lower under control back to the front-rack position. Don't let the bells crash down onto the forearms.",
+    "Strict press — NO momentum from the torso (no back-leaning to assist), NO leg drive (already seated).",
+    "Exhale at the top of the lockout or on the way down."
+  ],
+  "instructionsPl": [
+    "Usiądź na płaskiej ławce (bez oparcia lub z pionowym oparciem). Stopy płasko na podłodze, na szerokość bioder.",
+    "Wyrzuć (clean) dwa kettle do pozycji front rack: uchwyty przy barkach, kule oparte o tylną część przedramion / zewnętrzną stronę nadgarstków, łokcie schowane.",
+    "Napnij brzuch MOCNO. Siedź wyprostowany — neutralny kręgosłup, klatka w górę, żebra w dół (bez nadmiernego wygięcia lędźwi).",
+    "Wdech, następnie wyciśnij oba kettle prosto w górę nad głowę jednocześnie. Nadgarstki obracają się naturalnie wraz z ruchem kul.",
+    "W lock-out: ramiona w pełni wyprostowane, kule nad barkami, bicepsy przy uszach. Nadgarstki neutralne, w linii z przedramieniem.",
+    "Opuszczaj kontrolowanym ruchem do pozycji front rack. Nie pozwól by kule spadły gwałtownie na przedramiona.",
+    "Strict press — BEZ wspomagania tułowiem (bez odchylania pleców do tyłu), BEZ napędu z nóg (już siedzisz).",
+    "Wydech na szczycie lock-out lub w trakcie opuszczania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids"],
+    "secondary": ["triceps", "upper_trapezius"],
+    "stabilizers": ["core", "rotator_cuff", "serratus_anterior", "rectus_abdominis", "obliques", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P9",
+    "triceps": "S7",
+    "upper_trapezius": "S6",
+    "serratus_anterior": "S5",
+    "core": "S6",
+    "forearms": "S5",
+    "rotator_cuff": "S4"
+  },
+
+  "equipment": {
+    "required": ["kettlebell", "flat_bench"],
+    "optional": ["wrist_wraps", "chalk", "upright_bench"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-seated-shoulder-press", "kettlebell-single-arm-military-press", "dumbbell-shoulder-press"],
+    "progression_to": ["kettlebell-standing-two-arm-military-press", "kettlebell-bottoms-up-press", "kettlebell-jerk", "barbell-seated-overhead-press"],
+    "alternatives": ["dumbbell-seated-shoulder-press", "kettlebell-single-arm-military-press", "barbell-seated-overhead-press", "machine-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall on bench — neutral spine, chest up",
+      "Feet flat, planted firmly",
+      "Kettlebells in front rack — bells on forearms, not floating",
+      "Elbows tucked, wrists neutral and stacked",
+      "Brace core HARD before first rep"
+    ],
+    "setup_cues_pl": [
+      "Usiądź wyprostowany — neutralny kręgosłup, klatka w górę",
+      "Stopy płasko, mocno oparte",
+      "Kettle w front rack — kule na przedramionach, nie wiszące",
+      "Łokcie schowane, nadgarstki neutralne i w linii",
+      "Napnij brzuch MOCNO przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Press straight up, NOT forward or out",
+      "Both bells move simultaneously — symmetric",
+      "Wrists stay neutral as bells rotate around forearms",
+      "Lock out fully — biceps by ears, bells over shoulders",
+      "Lower controlled — don't crash bells onto forearms"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę, NIE do przodu ani na zewnątrz",
+      "Oba kettle ruszają jednocześnie — symetrycznie",
+      "Nadgarstki neutralne gdy kule obracają się wokół przedramion",
+      "Pełen lock-out — bicepsy przy uszach, kule nad barkami",
+      "Opuszczaj kontrolowanym ruchem — nie pozwól na uderzenie kul w przedramiona"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning back to convert seated press into incline press",
+        "faultPl": "Odchylanie tułowia do tyłu — zamiana strict press w incline press",
+        "cause": "Weight too heavy, weak anterior deltoid, no upright back support",
+        "causePl": "Zbyt duży ciężar, słaby przedni akton, brak pionowego oparcia",
+        "cue": "Ribs DOWN. Squeeze abs. Use bench with upright pad if you can't stay vertical, or reduce weight.",
+        "cuePl": "Żebra W DÓŁ. Ściśnij brzuch. Użyj ławki z pionowym oparciem jeśli nie utrzymasz pionu, lub zmniejsz ciężar."
+      },
+      {
+        "fault": "Wrist collapse — bells pull the wrist back into extension",
+        "faultPl": "Załamanie nadgarstka — kule ciągną nadgarstek do tyłu (w przeprost)",
+        "cause": "Weak wrist, improper grip, bells too heavy for grip strength",
+        "causePl": "Słaby nadgarstek, niepoprawny chwyt, kule za ciężkie dla siły nadgarstka",
+        "cue": "Crush the handle. Wrist stacked over forearm. Use wraps if wrists are weak.",
+        "cuePl": "Mocno ściśnij uchwyt. Nadgarstek nad przedramieniem. Użyj wraps jeśli nadgarstki słabe."
+      },
+      {
+        "fault": "Asymmetric press — one kettlebell lags behind the other",
+        "faultPl": "Asymetryczne wyciskanie — jeden kettle zostaje w tyle",
+        "cause": "Strength imbalance between sides, lack of bilateral coordination",
+        "causePl": "Dysproporcja siły między stronami, brak koordynacji dwustronnej",
+        "cue": "Both bells start and finish together. If imbalance persists — train single-arm KB press to fix the weaker side.",
+        "cuePl": "Oba kettle startują i kończą razem. Jeśli dysproporcja się utrzymuje — trenuj jednorącz KB press by wzmocnić słabszą stronę."
+      },
+      {
+        "fault": "Pressing bells outward (V-shape, not straight up)",
+        "faultPl": "Wyciskanie kul na zewnątrz (kształt V, nie prosto w górę)",
+        "cause": "Mimicking dumbbell press pattern, weak medial stabilization",
+        "causePl": "Naśladowanie wzorca z hantli, słaba stabilizacja przyśrodkowa",
+        "cue": "Bells travel STRAIGHT up. At lockout — bells stacked over shoulders, not flared wide.",
+        "cuePl": "Kule idą PROSTO w górę. W lock-out — kule nad barkami, nie rozszerzone na boki."
+      },
+      {
+        "fault": "Crashing bells down on the descent",
+        "faultPl": "Gwałtowne opuszczanie kul (uderzanie w przedramiona)",
+        "cause": "Loss of control, weight too heavy, ignoring eccentric",
+        "causePl": "Utrata kontroli, zbyt duży ciężar, ignorowanie fazy ekscentrycznej",
+        "cue": "Control the descent — 2-3 sec eccentric. Bells SETTLE into rack, not crash.",
+        "cuePl": "Kontroluj opuszczanie — 2-3 sek ekscentryka. Kule OSADZAJĄ się w racku, nie spadają."
+      }
+    ],
+    "breathing": "Inhale and brace before pressing. Hold breath through the concentric (Valsalva for heavy sets). Exhale at lockout or during the descent. Re-brace between reps.",
+    "breathingPl": "Wdech i napięcie przed wyciskaniem. Trzymaj oddech w fazie koncentrycznej (Valsalva dla ciężkich serii). Wydech w lock-out lub w trakcie opuszczania. Ponowne napięcie między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (stop short of full lockout), or switch to neutral-grip dumbbell press (more shoulder-friendly path).",
+      "modificationPl": "Zmniejsz ROM (zatrzymaj przed pełnym lock-out), lub przejdź na neutralny chwyt z hantli (bardziej przyjazna ścieżka dla barku).",
+      "alternative": "dumbbell-seated-shoulder-press"
+    },
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Kettlebells stress the wrist more than dumbbells/barbell. Use wrist wraps, or switch to dumbbell seated press until pain resolves.",
+      "modificationPl": "Kettle obciążają nadgarstek mocniej niż hantle/sztanga. Użyj wraps, lub przejdź na hantle do ustąpienia bólu.",
+      "alternative": "dumbbell-seated-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work thoracic/shoulder mobility separately. Use landmine press or single-arm KB press until overhead lockout is full.",
+      "modificationPl": "Pracuj osobno nad mobilnością piersiową/barku. Używaj landmine press lub jednorącz KB do pełnego lock-out overhead.",
+      "alternative": "kettlebell-single-arm-military-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid heavy bilateral overhead pressing until cleared by PT. Resume with high-rep light machine work.",
+      "modificationPl": "Unikaj ciężkiego dwustronnego wyciskania overhead do zgody fizjoterapeuty. Wróć przez wysokopowtórzeniowe lekkie maszyny.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x5-6 (strength) | 3x12-15 (endurance/conditioning)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "kettlebell-seated-two-arm-military-press.gif",
+    "frames_extracted": [
+      "frames/kettlebell-seated-two-arm-military-press/frame_0_start.png",
+      "frames/kettlebell-seated-two-arm-military-press/frame_1_early.png",
+      "frames/kettlebell-seated-two-arm-military-press/frame_2_mid.png",
+      "frames/kettlebell-seated-two-arm-military-press/frame_3_late.png",
+      "frames/kettlebell-seated-two-arm-military-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-seated-two-arm-military-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa front rack — dwa kettle przy barkach, kule oparte o przedramiona, uchwyty schowane, mężczyzna siedzi wyprostowany na płaskiej ławce, stopy płasko. Frame 2: pełen lock-out overhead — ramiona w pełni wyprostowane, kule nad barkami, bicepsy przy uszach. Frame 4: powrót do front rack. Podświetlone: anterior deltoid (mocno) + lateral deltoid + tricepsy + upper trapezius. Brak napędu z nóg (seated). Bilateral. Strict press. Płaszczyzna głównie frontalna (kule rozchodzą się na boki, potem prosto w górę). PL nazwa = 'Military press z kettlebellami oburącz w siadzie' — naturalne tłumaczenie, 'military press' utrwalone w polskiej terminologii siłowej.",
+
+  "tags": ["kettlebell", "shoulders", "seated", "overhead_press", "bilateral", "compound", "hypertrophy", "strict_press", "upper_body", "vertical_push"]
+}

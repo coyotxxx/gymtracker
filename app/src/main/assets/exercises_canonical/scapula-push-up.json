@@ -1,0 +1,202 @@
+{
+  "id": "scapula-push-up",
+  "name": "Scapula Push-Up",
+  "namePl": "Pompka łopatkowa (scapula push-up)",
+  "aliases": ["scapular push-up", "scap push-up", "scapular protraction push-up", "serratus push-up"],
+  "aliasesPl": ["pompka łopatkowa", "scap push-up", "protrakcja łopatek w plance", "pompka na serratus", "ćwiczenie łopatkowe w podporze"],
+
+  "description": "Isolation exercise for the serratus anterior and scapular stabilizers performed from a high plank (push-up) position with ELBOWS LOCKED throughout. The only movement is at the scapulae — protraction (shoulder blades spread apart, upper back rounds, chest rises) and retraction (shoulder blades pull together, chest sinks toward floor). A classic prehab/rehab staple that builds the often-neglected serratus anterior — the 'big serrated muscle' along the ribs that anchors the scapula to the ribcage. Critical for shoulder health, overhead pressing, and any push movement where the scapula must move freely on the ribcage.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień zębaty przedni i stabilizatory łopatek wykonywane z pozycji wysokiej planki (pompki) z ŁOKCIAMI ZABLOKOWANYMI przez cały czas. Jedyny ruch odbywa się w łopatkach — protrakcja (łopatki rozsuwają się, górne plecy zaokrąglają, klatka unosi się) i retrakcja (łopatki ściągają się, klatka opada w stronę podłogi). Klasyk prehabu/rehabu, który buduje często zaniedbywany mięsień zębaty przedni — 'piłkowany' mięsień wzdłuż żeber, który mocuje łopatkę do klatki piersiowej. Kluczowy dla zdrowia barków, wyciskania nad głowę i każdego ruchu pchającego, gdzie łopatka musi swobodnie ślizgać się po klatce piersiowej.",
+
+  "instructions": [
+    "Set up in a high plank position: hands directly under shoulders, arms fully extended, body in a straight line from heels to head.",
+    "Engage core, squeeze glutes. No sagging hips, no piked hips.",
+    "LOCK YOUR ELBOWS — they do not move for the entire set. The only joint moving is the scapulothoracic joint.",
+    "Inhale and slowly retract scapulae: pull shoulder blades together, allowing your chest to sink slightly toward the floor. Elbows stay straight — you are NOT bending arms.",
+    "Brief pause at the bottom — feel the squeeze between shoulder blades.",
+    "Exhale and forcefully protract scapulae: push the floor away, spread shoulder blades apart, round upper back slightly, chest rises and upper back domes up.",
+    "Hold the protracted position for 1-2 seconds — feel the serratus anterior contract along the ribs under the armpit.",
+    "Repeat slowly and with control. ROM is small — quality over quantity."
+  ],
+  "instructionsPl": [
+    "Ustaw się w pozycji wysokiej planki: dłonie bezpośrednio pod barkami, ramiona w pełni wyprostowane, ciało w prostej linii od pięt do głowy.",
+    "Napnij brzuch, ściśnij pośladki. Bez opadających bioder, bez 'tyłka do góry'.",
+    "ZABLOKUJ ŁOKCIE — nie ruszają się przez całą serię. Jedynym stawem, który pracuje, jest staw łopatkowo-żebrowy.",
+    "Wdech i powoli ściągnij łopatki: złącz łopatki razem, pozwól klatce lekko opaść w stronę podłogi. Łokcie zostają wyprostowane — NIE zginasz ramion.",
+    "Krótka pauza na dole — poczuj ściśnięcie między łopatkami.",
+    "Wydech i mocno rozsuń łopatki (protrakcja): odepchnij podłogę, rozsuń łopatki na boki, lekko zaokrąglij górne plecy, klatka unosi się, a górne plecy 'wybrzuszają' się ku górze.",
+    "Zatrzymaj się w pozycji protrakcji na 1-2 sekundy — poczuj, jak mięsień zębaty przedni napina się wzdłuż żeber pod pachą.",
+    "Powtarzaj powoli i z kontrolą. Zakres ruchu jest niewielki — jakość ważniejsza niż ilość."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_protraction",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["serratus_anterior", "lower_trapezius"],
+    "secondary": ["pectoralis_major", "rhomboids"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "triceps", "anterior_deltoids"]
+  },
+
+  "muscle_intensity": {
+    "serratus_anterior": "P9",
+    "lower_trapezius": "P7",
+    "pectoralis_major": "S5",
+    "rhomboids": "S5",
+    "core": "T5",
+    "triceps": "T4",
+    "anterior_deltoids": "T4",
+    "rotator_cuff": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handles", "yoga_mat", "resistance_band"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["plank", "knee-plank"],
+    "progression_to": ["scapula-push-up-feet-elevated", "scapula-push-up-on-rings", "push-up-plus", "handstand-scapular-shrug"],
+    "alternatives": ["serratus-anterior-wall-slides", "bear-crawl-protraction", "banded-serratus-punch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "High plank — arms perfectly straight, elbows locked",
+      "Hands directly under shoulders, fingers spread, push into the floor",
+      "Body in straight line — heels, hips, head aligned",
+      "Brace core, squeeze glutes — rigid plank from heels to crown",
+      "Eyes look at the floor between your hands — neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Wysoka planka — ramiona idealnie wyprostowane, łokcie zablokowane",
+      "Dłonie bezpośrednio pod barkami, palce rozstawione, napieraj na podłogę",
+      "Ciało w prostej linii — pięty, biodra, głowa w jednej linii",
+      "Napięty brzuch, ściśnięte pośladki — sztywna planka od pięt po szczyt głowy",
+      "Wzrok w podłogę między dłońmi — neutralna szyja"
+    ],
+    "execution_cues": [
+      "Elbows LOCKED — if they bend, it became a regular push-up",
+      "Push the floor away — 'dome' your upper back at the top",
+      "Pinch a pencil between shoulder blades on the way down",
+      "Small ROM — chest moves maybe 5-10 cm, no more",
+      "Slow tempo: 2 sec down, 2 sec hold, 2 sec up — feel the serratus"
+    ],
+    "execution_cues_pl": [
+      "Łokcie ZABLOKOWANE — jeśli się zginają, robisz zwykłą pompkę",
+      "Odpychaj podłogę — 'wybrzusz' górne plecy w pozycji szczytowej",
+      "Ściskaj ołówek między łopatkami w dolnej fazie",
+      "Mały zakres ruchu — klatka przemieszcza się może 5-10 cm, nie więcej",
+      "Wolne tempo: 2 sek dół, 2 sek pauza, 2 sek góra — czuj serratus"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending elbows (turning it into a mini push-up)",
+        "faultPl": "Zginanie łokci (zamiana w mini pompkę)",
+        "cause": "Lack of body awareness, weak serratus — body 'cheats' by using triceps/chest",
+        "causePl": "Brak świadomości ciała, słaby serratus — ciało 'oszukuje' używając tricepsów/klatki",
+        "cue": "Imagine your arms are wooden poles — they cannot bend. Slow down. If you can't keep elbows straight, drop to knees.",
+        "cuePl": "Wyobraź sobie, że ramiona to drewniane pale — nie da się ich zgiąć. Zwolnij. Jeśli nie utrzymujesz prostych łokci — opuść kolana na podłogę."
+      },
+      {
+        "fault": "Sagging hips / collapsed plank",
+        "faultPl": "Opadające biodra / zapadnięta planka",
+        "cause": "Weak core, no glute engagement",
+        "causePl": "Słaby brzuch, brak napięcia pośladków",
+        "cue": "Plank position FIRST, scapular movement SECOND. Squeeze glutes hard, brace abs as if expecting a punch.",
+        "cuePl": "NAJPIERW planka, POTEM ruch łopatkami. Mocno ściśnij pośladki, napnij brzuch jakbyś przyjmował cios."
+      },
+      {
+        "fault": "Excessive ROM / forcing the bottom (shrugging)",
+        "faultPl": "Za duży zakres / wymuszanie dolnej pozycji (wzruszanie ramion)",
+        "cause": "Confusing scapular retraction with shoulder shrug — shoulders ride up toward ears",
+        "causePl": "Mylenie retrakcji łopatek z wzruszaniem ramion — barki podchodzą do uszu",
+        "cue": "Shoulders DOWN, away from ears. Retract by pulling blades together and DOWN, not up. Small ROM is correct.",
+        "cuePl": "Barki W DÓŁ, daleko od uszu. Ściągaj łopatki razem i W DÓŁ, nie do góry. Mały zakres ruchu jest prawidłowy."
+      },
+      {
+        "fault": "Rushing reps — bouncing between protraction and retraction",
+        "faultPl": "Pośpieszne powtórzenia — odbijanie między protrakcją a retrakcją",
+        "cause": "Treating it as a cardio exercise instead of a controlled isolation drill",
+        "causePl": "Traktowanie jak cardio zamiast jako kontrolowanego ćwiczenia izolowanego",
+        "cue": "Tempo 2-2-2 minimum (down-hold-up). You should FEEL the serratus burning along the ribs, not the chest pumping.",
+        "cuePl": "Tempo minimum 2-2-2 (dół-pauza-góra). Powinieneś CZUĆ pieczenie serratusa wzdłuż żeber, a nie pompowanie klatki."
+      },
+      {
+        "fault": "Head dropping or craning",
+        "faultPl": "Opadająca lub zadarta głowa",
+        "cause": "Forgetting neutral neck during the slow movement",
+        "causePl": "Zapominanie o neutralnej szyi podczas powolnego ruchu",
+        "cue": "Crown of head reaches forward. Eyes look at floor between hands. Ears in line with shoulders throughout.",
+        "cuePl": "Czubek głowy sięga do przodu. Wzrok w podłogę między dłońmi. Uszy w linii z barkami przez cały czas."
+      }
+    ],
+    "breathing": "Inhale during scapular retraction (chest sinks), exhale forcefully during protraction (push floor away). Match breath to tempo — slow and deliberate.",
+    "breathingPl": "Wdech podczas retrakcji łopatek (klatka opada), mocny wydech podczas protrakcji (odpychanie podłogi). Dopasuj oddech do tempa — wolno i świadomie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles, fists (knuckles down) or perform on forearms with elbows locked at ~90°. Static plank position loads wrists for the full duration.",
+      "modificationPl": "Użyj uchwytów do pompek, pięści (knykcie w dół) lub wykonuj na przedramionach z łokciami zablokowanymi pod ~90°. Statyczna pozycja planki obciąża nadgarstki przez cały czas.",
+      "alternative": "serratus-anterior-wall-slides"
+    },
+    {
+      "condition": "acute_shoulder_injury",
+      "severity": "caution",
+      "modification": "Regress to scapula push-up from knees, or perform on a wall (standing scapular push-up against wall). Consult physio if pain during movement.",
+      "modificationPl": "Cofnij się do pompki łopatkowej z kolan lub wykonuj na ścianie (stojąca pompka łopatkowa o ścianę). Skonsultuj z fizjoterapeutą, jeśli ruch boli.",
+      "alternative": "wall-scapular-push-up"
+    },
+    {
+      "condition": "winged_scapula_severe",
+      "severity": "modify",
+      "modification": "Often PRESCRIBED for mild scapular winging — but severe long thoracic nerve dysfunction may need physio guidance. Start with wall version, smaller ROM, higher reps.",
+      "modificationPl": "Często ZALECANA przy łagodnym odstawaniu łopatki — ale ciężka dysfunkcja nerwu piersiowego długiego wymaga prowadzenia fizjoterapeuty. Zacznij od wersji o ścianę, mniejszego ROM, większej liczby powtórzeń.",
+      "alternative": "wall-scapular-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "If you cannot hold a rigid plank, regress to knee version (scapular push-up from knees). Maintaining the plank longer than the scapular movement is the limiting factor.",
+      "modificationPl": "Jeśli nie utrzymujesz sztywnej planki, cofnij się do wersji z kolan (pompka łopatkowa z kolan). Utrzymanie planki dłużej niż ruch łopatek jest czynnikiem ograniczającym.",
+      "alternative": "knee-scapular-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (prehab/warm-up) | 2-3x15-20 (serratus development) | 3x30-60 sec (slow tempo, isometric holds)",
+  "calories_per_kg_per_hour": 3.0,
+
+  "media": {
+    "primary": "scapula-push-up.gif",
+    "frames_extracted": [
+      "frames/scapula-push-up/frame_0_start.png",
+      "frames/scapula-push-up/frame_1_early.png",
+      "frames/scapula-push-up/frame_2_mid.png",
+      "frames/scapula-push-up/frame_3_late.png",
+      "frames/scapula-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "serratus-anterior/scapula-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start) i Frame 4 (end): postać w wysokiej plance — ramiona w pełni wyprostowane, łokcie zablokowane, klatka uniesiona, górne plecy lekko zaokrąglone (protrakcja łopatek). Wyraźnie zaznaczona na czerwono okolica łopatek/serratus anterior pod pachą oraz lower trapezius w okolicy środkowo-górnych pleców. Frame 2 (mid): ta sama pozycja planki z PROSTYMI łokciami, ale klatka delikatnie opada w stronę podłogi (~5-10 cm), łopatki ściągają się ku sobie (retrakcja). Brak zgięcia łokci — to NIE pompka, to ruch wyłącznie z łopatek. Bardzo mały zakres ruchu — różnica między klatkami subtelna, co potwierdza specyfikę ćwiczenia. Klasyk prehab/rehab. Wszystkie pola PL pisane od zera w polskim standardzie fitness/fizjoterapii. Anatomicznie: primary serratus_anterior (P9) + lower_trapezius (P7) — para mięśni odpowiedzialnych za upward rotation łopatki. Mechanic=isolation, plane=transverse (ruch łopatek po klatce), force=push.",
+
+  "tags": ["bodyweight", "calisthenics", "prehab", "rehab", "shoulder_health", "serratus_anterior", "scapular_control", "isolation", "beginner_friendly", "warm_up", "no_equipment", "home_workout", "physiotherapy"]
+}

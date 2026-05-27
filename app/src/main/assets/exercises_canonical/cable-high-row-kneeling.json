@@ -1,0 +1,201 @@
+{
+  "id": "cable-high-row-kneeling",
+  "name": "Cable High Row Kneeling",
+  "namePl": "Wiosło wysokie z wyciągu w klęku",
+  "aliases": ["kneeling cable high row", "high cable row kneeling", "kneeling high pulley row", "cable high row", "kneeling rope high row"],
+  "aliasesPl": ["wiosłowanie z górnego wyciągu w klęku", "high row z wyciągu w klęku", "wiosło wysokie w klęku", "kneeling high row", "wiosło z wysokiego wyciągu w klęku"],
+
+  "description": "High-angle rowing variation performed kneeling in front of a high pulley with the cable set at the top of the tower. You kneel facing the machine, grab the bar/rope with arms fully extended overhead toward the pulley, and row down-and-back along a descending diagonal — elbows finish high (around ear/shoulder height) with the handle close to the face or upper chest. The descending pull angle and high elbow path bias the upper lats, lower trapezius and rhomboids more than a horizontal seated row, while the kneeling position locks the lower body and forces strict scapular work without lower-back compensation. Effectively a hybrid between a face pull, a high row and a partial lat pulldown — outstanding for upper-back thickness and scapular control.",
+  "descriptionPl": "Wariant wiosłowania pod kątem wysokim wykonywany w klęku przodem do wyciągu z linką ustawioną na samej górze maszyny. Klękasz tyłem do wyciągu... a właściwie PRZODEM do maszyny, łapiesz drążek/linę z ramionami w pełni wyciągniętymi w górę w stronę bloczka i ciągniesz po skosie w dół-do siebie — łokcie kończą wysoko (na wysokości uszu/barków), a uchwyt ląduje blisko twarzy lub górnej części klatki. Opadający kąt ciągu i wysoka pozycja łokci akcentują górną część najszerszych grzbietu, dolny czworoboczny i równoległoboczne mocniej niż klasyczne wiosłowanie poziome, a pozycja klęcząca blokuje dolne partie ciała i wymusza ścisłą pracę łopatek bez kompensacji odcinkiem lędźwiowym. W praktyce hybryda między face pullem, wiosłem wysokim a częściowym ściąganiem na wyciągu górnym — fenomenalne na grubość górnych pleców i kontrolę łopatek.",
+
+  "instructions": [
+    "Set the cable pulley to the highest position. Attach a straight bar, lat bar or rope handle.",
+    "Kneel facing the machine — both knees on the floor, hips stacked over knees, torso upright. Distance from machine: arms fully extended overhead reach the handle with the cable under tension (not slack).",
+    "Grab the handle with overhand grip (or neutral if using rope), arms fully extended toward the pulley — they should be angled forward-and-up, roughly along the cable line.",
+    "Brace the core, ribs down, neutral spine. Pelvis stays neutral (no lower-back arching).",
+    "Initiate the pull by depressing and retracting the shoulder blades BEFORE the elbows bend. Lats and lower traps wake up first.",
+    "Pull the handle down-and-toward your face / upper chest along the cable line. Elbows travel back and slightly down, finishing high — around ear or shoulder height — NOT down by the ribs.",
+    "At the end position: handle near the face / collarbones, elbows flared back at shoulder level, shoulder blades fully retracted and depressed, chest proud. Squeeze for 1 second.",
+    "Reverse the motion in full control along the same diagonal path. Let the arms extend fully overhead at the end of the eccentric, lats stretched but spine still neutral.",
+    "Keep the torso vertical and the kneeling base completely still — no rocking, no hip extension, no leaning back to help the pull.",
+    "Repeat for prescribed reps maintaining smooth tempo and constant cable tension."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek wyciągu w najwyższej pozycji. Podepnij prosty drążek, drążek do ściągań lub linę.",
+    "Uklęknij przodem do maszyny — oba kolana na podłodze, biodra nad kolanami, tułów wyprostowany. Odległość od maszyny: ramiona w pełni wyciągnięte w górę sięgają do uchwytu przy napiętej lince (nie luźnej).",
+    "Złap uchwyt nachwytem (lub neutralnie jeśli używasz liny), ramiona w pełni wyprostowane w stronę bloczka — powinny iść skośnie w przód i w górę, mniej więcej wzdłuż linii linki.",
+    "Napnij brzuch, żebra w dół, kręgosłup neutralny. Miednica neutralna (bez wyginania odcinka lędźwiowego).",
+    "Rozpocznij ruch obniżeniem i ściągnięciem łopatek ZANIM zaczniesz zginać łokcie. Najszersze i dolny czworoboczny włączają się jako pierwsze.",
+    "Ciągnij uchwyt w dół i w stronę twarzy / górnej części klatki wzdłuż linii linki. Łokcie idą w tył i lekko w dół, kończąc wysoko — na wysokości uszu lub barków — NIE przy żebrach.",
+    "W końcowej pozycji: uchwyt blisko twarzy / obojczyków, łokcie odprowadzone w tył na wysokości barków, łopatki maksymalnie ściągnięte i obniżone, klatka wysunięta. Zatrzymaj napięcie na 1 sekundę.",
+    "Odwróć ruch w pełnej kontroli po tej samej skośnej linii. Pozwól ramionom wyciągnąć się w pełni w górę na końcu fazy ekscentrycznej, najszersze rozciągnięte ale kręgosłup nadal neutralny.",
+    "Trzymaj tułów pionowo a podstawę klęczącą całkowicie nieruchomo — bez bujania, bez prostowania bioder, bez odchylania się w tył do pomocy w ciągu.",
+    "Powtórz zaplanowaną liczbę powtórzeń utrzymując płynne tempo i stałe napięcie linki."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids"],
+    "secondary": ["biceps_brachii", "trapezius_middle_lower", "posterior_deltoids"],
+    "stabilizers": ["erector_spinae", "core", "forearms", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S6",
+    "erector_spinae": "S5",
+    "core": "S5",
+    "glutes": "S4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "lat_bar"],
+    "optional": ["rope_attachment", "straight_bar", "lifting_straps", "knee_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["cable-low-seated-row", "lat-pulldown", "face-pull"],
+    "progression_to": ["chest-supported-t-bar-row", "single-arm-cable-high-row", "meadows-row"],
+    "alternatives": ["face-pull", "lat-pulldown", "chest-supported-row", "cable-low-seated-row", "high-row-machine"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Cable at the TOP — high pulley, not mid or low",
+      "Kneel facing the machine, both knees down, hips stacked over knees",
+      "Arms fully extended overhead toward the pulley, cable line taut at start",
+      "Torso vertical, ribs down, glutes squeezed lightly to lock the pelvis",
+      "Brace the core BEFORE the first rep"
+    ],
+    "setup_cues_pl": [
+      "Linka na GÓRZE — wysoki bloczek, nie środkowy ani dolny",
+      "Klęknij przodem do maszyny, oba kolana na podłodze, biodra nad kolanami",
+      "Ramiona w pełni wyciągnięte w górę w stronę bloczka, linka napięta od startu",
+      "Tułów pionowy, żebra w dół, pośladki lekko napięte by zablokować miednicę",
+      "Napnij brzuch PRZED pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Start with the scapulae — depress and retract before the elbows bend",
+      "Pull DOWN-AND-BACK along the cable line — diagonal, not horizontal",
+      "Elbows finish HIGH — at ear / shoulder height, flared back",
+      "Handle to the face / collarbones, NOT to the belly",
+      "Squeeze upper-back / lower-trap pinch for 1 second every rep"
+    ],
+    "execution_cues_pl": [
+      "Zacznij od łopatek — obniż i ściągnij je zanim zaczniesz zginać łokcie",
+      "Ciągnij W DÓŁ I W TYŁ po linii linki — skośnie, nie poziomo",
+      "Łokcie kończą WYSOKO — na wysokości uszu / barków, odprowadzone w tył",
+      "Uchwyt do twarzy / obojczyków, NIE do brzucha",
+      "Zaciśnij górne plecy / dolny czworoboczny na 1 sekundę przy każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the handle to the belly instead of the face (turning it into a low row)",
+        "faultPl": "Ciągnięcie uchwytu do brzucha zamiast do twarzy (zamiana w wiosło niskie)",
+        "cause": "Habit from seated cable row, wrong elbow path, or trying to lift heavier weight than the high-row angle allows",
+        "causePl": "Nawyk z seated cable row, zły tor łokci lub próba podniesienia większego ciężaru niż pozwala kąt wysokiego ciągu",
+        "cue": "Elbows go BACK at SHOULDER height — not down by the ribs. The handle should travel along the cable line toward your face. If you pull to the belly, the pulley is set too high for that pattern — you're doing the wrong exercise.",
+        "cuePl": "Łokcie idą W TYŁ na wysokości BARKÓW — nie w dół przy żebrach. Uchwyt powinien iść po linii linki w stronę twarzy. Jeśli ciągniesz do brzucha, bloczek jest za wysoko dla tego wzorca — robisz inne ćwiczenie."
+      },
+      {
+        "fault": "Leaning back to help the pull (using torso extension as leverage)",
+        "faultPl": "Odchylanie tułowia w tył by pomóc w ciągu (używanie wyprostu tułowia jako dźwigni)",
+        "cause": "Load too heavy, weak lats/mid-back, or unstable kneeling base",
+        "causePl": "Zbyt duży ciężar, słabe najszersze/górne plecy lub niestabilna podstawa klęcząca",
+        "cue": "Torso stays VERTICAL through the whole rep. Imagine a broomstick on your back from head to tailbone — it never tilts. If you have to lean back to finish the pull, reduce weight by 20-30%. Glutes stay squeezed to lock the hips.",
+        "cuePl": "Tułów zostaje PIONOWY przez całe powtórzenie. Wyobraź sobie kij od miotły wzdłuż pleców od głowy do kości ogonowej — nigdy się nie przechyla. Jeśli musisz odchylać się by skończyć ciąg, zmniejsz ciężar o 20-30%. Pośladki napięte by zablokować biodra."
+      },
+      {
+        "fault": "Arms-only pull — no scapular retraction / depression",
+        "faultPl": "Ciągnięcie samymi rękami — brak ściągnięcia / obniżenia łopatek",
+        "cause": "Biceps-dominant pulling habit, weak lower traps and rhomboids, rushed tempo",
+        "causePl": "Nawyk dominacji bicepsów, słabe dolne czworoboczne i równoległoboczne, zbyt szybkie tempo",
+        "cue": "BEFORE the elbow bends, the shoulder blade slides DOWN and BACK. Think 'put my shoulder blades in my back pockets' as you start the pull. Lats and lower traps — not biceps — finish the rep.",
+        "cuePl": "ZANIM zegnie się łokieć, łopatka ślizga się W DÓŁ i W TYŁ. Pomyśl 'wsuń łopatki do tylnych kieszeni' rozpoczynając ciąg. Najszersze i dolny czworoboczny — nie bicepsy — kończą powtórzenie."
+      },
+      {
+        "fault": "Lower-back hyperextension at the end of the pull (ribs flared up)",
+        "faultPl": "Hiperekstensja odcinka lędźwiowego na końcu ciągu (żebra wystrzelone w górę)",
+        "cause": "Trying to get more range / 'open chest' by arching the lower back instead of retracting the scapulae",
+        "causePl": "Próba uzyskania większego zakresu / 'otwartej klatki' przez wygięcie odcinka lędźwiowego zamiast ściągnięcia łopatek",
+        "cue": "Ribs STAY DOWN. The 'chest proud' cue means scapular retraction, NOT lumbar extension. Glutes squeezed, abs braced, ribs glued to the pelvis. If you feel lower back arching, reduce weight or check pelvic position.",
+        "cuePl": "Żebra ZOSTAJĄ W DÓŁ. 'Wysunięta klatka' znaczy ściągnięcie łopatek, NIE wyprost lędźwi. Pośladki napięte, brzuch napięty, żebra przyklejone do miednicy. Jeśli czujesz wyginanie pleców, zmniejsz ciężar lub sprawdź pozycję miednicy."
+      },
+      {
+        "fault": "Setting the pulley too low or kneeling too close — losing the descending pull angle",
+        "faultPl": "Ustawienie bloczka za nisko lub klęczenie zbyt blisko — utrata opadającego kąta ciągu",
+        "cause": "Treating it like a regular row, not understanding the high-pulley diagonal pattern",
+        "causePl": "Traktowanie ćwiczenia jak zwykłe wiosłowanie, brak zrozumienia skośnego wzorca z wysokiego bloczka",
+        "cue": "Pulley at the TOP. Kneel far enough that fully extended arms point UP-AND-FORWARD at start — roughly along the cable line. If the cable is horizontal when your arms are extended, you're doing a regular row. The whole point is the descending diagonal.",
+        "cuePl": "Bloczek na GÓRZE. Klęknij na tyle daleko by w pełni wyprostowane ramiona kierowały się W GÓRĘ I W PRZÓD na starcie — mniej więcej wzdłuż linii linki. Jeśli linka jest pozioma gdy ramiona są wyciągnięte, robisz zwykłe wiosło. Cały sens jest w skośnym opadającym torze."
+      }
+    ],
+    "breathing": "Inhale at the start (arms extended overhead). Exhale through the pull as the handle descends toward the face. Inhale on the controlled return. For heavier sets, brace and hold breath through the concentric, exhale at the top contraction.",
+    "breathingPl": "Wdech na starcie (ramiona wyciągnięte w górę). Wydech w trakcie ciągu gdy uchwyt opada w stronę twarzy. Wdech podczas kontrolowanego powrotu. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech w punkcie szczytowego napięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Tighten the kneeling brace — glutes max squeezed, ribs locked down. Reduce weight by 30-40%. If pain persists or you need lumbar extension to finish reps, stop and switch to chest-supported row.",
+      "modificationPl": "Wzmocnij stabilizację w klęku — pośladki maksymalnie napięte, żebra zablokowane w dół. Zmniejsz ciężar o 30-40%. Jeśli ból się utrzymuje lub potrzebujesz wyprostu lędźwi by skończyć powtórzenia, przerwij i zmień na wiosłowanie z podparciem klatki.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use a rope attachment with neutral grip (palms facing) — much friendlier than overhand pronated. Reduce range at the top so arms don't go to full overhead flexion. Keep elbows slightly below shoulder height at end of pull.",
+      "modificationPl": "Użyj liny z chwytem neutralnym (dłonie do siebie) — znacznie przyjaźniejsza niż chwyt pronowany. Zmniejsz zakres na górze by ramiona nie szły do pełnego zgięcia. Trzymaj łokcie lekko poniżej wysokości barków na końcu ciągu.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Place a foam pad or folded mat under both knees. If pain persists, switch to a half-kneeling (one knee up) or seated variation at a high pulley.",
+      "modificationPl": "Połóż matę piankową lub złożoną matę pod oba kolana. Jeśli ból się utrzymuje, zmień na pół-klęk (jedno kolano w górze) lub wariant siedzący na wysokim bloczku.",
+      "alternative": "seated-cable-high-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / mid-back focus) | 3-4x12-20 (volume / pump work) | 4x8-12 (heavier strength)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-high-row-kneeling.gif",
+    "frames_extracted": [
+      "frames/cable-high-row-kneeling/frame_0_start.png",
+      "frames/cable-high-row-kneeling/frame_1_early.png",
+      "frames/cable-high-row-kneeling/frame_2_mid.png",
+      "frames/cable-high-row-kneeling/frame_3_late.png",
+      "frames/cable-high-row-kneeling/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cable-high-row-kneeling"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 z 5 klatek GIFa (start/mid/end). Frame 0 (start): osoba klęczy przodem do maszyny z linką ustawioną w NAJWYŻSZEJ pozycji bloczka, oba kolana na podłodze, biodra nad kolanami, tułów pionowy. Ramiona w PEŁNI wyciągnięte W GÓRĘ I W PRZÓD w stronę bloczka, trzymając poprzeczny drążek (lat bar) nachwytem. Podświetlone są: cały obszar najszerszych grzbietu (mocno), równoległoboczne, środkowy i dolny czworoboczny, oraz tylne aktony naramiennych. Frame 2 (mid): faza koncentryczna w połowie — łokcie idą W DÓŁ I W TYŁ po skosie, są mniej więcej na wysokości barków/szyi, drążek już prawie przy twarzy. Wyraźny wzorzec OPADAJĄCEJ DIAGONALI ciągu (nie pozioma, nie pionowa) — to klasyczne wiosło wysokie. Tułów stabilny, kąt pionowy zachowany. Frame 4 (end): identyczna z frame 0 (powrót do pozycji startowej, ramiona ponownie wyciągnięte w górę). To potwierdza pełen zakres ekscentryku do FULL OVERHEAD reach — ramiona idą do pełnego zgięcia, lats rozciągnięte. Klasyfikacja: movement_pattern='pull_horizontal' (najbliższy wzorzec — wiosło z elementem high-row, ale lats/rhomboids dominują, nie pull_vertical jak lat pulldown). Equipment: cable_machine + lat_bar (drążek poprzeczny wyraźnie widoczny). Difficulty 4 — łatwiejsze niż barbell row bo pozycja klęcząca eliminuje stabilizację dolnych pleców, łatwiejsze niż freeweight row bo cable daje stałe napięcie, ale trudniejsze niż seated row bo wymaga utrzymania pionu w klęku bez podparcia. Primary: latissimus_dorsi P9 (mocno aktywne ze względu na opadający kąt ciągu, lats w funkcji ekstensji ramienia), rhomboids P9 (klasyczne ściąganie łopatek). Secondary: trapezius_middle_lower S8 (wysoki kąt ciągu mocno włącza dolny czworoboczny — ważny element odróżniający od low row), posterior_deltoids S7 (elbows wysoko = back deltoid contribution większe niż w seated row), biceps_brachii S7. Stabilizers: erector_spinae S5, core S5, glutes S4 (must squeeze to lock pelvis in kneeling). Wszystkie pola PL napisane od zera, polski standard fitness ('Wiosło wysokie z wyciągu w klęku' — opisowa nazwa zgodna z polską terminologią).",
+
+  "tags": ["compound", "upper_back_thickness", "cable", "kneeling", "high_pulley", "diagonal_pull", "scapular_retraction", "mid_back", "lat_developer", "back_hypertrophy", "lower_trap_focus"]
+}

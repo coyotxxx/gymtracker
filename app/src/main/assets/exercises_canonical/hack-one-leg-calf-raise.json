@@ -1,0 +1,209 @@
+{
+  "id": "hack-one-leg-calf-raise",
+  "name": "Hack Squat One-Leg Calf Raise",
+  "namePl": "Calf raise jednonóż w hack squat",
+  "aliases": ["single leg calf raise hack squat", "unilateral hack squat calf raise", "one leg hack machine calf raise"],
+  "aliasesPl": ["wspięcia na palce jednonóż w hack squat", "jednostronne wspięcia w maszynie hack", "calf raise w maszynie hack squat na jedną nogę", "jednonożne wspięcia na łydkę w hack squat"],
+
+  "description": "Unilateral standing-style calf raise performed in a hack squat machine. The lifter positions themselves under the shoulder pads with the back against the angled pad, places one foot on the footplate with the ball of the foot on the edge (heel free to drop below the platform), and lifts the other leg out of the way. The machine allows very heavy unilateral loading of the gastrocnemius and soleus through a deep plantarflexion range of motion. Because the knee can be kept extended, both heads of the gastrocnemius are placed under stretch and become the primary mover, with soleus assisting. The unilateral nature exposes side-to-side calf imbalances and lets each leg work without the stronger side compensating. The hack squat machine is significantly safer for heavy loads than a standing dumbbell or barbell version because the load is racked and stabilized by the sled.",
+  "descriptionPl": "Jednonożne wspięcia w stylu stojącym wykonywane w maszynie hack squat. Ćwiczący ustawia się pod podkładkami na barki, plecy oparte o nachylony pad, jedna stopa na platformie z śródstopiem na krawędzi (pięta swobodnie opada pod platformę), druga noga uniesiona z boku. Maszyna pozwala na bardzo ciężkie jednostronne obciążenie mięśnia brzuchatego i płaszczkowatego w pełnym zakresie zgięcia podeszwowego. Ponieważ kolano można utrzymać wyprostowane, obie głowy mięśnia brzuchatego są rozciągnięte i stają się głównym motorem ruchu, a płaszczkowaty pełni rolę wspomagającą. Praca jednostronna ujawnia różnice siły między łydkami i nie pozwala silniejszej stronie kompensować. Maszyna hack squat jest znacznie bezpieczniejsza dla dużych ciężarów niż wersja stojąca z hantlami lub sztangą, ponieważ obciążenie jest zamocowane i stabilizowane przez sanie.",
+
+  "instructions": [
+    "Load the hack squat with a moderate weight to start — the lever advantage of the machine means you will be able to handle much more than free-weight calf raises after a few sessions.",
+    "Position yourself under the shoulder pads with your back flat against the angled pad and chest tall.",
+    "Place one foot on the footplate with the ball of the foot on the lower edge of the platform so the heel is free to drop below it.",
+    "Lift the other leg off the platform — either bent at the knee tucked behind you or extended out to the side, whichever feels stable.",
+    "Unrack the sled by pressing the handles or rotating the safety stops, then stand with the working knee fully extended (but not hyperextended) to load the gastrocnemius.",
+    "Lower the heel slowly under control into a deep stretch below the platform edge. Inhale during the descent.",
+    "Drive through the ball of the foot and push the heel up as high as possible. Exhale at the top.",
+    "Hold the peak contraction for 1-2 seconds — visualize trying to point the toes straight down at the floor.",
+    "Lower again under control for 2-3 seconds back into the deep stretch. Do not bounce.",
+    "Complete all reps on one side, then carefully re-rack the sled before switching legs. Always start the next set with the weaker side first."
+  ],
+  "instructionsPl": [
+    "Załaduj hack squat umiarkowanym ciężarem na początek — dźwignia maszyny sprawia, że po kilku sesjach poradzisz sobie ze znacznie większym obciążeniem niż w wersjach z wolnym ciężarem.",
+    "Ustaw się pod podkładkami na barki, plecy płasko oparte o nachylony pad, klatka piersiowa uniesiona.",
+    "Ustaw jedną stopę na platformie tak, aby śródstopie znalazło się na dolnej krawędzi, a pięta mogła swobodnie opaść poniżej platformy.",
+    "Unieś drugą nogę z platformy — albo zgiętą w kolanie schowaną z tyłu, albo wyprostowaną w bok, w zależności od tego co jest stabilniejsze.",
+    "Wyłącz blokady sań (naciśnij rączki lub obróć zabezpieczenia) i wyprostuj nogę roboczą w kolanie (nie przeprostowuj), aby obciążyć mięsień brzuchaty.",
+    "Opuść piętę powoli i pod kontrolą w głęboki rozciąg poniżej krawędzi platformy. Wdech podczas opuszczania.",
+    "Pchnij przez śródstopie i wypchnij piętę w górę tak wysoko, jak to możliwe. Wydech na szczycie.",
+    "Utrzymaj szczytowy skurcz przez 1-2 sekundy — wyobraź sobie, że próbujesz skierować palce prosto w podłogę.",
+    "Opuszczaj ponownie pod kontrolą przez 2-3 sekundy z powrotem w głęboki rozciąg. Bez odbijania.",
+    "Wykonaj wszystkie powtórzenia na jednej nodze, następnie ostrożnie zablokuj sanie przed zmianą nogi. Następną serię zaczynaj zawsze od słabszej strony."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius", "soleus"],
+    "secondary": ["peroneals", "tibialis_posterior"],
+    "stabilizers": ["foot_intrinsics", "quadriceps", "gluteus_medius", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P9",
+    "soleus": "P8",
+    "peroneals": "S4",
+    "tibialis_posterior": "S3",
+    "foot_intrinsics": "T3",
+    "quadriceps": "T2",
+    "gluteus_medius": "T2",
+    "core": "T1",
+    "erector_spinae": "T1"
+  },
+
+  "equipment": {
+    "required": ["hack_squat_machine"],
+    "optional": ["weight_plates", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-calf-raise", "machine-calf-raise"],
+    "progression_to": ["donkey-calf-raise", "standing-barbell-calf-raise"],
+    "alternatives": ["leg-press-one-leg-calf-raise", "machine-standing-calf-raise", "smith-machine-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Back flat against the hack pad, shoulders firmly under the pads",
+      "Ball of one foot on the lower edge of the footplate, heel free",
+      "Other leg lifted clear — tucked behind or extended to the side",
+      "Working knee extended but not locked out hard",
+      "Grip handles for balance, brace core lightly"
+    ],
+    "setup_cues_pl": [
+      "Plecy płasko oparte o pad hack squat, barki mocno pod podkładkami",
+      "Śródstopie jednej stopy na dolnej krawędzi platformy, pięta swobodna",
+      "Druga noga uniesiona — schowana z tyłu lub wyprostowana w bok",
+      "Kolano roboczej nogi wyprostowane, ale nie przeprostowane",
+      "Trzymaj rączki dla równowagi, lekko napnij brzuch"
+    ],
+    "execution_cues": [
+      "Drop the heel slowly below the platform — feel the calf stretch hard",
+      "Drive through the big toe and ball of the foot, not the outer edge",
+      "Push the heel as high as possible — toes pointing down",
+      "Hold the peak squeeze for 1-2 seconds on every rep",
+      "Lower under control for 2-3 seconds — no bouncing"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj piętę powoli poniżej platformy — poczuj mocny rozciąg łydki",
+      "Pchaj przez paluch i śródstopie, nie przez zewnętrzną krawędź stopy",
+      "Wypchnij piętę maksymalnie wysoko — palce skierowane w dół",
+      "Utrzymaj szczytowy skurcz 1-2 sekundy w każdym powtórzeniu",
+      "Opuszczaj pod kontrolą przez 2-3 sekundy — bez odbijania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Partial range of motion — not dropping heel below platform edge",
+        "faultPl": "Niepełny zakres ruchu — pięta nie opada poniżej krawędzi platformy",
+        "cause": "Foot placed too far back on the platform with heel supported, or fear of the deep stretch under load",
+        "causePl": "Stopa ustawiona zbyt daleko na platformie z podpartą piętą, lub strach przed głębokim rozciągiem pod obciążeniem",
+        "cue": "Place only the ball of the foot on the edge so the heel hangs in air. Let it drop fully below platform level every rep.",
+        "cuePl": "Ustaw na krawędzi tylko śródstopie tak, aby pięta wisiała w powietrzu. Pozwól jej w pełni opaść poniżej platformy w każdym powtórzeniu."
+      },
+      {
+        "fault": "Bent working knee throughout the rep",
+        "faultPl": "Zgięte kolano nogi pracującej przez cały ruch",
+        "cause": "Trying to use the quads to assist the calf, or insufficient ankle mobility to reach top contraction with straight leg",
+        "causePl": "Próba wspomagania pracy łydki mięśniem czworogłowym lub niewystarczająca mobilność stawu skokowego do osiągnięcia szczytu ze wyprostowaną nogą",
+        "cue": "Keep the working knee extended throughout the movement — bent knee shortens gastrocnemius and turns this into a soleus-only drill.",
+        "cuePl": "Utrzymuj kolano roboczej nogi wyprostowane przez cały ruch — zgięte kolano skraca brzuchaty i zamienia to ćwiczenie w izolację samego płaszczkowatego."
+      },
+      {
+        "fault": "Bouncing reps using Achilles tendon stretch reflex",
+        "faultPl": "Odbijane powtórzenia z wykorzystaniem odruchu rozciągowego ścięgna Achillesa",
+        "cause": "Going too heavy, chasing rep count, lack of mind-muscle connection",
+        "causePl": "Zbyt duży ciężar, gonienie za liczbą powtórzeń, brak świadomego napięcia mięśnia",
+        "cue": "Pause 1 second at the bottom stretch. If you cannot pause, reduce the load — tendons recoil, muscles do the work.",
+        "cuePl": "Zatrzymaj się 1 sekundę w dolnym rozciągu. Jeśli nie potrafisz wytrzymać pauzy, zmniejsz ciężar — to ścięgna się odbijają, a mięśnie powinny pracować."
+      },
+      {
+        "fault": "Loading the outer edge of the foot (foot rolls outward)",
+        "faultPl": "Obciążanie zewnętrznej krawędzi stopy (stopa rotuje na zewnątrz)",
+        "cause": "Weak peroneals/big toe drive, or stance with toes rotated too far in/out",
+        "causePl": "Słabe mięśnie strzałkowe lub słabe wypychanie palucha, lub zbyt rotacyjna pozycja stóp",
+        "cue": "Drive through the big toe and inside of the ball of the foot. Keep the foot tracking straight — toes forward.",
+        "cuePl": "Pchaj przez paluch i wewnętrzną część śródstopia. Utrzymuj stopę prosto — palce skierowane do przodu."
+      },
+      {
+        "fault": "Letting the non-working leg rest on the platform or sled",
+        "faultPl": "Opieranie nogi nieroboczej o platformę lub sanie",
+        "cause": "Discomfort holding the free leg up, or accidentally engaging both legs",
+        "causePl": "Dyskomfort utrzymywania wolnej nogi w powietrzu lub przypadkowe użycie obu nóg",
+        "cue": "Keep the free leg clearly off the platform — tuck the foot behind the working ankle so it cannot accidentally push.",
+        "cuePl": "Utrzymuj wolną nogę wyraźnie nad platformą — schowaj stopę za kostkę nogi roboczej, aby przypadkiem nie pchała."
+      }
+    ],
+    "breathing": "Inhale during the descent into the deep stretch. Exhale powerfully as you drive the heel up. Maintain a light core brace throughout to support the back against the pad.",
+    "breathingPl": "Wdech podczas opuszczania w głęboki rozciąg. Mocny wydech podczas wypychania pięty w górę. Utrzymuj lekkie napięcie brzucha przez cały ruch, aby wspierać plecy opierane o pad."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid heavy loads and deep eccentrics during the irritable phase. Reduce ROM (do not drop heel below neutral) and emphasize slow controlled tempo with moderate load. Heavy slow resistance protocols can be therapeutic once cleared by a physio. Discontinue if pain exceeds 3/10 during or after sets.",
+      "modificationPl": "Unikaj dużych ciężarów i głębokich faz negatywnych w fazie podrażnienia. Ogranicz zakres ruchu (nie opuszczaj pięty poniżej poziomu neutralnego) i postaw na powolne kontrolowane tempo ze średnim obciążeniem. Protokoły ciężkiego wolnego oporu mogą być terapeutyczne po konsultacji z fizjoterapeutą. Przerwij, jeśli ból przekracza 3/10 w trakcie lub po seriach.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not perform under load during acute phase. Once cleared, return with bodyweight calf raises and gradually add load over weeks, avoiding deep stretch until pain-free.",
+      "modificationPl": "Nie wykonuj pod obciążeniem w fazie ostrej. Po wygojeniu wracaj od wspięć z masą własnego ciała i stopniowo dodawaj obciążenie przez kilka tygodni, unikając głębokiego rozciągu do całkowitego ustąpienia bólu.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "balance_or_vestibular_disorders",
+      "severity": "modify",
+      "modification": "Unilateral loading in a hack squat requires balance and core stability. If standing on one leg under load is unsafe, switch to a bilateral seated or machine variation where balance is not required.",
+      "modificationPl": "Jednostronne obciążenie w hack squat wymaga równowagi i stabilności tułowia. Jeśli stanie na jednej nodze pod obciążeniem jest niebezpieczne, zmień na wersję obunożną siedzącą lub maszynową, gdzie równowaga nie jest wymagana.",
+      "alternative": "machine-standing-calf-raise"
+    },
+    {
+      "condition": "plantar_fasciitis",
+      "severity": "modify",
+      "modification": "Heavy loaded deep dorsiflexion can aggravate plantar fascia symptoms. Limit ROM at the bottom, use moderate loads, and avoid training to failure. Warm up with calf foam rolling and light bodyweight raises first.",
+      "modificationPl": "Ciężkie obciążenia w głębokiej dorsifleksji mogą nasilać objawy zapalenia rozcięgna podeszwowego. Ogranicz zakres ruchu na dole, używaj umiarkowanych ciężarów i unikaj treningu do upadku mięśniowego. Rozgrzej się rolowaniem łydek i lekkimi wspięciami z masą ciała.",
+      "alternative": "machine-seated-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per leg (hypertrophy) | 4-5x6-10 per leg (heavy strength) | 2-3x15-25 per leg (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "hack-one-leg-calf-raise.gif",
+    "frames_extracted": [
+      "frames/hack-one-leg-calf-raise/frame_0_start.png",
+      "frames/hack-one-leg-calf-raise/frame_1_early.png",
+      "frames/hack-one-leg-calf-raise/frame_2_mid.png",
+      "frames/hack-one-leg-calf-raise/frame_3_late.png",
+      "frames/hack-one-leg-calf-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/hack-one-leg-calf-raise",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model leży na plecach w maszynie hack squat (typ z nachylonym padem 45 stopni), barki pod podkładkami, plecy oparte o pad, jedna noga (prawa) wyprostowana w kolanie ze śródstopiem na dolnej krawędzi platformy i piętą swobodnie poniżej — pozycja wyjściowa z piętą w pełnym rozciągu. Łydka prawej nogi mocno podświetlona na czerwono. Druga noga zgięta i schowana. Frame 2: pięta uniesiona, śródstopie obciążone, sanie maszyny wraz z barkami przesunięte w górę o kilka cm dzięki samej pracy łydki, kolano wciąż wyprostowane — szczyt zakresu w plantarfleksji. Frame 4: powrót do pozycji wyjściowej z piętą poniżej platformy. Ćwiczenie zidentyfikowane jednoznacznie jako Hack One-Leg Calf Raise — unilateralna izolacja łydki w maszynie hack squat. UWAGA: w tej maszynie kolano jest wyprostowane, więc gastrocnemius pracuje jako primary (P9), a soleus jako wspomagający-primary (P8) — odwrotnie niż w seated calf raise. Maszyna hack squat to closed kinetic chain (stopa zafiksowana na platformie, ciało się porusza), unilateral z racji jednonożnej pracy. Wszystkie pola PL napisane od zera. Yuhonas i glowupp nie mają tego ćwiczenia.",
+
+  "tags": ["bodybuilding", "calves", "gastrocnemius", "soleus", "isolation", "machine", "hack_squat", "unilateral", "lower_body", "lower_legs"]
+}

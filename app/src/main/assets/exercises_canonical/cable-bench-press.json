@@ -1,0 +1,203 @@
+{
+  "id": "cable-bench-press",
+  "name": "Cable Bench Press",
+  "namePl": "Bench press z wyciągu",
+  "aliases": ["cable chest press", "lying cable press", "flat cable bench press", "cable flat press"],
+  "aliasesPl": ["wyciskanie poziome z wyciągu", "wyciskanie na ławce poziomej z wyciągu", "cable bench", "wyciskanie linkami na ławce"],
+
+  "description": "Horizontal pressing variation performed lying on a flat bench positioned between two low cable pulleys. Each hand holds a single handle and presses simultaneously upward and slightly inward, similar to a dumbbell bench press. The unique advantage versus free weights is CONSTANT TENSION on the pectorals throughout the entire range of motion — cables do not lose resistance at lockout the way gravity-based dumbbells/barbells do. Excellent for chest hypertrophy with a strong stimulus at both stretch and contraction.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany leżąc na ławce poziomej ustawionej między dwoma dolnymi wyciągami cable. Każda ręka trzyma osobny uchwyt i wyciska jednocześnie w górę i lekko do środka, podobnie jak w wyciskaniu hantli. Unikalna zaleta względem wolnych ciężarów to STAŁE NAPIĘCIE na klatce piersiowej przez cały zakres ruchu — linki nie tracą oporu na szczycie tak jak hantle czy sztanga (bazujące na grawitacji). Świetne do hipertrofii klatki, mocny bodziec zarówno w rozciągnięciu, jak i w skurczu.",
+
+  "instructions": [
+    "Set both pulleys to the LOWEST position. Position a flat bench between the two cable stacks so that when you lie down, the pulleys are roughly in line with your shoulders (behind/below).",
+    "Attach a single handle (D-handle) to each cable. Sit on the bench, then carefully grab both handles before lying back — or have a partner hand them to you.",
+    "Lie flat on the bench, feet planted firmly on the floor, knees ~90°. Retract and depress the shoulder blades, slight natural arch in the lower back.",
+    "Starting position: handles at chest level on either side, palms facing forward (pronated grip), elbows tucked at ~45-60° from torso. You should feel constant tension from the cables pulling your arms outward and slightly back.",
+    "Inhale, brace the core. Press both handles up and slightly inward in a controlled arc — finish with hands meeting (or nearly meeting) directly above the chest, arms extended but elbows not locked rigid.",
+    "Squeeze the pecs hard at the top — cables maximize peak contraction here, unlike free weights.",
+    "Exhale at the top. Lower the handles back with control to chest level — feel the deep stretch in the pecs. Eccentric ~2-3 seconds.",
+    "Do NOT let the elbows drop below the bench line aggressively — keep tension on the pecs, not on the shoulder capsule.",
+    "Repeat for prescribed reps. To finish: lower handles to chest, sit up, and place handles on the floor or hand them off — do not let the stacks slam down."
+  ],
+  "instructionsPl": [
+    "Ustaw oba wyciągi w pozycji NAJNIŻSZEJ. Umieść ławkę poziomą między dwoma stacjami cable tak, by po położeniu się wyciągi znajdowały się mniej więcej w linii Twoich barków (za/poniżej).",
+    "Przypnij pojedynczy uchwyt (D-handle) do każdej linki. Usiądź na ławce, ostrożnie chwyć oba uchwyty przed położeniem się — lub poproś partnera, by Ci je podał.",
+    "Połóż się płasko na ławce, stopy mocno na podłodze, kolana ~90°. Ściągnij łopatki w dół i razem, lekki naturalny łuk w dolnych plecach.",
+    "Pozycja startowa: uchwyty na wysokości klatki po obu stronach, dłonie zwrócone do przodu (chwyt pronowany), łokcie schowane pod kątem ~45-60° od tułowia. Powinieneś czuć stałe napięcie linek ciągnących ręce na zewnątrz i lekko do tyłu.",
+    "Wdech, napięcie brzucha. Wyciśnij oba uchwyty w górę i lekko do środka kontrolowanym łukiem — zakończ z dłońmi spotykającymi się (lub niemal spotykającymi) bezpośrednio nad klatką, ramiona wyprostowane, ale łokcie bez sztywnego lock-out.",
+    "Mocno spnij klatkę na szczycie — to tu linki maksymalizują skurcz szczytowy, w przeciwieństwie do wolnych ciężarów.",
+    "Wydech na górze. Opuszczaj uchwyty z kontrolą z powrotem do poziomu klatki — poczuj głębokie rozciągnięcie klatki. Faza ekscentryczna ~2-3 sekundy.",
+    "NIE pozwól łokciom opaść agresywnie poniżej linii ławki — utrzymuj napięcie na klatce, nie na torebce stawowej barku.",
+    "Powtórz przez zaplanowaną liczbę powtórzeń. Zakończenie: opuść uchwyty do klatki, usiądź i odłóż uchwyty na podłogę lub oddaj partnerowi — nie pozwól, by stosy ciężarów spadły z hukiem."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "anterior_deltoids": "P7",
+    "triceps": "P6",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "flat_bench", "d_handles"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-bench-press", "machine-chest-press"],
+    "progression_to": ["incline-cable-bench-press", "single-arm-cable-bench-press", "cable-fly"],
+    "alternatives": ["dumbbell-bench-press", "barbell-bench-press", "machine-chest-press", "cable-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both pulleys at LOWEST position — bench centered between stacks",
+      "Pulleys in line with shoulders (behind/below) when lying flat",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Feet planted, slight arch in lower back, glutes on bench",
+      "Pronated grip, handles at chest level, feel constant cable tension"
+    ],
+    "setup_cues_pl": [
+      "Oba wyciągi w pozycji NAJNIŻSZEJ — ławka wycentrowana między stosami",
+      "Wyciągi w linii barków (za/poniżej) gdy leżysz płasko",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Stopy zaparte, lekki łuk w dolnych plecach, pośladki na ławce",
+      "Chwyt pronowany, uchwyty na wysokości klatki, czuj stałe napięcie linek"
+    ],
+    "execution_cues": [
+      "Press up AND inward — hands meet over the chest at top",
+      "Squeeze pecs HARD at peak contraction — cables shine here",
+      "Eccentric ~2-3 seconds, feel the deep stretch at chest level",
+      "Keep elbows at ~45-60° from torso, NOT flared to 90°",
+      "Maintain constant tension — never let cables go slack"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę I do środka — dłonie spotykają się nad klatką na szczycie",
+      "MOCNO spnij klatkę w szczycie skurczu — tu linki dają najwięcej",
+      "Faza ekscentryczna ~2-3 sekundy, poczuj głębokie rozciągnięcie na poziomie klatki",
+      "Łokcie ~45-60° od tułowia, NIE rozsunięte na 90°",
+      "Utrzymuj stałe napięcie — linki nigdy nie luzują"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulleys set too high — turns the movement into a press-down/decline",
+        "faultPl": "Wyciągi ustawione za wysoko — zmienia ruch w wyciskanie skośne w dół",
+        "cause": "Operator error during setup, lack of awareness of cable angle",
+        "causePl": "Błąd ustawienia, brak świadomości kąta linki",
+        "cue": "Pulleys at the LOWEST position. Cables should pull from behind/below shoulders, not from above.",
+        "cuePl": "Wyciągi w pozycji NAJNIŻSZEJ. Linki powinny ciągnąć z tyłu/poniżej barków, nie z góry."
+      },
+      {
+        "fault": "Hands drift apart at the top — losing pec engagement",
+        "faultPl": "Dłonie rozjeżdżają się na szczycie — utrata napięcia klatki",
+        "cause": "Treating the press like a fly; not pressing inward at the top",
+        "causePl": "Traktowanie wyciskania jak rozpiętek; brak nacisku do środka na szczycie",
+        "cue": "Hands should meet (or nearly meet) above the chest. Squeeze the pecs together — that's the cable advantage.",
+        "cuePl": "Dłonie powinny spotkać się (lub niemal) nad klatką. Spnij klatkę razem — to przewaga linek."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Lack of awareness, copying fly position, ego with too heavy weight",
+        "causePl": "Brak świadomości, kopiowanie pozycji rozpiętek, ego ze zbyt ciężkim ciężarem",
+        "cue": "Tuck elbows to ~45-60°. 'Hide your armpits from the ceiling'. Protects the shoulders.",
+        "cuePl": "Schowaj łokcie do ~45-60°. 'Schowaj pachy przed sufitem'. Chroni barki."
+      },
+      {
+        "fault": "Letting cables go slack at bottom — losing constant tension",
+        "faultPl": "Pozwalanie linkom zluzować na dole — utrata stałego napięcia",
+        "cause": "ROM too short, stopping above chest, or weight stack hitting bottom",
+        "causePl": "Za krótki ROM, zatrzymanie powyżej klatki lub stos ciężarów dochodzący do dołu",
+        "cue": "The whole point of cables is constant tension. If stack hits bottom, increase weight or shorten cable lever.",
+        "cuePl": "Cały sens linek to stałe napięcie. Jeśli stos uderza w dno, dodaj ciężaru lub skróć rękę dźwigni."
+      },
+      {
+        "fault": "Asymmetry — one arm leading or pressing higher than the other",
+        "faultPl": "Asymetria — jedna ręka prowadzi lub wyciska wyżej",
+        "cause": "Dominant side compensating; mismatched cable lengths; weak stabilizers",
+        "causePl": "Strona dominująca kompensuje; różne długości linek; słabe stabilizatory",
+        "cue": "Move both handles in sync. Check cable lengths before starting. If gap persists, do single-arm cable press.",
+        "cuePl": "Ruszaj oba uchwyty synchronicznie. Sprawdź długości linek przed startem. Jeśli różnica się utrzymuje, wykonaj single-arm cable press."
+      }
+    ],
+    "breathing": "Inhale at the bottom (stretch position), brace, exhale on the press up. Maintain bracing throughout.",
+    "breathingPl": "Wdech na dole (pozycja rozciągnięcia), napięcie, wydech podczas wyciskania w górę. Utrzymuj napięcie tułowia przez cały ruch."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (rotate handles so palms face each other) — friendlier to the shoulder joint. Reduce ROM if pain on bottom.",
+      "modificationPl": "Użyj chwytu neutralnego (obróć uchwyty tak, by dłonie były zwrócone do siebie) — przyjaźniejszy dla stawu barkowego. Zmniejsz ROM jeśli ból na dole.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Cable bench press demands rotator stabilization at the bottom (cables pull arms back). Switch to fixed-path machine until cleared by physio.",
+      "modificationPl": "Cable bench press wymaga stabilizacji rotatorów na dole (linki ciągną ręce do tyłu). Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Constant cable tension stresses a strained pec heavily, especially in stretch position. Pause training, resume with light machine work first.",
+      "modificationPl": "Stałe napięcie linek mocno obciąża naderwaną klatkę, zwłaszcza w pozycji rozciągniętej. Wstrzymaj trening, wróć przez lekkie maszyny.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Avoid excessive arch — keep glutes and upper back firmly on the bench. Feet flat on the floor (or on the bench if needed) to reduce lumbar load.",
+      "modificationPl": "Unikaj nadmiernego łuku — pośladki i górne plecy mocno na ławce. Stopy płasko na podłodze (lub na ławce jeśli trzeba) by zmniejszyć obciążenie lędźwi.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy, default) | 3x12-15 (pump/finisher) | 4x8-10 (strength-hypertrophy)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-bench-press.gif",
+    "frames_extracted": [
+      "frames/cable-bench-press/frame_0_start.png",
+      "frames/cable-bench-press/frame_1_early.png",
+      "frames/cable-bench-press/frame_2_mid.png",
+      "frames/cable-bench-press/frame_3_late.png",
+      "frames/cable-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): atleta leży płasko na ławce poziomej, dwa wyciągi cable ustawione przy podłodze za ławką, uchwyty D-handle na wysokości klatki po obu stronach, chwyt pronowany, łokcie zgięte ~90°, klatka podświetlona. Frame 2 (góra): pełne wyciśnięcie, ręce wyprostowane, uchwyty spotykają się nad górną klatką, klatka piersiowa + przednie delty + tricepsy aktywne. Frame 4 (powrót w dół z motion blur): widać kontrolowany powrót do pozycji startowej z zachowanym napięciem linek. Pectoralis major + anterior deltoid + triceps brachii podświetlone — zgodne z anatomią dla horizontal press. Linki dają stałe napięcie — kluczowa różnica vs dumbbell bench press (constant tension w lockout, gdzie wolne ciężary tracą opór). Bilateral, compound, sagittal, push. PL nazwa zgodna z polskim standardem fitness ('Bench press z wyciągu'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest_hypertrophy", "cable", "chest", "constant_tension", "bilateral"]
+}

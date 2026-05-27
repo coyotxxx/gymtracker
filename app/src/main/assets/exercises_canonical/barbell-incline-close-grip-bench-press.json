@@ -1,0 +1,203 @@
+{
+  "id": "barbell-incline-close-grip-bench-press",
+  "name": "Barbell Incline Close-Grip Bench Press",
+  "namePl": "Wyciskanie sztangi wąskim chwytem na ławce skośnej dodatniej",
+  "aliases": ["incline close grip bench press", "incline CGBP", "incline close grip press", "barbell incline narrow grip press"],
+  "aliasesPl": ["wyciskanie wąskim chwytem na skosie dodatnim", "incline close grip bench", "wyciskanie sztangą wąsko na ławce skośnej", "wąski chwyt skos dodatni", "CGBP skos dodatni", "wyciskanie sztangi wąsko na górną klatkę"],
+
+  "description": "Hybrid horizontal-to-vertical press that combines two modifications of the classic bench press: positive incline angle (30-45°) and narrow grip (~shoulder-width). Loads two regions simultaneously — the clavicular (upper) head of the chest and the triceps (especially the long head) — with significant anterior deltoid involvement. Excellent compound builder for the upper chest / triceps tie-in, and a smart accessory both for raw bench pressers and for athletes seeking aesthetic upper-body development. Typical loads ~70-80% of standard incline bench 1RM.",
+  "descriptionPl": "Pchnięcie hybrydowe poziomo-pionowe łączące dwie modyfikacje klasycznego wyciskania: dodatni kąt ławki (30-45°) i wąski chwyt (~na szerokość barków). Obciąża jednocześnie dwa obszary — obojczykową (górną) głowę klatki piersiowej i tricepsy (szczególnie głowę długą) — przy znaczącym udziale przednich aktonów barków. Świetny wielostawowy budowniczy 'styku' górna klatka / tricepsy, dobre ćwiczenie pomocnicze zarówno dla zawodników trójboju, jak i osób trenujących estetykę górnej części ciała. Typowe ciężary ~70-80% 1RM ze standardowego incline bench.",
+
+  "instructions": [
+    "Set an incline bench at 30-45° inside the rack. 30° gives more upper chest, 45° shifts emphasis toward anterior deltoids and triceps. Do not exceed 45°.",
+    "Lie back with your eyes directly under the bar. Plant the feet firmly on the floor, knees bent ~90°. Glutes stay on the bench.",
+    "Set the shoulder blades — retract and depress them hard into the bench pad ('pinch and tuck'). Maintain a slight natural arch in the lower back.",
+    "Grip the bar at approximately shoulder-width (biacromial) — index fingers on the knurling rings is a good reference. Wrap thumbs around the bar (no suicide grip).",
+    "Unrack by extending the arms. Stabilize the bar directly over your upper chest, not over the face.",
+    "Take a deep breath, brace the core, and lower the bar in a controlled tempo (2-3s eccentric) to the upper chest / lower-clavicle area. Keep elbows tucked to ~30-45° from the torso — closer than a regular incline bench.",
+    "Touch the chest lightly — do NOT bounce. Brief pause for strength work, immediate reversal for hypertrophy touch-and-go.",
+    "Press the bar straight up and slightly back, driving with the triceps and upper chest. Finish with elbows extended (not hyperextended) over the upper chest line.",
+    "Exhale at the top. Reset the breath and brace before each rep. After the last rep, re-rack with control."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną dodatnią w klatce pod kątem 30-45°. 30° daje więcej górnej klatki, 45° przesuwa akcent w stronę przednich aktonów barków i tricepsów. Nie przekraczaj 45°.",
+    "Połóż się oczami bezpośrednio pod gryfem. Stopy mocno na podłodze, kolana zgięte ~90°. Pośladki pozostają na ławce.",
+    "Ustaw łopatki — ściągnij je razem i wbij mocno w oparcie ławki ('zegnij i schowaj'). Zachowaj lekki naturalny łuk w dolnych plecach.",
+    "Złap gryf na szerokości barków (obojczykowa) — wskaziciele na pierścieniach gryfu to dobry punkt odniesienia. Owinij kciuki wokół gryfu (NIE chwyt 'samobójczy').",
+    "Wyciągnij sztangę ze stojaka prostując ramiona. Ustabilizuj ją bezpośrednio nad górną klatką, nie nad twarzą.",
+    "Nabierz głęboki oddech, napnij brzuch i kontrolowanym tempem (2-3s ekscentryk) opuszczaj gryf do górnej klatki / okolicy dolnych obojczyków. Trzymaj łokcie schowane do ~30-45° od tułowia — bliżej niż w klasycznym incline.",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza dla pracy nad siłą, natychmiastowy nawrót dla hipertrofii (touch-and-go).",
+    "Wyciśnij gryf prosto w górę i lekko do tyłu, prowadząc ruch tricepsami i górną klatką. Zakończ z wyprostowanymi łokciami (bez przeprostu) nad linią górnej klatki.",
+    "Wydech na górze. Resetuj oddech i napięcie przed każdym powtórzeniem. Po ostatniej powtórce odłóż gryf z kontrolą."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major_clavicular"],
+    "secondary": ["anterior_deltoids", "pectoralis_major"],
+    "stabilizers": ["serratus_anterior", "core", "rotator_cuff", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "pectoralis_major_clavicular": "P8",
+    "anterior_deltoids": "S7",
+    "pectoralis_major": "S5",
+    "serratus_anterior": "T3",
+    "core": "T3",
+    "upper_back": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "incline_bench", "power_rack_or_bench_with_supports"],
+    "optional": ["wrist_wraps", "belt", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-incline-bench-press", "close-grip-bench-press", "triceps-pushdown"],
+    "progression_to": ["pause-incline-close-grip-bench-press", "weighted-dips", "barbell-incline-bench-press"],
+    "alternatives": ["close-grip-bench-press", "barbell-incline-bench-press", "smith-machine-incline-close-grip-bench-press", "dumbbell-incline-triceps-extension", "weighted-dips"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench angle 30-45° (NOT higher — overhead press territory)",
+      "Eyes under the bar before unrack",
+      "Shoulder blades retracted and depressed HARD into the pad",
+      "Grip ~shoulder-width (biacromial), thumbs wrapped",
+      "Elbows pre-set to ~30-45° from torso"
+    ],
+    "setup_cues_pl": [
+      "Kąt ławki 30-45° (NIE wyżej — to już OHP)",
+      "Oczy pod gryfem przed wyciągnięciem ze stojaka",
+      "Łopatki ściągnięte i MOCNO wbite w oparcie",
+      "Chwyt ~na szerokość barków (obojczykowa), kciuki owinięte",
+      "Łokcie wstępnie ustawione do ~30-45° od tułowia"
+    ],
+    "execution_cues": [
+      "Drive with the triceps — feel them lock out at the top",
+      "Lower to upper chest / lower clavicle, light touch",
+      "Bar path: straight up and slightly back over the shoulder line",
+      "Keep elbows tucked the whole rep — don't let them flare under fatigue",
+      "Glutes STAY on the bench, no hip pop"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch tricepsami — czuj ich blokadę na górze",
+      "Opuszczaj do górnej klatki / dolnych obojczyków, lekki dotyk",
+      "Ścieżka gryfu: prosto w górę i lekko do tyłu nad linią barków",
+      "Trzymaj łokcie schowane przez całe powtórzenie — nie pozwól im rozjechać się przy zmęczeniu",
+      "Pośladki POZOSTAJĄ na ławce, bez podrywania bioder"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip too narrow (hands touching or <biacromial width)",
+        "faultPl": "Chwyt za wąski (dłonie się stykają lub <szerokość obojczykowa)",
+        "cause": "Misconception that 'narrower = more triceps'. In reality ultra-narrow grip overloads the wrists and elbows without adding triceps work.",
+        "causePl": "Mit, że 'węziej = więcej tricepsa'. W rzeczywistości bardzo wąski chwyt przeciąża nadgarstki i łokcie bez dodatkowej pracy tricepsa.",
+        "cue": "Hands ~shoulder-width. Index fingers on the knurling rings is the sweet spot.",
+        "cuePl": "Dłonie ~na szerokość barków. Wskaziciele na pierścieniach gryfu to optymalny punkt."
+      },
+      {
+        "fault": "Elbows flaring to 70-90° from torso",
+        "faultPl": "Łokcie rozjeżdżają się do 70-90° od tułowia",
+        "cause": "Treating it like a regular incline bench, losing the close-grip cue under fatigue — defeats the purpose and stresses anterior shoulder.",
+        "causePl": "Traktowanie ćwiczenia jak klasyczne wyciskanie skośne, utrata cue chwytu wąskiego przy zmęczeniu — niweczy cel ćwiczenia i obciąża przednią torebkę barku.",
+        "cue": "Tuck elbows close — ~30-45°. 'Brush them past the ribs on the way down.'",
+        "cuePl": "Schowaj łokcie blisko — ~30-45°. 'Niech otrą się o żebra po drodze w dół.'"
+      },
+      {
+        "fault": "Wrists bent back under load",
+        "faultPl": "Nadgarstki zagięte do tyłu pod obciążeniem",
+        "cause": "Bar resting on the fingers instead of the palm heel; narrow grip greatly increases wrist leverage.",
+        "causePl": "Gryf w palcach zamiast podstawy dłoni; wąski chwyt znacznie zwiększa dźwignię na nadgarstek.",
+        "cue": "Bar in the palm heel, stack wrist directly over forearm. Use wrist wraps if needed.",
+        "cuePl": "Gryf w podstawie dłoni, nadgarstek bezpośrednio nad przedramieniem. Użyj wraps jeśli trzeba."
+      },
+      {
+        "fault": "Bouncing the bar off the chest",
+        "faultPl": "Odbijanie gryfu od klatki",
+        "cause": "Ego lifting, using momentum to cheat the press — especially dangerous on incline because of the bar trajectory and narrow grip.",
+        "causePl": "Ego lifting, używanie pędu by oszukać wyciskanie — szczególnie niebezpieczne na skosie ze względu na trajektorię gryfu i wąski chwyt.",
+        "cue": "Control the eccentric (2-3s down). Light touch, no bounce. Reduce weight if you can't.",
+        "cuePl": "Kontroluj fazę ekscentryczną (2-3s w dół). Lekki dotyk, bez odbicia. Zmniejsz ciężar jeśli nie dajesz rady."
+      },
+      {
+        "fault": "Bench angle too steep (>45°)",
+        "faultPl": "Zbyt stromy kąt ławki (>45°)",
+        "cause": "Trying to maximize upper-chest activation — but past 45° EMG shows the press becomes essentially a tight-grip OHP, with anterior delt taking over.",
+        "causePl": "Próba maksymalizacji aktywacji górnej klatki — ale powyżej 45° EMG pokazuje, że wyciskanie staje się praktycznie wąskim OHP, z dominacją przednich aktonów.",
+        "cue": "Stick to 30° (more chest) or 45° (more delt + triceps). Above that — switch to overhead press.",
+        "cuePl": "Trzymaj 30° (więcej klatki) lub 45° (więcej akto + triceps). Powyżej — zrób OHP zamiast incline."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold through the descent and press. Exhale at lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech w lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_pain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Close grip + incline increases triceps tendon stress. Widen the grip slightly toward shoulder-width, reduce weight, or replace with cable triceps work.",
+      "modificationPl": "Wąski chwyt + skos zwiększa stres ścięgna tricepsa. Lekko poszerz chwyt w stronę barków, zmniejsz ciężar lub zamień na pracę tricepsa na wyciągu.",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps and make sure the bar is in the palm heel, not the fingers. Widen the grip slightly if pain persists, or switch to neutral-grip dumbbells.",
+      "modificationPl": "Użyj wraps i upewnij się, że gryf jest w podstawie dłoni, nie w palcach. Lekko poszerz chwyt jeśli ból dalej lub przejdź na hantle z chwytem neutralnym.",
+      "alternative": "dumbbell-incline-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Tucked elbows actually help vs. regular incline — but lower bench angle (15-20°), reduce weight, and avoid heavy singles. If irritation persists, switch to dips or cable triceps.",
+      "modificationPl": "Schowane łokcie raczej pomagają vs. klasyczny incline — ale obniż kąt ławki (15-20°), zmniejsz ciężar i unikaj ciężkich pojedynczych. Jeśli drażni, przejdź na dipy lub triceps na wyciągu.",
+      "alternative": "weighted-dips"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Incline angle increases AC joint stress; close grip with tucked elbows partly offsets it. Drop weight, prefer 8-12 reps over heavy singles, or switch to dumbbells with neutral grip.",
+      "modificationPl": "Skos zwiększa obciążenie stawu barkowo-obojczykowego; wąski chwyt ze schowanymi łokciami częściowo to kompensuje. Zmniejsz ciężar, preferuj 8-12 powtórzeń nad ciężkie pojedyncze lub przejdź na hantle z chwytem neutralnym.",
+      "alternative": "dumbbell-incline-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — upper chest + triceps tie-in) | 4x6-8 (strength accessory) | 3x10-15 (volume accessory)",
+  "calories_per_kg_per_hour": 5.4,
+
+  "media": {
+    "primary": "barbell-incline-close-grip-bench-press.gif",
+    "frames_extracted": [
+      "frames/barbell-incline-close-grip-bench-press/frame_0_start.png",
+      "frames/barbell-incline-close-grip-bench-press/frame_1_early.png",
+      "frames/barbell-incline-close-grip-bench-press/frame_2_mid.png",
+      "frames/barbell-incline-close-grip-bench-press/frame_3_late.png",
+      "frames/barbell-incline-close-grip-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-incline-close-grip-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:15:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Ławka skośna DODATNIA pod kątem ok. 30-35° (głowa wyżej niż biodra — przeciwnie do decline). Frame 0 (start): gryf nad górną klatką, łokcie zgięte i schowane blisko tułowia (~30-40°), chwyt wąski na szerokość barków, łopatki ściągnięte. Frame 2 (mid): pełny lock-out, gryf nad linią górnej klatki / barków, ramiona prawie wyprostowane, tricepsy w pełnym skurczu (podświetlone w animacji). Frame 4 (end): powrót do pozycji dolnej, kontrolowane schodzenie. W animacji podświetlone są tricepsy (głównie głowa długa) ORAZ górna klatka piersiowa — zgodne z biomechaniką: close grip + incline akcentuje długą głowę tricepsa i obojczykową głowę piersiowych. Brak odbicia, brak unoszenia bioder. Difficulty 6 (intermediate) — wymaga znajomości i kontroli zarówno mechaniki close-grip jak i incline; bardziej wymagające koordynacyjnie niż wariant na ławce poziomej. Wszystkie pola PL od zera. PL nazwa zgodna z polskim standardem ('skośna dodatnia' = pod kątem dodatnim, w przeciwieństwie do ujemnej / decline).",
+
+  "tags": ["barbell", "triceps", "upper_chest", "close_grip", "incline", "horizontal_push", "compound", "strength", "hypertrophy", "tie_in_movement"]
+}

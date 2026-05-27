@@ -1,0 +1,210 @@
+{
+  "id": "smith-upright-row",
+  "name": "Smith Upright Row",
+  "namePl": "Wiosło stojące w maszynie Smitha (smith upright row)",
+  "aliases": ["smith machine upright row", "smith vertical row", "smith narrow grip upright row"],
+  "aliasesPl": ["wiosłowanie pionowe w smithu", "podciąganie sztangi do brody w maszynie smitha", "upright row w maszynie smitha", "wiosło stojące smith"],
+
+  "description": "A standing vertical pull performed inside a Smith machine. The lifter stands directly under the fixed-track bar, holds it with a pronated grip at approximately shoulder-width, and pulls it straight up the front of the body, leading with the elbows, until the bar reaches chin / collarbone height with elbows at or just above shoulder level. The Smith's fixed vertical track removes the need to balance the bar and locks the path of motion — which is both the appeal and the trap of this variant: it lets the lifter focus purely on driving with the lateral deltoids and upper trapezius, but it also forces the bar to travel along a single line that may not match the lifter's anatomy, increasing the risk of subacromial impingement if grip width or stance is wrong. Primary movers are the lateral deltoid and upper trapezius; biceps, anterior deltoid and rhomboids work as synergists. Best programmed for intermediate-to-advanced lifters with healthy shoulders who want a stable, fatigue-resistant setup for higher-rep delts/traps work.",
+  "descriptionPl": "Pionowe pociąganie wykonywane stojąc w maszynie Smitha. Zawodnik staje bezpośrednio pod prowadnicą, łapie gryf nachwytem mniej więcej na szerokość barków i podciąga go pionowo wzdłuż przedniej części tułowia prowadząc ruch łokciami, aż dotrze on na wysokość brody / obojczyków, a łokcie znajdą się na wysokości barków lub nieznacznie powyżej. Stała pionowa prowadnica Smitha eliminuje konieczność balansowania gryfu i blokuje tor ruchu — to jednocześnie zaleta i pułapka tego wariantu: pozwala skupić się wyłącznie na napędzaniu ruchu bocznymi aktonami naramiennego i górną częścią czworobocznego, ale zmusza gryf do poruszania się po jednej linii, która niekoniecznie pasuje do anatomii ćwiczącego, co zwiększa ryzyko konfliktu podbarkowego, jeśli szerokość chwytu lub ustawienie stóp są nieprawidłowe. Głównymi mięśniami pracującymi są boczne aktony naramiennego i górny czworoboczny; bicepsy, przedni akton naramiennego i równoległoboczne pracują jako synergiści. Najlepiej programować to ćwiczenie u średniozaawansowanych i zaawansowanych ze zdrowymi barkami, którzy potrzebują stabilnego, mało męczącego stabilizatorami setupu do wysoko-objętościowej pracy nad barkami i kapturami.",
+
+  "instructions": [
+    "Set up the Smith machine with the bar at mid-thigh height when re-racked. Load the bar evenly on both sides.",
+    "Step in close so your toes are roughly under the bar. Feet hip-to-shoulder-width apart, knees soft.",
+    "Grip the bar with a pronated (overhand) grip at approximately shoulder-width — hands roughly under the shoulders.",
+    "Rotate the bar to unrack it. Stand tall with the bar hanging at arms' length against the front of your thighs.",
+    "Set the shoulders back and down, chest tall, core braced. Ribs stacked over hips.",
+    "Initiate the pull by driving your elbows up and slightly out to the sides — lead with the elbows, not the hands.",
+    "Pull the bar straight up the fixed track, keeping it close to the body, until it reaches upper-chest / collarbone height.",
+    "At the top, elbows are at or just above shoulder height and the upper arms are roughly parallel to the floor.",
+    "Hold for a brief squeeze, feeling the lateral delts and upper traps contract.",
+    "Lower the bar under control over 2-3 seconds back to the fully extended starting position at the thighs.",
+    "Exhale during the pull, inhale during the descent. Keep the torso vertical — the Smith makes leaning back especially dangerous because the bar locks you into a forced path."
+  ],
+  "instructionsPl": [
+    "Ustaw maszynę Smitha tak, aby gryf po zaczepieniu znajdował się na wysokości środka uda. Załaduj obciążenie równomiernie po obu stronach.",
+    "Stań blisko maszyny — palce stóp mniej więcej pod gryfem. Stopy na szerokość bioder do szerokości barków, kolana lekko ugięte.",
+    "Złap gryf nachwytem (dłonie w dół) na szerokość barków — dłonie mniej więcej pod barkami.",
+    "Obróć gryf aby odczepić go z zaczepów. Stań prosto, gryf wisi na wyprostowanych ramionach przy przedniej części ud.",
+    "Ściągnij barki w tył i w dół, klatka w górze, brzuch napięty. Żebra nad biodrami.",
+    "Zainicjuj ruch wypychając łokcie w górę i lekko na boki — prowadź ruch łokciami, nie dłońmi.",
+    "Podciągnij gryf pionowo po prowadnicy, blisko ciała, aż dotrze na wysokość górnej części klatki / obojczyków.",
+    "W górnej pozycji łokcie są na wysokości barków lub nieznacznie powyżej, a ramiona ponad łokciem są mniej więcej równoległe do podłogi.",
+    "Zatrzymaj na chwilę aby poczuć skurcz bocznych aktonów naramiennego i górnej części czworobocznego.",
+    "Opuszczaj gryf w sposób kontrolowany przez 2-3 sekundy do pełnego wyprostu ramion w pozycji wyjściowej przy udach.",
+    "Wydech podczas unoszenia, wdech podczas opuszczania. Tułów ma pozostać pionowy — w Smithu odchylanie się w tył jest szczególnie niebezpieczne, bo gryf jest zablokowany na sztywnym torze."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids", "trapezius_upper"],
+    "secondary": ["anterior_deltoid", "biceps_brachii", "rhomboids", "trapezius_middle"],
+    "stabilizers": ["rotator_cuff", "brachialis", "forearm_flexors", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P10",
+    "trapezius_upper": "P9",
+    "anterior_deltoid": "S6",
+    "biceps_brachii": "S6",
+    "rhomboids": "S5",
+    "trapezius_middle": "S5",
+    "rotator_cuff": "T3",
+    "brachialis": "T4",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["weight_plates", "collars", "lifting_straps", "wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-lateral-raise", "barbell-shrug"],
+    "progression_to": ["barbell-upright-row", "barbell-wide-grip-upright-row", "barbell-high-pull"],
+    "alternatives": ["barbell-upright-row", "barbell-wide-grip-upright-row", "ez-bar-upright-row", "dumbbell-upright-row", "cable-upright-row", "dumbbell-lateral-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand directly under the bar — toes roughly under it, not in front",
+      "Overhand grip at shoulder-width — hands under the shoulders",
+      "Unrack with a clean twist, bar against thighs, arms fully extended",
+      "Chest up, shoulders packed back and down, core braced",
+      "Ribs over hips — no leaning back to compensate"
+    ],
+    "setup_cues_pl": [
+      "Stań dokładnie pod gryfem — palce stóp mniej więcej pod nim, nie przed",
+      "Nachwyt na szerokość barków — dłonie pod barkami",
+      "Odczep gryf zdecydowanym obrotem, oprzyj o uda, ramiona w pełnym wyproście",
+      "Klatka w górze, barki ściągnięte w tył i w dół, brzuch napięty",
+      "Żebra nad biodrami — nie odchylaj się w tył dla kompensacji"
+    ],
+    "execution_cues": [
+      "Lead with the elbows — drive them up and slightly out to the sides",
+      "Bar travels straight up the fixed track, brushing close to the body",
+      "Stop when the bar reaches collarbone height and elbows are at shoulder level",
+      "Feel the lateral delts and upper traps doing the work, not the biceps",
+      "Lower slowly — 2-3 seconds eccentric, control against the fixed path"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch łokciami — wypychaj je w górę i lekko na boki",
+      "Gryf porusza się pionowo po prowadnicy, ocierając się o tułów",
+      "Zatrzymaj gdy gryf dotrze na wysokość obojczyków, a łokcie na wysokość barków",
+      "Czuj pracę bocznych aktonów naramiennego i górnej części czworobocznego, nie bicepsów",
+      "Opuszczaj wolno — 2-3 sekundy fazy negatywnej, kontroluj ruch wbrew sztywnemu torowi"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling elbows excessively above shoulder height",
+        "faultPl": "Zbyt wysokie unoszenie łokci ponad linię barków",
+        "cause": "Trying to maximize range of motion, copying high-pull technique, not understanding the impingement mechanism",
+        "causePl": "Próba maksymalizacji zakresu ruchu, kopiowanie techniki high-pull, brak świadomości mechanizmu konfliktu podbarkowego",
+        "cue": "Stop when the upper arms are parallel to the floor. The Smith's fixed track makes going higher even more dangerous — it forces internal humeral rotation along a path your shoulder may not tolerate.",
+        "cuePl": "Zatrzymaj gdy ramiona ponad łokciem są równolegle do podłogi. Sztywna prowadnica Smitha sprawia, że unoszenie wyżej jest jeszcze bardziej niebezpieczne — wymusza rotację wewnętrzną kości ramiennej po torze, którego bark może nie tolerować."
+      },
+      {
+        "fault": "Standing too far forward or too far back relative to the bar",
+        "faultPl": "Stanie zbyt daleko z przodu lub z tyłu względem gryfu",
+        "cause": "Not setting up under the fixed track — bar then drags against thighs (too far back) or pulls you into a forward lean (too far forward)",
+        "causePl": "Brak ustawienia pod prowadnicą — gryf wtedy zaczepia o uda (zbyt daleko z tyłu) albo wciąga ćwiczącego w pochylenie do przodu (zbyt daleko z przodu)",
+        "cue": "Toes directly under the bar at the bottom. The bar should brush — not crash into — the front of your thighs. Reset stance if needed.",
+        "cuePl": "Palce stóp dokładnie pod gryfem w pozycji dolnej. Gryf ma muskać — nie obijać — przednią część ud. Popraw ustawienie jeśli trzeba."
+      },
+      {
+        "fault": "Grip too narrow",
+        "faultPl": "Zbyt wąski chwyt",
+        "cause": "Misguided belief that a narrow grip 'isolates' the traps better, copying old-school bodybuilding cues",
+        "causePl": "Błędne przekonanie że wąski chwyt 'lepiej izoluje' trapezy, kopiowanie przestarzałych wskazówek kulturystycznych",
+        "cue": "Hands at minimum shoulder-width. The Smith's locked path amplifies the impingement risk of narrow grips — if narrower feels needed, do shrugs instead.",
+        "cuePl": "Dłonie minimum na szerokość barków. Sztywna prowadnica Smitha wzmacnia ryzyko konfliktu podbarkowego przy wąskim chwycie — jeśli czujesz potrzebę węższego, lepiej zrób szrugsy."
+      },
+      {
+        "fault": "Using hip momentum (kipping) despite the locked path",
+        "faultPl": "Wykorzystywanie zamachu biodrami pomimo zablokowanego toru",
+        "cause": "Load too heavy for the shoulders, prioritizing weight over stimulus — the Smith makes it tempting because the bar 'helps' along the track",
+        "causePl": "Zbyt duży ciężar dla barków, stawianie kilogramów nad bodźcem — Smith kusi do takiej kompensacji, bo gryf 'pomaga' po prowadnicy",
+        "cue": "Drop the weight 20-30%. Hips stay still — only the arms and shoulder girdle move. The Smith is not your spotter.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Biodra nieruchome — pracują tylko ramiona i obręcz barkowa. Smith to nie asekuracja."
+      },
+      {
+        "fault": "Wrists collapse / hyperflex at the top",
+        "faultPl": "Załamywanie nadgarstków / nadmierne zginanie w górnej pozycji",
+        "cause": "Weak forearm flexors, trying to pull bar higher than necessary, fatigued grip locked in fixed pronation",
+        "causePl": "Słabe zginacze przedramienia, próba uniesienia gryfu wyżej niż potrzeba, zmęczenie chwytu zablokowanego w stałej pronacji",
+        "cue": "Keep wrists straight, in line with forearms. If they collapse — end the set. Smith's fixed pronation makes wrist fatigue come earlier than with a free bar.",
+        "cuePl": "Nadgarstki proste, w linii z przedramieniem. Jeśli się załamują — zakończ serię. Sztywna pronacja w Smithu sprawia, że nadgarstki męczą się szybciej niż na wolnej sztandze."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pull up). Inhale during the eccentric (lower down). Maintain a light brace throughout to stabilize the spine — especially important in the Smith, where the bar's fixed path will not forgive a collapsing torso.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby stabilizować kręgosłup — szczególnie ważne w Smithu, gdzie sztywny tor gryfu nie wybacza załamania tułowia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_subacromial_syndrome",
+      "severity": "avoid",
+      "modification": "Upright row in the Smith is the textbook impingement provocation pattern PLUS a locked vertical path that the shoulder cannot negotiate around. Avoid entirely during active impingement — the combination of humeral elevation, internal rotation and forced bar trajectory pinches the supraspinatus tendon against the acromion. Switch to lateral raises in the scapular plane after symptoms resolve.",
+      "modificationPl": "Upright row w Smithu to wręcz podręcznikowy układ prowokacyjny konfliktu podbarkowego PLUS zablokowany tor pionowy, którego bark nie jest w stanie obejść. Unikaj zupełnie przy aktywnym konflikcie — kombinacja uniesienia kości ramiennej, rotacji wewnętrznej i wymuszonego toru gryfu przygniata ścięgno mięśnia nadgrzebieniowego do wyrostka barkowego. Po ustąpieniu objawów przejdź na odwodzenia w płaszczyźnie łopatkowej.",
+      "alternative": "dumbbell-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy_or_tear",
+      "severity": "avoid",
+      "modification": "Vertical pulling combined with internal humeral rotation along a fixed path is strictly contraindicated for active rotator cuff pathology. Use lateral raises with thumbs-up (scaption) grip instead.",
+      "modificationPl": "Pionowe pociąganie połączone z rotacją wewnętrzną kości ramiennej po sztywnym torze jest stanowczo przeciwwskazane przy aktywnej patologii stożka rotatorów. Zamiast tego stosuj odwodzenia z kciukami w górę (scaption).",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "avoid",
+      "modification": "End-range upright row compresses the acromioclavicular joint, and the Smith's locked path removes any chance to deviate around the painful angle. Avoid entirely during active AC joint inflammation or arthropathy. Use lateral raises stopping at ~80 degrees abduction.",
+      "modificationPl": "Końcowy zakres ruchu upright row uciska staw barkowo-obojczykowy, a sztywna prowadnica Smitha odbiera jakąkolwiek szansę obejścia bolesnego kąta. Unikaj zupełnie przy aktywnym zapaleniu lub artropatii stawu AC. Stosuj odwodzenia z zatrzymaniem na ~80 stopniach.",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The Smith's straight bar locks the wrists in fixed pronation throughout, which can aggravate the ulnar side. Switch to EZ-bar (angled grip) on a free bar, dumbbells (free rotation) or kettlebells — the Smith offers no escape from the pronated position.",
+      "modificationPl": "Prosty gryf Smitha trzyma nadgarstki w stałej pronacji przez cały ruch, co drażni stronę łokciową. Przejdź na sztangę łamaną (kąt chwytu) na wolnej sztandze, hantle (swobodna rotacja) lub kettle — Smith nie daje ucieczki od chwytu pronowanego."
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x12-15 (high-volume / shoulder pump)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-upright-row.gif",
+    "frames_extracted": [
+      "frames/smith-upright-row/frame_0_start.png",
+      "frames/smith-upright-row/frame_1_early.png",
+      "frames/smith-upright-row/frame_2_mid.png",
+      "frames/smith-upright-row/frame_3_late.png",
+      "frames/smith-upright-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/smith-upright-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0: zawodnik stoi pod prowadnicą maszyny Smitha, gryf na wyprostowanych ramionach przed udami, chwyt nachwytem mniej więcej na szerokość barków, boczne aktony naramiennego i górny czworoboczny podświetlone na czerwono — klasyczny start upright row. Frame 2 (szczyt): gryf uniesiony pionowo do wysokości obojczyków/brody, łokcie wypchnięte w górę i wyraźnie na boki, na wysokości barków, intensywne podświetlenie bocznych aktonów naramiennego oraz górnej części czworobocznego — charakterystyczny punkt końcowy ruchu. Frame 4: powrót do pozycji wyjściowej. Pionowa sztywna prowadnica Smitha jest dobrze widoczna na wszystkich klatkach. Klasyfikacja: plane=sagittal (gryf wędruje pionowo przed tułowiem, w płaszczyźnie strzałkowej, nie frontalnej jak przy lateral raise), kinetic_chain=open (ręce trzymają wolny gryf w prowadnicy, koniec łańcucha kinematycznego nie jest zamocowany). Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego. Specyfika Smitha podkreślona w description, faultach #2 (stance) i wszystkich contraindications — sztywny tor = brak ucieczki z bolesnego kąta.",
+
+  "tags": ["bodybuilding", "shoulders", "delts", "lateral_deltoids", "traps", "compound", "smith_machine", "machine", "upper_body", "vertical_pull"]
+}

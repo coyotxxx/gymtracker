@@ -1,0 +1,198 @@
+{
+  "id": "weighted-pull-up",
+  "name": "Weighted Pull-Up",
+  "namePl": "Podciąganie z obciążeniem",
+  "aliases": ["weighted pullup", "weighted pull up", "loaded pull-up", "pull-up with weight", "belt pull-up"],
+  "aliasesPl": ["podciąganie z obciążeniem", "podciąganie z ciężarem", "podciąganie z talerzem", "podciąganie z dip belt", "obciążone podciąganie"],
+
+  "description": "Advanced progression of the standard pull-up where external load is added via a dip belt (with weight plate hanging between legs), a kettlebell held between feet, or a weight vest. The benchmark for upper-body relative + absolute pulling strength. Once you can do 10+ strict bodyweight pull-ups, weighted pull-ups become the primary tool for building lat thickness, raw back strength and bicep mass. Hypertrophy and strength tool — not a beginner exercise.",
+  "descriptionPl": "Zaawansowana progresja klasycznego podciągania, w której dodaje się zewnętrzne obciążenie przez dip belt (z talerzem zwisającym między nogami), kettlebell trzymany między stopami lub kamizelkę obciążeniową. Wskaźnik względnej i bezwzględnej siły ciągu górnej części ciała. Gdy zrobisz 10+ strict podciągnięć z masą ciała, podciąganie z obciążeniem staje się głównym narzędziem do budowy grubości najszerszych, surowej siły pleców i masy bicepsów. Narzędzie siłowe i hipertroficzne — nie dla początkujących.",
+
+  "instructions": [
+    "Attach a dip belt around your hips with a weight plate (start light: 5-10 kg). Alternative: hold a dumbbell or kettlebell between your feet, or wear a weighted vest.",
+    "Grip the pull-up bar with palms facing AWAY (pronated/overhand grip), hands slightly wider than shoulder-width.",
+    "Hang at full arm extension. Engage shoulder blades by pulling them DOWN (depression) — do not let them shrug up under load.",
+    "Brace your core HARD — the added weight increases spinal load and pendulum effect. Bend knees so the plate hangs cleanly.",
+    "Initiate the pull by driving elbows DOWN AND BACK toward your hips. The added weight makes momentum tempting — resist it.",
+    "Keep chest up, slight backward lean (15-20°). Absolutely NO kipping or swinging — under load this is injury territory.",
+    "Pull until your chin is clearly ABOVE the bar. Top position: chest near bar, elbows close to torso, plate stable between knees.",
+    "Lower with CONTROL (2-3 second eccentric ideal under load), fully extending arms at the bottom. Do not drop into the hang.",
+    "Each rep starts from full hang to full chin-over-bar. Quality over quantity — weighted pull-ups are typically done for 3-8 reps."
+  ],
+  "instructionsPl": [
+    "Załóż dip belt na biodra z talerzem (zacznij lekko: 5-10 kg). Alternatywa: trzymaj hantel/kettlebell między stopami lub załóż kamizelkę obciążeniową.",
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce nieco szerzej niż na szerokość barków.",
+    "Zwiśnij w pełnym wyproście ramion. Aktywuj łopatki ściągając je W DÓŁ (depresja) — nie pozwól im się unieść pod obciążeniem.",
+    "Napnij MOCNO brzuch — dodatkowy ciężar zwiększa obciążenie kręgosłupa i efekt wahadła. Zegnij kolana tak, by talerz zwisał czysto.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w kierunku bioder. Dodatkowy ciężar kusi by użyć pędu — nie poddawaj się.",
+    "Klatka w górze, lekkie odchylenie do tyłu (15-20°). Absolutnie BEZ kippingu i bujania — pod obciążeniem to droga do kontuzji.",
+    "Podciągaj aż broda będzie WYRAŹNIE nad drążkiem. Pozycja szczytowa: klatka blisko drążka, łokcie blisko tułowia, talerz stabilny między kolanami.",
+    "Opuszczaj KONTROLOWANYM ruchem (2-3 sekundy ekscentryka idealnie pod obciążeniem), pełen wyprost na dole. Nie 'spadaj' w zwis.",
+    "Każde powtórzenie od pełnego zwisu do pełnej brody nad drążkiem. Jakość ponad ilość — podciągania z obciążeniem zwykle robi się 3-8 powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["rhomboids", "teres_major", "brachialis", "trapezius_middle_lower", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P8",
+    "teres_major": "S9",
+    "rhomboids": "S8",
+    "trapezius_middle_lower": "S7",
+    "brachialis": "S7",
+    "brachioradialis": "S6",
+    "forearms": "S8",
+    "core": "S7"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar", "dip_belt"],
+    "optional": ["weight_plate", "kettlebell", "dumbbell", "weighted_vest", "chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["pull-up", "chin-up", "negative-pull-up"],
+    "progression_to": ["one-arm-pull-up", "muscle-up", "weighted-chest-to-bar-pull-up", "weighted-archer-pull-up"],
+    "alternatives": ["pull-up", "weighted-chin-up", "lat-pulldown", "chest-supported-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dip belt snug on hips, plate centered",
+      "Pronated grip, slightly wider than shoulders",
+      "Full hang with shoulder blades DOWN",
+      "Knees bent, plate hanging cleanly",
+      "Core braced HARD before first rep"
+    ],
+    "setup_cues_pl": [
+      "Dip belt mocno na biodrach, talerz wycentrowany",
+      "Chwyt nachwytem, nieco szerzej niż barki",
+      "Pełny zwis, łopatki W DÓŁ",
+      "Kolana zgięte, talerz zwisa czysto",
+      "Brzuch napięty MOCNO przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN, don't fight the weight",
+      "NO kipping — momentum under load = injury",
+      "Chin clearly OVER the bar",
+      "Controlled 2-3s eccentric on the way down",
+      "Full dead-hang each rep — no half ROM"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ, nie 'walcz' z ciężarem",
+      "BEZ kippingu — pęd pod obciążeniem = kontuzja",
+      "Broda WYRAŹNIE nad drążkiem",
+      "Kontrolowany ekscentryk 2-3s w dół",
+      "Pełen dead-hang każde powtórzenie — bez połowy ROM"
+    ],
+    "common_faults": [
+      {
+        "fault": "Loading weight before mastering 10+ strict bodyweight pull-ups",
+        "faultPl": "Dokładanie ciężaru przed opanowaniem 10+ strict podciągnięć na masie ciała",
+        "cause": "Ego progression — adding load to compensate for lack of base strength",
+        "causePl": "Progresja ego — dokładanie ciężaru by zrekompensować brak siły bazowej",
+        "cue": "Build to 10-12 strict pull-ups first. Then add 2.5 kg and reset progression.",
+        "cuePl": "Najpierw dojdź do 10-12 strict podciągnięć. Dopiero potem dodaj 2.5 kg i resetuj progresję."
+      },
+      {
+        "fault": "Swinging or kipping under load",
+        "faultPl": "Bujanie się lub kipping pod obciążeniem",
+        "cause": "Weight too heavy for strict execution, pendulum effect from hanging plate",
+        "causePl": "Ciężar zbyt duży dla strict wykonania, efekt wahadła z zwisającego talerza",
+        "cue": "Drop the weight by 25%. Squeeze plate between bent knees to kill pendulum. Strict only.",
+        "cuePl": "Zmniejsz ciężar o 25%. Ściśnij talerz między zgiętymi kolanami by zabić wahadło. Tylko strict."
+      },
+      {
+        "fault": "Half reps — not reaching chin over bar or not returning to dead-hang",
+        "faultPl": "Połowiczne powtórzenia — broda nie nad drążkiem lub brak powrotu do dead-hang",
+        "cause": "Weight too heavy, top end weak under load, fatigue mid-set",
+        "causePl": "Ciężar zbyt duży, słaba górna część ciągu pod obciążeniem, zmęczenie w środku serii",
+        "cue": "Reduce weight to load you can hit full ROM for 5+ reps. Half reps with weight = wasted set.",
+        "cuePl": "Zmniejsz ciężar do takiego, przy którym zrobisz pełny ROM na 5+ powtórzeń. Pół-powtórzenia z ciężarem = zmarnowana seria."
+      },
+      {
+        "fault": "Dropping into the hang instead of controlled descent",
+        "faultPl": "'Spadanie' w zwis zamiast kontrolowanego schodzenia",
+        "cause": "No eccentric control, treating descent as 'rest'",
+        "causePl": "Brak kontroli ekscentryka, traktowanie schodzenia jako 'odpoczynek'",
+        "cue": "2-3 second eccentric. The eccentric is where hypertrophy and tendon adaptation happens.",
+        "cuePl": "Ekscentryk 2-3 sekundy. To na ekscentryku dzieje się hipertrofia i adaptacja ścięgien."
+      },
+      {
+        "fault": "Shoulder shrug at the bottom under load",
+        "faultPl": "Unoszenie łopatek na dole pod obciążeniem",
+        "cause": "Loss of scapular control, weak lower trap, hanging passively under weight",
+        "causePl": "Utrata kontroli łopatek, słaby dolny trapez, zwis pasywny pod ciężarem",
+        "cue": "Maintain active hang — shoulders down even at full extension. Practice scapular pull-ups loaded.",
+        "cuePl": "Utrzymuj aktywny zwis — łopatki w dół nawet w pełnym wyproście. Trenuj scapular pull-ups z obciążeniem."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Hold breath through the concentric (Valsalva — increases intra-abdominal pressure and spinal stability under load). Exhale at the top or on the controlled descent.",
+    "breathingPl": "Wdech na dole (zwis). Wstrzymaj oddech podczas ciągu w górę (Valsalva — zwiększa ciśnienie wewnątrzbrzuszne i stabilność kręgosłupa pod obciążeniem). Wydech na górze lub podczas kontrolowanego schodzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Avoid loaded vertical pulling. Drop weight entirely, return to bodyweight pull-ups with neutral grip, or use chest-supported row variants.",
+      "modificationPl": "Unikaj obciążonego ciągu pionowego. Zrzuć ciężar, wróć do bodyweight z chwytem neutralnym lub używaj wioseł z podparciem klatki.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Loaded pull-ups significantly stress biceps and forearm tendons. Stop until full recovery. Resume with bodyweight chin-ups (less elbow stress than pronated grip).",
+      "modificationPl": "Podciąganie z obciążeniem mocno stresuje ścięgna bicepsa i przedramienia. Wstrzymaj do pełnego wyzdrowienia. Wróć przez chin-up na masie ciała (mniej stresu na łokcie niż chwyt nachwytem).",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Hanging weight on a dip belt creates spinal traction + flexion-extension under load. Switch to weighted vest (load distributed on torso) or skip weight entirely.",
+      "modificationPl": "Ciężar zwisający na dip belt tworzy trakcję kręgosłupa + zgięcie/wyprost pod obciążeniem. Przejdź na kamizelkę obciążeniową (ciężar rozłożony na torsie) lub pomiń ciężar.",
+      "alternative": "pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "4-5x5 (strength) | 3-4x6-8 (hypertrophy) | 5x3 + 1xAMRAP bodyweight (cluster)",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "weighted-pull-up.gif",
+    "frames_extracted": [
+      "frames/weighted-pull-up/frame_0_start.png",
+      "frames/weighted-pull-up/frame_1_early.png",
+      "frames/weighted-pull-up/frame_2_mid.png",
+      "frames/weighted-pull-up/frame_3_late.png",
+      "frames/weighted-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/weighted-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start, ramiona w pełnym wyproście, chwyt nachwytem (pronated), talerz obciążeniowy zwisa z dip belt między zgiętymi nogami. Frame 2: pozycja szczytowa, broda nad drążkiem, łopatki ściągnięte, talerz nadal stabilny. Frame 4: powrót do dead-hang z kontrolą. Najszersze grzbietu + środkowy trapez + bicepsy + przedramiona podświetlone czerwienią (silne zaangażowanie). Mechanika identyczna z pull-up ale z zewnętrznym obciążeniem — zaawansowana progresja po opanowaniu 10+ strict bodyweight pull-ups. Wymaga dip belt + talerza (lub kettlebell/kamizelki). Spinal load i ryzyko kontuzji ramion znacznie wyższe niż w bodyweight wersji — stąd advanced level i ostrzejsze kontraindykacje (shoulder impingement = avoid zamiast modify).",
+
+  "tags": ["calisthenics", "loaded_bodyweight", "compound_king", "upper_body", "vertical_pull", "advanced_progression", "back", "biceps", "strength", "hypertrophy", "weighted", "relative_strength_benchmark"]
+}

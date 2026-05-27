@@ -1,0 +1,202 @@
+{
+  "id": "inverse-leg-curl-bench-support",
+  "name": "Inverse Leg Curl (Bench Support) / Nordic Hamstring Curl",
+  "namePl": "Odwrotne uginanie nóg z asekuracją ławki (Nordic curl)",
+  "aliases": ["nordic curl", "nordic hamstring curl", "russian leg curl", "natural glute-ham raise", "harop curl"],
+  "aliasesPl": ["nordic curl", "nordic hamstring curl", "russian leg curl", "naturalny glute-ham raise", "uginanie nóg w klęku z asekuracją"],
+
+  "description": "An advanced bodyweight exercise targeting the hamstrings through an extremely heavy eccentric (lowering) contraction. The lifter kneels on a padded bench with feet anchored under foot pegs (or held by a partner), then slowly lowers the entire body forward in a straight line — knees, hips and shoulders all moving as one unit — until either the chest reaches the floor or the hamstrings fail to hold the body. The concentric (pulling back up) is often impossible without arm assistance — the goal is maximum eccentric overload of the knee-flexor function of the hamstrings (with hips held in extension). One of the most effective exercises for hamstring hypertrophy, eccentric strength and hamstring injury prevention in athletes (sprinters, soccer players). Considered very advanced — difficulty 9/10.",
+  "descriptionPl": "Zaawansowane ćwiczenie z masą własnego ciała celujące w dwugłowe ud przez ekstremalnie ciężki ekscentryczny (opadający) skurcz. Ćwiczący klęczy na wyściełanej ławce z kostkami zaczepionymi pod wałkami (lub trzymanymi przez partnera), następnie powoli opada całym ciałem do przodu w prostej linii — kolana, biodra i barki ruszają się jako jedna jednostka — aż klatka dotknie podłogi lub dwugłowe ud nie utrzymają ciała. Faza koncentryczna (powrót do góry) jest często niemożliwa bez asysty rąk — celem jest maksymalne ekscentryczne przeciążenie funkcji zginacza kolana dwugłowych ud (z biodrami trzymanymi w wyproście). Jedno z najskuteczniejszych ćwiczeń na hipertrofię dwugłowych ud, siłę ekscentryczną i prewencję urazów dwugłowych u sportowców (sprinterzy, piłkarze). Uznawane za bardzo zaawansowane — trudność 9/10.",
+
+  "instructions": [
+    "Kneel on the padded surface of a Nordic curl bench (or padded floor). Lock your ankles UNDER the foot pegs — feet must be securely anchored or a partner must hold your ankles firmly.",
+    "Knees on the pad, hip-width apart. Place your hands across your chest, behind your head, or extended forward in front of you (for arm catch).",
+    "Set the start position: torso vertical, body straight from knees to head, hips FULLY EXTENDED (squeeze glutes). DO NOT sit back onto your heels.",
+    "Brace your core hard. Tighten the glutes. The whole body must move as ONE rigid lever — like a falling tree.",
+    "Begin lowering: slowly let your body fall forward, controlling the descent ONLY with the hamstrings. Hips stay locked in extension — no bending at the hip.",
+    "Lower as slowly as possible (aim 3-5 seconds eccentric). The hamstrings of both legs work to brake the body's forward fall.",
+    "When your hamstrings can no longer hold you, catch yourself softly with your hands on the floor — like a controlled push-up landing. DO NOT slam down.",
+    "To return: push off the floor with your arms to help, then pull yourself back to vertical using the hamstrings. For most lifters, the concentric is impossible without arm assistance — this is normal and expected.",
+    "Once vertical again, fully extend the hips (squeeze glutes hard) before starting the next rep. Reset posture between reps."
+  ],
+  "instructionsPl": [
+    "Klęknij na wyściełanej powierzchni ławki do Nordic curla (lub na wyściełanej podłodze). Zaczep kostki POD wałkami — stopy muszą być pewnie zablokowane lub partner musi mocno trzymać kostki.",
+    "Kolana na poduszce, na szerokość bioder. Ułóż ręce skrzyżowane na klatce, za głową, lub wyciągnięte do przodu (do amortyzacji upadku).",
+    "Ustaw pozycję startową: tułów pionowo, ciało proste od kolan do głowy, biodra W PEŁNYM WYPROŚCIE (ściśnij pośladki). NIE siadaj na piętach.",
+    "Mocno napnij brzuch. Napnij pośladki. Całe ciało musi ruszać się jako JEDNA sztywna dźwignia — jak padające drzewo.",
+    "Zacznij opadać: powoli pozwól ciału upaść do przodu, kontrolując zejście WYŁĄCZNIE dwugłowymi ud. Biodra pozostają zablokowane w wyproście — żadnego zginania w biodrach.",
+    "Schodź tak wolno, jak to możliwe (cel: 3-5 sekund ekscentryku). Dwugłowe ud obu nóg pracują hamując upadek ciała do przodu.",
+    "Gdy dwugłowe ud nie są w stanie cię już utrzymać, miękko zaamortyzuj się rękami o podłogę — jak kontrolowane lądowanie w pompce. NIE rzucaj się w dół.",
+    "Powrót: odepchnij się rękami od podłogi, następnie podciągnij się z powrotem do pionu używając dwugłowych ud. Dla większości ćwiczących faza koncentryczna jest niemożliwa bez asysty rąk — to normalne i oczekiwane.",
+    "Gdy znowu jesteś pionowo, w pełni wyprostuj biodra (ściśnij mocno pośladki) przed kolejnym powtórzeniem. Reset postury między powtórzeniami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings"],
+    "secondary": ["gastrocnemius", "glutes"],
+    "stabilizers": ["core", "erector_spinae", "rectus_abdominis", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "gastrocnemius": "S5",
+    "glutes": "S6",
+    "erector_spinae": "S5",
+    "core": "S6",
+    "adductors": "S3"
+  },
+
+  "equipment": {
+    "required": ["nordic_curl_bench"],
+    "optional": ["partner", "resistance_band", "weight_plate", "kneeling_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["lying-leg-curl", "glute-ham-raise", "razor-curl", "swiss-ball-leg-curl", "single-leg-rdl"],
+    "progression_to": ["weighted-nordic-curl", "deficit-nordic-curl", "tempo-nordic-curl", "single-leg-nordic-curl"],
+    "alternatives": ["glute-ham-raise", "lying-leg-curl", "seated-leg-curl", "barbell-romanian-deadlift", "razor-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Ankles LOCKED under the pegs — test before starting, slip = injury",
+      "Knees on pad, hip-width apart",
+      "Body vertical, hips FULLY extended — squeeze glutes",
+      "Core braced, ribs down — no arching the lower back",
+      "Arms ready (across chest, behind head, or forward to catch)"
+    ],
+    "setup_cues_pl": [
+      "Kostki ZABLOKOWANE pod wałkami — sprawdź przed startem, ześlizg = kontuzja",
+      "Kolana na poduszce, na szerokość bioder",
+      "Ciało pionowo, biodra W PEŁNYM wyproście — ściśnij pośladki",
+      "Brzuch napięty, żebra w dół — bez wyginania lędźwi",
+      "Ręce gotowe (na klatce, za głową, lub wyciągnięte do amortyzacji)"
+    ],
+    "execution_cues": [
+      "Body falls as ONE — hips, shoulders, head move together",
+      "Hips stay LOCKED in extension — no bending at the waist",
+      "Lower SLOWLY — fight gravity for 3-5 seconds, the slower the better",
+      "Catch the floor softly with hands — controlled, not slammed",
+      "Squeeze glutes hard at the top of each rep — full hip extension"
+    ],
+    "execution_cues_pl": [
+      "Ciało pada jako JEDNO — biodra, barki, głowa ruszają się razem",
+      "Biodra pozostają ZABLOKOWANE w wyproście — bez zginania się w pasie",
+      "Schodź POWOLI — walcz z grawitacją 3-5 sekund, im wolniej tym lepiej",
+      "Miękko zaamortyzuj się rękami o podłogę — kontrolowane, nie rzucone",
+      "Mocno ściśnij pośladki na górze każdego powtórzenia — pełen wyprost biodra"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hip flexion (bending at the waist) — turning Nordic curl into a falling 'good morning'",
+        "faultPl": "Zginanie się w biodrach (w pasie) — zamienia Nordic curl w padający 'good morning'",
+        "cause": "Hamstrings too weak to control the full lever, glutes not engaged, no awareness of hip position",
+        "causePl": "Dwugłowe ud zbyt słabe by kontrolować pełną dźwignię, pośladki nieaktywne, brak świadomości pozycji bioder",
+        "cue": "Squeeze the glutes HARD throughout — hips must stay open. If you can't, reduce range with a band assist. Film yourself from the side.",
+        "cuePl": "Mocno ściśnij pośladki przez cały ruch — biodra muszą zostać otwarte. Jeśli nie dasz rady, ogranicz zakres asystą gumy. Nagraj się z boku."
+      },
+      {
+        "fault": "Uncontrolled descent — falling instead of lowering",
+        "faultPl": "Niekontrolowane zejście — upadek zamiast opuszczania",
+        "cause": "Insufficient eccentric hamstring strength, going for full range too early, ego",
+        "causePl": "Niewystarczająca siła ekscentryczna dwugłowych ud, próba pełnego zakresu zbyt wcześnie, ego",
+        "cue": "Fight every centimeter — if you can't slow it down, you're not ready for full ROM. Use a band over chest pulled to a rack to assist.",
+        "cuePl": "Walcz o każdy centymetr — jeśli nie potrafisz spowolnić, nie jesteś gotowy na pełen zakres. Użyj gumy przez klatkę pociągniętej do stojaka jako asysty."
+      },
+      {
+        "fault": "Partial range — stopping the descent too early",
+        "faultPl": "Częściowy zakres — zatrzymywanie zejścia zbyt wcześnie",
+        "cause": "Catching with hands too soon, fear of falling, hamstring strength insufficient for full range",
+        "causePl": "Łapanie się rękami zbyt wcześnie, strach przed upadkiem, niewystarczająca siła dwugłowych ud na pełen zakres",
+        "cue": "Push the catch later each session — extend the ROM gradually. The bottom 20° is where hypertrophy happens.",
+        "cuePl": "Z każdą sesją odsuwaj moment złapania — stopniowo zwiększaj zakres. Ostatnie 20° to tam dzieje się hipertrofia."
+      },
+      {
+        "fault": "Slamming chest into the floor — no soft catch",
+        "faultPl": "Uderzanie klatką o podłogę — brak miękkiej amortyzacji",
+        "cause": "Letting go completely at the bottom, hands not ready, no awareness of fall",
+        "causePl": "Całkowite puszczenie na dole, ręce nieprzygotowane, brak świadomości upadku",
+        "cue": "Hands forward EARLY — they're a safety net. Land like a push-up, not a face plant. If you can't catch, use a pad under chest.",
+        "cuePl": "Ręce wcześnie do przodu — to siatka bezpieczeństwa. Ląduj jak w pompce, nie twarzą w podłogę. Jeśli nie potrafisz złapać, połóż poduszkę pod klatkę."
+      },
+      {
+        "fault": "Cramping in the hamstrings mid-rep",
+        "faultPl": "Skurcze w dwugłowych ud w trakcie powtórzenia",
+        "cause": "Hamstrings extremely overloaded (this exercise is notoriously cramp-inducing), dehydration, too much volume",
+        "causePl": "Dwugłowe ud ekstremalnie przeciążone (to ćwiczenie jest słynne ze skurczy), odwodnienie, zbyt duża objętość",
+        "cue": "Start with 2-3 reps × 2-3 sets — Nordic curls require VERY low volume. Build up slowly over weeks. Hydrate and salt before training.",
+        "cuePl": "Zaczynaj od 2-3 powtórzeń × 2-3 serie — Nordic curle wymagają BARDZO niskiej objętości. Buduj powoli przez tygodnie. Nawodnij się i posol przed treningiem."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace during the eccentric descent. Exhale on the way back up (concentric) or when catching with hands. Hold breath during the hardest part of the eccentric to maintain core stiffness.",
+    "breathingPl": "Głęboki wdech na górze, napięcie podczas ekscentrycznego zejścia. Wydech podczas powrotu do góry (koncentryku) lub przy amortyzacji rękami. Wstrzymaj oddech podczas najtrudniejszej fazy ekscentryku by utrzymać sztywność core."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hamstring_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Nordic curl is the SINGLE most demanding eccentric exercise for hamstrings. With acute or unhealed strain — DO NOT perform. Wait for full clinical clearance and rebuild with lying leg curl, RDL, then razor curl progression.",
+      "modificationPl": "Nordic curl to NAJBARDZIEJ wymagające ćwiczenie ekscentryczne na dwugłowe ud. Przy świeżym lub niezagojonym naciągnięciu — NIE wykonuj. Poczekaj na pełne pozwolenie kliniczne i odbudowuj progresją: leg curl leżąc, RDL, potem razor curl.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "knee_pain_anterior_patellofemoral",
+      "severity": "caution",
+      "modification": "Knees press hard into the pad — anterior knee pain can worsen. Add extra thick padding under knees. If pain persists, switch to glute-ham raise (different knee angle).",
+      "modificationPl": "Kolana mocno wciskają się w poduszkę — ból przedniej części kolana może się nasilić. Dodaj dodatkową grubą poduszkę pod kolana. Jeśli ból utrzymuje się, przejdź na glute-ham raise (inny kąt kolana).",
+      "alternative": "glute-ham-raise"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "Maintaining hip extension under high hamstring load can cause lumbar compensation. Brace core hard, reduce ROM. If pain occurs, switch to seated/lying leg curl (no spinal load).",
+      "modificationPl": "Utrzymywanie wyprostu biodra pod dużym obciążeniem dwugłowych ud może powodować kompensacje w lędźwiach. Mocno napnij core, zmniejsz zakres. Jeśli pojawia się ból, przejdź na uginanie nóg siedząc/leżąc (brak obciążenia kręgosłupa).",
+      "alternative": "seated-leg-curl"
+    },
+    {
+      "condition": "beginner_or_insufficient_strength",
+      "severity": "modify",
+      "modification": "Nordic curl is genuinely advanced — most beginners cannot control the eccentric and risk hamstring strain. Build base strength with RDL (12+ weeks), lying leg curl, glute-ham raise FIRST. Then try band-assisted Nordics (band over chest to rack) before unassisted.",
+      "modificationPl": "Nordic curl jest naprawdę zaawansowane — większość początkujących nie kontroluje ekscentryku i ryzykuje naciągnięcie dwugłowych ud. NAJPIERW zbuduj bazę: RDL (12+ tygodni), uginanie leżąc, glute-ham raise. Potem spróbuj Nordic z gumą (guma przez klatkę do stojaka) zanim zaczniesz bez asysty.",
+      "alternative": "glute-ham-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x3-6 (eccentric hypertrophy — preferred, with 3-5s eccentric tempo) | 2-3x2-4 (introduction/beginner — start VERY low volume) | 4x4-8 (advanced, with band assistance) | Use sparingly: 1-2x/week max due to extreme eccentric stress",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "inverse-leg-curl-bench-support.gif",
+    "frames_extracted": [
+      "frames/inverse-leg-curl-bench-support/frame_0_start.png",
+      "frames/inverse-leg-curl-bench-support/frame_1_early.png",
+      "frames/inverse-leg-curl-bench-support/frame_2_mid.png",
+      "frames/inverse-leg-curl-bench-support/frame_3_late.png",
+      "frames/inverse-leg-curl-bench-support/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "hamstrings/inverse-leg-curl-bench-support"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (253 KB, 12 oryginalnych klatek). Apparatus widoczny w klatkach: dedykowana ławka do Nordic curla z wyściełanym podestem na kolana i poziomymi wałkami pod stopami (dwa pionowe pegi widoczne w klatkach). Frame 0 (start): ćwiczący w pozycji końcowej/dolnej — tułów prawie poziomo, ciało proste od kolan do głowy, dwugłowe ud podświetlone na pomarańczowo (mocna aktywacja). Frame 1-2: faza ekscentryczna w trakcie — ciało opada do przodu zachowując sztywną linię, biodra W WYPROŚCIE (nie zgina się w pasie). Frame 3-4: powrót / lub szczyt zejścia. Kluczowa obserwacja: hipsy pozostają wyprostowane przez cały ruch — to NIE jest hip hinge (jak RDL), to czysty ruch w kolanie (knee flexion) z biodrami trzymanymi w wyproście. Klasyfikacja jako 'isolation_curl' (knee flexion z biodrami trzymanymi — funkcja zginacza kolana dwugłowych ud, nie hip hinge). Force 'pull' bo ekscentryczne hamowanie zginania kolana to praca hamstringów jako zginaczy. Mechanic 'isolation' (jednostawowe — tylko kolano się rusza). Kinetic chain 'open' — stopy zaczepione ale to nie kompresja podłoża jak w przysiadzie. Primary: hamstrings P10 (ekstremalny ekscentryk to złoty standard hipertrofii dwugłowych). Secondary: gastrocnemius S5 (też zginacz kolana — pomaga marginalnie), glutes S6 (izometrycznie trzymają wyprost biodra). Equipment: dedykowana ławka Nordic curl (alternatywnie partner trzymający kostki). Difficulty 9/10 — to ćwiczenie jest legendarnie trudne, większość ćwiczących nie wykonuje pełnego ROM przez pierwsze tygodnie. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii fitness (Nordic curl, ekscentryk, hip hinge, dwugłowe ud, pośladki, glute-ham raise). Bardzo ważne: 4 contraindications obejmują hamstring strain (avoid bezwzględnie), knee pain, lower back i beginner (modify — to nie jest ćwiczenie dla początkujących). Common faults pokrywają najczęstsze problemy: hip flexion zamienia ćwiczenie w 'falling good morning', niekontrolowane zejście, partial range, slamming, i skurcze (Nordic curl jest słynny ze skurczy w trakcie powtórzenia).",
+
+  "tags": ["bodybuilding", "athletic_performance", "hamstring_hypertrophy", "eccentric_focused", "bodyweight", "isolation", "injury_prevention", "nordic_curl", "advanced", "knee_flexion"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "smith-sumo-squat",
+  "name": "Smith Machine Sumo Squat",
+  "namePl": "Sumo squat na Smith machine",
+  "aliases": ["smith sumo squat", "wide-stance smith squat", "smith machine wide squat"],
+  "aliasesPl": ["sumo squat na maszynie Smitha", "szeroki przysiad na Smith", "przysiad sumo na suwnicy Smitha"],
+
+  "description": "Wide-stance squat variation performed on a Smith machine. The very wide stance with toes turned outward shifts emphasis toward the adductors, gluteus maximus and inner thigh, while reducing the load on lower back compared to free-weight squats. Fixed bar path of the Smith machine adds stability and lets the lifter focus on hip drive without worrying about balance — ideal for hypertrophy-focused glute/adductor work.",
+  "descriptionPl": "Wariant przysiadu z bardzo szeroką stójką wykonywany na maszynie Smith. Bardzo szeroki rozstaw stóp z palcami skierowanymi na zewnątrz przesuwa akcent na adduktory, pośladek wielki i wewnętrzną stronę uda, jednocześnie odciążając dolny odcinek pleców w porównaniu z przysiadem ze sztangą wolną. Ustalona ścieżka gryfu w maszynie Smith dodaje stabilności i pozwala skupić się na pracy bioder bez troski o równowagę — idealne do treningu hipertroficznego pośladków i adduktorów.",
+
+  "instructions": [
+    "Set the Smith machine bar at upper-chest height. Load the desired weight evenly on both sides and secure with collars.",
+    "Step under the bar and place it across your upper traps. Grip the bar slightly wider than shoulder-width with both hands.",
+    "Unrack the bar by rotating it forward and extending your legs.",
+    "Set a very wide stance — roughly 1.5x shoulder-width. Turn your toes out 30-45° so knees can track over them.",
+    "Stand tall, chest up, core braced, shoulder blades pulled down and back. Take a deep breath and hold (Valsalva).",
+    "Descend by pushing your hips back and bending your knees outward in line with your toes. Keep your torso upright.",
+    "Go down until your thighs reach parallel to the floor or slightly below, while maintaining a neutral spine and knees tracking over toes.",
+    "Drive up by pushing through the whole foot — especially the outside edge — and squeezing your glutes and inner thighs at the top.",
+    "Exhale near the top of the rep. Repeat for the prescribed reps, then rotate the bar to re-rack."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf maszyny Smith na wysokości górnej klatki. Załaduj równomiernie obciążenie po obu stronach i zabezpiecz zaciskami.",
+    "Wejdź pod gryf i ułóż go na górnej części trapezów. Złap drążek obiema rękami nieco szerzej niż na szerokość barków.",
+    "Wypnij gryf z haków obracając go do przodu i prostując nogi.",
+    "Ustaw bardzo szeroką stójkę — około 1,5x szerokości barków. Skieruj palce stóp na zewnątrz pod kątem 30-45°, aby kolana mogły podążać za nimi.",
+    "Stań wyprostowany, klatka do góry, brzuch napięty, łopatki ściągnięte w dół i do tyłu. Nabierz głęboki oddech i przytrzymaj (Valsalva).",
+    "Schodź wypychając biodra do tyłu i zginając kolana na zewnątrz w linii palców stóp. Tułów utrzymuj wyprostowany.",
+    "Schodź aż uda osiągną poziom równoległy do podłogi lub nieco poniżej, zachowując neutralny kręgosłup i kolana podążające za palcami stóp.",
+    "Wypchnij się w górę napierając przez całą stopę — zwłaszcza zewnętrzną krawędź — i ściskając pośladki oraz wewnętrzną stronę uda na górze.",
+    "Wydychaj blisko górnej części powtórzenia. Powtórz zadaną liczbę razy, a następnie obróć gryf, aby go zaczepić."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "adductors", "quadriceps"],
+    "secondary": ["hamstrings", "erector_spinae"],
+    "stabilizers": ["core", "calves", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "adductors": "P9",
+    "quadriceps": "P8",
+    "hamstrings": "S6",
+    "erector_spinae": "S5",
+    "core": "S5",
+    "calves": "T3",
+    "upper_back": "T2"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "sumo-squat"],
+    "progression_to": ["barbell-sumo-squat", "pause-sumo-squat", "deep-sumo-squat"],
+    "alternatives": ["sumo-squat", "barbell-sumo-squat", "smith-machine-squat", "wide-leg-press", "cable-sumo-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar across upper traps, not on the neck",
+      "Stance 1.5x shoulder-width, toes out 30-45°",
+      "Knees aligned with toes from the start",
+      "Chest up, core braced, ribs down",
+      "Take a big breath and hold (Valsalva)"
+    ],
+    "setup_cues_pl": [
+      "Gryf na trapezach, nie na karku",
+      "Stójka 1,5x szerokości barków, palce na zewnątrz 30-45°",
+      "Kolana od początku w linii z palcami stóp",
+      "Klatka do góry, brzuch napięty, żebra w dół",
+      "Głęboki wdech i przytrzymaj (Valsalva)"
+    ],
+    "execution_cues": [
+      "Push knees OUT in line with your toes",
+      "Sit straight down — torso stays vertical",
+      "Drive through the whole foot, especially outer edge",
+      "Squeeze glutes and inner thighs at the top",
+      "Maintain neutral spine throughout"
+    ],
+    "execution_cues_pl": [
+      "Wypychaj kolana na ZEWNĄTRZ w linii palców stóp",
+      "Siadaj prosto w dół — tułów pozostaje pionowy",
+      "Napieraj przez całą stopę, zwłaszcza zewnętrzną krawędź",
+      "Ściśnij pośladki i wewnętrzną stronę uda na górze",
+      "Utrzymuj neutralny kręgosłup przez cały ruch"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knees collapsing inward (valgus)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius and external rotators, or stance too narrow for the lifter's hip anatomy",
+        "causePl": "Słabe pośladki średnie i rotatory zewnętrzne biodra, lub stójka zbyt wąska dla anatomii bioder",
+        "cue": "Actively push knees out toward pinky toes throughout the rep",
+        "cuePl": "Aktywnie wypychaj kolana na zewnątrz w kierunku małych palców przez cały ruch"
+      },
+      {
+        "fault": "Excessive forward lean from the hips",
+        "faultPl": "Nadmierne pochylenie tułowia do przodu",
+        "cause": "Heavy load, weak quads, or treating the Smith sumo like a free-weight squat (forward bar means lower-back load)",
+        "causePl": "Zbyt duży ciężar, słabe czworogłowe, lub traktowanie Smith sumo jak przysiadu wolnego (gryf do przodu = obciążenie dolnego pleców)",
+        "cue": "Stay tall, sit straight down. Reduce weight if you can't keep torso vertical.",
+        "cuePl": "Stój wyprostowany, siadaj prosto w dół. Zmniejsz ciężar jeśli nie potrafisz utrzymać pionowego tułowia."
+      },
+      {
+        "fault": "Stance too narrow — turns into a regular squat",
+        "faultPl": "Stójka zbyt wąska — staje się zwykłym przysiadem",
+        "cause": "Insufficient stance width loses the adductor/inner-thigh emphasis of sumo",
+        "causePl": "Niewystarczająca szerokość stójki traci akcent na adduktory i wewnętrzną stronę uda, które definiują sumo",
+        "cue": "Set up 1.5x shoulder-width minimum, with toes flared 30-45° before starting",
+        "cuePl": "Ustaw stójkę minimum 1,5x szerokości barków, palce odchylone 30-45° przed startem"
+      },
+      {
+        "fault": "Heel rise / weight shifting onto toes",
+        "faultPl": "Unoszenie pięt / przeniesienie ciężaru na palce",
+        "cause": "Limited ankle dorsiflexion or bar set too far back relative to stance",
+        "causePl": "Ograniczona dorsiflexja stawu skokowego lub gryf ustawiony za daleko w tyle względem stóp",
+        "cue": "Move feet slightly forward on the Smith — fixed bar path needs feet ahead, not under bar",
+        "cuePl": "Przesuń stopy lekko do przodu na Smith — ustalona ścieżka gryfu wymaga stóp przed gryfem, nie pod nim"
+      },
+      {
+        "fault": "Partial range — quarter squats",
+        "faultPl": "Niepełny zakres ruchu — ćwierć-przysiady",
+        "cause": "Excessive load, ego lifting, or fear of failing",
+        "causePl": "Zbyt duży ciężar, ego, lub strach przed nieudanym powtórzeniem",
+        "cue": "Reduce weight and squat until thighs reach parallel. Smith machine catches let you fail safely.",
+        "cuePl": "Zmniejsz ciężar i schodź aż uda osiągną poziom równoległy. Haki Smith pozwalają bezpiecznie nie ukończyć powtórzenia."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and the hardest part of the ascent (Valsalva). Exhale near lockout.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech przez schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech blisko wyprostu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "groin_strain_adductor_injury",
+      "severity": "avoid",
+      "modification": "Sumo stance loads adductors heavily — wait for full recovery. Switch to a narrow-stance squat or leg press.",
+      "modificationPl": "Stójka sumo mocno obciąża adduktory — poczekaj na pełną regenerację. Przejdź na przysiad z wąską stójką lub wyciskanie nóg.",
+      "alternative": "smith-machine-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Wide stance with external rotation can stress the meniscus — use shorter ROM.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Szeroka stójka z rotacją zewnętrzną może obciążać łąkotkę — krótszy zakres ruchu.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Wide-stance/external rotation may actually help bypass impingement, but test slowly. Stop if pinching appears.",
+      "modificationPl": "Szeroka stójka i rotacja zewnętrzna mogą pomóc ominąć impingement, ale testuj powoli. Zatrzymaj jeśli pojawi się szczypanie.",
+      "alternative": "sumo-squat"
+    },
+    {
+      "condition": "lower_back_disc_issues",
+      "severity": "caution",
+      "modification": "Smith machine reduces axial spinal load vs free squat, but bar position still compresses spine. Use moderate weights and avoid forward lean.",
+      "modificationPl": "Maszyna Smith zmniejsza osiowe obciążenie kręgosłupa względem wolnego przysiadu, ale gryf nadal kompresuje. Używaj umiarkowanych ciężarów i unikaj pochylenia do przodu.",
+      "alternative": "wide-leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x10-15 (glute/adductor focus) | 3x6-8 (strength)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-sumo-squat.gif",
+    "frames_extracted": [
+      "frames/smith-sumo-squat/frame_0_start.png",
+      "frames/smith-sumo-squat/frame_1_early.png",
+      "frames/smith-sumo-squat/frame_2_mid.png",
+      "frames/smith-sumo-squat/frame_3_late.png",
+      "frames/smith-sumo-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-sumo-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0, 2 i 4 z GIFa jahel. Klatka 0/4 (start/end): postać stoi wyprostowana ze sztangą na trapezach na Smith, stópy w bardzo szerokim rozstawie z palcami na zewnątrz. Klatka 2 (mid): pełny przysiad, uda poniżej parallel, kolana wypchnięte na zewnątrz w linii palców, tułów pionowy. Mięśnie podświetlone: czworogłowe, pośladki, adduktory (wewnętrzna strona uda) — pasuje do anatomii sumo squat na Smith. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["smith_machine", "sumo", "wide_stance", "glute_focus", "adductor_focus", "lower_body", "hypertrophy", "machine"]
+}

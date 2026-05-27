@@ -1,0 +1,202 @@
+{
+  "id": "weighted-drop-push-up",
+  "name": "Weighted Drop Push-Up",
+  "namePl": "Pompki z zeskokiem z obciążeniem",
+  "aliases": ["weighted depth push-up", "loaded drop push-up", "weighted plyometric drop push-up", "weighted between-benches drop push-up"],
+  "aliasesPl": ["pompki plyometryczne z zeskokiem z obciążeniem", "drop pompki z obciążeniem", "pompki depth-drop z talerzem", "pompki plyo z zeskokiem między ławkami"],
+
+  "description": "Advanced plyometric push-up performed with hands elevated on two parallel benches (or boxes/blocks) and a weight plate loaded on the upper back. Athlete drops off the elevation, catches bodyweight + load in a deep push-up between the benches, and presses back up to the start position. The added load and 'depth-drop' phase create a powerful eccentric overload + stretch-shortening cycle (SSC) stimulus for the chest, similar to a depth jump for the lower body. Used primarily for upper-body explosive power and rate-of-force-development (RFD) training.",
+  "descriptionPl": "Zaawansowane pompki plyometryczne wykonywane z dłońmi opartymi na dwóch równoległych ławkach (lub boksach/blokach) i talerzem obciążeniowym na górze pleców. Zawodnik puszcza dłonie z podwyższenia, łapie ciężar (masa ciała + obciążenie) w głębokiej pompce między ławkami, po czym wypycha się z powrotem do pozycji wyjściowej. Dodatkowy ciężar i faza 'zeskoku' tworzą potężny bodziec ekscentrycznego przeciążenia + cyklu rozciągnięcie-skurcz (SSC) dla klatki piersiowej — analogicznie do depth jump dla dolnej części ciała. Używane głównie do treningu mocy wybuchowej i RFD (rate-of-force-development) górnej partii ciała.",
+
+  "instructions": [
+    "Set up two stable, parallel benches (or sturdy boxes) shoulder-width apart, parallel to each other. Bench height ~30-40 cm. Make sure they will NOT slide under load.",
+    "Load a weight plate (start light — 5-10 kg) onto the upper back / shoulder blades. Have a partner place it or use a weighted vest as a safer alternative.",
+    "Climb into a plank position with hands on the outer edges of each bench (palms shoulder-width or slightly wider), feet on the floor or also on a low support behind you. Brace core hard.",
+    "Pre-tension the entire body — squeeze glutes, brace abs, fix scapulae. Body forms a straight line from head to heels.",
+    "Quickly push your hands up off the benches and let your body drop downward between them. Catch yourself on the floor between the benches in a deep push-up position (chest at or below bench level).",
+    "Absorb the landing actively — elbows bend, chest descends to the floor, body remains rigid (no spinal collapse).",
+    "Without pause (use SSC), explosively press back up. Drive hard enough to push your hands back ONTO the benches in the start position.",
+    "Reset, re-brace, and repeat. Low-rep, high-effort sets only — this is a power exercise, not an endurance one."
+  ],
+  "instructionsPl": [
+    "Przygotuj dwie stabilne, równoległe ławki (lub solidne boksy) na szerokość barków, równolegle do siebie. Wysokość ławki ~30-40 cm. Upewnij się że NIE będą się ślizgać pod obciążeniem.",
+    "Ułóż talerz obciążeniowy (zacznij lekko — 5-10 kg) na górnej części pleców / łopatkach. Najlepiej niech ułoży go partner, lub użyj kamizelki obciążeniowej jako bezpieczniejszej alternatywy.",
+    "Wejdź w pozycję planka z dłońmi na zewnętrznych krawędziach każdej ławki (dłonie na szerokość barków lub nieco szerzej), stopy na podłodze lub na niskim podparciu z tyłu. Mocno napnij brzuch.",
+    "Pre-naprężenie całego ciała — ściśnij pośladki, napnij brzuch, ustabilizuj łopatki. Ciało tworzy prostą linię od głowy do pięt.",
+    "Szybko odepchnij dłonie od ławek i pozwól ciału opaść w dół między nimi. Złap się na podłodze pomiędzy ławkami w pozycji głębokiej pompki (klatka na lub poniżej poziomu ławek).",
+    "Aktywnie zaabsorbuj lądowanie — łokcie się zginają, klatka schodzi do podłogi, ciało pozostaje sztywne (bez zapadania się kręgosłupa).",
+    "Bez pauzy (wykorzystaj SSC) wybuchowo wypchnij się w górę. Pchnij dość mocno, by dłonie znów wylądowały NA ławkach w pozycji wyjściowej.",
+    "Zresetuj się, ponownie napnij i powtórz. Tylko serie o małej liczbie powtórzeń i wysokim wysiłku — to ćwiczenie mocy, nie wytrzymałości."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior", "pectoralis_major_clavicular"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "triceps": "P9",
+    "anterior_deltoids": "P9",
+    "serratus_anterior": "S7",
+    "pectoralis_major_clavicular": "S6",
+    "core": "T7",
+    "glutes": "T5",
+    "rotator_cuff": "T6"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "two_benches_or_boxes", "weight_plate"],
+    "optional": ["weighted_vest", "push_up_handles", "spotter"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["push-up", "weighted-push-up", "clapping-push-up", "depth-push-up", "decline-push-up"],
+    "progression_to": ["weighted-clapping-push-up", "single-arm-drop-push-up", "weighted-depth-push-up-rebound"],
+    "alternatives": ["depth-push-up", "weighted-push-up", "clapping-push-up", "plyo-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two PARALLEL benches, shoulder-width apart, that won't slide — best against a wall or weighted down",
+      "Weight plate centered on upper back (T1-T4), NOT on lower back/lumbar — partner places it",
+      "Hands on outer edges of benches, palms gripping for control, wrists stacked under shoulders",
+      "Brace HARD before letting go — abs, glutes, lats all tight",
+      "Pick a soft landing spot mentally — visualize a controlled catch, not a crash"
+    ],
+    "setup_cues_pl": [
+      "Dwie RÓWNOLEGŁE ławki, na szerokość barków, takie które się nie ślizgają — najlepiej oparte o ścianę lub dociążone",
+      "Talerz obciążeniowy wycentrowany na górze pleców (T1-T4), NIE na dolnym/lędźwiowym odcinku — niech układa partner",
+      "Dłonie na zewnętrznych krawędziach ławek, mocny chwyt dla kontroli, nadgarstki pod barkami",
+      "Napnij MOCNO zanim puścisz — brzuch, pośladki, najszersze grzbietu — wszystko spięte",
+      "Mentalnie wybierz miejsce miękkiego lądowania — wizualizuj kontrolowane złapanie, nie upadek"
+    ],
+    "execution_cues": [
+      "Push HANDS UP off benches — don't just collapse, actively unweight",
+      "Catch with bent elbows tracking ~45° — never lock elbows on landing",
+      "Body stays RIGID like a plank during the drop — head/hips/heels move as one unit",
+      "Reverse the drop instantly — feel the stretch, then EXPLODE up (no pause, SSC)",
+      "Hands MUST return to benches — if they don't, lower the height or reduce the load"
+    ],
+    "execution_cues_pl": [
+      "Odepchnij DŁONIE od ławek — nie zapadaj się biernie, aktywnie odciąż",
+      "Łap się z ugiętymi łokciami pod kątem ~45° — nigdy nie ląduj na zablokowanych łokciach",
+      "Ciało pozostaje SZTYWNE jak deska podczas zeskoku — głowa/biodra/pięty poruszają się jako jedna jednostka",
+      "Odwróć ruch natychmiast — poczuj rozciągnięcie, potem WYBUCHNIJ w górę (bez pauzy, SSC)",
+      "Dłonie MUSZĄ wrócić na ławki — jeśli nie wracają, zmniejsz wysokość lub obciążenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Landing with locked elbows ('catching' instead of absorbing)",
+        "faultPl": "Lądowanie na zablokowanych łokciach ('łapanie' zamiast amortyzacji)",
+        "cause": "Fear of the drop, lack of eccentric strength, trying to brace too rigidly",
+        "causePl": "Strach przed zeskokiem, brak siły ekscentrycznej, próba zbyt sztywnego usztywnienia",
+        "cue": "Land with elbows already partially bent and ready to flex. Think 'sponge' on landing — absorb through 4-6 inches of elbow bend, then explode.",
+        "cuePl": "Lądy z łokciami już lekko ugiętymi i gotowymi do dalszego zginania. Myśl 'gąbka' przy lądowaniu — zaabsorbuj poprzez 10-15 cm zgięcia łokcia, potem wybuchaj."
+      },
+      {
+        "fault": "Hips sagging or piking during drop/catch",
+        "faultPl": "Opadające lub uniesione biodra podczas zeskoku/lądowania",
+        "cause": "Weak core under load, no full-body tension, plate destabilizes the spine",
+        "causePl": "Słaby brzuch pod obciążeniem, brak napięcia całego ciała, talerz destabilizuje kręgosłup",
+        "cue": "Brace abs AND glutes 100% before letting go. Hold a hollow-body position throughout. If you can't — reduce the plate weight.",
+        "cuePl": "Napnij brzuch I pośladki na 100% przed puszczeniem. Utrzymuj pozycję 'hollow body' przez cały ruch. Jeśli nie dajesz rady — zmniejsz wagę talerza."
+      },
+      {
+        "fault": "Bench slides outward during landing/push",
+        "faultPl": "Ławki rozsuwają się podczas lądowania/wypchnięcia",
+        "cause": "Lightweight or unsecured benches, no friction with floor",
+        "causePl": "Lekkie lub niezabezpieczone ławki, brak tarcia z podłogą",
+        "cue": "Set benches against a wall on the outer sides, or load plates underneath, or use heavy gym boxes. Test stability with bodyweight first.",
+        "cuePl": "Ustaw ławki przy ścianie po zewnętrznych stronach, lub dociąż talerzami pod spodem, lub użyj ciężkich boksów siłowych. Najpierw przetestuj stabilność na samej masie ciała."
+      },
+      {
+        "fault": "Plate slides off the back or shifts to neck/lumbar",
+        "faultPl": "Talerz zsuwa się z pleców lub przesuwa na kark/lędźwia",
+        "cause": "Plate not centered on T1-T4, no partner to stabilize, slippery surface (sweaty shirt or shaved chest plate)",
+        "causePl": "Talerz nie wycentrowany na T1-T4, brak partnera do stabilizacji, śliska powierzchnia (przepocona koszulka)",
+        "cue": "Switch to a WEIGHTED VEST for any work above 5 kg — much safer, no sliding, no neck risk. Loose plates are for very short sets only.",
+        "cuePl": "Przejdź na KAMIZELKĘ OBCIĄŻENIOWĄ przy dowolnym obciążeniu powyżej 5 kg — dużo bezpieczniej, bez zsuwania, bez ryzyka karku. Luźne talerze tylko do bardzo krótkich serii."
+      },
+      {
+        "fault": "Not returning hands to the benches (incomplete reps)",
+        "faultPl": "Brak powrotu dłoni na ławki (niedokończone powtórzenia)",
+        "cause": "Too much load, benches too high, insufficient explosive power",
+        "causePl": "Zbyt duże obciążenie, ławki za wysokie, niewystarczająca moc wybuchowa",
+        "cue": "If you can't push back ONTO the benches with full hand contact — the exercise is too heavy/high. Lower bench height first, then reduce load.",
+        "cuePl": "Jeśli nie wypchniesz się NA ławki z pełnym kontaktem dłoni — ćwiczenie jest za ciężkie/za wysokie. Najpierw obniż wysokość ławek, potem zmniejsz obciążenie."
+      }
+    ],
+    "breathing": "Big inhale and brace at the top before letting go. Hold breath through the drop and catch (Valsalva — stabilizes the spine under load). Powerful exhale on the explosive press up. Reset breath between reps.",
+    "breathingPl": "Duży wdech i napięcie w pozycji wyjściowej, przed puszczeniem. Wstrzymaj oddech podczas zeskoku i lądowania (Valsalva — stabilizuje kręgosłup pod obciążeniem). Mocny wydech podczas wybuchowego wypchnięcia. Oddech-reset między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "avoid",
+      "modification": "The drop landing slams a load 1.5-2x body weight through the wrists. Do NOT perform with any wrist pathology. Use push-up handles only as last resort and reduce drop height significantly.",
+      "modificationPl": "Lądowanie z zeskoku uderza obciążeniem 1.5-2x masa ciała w nadgarstki. NIE wykonuj przy jakiejkolwiek patologii nadgarstka. Uchwyty do pompek tylko w ostateczności i ze znacznym zmniejszeniem wysokości zeskoku.",
+      "alternative": "weighted-push-up"
+    },
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "avoid",
+      "modification": "The eccentric overload from the drop + plate puts massive stress on the rotator cuff and labrum. Avoid completely until shoulder is rehabilitated. Heavy weighted push-ups are a safer alternative.",
+      "modificationPl": "Ekscentryczne przeciążenie z zeskoku + talerz mocno obciąża stożek rotatorów i obrąbek. Całkowicie unikaj do czasu wyleczenia barku. Bezpieczniejszą alternatywą są ciężkie pompki obciążeniowe.",
+      "alternative": "weighted-push-up"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_disc",
+      "severity": "avoid",
+      "modification": "Free plate on the back + dynamic landing creates shear forces on the lumbar spine. Even with perfect bracing, the risk is too high. Use a weighted vest at minimum, or skip the drop entirely.",
+      "modificationPl": "Luźny talerz na plecach + dynamiczne lądowanie tworzą siły ścinające na odcinku lędźwiowym. Nawet z perfekcyjnym napięciem ryzyko jest zbyt wysokie. Minimum kamizelka obciążeniowa, lub całkowita rezygnacja z zeskoku.",
+      "alternative": "weighted-push-up"
+    },
+    {
+      "condition": "beginner_or_intermediate_lifter",
+      "severity": "avoid",
+      "modification": "This is advanced plyometric work requiring a strong base. Master regular weighted push-ups (BW +20 kg for 8 reps), depth push-ups, and standard plyo push-ups before adding load to drop variant.",
+      "modificationPl": "To zaawansowana praca plyometryczna wymagająca solidnej bazy. Najpierw opanuj zwykłe pompki obciążeniowe (masa ciała +20 kg na 8 powtórzeń), pompki depth-drop bez obciążenia i klasyczne pompki plyo, dopiero potem dodawaj obciążenie do wariantu z zeskokiem.",
+      "alternative": "weighted-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x2-5 (power/RFD) | 4x3 with 5-10 kg plate (intermediate-advanced loading) | Always full rest 2-4 min between sets",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "weighted-drop-push-up.gif",
+    "frames_extracted": [
+      "frames/weighted-drop-push-up/frame_0_start.png",
+      "frames/weighted-drop-push-up/frame_1_early.png",
+      "frames/weighted-drop-push-up/frame_2_mid.png",
+      "frames/weighted-drop-push-up/frame_3_late.png",
+      "frames/weighted-drop-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/weighted-drop-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej z dłońmi opartymi na DWÓCH RÓWNOLEGŁYCH ŁAWKACH (po lewej i po prawej), ciało zawieszone między nimi, talerz obciążeniowy WIDOCZNY NA GÓRZE PLECÓW (T1-T4, między łopatkami). Klatka piersiowa i przednie aktony podświetlone — primary movers. Frame 1 (early): faza puszczenia — dłonie odrywają się od ławek, ciało zaczyna opadać w dół między ławkami. Frame 2 (mid): GŁĘBOKIE LĄDOWANIE — klatka piersiowa na podłodze (lub bardzo blisko) MIĘDZY ławkami, łokcie głęboko ugięte, ciało nadal sztywne, stopy z tyłu. Talerz nadal widoczny na plecach. To jest klasyczny depth-drop / plyometric drop. Frame 3 (late): faza wybuchowego wypchnięcia — łokcie się prostują, ciało wraca w górę, dłonie zbliżają się do ławek. Frame 4 (end): zamknięcie cyklu — powrót do pozycji wyjściowej z dłońmi na ławkach. Zaawansowane plyometryczne ćwiczenie SSC (stretch-shortening cycle) dla górnej partii ciała + ekscentryczne przeciążenie z dodatkowym ciężarem. Wszystkie pola PL napisane od zera. Bezpieczeństwo: rekomendacja kamizelki obciążeniowej zamiast luźnego talerza dla obciążeń >5kg podkreślona we wszystkich relevant cues i contraindications.",
+
+  "tags": ["bodyweight", "calisthenics", "plyometric", "explosive", "power", "advanced", "weighted", "upper_body", "horizontal_push", "chest", "depth_drop", "ssc", "rfd_training"]
+}

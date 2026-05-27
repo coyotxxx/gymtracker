@@ -1,0 +1,205 @@
+{
+  "id": "suspended-abdominal-fallout",
+  "name": "Suspended abdominal fallout (TRX rollout)",
+  "namePl": "Wypad brzuszny na TRX (suspended abdominal fallout)",
+  "aliases": ["trx fallout", "trx rollout", "suspension trainer fallout", "suspended fallout", "trx body saw fallout"],
+  "aliasesPl": ["fallout na TRX", "rollout na TRX", "wypad na pasach", "fallout na pasach treningowych", "wyciąganie ramion na TRX", "anty-ekstensja na TRX"],
+
+  "description": "Standing or kneeling anti-extension core exercise performed on a suspension trainer (TRX or similar). The lifter grips the handles in front of the chest with arms slightly bent and the body in a vertical plank, then allows the body to fall forward as the arms travel overhead until torso and arms form one straight line at a steep angle. The abs and lats fight to keep the spine from hyperextending. Returning to the start is driven by the lats and abs pulling the arms back down. A demanding open-kinetic-chain progression of the ab wheel rollout with adjustable difficulty (the more horizontal the body, the harder it gets).",
+  "descriptionPl": "Ćwiczenie anty-ekstensji na mięśnie głębokie tułowia wykonywane na pasach treningowych typu TRX, w pozycji stojącej lub klęczącej. Ćwiczący trzyma uchwyty przed klatką piersiową z lekko ugiętymi ramionami, a sylwetkę utrzymuje jak pionową deskę. Następnie pozwala ciału opaść w przód, jednocześnie wyciągając ramiona za głowę, aż tułów i ramiona utworzą jedną prostą linię pod ostrym kątem do podłogi. Brzuch i mięsień najszerszy grzbietu walczą o to, by kręgosłup nie przeprostował się w odcinku lędźwiowym. Powrót do pozycji wyjściowej napędzany jest pracą najszerszego grzbietu i brzucha, które ściągają ramiona z powrotem w dół. Wymagająca progresja rollouta z kółka, w otwartym łańcuchu kinematycznym, z płynną regulacją trudności (im bardziej poziome ciało, tym ciężej).",
+
+  "instructions": [
+    "Anchor a suspension trainer (TRX) at a high anchor point overhead. Set the handles to roughly chest height when you stand close to the anchor.",
+    "Face away from the anchor. Grip both handles with a neutral grip (palms facing each other) in front of your chest, arms slightly bent.",
+    "Walk your feet backward until your arms are loaded — body in a tall vertical plank, leaning slightly forward into the straps. Squeeze glutes, brace abs, ribs down, neutral pelvis. This is the starting position.",
+    "Inhale and slowly let your body fall forward by allowing your arms to travel up and overhead. Keep the body completely rigid — head, hips and heels stay in one straight line.",
+    "Continue until your arms are fully extended overhead and your torso is nearly parallel to (or at a steep angle with) the floor — wherever you can hold without the lower back arching.",
+    "Pause briefly in the stretched position. Do not let the hips sag.",
+    "Exhale and pull the handles back down and toward your chest by driving your arms down through the lats and shortening the abs. Return to the vertical plank start.",
+    "Difficulty is regulated by foot position — feet further back (more horizontal body) = harder; feet closer to the anchor (more vertical body) = easier. Beginners should start nearly upright."
+  ],
+  "instructionsPl": [
+    "Zaczep pasy treningowe (TRX) do wysokiego punktu kotwiczenia nad głową. Ustaw uchwyty na wysokości mniej więcej klatki piersiowej, gdy stoisz blisko punktu zaczepienia.",
+    "Stań tyłem do kotwicy. Złap oba uchwyty chwytem neutralnym (dłonie zwrócone do siebie) przed klatką piersiową, ramiona lekko ugięte.",
+    "Cofnij stopy, aż ramiona zostaną obciążone — sylwetka jak pionowa deska, lekkie pochylenie w przód w pasy. Ścisnij pośladki, napnij brzuch, żebra w dół, miednica w neutralnej pozycji. To pozycja wyjściowa.",
+    "Wdech i powoli pozwól ciału opaść w przód, jednocześnie wyciągając ramiona w górę i za głowę. Utrzymuj tułów całkowicie sztywny — głowa, biodra i pięty w jednej linii.",
+    "Kontynuuj aż ramiona będą w pełni wyprostowane za głową, a tułów ustawi się prawie równolegle do podłogi (lub pod ostrym kątem) — na tyle, na ile utrzymasz bez przeprostu w lędźwiach.",
+    "Krótka pauza w pozycji rozciągniętej. Nie pozwól biodrom opaść.",
+    "Wydech i przyciągnij uchwyty z powrotem w dół, w kierunku klatki piersiowej, prowadząc ruch pracą mięśnia najszerszego grzbietu i skracając brzuch. Wróć do pionowej deski.",
+    "Trudność regulujesz pozycją stóp — stopy dalej od kotwicy (bardziej poziome ciało) = trudniej; stopy bliżej kotwicy (bardziej pionowe ciało) = łatwiej. Początkujący zaczynają niemal w pionie."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_extension",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "latissimus_dorsi"],
+    "secondary": ["obliques", "transverse_abdominis", "anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["glutes", "quadriceps", "triceps", "lower_back", "teres_major"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "latissimus_dorsi": "P8",
+    "obliques": "S6",
+    "transverse_abdominis": "S6",
+    "anterior_deltoids": "S5",
+    "serratus_anterior": "S5",
+    "glutes": "T4",
+    "quadriceps": "T3",
+    "triceps": "T3",
+    "lower_back": "T3",
+    "teres_major": "T2"
+  },
+
+  "equipment": {
+    "required": ["suspension_trainer"],
+    "optional": ["mat", "trx"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["plank", "ab-wheel-rollout-kneeling", "hollow-body-hold", "rkc-plank"],
+    "progression_to": ["ab-wheel-rollout-standing", "ring-fallout", "stir-the-pot"],
+    "alternatives": ["ab-wheel-rollout-kneeling", "stability-ball-rollout", "barbell-rollout", "stir-the-pot"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "TRX anchored high overhead, straps adjusted to chest height when close to the anchor",
+      "Face away from the anchor, neutral grip, handles in front of the chest",
+      "Walk feet back to load the straps — start nearly vertical until you know your limit",
+      "Squeeze glutes, brace abs, ribs pulled down, pelvis neutral — one rigid line",
+      "Take a breath in before the fall — pre-tension is everything"
+    ],
+    "setup_cues_pl": [
+      "TRX wpięty wysoko nad głową, pasy ustawione na wysokości klatki gdy stoisz blisko kotwicy",
+      "Stań tyłem do kotwicy, chwyt neutralny, uchwyty przed klatką piersiową",
+      "Cofnij stopy by obciążyć pasy — zacznij prawie w pionie, dopóki nie poznasz swojego limitu",
+      "Ścisnij pośladki, napnij brzuch, żebra ściągnięte w dół, miednica neutralnie — jedna sztywna linia",
+      "Wdech przed opadaniem — wstępne napięcie to podstawa"
+    ],
+    "execution_cues": [
+      "Fall forward in one piece — head, hips and heels move together as a plank",
+      "Arms travel overhead with elbows soft, not locked",
+      "Stop where you can still keep ribs down — no lumbar arch",
+      "Pull yourself back with the lats first, then exhale into the abs",
+      "Tempo: 3 seconds out, 1 second hold, 2 seconds back — never collapse"
+    ],
+    "execution_cues_pl": [
+      "Opadaj w przód jednym kawałkiem — głowa, biodra i pięty poruszają się razem jak deska",
+      "Ramiona idą za głowę z lekko ugiętymi łokciami, nie blokuj ich na sztywno",
+      "Zatrzymaj się tam, gdzie nadal utrzymujesz żebra w dół — bez łuku w lędźwiach",
+      "Wracaj najpierw pracą najszerszego grzbietu, potem wydech w brzuch",
+      "Tempo: 3 sekundy w przód, 1 sekunda przytrzymania, 2 sekundy z powrotem — nigdy nie opadaj kontrolowanie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back arching / hips sagging in the stretched position",
+        "faultPl": "Łuk w lędźwiach / opadanie bioder w pozycji rozciągniętej",
+        "cause": "Going too horizontal too soon, weak anti-extension capacity, ribs flaring up",
+        "causePl": "Zbyt poziome ciało zbyt szybko, słaba zdolność anty-ekstensji, otwierające się żebra",
+        "cue": "Ribs down to pelvis the whole time — if back arches, stand more upright and shorten the range",
+        "cuePl": "Żebra ściągnięte do miednicy przez cały czas — jeśli plecy wyginają się w łuk, stań bardziej w pionie i skróć zakres"
+      },
+      {
+        "fault": "Pike at the hips — using shoulder flexion only, not whole-body fall",
+        "faultPl": "Zginanie w biodrach — sam ruch ramion bez opadania całym ciałem",
+        "cause": "Trying to cheat the exercise; abs not yet strong enough to control full plank fall",
+        "causePl": "Próba oszukania ćwiczenia; brzuch jeszcze za słaby, by kontrolować opadanie całą deską",
+        "cue": "Glutes squeezed hard — hips stay locked in the line from heels to shoulders, the whole body falls as one unit",
+        "cuePl": "Mocno ściśnij pośladki — biodra zablokowane w linii od pięt do barków, całe ciało opada jak jedna bryła"
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears at the top",
+        "faultPl": "Wzruszanie barków do uszu w szczycie ruchu",
+        "cause": "Lats disengaged, upper traps taking over to hold the position",
+        "causePl": "Wyłączony mięsień najszerszy grzbietu, kapturowe górne przejmują utrzymanie pozycji",
+        "cue": "Pull shoulder blades down toward the back pockets — long neck, lats engaged like you're pulling the straps apart",
+        "cuePl": "Ściągnij łopatki w dół, w stronę tylnych kieszeni spodni — długa szyja, najszerszy grzbietu napięty jakbyś rozciągał pasy na boki"
+      },
+      {
+        "fault": "Going too deep too fast — eccentric collapse",
+        "faultPl": "Zbyt głębokie opadanie zbyt szybko — niekontrolowana faza ekscentryczna",
+        "cause": "Ego-set, feet placed too far back, no progression from kneeling/upright variant",
+        "causePl": "Trening na ego, stopy ustawione za daleko, brak progresji z wariantu klęczącego/pionowego",
+        "cue": "Find the angle where you can still pull back smoothly — that's your true working range, not the maximum stretch",
+        "cuePl": "Znajdź kąt, z którego nadal płynnie wracasz — to twój roboczy zakres, nie maksymalne rozciągnięcie"
+      },
+      {
+        "fault": "Holding breath / Valsalva through the whole rep",
+        "faultPl": "Wstrzymywanie oddechu / Valsalva przez całe powtórzenie",
+        "cause": "Mimicking heavy-lift bracing on a long time-under-tension exercise",
+        "causePl": "Naśladowanie napinania jak przy dużym ciężarze, mimo że to długie napięcie w czasie",
+        "cue": "Inhale on the fall (eccentric), forceful exhale on the way back, brace continues throughout",
+        "cuePl": "Wdech przy opadaniu (faza ekscentryczna), mocny wydech przy powrocie, napięcie brzucha cały czas"
+      }
+    ],
+    "breathing": "Inhale on the fall-forward phase (eccentric anti-extension), then forceful exhale as you pull yourself back to the upright position. Maintain continuous abdominal bracing throughout — the breath comes from the diaphragm without losing core tension.",
+    "breathingPl": "Wdech podczas fazy opadania w przód (ekscentryczna anty-ekstensja), następnie mocny wydech podczas ściągania się do pionu. Utrzymuj ciągłe napięcie brzucha przez cały czas — oddech idzie przeponowo bez utraty napięcia core."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Anti-extension under high load can flare acute lumbar pain if the lower back arches. Use static dead bug and bird dog instead until pain-free.",
+      "modificationPl": "Anty-ekstensja pod dużym obciążeniem może nasilić ostry ból lędźwi, jeśli plecy się wyginają. Zamień na statyczne dead bug i bird dog do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reaching overhead with body weight loaded on the straps stresses the subacromial space. Stay in a shorter range (45 degrees max) or switch to a kneeling ab wheel rollout that keeps arms in front.",
+      "modificationPl": "Wyciąganie ramion za głowę z obciążeniem ciała na pasach obciąża przestrzeń podbarkową. Pozostań w mniejszym zakresie (max 45 stopni) lub przejdź na kółko do rolloutów w klęku — utrzymuje ramiona przed ciałem.",
+      "alternative": "ab-wheel-rollout-kneeling"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "caution",
+      "modification": "Although this is an anti-extension drill (not flexion), uncontrolled lumbar arching at the end-range is risky. Keep range very short and stay nearly vertical, or use plank progressions only.",
+      "modificationPl": "Mimo że to ćwiczenie anty-ekstensji (nie zgięcie), niekontrolowany łuk lędźwiowy w końcowym zakresie jest ryzykowny. Pracuj w bardzo krótkim zakresie i prawie w pionie, albo zostań przy progresjach deski.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "wrist_or_elbow_pain",
+      "severity": "caution",
+      "modification": "Neutral grip on TRX handles is wrist-friendly, but body-weight load on small joints can aggravate existing tendinopathy. Reduce time under tension or stay closer to vertical.",
+      "modificationPl": "Chwyt neutralny na uchwytach TRX jest przyjazny nadgarstkom, ale obciążenie masą ciała w małych stawach może nasilić istniejącą tendinopatię. Skróć czas pod napięciem lub pozostań bliżej pionu.",
+      "alternative": "stability-ball-rollout"
+    }
+  ],
+
+  "typical_sets_reps": "3x6-10 (strength) | 3x8-12 (hypertrophy) | 3x12-15 (endurance, less horizontal angle)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "suspended-abdominal-fallout.gif",
+    "frames_extracted": [
+      "frames/suspended-abdominal-fallout/frame_0_start.png",
+      "frames/suspended-abdominal-fallout/frame_1_early.png",
+      "frames/suspended-abdominal-fallout/frame_2_mid.png",
+      "frames/suspended-abdominal-fallout/frame_3_late.png",
+      "frames/suspended-abdominal-fallout/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/suspended-abdominal-fallout"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): stojąca pozycja, lekkie pochylenie w przód do TRX, ramiona ugięte trzymają uchwyty przed klatką piersiową, podświetlone primary: mięsień prosty brzucha + mięsień najszerszy grzbietu (klasyczna anty-ekstensja). Klatka 2 (mid): ciało w pełnym opadnięciu w przód, niemal pozioma deska, ramiona całkowicie wyciągnięte za głowę, jedna prosta linia od stóp przez biodra i tułów aż po dłonie. Podświetlone aktywne mięśnie: cały rectus abdominis na długości + lats + serratus przy żebrach + przednie aktony deltoidów. Klatka 4 (end): powrót do pionu z widmem fazy pośredniej w tle (cień ruchu). Mechanika potwierdzona: anti-extension w otwartym łańcuchu kinematycznym — abs i lats hamują przeprost kręgosłupa, jednocześnie shoulder flexion przeciw oporowi masy ciała. Force=both (znacząca praca ekscentryczna przy opadaniu + koncentryczna przy powrocie). Klasyfikacja: anti_extension (nie core_flexion jak crunche/cocoons!), compound (kręgosłup + biodra + barki), bilateral, sagittal. Mechanic=compound (wiele stawów). Wymaga suspension_trainer (TRX). Level=advanced, difficulty=8 — to progresja po opanowaniu ab wheel rollout w klęku i hollow body hold; bez bazy łatwo o łuk w lędźwiach. Sources: tylko jahel (yuhonas i glowupp nie mają tego ćwiczenia w katalogu free-exercise-db ani glowupp). Polska nazwa: 'Wypad brzuszny na TRX' to opisowa polska forma plus zachowuję 'suspended abdominal fallout' w nawiasie i jako alias dla wyszukiwarki. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — z uwzględnieniem polskiego żargonu siłowni (anty-ekstensja, faza ekscentryczna, fallout/rollout zostają jako zapożyczenia).",
+
+  "tags": ["core", "abs", "anti_extension", "trx", "suspension_trainer", "advanced", "lats", "rollout", "fallout", "compound"]
+}

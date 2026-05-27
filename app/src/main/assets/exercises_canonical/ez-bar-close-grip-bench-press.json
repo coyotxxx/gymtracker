@@ -1,0 +1,204 @@
+{
+  "id": "ez-bar-close-grip-bench-press",
+  "name": "EZ-Bar Close-Grip Bench Press",
+  "namePl": "Wyciskanie wąskim chwytem EZ-barem na ławce poziomej",
+  "aliases": ["EZ bar close grip bench", "cambered close-grip bench press", "EZ CGBP", "EZ-bar narrow bench press", "close grip bench EZ"],
+  "aliasesPl": ["close-grip bench press EZ-barem", "wyciskanie wąskim chwytem łamanym gryfem", "CGBP EZ", "wyciskanie EZ wąsko", "wąskie wyciskanie łamanym gryfem", "EZ bench na tricepsy"],
+
+  "description": "Wrist-friendly variation of the close-grip bench press using a cambered (EZ) bar instead of a straight barbell. The angled inner grips put the wrists, forearms and elbows in a more neutral, semi-pronated position, which dramatically reduces wrist and elbow stress while keeping the triceps-dominant pressing pattern. Ideal for lifters who feel wrist or elbow discomfort from straight-bar CGBP, and as a high-volume triceps accessory for hypertrophy and lockout strength.",
+  "descriptionPl": "Wariant wyciskania wąskim chwytem przyjazny dla nadgarstków — zamiast prostej sztangi używamy łamanego gryfu EZ. Wygięte do wewnątrz uchwyty ustawiają nadgarstki, przedramiona i łokcie w bardziej neutralnej, na wpół pronowanej pozycji, co znacząco zmniejsza obciążenie nadgarstków i łokci przy zachowaniu tricepsowego wzorca wyciskania. Idealne dla osób, które odczuwają dyskomfort nadgarstków lub łokci przy klasycznym CGBP prostą sztangą, oraz jako pomoc o wysokiej objętości na hipertrofię tricepsa i siłę lock-outu.",
+
+  "instructions": [
+    "Lie flat on a bench with the EZ bar racked at eye level. Feet planted firmly on the floor, knees bent ~90°.",
+    "Retract and depress your shoulder blades, keep a slight natural arch in the lower back, glutes on bench.",
+    "Grip the EZ bar on the inner angled handles (the inward bends) — hands shoulder-width or slightly narrower. Palms in a semi-pronated, more comfortable position. Wrap thumbs around the bar.",
+    "Unrack the bar by extending your arms. Move it directly over your shoulders.",
+    "Take a big breath, brace your core, and lower the bar in a controlled manner toward your lower chest / upper abdomen — same touchpoint as straight-bar CGBP.",
+    "Keep elbows tucked close to your torso (~20-30°, NOT flared). Forearms stay roughly vertical, wrists stacked over elbows.",
+    "Touch the chest lightly — do NOT bounce. Brief pause is allowed for stricter triceps tension.",
+    "Press the bar up by extending the elbows aggressively. Triceps drive the movement; finish in full lockout over the shoulders.",
+    "Keep shoulder blades pinned to the bench throughout. Exhale at the top of the press."
+  ],
+  "instructionsPl": [
+    "Połóż się na poziomej ławce, EZ-bar w stojaku na wysokości oczu. Stopy mocno na podłodze, kolana zgięte ~90°.",
+    "Ściągnij łopatki w dół i razem, zachowaj lekki naturalny łuk w dolnych plecach, pośladki na ławce.",
+    "Złap łamany gryf za wewnętrzne wygięcia (zakręty do środka) — dłonie na szerokość barków lub nieco węziej. Dłonie w półpronowanej, bardziej komfortowej pozycji. Owinij kciuki wokół gryfu.",
+    "Wyjmij sztangę ze stojaka prostując ramiona. Przenieś ją bezpośrednio nad barki.",
+    "Nabierz głęboki oddech, napnij brzuch, opuszczaj gryf kontrolowanym ruchem do dolnej klatki / górnej części brzucha — ten sam punkt dotyku co przy prostej sztandze.",
+    "Trzymaj łokcie blisko tułowia (~20-30°, NIE rozsuwane). Przedramiona pionowe, nadgarstki w linii z łokciami.",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza dopuszczalna dla ściślejszej pracy tricepsów.",
+    "Wyciśnij gryf w górę agresywnym wyprostem łokci. Tricepsy napędzają ruch; zakończ pełnym lock-outem nad barkami.",
+    "Łopatki przyklejone do ławki przez cały ruch. Wydech na szczycie wyciskania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major_inner", "anterior_deltoids"],
+    "secondary": ["pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "wrist_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "pectoralis_major_inner": "P8",
+    "anterior_deltoids": "P7",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S4",
+    "forearms": "S3",
+    "lats": "T3",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["ez_bar", "flat_bench", "power_rack_or_bench_with_supports"],
+    "optional": ["belt", "wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-bench-press", "dumbbell-bench-press", "diamond-push-up"],
+    "progression_to": ["barbell-close-grip-bench-press", "board-press", "floor-press"],
+    "alternatives": ["barbell-close-grip-bench-press", "dumbbell-close-grip-bench-press", "smith-machine-close-grip-bench-press", "diamond-push-up", "dumbbell-tricep-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Grip the inner angled bends of the EZ bar — semi-pronated wrists",
+      "Hands shoulder-width or just inside; never extremely close",
+      "Eyes directly under the bar, shoulder blades pinned",
+      "Slight arch in lower back, glutes on bench, feet planted",
+      "Wrists stacked over elbows, bar in palm heel (not fingers)"
+    ],
+    "setup_cues_pl": [
+      "Łap za wewnętrzne wygięcia EZ-bara — nadgarstki półpronowane",
+      "Dłonie na szerokość barków lub tuż węziej; nigdy skrajnie wąsko",
+      "Oczy bezpośrednio pod gryfem, łopatki ściągnięte",
+      "Lekki łuk w dolnych plecach, pośladki na ławce, stopy mocno na podłodze",
+      "Nadgarstki w linii z łokciami, gryf w podstawie dłoni (nie w palcach)"
+    ],
+    "execution_cues": [
+      "Tuck elbows ~20-30° from torso ('arrow shape', not 'T shape')",
+      "Touch lower chest / upper abdomen (lower than regular bench)",
+      "Lockout aggressively with triceps — 'punch the ceiling'",
+      "Keep forearms vertical, no wrist bending — EZ bar makes this easier",
+      "Pin shoulder blades and lats throughout the lift"
+    ],
+    "execution_cues_pl": [
+      "Schowaj łokcie ~20-30° od tułowia ('strzałka', nie 'litera T')",
+      "Dotknij dolnej klatki / górnej części brzucha (niżej niż w klasycznym bench)",
+      "Agresywny lock-out tricepsami — 'uderz w sufit'",
+      "Przedramiona pionowe, bez wyginania nadgarstków — EZ-bar to ułatwia",
+      "Łopatki i najszersze napięte przez cały ruch"
+    ],
+    "common_faults": [
+      {
+        "fault": "Gripping the straight (outer) sections instead of the inner bends",
+        "faultPl": "Chwyt na prostych (zewnętrznych) odcinkach zamiast na wewnętrznych wygięciach",
+        "cause": "Misunderstanding the purpose of the EZ bar — the angled inner grips are what makes this wrist-friendly.",
+        "causePl": "Niezrozumienie sensu EZ-bara — to właśnie wewnętrzne wygięcia odciążają nadgarstki.",
+        "cue": "Wrap hands around the inward bends. Knuckles point slightly inward, wrists in a natural semi-pronated angle.",
+        "cuePl": "Łap dokładnie na wewnętrznych zakrętach. Knykcie lekko do siebie, nadgarstki w naturalnym półpronowanym kącie."
+      },
+      {
+        "fault": "Elbows flaring outward (like regular wide bench)",
+        "faultPl": "Łokcie rozsuwane na boki (jak w klasycznym szerokim bench)",
+        "cause": "Old habit from flat barbell bench; loss of triceps focus.",
+        "causePl": "Stary nawyk z klasycznego wyciskania sztangą; utrata świadomości pracy tricepsów.",
+        "cue": "Elbows BRUSH the ribs throughout. 'Pull elbows toward your back pockets'.",
+        "cuePl": "Łokcie OCIERAJĄ żebra przez cały ruch. 'Wciągaj łokcie do tylnych kieszeni'."
+      },
+      {
+        "fault": "Grip too narrow on the bar (hands meeting in the middle)",
+        "faultPl": "Chwyt zbyt wąski (dłonie schodzą się na środku)",
+        "cause": "Belief that 'narrower = more triceps'. Extreme narrow grip stresses wrists/shoulders without extra benefit.",
+        "causePl": "Przekonanie, że 'węziej = więcej tricepsa'. Skrajnie wąski chwyt obciąża nadgarstki/barki bez dodatkowej korzyści.",
+        "cue": "Use the natural inner bends; index fingers ~25-35 cm apart. Don't try to squeeze hands together.",
+        "cuePl": "Używaj naturalnych wewnętrznych wygięć; wskazujące ~25-35 cm od siebie. Nie wciskaj dłoni do siebie."
+      },
+      {
+        "fault": "Bar touching too high on the chest (sternum or higher)",
+        "faultPl": "Punkt dotyku zbyt wysoko na klatce (mostek lub wyżej)",
+        "cause": "Default flat-bench groove; not adapting bar path to narrow grip biomechanics.",
+        "causePl": "Domyślny tor jak w klasycznym bench; brak adaptacji do biomechaniki wąskiego chwytu.",
+        "cue": "Lower the bar to lower chest / upper abdomen. With elbows tucked, the natural path is lower.",
+        "cuePl": "Opuszczaj gryf do dolnej klatki / górnej części brzucha. Przy schowanych łokciach naturalny tor jest niżej."
+      },
+      {
+        "fault": "Bouncing the bar off the chest",
+        "faultPl": "Odbijanie gryfu od klatki",
+        "cause": "Trying to use momentum to lift more weight; ego lifting.",
+        "causePl": "Próba użycia rozpędu by wycisnąć więcej; ego-lifting.",
+        "cue": "Controlled descent, light touch to lower chest, then drive up. Brief pause builds raw triceps strength.",
+        "cuePl": "Kontrolowane schodzenie, lekkie dotknięcie dolnej klatki, potem wyciskanie. Krótka pauza buduje surową siłę tricepsa."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent and press. Exhale at the top of the lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "ok",
+      "modification": "This IS the wrist-friendly variation. The cambered EZ bar puts wrists in a semi-pronated, neutral position. Usually a good fit even with mild wrist pain — but stop if pain persists. Wrist wraps help.",
+      "modificationPl": "To JEST wariant przyjazny dla nadgarstków. Łamany gryf ustawia nadgarstki półpronowane, w pozycji neutralnej. Zazwyczaj OK nawet przy łagodnym bólu nadgarstków — ale przerwij jeśli ból się utrzymuje. Wraps pomagają.",
+      "alternative": "dumbbell-close-grip-bench-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Close-grip pressing loads the triceps tendon at the elbow. EZ bar reduces forearm twist (vs straight bar), which helps, but high load still aggravates. Use 8-15 reps, slow eccentric, avoid heavy 1RM, build up gradually.",
+      "modificationPl": "Wyciskanie wąskim chwytem obciąża ścięgno tricepsa przy łokciu. EZ-bar zmniejsza skręcenie przedramienia (vs prosta sztanga), co pomaga, ale duże ciężary nadal mogą drażnić. Stosuj 8-15 powtórzeń, wolna ekscentryczna, unikaj ciężkich 1RM, buduj stopniowo.",
+      "alternative": "dumbbell-tricep-extension"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Close-grip is shoulder-friendlier than wide-grip bench. Keep elbows tucked tight, avoid deepest ROM if front-of-shoulder pain appears. Stop on sharp pain.",
+      "modificationPl": "Close-grip jest łagodniejszy dla barków niż szeroki chwyt. Trzymaj łokcie ściśle ścięte, unikaj najgłębszego zakresu jeśli pojawi się ból z przodu barku. Przerwij przy ostrym bólu.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy barbell pressing (even with EZ bar) aggravates rotator cuff injuries. Switch to machine pressing or rehab protocol until cleared.",
+      "modificationPl": "Ciężkie wyciskanie sztangą (nawet EZ-bar) drażni urazy stożka rotatorów. Przejdź na maszynę lub protokół rehabilitacyjny do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (strength) | 3-4x10-15 (hypertrophy/triceps) | 4x8-12 (accessory after main bench)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "ez-bar-close-grip-bench-press.gif",
+    "frames_extracted": [
+      "frames/ez-bar-close-grip-bench-press/frame_0_start.png",
+      "frames/ez-bar-close-grip-bench-press/frame_1_early.png",
+      "frames/ez-bar-close-grip-bench-press/frame_2_mid.png",
+      "frames/ez-bar-close-grip-bench-press/frame_3_late.png",
+      "frames/ez-bar-close-grip-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/ez-bar-close-grip-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frame 0: gryf EZ (wyraźnie wygięty — łamany) przy dolnej klatce/górnym brzuchu, ławka pozioma, dłonie na wewnętrznych zakrętach gryfu na szerokość barków lub nieco węziej, łokcie blisko tułowia. Frame 2: pełne wyciśnięcie (lock-out), ramiona pionowe nad barkami, EZ-bar nad linią barków. Frame 4: powrót do dolnej pozycji z echem górnej. Podświetlone: tricepsy (P10 — najjaśniej na przedramieniu/tyle ramienia), wewnętrzna klatka (P8), przednie delty (P7), forearms (S3 — z powodu chwytu na wygięciach). Klasyczny EZ CGBP: wrist-friendly variant, hand placement na inner bends, elbows tucked. Difficulty 5 (intermediate, ale łatwiejszy niż straight-bar CGBP dzięki wygodniejszemu chwytowi). Wszystkie pola PL od zera, zgodne z polskim slangiem siłowniowym (EZ-bar/łamany gryf, close-grip, lock-out).",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "ez_bar", "triceps_focus", "wrist_friendly", "lockout_strength", "inner_chest", "bench_variation", "hypertrophy"]
+}

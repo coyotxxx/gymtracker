@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-incline-t-raise",
+  "name": "Dumbbell Incline T-Raise",
+  "namePl": "T-raise z hantlami na ławce skośnej prone",
+  "aliases": ["prone incline T raise", "incline bench rear delt T raise", "chest-supported T raise", "incline prone reverse fly to T"],
+  "aliasesPl": ["T-raise leżąc na skośnej ławce", "wznosy do T na ławce skośnej prone", "rozpiętki do T na ławce skośnej", "wznosy bokiem do T z podparciem klatki"],
+
+  "description": "Strict isolation movement for the rear deltoids performed lying face-down (prone) on an incline bench. The lifter raises both dumbbells out to the sides in true horizontal abduction until the arms reach shoulder height, forming a 'T' shape with the torso. Chest support on the incline pad completely removes hip extension and lumbar cheating, making this one of the cleanest mechanical environments for loading the posterior deltoid and mid-back. The plane of motion is transverse (horizontal abduction in shoulder flexion), which differs from frontal-plane rear flyes — here the arms are elevated relative to the long axis of the body, recruiting rear delts together with the scapular retractors.",
+  "descriptionPl": "Ścisłe ćwiczenie izolowane na tylne aktony barków wykonywane leżąc twarzą w dół (prone) na ławce skośnej. Ćwiczący unosi obie hantle bokiem w prawdziwym odwiedzeniu poziomym aż ramiona dojdą do wysokości barków, tworząc literę 'T' z tułowiem. Podparcie klatki na pochyłym oparciu całkowicie eliminuje wyprost bioder i oszukiwanie z odcinka lędźwiowego, dzięki czemu jest to jedno z najczystszych mechanicznie środowisk do obciążania tylnego aktonu i środka pleców. Płaszczyzna ruchu jest poprzeczna (odwodzenie poziome w zgięciu barku), co odróżnia to ćwiczenie od rozpiętek w opadzie w płaszczyźnie czołowej — tutaj ramiona są uniesione względem długiej osi ciała, angażując tylne aktony razem z mięśniami ściągającymi łopatki.",
+
+  "instructions": [
+    "Set an incline bench to roughly 30-45 degrees and grab a pair of light to moderate dumbbells.",
+    "Lie face-down on the bench with the chest fully supported on the pad. Top of the bench should be roughly at upper chest / collarbone height so the arms can hang freely.",
+    "Plant the feet firmly on the floor or on the bench's foot rests for stability. Keep the head in neutral — do not crane the neck up.",
+    "Let the arms hang straight down from the shoulders with the dumbbells held in a pronated grip (palms facing back toward the legs, knuckles forward).",
+    "Set a small, fixed bend in the elbows (~10-15°). Retract and depress the shoulder blades. This is the start position.",
+    "Raise both dumbbells out to the sides in a wide horizontal arc until the arms reach shoulder level and the body forms a 'T' shape — upper arms perpendicular to the torso.",
+    "Pause briefly at the top, squeezing the rear delts and pinching the shoulder blades together. Wrists, elbows, and shoulders should be roughly in one line.",
+    "Lower the dumbbells along the same arc under control over 2-3 seconds, inhaling on the way down.",
+    "Keep the chest pinned to the pad the entire set — do not arch the lower back or lift the torso to throw the weight up."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną pod kątem około 30-45 stopni i weź parę lekkich do średnich hantli.",
+    "Połóż się twarzą w dół na ławce z klatką w pełni opartą na oparciu. Górna krawędź ławki powinna być mniej więcej na wysokości górnej klatki / obojczyków, by ramiona mogły swobodnie zwisać.",
+    "Ustaw stopy stabilnie na podłodze lub na podnóżkach ławki. Trzymaj głowę w neutralnej pozycji — nie zadzieraj szyi do góry.",
+    "Pozwól ramionom swobodnie zwisać prosto w dół od barków, hantle trzymaj chwytem pronowanym (dłonie zwrócone do tyłu w kierunku nóg, kostki dłoni do przodu).",
+    "Ustaw lekkie, stałe ugięcie w łokciach (~10-15°). Ściągnij łopatki w tył i w dół. To pozycja wyjściowa.",
+    "Unieś obie hantle bokiem w szerokim łuku poziomym, aż ramiona dojdą do poziomu barków, a ciało utworzy literę 'T' — ramiona ponad łokciem prostopadle do tułowia.",
+    "Zatrzymaj się na chwilę w górze, mocno spinając tylne aktony i ściągając łopatki razem. Nadgarstki, łokcie i barki powinny być w jednej linii.",
+    "Opuszczaj hantle tym samym łukiem pod kontrolą przez 2-3 sekundy, wdech podczas opuszczania.",
+    "Utrzymuj klatkę przyklejoną do oparcia przez całą serię — nie wyginaj odcinka lędźwiowego i nie unoś tułowia żeby zarzucić ciężar w górę."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids"],
+    "secondary": ["trapezius_middle", "rhomboids", "infraspinatus"],
+    "stabilizers": ["teres_minor", "trapezius_lower", "core", "forearm_flexors", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P10",
+    "trapezius_middle": "S7",
+    "rhomboids": "S6",
+    "infraspinatus": "S5",
+    "teres_minor": "T4",
+    "trapezius_lower": "T4",
+    "core": "T2",
+    "forearm_flexors": "T2",
+    "erector_spinae": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-rear-fly"],
+    "progression_to": ["cable-rear-lateral-raise", "machine-rear-delt-fly", "reverse-pec-deck"],
+    "alternatives": ["dumbbell-rear-fly", "dumbbell-lying-rear-lateral-raise", "face-pull", "reverse-pec-deck", "cable-rear-delt-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45°, lie face down with chest fully supported",
+      "Pad reaches roughly upper chest / collarbone — arms hang freely",
+      "Pronated grip, dumbbells hanging straight under shoulders",
+      "Small fixed bend in elbows (~10-15°)",
+      "Shoulder blades retracted and depressed before lifting"
+    ],
+    "setup_cues_pl": [
+      "Ławka 30-45°, połóż się twarzą w dół z klatką w pełni opartą",
+      "Oparcie sięga do górnej klatki / obojczyków — ramiona zwisają swobodnie",
+      "Chwyt pronowany, hantle wiszą prosto pod barkami",
+      "Lekkie stałe ugięcie łokci (~10-15°)",
+      "Łopatki ściągnięte w tył i w dół przed uniesieniem"
+    ],
+    "execution_cues": [
+      "Spread the arms into a 'T' — wrists out wide",
+      "Lead with the back of the hand, not the thumb",
+      "Stop at shoulder level — arms in line with torso",
+      "Pinch shoulder blades together at the top",
+      "Chest stays glued to the pad the entire set"
+    ],
+    "execution_cues_pl": [
+      "Rozłóż ramiona w 'T' — nadgarstki szeroko",
+      "Prowadź grzbietem dłoni, nie kciukiem",
+      "Zatrzymaj na wysokości barków — ramiona w linii z tułowiem",
+      "Ściągnij łopatki razem w górnej pozycji",
+      "Klatka przyklejona do oparcia przez całą serię"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the chest off the pad to swing the weight",
+        "faultPl": "Odrywanie klatki od oparcia żeby zarzucić ciężar",
+        "cause": "Load too heavy, lifter recruits lumbar extensors and momentum",
+        "causePl": "Zbyt duży ciężar, ćwiczący angażuje prostowniki lędźwi i pęd",
+        "cue": "Lower the dumbbells. Whole point of the incline is to remove cheating — if you sit up the exercise is no longer doing its job.",
+        "cuePl": "Zmniejsz ciężar. Cały sens ławki skośnej to wyeliminowanie oszukiwania — jeśli się unosisz, ćwiczenie traci sens."
+      },
+      {
+        "fault": "Shrugging — upper traps dominate",
+        "faultPl": "Wciąganie barków — trapezy górne dominują",
+        "cause": "Weight too heavy or losing scapular depression mid-rep",
+        "causePl": "Zbyt duży ciężar lub utrata depresji łopatek w trakcie powtórzenia",
+        "cue": "Lighter dumbbells. Actively press shoulders away from ears — long neck the entire set.",
+        "cuePl": "Lżejsze hantle. Aktywnie odsuwaj barki od uszu — długa szyja przez całą serię."
+      },
+      {
+        "fault": "Elbows bending and straightening through the rep",
+        "faultPl": "Łokcie zginające i prostujące się w trakcie powtórzenia",
+        "cause": "Lifter unconsciously turns the movement into a rear delt row when the load gets heavy",
+        "causePl": "Ćwiczący nieświadomie zmienia ruch w rear delt row gdy ciężar staje się duży",
+        "cue": "Imagine the elbow angle is welded. Move only at the shoulder joint.",
+        "cuePl": "Wyobraź sobie że kąt łokcia jest zespawany. Ruch wykonujesz tylko w stawie barkowym."
+      },
+      {
+        "fault": "Going too high — arms above shoulder line",
+        "faultPl": "Unoszenie hantli za wysoko — ramiona ponad linią barków",
+        "cause": "Trying to maximize ROM but actually shifting work to upper traps and rotator cuff",
+        "causePl": "Próba maksymalizacji zakresu, ale w rzeczywistości przeniesienie pracy na trapezy górne i stożek rotatorów",
+        "cue": "Stop the moment your arms reach the 'T' — exact shoulder height, no higher.",
+        "cuePl": "Zatrzymaj w momencie gdy ramiona dojdą do 'T' — dokładnie wysokość barków, nie wyżej."
+      },
+      {
+        "fault": "Head craned up / hyperextending the neck",
+        "faultPl": "Zadzieranie głowy / przeprost szyi",
+        "cause": "Looking forward in the mirror instead of keeping neutral cervical alignment",
+        "causePl": "Patrzenie w przód do lustra zamiast utrzymania neutralnego ustawienia szyi",
+        "cue": "Look at the floor. Forehead can rest on the top of the pad if needed.",
+        "cuePl": "Patrz w podłogę. Czoło może oprzeć się o górę oparcia jeśli trzeba."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric) as the arms reach the 'T'. Inhale on the way down (eccentric). The chest is pinned to the pad, so breathe shallowly into the upper chest and ribs, not deep into the belly.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna) gdy ramiona dochodzą do 'T'. Wdech podczas opuszczania (faza ekscentryczna). Klatka jest przyciśnięta do oparcia, więc oddychaj płytko w górną klatkę i żebra, nie głęboko w brzuch."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop at 70-80% of horizontal so the humerus does not reach end-range abduction. Use lighter loads (40-50% of normal) and consider a neutral grip variation.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymuj się przy 70-80% poziomu by kość ramienna nie dochodziła do końca zakresu odwiedzenia. Używaj lżejszych ciężarów (40-50% normalnego) i rozważ chwyt neutralny.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid loaded horizontal abduction in the acute phase. The prone T position with a pronated grip is the most provocative for impingement. Substitute with band pull-aparts or cable face pulls.",
+      "modificationPl": "Unikaj obciążonego odwodzenia poziomego w fazie ostrej. Pozycja prone w 'T' z chwytem pronowanym jest najbardziej prowokująca dla impingementu. Zastąp odwodzeniami z gumą lub face pull na wyciągu.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "The AC joint compresses at the top of the T raise. Reduce ROM, do not let the arms pass shoulder line, and consider a slight forward angle (scaption rather than pure abduction).",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji w górnej pozycji 'T'. Zmniejsz zakres, nie pozwól ramionom przekroczyć linii barków i rozważ lekkie ustawienie do przodu (scaption zamiast czystego odwodzenia).",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "caution",
+      "modification": "Prolonged horizontal abduction can compress the brachial plexus and subclavian vessels. Keep sets short (8-12 reps), avoid holding at the top, and stop immediately if numbness or tingling appears in the hand.",
+      "modificationPl": "Przedłużone odwodzenie poziome może uciskać splot ramienny i naczynia podobojczykowe. Trzymaj serie krótkie (8-12 powtórzeń), unikaj zatrzymywania w górze i przerwij natychmiast jeśli pojawi się drętwienie lub mrowienie w dłoni.",
+      "alternative": "machine-rear-delt-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/standard) | 4-5x15-25 (rear delt specialization/pump) | 3x10-12 (strict strength-focus)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-incline-t-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-t-raise/frame_0_start.png",
+      "frames/dumbbell-incline-t-raise/frame_1_early.png",
+      "frames/dumbbell-incline-t-raise/frame_2_mid.png",
+      "frames/dumbbell-incline-t-raise/frame_3_late.png",
+      "frames/dumbbell-incline-t-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-incline-t-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący leży twarzą w dół (prone) na ławce skośnej ustawionej pod kątem ~30-45°, klatka w pełni oparta o pad, hantle zwisają prosto w dół od barków z chwytem pronowanym (dłonie do tyłu). Tylne aktony, środkowe trapezy i romboidy podświetlone na czerwono. Frame 2 (top): hantle uniesione bokiem w czystym odwodzeniu poziomym do wysokości barków — ciało tworzy literę 'T'. Ramiona ponad łokciem dokładnie w linii z barkami, prostopadle do tułowia. Łokcie lekko ugięte, ale stały kąt. Klatka pozostaje na oparciu. Frame 4: powrót do dołu (z 'ghostem' fazy szczytowej widocznym po bokach). To prawdziwy T-raise w płaszczyźnie poprzecznej (transverse) — różny od rozpiętek w opadzie siedząc (frontal plane). Klasyczna izolacja strict-form. Brak rotacji, brak prostowania się, brak bujania. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "isolation", "dumbbells", "upper_body", "prone", "incline_bench", "chest_supported", "hypertrophy", "rear_delt_specialization", "horizontal_abduction"]
+}

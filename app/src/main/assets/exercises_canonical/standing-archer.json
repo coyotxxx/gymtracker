@@ -1,0 +1,202 @@
+{
+  "id": "standing-archer",
+  "name": "Standing Archer",
+  "namePl": "Łucznik stojący",
+  "aliases": ["standing archer pull", "bodyweight archer", "standing bow draw", "archer dynamic stretch", "standing horizontal pull"],
+  "aliasesPl": ["łucznik na stojąco", "naciąganie łuku stojąc", "archer stojący", "naciąganie cięciwy", "dynamiczny rozciąg łucznika", "stojące rozciąganie strzelca"],
+
+  "description": "Bodyweight standing dynamic mobility / activation drill that imitates drawing a bow. From a standing position with both arms extended forward at chest height, you pull one arm horizontally out to the side until the elbow is in line with the shoulder (or just behind) — squeezing the rear deltoid, rhomboids and middle trapezius — while the opposite arm stays long in front like the bow itself. Slow controlled tempo. Perfect as a warm-up for upper-back/pull days, a desk-job posture reset, or low-intensity rear-delt / scapular retraction activation between sets. Trains horizontal pull pattern in the transverse plane without any equipment.",
+  "descriptionPl": "Bodyweight stojące ćwiczenie mobilizacyjno-aktywacyjne imitujące naciąganie łuku. Z pozycji stojącej z obiema rękami wyprostowanymi w przód na wysokości klatki, ciągniesz jedną rękę poziomo na bok aż łokieć znajdzie się w linii barku (lub lekko za nią) — ściskając tylny akton barku, romboidy i środkową część czworobocznego — podczas gdy druga ręka pozostaje wyprostowana z przodu, niczym sam łuk. Wolne, kontrolowane tempo. Idealne jako rozgrzewka przed treningiem pleców / pull, reset postawy przy pracy biurowej oraz aktywacja tylnych aktonów barku / retrakcji łopatek między seriami. Trenuje wzorzec horyzontalnego ciągnięcia w płaszczyźnie poprzecznej, bez żadnego sprzętu.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, knees soft (not locked), core lightly braced.",
+    "Extend both arms straight forward at shoulder height — palms can face each other or down, hands relaxed in light fists.",
+    "Keep the torso upright and stable — no leaning or rotating. Eyes forward.",
+    "Slowly pull one arm horizontally out to the side, leading with the elbow — as if drawing a bowstring across your chest.",
+    "Continue until the pulling elbow is roughly in line with (or slightly behind) the shoulder; squeeze the shoulder blade in toward the spine at the end range.",
+    "The other arm stays long and steady in front — it represents the 'bow' itself and should not drift down or twist.",
+    "Pause for 1 second at the end position, feeling the contraction between the shoulder blades and in the rear deltoid.",
+    "Slowly return the pulling arm forward to meet the other hand. Repeat on the opposite side. Alternate for the prescribed reps."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, kolana lekko ugięte (nie blokuj), brzuch delikatnie napięty.",
+    "Wyprostuj obie ręce w przód na wysokości barków — dłonie zwrócone do siebie lub do dołu, dłonie rozluźnione w lekkich pięściach.",
+    "Trzymaj tułów prosto i stabilnie — żadnego pochylania ani skręcania. Wzrok przed siebie.",
+    "Powoli ciągnij jedną rękę poziomo na bok, prowadząc ruch łokciem — niczym naciąganie cięciwy łuku przez klatkę.",
+    "Kontynuuj aż łokieć ciągnący znajdzie się w linii barku (lub lekko za nią); na końcu ruchu ściśnij łopatkę w stronę kręgosłupa.",
+    "Druga ręka pozostaje długa i stabilna z przodu — to ona jest 'łukiem' i nie może opaść ani skręcić się.",
+    "Zatrzymaj się na 1 sekundę w końcowej pozycji, czując napięcie między łopatkami i w tylnym aktonie barku.",
+    "Powoli wróć ręką ciągnącą do przodu, aby spotkała się z drugą dłonią. Powtórz na przeciwną stronę. Naprzemiennie do zadanej liczby powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids", "rhomboids", "trapezius_middle"],
+    "secondary": ["latissimus_dorsi", "trapezius_lower", "biceps"],
+    "stabilizers": ["rotator_cuff", "core", "obliques", "erector_spinae", "anterior_deltoids"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P8",
+    "rhomboids": "P8",
+    "trapezius_middle": "P7",
+    "latissimus_dorsi": "S6",
+    "trapezius_lower": "S6",
+    "biceps": "S4",
+    "rotator_cuff": "T5",
+    "core": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["resistance_band", "light_dumbbell"]
+  },
+
+  "category": "mobility",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["band-archer-row", "cable-archer-row", "face-pull"],
+    "alternatives": ["band-pull-apart", "scapular-retraction", "reverse-fly-bodyweight", "wall-angels"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall — feet hip-width, knees soft, ribs stacked over hips",
+      "Both arms straight forward at SHOULDER height — not chest, not chin",
+      "Shoulders down and back — long neck, ears over shoulders",
+      "Core lightly braced — about 20% effort, just enough to keep ribs from flaring",
+      "Mentally rehearse 'drawing a bow' — slow, controlled, dignified"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto — stopy na szerokość bioder, kolana lekko ugięte, żebra ustawione nad biodrami",
+      "Obie ręce wyprostowane w przód na wysokości BARKÓW — nie klatki, nie brody",
+      "Barki w dół i lekko do tyłu — długa szyja, uszy nad barkami",
+      "Brzuch delikatnie napięty — około 20% wysiłku, tyle aby żebra nie sterczały",
+      "Mentalnie wyobraź sobie 'naciąganie łuku' — wolno, kontrolnie, dostojnie"
+    ],
+    "execution_cues": [
+      "Lead with the ELBOW — not the hand. Elbow pulls back at shoulder height",
+      "Squeeze the shoulder blade IN at the end range — feel a tennis ball between the blades",
+      "Front arm stays LONG and STILL — like the wooden frame of the bow",
+      "Pause 1 second at the end — own the position, don't rush",
+      "Torso doesn't rotate — only the arms move. Belly button stays facing forward"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch ŁOKCIEM — nie dłonią. Łokieć ciągnie w tył na wysokości barku",
+      "Ściśnij łopatkę DO ŚRODKA na końcu ruchu — wyobraź sobie piłeczkę tenisową między łopatkami",
+      "Ręka z przodu pozostaje DŁUGA i NIERUCHOMA — niczym drewniana rama łuku",
+      "1 sekunda pauzy na końcu — opanuj pozycję, nie spiesz się",
+      "Tułów się nie skręca — poruszają się tylko ramiona. Pępek nadal patrzy w przód"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates with the pulling arm",
+        "faultPl": "Tułów skręca się razem z ciągnącą ręką",
+        "cause": "Weak anti-rotation core, using momentum instead of muscle, no scapular control",
+        "causePl": "Słaby anty-rotacyjny core, używanie rozpędu zamiast pracy mięśniowej, brak kontroli łopatki",
+        "cue": "Imagine a laser pointing forward from your belly button — it must stay aimed straight ahead. If the laser drifts, you rotated. Slow the tempo until rotation disappears.",
+        "cuePl": "Wyobraź sobie laser świecący w przód z pępka — musi cały czas celować na wprost. Jeśli laser ucieka, znaczy że się skręciłeś. Spowolnij tempo aż rotacja zniknie."
+      },
+      {
+        "fault": "Pulling arm drops below shoulder height",
+        "faultPl": "Ciągnąca ręka opada poniżej wysokości barku",
+        "cause": "Fatigue of the posterior deltoid, lack of awareness, mid-trap takes over",
+        "causePl": "Zmęczenie tylnego aktonu barku, brak świadomości ruchu, środkowy czworoboczny przejmuje pracę",
+        "cue": "Elbow tracks across the body AT shoulder height, like wiping a horizontal shelf at chest level. If the elbow drops, you've lost rear-delt engagement.",
+        "cuePl": "Łokieć przesuwa się przez ciało na WYSOKOŚCI barku, jak gdybyś wycierał poziomą półkę na poziomie klatki. Jeśli łokieć opada, tracisz pracę tylnego aktonu barku."
+      },
+      {
+        "fault": "Shrugging — shoulders rise toward the ears",
+        "faultPl": "Wzruszanie ramionami — barki podjeżdżają do uszu",
+        "cause": "Upper trapezius overactivity (common in desk workers), forgetting to set the shoulder before pulling",
+        "causePl": "Nadaktywność górnego czworobocznego (typowe u pracowników biurowych), zapomnienie o ustawieniu barku przed ciągnięciem",
+        "cue": "Set the shoulders DOWN and back BEFORE you start the pull. Long neck. If you feel work in the upper neck — you're shrugging, not retracting.",
+        "cuePl": "Ustaw barki W DÓŁ i lekko do tyłu PRZED rozpoczęciem ciągnięcia. Długa szyja. Jeśli czujesz pracę w górnej części karku — wzruszasz, a nie retrahujesz."
+      },
+      {
+        "fault": "Front (support) arm drifts down or sideways",
+        "faultPl": "Ręka z przodu (podporowa) opada w dół lub w bok",
+        "cause": "Lack of awareness — the bow arm 'forgotten', no isometric tension",
+        "causePl": "Brak świadomości — ręka 'łuku' zapomniana, brak izometrycznego napięcia",
+        "cue": "Treat the front arm as an isometric task on its own. Imagine pressing it against a wall — same height, same direction, the ENTIRE rep.",
+        "cuePl": "Traktuj rękę z przodu jako osobne zadanie izometryczne. Wyobraź sobie, że dociskasz ją do ściany — ta sama wysokość, ten sam kierunek, przez CAŁE powtórzenie."
+      },
+      {
+        "fault": "Hyperextending the lumbar spine to 'open up the chest'",
+        "faultPl": "Przeprost odcinka lędźwiowego, żeby 'otworzyć klatkę'",
+        "cause": "Confusing scapular retraction with thoracic extension, weak deep core",
+        "causePl": "Mylenie retrakcji łopatek z przeprostem piersiowym, słaby głęboki core",
+        "cue": "The work is between the shoulder blades, NOT in the lower back. Ribs DOWN, glutes lightly squeezed. If your butt sticks out — you're cheating with the spine.",
+        "cuePl": "Praca jest MIĘDZY łopatkami, NIE w dolnym kręgosłupie. Żebra W DÓŁ, pośladki lekko ściśnięte. Jeśli pupa odstaje — oszukujesz kręgosłupem."
+      }
+    ],
+    "breathing": "Inhale as you extend both arms forward (set-up). Exhale slowly through the pull, squeezing the blade in at the end range. Inhale on the return. One full breath per side.",
+    "breathingPl": "Wdech przy wyprostowaniu obu rąk w przód (przygotowanie). Powolny wydech podczas ciągnięcia, ściskając łopatkę na końcu ruchu. Wdech przy powrocie. Jeden pełny oddech na każdą stronę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_pain",
+      "severity": "caution",
+      "modification": "Reduce the range — pull the elbow only as far as is pain-free, even if that means only 30–45° of horizontal abduction. Slow the tempo. Stop if any sharp pain appears in the front of the shoulder.",
+      "modificationPl": "Zmniejsz zakres ruchu — ciągnij łokciem tylko tyle, ile jest bezbolesne, choćby to było tylko 30–45° odwiedzenia poziomego. Spowolnij tempo. Przerwij jeśli pojawi się ostry ból z przodu barku.",
+      "alternative": "scapular-retraction"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Keep the elbow slightly bent (~15°) instead of fully straight to reduce stress on the rotator cuff. Stay below shoulder height if needed. Avoid end-range squeeze until cleared by a physio.",
+      "modificationPl": "Trzymaj łokieć lekko zgięty (~15°) zamiast pełnego wyprostu, by zmniejszyć stres na rotatorach. W razie potrzeby pozostań poniżej wysokości barku. Unikaj końcowego ściśnięcia łopatki do czasu zezwolenia fizjoterapeuty.",
+      "alternative": "wall-angels"
+    },
+    {
+      "condition": "cervical_radiculopathy",
+      "severity": "caution",
+      "modification": "Avoid any neck extension or chin-forward posture during the pull. Keep the neck long and the chin slightly tucked. If symptoms (tingling, arm pain) appear, stop and choose a seated alternative with neutral neck.",
+      "modificationPl": "Unikaj jakiegokolwiek przeprostu szyi czy wysuwania brody przy ciągnięciu. Trzymaj szyję długą i brodę lekko schowaną. Jeśli pojawią się objawy (mrowienie, ból ramienia), przerwij i wybierz wariant siedzący z neutralną szyją.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Avoid full elbow extension and any arm-overhead position. Keep the working arm below shoulder height and add light bend in the elbow. Stop if hand tingling or numbness appears.",
+      "modificationPl": "Unikaj pełnego wyprostu łokcia oraz pozycji ramienia nad głową. Trzymaj rękę pracującą poniżej wysokości barku i utrzymuj lekkie zgięcie łokcia. Przerwij, jeśli pojawi się mrowienie lub drętwienie ręki.",
+      "alternative": "scapular-retraction"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 per side (warm-up / activation) | 3x15-20 per side (posture reset / endurance) | hold 3 seconds at end-range — 2x8 per side (controlled tempo)",
+  "calories_per_kg_per_hour": 2.5,
+
+  "media": {
+    "primary": "standing-archer.gif",
+    "frames_extracted": [
+      "frames/standing-archer/frame_0_start.png",
+      "frames/standing-archer/frame_1_early.png",
+      "frames/standing-archer/frame_2_mid.png",
+      "frames/standing-archer/frame_3_late.png",
+      "frames/standing-archer/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/standing-archer"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0/1/2/3/4 (GIF 18 klatek): postać stoi prosto z obiema rękami wyprostowanymi w przód na wysokości barków (frame 0/1 — symetryczny start, obie ręce złączone w przód). Następnie jedna ręka (prawa) odciąga się poziomo na bok, prowadząc ruch łokciem, aż osiąga linię barku/lekko za nim (frame 2 — pełna pozycja 'naciągniętego łuku'). Druga ręka (lewa) pozostaje wyprostowana w przód jako 'rama łuku'. Frame 3/4 pokazują utrzymanie końcowej pozycji ciągnięcia. Anatomia w GIF mocno podświetla: pectoralis major (otwiera się przy odciąganiu ręki w bok, P-zakres aktywacji izometrycznej dla ręki z przodu), tylny akton barku (posterior deltoid, P8 strona pracująca), górny+środkowy czworoboczny i romboidy (cała przestrzeń między łopatkami, retrakcja), latissimus dorsi (sekundarny). Ruch w płaszczyźnie poprzecznej (transverse), wzorzec pull_horizontal, laterality='alternating' (naprzemienna praca lewa/prawa strona). Tułów stabilny — brak rotacji. Mechanic='compound' (dwa stawy: bark + łopatkowo-żebrowy). Klasyfikacja jako mobility/activation (difficulty 2/10), idealna jako warm-up dla pull day lub reset postawy biurowej. Wszystkie pola PL napisane od zera w polskim standardzie języka treningowego (np. 'naciąganie cięciwy', 'romboidy', 'retrakcja łopatek'). Brak warunków wstępnych — dostępne dla początkujących.",
+
+  "tags": ["bodyweight", "mobility", "warm_up", "activation", "upper_back", "rear_delts", "posture", "horizontal_pull", "scapular_retraction", "no_equipment", "desk_job", "office_friendly", "rehab_friendly", "unilateral", "transverse_plane"]
+}

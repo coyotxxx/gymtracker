@@ -1,0 +1,207 @@
+{
+  "id": "ski-ergometer",
+  "name": "Ski Ergometer (SkiErg)",
+  "namePl": "Ski ergometer (SkiErg)",
+  "aliases": ["ski erg", "ski ergometer", "skierg", "ski erg machine", "double pole erg", "concept2 skierg"],
+  "aliasesPl": ["ski erg", "ski ergometer", "skierg", "maszyna skierg", "ergometr narciarski", "narciarski ergometr", "double pole erg"],
+
+  "description": "A full-body cardio and power machine that mimics the double-pole motion of cross-country skiing. The lifter stands in front of a vertical flywheel unit, grips two handles overhead, and drives them down past the hips while simultaneously hinging at the hips and slightly bending the knees — then returns to the top by extending the spine and reaching tall again. The pulling action loads the lats, triceps, and core, while the leg drive recruits glutes and quads. Because the entire kinetic chain works against an air-braked flywheel that scales resistance to effort, the SkiErg is a CrossFit staple, a rehab-friendly conditioning tool (low joint impact), and one of the best machines for building rowing-style aerobic capacity without a rower.",
+  "descriptionPl": "Maszyna cardio i siłowa angażująca całe ciało, imitująca ruch double pole z narciarstwa biegowego. Stajesz przed pionową jednostką z kołem zamachowym, chwytasz dwa uchwyty nad głową i ciągniesz je w dół poza biodra, jednocześnie schylając się w biodrach i lekko uginając kolana — potem wracasz do góry prostując kręgosłup i wyciągając ręce wysoko. Ruch pociągowy ładuje najszersze grzbietu, triceps i core, a pęd nóg włącza pośladki i czworogłowe. Ponieważ cały łańcuch kinetyczny pracuje przeciw kołu zamachowemu z oporem powietrznym (skaluje się do wysiłku), SkiErg to klasyk CrossFitu, narzędzie kondycyjne przyjazne rehabilitacji (niski impakt na stawy) i jedna z najlepszych maszyn do budowania bazy tlenowej typu wioślarskiego bez ergometru wioślarskiego.",
+
+  "instructions": [
+    "Stand directly in front of the SkiErg with your feet hip-width apart, about 30–50 cm from the base. Toes pointing forward.",
+    "Reach up and grip both handles with a neutral or slightly pronated grip, hands roughly shoulder-width apart. Arms fully extended overhead.",
+    "Stand tall — slight knee bend, ribs stacked over pelvis, core lightly braced. This is the catch position.",
+    "Initiate the pull by simultaneously: (a) hinging at the hips and dropping the chest forward over the thighs, (b) pulling the handles down in a smooth arc past the face, chest, and finally to the hips, and (c) letting the knees bend slightly.",
+    "Finish the drive with the handles below the hips, hips pushed back, chest leaning forward about 30–45° from vertical, and arms reaching back behind the hip line. Hamstrings loaded, core tight.",
+    "Recover smoothly: extend the hips and knees to stand tall again, then let the handles travel back overhead — arms reach up to full extension to start the next stroke. Recovery is roughly twice as long as the drive.",
+    "Maintain a consistent rhythm — power on the way down, relaxed on the way up. Common pacing: 24–30 strokes per minute for endurance, 36+ spm for sprints.",
+    "Breathe with the rhythm: exhale on the drive, inhale on the recovery."
+  ],
+  "instructionsPl": [
+    "Stań dokładnie przed SkiErgiem, stopy na szerokość bioder, około 30–50 cm od podstawy. Palce stóp skierowane do przodu.",
+    "Sięgnij do góry i chwyć oba uchwyty chwytem neutralnym lub lekko nawrotnym, dłonie mniej więcej na szerokość barków. Ramiona wyprostowane wysoko nad głową.",
+    "Wyciągnij się wysoko — lekkie ugięcie kolan, żebra ułożone nad miednicą, lekko napięty core. To pozycja chwytu (catch).",
+    "Rozpocznij pociągnięcie jednocześnie: (a) schylając się w biodrach i opuszczając klatkę do przodu nad uda, (b) ciągnąc uchwyty w dół po łuku obok twarzy, klatki, aż do bioder, (c) lekko uginając kolana.",
+    "Zakończ pociągnięcie z uchwytami poniżej bioder, biodra cofnięte, klatka pochylona ok. 30–45° od pionu, ramiona sięgają w tył za linię bioder. Tylna taśma uda napięta, core spięty.",
+    "Wróć płynnie: wyprostuj biodra i kolana wracając do pełnej postawy, a uchwyty pozwól puścić z powrotem nad głowę — ramiona wyciągają się wysoko do pełnego wyprostu do startu kolejnego cyklu. Faza powrotu trwa około dwa razy dłużej niż faza pociągnięcia.",
+    "Utrzymuj rytm — moc w fazie pociągnięcia, rozluźnienie w fazie powrotu. Typowy rytm: 24–30 cykli/min dla wytrzymałości, 36+ cykli/min dla sprintów.",
+    "Oddychaj z rytmem: wydech na pociągnięciu, wdech na powrocie."
+  ],
+
+  "classification": {
+    "movement_pattern": "cardio",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "triceps_brachii", "core", "cardiovascular"],
+    "secondary": ["glutes", "quadriceps", "hamstrings", "trapezius_lower"],
+    "stabilizers": ["erector_spinae", "rectus_abdominis", "obliques", "rear_deltoids", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "triceps_brachii": "P8",
+    "core": "P8",
+    "cardiovascular": "P10",
+    "glutes": "S7",
+    "quadriceps": "S6",
+    "hamstrings": "S7",
+    "trapezius_lower": "S6",
+    "erector_spinae": "T5",
+    "rectus_abdominis": "T4",
+    "obliques": "T3",
+    "rear_deltoids": "T4",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["ski_ergometer"],
+    "optional": ["heart_rate_monitor", "lifting_straps"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["hip-hinge-drill", "lat-pulldown"],
+    "progression_to": ["skierg-intervals-hiit", "skierg-2k-test", "skierg-tabata"],
+    "alternatives": ["rowing-machine", "battle-ropes", "lat-pulldown", "straight-arm-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, 30–50 cm from the base — close enough to reach handles fully overhead",
+      "Stand tall at the catch: arms extended high, ribs stacked, slight knee bend",
+      "Neutral grip, hands roughly shoulder-width — not too narrow, not too wide",
+      "Core lightly braced before the first pull, breath ready for exhale",
+      "Damper/drag set 4–6 for most users (lower = smoother, higher = more 'sloggy' — not heavier)"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, 30–50 cm od podstawy — na tyle blisko żeby uchwyty były nad głową w pełnym wyciągnięciu",
+      "Wyprostowana postawa w pozycji catch: ramiona wysoko, żebra nad miednicą, lekko ugięte kolana",
+      "Chwyt neutralny, dłonie na szerokość barków — nie za wąsko, nie za szeroko",
+      "Lekko napięty core przed pierwszym pociągnięciem, gotowy wydech",
+      "Damper/opór 4–6 dla większości — niżej = płynniej, wyżej = bardziej 'lepkie', a nie cięższe"
+    ],
+    "execution_cues": [
+      "Hinge from the hips as you pull — chest follows handles down",
+      "Pull past the hips, not just to the chest — finish behind the hip line",
+      "Legs drive too — slight knee bend in the finish loads quads and glutes",
+      "Smooth, not jerky — power phase is fast but controlled, recovery is slow",
+      "Return arms ALL the way overhead at the top — full ROM = full lat stretch"
+    ],
+    "execution_cues_pl": [
+      "Schyl się w biodrach gdy ciągniesz — klatka podąża za uchwytami w dół",
+      "Pociągnij PRZECHODZĄC za biodra, nie tylko do klatki — zakończ za linią bioder",
+      "Nogi też pracują — lekkie ugięcie kolan w finiszu ładuje czworogłowe i pośladki",
+      "Płynnie, nie szarpiąc — faza mocy szybka ale kontrolowana, powrót wolny",
+      "Wracaj ramionami CAŁKOWICIE nad głowę na górze — pełen zakres = pełen rozciąg najszerszego"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling only with the arms (no hip hinge)",
+        "faultPl": "Ciągnięcie wyłącznie ramionami (bez hinge'u biodrami)",
+        "cause": "Beginners treat the SkiErg as an upper-body machine; they keep the legs straight and torso vertical, so all the work falls on biceps/forearms and they fatigue in 30 seconds",
+        "causePl": "Początkujący traktują SkiErg jak maszynę na górne ciało; trzymają nogi proste i tułów pionowo, więc cała praca spada na biceps/przedramiona i męczą się w 30 sekund",
+        "cue": "Pull comes from hips and lats, not arms. Hinge forward as the handles come down — chest goes to mid-thigh height.",
+        "cuePl": "Pociągnięcie idzie z bioder i najszerszych, nie z ramion. Schyl się do przodu gdy uchwyty schodzą — klatka zjeżdża do wysokości połowy uda."
+      },
+      {
+        "fault": "Rounding the lower back at the finish",
+        "faultPl": "Zaokrąglanie dolnego odcinka pleców w finiszu",
+        "cause": "Hinging too far without core bracing, or trying to drive the handles further behind the hips than the spine can safely flex",
+        "causePl": "Zbyt mocne hinge bez napięcia core, lub próba przeciągnięcia uchwytów dalej za biodra niż kręgosłup może bezpiecznie się zgiąć",
+        "cue": "Stop the hinge at 30–45° — chest leans, but spine stays neutral. If lower back rounds, you've gone too far.",
+        "cuePl": "Zatrzymaj hinge na 30–45° — klatka się pochyla, ale kręgosłup pozostaje neutralny. Jeśli plecy się zaokrąglają — poszedłeś za daleko."
+      },
+      {
+        "fault": "Not returning arms fully overhead",
+        "faultPl": "Brak powrotu ramion w pełni nad głowę",
+        "cause": "Fatigue, rushing the cadence, or simply not knowing that full overhead reach is part of the stroke — results in short, choppy reps with no lat stretch",
+        "causePl": "Zmęczenie, zbyt szybki rytm lub brak świadomości że pełen wyciąg nad głową to część cyklu — efekt: krótkie, szarpane powtórzenia bez rozciągu najszerszego",
+        "cue": "Reach for the ceiling at the top — both arms fully extended, shoulders shrug up slightly. Every stroke ends overhead.",
+        "cuePl": "Sięgaj do sufitu na górze — obie ręce w pełnym wyproście, barki lekko 'wzruszają' do góry. Każdy cykl kończy się nad głową."
+      },
+      {
+        "fault": "Standing too far from the machine",
+        "faultPl": "Stanie zbyt daleko od maszyny",
+        "cause": "User wants 'space to pull' but ends up too far back — can't reach handles overhead without leaning, so the pull starts in front of the body and loses lat engagement",
+        "causePl": "Użytkownik chce 'miejsca na pociągnięcie' ale stoi zbyt daleko — nie sięga uchwytów nad głową bez pochylania się, więc pociągnięcie startuje przed ciałem i traci pracę najszerszego",
+        "cue": "Stand close enough that arms reach STRAIGHT UP — not forward. Toes 30–50 cm from base, body almost touching the unit at the top.",
+        "cuePl": "Stań na tyle blisko żeby ramiona sięgały PROSTO W GÓRĘ — nie do przodu. Palce stóp 30–50 cm od podstawy, ciało prawie dotyka jednostki na górze."
+      },
+      {
+        "fault": "Death-gripping the handles",
+        "faultPl": "Kurczowy chwyt uchwytów",
+        "cause": "Squeezing handles for dear life — forearms blow up in 60 seconds, grip becomes the limiting factor before lats, lungs, or legs do",
+        "causePl": "Ściskanie uchwytów na śmierć — przedramiona padają w 60 sekund, chwyt staje się czynnikiem limitującym zanim najszersze, płuca lub nogi w ogóle się zmęczą",
+        "cue": "Hook fingers, don't squeeze. Thumb can stay loose or wrap lightly. If forearms burn before lungs, you're gripping too hard.",
+        "cuePl": "Zahacz palce, nie ściskaj. Kciuk może być luźny lub lekko owinięty. Jeśli przedramiona pieką szybciej niż płuca — chwyt jest za mocny."
+      }
+    ],
+    "breathing": "Exhale forcefully on the drive (when pulling handles down) — this helps the diaphragm assist trunk flexion and provides intra-abdominal pressure for the hinge. Inhale on the recovery (arms going back up). For sprints, keep the rhythm 1:1 with strokes; for endurance, you may take 2 breaths per stroke. Never hold breath under tension.",
+    "breathingPl": "Wydychaj mocno na fazie pociągnięcia (gdy uchwyty schodzą w dół) — to pomaga przeponie wspierać zgięcie tułowia i daje ciśnienie wewnątrz-brzuszne dla hinge'u. Wdech na fazie powrotu (ramiona idą do góry). Przy sprintach trzymaj rytm 1:1 z cyklami; przy wytrzymałości możesz brać 2 oddechy na cykl. Nigdy nie wstrzymuj oddechu pod napięciem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "caution",
+      "modification": "The repeated hip hinge under load can aggravate an inflamed lower back. Reduce ROM (don't hinge past 20°) and lower intensity, or switch to a seated machine (rowing erg with proper form) until pain resolves.",
+      "modificationPl": "Powtarzany hinge biodrami pod obciążeniem może podrażnić zapalony odcinek lędźwiowy. Zmniejsz zakres (nie schyłaj się poniżej 20°) i zmniejsz intensywność, lub przejdź na maszynę siedzącą (ergometr wioślarski z poprawną techniką) do ustąpienia bólu.",
+      "alternative": "rowing-machine"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Full overhead reach with two handles can pinch an impinged shoulder. Reduce overhead ROM (don't go above forehead height) or use a slightly wider grip. If pain persists, switch to a horizontal pulling machine.",
+      "modificationPl": "Pełne wyciągnięcie obu ramion nad głowę może zacisnąć podrażniony bark. Zmniejsz zakres na górze (nie wyżej niż na wysokość czoła) lub użyj nieco szerszego chwytu. Jeśli ból nie ustępuje — przejdź na maszynę z pociągiem poziomym.",
+      "alternative": "rowing-machine"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "avoid",
+      "modification": "High-intensity SkiErg sessions spike blood pressure significantly (full-body, breath-holding tendency, isometric grip). Get cleared by a cardiologist before any HIIT protocol; for low-intensity steady state under medical clearance, keep HR below 70% max.",
+      "modificationPl": "Sesje SkiErg o wysokiej intensywności znacząco podnoszą ciśnienie krwi (całe ciało, tendencja do wstrzymywania oddechu, izometryczny chwyt). Najpierw konsultacja z kardiologiem przed jakimkolwiek HIIT; przy niskiej intensywności pod nadzorem trzymaj tętno poniżej 70% maks.",
+      "alternative": "walking-on-incline-treadmill"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "caution",
+      "modification": "Gripping handles under repeated load stresses the wrists, especially in pronation. Use lifting straps to offload the grip, or reduce session intensity until the wrist tolerates load.",
+      "modificationPl": "Ściskanie uchwytów pod powtarzanym obciążeniem obciąża nadgarstki, zwłaszcza w nawróceniu. Użyj pasków treningowych aby odciążyć chwyt, lub zmniejsz intensywność sesji aż nadgarstek będzie tolerował obciążenie.",
+      "alternative": "stationary-bike-run"
+    }
+  ],
+
+  "typical_sets_reps": "Endurance: 10–30 min steady state @ 24–28 spm | Intervals: 8x500m with 1:1 rest | Sprint: 10x30s on / 30s off | Benchmark: 2000m test for time",
+  "calories_per_kg_per_hour": 9.5,
+
+  "media": {
+    "primary": "ski-ergometer.gif",
+    "frames_extracted": [
+      "frames/ski-ergometer/frame_0_start.png",
+      "frames/ski-ergometer/frame_1_early.png",
+      "frames/ski-ergometer/frame_2_mid.png",
+      "frames/ski-ergometer/frame_3_late.png",
+      "frames/ski-ergometer/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/ski-ergometer"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (18 ramek). frame_0/frame_4 = pozycja catch (lifter stoi wyprostowany przed pionową ramą SkiErg, oba ramiona wyciągnięte wysoko nad głowę chwytając dwa uchwyty na linkach, postawa pełna, lekkie ugięcie kolan, klatka piersiowa wyprostowana). frame_2 = pozycja finish (klatka mocno pochylona do przodu ~30–45° od pionu, biodra cofnięte w hinge'u, ramiona przeciągnięte w dół i lekko za linię bioder, kolana lekko ugięte, plecy neutralne). frame_1/frame_3 = fazy przejściowe. Podświetlone mięśnie (czerwone): latissimus dorsi (najszerszy grzbietu — główna praca pociągowa), triceps brachii (wyprost w łokciu w fazie drive), trapezius lower + rear deltoids (stabilizacja łopatek przy ścieżce ramion), erector spinae (utrzymanie neutralnego kręgosłupa w hinge'u), glutes + hamstrings (hinge biodrowy), quadriceps (lekkie ugięcie/wyprost kolan). Brak GIFa yuhonas, ale wzorzec ruchu jest powszechnie znany z CrossFitu i Concept2. Movement pattern: cardio (główna kategoria) — choć force/mechanic to compound pull, kategoria główna to konditioning. Mapowanie intensywności: cardiovascular P10 (cały sens maszyny), latissimus_dorsi P9 (główna praca pociągowa double-pole), triceps_brachii P8 (wyprost łokcia pod obciążeniem koła zamachowego), core P8 (anti-flexion przy hinge'u + transfer mocy biodro→ramiona), glutes/hamstrings S7 (hinge biodrowy), quadriceps S6 (lekka praca kolan). Trudność 4/10 — sama maszyna jest beginner-friendly (niski impakt, samo-skalujący się opór), ale dobra technika hinge'u wymaga nauki, dlatego nie 3/10. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — użyta polska terminologia fitness/CrossFit (catch, hinge, drive, double pole, najszerszy grzbietu, ergometr). Cardio cal/kg/h = 9.5 (między rowerem stacjonarnym ~7 a wioślarzem ~10 — SkiErg angażuje całe ciało jak wioślarz). GIF skopiowany: 391 KB.",
+
+  "tags": ["cardio", "full_body", "pull", "compound", "crossfit", "conditioning", "low_impact", "lats", "triceps", "core", "gym_machine", "endurance", "hiit_friendly", "rowing_alternative"]
+}

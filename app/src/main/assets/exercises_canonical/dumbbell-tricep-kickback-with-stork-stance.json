@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-tricep-kickback-with-stork-stance",
+  "name": "Dumbbell Tricep Kickback with Stork Stance",
+  "namePl": "Tricep kickback z hantlą w pozycji bociana",
+  "aliases": ["single-leg dumbbell kickback", "stork stance tricep kickback", "balance kickback"],
+  "aliasesPl": ["kickback w staniu na jednej nodze", "wyprost ramion w opadzie z balansem", "tricep kickback na jednej nodze"],
+
+  "description": "Hybrid exercise that combines a classic bilateral dumbbell tricep kickback with a single-leg balance challenge (stork stance). The lifter hinges at the hips, extends one leg straight back as a counterweight, and presses both dumbbells back to full elbow extension. The unstable base forces the standing-leg glutes, hamstrings, and core to work hard as stabilizers while the triceps perform isolated elbow extension. Excellent finisher that combines arm hypertrophy with proprioception and posterior-chain stability — useful for athletes, runners, and anyone training balance alongside arms.",
+  "descriptionPl": "Hybrydowe ćwiczenie łączące klasyczny kickback obustronny z hantlami z wyzwaniem balansu na jednej nodze (pozycja bociana). Ćwiczący wykonuje skłon w biodrach, wyciąga jedną nogę prosto do tyłu jako przeciwwagę i wypycha obie hantle do pełnego wyprostu w łokciach. Niestabilna podstawa zmusza pośladki, dwugłowe uda i mięśnie głębokie nogi podporowej do intensywnej pracy stabilizującej, podczas gdy tricepsy wykonują izolowany wyprost stawu łokciowego. Świetne ćwiczenie wykończeniowe łączące hipertrofię ramion z propriocepcją i stabilnością tylnego łańcucha — przydatne dla sportowców, biegaczy i każdego kto trenuje balans razem z ramionami.",
+
+  "instructions": [
+    "Hold a light dumbbell in each hand with a neutral grip (palms facing each other). Stand tall, feet together.",
+    "Shift weight onto one leg (the standing leg). Soften the knee slightly — do not lock it out.",
+    "Hinge at the hips and tip the torso forward toward parallel with the floor while extending the opposite (free) leg straight back behind you. Form a 'T' or 'stork' shape from fingertips to back foot.",
+    "Brace your core hard. Pull both elbows up close to the ribs so the upper arms are parallel to the torso and the dumbbells hang vertically.",
+    "Without moving the upper arms, extend both elbows and press the dumbbells back until the arms are fully straight and parallel to the floor. Squeeze the triceps at the top.",
+    "Exhale during the kickback. Hold the locked-out position for a brief moment while maintaining balance on the standing leg.",
+    "Slowly bend the elbows and return the dumbbells to the starting position over 2-3 seconds. Inhale during this phase. Keep the upper arms glued to your sides.",
+    "Complete all reps without putting the free foot down, then switch legs and repeat with the opposite stance."
+  ],
+  "instructionsPl": [
+    "Trzymaj lekką hantlę w każdej dłoni chwytem neutralnym (dłonie zwrócone do siebie). Stań prosto, stopy razem.",
+    "Przenieś ciężar na jedną nogę (noga podporowa). Lekko ugnij kolano — nie blokuj go w wyproście.",
+    "Wykonaj skłon w biodrach i pochyl tułów do przodu aż do równoległej z podłogą, równocześnie wyciągając drugą (wolną) nogę prosto do tyłu za siebie. Uformuj literę 'T' lub pozycję 'bociana' od czubków palców do tylnej stopy.",
+    "Mocno napnij brzuch. Podciągnij oba łokcie blisko żeber tak, by ramiona ponad łokciem były równoległe do tułowia, a hantle wisiały pionowo.",
+    "Bez ruszania ramionami ponad łokciem wyprostuj oba łokcie i wypchnij hantle do tyłu aż ramiona będą całkowicie wyprostowane i równoległe do podłogi. Spinaj tricepsy w górnej pozycji.",
+    "Wydychaj podczas wyprostu. Zatrzymaj się na chwilę w pozycji wyprostowanej utrzymując balans na nodze podporowej.",
+    "Wolno ugnij łokcie i wróć hantlami do pozycji startowej przez 2-3 sekundy. Wdech w tej fazie. Ramiona ponad łokciem cały czas przyklejone do boków.",
+    "Wykonaj wszystkie powtórzenia bez stawiania wolnej stopy na podłodze, następnie zmień nogę i powtórz w przeciwnym wariancie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["gluteus_medius", "gluteus_maximus", "hamstrings", "core"],
+    "stabilizers": ["anconeus", "posterior_deltoid", "erector_spinae", "calves", "tibialis_anterior", "gluteus_minimus"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P9",
+    "gluteus_medius": "S6",
+    "gluteus_maximus": "S5",
+    "hamstrings": "S5",
+    "core": "S5",
+    "anconeus": "T4",
+    "posterior_deltoid": "T4",
+    "erector_spinae": "T3",
+    "calves": "T3",
+    "tibialis_anterior": "T3",
+    "gluteus_minimus": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["yoga_mat", "mirror"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-tricep-kickback", "single-leg-deadlift-bodyweight"],
+    "progression_to": ["single-arm-stork-kickback", "kettlebell-stork-row", "single-leg-rdl-with-press"],
+    "alternatives": ["dumbbell-tricep-kickback", "cable-tricep-kickback", "tricep-pushdown", "bench-dip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Light dumbbells — balance comes first, weight second",
+      "Hinge from the hips, not the lower back",
+      "Free leg straight back, hips square to the floor",
+      "Standing knee slightly soft — never locked",
+      "Upper arms glued to the ribs, parallel to torso"
+    ],
+    "setup_cues_pl": [
+      "Lekkie hantle — najpierw balans, potem ciężar",
+      "Skłon w biodrach, nie w dolnym odcinku pleców",
+      "Wolna noga prosta do tyłu, biodra równolegle do podłogi",
+      "Kolano nogi podporowej lekko ugięte — nigdy zablokowane",
+      "Ramiona ponad łokciem przyklejone do żeber, równoległe do tułowia"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay pinned",
+      "Press the dumbbells straight back, not down or out",
+      "Squeeze the triceps hard at the lockout",
+      "Eyes fixed on one spot on the floor for balance",
+      "Breathe out on the push, in on the return"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Wypychaj hantle prosto do tyłu, nie w dół ani na boki",
+      "Mocno spinaj tricepsy w pełnym wyproście",
+      "Wzrok utkwiony w jednym punkcie na podłodze dla balansu",
+      "Wydech przy wypchnięciu, wdech przy powrocie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms drop below parallel to torso",
+        "faultPl": "Ramiona ponad łokciem opadają poniżej równoległej z tułowiem",
+        "cause": "Weak shoulder extension or upper arm not actively held in position by lats and posterior delts",
+        "causePl": "Słaba ekstensja barku lub brak aktywnego utrzymania ramienia przez najszerszy grzbietu i tylne aktony barków",
+        "cue": "Lift the elbows higher before extending. Imagine the upper arm is a shelf — hold it level.",
+        "cuePl": "Najpierw podnieś łokcie wyżej, dopiero potem prostuj. Wyobraź sobie ramię jako półkę — trzymaj poziomo."
+      },
+      {
+        "fault": "Standing knee locks out causing wobble",
+        "faultPl": "Kolano nogi podporowej blokuje się powodując chwianie",
+        "cause": "Trying to look tall instead of grounding through a soft, active leg",
+        "causePl": "Próba stania wyprostowanego zamiast aktywnego oparcia przez lekko ugiętą, pracującą nogę",
+        "cue": "Soft knee — about 10-15 degrees of bend. Spread the toes and grip the floor.",
+        "cuePl": "Lekko ugnij kolano — około 10-15 stopni. Rozłóż palce stopy i 'wbij' je w podłogę."
+      },
+      {
+        "fault": "Hips open / rotate to one side (free hip rises)",
+        "faultPl": "Biodra otwierają się / obracają (biodro wolnej nogi unosi się)",
+        "cause": "Weak gluteus medius on the standing side losing pelvic control",
+        "causePl": "Słaby mięsień pośladkowy średni nogi podporowej tracący kontrolę miednicy",
+        "cue": "Square the hips to the floor. Point the free foot down, not out to the side.",
+        "cuePl": "Wyrównaj biodra równolegle do podłogi. Stopa wolnej nogi skierowana w dół, nie na bok."
+      },
+      {
+        "fault": "Rounding the lower back at the hinge",
+        "faultPl": "Zaokrąglanie odcinka lędźwiowego w skłonie",
+        "cause": "Tight hamstrings, weak hip hinge pattern, or trying to lift torso higher than mobility allows",
+        "causePl": "Spięte dwugłowe uda, słaby wzorzec zawiasu biodrowego, lub próba uniesienia tułowia wyżej niż pozwala mobilność",
+        "cue": "Long spine — crown of the head reaches forward, tailbone reaches back. Don't try to lift the chest.",
+        "cuePl": "Długi kręgosłup — czubek głowy ciągnij do przodu, kość ogonowa do tyłu. Nie próbuj unosić klatki piersiowej."
+      },
+      {
+        "fault": "Swinging the dumbbells using shoulder momentum",
+        "faultPl": "Bujanie hantli z użyciem zamachu w stawie barkowym",
+        "cause": "Load too heavy for strict triceps isolation, especially with the balance demand",
+        "causePl": "Zbyt duży ciężar dla ścisłej izolacji tricepsa, szczególnie przy wymogu balansu",
+        "cue": "Lower the weight by half. The triceps should burn — not the shoulders.",
+        "cuePl": "Zmniejsz ciężar o połowę. Mają piec tricepsy — nie barki."
+      }
+    ],
+    "breathing": "Exhale during the kickback (concentric / elbow extension). Inhale during the return (eccentric / elbow flexion). Maintain a continuous core brace throughout the set to protect the spine in the hinged position.",
+    "breathingPl": "Wydech podczas wyprostu w łokciu (faza koncentryczna). Wdech podczas powrotu (faza ekscentryczna). Utrzymuj ciągłe napięcie brzucha przez całą serię aby chronić kręgosłup w pozycji skłonu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_or_disc_issues",
+      "severity": "modify",
+      "modification": "The hip-hinge under load can aggravate lumbar issues. Perform a seated dumbbell kickback or a tricep pushdown on a cable to remove spinal loading.",
+      "modificationPl": "Skłon biodrowy pod obciążeniem może drażnić problemy lędźwiowe. Wykonuj kickback siedząc lub tricep pushdown na wyciągu aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "tricep-pushdown"
+    },
+    {
+      "condition": "vestibular_or_balance_disorders",
+      "severity": "modify",
+      "modification": "Single-leg stance is inappropriate for impaired balance (BPPV, post-concussion, severe peripheral neuropathy). Use a standard bilateral kickback on both feet.",
+      "modificationPl": "Stanie na jednej nodze jest nieodpowiednie przy zaburzeniach równowagi (BPPV, po wstrząśnieniu mózgu, ciężka neuropatia obwodowa). Użyj klasycznego kickbacku obustronnego na obu stopach.",
+      "alternative": "dumbbell-tricep-kickback"
+    },
+    {
+      "condition": "olecranon_or_elbow_extensor_tendinopathy",
+      "severity": "modify",
+      "modification": "Full elbow lockout under load stresses the triceps tendon at the olecranon. Stop short of full lockout, reduce load, and slow the eccentric.",
+      "modificationPl": "Pełny wyprost łokcia pod obciążeniem obciąża ścięgno tricepsa przy wyrostku łokciowym. Zatrzymaj się przed pełnym wyprostem, zmniejsz ciężar i spowolnij fazę negatywną.",
+      "alternative": "cable-tricep-kickback"
+    },
+    {
+      "condition": "standing_leg_ankle_or_knee_instability",
+      "severity": "caution",
+      "modification": "Recent ankle sprain or unstable knee makes single-leg stance risky. Work on bilateral kickback plus separate balance drills until stability returns.",
+      "modificationPl": "Świeże skręcenie stawu skokowego lub niestabilność kolana czyni stanie na jednej nodze ryzykownym. Pracuj nad kickbackiem obustronnym plus osobne ćwiczenia balansu aż stabilność powróci.",
+      "alternative": "dumbbell-tricep-kickback"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per side (hypertrophy/balance) | 2-3x15 per side (endurance/finisher) | 3x8-10 per side (controlled tempo with 3s eccentric)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-tricep-kickback-with-stork-stance.gif",
+    "frames_extracted": [
+      "frames/dumbbell-tricep-kickback-with-stork-stance/frame_0_start.png",
+      "frames/dumbbell-tricep-kickback-with-stork-stance/frame_1_early.png",
+      "frames/dumbbell-tricep-kickback-with-stork-stance/frame_2_mid.png",
+      "frames/dumbbell-tricep-kickback-with-stork-stance/frame_3_late.png",
+      "frames/dumbbell-tricep-kickback-with-stork-stance/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-tricep-kickback-with-stork-stance"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący w głębokim skłonie tułowia (równolegle do podłogi), stoi na prawej nodze z lekko ugiętym kolanem, lewa noga wyprostowana prosto do tyłu jak u bociana. Obie hantle trzymane chwytem neutralnym, łokcie podciągnięte wysoko przy żebrach, ramiona ponad łokciem równoległe do tułowia, przedramiona pionowo w dół. Podświetlone (czerwone): obie tricepsy, mięsień pośladkowy nogi podporowej, dwugłowe uda i łydka nogi podporowej. Frame 2: pełny wyprost obu łokci — hantle wypchnięte do tyłu, ramiona całkowicie wyprostowane i równoległe do podłogi. Pozycja tułowia i nóg niezmieniona — balans utrzymany. Frame 4: powrót do pozycji startowej z 'ghostem' faz pośrednich widocznych powyżej. Klasyfikacja: BILATERAL na ramionach (obie hantle jednocześnie) ale całe ćwiczenie oznaczone jako unilateral bo wymaga osobnej pracy każdej nogi (po serii zmiana strony). Mechanic=isolation (czysty wyprost w stawie łokciowym), plane=sagittal, force=push. Triceps_brachii to jedyny primary mover. Glutes/hamstrings/core jako secondary bo intensywnie pracują w utrzymaniu pozycji. Wszystkie pola PL napisane od zera, brak tłumaczenia maszynowego.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "dumbbell", "balance", "unilateral", "stability", "finisher", "functional"]
+}

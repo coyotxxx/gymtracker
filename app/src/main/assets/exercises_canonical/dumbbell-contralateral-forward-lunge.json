@@ -1,0 +1,210 @@
+{
+  "id": "dumbbell-contralateral-forward-lunge",
+  "name": "Dumbbell Contralateral Forward Lunge",
+  "namePl": "Wykrok w przód z hantlą po przeciwnej stronie (kontralateralny)",
+  "aliases": ["contralateral loaded forward lunge", "opposite-side dumbbell forward lunge", "cross-body lunge", "single-arm contralateral lunge"],
+  "aliasesPl": ["wykrok kontralateralny z hantlą", "wykrok w przód z hantlą po stronie przeciwnej", "wykrok z hantlą po przeciwległej stronie", "wykrok jednoręczny kontralateralny"],
+
+  "description": "Unilateral lower-body compound exercise loaded asymmetrically with a single dumbbell held in the hand opposite to the stepping leg (contralateral pattern — e.g., step with the left leg while holding the dumbbell in the right hand). The cross-body load creates a lateral and rotational challenge that the trunk must resist, heavily recruiting the quadratus lumborum, obliques and deep core as anti-lateral-flexion stabilizers. Front-leg quads and glutes drive the movement while the load pulls the torso toward the unloaded side, which the trainee must counter without bending sideways. Excellent transfer to athletic carrying and one-handed object handling.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała z asymetrycznym obciążeniem — jedna hantla trzymana w ręce po stronie PRZECIWNEJ do nogi, która wykonuje krok w przód (wzorzec kontralateralny — np. krok lewą nogą i hantla w prawej dłoni). Krzyżowe położenie ciężaru tworzy wyzwanie boczno-rotacyjne, któremu tułów musi się oprzeć, mocno angażując mięsień czworoboczny lędźwi (QL), skośne i głęboki core jako stabilizatory anty-bocznego-zgięcia. Czworogłowe i pośladki przedniej nogi napędzają ruch, podczas gdy obciążenie ciągnie tułów w stronę nieobciążoną — trenujący musi się temu przeciwstawić bez pochylania na bok. Świetnie przenosi się na noszenie ciężarów jedną ręką i sytuacje atletyczne z asymetrycznym ładunkiem.",
+
+  "instructions": [
+    "Pick up one dumbbell with a neutral grip and let it hang at arm's length next to the hip. Free hand rests on the hip or hangs naturally.",
+    "Stand tall with feet hip-width apart, shoulders square and level. The dumbbell will be in the hand OPPOSITE to the leg that steps forward.",
+    "Set the contralateral pattern: if the dumbbell is in the RIGHT hand, you will step with the LEFT leg (and vice versa). Confirm this before every set.",
+    "Brace your core hard — especially the side opposite the dumbbell — to resist being pulled sideways toward the loaded side.",
+    "Take a deep breath, keep both shoulders level (do NOT let the loaded shoulder drop), and step forward with the unloaded-side leg into a long stride.",
+    "Lower straight down by bending both knees. Front thigh descends toward parallel, back knee approaches the floor (hover 2-3 cm above).",
+    "Keep the torso vertical and SQUARE — do not lean toward the dumbbell or twist. The cross-body load is the whole point of this variant.",
+    "Front knee tracks roughly over the front foot and stays behind or near the toes — no forward collapse.",
+    "Drive up through the front heel and mid-foot, pushing the floor away. Maintain level shoulders during the ascent.",
+    "Return the front foot to the starting position. Complete all reps on one side, then switch dumbbell to the other hand AND swap stepping leg before working the other side."
+  ],
+  "instructionsPl": [
+    "Chwyć jedną hantlę chwytem neutralnym i pozwól jej zwisać na wyprostowanym ramieniu obok biodra. Wolna ręka na biodrze lub zwisa naturalnie.",
+    "Stań wyprostowany ze stopami na szerokość bioder, barki ustawione równolegle. Hantla będzie w ręce PO STRONIE PRZECIWNEJ do nogi, która wykona krok.",
+    "Ustal wzorzec kontralateralny: jeśli hantla jest w PRAWEJ dłoni, robisz krok LEWĄ nogą (i odwrotnie). Sprawdź to przed każdą serią.",
+    "Mocno napnij brzuch — szczególnie po stronie PRZECIWNEJ niż hantla — aby przeciwstawić się ciągnięciu tułowia w stronę obciążoną.",
+    "Wdech, utrzymaj barki na jednej linii (NIE pozwól opaść barkowi po stronie hantli), wykonaj długi krok w przód nogą po stronie wolnej ręki.",
+    "Opuść się prosto w dół zginając oba kolana. Przednie udo schodzi do poziomu równoległego, tylne kolano zbliża się do podłogi (zatrzymaj 2-3 cm nad).",
+    "Trzymaj tułów PIONOWO i FRONTALNIE — nie pochylaj się w stronę hantli i nie skręcaj. Krzyżowe obciążenie to istota tego wariantu.",
+    "Przednie kolano podąża mniej więcej za przednią stopą i zostaje za palcami lub blisko nich — bez zapadania do przodu.",
+    "Wypychaj się w górę przez piętę i środek stopy przedniej nogi, odpychając podłogę. Utrzymuj równe barki podczas wstawania.",
+    "Wróć przednią stopą do pozycji wyjściowej. Wykonaj wszystkie powtórzenia na jedną stronę, następnie PRZEŁÓŻ hantlę do drugiej ręki I zmień nogę kroczącą zanim popracujesz na drugą stronę."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "obliques"],
+    "secondary": ["hamstrings", "quadratus_lumborum", "erector_spinae"],
+    "stabilizers": ["core", "gluteus_medius", "adductors", "calves", "forearms", "shoulders"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "obliques": "P7",
+    "quadratus_lumborum": "S7",
+    "hamstrings": "S6",
+    "erector_spinae": "S6",
+    "gluteus_medius": "S6",
+    "adductors": "S5",
+    "core": "S6",
+    "calves": "T4",
+    "forearms": "T4",
+    "shoulders": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["lifting_shoes", "open_floor_space", "mirror"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-lunge", "dumbbell-lunge", "goblet-lunge", "suitcase-carry"],
+    "progression_to": ["dumbbell-walking-lunge", "deficit-contralateral-lunge", "bulgarian-split-squat-contralateral", "single-arm-overhead-lunge"],
+    "alternatives": ["dumbbell-ipsilateral-forward-lunge", "dumbbell-lunge", "goblet-lunge", "suitcase-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbell in the hand OPPOSITE to the stepping leg — confirm before each rep",
+      "Shoulders square and LEVEL — loaded shoulder does not drop",
+      "Free hand on the hip or hanging — gives the core a clean reference",
+      "Feet hip-width apart, weight balanced through mid-foot",
+      "Brace the side opposite the dumbbell HARDER — that is the side fighting the load"
+    ],
+    "setup_cues_pl": [
+      "Hantla w ręce PO STRONIE PRZECIWNEJ niż noga kroku — potwierdź przed każdym powtórzeniem",
+      "Barki ustawione równolegle i NA RÓWNI — obciążony bark nie opada",
+      "Wolna ręka na biodrze lub wzdłuż ciała — daje brzuchowi czysty punkt odniesienia",
+      "Stopy na szerokość bioder, ciężar przez środek stopy",
+      "Napnij MOCNIEJ stronę PRZECIWNĄ do hantli — to ona walczy z obciążeniem"
+    ],
+    "execution_cues": [
+      "Step long — front shin should be near vertical at the bottom",
+      "Stay SQUARE to the front — no twist toward the dumbbell side",
+      "Pretend a glass of water is balanced on each shoulder — keep both level",
+      "Drive through the front heel; the back knee tracks straight down toward the floor",
+      "Resist the pull — feel the obliques and QL on the unloaded side fire"
+    ],
+    "execution_cues_pl": [
+      "Długi krok — piszczel przedniej nogi prawie pionowa na dole",
+      "Trzymaj się FRONTALNIE do kierunku ruchu — bez skrętu w stronę hantli",
+      "Wyobraź sobie kieliszek wody na każdym ramieniu — oba mają stać prosto",
+      "Wypychaj się przez piętę przedniej nogi; tylne kolano schodzi prosto w dół",
+      "Opieraj się ciągnięciu — czuj skośne i QL po stronie wolnej ręki jak się napinają"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso lateral lean toward the dumbbell side",
+        "faultPl": "Boczne pochylenie tułowia w stronę hantli",
+        "cause": "Weak anti-lateral-flexion core (obliques, QL on the opposite side). Trainee passively yields to the load instead of resisting it — defeats the purpose of the contralateral variant.",
+        "causePl": "Słaby core anty-bocznego-zgięcia (skośne, QL po stronie przeciwnej). Trenujący biernie poddaje się obciążeniu zamiast się mu opierać — niweczy sens wariantu kontralateralnego.",
+        "cue": "Imagine a wall on the dumbbell side — your shoulder must NOT touch it. Reduce load until you can stay vertical.",
+        "cuePl": "Wyobraź sobie ścianę po stronie hantli — bark NIE MOŻE jej dotknąć. Zmniejsz ciężar, dopóki nie zachowasz pionu."
+      },
+      {
+        "fault": "Loaded shoulder hikes or drops (uneven shoulder line)",
+        "faultPl": "Bark po stronie hantli unosi się lub opada (nierówna linia barków)",
+        "cause": "Upper trap shrugging to brace, or passive shoulder drop from weak scapular stabilizers. Both break the clean anti-lateral-flexion challenge to the trunk.",
+        "causePl": "Wzruszanie barków górnym czworobocznym dla stabilizacji lub pasywne opadanie barku od słabych stabilizatorów łopatki. Oba psują czystą pracę anty-bocznego-zgięcia.",
+        "cue": "Long neck, shoulders packed back and DOWN, level with each other. Light grip — don't death-grip the handle.",
+        "cuePl": "Długi kark, barki ściągnięte w tył i W DÓŁ, na jednej linii. Lekki chwyt — nie ściskaj rączki z całych sił."
+      },
+      {
+        "fault": "Twisting toward (or away from) the dumbbell at the bottom",
+        "faultPl": "Skręcanie tułowia w stronę hantli (lub od niej) na dole",
+        "cause": "Trying to 'help' the movement with rotation, or weak deep core. Rotational compensation removes anti-rotation training stimulus.",
+        "causePl": "Próba 'wspomożenia' ruchu rotacją lub słaby głęboki core. Kompensacja rotacyjna odbiera bodziec anty-rotacyjny.",
+        "cue": "Sternum and belly button point straight forward through the whole rep — like headlights through the windshield.",
+        "cuePl": "Mostek i pępek wskazują prosto przed siebie przez całe powtórzenie — jak reflektory przez szybę."
+      },
+      {
+        "fault": "Wrong contralateral pairing (same-side leg and arm)",
+        "faultPl": "Błędna para kontralateralna (ta sama strona — noga i ręka)",
+        "cause": "Habit from ipsilateral or symmetric loading. Stepping with the same-side leg as the dumbbell is a different exercise (ipsilateral) with totally different core demands.",
+        "causePl": "Nawyk z wariantu ipsilateralnego lub obustronnego. Krok tą samą stroną co hantla to inne ćwiczenie (ipsilateralne) z zupełnie innym wymaganiem core.",
+        "cue": "Rule: dumbbell RIGHT → step LEFT. Dumbbell LEFT → step RIGHT. Say it out loud before the set.",
+        "cuePl": "Zasada: hantla PRAWA → krok LEWĄ. Hantla LEWA → krok PRAWĄ. Powiedz to na głos przed serią."
+      },
+      {
+        "fault": "Front knee collapses inward (valgus)",
+        "faultPl": "Przednie kolano zapada do wewnątrz (koślawość)",
+        "cause": "Weak gluteus medius on the stepping leg, made worse by the cross-body load shifting the center of mass off the front foot.",
+        "causePl": "Słaby pośladkowy średni nogi kroczącej, pogłębione przez krzyżowe obciążenie przesuwające środek ciężkości poza przednią stopę.",
+        "cue": "Push the knee out toward the small toe. Press the floor away through the whole front foot — heel, big toe, little toe tripod.",
+        "cuePl": "Wypychaj kolano na zewnątrz w stronę małego palca. Naciskaj całą przednią stopą — pięta, duży palec, mały palec jak trójnóg."
+      }
+    ],
+    "breathing": "Inhale deeply at the top and brace 360° around the spine with extra attention to the side opposite the dumbbell. Hold the breath through the descent and the hardest portion of the ascent. Exhale near the top once the loaded shoulder is stacked over the hip.",
+    "breathingPl": "Głęboki wdech w pozycji stojącej i napięcie 360° wokół kręgosłupa ze szczególną uwagą na stronę przeciwną do hantli. Wstrzymaj oddech przez schodzenie i najtrudniejszą fazę wstawania. Wydech blisko góry, gdy obciążony bark jest ułożony nad biodrem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation_or_recent_episode",
+      "severity": "avoid",
+      "modification": "Asymmetric loading + spinal flexion-extension under load is risky for acute or recent disc episodes. Train symmetric variants (goblet lunge, dumbbell lunge with both hands) until cleared by a physiotherapist.",
+      "modificationPl": "Asymetryczne obciążenie + zginanie-prostowanie kręgosłupa pod ciężarem jest ryzykowne przy ostrym lub niedawnym epizodzie dysku. Trenuj symetryczne warianty (wykrok goblet, wykrok z dwiema hantlami), aż dostaniesz zgodę fizjoterapeuty.",
+      "alternative": "goblet-lunge"
+    },
+    {
+      "condition": "quadratus_lumborum_strain_or_chronic_low_back_pain",
+      "severity": "modify",
+      "modification": "The QL on the side opposite the dumbbell is the prime stabilizer here. If it is currently irritated, work pain-free symmetric lunges first and reintroduce contralateral load with low weight after recovery.",
+      "modificationPl": "QL po stronie przeciwnej do hantli to główny stabilizator. Jeśli jest aktualnie podrażniony, pracuj najpierw na symetrycznych wykrokach bez bólu i wprowadzaj obciążenie kontralateralne z małym ciężarem po wyleczeniu.",
+      "alternative": "dumbbell-lunge"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome_or_knee_meniscus_issue",
+      "severity": "modify",
+      "modification": "Forward lunge stresses the front knee. Reduce depth to a pain-free range or switch to reverse lunge (less knee shear) keeping the contralateral load pattern.",
+      "modificationPl": "Wykrok w przód obciąża przednie kolano. Zmniejsz głębokość do zakresu bez bólu lub przejdź na wykrok w tył (mniej sił ścinających na kolano), zachowując wzorzec kontralateralny.",
+      "alternative": "dumbbell-contralateral-reverse-lunge"
+    },
+    {
+      "condition": "shoulder_instability_or_recent_dislocation",
+      "severity": "caution",
+      "modification": "Hanging dumbbell at the side pulls passively on the glenohumeral joint. Use lighter loads, keep the shoulder packed and slightly retracted, or substitute a goblet-held variant.",
+      "modificationPl": "Hantla zwisająca przy boku ciągnie pasywnie staw ramienny. Stosuj mniejsze ciężary, trzymaj bark ściągnięty i lekko cofnięty lub zamień na wariant trzymany goblet.",
+      "alternative": "goblet-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy with core stability focus) | 3x6-8 per side (strength with stiff core) | 2-3x12-15 per side (endurance / unilateral conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "dumbbell-contralateral-forward-lunge.gif",
+    "frames_extracted": [
+      "frames/dumbbell-contralateral-forward-lunge/frame_0_start.png",
+      "frames/dumbbell-contralateral-forward-lunge/frame_1_early.png",
+      "frames/dumbbell-contralateral-forward-lunge/frame_2_mid.png",
+      "frames/dumbbell-contralateral-forward-lunge/frame_3_late.png",
+      "frames/dumbbell-contralateral-forward-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-contralateral-forward-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Wzorzec contralateralny POTWIERDZONY: w klatce startowej hantla jest w LEWEJ dłoni, w klatce mid (wykrok) PRAWA noga jest z przodu — czyli noga przeciwna do dłoni z hantlą (cross-body load). Klatka mid pokazuje pełną głębokość: przednie udo blisko równoległe, tylne kolano blisko podłogi, tułów pionowy (postać NIE pochyla się w stronę hantli — czyli ćwiczy poprawnie anti-lateral-flexion). Mięśnie podświetlone w GIFie: czworogłowe obu ud (mocno) + pośladki + część czworogłowa tylnej nogi — pasuje do anatomii wykroku. Skośne i QL nie są podświetlone w GIFie jahel, bo to silnik anatomii powierzchniowej, ale rola anty-bocznego-zgięcia jest jednoznaczna z fizyki ćwiczenia i potwierdzona w literaturze (Cook, McGill). Dodałem obliques do primary jako specyfikę wariantu kontralateralnego — bez tego ten wariant byłby identyczny z normalnym wykrokiem z hantlami. Wszystkie pola PL napisane od zera (nie tłumaczenie), zachowując polski standard fitness 'wykrok kontralateralny' / 'po przeciwnej stronie'. Difficulty 7/10 — średnio-zaawansowany ze względu na obciążenie asymetryczne wymagające stabilizacji core na poziomie wyższym niż zwykły wykrok z hantlami.",
+
+  "tags": ["unilateral", "asymmetric_load", "contralateral", "lower_body", "lunge", "dumbbell", "compound", "anti_lateral_flexion", "core_stability", "anti_rotation", "stabilizer_heavy", "athletic_transfer"]
+}

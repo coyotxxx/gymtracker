@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-standing-one-arm-reverse-curl",
+  "name": "Dumbbell Standing One-Arm Reverse Curl",
+  "namePl": "Reverse curl hantlą jednorącz stojąc",
+  "aliases": ["one-arm pronated curl", "single-arm dumbbell reverse curl", "standing dumbbell reverse curl one arm", "pronated dumbbell curl single arm"],
+  "aliasesPl": ["uginanie ramion nachwytem hantlą jednorącz stojąc", "reverse curl jednorącz", "uginanie pronowane hantlą jednorącz", "curl nachwytem hantlą jedną ręką"],
+
+  "description": "Unilateral isolation exercise for the brachialis and brachioradialis performed standing with a single dumbbell held in a pronated (overhand) grip. The reversed grip shifts emphasis away from the biceps brachii onto the brachialis (which sits underneath the biceps) and brachioradialis (the upper forearm), building thicker arms and stronger forearms. Performing one arm at a time exposes side-to-side asymmetries and lets you focus on quality of contraction without contralateral cheating.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na mięsień ramienny (brachialis) i ramienno-promieniowy (brachioradialis) wykonywane stojąc z jedną hantlą trzymaną nachwytem (dłonią w dół). Odwrócony chwyt przenosi akcent z bicepsa na brachialis (mięsień leżący pod bicepsem) oraz brachioradialis (górna część przedramienia), budując grubsze ramiona i mocniejsze przedramiona. Praca jedną ręką naraz ujawnia asymetrie i pozwala skupić się na jakości skurczu bez oszukiwania drugą stroną.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart. Hold a dumbbell in one hand with a pronated (overhand) grip — knuckles facing forward, palm facing your thigh.",
+    "Let the working arm hang fully extended at your side. The free hand can rest on your hip or hold a stationary dumbbell for balance.",
+    "Pin the working elbow to your side and keep it there for the entire set. Brace your core and keep shoulders pulled back and down.",
+    "Curl the dumbbell upward by flexing at the elbow only, keeping the wrist locked straight (knuckles stay on top throughout).",
+    "Lift until the dumbbell reaches the front of your shoulder. The wrist remains pronated — no rotation, no supination at the top.",
+    "Squeeze the brachialis and forearm hard for a brief pause at the top.",
+    "Lower the dumbbell under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "Complete all reps on one side before switching arms. Match reps and tempo on the second side."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków. Trzymaj hantlę w jednej ręce nachwytem (dłonią do dołu) — kostki dłoni skierowane do przodu, dłoń przy udzie.",
+    "Pozwól pracującemu ramieniu zwisać w pełnym wyproście wzdłuż tułowia. Wolna ręka może spoczywać na biodrze lub trzymać drugą hantlę pasywnie dla równowagi.",
+    "Przyklej łokieć pracującego ramienia do boku tułowia i utrzymaj go tam przez całą serię. Napnij brzuch, barki ściągnięte w tył i w dół.",
+    "Uginaj hantlę do góry, zginając wyłącznie staw łokciowy. Nadgarstek pozostaje prosty (kostki dłoni cały czas na wierzchu).",
+    "Unoś aż hantla dotrze na wysokość przedniego aktonu barku. Nadgarstek pozostaje w pronacji — żadnej rotacji ani supinacji w górze.",
+    "Mocno spinaj brachialis i przedramię w górnej pozycji przez krótką pauzę.",
+    "Opuszczaj hantlę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciu. Wdech podczas opuszczania.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie zanim zmienisz rękę. Powtórz tę samą liczbę powtórzeń i tempo na drugiej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis"],
+    "secondary": ["biceps_brachii"],
+    "stabilizers": ["forearm_extensors", "anterior_deltoid", "core", "upper_trapezius", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "brachioradialis": "P9",
+    "biceps_brachii": "S5",
+    "forearm_extensors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "obliques": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["wrist_wraps", "lifting_strap"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["barbell-reverse-curl", "ez-bar-reverse-curl", "cable-reverse-curl", "hammer-curl"],
+    "alternatives": ["barbell-reverse-curl", "ez-bar-reverse-curl", "hammer-curl", "dumbbell-reverse-curl", "cable-reverse-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft",
+      "Pronated grip — knuckles facing forward",
+      "Working elbow pinned to your side",
+      "Free hand on hip — do not lean to that side",
+      "Chest up, shoulders back, core braced"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana lekko ugięte",
+      "Chwyt nachwytem — kostki dłoni skierowane do przodu",
+      "Łokieć pracującego ramienia przyklejony do boku",
+      "Wolna ręka na biodrze — nie przechylaj się na tę stronę",
+      "Klatka w górze, barki ściągnięte, brzuch napięty"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — keep the upper arm vertical",
+      "Wrist stays locked straight — knuckles always on top",
+      "Squeeze the brachialis hard at the top",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Full elbow extension at the bottom of each rep"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem pionowo",
+      "Nadgarstek zablokowany w linii prostej — kostki zawsze na wierzchu",
+      "Mocno spinaj brachialis w górnej pozycji",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Pełny wyprost łokcia na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrist breaks (knuckles drop) under load",
+        "faultPl": "Zgięcie nadgarstka (kostki dłoni opadają) pod obciążeniem",
+        "cause": "Reverse curl loads the weaker wrist extensors. With too much weight the wrist collapses into flexion.",
+        "causePl": "Reverse curl obciąża słabsze prostowniki nadgarstka. Przy zbyt dużym ciężarze nadgarstek zapada się w zgięciu.",
+        "cue": "Drop the load by 30-40%. Actively press the knuckles upward as if you were going to punch the ceiling.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Aktywnie pchaj kostki dłoni do góry jakbyś chciał uderzyć w sufit."
+      },
+      {
+        "fault": "Leaning toward the working side (lateral trunk tilt)",
+        "faultPl": "Przechylanie się w stronę pracującego ramienia (boczne pochylenie tułowia)",
+        "cause": "Working unilaterally tempts the lifter to lean to counterbalance the load, recruiting obliques and erectors instead of brachialis",
+        "causePl": "Praca jednostronna kusi by przechylać się dla równowagi, włączając mięśnie skośne i prostowniki zamiast brachialis",
+        "cue": "Keep both shoulders level — imagine a glass of water on each shoulder.",
+        "cuePl": "Trzymaj oba barki na tym samym poziomie — wyobraź sobie szklankę wody na każdym ramieniu."
+      },
+      {
+        "fault": "Elbow drifts forward / shoulder flexes at the top",
+        "faultPl": "Łokieć wędruje do przodu / zginanie w stawie barkowym w górnej pozycji",
+        "cause": "Trying to push the dumbbell higher than full elbow flexion allows, shifting load to anterior deltoid",
+        "causePl": "Próba uniesienia hantli wyżej niż pozwala pełne zgięcie łokcia, przenoszenie obciążenia na przedni akton barku",
+        "cue": "Stop the curl when the forearm reaches vertical. Keep the elbow directly under the shoulder.",
+        "cuePl": "Zakończ uginanie gdy przedramię dojdzie do pionu. Łokieć dokładnie pod barkiem."
+      },
+      {
+        "fault": "Supinating the wrist on the way up (turning it back into a regular curl)",
+        "faultPl": "Supinowanie nadgarstka w fazie koncentrycznej (powrót do zwykłego curla)",
+        "cause": "Brachialis fatigues faster than biceps; the body subconsciously rotates the forearm to bring biceps back in",
+        "causePl": "Brachialis męczy się szybciej niż biceps; ciało podświadomie rotuje przedramię by włączyć biceps z powrotem",
+        "cue": "Lock the wrist before each rep — knuckles point at the ceiling at the top, not the back wall.",
+        "cuePl": "Zablokuj nadgarstek przed każdym powtórzeniem — kostki dłoni patrzą w sufit w górze, nie w tylną ścianę."
+      },
+      {
+        "fault": "Cutting off the bottom (partial range of motion)",
+        "faultPl": "Skracanie dolnej fazy (niepełny zakres ruchu)",
+        "cause": "Ego lifting, weak stretched-position strength, or fear of the long lever pulling on the elbow",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub obawa przed długą dźwignią obciążającą łokieć",
+        "cue": "Lower until elbow is fully extended every rep. Brachialis grows best from the stretched position.",
+        "cuePl": "Opuszczaj aż łokieć będzie w pełnym wyproście przy każdym powtórzeniu. Brachialis najlepiej rośnie z pozycji rozciągniętej."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light core brace to keep the trunk stable in a unilateral position.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha aby ustabilizować tułów w pozycji jednostronnej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Reverse curls directly load the wrist extensor origin on the lateral epicondyle and frequently aggravate tennis elbow. Pause completely until pain-free, then return with very light load (1-2 kg) for 15-20 reps as eccentric-only tendon rehab.",
+      "modificationPl": "Reverse curl bezpośrednio obciąża przyczep prostowników nadgarstka na nadkłykciu bocznym i często zaostrza łokieć tenisisty. Wstrzymaj całkowicie do ustąpienia bólu, potem wróć z bardzo lekkim ciężarem (1-2 kg) na 15-20 powtórzeń jako rehabilitacja ekscentryczna ścięgna.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_extensor_strain",
+      "severity": "avoid",
+      "modification": "Pronated grip places maximum demand on the wrist extensors. Switch entirely to neutral grip (hammer curl) until the strain heals fully.",
+      "modificationPl": "Chwyt pronowany maksymalnie obciąża prostowniki nadgarstka. Przejdź całkowicie na chwyt neutralny (hammer curl) do pełnego wyleczenia naderwania.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "elbow_arthritis_or_joint_pain",
+      "severity": "modify",
+      "modification": "Limit range of motion to the pain-free arc (typically 30-150 degrees of elbow flexion). Use light loads with controlled tempo, avoid forced lockout if it provokes pain.",
+      "modificationPl": "Ogranicz zakres ruchu do bezbolesnego łuku (zwykle 30-150 stopni zgięcia łokcia). Używaj lekkich ciężarów z kontrolowanym tempem, unikaj wymuszonego wyprostu jeśli prowokuje ból.",
+      "alternative": "cable-reverse-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Reverse curl gripping pressure can compress the median nerve. Use thicker handle / fat grips to distribute pressure, keep wrist neutral, stop immediately if numbness or tingling occurs.",
+      "modificationPl": "Ucisk chwytu w reverse curl może uciskać nerw pośrodkowy. Używaj grubszej rączki / fat grips aby rozłożyć nacisk, trzymaj nadgarstek neutralnie, przerwij natychmiast jeśli pojawi się drętwienie lub mrowienie.",
+      "alternative": "cable-reverse-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per arm (hypertrophy) | 3-4x8-10 per arm (strength of brachialis/brachioradialis) | 2-3x15-20 per arm (forearm endurance)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-standing-one-arm-reverse-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-one-arm-reverse-curl/frame_0_start.png",
+      "frames/dumbbell-standing-one-arm-reverse-curl/frame_1_early.png",
+      "frames/dumbbell-standing-one-arm-reverse-curl/frame_2_mid.png",
+      "frames/dumbbell-standing-one-arm-reverse-curl/frame_3_late.png",
+      "frames/dumbbell-standing-one-arm-reverse-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-standing-one-arm-reverse-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: postać stoi prosto, w lewej ręce hantla w chwycie pronowanym (kostki dłoni do przodu), ramię w pełnym wyproście wzdłuż tułowia; podświetlony brachialis i przedramię lewego ramienia kolorem czerwonym; prawa ręka trzyma drugą hantlę pasywnie dla równowagi. Frame 2: pełny skurcz, hantla na wysokości przedniego aktonu barku, łokieć pozostaje przy boku tułowia, nadgarstek wciąż w pronacji (knuckles up), tułów pionowo bez przechylania. Frame 4: powrót do pełnego wyprostu z widocznym 'ghostem' szczytowej fazy w okolicy barku. Jednoznacznie reverse curl (nachwyt) jednorącz stojąc. Akcent anatomiczny zgodny ze stylem grafiki (brachialis + brachioradialis podświetlone, biceps NIE). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "brachialis", "brachioradialis", "forearms", "isolation", "dumbbell", "unilateral", "upper_body", "reverse_grip"]
+}

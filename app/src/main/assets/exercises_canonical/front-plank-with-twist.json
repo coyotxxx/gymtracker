@@ -1,0 +1,204 @@
+{
+  "id": "front-plank-with-twist",
+  "name": "Front Plank with Twist",
+  "namePl": "Deska z rotacją",
+  "aliases": ["plank with hip twist", "plank with rotation", "twisting plank", "side-to-side plank twist", "rotating front plank"],
+  "aliasesPl": ["deska z rotacją bioder", "plank z rotacją", "plank ze skrętem", "deska ze skrętem", "deska rotacyjna"],
+
+  "description": "An isometric-rotational core exercise performed from a forearm plank position. The lifter alternately rotates the hips and trunk side-to-side, opening one side to face the ceiling (briefly resembling a side plank with the top arm reaching up), then returning to neutral and rotating to the other side. The forearm base stays grounded; the work happens in the obliques and deep core through controlled rotation under anti-extension load. Combines the stability demand of a plank with the rotational stimulus of a side plank reach. No equipment required.",
+  "descriptionPl": "Izometryczno-rotacyjne ćwiczenie core wykonywane z pozycji deski na przedramionach. Ćwiczący naprzemiennie rotuje biodra i tułów na boki, otwierając jedną stronę do sufitu (przez chwilę przypominając side plank z górnym ramieniem uniesionym w górę), następnie wraca do pozycji neutralnej i rotuje na drugą stronę. Baza na przedramionach pozostaje ustabilizowana; pracują mięśnie skośne i głęboki core przez kontrolowaną rotację pod obciążeniem anty-wyprostnym. Łączy wymóg stabilizacji deski z bodźcem rotacyjnym sięgnięcia w side planku. Bez sprzętu.",
+
+  "instructions": [
+    "Set up in a forearm plank: elbows directly under the shoulders, forearms parallel, fists or palms flat, body forming a straight line from head to heels.",
+    "Brace the core and squeeze the glutes — the trunk must not sag or pike up. Hips stay level with the shoulders.",
+    "Initiate the twist by rotating the hips to one side — for example, drop the right hip toward the floor while opening the chest toward the right.",
+    "Continue the rotation until the body opens partially toward the ceiling (a 'half side plank' position); the bottom hip lightly grazes or hovers above the floor.",
+    "Hold the open position for a brief moment (1-2 seconds), feeling the obliques on the BOTTOM side of the rotation.",
+    "Return to neutral forearm plank with control — do not collapse back.",
+    "Rotate to the OPPOSITE side with the same control and tempo, mirroring the movement.",
+    "Alternate sides rhythmically. Stop the set when form breaks (hips drop, rotation disappears, shoulders shrug) — not when the abs simply burn."
+  ],
+  "instructionsPl": [
+    "Ustaw się w desce na przedramionach: łokcie dokładnie pod barkami, przedramiona równoległe, pięści lub dłonie płasko, ciało tworzy prostą linię od głowy do pięt.",
+    "Napnij brzuch i pośladki — tułów nie może opadać ani się zadzierać. Biodra na poziomie barków.",
+    "Rozpocznij rotację obracając biodra na jeden bok — np. opuść prawe biodro w stronę podłogi, jednocześnie otwierając klatkę w prawo.",
+    "Kontynuuj rotację aż ciało otworzy się częściowo w stronę sufitu (pozycja 'pół-side plank'); dolne biodro lekko muska podłogę lub zatrzymuje się tuż nad nią.",
+    "Przytrzymaj otwartą pozycję przez krótką chwilę (1-2 sekundy), czując mięśnie skośne po DOLNEJ stronie rotacji.",
+    "Wróć do neutralnej deski na przedramionach z kontrolą — nie pozwól sobie opaść.",
+    "Rotuj na PRZECIWNY bok z tą samą kontrolą i tempem, lustrzanie odbijając ruch.",
+    "Naprzemiennie i rytmicznie. Zakończ serię gdy łamie się technika (biodra opadają, znika rotacja, barki podchodzą do uszu) — nie gdy brzuch po prostu pali."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_rotation",
+    "force": "static",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis"],
+    "secondary": ["transverse_abdominis", "quadratus_lumborum", "serratus_anterior"],
+    "stabilizers": ["anterior_deltoids", "glutes", "erector_spinae", "adductors", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "rectus_abdominis": "P8",
+    "transverse_abdominis": "S7",
+    "quadratus_lumborum": "S6",
+    "serratus_anterior": "S5",
+    "anterior_deltoids": "T4",
+    "glutes": "T4",
+    "erector_spinae": "T3",
+    "adductors": "T3",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["plank", "side-plank", "dead-bug"],
+    "progression_to": ["side-plank-with-rotation", "copenhagen-plank", "turkish-get-up"],
+    "alternatives": ["side-plank", "plank-with-hip-rotation", "bicycle-crunch", "russian-twist"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Elbows directly under the shoulders, forearms parallel and pressed firmly into the floor",
+      "Feet hip-width apart for a stable base — narrower stance increases difficulty",
+      "Body forms one straight line — head, hips, heels aligned",
+      "Brace the core and squeeze the glutes BEFORE the first rotation",
+      "Pack the shoulders — push the floor away through the forearms, don't sink into them"
+    ],
+    "setup_cues_pl": [
+      "Łokcie dokładnie pod barkami, przedramiona równoległe i mocno wciśnięte w podłogę",
+      "Stopy na szerokość bioder dla stabilnej bazy — węższe ustawienie zwiększa trudność",
+      "Ciało tworzy jedną prostą linię — głowa, biodra, pięty",
+      "Napnij brzuch i ściśnij pośladki ZANIM zaczniesz pierwszą rotację",
+      "Spakuj barki — odpychaj podłogę przedramionami, nie wpadaj w nie"
+    ],
+    "execution_cues": [
+      "Rotate from the HIPS, not just the shoulders — the pelvis drives the twist",
+      "Lower hip moves DOWN and slightly under, not just to the side",
+      "Keep the forearms glued to the floor — the base does not move",
+      "Move slowly — 2-3 seconds per side; speed kills the oblique tension",
+      "Feel the BOTTOM oblique working as you open the top side toward the ceiling"
+    ],
+    "execution_cues_pl": [
+      "Rotuj z BIODER, nie tylko z barków — miednica prowadzi skręt",
+      "Dolne biodro idzie W DÓŁ i lekko pod ciało, nie tylko w bok",
+      "Trzymaj przedramiona przyklejone do podłogi — baza się nie rusza",
+      "Pracuj wolno — 2-3 sekundy na bok; szybkość zabija napięcie skośnych",
+      "Czuj DOLNĄ stronę mięśni skośnych w pracy, gdy otwierasz górną stronę do sufitu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips dropping toward the floor (sagging) during or between rotations",
+        "faultPl": "Biodra opadają w stronę podłogi (zwisanie) podczas lub między rotacjami",
+        "cause": "Loss of core brace and glute engagement; fatigue or premature loading",
+        "causePl": "Utrata napięcia core i pośladków; zmęczenie lub przedwczesne obciążenie",
+        "cue": "Imagine a string pulling your tailbone toward your heels. Squeeze the glutes hard between every rotation. End the set when hips drop — quality over quantity.",
+        "cuePl": "Wyobraź sobie sznurek ciągnący kość ogonową w stronę pięt. Mocno ściśnij pośladki między każdą rotacją. Zakończ serię gdy biodra opadają — jakość ponad ilość."
+      },
+      {
+        "fault": "Rotating only the shoulders/upper back, no hip rotation",
+        "faultPl": "Rotacja tylko z barków/górnej części pleców, brak rotacji bioder",
+        "cause": "Treating it like an upper-body twist; missing the obliques because hips stay locked",
+        "causePl": "Traktowanie jak skręt górnej części ciała; mięśnie skośne nie pracują, bo biodra są zablokowane",
+        "cue": "Lead the rotation with the HIP — drop the bottom hip first, then the chest follows. If your hips don't move, neither do your obliques.",
+        "cuePl": "Prowadź rotację BIODREM — najpierw opuść dolne biodro, klatka idzie za nim. Jeśli biodra się nie ruszają, skośne też nie."
+      },
+      {
+        "fault": "Forearms lifting or sliding during the rotation",
+        "faultPl": "Przedramiona unoszą się lub ślizgają podczas rotacji",
+        "cause": "Using the arms to assist the twist; loss of shoulder packing under rotational load",
+        "causePl": "Pomaganie sobie ramionami przy skręcie; utrata stabilizacji barków pod obciążeniem rotacyjnym",
+        "cue": "Glue the forearms to the floor. Push the ground away the entire time. The arms are anchors, not assistants.",
+        "cuePl": "Przyklej przedramiona do podłogi. Odpychaj ziemię przez cały czas. Ramiona są kotwicami, nie pomocnikami."
+      },
+      {
+        "fault": "Rushing — bouncing from side to side using momentum",
+        "faultPl": "Pośpiech — odbijanie się ze strony na stronę na rozpędzie",
+        "cause": "Trying to chase reps; the eccentric (return) phase is skipped, obliques never load fully",
+        "causePl": "Pogoń za powtórzeniami; faza ekscentryczna (powrót) pomijana, skośne nigdy nie pracują w pełni",
+        "cue": "Count 2 seconds out, 1 second hold, 2 seconds back. If you can't go slow, your core isn't ready for the variation.",
+        "cuePl": "Licz 2 sekundy w bok, 1 sekunda przytrzymania, 2 sekundy powrotu. Jeśli nie umiesz wolno, twój core nie jest gotowy na tę odmianę."
+      },
+      {
+        "fault": "Neck shrugging or chin jutting forward",
+        "faultPl": "Unoszenie barków do uszu lub wysuwanie brody do przodu",
+        "cause": "Trying to 'see' the rotation; tension migrates from the core to the neck and traps",
+        "causePl": "Próba 'zobaczenia' rotacji; napięcie przenosi się z core do szyi i czworobocznych",
+        "cue": "Long neck, ears away from shoulders. Look at the floor between your forearms — let the body rotate, not the head.",
+        "cuePl": "Długa szyja, uszy daleko od barków. Patrz w podłogę między przedramionami — niech rotuje ciało, nie głowa."
+      }
+    ],
+    "breathing": "Exhale as you rotate INTO each side (open position), inhale as you return to neutral. The exhale helps the obliques contract through the rotation. Never hold the breath under load — it spikes intra-abdominal pressure and destabilizes the brace. Slow, controlled breathing matches the slow, controlled tempo.",
+    "breathingPl": "Wydech podczas rotacji W bok (pozycja otwarta), wdech przy powrocie do neutralnej. Wydech pomaga skurczyć mięśnie skośne podczas skrętu. Nigdy nie wstrzymuj oddechu pod obciążeniem — to podnosi ciśnienie wewnątrzbrzuszne i destabilizuje napięcie. Powolny, kontrolowany oddech idzie w parze z powolnym, kontrolowanym tempem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "modify",
+      "modification": "Active spinal rotation under load can aggravate acute disc or facet issues. Switch to static forearm plank or anti-rotation drills (dead-bug, pallof press) until the flare-up resolves.",
+      "modificationPl": "Aktywna rotacja kręgosłupa pod obciążeniem może nasilić ostre problemy z dyskami lub stawami międzywyrostkowymi. Przerzuć się na statyczny plank na przedramionach lub ćwiczenia anty-rotacyjne (dead-bug, pallof press) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "abdominal_diastasis",
+      "severity": "avoid",
+      "modification": "Postpartum diastasis recti — rotation combined with intra-abdominal pressure can worsen the midline gap. Avoid until cleared by a pelvic-floor specialist; use connection-breath core work meanwhile.",
+      "modificationPl": "Rozejście kresy białej po porodzie — rotacja połączona z ciśnieniem wewnątrzbrzusznym może pogłębić rozejście. Unikaj do czasu konsultacji z fizjoterapeutą uroginekologicznym; w międzyczasie używaj ćwiczeń oddechowo-stabilizacyjnych core.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Closed-chain loading on the forearm side under rotation can stress an irritated shoulder. Shorten holds, reduce rotation amplitude, or perform on the elbows with smaller side-to-side movement. Stop if shoulder pain appears.",
+      "modificationPl": "Obciążenie w łańcuchu zamkniętym po stronie przedramienia podczas rotacji może obciążać podrażniony bark. Skróć przytrzymania, zmniejsz amplitudę rotacji lub wykonuj na łokciach z mniejszym ruchem na boki. Przerwij jeśli pojawi się ból barku.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "elbow_pain_or_olecranon_bursitis",
+      "severity": "modify",
+      "modification": "Direct pressure on the elbow on a hard surface can flare bursitis or olecranon irritation. Use a thick mat or folded towel under the forearm, or switch to a high-plank variation with rotation.",
+      "modificationPl": "Bezpośredni nacisk na łokieć na twardej powierzchni może nasilić zapalenie kaletki lub podrażnienie wyrostka łokciowego. Używaj grubej maty lub złożonego ręcznika pod przedramieniem, albo przerzuć się na wariant z wysokiej deski z rotacją.",
+      "alternative": "plank-with-hip-rotation"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-40 sec | 3x8-12 reps per side | 4x10 alternating reps",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "front-plank-with-twist.gif",
+    "frames_extracted": [
+      "frames/front-plank-with-twist/frame_0_start.png",
+      "frames/front-plank-with-twist/frame_1_early.png",
+      "frames/front-plank-with-twist/frame_2_mid.png",
+      "frames/front-plank-with-twist/frame_3_late.png",
+      "frames/front-plank-with-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/front-plank-with-twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek w GIFie). frame_0_start: pozycja wyjściowa — deska na przedramionach (forearm plank) z dłońmi w pięściach, łokcie pod barkami, podświetlone obliques i rectus_abdominis jako baseline napięcia anty-wyprostnego. frame_1_early i frame_3_late: pozycja maksymalnej rotacji — biodra otwarte do sufitu, klatka skierowana w bok, górna ręka WYCIĄGNIĘTA W GÓRĘ jak w side planku z reach (frame_3 z perspektywy faded silhouette pokazuje pełną amplitudę otwarcia). Dolna strona obliques mocno podświetlona — to ona pracuje przy otwarciu. frame_2_mid: pozycja środkowa — pełne otwarcie biodra, ciało w pozycji 'half side plank' z górnym ramieniem uniesionym. frame_4_end: powrót do deski na przedramionach (lustro frame_0, druga strona). Mocna rotacja w płaszczyźnie poprzecznej (plane: transverse) + naprzemienność (laterality: alternating). movement_pattern: anti_rotation — paradoksalnie, bo ćwiczenie aktywnie rotuje, ale GŁÓWNY bodziec dla obliques to anty-wyprost + opór przeciwko grawitacji w półpozycji side plank (nie czysty 'rotation' jak Russian twist gdzie tułów dynamicznie skręca z dolnym ciałem nieruchomym). Tutaj baza na przedramionach jest statyczna, a hip drop pod kontrolą = kombinacja anty-wyprostu i kontrolowanej rotacji. force: static (tułów względnie statyczny w fazie otwarcia, jak hold). Difficulty 5: trudniejsze niż klasyczny plank (3) i side plank (4) bo łączy oba + wymaga koordynacji hip rotation. Hip flexors NIE są primary (w przeciwieństwie do mountain climber cross-body) bo nie ma dynamicznego knee drive — biodra rotują, nie nogi pracują. Quadratus lumborum dodany jako secondary bo asymetryczne obciążenie boczne wymaga jego pracy. Polskie nazewnictwo: 'Deska z rotacją' to standardowa polska nazwa fitness — 'plank z rotacją' jako alias bo wielu Polaków używa anglicyzmu. Wszystkie pola PL napisane od zera po polsku (skośne, prosty brzucha, deska na przedramionach, rotacja bioder, pół-side plank) — brak tłumaczenia maszynowego.",
+
+  "tags": ["core", "obliques", "rotation", "anti_rotation", "bodyweight", "no_equipment", "alternating", "plank_variation", "compound", "intermediate", "ab_isolation", "isometric", "stability"]
+}

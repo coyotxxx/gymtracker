@@ -1,0 +1,197 @@
+{
+  "id": "cable-low-seated-row",
+  "name": "Cable Low Seated Row",
+  "namePl": "Wiosłowanie na wyciągu dolnym siedząc",
+  "aliases": ["seated cable row", "low cable row", "seated row", "cable row seated", "v-handle seated row"],
+  "aliasesPl": ["wiosłowanie siedząc na wyciągu", "wiosłowanie na wyciągu dolnym", "wiosłowanie na maszynie siedząc", "seated row", "wiosło na wyciągu siedząc"],
+
+  "description": "Classic horizontal pulling exercise performed seated at a low cable station with a V-handle (neutral grip). You sit with legs braced against the foot platform, torso upright and slightly inclined, arms extended forward and pull the handle toward the lower abdomen while driving the elbows back and squeezing the shoulder blades together. The cable provides constant tension throughout the full range of motion — both concentric and eccentric — which makes it one of the most lat- and mid-back-friendly rowing variants and a gym staple for back thickness. Easier to learn than barbell rows because the chest-supported / seated position eliminates loaded spinal flexion and removes lower-back fatigue as the limiting factor.",
+  "descriptionPl": "Klasyczne ćwiczenie ciągowe w płaszczyźnie poziomej wykonywane siedząc na dolnym wyciągu z uchwytem V (chwyt neutralny). Siedzisz z nogami opartymi o platformę, tułów wyprostowany i lekko pochylony do przodu, ramiona wyciągnięte przed siebie, a uchwyt przyciągasz do dolnej części brzucha prowadząc łokcie w tył i ściskając łopatki. Linka zapewnia stałe napięcie przez cały zakres ruchu — w fazie koncentrycznej i ekscentrycznej — co czyni to ćwiczenie jednym z najbardziej angażujących najszersze grzbietu i środkowe plecy wariantów wiosłowania oraz absolutnym klasykiem siłowni na grubość pleców. Łatwiejsze do nauki niż wiosłowanie sztangą, bo pozycja siedząca eliminuje obciążenie kręgosłupa i nie zmusza prostowników do bycia ogniwem limitującym serię.",
+
+  "instructions": [
+    "Sit at a low cable station with feet braced against the foot platform, knees slightly bent (not locked). Grab the V-handle (neutral grip, palms facing each other).",
+    "Sit tall — torso upright or inclined ~10-15 degrees forward, neutral spine, chest proud. Arms fully extended in front, lats pre-stretched but not collapsed forward.",
+    "Brace the core. Initiate by depressing and retracting the shoulder blades BEFORE the elbows bend (lats wake up first).",
+    "Pull the handle toward the lower abdomen / belly button. Elbows travel back close to the ribs, NOT flaring out. Forearms stay parallel to the cable.",
+    "At the end position the handle touches or nearly touches the lower abdomen, elbows are behind the line of the torso, shoulder blades fully retracted and depressed. Hold the squeeze for 1 second.",
+    "Reverse the motion in full control. Let the shoulder blades protract slightly at the end of the eccentric to get full lat stretch — without rounding the lower back or losing the upright torso angle.",
+    "Keep the torso angle stable through the entire set — no aggressive leaning back, no rocking with the lumbar spine.",
+    "Repeat for prescribed reps maintaining smooth, constant-tension tempo."
+  ],
+  "instructionsPl": [
+    "Usiądź na dolnym wyciągu z nogami opartymi o platformę, kolana lekko ugięte (nie zablokowane). Złap uchwyt V (chwyt neutralny, dłonie zwrócone do siebie).",
+    "Siedź wyprostowany — tułów pionowy lub lekko pochylony do przodu ~10-15 stopni, kręgosłup neutralny, klatka wysunięta. Ramiona w pełni wyprostowane przed sobą, najszersze rozciągnięte ale bez 'zapadania się' barków.",
+    "Napnij brzuch. Rozpocznij ruch ŚCIĄGNIĘCIEM i obniżeniem łopatek ZANIM zaczniesz zginać łokcie (najszersze włączają się jako pierwsze).",
+    "Pociągnij uchwyt w stronę dolnej części brzucha / pępka. Łokcie idą w tył blisko żeber, NIE na boki. Przedramiona zostają równolegle do linki.",
+    "W końcowej pozycji uchwyt dotyka lub prawie dotyka dolnej części brzucha, łokcie są za linią tułowia, łopatki maksymalnie ściągnięte i obniżone. Zatrzymaj napięcie na 1 sekundę.",
+    "Odwróć ruch w pełnej kontroli. Pozwól łopatkom lekko 'odpłynąć' w przód na końcu fazy ekscentrycznej, by uzyskać pełne rozciągnięcie najszerszych — bez zaokrąglania odcinka lędźwiowego i bez tracenia pionowego tułowia.",
+    "Trzymaj kąt tułowia stabilny przez całą serię — bez agresywnego odchylania się do tyłu, bez bujania w odcinku lędźwiowym.",
+    "Powtórz zaplanowaną liczbę powtórzeń utrzymując płynne tempo i stałe napięcie."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower"],
+    "secondary": ["biceps_brachii", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "P9",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "erector_spinae": "S5",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "v_handle"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["seated-machine-row", "inverted-row"],
+    "progression_to": ["barbell-bent-over-row", "t-bar-row", "single-arm-dumbbell-row", "pendlay-row"],
+    "alternatives": ["chest-supported-row", "single-arm-dumbbell-row", "t-bar-row", "machine-row", "barbell-bent-over-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall, feet braced firmly on the platform, knees slightly bent",
+      "V-handle with neutral grip — palms facing each other",
+      "Torso upright or 10-15 degrees forward, neutral spine, chest proud",
+      "Arms fully extended, lats lengthened but shoulders not collapsing forward",
+      "Brace the core BEFORE the first rep"
+    ],
+    "setup_cues_pl": [
+      "Siedź wyprostowany, stopy mocno oparte o platformę, kolana lekko ugięte",
+      "Uchwyt V z chwytem neutralnym — dłonie skierowane do siebie",
+      "Tułów pionowy lub 10-15 stopni do przodu, neutralny kręgosłup, klatka wysunięta",
+      "Ramiona w pełni wyprostowane, najszersze rozciągnięte ale barki nie zapadają się w przód",
+      "Napnij brzuch PRZED pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Start with the scapulae — retract before you bend the elbows",
+      "Pull with the elbows, hands are just hooks on the handle",
+      "Drive elbows BACK and CLOSE to the ribs — not flared out",
+      "Handle to the lower belly / belly button — NOT to the chest",
+      "Squeeze the shoulder blades together for 1 second at the end of every rep"
+    ],
+    "execution_cues_pl": [
+      "Zacznij od łopatek — ściągnij je zanim zaczniesz zginać łokcie",
+      "Ciągnij łokciami, dłonie to tylko haki na uchwycie",
+      "Prowadź łokcie w TYŁ i BLISKO żeber — nie rozchylaj ich na boki",
+      "Uchwyt do dolnej części brzucha / pępka — NIE do klatki",
+      "Ściśnij łopatki razem na 1 sekundę na końcu każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rocking the torso back and forth (using lower back momentum)",
+        "faultPl": "Bujanie tułowia w przód i w tył (używanie pędu odcinka lędźwiowego)",
+        "cause": "Load too heavy, ego lifting, or lack of cue to keep torso angle stable",
+        "causePl": "Zbyt duży ciężar, ego lifting, lub brak świadomości stabilnego kąta tułowia",
+        "cue": "Reduce weight by 20-30%. Torso angle stays fixed — only the shoulder joint moves. Imagine your hips and spine are bolted to the seat. If you have to rock, you need lighter weight.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Kąt tułowia jest stały — porusza się tylko staw barkowy. Wyobraź sobie że biodra i kręgosłup są przyśrubowane do siedziska. Jeśli musisz się bujać, weź mniejszy ciężar."
+      },
+      {
+        "fault": "Pulling with arms only — no scapular retraction",
+        "faultPl": "Ciągnięcie samymi rękami — brak ściągnięcia łopatek",
+        "cause": "Habit of biceps-dominant pulling, weak rhomboids/mid-traps, or rushed tempo",
+        "causePl": "Nawyk dominacji bicepsów, słabe równoległoboczne/środkowe czworoboczne lub zbyt szybkie tempo",
+        "cue": "BEFORE the elbow bends, the shoulder blade retracts. Pause at the top with the squeeze. Think 'crack a walnut between your shoulder blades.' Lats and rhomboids — not biceps — finish the rep.",
+        "cuePl": "ZANIM zegnie się łokieć, łopatka się ściąga. Zatrzymaj się na szczycie ze ściągniętymi łopatkami. Pomyśl 'zgnieć orzecha między łopatkami'. Najszersze i równoległoboczne — nie bicepsy — kończą powtórzenie."
+      },
+      {
+        "fault": "Rounded lower back at the end of the eccentric (reaching too far forward)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy w końcowej fazie ekscentrycznej (zbyt mocne sięganie do przodu)",
+        "cause": "Trying to get more 'stretch' by collapsing the lumbar spine instead of letting the scapulae protract",
+        "causePl": "Próba uzyskania większego 'rozciągnięcia' przez zapadanie odcinka lędźwiowego zamiast protrakcji łopatek",
+        "cue": "Stretch comes from the SHOULDER BLADES protracting forward — not from the spine flexing. Keep the chest proud and the lower back neutral throughout. If you feel lower back rounding, reduce the forward range.",
+        "cuePl": "Rozciągnięcie wynika z PROTRAKCJI ŁOPATEK do przodu — nie ze zgięcia kręgosłupa. Klatka cały czas wysunięta, odcinek lędźwiowy neutralny. Jeśli czujesz że plecy się zaokrąglają, zmniejsz zakres do przodu."
+      },
+      {
+        "fault": "Elbows flaring out (handle pulled too high — toward chest)",
+        "faultPl": "Łokcie rozchylone na boki (uchwyt ciągnięty zbyt wysoko — do klatki)",
+        "cause": "Confusing seated row with a face pull / rear delt row, or wrong handle (rope, wide bar)",
+        "causePl": "Mylenie seated rowa z face pullem / wiosłowaniem na tylne aktony, lub zły uchwyt (lina, szeroki drążek)",
+        "cue": "With the V-handle and neutral grip, elbows tuck CLOSE to the ribs and the handle goes to the LOW belly. If you want rear delts, use a rope or wide bar pulled to the chest — but that is a different exercise.",
+        "cuePl": "Z uchwytem V i chwytem neutralnym łokcie idą BLISKO żeber a uchwyt ląduje na DOLNYM brzuchu. Jeśli chcesz tylnych naramiennych, użyj liny lub szerokiego drążka ciągniętego do klatki — ale to już inne ćwiczenie."
+      },
+      {
+        "fault": "Excessive backward lean at the end of the pull",
+        "faultPl": "Nadmierne odchylenie tułowia w tył na końcu ciągu",
+        "cause": "Trying to lift more weight than the back can handle by using torso extension as leverage",
+        "causePl": "Próba podniesienia większego ciężaru niż mogą plecy poprzez używanie wyprostu tułowia jako dźwigni",
+        "cue": "Torso stays within 10-15 degrees of vertical. A small lean at finish is fine, but leaning to 30-40 degrees turns this into a half-deadlift. Reduce weight and lock the torso.",
+        "cuePl": "Tułów zostaje w przedziale 10-15 stopni od pionu. Małe odchylenie na końcu jest OK, ale odchylenie do 30-40 stopni zmienia ćwiczenie w pół-martwy ciąg. Zmniejsz ciężar i zablokuj tułów."
+      }
+    ],
+    "breathing": "Inhale at the start (arms extended). Exhale through the pull as the handle approaches the abdomen. Inhale on the controlled return. For heavier sets, brace and hold breath through the concentric, exhale at the top.",
+    "breathingPl": "Wdech na starcie (ramiona wyprostowane). Wydech w trakcie ciągu gdy uchwyt zbliża się do brzucha. Wdech podczas kontrolowanego powrotu. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech na szczycie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Lock the torso completely vertical (no forward lean, no backward lean). Reduce weight. Avoid letting the cable pull you forward at end of eccentric. Stop if pain increases.",
+      "modificationPl": "Trzymaj tułów całkowicie pionowo (bez pochylenia w przód, bez odchylenia w tył). Zmniejsz ciężar. Nie pozwól linie ciągnąć cię w przód w końcowej fazie ekscentrycznej. Przerwij jeśli ból się nasila.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Neutral grip with V-handle is already shoulder-friendly. Make sure elbows stay close to ribs (no flaring). Reduce range if pain at top of pull.",
+      "modificationPl": "Chwyt neutralny z uchwytem V jest już przyjazny dla barków. Upewnij się że łokcie zostają blisko żeber (bez rozchylania). Zmniejsz zakres jeśli ból na szczycie ciągu.",
+      "alternative": "single-arm-dumbbell-row"
+    },
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "caution",
+      "modification": "Use chest-supported row instead — eliminates loaded spinal flexion at end of eccentric. If using seated cable row, lock torso vertical and avoid forward reach.",
+      "modificationPl": "Użyj wiosłowania z podparciem klatki — eliminuje obciążone zgięcie kręgosłupa w końcu ekscentryku. Jeśli używasz seated cable row, trzymaj tułów pionowo i unikaj sięgania do przodu.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x10-15 (general) | 3x15-20 (endurance / pump work)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-low-seated-row.gif",
+    "frames_extracted": [
+      "frames/cable-low-seated-row/frame_0_start.png",
+      "frames/cable-low-seated-row/frame_1_early.png",
+      "frames/cable-low-seated-row/frame_2_mid.png",
+      "frames/cable-low-seated-row/frame_3_late.png",
+      "frames/cable-low-seated-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cable-low-seated-row",
+    "glowupp_slug": "cable-low-seated-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:35:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): osoba siedzi na dolnym wyciągu, stopy na platformie, kolana lekko ugięte, tułów pionowy i lekko pochylony do przodu, ramiona w pełni wyprostowane do przodu trzymając uchwyt V (chwyt neutralny). Podświetlone są: szeroka grupa najszersze grzbietu (cały plecy), równoległoboczne i środkowe/dolne czworoboczne, oraz mocno tylne aktony naramiennych. Frame 2 (mid): faza koncentryczna — łokcie idą w tył blisko żeber (nie flared), uchwyt w połowie drogi do brzucha, łopatki zaczynają się ściągać. Frame 4 (end): pełne ściągnięcie łopatek, uchwyt przy dolnej części brzucha, łokcie wyraźnie za linią tułowia, tułów STABILNY (małe odchylenie w tył ~5-10 stopni — w granicach normy), klasyczna końcowa pozycja seated cable row. Klasyfikacja 'pull_horizontal' potwierdzona. Equipment: cable_machine + v_handle (uchwyt V wyraźnie widoczny na obrazie). Difficulty 4 — to klasyczny pierwszy seated row dla początkujących (chest-supported pozycja, brak obciążenia kręgosłupa, łatwa nauka schematu retrakcji łopatek). primary: latissimus_dorsi P10 (klasyczny lat developer), rhomboids P9, trapezius_middle_lower P9 — zgodnie ze specyfikacją zadania. Wszystkie pola PL napisane od zera, polski standard fitness (Wiosłowanie na wyciągu dolnym siedząc — najbardziej rozpowszechniona forma).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "cable", "mid_back", "lat_developer", "beginner_friendly", "bodybuilding_classic", "constant_tension"]
+}

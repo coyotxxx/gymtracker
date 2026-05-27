@@ -1,0 +1,208 @@
+{
+  "id": "cable-one-arm-pulldown",
+  "name": "Cable One-Arm Pulldown (Standing)",
+  "namePl": "Lat pulldown z wyciągu jednorącz (stojąc)",
+  "aliases": ["one arm cable pulldown", "single arm cable lat pulldown", "unilateral cable pulldown", "standing one arm pulldown", "cable single arm lat pulldown"],
+  "aliasesPl": ["jednorączny lat pulldown z wyciągu", "ściąganie wyciągu górnego jednorącz", "unilateralny pulldown na bramie", "stojący lat pulldown jednorącz", "ściąganie wyciągu jedną ręką"],
+
+  "description": "Unilateral standing cable lat pulldown performed with a single D-handle on a high pulley. You stand sideways or slightly facing the cable tower, grasp the handle overhead with one hand, and pull down toward your hip with the elbow tracking down and slightly back. The unilateral pattern produces better lat isolation than the bilateral pulldown because the arm follows a more natural arc (no bar forcing both shoulders into the same plane) and the free contralateral hand allows extra range of motion and a deeper contraction. The free hand can rest on the hip or grip the frame for stability. Excellent for fixing lat imbalances, training core anti-rotation, and building mind-muscle connection with the lats.",
+  "descriptionPl": "Jednoramienna stojąca wersja lat pulldown na wyciągu wykonywana z pojedynczym uchwytem D na górnej rolce. Stoisz bokiem lub lekko frontalnie do kolumny wyciągu, łapiesz uchwyt nad głową jedną ręką i ściągasz go w dół w kierunku biodra — łokieć wędruje w dół i lekko do tyłu. Wzorzec unilateralny daje LEPSZĄ izolację najszerszego niż bilateralny pulldown, bo ręka porusza się po naturalniejszym łuku (brak drążka wymuszającego symetrię obu barków), a wolna ręka pozwala na większy zakres ruchu i głębszy skurcz. Wolna ręka może spoczywać na biodrze lub trzymać konstrukcję dla stabilności. Doskonałe do wyrównywania asymetrii najszerszych, treningu antyrotacji core i budowania połączenia umysł-mięsień z najszerszymi.",
+
+  "instructions": [
+    "Set one pulley to the HIGHEST position on a cable machine or crossover. Attach a single D-handle.",
+    "Stand facing the cable tower, slightly offset so the working arm is in line with the cable. Feet shoulder-width, knees soft.",
+    "Grasp the handle with one hand (palm facing inward, neutral or slightly pronated). Free hand on opposite hip or holding the frame.",
+    "Step back so the cable is under tension. Arm fully extended overhead — feel the lat stretch on that side.",
+    "Brace core, square hips and shoulders to the cable line. Do not let the torso rotate.",
+    "Initiate the pull by driving the elbow DOWN AND BACK toward your hip. Think 'elbow into the back pocket'.",
+    "The handle travels in a natural arc beside your head and down to your hip. Slight torso lean away from the cable is OK at the bottom but no rotation or hip swing.",
+    "End position: elbow at or just behind your hip line, hand near the hip, lat fully contracted, shoulder blade depressed.",
+    "Reverse SLOWLY — let the arm travel back overhead with full control until you feel a deep stretch in the working lat.",
+    "Full reps on one side, then switch arms. Match reps and tempo on both sides for symmetry."
+  ],
+  "instructionsPl": [
+    "Ustaw jeden wyciąg w NAJWYŻSZEJ pozycji na maszynie cable lub crossoverze. Załóż pojedynczy uchwyt D.",
+    "Stań twarzą do kolumny wyciągu, lekko przesunięty tak by pracująca ręka była w linii z linką. Stopy na szerokość barków, kolana lekko ugięte.",
+    "Złap uchwyt jedną ręką (dłoń skierowana do wewnątrz — neutralny lub lekko pronowany chwyt). Wolna ręka na przeciwnym biodrze lub trzymająca konstrukcję.",
+    "Cofnij się tak by linka była napięta. Ręka w pełnym wyproście nad głową — poczuj rozciągnięcie najszerszego po tej stronie.",
+    "Napnij brzuch, ustaw biodra i barki frontalnie do linii linki. Nie pozwól tułowiowi się rotować.",
+    "Rozpocznij ciąg napierając łokciem W DÓŁ I DO TYŁU w kierunku biodra. Myśl 'łokieć do tylnej kieszeni'.",
+    "Uchwyt wędruje po naturalnym łuku obok głowy i w dół do biodra. Lekkie odchylenie tułowia od linki na dole jest OK, ale bez rotacji i bujania biodrami.",
+    "Pozycja końcowa: łokieć przy linii biodra lub tuż za nią, dłoń blisko biodra, najszerszy maksymalnie skurczony, łopatka opuszczona.",
+    "Wracaj POWOLI — pozwól ręce wędrować nad głowę z pełną kontrolą aż poczujesz głębokie rozciągnięcie pracującego najszerszego.",
+    "Wykonaj pełne powtórzenia na jednej stronie, potem zmień rękę. Dopasuj liczbę powtórzeń i tempo po obu stronach dla symetrii."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["biceps_brachii", "rhomboids", "teres_major", "trapezius_middle_lower", "posterior_deltoid", "brachialis"],
+    "stabilizers": ["core", "obliques", "rotator_cuff", "forearms", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "S7",
+    "teres_major": "S8",
+    "rhomboids": "S6",
+    "trapezius_middle_lower": "S6",
+    "posterior_deltoid": "S5",
+    "brachialis": "S5",
+    "forearms": "S6",
+    "obliques": "S6",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "d_handle"],
+    "optional": ["chalk", "wrist_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["seated-cable-row", "lat-pulldown"],
+    "progression_to": ["single-arm-half-kneeling-lat-pulldown", "weighted-pull-up", "one-arm-pull-up-progression"],
+    "alternatives": ["lat-pulldown", "neutral-grip-lat-pulldown", "single-arm-lat-pulldown-machine", "straight-arm-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulley at TOP position, single D-handle attached",
+      "Stand facing the tower, working arm aligned with cable",
+      "Free hand on opposite hip or on the frame for stability",
+      "Arm fully overhead, feel the lat stretch before first rep",
+      "Square hips and shoulders to the cable — no rotation"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg w GÓRNEJ pozycji, pojedynczy uchwyt D założony",
+      "Stań twarzą do kolumny, pracująca ręka w linii z linką",
+      "Wolna ręka na przeciwnym biodrze lub na konstrukcji dla stabilności",
+      "Ręka w pełnym wyproście nad głową, poczuj rozciągnięcie najszerszego przed pierwszym powtórzeniem",
+      "Biodra i barki frontalnie do linki — bez rotacji"
+    ],
+    "execution_cues": [
+      "Drive elbow DOWN AND BACK — 'elbow to back pocket'",
+      "Hand passes BESIDE your head, not in front",
+      "Squeeze the lat hard at the bottom — fist at hip level",
+      "Slow eccentric — fight the cable on the way up",
+      "Resist torso rotation — core stays locked, no twist"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciem W DÓŁ I DO TYŁU — 'łokieć do tylnej kieszeni'",
+      "Dłoń mija głowę OBOK, nie z przodu",
+      "Mocno ściśnij najszerszy na dole — pięść przy biodrze",
+      "Wolny ekscentryk — walcz z linką w drodze do góry",
+      "Stawiaj opór rotacji tułowia — core zablokowany, bez skrętu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward the working side during the pull",
+        "faultPl": "Rotacja tułowia w stronę pracującej ręki podczas ciągu",
+        "cause": "Core not braced for anti-rotation, weight too heavy, using torso for leverage",
+        "causePl": "Brak napięcia core dla antyrotacji, za duże obciążenie, użycie tułowia jako dźwigni",
+        "cue": "Square shoulders to the cable. Reduce weight and brace obliques to stop the twist. Treat it as an anti-rotation core exercise.",
+        "cuePl": "Ustaw barki frontalnie do linki. Zmniejsz obciążenie i napnij skośne by zatrzymać skręt. Traktuj to jak ćwiczenie antyrotacyjne core."
+      },
+      {
+        "fault": "Pulling with the arm (biceps-dominant) instead of the lat",
+        "faultPl": "Ciąg samą ręką (dominacja bicepsa) zamiast najszerszym",
+        "cause": "No scapular initiation, focus on hand instead of elbow",
+        "causePl": "Brak inicjacji łopatką, skupienie na dłoni zamiast łokciu",
+        "cue": "Initiate every rep with shoulder blade depression. Think of the hand as a hook — pull the elbow.",
+        "cuePl": "Inicjuj każde powtórzenie opuszczeniem łopatki. Myśl o dłoni jak o haku — ciągnij łokciem."
+      },
+      {
+        "fault": "Cutting ROM at the top (no overhead stretch)",
+        "faultPl": "Skracanie ROM w górze (brak rozciągnięcia nad głową)",
+        "cause": "Avoiding the hardest part of the stretch position, weight too heavy",
+        "causePl": "Unikanie najtrudniejszej części w rozciągnięciu, za duże obciążenie",
+        "cue": "Full extension overhead each rep. The stretch is where lats grow most — don't skip it.",
+        "cuePl": "Pełen wyprost nad głową w każdym powtórzeniu. Rozciągnięcie to miejsce gdzie najszersze rosną najbardziej — nie pomijaj go."
+      },
+      {
+        "fault": "Letting the cable yank the arm up uncontrolled",
+        "faultPl": "Pozwalanie linkce szarpać rękę w górę bez kontroli",
+        "cause": "No eccentric control, focus only on concentric, scapula relaxes at top",
+        "causePl": "Brak kontroli ekscentrycznej, skupienie tylko na fazie skurczu, łopatka rozluźniona w górze",
+        "cue": "3-second eccentric. Keep tension in the lat the entire way up. The shoulder blade stays slightly depressed.",
+        "cuePl": "3-sekundowy ekscentryk. Utrzymuj napięcie w najszerszym przez całą drogę do góry. Łopatka pozostaje lekko opuszczona."
+      },
+      {
+        "fault": "Hip sway / side bending for momentum",
+        "faultPl": "Bujanie biodrami / skłon w bok dla pędu",
+        "cause": "Weight too heavy, weak core, treating it as a heavy compound",
+        "causePl": "Za duże obciążenie, słaby core, traktowanie jak ciężki ruch złożony",
+        "cue": "This is an isolation-leaning compound — go lighter than a bilateral pulldown. Stable hips, controlled torso.",
+        "cuePl": "To ruch złożony bliski izolacji — używaj mniejszej wagi niż w bilateralnym pulldownie. Stabilne biodra, kontrolowany tułów."
+      }
+    ],
+    "breathing": "Inhale at the top stretch position. Exhale during the pull down. Inhale on the controlled return overhead.",
+    "breathingPl": "Wdech w pozycji rozciągnięcia w górze. Wydech podczas ciągu w dół. Wdech podczas kontrolowanego powrotu nad głowę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce overhead ROM — start the pull from just above shoulder height. Use neutral hand position throughout.",
+      "modificationPl": "Zmniejsz ROM w górze — zaczynaj ciąg od wysokości tuż nad barkami. Użyj neutralnej pozycji dłoni przez cały ruch.",
+      "alternative": "single-arm-lat-pulldown-half-kneeling"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded overhead unilateral pulls until cleared. Switch to seated row patterns and low-pulley work.",
+      "modificationPl": "Unikaj jednoramiennych ciągów nad głową pod obciążeniem do wyleczenia. Przejdź na wzorce wiosłowania siedząc i pracę na dolnym wyciągu.",
+      "alternative": "single-arm-cable-row"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Use half-kneeling stance (knee opposite working arm down) to lock the pelvis and reduce lumbar load from anti-rotation demands.",
+      "modificationPl": "Użyj pozycji półklęku (kolano przeciwne do pracującej ręki na podłodze) by zablokować miednicę i zmniejszyć obciążenie lędźwi wynikające z antyrotacji.",
+      "alternative": "seated-single-arm-lat-pulldown"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Use a wrist strap to reduce grip stress. Reduce weight by 30-40% and focus on lat engagement, not pulling with the arm.",
+      "modificationPl": "Użyj paska na nadgarstek by zmniejszyć napięcie chwytu. Zmniejsz obciążenie o 30-40% i skup się na aktywacji najszerszego, nie na ciągu ręką.",
+      "alternative": "straight-arm-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4 x 10-15 per side (hypertrophy) | 4 x 8-12 per side (general) | 3 x 12-20 per side (lat pump / imbalance fix)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-one-arm-pulldown.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-pulldown/frame_0_start.png",
+      "frames/cable-one-arm-pulldown/frame_1_early.png",
+      "frames/cable-one-arm-pulldown/frame_2_mid.png",
+      "frames/cable-one-arm-pulldown/frame_3_late.png",
+      "frames/cable-one-arm-pulldown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-one-arm-pulldown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frames pokazują STOJĄCĄ unilateralną wersję cable pulldown z pojedynczym uchwytem D na jednej górnej rolce. Frame 0 (start): prawa ręka w pełnym wyproście nad głową, lewa ręka opuszczona przy ciele, lats podświetlone obustronnie (rozciągnięcie pracującego + napięcie statyczne drugiego). Frame 1-2 (pull): ręka ściągana w dół, łokieć schodzi w dół i lekko do tyłu, uchwyt mija głowę. Frame 2-3 (bottom): pełen skurcz, dłoń na poziomie biodra/tuż obok, łokieć za linią tułowia, lats maksymalnie podświetlone. Frame 4: powrót do startu. Tułów pozostaje pionowy — minimalna rotacja widoczna w klatkach. Klasyfikacja: pull_vertical / pull / compound / UNILATERAL / frontal plane / open kinetic chain. Primary: latissimus_dorsi P10 (pojedynczy mięsień docelowy — czysta izolacja jednostronna). Secondary: biceps_brachii S7 (mniejsza niż w bilateralnym pulldown bo lżejsze obciążenie jednostronne), teres_major S8 (silnie zaangażowany w ekstensji ramienia), rhomboids/middle-lower traps S6. Stabilizers: obliques S6 KLUCZOWE — antyrotacja przeciwko jednostronnej linie ciągu. Difficulty 4 — łatwiejsze niż pull-up, ale wymaga więcej kontroli core niż bilateralny pulldown przez wymóg antyrotacji. Equipment: cable_machine + d_handle (crossover OPCJONALNIE — wystarczy jedna kolumna). Idealne do fix asymetrii lat i nauki mind-muscle connection.",
+
+  "tags": ["cable", "compound", "upper_body", "vertical_pull", "back", "lats", "unilateral", "single_arm", "hypertrophy", "isolation_leaning", "anti_rotation", "imbalance_fix", "lat_isolation"]
+}

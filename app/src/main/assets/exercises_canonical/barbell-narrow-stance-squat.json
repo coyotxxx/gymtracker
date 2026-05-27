@@ -1,0 +1,204 @@
+{
+  "id": "barbell-narrow-stance-squat",
+  "name": "Barbell Narrow Stance Squat",
+  "namePl": "Przysiad ze sztangą z wąską postawą",
+  "aliases": ["narrow stance squat", "close stance squat", "quad squat", "narrow squat", "high-bar narrow stance squat"],
+  "aliasesPl": ["przysiad wąski", "przysiad z wąską stancją", "przysiad quad", "wąski back squat", "close stance squat"],
+
+  "description": "A back squat variation performed with feet hip-width or narrower instead of the standard shoulder-width stance. The reduced stance increases the knee flexion moment arm and shifts emphasis onto the quadriceps — particularly the vastus medialis — while decreasing the contribution of the glutes and adductors. Commonly used by bodybuilders as a quad-focused accessory and by olympic weightlifters to mimic the receiving position of the snatch and clean.",
+  "descriptionPl": "Wariant przysiadu ze sztangą wykonywany ze stopami na szerokość bioder lub węższej, zamiast standardowej szerokości barków. Wąska postawa zwiększa zakres zgięcia w kolanie i przesuwa nacisk na mięśnie czworogłowe — w szczególności na głowę przyśrodkową (vastus medialis) — zmniejszając jednocześnie udział pośladków i przywodzicieli. Często stosowany przez kulturystów jako akcesoryjne ćwiczenie na quady oraz przez podnosicieli olimpijskich w celu naśladowania pozycji odbioru w rwaniu i podrzucie.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load the desired weight on each side, securing with collars.",
+    "Step under the bar and place it across your upper traps (high-bar position). Grip the bar slightly wider than shoulder-width.",
+    "Unrack the bar by extending your legs. Take two controlled steps back.",
+    "Set your feet hip-width apart or slightly narrower. Toes point nearly straight forward, or only minimally turned out (0-10°).",
+    "Brace your core, draw shoulder blades down and back, keep chest tall. Inhale deeply and hold (Valsalva).",
+    "Initiate the descent by bending the knees first and pushing them forward over the toes. Keep the torso as upright as possible.",
+    "Descend until your hip crease drops below the top of your knee (full depth) or to your individual mobility limit while maintaining a neutral spine and heels down.",
+    "Drive up by pushing through the entire foot, leading with the chest. Extend hips and knees simultaneously. Exhale near the top.",
+    "Lock out at the top with hips and knees fully extended. The bar tracks vertically over the mid-foot throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj odpowiednie obciążenie po obu stronach i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów (pozycja high-bar). Złap drążek nieco szerzej niż na szerokość barków.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się 2 kontrolowanymi krokami.",
+    "Ustaw stopy na szerokość bioder lub nieco węższej. Palce skierowane niemal prosto przed siebie lub tylko lekko na zewnątrz (0-10°).",
+    "Napnij brzuch, ściągnij łopatki w dół i do tyłu, klatka wysoko. Nabierz głęboki oddech i przytrzymaj (Valsalva).",
+    "Rozpocznij schodzenie zginając najpierw kolana i wysuwając je do przodu nad palce stóp. Tułów maksymalnie pionowo.",
+    "Schodź aż linia bioder zejdzie poniżej szczytu kolan (pełna głębokość) lub do indywidualnego limitu mobilności przy zachowaniu neutralnego kręgosłupa i pięt na podłodze.",
+    "Wypchnij się w górę napierając przez całą stopę, prowadząc klatką piersiową. Prostuj biodra i kolana jednocześnie. Wydychaj blisko górnej części powtórzenia.",
+    "Zakończ powtórzenie w pełnym wyproście bioder i kolan. Gryf porusza się pionowo nad środkiem stopy przez cały ruch."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps"],
+    "secondary": ["glutes", "hamstrings", "erector_spinae"],
+    "stabilizers": ["core", "calves", "adductors", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "S6",
+    "hamstrings": "S5",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "calves": "T4",
+    "adductors": "T3",
+    "upper_back": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "barbell-back-squat"],
+    "progression_to": ["barbell-front-squat", "pause-narrow-stance-squat", "tempo-narrow-stance-squat", "heels-elevated-squat"],
+    "alternatives": ["barbell-front-squat", "heels-elevated-squat", "hack-squat", "leg-press-narrow"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width or narrower, toes nearly straight",
+      "Bar high on the traps, elbows pulled down",
+      "Chest tall, ribs stacked over hips",
+      "Brace 360° around the spine before descending",
+      "Lifting shoes recommended — narrow stance demands ankle mobility"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder lub węższej, palce niemal prosto",
+      "Sztanga wysoko na trapezach, łokcie ściągnięte w dół",
+      "Klatka wysoko, żebra ustawione nad biodrami",
+      "Napnij brzuch 360° wokół kręgosłupa przed schodzeniem",
+      "Buty do podnoszenia zalecane — wąska stancja wymaga mobilności kostki"
+    ],
+    "execution_cues": [
+      "Knees forward over the toes — embrace knee travel",
+      "Stay tall — minimize forward lean",
+      "Drive the chest up out of the hole",
+      "Heels glued to the floor at all times",
+      "Bar path vertical over the mid-foot, not the toes"
+    ],
+    "execution_cues_pl": [
+      "Kolana do przodu nad palcami — pozwól im wędrować",
+      "Trzymaj się prosto — minimalizuj pochylenie do przodu",
+      "Wypychaj klatkę w górę z dołu pozycji",
+      "Pięty przyklejone do podłogi przez cały czas",
+      "Tor gryfu pionowo nad środkiem stopy, nie nad palcami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Heel rise at depth",
+        "faultPl": "Unoszenie pięt w dolnej pozycji",
+        "cause": "Insufficient ankle dorsiflexion — narrow stance amplifies this need versus a wider stance",
+        "causePl": "Niedostateczna dorsiflexja stawu skokowego — wąska stancja zwiększa to wymaganie w porównaniu z szerszą stancją",
+        "cue": "Wear lifting shoes with a raised heel, or elevate heels on small plates. Work on ankle mobility daily.",
+        "cuePl": "Załóż buty do podnoszenia z podniesioną piętą lub ustaw pięty na małych talerzach. Codziennie pracuj nad mobilnością kostki."
+      },
+      {
+        "fault": "Excessive forward lean",
+        "faultPl": "Nadmierne pochylenie do przodu",
+        "cause": "Trying to compensate for limited ankle mobility by bending at the hips — defeats the purpose of the variation",
+        "causePl": "Próba kompensowania ograniczonej mobilności kostki przez zgięcie w biodrach — niweczy cel tego wariantu",
+        "cue": "Lead the descent with the knees, not the hips. Think 'sit straight down,' not 'sit back.'",
+        "cuePl": "Prowadź schodzenie kolanami, nie biodrami. Myśl 'siadaj prosto w dół', nie 'siadaj do tyłu'."
+      },
+      {
+        "fault": "Knee valgus (knees cave inward)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Narrow stance reduces the natural external rotation pattern; weak glute medius or hip rotators",
+        "causePl": "Wąska stancja redukuje naturalny wzorzec rotacji zewnętrznej; słabe mięśnie pośladkowe średnie lub rotatory biodra",
+        "cue": "Press the knees out slightly even with narrow feet. Engage the glutes throughout the descent.",
+        "cuePl": "Lekko wypychaj kolana na zewnątrz nawet przy wąskich stopach. Trzymaj pośladki napięte przez całe schodzenie."
+      },
+      {
+        "fault": "Loss of balance backward",
+        "faultPl": "Utrata równowagi do tyłu",
+        "cause": "Narrow base of support reduces lateral stability; bracing too rigidly or insufficient hip mobility",
+        "causePl": "Wąska podstawa podparcia zmniejsza stabilność boczną; zbyt sztywne napięcie lub niewystarczająca mobilność biodra",
+        "cue": "Distribute weight across the whole foot. Practice the movement with lighter loads before going heavy.",
+        "cuePl": "Rozłóż ciężar równomiernie na całej stopie. Trenuj ruch z lżejszym obciążeniem przed dużymi ciężarami."
+      },
+      {
+        "fault": "Going too deep without mobility",
+        "faultPl": "Schodzenie za nisko bez odpowiedniej mobilności",
+        "cause": "Forcing depth causes butt wink and lumbar flexion under load — high injury risk",
+        "causePl": "Wymuszanie głębokości powoduje butt wink i zgięcie lędźwiowe pod obciążeniem — wysokie ryzyko kontuzji",
+        "cue": "Stop one inch above the depth where the pelvis tucks. Build mobility separately with bodyweight squats.",
+        "cuePl": "Zatrzymaj się 2-3 cm nad głębokością, gdzie miednica się podwija. Rozwijaj mobilność osobno z przysiadami bez obciążenia."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold the breath through the descent and the bottom (Valsalva). Exhale near lockout. With narrow stance the brace must be especially tight to support the more upright torso under load.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech przez schodzenie i dolną pozycję (Valsalva). Wydech blisko wyprostu. Przy wąskiej stancji napięcie musi być szczególnie mocne, aby wspierać bardziej pionowy tułów pod obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Narrow stance increases compressive forces on the patella. Reduce ROM (above parallel), reduce load, or switch to a wider stance.",
+      "modificationPl": "Wąska postawa zwiększa siły ściskające na rzepkę. Ogranicz zakres ruchu (powyżej parallel), zmniejsz obciążenie lub przejdź na szerszą stancję.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "limited_ankle_dorsiflexion",
+      "severity": "modify",
+      "modification": "Heel elevation (lifting shoes or plates under the heels) is almost mandatory. If shoes don't solve it, use a wider stance variant.",
+      "modificationPl": "Podniesienie pięty (buty do podnoszenia lub talerze pod piętami) jest praktycznie obowiązkowe. Jeśli buty nie pomagają, użyj szerszej stancji.",
+      "alternative": "heels-elevated-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid loaded spinal compression.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj obciążania kręgosłupa.",
+      "alternative": "leg-press-narrow"
+    },
+    {
+      "condition": "meniscus_tear_or_repair",
+      "severity": "caution",
+      "modification": "Deep narrow squats stress the meniscus heavily. Limit ROM to pain-free zone, get medical clearance before heavy loading.",
+      "modificationPl": "Głębokie wąskie przysiady mocno obciążają łąkotkę. Ogranicz zakres ruchu do bezbolesnego, uzyskaj zgodę lekarza przed dużymi ciężarami.",
+      "alternative": "leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, quad focus) | 4x6 (strength) | 3x15 (high-rep quad pump)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "barbell-narrow-stance-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-narrow-stance-squat/frame_0_start.png",
+      "frames/barbell-narrow-stance-squat/frame_1_early.png",
+      "frames/barbell-narrow-stance-squat/frame_2_mid.png",
+      "frames/barbell-narrow-stance-squat/frame_3_late.png",
+      "frames/barbell-narrow-stance-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-narrow-stance-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Klatka startowa pokazuje stopy bardzo wąsko ustawione (na szerokość bioder lub węższej, palce skierowane niemal prosto przed siebie). Klatka 2 (mid) potwierdza pełną głębokość przysiadu z bardzo pionowym tułowiem i kolanami mocno wysuniętymi do przodu nad palcami stóp — typowy quad-dominant pattern dla wąskiej stancji. Mocno podświetlone są mięśnie czworogłowe (P10), brak istotnego podświetlenia pośladków — zgodne z biomechaniką: wąska stancja redukuje moment obrotowy w biodrze i zwiększa moment kolana, faworyzując quady (zwłaszcza vastus medialis). Sztanga high-bar na trapezach. Plik źródłowy mimo lokalizacji w folderze 'glutes' jest w rzeczywistości ćwiczeniem quad-dominant (nazwa pliku to wyraźnie 'narrow-stance'). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Kategoryzacja primary=quadriceps (single muscle), glutes zdegradowane do secondary — to kluczowa różnica względem barbell-back-squat (gdzie primary=quadriceps+glutes).",
+
+  "tags": ["quad_dominant", "bodybuilding", "olympic_weightlifting", "lower_body", "barbell", "narrow_stance", "vastus_medialis"]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "dumbbell-one-arm-french-press-on-exercise-ball",
+  "name": "Dumbbell One-Arm French Press on Exercise Ball",
+  "namePl": "French press z hantlą jednorącz na piłce",
+  "aliases": [
+    "single-arm dumbbell overhead tricep extension on stability ball",
+    "one-arm dumbbell french press swiss ball",
+    "unilateral overhead dumbbell triceps extension on ball",
+    "stability ball one-arm tricep extension",
+    "one-arm dumbbell skullcrusher on swiss ball"
+  ],
+  "aliasesPl": [
+    "wyciskanie francuskie jednorącz hantlą na piłce",
+    "wyprost ramienia z hantlą nad głowę leżąc na piłce gimnastycznej",
+    "jednoręczny tricep extension overhead na piłce",
+    "francuskie jednorącz na piłce szwajcarskiej",
+    "łamańce jednorącz z hantlą na piłce"
+  ],
+
+  "description": "A unilateral isolation exercise for the triceps brachii performed lying supine with the upper back and shoulders supported on a stability ball, hips lifted in a bridge position. One arm presses a dumbbell vertically overhead while the lifter lowers it in a controlled arc toward the side of the head, producing a deep stretch of the triceps long head. The combination of an unstable surface and unilateral loading dramatically increases demand on the core, obliques, glutes, and shoulder stabilizers — turning a basic arm isolation exercise into a full-body anti-rotation challenge.",
+  "descriptionPl": "Jednoręczne ćwiczenie izolowane na mięsień trójgłowy ramienia wykonywane leżąc na plecach, z górną częścią pleców i barkami opartymi o piłkę gimnastyczną, biodra uniesione w pozycji mostka. Jedna ręka wypycha hantlę pionowo nad głowę, a następnie kontrolowanym łukiem opuszcza ją w bok obok głowy, dając głębokie rozciągnięcie głowy długiej tricepsa. Połączenie niestabilnego podłoża i obciążenia jednostronnego drastycznie zwiększa pracę core'u, skośnych brzucha, pośladków i stabilizatorów barku — zamieniając proste ćwiczenie izolowane na ramię w wyzwanie antyrotacyjne dla całego ciała.",
+
+  "instructions": [
+    "Sit on the exercise ball with a moderate dumbbell in one hand. Walk your feet forward and let the ball roll up your back until your upper back and shoulders rest on the ball, with your head supported.",
+    "Lift your hips into a bridge position so your torso is parallel to the floor, forming a tabletop from knees to shoulders. Feet flat, hip-width apart, knees at ~90 degrees.",
+    "Press the dumbbell vertically overhead with the working arm fully extended. The biceps should be next to your ear. Place the free hand on the ball or on your hip for stability.",
+    "Pin the upper arm vertical — it stays in this position for the entire set. Only the forearm will move.",
+    "Inhale and lower the dumbbell in a smooth arc toward the same-side ear by flexing only at the elbow. Keep the elbow pointing straight up at the ceiling.",
+    "Lower until you feel a deep stretch in the back of the upper arm and the dumbbell is near your ear (forearm past parallel to the floor).",
+    "Extend the elbow to drive the dumbbell back up to the overhead lockout, exhaling on the effort. Stop just short of full elbow extension to keep tension on the triceps.",
+    "Maintain a rigid bridge throughout — no hip sag, no rotation toward the working side. Complete all reps on one arm, then switch sides."
+  ],
+  "instructionsPl": [
+    "Usiądź na piłce gimnastycznej z hantlą o umiarkowanym ciężarze w jednej ręce. Wsuń się stopami do przodu i zsuń po piłce w dół, aż górna część pleców i barki spoczną na piłce, a głowa będzie podparta.",
+    "Unieś biodra do pozycji mostka — tułów równoległy do podłogi, ciało tworzy stół od kolan do barków. Stopy płasko na szerokość bioder, kolana zgięte pod kątem ~90 stopni.",
+    "Wypchnij hantlę pionowo nad głowę z pracującą ręką w pełnym wyproście. Biceps przy uchu. Wolną rękę połóż na piłce lub biodrze dla stabilizacji.",
+    "Zafiksuj ramię ponad łokciem pionowo — przez całą serię ma pozostać w tej pozycji. Pracuje wyłącznie przedramię.",
+    "Wdech i opuszczaj hantlę płynnym łukiem w stronę ucha po tej samej stronie, zginając ruch tylko w łokciu. Łokieć wskazuje prosto w sufit.",
+    "Opuszczaj aż poczujesz głębokie rozciągnięcie z tyłu ramienia, a hantla znajdzie się przy uchu (przedramię poniżej linii równoległej do podłogi).",
+    "Wyprostuj łokieć, wypychając hantlę z powrotem do lockoutu nad głową — wydech w fazie wysiłku. Zatrzymaj się tuż przed pełnym wyprostem, aby utrzymać napięcie na tricepsie.",
+    "Utrzymuj sztywny mostek przez cały ruch — biodra nie opadają, tułów nie rotuje w stronę pracującej ręki. Wykonaj wszystkie powtórzenia jedną ręką, następnie zmień stronę."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["triceps_long_head", "anconeus"],
+    "stabilizers": ["obliques", "core", "rectus_abdominis", "glutes", "hamstrings", "anterior_deltoid", "posterior_deltoid", "serratus_anterior", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "triceps_long_head": "P10",
+    "triceps_lateral_head": "S5",
+    "triceps_medial_head": "S5",
+    "anconeus": "S4",
+    "obliques": "T6",
+    "core": "T6",
+    "rectus_abdominis": "T5",
+    "glutes": "T5",
+    "hamstrings": "T4",
+    "anterior_deltoid": "T3",
+    "posterior_deltoid": "T3",
+    "serratus_anterior": "T3",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "exercise_ball"],
+    "optional": ["wrist_wraps", "yoga_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-seated-overhead-triceps-extension", "single-arm-dumbbell-overhead-triceps-extension", "stability-ball-bridge"],
+    "progression_to": ["dumbbell-one-arm-french-press-on-bosu-ball", "single-arm-cable-overhead-tricep-extension-on-ball"],
+    "alternatives": ["single-arm-dumbbell-overhead-triceps-extension", "dumbbell-seated-overhead-triceps-extension", "cable-rope-overhead-triceps-extension", "ez-bar-french-press-on-exercise-ball"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Upper back and head supported on the ball, hips lifted into a tabletop bridge",
+      "Feet flat, hip-width, knees at 90 degrees — quiet base",
+      "Working arm pressed vertically overhead, biceps next to the ear",
+      "Free hand on the ball or hip for anti-rotation support",
+      "Brace the core hard — squeeze glutes to keep hips locked up"
+    ],
+    "setup_cues_pl": [
+      "Górna część pleców i głowa oparte o piłkę, biodra uniesione w mostek (stół)",
+      "Stopy płasko na szerokość bioder, kolana zgięte pod kątem 90 stopni — stabilna baza",
+      "Pracująca ręka wyciśnięta pionowo nad głowę, biceps przy uchu",
+      "Wolna ręka na piłce lub biodrze dla stabilizacji antyrotacyjnej",
+      "Mocno napnij brzuch — ściśnij pośladki, aby biodra nie opadały"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — elbow points straight at the ceiling the whole set",
+      "Lower the dumbbell beside your ear, not in front of the face",
+      "Feel a deep stretch in the back of the upper arm at the bottom",
+      "Resist the urge to rotate the torso toward the working arm",
+      "Drive up smoothly, stop just shy of full elbow lockout"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — łokieć wskazuje prosto w sufit przez całą serię",
+      "Opuszczaj hantlę obok ucha, nie przed twarz",
+      "Złap głębokie rozciągnięcie z tyłu ramienia w dolnej pozycji",
+      "Nie pozwól tułowiu rotować w stronę pracującej ręki",
+      "Wypychaj płynnie, zatrzymaj się tuż przed pełnym zablokowaniem łokcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward the working arm",
+        "faultPl": "Rotacja tułowia w stronę pracującej ręki",
+        "cause": "Weak obliques and anti-rotation core, load too heavy for the unstable surface, or insufficient bracing",
+        "causePl": "Słabe mięśnie skośne i kontrola antyrotacyjna, zbyt duży ciężar jak na niestabilne podłoże, lub niewystarczające napięcie brzucha",
+        "cue": "Imagine your shoulders are pinned to the ball. Lower the weight and squeeze the opposite oblique on every rep.",
+        "cuePl": "Wyobraź sobie że barki są przyklejone do piłki. Zmniejsz ciężar i napinaj przeciwległy mięsień skośny w każdym powtórzeniu."
+      },
+      {
+        "fault": "Hips sagging during the set",
+        "faultPl": "Opadanie bioder podczas serii",
+        "cause": "Fatigued glutes and hamstrings, loss of bridge tension, or focusing only on the arm and forgetting the lower body",
+        "causePl": "Zmęczone pośladki i dwugłowe ud, utrata napięcia w mostku, lub skupienie tylko na ramieniu i zapomnienie o dolnej części ciała",
+        "cue": "Squeeze the glutes hard the whole time. If hips drop — terminate the set, rest, and resume with lighter weight.",
+        "cuePl": "Mocno spinaj pośladki przez całą serię. Jeśli biodra opadają — przerwij serię, odpocznij i wznów z lżejszym ciężarem."
+      },
+      {
+        "fault": "Upper arm drifting forward as the dumbbell lowers",
+        "faultPl": "Ramię ponad łokciem wędruje do przodu podczas opuszczania",
+        "cause": "Loss of shoulder flexion control, weak overhead stability, or trying to ease the stretch on the triceps",
+        "causePl": "Utrata kontroli nad zgięciem w barku, słaba stabilność overhead, lub próba odciążenia tricepsa",
+        "cue": "Pin the elbow at the ceiling. Imagine a string pulling it straight up — it does not move forward or back.",
+        "cuePl": "Zafiksuj łokieć w sufit. Wyobraź sobie sznurek ciągnący go pionowo w górę — nie wędruje do przodu ani do tyłu."
+      },
+      {
+        "fault": "Dumbbell path crossing in front of the face",
+        "faultPl": "Tor hantli przechodzący przed twarzą",
+        "cause": "Internal rotation of the shoulder, weak elbow alignment, or fear of bringing the weight beside the head",
+        "causePl": "Rotacja wewnętrzna w barku, słaba kontrola ustawienia łokcia, lub strach przed opuszczeniem hantli obok głowy",
+        "cue": "Lower beside the ear, not over the nose. Keep the elbow stacked above the shoulder.",
+        "cuePl": "Opuszczaj obok ucha, nie nad nosem. Łokieć ustawiony pionowo nad barkiem."
+      },
+      {
+        "fault": "Bouncing the dumbbell out of the bottom",
+        "faultPl": "Odbijanie hantli z dolnej pozycji",
+        "cause": "Load too heavy, using momentum to escape the stretch position, or fatigue late in the set",
+        "causePl": "Zbyt duży ciężar, używanie rozpędu aby ominąć pozycję rozciągniętą, lub zmęczenie pod koniec serii",
+        "cue": "Pause for 1 second at the bottom and press up smoothly. No bounce — the stretch is the point.",
+        "cuePl": "Zatrzymaj się na 1 sekundę na dole i wypchnij w górę płynnie. Bez odbicia — rozciągnięcie to istota tego ćwiczenia."
+      }
+    ],
+    "breathing": "Inhale and brace the core before lowering the dumbbell toward your ear. Exhale on the press up overhead. Maintain a light brace throughout — never hold a full Valsalva in the supine overhead position as it spikes intra-cranial pressure.",
+    "breathingPl": "Wdech i napięcie brzucha przed opuszczeniem hantli do ucha. Wydech podczas wypychania nad głowę. Utrzymuj lekkie napięcie przez całą serię — nigdy nie wykonuj pełnego manewru Valsalvy w pozycji leżącej z ramieniem nad głową, ponieważ podnosi to ciśnienie wewnątrzczaszkowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Overhead position aggravates the subacromial space. Switch to lying dumbbell extension (skullcrusher) on a flat bench, or cable rope overhead extension at a lower angle. Stay strictly pain-free.",
+      "modificationPl": "Pozycja overhead drażni przestrzeń podbarkową. Przejdź na łamańce leżąc z hantlami na ławce płaskiej lub wyciąg z liną nad głową przy niższym kącie. Pracuj ściśle w zakresie bez bólu.",
+      "alternative": "dumbbell-lying-triceps-extension"
+    },
+    {
+      "condition": "elbow_tendinopathy_triceps_insertion",
+      "severity": "modify",
+      "modification": "Heavy overhead extensions place high tensile load on the distal triceps tendon. Reduce weight, use 12-15 reps with controlled tempo, prefer cable rope variation for a smoother resistance curve.",
+      "modificationPl": "Ciężkie wyprosty nad głową mocno obciążają dystalny przyczep tricepsa. Zmniejsz ciężar, używaj 12-15 powtórzeń z kontrolowanym tempem, preferuj wariant z linką na wyciągu dla łagodniejszej krzywej oporu.",
+      "alternative": "cable-rope-overhead-triceps-extension"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_disc_issues",
+      "severity": "caution",
+      "modification": "The bridge position requires active lumbar bracing under an overhead load. If pain is present, perform the same movement seated on a bench with back support to remove spinal demand.",
+      "modificationPl": "Pozycja mostka wymaga aktywnego napięcia lędźwiowego pod obciążeniem nad głową. Jeśli występuje ból, wykonuj ten sam ruch siedząc na ławce z oparciem aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "single-arm-dumbbell-overhead-triceps-extension"
+    },
+    {
+      "condition": "poor_balance_or_neuromuscular_impairment",
+      "severity": "modify",
+      "modification": "Holding a bridge on a stability ball while pressing a dumbbell overhead carries fall risk. Perform on a flat bench until balance and core control improve. Always train with a spotter or with the ball against a wall.",
+      "modificationPl": "Utrzymywanie mostka na piłce gimnastycznej z hantlą nad głową wiąże się z ryzykiem upadku. Wykonuj na ławce płaskiej do czasu poprawy balansu i kontroli core'u. Zawsze trenuj z asekuracją lub piłką opartą o ścianę.",
+      "alternative": "single-arm-dumbbell-overhead-triceps-extension"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per arm (hypertrophy with stability focus) | 3x12-15 per arm (metabolic stress / pump) | 2-3x8-10 per arm (heavier strength variation)",
+  "calories_per_kg_per_hour": 4.8,
+
+  "media": {
+    "primary": "dumbbell-one-arm-french-press-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-french-press-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-one-arm-french-press-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-one-arm-french-press-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-one-arm-french-press-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-one-arm-french-press-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-one-arm-french-press-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel (start/early/mid/late/end). Pozycja: athleta leży na plecach z górną częścią pleców i barkami opartymi o piłkę gimnastyczną, biodra uniesione w mostek (tabletop), stopy płasko na podłodze. Frame 0: hantla w dolnej pozycji obok prawego ucha, łokieć zgięty ~90 stopni, łokieć skierowany w sufit, triceps prawego ramienia podświetlony na czerwono (pozycja rozciągnięta). Wolna ręka trzyma piłkę dla stabilizacji. Frame 2: pełny wyprost ramienia nad głowę, hantla w lockoucie pionowo nad barkiem, biceps przy uchu, triceps nadal podświetlony (skurcz). Frame 4: powrót do pozycji dolnej obok ucha, z widocznym 'ghostem' pozycji szczytowej powyżej (potwierdza pełen łuk ruchu jednoręcznie). Ćwiczenie jednoznacznie zidentyfikowane jako jednoręczny tricep extension overhead z hantlą leżąc na piłce gimnastycznej. Mechanic=isolation (tylko staw łokciowy pracuje), plane=sagittal (ruch w płaszczyźnie strzałkowej), force=push (wyprost łokcia), laterality=unilateral. Pozycja overhead daje stretch głowy długiej tricepsa (P10). Piłka + jednostronne obciążenie = wysokie wymagania na obliques (T6) i core (T6) — antyrotacja. Mostek angażuje glutes (T5) i hamstrings (T4). Difficulty 6 (intermediate) — wymaga mobilności barków, kontroli core w mostku oraz balansu na piłce. Wszystkie pola PL napisane od zera (PL od zera), nie tłumaczenie maszynowe.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "dumbbell", "overhead", "unilateral", "stability_ball", "long_head_emphasis", "stretch_mediated_hypertrophy", "core_anti_rotation", "instability_training"]
+}

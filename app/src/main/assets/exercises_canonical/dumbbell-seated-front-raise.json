@@ -1,0 +1,206 @@
+{
+  "id": "dumbbell-seated-front-raise",
+  "name": "Dumbbell Seated Front Raise",
+  "namePl": "Front raise z hantlami w siadzie",
+  "aliases": ["seated dumbbell front raise", "seated anterior raise", "seated dumbbell anterior deltoid raise", "bilateral seated front raise"],
+  "aliasesPl": ["wznosy hantli przodem w siadzie", "wznosy hantli przed siebie w siadzie", "wznosy przednich aktonów w siadzie", "wznosy hantli w przód siedząc"],
+
+  "description": "Front raise performed in a seated position on a bench with a vertical back support. Both dumbbells are raised in front of the body in the sagittal plane to shoulder height, primarily loading the anterior deltoids. The seated position with back support eliminates the swing and hip drive that often contaminate standing front raises, isolating the shoulder flexors more effectively. Excellent accessory movement for front-delt hypertrophy and shoulder pre-fatigue protocols.",
+  "descriptionPl": "Front raise wykonywany w pozycji siedzącej na ławce z pionowym oparciem. Oba hantle unoszone są przed sobą w płaszczyźnie strzałkowej do wysokości barków, obciążając głównie przednie aktony barków. Pozycja siedząca z oparciem eliminuje swing i napęd biodrami, które często psują wersję stojącą, izolując zginacze barku skuteczniej. Świetne ćwiczenie pomocnicze na hipertrofię przedniego aktonu i protokoły pre-fatigue barków.",
+
+  "instructions": [
+    "Sit on a bench with vertical back support, feet flat on the floor, back firmly against the pad.",
+    "Hold a dumbbell in each hand with a pronated grip (palms facing the thighs) resting against the front of the legs.",
+    "Set the shoulder blades back and down against the bench. Brace the core.",
+    "Without leaning forward or pushing off the backrest, raise both dumbbells together in a wide arc in front of the body.",
+    "Lead with a slight elbow bend (~10-15°) locked the entire rep — arms are nearly straight but not hyperextended.",
+    "Continue lifting until the dumbbells reach shoulder height (upper arms parallel to the floor).",
+    "Pause briefly at the top, feeling the anterior delts contract.",
+    "Lower the dumbbells back to the starting position along the same path over 2-3 seconds, inhaling on the way down.",
+    "Keep the back pressed against the pad — do not arch the lower back to throw the weight up.",
+    "Perform the movement bilaterally (both arms together) or alternating, depending on the protocol."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce z pionowym oparciem, stopy płasko na podłodze, plecy mocno przyciśnięte do oparcia.",
+    "Złap hantle chwytem pronowanym (dłonie zwrócone do ud), opierając je na przedniej części nóg.",
+    "Ściągnij łopatki w tył i w dół do oparcia. Napnij brzuch.",
+    "Bez pochylania się do przodu ani odpychania od oparcia, unieś oba hantle razem szerokim łukiem przed siebie.",
+    "Trzymaj lekkie ugięcie łokci (~10-15°) zablokowane przez całe powtórzenie — ramiona są prawie wyprostowane, ale nie przeprostowane.",
+    "Kontynuuj unoszenie aż hantle dotrą do wysokości barków (ramiona ponad łokciem równolegle do podłogi).",
+    "Zatrzymaj się na chwilę w górnej pozycji, czując napięcie przednich aktonów.",
+    "Opuszczaj hantle do pozycji wyjściowej tą samą drogą przez 2-3 sekundy, wdech podczas opuszczania.",
+    "Trzymaj plecy przyciśnięte do oparcia — nie wyginaj lędźwi żeby zarzucić ciężar w górę.",
+    "Wykonuj ruch bilateralnie (oboma ramionami razem) lub naprzemiennie, w zależności od protokołu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid"],
+    "secondary": ["pectoralis_major_clavicular", "lateral_deltoid"],
+    "stabilizers": ["serratus_anterior", "trapezius_upper", "trapezius_middle", "core", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P10",
+    "pectoralis_major_clavicular": "S6",
+    "lateral_deltoid": "S4",
+    "serratus_anterior": "T3",
+    "trapezius_upper": "T3",
+    "trapezius_middle": "T2",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bench_with_back_support"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-front-raise", "barbell-front-raise", "cable-front-raise", "plate-front-raise"],
+    "alternatives": ["dumbbell-front-raise", "cable-front-raise", "plate-front-raise", "barbell-front-raise", "dumbbell-alternating-front-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall, back firmly against the pad",
+      "Feet flat on the floor, knees at ~90°",
+      "Pronated grip, dumbbells resting on the front of thighs",
+      "Slight elbow bend (~10-15°) locked from the start",
+      "Shoulder blades pressed back and down"
+    ],
+    "setup_cues_pl": [
+      "Usiądź prosto, plecy mocno przy oparciu",
+      "Stopy płasko na podłodze, kolana pod ~90°",
+      "Chwyt pronowany, hantle oparte na przedniej części ud",
+      "Lekkie ugięcie łokci (~10-15°) zablokowane od startu",
+      "Łopatki ściągnięte w tył i w dół"
+    ],
+    "execution_cues": [
+      "Raise straight in front — keep the arc in the sagittal plane",
+      "Lead with the knuckles, not the elbows",
+      "Stop at shoulder height — no higher",
+      "Squeeze the front delt at the top",
+      "Lower under control, no free-fall on the eccentric"
+    ],
+    "execution_cues_pl": [
+      "Unoś prosto przed siebie — utrzymaj łuk w płaszczyźnie strzałkowej",
+      "Prowadź kostkami dłoni, nie łokciami",
+      "Zatrzymaj na wysokości barków — nie wyżej",
+      "Spinaj przedni akton w górnej pozycji",
+      "Opuszczaj kontrolowanie, bez swobodnego upadku w ekscentryku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Arching the lower back / pushing off the backrest",
+        "faultPl": "Wyginanie lędźwi / odpychanie się od oparcia",
+        "cause": "Load too heavy, lifter uses lumbar extension to swing the weight up",
+        "causePl": "Zbyt duży ciężar, ćwiczący używa wyprostu lędźwi do zarzucania ciężaru w górę",
+        "cue": "Lower the weight. Press the lumbar spine into the pad — if it leaves the bench, the rep doesn't count.",
+        "cuePl": "Zmniejsz ciężar. Wciśnij lędźwie w oparcie — jeśli się oderwą, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Lifting past shoulder height",
+        "faultPl": "Unoszenie hantli powyżej wysokości barków",
+        "cause": "Trying to add range of motion, but past horizontal the work shifts to the upper traps and serratus, not the front delt",
+        "causePl": "Próba zwiększenia zakresu ruchu, ale powyżej poziomu praca przenosi się na trapezy górne i mięsień zębaty przedni, a nie na przedni akton",
+        "cue": "Imagine a ceiling at shoulder height — touch it and reverse. Don't break through.",
+        "cuePl": "Wyobraź sobie sufit na wysokości barków — dotknij go i wracaj. Nie przebijaj się przez niego."
+      },
+      {
+        "fault": "Bending and straightening the elbows during the rep",
+        "faultPl": "Uginanie i prostowanie łokci w trakcie powtórzenia",
+        "cause": "Bicep curl creep — lifter shortens the lever to make the rep easier, defeating the isolation",
+        "causePl": "Wkradanie się uginania na biceps — ćwiczący skraca dźwignię żeby ułatwić ruch, niwecząc izolację",
+        "cue": "Lock the elbow angle at the start. Forearm and upper arm move as one unit.",
+        "cuePl": "Zablokuj kąt w łokciu na starcie. Przedramię i ramię ponad łokciem poruszają się jako jedna całość."
+      },
+      {
+        "fault": "Shrugging — upper traps take over",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują ruch",
+        "cause": "Loss of scapular depression as fatigue sets in or load is too heavy",
+        "causePl": "Utrata depresji łopatek w miarę narastania zmęczenia lub przy zbyt dużym ciężarze",
+        "cue": "Press shoulders down away from ears the entire set. Long neck, low shoulders.",
+        "cuePl": "Przez całą serię odsuwaj barki od uszu w dół. Długa szyja, niskie barki."
+      },
+      {
+        "fault": "Asymmetric lift — one arm leading the other",
+        "faultPl": "Asymetryczne uniesienie — jedno ramię wyprzedza drugie",
+        "cause": "Strength imbalance between sides or focus drift mid-rep",
+        "causePl": "Dysproporcja siły między stronami lub rozkojarzenie w trakcie powtórzenia",
+        "cue": "Watch both dumbbells in your peripheral vision. They must reach the top simultaneously.",
+        "cuePl": "Obserwuj oba hantle peryferyjnie. Muszą dotrzeć do góry jednocześnie."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Keep a light brace — do not hold the breath at the top.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha — nie zatrzymuj oddechu w górnej pozycji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Front raise compresses the subacromial space at the top. Reduce ROM to 70% of horizontal, use neutral grip (palms facing each other) instead of pronated, and lighten the load (40-50% of normal).",
+      "modificationPl": "Front raise kompresuje przestrzeń podbarkową w górnej pozycji. Zmniejsz zakres ruchu do 70% poziomu, stosuj chwyt neutralny (dłonie do siebie) zamiast pronowanego, zmniejsz ciężar (40-50% normalnego).",
+      "alternative": "cable-front-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy_or_tear",
+      "severity": "avoid",
+      "modification": "Avoid free-weight front raises in the acute phase. Use cable variants in the scapular plane (30° forward of true lateral) or substitute landmine press with reduced ROM.",
+      "modificationPl": "Unikaj front raise z wolnym ciężarem w fazie ostrej. Stosuj wersje na wyciągu w płaszczyźnie łopatki (30° do przodu od czystego boku) lub zastąp landmine press z ograniczonym zakresem.",
+      "alternative": "cable-front-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses at the top of the front raise. Stop the lift below shoulder height (75-80% of normal ROM) and avoid going past horizontal.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji w górnej pozycji wznosu. Zatrzymuj ruch poniżej wysokości barków (75-80% normalnego zakresu) i unikaj przekraczania poziomu.",
+      "alternative": "cable-front-raise"
+    },
+    {
+      "condition": "biceps_long_head_tendinopathy",
+      "severity": "caution",
+      "modification": "Pronated grip in front raise loads the long head of the biceps tendon as a secondary stabilizer. Switch to neutral grip (hammer style) to unload the biceps tendon and reduce volume by 30%.",
+      "modificationPl": "Chwyt pronowany w front raise obciąża długą głowę ścięgna bicepsa jako stabilizator. Przejdź na chwyt neutralny (hammer) żeby odciążyć ścięgno bicepsa i zmniejsz objętość o 30%.",
+      "alternative": "dumbbell-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/standard) | 3-4x15-20 (pump/finisher) | 3x8-10 (strength-focus, rare for isolation)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "dumbbell-seated-front-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-front-raise/frame_0_start.png",
+      "frames/dumbbell-seated-front-raise/frame_1_early.png",
+      "frames/dumbbell-seated-front-raise/frame_2_mid.png",
+      "frames/dumbbell-seated-front-raise/frame_3_late.png",
+      "frames/dumbbell-seated-front-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-seated-front-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi na ławce z pionowym oparciem, plecy mocno przyciśnięte do oparcia, stopy płasko na podłodze, hantle chwytem pronowanym opierają się na przedniej części ud, przedni akton (anterior deltoid) podświetlony na czerwono — także górna część klatki (clavicular pectoralis) widoczna jako sekundarny aktywator. Frame 2 (top): oba hantle uniesione razem w przód do wysokości barków (ramiona ponad łokciem równolegle do podłogi), chwyt pozostaje pronowany, ramiona prawie wyprostowane z lekkim utrzymanym ugięciem łokcia, plecy nadal przy oparciu — bez swingu. Frame 4: powrót do pozycji wyjściowej (z 'ghostem' fazy szczytowej widocznym powyżej). Ruch BILATERALNY (oba hantle razem, nie naprzemiennie w tym GIFie), w płaszczyźnie strzałkowej (sagittal). Klasyczna izolacja przednich aktonów. Brak swingu biodrami, brak prostowania się — wersja siedząca z oparciem skutecznie eliminuje oszukiwanie. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "front_delts", "anterior_deltoid", "isolation", "dumbbells", "upper_body", "seated", "back_supported", "hypertrophy", "anti_swing"]
+}

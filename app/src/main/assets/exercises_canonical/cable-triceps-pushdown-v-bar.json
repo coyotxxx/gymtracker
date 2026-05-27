@@ -1,0 +1,199 @@
+{
+  "id": "cable-triceps-pushdown-v-bar",
+  "name": "Cable Triceps Pushdown with V-Bar",
+  "namePl": "Tricep pushdown z wyciągu z V-bar",
+  "aliases": ["v-bar pushdown", "v-handle triceps pushdown", "close grip cable pushdown", "neutral grip pushdown"],
+  "aliasesPl": ["prostowanie ramion na wyciągu z uchwytem V", "wyciskanie linki w dół z V-bar", "pushdown z uchwytem V", "prostowanie ramion z liną V chwytem neutralnym"],
+
+  "description": "Classic standing cable triceps isolation performed with a V-shaped (close neutral-grip) handle attached to a high pulley. The neutral grip is wrist-friendly and biases the lateral and long heads of the triceps. Elbows stay pinned at the sides while the forearms travel from roughly horizontal to full extension. A staple finisher and high-volume hypertrophy tool for the triceps.",
+  "descriptionPl": "Klasyczne izolowane ćwiczenie na triceps na wyciągu górnym, wykonywane stojąc z uchwytem V (wąski chwyt neutralny). Chwyt neutralny jest przyjazny dla nadgarstków i mocniej angażuje głowę boczną i długą tricepsa. Łokcie pozostają przyklejone do tułowia, a przedramiona wędrują od pozycji mniej więcej poziomej do pełnego wyprostu. Bazowe ćwiczenie wykończeniowe i wysokoobjętościowe na hipertrofię tricepsa.",
+
+  "instructions": [
+    "Attach a V-bar to a high cable pulley. Stand directly in front of the column, feet hip-width apart, with a slight forward lean from the hips.",
+    "Grab the V-bar with both hands in a neutral (palms facing each other) grip on the angled section of the handle.",
+    "Pull the bar down until your upper arms are vertical and pinned against your sides. Forearms start roughly parallel to the floor — this is your starting position.",
+    "Brace your core, set your shoulders down and back, and keep your wrists in a straight line with your forearms.",
+    "Extend the elbows by pushing the V-bar straight down until your arms are fully locked out. Squeeze the triceps hard for a brief pause.",
+    "Slowly let the bar rise back up over 2-3 seconds, keeping the elbows pinned in place, until forearms return to parallel. Do not let the upper arms drift forward.",
+    "Exhale on the way down, inhale on the way up. Keep the torso stationary — the only joints moving are the elbows."
+  ],
+  "instructionsPl": [
+    "Załóż uchwyt V na wyciąg górny. Stań tuż przed kolumną, stopy na szerokość bioder, z lekkim pochyleniem tułowia do przodu w biodrach.",
+    "Złap uchwyt V oburącz chwytem neutralnym (dłonie skierowane do siebie) na kątowej części uchwytu.",
+    "Ściągnij uchwyt w dół do pozycji, w której ramiona ponad łokciem są pionowe i przyklejone do boków tułowia. Przedramiona w pozycji startowej mniej więcej równolegle do podłogi.",
+    "Napnij brzuch, ustaw barki w dół i do tyłu, nadgarstki w linii prostej z przedramieniem.",
+    "Wyprostuj ramiona w łokciach, wciskając uchwyt V w dół, aż do pełnego wyprostu. Mocno spinaj triceps na chwilę w dolnej pozycji.",
+    "Wolno pozwól uchwytowi wrócić w górę przez 2-3 sekundy, utrzymując łokcie w stałym miejscu, aż przedramiona ponownie będą równolegle do podłogi. Nie pozwól, by ramiona ponad łokciem wędrowały do przodu.",
+    "Wydech podczas prostowania w dół, wdech podczas powrotu w górę. Tułów nieruchomy — pracują wyłącznie stawy łokciowe."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["latissimus_dorsi", "forearm_flexors", "core", "anterior_deltoid", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "latissimus_dorsi": "T3",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "anterior_deltoid": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "v_bar_handle"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["cable-triceps-pushdown-rope", "cable-triceps-pushdown-straight-bar", "cable-overhead-triceps-extension", "single-arm-cable-triceps-pushdown"],
+    "alternatives": ["cable-triceps-pushdown-rope", "cable-triceps-pushdown-straight-bar", "triceps-dip", "close-grip-bench-press", "skull-crusher"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand close to the column with a slight forward lean",
+      "Neutral grip on the angled section of the V-bar",
+      "Upper arms vertical and pinned to your sides",
+      "Forearms start parallel to the floor",
+      "Wrists straight, core braced, shoulders packed down"
+    ],
+    "setup_cues_pl": [
+      "Stań blisko kolumny z lekkim pochyleniem do przodu",
+      "Chwyt neutralny na kątowej części uchwytu V",
+      "Ramiona ponad łokciem pionowe i przyklejone do boków",
+      "Przedramiona startowo równolegle do podłogi",
+      "Nadgarstki proste, brzuch napięty, barki ustabilizowane w dół"
+    ],
+    "execution_cues": [
+      "Only the forearms move — elbows stay glued to your ribs",
+      "Push straight down through the handle, not back",
+      "Lock out fully and squeeze the triceps at the bottom",
+      "Control the eccentric for 2-3 seconds",
+      "Stop the upward phase when forearms reach parallel — do not lose tension"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — łokcie przyklejone do żeber",
+      "Wciskaj uchwyt prosto w dół, nie do tyłu",
+      "Pełny wyprost i mocne spięcie tricepsa na dole",
+      "Kontroluj fazę negatywną przez 2-3 sekundy",
+      "Zatrzymaj ruch w górę, gdy przedramiona dotrą do poziomu — nie trać napięcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flare forward and upward during the eccentric",
+        "faultPl": "Łokcie wędrują do przodu i w górę podczas fazy negatywnej",
+        "cause": "Load too heavy, weak triceps in the stretched position, or letting the cable pull the arms up",
+        "causePl": "Zbyt duży ciężar, słabość tricepsa w pozycji rozciągniętej, lub pozwalanie, by linka wyciągała ramiona do góry",
+        "cue": "Reduce weight and consciously pin elbows to your ribs. Stop the upward phase at parallel forearms.",
+        "cuePl": "Zmniejsz ciężar i świadomie przyklej łokcie do żeber. Zakończ fazę w górę, gdy przedramiona są równolegle do podłogi."
+      },
+      {
+        "fault": "Leaning forward and using bodyweight to push the bar down",
+        "faultPl": "Pochylanie się do przodu i wciskanie uchwytu masą ciała",
+        "cause": "Ego lifting, attempting to grind out reps after technical failure, or load mismatched to triceps strength",
+        "causePl": "Ego, forsowanie powtórzeń po wyczerpaniu technicznym, lub ciężar nieadekwatny do siły tricepsa",
+        "cue": "Stand more upright, only a slight lean. If you need momentum, the weight is too heavy.",
+        "cuePl": "Stań bardziej pionowo, tylko lekki skłon. Jeśli potrzebujesz rozpędu, ciężar jest zbyt duży."
+      },
+      {
+        "fault": "Wrists break (bend forward) under load",
+        "faultPl": "Zaginanie nadgarstków pod obciążeniem",
+        "cause": "Weak wrist stabilizers, grip too far down on the V-bar, or fatigued forearms",
+        "causePl": "Słabe stabilizatory nadgarstka, chwyt za nisko na uchwycie V, lub zmęczone przedramiona",
+        "cue": "Keep knuckles facing forward and wrists in a straight line with the forearm throughout the rep.",
+        "cuePl": "Trzymaj kostki skierowane do przodu, a nadgarstki w linii prostej z przedramieniem przez cały ruch."
+      },
+      {
+        "fault": "Partial lockout (cutting off the bottom of the rep)",
+        "faultPl": "Niepełny wyprost (skracanie dolnej fazy powtórzenia)",
+        "cause": "Load too heavy, lack of focus on the contraction, or stopping at fatigue point",
+        "causePl": "Zbyt duży ciężar, brak skupienia na skurczu, lub zatrzymywanie się na progu zmęczenia",
+        "cue": "Achieve full elbow extension every rep and pause for 1 second. Drop the weight if you cannot lock out.",
+        "cuePl": "Osiągnij pełny wyprost łokci w każdym powtórzeniu i zatrzymaj na 1 sekundę. Zmniejsz ciężar, jeśli nie potrafisz domknąć ruchu."
+      },
+      {
+        "fault": "Shoulders shrugging up toward the ears",
+        "faultPl": "Wyciąganie barków do uszu (wzruszanie barkami)",
+        "cause": "Cable pulling the shoulder girdle up because lats are not engaged, or weight too heavy",
+        "causePl": "Linka wyciąga obręcz barkową w górę, bo nie są napięte mięśnie najszersze grzbietu, lub ciężar zbyt duży",
+        "cue": "Actively pull shoulders down and back before every rep. Engage your lats to anchor the upper arms.",
+        "cuePl": "Aktywnie ściągnij barki w dół i do tyłu przed każdym powtórzeniem. Napnij mięśnie najszersze, aby ustabilizować ramiona."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pushing down). Inhale during the eccentric (allowing the bar to rise). Keep a light brace through the entire set.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wciskanie w dół). Wdech w fazie ekscentrycznej (powrót uchwytu w górę). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce load and avoid heavy eccentric overload. Stay in 12-20 rep range with strict tempo. Stop at first sharp pain near the elbow.",
+      "modificationPl": "Zmniejsz obciążenie i unikaj ciężkich faz negatywnych. Pozostań w zakresie 12-20 powtórzeń ze ścisłym tempem. Przerwij przy pierwszym ostrym bólu w okolicy łokcia.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Neutral grip is friendlier than pronated, but heavy loads still aggravate extensor tendons. Use light weights, high reps, and slow tempo. Stop before pain.",
+      "modificationPl": "Chwyt neutralny jest łagodniejszy niż pronowany, ale duże ciężary nadal drażnią przyczepy prostowników. Używaj lekkich ciężarów, dużej liczby powtórzeń i wolnego tempa. Przerwij przed bólem.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "caution",
+      "modification": "Standing upright with neutral grip is usually safe, but avoid letting the cable pull the shoulder up into shrug. Pin shoulders down, reduce weight if symptoms appear.",
+      "modificationPl": "Stojąca pozycja z chwytem neutralnym jest zwykle bezpieczna, ale nie pozwól, by linka wyciągała bark w górę do wzruszenia. Ściągaj barki w dół, zmniejsz ciężar przy pojawieniu się objawów.",
+      "alternative": "single-arm-cable-triceps-pushdown"
+    },
+    {
+      "condition": "acute_wrist_sprain",
+      "severity": "modify",
+      "modification": "Even with neutral grip, gripping load stresses the wrist. Use wrist wraps, reduce weight, or temporarily switch to a machine triceps extension with elbow-pad support.",
+      "modificationPl": "Nawet przy chwycie neutralnym, trzymanie obciążenia obciąża nadgarstek. Użyj ściągaczy nadgarstkowych, zmniejsz ciężar, lub czasowo przejdź na prostowanie tricepsa na maszynie z podparciem łokci.",
+      "alternative": "triceps-dip"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4-5x8-10 (strength accessory) | 2-3x15-20 (pump/finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-triceps-pushdown-v-bar.gif",
+    "frames_extracted": [
+      "frames/cable-triceps-pushdown-v-bar/frame_0_start.png",
+      "frames/cable-triceps-pushdown-v-bar/frame_1_early.png",
+      "frames/cable-triceps-pushdown-v-bar/frame_2_mid.png",
+      "frames/cable-triceps-pushdown-v-bar/frame_3_late.png",
+      "frames/cable-triceps-pushdown-v-bar/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-triceps-pushdown-v-bar"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja startowa — atleta stoi przed kolumną wyciągu, lekko pochylony do przodu, oburącz trzyma uchwyt V chwytem neutralnym, przedramiona blisko poziomu, łokcie przy bokach tułowia, triceps lewy podświetlony na czerwono (kąt widzenia z boku-prawej). Frame 2: pełny wyprost — ramiona całkowicie wyprostowane w łokciach, uchwyt V przy udach, triceps mocno napięty (czerwony marker). Frame 4: powrót do pozycji startowej z przedramionami blisko poziomu. Łokcie w trakcie całego ruchu pozostają przy bokach, tułów stabilny, tylko przedramiona wykonują pracę. Ćwiczenie jednoznacznie zidentyfikowane jako klasyczny cable triceps pushdown z uchwytem V (close neutral grip). Wszystkie pola PL napisane od zera, bez tłumaczenia mechanicznego z EN.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "upper_body", "wrist_friendly", "neutral_grip"]
+}

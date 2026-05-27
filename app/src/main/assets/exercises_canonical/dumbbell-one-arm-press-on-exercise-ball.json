@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-one-arm-press-on-exercise-ball",
+  "name": "Dumbbell One-Arm Press on Exercise Ball",
+  "namePl": "Wyciskanie hantlą jednorącz na piłce",
+  "aliases": ["one-arm DB press on stability ball", "single-arm dumbbell press on swiss ball", "unilateral DB bench press on exercise ball", "one-arm dumbbell press stability ball"],
+  "aliasesPl": ["wyciskanie hantlą jednorącz na piłce gimnastycznej", "jednoręczne wyciskanie hantla na piłce", "single-arm DB press na piłce", "wyciskanie hantla jedną ręką na swiss ball"],
+
+  "description": "Unilateral horizontal pressing variation performed lying with the upper back on a stability (swiss) ball, hips bridged, while pressing a single dumbbell. The combination of unilateral load and an unstable surface creates massive anti-rotation demand on the core (especially obliques) and forces the glutes and hamstrings to maintain a stable bridge. Excellent functional / core-integration tool for intermediate trainees — far less effective as a pure mass builder than a flat bench, but unrivaled for shoulder stabilization, oblique recruitment and addressing left/right asymmetries.",
+  "descriptionPl": "Jednostronne (unilateralne) poziome wyciskanie wykonywane leżąc górną częścią pleców na piłce gimnastycznej (swiss ball), z biodrami uniesionymi w pozycji mostka, wyciskając jeden hantel. Połączenie obciążenia jednostronnego i niestabilnej powierzchni tworzy ogromne wymagania anti-rotation dla mięśni głębokich (szczególnie skośnych brzucha) oraz zmusza pośladki i dwugłowe ud do utrzymania stabilnego mostka. Świetne narzędzie funkcjonalne / integracji core'u dla osób średniozaawansowanych — znacznie słabszy budulec masy klatki niż ławka pozioma, ale bezkonkurencyjny do stabilizacji barku, aktywacji skośnych i wyrównywania asymetrii lewa/prawa strona.",
+
+  "instructions": [
+    "Sit on a stability ball with a dumbbell resting on one thigh. Walk feet forward while leaning back, until only the upper back and shoulders rest on the ball.",
+    "Lift the hips so the body forms a straight line from knees to shoulders (glute bridge position). Feet flat, knees ~90°, glutes squeezed.",
+    "Bring the dumbbell to the side of the chest, palm facing forward (pronated grip). The free arm rests on the abdomen or extends out for counter-balance.",
+    "Brace the core HARD — especially the opposite-side oblique. The ball wants to rotate you toward the loaded side; resist it.",
+    "Press the dumbbell up over the working-side shoulder/chest in a controlled arc. Do NOT let the torso twist or the hip drop.",
+    "At the top, the arm is extended (elbows soft, not locked). The bell is over the chest, not drifting outward.",
+    "Lower the dumbbell with control back to chest level. Elbow tracked at ~45-60° from the torso.",
+    "Complete all reps on one side, then switch the dumbbell to the other hand and repeat. Total reps per arm should be equal."
+  ],
+  "instructionsPl": [
+    "Usiądź na piłce z hantlem opartym na jednym udzie. Wyjdź stopami do przodu pochylając się do tyłu, aż na piłce zostaną tylko górna część pleców i barki.",
+    "Unieś biodra tak by ciało tworzyło prostą linię od kolan do barków (pozycja mostka pośladkowego). Stopy płasko, kolana ~90°, pośladki ściśnięte.",
+    "Doprowadź hantel do boku klatki, dłoń zwrócona w stronę stóp (chwyt pronowany). Wolna ręka leży na brzuchu lub jest wyciągnięta na bok dla kontrbalansu.",
+    "Mocno napnij brzuch — szczególnie skośny po stronie PRZECIWNEJ do hantla. Piłka chce cię obrócić w stronę obciążenia; przeciwstaw się temu.",
+    "Wyciśnij hantel w górę nad bark/klatkę pracującej strony kontrolowanym łukiem. NIE pozwól by tułów się skręcił ani by biodro opadło.",
+    "Na szczycie ramię wyprostowane (łokieć miękki, nie zablokowany). Hantel nad klatką, nie odjeżdża na bok.",
+    "Opuszczaj hantel z kontrolą do poziomu klatki. Łokieć pod kątem ~45-60° od tułowia.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem przełóż hantel do drugiej ręki i powtórz. Łączna liczba powtórzeń na ramię powinna być równa."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["obliques", "core", "glutes"],
+    "stabilizers": ["rotator_cuff", "serratus_anterior", "hamstrings", "erector_spinae", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "anterior_deltoids": "P7",
+    "triceps": "P6",
+    "obliques": "S7",
+    "core": "S6",
+    "glutes": "S5",
+    "rotator_cuff": "T5",
+    "serratus_anterior": "T4",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "stability_ball"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "single-arm-dumbbell-bench-press", "glute-bridge"],
+    "progression_to": ["dumbbell-alternating-press-on-exercise-ball", "single-arm-landmine-press"],
+    "alternatives": ["single-arm-dumbbell-bench-press", "dumbbell-bench-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Only upper back and shoulders on the ball — head supported by the ball, not hanging",
+      "Hips up high — full bridge from knees to shoulders, glutes squeezed",
+      "Feet planted wide (shoulder-width or slightly wider) for lateral stability",
+      "Free hand on abdomen OR extended outward as counter-balance",
+      "Brace HARD on the side opposite to the dumbbell — the anti-rotation is the whole point"
+    ],
+    "setup_cues_pl": [
+      "Tylko górna część pleców i barki na piłce — głowa oparta o piłkę, nie zwisa",
+      "Biodra wysoko — pełny mostek od kolan do barków, pośladki ściśnięte",
+      "Stopy zaparte szeroko (na szerokość barków lub szerzej) dla stabilności bocznej",
+      "Wolna ręka na brzuchu LUB wyciągnięta na bok jako kontrwaga",
+      "MOCNO napnij stronę przeciwną do hantla — anti-rotation jest sednem ćwiczenia"
+    ],
+    "execution_cues": [
+      "Press straight up over the chest, not outward — bell stays in the sagittal plane",
+      "Keep elbow at ~45-60° from torso, NOT flared to 90°",
+      "Eccentric 2-3 seconds with control — instability tempts you to drop fast, don't",
+      "Hips STAY UP through every rep — if they sag you've lost the bridge",
+      "If the ball starts wobbling sideways, you're using too much weight"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj pionowo nad klatkę, nie na bok — hantel zostaje w płaszczyźnie strzałkowej",
+      "Łokieć pod kątem ~45-60° od tułowia, NIE rozsunięty na 90°",
+      "Faza ekscentryczna 2-3 sekundy z kontrolą — niestabilność kusi by upuścić szybko, nie",
+      "Biodra ZOSTAJĄ W GÓRZE w każdym powtórzeniu — jeśli opadają, straciłeś mostek",
+      "Jeśli piłka zaczyna się chwiać na boki, używasz za dużego ciężaru"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates toward the loaded side",
+        "faultPl": "Tułów obraca się w stronę obciążonej ręki",
+        "cause": "Weak anti-rotation control of obliques; weight too heavy for stability demands",
+        "causePl": "Słaba kontrola anti-rotation skośnych; zbyt ciężki hantel jak na wymagania stabilizacji",
+        "cue": "Imagine someone pulls your free hand UP and OUTWARD as counter-balance. Engage the opposite oblique BEFORE the press starts.",
+        "cuePl": "Wyobraź sobie że ktoś ciągnie twoją wolną rękę w górę i w bok jako kontrwagę. Napnij przeciwną skośną PRZED rozpoczęciem wyciskania."
+      },
+      {
+        "fault": "Hips sag / loss of bridge during the set",
+        "faultPl": "Biodra opadają / utrata mostka w trakcie serii",
+        "cause": "Glutes fatigue; lack of awareness; trying to do too many reps",
+        "causePl": "Zmęczenie pośladków; brak świadomości; próba wykonania zbyt wielu powtórzeń",
+        "cue": "Squeeze glutes HARD every rep — 'lift your hips toward the ceiling'. End set immediately if hips drop.",
+        "cuePl": "Mocno ściśnij pośladki w każdym powtórzeniu — 'unieś biodra do sufitu'. Zakończ serię natychmiast gdy biodra opadną."
+      },
+      {
+        "fault": "Dumbbell drifts outward (away from midline) at lockout",
+        "faultPl": "Hantel odjeżdża na bok (od linii środkowej) w pozycji wyprostu",
+        "cause": "Treating it like a fly; weak triceps lockout; instinct to balance the unstable load by spreading",
+        "causePl": "Traktowanie ruchu jak rozpiętki; słaby lockout tricepsa; instynkt balansowania niestabilnego ciężaru poprzez rozsuwanie",
+        "cue": "Press up over your own chest, NOT over the shoulder. Imagine a vertical line through your sternum and the bell.",
+        "cuePl": "Wyciskaj nad własną klatkę, NIE nad bark. Wyobraź sobie pionową linię przechodzącą przez mostek i hantel."
+      },
+      {
+        "fault": "Too much weight — ball wobbles, form breaks",
+        "faultPl": "Zbyt ciężki hantel — piłka się chwieje, technika się sypie",
+        "cause": "Ego lifting; treating the exercise like flat DB bench (it's not)",
+        "causePl": "Ego lifting; traktowanie ćwiczenia jak DB bench na ławce (to nie to samo)",
+        "cue": "Use 50-60% of what you press on a flat bench. The goal is core stability + chest, NOT max load.",
+        "cuePl": "Użyj 50-60% ciężaru z którym wyciskasz na ławce poziomej. Celem jest stabilność core'u + klatka, NIE maksymalne obciążenie."
+      },
+      {
+        "fault": "Asymmetric reps between sides (stronger side does more)",
+        "faultPl": "Asymetryczna liczba powtórzeń (mocniejsza strona robi więcej)",
+        "cause": "Dominant side has more strength AND better stabilization",
+        "causePl": "Strona dominująca ma więcej siły I lepszą stabilizację",
+        "cue": "Always start with the WEAKER side and only do as many reps on the stronger side as the weaker handled. Equalizes over time.",
+        "cuePl": "Zawsze zaczynaj od SŁABSZEJ strony i na silniejszej stronie wykonuj tylko tyle powtórzeń, ile zrobiła słabsza. Wyrównuje z czasem."
+      }
+    ],
+    "breathing": "Inhale at the top, brace the core, hold during descent. Exhale forcefully on the press up while keeping the brace.",
+    "breathingPl": "Wdech na górze, napnij brzuch, trzymaj napięcie podczas opuszczania. Mocny wydech podczas wyciskania w górę utrzymując napięcie brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palm facing inward) — friendlier for the shoulder. Reduce ROM if pain at the bottom.",
+      "modificationPl": "Użyj chwytu neutralnego (dłoń zwrócona do wewnątrz) — łagodniejszy dla barku. Zmniejsz ROM jeśli ból na dole.",
+      "alternative": "single-arm-dumbbell-bench-press"
+    },
+    {
+      "condition": "low_back_pain",
+      "severity": "caution",
+      "modification": "The bridge position can aggravate lumbar issues. Use a flat bench instead until cleared.",
+      "modificationPl": "Pozycja mostka może drażnić problemy lędźwiowe. Zamiast tego użyj ławki poziomej do czasu wyzdrowienia.",
+      "alternative": "single-arm-dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Unilateral pressing on unstable surface massively destabilizes the shoulder. Switch to fixed-path machine until cleared by physio.",
+      "modificationPl": "Wyciskanie jednorącz na niestabilnej powierzchni masywnie destabilizuje bark. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "poor_balance",
+      "severity": "caution",
+      "modification": "Master single-arm dumbbell bench press on a flat bench FIRST. The ball variation is for trainees with solid bridge and core control.",
+      "modificationPl": "Najpierw opanuj single-arm dumbbell bench press na ławce poziomej. Wariant na piłce jest dla osób z dobrą kontrolą mostka i core'u.",
+      "alternative": "single-arm-dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per side (hypertrophy / core integration, default) | 3x10-15 per side (endurance, anti-rotation focus) | 2-3x6-8 per side (strength, advanced)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-one-arm-press-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-press-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-one-arm-press-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-one-arm-press-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-one-arm-press-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-one-arm-press-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-one-arm-press-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): mężczyzna leży górną częścią pleców na stability ball, biodra uniesione w pełnym mostku (linia kolana-biodra-barki), stopy szeroko na podłodze, jedna ręka trzyma hantel na poziomie klatki (chwyt pronowany, dłoń w stronę stóp), druga ręka opuszczona swobodnie wzdłuż ciała. Frame 2 (góra): pełne wyciśnięcie jednej ręki nad klatkę, ramię wyprostowane bez sztywnego lock-out, druga ręka nadal wolna, mostek utrzymany. Frame 4 (motion blur): kontrolowane opuszczanie hantla. Podświetlone struktury: pectoralis major po stronie pracującej (czerwony), triceps brachii (czerwony) oraz — co kluczowe — obliques po stronie tułowia oraz nogi/pośladki (cała kinetyka anti-rotation + bridge). Klasyfikacja unilateralna potwierdzona — tylko jeden hantel, jedna ręka pracuje. Plane=sagittal (ruch w górę/dół nad klatką, nie w bok). Mechanic=compound (klatka + przednie delty + tricepsy + core stabilizacja). Nazwa PL 'Wyciskanie hantlą jednorącz na piłce' to standardowy polski termin fitness. Wszystkie pola PL napisane od zera bez tłumaczenia z angielskiego.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "dumbbell", "chest", "unilateral", "stability_ball", "core_integration", "anti_rotation", "functional", "intermediate"]
+}

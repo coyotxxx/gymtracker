@@ -1,0 +1,210 @@
+{
+  "id": "weighted-muscle-up-on-bar",
+  "name": "Weighted Muscle-Up on Bar",
+  "namePl": "Weighted muscle-up na drążku",
+  "aliases": ["weighted bar muscle-up", "weighted muscle up", "loaded muscle-up on bar", "muscle-up with dip belt"],
+  "aliasesPl": ["muscle-up z obciążeniem na drążku", "weighted muscle-up", "muscle-up z dip belt", "muscle-up z talerzem", "obciążony muscle-up na drążku"],
+
+  "description": "The pinnacle of calisthenics pulling strength — a strict muscle-up on a bar performed with external load (dip belt + plate, weight vest, or ankle weights). Combines a chest-to-bar pull, an explosive transition, and a dip lock-out, all under added weight. Where a bodyweight muscle-up requires elite strength, the weighted version turns it into a one-rep-max event. The bar variant (vs rings) is the most elbow-aggressive due to the fixed grip during transition. Used by advanced calisthenics athletes and CrossFit competitors to push pulling/pressing power beyond bodyweight ceiling.",
+  "descriptionPl": "Szczyt siły ciągu w kalistenice — strict muscle-up na drążku wykonany z zewnętrznym obciążeniem (dip belt z talerzem, kamizelka obciążeniowa lub obciążniki na kostki). Łączy podciągnięcie chest-to-bar, eksplozywną tranzycję i dipa do lock-outu, wszystko pod dodatkową wagą. O ile muscle-up w wadze własnej wymaga elitarnej siły, wersja z obciążeniem zamienia go w wydarzenie jednopowtórzeniowego maksa. Wersja na drążku (vs kółka) jest najbardziej agresywna dla łokci ze względu na sztywny chwyt podczas tranzycji. Używana przez zaawansowanych zawodników kalisteniki i CrossFitu by przepchnąć moc ciągu/wypchnięcia ponad sufit wagi własnej.",
+
+  "instructions": [
+    "Attach load: dip belt with plate (most common, 5-30kg), weight vest, or ankle weights. Step under the bar.",
+    "Jump or step up to a pronated (overhand) grip on the bar, hands roughly shoulder-width or slightly wider. Hang in full dead-hang with the added load.",
+    "Engage lats, depress shoulder blades down and back, brace core tight. The added weight makes the hollow position harder — fight for it.",
+    "PULL PHASE: Pull explosively and HIGH — drive elbows down and back, aim to bring the bar to your LOWER CHEST (not chin). Required height is higher than chest-to-bar pull-up.",
+    "At the apex of the pull, throw your torso forward and rotate wrists over the bar. The added weight makes this transition the failure point — commit fully, do not hesitate.",
+    "TRANSITION: Elbows pass from below the bar to above it. Bar stays close to the body. With load, the temptation to chicken-wing (one elbow first) is huge — fight for symmetric transition.",
+    "DIP PHASE: Once chest is above the bar, press up by extending elbows to full lock-out. Body supported above the bar with the load hanging below.",
+    "Lower with control — reverse the sequence: bend elbows back into transition, drop through the pull, return to dead-hang. The eccentric is brutal on elbows under load.",
+    "Each rep ends with arms fully locked at the top (support) and fully extended at the bottom (dead-hang). No half reps."
+  ],
+  "instructionsPl": [
+    "Załóż obciążenie: dip belt z talerzem (najczęściej 5-30 kg), kamizelka obciążeniowa lub obciążniki na kostki. Stań pod drążkiem.",
+    "Podskocz lub wejdź do chwytu nachwytem (overhand) na drążku, dłonie mniej więcej na szerokość barków lub trochę szerzej. Zwiśnij w pełnym dead-hangu z obciążeniem.",
+    "Aktywuj najszersze, ściągnij łopatki w dół i do tyłu, mocno napnij brzuch. Dodatkowa waga utrudnia hollow — walcz o nią.",
+    "FAZA CIĄGU: Ciągnij eksplozywnie i WYSOKO — napieraj łokciami w dół i do tyłu, celuj by ściągnąć drążek do DOLNEJ KLATKI (nie brody). Wymagana wysokość jest większa niż w chest-to-bar.",
+    "Na szczycie ciągu wyrzuć tułów do przodu i obróć nadgarstki nad drążkiem. Z obciążeniem to właśnie tranzycja jest punktem porażki — commit pełny, bez wahania.",
+    "TRANZYCJA: Łokcie przechodzą spod drążka nad drążek. Drążek pozostaje blisko ciała. Z obciążeniem pokusa chicken-wing (jeden łokieć pierwszy) jest ogromna — walcz o symetryczną tranzycję.",
+    "FAZA DIPA: Gdy klatka jest nad drążkiem, wypchnij się prostując łokcie do pełnego lock-outu. Ciało podparte nad drążkiem, obciążenie wisi poniżej.",
+    "Schodź kontrolowanym ruchem — odwróć sekwencję: zegnij łokcie z powrotem do tranzycji, opuść się przez ciąg, wróć do dead-hang. Ekscentryk jest brutalny dla łokci pod obciążeniem.",
+    "Każde powtórzenie kończy się pełnym lockiem ramion na górze (support) i pełnym wyprostem na dole (dead-hang). Bez połowy powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "gymnastics",
+    "force": "pull_push_hybrid",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "triceps_brachii", "pectoralis_major", "biceps_brachii"],
+    "secondary": ["deltoids_anterior", "trapezius_middle_lower", "teres_major", "rhomboids", "brachialis", "deltoids_posterior"],
+    "stabilizers": ["core", "rectus_abdominis", "rotator_cuff", "forearms", "serratus_anterior", "obliques", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P9",
+    "triceps_brachii": "P9",
+    "pectoralis_major": "P8",
+    "deltoids_anterior": "S8",
+    "teres_major": "S8",
+    "trapezius_middle_lower": "S7",
+    "rhomboids": "S7",
+    "brachialis": "S8",
+    "forearms": "S9",
+    "core": "S8",
+    "serratus_anterior": "S7",
+    "rectus_abdominis": "S7"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar", "dip_belt"],
+    "alternative": ["weight_vest", "ankle_weights"],
+    "optional": ["chalk", "wrist_wraps", "weight_plate", "elbow_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["pull-up", "weighted-pull-up", "chest-to-bar-pull-up", "muscle-up", "dip", "weighted-dip"],
+    "progression_to": ["heavy-weighted-muscle-up", "one-arm-muscle-up", "l-sit-muscle-up", "front-lever-pull-up"],
+    "alternatives": ["muscle-up", "weighted-pull-up", "weighted-dip", "chest-to-bar-pull-up", "kipping-muscle-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pronated grip, hands shoulder-width or slightly wider on the bar",
+      "Dip belt centered, plate hanging in front, load not swinging",
+      "Full dead-hang, arms LOCKED, scapula depressed",
+      "Core braced HARDER than bodyweight version — the load wants to extend you",
+      "Mental cue: 'pull to chest, throw forward, lock out'"
+    ],
+    "setup_cues_pl": [
+      "Chwyt nachwytem, dłonie na szerokość barków lub odrobinę szerzej na drążku",
+      "Dip belt wyśrodkowany, talerz wisi z przodu, obciążenie nie buja się",
+      "Pełny dead-hang, ramiona ZABLOKOWANE, łopatki ściągnięte w dół",
+      "Brzuch napięty MOCNIEJ niż w wersji bez obciążenia — waga chce cię wyciągnąć",
+      "Wskazówka mentalna: 'ciągnij do klatki, wyrzuć do przodu, zablokuj na górze'"
+    ],
+    "execution_cues": [
+      "Pull EXPLOSIVELY and HIGHER than chest-to-bar — bar to lower chest",
+      "At the top: LEAN FORWARD aggressively, do NOT hesitate in transition",
+      "Wrists rotate OVER the bar — both at the same time, no chicken-wing",
+      "Press through the dip with TRICEPS — full lock-out, every rep",
+      "Eccentric: control the descent, don't drop through transition — your elbows will thank you"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij EKSPLOZYWNIE i WYŻEJ niż chest-to-bar — drążek do dolnej klatki",
+      "Na górze: POCHYL SIĘ DO PRZODU agresywnie, NIE wahaj się w tranzycji",
+      "Nadgarstki obracają się NAD drążkiem — obydwa w tym samym czasie, bez chicken-wing",
+      "Wypchnij dipa TRICEPSAMI — pełny lock-out, każde powtórzenie",
+      "Ekscentryk: kontroluj zejście, nie spadaj przez tranzycję — łokcie ci podziękują"
+    ],
+    "common_faults": [
+      {
+        "fault": "Kipping/swinging to muscle through with the load",
+        "faultPl": "Kipping/bujanie by przepchnąć obciążenie",
+        "cause": "Strict pulling strength insufficient for the added weight",
+        "causePl": "Niewystarczająca strict siła ciągu dla dodanej wagi",
+        "cue": "Drop the weight. Master 3+ strict bodyweight muscle-ups before adding load. Then add 2.5-5kg increments only.",
+        "cuePl": "Zdejmij obciążenie. Opanuj 3+ strict muscle-upów w wadze własnej przed dokładaniem. Potem dodawaj po 2.5-5 kg tylko."
+      },
+      {
+        "fault": "Chicken-wing transition (one elbow rotates over before the other)",
+        "faultPl": "Chicken-wing w tranzycji (jeden łokieć obraca się nad drążkiem przed drugim)",
+        "cause": "Asymmetric strength + load amplifying the weak side",
+        "causePl": "Asymetryczna siła + obciążenie wzmacniające słabszą stronę",
+        "cue": "Train weighted pull-ups + ring muscle-ups for symmetry. Film yourself from front — both wrists must clear bar simultaneously.",
+        "cuePl": "Trenuj weighted podciągania + ring muscle-up dla symetrii. Nagrywaj się od przodu — obydwa nadgarstki muszą minąć drążek jednocześnie."
+      },
+      {
+        "fault": "Stalling/failing in transition under load",
+        "faultPl": "Zacięcie/porażka w tranzycji pod obciążeniem",
+        "cause": "Pull not high enough (bar reaches chin instead of chest), or no forward lean",
+        "causePl": "Za niski ciąg (drążek dochodzi do brody zamiast klatki), lub brak pochylenia do przodu",
+        "cue": "Train chest-to-bar weighted pull-ups + explosive high pulls. Bar MUST reach lower chest before initiating transition.",
+        "cuePl": "Trenuj weighted chest-to-bar + eksplozywne high pulls. Drążek MUSI dojść do dolnej klatki przed rozpoczęciem tranzycji."
+      },
+      {
+        "fault": "Failure to lock out at the top (incomplete dip phase)",
+        "faultPl": "Brak lock-outu na górze (niepełna faza dipa)",
+        "cause": "Triceps/pressing strength insufficient under added load after the pull effort",
+        "causePl": "Niewystarczająca siła tricepsów/wypchnięcia pod obciążeniem po wysiłku ciągu",
+        "cue": "Train weighted dips heavy (≥1.5x added muscle-up load). Every rep must end fully locked — no half reps count.",
+        "cuePl": "Trenuj weighted dipy ciężko (≥1.5x dodanego obciążenia muscle-upa). Każde powtórzenie musi kończyć się pełnym lockiem — połówki się nie liczą."
+      },
+      {
+        "fault": "Uncontrolled eccentric / dropping through transition with load",
+        "faultPl": "Niekontrolowany ekscentryk / spadanie przez tranzycję z obciążeniem",
+        "cause": "Letting gravity do the work, elbow joints absorb the load shock",
+        "causePl": "Pozwalanie grawitacji pracować, stawy łokciowe absorbują uderzenie obciążenia",
+        "cue": "Lower under control 3-4 seconds. Negative-only reps build the eccentric strength to protect elbows.",
+        "cuePl": "Schodź pod kontrolą 3-4 sekundy. Tylko negatywne powtórzenia budują siłę ekscentryczną która chroni łokcie."
+      }
+    ],
+    "breathing": "Inhale deeply at the dead-hang. Brace and hold breath (Valsalva) through pull and transition for maximum core stiffness. Exhale forcefully at the top lock-out. Inhale on controlled descent. Single rep efforts may require breath-hold throughout the whole rep.",
+    "breathingPl": "Głęboki wdech w dead-hangu. Napnij i wstrzymaj oddech (Valsalva) przez ciąg i tranzycję dla maksymalnej sztywności corea. Wydech siłowy w lock-oucie na górze. Wdech podczas kontrolowanego zejścia. Pojedyncze powtórzenia mogą wymagać wstrzymania oddechu przez całe powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "The bar version of muscle-up is the most aggressive movement for elbows in calisthenics — adding load multiplies the stress. Fully resolve any golfer's/tennis elbow before attempting. Use rings (more elbow-friendly) when returning.",
+      "modificationPl": "Wersja muscle-upa na drążku jest najbardziej agresywnym ruchem dla łokci w kalistenice — dodanie obciążenia mnoży stres. Całkowicie wylecz każdy łokieć golfisty/tenisisty przed próbą. Przy powrocie używaj kółek (przyjaźniejsze dla łokci).",
+      "alternative": "weighted-pull-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "The transition forces shoulders through full ROM under load — high impingement risk amplified by added weight. Rehab shoulder completely before considering this exercise.",
+      "modificationPl": "Tranzycja przeprowadza barki przez pełny ROM pod obciążeniem — ryzyko impingementu wzmocnione dodaną wagą. Całkowicie zrehabilituj bark przed rozważeniem tego ćwiczenia.",
+      "alternative": "weighted-chest-to-bar-pull-up"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "avoid",
+      "modification": "The wrist rotation during transition under load is extreme — added weight multiplies the torque on the wrist joints. Resolve fully before loading, use wrist wraps when returning.",
+      "modificationPl": "Rotacja nadgarstków podczas tranzycji pod obciążeniem jest ekstremalna — dodana waga mnoży moment obrotowy na stawach nadgarstkowych. Całkowicie wylecz przed obciążaniem, używaj wrapów na nadgarstki przy powrocie.",
+      "alternative": "muscle-up"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "avoid",
+      "modification": "AC joint takes massive load during transition + dip phases — adding weight is a recipe for re-injury. Avoid until completely pain-free in weighted dips and weighted pull-ups separately.",
+      "modificationPl": "Staw barkowo-obojczykowy (AC) przyjmuje ogromne obciążenie w fazie tranzycji + dipa — dodanie wagi to przepis na ponowną kontuzję. Unikaj do czasu bezbolesnych weighted dipów i weighted podciągań osobno.",
+      "alternative": "weighted-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x1-3 (max effort skill work) | 5x2-3 (volume when established) | 1RM testing 1x1 with heavy load",
+  "calories_per_kg_per_hour": 9.5,
+
+  "media": {
+    "primary": "weighted-muscle-up-on-bar.gif",
+    "frames_extracted": [
+      "frames/weighted-muscle-up-on-bar/frame_0_start.png",
+      "frames/weighted-muscle-up-on-bar/frame_1_early.png",
+      "frames/weighted-muscle-up-on-bar/frame_2_mid.png",
+      "frames/weighted-muscle-up-on-bar/frame_3_late.png",
+      "frames/weighted-muscle-up-on-bar/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/weighted-muscle-up-on-bar"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start na drążku, ramiona wyprostowane, najszersze + brzuch podświetlone. Frame 2: pełna tranzycja — klatka nad drążkiem, łokcie zgięte, podświetlone tricepsy + klatka + brzuch + nogi (core lock pod obciążeniem). Frame 4: powrót do dead-hangu po wykonaniu pełnego ruchu. Animacja nie pokazuje dip belt/obciążenia wizualnie (jahelfitness animuje sylwetkę), ale nazwa ćwiczenia 'weighted-muscle-up-on-bar' jednoznacznie definiuje to jako muscle-up z dodatkowym obciążeniem. Schema: movement_pattern 'gymnastics' (łączy pull+transition+push), force 'pull_push_hybrid'. Equipment: pull_up_bar + dip_belt required (najczęstszy sposób ładowania), weight_vest/ankle_weights jako alternative. Cztery primary z biceps wyższym (P9) niż w bodyweight muscle-up bo dodane obciążenie izometrycznie ładuje zginacze łokcia w fazie pull i transition. Forearms S9 (chwyt z obciążeniem to ekstremalny grip). Level 'elite' + difficulty 10 — to najtrudniejsze ćwiczenie kalisteniki ze skali jahel. PL 'Weighted muscle-up na drążku' jak Maciej w taska zamówił.",
+
+  "tags": ["calisthenics", "bodyweight_plus_load", "gymnastics", "compound_king", "upper_body", "full_upper_chain", "elite_movement", "weighted_skill", "max_strength", "back", "chest", "triceps", "biceps", "transition_movement", "bar_work", "advanced_strength", "1rm_lift", "skill"]
+}

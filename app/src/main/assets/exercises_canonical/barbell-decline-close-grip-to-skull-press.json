@@ -1,0 +1,203 @@
+{
+  "id": "barbell-decline-close-grip-to-skull-press",
+  "name": "Barbell Decline Close-Grip Bench To Skull Press",
+  "namePl": "Wyciskanie wąskim chwytem na ławce skośnej ujemnej z elementem skullcrushera",
+  "aliases": ["decline close-grip JM press", "decline CGBP to skull crusher hybrid", "barbell decline triceps press-skull combo", "JM press decline"],
+  "aliasesPl": ["JM press na ławce ujemnej", "wyciskanie wąsko-skull na decline", "hybryda close grip + skullcrusher na ławce ujemnej", "decline CGBP-skullcrusher hybryda", "wyciskanie wąsko z odgięciem do czoła decline"],
+
+  "description": "Triceps-dominant hybrid exercise combining the close-grip bench press and the skull crusher (lying triceps extension), performed on a decline bench. The bar starts directly over the chest with a narrow grip and arms extended. As the bar descends the elbows travel up and slightly back (skull crusher arc), bringing the bar toward the upper chest / chin area, then the lifter presses the bar back up through the same path. The mixed bar path loads the triceps both at the elbow (extension) and at the shoulder (close-grip press) — a signature long-head triceps mass builder popular under the name 'JM Press' (Decline variant). The decline angle further isolates the triceps from front delt and upper chest contribution.",
+  "descriptionPl": "Hybrydowe ćwiczenie ze zdecydowanym akcentem na tricepsy, łączące wyciskanie wąskim chwytem i skullcrusher (francuskie wyciskanie sztangi leżąc), wykonywane na ławce skośnej ujemnej. Sztanga startuje pionowo nad klatką, chwyt wąski, ramiona wyprostowane. Podczas opuszczania łokcie wędrują w górę i nieco w tył (łuk skullcrushera), a gryf zbliża się do górnej klatki / brody, po czym wyciskasz go z powrotem tą samą torowaną ścieżką. Mieszany tor obciąża tricepsy zarówno w stawie łokciowym (wyprost), jak i barkowym (wyciskanie wąskochwytne) — sygnaturowe ćwiczenie na masę długiej głowy tricepsa, popularne pod nazwą 'JM Press' (wariant decline). Ujemny kąt dodatkowo izoluje tricepsy od pomocy przedniego aktonu naramiennego i górnej klatki.",
+
+  "instructions": [
+    "Set a decline bench (15-30° decline) inside a power rack or with a spotter — this exercise is harder to bail than a standard bench press.",
+    "Lock your feet into the foot pads at the high end. Lie back; your head should be lower than your hips.",
+    "Reach up and grip the barbell with hands about shoulder-width apart or slightly narrower (~biacromial). Wrap thumbs around the bar.",
+    "Unrack with help from a spotter or lift-off. Hold the bar directly over the lower chest with arms fully extended. Brace the core and pin the shoulder blades to the bench.",
+    "Begin the descent: simultaneously bend the elbows AND let them travel up/back (toward the head), so the bar lowers in a 'JM' arc — somewhere between a press path and a skull crusher path.",
+    "Bring the bar down to roughly chin / upper chest level. The forearms should end almost vertical and the bar should be close to (but not touching) your face. Elbows pointing toward the ceiling, upper arms angled back.",
+    "Pause briefly in the bottom — no bouncing, no resting the bar on you.",
+    "Press back up by simultaneously extending the elbows AND driving the upper arms forward toward vertical, retracing the same hybrid path until lockout over the chest.",
+    "Exhale at lockout. Reset the breath and brace before the next rep. Use a spotter on the last rep to re-rack."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną ujemną (15-30° spadku) w klatce treningowej lub z asekuracją — to ćwiczenie jest trudniejsze do 'zrzucenia' niż klasyczny bench.",
+    "Zablokuj stopy w wałkach na wyższym końcu. Połóż się; głowa powinna być niżej niż biodra.",
+    "Sięgnij w górę i złap gryf na szerokość barków lub nieco węziej (~obojczykowa). Owinij kciuki wokół gryfu.",
+    "Wypnij gryf z asekuracją lub lift-offem. Trzymaj sztangę dokładnie nad dolną klatką z prostymi ramionami. Napnij brzuch i przyciśnij łopatki do ławki.",
+    "Zacznij opuszczanie: jednocześnie zegnij łokcie I pozwól im wędrować w górę/tył (w stronę głowy), tak żeby gryf schodził łukiem 'JM' — pomiędzy ścieżką wyciskania a ścieżką skullcrushera.",
+    "Sprowadź gryf na wysokość brody / górnej klatki. Przedramiona powinny być prawie pionowe, a gryf blisko (ale nie dotykając) twarzy. Łokcie skierowane w sufit, ramiona odchylone do tyłu.",
+    "Krótka pauza w dole — bez odbijania, bez 'rozkładania' gryfu na sobie.",
+    "Wyciśnij wracając tą samą hybrydową ścieżką: jednocześnie prostuj łokcie I 'wprowadź' ramiona do pionu, aż do lock-out nad klatką.",
+    "Wydech w lock-out. Zresetuj oddech i napięcie przed następnym powtórzeniem. Asekuracja na ostatniej powtórce do odłożenia gryfu."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps"],
+    "secondary": ["anterior_deltoids", "pectoralis_major", "lower_pectoralis"],
+    "stabilizers": ["serratus_anterior", "core", "rotator_cuff", "upper_back", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "anterior_deltoids": "S5",
+    "pectoralis_major": "S4",
+    "lower_pectoralis": "S5",
+    "serratus_anterior": "T3",
+    "core": "T3",
+    "wrist_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "decline_bench"],
+    "optional": ["ez_bar", "wrist_wraps", "spotter", "power_rack"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 7,
+    "prerequisites": ["close-grip-bench-press", "barbell-lying-triceps-extension-skull-crusher", "barbell-bench-press"],
+    "progression_to": ["weighted-triceps-dip-on-high-parallel-bars", "barbell-lying-close-grip-press"],
+    "alternatives": ["smith-machine-decline-close-grip-bench-press", "barbell-lying-triceps-extension-skull-crusher", "barbell-lying-close-grip-triceps-extension", "barbell-lying-close-grip-press", "dumbbell-one-arm-triceps-extension-on-bench"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet locked in pads, head below hips (decline)",
+      "Grip ~shoulder-width or slightly narrower",
+      "Shoulder blades retracted and pinned to bench",
+      "Bar starts directly over the lower chest, arms locked",
+      "Spotter or rack in place — this is hard to bail"
+    ],
+    "setup_cues_pl": [
+      "Stopy zablokowane w wałkach, głowa niżej niż biodra (decline)",
+      "Chwyt ~na szerokość barków lub nieco węziej",
+      "Łopatki ściągnięte i przyciśnięte do ławki",
+      "Sztanga startuje dokładnie nad dolną klatką, ramiona wyprostowane",
+      "Asekuracja lub stojaki ustawione — trudno samemu 'zrzucić' ten ciężar"
+    ],
+    "execution_cues": [
+      "Elbows travel UP and slightly BACK as the bar descends — 'JM' arc",
+      "Bar lowers toward chin / upper chest, NOT lower chest",
+      "Forearms end nearly vertical at the bottom",
+      "Press by extending elbows AND driving upper arms forward",
+      "Tempo: controlled 2-3s eccentric, no bounce"
+    ],
+    "execution_cues_pl": [
+      "Łokcie wędrują W GÓRĘ i lekko W TYŁ podczas opuszczania — łuk 'JM'",
+      "Gryf schodzi w okolicę brody / górnej klatki, NIE dolnej klatki",
+      "Przedramiona kończą prawie pionowo w pozycji dolnej",
+      "Wyciskaj prostując łokcie I 'wprowadzając' ramiona w pion",
+      "Tempo: kontrolowane 2-3s ekscentryka, bez odbijania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Treating it like a pure close-grip bench (elbows stay tucked, no overhead arc)",
+        "faultPl": "Wykonanie jak klasyczny close grip bench (łokcie schowane, brak łuku 'do tyłu')",
+        "cause": "Lack of familiarity with the JM/hybrid path; defaulting to a more comfortable pressing pattern",
+        "causePl": "Brak znajomości toru JM/hybrydy; cofnięcie do wygodniejszego wzorca wyciskania",
+        "cue": "Let the elbows rise up toward the ceiling on the way down. The bar should travel toward your chin, not your sternum.",
+        "cuePl": "Pozwól łokciom unieść się w stronę sufitu na drodze w dół. Gryf ma iść w stronę brody, nie mostka."
+      },
+      {
+        "fault": "Treating it like a pure skull crusher (elbows fully overhead, no press component)",
+        "faultPl": "Wykonanie jak czysty skullcrusher (łokcie całkowicie nad głową, brak komponenty wyciskania)",
+        "cause": "Over-rotating the upper arm back and losing the press path entirely",
+        "causePl": "Nadmierne odchylenie ramienia do tyłu i całkowita utrata komponenty wyciskowej",
+        "cue": "Forearms should end near-vertical, not pointing back. The upper arm angles back maybe 30-45° past vertical — not all the way.",
+        "cuePl": "Przedramiona kończą prawie pionowo, nie skierowane do tyłu. Ramię odchylone ok. 30-45° za pion — nie do końca."
+      },
+      {
+        "fault": "Bar drifts too far back and crashes into face/forehead",
+        "faultPl": "Gryf wędruje za daleko w tył i uderza w twarz/czoło",
+        "cause": "Loss of control in the eccentric, especially under fatigue or with too much load",
+        "causePl": "Utrata kontroli w fazie ekscentrycznej, szczególnie pod zmęczeniem lub ze zbyt dużym ciężarem",
+        "cue": "Start light to learn the path. Spotter mandatory on top sets. Bring the bar to chin level, not behind the head.",
+        "cuePl": "Zacznij od lekkiego ciężaru by nauczyć się ścieżki. Asekuracja obowiązkowa na ciężkich seriach. Sprowadzaj gryf do brody, nie za głowę."
+      },
+      {
+        "fault": "Wrists collapsing back under load",
+        "faultPl": "Nadgarstki zaginają się do tyłu pod obciążeniem",
+        "cause": "Narrow grip + hybrid path puts large torque on the wrists; bar held in fingers instead of palm heel",
+        "causePl": "Wąski chwyt + hybrydowa ścieżka generują duży moment na nadgarstkach; gryf w palcach, nie w podstawie dłoni",
+        "cue": "Bar in palm heel, knuckles up. Use wrist wraps. If pain persists, try EZ bar.",
+        "cuePl": "Gryf w podstawie dłoni, kostki w górę. Użyj wraps. Jeśli ból nie ustępuje, użyj gryfu łamanego."
+      },
+      {
+        "fault": "Shoulders flare wide (regular bench press pattern)",
+        "faultPl": "Łokcie się rozszerzają (wzorzec klasycznego wyciskania)",
+        "cause": "Ego loading — the lifter recruits chest to handle heavier weight instead of keeping it on triceps",
+        "causePl": "Ego lifting — ćwiczący wciąga klatkę by udźwignąć więcej, zamiast obciążać tricepsy",
+        "cue": "Keep upper arms aligned with the torso, not flared. Cut weight if you can't maintain the path.",
+        "cuePl": "Trzymaj ramiona w jednej linii z tułowiem, bez rozsuwania. Zmniejsz ciężar jeśli nie utrzymujesz toru."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold through the descent and press. Exhale at lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech w lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_pain_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "The hybrid path stresses the triceps tendon at the elbow more than a regular press. Replace with cable triceps pushdowns or light dumbbell extensions until pain-free.",
+      "modificationPl": "Hybrydowy tor mocniej obciąża ścięgno tricepsa przy łokciu niż klasyczne wyciskanie. Zamień na triceps pushdown na wyciągu lub lekkie wyciskanie hantli aż do ustąpienia bólu.",
+      "alternative": "cable-incline-triceps-extension"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use an EZ bar for friendlier wrist angle, add wrist wraps, and reduce load. Make sure bar sits in palm heel.",
+      "modificationPl": "Użyj gryfu łamanego dla wygodniejszego kąta nadgarstka, dodaj wraps i zmniejsz ciężar. Upewnij się że gryf w podstawie dłoni.",
+      "alternative": "barbell-lying-close-grip-triceps-extension"
+    },
+    {
+      "condition": "high_blood_pressure_or_GERD",
+      "severity": "avoid",
+      "modification": "Head-below-hips decline raises intracranial/blood pressure and may trigger reflux. Use a flat-bench JM press or skull crusher instead.",
+      "modificationPl": "Pozycja głowa-niżej-niż-biodra podnosi ciśnienie i może wywołać refluks. Użyj JM press na poziomej ławce lub skullcrushera.",
+      "alternative": "barbell-lying-close-grip-press"
+    },
+    {
+      "condition": "shoulder_impingement_or_pain",
+      "severity": "modify",
+      "modification": "The combined press + extension demands healthy shoulder extension under load. If irritated, switch to dips or strict skull crushers on flat bench.",
+      "modificationPl": "Łączenie wyciskania + wyprostu wymaga zdrowego stawu barkowego pod obciążeniem. Jeśli drażni, przejdź na dipy lub klasyczny skullcrusher na poziomej ławce.",
+      "alternative": "triceps-dip"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy / triceps mass) | 4-5x4-6 (strength accessory for bench press lockout)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "barbell-decline-close-grip-to-skull-press.gif",
+    "frames_extracted": [
+      "frames/barbell-decline-close-grip-to-skull-press/frame_0_start.png",
+      "frames/barbell-decline-close-grip-to-skull-press/frame_1_early.png",
+      "frames/barbell-decline-close-grip-to-skull-press/frame_2_mid.png",
+      "frames/barbell-decline-close-grip-to-skull-press/frame_3_late.png",
+      "frames/barbell-decline-close-grip-to-skull-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-decline-close-grip-to-skull-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start/end pozycja dolna): osoba leży na ławce skośnej ujemnej (stopy zablokowane na wyższym końcu, głowa niżej niż biodra), sztanga blisko górnej klatki/brody, łokcie wysoko skierowane w sufit, ramiona odchylone do tyłu — to klasyczna pozycja dolna hybrydy JM press (mieszanka close grip bench + skullcrusher). Frame 2 (mid/szczyt): gryf wyciśnięty pionowo nad dolną klatką, ramiona wyprostowane, łokcie zamknięte — pozycja lockout typowa dla close grip bench. Frame 1 i 3 (faza ekscentryczna/koncentryczna): wyraźny łuk JM — łokcie wędrują w górę i lekko w tył podczas schodzenia, gryf zbliża się do brody, nie do mostka. Triceps (głowa długa) zaznaczony na czerwono — zgodne z biomechaniką: hybrydowy tor obciąża tricepsy zarówno w stawie łokciowym (wyprost) jak i barkowym (wyciskanie wąskie). Decline angle dodatkowo izoluje tricepsy od pomocy przedniego aktonu naramiennego. Wszystkie pola PL od zera. Difficulty 7 (advanced) — wymaga znajomości dwóch wzorców (close grip + skull crusher), kontroli toru, opanowania ścieżki by uniknąć uderzenia gryfem w twarz, oraz bezpiecznej asekuracji w pozycji decline. Primary: triceps P10 (jedyny primary — pierś tylko jako pomocnicza S4/S5 ze względu na decline angle i hybrydowy tor). Equipment: barbell + decline_bench.",
+
+  "tags": ["barbell", "triceps", "long_head_triceps", "close_grip", "skull_crusher", "decline", "jm_press", "hybrid", "compound", "elbow_extension", "horizontal_push", "mass_builder"]
+}

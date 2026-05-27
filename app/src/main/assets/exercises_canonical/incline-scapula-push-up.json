@@ -1,0 +1,204 @@
+{
+  "id": "incline-scapula-push-up",
+  "name": "Incline Scapula Push-Up",
+  "namePl": "Pompka łopatkowa na ławce skośnej",
+  "aliases": ["incline scapular push-up", "bench scapula push-up", "elevated scap push-up", "incline serratus push-up", "scapular push-up on bench"],
+  "aliasesPl": ["pompka łopatkowa skośna", "scapula push-up na ławce", "pompka łopatkowa z dłońmi na ławce", "scap push-up skośna", "pompka łopatkowa dla początkujących", "regresja pompki łopatkowej"],
+
+  "description": "Beginner-friendly regression of the scapula push-up performed with hands elevated on a bench (or sturdy box). Elbows stay LOCKED for the entire set — the only joint that moves is the scapulothoracic joint. Scapulae glide on the ribcage: protraction (blades spread apart, upper back domes, chest rises) and retraction (blades pull together, chest sinks toward bench). The incline reduces bodyweight load on the wrists and shoulders compared to the floor version, making it the perfect entry point for serratus anterior development, prehab, and learning scapular control. Ideal for absolute beginners, people returning after a shoulder issue, or as a warm-up before pressing work.",
+  "descriptionPl": "Regresja pompki łopatkowej przyjazna początkującym, wykonywana z dłońmi uniesionymi na ławce (lub solidnej skrzyni). Łokcie pozostają ZABLOKOWANE przez całą serię — jedynym stawem, który pracuje, jest staw łopatkowo-żebrowy. Łopatki ślizgają się po klatce piersiowej: protrakcja (łopatki rozsuwają się, górne plecy 'wybrzuszają', klatka unosi się) i retrakcja (łopatki ściągają się, klatka opada w stronę ławki). Skos zmniejsza obciążenie nadgarstków i barków w porównaniu z wersją na podłodze, dzięki czemu jest to idealny punkt startowy do rozwoju mięśnia zębatego przedniego, prehabu i nauki kontroli łopatek. Świetne dla zupełnych początkujących, osób wracających po problemach z barkiem lub jako rozgrzewka przed wyciskaniem.",
+
+  "instructions": [
+    "Place hands on the edge of a stable bench, shoulder-width apart, fingers pointing forward (or slightly outward). Bench should not move.",
+    "Step feet back into a high plank position with arms fully extended — body in a straight line from heels to head, on an incline.",
+    "Engage core, squeeze glutes. No sagging hips, no piked hips.",
+    "LOCK YOUR ELBOWS — they stay perfectly straight for the entire set. The only joint moving is the scapulothoracic joint.",
+    "Inhale and slowly retract scapulae: pull shoulder blades together, allowing your chest to sink slightly toward the bench. Elbows stay straight — you are NOT bending arms.",
+    "Brief pause at the bottom — feel the squeeze between shoulder blades.",
+    "Exhale and forcefully protract scapulae: push the bench away, spread shoulder blades apart, round upper back slightly, chest rises and upper back domes up.",
+    "Hold the protracted position for 1-2 seconds — feel the serratus anterior contract along the ribs under the armpit.",
+    "Repeat slowly with control. ROM is small (5-10 cm) — quality over quantity."
+  ],
+  "instructionsPl": [
+    "Połóż dłonie na krawędzi stabilnej ławki, na szerokość barków, palce skierowane do przodu (lub lekko na zewnątrz). Ławka nie może się ruszać.",
+    "Cofnij stopy do pozycji wysokiej planki z ramionami w pełni wyprostowanymi — ciało w prostej linii od pięt do głowy, na skosie.",
+    "Napnij brzuch, ściśnij pośladki. Bez opadających bioder, bez 'tyłka do góry'.",
+    "ZABLOKUJ ŁOKCIE — pozostają idealnie wyprostowane przez całą serię. Jedynym stawem, który pracuje, jest staw łopatkowo-żebrowy.",
+    "Wdech i powoli ściągnij łopatki: złącz łopatki razem, pozwól klatce lekko opaść w stronę ławki. Łokcie zostają wyprostowane — NIE zginasz ramion.",
+    "Krótka pauza na dole — poczuj ściśnięcie między łopatkami.",
+    "Wydech i mocno rozsuń łopatki (protrakcja): odepchnij ławkę, rozsuń łopatki na boki, lekko zaokrąglij górne plecy, klatka unosi się, a górne plecy 'wybrzuszają' się ku górze.",
+    "Zatrzymaj się w pozycji protrakcji na 1-2 sekundy — poczuj, jak mięsień zębaty przedni napina się wzdłuż żeber pod pachą.",
+    "Powtarzaj powoli i z kontrolą. Zakres ruchu jest mały (5-10 cm) — jakość ważniejsza niż ilość."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_protraction",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["serratus_anterior", "lower_trapezius"],
+    "secondary": ["pectoralis_major", "rhomboids"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "triceps", "anterior_deltoids"]
+  },
+
+  "muscle_intensity": {
+    "serratus_anterior": "P9",
+    "lower_trapezius": "P7",
+    "pectoralis_major": "S4",
+    "rhomboids": "S5",
+    "core": "T4",
+    "triceps": "T3",
+    "anterior_deltoids": "T3",
+    "rotator_cuff": "T4"
+  },
+
+  "equipment": {
+    "required": ["bench"],
+    "optional": ["yoga_mat", "push_up_handles"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 1,
+    "prerequisites": ["plank-on-bench", "incline-push-up"],
+    "progression_to": ["scapula-push-up", "scapula-push-up-feet-elevated", "push-up-plus"],
+    "alternatives": ["wall-scapular-push-up", "knee-scapular-push-up", "serratus-anterior-wall-slides", "banded-serratus-punch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands shoulder-width on the bench edge, fingers spread, push into the surface",
+      "Walk feet back — body in a straight line from heels to crown, on an incline",
+      "Arms perfectly straight, elbows LOCKED — like wooden poles",
+      "Brace core, squeeze glutes — rigid plank top to bottom",
+      "Eyes look at the bench between your hands — neutral neck, ears in line with shoulders"
+    ],
+    "setup_cues_pl": [
+      "Dłonie na szerokość barków na krawędzi ławki, palce rozstawione, napieraj na powierzchnię",
+      "Cofnij stopy — ciało w prostej linii od pięt po czubek głowy, na skosie",
+      "Ramiona idealnie wyprostowane, łokcie ZABLOKOWANE — jak drewniane pale",
+      "Napięty brzuch, ściśnięte pośladki — sztywna planka od góry do dołu",
+      "Wzrok na ławkę między dłońmi — neutralna szyja, uszy w linii z barkami"
+    ],
+    "execution_cues": [
+      "Elbows LOCKED — if they bend, it became an incline push-up, not a scap push-up",
+      "Push the bench away — 'dome' your upper back at the top of the rep",
+      "Pinch a pencil between shoulder blades on the way down",
+      "Tiny ROM — chest moves only 5-10 cm, no more",
+      "Slow tempo: 2 sec down, 2 sec hold, 2 sec up — feel the serratus burning along the ribs"
+    ],
+    "execution_cues_pl": [
+      "Łokcie ZABLOKOWANE — jeśli się zginają, robisz pompkę skośną, a nie pompkę łopatkową",
+      "Odpychaj ławkę — 'wybrzusz' górne plecy w pozycji szczytowej powtórzenia",
+      "Ściskaj ołówek między łopatkami w dolnej fazie",
+      "Maleńki zakres ruchu — klatka przemieszcza się tylko 5-10 cm, nie więcej",
+      "Wolne tempo: 2 sek dół, 2 sek pauza, 2 sek góra — czuj pieczenie serratusa wzdłuż żeber"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending elbows (turning it into an incline push-up)",
+        "faultPl": "Zginanie łokci (zamiana w zwykłą pompkę skośną)",
+        "cause": "Lack of body awareness, weak serratus — body 'cheats' by using triceps and chest",
+        "causePl": "Brak świadomości ciała, słaby serratus — ciało 'oszukuje' używając tricepsów i klatki",
+        "cue": "Imagine your arms are wooden poles — they cannot bend. Slow down and watch your elbows in a mirror if needed.",
+        "cuePl": "Wyobraź sobie, że ramiona to drewniane pale — nie da się ich zgiąć. Zwolnij i obserwuj łokcie w lustrze, jeśli trzeba."
+      },
+      {
+        "fault": "Sagging hips / collapsed plank",
+        "faultPl": "Opadające biodra / zapadnięta planka",
+        "cause": "Weak core, no glute engagement — incline makes plank feel 'easy' so people stop bracing",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — skos sprawia, że planka czuje się 'łatwo', więc ludzie przestają napinać",
+        "cue": "Plank position FIRST, scapular movement SECOND. Squeeze glutes hard, brace abs as if expecting a punch — even on the bench.",
+        "cuePl": "NAJPIERW planka, POTEM ruch łopatkami. Mocno ściśnij pośladki, napnij brzuch jakbyś przyjmował cios — nawet na ławce."
+      },
+      {
+        "fault": "Shrugging shoulders toward ears at the bottom",
+        "faultPl": "Wzruszanie ramion do uszu w dolnej pozycji",
+        "cause": "Confusing scapular retraction with shoulder shrug — upper trapezius takes over",
+        "causePl": "Mylenie retrakcji łopatek z wzruszaniem ramion — przejmuje górny czworoboczny (upper trapezius)",
+        "cue": "Shoulders DOWN, away from ears. Retract by pulling blades together and DOWN toward back pockets, not up.",
+        "cuePl": "Barki W DÓŁ, daleko od uszu. Ściągaj łopatki razem i W DÓŁ w stronę tylnych kieszeni, nie do góry."
+      },
+      {
+        "fault": "Rushing reps — bouncing between protraction and retraction",
+        "faultPl": "Pośpieszne powtórzenia — odbijanie między protrakcją a retrakcją",
+        "cause": "Treating it as a cardio exercise instead of a controlled isolation drill",
+        "causePl": "Traktowanie jak cardio zamiast jako kontrolowanego ćwiczenia izolowanego",
+        "cue": "Tempo 2-2-2 minimum (down-hold-up). You should FEEL the serratus burning along the ribs under the armpit.",
+        "cuePl": "Tempo minimum 2-2-2 (dół-pauza-góra). Powinieneś CZUĆ pieczenie serratusa wzdłuż żeber pod pachą."
+      },
+      {
+        "fault": "Bench too high — trivial load, no stimulus for serratus",
+        "faultPl": "Ławka za wysoka — banalne obciążenie, brak bodźca dla serratusa",
+        "cause": "Choosing a very high surface (counter, wall) eliminates almost all bodyweight load",
+        "causePl": "Wybór bardzo wysokiej powierzchni (blat, ściana) eliminuje prawie całe obciążenie ciałem",
+        "cue": "Standard bench height (~45 cm) is the sweet spot. If too easy, progress to floor scapula push-up.",
+        "cuePl": "Standardowa wysokość ławki (~45 cm) to złoty środek. Jeśli za łatwo — przejdź do pompki łopatkowej na podłodze."
+      }
+    ],
+    "breathing": "Inhale during scapular retraction (chest sinks toward bench), exhale forcefully during protraction (push bench away). Match breath to slow tempo.",
+    "breathingPl": "Wdech podczas retrakcji łopatek (klatka opada w stronę ławki), mocny wydech podczas protrakcji (odpychanie ławki). Dopasuj oddech do wolnego tempa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles on the bench, or perform on fists (knuckles down). The incline already reduces wrist load vs. floor version — but static plank still loads wrists for the full set.",
+      "modificationPl": "Użyj uchwytów do pompek na ławce lub wykonuj na pięściach (knykcie w dół). Skos już zmniejsza obciążenie nadgarstków vs. wersja na podłodze — ale statyczna planka i tak obciąża nadgarstki przez całą serię.",
+      "alternative": "serratus-anterior-wall-slides"
+    },
+    {
+      "condition": "acute_shoulder_injury",
+      "severity": "caution",
+      "modification": "This IS already a shoulder-friendly regression — but if pain during movement, regress further to wall scapula push-up (standing). Consult physio for active rehab protocols.",
+      "modificationPl": "To JEST już regresja przyjazna dla barków — ale jeśli ruch boli, cofnij się jeszcze bardziej do pompki łopatkowej o ścianę (stojącej). Skonsultuj z fizjoterapeutą protokoły aktywnej rehabilitacji.",
+      "alternative": "wall-scapular-push-up"
+    },
+    {
+      "condition": "winged_scapula_mild",
+      "severity": "modify",
+      "modification": "This exercise is OFTEN PRESCRIBED for mild scapular winging — incline version is the ideal entry point. Smaller ROM, longer holds, higher reps. Severe long thoracic nerve dysfunction needs physio guidance.",
+      "modificationPl": "To ćwiczenie jest CZĘSTO ZALECANE przy łagodnym odstawaniu łopatki — wersja skośna to idealny punkt startowy. Mniejszy zakres, dłuższe pauzy, więcej powtórzeń. Ciężka dysfunkcja nerwu piersiowego długiego wymaga prowadzenia fizjoterapeuty.",
+      "alternative": "wall-scapular-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Incline reduces low back demand vs. floor plank, but if you still cannot hold a rigid plank, regress to knee version with hands on bench. Brace core actively throughout.",
+      "modificationPl": "Skos zmniejsza obciążenie dolnego odcinka pleców vs. planka na podłodze, ale jeśli nadal nie utrzymujesz sztywnej planki — cofnij się do wersji z kolan z dłońmi na ławce. Aktywnie napinaj brzuch przez cały czas.",
+      "alternative": "knee-scapular-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (prehab/warm-up) | 2-3x15-20 (serratus development for beginners) | 3x30-60 sec (slow tempo with isometric holds)",
+  "calories_per_kg_per_hour": 2.5,
+
+  "media": {
+    "primary": "incline-scapula-push-up.gif",
+    "frames_extracted": [
+      "frames/incline-scapula-push-up/frame_0_start.png",
+      "frames/incline-scapula-push-up/frame_1_early.png",
+      "frames/incline-scapula-push-up/frame_2_mid.png",
+      "frames/incline-scapula-push-up/frame_3_late.png",
+      "frames/incline-scapula-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "serratus-anterior/incline-scapula-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start) i Frame 4 (end): postać w pozycji wysokiej planki na skosie — dłonie na krawędzi ławki, ramiona w pełni wyprostowane, łokcie zablokowane, klatka uniesiona, górne plecy lekko zaokrąglone (protrakcja łopatek). Wyraźnie zaznaczona na czerwono okolica serratus anterior pod pachą (wzdłuż żeber) oraz lower trapezius w okolicy środkowo-górnych pleców. Frame 2 (mid): ta sama pozycja planki na skosie z PROSTYMI łokciami, ale klatka delikatnie opada w stronę ławki (~5-10 cm), łopatki ściągają się ku sobie (retrakcja). Brak zgięcia łokci — to NIE pompka skośna, to ruch wyłącznie z łopatek. Skos (dłonie na ławce) wyraźnie zmniejsza obciążenie ciałem vs. wersja na podłodze, dlatego pectoralis_major obniżony do S4, triceps/deltoids do T3. Klasyczna regresja dla początkujących i prehab. Anatomicznie: primary serratus_anterior (P9) + lower_trapezius (P7) — para mięśni odpowiedzialnych za upward rotation łopatki. Mechanic=isolation, plane=transverse (ruch łopatek po klatce), force=push, bilateral, closed kinetic chain. Wszystkie pola PL pisane od zera w polskim standardzie fitness/fizjoterapii. Difficulty 1/10 — najłatwiejsza wersja serii scapula push-up.",
+
+  "tags": ["bodyweight", "calisthenics", "prehab", "rehab", "shoulder_health", "serratus_anterior", "scapular_control", "isolation", "beginner_friendly", "regression", "warm_up", "low_impact", "bench", "home_workout", "physiotherapy", "wrist_friendly", "shoulder_friendly"]
+}

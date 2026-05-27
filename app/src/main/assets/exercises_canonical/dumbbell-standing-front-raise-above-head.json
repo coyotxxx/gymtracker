@@ -1,0 +1,208 @@
+{
+  "id": "dumbbell-standing-front-raise-above-head",
+  "name": "Dumbbell Standing Front Raise Above Head",
+  "namePl": "Front raise z hantlami stojąc nad głowę",
+  "aliases": ["standing dumbbell front raise to overhead", "full ROM dumbbell front raise", "dumbbell front raise overhead", "dumbbell front raise to ceiling", "long range dumbbell front raise"],
+  "aliasesPl": ["wznosy hantli w przód stojąc nad głowę", "front raise z hantlami pełny zakres", "wznosy hantli przodem do sufitu", "wznosy hantli w przód z pełnym ROM", "wznosy hantli przodem aż nad głowę"],
+
+  "description": "A long-range front raise variation in which the lifter elevates dumbbells in the sagittal plane all the way from the thighs up overhead, finishing with the arms vertically above the shoulders. Compared to the classic dumbbell front raise (which stops at shoulder height), this version doubles the effective range of motion and brings the upward rotators of the scapula — serratus anterior and lower/upper trapezius — heavily into play once the arms pass roughly 90°. The anterior deltoid still does most of the work in the bottom half, while the upper portion progressively recruits more scapular muscles. A useful accessory for overhead athletes (overhead press, snatch, handstand) and for lifters who need anterior delt hypertrophy together with serratus and scapular upward rotation strength.",
+  "descriptionPl": "Wersja front raise z bardzo długim zakresem ruchu, w której ćwiczący unosi hantle w płaszczyźnie strzałkowej od ud aż nad głowę, kończąc z ramionami pionowo nad barkami. W porównaniu z klasycznym front raise (zatrzymanie na wysokości barków), ta wersja podwaja efektywny zakres ruchu i mocno angażuje rotatory górne łopatki — mięsień zębaty przedni oraz dolny/górny czworoboczny — gdy ramiona przekraczają mniej więcej 90°. Przedni akton naramiennego nadal wykonuje większość pracy w dolnej połowie ruchu, a górna część stopniowo coraz mocniej rekrutuje mięśnie łopatki. Bardzo dobre ćwiczenie pomocnicze dla osób trenujących nad głową (OHP, rwanie, stanie na rękach) oraz dla tych, którzy potrzebują hipertrofii przedniego aktonu razem ze wzmocnieniem zębatego i upward rotation łopatki.",
+
+  "instructions": [
+    "Stand upright with feet shoulder-width apart, knees soft, ribs stacked over pelvis (no excessive lumbar extension).",
+    "Hold a dumbbell in each hand with a pronated or neutral grip, arms straight, dumbbells resting against the front of the thighs.",
+    "Brace the core, depress and slightly retract the shoulder blades. Look straight ahead.",
+    "Keep elbows almost fully extended (with just a soft, fixed micro-bend). Lift both dumbbells forward and upward simultaneously along the sagittal plane.",
+    "Pass through shoulder height without stopping — this is the halfway point, not the end.",
+    "Continue upward, allowing the shoulder blades to upwardly rotate, until the dumbbells are directly above the shoulders and the biceps are next to the ears.",
+    "Pause for ~1 second overhead with arms vertical and lats long. Do not lock out aggressively into the ceiling.",
+    "Lower the dumbbells along the same path under control over 2-3 seconds, inhaling on the way down.",
+    "Stop just before the dumbbells touch the thighs to maintain tension, then begin the next rep.",
+    "Keep the torso vertical the entire set — no backward lean, no leg drive."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte, żebra ustawione nad miednicą (bez nadmiernego wygięcia lędźwiowego).",
+    "Złap hantle chwytem pronowanym lub neutralnym, ramiona wyprostowane, hantle oparte z przodu o uda.",
+    "Napnij brzuch, ściągnij łopatki w dół i lekko w tył. Wzrok przed siebie.",
+    "Utrzymuj łokcie prawie całkowicie wyprostowane (z lekkim, stałym mikro-ugięciem). Unoś obie hantle jednocześnie w przód i w górę w płaszczyźnie strzałkowej.",
+    "Przejdź przez wysokość barków bez zatrzymywania — to półmetek ruchu, nie koniec.",
+    "Kontynuuj ruch w górę, pozwalając łopatkom na rotację górną, aż hantle znajdą się dokładnie nad barkami, a bicepsy będą przy uszach.",
+    "Zatrzymaj się na około 1 sekundę nad głową z ramionami w pionie i podciągniętymi grzbietami szerokimi. Nie blokuj agresywnie w sufit.",
+    "Opuszczaj hantle tą samą drogą w sposób kontrolowany przez 2-3 sekundy, wdech podczas opuszczania.",
+    "Zatrzymaj tuż przed dotknięciem hantli do ud, żeby utrzymać napięcie, i rozpocznij kolejne powtórzenie.",
+    "Trzymaj tułów pionowo przez całą serię — bez odchylania się w tył ani pomagania nogami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid"],
+    "secondary": ["lateral_deltoid", "serratus_anterior", "trapezius_upper", "trapezius_lower"],
+    "stabilizers": ["core", "erector_spinae", "rotator_cuff", "forearm_flexors", "pectoralis_major_clavicular"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P10",
+    "serratus_anterior": "S7",
+    "lateral_deltoid": "S6",
+    "trapezius_upper": "S6",
+    "trapezius_lower": "S5",
+    "pectoralis_major_clavicular": "T4",
+    "rotator_cuff": "T3",
+    "core": "T3",
+    "erector_spinae": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-front-raise", "dumbbell-shoulder-press"],
+    "progression_to": ["barbell-front-raise-to-overhead", "dumbbell-shoulder-press", "snatch-grip-high-pull"],
+    "alternatives": ["dumbbell-front-raise", "cable-front-raise-to-overhead", "barbell-front-raise", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft, ribs over pelvis",
+      "Pronated or neutral grip, dumbbells resting on thighs",
+      "Shoulder blades down and slightly back",
+      "Soft fixed bend in elbows — do not let them collapse",
+      "Brace core to prevent lower-back arching at the top"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana lekko ugięte, żebra nad miednicą",
+      "Chwyt pronowany lub neutralny, hantle oparte o uda",
+      "Łopatki ściągnięte w dół i lekko w tył",
+      "Lekkie, stałe ugięcie łokci — nie pozwól im się załamać",
+      "Napnij brzuch, żeby nie wyginać lędźwi w górnej pozycji"
+    ],
+    "execution_cues": [
+      "Lift in one smooth arc from thighs to ceiling",
+      "Pass shoulder height — that's only halfway",
+      "Let shoulder blades rotate upward as you go overhead",
+      "Biceps to ears at the top, arms vertical",
+      "Lower slowly along the same path — 2-3 seconds down"
+    ],
+    "execution_cues_pl": [
+      "Unoś jednym płynnym łukiem od ud do sufitu",
+      "Przejdź przez wysokość barków — to dopiero półmetek",
+      "Pozwól łopatkom rotować się w górę, gdy idziesz nad głowę",
+      "Bicepsy przy uszach na górze, ramiona pionowo",
+      "Opuszczaj wolno tą samą drogą — 2-3 sekundy w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Excessive backward lean / hyperextension of the lower back at the top",
+        "faultPl": "Nadmierne odchylanie się w tył / przeprost odcinka lędźwiowego w górnej pozycji",
+        "cause": "Load too heavy, weak core, or limited overhead shoulder mobility forces compensation through the spine",
+        "causePl": "Zbyt duży ciężar, słaby brzuch lub ograniczona mobilność barków nad głową wymusza kompensację w kręgosłupie",
+        "cue": "Lighter dumbbells. Ribs down, glutes squeezed, brace as if for a punch the whole set.",
+        "cuePl": "Lżejsze hantle. Żebra w dół, pośladki ściśnięte, napięty brzuch jak do uderzenia przez całą serię."
+      },
+      {
+        "fault": "Using leg drive / hip thrust to start the rep",
+        "faultPl": "Pomaganie nogami / wyrzut bioder na starcie powtórzenia",
+        "cause": "Load too heavy for strict form; lifter generates momentum from below",
+        "causePl": "Ciężar za duży dla ścisłej formy; ćwiczący generuje rozpęd od dołu",
+        "cue": "Reduce weight by 20-30%. Knees soft but motionless. The dumbbells move only because the arms move.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Kolana lekko ugięte ale nieruchome. Hantle ruszają się tylko dlatego, że ruszają się ramiona."
+      },
+      {
+        "fault": "Elbows bending during the lift (turning the raise into a curl-press)",
+        "faultPl": "Zginanie łokci w trakcie ruchu (zamiana wznosu na curl-press)",
+        "cause": "Anterior delt fatigue causes the biceps and triceps to take over to shorten the lever",
+        "causePl": "Zmęczenie przedniego aktonu sprawia, że biceps i triceps przejmują pracę, żeby skrócić dźwignię",
+        "cue": "Lock the elbow angle from rep 1. If you cannot keep arms straight, the weight is too heavy.",
+        "cuePl": "Zablokuj kąt łokcia od pierwszego powtórzenia. Jeśli nie możesz utrzymać prostych ramion, ciężar jest za duży."
+      },
+      {
+        "fault": "Stopping at shoulder height (treating it like a standard front raise)",
+        "faultPl": "Zatrzymywanie na wysokości barków (jak w klasycznym front raise)",
+        "cause": "Habit from regular front raises or insufficient overhead mobility",
+        "causePl": "Nawyk z klasycznych front raise lub niewystarczająca mobilność nad głową",
+        "cue": "The whole point of this variation is the overhead finish. Bicep to ear at the top, every rep.",
+        "cuePl": "Cały sens tej wersji to zakończenie nad głową. Biceps do ucha na górze, w każdym powtórzeniu."
+      },
+      {
+        "fault": "Shrugging aggressively (upper traps fire too early in the bottom half)",
+        "faultPl": "Agresywne unoszenie barków (trapezy górne włączają się zbyt wcześnie w dolnej połowie)",
+        "cause": "Lifter does not stabilize scapula at start — traps replace deltoid",
+        "causePl": "Ćwiczący nie stabilizuje łopatek na starcie — trapezy zastępują naramienny",
+        "cue": "Below shoulder height: shoulders away from ears. Above shoulder height: let traps work naturally for upward rotation.",
+        "cuePl": "Poniżej wysokości barków: barki odsunięte od uszu. Powyżej wysokości barków: pozwól trapezom naturalnie pracować przy rotacji łopatek."
+      }
+    ],
+    "breathing": "Inhale and brace before the rep. Exhale on the way up (concentric), with a longer exhale near the top as the diaphragm needs more room overhead. Inhale during the controlled descent.",
+    "breathingPl": "Wdech i napięcie brzucha przed powtórzeniem. Wydech podczas unoszenia (koncentryk), dłuższy wydech bliżej góry, gdy przepona potrzebuje więcej miejsca nad głową. Wdech podczas kontrolowanego opuszczania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "avoid",
+      "modification": "Going fully overhead with weight is a classic impingement provocateur (passing through the painful 60-120° arc twice per rep). Either stop the ROM at shoulder height (regular front raise) or switch to a neutral-grip landmine press, which is much friendlier to an impinged shoulder.",
+      "modificationPl": "Unoszenie ciężaru nad głowę to klasyczny prowokator zespołu cieśni (przechodzenie przez bolesny łuk 60-120° dwa razy w powtórzeniu). Albo zatrzymaj ROM na wysokości barków (klasyczny front raise), albo przejdź na landmine press chwytem neutralnym, który jest dużo bezpieczniejszy dla podrażnionego barku.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Full overhead loading with extended elbow puts maximum stress on the supraspinatus tendon. Avoid until cleared. Substitute with low-load isolation work (band external rotations) and partial-ROM front raises below shoulder height.",
+      "modificationPl": "Pełne obciążanie nad głową z wyprostowanym łokciem maksymalnie stresuje ścięgno mięśnia nadgrzebieniowego. Unikaj do czasu wyleczenia. Zastąp ćwiczeniami izolowanymi z małym obciążeniem (rotacje zewnętrzne z gumą) i częściowymi front raise poniżej wysokości barków.",
+      "alternative": "dumbbell-front-raise"
+    },
+    {
+      "condition": "limited_overhead_shoulder_mobility",
+      "severity": "modify",
+      "modification": "If you cannot reach a true vertical arm position without lumbar hyperextension, do not try to force it. Reduce ROM to where ribs stay down, or do the movement seated with back support to prevent compensation.",
+      "modificationPl": "Jeśli nie możesz osiągnąć prawdziwie pionowej pozycji ramion bez przeprostu w lędźwiach, nie zmuszaj się. Zmniejsz ROM do miejsca, w którym żebra zostają w dół, albo wykonuj ruch siedząc z podparciem pleców, żeby zapobiec kompensacji.",
+      "alternative": "dumbbell-shoulder-press"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_disc_issues",
+      "severity": "caution",
+      "modification": "The overhead position naturally pulls the lumbar spine into extension. With acute back issues, use lighter dumbbells, brace hard, or perform seated against a vertical bench pad. Avoid this variation entirely during disc flare-ups.",
+      "modificationPl": "Pozycja nad głową naturalnie pociąga odcinek lędźwiowy w wyprost. Przy ostrych problemach z plecami używaj lżejszych hantli, mocno napinaj brzuch lub wykonuj siedząc przy pionowym oparciu ławki. Całkowicie unikaj tej wersji podczas zaostrzeń dyskopatii.",
+      "alternative": "seated-dumbbell-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy/standard) | 3x8-10 (strength bias, heavier load) | 3-4x12-15 (anterior delt + serratus endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-standing-front-raise-above-head.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-front-raise-above-head/frame_0_start.png",
+      "frames/dumbbell-standing-front-raise-above-head/frame_1_early.png",
+      "frames/dumbbell-standing-front-raise-above-head/frame_2_mid.png",
+      "frames/dumbbell-standing-front-raise-above-head/frame_3_late.png",
+      "frames/dumbbell-standing-front-raise-above-head/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-standing-front-raise-above-head"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący stoi prosto, stopy na szerokość barków, hantle w chwycie pronowanym (lub neutralnym) oparte z przodu o uda, ramiona wyprostowane, przedni i boczny akton naramiennego podświetlone na czerwono — to pozycja wyjściowa. Frame 2 (top): hantle bezpośrednio nad barkami, ramiona pionowo, bicepsy przy uszach, łopatki w rotacji górnej, podświetlony cały serratus anterior i obie głowy delt — pełne overhead finish. Frame 4: powrót do pozycji wyjściowej z 'ghostem' fazy szczytowej widocznym jako półprzezroczysta postać u góry, hantle z powrotem przy udach. Ruch w płaszczyźnie strzałkowej (sagittal), force=push, izolacja z długim ROM. Stoi cały czas wyprostowany, brak bujania ani odchylania w tył (w GIFie). Pełny zakres aż nad głowę odróżnia tę wersję od klasycznego front raise (stop na poziomie barków). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "anterior_delts", "isolation", "dumbbells", "upper_body", "standing", "overhead", "full_rom", "serratus", "hypertrophy", "shoulder_mobility"]
+}

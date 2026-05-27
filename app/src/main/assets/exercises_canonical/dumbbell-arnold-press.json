@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-arnold-press",
+  "name": "Dumbbell Arnold Press",
+  "namePl": "Wyciskanie Arnolda hantlami",
+  "aliases": ["arnold press", "DB arnold press", "rotational dumbbell shoulder press", "arnold dumbbell press"],
+  "aliasesPl": ["arnold press hantlami", "wyciskanie arnolda", "arnoldki", "wyciskanie Arnolda Schwarzeneggera", "wyciskanie barków z rotacją"],
+
+  "description": "Bilateral vertical press invented by Arnold Schwarzenegger — combines a shoulder press with forearm rotation through the lift. Starts with dumbbells in front of the face, palms facing the body (supinated, chin-up style grip), then rotates outward through the press so palms face forward at lockout. The rotation activates the lateral and posterior deltoids more than a standard overhead press, recruiting all three deltoid heads in a single rep. Hits more time-under-tension on the front delt than DB OHP because the ROM is longer (rotation extends the path).",
+  "descriptionPl": "Dwustronne wyciskanie pionowe wynalezione przez Arnolda Schwarzeneggera — łączy klasyczne wyciskanie barków z rotacją przedramienia w trakcie ruchu. Start: hantle przed twarzą, dłonie skierowane do siebie (supinacja, chwyt jak do chin-upów). W trakcie wyciskania rotujesz przedramiona na zewnątrz, tak by w lock-out dłonie były skierowane do przodu (jak w normalnym OHP). Rotacja aktywuje bardziej akton boczny i tylny deltoidu niż klasyczne wyciskanie nad głowę — w jednym powtórzeniu pracują WSZYSTKIE 3 głowy aktona. Daje dłuższy czas pod napięciem na przednim akcie niż DB OHP (większy ROM dzięki rotacji).",
+
+  "instructions": [
+    "Sit on a bench with back support (or stand for advanced version). Grab a dumbbell in each hand.",
+    "Start position: dumbbells in front of your face/chin, elbows in front of torso, palms facing YOU (supinated, like a top of a chin-up).",
+    "Brace core, ribs DOWN, squeeze glutes (or press into the bench).",
+    "Inhale, then simultaneously press the dumbbells overhead WHILE rotating the forearms outward.",
+    "Mid-press: elbows flare out to the sides, palms transition through neutral (facing each other).",
+    "At lockout: arms fully extended overhead, palms facing FORWARD (pronated) — like the top of a standard OHP. Biceps near ears.",
+    "Reverse the motion under control — lower while rotating palms back toward the body — return to the start position in front of the face.",
+    "Exhale at the top of the press. Maintain control through the entire rotation — no momentum or swinging."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce z oparciem (lub stań — wersja zaawansowana). Chwyć hantel w każdą rękę.",
+    "Pozycja start: hantle przed twarzą/brodą, łokcie przed tułowiem, dłonie skierowane DO SIEBIE (supinacja, jak na szczycie podciągania chwytem podchwytem).",
+    "Napnij brzuch, żebra W DÓŁ, ściśnij pośladki (lub mocno wciśnij się w oparcie).",
+    "Wdech, następnie jednocześnie wyciskaj hantle nad głowę I rotuj przedramiona na zewnątrz.",
+    "W połowie ruchu: łokcie rozchodzą się na boki, dłonie przechodzą przez pozycję neutralną (skierowane do siebie).",
+    "Lock-out: ramiona w pełnym wyproście nad głową, dłonie skierowane DO PRZODU (pronacja) — jak na szczycie klasycznego OHP. Bicepsy przy uszach.",
+    "Odwróć ruch kontrolowanym tempem — opuszczaj rotując dłonie z powrotem ku ciału — wróć do pozycji start przed twarzą.",
+    "Wydech na szczycie. Zachowaj kontrolę przez całą rotację — bez bujania i zamachów."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "multi",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids"],
+    "secondary": ["posterior_deltoids", "triceps", "upper_chest", "supraspinatus"],
+    "stabilizers": ["core", "rotator_cuff", "trapezius", "serratus_anterior", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P9",
+    "posterior_deltoids": "S6",
+    "triceps": "S7",
+    "upper_chest": "S5",
+    "supraspinatus": "S5",
+    "trapezius": "S5",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "S6",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["bench", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["seated-dumbbell-shoulder-press", "dumbbell-standing-overhead-press"],
+    "progression_to": ["standing-arnold-press", "single-arm-arnold-press", "heavy-arnold-press"],
+    "alternatives": ["dumbbell-overhead-press", "dumbbell-shoulder-press", "kettlebell-arnold-press", "seated-dumbbell-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells in FRONT of the face, palms facing YOU (chin-up grip)",
+      "Elbows tucked in front of torso, NOT flared yet",
+      "Sit tall with back firmly against the pad — or stand braced",
+      "Ribs DOWN, core braced, glutes squeezed",
+      "Neck neutral, eyes forward — dumbbells just below eye line"
+    ],
+    "setup_cues_pl": [
+      "Hantle PRZED twarzą, dłonie skierowane DO SIEBIE (chwyt jak podchwytem)",
+      "Łokcie przyciśnięte przed tułowiem, JESZCZE nie rozchylone",
+      "Siedź wyprostowany z plecami mocno opartymi — lub stój napięty",
+      "Żebra W DÓŁ, brzuch napięty, pośladki ściśnięte",
+      "Szyja neutralna, wzrok do przodu — hantle tuż poniżej linii oczu"
+    ],
+    "execution_cues": [
+      "PRESS and ROTATE simultaneously — they must happen TOGETHER",
+      "Rotation finishes EXACTLY when arms lock out (palms forward at the top)",
+      "Lower with the SAME tempo as you pressed — control the rotation back",
+      "Path of the dumbbells: arcs OUT and UP, not straight up",
+      "Don't let elbows drop in front at the bottom — keep them in line with the dumbbells"
+    ],
+    "execution_cues_pl": [
+      "WYCISKAJ i ROTUJ jednocześnie — to musi być JEDEN ruch",
+      "Rotacja kończy się DOKŁADNIE w momencie lock-out (dłonie do przodu na szczycie)",
+      "Opuszczaj w TYM SAMYM tempie co wyciskałeś — kontroluj rotację z powrotem",
+      "Tor hantli: łuk NA ZEWNĄTRZ i W GÓRĘ, nie prosto w górę",
+      "Nie pozwól by łokcie opadły z przodu w dole — utrzymuj je w linii z hantlami"
+    ],
+    "common_faults": [
+      {
+        "fault": "No rotation — turns into a regular shoulder press",
+        "faultPl": "Brak rotacji — ruch zamienia się w zwykłe wyciskanie barków",
+        "cause": "Weight too heavy, lack of awareness, sloppy form. Defeats the entire point of the Arnold press — kills the unique stimulus on lateral and posterior delts.",
+        "causePl": "Zbyt duży ciężar, brak świadomości ruchu, niedbała technika. Niweczy cały sens Arnold press — zabija unikalny bodziec dla bocznego i tylnego aktona.",
+        "cue": "Lower the weight. Practice rotation slowly, empty-handed first. Pause at the start (palms to face) and at the top (palms forward) on every rep.",
+        "cuePl": "Zmniejsz ciężar. Ćwicz rotację powoli, najpierw bez ciężaru. Zatrzymaj się w pozycji start (dłonie do twarzy) i na szczycie (dłonie do przodu) w każdym powtórzeniu."
+      },
+      {
+        "fault": "Pressing forward (dumbbells in front of head, not over the head)",
+        "faultPl": "Wyciskanie do przodu (hantle przed głową, nie nad głową)",
+        "cause": "Limited overhead mobility, lazy lockout, elbows drift forward instead of fully reaching overhead at the end of the rotation.",
+        "causePl": "Ograniczona mobilność overhead, leniwy lock-out, łokcie uciekają do przodu zamiast trafić bezpośrednio nad głowę na końcu rotacji.",
+        "cue": "At lockout, dumbbells should be DIRECTLY over the shoulders, biceps by the ears. If you can't reach that position, work thoracic mobility first.",
+        "cuePl": "W lock-out hantle muszą być BEZPOŚREDNIO nad barkami, bicepsy przy uszach. Jeśli nie dochodzisz do tej pozycji — najpierw popracuj nad mobilnością piersiową."
+      },
+      {
+        "fault": "Lower back arch (lumbar hyperextension)",
+        "faultPl": "Wygięcie dolnego odcinka pleców (przeprost lędźwiowy)",
+        "cause": "Weight too heavy, weak core, ribs flaring up, no glute engagement — body compensates for overhead mobility by arching the lumbar spine.",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, rozchylone żebra, brak napięcia pośladków — ciało kompensuje brak mobilności overhead lordozą lędźwiową.",
+        "cue": "Sit firmly against the pad. Squeeze glutes HARD. Ribs DOWN — no rib flare. Reduce weight if you can't keep neutral spine.",
+        "cuePl": "Mocno wciśnij się w oparcie. Ściśnij MOCNO pośladki. Żebra W DÓŁ — bez rozchylania. Zmniejsz ciężar jeśli nie utrzymujesz neutralnego kręgosłupa."
+      },
+      {
+        "fault": "Asymmetry — one arm rotates faster / higher than the other",
+        "faultPl": "Asymetria — jedna ręka rotuje szybciej / wyżej niż druga",
+        "cause": "Strength imbalance, dominant arm rushes through the rotation, weaker shoulder lags behind.",
+        "causePl": "Dysproporcja siły, dominująca ręka spieszy się z rotacją, słabsza strona zostaje w tyle.",
+        "cue": "Match tempo to the weaker arm. Consider single-arm Arnold press to address the imbalance. Lower the weight if needed.",
+        "cuePl": "Dopasuj tempo do słabszej ręki. Rozważ Arnold press jednorącz dla naprawy dysproporcji. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Using weight too light — no growth stimulus",
+        "faultPl": "Używanie zbyt małego ciężaru — brak bodźca wzrostowego",
+        "cause": "Arnold press is often treated as 'finisher / pump exercise' with tiny weights — but technique allows heavy loading and it's a quality mass builder for delts.",
+        "causePl": "Arnold press często traktowany jest jako 'finisher / pompka' z mikroskopijnymi ciężarami — ale technika pozwala na ciężkie obciążenie i to wysokiej jakości budowniczy masy dla aktonów.",
+        "cue": "Once form is dialed in, load it like a real press: 8-12 reps with weight that challenges you in the last 2-3 reps. Don't be afraid of heavier dumbbells.",
+        "cuePl": "Gdy technika jest opanowana, obciążaj jak prawdziwe wyciskanie: 8-12 powtórzeń z ciężarem który stanowi wyzwanie w ostatnich 2-3 powtórzeniach. Nie bój się większych hantli."
+      }
+    ],
+    "breathing": "Inhale before the rep, hold tension. Exhale at the top (lockout) or during the rotation back down. Keep the brace tight throughout — the rotation makes stability harder than a standard press.",
+    "breathingPl": "Wdech przed powtórzeniem, trzymaj napięcie. Wydech na szczycie (lock-out) lub w trakcie rotacji w dół. Utrzymuj mocne napięcie przez cały ruch — rotacja stawia większe wymagania stabilizacji niż klasyczne wyciskanie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "The rotation can aggravate impingement (especially in mid-press, when arms are at 90°). Reduce ROM, use lighter weight, or skip this exercise — switch to neutral-grip DB press or landmine press.",
+      "modificationPl": "Rotacja może zaostrzać impingement (szczególnie w połowie ruchu, gdy ramiona są pod kątem 90°). Zmniejsz ROM, użyj mniejszego ciężaru lub pomiń to ćwiczenie — przejdź na DB press z neutralnym chwytem lub landmine press.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Rotation under load is risky for an injured cuff. Avoid until cleared by physio. Resume with neutral-grip seated DB press or machine shoulder press.",
+      "modificationPl": "Rotacja pod obciążeniem jest ryzykowna przy uszkodzonej stożku rotatorów. Unikaj do zgody fizjoterapeuty. Wróć przez seated DB press z neutralnym chwytem lub machine shoulder press.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Without full overhead mobility, the rotation finishes with elbows in front rather than overhead — defeats the purpose. Use seated DB press first to build mobility, then reintroduce Arnold press.",
+      "modificationPl": "Bez pełnej mobilności overhead rotacja kończy się z łokciami przed sobą, nie nad głową — niweczy sens ćwiczenia. Najpierw użyj seated DB press by zbudować mobilność, potem wprowadź Arnold press.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "caution",
+      "modification": "The rotation places sustained pressure on wrists during palm transition. Use wrist wraps for support, ensure neutral wrist alignment, or use lighter weight until tolerance improves.",
+      "modificationPl": "Rotacja generuje stałe obciążenie na nadgarstki w trakcie zmiany pozycji dłoni. Użyj opasek na nadgarstki dla wsparcia, utrzymuj neutralne ustawienie nadgarstka lub zmniejsz ciężar do poprawy tolerancji."
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x10-12 (volume / shoulder day) | 3x12-15 (burnout / finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-arnold-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-arnold-press/frame_0_start.png",
+      "frames/dumbbell-arnold-press/frame_1_early.png",
+      "frames/dumbbell-arnold-press/frame_2_mid.png",
+      "frames/dumbbell-arnold-press/frame_3_late.png",
+      "frames/dumbbell-arnold-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-arnold-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "GIF zweryfikowany przez 3 klatki (siedząca wersja na ławce z oparciem). Frame 0 (start): siedząca pozycja, plecy oparte, hantle PRZED twarzą na wysokości brody, łokcie zgięte ~90° przed tułowiem, dłonie skierowane DO SIEBIE (supinacja, chwyt jak chin-up) — podświetlone przednie delty i przedramiona w pozycji wyjściowej. Frame 2 (mid/szczyt): pełen lock-out nad głową — oba ramiona w pełnym wyproście, hantle blisko siebie nad głową, dłonie skierowane DO PRZODU (pronacja, klasyczny OHP grip), bicepsy przy uszach, łokcie w pełni wyprostowane — silnie podświetlone przednie i boczne delty + tricepsy + górne czworoboczne. Frame 4 (powrót): hantle z powrotem na wysokości barków/twarzy, faza ekscentryczna z rotacją z powrotem (na klatce widać duchowe rozmycie hantli w pełnym torze rotacyjnym — potwierdza łukowaty tor ruchu z jednoczesną rotacją). Klasyczny Arnold press: rotacja przedramienia + wyciskanie w jednym ruchu, jak wymyślił Schwarzenegger. Pasuje 1:1 do specyfikacji.",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "dumbbell", "compound", "bilateral", "free_weights", "rotational", "schwarzenegger", "all_three_delt_heads", "hypertrophy_favorite"]
+}

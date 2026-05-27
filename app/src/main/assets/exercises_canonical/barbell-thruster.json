@@ -1,0 +1,214 @@
+{
+  "id": "barbell-thruster",
+  "name": "Barbell Thruster",
+  "namePl": "Thruster ze sztangą",
+  "aliases": ["thruster", "barbell thruster", "front squat to overhead press", "squat press", "barbell squat thruster"],
+  "aliasesPl": ["thruster ze sztangą", "thruster", "przysiad z wyciskaniem nad głowę", "front squat z push pressem", "squat to press ze sztangą"],
+
+  "description": "A high-intensity full-body compound movement combining a front squat and a push press into one fluid motion. The barbell is held in the front rack position; the lifter descends into a deep front squat and, using the explosive drive out of the squat, transfers momentum through the hips and legs into a vertical press, locking the bar out overhead. A CrossFit staple and conditioning classic — trains lower body strength, shoulder pressing power, core stability and cardiovascular capacity simultaneously. Extremely metabolically demanding even at moderate loads.",
+  "descriptionPl": "Intensywny ruch złożony angażujący całe ciało, łączący front squat (przysiad przedni) i push press (wyciskanie z pomocą nóg) w jeden płynny ruch. Sztanga spoczywa w pozycji front rack; ćwiczący schodzi w głęboki przysiad przedni i, wykorzystując eksplozywne wyjście z przysiadu, przenosi pęd z bioder i nóg w wyciskanie pionowe, kończąc pełnym wyprostem ramion nad głową. Klasyk CrossFitu i ćwiczenie kondycyjne — jednocześnie trenuje siłę dolnej części ciała, moc wyciskania nad głowę, stabilizację brzucha i pojemność krążeniowo-oddechową. Wyjątkowo wymagający metabolicznie nawet przy umiarkowanych obciążeniach.",
+
+  "instructions": [
+    "Load the barbell on a rack at upper-chest height (or clean it from the floor). Set up in the front rack position — bar on the front deltoids, elbows high and forward, fingertip grip with bar resting on the shoulders.",
+    "Unrack the bar and step back. Feet shoulder-width or slightly wider, toes pointed slightly out (10-20°).",
+    "Brace the core, take a big breath, lock the elbows high. The bar should sit firmly on the shelf of the front delts — your hands are guides, not load-bearers.",
+    "Descend into a front squat. Sit DOWN between the heels (not back), keep the torso as upright as possible. Knees track over toes. Go to at least parallel — ideally hip crease below knee crease (ATG if mobility allows).",
+    "At the bottom, do NOT pause — bounce out of the hole using the stretch reflex. Drive HARD through the heels and mid-foot.",
+    "As you reach full hip extension on the way up, transfer that upward momentum directly into the press. Elbows pop forward and up.",
+    "Press the bar overhead in one continuous motion. Push the head slightly back to clear the bar, then push the head 'through the window' as the bar passes the forehead.",
+    "Lock out the bar directly above the mid-foot. Elbows fully extended, shoulders shrugged up into the bar, ribs down, glutes squeezed.",
+    "Lower the bar back to the front rack with control as you simultaneously begin the next descent. The catch in the rack and the start of the next squat are one smooth movement.",
+    "Continue for prescribed reps. Maintain rhythm — thrusters live or die on continuous flow, not stop-and-go."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę na stojaku na wysokości górnej klatki (lub wyrzuć ją z ziemi w cleanie). Złap chwyt w pozycji front rack — gryf na przednich aktonach barku, łokcie wysoko i do przodu, palcami pod gryf, sztanga opiera się na barkach.",
+    "Wyjmij sztangę i cofnij się. Stopy na szerokość barków lub trochę szerzej, palce lekko na zewnątrz (10-20°).",
+    "Napnij brzuch, weź głęboki wdech, łokcie wysoko. Sztanga ma leżeć stabilnie na 'półce' przednich aktonów barku — dłonie tylko ją prowadzą, nie trzymają ciężaru.",
+    "Zejdź w front squat. Siadaj W DÓŁ między piętami (nie do tyłu), trzymaj tułów możliwie pionowo. Kolana podążają za palcami stóp. Schodź co najmniej do równoległej — najlepiej zgięcie biodra poniżej linii kolana (ATG jeśli pozwala mobilność).",
+    "Na dole NIE zatrzymuj się — odbij z dołu wykorzystując odruch rozciągowy. Mocno napieraj piętami i środkiem stóp.",
+    "Gdy osiągasz pełen wyprost bioder w drodze do góry, przenieś ten pęd do góry bezpośrednio w wyciskanie. Łokcie wyskakują do przodu i w górę.",
+    "Wyciśnij sztangę nad głowę jednym ciągłym ruchem. Cofnij głowę by zrobić miejsce, potem 'przepchnij głowę przez okno' gdy sztanga mija czoło.",
+    "Lockout — sztanga dokładnie nad środkiem stóp. Łokcie wyprostowane, barki wzruszone w górę, żebra w dół, pośladki ściśnięte.",
+    "Opuść sztangę kontrolowanie do front racku — jednocześnie zaczynaj kolejne zejście. Catch w racku i początek kolejnego przysiadu to jeden płynny ruch.",
+    "Kontynuuj przez przewidziane powtórzenia. Utrzymuj rytm — thrustery żyją lub umierają na ciągłym przepływie, nie na stop-and-go."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "anterior_deltoids", "triceps"],
+    "secondary": ["hamstrings", "trapezius", "lateral_deltoids", "erector_spinae", "calves"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "rotator_cuff", "serratus_anterior", "forearms", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "anterior_deltoids": "P9",
+    "triceps": "P7",
+    "hamstrings": "S6",
+    "trapezius": "S7",
+    "lateral_deltoids": "S7",
+    "erector_spinae": "S7",
+    "calves": "S6",
+    "core": "S8",
+    "rectus_abdominis": "S7",
+    "obliques": "S6",
+    "rotator_cuff": "S6",
+    "serratus_anterior": "S6",
+    "forearms": "S5",
+    "adductors": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["squat_rack", "weightlifting_shoes", "wrist_wraps", "belt", "chalk"]
+  },
+
+  "category": "olympic_weightlifting",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["front-squat", "barbell-overhead-press", "barbell-push-press", "barbell-clean"],
+    "progression_to": ["barbell-clean-and-jerk", "thruster-complex", "heavy-thruster"],
+    "alternatives": ["dumbbell-thruster", "kettlebell-thruster", "barbell-push-press", "barbell-clean-and-press", "goblet-squat-to-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on the front delts (the 'shelf'), NOT on the hands",
+      "Elbows HIGH and forward — parallel to the floor at minimum",
+      "Feet shoulder-width, toes 10-20° out",
+      "Vertical torso — chest up, ribs stacked, brace hard",
+      "Fingertip grip is fine — hands just guide the bar"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na przednich aktonach barku ('półka'), NIE na dłoniach",
+      "Łokcie WYSOKO i do przodu — co najmniej równolegle do podłogi",
+      "Stopy szerokość barków, palce 10-20° na zewnątrz",
+      "Pionowy tułów — klatka w górze, żebra zwinięte, mocne napięcie",
+      "Chwyt opuszkami palców jest OK — dłonie tylko prowadzą gryf"
+    ],
+    "execution_cues": [
+      "Sit DOWN between the heels, not back — keep torso vertical",
+      "Bounce out of the bottom — no pause, use stretch reflex",
+      "Drive the hips THROUGH — transfer leg power into the bar",
+      "Press as the legs finish — one fluid motion, not squat THEN press",
+      "Lock out fully overhead, then receive the bar back in the rack"
+    ],
+    "execution_cues_pl": [
+      "Siadaj W DÓŁ między piętami, nie do tyłu — tułów pionowo",
+      "Odbij z dołu — bez pauzy, wykorzystaj odruch rozciągowy",
+      "Przepchnij biodra DO PRZODU — przenieś moc nóg w sztangę",
+      "Wyciskaj gdy nogi kończą wyprost — jeden płynny ruch, nie 'przysiad POTEM wyciskanie'",
+      "Pełen lockout nad głową, potem przyjmij sztangę z powrotem w racku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drop in the front rack (catch on wrists)",
+        "faultPl": "Łokcie opadają w front rack (catch na nadgarstkach)",
+        "cause": "Poor wrist/shoulder/lat mobility, fatigue, weak upper back",
+        "causePl": "Słaba mobilność nadgarstków/barków/najszerszych, zmęczenie, słabe górne plecy",
+        "cue": "Punch elbows UP every rep. If they drop, the bar slides forward and you'll dump it. Work front rack mobility daily.",
+        "cuePl": "Wybijaj łokcie W GÓRĘ na każdym powtórzeniu. Jak opadną, sztanga zsunie się do przodu i zrzucisz ją. Pracuj nad mobilnością front rack codziennie."
+      },
+      {
+        "fault": "Squatting forward / chest collapse",
+        "faultPl": "Przysiad do przodu / zapadnięcie klatki",
+        "cause": "Weak quads, poor ankle mobility, no bracing — bar pulls the torso forward",
+        "causePl": "Słabe czworogłowe, słaba mobilność kostek, brak napięcia — sztanga ciągnie tułów do przodu",
+        "cue": "CHEST UP, elbows up. If you fold forward you'll dump the bar. Knees forward over toes, weight in mid-foot.",
+        "cuePl": "KLATKA W GÓRZE, łokcie w górze. Jak zwiniesz się do przodu, zrzucisz sztangę. Kolana do przodu nad palcami, ciężar na środku stóp."
+      },
+      {
+        "fault": "Pressing without using leg drive (turning thruster into front squat + strict press)",
+        "faultPl": "Wyciskanie bez wykorzystania nóg (zamiana thrustera na front squat + strict press)",
+        "cause": "Stopping at the top of the squat, separating the two movements",
+        "causePl": "Zatrzymanie na szczycie przysiadu, rozdzielenie obu ruchów",
+        "cue": "The press starts as the hips finish opening — ONE motion. The bar should leave the shoulders as you stand up, not after.",
+        "cuePl": "Wyciskanie zaczyna się gdy biodra kończą się otwierać — JEDEN ruch. Sztanga ma opuszczać barki podczas wstawania, nie po."
+      },
+      {
+        "fault": "Pressing in front of the body (bar drifts forward at lockout)",
+        "faultPl": "Wyciskanie sztangi przed ciałem (sztanga ucieka do przodu w lockout)",
+        "cause": "Not pushing head through, weak upper back, fatigue",
+        "causePl": "Brak 'głowy przez okno', słabe górne plecy, zmęczenie",
+        "cue": "Head slightly back, then THROUGH at lockout. Bar finishes over the EARS / mid-foot — not over the toes.",
+        "cuePl": "Głowa lekko do tyłu, potem PRZEZ okno w lockout. Sztanga kończy nad USZAMI / środkiem stóp — nie nad palcami."
+      },
+      {
+        "fault": "Lower back hyperextension at lockout (banana back)",
+        "faultPl": "Nadmierne odgięcie lędźwi w lockout ('banan' w plecach)",
+        "cause": "Weak core, weak glutes, load too heavy, poor bracing",
+        "causePl": "Słaby brzuch, słabe pośladki, zbyt duży ciężar, słabe napięcie",
+        "cue": "Squeeze glutes, ribs DOWN, brace abs. Lockout is OVERHEAD, not behind you. Reduce weight if you can't keep the line.",
+        "cuePl": "Ściśnij pośladki, żebra W DÓŁ, napnij brzuch. Lockout jest NAD głową, nie za tobą. Zmniejsz ciężar jeśli nie utrzymasz linii."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of each rep (front rack). Hold the breath through the descent and drive — exhale forcefully as you lock out overhead. Inhale again as the bar drops back to the rack. One breathing cycle per rep. In high-rep conditioning sets, breathe at the top of each lockout.",
+    "breathingPl": "Wdech i napięcie na szczycie każdego powtórzenia (front rack). Wstrzymaj oddech podczas zejścia i napędu — energiczny wydech w lockout nad głową. Kolejny wdech gdy sztanga wraca do racku. Jeden cykl oddechowy na powtórzenie. W długich seriach kondycyjnych — oddychaj na szczycie każdego lockoutu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Thruster requires full overhead lockout. If shoulder cannot achieve clean overhead position, switch to dumbbells (neutral grip) or replace with push press to a comfortable angle. Restore mobility before loading.",
+      "modificationPl": "Thruster wymaga pełnego lockoutu nad głową. Jeśli bark nie osiąga czystej pozycji nad głową, przejdź na hantle (chwyt neutralny) lub zamień na push press do komfortowego zakresu. Przywróć mobilność przed obciążaniem.",
+      "alternative": "dumbbell-thruster"
+    },
+    {
+      "condition": "wrist_pain_or_limited_extension",
+      "severity": "modify",
+      "modification": "Front rack catch demands significant wrist extension. Use wrist wraps, work mobility daily, or switch to dumbbells/kettlebells with neutral wrist position.",
+      "modificationPl": "Catch w front rack wymaga znacznego wyprostu nadgarstka. Stosuj wrist wraps, pracuj nad mobilnością codziennie, lub przejdź na hantle/kettlebells z neutralną pozycją nadgarstka.",
+      "alternative": "kettlebell-thruster"
+    },
+    {
+      "condition": "lumbar_disc_pathology_or_active_low_back_pain",
+      "severity": "avoid",
+      "modification": "High-rep ballistic loading with overhead pressing under fatigue is dangerous for compromised discs. Use a strict, non-explosive split: goblet squat + overhead press as separate exercises.",
+      "modificationPl": "Wielopowtórzeniowe balistyczne obciążenie z wyciskaniem nad głową w zmęczeniu jest niebezpieczne dla naruszonych dysków. Stosuj strict split bez fazy eksplozywnej: goblet squat + wyciskanie nad głowę jako osobne ćwiczenia.",
+      "alternative": "goblet-squat-to-press"
+    },
+    {
+      "condition": "knee_pain_at_full_flexion",
+      "severity": "modify",
+      "modification": "Front squat depth aggravates patellofemoral pain. Reduce squat depth to parallel, address quad/glute imbalance, work on ankle mobility. Box thrusters (squat to a box) provide a depth cue.",
+      "modificationPl": "Głębokość przysiadu przedniego nasila ból rzepkowo-udowy. Ogranicz głębokość do równoległej, popraw balans czworogłowe/pośladki, popraw mobilność kostek. Box thrusters (przysiad do skrzyni) dają sygnał głębokości.",
+      "alternative": "barbell-push-press"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (strength) | 3-5x8-12 (hypertrophy/conditioning) | EMOM 8-15 reps x 10 min (metcon) | 21-15-9 z deadlift/pull-up (CrossFit Fran-style) — never to technical failure under load",
+  "calories_per_kg_per_hour": 9.0,
+
+  "media": {
+    "primary": "barbell-thruster.gif",
+    "frames_extracted": [
+      "frames/barbell-thruster/frame_0_start.png",
+      "frames/barbell-thruster/frame_1_early.png",
+      "frames/barbell-thruster/frame_2_mid.png",
+      "frames/barbell-thruster/frame_3_late.png",
+      "frames/barbell-thruster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-thruster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z gif-a. Frame 0: pozycja startowa stojąca z gryfem w front rack — sztanga na przednich aktonach barku, łokcie wysoko, podświetlone czworogłowe/pośladki/przedramiona/górne plecy (klasyczny setup front rack). Frame 1: zejście w front squat — głęboka pozycja, tułów pionowy, sztanga nadal w front racku, aktywne czworogłowe + pośladki + przedramiona. Frame 2: napęd z dołu + początek wyciskania — sztanga w drodze do góry, podświetlone barki + tricepsy oprócz nóg. Frame 3: pełen lockout nad głową — ramiona wyprostowane, sztanga nad środkiem stóp, podświetlone czworogłowe/pośladki/barki/tricepsy/górne plecy/przedramiona. Frame 4: powrót do front racku na kolejne powtórzenie. To pełen thruster (front squat + push press w jednym ruchu) — widoczne ciągłe przenoszenie pędu z nóg w wyciskanie, bez pauzy na górze. movement_pattern: olympic_lift (CrossFit klasyk, hybryda squat+vertical_press). Difficulty 7/10 — wymaga koordynacji obu ruchów, mobilności front rack i overhead, ale mniej technicznie wymagający niż clean and press (brak fazy pull z ziemi). primary: quadriceps P9, glutes P9, anterior_deltoids P9, triceps P7. equipment: barbell (squat_rack opcjonalny). Wszystkie pola PL napisane od zera, nie tłumaczenie maszynowe — uwzględniono polską terminologię siłową (front rack, push press, lockout — angielskie zostają jako technical terms, jak w polskim CrossFit/PL).",
+
+  "tags": ["olympic_weightlifting", "compound", "full_body", "crossfit", "conditioning", "barbell", "overhead", "explosive", "metcon", "front_squat", "push_press"]
+}

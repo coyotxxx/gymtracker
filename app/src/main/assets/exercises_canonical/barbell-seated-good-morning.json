@@ -1,0 +1,202 @@
+{
+  "id": "barbell-seated-good-morning",
+  "name": "Barbell Seated Good Morning",
+  "namePl": "Dzień dobry ze sztangą siedząc",
+  "aliases": ["seated good morning", "bench good morning", "seated GM", "spinal erector good morning"],
+  "aliasesPl": ["seated good morning", "dzień dobry siedząc ze sztangą", "good morning na ławce", "GM siedząc"],
+
+  "description": "A seated variant of the good morning where the lifter sits on a flat bench with a barbell racked on the upper traps (high-bar position) and hinges forward at the hips. Sitting eliminates the hamstrings as a hip-extension contributor — knees are flexed near 90° throughout, so the hamstrings are slack at the hip and cannot generate hip extension force. The result is near-isolation of the spinal erectors (erector spinae) as the prime mover for trunk extension under load, with significant glute involvement. The seated position also removes lower-body balance demands, allowing the lifter to focus entirely on lumbar/thoracic bracing and a clean hip-and-spine hinge. Considered a specialty assistance exercise for strengthening the lower back without loading the legs.",
+  "descriptionPl": "Wariant ćwiczenia good morning wykonywany w pozycji siedzącej — atleta siedzi na płaskiej ławce ze sztangą opartą o górne czworoboczne (pozycja high-bar) i pochyla tułów do przodu w biodrach. Siedzenie eliminuje udział dwugłowych ud w wyproście biodra — kolana są zgięte pod kątem ~90° przez cały ruch, więc hamstringi są rozluźnione w stawie biodrowym i nie mogą generować siły prostującej biodro. Efekt: niemal pełna izolacja prostowników grzbietu (erector spinae) jako głównego mięśnia prostującego tułów pod obciążeniem, ze znaczącym udziałem pośladków. Pozycja siedząca usuwa też wymagania równowagi w dolnej części ciała, pozwalając atlecie skupić się w całości na napięciu lędźwiowo-piersiowym i czystym hingu w biodrach i kręgosłupie. Uważane za specjalistyczne ćwiczenie pomocnicze do wzmacniania dolnych pleców bez obciążania nóg.",
+
+  "instructions": [
+    "Place a barbell in a squat rack at upper-chest / shoulder height. Set a flat bench directly under the bar so that when you sit, the bar sits across your upper traps (NOT your neck).",
+    "Sit on the bench with feet flat on the floor, knees at ~90°, hip-width apart. Duck under the bar and position it on the upper traps, hands gripping just outside the shoulders.",
+    "Stand slightly with the bench behind you to unrack the bar, then carefully sit back down on the bench. Bar stays on the upper traps the whole time.",
+    "Set your back: chest up, shoulder blades retracted and depressed, brace the lats against the bar, neutral spine from tailbone to crown.",
+    "Take a big breath, brace the core (Valsalva). Keep feet planted to prevent any rocking.",
+    "Hinge forward from the hips — push your chest toward the floor between your knees. The lumbar and thoracic spine stay NEUTRAL; do not round. The movement comes from the hip joint and the controlled forward lean of the rigid torso.",
+    "Lower until your torso is roughly parallel to the floor — or stop earlier if you feel the lower back starting to round. The bar will travel forward and down with the torso.",
+    "Reverse the movement by extending at the hips and re-extending the spine, driving the chest back to vertical. Keep the bar tight to the upper traps. Exhale at the top, re-brace, and repeat."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej części klatki / barków. Ustaw płaską ławkę bezpośrednio pod gryfem tak, by gdy usiądziesz, gryf opierał się o górne czworoboczne (NIE o szyję).",
+    "Usiądź na ławce ze stopami płasko na podłodze, kolana pod kątem ~90°, na szerokość bioder. Wsuń się pod gryf i ułóż go na górnych czworobocznych, dłonie chwytają tuż na zewnątrz barków.",
+    "Lekko wstań z ławką za sobą by zdjąć gryf ze stojaka, a następnie ostrożnie usiądź z powrotem na ławce. Gryf cały czas spoczywa na czworobocznych.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte i opuszczone, najszersze napięte i dociskające gryf, neutralny kręgosłup od kości ogonowej do czubka głowy.",
+    "Nabierz głęboki oddech, napnij brzuch (Valsalva). Trzymaj stopy mocno na podłodze, by uniknąć kołysania.",
+    "Pochyl się do przodu w biodrach — wepchnij klatkę w stronę podłogi między kolana. Kręgosłup lędźwiowy i piersiowy pozostają NEUTRALNE; nie zaokrąglaj. Ruch idzie z biodra i kontrolowanego pochylenia sztywnego tułowia do przodu.",
+    "Schodź aż tułów będzie mniej więcej równolegle do podłogi — lub zatrzymaj się wcześniej jeśli czujesz, że lędźwie zaczynają się zaokrąglać. Gryf przemieszcza się w przód i w dół razem z tułowiem.",
+    "Wróć ruchem: wyprostuj biodra i kręgosłup, prowadząc klatkę z powrotem do pionu. Trzymaj gryf mocno dociśnięty do czworobocznych. Wydech na górze, ponownie napnij brzuch i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["erector_spinae"],
+    "secondary": ["glutes", "adductors"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "trapezius", "latissimus_dorsi", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "erector_spinae": "P10",
+    "glutes": "S7",
+    "adductors": "S3",
+    "core": "S8",
+    "rectus_abdominis": "S6",
+    "obliques": "S5",
+    "trapezius": "S4",
+    "latissimus_dorsi": "S4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "bench"],
+    "optional": ["squat_rack", "belt", "bar_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 7,
+    "prerequisites": ["good-morning", "barbell-back-extension", "seated-cable-row", "barbell-romanian-deadlift"],
+    "progression_to": ["pause-seated-good-morning", "deficit-good-morning", "safety-bar-seated-good-morning"],
+    "alternatives": ["good-morning", "back-extension", "jefferson-curl", "seated-cable-row-low"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar across the UPPER TRAPS, never on the neck",
+      "Sit on a flat bench, knees at ~90°, feet planted hip-width",
+      "Shoulder blades retracted, lats pulled down — squeeze the bar into your traps",
+      "Neutral spine top to bottom — chest tall before any motion",
+      "Big breath, brace the core 360° before initiating the hinge"
+    ],
+    "setup_cues_pl": [
+      "Gryf na GÓRNYCH CZWOROBOCZNYCH, nigdy na szyi",
+      "Usiądź na płaskiej ławce, kolana pod kątem ~90°, stopy szeroko na biodra",
+      "Łopatki ściągnięte, najszersze pociągnięte w dół — wbij gryf w czworoboczne",
+      "Neutralny kręgosłup od góry do dołu — klatka wysoko zanim zaczniesz ruch",
+      "Głęboki wdech, napnij brzuch dookoła 360° przed rozpoczęciem hingu"
+    ],
+    "execution_cues": [
+      "Lead with the chest — push it forward and down between the knees",
+      "Hinge at the HIPS, do not round the spine — torso stays rigid like a plank",
+      "Stop when torso is parallel to floor OR when the lower back starts to round — whichever comes first",
+      "Drive back up by extending the hips and re-extending the trunk together as one piece",
+      "Keep the bar locked to the traps the whole rep — no shifting"
+    ],
+    "execution_cues_pl": [
+      "Prowadź klatką — wepchnij ją w przód i w dół między kolana",
+      "Hinguj w BIODRACH, nie zaokrąglaj kręgosłupa — tułów jak sztywna deska",
+      "Zatrzymaj się gdy tułów jest równolegle do podłogi LUB gdy lędźwie zaczynają się zaokrąglać — co przyjdzie pierwsze",
+      "Wstawaj prostując biodra i tułów razem jako jeden kawałek",
+      "Trzymaj gryf zablokowany na czworobocznych przez całe powtórzenie — bez przesuwania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lumbar rounding under load — losing neutral spine at the bottom",
+        "faultPl": "Zaokrąglenie lędźwi pod obciążeniem — utrata neutralnego kręgosłupa na dole",
+        "cause": "Going too low, weak erectors, poor bracing, ego load — risk is amplified because seated position removes hamstring countering and puts the load almost entirely on the lower back",
+        "causePl": "Schodzenie za nisko, słabe prostowniki, słabe napięcie brzucha, ego — ryzyko jest spotęgowane bo pozycja siedząca usuwa kompensację hamstringów i kładzie obciążenie niemal w całości na dolne plecy",
+        "cue": "Stop the descent the MOMENT you lose neutral spine. Reduce load by 30-50% — this is not a heavy lift. Film yourself from the side.",
+        "cuePl": "Zatrzymaj schodzenie W MOMENCIE gdy tracisz neutralny kręgosłup. Zmniejsz obciążenie o 30-50% — to nie jest ciężki lift. Nagraj się z boku."
+      },
+      {
+        "fault": "Bar on the neck (C7) instead of on the upper traps",
+        "faultPl": "Gryf na szyi (kręg C7) zamiast na górnych czworobocznych",
+        "cause": "Not retracting and elevating the traps to create a 'shelf', or using a high-bar position without enough trap mass",
+        "causePl": "Brak ściągnięcia i uniesienia czworobocznych dla stworzenia 'półki', lub pozycja high-bar bez wystarczającej masy czworobocznych",
+        "cue": "Pull the bar HARD into the traps and squeeze the shoulder blades to build a meaty shelf. If trap mass is low, use a bar pad.",
+        "cuePl": "Pociągnij gryf MOCNO w czworoboczne i ściśnij łopatki by zbudować mięsną półkę. Jeśli masz mało masy w czworobocznych, użyj nakładki na gryf."
+      },
+      {
+        "fault": "Rocking on the bench / lifting feet — losing the seated anchor",
+        "faultPl": "Kołysanie się na ławce / odrywanie stóp — utrata stabilności w pozycji siedzącej",
+        "cause": "Trying to use leg drive or momentum because the lower back is unable to push the weight; insufficient bracing",
+        "causePl": "Próba użycia napędu nóg lub rozpędu, bo dolne plecy nie dają rady wypchnąć ciężaru; niewystarczające napięcie brzucha",
+        "cue": "Stomp the feet into the floor and KEEP them there. If you have to rock, the weight is too heavy — drop it.",
+        "cuePl": "Wbij stopy w podłogę i TRZYMAJ je tam. Jeśli musisz się kołysać, ciężar jest za duży — zmniejsz go."
+      },
+      {
+        "fault": "Hinging from the spine instead of the hips — turning it into a Jefferson curl with load",
+        "faultPl": "Hingowanie z kręgosłupa zamiast bioder — zamienia ruch w Jefferson curl pod obciążeniem",
+        "cause": "Lack of hip mobility in the seated position, or no understanding of where the hinge originates",
+        "causePl": "Brak mobilności biodra w pozycji siedzącej, lub brak zrozumienia skąd pochodzi hinge",
+        "cue": "Initiate by pushing the chest forward as one rigid piece — feel the fold happen at the crease of the hip, not vertebra by vertebra.",
+        "cuePl": "Zacznij od wypchnięcia klatki do przodu jako jednej sztywnej części — poczuj że załamanie zachodzi w fałdzie biodra, nie kręg po kręgu."
+      },
+      {
+        "fault": "Going too deep — chasing parallel or beyond at the cost of spinal neutral",
+        "faultPl": "Schodzenie za głęboko — gonienie pozycji równoległej lub poniżej kosztem neutralnego kręgosłupa",
+        "cause": "Confusing this with a regular good morning or RDL where deeper = better stretch; not respecting that the seated version is an erector specialty lift",
+        "causePl": "Mylenie tego z klasycznym good morning lub RDL gdzie głębiej = lepszy rozciąg; brak respektu, że wersja siedząca to specjalistyczne ćwiczenie na prostowniki",
+        "cue": "Range of motion is whatever you can do with a perfectly neutral spine — usually 60-80° of forward lean. Stop there. Quality > depth.",
+        "cuePl": "Zakres ruchu to tyle, ile możesz zrobić z idealnie neutralnym kręgosłupem — zwykle 60-80° pochylenia. Zatrzymaj się tam. Jakość > głębokość."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace (Valsalva), hold during the descent and ascent. Exhale at the top of each rep, then re-brace before the next. NEVER exhale during the eccentric — the spinal load is maximal at the bottom and bracing must be uninterrupted.",
+    "breathingPl": "Głęboki wdech na górze, napięcie (Valsalva), trzymaj podczas schodzenia i wchodzenia. Wydech na górze każdego powtórzenia, potem znowu napnij przed kolejnym. NIGDY wydech podczas ekscentryku — obciążenie kręgosłupa jest maksymalne na dole i napięcie nie może być przerwane."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Do not perform — seated GM puts near-maximal isolated load on the erectors and is one of the highest-risk lifts for an injured lumbar spine.",
+      "modificationPl": "Pełen odpoczynek. Nie wykonuj — seated GM kładzie niemal maksymalne izolowane obciążenie na prostowniki i jest jednym z najbardziej ryzykownych ćwiczeń dla uszkodzonego kręgosłupa lędźwiowego.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion under shear forces is highly contraindicated. Use prone hyperextensions or reverse hyperextensions (less shear).",
+      "modificationPl": "Obciążona flexja kręgosłupa pod siłami ścinającymi jest mocno przeciwwskazana. Użyj wyprostów na ławce skośnej lub reverse hyperextensions (mniejsze siły ścinające).",
+      "alternative": "back-extension"
+    },
+    {
+      "condition": "spondylolisthesis",
+      "severity": "avoid",
+      "modification": "Compressive load combined with shear at the lumbar vertebrae is a worst-case loading pattern for spondylolisthesis. Use unloaded extension work only, under PT supervision.",
+      "modificationPl": "Obciążenie kompresyjne w połączeniu z siłami ścinającymi na kręgach lędźwiowych to najgorszy wzorzec obciążenia dla spondylolistezy. Używaj tylko nieobciążonych wyprostów pod nadzorem fizjoterapeuty.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Bar must sit on a well-developed upper-trap shelf — never on the cervical spine. Use a bar pad or safety squat bar variant. If neck pain occurs, stop immediately.",
+      "modificationPl": "Gryf musi spoczywać na dobrze rozwiniętej półce z górnych czworobocznych — nigdy na kręgosłupie szyjnym. Użyj nakładki na gryf lub wariantu z gryfem SSB. Jeśli pojawi się ból szyi, przerwij natychmiast.",
+      "alternative": "safety-bar-seated-good-morning"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy / erector strength) | 3-4x6-8 (strength — light to moderate load) | 2-3x12-15 (back rehab adjunct, very light)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-seated-good-morning.gif",
+    "frames_extracted": [
+      "frames/barbell-seated-good-morning/frame_0_start.png",
+      "frames/barbell-seated-good-morning/frame_1_early.png",
+      "frames/barbell-seated-good-morning/frame_2_mid.png",
+      "frames/barbell-seated-good-morning/frame_3_late.png",
+      "frames/barbell-seated-good-morning/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-seated-good-morning"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (247 KB, 12 oryginalnych klatek). Frame 0 (start cyklu w GIFie): pozycja dolna — atleta siedzi na płaskiej ławce, tułów pochylony do przodu prawie równolegle do podłogi, gryf na górnych czworobocznych, kolana zgięte ~90°, stopy płasko na podłodze. Bardzo mocno podświetlone: erector spinae (cały słup wzdłuż kręgosłupa) i pośladki. Frame 2: pozycja górna / pionowa — tułów wyprostowany, gryf high-bar na czworobocznych, prostowniki nadal widoczne ale mniej intensywnie. Frame 4: powrót do pochylenia do przodu, identyczna mechanika jak Frame 0. Kluczowa obserwacja potwierdzona z GIFa: kolana zgięte ~90° przez CAŁY ruch — hamstringi są skrócone na kolanie i rozluźnione w stawie biodrowym, więc nie mogą uczestniczyć w wyproście biodra. To eliminuje główne 'maskowanie' obciążenia erectorów obecne w stojącym good morning czy RDL. Klasyfikacja jako 'hinge' (czysty hip + spine hinge), compound (zaangażowane staw biodrowy + kręgosłup), kinetic_chain 'open' bo stopy są na podłodze ale nie generują siły napędowej (atleta siedzi). Equipment: barbell + bench (oba wymagane). Trudność 7 (advanced) — wyższa niż stojące good morning (6) i RDL (6), bo (a) eliminacja kompensacji hamstringów daje pełne obciążenie erectorów, (b) wymaga dyscypliny w doborze ciężaru — łatwo o kontuzję, (c) ustawienie startu (zdjęcie ze stojaka i siadanie) jest niewygodne. primary: erector_spinae P10 (jedyny prime mover, niemal izolacja). secondary: glutes S7 (wyprost biodra), adductors S3 (stabilizacja). core S8 jako bardzo silny stabilizator — bez napięcia brzucha kręgosłup zaokrągla się natychmiast. 4 common_faults (lumbar rounding, gryf na szyi, kołysanie, hinge z kręgosłupa, za głęboko = de facto 5) — wszystkie zaobserwowane jako realne błędy treningowe dla tego ćwiczenia. 4 contraindications: acute LBI, disc herniation, spondylolisthesis (3 absolute avoids — najwyższe ryzyko ze wszystkich ćwiczeń na erectory), cervical caution. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii (hinge, prostowniki grzbietu, czworoboczne, Valsalva, high-bar).",
+
+  "tags": ["bodybuilding", "powerlifting", "lower_back", "erector_spinae_isolation", "hip_hinge", "barbell", "bench", "compound", "assistance_lift", "specialty_lift", "lumbar_strength"]
+}

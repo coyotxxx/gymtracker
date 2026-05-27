@@ -1,0 +1,207 @@
+{
+  "id": "barbell-floor-calf-raise",
+  "name": "Barbell Floor Calf Raise",
+  "namePl": "Wspięcia na łydki ze sztangą na podłodze",
+  "aliases": ["standing barbell calf raise on floor", "bb floor calf raise", "barbell calf raise no block", "flat floor barbell calf raise"],
+  "aliasesPl": ["wspięcia na palce ze sztangą stojąc na podłodze", "stojące wspięcia łydek ze sztangą bez podwyższenia", "barbell calf raise z podłogi", "wspięcia na łydki ze sztangą na barkach na płaskiej podłodze"],
+
+  "description": "Standing isolation exercise for the calves performed with a barbell across the upper back (back-squat position), feet placed flat on the floor with no elevation. The athlete drives onto the balls of the feet and presses the heels as high as possible, then lowers under control back to the floor. Because the feet are not elevated, the heels cannot drop below toe level — range of motion is limited to the concentric (push up) phase plus a short eccentric back to neutral, with no deep stretch under the toes. The standing position with extended knees keeps the gastrocnemius engaged, making this primarily a gastrocnemius-dominant lift, with the soleus contributing as a secondary plantarflexor. This is a beginner-friendly, no-equipment-block variation suitable for home or minimalist setups, but it sacrifices stretch-mediated hypertrophy compared to elevated or machine versions.",
+  "descriptionPl": "Stojące izolowane ćwiczenie na łydki ze sztangą opartą na górnej części pleców (jak przy przysiadzie ze sztangą z tyłu), stopy ustawione płasko bezpośrednio na podłodze, bez żadnego podwyższenia. Ćwiczący wypycha się na śródstopia i unosi pięty maksymalnie wysoko, a następnie kontrolowanie opuszcza je z powrotem na podłogę. Ponieważ stopy nie są podniesione, pięty nie mogą opaść poniżej poziomu palców — zakres ruchu jest ograniczony do fazy koncentrycznej (wypchnięcie w górę) plus krótkiej fazy ekscentrycznej powrotu do neutralnej pozycji, bez głębokiego rozciągu pod palcami. Pozycja stojąca z wyprostowanymi kolanami utrzymuje aktywność mięśnia brzuchatego łydki, dzięki czemu ćwiczenie pracuje przede wszystkim na gastrocnemiusie, a płaszczkowaty pełni rolę drugorzędnego zginacza podeszwowego. Jest to początkujący wariant bez konieczności posiadania klocka, odpowiedni do domu i minimalistycznej siłowni, ale rezygnuje z hipertrofii zależnej od rozciągu w porównaniu z wersją na podwyższeniu lub na maszynie.",
+
+  "instructions": [
+    "Set a loaded barbell in a power rack at upper-chest height, walk under it and unrack it across the upper traps or rear delts as in a back squat. Hands grip the bar just outside the shoulders.",
+    "Step back into a stable stance with feet hip-width to shoulder-width apart, toes pointing straight ahead or slightly outward.",
+    "Plant the feet flat on the floor. Set a tall posture: chest up, neutral spine, brace the core, knees soft but essentially straight (do not bend the knees during the lift).",
+    "Begin the rep by driving through the balls of the feet and pressing the heels straight up as high as possible. Exhale during the push.",
+    "At the top, pause for 1-2 seconds with the heels maximally elevated and the calves visibly contracted.",
+    "Lower the heels slowly under control over 2-3 seconds back to the floor. Inhale during the descent.",
+    "Touch the heels lightly to the floor and immediately initiate the next rep — do not collapse the standing posture.",
+    "Keep the knees nearly straight throughout. If you bend the knees to help the rep, you are no longer training the calves efficiently.",
+    "Stop the set when heel height noticeably drops or when calves cramp/burn out, not by chasing arbitrary rep counts."
+  ],
+  "instructionsPl": [
+    "Ustaw obciążoną sztangę w stojakach na wysokości górnej części klatki, wejdź pod nią i połóż ją na karku lub tylnych aktonach (jak przy przysiadzie ze sztangą z tyłu). Dłonie chwytają sztangę tuż za barkami.",
+    "Cofnij się w stabilną pozycję, stopy rozstawione na szerokość bioder do barków, palce skierowane prosto przed siebie lub lekko na zewnątrz.",
+    "Postaw stopy płasko na podłodze. Przyjmij wyprostowaną postawę: klatka uniesiona, neutralny kręgosłup, napięty brzuch, kolana miękkie ale w zasadzie wyprostowane (nie zginaj ich podczas ruchu).",
+    "Rozpocznij powtórzenie wypychając się przez śródstopia i unosząc pięty prosto w górę najwyżej jak potrafisz. Wydech podczas wypychania.",
+    "W górnej pozycji zatrzymaj się na 1-2 sekundy z piętami maksymalnie uniesionymi i widocznie napiętymi łydkami.",
+    "Opuszczaj pięty powoli i pod kontrolą przez 2-3 sekundy z powrotem na podłogę. Wdech podczas opuszczania.",
+    "Lekko dotknij piętami podłogi i od razu inicjuj kolejne powtórzenie — nie zatracaj wyprostowanej pozycji.",
+    "Utrzymuj kolana niemal wyprostowane przez cały ruch. Jeśli zginasz kolana, aby ułatwić sobie powtórzenie, nie trenujesz już łydek skutecznie.",
+    "Zakończ serię gdy wysokość uniesienia pięty wyraźnie spada lub gdy łydki zaczynają się skurczowo palić — nie goń za sztywną liczbą powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius", "soleus"],
+    "secondary": ["tibialis_posterior", "peroneals"],
+    "stabilizers": ["foot_intrinsics", "quadriceps", "glutes", "core", "spinal_erectors"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P9",
+    "soleus": "S6",
+    "tibialis_posterior": "T3",
+    "peroneals": "T3",
+    "foot_intrinsics": "T3",
+    "quadriceps": "T2",
+    "glutes": "T2",
+    "core": "T2",
+    "spinal_erectors": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "power_rack", "squat_rack", "barbell_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-calf-raise"],
+    "progression_to": ["barbell-standing-calf-raise", "machine-standing-calf-raise", "smith-machine-calf-raise", "donkey-calf-raise"],
+    "alternatives": ["dumbbell-calf-raise", "bodyweight-calf-raise", "smith-machine-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps or rear delts, hands just outside shoulders",
+      "Feet hip- to shoulder-width, toes straight ahead, flat on floor",
+      "Tall chest, neutral spine, lightly braced core",
+      "Knees nearly straight — soft, not locked, not bent",
+      "Eyes forward, weight balanced over mid-foot"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na karku lub tylnych aktonach, dłonie tuż za barkami",
+      "Stopy na szerokość bioder do barków, palce prosto, płasko na podłodze",
+      "Wyprostowana klatka, neutralny kręgosłup, lekko napięty brzuch",
+      "Kolana niemal wyprostowane — miękkie, nie zablokowane, nie zgięte",
+      "Wzrok do przodu, ciężar rozłożony nad śródstopiem"
+    ],
+    "execution_cues": [
+      "Push through the balls of the feet, drive heels straight up",
+      "Reach max heel height every rep — no half reps",
+      "Pause 1-2 seconds at the top, squeeze the calves hard",
+      "Lower slowly under control — do not freefall to the floor",
+      "Keep knees still — calves do all the work, not the knees"
+    ],
+    "execution_cues_pl": [
+      "Pchaj przez śródstopia, wypychaj pięty prosto w górę",
+      "Sięgaj maksymalnej wysokości pięt w każdym powtórzeniu — bez połowicznych ruchów",
+      "Pauza 1-2 sekundy w górze, mocno spinaj łydki",
+      "Opuszczaj powoli pod kontrolą — nie pozwalaj piętom spadać swobodnie",
+      "Trzymaj kolana nieruchomo — całą pracę wykonują łydki, nie kolana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knees to help raise the bar",
+        "faultPl": "Zginanie kolan, aby pomóc unieść sztangę",
+        "cause": "Loading too heavy, treating it like a partial squat-and-bounce, weak calves cheating with quads",
+        "causePl": "Zbyt duży ciężar, traktowanie ruchu jak częściowy przysiad z odbiciem, słabe łydki oszukują czworogłowymi",
+        "cue": "Lock knees soft-straight and freeze them. If they bend, drop the weight by 20% — the rep is a cheat.",
+        "cuePl": "Wyprostuj kolana 'miękko' i unieruchom je. Jeśli się zginają, zmniejsz ciężar o 20% — powtórzenie jest oszukane."
+      },
+      {
+        "fault": "Limited range of motion — no full heel rise",
+        "faultPl": "Ograniczony zakres ruchu — brak pełnego uniesienia pięt",
+        "cause": "Going too heavy, foot/ankle mobility limitation, or being on flat floor with no toe-elevation cue",
+        "causePl": "Zbyt duży ciężar, ograniczona mobilność stopy lub stawu skokowego, lub brak intencji maksymalnego uniesienia na płaskiej podłodze",
+        "cue": "Reach for the ceiling with the heels every rep. If you cannot hit max heel height, reduce the load.",
+        "cuePl": "Sięgaj sufitu piętami w każdym powtórzeniu. Jeśli nie osiągasz maksymalnej wysokości, zmniejsz obciążenie."
+      },
+      {
+        "fault": "Bouncing the heels off the floor between reps",
+        "faultPl": "Odbijanie pięt od podłogi między powtórzeniami",
+        "cause": "Using Achilles stretch-reflex instead of muscular work, chasing rep count, going too heavy",
+        "causePl": "Wykorzystywanie odruchu rozciągowego ścięgna Achillesa zamiast pracy mięśniowej, gonienie za liczbą powtórzeń, zbyt duży ciężar",
+        "cue": "Touch the heels gently and pause briefly before driving up. No tendon-rebound reps.",
+        "cuePl": "Delikatnie dotknij piętami i krótko zatrzymaj się przed kolejnym wypchnięciem. Bez powtórzeń napędzanych odbiciem ścięgna."
+      },
+      {
+        "fault": "Forward lean of the torso under heavy load",
+        "faultPl": "Pochylenie tułowia do przodu pod dużym obciążeniem",
+        "cause": "Bar too heavy for trunk stability, weak core, looking down at feet",
+        "causePl": "Zbyt duży ciężar dla stabilności tułowia, słaby brzuch, patrzenie w dół na stopy",
+        "cue": "Eyes forward, ribs over hips, brace the core like a back squat — keep the torso vertical.",
+        "cuePl": "Wzrok do przodu, żebra nad biodrami, napnij brzuch jak w przysiadzie — utrzymuj tułów pionowo."
+      },
+      {
+        "fault": "Rolling onto the outside edge of the foot at the top",
+        "faultPl": "Przetaczanie ciężaru na zewnętrzną krawędź stopy w górze",
+        "cause": "Weak peroneals / poor foot control, narrow stance with toes too far in, ankle instability",
+        "causePl": "Słabe mięśnie strzałkowe, słaba kontrola stopy, zbyt wąska pozycja z palcami do wewnątrz, niestabilność stawu skokowego",
+        "cue": "Drive straight up through the big toe and second toe. Keep the foot tripod stable — no rolling outward.",
+        "cuePl": "Wypychaj się prosto w górę przez paluch i drugi palec. Utrzymuj trójpunktowe podparcie stopy — bez przetaczania na zewnątrz."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric, heel raise), inhale on the way down (eccentric, return to floor). Maintain a moderate brace throughout to support the bar on the back.",
+    "breathingPl": "Wydech w trakcie wypychania w górę (faza koncentryczna, unoszenie pięt), wdech podczas opuszczania (faza ekscentryczna, powrót na podłogę). Utrzymuj umiarkowane napięcie brzucha przez cały ruch, aby wspierać sztangę na plecach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce load by at least 50% during the irritable phase and use slow tempo. The flat-floor version is actually safer than elevated variants because heels cannot drop into deep stretch — but stop if pain exceeds 3/10 during or 24h after sets.",
+      "modificationPl": "Zmniejsz obciążenie o co najmniej 50% w fazie podrażnienia i stosuj wolne tempo. Wersja z płaskiej podłogi jest bezpieczniejsza niż warianty z podwyższeniem, ponieważ pięty nie schodzą w głęboki rozciąg — przerwij jeśli ból przekracza 3/10 w trakcie lub 24h po seriach.",
+      "alternative": "machine-standing-calf-raise"
+    },
+    {
+      "condition": "lumbar_disc_issues_or_low_back_pain",
+      "severity": "modify",
+      "modification": "Loading a barbell on the upper back compresses the spine. With acute lumbar pain or disc herniation, avoid this variant entirely. Use dumbbells held at the sides or a standing calf machine that loads the shoulders externally without spinal compression.",
+      "modificationPl": "Sztanga na górnej części pleców powoduje kompresję kręgosłupa. Przy ostrym bólu lędźwiowym lub przepuklinie dysku całkowicie zrezygnuj z tego wariantu. Użyj hantli trzymanych po bokach lub stojącej maszyny do łydek, która obciąża barki zewnętrznie bez kompresji kręgosłupa.",
+      "alternative": "dumbbell-calf-raise"
+    },
+    {
+      "condition": "ankle_instability_or_recent_sprain",
+      "severity": "modify",
+      "modification": "Heavy bilateral barbell loading on an unstable ankle risks re-injury. Wait until pain-free with full balance restored, then begin with bodyweight on flat floor before adding the bar.",
+      "modificationPl": "Obustronne duże obciążenie sztangą na niestabilnym stawie skokowym grozi nawrotem urazu. Poczekaj do całkowitego ustąpienia bólu i przywrócenia pełnej równowagi, następnie zacznij od wspięć z masą własnego ciała na płaskiej podłodze przed dodaniem sztangi.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "shoulder_mobility_restriction",
+      "severity": "modify",
+      "modification": "Holding the bar across the upper back requires external rotation and overhead-adjacent shoulder mobility. If grip on the bar causes shoulder pain, use a safety squat bar, a thicker pad, or switch to dumbbells at the sides.",
+      "modificationPl": "Trzymanie sztangi na karku wymaga rotacji zewnętrznej i mobilności obręczy barkowej. Jeśli chwyt sprawia ból w barku, użyj specjalnego gryfu (safety squat bar), grubszego ochraniacza lub przejdź na hantle trzymane po bokach.",
+      "alternative": "dumbbell-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x15-25 (hypertrophy) | 4-5x10-15 (heavier emphasis) | 2-3x25-40 (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "barbell-floor-calf-raise.gif",
+    "frames_extracted": [
+      "frames/barbell-floor-calf-raise/frame_0_start.png",
+      "frames/barbell-floor-calf-raise/frame_1_early.png",
+      "frames/barbell-floor-calf-raise/frame_2_mid.png",
+      "frames/barbell-floor-calf-raise/frame_3_late.png",
+      "frames/barbell-floor-calf-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/barbell-floor-calf-raise",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end), widok od tyłu. Frame 0 (start): model stoi prosto, stopy płasko na podłodze, sztanga oparta na karku (back-squat position), dłonie na sztandze tuż za barkami, kolana niemal wyprostowane, pięty na podłodze, łydki podświetlone na czerwono — pozycja wyjściowa. Frame 2 (mid): model uniósł pięty wyraźnie nad podłogę, ciało wyższe o kilka cm, sztanga uniesiona wraz z całym ciałem, łydki w pełnym skurczu, kolana nadal wyprostowane, plecy proste — szczyt ruchu (koncentryczny). Frame 4 (end): powrót do pozycji stojącej z piętami na podłodze. Brak jakiegokolwiek podwyższenia/klocka pod śródstopiami — model stoi bezpośrednio na płaskiej podłodze, co potwierdza nazwę 'floor' i ograniczony ROM (brak fazy z piętą poniżej palców). Klasyfikacja: gastrocnemius dominant (P9) bo kolano wyprostowane, soleus secondary (S6), kinetic_chain=closed (stopy na podłodze, przeciwnie do seated wariantu open chain). Wszystkie pola PL napisane od zera, dostosowane do specyfiki płaskiej podłogi (bez klocka, bez deep stretch). Yuhonas i glowupp nie mają tego ćwiczenia.",
+
+  "tags": ["bodybuilding", "calves", "gastrocnemius", "soleus", "isolation", "barbell", "lower_body", "lower_legs", "standing", "beginner_friendly", "home_gym"]
+}

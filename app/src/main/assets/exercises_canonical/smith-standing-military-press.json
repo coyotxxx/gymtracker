@@ -1,0 +1,202 @@
+{
+  "id": "smith-standing-military-press",
+  "name": "Smith Standing Military Press",
+  "namePl": "Wyciskanie żołnierskie stojąc w maszynie Smitha",
+  "aliases": ["smith machine military press", "smith machine overhead press", "smith standing OHP", "smith shoulder press standing"],
+  "aliasesPl": ["military press w Smith machine", "wyciskanie nad głowę w Smith", "OHP w Smith machine", "wyciskanie barków stojąc w Smith"],
+
+  "description": "Standing vertical press performed in a Smith machine. The fixed bar path removes the balance demand of a free barbell, allowing the lifter to focus purely on pushing strength of the deltoids and triceps. Bar travels from front rack (clavicle level) to a fully locked-out overhead position along a guided track. Best used as an accessory to barbell OHP — or as a primary press for lifters with stabilizer weakness, returning from injury, or training alone without a spotter.",
+  "descriptionPl": "Pionowe wyciskanie stojąc wykonywane w maszynie Smitha. Stała tor gryfu eliminuje konieczność balansowania jak przy wolnej sztandze, pozwalając skupić się czysto na sile wypychającej aktonów i tricepsów. Gryf przemieszcza się od pozycji front rack (na wysokości obojczyków) do pełnego lock-out nad głową po prowadnicy. Najlepsze jako uzupełnienie OHP ze sztangą — lub jako główne wyciskanie dla osób ze słabymi stabilizatorami, wracających po kontuzji lub trenujących samotnie bez asekuracji.",
+
+  "instructions": [
+    "Set the Smith machine bar at upper-chest height. Position yourself directly under the bar.",
+    "Grip the bar slightly wider than shoulder-width, palms facing up. Unrack with a small wrist rotation.",
+    "Stand tall, feet hip- to shoulder-width apart. Bar rests on front delts (front rack), elbows just below bar.",
+    "Brace core HARD, squeeze glutes, ribs DOWN. Take a deep breath.",
+    "Press the bar straight up along the Smith track until elbows lock out overhead — biceps near ears.",
+    "Lower with control back to the front rack position (clavicle level).",
+    "Keep the body stacked under the bar — DO NOT lean back excessively or use leg drive.",
+    "Exhale at the top of the press. Re-brace before the next rep."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf maszyny Smitha na wysokości górnej klatki. Stań dokładnie pod gryfem.",
+    "Złap gryf nieco szerzej niż na szerokość barków, dłonie w supinacji (do góry). Wyciągnij z lekkim obrotem nadgarstków.",
+    "Stań prosto, stopy na szerokość bioder do barków. Gryf spoczywa na przednich aktonach (front rack), łokcie tuż pod gryfem.",
+    "Mocno napnij brzuch, ściśnij pośladki, żebra W DÓŁ. Głęboki wdech.",
+    "Wyciśnij gryf prosto w górę po prowadnicy Smitha do pełnego lock-out — bicepsy przy uszach.",
+    "Opuszczaj kontrolowanym ruchem do pozycji front rack (na wysokość obojczyków).",
+    "Ciało pod gryfem — NIE odchylaj się mocno do tyłu i NIE używaj napędu z nóg.",
+    "Wydech na szczycie wyciskania. Ponowne napięcie przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps", "upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P10",
+    "lateral_deltoid": "P7",
+    "triceps": "S8",
+    "upper_chest": "S5",
+    "trapezius": "S5",
+    "serratus_anterior": "S4",
+    "core": "S6",
+    "glutes": "S4"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-shoulder-press", "machine-shoulder-press"],
+    "progression_to": ["barbell-overhead-press", "push-press", "z-press"],
+    "alternatives": ["barbell-overhead-press", "seated-barbell-overhead-press", "machine-shoulder-press", "dumbbell-standing-overhead-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand DIRECTLY under the bar (not in front of it)",
+      "Bar on front delts, elbows just below bar",
+      "Wrists straight, bar in palm heel",
+      "Feet hip- to shoulder-width, glutes squeezed",
+      "Core braced, ribs DOWN, eyes forward"
+    ],
+    "setup_cues_pl": [
+      "Stań DOKŁADNIE pod gryfem (nie przed nim)",
+      "Gryf na przednich aktonach, łokcie tuż pod gryfem",
+      "Nadgarstki proste, gryf w podstawie dłoni",
+      "Stopy na szerokość bioder do barków, pośladki ściśnięte",
+      "Brzuch napięty, żebra W DÓŁ, wzrok do przodu"
+    ],
+    "execution_cues": [
+      "Press straight up along the track — let the machine guide you",
+      "Lock out fully overhead, biceps by ears",
+      "Stay stacked under the bar — body doesn't lean back",
+      "Lower under control (don't drop the bar onto chest)",
+      "Glutes and quads LOCKED throughout — no leg drive"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę po prowadnicy — pozwól maszynie cię prowadzić",
+      "Pełen lock-out nad głową, bicepsy przy uszach",
+      "Ciało pod gryfem — nie odchylaj się do tyłu",
+      "Opuszczaj kontrolowanym ruchem (nie upuszczaj na klatkę)",
+      "Pośladki i czworogłowe ZABLOKOWANE — bez napędu z nóg"
+    ],
+    "common_faults": [
+      {
+        "fault": "Excessive backward lean (treating it like an incline bench)",
+        "faultPl": "Nadmierne odchylanie do tyłu (jak na ławce skośnej)",
+        "cause": "Standing too far in front of the bar, weight too heavy, weak core/glutes",
+        "causePl": "Stanie zbyt daleko przed gryfem, zbyt duży ciężar, słaby brzuch/pośladki",
+        "cue": "Step CLOSER to the bar. Squeeze glutes, ribs down. Reduce weight if back keeps arching.",
+        "cuePl": "Stań BLIŻEJ gryfu. Ściśnij pośladki, żebra w dół. Zmniejsz ciężar jeśli plecy ciągle się odginają."
+      },
+      {
+        "fault": "Using leg drive (push press style)",
+        "faultPl": "Używanie napędu z nóg (styl push press)",
+        "cause": "Trying to lift heavier than strict-press capacity",
+        "causePl": "Próba wyciśnięcia więcej niż pozwala strict press",
+        "cue": "Glutes and quads LOCKED. If you can't lift it without leg drive, lower the weight.",
+        "cuePl": "Pośladki i czworogłowe ZABLOKOWANE. Jeśli nie wyciskasz bez napędu nóg — zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete lockout (biceps not by ears)",
+        "faultPl": "Niepełen lock-out (bicepsy nie przy uszach)",
+        "cause": "Poor overhead mobility, weak triceps, weight too heavy",
+        "causePl": "Słaba mobilność overhead, słabe tricepsy, zbyt duży ciężar",
+        "cue": "Work overhead mobility separately. Light weight to full lockout — earn the right to add load.",
+        "cuePl": "Pracuj osobno nad mobilnością overhead. Lekki ciężar do pełnego lock-out — zasłuż na dokładanie."
+      },
+      {
+        "fault": "Wrist extended (bar in fingers, not palm)",
+        "faultPl": "Wygięty nadgarstek (gryf w palcach, nie w dłoni)",
+        "cause": "Improper grip, weak wrists, or elbow position too low",
+        "causePl": "Niepoprawny chwyt, słabe nadgarstki, lub łokcie za nisko",
+        "cue": "Bar in palm heel. Wrist NEUTRAL. Use wraps if necessary.",
+        "cuePl": "Gryf w podstawie dłoni. Nadgarstek NEUTRALNY. Użyj wraps jeśli trzeba."
+      },
+      {
+        "fault": "Bouncing the bar off the chest at the bottom",
+        "faultPl": "Odbijanie gryfu od klatki na dole",
+        "cause": "Trying to use momentum, rushing the rep",
+        "causePl": "Próba użycia momentum, zbyt szybkie tempo",
+        "cue": "Pause briefly at the bottom (front rack). Controlled press up — no bounce.",
+        "cuePl": "Krótka pauza na dole (front rack). Kontrolowane wyciskanie — bez odbijania."
+      }
+    ],
+    "breathing": "Inhale and brace HARD before each rep. Hold during the press. Exhale at lockout. The fixed bar path doesn't reduce the need for a solid brace — bracing protects the spine especially when leaning even slightly back.",
+    "breathingPl": "Wdech i mocne napięcie przed każdym powtórzeniem. Trzymaj podczas wyciskania. Wydech w lock-out. Stała tor gryfu nie zmniejsza potrzeby napięcia — napięcie chroni kręgosłup zwłaszcza gdy choćby lekko odchylasz się do tyłu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't go below clavicle), or switch to landmine press (angled, more shoulder-friendly).",
+      "modificationPl": "Zmniejsz ROM (nie schodź poniżej obojczyka), lub przejdź na landmine press (kątowo, bardziej przyjazne dla barku).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "The fixed Smith path can be PROBLEMATIC for limited shoulders — there's no room to adjust the angle. Work mobility first, or use landmine press until full overhead lockout is possible.",
+      "modificationPl": "Stała tor Smitha może być PROBLEMATYCZNA przy ograniczonej mobilności — nie ma miejsca na dostosowanie kąta. Najpierw popracuj nad mobilnością, lub używaj landmine press do pełnego lock-out overhead.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to seated Smith shoulder press (back supported by upright bench) until pain resolves.",
+      "modificationPl": "Przejdź na siedzący Smith shoulder press (plecy oparte o ławkę) do ustąpienia bólu.",
+      "alternative": "seated-barbell-overhead-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid heavy overhead pressing until cleared by PT. Resume with high-rep, light-weight machine work (seated chest-supported preferred).",
+      "modificationPl": "Unikaj ciężkiego wyciskania overhead do zgody fizjoterapeuty. Wróć przez wysokopowtórzeniowe lekkie maszyny (najlepiej z podparciem klatki).",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy) | 4x8-12 (accessory) | 3x10-15 (high volume)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "smith-standing-military-press.gif",
+    "frames_extracted": [
+      "frames/smith-standing-military-press/frame_0_start.png",
+      "frames/smith-standing-military-press/frame_1_early.png",
+      "frames/smith-standing-military-press/frame_2_mid.png",
+      "frames/smith-standing-military-press/frame_3_late.png",
+      "frames/smith-standing-military-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/smith-standing-military-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja start — lifter stojąc w Smith machine, gryf na przednich aktonach (front rack), tuż przy obojczykach, łokcie pod gryfem. Frame 2: pełen lock-out overhead, ramiona wyprostowane, gryf nad głową po prowadnicy Smitha. Frame 4: powrót do front rack. Klasyczny standing military press w maszynie Smitha — stała tor pionowy eliminuje potrzebę stabilizacji bocznej (lifter nie balansuje gryfu). Podświetlone przednie i boczne aktony + tricepsy. Postawa stojąca z napięciem (brzuch + pośladki). PL nazwa = 'Wyciskanie żołnierskie stojąc w maszynie Smitha'. Mechanic compound (multi-joint: bark + łokieć), plane frontal (gryf porusza się w jednej płaszczyźnie czołowej po prowadnicy), bilateral, push, vertical. Lateral deltoid intensity P7 (vs P8 w wolnej sztandze) — fixed track redukuje engagement bocznych delt vs barbell OHP. Triceps S8 zamiast P bo ruch jest bardziej shoulder-dominant w smith (no stabilization recruitment).",
+
+  "tags": ["smith_machine", "machine_assisted", "upper_body", "vertical_push", "shoulders", "beginner_friendly", "accessory", "fixed_path"]
+}

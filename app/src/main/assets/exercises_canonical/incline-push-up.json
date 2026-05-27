@@ -1,0 +1,196 @@
+{
+  "id": "incline-push-up",
+  "name": "Incline Push-Up",
+  "namePl": "Pompka na ławce skośnej (incline push-up)",
+  "aliases": ["incline pushup", "hands-elevated push-up", "elevated hands push-up", "bench push-up", "incline press-up"],
+  "aliasesPl": ["pompki na ławce", "pompki z rękami na podwyższeniu", "pompki na podwyższeniu (ręce)", "pompki na skrzyni", "pompki na blacie", "incline pompki"],
+
+  "description": "Bodyweight push-up variation with hands elevated on a bench, step, box or sturdy chair — hands HIGHER than feet. The incline angle reduces the percentage of bodyweight loaded on the arms (~40-55% depending on bench height vs ~64% in a standard push-up), making it the classic beginner regression of the push-up. Lower chest (sternal/costal head of pec major) and triceps take the brunt — geometrically the bodyweight analog of the decline barbell bench press (where chest is angled head-up).",
+  "descriptionPl": "Wariant pompek z bodyweight, w którym dłonie są uniesione na ławce, stopniu, boksie lub solidnym krześle — DŁONIE WYŻEJ NIŻ STOPY. Kąt incline zmniejsza procent masy ciała spoczywający na rękach (~40-55% w zależności od wysokości ławki, vs ~64% w zwykłej pompce), czyniąc go klasyczną regresją pompki dla początkujących. Główne obciążenie spada na dolną klatkę (część mostkowa/żebrowa pec major) i tricepsy — geometrycznie to bodyweight'owy odpowiednik wyciskania sztangi na skosie ujemnym (klatka pod kątem 'głową w górę').",
+
+  "instructions": [
+    "Set up a stable elevated surface — sturdy bench, box, low wall, kitchen counter or solid chair against a wall. Higher elevation = easier.",
+    "Place hands on the edge of the bench, slightly wider than shoulders, fingers pointing forward.",
+    "Walk feet back until your body forms a straight diagonal line from feet through hips to head. Hands are clearly higher than feet.",
+    "Brace your core. Squeeze glutes. Pre-set a rigid plank position before the first rep.",
+    "Inhale and lower your chest toward the bench in 2-3 seconds. Elbows track at ~45° from your torso (not flared to 90°).",
+    "Lower until your chest is just above the bench surface (within a fist's height).",
+    "Brief pause at the bottom — no bouncing off the bench.",
+    "Exhale and press the bench away. Drive through your palms, fully extend elbows without locking out aggressively.",
+    "Maintain the rigid plank shape from start to finish. Head neutral — chin slightly tucked, eyes looking at the bench just ahead of hands."
+  ],
+  "instructionsPl": [
+    "Przygotuj stabilne podwyższenie — solidna ławka, boks, niski murek, blat kuchenny lub mocne krzesło oparte o ścianę. Wyższe podwyższenie = łatwiej.",
+    "Połóż dłonie na krawędzi ławki, nieco szerzej niż barki, palce skierowane do przodu.",
+    "Cofnij stopy aż ciało utworzy prostą skośną linię od stóp przez biodra do głowy. Dłonie wyraźnie wyżej niż stopy.",
+    "Napnij brzuch. Ściśnij pośladki. Ustaw sztywną pozycję planka przed pierwszym powtórzeniem.",
+    "Wdech, opuszczaj klatkę w stronę ławki w 2-3 sekundy. Łokcie pod kątem ~45° od tułowia (nie rozsunięte na 90°).",
+    "Schodź aż klatka będzie tuż nad powierzchnią ławki (na wysokość pięści).",
+    "Krótka pauza na dole — bez odbijania od ławki.",
+    "Wydech, wypchnij ławkę. Napieraj przez wnętrza dłoni, w pełni wyprostuj łokcie, ale bez agresywnego blokowania stawu.",
+    "Utrzymuj sztywną planką od początku do końca. Głowa neutralna — broda lekko schowana, wzrok na ławkę tuż przed dłońmi."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_sternal", "triceps", "anterior_deltoids"],
+    "secondary": ["pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_sternal": "P8",
+    "triceps": "P7",
+    "anterior_deltoids": "P6",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S5",
+    "core": "T4",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "elevated_surface"],
+    "optional": ["push_up_handles", "resistance_band", "wall"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["wall-push-up", "knee-push-up"],
+    "progression_to": ["push-up", "knee-push-up", "decline-push-up", "diamond-push-up", "archer-push-up"],
+    "alternatives": ["wall-push-up", "knee-push-up", "machine-chest-press", "band-chest-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stable elevated surface — bench, step, box or chair braced against a wall so it won't slide",
+      "Hands on the bench, feet on the floor (the opposite of decline push-up)",
+      "Hands slightly wider than shoulders, fingers pointing forward, gripping the edge",
+      "Body in a straight diagonal — heels through hips through head — pre-set plank",
+      "Higher bench = easier; lower bench = harder. Pick a height where you can do 8-12 clean reps."
+    ],
+    "setup_cues_pl": [
+      "Stabilne podwyższenie — ławka, stopień, boks lub krzesło oparte o ścianę żeby się nie ślizgało",
+      "Dłonie na ławce, stopy na podłodze (odwrotnie niż w decline push-up)",
+      "Dłonie nieco szerzej niż barki, palce skierowane do przodu, chwyć krawędź",
+      "Ciało w prostej skośnej linii — pięty przez biodra przez głowę — wcześniej napnij plank",
+      "Wyższa ławka = łatwiej; niższa = trudniej. Wybierz wysokość, na której robisz 8-12 czystych powtórzeń."
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — controlled, no free-fall onto the bench",
+      "Touch chest just above the bench surface (within a fist's height)",
+      "Elbows track at ~45° from torso — 'pin them to your ribs', not flared",
+      "Squeeze lower chest at lockout — feel the sternal pec contract",
+      "Brace abs and glutes the whole set — no sagging hips, no piked hips"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontrolowanie, bez 'free-fall' na ławkę",
+      "Klatka tuż nad powierzchnią ławki (na wysokość pięści)",
+      "Łokcie pod ~45° od tułowia — 'przyklej je do żeber', nie rozsuwaj",
+      "Ściśnij dolną klatkę na szczycie — poczuj jak mostkowy pec się napina",
+      "Napięte brzuch i pośladki przez całą serię — biodra nie opadają i nie idą w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "Weak core, no glute engagement — body 'hangs' on the lower back",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym",
+        "cue": "Squeeze glutes HARD before lowering. 'Plank first, then push-up'. Imagine a string lifting your hips toward the ceiling.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. 'Najpierw plank, potem pompka'. Wyobraź sobie sznurek unoszący biodra do sufitu."
+      },
+      {
+        "fault": "Bench too high — turning it into a wall push-up",
+        "faultPl": "Ławka za wysoko — robi się z tego wall push-up",
+        "cause": "Choosing an elevation that's far too easy (e.g. waist-high counter when ready for a knee-high box)",
+        "causePl": "Wybór za wysokiego podwyższenia (np. blat na wysokości pasa, podczas gdy stać cię na boks wysokości kolana)",
+        "cue": "Last 2-3 reps of a set of 12 should be hard. If 15+ feel easy — lower the bench by ~10-15 cm and progress.",
+        "cuePl": "Ostatnie 2-3 powtórzenia w serii 12 powinny być trudne. Jeśli 15+ wychodzi lekko — obniż ławkę o ~10-15 cm i progresuj."
+      },
+      {
+        "fault": "Elbows flared 90° (T-shape)",
+        "faultPl": "Łokcie rozsunięte na 90° (kształt litery T)",
+        "cause": "Hands placed too wide, no awareness of elbow path",
+        "causePl": "Dłonie za szeroko, brak świadomości toru łokci",
+        "cue": "Tuck elbows to ~45° from torso. 'Hide your armpits'. Protects shoulders, recruits triceps and lower chest better.",
+        "cuePl": "Schowaj łokcie do ~45° od tułowia. 'Schowaj pachy'. Chroni barki, lepiej angażuje tricepsy i dolną klatkę."
+      },
+      {
+        "fault": "Partial range of motion (half push-up)",
+        "faultPl": "Częściowy zakres ruchu (połowiczne pompki)",
+        "cause": "Lack of strength at full ROM, ego — counting reps that don't reach chest-to-bench",
+        "causePl": "Brak siły w pełnym ROM, ego — liczenie powtórzeń, które nie dochodzą klatką do ławki",
+        "cue": "Chest must reach within a fist's height of the bench. If you can't — RAISE the bench, don't shorten the reps.",
+        "cuePl": "Klatka musi dojść na wysokość pięści od ławki. Jeśli nie dasz rady — PODNIEŚ ławkę, nie skracaj powtórzeń."
+      },
+      {
+        "fault": "Unstable bench / wobbly surface",
+        "faultPl": "Niestabilna ławka / chwiejna powierzchnia",
+        "cause": "Bench can slide back, chair without back support, table on uneven floor",
+        "causePl": "Ławka może się odsunąć, krzesło bez podparcia oparcia, stół na nierównej podłodze",
+        "cue": "Push the bench against a wall, use a heavy bench, or place a non-slip mat under it. Test stability with one full rep before starting the set.",
+        "cuePl": "Dosuń ławkę do ściany, użyj ciężkiej ławki lub podłóż matę antypoślizgową. Sprawdź stabilność jednym pełnym powtórzeniem przed rozpoczęciem serii."
+      }
+    ],
+    "breathing": "Inhale during descent, brace through the bottom, exhale during the press up. For higher-rep sets you can chain 2-3 reps on a single brace before re-breathing.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech podczas wyciskania. Przy seriach z większą liczbą powtórzeń możesz spiąć 2-3 powtórzenia na jednym napięciu przed kolejnym oddechem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles, dumbbells held vertically, or grip the edge of the bench (knuckles on top) to keep the wrist more neutral. Incline angle reduces wrist load vs floor push-ups but can still aggravate.",
+      "modificationPl": "Użyj uchwytów do pompek, hantli trzymanych pionowo lub złap krawędź ławki (knykcie na górze), aby utrzymać bardziej neutralny nadgarstek. Kąt incline mniej obciąża nadgarstki niż pompki z podłogi, ale wciąż może drażnić.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Raise the bench higher (less ROM, less load) and tuck elbows tighter (~30-45°). Avoid if pain in any position — switch to scapular push-ups or band press first.",
+      "modificationPl": "Podnieś ławkę wyżej (mniejszy ROM, mniejsze obciążenie) i mocniej schowaj łokcie (~30-45°). Unikaj, jeśli boli w jakiejkolwiek pozycji — zacznij od scapular push-ups lub band press.",
+      "alternative": "wall-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "If you cannot hold a rigid plank diagonal — drop to knee-incline-push-up (knees on floor, hands on bench) until core is stronger. Sagging hips = lumbar load.",
+      "modificationPl": "Jeśli nie utrzymujesz sztywnej skośnej planki — zejdź na knee-incline-push-up (kolana na podłodze, dłonie na ławce) do czasu wzmocnienia brzucha. Opadające biodra = obciążenie lędźwi.",
+      "alternative": "wall-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (beginner hypertrophy/conditioning) | 3-4x8-12 ramping bench lower over weeks (progression) | AMRAP for endurance",
+  "calories_per_kg_per_hour": 3.8,
+
+  "media": {
+    "primary": "incline-push-up.gif",
+    "frames_extracted": [
+      "frames/incline-push-up/frame_0_start.png",
+      "frames/incline-push-up/frame_1_early.png",
+      "frames/incline-push-up/frame_2_mid.png",
+      "frames/incline-push-up/frame_3_late.png",
+      "frames/incline-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/incline-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej — dłonie na ławce/stepie (po prawej, wyżej), stopy na podłodze (po lewej, niżej), ramiona wyprostowane, ciało w prostej skośnej linii od stóp przez biodra do głowy. DŁONIE WYŻEJ NIŻ STOPY — klasyczny incline. Frame 2 (mid): pełne opuszczenie — klatka tuż nad ławką, łokcie zgięte i ułożone pod ~45° od tułowia, ciało utrzymane w skośnej linii prostej, bez opadania bioder. Frame 4 (end): powrót do pozycji wyjściowej (zamknięcie cyklu, ghost-frame pokazuje fazę opadania nakładającą się na pozycję końcową). Klatka piersiowa (głównie część mostkowa/dolna) i tricepsy wyraźnie podświetlone na anatomii — zgodne z biomechaniką incline (mniejsze obciążenie barków, większy nacisk na dolną klatkę i tricepsy — bodyweight'owy odpowiednik decline bench press). Wszystkie pola PL napisane od zera w polskim standardzie fitness. Klasyczna regresja pompki dla beginnerów — wyższa ławka = łatwiej, progresja przez stopniowe obniżanie wysokości aż do podłogi (push-up).",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "lower_chest", "triceps", "home_workout", "no_equipment_friendly", "beginner_friendly", "push_up_regression"]
+}

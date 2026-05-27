@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-neutral-grip-bench-press",
+  "name": "Dumbbell Neutral-Grip Bench Press",
+  "namePl": "Wyciskanie hantli na ławce poziomej chwytem neutralnym",
+  "aliases": ["neutral grip dumbbell bench press", "hammer grip DB bench", "palms-in DB bench press", "DB bench neutral grip", "Swiss grip DB press"],
+  "aliasesPl": ["DB bench press chwytem neutralnym", "wyciskanie hantli chwytem młotkowym", "wyciskanie hantli dłońmi do siebie", "wyciskanie hantli neutralnym chwytem na ławce płaskiej", "DB press chwytem młotkowym"],
+
+  "description": "Horizontal pressing variant on a flat bench in which both dumbbells are held with a neutral (palms-facing-each-other) grip throughout the entire repetition. Compared to a pronated DB bench, the neutral grip naturally tucks the elbows closer to the torso, which reduces shear stress on the anterior capsule of the shoulder — making this the go-to chest pressing pattern for trainees with shoulder issues, AC-joint sensitivity or impingement. The hammer-style hand position also shifts a noticeable share of the work onto the triceps and reduces wrist strain compared to standard pronated pressing.",
+  "descriptionPl": "Wariant poziomego wyciskania na płaskiej ławce, w którym oba hantle trzymane są chwytem neutralnym (dłonie zwrócone do siebie) przez cały zakres ruchu. W porównaniu do klasycznego chwytu pronowanego, chwyt neutralny w naturalny sposób chowa łokcie bliżej tułowia, co zmniejsza naprężenia ścinające na przedniej torebce stawu barkowego — czyni to ćwiczenie pierwszym wyborem przy wyciskaniu klatki u osób z problemami z barkami, wrażliwością stawu obojczykowo-barkowego lub objawami impingementu. Pozycja dłoni typu „młotek\" przenosi też zauważalnie więcej pracy na tricepsy i odciąża nadgarstki w stosunku do standardowego chwytu pronowanego.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with a dumbbell resting on each thigh, palms already facing each other (neutral grip).",
+    "Lie back, using your thighs to kick the dumbbells up to chest level. Keep the palms facing each other the whole time — do NOT rotate to a pronated grip.",
+    "Plant feet flat on the floor, knees bent ~90°. Retract and depress shoulder blades, maintain a slight natural arch in the lower back, glutes stay on the bench.",
+    "Press both dumbbells straight up so they finish over the lower-to-mid chest, almost touching, arms extended without locking the elbows. This is the starting position.",
+    "Inhale, brace the core, and lower the dumbbells in a controlled arc to chest level. Elbows track tight along the ribs (~20-30° from torso) — much tighter than in a pronated bench.",
+    "Pause briefly at the bottom — chest stretched, dumbbells roughly at lower-pec / sternum height. Do NOT bounce off the chest.",
+    "Press up explosively but with control, finishing with the dumbbells close together over the chest, palms still facing each other.",
+    "Exhale at the top, reset the brace and keep shoulder blades retracted. To finish: bring dumbbells to chest, sit up with momentum and place them on thighs."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu poziomej ławki z hantlami opartymi o uda, dłonie zwrócone do siebie od samego początku (chwyt neutralny).",
+    "Połóż się, wybijając hantle z ud na wysokość klatki. Utrzymaj dłonie zwrócone do siebie przez cały czas — NIE obracaj w pronację.",
+    "Stopy płasko na podłodze, kolana zgięte ~90°. Ściągnij łopatki w dół i razem, utrzymuj lekki naturalny łuk w dolnych plecach, pośladki cały czas na ławce.",
+    "Wyciśnij oba hantle prosto w górę tak, by spotkały się niemal stykając nad środkową/dolną częścią klatki, ramiona wyprostowane bez sztywnego lock-out. To pozycja startowa.",
+    "Wdech, napięcie brzucha, opuszczaj hantle kontrolowanym łukiem do wysokości klatki. Łokcie pracują blisko żeber (~20-30° od tułowia) — wyraźnie ciaśniej niż przy chwycie pronowanym.",
+    "Krótka pauza na dole — klatka rozciągnięta, hantle mniej więcej na wysokości dolnej klatki / mostka. NIE odbijaj hantli od klatki.",
+    "Wyciśnij dynamicznie ale z kontrolą, kończąc z hantlami blisko siebie nad klatką, dłonie nadal zwrócone do siebie.",
+    "Wydech na górze, odnów napięcie, łopatki cały czas ściągnięte. Zakończenie: ściągnij hantle do klatki, usiądź z impetem i odłóż hantle na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps_brachii", "anterior_deltoid"],
+    "secondary": ["serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "biceps", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps_brachii": "P8",
+    "anterior_deltoid": "P7",
+    "serratus_anterior": "S5",
+    "coracobrachialis": "S3",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up", "machine-chest-press", "dumbbell-bench-press"],
+    "progression_to": ["incline-dumbbell-bench-press", "single-arm-dumbbell-bench-press", "dumbbell-floor-press", "close-grip-bench-press"],
+    "alternatives": ["dumbbell-bench-press", "machine-chest-press", "neutral-grip-machine-press", "svend-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit at end of bench, dumbbells on thighs, palms ALREADY facing each other",
+      "Kick dumbbells up with thighs as you lie back — do not flip the grip",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Slight natural arch in lower back, glutes glued to the bench",
+      "Start with dumbbells over mid-chest, almost touching, neutral grip"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na końcu ławki, hantle na udach, dłonie JUŻ zwrócone do siebie",
+      "Wybij hantle udami gdy się kładziesz — nie obracaj chwytu",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Lekki naturalny łuk w dolnych plecach, pośladki przyklejone do ławki",
+      "Start z hantlami nad środkiem klatki, niemal stykają się, chwyt neutralny"
+    ],
+    "execution_cues": [
+      "Lower with control to chest level — chest stretched, no bounce",
+      "Elbows stay tucked at ~20-30° from torso, brushing the ribs",
+      "Press straight up — both dumbbells in sync, neither lagging",
+      "Finish with dumbbells almost kissing, palms still facing each other",
+      "Eccentric ~2-3 seconds, concentric explosive but controlled"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj z kontrolą do wysokości klatki — klatka rozciągnięta, bez odbicia",
+      "Łokcie cały czas schowane ~20-30° od tułowia, ocierają się o żebra",
+      "Wyciskaj prosto w górę — oba hantle równo, żaden nie odstaje",
+      "Kończ z hantlami niemal stykającymi się, dłonie nadal zwrócone do siebie",
+      "Faza ekscentryczna ~2-3 sekundy, koncentryczna wybuchowa ale kontrolowana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip drifts from neutral toward pronated mid-set",
+        "faultPl": "Chwyt zjeżdża z neutralnego w stronę pronowanego w trakcie serii",
+        "cause": "Habit from regular DB bench, fatigued forearms, weight too heavy",
+        "causePl": "Nawyk z klasycznego DB bench, zmęczone przedramiona, za ciężki ciężar",
+        "cue": "Reset between reps if needed — palms MUST stay facing each other top to bottom. If you cannot hold it, drop the weight.",
+        "cuePl": "Resetuj między powtórzeniami jeśli trzeba — dłonie MUSZĄ pozostać zwrócone do siebie od góry do dołu. Jeśli nie utrzymujesz, zmniejsz ciężar."
+      },
+      {
+        "fault": "Elbows flare wide despite the neutral grip",
+        "faultPl": "Łokcie i tak rozjeżdżają się szeroko mimo chwytu neutralnego",
+        "cause": "Old motor pattern from pronated bench, lack of cue awareness",
+        "causePl": "Stary wzorzec ruchowy z chwytu pronowanego, brak świadomości wskazówki",
+        "cue": "Elbows brush the ribs. The whole point of neutral grip IS the tucked elbow path — use it.",
+        "cuePl": "Łokcie ocierają się o żebra. Cały sens chwytu neutralnego TO ścieżka z łokciami schowanymi — wykorzystaj to."
+      },
+      {
+        "fault": "Dumbbells clang together hard at the top",
+        "faultPl": "Hantle stukają mocno o siebie na szczycie",
+        "cause": "No deceleration at lockout, treating it as a fly motion",
+        "causePl": "Brak wyhamowania na szczycie, traktowanie ruchu jak rozpiętek",
+        "cue": "Bring them close, light touch or 1 cm gap — chips off the dumbbells AND chips off your tendons.",
+        "cuePl": "Zbliż blisko, lekki dotyk lub 1 cm odstępu — chronisz hantle I swoje ścięgna."
+      },
+      {
+        "fault": "Stopping short of full ROM — bar of dumbbells above chest line",
+        "faultPl": "Skracanie zakresu — trzon hantla nad linią klatki",
+        "cause": "Fear of stretch, weak bottom position, ego with too heavy load",
+        "causePl": "Strach przed rozciągnięciem, słaba pozycja w dolnym punkcie, ego ze zbyt ciężkim obciążeniem",
+        "cue": "The whole reason to do DB pressing is the deeper ROM — lower until dumbbells touch lower pec / sternum height.",
+        "cuePl": "Cały sens wyciskania hantlami to głębszy zakres — opuszczaj aż hantle dotkną dolnej klatki / wysokości mostka."
+      },
+      {
+        "fault": "Lower back arches off the bench excessively",
+        "faultPl": "Nadmierne wygięcie dolnego odcinka pleców znad ławki",
+        "cause": "Trying to mimic a powerlifting arch on a hypertrophy lift, weak core brace",
+        "causePl": "Próba odwzorowania mostka powerliftingowego na ćwiczeniu hipertroficznym, słabe napięcie brzucha",
+        "cue": "Glutes on the bench. Slight arch only. Brace the abs as if before a punch.",
+        "cuePl": "Pośladki na ławce. Tylko lekki łuk. Napnij brzuch jak przed uderzeniem."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "This IS the shoulder-friendly variation — neutral grip + tucked elbows reduce subacromial stress. Limit ROM if pain persists at the bottom.",
+      "modificationPl": "TO JEST przyjazna barkom wersja wyciskania — chwyt neutralny + schowane łokcie zmniejszają nacisk podbarkowy. Ogranicz ROM jeśli ból utrzymuje się na dole.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Neutral grip is much gentler on the AC joint than pronated. Avoid full lockout at the top and keep ROM to where pain-free.",
+      "modificationPl": "Chwyt neutralny jest znacznie łagodniejszy dla stawu obojczykowo-barkowego niż pronowany. Unikaj pełnego lock-out na szczycie i utrzymuj ROM w bezbólowym zakresie.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy free-weight pressing destabilizes a compromised cuff. Switch to a fixed-path machine until cleared by physio.",
+      "modificationPl": "Ciężkie wyciskanie wolnymi ciężarami destabilizuje uszkodzony stożek rotatorów. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Neutral grip puts the triceps under significant load — if elbow tendinopathy flares, reduce weight, slow eccentric, or swap to chest-dominant fly work for a deload block.",
+      "modificationPl": "Chwyt neutralny mocno obciąża tricepsy — przy zaostrzeniu tendinopatii łokcia zmniejsz ciężar, spowolnij fazę ekscentryczną lub zamień na rozpiętki/maszynę na deload.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump, shoulder-friendly volume)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-neutral-grip-bench-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-neutral-grip-bench-press/frame_0_start.png",
+      "frames/dumbbell-neutral-grip-bench-press/frame_1_early.png",
+      "frames/dumbbell-neutral-grip-bench-press/frame_2_mid.png",
+      "frames/dumbbell-neutral-grip-bench-press/frame_3_late.png",
+      "frames/dumbbell-neutral-grip-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-neutral-grip-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (góra/start): hantle nad klatką, ramiona wyprostowane, dłonie wyraźnie zwrócone do siebie (neutral/hammer grip), tricepsy i klatka piersiowa podświetlone. Frame 2 (dół): hantle na wysokości klatki, łokcie schowane blisko tułowia (~20-30°) — zauważalnie ciaśniej niż w klasycznym DB bench z chwytem pronowanym, palms cały czas zwrócone do siebie. Frame 4 (powrót na górę): dłonie nadal neutralnie, hantle blisko siebie. Mimo umieszczenia w katalogu triceps/ na źródle Jahel, anatomia w gifie potwierdza kompletne zaangażowanie klatki — primary mover to pectoralis_major + triceps_brachii (P8/P8), z mocniejszą rolą tricepsa niż w pronowanej wersji, plus anterior_deltoid (P7). Klasyfikacja: push_horizontal, compound, bilateral, sagittal — identyczna jak dumbbell-bench-press. Wszystkie pola PL napisane od zera, zachowując polski standard fitness ('Wyciskanie hantli na ławce poziomej chwytem neutralnym').",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest_mass", "dumbbell", "chest", "triceps", "shoulder_friendly", "ac_joint_friendly", "neutral_grip", "hammer_grip"]
+}

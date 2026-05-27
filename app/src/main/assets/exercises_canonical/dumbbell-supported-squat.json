@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-supported-squat",
+  "name": "Dumbbell Supported Squat",
+  "namePl": "Przysiad z hantlami z podparciem",
+  "aliases": ["supported goblet squat", "wall-supported dumbbell squat", "assisted dumbbell squat", "beginner goblet squat with support"],
+  "aliasesPl": ["przysiad z hantlem z podparciem", "wspierany goblet squat", "asystowany przysiad z hantlami", "goblet squat dla początkujących"],
+
+  "description": "Beginner-friendly squat variation performed with a dumbbell held vertically against the chest (goblet position) while leaning lightly against a vertical pad or support behind the back, with a foot platform stabilizing the stance. The support guides the descent vertically and helps the lifter learn the correct squat path without overbalancing. Excellent regression for learning bracing, depth and knee tracking before progressing to free goblet or barbell squats.",
+  "descriptionPl": "Przyjazna początkującym wersja przysiadu wykonywana z hantlem trzymanym pionowo przy klatce (pozycja goblet), z plecami delikatnie opartymi o pionową podporę, ze stabilizującą platformą pod stopami. Podparcie prowadzi schodzenie po pionowej ścieżce i pomaga ćwiczącemu nauczyć się prawidłowego toru przysiadu bez utraty równowagi. Świetna regresja do nauki napięcia, głębokości i pracy kolan przed przejściem do wolnego goblet squata lub przysiadu ze sztangą.",
+
+  "instructions": [
+    "Stand with your back close to (or lightly touching) the vertical support pad. Place your feet on the platform shoulder-width apart with toes slightly turned out (10-20°).",
+    "Grip one dumbbell vertically with both hands cupping the top head, holding it close to your chest in the goblet position.",
+    "Stand tall, brace your core, draw shoulder blades down and back, keep chest up. Inhale and prepare.",
+    "Initiate the descent by simultaneously bending at the hips and knees. Let your back slide gently down along the support without rounding.",
+    "Descend until your thighs are parallel to the floor or until you reach a comfortable depth while keeping a neutral spine. Knees should track over your toes.",
+    "Drive up by pushing through the whole foot, extending hips and knees simultaneously. The dumbbell stays glued to your chest throughout.",
+    "Exhale near the top and finish each rep with hips and knees fully extended without overarching the lower back.",
+    "Maintain the same controlled tempo on the way up as on the way down — the support is a guide, not a backrest."
+  ],
+  "instructionsPl": [
+    "Stań tyłem blisko (lub lekko dotykając) pionowej podpórki. Ustaw stopy na platformie na szerokość barków, palce lekko na zewnątrz (10-20°).",
+    "Chwyć jeden hantel pionowo obiema dłońmi, obejmując górną główkę, i trzymaj go blisko klatki w pozycji goblet.",
+    "Wyprostuj się, napnij brzuch, ściągnij łopatki w dół i do tyłu, klatka do góry. Wykonaj wdech i przygotuj się.",
+    "Rozpocznij schodzenie jednocześnie zginając biodra i kolana. Pozwól plecom delikatnie zsunąć się wzdłuż podpórki bez zaokrąglania.",
+    "Schodź aż uda będą równolegle do podłogi lub do wygodnej głębokości przy zachowaniu neutralnego kręgosłupa. Kolana podążają za palcami stóp.",
+    "Wypchnij się w górę napierając przez całą stopę, prostując biodra i kolana jednocześnie. Hantel pozostaje przyklejony do klatki przez cały ruch.",
+    "Wydychaj blisko górnej pozycji i zakończ każde powtórzenie pełnym wyprostem bioder i kolan bez przeprostu lędźwi.",
+    "Utrzymuj to samo kontrolowane tempo w drodze w górę co w dół — podparcie jest prowadnicą, a nie oparciem do siadania."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "erector_spinae", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P7",
+    "hamstrings": "S5",
+    "adductors": "S5",
+    "core": "S4",
+    "calves": "T3",
+    "erector_spinae": "T3",
+    "upper_back": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "support_pad", "platform"],
+    "optional": ["lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-squat"],
+    "progression_to": ["goblet-squat", "dumbbell-squat", "barbell-front-squat", "barbell-back-squat"],
+    "alternatives": ["goblet-squat", "wall-sit", "box-squat-bodyweight", "leg-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Back close to the pad, feet flat on platform",
+      "Dumbbell vertical, both hands cupping the top",
+      "Elbows pointed straight down, dumbbell glued to chest",
+      "Feet shoulder-width, toes slightly out",
+      "Brace core before you move"
+    ],
+    "setup_cues_pl": [
+      "Plecy blisko podpórki, stopy płasko na platformie",
+      "Hantel pionowo, obie dłonie obejmują górną główkę",
+      "Łokcie skierowane prosto w dół, hantel przyklejony do klatki",
+      "Stopy na szerokość barków, palce lekko na zewnątrz",
+      "Napnij brzuch zanim ruszysz"
+    ],
+    "execution_cues": [
+      "Slide down along the pad — don't sit on it",
+      "Knees track over toes, push them out slightly",
+      "Chest tall, elbows pointing down throughout",
+      "Push the floor away on the way up",
+      "Use the support as a guide, not as a chair"
+    ],
+    "execution_cues_pl": [
+      "Zsuwaj się wzdłuż podpórki — nie siadaj na niej",
+      "Kolana podążają za palcami stóp, lekko wypchnij je na zewnątrz",
+      "Klatka wysoko, łokcie skierowane w dół przez cały ruch",
+      "Wypchnij podłogę w drodze w górę",
+      "Używaj podparcia jako prowadnicy, nie jako krzesła"
+    ],
+    "common_faults": [
+      {
+        "fault": "Resting weight on the support pad",
+        "faultPl": "Opieranie ciężaru na podpórce",
+        "cause": "Treating the pad as a backrest, weak core engagement, or load too heavy",
+        "causePl": "Traktowanie podpórki jak oparcia, słabe napięcie brzucha, lub zbyt duży ciężar",
+        "cue": "Pad is a guide, not a seat — keep your core braced and own the position",
+        "cuePl": "Podpórka to prowadnica, nie siedzisko — utrzymuj napięty brzuch i kontroluj pozycję"
+      },
+      {
+        "fault": "Knee valgus (knees cave in)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius, narrow foot stance, or insufficient hip activation",
+        "causePl": "Słabe pośladki średnie, za wąski rozstaw stóp, lub niewystarczająca aktywacja bioder",
+        "cue": "Spread the floor — push your knees out toward your pinky toes",
+        "cuePl": "Rozepchnij podłogę stopami — wypchnij kolana na zewnątrz w kierunku małych palców"
+      },
+      {
+        "fault": "Rounded upper back / dumbbell drifts away from chest",
+        "faultPl": "Zaokrąglone górne plecy / hantel oddala się od klatki",
+        "cause": "Weak upper back, fatigue, or holding the dumbbell incorrectly",
+        "causePl": "Słabe górne plecy, zmęczenie, lub złe trzymanie hantla",
+        "cue": "Pull the dumbbell into your chest, elbows down, upper back tight",
+        "cuePl": "Ściągnij hantel mocno do klatki, łokcie w dół, górne plecy napięte"
+      },
+      {
+        "fault": "Insufficient depth / partial squat",
+        "faultPl": "Niewystarczająca głębokość / niepełny przysiad",
+        "cause": "Fear of going low, tight hips/ankles, or load too heavy",
+        "causePl": "Strach przed zejściem niżej, ograniczona mobilność bioder/kostek, lub zbyt duży ciężar",
+        "cue": "Aim for thighs parallel to the floor — let the support guide you down safely",
+        "cuePl": "Celuj w uda równolegle do podłogi — pozwól podpórce bezpiecznie cię prowadzić w dół"
+      },
+      {
+        "fault": "Heels lifting off the platform",
+        "faultPl": "Unoszenie pięt z platformy",
+        "cause": "Limited ankle mobility, weight shifted onto toes, or descending too fast",
+        "causePl": "Ograniczona mobilność stawu skokowego, ciężar przesunięty na palce, lub zbyt szybkie schodzenie",
+        "cue": "Push through the whole foot — heel, mid-foot and toes evenly",
+        "cuePl": "Napieraj przez całą stopę — pięta, środek i palce równomiernie"
+      }
+    ],
+    "breathing": "Inhale at the top and brace your core. Hold breath during the descent and the hardest part of the ascent. Exhale near the top of the rep.",
+    "breathingPl": "Wdech na górze i napnij brzuch. Wstrzymaj oddech podczas schodzenia i najtrudniejszej fazy powrotu. Wydychaj blisko górnej pozycji powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "modify",
+      "modification": "Reduce load significantly and limit ROM to pain-free range. The support reduces spinal load but does not eliminate it. Consult a physiotherapist before continuing.",
+      "modificationPl": "Znacznie zmniejsz obciążenie i ogranicz zakres ruchu do strefy bez bólu. Podparcie zmniejsza obciążenie kręgosłupa, ale go nie eliminuje. Skonsultuj się z fizjoterapeutą przed kontynuacją.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "knee_pain_patellofemoral",
+      "severity": "modify",
+      "modification": "Limit depth to a pain-free range (often above parallel). Ensure knees track over toes and avoid forward knee drift if it triggers pain.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu (często powyżej parallel). Upewnij się, że kolana podążają za palcami i unikaj nadmiernego wysunięcia kolan do przodu jeśli wywołuje ból.",
+      "alternative": "wall-sit"
+    },
+    {
+      "condition": "limited_ankle_dorsiflexion",
+      "severity": "caution",
+      "modification": "Use the platform with a slight heel elevation or lifting shoes. The vertical guide of the pad helps offset mobility limits, but address mobility separately.",
+      "modificationPl": "Użyj platformy z lekkim podniesieniem pięt lub butów do podnoszenia. Pionowa prowadnica podpórki kompensuje ograniczenia mobilności, ale pracuj nad mobilnością osobno.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "shoulder_or_wrist_pain",
+      "severity": "caution",
+      "modification": "Holding the dumbbell at chest may aggravate symptoms. Use a lighter dumbbell, cross-arm hold or switch to a supported bodyweight squat.",
+      "modificationPl": "Trzymanie hantla przy klatce może drażnić dolegliwości. Użyj lżejszego hantla, chwytu skrzyżowanego lub przejdź na wspierany przysiad bez obciążenia.",
+      "alternative": "wall-sit"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (technique/learning) | 3-4x8-12 (hypertrophy) | 2-3x15-20 (endurance)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-supported-squat.gif",
+    "frames_extracted": [
+      "frames/dumbbell-supported-squat/frame_0_start.png",
+      "frames/dumbbell-supported-squat/frame_1_early.png",
+      "frames/dumbbell-supported-squat/frame_2_mid.png",
+      "frames/dumbbell-supported-squat/frame_3_late.png",
+      "frames/dumbbell-supported-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/dumbbell-supported-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatki 0 i 4 pokazują pozycję wyjściową stojącą — hantel trzymany pionowo oburącz przy klatce (pozycja goblet), plecy blisko pionowej podpórki, stopy na małej platformie. Klatka 2 (mid) potwierdza pełny przysiad do parallel z plecami zsuniętymi wzdłuż podpórki i kolanami nad palcami stóp. Podświetlone na czerwono mięśnie: czworogłowe (główne, mocno) + pośladki — pasuje do anatomii ruchu. Klasyfikacja beginner zgodna z briefem (force=push jak we wszystkich squatach, bilateral, sagittal). Pole equipment używa support_pad+platform zamiast generycznych — zgodnie z faktyczną konfiguracją na GIFie. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["beginner_friendly", "regression", "lower_body", "quadriceps_focus", "learning_movement", "dumbbell", "supported", "goblet_variation"]
+}

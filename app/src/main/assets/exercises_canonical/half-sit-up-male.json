@@ -1,0 +1,194 @@
+{
+  "id": "half-sit-up-male",
+  "name": "Half Sit-Up",
+  "namePl": "Półsit-up",
+  "aliases": ["half situp", "partial sit-up", "abdominal curl-up", "half crunch sit-up", "short-range sit-up"],
+  "aliasesPl": ["półsit-up", "półsiad", "częściowy sit-up", "scyzoryk połówkowy", "krótkozakresowy sit-up", "spięcie brzucha do połowy"],
+
+  "description": "Bodyweight abdominal exercise performed lying supine with knees bent or legs straight. The lifter curls the upper back off the floor through approximately the first 30–45 degrees of trunk flexion — shoulder blades and upper back lift, while the lower back and pelvis remain in contact with the mat. By stopping short of a full sit-up, the movement keeps tension on the rectus abdominis and minimises hip-flexor dominance and shear forces on the lumbar spine. Common rehab and beginner-friendly alternative to the full sit-up.",
+  "descriptionPl": "Ćwiczenie brzucha z masą własnego ciała wykonywane w leżeniu na plecach z nogami zgiętymi lub wyprostowanymi. Ćwiczący zwija górną część pleców do około pierwszych 30–45 stopni zgięcia tułowia — łopatki i górne plecy unoszą się, natomiast dolne plecy i miednica pozostają w kontakcie z matą. Przez zatrzymanie się przed pełnym sit-upem ruch utrzymuje napięcie na mięśniu prostym brzucha i ogranicza dominację zginaczy biodra oraz siły ścinające w odcinku lędźwiowym. Często stosowany w rehabilitacji oraz jako bezpieczniejsza alternatywa pełnego sit-upa dla początkujących.",
+
+  "instructions": [
+    "Lie on your back on a mat. Bend the knees to about 90 degrees with feet flat on the floor, or keep the legs straight if you prefer. Place the hands lightly behind the head, on the chest, or reach them forward toward the knees.",
+    "Press the lower back gently into the mat and brace the core. Tuck the chin slightly so a small gap remains between chin and chest.",
+    "Exhale and curl the shoulder blades off the floor by contracting the abs — imagine rolling the rib cage toward the pelvis. Stop when only the upper back has lifted and the lower back is still pressed to the mat (roughly 30–45° of trunk flexion).",
+    "Hold the top position for a brief squeeze of the abs (1 second). Do not pull on the head with the hands.",
+    "Inhale and lower the upper back under control, vertebra by vertebra, until the shoulder blades touch the mat lightly. Do not let the head crash down.",
+    "Maintain constant tension on the abs throughout the set — keep the chin neutral and the lower back glued to the floor."
+  ],
+  "instructionsPl": [
+    "Połóż się na plecach na macie. Zegnij kolana pod kątem około 90 stopni, stopy płasko na podłodze — lub pozostaw nogi wyprostowane, jeśli wolisz. Połóż dłonie lekko za głowę, na klatce piersiowej, albo wyciągnij je w kierunku kolan.",
+    "Delikatnie dociśnij dolne plecy do maty i napnij brzuch. Lekko schowaj brodę, by zachować małą przestrzeń między brodą a klatką.",
+    "Wydech — zwiń łopatki znad podłogi, napinając brzuch. Wyobraź sobie, że rolujesz klatkę piersiową w kierunku miednicy. Zatrzymaj się, gdy oderwie się tylko górna część pleców, a dolne plecy nadal są dociśnięte do maty (około 30–45° zgięcia tułowia).",
+    "Zatrzymaj się w górnej pozycji na krótki skurcz brzucha (1 sekundę). Nie ciągnij głowy dłońmi.",
+    "Wdech — opuszczaj górne plecy kontrolowanym ruchem, kręg po kręgu, aż łopatki delikatnie dotkną maty. Nie pozwól, by głowa uderzyła o podłogę.",
+    "Utrzymuj stałe napięcie brzucha przez całą serię — broda neutralnie, dolne plecy przyklejone do podłogi."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques"],
+    "stabilizers": ["transverse_abdominis", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P8",
+    "obliques": "S5",
+    "transverse_abdominis": "T4",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dead-bug", "pelvic-tilt"],
+    "progression_to": ["crunch", "sit-up", "v-up"],
+    "alternatives": ["crunch", "dead-bug", "lying-leg-raise", "abdominal-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat — knees bent ~90° or legs straight",
+      "Lower back pressed gently into the mat",
+      "Hands light behind the head — fingertips only, no pulling",
+      "Chin tucked slightly — small gap to the chest",
+      "Inhale and pre-brace the abs"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko — kolana ugięte ~90° lub nogi proste",
+      "Dolne plecy delikatnie dociśnięte do maty",
+      "Dłonie lekko za głowę — tylko końce palców, bez ciągnięcia",
+      "Lekko schowaj brodę — mała przestrzeń do klatki",
+      "Wdech i wstępne napięcie brzucha"
+    ],
+    "execution_cues": [
+      "Roll the rib cage toward the pelvis — don't lever from the neck",
+      "Exhale forcefully as the shoulder blades leave the mat",
+      "Stop when lower back wants to lift — that's your end range",
+      "Squeeze the abs 1 second at the top",
+      "Lower vertebra by vertebra — 2 second eccentric"
+    ],
+    "execution_cues_pl": [
+      "Roluj klatkę piersiową w stronę miednicy — nie podważaj szyją",
+      "Mocny wydech, gdy łopatki odrywają się od maty",
+      "Zatrzymaj się, gdy dolne plecy chcą się unieść — to twój koniec zakresu",
+      "Ściśnij brzuch przez 1 sekundę w górze",
+      "Opuszczaj kręg po kręgu — 2 sekundy fazy ekscentrycznej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling on the neck with the hands",
+        "faultPl": "Ciągnięcie głowy dłońmi",
+        "cause": "Hands behind the head used as a lever when abs are weak — strains cervical spine",
+        "causePl": "Dłonie za głową używane jako dźwignia, gdy brzuch jest słaby — przeciąża odcinek szyjny",
+        "cue": "Light fingertip contact only — or fold arms across the chest. Look at the ceiling, not at your knees.",
+        "cuePl": "Tylko lekki kontakt opuszków palców — lub załóż ręce na klatkę. Patrz w sufit, nie na kolana."
+      },
+      {
+        "fault": "Going too high — full sit-up instead of half range",
+        "faultPl": "Wchodzenie za wysoko — pełny sit-up zamiast połowy zakresu",
+        "cause": "Habit from full sit-ups; hip flexors take over and pull the torso up",
+        "causePl": "Nawyk z pełnych sit-upów; zginacze biodra przejmują pracę i wyciągają tułów",
+        "cue": "Stop the moment your lower back wants to leave the mat — only shoulder blades clear the floor",
+        "cuePl": "Zatrzymaj się w momencie, gdy dolne plecy chcą oderwać się od maty — odrywają się tylko łopatki"
+      },
+      {
+        "fault": "Lower back arching during descent",
+        "faultPl": "Dolne plecy wyginają się w łuk podczas opuszczania",
+        "cause": "Releasing core tension on the way down; head drops back too fast",
+        "causePl": "Rozluźnienie brzucha podczas opuszczania; głowa za szybko opada w tył",
+        "cue": "Stay braced all the way down — lower back glued to the mat from start to finish",
+        "cuePl": "Utrzymaj napięcie aż do końca — dolne plecy przyklejone do maty od początku do końca"
+      },
+      {
+        "fault": "Holding breath / no exhale on the crunch",
+        "faultPl": "Wstrzymywanie oddechu / brak wydechu podczas zwijania",
+        "cause": "Unfamiliar core breathing pattern; tendency to brace like with heavy lifts",
+        "causePl": "Nieznany wzorzec oddechu dla brzucha; tendencja do napinania jak przy dużych ciężarach",
+        "cue": "Sharp exhale 'sss' as the shoulder blades lift — ribs compress, abs shorten",
+        "cuePl": "Ostry wydech 'sss' przy unoszeniu łopatek — żebra ściskają się, brzuch skraca"
+      },
+      {
+        "fault": "Bouncing off the floor between reps",
+        "faultPl": "Odbijanie się od podłogi między powtórzeniami",
+        "cause": "Going too fast — using inertia instead of muscle tension",
+        "causePl": "Zbyt szybkie tempo — wykorzystywanie bezwładności zamiast napięcia mięśni",
+        "cue": "1 second up, 1 second hold, 2 seconds down, brief touch at the bottom. No bouncing.",
+        "cuePl": "1 sekunda w górę, 1 sekunda zatrzymania, 2 sekundy w dół, krótki dotyk na dole. Bez odbijania."
+      }
+    ],
+    "breathing": "Inhale at the bottom while pre-bracing the core. Forceful exhale as you curl up — ribs compress, abs shorten. Inhale gently as you lower the torso under control.",
+    "breathingPl": "Wdech w dolnej pozycji ze wstępnym napięciem brzucha. Mocny wydech podczas zwijania w górę — żebra ściskają się, brzuch skraca. Delikatny wdech podczas kontrolowanego opuszczania tułowia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Even partial spinal flexion may aggravate acute lumbar pain. Switch to anti-extension core work (planks, dead bug) until pain-free, then return to half sit-ups before progressing.",
+      "modificationPl": "Nawet częściowe zginanie kręgosłupa może nasilać ostry ból lędźwi. Przejdź na ćwiczenia anty-ekstensji (deska, dead bug) do czasu ustąpienia bólu, następnie wróć do półsit-upów przed dalszą progresją.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated spinal flexion is contraindicated in lumbar disc protrusion (McGill protocol). Use neutral-spine core exercises instead.",
+      "modificationPl": "Powtarzane zginanie kręgosłupa jest przeciwwskazane przy przepuklinie krążka lędźwiowego (protokół McGilla). Zamiast tego ćwicz brzuch w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Rectus abdominis crunching can worsen midline separation (postpartum or otherwise). Use transverse-abdominis-focused exercises first, then introduce half sit-ups only with manual closure of the linea alba.",
+      "modificationPl": "Zwijanie mięśnia prostego brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Zacznij od ćwiczeń skupionych na mięśniu poprzecznym brzucha, dopiero potem wprowadź półsit-upy z ręcznym domknięciem kresy białej.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Avoid placing hands behind the head — fold arms across the chest or reach them forward toward the knees. Look at the ceiling at the top to keep the neck neutral.",
+      "modificationPl": "Unikaj dłoni za głową — załóż ręce na klatkę piersiową lub wyciągnij je w kierunku kolan. Patrz w sufit w górnej pozycji, by utrzymać neutralną szyję.",
+      "alternative": "abdominal-crunch"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (beginner) | 3x15-25 (hypertrophy/endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "half-sit-up-male.gif",
+    "frames_extracted": [
+      "frames/half-sit-up-male/frame_0_start.png",
+      "frames/half-sit-up-male/frame_1_early.png",
+      "frames/half-sit-up-male/frame_2_mid.png",
+      "frames/half-sit-up-male/frame_3_late.png",
+      "frames/half-sit-up-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/half-sit-up-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (half-sit-up-male). Klatka 0 (start): pełne leżenie na plecach, nogi proste wyciągnięte, ramiona wzdłuż ciała — anatomia mocno podświetla mięsień prosty brzucha. Klatka 1 (early): tułów już lekko uniesiony, klatka piersiowa odrywa się od podłogi. Klatki 2-3 (mid/late): figura w pozycji siedzącej z prostym kręgosłupem (ślad cyklu animacji — pełny zakres w referencyjnym GIFie jahel pokazuje sit-up). Klatka 4 (end): powrót do leżenia z lekkim śladem fazy pośredniej. UWAGA: choć GIF jahel pokazuje pełny zakres do siadu, ćwiczenie 'half sit-up' jako termin techniczny oznacza ZATRZYMANIE w połowie drogi — łopatki oderwane, dolne plecy pozostają na podłodze. Spec napisany według definicji 'half range' (30–45° zgięcia tułowia), zgodnie z briefem: 'tylko do połowy zakresu, lędźwie pozostają na podłodze, bezpieczniejszy dla pleców niż full sit-up'. Mechanic=isolation (głównie zgięcie kręgosłupa, ograniczone zaangażowanie biodra przez krótki zakres). Plane=sagittal, force=pull (skurcz koncentryczny). Bilateral, bodyweight. Primary: rectus_abdominis (P8 — bardzo wysoka aktywacja w częściowym zakresie, gdzie RA dominuje przed włączeniem hip flexors). Secondary: obliques (S5). Stabilizers: transverse_abdominis + hip_flexors. Difficulty=3, level=beginner (krótki zakres + niskie obciążenie kręgosłupa = bezpieczny start). Nazwa PL: 'Półsit-up' (dosłowne i klarowne; aliasy: 'półsiad', 'częściowy sit-up', 'spięcie brzucha do połowy'). 4 contraindications (lower back / disc / diastasis / cervical), 5 common faults z polskimi cue, 5+5 setup/execution cues. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "no_equipment", "home_workout", "beginner", "rehab_friendly", "low_back_safer"]
+}

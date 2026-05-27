@@ -1,0 +1,205 @@
+{
+  "id": "lever-shoulder-press-v-2",
+  "name": "Lever Shoulder Press v2",
+  "namePl": "Wyciskanie nad głowę na maszynie (wersja 2)",
+  "aliases": ["plate-loaded shoulder press", "hammer strength shoulder press", "iso-lateral shoulder press", "plate loaded overhead press machine", "lever OHP v2"],
+  "aliasesPl": ["wyciskanie barków na maszynie hammer", "plate-loaded shoulder press", "wyciskanie nad głowę na maszynie talerzowej", "iso-lateral shoulder press", "wyciskanie OHP na dźwigniach"],
+
+  "description": "Plate-loaded lever (hammer-style) shoulder press performed seated on a machine with two independent converging arms. Unlike pin-loaded selectorized machine shoulder press (v1), this version is loaded with weight plates on the side, and each arm moves independently — allowing iso-lateral work and natural arc path where handles converge slightly inward at the top. Grip is pronated to semi-neutral (handles angled). The fixed arc removes stabilization demand but preserves a strong, slightly inward press pattern that closely mimics free-weight OHP biomechanics. Excellent for heavy loading on the anterior deltoid with reduced stabilizer fatigue. Closed kinetic chain bilateral compound (each side iso-lateral).",
+  "descriptionPl": "Wyciskanie nad głowę na maszynie dźwigniowej (typu hammer/plate-loaded) wykonywane siedząc, z dwoma niezależnymi ramionami zbiegającymi się do siebie. W przeciwieństwie do selektorowej maszyny shoulder press (wersja 1) ta wersja ładowana jest talerzami z boku, a każde ramię porusza się niezależnie — pozwala na pracę iso-lateral i naturalną ścieżkę łuku, w której uchwyty lekko zbiegają się do wewnątrz na szczycie. Chwyt pronowany do półneutralnego (uchwyty pod kątem). Stała ścieżka łuku eliminuje wymóg stabilizacji, ale zachowuje mocny, lekko zbieżny wzorzec wyciskania zbliżony do biomechaniki free-weight OHP. Doskonałe do ciężkiego ładowania przednich deltoidów przy zmniejszonym zmęczeniu stabilizatorów. Closed kinetic chain, bilateral, compound (każda strona iso-lateral).",
+
+  "instructions": [
+    "Załaduj talerze równomiernie na oba ramiona maszyny — DOKŁADNIE ta sama waga z każdej strony.",
+    "Ustaw wysokość siedziska tak, by uchwyty w pozycji startowej były na wysokości górnej części barków/dolnego ucha (łokcie pod nadgarstkami, ~90° w łokciu).",
+    "Usiądź pewnie — całe plecy oparte o pad, pośladki dociśnięte, stopy płasko na podłodze.",
+    "Chwyć uchwyty pronacją do półneutralnego (zgodnie z kątem uchwytów), nadgarstki proste i nad łokciami.",
+    "Napnij brzuch, ściśnij pośladki, żebra W DÓŁ. Plecy przyklejone do oparcia — bez odrywania.",
+    "Wdech, trzymaj napięcie i wyciśnij oba uchwyty równocześnie po naturalnej ścieżce łuku do góry.",
+    "Na szczycie ramiona w pełnym wyproście, uchwyty zbiegają się lekko do wewnątrz (nie zderzaj ich), bicepsy w kierunku uszu.",
+    "Opuszczaj kontrolowanym ruchem (2-3 sekundy) z powrotem do pozycji startowej — uchwyty na wysokości górnej części barków, nie niżej niż pozwala mobilność.",
+    "Wydech na szczycie lub w trakcie opuszczania. Powtarzaj symetrycznie — oba ramiona w tym samym tempie."
+  ],
+  "instructionsPl": [
+    "Załaduj talerze równomiernie na oba ramiona maszyny — DOKŁADNIE ta sama waga z każdej strony.",
+    "Ustaw wysokość siedziska tak, by uchwyty w pozycji startowej były na wysokości górnej części barków/dolnego ucha (łokcie pod nadgarstkami, ~90° w łokciu).",
+    "Usiądź pewnie — całe plecy oparte o pad, pośladki dociśnięte, stopy płasko na podłodze.",
+    "Chwyć uchwyty pronacją do półneutralnego (zgodnie z kątem uchwytów), nadgarstki proste i nad łokciami.",
+    "Napnij brzuch, ściśnij pośladki, żebra W DÓŁ. Plecy przyklejone do oparcia — bez odrywania.",
+    "Wdech, trzymaj napięcie i wyciśnij oba uchwyty równocześnie po naturalnej ścieżce łuku do góry.",
+    "Na szczycie ramiona w pełnym wyproście, uchwyty zbiegają się lekko do wewnątrz (nie zderzaj ich), bicepsy w kierunku uszu.",
+    "Opuszczaj kontrolowanym ruchem (2-3 sekundy) z powrotem do pozycji startowej — uchwyty na wysokości górnej części barków, nie niżej niż pozwala mobilność.",
+    "Wydech na szczycie lub w trakcie opuszczania. Powtarzaj symetrycznie — oba ramiona w tym samym tempie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "triceps"],
+    "secondary": ["upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "rotator_cuff", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P7",
+    "triceps": "P7",
+    "upper_chest": "S6",
+    "trapezius": "S5",
+    "serratus_anterior": "S6",
+    "core": "S4",
+    "rotator_cuff": "S5"
+  },
+
+  "equipment": {
+    "required": ["shoulder_press_machine"],
+    "optional": ["belt", "wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["machine-shoulder-press", "seated-dumbbell-shoulder-press"],
+    "progression_to": ["seated-dumbbell-shoulder-press", "dumbbell-standing-overhead-press", "barbell-overhead-press", "push-press"],
+    "alternatives": ["machine-shoulder-press", "cable-shoulder-press", "seated-dumbbell-shoulder-press", "smith-machine-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Talerze RÓWNO załadowane na oba ramiona — sprawdź dwa razy",
+      "Siedzisko wysokości — uchwyty na poziomie górnej części barków/ucha na starcie",
+      "Plecy CAŁOŚCIĄ przyklejone do oparcia, pośladki dociśnięte",
+      "Chwyt pronowany/półneutralny zgodnie z kątem uchwytu, nadgarstki proste",
+      "Brzuch napięty, żebra W DÓŁ, stopy płasko na podłodze"
+    ],
+    "setup_cues_pl": [
+      "Talerze RÓWNO załadowane na oba ramiona — sprawdź dwa razy",
+      "Siedzisko wysokości — uchwyty na poziomie górnej części barków/ucha na starcie",
+      "Plecy CAŁOŚCIĄ przyklejone do oparcia, pośladki dociśnięte",
+      "Chwyt pronowany/półneutralny zgodnie z kątem uchwytu, nadgarstki proste",
+      "Brzuch napięty, żebra W DÓŁ, stopy płasko na podłodze"
+    ],
+    "execution_cues": [
+      "Wyciskaj OBA uchwyty równocześnie — symetryczne tempo, równe ścieżki",
+      "Łuk naturalny — pozwól uchwytom zbiec się delikatnie na szczycie (tak jak prowadzi maszyna)",
+      "Pełen lock-out na górze — bicepsy w stronę uszu, łokcie wyprostowane",
+      "Ekscentryk 2-3 sekundy — opuszczaj kontrolowanym ruchem, czuj delty",
+      "Plecy zostają na padzie przez cały ruch — bez odrywania i bez napędu z nóg"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj OBA uchwyty równocześnie — symetryczne tempo, równe ścieżki",
+      "Łuk naturalny — pozwól uchwytom zbiec się delikatnie na szczycie (tak jak prowadzi maszyna)",
+      "Pełen lock-out na górze — bicepsy w stronę uszu, łokcie wyprostowane",
+      "Ekscentryk 2-3 sekundy — opuszczaj kontrolowanym ruchem, czuj delty",
+      "Plecy zostają na padzie przez cały ruch — bez odrywania i bez napędu z nóg"
+    ],
+    "common_faults": [
+      {
+        "fault": "Asymmetric pressing — one arm moves faster/higher than the other",
+        "faultPl": "Asymetryczne wyciskanie — jedno ramię porusza się szybciej/wyżej niż drugie",
+        "cause": "Iso-lateral arms umożliwiają jednostronną kompensację. Strona dominująca wyciska szybciej, słabsza zostaje w tyle. Może też być różnica w załadowaniu talerzy.",
+        "causePl": "Iso-lateral ramiona pozwalają na jednostronną kompensację. Strona dominująca wyciska szybciej, słabsza zostaje w tyle. Może też być różnica w załadowaniu talerzy.",
+        "cue": "Sprawdź czy talerze są równe. Dostosuj tempo do słabszej ręki. W razie dużej dysproporcji wykonuj jednorącz alternująco.",
+        "cuePl": "Sprawdź czy talerze są równe. Dostosuj tempo do słabszej ręki. W razie dużej dysproporcji wykonuj jednorącz alternująco."
+      },
+      {
+        "fault": "Plecy odrywają się od oparcia (lumbar hyperextension)",
+        "faultPl": "Plecy odrywają się od oparcia (przeprost lędźwiowy)",
+        "cause": "Zbyt duży ciężar, słaby brzuch, brak napięcia pośladków, słaba mobilność overhead kompensowana wygięciem pleców.",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, brak napięcia pośladków, słaba mobilność overhead kompensowana wygięciem pleców.",
+        "cue": "Napnij brzuch i pośladki MOCNO. Żebra W DÓŁ. Cała powierzchnia pleców na padzie. Zmniejsz ciężar.",
+        "cuePl": "Napnij brzuch i pośladki MOCNO. Żebra W DÓŁ. Cała powierzchnia pleców na padzie. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Niepełen ROM — zatrzymanie przed lock-outem lub krótki ekscentryk",
+        "faultPl": "Niepełen ROM — zatrzymanie przed lock-outem lub krótki ekscentryk",
+        "cause": "Zbyt duży ciężar, słabe tricepsy, słaba mobilność overhead, pośpiech, ego-lifting.",
+        "causePl": "Zbyt duży ciężar, słabe tricepsy, słaba mobilność overhead, pośpiech, ego-lifting.",
+        "cue": "Pełen wyprost na szczycie + pełne opuszczenie do wysokości barków. Jeśli ROM ucina się — zmniejsz ciężar.",
+        "cuePl": "Pełen wyprost na szczycie + pełne opuszczenie do wysokości barków. Jeśli ROM ucina się — zmniejsz ciężar."
+      },
+      {
+        "fault": "Nadgarstki zgięte do tyłu pod ciężarem",
+        "faultPl": "Nadgarstki zgięte do tyłu pod ciężarem",
+        "cause": "Zbyt szeroki chwyt na nieodpowiedniej części uchwytu, słabe nadgarstki, zbyt duży ciężar.",
+        "causePl": "Zbyt szeroki chwyt na nieodpowiedniej części uchwytu, słabe nadgarstki, zbyt duży ciężar.",
+        "cue": "Nadgarstki PROSTE i nad łokciami. Mocny chwyt. Rozważ opaski na nadgarstki przy ciężkich seriach.",
+        "cuePl": "Nadgarstki PROSTE i nad łokciami. Mocny chwyt. Rozważ opaski na nadgarstki przy ciężkich seriach."
+      },
+      {
+        "fault": "Złe ustawienie wysokości siedziska (uchwyty za nisko lub za wysoko na starcie)",
+        "faultPl": "Złe ustawienie wysokości siedziska (uchwyty za nisko lub za wysoko na starcie)",
+        "cause": "Pominięcie kalibracji setupu przed serią. Za nisko = zbyt długi ROM dla mobilności + obciążenie rotatorów. Za wysoko = skrócony ROM, słaby bodziec.",
+        "causePl": "Pominięcie kalibracji setupu przed serią. Za nisko = zbyt długi ROM dla mobilności + obciążenie rotatorów. Za wysoko = skrócony ROM, słaby bodziec.",
+        "cue": "Uchwyty w pozycji startowej na wysokości górnej części barków/ucha. Dopasuj siedzisko przed pierwszym powtórzeniem.",
+        "cuePl": "Uchwyty w pozycji startowej na wysokości górnej części barków/ucha. Dopasuj siedzisko przed pierwszym powtórzeniem."
+      }
+    ],
+    "breathing": "Wdech i napięcie przed każdym powtórzeniem. Trzymaj podczas wyciskania (Valsalva przy ciężkich seriach). Wydech na szczycie lock-outu lub w czasie kontrolowanego opuszczania.",
+    "breathingPl": "Wdech i napięcie przed każdym powtórzeniem. Trzymaj podczas wyciskania (Valsalva przy ciężkich seriach). Wydech na szczycie lock-outu lub w czasie kontrolowanego opuszczania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Sprawdź kąt chwytu — jeśli uchwyty są bardzo pronowane, spróbuj wersji z chwytem neutralnym (np. neutral grip lever press) lub zmniejsz ROM. Unikaj bólu — jeśli dochodzi przy szczycie, ucinaj 5-10° przed lock-outem.",
+      "modificationPl": "Sprawdź kąt chwytu — jeśli uchwyty są bardzo pronowane, spróbuj wersji z chwytem neutralnym (np. neutral grip lever press) lub zmniejsz ROM. Unikaj bólu — jeśli dochodzi przy szczycie, ucinaj 5-10° przed lock-outem.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Unikaj dwustronnego ciężkiego wyciskania overhead do zgody fizjoterapeuty. Wróć przez machine shoulder press z lżejszym oporem i pełną kontrolą + rehabilitację rotatorów (face pull, external rotations).",
+      "modificationPl": "Unikaj dwustronnego ciężkiego wyciskania overhead do zgody fizjoterapeuty. Wróć przez machine shoulder press z lżejszym oporem i pełną kontrolą + rehabilitację rotatorów (face pull, external rotations).",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Wersja siedząca jest dobra dla pleców (pad podtrzymuje), ale wymaga aktywnego napięcia brzucha. Mocno napnij core i pośladki, nie odrywaj pleców od oparcia. Jeśli ból mimo to — przejdź na seated machine z pełnym oparciem o pad.",
+      "modificationPl": "Wersja siedząca jest dobra dla pleców (pad podtrzymuje), ale wymaga aktywnego napięcia brzucha. Mocno napnij core i pośladki, nie odrywaj pleców od oparcia. Jeśli ból mimo to — przejdź na seated machine z pełnym oparciem o pad.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Zmniejsz ROM na dole — nie schodź niżej niż pozwala bezbólowa mobilność. Pracuj nad mobilnością piersiowo-barkową drillami (wall slides, thoracic extension). Stała ścieżka maszyny jest tu łagodniejsza niż wolne ciężary.",
+      "modificationPl": "Zmniejsz ROM na dole — nie schodź niżej niż pozwala bezbólowa mobilność. Pracuj nad mobilnością piersiowo-barkową drillami (wall slides, thoracic extension). Stała ścieżka maszyny jest tu łagodniejsza niż wolne ciężary.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hipertrofia, główny wybór) | 4-5x6-8 (siła-hipertrofia, można obciążać ciężko) | 3x12-15 (wytrzymałość/wypalanie, finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-shoulder-press-v-2.gif",
+    "frames_extracted": [
+      "frames/lever-shoulder-press-v-2/frame_0_start.png",
+      "frames/lever-shoulder-press-v-2/frame_1_early.png",
+      "frames/lever-shoulder-press-v-2/frame_2_mid.png",
+      "frames/lever-shoulder-press-v-2/frame_3_late.png",
+      "frames/lever-shoulder-press-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/lever-shoulder-press-v-2",
+    "master_slug": "lever-shoulder-press-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Maszyna: plate-loaded lever shoulder press typu hammer strength z dwoma niezależnymi konwergentnymi ramionami i talerzami załadowanymi z boków (charakterystyczne czarne talerze widoczne na ramionach). Frame 0 (start): postać siedzi pewnie na maszynie, plecy oparte o pionowy pad, uchwyty trzymane na wysokości górnej części barków/dolnego ucha, łokcie pod nadgarstkami ~90°, chwyt pronowany/półneutralny zgodny z kątem uchwytów (uchwyty są ustawione pod lekkim kątem). Podświetlone przednie i lateralne delty (highlight czerwony) oraz tricepsy. Frame 1/2/3 (early/mid/late): symetryczne wyciskanie oboma ramionami jednocześnie po naturalnej zbieżnej ścieżce łuku — uchwyty unoszą się i zbiegają lekko do wewnątrz na szczycie (charakterystyczne dla hammer-style machines). Frame 3 (peak): pełen lock-out — ramiona wyprostowane, uchwyty blisko siebie nad głową, bicepsy w kierunku uszu, tricepsy mocno podświetlone. Frame 4 (powrót): kontrolowane opuszczenie z powrotem do pozycji startowej, faza ekscentryczna. WAŻNE: odróżnienie od machine-shoulder-press (v1, selektorowa, pin-loaded, prosty pionowy tor) — tutaj ramiona są niezależne, plate-loaded, ze zbieżną ścieżką łuku → bliżej biomechaniki wolnych ciężarów. Closed kinetic chain (kontakt z padem/maszyną), bilateral compound. Primary anterior_deltoids P10 (dominują), lateral_deltoids P7 (mniej niż w wersji z czystą pronacją, bo zbieżna ścieżka), triceps P7 (mocny w lock-out). Difficulty 3 — niska, bo maszyna prowadzi ścieżkę i pad podtrzymuje plecy.",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "machine", "plate_loaded", "lever", "hammer_strength", "compound", "bilateral", "iso_lateral", "beginner_friendly", "shoulder_friendly", "heavy_loading"]
+}

@@ -1,0 +1,206 @@
+{
+  "id": "side-bridge-hip-abduction",
+  "name": "Side Bridge Hip Abduction",
+  "namePl": "Side plank z odwodzeniem biodra",
+  "aliases": ["side plank hip abduction", "side bridge with leg raise", "side plank with top leg raise", "side plank abduction", "lateral plank leg raise"],
+  "aliasesPl": ["deska bokiem z odwodzeniem biodra", "side plank z unoszeniem górnej nogi", "deska bokiem z unoszeniem nogi", "deska bokiem z abdukcją", "boczna deska z odwiedzeniem nogi", "side plank z odwiedzeniem"],
+
+  "description": "An advanced bodyweight core and gluteus medius exercise combining a side plank (side bridge) hold with dynamic hip abduction of the TOP leg. The lifter supports the body on the bottom forearm and the side of the bottom foot, holding the trunk in one straight diagonal line, while repeatedly raising and lowering the top leg in the frontal plane (hip abduction). This double demand — anti-lateral-flexion isometric work on the obliques and quadratus lumborum AND dynamic concentric/eccentric work on the gluteus medius and tensor fasciae latae of the top hip — makes it one of the most efficient bodyweight finishers for lateral hip and core stability. The bottom-side gluteus medius also works hard isometrically to prevent the bottom hip from sagging. Particularly valuable for runners, athletes in cutting/lateral sports, and anyone with weak abductors or Trendelenburg gait pattern.",
+  "descriptionPl": "Zaawansowane ćwiczenie z masą własnego ciała łączące pracę core'a (deska bokiem) z dynamicznym odwodzeniem GÓRNEJ nogi w biodrze. Ćwiczący podpiera się na dolnym przedramieniu i zewnętrznej krawędzi dolnej stopy, utrzymując tułów w jednej prostej skośnej linii, jednocześnie cyklicznie unosząc i opuszczając górną nogę w płaszczyźnie czołowej (odwodzenie biodra). To podwójne obciążenie — izometryczna praca antyzgięcia bocznego dla skośnych brzucha i mięśnia czworobocznego lędźwi ORAZ dynamiczna praca koncentryczno-ekscentryczna mięśnia pośladkowego średniego i naprężacza powięzi szerokiej górnego biodra — czyni je jednym z najefektywniejszych ćwiczeń bodyweight na boczną stabilność biodra i core'a. Dolny pośladek średni również intensywnie pracuje izometrycznie, by zapobiec opadaniu dolnego biodra. Szczególnie wartościowe dla biegaczy, sportowców uprawiających sporty z dynamicznymi zmianami kierunku oraz wszystkich osób ze słabymi odwodzicielami lub chodem typu Trendelenburga.",
+
+  "instructions": [
+    "Połóż się bokiem na macie. Ułóż dolne przedramię na podłodze — łokieć dokładnie pod dolnym barkiem, przedramię skierowane do przodu prostopadle do ciała, dłoń płasko.",
+    "Wyprostuj nogi i ułóż jedna na drugiej — stopy złożone, kostki na sobie. Górną rękę połóż na biodrze lub wyciągnij wzdłuż ciała.",
+    "Napnij brzuch i pośladki, unieś biodra tak, by ciało utworzyło JEDNĄ PROSTĄ SKOŚNĄ LINIĘ od kostek przez kolana, biodra, barki aż do głowy. To pozycja wyjściowa side bridge.",
+    "Z tej stabilnej pozycji powoli i kontrolowanie unieś GÓRNĄ nogę w bok do góry (odwodzenie biodra), zachowując ją prostą w kolanie i palcami stopy skierowanymi do przodu (nie w sufit).",
+    "Unoś nogę do wysokości około 30-45 stopni — wyższe uniesienie nie zwiększa pracy pośladka średniego, a powoduje rotację miednicy.",
+    "Wytrzymaj 1 sekundę na górze, czując napięcie w bocznej części górnego pośladka.",
+    "Powoli opuszczaj nogę z powrotem do pozycji wyjściowej (na drugiej nodze), kontrolując fazę ekscentryczną — NIE upuszczaj nogi.",
+    "Powtórz zaplanowaną liczbę powtórzeń, utrzymując biodra UNIESIONE w stałej linii przez całą serię. Następnie kontrolowanie opuść biodra i zmień stronę."
+  ],
+  "instructionsPl": [
+    "Połóż się bokiem na macie. Ułóż dolne przedramię na podłodze — łokieć dokładnie pod dolnym barkiem, przedramię skierowane do przodu prostopadle do ciała, dłoń płasko.",
+    "Wyprostuj nogi i ułóż jedna na drugiej — stopy złożone, kostki na sobie. Górną rękę połóż na biodrze lub wyciągnij wzdłuż ciała.",
+    "Napnij brzuch i pośladki, unieś biodra tak, by ciało utworzyło JEDNĄ PROSTĄ SKOŚNĄ LINIĘ od kostek przez kolana, biodra, barki aż do głowy. To pozycja wyjściowa side bridge.",
+    "Z tej stabilnej pozycji powoli i kontrolowanie unieś GÓRNĄ nogę w bok do góry (odwodzenie biodra), zachowując ją prostą w kolanie i palcami stopy skierowanymi do przodu (nie w sufit).",
+    "Unoś nogę do wysokości około 30-45 stopni — wyższe uniesienie nie zwiększa pracy pośladka średniego, a powoduje rotację miednicy.",
+    "Wytrzymaj 1 sekundę na górze, czując napięcie w bocznej części górnego pośladka.",
+    "Powoli opuszczaj nogę z powrotem do pozycji wyjściowej (na drugiej nodze), kontrolując fazę ekscentryczną — NIE upuszczaj nogi.",
+    "Powtórz zaplanowaną liczbę powtórzeń, utrzymując biodra UNIESIONE w stałej linii przez całą serię. Następnie kontrolowanie opuść biodra i zmień stronę."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_lateral_flexion",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes_medius", "obliques"],
+    "secondary": ["quadratus_lumborum", "tensor_fasciae_latae", "transverse_abdominis"],
+    "stabilizers": ["rectus_abdominis", "serratus_anterior", "lower_trapezius", "rotator_cuff", "glutes_maximus", "glutes_minimus", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "glutes_medius": "P10",
+    "obliques": "P9",
+    "quadratus_lumborum": "S8",
+    "tensor_fasciae_latae": "S7",
+    "transverse_abdominis": "S6",
+    "rectus_abdominis": "T5",
+    "glutes_minimus": "T4",
+    "serratus_anterior": "T4",
+    "glutes_maximus": "T3",
+    "lower_trapezius": "T3",
+    "rotator_cuff": "T3",
+    "adductors": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["yoga_mat", "exercise_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["side-plank", "plank", "side-lying-hip-abduction", "clamshell"],
+    "progression_to": ["side-bridge-hip-abduction-weighted", "side-plank-with-band-abduction", "star-side-plank"],
+    "alternatives": ["side-lying-hip-abduction", "cable-hip-abduction", "lever-seated-hip-abduction", "side-plank", "clamshell"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Łokieć DOKŁADNIE pod barkiem — staw spakowany, nie wysunięty do przodu ani do tyłu",
+      "Stopy złożone i nieruchome, kostki dokładnie na sobie — to twoja jedyna baza podporu",
+      "Pre-bracing przed uniesieniem bioder: napnij brzuch jakbyś czekał na uderzenie, ściśnij pośladki",
+      "Biodra wypchnięte W GÓRĘ — ciało w jednej prostej skośnej linii od kostek do głowy",
+      "Górne biodro skierowane PROSTO w sufit — nie obracaj miednicy do przodu ani do tyłu"
+    ],
+    "setup_cues_pl": [
+      "Łokieć DOKŁADNIE pod barkiem — staw spakowany, nie wysunięty do przodu ani do tyłu",
+      "Stopy złożone i nieruchome, kostki dokładnie na sobie — to twoja jedyna baza podporu",
+      "Pre-bracing przed uniesieniem bioder: napnij brzuch jakbyś czekał na uderzenie, ściśnij pośladki",
+      "Biodra wypchnięte W GÓRĘ — ciało w jednej prostej skośnej linii od kostek do głowy",
+      "Górne biodro skierowane PROSTO w sufit — nie obracaj miednicy do przodu ani do tyłu"
+    ],
+    "execution_cues": [
+      "Prowadź ruch PIĘTĄ górnej nogi — palce stopy lekko w dół, jakbyś pokazywał piętą sufit",
+      "Unieś nogę do 30-45 stopni — wyżej nie ma sensu, miednica zacznie się obracać",
+      "Górne biodro CIĄGLE w sufit — gdy unosisz nogę, nie pozwól biodru przewrócić się do tyłu",
+      "Dolne biodro CIĄGLE w górze — nie pozwól mu opadać, gdy noga wraca w dół",
+      "Kontrolowana faza ekscentryczna — opuszczaj nogę 2-3 sekundy, nie upuszczaj jej"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch PIĘTĄ górnej nogi — palce stopy lekko w dół, jakbyś pokazywał piętą sufit",
+      "Unieś nogę do 30-45 stopni — wyżej nie ma sensu, miednica zacznie się obracać",
+      "Górne biodro CIĄGLE w sufit — gdy unosisz nogę, nie pozwól biodru przewrócić się do tyłu",
+      "Dolne biodro CIĄGLE w górze — nie pozwól mu opadać, gdy noga wraca w dół",
+      "Kontrolowana faza ekscentryczna — opuszczaj nogę 2-3 sekundy, nie upuszczaj jej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dolne biodro opada w stronę podłogi w trakcie serii",
+        "faultPl": "Dolne biodro opada w stronę podłogi w trakcie serii",
+        "cause": "Słaby dolny pośladek średni i skośne brzucha; brak świadomej pracy ANTY-zgięcia bocznego — utrzymanie deski bokiem to praca dolnej, a nie górnej strony tułowia",
+        "causePl": "Słaby dolny pośladek średni i skośne brzucha; brak świadomej pracy ANTY-zgięcia bocznego — utrzymanie deski bokiem to praca dolnej, a nie górnej strony tułowia",
+        "cue": "Wypychaj DOLNE biodro w stronę sufitu RÓWNIE MOCNO jak unosisz górną nogę. Jeśli biodra opadają — przerwij serię, wróć do zwykłej deski bokiem.",
+        "cuePl": "Wypychaj DOLNE biodro w stronę sufitu RÓWNIE MOCNO jak unosisz górną nogę. Jeśli biodra opadają — przerwij serię, wróć do zwykłej deski bokiem."
+      },
+      {
+        "fault": "Miednica rotuje do tyłu, by unieść nogę wyżej",
+        "faultPl": "Miednica rotuje do tyłu, by unieść nogę wyżej",
+        "cause": "Próba zastąpienia pracy pośladka średniego pracą zginaczy biodra (TFL, prosta uda) — wymaga obrócenia miednicy, by stworzyć kąt zginania zamiast odwodzenia",
+        "causePl": "Próba zastąpienia pracy pośladka średniego pracą zginaczy biodra (TFL, prosta uda) — wymaga obrócenia miednicy, by stworzyć kąt zginania zamiast odwodzenia",
+        "cue": "Palce stopy skierowane DO PRZODU, nie w sufit. Górne biodro przyklejone do wyimaginowanej szyby za plecami. Jeśli musisz rotować, by unieść — zmniejsz zakres do 30 stopni.",
+        "cuePl": "Palce stopy skierowane DO PRZODU, nie w sufit. Górne biodro przyklejone do wyimaginowanej szyby za plecami. Jeśli musisz rotować, by unieść — zmniejsz zakres do 30 stopni."
+      },
+      {
+        "fault": "Górna noga zgięta w kolanie podczas unoszenia",
+        "faultPl": "Górna noga zgięta w kolanie podczas unoszenia",
+        "cause": "Skrócenie dźwigni przez zgięcie kolana zmniejsza obciążenie pośladka średniego — to nieświadoma kompensacja zmęczonej lub słabej grupy",
+        "causePl": "Skrócenie dźwigni przez zgięcie kolana zmniejsza obciążenie pośladka średniego — to nieświadoma kompensacja zmęczonej lub słabej grupy",
+        "cue": "Zablokuj górne kolano w wyproście — noga PROSTA jak deska. Jeśli musisz zginać, by unieść — to znaczy, że masz za dużo powtórzeń, zmniejsz objętość.",
+        "cuePl": "Zablokuj górne kolano w wyproście — noga PROSTA jak deska. Jeśli musisz zginać, by unieść — to znaczy, że masz za dużo powtórzeń, zmniejsz objętość."
+      },
+      {
+        "fault": "Dolny bark podciągnięty do ucha, szyja sztywna",
+        "faultPl": "Dolny bark podciągnięty do ucha, szyja sztywna",
+        "cause": "Bierne opadanie ciężaru ciała na ramię podporowe; brak aktywnej pracy zębatego przedniego i dolnego czworobocznego",
+        "causePl": "Bierne opadanie ciężaru ciała na ramię podporowe; brak aktywnej pracy zębatego przedniego i dolnego czworobocznego",
+        "cue": "Wciskaj przedramię W DÓŁ w podłogę, jakbyś chciał ją odepchnąć. Długa szyja, bark daleko od ucha, klatka otwarta.",
+        "cuePl": "Wciskaj przedramię W DÓŁ w podłogę, jakbyś chciał ją odepchnąć. Długa szyja, bark daleko od ucha, klatka otwarta."
+      },
+      {
+        "fault": "Tempo zbyt szybkie, noga 'odbija się' od biodra dolnego",
+        "faultPl": "Tempo zbyt szybkie, noga 'odbija się' od biodra dolnego",
+        "cause": "Praca z rozpędu zamiast kontrolowanej pracy mięśniowej; w fazie ekscentrycznej noga spada zamiast być opuszczana",
+        "causePl": "Praca z rozpędu zamiast kontrolowanej pracy mięśniowej; w fazie ekscentrycznej noga spada zamiast być opuszczana",
+        "cue": "Tempo 1-1-2-1: unieś (1s), wytrzymaj (1s), opuść (2s), pauza dotyk (1s). Bez balistyki.",
+        "cuePl": "Tempo 1-1-2-1: unieś (1s), wytrzymaj (1s), opuść (2s), pauza dotyk (1s). Bez balistyki."
+      }
+    ],
+    "breathing": "Wydech podczas unoszenia górnej nogi (faza koncentryczna, odwodzenie biodra). Wdech podczas kontrolowanego opuszczania (faza ekscentryczna). NIE wstrzymuj oddechu — pozycja side bridge sama w sobie jest wymagająca metabolicznie i wstrzymywanie oddechu szybko podniesie ciśnienie krwi.",
+    "breathingPl": "Wydech podczas unoszenia górnej nogi (faza koncentryczna, odwodzenie biodra). Wdech podczas kontrolowanego opuszczania (faza ekscentryczna). NIE wstrzymuj oddechu — pozycja side bridge sama w sobie jest wymagająca metabolicznie i wstrzymywanie oddechu szybko podniesie ciśnienie krwi."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_pain",
+      "severity": "modify",
+      "modification": "Dolny bark dźwiga ciężar ciała izometrycznie przez całą serię. Jeśli ból się utrzymuje — przejdź na regresję z kolanami zgiętymi na podłodze (short-lever side plank) z odwodzeniem nogi, aż bark to toleruje.",
+      "modificationPl": "Dolny bark dźwiga ciężar ciała izometrycznie przez całą serię. Jeśli ból się utrzymuje — przejdź na regresję z kolanami zgiętymi na podłodze (short-lever side plank) z odwodzeniem nogi, aż bark to toleruje.",
+      "alternative": "side-lying-hip-abduction"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "Jeśli biodra opadają lub nie utrzymujesz czystej linii — STOP, wróć do regresji. Wykonywane z perfekcyjną techniką to świetne ćwiczenie stabilności kręgosłupa, ale powtórzenia 'oszukane' obciążą odcinek lędźwiowy w zgięciu bocznym pod napięciem.",
+      "modificationPl": "Jeśli biodra opadają lub nie utrzymujesz czystej linii — STOP, wróć do regresji. Wykonywane z perfekcyjną techniką to świetne ćwiczenie stabilności kręgosłupa, ale powtórzenia 'oszukane' obciążą odcinek lędźwiowy w zgięciu bocznym pod napięciem.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Dolny bark dźwiga ciężar ciała izometrycznie. Unikaj, aż zwykła deska bokiem i deska na przedramionach będą bezbolesne. Zamień na pozycję leżącą bokiem bez pracy barku.",
+      "modificationPl": "Dolny bark dźwiga ciężar ciała izometrycznie. Unikaj, aż zwykła deska bokiem i deska na przedramionach będą bezbolesne. Zamień na pozycję leżącą bokiem bez pracy barku.",
+      "alternative": "side-lying-hip-abduction"
+    },
+    {
+      "condition": "hip_impingement",
+      "severity": "caution",
+      "modification": "Wysokie odwodzenie biodra (powyżej 45 stopni) może zaostrzać ból FAI po stronie górnej. Zmniejsz zakres do 30 stopni i unikaj rotacji miednicy. Jeśli ból utrzymuje się — zamień na clamshell lub side-lying hip abduction z mniejszym zakresem.",
+      "modificationPl": "Wysokie odwodzenie biodra (powyżej 45 stopni) może zaostrzać ból FAI po stronie górnej. Zmniejsz zakres do 30 stopni i unikaj rotacji miednicy. Jeśli ból utrzymuje się — zamień na clamshell lub side-lying hip abduction z mniejszym zakresem.",
+      "alternative": "clamshell"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 powtórzeń per stronę (wersja dynamiczna) | 3x20-40 sekund izometrycznie z uniesioną nogą (wersja statyczna) | tempo 1-1-2-1 (unieś-pauza-opuść-pauza) dla maksymalnej pracy pośladka średniego",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "side-bridge-hip-abduction.gif",
+    "frames_extracted": [
+      "frames/side-bridge-hip-abduction/frame_0_start.png",
+      "frames/side-bridge-hip-abduction/frame_1_early.png",
+      "frames/side-bridge-hip-abduction/frame_2_mid.png",
+      "frames/side-bridge-hip-abduction/frame_3_late.png",
+      "frames/side-bridge-hip-abduction/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abductors/side-bridge-hip-abduction"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:45:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 z GIFa jahel. To klasyczny side bridge (deska bokiem na przedramieniu) + dynamiczne odwodzenie GÓRNEJ nogi. Frame 0 (start): pełna deska bokiem, ciało w prostej skośnej linii, obie nogi złożone na sobie, dolne przedramię na podłodze, podświetlone na czerwono OBLIQUES po dolnej stronie tułowia oraz boczna część górnego pośladka. Frame 2 (mid): górna noga uniesiona na ~45 stopni w bok (odwodzenie biodra w płaszczyźnie czołowej), ciało nadal w jednej linii, miednica nieruchoma. Frame 4 (end): pozycja końcowa praktycznie identyczna ze startem (noga z powrotem na drugiej). Klasyfikacja: anti_lateral_flexion (deska bokiem = primary funkcja core'a) + hip abduction (dynamiczna praca górnej nogi); force=push (noga aktywnie odpycha się od linii środkowej w górę przeciw grawitacji), mechanic=compound (biodro + bark + tułów), laterality=unilateral (jedna strona naraz), plane=frontal (odwodzenie biodra w czołowej), kinetic_chain=closed (stopa dolna zafiksowana na podłodze). Primary: glutes_medius P10 (najwyższa intensywność — to główny mięsień odwodzący biodro), obliques P9 (utrzymanie deski bokiem przeciw grawitacji). Equipment: bodyweight (zgodnie ze specyfikacją Macieja, mata opcjonalna). Difficulty 5 zgodnie ze specyfikacją — intermediate poziom (wymaga już opanowanej side plank), ale nie tak ciężkie jak Copenhagen plank. Prerequisites: side-plank, plank, side-lying-hip-abduction, clamshell. 5 common_faults (sagging hips, pelvic rotation, bent knee, shrugged shoulder, ballistic tempo), 4 contraindications (shoulder, lower back, rotator cuff, hip impingement). Polska nazwa 'Side plank z odwodzeniem biodra' zgodnie z prośbą Macieja — polska szkoła fitness używa zarówno 'side plank' jak i 'deska bokiem', oba w aliasach. Sets/reps: '3x10-15 powtórzeń per stronę' (dynamiczna) lub '3x20-40s' (izometryczna) — typowe protokoły dla pośladka średniego. Tempo 1-1-2-1 (eccentric overload) maksymalizuje pracę glutes medius.",
+
+  "tags": ["bodyweight", "core", "glutes_medius", "obliques", "anti_lateral_flexion", "side_plank", "side_bridge", "hip_abduction", "unilateral", "gluteus_medius", "intermediate", "isometric_dynamic", "frontal_plane", "side_plank_variant", "hip_stability"]
+}

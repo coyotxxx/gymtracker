@@ -1,0 +1,204 @@
+{
+  "id": "lever-t-bar-row",
+  "name": "T-Bar Row (Machine)",
+  "namePl": "T-bar row na maszynie",
+  "aliases": ["lever t-bar row", "plate-loaded t-bar row", "machine t-bar row", "chest-supported t-bar row machine", "leverage t-bar row"],
+  "aliasesPl": ["wiosłowanie T-bar na maszynie", "wiosłowanie T-bar z podparciem klatki", "T-bar row z podparciem", "maszyna T-bar", "T-bar row dźwigniowy"],
+
+  "description": "Heavy horizontal pulling exercise performed on a dedicated leverage T-bar machine with chest support. The lifter places the chest against an angled pad, stands on the foot platform with hips hinged forward, and pulls the plate-loaded T-handle from a hanging position up toward the lower chest / upper abdomen. The chest pad eliminates the need to actively stabilize the torso, removing erector-spinae fatigue and lower-back injury risk from the equation. This isolates the pulling musculature — lats, rhomboids, mid/lower traps — and allows much heavier loads than free-weight bent-over rows. Considered one of the best mass-builders for back thickness, especially valuable for advanced lifters whose lower back is the limiting factor in barbell rows.",
+  "descriptionPl": "Ciężkie ćwiczenie ciągu poziomego wykonywane na dedykowanej maszynie dźwigniowej T-bar z podparciem klatki. Trenujący opiera klatkę o skośną poduszkę, staje na platformie nożnej z biodrami zgiętymi w przód i ciągnie obciążony uchwyt T-bar z pozycji zwisu w górę, w stronę dolnej części klatki / górnej części brzucha. Poduszka klatki eliminuje konieczność aktywnej stabilizacji tułowia, usuwając zmęczenie prostowników grzbietu i ryzyko kontuzji odcinka lędźwiowego. Dzięki temu izoluje muskulaturę ciągu — najszersze grzbietu, równoległoboczne, środkowe i dolne czworoboczne — i pozwala na znacznie większe obciążenia niż klasyczne wiosłowanie w opadzie. Uznawane za jedno z najlepszych ćwiczeń masowych na grubość pleców, szczególnie wartościowe dla zaawansowanych zawodników, u których odcinek lędźwiowy jest czynnikiem limitującym w wiosłowaniu sztangą.",
+
+  "instructions": [
+    "Load the T-bar with plates. Adjust the chest pad height so that when you press your chest against it, the handle hangs naturally below your shoulders with arms fully extended.",
+    "Step onto the foot platform, feet hip- to shoulder-width apart. Place your chest firmly against the pad with the upper edge of the pad at sternum / upper-chest level.",
+    "Hinge forward at the hips, keep a slight bend in the knees. Grip the handle (most commonly a neutral / close grip, sometimes wide overhand depending on the machine).",
+    "Pull the slack out — set the lats, retract the shoulders slightly off the pad, brace the core, neutral neck.",
+    "Drive the elbows back and slightly up, pulling the handle toward the lower chest / upper abdomen. Keep the chest pressed against the pad — do NOT lift the chest off to use body english.",
+    "Squeeze the shoulder blades together at the top. Hold the contracted position for 1 second.",
+    "Lower the handle in full control until arms are completely extended and lats are fully stretched at the bottom. Do not let the weight slam down.",
+    "Keep your chest on the pad and torso angle locked throughout the entire set. The only thing moving should be your arms and shoulder blades."
+  ],
+  "instructionsPl": [
+    "Załaduj uchwyt T-bar talerzami. Wyreguluj wysokość poduszki klatki tak, by gdy oprzesz o nią klatkę, uchwyt zwisał naturalnie pod barkami przy pełnym wyproście ramion.",
+    "Wejdź na platformę nożną, stopy na szerokość bioder lub barków. Oprzyj klatkę mocno o poduszkę — górna krawędź poduszki na wysokości mostka / górnej części klatki.",
+    "Zegnij się w biodrach, lekko ugnij kolana. Złap uchwyt (najczęściej chwyt neutralny / wąski, czasem szeroki nachwytem — zależnie od maszyny).",
+    "Wybierz luz — aktywuj najszersze, lekko ściągnij łopatki od poduszki, napnij brzuch, neutralny kark.",
+    "Wprowadź łokcie w tył i lekko w górę, ciągnąc uchwyt w stronę dolnej części klatki / górnej części brzucha. Trzymaj klatkę przyklejoną do poduszki — NIE odrywaj jej, by używać pędu ciała.",
+    "Ściśnij łopatki razem na szczycie. Przytrzymaj pozycję skurczu przez 1 sekundę.",
+    "Opuszczaj uchwyt w pełnej kontroli aż do całkowitego wyprostu ramion i pełnego rozciągnięcia najszerszych w dole. Nie pozwól ciężarowi spaść.",
+    "Trzymaj klatkę na poduszce i kąt tułowia stale taki sam przez całą serię. Jedyne co powinno się ruszać to ramiona i łopatki."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower"],
+    "secondary": ["biceps_brachii", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["core", "forearms", "glutes", "hamstrings"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "P9",
+    "posterior_deltoids": "S8",
+    "biceps_brachii": "S7",
+    "brachialis": "S7",
+    "forearms": "S7",
+    "core": "S5",
+    "glutes": "S4",
+    "hamstrings": "S4"
+  },
+
+  "equipment": {
+    "required": ["lever_t_bar_row_machine", "weight_plates"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["seated-cable-row", "dumbbell-bent-over-row", "chest-supported-row"],
+    "progression_to": ["barbell-bent-over-row", "pendlay-row", "yates-row"],
+    "alternatives": ["chest-supported-row", "barbell-bent-over-row", "seated-cable-row", "dumbbell-bent-over-row", "landmine-t-bar-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Adjust pad height so handle hangs naturally under shoulders with arms straight",
+      "Chest pressed firmly into the pad, sternum at top edge",
+      "Feet flat on platform, hip- to shoulder-width apart",
+      "Neutral grip on the handle (most common), full grip — wrist straight",
+      "Brace core, lats engaged, neutral neck — eyes forward or slightly down"
+    ],
+    "setup_cues_pl": [
+      "Ustaw wysokość poduszki tak, by uchwyt zwisał naturalnie pod barkami przy prostych ramionach",
+      "Klatka mocno wciśnięta w poduszkę, mostek na górnej krawędzi",
+      "Stopy płasko na platformie, na szerokość bioder lub barków",
+      "Chwyt neutralny na uchwycie (najczęstszy), pełny chwyt — nadgarstek prosty",
+      "Napięty brzuch, najszersze aktywne, neutralny kark — wzrok przed siebie lub lekko w dół"
+    ],
+    "execution_cues": [
+      "Pull with the elbows — drive them back and slightly up",
+      "Keep the chest GLUED to the pad — zero space the entire set",
+      "Pull the handle to lower chest / upper abdomen — NOT to the throat",
+      "Squeeze shoulder blades together hard at the top, hold 1 second",
+      "Full stretch at the bottom — let the lats lengthen, but do not relax the grip"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciami — prowadź je w tył i lekko w górę",
+      "Trzymaj klatkę PRZYKLEJONĄ do poduszki — zero przestrzeni przez całą serię",
+      "Ciągnij uchwyt do dolnej klatki / górnej części brzucha — NIE do gardła",
+      "Mocno ściśnij łopatki na szczycie, przytrzymaj 1 sekundę",
+      "Pełne rozciągnięcie w dole — pozwól najszerszym się wydłużyć, ale nie luzuj chwytu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the chest off the pad to use body english",
+        "faultPl": "Odrywanie klatki od poduszki by używać pędu ciała",
+        "cause": "Load too heavy, ego lifting, or trying to row like a free-weight bent-over row",
+        "causePl": "Zbyt duży ciężar, ego lifting lub próba wiosłowania jak w wersji wolnoobciążeniowej w opadzie",
+        "cue": "Reduce weight by 20%. The whole point of this machine is the chest pad — if you lift off, you defeat the purpose and lose the back isolation. Chest stays glued.",
+        "cuePl": "Zmniejsz ciężar o 20%. Cały sens tej maszyny to poduszka klatki — jeśli ją odrywasz, niszczysz cel ćwiczenia i tracisz izolację pleców. Klatka przyklejona."
+      },
+      {
+        "fault": "Pulling the handle too high (toward chest / neck)",
+        "faultPl": "Ciąg uchwytu zbyt wysoko (do klatki / szyi)",
+        "cause": "Mimicking face-pull or upright-row pattern, or pad set too low",
+        "causePl": "Imitowanie wzorca face-pulla lub uprightu, albo zbyt nisko ustawiona poduszka",
+        "cue": "Target is the LOWER chest / upper abdomen. Pulling to the neck recruits rear delts and upper traps instead of lats. Check pad height.",
+        "cuePl": "Cel to DOLNA klatka / górna część brzucha. Ciąg do szyi angażuje tylne naramienne i górne czworoboczne zamiast najszerszych. Sprawdź wysokość poduszki."
+      },
+      {
+        "fault": "Partial range — not extending arms fully at the bottom",
+        "faultPl": "Niepełny zakres — brak pełnego wyprostu ramion w dole",
+        "cause": "Load too heavy, or chasing the squeeze without respecting the stretch",
+        "causePl": "Zbyt duży ciężar lub gonienie skurczu bez szacunku do rozciągnięcia",
+        "cue": "Let the arms fully extend at the bottom — lats need the stretch for hypertrophy. The stretch is where the growth signal happens. Lower weight if you cannot control the full descent.",
+        "cuePl": "Pozwól ramionom pełnie się wyprostować w dole — najszersze potrzebują rozciągnięcia dla hipertrofii. Sygnał wzrostu pojawia się w rozciągnięciu. Zmniejsz ciężar jeśli nie kontrolujesz pełnego opuszczenia."
+      },
+      {
+        "fault": "Shrugging the shoulders up toward the ears during the pull",
+        "faultPl": "Wzruszanie barkami w górę ku uszom podczas ciągu",
+        "cause": "Upper traps dominating, weak mid-back, or pulling too high",
+        "causePl": "Dominacja górnych czworobocznych, słabe środkowe plecy lub ciąg zbyt wysoki",
+        "cue": "Keep the shoulders DOWN and BACK throughout the entire pull. Think 'pull the elbows into back pockets,' not 'shrug the weight up.' If you cannot, lower the weight.",
+        "cuePl": "Trzymaj barki W DÓŁ i W TYŁ przez cały ciąg. Pomyśl 'ciągnij łokcie do tylnych kieszeni', nie 'wzrusz ciężar w górę'. Jeśli nie umiesz — zmniejsz ciężar."
+      },
+      {
+        "fault": "Slamming the weight down (no eccentric control)",
+        "faultPl": "Rzucanie ciężaru w dół (brak kontroli ekscentrycznej)",
+        "cause": "Rushing tempo, weight too heavy, or undervaluing the eccentric for hypertrophy",
+        "causePl": "Szybkie tempo, zbyt duży ciężar lub niedocenianie fazy ekscentrycznej dla hipertrofii",
+        "cue": "2-second negative on every rep. The eccentric is half the gains. If you cannot control the descent, the weight is too heavy.",
+        "cuePl": "2 sekundy opuszczania w każdym powtórzeniu. Ekscentryk to połowa efektów. Jeśli nie kontrolujesz opuszczania — ciężar jest zbyt duży."
+      }
+    ],
+    "breathing": "Inhale at the top of the lowered position (arms extended). Exhale through the pull as the handle rises toward the body. Inhale on the controlled descent. For heavy sets, hold a Valsalva-style brace through 1-2 reps then re-breathe.",
+    "breathingPl": "Wdech na szczycie pozycji opuszczonej (ramiona wyprostowane). Wydech w trakcie ciągu gdy uchwyt unosi się ku ciału. Wdech na kontrolowanym opuszczaniu. Przy ciężkich seriach trzymaj napięcie typu Valsalva przez 1-2 powtórzenia, potem odetchnij."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_chest_or_rib_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely — the chest pad applies direct pressure on the sternum/ribs which will aggravate injuries. Use seated cable row instead until healed.",
+      "modificationPl": "Unikaj całkowicie — poduszka uciska bezpośrednio mostek/żebra, co pogłębi kontuzję. Stosuj wiosłowanie siedząc z linki do wyleczenia.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use neutral grip handle (not wide overhand). Keep elbows closer to the body, avoid flaring them out. Reduce range if pinching occurs.",
+      "modificationPl": "Stosuj chwyt neutralny (nie szeroki nachwyt). Trzymaj łokcie bliżej ciała, unikaj odchylania ich na boki. Zmniejsz zakres jeśli pojawia się szczypanie.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "lumbar_disc_problems",
+      "severity": "modify",
+      "modification": "Chest support significantly reduces spinal load vs barbell row — usually well-tolerated. Keep chest firmly on pad, avoid any spinal rounding, moderate loads. Excellent alternative to free-weight rows for users with lower-back issues.",
+      "modificationPl": "Podparcie klatki znacząco zmniejsza obciążenie kręgosłupa vs wiosłowanie sztangą — zwykle dobrze tolerowane. Trzymaj klatkę mocno na poduszce, unikaj zaokrąglania kręgosłupa, umiarkowane obciążenia. Doskonała alternatywa dla wolnoobciążeniowych wiosłowań przy problemach lędźwiowych.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "Use lifting straps to reduce grip stress on forearms/elbow tendons. Avoid wide overhand grip — neutral grip is friendlier on elbows. Reduce volume if symptomatic.",
+      "modificationPl": "Stosuj paski naciągowe by zmniejszyć obciążenie chwytu na przedramionach/ścięgnach łokcia. Unikaj szerokiego chwytu nachwytem — neutralny jest bardziej przyjazny dla łokci. Zmniejsz objętość przy objawach.",
+      "alternative": "seated-cable-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — main use) | 4x6-8 (strength / mass) | 3x10-15 (volume / pump) | 2-3x12-20 (metabolic finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-t-bar-row.gif",
+    "frames_extracted": [
+      "frames/lever-t-bar-row/frame_0_start.png",
+      "frames/lever-t-bar-row/frame_1_early.png",
+      "frames/lever-t-bar-row/frame_2_mid.png",
+      "frames/lever-t-bar-row/frame_3_late.png",
+      "frames/lever-t-bar-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/lever-t-bar-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Maszyna dźwigniowa T-bar z chest pad (skośna poduszka) + platforma nożna. Frame 0 (start): tułów pochylony ~45 stopni, klatka oparta o poduszkę, kolana lekko ugięte, uchwyt T-bar z talerzami zwisa przy wyprostowanym ramieniu na wysokości goleni — podświetlone najszersze grzbietu, środkowe/dolne czworoboczne, równoległoboczne i tylne naramienne (klasyczny mid-back complex). Frame 1-2 (early/mid): ruch koncentryczny — łokieć idzie w tył i lekko w górę, uchwyt zbliża się do dolnej klatki/górnej części brzucha, klatka NADAL przyklejona do poduszki (kluczowy detal — zero kippingu). Frame 3-4 (late/end): pełne ściągnięcie, łokieć za linię tułowia, uchwyt blisko ciała, podświetlenie najszersze + środkowe plecy — wzorcowy mid-back row. Klasyfikacja 'pull_horizontal' potwierdzona (klatka pozioma, uchwyt poziomo do ciała). Equipment: dedykowana maszyna lever t-bar z chest pad + talerze. Difficulty 5 (znacznie łatwiejsze technicznie od barbell bent-over row 7, bo poduszka eliminuje stabilizację tułowia i ryzyko kręgosłupa — to klasyczny 'safer alternative' dla zaawansowanych z bolącym dolnym odcinkiem). primary lats P10 (najwyższe — to ćwiczenie znane jako KILLER lats, dzięki pełnemu zakresowi rozciągnięcie-skurcz bez stabilizacji tułowia), rhomboids P9, trapezius_middle_lower P9 zgodnie ze specyfikacją. Wszystkie pola PL napisane od zera, polski standard fitness ('T-bar row na maszynie' to powszechna nazwa w polskich siłowniach).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "machine", "chest_supported", "mid_back", "lat_developer", "lower_back_friendly", "bodybuilding_classic", "lever_machine"]
+}

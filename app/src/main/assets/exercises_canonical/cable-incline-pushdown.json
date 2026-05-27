@@ -1,0 +1,202 @@
+{
+  "id": "cable-incline-pushdown",
+  "name": "Cable Incline Pushdown",
+  "namePl": "Prostowanie ramion na wyciągu w pochyleniu",
+  "aliases": ["cable incline straight-arm pulldown", "lying cable straight-arm pulldown", "incline bench cable pulldown", "supine cable pullover with bar", "reclined cable pulldown"],
+  "aliasesPl": ["wyprost ramion na wyciągu na ławce skośnej", "przyciąganie prostymi ramionami na wyciągu w leżeniu skosie", "pulldown prostymi ramionami na ławce skośnej", "przyciąganie linki z drążkiem na ławce skośnej", "wyciąganie prostymi rękami w pozycji półleżącej"],
+
+  "description": "An isolation exercise for the latissimus dorsi performed lying back on an incline bench facing a high cable. With a straight bar held overhead and arms nearly fully extended, the lifter pulls the bar down in a long arc toward the hips by driving the upper arms through shoulder extension. The incline angle pre-stretches the lats at the top and removes lower-back fatigue, allowing a focused, high-tension stimulus to the upper and outer back without elbow flexion contribution. Excellent for building the mind-muscle connection with the lats and for finishing back workouts when grip or biceps are exhausted.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień najszerszy grzbietu, wykonywane w pozycji półleżącej na ławce skośnej skierowanej w stronę wyciągu górnego. Drążek prosty trzymany nad głową, ramiona w wyprostowanej pozycji — ruch polega na przyciąganiu drążka po długim łuku w kierunku bioder, poprzez wyprost ramienia w stawie barkowym. Ławka pod kątem mocno rozciąga mięśnie najszersze w pozycji szczytowej i eliminuje zmęczenie odcinka lędźwiowego, dzięki czemu daje się skupiony, wysokonapięciowy bodziec dla górnej i bocznej części pleców — bez udziału zginaczy łokcia. Świetne do budowania świadomego napięcia mięśni najszerszych oraz jako ćwiczenie kończące trening pleców, gdy chwyt i bicepsy są już zmęczone.",
+
+  "instructions": [
+    "Set an adjustable bench at roughly 45-60 degrees and place it about a meter back from a high cable pulley. Attach a straight bar to the cable.",
+    "Sit on the bench, lie back fully against the pad, and reach overhead to grasp the bar with a pronated (overhand) grip slightly wider than shoulder-width.",
+    "Plant your feet flat on the floor, brace your core, and pull your shoulder blades down and back so they stay packed against the bench.",
+    "Start position: arms extended overhead at roughly your shoulder line, lats lengthened and feeling a stretch in the armpit area. Elbows stay nearly straight (a very small bend is fine).",
+    "Initiate the movement from the lats — drive the upper arms down in a wide arc toward your hips. Do not bend the elbows further; the forearms travel as one unit with the upper arms.",
+    "Pull the bar down until it is over your lower abdomen / hips and your upper arms are alongside your torso. Squeeze the lats hard for one count.",
+    "Reverse under control over 2-3 seconds, letting the arms travel back overhead until you feel the full stretch in the lats again.",
+    "Keep the head, upper back, and hips pinned to the bench throughout. The torso does not crunch up to meet the bar."
+  ],
+  "instructionsPl": [
+    "Ustaw ławeczkę regulowaną pod kątem około 45-60 stopni i odsuń ją na około metr od wyciągu górnego. Podepnij drążek prosty do linki.",
+    "Usiądź na ławce, połóż się plecami pełną długością na oparciu i sięgnij rękami w górę, łapiąc drążek nachwytem (dłonie do dołu) nieco szerzej niż na szerokość barków.",
+    "Postaw stopy płasko na podłodze, napnij brzuch, ściągnij łopatki w dół i w tył, tak by przylegały do oparcia ławki.",
+    "Pozycja startowa: ramiona wyprostowane nad głową w linii barków, mięśnie najszersze rozciągnięte, czujesz naciąganie w okolicy pachy. Łokcie pozostają niemal proste (bardzo lekkie ugięcie jest OK).",
+    "Inicjuj ruch z najszerszych — wciskaj ramiona w dół po szerokim łuku w kierunku bioder. Nie zginaj dalej łokci; przedramię porusza się razem z ramieniem jako jeden segment.",
+    "Przyciągnij drążek aż znajdzie się nad dolną częścią brzucha / biodrami, a ramiona ponad łokciem będą wzdłuż tułowia. Mocno napnij najszersze na chwilę w dolnej pozycji.",
+    "Wracaj kontrolowanie przez 2-3 sekundy, pozwalając ramionom wrócić nad głowę aż znów poczujesz pełne rozciągnięcie najszerszych.",
+    "Głowa, górna część pleców i biodra cały czas przylegają do ławki. Tułów nie unosi się aby spotkać drążek."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["teres_major", "long_head_triceps", "posterior_deltoid"],
+    "stabilizers": ["lower_trapezius", "rhomboids", "core", "pectoralis_major_sternal", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "teres_major": "S7",
+    "long_head_triceps": "S5",
+    "posterior_deltoid": "S4",
+    "lower_trapezius": "T4",
+    "rhomboids": "T3",
+    "pectoralis_major_sternal": "T3",
+    "core": "T3",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "incline_bench", "straight_bar_attachment"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["straight-arm-pulldown", "lat-pulldown"],
+    "progression_to": ["single-arm-cable-incline-pushdown", "dumbbell-pullover", "cable-pullover"],
+    "alternatives": ["straight-arm-pulldown", "cable-pullover", "dumbbell-pullover", "lat-pulldown", "rope-straight-arm-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 45-60 degrees, about a meter from the cable",
+      "Lie back fully — head and hips pinned to the pad",
+      "Pronated grip on the straight bar, slightly wider than shoulders",
+      "Shoulder blades depressed and packed against the bench",
+      "Arms straight overhead, lats already feeling a stretch"
+    ],
+    "setup_cues_pl": [
+      "Ławka pod kątem 45-60 stopni, około metr od wyciągu",
+      "Połóż się plecami — głowa i biodra przylegają do oparcia",
+      "Chwyt nachwytem na drążku prostym, nieco szerzej niż barki",
+      "Łopatki ściągnięte w dół, przyklejone do oparcia ławki",
+      "Ramiona proste nad głową, najszersze już rozciągnięte"
+    ],
+    "execution_cues": [
+      "Drive the upper arms down — do not bend the elbows",
+      "Pull from the armpit, not from the hands",
+      "Long arc — bar travels in a wide path toward the hips",
+      "Squeeze the lats hard when the bar reaches the abdomen",
+      "Slow eccentric — let the arms float back overhead under control"
+    ],
+    "execution_cues_pl": [
+      "Wciskaj ramiona w dół — nie zginaj łokci",
+      "Ciągnij z pachy, nie z dłoni",
+      "Długi łuk — drążek porusza się szeroką drogą w stronę bioder",
+      "Mocno napnij najszersze gdy drążek dotrze do brzucha",
+      "Wolna faza negatywna — pozwól ramionom kontrolowanie wrócić nad głowę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows turns it into a pullover-pulldown hybrid",
+        "faultPl": "Zginanie łokci zamienia ruch w hybrydę pullover-pulldown",
+        "cause": "Load too heavy, weak lats forcing biceps/triceps to take over",
+        "causePl": "Zbyt duży ciężar, słabe najszersze przerzucające pracę na biceps/triceps",
+        "cue": "Lock the elbow angle at the start and keep it identical the whole rep. Reduce weight.",
+        "cuePl": "Ustal kąt łokcia na starcie i utrzymaj go identyczny przez całe powtórzenie. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Crunching the torso up to meet the bar",
+        "faultPl": "Unoszenie tułowia by spotkać drążek",
+        "cause": "Trying to shorten the lever to lift more weight; loss of bench contact",
+        "causePl": "Próba skrócenia ramienia dźwigni aby unieść większy ciężar; utrata kontaktu z ławką",
+        "cue": "Keep the back of the head and the hips on the bench every rep. If you can't, the weight is too heavy.",
+        "cuePl": "Tył głowy i biodra zostają na ławce przy każdym powtórzeniu. Jeśli się nie da — ciężar za duży."
+      },
+      {
+        "fault": "Cutting the range short — bar stops mid-chest",
+        "faultPl": "Skracanie zakresu — drążek zatrzymywany na wysokości klatki",
+        "cause": "Weak short-position strength of the lats, or insufficient stretch in the start position",
+        "causePl": "Słaba siła najszerszych w pozycji skróconej, lub niewystarczające rozciągnięcie w pozycji startowej",
+        "cue": "Pull all the way until the bar touches the lower abdomen and elbows reach the ribs.",
+        "cuePl": "Ciągnij aż drążek dotknie dolnej części brzucha, a łokcie dojdą do żeber."
+      },
+      {
+        "fault": "Shoulders shrugging up toward the ears at the top",
+        "faultPl": "Wzruszanie barków w górę przy szczytowej fazie rozciągnięcia",
+        "cause": "Loss of scapular control under load — upper traps dominating",
+        "causePl": "Utrata kontroli łopatek pod obciążeniem — dominacja kapturowego górnego",
+        "cue": "Reset — depress the scapulas before each rep. Imagine pulling shoulders into your back pockets.",
+        "cuePl": "Resetuj — ściągaj łopatki w dół przed każdym powtórzeniem. Wyobraź sobie, że wkładasz barki do tylnych kieszeni spodni."
+      },
+      {
+        "fault": "Bench placed too close — cable pulls vertically instead of along the arc",
+        "faultPl": "Ławka ustawiona za blisko — linka ciągnie pionowo zamiast wzdłuż łuku",
+        "cause": "Equipment setup error",
+        "causePl": "Błąd ustawienia sprzętu",
+        "cue": "Move the bench back until the cable forms a roughly 30-45 degree angle with the floor at the top of the rep.",
+        "cuePl": "Odsuń ławkę aż linka utworzy kąt około 30-45 stopni z podłogą w górnej pozycji ruchu."
+      }
+    ],
+    "breathing": "Inhale at the top (stretched position). Exhale through the pull as the bar travels toward the hips. Maintain a light core brace throughout.",
+    "breathingPl": "Wdech w górnej pozycji (rozciągnięcie). Wydech w trakcie przyciągania, gdy drążek wędruje w kierunku bioder. Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_anterior",
+      "severity": "modify",
+      "modification": "The overhead start position can compress the subacromial space. Reduce range from the top (start with arms at ~45 degrees overhead instead of fully reaching) and use lighter loads until pain-free.",
+      "modificationPl": "Pozycja nad głową w starcie może uciskać przestrzeń podbarkową. Ogranicz zakres od góry (startuj z ramionami pod kątem ~45 stopni nad głową zamiast pełnego sięgania) i używaj lżejszych ciężarów do zakresu bez bólu.",
+      "alternative": "straight-arm-pulldown"
+    },
+    {
+      "condition": "lat_or_teres_strain",
+      "severity": "avoid",
+      "modification": "The stretched start position loads exactly the injured tissue. Avoid for 4-6 weeks; switch to short-lever lat exercises with neutral grip and limited stretch (close-grip pulldown).",
+      "modificationPl": "Pozycja rozciągniętego startu obciąża dokładnie kontuzjowaną tkankę. Unikaj przez 4-6 tygodni; przejdź na ćwiczenia najszerszych z krótszą dźwignią, neutralnym chwytem i ograniczonym rozciągnięciem (przyciąganie wąskim chwytem).",
+      "alternative": "close-grip-pulldown"
+    },
+    {
+      "condition": "long_head_biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Overhead pronated grip stresses the long head biceps tendon. Use neutral grip rope attachment instead and avoid bouncing out of the stretch.",
+      "modificationPl": "Chwyt nachwytem nad głową obciąża ścięgno głowy długiej bicepsa. Użyj uchwytu sznurowego z neutralnym chwytem i unikaj odbicia z pozycji rozciągniętej.",
+      "alternative": "rope-straight-arm-pulldown"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "The incline supports the spine well, but heavy loads can still pull the lumbar into extension at the stretch. Use moderate weight, brace the core, and keep hips firmly on the pad.",
+      "modificationPl": "Ławka skośna dobrze podpiera kręgosłup, ale ciężkie obciążenia mogą wyciągać odcinek lędźwiowy do wyprostu w fazie rozciągnięcia. Używaj umiarkowanych ciężarów, napinaj brzuch i mocno przyklej biodra do oparcia."
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, preferred) | 3x12-20 (lats mind-muscle / finisher) | 4x8-10 (heavier, for advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-incline-pushdown.gif",
+    "frames_extracted": [
+      "frames/cable-incline-pushdown/frame_0_start.png",
+      "frames/cable-incline-pushdown/frame_1_early.png",
+      "frames/cable-incline-pushdown/frame_2_mid.png",
+      "frames/cable-incline-pushdown/frame_3_late.png",
+      "frames/cable-incline-pushdown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-incline-pushdown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel. Frame 0 (start): sportowiec półleży na ławce skośnej (~50 stopni), ramiona w pełnym wyproście nad głową, drążek prosty trzymany nachwytem szerzej niż barki, linka idzie pod kątem do góry do wyciągu. Podświetlone: latissimus dorsi (boki tułowia) i triceps brachii (długa głowa) — modelowe dla shoulder extension z prostymi rękami. Frame 1-3 (faza koncentryczna): ramiona poruszają się jako sztywny segment po szerokim łuku w kierunku bioder, łokcie pozostają niemal w pełni wyprostowane (brak zginania w łokciu!), drążek wędruje obok klatki w stronę brzucha. Frame 4 (powrót): ramiona wracają nad głowę, widać 'ghost' poprzedniej fazy. Klasyczny straight-arm pulldown w wariancie na ławce skośnej (mocniej zaakcentowane rozciąganie najszerszych dzięki kątowi tułowia). Ruch to wyprost w stawie barkowym (shoulder extension) z izolacją na lats — NIE jest to triceps extension i NIE jest to pull_horizontal (kierunek strzałki wektora siły idzie wzdłuż osi tułowia w kierunku stóp, nie do tułowia). movement_pattern = isolation_extension (ekstensja w stawie ramiennym), primary = latissimus_dorsi (P9). Sources: jedyne dostępne źródło to jahel — yuhonas i glowupp nie mają tego wariantu w ich bazach. Wszystkie pola PL napisane od zera, słownictwo trenerskie.",
+
+  "tags": ["bodybuilding", "back", "lats", "isolation", "cable", "upper_body", "stretch_focused", "incline_bench"]
+}

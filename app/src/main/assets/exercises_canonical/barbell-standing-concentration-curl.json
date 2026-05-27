@@ -1,0 +1,204 @@
+{
+  "id": "barbell-standing-concentration-curl",
+  "name": "Barbell Standing Concentration Curl",
+  "namePl": "Concentration curl ze sztangą w staniu",
+  "aliases": ["standing barbell concentration curl", "bent-over barbell concentration curl", "bilateral standing concentration curl"],
+  "aliasesPl": ["concentration curl ze sztangą stojąc", "uginanie ramion ze sztangą w opadzie z oparciem o uda", "obustronny concentration curl ze sztangą"],
+
+  "description": "Rare bilateral variation of the concentration curl. The lifter stands in a hip-hinged bent-over position, grips a barbell in the middle with a narrow supinated grip, and rests the back of the upper arms (triceps area) against the inner thighs. With the elbows mechanically anchored against the legs the only possible joint action is elbow flexion — eliminating every form of cheat from the shoulders, torso or hips. Produces an extremely strict stimulus on the biceps, particularly the short head, but the loadable weight is very limited.",
+  "descriptionPl": "Rzadko spotykany, obustronny wariant concentration curla. Trenujący stoi w opadzie tułowia z ugięciem w biodrach, łapie sztangę pośrodku wąskim chwytem podchwytem i opiera tylną stronę ramion (okolicę tricepsa) o wewnętrzną stronę ud. Łokcie są mechanicznie zablokowane o uda, więc jedynym możliwym ruchem jest zginanie w łokciu — eliminuje to każdą formę oszukiwania z barków, tułowia czy bioder. Daje wyjątkowo ścisły bodziec na bicepsy, zwłaszcza na głowę krótką, ale obciążenie jakie można podnieść jest bardzo ograniczone.",
+
+  "instructions": [
+    "Stand with feet wider than shoulder-width and toes turned slightly out. Place the barbell in front of you.",
+    "Hinge forward at the hips with a flat back until your torso is bent roughly 60-80 degrees. Bend the knees slightly.",
+    "Reach down and grip the bar in the middle with a narrow supinated grip (hands roughly hip-width or closer).",
+    "Plant the back of your upper arms (just above the elbow) firmly against the inner thighs. This is your anchor for the entire set.",
+    "Let the bar hang at full elbow extension between your legs. The triceps stay pressed into the thighs.",
+    "Curl the bar upward by flexing only the elbows. Exhale on the way up. The upper arms must NOT lift off the thighs.",
+    "Squeeze the biceps hard at the top, with the bar a few centimeters from your chin or upper chest.",
+    "Lower under control over 2-3 seconds back to full extension. Inhale on the descent.",
+    "Keep the torso, hips and shoulders absolutely motionless. Reset between reps if the upper arms slip off the thighs."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku szerszym niż barki, palce stóp lekko na zewnątrz. Ustaw sztangę przed sobą.",
+    "Wykonaj zgięcie w biodrach z prostymi plecami, aż tułów będzie pochylony około 60-80 stopni. Lekko ugnij kolana.",
+    "Sięgnij w dół i złap sztangę pośrodku wąskim chwytem podchwytem (dłonie mniej więcej na szerokość bioder lub węziej).",
+    "Mocno oprzyj tylną stronę ramion (tuż powyżej łokci) o wewnętrzną stronę ud. To Twój punkt podparcia na całą serię.",
+    "Pozwól sztandze zwisać przy pełnym wyproście łokci między nogami. Tricepsy cały czas dociśnięte do ud.",
+    "Uginaj sztangę w górę pracując wyłącznie w łokciach. Wydech podczas unoszenia. Ramiona ponad łokciem NIE mogą się oderwać od ud.",
+    "Mocno spinaj bicepsy w górnej pozycji, sztanga kilka centymetrów od brody lub górnej części klatki.",
+    "Opuszczaj w sposób kontrolowany przez 2-3 sekundy do pełnego wyprostu. Wdech podczas opuszczania.",
+    "Trzymaj tułów, biodra i barki całkowicie nieruchomo. Zresetuj pozycję między powtórzeniami jeśli ramiona zsunęły się z ud."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "erector_spinae", "core", "glutes", "hamstrings"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S4",
+    "forearm_flexors": "T4",
+    "erector_spinae": "T4",
+    "core": "T3",
+    "glutes": "T2",
+    "hamstrings": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-curl", "dumbbell-concentration-curl"],
+    "progression_to": ["spider-curl", "preacher-curl"],
+    "alternatives": ["dumbbell-concentration-curl", "spider-curl", "preacher-curl", "ez-bar-preacher-curl", "barbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet wider than shoulders, toes slightly out",
+      "Hinge at hips, flat back, soft knees",
+      "Narrow supinated grip in the middle of the bar",
+      "Triceps pressed firmly against inner thighs",
+      "Bar hangs at full elbow extension between legs"
+    ],
+    "setup_cues_pl": [
+      "Stopy szerzej niż barki, palce lekko na zewnątrz",
+      "Zgięcie w biodrach, plecy proste, kolana lekko ugięte",
+      "Wąski chwyt podchwytem pośrodku sztangi",
+      "Tricepsy mocno dociśnięte do wewnętrznej strony ud",
+      "Sztanga wisi przy pełnym wyproście łokci między nogami"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay glued to thighs",
+      "Curl the bar straight up toward the chin",
+      "Squeeze hard at the top — pause for a beat",
+      "Lower slowly under full control for 2-3 seconds",
+      "Full lockout at the bottom — fight the urge to stop short"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyklejone do ud",
+      "Uginaj sztangę prosto w górę w kierunku brody",
+      "Mocno spinaj na szczycie — krótka pauza",
+      "Opuszczaj wolno, w pełnej kontroli, przez 2-3 sekundy",
+      "Pełny wyprost na dole — nie skracaj zakresu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms lift off the thighs during the curl",
+        "faultPl": "Ramiona ponad łokciem odrywają się od ud podczas uginania",
+        "cause": "Load too heavy, elbows not deeply seated against the legs, or fatigue at end of set",
+        "causePl": "Zbyt duży ciężar, łokcie niezbyt mocno wciśnięte w uda, lub zmęczenie pod koniec serii",
+        "cue": "Reduce the weight. Drive the triceps actively into the thighs throughout every rep.",
+        "cuePl": "Zmniejsz ciężar. Aktywnie wciskaj tricepsy w uda przez całe powtórzenie."
+      },
+      {
+        "fault": "Rounding the lower back in the bent-over position",
+        "faultPl": "Zaokrąglanie odcinka lędźwiowego w pozycji w opadzie",
+        "cause": "Tight hamstrings, weak erectors, or hinging from the lumbar spine instead of the hips",
+        "causePl": "Sztywne dwugłowe uda, słabe prostowniki grzbietu, lub zgięcie z odcinka lędźwiowego zamiast z bioder",
+        "cue": "Stick the chest out, push hips back, keep a neutral spine. Bend knees more if hamstrings limit you.",
+        "cuePl": "Wypchnij klatkę, cofnij biodra, utrzymuj neutralny kręgosłup. Ugnij mocniej kolana jeśli ograniczają Cię dwugłowe."
+      },
+      {
+        "fault": "Partial range of motion — not fully extending elbows at the bottom",
+        "faultPl": "Niepełny zakres ruchu — łokcie nie prostują się w pełni na dole",
+        "cause": "Ego lifting or weak stretched-position strength",
+        "causePl": "Ego lub słabość w pozycji rozciągniętej bicepsa",
+        "cue": "Lower until elbows are completely straight every single rep. Reduce weight if needed.",
+        "cuePl": "Opuszczaj do całkowitego wyprostu w łokciach w każdym powtórzeniu. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Standing up / extending the hips to help lift",
+        "faultPl": "Prostowanie się / wyprost w biodrach by pomóc unieść sztangę",
+        "cause": "Load too heavy or the lifter trying to grind out extra reps after technical failure",
+        "causePl": "Zbyt duży ciężar lub próba wyciśnięcia dodatkowych powtórzeń po technicznym wyczerpaniu",
+        "cue": "Maintain the hinged torso angle from start to finish. Stop the set when you can no longer stay still.",
+        "cuePl": "Utrzymuj ten sam kąt pochylenia tułowia od początku do końca serii. Zakończ serię gdy nie potrafisz pozostać nieruchomo."
+      },
+      {
+        "fault": "Wrist hyperextension under load",
+        "faultPl": "Przeprostowanie nadgarstków pod obciążeniem",
+        "cause": "Narrow straight-bar grip combined with full supination stresses ulnar wrist",
+        "causePl": "Wąski chwyt prostej sztangi w połączeniu z pełną supinacją obciąża stronę łokciową nadgarstka",
+        "cue": "Keep wrists in line with forearms. Wear wrist wraps or switch to an EZ-bar if wrists protest.",
+        "cuePl": "Trzymaj nadgarstki w linii z przedramieniem. Załóż usztywniacze nadgarstków lub przejdź na sztangę łamaną jeśli nadgarstki protestują."
+      }
+    ],
+    "breathing": "Exhale on the curl up. Inhale on the lowering phase. Maintain a light brace throughout — the bent-over position requires constant spinal stiffness.",
+    "breathingPl": "Wydech podczas unoszenia. Wdech podczas opuszczania. Utrzymuj lekkie napięcie brzucha przez cały czas — pozycja w opadzie wymaga stałej sztywności kręgosłupa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain_or_herniated_disc",
+      "severity": "avoid",
+      "modification": "Bent-over loaded position is highly contraindicated with acute lumbar pain or disc pathology. Use a seated or preacher-bench variation that eliminates spinal flexion under load.",
+      "modificationPl": "Pozycja w opadzie z obciążeniem jest silnie przeciwwskazana przy ostrym bólu lędźwi lub patologii krążka międzykręgowego. Użyj wariantu siedzącego lub na ławce modlitewnik, który eliminuje zgięcie kręgosłupa pod obciążeniem.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Strict elbow-only flexion under load is aggressive on the distal biceps tendon. Reduce load, increase reps (12-15), avoid heavy eccentrics, or switch to a neutral-grip alternative.",
+      "modificationPl": "Ścisłe zginanie wyłącznie w łokciu pod obciążeniem mocno obciąża ścięgno dystalne bicepsa. Zmniejsz ciężar, zwiększ liczbę powtórzeń (12-15), unikaj ciężkich faz negatywnych lub przejdź na wariant z chwytem neutralnym.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_full_supination_intolerance",
+      "severity": "modify",
+      "modification": "Narrow straight-bar grip locks the wrists in full supination. Use an EZ-bar to soften the angle, or perform with dumbbells.",
+      "modificationPl": "Wąski chwyt prostej sztangi blokuje nadgarstki w pełnej supinacji. Użyj sztangi łamanej aby złagodzić kąt, lub wykonuj z hantlami.",
+      "alternative": "dumbbell-concentration-curl"
+    },
+    {
+      "condition": "hip_or_hamstring_mobility_restriction",
+      "severity": "modify",
+      "modification": "If hip hinge depth is limited, the lumbar spine takes over and the position becomes unsafe. Switch to a seated dumbbell concentration curl or preacher-bench variant.",
+      "modificationPl": "Jeśli głębokość zgięcia w biodrach jest ograniczona, odcinek lędźwiowy przejmuje pracę i pozycja staje się niebezpieczna. Przejdź na siedzący concentration curl z hantlą lub wariant na ławce modlitewnik.",
+      "alternative": "dumbbell-concentration-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 2-3x12-20 (pump/finisher) | NOT recommended for low-rep strength work",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "barbell-standing-concentration-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-standing-concentration-curl/frame_0_start.png",
+      "frames/barbell-standing-concentration-curl/frame_1_early.png",
+      "frames/barbell-standing-concentration-curl/frame_2_mid.png",
+      "frames/barbell-standing-concentration-curl/frame_3_late.png",
+      "frames/barbell-standing-concentration-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/barbell-standing-concentration-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel (start/early/mid/late/end). Frame 0 i 4: pełny wyprost ramion, tułów w opadzie ~60-80 stopni, sztanga zwisa przed nogami trzymana wąskim chwytem podchwytem w środku gryfu, tylna strona ramion (okolica tricepsa) oparta o wewnętrzną stronę ud — klasyczna pozycja concentration curl tylko bilateral i w staniu zamiast siedząc. Frame 2: pełne ugięcie w łokciach, sztanga uniesiona do wysokości górnej części klatki, ramiona ponad łokciem pozostają przyklejone do ud, tułów się nie podnosi. Biceps oraz przedramiona podświetlone na czerwono (primary biceps_brachii, secondary brachialis/brachioradialis). Ruch ściśle w płaszczyźnie strzałkowej, mechanic=isolation, force=pull, bilateral. Wszystkie pola PL napisane od zera. Brak źródeł yuhonas/glowupp dla tego rzadkiego wariantu.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "barbell", "upper_body", "concentration", "strict_form", "rare_variation"]
+}

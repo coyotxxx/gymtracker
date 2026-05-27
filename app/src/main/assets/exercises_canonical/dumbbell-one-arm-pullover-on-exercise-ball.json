@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-one-arm-pullover-on-exercise-ball",
+  "name": "Dumbbell One-Arm Pullover on Exercise Ball",
+  "namePl": "Pullover z hantlą jednorącz na piłce",
+  "aliases": ["one-arm db pullover on stability ball", "single-arm dumbbell pullover on swiss ball", "unilateral dumbbell pullover on ball"],
+  "aliasesPl": ["pullover jednorącz na piłce gimnastycznej", "jednostronny pullover z hantlem na piłce", "unilateralny pullover na swiss ball"],
+
+  "description": "An advanced unilateral pullover performed supine on a stability ball, with only the upper back and shoulder blades supported by the ball, hips bridged, and feet planted firmly on the floor. A single dumbbell is held in one hand over the chest, then lowered in a wide arc back and behind the head while the elbow remains slightly extended. The combination of single-arm loading and the unstable surface forces the obliques and deep core to fight rotation, while the latissimus dorsi works through a deep stretch position. A high-skill movement that blends lat isolation with full-body anti-rotation stability work.",
+  "descriptionPl": "Zaawansowany pullover unilateralny wykonywany w leżeniu tyłem na piłce gimnastycznej, gdzie piłka podtrzymuje wyłącznie górną część pleców i łopatki, biodra są wymostkowane, a stopy mocno oparte o podłogę. Pojedynczą hantlę trzymasz w jednej dłoni nad klatką piersiową, a następnie opuszczasz ją szerokim łukiem w tył za głowę, utrzymując łokieć lekko wyprostowany. Połączenie jednostronnego obciążenia i niestabilnego podparcia zmusza mięśnie skośne i głęboki gorset brzucha do walki z rotacją, podczas gdy mięsień najszerszy grzbietu pracuje przez głębokie rozciągnięcie. Ruch o wysokim wymaganiu technicznym, łączący izolację najszerszych z pracą stabilizacyjną antyrotacyjną całego ciała.",
+
+  "instructions": [
+    "Sit on a stability ball holding a moderately-light dumbbell vertically in one hand. Walk your feet forward and roll down the ball until only your upper back and shoulder blades rest on it.",
+    "Bridge your hips up so the trunk forms a flat tabletop parallel to the floor. Plant the feet shoulder-width, knees bent at roughly 90 degrees.",
+    "Press the dumbbell straight up over your chest with one arm — the free arm rests across the abdomen or extends to the side as a counterweight, but do not let it touch the floor.",
+    "Brace the core hard and squeeze the glutes. The working-side oblique must resist the pull of the dumbbell trying to rotate you off the ball.",
+    "Inhale and lower the dumbbell in a wide arc back behind the head. Keep the elbow nearly straight with just a soft bend — do not let it collapse into flexion.",
+    "Continue until you feel a strong stretch through the lat and side of the ribcage with the upper arm roughly in line with the ear. The hips must not drop and the trunk must not rotate toward the loaded side.",
+    "Reverse the arc by pulling the dumbbell back over the chest using the latissimus dorsi, not by bending the elbow. Exhale through the pull.",
+    "Complete all reps on one side before carefully switching the dumbbell to the other hand (do not bridge down between reps — only between sides). Keep loads modest: this is a stability drill first, a lat builder second."
+  ],
+  "instructionsPl": [
+    "Usiądź na piłce gimnastycznej trzymając umiarkowanie lekką hantlę pionowo w jednej dłoni. Idź stopami do przodu i zsuwaj się po piłce aż na piłce zostaną tylko górne plecy i łopatki.",
+    "Wymostkuj biodra w górę tak by tułów utworzył płaski blat równoległy do podłogi. Stopy na szerokość barków, kolana zgięte mniej więcej do 90 stopni.",
+    "Wyciśnij hantlę pionowo nad klatkę piersiową jedną ręką — wolna ręka spoczywa na brzuchu lub jest wyciągnięta w bok jako kontrwaga, ale nie dotyka podłogi.",
+    "Mocno napnij brzuch i pośladki. Mięsień skośny po stronie pracującej musi opierać się sile hantli próbującej skręcić cię z piłki.",
+    "Wdech i opuść hantlę szerokim łukiem w tył za głowę. Łokieć utrzymuj prawie prosty, z lekkim ugięciem — nie pozwól mu się zgiąć.",
+    "Opuszczaj aż poczujesz silne rozciągnięcie najszerszego grzbietu i boku klatki, z ramieniem mniej więcej w linii ucha. Biodra nie mogą opaść, a tułów nie może się skręcić w stronę obciążonej ręki.",
+    "Odwróć łuk i przyciągnij hantlę z powrotem nad klatkę pracą najszerszego, a nie zginaniem łokcia. Wydech w trakcie przyciągania.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, dopiero potem ostrożnie przełóż hantlę do drugiej dłoni (nie opuszczaj bioder między powtórzeniami — tylko między stronami). Trzymaj ciężary umiarkowane: to przede wszystkim ćwiczenie stabilizacyjne, a dopiero potem budujące najszersze."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["pectoralis_major", "serratus_anterior", "teres_major", "triceps_brachii_long_head"],
+    "stabilizers": ["core", "obliques", "glutes", "rotator_cuff", "rectus_abdominis", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S6",
+    "teres_major": "S5",
+    "triceps_brachii_long_head": "S4",
+    "core": "T7",
+    "obliques": "T7",
+    "glutes": "T5",
+    "rotator_cuff": "T4",
+    "rectus_abdominis": "T5",
+    "erector_spinae": "T4"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "exercise_ball"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["dumbbell-pullover", "dumbbell-pullover-on-exercise-ball", "stability-ball-glute-bridge"],
+    "progression_to": ["cable-one-arm-pullover", "landmine-one-arm-pullover"],
+    "alternatives": ["dumbbell-pullover-on-exercise-ball", "dumbbell-pullover", "cable-pullover", "straight-arm-pulldown", "one-arm-lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Only upper back and shoulder blades on the ball — head supported",
+      "Hips bridged up, trunk a flat tabletop parallel to the floor",
+      "Feet shoulder-width, knees at 90 degrees, glutes squeezed hard",
+      "Dumbbell vertical in one hand, pressed over the chest",
+      "Brace the core against rotation before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Tylko górne plecy i łopatki na piłce — głowa podparta",
+      "Biodra wymostkowane, tułów płaski blat równoległy do podłogi",
+      "Stopy na szerokość barków, kolana 90 stopni, pośladki mocno ściśnięte",
+      "Hantla pionowo w jednej dłoni, wyciśnięta nad klatkę",
+      "Napnij brzuch przeciw rotacji przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Wide arc back behind the head — elbow stays nearly straight",
+      "Do not let the trunk rotate toward the loaded side",
+      "Hips stay up — no dropping the bridge mid-rep",
+      "Feel the stretch in the lat and side ribs at the bottom",
+      "Pull back with the lat — the elbow does not bend on the way up"
+    ],
+    "execution_cues_pl": [
+      "Szeroki łuk w tył za głowę — łokieć pozostaje prawie prosty",
+      "Nie pozwól tułowiowi skręcać się w stronę obciążonej ręki",
+      "Biodra zostają w górze — nie opuszczaj mostka w trakcie powtórzenia",
+      "Poczuj rozciągnięcie najszerszego i boku żeber w dolnej pozycji",
+      "Przyciągaj najszerszym — łokieć nie zgina się w drodze w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Trunk rotates toward the loaded side — torso twists off the ball",
+        "faultPl": "Tułów skręca się w stronę obciążonej ręki — korpus zsuwa się z piłki",
+        "cause": "Insufficient oblique anti-rotation or weight too heavy for unilateral control",
+        "causePl": "Niewystarczające napięcie skośnych antyrotacyjnie lub ciężar zbyt duży dla jednostronnej kontroli",
+        "cue": "Drop the weight by 30%. Pretend the free hand is glued to your hip — square the shoulders to the ceiling.",
+        "cuePl": "Zmniejsz ciężar o 30%. Wyobraź sobie, że wolna ręka jest przyklejona do biodra — barki równo do sufitu."
+      },
+      {
+        "fault": "Hips drop during the eccentric, breaking the bridge",
+        "faultPl": "Biodra opadają w fazie negatywnej, łamiąc mostek",
+        "cause": "Glutes relax when attention shifts to the working arm — common in fatigue",
+        "causePl": "Pośladki rozluźniają się gdy uwaga przenosi się na pracującą rękę — częste przy zmęczeniu",
+        "cue": "Squeeze the glutes hard before every rep. If the hips drop — end the set, do not grind.",
+        "cuePl": "Ściskaj pośladki przed każdym powtórzeniem. Jeśli biodra opadają — zakończ serię, nie forsuj."
+      },
+      {
+        "fault": "Elbow collapses into flexion at the bottom of the arc",
+        "faultPl": "Łokieć zgina się głęboko w dolnej fazie łuku",
+        "cause": "Treating the move as a triceps extension or compensating for weak shoulder control",
+        "causePl": "Traktowanie ruchu jako wyprost na tricepsie lub kompensacja słabej kontroli barkowej",
+        "cue": "Soft bend only — imagine a brace locking the elbow at 10 degrees. Lower the weight if you cannot hold it.",
+        "cuePl": "Tylko delikatne ugięcie — wyobraź sobie ortezę blokującą łokieć w 10 stopniach. Zmniejsz ciężar jeśli nie utrzymasz."
+      },
+      {
+        "fault": "Bouncing out of the bottom stretch with momentum",
+        "faultPl": "Odbijanie z dolnego rozciągnięcia z rozpędu",
+        "cause": "Using shoulder ligament tension instead of muscular control to reverse the rep",
+        "causePl": "Wykorzystywanie napięcia więzadeł barku zamiast kontroli mięśniowej do odwrócenia powtórzenia",
+        "cue": "Three seconds down, one second pause in the stretch, then pull back smoothly. No bounce.",
+        "cuePl": "Trzy sekundy w dół, sekunda pauzy w rozciągnięciu, dopiero potem płynne przyciągnięcie. Bez odbicia."
+      },
+      {
+        "fault": "Switching the dumbbell mid-air between sides",
+        "faultPl": "Przekładanie hantli między stronami w powietrzu",
+        "cause": "Trying to save time — disastrous on a ball, drops the dumbbell on the face",
+        "causePl": "Próba zaoszczędzenia czasu — katastrofalna na piłce, hantla spada na twarz",
+        "cue": "Carefully step off the ball, swap hands with both feet planted, then reset the bridge from scratch.",
+        "cuePl": "Ostrożnie zejdź z piłki, przełóż hantlę z oboma stopami na podłodze, dopiero potem zbuduj mostek od nowa."
+      }
+    ],
+    "breathing": "Inhale deeply through the nose as the dumbbell travels back behind the head — the ribcage expands and amplifies the lat stretch on the working side. Exhale forcefully during the concentric pull back over the chest. Maintain a strong core brace throughout to prevent rotation and protect the lumbar spine on the unstable surface.",
+    "breathingPl": "Głęboki wdech nosem podczas opuszczania hantli za głowę — klatka piersiowa rozszerza się i pogłębia rozciągnięcie najszerszego po stronie pracującej. Mocny wydech podczas przyciągania nad klatkę. Utrzymuj silne napięcie brzucha przez cały ruch — zapobiega rotacji i chroni odcinek lędźwiowy na niestabilnym podłożu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_labral_pathology",
+      "severity": "modify",
+      "modification": "Overhead reach with a single-arm load aggressively compresses the subacromial space and stresses the labrum at end-range. Limit ROM to pain-free arc, drop load to 50%, and prefer a stable bench surface or switch to cable pullover.",
+      "modificationPl": "Sięganie nad głowę z jednostronnym obciążeniem agresywnie kompresuje przestrzeń podbarkową i obciąża obrąbek w skrajnym zakresie. Ogranicz zakres do bezbolesnego łuku, zmniejsz ciężar o połowę i wybierz stabilną ławkę lub pullover z wyciągu.",
+      "alternative": "cable-pullover"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_instability",
+      "severity": "avoid",
+      "modification": "Bridged trunk on an unstable surface with overhead loading is a high-risk position for the lumbar spine. Switch to a stable bench-based pullover or cable variant where the trunk is fully supported.",
+      "modificationPl": "Wymostkowany tułów na niestabilnym podłożu z obciążeniem nad głową to bardzo ryzykowna pozycja dla odcinka lędźwiowego. Przejdź na pullover na stabilnej ławce lub wariant z wyciągu, gdzie tułów jest w pełni podparty.",
+      "alternative": "dumbbell-pullover"
+    },
+    {
+      "condition": "poor_balance_or_neurological_impairment",
+      "severity": "avoid",
+      "modification": "Single-arm loading on a ball requires intact proprioception and anti-rotation control. Without it, the practitioner can roll off the ball with the dumbbell in hand — a serious injury risk. Use a flat bench instead.",
+      "modificationPl": "Jednostronne obciążenie na piłce wymaga sprawnej propriocepcji i kontroli antyrotacyjnej. Bez nich ćwiczący może zsunąć się z piłki z hantlą w dłoni — duże ryzyko kontuzji. Użyj płaskiej ławki.",
+      "alternative": "dumbbell-pullover"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Long-head triceps and elbow stabilizers work isometrically through deep stretch. Use lighter loads, avoid heavy eccentrics, and warm up the elbow with band pull-aparts before working sets.",
+      "modificationPl": "Głowa długa tricepsa i stabilizatory łokcia pracują izometrycznie w głębokim rozciągnięciu. Stosuj lżejsze ciężary, unikaj ciężkich faz negatywnych i rozgrzej łokieć rozciąganiem z taśmy przed seriami roboczymi.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per side (hypertrophy, primary use) | 3x12-15 per side (stretch-focused, lighter loads) | 2-3x8-10 per side (strength-stability emphasis)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-one-arm-pullover-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-pullover-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-one-arm-pullover-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-one-arm-pullover-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-one-arm-pullover-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-one-arm-pullover-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-one-arm-pullover-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (frame_0_start, frame_2_mid, frame_4_end). Frame 0: ćwiczący leży tyłem na piłce gimnastycznej — tylko górna część pleców/łopatki na piłce, biodra wymostkowane w płaski blat równoległy do podłogi, stopy mocno oparte o podłogę na szerokość barków, kolana ~90 stopni. Hantla pionowo w jednej dłoni (prawa ręka), wyciśnięta prosto nad górną klatkę piersiową, łokieć prawie prosty z lekkim ugięciem. Latissimus dorsi i pectoralis podświetlone czerwono jako mięśnie pracujące, widoczne też napięcie obliques. Frame 2: pełna pozycja dolna — hantla opuszczona szerokim łukiem w tył za głowę, ramię w linii ucha lub odrobinę poza, łokieć utrzymuje prawie prosty kąt (to wariant straight-arm, nie bent-arm), wyraźne rozciągnięcie najszerszego grzbietu, jednocześnie biodra utrzymują pozycję mostka, tułów NIE rotuje (anti-rotation core). Frame 4: powrót do pozycji wyjściowej nad klatką (z 'duchem' fazy dolnej widocznym). Ruch jednoznacznie zidentyfikowany jako Dumbbell One-Arm Pullover on Exercise Ball, wariant straight-arm. Kluczowa specyfika: unilateral + niestabilne podłoże = maksymalne wymaganie anty-rotacyjne dla obliques i core; piłka zwiększa również pracę glutes (mostek) i erector spinae. Latissimus zostaje primary (P9), klatka i serratus schodzą do secondary (S6) bo jednostronne obciążenie izoluje stronę pracującą bardziej na lat. Core/obliques wynosiłem do T7 (wyższy stabilizer intensity niż klasyczny pullover bo niestabilne podłoże + unilateral). Difficulty 8/10 i level 'advanced' — wymaga jednoczesnej kontroli mostka glute, anty-rotacji core i ramienia nad głową z luźnym ciężarem. Wszystkie pola PL napisane od zera. Plik GIF: sources/jahel/pectorals/dumbbell-one-arm-pullover-on-exercise-ball.gif.",
+
+  "tags": ["bodybuilding", "back", "lats", "core", "obliques", "stability", "unilateral", "compound", "dumbbell", "exercise_ball", "stretch", "advanced", "anti_rotation"]
+}

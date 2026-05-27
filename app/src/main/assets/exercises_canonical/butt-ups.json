@@ -1,0 +1,199 @@
+{
+  "id": "butt-ups",
+  "name": "Butt-Ups",
+  "namePl": "Wznosy bioder w planku",
+  "aliases": ["butt ups", "plank hip raise", "pike plank", "plank pike", "hip pike from plank"],
+  "aliasesPl": ["butt-ups", "wznosy pośladków w planku", "pike plank", "pike z planku", "pikowanie bioder", "deska z uniesieniem bioder", "podnoszenie bioder w planku"],
+
+  "description": "Dynamic bodyweight core exercise performed from a forearm plank. From a neutral plank position the lifter actively drives the hips up toward the ceiling, forming an inverted-V (pike) shape, then lowers back to the starting plank under control. The eccentric extension and the concentric pike both demand strong rectus abdominis recruitment, with secondary work from the glutes, shoulders and serratus anterior. Excellent low-impact ab exercise with a shoulder-stability bonus.",
+  "descriptionPl": "Dynamiczne ćwiczenie na brzuch z masą własnego ciała wykonywane z pozycji deski na przedramionach. Z neutralnej deski ćwiczący aktywnie wypycha biodra w górę w kierunku sufitu, tworząc kształt odwróconej litery V (pike), a następnie wraca kontrolowanie do pozycji wyjściowej. Zarówno faza ekscentryczna (opuszczanie), jak i koncentryczna (wypchnięcie bioder) wymagają silnego skurczu mięśnia prostego brzucha — dodatkowo pracują pośladki, barki i mięsień zębaty przedni. Świetne, mało obciążające stawy ćwiczenie na brzuch z bonusem stabilizacji obręczy barkowej.",
+
+  "instructions": [
+    "Start in a forearm plank position: elbows directly under shoulders, forearms parallel, body forming a straight line from head to heels. Feet hip-width apart, toes tucked.",
+    "Brace your core, set the shoulder blades down and away from the ears. This is the starting position.",
+    "Exhale and drive your hips up toward the ceiling by contracting the abs and squeezing the glutes. Push the floor away with your forearms as the body folds into an inverted-V (pike) position.",
+    "Pause for a moment at the top — heels reach toward the floor, head looks at the feet, the abs are maximally contracted.",
+    "Inhale and lower the hips back down under control until the body returns to the neutral plank — without sagging the lower back.",
+    "Keep continuous tension on the core throughout. Repeat for the prescribed reps maintaining strict form."
+  ],
+  "instructionsPl": [
+    "Zacznij w pozycji deski na przedramionach: łokcie dokładnie pod barkami, przedramiona równoległe, ciało tworzy prostą linię od głowy do pięt. Stopy na szerokość bioder, palce stóp oparte o podłogę.",
+    "Napnij brzuch, ściągnij łopatki w dół i z dala od uszu. To pozycja wyjściowa.",
+    "Wydech — wypchnij biodra w górę w kierunku sufitu przez skurcz brzucha i ściśnięcie pośladków. Odpychaj podłogę przedramionami, gdy ciało składa się w kształt odwróconej litery V (pike).",
+    "Zatrzymaj się na chwilę w górze — pięty sięgają w stronę podłogi, głowa patrzy w kierunku stóp, brzuch maksymalnie napięty.",
+    "Wdech — opuść biodra kontrolowanym ruchem aż ciało wróci do neutralnej deski — bez opadania dolnych pleców.",
+    "Utrzymuj stałe napięcie na brzuchu przez całe powtórzenie. Powtarzaj zachowując ścisłą technikę."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "glutes"],
+    "secondary": ["obliques", "shoulders", "serratus_anterior"],
+    "stabilizers": ["transverse_abdominis", "triceps", "quadriceps", "calves"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "glutes": "P7",
+    "obliques": "S6",
+    "shoulders": "S5",
+    "serratus_anterior": "S5",
+    "transverse_abdominis": "T4",
+    "triceps": "T3",
+    "quadriceps": "T2",
+    "calves": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["plank", "knee-plank", "dead-bug"],
+    "progression_to": ["pike-push-up", "v-up", "handstand-push-up"],
+    "alternatives": ["pike-push-up", "mountain-climbers", "plank-knee-to-elbow", "cocoons"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Forearm plank — elbows under shoulders, forearms parallel",
+      "Toes tucked, feet hip-width apart",
+      "Body forms one straight line head to heels",
+      "Shoulder blades down and away from the ears",
+      "Pre-brace the core — ribs down, glutes engaged"
+    ],
+    "setup_cues_pl": [
+      "Deska na przedramionach — łokcie pod barkami, przedramiona równoległe",
+      "Palce stóp oparte, stopy na szerokość bioder",
+      "Ciało tworzy jedną prostą linię od głowy do pięt",
+      "Łopatki ściągnięte w dół, daleko od uszu",
+      "Wstępne napięcie brzucha — żebra w dół, pośladki aktywne"
+    ],
+    "execution_cues": [
+      "Drive the hips up toward the ceiling, not just back",
+      "Exhale forcefully as you pike — squeeze the abs hard",
+      "Push the floor away with the forearms — long arms feel",
+      "Look back toward your feet at the top — neck stays neutral",
+      "Lower back to plank with control — 2 seconds eccentric"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij biodra w górę w kierunku sufitu, nie tylko do tyłu",
+      "Mocny wydech podczas pike — mocno ściśnij brzuch",
+      "Odpychaj podłogę przedramionami — wrażenie 'długich rąk'",
+      "Patrz w kierunku stóp w górze — szyja w neutralnej pozycji",
+      "Wracaj do deski kontrolowanie — 2 sekundy fazy ekscentrycznej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips at the bottom (plank phase)",
+        "faultPl": "Opadające biodra w dolnej pozycji (faza deski)",
+        "cause": "Weak core releasing tension between reps; lumbar arch",
+        "causePl": "Słaby brzuch tracący napięcie między powtórzeniami; nadmierny łuk lędźwiowy",
+        "cue": "Maintain tight plank at the bottom — don't relax. Ribs down, abs braced, glutes squeezed before every rep.",
+        "cuePl": "Utrzymaj napięcie deski w dole — nie rozluźniaj się. Żebra w dół, brzuch napięty, pośladki ściśnięte przed każdym powtórzeniem."
+      },
+      {
+        "fault": "Pushing hips backward instead of up (no abs work)",
+        "faultPl": "Wypychanie bioder do tyłu zamiast w górę (brak pracy brzucha)",
+        "cause": "Using shoulders/lats as primary movers, abs disengaged",
+        "causePl": "Praca głównie barkami/najszerszymi grzbietu, brzuch wyłączony",
+        "cue": "Imagine a rope pulling your hips straight to the ceiling. The pike comes from ab contraction, not shoulder push.",
+        "cuePl": "Wyobraź sobie linę ciągnącą biodra prosto do sufitu. Pike pochodzi ze skurczu brzucha, nie z popchnięcia barków."
+      },
+      {
+        "fault": "Using momentum / bouncing through reps",
+        "faultPl": "Używanie rozpędu / sprężynowanie powtórzeń",
+        "cause": "Going too fast — gravity drops the hips, then bouncing back up",
+        "causePl": "Zbyt szybkie tempo — grawitacja opuszcza biodra, potem odbicie w górę",
+        "cue": "Tempo 2-1-2: 2 sec up, 1 sec hold pike, 2 sec down. Every rep deliberate.",
+        "cuePl": "Tempo 2-1-2: 2 sek w górę, 1 sek pauzy w pike, 2 sek w dół. Każde powtórzenie świadome."
+      },
+      {
+        "fault": "Shrugging the shoulders / elbows flaring",
+        "faultPl": "Wzruszanie barków / rozjeżdżające się łokcie",
+        "cause": "Loose scapulae take the load on the upper trapezius and neck",
+        "causePl": "Luźne łopatki przenoszą obciążenie na czworoboczne górne i kark",
+        "cue": "Press the forearms hard into the floor, push the chest away — shoulder blades wide and down.",
+        "cuePl": "Mocno wciskaj przedramiona w podłogę, odpychaj klatkę — łopatki szerokie i ściągnięte w dół."
+      },
+      {
+        "fault": "Holding breath through the whole rep",
+        "faultPl": "Wstrzymywanie oddechu przez całe powtórzenie",
+        "cause": "Reflex bracing pattern carried over from heavy compound lifts",
+        "causePl": "Odruchowy wzorzec napinania przeniesiony z dużych ciężarów wielostawowych",
+        "cue": "Inhale at the bottom plank, forceful exhale as the hips rise to peak pike.",
+        "cuePl": "Wdech w dolnej desce, mocny wydech gdy biodra unoszą się do szczytu pike."
+      }
+    ],
+    "breathing": "Inhale at the bottom plank position. Forceful exhale as you drive the hips up into the pike — this maximises rectus abdominis contraction. Inhale again as you lower under control.",
+    "breathingPl": "Wdech w dolnej pozycji deski. Mocny wydech podczas wypychania bioder w górę do pike — maksymalizuje skurcz mięśnia prostego brzucha. Wdech ponownie podczas kontrolowanego opuszczania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_pain",
+      "severity": "modify",
+      "modification": "Forearm plank base loads the shoulders isometrically. If acute pain, switch to supine ab work (dead bug) until pain-free.",
+      "modificationPl": "Baza deski na przedramionach obciąża barki izometrycznie. Przy ostrym bólu przejdź na ćwiczenia brzucha w leżeniu (dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "caution",
+      "modification": "Forearm position spares the wrist vs high plank, but some pressure remains. Use fists or close-grip forearms if pain persists.",
+      "modificationPl": "Pozycja na przedramionach oszczędza nadgarstek w porównaniu do wysokiej deski, ale pewien nacisk pozostaje. Użyj pięści lub złóż przedramiona blisko siebie jeśli ból się utrzymuje.",
+      "alternative": "lying-leg-raise"
+    },
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "modify",
+      "modification": "The pike phase involves lumbar flexion under load. If discomfort, hold static plank only or use anti-extension work (no pike).",
+      "modificationPl": "Faza pike obejmuje zgięcie lędźwi pod obciążeniem. Przy dyskomforcie utrzymuj tylko statyczną deskę lub ćwiczenia anty-ekstensji (bez pike).",
+      "alternative": "plank"
+    },
+    {
+      "condition": "high_blood_pressure",
+      "severity": "caution",
+      "modification": "Hips-above-heart position briefly raises intracranial pressure. Limit reps, avoid breath-holding, do not exceed moderate intensity.",
+      "modificationPl": "Pozycja biodra-powyżej-serca chwilowo zwiększa ciśnienie wewnątrzczaszkowe. Ogranicz powtórzenia, nie wstrzymuj oddechu, nie przekraczaj umiarkowanej intensywności.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy) | 3x15-20 (endurance) | 3x30-45s (timed)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "butt-ups.gif",
+    "frames_extracted": [
+      "frames/butt-ups/frame_0_start.png",
+      "frames/butt-ups/frame_1_early.png",
+      "frames/butt-ups/frame_2_mid.png",
+      "frames/butt-ups/frame_3_late.png",
+      "frames/butt-ups/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/butt-ups"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Klatka 0 (start): klasyczna deska na przedramionach — ciało prosta linia od głowy do pięt, łokcie pod barkami, anatomia podświetla mięsień prosty brzucha. Klatki 1-3 (faza przejściowa, trailing): wyraźny ruch bioder w górę — widać 'duchy' kilku pozycji wskazujące dynamiczne wypchnięcie bioder ku górze. Klatka 2 (mid/szczyt): pełny pike — biodra wysoko w górze, ciało w kształcie odwróconej V, głowa schowana między ramionami, pośladki podświetlone (aktywne) plus mięsień prosty brzucha. Klatka 4 (powrót do deski). Ruch potwierdzony: deska → pike → deska — czysty 'butt-up' (uniesienie bioder z deski). Klasyfikacja: core_flexion (zgięcie kręgosłupa w fazie pike), compound (kręgosłup + biodra + barki), bodyweight, closed kinetic chain (przedramiona i stopy zafiksowane). Force=push (odpychanie podłogi przedramionami w fazie koncentrycznej). Mięsień główny: rectus_abdominis P9 (główny generator pike) + glutes P7 (silnie aktywne — widać na anatomii). Difficulty=5, level=intermediate (potrzeba solidnej deski jako prerequisite + koordynacji). Nazwa PL: 'Wznosy bioder w planku' jako podstawowa nazwa opisowa (najczyższa w PL środowisku fitness), 'butt-ups' i 'pike plank' jako popularne aliasy międzynarodowe. Wszystkie pola PL napisane od zera, nie tłumaczenie maszynowe. Schema zgodny z cocoons.json.",
+
+  "tags": ["bodyweight", "core", "abs", "no_equipment", "home_workout", "glutes", "shoulders", "pike"]
+}

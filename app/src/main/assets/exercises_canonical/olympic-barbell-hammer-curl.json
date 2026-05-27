@@ -1,0 +1,202 @@
+{
+  "id": "olympic-barbell-hammer-curl",
+  "name": "Olympic Barbell Hammer Curl",
+  "namePl": "Hammer curl z olimpijską sztangą",
+  "aliases": ["olympic bar end hammer curl", "neutral grip olympic barbell curl", "barbell hammer curl on the sleeves"],
+  "aliasesPl": ["hammer curl trzymając sztangę olimpijską za końce", "uginanie młotkowe z olimpijską sztangą", "neutralne uginanie ze sztangą olimpijską"],
+
+  "description": "Unconventional hammer curl variation performed by gripping a standard olympic barbell (20 kg, ~2.2 m long) at the very ends of the sleeves with a neutral (palms facing each other) grip — the bar runs perpendicular to the body like a giant dumbbell held horizontally in front of the lifter. This grip orientation keeps the forearms in a neutral position throughout the curl, shifting the load from biceps brachii onto the brachialis and brachioradialis. Excellent for arm thickness, grip endurance, and crushing the often-undertrained brachialis with a heavier bilateral load than dumbbells allow.",
+  "descriptionPl": "Nietypowy wariant hammer curla wykonywany trzymając standardową sztangę olimpijską (20 kg, ~2,2 m długości) za same końce tulei chwytem neutralnym (dłonie zwrócone do siebie) — sztanga ułożona prostopadle do tułowia, niczym ogromny hantel trzymany poziomo przed lifterem. Taka orientacja chwytu utrzymuje przedramiona w pozycji neutralnej przez cały ruch, przesuwając obciążenie z mięśnia dwugłowego na ramienny (brachialis) i ramienno-promieniowy (brachioradialis). Świetne ćwiczenie na grubość ramion, wytrzymałość chwytu i mocne zaatakowanie często niedotrenowanego brachialisa obustronnym ciężarem większym niż pozwalają na to hantle.",
+
+  "instructions": [
+    "Position a loaded olympic barbell on the floor or pull it from a low rack. Stand in the middle of the bar, perpendicular to it, with feet hip-width apart.",
+    "Reach down and grip the barbell at the very ends of the sleeves with both hands in a neutral grip — palms facing each other, the bar running horizontally in front of you.",
+    "Stand fully upright with the bar hanging in front of your thighs. Pin your elbows tight to your sides; they must stay there for the entire set.",
+    "Brace your core, lift your chest, and squeeze your shoulder blades back and down. The bar will balance like a long lever, so keep your wrists locked.",
+    "Curl the bar upward by flexing only at the elbows, exhaling on the way up. The bar stays parallel to the floor — do not let one side tip.",
+    "Continue until the bar reaches roughly upper chest / lower face height with the brachialis and brachioradialis fully contracted. Brief squeeze at the top.",
+    "Lower under control over 2-3 seconds back to full elbow extension, inhaling on the descent. Keep the bar level the entire way down.",
+    "Avoid any torso swing — the long lever amplifies any cheating and overloads the lower back."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę olimpijską i ustaw ją na podłodze lub ściągnij z niskiego stojaka. Stań na środku sztangi, prostopadle do niej, stopy na szerokość bioder.",
+    "Sięgnij w dół i złap sztangę za same końce tulei obiema rękami chwytem neutralnym — dłonie zwrócone do siebie, sztanga ułożona poziomo przed tobą.",
+    "Wyprostuj się całkowicie, sztanga zwisa przed udami. Przyklej łokcie do boków tułowia — mają tam pozostać przez całą serię.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij łopatki w tył i w dół. Sztanga balansuje jak długa dźwignia, więc zablokuj nadgarstki.",
+    "Uginaj ramiona w łokciach do góry, wydychając w fazie koncentrycznej. Sztanga ma pozostać równolegle do podłogi — nie pozwól, by jeden koniec opadł.",
+    "Kontynuuj ruch aż sztanga znajdzie się na wysokości górnej klatki / dolnej twarzy, a brachialis i brachioradialis będą w pełnym skurczu. Krótkie napięcie w górze.",
+    "Opuszczaj w sposób kontrolowany przez 2-3 sekundy do pełnego wyprostu łokci, wdech podczas opuszczania. Sztanga ma być równo przez całą fazę negatywną.",
+    "Unikaj bujania tułowiem — długa dźwignia wzmacnia każde oszukiwanie i przeciąża odcinek lędźwiowy."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "brachialis"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius", "wrist_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P8",
+    "brachialis": "P9",
+    "brachioradialis": "S7",
+    "forearm_flexors": "S5",
+    "anterior_deltoid": "T2",
+    "core": "T3",
+    "upper_trapezius": "T2",
+    "wrist_stabilizers": "T4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "weight_plates"],
+    "optional": ["collars", "wrist_wraps", "lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["hammer-curl", "barbell-curl"],
+    "progression_to": ["heavy-dumbbell-hammer-curl", "cross-body-hammer-curl"],
+    "alternatives": ["hammer-curl", "rope-hammer-curl", "neutral-grip-cable-curl", "ez-bar-hammer-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand centered, perpendicular to the bar",
+      "Neutral grip at the very ends of the sleeves",
+      "Bar parallel to the floor — keep it level",
+      "Elbows pinned to your ribs",
+      "Chest up, core braced, no swinging"
+    ],
+    "setup_cues_pl": [
+      "Stań na środku, prostopadle do sztangi",
+      "Chwyt neutralny na samych końcach tulei",
+      "Sztanga równolegle do podłogi — utrzymaj poziom",
+      "Łokcie przyklejone do żeber",
+      "Klatka w górze, brzuch napięty, żadnego bujania"
+    ],
+    "execution_cues": [
+      "Only the forearms move — uppers arms stay still",
+      "Keep the bar level on both sides through the whole rep",
+      "Squeeze brachialis hard at the top",
+      "Lower slowly for 2-3 seconds",
+      "Full elbow extension at the bottom of every rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Utrzymaj sztangę w poziomie po obu stronach przez całe powtórzenie",
+      "Mocno spinaj brachialis w górnej pozycji",
+      "Opuszczaj wolno przez 2-3 sekundy",
+      "Pełny wyprost łokci na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar tips to one side during the curl",
+        "faultPl": "Sztanga przechyla się na jedną stronę podczas uginania",
+        "cause": "Strength asymmetry between arms, uneven loading, or grip not perfectly centered on the sleeves",
+        "causePl": "Asymetria siły między ramionami, nierówne obciążenie, lub chwyt nie ustawiony równo na końcach tulei",
+        "cue": "Reduce weight until you can keep the bar perfectly level. Train the weaker side with single-arm work first.",
+        "cuePl": "Zmniejsz ciężar do momentu, w którym utrzymasz sztangę idealnie poziomo. Słabszą stronę dotrenuj jednorącz."
+      },
+      {
+        "fault": "Torso swing (kipping) to throw the long lever up",
+        "faultPl": "Bujanie tułowia w celu wyrzucenia długiej dźwigni w górę",
+        "cause": "Bar is much longer than a normal curl bar, so any cheating is dramatically amplified — usually load too heavy",
+        "causePl": "Sztanga jest dużo dłuższa niż zwykła sztanga do curli, więc każde oszukiwanie jest dramatycznie wzmocnione — zwykle zbyt duży ciężar",
+        "cue": "Lower the weight. Stand with your back against a wall — heels, glutes, and head touching the wall.",
+        "cuePl": "Zmniejsz ciężar. Stań plecami do ściany — pięty, pośladki i głowa mają jej dotykać."
+      },
+      {
+        "fault": "Elbows drift forward to swing the bar up",
+        "faultPl": "Łokcie wędrują do przodu, by wymachem podnieść sztangę",
+        "cause": "Recruiting anterior deltoids to lever the long bar past the sticking point",
+        "causePl": "Włączanie przednich aktonów barków, by dźwignią przeprowadzić długą sztangę przez punkt zacięcia",
+        "cue": "Stop the curl when forearms reach vertical. Elbows stay directly under shoulders.",
+        "cuePl": "Zakończ uginanie gdy przedramiona dojdą do pionu. Łokcie pozostają dokładnie pod barkami."
+      },
+      {
+        "fault": "Wrist flexion under load (curling the wrists)",
+        "faultPl": "Zginanie nadgarstków pod obciążeniem",
+        "cause": "Trying to add range by flexing wrists, or weak wrist stabilizers fatiguing with the long lever",
+        "causePl": "Próba dodania zakresu zginaniem nadgarstków, lub zmęczenie słabych stabilizatorów nadgarstka długą dźwignią",
+        "cue": "Wrists locked neutral, knuckles point up — make a strong fist around the sleeve.",
+        "cuePl": "Nadgarstki zablokowane w pozycji neutralnej, knykcie skierowane w górę — zaciśnij mocno pięść na tulei."
+      },
+      {
+        "fault": "Partial range — not reaching full lockout at the bottom",
+        "faultPl": "Niepełny zakres ruchu — brak pełnego wyprostu na dole",
+        "cause": "Ego lifting, fear of losing balance with the long bar, or weak stretched-position strength",
+        "causePl": "Ego, strach przed utratą równowagi z długą sztangą, lub słabość w pozycji rozciągniętej",
+        "cue": "Lower until elbows are fully straight every rep. Bar finishes in front of thighs.",
+        "cuePl": "Opuszczaj aż łokcie będą całkowicie wyprostowane przy każdym powtórzeniu. Sztanga kończy ruch przed udami."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a steady brace — the long lever loads the lower back if you exhale fully and lose tension.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj stałe napięcie brzucha — długa dźwignia obciąża odcinek lędźwiowy, jeśli wydychasz do końca i tracisz napięcie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The long lever puts significant ulnar/radial deviation stress on the wrist if the bar tips. Use wrist wraps, reduce load, or switch to standard hammer curl with dumbbells.",
+      "modificationPl": "Długa dźwignia mocno obciąża nadgarstek odchyleniem łokciowym/promieniowym przy każdym przechyle sztangi. Użyj ściągaczy na nadgarstki, zmniejsz ciężar lub przejdź na klasyczny hammer curl z hantlami.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "brachialis_or_elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Neutral grip loads brachialis heavily — back off to 12-15 reps with light weight, avoid heavy eccentrics until pain-free for 2+ weeks.",
+      "modificationPl": "Chwyt neutralny mocno obciąża brachialis — zejdź na 12-15 powtórzeń z lekkim ciężarem, unikaj ciężkich faz negatywnych aż do braku bólu przez minimum 2 tygodnie.",
+      "alternative": "rope-hammer-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "The long bar significantly amplifies any torso swing, loading the spine. Perform seated, use shorter standard bar, or switch to single-arm dumbbell variation.",
+      "modificationPl": "Długa sztanga znacznie wzmacnia każde bujanie tułowia, obciążając kręgosłup. Wykonuj siedząc, użyj krótszej, standardowej sztangi, lub przejdź na jednoręczny wariant z hantlą.",
+      "alternative": "seated-hammer-curl"
+    },
+    {
+      "condition": "shoulder_impingement_or_anterior_deltoid_pain",
+      "severity": "modify",
+      "modification": "The wide neutral grip at the sleeves can pull the shoulders into internal rotation. Narrow the grip if possible, keep elbows pinned, reduce top range to ~90°.",
+      "modificationPl": "Szeroki chwyt neutralny na końcach tulei może rotować barki do wewnątrz. Zwęź chwyt, jeśli to możliwe, trzymaj łokcie przyklejone, zmniejsz zakres górny do ~90°.",
+      "alternative": "hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3-4x6-8 (strength/brachialis mass) | 2-3x12-15 (endurance/grip)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "olympic-barbell-hammer-curl.gif",
+    "frames_extracted": [
+      "frames/olympic-barbell-hammer-curl/frame_0_start.png",
+      "frames/olympic-barbell-hammer-curl/frame_1_early.png",
+      "frames/olympic-barbell-hammer-curl/frame_2_mid.png",
+      "frames/olympic-barbell-hammer-curl/frame_3_late.png",
+      "frames/olympic-barbell-hammer-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/olympic-barbell-hammer-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: lifter stoi prostopadle do sztangi olimpijskiej (długi gryf), trzyma ją chwytem neutralnym za same końce tulei — dłonie skierowane do siebie, sztanga ułożona poziomo przed udami, ramiona w pełnym wyproście, przedramiona i brachialis podświetlone na czerwono. Frame 2: pełny skurcz, sztanga uniesiona na wysokość górnej klatki / dolnej twarzy w idealnym poziomie, łokcie pozostają przy bokach tułowia, biceps/brachialis silnie zaznaczone. Frame 4: powrót do pełnego wyprostu. Tułów stoi nieruchomo przez cały ruch. Ćwiczenie jednoznacznie zidentyfikowane jako olympic barbell hammer curl — chwyt neutralny na sztandze olimpijskiej trzymanej za końce, sztanga prostopadła do ciała lifterа (jak ogromny hantel). To wariant izolacyjny celujący przede wszystkim w brachialis i brachioradialis dzięki neutralnemu chwytowi. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "isolation", "barbell", "olympic_barbell", "neutral_grip", "hammer_grip", "upper_body", "uncommon_variation"]
+}

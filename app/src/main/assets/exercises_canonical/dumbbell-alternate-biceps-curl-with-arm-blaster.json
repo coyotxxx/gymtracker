@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-alternate-biceps-curl-with-arm-blaster",
+  "name": "Dumbbell Alternate Biceps Curl with Arm Blaster",
+  "namePl": "Naprzemienny curl z hantlami z arm blaster",
+  "aliases": ["arm blaster alternating dumbbell curl", "isolator alternating db curl", "arm blaster db curl alternating"],
+  "aliasesPl": ["naprzemienne uginanie ramion z hantlami w arm blasterze", "curl z hantlami z izolatorem na biceps naprzemiennie", "uginanie hantli w arm blasterze naprzemiennie"],
+
+  "description": "Strict-form isolation exercise for the elbow flexors using two dumbbells while wearing an arm blaster — a curved aluminum or fiberglass pad strapped around the torso with a neck loop that physically locks the elbows in place. The blaster prevents elbow drift and torso swing, forcing pure elbow flexion through the biceps. Performed alternating one arm at a time, which allows full mental focus on each rep, free supination of the wrist, and even rest periods between sides. Popularized by Arnold Schwarzenegger and Larry Scott in the golden era of bodybuilding for maximum biceps isolation.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze stawu łokciowego wykonywane w ścisłej formie z dwoma hantlami przy użyciu arm blastera — zakrzywionej aluminiowej lub kompozytowej podkładki przypiętej do tułowia paskiem na szyję, która fizycznie blokuje łokcie w jednej pozycji. Blaster eliminuje przesuwanie się łokci do przodu i bujanie tułowia, wymuszając czystą pracę w stawie łokciowym przez biceps. Wykonywane naprzemiennie jedną ręką, co pozwala w pełni skupić się mentalnie na każdym powtórzeniu, swobodnie supinować nadgarstek i daje równe przerwy między stronami. Spopularyzowane przez Arnolda Schwarzeneggera i Larry'ego Scotta w złotej erze kulturystyki jako szczyt izolacji bicepsa.",
+
+  "instructions": [
+    "Strap the arm blaster around your torso with the neck loop and adjust the height so the curved pad sits just below your ribcage and your elbows can rest against it with arms fully extended.",
+    "Stand tall with feet shoulder-width apart and grab a dumbbell in each hand using a neutral or slightly supinated grip. Let the arms hang straight down with elbows pressed firmly into the pad.",
+    "Brace your core, lift your chest, and pull your shoulders back. Keep both elbows in contact with the blaster for the entire set — that is the whole point.",
+    "Start with the right arm. Curl the dumbbell upward by flexing only at the elbow. Simultaneously rotate the wrist into full supination (palm facing the shoulder) as the dumbbell rises. Exhale on the way up.",
+    "Continue until the dumbbell reaches the front of the shoulder and the biceps is fully contracted. Squeeze hard for a brief pause at the top.",
+    "Lower the dumbbell under control over 2-3 seconds back to full elbow extension, reversing the supination on the way down. Inhale on the descent.",
+    "Once the right arm returns to the start position, immediately begin the curl with the left arm. Alternate one arm at a time for the prescribed reps per side.",
+    "Keep the non-working arm fully extended with the elbow pinned to the pad — do not let it drift or cheat the working side."
+  ],
+  "instructionsPl": [
+    "Załóż arm blaster na tułów paskiem na szyję i wyreguluj wysokość tak, by zakrzywiona podkładka znalazła się tuż pod żebrami, a łokcie mogły o nią spoczywać przy w pełni wyprostowanych ramionach.",
+    "Stań prosto, stopy na szerokość barków, chwyć po hantli w każdą rękę chwytem neutralnym lub lekko podchwytem. Pozwól ramionom zwisać pionowo z łokciami mocno wciśniętymi w podkładkę.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył. Oba łokcie mają mieć kontakt z blasterem przez całą serię — to jest cały sens tego ćwiczenia.",
+    "Zacznij prawą ręką. Uginaj hantel do góry pracując wyłącznie w stawie łokciowym. Równocześnie obracaj nadgarstek do pełnej supinacji (dłoń skierowana do barku) w miarę unoszenia hantla. Wydech w fazie koncentrycznej.",
+    "Kontynuuj ruch aż hantel dotrze na wysokość przedniego aktonu barku, a biceps będzie w pełnym skurczu. Mocno napnij na chwilę w górnej pozycji.",
+    "Opuszczaj hantel w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciu, odwracając supinację po drodze. Wdech podczas opuszczania.",
+    "Gdy prawa ręka wróci do pozycji startowej, natychmiast rozpocznij uginanie lewą. Wykonuj naprzemiennie jednoręcznie przez zalecaną liczbę powtórzeń na stronę.",
+    "Trzymaj nieaktywną rękę w pełnym wyproście z łokciem przyklejonym do podkładki — nie pozwól jej odpływać ani 'pomagać' pracującej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "core", "anterior_deltoid", "upper_trapezius", "neck_flexors"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T4",
+    "core": "T3",
+    "anterior_deltoid": "T1",
+    "upper_trapezius": "T1",
+    "neck_flexors": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "arm_blaster"],
+    "optional": ["wrist_wraps", "lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-curl", "dumbbell-alternate-biceps-curl"],
+    "progression_to": ["preacher-curl", "spider-curl", "incline-dumbbell-curl"],
+    "alternatives": ["preacher-curl", "dumbbell-alternate-biceps-curl", "spider-curl", "concentration-curl", "ez-bar-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Adjust the blaster so the pad sits just below your ribcage",
+      "Neck strap snug but not choking — pad should not slide down",
+      "Both elbows pressed firmly into the curved pad",
+      "Feet shoulder-width, knees soft, core braced",
+      "Start with arms fully extended, palms facing forward or neutral"
+    ],
+    "setup_cues_pl": [
+      "Wyreguluj blaster tak, by podkładka była tuż pod żebrami",
+      "Pasek na szyję dociągnięty, ale nie uciska — podkładka nie powinna zsuwać się",
+      "Oba łokcie mocno wciśnięte w zakrzywioną podkładkę",
+      "Stopy na szerokość barków, kolana lekko ugięte, brzuch napięty",
+      "Start z ramionami w pełnym wyproście, dłonie skierowane do przodu lub neutralnie"
+    ],
+    "execution_cues": [
+      "Elbows do NOT leave the pad — that is the whole point of the blaster",
+      "Supinate the wrist as the dumbbell rises — palm rotates to face the shoulder",
+      "Squeeze the biceps hard at the top for one second",
+      "Lower slowly over 2-3 seconds, reversing the supination",
+      "Non-working arm stays fully extended and pressed to the pad"
+    ],
+    "execution_cues_pl": [
+      "Łokcie NIE odrywają się od podkładki — to cały sens arm blastera",
+      "Supinuj nadgarstek w miarę unoszenia hantla — dłoń obraca się do barku",
+      "Mocno spinaj biceps w górnej pozycji przez sekundę",
+      "Opuszczaj wolno przez 2-3 sekundy, odwracając supinację",
+      "Nieaktywna ręka pozostaje w pełnym wyproście, łokieć przyciśnięty do podkładki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbow lifts off the arm blaster pad during the curl",
+        "faultPl": "Łokieć odrywa się od podkładki arm blastera w trakcie uginania",
+        "cause": "Load too heavy, blaster set too high, or trying to swing the dumbbell up using anterior deltoid",
+        "causePl": "Zbyt duży ciężar, blaster ustawiony za wysoko, lub próba podrzucenia hantla przednim aktonem barku",
+        "cue": "Reduce the weight. The elbow must stay glued to the pad — if it lifts, the rep does not count.",
+        "cuePl": "Zmniejsz ciężar. Łokieć musi być przyklejony do podkładki — jeśli się odrywa, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Torso leans back to help lift the dumbbell",
+        "faultPl": "Tułów odchyla się do tyłu by pomóc unieść hantel",
+        "cause": "Ego lifting — the blaster eliminates elbow swing but not hip/lumbar momentum",
+        "causePl": "Ego — blaster eliminuje przesuwanie łokci, ale nie pomoc biodrami/lędźwiowymi",
+        "cue": "Stand against a wall to lock your back vertical, or drop the weight by 20%.",
+        "cuePl": "Stań plecami do ściany aby zablokować pion tułowia, lub zmniejsz ciężar o 20%."
+      },
+      {
+        "fault": "Non-working arm cheats by partially curling or losing pad contact",
+        "faultPl": "Nieaktywna ręka oszukuje częściowo uginając lub tracąc kontakt z podkładką",
+        "cause": "Loss of focus during alternating tempo, or matching the working side's effort with the resting side",
+        "causePl": "Utrata koncentracji w naprzemiennym tempie, lub mimowolne kopiowanie pracy aktywnej strony przez stronę odpoczywającą",
+        "cue": "Hold the non-working dumbbell dead-weight at full extension with the elbow pinned to the pad.",
+        "cuePl": "Trzymaj nieaktywny hantel jako martwy ciężar w pełnym wyproście z łokciem przyklejonym do podkładki."
+      },
+      {
+        "fault": "Skipping the supination — palm stays neutral throughout",
+        "faultPl": "Pomijanie supinacji — dłoń pozostaje neutralna przez cały ruch",
+        "cause": "Habit from hammer curls, or weak supinator muscle, or grip pain at full supination",
+        "causePl": "Nawyk z curli młotkowych, słaby mięsień odwracacz, lub ból nadgarstka w pełnej supinacji",
+        "cue": "Actively rotate the wrist so the pinky faces up at the top — that maxes out biceps activation.",
+        "cuePl": "Aktywnie obróć nadgarstek tak, by mały palec wskazywał w górę w pozycji szczytowej — to maksymalnie aktywuje biceps."
+      },
+      {
+        "fault": "Blaster sliding down or rotating during the set",
+        "faultPl": "Blaster zsuwa się lub obraca w trakcie serii",
+        "cause": "Neck strap too loose, pad worn too high above the ribs, or thin/sweaty t-shirt under the pad",
+        "causePl": "Pasek na szyję za luźny, podkładka noszona za wysoko nad żebrami, lub cienka/spocona koszulka pod podkładką",
+        "cue": "Tighten the neck strap. Position the pad to sit on the lower ribs/upper abdomen, not on the chest.",
+        "cuePl": "Dociągnij pasek na szyję. Ustaw podkładkę tak, by spoczywała na dolnych żebrach/górnej części brzucha, nie na klatce."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up) of each arm. Inhale during the eccentric (lower down). The alternating tempo means breathing follows each individual rep, not each pair.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie) każdego ramienia. Wdech w fazie ekscentrycznej (opuszczanie). Tempo naprzemienne oznacza, że oddech podąża za każdym pojedynczym powtórzeniem, nie za parą."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_spine_pain_or_disc_issues",
+      "severity": "modify",
+      "modification": "The arm blaster neck strap loads the cervical spine with the weight of the pad and the leverage of the curl. Switch to preacher bench (no neck load) or skip the blaster and do strict standing alternating curls.",
+      "modificationPl": "Pasek arm blastera na szyję obciąża odcinek szyjny ciężarem podkładki i dźwignią uginania. Przejdź na ławkę modlitewnik (brak obciążenia szyi) lub zrezygnuj z blastera i wykonuj ścisłe naprzemienne curle stojąc.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Strict isolation with full supination heavily loads the distal biceps tendon. Reduce volume, use lighter loads with 12-15 reps, avoid heavy eccentrics and skip the deepest stretch position.",
+      "modificationPl": "Ścisła izolacja z pełną supinacją mocno obciąża dystalny przyczep bicepsa. Zmniejsz objętość, używaj lżejszych ciężarów 12-15 powtórzeń, unikaj ciężkich faz negatywnych i pomiń najgłębszą pozycję rozciągniętą.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "caution",
+      "modification": "The blaster fixes the elbows in front of the torso, which can increase humeral head anterior glide for some anatomies. If pinching occurs, switch to incline or preacher curl.",
+      "modificationPl": "Blaster ustawia łokcie przed tułowiem, co u niektórych może zwiększać przedni ślizg głowy kości ramiennej. Jeśli pojawia się szczypanie, zmień na curl na ławce skośnej lub modlitewnik.",
+      "alternative": "incline-dumbbell-curl"
+    },
+    {
+      "condition": "claustrophobia_or_pressure_sensitivity",
+      "severity": "modify",
+      "modification": "The blaster wraps tightly around the torso with a neck strap which some people find restrictive or anxiety-inducing. Perform strict alternating curls against a wall instead for the same elbow-locking effect.",
+      "modificationPl": "Blaster ciasno obejmuje tułów z paskiem na szyję, co niektórym wydaje się krępujące lub wywołuje niepokój. Wykonuj ścisłe naprzemienne curle plecami do ściany — daje ten sam efekt blokady łokci.",
+      "alternative": "dumbbell-alternate-biceps-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy) | 3x10-15 per arm (pump/finisher) | 4x6-8 per arm (strict strength)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-alternate-biceps-curl-with-arm-blaster.gif",
+    "frames_extracted": [
+      "frames/dumbbell-alternate-biceps-curl-with-arm-blaster/frame_0_start.png",
+      "frames/dumbbell-alternate-biceps-curl-with-arm-blaster/frame_1_early.png",
+      "frames/dumbbell-alternate-biceps-curl-with-arm-blaster/frame_2_mid.png",
+      "frames/dumbbell-alternate-biceps-curl-with-arm-blaster/frame_3_late.png",
+      "frames/dumbbell-alternate-biceps-curl-with-arm-blaster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-alternate-biceps-curl-with-arm-blaster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 z GIFa jahel. Frame 0: pozycja stojąca, arm blaster (zakrzywiona ciemna podkładka) wyraźnie widoczny owinięty wokół tułowia z paskiem na szyję, oba ramiona wyprostowane wzdłuż ciała z hantlami, łokcie wciśnięte w podkładkę, biceps i przedramiona podświetlone na czerwono jako pracujące mięśnie. Frame 2: pozycja praktycznie identyczna ze startem (między fazami) — potwierdza naprzemienny charakter. Frame 4: widoczny 'ghost' jednego ramienia w pozycji szczytowej (hantel uniesiony do barku) podczas gdy druga ręka pozostaje wyprostowana — jednoznaczne potwierdzenie naprzemiennego uginania. Tułów stoi sztywno pionowo przez cały ruch, łokcie nie odrywają się od blastera — modelowa technika strict isolation. Ćwiczenie zidentyfikowane jako Dumbbell Alternate Biceps Curl with Arm Blaster. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbell", "arm_blaster", "alternating", "unilateral", "upper_body", "golden_era", "strict_form"]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "dumbbell-step-up-lunge",
+  "name": "Dumbbell Step-Up Lunge",
+  "namePl": "Step-up + wykrok z hantlami",
+  "aliases": ["dumbbell bench step-up lunge", "dumbbell step-up into lunge", "combo step-up lunge", "step-up rear knee bench lunge"],
+  "aliasesPl": ["step-up z wykrokiem z hantlami", "wejście na ławkę + wykrok z hantlami", "kombinacja step-up + wykrok", "step-up + wykrok tylne kolano na ławce"],
+
+  "description": "Hybrid unilateral lower-body exercise combining a step-up onto a low bench/platform with a rear-foot-elevated lunge position. The athlete stands between two benches holding dumbbells at the sides, rests the rear shin/knee on the back bench while the front foot remains on the floor (or steps onto a low platform), and descends into a deep lunge. The rear-leg support shifts ~85-90% of the load onto the working front leg, producing a strong quad-and-glute stimulus with high stabilizer demand. The combined pattern blends the vertical step-up cue with the depth and unilateral character of a Bulgarian-style split squat.",
+  "descriptionPl": "Hybrydowe jednostronne ćwiczenie dolnej części ciała łączące step-up na niską ławkę/platformę z wykrokiem ze stopą tylną podpartą. Trenujący stoi między dwiema ławkami z hantlami przy biodrach, opiera tylną piszczel/kolano na tylnej ławce, a przednia stopa pozostaje na podłodze (lub wchodzi na niską platformę), po czym schodzi w głęboki wykrok. Podparcie tylnej nogi przenosi około 85-90% obciążenia na pracującą przednią nogę, dając mocny bodziec na czworogłowe i pośladki przy wysokich wymaganiach stabilizacyjnych. Połączony wzorzec łączy pionowy ruch step-up z głębokością i jednostronnym charakterem bułgarskiego split squat.",
+
+  "instructions": [
+    "Place two flat benches parallel to each other, roughly one stride apart. Use a single rear bench if you only have one piece of equipment.",
+    "Hold a dumbbell in each hand at your sides with a neutral grip. Stand between the benches in a long split stance.",
+    "Place the top of your rear foot (laces down) or the front of your shin on the rear bench. Knee bent, shin roughly horizontal.",
+    "The front foot rests flat on the floor about 60-90 cm in front of the bench. Front shin vertical when standing tall.",
+    "Brace your core, pull shoulder blades back, look forward. Inhale and hold.",
+    "Lower straight down by bending the front knee. The rear knee descends toward the floor as the front thigh approaches parallel.",
+    "Reach a depth where the front thigh is parallel to the floor (or slightly below) and the rear knee almost touches the ground.",
+    "Keep your torso upright or with a very slight forward lean. The front knee tracks over the second/third toe.",
+    "Drive up through the heel and mid-foot of the front leg. Squeeze the glute at the top without locking the knee aggressively.",
+    "Exhale near the top. Complete all reps on one side, then carefully step out, swap legs and repeat on the other side."
+  ],
+  "instructionsPl": [
+    "Ustaw dwie płaskie ławki równolegle do siebie, w odstępie mniej więcej jednego kroku wykrocznego. Wystarczy też pojedyncza ławka z tyłu, jeśli masz tylko jedną.",
+    "Trzymaj hantle po obu stronach przy biodrach chwytem neutralnym. Stań między ławkami w długim rozkroku wykrocznym.",
+    "Połóż grzbiet stopy (sznurówki do dołu) lub przód piszczeli tylnej nogi na tylnej ławce. Kolano zgięte, piszczel mniej więcej poziomo.",
+    "Przednia stopa płasko na podłodze, około 60-90 cm przed ławką. Piszczel przedniej nogi pionowo w pozycji wyprostowanej.",
+    "Napnij brzuch, ściągnij łopatki, wzrok w przód. Wdech i przytrzymanie.",
+    "Schodź prosto w dół, zginając przednie kolano. Tylne kolano schodzi w kierunku podłogi, gdy przednie udo dochodzi do równoległej.",
+    "Osiągnij głębokość, w której przednie udo jest równoległe do podłogi (lub odrobinę niżej), a tylne kolano prawie dotyka ziemi.",
+    "Utrzymuj tułów pionowo lub z bardzo lekkim pochyleniem w przód. Przednie kolano podąża nad drugim/trzecim palcem stopy.",
+    "Wypchnij się w górę przez piętę i środek stopy przedniej nogi. Ściśnij pośladek na górze, nie blokując kolana agresywnie.",
+    "Wydech blisko górnej pozycji. Wykonaj wszystkie powtórzenia na jedną stronę, ostrożnie wyjdź z pozycji, zmień nogi i powtórz po drugiej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "calves", "erector_spinae", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "hamstrings": "S6",
+    "adductors": "S6",
+    "core": "S7",
+    "gluteus_medius": "S7",
+    "calves": "T4",
+    "erector_spinae": "T4",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bench"],
+    "optional": ["second_bench", "low_platform", "wrist_straps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dumbbell-lunge", "bodyweight-bulgarian-split-squat", "dumbbell-step-up", "goblet-squat"],
+    "progression_to": ["dumbbell-bulgarian-split-squat", "barbell-bulgarian-split-squat", "deficit-reverse-lunge", "dumbbell-walking-lunge"],
+    "alternatives": ["dumbbell-bulgarian-split-squat", "dumbbell-reverse-lunge", "dumbbell-step-up", "dumbbell-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Rear shin parallel to the floor on the bench — laces down, not toes",
+      "Long stride: front knee should stack over the ankle at the bottom, not over the toes",
+      "Dumbbells hang straight down at the hips — neutral grip, wrists locked",
+      "Chest tall, ribs stacked over hips, core braced before each rep",
+      "Eyes forward on a fixed point — protects neutral spine"
+    ],
+    "setup_cues_pl": [
+      "Tylna piszczel równolegle do podłogi na ławce — sznurówki do dołu, nie palce",
+      "Długi rozkrok: przednie kolano powinno być nad kostką na dole, nie nad palcami",
+      "Hantle zwisają pionowo przy biodrach — chwyt neutralny, nadgarstki sztywne",
+      "Klatka wysoko, żebra nad biodrami, brzuch napięty przed każdym powtórzeniem",
+      "Wzrok w przód na stały punkt — chroni neutralną sylwetkę kręgosłupa"
+    ],
+    "execution_cues": [
+      "Drop straight down — imagine the rear knee falling toward the floor under you",
+      "Front knee tracks over the second toe, not collapsing inward",
+      "Drive through the whole foot, with extra pressure through the heel on the way up",
+      "Hips stay level — don't let the hip on the rear-leg side drop",
+      "Reach depth: front thigh parallel, rear knee 2-3 cm above the ground"
+    ],
+    "execution_cues_pl": [
+      "Schodź prosto w dół — wyobraź sobie, że tylne kolano opada pod tobą w stronę podłogi",
+      "Przednie kolano nad drugim palcem stopy, nie zapada się do środka",
+      "Wypychaj się całą stopą, z dodatkowym naciskiem na piętę w drodze w górę",
+      "Biodra na jednym poziomie — nie pozwól by biodro po stronie tylnej nogi opadało",
+      "Osiągnij głębokość: przednie udo równolegle, tylne kolano 2-3 cm nad podłogą"
+    ],
+    "common_faults": [
+      {
+        "fault": "Front knee caves inward (valgus collapse)",
+        "faultPl": "Przednie kolano zapada do środka (koślawość)",
+        "cause": "Weak gluteus medius, narrow stance, or load too heavy for unilateral control",
+        "causePl": "Słaby pośladkowy średni, zbyt wąski rozkrok lub zbyt duży ciężar przy jednostronnej kontroli",
+        "cue": "Push the floor apart with the front foot — actively press the knee out toward the small toe",
+        "cuePl": "Rozpychaj podłogę przednią stopą — aktywnie wypychaj kolano na zewnątrz w stronę małego palca"
+      },
+      {
+        "fault": "Step too short — front knee shoots over the toes",
+        "faultPl": "Za krótki krok — przednie kolano wychodzi mocno przed palce",
+        "cause": "Underestimating stride length needed for rear-foot-elevated position",
+        "causePl": "Niedoszacowanie długości kroku potrzebnej przy podparciu tylnej stopy",
+        "cue": "Slide the front foot forward 5-10 cm. Front shin should be near-vertical when standing tall.",
+        "cuePl": "Przesuń przednią stopę 5-10 cm w przód. Piszczel przedniej nogi powinna być prawie pionowa w pozycji wyprostowanej."
+      },
+      {
+        "fault": "Excessive forward torso lean",
+        "faultPl": "Nadmierne pochylenie tułowia w przód",
+        "cause": "Weak quads in the deep range, stride too short, or core not braced",
+        "causePl": "Słabe czworogłowe w głębokim zakresie, za krótki krok lub niezacieśniony brzuch",
+        "cue": "Chest proud, dumbbells stay in line with hips. If you fold forward, reduce the weight.",
+        "cuePl": "Klatka dumnie, hantle w linii z biodrami. Jeśli składasz się w przód, zmniejsz ciężar."
+      },
+      {
+        "fault": "Insufficient depth — short partial reps",
+        "faultPl": "Niedostateczna głębokość — krótkie częściowe powtórzenia",
+        "cause": "Mobility limits, fear of the bottom position, or ego-loading the dumbbells",
+        "causePl": "Ograniczona mobilność, strach przed dolną pozycją lub przesadzanie z ciężarem hantli",
+        "cue": "Lower the rear knee until it's just above the floor — that's one rep. Use lighter dumbbells if needed.",
+        "cuePl": "Opuść tylne kolano aż będzie tuż nad podłogą — to jedno powtórzenie. Jeśli trzeba, użyj lżejszych hantli."
+      },
+      {
+        "fault": "Hip drop on the rear-leg side",
+        "faultPl": "Opadanie biodra po stronie tylnej nogi",
+        "cause": "Weak gluteus medius and obliques on the working side, asymmetry",
+        "causePl": "Słaby pośladkowy średni i mięśnie skośne po pracującej stronie, asymetria",
+        "cue": "Squeeze the front glute and keep the pelvis square — pretend you're balancing a glass of water on each hip",
+        "cuePl": "Ściśnij przedni pośladek i utrzymuj miednicę poziomo — wyobraź sobie szklankę wody na każdym biodrze"
+      }
+    ],
+    "breathing": "Inhale and brace at the top before descending. Hold the breath through the descent and the hardest part of the drive up (Valsalva). Exhale near lockout. Reset breath between reps if needed.",
+    "breathingPl": "Wdech i napięcie na górze przed schodzeniem. Wstrzymaj oddech podczas schodzenia i najtrudniejszej części wypychania w górę (Valsalva). Wydech blisko góry. Zresetuj oddech między powtórzeniami jeśli potrzeba."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Knee-dominant position can aggravate. Use a shorter ROM, switch to dumbbell reverse lunge, or use a higher rear support to reduce front-knee load.",
+      "modificationPl": "Pozycja dominująca kolanem może drażnić. Użyj krótszego zakresu ruchu, przejdź na wykrok w tył z hantlami lub użyj wyższego podparcia tylnej nogi by zmniejszyć obciążenie przedniego kolana.",
+      "alternative": "dumbbell-reverse-lunge"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Avoid deep knee flexion under load. Limit depth to pain-free range or use the standard step-up without lunge component.",
+      "modificationPl": "Unikaj głębokiego zgięcia kolana pod obciążeniem. Ogranicz głębokość do zakresu bez bólu lub użyj klasycznego step-up bez komponentu wykroku.",
+      "alternative": "dumbbell-step-up"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Rear-foot-elevated unilateral movements demand high stability. Use a wall or rack for fingertip support, or switch to bilateral squat patterns.",
+      "modificationPl": "Jednostronne ruchy z podparciem tylnej stopy wymagają dużej stabilności. Użyj ściany lub stojaka do podparcia palcem albo przejdź na obustronne wzorce przysiadowe.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "ankle_dorsiflexion_restriction",
+      "severity": "modify",
+      "modification": "Limited front-ankle mobility forces forward lean and overloads the lower back. Elevate the front heel 1-2 cm, wear heeled lifting shoes, or use a shorter stride.",
+      "modificationPl": "Ograniczona mobilność stawu skokowego przedniej nogi wymusza pochylenie i przeciąża dolny odcinek pleców. Podnieś przednią piętę o 1-2 cm, załóż buty do podnoszenia ciężarów na podwyższonej pięcie lub użyj krótszego kroku.",
+      "alternative": "dumbbell-reverse-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6 per leg (strength) | 2-3x12-15 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "dumbbell-step-up-lunge.gif",
+    "frames_extracted": [
+      "frames/dumbbell-step-up-lunge/frame_0_start.png",
+      "frames/dumbbell-step-up-lunge/frame_1_early.png",
+      "frames/dumbbell-step-up-lunge/frame_2_mid.png",
+      "frames/dumbbell-step-up-lunge/frame_3_late.png",
+      "frames/dumbbell-step-up-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/dumbbell-step-up-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa (start/early/mid/late/end). Wariant hybrydowy: trenująca stoi między dwiema ławkami, hantle przy biodrach chwytem neutralnym, TYLNA noga oparta grzbietem stopy/piszczelą na tylnej ławce (pozycja jak w Bułgarskim split squat), przednia stopa płasko na podłodze. Klatka 2 (mid) pokazuje pełną głębokość — przednie udo równolegle do podłogi, tylne kolano blisko ziemi, tułów lekko pochylony, miednica neutralna. Klatki 1/3 (early/late) to fazy schodzenia/wstawania. Klatki 0/4 to pozycja stojąca (lockout). Mięśnie podświetlone w GIFie: czworogłowe przedniej nogi (najmocniej, czerwone), pośladki obu nóg, przywodziciel tylnej nogi — pasuje do unilateral compound rear-foot-elevated. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego (np. 'step-up + wykrok z hantlami', 'tylna piszczel na ławce', 'rozpychaj podłogę'). Schema zgodna z barbell-lunge.json (wzorzec). Mechanic=compound, plane=sagittal, force=both (concentric drive + eccentric control z dużym komponentem hamującym). Laterality=unilateral. force='both' bo cykl ruchu zawiera mocną fazę ekscentryczną (kontrolowane schodzenie) i koncentryczną (wypchnięcie) — w odróżnieniu od czystego pushu w przysiadzie.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "step_up", "dumbbell", "compound", "rear_foot_elevated", "quad_dominant", "stabilizer_heavy", "asymmetry_corrector"]
+}

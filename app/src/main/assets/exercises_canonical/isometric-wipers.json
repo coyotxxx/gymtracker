@@ -1,0 +1,203 @@
+{
+  "id": "isometric-wipers",
+  "name": "Isometric Wipers",
+  "namePl": "Izometryczne wycieraczki",
+  "aliases": ["isometric chest wipers", "prone wiper hold", "extended arm chest hold", "long-lever push-up hold", "prone reach hold"],
+  "aliasesPl": ["izometryczne wycieraczki klatki", "prone wipers", "wycieraczki w podporze przodem", "izometryczny hold z wyciągniętymi rękami", "long-lever pompka hold", "izometryczny rozciąg klatki"],
+
+  "description": "Advanced isometric bodyweight hold performed in a prone (face-down) position with arms extended FAR forward — well past the head — creating an extreme long-lever. The chest hovers just above the floor while the body stays rigid like a plank. A slow side-to-side 'wiper' shift of the upper torso (and/or the arms reaching slightly out to the sides like windshield wipers) loads the pectoralis major in its stretched position, the serratus anterior, and the entire anti-extension/anti-rotation core. Because the arms are far forward, the moment arm at the shoulders is huge — making this an extremely demanding isometric for chest, serratus and abs without any equipment.",
+  "descriptionPl": "Zaawansowany izometryczny hold bodyweight wykonywany w podporze przodem (twarz do podłogi) z rękami wyciągniętymi DALEKO przed siebie — znacznie poza głowę — tworząc skrajnie długą dźwignię. Klatka piersiowa zawisa tuż nad podłogą, a całe ciało pozostaje sztywne jak planka. Powolne przesuwanie tułowia (i/lub ramion lekko na boki, niczym wycieraczki samochodowe) angażuje pectoralis major w pozycji rozciągniętej, mięsień zębaty przedni oraz cały anty-wyprostny i anty-rotacyjny core. Ponieważ ręce są wyciągnięte daleko przed siebie, ramię siły działające na barki jest ogromne — co czyni to ćwiczenie skrajnie wymagającą izometrią dla klatki, zębatego i brzucha bez żadnego sprzętu.",
+
+  "instructions": [
+    "Lie face-down on the floor with legs straight, feet together or shoulder-width apart, toes tucked under (push-up-style support).",
+    "Extend both arms FAR forward — well past the head, palms flat on the floor, fingers pointing forward or slightly outward.",
+    "Press the chest just slightly off the floor (1–5 cm) — body becomes a long rigid line from feet to fingertips.",
+    "Brace the core HARD — abs drawn in, glutes squeezed, ribs down — there must be no sagging at the lower back.",
+    "Slowly sweep the upper torso (and/or shift weight) side-to-side like a windshield wiper — 1–2 seconds per side.",
+    "Keep the chest hovering at the SAME height throughout — do not let it touch the floor and do not pike the hips up.",
+    "Hold and wiper for 10–30 seconds depending on level — eyes look at the floor, neck neutral.",
+    "To finish, lower the chest gently to the floor — do NOT pike up to your knees with a twisted spine."
+  ],
+  "instructionsPl": [
+    "Połóż się na podłodze twarzą w dół, nogi proste, stopy razem lub na szerokość barków, palce stóp podwinięte (jak w pompce).",
+    "Wyciągnij obie ręce DALEKO przed siebie — znacznie poza głowę, dłonie płasko na podłodze, palce skierowane do przodu lub lekko na zewnątrz.",
+    "Unieś klatkę odrobinę nad podłogę (1–5 cm) — ciało tworzy długą sztywną linię od stóp do końca palców dłoni.",
+    "Napnij brzuch MOCNO — wciągnięte mięśnie brzucha, ściśnięte pośladki, żebra w dół — nie wolno opadać w lędźwiach.",
+    "Powoli przesuwaj górną część tułowia (i/lub przenoś ciężar) z boku na bok niczym wycieraczki samochodowe — 1–2 sekundy na stronę.",
+    "Klatka musi cały czas wisieć na TEJ SAMEJ wysokości — nie pozwól jej dotknąć podłogi i nie wypychaj bioder do góry.",
+    "Trzymaj i wycieraj 10–30 sekund w zależności od poziomu — wzrok na podłogę, szyja w neutralnej pozycji.",
+    "Zakończ łagodnie opuszczając klatkę na podłogę — NIE wypychaj się na kolana ze skręconym kręgosłupem."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_anti_extension",
+    "force": "isometric_hold",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "serratus_anterior", "core"],
+    "secondary": ["anterior_deltoids", "obliques", "rectus_abdominis"],
+    "stabilizers": ["lats", "lower_back", "glutes", "quadriceps", "rotator_cuff", "scapular_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "serratus_anterior": "P9",
+    "core": "P9",
+    "anterior_deltoids": "S7",
+    "obliques": "S7",
+    "rectus_abdominis": "S7",
+    "lats": "T5",
+    "glutes": "T5",
+    "rotator_cuff": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["plank", "hollow-body-hold", "push-up", "dead-bug"],
+    "progression_to": ["dragon-flag-isometric-hold", "tuck-planche", "front-lever-tuck"],
+    "alternatives": ["hollow-body-hold", "long-lever-plank", "ab-wheel-rollout"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Arms FAR forward — well past the top of your head, not just at shoulder level",
+      "Palms flat — fingers point forward or slightly outward; press the floor away",
+      "Body in one rigid line — heels, hips, ribs and shoulders all at the same height",
+      "Chest 1–5 cm above the floor — close enough to feel the stretch, high enough to control it",
+      "Core braced BEFORE you lift the chest — abs in, ribs down, glutes squeezed"
+    ],
+    "setup_cues_pl": [
+      "Ręce DALEKO do przodu — znacznie poza czubek głowy, nie tylko na wysokości barków",
+      "Dłonie płasko — palce do przodu lub lekko na zewnątrz; aktywnie odpychaj podłogę",
+      "Ciało w jednej sztywnej linii — pięty, biodra, żebra i barki na tej samej wysokości",
+      "Klatka 1–5 cm nad podłogą — wystarczająco blisko by czuć rozciąganie, wystarczająco wysoko by kontrolować",
+      "Napięty brzuch ZANIM uniesiesz klatkę — wciągnięte mięśnie brzucha, żebra w dół, ściśnięte pośladki"
+    ],
+    "execution_cues": [
+      "Wipers SLOWLY — 1–2 seconds per side, this is not a speed drill",
+      "Lats engaged — feel like you are trying to pull your hands forward AND toward your feet at the same time",
+      "Ribs DOWN — if you feel pinching in the lower back, your ribs flared up, drop them",
+      "Chest stays at the SAME height the whole time — no bobbing, no piking",
+      "Breathe SHALLOW into the ribs — full belly breaths will break the brace; quiet, controlled breathing"
+    ],
+    "execution_cues_pl": [
+      "Wycieraczki POWOLI — 1–2 sekundy na stronę, to nie zawody szybkości",
+      "Aktywne mięśnie najszersze — czuj jakbyś próbował przyciągnąć dłonie jednocześnie do przodu I w stronę stóp",
+      "Żebra W DÓŁ — jeśli czujesz uszczypnięcie w dolnym odcinku pleców, znaczy że żebra wystrzeliły do góry — opuść je",
+      "Klatka cały czas na TEJ SAMEJ wysokości — bez bujania, bez wypychania bioder",
+      "Płytki oddech do żeber — pełne oddechy brzuchem zerwą napięcie; ciche, kontrolowane oddychanie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back sagging / hips dropping (hyperextension of lumbar spine)",
+        "faultPl": "Opadające biodra / hiper-wyprost odcinka lędźwiowego",
+        "cause": "Weak core relative to the long lever, ribs flared up, no glute engagement — body 'hangs' from the lumbar spine",
+        "causePl": "Słaby core w stosunku do długiej dźwigni, wystrzelone żebra, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym",
+        "cue": "Tuck the pelvis under (posterior tilt), squeeze glutes HARD, ribs DOWN. If you can't hold neutral spine — bring the hands closer (shorten lever) until core catches up.",
+        "cuePl": "Podwiń miednicę pod siebie (tilt do tyłu), ŚCIŚNIJ pośladki mocno, żebra W DÓŁ. Jeśli nie utrzymasz neutralnego kręgosłupa — przybliż ręce (skróć dźwignię) aż core dogoni."
+      },
+      {
+        "fault": "Hips piking up (looking for rest)",
+        "faultPl": "Wypychanie bioder do góry (szukanie odpoczynku)",
+        "cause": "Anterior shoulder fatigue, weak serratus — body tries to shift weight off the chest by lifting hips like in downward dog",
+        "causePl": "Zmęczenie przedniego barku, słaby zębaty — ciało próbuje przenieść ciężar z klatki przez uniesienie bioder jak w downward dog",
+        "cue": "Heels–hips–ribs–shoulders on ONE line. If hips rise — the rep ends. Quality > duration. Drop set and reset rather than 'cheat-hold'.",
+        "cuePl": "Pięty–biodra–żebra–barki na JEDNEJ linii. Jeśli biodra się unoszą — seria się kończy. Jakość ważniejsza od czasu. Zakończ serię i zresetuj zamiast trzymać 'oszukane'."
+      },
+      {
+        "fault": "Wiper too fast / using momentum",
+        "faultPl": "Zbyt szybkie wycieraczki / praca rozpędem",
+        "cause": "Trying to avoid pec/serratus burn — body swings rather than pulls itself across with control",
+        "causePl": "Próba uniknięcia pieczenia klatki/zębatego — ciało buja się zamiast kontrolnie przeciągać",
+        "cue": "1–2 SECONDS per side. If you can't slow down, you're too long — pull the hands in by 5 cm and retry. The burn is the WORK.",
+        "cuePl": "1–2 SEKUNDY na stronę. Jeśli nie umiesz zwolnić, masz za długą dźwignię — przybliż dłonie o 5 cm i spróbuj ponownie. Pieczenie TO PRACA."
+      },
+      {
+        "fault": "Holding breath / red face",
+        "faultPl": "Wstrzymywanie oddechu / czerwona twarz",
+        "cause": "Maximal Valsalva to maintain core stiffness — but the hold is too long for that",
+        "causePl": "Maksymalny manewr Valsalvy żeby utrzymać sztywność core — ale hold jest na to za długi",
+        "cue": "Shallow rib breaths — 70% brace, 30% air exchange. If you have to hold your breath to keep position, the hold is too hard — shorten the lever or reduce time.",
+        "cuePl": "Płytkie oddechy do żeber — 70% napięcia, 30% wymiany powietrza. Jeśli musisz wstrzymywać oddech by utrzymać pozycję, hold jest za trudny — skróć dźwignię lub czas."
+      },
+      {
+        "fault": "Chest touching the floor (rest position)",
+        "faultPl": "Klatka opadająca na podłogę (pozycja odpoczynku)",
+        "cause": "Anterior delt and pec fatigue at the stretched position — body cheats by 'sitting' on the floor",
+        "causePl": "Zmęczenie przedniego barku i klatki w pozycji rozciągniętej — ciało oszukuje 'siadając' na podłodze",
+        "cue": "Maintain 1–5 cm clearance the whole time. If the chest touches — the set is over. Better 15 s clean than 30 s with floor contact.",
+        "cuePl": "Cały czas zachowuj prześwit 1–5 cm. Jeśli klatka dotknie podłogi — seria kończy się. Lepsze 15 s czyste niż 30 s z kontaktem z podłogą."
+      }
+    ],
+    "breathing": "Shallow rib breathing throughout — 70% brace, 30% air exchange. Do NOT do full belly breaths (they break the core brace). Inhale slowly through the nose into the side ribs, exhale slowly through pursed lips. If you feel the urge to hold breath — the hold is too hard, shorten the lever.",
+    "breathingPl": "Płytkie oddychanie do żeber przez cały hold — 70% napięcia, 30% wymiany powietrza. NIE rób pełnych oddechów brzuchem (zerwą napięcie core). Wdech powoli przez nos do bocznych żeber, wydech powoli przez zaciśnięte usta. Jeśli czujesz przymus wstrzymywania oddechu — hold jest za trudny, skróć dźwignię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "Extended long-lever isometric is one of the highest anti-extension demands in calisthenics — strong lumbar hyperextension risk if core is weak. Avoid completely until pain-free in plank and dead-bug. Regress to short-lever plank (forearms under shoulders).",
+      "modificationPl": "Wyciągnięta długa dźwignia w izometrii to jedno z najbardziej wymagających ćwiczeń anty-wyprostnych w kalistenice — wysokie ryzyko hiper-wyprostu lędźwi przy słabym core. Unikaj całkowicie do czasu bezbólowej planki i dead-bug. Wróć do krótkiej planki (przedramiona pod barkami).",
+      "alternative": "plank"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Arms in maximal elevation (overhead) + load = high anterior impingement risk. Avoid until pain-free in overhead press. Start with arms only at 90° (standard plank) and progress lever gradually.",
+      "modificationPl": "Ramiona w maksymalnej elewacji (overhead) + obciążenie = wysokie ryzyko impingementu przedniego. Unikaj do czasu bezbolesnych wyciskań nad głową. Zacznij od ramion tylko na 90° (zwykła planka) i stopniowo wydłużaj dźwignię.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Long-lever anti-extension creates very high intra-abdominal pressure and can worsen abdominal separation. Avoid until clinically cleared and able to maintain neutral spine in dead-bug.",
+      "modificationPl": "Długa dźwignia anty-wyprostna generuje bardzo wysokie ciśnienie wewnątrzbrzuszne i może pogorszyć rozejście mięśni prostych brzucha. Unikaj do czasu zgody fizjoterapeuty i opanowania neutralnego kręgosłupa w dead-bug.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Wide forward palm placement loads the wrists in extension under bodyweight. Use push-up handles or fists, or perform on forearms (long-lever forearm plank with arms extended).",
+      "modificationPl": "Dłonie ułożone szeroko i daleko z przodu obciążają nadgarstki w wyproście pod ciężarem ciała. Użyj uchwytów do pompek lub pięści, albo wykonaj na przedramionach (długa planka na przedramionach z wyciągniętymi ramionami).",
+      "alternative": "long-lever-plank"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x 10-20 s hold (intermediate) | 3-4x 20-40 s hold (advanced) | 5x 10 s with 2 s wiper per side (strength-isometric) — total work-time progression goal 60–90 s per session",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "isometric-wipers.gif",
+    "frames_extracted": [
+      "frames/isometric-wipers/frame_0_start.png",
+      "frames/isometric-wipers/frame_1_early.png",
+      "frames/isometric-wipers/frame_2_mid.png",
+      "frames/isometric-wipers/frame_3_late.png",
+      "frames/isometric-wipers/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/isometric-wipers"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "GIF 12 klatek, wyekstrahowano 5 keyframes. Postać leży w pozycji prone (twarzą w dół) z rękami WYCIĄGNIĘTYMI DALEKO PRZED SIEBIE — znacznie poza głowę, tworząc skrajnie długą dźwignię w stawach barkowych. Klatka piersiowa zawisa tuż nad podłogą (1–5 cm prześwit), ciało pozostaje sztywne w jednej linii od stóp do końca palców. Anatomia w GIF mocno podświetla na czerwono: pectoralis major (cała klatka w pozycji rozciągniętej, P9), serratus anterior (boki klatki piersiowej widoczne wzdłuż żeber, P9), oraz core/rectus abdominis + obliques (cały brzuch i boki — P9/S7). To NIE jest standardowa pompka ani plank — to izometryczny hold w pozycji ekstremalnie długiej dźwigni. Frames 0/4 vs 2 pokazują subtelne przesunięcie tułowia z lewej na prawą stronę (efekt 'wycieraczek' — windshield wipers), co dodaje komponentę anty-rotacyjną do core'a. Choć folder źródłowy to 'pectorals', ćwiczenie obciąża równie mocno serratus i core — dlatego primary muscles to wszystkie trzy, a movement_pattern='core_anti_extension' (a nie push_horizontal — brak ruchu w stawie łokciowym, brak fazy koncentrycznej). Force='isometric_hold' — to NIE jest dynamiczna pompka. Difficulty 8/10 — bardzo zaawansowana izometria z powodu długiej dźwigni + ekstrema rozciągnięcia barków + ogromne wymagania anty-wyprostne dla core. Wymaga solidnej planki, hollow-body-hold i dead-bug jako prerekwizytów. Wszystkie pola PL napisane od zera w polskim standardzie kalisteniki/gimnastyki, bez automatycznego tłumaczenia. Schema zohar-ui zachowane: muscle_intensity z prefiksami P/S/T, classification kompletna, 5 common_faults z PL parami fault/cause/cue, 4 contraindications z severity+modification+alternative+PL.",
+
+  "tags": ["bodyweight", "calisthenics", "isometric", "hold", "core", "anti_extension", "anti_rotation", "chest", "serratus", "advanced", "long_lever", "no_equipment_friendly", "home_workout", "prone_position"]
+}

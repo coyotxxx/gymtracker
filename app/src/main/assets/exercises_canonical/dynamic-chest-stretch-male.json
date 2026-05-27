@@ -1,0 +1,198 @@
+{
+  "id": "dynamic-chest-stretch-male",
+  "name": "Dynamic Chest Stretch",
+  "namePl": "Dynamiczny stretch klatki",
+  "aliases": ["dynamic chest opener", "arm swings chest stretch", "horizontal arm swings", "dynamic pec stretch", "chest opening arm swings"],
+  "aliasesPl": ["dynamiczne otwieranie klatki", "wymachy ramionami w bok", "dynamiczne rozciąganie klatki", "wymachy poziome", "rozgrzewające otwieranie klatki"],
+
+  "description": "A dynamic mobility drill for the chest and front of the shoulders. Standing tall, the practitioner rhythmically swings the arms from a closed position in front of the chest out to wide horizontal abduction (T-shape) and back. The repeated open-close motion warms up the pectoralis major and anterior deltoids, increases blood flow across the chest, and prepares the shoulder girdle for pressing or pulling work. Unlike a static stretch, the muscle is loaded through repeated end-range cycles rather than held at one length.",
+  "descriptionPl": "Dynamiczne ćwiczenie mobilizacyjne dla klatki piersiowej i przedniej części barków. W pozycji stojącej rytmicznie wymachujesz ramionami z pozycji zamkniętej przed klatką do szerokiego rozwarcia w bok (kształt litery T) i z powrotem. Powtarzany ruch otwierania-zamykania rozgrzewa mięśnie piersiowe i przednie aktony naramiennych, zwiększa ukrwienie w okolicy klatki oraz przygotowuje obręcz barkową do ćwiczeń wyciskających lub pociągających. W przeciwieństwie do rozciągania statycznego, mięsień jest obciążany cyklicznie w skrajnym zakresie, a nie utrzymywany w jednej długości.",
+
+  "instructions": [
+    "Stand upright with feet hip-width apart, knees soft, core gently engaged and chest lifted.",
+    "Bring both arms straight out in front of you at shoulder height, palms facing each other — this is the closed starting position.",
+    "In a controlled but flowing motion, swing both arms out wide to the sides until they are level with your shoulders in a T-position, opening the chest fully.",
+    "At the end-range, briefly feel the stretch across the chest and front of the shoulders — do not bounce aggressively.",
+    "Reverse the motion smoothly and bring the arms back across the body to the starting closed position.",
+    "Repeat for 10-15 reps or 30-45 seconds, keeping the tempo rhythmic and the shoulders pulled away from the ears.",
+    "Breathe in as the arms open, breathe out as the arms close back together."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, kolana lekko miękkie, brzuch delikatnie napięty, klatka uniesiona.",
+    "Wyprostuj obie ręce przed sobą na wysokości barków, dłonie skierowane do siebie — to pozycja startowa zamknięta.",
+    "Kontrolowanym, płynnym ruchem rozłóż ramiona szeroko na boki, aż znajdą się na wysokości barków w pozycji T, w pełni otwierając klatkę.",
+    "W skrajnym zakresie poczuj na moment rozciąganie w klatce i z przodu barków — nie odbijaj agresywnie.",
+    "Płynnie odwróć ruch i sprowadź ramiona z powrotem przed siebie do zamkniętej pozycji startowej.",
+    "Powtarzaj 10-15 razy lub przez 30-45 sekund, utrzymując rytm i barki ściągnięte z dala od uszu.",
+    "Wdech podczas otwierania ramion, wydech podczas zamykania."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "both",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoid"],
+    "secondary": ["biceps_brachii"],
+    "stabilizers": ["core", "trapezius_middle_lower", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "anterior_deltoid": "P8",
+    "biceps_brachii": "S4",
+    "trapezius_middle_lower": "T3",
+    "rhomboids": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": []
+  },
+
+  "category": "mobility",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": [],
+    "alternatives": ["doorway-chest-stretch", "wall-pec-stretch", "upper-back-stretch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall with feet hip-width — neutral pelvis, ribs stacked over hips",
+      "Lift arms forward at shoulder height, palms facing each other",
+      "Pull shoulder blades down and back — long neck, away from ears",
+      "Brace the core lightly so the lower back doesn't arch as arms open",
+      "Choose a rhythm you can control — flowing, not jerky"
+    ],
+    "setup_cues_pl": [
+      "Stań wyprostowany, stopy na szerokość bioder — neutralna miednica, żebra nad biodrami",
+      "Unieś ramiona do przodu na wysokość barków, dłonie skierowane do siebie",
+      "Ściągnij łopatki w dół i do tyłu — długa szyja, z dala od uszu",
+      "Lekko napnij brzuch, aby dolne plecy nie wyginały się przy otwieraniu ramion",
+      "Wybierz tempo, które możesz kontrolować — płynnie, nie szarpiąco"
+    ],
+    "execution_cues": [
+      "Open the arms wide to the sides — feel the chest expand",
+      "Squeeze shoulder blades gently together at the end-range",
+      "Keep the arms at shoulder height — don't let them drop or rise",
+      "Soft elbows, no locking out — protect the elbow joint",
+      "Reverse smoothly back to the closed position — control the return"
+    ],
+    "execution_cues_pl": [
+      "Otwieraj ramiona szeroko na boki — poczuj jak klatka się rozszerza",
+      "W końcowej pozycji delikatnie ściągnij łopatki razem",
+      "Trzymaj ręce na wysokości barków — nie pozwól im opaść ani unieść się",
+      "Łokcie miękkie, nie blokuj ich — chroń staw łokciowy",
+      "Płynnie wróć do pozycji zamkniętej — kontroluj powrót"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bouncing aggressively at end-range",
+        "faultPl": "Agresywne odbijanie w skrajnym zakresie",
+        "cause": "Trying to force more range of motion through ballistic momentum",
+        "causePl": "Próba wymuszenia większego zakresu ruchu poprzez balistyczny pęd",
+        "cue": "Slow it down — dynamic doesn't mean ballistic. Reach the end-range, breathe, then reverse with control",
+        "cuePl": "Zwolnij — dynamiczny nie znaczy balistyczny. Sięgnij skrajnego zakresu, oddychaj, potem płynnie wróć"
+      },
+      {
+        "fault": "Arching the lower back as arms open",
+        "faultPl": "Wyginanie dolnego odcinka pleców przy otwieraniu ramion",
+        "cause": "Compensating for limited shoulder mobility by extending the spine",
+        "causePl": "Kompensacja ograniczonej mobilności barków przez wyprost kręgosłupa",
+        "cue": "Brace the core and keep the ribs down — open only as wide as the shoulders allow without back movement",
+        "cuePl": "Napnij brzuch i utrzymaj żebra nisko — otwieraj tylko tak szeroko, jak pozwalają barki bez ruchu kręgosłupa"
+      },
+      {
+        "fault": "Shrugging shoulders up toward the ears",
+        "faultPl": "Wciąganie barków w górę do uszu",
+        "cause": "Overactive upper traps and lack of awareness of scapular position",
+        "causePl": "Nadaktywne górne trapezy i brak świadomości pozycji łopatek",
+        "cue": "Actively pull shoulder blades DOWN throughout the entire movement — long neck",
+        "cuePl": "Aktywnie ściągaj łopatki W DÓŁ przez cały ruch — długa szyja"
+      },
+      {
+        "fault": "Locking elbows hard at full extension",
+        "faultPl": "Twarde blokowanie łokci w pełnym wyproście",
+        "cause": "Trying to make arms as long as possible at the end-range",
+        "causePl": "Próba maksymalnego wydłużenia ramion w skrajnej pozycji",
+        "cue": "Keep a soft micro-bend in the elbows — protect the joint, especially during repeated reps",
+        "cuePl": "Utrzymuj lekkie miękkie zgięcie w łokciach — chroń staw, zwłaszcza przy powtarzanych powtórzeniach"
+      },
+      {
+        "fault": "Arms dropping below shoulder height",
+        "faultPl": "Opadanie ramion poniżej linii barków",
+        "cause": "Fatigue of the deltoids or starting position set too low",
+        "causePl": "Zmęczenie naramiennych lub zbyt nisko ustawiona pozycja startowa",
+        "cue": "Imagine the arms gliding along a horizontal shelf at shoulder height — don't let them sink",
+        "cuePl": "Wyobraź sobie, że ramiona przesuwają się po poziomej półce na wysokości barków — nie pozwól im opaść"
+      }
+    ],
+    "breathing": "Inhale as the arms open wide and the chest expands; exhale as the arms close back across the body. Keep the breathing rhythmic and matched to the movement tempo.",
+    "breathingPl": "Wdech podczas szerokiego otwierania ramion i rozszerzania klatki; wydech podczas zamykania ramion przed sobą. Utrzymuj rytmiczny oddech zsynchronizowany z tempem ruchu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_injury",
+      "severity": "avoid",
+      "modification": "Skip entirely until cleared — repeated horizontal abduction can aggravate AC joint, labral or rotator cuff injuries.",
+      "modificationPl": "Pomiń całkowicie do czasu zgody specjalisty — powtarzane odwodzenie poziome może zaostrzyć urazy stawu barkowo-obojczykowego, obrąbka lub stożka rotatorów.",
+      "alternative": "wall-pec-stretch"
+    },
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop the open phase before any pinching sensation. Lower arms slightly below true shoulder height if needed.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj fazę otwierania przed pojawieniem się uczucia zakleszczenia. W razie potrzeby obniż ramiona nieco poniżej linii barków.",
+      "alternative": "doorway-chest-stretch"
+    },
+    {
+      "condition": "post_chest_or_shoulder_surgery",
+      "severity": "avoid",
+      "modification": "Do not perform until your surgeon or physiotherapist explicitly clears horizontal abduction and end-range chest opening.",
+      "modificationPl": "Nie wykonuj, dopóki chirurg lub fizjoterapeuta jednoznacznie nie zezwoli na odwodzenie poziome i otwieranie klatki w skrajnym zakresie.",
+      "alternative": "upper-back-stretch"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Avoid full T-position if it produces tingling or numbness in the arms; keep the arms slightly forward of the frontal plane and reduce volume.",
+      "modificationPl": "Unikaj pełnej pozycji T, jeśli wywołuje mrowienie lub drętwienie ramion; utrzymuj ramiona nieco przed płaszczyzną czołową i zmniejsz objętość.",
+      "alternative": "doorway-chest-stretch"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 powtórzeń lub 30-45 sekund",
+  "calories_per_kg_per_hour": 2.5,
+
+  "media": {
+    "primary": "dynamic-chest-stretch-male.gif",
+    "frames_extracted": [
+      "frames/dynamic-chest-stretch-male/frame_0_start.png",
+      "frames/dynamic-chest-stretch-male/frame_1_early.png",
+      "frames/dynamic-chest-stretch-male/frame_2_mid.png",
+      "frames/dynamic-chest-stretch-male/frame_3_late.png",
+      "frames/dynamic-chest-stretch-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dynamic-chest-stretch-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Model stoi prosto, ramiona zaczynają w pozycji zamkniętej przed klatką (frame_0 — splecione/skrzyżowane ramiona z przodu, podświetlone tricepsy i mostkowa część pec), następnie rozkłada je szeroko na boki do pełnej pozycji T na wysokości barków (frame_1, 2, 3 — pełne otwarcie, mocno podświetlone pectoralis major i przednie aktony naramiennych w kolorze czerwonym), po czym wraca do pozycji zamkniętej (frame_4 — zaczyna się ruch zamykający, ramiona ghost-trail z boku). To dynamiczny stretch typu 'arm swings' — rytmiczne otwieranie-zamykanie, nie statyczne trzymanie. Primary: pectoralis_major + anterior_deltoid (zgodnie z podświetleniem w GIFie). Secondary: biceps_brachii (lekko zaangażowane przy ruchu w poziomie z miękkim łokciem). Mechanic ustawione na isometric (schema enum nie ma 'stretch'; dynamiczne stretche są kategoryzowane jako isometric w tej bazie). Force: both (otwieranie = ekscentryczne wydłużenie pec, zamykanie = koncentryczne skrócenie). Plane: transverse (ruch poziomy odwodzenia/przywodzenia). Category: mobility. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["mobility", "warmup", "dynamic_stretch", "no_equipment", "beginner_friendly", "pre_push_day", "chest_opener", "desk_worker_friendly"]
+}

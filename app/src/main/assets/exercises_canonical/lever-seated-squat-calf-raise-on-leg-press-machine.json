@@ -1,0 +1,205 @@
+{
+  "id": "lever-seated-squat-calf-raise-on-leg-press-machine",
+  "name": "Leg Press Calf Raise",
+  "namePl": "Wspięcia na palce na suwnicy",
+  "aliases": ["leg press calf press", "calf press on leg press", "horizontal leg press calf raise", "seated leg press calf raise"],
+  "aliasesPl": ["wspięcia łydek na suwnicy", "calf press na leg press", "wspięcia na palce na maszynie leg press", "calf raise na suwnicy poziomej", "wyciskanie palcami na suwnicy"],
+
+  "description": "Isolation calf exercise performed on a horizontal (or 45-degree) leg press machine by pressing the platform with the balls of the feet only. The user sits in the leg press, places the balls of the feet on the lower edge of the foot platform, and extends the knees nearly fully so the gastrocnemius (which crosses the knee joint) is taut and active. With knees held near-locked, the only movement is plantarflexion at the ankle: pushing the platform away with the toes and returning under control into a deep dorsiflexion stretch. Because the knees are nearly straight, the gastrocnemius is placed under length-tension at its strongest position and becomes the primary mover, with the soleus assisting as a secondary worker. Compared to a seated calf raise (bent knee, soleus dominant), the leg press calf raise is the heavy-loadable gastrocnemius isolation choice — the machine eliminates balance demand and lets the user load 1.5-2x their bodyweight safely.",
+  "descriptionPl": "Izolowane ćwiczenie na łydki wykonywane na suwnicy poziomej (lub pod kątem 45 stopni) poprzez wypychanie platformy wyłącznie śródstopiami. Ćwiczący siedzi w suwnicy, opiera śródstopia na dolnej krawędzi platformy i niemal w pełni prostuje kolana, aby mięsień brzuchaty łydki (przebiegający przez staw kolanowy) był napięty i aktywny. Przy kolanach niemal wyprostowanych jedynym ruchem jest zgięcie podeszwowe w stawie skokowym: wypychanie platformy palcami i powrót pod kontrolą w głębokie zgięcie grzbietowe (rozciąg). Ponieważ kolana są prawie wyprostowane, mięsień brzuchaty łydki znajduje się w optymalnej pozycji długość-napięcie i staje się głównym mięśniem pracującym, a płaszczkowaty pełni rolę pomocniczą. W porównaniu do wspięć siedzących (kolano zgięte, dominacja soleusa) wspięcia na suwnicy są wyborem na ciężkie obciążanie brzuchatego łydki — maszyna eliminuje wymagania równowagi i pozwala bezpiecznie obciążyć 1.5-2x masę ciała.",
+
+  "instructions": [
+    "Sit in a horizontal or 45-degree leg press machine with your back fully against the pad and hips set on the seat.",
+    "Press the platform up and unrack the safeties so the weight is supported in the extended position.",
+    "Place only the balls of your feet on the lower edge of the foot platform, hip-width apart. Heels hang off below toe level.",
+    "Straighten your knees almost fully — leave a small soft bend (5-10 degrees) to keep them from locking under load, but extend enough that the gastrocnemius is taut.",
+    "Allow the platform to descend slowly by letting the toes dorsiflex — your heels move toward your face, calves stretch deeply. This is the starting stretch position.",
+    "Drive the platform away by pressing through the balls of the feet, plantarflexing the ankles maximally. Knees stay near-straight throughout — only the ankle joint moves.",
+    "Squeeze the calves hard at full plantarflexion for 1-2 seconds at the top.",
+    "Lower under control over 2-3 seconds back into the deep stretch. Inhale during the descent, exhale on the way up.",
+    "Do not bounce or rebound off the stretch. Re-rack the platform on safeties before the very last rep if approaching failure."
+  ],
+  "instructionsPl": [
+    "Usiądź na suwnicy poziomej lub pod kątem 45 stopni, plecy mocno oparte o oparcie, biodra dobrze ułożone na siedzeniu.",
+    "Wyciśnij platformę i zdejmij blokady, aby ciężar był utrzymywany w pozycji wyprostowanej.",
+    "Ustaw wyłącznie śródstopia na dolnej krawędzi platformy, na szerokość bioder. Pięty zwisają poniżej poziomu palców.",
+    "Wyprostuj kolana niemal całkowicie — pozostaw lekkie ugięcie (5-10 stopni), aby nie blokowały się pod obciążeniem, ale na tyle proste, by mięsień brzuchaty łydki był napięty.",
+    "Pozwól platformie powoli opaść poprzez zgięcie grzbietowe stopy — pięty zbliżają się do twarzy, łydki w głębokim rozciągu. To pozycja wyjściowa (rozciąg).",
+    "Wypchnij platformę pchając śródstopiami, maksymalnie zginając podeszwowo stawy skokowe. Kolana pozostają niemal proste przez cały ruch — porusza się wyłącznie staw skokowy.",
+    "Mocno spinaj łydki w szczytowym zgięciu podeszwowym przez 1-2 sekundy.",
+    "Opuszczaj kontrolowanie przez 2-3 sekundy z powrotem w głęboki rozciąg. Wdech podczas opuszczania, wydech podczas wypychania.",
+    "Nie odbijaj i nie wykorzystuj rozmachu z rozciągu. Załóż blokady platformy przed ostatnim powtórzeniem, jeśli zbliżasz się do upadku mięśniowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius"],
+    "secondary": ["soleus"],
+    "stabilizers": ["tibialis_posterior", "peroneals", "foot_intrinsics", "quadriceps", "core"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P10",
+    "soleus": "S6",
+    "tibialis_posterior": "T3",
+    "peroneals": "T3",
+    "foot_intrinsics": "T2",
+    "quadriceps": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["leg_press_machine"],
+    "optional": ["weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-calf-raise", "machine-standing-calf-raise"],
+    "progression_to": ["donkey-calf-raise", "single-leg-leg-press-calf-raise", "machine-standing-calf-raise"],
+    "alternatives": ["machine-standing-calf-raise", "smith-machine-calf-raise", "barbell-standing-calf-raise", "donkey-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Back flat against the pad, hips set deep in the seat",
+      "Balls of feet on the lower edge of the platform, hip-width apart, heels hanging off",
+      "Knees extended near-fully (5-10 deg soft bend), not locked",
+      "Toes pointing straight ahead, feet symmetrical",
+      "Hands on side handles, brace core lightly"
+    ],
+    "setup_cues_pl": [
+      "Plecy płasko oparte o oparcie, biodra głęboko w siedzeniu",
+      "Śródstopia na dolnej krawędzi platformy, na szerokość bioder, pięty zwisają poniżej",
+      "Kolana niemal wyprostowane (lekkie ugięcie 5-10 stopni), nie blokuj ich",
+      "Palce skierowane prosto do przodu, stopy symetrycznie",
+      "Dłonie na bocznych uchwytach, lekko napnij brzuch"
+    ],
+    "execution_cues": [
+      "Push the platform with the balls of the feet only — knees stay still",
+      "Drive toes away and squeeze calves hard at the top",
+      "Hold the peak contraction for 1-2 seconds",
+      "Lower slowly — let the platform stretch the calves deeply",
+      "No bouncing — pause briefly in the stretch on every rep"
+    ],
+    "execution_cues_pl": [
+      "Wypychaj platformę wyłącznie śródstopiami — kolana bez ruchu",
+      "Wypchnij palce daleko i mocno spinaj łydki w szczycie",
+      "Utrzymaj szczytowy skurcz 1-2 sekundy",
+      "Opuszczaj wolno — pozwól platformie głęboko rozciągnąć łydki",
+      "Bez odbijania — krótka pauza w rozciągu w każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knees during reps (turning it into a partial leg press)",
+        "faultPl": "Uginanie kolan podczas powtórzeń (zamiana ćwiczenia w częściowe wyciskanie nogami)",
+        "cause": "Weight too heavy, ankles not strong enough, or not understanding the movement is purely ankle plantarflexion",
+        "causePl": "Zbyt duży ciężar, niewystarczająca siła stawu skokowego, lub brak zrozumienia, że ruch to wyłącznie zgięcie podeszwowe stawu skokowego",
+        "cue": "Knees stay near-locked. Only the ankle joint moves — toes push, heels drop. If knees flex, reduce the weight.",
+        "cuePl": "Kolana niemal zablokowane. Porusza się wyłącznie staw skokowy — palce pchają, pięty opadają. Jeśli kolana uginają się, zmniejsz ciężar."
+      },
+      {
+        "fault": "Partial ROM — no deep dorsiflexion stretch at the bottom",
+        "faultPl": "Niepełny zakres ruchu — brak głębokiego rozciągu w dolnej pozycji",
+        "cause": "Loading too much weight, fear of pushing through the stretch, or feet placed too high on the platform",
+        "causePl": "Zbyt duże obciążenie, obawa przed pracą w rozciągu, lub stopy ustawione zbyt wysoko na platformie",
+        "cue": "Place feet on the very bottom edge so heels can hang off. Let the platform descend slowly until calves stretch deeply on every rep.",
+        "cuePl": "Ustaw stopy na samej dolnej krawędzi, aby pięty mogły zwisać poniżej. Pozwól platformie opadać powoli aż łydki głęboko się rozciągną w każdym powtórzeniu."
+      },
+      {
+        "fault": "Fast bouncing reps using Achilles tendon rebound",
+        "faultPl": "Szybkie odbijane powtórzenia wykorzystujące odbicie ścięgna Achillesa",
+        "cause": "Ego lifting with too much weight, chasing rep count, mistaking elastic rebound for muscular contraction",
+        "causePl": "Ego-trening ze zbyt dużym ciężarem, gonienie za liczbą powtórzeń, mylenie elastycznego odbicia z pracą mięśniową",
+        "cue": "Pause 1 second in the stretch, then drive up. If you cannot pause, the load is too high — strip a plate.",
+        "cuePl": "Zatrzymaj się 1 sekundę w rozciągu, potem wypchnij. Jeśli nie potrafisz wytrzymać pauzy, ciężar jest za duży — zdejmij krążek."
+      },
+      {
+        "fault": "Locking the knees aggressively under heavy load",
+        "faultPl": "Agresywne blokowanie kolan pod ciężkim obciążeniem",
+        "cause": "Trying to remove knees from the equation by fully hyperextending, which stresses joint capsule and risks hyperextension injury",
+        "causePl": "Próba wyłączenia kolan z ruchu przez ich pełne przeprostowanie, co obciąża torebkę stawową i grozi urazem z przeprostu",
+        "cue": "Keep a 5-10 degree soft bend — extended enough that gastrocnemius is taut, but not locked. Joints don't take the load, muscles do.",
+        "cuePl": "Pozostaw 5-10 stopni lekkiego ugięcia — wyprostowane na tyle, by brzuchaty łydki był napięty, ale nie zablokowane. Obciążenie biorą mięśnie, nie stawy."
+      },
+      {
+        "fault": "Feet drifting too high on the platform — only heels and arches make contact",
+        "faultPl": "Stopy zsuwające się zbyt wysoko na platformie — kontakt mają tylko pięty i sklepienia",
+        "cause": "Not resetting foot position between reps, or initial setup too high to fit a full ROM",
+        "causePl": "Brak resetu pozycji stóp między powtórzeniami, lub początkowe ustawienie zbyt wysokie aby zmieścić pełny zakres ruchu",
+        "cue": "Re-rack and reset between sets if feet drift. Keep balls of feet on the bottom edge; toes and forefoot pad take all the load.",
+        "cuePl": "Załóż blokady i zresetuj między seriami, jeśli stopy się zsuwają. Trzymaj śródstopia na dolnej krawędzi; palce i poduszki podeszwowe biorą cały ciężar."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (platform descends, calves stretch). Exhale during the concentric (driving platform away). Maintain a light brace and steady contact with the back pad.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (platforma opada, łydki się rozciągają). Wdech w fazie koncentrycznej (wypychanie platformy). Utrzymuj lekkie napięcie brzucha i stały kontakt z oparciem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid heavy loads and deep eccentrics during the irritable phase. Limit ROM (do not drop heels below neutral) and use slow controlled tempo with moderate load. Stop if pain exceeds 3/10 during or after the set.",
+      "modificationPl": "Unikaj dużych ciężarów i głębokich faz negatywnych w fazie podrażnienia. Ogranicz zakres ruchu (nie opuszczaj pięt poniżej poziomu neutralnego) i stosuj powolne kontrolowane tempo ze średnim obciążeniem. Przerwij jeśli ból przekracza 3/10 w trakcie lub po serii.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "knee_hyperextension_or_instability",
+      "severity": "modify",
+      "modification": "Hyperextending the knees under heavy load can stress the posterior knee capsule and cruciate ligaments. Keep a constant 10-15 degree knee bend throughout the set and avoid locking out. Reduce load if you cannot maintain the bend.",
+      "modificationPl": "Przeprost kolan pod dużym ciężarem może obciążać tylną torebkę stawową i więzadła krzyżowe. Utrzymuj stałe ugięcie 10-15 stopni w kolanie przez całą serię i nie blokuj kolan. Zmniejsz ciężar jeśli nie potrafisz utrzymać ugięcia.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not perform under load during the acute phase. Once cleared by a physiotherapist, return with bodyweight calf raises and progress slowly. Avoid deep stretch until pain-free.",
+      "modificationPl": "Nie wykonuj pod obciążeniem w fazie ostrej. Po wygojeniu (potwierdzonym przez fizjoterapeutę) wracaj od wspięć z masą własnego ciała i progresuj powoli. Unikaj głębokiego rozciągu do całkowitego ustąpienia bólu.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "The seated leg press position with heavy load can transmit shear forces to the lumbar spine if hips lift off the pad. Use moderate weight, keep hips and lower back fully against the pad, and avoid the very lowest seat angles that round the lower back.",
+      "modificationPl": "Pozycja siedząca na suwnicy z dużym ciężarem może przenosić siły ścinające na odcinek lędźwiowy jeśli biodra unoszą się z siedzenia. Stosuj umiarkowane obciążenie, trzymaj biodra i dolny odcinek pleców mocno przy oparciu, unikaj najniższych kątów siedzenia powodujących zaokrąglenie lędźwi.",
+      "alternative": "machine-standing-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, heavy gastrocnemius) | 4-5x6-10 (heavy strength) | 2-3x15-25 (pump/endurance)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "lever-seated-squat-calf-raise-on-leg-press-machine.gif",
+    "frames_extracted": [
+      "frames/lever-seated-squat-calf-raise-on-leg-press-machine/frame_0_start.png",
+      "frames/lever-seated-squat-calf-raise-on-leg-press-machine/frame_1_early.png",
+      "frames/lever-seated-squat-calf-raise-on-leg-press-machine/frame_2_mid.png",
+      "frames/lever-seated-squat-calf-raise-on-leg-press-machine/frame_3_late.png",
+      "frames/lever-seated-squat-calf-raise-on-leg-press-machine/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/lever-seated-squat-calf-raise-on-leg-press-machine",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:05:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model siedzi w poziomej suwnicy leg press, plecy oparte, kolana niemal wyprostowane (lekkie ugięcie), stopy na platformie wyłącznie śródstopiami, pięty zwisają poniżej, podświetlone na czerwono łydki — pozycja wyjściowa po zdjęciu blokady (przed rozciągiem). Frame 2: platforma wypchnięta dalej przez zgięcie podeszwowe, kolana w tym samym położeniu (nie uginają się), łydki w pełnym skurczu, palce maksymalnie wyprostowane — szczyt ruchu (plantarflexion). Frame 4: powrót do pozycji wyjściowej. Kluczowe biomechanicznie: kolana NIE poruszają się przez cały ruch (5-10 stopni lekkiego ugięcia), porusza się wyłącznie staw skokowy. Przy kolanach niemal wyprostowanych gastrocnemius jest napięty i jest głównym mięśniem pracującym (P10), soleus pełni rolę pomocniczą (S6) — to różni leg press calf raise od seated calf raise (zgięte kolano → soleus dominant). Klasyfikacja zgodna: movement_pattern isolation_calf, equipment leg_press_machine, difficulty 4 (wymaga zrozumienia stabilizacji kolan + setupu blokad). Wszystkie pola PL napisane od zera. Yuhonas i glowupp nie mają tego ćwiczenia.",
+
+  "tags": ["bodybuilding", "calves", "gastrocnemius", "isolation", "machine", "leg_press", "lower_body", "lower_legs", "seated"]
+}

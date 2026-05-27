@@ -1,0 +1,202 @@
+{
+  "id": "drop-push-up",
+  "name": "Drop Push-Up (Plyometric)",
+  "namePl": "Pompki ze spadem z podwyższenia (plyometric)",
+  "aliases": ["depth push-up", "drop pushup", "plyometric drop push-up", "drop push up", "reactive push-up"],
+  "aliasesPl": ["pompki plyometryczne ze spadem", "depth pompki", "drop pompki", "pompki ze zrzutem", "pompki ze zsunięciem z boksów", "reactive pompki"],
+
+  "description": "Plyometric push-up variation focused on reactive strength. Athlete starts in a push-up position with both hands elevated on two parallel boxes/plates. They drop their hands off the boxes simultaneously, landing on the floor wider than the boxes, immediately absorbing the impact in a deep eccentric and explosively pressing back up. Trains rate of force development (RFD), eccentric load tolerance and stretch-shortening cycle (SSC) of the upper body — the upper-body analog of depth jumps. Advanced movement: should only be programmed after the athlete can bench ~1×BW or perform 20+ strict clapping push-ups.",
+  "descriptionPl": "Plyometryczny wariant pompek nastawiony na trening siły reaktywnej. Zawodnik startuje w pozycji pompkowej z dłońmi na dwóch równoległych boksach/podwyższeniach. Zsuwa obie dłonie z boksów jednocześnie, ląduje na podłodze szerzej niż boksy, natychmiast amortyzuje uderzenie w głębokim ruchu ekscentrycznym i wybuchowo wypycha się z powrotem. Trenuje szybkość rozwijania siły (RFD), tolerancję obciążenia ekscentrycznego oraz cykl rozciągnięcie-skurcz (SSC) górnych partii — to odpowiednik depth jumpów dla górnej połowy ciała. Ćwiczenie zaawansowane: programuj dopiero gdy potrafisz wycisnąć ~1×masa ciała na ławce lub zrobić 20+ pompek z klaśnięciem.",
+
+  "instructions": [
+    "Set up two stable, equal-height boxes or step platforms (15-30 cm) shoulder-width apart — leave a gap between them wide enough for your torso.",
+    "Place both palms flat on top of the boxes, fingers pointing forward. Assume a strict push-up plank: straight line from heels to head, core braced, glutes squeezed.",
+    "Inhale and pre-tension the whole body. The drop must be fast and controlled — not a free fall of a relaxed body.",
+    "Simultaneously slide/drop both hands off the inside edges of the boxes. Hands land on the floor wider than the boxes, about 1.5× shoulder-width apart.",
+    "Absorb the landing actively: elbows track at ~45°, chest descends to just above the floor in a deep eccentric. Spend as little time at the bottom as possible.",
+    "Explode upward by pressing the floor hard. The goal is short ground contact time — think 'hot floor'.",
+    "Land back into a controlled push-up plank on the floor (or, advanced: press back onto the boxes). One rep complete.",
+    "Reset to the top of the boxes before the next rep. Quality over quantity — 3-5 crisp reps beats 10 sloppy ones."
+  ],
+  "instructionsPl": [
+    "Przygotuj dwa stabilne boksy lub stopnie o tej samej wysokości (15-30 cm) ustawione na szerokość barków — między nimi zostaw przerwę szerszą niż tułów.",
+    "Połóż obie dłonie płasko na boksach, palce skierowane do przodu. Przyjmij ścisłą pozycję pompkową: prosta linia od pięt do głowy, napięty brzuch, ściśnięte pośladki.",
+    "Wdech i wstępne napięcie całego ciała. Zsunięcie musi być szybkie i kontrolowane — nie 'wolny spad' rozluźnionego ciała.",
+    "Zsuń obie dłonie z wewnętrznych krawędzi boksów w tej samej chwili. Dłonie lądują na podłodze szerzej niż boksy, około 1,5× szerokość barków.",
+    "Aktywnie amortyzuj lądowanie: łokcie pod ~45°, klatka schodzi tuż nad podłogę w głębokim ruchu ekscentrycznym. Spędź na dole jak najmniej czasu.",
+    "Wybuchowo wypchnij się w górę napierając mocno w podłogę. Cel to krótki czas kontaktu z podłożem — myśl 'gorąca podłoga'.",
+    "Wyląduj z powrotem w kontrolowanej pozycji pompkowej na podłodze (lub, zaawansowane: wskocz dłońmi z powrotem na boksy). Jedno powtórzenie zakończone.",
+    "Wróć na szczyt boksów przed kolejnym powtórzeniem. Jakość ważniejsza od ilości — 3-5 czystych powtórzeń bije 10 niechlujnych."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "triceps": "P9",
+    "anterior_deltoids": "S7",
+    "serratus_anterior": "S6",
+    "core": "T6",
+    "glutes": "T5",
+    "rotator_cuff": "T6",
+    "wrist_flexors": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "two_boxes_or_plates"],
+    "optional": ["push_up_handles", "weighted_vest", "soft_mat"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["push-up", "decline-push-up", "clap-push-up", "explosive-push-up"],
+    "progression_to": ["depth-drop-push-up-higher-box", "one-arm-drop-push-up", "drop-clap-push-up", "weighted-drop-push-up"],
+    "alternatives": ["clap-push-up", "explosive-push-up", "plyo-push-up", "medicine-ball-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two equal-height boxes (15-30 cm) — fully stable, will not tip or slide",
+      "Hands at the front edge of each box, fingers forward, palms flat",
+      "Gap between boxes wider than your torso — chest must clear",
+      "Strict plank set before the drop: heels-hips-shoulders-head in one line",
+      "Pre-tension the whole body before sliding off — never drop a relaxed body"
+    ],
+    "setup_cues_pl": [
+      "Dwa boksy o tej samej wysokości (15-30 cm) — w pełni stabilne, nie przewrócą się ani nie ślizgną",
+      "Dłonie przy przedniej krawędzi każdego boksu, palce do przodu, dłonie płasko",
+      "Przerwa między boksami szersza niż tułów — klatka musi przez nią przejść",
+      "Ścisła planka przed zrzutem: pięty-biodra-barki-głowa w jednej linii",
+      "Wstępnie napnij całe ciało przed zsunięciem — nigdy nie spadaj rozluźnionym ciałem"
+    ],
+    "execution_cues": [
+      "Both hands leave the boxes at the same instant — symmetric drop",
+      "Hands land wider than boxes — about 1.5× shoulder-width on the floor",
+      "Absorb soft, press hard — 'kiss the floor, then explode'",
+      "Elbows tuck to ~45° on landing, not flared 90°",
+      "Minimize ground contact time — think 'hot floor', not 'pause and grind'"
+    ],
+    "execution_cues_pl": [
+      "Obie dłonie schodzą z boksów w tej samej chwili — symetryczny zrzut",
+      "Dłonie lądują szerzej niż boksy — około 1,5× szerokości barków na podłodze",
+      "Amortyzuj miękko, wypychaj mocno — 'pocałuj podłogę, potem eksploduj'",
+      "Łokcie schowane do ~45° przy lądowaniu, nie rozsunięte na 90°",
+      "Skróć czas kontaktu z podłogą — myśl 'gorąca podłoga', a nie 'pauza i mozół'"
+    ],
+    "common_faults": [
+      {
+        "fault": "Asymmetric drop (one hand leaves before the other)",
+        "faultPl": "Asymetryczny zrzut (jedna dłoń schodzi przed drugą)",
+        "cause": "Lack of body awareness, weak side compensating, fear of landing",
+        "causePl": "Brak świadomości ciała, kompensacja słabszą stroną, strach przed lądowaniem",
+        "cue": "Count down 'three-two-one-drop'. Drop both shoulders simultaneously. If one side keeps lagging, reduce box height and rebuild the skill.",
+        "cuePl": "Odlicz 'trzy-dwa-jeden-zrzut'. Zsuń oba barki jednocześnie. Jeśli jedna strona ciągle się spóźnia, obniż boksy i odbuduj umiejętność."
+      },
+      {
+        "fault": "Sagging hips during the drop (pike or hammock)",
+        "faultPl": "Opadające biodra podczas spadu (banan lub 'tyłek do góry')",
+        "cause": "Core not pre-tensed; body collapses on impact and lumbar absorbs the load",
+        "causePl": "Brzuch nie napięty wstępnie; ciało zapada się przy uderzeniu i odcinek lędźwiowy przyjmuje obciążenie",
+        "cue": "BRACE the abs and squeeze glutes BEFORE the drop. Body must stay one rigid unit — no part collapses independently.",
+        "cuePl": "NAPNIJ brzuch i ŚCIŚNIJ pośladki PRZED zrzutem. Ciało musi pozostać jedną sztywną bryłą — żadna część nie zapada się osobno."
+      },
+      {
+        "fault": "Passive eccentric (free-fall into the floor)",
+        "faultPl": "Pasywna faza ekscentryczna (swobodny spad na podłogę)",
+        "cause": "Treating the drop as a passive fall instead of an active absorption",
+        "causePl": "Traktowanie spadu jako biernej padaki zamiast aktywnej amortyzacji",
+        "cue": "The drop is short — your job is to CATCH the body, not be caught by the floor. Active triceps and chest engagement from the first millisecond.",
+        "cuePl": "Spad jest krótki — Twoim zadaniem jest ZŁAPAĆ ciało, a nie żeby złapała Cię podłoga. Aktywne napięcie tricepsów i klatki od pierwszej milisekundy."
+      },
+      {
+        "fault": "Excessive ground contact time (long grinding press)",
+        "faultPl": "Zbyt długi czas kontaktu z podłogą (długie wyciskanie)",
+        "cause": "Insufficient reactive strength — turning a plyometric exercise into a regular push-up",
+        "causePl": "Niedostateczna siła reaktywna — zamiana ćwiczenia plyometrycznego w zwykłe pompki",
+        "cue": "Floor contact under 0.5 s. If you have to grind out the press, the box is too high or you're not ready — regress to explosive push-ups first.",
+        "cuePl": "Kontakt z podłogą poniżej 0,5 s. Jeśli musisz mozolić się przy wyciskaniu, boks jest za wysoki albo nie jesteś gotowy — wróć najpierw do explosive pompek."
+      },
+      {
+        "fault": "Wrists hyperextending or buckling on landing",
+        "faultPl": "Nadgarstki nadmiernie zgięte lub zapadające się przy lądowaniu",
+        "cause": "Cold wrists, weak wrist stabilizers, hands landing too far forward of shoulders",
+        "causePl": "Niezagrzane nadgarstki, słabe stabilizatory nadgarstka, dłonie lądują zbyt daleko przed barkami",
+        "cue": "Warm wrists thoroughly. Land with hands directly under or slightly outside shoulders, never forward. Use parallettes/push-up handles if wrists are sensitive.",
+        "cuePl": "Solidnie rozgrzej nadgarstki. Lądu dłońmi bezpośrednio pod barkami lub lekko na zewnątrz, nigdy przed barkami. Użyj parallettów / uchwytów do pompek jeśli nadgarstki są wrażliwe."
+      }
+    ],
+    "breathing": "Inhale and brace during the drop and landing absorption. Exhale forcefully on the press-up. Reset breath at the top before each rep — do not chain reps without breathing.",
+    "breathingPl": "Wdech i napięcie podczas zrzutu i amortyzacji lądowania. Mocny wydech przy wypychaniu w górę. Oddech-reset na górze przed każdym powtórzeniem — nie łącz powtórzeń bez oddychania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "avoid",
+      "modification": "Drop push-ups deliver high-velocity impact through the wrist. With pain or instability, do not perform — train wrist conditioning and switch to push-up handles/parallettes first.",
+      "modificationPl": "Drop push-ups wprowadzają wysokowektorowe uderzenie przez nadgarstek. Przy bólu lub niestabilności — nie wykonuj, najpierw zbuduj kondycję nadgarstka i przejdź na uchwyty do pompek / parallety.",
+      "alternative": "clap-push-up"
+    },
+    {
+      "condition": "shoulder_impingement_or_labral_pathology",
+      "severity": "avoid",
+      "modification": "High eccentric load combined with deep ROM under impact. Avoid until cleared by a physio. Train slow eccentric push-ups and isometric holds instead.",
+      "modificationPl": "Wysokie obciążenie ekscentryczne w połączeniu z głębokim ROM pod uderzeniem. Unikaj do czasu zgody fizjoterapeuty. Zamiast tego trenuj powolne ekscentryczne pompki i izometryczne pozycje.",
+      "alternative": "tempo-push-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Drop into a shallow ROM (touch chest higher off the floor) and reduce box height. If pain persists during or after — switch to non-plyometric pressing.",
+      "modificationPl": "Lądu w płytszym ROM (klatka dalej od podłogi) i obniż boksy. Jeśli ból utrzymuje się w trakcie lub po — wróć do nieplyometrycznych wyciskań.",
+      "alternative": "decline-push-up"
+    },
+    {
+      "condition": "insufficient_pressing_strength",
+      "severity": "avoid",
+      "modification": "Cannot safely absorb the eccentric load without ~1×BW bench or 20+ strict push-ups in a row. Build base strength first — drop push-ups are not a primary mass builder.",
+      "modificationPl": "Bez bazy siły ~1×masa ciała na ławce lub 20+ ścisłych pompek z rzędu nie zaabsorbujesz obciążenia ekscentrycznego bezpiecznie. Najpierw zbuduj bazę siły — drop push-ups nie są głównym ćwiczeniem na masę.",
+      "alternative": "push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-5 (reactive strength, full recovery 2-3 min) | 4x6-8 (power endurance) | NOT for hypertrophy — keep volume low, quality high",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "drop-push-up.gif",
+    "frames_extracted": [
+      "frames/drop-push-up/frame_0_start.png",
+      "frames/drop-push-up/frame_1_early.png",
+      "frames/drop-push-up/frame_2_mid.png",
+      "frames/drop-push-up/frame_3_late.png",
+      "frames/drop-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/drop-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej na dwóch boksach — dłonie na szczycie boksów na szerokość barków, ramiona wyprostowane, ciało w prostej linii, przerwa między boksami widoczna pod tułowiem. Frame 1 (early): widoczna faza po zrzucie, ciało w drodze w dół, dłonie już opuściły boksy. Frame 2 (mid): głęboka faza ekscentryczna na podłodze — dłonie wylądowały szerzej niż boksy, klatka tuż nad podłogą między boksami, łokcie ułożone pod ~45°, ciało nadal w linii prostej, mocno podświetlone klatka piersiowa i tricepsy (zgodne z biomechaniką — eccentric load + reactive concentric obciąża właśnie te grupy). Frame 3 (late): kolejna faza absorpcji/wypychania. Frame 4 (end): powrót do pozycji wyjściowej na boksach (zamknięcie cyklu). Wyraźny plyometric character — boksy + szerokie lądowanie + cykl drop-absorb-explode. Wszystkie pola PL napisane od zera w polskim standardzie fitness/calisthenics. Ćwiczenie advanced (8/10) — prereqs jasno wymienione, przeciwwskazania nadgarstki/barki/łokcie + insufficient strength baseline.",
+
+  "tags": ["bodyweight", "plyometric", "calisthenics", "upper_body", "horizontal_push", "chest", "reactive_strength", "power", "advanced", "ssc", "stretch_shortening_cycle"]
+}

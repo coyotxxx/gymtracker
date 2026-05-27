@@ -1,0 +1,204 @@
+{
+  "id": "reverse-grip-pull-up",
+  "name": "Reverse Grip Pull-Up (Chin-Up)",
+  "namePl": "Pull-up chwytem podchwytem (chin-up)",
+  "aliases": ["chin-up", "chinup", "chin up", "supinated pull-up", "underhand pull-up", "reverse grip pullup"],
+  "aliasesPl": ["chin-up", "podciąganie podchwytem", "podciąganie chwytem podchwytem", "podciąganie odwrotnym chwytem", "podciąganie supinowane"],
+
+  "description": "Vertical pulling exercise performed on a pull-up bar with supinated (underhand/reverse) grip — palms facing toward your face. The supinated grip places biceps in a stronger mechanical position than a pronated pull-up, making the chin-up generally easier and more biceps-dominant. Excellent for lat width (lower portion of lats especially), biceps mass and as a stepping-stone to strict pull-ups.",
+  "descriptionPl": "Pionowy ciąg na drążku z chwytem podchwytem (supinacja) — dłonie skierowane W KIERUNKU twarzy. Chwyt supinowany ustawia bicepsy w korzystniejszej mechanicznie pozycji niż nachwyt, dlatego chin-up jest zwykle łatwiejszy i bardziej angażuje bicepsy. Świetny budulec szerokości najszerszych grzbietu (zwłaszcza dolnej części), masy bicepsów i jako krok pośredni do strict pull-upów.",
+
+  "instructions": [
+    "Grip a pull-up bar with palms facing TOWARD you (supinated/underhand grip), hands at shoulder-width or slightly narrower.",
+    "Hang at full arm extension. Engage shoulder blades by pulling them DOWN (depression) — do not let them shrug up.",
+    "Brace your core. Cross or bend your legs to keep them out of the way. This is the dead-hang start position.",
+    "Initiate the pull by driving elbows DOWN AND FORWARD toward your ribs. The bar travels toward your upper chest.",
+    "Keep chest up, slight backward lean. Squeeze biceps and lats together — both contribute heavily here.",
+    "Pull until your chin is clearly ABOVE the bar. Top of the rep: upper chest near the bar, elbows close to torso.",
+    "Lower with control, fully extending arms at the bottom (dead-hang). Maintain shoulder blade depression.",
+    "Each rep starts from full hang to full chin-over-bar — no kipping, no half reps."
+  ],
+  "instructionsPl": [
+    "Złap drążek dłońmi skierowanymi DO siebie (chwyt podchwytem/supinated), ręce na szerokość barków lub nieco węziej.",
+    "Zwiśnij w pełnym wyproście ramion. Aktywuj łopatki ściągając je W DÓŁ (depresja) — nie pozwól im się unieść.",
+    "Napnij brzuch. Skrzyżuj lub zegnij nogi by nie zawadzały. To pozycja startowa dead-hang.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO PRZODU w kierunku żeber. Drążek wędruje do górnej części klatki.",
+    "Klatka w górze, lekkie odchylenie do tyłu. Ściskaj bicepsy i najszersze razem — oba mocno tu pracują.",
+    "Podciągaj aż broda będzie WYRAŹNIE nad drążkiem. Szczyt powtórzenia: górna część klatki blisko drążka, łokcie blisko tułowia.",
+    "Opuszczaj kontrolowanym ruchem, pełen wyprost ramion na dole (dead-hang). Utrzymuj depresję łopatek.",
+    "Każde powtórzenie od pełnego zwisu do pełnej brody nad drążkiem — bez kippingu, bez połowy powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["brachialis", "rhomboids", "trapezius_middle_lower", "teres_major", "pectoralis_major_lower"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P9",
+    "brachialis": "S8",
+    "rhomboids": "S7",
+    "trapezius_middle_lower": "S6",
+    "teres_major": "S7",
+    "pectoralis_major_lower": "S5",
+    "forearms": "S7",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps", "weighted_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner_plus",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dead-hang", "band-assisted-chin-up", "negative-chin-up", "inverted-row", "lat-pulldown"],
+    "progression_to": ["weighted-chin-up", "pull-up", "chest-to-bar-chin-up", "archer-chin-up", "one-arm-chin-up-progression"],
+    "alternatives": ["pull-up", "neutral-grip-pull-up", "lat-pulldown-supinated", "band-assisted-chin-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands at shoulder-width, palms toward you (supinated)",
+      "Full hang — elbows extended",
+      "Shoulder blades DOWN (no shrug up)",
+      "Core braced, legs together or crossed",
+      "Slight backward lean — chest up"
+    ],
+    "setup_cues_pl": [
+      "Ręce na szerokość barków, dłonie do siebie (podchwytem)",
+      "Pełny zwis — łokcie wyprostowane",
+      "Łopatki W DÓŁ (bez unoszenia)",
+      "Brzuch napięty, nogi razem lub skrzyżowane",
+      "Lekkie odchylenie do tyłu — klatka w górze"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN and toward ribs",
+      "Pull the bar toward your upper chest",
+      "Chin clearly OVER the bar (not just touching)",
+      "Squeeze biceps AND lats at the top",
+      "Full extension at the bottom — every rep dead-hang"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ w kierunku żeber",
+      "Ciągnij drążek do górnej części klatki",
+      "Broda wyraźnie NAD drążkiem (nie na poziomie)",
+      "Ściśnij bicepsy I najszersze na górze",
+      "Pełen wyprost na dole — każde powtórzenie dead-hang"
+    ],
+    "common_faults": [
+      {
+        "fault": "Kipping or swinging to gain momentum",
+        "faultPl": "Kipping lub bujanie ciałem dla pędu",
+        "cause": "Trying to perform more reps than current strict capacity",
+        "causePl": "Próba wykonania więcej powtórzeń niż obecna pojemność strict",
+        "cue": "Cross feet, brace core. If you can't strict-pull, use band-assisted or negatives.",
+        "cuePl": "Skrzyżuj stopy, napnij brzuch. Jeśli nie podciągasz strict — użyj asysty z gumy lub rób negatywy."
+      },
+      {
+        "fault": "Half reps — chin not clearing the bar",
+        "faultPl": "Połowiczne powtórzenia — broda nie nad drążkiem",
+        "cause": "Weak top end of pull, ego counting, fatigue late in set",
+        "causePl": "Słaba górna część ciągu, ego w liczeniu, zmęczenie na końcu serii",
+        "cue": "Chin clearly OVER. Use band assistance for full ROM instead of half reps.",
+        "cuePl": "Broda wyraźnie NAD drążkiem. Użyj asysty z gumy dla pełnego ROM zamiast połowy."
+      },
+      {
+        "fault": "Biceps-only pull (back not engaging)",
+        "faultPl": "Ciąg tylko bicepsami (plecy nie pracują)",
+        "cause": "Loose scapulae, elbows flaring forward without lat engagement",
+        "causePl": "Luźne łopatki, łokcie wychodzą do przodu bez aktywacji najszerszych",
+        "cue": "Depress scapulae FIRST, then pull. Think 'elbows to ribs', not 'curl up'.",
+        "cuePl": "NAJPIERW ściągnij łopatki w dół, potem ciągnij. Myśl 'łokcie do żeber', nie 'wcurluj się'."
+      },
+      {
+        "fault": "Not reaching dead-hang at bottom",
+        "faultPl": "Brak pełnego zwisu na dole",
+        "cause": "Avoiding hardest part of lift, or biceps tendinopathy fear",
+        "causePl": "Unikanie najtrudniejszej części, lub strach przed bólem ścięgna bicepsa",
+        "cue": "Fully extend arms each rep. If biceps tendon hurts in dead-hang — see contraindications.",
+        "cuePl": "Pełen wyprost ramion w każdym powtórzeniu. Jeśli ścięgno bicepsa boli w dead-hang — patrz przeciwwskazania."
+      },
+      {
+        "fault": "Grip too wide for chin-up",
+        "faultPl": "Za szeroki chwyt na chin-up",
+        "cause": "Copying pull-up grip width onto chin-up — stresses elbows and biceps tendon",
+        "causePl": "Kopiowanie szerokości chwytu z pull-up na chin-up — obciąża łokcie i ścięgno bicepsa",
+        "cue": "Chin-up grip = shoulder-width or slightly narrower. Wide supinated grip is hard on elbows.",
+        "cuePl": "Chwyt chin-up = szerokość barków lub nieco węziej. Szeroki chwyt supinowany szkodzi łokciom."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Exhale on the pull up. Inhale on the way down. Steady rhythm — chin-ups are usually high-rep enough that breathing pattern matters.",
+    "breathingPl": "Wdech na dole (zwis). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Stały rytm — chin-upy są zwykle wysokopowtórzeniowe więc rytm oddechu ma znaczenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Supinated grip directly loads long head of biceps tendon. Switch to neutral or pronated grip until tendon recovers.",
+      "modificationPl": "Chwyt podchwytem bezpośrednio obciąża ścięgno głowy długiej bicepsa. Przejdź na chwyt neutralny lub nachwytem do wyzdrowienia ścięgna.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume and ROM (no full dead-hang). Use shoulder-width grip — never wider supinated. Consider neutral grip.",
+      "modificationPl": "Zmniejsz objętość i ROM (bez pełnego dead-hang). Używaj chwytu na szerokość barków — nigdy szerszego supinated. Rozważ chwyt neutralny.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Chin-up is generally shoulder-friendly, but reduce ROM if dead-hang causes pinching. Avoid full passive hang.",
+      "modificationPl": "Chin-up jest zwykle przyjazny dla barku, ale zmniejsz ROM jeśli dead-hang powoduje przyszczypywanie. Unikaj pełnego zwisu pasywnego.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Supinated grip stresses wrists more than pronated. Use wrist wraps, thicker bar, or switch to neutral grip handle.",
+      "modificationPl": "Chwyt supinowany obciąża nadgarstki bardziej niż pronowany. Użyj wraps, grubszego drążka, lub przejdź na uchwyt neutralny.",
+      "alternative": "neutral-grip-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5xAMRAP (bodyweight) | 5x5 (weighted) | 4x6-10 (hypertrophy)",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "reverse-grip-pull-up.gif",
+    "frames_extracted": [
+      "frames/reverse-grip-pull-up/frame_0_start.png",
+      "frames/reverse-grip-pull-up/frame_1_early.png",
+      "frames/reverse-grip-pull-up/frame_2_mid.png",
+      "frames/reverse-grip-pull-up/frame_3_late.png",
+      "frames/reverse-grip-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/reverse-grip-pull-up",
+    "yuhonas_id": "Chinups"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start, ręce wyprostowane, chwyt podchwytem (supinated, dłonie do siebie). Frame 2: top position, broda nad drążkiem, łokcie zgięte i blisko tułowia, klatka blisko drążka. Podświetlone: najszersze grzbietu (wyraźnie dolna część), bicepsy (mocno), środkowy trapez, romboidy. Klasyczny chin-up — supinated grip. Różny od pull-up (pronated/nachwytem) — primary muscles te same, ale biceps intensity P9 vs P7, lats intensity P9 vs P10 (chin-up trochę mniej lat-dominant, bardziej arm-dominant ze względu na korzystniejszą dźwignię bicepsa). PL nazwa zgodna ze standardem fitness PL rozróżniającym 'podchwytem' (chin-up, supinated) od 'nachwytem' (pull-up, pronated).",
+
+  "tags": ["calisthenics", "bodyweight", "compound", "upper_body", "vertical_pull", "back", "biceps", "back_and_biceps", "beginner_friendly", "mass_builder", "relative_strength"]
+}

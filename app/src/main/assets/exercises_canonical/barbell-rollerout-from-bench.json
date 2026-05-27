@@ -1,0 +1,202 @@
+{
+  "id": "barbell-rollerout-from-bench",
+  "name": "Barbell Rollout From Bench",
+  "namePl": "Rollout ze sztangą z ławki",
+  "aliases": ["barbell ab rollout from bench", "elevated barbell rollout", "kneeling barbell rollout from bench", "bench-supported barbell rollout"],
+  "aliasesPl": ["rollout ze sztangą z ławki", "wykrok brzuchem ze sztangą z ławki", "ab rollout z ławki", "rollout z kolanami na ławce", "uniesiony rollout ze sztangą"],
+
+  "description": "Advanced anti-extension core exercise. The lifter kneels with knees and shins resting on a flat bench while holding a loaded barbell on the floor in front. From this elevated starting position the bar rolls forward until the body forms a near-horizontal line angling down from bench to bar, then is reversed back by powerful rectus abdominis contraction. Elevating the knees on the bench (vs. floor) increases the angle of body extension, lengthens the lever arm and dramatically raises the load on the entire anterior core, lats and serratus.",
+  "descriptionPl": "Zaawansowane ćwiczenie anty-ekstensji rdzenia. Ćwiczący klęczy z kolanami i podudziami opartymi o płaską ławkę, trzymając obciążoną sztangę na podłodze przed sobą. Z tej uniesionej pozycji wyjściowej gryf toczy się do przodu, aż ciało utworzy prawie poziomą linię biegnącą skośnie w dół od ławki do sztangi, po czym wraca dzięki silnemu skurczowi mięśnia prostego brzucha. Uniesienie kolan na ławce (zamiast na podłodze) zwiększa kąt wyprostu ciała, wydłuża dźwignię i drastycznie podnosi obciążenie całego przedniego rdzenia, mięśni najszerszych grzbietu i zębatego przedniego.",
+
+  "instructions": [
+    "Set a loaded barbell on the floor in front of a flat bench. Use bumper plates or 45 lb / 20 kg plates so the bar rolls freely.",
+    "Kneel on the bench with your knees and shins fully supported on the pad. Reach forward and grip the barbell with hands shoulder-width apart, palms facing down (overhand grip).",
+    "Position your shoulders directly above the bar, arms vertical. Brace the core hard, set a posterior pelvic tilt (tuck the hips under) and pull the lats down — this is the starting position.",
+    "Inhale and slowly roll the bar forward by extending the shoulders and hips. Keep the arms straight (small bend at most) and the spine neutral — do NOT let the lower back sag.",
+    "Continue rolling until your body is fully extended in a straight line from knees-on-bench down to the bar, or until just before you feel the lower back about to break neutral. The torso ends close to parallel with the floor, head between the arms.",
+    "Exhale and reverse the movement — pull the bar back toward the bench by contracting the abs and lats. Imagine pulling your ribs toward your hips. Do NOT yank with the arms.",
+    "Return to the starting position with shoulders stacked over the bar. Pause briefly and repeat.",
+    "Because the bench is higher than the floor, the body works at a steeper angle than a floor rollout — start with a shorter range of motion and progressively work toward full extension over weeks."
+  ],
+  "instructionsPl": [
+    "Połóż obciążoną sztangę na podłodze przed płaską ławką. Użyj talerzy gumowych lub krążków 20 kg, by gryf swobodnie się toczył.",
+    "Klęknij na ławce — kolana i podudzia w całości oparte o tapicerkę. Sięgnij do przodu i chwyć gryf nachwytem na szerokość barków (dłonie skierowane w dół).",
+    "Ustaw barki bezpośrednio nad gryfem, ramiona pionowo. Mocno napnij brzuch, ustaw retrowersję miednicy (podwiń biodra pod siebie) i ściągnij łopatki w dół — to pozycja wyjściowa.",
+    "Wdech i powoli tocz gryf do przodu, prostując się w stawach barkowych i biodrowych. Trzymaj ręce wyprostowane (najwyżej minimalne zgięcie) i kręgosłup w neutrale — NIE pozwól by lędźwie się zapadły.",
+    "Tocz dalej, aż ciało osiągnie pełne wyprostowanie w linii prostej od kolan na ławce do gryfu, lub do momentu tuż przed utratą neutralnej pozycji lędźwi. Tułów kończy ruch niemal równolegle do podłogi, głowa między ramionami.",
+    "Wydech i odwróć ruch — przyciągnij gryf z powrotem do ławki, napinając brzuch i mięśnie najszersze grzbietu. Wyobraź sobie, że przyciągasz żebra do bioder. NIE szarp rękami.",
+    "Wróć do pozycji wyjściowej z barkami nad gryfem. Krótka pauza i kolejne powtórzenie.",
+    "Ponieważ ławka jest wyższa niż podłoga, ciało pracuje pod większym kątem niż w roloucie z podłogi — zacznij od krótszego zakresu ruchu i stopniowo dochodź do pełnego wyprostu przez kolejne tygodnie."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_extension",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["serratus_anterior", "latissimus_dorsi"],
+    "stabilizers": ["obliques", "transverse_abdominis", "erector_spinae", "deltoids_anterior", "pectoralis_major"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "serratus_anterior": "S7",
+    "latissimus_dorsi": "S7",
+    "obliques": "T5",
+    "transverse_abdominis": "T5",
+    "erector_spinae": "T4",
+    "deltoids_anterior": "T4",
+    "pectoralis_major": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "bench"],
+    "optional": ["bumper_plates", "mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["plank", "ab-wheel-rollout-from-knees", "barbell-rollout-from-knees", "hollow-body-hold"],
+    "progression_to": ["ab-wheel-standing-rollout", "barbell-rollout-from-standing"],
+    "alternatives": ["ab-wheel-rollout-from-knees", "barbell-rollout-from-knees", "stability-ball-rollout", "tko-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Knees and shins fully on the bench — no overhang",
+      "Hands shoulder-width on the bar, overhand grip",
+      "Shoulders stacked directly above the bar",
+      "Posterior pelvic tilt — tuck the hips under",
+      "Lats engaged, ribcage pulled down (no flared ribs)"
+    ],
+    "setup_cues_pl": [
+      "Kolana i podudzia w całości na ławce — nic nie wystaje",
+      "Dłonie na gryfie na szerokość barków, chwyt nachwytem",
+      "Barki bezpośrednio nad gryfem",
+      "Retrowersja miednicy — podwiń biodra pod siebie",
+      "Napięte mięśnie najszersze grzbietu, żebra ściągnięte w dół (bez wypchniętej klatki)"
+    ],
+    "execution_cues": [
+      "Roll the bar — don't fall — keep tension every cm",
+      "Hips and shoulders extend together as one unit",
+      "Spine stays neutral — if lower back sags, you went too far",
+      "Pull the bar back with the abs, not the arms",
+      "Exhale forcefully on the way back, ribs to hips"
+    ],
+    "execution_cues_pl": [
+      "Tocz gryf — nie opadaj — utrzymuj napięcie na każdym centymetrze",
+      "Biodra i barki prostują się razem jako jedna całość",
+      "Kręgosłup pozostaje neutralny — jeśli lędźwie się zapadają, zaszedłeś za daleko",
+      "Przyciągaj gryf brzuchem, nie ramionami",
+      "Mocny wydech podczas powrotu, żebra do bioder"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back sagging / hyperextension at full reach",
+        "faultPl": "Zapadanie się lędźwi / hiperekstensja w pełnym wyciągnięciu",
+        "cause": "Going beyond the point where the abs can hold posterior pelvic tilt — load exceeds anti-extension capacity",
+        "causePl": "Wyjście poza punkt, w którym brzuch utrzymuje retrowersję miednicy — obciążenie przekracza zdolność anty-ekstensji",
+        "cue": "Stop the rollout the moment you feel the lumbar arch — partial range with neutral spine beats full range with sag",
+        "cuePl": "Przerwij rollout w chwili, gdy poczujesz łuk w lędźwiach — krótszy zakres z neutralnym kręgosłupem jest lepszy niż pełny zakres z zapadnięciem"
+      },
+      {
+        "fault": "Hips piking up — pushing the butt to the ceiling on the return",
+        "faultPl": "Wypychanie bioder w górę — pchanie pośladków do sufitu w fazie powrotu",
+        "cause": "Using hip flexion (pike) instead of spinal flexion + lat pull to bring the bar back; abs too weak for the position",
+        "causePl": "Wykorzystywanie zgięcia bioder (pike) zamiast zgięcia kręgosłupa + ściągnięcia łopatek do przyciągnięcia gryfu; brzuch zbyt słaby na tę pozycję",
+        "cue": "Keep the line knees-hips-shoulders straight throughout. Shorten the range until you can return without piking.",
+        "cuePl": "Utrzymuj prostą linię kolana-biodra-barki przez cały ruch. Skróć zakres, aż dasz radę wrócić bez wypychania bioder."
+      },
+      {
+        "fault": "Bending the elbows during the rollout",
+        "faultPl": "Zginanie łokci podczas roloutu",
+        "cause": "Subconsciously trying to pull with the biceps/lats from the arms instead of using the trunk; weak shoulder anti-flexion",
+        "causePl": "Podświadoma próba przyciągania bicepsami/mięśniami najszerszymi z ramion zamiast pracy tułowiem; słaba anty-flexion barku",
+        "cue": "Lock the elbows in a soft straight position — arms are levers, not engines. Practice tempo holds at mid-range.",
+        "cuePl": "Zablokuj łokcie w lekko prostej pozycji — ramiona to dźwignie, nie silnik. Ćwicz przytrzymania w pozycji pośredniej."
+      },
+      {
+        "fault": "Going to full extension on the first session (ego rollout)",
+        "faultPl": "Schodzenie do pełnego wyciągnięcia na pierwszym treningu (rollout z ego)",
+        "cause": "Underestimating how much harder the bench-elevated version is vs. the floor version — most lifters fail at the bottom",
+        "causePl": "Niedoszacowanie, o ile trudniejsza jest wersja z ławki w porównaniu z wersją z podłogi — większość ćwiczących nie wraca z dolnej pozycji",
+        "cue": "Start with 30–50% of available range. Add 5 cm per week. Use a target (foam roller, wall) you can't go past.",
+        "cuePl": "Zacznij od 30–50% dostępnego zakresu. Dodawaj 5 cm tygodniowo. Użyj ogranicznika (wałek piankowy, ściana), za który nie możesz przejść."
+      },
+      {
+        "fault": "Knees sliding forward on the bench during the roll",
+        "faultPl": "Zsuwanie się kolan do przodu po ławce podczas roloutu",
+        "cause": "Slippery upholstery + lack of hip lock; converts the rollout into a 'walk-out' that bypasses the abs",
+        "causePl": "Śliska tapicerka + brak blokady bioder; zamienia rollout w 'walk-out', który omija pracę brzucha",
+        "cue": "Place a towel or mat under the knees for grip. Anchor the knees mentally — only the shoulders and arms should move forward.",
+        "cuePl": "Podłóż ręcznik lub matę pod kolana dla przyczepności. Mentalnie zakotwicz kolana — tylko barki i ramiona powinny przesuwać się do przodu."
+      }
+    ],
+    "breathing": "Inhale at the top (shoulders over bar) and brace. Hold the breath OR exhale slowly through pursed lips during the rollout to maintain intra-abdominal pressure. Forceful exhale during the concentric return as you pull the ribs toward the hips. Never go to failure on breath holding.",
+    "breathingPl": "Wdech w górze (barki nad gryfem) i napnij brzuch. Wstrzymaj oddech LUB powoli wypuszczaj go przez zaciśnięte usta podczas roloutu, by utrzymać ciśnienie wewnątrzbrzuszne. Mocny wydech podczas powrotu (fazy koncentrycznej), gdy przyciągasz żebra do bioder. Nigdy nie wstrzymuj oddechu do upadku."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Although rollouts are anti-extension (not flexion), the high spinal load and risk of momentary hyperextension if form breaks make this exercise unsafe with acute disc issues. Use planks and dead bugs until cleared.",
+      "modificationPl": "Mimo że rollouty są ćwiczeniem anty-ekstensji (a nie zgięcia), wysokie obciążenie kręgosłupa i ryzyko chwilowej hiperekstensji przy złamaniu techniki czynią to ćwiczenie niebezpiecznym przy ostrych problemach dyskowych. Stosuj deski i dead bugi do czasu wyleczenia.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Full overhead position at peak extension loads the shoulder in flexion with body weight. Limit range so the upper arm doesn't exceed 150° flexion, or substitute a stability ball rollout (less load).",
+      "modificationPl": "Pełna pozycja nad głową w szczycie wyciągnięcia obciąża bark w pozycji zgięcia masą ciała. Ogranicz zakres tak, by ramię nie przekraczało 150° zgięcia, lub zastąp roloutem na piłce gimnastycznej (mniejsze obciążenie).",
+      "alternative": "stability-ball-rollout"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "caution",
+      "modification": "Straight overhand grip on a thin bar can hyperextend the wrist at the bottom. Use thick-grip attachments, wrist wraps, or switch to an ab wheel (neutral grip).",
+      "modificationPl": "Prosty chwyt nachwytem na cienkim gryfie może powodować hiperekstensję nadgarstka w dolnej pozycji. Użyj grubszych nakładek, opasek na nadgarstki lub przejdź na koło do brzucha (chwyt neutralny).",
+      "alternative": "ab-wheel-rollout-from-knees"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Maximal anterior core loading with risk of doming (rectus diastasis bulging forward) is contraindicated in postpartum recovery or active separation. Rebuild with transverse-abdominis work first.",
+      "modificationPl": "Maksymalne obciążenie przedniego rdzenia z ryzykiem 'doming' (wybrzuszanie się mięśnia prostego brzucha do przodu) jest przeciwwskazane przy rekonwalescencji po porodzie lub aktywnym rozejściu kresy białej. Najpierw odbuduj siłę mięśnia poprzecznego brzucha.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x5-8 (strength) | 3x8-12 (hypertrophy) | 4x6-10 (advanced core work)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-rollerout-from-bench.gif",
+    "frames_extracted": [
+      "frames/barbell-rollerout-from-bench/frame_0_start.png",
+      "frames/barbell-rollerout-from-bench/frame_1_early.png",
+      "frames/barbell-rollerout-from-bench/frame_2_mid.png",
+      "frames/barbell-rollerout-from-bench/frame_3_late.png",
+      "frames/barbell-rollerout-from-bench/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/barbell-rollerout-from-bench"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): klęk na ławce, kolana i podudzia oparte o tapicerkę, barki nad gryfem leżącym na podłodze, ciało zwarte w pozycji wyjściowej. Klatka 2 (mid): pełne wyciągnięcie — ciało tworzy skośną linię prostą od kolan na ławce w dół do sztangi na podłodze, kąt nachylenia znacznie większy niż w roloutach z podłogi, brzuch maksymalnie naciągnięty, lats i serratus pracują, by utrzymać barki w bezpiecznej pozycji nad głową. Klatki 1, 3, 4 pokazują trajektorię toczenia gryfu i powrotu z kolanami zakotwiczonymi na ławce. Kluczowa specyfika: uniesienie kolan na ławce zwiększa kąt wyciągnięcia ciała vs rollout z podłogi → większa dźwignia + większe obciążenie rectus abdominis (intensywność P10). Klasyfikacja: anti_extension (rdzeń opiera się wyprostowi kręgosłupa pod obciążeniem ciała), compound (staw barkowy + biodrowy + kręgosłup), bilateral, sagittal, force=both (ekscentryk wyciągnięcia + koncentryk powrotu są oba kluczowe), kinetic_chain=closed (sztanga w kontakcie z podłogą). Primary: rectus_abdominis. Secondary: serratus_anterior (kontrola łopatki nad głową), latissimus_dorsi (pomoc w przyciąganiu gryfu z powrotem). Difficulty=9, minimum=advanced — wersja z ławki jest TRUDNIEJSZA niż klasyczny rollout z kolan na podłodze, wymaga wcześniej opanowania barbell-rollout-from-knees. Nazwa PL: 'Rollout ze sztangą z ławki' — w polskiej terminologii fitness 'rollout' jest powszechnie używane (jak 'rollout z kółkiem'), nie ma dobrego polskiego tłumaczenia. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["core", "abs", "anti_extension", "barbell", "bench", "advanced", "rectus_abdominis", "serratus", "lats"]
+}

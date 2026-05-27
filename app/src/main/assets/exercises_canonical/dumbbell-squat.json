@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-squat",
+  "name": "Dumbbell Squat (Suitcase)",
+  "namePl": "Przysiad z hantlami w pozycji walizki",
+  "aliases": ["dumbbell squat", "DB squat", "suitcase squat", "dumbbell suitcase squat", "dumbbell side squat", "loaded carry squat"],
+  "aliasesPl": ["przysiad z hantlami", "przysiad walizkowy", "suitcase squat z hantlami", "przysiad z hantlami po bokach", "DB squat z hantlami przy biodrach"],
+
+  "description": "Bilateral compound squat performed with a dumbbell held in each hand at the sides of the body — the classic 'suitcase carry' position. Unlike the goblet squat (front-loaded) or barbell back squat (top-loaded), the load hangs alongside the hips, giving a unique stimulus: massive grip and forearm demand, strong anti-lateral-flexion work for the core, and a slightly more forward torso angle than goblet variants. The format easily allows heavy loading once grip becomes the limiter — making this a true full-body builder for intermediate trainees. Particularly popular in old-school strength training, hypertrophy work for legs/glutes/grip simultaneously, and as a barbell squat alternative for home gym setups without a rack.",
+  "descriptionPl": "Dwustronny ruch wielostawowy z hantlami trzymanymi w obu dłoniach po bokach ciała — klasyczna pozycja 'walizkowa' (suitcase carry). W odróżnieniu od goblet squat (obciążenie z przodu) czy przysiadu ze sztangą (obciążenie z góry), ciężar zwisa wzdłuż bioder, dając unikalny bodziec: ogromne obciążenie chwytu i przedramion, silną pracę anty-bocznego zgięcia tułowia oraz nieco bardziej pochylony tułów niż w wariantach goblet. Format pozwala na łatwe obciążanie, gdy chwyt staje się ograniczeniem — co czyni to ćwiczenie prawdziwym budowniczym całego ciała dla średniozaawansowanych. Szczególnie popularny w treningu siłowym starej szkoły, w pracy hipertroficznej na nogi/pośladki/chwyt jednocześnie i jako alternatywa dla przysiadu ze sztangą w domowych siłowniach bez stojaka.",
+
+  "instructions": [
+    "Place a dumbbell on each side of your feet. Stand between them with feet shoulder-width apart, toes slightly turned out (10-20°).",
+    "Hinge at the hips and bend knees to lower into a quarter-squat. Grip each dumbbell firmly with a neutral grip (palms facing your thighs).",
+    "Stand up with the dumbbells, locking your hips and knees. Stand tall: chest up, shoulders pulled back and down, dumbbells hanging at the sides of your hips.",
+    "Brace your core hard. Inhale, then initiate the descent by simultaneously breaking at the hips and knees.",
+    "Sit down and back, keeping the dumbbells tracking along the outside of your legs. Your torso will naturally lean forward more than in a goblet squat — this is normal.",
+    "Descend to parallel (hip crease level with top of knee) or just below, depending on mobility. Dumbbells should not touch the floor — stop when you reach your usable depth.",
+    "Drive up by pushing through the entire foot and extending hips and knees together. Keep grip tight — the dumbbells must not swing forward or back.",
+    "Lock out at the top by fully extending hips. Reset breath and brace before the next rep. On the last rep, hinge under control to set the dumbbells back down."
+  ],
+  "instructionsPl": [
+    "Ustaw hantel po każdej stronie stóp. Stań między nimi w rozstawie barków, palce stóp lekko skierowane na zewnątrz (10-20°).",
+    "Zegnij biodra i kolana, schodząc do pół-przysiadu. Chwyć każdy hantel mocno, chwytem neutralnym (dłonie zwrócone do ud).",
+    "Wstań z hantlami, prostując biodra i kolana. Stań prosto: klatka do góry, łopatki ściągnięte do tyłu i w dół, hantle zwisają po bokach bioder.",
+    "Mocno napnij brzuch. Wdech, następnie rozpocznij schodzenie zginając jednocześnie biodra i kolana.",
+    "Siadaj w dół i do tyłu, hantle prowadzą wzdłuż zewnętrznych stron nóg. Tułów naturalnie pochyli się nieco bardziej niż w goblet squat — to normalne.",
+    "Schodź do parallel (linia bioder na wysokości szczytu kolan) lub nieco niżej, w zależności od mobilności. Hantle nie powinny dotknąć podłogi — zatrzymaj się na użytecznej głębokości.",
+    "Wypchnij się w górę napierając przez całą stopę, prostując razem biodra i kolana. Trzymaj mocny chwyt — hantle nie mogą kołysać się do przodu lub do tyłu.",
+    "Wyprostuj się w pełni na górze, prostując biodra do końca. Zresetuj oddech i napięcie brzucha przed kolejnym powtórzeniem. Na ostatnim powtórzeniu pod kontrolą ustaw hantle z powrotem na podłodze."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "erector_spinae", "forearms"],
+    "stabilizers": ["core", "obliques", "upper_back", "trapezius", "calves"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "forearms": "P8",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "erector_spinae": "S6",
+    "trapezius": "S5",
+    "upper_back": "S5",
+    "core": "S6",
+    "obliques": "S5",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_shoes", "knee_sleeves", "lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-squat", "dumbbell-goblet-squat"],
+    "progression_to": ["barbell-back-squat", "barbell-front-squat", "double-kettlebell-front-squat", "trap-bar-deadlift"],
+    "alternatives": ["dumbbell-goblet-squat", "dumbbell-front-squat", "barbell-back-squat", "trap-bar-deadlift", "landmine-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells hang at the sides of your hips, arms straight, neutral grip",
+      "Feet shoulder-width, toes slightly out (10-20°)",
+      "Shoulders pulled back and down — don't let dumbbells pull you forward",
+      "Brace your core hard like preparing for a punch",
+      "Eyes forward, chest tall, dumbbells touching outer thighs"
+    ],
+    "setup_cues_pl": [
+      "Hantle zwisają po bokach bioder, ręce wyprostowane, chwyt neutralny",
+      "Stopy na szerokość barków, palce lekko na zewnątrz (10-20°)",
+      "Łopatki ściągnięte do tyłu i w dół — nie pozwól hantlom pociągnąć Cię do przodu",
+      "Mocno napnij brzuch jak przed uderzeniem",
+      "Wzrok przed siebie, klatka wysoko, hantle dotykają zewnętrznych stron ud"
+    ],
+    "execution_cues": [
+      "Sit DOWN and slightly back, dumbbells track the outside of legs",
+      "Allow a moderate forward torso lean — load is behind your knees, not in front",
+      "Push knees out toward your pinky toes, don't let them cave in",
+      "Squeeze the handles HARD — grip is often the limiter, not legs",
+      "Drive through whole foot, finish with hips fully locked at top"
+    ],
+    "execution_cues_pl": [
+      "Siadaj W DÓŁ i lekko do tyłu, hantle prowadzą po zewnętrznych stronach nóg",
+      "Pozwól na umiarkowane pochylenie tułowia do przodu — ciężar jest za kolanami, nie z przodu",
+      "Wypchnij kolana na zewnątrz w kierunku małych palców, nie pozwól im uciec do środka",
+      "Ściśnij rączki MOCNO — chwyt często jest ograniczeniem, nie nogi",
+      "Napieraj całą stopą, na górze w pełni wyprostuj biodra"
+    ],
+    "common_faults": [
+      {
+        "fault": "Excessive forward torso lean (good morning squat)",
+        "faultPl": "Nadmierne pochylenie tułowia do przodu (przysiad typu 'good morning')",
+        "cause": "Quad weakness, ankle mobility issues, or compensating because legs fatigue before back/grip",
+        "causePl": "Słabe czworogłowe, problemy z mobilnością kostek, lub kompensacja gdy nogi męczą się szybciej niż plecy/chwyt",
+        "cue": "Stay more upright by driving knees forward and pushing chest up. If you're folding, reduce weight.",
+        "cuePl": "Pozostań bardziej pionowo, wypychając kolana do przodu i klatkę do góry. Jeśli się składasz, zmniejsz ciężar."
+      },
+      {
+        "fault": "Dumbbells swinging forward or backward at the bottom",
+        "faultPl": "Hantle kołyszą się do przodu lub do tyłu na dole",
+        "cause": "Loose grip, lack of lat engagement, or descending too fast",
+        "causePl": "Luźny chwyt, brak aktywacji najszerszych grzbietu, lub zbyt szybkie schodzenie",
+        "cue": "Squeeze the handles hard, keep lats tight, lower with control over 2-3 seconds",
+        "cuePl": "Ściśnij rączki mocno, trzymaj napięte mięśnie najszersze grzbietu, schodź pod kontrolą w 2-3 sekundy"
+      },
+      {
+        "fault": "Knee valgus (knees collapse inward)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius, narrow stance, fatigue, or insufficient hip external rotation",
+        "causePl": "Słabe mięśnie pośladkowe średnie, zbyt wąski rozstaw, zmęczenie, słaba rotacja zewnętrzna biodra",
+        "cue": "Push knees out toward your pinky toes throughout the rep, especially on the way up",
+        "cuePl": "Wypychaj kolana na zewnątrz w kierunku małych palców przez cały ruch, szczególnie w drodze do góry"
+      },
+      {
+        "fault": "Shoulders rounding forward under load",
+        "faultPl": "Zaokrąglenie barków do przodu pod ciężarem",
+        "cause": "Heavy dumbbells pulling shoulders down, weak upper back, or passive hang",
+        "causePl": "Ciężkie hantle ciągną barki w dół, słaba górna część pleców, lub bierny zwis",
+        "cue": "Actively retract and depress shoulder blades — 'long arms but proud chest'",
+        "cuePl": "Aktywnie ściągnij i obniż łopatki — 'długie ręce, ale dumna klatka'"
+      },
+      {
+        "fault": "Grip fails before legs (premature set termination)",
+        "faultPl": "Chwyt zawodzi przed nogami (przedwczesne zakończenie serii)",
+        "cause": "Inadequate forearm strength, no chalk, smooth dumbbell handles, very heavy load",
+        "causePl": "Niewystarczająca siła przedramion, brak magnezji, gładkie rączki hantli, bardzo ciężki ciężar",
+        "cue": "Use chalk or lifting straps for heavy work. Train grip separately. Set dumbbells down before form breaks down.",
+        "cuePl": "Używaj magnezji lub pasków pomocniczych przy ciężkich seriach. Trenuj chwyt osobno. Odłóż hantle zanim technika się załamie."
+      }
+    ],
+    "breathing": "Inhale at the top, brace your core hard (Valsalva). Hold through the descent and the hardest portion of the ascent. Exhale near the top of the rep. For higher-rep sets (12+) you can take a quick reset breath at lockout between reps.",
+    "breathingPl": "Wdech na górze, mocno napnij brzuch (manewr Valsalvy). Wstrzymaj oddech przez schodzenie i najtrudniejszą część powrotu. Wydech blisko górnej pozycji. Przy wyższych zakresach powtórzeń (12+) możesz wziąć krótki oddech resetujący w pełnym wyproście między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "modify",
+      "modification": "The forward torso lean inherent in suitcase squat loads the lower back more than goblet squat. Switch to goblet squat or bodyweight squat until pain-free.",
+      "modificationPl": "Pochylenie tułowia do przodu w suitcase squat obciąża dolny odcinek pleców bardziej niż goblet squat. Przejdź na goblet squat lub przysiad z masą własną do czasu ustąpienia bólu.",
+      "alternative": "dumbbell-goblet-squat"
+    },
+    {
+      "condition": "grip_injury_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Suitcase position heavily loads grip and forearms. Switch to a front-loaded variant (goblet, DB front squat) or use a barbell variant instead.",
+      "modificationPl": "Pozycja walizkowa mocno obciąża chwyt i przedramiona. Przejdź na wariant z obciążeniem z przodu (goblet, DB front squat) lub na wariant ze sztangą.",
+      "alternative": "dumbbell-goblet-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Consider box squat with dumbbells to control depth precisely.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Rozważ przysiad do skrzyni z hantlami, by precyzyjnie kontrolować głębokość.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "modify",
+      "modification": "Heavy dumbbells hanging at sides put traction stress on shoulder capsule. Use lighter weights or front-loaded variant.",
+      "modificationPl": "Ciężkie hantle zwisające po bokach wywołują stres trakcyjny na torebce stawu barkowego. Użyj lżejszych ciężarów lub wariantu z obciążeniem z przodu.",
+      "alternative": "dumbbell-goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3-5x5-8 (strength) | 2-3x15-20 (conditioning / grip work)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "dumbbell-squat.gif",
+    "frames_extracted": [
+      "frames/dumbbell-squat/frame_0_start.png",
+      "frames/dumbbell-squat/frame_1_early.png",
+      "frames/dumbbell-squat/frame_2_mid.png",
+      "frames/dumbbell-squat/frame_3_late.png",
+      "frames/dumbbell-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (sources/jahel/glutes/dumbbell-squat.gif). Klatki jednoznacznie potwierdzają suitcase position: hantle trzymane w obu dłoniach po bokach bioder, chwyt neutralny, ramiona w pełni wyprostowane. Schodzenie z zauważalnym pochyleniem tułowia do przodu (większym niż w goblet squat, mniejszym niż w przysiadzie ze sztangą na plecach) — wynika z biomechaniki obciążenia po bokach. Pełna głębokość poniżej parallel. Anatomia podświetlona na ilustracji: czworogłowe + pośladki (P9/P8), grzbiet i przedramiona widoczne jako aktywne. Forearms ustawione na P8 zgodnie ze specyfiką (grip jest często ograniczeniem). Plik źródłowy w katalogu glutes/ zgodnie z promptem. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["compound", "lower_body", "squat_pattern", "dumbbell", "side_loaded", "suitcase_carry", "grip_intensive", "no_rack_required", "home_gym_friendly", "intermediate"]
+}

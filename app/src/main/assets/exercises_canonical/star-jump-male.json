@@ -1,0 +1,209 @@
+{
+  "id": "star-jump-male",
+  "name": "Star Jump",
+  "namePl": "Skok rozkroczny (star jump)",
+  "aliases": ["star jump", "starfish jump", "explosive star jump", "plyometric star jump", "x-jump", "star jump male"],
+  "aliasesPl": ["skok gwiazdowy", "skok rozkroczny", "skok gwiazda", "skok x", "rozgwiazda", "skok plyometryczny rozkroczny"],
+
+  "description": "Explosive full-body plyometric jump in which the athlete dips into a quarter/half squat with arms tucked, then launches vertically as high as possible while simultaneously spreading the legs wide and throwing both straight arms out to the sides and overhead — the body forms a full 'X' or starfish shape mid-air. The athlete then snaps the limbs back together for a soft landing on the balls of the feet, absorbs through the knees, and resets for the next rep. A high-intensity power and conditioning drill — popular in HIIT, military PT, basketball/volleyball off-season conditioning, kids' agility classes and bodyweight metcons. Far more demanding than jumping jacks: each rep is a true maximal vertical jump with limb extension, training triple extension (ankle-knee-hip) power, hip abduction explosiveness, shoulder mobility under speed, and aerobic-anaerobic crossover capacity. Single most efficient bodyweight drill for combining vertical jump power with cardiovascular load.",
+  "descriptionPl": "Eksplozywny plyometryczny skok pełnociałowy, w którym ćwiczący opada w ćwierć/półprzysiad ze ściągniętymi rękami, a następnie wystrzeliwuje pionowo jak najwyżej, jednocześnie rozkraczając szeroko nogi i rzucając obie proste ręce w bok i nad głowę — ciało tworzy w powietrzu pełne 'X' lub kształt rozgwiazdy. Następnie ćwiczący ściąga kończyny z powrotem i miękko ląduje na śródstopiu, amortyzując kolanami, by zresetować pozycję do kolejnego powtórzenia. Wysokointensywne ćwiczenie mocy i conditioningu — popularne w HIIT, treningu wojskowym, conditioningu poza sezonem w koszykówce/siatkówce, na zajęciach agility dla dzieci i w metconach bodyweight. Znacznie bardziej wymagające niż pajace: każde powtórzenie to prawdziwy maksymalny wyskok pionowy z rozprostowaniem kończyn, trenujący moc potrójnego prostowania (kostka-kolano-biodro), eksplozywność odwodzicieli bioder, mobilność barków przy dużej prędkości oraz strefę pogranicza tlenowo-beztlenowego. Najefektywniejsze pojedyncze ćwiczenie bodyweight łączące moc skoku pionowego z obciążeniem sercowo-naczyniowym.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, arms relaxed at the sides, eyes forward, core lightly braced. Take an active breath in.",
+    "Drop into a quarter-to-half squat (depth about 1/3-1/2 of a full squat): hips back, chest up, knees tracking over toes, arms tucked back behind the hips or close to the chest like a coiled spring. This is the 'load' phase.",
+    "Explode vertically — extend ankles, knees and hips simultaneously (triple extension) and launch as high as possible. Drive arms aggressively out and overhead in a wide arc as the feet leave the floor.",
+    "Mid-air: legs spread WIDE to the sides, arms STRAIGHT and reaching out diagonally — body forms a full 'X' / starfish shape at the peak of the jump. Hold the star shape for the apex.",
+    "Begin the descent — snap the legs back together and bring the arms back down toward the sides. Prepare the feet for landing directly under the hips.",
+    "Land softly on the balls of both feet first, then settle to the mid-foot, immediately absorb by bending the knees back into the quarter-squat load position. Knees track over toes — no inward collapse.",
+    "Either rebound immediately into the next rep (continuous plyometric mode) or stand back up briefly to reset (controlled mode). Repeat for the prescribed reps or work interval."
+  ],
+  "instructionsPl": [
+    "Stań wyprostowany, stopy na szerokość bioder, ramiona luźno wzdłuż ciała, wzrok przed siebie, lekkie napięcie brzucha. Aktywny wdech.",
+    "Opadnij w ćwierć/półprzysiad (głębokość ok. 1/3-1/2 pełnego przysiadu): biodra do tyłu, klatka w górze, kolana w linii palców, ramiona ściągnięte za biodra lub blisko klatki jak naciągnięta sprężyna. To faza 'załadowania'.",
+    "Eksplodująco wystrzel pionowo — jednocześnie prostuj kostki, kolana i biodra (potrójne prostowanie) i wybij się jak najwyżej. Agresywnie wyrzuć ramiona w bok i nad głowę po szerokim łuku w momencie odrywania stóp od podłogi.",
+    "W powietrzu: nogi szeroko rozłożone na boki, ramiona PROSTE i wyciągnięte na ukos — ciało tworzy pełne 'X' / rozgwiazdę w szczycie skoku. Utrzymaj kształt gwiazdy w punkcie kulminacyjnym.",
+    "Rozpocznij opadanie — ściągnij nogi z powrotem do siebie i sprowadź ramiona w dół po bokach. Ustaw stopy do lądowania bezpośrednio pod biodrami.",
+    "Ląduj miękko najpierw na śródstopiu obu stóp, potem osiądź na całej stopie, natychmiast zamortyzuj uginając kolana z powrotem do pozycji ćwierć-przysiadu. Kolana w linii palców — bez zapadania do środka.",
+    "Albo natychmiast odbij się do kolejnego powtórzenia (tryb plyometryczny ciągły), albo wstań na chwilę by zresetować pozycję (tryb kontrolowany). Powtarzaj zadaną liczbę powtórzeń lub czas pracy."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "calves"],
+    "secondary": ["deltoids", "hip_abductors", "hip_adductors", "hamstrings"],
+    "stabilizers": ["core", "tibialis_anterior", "scapular_stabilizers", "rotator_cuff", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P8",
+    "glutes": "P8",
+    "calves": "P8",
+    "deltoids": "S6",
+    "hip_abductors": "S7",
+    "hip_adductors": "S6",
+    "hamstrings": "S5",
+    "core": "T5",
+    "tibialis_anterior": "T4",
+    "scapular_stabilizers": "T4",
+    "erector_spinae": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "supportive_shoes"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "astride-jumps-male", "squat-jump"],
+    "progression_to": ["tuck-jump", "burpee", "box-jump", "broad-jump", "depth-jump"],
+    "alternatives": ["squat-jump", "astride-jumps-male", "tuck-jump", "high-knees", "burpee", "jump-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Clear at least 2x2 m of floor — arms and legs both spread WIDE at the apex",
+      "Wear supportive athletic shoes — every rep is a true vertical landing on the balls of the feet",
+      "Stand tall, feet hip-width apart — NOT together (you need a stable launch base)",
+      "Pre-brace the core BEFORE the dip — like you're about to be punched in the stomach",
+      "Pick a target height in your mind — 'jump like you're touching the ceiling' beats 'just jump'",
+      "Beginners: start with 3-5 reps, full reset between reps. Advanced: continuous reps in 20-40s intervals."
+    ],
+    "setup_cues_pl": [
+      "Wyczyść co najmniej 2x2 m podłogi — i ramiona, i nogi rozkładają się SZEROKO w szczycie",
+      "Załóż wspierające buty sportowe — każde powtórzenie to prawdziwe pionowe lądowanie na śródstopiu",
+      "Stań wyprostowany, stopy na szerokość bioder — NIE razem (potrzebujesz stabilnej bazy do wybicia)",
+      "Napnij brzuch ZANIM opadniesz — jakbyś miał za chwilę dostać w żołądek",
+      "Wybierz w głowie cel wysokości — 'skacz jakbyś dotykał sufitu' działa lepiej niż 'po prostu skacz'",
+      "Początkujący: zacznij od 3-5 powtórzeń, pełny reset między powtórzeniami. Zaawansowani: ciągłe powtórzenia w interwałach 20-40s."
+    ],
+    "execution_cues": [
+      "LOAD then EXPLODE — quick dip into quarter-squat, then immediate vertical drive (no pause at the bottom)",
+      "Triple extension on takeoff: ankles, knees, hips all snap straight at the same instant",
+      "Arms LEAD the jump — aggressive overhead/diagonal sweep helps generate more height",
+      "At the apex: legs spread WIDE, arms STRAIGHT out — make a clear 'X' shape, not a sloppy half-spread",
+      "Snap limbs BACK together BEFORE landing — never land with legs still spread (knee/groin risk)",
+      "Land SOFT: balls of feet first, knees track over toes, absorb into the next squat — 'quiet feet'",
+      "Look forward, not down — head position drives torso position"
+    ],
+    "execution_cues_pl": [
+      "ZAŁADUJ potem EKSPLODUJ — szybkie opadnięcie w ćwierć-przysiad, potem natychmiastowe pionowe wybicie (bez pauzy na dole)",
+      "Potrójne prostowanie przy wybiciu: kostki, kolana, biodra prostują się w jednym momencie",
+      "Ramiona PROWADZĄ skok — agresywny zamach nad głowę/na ukos pomaga wygenerować większą wysokość",
+      "W szczycie: nogi szeroko, ramiona PROSTE wyciągnięte — zrób wyraźny kształt 'X', nie zaniedbany połowiczny rozkrok",
+      "Ściągnij kończyny RAZEM ZANIM wylądujesz — nigdy nie ląduj z nogami nadal rozłożonymi (ryzyko kolana/pachwiny)",
+      "Ląduj MIĘKKO: najpierw śródstopie, kolana w linii palców, amortyzuj wchodząc w kolejny przysiad — 'ciche stopy'",
+      "Patrz przed siebie, nie w dół — pozycja głowy determinuje pozycję tułowia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hard, stiff-legged landings (no knee absorption)",
+        "faultPl": "Twarde lądowania na sztywnych nogach (brak amortyzacji kolanowej)",
+        "cause": "Fatigue, weak quads, ego-jumping for height without learning the landing, ignoring eccentric absorption",
+        "causePl": "Zmęczenie, słabe czworogłowe, skakanie na wysokość bez nauki lądowania, ignorowanie amortyzacji ekscentrycznej",
+        "cue": "Land BALLS-of-feet → mid-foot → bent knees ALL ONE motion. Knees soft like a spring. If you hear a slam or feel impact in the knees — stop, you've lost the technique. Lower the jump height.",
+        "cuePl": "Ląduj ŚRÓDSTOPIE → cała stopa → ugięte kolana JAKO JEDEN RUCH. Kolana miękkie jak sprężyna. Jeśli słyszysz uderzenie lub czujesz impakt w kolanach — przerwij, straciłeś technikę. Obniż wysokość skoku."
+      },
+      {
+        "fault": "Knees collapsing inward (valgus) on landing",
+        "faultPl": "Kolana zapadające się do środka (koślawość) przy lądowaniu",
+        "cause": "Weak glute medius / hip abductors, poor motor control under fatigue, landing with feet too narrow",
+        "causePl": "Słaby mięsień pośladkowy średni / odwodziciele bioder, słaba kontrola motoryczna przy zmęczeniu, lądowanie ze stopami zbyt blisko siebie",
+        "cue": "Knees TRACK OVER TOES — actively 'push knees out' as you absorb. Land feet hip-width, NOT touching. If you can't control valgus — regress to squat jumps without the star until glutes catch up.",
+        "cuePl": "Kolana W LINII PALCÓW — aktywnie 'rozpychaj kolana na zewnątrz' podczas amortyzacji. Ląduj stopy na szerokość bioder, NIE razem. Jeśli nie kontrolujesz koślawości — cofnij się do squat jumps bez gwiazdy aż pośladki dogonią."
+      },
+      {
+        "fault": "Incomplete 'X' shape — limbs barely spread mid-air",
+        "faultPl": "Niepełny kształt 'X' — kończyny ledwo rozłożone w powietrzu",
+        "cause": "Insufficient jump height (no time to spread), tight hip adductors, weak shoulders, lazy execution",
+        "causePl": "Niewystarczająca wysokość skoku (brak czasu na rozłożenie), spięte przywodziciele bioder, słabe barki, leniwa egzekucja",
+        "cue": "JUMP HIGHER — height creates time to make the shape. Think 'make a snow angel in mid-air'. Arms straight, legs WIDE — commit fully or it's just a squat jump. If you can't reach the shape, work mobility + vertical jump separately.",
+        "cuePl": "SKACZ WYŻEJ — wysokość daje czas na zrobienie kształtu. Myśl 'narysuj aniołka na śniegu w powietrzu'. Ramiona proste, nogi SZEROKO — zaangażuj się w pełni albo to tylko squat jump. Jeśli nie sięgasz kształtu, pracuj nad mobilnością + skokiem pionowym osobno."
+      },
+      {
+        "fault": "Landing with legs still spread (haven't snapped back)",
+        "faultPl": "Lądowanie z nadal rozłożonymi nogami (brak ściągnięcia)",
+        "cause": "Late timing, rushing the rep, fatigue, never learned the 'spread → snap back → land' rhythm",
+        "causePl": "Spóźniony timing, przyspieszanie powtórzenia, zmęczenie, brak nauczenia rytmu 'rozłóż → ściągnij → ląduj'",
+        "cue": "Spread at the PEAK, snap BACK BEFORE landing. Three beats: '1-jump, 2-star, 3-snap+land'. Landing with spread legs risks groin/adductor strain and knee twist — STOP if it happens.",
+        "cuePl": "Rozłóż w SZCZYCIE, ściągnij PRZED lądowaniem. Trzy uderzenia: '1-skok, 2-gwiazda, 3-ściągnięcie+lądowanie'. Lądowanie z rozłożonymi nogami grozi naderwaniem pachwiny/przywodzicieli i skręceniem kolana — PRZERWIJ jeśli się zdarzy."
+      },
+      {
+        "fault": "Forward lean / piking at the hips (chest crashing forward)",
+        "faultPl": "Pochylenie do przodu / 'zginanie się' w biodrach (klatka leci do przodu)",
+        "cause": "Weak core/erectors, fatigue, looking down at floor, poor brace, leading with arms instead of triple extension",
+        "causePl": "Słaby brzuch/prostowniki grzbietu, zmęczenie, patrzenie w podłogę, słabe napięcie, prowadzenie ramionami zamiast potrójnym prostowaniem",
+        "cue": "Stay TALL through the jump — chest up, eyes forward (not at the floor). Brace the core BEFORE the dip and KEEP it braced through landing. Vertical line from heels through head at the apex.",
+        "cuePl": "Pozostań WYSOKO przez cały skok — klatka w górze, wzrok przed siebie (nie w podłogę). Napnij brzuch ZANIM opadniesz i UTRZYMAJ napięcie przez lądowanie. Pionowa linia od pięt przez głowę w szczycie skoku."
+      }
+    ],
+    "breathing": "Power-style breath: forceful exhale ON THE JUMP (like an athletic 'tssss'), quick inhale on the descent/reset. For continuous reps in HIIT intervals, use a steady rhythmic pattern — never hold breath under the load. If you're gasping out of rhythm, you're going too fast for current conditioning.",
+    "breathingPl": "Oddech siłowy: mocny wydech NA SKOKU (jak atletyczne 'tsssy'), szybki wdech na opadaniu/resecie. Przy powtórzeniach ciągłych w interwałach HIIT używaj stałego rytmicznego wzorca — nigdy nie wstrzymuj oddechu pod obciążeniem. Jeśli łapiesz oddech poza rytmem, idziesz za szybko dla aktualnego poziomu kondycji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_meniscus_or_acl_history",
+      "severity": "avoid",
+      "modification": "High-impact plyometric landings with potential valgus stress are a top trigger for knee re-injury. Avoid star jumps until cleared by a physio and quad/glute strength is restored. Substitute with bodyweight squats or step-ups for lower-body conditioning.",
+      "modificationPl": "Wysokoimpactowe lądowania plyometryczne z potencjalnym stresem koślawym to jeden z głównych wyzwalaczy nawrotu kontuzji kolana. Unikaj star jumpów do uzyskania zgody fizjoterapeuty i odbudowy siły czworogłowych/pośladków. Zastąp przysiadami bodyweight lub wchodzeniem na step dla conditioningu dolnej części.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "ankle_instability_or_plantar_fasciitis",
+      "severity": "avoid",
+      "modification": "Repeated explosive landings stress the plantar fascia and ankle stabilizers — high risk of flare-up or sprain. Wear supportive shoes, switch to low-impact pajace (jumping jacks) or replace entirely with stationary bike / rowing for warm-up.",
+      "modificationPl": "Powtarzane eksplozywne lądowania obciążają rozcięgno podeszwowe i stabilizatory stawu skokowego — wysokie ryzyko zaostrzenia lub skręcenia. Załóż wspierające buty, przejdź na niskoimpactowe pajace lub zastąp w pełni rowerem stacjonarnym / wioślarzem na rozgrzewkę.",
+      "alternative": "astride-jumps-male"
+    },
+    {
+      "condition": "pregnancy_or_pelvic_floor_dysfunction",
+      "severity": "avoid",
+      "modification": "Maximal vertical jumps create very high intra-abdominal pressure and impact load on the pelvic floor — strong risk of urinary leakage, prolapse progression, and diastasis worsening. Replace with bodyweight squats, marching in place or low-impact step-jacks.",
+      "modificationPl": "Maksymalne skoki pionowe wytwarzają bardzo wysokie ciśnienie wewnątrzbrzuszne i obciążenie udarowe dna miednicy — silne ryzyko nietrzymania moczu, pogłębienia obniżenia narządów i rozejścia mięśni prostych brzucha. Zastąp przysiadami bodyweight, marszem w miejscu lub niskoimpactowymi step-jacks.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "lower_back_pain_disc_or_si_joint_issues",
+      "severity": "modify",
+      "modification": "Repeated impact landings transmit compressive forces up the spine and can aggravate disc or SI joint pain. Modify by reducing jump height significantly, doing fewer reps with full reset, or substitute with controlled squat-to-stand without leaving the floor.",
+      "modificationPl": "Powtarzane lądowania udarowe przenoszą siły kompresyjne wzdłuż kręgosłupa i mogą drażnić ból dyskowy lub stawu krzyżowo-biodrowego. Zmodyfikuj — wyraźnie obniż wysokość skoku, rób mniej powtórzeń z pełnym resetem, lub zastąp kontrolowanym przejściem przysiad-wyprost bez odrywania od podłogi.",
+      "alternative": "bodyweight-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-5 sets x 8-12 reps (power conditioning) | 20s on / 40s off x 6-8 (HIIT intervals) | 30-45s continuous in metcon circuits | 3 sets x 5 reps with full reset (jump training)",
+  "calories_per_kg_per_hour": 10.0,
+
+  "media": {
+    "primary": "star-jump-male.gif",
+    "frames_extracted": [
+      "frames/star-jump-male/frame_0_start.png",
+      "frames/star-jump-male/frame_1_early.png",
+      "frames/star-jump-male/frame_2_mid.png",
+      "frames/star-jump-male/frame_3_late.png",
+      "frames/star-jump-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/star-jump-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): męska postać stojąca prosto, stopy razem/blisko siebie, ramiona luźno wzdłuż ciała — wyjściowa pozycja przed skokiem. Frame 1 (early): faza 'load' — postać lekko opadnięta w mini-przysiad, ramiona ściągnięte/przygotowane do zamachu, podświetlone calves i deltoidy w przygotowaniu do eksplozji. Frame 2 (mid): KULMINACJA — pełna pozycja 'X' / rozgwiazda w powietrzu, postać oderwana od podłogi, nogi szeroko rozłożone, ramiona PROSTE wyciągnięte ukośnie nad głowę, podświetlone: quadriceps (przedni czworogłowy — primary driver wybicia), glutes (pośladki — potrójne prostowanie biodra), calves (łydki — końcowa faza wybicia ze śródstopia), deltoidy (środkowy + przedni akton, zamach ramion), abdukktory bioder (rozłożenie nóg na boki). Frame 3 (late): faza zamykania powietrznego — postać wraca do pozycji zwartej, nogi się ściągają, ramiona opadają, przed lądowaniem. Frame 4 (end): powrót do pozycji startowej z ghostingiem pokazującym ruch — zamknięcie pełnego cyklu skoku rozkrocznego. classification: jump_plyometric (każde powtórzenie to maksymalny wyskok z lądowaniem absorpcyjnym), force=push (potrójne prostowanie odpychające ciało od podłogi), mechanic=compound (zaangażowanych >5 grup mięśniowych), plane=frontal (nogi i ramiona rozkładają się w bok — płaszczyzna czołowa dominuje, mimo że samo wybicie pionowe ma komponentę sagittal; główna 'tożsamość' ruchu to rozkład X w płaszczyźnie czołowej), laterality=bilateral (obie strony pracują symultanicznie), kinetic_chain=closed (stopy w kontakcie z podłożem w fazie wybicia i lądowania — choć w szczycie ciało jest oderwane, klasyfikacja na podstawie fazy generowania mocy). primary muscles: quadriceps P8 + glutes P8 + calves P8 (potrójne prostowanie jako główny driver wybicia plyometrycznego — wszystkie trzy grupy pracują maksymalnie w tym samym momencie, brak jednego dominującego). secondary: deltoidy S6 (zamach ramion), hip_abductors S7 (rozłożenie nóg w powietrzu — istotny driver kształtu 'X' i moment ekscentryczny przy ściąganiu), hip_adductors S6 (ściągnięcie nóg przed lądowaniem), hamstrings S5 (kontrola ekscentryczna i pomoc w prostowaniu biodra). category=cardio (mimo charakteru plyometrycznego/mocowego, star jump jest używany przede wszystkim jako narzędzie conditioning/HIIT/cardio — rzadko jako pure power drill z pełnym resetem; trafia do tej samej szuflady co burpee/jumping jacks). difficulty 5: znacznie trudniejsze niż pajace (difficulty 2) ze względu na maksymalny wymóg wysokości, koordynację rozłożenie-ściągnięcie-lądowanie i wysokie obciążenie ekscentryczne — wymaga opanowanego squat-jump i kontroli kolan, stąd intermediate jako minimum. minimum=intermediate (nie dla początkujących bez doświadczenia w squat jump i stabilności kolan). prerequisites: bodyweight-squat (wzorzec przysiadu), astride-jumps-male (rytm plyometryczny), squat-jump (wybicie pionowe). progression_to: tuck-jump (jeszcze bardziej eksplozywne), burpee (combo z plankiem), box-jump (skok na podwyższenie), broad-jump (poziom), depth-jump (advanced plyo). calories_per_kg_per_hour=10.0 (wyższy niż jumping jacks 8.0 ze względu na maksymalny wysiłek mocy w każdym powtórzeniu — wolniejsze tempo ale wyższy koszt energetyczny na rep). Wszystkie pola PL napisane od zera w polskim standardzie fitness (terminologia: 'skok rozkroczny' jako polska nazwa kanoniczna, 'star jump' / 'skok gwiazdowy' / 'rozgwiazda' jako aliasy, 'potrójne prostowanie', 'śródstopie', 'koślawość', 'pierścień rotatorów').",
+
+  "tags": ["bodyweight", "cardio", "hiit", "plyometrics", "explosive_power", "full_body", "calisthenics", "no_equipment_friendly", "home_workout", "vertical_jump", "conditioning", "anaerobic", "athletic_performance"]
+}

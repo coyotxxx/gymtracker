@@ -1,0 +1,204 @@
+{
+  "id": "cable-one-arm-incline-press-on-exercise-ball",
+  "name": "Cable One-Arm Incline Press on Exercise Ball",
+  "namePl": "Incline press z wyciągu jednorącz na piłce",
+  "aliases": ["one-arm cable incline press on swiss ball", "single-arm cable incline press on stability ball", "unilateral cable incline press on exercise ball"],
+  "aliasesPl": ["wyciskanie skośne z linki jednorącz na piłce gimnastycznej", "jednoręczne wyciskanie skośne z wyciągu na piłce", "single-arm cable incline press na piłce", "wyciskanie skośne z wyciągu na swiss ballu jedną ręką"],
+
+  "description": "Highly demanding unilateral pressing variation that combines an incline torso position over an exercise ball with a cable resistance held in one hand. The reclined back-on-ball setup biases the clavicular (upper) head of the pectoralis major, while cable resistance keeps tension constant from the deep stretch at chest level to the full lockout overhead. Single-arm work and the unstable ball surface force significant anti-rotation and anti-lateral-flexion core engagement, making this an excellent chest-development AND trunk-stability exercise — but a poor choice for absolute strength because total load is capped by stability.",
+  "descriptionPl": "Bardzo wymagający, jednoręczny wariant wyciskania łączący skośną pozycję tułowia na piłce gimnastycznej z oporem z linki wyciągu trzymanej jedną ręką. Plecy oparte o piłkę pod kątem skośnym akcentują głowę obojczykową (górną) mięśnia piersiowego, a opór z linki utrzymuje stałe napięcie od głębokiego rozciągnięcia na poziomie klatki aż do pełnego wyprostu nad głową. Praca jedną ręką i niestabilna powierzchnia piłki wymuszają silne zaangażowanie tułowia przeciw rotacji i bocznemu zginaniu — to świetne ćwiczenie zarówno na rozwój klatki, jak i stabilność core. Słabo nadaje się jednak do treningu siły maksymalnej, bo ciężar limituje stabilność, a nie sama klatka.",
+
+  "instructions": [
+    "Set a low cable pulley below or behind a stable exercise ball. Attach a single D-handle.",
+    "Sit on the ball, then walk feet forward and roll down until upper back and shoulders rest on the ball, hips slightly lower than shoulders (incline torso, ~30-45° from horizontal).",
+    "Grab the handle with one hand at chest level, palm facing forward (pronated or neutral). Free arm rests on the hip or extended for counterbalance.",
+    "Feet wide and flat on floor, knees bent ~90°. Brace the core HARD — anti-rotation is the limiting factor here.",
+    "Inhale, then press the handle up and slightly across the body toward the centerline, finishing with the arm fully extended above the upper chest (elbow soft, not locked).",
+    "At lockout the working pec should be fully contracted; ribcage stays down — do NOT let the working side rotate up off the ball.",
+    "Lower under control back to the start position — handle ends at the side of the chest with elbow at ~45-60° from torso, feel a deep stretch in the clavicular pec.",
+    "Complete all reps on one side before switching. Hold a stable, square torso throughout — if you can't, the weight is too heavy."
+  ],
+  "instructionsPl": [
+    "Ustaw dolną rolkę wyciągu poniżej lub za stabilną piłką gimnastyczną. Załóż pojedynczą rączkę typu D.",
+    "Usiądź na piłce, przejdź stopami do przodu i opuść się, aż górna część pleców i barki znajdą się na piłce. Biodra nieco niżej niż barki (skośna pozycja tułowia, ~30-45° względem podłogi).",
+    "Chwyć rączkę jedną ręką na wysokości klatki, dłoń skierowana do przodu (chwyt pronowany lub neutralny). Wolna ręka oparta na biodrze lub wyciągnięta dla równowagi.",
+    "Stopy szeroko, płasko na podłodze, kolana zgięte ~90°. MOCNO napnij brzuch — to anty-rotacja, a nie klatka, jest tu czynnikiem limitującym.",
+    "Wdech, wyciśnij rączkę w górę i lekko w stronę środka ciała, kończąc z ramieniem w pełnym wyproście nad górną klatką (łokieć lekko miękki, bez sztywnego lock-out).",
+    "Na szczycie pracująca klatka w pełnym skurczu; żebra ściągnięte w dół — NIE pozwól by pracująca strona obracała się w górę z piłki.",
+    "Opuszczaj kontrolowanie do pozycji startowej — rączka kończy obok klatki z łokciem pod kątem ~45-60° od tułowia, poczuj głębokie rozciągnięcie obojczykowej części klatki.",
+    "Zrób wszystkie powtórzenia na jednej stronie, potem zmiana. Tułów pozostaje stabilny i nierotujący przez cały set — jeśli nie dasz rady utrzymać, ciężar jest za duży."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoid", "triceps"],
+    "secondary": ["pectoralis_major_sternal", "serratus_anterior"],
+    "stabilizers": ["core", "obliques", "rotator_cuff", "glutes", "hamstrings", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoid": "P8",
+    "triceps": "P7",
+    "pectoralis_major_sternal": "S5",
+    "serratus_anterior": "S5",
+    "obliques": "T6",
+    "core": "T6",
+    "rotator_cuff": "T4",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle", "exercise_ball"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["incline-dumbbell-bench-press", "single-arm-cable-chest-press", "dead-bug", "swiss-ball-dumbbell-press"],
+    "progression_to": ["single-arm-cable-fly-on-ball", "alternating-cable-incline-press-on-ball"],
+    "alternatives": ["incline-dumbbell-bench-press", "single-arm-cable-chest-press", "low-pulley-cable-chest-press", "incline-cable-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulley behind/below the ball — cable should pull DOWN and BEHIND at start",
+      "Upper back on ball, hips slightly lower (incline torso 30-45°)",
+      "Feet wide for tripod stability, knees ~90°",
+      "Brace core hard BEFORE picking up the handle — anti-rotation primed",
+      "Free arm: on hip or extended sideways for counterbalance"
+    ],
+    "setup_cues_pl": [
+      "Dolna rolka wyciągu za/pod piłką — linka powinna ciągnąć W DÓŁ i DO TYŁU na starcie",
+      "Górna część pleców na piłce, biodra nieco niżej (skośny tułów 30-45°)",
+      "Stopy szeroko dla stabilności trójpunktowej, kolana ~90°",
+      "Mocno napnij brzuch PRZED chwyceniem rączki — anty-rotacja gotowa",
+      "Wolna ręka: na biodrze lub wyciągnięta w bok dla równowagi"
+    ],
+    "execution_cues": [
+      "Press up AND slightly across the body — finish over upper chest, not over the shoulder",
+      "Keep hips level — don't let the working side dip or rise",
+      "Slow eccentric, feel the cable stretch the upper pec at the bottom",
+      "Ribcage DOWN — no rib flaring at lockout",
+      "Don't lock the elbow — keep slight bend, maintain tension"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę I lekko w poprzek ciała — kończ nad górną klatką, nie nad barkiem",
+      "Biodra na jednym poziomie — pracująca strona ani nie opada, ani się nie unosi",
+      "Wolna faza ekscentryczna, poczuj jak linka rozciąga górną klatkę na dole",
+      "Żebra W DÓŁ — bez wypychania żeber na szczycie",
+      "Nie blokuj łokcia — lekkie zgięcie, utrzymaj napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward working side (hip lift, ribcage twist)",
+        "faultPl": "Rotacja tułowia w stronę pracującej ręki (uniesienie biodra, skręt żeber)",
+        "cause": "Weak anti-rotation core, weight too heavy, cheating to complete the rep",
+        "causePl": "Słabe mięśnie anty-rotacyjne tułowia, za ciężki ciężar, oszukiwanie by skończyć powtórzenie",
+        "cue": "Imagine your free shoulder is pinned to the ball. If hip rises, drop the weight 30% — this is a stability exercise first.",
+        "cuePl": "Wyobraź sobie, że wolny bark jest przyklejony do piłki. Jeśli biodro się unosi, zmniejsz ciężar o 30% — to przede wszystkim ćwiczenie stabilizacyjne."
+      },
+      {
+        "fault": "Elbow flared to 90° from torso (chicken wing on incline)",
+        "faultPl": "Łokieć rozsunięty na 90° od tułowia (kurze skrzydełko na skosie)",
+        "cause": "Treating the press like a cable fly; lack of awareness; cable angle pulling elbow back",
+        "causePl": "Traktowanie wyciskania jak rozpiętki na wyciągu; brak świadomości; kąt linki ciągnący łokieć do tyłu",
+        "cue": "Elbow stays at ~45-60° from torso. 'Press with the chest under the armpit', not with the elbow swinging.",
+        "cuePl": "Łokieć pod kątem ~45-60° od tułowia. 'Wyciskaj klatką pod pachą', nie wyrzucaj łokcia do tyłu."
+      },
+      {
+        "fault": "Rolling off the ball during the set (instability)",
+        "faultPl": "Zsuwanie się z piłki podczas serii (niestabilność)",
+        "cause": "Ball too small or too soft, feet too narrow, poor glute/core bracing",
+        "causePl": "Za mała lub za miękka piłka, zbyt wąsko ustawione stopy, słabe napięcie pośladków i brzucha",
+        "cue": "Squeeze glutes hard to keep hips up. Feet WIDE. If you can't stabilize for 8 reps, regress to bench.",
+        "cuePl": "Mocno napnij pośladki by utrzymać biodra w górze. Stopy SZEROKO. Jeśli nie utrzymasz stabilności przez 8 powtórzeń, cofnij się do ławki."
+      },
+      {
+        "fault": "Pressing across centerline too far (handle ends over face/shoulder)",
+        "faultPl": "Zbyt daleki ruch w poprzek ciała (rączka kończy nad twarzą/barkiem)",
+        "cause": "Trying to mimic single-arm DB press path on incline bench, overshooting midline",
+        "causePl": "Próba kopiowania ścieżki single-arm DB press z ławki skośnej, przekraczanie linii środka",
+        "cue": "End the press over the SAME-SIDE upper chest, not over the face. Slight inward arc, not full crossover.",
+        "cuePl": "Zakończ wyciskanie nad górną klatką PO TEJ SAMEJ STRONIE, nie nad twarzą. Lekki łuk do środka, nie pełne przekroczenie."
+      },
+      {
+        "fault": "No deep stretch at the bottom — short ROM",
+        "faultPl": "Brak głębokiego rozciągnięcia na dole — skrócony zakres ruchu",
+        "cause": "Fear of shoulder pain, weight too heavy, not letting handle come fully to chest level",
+        "causePl": "Strach przed bólem barku, za ciężki ciężar, niedociąganie rączki do poziomu klatki",
+        "cue": "Let the handle reach the side of the upper chest. Half the value of cables is the loaded stretch position.",
+        "cuePl": "Pozwól rączce dojść do boku górnej klatki. Połowa wartości ćwiczeń z wyciągów to obciążone rozciągnięcie."
+      }
+    ],
+    "breathing": "Inhale at the top (lockout), brace core, hold during the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze (pełny wyprost), napięty brzuch, trzymaj oddech podczas opuszczania. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM — stop the descent before pain, use neutral grip (palm facing the body) to reduce internal rotation stress.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj opuszczanie przed bólem, użyj chwytu neutralnego (dłoń w stronę ciała) by zmniejszyć stres rotacji wewnętrznej.",
+      "alternative": "single-arm-cable-chest-press"
+    },
+    {
+      "condition": "low_back_pain",
+      "severity": "modify",
+      "modification": "The unstable ball + unilateral load is a heavy demand on the lumbar spine. Switch to an incline bench until pain-free, or reduce weight drastically and focus on technique.",
+      "modificationPl": "Niestabilna piłka + jednostronne obciążenie to duże wymaganie dla odcinka lędźwiowego. Przejdź na ławkę skośną do czasu ustąpienia bólu lub drastycznie zmniejsz ciężar i skup się na technice.",
+      "alternative": "incline-dumbbell-bench-press"
+    },
+    {
+      "condition": "core_instability",
+      "severity": "modify",
+      "modification": "If you can't hold a stable plank, this exercise will compensate through the spine. Build core capacity first (dead bug, Pallof press), then return.",
+      "modificationPl": "Jeśli nie utrzymasz stabilnego planku, to ćwiczenie będzie kompensowane przez kręgosłup. Najpierw zbuduj wytrzymałość core (dead bug, Pallof press), potem wróć.",
+      "alternative": "single-arm-cable-chest-press"
+    },
+    {
+      "condition": "balance_issues",
+      "severity": "avoid",
+      "modification": "Risk of falling off the ball with cable resistance pulling laterally is high. Use a flat or incline bench instead.",
+      "modificationPl": "Ryzyko zsunięcia z piłki przy linkach ciągnących na boki jest duże. Użyj ławki płaskiej lub skośnej zamiast piłki.",
+      "alternative": "incline-dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per side (hypertrophy + stability, default) | 3x8-10 (strength-stability focus) | 2-3x12-15 (endurance + control)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-one-arm-incline-press-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-incline-press-on-exercise-ball/frame_0_start.png",
+      "frames/cable-one-arm-incline-press-on-exercise-ball/frame_1_early.png",
+      "frames/cable-one-arm-incline-press-on-exercise-ball/frame_2_mid.png",
+      "frames/cable-one-arm-incline-press-on-exercise-ball/frame_3_late.png",
+      "frames/cable-one-arm-incline-press-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-one-arm-incline-press-on-exercise-ball",
+    "yuhonas_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): plecy i górne barki oparte o piłkę, tułów w skośnej pozycji ~30-45°, prawa ręka trzyma rączkę cable na poziomie klatki z łokciem zgiętym ~90°, dłoń pronowana, linka biegnie do dolnej rolki za plecami. Frame 2 (góra/lockout): pełne wyciśnięcie ręki nad górną klatką, ramię niemal pionowe, linka rozciągnięta — klasyczny low-to-high incline press path. Frame 4: powrót do dołu, kontrolowane opuszczanie. Podświetlone mięśnie: pec major (z naciskiem na obojczykową/górną część — zgodnie z kątem skośnym), triceps na pracującym ramieniu — anatomicznie spójne dla incline press. Piłka gimnastyczna pod miednicą/górnymi plecami widoczna w każdej klatce. Stopy szeroko na podłodze, druga ręka swobodna. Wymagana wysoka stabilność tułowia (anti-rotacja + anti-lateral-flexion) — stąd intermediate level i 7/10 difficulty. PL nazwa skonsultowana z polską terminologią ('Incline press z wyciągu jednorącz na piłce'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "upper_chest", "cable", "unilateral", "stability_ball", "core_stability", "anti_rotation", "shoulder_friendly_option"]
+}

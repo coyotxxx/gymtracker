@@ -1,0 +1,204 @@
+{
+  "id": "barbell-seated-bradford-rocky-press",
+  "name": "Barbell Seated Bradford / Rocky Press",
+  "namePl": "Bradford / Rocky press ze sztangą w siadzie",
+  "aliases": ["seated bradford press", "rocky press", "bradford press seated", "alternating front-back press"],
+  "aliasesPl": ["Bradford press w siadzie", "Rocky press w siadzie", "naprzemienne wyciskanie przód-tył", "bradford rocky press"],
+
+  "description": "Hybrid shoulder press combining front military press and behind-the-neck press. Performed seated on a vertical bench. Pattern: barbell starts at front rack (clavicles), pressed UP just past forehead (no full lockout), lowered BEHIND the head to base of neck, pressed UP again, lowered to FRONT rack — that's 1 rep (2 presses). Continuous tension on deltoids (no lockout = no rest at top). Named after Olympic lifter Jim Bradford. Builds 3D shoulder mass through both front and behind-neck pressing planes.",
+  "descriptionPl": "Hybrydowe wyciskanie barków łączące military press z przodu i wyciskanie zza karku. Wykonywane w siadzie na ławce pionowej. Schemat: sztanga startuje na froncie (przy obojczykach), wyciskasz W GÓRĘ tuż za czoło (bez pełnego lock-out), opuszczasz ZA GŁOWĘ na podstawę karku, wyciskasz W GÓRĘ ponownie, opuszczasz na FRONT — to jest 1 powtórzenie (2 wyciśnięcia). Stałe napięcie na aktonach (brak lock-out = brak odpoczynku na górze). Nazwany od ciężarowca olimpijskiego Jima Bradforda. Buduje trójwymiarową masę barków przez płaszczyzny przód i zza karku.",
+
+  "instructions": [
+    "Set up a vertical bench inside a power rack with the barbell at upper-chest height. Grip slightly wider than shoulder-width.",
+    "Sit firmly against the back pad, feet flat on floor, brace core and engage glutes against the seat.",
+    "Unrack the bar to front rack position (on clavicles / front delts), elbows just below the bar, wrists straight.",
+    "PRESS 1 (front-to-back): Press the bar straight up just past your forehead (do NOT lock out fully). Move head SLIGHTLY forward as bar passes nose. Lower the bar BEHIND your head to the base of the neck (light touch — no slamming).",
+    "PRESS 2 (back-to-front): Press the bar straight up from behind the head, just past the crown. Move head SLIGHTLY back as bar clears. Lower bar to FRONT rack position (clavicles).",
+    "That completes 1 full repetition. Continue alternating front → back → front → back.",
+    "Keep elbows tracking under the bar throughout. Bar path is almost vertical with minimal head movement.",
+    "Do NOT lock out elbows at the top — keep continuous tension on the deltoids.",
+    "Breathe: inhale at the rack position (front or back), exhale through the press. Brace throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę pionową wewnątrz stojaka z gryfem na wysokości górnej klatki. Chwyt nieco szerzej niż na szerokość barków.",
+    "Usiądź solidnie do oparcia, stopy płasko na podłodze, napnij brzuch i ściśnij pośladki do siedziska.",
+    "Wyciągnij gryf na pozycję front rack (na obojczykach / przednich aktonach), łokcie tuż pod gryfem, nadgarstki proste.",
+    "WYCIŚNIĘCIE 1 (przód-tył): Wyciśnij gryf prosto w górę tuż za czoło (NIE blokuj łokci na końcu). Lekko przesuń głowę DO PRZODU gdy gryf mija nos. Opuść gryf ZA GŁOWĘ na podstawę karku (lekkie dotknięcie — bez uderzania).",
+    "WYCIŚNIĘCIE 2 (tył-przód): Wyciśnij gryf prosto w górę zza głowy, tuż za czubek czaszki. Lekko przesuń głowę DO TYŁU gdy gryf przechodzi. Opuść gryf na FRONT (obojczyki).",
+    "To kończy 1 pełne powtórzenie. Kontynuuj naprzemiennie przód → tył → przód → tył.",
+    "Łokcie utrzymuj pod gryfem przez cały ruch. Ścieżka gryfu jest prawie pionowa z minimalnym ruchem głowy.",
+    "NIE blokuj łokci na górze — utrzymuj stałe napięcie na aktonach.",
+    "Oddech: wdech w pozycji rack (przód lub tył), wydech przez wyciskanie. Napięcie przez cały czas."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "posterior_deltoids", "upper_trapezius"],
+    "secondary": ["triceps", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "rectus_abdominis", "obliques", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P9",
+    "posterior_deltoids": "P7",
+    "upper_trapezius": "P7",
+    "triceps": "S6",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "S6",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["barbell", "vertical_bench_or_power_rack"],
+    "optional": ["belt", "wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["seated-barbell-overhead-press", "barbell-overhead-press", "behind-the-neck-press"],
+    "progression_to": ["standing-bradford-press", "behind-the-neck-push-press", "snatch-grip-bradford-press"],
+    "alternatives": ["seated-barbell-overhead-press", "behind-the-neck-press", "dumbbell-arnold-press", "dumbbell-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit firmly into the back pad — full contact",
+      "Grip slightly wider than shoulders",
+      "Wrists straight, bar in palm heel",
+      "Elbows just below the bar at front rack",
+      "Brace core, glutes glued to seat"
+    ],
+    "setup_cues_pl": [
+      "Usiądź solidnie do oparcia — pełen kontakt",
+      "Chwyt nieco szerszy niż barki",
+      "Nadgarstki proste, gryf w podstawie dłoni",
+      "Łokcie tuż pod gryfem na froncie",
+      "Napnij brzuch, pośladki przyklejone do siedziska"
+    ],
+    "execution_cues": [
+      "NO lockout — bar travels just past forehead/crown",
+      "Head SLIGHTLY forward when bar goes back, SLIGHTLY back when bar comes front",
+      "Light touch at base of neck — never bounce or slam",
+      "Continuous tension — deltoids never rest",
+      "1 rep = 2 presses (front-to-back AND back-to-front)"
+    ],
+    "execution_cues_pl": [
+      "BEZ lock-out — gryf przechodzi tuż za czoło/czubek głowy",
+      "Głowa LEKKO do przodu gdy gryf idzie za tył, LEKKO do tyłu gdy gryf wraca na front",
+      "Lekkie dotknięcie u podstawy karku — nigdy nie odbijaj ani nie uderzaj",
+      "Stałe napięcie — akton nie odpoczywa",
+      "1 powtórzenie = 2 wyciśnięcia (przód-tył ORAZ tył-przód)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Slamming bar onto base of neck (no control behind head)",
+        "faultPl": "Uderzanie gryfem o podstawę karku (brak kontroli za głową)",
+        "cause": "Going too heavy, dropping the bar instead of lowering with control",
+        "causePl": "Zbyt duży ciężar, opuszczanie gryfu zamiast kontrolowanego ruchu",
+        "cue": "Light touch ONLY. If you can't control descent behind head — drop weight 30%.",
+        "cuePl": "TYLKO lekkie dotknięcie. Jeśli nie kontrolujesz opuszczania za głowę — zmniejsz ciężar o 30%."
+      },
+      {
+        "fault": "Locking out elbows at top (defeats the purpose)",
+        "faultPl": "Blokowanie łokci na górze (zabija sens ćwiczenia)",
+        "cause": "Habit from overhead press, not understanding Bradford-specific cue",
+        "causePl": "Nawyk z OHP, niezrozumienie specyfiki Bradford press",
+        "cue": "Bar travels JUST PAST head — never to full lockout. Continuous tension is the whole point.",
+        "cuePl": "Gryf przechodzi TUŻ ZA głowę — nigdy do pełnego lock-out. Stałe napięcie to cała idea tego ćwiczenia."
+      },
+      {
+        "fault": "Excessive head movement (whipping head forward/back)",
+        "faultPl": "Nadmierny ruch głowy (uderzanie głową przód-tył)",
+        "cause": "Trying to give bar more clearance instead of pressing vertically",
+        "causePl": "Próba dania gryfowi więcej miejsca zamiast pionowego wyciskania",
+        "cue": "Minimal head movement — bar passes CLOSE to forehead/crown. Move head only 2-3 cm.",
+        "cuePl": "Minimalny ruch głowy — gryf przechodzi BLISKO czoła/czubka czaszki. Ruch głowy tylko 2-3 cm."
+      },
+      {
+        "fault": "Going too deep behind head (bar below C7 vertebra)",
+        "faultPl": "Zbyt głębokie schodzenie za głowę (gryf poniżej kręgu C7)",
+        "cause": "Poor thoracic mobility forcing shoulder rotation past safe range",
+        "causePl": "Słaba mobilność piersiowa wymuszająca rotację barku poza bezpieczny zakres",
+        "cue": "Stop at BASE of neck (C7). Below = dangerous shoulder external rotation. Work mobility separately.",
+        "cuePl": "Zatrzymaj na PODSTAWIE karku (C7). Niżej = niebezpieczna zewnętrzna rotacja barku. Pracuj nad mobilnością osobno."
+      },
+      {
+        "fault": "Forgetting rep counting (which direction = 1 rep?)",
+        "faultPl": "Mylenie liczenia powtórzeń (który kierunek = 1 rep?)",
+        "cause": "Bradford specifics — 2 presses per rep, easy to lose count",
+        "causePl": "Specyfika Bradforda — 2 wyciśnięcia na rep, łatwo się pogubić",
+        "cue": "1 rep = bar starts AND ends at front rack. Front-back-front = 1. Count out loud if needed.",
+        "cuePl": "1 rep = gryf zaczyna I kończy na froncie. Przód-tył-przód = 1. Licz na głos jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale at front rack, exhale through press to back. Inhale at back position, exhale through press to front. Maintain brace throughout — the seated position reduces lower-back risk but core engagement is still mandatory.",
+    "breathingPl": "Wdech na froncie, wydech przez wyciskanie do tyłu. Wdech z tyłu, wydech przez wyciskanie na front. Utrzymuj napięcie przez cały czas — pozycja siedząca zmniejsza ryzyko lędźwiowe ale napięcie brzucha jest obowiązkowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Behind-the-neck portion is HIGHLY contraindicated for impingement — switch to standard front-only seated OHP.",
+      "modificationPl": "Część zza karku jest SILNIE przeciwwskazana przy impingement — przejdź na standardowy seated OHP tylko z przodu.",
+      "alternative": "seated-barbell-overhead-press"
+    },
+    {
+      "condition": "limited_shoulder_external_rotation",
+      "severity": "avoid",
+      "modification": "Cannot safely reach behind-neck position without ER mobility. Build mobility first with dislocates and behind-neck pulls (light).",
+      "modificationPl": "Bez mobilności rotacji zewnętrznej nie można bezpiecznie schodzić za głowę. Najpierw buduj mobilność dislocates i lekkimi pull-ami zza karku.",
+      "alternative": "dumbbell-arnold-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Behind-the-neck pressing places maximum stress on rotator cuff. Avoid entirely until cleared by PT.",
+      "modificationPl": "Wyciskanie zza karku obciąża rotatory maksymalnie. Unikaj całkowicie do zgody fizjoterapeuty.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "modify",
+      "modification": "The forward head movement may aggravate neck issues. Reduce ROM, keep bar higher behind head, or switch to front-only press.",
+      "modificationPl": "Ruch głowy do przodu może nasilać problemy szyjne. Zmniejsz ROM, trzymaj gryf wyżej za głową, lub przejdź na wyciskanie tylko z przodu.",
+      "alternative": "seated-barbell-overhead-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength-hypertrophy) | 3x10-15 (volume/finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-seated-bradford-rocky-press.gif",
+    "frames_extracted": [
+      "frames/barbell-seated-bradford-rocky-press/frame_0_start.png",
+      "frames/barbell-seated-bradford-rocky-press/frame_1_early.png",
+      "frames/barbell-seated-bradford-rocky-press/frame_2_mid.png",
+      "frames/barbell-seated-bradford-rocky-press/frame_3_late.png",
+      "frames/barbell-seated-bradford-rocky-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-seated-bradford-rocky-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa za karkiem (gryf u podstawy szyi, łokcie szeroko, akton tylny + górny czworoboczny podświetlone). Frame 1-2: pełne wyciskanie nad głowę (akton boczny + tylny + górny czworoboczny aktywne). Frame 3: opuszczanie na front (gryf przy obojczykach, akton przedni + boczny podświetlone). Frame 4: powrót do za-karku — potwierdza naprzemienność. Klasyczny Bradford / Rocky press w siadzie. Wyraźna sygnatura ćwiczenia: pozycja siedząca na ławce pionowej, gryf przechodzi przed i za głową, dwa wyciśnięcia na 1 rep. Trójgłowy akton + górny czworoboczny jako primary (oba widoczne na podświetleniach klatek). PL nazwa zachowuje 'Bradford / Rocky' jako rozpoznawalne (eponim).",
+
+  "tags": ["shoulders", "delts", "compound", "bilateral", "seated", "bradford", "rocky_press", "continuous_tension", "advanced", "barbell", "behind_the_neck", "olympic_style"]
+}

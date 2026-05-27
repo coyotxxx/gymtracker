@@ -1,0 +1,202 @@
+{
+  "id": "band-shoulder-press",
+  "name": "Band Shoulder Press (Standing OHP)",
+  "namePl": "Wyciskanie nad głowę z gumą (band OHP)",
+  "aliases": ["band overhead press", "band OHP", "resistance band shoulder press", "standing band military press"],
+  "aliasesPl": ["band OHP", "wyciskanie barków z gumą", "OHP z gumą oporową", "military press z gumą", "wyciskanie nad głowę z taśmą"],
+
+  "description": "Bilateral vertical pressing performed standing with a resistance band anchored under both feet. Hands grip the band handles at shoulder level (front rack position), then press straight up to full overhead lockout. Band tension increases through the range (accommodating resistance) — easier off the chest, hardest at lockout. Great home / travel substitute for barbell OHP; lower joint load, stronger lockout demand on triceps.",
+  "descriptionPl": "Dwustronne pionowe wyciskanie wykonywane stojąc na gumie oporowej zakotwiczonej pod stopami. Dłonie trzymają uchwyty gumy na wysokości barków (pozycja front rack), wyciskasz prosto w górę do pełnego lock-out nad głową. Opór gumy rośnie w trakcie zakresu (accommodating resistance) — lżej z dołu, najciężej w lock-out. Świetny domowy / podróżny zamiennik OHP ze sztangą; mniejsze obciążenie stawów, mocniejszy nacisk na tricepsy w lock-out.",
+
+  "instructions": [
+    "Place the middle of a resistance band under both feet, hip-width to shoulder-width apart. Stand tall.",
+    "Grip a handle in each hand, palms facing forward, hands at shoulder level (front rack position). Elbows just below wrists.",
+    "Brace core, squeeze glutes, ribs down. Eyes forward.",
+    "Press both hands straight up overhead simultaneously, exhaling on the way up.",
+    "Finish with arms fully locked out, biceps near ears, hands directly over mid-foot when viewed from side.",
+    "Lower with control back to shoulder level (front rack). Resist the band — don't let it pull you down fast.",
+    "Keep the press path STRAIGHT — band tension naturally pulls back, so push slightly forward to keep stack over shoulders.",
+    "Maintain locked hips and knees throughout — no leg drive (strict press)."
+  ],
+  "instructionsPl": [
+    "Ułóż środek gumy oporowej pod oboma stopami, na szerokość bioder do barków. Stań prosto.",
+    "Chwyć uchwyt w każdą dłoń, dłonie skierowane do przodu, ręce na wysokości barków (pozycja front rack). Łokcie tuż pod nadgarstkami.",
+    "Napnij brzuch, ściśnij pośladki, żebra w dół. Wzrok do przodu.",
+    "Wyciśnij obie ręce prosto w górę nad głowę jednocześnie, wydech w trakcie wyciskania.",
+    "Zakończ pełnym lock-out ramion, bicepsy przy uszach, dłonie bezpośrednio nad środkiem stóp z boku.",
+    "Opuszczaj kontrolowanym ruchem do wysokości barków (front rack). Stawiaj opór gumie — nie pozwól jej szybko pociągnąć w dół.",
+    "Utrzymuj PROSTY tor wyciskania — guma naturalnie ciągnie do tyłu, więc lekko pchaj do przodu by stack był nad barkami.",
+    "Zablokowane biodra i kolana przez całą serię — bez napędu nóg (strict press)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids"],
+    "secondary": ["triceps", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "upper_chest", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P7",
+    "triceps": "S7",
+    "trapezius": "S5",
+    "serratus_anterior": "S5",
+    "upper_chest": "S4",
+    "core": "S6",
+    "glutes": "S4"
+  },
+
+  "equipment": {
+    "required": ["resistance_band_with_handles"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["band-front-raise", "band-lateral-raise"],
+    "progression_to": ["dumbbell-shoulder-press", "barbell-overhead-press", "single-arm-band-overhead-press"],
+    "alternatives": ["dumbbell-standing-overhead-press", "barbell-overhead-press", "machine-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Band centered under both feet — stable base",
+      "Handles at shoulder level, palms forward",
+      "Wrists STRAIGHT (not bent back)",
+      "Brace core, squeeze glutes, ribs down",
+      "Eyes forward, not down"
+    ],
+    "setup_cues_pl": [
+      "Guma na środku pod oboma stopami — stabilna podstawa",
+      "Uchwyty na wysokości barków, dłonie do przodu",
+      "Nadgarstki PROSTE (nie wygięte do tyłu)",
+      "Napnij brzuch, ściśnij pośladki, żebra w dół",
+      "Wzrok do przodu, nie w dół"
+    ],
+    "execution_cues": [
+      "Press straight up — band wants to pull back, push slightly forward",
+      "Both arms simultaneously — symmetric press",
+      "Finish biceps by ears, full lockout (hardest part of band ROM)",
+      "Control the eccentric — resist the band's pull down",
+      "No leg drive — glutes and quads stay locked"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę — guma ciągnie do tyłu, lekko pchaj do przodu",
+      "Obie ręce jednocześnie — symetryczne wyciskanie",
+      "Zakończ bicepsami przy uszach, pełen lock-out (najcięższa część zakresu z gumą)",
+      "Kontroluj fazę negatywną — stawiaj opór ciągnięciu gumy w dół",
+      "Bez napędu nóg — pośladki i czworogłowe zablokowane"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning back excessively (lumbar hyperextension)",
+        "faultPl": "Nadmierne odchylanie do tyłu (przeprost lędźwiowy)",
+        "cause": "Band pulling backward, weak core, ribs flaring up",
+        "causePl": "Guma ciągnie do tyłu, słaby brzuch, żebra wypchnięte w górę",
+        "cue": "Squeeze glutes harder. Ribs DOWN. Brace 360° around the spine.",
+        "cuePl": "Mocniej ściśnij pośladki. Żebra W DÓŁ. Napięcie 360° wokół kręgosłupa."
+      },
+      {
+        "fault": "Pressing forward instead of straight up",
+        "faultPl": "Wyciskanie do przodu zamiast prosto w górę",
+        "cause": "Band tension pulls hands forward; lifter follows the line of least resistance",
+        "causePl": "Naciąg gumy ciągnie ręce do przodu; ćwiczący idzie po linii najmniejszego oporu",
+        "cue": "Drive hands STRAIGHT UP toward ceiling. Imagine pressing through a narrow window above your head.",
+        "cuePl": "Pchaj ręce PROSTO W GÓRĘ do sufitu. Wyobraź sobie wyciskanie przez wąskie okno nad głową."
+      },
+      {
+        "fault": "Band slipping out from under feet",
+        "faultPl": "Guma wyślizguje się spod stóp",
+        "cause": "Foot placement too narrow or off-center, band positioned under the arch instead of mid-foot",
+        "causePl": "Stopy za blisko lub niesymetrycznie, guma pod łukiem stopy zamiast pod środkiem",
+        "cue": "Center the band under MID-FOOT. Feet shoulder-width. Press the floor down through your heels.",
+        "cuePl": "Środek gumy pod ŚRODKIEM STOPY. Stopy na szerokość barków. Wciskaj podłogę piętami."
+      },
+      {
+        "fault": "Asymmetric press (one hand lags)",
+        "faultPl": "Niesymetryczne wyciskanie (jedna ręka odstaje)",
+        "cause": "Strength imbalance left/right, uneven band length, rushed tempo",
+        "causePl": "Różnica siły lewa/prawa, nierówna długość gumy po obu stronach, zbyt szybkie tempo",
+        "cue": "Match wrists at every height. Slow down. If imbalance persists — single-arm band press first.",
+        "cuePl": "Wyrównaj nadgarstki na każdej wysokości. Zwolnij. Jeśli dysbalans pozostaje — najpierw band press jedną ręką."
+      },
+      {
+        "fault": "Incomplete lockout (biceps not by ears)",
+        "faultPl": "Niepełen lock-out (bicepsy nie przy uszach)",
+        "cause": "Band tension hardest at top — lifter gives up before full lockout, weak triceps, poor overhead mobility",
+        "causePl": "Opór gumy największy na górze — ćwiczący odpuszcza przed lock-out, słabe tricepsy, słaba mobilność overhead",
+        "cue": "Drive ALL the way up — band loves to stop you short. Triceps fully extended. Use lighter band if needed.",
+        "cuePl": "Dociśnij DO KOŃCA — guma uwielbia zatrzymywać przed lock-out. Tricepsy pełna ekstensja. Lżejsza guma jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale and brace at the front rack (start). Exhale during the press up. Optional: hold breath through the hardest portion (just past forehead) for extra stability, exhale at lockout.",
+    "breathingPl": "Wdech i napięcie w pozycji front rack (start). Wydech podczas wyciskania w górę. Opcjonalnie: zatrzymaj oddech w najcięższej fazie (tuż za czołem) dla dodatkowej stabilizacji, wydech w lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't go below clavicle level) and use a lighter band. Switch to landmine press if pain persists.",
+      "modificationPl": "Zmniejsz ROM (nie schodź poniżej obojczyka) i użyj lżejszej gumy. Przejdź na landmine press jeśli ból się utrzymuje.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Press only to the height where you can keep ribs down and back neutral. Work thoracic/shoulder mobility separately.",
+      "modificationPl": "Wyciskaj tylko do wysokości na której utrzymasz żebra w dół i plecy neutralnie. Pracuj nad mobilnością piersiową/barku osobno.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to seated band shoulder press (back supported against wall or bench) until pain resolves.",
+      "modificationPl": "Przejdź na seated band shoulder press (oparte plecy o ścianę lub ławkę) do ustąpienia bólu.",
+      "alternative": "seated-band-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid overhead pressing until cleared by PT. Resume with light band lateral raises and external rotations first.",
+      "modificationPl": "Unikaj wyciskania overhead do zgody fizjoterapeuty. Wróć przez lekkie band lateral raises i rotacje zewnętrzne.",
+      "alternative": "band-external-rotation"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (hypertrophy) | 4x8-12 (strength endurance) | 2-3x20+ (high rep / pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "band-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/band-shoulder-press/frame_0_start.png",
+      "frames/band-shoulder-press/frame_1_early.png",
+      "frames/band-shoulder-press/frame_2_mid.png",
+      "frames/band-shoulder-press/frame_3_late.png",
+      "frames/band-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/band-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Frame 0 (start): pozycja stojąca, guma pod oboma stopami, oba uchwyty w dłoniach na wysokości barków (front rack), dłonie skierowane do przodu. Frame 2 (mid): pełen lock-out nad głową, bicepsy przy uszach, ramiona wyprostowane, guma rozciągnięta. Frame 4 (end): powrót do front rack pozycji startowej. Klasyczne dwustronne band OHP / standing shoulder press. Przednie + boczne delty + tricepsy podświetlone w GIFie. Strict press (bez napędu nóg). PL nazwa zgodna z user spec: 'Wyciskanie nad głowę z gumą (band OHP)'.",
+
+  "tags": ["band", "resistance_band", "home_workout", "travel", "shoulders", "vertical_push", "upper_body", "bilateral", "compound", "beginner_friendly", "low_impact"]
+}

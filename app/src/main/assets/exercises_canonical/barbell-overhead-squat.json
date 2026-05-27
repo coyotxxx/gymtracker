@@ -1,0 +1,211 @@
+{
+  "id": "barbell-overhead-squat",
+  "name": "Barbell Overhead Squat",
+  "namePl": "Przysiad ze sztangą nad głową",
+  "aliases": ["overhead squat", "OHS", "snatch squat", "snatch-grip overhead squat"],
+  "aliasesPl": ["overhead squat", "OHS", "przysiad nad głową", "przysiad rwaniowy", "przysiad ze sztangą trzymaną nad głową"],
+
+  "description": "The most demanding squat variant in strength training. A full-depth squat performed with the barbell held locked out overhead in a wide snatch grip, with the arms fully extended and the bar directly over the mid-foot. Acts as the receiving position of the snatch in olympic weightlifting and is widely used as a diagnostic tool for total-body mobility, stability and posture. Requires simultaneous mobility of ankles, hips, thoracic spine, shoulders and wrists, plus exceptional overhead stability from the deltoids, trapezius and entire core. Loads are typically a small fraction (30-50%) of one's back squat 1RM because the limiting factor is overhead stability, not leg strength.",
+  "descriptionPl": "Najbardziej wymagający wariant przysiadu w treningu siłowym. Przysiad do pełnej głębokości wykonywany ze sztangą trzymaną w pełnym wyproście rąk nad głową, szerokim chwytem rwaniowym (snatch grip), z gryfem dokładnie nad środkiem stopy. Stanowi pozycję końcową rwania (snatch) w dwuboju olimpijskim i jest szeroko stosowany jako test diagnostyczny mobilności, stabilności i postawy całego ciała. Wymaga jednoczesnej mobilności stawów skokowych, bioder, kręgosłupa piersiowego, barków i nadgarstków, oraz wyjątkowej stabilności overhead ze strony aktonów barków, czworobocznych i całego core. Obciążenia to zwykle niewielki ułamek (30-50%) 1RM back squata, ponieważ czynnikiem limitującym jest stabilność nad głową, nie siła nóg.",
+
+  "instructions": [
+    "Establish your snatch grip width: hold the bar with hands wide enough that, when the bar is overhead, the bar sits directly above your mid-foot with arms locked. A common reference is the 'snatch hook' — bar in the hip crease when standing.",
+    "Get the bar into the overhead position. From a rack: clean the bar then press/jerk it overhead; from the floor: use a snatch or muscle snatch. Beginners should start with an empty bar or PVC pipe.",
+    "Lock the elbows hard. Push the bar UP into the ceiling, retract the shoulder blades down and back, and 'show the armpits' to the wall in front of you. The bar must sit directly over the mid-foot.",
+    "Set your feet shoulder-width with toes turned out slightly more than a back squat (15-30°) to allow the hips to open without tipping the torso forward.",
+    "Brace the core 360°. Inhale deeply and hold (Valsalva). Lock the lats to create an anti-shrug — pull the bar down INTO the trapezius shelf while still pressing up.",
+    "Descend by breaking at the knees and hips simultaneously. Sit straight down between the feet. Keep the torso as vertical as humanly possible — any forward lean drops the bar in front of the line of force.",
+    "Continue down to full ATG depth (hip crease below knee) while keeping the bar exactly over the mid-foot. The arms must stay locked and the bar must not drift forward or backward.",
+    "Drive up by pushing the floor away with the whole foot, leading with the chest and the bar. Keep aggressively pressing the bar UP into the ceiling the entire ascent.",
+    "Stand fully upright with hips and knees locked. The bar stays locked out overhead. Reset your breath and bracing before the next rep. To finish the set, lower the bar back to a rack (jerk down) or dump forward in front of you onto a platform with bumpers."
+  ],
+  "instructionsPl": [
+    "Ustal szerokość chwytu rwaniowego: chwyć gryf na tyle szeroko, by gdy sztanga jest nad głową z wyprostowanymi rękami spoczywała dokładnie nad środkiem stopy. Częsty test: 'snatch hook' — gryf wpada w zgięcie biodra w pozycji stojącej.",
+    "Wyciągnij sztangę nad głowę. Ze stojaka: zarzuć sztangę na klatkę i wypchnij/podrzuć nad głowę; z podłogi: użyj rwania lub muscle snatch. Początkujący powinni zaczynać od pustego gryfu lub kija PCV.",
+    "Mocno zablokuj łokcie. Wciskaj sztangę W GÓRĘ do sufitu, ściągnij łopatki w dół i do tyłu, 'pokaż pachy' ścianie naprzeciwko. Gryf musi być dokładnie nad środkiem stopy.",
+    "Ustaw stopy na szerokość barków, palce odwrócone na zewnątrz nieco bardziej niż w back squat (15-30°), by biodra mogły się otworzyć bez przechylania tułowia do przodu.",
+    "Napnij brzuch 360°. Nabierz głęboki oddech i wstrzymaj (Valsalva). Zablokuj najszersze (lats) tworząc anti-shrug — ciągnij sztangę W DÓŁ w półkę czworobocznego, jednocześnie napierając w górę.",
+    "Schodź zginając jednocześnie kolana i biodra. Siadaj prosto w dół między stopy. Utrzymuj tułów możliwie pionowo — każde pochylenie do przodu wyrzuca gryf poza linię siły.",
+    "Schodź do pełnej głębokości ATG (linia bioder poniżej kolan), utrzymując gryf dokładnie nad środkiem stopy. Ręce muszą pozostać zablokowane, gryf nie może odjeżdżać do przodu ani do tyłu.",
+    "Wypchnij się w górę odpychając podłogę całą stopą, prowadząc klatką i gryfem. Agresywnie wciskaj sztangę W GÓRĘ do sufitu przez całe wstawanie.",
+    "Wstań w pełnym wyproście bioder i kolan. Gryf pozostaje zablokowany nad głową. Zresetuj oddech i napięcie przed kolejnym powtórzeniem. Na koniec serii: opuść sztangę do stojaka (jerk down) lub zrzuć do przodu na platformę z bumperami."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "core", "deltoids"],
+    "secondary": ["upper_back", "upper_traps", "erector_spinae", "triceps"],
+    "stabilizers": ["lats", "rotator_cuff", "rectus_abdominis", "obliques", "adductors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "core": "P10",
+    "deltoids": "P9",
+    "upper_back": "S8",
+    "upper_traps": "S8",
+    "erector_spinae": "S7",
+    "triceps": "S7",
+    "lats": "S7",
+    "rotator_cuff": "S6",
+    "rectus_abdominis": "S7",
+    "obliques": "S6",
+    "adductors": "S6",
+    "forearms": "S5",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["squat_rack", "lifting_shoes", "wrist_wraps", "knee_sleeves", "belt", "bumper_plates", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["bodyweight-squat", "barbell-back-squat", "barbell-front-squat", "barbell-overhead-press", "snatch-grip-press"],
+    "progression_to": ["snatch-balance", "drop-snatch", "full-snatch", "pause-overhead-squat", "tempo-overhead-squat"],
+    "alternatives": ["barbell-front-squat", "snatch-grip-press", "zercher-squat", "goblet-squat", "pvc-overhead-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Snatch grip — bar over mid-foot when overhead",
+      "Elbows locked, armpits to the wall in front",
+      "Lats engaged — pull the bar INTO the traps while pressing up",
+      "Feet shoulder-width, toes out 15-30°",
+      "Big breath, 360° brace, lock the cylinder"
+    ],
+    "setup_cues_pl": [
+      "Chwyt rwaniowy — gryf nad środkiem stopy w wyproście",
+      "Łokcie zablokowane, pachy do ściany naprzeciwko",
+      "Najszersze (lats) aktywne — ciągnij gryf W czworoboczny, jednocześnie napierając w górę",
+      "Stopy szerokość barków, palce na zewnątrz 15-30°",
+      "Głęboki wdech, napięcie 360°, zablokuj cylinder"
+    ],
+    "execution_cues": [
+      "Press the bar UP through the entire rep — never relax the lockout",
+      "Sit straight down between your feet, torso vertical",
+      "Knees forward and out — track over the toes",
+      "Bar stays over the mid-foot — if it drifts you lose the rep",
+      "Stand up TALL with the bar — drive the floor away, finish locked out"
+    ],
+    "execution_cues_pl": [
+      "Napieraj sztangę W GÓRĘ przez całe powtórzenie — nigdy nie luzuj wyprostu",
+      "Siadaj prosto w dół między stopami, tułów pionowo",
+      "Kolana do przodu i na zewnątrz — śledzą linię palców",
+      "Gryf zostaje nad środkiem stopy — jeśli odjedzie tracisz powtórzenie",
+      "Wstań WYSOKO ze sztangą — odepchnij podłogę, zakończ w pełnym wyproście"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar drifts forward / chest collapses",
+        "faultPl": "Gryf odjeżdża do przodu / klatka zapada się",
+        "cause": "Insufficient thoracic spine extension, weak overhead stability, or excessive forward torso lean — usually a combination",
+        "causePl": "Niewystarczający wyprost kręgosłupa piersiowego, słaba stabilność overhead, lub nadmierne pochylenie tułowia — zwykle kombinacja",
+        "cue": "Aggressively press the bar UP and BACK into your earline. If you can't keep the bar over the mid-foot, dump it now and reduce the load.",
+        "cuePl": "Agresywnie napieraj sztangę W GÓRĘ i DO TYŁU do linii uszu. Jeśli nie utrzymasz gryfu nad środkiem stopy, zrzuć ją teraz i zmniejsz obciążenie."
+      },
+      {
+        "fault": "Elbows soften / press is lost",
+        "faultPl": "Łokcie zginają się / wyprost rąk znika",
+        "cause": "Triceps and shoulder fatigue, insufficient lockout strength, or distraction at depth",
+        "causePl": "Zmęczenie tricepsów i barków, niewystarczająca siła w wyproście, lub utrata koncentracji na dole",
+        "cue": "Lock the elbows so hard your triceps cramp. The bar must look welded to the sky on every inch of every rep.",
+        "cuePl": "Zablokuj łokcie tak mocno aż tricepsy zaczną drgać. Gryf musi wyglądać jakby był przyspawany do nieba w każdym centymetrze każdego powtórzenia."
+      },
+      {
+        "fault": "Heels rise off the floor",
+        "faultPl": "Pięty odrywają się od podłogi",
+        "cause": "Limited ankle dorsiflexion (often the biggest limiter for OHS)",
+        "causePl": "Ograniczona mobilność stawu skokowego w zgięciu grzbietowym (często największe ograniczenie w OHS)",
+        "cue": "Wear lifting shoes with an elevated heel. Work on ankle mobility daily. Keep all 4 corners of the foot welded to the floor.",
+        "cuePl": "Załóż buty z podniesionym obcasem (lifting shoes). Pracuj nad mobilnością kostek codziennie. Trzymaj wszystkie 4 kąty stopy przyklejone do podłogi."
+      },
+      {
+        "fault": "Butt wink / lumbar flexion at depth",
+        "faultPl": "Butt wink / zgięcie kręgosłupa lędźwiowego na dole",
+        "cause": "Limited hip mobility (specifically internal rotation and flexion), or going below your individual squat depth",
+        "causePl": "Ograniczona mobilność bioder (szczególnie rotacja wewnętrzna i zgięcie), lub schodzenie poniżej indywidualnego zakresu",
+        "cue": "Stop just above the depth where the pelvis tucks. Open the feet a bit wider with more toe-out. Work on hip mobility outside the lift.",
+        "cuePl": "Zatrzymaj się tuż nad głębokością gdzie miednica się podwija. Rozszerz stopy z większym kątem palców na zewnątrz. Pracuj nad mobilnością bioder poza serią."
+      },
+      {
+        "fault": "Loading too heavy too soon",
+        "faultPl": "Zbyt szybkie ładowanie ciężaru",
+        "cause": "Ego lifting — treating OHS like a back squat. The limiting factor is stability and mobility, not leg strength.",
+        "causePl": "Ego lifting — traktowanie OHS jak back squata. Czynnikiem limitującym jest stabilność i mobilność, nie siła nóg.",
+        "cue": "Spend months with a PVC pipe and empty bar before adding weight. If technique breaks, reduce the load immediately — there is no 'grinding through' a bad OHS.",
+        "cuePl": "Spędź miesiące z kijem PCV i pustym gryfem zanim dodasz obciążenie. Jeśli technika się łamie, natychmiast zmniejsz ciężar — nie ma 'przepychania' przez słaby OHS."
+      }
+    ],
+    "breathing": "Big breath at the top with the bar locked out, brace 360°, hold through the entire descent and ascent (Valsalva). Exhale and reset breath only when fully standing with the bar overhead. Never breathe at depth — losing brace pressure can crash the bar forward.",
+    "breathingPl": "Głęboki wdech na górze z gryfem zablokowanym, napięcie 360°, wstrzymaj przez całe schodzenie i wstawanie (Valsalva). Wydech i reset oddechu dopiero w pełnym wyproście z gryfem nad głową. Nigdy nie oddychaj na dole — utrata napięcia może wyrzucić gryf do przodu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "avoid",
+      "modification": "OHS requires full overhead range of motion with stability under load. Shoulder issues should be resolved with a physiotherapist before attempting any overhead loading. Substitute a front squat or goblet squat for quad development.",
+      "modificationPl": "OHS wymaga pełnego zakresu ruchu nad głową ze stabilnością pod obciążeniem. Problemy barków należy rozwiązać u fizjoterapeuty przed wykonywaniem ćwiczeń overhead. Zastąp przednim przysiadem lub goblet squatem dla rozwoju czworogłowych.",
+      "alternative": "barbell-front-squat"
+    },
+    {
+      "condition": "severe_thoracic_kyphosis_or_limited_t-spine_extension",
+      "severity": "avoid",
+      "modification": "Without sufficient thoracic extension, the bar cannot be kept over the mid-foot and the lower back compensates dangerously. Work extensively on t-spine mobility before attempting loaded OHS.",
+      "modificationPl": "Bez wystarczającego wyprostu kręgosłupa piersiowego gryf nie może być utrzymany nad środkiem stopy, a dolne plecy kompensują w sposób niebezpieczny. Pracuj intensywnie nad mobilnością piersiową przed obciążonym OHS.",
+      "alternative": "barbell-front-squat"
+    },
+    {
+      "condition": "limited_ankle_dorsiflexion",
+      "severity": "modify",
+      "modification": "Use lifting shoes with a 0.75-1 inch (19-25mm) heel. Place small plates under the heels (1.25-2.5 kg) as a temporary fix. Work on ankle mobility daily.",
+      "modificationPl": "Załóż buty sztangistyczne z obcasem 19-25mm. Tymczasowo podłóż małe talerze pod pięty (1.25-2.5 kg). Pracuj nad mobilnością stawów skokowych codziennie.",
+      "alternative": "barbell-front-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid all axial spinal loading. The combination of overhead load plus deep squat is one of the most demanding positions for the spine. Rest and consult a physiotherapist.",
+      "modificationPl": "Unikaj wszelkiego osiowego obciążania kręgosłupa. Połączenie obciążenia nad głową i głębokiego przysiadu to jedna z najbardziej wymagających pozycji dla kręgosłupa. Odpoczynek i konsultacja z fizjoterapeutą.",
+      "alternative": "goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x3 (technique with light load) | 3x5 (skill / olympic prep) | 5x1-3 (heavy / competition) | 3x8-10 (mobility / warmup work with empty bar or PVC)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-overhead-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-overhead-squat/frame_0_start.png",
+      "frames/barbell-overhead-squat/frame_1_early.png",
+      "frames/barbell-overhead-squat/frame_2_mid.png",
+      "frames/barbell-overhead-squat/frame_3_late.png",
+      "frames/barbell-overhead-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-overhead-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 i 4 (pozycja start/koniec): pełna pozycja stojąca, sztanga zablokowana wysoko NAD GŁOWĄ szerokim chwytem rwaniowym (snatch grip), ręce w pełnym wyproście, gryf dokładnie nad linią środka stopy. Klatka 2 (dno): pełny głęboki przysiad ATG, biodra wyraźnie poniżej kolan, tułów PIONOWY (kluczowa cecha OHS), sztanga utrzymana W ZABLOKOWANYCH RAMIONACH bezpośrednio nad głową — gryf nadal nad środkiem stopy. Klatki 1 i 3 (transition): pokazują schodzenie i wstawanie z gryfem nadal nad głową. Mięśnie podświetlone: MOCNO czworogłowe (przednia strona uda — 'quad hammer'), pośladki (deep hip flexion), core/skośne (anti-extension overhead), aktony barków (overhead hold). Bardzo wysoka klasyfikacja trudności (9/10) uzasadniona przez wymagane jednoczesne 5 mobilności (kostki/biodra/T-spine/barki/nadgarstki) + stabilność overhead pod obciążeniem. Druga faza rwania olimpijskiego (snatch receiving position). Wszystkie pola PL napisane od zera w polskim standardzie crossfit/dwuboju ('chwyt rwaniowy', 'snatch grip', 'overhead', 'ATG').",
+
+  "tags": ["olympic_weightlifting", "snatch", "overhead", "mobility_test", "compound", "lower_body", "full_body", "advanced", "barbell", "crossfit", "core_intensive", "diagnostic"]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "cable-standing-back-wrist-curl",
+  "name": "Cable Standing Back Wrist Curl",
+  "namePl": "Wrist curl z wyciągu za plecami w staniu",
+  "aliases": ["standing cable behind-the-back wrist curl", "low cable wrist curl behind back", "cable forearm curl behind body"],
+  "aliasesPl": ["uginanie nadgarstków z wyciągu zza pleców stojąc", "wrist curl z linki za plecami", "uginanie nadgarstków na wyciągu dolnym za plecami"],
+
+  "description": "Isolation exercise for the wrist flexors performed standing with a single-handle attachment on a low cable pulley positioned behind the body. The lifter stands with the cable line coming from behind, holding the handle in a supinated grip at the side of the thigh. Only the wrist moves — the elbow stays locked straight. The behind-the-body cable angle creates continuous tension throughout the full range of motion (especially in the stretched position), making it superior to barbell wrist curls for hypertrophy of the forearm flexors. Typically programmed at the end of an arm or pull session.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze nadgarstka wykonywane stojąc, z pojedynczym uchwytem przypiętym do dolnego wyciągu ustawionego za plecami ćwiczącego. Osoba stoi tak, że linka biegnie od tyłu, a uchwyt trzyma podchwytem przy boku uda. Pracuje wyłącznie nadgarstek — łokieć pozostaje zablokowany w wyproście. Kąt linki zza ciała daje stałe naprężenie w pełnym zakresie ruchu (szczególnie w pozycji rozciągniętej), co czyni ten wariant skuteczniejszym dla hipertrofii zginaczy przedramienia niż klasyczny wrist curl ze sztangą. Zwykle programowane na końcu treningu ramion lub pleców.",
+
+  "instructions": [
+    "Set a single-handle attachment on a low pulley. Stand with your back to the cable column so the cable line runs from behind your hip.",
+    "Grasp the handle with one hand in a supinated grip (palm facing forward). Take a step or two forward to put light tension on the cable.",
+    "Stand tall, feet hip-width, working arm straight down at your side, elbow fully extended and locked.",
+    "Let the wrist hyperextend slightly under the load so you feel a stretch in the forearm flexors — this is the start position.",
+    "Curl the handle upward by flexing the wrist only. The fingers close and the palm comes toward the forearm. Elbow stays locked.",
+    "Squeeze the forearm flexors hard at the top for a brief pause.",
+    "Lower the handle under control over 2-3 seconds back to a full stretch at the bottom.",
+    "Complete all reps on one side, then switch to the other arm. Use a moderate weight — this is a small muscle group with a short ROM."
+  ],
+  "instructionsPl": [
+    "Przypnij pojedynczy uchwyt do dolnego wyciągu. Stań plecami do kolumny wyciągu tak, aby linka biegła od tyłu, zza biodra.",
+    "Złap uchwyt jedną ręką podchwytem (dłoń skierowana do przodu). Zrób krok lub dwa do przodu, aby naciągnąć linkę.",
+    "Stań prosto, stopy na szerokość bioder, pracujące ramię swobodnie zwisa przy boku, łokieć w pełnym wyproście i zablokowany.",
+    "Pozwól nadgarstkowi lekko przeprostować się pod ciężarem, aż poczujesz rozciągnięcie w zginaczach przedramienia — to pozycja startowa.",
+    "Zginaj nadgarstek do góry — palce się zamykają, a dłoń podchodzi w stronę przedramienia. Łokieć pozostaje zablokowany.",
+    "Mocno spinaj zginacze przedramienia w górnej pozycji przez krótką chwilę.",
+    "Opuszczaj uchwyt w sposób kontrolowany przez 2-3 sekundy do pełnego rozciągnięcia na dole.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień ramię. Używaj umiarkowanego ciężaru — to mała grupa mięśniowa z krótkim zakresem ruchu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_wrist_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["biceps_brachii", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "brachioradialis": "S4",
+    "biceps_brachii": "T2",
+    "anterior_deltoid": "T1",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle_attachment"],
+    "optional": ["wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-wrist-curl"],
+    "progression_to": ["barbell-behind-the-back-wrist-curl", "cable-wrist-curl", "fat-grip-wrist-curl"],
+    "alternatives": ["dumbbell-wrist-curl", "barbell-wrist-curl", "cable-wrist-curl", "barbell-behind-the-back-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulley, single handle, supinated grip",
+      "Stand with back to the column — cable runs from behind",
+      "Working arm hangs straight at your side, elbow locked",
+      "Light tension on the cable in the start position",
+      "Stand tall, brace core, shoulders back and down"
+    ],
+    "setup_cues_pl": [
+      "Dolny wyciąg, pojedynczy uchwyt, podchwyt",
+      "Stań plecami do kolumny — linka biegnie od tyłu",
+      "Pracujące ramię zwisa prosto przy boku, łokieć zablokowany",
+      "Lekkie naprężenie linki w pozycji startowej",
+      "Stań prosto, napnij brzuch, barki ściągnięte w tył i w dół"
+    ],
+    "execution_cues": [
+      "Only the wrist moves — elbow stays locked straight",
+      "Start each rep from a full stretch at the bottom",
+      "Curl by closing the fingers and rolling the wrist up",
+      "Squeeze the forearm flexors hard at the top",
+      "Lower slowly over 2-3 seconds — don't drop the weight"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko nadgarstek — łokieć pozostaje zablokowany w wyproście",
+      "Każde powtórzenie zaczynaj z pełnego rozciągnięcia na dole",
+      "Zginaj nadgarstek zamykając palce i rolując dłoń w górę",
+      "Mocno spinaj zginacze przedramienia w górnej pozycji",
+      "Opuszczaj wolno przez 2-3 sekundy — nie zrzucaj ciężaru"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbow during the curl",
+        "faultPl": "Zginanie łokcia w trakcie ruchu",
+        "cause": "Load too heavy, attempting to recruit the biceps to assist the wrist flexors",
+        "causePl": "Zbyt duży ciężar, próba włączenia bicepsa do pomocy zginaczom nadgarstka",
+        "cue": "Lock the elbow in full extension. Reduce weight so only the wrist moves.",
+        "cuePl": "Zablokuj łokieć w pełnym wyproście. Zmniejsz ciężar, by pracował tylko nadgarstek."
+      },
+      {
+        "fault": "Partial range of motion (no full stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak pełnego rozciągnięcia na dole)",
+        "cause": "Ego lifting, fear of wrist strain, or not understanding the cable angle benefit",
+        "causePl": "Ego, strach przed obciążeniem nadgarstka lub niezrozumienie zalet kąta wyciągu",
+        "cue": "Let the cable pull the wrist into a full stretch at the bottom of every rep.",
+        "cuePl": "Pozwól, by linka rozciągnęła nadgarstek w pełni na dole każdego powtórzenia."
+      },
+      {
+        "fault": "Shoulder shrugs or torso lean to help the rep",
+        "faultPl": "Wzruszanie barkami lub odchylanie tułowia do pomocy w powtórzeniu",
+        "cause": "Load too heavy, forearms fatigued, or trying to grind past failure",
+        "causePl": "Zbyt duży ciężar, zmęczone przedramiona lub forsowanie powtórzeń po wyczerpaniu",
+        "cue": "Stand still — only the wrist moves. End the set when form breaks.",
+        "cuePl": "Stój nieruchomo — pracuje tylko nadgarstek. Zakończ serię, gdy technika się psuje."
+      },
+      {
+        "fault": "Rushing the eccentric (dropping the weight)",
+        "faultPl": "Przyspieszanie fazy negatywnej (zrzucanie ciężaru)",
+        "cause": "Underestimating the value of eccentric tension for forearm hypertrophy",
+        "causePl": "Niedocenianie znaczenia napięcia ekscentrycznego dla rozbudowy przedramion",
+        "cue": "Count 2-3 seconds on the way down — the stretch is where the gains are.",
+        "cuePl": "Licz 2-3 sekundy w fazie opuszczania — rozciągnięcie to miejsce, w którym powstają przyrosty."
+      },
+      {
+        "fault": "Cable line crosses the leg or hip",
+        "faultPl": "Linka biegnie przez nogę lub biodro",
+        "cause": "Bad foot placement relative to the pulley — line is not clear behind the body",
+        "causePl": "Zła pozycja stóp względem wyciągu — linka nie biegnie czysto za ciałem",
+        "cue": "Step further forward and slightly across so the cable runs cleanly behind your hip.",
+        "cuePl": "Zrób krok dalej do przodu i lekko w bok, aby linka biegła czysto za biodrem."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (stretch down). Keep a light brace throughout.",
+    "breathingPl": "Wydech w fazie koncentrycznej (zginanie w górę). Wdech w fazie ekscentrycznej (rozciąganie w dół). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Wrist flexion under load directly stresses the medial epicondyle. Reduce volume drastically, use very light weight and high reps (15-20), or pause work until pain-free.",
+      "modificationPl": "Zginanie nadgarstka pod obciążeniem bezpośrednio drażni przyczep przyśrodkowy łokcia. Drastycznie zmniejsz objętość, używaj bardzo lekkiego ciężaru i wysokich powtórzeń (15-20) lub wstrzymaj ten ruch do ustąpienia bólu.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Full wrist flexion compresses the carpal tunnel. Limit ROM to neutral wrist position, reduce load, and avoid the bottom stretch.",
+      "modificationPl": "Pełne zgięcie nadgarstka uciska kanał nadgarstka. Ogranicz zakres ruchu do pozycji neutralnej, zmniejsz ciężar i unikaj rozciągnięcia w dolnej pozycji.",
+      "alternative": "farmers-walk"
+    },
+    {
+      "condition": "wrist_pain_or_recent_sprain",
+      "severity": "avoid",
+      "modification": "Direct loading of an injured wrist will delay recovery. Avoid until pain-free in daily activities, then reintroduce with bodyweight or very light dumbbells.",
+      "modificationPl": "Bezpośrednie obciążenie kontuzjowanego nadgarstka opóźni regenerację. Unikaj do ustąpienia bólu w czynnościach codziennych, potem wróć z masą własnego ciała lub bardzo lekkimi hantlami.",
+      "alternative": "dumbbell-wrist-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Supinated grip with elbow locked may load the distal biceps tendon. Use a neutral grip handle if available, or reduce weight to a non-provocative range.",
+      "modificationPl": "Podchwyt z zablokowanym łokciem może obciążać przyczep dalszy bicepsa. Użyj uchwytu neutralnego, jeśli jest dostępny, lub zmniejsz ciężar do zakresu nieprowokującego.",
+      "alternative": "hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy) | 3x15-20 (endurance/pump) | 2-3x10-12 per side (strength accessory)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "cable-standing-back-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/cable-standing-back-wrist-curl/frame_0_start.png",
+      "frames/cable-standing-back-wrist-curl/frame_1_early.png",
+      "frames/cable-standing-back-wrist-curl/frame_2_mid.png",
+      "frames/cable-standing-back-wrist-curl/frame_3_late.png",
+      "frames/cable-standing-back-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/cable-standing-back-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Model stoi prosto, ćwiczy jednorącz prawą ręką — uchwyt prosty pojedynczy, podchwyt, dłoń przy boku uda. Linka cable biegnie z dolnego wyciągu od tyłu/zza ciała ku dłoni (widoczna za nogą). Łokieć przez cały ruch w pełnym wyproście i zablokowany — pracuje wyłącznie nadgarstek (frame 0: lekkie przeprostowanie nadgarstka, faza rozciągnięta; frame 2: nadgarstek w pozycji neutralnej; frame 4: pełne zgięcie nadgarstka — palce zamknięte, dłoń obrócona ku przedramieniu). Podświetlone na czerwono mięśnie zginaczy przedramienia. Tułów, ramię nad łokciem i barki pozostają stabilne. Klasyfikacja: unilateral (mimo nazwy 'wrist curl' — GIF jednoznacznie pokazuje pracę jedną ręką), isolation, plane=sagittal, force=pull. Primary = forearm_flexors, secondary = brachioradialis (lekka asysta przy końcowej fazie z podchwytem). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "forearms", "wrist_flexors", "isolation", "cable", "unilateral", "accessory", "upper_body"]
+}

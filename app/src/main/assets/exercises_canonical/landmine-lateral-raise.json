@@ -1,0 +1,206 @@
+{
+  "id": "landmine-lateral-raise",
+  "name": "Landmine Lateral Raise",
+  "namePl": "Wznosy bokiem w landmine",
+  "aliases": ["landmine single-arm lateral raise", "barbell landmine side raise", "one-arm landmine lateral raise", "landmine unilateral side raise"],
+  "aliasesPl": ["lateral raise w landmine", "jednorącz wznos bokiem na landmine", "wznos bokiem sztangą w landmine", "boczne unoszenie ramienia w landmine"],
+
+  "description": "Unilateral lateral raise performed by gripping the end of a barbell anchored in a landmine attachment and lifting it laterally with one arm. The angled bar path of the landmine creates a cable-like resistance curve that loads the lateral deltoid heavily through the entire range of motion — unlike a dumbbell lateral raise where resistance peaks only near the top. Because the barbell arcs forward as it goes up, the movement happens in the scapular plane (about 30° in front of pure lateral), which is more shoulder-friendly than strict lateral raises. A useful variation for lateral delt hypertrophy, weak-side correction, and lifters with cranky shoulders who get pinching from dumbbell side raises.",
+  "descriptionPl": "Jednorączny wznos bokiem wykonywany przez chwycenie końca sztangi zamocowanej w przystawce landmine i unoszenie jej bokiem jedną ręką. Ukośny tor pracy sztangi w landmine tworzy charakterystyczną krzywą oporu podobną do wyciągu — obciąża aktony boczne mocno przez cały zakres ruchu, w przeciwieństwie do wznosów z hantlą, gdzie opór jest największy tylko w pobliżu szczytu. Ponieważ sztanga wędruje po łuku skierowanym lekko do przodu, ruch odbywa się w płaszczyźnie łopatkowej (około 30° przed czystą płaszczyzną boczną), co jest bardziej przyjazne dla barku niż klasyczne wznosy bokiem. Przydatna wariacja do hipertrofii bocznego aktonu, korekcji asymetrii oraz dla osób, u których wznosy bokiem z hantlą powodują nieprzyjemne ucisk w barku.",
+
+  "instructions": [
+    "Anchor a barbell in a landmine attachment (or wedge one end into the corner of the room using a towel). Load light plates on the working end.",
+    "Stand sideways to the landmine with the bar end on the side of the working arm. The bar should run diagonally up and away from you.",
+    "Grip the very end of the barbell (right around the sleeve / collar) with the working hand, palm facing inward toward your thigh.",
+    "Stand tall, feet hip-width apart, knees soft. Place the non-working hand on the hip or let it hang for balance. Brace the core.",
+    "Start with the working arm hanging down with the elbow at your side and the barbell sleeve resting near the front of your thigh. Set a small fixed bend in the elbow (~15-20°).",
+    "Lead with the elbow and raise the bar end laterally in a wide arc until the working arm reaches roughly shoulder height (in line with the floor).",
+    "Pause briefly at the top — the bar end should be at shoulder level, slightly in front of the body due to the landmine arc. Squeeze the lateral deltoid.",
+    "Lower the bar back along the same arc under control over 2-3 seconds.",
+    "Complete all reps on one side before switching the bar to the other hand. Do not use the torso to swing the weight up."
+  ],
+  "instructionsPl": [
+    "Zamocuj sztangę w przystawce landmine (lub zaklinuj jeden koniec w rogu pomieszczenia używając ręcznika). Załaduj lekkie talerze na końcu roboczym.",
+    "Stań bokiem do landmine — koniec sztangi po stronie ręki pracującej. Sztanga powinna biec ukośnie w górę i od ciebie.",
+    "Złap sam koniec sztangi (przy tulejce / zaciskach) ręką pracującą, dłoń skierowana do wewnątrz w stronę uda.",
+    "Stań prosto, stopy na szerokość bioder, kolana lekko ugięte. Drugą rękę połóż na biodrze lub pozwól zwisać dla balansu. Napnij brzuch.",
+    "Pozycja startowa: ręka pracująca zwisa w dół, łokieć przy boku, tulejka sztangi spoczywa przy przedniej części uda. Ustaw lekkie, stałe ugięcie w łokciu (~15-20°).",
+    "Prowadząc ruch łokciem, unieś koniec sztangi bokiem szerokim łukiem aż ręka pracująca dotrze do wysokości barku (równolegle do podłogi).",
+    "Zatrzymaj się na chwilę w górnej pozycji — koniec sztangi powinien znajdować się na wysokości barku, lekko przed tułowiem z powodu łuku landmine. Mocno spinaj boczny akton.",
+    "Opuszczaj sztangę tym samym łukiem w sposób kontrolowany przez 2-3 sekundy.",
+    "Wykonaj wszystkie powtórzenia jedną stroną, potem przełóż sztangę do drugiej ręki. Nie pomagaj sobie kołysaniem tułowia."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoid"],
+    "secondary": ["anterior_deltoid", "supraspinatus", "trapezius_upper"],
+    "stabilizers": ["trapezius_lower", "serratus_anterior", "core", "obliques", "forearm_flexors", "gluteus_medius"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoid": "P10",
+    "anterior_deltoid": "S6",
+    "supraspinatus": "S5",
+    "trapezius_upper": "S4",
+    "trapezius_lower": "T3",
+    "serratus_anterior": "T3",
+    "core": "T3",
+    "obliques": "T3",
+    "forearm_flexors": "T2",
+    "gluteus_medius": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "landmine_attachment"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-lateral-raise"],
+    "progression_to": ["cable-lateral-raise", "machine-lateral-raise"],
+    "alternatives": ["dumbbell-lateral-raise", "cable-lateral-raise", "machine-lateral-raise", "dumbbell-leaning-lateral-raise", "single-arm-cable-lateral-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand sideways to the landmine, working arm on bar side",
+      "Grip the very end of the barbell, palm inward",
+      "Feet hip-width, soft knees, brace core",
+      "Small fixed bend in elbow (~15-20°)",
+      "Free hand on hip or hanging for balance"
+    ],
+    "setup_cues_pl": [
+      "Stań bokiem do landmine, ręka pracująca po stronie sztangi",
+      "Chwyć sam koniec sztangi, dłoń skierowana do wewnątrz",
+      "Stopy na szerokość bioder, lekko ugięte kolana, napięty brzuch",
+      "Lekkie, stałe ugięcie łokcia (~15-20°)",
+      "Wolna ręka na biodrze lub zwisająca dla balansu"
+    ],
+    "execution_cues": [
+      "Lead with the elbow, not the hand",
+      "Think 'pour a jug to the side'",
+      "Stop at shoulder height — do not go above",
+      "Resist the bar on the way down for 2-3 seconds",
+      "Do not lean away — keep torso vertical"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciem, nie dłonią",
+      "Pomyśl: 'wylewaj dzbanek bokiem'",
+      "Zatrzymaj na wysokości barku — nie unoś wyżej",
+      "Stawiaj opór sztandze podczas opuszczania przez 2-3 sekundy",
+      "Nie odchylaj tułowia — utrzymaj go pionowo"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning torso away from the landmine to lift more weight",
+        "faultPl": "Odchylanie tułowia od landmine żeby unieść większy ciężar",
+        "cause": "Load too heavy, lifter compensates with lateral flexion of the spine",
+        "causePl": "Zbyt duży ciężar, ćwiczący kompensuje zgięciem bocznym kręgosłupa",
+        "cue": "Reduce the weight. Keep ribcage stacked over the pelvis the entire set.",
+        "cuePl": "Zmniejsz ciężar. Utrzymuj klatkę nad miednicą przez całą serię."
+      },
+      {
+        "fault": "Shrugging — upper trapezius dominates the lift",
+        "faultPl": "Wciąganie barku — trapez górny przejmuje pracę",
+        "cause": "Heavy load, weak lateral deltoid, or starting without scapular depression",
+        "causePl": "Duży ciężar, słaby boczny akton, lub start bez depresji łopatki",
+        "cue": "Pull the working shoulder down and away from the ear before starting. Lighter weight if you cannot maintain it.",
+        "cuePl": "Ściągnij bark roboczy w dół i od ucha przed startem. Mniejszy ciężar jeśli nie utrzymasz tego ustawienia."
+      },
+      {
+        "fault": "Bending the elbow during the rep (turning it into a curl-raise hybrid)",
+        "faultPl": "Zginanie łokcia podczas powtórzenia (zamiana ruchu w hybrydę uginania i wznoszenia)",
+        "cause": "Lifter shortens the lever to make the weight feel lighter, reducing tension on the lateral delt",
+        "causePl": "Ćwiczący skraca dźwignię żeby ciężar wydawał się lżejszy, co zmniejsza napięcie na bocznym aktonie",
+        "cue": "Lock the elbow angle at ~15-20° and hold it the entire rep. The arm is one rigid lever.",
+        "cuePl": "Zablokuj kąt łokcia na ~15-20° i utrzymaj go przez całe powtórzenie. Ręka jest jedną sztywną dźwignią."
+      },
+      {
+        "fault": "Going above shoulder height (overshooting)",
+        "faultPl": "Unoszenie powyżej wysokości barku (przekraczanie zakresu)",
+        "cause": "Trying to feel more burn but actually transferring load to upper traps and squeezing the AC joint",
+        "causePl": "Próba uzyskania większego pieczenia, ale w rzeczywistości przeniesienie pracy na trapez górny i kompresja stawu barkowo-obojczykowego",
+        "cue": "Stop when the upper arm is parallel to the floor. Anything higher is upper trap work.",
+        "cuePl": "Zatrzymaj gdy ramię ponad łokciem jest równoległe do podłogi. Wszystko powyżej to praca trapezu górnego."
+      },
+      {
+        "fault": "Using momentum / swinging the bar up",
+        "faultPl": "Pomaganie sobie zamachem / wyrzucanie sztangi w górę",
+        "cause": "Load too heavy or impatience between reps",
+        "causePl": "Zbyt duży ciężar lub niecierpliwość między powtórzeniami",
+        "cue": "Pause 1 second at the bottom with arm dead. Start each rep from zero — no bounce.",
+        "cuePl": "Zatrzymaj się na 1 sekundę w dole z całkowicie rozluźnionym ramieniem. Zaczynaj każde powtórzenie od zera — bez sprężynowania."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Keep a light brace through the core to prevent the torso from tilting.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha aby tułów nie odchylał się na boki."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "The landmine's forward arc places the arm in the scapular plane, which is friendlier to impinged shoulders than strict lateral raises. Still reduce ROM — stop at 70-80% of horizontal. Use light loads (40-50% of normal).",
+      "modificationPl": "Łuk landmine kieruje ramię do płaszczyzny łopatkowej, co jest przyjaźniejsze dla barku z konfliktem podbarkowym niż klasyczne wznosy bokiem. Mimo to zmniejsz zakres ruchu — zatrzymuj na 70-80% poziomu. Używaj lekkich ciężarów (40-50% normalnego).",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid free-weight lateral raises during the acute phase. Substitute with cable face pulls, scapular-plane raises with light dumbbells, or band-resisted abduction below shoulder level.",
+      "modificationPl": "Unikaj wznosów bokiem z wolnym ciężarem w fazie ostrej. Zastąp face pull na wyciągu, wznosami w płaszczyźnie łopatkowej z lekkimi hantlami, lub odwodzeniem z gumą poniżej wysokości barku.",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses near the top of the rep. Reduce ROM and stop short of pain. The slight forward angle of landmine is usually better tolerated than pure lateral raise.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji przy szczycie ruchu. Zmniejsz zakres ruchu i zatrzymaj przed bólem. Lekko skierowane do przodu ramię w landmine jest zwykle lepiej tolerowane niż czysty lateral raise.",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "wrist_pain_or_chronic_instability",
+      "severity": "caution",
+      "modification": "Holding the barbell end one-handed can stress the wrist under load. Use wrist wraps for support, keep wrist neutral (avoid radial/ulnar deviation), and choose lighter weights with more reps.",
+      "modificationPl": "Trzymanie końca sztangi jedną ręką może obciążać nadgarstek pod ciężarem. Używaj usztywniaczy nadgarstka, utrzymuj nadgarstek w pozycji neutralnej (unikaj zginania promieniowego/łokciowego), wybieraj lżejsze ciężary i więcej powtórzeń.",
+      "alternative": "dumbbell-lateral-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per side (hypertrophy/standard) | 4x12-20 per side (lateral delt specialization/pump) | 3x8-10 per side (heavier loading, intermediate-advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "landmine-lateral-raise.gif",
+    "frames_extracted": [
+      "frames/landmine-lateral-raise/frame_0_start.png",
+      "frames/landmine-lateral-raise/frame_1_early.png",
+      "frames/landmine-lateral-raise/frame_2_mid.png",
+      "frames/landmine-lateral-raise/frame_3_late.png",
+      "frames/landmine-lateral-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/landmine-lateral-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Frame 0 (start): ćwiczący stoi bokiem do landmine, prawa ręka (robocza) zwisa w dół przy boku, dłoń trzyma koniec sztangi przy przednim udzie z chwytem neutralnym, sztanga biegnie ukośnie do landmine zamocowanego po lewej stronie. Frame 1 (early) i 2 (mid/top): koniec sztangi uniesiony bokiem szerokim łukiem do wysokości barku, ramię równolegle do podłogi, łokieć lekko ugięty (~15-20°), prowadzi ruch. Frame 3 (late) i 4 (end): powrót do pozycji wyjściowej z 'ghost' szczytowej fazy widocznym w tle. Podświetlone na czerwono na frame 0/4 widać obszar bocznego/przedniego barku oraz część klatki — to jest jednorączna wersja lateral raise. Ruch unilateral, w płaszczyźnie czołowej z lekkim odchyleniem do płaszczyzny łopatkowej z powodu łuku landmine (sztanga wędruje też do przodu). Tułów pozostaje pionowy przez cały ruch — bez odchylania. Klasyczna izolacja lateral_deltoid z dodatkiem anterior_deltoid (przez forward arc) i supraspinatus. Mechanic=isolation, force=push (kończyna oddala się od ciała), plane=frontal, laterality=unilateral. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "lateral_delts", "isolation", "landmine", "barbell", "upper_body", "standing", "unilateral", "hypertrophy", "shoulder_specialization"]
+}

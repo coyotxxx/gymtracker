@@ -1,0 +1,205 @@
+{
+  "id": "standing-behind-neck-press",
+  "name": "Standing Behind-the-Neck Press",
+  "namePl": "Wyciskanie sztangi zza karku (stojąc)",
+  "aliases": ["behind-the-neck press", "BTN press", "standing BTN press", "behind-neck military press", "Klokov press"],
+  "aliasesPl": ["wyciskanie zza karku stojąc", "BTN press", "OHP za głowę", "wyciskanie żołnierskie zza karku", "press za głowę"],
+
+  "description": "Controversial vertical pressing variation where the barbell starts behind the neck (resting on upper trapezius) and is pressed straight up to lockout. Targets lateral and posterior deltoids more directly than front OHP because the shoulders are abducted (frontal plane). Requires excellent shoulder external rotation and thoracic mobility. Popular in Olympic weightlifting (Snatch grip BTN press) and old-school bodybuilding. HIGH demand on shoulder integrity — not recommended for lifters with impingement, limited mobility, or rotator cuff issues.",
+  "descriptionPl": "Kontrowersyjna wariacja pionowego wyciskania — sztanga startuje za karkiem (oparta na górnym czworobocznym) i jest wyciskana prosto w górę do lock-out. Mocniej angażuje boczne i tylne aktony deltoidów niż klasyczny OHP, bo barki są w abdukcji (płaszczyzna czołowa). Wymaga doskonałej rotacji zewnętrznej barku i mobilności piersiowej. Popularne w podnoszeniu ciężarów (Snatch grip BTN press) i klasycznym bodybuildingu. WYSOKIE wymagania dla integralności barku — niezalecane przy impingement, ograniczonej mobilności lub problemach z rotator cuff.",
+
+  "instructions": [
+    "Set the bar in a rack at upper-chest height. Use a grip noticeably wider than shoulder-width (wider than front OHP) for better shoulder positioning.",
+    "Step under the bar and place it on the upper trapezius (high-bar squat position), NOT on the cervical spine. Bar rests on muscle, never bone.",
+    "Unrack and step back. Feet hip- to shoulder-width apart. Brace core, glutes, and quads HARD.",
+    "Start with elbows pointing down and slightly forward, wrists straight above elbows.",
+    "Take a big breath, brace, and press the bar straight up. The bar travels in a vertical line — head stays still (does not need to move 'through the window' like front OHP).",
+    "Lock out arms overhead — biceps near ears, bar directly over the ears/mid-foot when viewed from the side.",
+    "Lower with CONTROL back to the trapezius (upper traps), NOT to the neck. Touch lightly, do not bounce.",
+    "Stay locked through hips and knees — strict press only. No leg drive.",
+    "Exhale at the top of the press."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Chwyt wyraźnie szerszy niż na szerokość barków (szerszy niż w klasycznym OHP) dla lepszego ustawienia barku.",
+    "Wejdź pod gryf i połóż go na górnym czworobocznym (pozycja high-bar squat), NIE na kręgosłupie szyjnym. Gryf leży na mięśniu, nigdy na kości.",
+    "Wyciągnij ze stojaka i cofnij się. Stopy na szerokość bioder do barków. Napnij brzuch, pośladki i czworogłowe MOCNO.",
+    "Start: łokcie skierowane w dół i lekko do przodu, nadgarstki proste nad łokciami.",
+    "Nabierz głęboki oddech, napięcie, wyciśnij gryf prosto w górę. Gryf porusza się po pionowej linii — głowa pozostaje nieruchoma (NIE musi przechodzić 'przez okno' jak w klasycznym OHP).",
+    "Lock-out ramion nad głową — bicepsy przy uszach, gryf bezpośrednio nad uszami / środkiem stóp z boku.",
+    "Opuszczaj KONTROLOWANIE z powrotem na czworoboczny (górne trapy), NIE na szyję. Dotknij lekko, nie odbijaj.",
+    "Biodra i kolana zablokowane — tylko strict press. Bez napędu z nóg.",
+    "Wydech na szczycie wyciskania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids"],
+    "secondary": ["triceps", "trapezius", "posterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "quadriceps", "rotator_cuff", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P9",
+    "triceps": "S7",
+    "trapezius": "S6",
+    "posterior_deltoids": "S5",
+    "serratus_anterior": "S4",
+    "core": "S7",
+    "glutes": "S5",
+    "rotator_cuff": "S8"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack_or_squat_rack"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-overhead-press", "seated-barbell-overhead-press", "snatch-grip-deadlift"],
+    "progression_to": ["snatch-grip-behind-neck-press", "push-press-behind-neck", "split-jerk-behind-neck"],
+    "alternatives": ["barbell-overhead-press", "seated-barbell-overhead-press", "dumbbell-shoulder-press", "machine-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Wide grip — wider than shoulders",
+      "Bar on upper traps, NOT on neck",
+      "Elbows down, wrists stacked above",
+      "Eyes forward, chin slightly tucked",
+      "Brace HARD before unracking"
+    ],
+    "setup_cues_pl": [
+      "Szeroki chwyt — szerszy niż barki",
+      "Gryf na górnych trapach, NIE na szyi",
+      "Łokcie w dół, nadgarstki ustawione nad łokciami",
+      "Wzrok do przodu, broda lekko schowana",
+      "MOCNE napięcie przed wyciągnięciem ze stojaka"
+    ],
+    "execution_cues": [
+      "Press STRAIGHT up — bar over ears",
+      "Head stays still, no need to duck",
+      "Lock out fully — biceps by ears",
+      "Lower SLOWLY to traps, never bounce",
+      "Glutes and quads locked — no leg drive"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj PROSTO w górę — gryf nad uszami",
+      "Głowa nieruchoma, nie trzeba się uchylać",
+      "Pełen lock-out — bicepsy przy uszach",
+      "Opuszczaj POWOLI na trapy, nigdy nie odbijaj",
+      "Pośladki i czworogłowe zablokowane — bez napędu nóg"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar resting on cervical spine (neck), not traps",
+        "faultPl": "Gryf na kręgosłupie szyjnym (szyi), nie na trapach",
+        "cause": "Insufficient trap mass, head too far forward, grip too narrow",
+        "causePl": "Słabe trapy, głowa za bardzo do przodu, chwyt za wąski",
+        "cue": "Bar on MUSCLE, never bone. Build traps with shrugs first. Widen grip slightly.",
+        "cuePl": "Gryf na MIĘŚNIU, nigdy na kości. Najpierw zbuduj trapy shrugami. Poszerz chwyt."
+      },
+      {
+        "fault": "Forward head posture / bar drifts forward at lockout",
+        "faultPl": "Głowa wysunięta do przodu / gryf ucieka w przód w lock-out",
+        "cause": "Trying to 'see' the bar, weak posterior chain, poor t-spine mobility",
+        "causePl": "Próba 'zobaczenia' gryfu, słaby tylny łańcuch, słaba mobilność piersiowa",
+        "cue": "Eyes FORWARD not up. Chin tucked. Bar finishes over ears, not in front.",
+        "cuePl": "Wzrok DO PRZODU, nie w górę. Broda schowana. Gryf kończy nad uszami, nie przed."
+      },
+      {
+        "fault": "Bouncing the bar off traps (using rebound)",
+        "faultPl": "Odbijanie gryfu od trapów (używanie rebound)",
+        "cause": "Trying to lift heavier than strict capacity, lack of control",
+        "causePl": "Próba podniesienia więcej niż pozwala strict, brak kontroli",
+        "cue": "TOUCH and pause. No bounce. If you need bounce — lower the weight.",
+        "cuePl": "DOTKNIJ i pauza. Bez odbicia. Jeśli potrzebujesz rebound — zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete lockout (elbows not extended)",
+        "faultPl": "Niepełen lock-out (łokcie nie wyprostowane)",
+        "cause": "Insufficient overhead mobility, weak triceps, weight too heavy",
+        "causePl": "Słaba mobilność overhead, słabe tricepsy, zbyt duży ciężar",
+        "cue": "Reach for the ceiling. Biceps MUST touch ears. If not possible — train mobility first, BTN is not for you yet.",
+        "cuePl": "Sięgaj do sufitu. Bicepsy MUSZĄ dotykać uszu. Jeśli to niemożliwe — trenuj mobilność, BTN nie jest jeszcze dla Ciebie."
+      },
+      {
+        "fault": "Wrist hyperextension under load",
+        "faultPl": "Przeprost nadgarstka pod obciążeniem",
+        "cause": "Grip too wide combined with weak wrists, bar in fingers",
+        "causePl": "Zbyt szeroki chwyt + słabe nadgarstki, gryf w palcach",
+        "cue": "Bar in palm heel. Wrists STACKED over elbows. Use wraps if heavy.",
+        "cuePl": "Gryf w podstawie dłoni. Nadgarstki USTAWIONE nad łokciami. Użyj wraps przy ciężkich seriach."
+      }
+    ],
+    "breathing": "Inhale and brace HARD before unracking. Hold throughout the press. Exhale at lockout. Bracing is critical due to standing posture and the unusual bar path behind the head.",
+    "breathingPl": "Wdech i MOCNE napięcie przed wyciągnięciem ze stojaka. Trzymaj przez wyciskanie. Wydech w lock-out. Napięcie jest krytyczne ze względu na pozycję stojącą i nietypową ścieżkę gryfu za głową."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "AVOID this exercise. Behind-the-neck position places shoulder in extreme abduction + external rotation — high impingement risk. Use front OHP or landmine press instead.",
+      "modificationPl": "UNIKAJ tego ćwiczenia. Pozycja za karkiem stawia bark w skrajnej abdukcji + rotacji zewnętrznej — wysokie ryzyko impingement. Używaj klasycznego OHP lub landmine press.",
+      "alternative": "barbell-overhead-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "avoid",
+      "modification": "BTN press REQUIRES full external rotation + shoulder abduction. If you cannot achieve the start position without pain, do NOT perform it. Train mobility first.",
+      "modificationPl": "BTN press WYMAGA pełnej rotacji zewnętrznej + abdukcji barku. Jeśli nie potrafisz osiągnąć pozycji startowej bez bólu, NIE wykonuj. Najpierw trenuj mobilność.",
+      "alternative": "barbell-overhead-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Strictly avoid. BTN press is one of the highest-stress positions for the rotator cuff. Use machine shoulder press or front OHP with reduced load.",
+      "modificationPl": "Bezwzględnie unikaj. BTN press to jedna z najbardziej obciążających pozycji dla rotator cuff. Używaj maszynowego wyciskania na barki lub klasycznego OHP z mniejszym obciążeniem.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "avoid",
+      "modification": "Avoid — bar position over the neck and the required head posture (chin tucked, eyes forward) can aggravate cervical conditions.",
+      "modificationPl": "Unikaj — pozycja gryfu nad szyją i wymagana postawa głowy (broda schowana, wzrok do przodu) mogą nasilać dolegliwości szyjne.",
+      "alternative": "seated-barbell-overhead-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-8 (hypertrophy) | 5x5 (strength, advanced) | 3x8-12 (Olympic lifting accessory)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "standing-behind-neck-press.gif",
+    "frames_extracted": [
+      "frames/standing-behind-neck-press/frame_0_start.png",
+      "frames/standing-behind-neck-press/frame_1_early.png",
+      "frames/standing-behind-neck-press/frame_2_mid.png",
+      "frames/standing-behind-neck-press/frame_3_late.png",
+      "frames/standing-behind-neck-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/standing-behind-neck-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — sztanga za karkiem oparta na górnych trapach, chwyt szerszy niż barki, łokcie skierowane w dół. Frame 2: pełen lock-out nad głową, ramiona wyprostowane, bicepsy przy uszach, gryf bezpośrednio nad głową (ścieżka pionowa). Frame 4: kontrolowane opuszczanie z powrotem za kark. Highlighted muscles: deltoidy (anterior + lateral) jako głównie zaangażowane, trapezius widoczny. Standing posture (nie seated). Płaszczyzna ruchu: frontal (barki w abdukcji, w przeciwieństwie do sagittal w klasycznym OHP). Ćwiczenie zaawansowane — wymaga doskonałej mobilności barku. PL nazwa = 'Wyciskanie sztangi zza karku (stojąc)'.",
+
+  "tags": ["olympic_weightlifting", "old_school_bodybuilding", "upper_body", "vertical_push", "shoulders", "advanced", "barbell", "mobility_demanding", "controversial"]
+}

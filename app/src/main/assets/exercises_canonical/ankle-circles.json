@@ -1,0 +1,171 @@
+{
+  "id": "ankle-circles",
+  "name": "Ankle Circles",
+  "namePl": "Krążenia kostek",
+  "aliases": ["ankle rotations", "ankle mobility circles", "single leg ankle circles", "ankle warm-up circles"],
+  "aliasesPl": ["krążenia stopą", "rotacje stawu skokowego", "mobilizacja kostek", "krążenia stawu skokowego", "rozgrzewka kostek"],
+
+  "description": "A standing single-leg ankle mobility drill. One foot is lifted slightly off the floor while the toes draw large, slow circles in the air. The motion mobilizes the talocrural and subtalar joints through their full range — dorsiflexion, plantarflexion, inversion and eversion — and gently activates the surrounding calf, shin and foot musculature. Excellent as a pre-training warm-up, a desk break, or part of a rehab routine after ankle sprains.",
+  "descriptionPl": "Mobilizacja stawu skokowego w pozycji stojącej, wykonywana jednonóż. Jedna stopa jest lekko uniesiona nad podłogą, a palce kreślą w powietrzu duże, powolne koła. Ruch przeprowadza staw skokowy i podskokowy przez pełen zakres — zgięcie grzbietowe, zgięcie podeszwowe, inwersję i ewersję — delikatnie aktywując łydkę, mięśnie goleni i stopy. Świetnie sprawdza się jako rozgrzewka przed treningiem, przerwa od biurka oraz element rehabilitacji po skręceniach kostki.",
+
+  "instructions": [
+    "Stand tall next to a wall, doorframe or squat rack and place one hand lightly on it for balance.",
+    "Shift your weight onto the supporting leg with a soft knee and engaged core.",
+    "Lift the opposite foot about 5 cm off the floor, keeping the knee almost straight.",
+    "Slowly draw a large circle in the air with the big toe — imagine tracing a clockface as wide as comfortable.",
+    "Perform 8-12 circles in one direction, breathing normally and keeping the motion in the ankle, not the hip.",
+    "Reverse direction and perform the same number of circles the opposite way.",
+    "Lower the foot, switch sides, and repeat with the other leg."
+  ],
+  "instructionsPl": [
+    "Stań prosto obok ściany, framugi lub stojaka i oprzyj lekko jedną rękę dla utrzymania równowagi.",
+    "Przenieś ciężar ciała na nogę podporową, kolano miękkie, brzuch delikatnie napięty.",
+    "Unieś przeciwną stopę około 5 cm nad podłogą, kolano niemal wyprostowane.",
+    "Powoli kreśl duże koło w powietrzu paluchem — wyobraź sobie, że rysujesz tarczę zegara tak szeroką, jak komfortowo.",
+    "Wykonaj 8-12 krążeń w jedną stronę, oddychając normalnie i prowadząc ruch w stawie skokowym, a nie w biodrze.",
+    "Zmień kierunek i wykonaj tyle samo krążeń w drugą stronę.",
+    "Opuść stopę, zmień nogę i powtórz ćwiczenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "static",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["ankle_mobilizers"],
+    "secondary": ["gastrocnemius", "soleus", "tibialis_anterior", "peroneals"],
+    "stabilizers": ["foot_intrinsics", "tibialis_posterior", "glutes", "core"]
+  },
+
+  "muscle_intensity": {
+    "ankle_mobilizers": "P6",
+    "gastrocnemius": "S3",
+    "soleus": "S3",
+    "tibialis_anterior": "S3",
+    "peroneals": "S3",
+    "foot_intrinsics": "T2",
+    "glutes": "T1",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["wall", "rack"]
+  },
+
+  "category": "stretching",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 1,
+    "prerequisites": [],
+    "progression_to": [],
+    "alternatives": ["assisted-lying-calves-stretch", "standing-calves-stretch", "seated-ankle-dorsiflexion-stretch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, one hand on a stable surface for balance",
+      "Weight fully on the supporting leg with a soft knee",
+      "Working foot 5 cm off the floor, knee almost straight",
+      "Eyes forward, ribs stacked over hips",
+      "Relax the working foot — no clenched toes"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, jedna ręka na stabilnym podparciu dla równowagi",
+      "Cały ciężar na nodze podporowej, kolano miękkie",
+      "Pracująca stopa 5 cm nad podłogą, kolano niemal wyprostowane",
+      "Wzrok przed siebie, żebra ustawione nad biodrami",
+      "Rozluźnij pracującą stopę — palce nie zaciśnięte"
+    ],
+    "execution_cues": [
+      "Move only the ankle — keep the knee and hip quiet",
+      "Draw circles as big as comfortable, not as fast as possible",
+      "Go through the full range: up, in, down, out",
+      "Breathe normally — no breath holding",
+      "Reverse direction after each set of reps"
+    ],
+    "execution_cues_pl": [
+      "Ruch tylko w kostce — kolano i biodro pozostają nieruchome",
+      "Krąż tak szeroko, jak jest komfortowo, nie tak szybko jak się da",
+      "Przeprowadź stopę przez pełen zakres: w górę, do wewnątrz, w dół, na zewnątrz",
+      "Oddychaj normalnie — bez wstrzymywania oddechu",
+      "Po każdej serii powtórzeń zmień kierunek krążenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Moving from the hip instead of the ankle",
+        "faultPl": "Ruch z biodra zamiast ze stawu skokowego",
+        "cause": "Stiff ankle or weak hip stabilizers — body compensates by swinging the whole leg",
+        "causePl": "Sztywny staw skokowy lub słabe stabilizatory biodra — ciało kompensuje, kołysząc całą nogą",
+        "cue": "Imagine the shin is a fixed broomstick — only the foot at the end moves in circles",
+        "cuePl": "Wyobraź sobie, że goleń to nieruchomy kij od miotły — tylko stopa na jego końcu zatacza koła"
+      },
+      {
+        "fault": "Tiny, rushed circles",
+        "faultPl": "Małe, pośpiesznie wykonywane kółka",
+        "cause": "Treating the drill as a tick-off task rather than a mobility piece",
+        "causePl": "Traktowanie ćwiczenia jak obowiązku do odhaczenia, a nie pracy nad mobilnością",
+        "cue": "Slow down — each circle should take 2-3 seconds and reach the limit of comfortable range",
+        "cuePl": "Zwolnij — każde okrążenie powinno trwać 2-3 sekundy i sięgać granicy komfortowego zakresu"
+      },
+      {
+        "fault": "Losing balance and gripping the support hard",
+        "faultPl": "Utrata równowagi i mocne trzymanie się podparcia",
+        "cause": "Weak single-leg stance, lack of core engagement or attempt to do the drill without any support",
+        "causePl": "Słaba stabilizacja na jednej nodze, brak napięcia centrum lub próba wykonania ćwiczenia bez podparcia",
+        "cue": "Use light fingertip contact on a wall — engage the core and standing glute to actually stabilize, not the hand",
+        "cuePl": "Dotykaj ściany tylko opuszkami palców — stabilizuj brzuchem i pośladkiem nogi podporowej, nie ręką"
+      }
+    ],
+    "breathing": "Breathe steadily and naturally throughout — typically one full breath per 1-2 circles. There is no need to coordinate inhale/exhale with any specific point.",
+    "breathingPl": "Oddychaj równo i naturalnie przez cały czas — zwykle jeden pełny oddech na 1-2 okrążenia. Nie ma potrzeby synchronizowania wdechu/wydechu z konkretnym momentem ruchu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_ankle_sprain",
+      "severity": "modify",
+      "modification": "In the acute (first 48-72 h) phase, stay in a small pain-free range. Skip the inversion (foot rolling inward) portion of the circle if it provokes symptoms. Progress range gradually under physiotherapist guidance.",
+      "modificationPl": "W fazie ostrej (pierwsze 48-72 h) pozostań w niewielkim, bezbolesnym zakresie. Pomiń część inwersyjną krążenia (rolowanie stopy do wewnątrz), jeśli wywołuje dolegliwości. Zwiększaj zakres stopniowo pod kontrolą fizjoterapeuty.",
+      "alternative": "seated-ankle-dorsiflexion-stretch"
+    },
+    {
+      "condition": "post_ankle_surgery_recent",
+      "severity": "avoid",
+      "modification": "Skip until cleared by your surgeon or physiotherapist — early ROM after surgery follows a specific protocol that must not be improvised.",
+      "modificationPl": "Pomiń do czasu zgody chirurga lub fizjoterapeuty — wczesny zakres ruchu po operacji wymaga określonego protokołu i nie można go improwizować.",
+      "alternative": "seated-ankle-dorsiflexion-stretch"
+    }
+  ],
+
+  "typical_sets_reps": "2x8-12 krążeń w każdą stronę na nogę",
+  "calories_per_kg_per_hour": 2.0,
+
+  "media": {
+    "primary": "ankle-circles.gif",
+    "frames_extracted": [
+      "frames/ankle-circles/frame_0_start.png",
+      "frames/ankle-circles/frame_1_early.png",
+      "frames/ankle-circles/frame_2_mid.png",
+      "frames/ankle-circles/frame_3_late.png",
+      "frames/ankle-circles/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/ankle-circles",
+    "yuhonas_id": "Ankle_Circles"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIF-a jahel. Model stoi prosto, lewa noga podporowa, prawa stopa lekko uniesiona nad podłogą — kreśli koło paluchem (subtelne przesunięcia widoczne między klatkami 0-4, brak ruchu w biodrze). Na klatce 2 podświetlone na czerwono mięśnie łydki prawej nogi (gastrocnemius i soleus), co odpowiada ich napięciu/aktywacji podczas kontroli ruchu kostki. Yuhonas Ankle_Circles potwierdza setup: 'hold sturdy object, lift one leg ~2 inches off floor, draw big circle with big toe, one circle = 1 rep, switch leg'. Kategoria stretching. Ćwiczenie ma jednak ruch — to nie statyczny stretch — dlatego coaching cues skupione na ROM i kontroli, nie na 'hold position'. Force=static jako najbliższe semantycznie dla mobility (brak przeciążenia zewnętrznego). Mechanic=isolation (jeden staw). Laterality=unilateral (jedna stopa naraz). Plane=transverse, bo cykl ruchu inwersja-ewersja oraz rotacja stopy w przeważającej części odbywa się w płaszczyźnie poprzecznej. Kinetic_chain=open (stopa swobodna). Primary muscle 'ankle_mobilizers' jako zbiorcze określenie — schema nie ogranicza enum dla muscles.primary, a yuhonas wskazuje 'calves' co jest zbyt grube dla mobility drill (łydki tu są stabilizatorem, nie celem). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["mobility", "warmup", "cooldown", "rehab", "desk_worker_friendly", "no_equipment", "beginner_friendly", "ankle_health", "pre_lower_body", "post_running"]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "cable-standing-pulldown-with-rope",
+  "name": "Cable Standing Pulldown with Rope",
+  "namePl": "Pulldown stojąc z liną (proste ramiona)",
+  "aliases": ["cable straight-arm pulldown with rope", "standing rope straight-arm pulldown", "rope lat pushdown", "rope straight-arm pulldown", "standing cable rope pulldown"],
+  "aliasesPl": ["wyprost ramion z liną na wyciągu stojąc", "przyciąganie liny prostymi ramionami stojąc", "rope pulldown na najszersze", "izolacja najszerszych z liną stojąc", "lat pushdown z liną"],
+
+  "description": "An isolation exercise for the latissimus dorsi performed standing in front of a high cable pulley with a rope attachment. With arms extended overhead and a neutral grip on the rope, the lifter pulls the rope down in a long arc toward the hips by driving the upper arms through pure shoulder extension. The neutral rope grip relaxes the biceps and lets the lats do the work without elbow flexion, while the standing position allows a slight forward lean to bias the lats over the teres major. The rope also allows the hands to separate at the bottom, opening up the lats for a strong squeeze. Excellent finisher for back day or a pre-exhaust before heavy rows or pulldowns.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień najszerszy grzbietu, wykonywane stojąc przodem do wyciągu górnego z liną. Ramiona wyprostowane nad głową, neutralny chwyt liny — ruch polega na przyciąganiu liny po długim łuku w kierunku bioder, poprzez czysty wyprost ramienia w stawie barkowym. Neutralny chwyt liny rozluźnia biceps i pozwala najszerszym wykonać całą pracę bez udziału zginaczy łokcia, a pozycja stojąca umożliwia lekkie pochylenie tułowia do przodu, co dodatkowo akcentuje najszersze nad obłym większym. Lina pozwala też rozsunąć dłonie w dolnej pozycji, otwierając najszersze do mocnego napięcia. Świetne ćwiczenie kończące trening pleców lub jako pre-exhaust przed ciężkimi wiosłowaniami i przyciąganiami.",
+
+  "instructions": [
+    "Attach a rope to the high pulley of a cable machine and stand facing the cable, about half a meter from the stack.",
+    "Grab both ends of the rope with a neutral grip (palms facing each other, thumbs up). Step back so that with arms extended overhead the cable is under tension.",
+    "Stagger or set feet shoulder-width, brace the core, pull the shoulder blades down and back. Lean the torso forward roughly 10-20 degrees from vertical — this is a fixed angle, not a swing.",
+    "Start position: arms reaching overhead at about a 30-45 degree angle, lats lengthened and feeling a stretch in the armpits. Elbows almost fully straight (minimal soft bend, locked angle).",
+    "Initiate the movement from the lats — drive the upper arms down in a wide arc, pulling the rope toward the hips. The forearms travel as one segment with the upper arms; the elbow angle stays locked.",
+    "As the rope reaches face/chest height, separate the hands and pull the rope ends down and slightly outward past the hips, ending with arms alongside the torso and the rope split low.",
+    "Squeeze the lats hard at the bottom for one count. Do not let the elbows bend further to bring the rope deeper.",
+    "Reverse under control over 2-3 seconds, letting the arms float back up overhead until the lats stretch again. Do not let the rope yank the shoulders into a shrug at the top."
+  ],
+  "instructionsPl": [
+    "Podepnij linę do wyciągu górnego i stań przodem do wyciągu, około pół metra od stosu.",
+    "Złap oba końce liny chwytem neutralnym (dłonie zwrócone do siebie, kciuki w górę). Odsuń się tak, by przy wyprostowanych ramionach nad głową linka była już napięta.",
+    "Ustaw stopy na szerokość barków lub w lekkim kroku, napnij brzuch, ściągnij łopatki w dół i w tył. Pochyl tułów o około 10-20 stopni od pionu — to stały kąt, nie bujanie.",
+    "Pozycja startowa: ramiona sięgają nad głowę pod kątem około 30-45 stopni, mięśnie najszersze rozciągnięte, czujesz naciąganie w pachach. Łokcie niemal proste (minimalne, zablokowane ugięcie).",
+    "Inicjuj ruch z najszerszych — wciskaj ramiona w dół po szerokim łuku, ciągnąc linę w stronę bioder. Przedramię porusza się razem z ramieniem jako jeden segment; kąt w łokciu pozostaje zablokowany.",
+    "Gdy lina dochodzi do wysokości twarzy/klatki, rozsuń dłonie i pociągnij końce liny w dół i lekko na zewnątrz mijając biodra, kończąc z ramionami wzdłuż tułowia i liną rozdzieloną nisko.",
+    "Mocno napnij najszersze w dolnej pozycji na chwilę. Nie zginaj dodatkowo łokci, żeby pociągnąć linę głębiej.",
+    "Wracaj kontrolowanie przez 2-3 sekundy, pozwalając ramionom wrócić nad głowę aż znów poczujesz rozciągnięcie najszerszych. Nie pozwól, by lina podciągnęła barki do wzruszenia w górnej pozycji."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["teres_major", "long_head_triceps", "posterior_deltoid"],
+    "stabilizers": ["lower_trapezius", "rhomboids", "core", "pectoralis_major_sternal", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "teres_major": "S8",
+    "long_head_triceps": "S5",
+    "posterior_deltoid": "S4",
+    "lower_trapezius": "T4",
+    "rhomboids": "T3",
+    "pectoralis_major_sternal": "T3",
+    "core": "T3",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope_attachment"],
+    "optional": ["lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["lat-pulldown", "straight-arm-pulldown"],
+    "progression_to": ["single-arm-cable-pulldown", "cable-incline-pushdown", "kneeling-cable-pullover"],
+    "alternatives": ["straight-arm-pulldown", "cable-incline-pushdown", "dumbbell-pullover", "cable-pullover", "lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand half a meter from the cable, feet shoulder-width",
+      "Neutral grip on the rope — palms facing each other",
+      "Lean forward 10-20 degrees from vertical and hold that angle",
+      "Shoulder blades down and back before the first rep",
+      "Arms straight overhead, lats already feeling stretched"
+    ],
+    "setup_cues_pl": [
+      "Stań pół metra od wyciągu, stopy na szerokość barków",
+      "Neutralny chwyt liny — dłonie zwrócone do siebie",
+      "Pochyl tułów o 10-20 stopni od pionu i utrzymaj ten kąt",
+      "Łopatki w dół i w tył przed pierwszym powtórzeniem",
+      "Ramiona proste nad głową, najszersze już rozciągnięte"
+    ],
+    "execution_cues": [
+      "Drive the upper arms down — elbows stay locked",
+      "Pull from the armpit, not from the hands",
+      "Spread the rope ends past the hips at the bottom",
+      "Squeeze the lats — imagine pulling shoulder blades into back pockets",
+      "Slow eccentric — let the arms float back overhead"
+    ],
+    "execution_cues_pl": [
+      "Wciskaj ramiona w dół — łokcie pozostają zablokowane",
+      "Ciągnij z pachy, nie z dłoni",
+      "Rozsuń końce liny mijając biodra w dolnej pozycji",
+      "Napnij najszersze — wyobraź sobie, że wkładasz łopatki do tylnych kieszeni",
+      "Wolna faza negatywna — pozwól ramionom wrócić nad głowę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows turns it into a rope pushdown for triceps",
+        "faultPl": "Zginanie łokci zamienia ruch w prostowanie ramion z liną dla tricepsa",
+        "cause": "Load too heavy, lats fatigue and biceps/triceps take over",
+        "causePl": "Zbyt duży ciężar, najszersze się męczą i pracę przejmuje biceps/triceps",
+        "cue": "Lock the elbow angle at the start and keep it identical the whole rep. Lower the weight by 20-30%.",
+        "cuePl": "Ustaw kąt łokcia na starcie i utrzymaj go identyczny przez całe powtórzenie. Zmniejsz ciężar o 20-30%."
+      },
+      {
+        "fault": "Swinging the torso forward and back to swing the weight down",
+        "faultPl": "Bujanie tułowiem do przodu i tyłu, żeby zarzucić ciężar w dół",
+        "cause": "Trying to use bodyweight as momentum; too heavy or weak core brace",
+        "causePl": "Próba wykorzystania ciężaru ciała jako rozpędu; za duży ciężar lub słabe napięcie brzucha",
+        "cue": "Set the forward lean as a fixed angle. Brace the core hard and move only the arms.",
+        "cuePl": "Ustaw pochylenie tułowia jako stały kąt. Mocno napnij brzuch i ruszaj tylko ramionami."
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears at the top of the stretch",
+        "faultPl": "Wzruszanie barków w stronę uszu w górnej pozycji rozciągnięcia",
+        "cause": "Loss of scapular control under load — upper traps dominate the start",
+        "causePl": "Utrata kontroli łopatek pod obciążeniem — kapturowy górny przejmuje start ruchu",
+        "cue": "Reset — depress the shoulder blades before every rep. The first move is the lats engaging, not the arms reaching.",
+        "cuePl": "Resetuj — ściągaj łopatki w dół przed każdym powtórzeniem. Pierwszy ruch to napięcie najszerszych, nie sięganie ramionami."
+      },
+      {
+        "fault": "Cutting the range short — rope stops at the chest",
+        "faultPl": "Skracanie zakresu — lina zatrzymywana na wysokości klatki",
+        "cause": "Weak short-position strength of the lats or insufficient stretch in the start",
+        "causePl": "Słaba siła najszerszych w pozycji skróconej lub niewystarczające rozciągnięcie w starcie",
+        "cue": "Pull all the way until the upper arms are alongside the torso and the rope ends pass the hips.",
+        "cuePl": "Ciągnij do końca — aż ramiona ponad łokciem znajdą się wzdłuż tułowia, a końce liny miną biodra."
+      },
+      {
+        "fault": "Standing too close — cable pulls vertically, no stretch at the top",
+        "faultPl": "Stanie za blisko wyciągu — linka ciągnie pionowo, brak rozciągnięcia w górnej pozycji",
+        "cause": "Equipment setup error — distance from the stack too short",
+        "causePl": "Błąd ustawienia — za mała odległość od stosu",
+        "cue": "Step back until the cable forms a 30-45 degree angle with the floor when arms are overhead.",
+        "cuePl": "Odsuń się tak, by linka tworzyła kąt 30-45 stopni z podłogą przy ramionach nad głową."
+      }
+    ],
+    "breathing": "Inhale at the top (stretched position). Exhale through the pull as the rope travels toward the hips. Maintain a light core brace throughout.",
+    "breathingPl": "Wdech w górnej pozycji (rozciągnięcie). Wydech w trakcie przyciągania, gdy lina wędruje w stronę bioder. Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_anterior",
+      "severity": "modify",
+      "modification": "The fully overhead start position can compress the subacromial space. Reduce range from the top (start with arms at ~45 degrees overhead, not fully reaching) and use lighter loads until pain-free.",
+      "modificationPl": "Pełna pozycja nad głową w starcie może uciskać przestrzeń podbarkową. Ogranicz zakres od góry (startuj z ramionami pod kątem ~45 stopni nad głową zamiast pełnego sięgania) i używaj lżejszych ciężarów do zakresu bez bólu.",
+      "alternative": "straight-arm-pulldown"
+    },
+    {
+      "condition": "lat_or_teres_strain",
+      "severity": "avoid",
+      "modification": "The stretched start position loads exactly the injured tissue. Avoid for 4-6 weeks; switch to short-lever lat exercises with neutral grip and limited stretch (close-grip pulldown).",
+      "modificationPl": "Pozycja rozciągniętego startu obciąża dokładnie kontuzjowaną tkankę. Unikaj przez 4-6 tygodni; przejdź na ćwiczenia najszerszych z krótszą dźwignią, neutralnym chwytem i ograniczonym rozciągnięciem (przyciąganie wąskim chwytem).",
+      "alternative": "close-grip-pulldown"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "The standing forward lean places shear stress on the lumbar spine. Reduce the lean to near-vertical, brace the core hard, and use moderate weights. Consider the incline-bench variant instead.",
+      "modificationPl": "Stojące pochylenie do przodu obciąża odcinek lędźwiowy siłami ścinającymi. Zmniejsz pochylenie niemal do pionu, mocno napnij brzuch i używaj umiarkowanych ciężarów. Rozważ wariant na ławce skośnej."
+    },
+    {
+      "condition": "long_head_biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Even with neutral rope grip, the overhead loaded position stresses the long head biceps tendon. Avoid bouncing out of the stretch and reduce load.",
+      "modificationPl": "Nawet przy neutralnym chwycie liny, obciążona pozycja nad głową drażni ścięgno głowy długiej bicepsa. Unikaj odbicia z pozycji rozciągniętej i zmniejsz ciężar."
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, preferred) | 3x12-20 (lats mind-muscle / finisher) | 4x8-12 (heavier, advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-standing-pulldown-with-rope.gif",
+    "frames_extracted": [
+      "frames/cable-standing-pulldown-with-rope/frame_0_start.png",
+      "frames/cable-standing-pulldown-with-rope/frame_1_early.png",
+      "frames/cable-standing-pulldown-with-rope/frame_2_mid.png",
+      "frames/cable-standing-pulldown-with-rope/frame_3_late.png",
+      "frames/cable-standing-pulldown-with-rope/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-straight-arm-pulldown-with-rope"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel (źródłowy plik: lats/cable-straight-arm-pulldown-with-rope.gif — wariant stojący z liną). Frame 0 (start): sportowiec stoi przodem do wyciągu górnego, lekkie pochylenie tułowia (~15 stopni od pionu), ramiona w pełnym wyproście nad głową, neutralny chwyt liny (dłonie zwrócone do siebie), linka idzie pod kątem do góry do bloczka. Podświetlone: latissimus dorsi (boki tułowia, MOCNO) i obły większy (teres major). Frame 1-2 (faza koncentryczna): ramiona poruszają się jako sztywne segmenty po szerokim łuku w dół, łokcie pozostają prawie w pełni wyprostowane (BRAK zginania w łokciu — to klucz!), lina wędruje przed klatką w stronę bioder. Frame 3 (dolna pozycja): ramiona wzdłuż tułowia, lina przy biodrach, dłonie lekko rozsunięte. Frame 4 (powrót): widać 'ghost' poprzedniej fazy — ramiona wracają nad głowę. Klasyczny straight-arm pulldown z liną stojąc — czysta izolacja najszerszych z dominującą rolą wyprostu w stawie barkowym. Lina (neutralny chwyt) wycisza biceps i pozwala rozsunąć dłonie w dolnej pozycji — daje to silniejsze napięcie końcowe najszerszych w porównaniu z drążkiem. movement_pattern = isolation_extension, primary = latissimus_dorsi (P10) — wyższe niż wariant na ławce (P9), bo neutralny chwyt liny lepiej wycisza zginacze łokcia i pochylenie tułowia daje dłuższą drogę dla najszerszych. teres_major (S8) wyższe niż w wariancie na ławce (S7), bo neutralny chwyt liny mocniej akcentuje obły większy. Difficulty 4 (intermediate). UWAGA: w bazie jahel slug 'biceps/cable-standing-pulldown-with-rope' to inny ruch (rope curl pod wyciągiem — biceps) — nie pomylić. Wszystkie pola PL napisane od zera, słownictwo trenerskie.",
+
+  "tags": ["bodybuilding", "back", "lats", "isolation", "cable", "rope", "upper_body", "stretch_focused", "standing"]
+}

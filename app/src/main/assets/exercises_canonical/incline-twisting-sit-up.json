@@ -1,0 +1,198 @@
+{
+  "id": "incline-twisting-sit-up",
+  "name": "Incline Twisting Sit-Up",
+  "namePl": "Sit-up skośny ze skrętem",
+  "aliases": ["decline twisting sit-up", "incline russian sit-up", "bench twisting crunch", "rotational sit-up on bench", "incline cross-elbow sit-up"],
+  "aliasesPl": ["sit-up skośny ze skrętem", "brzuszki na ławce z rotacją", "skośne sit-upy z rotacją", "brzuszki rotacyjne na ławce skośnej", "sit-up z rotacją tułowia na ławce", "skręty na ławce skośnej"],
+
+  "description": "Compound abdominal exercise performed on a decline (or flat) bench with the feet hooked under the rollers. The lifter places the hands behind the head and combines a full sit-up with a powerful trunk rotation — driving one elbow toward the opposite knee at the top of each rep, alternating sides. The combination of spinal flexion against gravity (decline angle increases load) and transverse-plane rotation hits the rectus abdominis and obliques in the same rep, making it a dense compound finisher for the entire anterior core.",
+  "descriptionPl": "Złożone ćwiczenie na brzuch wykonywane na ławce skośnej ujemnej (lub poziomej) z nogami zaczepionymi pod rolkami. Ćwiczący kładzie dłonie za głową i łączy pełny sit-up z mocną rotacją tułowia — w szczycie każdego powtórzenia prowadzi jeden łokieć w stronę przeciwnego kolana, naprzemiennie zmieniając strony. Połączenie zgięcia kręgosłupa pod grawitacją (kąt ujemny zwiększa obciążenie) z rotacją w płaszczyźnie poprzecznej w jednym ruchu angażuje mięsień prosty brzucha i skośne w tym samym powtórzeniu — to gęsty, złożony finiszer na cały przedni rdzeń.",
+
+  "instructions": [
+    "Set a sit-up / decline bench at a moderate negative angle (15-30°). Hook your feet securely under the foot rollers and lie back so that the hips, lower back and upper back rest on the pad.",
+    "Place your fingertips lightly behind your ears (do NOT lace fingers behind the head). Elbows wide. Tuck the chin slightly and brace the core.",
+    "Inhale, then exhale as you curl up off the bench — flex through the spine, lifting the torso toward the knees. Stop a few degrees short of vertical so the abs keep tension.",
+    "At the top, rotate your torso and bring one elbow toward the opposite knee — feel a strong squeeze in the oblique on the rotating side. Keep the hips planted on the pad.",
+    "Reverse the rotation back to center, then lower the torso under control to the start position. Inhale on the way down.",
+    "Next rep, perform the sit-up again and rotate to the opposite side. Continue alternating sides for the prescribed reps.",
+    "Keep the neck long — never yank on the head. The chin stays a fist-width from the chest throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę do sit-upów / ławkę skośną pod umiarkowanym kątem ujemnym (15-30°). Zaczep stopy stabilnie pod rolkami i połóż się tak, aby biodra, dolny i górny odcinek pleców opierały się na poduszce.",
+    "Połóż czubki palców lekko za uszami (NIE zaplataj palców na karku). Łokcie szeroko. Lekko schowaj brodę i napnij brzuch.",
+    "Wdech, następnie wydech — zwijaj się w górę z ławki, zginając kręgosłup i unosząc tułów w stronę kolan. Zatrzymaj się kilka stopni przed pionem, aby brzuch nie tracił napięcia.",
+    "W górnej pozycji rotuj tułowiem i prowadź jeden łokieć w stronę przeciwnego kolana — poczuj mocny skurcz mięśnia skośnego po stronie skrętu. Biodra trzymaj przyklejone do poduszki.",
+    "Wycofaj rotację do środka, następnie opuść tułów kontrolowanie do pozycji wyjściowej. Wdech podczas opuszczania.",
+    "Następne powtórzenie wykonaj sit-up i rotację w stronę przeciwną. Kontynuuj naprzemienne zmiany stron przez zaplanowaną liczbę powtórzeń.",
+    "Trzymaj szyję długą — nigdy nie szarp głowy rękami. Broda przez cały czas powinna być w odległości pięści od klatki."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion_rotation",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral_alternating",
+    "plane": "sagittal_transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "obliques"],
+    "secondary": ["hip_flexors"],
+    "stabilizers": ["transverse_abdominis", "quadriceps", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "obliques": "P8",
+    "hip_flexors": "S6",
+    "transverse_abdominis": "T4",
+    "quadriceps": "T3",
+    "serratus_anterior": "T2"
+  },
+
+  "equipment": {
+    "required": ["decline_bench"],
+    "optional": ["flat_bench_with_foot_rollers", "ab_bench"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["crunch", "sit-up", "russian-twist"],
+    "progression_to": ["weighted-decline-twisting-sit-up", "cable-russian-twist", "hanging-windshield-wiper"],
+    "alternatives": ["decline-sit-up", "bicycle-crunch", "russian-twist", "cable-woodchopper"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Decline bench angle 15-30° — start moderate, not steep",
+      "Feet locked tight under the rollers, knees slightly bent",
+      "Fingertips behind the ears, elbows wide — never lace fingers",
+      "Chin tucked slightly, neutral neck — small space under the chin",
+      "Brace the abs and press lower back into the pad before lift-off"
+    ],
+    "setup_cues_pl": [
+      "Kąt ławki skośnej 15-30° — zacznij od umiarkowanego, nie stromego",
+      "Stopy mocno zablokowane pod rolkami, kolana lekko ugięte",
+      "Czubki palców za uszami, łokcie szeroko — nigdy nie zaplataj palców",
+      "Broda lekko schowana, szyja neutralna — mała przestrzeń pod brodą",
+      "Napnij brzuch i dociśnij dolne plecy do poduszki przed startem"
+    ],
+    "execution_cues": [
+      "Curl the spine up — segment by segment, not one rigid block",
+      "Exhale forcefully as you sit up and rotate",
+      "Drive the elbow to the OPPOSITE knee, not straight forward",
+      "Squeeze the oblique hard at the top for 1 second",
+      "Lower 2 seconds eccentric — control beats speed"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj kręgosłup w górę — segment po segmencie, nie jak sztywny blok",
+      "Mocny wydech podczas siadania i rotacji",
+      "Prowadź łokieć do PRZECIWNEGO kolana, nie prosto w górę",
+      "Mocno ściśnij mięsień skośny w szczycie przez 1 sekundę",
+      "Opuszczanie 2 sekundy ekscentrycznie — kontrola wygrywa z szybkością"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling on the head / neck strain",
+        "faultPl": "Szarpanie głowy rękami / nadwyrężanie karku",
+        "cause": "Hands clasped behind the neck and arms doing the lifting instead of the abs",
+        "causePl": "Ręce splecione na karku i to ramiona unoszą głowę zamiast brzucha",
+        "cue": "Fingertips behind the ears, light touch only. If you feel the neck working, reach the elbow forward toward the knee instead of pulling.",
+        "cuePl": "Tylko czubki palców za uszami, dotyk lekki. Jeśli czujesz pracę karku, prowadź łokieć do przodu w stronę kolana zamiast szarpać."
+      },
+      {
+        "fault": "Rotating only the arms / shoulders without trunk rotation",
+        "faultPl": "Rotacja samych ramion lub barków zamiast tułowia",
+        "cause": "Treating the twist as an arm swing — obliques get bypassed",
+        "causePl": "Traktowanie skrętu jako machnięcia ramieniem — mięśnie skośne pominięte",
+        "cue": "The whole rib cage turns over the pelvis. Imagine the sternum rotating toward the opposite hip.",
+        "cuePl": "Cała klatka piersiowa obraca się nad miednicą. Wyobraź sobie, że mostek skręca się w stronę przeciwnego biodra."
+      },
+      {
+        "fault": "Using hip-flexor swing / momentum instead of ab work",
+        "faultPl": "Wykorzystanie zamachu zginaczy biodra / rozpędu zamiast pracy brzucha",
+        "cause": "Bench too steep, feet jammed too hard against rollers, abs underloaded",
+        "causePl": "Ławka za stroma, stopy za mocno wparte w rolki, brzuch niedociążony",
+        "cue": "Reduce decline angle. Initiate every rep by pressing the lower back into the pad and curling the spine.",
+        "cuePl": "Zmniejsz kąt nachylenia. Każde powtórzenie zaczynaj od dociśnięcia lędźwi do poduszki i zwinięcia kręgosłupa."
+      },
+      {
+        "fault": "Going to full vertical / sitting all the way up",
+        "faultPl": "Wstawanie do pełnego pionu / pełny sit-up",
+        "cause": "Past ~60° the hip flexors take over and abs lose tension",
+        "causePl": "Powyżej ~60° pracę przejmują zginacze biodra, a brzuch traci napięcie",
+        "cue": "Stop a third of the way down from vertical — keep tension on the abs. Sit-up is the journey, not the destination.",
+        "cuePl": "Zatrzymaj się jedną trzecią drogi przed pionem — utrzymuj napięcie brzucha. Sit-up to droga, nie cel."
+      },
+      {
+        "fault": "Hips lifting off the bench during rotation",
+        "faultPl": "Biodra odrywają się od ławki podczas rotacji",
+        "cause": "Trying to rotate too far or compensating with the pelvis",
+        "causePl": "Próba rotacji za daleko lub kompensacja miednicą",
+        "cue": "Glue the hips to the pad. Rotation comes from the thoracic spine, not the lumbar.",
+        "cuePl": "Przyklej biodra do poduszki. Rotacja pochodzi z odcinka piersiowego kręgosłupa, nie lędźwiowego."
+      }
+    ],
+    "breathing": "Inhale during the eccentric lowering phase. Exhale forcefully during the sit-up AND the rotation to the opposite knee — this maximises both rectus abdominis and oblique contraction.",
+    "breathingPl": "Wdech podczas opuszczania (faza ekscentryczna). Mocny wydech podczas siadania ORAZ rotacji do przeciwnego kolana — maksymalizuje skurcz zarówno mięśnia prostego brzucha, jak i skośnych."
+  },
+
+  "contraindications": [
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Combined flexion + rotation under load is the most aggressive position for lumbar discs (McGill protocol). Switch to anti-rotation core work (Pallof press, side plank).",
+      "modificationPl": "Połączenie zgięcia z rotacją pod obciążeniem to najbardziej agresywna pozycja dla krążków lędźwiowych (protokół McGilla). Zamień na ćwiczenia anty-rotacyjne (Pallof press, deska bokiem).",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Spinal flexion + rotation can flare acute lumbar pain. Use neutral-spine alternatives until pain-free.",
+      "modificationPl": "Zgięcie i rotacja kręgosłupa mogą zaostrzyć ostry ból lędźwi. Stosuj alternatywy w neutralnej pozycji kręgosłupa do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Don't pull on the head. If neck flares up, switch to bicycle crunch on the floor or do the sit-up without the twist.",
+      "modificationPl": "Nie szarp głowy rękami. Jeśli boli kark, przejdź na bicycle crunch na podłodze lub sit-up bez skrętu.",
+      "alternative": "bicycle-crunch"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Repeated crunching + rotation can worsen midline separation (postpartum or otherwise). Start with transverse-abdominis work before progressing.",
+      "modificationPl": "Powtarzane zwijanie + rotacja mogą pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Zacznij od ćwiczeń mięśnia poprzecznego brzucha przed progresją.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 each side (hypertrophy) | 3x15-20 each side (endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "incline-twisting-sit-up.gif",
+    "frames_extracted": [
+      "frames/incline-twisting-sit-up/frame_0_start.png",
+      "frames/incline-twisting-sit-up/frame_1_early.png",
+      "frames/incline-twisting-sit-up/frame_2_mid.png",
+      "frames/incline-twisting-sit-up/frame_3_late.png",
+      "frames/incline-twisting-sit-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/incline-twisting-sit-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): pełne leżenie na ławce skośnej (lekko ujemnej), stopy zaczepione pod rolkami, kolana ugięte ~90°, ręce za głową, anatomicznie podświetlony mięsień prosty brzucha i skośne. Klatka 1-2 (mid): tułów uniesiony niemal do siedzenia, mocna rotacja w prawą stronę — prawy łokieć (z perspektywy ćwiczącego widzimy lewy łokieć kierowany w prawą stronę) prowadzi do przeciwnego kolana, widoczny mocny skurcz mięśni skośnych po stronie skrętu. Klatka 3-4 (late/end): powrót do pozycji wyjściowej. Ruch potwierdzony jako sit-up z rotacją tułowia — combo dwóch wzorców (zgięcie sagittal + rotacja transverse). Klasyfikacja: core_flexion_rotation (compound — kręgosłup + biodra + rotacja tułowia), bilateral_alternating (naprzemienne strony), plane=sagittal+transverse (oba). Force=pull (skurcz koncentryczny). Mięśnie: P9 rectus_abdominis (główny napęd flexion) + P8 obliques (rotacja), S6 hip_flexors (asystują przy wzroście kąta nachylenia). Difficulty=6, intermediate (wymaga koordynacji + wystarczającej siły core do kontroli rotacji w górnej pozycji). Nazwa PL 'Sit-up skośny ze skrętem' — dosłowna i precyzyjna (transliteracja 'sit-up' jest powszechna w polskim środowisku fitness), aliasy obejmują formy alternatywne ('brzuszki na ławce z rotacją', 'skręty na ławce skośnej'). Przeciwwskazania: combined flexion+rotation pod obciążeniem to red flag dla dysków lędźwiowych (McGill) — severity=avoid dla disc herniation. Wszystkie pola PL napisane od zera, nie tłumaczone maszynowo.",
+
+  "tags": ["bench", "core", "abs", "obliques", "rotation", "compound", "gym", "decline_bench"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "cable-rear-delt-row-with-rope",
+  "name": "Cable Rear Delt Row with Rope (Face Pull)",
+  "namePl": "Face pull z liną na wyciągu",
+  "aliases": ["face pull", "cable face pull", "rope face pull", "cable rear delt face pull", "rope rear delt row"],
+  "aliasesPl": ["face pull z liną", "wiosłowanie tylnych aktonów z liną do twarzy", "przyciąganie liny do twarzy na wyciągu", "face pull na wyciągu górnym", "wiosłowanie tylnych delt z liną"],
+
+  "description": "A horizontal pulling exercise targeting the posterior deltoids, mid-trapezius and rotator cuff (especially the external rotators — infraspinatus and teres minor). Performed on a cable machine with a rope attachment set at head height: the lifter pulls the rope toward the face while externally rotating the shoulders so the hands finish out wide near the ears. One of the most valuable 'pre-hab' exercises for shoulder health — it trains the often-neglected scapular retractors and external rotators that counterbalance heavy pressing volume. Light loads, high reps, strict tempo.",
+  "descriptionPl": "Ćwiczenie ciągnące w płaszczyźnie poziomej angażujące tylne aktony barków, środkową część kapturowego oraz mięśnie stożka rotatorów (zwłaszcza rotatory zewnętrzne — podgrzebieniowy i obły mniejszy). Wykonywane na wyciągu z liną ustawioną na wysokości głowy: ćwiczący przyciąga linę w stronę twarzy z jednoczesną rotacją zewnętrzną w stawach barkowych, tak by dłonie zatrzymały się szeroko przy uszach. Jedno z najważniejszych ćwiczeń profilaktycznych (pre-hab) dla zdrowia barków — trenuje zaniedbywane mięśnie ściągające łopatki i rotatory zewnętrzne, które równoważą duże objętości wyciskań. Lekkie ciężary, wysokie powtórzenia, ścisłe tempo.",
+
+  "instructions": [
+    "Attach a rope to the high pulley of a cable machine (slightly above head height, roughly forehead level). Select a light to moderate weight — face pulls should never be heavy.",
+    "Grab the rope with a neutral overhand grip (thumbs pointing toward you), one hand on each end of the rope. Step back until the cable is under full tension with arms fully extended in front of you.",
+    "Adopt an athletic stance: feet shoulder-width apart, one foot slightly staggered for balance, knees soft, core braced.",
+    "Start with arms straight in front, slightly above shoulder level. Shoulder blades pulled back and down (retracted and depressed). This is the starting position.",
+    "Pull the rope toward your face by leading with the elbows, pulling them out and back. Simultaneously externally rotate the shoulders — at the end position, the back of your hands should be near your ears, thumbs pointing back behind you.",
+    "Hold the peak contraction for 1 second. The rope splits and ends near both ears, elbows are slightly above shoulder level, chest is up, shoulder blades fully squeezed together.",
+    "Lower the rope under control back to the starting position over 2-3 seconds, allowing the shoulder blades to protract slightly at the end of the eccentric (controlled, not collapsed).",
+    "Maintain an upright torso throughout — no leaning back to use bodyweight as counterweight. The work is done by the rear delts and upper-back muscles, not the lower back."
+  ],
+  "instructionsPl": [
+    "Zamontuj linę do górnego bloku wyciągu (nieco powyżej wysokości głowy, mniej więcej na wysokości czoła). Wybierz lekki do umiarkowanego ciężar — face pull nigdy nie powinien być ciężki.",
+    "Złap linę chwytem neutralnym nachwytem (kciuki skierowane do Ciebie), jedna dłoń na każdym końcu liny. Cofnij się aż linka znajdzie się pod pełnym naprężeniem z wyprostowanymi ramionami przed sobą.",
+    "Przyjmij sportową postawę: stopy na szerokość barków, jedna lekko z tyłu dla równowagi, miękkie kolana, napięty brzuch.",
+    "Zacznij z wyprostowanymi ramionami przed sobą, lekko powyżej linii barków. Łopatki ściągnięte w tył i w dół. To pozycja wyjściowa.",
+    "Przyciągnij linę w stronę twarzy prowadząc ruch łokciami — wyciągaj je na boki i w tył. Jednocześnie wykonaj rotację zewnętrzną w stawach barkowych — w końcowej pozycji grzbiety dłoni powinny znajdować się przy uszach, a kciuki wskazywać za Tobą.",
+    "Zatrzymaj się w pozycji szczytowej na 1 sekundę. Końcówki liny rozchodzą się przy obu uszach, łokcie lekko powyżej linii barków, klatka uniesiona, łopatki maksymalnie ściągnięte.",
+    "Opuszczaj linę w sposób kontrolowany do pozycji wyjściowej przez 2-3 sekundy, pozwalając łopatkom lekko protrahować na końcu fazy ekscentrycznej (kontrolowanie, bez 'klapnięcia').",
+    "Utrzymuj wyprostowany tułów przez cały czas — nie odchylaj się w tył, by używać masy ciała jako przeciwwagi. Pracę wykonują tylne aktony i mięśnie górnej części pleców, nie dolny odcinek pleców."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids", "trapezius_middle"],
+    "secondary": ["rotator_cuff", "rhomboids", "infraspinatus", "teres_minor"],
+    "stabilizers": ["trapezius_lower", "core", "forearm_flexors", "biceps_brachii"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P10",
+    "trapezius_middle": "P9",
+    "rotator_cuff": "S8",
+    "infraspinatus": "S7",
+    "teres_minor": "S6",
+    "rhomboids": "S6",
+    "trapezius_lower": "T4",
+    "biceps_brachii": "T3",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope_attachment"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["band-pull-apart", "bent-over-dumbbell-rear-delt-row"],
+    "progression_to": ["cable-rear-delt-fly", "reverse-pec-deck", "high-cable-face-pull-with-external-rotation"],
+    "alternatives": ["band-pull-apart", "reverse-pec-deck", "dumbbell-lying-rear-lateral-raise", "cable-rear-delt-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Rope at forehead level — not too high, not too low",
+      "Neutral overhand grip, thumbs pointing back at you",
+      "Step back so cable has constant tension at start",
+      "Athletic stance, staggered feet, core braced",
+      "Shoulder blades pre-set: pulled back and down"
+    ],
+    "setup_cues_pl": [
+      "Lina na wysokości czoła — nie za wysoko, nie za nisko",
+      "Chwyt neutralny nachwytem, kciuki skierowane do Ciebie",
+      "Cofnij się tak, by lina była naprężona na starcie",
+      "Sportowa postawa, stopy w lekkim rozkroku, napięty brzuch",
+      "Łopatki ustawione: ściągnięte w tył i w dół"
+    ],
+    "execution_cues": [
+      "Pull with the elbows, not the hands",
+      "Rope ends finish at the ears — thumbs back behind you",
+      "External rotation is half the exercise — don't skip it",
+      "Elbows slightly above shoulder line at peak",
+      "Squeeze shoulder blades together at the top for 1 second"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciami, nie dłońmi",
+      "Końce liny mają znaleźć się przy uszach — kciuki skierowane za Tobą",
+      "Rotacja zewnętrzna to połowa ćwiczenia — nie pomijaj jej",
+      "Łokcie lekko powyżej linii barków w pozycji szczytowej",
+      "Spinaj łopatki razem w pozycji szczytowej przez 1 sekundę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Loading too heavy — exercise turns into a high row",
+        "faultPl": "Zbyt duży ciężar — ćwiczenie zamienia się w wiosłowanie wysokie",
+        "cause": "Ego lifting. Heavy load forces the body to use lats and biceps instead of rear delts and rotator cuff. External rotation disappears.",
+        "causePl": "Ego. Duży ciężar zmusza ciało do pracy najszerszymi i bicepsami zamiast tylnych aktonów i stożka rotatorów. Rotacja zewnętrzna znika.",
+        "cue": "Drop the weight by 30-50%. If you can't keep thumbs pointing back at the top, it's too heavy.",
+        "cuePl": "Zmniejsz ciężar o 30-50%. Jeśli nie potrafisz utrzymać kciuków skierowanych za siebie w pozycji szczytowej, to za ciężko."
+      },
+      {
+        "fault": "Skipping external rotation — rope ends finish in front of the face",
+        "faultPl": "Brak rotacji zewnętrznej — końce liny kończą się przed twarzą",
+        "cause": "Inadequate cue understanding or load too heavy to allow external rotation",
+        "causePl": "Niezrozumienie cue lub ciężar zbyt duży by umożliwić rotację zewnętrzną",
+        "cue": "At the top, the BACK of your hands should be near your ears, thumbs pointing behind you. If thumbs face forward, you missed half the exercise.",
+        "cuePl": "W pozycji szczytowej GRZBIETY dłoni mają być przy uszach, kciuki skierowane za Tobą. Jeśli kciuki są z przodu, ominąłeś połowę ćwiczenia."
+      },
+      {
+        "fault": "Leaning back to use bodyweight as counterbalance",
+        "faultPl": "Odchylanie się w tył w celu wykorzystania masy ciała jako przeciwwagi",
+        "cause": "Load too heavy or lifter trying to imitate the pulley angle to get more leverage",
+        "causePl": "Zbyt duży ciężar lub próba dostosowania kąta wyciągu w celu uzyskania większej dźwigni",
+        "cue": "Stack your ears over your shoulders over your hips. Tall and tight torso. Reduce weight if torso starts moving.",
+        "cuePl": "Ustaw uszy nad barkami, barki nad biodrami. Wysoki, spięty tułów. Zmniejsz ciężar, jeśli tułów zaczyna się bujać."
+      },
+      {
+        "fault": "Shrugging — upper traps take over",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują ruch",
+        "cause": "Loss of scapular depression. Often caused by setting the rope too high or by going too heavy.",
+        "causePl": "Utrata depresji łopatek. Często spowodowane ustawieniem liny zbyt wysoko lub zbyt dużym ciężarem.",
+        "cue": "Press your shoulders away from your ears throughout. If you feel it in the upper traps, drop the weight.",
+        "cuePl": "Aktywnie odsuwaj barki od uszu przez cały czas. Jeśli czujesz to w trapezach górnych, zmniejsz ciężar."
+      },
+      {
+        "fault": "Insufficient range — stopping before full retraction",
+        "faultPl": "Niedostateczny zakres — zatrzymanie przed pełnym ściągnięciem łopatek",
+        "cause": "Rushing the rep or focusing only on the hand pull, not the scapular retraction",
+        "causePl": "Pośpiech lub skupienie tylko na ruchu dłoni, nie na ściąganiu łopatek",
+        "cue": "Pull until your hands pass the ears and your shoulder blades fully touch. Pause and feel the squeeze.",
+        "cuePl": "Ciągnij aż dłonie miną uszy, a łopatki w pełni się zetkną. Zatrzymaj się i poczuj napięcie."
+      }
+    ],
+    "breathing": "Exhale on the pull (concentric, rope toward face). Inhale on the return (eccentric, arms extending forward). Avoid Valsalva — this is a light, high-rep movement.",
+    "breathingPl": "Wydech podczas przyciągania (faza koncentryczna, lina w stronę twarzy). Wdech podczas powrotu (faza ekscentryczna, ramiona prostujące się do przodu). Unikaj próby Valsalvy — to ruch lekki, na wysokie powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "External rotation under load can aggravate an acute cuff tear. Avoid during the acute and early sub-acute phase. Reintroduce only with PT clearance using bands at very light intensity.",
+      "modificationPl": "Rotacja zewnętrzna pod obciążeniem może pogłębić ostre uszkodzenie stożka rotatorów. Unikaj w fazie ostrej i wczesnej podostrej. Wracaj wyłącznie po konsultacji z fizjoterapeutą, używając gum o bardzo niskiej intensywności.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Set the cable slightly below shoulder height (low-to-high face pull) to reduce subacromial compression. Avoid pulling above the ear line. Use lighter loads.",
+      "modificationPl": "Ustaw wyciąg lekko poniżej linii barków (face pull z dołu do góry), by zredukować kompresję podbarkową. Unikaj ciągnięcia powyżej linii uszu. Stosuj lżejsze ciężary.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "cervical_spine_disc_issues",
+      "severity": "caution",
+      "modification": "Avoid jutting the chin forward to meet the rope. Keep the neck neutral and let the rope come to you. If radiating arm pain occurs, stop.",
+      "modificationPl": "Unikaj wysuwania brody do przodu, by spotkać się z liną. Trzymaj szyję neutralnie i pozwól, by lina sama zbliżała się do Ciebie. Przerwij, jeśli pojawi się promieniujący ból ramienia.",
+      "alternative": "reverse-pec-deck"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "Reduce ROM — do not pull the rope all the way to ear level. Stay short of any pinch sensation. Lighter load with strict tempo.",
+      "modificationPl": "Zmniejsz zakres ruchu — nie przyciągaj liny aż do wysokości uszu. Zatrzymuj się przed odczuciem szczypania. Lżejszy ciężar przy ścisłym tempie.",
+      "alternative": "band-pull-apart"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (standard pre-hab/hypertrophy) | 4-5x15-25 (high-volume rear delt/shoulder health block) | 2-3x20-30 (warm-up / activation before pressing)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-rear-delt-row-with-rope.gif",
+    "frames_extracted": [
+      "frames/cable-rear-delt-row-with-rope/frame_0_start.png",
+      "frames/cable-rear-delt-row-with-rope/frame_1_early.png",
+      "frames/cable-rear-delt-row-with-rope/frame_2_mid.png",
+      "frames/cable-rear-delt-row-with-rope/frame_3_late.png",
+      "frames/cable-rear-delt-row-with-rope/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-rear-delt-row-with-rope"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): ćwiczący stoi przodem do wyciągu, lina przyczepiona do górnego bloku na wysokości głowy, ramiona wyprostowane do przodu/do góry, dłonie trzymają końce liny chwytem neutralnym. Podświetlone na czerwono: tylne aktony, środkowy/dolny trapezius, tricepsy (delikatnie). Frame 2 (mid, peak contraction): lina przyciągnięta do poziomu twarzy/uszu, łokcie szeroko rozłożone na wysokości barków, dłonie rozchodzą się na boki przy uszach, kciuki skierowane w tył (widoczna rotacja zewnętrzna), łopatki maksymalnie ściągnięte, klatka piersiowa uniesiona. Frame 4 (end): powrót blisko pozycji wyjściowej z 'ghostem' fazy szczytowej widocznym powyżej. Klasyczny face pull z liną — pull_horizontal w płaszczyźnie transverse, z dominującą rotacją zewnętrzną w fazie końcowej. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "rotator_cuff", "isolation", "cable", "upper_body", "pull_horizontal", "prehab", "shoulder_health", "external_rotation", "hypertrophy"]
+}

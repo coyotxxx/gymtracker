@@ -1,0 +1,201 @@
+{
+  "id": "band-vertical-pallof-press",
+  "name": "Band Vertical Pallof Press",
+  "namePl": "Pallof press z gumą pionowo",
+  "aliases": ["band overhead pallof press", "vertical pallof press with band", "band overhead anti-extension press", "standing band vertical press", "band kneeling-to-overhead pallof"],
+  "aliasesPl": ["pallof press pionowy z gumą", "pallof press nad głowę z gumą", "guma anti-extension press", "wyciskanie pionowe pallof z gumą", "pionowy pallof press z taśmą oporową"],
+
+  "description": "An anti-extension and anti-lateral-flexion core exercise performed standing. A resistance band is anchored to a fixed point at hip height to the side, and the lifter holds the band with both hands at sternum height, then presses the arms vertically overhead while resisting the band's pull to the side and forward. As the arms travel overhead, the lever arm on the spine grows enormously — the rectus abdominis and obliques must work hard isometrically to prevent the lumbar spine from hyperextending (anti-extension), while simultaneously preventing the torso from being yanked sideways toward the anchor (anti-lateral-flexion). Unlike the classic horizontal Pallof press (anti-rotation only), the vertical version trains the core to stabilize the spine in the most demanding shoulder position — overhead — which directly transfers to overhead pressing, snatches, and any sport requiring arms-up bracing.",
+  "descriptionPl": "Ćwiczenie stabilizacyjne tułowia w wariancie anti-extension (przeciwdziałanie nadmiernemu prostowaniu kręgosłupa) i anti-lateral-flexion (przeciwdziałanie zgięciu bocznemu), wykonywane na stojąco. Gumę oporową przyczep do stałego punktu na wysokości biodra z boku ćwiczącego. Trzymaj gumę oburącz na wysokości mostka, a następnie wyciśnij ręce pionowo nad głowę, opierając się jednoczesnemu ciągnięciu gumy w bok i do przodu. Gdy ramiona przechodzą nad głowę, ramię dźwigni działające na kręgosłup rośnie ogromnie — mięsień prosty brzucha i skośne muszą izometrycznie pracować, by zapobiec hiperprzeproście odcinka lędźwiowego (anti-extension), a jednocześnie nie pozwolić, by tułów został szarpnięty w bok w stronę zaczepu (anti-lateral-flexion). W przeciwieństwie do klasycznego poziomego pallof press (tylko anti-rotation), wariant pionowy uczy core stabilizować kręgosłup w najbardziej wymagającej pozycji ramion — nad głową — co bezpośrednio przekłada się na wyciskanie nad głową, rwanie i każdy sport wymagający stabilizacji z rękami w górze.",
+
+  "instructions": [
+    "Anchor a resistance band securely to a fixed point at hip height (squat rack upright, pole, heavy machine). Test the anchor before loading the rep.",
+    "Stand sideways to the anchor at a distance that creates moderate tension on the band when you hold it at your chest. Feet hip-width apart, knees soft.",
+    "Grip the band with both hands interlocked at the center of your sternum. Elbows tucked, forearms parallel to the floor, band pulling you horizontally toward the anchor.",
+    "Set the core BEFORE moving: brace the abs as if expecting a punch, glutes squeezed, ribs down, pelvis neutral. Tall posture, eyes forward.",
+    "Press the hands straight UP overhead in a vertical line, biceps near the ears at the top. Do NOT let the band pull your torso forward or sideways — the spine stays stacked.",
+    "Lock out overhead for 1-2 seconds — this is where the core works hardest, fighting both anti-extension (band wants to arch your back) and anti-lateral-flexion (band wants to pull you sideways).",
+    "Lower the hands back to the sternum under control over 2 seconds. Reset the brace if needed between reps. Complete all reps on one side, then switch sides."
+  ],
+  "instructionsPl": [
+    "Przyczep gumę oporową do solidnego, stałego punktu na wysokości biodra (słupek klatki treningowej, słup, ciężka maszyna). Sprawdź zaczep przed wykonaniem powtórzenia.",
+    "Stań bokiem do zaczepu w takiej odległości, by guma była umiarkowanie napięta, gdy trzymasz ją przy klatce. Stopy rozstawione na szerokość bioder, kolana lekko ugięte.",
+    "Chwyć gumę oburącz, splatając dłonie na środku mostka. Łokcie przyciągnięte, przedramiona równoległe do podłogi, guma ciągnie tułów poziomo w stronę zaczepu.",
+    "Ustaw core ZANIM się ruszysz: napnij brzuch jak przed uderzeniem, ściśnij pośladki, żebra w dół, miednica neutralna. Sylwetka wyciągnięta, wzrok przed siebie.",
+    "Wyciśnij ręce prosto w GÓRĘ nad głowę w pionowej linii, bicepsy obok uszu w pozycji szczytowej. NIE pozwól, by guma pociągnęła tułów do przodu ani w bok — kręgosłup pozostaje w jednej linii.",
+    "Zablokuj pozycję nad głową na 1-2 sekundy — to tutaj core pracuje najmocniej, walcząc jednocześnie z anti-extension (guma chce wygiąć ci plecy w łuk) i anti-lateral-flexion (guma chce pociągnąć cię w bok).",
+    "Powoli sprowadź dłonie z powrotem do mostka w ciągu 2 sekund. Jeśli trzeba, zresetuj napięcie brzucha między powtórzeniami. Wykonaj wszystkie powtórzenia na jednej stronie, potem zmień stronę."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_rotation",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "multi",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "obliques"],
+    "secondary": ["transverse_abdominis", "erector_spinae"],
+    "stabilizers": ["glutes", "shoulders", "lats", "serratus_anterior", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "obliques": "P8",
+    "transverse_abdominis": "S7",
+    "erector_spinae": "S5",
+    "glutes": "T4",
+    "shoulders": "T4",
+    "lats": "T3",
+    "serratus_anterior": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band", "anchor_point"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["plank", "dead-bug"],
+    "progression_to": ["cable-vertical-pallof-press", "half-kneeling-band-vertical-pallof-press", "tall-kneeling-landmine-press"],
+    "alternatives": ["band-horizontal-pallof-press", "pallof-press", "dead-bug", "bear-hold", "tall-kneeling-band-overhead-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor at hip height — too high reduces the anti-extension challenge, too low changes the vector entirely",
+      "Stand sideways to the anchor, far enough that the band is already loaded at the chest position",
+      "Feet hip-width, knees soft, glutes squeezed — lower body is a quiet foundation",
+      "Hands interlocked on the band at sternum height, elbows tucked tight to the ribs",
+      "Brace the core 100% BEFORE the first press — set the position before adding load"
+    ],
+    "setup_cues_pl": [
+      "Zaczep gumy na wysokości biodra — wyżej osłabia wyzwanie anti-extension, niżej zmienia wektor zupełnie",
+      "Stań bokiem do zaczepu, w takiej odległości by guma była już napięta w pozycji przy klatce",
+      "Stopy na szerokość bioder, kolana lekko ugięte, pośladki ściśnięte — dolna część ciała to spokojny fundament",
+      "Dłonie splecione na gumie na wysokości mostka, łokcie przyciągnięte mocno do żeber",
+      "Napnij core w 100% ZANIM zaczniesz pierwsze powtórzenie — najpierw ustaw pozycję, potem dodaj obciążenie"
+    ],
+    "execution_cues": [
+      "Press STRAIGHT up — biceps next to the ears at the top, not arms drifting forward",
+      "Keep the ribs DOWN — if the lower back arches, the band is winning the anti-extension fight",
+      "Don't lean away from the anchor to compensate — torso stays vertical, only arms move",
+      "Pause overhead for 1-2 seconds — this is the working position, that's where the core earns the rep",
+      "Lower the hands 2 seconds back to the chest — slow eccentric maintains the isometric brace"
+    ],
+    "execution_cues_pl": [
+      "Wyciśnij PROSTO w górę — bicepsy obok uszu w szczycie, nie ręce wędrujące do przodu",
+      "Trzymaj żebra W DÓŁ — jeśli lędźwie się wyginają w łuk, to znaczy że guma wygrywa walkę anti-extension",
+      "Nie odchylaj się od zaczepu, by skompensować ciąg — tułów pozostaje pionowy, ruszają się tylko ręce",
+      "Zatrzymaj się nad głową na 1-2 sekundy — to jest pozycja robocza, w niej core zarabia na powtórzenie",
+      "Sprowadź dłonie 2 sekundy w dół do klatki — wolna faza ekscentryczna utrzymuje izometryczne napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lumbar hyperextension (arching the lower back) at lockout",
+        "faultPl": "Hiperprzeprost odcinka lędźwiowego (wyginanie pleców w łuk) w pozycji szczytowej",
+        "cause": "When the arms travel overhead the band's pull tries to extend the spine; if the abs do not fire hard enough, the lumbar arches and the load transfers from the core to the lower back joints",
+        "causePl": "Gdy ramiona idą nad głowę, ciąg gumy próbuje wyprostować kręgosłup; jeśli brzuch nie napnie się wystarczająco mocno, lędźwie wyginają się w łuk, a obciążenie przenosi się z core na stawy odcinka lędźwiowego",
+        "cue": "Ribs DOWN, pelvis tucked under (slight posterior tilt). Imagine zipping up a tight jacket from pubic bone to sternum — that's the brace. If you can't lock out without arching, use a lighter band.",
+        "cuePl": "Żebra W DÓŁ, miednica podwinięta pod (lekki tylny tilt). Wyobraź sobie, że zapinasz ciasną kurtkę od kości łonowej do mostka — to jest właściwe napięcie. Jeśli nie możesz wyprostować rąk bez wygięcia pleców, użyj słabszej gumy."
+      },
+      {
+        "fault": "Torso leaning sideways toward or away from the anchor",
+        "faultPl": "Tułów odchylający się w bok — w stronę zaczepu lub od zaczepu",
+        "cause": "The band pulls the body sideways; lifter either gives in (leans toward anchor) or overcompensates by leaning away — both kill the anti-lateral-flexion training effect",
+        "causePl": "Guma ciągnie ciało w bok; ćwiczący albo poddaje się (przechyla się w stronę zaczepu), albo nadmiernie kompensuje, odchylając się w drugą stronę — oba błędy zabijają efekt treningu anti-lateral-flexion",
+        "cue": "Imagine your spine is a perfectly vertical pole between two glass plates — you cannot lean either way without breaking glass. Hips squared, shoulders squared, both feet evenly loaded.",
+        "cuePl": "Wyobraź sobie, że twój kręgosłup to idealnie pionowy słup między dwiema szybami — nie możesz odchylić się w żadną stronę bez stłuczenia szkła. Biodra w jednej linii, barki w jednej linii, obie stopy równo obciążone."
+      },
+      {
+        "fault": "Arms drifting forward instead of pressing straight overhead",
+        "faultPl": "Ręce wędrujące do przodu zamiast wyciskania prosto nad głowę",
+        "cause": "Tight lats/limited shoulder flexion mobility, or the lifter unconsciously pushes arms forward to escape the anti-extension demand on the spine — the easier vector is forward, the harder vector is straight up",
+        "causePl": "Napięte mięśnie najszersze grzbietu / ograniczona ruchomość zgięcia barku, albo ćwiczący nieświadomie pcha ręce do przodu, by uciec od wymagania anti-extension na kręgosłup — łatwiejszy wektor to do przodu, trudniejszy to prosto w górę",
+        "cue": "Biceps to the ears at lockout. If your arms stop in front of your face, you're not training what you think you are. Drop the band tension or address shoulder mobility first.",
+        "cuePl": "Bicepsy obok uszu w pozycji szczytowej. Jeśli ręce zatrzymują się przed twarzą, to nie trenujesz tego, co myślisz. Zmniejsz napięcie gumy lub najpierw popraw mobilność barków."
+      },
+      {
+        "fault": "Holding breath through the entire set / Valsalva-only breathing",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię / oddychanie wyłącznie metodą Valsalvy",
+        "cause": "Beginners think bracing means holding breath — they hold for 8-10 reps and finish dizzy. Core bracing should be 70% isometric tension with continuous breathing through the diaphragm",
+        "causePl": "Początkujący myślą, że napięcie core oznacza wstrzymanie oddechu — wstrzymują na 8-10 powtórzeń i kończą z zawrotami głowy. Napięcie core powinno być 70% izometrycznym napięciem z ciągłym oddychaniem przeponowym",
+        "cue": "Sip air through pursed lips between reps. Exhale on the press up, inhale on the way down — but the brace never fully releases. You should be able to talk through your set.",
+        "cuePl": "Wciągaj powietrze przez zaciśnięte usta między powtórzeniami. Wydech podczas wyciskania w górę, wdech podczas opuszczania — ale napięcie nigdy się w pełni nie rozluźnia. Powinieneś móc mówić w trakcie serii."
+      },
+      {
+        "fault": "Using a band that is too heavy / losing position immediately",
+        "faultPl": "Użycie zbyt mocnej gumy / natychmiastowa utrata pozycji",
+        "cause": "Pallof press is a STABILIZATION exercise — load should challenge the brace, not break it. If the lifter cannot complete the lockout without compensating (arching, leaning, shifting feet), the band is too strong",
+        "causePl": "Pallof press to ćwiczenie STABILIZACYJNE — obciążenie powinno wyzwać napięcie, nie złamać je. Jeśli ćwiczący nie może dokończyć blokady bez kompensacji (wygięcie, odchylenie, przestawianie stóp), guma jest za mocna",
+        "cue": "Choose a band where you can hold the overhead lockout for 2 full seconds with PERFECT posture. If you can't, drop down a band — quality of brace > magnitude of load.",
+        "cuePl": "Wybierz gumę, przy której utrzymasz blokadę nad głową przez 2 pełne sekundy z IDEALNĄ postawą. Jeśli nie dasz rady, zmniejsz gumę — jakość napięcia > wielkość obciążenia."
+      }
+    ],
+    "breathing": "Inhale at the chest position to fill the diaphragm and set the brace. Exhale slowly through pursed lips while pressing the hands overhead — the exhale tightens the abs deeper through the lockout. Brief sip of air at the top, then inhale as you lower the hands back to the chest. The core brace stays engaged at ~70% throughout the entire set — never fully relax between reps until the set is finished.",
+    "breathingPl": "Wdech w pozycji przy klatce, by napełnić przeponę i ustawić napięcie brzucha. Wydech powoli przez zaciśnięte usta podczas wyciskania rąk nad głowę — wydech mocniej dociąga brzuch w pozycji szczytowej. Krótki haust powietrza na górze, potem wdech podczas opuszczania dłoni z powrotem do klatki. Napięcie core utrzymuj na ~70% przez całą serię — nigdy nie rozluźniaj się w pełni między powtórzeniami aż do końca serii."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Skip the overhead lockout phase entirely — it is the most lumbar-stressful position. Use the horizontal Pallof press variant (arms press straight forward, not overhead) until pain-free for two weeks, then re-introduce vertical version gradually.",
+      "modificationPl": "Pomiń całkowicie fazę blokady nad głową — to najbardziej obciążająca pozycja dla odcinka lędźwiowego. Użyj poziomego wariantu pallof press (ręce wyciskane prosto w przód, nie nad głowę) do czasu ustąpienia bólu na 2 tygodnie, potem stopniowo wprowadzaj wariant pionowy.",
+      "alternative": "band-horizontal-pallof-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Overhead lockout under band tension can aggravate impingement, especially if scapular upward rotation is limited. Either reduce overhead range (press only to forehead height) or substitute the horizontal variant until shoulder mobility is restored.",
+      "modificationPl": "Blokada nad głową pod napięciem gumy może nasilić impingement, zwłaszcza przy ograniczonej rotacji łopatki w górę. Albo zmniejsz zakres nad głowę (wyciskaj tylko do wysokości czoła), albo zamień na poziomy wariant do czasu odzyskania mobilności barku.",
+      "alternative": "band-horizontal-pallof-press"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "Anti-extension work is generally safe and even therapeutic for posterior disc herniation, but overhead loading can shift compressive forces unpredictably. Start with very light band tension, no overhead, and progress only under physiotherapist guidance.",
+      "modificationPl": "Praca anti-extension jest zwykle bezpieczna, a nawet terapeutyczna przy tylnej przepuklinie krążka, ale obciążanie nad głową może nieprzewidywalnie przenosić siły kompresji. Zacznij od bardzo lekkiej gumy, bez pozycji nad głową, i progres tylko pod kontrolą fizjoterapeuty.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "pregnancy_third_trimester",
+      "severity": "avoid",
+      "modification": "Anti-extension overhead loading is unsuitable in third trimester — combined risk of diastasis recti aggravation and overhead positions strain the already-stretched linea alba. Use side-plank with knee down or seated banded rows instead for trunk stabilization.",
+      "modificationPl": "Praca anti-extension z obciążeniem nad głowę jest nieodpowiednia w trzecim trymestrze — łączne ryzyko nasilenia rozejścia kresy białej oraz pozycji nad głową obciąża i tak już rozciągniętą kresę białą. Użyj zamiast tego deski bocznej z kolanem na podłodze lub siedzącego wiosłowania z gumą dla stabilizacji tułowia.",
+      "alternative": "plank"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per side, 2s pause overhead (stabilization focus) | 3x6-8 per side with 3-5s overhead hold (max anti-extension) | 2x15 per side (endurance)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "band-vertical-pallof-press.gif",
+    "frames_extracted": [
+      "frames/band-vertical-pallof-press/frame_0_start.png",
+      "frames/band-vertical-pallof-press/frame_1_early.png",
+      "frames/band-vertical-pallof-press/frame_2_mid.png",
+      "frames/band-vertical-pallof-press/frame_3_late.png",
+      "frames/band-vertical-pallof-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/band-vertical-pallof-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T16:33:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Klatka 0 (start): ćwiczący stoi wyprostowany bokiem do zaczepu gumy (zaczep widoczny w lewym dolnym/bocznym rogu kadru, guma biegnie z lewej strony do dłoni ćwiczącego). Dłonie splecione na środku mostka, łokcie przyciągnięte do żeber, przedramiona prawie równoległe do podłogi. Guma napięta, ciągnie ręce w bok i lekko w przód w stronę zaczepu. Podświetlenie anatomiczne CZERWONE widoczne na boku tułowia (obliques) i w przedniej części brzucha (rectus abdominis) — sygnał że oba mięśnie pracują izometrycznie już od pozycji startowej. Klatki 1-2 (early-mid): ręce unoszą się pionowo w górę nad głowę, łokcie się prostują. W klatce 2 (mid) ręce są w pełnej blokadzie nad głową, bicepsy obok uszu, dłonie w pełni splecione w szczycie. Guma rozciągnięta maksymalnie, ciągnie ramiona w bok i w tył — to tutaj core musi pracować NAJMOCNIEJ przeciw anti-extension (guma chce wygiąć plecy w łuk lędźwiowy) i anti-lateral-flexion (guma chce pociągnąć tułów w bok w stronę zaczepu). Podświetlenie obliques i rectus abdominis nadal czerwone — szczyt aktywacji izometrycznej core. Tułów pozostaje idealnie pionowy, kręgosłup wyciągnięty, miednica neutralna, żebra w dół. Klatki 3-4 (late-end): kontrolowany powrót dłoni z pozycji nad głowy do mostka, faza ekscentryczna. Klasyfikacja: anti_rotation (movement pattern; nasz schema nie ma anti_extension osobno, ale Pallof press zawsze klasyfikujemy w rodzinie anti_rotation jako stabilizacja core pod zewnętrznym wektorem oporu), force=push (ramiona aktywnie wyciskają obciążenie od ciała w pionie), mechanic=isolation (jeden ruch funkcjonalny: stabilizacja tułowia + zgięcie w stawie barkowym; brak wieloramowego compoundu), bilateral (obie ręce trzymają gumę razem), plane=multi (sagittal dla ruchu ramion + transverse/frontal dla oporu anti-rotation/anti-lateral-flexion gumy), open kinetic chain (dłonie się poruszają, stopy nieruchome ale to dla CORE jest open chain). Mięśnie główne: rectus_abdominis P10 (główny mięsień anti-extension — krytyczny przy pozycji rąk nad głową, by lędźwie nie wygięły się w łuk; odpowiada za 'żebra w dół'), obliques P8 (anti-lateral-flexion — guma ciągnie tułów w bok, skośne brzucha muszą izometrycznie utrzymać tułów prosto; szczególnie skośne zewnętrzne po stronie odwróconej od zaczepu i wewnętrzne po stronie zaczepu). Secondary: transverse_abdominis S7 (głęboka stabilizacja gorset, podtrzymuje napięcie wewnątrzbrzuszne), erector_spinae S5 (prostowniki grzbietu izometrycznie utrzymują kręgosłup w neutrum). Stabilizery: glutes T4 (stabilizują miednicę przed tylnym przechyłem przy zaciągnięciu pośladków), shoulders T4 (deltoid przedni i boczny wyciska ręce nad głowę), lats T3 (stabilizacja barku w overhead), serratus_anterior T3 (rotacja łopatki w górę dla bezpiecznej pozycji overhead), quadriceps T2 (stabilizacja postawy stojącej). Equipment: resistance_band + anchor_point (oba wymagane — bez stałego zaczepu nie da się wykonać). Difficulty=4 (intermediate — wymaga opanowania bracingu core i postawy neutralnej; nie tak techniczny jak landmine press czy Turkish get-up, ale wymaga świadomości anti-extension, którą początkujący nie mają). Prerequisites: plank (musi opanować izometryczne napięcie core w neutrum), dead-bug (musi opanować anti-extension z ruchem ramion przed gumą). Progressions: cable-vertical-pallof-press (większy i bardziej stały opór, twardszy challenge dla core), half-kneeling variant (zwiększa wyzwanie stabilizacji miednicy bez pomocy nóg), tall-kneeling-landmine-press (analogiczny ruch z dużym ciężarem). Alternatives: band-horizontal-pallof-press (klasyczny pallof anti-rotation, łatwiejszy bo bez overhead), pallof-press, dead-bug, bear-hold. Nazwa PL 'Pallof press z gumą pionowo' — zgodna z konwencją polskich nazw funkcjonalnych ('Pallof press' to ustabilizowana międzynarodowa nazwa nieprzekładalna, 'z gumą pionowo' opisuje wariant). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — terminologia trenerska (anti-extension, anti-lateral-flexion, mięsień prosty brzucha, skośne brzucha, miednica neutralna, faza ekscentryczna, hiperprzeprost odcinka lędźwiowego, rotacja łopatki w górę).",
+
+  "tags": ["band", "core", "abs", "anti_extension", "anti_lateral_flexion", "stabilization", "isolation", "overhead", "home_friendly", "rehab_friendly", "obliques", "rectus_abdominis"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "cable-overhead-curl",
+  "name": "Cable Overhead Curl",
+  "namePl": "Curl bicepsa z wyciągu nad głową",
+  "aliases": ["high cable curl", "double biceps cable curl", "bayesian overhead curl", "cable crossover biceps curl", "front double biceps cable curl"],
+  "aliasesPl": ["uginanie bicepsa z wyciągu nad głową", "double biceps z wyciągu", "curl z bramy nad głową", "uginanie ramion z wyciągu górnego oburącz", "high cable curl"],
+
+  "description": "An isolation exercise for the biceps performed in the center of a cable crossover with both pulleys set high. The lifter stands with arms horizontally abducted to shoulder height, gripping a D-handle in each hand, and curls the handles toward the temples / ears. The line of pull comes from above and behind the elbow, which keeps tension on the biceps in the fully shortened position — exactly where free-weight curls run out of resistance. Strongly emphasizes the peak of the short head of the biceps and produces the classic 'front double biceps' bodybuilding contraction.",
+  "descriptionPl": "Ćwiczenie izolowane na biceps wykonywane na środku bramy wyciągowej z oboma wyciągami ustawionymi wysoko. Ćwiczący stoi z ramionami odwiedzionymi horyzontalnie do wysokości barków, w każdej dłoni trzyma uchwyt D, i ugina łokcie ściągając uchwyty w kierunku skroni / uszu. Linia oporu biegnie z góry i zza łokcia, co utrzymuje napięcie na bicepsie w pozycji maksymalnie skróconej — dokładnie tam, gdzie wolnym ciężarom kończy się opór. Mocno akcentuje szczyt krótkiej głowy mięśnia dwugłowego ramienia i wymusza klasyczną kulturystyczną pozę 'double biceps z przodu'.",
+
+  "instructions": [
+    "Set both pulleys of a cable crossover to the highest position. Attach a single D-handle to each side.",
+    "Stand in the exact center between the towers, feet shoulder-width apart. Grab the right handle with your right hand and the left handle with your left hand using a supinated (palms up) grip.",
+    "Step back if needed so the cables are under light tension. Raise both arms out to the sides until your upper arms are horizontal at shoulder height — like the top of a lateral raise.",
+    "This is your starting position: elbows fully extended, palms facing the ceiling, biceps stretched. Chest up, core braced, glutes tight.",
+    "Keep the upper arms absolutely fixed in space — they do not drop, rise, or move forward during the set. Only the forearms move.",
+    "Exhale and curl both handles toward your head by flexing the elbows. Pull until your hands reach the level of your temples / ears and the biceps are fully squeezed.",
+    "Hold the peak contraction for a 1-second squeeze — this is the entire point of the exercise. Imagine hitting a 'front double biceps' pose against resistance.",
+    "Inhale and slowly extend the elbows back to the fully stretched starting position over 2-3 seconds. Do not let the upper arms drop as you lengthen.",
+    "Maintain a tall, neutral spine throughout. The torso does not lean, twist, or rotate."
+  ],
+  "instructionsPl": [
+    "Ustaw oba wyciągi bramy w najwyższej pozycji. Załóż pojedynczy uchwyt D z każdej strony.",
+    "Stań dokładnie na środku między kolumnami, stopy na szerokość barków. Złap prawy uchwyt prawą ręką, lewy uchwyt lewą ręką, chwytem podchwytem (dłonie skierowane do góry).",
+    "Jeśli trzeba — odejdź krok do tyłu tak aby linki były pod lekkim napięciem. Unieś oba ramiona w bok aż ramiona ponad łokciem będą poziomo na wysokości barków — jak w górnej fazie wznosów bocznych.",
+    "To jest pozycja startowa: łokcie w pełnym wyproście, dłonie skierowane do sufitu, biceps rozciągnięty. Klatka w górze, brzuch napięty, pośladki spięte.",
+    "Trzymaj ramiona ponad łokciem absolutnie nieruchomo — nie opadają, nie unoszą się, nie wędrują do przodu w trakcie serii. Pracują wyłącznie przedramiona.",
+    "Wydech: uginaj łokcie i ściągaj oba uchwyty w kierunku głowy. Pracuj aż dłonie znajdą się na wysokości skroni / uszu, a biceps będzie maksymalnie spięty.",
+    "Zatrzymaj się na 1 sekundę w pozycji szczytowej — to jest cały sens tego ćwiczenia. Wyobraź sobie że wykonujesz pozę 'double biceps z przodu' przeciwko oporowi.",
+    "Wdech: powoli prostuj łokcie wracając do pozycji startowej z bicepsem rozciągniętym, przez 2-3 sekundy. Nie pozwól ramionom opaść podczas rozciągania.",
+    "Utrzymuj wyprostowaną, neutralną sylwetkę przez cały czas. Tułów nie odchyla się, nie skręca, nie obraca."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["anterior_deltoid", "lateral_deltoid", "forearm_flexors", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S5",
+    "brachioradialis": "S4",
+    "anterior_deltoid": "T4",
+    "lateral_deltoid": "T3",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "upper_trapezius": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "two_d_handles"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-curl", "cable-curl", "dumbbell-curl"],
+    "progression_to": ["bayesian-cable-curl", "single-arm-cable-overhead-curl", "1.5-rep-cable-overhead-curl"],
+    "alternatives": ["bayesian-cable-curl", "incline-dumbbell-curl", "cable-curl", "concentration-curl", "spider-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both pulleys at the highest setting, single D-handle each side",
+      "Stand dead center between the cable towers",
+      "Arms horizontal at shoulder height — like a T-pose",
+      "Supinated grip, palms facing the ceiling at start",
+      "Chest up, core braced, glutes tight, neutral spine"
+    ],
+    "setup_cues_pl": [
+      "Oba wyciągi w najwyższym ustawieniu, pojedynczy uchwyt D z każdej strony",
+      "Stań dokładnie pośrodku między kolumnami bramy",
+      "Ramiona poziomo na wysokości barków — jak w pozycji T",
+      "Chwyt podchwytem, dłonie skierowane do sufitu na starcie",
+      "Klatka w górze, brzuch napięty, pośladki spięte, kręgosłup neutralny"
+    ],
+    "execution_cues": [
+      "Upper arms freeze in space — only forearms move",
+      "Pull the handles toward your ears, not toward your face",
+      "Hit a front-double-biceps pose at the top — squeeze 1 second",
+      "Fight the eccentric — lower over 2-3 seconds",
+      "Keep the chest tall — do not lean forward as you curl"
+    ],
+    "execution_cues_pl": [
+      "Ramiona ponad łokciem zamrożone — pracują tylko przedramiona",
+      "Ściągaj uchwyty do uszu, nie do twarzy",
+      "Trafiaj w pozę double biceps w górnej pozycji — spinaj 1 sekundę",
+      "Walcz z fazą negatywną — opuszczaj przez 2-3 sekundy",
+      "Trzymaj klatkę wysoko — nie pochylaj się do przodu podczas uginania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms drop down during the curl",
+        "faultPl": "Ramiona ponad łokciem opadają w trakcie uginania",
+        "cause": "Lateral deltoid fatigues, lifter is too heavy on the stack, or no awareness that upper arms must stay horizontal",
+        "causePl": "Aktony boczne barków się męczą, zbyt duży ciężar na stosie, lub brak świadomości że ramiona muszą pozostać poziomo",
+        "cue": "Lower the weight. Imagine someone holding a broomstick across your upper arms — it cannot move all set.",
+        "cuePl": "Zmniejsz ciężar. Wyobraź sobie że ktoś trzyma kij od miotły opartą o twoje ramiona — przez całą serię się nie rusza."
+      },
+      {
+        "fault": "Curling the handles in front of the face instead of to the temples",
+        "faultPl": "Ściąganie uchwytów przed twarz zamiast do skroni",
+        "cause": "Elbows drift forward to bring the line of pull in front of the body, converting the move into a regular curl",
+        "causePl": "Łokcie wędrują do przodu aby przesunąć linię oporu przed ciało, co zamienia ruch w zwykłe uginanie",
+        "cue": "Drive your elbows back, not forward. Hands finish behind your ear line, not in front of your eyes.",
+        "cuePl": "Wciskaj łokcie w tył, nie do przodu. Dłonie kończą za linią ucha, nie przed oczami."
+      },
+      {
+        "fault": "Leaning forward to assist with the contraction",
+        "faultPl": "Pochylanie się do przodu aby pomóc w skurczu",
+        "cause": "Load too heavy or biceps fatigue — torso buckles forward to shorten the cable path",
+        "causePl": "Zbyt duży ciężar lub zmęczenie bicepsa — tułów łamie się do przodu aby skrócić drogę linki",
+        "cue": "Stay tall. Ears stacked over hips. If you cannot stay vertical, drop the weight.",
+        "cuePl": "Pozostań pionowo. Uszy nad biodrami. Jeśli nie potrafisz utrzymać pionu — zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete elbow extension at the bottom (no stretch)",
+        "faultPl": "Niepełny wyprost łokci na dole (brak rozciągnięcia)",
+        "cause": "Reluctance to let go of the peak contraction, fear of losing tension, or shoulder mobility limit",
+        "causePl": "Niechęć do oddania pozycji szczytowej, strach przed utratą napięcia, lub ograniczenie mobilności barku",
+        "cue": "Fully straighten the arms every rep. The stretched position is where this exercise pays off.",
+        "cuePl": "Prostuj ramiona do końca przy każdym powtórzeniu. Pozycja rozciągnięta to miejsce gdzie to ćwiczenie się opłaca."
+      },
+      {
+        "fault": "Off-center stance (one cable slack, the other tight)",
+        "faultPl": "Asymetryczne ustawienie (jedna linka luźna, druga napięta)",
+        "cause": "Did not align body to the exact midpoint between towers — one biceps takes more load",
+        "causePl": "Brak ustawienia ciała dokładnie w połowie odległości między kolumnami — jeden biceps bierze więcej obciążenia",
+        "cue": "Look down at your feet — they should be equidistant from both towers. Re-set if needed.",
+        "cuePl": "Spójrz w dół na stopy — powinny być w równej odległości od obu kolumn. Popraw ustawienie jeśli trzeba."
+      }
+    ],
+    "breathing": "Exhale during the concentric phase as you curl the handles to your temples. Inhale during the eccentric phase as you extend the arms back to the stretched position. Maintain a light core brace throughout to keep the torso vertical.",
+    "breathingPl": "Wydech w fazie koncentrycznej podczas ściągania uchwytów do skroni. Wdech w fazie ekscentrycznej podczas prostowania ramion z powrotem do pozycji rozciągniętej. Utrzymuj lekkie napięcie brzucha przez całą serię aby zachować pionową postawę tułowia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_pathology",
+      "severity": "modify",
+      "modification": "Arms held horizontally at shoulder height for the duration of the set is a sustained provocative position for impingement. Drop the elbows slightly below shoulder height, work one arm at a time, or switch to a low-cable variation.",
+      "modificationPl": "Trzymanie ramion poziomo na wysokości barków przez całą serię to długotrwała pozycja prowokująca konflikt podbarkowy. Opuść łokcie nieco poniżej linii barków, pracuj jedną ręką naraz, lub przejdź na wariant z dolnego wyciągu.",
+      "alternative": "bayesian-cable-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The fully stretched overhead position loads the distal biceps tendon under length — high provocation. Reduce ROM at the bottom, use lighter loads (12-15 reps), and avoid heavy eccentrics until pain-free.",
+      "modificationPl": "Pozycja maksymalnie rozciągnięta nad głową obciąża dystalne ścięgno bicepsa pod długością — silna prowokacja. Skróć zakres ruchu na dole, używaj lżejszych ciężarów (12-15 powtórzeń) i unikaj ciężkich faz negatywnych do momentu ustąpienia bólu.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "lateral_deltoid_fatigue_or_strain",
+      "severity": "caution",
+      "modification": "Holding the upper arms abducted to shoulder height is an isometric lateral deltoid task. If the delts are fatigued or strained from previous shoulder work, this exercise will reproduce that fatigue. Train on a fresh day or switch to a seated/supported variation.",
+      "modificationPl": "Trzymanie ramion ponad łokciem w odwiedzeniu na wysokości barków to izometryczna praca aktonów bocznych. Jeśli barki są zmęczone lub naderwane po wcześniejszej pracy nad barkami, to ćwiczenie odtworzy to zmęczenie. Trenuj w świeży dzień lub przejdź na wariant siedzący/podparty.",
+      "alternative": "incline-dumbbell-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "The overhead supinated grip places the wrist in a vulnerable position. Use D-handles with a rotating cuff (allow the wrist to find a natural angle), wear wrist wraps, and avoid maximum loads.",
+      "modificationPl": "Chwyt podchwytem nad głową ustawia nadgarstek w narażonej pozycji. Używaj uchwytów D z obrotowym mocowaniem (pozwala nadgarstkowi znaleźć naturalny kąt), nałóż usztywniacze, unikaj maksymalnych ciężarów.",
+      "alternative": "cable-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / peak contraction work) | 3x12-15 + 1-second squeeze (default) | 4x8-12 with slow eccentrics (advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-overhead-curl.gif",
+    "frames_extracted": [
+      "frames/cable-overhead-curl/frame_0_start.png",
+      "frames/cable-overhead-curl/frame_1_early.png",
+      "frames/cable-overhead-curl/frame_2_mid.png",
+      "frames/cable-overhead-curl/frame_3_late.png",
+      "frames/cable-overhead-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-overhead-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): atleta stoi pośrodku bramy wyciągowej z dwoma wysoko ustawionymi wyciągami, ramiona ponad łokciem odwiedzione horyzontalnie do wysokości barków, łokcie w pełnym wyproście, dłonie skierowane w górę (supinacja), trzyma uchwyty D, biceps i przedramiona podświetlone na czerwono (rozciągnięcie). Frame 2 (mid/peak): łokcie zgięte, dłonie sięgają na wysokość skroni / uszu, klasyczna póza 'front double biceps', ramiona ponad łokciem ABSOLUTNIE NIE PORUSZYŁY się — wciąż poziomo na wysokości barków, biceps spięty maksymalnie. Frame 4 (end): powrót do pełnego wyprostu (widoczny 'ghost' fazy szczytowej powyżej). Tułów pionowy, stopy zwarte, brzuch napięty przez cały ruch. Mechanic=isolation, plane=transverse (linia oporu zza łokcia), force=pull, bilateral. Primary biceps_brachii (P10, ekstremalne skrócenie short head). Brachialis tylko S5 bo neutralna supinacja faworyzuje biceps. Lateral_deltoid jako T3 stabilizator (izometryczne odwiedzenie ramion przez całą serię). Wszystkie pola PL napisane od zera. Difficulty 6/10 — wymaga koordynacji obu stron + cable setup + dyscypliny żeby nie pochylać tułowia.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "cable", "upper_body", "peak_contraction", "double_biceps", "intermediate"]
+}

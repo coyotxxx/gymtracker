@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-lying-supination-on-floor",
+  "name": "Dumbbell Lying Supination on Floor",
+  "namePl": "Supinacja z hantlą leżąc na podłodze",
+  "aliases": ["lying dumbbell supination", "side-lying forearm supination", "lying wrist supination", "biceps supinator dumbbell rotation", "asymmetric dumbbell supination"],
+  "aliasesPl": ["supinacja przedramienia z hantlą", "rotacja przedramienia w supinację leżąc na boku", "supinacja na podłodze z hantlą", "trening supinatorów z hantlą", "asymetryczna supinacja z hantlą"],
+
+  "description": "Single-arm forearm supination drill performed while lying on the side on the floor. A dumbbell loaded asymmetrically (or with a plate on one side only) is held with the working arm bent at roughly 90 degrees, elbow tucked against the ribs and forearm starting in a pronated or neutral position. The wrist actively rotates outward into full supination (palm-up) against the off-center weight, then returns under control. The side-lying setup eliminates shoulder cheating and isolates the supinator and biceps brachii in their rotational role. Common rehabilitation and accessory exercise for grip athletes, climbers, throwing athletes and anyone recovering from tennis/golfer's elbow.",
+  "descriptionPl": "Jednoramienna supinacja przedramienia wykonywana w leżeniu bokiem na podłodze. Hantla obciążona asymetrycznie (lub z talerzem tylko po jednej stronie) trzymana ramieniem pracującym zgiętym w łokciu pod kątem ok. 90 stopni — łokieć przyciśnięty do żeber, przedramię w pozycji startowej zwykle w pronacji lub neutralnej. Nadgarstek aktywnie rotuje na zewnątrz do pełnej supinacji (dłoń do góry) wbrew niewyważonemu ciężarowi, po czym wraca pod kontrolą. Pozycja leżąca eliminuje oszukiwanie barkiem i izoluje supinator oraz krótką głowę bicepsa w jego funkcji rotacyjnej. Klasyczne ćwiczenie rehabilitacyjne i pomocnicze dla wspinaczy, zawodników sportów rzutowych, sportów chwytowych oraz osób po łokciu tenisisty/golfisty.",
+
+  "instructions": [
+    "Lie down on the floor on your non-working side (so the working arm is on top), legs slightly stacked and stable.",
+    "Grasp a dumbbell loaded on one side only (or an unbalanced implement) with the working hand. Start with the loaded plate hanging toward the floor.",
+    "Bend the working elbow to approximately 90 degrees and pin it firmly against your ribs/side of the torso — this anchor point is critical.",
+    "The forearm should be vertical (perpendicular to the floor), wrist in a neutral or slightly pronated grip with the loaded side facing your feet.",
+    "Without moving the upper arm, actively rotate the forearm outward toward supination — turning the palm upward (toward the ceiling).",
+    "Pause for one second at the top, fully supinated position, feeling tension across the supinator and short head of the biceps.",
+    "Slowly reverse the motion under control, lowering the dumbbell back to the starting pronated/neutral position.",
+    "Complete all reps on one side, then rotate to the opposite side and repeat with the other arm."
+  ],
+  "instructionsPl": [
+    "Połóż się na podłodze na boku po stronie nieroboczej (tak, by ramię pracujące było na górze), nogi lekko ułożone jedna na drugiej, stabilnie.",
+    "Złap hantlę obciążoną tylko z jednej strony (lub asymetryczny przedmiot) ręką pracującą. Pozycja startowa: obciążony talerz zwisa w stronę podłogi.",
+    "Zegnij pracujący łokieć pod kątem ok. 90 stopni i mocno dociśnij go do żeber/boku tułowia — ten punkt kotwiczenia jest kluczowy.",
+    "Przedramię powinno być w pionie (prostopadle do podłogi), nadgarstek w neutralnym lub lekko pronowanym chwycie, obciążona strona skierowana w stronę stóp.",
+    "Bez ruszania ramieniem (częścią barkową) aktywnie rotuj przedramię na zewnątrz w supinację — obróć dłoń w górę (w kierunku sufitu).",
+    "Zatrzymaj się na sekundę w górnej, pełnej supinacji, czując napięcie w supinatorze oraz krótkiej głowie bicepsa.",
+    "Powoli odwróć ruch pod kontrolą, opuszczając hantlę z powrotem do pozycji pronowanej/neutralnej.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, następnie obróć się na drugi bok i powtórz drugą ręką."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["supinator", "biceps_brachii"],
+    "secondary": ["brachioradialis", "wrist_flexors", "wrist_extensors"],
+    "stabilizers": ["core", "obliques", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "supinator": "P9",
+    "biceps_brachii": "P7",
+    "brachioradialis": "S5",
+    "wrist_flexors": "S3",
+    "wrist_extensors": "S3",
+    "obliques": "T2",
+    "core": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["mat"]
+  },
+
+  "category": "rehab",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-wrist-curl", "barbell-reverse-curl", "zottman-curl"],
+    "alternatives": ["dumbbell-lying-pronation-on-floor", "seated-supination-pronation-with-hammer", "resistance-band-supination"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie on your non-working side, body fully relaxed on the floor",
+      "Pin the working elbow tight against your ribs — no daylight between arm and torso",
+      "Forearm vertical, wrist starts in pronation with the loaded plate toward the floor",
+      "Use a light asymmetric dumbbell — this is about control, not load",
+      "Keep your head supported so the neck stays neutral"
+    ],
+    "setup_cues_pl": [
+      "Połóż się na boku po stronie nieroboczej, ciało zrelaksowane na podłodze",
+      "Dociśnij pracujący łokieć mocno do żeber — żadnego luzu między ramieniem a tułowiem",
+      "Przedramię w pionie, nadgarstek startowo w pronacji z obciążonym talerzem w stronę podłogi",
+      "Użyj lekkiej, asymetrycznej hantli — to ćwiczenie kontroli, nie obciążenia",
+      "Podeprzyj głowę, by szyja pozostała w pozycji neutralnej"
+    ],
+    "execution_cues": [
+      "Initiate the movement from the forearm, not the wrist or shoulder",
+      "Rotate the palm upward — think 'show your watch face to the ceiling'",
+      "Keep the elbow glued to your side throughout the entire rep",
+      "Move slowly — 2 seconds up, 1 second pause, 3 seconds down",
+      "Stop briefly at the top in full supination, feel the supinator squeeze"
+    ],
+    "execution_cues_pl": [
+      "Inicjuj ruch z przedramienia, nie z nadgarstka ani barku",
+      "Obracaj dłoń w górę — myśl 'pokaż tarczę zegarka sufitowi'",
+      "Trzymaj łokieć przyklejony do boku przez cały czas trwania powtórzenia",
+      "Ruszaj się powoli — 2 sekundy w górę, 1 sekunda przerwy, 3 sekundy w dół",
+      "Zatrzymaj się chwilę na górze w pełnej supinacji, poczuj napięcie supinatora"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the elbow away from the ribs",
+        "faultPl": "Odrywanie łokcia od żeber",
+        "cause": "Using shoulder rotation to assist when the supinator fatigues; load too heavy",
+        "causePl": "Wspomaganie ruchu rotacją barku gdy supinator się męczy; zbyt duży ciężar",
+        "cue": "Pin the elbow against the torso — if it lifts, the rep doesn't count and you need lighter weight",
+        "cuePl": "Dociśnij łokieć do tułowia — jeśli się odrywa, powtórzenie się nie liczy i potrzebujesz lżejszego ciężaru"
+      },
+      {
+        "fault": "Wrist flexing or extending instead of rotating",
+        "faultPl": "Zginanie lub prostowanie nadgarstka zamiast rotacji",
+        "cause": "Confusing wrist curl with forearm rotation; not understanding the supination pattern",
+        "causePl": "Mylenie zginania nadgarstka z rotacją przedramienia; brak zrozumienia wzorca supinacji",
+        "cue": "Keep the wrist locked in a neutral line with the forearm — only the radius/ulna should rotate",
+        "cuePl": "Trzymaj nadgarstek zablokowany w linii z przedramieniem — rotować mają się tylko kości promieniowa i łokciowa"
+      },
+      {
+        "fault": "Using momentum and jerking the dumbbell upward",
+        "faultPl": "Używanie rozpędu i szarpanie hantli w górę",
+        "cause": "Treating it as a strength exercise instead of a controlled rotation drill",
+        "causePl": "Traktowanie ćwiczenia jako siłowego zamiast jako kontrolowanej rotacji",
+        "cue": "Move so slowly you can stop at any point in the range — supinator responds to TUT, not momentum",
+        "cuePl": "Ruszaj się tak wolno, że możesz zatrzymać się w dowolnym punkcie zakresu — supinator reaguje na czas pod napięciem, nie na rozpęd"
+      },
+      {
+        "fault": "Stopping short of full supination",
+        "faultPl": "Niedopełnianie pełnej supinacji",
+        "cause": "Restricted forearm mobility or fear of straining the elbow tendons",
+        "causePl": "Ograniczona ruchomość przedramienia lub strach przed naciągnięciem ścięgien łokcia",
+        "cue": "Aim for palm fully facing the ceiling — if you can't reach it pain-free, reduce the load and work the range gradually",
+        "cuePl": "Celuj w dłoń całkowicie skierowaną do sufitu — jeśli nie potrafisz osiągnąć tego bez bólu, zmniejsz ciężar i pracuj nad zakresem stopniowo"
+      },
+      {
+        "fault": "Holding the breath during the rotation",
+        "faultPl": "Wstrzymywanie oddechu podczas rotacji",
+        "cause": "Excessive effort on a light isolation exercise; tension in the upper body",
+        "causePl": "Nadmierne napięcie na lekkim ćwiczeniu izolacyjnym; sztywność w górnej części ciała",
+        "cue": "Exhale on the way up into supination, inhale on the way down — keep breath flowing",
+        "cuePl": "Wydech w drodze w górę do supinacji, wdech w drodze w dół — utrzymuj ciągły oddech"
+      }
+    ],
+    "breathing": "Exhale during the supination (rotation upward) phase and inhale during the controlled return to the pronated start. Keep breathing rhythmic — never hold your breath on this low-load isolation exercise.",
+    "breathingPl": "Wydech w fazie supinacji (rotacji do góry) i wdech w trakcie kontrolowanego powrotu do pozycji pronowanej. Utrzymuj rytmiczny oddech — nigdy nie wstrzymuj go na tym lekkim ćwiczeniu izolacyjnym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lateral_epicondylitis",
+      "severity": "modify",
+      "modification": "Reduce load to almost nothing and shorten the range to pain-free arc only. Stop immediately if symptoms increase 24h after the session. Often a perfect rehab tool when dosed correctly under physiotherapist supervision.",
+      "modificationPl": "Zmniejsz ciężar prawie do zera i skróć zakres do łuku bez bólu. Przerwij natychmiast, jeśli objawy nasilą się 24h po sesji. Często doskonałe narzędzie rehabilitacyjne przy prawidłowym dawkowaniu pod nadzorem fizjoterapeuty.",
+      "alternative": "resistance-band-supination"
+    },
+    {
+      "condition": "recent_distal_biceps_tendon_repair",
+      "severity": "avoid",
+      "modification": "Skip entirely until cleared by your surgeon and rehab specialist — the distal biceps tendon is heavily loaded during resisted supination.",
+      "modificationPl": "Pomiń całkowicie do czasu zgody chirurga i rehabilitanta — ścięgno dystalne bicepsa jest mocno obciążone podczas supinacji oporowej.",
+      "alternative": "isometric-grip-squeeze"
+    },
+    {
+      "condition": "wrist_fracture_recent",
+      "severity": "avoid",
+      "modification": "Do not perform with any external load until bone healing is complete and your physician approves resistance training of the forearm.",
+      "modificationPl": "Nie wykonuj z żadnym zewnętrznym obciążeniem do czasu pełnego zrostu kości i zgody lekarza na trening oporowy przedramienia.",
+      "alternative": "passive-rom-rotation"
+    },
+    {
+      "condition": "shoulder_instability_or_recent_rotator_cuff_repair",
+      "severity": "modify",
+      "modification": "Side-lying position can compress the shoulder. Use a supportive pillow under the working shoulder and keep load minimal; consult your physiotherapist about positioning.",
+      "modificationPl": "Pozycja leżąca na boku może uciskać bark. Zastosuj poduszkę pod ramię pracujące i utrzymuj minimalne obciążenie; skonsultuj pozycję z fizjoterapeutą.",
+      "alternative": "seated-supination-pronation-with-hammer"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 powtórzeń na rękę",
+  "calories_per_kg_per_hour": 3.0,
+
+  "media": {
+    "primary": "dumbbell-lying-supination-on-floor.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-supination-on-floor/frame_0_start.png",
+      "frames/dumbbell-lying-supination-on-floor/frame_1_early.png",
+      "frames/dumbbell-lying-supination-on-floor/frame_2_mid.png",
+      "frames/dumbbell-lying-supination-on-floor/frame_3_late.png",
+      "frames/dumbbell-lying-supination-on-floor/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/dumbbell-lying-supination-on-floor"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Model leży na lewym boku na podłodze, prawa ręka (pracująca) jest na górze. Łokieć pracującej ręki jest zgięty pod kątem ok. 90 stopni i przyciśnięty do żeber/boku tułowia. W dłoni hantla z talerzem obciążonym tylko po jednej stronie (asymetryczna) — w pozycji startowej (frame_0) talerz zwisa w stronę stóp/podłogi, przedramię w pionie. W kolejnych klatkach (frame_1-3) widać rotację przedramienia: dłoń obraca się w kierunku sufitu (supinacja), talerz przechodzi przez pozycję poziomą do pozycji nad łokciem. Frame_4 to powrót. Podświetlone na czerwono: przedramię (supinator + krótka głowa bicepsa widoczna jako kreska na ramieniu wskazująca aktywację bicepsa w jego funkcji rotacyjnej). Klasyczny isolation drill na supinator, biceps brachii (krótka głowa) i pomocniczo brachioradialis. Mechanic=isolation (jeden staw — radio-ulnar joint), plane=transverse (rotacja w płaszczyźnie poprzecznej), laterality=unilateral, force=both (koncentryczna w górę, ekscentryczna w dół), category=rehab (typowy element rehabilitacji łokcia tenisisty/golfisty). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Specyfika ćwiczenia: pozycja leżąca eliminuje oszukiwanie barkiem, dlatego jest preferowana w rehabilitacji nad supinacją siedzącą.",
+
+  "tags": ["rehab", "forearm", "isolation", "unilateral", "low_load", "tennis_elbow_friendly", "grip_athlete", "climber", "throwing_athlete", "elbow_health"]
+}

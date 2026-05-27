@@ -1,0 +1,209 @@
+{
+  "id": "kettlebell-double-push-press",
+  "name": "Kettlebell Double Push Press",
+  "namePl": "Push press dwoma kettlebell",
+  "aliases": ["double KB push press", "two kettlebell push press", "double-bell push press"],
+  "aliasesPl": ["push press dwoma kettlebell", "push press dwa odważniki kulowe", "wyciskanie dynamiczne dwoma kettlebell", "push press z dwoma KB"],
+
+  "description": "Bilateral explosive vertical press performed standing with a kettlebell in each hand in the front rack position. Combines a short countermovement dip from the hips and knees with an explosive triple extension (ankles, knees, hips) that drives the bells upward, followed by a smooth handoff to the shoulders and triceps to lock the bells out overhead. The leg drive is what distinguishes the push press from a strict overhead press — it allows significantly more load and greater power production while still finishing with full overhead lockout. With two kettlebells, the front-rack position loads the trunk heavily (anterior core, lats, glutes) and the off-center kettlebell mass demands strong wrist/forearm control and scapular stability. Used in strength, conditioning, and CrossFit/Girevoy programming for full-body power, overhead pressing capacity, and metabolic work.",
+  "descriptionPl": "Dwustronne, dynamiczne wyciskanie pionowe wykonywane stojąc z kettlebellem w każdej dłoni w pozycji front rack. Łączy krótki ruch w dół (dip z bioder i kolan) z eksplozywnym potrójnym wyprostem (kostki, kolana, biodra), który nadaje pęd kettlebellom w górę, a następnie barki i tricepsy domykają ruch do pełnego lock-outu nad głową. Napęd z nóg odróżnia push press od strict overhead press — pozwala wycisnąć znacznie większy ciężar i wygenerować większą moc, zachowując pełny zakres ruchu overhead. Praca z dwoma kettlebellami mocno obciąża tułów w racku (przedni core, NLG, pośladki), a środek ciężkości kettlebell wymusza dobrą kontrolę nadgarstków/przedramion i stabilizację łopatek. Wykorzystywane w treningu siły, kondycji, CrossFit i girewoju do rozwijania mocy całego ciała, wytrzymałości pressu overhead i pracy metabolicznej.",
+
+  "instructions": [
+    "Clean two kettlebells to the front rack: handles diagonally across the heel of the palm, bells resting on the back of the forearms, elbows tucked in front of the ribs, wrists neutral and straight.",
+    "Stand tall, feet hip- to shoulder-width apart, weight on the whole foot, glutes and core braced, ribs DOWN.",
+    "Inhale, brace HARD, then dip straight DOWN with the hips and knees — a short, fast dip of about 10–15 cm. Keep the torso vertical; do not lean forward.",
+    "Reverse the dip explosively — drive the floor away with the legs (triple extension of ankles, knees, hips) so the kettlebells are 'launched' upward.",
+    "As the bells rise off the rack, finish the movement with the shoulders and triceps — press both kettlebells overhead simultaneously to full lockout.",
+    "At the top: elbows fully extended, biceps near ears, bells stacked over shoulders and mid-foot, wrists neutral, torso vertical.",
+    "Lower BOTH kettlebells under control back to the front rack — absorb with a soft knee bend if going heavy. Reset the rack position before the next rep.",
+    "Exhale at the top of the lockout (or on the way down). One brace cycle per rep."
+  ],
+  "instructionsPl": [
+    "Wyrzuć (clean) dwa kettlebelle do pozycji front rack: rączki ułożone skośnie przy podstawie dłoni, kule oparte o tył przedramion, łokcie blisko żeber, nadgarstki neutralne i proste.",
+    "Stań wyprostowany, stopy na szerokość bioder do barków, ciężar na całej stopie, pośladki i core napięte, żebra W DÓŁ.",
+    "Wdech, napnij MOCNO, wykonaj szybki dip w dół z bioder i kolan — krótki, ok. 10–15 cm. Tułów pionowo — nie pochylaj się do przodu.",
+    "Eksplozywnie odwróć dip — odepchnij się nogami od podłogi (potrójny wyprost: kostki, kolana, biodra) tak, by kettlebelle 'wystrzeliły' w górę.",
+    "Gdy kule odrywają się z racku, dokończ ruch barkami i tricepsami — wyciśnij oba kettlebelle nad głowę jednocześnie do pełnego lock-outu.",
+    "Na szczycie: łokcie w pełnym wyproście, bicepsy przy uszach, kule nad barkami i środkiem stopy, nadgarstki neutralne, tułów pionowy.",
+    "Opuszczaj OBA kettlebelle kontrolowanie z powrotem do front racku — przy ciężkich seriach przyjmij ciężar lekko ugiętymi kolanami. Zresetuj pozycję racku przed kolejnym powtórzeniem.",
+    "Wydech na szczycie lock-outu (lub w dół). Jedno napięcie na powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "triceps", "quadriceps"],
+    "secondary": ["lateral_deltoids", "glutes", "upper_chest", "trapezius", "serratus_anterior", "calves"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "erector_spinae", "rotator_cuff", "forearms", "lats"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "triceps": "P8",
+    "quadriceps": "P7",
+    "lateral_deltoids": "S7",
+    "glutes": "S6",
+    "upper_chest": "S5",
+    "trapezius": "S6",
+    "serratus_anterior": "S6",
+    "calves": "S5",
+    "core": "S8",
+    "erector_spinae": "S6",
+    "rotator_cuff": "S6",
+    "forearms": "S6",
+    "lats": "S5"
+  },
+
+  "equipment": {
+    "required": ["kettlebells"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["kettlebell-two-arm-clean", "kettlebell-goblet-squat", "dumbbell-standing-overhead-press"],
+    "progression_to": ["kettlebell-double-jerk", "kettlebell-double-snatch", "barbell-push-press"],
+    "alternatives": ["dumbbell-push-press", "barbell-push-press", "dumbbell-standing-overhead-press", "kettlebell-double-strict-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Front rack: bells on back of forearms, elbows in front of ribs",
+      "Feet hip- to shoulder-width, full-foot contact",
+      "Brace core HARD, ribs DOWN, glutes squeezed",
+      "Wrists neutral and straight — no extension",
+      "Stand tall — long spine, vertical torso"
+    ],
+    "setup_cues_pl": [
+      "Front rack: kule na tyle przedramion, łokcie przed żebrami",
+      "Stopy na szerokość bioder do barków, pełen kontakt ze stopą",
+      "Napnij MOCNO core, żebra W DÓŁ, pośladki ściśnięte",
+      "Nadgarstki neutralne i proste — bez wyprostu",
+      "Stań wysoko — długi kręgosłup, tułów pionowy"
+    ],
+    "execution_cues": [
+      "DIP short — knees only, torso STAYS vertical",
+      "DRIVE the floor away — explode through the legs",
+      "Catch with the shoulders, FINISH with the triceps",
+      "Lock OUT — biceps by ears, full elbow extension",
+      "Lower together — both bells back to rack simultaneously"
+    ],
+    "execution_cues_pl": [
+      "DIP krótki — tylko kolana, tułów PIONOWO",
+      "ODEPCHNIJ się od podłogi — eksploduj nogami",
+      "Złap barkami, DOKOŃCZ tricepsami",
+      "LOCK-OUT — bicepsy przy uszach, pełen wyprost łokci",
+      "Opuszczaj razem — oba KB jednocześnie do racku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dipping forward at the hips (torso leans) instead of straight down",
+        "faultPl": "Pochylanie się do przodu w biodrach (tułów leci) zamiast dipu pionowo w dół",
+        "cause": "Treating the dip like a squat or good morning; weak core bracing; quads not loaded properly",
+        "causePl": "Traktowanie dipu jak przysiad lub good morning; słabe napięcie core; nieprawidłowo obciążone czworogłowe",
+        "cue": "Dip STRAIGHT DOWN — imagine a pole through your skull to your tailbone. Knees forward, chest up.",
+        "cuePl": "Dip PROSTO W DÓŁ — wyobraź sobie tyczkę od czubka głowy do kości ogonowej. Kolana do przodu, klatka w górę."
+      },
+      {
+        "fault": "Pressing out with the shoulders before the legs finish",
+        "faultPl": "Wyciskanie barkami zanim nogi skończą napęd",
+        "cause": "Bad timing — treating it like strict press; not using leg drive",
+        "causePl": "Złe wyczucie — robienie jak strict press; brak napędu z nóg",
+        "cue": "Legs FIRST, shoulders SECOND. The bells should leave the rack BEFORE the arms work.",
+        "cuePl": "Najpierw NOGI, potem BARKI. KB powinny opuścić rack ZANIM ramiona zaczną pracować."
+      },
+      {
+        "fault": "Wrist hyperextension under the bell (wrist bent back)",
+        "faultPl": "Hiperekstensja nadgarstka pod kulą (nadgarstek wygięty do tyłu)",
+        "cause": "Bad rack position, weak forearms, bell sitting on the palm instead of forearm",
+        "causePl": "Zła pozycja racku, słabe przedramiona, kula opiera się o dłoń zamiast o przedramię",
+        "cue": "Knuckles UP, wrist STRAIGHT. Bell rests on the forearm, not on the palm.",
+        "cuePl": "Knykcie W GÓRĘ, nadgarstek PROSTY. Kula leży na przedramieniu, nie na dłoni."
+      },
+      {
+        "fault": "Lumbar hyperextension at lockout (back overarched)",
+        "faultPl": "Przeprost lędźwiowy w lock-out (przeprost pleców)",
+        "cause": "Limited overhead mobility, weak core, weight too heavy, no glute squeeze",
+        "causePl": "Ograniczona mobilność overhead, słaby core, zbyt duży ciężar, brak ścisku pośladków",
+        "cue": "Ribs DOWN, glutes SQUEEZED, finish with stacked spine. Reduce weight if mobility limits ROM.",
+        "cuePl": "Żebra W DÓŁ, pośladki ŚCIŚNIĘTE, zakończ z kręgosłupem ułożonym w stosie. Zmniejsz ciężar, jeśli mobilność ogranicza ROM."
+      },
+      {
+        "fault": "Asymmetric lockout (one kettlebell higher / forward than the other)",
+        "faultPl": "Asymetryczny lock-out (jeden KB wyżej / przed drugim)",
+        "cause": "Side-to-side strength or mobility imbalance, dominant arm overpowering, weak stabilizer on the weaker side",
+        "causePl": "Asymetria siły lub mobilności między stronami, dominująca ręka przejmuje pracę, słabsze stabilizatory po słabszej stronie",
+        "cue": "Match the WEAKER arm. Both bells stack over shoulders. Add single-arm KB press to fix the gap.",
+        "cuePl": "Dopasuj do SŁABSZEJ ręki. Oba KB nad barkami w jednej linii. Dorzuć jednorącz KB press, aby wyrównać."
+      }
+    ],
+    "breathing": "Inhale and brace before the dip. Hold the brace through the dip and drive. Exhale at lockout overhead (or on the way down). One full breath cycle per rep — bracing is critical due to standing posture and dynamic load.",
+    "breathingPl": "Wdech i napięcie przed dipem. Trzymaj napięcie przez dip i napęd. Wydech w lock-out nad głową (lub w dół). Jeden pełen cykl oddechowy na powtórzenie — napięcie krytyczne ze względu na pozycję stojącą i dynamiczne obciążenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Drop to single-kettlebell push press (one bell at a time) — neutral grip is shoulder-friendly. If pain persists, switch to landmine press.",
+      "modificationPl": "Przejdź na push press z jednym kettlebellem (jednorącz) — neutralny chwyt jest bardziej przyjazny dla barku. Jeśli ból nie ustępuje, zmień na landmine press.",
+      "alternative": "kettlebell-one-arm-push-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Reduce load drastically and shorten the dip. If pain persists, switch to seated dumbbell shoulder press (back supported) — removes the standing dynamic load.",
+      "modificationPl": "Drastycznie zmniejsz ciężar i skróć dip. Jeśli ból nie ustępuje, przejdź na seated dumbbell shoulder press (oparte plecy) — usuwa dynamiczne obciążenie pozycji stojącej.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Use wrist wraps and verify rack position (bell on forearm, wrist neutral). If pain persists, switch to dumbbell push press — DB sits in the palm, not on the wrist.",
+      "modificationPl": "Załóż wrist wraps i sprawdź pozycję racku (kula na przedramieniu, nadgarstek neutralny). Jeśli ból nie ustępuje, przejdź na dumbbell push press — hantel leży w dłoni, nie obciąża nadgarstka.",
+      "alternative": "dumbbell-push-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid dynamic overhead pressing until cleared. Resume with machine shoulder press (controlled path) and high-rep low-load rehab work, then progress to strict DB press before returning to push press.",
+      "modificationPl": "Unikaj dynamicznego wyciskania overhead do zgody fizjoterapeuty. Wróć przez machine shoulder press (kontrolowana ścieżka) i wysokopowtórzeniową rehabilitację z małym ciężarem, potem strict DB press, na końcu wróć do push press.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (strength/power) | 4x6-8 (strength-hypertrophy) | 3-4x8-10 (conditioning) | EMOM 10min x 3-5 reps (metcon)",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "kettlebell-double-push-press.gif",
+    "frames_extracted": [
+      "frames/kettlebell-double-push-press/frame_0_start.png",
+      "frames/kettlebell-double-push-press/frame_1_early.png",
+      "frames/kettlebell-double-push-press/frame_2_mid.png",
+      "frames/kettlebell-double-push-press/frame_3_late.png",
+      "frames/kettlebell-double-push-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-double-push-press",
+    "master_slug": "kettlebell-double-push-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Frame 0 (start): pozycja front rack z dwoma kettlebellami — łokcie przed żebrami, kule oparte o tył przedramion, postawa pionowa, stopy ~na szerokość bioder. Podświetlone przednie delty, tricepsy, czworogłowe, łydki — układ pasuje 1:1 do push press (nie strict press, gdzie nogi byłyby pasywne). Frame 1 (early): widoczna 'duch' postać w dipie — kolana lekko ugięte, czworogłowe wyraźnie zaangażowane (silne podświetlenie), tułów PIONOWY (brak pochylenia do przodu) — klasyczny dip push press. Frame 2 (mid): pełen lock-out overhead — oba kettlebelle uniesione symetrycznie, ramiona w pełnym wyproście, bicepsy przy uszach, kule nad barkami, tricepsy/delty maksymalnie zaangażowane. Frame 3 (late): początek fazy ekscentrycznej, jeden KB wraca w dół (ghost), drugi nadal nad głową — kontrolowany powrót. Frame 4 (end): KB z powrotem w racku, postawa wróciła do startowej. Klasyczny bilateral KB double push press — leg drive + overhead lockout potwierdzony. Pasuje 1:1 do specyfikacji.",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "kettlebell", "compound", "bilateral", "free_weights", "explosive", "power", "full_body", "metcon", "crossfit", "girevoy"]
+}

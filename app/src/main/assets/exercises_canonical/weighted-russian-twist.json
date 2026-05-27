@@ -1,0 +1,197 @@
+{
+  "id": "weighted-russian-twist",
+  "name": "Weighted Russian Twist",
+  "namePl": "Russian twist z obciążeniem",
+  "aliases": ["russian twist with plate", "weighted oblique twist", "seated weighted twist", "medicine ball russian twist"],
+  "aliasesPl": ["rosyjski skręt z obciążeniem", "russian twist z talerzem", "russian twist z piłką lekarską", "skręty tułowia z ciężarem", "russian twist z kettlebellem"],
+
+  "description": "Seated rotational core exercise targeting the obliques. The lifter sits with feet anchored (or hovering), torso leaned back to roughly 45 degrees, holding a weight (plate, medicine ball, dumbbell or kettlebell) at chest height. The torso rotates from side to side, tapping or bringing the weight toward the floor on each side alternately. Strongly emphasises the internal and external obliques while the rectus abdominis and hip flexors work isometrically to hold the leaned-back position.",
+  "descriptionPl": "Rotacyjne ćwiczenie brzucha w siadzie, ukierunkowane na mięśnie skośne. Ćwiczący siedzi ze stopami zaczepionymi (lub uniesionymi), tułów odchylony do tyłu pod kątem ok. 45 stopni, trzyma obciążenie (talerz, piłkę lekarską, hantel lub kettlebell) na wysokości klatki piersiowej. Tułów obraca się naprzemiennie na boki, dotykając lub prowadząc ciężar w stronę podłogi po każdej stronie. Mocno akcentuje mięśnie skośne wewnętrzne i zewnętrzne, podczas gdy mięsień prosty brzucha i zginacze biodra pracują izometrycznie, utrzymując odchyloną pozycję tułowia.",
+
+  "instructions": [
+    "Sit on the floor or mat. Anchor your feet under a sit-up bench, a heavy object, or hold them hovering a few centimetres off the floor. Bend your knees roughly 90 degrees.",
+    "Lean your torso back to approximately 45 degrees from the floor, keeping the spine long and the chest tall. Brace the core.",
+    "Hold a weight (plate, medicine ball, dumbbell or kettlebell) with both hands close to your chest or just in front of the sternum.",
+    "Exhale and rotate the torso to one side, bringing the weight down toward the floor next to your hip. The movement comes from the trunk — the hips and legs stay relatively still.",
+    "Pause briefly at the end range, then inhale slightly and rotate through the centre to the opposite side under control.",
+    "Continue alternating sides for the prescribed reps. One rep can be counted as one side (most common) or as a full left-right cycle — be consistent within a programme."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze lub macie. Zaczep stopy pod uchwytem ławki sit-up, pod ciężkim przedmiotem, lub trzymaj je uniesione kilka centymetrów nad podłogą. Ugnij kolana do ok. 90 stopni.",
+    "Odchyl tułów do tyłu pod kątem ok. 45 stopni od podłogi, trzymając kręgosłup długi, a klatkę piersiową wysoko. Napnij brzuch.",
+    "Trzymaj obciążenie (talerz, piłkę lekarską, hantel lub kettlebell) oburącz blisko klatki piersiowej lub tuż przed mostkiem.",
+    "Wydech i obróć tułów w jedną stronę, prowadząc ciężar w dół, obok biodra. Ruch wychodzi z tułowia — biodra i nogi pozostają względnie nieruchome.",
+    "Zatrzymaj się chwilę w końcowym zakresie, potem lekki wdech i obróć się przez środek na drugą stronę pod kontrolą.",
+    "Kontynuuj zmianę stron przez zaplanowaną liczbę powtórzeń. Jedno powtórzenie może oznaczać jedną stronę (najczęściej) lub pełen cykl lewo-prawo — bądź konsekwentny w programie."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_rotation",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["rectus_abdominis", "hip_flexors"],
+    "stabilizers": ["transverse_abdominis", "erector_spinae", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "S7",
+    "hip_flexors": "S6",
+    "transverse_abdominis": "T4",
+    "erector_spinae": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["medicine_ball"],
+    "optional": ["plate", "dumbbell", "kettlebell", "mat", "sit_up_bench"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["russian-twist", "sit-up", "plank"],
+    "progression_to": ["weighted-decline-russian-twist", "landmine-rotation", "cable-woodchopper"],
+    "alternatives": ["russian-twist", "bicycle-crunch", "side-plank-rotation", "standing-cable-twist"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit with feet anchored, knees bent roughly 90 degrees",
+      "Lean back to approximately 45 degrees — spine long, chest up",
+      "Hold the weight with both hands near the sternum",
+      "Brace the core — ribs down, no lumbar arch",
+      "Eyes follow the weight throughout the movement"
+    ],
+    "setup_cues_pl": [
+      "Usiądź ze stopami zaczepionymi, kolana ugięte ok. 90 stopni",
+      "Odchyl się do tyłu pod kątem ok. 45 stopni — kręgosłup długi, klatka uniesiona",
+      "Trzymaj ciężar oburącz blisko mostka",
+      "Napnij brzuch — żebra w dół, bez przeprostu lędźwiowego",
+      "Wzrok podąża za ciężarem przez cały ruch"
+    ],
+    "execution_cues": [
+      "Rotate from the trunk — turn the rib cage on the pelvis, not just the arms",
+      "Exhale into each twist — short, controlled breath out",
+      "Keep the hips facing forward — only the upper body rotates",
+      "Tap or hover the weight beside the hip, don't slam it",
+      "Control the return through the midline — no momentum swing"
+    ],
+    "execution_cues_pl": [
+      "Obracaj się z tułowia — kręć klatką piersiową względem miednicy, nie tylko ramionami",
+      "Wydech przy każdym skręcie — krótki, kontrolowany wydech",
+      "Trzymaj biodra skierowane do przodu — obraca się tylko górna część ciała",
+      "Dotknij lub przesuń ciężar obok biodra, nie uderzaj nim o podłogę",
+      "Kontroluj powrót przez linię środkową — bez rozpędu i kołysania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating only the arms, not the torso",
+        "faultPl": "Obracanie tylko ramionami, bez ruchu tułowia",
+        "cause": "Weak obliques or lack of mind-muscle connection — moving the weight without moving the rib cage",
+        "causePl": "Słabe mięśnie skośne lub brak połączenia mózg-mięsień — ruch ciężaru bez obrotu klatki piersiowej",
+        "cue": "Imagine your sternum pointing left, then right — the chest plate turns, not just the hands",
+        "cuePl": "Wyobraź sobie, że mostek wskazuje raz w lewo, raz w prawo — klatka piersiowa się obraca, nie tylko dłonie"
+      },
+      {
+        "fault": "Rounded lower back / spinal flexion",
+        "faultPl": "Zaokrąglone dolne plecy / zgięcie kręgosłupa",
+        "cause": "Insufficient core strength to hold the lean-back position — collapsing onto the lumbar spine",
+        "causePl": "Niewystarczająca siła brzucha do utrzymania odchylonej pozycji — zapadanie na kręgosłup lędźwiowy",
+        "cue": "Lengthen the spine — chest up, sit tall even at 45 degrees. If you can't, reduce the lean angle or the weight.",
+        "cuePl": "Wydłuż kręgosłup — klatka w górę, siedź wysoko nawet przy 45 stopniach. Jeśli nie dasz rady — zmniejsz kąt odchylenia lub ciężar."
+      },
+      {
+        "fault": "Using momentum / swinging the weight",
+        "faultPl": "Wykorzystywanie rozpędu / kołysanie ciężarem",
+        "cause": "Too fast tempo or too heavy weight — body uses inertia instead of obliques",
+        "causePl": "Zbyt szybkie tempo lub zbyt ciężki ciężar — ciało wykorzystuje bezwładność zamiast mięśni skośnych",
+        "cue": "Pause for 1 second at each end range. If you can't pause, the weight is too heavy or speed too high.",
+        "cuePl": "Zatrzymaj się na 1 sekundę w każdym końcowym zakresie. Jeśli nie potrafisz — ciężar za duży lub tempo za szybkie."
+      },
+      {
+        "fault": "Hips and legs rotating with the torso",
+        "faultPl": "Biodra i nogi obracają się razem z tułowiem",
+        "cause": "Lack of dissociation between thoracic and lumbar/pelvic regions",
+        "causePl": "Brak dysocjacji między odcinkiem piersiowym a lędźwiowo-miednicznym",
+        "cue": "Lock the knees pointing straight up — only the upper torso turns above the hips",
+        "cuePl": "Zablokuj kolana skierowane prosto w górę — obraca się tylko górny tułów ponad biodrami"
+      },
+      {
+        "fault": "Holding breath through the set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Over-bracing or anxiety about losing the leaned position",
+        "causePl": "Nadmierne napięcie lub obawa przed utratą pozycji odchylonej",
+        "cue": "Short exhale on each twist — left exhale, right exhale. Light inhale through the midline.",
+        "cuePl": "Krótki wydech przy każdym skręcie — w lewo wydech, w prawo wydech. Lekki wdech przez linię środkową."
+      }
+    ],
+    "breathing": "Short, controlled exhale on each rotation toward the side (one breath per twist). Light inhale as the torso passes back through the midline. Maintain a low-level brace throughout — never fully relax the abs.",
+    "breathingPl": "Krótki, kontrolowany wydech przy każdej rotacji w bok (jeden oddech na skręt). Lekki wdech, gdy tułów przechodzi z powrotem przez linię środkową. Utrzymuj lekkie napięcie brzucha przez cały czas — nigdy całkowicie nie rozluźniaj brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Loaded rotation of the lumbar spine is high-risk for disc protrusions (McGill). Use anti-rotation exercises (Pallof press, side plank) until cleared by a physiotherapist.",
+      "modificationPl": "Obciążona rotacja kręgosłupa lędźwiowego to wysokie ryzyko przy przepuklinach dyskowych (McGill). Stosuj ćwiczenia anty-rotacyjne (Pallof press, deska boczna) do czasu konsultacji z fizjoterapeutą.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Rotation under load can aggravate acute lumbar pain. Wait until pain-free, then return through bodyweight rotation first.",
+      "modificationPl": "Rotacja pod obciążeniem może nasilać ostry ból lędźwi. Poczekaj do ustąpienia bólu, a potem wróć najpierw przez rotację z masą własnego ciała.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Loaded rotation and the lean-back position can worsen midline separation. Use transverse-abdominis-focused exercises first; reintroduce rotation only after the gap closes.",
+      "modificationPl": "Obciążona rotacja i pozycja odchylona mogą pogłębić rozejście kresy białej. Zacznij od ćwiczeń skupionych na mięśniu poprzecznym brzucha; wróć do rotacji dopiero po zamknięciu rozejścia.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "si_joint_dysfunction",
+      "severity": "caution",
+      "modification": "Asymmetric rotational loads can flare up SI joint pain. Reduce weight, slow tempo, and keep the lean angle higher (more upright) to reduce shear forces.",
+      "modificationPl": "Asymetryczne obciążenia rotacyjne mogą zaostrzyć ból stawu krzyżowo-biodrowego. Zmniejsz ciężar, zwolnij tempo i utrzymuj wyższy kąt odchylenia (bardziej pionowo), by zmniejszyć siły ścinające.",
+      "alternative": "russian-twist"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12/side (hypertrophy) | 3x15-20/side (endurance) | 3x30-45s (timed finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "weighted-russian-twist.gif",
+    "frames_extracted": [
+      "frames/weighted-russian-twist/frame_0_start.png",
+      "frames/weighted-russian-twist/frame_1_early.png",
+      "frames/weighted-russian-twist/frame_2_mid.png",
+      "frames/weighted-russian-twist/frame_3_late.png",
+      "frames/weighted-russian-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/weighted-russian-twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): pozycja siedząca z odchylonym tułowiem ok. 45 stopni, stopy zaczepione pod uchwytem ławki sit-up (widoczna konstrukcja z prawej), oburącz trzymana piłka lekarska/talerz przed klatką piersiową, podświetlone mięśnie skośne (czerwony obszar po bokach brzucha) i rectus_abdominis. Klatka 2 (mid): obrót tułowia w lewo, ciężar prowadzony obok lewego biodra, klatka piersiowa wyraźnie obrócona względem miednicy, biodra i nogi stabilne, kolana skierowane prosto. Klatka 4 (end): powrót przez linię środkową, identyczna pozycja jak start (cykl alternujący). Klasyfikacja: core_rotation (rotacja kręgosłupa piersiowego względem miednicy), plane=transverse (płaszczyzna poprzeczna), mechanic=isolation (głównie 1 staw — kręgosłup; biodra izometrycznie), force=both (rotacja w jedną stronę = skurcz concentric obliques po stronie do której się obracamy + eccentric po stronie przeciwnej, w trakcie powrotu role się odwracają — siła działa w obu kierunkach). Laterality=bilateral (oburącz trzymany ciężar, ale ruch alternujący L/P — przyjmuję bilateral zgodnie z tradycją liczenia jako jedno ćwiczenie z 2 stronami w secie). Primary obliques (P9 — główne źródło ruchu rotacyjnego), secondary rectus_abdominis (S7 — izometryczne utrzymanie odchylonej pozycji) + hip_flexors (S6 — utrzymanie ugiętych kolan i odchylenia). Stabilizatory: transverse_abdominis (głębokie napięcie), erector_spinae (utrzymanie wydłużenia kręgosłupa), quadriceps (stabilizacja kolan). Equipment: medicine_ball jako required (na GIFie jest piłka), optional plate/dumbbell/kettlebell (typowe zamienniki) + sit_up_bench (do zaczepienia stóp jak na GIFie). Difficulty 5/10, intermediate — wymaga już bazowego russian-twist bez ciężaru i siły core do utrzymania pozycji 45 stopni. PL: 'Russian twist z obciążeniem' jako oficjalna nazwa (transliteracja przyjęta w polskim środowisku fitness), aliasy: 'rosyjski skręt z obciążeniem', 'skręty tułowia z ciężarem'. 5 typowych błędów (rotacja tylko ramion, zaokrąglone plecy, momentum, biodra ruszają, wstrzymany oddech) + 4 przeciwwskazania (lumbar disc — avoid, acute LBP — avoid, diastasis recti — modify, SI joint — caution). Wszystkie pola PL pisane od zera. GIF skopiowany do canonical/media/."
+  ,
+
+  "tags": ["core", "abs", "obliques", "rotation", "medicine_ball", "plate", "weighted", "anti_extension", "transverse_plane"]
+}

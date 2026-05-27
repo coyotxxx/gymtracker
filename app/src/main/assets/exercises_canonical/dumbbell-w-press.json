@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-w-press",
+  "name": "Dumbbell W Press (Scarecrow)",
+  "namePl": "W-press z hantlami (Scarecrow press)",
+  "aliases": ["scarecrow press", "DB W press", "W press dumbbell", "shoulder W press", "rear delt W press"],
+  "aliasesPl": ["W-press hantlami", "scarecrow press hantlami", "wyciskanie W", "wyciskanie barków w pozycji W", "press W dla tylnych aktonów"],
+
+  "description": "Bilateral overhead press from a 'W' starting position — elbows wide and high (at shoulder level), forearms vertical, palms facing each other (neutral grip). The 'W' refers to the shape of the body (head/elbows/dumbbells) at the start: torso = center bar of W, elbows flared = side strokes, dumbbells up at shoulder level = top points. From this position, you press the dumbbells straight overhead and lower back to the W. This is a pre-hab / rear delt and rotator cuff focused press — the wide elbow position pre-loads the posterior deltoids and external rotators before the press begins, making it different from a regular DB OHP (elbows in front) or lateral press. Lower load than standard OHP because the wide-elbow starting position is mechanically disadvantageous — use it as accessory work, warm-up, or shoulder pre-hab, not a primary mass builder.",
+  "descriptionPl": "Dwustronne wyciskanie nad głowę z pozycji startowej 'W' — łokcie szeroko i wysoko (na wysokości barków), przedramiona pionowe, dłonie skierowane do siebie (chwyt neutralny). 'W' to kształt sylwetki (głowa/łokcie/hantle) w pozycji start: tułów = środkowa kreska litery W, rozchylone łokcie = boczne kreski, hantle na wysokości barków = górne wierzchołki. Z tej pozycji wyciskasz hantle prosto nad głowę i opuszczasz z powrotem do W. To ćwiczenie pre-hab / pod kątem tylnych aktonów i stożka rotatorów — szeroka pozycja łokci pre-aktywuje tylne deltoidy i mięśnie zewnętrznych rotatorów PRZED rozpoczęciem wyciskania, co odróżnia ten ruch od klasycznego DB OHP (łokcie z przodu) czy lateral press. Mniejszy ciężar niż przy standardowym OHP — szeroka pozycja łokci jest mechanicznie niekorzystna. Używaj jako akcesoria, rozgrzewki lub pre-hab barków, nie jako głównego budowniczego masy.",
+
+  "instructions": [
+    "Stand or sit with back support, holding a dumbbell in each hand.",
+    "Start position: bring the dumbbells up to shoulder height with elbows FLARED OUT to the sides at shoulder level (~90° abduction). Forearms vertical, palms facing each other (neutral grip). This is the 'W' shape — head in the middle, elbows wide, dumbbells at shoulder height.",
+    "Brace core, ribs DOWN, glutes squeezed. Squeeze the shoulder blades slightly back and down (don't shrug).",
+    "Inhale, then press the dumbbells straight overhead — arms extend, palms remain facing each other (neutral grip stays throughout the rep, no rotation).",
+    "Lockout: arms fully extended overhead, dumbbells close (or touching) above the head, palms still facing each other.",
+    "Exhale at the top. Lower the dumbbells under CONTROL back to the W start position — elbows return to shoulder-level flare, NOT in front of the body.",
+    "Pause briefly in the W position to reset (don't bounce). The lower elbows go BELOW shoulder line — keep them at shoulder height through the entire descent."
+  ],
+  "instructionsPl": [
+    "Stań lub usiądź z oparciem, hantle w obu rękach.",
+    "Pozycja start: unieś hantle do wysokości barków z łokciami SZEROKO ROZCHYLONYMI na boki na wysokości barków (~90° odwiedzenia). Przedramiona pionowe, dłonie skierowane do siebie (chwyt neutralny). To jest kształt 'W' — głowa w środku, łokcie szeroko, hantle na wysokości barków.",
+    "Napnij brzuch, żebra W DÓŁ, ściśnij pośladki. Lekko ściągnij łopatki w dół i do tyłu (bez podciągania barków).",
+    "Wdech, następnie wyciśnij hantle prosto nad głowę — ramiona prostują się, dłonie pozostają skierowane do siebie (chwyt neutralny przez cały ruch, BEZ rotacji).",
+    "Lock-out: ramiona w pełnym wyproście nad głową, hantle blisko siebie (lub stykają się) nad głową, dłonie nadal skierowane do siebie.",
+    "Wydech na szczycie. Opuść hantle pod KONTROLĄ do pozycji startowej W — łokcie wracają do wysokości barków, NIE do przodu tułowia.",
+    "Krótka pauza w pozycji W aby zresetować ruch (bez odbijania). Nie pozwalaj łokciom OPADAĆ poniżej linii barków — utrzymuj je na wysokości barków przez całą fazę negatywną."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids", "rotator_cuff"],
+    "secondary": ["lateral_deltoids", "anterior_deltoids", "triceps", "trapezius_lower", "supraspinatus"],
+    "stabilizers": ["core", "trapezius", "serratus_anterior", "infraspinatus", "teres_minor", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P9",
+    "rotator_cuff": "P9",
+    "lateral_deltoids": "S8",
+    "anterior_deltoids": "S6",
+    "triceps": "S6",
+    "supraspinatus": "S7",
+    "infraspinatus": "S6",
+    "teres_minor": "S6",
+    "trapezius_lower": "S6",
+    "trapezius": "S5",
+    "serratus_anterior": "S5",
+    "rhomboids": "S5",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["bench", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-lateral-raise", "dumbbell-rear-delt-raise", "external-rotation-dumbbell"],
+    "progression_to": ["heavy-w-press", "single-arm-w-press", "standing-w-press-heavy", "snatch-grip-overhead-press"],
+    "alternatives": ["dumbbell-overhead-press", "dumbbell-cuban-press", "scarecrow-rotation", "dumbbell-arnold-press", "face-pull-to-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells at SHOULDER HEIGHT, palms facing each other (neutral grip)",
+      "Elbows FLARED OUT at shoulder level — forearms VERTICAL, like goal posts",
+      "Sylwetka tworzy literę 'W' — głowa w środku, łokcie szeroko, hantle u góry (visual cue)",
+      "Ribs DOWN, core braced, glutes squeezed — no rib flare",
+      "Shoulder blades slightly down and back — don't shrug, no neck tension"
+    ],
+    "setup_cues_pl": [
+      "Hantle na WYSOKOŚCI BARKÓW, dłonie skierowane do siebie (chwyt neutralny)",
+      "Łokcie ROZCHYLONE NA BOKI na wysokości barków — przedramiona PIONOWE, jak słupki bramki",
+      "Sylwetka tworzy literę 'W' — głowa w środku, łokcie szeroko, hantle u góry (wizualny punkt odniesienia)",
+      "Żebra W DÓŁ, brzuch napięty, pośladki ściśnięte — bez rozchylania żeber",
+      "Łopatki lekko w dół i do tyłu — bez podciągania barków, brak napięcia w karku"
+    ],
+    "execution_cues": [
+      "Press STRAIGHT UP — dumbbells track over the shoulders, not in front",
+      "Palms stay facing each other THROUGHOUT — no rotation, this is NOT Arnold press",
+      "At lockout: dumbbells can lightly touch above the head — biceps near ears",
+      "Lower SLOWLY — eccentric is where the rotator cuff and rear delts get the work",
+      "Stop the descent EXACTLY at shoulder height — don't drop elbows below the W position"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj PROSTO W GÓRĘ — hantle nad linią barków, nie z przodu",
+      "Dłonie POZOSTAJĄ skierowane do siebie przez cały ruch — BEZ rotacji, to NIE jest Arnold press",
+      "Lock-out: hantle mogą się lekko stykać nad głową — bicepsy przy uszach",
+      "Opuszczaj POWOLI — faza ekscentryczna to moment pracy stożka rotatorów i tylnych aktonów",
+      "Zatrzymaj ruch DOKŁADNIE na wysokości barków — nie pozwól łokciom opaść poniżej pozycji W"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drop in front of the body at the bottom (loses the 'W' position)",
+        "faultPl": "Łokcie opadają z przodu tułowia w dolnej pozycji (utrata pozycji 'W')",
+        "cause": "Weight too heavy, fatigue, lack of awareness — body cheats by bringing elbows forward where pressing is easier (turns into a regular DB OHP).",
+        "causePl": "Zbyt duży ciężar, zmęczenie, brak świadomości ruchu — ciało oszukuje przesuwając łokcie do przodu gdzie wyciskanie jest łatwiejsze (zamienia się w klasyczne DB OHP).",
+        "cue": "Lower the weight DRASTICALLY. Use a mirror or film yourself. Stop the descent at shoulder height — elbows AT SHOULDER LEVEL flared out, not in front.",
+        "cuePl": "Zmniejsz ciężar DRASTYCZNIE. Użyj lustra lub nagrywaj się. Zatrzymaj fazę negatywną na wysokości barków — łokcie NA WYSOKOŚCI BARKÓW rozchylone, nie z przodu."
+      },
+      {
+        "fault": "Using a regular OHP weight — too heavy for the W position",
+        "faultPl": "Używanie ciężaru jak do klasycznego OHP — zbyt dużo na pozycję W",
+        "cause": "Lifters underestimate how mechanically disadvantageous the W position is. Wide elbows reduce leverage from anterior delts and triceps — typical W press weight is 50-60% of regular DB OHP.",
+        "causePl": "Trenujący nie doceniają jak mechanicznie niekorzystna jest pozycja W. Szerokie łokcie zmniejszają dźwignię przednich aktonów i tricepsów — typowy ciężar W press to 50-60% klasycznego DB OHP.",
+        "cue": "Start with 40-50% of your DB OHP weight. Focus on the position, not the load. This is pre-hab / accessory work, not a max strength lift.",
+        "cuePl": "Zacznij od 40-50% ciężaru z DB OHP. Skup się na pozycji, nie na obciążeniu. To ćwiczenie pre-hab / akcesoryjne, nie maksymalne wyciskanie."
+      },
+      {
+        "fault": "Shrugging — traps take over from delts and rotator cuff",
+        "faultPl": "Podciąganie barków — czworoboczne przejmują pracę zamiast aktonów i stożka rotatorów",
+        "cause": "Weight too heavy, weak posterior chain, postural compensation. Defeats the purpose of the exercise — the W press is supposed to target rear delts and external rotators, not upper traps.",
+        "causePl": "Zbyt duży ciężar, słaby tylny łańcuch, kompensacja posturalna. Niweczy sens ćwiczenia — W press ma celować w tylne aktony i zewnętrzne rotatory, nie górne czworoboczne.",
+        "cue": "Pull shoulder blades DOWN before pressing. If you can't stop shrugging, the weight is too heavy. Maintain long neck — earlobes far from shoulders.",
+        "cuePl": "Ściągnij łopatki W DÓŁ przed wyciskaniem. Jeśli nie możesz przestać podciągać barków — ciężar jest zbyt duży. Utrzymuj długą szyję — uszy daleko od barków."
+      },
+      {
+        "fault": "Wrists collapsing inward / outward under load",
+        "faultPl": "Nadgarstki łamiące się do środka / na zewnątrz pod obciążeniem",
+        "cause": "Weak wrists, dumbbell grip not centered, neutral grip with hands close together creates instability at lockout.",
+        "causePl": "Słabe nadgarstki, niewycentrowany chwyt hantli, neutralny chwyt z dłońmi blisko siebie generuje niestabilność w lock-out.",
+        "cue": "Wrap thumbs around handles for full grip. Keep wrists STACKED over forearms — straight line from elbow through wrist to dumbbell. Wrist wraps if needed.",
+        "cuePl": "Owiń kciuki wokół rączek (pełny chwyt). Trzymaj nadgarstki USTAWIONE nad przedramionami — prosta linia od łokcia przez nadgarstek do hantla. Opaski na nadgarstki jeśli trzeba."
+      },
+      {
+        "fault": "Rotating palms during the press (turns into Arnold press)",
+        "faultPl": "Rotacja dłoni w trakcie wyciskania (zmienia się w Arnold press)",
+        "cause": "Habit from doing other DB press variations, or instinct to 'help' the lift by rotating to a stronger position (pronated grip).",
+        "causePl": "Nawyk z innych odmian DB press lub instynkt 'pomocy' ciału przez rotację do silniejszej pozycji (chwyt pronowany).",
+        "cue": "Palms stay facing each other from start to lockout — neutral grip throughout. If you want rotation, do Arnold press instead.",
+        "cuePl": "Dłonie skierowane do siebie od startu do lock-out — chwyt neutralny przez cały ruch. Jeśli chcesz rotacji — rób Arnold press."
+      }
+    ],
+    "breathing": "Inhale at the W start position, hold tension through the press. Exhale at the top (lockout) or during the descent. Keep ribs down throughout — no big chest expansion that would lift the ribs.",
+    "breathingPl": "Wdech w pozycji startowej W, trzymaj napięcie podczas wyciskania. Wydech na szczycie (lock-out) lub w fazie negatywnej. Utrzymuj żebra w dół przez cały ruch — bez głębokiego rozszerzania klatki które uniosłoby żebra."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "The wide-elbow position at shoulder level is exactly where impingement is worst (~90° abduction in the scapular plane). Reduce ROM (don't go full lockout), reduce weight drastically, or substitute with neutral-grip press where elbows stay in front.",
+      "modificationPl": "Szeroka pozycja łokci na wysokości barków to dokładnie strefa największego impingementu (~90° odwiedzenia w płaszczyźnie łopatkowej). Zmniejsz ROM (bez pełnego lock-out), drastycznie zmniejsz ciężar lub zastąp DB press z neutralnym chwytem (łokcie z przodu).",
+      "alternative": "dumbbell-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Active rotator cuff injury — the wide elbow position loads the cuff at its weakest range. Avoid until cleared by physio. Pre-hab work like external rotations comes BEFORE this exercise, not as a replacement.",
+      "modificationPl": "Aktywna kontuzja stożka rotatorów — pozycja z szerokimi łokciami obciąża stożek w najsłabszym zakresie ruchu. Unikaj do zgody fizjoterapeuty. Prace pre-hab jak rotacje zewnętrzne idą PRZED tym ćwiczeniem, nie zamiast.",
+      "alternative": "external-rotation-dumbbell"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "The W position (90° abduction) puts compressive stress on the AC joint. If pain at the top of the shoulder, reduce abduction angle (elbows slightly forward of pure side flare) or skip this exercise.",
+      "modificationPl": "Pozycja W (90° odwiedzenia) generuje siły kompresyjne w stawie barkowo-obojczykowym (AC). Jeśli ból na szczycie barku — zmniejsz kąt odwiedzenia (łokcie lekko przed pełnym rozchyleniem) lub pomiń ćwiczenie.",
+      "alternative": "dumbbell-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "caution",
+      "modification": "Without good thoracic and shoulder mobility, the lockout will be incomplete (dumbbells in front of head, not over it) and lumbar arches to compensate. Work mobility first, use partial ROM until full lockout is achievable.",
+      "modificationPl": "Bez dobrej mobilności piersiowej i barków lock-out będzie niepełny (hantle przed głową, nie nad głową) a lordoza lędźwiowa kompensuje. Najpierw popracuj nad mobilnością, użyj częściowego ROM do osiągnięcia pełnego lock-out."
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (pre-hab / accessory) | 3-4x10-12 (rear delt hypertrophy) | 2-3x15-20 (warm-up / shoulder finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-w-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-w-press/frame_0_start.png",
+      "frames/dumbbell-w-press/frame_1_early.png",
+      "frames/dumbbell-w-press/frame_2_mid.png",
+      "frames/dumbbell-w-press/frame_3_late.png",
+      "frames/dumbbell-w-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-w-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 3 klatki (wersja stojąca). Frame 0 (start): postać stoi, hantle uniesione na wysokości barków, łokcie SZEROKO ROZCHYLONE na boki na wysokości barków, przedramiona pionowe, dłonie skierowane DO SIEBIE (chwyt neutralny) — sylwetka tworzy wyraźną literę 'W' (głowa w środku, łokcie boczne ramiona W, hantle u góry); podświetlone są przednie delty oraz przedramiona w pozycji wyjściowej. Frame 2 (szczyt): pełen lock-out nad głową — oba ramiona w pełnym wyproście, hantle blisko siebie nad głową, dłonie nadal skierowane do siebie (chwyt neutralny przez cały ruch, BEZ rotacji typowej dla Arnold press); silnie podświetlone przednie i boczne delty + tricepsy. Frame 4 (koniec/powrót): hantle z powrotem na wysokości barków, faza ekscentryczna — widoczne 'duch' rozmycie hantli w torze ruchu (potwierdza prosty tor pionowy bez rotacji). Klasyczny W press / Scarecrow press: pre-hab dla tylnych aktonów i stożka rotatorów. Pasuje 1:1 do specyfikacji.",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "dumbbell", "compound", "bilateral", "free_weights", "neutral_grip", "rear_delts", "rotator_cuff", "pre_hab", "accessory", "scarecrow", "shoulder_health"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "weighted-triceps-dip-on-high-parallel-bars",
+  "name": "Weighted Triceps Dip (Parallel Bars)",
+  "namePl": "Dipy na poręczach z obciążeniem",
+  "aliases": ["weighted parallel bar dips", "weighted dips", "weighted triceps dips", "dips with belt"],
+  "aliasesPl": ["dipy z obciążeniem", "pompki na poręczach z obciążeniem", "dipy z pasem", "dipy z talerzem"],
+
+  "description": "Loaded version of the classic parallel-bar dip — bodyweight plus extra mass hanging from a dip belt (or held between the knees with a dumbbell/plate). With a near-vertical torso, the movement strongly emphasizes the triceps and lower pectoralis. It is one of the most effective compound lifts for building dense triceps and lower-chest mass once a clean 8-12 rep bodyweight dip is owned. Loading scales linearly: small jumps (2.5-5 kg) drive long-term progression. Treat it like a horizontal-press equivalent — log it, progress it, deload it.",
+  "descriptionPl": "Obciążona wersja klasycznych dipów na poręczach — masa własnego ciała plus dodatkowy ciężar zawieszony na pasie do dipów (lub talerz/hantla trzymane między kolanami). Przy prawie pionowym tułowiu ćwiczenie mocno akcentuje tricepsy i dolną klatkę. Jedno z najskuteczniejszych wielostawowych ćwiczeń budujących gęste tricepsy i dolną klatkę, gdy opanowane są czyste dipy na masie własnego ciała w zakresie 8-12 powtórzeń. Obciążenie skaluje się liniowo: małe progresje (2,5-5 kg) napędzają wzrost na lata. Traktuj jak pełnoprawne ćwiczenie wyciskania — loguj, progresuj, deloaduj.",
+
+  "instructions": [
+    "Attach a dip belt around your waist with a plate, or grip a dumbbell between your feet. For belt setup, step into the support hold first, then have a partner lift the loaded plate, or use the floor to set the plate before lifting off.",
+    "Step or jump up onto the parallel bars into a full lockout: arms straight, shoulders pulled down (no shrugging), chest tall, gaze forward.",
+    "Set the trunk roughly vertical (10-15° forward lean for a triceps-biased dip). Bend the knees slightly so the weight hangs cleanly between the bars without swinging.",
+    "Initiate the descent by bending the elbows. Keep them tracking close to the ribs (15-45° flare). The added load makes elbow flare more punishing — stay tight.",
+    "Lower under control (2-3 second eccentric) until the shoulder is at or just below the elbow (upper arm parallel or slightly past parallel to the floor).",
+    "Brief pause at the bottom — no bouncing. With weight added, the bottom position is much more demanding on the shoulders and pecs.",
+    "Drive up by extending the elbows and squeezing the triceps. Push the bars away from you. Avoid kipping or jerking the load to start the rep.",
+    "Finish with a full elbow lockout at the top. Reset breath, brace, and start the next rep without releasing tension."
+  ],
+  "instructionsPl": [
+    "Załóż pas do dipów z talerzem albo trzymaj hantlę między stopami. Dla pasa: najpierw wejdź do podporu, partner podaje załadowany talerz — albo ustaw talerz na podłodze i podnieś się z niego.",
+    "Wskocz lub wejdź na poręcze do pełnego wyprostu: ręce wyprostowane, barki ściągnięte w dół (bez podciągania do uszu), klatka wypchnięta, wzrok do przodu.",
+    "Ustaw tułów prawie pionowo (lekkie pochylenie 10-15° do przodu dla wariantu na tricepsy). Zegnij lekko kolana, żeby obciążenie wisiało spokojnie między poręczami bez bujania.",
+    "Rozpocznij schodzenie zginając łokcie. Prowadź je blisko żeber (rozejście 15-45°). Dodatkowe obciążenie karze za rozsuwanie łokci — trzymaj napięcie.",
+    "Schodź kontrolowanie (ekscentryk 2-3 sekundy) aż bark znajdzie się na poziomie łokcia lub minimalnie niżej (ramię równoległe lub trochę poniżej równolegle do podłogi).",
+    "Krótka pauza na dole — bez odbijania. Z obciążeniem dolna pozycja jest znacznie bardziej wymagająca dla barków i klatki.",
+    "Wepchnij się do góry prostując łokcie i ściskając tricepsy. Odpychaj się od poręczy. Nie zaczynaj powtórzenia kopnięciem nóg ani szarpnięciem ciężaru.",
+    "Wykończ pełnym wyprostem łokci na górze. Zresetuj oddech, napnij brzuch i zaczynaj kolejne powtórzenie nie tracąc napięcia."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "lower_pectoralis"],
+    "secondary": ["anterior_deltoids", "pectoralis_major"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "core", "rectus_abdominis", "lats", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "lower_pectoralis": "P8",
+    "anterior_deltoids": "S7",
+    "pectoralis_major": "S7",
+    "serratus_anterior": "S6",
+    "rotator_cuff": "S5",
+    "core": "S5",
+    "rectus_abdominis": "S4",
+    "lats": "T3",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["parallel_bars", "weight_belt"],
+    "optional": ["dumbbell", "weight_plate", "wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["parallel-bar-dip", "bench-dip", "push-up"],
+    "progression_to": ["weighted-ring-dip", "very-heavy-weighted-dip"],
+    "alternatives": ["weighted-ring-dip", "machine-dip-heavy", "close-grip-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dip belt cinched tight low on the hips — plate hangs cleanly, not against the legs",
+      "Parallel bars at roughly shoulder width — wider biases chest, narrower biases triceps",
+      "Step into a locked-out support hold first, then accept the load",
+      "Shoulders packed down and back, chest tall, ribs stacked over pelvis",
+      "Trunk near-vertical (10-15° lean) for a triceps-dominant dip"
+    ],
+    "setup_cues_pl": [
+      "Pas do dipów mocno dociągnięty nisko na biodrach — talerz wisi swobodnie, nie obija nóg",
+      "Poręcze na szerokość barków — szerzej akcentuje klatkę, węziej tricepsy",
+      "Najpierw wejdź do pełnego podporu, dopiero potem przyjmij obciążenie",
+      "Barki ściągnięte w dół i tył, klatka wypchnięta, żebra nad miednicą",
+      "Tułów prawie pionowo (pochylenie 10-15°) dla wariantu na tricepsy"
+    ],
+    "execution_cues": [
+      "Bend the elbows — do not drop into the bottom; control the eccentric for 2-3 seconds",
+      "Elbows track close to the ribs — with added weight, flare wrecks shoulders fast",
+      "Hit upper arm parallel (or just below) — half-reps with weight teach nothing",
+      "Drive through the palms, squeeze triceps, finish with a hard lockout at the top",
+      "Brace the core, glutes squeezed, legs quiet — no kipping or swinging the plate"
+    ],
+    "execution_cues_pl": [
+      "Zginaj łokcie — nie opadaj na dół; ekscentryk kontrolowany 2-3 sekundy",
+      "Łokcie blisko żeber — z obciążeniem rozsuwanie błyskawicznie wykańcza barki",
+      "Schodź do ramienia równoległego (lub minimalnie poniżej) — półpowtórzenia z ciężarem niczego nie uczą",
+      "Naciskaj przez śródręcze, ściśnij tricepsy, na górze pełen wyprost łokci",
+      "Napnij brzuch, ściśnij pośladki, nogi spokojne — bez kipping i bujania talerza"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out under load",
+        "faultPl": "Łokcie rozchodzą się na boki pod obciążeniem",
+        "cause": "Added weight magnifies the moment arm on the shoulder. Flared elbows shift load onto the anterior capsule, biceps tendon and AC joint — a frequent recipe for shoulder pain after a weighted-dip cycle.",
+        "causePl": "Dodatkowy ciężar zwiększa ramię dźwigni na barku. Rozsunięte łokcie przerzucają obciążenie na przednią torebkę stawową, ścięgno bicepsa i staw barkowo-obojczykowy — to częsta droga do bólu barku po cyklu z dipami z obciążeniem.",
+        "cue": "Imagine pinning a piece of paper between your elbow and ribs. If the paper drops, you have flared. Reduce weight by 20% and re-groove the pattern.",
+        "cuePl": "Wyobraź sobie kartkę papieru przyciśniętą między łokciem a żebrami. Jeśli wypadnie, łokcie się rozjechały. Zmniejsz obciążenie o 20% i odbuduj wzorzec."
+      },
+      {
+        "fault": "Partial range of motion (cut short eccentric)",
+        "faultPl": "Niepełny zakres ruchu (urwany ekscentryk)",
+        "cause": "With weight added the bottom feels much harder than bodyweight — ego pushes the lifter to shorten ROM to keep load on the bar. Result: triceps long head and lower chest are starved at the most productive joint angles.",
+        "causePl": "Z obciążeniem dół jest dużo cięższy niż na masie własnego ciała — ego każe skrócić zakres, żeby utrzymać ciężar. Efekt: długa głowa tricepsa i dolna klatka są niedotrenowane w najbardziej produktywnych kątach stawowych.",
+        "cue": "Film a set from the side. Upper arm must reach parallel to the floor. If you cannot — drop the load. ROM > weight on the bar.",
+        "cuePl": "Nagraj serię z boku. Ramię musi zejść do poziomu równoległego z podłogą. Jeśli nie schodzi — zmniejsz ciężar. Zakres > kilogramy."
+      },
+      {
+        "fault": "Kipping / swinging the plate to start the rep",
+        "faultPl": "Kipping / bujanie talerzem dla rozkręcenia powtórzenia",
+        "cause": "Loaded dips become a coordination problem at the bottom. Lifters generate momentum by kicking the legs or rocking the load forward, which cheats the triceps and risks the shoulder out of position.",
+        "causePl": "Dipy z obciążeniem na dole stają się zadaniem koordynacyjnym. Trenujący generują rozmach kopnięciem nóg lub bujnięciem talerza w przód, co oszukuje tricepsa i wytrąca bark z pozycji.",
+        "cue": "Pause 1 second at the bottom. Legs locked together, slight knee bend, toes pointed back. The first inch of the press is pure muscle.",
+        "cuePl": "Pauza 1 sekunda na dole. Nogi sklejone razem, lekkie ugięcie kolan, palce stóp w tył. Pierwszy centymetr wyciskania to wyłącznie mięśnie."
+      },
+      {
+        "fault": "Incomplete lockout at the top",
+        "faultPl": "Niepełny wyprost łokci na górze",
+        "cause": "Lifters stop at 90-95% extension to keep tension on the chest. With heavy weight this skips the strongest portion of the triceps strength curve and trains a soft lockout — which carries over poorly to bench press.",
+        "causePl": "Trenujący zatrzymują się na 90-95% wyprostu, żeby utrzymać napięcie na klatce. Z dużym obciążeniem pomija to najmocniejszą część krzywej siły tricepsa i uczy słabego wyprostu — co źle przekłada się na wyciskanie sztangi.",
+        "cue": "Drive elbows fully straight, squeeze the triceps for half a second at the top of every rep. Lockout is a skill, not a rest.",
+        "cuePl": "Wyprostuj łokcie do końca, ściśnij tricepsy na pół sekundy na szczycie każdego powtórzenia. Lockout to umiejętność, nie odpoczynek."
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears under load",
+        "faultPl": "Barki podciągnięte do uszu pod obciążeniem",
+        "cause": "When the load gets heavy the lifter loses scapular control and the traps take over to support the body. This compresses the AC joint and offloads the chest/triceps — common in the last 1-2 reps of a hard set.",
+        "causePl": "Gdy ciężar rośnie, znika kontrola łopatek i traps przejmuje pracę utrzymując ciało. To kompresuje staw barkowo-obojczykowy i odciąża klatkę/tricepsa — typowe w ostatnich 1-2 powtórzeniach trudnej serii.",
+        "cue": "Before each rep: shoulders down and back, chest proud. If you cannot hold the pack on the last rep — that was your true AMRAP, end the set.",
+        "cuePl": "Przed każdym powtórzeniem: barki w dół i tył, klatka wypchnięta. Jeśli nie utrzymujesz pozycji w ostatnim powtórzeniu — to była twoja prawdziwa AMRAP, zakończ serię."
+      }
+    ],
+    "breathing": "Inhale at the top during the support hold. Brace and hold breath through the descent and the bottom — release just past the sticking point on the way up (mid-Valsalva). Re-breathe at the top between reps.",
+    "breathingPl": "Wdech na górze podczas podporu. Napnij brzuch i wstrzymaj oddech przez schodzenie i dolną pozycję — wypuść dopiero za punktem martwym przy wyciskaniu (Valsalva). Oddech bierz na górze między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Loaded deep dips heavily stress the anterior capsule and AC joint. Avoid until cleared by physio. Substitute with close-grip bench press or pin press from mid-range.",
+      "modificationPl": "Głębokie dipy z obciążeniem mocno obciążają przednią torebkę stawową i staw barkowo-obojczykowy. Unikaj do zgody fizjoterapeuty. Zastąp wyciskaniem wąskim lub pin press z połowy zakresu.",
+      "alternative": "close-grip-bench-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Triceps tendon is loaded heavily at lockout under added weight. Reduce load by 30-40%, stop short of full extension (95%), and add eccentric-only sets to build tendon capacity.",
+      "modificationPl": "Ścięgno tricepsa jest mocno obciążone na wyproście z dodatkowym ciężarem. Zmniejsz obciążenie o 30-40%, zatrzymuj się tuż przed pełnym wyprostem (95%) i dodaj serie tylko ekscentryczne, by budować odporność ścięgna.",
+      "alternative": "parallel-bar-dip"
+    },
+    {
+      "condition": "ac_joint_separation",
+      "severity": "avoid",
+      "modification": "Weighted deep dip is one of the worst loaders for the AC joint. Avoid entirely during recovery. Use horizontal pressing (bench, dumbbell press) instead.",
+      "modificationPl": "Dipy z obciążeniem w pełnym zakresie to jedno z najgorszych ćwiczeń dla stawu barkowo-obojczykowego. Całkowicie unikaj w trakcie rekonwalescencji. Zastąp horyzontalnym wyciskaniem (sztanga, hantle).",
+      "alternative": "barbell-bench-press"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Hands lock on a fixed bar — wrists cannot rotate to a comfortable angle, and the added weight increases load. Use thick neoprene wrist wraps, reduce ROM at the bottom, or switch to rings where wrists can self-orient.",
+      "modificationPl": "Dłonie blokowane na sztywnej poręczy — nadgarstki nie mogą obrócić się do wygodnego kąta, a dodatkowy ciężar zwiększa obciążenie. Załóż grube neoprenowe opaski na nadgarstki, ogranicz zakres na dole albo przejdź na kółka, gdzie nadgarstki ustawiają się same.",
+      "alternative": "weighted-ring-dip"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (strength) | 4x6-10 (hypertrophy) | 3x AMRAP-2 (volume top set)",
+
+  "media": {
+    "primary": "weighted-triceps-dip-on-high-parallel-bars.gif",
+    "frames_extracted": [
+      "frames/weighted-triceps-dip-on-high-parallel-bars/frame_0_start.png",
+      "frames/weighted-triceps-dip-on-high-parallel-bars/frame_1_early.png",
+      "frames/weighted-triceps-dip-on-high-parallel-bars/frame_2_mid.png",
+      "frames/weighted-triceps-dip-on-high-parallel-bars/frame_3_late.png",
+      "frames/weighted-triceps-dip-on-high-parallel-bars/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/weighted-triceps-dip-on-high-parallel-bars"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:54:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (frame 0/1/2/3/4). Klatka 0 (start): pełen podpór na poręczach na wysokiej konstrukcji, ręce wyprostowane, talerz wisi na pasie do dipów nisko między poręczami, nogi lekko ugięte w kolanach, palce stóp w tył — klasyczna pozycja startowa dipa z obciążeniem. Klatka 1 (early): początek schodzenia, łokcie zaczynają się zginać, tułów prawie pionowy z lekkim pochyleniem do przodu. Klatka 2 (mid/bottom): dolna pozycja — ramię równoległe do podłogi lub minimalnie poniżej, łokcie blisko tułowia (nie rozłożone na 90°), tułów lekko pochylony do przodu — typowa pozycja dla wariantu z większym akcentem na tricepsy i dolną klatkę. Klatka 3 (late): wypychanie do góry, łokcie prawie wyprostowane. Klatka 4 (end): pełen wyprost łokci na górze, talerz wraca do pozycji wyjściowej. Podświetlenia anatomiczne: tricepsy (mocne) + dolna klatka (mocne) + przednie delty (umiarkowane) — pasuje do dipu z obciążeniem w wariancie triceps-biased. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego, z polską terminologią treningową (dipy, pas do dipów, ekscentryk, lockout w jargonie, Valsalva, kipping w jargonie kalistenicznym). Poziom advanced, difficulty 8 — łatwiejszy niż weighted ring dips (9) z racji stabilnych poręczy, ale wymaga opanowanych dipów bodyweight 8-12 powtórzeń.",
+
+  "tags": ["strength", "weighted", "parallel_bars", "upper_body", "push", "triceps_builder", "lower_chest", "advanced", "bench_press_assistance", "compound"]
+}

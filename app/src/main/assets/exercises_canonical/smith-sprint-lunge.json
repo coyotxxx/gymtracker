@@ -1,0 +1,206 @@
+{
+  "id": "smith-sprint-lunge",
+  "name": "Smith Sprint Lunge",
+  "namePl": "Wykrok sprinterski na Smith machine",
+  "aliases": ["smith machine sprint lunge", "smith sprinter lunge", "smith machine sprinter stance lunge", "smith short-stride lunge"],
+  "aliasesPl": ["wykrok sprinterski w smith machine", "wykrok w pozycji sprintera na maszynie Smitha", "wykrok krótki na smith machine", "split lunge sprinterski na smith"],
+
+  "description": "Unilateral lower-body compound exercise performed in a Smith machine. The lifter assumes a sprinter's start stance — feet in split position with the front leg loaded forward and the rear leg ready to drive — then descends straight down by bending both knees. Compared to a classic barbell lunge, the stance is shorter and the torso is slightly more inclined forward (sprinter's lean), which shifts more load onto the front-leg quadriceps and front-leg glute. The Smith machine's fixed bar path removes balance demands, allowing the lifter to push heavier loads into the front leg than a free-weight lunge.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała wykonywane na Smith machine. Trenujący przyjmuje pozycję startową sprintera — stopy w rozkroku z przednią nogą obciążoną do przodu, a tylna noga gotowa do wybicia — następnie schodzi prosto w dół zginając oba kolana. W porównaniu z klasycznym wykrokiem ze sztangą rozkrok jest krótszy, a tułów lekko bardziej pochylony do przodu (pochylenie sprinterskie), co przenosi większe obciążenie na czworogłowe i pośladek przedniej nogi. Prowadnica gryfu w Smith machine eliminuje wymagania balansu, pozwalając wcisnąć w przednią nogę większy ciężar niż w wolnym wykroku.",
+
+  "instructions": [
+    "Set the Smith machine bar at upper-chest height. Load both sides evenly with light to moderate weight and secure with collars.",
+    "Step under the bar and place it across your upper traps. Grip slightly wider than shoulders, elbows down, chest up.",
+    "Unrack the bar by rotating the hooks and extending your legs. Stand tall under the bar.",
+    "Assume a sprinter's stance: step the working leg forward into a SHORT split (shorter than a classic lunge — about one normal stride), back foot up on the ball of the foot. Lean torso slightly forward, like a sprinter at the blocks.",
+    "Brace your core, look slightly ahead and down, take a deep breath and hold (Valsalva).",
+    "Descend straight down by bending both knees — front knee tracks over the front foot, back knee drives toward the floor without touching.",
+    "Stop just before the back knee touches the ground; front thigh should reach roughly parallel to the floor or slightly above.",
+    "Drive up by pushing hard through the front heel and the ball of the back foot — feel the front-leg quad and glute do the work.",
+    "Return to the starting sprinter stance with both legs slightly bent. Do not lock out.",
+    "Complete all reps on one side, then rotate the bar back into the hooks, switch legs, and repeat."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smith machine na wysokości górnej klatki. Załaduj równomiernie z obu stron lekkim lub średnim obciążeniem i zabezpiecz zaciskami.",
+    "Wejdź pod gryf i ułóż go na górnej części trapezów. Chwyt nieco szerszy niż barki, łokcie w dół, klatka w górze.",
+    "Wyciągnij gryf z haków obracając go i prostując nogi. Stań wyprostowany pod gryfem.",
+    "Przyjmij pozycję sprintera: zrób KRÓTKI krok pracującą nogą w przód (krótszy niż w klasycznym wykroku — około jednego normalnego kroku), tylna stopa na śródstopiu. Pochyl tułów lekko do przodu, jak sprinter na bloku startowym.",
+    "Napnij brzuch, wzrok lekko w przód i w dół, weź głęboki wdech i przytrzymaj (Valsalva).",
+    "Schodź prosto w dół zginając oba kolana — przednie kolano kieruje się nad przednią stopę, tylne kolano w stronę podłogi bez dotykania.",
+    "Zatrzymaj się tuż przed dotknięciem podłogi przez tylne kolano; przednie udo powinno być mniej więcej równolegle do podłogi lub nieco powyżej.",
+    "Wypchnij się mocno przez piętę przedniej nogi i śródstopie tylnej — czuj pracę czworogłowego i pośladka przedniej nogi.",
+    "Wróć do pozycji startowej sprintera z obiema nogami lekko ugiętymi. Nie blokuj kolan.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie obróć gryf z powrotem w haki, zmień nogę i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "gluteus_medius", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "hamstrings": "S6",
+    "adductors": "S6",
+    "core": "S5",
+    "calves": "T4",
+    "gluteus_medius": "T4",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "lifting_shoes", "knee_sleeves", "collars"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-lunge", "goblet-lunge", "smith-lunge", "barbell-back-squat"],
+    "progression_to": ["barbell-lunge", "bulgarian-split-squat", "deficit-reverse-lunge", "walking-lunge"],
+    "alternatives": ["smith-lunge", "barbell-split-squat", "dumbbell-lunge", "bulgarian-split-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps, hands slightly wider than shoulders",
+      "Unrack with both legs together, then step into a short split stance",
+      "Front foot flat, back foot up on the ball — sprinter's stance",
+      "Slight forward lean in the torso, not upright like a back squat",
+      "Pick a focal point on the floor 2-3 m ahead — keeps the head neutral with the lean"
+    ],
+    "setup_cues_pl": [
+      "Gryf na górnej części trapezów, dłonie nieco szerzej niż barki",
+      "Wyciągnij gryf z nogami razem, dopiero potem przejdź w krótki rozkrok",
+      "Przednia stopa płasko, tylna na śródstopiu — pozycja sprintera",
+      "Lekkie pochylenie tułowia w przód, nie pion jak w przysiadzie tylnym",
+      "Ustal punkt skupienia wzroku na podłodze 2-3 m przed sobą — utrzymuje neutralną głowę przy pochyleniu"
+    ],
+    "execution_cues": [
+      "Short stride, not a long classic lunge — sprinter at the blocks",
+      "Drop the back knee toward the floor, don't push the front knee forward",
+      "Push the floor away through the front heel on the way up",
+      "Keep the back heel up — the rear leg assists, the front leg drives",
+      "Don't lock out at the top — stay in tension between reps"
+    ],
+    "execution_cues_pl": [
+      "Krótki rozkrok, nie długi klasyczny wykrok — sprinter na bloku startowym",
+      "Opuszczaj tylne kolano w stronę podłogi, nie wypychaj przedniego kolana w przód",
+      "Wypchnij podłogę przez piętę przedniej nogi w drodze w górę",
+      "Tylna pięta uniesiona — tylna noga asystuje, przednia napędza",
+      "Nie blokuj kolan na górze — utrzymuj napięcie między powtórzeniami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Stride too long (becomes a classic lunge, not a sprinter stance)",
+        "faultPl": "Za długi rozkrok (zamienia się w klasyczny wykrok, nie pozycję sprintera)",
+        "cause": "Habit from regular lunge work — sprinter lunge needs a SHORTER step",
+        "causePl": "Nawyk z klasycznego wykroku — wykrok sprinterski wymaga KRÓTSZEGO kroku",
+        "cue": "Step about 0.7x your usual lunge stride. Front knee should travel slightly past the toes — that's intentional here.",
+        "cuePl": "Krok około 0,7x twojego normalnego wykroku. Przednie kolano powinno wyjść lekko za palce — to celowe w tym wariancie."
+      },
+      {
+        "fault": "Torso stays vertical instead of sprinter lean",
+        "faultPl": "Tułów pozostaje pionowy zamiast pochylenia sprinterskiego",
+        "cause": "Trying to apply back-squat cue 'chest up' to a movement that needs forward lean",
+        "causePl": "Próba zastosowania wskazówki 'klatka w górze' z przysiadu tylnego w ruchu wymagającym pochylenia w przód",
+        "cue": "Lean torso 15-20° forward, hips back. Imagine you're about to explode out of starting blocks.",
+        "cuePl": "Pochyl tułów 15-20° w przód, biodra w tył. Wyobraź sobie że za chwilę wystartujesz z bloku."
+      },
+      {
+        "fault": "Back knee crashes into the floor",
+        "faultPl": "Tylne kolano uderza w podłogę",
+        "cause": "Loss of eccentric control under the fixed bar path of the Smith machine",
+        "causePl": "Utrata kontroli ekscentrycznej pod stałą prowadnicą gryfu Smith machine",
+        "cue": "Stop 2-3 cm above the floor with the back knee. Tap the floor only with a thick pad if you must.",
+        "cuePl": "Zatrzymaj tylne kolano 2-3 cm nad podłogą. Dotykaj podłogi tylko z grubą matą jeśli musisz."
+      },
+      {
+        "fault": "Pushing back instead of pushing down (Smith-machine specific)",
+        "faultPl": "Pchanie do tyłu zamiast w dół (specyfika Smith machine)",
+        "cause": "The fixed bar path tempts the lifter to lean against the bar instead of moving through it. Loads spine, not legs.",
+        "causePl": "Stała prowadnica gryfu kusi do opierania się o gryf zamiast przechodzenia przez ruch. Obciąża kręgosłup, nie nogi.",
+        "cue": "Position your feet so the bar travels through your mid-foot — not behind your heels. If feet are too far forward, step back under the bar before starting.",
+        "cuePl": "Ustaw stopy tak, by gryf przechodził przez śródstopie — nie za piętami. Jeśli stopy są za daleko w przód, cofnij się pod gryf przed startem."
+      },
+      {
+        "fault": "Front heel rises off the floor",
+        "faultPl": "Pięta przedniej nogi unosi się od podłogi",
+        "cause": "Stride too short, weight shifted onto the toes, or limited ankle dorsiflexion",
+        "causePl": "Za krótki krok, ciężar przeniesiony na palce lub ograniczone zgięcie grzbietowe kostki",
+        "cue": "Drive the front heel down — feel it grip the floor. If it keeps rising, lengthen the stride slightly.",
+        "cuePl": "Wbij piętę przedniej nogi w podłogę — czuj jak chwyta podłoże. Jeśli wciąż się unosi, lekko wydłuż krok."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before descending. Hold breath through the descent and the hardest part of the drive up (Valsalva). Exhale near the top as you reset for the next rep.",
+    "breathingPl": "Wdech i napięcie na górze przed schodzeniem. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wychodzenia (Valsalva). Wydech blisko górnej pozycji gdy przygotowujesz się do kolejnego powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "The short sprinter stride brings the front knee past the toes — high patellar load. Switch to a reverse lunge or longer-stride classic lunge instead.",
+      "modificationPl": "Krótki rozkrok sprintera wysuwa przednie kolano za palce — duże obciążenie rzepki. Przejdź na wykrok w tył lub klasyczny wykrok z dłuższym krokiem.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range; avoid deep front-knee flexion. Use a posterior-loaded variant (reverse lunge) with shorter ROM.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu; unikaj głębokiego zgięcia przedniego kolana. Zastosuj wariant z obciążeniem tylnej nogi (wykrok w tył) z krótszym zakresem ruchu.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Spinal loading combined with forward torso lean increases shear stress on the lumbar spine. Wait for full recovery and physiotherapist clearance.",
+      "modificationPl": "Obciążenie osiowe kręgosłupa w połączeniu z pochyleniem tułowia zwiększa siły ścinające w odcinku lędźwiowym. Poczekaj na pełne wyzdrowienie i zgodę fizjoterapeuty.",
+      "alternative": "bodyweight-lunge"
+    },
+    {
+      "condition": "ankle_dorsiflexion_restriction",
+      "severity": "caution",
+      "modification": "Short stride demands significant front-ankle dorsiflexion. Place a small wedge under the front heel or lengthen the stride to a classic lunge position.",
+      "modificationPl": "Krótki rozkrok wymaga dużego zgięcia grzbietowego przedniej kostki. Podłóż mały klin pod piętę przedniej nogi lub wydłuż krok do pozycji klasycznego wykroku.",
+      "alternative": "smith-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy, dominant focus) | 4x6 per leg (strength) | 3x12-15 per leg (endurance/sprint-specific conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "smith-sprint-lunge.gif",
+    "frames_extracted": [
+      "frames/smith-sprint-lunge/frame_0_start.png",
+      "frames/smith-sprint-lunge/frame_1_early.png",
+      "frames/smith-sprint-lunge/frame_2_mid.png",
+      "frames/smith-sprint-lunge/frame_3_late.png",
+      "frames/smith-sprint-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-sprint-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Trenujący stoi pod Smith machine z gryfem na trapezach (high-bar). Klatka 0/4 (start/end): pozycja sprintera — krótki rozkrok, przednia (prawa) noga lekko zgięta postawiona płasko, tylna (lewa) noga z uniesioną piętą na śródstopiu, tułów lekko pochylony w przód. Klatki 1-3 (mid): głęboki wykrok — przednie udo równolegle do podłogi (kolano ~90°), tylne kolano nisko (kilka cm nad podłogą, NIE dotyka), tułów nadal pochylony do przodu jak sprinter. Mięśnie podświetlone w GIFie: czworogłowe OBU nóg (bardzo intensywnie, przednia mocniej) + pośladek przedniej nogi + przywodziciele tylnej nogi — uzasadnia P10 quadriceps i P9 glutes. Specyfika vs klasyczny barbell lunge: krótszy rozkrok, pochylony tułów, brak walking pattern, sztanga prowadzona po torze maszyny. Plik GIF skopiowany do canonical/media/. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — termin 'wykrok sprinterski' to standard polskiej terminologii fitness/sprint training. Schema zgodna z barbell-lunge.json.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "smith_machine", "compound", "quad_dominant", "sprinter_stance", "machine"]
+}

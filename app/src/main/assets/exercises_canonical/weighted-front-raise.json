@@ -1,0 +1,203 @@
+{
+  "id": "weighted-front-raise",
+  "name": "Weighted Front Raise",
+  "namePl": "Unoszenie w przód z obciążeniem (talerz)",
+  "aliases": ["plate front raise", "two-hand plate front raise", "plate raise", "weight plate front raise", "barbell-plate front raise"],
+  "aliasesPl": ["wznosy w przód talerzem", "wznosy frontowe z talerzem", "plate front raise", "unoszenie talerza w przód", "wznosy przodem z talerzem"],
+
+  "description": "Standing isolation exercise for the anterior (front) head of the deltoid, performed by holding a weight plate with both hands at the front of the hips and raising it straight in front of the body until it reaches shoulder height. The plate is gripped at the 3 and 9 o'clock positions (sides of the plate), arms hang naturally with a small fixed bend in the elbows, and the lift travels in a vertical arc directly in front of the torso. Compared to a barbell or dumbbell front raise, the two-hand plate variant naturally centers the load, encourages a neutral grip, and is friendlier to the wrists and shoulders — it forces the lifter to keep both arms working symmetrically and is a common choice in shoulder finishers, drop sets, and high-rep pump work. The anterior deltoid is the primary mover, with light secondary involvement from the lateral deltoid (clavicular portion of the lift) and the upper trapezius near the top of the rep.",
+  "descriptionPl": "Stojące ćwiczenie izolowane na przedni akton (głowę przednią) mięśnia naramiennego, wykonywane poprzez trzymanie talerza obciążającego oburącz z przodu bioder i unoszenie go prosto przed sobą do wysokości barków. Talerz chwytany jest po bokach (na pozycji godziny 3 i 9), ramiona zwisają naturalnie z lekko ugiętymi łokciami, a ruch przebiega w pionowym łuku bezpośrednio przed tułowiem. W porównaniu do wznosów frontowych ze sztangą lub hantlami, wariant dwuręczny z talerzem naturalnie centruje ciężar, wymusza neutralny chwyt i jest przyjaźniejszy dla nadgarstków i barków — zmusza ćwiczącego do symetrycznej pracy obu ramion i jest częstym wyborem w wykończeniówkach na barki, drop setach oraz wysokopowtórzeniowej pracy na pompę. Przedni akton naramiennego jest głównym wykonawcą ruchu, z lekkim udziałem aktonu bocznego (faza obojczykowa) oraz górnej części czworobocznego w pobliżu szczytu powtórzenia.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart, knees slightly soft, chest up, abs braced, shoulder blades pulled down and back.",
+    "Grip a weight plate at the 3 and 9 o'clock positions (both sides), thumbs wrapped, palms facing each other.",
+    "Let the plate rest against the front of the thighs/hips with arms straight and a small fixed bend (~10-15°) in the elbows.",
+    "Without using momentum, raise the plate straight out in front of you in a controlled arc, keeping the elbow angle constant.",
+    "Continue until the plate reaches shoulder height (arms approximately parallel to the floor). The shoulders stay down — do not shrug.",
+    "Pause for a brief one-count at the top and feel the front deltoids contract.",
+    "Lower the plate back down along the same path over 2-3 seconds, controlling the eccentric — do not let the arms drop.",
+    "Keep the torso still throughout the set — no leaning back, no hip thrust, no swinging the plate up."
+  ],
+  "instructionsPl": [
+    "Wyprostuj sylwetkę, stopy na szerokość barków, kolana lekko ugięte, klatka uniesiona, brzuch napięty, łopatki ściągnięte w dół i w tył.",
+    "Chwyć talerz po bokach (pozycje godziny 3 i 9), kciuki zamknięte wokół talerza, dłonie skierowane do siebie.",
+    "Pozwól talerzowi spocząć przy przedniej części ud/bioder, ramiona wyprostowane z lekkim, stałym ugięciem łokci (~10-15°).",
+    "Bez użycia rozpędu unieś talerz prosto przed siebie kontrolowanym łukiem, utrzymując stały kąt w łokciach.",
+    "Kontynuuj, aż talerz znajdzie się na wysokości barków (ramiona w przybliżeniu równolegle do podłogi). Barki pozostają w dół — bez wciągania.",
+    "Zatrzymaj się na chwilę w górnej pozycji i poczuj skurcz przednich aktonów naramiennych.",
+    "Opuszczaj talerz tą samą drogą przez 2-3 sekundy, kontrolując fazę ekscentryczną — nie pozwól ramionom opaść.",
+    "Tułów pozostaje nieruchomy przez całą serię — bez odchylania się w tył, bez wybicia bioder, bez wyrzucania talerza rozpędem."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["lateral_deltoids", "trapezius_upper", "pectoralis_clavicular"],
+    "stabilizers": ["serratus_anterior", "trapezius_lower", "core", "forearm_flexors", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "S4",
+    "trapezius_upper": "S4",
+    "pectoralis_clavicular": "S3",
+    "serratus_anterior": "T3",
+    "trapezius_lower": "T2",
+    "core": "T2",
+    "forearm_flexors": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-front-raise", "barbell-front-raise", "cable-front-raise", "one-arm-cable-front-raise"],
+    "alternatives": ["dumbbell-front-raise", "barbell-front-raise", "cable-front-raise", "alternating-dumbbell-front-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft, ribs down, abs braced",
+      "Grip plate at 3 and 9 o'clock — thumbs wrapped, palms facing each other",
+      "Plate rests on front of thighs at start, arms long with small fixed elbow bend (~10-15°)",
+      "Shoulder blades pulled down and back — no shrug baseline",
+      "Pick a moderate load — front delts are pre-fatigued by every press you do"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana miękkie, żebra w dół, brzuch napięty",
+      "Chwyć talerz na godzinie 3 i 9 — kciuki zamknięte, dłonie do siebie",
+      "Talerz spoczywa na przedniej części ud na starcie, ramiona długie z lekkim, stałym ugięciem łokci (~10-15°)",
+      "Łopatki ściągnięte w dół i w tył — bez wciągniętych barków na starcie",
+      "Wybierz umiarkowany ciężar — przedni akton jest pre-zmęczony każdym wyciskaniem, jakie robisz"
+    ],
+    "execution_cues": [
+      "Punch the plate forward, not up — track straight in front of the torso",
+      "Stop at shoulder height — above that the upper traps take over",
+      "Keep the shoulders pinned down — do not let them rise toward the ears",
+      "3-second negative — control the plate all the way back to the thighs",
+      "Brace abs and glutes — if your back arches, the weight is too heavy"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij talerz do przodu, nie w górę — trasa prosto przed tułowiem",
+      "Zatrzymaj na wysokości barków — powyżej trapezy górne przejmują pracę",
+      "Trzymaj barki ściągnięte w dół — nie pozwól im wędrować do uszu",
+      "3-sekundowy ruch w dół — kontroluj talerz aż do ud",
+      "Napnij brzuch i pośladki — jeśli plecy się wyginają, ciężar jest za duży"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using torso swing / leaning back to lift the plate",
+        "faultPl": "Bujanie tułowiem i odchylanie się w tył, by unieść talerz",
+        "cause": "Load too heavy for the front delts in isolation, or reflex of using the hips to assist",
+        "causePl": "Zbyt duży ciężar na izolowaną pracę przednich aktonów, lub odruch wspomagania biodrami",
+        "cue": "Drop the weight. Brace abs and glutes hard, lock the torso, and let only the arms move.",
+        "cuePl": "Zmniejsz ciężar. Mocno napnij brzuch i pośladki, zablokuj tułów i pozwól pracować tylko ramionom."
+      },
+      {
+        "fault": "Raising the plate above shoulder height",
+        "faultPl": "Unoszenie talerza powyżej wysokości barków",
+        "cause": "Trying to maximize ROM, but the upper traps take over above horizontal",
+        "causePl": "Próba maksymalizacji zakresu ruchu — powyżej poziomu trapezy górne przejmują pracę",
+        "cue": "Stop when the plate is at eye line or just below — that's where the front delt finishes its job.",
+        "cuePl": "Zatrzymaj, gdy talerz jest na wysokości oczu lub tuż poniżej — tam przedni akton kończy swoją pracę."
+      },
+      {
+        "fault": "Shrugging at the top of the rep",
+        "faultPl": "Wciąganie barków w górnej pozycji ruchu",
+        "cause": "Weight too heavy or losing scapular depression as the arms fatigue",
+        "causePl": "Zbyt duży ciężar lub utrata depresji łopatek w miarę zmęczenia ramion",
+        "cue": "Press the shoulders away from the ears the entire rep. If the traps fire first, drop the weight.",
+        "cuePl": "Odsuwaj barki od uszu przez całe powtórzenie. Jeśli trapezy włączają się pierwsze, zmniejsz ciężar."
+      },
+      {
+        "fault": "Dropping the plate back to the thighs (no eccentric control)",
+        "faultPl": "Niekontrolowane opuszczanie talerza do ud (brak fazy ekscentrycznej)",
+        "cause": "Skipping the eccentric to save energy — wastes half the productive part of the rep",
+        "causePl": "Pomijanie fazy ekscentrycznej dla oszczędności sił — marnuje połowę produktywnej części powtórzenia",
+        "cue": "Take 2-3 seconds down. The eccentric is where most hypertrophy happens — control every centimeter.",
+        "cuePl": "Schodź 2-3 sekundy. Faza ekscentryczna to większość bodźca hipertroficznego — kontroluj każdy centymetr."
+      },
+      {
+        "fault": "Bending the elbows progressively to cheat the weight up",
+        "faultPl": "Stopniowe zginanie łokci, by oszukać ciężar w górę",
+        "cause": "Bending the elbows shortens the lever and turns the lift into a curl-press hybrid",
+        "causePl": "Zginanie łokci skraca dźwignię i zamienia ruch w hybrydę uginania-wyciskania",
+        "cue": "Lock the elbow angle at the start (~10-15°) and keep it identical to the last rep of the set.",
+        "cuePl": "Zablokuj kąt łokci na starcie (~10-15°) i utrzymaj go identyczny do ostatniego powtórzenia serii."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Keep a light brace through the core the entire set.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Front raises are a known impingement trigger because the humerus internally rotates as it elevates. Reduce ROM to 70-80% of shoulder height, slightly externally rotate (thumbs up), and use very light loads (40-50% of normal).",
+      "modificationPl": "Wznosy w przód są znanym czynnikiem wyzwalającym konflikt podbarkowy, ponieważ kość ramienna rotuje wewnętrznie podczas unoszenia. Zmniejsz zakres ruchu do 70-80% wysokości barków, lekko obróć ramiona na zewnątrz (kciuki w górę) i używaj bardzo lekkich ciężarów (40-50% normalnego).",
+      "alternative": "cable-front-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy",
+      "severity": "caution",
+      "modification": "The supraspinatus and biceps long head are loaded near the top of a front raise. Reduce range, drop the load, and avoid going to failure. Pause the exercise during acute flare-ups.",
+      "modificationPl": "Mięsień nadgrzebieniowy oraz długa głowa bicepsa są obciążane w pobliżu szczytu wznosu w przód. Zmniejsz zakres ruchu, obniż ciężar i nie pracuj do upadku. Wstrzymaj ćwiczenie w fazie zaostrzenia objawów.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_hernia",
+      "severity": "modify",
+      "modification": "Standing front raises tempt the lifter to swing and hyperextend the lumbar spine as fatigue sets in. Perform seated against a vertical bench back-support, or sit on a stability ball with abs braced.",
+      "modificationPl": "Wznosy w przód w staniu kuszą do bujania i hiperekstensji odcinka lędźwiowego wraz ze zmęczeniem. Wykonuj w siadzie z oparciem o pionowe oparcie ławki lub na piłce gimnastycznej z napiętym brzuchem.",
+      "alternative": "seated-dumbbell-front-raise"
+    },
+    {
+      "condition": "wrist_pain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Holding a plate at 3 and 9 o'clock requires sustained wrist extension and forearm grip. If the wrists hurt, switch to a dumbbell or cable variant where the wrist remains neutral.",
+      "modificationPl": "Trzymanie talerza na godzinie 3 i 9 wymaga ciągłego wyprostu nadgarstka i pracy chwytu. Jeśli nadgarstki bolą, zmień ćwiczenie na wariant z hantlami lub wyciągiem, gdzie nadgarstek pozostaje neutralny.",
+      "alternative": "dumbbell-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/standard) | 3-4x15-25 (pump/finisher) | 2-3x8-12 (controlled strength work)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "weighted-front-raise.gif",
+    "frames_extracted": [
+      "frames/weighted-front-raise/frame_0_start.png",
+      "frames/weighted-front-raise/frame_1_early.png",
+      "frames/weighted-front-raise/frame_2_mid.png",
+      "frames/weighted-front-raise/frame_3_late.png",
+      "frames/weighted-front-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/weighted-front-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Wariant z talerzem obciążającym trzymanym oburącz, NIE z hantlami. Frame 0 (start): postać stoi wyprostowana, talerz trzymany oburącz przy biodrach po przedniej stronie ud, chwyt po bokach talerza (godzina 3 i 9), dłonie do siebie, łokcie lekko zgięte. Przedni akton naramiennego podświetlony na czerwono na obu ramionach, lekkie podświetlenie trapezów. Frame 2 (mid/top): talerz uniesiony prosto przed tułowiem na wysokość barków, ramiona równolegle do podłogi, łokcie wciąż lekko zgięte z zachowanym kątem, tułów stabilny. Frame 4 (end): powrót do pozycji wyjściowej z 'ghostem' szczytowej pozycji talerza widocznym z przodu. Ruch w płaszczyźnie strzałkowej (sagittal), klasyczna izolacja front delts. Mechanic=isolation, force=push, bilateral. Wszystkie pola PL napisane od zera. Mniejsza waga niż barbell front raise (talerze 5-20 kg), idealny finisher na barki. Equipment: weight_plate.",
+
+  "tags": ["bodybuilding", "shoulders", "front_delts", "anterior_delts", "isolation", "plate", "weight_plate", "free_weight", "upper_body", "hypertrophy", "beginner_friendly", "finisher"]
+}

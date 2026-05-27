@@ -1,0 +1,203 @@
+{
+  "id": "pull-up",
+  "name": "Pull-Up (Pronated Grip)",
+  "namePl": "Podciąganie nachwytem",
+  "aliases": ["pullup", "pull up", "overhand pull-up", "pronated pull-up"],
+  "aliasesPl": ["podciąganie", "podciąganie na drążku", "podciąganie nachwytem", "podciągnięcie"],
+
+  "description": "King of vertical pulling exercises. Closed-chain bodyweight movement where you hang from a bar with overhand (pronated) grip and pull your body up until your chin clears the bar. Primary builder of lat width, mid-back strength and biceps. The benchmark for upper-body relative strength.",
+  "descriptionPl": "Król ciągów pionowych. Ruch zamkniętokinetyczny w wadze własnego ciała — wisisz na drążku chwytem nachwytem (pronated) i podciągasz ciało aż broda przejdzie nad drążkiem. Główny budulec szerokości najszerszych grzbietu, siły środkowych pleców i bicepsów. Wskaźnik relatywnej siły górnej części ciała.",
+
+  "instructions": [
+    "Grip a pull-up bar with palms facing AWAY from you (pronated/overhand grip), hands slightly wider than shoulder-width.",
+    "Hang at full arm extension. Engage shoulder blades by pulling them DOWN (depression) — do not let them shrug up.",
+    "Brace your core. Cross or bend your legs to keep them out of the way. This is the dead-hang start position.",
+    "Initiate the pull by driving elbows DOWN AND BACK toward your hips. Imagine pulling the bar DOWN to your collarbone (even though you're moving up).",
+    "Keep chest up, slight backward lean (15-20°). Do not kip or swing.",
+    "Pull until your chin is clearly ABOVE the bar. Top of the rep: chest near the bar, elbows close to torso.",
+    "Lower with control, fully extending arms at the bottom (dead-hang). Maintain shoulder blade depression.",
+    "Each rep starts from full hang to full chin-over-bar."
+  ],
+  "instructionsPl": [
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce nieco szerzej niż na szerokość barków.",
+    "Zwiśnij w pełnym wyproście ramion. Aktywuj łopatki ściągając je W DÓŁ (depresja) — nie pozwól im się unieść.",
+    "Napnij brzuch. Skrzyżuj lub zegnij nogi by nie zawadzały. To pozycja startowa dead-hang.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w kierunku bioder. Wyobraź sobie że ciągniesz gryf W DÓŁ do obojczyka (mimo że poruszasz się w górę).",
+    "Klatka w górze, lekkie odchylenie do tyłu (15-20°). Bez kippingu ani swing'a.",
+    "Podciągaj aż broda będzie WYRAŹNIE nad drążkiem. Szczyt powtórzenia: klatka blisko drążka, łokcie blisko tułowia.",
+    "Opuszczaj kontrolowanym ruchem, pełen wyprost ramion na dole (dead-hang). Utrzymuj depresję łopatek.",
+    "Każde powtórzenie od pełnego zwisu do pełnej brody nad drążkiem."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "rhomboids", "teres_major", "brachialis", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P7",
+    "trapezius_middle_lower": "S7",
+    "rhomboids": "S7",
+    "teres_major": "S8",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps", "weighted_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 8,
+    "prerequisites": ["dead-hang", "band-assisted-pull-up", "negative-pull-up", "inverted-row", "lat-pulldown"],
+    "progression_to": ["weighted-pull-up", "chest-to-bar-pull-up", "archer-pull-up", "muscle-up", "wide-grip-pull-up", "l-sit-pull-up"],
+    "alternatives": ["chin-up", "neutral-grip-pull-up", "lat-pulldown", "band-assisted-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands slightly wider than shoulders",
+      "Pronated (overhand) grip, palms away",
+      "Full hang — elbows extended",
+      "Shoulder blades DOWN (no shrug up)",
+      "Core braced, legs together or crossed"
+    ],
+    "setup_cues_pl": [
+      "Ręce nieco szerzej niż barki",
+      "Chwyt pronated (nachwytem), dłonie od siebie",
+      "Pełny zwis — łokcie wyprostowane",
+      "Łopatki W DÓŁ (bez unoszenia)",
+      "Brzuch napięty, nogi razem lub skrzyżowane"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN, not 'pull up'",
+      "Chest up, slight backward lean",
+      "Chin OVER the bar (not at level)",
+      "Full extension at the bottom — no half reps",
+      "Smooth tempo, NO kipping or swinging"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ, nie 'podciągaj się'",
+      "Klatka w górze, lekkie odchylenie do tyłu",
+      "Broda NAD drążkiem (nie na poziomie)",
+      "Pełen wyprost na dole — bez połowy powtórzeń",
+      "Płynne tempo, BEZ kipping/swing"
+    ],
+    "common_faults": [
+      {
+        "fault": "Kipping or swinging body to gain momentum",
+        "faultPl": "Kipping lub bujanie ciałem dla pędu",
+        "cause": "Trying to perform more reps than current strict capacity",
+        "causePl": "Próba wykonania więcej powtórzeń niż obecna pojemność strict",
+        "cue": "Cross feet, brace core. If you can't strict-pull, use band-assisted or do negatives.",
+        "cuePl": "Skrzyżuj stopy, napnij brzuch. Jeśli nie podciągasz strict — użyj band-assisted lub rób negatywy."
+      },
+      {
+        "fault": "Half reps (chin not over bar)",
+        "faultPl": "Połowiczne powtórzenia (broda nie nad drążkiem)",
+        "cause": "Weak top end of pull, ego counting, or fatigue late in set",
+        "causePl": "Słaba górna część ciągu, ego w liczeniu, lub zmęczenie na końcu serii",
+        "cue": "Chin clearly OVER the bar. Use band assistance for full ROM instead of half reps.",
+        "cuePl": "Broda wyraźnie NAD drążkiem. Użyj asysty z gumy dla pełnego ROM zamiast połowy."
+      },
+      {
+        "fault": "Not reaching dead-hang at bottom",
+        "faultPl": "Brak pełnego zwisu na dole",
+        "cause": "Avoiding the hardest part of the lift (initial pull from dead-hang)",
+        "causePl": "Unikanie najtrudniejszej części (start z dead-hang)",
+        "cue": "Fully extend arms each rep. If you can't pull from dead-hang, do dead-hang holds + negatives.",
+        "cuePl": "Pełen wyprost ramion w każdym powtórzeniu. Jeśli nie ciągniesz z dead-hang — rób statyczne zwisy + negatywy."
+      },
+      {
+        "fault": "Shoulders shrugging up (lacking scapular control)",
+        "faultPl": "Łopatki unoszą się (brak kontroli łopatek)",
+        "cause": "Weak lower trap and serratus, not engaging lats before pull",
+        "causePl": "Słabe dolne trapezy i serratus, brak aktywacji najszerszych przed ciągiem",
+        "cue": "Scapular pull-ups as drill: depress shoulders without bending elbows. Master before full pull-ups.",
+        "cuePl": "Scapular pull-ups jako drill: opuść łopatki bez zginania łokci. Opanuj przed pełnym podciąganiem."
+      },
+      {
+        "fault": "Elbow pain from incorrect grip width",
+        "faultPl": "Ból łokci z niepoprawnej szerokości chwytu",
+        "cause": "Grip too wide (stresses elbow ligaments) or too narrow",
+        "causePl": "Chwyt za szeroki (obciąża więzadła łokcia) lub za wąski",
+        "cue": "Slightly wider than shoulders. If pain persists, try neutral or chin-up grip.",
+        "cuePl": "Nieco szerzej niż barki. Jeśli ból trwa — spróbuj chwytu neutralnego lub podchwytem (chin-up)."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Exhale on the pull up. Inhale on the way down. Don't hold breath — pull-ups are usually high-rep enough that breathing pattern matters.",
+    "breathingPl": "Wdech na dole (zwis). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Nie wstrzymuj — podciągania są zwykle wysokopowtórzeniowe więc rytm oddechu ma znaczenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Switch to neutral grip (palms facing each other) — easier on shoulder joint. Reduce ROM if needed.",
+      "modificationPl": "Przejdź na chwyt neutralny (dłonie do siebie) — łatwiej dla stawu barkowego. Zmniejsz ROM jeśli trzeba.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume. Switch to chin-up (supinated grip) — different load distribution.",
+      "modificationPl": "Zmniejsz objętość. Przejdź na chin-up (chwyt podchwytem) — inna dystrybucja obciążenia.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "lat_strain",
+      "severity": "avoid",
+      "modification": "Stop pulling exercises until full recovery. Resume with light cable rows first.",
+      "modificationPl": "Wstrzymaj ćwiczenia ciągowe do pełnego wyzdrowienia. Wróć przez lekkie wiosła linkowe.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps or thicker bar. If pain persists, switch to lat pulldown.",
+      "modificationPl": "Użyj wraps na nadgarstki lub grubszego drążka. Jeśli ból trwa — przejdź na lat pulldown.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-5xAMRAP (bodyweight) | 5x5 (weighted) | EMOM (volume)",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "pull-up.gif",
+    "frames_extracted": [
+      "frames/pull-up/frame_0_start.png",
+      "frames/pull-up/frame_1_early.png",
+      "frames/pull-up/frame_2_mid.png",
+      "frames/pull-up/frame_3_late.png",
+      "frames/pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/pull-up",
+    "yuhonas_id": "Pullups"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:13:00Z",
+  "verification_notes": "Frame 0: dead-hang start, ręce wyprostowane, chwyt nachwytem (overhand). Frame 2: top position, broda nad drążkiem, łokcie zgięte, łopatki ściągnięte. Najszersze + środkowy trapez + bicepsy + przedramiona podświetlone. Klasyczny pull-up (overhand grip). Różny od chin-up (underhand) — zachowuję osobno. PL nazwa 'Podciąganie nachwytem' — standard PL fitness rozróżniający od 'podchwytem' (chin-up).",
+
+  "tags": ["calisthenics", "bodyweight", "compound_king", "upper_body", "vertical_pull", "strength_fundamental", "back", "biceps", "relative_strength_benchmark"]
+}

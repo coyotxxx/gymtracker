@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-sumo-pull-through",
+  "name": "Dumbbell Sumo Pull-Through",
+  "namePl": "Sumo pull-through z hantlą",
+  "aliases": ["sumo pull-through with dumbbell", "DB sumo pull-through", "wide-stance dumbbell pull-through", "dumbbell glute pull-through"],
+  "aliasesPl": ["sumo pull-through z hantlem", "pull-through z hantlą w sumo", "hantle sumo pull-through", "dumbbell sumo pull through na pośladki"],
+
+  "description": "A hip-hinge pull-through variation performed in a wide sumo stance with a single dumbbell held vertically between the legs. The lifter hinges deeply at the hips — the dumbbell drops between the thighs (almost touching the floor behind the heels) — then drives the hips forward to stand tall, finishing with a hard glute squeeze. The wide stance shifts emphasis toward the adductors and gluteus maximus more than a narrow-stance pull-through, while the dumbbell (instead of a cable) makes the bottom position the heaviest point — loading the stretched glutes and hamstrings. Excellent accessory for hip hinge mastery, glute hypertrophy, and adductor development. Easy to set up at home — only one dumbbell needed.",
+  "descriptionPl": "Wariant pull-through w pozycji szerokiej (sumo), wykonywany z jedną hantlą trzymaną pionowo między nogami. Ćwiczący wykonuje głęboki hip hinge — hantla schodzi między udami (niemal dotykając podłogi za piętami) — a następnie wypycha biodra do przodu, prostując się i kończąc mocnym ściśnięciem pośladków. Szeroka stójka przesuwa akcent w stronę przywodzicieli i pośladka wielkiego mocniej niż klasyczny pull-through, a hantla (zamiast wyciągu linkowego) sprawia, że najcięższym punktem jest dolna pozycja — obciążone są rozciągnięte pośladki i dwugłowe ud. Doskonały akcesoryjny ruch na opanowanie hip hinge, hipertrofię pośladków i rozwój przywodzicieli. Łatwy do wykonania w domu — wystarczy jedna hantla.",
+
+  "instructions": [
+    "Stand with feet much wider than shoulder-width (sumo stance), toes turned out about 30-45°. Hold one dumbbell vertically by one end with both hands, arms hanging straight down between your thighs.",
+    "Set your back: chest up, shoulder blades pulled down, neutral spine, lats engaged. Knees track over the toes — not caving inward.",
+    "Take a big breath, brace your core. Initiate the descent by pushing your hips BACKWARD — the dumbbell tracks down between your legs, close to your body.",
+    "Allow knees to bend more than in a classic RDL (because of the sumo stance and the dumbbell path) — the depth is somewhere between an RDL and a sumo deadlift. The dumbbell can pass slightly behind the line of the heels at the bottom.",
+    "Lower until the dumbbell is roughly between your feet (or just behind them) and you feel a strong stretch in the glutes and adductors. Back stays neutral — do NOT round the lower spine.",
+    "Reverse the movement: drive the hips FORWARD aggressively, squeeze the glutes hard, and stand tall. The dumbbell finishes in front of the hips with arms straight.",
+    "At the top: fully extend the hips, squeeze the glutes for a beat, but do NOT lean back or hyperextend the lumbar spine.",
+    "Lower under control for the next rep — the eccentric should be slow (2-3 seconds) to maximize tension on the glutes and hamstrings."
+  ],
+  "instructionsPl": [
+    "Stań ze stopami znacznie szerzej niż na szerokość barków (stójka sumo), palce skierowane na zewnątrz o około 30-45°. Trzymaj jedną hantlę pionowo za jeden koniec oburącz, ramiona zwisają prosto w dół między udami.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół, neutralny kręgosłup, najszersze napięte. Kolana podążają za palcami stóp — nie zapadają się do środka.",
+    "Nabierz głęboki oddech, napnij brzuch. Zacznij schodzenie przez wypchnięcie bioder DO TYŁU — hantla zsuwa się między nogami, blisko ciała.",
+    "Pozwól kolanom ugiąć się mocniej niż w klasycznym RDL (ze względu na szeroką stójkę i tor ruchu hantli) — głębokość jest pomiędzy RDL a sumo deadliftem. Hantla może przejść lekko za linię pięt na dole.",
+    "Schodź aż hantla znajdzie się mniej więcej między stopami (lub tuż za nimi) i poczujesz mocny rozciąg pośladków i przywodzicieli. Plecy pozostają neutralne — NIE zaokrąglaj lędźwi.",
+    "Wróć ruchem: agresywnie wypchnij biodra DO PRZODU, mocno ściśnij pośladki i wyprostuj się. Hantla kończy ruch przed biodrami, ramiona wyprostowane.",
+    "Na górze: pełen wyprost bioder, ściśnij pośladki przez moment, ale NIE odchylaj się do tyłu ani nie nadmiernie wyginaj lędźwi.",
+    "Opuszczaj pod kontrolą do kolejnego powtórzenia — ekscentryk powinien być wolny (2-3 sekundy), by zmaksymalizować napięcie pośladków i dwugłowych ud."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "adductors"],
+    "secondary": ["erector_spinae", "forearms"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "quadriceps", "latissimus_dorsi"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "hamstrings": "P8",
+    "adductors": "P7",
+    "erector_spinae": "S6",
+    "forearms": "S6",
+    "core": "S6",
+    "quadriceps": "S4"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-hip-hinge", "dumbbell-rdl", "kettlebell-sumo-squat"],
+    "progression_to": ["barbell-sumo-deadlift", "kettlebell-sumo-deadlift", "cable-pull-through", "barbell-romanian-deadlift"],
+    "alternatives": ["cable-pull-through", "kettlebell-sumo-deadlift", "dumbbell-rdl", "kettlebell-rdl", "good-morning"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet much wider than shoulders — sumo stance, toes turned out 30-45°",
+      "One dumbbell held vertically by one end with both hands, hanging between thighs",
+      "Knees track OVER the toes — they follow the foot direction, do not cave in",
+      "Chest up, lats engaged, neutral spine — no rounding",
+      "Brace the core BEFORE you start the descent"
+    ],
+    "setup_cues_pl": [
+      "Stopy znacznie szerzej niż barki — stójka sumo, palce na zewnątrz 30-45°",
+      "Jedna hantla trzymana pionowo za jeden koniec oburącz, zwisa między udami",
+      "Kolana podążają NAD palcami — kierunek kolan zgodny ze stopami, nie zapadają się do środka",
+      "Klatka w górze, najszersze napięte, neutralny kręgosłup — bez zaokrąglania",
+      "Napnij brzuch ZANIM zaczniesz schodzić"
+    ],
+    "execution_cues": [
+      "Hips BACK first — push your butt to the wall behind you, the dumbbell follows",
+      "Dumbbell passes between the legs — track it close to your body, not in front",
+      "Let the knees bend with the hinge — this is sumo, not a pure RDL",
+      "Drive the floor apart with your feet on the way up — wake up the glutes and adductors",
+      "Squeeze glutes HARD at the top — full hip extension, no lumbar hyperextension"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU najpierw — wypchnij pośladki do ściany za tobą, hantla podąża",
+      "Hantla przechodzi między nogami — prowadź ją blisko ciała, nie z przodu",
+      "Pozwól kolanom ugiąć się razem z biodrami — to sumo, nie czysty RDL",
+      "Wbijaj stopy w podłogę 'rozsuwając' ją w górę — aktywuj pośladki i przywodziciele",
+      "Mocno ŚCIŚNIJ pośladki na górze — pełen wyprost bioder, bez nadmiernego wygięcia lędźwi"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back at the bottom (lumbar flexion under load)",
+        "faultPl": "Zaokrąglone plecy lędźwiowe na dole (lędźwiowa flexja pod obciążeniem)",
+        "cause": "Going too low for current mobility, weak core bracing, dumbbell too heavy, poor hip hinge pattern",
+        "causePl": "Schodzenie za nisko jak na obecną mobilność, słabe napięcie brzucha, zbyt ciężka hantla, słaby wzorzec hip hinge",
+        "cue": "Stop descending the moment your back starts to round. Reduce range, reduce weight, master the hinge first with bodyweight.",
+        "cuePl": "Zatrzymaj schodzenie w momencie gdy plecy zaczynają się zaokrąglać. Zmniejsz zakres, zmniejsz ciężar, najpierw opanuj hip hinge z masą własną."
+      },
+      {
+        "fault": "Knees caving inward (valgus collapse)",
+        "faultPl": "Kolana zapadające się do środka (koślawość — valgus)",
+        "cause": "Weak glute medius and adductors, narrow sumo stance for the lifter, foot pressure on the inside of the foot",
+        "causePl": "Słaby pośladek średni i przywodziciele, za wąska stójka sumo dla danej osoby, nacisk na wewnętrzną stronę stopy",
+        "cue": "Push your knees OUT in the direction of your toes — 'spread the floor'. Press through the whole foot, not the arch.",
+        "cuePl": "Pchaj kolana NA ZEWNĄTRZ w kierunku palców stóp — 'rozsuwaj podłogę'. Naciskaj całą stopą, nie wewnętrzną krawędzią."
+      },
+      {
+        "fault": "Turning the movement into a sumo squat (knees forward, vertical torso)",
+        "faultPl": "Zamiana ruchu w sumo przysiad (kolana do przodu, tułów pionowo)",
+        "cause": "Misunderstanding of the pattern — pull-through is a HINGE, not a squat. Weak hamstrings, dominant quads.",
+        "causePl": "Niezrozumienie wzorca — pull-through to HINGE, nie przysiad. Słabe dwugłowe ud, dominujące czworogłowe.",
+        "cue": "Hips travel BACKWARD, not down. Torso angle changes — you should feel the hamstrings stretch, not just the quads burn.",
+        "cuePl": "Biodra cofają się DO TYŁU, nie w dół. Kąt tułowia się zmienia — powinieneś czuć rozciąg dwugłowych, nie tylko pieczenie czworogłowych."
+      },
+      {
+        "fault": "Hyperextending the lumbar at the top (leaning back)",
+        "faultPl": "Nadmierne wygięcie lędźwi na górze (odchylanie do tyłu)",
+        "cause": "Trying to squeeze 'harder' by leaning back, weak glutes ending the rep with the lower back",
+        "causePl": "Próba 'mocniejszego' ściśnięcia przez odchylanie do tyłu, słabe pośladki kończące powtórzenie lędźwiami",
+        "cue": "Finish in a TALL, neutral stance — ribs down, glutes squeezed, but no leaning back. The lockout is vertical, not arched.",
+        "cuePl": "Kończ w WYSOKIEJ, neutralnej postawie — żebra w dół, pośladki ściśnięte, bez odchylania do tyłu. Lock-out jest pionowy, nie wygięty."
+      },
+      {
+        "fault": "Dumbbell drifts forward — pulling instead of hinging",
+        "faultPl": "Hantla oddala się do przodu — szarpanie zamiast hingowania",
+        "cause": "Arms bending, lats not engaged, hips not going back enough",
+        "causePl": "Zginanie ramion, brak napięcia najszerszych, biodra nie cofają się wystarczająco",
+        "cue": "Arms are HOOKS — straight, passive. Power comes from the hips. Pull the dumbbell INTO your body the whole way.",
+        "cuePl": "Ramiona to HACZYKI — proste, pasywne. Moc pochodzi z bioder. Pociągnij hantlę W ciało przez cały ruch."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace (Valsalva), hold during the descent. Exhale on the way up after passing the hardest point — or at the top of the lockout. Re-inhale and brace before the next rep.",
+    "breathingPl": "Głęboki wdech na górze, napięcie (Valsalva), trzymaj podczas schodzenia. Wydech w drodze do góry po przejściu najtrudniejszego punktu — lub na szczycie lock-out. Ponowny wdech i napięcie przed kolejnym powtórzeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Even a light dumbbell loads the lumbar spine through the hinge.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nawet lekka hantla obciąża lędźwie przez hip hinge.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "groin_strain_adductor_injury",
+      "severity": "avoid",
+      "modification": "Sumo stance heavily loads the adductors at the bottom. Wait until pain-free in passive stretch, then return with narrow-stance variants only.",
+      "modificationPl": "Stójka sumo mocno obciąża przywodziciele na dole. Poczekaj aż znikną dolegliwości w pasywnym rozciągu, potem wracaj tylko z wąską stójką.",
+      "alternative": "dumbbell-rdl"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "modify",
+      "modification": "Try a slightly narrower sumo stance and reduce hinge depth. Deep hip flexion + external rotation can aggravate FAI.",
+      "modificationPl": "Spróbuj nieco węższej stójki sumo i zmniejsz głębokość hinge'a. Głębokie zgięcie biodra + rotacja zewnętrzna mogą drażnić FAI.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "knee_meniscus_issue",
+      "severity": "caution",
+      "modification": "Wide sumo stance with externally rotated feet adds shear on the knee. Reduce stance width and external rotation, reduce load.",
+      "modificationPl": "Szeroka stójka sumo ze stopami w rotacji zewnętrznej dodaje sił ścinających na kolano. Zmniejsz szerokość stójki i rotację zewnętrzną, zmniejsz obciążenie.",
+      "alternative": "glute-bridge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy — preferred for glute growth) | 3x12-20 (endurance/glute pump) | 4x6-10 (heavier strength with adequate stance and form)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-sumo-pull-through.gif",
+    "frames_extracted": [
+      "frames/dumbbell-sumo-pull-through/frame_0_start.png",
+      "frames/dumbbell-sumo-pull-through/frame_1_early.png",
+      "frames/dumbbell-sumo-pull-through/frame_2_mid.png",
+      "frames/dumbbell-sumo-pull-through/frame_3_late.png",
+      "frames/dumbbell-sumo-pull-through/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-sumo-pull-through"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (221 KB, 12 oryginalnych klatek). Frames 0 i 4 (dolna pozycja): szeroka stójka sumo (~2x szerokość barków, palce na zewnątrz ~30-45°), głęboki hip hinge — tułów mocno pochylony, hantla trzymana oburącz między nogami niemal dotyka podłogi za piętami. Podświetlone (czerwone) bardzo mocno: gluteus maximus (cały tył pośladków), hamstringi, erector spinae wzdłuż całych pleców, trapezius i lats — typowy obraz hip hinge z dodatkową rolą stabilizacyjną górnych pleców. Frame 2 (lockout): pełen wyprost bioder, pionowy tułów, hantla przed biodrami, ramiona proste — widać podświetlone pośladki, adduktory wzdłuż wewnętrznej strony uda i prostowniki grzbietu. Frames 1 i 3 (przejście): kolana ugięte nieco mocniej niż w klasycznym RDL ze względu na szeroką stójkę — ale to nadal HINGE, nie squat (tułów pochylony, biodra cofnięte). Klasyfikacja: hinge (główny wzorzec), bilateral, sagittal plane, pull, compound. Primary: glutes (P10 — ruch zaprojektowany pod pośladki, szczególnie sumo wariant z mocną zewnętrzną rotacją biodra), hamstrings (P8 — rozciąg ekscentryczny ale mniejszy zakres niż RDL bo kolana ugięte mocniej), adductors (P7 — sumo stójka mocno je angażuje, wyraźnie widać na klatce 2). Secondary: erector_spinae S6, forearms S6 (trzymanie hantli oburącz). Difficulty 4 (beginner) — łatwiejszy niż RDL ze sztangą ze względu na mniejsze obciążenie i większą tolerancję techniczną (szeroka stójka daje stabilność). Equipment: tylko jedna hantla — idealne na home gym. PL napisane od zera, używam polskiej terminologii fitness (hip hinge, sumo, lock-out, pośladki, przywodziciele, dwugłowe ud, ekscentryk).",
+
+  "tags": ["bodybuilding", "glute_hypertrophy", "posterior_chain", "hip_hinge", "sumo", "dumbbell", "compound", "home_gym", "beginner_friendly", "adductors", "accessory_lift"]
+}

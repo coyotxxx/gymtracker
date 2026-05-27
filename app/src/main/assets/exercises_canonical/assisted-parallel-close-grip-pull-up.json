@@ -1,0 +1,206 @@
+{
+  "id": "assisted-parallel-close-grip-pull-up",
+  "name": "Assisted Parallel Close-Grip Pull-Up",
+  "namePl": "Podciąganie wąskim chwytem neutralnym z asystą",
+  "aliases": ["assisted neutral-grip pull-up", "assisted close-grip neutral pull-up", "machine assisted parallel pull-up", "lever assisted close-grip pull-up", "assisted hammer-grip pull-up", "assisted parallel pull-up close stance"],
+  "aliasesPl": ["podciąganie chwytem neutralnym z asystą", "podciąganie chwytem równoległym wąsko z asystą", "asystowane podciąganie wąsko neutralnym", "asystowane podciąganie chwytem młotkowym", "podciąganie na maszynie wspomagającej chwytem neutralnym wąsko", "podciąganie z asystą dłonie do siebie wąsko"],
+
+  "description": "Assisted vertical pulling exercise on a lever-based pull-up machine performed with parallel close-grip (palms facing each other, hands close together on parallel/neutral handles). You kneel on a padded counterweight platform that pushes you upward, reducing your effective bodyweight by a selected load. The neutral grip places the shoulder in a biomechanically neutral position — wrists and elbows aligned, humerus in slight internal rotation but without the impingement risk of pronated (overhand) pulling. Close hand spacing emphasizes elbow flexion (biceps, brachialis) and brings the elbows tight along the ribs in a powerful pulling path. This variant is widely considered the SAFEST vertical pull for trainees with shoulder pain, AC joint issues, or biceps tendinopathy. Ideal stepping stone for beginners building toward strict bodyweight neutral-grip pull-ups, and a go-to for intermediate lifters seeking shoulder-friendly volume on back/biceps.",
+  "descriptionPl": "Asystowane ćwiczenie pionowego ciągu na dźwigniowej maszynie do podciągania wykonywane wąskim chwytem neutralnym (dłonie skierowane do siebie, ręce blisko siebie na równoległych/neutralnych uchwytach). Klęczysz na wyściełanej platformie przeciwwagi, która wypycha cię w górę, redukując efektywną masę ciała o wybrane obciążenie. Chwyt neutralny ustawia bark w pozycji biomechanicznie neutralnej — nadgarstki i łokcie w osi, kość ramienna w lekkiej rotacji wewnętrznej ale bez ryzyka konfliktu (impingement) charakterystycznego dla chwytu nachwytem. Wąskie rozstawienie rąk akcentuje zginanie łokcia (biceps, brachialis) i prowadzi łokcie ciasno wzdłuż żeber w silnym torze ciągu. Ten wariant jest powszechnie uznawany za NAJBEZPIECZNIEJSZY pionowy ciąg dla trenujących z bólem barku, problemami stawu AC lub tendinopatią bicepsa. Idealny krok pośredni dla początkujących budujących drogę do strict podciągania chwytem neutralnym własną masą oraz pierwszy wybór dla średniozaawansowanych szukających przyjaznej barkom objętości na plecy/biceps.",
+
+  "instructions": [
+    "Select the assistance weight on the stack — MORE weight selected = MORE help (lifts you up). Start with ~50-60% of bodyweight assistance if new.",
+    "Step onto the platform side handles. Grip the parallel/neutral handles with palms facing EACH OTHER, hands set close together (narrower than shoulder-width if handles allow).",
+    "Place your knees on the padded counterweight platform one at a time. Let the pad lift you to the dead-hang position with arms fully extended.",
+    "Engage your shoulder blades by pulling them DOWN (depression) and slightly together — do not let them shrug up. Brace your core.",
+    "Initiate the pull by driving elbows DOWN AND BACK along your ribs. Squeeze biceps and brachialis actively from the bottom.",
+    "Keep chest up, torso vertical or with very slight backward lean. Do not bounce on the knee pad — strict tempo.",
+    "Pull until your collarbones or upper chest reach handle level (chin clearly above the bar plane). Top of rep: elbows tight to ribs, chest high.",
+    "Lower with control, fully extending arms at the bottom. Maintain shoulder blade depression throughout the descent.",
+    "When finished: step off carefully back onto the side platforms — do NOT let go of the handles while still kneeling, the pad will jerk up violently."
+  ],
+  "instructionsPl": [
+    "Ustaw ciężar asysty na stosie — WIĘKSZY ciężar = WIĘCEJ pomocy (mocniej cię unosi). Zacznij od ok. 50-60% masy ciała asysty jeśli jesteś początkujący.",
+    "Wejdź na boczne platformy maszyny. Złap równoległe/neutralne uchwyty dłońmi skierowanymi DO SIEBIE, ręce blisko siebie (węziej niż szerokość barków jeśli uchwyty pozwalają).",
+    "Ustaw kolana na wyściełanej platformie przeciwwagi po jednym. Pozwól poduszce podnieść cię do pozycji dead-hang z ramionami w pełnym wyproście.",
+    "Aktywuj łopatki ściągając je W DÓŁ (depresja) i lekko do siebie — nie pozwól im się unieść. Napnij brzuch.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU wzdłuż żeber. Aktywnie napnij biceps i brachialis od samego dołu.",
+    "Klatka w górze, tułów pionowo lub z minimalnym odchyleniem do tyłu. Bez odbijania na poduszce kolan — strict tempo.",
+    "Podciągaj aż obojczyki lub górna część klatki dojdą do poziomu uchwytów (broda wyraźnie nad linią drążka). Szczyt: łokcie ciasno przy żebrach, klatka wysoko.",
+    "Opuszczaj kontrolowanym ruchem, pełen wyprost ramion na dole. Utrzymuj depresję łopatek przez całe schodzenie.",
+    "Po zakończeniu: ostrożnie zejdź z powrotem na boczne platformy — NIE puszczaj uchwytów będąc na kolanach, poduszka wystrzeli gwałtownie w górę."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii", "brachialis"],
+    "secondary": ["teres_major", "trapezius_middle_lower", "rhomboids", "brachioradialis", "pectoralis_major_sternal"],
+    "stabilizers": ["core", "rotator_cuff", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P7",
+    "brachialis": "P7",
+    "teres_major": "S7",
+    "trapezius_middle_lower": "S6",
+    "rhomboids": "S6",
+    "brachioradialis": "S6",
+    "forearms": "S5",
+    "pectoralis_major_sternal": "S4",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["assisted_pullup_machine"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dead-hang", "lat-pulldown", "neutral-grip-lat-pulldown"],
+    "progression_to": ["band-assisted-neutral-grip-pull-up", "negative-neutral-grip-pull-up", "neutral-grip-pull-up", "close-grip-neutral-pull-up"],
+    "alternatives": ["lever-assisted-chin-up", "lever-assisted-pull-up", "neutral-grip-lat-pulldown", "close-grip-lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Choose assistance: MORE weight on stack = MORE help",
+      "Neutral parallel grip — palms facing each other, hands CLOSE together",
+      "Kneel on the pad one knee at a time",
+      "Full hang — elbows fully extended, shoulder blades DOWN",
+      "Core braced, torso vertical, chest open"
+    ],
+    "setup_cues_pl": [
+      "Wybierz asystę: WIĘCEJ ciężaru na stosie = WIĘCEJ pomocy",
+      "Chwyt neutralny równoległy — dłonie do siebie, ręce BLISKO siebie",
+      "Klęknij na poduszce po jednym kolanie",
+      "Pełny zwis — łokcie wyprostowane, łopatki W DÓŁ",
+      "Brzuch napięty, tułów pionowo, klatka otwarta"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN AND BACK tight along your ribs",
+      "Squeeze biceps AND brachialis (forearm crease) from the bottom",
+      "Chest UP toward the handles — collarbones reach handle level",
+      "Full extension at the bottom — no half reps",
+      "Strict tempo 2-0-2, NO bouncing on the knee pad"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ I DO TYŁU ciasno wzdłuż żeber",
+      "Napnij biceps I brachialis (zgięcie przedramienia) od samego dołu",
+      "Klatka W GÓRĘ w stronę uchwytów — obojczyki na poziom uchwytów",
+      "Pełen wyprost na dole — bez połowy powtórzeń",
+      "Strict tempo 2-0-2, BEZ odbijania na poduszce kolan"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using too much assistance (machine does the work)",
+        "faultPl": "Zbyt duża asysta (maszyna wykonuje pracę)",
+        "cause": "Beginner sets ~80% bodyweight assistance — reps become almost passive, no training stimulus, brachialis/biceps not loaded",
+        "causePl": "Początkujący ustawia ~80% masy ciała asysty — powtórzenia stają się niemal pasywne, brak bodźca, brachialis/biceps nieobciążone",
+        "cue": "Pick a weight where last 1-2 reps of a set of 8-10 are HARD. Reduce assistance by 5kg per week.",
+        "cuePl": "Wybierz ciężar przy którym ostatnie 1-2 powtórzenia serii 8-10 są TRUDNE. Zmniejszaj asystę o 5kg tygodniowo."
+      },
+      {
+        "fault": "Bouncing on the knee pad for momentum",
+        "faultPl": "Odbijanie na poduszce kolan dla pędu",
+        "cause": "Treating the pad like a springboard — using lower body kick to assist the pull, robs lats of stimulus",
+        "causePl": "Traktowanie poduszki jak trampoliny — używanie kopnięcia nogami dla wspomożenia ciągu, okrada najszersze z bodźca",
+        "cue": "Knees passive on pad. Pull starts from arms and lats only. Tempo 2-0-2.",
+        "cuePl": "Kolana pasywne na poduszce. Ciąg z ramion i najszerszych. Tempo 2-0-2."
+      },
+      {
+        "fault": "Flaring elbows OUT instead of keeping them tight",
+        "faultPl": "Rozkładanie łokci NA ZEWNĄTRZ zamiast ciasno przy żebrach",
+        "cause": "Losing the close-grip benefit — neutral close-grip should keep elbows tracking forward-and-down along ribs",
+        "causePl": "Tracenie zalety wąskiego chwytu neutralnego — łokcie powinny iść do przodu i w dół wzdłuż żeber",
+        "cue": "Elbows brush your sides on the way up. Imagine pulling elbows INTO your back pockets.",
+        "cuePl": "Łokcie muskają boki podczas ciągu w górę. Wyobraź sobie ciągnięcie łokci DO tylnych kieszeni."
+      },
+      {
+        "fault": "Half reps (chest not at handle level) or partial extension",
+        "faultPl": "Połowiczne powtórzenia (klatka nie na poziomie uchwytów) lub niepełny wyprost",
+        "cause": "Avoiding hardest portion (top) or eccentric (bottom). Ego counting reps.",
+        "causePl": "Unikanie najtrudniejszej części (góra) lub ekscentryka (dół). Ego w liczeniu powtórzeń.",
+        "cue": "Collarbones to handle level at top. Full elbow extension at bottom. Increase assistance if you can't complete full ROM.",
+        "cuePl": "Obojczyki na poziom uchwytów na górze. Pełen wyprost łokci na dole. Zwiększ asystę jeśli nie masz pełnego ROM."
+      },
+      {
+        "fault": "Letting go of handles while kneeling on pad",
+        "faultPl": "Puszczanie uchwytów stojąc na poduszce kolan",
+        "cause": "Ending set incorrectly — pad shoots up violently when load is released, risk of strike to chin/chest",
+        "causePl": "Złe kończenie serii — poduszka wystrzeliwuje gwałtownie w górę po zwolnieniu obciążenia, ryzyko uderzenia w brodę/klatkę",
+        "cue": "ALWAYS step off onto side platforms FIRST, then release the handles. Never release while still kneeling.",
+        "cuePl": "ZAWSZE najpierw zejdź na boczne platformy, potem puszczaj uchwyty. Nigdy nie puszczaj będąc na kolanach."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Exhale on the pull up. Inhale on the way down. Don't hold breath — assisted pull-ups are usually performed for moderate-to-high reps (8-15) so breathing rhythm matters more than bracing.",
+    "breathingPl": "Wdech na dole (zwis). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Nie wstrzymuj — podciąganie z asystą zwykle wykonujesz na umiarkowanej-wysokiej liczbie powtórzeń (8-15) więc rytm oddechu jest ważniejszy niż bracing."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Neutral grip is more biceps-friendly than supinated chin-up but still loads the tendon. Increase assistance significantly or switch to neutral-grip lat pulldown until tendon heals.",
+      "modificationPl": "Chwyt neutralny jest bardziej przyjazny dla bicepsa niż chin-up podchwytem, ale nadal obciąża ścięgno. Znacznie zwiększ asystę lub przejdź na lat pulldown chwytem neutralnym do czasu wyleczenia.",
+      "alternative": "neutral-grip-lat-pulldown"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Neutral grip reduces elbow stress versus supinated. Increase assistance to reduce load on flexor tendons. If pain persists, switch to pulldown.",
+      "modificationPl": "Chwyt neutralny zmniejsza stres na łokieć w porównaniu z podchwytem. Zwiększ asystę by zmniejszyć obciążenie ścięgien zginaczy. Jeśli ból trwa — przejdź na pulldown.",
+      "alternative": "neutral-grip-lat-pulldown"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Kneeling on the pad may aggravate knee pain. Some machines have foot-platform version (stand on pad). If none — switch to band-assisted variant.",
+      "modificationPl": "Klęczenie na poduszce może nasilać ból kolan. Niektóre maszyny mają wersję ze stopami (stoisz na poduszce). Jeśli brak — przejdź na wariant z gumą.",
+      "alternative": "band-assisted-neutral-grip-pull-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Neutral close-grip is the SAFEST vertical pull for shoulder impingement — keep this variant as primary. Avoid forced ROM above handle level if symptomatic.",
+      "modificationPl": "Wąski chwyt neutralny to NAJBEZPIECZNIEJSZY pionowy ciąg dla impingementu — zachowaj ten wariant jako podstawowy. Unikaj wymuszania ROM powyżej poziomu uchwytów jeśli boli.",
+      "alternative": "neutral-grip-lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy with assistance progressively decreasing) | 4x10-15 (volume/endurance for back-biceps) | 5x5 (strength, with minimal assistance — close to unassisted)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "assisted-parallel-close-grip-pull-up.gif",
+    "frames_extracted": [
+      "frames/assisted-parallel-close-grip-pull-up/frame_0_start.png",
+      "frames/assisted-parallel-close-grip-pull-up/frame_1_early.png",
+      "frames/assisted-parallel-close-grip-pull-up/frame_2_mid.png",
+      "frames/assisted-parallel-close-grip-pull-up/frame_3_late.png",
+      "frames/assisted-parallel-close-grip-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/assisted-parallel-close-grip-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — postać klęczy na wyściełanej platformie przeciwwagi dźwigniowej maszyny do podciągania. Ręce trzymają centralnie umieszczone uchwyty równoległe (parallel/neutral grip), dłonie skierowane DO SIEBIE, ręce BLISKO siebie (close grip). Ramiona w pełnym wyproście (dead-hang). Najszersze grzbietu (latissimus dorsi) i ramiona podświetlone czerwienią. Klasyczna konstrukcja maszyny lever-assisted: dwa pionowe słupy, górna belka z uchwytami w różnych orientacjach (w tym centralne uchwyty pionowe/neutralne wykorzystane tutaj), dolna poduszka kolan przymocowana do dźwigni połączonej ze stosem ciężarków po prawej stronie maszyny. Frame 2: szczyt powtórzenia — łokcie zgięte głęboko, klatka piersiowa blisko poziomu uchwytów, łokcie ciasno przy żebrach (charakterystyka chwytu neutralnego wąskiego — łokcie napierają w dół i lekko do tyłu wzdłuż boków, nie rozkładają się na zewnątrz). Frame 3/4: faza ekscentryczna powrót do dead-hang. Różnice od lever-assisted-chin-up (podchwyt) i lever-assisted-pull-up (nachwyt): chwyt neutralny + wąski rozstaw = biomechanicznie najbezpieczniejszy wariant dla barków (humerus w neutrum, brak ryzyka impingementu), maksymalnie aktywuje brachialis (P7) razem z biceps (P7), zachowuje silną aktywację najszerszych (P9). PL nazwa 'Podciąganie wąskim chwytem neutralnym z asystą' — 'wąskim' oddaje close-grip, 'neutralnym' to standard polskiego fitness dla parallel/hammer grip, 'z asystą' standardowe określenie maszyny wspomagającej. Aliasy uwzględniają popularne synonimy: chwyt młotkowy (hammer grip), chwyt równoległy (parallel grip), dłonie do siebie.",
+
+  "tags": ["machine", "compound", "upper_body", "vertical_pull", "assisted", "beginner_friendly", "back", "biceps", "brachialis", "neutral_grip", "close_grip", "lat_builder", "shoulder_friendly", "pull_up_progression"]
+}

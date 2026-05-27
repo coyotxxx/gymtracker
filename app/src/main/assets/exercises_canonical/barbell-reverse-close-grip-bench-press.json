@@ -1,0 +1,204 @@
+{
+  "id": "barbell-reverse-close-grip-bench-press",
+  "name": "Barbell Reverse Close-Grip Bench Press",
+  "namePl": "Wyciskanie sztangi podchwytem wąskim chwytem",
+  "aliases": ["reverse grip close grip bench", "underhand close grip bench press", "supinated close grip bench", "reverse CGBP"],
+  "aliasesPl": ["wyciskanie sztangi podchwytem wąsko", "podchwytem wąski chwyt na ławce", "reverse close grip bench", "wąskie wyciskanie podchwytem", "supinowany wąski chwyt na ławce"],
+
+  "description": "Barbell bench press performed with a supinated (underhand / reverse) grip and a narrow hand placement. The combination of reverse grip and close grip strongly biases the load toward the triceps long head and the upper (clavicular) portion of the pectoralis major. The reverse grip naturally tucks the elbows close to the torso through the entire range of motion, which reduces shoulder strain compared to a regular bench press while increasing time under tension for the triceps. A specialty bench press variant often used as an upper chest + triceps mass builder and as a shoulder-friendly alternative to incline pressing.",
+  "descriptionPl": "Wyciskanie sztangi na ławce poziomej wykonywane podchwytem (dłonie skierowane w stronę twarzy) z wąskim ustawieniem rąk. Połączenie podchwytu i wąskiego chwytu mocno przesuwa obciążenie na długą głowę tricepsa oraz górną (obojczykową) część mięśnia piersiowego. Podchwyt naturalnie 'chowa' łokcie blisko tułowia przez cały zakres ruchu, co zmniejsza obciążenie barków w porównaniu z klasycznym wyciskaniem, jednocześnie zwiększając time under tension dla tricepsów. Specjalistyczny wariant bench pressa, używany jako ćwiczenie na masę górnej klatki + tricepsów oraz jako 'shoulder-friendly' alternatywa dla wyciskania na ławce skośnej dodatniej.",
+
+  "instructions": [
+    "Set up on a flat bench with safety pins or a spotter. Reverse grip benching is significantly less stable than overhand — never max out without safety rails.",
+    "Lie on the bench. Set the shoulder blades — retract and depress them ('pinch and tuck'). Slight natural arch in the lower back, feet planted firmly on the floor.",
+    "Reach up and grip the bar with a SUPINATED (underhand) grip, palms facing your face. Hands about shoulder-width apart or slightly narrower (~biacromial width).",
+    "Wrap thumbs around the bar — critical for safety with reverse grip. Wrists should be straight, bar in the palm heel.",
+    "Unrack carefully (have a spotter help on the lift-off if possible). The bar should sit directly over your lower sternum / upper chest line.",
+    "Take a deep breath, brace the core. The elbows will naturally tuck close to the torso (~20-30° from torso) due to the supinated grip — let them.",
+    "Lower the bar in a controlled tempo to the lower sternum / upper abdomen area (lower than a regular bench press touchpoint). Touch lightly — do NOT bounce.",
+    "Press the bar back up and slightly toward the head, finishing over the upper chest. Drive with the triceps and feel the upper chest engage at lockout.",
+    "Exhale at the top. Reset the breath and brace before the next rep. Re-rack carefully with the spotter's assistance."
+  ],
+  "instructionsPl": [
+    "Ustaw się na ławce poziomej z bolcami asekuracyjnymi lub z asekurującym partnerem. Wyciskanie podchwytem jest znacznie mniej stabilne niż nachwytem — NIGDY nie wykonuj 1RM bez asekuracji.",
+    "Połóż się na ławce. Ustaw łopatki — ściągnij je razem i w dół ('zegnij i schowaj'). Lekki naturalny łuk w dolnych plecach, stopy mocno na podłodze.",
+    "Sięgnij w górę i złap gryf PODCHWYTEM (dłonie skierowane w stronę twarzy). Dłonie ~na szerokość barków lub nieco węziej (~szerokość obojczykowa).",
+    "Owinij kciuki wokół gryfu — kluczowe dla bezpieczeństwa przy podchwycie. Nadgarstki proste, gryf w podstawie dłoni.",
+    "Wypnij gryf ostrożnie (jeśli można, asekurujący pomoże w lift-offie). Gryf powinien znaleźć się dokładnie nad linią dolnego mostka / górnej klatki.",
+    "Nabierz głęboki oddech, napnij brzuch. Łokcie naturalnie schowają się blisko tułowia (~20-30° od tułowia) ze względu na podchwyt — pozwól im na to.",
+    "Opuszczaj gryf kontrolowanym tempem do dolnego mostka / górnej części brzucha (niżej niż w klasycznym wyciskaniu nachwytem). Dotknij lekko — NIE odbijaj.",
+    "Wyciśnij gryf w górę i lekko w stronę głowy, kończąc nad górną klatką. Prowadź ruch tricepsami i poczuj zaangażowanie górnej klatki w lock-out.",
+    "Wydech na górze. Zresetuj oddech i napięcie przed następnym powtórzeniem. Odłóż gryf ostrożnie z pomocą asekurującego."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "upper_pectoralis"],
+    "secondary": ["pectoralis_major", "anterior_deltoids"],
+    "stabilizers": ["serratus_anterior", "core", "rotator_cuff", "upper_back", "wrist_flexors", "biceps_brachii"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "upper_pectoralis": "P7",
+    "pectoralis_major": "S5",
+    "anterior_deltoids": "S5",
+    "biceps_brachii": "T3",
+    "serratus_anterior": "T3",
+    "core": "T3",
+    "wrist_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench"],
+    "optional": ["safety_pins", "spotter", "wrist_wraps", "belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["barbell-bench-press", "close-grip-bench-press", "triceps-pushdown", "barbell-curl"],
+    "progression_to": ["barbell-reverse-grip-incline-bench-press", "weighted-dips", "barbell-incline-bench-press"],
+    "alternatives": ["close-grip-bench-press", "barbell-reverse-grip-incline-bench-press", "barbell-wide-reverse-grip-bench-press", "barbell-incline-bench-press", "weighted-dips"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Safety pins or spotter MANDATORY — reverse grip is unstable",
+      "Supinated grip (palms toward face), thumbs wrapped",
+      "Hands ~shoulder-width or slightly narrower",
+      "Shoulder blades retracted and depressed",
+      "Bar in palm heel, wrists straight"
+    ],
+    "setup_cues_pl": [
+      "Bolce asekuracyjne lub asekurujący OBOWIĄZKOWE — podchwyt jest niestabilny",
+      "Chwyt podchwytem (dłonie w stronę twarzy), kciuki owinięte",
+      "Dłonie ~na szerokość barków lub nieco węziej",
+      "Łopatki ściągnięte i opuszczone",
+      "Gryf w podstawie dłoni, nadgarstki proste"
+    ],
+    "execution_cues": [
+      "Let elbows tuck naturally (~20-30°) — don't fight it",
+      "Touch lower sternum / upper abs, not the chest",
+      "Press up AND slightly toward head — bar path is a shallow arc",
+      "Drive with triceps, finish over upper chest",
+      "Keep shoulder blades pinned to bench throughout"
+    ],
+    "execution_cues_pl": [
+      "Pozwól łokciom schować się naturalnie (~20-30°) — nie walcz z tym",
+      "Dotknij dolnego mostka / górnej części brzucha, nie samej klatki",
+      "Wyciskaj w górę I lekko w stronę głowy — ścieżka gryfu to płytki łuk",
+      "Prowadź ruch tricepsami, kończ nad górną klatką",
+      "Łopatki przyciśnięte do ławki przez cały ruch"
+    ],
+    "common_faults": [
+      {
+        "fault": "Suicide grip (thumbs not wrapped) on reverse grip bench",
+        "faultPl": "Chwyt 'samobójczy' (kciuki nie owinięte) przy wyciskaniu podchwytem",
+        "cause": "Comfort preference from regular bench, but reverse grip has zero margin for error if the bar slips",
+        "causePl": "Przyzwyczajenie z klasycznego wyciskania, ale podchwyt nie wybacza poślizgu",
+        "cue": "ALWAYS wrap thumbs. A bar slip in reverse grip lands directly on your face/throat — non-negotiable.",
+        "cuePl": "ZAWSZE owijaj kciuki. Poślizg gryfu w podchwycie ląduje prosto na twarzy/szyi — bez wyjątków."
+      },
+      {
+        "fault": "Wrists bending back excessively under load",
+        "faultPl": "Nadgarstki nadmiernie zaginają się do tyłu pod obciążeniem",
+        "cause": "Supinated grip + close hand spacing puts maximum leverage on the wrists",
+        "causePl": "Podchwyt + wąskie ustawienie rąk daje maksymalną dźwignię na nadgarstki",
+        "cue": "Bar in the palm heel directly over forearm. Use wrist wraps. Don't go to 1RM without them.",
+        "cuePl": "Gryf w podstawie dłoni dokładnie nad przedramieniem. Użyj wraps. Nie podchodź do 1RM bez nich."
+      },
+      {
+        "fault": "Touching the bar high on the chest (like regular close-grip)",
+        "faultPl": "Dotykanie gryfem wysoko na klatce (jak przy klasycznym wąskim chwycie)",
+        "cause": "Habit from overhand close-grip bench, but reverse grip bar path is different",
+        "causePl": "Nawyk z wąskiego chwytu nachwytem, ale ścieżka gryfu przy podchwycie jest inna",
+        "cue": "Bar touches LOW — lower sternum or upper abs. Press up and toward your head, not straight up.",
+        "cuePl": "Gryf dotyka NISKO — dolny mostek lub górna część brzucha. Wyciskaj w górę i w stronę głowy, nie prosto w górę."
+      },
+      {
+        "fault": "Flaring elbows out (forcing them away from torso)",
+        "faultPl": "Rozsuwanie łokci (na siłę odsuwane od tułowia)",
+        "cause": "Trying to mimic regular bench mechanics — but supinated grip locks elbows in tucked position",
+        "causePl": "Próba kopiowania mechaniki klasycznego wyciskania — ale podchwyt zamyka łokcie blisko tułowia",
+        "cue": "Let the grip do its job. Elbows naturally tuck ~20-30°. Forcing them out kills the triceps emphasis.",
+        "cuePl": "Pozwól chwytowi robić swoje. Łokcie naturalnie schowają się ~20-30°. Rozsuwanie ich niszczy akcent na tricepsy."
+      },
+      {
+        "fault": "Going too heavy for the unstable grip",
+        "faultPl": "Zbyt duży ciężar przy niestabilnym chwycie",
+        "cause": "Ego carry-over from regular bench numbers; reverse grip is typically 15-25% weaker",
+        "causePl": "Przenoszenie ego z klasycznego bench; podchwyt to typowo 15-25% słabszy chwyt",
+        "cue": "Use 60-70% of your regular close-grip max as starting point. Form first, weight second. Spotter mandatory.",
+        "cuePl": "Zacznij od 60-70% Twojego maksimum klasycznego wąskiego chwytu. Najpierw forma, potem ciężar. Asekuracja obowiązkowa."
+      }
+    ],
+    "breathing": "Inhale at top, brace, hold through the descent and press. Exhale at lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech w lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "avoid",
+      "modification": "Supinated narrow grip puts the most wrist leverage of any bench variant. If you have wrist issues, this is one of the worst options. Switch to neutral grip dumbbell press or cable triceps.",
+      "modificationPl": "Wąski podchwyt to największa dźwignia na nadgarstki ze wszystkich wariantów wyciskania. Przy problemach z nadgarstkami to jedna z najgorszych opcji. Przejdź na hantle chwytem neutralnym lub triceps na wyciągu.",
+      "alternative": "dumbbell-neutral-grip-bench-press"
+    },
+    {
+      "condition": "elbow_pain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Triceps long head is heavily loaded — may aggravate distal triceps tendinopathy. Widen the grip slightly, reduce load, or switch to cable work.",
+      "modificationPl": "Długa głowa tricepsa jest mocno obciążona — może drażnić tendinopatię dystalnego ścięgna tricepsa. Poszerz chwyt, zmniejsz ciężar lub zamień na pracę na wyciągu.",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Supinated grip puts the biceps long head under stretch + load — can flare proximal biceps tendinitis. Use regular close-grip (overhand) or dumbbell variants.",
+      "modificationPl": "Podchwyt rozciąga i obciąża długą głowę bicepsa — może zaostrzyć zapalenie ścięgna bicepsa. Użyj klasycznego wąskiego chwytu (nachwytem) lub wariantów z hantlami.",
+      "alternative": "close-grip-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Generally MORE shoulder-friendly than regular bench thanks to tucked elbows. However, avoid heavy 1RM attempts. If still irritating, swap to weighted dips.",
+      "modificationPl": "Generalnie BARDZIEJ shoulder-friendly niż klasyczne wyciskanie dzięki schowanym łokciom. Jednak unikaj ciężkich 1RM. Jeśli dalej drażni, przejdź na dipy z obciążeniem.",
+      "alternative": "weighted-dips"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy / triceps + upper chest focus) | 4x6-8 (strength accessory) — NEVER 1RM without safety rails",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-reverse-close-grip-bench-press.gif",
+    "frames_extracted": [
+      "frames/barbell-reverse-close-grip-bench-press/frame_0_start.png",
+      "frames/barbell-reverse-close-grip-bench-press/frame_1_early.png",
+      "frames/barbell-reverse-close-grip-bench-press/frame_2_mid.png",
+      "frames/barbell-reverse-close-grip-bench-press/frame_3_late.png",
+      "frames/barbell-reverse-close-grip-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-reverse-close-grip-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:15:00Z",
+  "verification_notes": "Frame 0 (start): pozycja dolna — gryf na dolnym mostku, dłonie wyraźnie supinowane (palms facing up/toward face), wąskie ustawienie rąk, łokcie schowane blisko tułowia, podświetlona GÓRNA klatka piersiowa (zgodne z biomechaniką reverse close grip = upper chest activation). Frame 2 (mid): gryf wyciśnięty pionowo w górę, ramiona prawie wyprostowane, TRICEPSY w pełnym skurczu i podświetlone (P10) — w szczególności długa głowa, która dominuje w close grip + supinated grip. Frame 4 (end): powrót do pozycji dolnej, łokcie cały czas blisko tułowia. Klasyczna płaska ławka. Difficulty 7 (intermediate→advanced) — wyższa niż klasyczny CGBP (6) ze względu na (a) niestabilność chwytu podchwytem, (b) wymagana asekuracja/bolce, (c) wymagana mobilność nadgarstków, (d) typowo 15-25% słabsza siła vs nachwyt. Wszystkie pola PL od zera. Wzorowany na smith-machine-decline-close-grip-bench-press jako najbliższy istniejący wzorzec (close grip + bench mechanika), ale wszystkie wartości specyficzne dla supinated grip + flat bench + upper chest accent.",
+
+  "tags": ["barbell", "triceps", "upper_chest", "close_grip", "reverse_grip", "supinated", "horizontal_push", "compound", "flat_bench", "shoulder_friendly"]
+}

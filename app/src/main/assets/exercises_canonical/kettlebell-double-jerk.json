@@ -1,0 +1,214 @@
+{
+  "id": "kettlebell-double-jerk",
+  "name": "Kettlebell Double Jerk",
+  "namePl": "Double jerk z kettlebellami",
+  "aliases": ["double KB jerk", "two kettlebell jerk", "double-bell jerk", "kettlebell sport jerk", "GS double jerk"],
+  "aliasesPl": ["jerk dwoma kettlebellami", "podrzut dwoma kettlebellami", "podrzut dwoma odważnikami kulowymi", "jerk dwa KB", "girewój — podrzut", "double jerk KB sportowy"],
+
+  "description": "Bilateral ballistic overhead lift from kettlebell sport (girevoy sport). Starting in the double front rack position with a kettlebell on each shoulder, the lifter performs a short vertical dip from the knees, then explosively drives through the legs (triple extension of ankles, knees, hips) to launch the bells upward, and immediately drops the body UNDER the bells via a second dip — split lunge or squat — catching them at full overhead lockout, then standing to fixation. Unlike the push press, where the arms finish pressing the load up, in the jerk the lifter actively moves DOWN under a near-stationary load — a true Olympic-style lift. Core exercise of GS long-cycle (combined with the clean) and competition jerk events. Trains explosive whole-body power, overhead stability with asymmetric KB mass, anti-extension core control during the rack, and grip endurance during high-rep sets.",
+  "descriptionPl": "Dwustronny ruch balistyczny overhead z kettlebell sportu (girewój). Start w pozycji double front rack — kettlebell na każdym barku. Wykonujesz krótki pionowy dip z kolan, eksplozywnie odpychasz się nogami (potrójny wyprost: kostki, kolana, biodra), nadając kulom pęd w górę i NATYCHMIAST schodzisz ciałem POD kule wykonując drugi dip — wykrok lub przysiad — łapiąc je w pełnym lock-out nad głową, po czym wstajesz do fiksacji. W przeciwieństwie do push press, gdzie ramiona kończą wyciskanie ciężaru w górę, w jerku to ZAWODNIK schodzi pod prawie nieruchomy ciężar — klasyczny ruch w stylu olimpijskim. Fundamentalne ćwiczenie long cycle GS (w połączeniu z cleanem) oraz konkurencji jerk w sporcie kettlebellowym. Buduje eksplozywną moc całego ciała, stabilność overhead przy asymetrycznym ciężarze KB, antyekstensję core w pozycji rack i wytrzymałość chwytu podczas serii wysokopowtórzeniowych.",
+
+  "instructions": [
+    "Start in the double front rack position: a kettlebell on each shoulder, handles diagonally across the heel of the palm, bells resting on the back of the forearms, elbows tucked in front of the ribs (or slightly to the side for sport-style relaxation), wrists neutral and straight.",
+    "Stand tall, feet hip- to shoulder-width apart, full-foot contact, glutes squeezed, core braced, ribs DOWN. Eyes forward.",
+    "Inhale, brace HARD. Perform the FIRST DIP — knees bend vertically about 10–15 cm, torso stays PERFECTLY VERTICAL (no forward lean, no hip hinge). Elbows stay glued to ribs.",
+    "DRIVE — explosively reverse the dip through the legs (triple extension of ankles, knees, hips). The leg drive launches the kettlebells upward off the rack — your arms do NOT press them.",
+    "SECOND DIP — as the bells reach their peak momentum, immediately drop the body DOWN under them by re-bending the knees into a split lunge (one foot forward, one back) OR a quarter squat. The arms 'punch up' against the bells, locking out as you descend.",
+    "Catch overhead — both arms fully locked, biceps near ears, bells stacked over shoulders. Front knee bent ~90°, back leg almost straight (split style); or both knees softly bent (squat style).",
+    "Recover to fixation — bring the feet back together by stepping the front foot back first, then the rear foot forward (split), or stand from the quarter squat. Hold the lockout briefly with the bells stable overhead — this is the fixation position (mandatory in competition).",
+    "Lower BOTH kettlebells under control back to the rack — bend the knees softly to absorb the drop, drop the bells onto the back of the forearms simultaneously, reset the rack position.",
+    "Inhale during the rack pause, exhale sharply during the dip and drive. Reset bracing before the next rep."
+  ],
+  "instructionsPl": [
+    "Start w pozycji double front rack: kettlebell na każdym barku, rączki ułożone skośnie przy podstawie dłoni, kule oparte o tył przedramion, łokcie przyklejone do żeber (lub lekko w bok dla sportowego rozluźnienia), nadgarstki neutralne i proste.",
+    "Stań wyprostowany, stopy na szerokość bioder do barków, pełen kontakt ze stopą, pośladki ściśnięte, core napięty, żebra W DÓŁ. Wzrok przed siebie.",
+    "Wdech, napnij MOCNO. Wykonaj PIERWSZY DIP — kolana uginają się pionowo o ok. 10–15 cm, tułów pozostaje IDEALNIE PIONOWY (bez pochylenia do przodu, bez hinge'a w biodrach). Łokcie cały czas przyklejone do żeber.",
+    "DRIVE — eksplozywnie odwróć dip nogami (potrójny wyprost: kostki, kolana, biodra). Napęd z nóg wyrzuca kettlebelle w górę z racku — ramiona NIE wyciskają.",
+    "DRUGI DIP — gdy kule osiągają szczyt pędu, NATYCHMIAST zejdź ciałem POD nie poprzez ponowne ugięcie kolan w wykrok (jedna stopa do przodu, druga w tył) LUB ćwierć-przysiad. Ramiona 'puknij' w górę pod kule, blokując łokcie podczas zejścia.",
+    "Catch overhead — oba ramiona w pełnym wyproście, bicepsy przy uszach, kule nad barkami. Przednie kolano ugięte ~90°, tylna noga prawie prosta (split style); lub oba kolana lekko ugięte (squat style).",
+    "Powrót do fiksacji — przysuń stopy razem, najpierw cofnij stopę przednią, potem przysuń tylną (split); lub wstań z ćwierć-przysiadu. Przytrzymaj lock-out krótko z kulami stabilnymi nad głową — to pozycja fiksacji (obowiązkowa w zawodach).",
+    "Opuść OBA kettlebelle kontrolowanie z powrotem do racku — ugnij lekko kolana by zamortyzować, opuść kule jednocześnie na tył przedramion, zresetuj pozycję racku.",
+    "Wdech podczas pauzy w racku, ostry wydech podczas dipu i napędu. Zresetuj napięcie przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "quadriceps", "triceps", "glutes"],
+    "secondary": ["lateral_deltoids", "posterior_deltoids", "hamstrings", "trapezius", "upper_chest", "calves"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "erector_spinae", "rotator_cuff", "serratus_anterior", "forearms", "gluteus_medius"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "quadriceps": "P9",
+    "triceps": "P8",
+    "glutes": "P8",
+    "lateral_deltoids": "S8",
+    "posterior_deltoids": "S7",
+    "hamstrings": "S7",
+    "trapezius": "S7",
+    "upper_chest": "S6",
+    "calves": "S7",
+    "core": "S9",
+    "rectus_abdominis": "S8",
+    "obliques": "S7",
+    "erector_spinae": "S7",
+    "rotator_cuff": "S7",
+    "serratus_anterior": "S7",
+    "forearms": "S8",
+    "gluteus_medius": "S7"
+  },
+
+  "equipment": {
+    "required": ["kettlebells"],
+    "optional": ["belt", "wrist_wraps", "weightlifting_shoes", "chalk"]
+  },
+
+  "category": "olympic_weightlifting",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["kettlebell-two-arm-clean", "kettlebell-double-push-press", "kettlebell-one-arm-clean-and-jerk", "kettlebell-goblet-squat", "barbell-overhead-press"],
+    "progression_to": ["kettlebell-double-clean-and-jerk", "kettlebell-long-cycle", "kettlebell-double-snatch", "barbell-jerk"],
+    "alternatives": ["kettlebell-double-push-press", "kettlebell-one-arm-clean-and-jerk", "barbell-push-jerk", "dumbbell-push-jerk"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Double front rack: bells on back of forearms, elbows in front of ribs",
+      "Feet hip- to shoulder-width, full-foot contact",
+      "Brace HARD, ribs DOWN, glutes squeezed, long spine",
+      "Wrists STRAIGHT — bells sit ON the forearms, not on the palms",
+      "Stand TALL — torso vertical, eyes forward"
+    ],
+    "setup_cues_pl": [
+      "Double front rack: kule na tyle przedramion, łokcie przed żebrami",
+      "Stopy na szerokość bioder do barków, pełen kontakt ze stopą",
+      "Napnij MOCNO, żebra W DÓŁ, pośladki ściśnięte, długi kręgosłup",
+      "Nadgarstki PROSTE — kule leżą NA przedramionach, nie na dłoniach",
+      "Stań WYSOKO — tułów pionowy, wzrok przed siebie"
+    ],
+    "execution_cues": [
+      "DIP vertical — knees only, torso STAYS VERTICAL, elbows on ribs",
+      "DRIVE explosive — push the floor away, triple extension",
+      "SECOND DIP — drop body UNDER the bells, don't press them up",
+      "LOCKOUT — biceps by ears, arms fully locked BEFORE you finish standing",
+      "FIXATION — bells stable overhead, stack: bell over shoulder over hip over ankle"
+    ],
+    "execution_cues_pl": [
+      "DIP pionowy — tylko kolana, tułów PIONOWO, łokcie na żebrach",
+      "DRIVE eksplozywny — odepchnij się od podłogi, potrójny wyprost",
+      "DRUGI DIP — zepchnij ciało POD kule, nie wypychaj ich rękami",
+      "LOCKOUT — bicepsy przy uszach, ramiona ZABLOKOWANE zanim wstaniesz",
+      "FIKSACJA — kule stabilne nad głową, stos: kula nad barkiem nad biodrem nad kostką"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pressing the bells up with the arms instead of jerking under them",
+        "faultPl": "Wyciskanie kuli rękami zamiast zejścia pod nie (jerk)",
+        "cause": "Confusing jerk with push press, weak leg drive, no second dip, fear of dropping under load",
+        "causePl": "Mylenie podrzutu z push press, słaby napęd nogami, brak drugiego dipa, strach przed zejściem pod ciężarem",
+        "cue": "Jerk = body moves DOWN, bells stay HIGH. After the drive, immediately drop the knees into a split or squat and 'punch' the body down — the arms lock by themselves.",
+        "cuePl": "Jerk = ciało schodzi W DÓŁ, kule pozostają W GÓRZE. Po driveie natychmiast ugnij kolana w wykrok lub przysiad i 'wbij' ciało w dół — ramiona zablokują się same."
+      },
+      {
+        "fault": "Forward lean / hip hinge during the first dip (squat-style instead of vertical)",
+        "faultPl": "Pochylenie tułowia / hinge biodrowy w pierwszym dipie (przysiad zamiast pionowego dipu)",
+        "cause": "Quad weakness, ankle mobility limits, treating the dip like a front squat, weak core bracing",
+        "causePl": "Słabe czworogłowe, ograniczona mobilność kostek, traktowanie dipu jak front squat, słabe napięcie core",
+        "cue": "Knees track FORWARD over the toes, torso stays VERTICAL like there's a pole through your skull. Brace anti-extension and dip STRAIGHT DOWN.",
+        "cuePl": "Kolana wędrują DO PRZODU nad palce stóp, tułów PIONOWY jak tyczka przez czubek głowy. Napnij antyekstensyjnie i dip PROSTO W DÓŁ."
+      },
+      {
+        "fault": "Asymmetric lockout — one kettlebell forward or higher than the other",
+        "faultPl": "Asymetryczny lock-out — jeden KB do przodu lub wyżej niż drugi",
+        "cause": "Side-to-side strength or mobility imbalance, dominant arm overpowering, weak shoulder stabilizer on one side, uneven catch in the second dip",
+        "causePl": "Asymetria siły lub mobilności między stronami, dominująca ręka przejmuje pracę, słabsze stabilizatory barku po jednej stronie, nierówny catch w drugim dipie",
+        "cue": "Match to the WEAKER side. Both bells stack OVER the shoulders simultaneously. Add single-arm KB jerk to fix the gap.",
+        "cuePl": "Dopasuj do SŁABSZEJ strony. Oba KB stos NAD barkami jednocześnie. Dorzuć jerk jednorącz by wyrównać."
+      },
+      {
+        "fault": "Lumbar hyperextension at lockout (back overarched to 'finish' the lift)",
+        "faultPl": "Przeprost lędźwiowy w lock-out (przeprost pleców by 'dokończyć' ruch)",
+        "cause": "Limited overhead mobility (t-spine, lats, shoulders), weak anterior core, weight too heavy, ribs flaring up",
+        "causePl": "Ograniczona mobilność overhead (piersiowy, najszersze, barki), słaby przedni core, zbyt duży ciężar, żebra wystające",
+        "cue": "Ribs DOWN, glutes SQUEEZED, finish with a STACKED spine. Push the head THROUGH the arms — bicep behind the ear.",
+        "cuePl": "Żebra W DÓŁ, pośladki ŚCIŚNIĘTE, zakończ z kręgosłupem ułożonym w STOSIE. Przepchnij głowę PRZEZ ramiona — biceps za uchem."
+      },
+      {
+        "fault": "Wrist hyperextension under the bells (wrists bent back)",
+        "faultPl": "Hiperekstensja nadgarstków pod kulami (nadgarstki wygięte do tyłu)",
+        "cause": "Bad rack position, weak forearms, bells slipping into the palms, no corkscrew in the clean to rack",
+        "causePl": "Zła pozycja racku, słabe przedramiona, kule zsuwają się w dłonie, brak 'wkręcenia' nadgarstka w cleanie do racku",
+        "cue": "Knuckles UP, wrist STRAIGHT, bell sits ON the forearm. If they sag — re-rack between reps.",
+        "cuePl": "Knykcie W GÓRĘ, nadgarstek PROSTY, kula leży NA przedramieniu. Jeśli zsuwają się — zresetuj rack między powtórzeniami."
+      }
+    ],
+    "breathing": "Anatomical breathing typical of kettlebell sport: sharp exhale at the first dip and drive (matches the explosive concentric), brief inhale at the rack pause, sharp exhale at the second dip (catch under the bells), inhale at fixation overhead. Two breath cycles per rep. With heavy loads — short Valsalva through the dip-drive phase, exhale at lockout. High-rep sets (GS-style 5–10 min) demand metronomic, controlled breathing — break the brace at the top to dump CO2.",
+    "breathingPl": "Oddech anatomiczny typowy dla sportu kettlebellowego: ostry wydech podczas pierwszego dipa i napędu (zgrany z eksplozywnym ruchem koncentrycznym), krótki wdech podczas pauzy w racku, ostry wydech podczas drugiego dipa (catch pod kulami), wdech w fiksacji nad głową. Dwa cykle oddechowe na powtórzenie. Przy ciężkich kulach — krótka Valsalva przez fazę dip-drive, wydech w lock-out. W seriach wysokopowtórzeniowych (GS 5–10 min) konieczny metronomiczny, kontrolowany oddech — rozluźnij napięcie na szczycie by oddać CO2."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "avoid",
+      "modification": "Both the double rack position and explosive overhead lockout demand extreme shoulder mobility, scapular control and rotator cuff strength. Restore healthy ROM, painless pressing and stable lockout under PT supervision before attempting. Start with strict overhead press, then push press, then jerk.",
+      "modificationPl": "Zarówno double rack jak i eksplozywny lock-out overhead wymagają ekstremalnej mobilności barku, kontroli łopatki i siły stożka rotatorów. Najpierw przywróć zdrowy zakres ruchu, bezbolesne wyciskanie i stabilny lock-out pod nadzorem fizjoterapeuty. Zacznij od strict overhead press, potem push press, dopiero potem jerk.",
+      "alternative": "kettlebell-double-push-press"
+    },
+    {
+      "condition": "lumbar_disc_pathology_or_chronic_low_back_pain",
+      "severity": "avoid",
+      "modification": "Repeated dip-drive with bilateral overhead load creates large compressive and extension forces on the lumbar spine, especially in GS high-rep sets. Switch to non-explosive, supported variations until cleared.",
+      "modificationPl": "Powtarzalny dip-drive z obustronnym obciążeniem nad głową generuje duże siły kompresyjne i ekstensyjne na lędźwiowy, szczególnie w wysokopowtórzeniowych seriach GS. Przejdź na nie-eksplozywne, oparte warianty do zgody fizjoterapeuty.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    },
+    {
+      "condition": "knee_pathology_meniscus_or_acl",
+      "severity": "modify",
+      "modification": "The second dip — especially the split variant — loads the front knee in deep flexion under explosive force. Switch to the squat-style (quarter-squat) catch which limits knee flexion, reduce load, and avoid the split version until cleared by a sports physician.",
+      "modificationPl": "Drugi dip — szczególnie w wariancie split — obciąża przednie kolano w głębokim ugięciu przy eksplozywnej sile. Przejdź na catch typu squat (ćwierć-przysiad), który ogranicza zgięcie kolana, zmniejsz ciężar i unikaj wariantu split do zgody lekarza sportowego.",
+      "alternative": "kettlebell-double-push-press"
+    },
+    {
+      "condition": "hypertension_uncontrolled_or_cardiovascular_disease",
+      "severity": "avoid",
+      "modification": "Repeated Valsalva combined with overhead loading and the high-rep nature of GS jerk sets (5–10 minute continuous work) produces large blood pressure spikes. Cardiologist clearance required before any explosive overhead training.",
+      "modificationPl": "Powtarzalna Valsalva w połączeniu z obciążeniem nad głową i wysokopowtórzeniowy charakter serii jerka GS (5–10 min ciągłej pracy) generują duże skoki ciśnienia. Wymagana zgoda kardiologa przed jakimkolwiek eksplozywnym treningiem overhead.",
+      "alternative": "kettlebell-goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (max strength/power) | 4x6-8 (strength-hypertrophy) | 3-4x10-15 (power-endurance) | 2-4x 3-5 min continuous set (GS jerk conditioning) | 10 min competition set (Girevoy sport long-cycle / jerk event) — never grind reps with technique decay",
+  "calories_per_kg_per_hour": 9.5,
+
+  "media": {
+    "primary": "kettlebell-double-jerk.gif",
+    "frames_extracted": [
+      "frames/kettlebell-double-jerk/frame_0_start.png",
+      "frames/kettlebell-double-jerk/frame_1_early.png",
+      "frames/kettlebell-double-jerk/frame_2_mid.png",
+      "frames/kettlebell-double-jerk/frame_3_late.png",
+      "frames/kettlebell-double-jerk/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-double-jerk"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa. Frame 0 (start): pozycja double front rack — dwa kettlebelle na barkach, łokcie blisko żeber, kule oparte o tył przedramion, tułów pionowy, stopy ~szerokość bioder. Podświetlone barki (P), górne plecy/trapez, brzuch — klasyczny KB sport rack. Frame 1 (early): ten sam rack widziany z innej perspektywy, dodatkowo widoczna 'duchowa' postać sugerująca zejście — przygotowanie do dipu. Frame 2 (mid): KLUCZOWA klatka — pełen lock-out overhead Z JEDNOCZESNYM SPLIT LUNGE: oba KB w lock-oucie nad głową, ramiona w pełnym wyproście, bicepsy przy uszach, przednie kolano ugięte ~90°, tylna noga prawie prosta. To definicja jerka (NIE push press) — ciało zeszło pod kule w split position. Mocno podświetlone czworogłowe, pośladki, delty, tricepsy. Frame 3 (late): postać wraca z fiksacji do racku, jeden duch z KB nad głową (poprzednia faza), drugi obraz w racku — sekwencja zakończenia. Frame 4 (end): powrót do startu (rack), ghost figure pokazuje pełny ROM. To pełny Double Jerk (NIE double push press, NIE double press) — wyraźna faza zejścia pod kule w split lunge widoczna w frame 2. Movement_pattern: olympic_lift (dip-drive-second_dip-catch). Laterality: bilateral. Plane: frontal (dwa KB po bokach głowy w lock-oucie, ruch w płaszczyźnie czołowej dominuje nad sagittal). Force: push. Mechanic: compound. Difficulty 8/10 — wyższa niż double push press (7/10) bo wymaga zejścia pod ciężar i większej koordynacji, niższa niż barbell jerk (9/10) bo niższe absolutne obciążenia. Primary: anterior_deltoids P9 (lock-out overhead), quadriceps P9 (drive + second dip catch — kluczowe w jerku), triceps P8 (lock-out), glutes P8 (drive + stabilizacja split). Hamstrings tylko S7 (jerk to nie hinge jak C&J). Core S9 (anti-extension + asymetria split). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego, z terminologią GS/girewoju (rack, dip, drive, fiksacja, long cycle, split).",
+
+  "tags": ["olympic_weightlifting", "compound", "full_body", "power", "explosive", "kettlebell", "overhead", "bilateral", "kettlebell_sport", "girevoy_sport", "jerk", "triple_extension", "split_jerk", "advanced", "shoulders"]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "cable-overhead-triceps-extension-rope-attachment",
+  "name": "Cable Overhead Triceps Extension (Rope)",
+  "namePl": "Wyciskanie francuskie na wyciągu nad głowę z liną",
+  "aliases": ["overhead cable triceps extension with rope", "rope overhead triceps extension on cable", "cable french press with rope", "standing overhead cable rope extension"],
+  "aliasesPl": ["francuskie na wyciągu z liną nad głowę", "wyciskanie francuskie z liną na wyciągu", "triceps extension nad głowę z liną na wyciągu", "rozpiętki tricepsa nad głowę na wyciągu z liną", "overhead extension z liną na bramie"],
+
+  "description": "Isolation triceps exercise performed standing with back (or front) to a low cable pulley, holding a rope attachment overhead with arms vertical. The lifter flexes only at the elbows to lower the rope behind the head and then extends the arms back overhead. The cable provides constant tension throughout the full range of motion — there is no 'rest' position at the top, unlike a dumbbell or barbell overhead extension. Because the upper arm is held in full shoulder flexion, the long head of the triceps is loaded in a deeply stretched position, which makes this one of the most effective movements for long-head hypertrophy. The rope allows the hands to separate and the wrists to externally rotate at the bottom of every rep, increasing the contraction at the end of the eccentric.",
+  "descriptionPl": "Izolowane ćwiczenie tricepsa wykonywane na stojąco, plecami (lub przodem) do dolnego wyciągu, z linką trzymaną nad głową przy ramionach ustawionych pionowo. Ćwiczący ugina ramiona wyłącznie w łokciach, opuszczając linę za głowę, a następnie prostuje ramiona z powrotem nad głową. Linka daje stałe napięcie przez cały zakres ruchu — nie ma pozycji 'odpoczynku' w górze, jak ma to miejsce przy wariancie z hantlem lub sztangą. Ponieważ ramię ponad łokciem znajduje się w pełnym zgięciu w stawie barkowym, długa głowa tricepsa jest obciążona w pozycji głębokiego rozciągnięcia — co czyni ten ruch jednym z najskuteczniejszych ćwiczeń na hipertrofię głowy długiej. Lina pozwala dodatkowo rozdzielić ręce i rotować nadgarstki na zewnątrz na dole każdego powtórzenia, zwiększając kontrakcję na końcu fazy negatywnej.",
+
+  "instructions": [
+    "Attach a rope to a LOW pulley on a cable machine. Select the weight. The cable will travel from the floor up through your hands at the top.",
+    "Grab the rope with both hands using a neutral grip (thumbs up). Turn AWAY from the machine — the cable should run up behind your body to your hands overhead.",
+    "Step forward 1-2 paces to take tension. Stand in a slight split stance with one foot in front for balance, brace your core and squeeze your glutes.",
+    "Press the rope up overhead so the arms are fully vertical, biceps next to ears, elbows pointing forward. This is the start position — already under cable tension.",
+    "Flex at the elbows only and lower the rope down behind your head in a controlled arc over 2-3 seconds. Inhale on the descent. Upper arms stay vertical and stationary.",
+    "At the bottom, the rope ends are next to your ears and your hands are behind/below the back of your head. Triceps are in a deep stretch — pause briefly.",
+    "Extend the elbows powerfully to drive the rope back up overhead. Exhale on effort. At the very top, separate the hands and pull the rope ends slightly outward to fully lock out and contract the triceps.",
+    "Lock out, squeeze the triceps hard for 1 second, then immediately begin the next slow eccentric. Do not let the stack pull your elbows down fast."
+  ],
+  "instructionsPl": [
+    "Przypnij linę do DOLNEGO wyciągu maszyny cable. Wybierz ciężar. Linka będzie biegła od podłogi w górę do Twoich rąk nad głową.",
+    "Złap linę oburącz chwytem neutralnym (kciuki do góry). Odwróć się PLECAMI do maszyny — linka ma biec od dołu do góry za plecami do Twoich rąk nad głową.",
+    "Zrób 1-2 kroki do przodu aby napiąć linkę. Stań w lekkim rozkroku z jedną stopą wysuniętą do przodu dla równowagi, napnij brzuch i ściśnij pośladki.",
+    "Wyciśnij linę do góry nad głowę tak by ramiona były w pełni pionowe, bicepsy przy uszach, łokcie skierowane do przodu. To pozycja startowa — już pod napięciem linki.",
+    "Uginaj wyłącznie w łokciach i opuszczaj linę kontrolowanym łukiem za głowę przez 2-3 sekundy. Wdech podczas opuszczania. Ramiona ponad łokciem pozostają pionowe i nieruchome.",
+    "Na dole końce liny są przy uszach a dłonie znajdują się za i poniżej tyłu głowy. Triceps jest w głębokim rozciągnięciu — krótka pauza.",
+    "Wyprostuj łokcie z mocą, wyprowadzając linę z powrotem nad głowę. Wydech podczas wysiłku. Na samej górze rozdziel ręce i pociągnij końce liny lekko na zewnątrz aby w pełni zablokować i napiąć triceps.",
+    "Zablokuj wyprost, mocno spinaj triceps przez 1 sekundę, a następnie natychmiast rozpocznij kolejną powolną fazę negatywną. Nie pozwól by stos ściągnął Twoje łokcie szybko w dół."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["triceps_long_head"],
+    "stabilizers": ["anterior_deltoid", "core", "upper_trapezius", "serratus_anterior", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "triceps_long_head": "P9",
+    "anterior_deltoid": "S3",
+    "serratus_anterior": "T3",
+    "core": "T3",
+    "upper_trapezius": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope_attachment"],
+    "optional": ["lifting_belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-overhead-triceps-extension", "cable-triceps-pushdown"],
+    "progression_to": ["heavy-cable-overhead-triceps-extension", "single-arm-cable-overhead-triceps-extension", "incline-bench-cable-overhead-triceps-extension"],
+    "alternatives": ["dumbbell-overhead-triceps-extension", "barbell-overhead-triceps-extension", "ez-bar-overhead-triceps-extension", "cable-triceps-pushdown-rope", "lying-cable-triceps-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Use the LOW pulley — the cable must come from below and behind you, not from above",
+      "Back to the machine, rope overhead, neutral grip with thumbs pointing up",
+      "Split stance — one foot forward for stability, slight forward lean is okay",
+      "Brace core hard, squeeze glutes, ribs down — no lumbar extension",
+      "Elbows point straight forward, upper arms vertical and right next to your ears"
+    ],
+    "setup_cues_pl": [
+      "Używaj DOLNEGO wyciągu — linka ma biec z dołu i z tyłu, nie z góry",
+      "Plecami do maszyny, lina nad głową, chwyt neutralny z kciukami do góry",
+      "Rozkrok — jedna stopa wysunięta dla stabilności, lekkie pochylenie do przodu jest OK",
+      "Mocno napnij brzuch, ściśnij pośladki, żebra w dół — żadnego wyginania lędźwi",
+      "Łokcie skierowane prosto do przodu, ramiona ponad łokciem pionowe i tuż przy uszach"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms welded to the side of your head",
+      "Lower SLOWLY behind the head — 2-3 seconds eccentric is mandatory",
+      "Separate the rope ends and pull them outward at full lockout — that's the peak triceps contraction",
+      "Keep elbows pointing forward — do NOT let them flare out to the sides as you fatigue",
+      "Stay tall — do not pitch the torso forward to pull the weight up with your back"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyspawane do boków głowy",
+      "Opuszczaj POWOLI za głowę — 2-3 sekundy fazy negatywnej obowiązkowo",
+      "Rozdziel końce liny i pociągnij je na zewnątrz w pełnym wyproście — to szczytowe napięcie tricepsa",
+      "Łokcie skierowane do przodu — NIE pozwalaj im uciekać na boki w miarę zmęczenia",
+      "Stój wyprostowany — nie pochylaj tułowia do przodu by pomóc plecami unieść ciężar"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning the torso forward to pull the cable up (using lats/back instead of triceps)",
+        "faultPl": "Pochylanie tułowia do przodu by pociągnąć linkę (praca grzbietem i najszerszym zamiast tricepsem)",
+        "cause": "Load too heavy, fatigued triceps, or trying to grind extra reps after technical failure",
+        "causePl": "Zbyt duży ciężar, zmęczony triceps, lub próba wyciśnięcia dodatkowych powtórzeń po technicznej niewydolności",
+        "cue": "Reduce the weight. Lock the torso in one position from rep 1 to last — only the elbows move.",
+        "cuePl": "Zmniejsz ciężar. Zablokuj tułów w jednej pozycji od pierwszego do ostatniego powtórzenia — ruszają się wyłącznie łokcie."
+      },
+      {
+        "fault": "Hip/leg drive — bouncing the rope up with hip extension",
+        "faultPl": "Pomaganie biodrami i nogami — odbijanie liny w górę wyprostem bioder",
+        "cause": "Treating it like a push-press, attempting cheat reps, or using a weight far above triceps capacity",
+        "causePl": "Traktowanie jak push-press, oszukiwanie na powtórzeniach, lub używanie ciężaru znacznie przekraczającego możliwości tricepsa",
+        "cue": "Glutes locked, knees soft and quiet — if your hips help, the set is over.",
+        "cuePl": "Pośladki spięte, kolana lekko ugięte i nieruchome — jeśli biodra pomagają, seria jest skończona."
+      },
+      {
+        "fault": "Incomplete separation of the rope ends at full extension (no peak contraction)",
+        "faultPl": "Niepełna separacja końców liny w pełnym wyproście (brak szczytowego napięcia)",
+        "cause": "Rushing reps, gripping the rope too high, or not understanding the purpose of the rope attachment",
+        "causePl": "Pośpiech, chwyt liny zbyt wysoko, lub niezrozumienie po co w ogóle używa się liny zamiast drążka",
+        "cue": "Grip the rope at the very ends. At lockout, actively pull the two ends APART and outward — that's the whole point of the rope.",
+        "cuePl": "Trzymaj linę na samych jej końcach. W pełnym wyproście aktywnie ROZSUWAJ oba końce na zewnątrz — po to właśnie używasz liny."
+      },
+      {
+        "fault": "Elbows flaring out to the sides during the eccentric",
+        "faultPl": "Łokcie uciekają na boki w fazie negatywnej",
+        "cause": "Weak overhead shoulder mobility, fatigued long head of triceps, weight too heavy for elbow control",
+        "causePl": "Słaba mobilność barków nad głową, zmęczona głowa długa tricepsa, ciężar za duży dla kontroli łokcia",
+        "cue": "Imagine squeezing a piece of paper between your bicep and ear for the entire set. Elbows point forward, not outward.",
+        "cuePl": "Wyobraź sobie że trzymasz kartkę papieru między bicepsem a uchem przez całą serię. Łokcie wskazują do przodu, nie na boki."
+      },
+      {
+        "fault": "Hyperextending the lumbar spine to get the arms 'overhead' enough",
+        "faultPl": "Wyginanie lędźwi do tyłu by ramiona dotarły 'nad głowę'",
+        "cause": "Limited overhead shoulder mobility (tight lats, thoracic spine) compensated by lumbar arch",
+        "causePl": "Ograniczona mobilność barków w pozycji nad głową (napięte mięśnie najszersze, ograniczony odcinek piersiowy) kompensowana wygięciem lędźwi",
+        "cue": "Ribs down, glutes squeezed. If you can't get arms vertical without arching, work on overhead mobility before adding load.",
+        "cuePl": "Żebra w dół, pośladki spięte. Jeśli nie możesz ustawić ramion pionowo bez wyginania lędźwi, popraw mobilność barków przed dokładaniem ciężaru."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pressing up to lockout). Inhale during the slow eccentric (lowering behind the head). Maintain a firm core brace throughout — overhead loading with a soft trunk is the fastest path to lumbar pain.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wyprost do góry). Wdech w powolnej fazie ekscentrycznej (opuszczanie za głowę). Utrzymuj mocne napięcie brzucha przez całą serię — obciążenie nad głową z luźnym tułowiem to najszybsza droga do bólu lędźwi."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_overhead_mobility_deficit",
+      "severity": "modify",
+      "modification": "Full overhead position with constant cable tension provokes impingement. Switch to a kneeling cable triceps extension with the cable pulling more horizontally, or use a lying cable extension. Work on overhead mobility (lats, T-spine) before returning.",
+      "modificationPl": "Pełna pozycja nad głową ze stałym napięciem linki drażni konflikt podbarkowy. Przejdź na klęczący wariant cable triceps extension gdzie linka ciągnie bardziej poziomo, lub użyj wariantu w leżeniu. Popraw mobilność barków (mięśnie najszersze, odcinek piersiowy) przed powrotem.",
+      "alternative": "lying-cable-triceps-extension"
+    },
+    {
+      "condition": "elbow_tendinopathy_or_triceps_tendon_pain",
+      "severity": "modify",
+      "modification": "The deep stretch under constant tension stresses the triceps tendon. Reduce range of motion (do not let elbows close fully), use lighter weight with 12-15 reps, and remove the eccentric tempo until pain-free.",
+      "modificationPl": "Głębokie rozciągnięcie pod stałym napięciem obciąża ścięgno tricepsa. Zmniejsz zakres ruchu (nie zamykaj łokci do końca), używaj lżejszego ciężaru z 12-15 powtórzeniami, zrezygnuj z wolnego tempa fazy negatywnej do czasu ustąpienia bólu.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_instability",
+      "severity": "modify",
+      "modification": "Standing overhead variant heavily loads lumbar bracing. Perform seated with back support, or switch to a horizontal lying cable extension that removes spinal loading.",
+      "modificationPl": "Wariant stojący nad głową mocno obciąża izometryczne napięcie lędźwiowe. Wykonuj siedząc z oparciem, lub przejdź na wariant w leżeniu poziomym który eliminuje obciążenie kręgosłupa.",
+      "alternative": "lying-cable-triceps-extension"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "Neutral rope grip is generally wrist-friendly, but the active pull-apart at lockout can stress the ulnar wrist if wrists hyperextend. Keep wrists in line with forearms, do not let them fall back under tension. If pain persists, switch to a single-arm D-handle variant.",
+      "modificationPl": "Neutralny chwyt liny jest zazwyczaj przyjazny dla nadgarstków, ale aktywne rozsuwanie końców liny w pełnym wyproście może obciążać stronę łokciową nadgarstka jeśli ten się przeprostuje. Trzymaj nadgarstki w linii z przedramieniem, nie pozwalaj im opadać pod napięciem. Jeśli ból się utrzymuje, przejdź na wariant jednorącz z rączką D.",
+      "alternative": "single-arm-cable-overhead-triceps-extension"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, primary use) | 3x12-20 (pump/finisher, light) | 4x8-10 (mass with strict tempo)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-overhead-triceps-extension-rope-attachment.gif",
+    "frames_extracted": [
+      "frames/cable-overhead-triceps-extension-rope-attachment/frame_0_start.png",
+      "frames/cable-overhead-triceps-extension-rope-attachment/frame_1_early.png",
+      "frames/cable-overhead-triceps-extension-rope-attachment/frame_2_mid.png",
+      "frames/cable-overhead-triceps-extension-rope-attachment/frame_3_late.png",
+      "frames/cable-overhead-triceps-extension-rope-attachment/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-overhead-triceps-extension-rope-attachment"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): ćwiczący stoi plecami do dolnego wyciągu, linka biegnie ukośnie w górę z dolnego krążka (widoczna z lewej strony za sylwetką) do rąk uniesionych nad głową, chwyt neutralny na końcach liny, ramiona w pełni pionowe i wyprostowane, łokcie skierowane do przodu, biceps przy uszach. Triceps i tylne aktony obu ramion zaznaczone na czerwono. Frame 2 (mid): pełne ugięcie w łokciach, końce liny przy uszach, ramiona ponad łokciem nadal pionowe — modelowe utrzymanie pozycji łokci w czasie opuszczania. Frame 4 (end): powrót do pełnego wyprostu — końce liny ROZSUNIĘTE na zewnątrz w stosunku do frame 0, dłonie szerzej niż barki, co potwierdza akcent na separację końców liny w pełnej kontrakcji (klasyczna cecha rope attachment). Cały tułów stabilny przez ruch — nie ma pochylania ani biodrowego napędu. Tylko ramiona pracują od barków w górę. Ćwiczenie jednoznacznie zidentyfikowane: low pulley + rope + overhead triceps extension. movement_pattern: isolation_extension. primary: triceps_brachii P10, long head wyróżniony P9 ze względu na pozycję rozciągniętą pod napięciem. difficulty: 5 (intermediate — wymaga mobilności barków, kontroli tułowia i timingu separacji liny). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "rope", "overhead", "long_head", "constant_tension", "hypertrophy", "upper_body"]
+}

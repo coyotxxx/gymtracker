@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-decline-shrug",
+  "name": "Dumbbell Decline Shrug",
+  "namePl": "Wzruszenia barkami hantlami leżąc na decline",
+  "aliases": ["prone dumbbell shrug", "decline bench dumbbell shrug", "chest-supported dumbbell shrug", "lower trap dumbbell shrug"],
+  "aliasesPl": ["szrugsy hantlami leżąc przodem", "wzruszenia barkami na ławce skośnej ujemnej", "szrugsy z podparciem klatki", "szrugsy na dolny trapez"],
+
+  "description": "Isolation exercise for the trapezius performed lying chest-down on a decline bench with a dumbbell in each hand. The chest-supported, head-down position eliminates body swing and lower-back load, while gravity pulls the dumbbells straight toward the floor. This means the shoulder blades must elevate AND retract against the load — which biases the movement toward the lower and middle trapezius rather than the upper trapezius emphasized in a standing shrug. A key accessory for postural strength, scapular control, and balancing out the over-developed upper traps common in lifters who deadlift and standing-shrug heavily.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień czworoboczny, wykonywane leżąc przodem (klatką w dół) na ławce skośnej ujemnej, z hantlą w każdej dłoni. Podparcie klatki i pozycja głową w dół eliminuje bujanie ciałem i obciążenie dolnego odcinka pleców, a grawitacja ciągnie hantle prosto do podłogi. To powoduje, że łopatki muszą unieść się ORAZ ściągnąć pod obciążeniem — co przesuwa akcent na dolny i środkowy trapez zamiast górnego, dominującego w klasycznym szrugsie stojąc. Ważne ćwiczenie pomocnicze dla siły posturalnej, kontroli łopatek i zrównoważenia przerośniętych górnych kapturów, częstych u osób regularnie wykonujących martwy ciąg i ciężkie szrugsy stojąc.",
+
+  "instructions": [
+    "Set a decline bench to a moderate angle (30-45 degrees). Place two dumbbells on the floor at the head end of the bench.",
+    "Lie chest-down on the bench with the chest pad supporting the upper torso and the chin or forehead clear of the pad.",
+    "Reach down and grasp the dumbbells with a neutral grip (palms facing each other). Let the arms hang fully extended toward the floor.",
+    "Keep the elbows straight but soft. The arms remain straight ropes for the entire set — only the shoulder blades move.",
+    "Brace the core and keep the neck neutral. Do not look up — the head stays in line with the spine.",
+    "Pull the shoulder blades up and together (elevation + retraction) as if trying to touch them to the ceiling. Exhale on the concentric.",
+    "Squeeze hard at the top for 1-2 seconds in full scapular elevation and retraction. Feel the contraction between and above the shoulder blades.",
+    "Lower the dumbbells under control over 2-3 seconds, allowing the shoulder blades to fully protract and depress for a deep stretch on the traps.",
+    "Avoid bending the elbows — if biceps take over, the load is too heavy. Reduce weight and refocus on the scapulae."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną ujemną pod umiarkowanym kątem (30-45 stopni). Połóż dwie hantle na podłodze przy końcu ławki od strony głowy.",
+    "Połóż się klatką w dół na ławce — oparcie podpiera górną część tułowia, broda lub czoło wolne od oparcia.",
+    "Sięgnij w dół i chwyć hantle chwytem neutralnym (dłonie zwrócone do siebie). Ramiona zwisają w pełnym wyproście w kierunku podłogi.",
+    "Łokcie utrzymuj proste, ale luźne. Ramiona pozostają sztywnymi linami przez całą serię — pracują wyłącznie łopatki.",
+    "Napnij brzuch, szyję trzymaj neutralnie. Nie patrz w górę — głowa pozostaje w linii kręgosłupa.",
+    "Unieś łopatki w górę i ściągnij je do siebie (uniesienie + ściągnięcie), jakbyś chciał dotknąć nimi sufitu. Wydech w fazie koncentrycznej.",
+    "Mocno napnij na szczycie przez 1-2 sekundy w pełnym uniesieniu i ściągnięciu łopatek. Wyczuj skurcz między łopatkami i nad nimi.",
+    "Opuszczaj hantle w kontrolowany sposób przez 2-3 sekundy, pozwalając łopatkom na pełną protrakcję i obniżenie — głębokie rozciągnięcie trapezów.",
+    "Unikaj uginania łokci — jeśli przejmuje biceps, ciężar jest za duży. Zmniejsz obciążenie i skup się na łopatkach."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_shrug",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "scapular",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_lower"],
+    "secondary": ["trapezius_middle", "rhomboids", "trapezius_upper"],
+    "stabilizers": ["forearm_flexors", "rear_deltoids", "rotator_cuff", "erector_spinae", "core"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_lower": "P9",
+    "trapezius_middle": "S8",
+    "rhomboids": "S7",
+    "trapezius_upper": "S6",
+    "rear_deltoids": "T4",
+    "forearm_flexors": "T4",
+    "rotator_cuff": "T3",
+    "erector_spinae": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "decline_bench"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-shrug", "face-pull"],
+    "progression_to": ["heavy-dumbbell-decline-shrug", "barbell-prone-shrug", "prone-y-raise"],
+    "alternatives": ["dumbbell-incline-shrug", "cable-face-pull", "chest-supported-row", "prone-trap-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Decline bench 30-45 degrees, dumbbells ready at head end",
+      "Chest pad fully supports torso, head free, neck neutral",
+      "Neutral grip, palms facing each other, arms hanging straight",
+      "Elbows straight but not locked — arms are passive hooks",
+      "Brace core, ribs down, do not arch the lower back"
+    ],
+    "setup_cues_pl": [
+      "Ławka skośna ujemna 30-45 stopni, hantle gotowe przy głowie",
+      "Oparcie w pełni podpiera tułów, głowa swobodna, szyja neutralna",
+      "Chwyt neutralny, dłonie skierowane do siebie, ramiona zwisają prosto",
+      "Łokcie proste ale niezablokowane — ramiona to bierne haki",
+      "Napnij brzuch, żebra w dół, nie wyginaj lędźwi"
+    ],
+    "execution_cues": [
+      "Pull the shoulder blades UP and TOGETHER, not just up",
+      "Imagine touching your shoulder blades to the ceiling",
+      "Squeeze for two full seconds at the top",
+      "Lower slowly — feel the stretch between the shoulder blades",
+      "Arms are ropes, not levers — bending elbows kills the exercise"
+    ],
+    "execution_cues_pl": [
+      "Pociągnij łopatki W GÓRĘ i DO SIEBIE, nie tylko w górę",
+      "Wyobraź sobie że dotykasz łopatkami sufitu",
+      "Mocne napięcie przez dwie pełne sekundy na szczycie",
+      "Opuszczaj wolno — wyczuj rozciągnięcie między łopatkami",
+      "Ramiona to liny, nie dźwignie — uginanie łokci niszczy ćwiczenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows (turning it into a row)",
+        "faultPl": "Uginanie łokci (zamiana w wiosłowanie)",
+        "cause": "Load too heavy; biceps and lats kick in to help lift the dumbbells when scapular muscles are out-matched",
+        "causePl": "Zbyt duży ciężar; biceps i najszerszy włączają się, aby pomóc unieść hantle, gdy mięśnie łopatkowe nie dają rady",
+        "cue": "Keep elbows pin-straight the whole set. If they bend, lower the weight by 20-30%.",
+        "cuePl": "Łokcie idealnie proste przez całą serię. Jeśli się uginają — zmniejsz ciężar o 20-30%."
+      },
+      {
+        "fault": "Lifting only with the upper traps (pure elevation, no retraction)",
+        "faultPl": "Unoszenie wyłącznie górnym trapezem (samo uniesienie, bez ściągnięcia)",
+        "cause": "Habit from standing shrugs — defaulting to vertical-only shoulder elevation instead of using the prone position's leverage to retract",
+        "causePl": "Nawyk z szrugsów stojąc — domyślnie tylko pionowe uniesienie barków zamiast wykorzystania pozycji leżącej do ściągnięcia łopatek",
+        "cue": "Think 'up AND in' — pull blades toward the spine at the same time as toward the ceiling.",
+        "cuePl": "Myśl 'w górę I do środka' — ciągnij łopatki do kręgosłupa równocześnie z uniesieniem do sufitu."
+      },
+      {
+        "fault": "Hyperextending the neck (looking forward or up)",
+        "faultPl": "Przeprost szyi (patrzenie do przodu lub w górę)",
+        "cause": "Instinct to keep the head up to see the gym; results in chronic cervical compression and pain",
+        "causePl": "Instynkt unoszenia głowy, aby widzieć salę; skutkuje przewlekłym uciskiem w odcinku szyjnym i bólem",
+        "cue": "Forehead points to the floor, eyes on the floor under the bench. Neck stays in line with spine.",
+        "cuePl": "Czoło skierowane do podłogi, wzrok na podłodze pod ławką. Szyja w linii kręgosłupa."
+      },
+      {
+        "fault": "Using momentum / bouncing reps",
+        "faultPl": "Wykorzystywanie rozpędu / odbijanie powtórzeń",
+        "cause": "Trying to lift more weight than scapular control allows; chest-supported position makes it tempting to ricochet off the bottom",
+        "causePl": "Próba uniesienia większego ciężaru niż pozwala kontrola łopatkowa; pozycja z podparciem klatki zachęca do odbijania w dolnej pozycji",
+        "cue": "Pause one second at the bottom in full stretch. No bounce. Re-initiate from a dead-stop with the scapulae only.",
+        "cuePl": "Zatrzymaj się na sekundę na dole w pełnym rozciągnięciu. Bez odbicia. Rusz z miejsca, używając tylko łopatek."
+      },
+      {
+        "fault": "Bench angle too steep (near vertical)",
+        "faultPl": "Zbyt stromy kąt ławki (prawie pionowy)",
+        "cause": "Confusing this exercise with a standing shrug variant; too steep an angle turns it back into upper-trap-only work",
+        "causePl": "Mylenie tego ćwiczenia z wariantem szrugsa stojąc; zbyt stromy kąt znowu sprowadza pracę głównie do górnego trapezu",
+        "cue": "30-45 degrees is the sweet spot. Torso roughly parallel to floor lets the lower traps do the work.",
+        "cuePl": "30-45 stopni to optymalny zakres. Tułów mniej więcej równolegle do podłogi pozwala pracować dolnemu trapezowi."
+      }
+    ],
+    "breathing": "Inhale at the bottom in the stretched position. Exhale during the concentric (scapular elevation + retraction). Keep a moderate brace throughout — do not hold full Valsalva because the prone position already restricts chest expansion.",
+    "breathingPl": "Wdech na dole w pozycji rozciągniętej. Wydech w fazie koncentrycznej (uniesienie + ściągnięcie łopatek). Utrzymuj umiarkowane napięcie brzucha — nie wykonuj pełnej manewru Valsalvy, bo pozycja leżąca już ogranicza rozprężenie klatki."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_spine_pathology_or_disc_issues",
+      "severity": "modify",
+      "modification": "The prone position with head clear of the pad places sustained load on the cervical extensors. Use a face hole, support the forehead on a rolled towel, or switch to a chest-supported row variant with the head resting on the pad.",
+      "modificationPl": "Pozycja leżąca przodem z głową poza oparciem obciąża prostowniki szyi przez całą serię. Użyj otworu na twarz, oprzyj czoło na zwiniętym ręczniku albo przejdź na wiosłowanie z podparciem klatki z głową na oparciu.",
+      "alternative": "chest-supported-dumbbell-row"
+    },
+    {
+      "condition": "shoulder_instability_or_recent_labral_repair",
+      "severity": "modify",
+      "modification": "The hanging arm position with heavy dumbbells creates strong traction on the glenohumeral joint. Use lighter loads, shorten the bottom range (do not fully relax into the stretch), and prioritize scapular control over weight.",
+      "modificationPl": "Pozycja zwisających ramion z ciężkimi hantlami wywiera mocną trakcję na staw ramienny. Używaj lżejszych obciążeń, skróć zakres na dole (nie rozluźniaj się w pełni w rozciągnięciu), priorytet daj kontroli łopatkowej nad ciężarem.",
+      "alternative": "prone-y-raise"
+    },
+    {
+      "condition": "lumbar_disc_herniation_acute_phase",
+      "severity": "avoid",
+      "modification": "Lying chest-down on a decline bench can compress lumbar discs in flexion. Postpone until cleared by a physiotherapist and substitute with seated face pulls or band scapular work.",
+      "modificationPl": "Leżenie przodem na ławce skośnej ujemnej może uciskać krążki lędźwiowe w zgięciu. Wstrzymaj się do czasu zezwolenia fizjoterapeuty, a zamiast tego wykonuj face pulle siedząc lub pracę łopatkową z gumami.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Heavy traction in the hanging arm position can compress the brachial plexus and aggravate symptoms. Use light loads with high reps and emphasize the retraction-elevation squeeze rather than maximum hang at the bottom.",
+      "modificationPl": "Mocna trakcja w pozycji ze zwisającymi ramionami może uciskać splot ramienny i nasilać objawy. Używaj lekkich ciężarów z większą liczbą powtórzeń, akcent połóż na ściągnięciu-uniesieniu zamiast maksymalnego zwisu na dole.",
+      "alternative": "cable-face-pull"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, recommended) | 3x12-20 (postural focus, slow eccentric) | 4x6-10 (strength, advanced only)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "dumbbell-decline-shrug.gif",
+    "frames_extracted": [
+      "frames/dumbbell-decline-shrug/frame_0_start.png",
+      "frames/dumbbell-decline-shrug/frame_1_early.png",
+      "frames/dumbbell-decline-shrug/frame_2_mid.png",
+      "frames/dumbbell-decline-shrug/frame_3_late.png",
+      "frames/dumbbell-decline-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/dumbbell-decline-shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T20:30:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel. Frame 0/4 (pozycja startowa/końcowa): postać leży klatką w dół na ławce skośnej ujemnej (~30-40 stopni nachylenia), nogi wyprostowane do tyłu, klatka oparta o pad, głowa wolna z brodą lekko cofniętą. Hantle trzymane chwytem neutralnym, ramiona zwisają w pełnym wyproście prostopadle do podłogi — łopatki w pełnej protrakcji i depresji. Frame 1/2/3: szczyt ruchu — łopatki uniesione I ściągnięte, hantle wyciągnięte w górę przy klatce (ruch ok. 10-15 cm). Podświetlenie czerwone pokrywa CAŁY obszar między łopatkami i nad nimi — górny, środkowy I dolny trapez aktywne, ale dominuje obszar między łopatkami (lower/middle trap). Ze względu na pozycję prone z grawitacją działającą prostopadle do tułowia, akcent przesuwa się z upper trap (jak w stojącym szrugsie) na lower trap. Klasyfikacja primary: trapezius_lower P9. Plane: scapular (nie czołowa jak stojący shrug, bo ruch łopatek odbywa się w płaszczyźnie łopatkowo-piersiowej w pozycji prone). Difficulty: 4 (potrzebna świadomość łopatkowa). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "back", "traps", "lower_traps", "isolation", "dumbbell", "decline_bench", "prone", "scapular_control", "postural", "upper_body", "accessory"]
+}

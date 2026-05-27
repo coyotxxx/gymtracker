@@ -1,0 +1,196 @@
+{
+  "id": "barbell-wrist-curl",
+  "name": "Barbell Wrist Curl",
+  "namePl": "Wrist curl ze sztangą",
+  "aliases": ["seated barbell wrist curl", "bench wrist curl", "forearm curl", "palms-up wrist curl"],
+  "aliasesPl": ["uginanie nadgarstków ze sztangą", "uginanie nadgarstków podchwytem", "wrist curl podchwytem", "trening zginaczy przedramienia ze sztangą"],
+
+  "description": "Isolation exercise for the wrist flexors performed with a supinated (palms up) grip on a barbell, with forearms supported on a bench or thighs. Only the wrists move — flexing the bar upward and lowering it under control. Builds forearm flexor strength, grip endurance, and forearm mass. A staple accessory exercise in bodybuilding and grip training programs.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze nadgarstka wykonywane ze sztangą trzymaną podchwytem (dłonie skierowane w górę), z przedramionami opartymi o ławkę lub uda. Pracują wyłącznie nadgarstki — sztanga unoszona do góry i opuszczana w sposób kontrolowany. Buduje siłę zginaczy przedramienia, wytrzymałość chwytu i masę przedramion. Klasyczne ćwiczenie pomocnicze w kulturystyce i treningu siły chwytu.",
+
+  "instructions": [
+    "Sit on a bench (or kneel beside one). Place your forearms flat on the bench pad with palms facing up. Wrists and hands should hang off the edge of the bench.",
+    "Grip the barbell with a supinated (palms up) grip, hands roughly shoulder-width apart. Let your wrists drop so the bar rolls toward your fingertips.",
+    "Stabilize your forearms firmly against the pad — they must not lift off during the movement.",
+    "Curl your wrists upward by flexing them, raising the bar toward your forearms. Exhale on the way up.",
+    "Squeeze the forearm flexors at the top, holding the contraction for a brief moment.",
+    "Lower the bar under control over 2-3 seconds, letting it roll down into your fingers at the bottom for a full stretch.",
+    "Repeat for the prescribed reps. Keep the motion isolated to the wrists — no elbow or shoulder movement."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce (lub uklęknij obok niej). Połóż przedramiona płasko na obiciu ławki, dłońmi do góry. Nadgarstki i dłonie mają wystawać poza krawędź ławki.",
+    "Złap sztangę podchwytem (dłonie do góry), ręce mniej więcej na szerokość barków. Pozwól nadgarstkom opaść tak, by sztanga przetoczyła się ku palcom.",
+    "Mocno dociśnij przedramiona do podłoża — nie mogą się oderwać podczas ruchu.",
+    "Uginaj nadgarstki do góry, unosząc sztangę w kierunku przedramion. Wydychaj w fazie koncentrycznej.",
+    "Mocno napnij zginacze przedramienia w górnej pozycji, zatrzymując skurcz na chwilę.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy, pozwalając jej w dolnej pozycji stoczyć się do palców dla pełnego rozciągnięcia.",
+    "Powtarzaj wymaganą liczbę powtórzeń. Ruch wyłącznie w nadgarstkach — bez pracy łokci ani barków."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_wrist_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["biceps_brachii", "forearm_extensors"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "brachioradialis": "S5",
+    "biceps_brachii": "T3",
+    "forearm_extensors": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "bench"],
+    "optional": ["weight_plates", "collars", "ez_bar"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["behind-the-back-wrist-curl", "barbell-reverse-wrist-curl", "thick-bar-wrist-curl"],
+    "alternatives": ["dumbbell-wrist-curl", "cable-wrist-curl", "ez-bar-wrist-curl", "barbell-reverse-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Forearms flat on the bench, wrists hanging off the edge",
+      "Supinated grip — palms facing up",
+      "Hands roughly shoulder-width apart",
+      "Press forearms firmly into the pad",
+      "Let the bar roll into your fingers for a full stretch"
+    ],
+    "setup_cues_pl": [
+      "Przedramiona płasko na ławce, nadgarstki za krawędzią",
+      "Chwyt podchwytem — dłonie skierowane w górę",
+      "Ręce mniej więcej na szerokość barków",
+      "Mocno dociskaj przedramiona do obicia",
+      "Pozwól sztandze przetoczyć się do palców dla pełnego rozciągnięcia"
+    ],
+    "execution_cues": [
+      "Only the wrists move — forearms glued to the bench",
+      "Squeeze hard at the top of every rep",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Roll the bar into the fingers at the bottom for full ROM",
+      "Light weight, slow tempo — quality over quantity"
+    ],
+    "execution_cues_pl": [
+      "Pracują wyłącznie nadgarstki — przedramiona przyklejone do ławki",
+      "Mocno napinaj w górnej pozycji każdego powtórzenia",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Pozwól sztandze stoczyć się do palców na dole dla pełnego zakresu",
+      "Mały ciężar, wolne tempo — jakość ponad ilość"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting forearms off the bench (using elbow flexion)",
+        "faultPl": "Odrywanie przedramion od ławki (włączanie zginania łokci)",
+        "cause": "Load too heavy, trying to involve biceps to grind out reps",
+        "causePl": "Zbyt duży ciężar, próba włączenia bicepsów aby wymusić powtórzenia",
+        "cue": "Reduce the weight. Have a partner press your forearms down or use a second bench across your forearms.",
+        "cuePl": "Zmniejsz ciężar. Poproś partnera o dociśnięcie przedramion lub użyj drugiej ławki dociskającej."
+      },
+      {
+        "fault": "Partial range of motion (no stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak rozciągnięcia w dolnej pozycji)",
+        "cause": "Holding the bar tightly throughout instead of letting it roll into the fingers",
+        "causePl": "Mocne trzymanie sztangi przez cały ruch zamiast pozwolenia jej stoczyć się do palców",
+        "cue": "Open the fingers slightly at the bottom and let the bar roll down — then close and curl up.",
+        "cuePl": "W dolnej pozycji lekko otwórz palce i pozwól sztandze się stoczyć — potem zamknij dłoń i ugnij do góry."
+      },
+      {
+        "fault": "Using ego weight — explosive jerky reps",
+        "faultPl": "Ego — szarpane, eksplozywne powtórzenia",
+        "cause": "Treating wrist curl as a heavy strength lift instead of an isolation accessory",
+        "causePl": "Traktowanie wrist curl jak ciężkiego ćwiczenia siłowego zamiast pomocniczej izolacji",
+        "cue": "Wrist flexors respond to time under tension. Use 12-20 reps with strict tempo.",
+        "cuePl": "Zginacze nadgarstka reagują na czas pod napięciem. Stosuj 12-20 powtórzeń ze ścisłym tempem."
+      },
+      {
+        "fault": "Bouncing the bar at the bottom",
+        "faultPl": "Odbijanie sztangi w dolnej pozycji",
+        "cause": "Using momentum to start the next rep instead of muscle contraction",
+        "causePl": "Wykorzystywanie rozpędu do rozpoczęcia kolejnego powtórzenia zamiast skurczu mięśnia",
+        "cue": "Pause for half a second at full stretch. Start each rep from a dead stop.",
+        "cuePl": "Zatrzymaj się na pół sekundy w pełnym rozciągnięciu. Każde powtórzenie rozpoczynaj z zatrzymania."
+      },
+      {
+        "fault": "Wrists deviating sideways under load (radial/ulnar deviation)",
+        "faultPl": "Nadgarstki uciekające w bok pod obciążeniem (odchylenie promieniowe/łokciowe)",
+        "cause": "Asymmetric forearm strength or grip too wide/narrow for individual anatomy",
+        "causePl": "Asymetryczna siła przedramion lub chwyt za szeroki/za wąski dla indywidualnej anatomii",
+        "cue": "Adjust grip width until wrists track straight. Consider switching to dumbbells if asymmetry persists.",
+        "cuePl": "Dopasuj szerokość chwytu, aż nadgarstki będą szły prosto. Rozważ hantle jeśli asymetria się utrzymuje."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Breathing is light and rhythmic — this is a small-muscle isolation, not a heavy compound.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Oddech jest lekki i rytmiczny — to izolacja małej grupy mięśniowej, nie ciężkie ćwiczenie złożone."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "avoid",
+      "modification": "This exercise directly loads the medial epicondyle tendons. Avoid completely during active flare-up. Return only after pain-free wrist flexion against light resistance; reintroduce with very light dumbbells before barbell.",
+      "modificationPl": "To ćwiczenie bezpośrednio obciąża przyczepy łokcia przyśrodkowego. Unikaj całkowicie w okresie zaostrzenia. Wracaj dopiero gdy zginanie nadgarstka z lekkim oporem nie boli; rozpocznij od bardzo lekkich hantli, dopiero potem sztangi.",
+      "alternative": "isometric-grip-hold"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Wrist flexion under load can compress the median nerve. Reduce range of motion (avoid maximal flexion at the top), use lighter loads and higher reps, or switch to dumbbell variation for individual wrist tracking.",
+      "modificationPl": "Zginanie nadgarstka pod obciążeniem może uciskać nerw pośrodkowy. Zmniejsz zakres ruchu (unikaj maksymalnego zgięcia w górze), używaj lżejszych obciążeń i większej liczby powtórzeń, lub przejdź na wariant z hantlami dla indywidualnego toru ruchu.",
+      "alternative": "dumbbell-wrist-curl"
+    },
+    {
+      "condition": "wrist_sprain_or_recent_injury",
+      "severity": "avoid",
+      "modification": "Loaded wrist flexion is contraindicated until full pain-free passive range is restored. Begin rehab with isometric grip holds, progress to bodyweight wrist exercises before reloading.",
+      "modificationPl": "Obciążone zginanie nadgarstka jest przeciwwskazane do czasu pełnego bezbólowego zakresu biernego. Rozpocznij rehabilitację od izometrycznych zacisków, przejdź do ćwiczeń nadgarstka bez obciążenia, dopiero potem ponowne obciążenie.",
+      "alternative": null
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Full supinated grip can stress the distal biceps tendon. Use EZ-bar (semi-supinated grip) or reduce load until pain-free.",
+      "modificationPl": "Pełny podchwyt może obciążać ścięgno dystalne bicepsa. Użyj sztangi łamanej (chwyt półsupinowany) lub zmniejsz obciążenie do zakresu bez bólu.",
+      "alternative": "ez-bar-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy/standard) | 3-4x15-25 (endurance/grip) | 2-3x8-12 (strength focus, rare)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "barbell-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-wrist-curl/frame_0_start.png",
+      "frames/barbell-wrist-curl/frame_1_early.png",
+      "frames/barbell-wrist-curl/frame_2_mid.png",
+      "frames/barbell-wrist-curl/frame_3_late.png",
+      "frames/barbell-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/barbell-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Atleta klęczy obok ławki, oba przedramiona oparte płasko na obiciu ławki, dłonie podchwytem (palms up), sztanga trzymana za krawędzią. Frame 0: nadgarstki w pełnym wyproście, sztanga nisko, zginacze przedramienia rozciągnięte i podświetlone na czerwono. Frame 2: nadgarstki w pełnym zgięciu, sztanga uniesiona w kierunku przedramion, czerwone podświetlenie zginaczy bardzo intensywne — pełny skurcz. Frame 4: powrót do dolnej pozycji rozciągnięcia. Przedramiona przez cały ruch pozostają nieruchomo na ławce — pracują tylko nadgarstki. Modelowe wykonanie wariantu bench-supported. Czerwone podświetlenie jednoznacznie wskazuje na zginacze przedramienia jako mięsień główny. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "forearms", "wrist_flexors", "isolation", "barbell", "grip_strength", "accessory", "upper_body"]
+}

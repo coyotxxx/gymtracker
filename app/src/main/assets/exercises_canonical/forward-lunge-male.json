@@ -1,0 +1,206 @@
+{
+  "id": "forward-lunge-male",
+  "name": "Forward Lunge",
+  "namePl": "Wykrok w przód",
+  "aliases": ["bodyweight forward lunge", "stationary forward lunge", "front lunge", "bodyweight lunge"],
+  "aliasesPl": ["wykrok w przód z masy ciała", "wykrok klasyczny", "wykrok przedni", "wykrok bez obciążenia"],
+
+  "description": "Classic bodyweight unilateral lower-body compound exercise. From a standing position with hands on hips, the athlete steps forward into a split stance, descends until both knees form roughly 90°, then pushes back off the front foot to return to the start. Primarily targets quads and glutes of the front leg, with hamstrings, hip stabilizers and calves supporting balance. The unloaded version is ideal for learning the movement pattern, warming up, conditioning, and exposing left-right asymmetries before adding load.",
+  "descriptionPl": "Klasyczne jednostronne wielostawowe ćwiczenie dolnej części ciała z masy ciała. Z pozycji stojącej z dłońmi na biodrach trenujący wykonuje krok w przód do pozycji wykroku, schodzi aż oba kolana utworzą około 90°, po czym odpycha się przednią stopą i wraca do pozycji wyjściowej. Głównie angażuje czworogłowe i pośladki przedniej nogi, a dwugłowe uda, stabilizatory bioder oraz łydki wspierają równowagę. Wersja bez obciążenia świetnie sprawdza się do nauki wzorca ruchowego, rozgrzewki, kondycji i ujawniania asymetrii lewo-prawo przed dołożeniem ciężaru.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, hands on hips or relaxed at your sides. Look straight ahead.",
+    "Brace your core, draw shoulder blades back, chest up. Distribute weight evenly across both feet.",
+    "Take a controlled step forward with one leg — about 1.5 times your normal walking step. Plant the front foot flat.",
+    "Inhale and lower your body straight down by bending both knees simultaneously. Keep the torso upright — do not lean forward.",
+    "Descend until the front thigh is parallel to the floor and the back knee hovers 2-3 cm above the ground. Front knee tracks over the front ankle.",
+    "Pause briefly at the bottom while maintaining balance. Hips stay square (do not rotate toward the front leg).",
+    "Push through the front heel and mid-foot to drive your body back up. Exhale on the ascent.",
+    "Bring the front leg back to meet the rear leg, returning to a fully upright stance.",
+    "Repeat on the same leg or alternate legs each rep, depending on programming.",
+    "Maintain a quiet, controlled cadence — about 2 seconds down, 1 second up. Avoid bouncing out of the bottom."
+  ],
+  "instructionsPl": [
+    "Stań prosto ze stopami na szerokość bioder, dłonie na biodrach lub luźno wzdłuż ciała. Wzrok prosto przed siebie.",
+    "Napnij brzuch, ściągnij łopatki w tył, klatka w górze. Rozłóż ciężar równomiernie na obu stopach.",
+    "Wykonaj kontrolowany krok w przód jedną nogą — około 1,5 razy dłuższy niż normalny krok. Postaw stopę przednią płasko na podłodze.",
+    "Wdech i opuść ciało prosto w dół zginając jednocześnie oba kolana. Utrzymaj tułów pionowo — nie pochylaj się w przód.",
+    "Schodź aż przednie udo będzie równoległe do podłogi, a tylne kolano znajdzie się 2-3 cm nad podłogą. Przednie kolano nad kostką przedniej stopy.",
+    "Krótka pauza na dole z utrzymaniem równowagi. Biodra zostają ustawione równolegle (nie skręcaj ich w stronę przedniej nogi).",
+    "Wypchnij się przez piętę i środek stopy przedniej nogi, wracając w górę. Wydech podczas wychodzenia.",
+    "Przyciągnij przednią nogę do tylnej, wracając do pełnej pozycji stojącej.",
+    "Powtarzaj na tej samej nodze lub zmieniaj nogi co powtórzenie — w zależności od programu treningowego.",
+    "Utrzymaj spokojne, kontrolowane tempo — około 2 sekundy w dół, 1 sekunda w górę. Nie odbijaj się w dolnej pozycji."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "gluteus_medius", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "gluteus_medius": "S6",
+    "core": "S5",
+    "calves": "T4",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat", "mirror"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-squat", "static-lunge", "split-squat"],
+    "progression_to": ["walking-lunge", "reverse-lunge", "goblet-lunge", "dumbbell-lunge", "barbell-lunge", "bulgarian-split-squat"],
+    "alternatives": ["reverse-lunge", "static-lunge", "split-squat", "step-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width apart, hands on hips — fixed reference point for the torso",
+      "Chest up, shoulders relaxed, gaze forward at eye level",
+      "Core lightly braced — about 30% effort, enough to keep the spine neutral",
+      "Stand tall — full hip and knee extension before the step",
+      "Pick a focal point on the wall — keeps the head and neck neutral"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, dłonie na biodrach — stały punkt odniesienia dla tułowia",
+      "Klatka w górze, barki rozluźnione, wzrok prosto na wysokości oczu",
+      "Brzuch lekko napięty — około 30% napięcia, wystarczająco aby utrzymać kręgosłup neutralnie",
+      "Stań wysoko — pełne wyprost biodra i kolana przed krokiem",
+      "Wybierz punkt skupienia wzroku na ścianie — pomaga utrzymać neutralną pozycję głowy i szyi"
+    ],
+    "execution_cues": [
+      "Step long, drop straight down — front shin vertical at the bottom",
+      "Back knee toward the floor, not back behind you",
+      "Drive through the whole front foot — heel and mid-foot, not the toes",
+      "Hips square — do not let the front hip rotate inward",
+      "Push the floor away on the way up, exhale at the top"
+    ],
+    "execution_cues_pl": [
+      "Długi krok, schodź prosto w dół — piszczel przedniej nogi pionowo na dole",
+      "Tylne kolano w dół do podłogi, nie w tył",
+      "Wypychaj się przez całą przednią stopę — piętą i środkiem, nie palcami",
+      "Biodra równolegle — nie pozwól by przednie biodro skręciło się do wewnątrz",
+      "Odpychaj podłogę w drodze w górę, wydech na górze"
+    ],
+    "common_faults": [
+      {
+        "fault": "Front knee caves inward (valgus collapse)",
+        "faultPl": "Przednie kolano zapada się do wewnątrz (koślawość)",
+        "cause": "Weak gluteus medius, poor hip control, or fatigue. Increases stress on the medial knee structures.",
+        "causePl": "Słaby pośladkowy średni, słaba kontrola biodra lub zmęczenie. Zwiększa obciążenie przyśrodkowych struktur kolana.",
+        "cue": "Push the front knee outward toward the small toe — track over the second/third toe",
+        "cuePl": "Pchaj przednie kolano na zewnątrz w kierunku małego palca — w linii drugiego/trzeciego palca"
+      },
+      {
+        "fault": "Torso lean forward",
+        "faultPl": "Pochylenie tułowia w przód",
+        "cause": "Weak core, weak quads, or step too short forcing forward weight shift",
+        "causePl": "Słaby brzuch, słabe czworogłowe lub za krótki krok wymuszający przeniesienie ciężaru w przód",
+        "cue": "Imagine a string pulling the crown of your head straight up. Chest stays open and proud.",
+        "cuePl": "Wyobraź sobie sznurek ciągnący czubek głowy prosto w górę. Klatka pozostaje otwarta i dumna."
+      },
+      {
+        "fault": "Step too short — front knee passes the toes",
+        "faultPl": "Za krótki krok — przednie kolano wychodzi za palce",
+        "cause": "Underestimating stride length needed for proper mechanics. Loads the patellar tendon excessively.",
+        "causePl": "Niedoszacowanie długości kroku potrzebnej do prawidłowej mechaniki. Nadmiernie obciąża rzepkę.",
+        "cue": "Step out further — front shin should stay vertical when the back knee touches down",
+        "cuePl": "Wykonaj dłuższy krok — piszczel przedniej nogi powinna pozostać pionowa gdy tylne kolano dotyka podłogi"
+      },
+      {
+        "fault": "Pushing off the back leg to stand up",
+        "faultPl": "Odpychanie się tylną nogą podczas wstawania",
+        "cause": "Habit from walking pattern or trying to avoid front-leg fatigue. Reduces the training effect on the working leg.",
+        "causePl": "Nawyk ze wzorca chodu lub próba uniknięcia zmęczenia przedniej nogi. Zmniejsza efekt treningowy na pracującą nogę.",
+        "cue": "Drive ONLY through the front heel — the back leg just trails along for balance",
+        "cuePl": "Wypychaj się WYŁĄCZNIE przez piętę przedniej nogi — tylna noga tylko towarzyszy dla równowagi"
+      },
+      {
+        "fault": "Loss of balance / lateral wobble",
+        "faultPl": "Utrata równowagi / chwianie na boki",
+        "cause": "Feet on a tightrope (too narrow base), weak hip stabilizers, or insufficient ankle mobility",
+        "causePl": "Stopy na linii prostej (za wąska podstawa), słabe stabilizatory bioder lub niedostateczna mobilność stawu skokowego",
+        "cue": "Place feet on two parallel railway tracks, not on one line. Slow the tempo down.",
+        "cuePl": "Ustaw stopy jak na dwóch równoległych szynach, nie na jednej linii. Spowolnij tempo ruchu."
+      }
+    ],
+    "breathing": "Inhale and brace lightly at the top. Hold breath on the descent. Exhale on the way up as you push back to standing.",
+    "breathingPl": "Wdech i lekkie napięcie na górze. Wstrzymaj oddech podczas schodzenia. Wydech podczas wychodzenia, gdy wypychasz się z powrotem do pozycji stojącej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Avoid deep lunges. Switch to a shorter-ROM split squat or reverse lunge (less anterior knee shear).",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Unikaj głębokich wykroków. Przejdź na split squat z krótszym zakresem ruchu lub wykrok w tył (mniej sił ścinających na przednie kolano).",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Forward lunges can aggravate anterior knee pain. Use reverse lunge or split squat — both reduce patellofemoral load.",
+      "modificationPl": "Wykroki w przód mogą drażnić przedni ból kolana. Użyj wykroku w tył lub split squat — oba zmniejszają obciążenie stawu rzepkowo-udowego.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_ankle_sprain",
+      "severity": "avoid",
+      "modification": "Stepping forward demands ankle dorsiflexion and stability on the front foot. Switch to seated or low-impact alternatives until cleared by a physiotherapist.",
+      "modificationPl": "Krok w przód wymaga zgięcia grzbietowego i stabilności stawu skokowego przedniej stopy. Przejdź na ćwiczenia siedzące lub niskoobciążeniowe do czasu zgody fizjoterapeuty.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Unilateral patterns demand single-leg stability. Hold a wall or rail for fingertip support, or switch to a bilateral squat for a more stable base.",
+      "modificationPl": "Wzorce jednostronne wymagają stabilności na jednej nodze. Trzymaj się ściany lub poręczy palcem dla podparcia, lub przejdź na obustronny przysiad dla stabilniejszej podstawy.",
+      "alternative": "bodyweight-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 per leg (general fitness / warm-up) | 3-4x8-12 per leg (hypertrophy with progression) | 2-3x15-20 per leg (endurance / conditioning)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "forward-lunge-male.gif",
+    "frames_extracted": [
+      "frames/forward-lunge-male/frame_0_start.png",
+      "frames/forward-lunge-male/frame_1_early.png",
+      "frames/forward-lunge-male/frame_2_mid.png",
+      "frames/forward-lunge-male/frame_3_late.png",
+      "frames/forward-lunge-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/forward-lunge-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Postać męska zaczyna z pozycji stojącej, dłonie na biodrach, stopy na szerokość bioder. Klatka 1 i 3 pokazują symetryczny wykrok w przód — przednia noga zgięta ~90°, tylne kolano blisko podłogi, tułów pionowy. Klatki 0/2/4 to pozycja stojąca (między powtórzeniami). Klatka 4 (end) zawiera ghosted overlay z dolnej pozycji — potwierdza stationary forward lunge (nie walking lunge — nie ma kolejnych kroków, postać wraca do tej samej pozycji startowej). Mięśnie podświetlone w GIFie: czworogłowe obu nóg (mocno) + pośladki przedniej + łydki — pasuje do anatomii bodyweight wykroku. Klasyfikacja force='both' bo schodzenie ekscentryczne (kontrola opadania) i wychodzenie koncentryczne (push) są równie istotne w bodyweight wariancie. Pola PL napisane od zera w polskim standardzie fitness — 'wykrok w przód' to powszechna nazwa.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "bodyweight", "compound", "beginner_friendly", "warm_up", "asymmetry_corrector", "no_equipment"]
+}

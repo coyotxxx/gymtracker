@@ -1,0 +1,206 @@
+{
+  "id": "rope-climb",
+  "name": "Rope Climb",
+  "namePl": "Wspinaczka po linie",
+  "aliases": ["rope climbing", "climbing rope", "gym rope climb", "vertical rope climb"],
+  "aliasesPl": ["wspinaczka po linie", "wspinanie po linie", "wchodzenie po linie", "lina wspinaczkowa", "wspinaczka na linie"],
+
+  "description": "Full-body vertical pull where you ascend a hanging rope using alternating hand-over-hand pulls. Combines pull-vertical pattern with massive grip endurance demand and core stabilization. Used in CrossFit, military fitness, gymnastics and obstacle racing. Develops lats, biceps, forearms (crushing grip), and core under continuous tension. Legs may assist (S-hook, J-hook) or hang for legless version.",
+  "descriptionPl": "Pełnociałowy ciąg pionowy — wspinasz się po wiszącej linie naprzemiennymi ciągami rąk. Łączy wzorzec pull-vertical z ogromnym wymaganiem wytrzymałości chwytu i stabilizacją tułowia. Stosowane w CrossFit, treningu wojskowym, gimnastyce i biegach z przeszkodami. Rozwija najszersze grzbietu, bicepsy, przedramiona (chwyt zgniatający) i brzuch pod ciągłym napięciem. Nogi mogą asystować (S-hook, J-hook) lub zwisać w wersji legless.",
+
+  "instructions": [
+    "Stand under the rope. Reach as high as possible and grip the rope tightly with one hand above the other (dominant hand higher for first pull).",
+    "Engage your shoulder blades (depression — pull them DOWN), brace your core, and jump or pull to lift your feet off the ground.",
+    "For leg-assisted (J-hook or S-hook): wrap the rope around one foot and clamp the other foot on top to create a brake/platform.",
+    "Initiate the pull with the LOWER arm: drive the elbow DOWN and back, pulling your body up while the upper hand stabilizes.",
+    "As the lower arm pulls, reach the OPPOSITE hand UP the rope to a new high grip — this is one alternating cycle.",
+    "Keep core tight to prevent body sway. Avoid letting legs swing — they should track directly below the torso (or clamp the rope if leg-assisted).",
+    "Continue alternating: pull with lower arm, reach with upper, re-grip, repeat. Move smoothly without losing tension.",
+    "DESCENT (critical): control the descent hand-over-hand. NEVER slide down (rope burn). Reverse the climb sequence with full grip on each transition.",
+    "If leg-assisted: open the foot lock, lower hands one at a time, re-lock feet, repeat downward."
+  ],
+  "instructionsPl": [
+    "Stań pod liną. Sięgnij jak najwyżej i mocno chwyć linę jedną ręką nad drugą (dominująca ręka wyżej dla pierwszego ciągu).",
+    "Aktywuj łopatki (depresja — opuść je W DÓŁ), napnij brzuch i podskocz lub podciągnij się unosząc stopy nad ziemię.",
+    "Dla wersji z nogami (J-hook lub S-hook): owiń linę wokół jednej stopy i przyciśnij drugą stopą z góry tworząc hamulec/platformę.",
+    "Rozpocznij ciąg DOLNĄ ręką: napieraj łokciem W DÓŁ i do tyłu, podciągając ciało, podczas gdy górna ręka stabilizuje.",
+    "Gdy dolna ręka ciągnie, sięgnij PRZECIWNĄ ręką W GÓRĘ po linie do nowego wyższego chwytu — to jeden cykl naprzemienny.",
+    "Trzymaj brzuch napięty by ciało się nie kołysało. Nie pozwól nogom wahadłować — powinny być bezpośrednio pod tułowiem (lub zaciskać linę przy wersji z nogami).",
+    "Kontynuuj naprzemiennie: ciąg dolną ręką, sięgnięcie górną, nowy chwyt, powtórzenie. Płynnie bez utraty napięcia.",
+    "ZEJŚCIE (kluczowe): kontroluj zejście ręka po ręce. NIGDY nie zjeżdżaj (oparzenia od liny). Odwróć sekwencję wspinaczki z pełnym chwytem na każdej zmianie.",
+    "Jeśli z nogami: otwórz zamek stóp, opuść ręce po jednej, ponownie zacisnij stopy, powtarzaj w dół."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii", "forearms"],
+    "secondary": ["trapezius_middle_lower", "rhomboids", "teres_major", "brachialis", "brachioradialis", "core"],
+    "stabilizers": ["rotator_cuff", "rectus_abdominis", "obliques", "hip_flexors", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P9",
+    "forearms": "P10",
+    "core": "P9",
+    "trapezius_middle_lower": "S8",
+    "rhomboids": "S7",
+    "teres_major": "S8",
+    "brachialis": "S8",
+    "hip_flexors": "S7",
+    "obliques": "S7"
+  },
+
+  "equipment": {
+    "required": ["climbing_rope"],
+    "optional": ["chalk", "long_socks", "climbing_gloves", "crash_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["pull-up", "dead-hang", "chin-up", "lat-pulldown", "hanging-knee-raise"],
+    "progression_to": ["legless-rope-climb", "weighted-rope-climb", "l-sit-rope-climb", "one-arm-rope-climb"],
+    "alternatives": ["pull-up", "lat-pulldown", "weighted-pull-up", "chin-up", "muscle-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Reach HIGH for first grip — start with arms long",
+      "Lower hand and upper hand stacked, dominant higher",
+      "Shoulder blades DOWN (no shrug)",
+      "Core braced before feet leave ground",
+      "Leg-assist: rope between feet, clamp top foot DOWN"
+    ],
+    "setup_cues_pl": [
+      "Sięgnij WYSOKO po pierwszy chwyt — zacznij z długimi ramionami",
+      "Dolna i górna ręka stos, dominująca wyżej",
+      "Łopatki W DÓŁ (bez unoszenia)",
+      "Brzuch napięty zanim stopy oderwą się od ziemi",
+      "Z nogami: lina między stopami, górna stopa dociska W DÓŁ"
+    ],
+    "execution_cues": [
+      "Pull elbow DOWN and BACK — don't 'pull up'",
+      "Reach OPPOSITE hand high to new grip",
+      "Squeeze rope CRUSHINGLY — grip is your lifeline",
+      "Body stays UNDER hands — no swinging",
+      "DESCEND controlled hand-over-hand — never slide"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciem W DÓŁ i DO TYŁU — nie 'podciągaj się'",
+      "Sięgnij PRZECIWNĄ ręką wysoko do nowego chwytu",
+      "Ściskaj linę MIAŻDŻĄCO — chwyt to twoje życie",
+      "Ciało POD rękami — bez kołysania",
+      "ZEJŚCIE kontrolowane ręka po ręce — nigdy nie zjeżdżaj"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sliding down the rope (rope burn)",
+        "faultPl": "Zjazd po linie (oparzenia od liny)",
+        "cause": "Loss of grip endurance, fear of fall, or laziness on descent",
+        "causePl": "Utrata wytrzymałości chwytu, strach przed upadkiem, lub lenistwo na zejściu",
+        "cue": "Always descend hand-over-hand. If grip fails, drop straight down to mat — don't slide. Train descent separately if weak.",
+        "cuePl": "Zawsze schodź ręka po ręce. Jeśli chwyt zawodzi, spadnij prosto na matę — nie zjeżdżaj. Trenuj zejście oddzielnie jeśli słabe."
+      },
+      {
+        "fault": "Body swinging / pendulum motion",
+        "faultPl": "Ciało kołysze się / ruch wahadłowy",
+        "cause": "Weak core, asymmetric pulling, or no leg lock",
+        "causePl": "Słaby brzuch, asymetryczny ciąg, lub brak zamka nóg",
+        "cue": "Brace abs throughout. Keep legs together (or locked on rope). Pull straight down, not across.",
+        "cuePl": "Napnij brzuch przez cały czas. Trzymaj nogi razem (lub zamknięte na linie). Ciągnij prosto W DÓŁ, nie w bok."
+      },
+      {
+        "fault": "Pulling with biceps only (no lat engagement)",
+        "faultPl": "Ciąg tylko bicepsami (bez aktywacji najszerszych)",
+        "cause": "Failure to depress scapula, treating it like a curl",
+        "causePl": "Brak depresji łopatek, traktowanie jak uginanie",
+        "cue": "Initiate every pull by driving the ELBOW down. Lats start the movement, biceps finish it.",
+        "cuePl": "Rozpocznij każdy ciąg napierając ŁOKCIEM W DÓŁ. Najszersze startują ruch, bicepsy go kończą."
+      },
+      {
+        "fault": "Reaching too short with the upper hand",
+        "faultPl": "Sięganie za krótko górną ręką",
+        "cause": "Fatigue or fear of losing balance",
+        "causePl": "Zmęczenie lub strach przed utratą równowagi",
+        "cue": "Reach as HIGH as your arm allows. Short reaches = more pulls = faster fatigue. Big reaches = efficiency.",
+        "cuePl": "Sięgaj tak WYSOKO jak ramię pozwala. Krótkie sięgnięcia = więcej ciągów = szybsze zmęczenie. Duże sięgnięcia = efektywność."
+      },
+      {
+        "fault": "Not setting/resetting the foot lock on each pull",
+        "faultPl": "Brak ustawienia/resetowania zamka stóp przy każdym ciągu",
+        "cause": "Trying to climb 'legless' without ready, or fatigue",
+        "causePl": "Próba wspinaczki 'legless' bez gotowości, lub zmęczenie",
+        "cue": "If using legs: after each hand cycle, re-clamp feet to give arms a micro-rest. Lock breaks = climb breaks.",
+        "cuePl": "Jeśli używasz nóg: po każdym cyklu rąk, ponownie zaciśnij stopy by dać ramionom mikro-odpoczynek. Zamek = etap wspinaczki."
+      }
+    ],
+    "breathing": "Breathe rhythmically with each pull cycle. Exhale on the pull up, inhale on the reach. Don't hold breath — rope climb is endurance-heavy and oxygen debt = grip failure.",
+    "breathingPl": "Oddychaj rytmicznie z każdym cyklem ciągu. Wydech na ciągu w górę, wdech na sięgnięciu. Nie wstrzymuj — wspinaczka po linie jest wytrzymałościowa i dług tlenowy = utrata chwytu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "Hanging from rope places massive load on overhead shoulder position. Avoid until shoulder is stable; use lat pulldown or band-assisted pull-ups instead.",
+      "modificationPl": "Zwis na linie obciąża masywnie pozycję barku nad głową. Unikaj do stabilizacji barku; użyj lat pulldown lub podciągania z gumą.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Rope climb places huge sustained load on biceps/brachialis tendons. Heal fully before attempting; substitute with controlled cable rows.",
+      "modificationPl": "Wspinaczka po linie obciąża stale ścięgna bicepsa/ramiennego. Wylecz całkowicie przed próbą; zastąp kontrolowanymi wiosłami linkowymi.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "skin_conditions_palms",
+      "severity": "modify",
+      "modification": "Open wounds, blisters, or eczema on palms — wear climbing gloves or skip. Rope friction destroys delicate skin.",
+      "modificationPl": "Otwarte rany, pęcherze, lub egzema na dłoniach — załóż rękawiczki wspinaczkowe lub odpuść. Tarcie liny niszczy delikatną skórę.",
+      "alternative": "pull-up"
+    },
+    {
+      "condition": "no_safety_mat_or_spotter",
+      "severity": "avoid",
+      "modification": "Rope climb done improperly can result in fall from height. Always have crash mat below and ideally a spotter for first sessions.",
+      "modificationPl": "Wspinaczka po linie wykonywana nieprawidłowo może zakończyć się upadkiem z wysokości. Zawsze miej matę pod sobą i najlepiej asystenta przy pierwszych sesjach.",
+      "alternative": "pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5 ascents (full rope) | EMOM 1 climb x10 min | AMRAP climbs in 5-10 min | Legless: 1-3 climbs",
+  "calories_per_kg_per_hour": 12.0,
+
+  "media": {
+    "primary": "rope-climb.gif",
+    "frames_extracted": [
+      "frames/rope-climb/frame_0_start.png",
+      "frames/rope-climb/frame_1_early.png",
+      "frames/rope-climb/frame_2_mid.png",
+      "frames/rope-climb/frame_3_late.png",
+      "frames/rope-climb/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/rope-climb"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frames pokazują legless rope climb (bez asysty nóg) — pełnociałowy alternating pull-vertical. Frame 0: start z lewą ręką wyżej, łopatki ściągnięte w dół, pełna aktywacja najszerszych grzbietu i bicepsów. Frame 2: pozycja środkowa, prawa ręka sięga w górę po nowy chwyt, lat aktywny. Frame 4: kontynuacja cyklu z nowym wysokim chwytem (widmo poprzedniej pozycji). Animacja pokazuje wariant legless — najtrudniejsza forma. JSON pokrywa obie wersje (z asystą nóg J/S-hook i legless) z wyraźnym rozróżnieniem w instrukcjach. Difficulty 8 — bardzo wymagające ze względu na grip endurance i risk upadku. Movement_pattern pull_vertical z laterality unilateral_alternating (każda ręka pracuje na zmianę). Forearms P10 ze względu na zgniatający chwyt na linie pod pełnym body weight przez długi czas.",
+
+  "tags": ["calisthenics", "bodyweight", "compound", "full_body", "vertical_pull", "grip_endurance", "crossfit", "military_fitness", "gymnastics", "obstacle_racing", "back", "biceps", "core", "advanced"]
+}

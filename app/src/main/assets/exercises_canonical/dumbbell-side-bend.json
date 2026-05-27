@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-side-bend",
+  "name": "Dumbbell Side Bend",
+  "namePl": "Skłony boczne z hantlem",
+  "aliases": ["dumbbell side bend", "standing side bend", "lateral flexion dumbbell", "oblique side bend"],
+  "aliasesPl": ["skłony boczne z hantlem", "skłony boczne na stojąco", "boczne zginanie tułowia z hantlem", "lateral flexion z hantlem"],
+
+  "description": "Standing isolation exercise for the obliques and quadratus lumborum. Holding a dumbbell in one hand at the side, you bend the torso laterally (sideways) toward the loaded side, then return through center to fully contract the obliques on the opposite side. Pure lateral flexion in the frontal plane — no rotation, no forward/backward lean. A classic finishing movement for oblique and lower-back stability work.",
+  "descriptionPl": "Ćwiczenie izolowane na skośne i mięsień czworoboczny lędźwi w pozycji stojącej. Trzymając hantel w jednej ręce wzdłuż ciała, pochylasz tułów w bok w stronę obciążenia, a następnie wracasz przez środek pełnym napięciem skośnych po przeciwnej stronie. Czysta lateral flexion w płaszczyźnie czołowej — bez rotacji, bez pochylania w przód/tył. Klasyczne ćwiczenie wykończeniowe na skośne i stabilizację dolnego odcinka pleców.",
+
+  "instructions": [
+    "Stand upright with feet hip-width apart, knees slightly soft (not locked).",
+    "Hold a dumbbell in one hand with a neutral grip, arm hanging straight down along the side of the thigh.",
+    "Place the opposite hand on the side of the head or behind the neck for symmetry (does not push).",
+    "Brace the core and set the pelvis neutral — squeeze the glutes lightly to prevent hip shift.",
+    "Slowly lean your torso laterally toward the dumbbell side — the weight slides down along the outer thigh. Move only sideways, not forward.",
+    "Lower until you feel a strong stretch along the opposite (unloaded) side of the waist — typically 15–25° of lateral flexion.",
+    "Reverse the motion by pulling the ribcage toward the opposite hip — contract the obliques on the unloaded side hard.",
+    "Pass through neutral and lean slightly past vertical to the opposite side (a small contraction range), without rotating the trunk.",
+    "Complete all reps on one side, then switch the dumbbell to the other hand and repeat."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, kolana lekko miękkie (nie blokuj).",
+    "Trzymaj hantel w jednej ręce chwytem neutralnym, ramię swobodnie wzdłuż uda.",
+    "Drugą dłoń połóż przy skroni lub za karkiem dla symetrii (nie naciska).",
+    "Napnij brzuch i ustaw miednicę neutralnie — lekko ściśnij pośladki by biodra nie uciekły w bok.",
+    "Powoli pochyl tułów w bok w stronę hantla — ciężar zsuwa się wzdłuż zewnętrznej strony uda. Ruch tylko na bok, nie w przód.",
+    "Schodź aż poczujesz mocne rozciągnięcie po przeciwnej (nieobciążonej) stronie talii — zwykle 15–25° pochylenia.",
+    "Wróć ciągnąc klatkę piersiową w stronę przeciwnego biodra — mocno napnij skośne po nieobciążonej stronie.",
+    "Przejdź przez pion i lekko wychyl się w przeciwną stronę (mały zakres kontrakcji), bez skręcania tułowia.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, zmień hantel do drugiej ręki i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "lateral_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "quadratus_lumborum"],
+    "secondary": ["erector_spinae", "rectus_abdominis"],
+    "stabilizers": ["glutes", "forearms", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "quadratus_lumborum": "P9",
+    "erector_spinae": "S6",
+    "rectus_abdominis": "S5",
+    "glutes": "T3",
+    "forearms": "T3",
+    "transverse_abdominis": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["kettlebell", "plate", "cable"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["plank", "dead-bug"],
+    "progression_to": ["cable-side-bend", "weighted-side-plank", "suitcase-carry"],
+    "alternatives": ["side-plank", "cable-woodchopper", "russian-twist", "suitcase-carry"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall — crown of the head reaches up before you bend",
+      "Feet hip-width, weight even on both feet",
+      "Dumbbell arm fully straight — do not bend the elbow",
+      "Free hand at temple, not pushing on the head",
+      "Pelvis level, glutes slightly tight to lock the hips"
+    ],
+    "setup_cues_pl": [
+      "Stań wysoko — czubek głowy w górę zanim się zegniesz",
+      "Stopy na szerokość bioder, ciężar równo na obu stopach",
+      "Ramię z hantlem całkowicie wyprostowane — nie zginaj łokcia",
+      "Wolna dłoń przy skroni, nie naciska na głowę",
+      "Miednica pozioma, pośladki lekko napięte by biodra nie uciekały"
+    ],
+    "execution_cues": [
+      "Bend straight sideways — imagine sliding between two panes of glass",
+      "Pull the ribs toward the hip on the contracting side",
+      "Hips do not shift in the opposite direction",
+      "Slow on the way down (2s), squeeze on the way up",
+      "Stop the descent when you feel the stretch — not when you can go further"
+    ],
+    "execution_cues_pl": [
+      "Pochylaj się prosto w bok — wyobraź sobie ruch między dwiema szybami",
+      "Ciągnij żebra w stronę biodra po stronie napiętej",
+      "Biodra nie uciekają w przeciwną stronę",
+      "Wolno w dół (2s), mocno napnij wracając",
+      "Zatrzymaj się gdy poczujesz rozciągnięcie — nie schodź dalej tylko dlatego że możesz"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning forward instead of strictly sideways",
+        "faultPl": "Pochylanie do przodu zamiast czysto w bok",
+        "cause": "Tight hip flexors or weak obliques causing flexion substitution; trying to lower the dumbbell further",
+        "causePl": "Spięte zginacze biodra lub słabe skośne kompensują się przez zgięcie; próba zejścia hantlem niżej",
+        "cue": "Stand with your back against a wall and try a few reps — your shoulders, hips and head must stay touching the wall the whole time.",
+        "cuePl": "Stań plecami do ściany i zrób kilka powtórzeń — barki, biodra i głowa mają cały czas dotykać ściany."
+      },
+      {
+        "fault": "Hips shifting opposite to the bend (hip drift)",
+        "faultPl": "Biodra uciekają w przeciwną stronę (hip drift)",
+        "cause": "Counter-balancing the dumbbell weight by pushing hips out instead of bracing the trunk",
+        "causePl": "Próba zrównoważenia hantla przez wypchnięcie bioder zamiast napięcia tułowia",
+        "cue": "Place a hand on the outside of the unloaded hip — feel that the hip should not push against your hand. Squeeze glutes harder.",
+        "cuePl": "Połóż dłoń na zewnętrznej stronie nieobciążonego biodra — biodro nie powinno naciskać na dłoń. Mocniej napnij pośladki."
+      },
+      {
+        "fault": "Too much weight, reduced range of motion",
+        "faultPl": "Zbyt duży ciężar, mały zakres ruchu",
+        "cause": "Ego-loading — picking a heavy dumbbell that allows only 5–10° of lateral flexion instead of a full stretch and squeeze",
+        "causePl": "Ego-loading — wybór ciężkiego hantla pozwalającego na 5–10° pochylenia zamiast pełnego rozciągnięcia i kontrakcji",
+        "cue": "Drop the weight by half. You should be able to feel a clear stretch at the bottom and a hard squeeze at the top. QL responds to range, not load.",
+        "cuePl": "Zmniejsz ciężar o połowę. Musisz czuć wyraźne rozciągnięcie na dole i mocną kontrakcję na górze. QL pracuje z zakresu, nie z obciążenia."
+      },
+      {
+        "fault": "Bouncing at the bottom (using momentum)",
+        "faultPl": "Sprężynowanie na dole (praca z rozpędu)",
+        "cause": "Trying to get more reps faster, weight too heavy to control eccentrically",
+        "causePl": "Próba szybszego wykonania kolejnych powtórzeń, ciężar za duży do kontroli ekscentrycznej",
+        "cue": "Pause 1 second at the bottom (stretch position). If you can't pause, the dumbbell is too heavy.",
+        "cuePl": "Zatrzymaj się na 1 sekundę na dole (pozycja rozciągnięta). Jeśli nie umiesz, hantel za ciężki."
+      },
+      {
+        "fault": "Holding dumbbells in BOTH hands at the same time",
+        "faultPl": "Trzymanie hantli w OBU rękach jednocześnie",
+        "cause": "Common misconception that it doubles the work — actually the two weights counter-balance each other and remove the lateral demand",
+        "causePl": "Częste przekonanie że obciąża to dwukrotnie — w rzeczywistości dwa ciężary się równoważą i znoszą obciążenie boczne",
+        "cue": "ONE dumbbell at a time. The weight must be asymmetrical for the obliques to fight it. Two dumbbells = essentially zero oblique work.",
+        "cuePl": "JEDEN hantel naraz. Obciążenie musi być asymetryczne by skośne miały z czym walczyć. Dwa hantle = praktycznie zerowa praca skośnych."
+      }
+    ],
+    "breathing": "Inhale on the way down (lateral flexion = expanding the contralateral rib cage). Exhale forcefully on the way up as you contract the obliques. Controlled tempo throughout — no breath holding.",
+    "breathingPl": "Wdech schodząc w dół (lateral flexion = rozszerzanie przeciwnej strony klatki). Wydech mocno wracając, gdy napinasz skośne. Tempo kontrolowane przez cały ruch — bez wstrzymywania oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Lateral flexion under load on an irritated spine can worsen pain. Switch to anti-lateral-flexion exercises (suitcase carry, side plank) until acute symptoms resolve.",
+      "modificationPl": "Lateral flexion pod obciążeniem na podrażnionym kręgosłupie może nasilić ból. Przejdź na ćwiczenia anty-lateralne (suitcase carry, side plank) do czasu ustąpienia ostrych objawów.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "scoliosis",
+      "severity": "caution",
+      "modification": "Asymmetrical loading can reinforce existing spinal curves. Work only with a physiotherapist's guidance — typically loading only the convex side, lighter weight, full ROM.",
+      "modificationPl": "Asymetryczne obciążenie może utrwalić istniejące skrzywienia kręgosłupa. Pracuj tylko pod okiem fizjoterapeuty — zwykle obciążanie tylko strony wypukłej, mniejszy ciężar, pełen zakres.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "quadratus_lumborum_strain",
+      "severity": "avoid",
+      "modification": "QL is the primary mover here — loading it during strain will delay healing. Wait until fully pain-free in daily movement before reintroducing.",
+      "modificationPl": "QL jest tu głównym pracującym mięśniem — obciążanie go przy naciągnięciu opóźni gojenie. Czekaj aż codzienne ruchy będą bezbolesne zanim wrócisz do ćwiczenia.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded lateral flexion increases asymmetric pressure on lumbar discs. Use bracing-based exercises (planks, carries) instead.",
+      "modificationPl": "Obciążona lateral flexion zwiększa asymetryczny nacisk na dyski lędźwiowe. Stosuj ćwiczenia napięciowe (planki, carries) zamiast.",
+      "alternative": "side-plank"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 per side | 3x15-20 with lighter weight",
+  "calories_per_kg_per_hour": 3.8,
+
+  "media": {
+    "primary": "dumbbell-side-bend.gif",
+    "frames_extracted": [
+      "frames/dumbbell-side-bend/frame_0_start.png",
+      "frames/dumbbell-side-bend/frame_1_early.png",
+      "frames/dumbbell-side-bend/frame_2_mid.png",
+      "frames/dumbbell-side-bend/frame_3_late.png",
+      "frames/dumbbell-side-bend/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/dumbbell-side-bend"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek w GIFie). Klatki pokazują pełen cykl lateral flexion w stronę obciążenia: frame_0 = pozycja wyjściowa stojąca (hantel w lewej ręce, prawa dłoń przy karku, podświetlone skośne neutralnie), frame_2 = szczyt pochylenia w lewo (hantel zsuwa się wzdłuż lewego uda, widoczne mocne podświetlenie skośnych i obszaru lędźwiowego po stronie rozciągniętej oraz pracującej), frame_4 = powrót do pionu z efektem ruchu (rozmycie hantla pokazuje kierunek). Ruch czysto w płaszczyźnie czołowej — brak rotacji ani pochylenia w przód. Tułów stoi pionowo, biodra stabilne, ramiona pozostają wyciągnięte. Mięśnie podświetlone na ilustracji: skośne (główne, P10) + dolny odcinek pleców/quadratus lumborum (P9, widoczne podświetlenie w okolicy bocznej talii i lędźwiowej). Klasyczna jednostronna izolacja na lateral flexion. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii fitness (skośne, lateral flexion, QL/czworoboczny lędźwi, hip drift). Najczęstszy błąd opisany w common_faults #5 (dwa hantle naraz) jest kluczowy edukacyjnie — wielu początkujących nie wie że asymetria jest istotą tego ruchu.",
+
+  "tags": ["core", "obliques", "quadratus_lumborum", "lateral_flexion", "isolation", "standing", "unilateral", "dumbbell", "beginner_friendly", "finisher"]
+}

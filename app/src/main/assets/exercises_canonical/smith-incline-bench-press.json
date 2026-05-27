@@ -1,0 +1,205 @@
+{
+  "id": "smith-incline-bench-press",
+  "name": "Smith Incline Bench Press",
+  "namePl": "Wyciskanie na ławce skośnej dodatniej na Smith machine",
+  "aliases": ["smith machine incline press", "smith incline press", "guided incline bench", "smith machine incline bench"],
+  "aliasesPl": ["wyciskanie skośne na smithcie", "wyciskanie na smith machine skos dodatni", "wyciskanie skośne na maszynie smitha", "smith skos dodatni", "wyciskanie na maszynie smitha na ławce skośnej"],
+
+  "description": "Vertical-track guided variant of the incline bench press performed on a Smith machine. The bar runs on fixed rails — eliminating side-to-side stabilization demand and locking the press into a single vertical (or slightly angled) path. Emphasizes the clavicular (upper) head of pectoralis major and the anterior deltoid, with reduced stabilizer load compared to free-weight barbell incline. Ideal for trainees learning the upper-chest press pattern, working solo without a spotter, pushing through pain-free ranges around shoulder limitations, or accumulating high-volume hypertrophy work with focused tension on the target muscle. Typical loads are slightly higher than free-weight equivalent due to removed stabilization cost.",
+  "descriptionPl": "Wariant wyciskania na ławce skośnej dodatniej wykonywany na maszynie Smitha — sztanga porusza się po pionowych prowadnicach, co eliminuje konieczność bocznej stabilizacji i blokuje ruch w jednej ścieżce (pionowej lub lekko skośnej). Akcentuje obojczykową (górną) głowę mięśnia piersiowego większego oraz przedni akton barku, przy zmniejszonym obciążeniu mięśni stabilizujących w porównaniu do wersji ze swobodną sztangą. Idealne dla osób uczących się wzorca wyciskania na górną klatkę, trenujących solo bez asekuracji, pracujących w bezbólowym zakresie ruchu przy ograniczeniach barków lub akumulujących duże objętości w treningu hipertroficznym z ukierunkowanym napięciem na docelowym mięśniu. Typowe ciężary są nieco wyższe niż w wersji ze swobodną sztangą z powodu wyeliminowania kosztu stabilizacji.",
+
+  "instructions": [
+    "Ustaw ławkę skośną dodatnią pod prowadnicami Smitha pod kątem 30-45° (30° = maksymalny akcent na klatkę, 45° = większy udział przednich aktonów). Sprawdź, że sztanga w pozycji dolnej trafi w linię górnej klatki, nie w szyję ani twarz.",
+    "Połóż się na ławce tak, aby gryf znajdował się bezpośrednio nad linią obojczyków / górną częścią klatki piersiowej. Oczy poniżej gryfu, nie bezpośrednio pod nim.",
+    "Ustaw stopy mocno na podłodze, kolana ~90°, pośladki i głowa stale w kontakcie z ławką. Naturalna krzywizna lędźwiowa zachowana, ale BEZ mocnego łuku (mocna ławka skośna ogranicza arch).",
+    "Ściągnij łopatki i wbij je w oparcie ławki — mimo prowadzonej ścieżki gryfu nadal chronisz barki przez retrakcję.",
+    "Złap gryf na szerokość nieco większą niż barki (przedramiona pionowe przy dotyku klatki). Owinij kciuki wokół gryfu — pełny chwyt zamykany.",
+    "Obróć gryf, by zwolnić zaczepy bezpieczeństwa. Wyciśnij sztangę do pełnego prostu rąk.",
+    "Nabierz wdech, napnij brzuch. Opuszczaj kontrolowanie do GÓRNEJ klatki (tuż poniżej obojczyków, na linii brodawek lub nieco wyżej dla skosu). Tempo 2-3 sekundy w dół.",
+    "Lekko dotknij klatki LUB zatrzymaj 1-2 cm nad nią (dla shoulder-friendly wariantu). Nie odbijaj sztangi.",
+    "Wyciśnij gryf w górę po prowadnicach — ścieżka pionowa narzucona przez maszynę. Wydech podczas wyciskania.",
+    "Po zakończeniu serii cofnij gryf do zaczepów i obróć go, by zablokować przed odłożeniem."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną dodatnią pod prowadnicami Smitha pod kątem 30-45° (30° = maksymalny akcent na klatkę, 45° = większy udział przednich aktonów). Sprawdź, że sztanga w pozycji dolnej trafi w linię górnej klatki, nie w szyję ani twarz.",
+    "Połóż się na ławce tak, aby gryf znajdował się bezpośrednio nad linią obojczyków / górną częścią klatki piersiowej. Oczy poniżej gryfu, nie bezpośrednio pod nim.",
+    "Ustaw stopy mocno na podłodze, kolana ~90°, pośladki i głowa stale w kontakcie z ławką. Naturalna krzywizna lędźwiowa zachowana, ale BEZ mocnego łuku (mocna ławka skośna ogranicza arch).",
+    "Ściągnij łopatki i wbij je w oparcie ławki — mimo prowadzonej ścieżki gryfu nadal chronisz barki przez retrakcję.",
+    "Złap gryf na szerokość nieco większą niż barki (przedramiona pionowe przy dotyku klatki). Owinij kciuki wokół gryfu — pełny chwyt zamykany.",
+    "Obróć gryf, by zwolnić zaczepy bezpieczeństwa. Wyciśnij sztangę do pełnego prostu rąk.",
+    "Nabierz wdech, napnij brzuch. Opuszczaj kontrolowanie do GÓRNEJ klatki (tuż poniżej obojczyków, na linii brodawek lub nieco wyżej dla skosu). Tempo 2-3 sekundy w dół.",
+    "Lekko dotknij klatki LUB zatrzymaj 1-2 cm nad nią (dla wariantu shoulder-friendly). Nie odbijaj sztangi.",
+    "Wyciśnij gryf w górę po prowadnicach — ścieżka pionowa narzucona przez maszynę. Wydech podczas wyciskania.",
+    "Po zakończeniu serii cofnij gryf do zaczepów i obróć go, by zablokować przed odłożeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids", "triceps"],
+    "secondary": ["pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P10",
+    "anterior_deltoids": "P9",
+    "triceps": "P7",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S4",
+    "upper_back": "T3",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "incline_bench"],
+    "optional": ["wrist_wraps", "belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["push-up", "machine-incline-press"],
+    "progression_to": ["barbell-incline-bench-press", "dumbbell-incline-bench-press", "pause-incline-bench-press"],
+    "alternatives": ["barbell-incline-bench-press", "dumbbell-incline-bench-press", "machine-incline-press", "low-incline-dumbbell-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Ławka skośna ustawiona tak, by gryf trafiał w linię górnej klatki — nie w szyję",
+      "Kąt ławki 30-45° (30° klatka, 45° akto przednie)",
+      "Łopatki ściągnięte i wbite w oparcie — mimo prowadnic Smitha",
+      "Stopy zaparte, pośladki na ławce, brak nadmiernego łuku",
+      "Chwyt nieco szerszy niż barki, przedramiona pionowe na dole ruchu"
+    ],
+    "setup_cues_pl": [
+      "Ławka skośna ustawiona tak, by gryf trafiał w linię górnej klatki — nie w szyję",
+      "Kąt ławki 30-45° (30° klatka, 45° akto przednie)",
+      "Łopatki ściągnięte i wbite w oparcie — mimo prowadnic Smitha",
+      "Stopy zaparte, pośladki na ławce, brak nadmiernego łuku",
+      "Chwyt nieco szerszy niż barki, przedramiona pionowe na dole ruchu"
+    ],
+    "execution_cues": [
+      "Opuszczaj do GÓRNEJ klatki (tuż poniżej obojczyków)",
+      "Łokcie schowane ~45-60° od tułowia, nigdy 90°",
+      "Tempo 2-3 s w dół, kontrolowany koncentryk",
+      "Lekki dotyk klatki LUB pauza 1-2 cm nad — bez odbicia",
+      "Wyciskaj po prowadnicy, świadomie napinaj górną klatkę na szczycie"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj do GÓRNEJ klatki (tuż poniżej obojczyków)",
+      "Łokcie schowane ~45-60° od tułowia, nigdy 90°",
+      "Tempo 2-3 s w dół, kontrolowany koncentryk",
+      "Lekki dotyk klatki LUB pauza 1-2 cm nad — bez odbicia",
+      "Wyciskaj po prowadnicy, świadomie napinaj górną klatkę na szczycie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bench positioned wrong — bar tracks into the neck or face instead of upper chest",
+        "faultPl": "Źle ustawiona ławka — gryf trafia w szyję lub twarz zamiast w górną klatkę",
+        "cause": "User położył się za daleko w stronę głowy ławki. Prowadnice Smitha są pionowe i nie wybaczają złego ustawienia ciała.",
+        "causePl": "Użytkownik położył się za daleko w stronę głowy ławki. Prowadnice Smitha są pionowe i nie wybaczają złego ustawienia ciała.",
+        "cue": "Przed serią opuść gryf na pusto i sprawdź, gdzie ląduje. Powinien trafić w linię brodawek / tuż pod obojczykami. Przesuń ławkę o 5-10 cm jeśli trzeba.",
+        "cuePl": "Przed serią opuść gryf na pusto i sprawdź, gdzie ląduje. Powinien trafić w linię brodawek / tuż pod obojczykami. Przesuń ławkę o 5-10 cm jeśli trzeba."
+      },
+      {
+        "fault": "Bench angle too steep (>45°) — exercise turns into overhead press",
+        "faultPl": "Zbyt stromy kąt ławki (>45°) — ćwiczenie zamienia się w wyciskanie nad głową",
+        "cause": "Mit, że stromiej = więcej górnej klatki. Powyżej 45° aktywacja klatki spada, a praca przechodzi w przednie aktony.",
+        "causePl": "Mit, że stromiej = więcej górnej klatki. Powyżej 45° aktywacja klatki spada, a praca przechodzi w przednie aktony.",
+        "cue": "Trzymaj 30° (klatka) lub 45° (akto). Powyżej — zrób OHP zamiast.",
+        "cuePl": "Trzymaj 30° (klatka) lub 45° (akto). Powyżej — zrób OHP zamiast."
+      },
+      {
+        "fault": "Locked vertical path forces unnatural shoulder mechanics — bar hits chest too high",
+        "faultPl": "Wymuszona pionowa ścieżka prowadzi do nienaturalnej mechaniki barku — gryf trafia w klatkę zbyt wysoko",
+        "cause": "Niektóre maszyny Smitha mają sztywno pionową prowadnicę, podczas gdy naturalna ścieżka wyciskania skośnego jest lekko skośna do tyłu. Przy złym ustawieniu ławki obciąża to staw barkowo-obojczykowy.",
+        "causePl": "Niektóre maszyny Smitha mają sztywno pionową prowadnicę, podczas gdy naturalna ścieżka wyciskania skośnego jest lekko skośna do tyłu. Przy złym ustawieniu ławki obciąża to staw barkowo-obojczykowy.",
+        "cue": "Jeśli czujesz dyskomfort w barku — przesuń ławkę o 5-10 cm w stronę nóg, żeby gryf trafiał niżej (linia brodawek zamiast obojczyków). Albo użyj Smitha z prowadnicą skośną (angled Smith).",
+        "cuePl": "Jeśli czujesz dyskomfort w barku — przesuń ławkę o 5-10 cm w stronę nóg, żeby gryf trafiał niżej (linia brodawek zamiast obojczyków). Albo użyj Smitha z prowadnicą skośną (angled Smith)."
+      },
+      {
+        "fault": "Bouncing the bar off the chest",
+        "faultPl": "Odbijanie sztangi od klatki",
+        "cause": "Ego lifting — używanie pędu. Na Smith machine szczególnie kuszące, bo brak strachu o stabilność.",
+        "causePl": "Ego lifting — używanie pędu. Na Smith machine szczególnie kuszące, bo brak strachu o stabilność.",
+        "cue": "Pauza 1 sekundy na klatce LUB zatrzymanie 1-2 cm nad klatką. Tempo 2-3 s w dół, brak odbicia.",
+        "cuePl": "Pauza 1 sekundy na klatce LUB zatrzymanie 1-2 cm nad klatką. Tempo 2-3 s w dół, brak odbicia."
+      },
+      {
+        "fault": "Forgetting to retract scapulae because the machine 'stabilizes everything'",
+        "faultPl": "Zapominanie o ściągnięciu łopatek bo maszyna 'wszystko stabilizuje'",
+        "cause": "Złudne poczucie bezpieczeństwa — Smith prowadzi gryf, ale NIE chroni barku przed niewłaściwą pozycją łopatek.",
+        "causePl": "Złudne poczucie bezpieczeństwa — Smith prowadzi gryf, ale NIE chroni barku przed niewłaściwą pozycją łopatek.",
+        "cue": "Ściągnij i wciśnij łopatki w oparcie PRZED każdą serią. Trzymaj je tam przez cały zestaw — to chroni staw ramienny niezależnie od tego, czy używasz Smitha czy wolnej sztangi.",
+        "cuePl": "Ściągnij i wciśnij łopatki w oparcie PRZED każdą serią. Trzymaj je tam przez cały zestaw — to chroni staw ramienny niezależnie od tego, czy używasz Smitha czy wolnej sztangi."
+      }
+    ],
+    "breathing": "Wdech na górze, brace, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie lock-out lub w trakcie wyciskania.",
+    "breathingPl": "Wdech na górze, brace, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie lock-out lub w trakcie wyciskania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Obniż kąt ławki do 15-20°, zwęź chwyt, mocniej schowaj łokcie (~40°). Pracuj w bezbólowym ROM — zatrzymuj 3-5 cm nad klatką. Jeśli ból się utrzymuje, przejdź na hantle z chwytem neutralnym.",
+      "modificationPl": "Obniż kąt ławki do 15-20°, zwęź chwyt, mocniej schowaj łokcie (~40°). Pracuj w bezbólowym ROM — zatrzymuj 3-5 cm nad klatką. Jeśli ból się utrzymuje, przejdź na hantle z chwytem neutralnym.",
+      "alternative": "dumbbell-incline-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_pathology",
+      "severity": "modify",
+      "modification": "Wymuszona pionowa ścieżka Smitha drażni stożek rotatorów u osób z dysfunkcją. Pracuj z lekkim ciężarem, krótkim ROM (zatrzymanie 5-10 cm nad klatką) lub przejdź na maszynę z chwytem neutralnym / wersję rehabilitacyjną.",
+      "modificationPl": "Wymuszona pionowa ścieżka Smitha drażni stożek rotatorów u osób z dysfunkcją. Pracuj z lekkim ciężarem, krótkim ROM (zatrzymanie 5-10 cm nad klatką) lub przejdź na maszynę z chwytem neutralnym / wersję rehabilitacyjną.",
+      "alternative": "machine-incline-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Smith machine z pionową prowadnicą daje większe obciążenie stawu barkowo-obojczykowego niż wolna sztanga. Zwęź chwyt, obniż ciężar, pracuj w krótszym ROM. Alternatywnie przejdź na hantle z chwytem neutralnym.",
+      "modificationPl": "Smith machine z pionową prowadnicą daje większe obciążenie stawu barkowo-obojczykowego niż wolna sztanga. Zwęź chwyt, obniż ciężar, pracuj w krótszym ROM. Alternatywnie przejdź na hantle z chwytem neutralnym.",
+      "alternative": "dumbbell-incline-bench-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Użyj wraps. Sprawdź chwyt — gryf w podstawie dłoni, nie w palcach. Nadgarstek bezpośrednio nad przedramieniem, nigdy odgięty do tyłu.",
+      "modificationPl": "Użyj wraps. Sprawdź chwyt — gryf w podstawie dłoni, nie w palcach. Nadgarstek bezpośrednio nad przedramieniem, nigdy odgięty do tyłu.",
+      "alternative": "dumbbell-incline-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-10 (siła) | 3-4x8-15 (hipertrofia — główny budowniczy górnej klatki przy braku partnera) | 3x12-20 (objętość, finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "smith-incline-bench-press.gif",
+    "frames_extracted": [
+      "frames/smith-incline-bench-press/frame_0_start.png",
+      "frames/smith-incline-bench-press/frame_1_early.png",
+      "frames/smith-incline-bench-press/frame_2_mid.png",
+      "frames/smith-incline-bench-press/frame_3_late.png",
+      "frames/smith-incline-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/smith-incline-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Smith machine z pionowymi prowadnicami (widoczne na frame 0-4). Ławka skośna dodatnia ustawiona pod kątem ok. 30-35° (klasyczny kąt na górną klatkę). Frame 0 (start): sztanga przy górnej klatce / linii brodawek, łokcie zgięte ~90°, ławka skośna, gryf na prowadnicach Smitha, podświetlona obojczykowa głowa klatki piersiowej (upper chest). Frame 2 (mid): pełny lock-out z prostymi rękoma, sztanga w górnej części prowadnic. Frame 4 (end): powrót do pozycji dolnej, kontrolowane schodzenie po prowadnicach. Animacja jasno pokazuje, że ruch odbywa się po pionowej szynie (cecha charakterystyczna Smitha — vs wolnej sztangi gdzie ścieżka jest lekko skośna do tyłu). Stopy zaparte, brak unoszenia bioder, łokcie schowane ~45-50° od tułowia (poprawnie, nie flared). PL nazwa zgodna ze standardem fitness ('Wyciskanie na ławce skośnej dodatniej na Smith machine'). Wszystkie pola PL od zera, nie tłumaczone z EN. Difficulty 5 (intermediate-friendly — niższe niż wolna sztanga = 6 ze względu na wyeliminowaną stabilizację).",
+
+  "tags": ["upper_body", "horizontal_push", "incline", "upper_chest", "chest", "smith_machine", "machine", "guided_path", "hypertrophy_staple", "beginner_friendly", "solo_training", "aesthetics"]
+}

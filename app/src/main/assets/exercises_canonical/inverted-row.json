@@ -1,0 +1,210 @@
+{
+  "id": "inverted-row",
+  "name": "Inverted Row (Australian Pull-Up)",
+  "namePl": "Wiosło odwrócone (australian pull-up)",
+  "aliases": ["australian pull-up", "australian pullup", "bodyweight row", "supine row", "horizontal row", "smith machine inverted row", "bar row"],
+  "aliasesPl": ["wiosło odwrócone", "wiosłowanie odwrócone", "australijskie podciąganie", "podciąganie poziome", "wiosło ciała", "wiosło bodyweight", "podciąganie do drążka leżąc"],
+
+  "description": "Horizontal bodyweight pulling exercise. You lie under a low bar (Smith machine, barbell in rack, or low rings) with legs extended, body in a straight line — like a reverse plank. Pull your chest up to the bar by rowing through the elbows. Classic regression before the pull-up and a foundational horizontal pull. Closed-chain, scalable by adjusting bar height and foot position. Excellent for building scapular control, lat thickness and pulling endurance.",
+  "descriptionPl": "Poziomy ciąg w wadze własnego ciała. Leżysz pod niskim drążkiem (maszyna Smitha, sztanga w stojakach lub niskie kółka) z wyprostowanymi nogami, ciało w linii prostej — jak odwrócona deska. Podciągasz klatkę do drążka wiosłując łokciami. Klasyczna regresja przed pull-upem i fundamentalne ćwiczenie ciągu poziomego. Łańcuch zamknięty, skalowalność przez wysokość drążka i ułożenie stóp. Świetnie buduje kontrolę łopatek, grubość najszerszych i wytrzymałość w ciągu.",
+
+  "instructions": [
+    "Set a barbell in a rack (or Smith machine bar) at roughly hip-to-waist height. Lower bar = harder, higher bar = easier.",
+    "Slide under the bar so it sits directly over your upper chest/sternum.",
+    "Grip the bar with palms facing AWAY (pronated/overhand), hands slightly wider than shoulder-width.",
+    "Walk feet forward until arms are fully extended. Heels on the floor, legs straight, body in one straight line from heels to head — like an upside-down plank.",
+    "Brace your core and squeeze glutes. Pull shoulder blades DOWN AND BACK (depress + retract) to set the scapulae.",
+    "Initiate the pull by driving elbows DOWN AND BACK toward your hips/sides. Lead with the chest, not the chin.",
+    "Pull until your CHEST touches the bar (not just the chin). Elbows close to torso (~30-45° flare).",
+    "Pause briefly at the top with shoulder blades fully squeezed.",
+    "Lower with control to full arm extension. Maintain straight body — do not let hips sag.",
+    "Each rep: full extension at the bottom, chest to bar at the top, body locked straight throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojakach (lub gryf maszyny Smitha) na wysokości mniej więcej biodro–pas. Niższy drążek = trudniej, wyższy = łatwiej.",
+    "Wsuń się pod drążek tak by znalazł się dokładnie nad górną klatką/mostkiem.",
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce nieco szerzej niż barki.",
+    "Wysuń stopy do przodu aż ramiona będą całkowicie wyprostowane. Pięty na podłodze, nogi proste, ciało w jednej linii od pięt do głowy — jak deska odwrócona do góry nogami.",
+    "Napnij brzuch i ściśnij pośladki. Ściągnij łopatki W DÓŁ I DO TYŁU (depresja + retrakcja) by ustawić łopatki.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w stronę bioder/żeber. Prowadź klatką, nie brodą.",
+    "Podciągaj aż KLATKA dotknie drążka (nie sama broda). Łokcie blisko tułowia (~30-45° rozwarcia).",
+    "Zatrzymaj się krótko na górze z maksymalnie ściągniętymi łopatkami.",
+    "Opuszczaj kontrolowanie do pełnego wyprostu ramion. Utrzymuj proste ciało — nie pozwól biodrom opaść.",
+    "Każde powtórzenie: pełen wyprost na dole, klatka do drążka na górze, ciało sztywne przez cały ruch."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower", "biceps_brachii"],
+    "secondary": ["posterior_deltoid", "brachialis", "brachioradialis", "teres_major", "infraspinatus"],
+    "stabilizers": ["core", "gluteus_maximus", "hamstrings", "erector_spinae", "rotator_cuff", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "P9",
+    "biceps_brachii": "P7",
+    "posterior_deltoid": "S7",
+    "brachialis": "S6",
+    "teres_major": "S7",
+    "infraspinatus": "S5",
+    "core": "S7",
+    "gluteus_maximus": "S6",
+    "forearms": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack"],
+    "optional": ["smith_machine", "rings", "trx", "low_bar", "elevated_feet_box"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dead-bug", "scapular-pull-up", "plank"],
+    "progression_to": ["feet-elevated-inverted-row", "weighted-inverted-row", "archer-row", "one-arm-inverted-row", "ring-row", "pull-up", "band-assisted-pull-up"],
+    "alternatives": ["inverted-row-bent-knees", "inverted-row-with-straps", "suspended-row", "lat-pulldown", "seated-cable-row", "dumbbell-bent-over-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at hip-to-waist height — adjust to your strength",
+      "Pronated grip, hands slightly wider than shoulders",
+      "Bar directly over upper chest/sternum",
+      "Heels on the floor, legs straight, body one line",
+      "Glutes and core braced — like reverse plank"
+    ],
+    "setup_cues_pl": [
+      "Drążek na wysokości biodro–pas — dopasuj do siły",
+      "Chwyt nachwytem, ręce nieco szerzej niż barki",
+      "Drążek dokładnie nad górną klatką/mostkiem",
+      "Pięty na podłodze, nogi proste, ciało w jednej linii",
+      "Pośladki i brzuch napięte — jak odwrócona deska"
+    ],
+    "execution_cues": [
+      "CHEST to bar (not just chin)",
+      "Drive elbows DOWN and BACK toward your sides",
+      "Squeeze shoulder blades at the top",
+      "Body STRAIGHT — no sagging hips, no piking",
+      "Full extension at the bottom — control the negative"
+    ],
+    "execution_cues_pl": [
+      "KLATKA do drążka (nie sama broda)",
+      "Napieraj łokciami W DÓŁ i DO TYŁU w stronę żeber",
+      "Ściśnij łopatki na górze",
+      "Ciało PROSTE — bez opadania bioder, bez składania",
+      "Pełen wyprost na dole — kontroluj negatyw"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging — body breaks into a U-shape",
+        "faultPl": "Biodra opadają — ciało układa się w 'U'",
+        "cause": "Weak glutes and core, fatigue, or focusing only on arms",
+        "causePl": "Słabe pośladki i brzuch, zmęczenie, lub skupienie tylko na ramionach",
+        "cue": "Squeeze glutes HARD. Brace abs. Think 'reverse plank' throughout the set.",
+        "cuePl": "Mocno ściśnij pośladki. Napnij brzuch. Myśl 'odwrócona deska' przez całą serię."
+      },
+      {
+        "fault": "Pulling chin to bar, not chest (partial ROM)",
+        "faultPl": "Podciąganie brody do drążka zamiast klatki (skrócony ROM)",
+        "cause": "Avoiding the hardest part of the pull (final scapular retraction)",
+        "causePl": "Unikanie najtrudniejszej części (końcowa retrakcja łopatek)",
+        "cue": "Touch the bar with your CHEST. If too hard, raise the bar to make it easier and still get full ROM.",
+        "cuePl": "Dotykaj drążka KLATKĄ. Jeśli za trudne — podnieś drążek wyżej i zachowaj pełen ROM."
+      },
+      {
+        "fault": "Elbows flaring out 90° (T-shape)",
+        "faultPl": "Łokcie odstają w 90° (kształt 'T')",
+        "cause": "Loss of lat engagement, treating it like a face pull",
+        "causePl": "Utrata aktywacji najszerszych, traktowanie jak face pull",
+        "cue": "Elbows at ~30-45° from torso — drive them toward your hips, not sideways.",
+        "cuePl": "Łokcie ~30-45° od tułowia — kieruj je w stronę bioder, nie na boki."
+      },
+      {
+        "fault": "Not fully extending arms at the bottom",
+        "faultPl": "Brak pełnego wyprostu ramion na dole",
+        "cause": "Hurrying the tempo, cheating reps, or shoulder mobility limitation",
+        "causePl": "Pośpiech, oszukiwane powtórzenia, lub ograniczenie mobilności barku",
+        "cue": "Lower until arms are LOCKED out. If shoulders hurt, work mobility separately.",
+        "cuePl": "Opuszczaj aż ramiona BĘDĄ W PEŁNYM WYPROŚCIE. Jeśli bark boli — pracuj nad mobilnością osobno."
+      },
+      {
+        "fault": "Shrugging shoulders up toward ears",
+        "faultPl": "Unoszenie barków do uszu",
+        "cause": "Lack of scapular control, upper traps dominating",
+        "causePl": "Brak kontroli łopatek, dominacja górnych trapezów",
+        "cue": "Set scapulae BEFORE the pull — depress (down) and retract (back). Lats lead.",
+        "cuePl": "Ustaw łopatki PRZED ciągiem — w dół i do tyłu. Najszersze prowadzą."
+      }
+    ],
+    "breathing": "Inhale at the bottom (arms extended). Exhale on the pull up. Inhale on the way down. Keep rhythm steady — sets are usually 8-15 reps so don't hold breath.",
+    "breathingPl": "Wdech na dole (ramiona wyprostowane). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Utrzymuj równy rytm — serie są zwykle 8-15 powtórzeń więc nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (rings or parallel handles) — less stress on shoulder joint. Raise bar to reduce ROM if pain persists.",
+      "modificationPl": "Użyj chwytu neutralnego (kółka lub uchwyty równoległe) — mniejszy stres dla stawu. Podnieś drążek by zmniejszyć ROM jeśli ból trwa.",
+      "alternative": "ring-row"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Bend knees (feet flat on floor) to reduce lever arm and lumbar load. Master plank position first.",
+      "modificationPl": "Zegnij kolana (stopy płasko na podłodze) by zmniejszyć dźwignię i obciążenie odcinka lędźwiowego. Najpierw opanuj deskę.",
+      "alternative": "inverted-row-bent-knees"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use straps with neutral grip (TRX) — wrists stay neutral instead of pronated.",
+      "modificationPl": "Użyj pasów z chwytem neutralnym (TRX) — nadgarstki neutralne zamiast pronowanych.",
+      "alternative": "inverted-row-with-straps"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume. Switch to supinated grip or rings — different load distribution. Avoid heavy weighted variants.",
+      "modificationPl": "Zmniejsz objętość. Przejdź na chwyt podchwytem lub kółka — inna dystrybucja obciążenia. Unikaj ciężkich wariantów z dodatkowym obciążeniem.",
+      "alternative": "ring-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (bodyweight) | 3x5-8 (feet elevated / weighted) | AMRAP finisher",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "inverted-row.gif",
+    "frames_extracted": [
+      "frames/inverted-row/frame_0_start.png",
+      "frames/inverted-row/frame_1_early.png",
+      "frames/inverted-row/frame_2_mid.png",
+      "frames/inverted-row/frame_3_late.png",
+      "frames/inverted-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/inverted-row",
+    "yuhonas_id": "InvertedRow"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: start, ciało zawieszone pod drążkiem Smitha, ramiona wyprostowane, nogi proste, ciało w linii prostej (jak odwrócona deska). Frame 2: top, klatka dotyka drążka, łokcie zgięte i blisko tułowia, łopatki ściągnięte. Frame 4: powrót w dół do pełnego wyprostu. Podświetlone: lats + środkowy trapez + romboidy + bicepsy (klasyczny horizontal pull). Klasyczny inverted row w maszynie Smitha, chwyt nachwytem. PL nazwa: 'Wiosło odwrócone (australian pull-up)' — łączy popularny termin warsztatowy (wiosło odwrócone) z międzynarodową nazwą (australian pull-up).",
+
+  "tags": ["calisthenics", "bodyweight", "horizontal_pull", "back", "upper_body", "regression_for_pull_up", "scapular_control", "beginner_friendly", "compound", "closed_chain", "antagonist_to_push_up"]
+}

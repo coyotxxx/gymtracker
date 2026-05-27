@@ -1,0 +1,205 @@
+{
+  "id": "handstand-push-up",
+  "name": "Handstand Push-Up",
+  "namePl": "Pompka w staniu na rękach",
+  "aliases": ["HSPU", "handstand pushup", "vertical push-up", "wall HSPU", "inverted push-up", "freestanding HSPU"],
+  "aliasesPl": ["HSPU", "pompka na rękach", "pompka w handstand", "pompka w pionie", "pompka odwrócona", "wyciskanie własnym ciałem nad głową"],
+
+  "description": "Elite bodyweight vertical pressing exercise performed in a full handstand position — the gymnast presses their entire body weight overhead from an inverted stance. Considered the bodyweight equivalent of the overhead press (strict OHP), it loads the deltoids, triceps and serratus anterior with ~100% of bodyweight at the shoulder joint. The most demanding vertical push in calisthenics — requires not only pressing strength but also handstand balance, shoulder mobility (overhead reach) and core stability under inversion. Usually performed against a wall (heels lightly resting on wall) for safety; the freestanding version (no wall) is an even higher progression. Demonstrates an advanced strength-to-bodyweight ratio comparable to OHP at ~1× bodyweight.",
+  "descriptionPl": "Zaawansowane ćwiczenie wyciskania pionowego z masą ciała wykonywane w pełnej pozycji handstand (stania na rękach) — ćwiczący wyciska całą swoją masę nad głowę z pozycji odwróconej. Uważane za kalisteniczny odpowiednik wyciskania żołnierskiego (strict OHP), obciąża mięśnie naramienne, triceps i mięsień zębaty przedni ciężarem ~100% masy ciała w stawie barkowym. Najtrudniejsze wyciskanie pionowe w kalistenice — wymaga nie tylko siły wyciskania, ale też równowagi w staniu na rękach, mobilności barków (zakres nad głową) i stabilizacji core w pozycji odwróconej. Zwykle wykonywane przy ścianie (pięty lekko opierają się o ścianę) dla bezpieczeństwa; wersja wolnostojąca (bez ściany) jest jeszcze wyższą progresją. Świadczy o sile relatywnej porównywalnej z OHP na poziomie ~1× masy ciała.",
+
+  "instructions": [
+    "Place hands on the floor about shoulder-width apart, ~15-20 cm from the wall. Fingers spread, fingertips actively gripping the floor.",
+    "Kick up into a handstand against the wall — one leg drives up, the other follows. Heels lightly touch the wall for balance, body inverted and stacked: wrists under shoulders under hips under heels.",
+    "Press hands hard into the floor, fully protract shoulders ('push the floor away'), lock elbows, brace core, squeeze glutes. This is the START position.",
+    "Inhale and slowly lower yourself by bending elbows — head tracks toward the floor between (or slightly in front of) the hands. Elbows flare ~30-45° from torso, NOT straight back, NOT wide.",
+    "Lower under full control (2-4 seconds) until the top of the head lightly touches the floor — no impact, no bouncing. This is the BOTTOM position.",
+    "Exhale and press the floor explosively away — drive hands into the floor and extend elbows. Body rises straight up, stacked vertically. Keep heels in light contact with wall.",
+    "At the top, finish in a fully locked-out handstand: arms straight, shoulders fully elevated (shrugged up, 'long arms'), ribs down, glutes tight.",
+    "Reset breath at the top. Repeat for prescribed reps, then carefully come down — controlled descent from handstand, NOT a fall."
+  ],
+  "instructionsPl": [
+    "Ustaw dłonie na podłodze na szerokość barków, ~15-20 cm od ściany. Palce rozłożone, opuszki aktywnie 'chwytają' podłogę.",
+    "Wejdź w handstand przy ścianie — jedna noga wymachem do góry, druga dołącza. Pięty delikatnie dotykają ściany dla równowagi, ciało odwrócone w jednej linii: nadgarstki pod barkami, barki pod biodrami, biodra pod piętami.",
+    "Mocno wciśnij dłonie w podłogę, pełna protrakcja barków ('odepchnij podłogę'), zablokuj łokcie, napnij brzuch, ściśnij pośladki. To pozycja STARTOWA.",
+    "Wdech, powoli opuszczaj się zginając łokcie — głowa schodzi do podłogi między dłońmi (lub lekko z przodu). Łokcie odchylone ~30-45° od tułowia, NIE prosto do tyłu, NIE szeroko na boki.",
+    "Schodź pod pełną kontrolą (2-4 sekundy), aż czubek głowy delikatnie dotknie podłogi — bez uderzenia, bez odbijania. To pozycja DOLNA.",
+    "Wydech i eksplozywnie odepchnij podłogę — wbij dłonie w podłogę i wyprostuj łokcie. Ciało wznosi się pionowo w górę, jak w słupku. Pięty cały czas lekko dotykają ściany.",
+    "W górze zakończ pełnym lockoutem handstanda: ramiona wyprostowane, barki maksymalnie podciągnięte (wzruszone do góry, 'długie ramiona'), żebra w dół, pośladki napięte.",
+    "Oddech-reset na górze. Powtórz zaplanowaną liczbę powtórzeń, potem ostrożnie zejdź — kontrolowane wyjście z handstanda, NIE upadek."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "triceps"],
+    "secondary": ["lateral_deltoids", "upper_pectorals", "serratus_anterior", "upper_traps"],
+    "stabilizers": ["core", "obliques", "rotator_cuff", "scapular_stabilizers", "glutes", "wrist_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "triceps": "P10",
+    "lateral_deltoids": "S7",
+    "upper_pectorals": "S6",
+    "serratus_anterior": "S7",
+    "upper_traps": "S6",
+    "core": "T7",
+    "obliques": "T5",
+    "glutes": "T5",
+    "wrist_flexors": "T6"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["wall", "parallettes", "push_up_handles", "yoga_mat", "spotter"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 10,
+    "prerequisites": ["wall-handstand-hold", "pike-push-up", "decline-pike-push-up", "overhead-press", "wall-walk"],
+    "progression_to": ["freestanding-handstand-push-up", "deficit-handstand-push-up", "one-arm-handstand-push-up", "ring-handstand-push-up", "90-degree-push-up"],
+    "alternatives": ["pike-push-up", "decline-pike-push-up", "overhead-press", "dumbbell-shoulder-press", "wall-walk"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands ~15-20 cm from the wall — close enough to balance, far enough that head lands cleanly on the floor",
+      "Fingers spread wide, fingertips actively gripping — like a 'claw' on the floor",
+      "Kick up controlled, one leg first — don't slam into the wall",
+      "Heels LIGHTLY touch the wall — wall is a balance guide, not a leaning post",
+      "Stack: wrists under shoulders under hips under heels — body in vertical line"
+    ],
+    "setup_cues_pl": [
+      "Dłonie ~15-20 cm od ściany — wystarczająco blisko by trzymać balans, wystarczająco daleko by głowa zeszła na podłogę",
+      "Palce szeroko rozłożone, opuszki aktywnie chwytają podłogę — jak 'pazury' na podłodze",
+      "Wejdź w handstand kontrolowanie, jedna noga pierwsza — nie wal w ścianę",
+      "Pięty LEKKO dotykają ściany — ściana to wskaźnik balansu, nie podpora",
+      "Słupek: nadgarstki pod barkami, barki pod biodrami, biodra pod piętami — ciało w pionowej linii"
+    ],
+    "execution_cues": [
+      "Lower in 2-4 seconds — control descent, head lands on floor (not slams)",
+      "Head tracks slightly forward of hands — tripod base (two hands + head)",
+      "Elbows 30-45° from torso — not straight back (too narrow) and not wide (T-shape)",
+      "Press the floor away — drive through palms, don't 'lift' the body but 'push the ground'",
+      "Lock out hard at the top — full elbow extension + shoulder elevation (shrug up)"
+    ],
+    "execution_cues_pl": [
+      "Schodź w 2-4 sekundy — kontroluj zejście, głowa ląduje na podłodze (nie uderza)",
+      "Głowa schodzi lekko z przodu dłoni — trójkąt podparcia (dwie dłonie + głowa)",
+      "Łokcie 30-45° od tułowia — nie prosto do tyłu (za wąsko) i nie szeroko (kształt T)",
+      "Odpychaj podłogę — naciskaj nasadą dłoni, nie 'podnoś' ciała tylko 'odpychaj ziemię'",
+      "Mocny lockout na górze — pełny wyprost łokci + elewacja barków (wzruszenie do góry)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Banana back / overarched lower back (broken vertical line)",
+        "faultPl": "Wygięcie w plecach / nadmierna lordoza lędźwiowa (przerwana pionowa linia)",
+        "cause": "Lack of core/glute engagement, weak anterior chain, tight lats, poor handstand fundamentals",
+        "causePl": "Brak napięcia brzucha/pośladków, słaby przedni łańcuch, napięte mięśnie najszersze grzbietu, słabe fundamenty handstanda",
+        "cue": "'Ribs down, glutes tight' — posterior pelvic tilt, hollow body. Master wall-handstand-hold before attempting HSPU.",
+        "cuePl": "'Żebra w dół, pośladki napięte' — tylne pochylenie miednicy, sylwetka 'hollow body'. Opanuj wall-handstand-hold zanim spróbujesz HSPU."
+      },
+      {
+        "fault": "Partial range of motion (head doesn't touch the floor)",
+        "faultPl": "Niepełny zakres ruchu (głowa nie dotyka podłogi)",
+        "cause": "Insufficient pressing strength at the bottom (deepest joint angle), fear of inverted position",
+        "causePl": "Niewystarczająca siła wyciskania w dolnej pozycji (najgłębszy kąt stawu), strach przed pozycją odwróconą",
+        "cue": "Regress to pike push-ups, decline pike push-ups, or HSPU with reduced ROM (hands elevated on plates/parallettes — start with deep ROM gradually).",
+        "cuePl": "Wróć do pike push-up, decline pike push-up, lub HSPU ze zmniejszonym zakresem (dłonie na talerzach/parallettes — stopniowo zwiększaj głębokość)."
+      },
+      {
+        "fault": "Elbows flaring out (T-shape) instead of 30-45°",
+        "faultPl": "Łokcie rozkładają się na boki (kształt T) zamiast 30-45°",
+        "cause": "Copying bench-press habit, weak triceps, lack of overhead pressing mechanics understanding",
+        "causePl": "Nawyk z wyciskania leżąc, słaby triceps, brak zrozumienia mechaniki wyciskania nad głową",
+        "cue": "Elbows track forward-and-out, not pure side. Imagine you're doing a strict overhead press upside down — elbows like in OHP, not bench.",
+        "cuePl": "Łokcie idą do przodu-i-na-bok, nie czysto na boki. Wyobraź sobie strict OHP do góry nogami — łokcie jak w OHP, nie w wyciskaniu leżąc."
+      },
+      {
+        "fault": "Falling onto head / no eccentric control",
+        "faultPl": "Spadanie na głowę / brak kontroli ekscentrycznej",
+        "cause": "Lack of pressing strength to control descent, ego (skipping progressions), no spotter",
+        "causePl": "Brak siły wyciskania do kontroli zejścia, ego (pomijanie progresji), brak asekuracji",
+        "cue": "STOP. If you can't lower 2 seconds controlled — you're not ready for HSPU. Drop to pike push-ups, build strength, return.",
+        "cuePl": "STOP. Jeśli nie potrafisz schodzić 2 sekundy kontrolowanie — nie jesteś gotowy na HSPU. Wróć do pike push-up, zbuduj siłę, wróć."
+      },
+      {
+        "fault": "Leaning too hard on the wall (heels pushed into wall)",
+        "faultPl": "Mocne wieszanie się na ścianie (pięty wciśnięte w ścianę)",
+        "cause": "Poor handstand balance, fear of falling, treating wall as a crutch instead of a guide",
+        "causePl": "Słaba równowaga w handstand, strach przed upadkiem, traktowanie ściany jako podpórki zamiast wskaźnika",
+        "cue": "Heels LIGHTLY touch — you should feel them barely brushing the wall. If you press into wall, you can't load shoulders properly and the carryover to freestanding HSPU is zero.",
+        "cuePl": "Pięty LEKKO dotykają — powinieneś czuć że ledwo muskają ścianę. Jak wciskasz — nie obciążasz prawidłowo barków i przeniesienie na freestanding HSPU jest zerowe."
+      }
+    ],
+    "breathing": "Inhale at the top (lockout) — establish bracing. Hold breath during descent (Valsalva for spinal/core stability under inverted load). Exhale forcefully during the press up. For high reps reset breath only at the top — bracing must hold through entire eccentric.",
+    "breathingPl": "Wdech na górze (lockout) — ustal napięcie. Wstrzymaj oddech w fazie ekscentrycznej (Valsalva dla stabilizacji kręgosłupa/core pod obciążeniem w odwróceniu). Mocny wydech przy wyciskaniu w górę. Przy wysokich powtórzeniach oddech-reset tylko na górze — napięcie utrzymuj przez całe zejście."
+  },
+
+  "contraindications": [
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "avoid",
+      "modification": "Inverted position dramatically raises intracranial and intraocular pressure. Absolutely contraindicated in uncontrolled hypertension, recent stroke or cerebrovascular disease. Use overhead press or pike push-ups instead.",
+      "modificationPl": "Pozycja odwrócona dramatycznie podnosi ciśnienie wewnątrzczaszkowe i wewnątrzgałkowe. Bezwzględnie przeciwwskazane w niekontrolowanym nadciśnieniu, niedawnym udarze lub chorobach naczyniowo-mózgowych. Użyj wyciskania nad głową lub pike push-up.",
+      "alternative": "overhead-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Full overhead position under 100% bodyweight load can severely aggravate impingement and rotator cuff pathology. Switch to pike push-ups (less overhead loading) or horizontal pushing until shoulders are healthy and full pain-free ROM.",
+      "modificationPl": "Pełna pozycja nad głową pod obciążeniem 100% masy ciała może mocno nasilić zespół ciasnoty i patologie stożka rotatorów. Wróć do pike push-up (mniejsze obciążenie nad głową) lub wyciskania w poziomie do czasu uzdrowienia barków i pełnego bezbolesnego zakresu.",
+      "alternative": "pike-push-up"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "100% bodyweight on hands in extreme dorsiflexion — wrists take massive load. Use parallettes or push-up handles to keep wrists neutral. Pre-warm wrists thoroughly. If pain persists — switch to pike push-up on parallettes or DB shoulder press.",
+      "modificationPl": "100% masy ciała na dłoniach w skrajnym zgięciu grzbietowym — nadgarstki dostają ogromne obciążenie. Użyj parallettes lub uchwytów do pompek dla utrzymania neutralnych nadgarstków. Dokładnie rozgrzej nadgarstki. Jeśli ból nie ustępuje — wróć do pike push-up na parallettes lub wyciskania hantli.",
+      "alternative": "pike-push-up"
+    },
+    {
+      "condition": "cervical_spine_pathology",
+      "severity": "avoid",
+      "modification": "Risk of axial loading on the cervical spine if technique fails (uncontrolled descent onto head). Contraindicated in disc disease, instability, recent neck injury or chronic neck pain. Master pike push-ups instead.",
+      "modificationPl": "Ryzyko obciążenia osiowego kręgosłupa szyjnego przy załamaniu techniki (niekontrolowane zejście na głowę). Przeciwwskazane przy chorobie dyskowej, niestabilności, niedawnym urazie szyi lub przewlekłym bólu szyi. Opanuj pike push-up zamiast tego.",
+      "alternative": "pike-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-8 (strict strength, advanced) | 4-5x AMRAP (wall HSPU, conditioning) | 3x1-3 freestanding (elite) | EMOM 5-10 min as skill work",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "handstand-push-up.gif",
+    "frames_extracted": [
+      "frames/handstand-push-up/frame_0_start.png",
+      "frames/handstand-push-up/frame_1_early.png",
+      "frames/handstand-push-up/frame_2_mid.png",
+      "frames/handstand-push-up/frame_3_late.png",
+      "frames/handstand-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/handstand-push-up",
+    "yuhonas_id": "Handstand_Push-Ups"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:05:00Z",
+  "verification_notes": "Frame 0 (start): pełna pozycja handstand — ciało odwrócone w pionowej linii, ramiona w pełnym lockoucie, dłonie na podłodze na szerokość barków, ciało stackowane od nadgarstków przez biodra do stóp w górze. Frame 2 (mid): zejście do pozycji dolnej — głowa schodzi do podłogi między dłońmi, łokcie zgięte ~90°, odchylone od tułowia w kącie 30-45° (nie czysto na boki, nie prosto do tyłu — klasyczna mechanika wyciskania nad głową). Na anatomii wyraźnie podświetlony przedni naramienny i triceps (zgodnie z biomechaniką vertical push w pozycji odwróconej). Frame 4 (end): powrót do pełnego handstanda. To VERTICAL PUSH (movement_pattern: push_vertical) — bodyweight overhead pressing, kalisteniczny odpowiednik strict OHP. primary: anterior_deltoids P10 i triceps P10 (zgodnie ze specyfikacją zadania). Difficulty 10 — najtrudniejsze ćwiczenie pchania w kalistenice z masą ciała, wymaga balansu handstanda, mobilności barków, siły wyciskania ~100% BW. minimum: advanced. Prerequisites: wall-handstand-hold + pike push-up + OHP. Wszystkie pola PL napisane od zera. 5 common_faults (banana back, partial ROM, T-elbows, brak kontroli ekscentryku, leaning on wall), 4 contraindications (hypertension/inwersja — AVOID, shoulder impingement — AVOID, wrist — MODIFY, cervical spine — AVOID). 5+5 coaching cues PL/EN.",
+
+  "tags": ["bodyweight", "calisthenics", "vertical_push", "overhead_press", "advanced", "elite", "shoulders", "delts", "triceps", "inversion", "handstand", "wall_supported", "no_equipment", "gymnastics", "skill_strength"]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "barbell-seated-twist",
+  "name": "Barbell Seated Twist",
+  "namePl": "Skręty tułowia ze sztangą w siadzie",
+  "aliases": ["seated barbell twist", "seated russian twist with barbell", "barbell trunk rotation seated", "broomstick twist with barbell"],
+  "aliasesPl": ["skręty ze sztangą w siadzie", "rotacje tułowia ze sztangą siedząc", "skręty tułowia z gryfem", "russian twist ze sztangą siedząc", "skrętoskłony ze sztangą"],
+
+  "description": "Seated rotational core exercise performed with a barbell racked across the upper back and shoulders (high-bar position) while sitting on a flat bench with feet planted on the floor. The lifter rotates the torso left and right through the transverse plane, primarily challenging the internal and external obliques with secondary work for the erector spinae as anti-flexion stabilisers. CONTROVERSIAL exercise: loading the lumbar spine in rotation under a barbell is a high-risk pattern for facet joint and disc shear — many strength coaches consider it obsolete in favour of anti-rotation drills (Pallof press, suitcase carry). Use only with very light load, slow tempo, and a healthy lumbar spine.",
+  "descriptionPl": "Rotacyjne ćwiczenie na mięśnie głębokie wykonywane ze sztangą opartą na górnej części pleców i barkach (pozycja wysokiego trzymania), siedząc na płaskiej ławce ze stopami opartymi o podłogę. Ćwiczący rotuje tułów w lewo i w prawo w płaszczyźnie poprzecznej, angażując głównie mięśnie skośne brzucha (wewnętrzne i zewnętrzne), z dodatkową pracą prostownika grzbietu jako stabilizatora anty-zgięciowego. ĆWICZENIE KONTROWERSYJNE: obciążenie kręgosłupa lędźwiowego w rotacji ze sztangą to wzorzec wysokiego ryzyka dla stawów międzywyrostkowych i sił ścinających na krążkach — wielu trenerów uważa je za przestarzałe na rzecz ćwiczeń anty-rotacyjnych (Pallof press, suitcase carry). Używaj wyłącznie z bardzo lekkim obciążeniem, w wolnym tempie i tylko gdy kręgosłup lędźwiowy jest zdrowy.",
+
+  "instructions": [
+    "Sit upright on the end of a flat bench with feet flat on the floor, slightly wider than shoulder-width apart for a stable base. Knees at about 90°.",
+    "Position a barbell across the upper trapezius (high-bar position, NOT on the neck) and grip it with both hands wider than shoulder-width, elbows out.",
+    "Brace the core, lift the chest, retract the shoulder blades, and maintain a tall neutral spine. The barbell stays level.",
+    "Keep the hips and pelvis locked to the bench. Initiating the rotation only from the thoracic spine and obliques, slowly twist the torso to one side as far as comfortable without losing posture.",
+    "Pause briefly at the end range, feel the contraction in the oblique on the opposite side of the rotation.",
+    "Reverse the rotation under full control back through the center and to the opposite side. Move slowly — this is not a momentum-driven exercise.",
+    "Keep the head and neck aligned with the torso so they rotate together — don't whip the head independently.",
+    "Use very light load (often just an empty bar or a broomstick). Stop the set the moment the lower back starts to feel strained."
+  ],
+  "instructionsPl": [
+    "Usiądź prosto na końcu płaskiej ławki, stopy płasko na podłodze, lekko szerzej niż na szerokość barków dla stabilnej podstawy. Kolana zgięte około 90°.",
+    "Połóż sztangę na górnej części czworobocznych (pozycja wysokiego trzymania, NIE na karku) i chwyć ją obiema rękami szerzej niż na szerokość barków, łokcie na boki.",
+    "Napnij brzuch, podnieś klatkę, ściągnij łopatki i utrzymuj wysoki neutralny kręgosłup. Sztanga pozostaje pozioma.",
+    "Zablokuj biodra i miednicę na ławce. Inicjując rotację wyłącznie z odcinka piersiowego i skośnych brzucha, powoli obróć tułów w jedną stronę najdalej jak możesz bez utraty postawy.",
+    "Zatrzymaj się na chwilę w skrajnym zakresie — poczuj skurcz skośnego po przeciwnej stronie rotacji.",
+    "Wróć pełnie kontrolowanym ruchem przez środek do drugiej strony. Ruszaj się powoli — to nie jest ćwiczenie napędzane rozpędem.",
+    "Trzymaj głowę i szyję w linii z tułowiem, tak by rotowały razem — nie szarp głową niezależnie.",
+    "Używaj bardzo lekkiego obciążenia (często sam pusty gryf lub kij od miotły). Przerwij serię w momencie, gdy dolne plecy zaczynają być napięte lub bolesne."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_rotation",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["erector_spinae", "transverse_abdominis"],
+    "stabilizers": ["rectus_abdominis", "quadratus_lumborum", "deltoids", "trapezius"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P8",
+    "erector_spinae": "S5",
+    "transverse_abdominis": "S5",
+    "rectus_abdominis": "T3",
+    "quadratus_lumborum": "T4",
+    "deltoids": "T2",
+    "trapezius": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["flat-bench", "broomstick"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["seated-twist-bodyweight", "russian-twist", "pallof-press"],
+    "progression_to": ["cable-woodchopper", "landmine-rotation", "medicine-ball-rotational-throw"],
+    "alternatives": ["pallof-press", "cable-woodchopper", "landmine-rotation", "russian-twist", "standing-cable-twist"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall — pelvis vertical, sit bones planted on the bench",
+      "Feet wider than hips, firmly pressed into the floor",
+      "Barbell high on the traps, NOT on the neck, hands wide and even",
+      "Chest up, shoulder blades retracted, lats engaged",
+      "Light empty bar or broomstick — load is secondary to range and control"
+    ],
+    "setup_cues_pl": [
+      "Siedź wysoko — miednica pionowo, guzy kulszowe wbite w ławkę",
+      "Stopy szerzej niż biodra, mocno wbite w podłogę",
+      "Sztanga wysoko na czworobocznych, NIE na karku, dłonie szeroko i symetrycznie",
+      "Klatka w górę, łopatki ściągnięte, najszersze napięte",
+      "Pusty lekki gryf lub kij od miotły — obciążenie jest drugorzędne wobec zakresu i kontroli"
+    ],
+    "execution_cues": [
+      "Rotate from the upper back and ribs — hips stay glued to the bench",
+      "Slow tempo: 2 seconds each direction, no swinging",
+      "Eyes follow the bar end — head moves with the torso, not independently",
+      "Stop at comfortable end range — don't force lumbar rotation",
+      "Brace the core throughout — abs stay tight even in the middle position"
+    ],
+    "execution_cues_pl": [
+      "Rotuj z górnej części pleców i klatki piersiowej — biodra przyklejone do ławki",
+      "Wolne tempo: 2 sekundy w każdą stronę, bez bujania",
+      "Wzrok podąża za końcem sztangi — głowa porusza się razem z tułowiem, nie niezależnie",
+      "Zatrzymaj się w komfortowym zakresie — nie wymuszaj rotacji lędźwi",
+      "Trzymaj napięty brzuch przez cały czas — mięśnie pozostają spięte nawet w środkowej pozycji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating from the lumbar spine instead of the thoracic",
+        "faultPl": "Rotacja z odcinka lędźwiowego zamiast piersiowego",
+        "cause": "Stiff thoracic spine forces compensation in the lower back, which is built for stability, not rotation",
+        "causePl": "Sztywny odcinek piersiowy wymusza kompensację w dolnym kręgosłupie, który jest zbudowany do stabilności, nie do rotacji",
+        "cue": "Imagine the rotation comes from your sternum and ribs — keep the belt-line and hips facing forward",
+        "cuePl": "Wyobraź sobie, że rotacja wychodzi z mostka i żeber — utrzymuj linię pasa i biodra skierowane do przodu"
+      },
+      {
+        "fault": "Using momentum / fast whipping swings",
+        "faultPl": "Wykorzystywanie rozpędu / szybkie szarpane wymachy",
+        "cause": "Treating the exercise like a dynamic warm-up or trying to add load through speed",
+        "causePl": "Traktowanie ćwiczenia jak dynamiczna rozgrzewka lub próba dodania obciążenia przez prędkość",
+        "cue": "2 seconds rotating, 1 second pause at end range, 2 seconds back. If you can't control it, lower the load.",
+        "cuePl": "2 sekundy rotacji, 1 sekunda pauzy w skrajnym zakresie, 2 sekundy powrotu. Jeśli nie kontrolujesz — zmniejsz ciężar."
+      },
+      {
+        "fault": "Hips and pelvis rotating with the torso",
+        "faultPl": "Biodra i miednica rotują razem z tułowiem",
+        "cause": "Feet too narrow, glutes not engaged, no awareness of pelvic stability",
+        "causePl": "Stopy zbyt wąsko, pośladki nieaktywne, brak świadomości stabilizacji miednicy",
+        "cue": "Drive the feet into the floor and squeeze the glutes — anchor the hips, only the upper body moves",
+        "cuePl": "Wciśnij stopy w podłogę i ściśnij pośladki — zakotwicz biodra, tylko górna część ciała się porusza"
+      },
+      {
+        "fault": "Loading the barbell too heavy",
+        "faultPl": "Zbyt duże obciążenie sztangi",
+        "cause": "Treating it like a strength lift instead of a slow oblique conditioning drill",
+        "causePl": "Traktowanie ćwiczenia jak siłowego zamiast wolnego ćwiczenia kondycyjnego na skośne",
+        "cue": "Empty bar or broomstick is enough. If you need more, switch to cable woodchopper or landmine rotation — they load rotation more safely.",
+        "cuePl": "Pusty gryf lub kij od miotły wystarczy. Jeśli potrzebujesz więcej — przejdź na cable woodchopper lub landmine rotation, które bezpieczniej obciążają rotację."
+      },
+      {
+        "fault": "Neck whipping ahead of the torso",
+        "faultPl": "Szyja wyprzedza tułów / szarpanie głową",
+        "cause": "Looking around too quickly, neck tension, trying to extend range artificially",
+        "causePl": "Zbyt szybkie rozglądanie się, napięcie szyi, sztuczne wymuszanie zakresu",
+        "cue": "Glue the chin softly above the sternum — head, chest, and bar rotate as one rigid unit",
+        "cuePl": "Trzymaj brodę miękko nad mostkiem — głowa, klatka i sztanga rotują jako jedna sztywna całość"
+      }
+    ],
+    "breathing": "Exhale gently as you rotate to the end range, inhale on the return through the center. Avoid Valsalva (breath hold) — under-load rotation with a held breath spikes intra-discal pressure unnecessarily.",
+    "breathingPl": "Delikatny wydech podczas rotacji do skrajnego zakresu, wdech podczas powrotu przez środek. Unikaj manewru Valsalvy (wstrzymywania oddechu) — obciążenie w rotacji ze wstrzymanym oddechem niepotrzebnie zwiększa ciśnienie wewnątrzdyskowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "avoid",
+      "modification": "Loaded spinal rotation creates shear forces that aggravate disc protrusions and bulges. Switch to anti-rotation exercises (Pallof press, suitcase carry) that build oblique strength without rotating a loaded spine.",
+      "modificationPl": "Obciążona rotacja kręgosłupa wytwarza siły ścinające, które nasilają przepukliny i wypukliny krążków. Przejdź na ćwiczenia anty-rotacyjne (Pallof press, suitcase carry), które wzmacniają skośne bez rotacji obciążonego kręgosłupa.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "facet_joint_dysfunction",
+      "severity": "avoid",
+      "modification": "Rotation under axial load is the primary aggravator of lumbar facet syndrome. Avoid entirely until symptoms resolve and switch to neutral-spine core work.",
+      "modificationPl": "Rotacja pod osiowym obciążeniem to główny czynnik zaostrzający zespół stawów międzywyrostkowych lędźwiowych. Całkowicie unikaj do ustąpienia objawów i przejdź na ćwiczenia brzucha w neutralnej pozycji kręgosłupa.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "si_joint_dysfunction",
+      "severity": "modify",
+      "modification": "Asymmetric rotational loading can irritate sacroiliac joints. If symptomatic, switch to standing cable woodchoppers or seated bodyweight twists without load.",
+      "modificationPl": "Asymetryczne obciążenie rotacyjne może podrażniać stawy krzyżowo-biodrowe. Jeśli odczuwasz objawy, przejdź na stojące cable woodchoppers lub skręty na siedząco bez obciążenia.",
+      "alternative": "cable-woodchopper"
+    },
+    {
+      "condition": "shoulder_mobility_limitations",
+      "severity": "caution",
+      "modification": "Holding a wide barbell on the upper back requires external rotation and shoulder abduction. If unable to comfortably rack the bar, use a broomstick across the shoulders or hold a dumbbell at the chest instead.",
+      "modificationPl": "Trzymanie szerokiej sztangi na górnej części pleców wymaga rotacji zewnętrznej i odwiedzenia barków. Jeśli nie możesz komfortowo oprzeć gryfu, użyj kija od miotły na barkach lub trzymaj hantel przy klatce.",
+      "alternative": "russian-twist"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 each side (light load, slow tempo) | 2x12-20 each side (endurance, broomstick only)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "barbell-seated-twist.gif",
+    "frames_extracted": [
+      "frames/barbell-seated-twist/frame_0_start.png",
+      "frames/barbell-seated-twist/frame_1_early.png",
+      "frames/barbell-seated-twist/frame_2_mid.png",
+      "frames/barbell-seated-twist/frame_3_late.png",
+      "frames/barbell-seated-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/barbell-seated-twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): atleta siedzi na płaskiej ławce, stopy szeroko na podłodze, sztanga oparta wysoko na karku/górnych czworobocznych (NIE na szyi), dłonie szeroko, tułów lekko obrócony w prawo, podświetlony lewy bok (skośne brzucha po stronie napiętej). Klatka 2 (mid): pozycja środkowa — sztanga pozioma, tułów frontalnie, podświetlony prosty brzuch + skośne. Klatki 1, 3, 4: kolejne pozycje rotacji, podświetlony zawsze lewy skośny (kontralateralna aktywacja przy rotacji w prawo). Ruch potwierdzony: rotacja tułowia w płaszczyźnie poprzecznej, biodra zakotwiczone na ławce, ramiona poruszają się razem z tułowiem. Klasyfikacja: core_rotation (rotacja kręgosłupa), isolation (jeden staw funkcjonalny — kręgosłup piersiowy), plane=transverse (poprzeczna), force=both (concentric+eccentric w obie strony), bilateral (oba skośne pracują w naprzemiennych powtórzeniach). Mięsień główny: obliques (wewnętrzne i zewnętrzne — internal/external obliques rotują naprzemiennie). Secondary: erector_spinae (anty-zgięciowa stabilizacja pionowej postawy) + transverse_abdominis (stabilizator wewnątrzbrzuszny). ĆWICZENIE KONTROWERSYJNE: oznaczone w opisie jako wysokie ryzyko przeciążenia kręgosłupa lędźwiowego — dodałem ostrzeżenia w description, instructions (light load only), 4 common_faults (rotacja z lędźwi, momentum, ciężar, szyja), 4 contraindications (disc, facet, SI joint, shoulder). Alternatywy: pallof-press, cable-woodchopper, landmine-rotation (bezpieczniejsze obciążenie rotacji). Nazwa PL: 'Skręty tułowia ze sztangą w siadzie' — opisowa, jednoznaczna, używana w polskich serwisach treningowych. Aliasy obejmują 'rotacje tułowia ze sztangą' i 'russian twist ze sztangą siedząc'. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["barbell", "core", "abs", "obliques", "rotation", "isolation", "controversial", "high_risk_lumbar", "intermediate"]
+}

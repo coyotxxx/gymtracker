@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-single-leg-squat",
+  "name": "Dumbbell Single-Leg Squat",
+  "namePl": "Przysiad jednonóż z hantlami (pistol style lub bench)",
+  "aliases": ["dumbbell pistol squat", "single leg squat with dumbbell", "weighted pistol squat", "one leg squat"],
+  "aliasesPl": ["pistol squat z hantlem", "przysiad na jednej nodze z hantlem", "obciążony pistol squat", "jednonóż squat"],
+
+  "description": "Unilateral compound squat performed on one leg with a dumbbell held at the side (or two dumbbells for balance). The non-working leg is held extended in front (pistol style) or rests behind on a bench. Builds significant single-leg strength, balance, hip stability and reveals left-right asymmetries. Adding load increases the strength demand but requires excellent stability and ankle/hip mobility.",
+  "descriptionPl": "Jednostronny przysiad wielostawowy wykonywany na jednej nodze z hantlem trzymanym przy boku (lub dwoma hantlami dla balansu). Noga niepracująca jest wyciągnięta do przodu (pistol style) lub oparta z tyłu na ławce. Buduje znaczną siłę jednonożną, równowagę, stabilność biodra i ujawnia asymetrie lewa-prawa. Dodanie obciążenia zwiększa wymagania siłowe, ale wymaga doskonałej stabilności i mobilności stawu skokowego i bioder.",
+
+  "instructions": [
+    "Stand with feet hip-width apart, holding a dumbbell at one or both sides with arms straight (or two dumbbells for balance counterweight).",
+    "Shift your weight onto one leg. Extend the non-working leg straight out in front, slightly off the floor (pistol variant) — or place the rear foot on a bench behind you (bench variant).",
+    "Brace your core, square your hips and keep your chest up. Look straight ahead.",
+    "Initiate the descent by sitting back and bending the standing knee. Keep the heel firmly planted, the knee tracking over the toes.",
+    "Lower yourself in a controlled manner. Aim for hip crease below the knee (full pistol) or until the rear knee approaches the floor (bench variant). Do not collapse forward.",
+    "Drive up through the standing heel and mid-foot, extending hip and knee simultaneously. Keep the torso braced.",
+    "Lock out at the top with the working leg fully extended. Maintain balance before starting the next rep.",
+    "Complete all reps on one leg before switching to the other side. Train both sides equally."
+  ],
+  "instructionsPl": [
+    "Stań ze stopami na szerokość bioder, trzymając hantel z jednej lub obu stron przy boku ramienia prosto (lub dwa hantle dla przeciwwagi).",
+    "Przenieś ciężar na jedną nogę. Wyciągnij niepracującą nogę prosto do przodu, lekko nad podłogą (wariant pistol) — lub oprzyj stopę z tyłu na ławce (wariant z ławką).",
+    "Napnij brzuch, wyrównaj biodra i utrzymuj klatkę do góry. Patrz prosto przed siebie.",
+    "Rozpocznij schodzenie siadając do tyłu i zginając stojącą nogę w kolanie. Trzymaj piętę mocno na podłodze, kolano podąża za palcami stopy.",
+    "Schodź kontrolowanym ruchem. Celuj w linię bioder poniżej kolana (pełny pistol) lub aż tylne kolano zbliży się do podłogi (wariant z ławką). Nie zapadaj się do przodu.",
+    "Wypchnij się w górę przez piętę i środek stojącej stopy, prostując biodro i kolano jednocześnie. Trzymaj tułów napięty.",
+    "Zakończ na górze z pracującą nogą w pełnym wyproście. Złap równowagę przed kolejnym powtórzeniem.",
+    "Wykonaj wszystkie powtórzenia na jednej nodze przed zmianą strony. Trenuj obie strony równo."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "calves"],
+    "stabilizers": ["core", "hip_stabilizers", "tibialis_anterior", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "calves": "S5",
+    "core": "S7",
+    "hip_stabilizers": "S7",
+    "erector_spinae": "S4"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["bench", "wall_for_balance", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["bulgarian-split-squat", "bodyweight-pistol-squat", "goblet-squat", "step-up"],
+    "progression_to": ["barbell-pistol-squat", "deficit-pistol-squat", "weighted-pistol-squat-heavy"],
+    "alternatives": ["bulgarian-split-squat", "dumbbell-lunge", "step-up", "rear-foot-elevated-split-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbell at the side, arm straight",
+      "Stand on one leg, plant heel firmly",
+      "Free leg extended forward (pistol) or on bench behind",
+      "Hips square, core braced",
+      "Eyes forward for balance"
+    ],
+    "setup_cues_pl": [
+      "Hantel przy boku, ramię proste",
+      "Stań na jednej nodze, mocno wciśnij piętę",
+      "Wolna noga wyciągnięta do przodu (pistol) lub oparta na ławce z tyłu",
+      "Biodra wyrównane, brzuch napięty",
+      "Wzrok prosto do przodu dla równowagi"
+    ],
+    "execution_cues": [
+      "Sit back into the heel",
+      "Knee tracks over toes (not in or out)",
+      "Keep chest up — don't collapse forward",
+      "Drive through the whole foot on the way up",
+      "Control the descent, no falling"
+    ],
+    "execution_cues_pl": [
+      "Siadaj do tyłu w piętę",
+      "Kolano podąża za palcami stopy (nie do środka, nie na zewnątrz)",
+      "Trzymaj klatkę do góry — nie zapadaj się do przodu",
+      "Wypchnij się przez całą stopę w drodze w górę",
+      "Kontroluj schodzenie, bez opadania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee valgus on standing leg",
+        "faultPl": "Koślawienie kolana stojącej nogi",
+        "cause": "Weak glute medius, poor single-leg stability, load too heavy for unilateral strength",
+        "causePl": "Słabe pośladki średnie, słaba stabilność jednonożna, ciężar zbyt duży dla siły jednostronnej",
+        "cue": "Push the knee out toward the pinky toe. Reduce dumbbell weight and master technique first.",
+        "cuePl": "Wypchnij kolano na zewnątrz w kierunku małego palca. Zmniejsz ciężar hantla i opanuj technikę najpierw."
+      },
+      {
+        "fault": "Heel rise (loss of balance forward)",
+        "faultPl": "Unoszenie pięty (utrata równowagi do przodu)",
+        "cause": "Limited ankle dorsiflexion, leaning too far forward, weak posterior chain",
+        "causePl": "Ograniczona dorsiflexja stawu skokowego, zbyt mocne pochylenie do przodu, słaby tylny łańcuch",
+        "cue": "Wear lifting shoes with heel lift, or place a small plate under the heel. Sit back into the hip.",
+        "cuePl": "Załóż buty do podnoszenia z podwyższonym obcasem lub podłóż mały krążek pod piętę. Siadaj do tyłu w biodro."
+      },
+      {
+        "fault": "Hip drop / pelvis tilts to free-leg side",
+        "faultPl": "Opadanie biodra / miednica przechyla się na stronę wolnej nogi",
+        "cause": "Weak glute medius and core, lack of unilateral stability",
+        "causePl": "Słabe pośladki średnie i core, brak stabilności jednostronnej",
+        "cue": "Squeeze the standing glute hard. Keep hips parallel to the floor.",
+        "cuePl": "Mocno ściśnij pośladek stojącej nogi. Trzymaj biodra równolegle do podłogi."
+      },
+      {
+        "fault": "Excessive forward lean (good morning style)",
+        "faultPl": "Nadmierne pochylenie do przodu (styl good morning)",
+        "cause": "Weak quads on single leg, poor ankle mobility, fear of falling backward",
+        "causePl": "Słabe czworogłowe na jednej nodze, słaba mobilność stawu skokowego, strach przed upadkiem do tyłu",
+        "cue": "Chest up, dumbbell as counterweight in front if needed. Push the knee forward over the toes.",
+        "cuePl": "Klatka do góry, hantel jako przeciwwaga z przodu w razie potrzeby. Wypchnij kolano do przodu nad palce stopy."
+      },
+      {
+        "fault": "Asymmetry between sides (one leg much stronger)",
+        "faultPl": "Asymetria między stronami (jedna noga znacznie silniejsza)",
+        "cause": "Pre-existing imbalance, dominant leg compensation in bilateral lifts",
+        "causePl": "Wcześniej istniejąca asymetria, kompensacja dominującej nogi w ćwiczeniach dwustronnych",
+        "cue": "Train the weaker side first with same reps and load. Add 1-2 extra sets on weak side weekly.",
+        "cuePl": "Trenuj słabszą stronę pierwszą z tą samą liczbą powtórzeń i obciążeniem. Dodaj 1-2 dodatkowe serie na słabszą stronę tygodniowo."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and the hardest part of the ascent. Exhale near the top. Do not hyperventilate between reps — balance is harder when dizzy.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech przez schodzenie i najtrudniejszą część powrotu. Wydech blisko górnej części. Nie hiperwentyluj między powtórzeniami — równowaga jest trudniejsza przy zawrotach głowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "avoid",
+      "modification": "Single-leg loaded squats put high stress on a single knee. Avoid until cleared by physiotherapist.",
+      "modificationPl": "Obciążone przysiady jednonóż dają duże naciski na jedno kolano. Unikaj do czasu zgody fizjoterapeuty.",
+      "alternative": "leg-press-single-leg"
+    },
+    {
+      "condition": "severe_ankle_mobility_restriction",
+      "severity": "modify",
+      "modification": "Use bench variant (rear foot elevated) — less ankle dorsiflexion needed than pistol style. Or place plate under heel.",
+      "modificationPl": "Użyj wariantu z ławką (tylna stopa uniesiona) — mniej dorsiflexji niż pistol style. Lub podłóż krążek pod piętę.",
+      "alternative": "bulgarian-split-squat"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "modify",
+      "modification": "Hold a stable surface (wall, rack) with free hand for support. Reduce ROM until balance improves.",
+      "modificationPl": "Trzymaj się stabilnej powierzchni (ściana, klatka) wolną ręką dla podparcia. Ogranicz zakres ruchu do poprawy równowagi.",
+      "alternative": "leg-press-single-leg"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Deep pistol squat may aggravate. Limit depth to pain-free range or use bench variant with shorter ROM.",
+      "modificationPl": "Głęboki pistol squat może drażnić. Ogranicz głębokość do zakresu bez bólu lub użyj wariantu z ławką z krótszym zakresem.",
+      "alternative": "step-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x5-8 per leg (strength) | 3x8-12 per leg (hypertrophy) | 2-3x12-15 per leg (endurance/balance)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "dumbbell-single-leg-squat.gif",
+    "frames_extracted": [
+      "frames/dumbbell-single-leg-squat/frame_0_start.png",
+      "frames/dumbbell-single-leg-squat/frame_1_early.png",
+      "frames/dumbbell-single-leg-squat/frame_2_mid.png",
+      "frames/dumbbell-single-leg-squat/frame_3_late.png",
+      "frames/dumbbell-single-leg-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-single-leg-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Wariant PISTOL STYLE potwierdzony: model trzyma hantel w jednej ręce (lewa) przy boku, druga ręka wyciągnięta w przód dla balansu, niepracująca noga (lewa) wyciągnięta do przodu nad podłogą. Klatka 2 (mid) pokazuje pełne zejście — biodra poniżej kolana, plecy proste, kolano nad palcami. Na ilustracji podświetlone: czworogłowe pracującej nogi (główne), pośladek pracującej strony, łydka — pasuje do anatomii pistol squata. Mechanic=compound, laterality=unilateral, plane=sagittal, force=push. Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego. Description uwzględnia obie warianty (pistol i bench) bo namePl tak sugeruje.",
+
+  "tags": ["unilateral", "lower_body", "advanced", "balance", "dumbbell", "single_leg", "pistol_squat", "asymmetry_correction"]
+}

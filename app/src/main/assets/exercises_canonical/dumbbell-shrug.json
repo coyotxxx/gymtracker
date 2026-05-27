@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-shrug",
+  "name": "Dumbbell Shrug",
+  "namePl": "Wzruszenia barkami z hantlami",
+  "aliases": ["standing dumbbell shrug", "db shrug", "dumbbell shoulder shrug"],
+  "aliasesPl": ["wzruszenia barkami hantlami stojąc", "szrugsy hantlami", "shrugi z hantlami", "podciąganie barków hantlami"],
+
+  "description": "Isolation exercise for the upper trapezius performed standing with a dumbbell in each hand at the sides of the body. The shoulders are elevated straight up toward the ears and then lowered under control. Compared to the barbell version, dumbbells allow a slightly larger range of motion (the bar cannot pass through the thighs) and a more natural shoulder position, with the trade-off of lower maximum loadable weight. A staple of trap-building routines and a key accessory for deadlift lockout strength.",
+  "descriptionPl": "Ćwiczenie izolowane na górną część mięśnia czworobocznego, wykonywane stojąc z hantlami trzymanymi po bokach ciała. Barki unosi się pionowo w górę w kierunku uszu, a następnie opuszcza w sposób kontrolowany. W porównaniu z wersją ze sztangą hantle pozwalają na nieco większy zakres ruchu (sztanga nie może przejść przez uda) i bardziej naturalne ustawienie obręczy barkowej, kosztem mniejszego maksymalnego obciążenia. Podstawa treningu kapturów i ważne ćwiczenie wspierające siłę dociągnięcia w martwym ciągu.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Hold a dumbbell in each hand with a neutral grip (palms facing the thighs).",
+    "Let the arms hang fully extended at the sides. Keep elbows straight but soft — they remain straight throughout the set.",
+    "Brace the core, lift the chest, and pull the chin slightly back. Look straight ahead, not up.",
+    "Elevate both shoulders straight up toward the ears as high as possible. Exhale during the concentric. The movement happens only at the scapulothoracic joint.",
+    "Pause for a one-second squeeze at the top in full elevation. Do not roll the shoulders forward or backward.",
+    "Lower the shoulders under control over 2-3 seconds back to a fully depressed position with a slight stretch on the traps. Inhale on the descent.",
+    "Keep the head neutral and the arms straight the entire set — only the shoulders move up and down."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Trzymaj po jednej hantli w każdej ręce chwytem neutralnym (dłonie skierowane do ud).",
+    "Pozwól ramionom zwisać w pełnym wyproście wzdłuż boków. Łokcie utrzymuj proste, ale luźne — pozostają wyprostowane przez całą serię.",
+    "Napnij brzuch, unieś klatkę piersiową, lekko cofnij brodę. Patrz prosto przed siebie, nie w górę.",
+    "Unieś oba barki pionowo w górę w kierunku uszu, tak wysoko jak to możliwe. Wydychaj w fazie koncentrycznej. Ruch odbywa się wyłącznie w stawie łopatkowo-piersiowym.",
+    "W górnej pozycji zatrzymaj na sekundę w pełnym uniesieniu i mocno napnij kaptury. Nie wykonuj kółek barkami w przód ani w tył.",
+    "Opuszczaj barki w sposób kontrolowany przez 2-3 sekundy aż do pełnego obniżenia z lekkim rozciągnięciem trapezów. Wdech w fazie ekscentrycznej.",
+    "Głowa neutralna, ramiona proste przez całą serię — pracują wyłącznie barki, w górę i w dół."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_shrug",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_upper"],
+    "secondary": ["levator_scapulae"],
+    "stabilizers": ["forearm_flexors", "rhomboids", "deltoids", "erector_spinae", "core"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_upper": "P10",
+    "levator_scapulae": "S6",
+    "rhomboids": "T4",
+    "forearm_flexors": "T4",
+    "deltoids": "T2",
+    "erector_spinae": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_straps", "wrist_wraps", "weightlifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["heavy-dumbbell-shrug", "behind-the-back-dumbbell-shrug", "dumbbell-overhead-shrug"],
+    "alternatives": ["barbell-shrug", "cable-shrug", "trap-bar-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Neutral grip, palms facing thighs",
+      "Arms fully extended, elbows straight but not locked",
+      "Chest up, chin slightly tucked, eyes forward",
+      "Brace core — no swinging the body"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Chwyt neutralny, dłonie skierowane do ud",
+      "Ramiona w pełnym wyproście, łokcie proste ale nie blokowane",
+      "Klatka w górze, broda lekko cofnięta, wzrok przed siebie",
+      "Napnij brzuch — żadnego bujania ciałem"
+    ],
+    "execution_cues": [
+      "Shrug straight up to the ears — no rolling",
+      "Squeeze hard at the top for one full second",
+      "Keep arms straight — let them be hooks for the weight",
+      "Lower slowly and feel the stretch at the bottom",
+      "Use straps if grip fails before the traps"
+    ],
+    "execution_cues_pl": [
+      "Unoś barki pionowo do uszu — żadnych kółek",
+      "Mocno napnij w górnej pozycji przez pełną sekundę",
+      "Ramiona proste — niech będą hakami do trzymania ciężaru",
+      "Opuszczaj wolno i wyczuj rozciągnięcie na dole",
+      "Użyj pasków jeśli chwyt puszcza zanim zmęczy się trapez"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the shoulders forward or backward",
+        "faultPl": "Wykonywanie kółek barkami w przód lub w tył",
+        "cause": "Old-school myth that rolling 'hits more of the trap'; in reality it grinds the AC joint and reduces tension on the upper trap",
+        "causePl": "Stary mit, że kółka 'lepiej budują kaptury'; w rzeczywistości obciążają staw barkowo-obojczykowy i zmniejszają napięcie na górnym trapezie",
+        "cue": "Move shoulders straight up and straight down only — like a vertical elevator.",
+        "cuePl": "Ruszaj barkami tylko prosto w górę i prosto w dół — jak pionowa winda."
+      },
+      {
+        "fault": "Partial range of motion (short shrugs)",
+        "faultPl": "Niepełny zakres ruchu (krótkie szrugsy)",
+        "cause": "Load too heavy, ego lifting, or not understanding that the top squeeze and bottom stretch are the whole point",
+        "causePl": "Zbyt duży ciężar, ego, lub niezrozumienie że pełny skurcz na górze i rozciągnięcie na dole to istota ćwiczenia",
+        "cue": "Touch the ears with the shoulders at the top, fully depress at the bottom. If you can't, lower the weight.",
+        "cuePl": "Na górze dotknij barkami uszu, na dole w pełni obniż barki. Jeśli się nie da — zmniejsz ciężar."
+      },
+      {
+        "fault": "No pause at the top of the rep",
+        "faultPl": "Brak pauzy w górnej pozycji",
+        "cause": "Bouncing between reps to use momentum instead of muscle tension",
+        "causePl": "Odbijanie między powtórzeniami w celu wykorzystania rozpędu zamiast napięcia mięśniowego",
+        "cue": "Hold the squeeze for a full second at the top — count 'one Mississippi' before lowering.",
+        "cuePl": "Utrzymaj napięcie przez pełną sekundę w górnej pozycji — policz 'jeden, dwa, trzy' przed opuszczeniem."
+      },
+      {
+        "fault": "Cheating with body bounce and hip drive",
+        "faultPl": "Oszukiwanie przez bujanie ciałem i odbicie biodrami",
+        "cause": "Load far too heavy — turning a strict shrug into an inverse hang clean",
+        "causePl": "Ciężar zdecydowanie za duży — zamiana ścisłego szrugsa w odwrotny zarzut",
+        "cue": "Lower the weight. Stand against a wall to feel any body sway. Make the traps do the work, not the hips.",
+        "cuePl": "Zmniejsz ciężar. Oprzyj plecy o ścianę aby wyczuć każde bujnięcie ciałem. Pracują trapezy, nie biodra."
+      },
+      {
+        "fault": "Bending the elbows (turning the shrug into a row)",
+        "faultPl": "Uginanie łokci (zamiana szrugsa w wiosłowanie)",
+        "cause": "Biceps and forearms compensating because traps are fatigued or the load is too heavy",
+        "causePl": "Biceps i przedramiona kompensują, bo trapezy są zmęczone lub ciężar jest za duży",
+        "cue": "Keep elbows straight the whole set — arms are passive hooks. Reduce weight if elbows bend.",
+        "cuePl": "Łokcie proste przez całą serię — ramiona to bierne haki. Zmniejsz ciężar jeśli łokcie się uginają."
+      }
+    ],
+    "breathing": "Exhale during the concentric (shrug up). Inhale during the eccentric (lower down). Maintain a moderate brace throughout to keep the spine stable under load.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uniesienie barków). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj umiarkowane napięcie brzucha przez całą serię aby stabilizować kręgosłup pod obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_disc_herniation_or_radiculopathy",
+      "severity": "avoid",
+      "modification": "Heavy traction on a compromised cervical disc is contraindicated. Postpone until cleared by a physiotherapist; in the meantime focus on scapular retraction work (face pulls, band pull-aparts).",
+      "modificationPl": "Mocna trakcja na uszkodzonym krążku szyjnym jest przeciwwskazana. Wstrzymaj się do czasu zezwolenia fizjoterapeuty; zamiast tego pracuj nad ściąganiem łopatek (face pulle, rozciąganie gum).",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_joint_pain_ac_joint",
+      "severity": "modify",
+      "modification": "Pure shrug pattern can aggravate the AC joint. Reduce range of motion (avoid maximal elevation), drop the load, and consider trap-bar or cable variation for a more comfortable line of pull.",
+      "modificationPl": "Czysty wzorzec wzruszania barkami może drażnić staw barkowo-obojczykowy. Zmniejsz zakres ruchu (unikaj maksymalnego uniesienia), zmniejsz ciężar, rozważ wariant z trap-barem lub wyciągiem dla bardziej komfortowej linii działania siły.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Heavy traction with dumbbells can compress the brachial plexus and aggravate symptoms. Use lighter loads with higher reps, avoid lifting straps that encourage maximum hangs, and prioritize scapular depression work.",
+      "modificationPl": "Mocna trakcja z hantlami może uciskać splot ramienny i nasilać objawy. Używaj lżejszych ciężarów z większą liczbą powtórzeń, unikaj pasków zachęcających do maksymalnego zawisu, priorytet daj pracy nad depresją łopatek.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "grip_strength_limitation_or_recent_hand_surgery",
+      "severity": "modify",
+      "modification": "Heavy dumbbells demand strong grip. Use lifting straps to remove the grip variable, or switch to a machine/cable shrug. Avoid mixed grip on shrugs.",
+      "modificationPl": "Ciężkie hantle wymagają mocnego chwytu. Użyj pasków aby wyeliminować chwyt jako czynnik ograniczający, albo przejdź na maszynę lub wyciąg. Unikaj chwytu mieszanego przy szrugsach.",
+      "alternative": "cable-shrug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4-5x6-10 (strength) | 2-3x15-20 (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-shrug.gif",
+    "frames_extracted": [
+      "frames/dumbbell-shrug/frame_0_start.png",
+      "frames/dumbbell-shrug/frame_1_early.png",
+      "frames/dumbbell-shrug/frame_2_mid.png",
+      "frames/dumbbell-shrug/frame_3_late.png",
+      "frames/dumbbell-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/dumbbell-shrug",
+    "yuhonas_id": "Dumbbell_Shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: postać stoi prosto z hantlami po bokach na wyprostowanych ramionach, chwyt neutralny dłońmi do ud, ramiona zwisają w pełnym obniżeniu — górny kaptur z lewej strony i bok karku podświetlone na czerwono (trapezius_upper + levator_scapulae). Frame 2: pełne uniesienie barków pionowo w kierunku uszu, ramiona pozostają proste, hantle wyżej przy biodrach, czerwone podświetlenie pokrywa całą górną część karku obustronnie — szczyt fazy koncentrycznej. Frame 4: powrót do pełnego obniżenia barków z 'ghostem' szczytowej pozycji powyżej — czysta pionowa linia ruchu bez kółek barkowych. Ruch jednoznacznie zidentyfikowany jako Dumbbell Shrug, dwustronny, w płaszczyźnie czołowej. Yuhonas zgodny. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "back", "traps", "isolation", "dumbbell", "upper_body", "neck", "accessory"]
+}

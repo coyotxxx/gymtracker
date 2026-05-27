@@ -1,0 +1,205 @@
+{
+  "id": "cable-straight-back-seated-row",
+  "name": "Cable Straight Back Seated Row",
+  "namePl": "Wiosłowanie z wyciągu siedząc z prostym tułowiem",
+  "aliases": ["cable seated row straight back", "strict seated cable row", "upright seated cable row", "no-lean cable row", "static torso seated row"],
+  "aliasesPl": ["wiosłowanie siedząc bez odchylania tułowia", "wiosłowanie z wyciągu siedząc — wersja ścisła", "seated row z prostym tułowiem", "wiosłowanie z wyciągu siedząc — pionowy tułów", "strict seated row"],
+
+  "description": "Strict-form variant of the seated cable row in which the torso stays perfectly vertical from the first to the last rep. Unlike the standard seated cable row — where a small forward lean at the bottom and a slight backward lean at the top are tolerated — here you sit completely upright the entire time. The hips and lumbar spine are locked, no rocking, no torso extension, no forward reach. This kills the contribution of the lower back / spinal erectors as a 'helper' and forces the mid-back, lats and rhomboids to do all the work alone. Performed on a low cable station with a short straight bar (pronated grip, hands shoulder-width or slightly narrower) pulled to the lower abdomen. The result is significantly less weight on the stack but dramatically more isolation and 'feel' in the upper / middle back — a textbook hypertrophy variant for lifters who already row heavy with momentum and want a corrective, focused stimulus.",
+  "descriptionPl": "Ścisła wersja wiosłowania na wyciągu siedząc, w której tułów pozostaje całkowicie pionowy przez cały zakres ruchu — od pierwszego do ostatniego powtórzenia. W przeciwieństwie do standardowego seated cable row — gdzie tolerowane jest lekkie pochylenie do przodu na dole i drobne odchylenie do tyłu na górze — tu siedzisz idealnie wyprostowany przez cały czas. Biodra i odcinek lędźwiowy są zablokowane, bez bujania, bez wyprostu tułowia, bez sięgania do przodu. Eliminuje to udział dolnego odcinka pleców / prostowników grzbietu jako 'pomocnika' i zmusza środkowe plecy, najszersze i równoległoboczne do samodzielnej pracy. Wykonywane na dolnym wyciągu z krótkim prostym gryfem (chwyt pronowany, dłonie na szerokość barków lub odrobinę węziej) przyciąganym do dolnej części brzucha. Efekt: znacznie mniejszy ciężar na stosie, ale dużo lepsza izolacja i 'czucie' górnych i środkowych pleców — wzorcowy wariant hipertroficzny dla zawodników, którzy już ciężko wiosłują z pędem i potrzebują korekcyjnego, skupionego bodźca.",
+
+  "instructions": [
+    "Attach a short straight bar to the low cable station. Sit on the bench with feet braced firmly against the foot platform, knees slightly bent (not locked).",
+    "Grab the straight bar with a pronated (overhand) grip, hands roughly shoulder-width or slightly narrower.",
+    "Sit COMPLETELY UPRIGHT — torso perpendicular to the floor, hips at 90°, neutral spine, chest proud. NO forward lean.",
+    "Brace the core hard. The torso angle you set now will not change for the rest of the set.",
+    "Initiate the pull by retracting and depressing the shoulder blades BEFORE the elbows bend.",
+    "Pull the bar toward the lower abdomen / belly button — elbows track back close to the ribs, NOT flared out, forearms parallel to the cable.",
+    "Reach end position: bar lightly touches the lower belly, elbows behind the line of the torso, shoulder blades fully retracted and depressed. Torso STILL vertical — no lean back. Hold the squeeze for 1 second.",
+    "Return the bar under control — let the scapulae protract slightly to lengthen the lats — but DO NOT round the lower back forward and DO NOT lose the vertical torso. The trunk does not move.",
+    "Repeat for the prescribed reps maintaining a strict 'spine bolted to the seat' position. If the torso starts to move, the weight is too heavy — reduce it."
+  ],
+  "instructionsPl": [
+    "Załóż krótki prosty gryf na dolny wyciąg. Usiądź na ławce ze stopami mocno opartymi o platformę, kolana lekko ugięte (nie zablokowane).",
+    "Złap prosty gryf chwytem pronowanym (nachwytem), dłonie mniej więcej na szerokość barków lub odrobinę węziej.",
+    "Siedź CAŁKOWICIE PIONOWO — tułów prostopadle do podłogi, biodra pod kątem 90°, neutralny kręgosłup, klatka wysunięta. ŻADNEGO pochylenia do przodu.",
+    "Mocno napnij brzuch. Kąt tułowia ustalony teraz NIE zmieni się do końca serii.",
+    "Rozpocznij ciąg ŚCIĄGNIĘCIEM i obniżeniem łopatek ZANIM zaczniesz zginać łokcie.",
+    "Pociągnij gryf w stronę dolnej części brzucha / pępka — łokcie idą w tył blisko żeber, NIE rozchylone, przedramiona równolegle do linki.",
+    "Pozycja końcowa: gryf lekko dotyka dolnego brzucha, łokcie za linią tułowia, łopatki maksymalnie ściągnięte i obniżone. Tułów NADAL pionowy — bez odchylenia w tył. Zatrzymaj napięcie na 1 sekundę.",
+    "Wracaj gryfem w pełnej kontroli — pozwól łopatkom lekko 'odpłynąć' do przodu by rozciągnąć najszersze — ale NIE zaokrąglaj dolnego odcinka pleców i NIE trać pionowego tułowia. Tułów się nie porusza.",
+    "Powtarzaj zaplanowaną liczbę powtórzeń utrzymując ścisłą pozycję 'kręgosłup przyśrubowany do siedziska'. Jeśli tułów zaczyna się ruszać, ciężar jest za duży — zmniejsz go."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower"],
+    "secondary": ["biceps_brachii", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P10",
+    "trapezius_middle_lower": "P10",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "erector_spinae": "S6",
+    "core": "S7"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["cable-low-seated-row", "seated-machine-row"],
+    "progression_to": ["barbell-bent-over-row", "pendlay-row", "t-bar-row"],
+    "alternatives": ["chest-supported-row", "cable-low-seated-row", "machine-row", "single-arm-dumbbell-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Short straight bar, pronated grip, hands shoulder-width or slightly narrower",
+      "Sit COMPLETELY upright — torso perpendicular to the floor, no lean forward",
+      "Feet braced firmly, knees slightly bent, hips locked at 90°",
+      "Neutral spine, chest proud, ribs down, shoulder blades not collapsed",
+      "Brace the core HARD — pretend a belt is squeezing your waist"
+    ],
+    "setup_cues_pl": [
+      "Krótki prosty gryf, chwyt pronowany (nachwyt), dłonie na szerokość barków lub odrobinę węziej",
+      "Siedź CAŁKOWICIE prosto — tułów prostopadle do podłogi, bez pochylenia do przodu",
+      "Stopy mocno oparte, kolana lekko ugięte, biodra zablokowane pod kątem 90°",
+      "Neutralny kręgosłup, klatka wysunięta, żebra opuszczone, łopatki nie zapadają się w przód",
+      "MOCNO napnij brzuch — wyobraź sobie pas ściskający talię"
+    ],
+    "execution_cues": [
+      "TORSO DOES NOT MOVE — the only joint that moves is the shoulder",
+      "Lead with the shoulder blades — retract and depress before the elbow bends",
+      "Drive elbows back and CLOSE to the ribs, forearms parallel to the cable",
+      "Bar to the LOW belly, not to the chest — squeeze for 1 full second",
+      "On the eccentric, let the scapulae protract — but the trunk stays vertical, the lumbar spine stays neutral"
+    ],
+    "execution_cues_pl": [
+      "TUŁÓW SIĘ NIE RUSZA — jedyny staw który pracuje to staw barkowy",
+      "Prowadź ruch łopatkami — ściągnij i obniż je zanim zegnie się łokieć",
+      "Prowadź łokcie w tył i BLISKO żeber, przedramiona równolegle do linki",
+      "Gryf do DOLNEGO brzucha, nie do klatki — ściśnij łopatki na 1 pełną sekundę",
+      "Na ekscentryku pozwól łopatkom odpłynąć do przodu — ale tułów zostaje pionowy, lędźwie neutralne"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning backward at the end of the pull (defeats the whole point of the variant)",
+        "faultPl": "Odchylanie tułowia w tył na końcu ciągu (niweczy cały sens tego wariantu)",
+        "cause": "Old habit from standard seated rows, or weight too heavy for strict form",
+        "causePl": "Stary nawyk ze standardowego seated row, lub ciężar za duży na ścisłą formę",
+        "cue": "If the torso moves, the rep doesn't count. Reduce weight by 25-30% versus your normal seated row. The whole point is that the spine is BOLTED to the seat — the only joint that moves is the shoulder.",
+        "cuePl": "Jeśli tułów się rusza, powtórzenie się nie liczy. Zmniejsz ciężar o 25-30% w stosunku do normalnego seated row. Cały sens tego wariantu polega na tym, że kręgosłup jest PRZYŚRUBOWANY do siedziska — pracuje tylko staw barkowy."
+      },
+      {
+        "fault": "Forward reach with lumbar flexion at the bottom of the eccentric",
+        "faultPl": "Sięganie do przodu ze zgięciem lędźwiowym na dole fazy ekscentrycznej",
+        "cause": "Trying to add range by rounding the lower back instead of protracting the shoulder blades",
+        "causePl": "Próba dodania zakresu przez zaokrąglenie dolnego odcinka pleców zamiast protrakcji łopatek",
+        "cue": "All the bottom-range stretch comes from the SHOULDER BLADES sliding forward on the rib cage. The lumbar spine stays neutral and the trunk stays vertical. If you feel your lower back rounding, shorten the forward range.",
+        "cuePl": "Całe rozciągnięcie na dole pochodzi z PROTRAKCJI ŁOPATEK po klatce piersiowej. Lędźwia zostają neutralne a tułów pionowy. Jeśli czujesz że dolne plecy się zaokrąglają, skróć zakres do przodu."
+      },
+      {
+        "fault": "Elbows flaring out — pulling toward the chest like a face pull",
+        "faultPl": "Łokcie rozchylone na boki — ciąg do klatki jak face pull",
+        "cause": "Wrong elbow path, or confusing this with a rear-delt-focused row",
+        "causePl": "Zła trajektoria łokci, lub mylenie tego ćwiczenia z wiosłowaniem na tylne aktony",
+        "cue": "With a pronated grip on the straight bar, elbows still tuck close to the ribs and the bar lands on the LOW belly — not the sternum. Elbows flare = you turned a back row into a rear delt row.",
+        "cuePl": "Z chwytem pronowanym na prostym gryfie łokcie nadal trzymamy blisko żeber a gryf ląduje na DOLNYM brzuchu — nie na mostku. Łokcie na boki = zmieniłeś wiosłowanie na plecy w wiosłowanie na tylne aktony."
+      },
+      {
+        "fault": "Pulling with the biceps — no scapular retraction",
+        "faultPl": "Ciągnięcie samymi bicepsami — bez ściągnięcia łopatek",
+        "cause": "Biceps-dominant pulling pattern, weak rhomboids/mid-traps, rushed tempo",
+        "causePl": "Dominacja bicepsów w schemacie ciągu, słabe równoległoboczne / środkowe czworoboczne, zbyt szybkie tempo",
+        "cue": "Hands are just hooks on the bar. The PULL comes from the elbows being driven back by the shoulder blades. Pause and squeeze the scapulae at the end of every rep — biceps don't finish a row, the mid-back does.",
+        "cuePl": "Dłonie to tylko haki na gryfie. CIĄG pochodzi z łokci prowadzonych w tył przez łopatki. Pauzuj i ściskaj łopatki na końcu każdego powtórzenia — bicepsy nie kończą wiosłowania, środkowe plecy to robią."
+      },
+      {
+        "fault": "Shrugging the shoulders up toward the ears during the pull",
+        "faultPl": "Wzruszanie barków w stronę uszu podczas ciągu",
+        "cause": "Upper traps overactivating because the bar is being pulled too high, or stress / poor scapular control",
+        "causePl": "Nadaktywność górnych czworobocznych, bo gryf jest ciągnięty zbyt wysoko, lub stres / słaba kontrola łopatki",
+        "cue": "DEPRESS the shoulder blades — pull them DOWN and back, not up. Imagine your shoulders are heavy and want to drop into your back pockets. If the bar goes to the belly (not the chest), depression happens naturally.",
+        "cuePl": "OBNIŻ łopatki — ściągaj je W DÓŁ i w tył, nie do góry. Wyobraź sobie że barki są ciężkie i chcą opaść do tylnych kieszeni spodni. Jeśli gryf ląduje na brzuchu (nie na klatce), depresja łopatek dzieje się samoistnie."
+      }
+    ],
+    "breathing": "Inhale at the start (arms extended forward). Exhale through the pull as the bar approaches the abdomen. Inhale on the controlled return. On heavier sets, brace and hold breath through the concentric, exhale at the top after the squeeze.",
+    "breathingPl": "Wdech na starcie (ramiona wyprostowane do przodu). Wydech w trakcie ciągu gdy gryf zbliża się do brzucha. Wdech podczas kontrolowanego powrotu. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech na szczycie po ściśnięciu łopatek."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Strict vertical torso is actually back-friendly because it removes spinal flexion and momentum — but reduce weight, keep range short, and avoid any forward reach. Stop if pain increases.",
+      "modificationPl": "Ścisły pionowy tułów jest faktycznie przyjazny dla pleców, bo eliminuje zgięcie kręgosłupa i pęd — ale zmniejsz ciężar, ogranicz zakres i unikaj jakiegokolwiek sięgania do przodu. Przerwij jeśli ból się nasila.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Pronated grip can be slightly more provocative than neutral. If shoulder pain occurs, switch to V-handle (neutral grip) and keep elbows close to ribs.",
+      "modificationPl": "Chwyt pronowany może być nieco bardziej prowokacyjny niż neutralny. Jeśli pojawi się ból barku, przełącz na uchwyt V (chwyt neutralny) i trzymaj łokcie blisko żeber.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "caution",
+      "modification": "This variant is preferable to standard seated row because the vertical torso removes loaded spinal flexion. Still — keep the lumbar spine neutral, do not let the cable pull you forward at the bottom.",
+      "modificationPl": "Ten wariant jest preferowany w stosunku do standardowego seated row, bo pionowy tułów eliminuje obciążone zgięcie kręgosłupa. Mimo to — utrzymuj lędźwia w pozycji neutralnej, nie pozwól linie pociągnąć cię w przód na dole zakresu.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "wrist_pain_pronated_grip",
+      "severity": "modify",
+      "modification": "Pronated grip on a straight bar can stress the wrists. Use a slightly narrower grip or switch to V-handle (neutral grip) which is wrist-friendly.",
+      "modificationPl": "Chwyt pronowany na prostym gryfie może obciążać nadgarstki. Zwęź chwyt lub przełącz na uchwyt V (chwyt neutralny), który jest przyjazny dla nadgarstków.",
+      "alternative": "cable-low-seated-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, primary use) | 3x10-15 (strict mind-muscle work) | 3x12-20 (pump / burnout finisher) | 4x6-8 (strict strength — rare)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-straight-back-seated-row.gif",
+    "frames_extracted": [
+      "frames/cable-straight-back-seated-row/frame_0_start.png",
+      "frames/cable-straight-back-seated-row/frame_1_early.png",
+      "frames/cable-straight-back-seated-row/frame_2_mid.png",
+      "frames/cable-straight-back-seated-row/frame_3_late.png",
+      "frames/cable-straight-back-seated-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cable-straight-back-seated-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): osoba siedzi na dolnym wyciągu, stopy mocno oparte o platformę, kolana lekko ugięte, tułów IDEALNIE PIONOWY (prostopadle do podłogi — kluczowa cecha tego wariantu), ramiona w pełni wyprostowane do przodu trzymając KRÓTKI PROSTY GRYF chwytem PRONOWANYM (nachwytem) na szerokość barków. Podświetlone są: szeroka strefa najszersze grzbietu (cały tylny korpus), bardzo mocno równoległoboczne i środkowe/dolne czworoboczne, tylne aktony naramienne. Frame 2 (mid): faza koncentryczna — łokcie idą w tył blisko żeber (nie flared), gryf w połowie drogi, tułów NADAL idealnie pionowy. Frame 4 (end): pełne ściągnięcie łopatek, gryf przy dolnej części brzucha, łokcie wyraźnie za linią tułowia, tułów CAŁKOWICIE PIONOWY — na obrazie widać przezroczystą 'sylwetkę-cień' pokazującą gdzie ktoś z normalnym seated row by się odchylił, ale rzeczywista postać tego NIE robi. To kluczowy detal odróżniający 'straight back' wariant od standardu. Klasyfikacja 'pull_horizontal' potwierdzona. Equipment: cable_machine + straight_bar (NIE V-handle, jak w cable-low-seated-row). Difficulty 5 (intermediate) — wyższe niż klasyczny seated row (4), bo wymaga dyscypliny: brak odchylania = brak pomocy lędźwiami = mniejsze ciężary i ścisła kontrola łopatek. Primary muscle intensities: rhomboids P10 i trapezius_middle_lower P10 (zwiększone vs cable-low-seated-row gdzie były P9), bo eliminacja udziału prostowników grzbietu PRZESUWA pracę na środkowe plecy. latissimus_dorsi P9 (lekko niższe niż w klasyku, bo brak małego pochylenia do przodu = mniej angażujący kąt dla latów). core S7 (wzrost — pracuje aktywnie utrzymując pionowy tułów) i erector_spinae S6 (jako stabilizator izometryczny, nie generator ruchu). Pole prerequisites: cable-low-seated-row (zanim pójdziesz w ścisłą wersję, opanuj klasyk). Wszystkie 5 common_faults wynikają wprost z obserwacji GIFa i specyfiki wariantu. Wszystkie pola PL napisane od zera, polski standard fitness — 'wiosłowanie z wyciągu siedząc z prostym tułowiem' to nazwa odpowiadająca temu co widać (pionowy tułów = prosty plecy).",
+
+  "tags": ["compound", "strict_form", "horizontal_pull", "cable", "mid_back_isolation", "lat_developer", "intermediate", "hypertrophy_focus", "constant_tension", "no_momentum", "mind_muscle_connection"]
+}

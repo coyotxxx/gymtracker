@@ -1,0 +1,206 @@
+{
+  "id": "spider-crawl-push-up",
+  "name": "Spider Crawl Push-Up",
+  "namePl": "Spider crawl push-up (pompka pajęcza)",
+  "aliases": ["spider push-up", "spider-man push-up", "spiderman push-up", "spider crawl pushup", "knee-to-elbow push-up"],
+  "aliasesPl": ["spider push-up", "spider-man pompka", "spiderman pompka", "pompka pajęcza", "pompka z kolanem do łokcia", "pajęczyna"],
+
+  "description": "Advanced bodyweight push-up variation that combines a standard horizontal push pattern with a hip flexion + transverse-plane knee drive. On each descent, one knee is pulled forward toward the elbow on the SAME side, then returned on the press up — alternating sides each rep. The result: chest and triceps work as in a regular push-up, while obliques, hip flexors and serratus anterior fire hard to control the rotation and stabilize the moving leg. Excellent crossover-strength + dynamic-stability drill used in calisthenics, gymnastics warm-ups, MMA conditioning and CrossFit.",
+  "descriptionPl": "Zaawansowany wariant pompki z masą ciała, który łączy klasyczny wzorzec pchania w płaszczyźnie strzałkowej ze zgięciem biodra i ruchem nogi w płaszczyźnie poprzecznej. Przy każdym schodzeniu w dół jedno kolano podciągane jest do łokcia po TEJ SAMEJ stronie, a podczas wyciskania noga wraca do pozycji wyjściowej — strony są wymieniane co powtórzenie. Efekt: klatka i tricepsy pracują jak w zwykłej pompce, a skośne brzucha, zginacze biodra i mięsień zębaty muszą mocno popracować, kontrolując rotację i stabilizując ruchomą nogę. Świetne ćwiczenie crossover-strength + dynamicznej stabilizacji, używane w kalistenice, rozgrzewkach gimnastycznych, MMA i CrossFit.",
+
+  "instructions": [
+    "Start in a strong high-plank: hands slightly wider than shoulders, directly under the shoulder line, wrists/elbows/shoulders stacked.",
+    "Brace your core hard. Squeeze glutes. Body forms a straight line from heels to head — feet roughly hip-width apart, toes on the floor.",
+    "Inhale and begin lowering your chest toward the floor in a controlled push-up. Elbows track at ~45° from torso (NOT flared 90°).",
+    "As you lower, drive your RIGHT knee forward and OUT toward your RIGHT elbow. Knee should travel along the outside of your ribcage — not under your body.",
+    "Hit the bottom position: chest just above the floor, right knee close to (or touching) the right elbow, hips slightly rotated but shoulders stay square.",
+    "Exhale and press the floor away. As your arms extend, return the right leg to the plank starting position.",
+    "Re-set into a rigid plank — this is rep one on the right side.",
+    "Next rep: alternate. Lower again, this time drawing the LEFT knee toward the LEFT elbow. Continue alternating sides for the prescribed reps.",
+    "Maintain a flat back and a neutral neck throughout — chin slightly tucked, eyes ahead of hands. Do not let hips sag or pike."
+  ],
+  "instructionsPl": [
+    "Zacznij w mocnej pozycji high-plank: dłonie nieco szerzej niż barki, bezpośrednio pod linią barków, nadgarstki/łokcie/barki ułożone pionowo.",
+    "Mocno napnij brzuch. Ściśnij pośladki. Ciało tworzy prostą linię od pięt do głowy — stopy rozstawione na szerokość bioder, palce stóp na podłodze.",
+    "Wdech, rozpocznij kontrolowane schodzenie klatki do podłogi jak w klasycznej pompce. Łokcie pod kątem ~45° od tułowia (NIE rozsunięte na 90°).",
+    "Podczas schodzenia w dół podciągnij PRAWE kolano do przodu i NA ZEWNĄTRZ w kierunku PRAWEGO łokcia. Kolano przesuwa się po zewnętrznej stronie żeber — nie pod tułowiem.",
+    "Pozycja dolna: klatka tuż nad podłogą, prawe kolano blisko (lub dotyka) prawego łokcia, biodra lekko obrócone, ale barki cały czas równoległe do podłogi.",
+    "Wydech, wypchnij podłogę. W trakcie prostowania ramion wróć prawą nogą do wyjściowej pozycji planka.",
+    "Ustabilizuj się ponownie w sztywnym planku — to jedno powtórzenie na prawą stronę.",
+    "Następne powtórzenie: zmiana strony. Schodzisz znowu, tym razem podciągając LEWE kolano do LEWEGO łokcia. Kontynuuj naprzemiennie przez założoną liczbę powtórzeń.",
+    "Utrzymuj płecy płasko i neutralny kark przez cały ruch — broda lekko schowana, wzrok przed dłońmi. Biodra nie opadają ani nie podnoszą się do góry."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral_alternating",
+    "plane": "sagittal_transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "obliques"],
+    "secondary": ["anterior_deltoids", "hip_flexors", "serratus_anterior", "rectus_abdominis"],
+    "stabilizers": ["core", "glutes", "scapular_stabilizers", "rotator_cuff", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P7",
+    "obliques": "P8",
+    "anterior_deltoids": "S6",
+    "hip_flexors": "S7",
+    "serratus_anterior": "S6",
+    "rectus_abdominis": "S6",
+    "core": "T6",
+    "glutes": "T5",
+    "scapular_stabilizers": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handles", "exercise_mat"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "plank", "mountain-climber"],
+    "progression_to": ["spider-push-up-with-hold", "archer-push-up", "one-arm-push-up", "plyometric-push-up"],
+    "alternatives": ["mountain-climber", "push-up", "decline-push-up", "knee-to-elbow-plank"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "High plank — wrists, elbows and shoulders stacked at the top",
+      "Hands slightly wider than shoulders, fingers spread, grip the floor",
+      "Feet hip-width apart — slightly wider stance helps stability when one leg lifts",
+      "Pre-brace: squeeze glutes, brace abs, pull belly button to spine",
+      "Neutral neck — chin slightly tucked, eyes about 30 cm in front of hands"
+    ],
+    "setup_cues_pl": [
+      "High plank — nadgarstki, łokcie i barki ułożone pionowo w pozycji wyjściowej",
+      "Dłonie nieco szerzej niż barki, palce rozstawione, 'wczep' dłonie w podłogę",
+      "Stopy na szerokość bioder — lekko szersza pozycja pomaga w stabilizacji gdy jedna noga się unosi",
+      "Pre-bracing: ściśnij pośladki, napnij brzuch, przyciągnij pępek do kręgosłupa",
+      "Neutralny kark — broda lekko schowana, wzrok ok. 30 cm przed dłońmi"
+    ],
+    "execution_cues": [
+      "Sync the descent with the knee drive — leg moves as the chest moves, not before, not after",
+      "Knee to the SAME-SIDE elbow, on the OUTSIDE of the ribcage — not under the body",
+      "Keep hips low and square — don't lift the lifted-leg hip toward the ceiling",
+      "Elbows tight at ~45° — 'hide the armpits', same as in a clean push-up",
+      "Alternate sides every rep — right rep, left rep, right rep, left rep"
+    ],
+    "execution_cues_pl": [
+      "Zsynchronizuj schodzenie z ruchem kolana — noga rusza się razem z klatką, nie wcześniej, nie później",
+      "Kolano do łokcia po TEJ SAMEJ stronie, po ZEWNĘTRZNEJ stronie żeber — nie pod tułowiem",
+      "Biodra nisko i równolegle — nie podnoś biodra od strony pracującej nogi do sufitu",
+      "Łokcie mocno przy żebrach, pod ~45° — 'schowaj pachy', tak samo jak w czystej pompce",
+      "Zmieniaj strony co powtórzenie — prawe, lewe, prawe, lewe"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee passing UNDER the body instead of to the side of the ribcage",
+        "faultPl": "Kolano przechodzi POD tułowiem zamiast obok żeber",
+        "cause": "Treating the exercise like a mountain climber — driving knee toward chest, not toward elbow",
+        "causePl": "Wykonywanie ruchu jak mountain climber — kolano leci do klatki, a nie do łokcia",
+        "cue": "Aim the kneecap at your elbow on the SAME side. Track the leg OUTSIDE the body — you should feel obliques fire, not just hip flexors.",
+        "cuePl": "Celuj rzepką w łokieć po TEJ SAMEJ stronie. Tor nogi ZEWNĘTRZNY — powinieneś poczuć skośne brzucha, nie tylko zginacze biodra."
+      },
+      {
+        "fault": "Hips sagging or piking when the leg moves",
+        "faultPl": "Opadające lub uniesione biodra w trakcie ruchu nogi",
+        "cause": "Loss of plank tension as soon as one leg unloads — weak anti-rotation core",
+        "causePl": "Utrata napięcia planka gdy jedna noga się odciąża — słaby core anty-rotacyjny",
+        "cue": "Brace abs HARDER on the side that's moving. Keep the supporting glute squeezed. Hips stay flat — imagine a tray of water on your lower back.",
+        "cuePl": "Mocniej NAPNIJ brzuch po stronie ruchu. Trzymaj pośladek nogi podporowej napięty. Biodra płasko — wyobraź sobie tackę z wodą na dolnym odcinku pleców."
+      },
+      {
+        "fault": "Push-up and knee drive desynchronized (lower first, then move knee)",
+        "faultPl": "Schodzenie i ruch kolana niezsynchronizowane (najpierw w dół, potem ruch kolana)",
+        "cause": "Treating it as two separate movements rather than one combined pattern",
+        "causePl": "Traktowanie ruchu jako dwóch oddzielnych elementów zamiast jednego połączonego wzorca",
+        "cue": "One smooth motion: elbow bends + knee drives = same beat. Chest reaches the floor at the same moment the knee reaches the elbow.",
+        "cuePl": "Jeden płynny ruch: zgięcie łokci + ruch kolana = na ten sam takt. Klatka dochodzi do podłogi w tym samym momencie, w którym kolano dochodzi do łokcia."
+      },
+      {
+        "fault": "Partial push-up depth — chest stays high, only knee moves",
+        "faultPl": "Płytkie schodzenie — klatka zostaje wysoko, rusza się tylko kolano",
+        "cause": "Strength deficit on the chest side — easier to move the leg than to do a full push-up",
+        "causePl": "Deficyt siły po stronie klatki — łatwiej ruszyć nogą niż wykonać pełną pompkę",
+        "cue": "Chest must reach within a fist's height from the floor. If full ROM isn't possible — regress to knee push-up + mountain climber separately, then merge.",
+        "cuePl": "Klatka musi dojść na wysokość pięści od podłogi. Jeśli pełen ROM jest niemożliwy — wróć osobno do pompek z kolan + mountain climberów, a potem znowu połącz."
+      },
+      {
+        "fault": "Always favoring one side (only right-knee-to-right-elbow reps)",
+        "faultPl": "Wykonywanie zawsze tylko jednej strony (samo prawe kolano do prawego łokcia)",
+        "cause": "Lack of awareness or hidden imbalance — weaker oblique on one side gets avoided",
+        "causePl": "Brak świadomości lub ukryta asymetria — słabszy skośny po jednej stronie jest 'omijany'",
+        "cue": "Count out loud: 'right, left, right, left'. Aim for equal reps each side per set, or work the weaker side first.",
+        "cuePl": "Licz na głos: 'prawa, lewa, prawa, lewa'. Tyle samo powtórzeń każdej strony w serii albo zacznij od słabszej strony."
+      }
+    ],
+    "breathing": "Inhale and brace as you lower and drive the knee in. Exhale forcefully on the press up and as the leg returns to plank. Hard breath out helps re-engage the obliques between reps.",
+    "breathingPl": "Wdech i napięcie podczas schodzenia w dół i podciągania kolana. Mocny wydech na wyciskaniu w górę i powrocie nogi do planka. Wymuszony wydech pomaga ponownie zaangażować skośne między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles or fists (knuckles down) to keep wrist neutral. The rotational element loads the wrists asymmetrically — handles help a lot.",
+      "modificationPl": "Użyj uchwytów do pompek lub pięści (knykcie w dół) aby utrzymać neutralny nadgarstek. Element rotacyjny obciąża nadgarstki asymetrycznie — uchwyty bardzo pomagają.",
+      "alternative": "knee-to-elbow-plank"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Anti-rotation demand on the lumbar spine is high. Regress to mountain climbers (no push-up component) until you can hold a perfect plank under one-leg load.",
+      "modificationPl": "Wymagania anty-rotacyjne dla odcinka lędźwiowego są wysokie. Wróć do mountain climberów (bez elementu pompkowego) do czasu utrzymania idealnej planki przy obciążeniu jedną nogą.",
+      "alternative": "mountain-climber"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM — keep chest a few inches higher than usual, narrow the grip, tuck elbows tighter (~30-40°). Avoid if pain in any push-up position.",
+      "modificationPl": "Zmniejsz zakres ruchu — klatka kilka centymetrów wyżej niż zwykle, węższy chwyt, mocniej schowaj łokcie (~30-40°). Unikaj jeśli boli w jakiejkolwiek pozycji pompki.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "Aggressive knee-to-elbow drive loads the hip flexor under length. Slow the tempo, reduce knee travel (knee to mid-rib instead of elbow) until pain-free.",
+      "modificationPl": "Agresywny ruch kolano-łokieć obciąża zginacz biodra pod długością. Zwolnij tempo, zmniejsz zakres ruchu kolana (kolano do środka żeber zamiast do łokcia) aż przestanie boleć.",
+      "alternative": "push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (12-24 total alternating reps) | 3x30s for time | 4x6/side as part of metcon",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "spider-crawl-push-up.gif",
+    "frames_extracted": [
+      "frames/spider-crawl-push-up/frame_0_start.png",
+      "frames/spider-crawl-push-up/frame_1_early.png",
+      "frames/spider-crawl-push-up/frame_2_mid.png",
+      "frames/spider-crawl-push-up/frame_3_late.png",
+      "frames/spider-crawl-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/spider-crawl-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0/4 (start/end): postać w pozycji high-plank — ramiona wyprostowane, ciało w prostej linii od pięt do głowy, dłonie pod barkami, stopy lekko rozstawione. Frame 1/3 (early/late): faza eccentric/concentric — łokcie zaczynają się zginać, klatka opada, jedno kolano (lewe na obrazie) podciąga się do przodu na zewnątrz tułowia, w kierunku lewego łokcia po tej samej stronie ciała. Frame 2 (mid): pozycja dolna — klatka tuż nad podłogą, łokcie zgięte i przyklejone do tułowia (~45°), kolano blisko łokcia po zewnętrznej stronie żeber. Anatomia podświetlona: wyraźnie zaznaczone pectoralis major (klatka), triceps (ramię), obliques (skośne brzucha) i serratus anterior — co potwierdza klasyfikację primary = pectoralis_major + triceps_brachii + obliques. Bilateral_alternating: każde powtórzenie zmienia stronę. Plane = sagittal (push) + transverse (knee drive na zewnątrz). Wszystkie pola PL napisane od zera w polskim standardzie fitness/kalisteniki. Equipment = bodyweight only (klasyczna kalistenika). Difficulty 6/10 (intermediate): wymaga opanowanej pompki + planka + mountain climbera jako prerekwizyty.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "core", "obliques", "horizontal_push", "anti_rotation", "hip_mobility", "home_workout", "no_equipment_friendly", "mma_conditioning", "crossfit", "dynamic_stability"]
+}

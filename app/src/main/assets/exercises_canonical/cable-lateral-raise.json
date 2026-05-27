@@ -1,0 +1,205 @@
+{
+  "id": "cable-lateral-raise",
+  "name": "Cable Lateral Raise",
+  "namePl": "Wznosy bokiem na wyciągu",
+  "aliases": ["cable side lateral raise", "low cable lateral raise", "crossover cable lateral raise", "bilateral cable lateral raise", "standing cable lateral"],
+  "aliasesPl": ["wznosy bokiem z linkami wyciągu", "wznosy bokiem z dolnego bloczka", "krzyżowe wznosy bokiem na wyciągu", "lateralki na wyciągu", "lateral raise na wyciągu"],
+
+  "description": "Bilateral isolation exercise for the lateral (side) deltoids performed in the center of a cable crossover station with cables routed from the low pulleys, crossing in front of the body (right hand holds the left-side handle, left hand holds the right-side handle). Compared to dumbbell lateral raises, cables provide continuous, near-constant tension throughout the entire range of motion — including the bottom portion where dumbbells offer almost zero resistance. This makes the bottom and mid-range of the raise far more productive for hypertrophy of the lateral deltoid, the head primarily responsible for shoulder width.",
+  "descriptionPl": "Obustronne ćwiczenie izolowane na boczne aktony barków (środkową głowę mięśnia naramiennego) wykonywane na środku stacji crossover, z linkami pobranymi z dolnych bloczków i krzyżującymi się przed tułowiem (prawa ręka chwyta uchwyt z lewej strony, lewa ręka z prawej strony). W porównaniu do wznosów z hantlami wyciąg zapewnia stałe, niemal niezmienne napięcie przez cały zakres ruchu — także w dolnej fazie, gdzie hantle praktycznie nie stawiają oporu. Dzięki temu dolny i środkowy zakres wznosu staje się znacznie bardziej produktywny dla hipertrofii bocznego aktonu, czyli głowy mięśnia naramiennego odpowiedzialnej za szerokość barków.",
+
+  "instructions": [
+    "Set both pulleys of a cable crossover machine to the lowest position. Attach a single handle to each cable.",
+    "Stand in the exact center between the two stacks. Grab the LEFT-side handle with your RIGHT hand and the RIGHT-side handle with your LEFT hand — the cables will cross in front of your body.",
+    "Stand tall with feet shoulder-width apart, knees slightly soft, chest up, abs braced, shoulder blades pulled down and back.",
+    "Let the arms hang naturally crossed in front of the thighs with a fixed bend of about 10-20 degrees in the elbows. This elbow angle stays constant throughout the set.",
+    "Without using momentum, raise both arms out to the sides in a wide arc, leading with the elbows (not the hands).",
+    "Continue until the upper arms reach approximately shoulder height (parallel to the floor). The cables remain taut, the wrists stay neutral, and the elbows stay slightly higher than the wrists.",
+    "Pause for a brief one-count at the top and feel the lateral deltoids contract.",
+    "Lower the handles back along the same arc over 2-3 seconds, controlling the eccentric — do not let the weight stack slam back down.",
+    "Keep the torso still throughout the set — no leaning back, no hip thrust, no shrugging."
+  ],
+  "instructionsPl": [
+    "Ustaw oba bloczki stacji crossover w najniższej pozycji. Załóż pojedynczy uchwyt na każdą z linek.",
+    "Stań dokładnie pośrodku, między dwoma stosami obciążeń. Chwyć uchwyt z LEWEJ strony PRAWĄ ręką, a uchwyt z PRAWEJ strony LEWĄ ręką — linki będą się krzyżować przed tułowiem.",
+    "Wyprostuj sylwetkę, stopy na szerokość barków, kolana lekko ugięte, klatka uniesiona, brzuch napięty, łopatki ściągnięte w dół i w tył.",
+    "Pozwól ramionom zwisać naturalnie, skrzyżowane przed udami, z lekkim, stałym ugięciem łokci około 10-20 stopni. To ugięcie pozostaje niezmienne przez całą serię.",
+    "Bez użycia rozpędu unieś obie ręce bokiem szerokim łukiem, prowadząc ruch łokciami (nie dłońmi).",
+    "Kontynuuj, aż ramiona ponad łokciem osiągną wysokość barków (równolegle do podłogi). Linki muszą pozostawać napięte, nadgarstki neutralne, a łokcie nieco wyżej niż nadgarstki.",
+    "Zatrzymaj się na chwilę w górnej pozycji i poczuj skurcz bocznych aktonów barku.",
+    "Opuszczaj uchwyty tą samą drogą przez 2-3 sekundy, kontrolując fazę ekscentryczną — nie pozwól, by stos obciążeń uderzył o resztę stosu.",
+    "Tułów pozostaje nieruchomy przez całą serię — bez odchylania się w tył, bez wybicia bioder, bez wciągania barków."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids"],
+    "secondary": ["anterior_deltoids", "trapezius_upper", "supraspinatus"],
+    "stabilizers": ["serratus_anterior", "trapezius_lower", "core", "forearm_flexors", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P10",
+    "anterior_deltoids": "S5",
+    "trapezius_upper": "S5",
+    "supraspinatus": "S4",
+    "serratus_anterior": "T3",
+    "trapezius_lower": "T2",
+    "core": "T2",
+    "forearm_flexors": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-lateral-raise"],
+    "progression_to": ["one-arm-cable-lateral-raise", "leaning-cable-lateral-raise", "machine-lateral-raise"],
+    "alternatives": ["dumbbell-lateral-raise", "machine-lateral-raise", "one-arm-cable-lateral-raise", "leaning-cable-lateral-raise", "dumbbell-y-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both pulleys at the LOWEST setting",
+      "Stand dead-center between the two stacks",
+      "Cross the cables: right hand to LEFT handle, left hand to RIGHT handle",
+      "Small fixed bend in elbows (~10-20°) locked for the whole set",
+      "Shoulder blades pulled down and back — no shrugging baseline"
+    ],
+    "setup_cues_pl": [
+      "Oba bloczki ustawione w NAJNIŻSZEJ pozycji",
+      "Stań dokładnie pośrodku między dwoma stosami",
+      "Skrzyżuj linki: prawa ręka do uchwytu z LEWEJ, lewa do uchwytu z PRAWEJ",
+      "Lekkie, stałe ugięcie łokci (~10-20°) zablokowane na całą serię",
+      "Łopatki ściągnięte w dół i w tył — bez wciągniętych barków na starcie"
+    ],
+    "execution_cues": [
+      "Lead with the elbows — wrists are passive hooks",
+      "Pour water from invisible jugs — pinky slightly higher than thumb at the top",
+      "Stop at shoulder level — no higher",
+      "Pinch a tennis ball in the side delt at the top",
+      "3-second negative — the cable resists the whole way down"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami — nadgarstki są tylko biernymi hakami",
+      "Wylewaj wodę z niewidzialnych dzbanków — mały palec lekko wyżej niż kciuk w górnej pozycji",
+      "Zatrzymaj na wysokości barków — nie wyżej",
+      "Wyobraź sobie, że zgniatasz piłeczkę bocznym aktonem w górnej pozycji",
+      "3-sekundowy ruch w dół — linka stawia opór przez całą drogę powrotną"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using torso swing / leaning back to lift the weight",
+        "faultPl": "Bujanie tułowiem i odchylanie się w tył, by unieść ciężar",
+        "cause": "Load too heavy for the lateral delts, which are a small muscle group",
+        "causePl": "Zbyt duży ciężar na boczne aktony, które są małą grupą mięśniową",
+        "cue": "Cut the weight in half. Brace the abs and glutes, lock the torso, and let only the arms move.",
+        "cuePl": "Zmniejsz ciężar o połowę. Napnij brzuch i pośladki, zablokuj tułów i pozwól pracować tylko ramionom."
+      },
+      {
+        "fault": "Shrugging — upper trapezius takes over",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują ruch",
+        "cause": "Weight too heavy, weak lateral delts, or losing scapular depression mid-set",
+        "causePl": "Zbyt duży ciężar, słabe boczne aktony, lub utrata depresji łopatek w trakcie serii",
+        "cue": "Actively press your shoulders away from your ears the entire rep. If the traps fire first, drop the weight.",
+        "cuePl": "Aktywnie odsuwaj barki od uszu przez całe powtórzenie. Jeśli trapezy włączają się jako pierwsze, zmniejsz ciężar."
+      },
+      {
+        "fault": "Leading with the wrists / hands instead of elbows",
+        "faultPl": "Prowadzenie ruchu nadgarstkami i dłońmi zamiast łokciami",
+        "cause": "Reflex of pulling the handle up rather than abducting the upper arm",
+        "causePl": "Odruch ciągnięcia uchwytu w górę zamiast odwodzenia ramienia",
+        "cue": "Imagine the handle is just dangling from your elbow — your job is to lift the elbow, not the hand.",
+        "cuePl": "Wyobraź sobie, że uchwyt po prostu zwisa z łokcia — twoim zadaniem jest unieść łokieć, nie dłoń."
+      },
+      {
+        "fault": "Going past shoulder height (raising too high)",
+        "faultPl": "Unoszenie ramion powyżej wysokości barków",
+        "cause": "Trying to maximize ROM, but the upper traps take over above horizontal",
+        "causePl": "Próba maksymalizacji zakresu ruchu — powyżej poziomu trapezy górne przejmują pracę",
+        "cue": "Stop when the upper arm is parallel to the floor. Beyond that the side delt is no longer the prime mover.",
+        "cuePl": "Zatrzymaj, gdy ramię ponad łokciem jest równoległe do podłogi. Powyżej tego punktu boczny akton przestaje być głównym wykonawcą ruchu."
+      },
+      {
+        "fault": "Letting the eccentric crash down (slack cable)",
+        "faultPl": "Niekontrolowane opuszczanie ciężaru i luźna linka w dolnej fazie",
+        "cause": "Skipping the eccentric to save energy — eliminates the cable's key advantage over dumbbells",
+        "causePl": "Pomijanie fazy ekscentrycznej dla oszczędności sił — eliminuje główną przewagę wyciągu nad hantlami",
+        "cue": "Take 2-3 seconds down. The whole point of cables is constant tension — don't waste it on the negative.",
+        "cuePl": "Schodź 2-3 sekundy. Cały sens wyciągu to stałe napięcie — nie marnuj go w fazie ekscentrycznej."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Keep a light brace through the core the entire set.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce ROM — stop the raise at 70-80% of shoulder height. Slightly externally rotate the shoulder (thumb pointing up) to open the subacromial space. Use very light loads (40-50% of normal).",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymuj wznos na 70-80% wysokości barków. Lekko obróć barki na zewnątrz (kciuk skierowany w górę), aby otworzyć przestrzeń pod wyrostkiem barkowym. Używaj bardzo lekkich ciężarów (40-50% normalnego).",
+      "alternative": "leaning-cable-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy",
+      "severity": "caution",
+      "modification": "The supraspinatus is heavily loaded at the top of a lateral raise. Reduce range, drop the load, and avoid going to failure. Pause the exercise during acute flare-ups.",
+      "modificationPl": "Mięsień nadgrzebieniowy jest mocno obciążany w górnej fazie wznosu bokiem. Zmniejsz zakres ruchu, obniż ciężar i nie pracuj do upadku. Wstrzymaj ćwiczenie w fazie zaostrzenia objawów.",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "modify",
+      "modification": "AC joint compresses at the top of a lateral raise. Stop the raise short of shoulder level (about 80%) and avoid maximum loads.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji w górnej pozycji wznosu bokiem. Zatrzymuj ruch przed wysokością barków (około 80%) i unikaj maksymalnych ciężarów.",
+      "alternative": "leaning-cable-lateral-raise"
+    },
+    {
+      "condition": "wrist_pain_or_carpal_tunnel",
+      "severity": "modify",
+      "modification": "Keep the wrist strictly neutral — do not let it extend backward under load. Use lifting straps to reduce grip-related wrist strain, or switch to a D-ring cuff strapped above the wrist.",
+      "modificationPl": "Utrzymuj nadgarstek ściśle neutralnie — nie pozwól mu odginać się do tyłu pod obciążeniem. Użyj pasków pomocniczych, by zmniejszyć obciążenie nadgarstka z chwytu, lub przejdź na uchwyt-mankiet zapinany powyżej nadgarstka.",
+      "alternative": "machine-lateral-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/standard) | 4-5x15-20 (shoulder specialization/pump) | 3x8-12 (strength-focus, less common for laterals)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-lateral-raise.gif",
+    "frames_extracted": [
+      "frames/cable-lateral-raise/frame_0_start.png",
+      "frames/cable-lateral-raise/frame_1_early.png",
+      "frames/cable-lateral-raise/frame_2_mid.png",
+      "frames/cable-lateral-raise/frame_3_late.png",
+      "frames/cable-lateral-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-lateral-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. To wariant BILATERALNY (obustronny) wykonywany na stacji crossover z DWÓCH dolnych bloczków jednocześnie — ćwiczący stoi pośrodku, prawa ręka trzyma uchwyt z lewego stosu, lewa ręka z prawego, linki krzyżują się przed tułowiem. Frame 0 (start): postać w pozycji wyprostowanej, ręce zwisają skrzyżowane przed udami, boczne aktony i lekko tylne podświetlone na czerwono na obu ramionach. Frame 1-2 (mid): ramiona uniesione bokiem w szerokim łuku, w okolicach wysokości barków, łokcie prowadzą ruch, linki napięte. Frame 4 (end): powrót do pozycji wyjściowej z 'ghostem' pozycji szczytowej widocznym po bokach. Ruch w płaszczyźnie czołowej, klasyczna izolacja bocznego aktonu z stałym napięciem na całym zakresie. Stałe ugięcie łokci. Bez bujania tułowiem. Wszystkie pola PL napisane od zera. Schemat krzyżujących się linek to klasyczna wersja 'standing cable lateral raise' z jahel — istnieje również jednoręczna wersja boczna z bloczka za plecami (osobne ćwiczenie one-arm-cable-lateral-raise).",
+
+  "tags": ["bodybuilding", "shoulders", "lateral_delts", "side_delts", "isolation", "cable", "upper_body", "hypertrophy", "constant_tension", "shoulder_width", "crossover"]
+}

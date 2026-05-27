@@ -24,65 +24,21 @@ class ExerciseSeeder(
     private val json = Json { ignoreUnknownKeys = true }
 
     /**
-     * Idempotentny seeder:
-     *  - pusta baza → ładuje wszystko
-     *  - baza z ćwiczeniami → dodaje TYLKO brakujące (po nazwie, case-insensitive)
+     * v2.0.0 — stary seed `exercises.json` (193 ćwiczenia) jest zastąpiony przez
+     * CanonicalExerciseBootstrap (1317 canonical). Ta metoda została odchudzona
+     * do trzech zadań maintenance:
+     *  1. `markMacjiejFavorites` — oznacza ~75 PL nazw jako ulubione (idempotent)
+     *  2. `fixCardioMetricType` — naprawa metricType cardio (legacy data fix)
+     *  3. `fixCardioPlanSetDurations` — naprawa reps → durationSec w planach cardio
      *
-     * Plus: oznacza listę kanonicznych ćwiczeń jako ulubione (z xlsx Macieja —
-     * ćwiczenia używane regularnie przez 3.5 roku planu treningowego).
+     * Stary loader `exercises.json` + `applySearchAliases` z `exercise_aliases.json`
+     * są wyłączone — canonical bootstrap dostarcza nazwy PL/EN i aliases bezpośrednio
+     * z `assets/exercises_canonical/{slug}.json`.
      */
     suspend fun seedIfEmpty() {
-        val raw = context.assets.open("exercises.json").bufferedReader().use { it.readText() }
-        val seedList = json.decodeFromString<List<SeedExercise>>(raw)
-        val seedEntities = seedList.map { s ->
-            Exercise(
-                name = s.name,
-                primaryMuscle = runCatching { MuscleGroup.valueOf(s.primaryMuscle) }
-                    .getOrDefault(MuscleGroup.OTHER),
-                equipment = runCatching { Equipment.valueOf(s.equipment) }
-                    .getOrDefault(Equipment.OTHER),
-                isCustom = false,
-                metricType = inferMetricType(s.name, s.primaryMuscle),
-                description = s.description
-            )
-        }
-
-        if (dao.count() == 0) {
-            dao.insertAll(seedEntities)
-        } else {
-            // Dodaj tylko brakujące — po nazwie (case-insensitive)
-            val existingNames = dao.allNamesLower().toHashSet()
-            val newOnly = seedEntities.filter { it.name.lowercase() !in existingNames }
-            if (newOnly.isNotEmpty()) dao.insertAll(newOnly)
-        }
-
-        // Oznacz kanoniczne ulubione (z xlsx Macieja) — idempotentne, można uruchamiać wielokrotnie
         markMacjiejFavorites()
-
-        // v1.29.10: napraw cardio, które przez starszą ścieżkę ma metricType WEIGHT_REPS
         runCatching { dao.fixCardioMetricType() }
-
-        // v1.29.15: po naprawie metricType — przepisz reps → durationSec w planach
-        // cardio (start treningu pokaże wtedy zaplanowany czas).
         runCatching { dao.fixCardioPlanSetDurations() }
-
-        // v1.29.25: aliasy wyszukiwania (PL↔EN). Idempotentne — UPDATE po nazwie.
-        runCatching { applySearchAliases() }
-    }
-
-    /**
-     * v1.29.25 — czyta `exercise_aliases.json` (mapa polska_nazwa → angielskie
-     * synonimy) i aktualizuje pole `searchAliases` istniejących ćwiczeń.
-     * Pozwala znaleźć ćwiczenie po angielskim terminie ("deadlift" → "Martwy ciąg").
-     */
-    private suspend fun applySearchAliases() {
-        val raw = context.assets.open("exercise_aliases.json").bufferedReader().use { it.readText() }
-        val map = json.decodeFromString<Map<String, String>>(raw)
-        for ((name, aliases) in map) {
-            if (name.startsWith("_")) continue          // _comment itp.
-            if (aliases.isBlank()) continue
-            runCatching { dao.setSearchAliasesByName(name, aliases) }
-        }
     }
 
     /**

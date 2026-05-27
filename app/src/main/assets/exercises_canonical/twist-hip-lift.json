@@ -1,0 +1,203 @@
+{
+  "id": "twist-hip-lift",
+  "name": "Twist Hip Lift",
+  "namePl": "Skręt z uniesieniem bioder",
+  "aliases": ["rotational hip lift", "twisting hip raise", "supine twist hip lift", "oblique hip lift", "windshield wiper hip lift"],
+  "aliasesPl": ["skręcony mostek pośladkowy", "skręt z mostkiem", "rotacyjne uniesienie bioder", "skośny mostek", "mostek z rotacją tułowia"],
+
+  "description": "A bodyweight core exercise performed supine on the floor with knees bent and rotated to one side (legs stacked or knees dropped sideways), then lifting the hips off the floor toward the ceiling. The rotated lower-body position pre-loads the obliques and forces them to drive hip elevation, while the gluteus medius on the top side and gluteus maximus contribute to hip extension and pelvic stabilization. This is an anti-rotation/lateral-flexion variation of a glute bridge that emphasizes the lateral abdominal wall and frontal/transverse plane stability.",
+  "descriptionPl": "Ćwiczenie core'u z ciężarem własnego ciała w leżeniu na plecach na podłodze z ugiętymi kolanami opadającymi na jeden bok (nogi ułożone bokiem, kolana w jedną stronę), po czym następuje uniesienie bioder w stronę sufitu. Rotacyjna pozycja dolnej części ciała wstępnie napina mięśnie skośne brzucha i zmusza je do generowania uniesienia bioder, podczas gdy pośladek średni od strony górnej oraz pośladek wielki uczestniczą w wyproście biodra i stabilizacji miednicy. Jest to wariant mostka pośladkowego z rotacją, który akcentuje boczną ścianę brzucha oraz stabilizację w płaszczyźnie czołowej i poprzecznej.",
+
+  "instructions": [
+    "Lie flat on your back on a mat with arms relaxed at your sides or crossed on the chest. Bend your knees so the feet are off the floor and knees are stacked over the hips.",
+    "Drop both knees together to one side until the outer thigh of the bottom leg is close to the floor. The torso stays flat on the ground — only the lower body rotates.",
+    "Brace your core, press the lower back gently into the mat, and engage the obliques on the side you are rotating toward.",
+    "Drive through the side of the bottom hip and lift the hips upward, creating a slight diagonal bridge. The lower obliques and lateral glute fire to elevate the pelvis from the rotated position.",
+    "Squeeze the obliques and glutes at the top for 1 second. Do not throw the legs or yank the lower back — the lift should come from the lateral abdominals.",
+    "Lower the hips back to the floor under control while keeping the legs rotated to the same side throughout the entire set.",
+    "Complete all reps on one side, then switch the knees to the other side and repeat. Treat each side as a separate unilateral set.",
+    "Breathe out forcefully as you lift the hips; inhale on the way down. Keep the shoulders pinned to the floor."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach na macie, ręce wzdłuż tułowia lub skrzyżowane na klatce. Ugnij kolana tak, by stopy oderwały się od podłogi, a kolana znalazły się nad biodrami.",
+    "Opuść oba kolana razem na jeden bok, aż zewnętrzna strona uda dolnej nogi prawie dotknie podłogi. Tułów pozostaje płasko na ziemi — rotuje tylko dolna część ciała.",
+    "Napnij brzuch, dociśnij delikatnie odcinek lędźwiowy do maty i zaangażuj mięśnie skośne po stronie, w którą skręcasz.",
+    "Wypchnij się boczną stroną dolnego biodra i unieś biodra w górę, tworząc lekko skośny mostek. Dolne włókna mięśni skośnych oraz boczny pośladek odpowiadają za uniesienie miednicy z pozycji rotacyjnej.",
+    "Ściśnij skośne i pośladki na górze przez 1 sekundę. Nie zarzucaj nogami i nie szarp odcinkiem lędźwiowym — uniesienie ma pochodzić z bocznej ściany brzucha.",
+    "Opuść biodra z powrotem do podłogi w sposób kontrolowany, utrzymując nogi w tej samej rotacji przez cały set.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, następnie przełóż kolana na drugą stronę i powtórz. Każda strona to oddzielny unilateralny set.",
+    "Mocny wydech podczas unoszenia bioder; wdech w drodze w dół. Barki przyklejone do podłogi przez cały czas."
+  ],
+
+  "classification": {
+    "movement_pattern": "core",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "gluteus_medius"],
+    "secondary": ["gluteus_maximus", "quadratus_lumborum", "rectus_abdominis"],
+    "stabilizers": ["transverse_abdominis", "erector_spinae", "hamstrings", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "gluteus_medius": "P8",
+    "gluteus_maximus": "S6",
+    "quadratus_lumborum": "S5",
+    "rectus_abdominis": "S4",
+    "transverse_abdominis": "S4",
+    "erector_spinae": "T3",
+    "hamstrings": "T3",
+    "adductors": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-glute-bridge", "dead-bug", "bent-knee-lying-twist"],
+    "progression_to": ["side-plank-with-hip-lift", "copenhagen-plank", "weighted-twist-hip-lift", "single-leg-glute-bridge"],
+    "alternatives": ["side-plank-with-hip-lift", "russian-twist", "bent-knee-lying-twist", "bird-dog"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat — shoulders, head and arms on the mat",
+      "Drop both knees together to one side, stacked or close together",
+      "Brace the core before any movement — ribs down, lower back gently flat",
+      "Pre-engage the obliques on the side you will lift toward",
+      "Keep neck neutral, gaze at the ceiling — do not lift the head"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko — barki, głowa i ręce na macie",
+      "Opuść oba kolana razem na jeden bok, blisko siebie",
+      "Napnij brzuch przed jakimkolwiek ruchem — żebra w dół, lędźwie delikatnie do maty",
+      "Wstępnie napnij mięśnie skośne po stronie, w którą będziesz unosić biodra",
+      "Szyja neutralnie, wzrok w sufit — nie unoś głowy"
+    ],
+    "execution_cues": [
+      "Lift from the side of the hip, not from the lower back",
+      "Drive through the obliques — imagine pulling the rib cage toward the hip",
+      "Keep the legs rotated and quiet — do not kick or swing",
+      "Pause 1 second at the top, squeeze the side abs",
+      "Lower slowly — count 2 seconds down on every rep"
+    ],
+    "execution_cues_pl": [
+      "Unoś z boku biodra, nie z odcinka lędźwiowego",
+      "Wypychaj przez mięśnie skośne — wyobraź sobie, że ściągasz klatkę piersiową w stronę biodra",
+      "Trzymaj nogi w rotacji i spokojne — bez wymachów i kopania",
+      "Zatrzymaj na 1 sekundę na górze, ściśnij boczny brzuch",
+      "Opuszczaj powoli — odlicz 2 sekundy w drodze w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using the lower back to lift instead of the obliques",
+        "faultPl": "Unoszenie z odcinka lędźwiowego zamiast z mięśni skośnych",
+        "cause": "Weak obliques, poor mind-muscle connection, or compensating to lift higher than the lateral abs can produce",
+        "causePl": "Słabe mięśnie skośne, brak czucia mięśniowego, lub kompensacja, by unieść biodra wyżej niż pozwalają na to bocznie mięśnie",
+        "cue": "Lower the ROM. Lift only as high as the obliques alone can take you. Keep the lumbar spine pinned to the mat.",
+        "cuePl": "Zmniejsz zakres ruchu. Unoś biodra tylko tak wysoko, jak są w stanie samodzielnie unieść mięśnie skośne. Trzymaj lędźwie przyklejone do maty."
+      },
+      {
+        "fault": "Swinging or kicking the legs to generate momentum",
+        "faultPl": "Wymachy lub kopanie nogami dla nabrania pędu",
+        "cause": "Trying to make the exercise easier or doing reps too fast",
+        "causePl": "Próba ułatwienia ćwiczenia lub zbyt szybkie tempo",
+        "cue": "Slow down: 1s up, 1s pause, 2s down. The legs are quiet — only the hips move.",
+        "cuePl": "Zwolnij: 1s w górę, 1s pauza, 2s w dół. Nogi są spokojne — tylko biodra się ruszają."
+      },
+      {
+        "fault": "Shoulders coming off the floor",
+        "faultPl": "Odrywanie barków od podłogi",
+        "cause": "Recruiting upper body to assist or twisting the torso along with the hips",
+        "causePl": "Włączanie górnej części ciała do pomocy lub skręcanie tułowia razem z biodrami",
+        "cue": "Press both shoulder blades into the mat. Only the pelvis rotates and lifts — the rib cage stays flat.",
+        "cuePl": "Dociśnij obie łopatki do maty. Tylko miednica rotuje i unosi się — klatka piersiowa pozostaje płasko."
+      },
+      {
+        "fault": "Knees separating during the lift",
+        "faultPl": "Rozsuwanie kolan podczas unoszenia",
+        "cause": "Weak adductors of the top leg, or hips drifting during effort",
+        "causePl": "Słabe przywodziciele górnej nogi lub uciekanie bioder w trakcie wysiłku",
+        "cue": "Squeeze the knees together as if holding a small ball between them throughout every rep.",
+        "cuePl": "Ściskaj kolana razem, jakbyś trzymał między nimi małą piłkę przez całe powtórzenie."
+      },
+      {
+        "fault": "Holding the breath through the whole set",
+        "faultPl": "Wstrzymywanie oddechu przez cały set",
+        "cause": "Confusion about timing, or treating it like a max-strength brace",
+        "causePl": "Niewiedza o timingu, lub traktowanie ćwiczenia jak maksymalnej próby siłowej",
+        "cue": "Exhale forcefully on the lift, inhale on the way down. Bracing does not equal breath holding.",
+        "cuePl": "Mocny wydech podczas unoszenia, wdech w drodze w dół. Napięcie brzucha nie oznacza wstrzymywania oddechu."
+      }
+    ],
+    "breathing": "Inhale and brace before the lift. Exhale forcefully through pursed lips as the hips rise. Inhale on the controlled descent. Avoid Valsalva — this is a low-load endurance/stability movement, not a max strength lift.",
+    "breathingPl": "Wdech i napięcie brzucha przed uniesieniem. Mocny wydech przez zaciśnięte usta podczas unoszenia bioder. Wdech podczas kontrolowanego opuszczania. Unikaj manewry Valsalvy — to ćwiczenie wytrzymałościowo-stabilizacyjne z małym obciążeniem, nie ruch maksymalnie siłowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "modify",
+      "modification": "Reduce ROM significantly — lift only an inch off the floor. If pain persists, stop and switch to a static dead bug or bird dog.",
+      "modificationPl": "Mocno ogranicz zakres ruchu — unoś biodra tylko o centymetr nad podłogę. Jeśli ból nie ustępuje, przerwij i przejdź na statyczny dead bug lub bird dog.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "sacroiliac_joint_dysfunction",
+      "severity": "modify",
+      "modification": "The rotated hip position can irritate the SI joint. Reduce knee drop angle and avoid full lateral rotation. Stop if you feel sharp pain in the SI region.",
+      "modificationPl": "Rotacyjna pozycja bioder może drażnić staw krzyżowo-biodrowy. Zmniejsz kąt opuszczenia kolan i unikaj pełnej rotacji bocznej. Przerwij przy ostrym bólu w okolicy stawu SI.",
+      "alternative": "bodyweight-glute-bridge"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "avoid",
+      "modification": "Avoid supine positions after the first trimester due to compression of the inferior vena cava. Switch to standing or side-lying core work.",
+      "modificationPl": "Unikaj pozycji leżącej na plecach po pierwszym trymestrze z powodu ucisku na żyłę główną dolną. Przejdź na stojące lub leżące na boku ćwiczenia core.",
+      "alternative": "side-plank-with-hip-lift"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Rotation combined with hip lift can stress lumbar discs. Get clearance from physiotherapist. Try without the rotation first (regular glute bridge).",
+      "modificationPl": "Rotacja połączona z uniesieniem bioder może obciążać dyski lędźwiowe. Uzyskaj zgodę fizjoterapeuty. Spróbuj najpierw bez rotacji (zwykły mostek pośladkowy).",
+      "alternative": "bodyweight-glute-bridge"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 per side (hypertrophy/strength) | 3x20-30s holds per side (isometric) | 2-3x8-12 per side (warm-up/activation)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "twist-hip-lift.gif",
+    "frames_extracted": [
+      "frames/twist-hip-lift/frame_0_start.png",
+      "frames/twist-hip-lift/frame_1_early.png",
+      "frames/twist-hip-lift/frame_2_mid.png",
+      "frames/twist-hip-lift/frame_3_late.png",
+      "frames/twist-hip-lift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/twist-hip-lift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 (start): osoba leży na plecach, ręce skrzyżowane na klatce, kolana ugięte i opuszczone na bok (pozycja rotacyjna miednicy), biodra na podłodze. Anatomia: mięśnie skośne brzucha podświetlone na czerwono po stronie, w którą skręcona miednica — to potwierdza obliques jako primary. Frame 2 (szczyt): biodra uniesione, tworzą diagonalny mostek, kolana nadal opuszczone na bok, łopatki i głowa nadal na podłodze. W szczycie podświetlone są skośne + boczna część pośladka (gluteus medius). Frame 4 (powrót): pozycja startowa. Klasyfikacja: movement_pattern=core (to ćwiczenie core'u z elementem hip extension), force=both (jest ekscentryka opuszczania i koncentryka unoszenia), mechanic=compound (biodro + tułów), laterality=unilateral (jednoczasowo trenuje jedną stronę — wymaga 2 osobnych setów), plane=transverse (główny komponent to rotacja+lateral flexion z pozycji rotacyjnej), kinetic_chain=closed (stopy/podłoga). Primary obliques (P9) > gluteus_medius (P8) — w GIFie skośne podświetlone bardziej intensywnie i to one inicjują ruch z pozycji rotacyjnej. Wszystkie pola PL napisane od zera, polski standard fitness (np. 'skośne' nie 'oblique', 'pośladek średni' nie 'średni glut', 'mostek' nie 'bridge'). 5 błędów, 4 przeciwwskazania (SI joint dysfunction specyficzne dla rotacji+ekstensji), 5+5 cues setup i execution.",
+
+  "tags": ["core_focused", "obliques", "rotational", "lateral_flexion", "anti_rotation", "bodyweight", "floor_exercise", "unilateral", "lower_body", "activation", "warmup_friendly"]
+}

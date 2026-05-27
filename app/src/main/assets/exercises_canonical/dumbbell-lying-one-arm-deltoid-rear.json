@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-lying-one-arm-deltoid-rear",
+  "name": "Dumbbell Lying One-Arm Rear Deltoid Raise",
+  "namePl": "Rear delt raise z hantlą leżąc jednorącz",
+  "aliases": ["prone one-arm rear delt fly", "lying single-arm rear lateral raise", "chest-supported one-arm reverse fly", "prone dumbbell rear raise (single arm)"],
+  "aliasesPl": ["jednoręczne rozpiętki tylnego aktonu leżąc na brzuchu", "rear fly leżąc na ławce jedną ręką", "wznosy bokiem tylnego aktonu leżąc jednorącz", "izolowane rozpiętki na tylny akton z podparciem klatki"],
+
+  "description": "A strict isolation movement for the posterior deltoid performed lying prone (face down) on a flat bench with one arm working at a time. The chest-supported, prone position completely eliminates lower-body and hip cheating, locks the torso in place, and removes momentum from the equation — making it one of the cleanest possible ways to load the rear delt. Working unilaterally lets the lifter focus on a single side, equalise side-to-side imbalances and use a longer pause at peak contraction.",
+  "descriptionPl": "Ścisłe izolowane ćwiczenie na tylny akton barku wykonywane leżąc na brzuchu na płaskiej ławce, z jedną ręką pracującą naraz. Pozycja leżąca z podparciem klatki całkowicie eliminuje oszukiwanie nogami i biodrami, blokuje tułów w miejscu i wyklucza wykorzystanie momentu — to jeden z najczystszych sposobów obciążenia tylnego aktonu. Praca jednorącz pozwala skupić się na jednej stronie, wyrównać asymetrie i zastosować dłuższą pauzę w szczytowym napięciu.",
+
+  "instructions": [
+    "Lie face down (prone) on a flat bench with the chest fully supported. Position yourself so one shoulder hangs slightly off the edge of the bench to allow free arm movement.",
+    "Plant the toes on the floor or hook the feet around the bench legs for stability. Keep the head neutral, looking down or slightly forward.",
+    "Hold a single dumbbell in the working hand with a neutral grip (palm facing the bench). Let the arm hang straight down toward the floor.",
+    "The non-working arm can hang relaxed down on the opposite side, or hold the bench for balance.",
+    "Set a small fixed bend in the elbow (~10-15°). Retract and slightly depress the working shoulder blade — this is the start position.",
+    "Lead with the elbow and raise the dumbbell out to the side in a wide arc until the upper arm reaches horizontal (in line with the torso).",
+    "Pause at the top for a count, squeezing the rear delt and feeling the shoulder blade pull toward the spine.",
+    "Lower the dumbbell back along the same arc under control over 2-3 seconds. Do not let the weight swing.",
+    "Complete all reps on one side, then switch arms. Keep the torso glued to the bench the entire time — no rotation."
+  ],
+  "instructionsPl": [
+    "Połóż się twarzą w dół na płaskiej ławce, klatka w pełni podparta. Ustaw się tak, żeby jeden bark wystawał lekko poza krawędź ławki — to da swobodę ruchu ramieniu.",
+    "Oprzyj palce stóp o podłogę lub zahacz stopy o nogi ławki dla stabilizacji. Głowa neutralna, patrz w dół lub lekko do przodu.",
+    "Złap jedną hantlę w pracującej ręce chwytem neutralnym (dłoń zwrócona do ławki). Pozwól ramieniu swobodnie zwisać prosto w dół ku podłodze.",
+    "Druga ręka może luźno zwisać po przeciwnej stronie lub trzymać ławkę dla równowagi.",
+    "Ustaw lekkie, stałe ugięcie w łokciu (~10-15°). Ściągnij i lekko opuść łopatkę pracującej strony — to pozycja wyjściowa.",
+    "Prowadząc ruch łokciem, unieś hantlę bokiem szerokim łukiem, aż ramię ponad łokciem dotrze do poziomu (w linii z tułowiem).",
+    "Zatrzymaj w górnej pozycji na rachunek, spinając tylny akton i czując jak łopatka przyciąga się do kręgosłupa.",
+    "Opuszczaj hantlę tą samą drogą w sposób kontrolowany przez 2-3 sekundy. Nie pozwól ciężarowi się huśtać.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień rękę. Utrzymuj tułów przyklejony do ławki przez cały czas — bez rotacji."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids"],
+    "secondary": ["rhomboids", "infraspinatus", "trapezius_middle"],
+    "stabilizers": ["teres_minor", "trapezius_lower", "core", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P10",
+    "rhomboids": "S6",
+    "infraspinatus": "S5",
+    "trapezius_middle": "S5",
+    "teres_minor": "T4",
+    "trapezius_lower": "T3",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bent-over-dumbbell-rear-delt-row"],
+    "progression_to": ["cable-rear-lateral-raise", "machine-rear-delt-fly", "reverse-pec-deck"],
+    "alternatives": ["dumbbell-rear-fly", "dumbbell-lying-rear-lateral-raise", "face-pull", "reverse-pec-deck", "cable-rear-delt-fly", "incline-bench-dumbbell-rear-delt-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat on the bench, chest fully supported",
+      "Working shoulder slightly off the bench edge for clearance",
+      "Neutral grip, arm hangs straight down to the floor",
+      "Small fixed bend in the elbow (~10-15°)",
+      "Retract and depress the scapula before lifting"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko na ławce, klatka w pełni podparta",
+      "Pracujący bark lekko poza krawędzią ławki, żeby było miejsce na ruch",
+      "Chwyt neutralny, ramię zwisa prosto w dół do podłogi",
+      "Lekkie, stałe ugięcie łokcia (~10-15°)",
+      "Ściągnij i opuść łopatkę przed uniesieniem"
+    ],
+    "execution_cues": [
+      "Lead with the elbow, not the hand",
+      "Think 'arc the weight out to the side, not back'",
+      "Stop at horizontal — upper arm level with the torso",
+      "Pause and squeeze 1-2 seconds at the top",
+      "Keep the bench glued to your chest — no twisting"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciem, nie dłonią",
+      "Pomyśl: 'łuk ciężaru bokiem, nie do tyłu'",
+      "Zatrzymaj na poziomie — ramię w linii z tułowiem",
+      "Zatrzymaj i ściśnij 1-2 sekundy w górnej pozycji",
+      "Trzymaj ławkę przyklejoną do klatki — bez skręcania się"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating the torso to help lift the weight",
+        "faultPl": "Skręcanie tułowia żeby pomóc unieść ciężar",
+        "cause": "Load too heavy or weak rear delt — body uses rotation to throw the dumbbell up",
+        "causePl": "Zbyt duży ciężar lub słaby tylny akton — ciało używa rotacji żeby zarzucić hantlę w górę",
+        "cue": "Lower the weight. Press both sides of the chest into the bench. If you twist, the rep doesn't count.",
+        "cuePl": "Zmniejsz ciężar. Wciskaj obie strony klatki w ławkę. Jeśli skręcasz tułów, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Swinging the dumbbell from a deep hang (using momentum)",
+        "faultPl": "Bujanie hantlą z głębokiego zwisu (wykorzystywanie momentu)",
+        "cause": "Letting the arm drop quickly at the bottom and using the bounce to start the next rep",
+        "causePl": "Szybkie opuszczanie ramienia na dole i wykorzystanie odbicia do startu kolejnego powtórzenia",
+        "cue": "Control the eccentric for 2-3 seconds. Briefly pause at the bottom before the next rep.",
+        "cuePl": "Kontroluj fazę ekscentryczną przez 2-3 sekundy. Zatrzymaj na chwilę na dole przed kolejnym powtórzeniem."
+      },
+      {
+        "fault": "Pulling backward instead of out to the side (turning into a row)",
+        "faultPl": "Ciągnięcie ramienia do tyłu zamiast na bok (zamiana w wiosłowanie)",
+        "cause": "Elbow tracks toward the hip instead of staying perpendicular to the spine",
+        "causePl": "Łokieć kieruje się w stronę biodra zamiast pozostać prostopadle do kręgosłupa",
+        "cue": "Imagine a wall on your shoulder line — the elbow slides along that wall straight out.",
+        "cuePl": "Wyobraź sobie ścianę w linii barku — łokieć przesuwa się wzdłuż tej ściany prosto na bok."
+      },
+      {
+        "fault": "Shrugging the shoulder up toward the ear at the top",
+        "faultPl": "Wciąganie barku w stronę ucha w górnej pozycji",
+        "cause": "Upper trap takes over when the rear delt fatigues or when the load is too heavy",
+        "causePl": "Trapez górny przejmuje pracę gdy tylny akton się męczy lub gdy ciężar jest zbyt duży",
+        "cue": "Press the shoulder away from the ear the entire rep. 'Long neck, short rep.'",
+        "cuePl": "Odpychaj bark od ucha przez całe powtórzenie. 'Długa szyja, krótkie powtórzenie.'"
+      },
+      {
+        "fault": "Going above shoulder level at the top",
+        "faultPl": "Unoszenie hantli powyżej poziomu barku",
+        "cause": "Trying to feel a bigger contraction, but the work shifts to upper traps and rotator cuff",
+        "causePl": "Próba uzyskania większego skurczu, ale praca przenosi się na trapezy górne i stożek rotatorów",
+        "cue": "Stop exactly when the upper arm is parallel to the floor. No higher.",
+        "cuePl": "Zatrzymaj dokładnie gdy ramię ponad łokciem jest równoległe do podłogi. Nie wyżej."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). The prone position can compress the chest — take full but controlled breaths.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Pozycja leżąca może uciskać klatkę — oddychaj pełnymi, ale kontrolowanymi wdechami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop at 70-80% of horizontal. Stick to neutral grip and use very light loads (40-50% of normal). If pain persists, swap to cable face pulls.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj na 70-80% poziomu. Stosuj chwyt neutralny i bardzo lekkie ciężary (40-50% normalnego). Jeśli ból się utrzymuje, zamień na face pull na wyciągu.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Free-weight rear flyes load the rotator cuff at end-range. During acute phase substitute with band pull-aparts or cable face pulls in the scapular plane.",
+      "modificationPl": "Rozpiętki tylnego aktonu z wolnym ciężarem obciążają stożek rotatorów w końcowym zakresie. W fazie ostrej zastąp odwodzeniami z gumą lub face pull na wyciągu w płaszczyźnie łopatkowej.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses at the top of the raise. Limit ROM to where the arm is just below horizontal. Stop short of any sharp sensation.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji w górnej pozycji wznosu. Ogranicz zakres ruchu do pozycji tuż poniżej poziomu. Zatrzymuj się przed każdym ostrym bólem.",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "lying_prone_intolerance_pregnancy_recent_abdominal_surgery",
+      "severity": "avoid",
+      "modification": "Cannot lie prone? Switch to the chest-supported variation on a high incline bench, or to a seated/standing single-arm cable rear delt fly which gives the same unilateral isolation without the prone position.",
+      "modificationPl": "Nie możesz leżeć na brzuchu? Przejdź na wersję z podparciem klatki na ławce skośnej, lub na siedzące/stojące jednoręczne rozpiętki na wyciągu, które dają tę samą izolację jednorączną bez pozycji leżącej na brzuchu.",
+      "alternative": "cable-rear-delt-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 per arm (hypertrophy/standard) | 4x15-20 per arm (rear delt specialization/pump) | 3x10-12 per arm (strength-focus, rare)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "dumbbell-lying-one-arm-deltoid-rear.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-one-arm-deltoid-rear/frame_0_start.png",
+      "frames/dumbbell-lying-one-arm-deltoid-rear/frame_1_early.png",
+      "frames/dumbbell-lying-one-arm-deltoid-rear/frame_2_mid.png",
+      "frames/dumbbell-lying-one-arm-deltoid-rear/frame_3_late.png",
+      "frames/dumbbell-lying-one-arm-deltoid-rear/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-lying-one-arm-deltoid-rear"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): ćwiczący leży twarzą w dół na płaskiej ławce z klatką w pełni podpartą, palce stóp na podłodze. Jedno ramię (prawe) zwisa prosto w dół z hantlą trzymaną neutralnym chwytem; tylny akton i górna część pleców podświetlone na czerwono. Druga ręka również zwisa w dół po przeciwnej stronie. Frame 2 (top): hantla uniesiona szerokim łukiem bokiem do poziomu — ramię ponad łokciem mniej więcej w linii z tułowiem, łokieć prowadzi ruch z lekkim ugięciem, łopatka ściągnięta. Tułów pozostaje płasko na ławce — bez rotacji. Frame 4 (end): powrót do pozycji wyjściowej z 'ghostem' fazy szczytowej widocznym powyżej. To wyraźnie wersja LEŻĄCA NA BRZUCHU (prone) na płaskiej ławce, nie na boku — chest-supported one-arm rear delt fly. Ruch w płaszczyźnie poprzecznej (transverse, horizontal abduction), unilateral, isolation, force=pull. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "isolation", "dumbbell", "upper_body", "lying", "prone", "chest_supported", "unilateral", "single_arm", "hypertrophy", "rear_delt_specialization", "strict_form"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-scott-press",
+  "name": "Dumbbell Scott Press (Larry Scott Press)",
+  "namePl": "Scott press z hantlami (Larry Scott press)",
+  "aliases": ["Larry Scott press", "Scott shoulder press", "Scott press", "hybrid Arnold-OHP press"],
+  "aliasesPl": ["Larry Scott press", "Scott press na barki", "hybrydowy Arnold-OHP press"],
+
+  "description": "Shoulder press hybrid invented by Larry Scott (first Mr. Olympia). Combines Arnold press rotation with an OHP-style press, but with a wider, lateral arc — palms travel from facing-you (Arnold start) to palms-out-and-up at lockout. Hits ALL three deltoid heads in one rep (anterior in the bottom, lateral mid-rep, posterior in the wider arc). Bilateral, seated or standing, with dumbbells. Mechanic: compound, push, frontal + transverse plane.",
+  "descriptionPl": "Hybryda wyciskania na barki wymyślona przez Larry'ego Scotta (pierwszego Mr. Olympia). Łączy rotację Arnold press z wyciskaniem typu OHP, ale z szerszym, bocznym łukiem ruchu — dłonie wędrują od skierowanych do siebie (start jak Arnold) do dłoni-na-zewnątrz-i-w-górę w lock-out. Pracuje na WSZYSTKICH trzech głowach aktona w jednym powtórzeniu (przedni na dole, boczny w połowie, tylny w szerszym łuku). Dwustronne, siedząc lub stojąc, z hantlami. Mechanika: złożone, wyciskanie, płaszczyzna czołowa + poprzeczna.",
+
+  "instructions": [
+    "Sit on a bench with back support (or stand with neutral spine). Hold a dumbbell in each hand at the level of the front delts/upper chest.",
+    "Start position: dumbbells in 'Arnold' position — palms facing you (supinated), elbows in front of the body, dumbbells almost touching at the level of the clavicles.",
+    "Brace core, take a deep breath. Begin to press the dumbbells up AND outward (not straight up like an OHP).",
+    "As the dumbbells rise, rotate the wrists outward — palms go from facing you, to facing forward, to facing out-and-up at the top.",
+    "At lockout: arms extended overhead, palms turned outward (or up), dumbbells slightly wider than shoulder-width (NOT touching at the top).",
+    "Reverse the motion under control: dumbbells travel down and inward as you rotate palms back to facing you (Arnold position) at the chest.",
+    "DO NOT bang dumbbells together at the bottom — control the descent.",
+    "Bilateral execution — both hands move simultaneously."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce z oparciem (lub stań z neutralnym kręgosłupem). Trzymaj hantel w każdej dłoni na wysokości przednich aktonów / górnej klatki.",
+    "Pozycja startowa: hantle w pozycji 'Arnold' — dłonie skierowane do twarzy (supinacja), łokcie przed tułowiem, hantle prawie stykające się na wysokości obojczyków.",
+    "Napnij brzuch, weź głęboki wdech. Zacznij wyciskać hantle w górę I na zewnątrz (nie prosto w górę jak OHP).",
+    "W miarę wznoszenia hantli, rotuj nadgarstki na zewnątrz — dłonie idą od skierowanych do twarzy, przez do przodu, do skierowanych na zewnątrz-i-w-górę na szczycie.",
+    "Lock-out: ramiona wyprostowane nad głową, dłonie odwrócone na zewnątrz (lub do góry), hantle nieco szerzej niż barki (NIE stykają się na górze).",
+    "Cofnij ruch kontrolowanie: hantle idą w dół i do wewnątrz, gdy rotujesz dłonie z powrotem do siebie (pozycja Arnold) na klatce.",
+    "NIE waląj hantli o siebie na dole — kontroluj zejście.",
+    "Wykonanie dwustronne — obie ręce poruszają się jednocześnie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal_transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "posterior_deltoids"],
+    "secondary": ["triceps", "serratus_anterior", "upper_chest"],
+    "stabilizers": ["core", "rotator_cuff", "trapezius", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P9",
+    "posterior_deltoids": "P7",
+    "triceps": "S6",
+    "serratus_anterior": "S5",
+    "upper_chest": "S4",
+    "trapezius": "S4",
+    "rotator_cuff": "S5",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["bench_with_back_support", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-shoulder-press", "arnold-press", "dumbbell-lateral-raise"],
+    "progression_to": ["arnold-press", "single-arm-dumbbell-overhead-press", "z-press"],
+    "alternatives": ["arnold-press", "dumbbell-shoulder-press", "dumbbell-lateral-raise", "machine-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Start in Arnold position — palms toward face, at clavicle level",
+      "Elbows in front of the body, dumbbells almost touching",
+      "Sit tall (or stand tall) — neutral spine, no lumbar arch",
+      "Brace core, ribs DOWN",
+      "Pick weight 30-40% lighter than your standard dumbbell OHP"
+    ],
+    "setup_cues_pl": [
+      "Start w pozycji Arnold — dłonie do twarzy, na wysokości obojczyków",
+      "Łokcie przed tułowiem, hantle prawie się stykają",
+      "Siedź wysoko (lub stój wysoko) — neutralny kręgosłup, bez wyginania lędźwi",
+      "Napnij brzuch, żebra W DÓŁ",
+      "Wybierz ciężar 30-40% lżejszy niż standardowy dumbbell OHP"
+    ],
+    "execution_cues": [
+      "Press UP AND OUT — wider arc than OHP, like opening a book",
+      "Rotate wrists THROUGHOUT the press — palms-toward-face → palms-out-and-up",
+      "Slow tempo — this is hypertrophy/quality work, not strength",
+      "DO NOT clash dumbbells at the top — keep them shoulder-width apart",
+      "Feel ALL three deltoid heads working through the rotation"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj W GÓRĘ I NA ZEWNĄTRZ — szerszy łuk niż OHP, jak otwieranie książki",
+      "Rotuj nadgarstki PRZEZ CAŁY ruch — dłonie-do-twarzy → dłonie-na-zewnątrz-i-w-górę",
+      "Wolne tempo — to praca hipertroficzna/jakościowa, nie siłowa",
+      "NIE waląj hantli o siebie na górze — trzymaj je na szerokości barków",
+      "Czuj WSZYSTKIE trzy głowy aktona przez rotację"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using OHP-style straight-up path (no lateral arc)",
+        "faultPl": "Używanie ścieżki OHP prosto w górę (brak bocznego łuku)",
+        "cause": "Habit from regular dumbbell press, weight too heavy",
+        "causePl": "Nawyk ze zwykłego dumbbell press, zbyt duży ciężar",
+        "cue": "Open the elbows wider. Think 'opening a book' as you press. Reduce weight.",
+        "cuePl": "Rozchyl łokcie szerzej. Myśl 'otwieram książkę' wyciskając. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Skipping the wrist rotation (just pressing dumbbells up)",
+        "faultPl": "Pomijanie rotacji nadgarstków (tylko wyciskanie hantli w górę)",
+        "cause": "Misunderstanding the lift — Scott press IS the rotation",
+        "causePl": "Niezrozumienie ruchu — Scott press TO rotacja",
+        "cue": "Palms must travel from facing-you (bottom) → facing-out (top). The rotation is the whole point.",
+        "cuePl": "Dłonie MUSZĄ wędrować od dłoni-do-twarzy (dół) → dłoni-na-zewnątrz (góra). Rotacja jest sensem tego ćwiczenia."
+      },
+      {
+        "fault": "Lumbar hyperextension (arching lower back)",
+        "faultPl": "Przeprost lędźwiowy (wyginanie dolnego odcinka pleców)",
+        "cause": "Weight too heavy, weak core, no bench support",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, brak oparcia ławki",
+        "cue": "Sit with back to bench pad. Brace HARD. Ribs DOWN. Reduce weight.",
+        "cuePl": "Siądź z plecami do oparcia ławki. Napnij MOCNO. Żebra W DÓŁ. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Clashing dumbbells together at the top",
+        "faultPl": "Walenie hantli o siebie na górze",
+        "cause": "Trying to mimic OHP touch-at-top — wrong for Scott press",
+        "causePl": "Próba naśladowania dotyku-na-górze z OHP — błędne dla Scott press",
+        "cue": "Stop dumbbells shoulder-width apart at lockout. Palms face out, not in.",
+        "cuePl": "Zatrzymaj hantle na szerokości barków w lock-out. Dłonie skierowane na zewnątrz, nie do siebie."
+      },
+      {
+        "fault": "Bouncing dumbbells off the chest at the bottom",
+        "faultPl": "Odbijanie hantli od klatki na dole",
+        "cause": "Loss of control during descent, weight too heavy",
+        "causePl": "Utrata kontroli w fazie ekscentrycznej, zbyt duży ciężar",
+        "cue": "Control the eccentric (2-3s descent). NO bounce. Stop just before chest contact.",
+        "cuePl": "Kontroluj fazę ekscentryczną (2-3s zejście). BEZ odbicia. Zatrzymaj tuż przed klatką."
+      }
+    ],
+    "breathing": "Inhale at the Arnold start position (bottom). Exhale through the press and rotation to lockout. Inhale on the descent.",
+    "breathingPl": "Wdech w pozycji startowej Arnold (dół). Wydech w czasie wyciskania i rotacji do lock-out. Wdech podczas opuszczania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (stop before full lockout) or substitute with neutral-grip dumbbell press (less rotation stress on cuff).",
+      "modificationPl": "Zmniejsz ROM (zatrzymaj przed pełnym lock-out) lub zastąp dumbbell press chwytem neutralnym (mniej stresu rotacyjnego na rotatorach).",
+      "alternative": "dumbbell-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid until cleared by physiotherapist — the wrist rotation under load stresses the rotator cuff significantly. Use machine shoulder press instead.",
+      "modificationPl": "Unikaj do zgody fizjoterapeuty — rotacja nadgarstka pod obciążeniem mocno obciąża rotatory. Użyj maszyny do barków.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. If pain persists, switch to neutral-grip dumbbell press (no rotation).",
+      "modificationPl": "Użyj wraps na nadgarstki. Jeśli ból nie ustępuje, przejdź na dumbbell press chwytem neutralnym (bez rotacji).",
+      "alternative": "dumbbell-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Reduce range — stop press where comfortable without compensating with lower back. Work thoracic/shoulder mobility separately.",
+      "modificationPl": "Zmniejsz zakres — zatrzymaj wyciskanie tam, gdzie wygodnie bez kompensacji lędźwiami. Pracuj osobno nad mobilnością piersiową/barku.",
+      "alternative": "arnold-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, dominant use) | 3x10-15 (volume work, pre-exhaust) | 3x6-8 (heavier, advanced only)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-scott-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-scott-press/frame_0_start.png",
+      "frames/dumbbell-scott-press/frame_1_early.png",
+      "frames/dumbbell-scott-press/frame_2_mid.png",
+      "frames/dumbbell-scott-press/frame_3_late.png",
+      "frames/dumbbell-scott-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-scott-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — hantle przy klatce / obojczykach, dłonie skierowane do twarzy (pozycja Arnold). Frame 1-2: faza wyciskania — hantle wędrują w górę I na zewnątrz, palce/dłonie zaczynają rotować. Frame 2: lock-out na górze — ramiona wyprostowane, hantle nad głową, dłonie zrotowane do pozycji palms-out/palms-up. Frame 3-4: faza ekscentryczna — powrót do pozycji Arnold z rotacją do wewnątrz. Hybryda Arnold press + OHP. Wszystkie 3 głowy aktona aktywne (przedni dół, boczny mid, tylny w szerszym łuku) — primary muscles podświetlone na wszystkich klatkach. Bilateral, stojąca pozycja w GIF (może być wykonywane też siedząc). PL nazwa = 'Scott press z hantlami (Larry Scott press)' — eponim Larry'ego Scotta pozostaje (twórca ruchu, pierwszy Mr. Olympia).",
+
+  "tags": ["bodybuilding", "shoulders", "hypertrophy", "compound", "dumbbells", "all_delt_heads", "vertical_push", "intermediate", "larry_scott", "hybrid_press"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "sled-45-leg-wide-press",
+  "name": "Sled 45° Leg Wide Press",
+  "namePl": "Suwnica 45° szerokim rozstawem",
+  "aliases": ["wide stance leg press", "sumo leg press", "45 degree leg press wide stance", "adductor leg press", "wide foot placement leg press"],
+  "aliasesPl": ["suwnica 45 stopni szeroki rozstaw", "leg press sumo", "leg press szerokim rozstawem", "suwnica na przywodziciele", "prasa do nóg szeroki rozstaw"],
+
+  "description": "Variation of the 45° angled leg press (sled) performed with a very wide foot placement and toes turned out (sumo stance). Compared to the standard leg press, the wider stance with external rotation shifts emphasis away from the quadriceps and onto the hip adductors and gluteus maximus. Closed-chain hip and knee extension without spinal loading — an excellent accessory for athletes wanting to develop the inner thigh and improve squat depth, as well as for bodybuilders chasing complete leg development.",
+  "descriptionPl": "Wariant suwnicy 45° (leg press) wykonywany ze stopami ustawionymi bardzo szeroko, z palcami skierowanymi na zewnątrz (postawa sumo). W porównaniu do klasycznej suwnicy, szeroki rozstaw z rotacją zewnętrzną przesuwa akcent z czworogłowego uda na przywodziciele bioder i pośladki wielkie. Zamknięty łańcuch kinematyczny w wyproście biodra i kolana bez obciążenia kręgosłupa — świetny ruch pomocniczy dla zawodników rozwijających wewnętrzną stronę uda i głębokość przysiadu, a także dla kulturystów dążących do kompletnego rozwoju nóg.",
+
+  "instructions": [
+    "Load the sled with the desired weight (plates secured by collars). Adjust the back pad so at the bottom your knees can travel toward your armpits without your lower back rounding off the pad.",
+    "Sit down and place your feet on the upper outer corners of the platform, much wider than shoulder-width — roughly 1.5-2× shoulder width. Toes turned out 30-45° (sumo stance).",
+    "Whole foot in contact with the plate, heels pressed in. Grip the side handles, press your back and head firmly into the pad, brace your core.",
+    "Unrack the sled by extending both legs and rotating the safety handles outward. Knees softly extended (not locked) — starting position.",
+    "Inhale and lower the sled in a controlled tempo (2-3 s). Track your knees in line with your toes (out, not collapsing inward). Let your hips externally rotate naturally.",
+    "Descend until your knees are bent ~90-100° and your inner thigh feels a clear stretch, or until your pelvis is about to lift off the pad — whichever comes first.",
+    "Drive through the heels and outer edge of the feet to press the sled back up. Actively push your knees out toward your little toes throughout the rep.",
+    "Stop just shy of full extension to keep tension on the adductors and glutes — don't lock the knees hard. Exhale on the press.",
+    "After the final rep, fully extend both legs and re-engage the safety stops before releasing the handles."
+  ],
+  "instructionsPl": [
+    "Załaduj suwnicę zaplanowanym ciężarem (talerze zabezpieczone zaciskami). Wyreguluj oparcie tak, by w dolnej pozycji kolana mogły zbliżyć się ku pachom bez odrywania dolnego odcinka pleców od pada.",
+    "Usiądź i ustaw stopy na górnych zewnętrznych narożnikach platformy, znacznie szerzej niż szerokość barków — w przybliżeniu 1.5-2× szerokość barków. Palce skierowane na zewnątrz pod kątem 30-45° (postawa sumo).",
+    "Cała stopa stykająca się z platformą, pięty wciśnięte. Złap boczne uchwyty, mocno wciśnij plecy i głowę w oparcie, napnij brzuch.",
+    "Zwolnij ciężar prostując obie nogi i przekręcając rączki blokad na zewnątrz. Kolana delikatnie wyprostowane (nie blokowane) — pozycja startowa.",
+    "Nabierz wdech i opuszczaj sankę kontrolowanym tempem (2-3 s). Prowadź kolana zgodnie z linią palców (na zewnątrz, nie do środka). Pozwól biodrom na naturalną rotację zewnętrzną.",
+    "Schodź do momentu, gdy kolana są zgięte do około 90-100° a wewnętrzna strona uda jest wyraźnie rozciągnięta, lub do chwili gdy miednica zaczyna odrywać się od oparcia — co zdarzy się wcześniej.",
+    "Wypchnij sankę z powrotem przez pięty i zewnętrzną krawędź stóp. Aktywnie wypychaj kolana na zewnątrz w kierunku małych palców przez cały ruch.",
+    "Zatrzymaj się tuż przed pełnym wyprostem, by utrzymać napięcie na przywodzicielach i pośladkach — nie blokuj kolan z impetem. Wydech podczas wypychania.",
+    "Po ostatnim powtórzeniu wyprostuj obie nogi i ponownie aktywuj blokady bezpieczeństwa, zanim puścisz uchwyty."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["adductors", "glutes", "quadriceps"],
+    "secondary": ["hamstrings"],
+    "stabilizers": ["core", "calves", "hip_external_rotators"]
+  },
+
+  "muscle_intensity": {
+    "adductors": "P9",
+    "glutes": "P9",
+    "quadriceps": "P7",
+    "hamstrings": "S5",
+    "core": "S3",
+    "calves": "T3",
+    "hip_external_rotators": "T3"
+  },
+
+  "equipment": {
+    "required": ["leg_press_machine"],
+    "optional": ["lifting_belt", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["sled-45-leg-press", "bodyweight-squat"],
+    "progression_to": ["barbell-sumo-deadlift", "barbell-wide-stance-squat", "barbell-back-squat"],
+    "alternatives": ["sled-45-leg-press", "hack-squat", "cable-hip-adduction", "lever-seated-hip-adduction"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet 1.5-2× shoulder width on upper outer corners of the plate",
+      "Toes turned out 30-45° (sumo stance)",
+      "Whole foot pressed flat — heels driven in",
+      "Lower back flat against the pad before unracking",
+      "Grip side handles, brace core, big breath in"
+    ],
+    "setup_cues_pl": [
+      "Stopy 1.5-2× szerokość barków na górnych zewnętrznych narożnikach platformy",
+      "Palce skierowane na zewnątrz pod kątem 30-45° (postawa sumo)",
+      "Cała stopa płasko — pięty wciśnięte",
+      "Dolny odcinek pleców płasko przy oparciu zanim zwolnisz blokady",
+      "Trzymaj boczne uchwyty, napnij brzuch, głęboki wdech"
+    ],
+    "execution_cues": [
+      "Push the knees OUT toward the little toes — never let them cave in",
+      "Drive through heels and outer edge of the feet",
+      "Feel the inner thigh stretch at the bottom",
+      "Stop before the pelvis lifts off the pad",
+      "Don't lock the knees at the top — squeeze glutes and adductors"
+    ],
+    "execution_cues_pl": [
+      "Wypychaj kolana NA ZEWNĄTRZ w kierunku małych palców — nigdy nie pozwalaj im uciec do środka",
+      "Wypchnij przez pięty i zewnętrzną krawędź stóp",
+      "Poczuj rozciągnięcie wewnętrznej strony uda w dolnej pozycji",
+      "Zatrzymaj zanim miednica oderwie się od oparcia",
+      "Nie blokuj kolan na górze — ściśnij pośladki i przywodziciele"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee valgus — knees collapse inward",
+        "faultPl": "Koślawienie kolan — kolana uciekają do środka",
+        "cause": "Weak hip external rotators / glute medius, or load too heavy for the wide stance",
+        "causePl": "Słabe rotatory zewnętrzne biodra / pośladkowe średnie, lub zbyt duży ciężar przy szerokim rozstawie",
+        "cue": "Actively push the knees out toward your little toes. Reduce the weight until you can hold alignment for every rep.",
+        "cuePl": "Aktywnie wypychaj kolana na zewnątrz w stronę małych palców. Zmniejsz ciężar aż utrzymasz ustawienie w każdym powtórzeniu."
+      },
+      {
+        "fault": "Pelvis lifts off the pad / lumbar rounds (butt wink)",
+        "faultPl": "Miednica odrywa się od oparcia / zaokrąglenie odcinka lędźwiowego (butt wink)",
+        "cause": "Going below your hip mobility limit, or stance too narrow for the angle of external rotation",
+        "causePl": "Schodzenie poniżej zakresu mobilności bioder, lub rozstaw za wąski jak na kąt rotacji zewnętrznej",
+        "cue": "Stop the descent earlier — depth doesn't help if the spine pays. Open the stance more or work hip mobility separately.",
+        "cuePl": "Zatrzymaj schodzenie wcześniej — głębokość nic nie daje, jeśli kręgosłup płaci za to. Zwiększ rozstaw lub popraw mobilność bioder osobno."
+      },
+      {
+        "fault": "Heels lift off the platform",
+        "faultPl": "Pięty odrywają się od platformy",
+        "cause": "Stance too low on the plate, poor ankle mobility, or trying to chase depth beyond your ROM",
+        "causePl": "Stopy za nisko na platformie, słaba mobilność stawu skokowego, lub forsowanie głębokości poza zakres ruchu",
+        "cue": "Move feet higher on the plate. Press through the heel — if it lifts, stop the descent right there.",
+        "cuePl": "Przesuń stopy wyżej na platformie. Wypchnij przez piętę — jeśli się unosi, zatrzymaj schodzenie dokładnie w tym punkcie."
+      },
+      {
+        "fault": "Locking out knees hard at the top",
+        "faultPl": "Twarde blokowanie kolan w wyproście",
+        "cause": "Ego rep / habit, taking joints to end-range under load",
+        "causePl": "Forsowanie powtórzenia / nawyk, dociskanie stawów do końca zakresu pod obciążeniem",
+        "cue": "Stop just shy of full extension. Adductors and glutes stay loaded — knees stay safe.",
+        "cuePl": "Zatrzymaj się tuż przed pełnym wyprostem. Przywodziciele i pośladki pozostają obciążone — kolana bezpieczne."
+      },
+      {
+        "fault": "Toes pointing forward (no external rotation)",
+        "faultPl": "Palce skierowane prosto (brak rotacji zewnętrznej)",
+        "cause": "Habit from standard leg press setup, or not understanding the variation",
+        "causePl": "Nawyk z klasycznej suwnicy, lub niezrozumienie wariantu",
+        "cue": "Toes out 30-45°. Without external rotation this isn't a wide leg press — it's just a leg press in a bad position.",
+        "cuePl": "Palce na zewnątrz 30-45°. Bez rotacji zewnętrznej to nie jest leg press szerokim rozstawem — to klasyczna suwnica w złej pozycji."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (2-3 s descent), exhale forcefully on the press. For heavy sets use a Valsalva manoeuvre — big breath in at the top, brace, hold through the hardest portion, exhale near lockout.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (2-3 s opuszczania), mocny wydech podczas wypychania. Przy ciężkich seriach zastosuj manewr Valsalvy — duży wdech na górze, napięcie, wstrzymanie przez najtrudniejszą część, wydech blisko końca wyprostu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "groin_strain_adductor_injury",
+      "severity": "avoid",
+      "modification": "Active adductor injury is a hard contraindication — wide stance maximally stretches and loads exactly the injured tissue. Rest until cleared by a physiotherapist, then return through narrow-stance leg press first.",
+      "modificationPl": "Aktywna kontuzja przywodzicieli to bezwzględne przeciwwskazanie — szeroki rozstaw maksymalnie rozciąga i obciąża dokładnie uszkodzoną tkankę. Odpoczynek do kwalifikacji przez fizjoterapeutę, potem powrót najpierw przez suwnicę wąskim rozstawem.",
+      "alternative": "sled-45-leg-press"
+    },
+    {
+      "condition": "hip_replacement",
+      "severity": "avoid",
+      "modification": "Combined deep hip flexion + external rotation + abduction is the classic dislocation position after THR. Don't perform this variation. Consult the surgeon for safe leg-press parameters.",
+      "modificationPl": "Połączenie głębokiego zgięcia + rotacji zewnętrznej + odwiedzenia biodra to klasyczna pozycja zwichnięcia po endoprotezoplastyce. Nie wykonuj tego wariantu. Skonsultuj z chirurgiem bezpieczne parametry leg press.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range (knee above 90° flexion). Foot higher on the plate to reduce knee shear. Stop the rep if pain appears anywhere in the knee.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu (kolano powyżej 90° zgięcia). Stopa wyżej na platformie, by zmniejszyć obciążenie ścinające. Przerwij powtórzenie, jeśli ból pojawi się gdziekolwiek w kolanie.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "Don't let the pelvis lift off the pad. Stop earlier than your normal depth. If any radicular symptoms (numbness/tingling down the leg) appear, stop the set.",
+      "modificationPl": "Nie pozwól by miednica odrywała się od oparcia. Zatrzymaj się wcześniej niż w klasycznym wariancie. Jeśli pojawią się objawy korzeniowe (drętwienie/mrowienie w nodze), przerwij serię.",
+      "alternative": "lever-seated-hip-adduction"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, adductor focus) | 4x6-8 (strength, sumo deadlift accessory) | 2-3x15-20 (endurance/burnout)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "sled-45-leg-wide-press.gif",
+    "frames_extracted": [
+      "frames/sled-45-leg-wide-press/frame_0_start.png",
+      "frames/sled-45-leg-wide-press/frame_1_early.png",
+      "frames/sled-45-leg-wide-press/frame_2_mid.png",
+      "frames/sled-45-leg-wide-press/frame_3_late.png",
+      "frames/sled-45-leg-wide-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/sled-45-leg-wide-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (glutes/sled-45-leg-wide-press.gif). Klasyczna suwnica 45° (rama 45 stopni z platformą u góry, ćwiczący w pozycji półleżącej oparty o pad). Frame_0/4 — pozycja startowa z lekko wyprostowanymi kolanami; frame_2 — pełny wyprost; frame_3 — schodzenie z wyraźną abdukcją bioder (kolana rozłożone na boki). Mięśnie podświetlone w trakcie ruchu: na ekscentryku widoczne podświetlenie przywodzicieli i pośladków (wewnętrzna strona uda i okolice biodra) — pasuje do specyfikacji szerokiego rozstawu z palcami na zewnątrz. Klasyfikacja: bilateral squat-pattern w zamkniętym łańcuchu. Muscle_intensity: adductors P9, glutes P9 (akcent), quadriceps P7 (nadal pracuje ale słabiej niż w standardzie). Difficulty 5 (intermediate) — wymaga świadomości pozycji kolan i kontroli rotacji biodra, ryzyko koślawienia przy zbyt szerokim rozstawie. Contraindication priority: groin_strain (avoid) i hip_replacement (avoid) — kombinacja flex+ER+abd to klasyczna dyslokacja po THR. Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego.",
+
+  "tags": ["leg_press", "wide_stance", "sumo_stance", "adductors", "glutes", "machine", "lower_body", "hypertrophy", "bilateral", "accessory"]
+}

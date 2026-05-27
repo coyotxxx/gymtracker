@@ -1,0 +1,204 @@
+{
+  "id": "raise-single-arm-push-up",
+  "name": "Single-Arm Raise Push-Up",
+  "namePl": "Pompka z uniesieniem ramienia (single-arm raise push-up)",
+  "aliases": ["t-push-up", "reach push-up", "single-arm reach push-up", "push-up with arm raise", "push-up to reach"],
+  "aliasesPl": ["pompka T", "pompka z wyciągnięciem ramienia", "pompka z sięgnięciem", "pompka z uniesieniem jednej ręki", "pompka z wyrzutem ramienia w przód"],
+
+  "description": "Bodyweight push-up variation that adds a unilateral arm raise at the top of each rep — after pressing back to the start position, one arm reaches forward/up (T-push-up style) while the other supports full bodyweight in a single-arm plank. The arms alternate between reps. Combines horizontal push (chest/triceps) with an anti-rotation core challenge and a shoulder mobility/strength component on the raised arm (posterior deltoid, scapular control). Excellent transitional exercise on the path toward archer push-ups and the single-arm push-up.",
+  "descriptionPl": "Wariant pompek z ciężarem własnym, który dodaje na szczycie każdego powtórzenia jednostronne uniesienie ramienia — po wypchnięciu do góry jedna ręka sięga do przodu/w górę (styl T-push-up), podczas gdy druga utrzymuje cały ciężar ciała w pozycji planka jednorącz. Ramiona zmieniają się co powtórzenie. Łączy wyciskanie horyzontalne (klatka/tricepsy) z wyzwaniem anty-rotacyjnym brzucha oraz pracą mobilizacyjno-siłową na uniesionym ramieniu (tylny akton barku, kontrola łopatki). Świetne ćwiczenie pomostowe w drodze do pompek łuczniczych i pompki na jednej ręce.",
+
+  "instructions": [
+    "Set up in a standard push-up position: hands slightly wider than shoulders, feet hip-width or slightly wider for better stability (wider stance = easier anti-rotation).",
+    "Brace your core hard, squeeze glutes — body in a straight line from heels to head.",
+    "Inhale and lower yourself in a controlled manner. Elbows track at ~45° from torso. Chest just above the floor.",
+    "Exhale and press back to the top, fully extending elbows.",
+    "At the top, shift weight onto one supporting arm. Raise the other arm forward and slightly upward (~45° above shoulder line), thumb up.",
+    "Hold the raised arm for 1 second — keep hips level, do not let the body rotate or the hip on the supporting side collapse.",
+    "Return the raised arm to the floor, reset both hands in starting position.",
+    "Perform the next push-up and raise the opposite arm. Continue alternating arms for the prescribed reps."
+  ],
+  "instructionsPl": [
+    "Ustaw się w klasycznej pozycji pompkowej: dłonie nieco szerzej niż barki, stopy na szerokość bioder lub szerzej (szersze rozstawienie = łatwiejsze anty-rotacja).",
+    "Mocno napnij brzuch, ściśnij pośladki — ciało w prostej linii od pięt do głowy.",
+    "Wdech, opuszczaj się kontrolowanym ruchem. Łokcie pod ~45° od tułowia. Klatka tuż nad podłogą.",
+    "Wydech, wypchnij się do góry, w pełni prostując łokcie.",
+    "Na górze przenieś ciężar na jedną rękę podpierającą. Drugą rękę unieś w przód i lekko w górę (~45° powyżej linii barków), kciuk do góry.",
+    "Utrzymaj uniesione ramię przez 1 sekundę — biodra równo, ciało nie obraca się, biodro po stronie podpierającej nie 'spada'.",
+    "Opuść uniesione ramię z powrotem na podłogę, ustaw obie dłonie w pozycji wyjściowej.",
+    "Wykonaj kolejną pompkę i unieś przeciwną rękę. Kontynuuj naprzemiennie przez zaplanowane powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral_alternating",
+    "plane": "sagittal_transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "posterior_deltoids"],
+    "secondary": ["anterior_deltoids", "serratus_anterior", "obliques"],
+    "stabilizers": ["core", "transverse_abdominis", "glutes", "rotator_cuff", "scapular_stabilizers", "quadratus_lumborum"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P7",
+    "posterior_deltoids": "P6",
+    "anterior_deltoids": "S6",
+    "serratus_anterior": "S6",
+    "obliques": "S7",
+    "core": "T7",
+    "transverse_abdominis": "T7",
+    "glutes": "T5",
+    "rotator_cuff": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["yoga_mat", "push_up_handles"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "plank", "side-plank"],
+    "progression_to": ["t-push-up-with-dumbbell", "archer-push-up", "single-arm-push-up", "one-arm-push-up"],
+    "alternatives": ["t-push-up-rotation", "renegade-row", "push-up", "shoulder-tap-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands slightly wider than shoulders, fingers spread, weight on whole palm",
+      "Feet wider than hip-width — wider base = easier balance on one arm",
+      "Pre-brace plank: glutes squeezed, abs braced, ribs tucked",
+      "Decide rep #1 raises the right arm, #2 raises the left — set the pattern before starting",
+      "Neutral neck, eyes at the floor ~30 cm in front of hands"
+    ],
+    "setup_cues_pl": [
+      "Dłonie nieco szerzej niż barki, palce rozsunięte, ciężar na całej powierzchni dłoni",
+      "Stopy szerzej niż biodra — szersza baza = łatwiejsza równowaga na jednej ręce",
+      "Wstępne napięcie planka: pośladki ściśnięte, brzuch napięty, żebra schowane",
+      "Ustal: powtórzenie #1 unosi prawa ręka, #2 lewa — schemat ustaw zanim zaczniesz",
+      "Neutralna szyja, wzrok na podłogę ~30 cm przed dłońmi"
+    ],
+    "execution_cues": [
+      "Full push-up first, raise the arm only at lockout (not during the press)",
+      "Reach forward (~45° above shoulder), thumb up — long, controlled motion",
+      "Hips stay square — imagine a glass of water on your sacrum that mustn't spill",
+      "Push the floor away through the supporting palm — don't 'sink' into the shoulder",
+      "Slow tempo on the raise (1 sec up, 1 sec hold, 1 sec down) — anti-rotation is the real work"
+    ],
+    "execution_cues_pl": [
+      "Najpierw pełna pompka, ramię unoś dopiero na szczycie (nie podczas wyciskania)",
+      "Sięgaj w przód (~45° powyżej barku), kciuk do góry — długi, kontrolowany ruch",
+      "Biodra na równo — wyobraź sobie szklankę wody na krzyżu, która nie może się rozlać",
+      "Wypchaj podłogę dłonią podpierającą — nie 'zapadaj się' w bark",
+      "Wolne tempo unoszenia (1 sek w górę, 1 sek przytrzymaj, 1 sek w dół) — to anty-rotacja jest właściwą pracą"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips rotating open (twisting toward the raised arm)",
+        "faultPl": "Biodra rotują się (skręcanie w stronę uniesionego ramienia)",
+        "cause": "Weak obliques and glutes, narrow foot stance, raising arm too fast",
+        "causePl": "Słabe skośne brzucha i pośladki, zbyt wąska baza stóp, zbyt szybkie unoszenie ramienia",
+        "cue": "Squeeze the glute on the supporting side. 'Stack one shoulder over the other'. Widen feet if needed.",
+        "cuePl": "Ściśnij pośladek po stronie podpierającej. 'Ustaw bark nad barkiem'. Rozszerz stopy jeśli trzeba."
+      },
+      {
+        "fault": "Supporting shoulder collapsing (scapula winging, shoulder shrugged toward ear)",
+        "faultPl": "Zapadnięcie barku podpierającego (odstawanie łopatki, bark wchodzi do ucha)",
+        "cause": "Weak serratus anterior, no active push through palm during arm raise",
+        "causePl": "Słaby zębaty przedni, brak aktywnego wypychania dłonią podczas uniesienia ramienia",
+        "cue": "'Push the floor away' from the supporting hand the whole time. Long arm, packed shoulder.",
+        "cuePl": "'Wypychaj podłogę' dłonią podpierającą przez cały czas. Długie ramię, schowany bark."
+      },
+      {
+        "fault": "Raising the arm before completing the push-up",
+        "faultPl": "Unoszenie ramienia przed dokończeniem pompki",
+        "cause": "Rushing the rep, treating arm raise as the goal rather than the finisher",
+        "causePl": "Pośpiech, traktowanie uniesienia ramienia jako celu zamiast jako zwieńczenia",
+        "cue": "Lockout first, then raise. Two distinct phases — never combine them.",
+        "cuePl": "Najpierw pełne wyprostowanie, potem uniesienie. Dwie wyraźne fazy — nigdy ich nie łącz."
+      },
+      {
+        "fault": "Sagging hips during the arm raise",
+        "faultPl": "Opadające biodra podczas uniesienia ramienia",
+        "cause": "Core fatigue, releasing glute tension at the top",
+        "causePl": "Zmęczenie brzucha, rozluźnienie pośladków na szczycie",
+        "cue": "Squeeze glutes harder at the top, not less. Brace abs as if expecting a punch.",
+        "cuePl": "Na szczycie ściskaj pośladki MOCNIEJ, nie luźniej. Napnij brzuch jakby ktoś miał cię uderzyć."
+      },
+      {
+        "fault": "Reaching sideways instead of forward (T-shape)",
+        "faultPl": "Sięganie w bok zamiast w przód (kształt litery T)",
+        "cause": "Confusion with classic T-push-up cue, lack of clarity on plane of motion",
+        "causePl": "Pomyłka z klasycznym T-push-upem, brak jasności co do płaszczyzny ruchu",
+        "cue": "Reach forward and slightly up (~45° above shoulder line) — thumb leads, palm down or sideways. This loads the posterior delt and works anti-rotation more than a lateral T-reach.",
+        "cuePl": "Sięgaj w przód i lekko w górę (~45° powyżej linii barków) — kciuk prowadzi, dłoń w dół lub bokiem. Tak obciążasz tylny akton i bardziej pracujesz anty-rotacyjnie niż przy bocznym T."
+      }
+    ],
+    "breathing": "Inhale during descent, exhale during the press. Steady breath during the arm raise — do not hold breath, but maintain abdominal brace.",
+    "breathingPl": "Wdech podczas opuszczania, wydech podczas wyciskania. Spokojny oddech podczas unoszenia ramienia — nie wstrzymuj oddechu, ale utrzymuj napięcie brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Single-arm support doubles wrist load. Use push-up handles or fists. If pain persists — regress to standard push-up + standing arm raises separately.",
+      "modificationPl": "Podparcie na jednej ręce podwaja obciążenie nadgarstka. Użyj uchwytów do pompek lub pięści. Jeśli ból nie ustępuje — wróć do zwykłych pompek + osobne unoszenia ramion w staniu.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "Single-arm support stresses the rotator cuff and labrum significantly. Skip until both push-up and side plank are strong and pain-free.",
+      "modificationPl": "Podparcie na jednej ręce mocno obciąża stożek rotatorów i obrąbek. Pomiń dopóki zwykła pompka i bok-plank nie są mocne i bezbolesne.",
+      "alternative": "shoulder-tap-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Anti-rotation demand loads QL and lumbar erectors. If form breaks — drop to knees or regress to dead bug + push-up combo to build core first.",
+      "modificationPl": "Wymóg anty-rotacji obciąża QL i prostowniki lędźwiowe. Jeśli forma się załamuje — opuść kolana lub wróć do kombinacji dead bug + pompka aby najpierw wzmocnić brzuch.",
+      "alternative": "knee-push-up"
+    },
+    {
+      "condition": "core_weakness",
+      "severity": "modify",
+      "modification": "If hips can't stay square — widen feet, reduce hold time on raised arm, or regress to push-up + shoulder tap before progressing to full arm raise.",
+      "modificationPl": "Jeśli nie utrzymasz biodra na równo — rozszerz stopy, skróć czas trzymania uniesionego ramienia, lub wróć do pompki + dotyku barku zanim przejdziesz do pełnego uniesienia ramienia.",
+      "alternative": "shoulder-tap-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 per side (skill+strength) | 3x8-12 alternating (hypertrophy/conditioning) | EMOM 5-8 reps for stability work",
+  "calories_per_kg_per_hour": 4.8,
+
+  "media": {
+    "primary": "raise-single-arm-push-up.gif",
+    "frames_extracted": [
+      "frames/raise-single-arm-push-up/frame_0_start.png",
+      "frames/raise-single-arm-push-up/frame_1_early.png",
+      "frames/raise-single-arm-push-up/frame_2_mid.png",
+      "frames/raise-single-arm-push-up/frame_3_late.png",
+      "frames/raise-single-arm-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/raise-single-arm-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start) i frame 4 (end): postać na dole pompki — klatka tuż nad podłogą, łokcie zgięte pod ~45° od tułowia, obie dłonie na podłodze, pectoralis major mocno podświetlony (czerwony) jako muskuł pierwotny w fazie pompkowej. Frame 1/3 (early/late): widoczna nakładka pokazująca przejście — postać wypycha się do góry i jedna ręka sięga w przód-górę pod kątem ~45° powyżej linii barku, kciuk do góry, druga ręka stabilizuje w jednoramiennym planku. Frame 2 (mid): górna pozycja z pełnym uniesieniem ramienia — wyciągnięta ręka w przód-górze, podparcie na jednej ręce, biodra równe (anti-rotation), tricepsy podpierającego ramienia podświetlone. Plane = sagittal (pompka) + transverse (anty-rotacja podczas raise). Laterality = bilateral_alternating (lewa/prawa zamiennie). Primary muscles: pectoralis_major (pompka) + triceps (lockout, podparcie jednorącz) + posterior_deltoids (uniesienie ramienia w przód-górę). Secondary: obliques (anty-rotacja przy unoszeniu), serratus_anterior (kontrola łopatki podpierającej). Wszystkie pola PL napisane od zera w polskim standardzie fitness. Czas trwania: 1 sek hold uniesionego ramienia + standardowe tempo pompki. Mostek pomiędzy zwykłą pompką a archer push-up / single-arm push-up.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "unilateral", "anti_rotation", "core", "shoulder", "home_workout", "no_equipment", "progression_to_one_arm_push_up"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-one-arm-hammer-preacher-curl",
+  "name": "Dumbbell One-Arm Hammer Preacher Curl",
+  "namePl": "Hammer preacher curl hantlem jednorącz",
+  "aliases": ["one arm hammer preacher curl", "single arm neutral grip preacher curl", "dumbbell neutral preacher curl unilateral", "hammer grip preacher curl one arm"],
+  "aliasesPl": ["uginanie hantlem jednorącz na modlitewniku chwytem młotkowym", "preacher curl jednorącz hantlem młotkowo", "hammer curl na ławce modlitewnik jednorącz", "uginanie neutralnym chwytem hantlem na modlitewniku jednorącz"],
+
+  "description": "Unilateral biceps isolation performed seated at a preacher bench with the working arm's triceps fully supported on the pad and the dumbbell held in a neutral (hammer) grip — palm facing inward throughout the rep. The preacher pad eliminates shoulder cheat and locks the humerus, isolating elbow flexion under stretch. Combined with the neutral grip, this places maximum mechanical emphasis on the brachialis (lying underneath the biceps) and brachioradialis (forearm), with the biceps brachii in a mechanically disadvantaged position. Training one arm at a time allows the non-working hand to spot, eliminates left/right strength asymmetries, and improves mind-muscle connection.",
+  "descriptionPl": "Jednostronne izolowane uginanie wykonywane siedząc na ławce modlitewnik (preacher bench) z trójgłowym ramieniem pracującej ręki opartym całkowicie na poduszce i hantlą trzymaną neutralnym chwytem młotkowym — dłoń skierowana do wewnątrz przez całe powtórzenie. Poduszka modlitewnika eliminuje oszukiwanie barkiem i blokuje kość ramienną, izolując zgięcie w łokciu pod rozciągnięciem. W połączeniu z neutralnym chwytem daje to maksymalny akcent mechaniczny na mięsień ramienny (leżący pod bicepsem) i ramienno-promieniowy (przedramię), podczas gdy biceps znajduje się w niekorzystnej mechanicznie pozycji. Trening jedną ręką naraz pozwala drugą dłonią asekurować, eliminuje asymetrie siły lewa/prawa i poprawia połączenie głowa-mięsień.",
+
+  "instructions": [
+    "Set the preacher bench so the top of the pad sits just under your armpit when seated. Adjust seat height so your feet are flat on the floor.",
+    "Sit down and place the working arm's triceps flat on the pad. The entire back of the upper arm — from armpit to elbow — must be in contact with the pad. Grip a dumbbell with a neutral grip (palm facing inward, thumb up, like holding a hammer).",
+    "Extend the working arm to near-full elbow extension under control. Do not snap the elbow at the bottom — keep a slight bend to protect the joint. The non-working hand can rest on the pad or be ready to spot the dumbbell.",
+    "Brace your core, sit tall against the pad. Inhale.",
+    "Curl the dumbbell upward by flexing only at the elbow. The wrist stays in neutral position the entire rep — no rotation, no twisting. Exhale.",
+    "Continue until the dumbbell reaches near-shoulder height and the brachialis is fully contracted. Squeeze hard for 1 second at the top.",
+    "Lower the dumbbell under control over 2-3 seconds back to near-full extension. Feel the stretch in the brachialis and brachioradialis.",
+    "Complete all reps on one arm before switching. Do not rest the dumbbell between reps.",
+    "Switch arms and repeat."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę modlitewnik tak, aby górna krawędź poduszki znajdowała się tuż pod pachą gdy siedzisz. Wyreguluj wysokość siedziska tak, aby stopy spoczywały płasko na podłodze.",
+    "Usiądź i połóż trójgłowe ramienia pracującej ręki płasko na poduszce. Cała tylna powierzchnia ramienia — od pachy do łokcia — musi mieć kontakt z poduszką. Chwyć hantlę neutralnym chwytem (dłoń skierowana do wewnątrz, kciuk do góry, jak trzymanie młotka).",
+    "Wyprostuj pracującą rękę w łokciu prawie do końca pod kontrolą. Nie zatrzaskuj łokcia na dole — zachowaj lekkie ugięcie aby chronić staw. Druga ręka może spoczywać na poduszce lub być gotowa do asekuracji hantli.",
+    "Napnij brzuch, usiądź wysoko opierając się o poduszkę. Wdech.",
+    "Uginaj hantlę w górę zginając wyłącznie w łokciu. Nadgarstek pozostaje w neutralnej pozycji przez całe powtórzenie — bez rotacji, bez skręcania. Wydech.",
+    "Kontynuuj aż hantla dotrze prawie do wysokości barku i mięsień ramienny będzie w pełnym skurczu. Mocno spinaj przez 1 sekundę w górnej pozycji.",
+    "Opuszczaj hantlę w sposób kontrolowany przez 2-3 sekundy do prawie pełnego wyprostu. Poczuj rozciągnięcie w mięśniu ramiennym i ramienno-promieniowym.",
+    "Wykonaj wszystkie powtórzenia na jednej ręce zanim zmienisz. Nie odkładaj hantli między powtórzeniami.",
+    "Zmień rękę i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis", "biceps_brachii"],
+    "secondary": ["forearm_flexors"],
+    "stabilizers": ["anterior_deltoid", "core", "wrist_extensors", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "brachioradialis": "P9",
+    "biceps_brachii": "P7",
+    "forearm_flexors": "S6",
+    "wrist_extensors": "S4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "preacher_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-hammer-curl"],
+    "progression_to": ["hammer-preacher-curl", "cable-one-arm-hammer-preacher-curl", "spider-hammer-curl"],
+    "alternatives": ["dumbbell-hammer-curl", "cross-body-hammer-curl", "rope-hammer-curl", "cable-hammer-curl", "incline-dumbbell-hammer-curl", "barbell-preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Top of preacher pad just under your armpit — no gap between armpit and pad",
+      "Entire triceps flat on pad — from armpit to elbow",
+      "Neutral grip — palm facing inward, thumb up, like holding a hammer",
+      "Sit tall, chest against the top of the pad, feet flat",
+      "Non-working hand ready to spot — do not use it to assist the lift"
+    ],
+    "setup_cues_pl": [
+      "Górna krawędź poduszki tuż pod pachą — brak przestrzeni między pachą a poduszką",
+      "Cały triceps płasko na poduszce — od pachy do łokcia",
+      "Neutralny chwyt — dłoń skierowana do wewnątrz, kciuk do góry, jak trzymanie młotka",
+      "Siedź wysoko, klatka oparta o górę poduszki, stopy płasko",
+      "Druga ręka gotowa do asekuracji — nie używaj jej do wspomagania ruchu"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm welded to the pad",
+      "Wrist stays neutral the entire rep — no rotation, no curl-over",
+      "Squeeze the brachialis hard at the top, hold 1 second",
+      "Lower over 2-3 seconds, feel the stretch on the way down",
+      "Near-full extension at the bottom — but do not lock out hard"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię nad łokciem przyspawane do poduszki",
+      "Nadgarstek pozostaje neutralny przez całe powtórzenie — bez rotacji, bez \"przekręcania\" w górze",
+      "Mocno spinaj mięsień ramienny w górnej pozycji, wytrzymaj 1 sekundę",
+      "Opuszczaj przez 2-3 sekundy, poczuj rozciągnięcie podczas opuszczania",
+      "Prawie pełny wyprost na dole — ale nie zatrzaskuj łokcia gwałtownie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Snapping the elbow at the bottom (hyperextension)",
+        "faultPl": "Zatrzaskiwanie łokcia na dole (przeprost)",
+        "cause": "Letting the weight fall and stopping it abruptly with the elbow joint — preacher position puts the biceps in maximum stretch which exposes the distal tendon",
+        "causePl": "Pozwolenie hantli opaść i zatrzymanie jej gwałtownie stawem łokciowym — pozycja na modlitewniku stawia biceps w maksymalnym rozciągnięciu, co eksponuje przyczep dystalny",
+        "cue": "Stop just shy of full extension. Control the descent — never let the weight free-fall on the eccentric.",
+        "cuePl": "Zatrzymaj tuż przed pełnym wyprostem. Kontroluj opuszczanie — nigdy nie pozwól ciężarowi opadać swobodnie."
+      },
+      {
+        "fault": "Lifting the armpit off the top of the pad",
+        "faultPl": "Odrywanie pachy od górnej krawędzi poduszki",
+        "cause": "Load too heavy — body recruits shoulder and torso to assist the lift",
+        "causePl": "Zbyt duży ciężar — ciało włącza bark i tułów do wspomagania ruchu",
+        "cue": "Pin the armpit against the top of the pad. If you cannot, the weight is too heavy.",
+        "cuePl": "Trzymaj pachę dociśniętą do górnej krawędzi poduszki. Jeśli nie potrafisz, ciężar jest zbyt duży."
+      },
+      {
+        "fault": "Cheating with the non-working hand",
+        "faultPl": "Oszukiwanie drugą ręką",
+        "cause": "Non-working hand pushes the dumbbell up instead of just spotting it",
+        "causePl": "Druga ręka popycha hantlę w górę zamiast tylko asekurować",
+        "cue": "Hands off unless you genuinely cannot complete the rep. Use the spot only on the last 1-2 forced reps.",
+        "cuePl": "Ręce z dala chyba że naprawdę nie możesz dokończyć powtórzenia. Używaj asekuracji tylko na ostatnich 1-2 forsowanych powtórzeniach."
+      },
+      {
+        "fault": "Rotating the wrist (supinating into a regular curl)",
+        "faultPl": "Rotacja nadgarstka (supinacja w stronę zwykłego uginania)",
+        "cause": "Habit from regular dumbbell curls — body wants to turn the palm up at the top to engage the biceps",
+        "causePl": "Nawyk z normalnego uginania hantlami — ciało chce obrócić dłoń w górę na szczycie aby zaangażować biceps",
+        "cue": "Thumb stays pointing at the ceiling the entire rep. Hammer grip means hammer grip — top to bottom.",
+        "cuePl": "Kciuk skierowany do sufitu przez całe powtórzenie. Hammer grip oznacza hammer grip — od dołu do góry."
+      },
+      {
+        "fault": "Partial range — cutting off the bottom (the stretch)",
+        "faultPl": "Niepełny zakres — skracanie dołu (rozciągnięcia)",
+        "cause": "The stretched position is the hardest part on preacher bench — weak in stretch, fear of joint",
+        "causePl": "Pozycja rozciągnięta jest najtrudniejszą fazą na modlitewniku — słabość w rozciągnięciu, strach przed stawem",
+        "cue": "The stretch is where brachialis grows the most. Go down until elbow is near-fully extended — under control.",
+        "cuePl": "Faza rozciągnięta to moment największego wzrostu mięśnia ramiennego. Schodź aż łokieć będzie prawie w pełni wyprostowany — pod kontrolą."
+      }
+    ],
+    "breathing": "Inhale at the top (or before lowering). Exhale during the concentric (curl up). The eccentric on preacher bench is mechanically demanding — keep the brace tight to avoid yanking the shoulder.",
+    "breathingPl": "Wdech na górze (lub przed opuszczaniem). Wydech w fazie koncentrycznej (unoszenie). Faza ekscentryczna na modlitewniku jest mechanicznie wymagająca — utrzymuj napięcie aby nie szarpnąć barku."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Preacher position puts the distal biceps tendon in maximum stretch under load — this is the highest-risk position for tendon flares. Avoid until pain-free. Substitute with cable hammer variants or standing hammer curls with reduced ROM.",
+      "modificationPl": "Pozycja na modlitewniku stawia ścięgno dystalne bicepsa w maksymalnym rozciągnięciu pod obciążeniem — to pozycja najwyższego ryzyka zaostrzenia. Unikaj do ustąpienia bólu. Zastąp wariantem na linkach lub stojącym hammer curl ze zmniejszonym zakresem ruchu.",
+      "alternative": "cable-hammer-curl"
+    },
+    {
+      "condition": "elbow_hyperextension_or_instability",
+      "severity": "modify",
+      "modification": "Preacher bench naturally places the elbow at end-range extension at the bottom of the rep. Stop the eccentric well short of lockout. Use a steeper pad angle if available, or substitute with standing variant.",
+      "modificationPl": "Modlitewnik naturalnie ustawia łokieć w skrajnej pozycji wyprostu na dole powtórzenia. Zatrzymuj fazę ekscentryczną z wyraźną rezerwą przed pełnym wyprostem. Użyj poduszki o bardziej stromym kącie jeśli dostępna, lub zastąp wariantem stojącym.",
+      "alternative": "dumbbell-hammer-curl"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Hammer grip loads the brachioradialis and wrist extensors which attach at the lateral epicondyle. The preacher position amplifies this. Drastically reduce load, perform 15-20 reps to pump, or switch to cable variant with constant tension.",
+      "modificationPl": "Chwyt młotkowy obciąża mięsień ramienno-promieniowy i prostowniki nadgarstka, które mają przyczep przy nadkłykciu bocznym. Pozycja na modlitewniku to wzmacnia. Drastycznie zmniejsz ciężar, wykonuj 15-20 powtórzeń na pompę, lub przejdź na wariant z wyciągiem o stałym napięciu.",
+      "alternative": "cable-hammer-curl"
+    },
+    {
+      "condition": "shoulder_impingement_or_anterior_instability",
+      "severity": "caution",
+      "modification": "Pressing the armpit into the top of the pad can compress the front of the shoulder. Use a pad with a deeper notch, sit slightly further back, and avoid pushing through the shoulder to assist the lift.",
+      "modificationPl": "Dociskanie pachy do górnej krawędzi poduszki może uciskać przednią część barku. Użyj poduszki z głębszym wcięciem, usiądź lekko dalej, i unikaj przepychania siły przez bark aby wspomóc ruch.",
+      "alternative": "incline-dumbbell-hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy) | 3x6-8 per arm (strength) | 2-3x12-15 per arm (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-one-arm-hammer-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-hammer-preacher-curl/frame_0_start.png",
+      "frames/dumbbell-one-arm-hammer-preacher-curl/frame_1_early.png",
+      "frames/dumbbell-one-arm-hammer-preacher-curl/frame_2_mid.png",
+      "frames/dumbbell-one-arm-hammer-preacher-curl/frame_3_late.png",
+      "frames/dumbbell-one-arm-hammer-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-one-arm-hammer-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:25:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start): atleta siedzi na ławce modlitewnik, prawa ręka wyprostowana z hantlą w chwycie neutralnym (kciuk skierowany do przodu/sufitu, dłoń do wewnątrz, kostki w bok — wyraźnie hammer grip a nie podchwyt/supinacja), triceps prawej ręki położony płasko na poduszce. Druga ręka spoczywa na poduszce/hantli — może asekurować. Frame 1-3 (early-late): widoczna progresja uginania — łokieć w pełnym kontakcie z poduszką, hantla podnosi się łukiem, dłoń POZOSTAJE w pozycji neutralnej przez cały ruch (kciuk wciąż do góry, brak supinacji). Czerwone podświetlenie obejmuje biceps brachii ORAZ wyraźnie obszar po lateralnej stronie przedramienia (brachioradialis) — to mocno potwierdza akcent na brachialis/brachioradialis charakterystyczny dla hammer grip. Frame 4 (end): górna pozycja, hantla blisko barku, dłoń wciąż neutralna, łokieć przyklejony do poduszki. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell One-Arm Hammer Preacher Curl: (1) hantel zamiast sztangi — unilateralne, (2) preacher bench — łokieć zablokowany, (3) chwyt neutralny przez cały ROM — hammer. Difficulty 4 (poziom intermediate) ze względu na kombinację: skrajna pozycja rozciągnięcia w łokciu + ryzyko dla dystalnego bicepsa + wymaga świadomości technicznej. Wszystkie pola PL napisane od zera w polskim standardzie fitness.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "brachioradialis", "forearms", "isolation", "dumbbell", "preacher_bench", "upper_body", "neutral_grip", "hammer_grip", "unilateral", "single_arm"]
+}

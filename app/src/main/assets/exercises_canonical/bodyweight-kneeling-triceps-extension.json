@@ -1,0 +1,202 @@
+{
+  "id": "bodyweight-kneeling-triceps-extension",
+  "name": "Bodyweight Kneeling Triceps Extension",
+  "namePl": "Tricep extension wagą własną w klęku",
+  "aliases": ["kneeling triceps extension", "bodyweight triceps extension", "kneeling skull crusher", "floor triceps extension", "kneeling lying triceps extension"],
+  "aliasesPl": ["wyciskanie francuskie wagą własną w klęku", "klęczący tricep extension", "podłogowy skull crusher", "wyciskanie francuskie z masą ciała", "tricep extension na podłodze"],
+
+  "description": "Bodyweight triceps isolation exercise performed kneeling on the floor with forearms or palms placed on the ground in front. The lifter lowers the upper body by flexing the elbows (similar to a lying triceps extension / skull crusher pattern but with bodyweight providing the resistance), then extends the elbows to return to the start position. Closed-chain movement that mimics the skull crusher mechanics — the elbow flexes and extends while the shoulder remains relatively stationary, directly loading all three heads of the triceps brachii (long, lateral, medial). An excellent intermediate progression between assistance work and advanced movements like the ab wheel rollout or leaning triceps extension.",
+  "descriptionPl": "Izolowane ćwiczenie tricepsa z masą ciała wykonywane w klęku na podłodze z przedramionami lub dłońmi opartymi o ziemię przed sobą. Ćwiczący opuszcza górną część ciała zginając łokcie (podobnie do wyciskania francuskiego / skull crushera, ale z masą ciała jako oporem), a następnie prostuje łokcie wracając do pozycji wyjściowej. Ruch w łańcuchu zamkniętym, który naśladuje mechanikę skull crushera — łokieć zgina się i prostuje, podczas gdy bark pozostaje względnie nieruchomy, bezpośrednio obciążając wszystkie trzy głowy mięśnia trójgłowego ramienia (długą, boczną, przyśrodkową). Doskonała progresja pośrednia między ćwiczeniami asystowanymi a zaawansowanymi ruchami jak rollout z kółkiem czy leaning triceps extension.",
+
+  "instructions": [
+    "Kneel on the floor with knees together or hip-width apart. Place a mat under the knees for comfort.",
+    "Lean forward and place palms (or fists for a wrist-friendly version) on the floor in front of you, arms extended.",
+    "Walk hands forward slightly so that the body forms a straight diagonal line from knees through hips to shoulders. Hips do NOT sit back on heels.",
+    "Set the shoulders — arms vertical (perpendicular to floor) at the start, elbows pre-extended but not locked, eyes looking down.",
+    "Brace the core and squeeze the glutes. The body must be rigid like a kneeling plank — no hip sag, no piking.",
+    "Inhale and bend ONLY at the elbows, lowering the head and upper body toward the floor. The shoulders stay roughly above the hands — do NOT rotate at the shoulder like a push-up.",
+    "Lower until the forehead nearly touches the floor between your hands (or until forearms touch the floor on the deeper variation). Elbows finish pointing forward, NOT flared to the sides.",
+    "Exhale and extend the elbows powerfully to drive the body back up to the start position. Feel the triceps fire as the elbows lock out.",
+    "At the top maintain the rigid kneeling plank — do not let hips sag or the lower back overextend. Reset and repeat."
+  ],
+  "instructionsPl": [
+    "Uklęknij na podłodze z kolanami razem lub na szerokość bioder. Podłóż matę pod kolana dla komfortu.",
+    "Pochyl się do przodu i oprzyj dłonie (lub pięści w wersji oszczędzającej nadgarstki) na podłodze przed sobą, ramiona wyprostowane.",
+    "Przesuń dłonie lekko do przodu, tak by ciało tworzyło prostą skośną linię od kolan przez biodra do barków. Biodra NIE siadają na piętach.",
+    "Ustaw barki — ramiona pionowo (prostopadle do podłogi) w pozycji wyjściowej, łokcie wyprostowane ale nie zablokowane, wzrok skierowany w dół.",
+    "Napnij brzuch i ściśnij pośladki. Ciało musi być sztywne jak klęczący plank — bez opadania bioder, bez 'tyłka do góry'.",
+    "Wdech i zegnij TYLKO w łokciach, opuszczając głowę i górną część ciała w stronę podłogi. Barki zostają mniej więcej nad dłońmi — NIE rotuj w stawie barkowym jak przy pompce.",
+    "Schodź aż czoło prawie dotknie podłogi między dłońmi (lub do dotknięcia przedramion przy głębszej wariancji). Łokcie pokazują do przodu, NIE rozkładają się na boki.",
+    "Wydech i mocno wyprostuj łokcie, wypychając ciało z powrotem do pozycji wyjściowej. Poczuj jak triceps napina się przy pełnym wyproście.",
+    "W górze utrzymaj sztywny klęczący plank — biodra nie opadają, lędźwie nie idą w nadwyprost. Reset i następne powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anterior_deltoid", "pectoralis_major"],
+    "stabilizers": ["core", "glutes", "scapular_stabilizers", "serratus_anterior", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P9",
+    "anterior_deltoid": "S4",
+    "pectoralis_major": "S3",
+    "core": "T6",
+    "glutes": "T4",
+    "serratus_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "push_up_handles", "ab_wheel"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["plank", "knee-push-up", "incline-push-up"],
+    "progression_to": ["bodyweight-triceps-extension", "ab-wheel-rollout-kneeling", "leaning-triceps-extension", "skull-crusher"],
+    "alternatives": ["cable-kneeling-triceps-extension", "lying-triceps-extension", "diamond-push-up", "tricep-pushdown", "close-grip-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kneeling plank position — straight line from knees through hips to shoulders, no hip-sit",
+      "Arms vertical at the start — shoulders stacked over the hands",
+      "Diamond/triangle hand position OR shoulder-width — both work, narrow loads triceps more",
+      "Pre-brace core and glutes BEFORE the first rep",
+      "Eyes look down between hands — head neutral, no neck craning"
+    ],
+    "setup_cues_pl": [
+      "Pozycja klęczącego planka — prosta linia od kolan przez biodra do barków, biodra nie siadają na piętach",
+      "Ramiona pionowo w pozycji wyjściowej — barki dokładnie nad dłońmi",
+      "Dłonie w diamencie/trójkącie LUB na szerokość barków — obie wersje działają, wąskie mocniej obciąża triceps",
+      "Napnij brzuch i pośladki ZANIM zaczniesz pierwsze powtórzenie",
+      "Wzrok w dół między dłonie — głowa neutralna, bez wyciągania szyi"
+    ],
+    "execution_cues": [
+      "Bend ONLY at the elbows — shoulders stay put, this is NOT a push-up",
+      "Elbows point forward (toward your hands), NOT flared out to the sides",
+      "Lower in 2-3 seconds — control the stretch, feel the triceps load",
+      "Forehead almost kisses the floor — full ROM at the elbow",
+      "Drive back up by extending elbows hard — squeeze triceps at lockout"
+    ],
+    "execution_cues_pl": [
+      "Zginaj TYLKO w łokciach — barki zostają w miejscu, to NIE są pompki",
+      "Łokcie pokazują do przodu (w stronę dłoni), NIE rozkładają się na boki",
+      "Opuszczaj w 2-3 sekundy — kontroluj rozciąganie, poczuj jak triceps się ładuje",
+      "Czoło prawie całuje podłogę — pełen zakres ruchu w łokciu",
+      "Wypchnij się mocnym prostowaniem łokci — ściśnij triceps na samym końcu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Shoulder rotation — turning it into a kneeling push-up",
+        "faultPl": "Rotacja w barku — zamiana w klęczące pompki",
+        "cause": "Default push-up habit, weak triceps, body trying to recruit chest and shoulders for assistance",
+        "causePl": "Nawyk ze zwykłych pompek, słaby triceps, ciało próbuje wciągnąć klatkę i barki do pomocy",
+        "cue": "Think 'elbow hinge only' — imagine your shoulder is in a sling. If the shoulders move backward as you lower, you're cheating into a push-up. Slow down, reduce ROM.",
+        "cuePl": "Myśl 'tylko zawias w łokciu' — wyobraź sobie, że bark masz w temblaku. Jeśli barki się cofają przy schodzeniu, oszukujesz w pompkę. Zwolnij, zmniejsz zakres."
+      },
+      {
+        "fault": "Elbows flaring out to the sides",
+        "faultPl": "Łokcie rozkładają się na boki",
+        "cause": "Weak triceps trying to recruit pec/anterior delt, or wider hand placement than intended",
+        "causePl": "Słaby triceps próbujący wciągnąć klatkę/przednią część barku, lub szersze ustawienie dłoni niż założono",
+        "cue": "Elbows point STRAIGHT FORWARD throughout the rep — toward your hands, not toward your knees. Squeeze inner elbow pits together.",
+        "cuePl": "Łokcie cały czas pokazują PROSTO DO PRZODU — w stronę dłoni, nie w stronę kolan. Ściśnij zgięcia łokciowe do siebie."
+      },
+      {
+        "fault": "Hips sagging or sitting back on heels",
+        "faultPl": "Opadające biodra lub siadanie tyłkiem na piętach",
+        "cause": "Weak core/glutes, fatigue, or trying to make the exercise easier",
+        "causePl": "Słaby brzuch/pośladki, zmęczenie, lub próba ułatwienia ćwiczenia",
+        "cue": "Kneeling PLANK first, triceps extension second. Squeeze glutes hard. If you sit back, hips kill the triceps stretch and you lose ROM.",
+        "cuePl": "Najpierw klęczący PLANK, potem tricep extension. Mocno ściśnij pośladki. Jak siądziesz tyłem, biodra zabijają rozciągnięcie tricepsa i tracisz zakres."
+      },
+      {
+        "fault": "Partial range of motion — head not approaching floor",
+        "faultPl": "Częściowy zakres ruchu — głowa nie schodzi w stronę podłogi",
+        "cause": "Triceps weakness at long muscle length, fear of face-planting, ego reps",
+        "causePl": "Słabość tricepsa w wydłużonej długości mięśnia, strach przed uderzeniem twarzą o podłogę, ego — liczenie połowicznych powtórzeń",
+        "cue": "Forehead must approach the floor between hands. If you can't reach — walk hands closer to knees (shorter lever) until strength builds.",
+        "cuePl": "Czoło musi schodzić do podłogi między dłonie. Jak nie dasz rady — przesuń dłonie bliżej kolan (krótsza dźwignia) do czasu wzmocnienia siły."
+      },
+      {
+        "fault": "Lower back hyperextension at lockout",
+        "faultPl": "Nadwyprost lędźwi w pełnym wyproście łokci",
+        "cause": "Compensating for weak triceps by arching the back to 'push' up, or no glute squeeze",
+        "causePl": "Kompensacja słabego tricepsa przez wyginanie pleców by 'wypchnąć' się do góry, lub brak napięcia pośladków",
+        "cue": "Squeeze glutes throughout the rep — pelvis slightly tucked under, ribs down. The drive comes from elbow extension, NOT spinal extension.",
+        "cuePl": "Napięte pośladki przez całe powtórzenie — miednica lekko podwinięta, żebra w dół. Napęd idzie z prostowania łokci, NIE z prostowania kręgosłupa."
+      }
+    ],
+    "breathing": "Inhale during the eccentric phase (lowering toward floor), brace strongly at the bottom, exhale during the elbow extension. For high reps maintain bracing across reps with shallow reset breaths at the top.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (schodzenie w stronę podłogi), mocne napięcie na dole, wydech przy prostowaniu łokci. Przy wysokich powtórzeniach utrzymuj napięcie przez kilka powtórzeń z płytkimi oddechami-resetującymi na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_pain",
+      "severity": "modify",
+      "modification": "This is a pure elbow flexion/extension movement and directly stresses elbow tendons (especially the common tendon of the triceps). Tennis elbow, golfer's elbow, or distal triceps tendinopathy may flare up. Reduce ROM, use a higher kneeling position (less weight loaded), or substitute with tricep pushdown until pain resolves.",
+      "modificationPl": "To czyste zginanie/prostowanie w łokciu, które bezpośrednio obciąża ścięgna łokcia (zwłaszcza ścięgno tricepsa). Łokieć tenisisty, golfisty lub zapalenie ścięgna tricepsa mogą się nasilić. Zmniejsz zakres ruchu, przyjmij wyższą pozycję klęczącą (mniej obciążenia) lub zamień na tricep pushdown do czasu ustąpienia bólu.",
+      "alternative": "tricep-pushdown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "All bodyweight loads through the wrists in dorsiflexion. Use push-up handles to keep wrists neutral, perform on closed fists, or reduce intensity by walking hands further forward (shifts weight to knees).",
+      "modificationPl": "Cała masa ciała przechodzi przez nadgarstki w zgięciu grzbietowym. Użyj uchwytów do pompek by zachować neutralne nadgarstki, wykonuj na zaciśniętych pięściach lub zmniejsz intensywność przesuwając dłonie dalej do przodu (więcej masy na kolana).",
+      "alternative": "cable-kneeling-triceps-extension"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Although the shoulder stays mostly static, lowering with poor control can cause anterior shoulder loading. Keep arms strictly vertical, do not let shoulders drift forward of hands during the descent.",
+      "modificationPl": "Mimo że bark zostaje względnie statyczny, niekontrolowane opuszczanie może obciążyć przednią część barku. Trzymaj ramiona ściśle pionowo, nie pozwól by barki przesuwały się przed dłonie podczas schodzenia.",
+      "alternative": "tricep-pushdown"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Weak core combined with the natural tendency to arch at lockout can stress the lumbar spine. Focus on glute squeeze and rib-down position. If pain persists, regress to standing triceps extensions with band or cable.",
+      "modificationPl": "Słaby brzuch w połączeniu z naturalną tendencją do wyginania się przy pełnym wyproście może obciążać odcinek lędźwiowy. Skup się na napięciu pośladków i ściągnięciu żeber w dół. Jeśli ból się utrzymuje, wróć do tricep extension stojąc z gumą lub wyciągiem.",
+      "alternative": "cable-kneeling-triceps-extension"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (hypertrophy, triceps focus) | 3x12-20 (endurance, finisher) | AMRAP after compound pressing",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "bodyweight-kneeling-triceps-extension.gif",
+    "frames_extracted": [
+      "frames/bodyweight-kneeling-triceps-extension/frame_0_start.png",
+      "frames/bodyweight-kneeling-triceps-extension/frame_1_early.png",
+      "frames/bodyweight-kneeling-triceps-extension/frame_2_mid.png",
+      "frames/bodyweight-kneeling-triceps-extension/frame_3_late.png",
+      "frames/bodyweight-kneeling-triceps-extension/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/bodyweight-kneeling-triceps-extension"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frame 0/2 (start/top): klęcząca pozycja na podłodze, kolana ugięte, dłonie wyciągnięte przed siebie, ramiona pionowe, ciało tworzy skośną linię od kolan przez biodra do barków. Frame 4 (end/bottom): górna część ciała opuszczona — czoło zmierza w stronę podłogi między dłońmi, łokcie zgięte i pokazujące do przodu (NIE rozłożone na boki), przedramiona schodzą do pionu/równolegle do podłogi, podświetlony triceps (tylna część ramienia) na anatomii. Klasyczny wzorzec skull crushera/wyciskania francuskiego, ale wykonywany w łańcuchu zamkniętym z bodyweight jako oporem. Ruch izolowany na łokciu — bark pozostaje względnie statyczny (KLUCZOWA różnica względem zwykłych pompek na kolanach). Wszystkie pola PL napisane od zera w polskim standardzie fitness. Difficulty 4 (beginner→intermediate) — niski próg wejścia jako alternatywa dla rolloutu z kółkiem czy leaning tricep extension, ale wymaga już bazowego planka i siły tricepsa. Primary muscle: triceps_brachii P9 (jedyny mięsień napędowy ruchu w izolacji). Secondary: anterior_deltoid S4 i pectoralis_major S3 (stabilizacja barku i klatki przy opuszczaniu, nie generują głównej siły). Stabilizery: core T6 i glutes T4 (utrzymanie klęczącego planka, bez nich biodra opadną). Mechanic=isolation (jednostawowy ruch w łokciu), plane=sagittal (zgięcie/wyprost w płaszczyźnie strzałkowej), force=push (popychanie ciała od podłogi), kinetic_chain=closed (dłonie nieruchome na podłodze), bilateral. Bodyweight only, opcjonalnie mata i uchwyty do pompek.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "triceps", "triceps_isolation", "triceps_focus", "home_workout", "no_equipment", "kneeling", "elbow_extension", "skull_crusher_pattern", "beginner_friendly"]
+}

@@ -1,0 +1,187 @@
+{
+  "id": "push-up-wall",
+  "name": "Wall Push-Up",
+  "namePl": "Pompka przy ścianie (wall push-up)",
+  "aliases": ["wall pushup", "standing push-up", "vertical push-up", "wall press-up", "standing wall push-up"],
+  "aliasesPl": ["pompki przy ścianie", "pompki o ścianę", "pompki pionowe", "stojące pompki", "pompki na ścianie", "wall pompki"],
+
+  "description": "The most accessible push-up regression — performed standing upright, hands on a wall, body angled like a steep ramp. Only ~25-30% of bodyweight is loaded onto the arms (vs ~64% in a standard push-up and ~40-55% in an incline push-up), making it the entry-level push-up for beginners, seniors, post-injury rehab, or anyone returning to training after a long break. The closer your feet are to the wall, the easier; stepping back increases load and ROM. Same movement pattern as a bench press / floor push-up — horizontal push, pectoralis major and triceps doing the work — but with drastically reduced load and minimal stress on the shoulders, wrists, and core. Critical learning tool for grooving push-up mechanics (elbow path, scapular control, plank rigidity) before adding load.",
+  "descriptionPl": "Najłatwiejsza regresja pompki — wykonywana w pozycji stojącej, dłonie na ścianie, ciało ustawione jak stroma rampa. Tylko ~25-30% masy ciała spoczywa na ramionach (vs ~64% w zwykłej pompce i ~40-55% w incline push-up), czyniąc ją wejściową pompką dla początkujących, seniorów, rehabilitacji po kontuzji lub osób wracających do treningu po długiej przerwie. Im bliżej ściany stoją stopy — tym łatwiej; cofnięcie stóp zwiększa obciążenie i zakres ruchu. Ten sam wzorzec ruchowy co wyciskanie sztangi / pompka z podłogi — wypych horyzontalny, pracuje pec major i triceps — ale z drastycznie zmniejszonym obciążeniem i minimalnym stresem dla barków, nadgarstków i brzucha. Kluczowe narzędzie do nauki mechaniki pompki (tor łokci, kontrola łopatek, sztywność planka) zanim doda się obciążenie.",
+
+  "instructions": [
+    "Stand facing a solid wall, an arm's length away. Feet hip-width apart, flat on the floor.",
+    "Place both palms on the wall at shoulder height, slightly wider than shoulders, fingers pointing up.",
+    "Step feet back ~10-30 cm until arms are fully extended and body is at a slight forward lean. Further back = harder.",
+    "Brace your core, squeeze glutes. Body forms a straight line from heels through hips to head — a standing plank.",
+    "Inhale and lower your chest toward the wall in 2-3 seconds. Bend elbows, tracking them at ~45° from your torso (not flared to 90°).",
+    "Lower until your forehead or chest is about a fist's distance from the wall.",
+    "Brief pause at the bottom — don't rest your face on the wall.",
+    "Exhale and press the wall away. Drive through your palms, fully extend elbows without snapping the joint locked.",
+    "Maintain the standing plank shape from start to finish. Heels stay on the floor — no rising onto toes. Head neutral, eyes at the wall."
+  ],
+  "instructionsPl": [
+    "Stań twarzą do solidnej ściany w odległości wyciągniętej ręki. Stopy rozstawione na szerokość bioder, płasko na podłodze.",
+    "Połóż obie dłonie na ścianie na wysokości barków, nieco szerzej niż barki, palce skierowane w górę.",
+    "Cofnij stopy o ~10-30 cm aż ramiona będą w pełni wyprostowane, a ciało lekko pochylone do przodu. Dalej = trudniej.",
+    "Napnij brzuch, ściśnij pośladki. Ciało tworzy prostą linię od pięt przez biodra do głowy — stojący plank.",
+    "Wdech, opuszczaj klatkę w stronę ściany w 2-3 sekundy. Zginaj łokcie pod kątem ~45° od tułowia (nie rozsuwaj na 90°).",
+    "Schodź aż czoło lub klatka będą około pięści od ściany.",
+    "Krótka pauza na dole — nie opieraj twarzy o ścianę.",
+    "Wydech, wypchnij ścianę. Napieraj przez wnętrza dłoni, w pełni wyprostuj łokcie, ale bez blokowania stawu.",
+    "Utrzymuj stojącą planka od początku do końca. Pięty na podłodze — bez wspinania na palce. Głowa neutralna, wzrok na ścianę."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "calves"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P6",
+    "triceps": "P6",
+    "anterior_deltoids": "S5",
+    "serratus_anterior": "S4",
+    "core": "T3",
+    "glutes": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "wall"],
+    "optional": []
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 1,
+    "prerequisites": [],
+    "progression_to": ["incline-push-up", "knee-push-up", "push-up"],
+    "alternatives": ["band-chest-press", "machine-chest-press", "knee-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Solid wall — no mirrors, no thin drywall sections. Test with a firm push before starting.",
+      "Stand an arm's length from the wall, palms at shoulder height, slightly wider than shoulders",
+      "Fingers pointing UP (not forward) — most natural wrist position for vertical surface",
+      "Feet hip-width, flat on the floor — both heels glued down throughout the set",
+      "Body in a straight standing diagonal — heels through hips through head — set the plank BEFORE starting"
+    ],
+    "setup_cues_pl": [
+      "Solidna ściana — bez luster, bez cienkich płyt gipsowo-kartonowych. Sprawdź mocnym pchnięciem przed startem.",
+      "Stań na długość ręki od ściany, dłonie na wysokości barków, nieco szerzej niż barki",
+      "Palce skierowane w GÓRĘ (nie do przodu) — najbardziej naturalna pozycja nadgarstka na pionowej powierzchni",
+      "Stopy na szerokość bioder, płasko na podłodze — obie pięty przyklejone przez całą serię",
+      "Ciało w prostej stojącej skośnej — pięty przez biodra przez głowę — ustaw plank ZANIM zaczniesz"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — controlled, no rushing toward the wall",
+      "Bring chest/forehead to within a fist's distance of the wall — full ROM",
+      "Elbows track at ~45° from torso — 'tuck them in', not flared sideways",
+      "Press through the whole palm — not just the fingertips or heel of hand",
+      "Squeeze chest and triceps at lockout — feel the muscle, even though load is low"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontrolowanie, bez szybkiego lecenia w stronę ściany",
+      "Klatka/czoło na odległość pięści od ściany — pełny zakres ruchu",
+      "Łokcie pod ~45° od tułowia — 'schowaj je', nie rozsuwaj na boki",
+      "Napieraj całą dłonią — nie tylko palcami albo nadgarstkiem",
+      "Ściśnij klatkę i tricepsy na szczycie — poczuj mięsień, mimo że obciążenie jest niskie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Standing too close to the wall",
+        "faultPl": "Stanie za blisko ściany",
+        "cause": "Default 'arm's length' is actually too close — body stays nearly vertical, almost no resistance",
+        "causePl": "Domyślne 'na długość ręki' często bywa za blisko — ciało zostaje niemal pionowe, prawie zerowy opór",
+        "cue": "Step feet back another 10-20 cm so you feel a noticeable forward lean. Should be effort by rep 8-10, not 'feels like nothing'.",
+        "cuePl": "Cofnij stopy jeszcze o 10-20 cm, żeby poczuć wyraźne pochylenie do przodu. Powtórzenie 8-10 powinno już kosztować, a nie 'wcale nie czuję'."
+      },
+      {
+        "fault": "Heels lifting off the floor",
+        "faultPl": "Pięty odrywające się od podłogi",
+        "cause": "Standing too far back, weak calves, or cheating to reduce load",
+        "causePl": "Stanie za daleko, słabe łydki, albo kompensacja by zmniejszyć obciążenie",
+        "cue": "Both heels stay PRESSED into the floor every rep. If they lift — step closer to the wall until you're strong enough.",
+        "cuePl": "Obie pięty PRZYKLEJONE do podłogi przy każdym powtórzeniu. Jeśli się odrywają — podejdź bliżej do ściany do czasu wzmocnienia."
+      },
+      {
+        "fault": "Sagging hips or piking hips",
+        "faultPl": "Opadające albo wypchnięte biodra (kąt 'V')",
+        "cause": "No core engagement — body breaks at the waist instead of moving as one solid plank",
+        "causePl": "Brak napięcia brzucha — ciało zagina się w pasie zamiast poruszać jako jeden sztywny plank",
+        "cue": "Squeeze glutes and brace abs BEFORE lowering. 'Body moves as one piece' — head, hips, heels travel together.",
+        "cuePl": "Ściśnij pośladki i napnij brzuch ZANIM zaczniesz schodzić. 'Ciało porusza się jako jedna bryła' — głowa, biodra, pięty jadą razem."
+      },
+      {
+        "fault": "Partial range of motion (no real bend)",
+        "faultPl": "Częściowy zakres ruchu (brak prawdziwego zgięcia łokci)",
+        "cause": "Counting reps where elbows barely flex — ego or distraction",
+        "causePl": "Liczenie powtórzeń, w których łokcie ledwie się uginają — ego lub roztargnienie",
+        "cue": "Forehead/chest within a fist's distance of the wall every rep. If you can't — step CLOSER to the wall, don't shorten reps.",
+        "cuePl": "Czoło/klatka na odległość pięści od ściany każde powtórzenie. Jeśli nie dasz rady — podejdź BLIŻEJ ściany, nie skracaj powtórzeń."
+      }
+    ],
+    "breathing": "Inhale during the descent toward the wall, exhale during the press back to standing. Because load is very low, breath can be more relaxed than in floor push-ups — but maintain core brace throughout.",
+    "breathingPl": "Wdech podczas opuszczania w stronę ściany, wydech podczas wypychania z powrotem. Obciążenie jest bardzo niskie, więc oddech może być spokojniejszy niż w pompkach z podłogi — ale utrzymuj napięty brzuch przez cały czas."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Make a fist and press with knuckles against the wall (wrist neutral), or use push-up handles mounted against the wall. Fingers-up position is usually the least irritating for sore wrists.",
+      "modificationPl": "Zaciśnij pięść i opieraj się knykciami o ścianę (nadgarstek neutralny) albo użyj uchwytów do pompek dociśniętych do ściany. Pozycja palcami w górę jest zazwyczaj najmniej drażniąca dla obolałych nadgarstków.",
+      "alternative": "band-chest-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Stand closer to the wall (less ROM, less load), keep elbows tucked tight (~30°), avoid going to full chest-to-wall depth if it pinches. Pause and reset if any sharp pain.",
+      "modificationPl": "Stań bliżej ściany (mniejszy ROM, mniejsze obciążenie), trzymaj łokcie mocno przy tułowiu (~30°), unikaj pełnego zejścia klatka-do-ściany jeśli szczypie. Przerwij i resetuj przy jakimkolwiek ostrym bólu.",
+      "alternative": "band-chest-press"
+    },
+    {
+      "condition": "recent_shoulder_surgery",
+      "severity": "caution",
+      "modification": "Only with clearance from physiotherapist. Start very close to the wall (minimal lean) and progress millimeter by millimeter. Wall push-up is often the FIRST horizontal push reintroduced post-op — but ranges and reps must be set by the rehab specialist.",
+      "modificationPl": "Tylko za zgodą fizjoterapeuty. Zacznij bardzo blisko ściany (minimalne pochylenie) i progresuj milimetr po milimetrze. Wall push-up to często PIERWSZY wypych horyzontalny wprowadzany po operacji — ale zakresy i powtórzenia musi ustawić specjalista rehabilitacji.",
+      "alternative": "band-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-20 (beginner conditioning) | 2-3x15-25 AMRAP (warm-up or rehab) | 3x8-15 ramping feet further back over weeks (progression toward incline push-up)",
+  "calories_per_kg_per_hour": 3.0,
+
+  "media": {
+    "primary": "push-up-wall.gif",
+    "frames_extracted": [
+      "frames/push-up-wall/frame_0_start.png",
+      "frames/push-up-wall/frame_1_early.png",
+      "frames/push-up-wall/frame_2_mid.png",
+      "frames/push-up-wall/frame_3_late.png",
+      "frames/push-up-wall/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/push-up-wall"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać stoi przy ścianie, dłonie oparte na ścianie na wysokości barków, ramiona w pełni wyprostowane, stopy na podłodze cofnięte ~30 cm od ściany, ciało w lekkim pochyleniu do przodu — stojący plank. Frame 2 (mid): pełne opuszczenie — tułów dosunięty blisko ściany, łokcie zgięte i schowane pod ~45° od tułowia, pięty wciąż na podłodze, ciało w prostej stojącej skośnej linii bez opadania bioder. Frame 4 (end): ghost-frame pokazuje fazę zejścia nakładającą się na powrót do pozycji wyjściowej (zamknięcie cyklu). Wyraźnie podświetlone tricepsy (tylne ramię prawe — na anatomii widać czerwony triceps), klatka piersiowa pracuje izometrycznie z napięciem podczas wypychania. Klasyczna najłatwiejsza regresja pompki — ~25-30% bodyweight load. Idealne dla beginnerów, seniorów, rehab pooperacyjnej, powrotu po przerwie. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Progresja: cofać stopy dalej, potem przejść na incline-push-up.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "triceps", "home_workout", "no_equipment_friendly", "beginner_friendly", "rehab_friendly", "senior_friendly", "push_up_regression", "wall", "vertical", "warm_up"]
+}

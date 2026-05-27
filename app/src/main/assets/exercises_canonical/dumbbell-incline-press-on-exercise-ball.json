@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-incline-press-on-exercise-ball",
+  "name": "Dumbbell Incline Press on Exercise Ball",
+  "namePl": "Wyciskanie hantli skosem dodatnim na piłce gimnastycznej",
+  "aliases": ["incline DB press on stability ball", "swiss ball incline dumbbell press", "DB incline press on physio ball", "stability ball incline press"],
+  "aliasesPl": ["incline DB press na piłce gimnastycznej", "wyciskanie hantli na piłce skosem dodatnim", "DB press na piłce szwajcarskiej", "wyciskanie hantli na piłce fitness ze skosem"],
+
+  "description": "Hybrid pressing variation combining an incline body position (head higher than hips) with the instability of a stability ball under the upper back and shoulders. The ball replaces the bench — the lifter sits in a half-squat-like position with feet planted, glutes off the floor, and the ball supporting the upper torso. Compared to a standard incline DB bench, the ball forces continuous core and glute engagement to maintain the incline angle, adds shoulder-blade and trunk stabilization demand, and necessarily reduces the absolute load that can be safely handled. Bias is on the clavicular (upper) head of the pectoralis major with significantly higher stabilizer recruitment than a fixed bench. Best used as an accessory or hypertrophy/stabilization tool — not as a max-strength movement.",
+  "descriptionPl": "Hybrydowy wariant wyciskania łączący pozycję skosu dodatniego (głowa wyżej niż biodra) z niestabilnością piłki gimnastycznej podłożonej pod górną część pleców i barki. Piłka zastępuje ławkę — ćwiczący ustawia się w pozycji półprzysiadu z zapartymi stopami, pośladkami uniesionymi nad podłogę, a piłka podtrzymuje górny tułów. W porównaniu do klasycznego incline DB bench piłka wymusza ciągłe napięcie brzucha i pośladków dla utrzymania kąta skosu, dodaje zapotrzebowanie na stabilizację łopatek i tułowia oraz siłą rzeczy zmniejsza maksymalny bezpieczny ciężar. Akcent pada na obojczykową (górną) głowę mięśnia piersiowego, z istotnie większym zaangażowaniem stabilizatorów niż na sztywnej ławce. Najlepiej traktować jako ćwiczenie akcesoryjne lub hipertroficzno-stabilizacyjne — nie pod maksymalne ciężary.",
+
+  "instructions": [
+    "Sit on the front of a stability ball with a dumbbell resting on each thigh, palms facing each other. Choose a noticeably lighter weight than your flat or bench-incline DB press.",
+    "Walk your feet forward while leaning back, rolling the ball up your spine. Stop when the ball sits under your upper back and shoulders, head supported, hips raised so torso forms an incline of ~30-45° to the floor.",
+    "Plant feet flat on the floor, knees ~90°, glutes squeezed, core braced — torso must stay rigid like a bench. Hips should NOT sag.",
+    "Bring the dumbbells to your shoulders, rotate to a pronated grip (palms facing your feet). Retract and depress the shoulder blades against the ball.",
+    "Press the dumbbells up so they meet over the upper chest — arms extended, elbows soft (not locked). This is the starting position.",
+    "Inhale, brace harder, and lower the dumbbells in a controlled arc to upper chest level. Elbows tucked at ~45° from torso, not flared to 90°.",
+    "Pause briefly — feel the stretch in the upper chest. Do NOT let the ball roll, hips drop, or feet shift.",
+    "Press the dumbbells back up and slightly inward, finishing over the upper chest without clanging them together. Exhale at the top.",
+    "After your last rep, walk forward off the ball before sitting up, dumbbells controlled at chest. Do not try to sit up from the ball with weights overhead."
+  ],
+  "instructionsPl": [
+    "Usiądź na przedniej części piłki gimnastycznej z hantlami opartymi o uda, dłonie zwrócone do siebie. Dobierz wyraźnie lżejszy ciężar niż na klasycznym incline DB bench.",
+    "Podchodząc stopami do przodu, odchylaj się do tyłu, rolując piłkę po plecach. Zatrzymaj się gdy piłka jest pod górną częścią pleców i barkami, głowa oparta, biodra uniesione tak by tułów tworzył skos ~30-45° do podłogi.",
+    "Stopy płasko na podłodze, kolana ~90°, pośladki napięte, brzuch ściągnięty — tułów musi być sztywny jak ławka. Biodra NIE mogą opadać.",
+    "Podnieś hantle na barki, obróć do chwytu pronowanego (dłonie w stronę stóp). Ściągnij łopatki w dół i razem, przyciśnięte do piłki.",
+    "Wyciśnij hantle w górę aż spotkają się nad górną klatką — ramiona wyprostowane, łokcie miękkie (bez blokady). To jest pozycja startowa.",
+    "Wdech, mocniejsze napięcie, opuszczaj hantle kontrolowanym łukiem do poziomu górnej klatki. Łokcie pod kątem ~45° od tułowia, NIE rozsunięte na 90°.",
+    "Krótka pauza — poczuj rozciągnięcie górnej klatki. NIE pozwól by piłka się przetoczyła, biodra opadły lub stopy się przesunęły.",
+    "Wyciśnij hantle w górę i lekko do środka, kończąc nad górną klatką bez stukania nimi o siebie. Wydech na górze.",
+    "Po ostatniej powtórce zejdź z piłki przechodząc stopami do przodu, hantle trzymaj kontrolowane na klatce. NIE próbuj wstawać z piłki z hantlami nad głową."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids"],
+    "secondary": ["triceps", "pectoralis_major_sternal"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "serratus_anterior", "upper_back", "hamstrings"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "S6",
+    "pectoralis_major_sternal": "S5",
+    "core": "T5",
+    "glutes": "T4",
+    "rotator_cuff": "T4",
+    "serratus_anterior": "T3",
+    "hamstrings": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "stability_ball"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["incline-dumbbell-bench-press", "dumbbell-bench-press", "stability-ball-bridge"],
+    "progression_to": ["single-arm-dumbbell-incline-press-on-ball", "stability-ball-dumbbell-fly"],
+    "alternatives": ["incline-dumbbell-bench-press", "incline-barbell-bench-press", "machine-incline-press", "low-incline-dumbbell-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Walk feet forward, roll ball up to upper back — ball supports shoulders, NOT lower back",
+      "Hips up, torso at ~30-45° incline — body is the bench, glutes squeezed",
+      "Shoulder blades retracted and pressed into the ball BEFORE pressing",
+      "Feet wide and flat, knees ~90°, drive through heels for stability",
+      "Start with dumbbells over upper chest, pronated grip, light weight"
+    ],
+    "setup_cues_pl": [
+      "Wejdź stopami do przodu, wytocz piłkę na górę pleców — piłka wspiera barki, NIE dolny odcinek",
+      "Biodra w górze, tułów pod skosem ~30-45° — twoje ciało to ławka, pośladki napięte",
+      "Łopatki ściągnięte i wciśnięte w piłkę PRZED wyciskaniem",
+      "Stopy szeroko i płasko, kolana ~90°, napieraj przez pięty dla stabilizacji",
+      "Start z hantlami nad górną klatką, chwyt pronowany, lekki ciężar"
+    ],
+    "execution_cues": [
+      "Lower with control to upper chest — feel the stretch in the clavicular pec",
+      "Keep elbows at ~45° from torso, not flared to 90°",
+      "Hips DO NOT drop — if they sag, the incline disappears and the ball will slip",
+      "Press up and slightly inward, finishing over upper chest without clanging",
+      "Slower tempo than on a bench — 2-3s down, controlled press up, no bouncing"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj z kontrolą do górnej klatki — poczuj rozciągnięcie obojczykowej części klatki",
+      "Łokcie ~45° od tułowia, nie rozsunięte na 90°",
+      "Biodra NIE opadają — jak opadną, znika skos i piłka się wymyka",
+      "Wyciskaj w górę i lekko do środka, kończąc nad górną klatką bez stukania",
+      "Wolniejsze tempo niż na ławce — 2-3s w dół, kontrolowane wyciskanie, bez odbijania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging during the set — incline angle is lost",
+        "faultPl": "Opadanie bioder podczas serii — zanika kąt skosu",
+        "cause": "Weak glutes and core, fatigue, weight too heavy for stabilization capacity",
+        "causePl": "Słabe pośladki i brzuch, zmęczenie, ciężar zbyt duży dla zdolności stabilizacji",
+        "cue": "Glutes squeezed throughout — 'push hips up to the ceiling'. If you can't hold the position, drop the weight.",
+        "cuePl": "Pośladki napięte przez cały czas — 'wypchnij biodra do sufitu'. Jeśli nie utrzymasz pozycji, zmniejsz ciężar."
+      },
+      {
+        "fault": "Ball wobble / lateral roll during pressing",
+        "faultPl": "Kołysanie / boczne toczenie piłki podczas wyciskania",
+        "cause": "Asymmetric press (one arm dominating), feet too narrow, ball too soft or wrong size",
+        "causePl": "Asymetryczne wyciskanie (jedna ręka dominuje), zbyt wąsko ustawione stopy, piłka zbyt miękka lub zły rozmiar",
+        "cue": "Press both dumbbells in perfect sync. Set feet wider for a stable base. Check ball is firm and sized for your height.",
+        "cuePl": "Wyciskaj oba hantle idealnie synchronicznie. Rozstaw stopy szerzej dla stabilnej podstawy. Sprawdź czy piłka jest twarda i dopasowana do twojego wzrostu."
+      },
+      {
+        "fault": "Using flat-bench weights — too heavy for the unstable surface",
+        "faultPl": "Używanie ciężarów z ławki płaskiej — za ciężko jak na niestabilne podłoże",
+        "cause": "Ego, treating the ball like a bench, misunderstanding the purpose of the variation",
+        "causePl": "Ego, traktowanie piłki jak ławki, niezrozumienie celu tego wariantu",
+        "cue": "Drop ~20-30% versus your incline DB bench. The point is stabilization and clean ROM, not max load.",
+        "cuePl": "Zmniejsz ~20-30% w stosunku do incline DB bench. Chodzi o stabilizację i czysty ROM, a nie maksymalny ciężar."
+      },
+      {
+        "fault": "Ball positioned too low — under lumbar spine instead of upper back",
+        "faultPl": "Piłka ustawiona za nisko — pod lędźwiowym odcinkiem zamiast pod górą pleców",
+        "cause": "Poor setup, not rolling far enough up the spine, no head support",
+        "causePl": "Niedokładne ustawienie, niedostatecznie wytoczona piłka po kręgosłupie, brak podparcia głowy",
+        "cue": "Walk feet further forward until the ball is under upper back and shoulders, head supported.",
+        "cuePl": "Wejdź stopami dalej do przodu aż piłka znajdzie się pod górną częścią pleców i barkami, głowa oparta."
+      },
+      {
+        "fault": "Trying to sit up from the ball with dumbbells overhead",
+        "faultPl": "Próba wstania z piłki z hantlami nad głową",
+        "cause": "Habit from bench training, lack of finish protocol",
+        "causePl": "Nawyk z treningu na ławce, brak procedury zakończenia",
+        "cue": "Always bring dumbbells to chest, walk feet forward off the ball, THEN sit up. Drop weights on floor first if too heavy.",
+        "cuePl": "Zawsze ściągnij hantle do klatki, zejdź z piłki przechodząc stopami do przodu, DOPIERO POTEM wstań. Najpierw odłóż hantle na podłogę jeśli za ciężkie."
+      }
+    ],
+    "breathing": "Inhale at the top, brace hard (core + glutes), hold during descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, mocne napięcie (brzuch + pośladki), trzymaj podczas schodzenia. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) and reduce ROM in the bottom. Consider replacing with machine incline press until pain clears.",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie zwrócone do siebie) i ogranicz ROM na dole. Rozważ zamianę na maszynę incline press do czasu ustąpienia bólu.",
+      "alternative": "machine-incline-press"
+    },
+    {
+      "condition": "low_back_pain",
+      "severity": "modify",
+      "modification": "Holding the hips up against gravity loads the lumbar erectors. If lower back hurts, switch to a fixed incline bench — the ball offers no benefit worth the risk.",
+      "modificationPl": "Utrzymywanie bioder w górze pod obciążeniem napiera na prostowniki lędźwiowe. Jeśli boli dolny odcinek, przejdź na sztywną ławkę incline — piłka nie daje korzyści wartych ryzyka.",
+      "alternative": "incline-dumbbell-bench-press"
+    },
+    {
+      "condition": "balance_disorders",
+      "severity": "avoid",
+      "modification": "Unstable surface with weights overhead is genuinely dangerous if balance is impaired (vestibular issues, recent concussion, neurological conditions). Train on a regular bench.",
+      "modificationPl": "Niestabilne podłoże z ciężarami nad głową jest realnie niebezpieczne przy zaburzeniach równowagi (problemy przedsionkowe, niedawny wstrząs, schorzenia neurologiczne). Trenuj na zwykłej ławce.",
+      "alternative": "incline-dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Instability multiplies the demand on the rotator cuff. With an active injury, switch to a fixed-path machine until cleared by physio.",
+      "modificationPl": "Niestabilność wielokrotnie zwiększa zapotrzebowanie na stożek rotatorów. Przy aktywnej kontuzji przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-incline-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 (hypertrophy, default) | 3-4x12-15 (stabilization/endurance focus) | 2-3x8-10 (controlled strength accessory)",
+  "calories_per_kg_per_hour": 5.2,
+
+  "media": {
+    "primary": "dumbbell-incline-press-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-press-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-incline-press-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-incline-press-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-incline-press-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-incline-press-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-incline-press-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (dół): hantle na poziomie górnej klatki, łokcie zgięte, chwyt pronowany (dłonie w stronę stóp), tułów na piłce gimnastycznej pod skosem ~30-45° (głowa wyżej niż biodra), stopy płasko na podłodze, kolana ~90°, biodra uniesione (most/bridge), górna klatka i delty barku podświetlone. Frame 2 (góra): pełne wyciśnięcie, hantle nad górną klatką, ramiona wyprostowane bez sztywnej blokady, klatka + przednie delty + tricepsy podświetlone — pasuje do incline DB press z dodatkową aktywacją core/glute (utrzymanie mostu). Frame 4 (powrót/motion blur): kontrolowane opuszczanie z górnej pozycji. Piłka pod GÓRĄ pleców i barkami (nie pod lędźwiami), głowa wsparta. Ścisły incline, nie horizontal — bias na clavicular pec (P9). Klasyfikacja jako intermediate (difficulty 6) ze względu na wymóg stabilizacji bioder/core na piłce — wyraźnie trudniejsze i bardziej kontuzjogenne niż klasyczny incline DB bench. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "incline", "upper_chest", "dumbbell", "stability_ball", "stabilization", "core_demand", "intermediate"]
+}

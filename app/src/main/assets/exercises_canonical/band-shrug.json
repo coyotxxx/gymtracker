@@ -1,0 +1,201 @@
+{
+  "id": "band-shrug",
+  "name": "Band Shrug",
+  "namePl": "Wzruszenia ramion z gumą oporową",
+  "aliases": ["resistance band shrug", "standing band shrug", "elastic band shrug"],
+  "aliasesPl": ["szragi z gumą", "wzruszenia barków z gumą", "shrugi z taśmą oporową", "wzruszenia ramion z taśmą"],
+
+  "description": "Isolation exercise for the upper trapezius performed standing on a resistance band while holding the handles at the sides of the hips. The lifter elevates the shoulders straight up toward the ears against the band's tension, producing pure scapular elevation in the frontal plane. A travel-friendly, joint-friendly alternative to dumbbell or barbell shrugs that provides progressively increasing resistance through the top of the range — exactly where the upper traps are mechanically strongest.",
+  "descriptionPl": "Ćwiczenie izolowane na górną część mięśnia czworobocznego (kaptury) wykonywane stojąc na gumie oporowej z uchwytami trzymanymi po bokach przy biodrach. Ćwiczący unosi barki prosto do góry w kierunku uszu pokonując opór gumy, wykonując czystą elewację łopatek w płaszczyźnie czołowej. Wygodna w podróży i bezpieczna dla stawów alternatywa dla szragów z hantlami lub sztangą, oferująca progresywnie rosnący opór w górnej fazie ruchu — czyli tam, gdzie górna część czworobocznego jest mechanicznie najsilniejsza.",
+
+  "instructions": [
+    "Stand on the center of a resistance band with feet shoulder-width apart. Grip one handle in each hand so the band runs from under your feet up the outside of each shin.",
+    "Stand tall with arms hanging straight down at your sides. Hands should be just outside the hips, palms facing the body (neutral grip).",
+    "Set neutral spine: chin tucked slightly, chest up, ribs down, core braced. Look straight ahead.",
+    "Without bending the elbows, shrug the shoulders straight up toward the ears. The motion is pure vertical elevation of the shoulder girdle — no rolling forward or backward.",
+    "Squeeze the upper traps hard at the top for a 1-2 second pause. Feel the shoulders touch (or nearly touch) the ears.",
+    "Lower the shoulders under control over 2 seconds back to the starting depression, feeling a stretch in the upper traps at the bottom.",
+    "Keep the arms completely passive — they are just hooks holding the handles. The shoulders do all the work.",
+    "Maintain an upright torso throughout. Do not lean forward, lean back, or use leg drive to assist the shrug."
+  ],
+  "instructionsPl": [
+    "Stań na środku gumy oporowej, stopy na szerokość barków. Złap po jednym uchwycie w każdą rękę, tak aby guma biegła spod stóp wzdłuż zewnętrznej strony goleni.",
+    "Stań prosto z ramionami swobodnie opuszczonymi wzdłuż tułowia. Dłonie tuż obok bioder, kciuki skierowane do przodu (chwyt neutralny).",
+    "Ustaw neutralny kręgosłup: broda lekko ściągnięta, klatka uniesiona, żebra w dół, brzuch napięty. Wzrok przed siebie.",
+    "Bez zginania łokci wzrusz barki prosto do góry w kierunku uszu. Ruch to czysta pionowa elewacja obręczy barkowej — żadnego rolowania do przodu ani do tyłu.",
+    "Mocno spinaj górną część czworobocznego w górnej pozycji przez 1-2 sekundy. Poczuj jak barki dotykają (lub prawie dotykają) uszu.",
+    "Opuszczaj barki w sposób kontrolowany przez 2 sekundy aż do pełnego opuszczenia (depresji) łopatek, czując rozciąganie w kapturach na dole.",
+    "Trzymaj ramiona całkowicie biernie — to tylko haki trzymające uchwyty. Całą pracę wykonują barki.",
+    "Utrzymuj pionowy tułów przez cały ruch. Nie pochylaj się do przodu, nie odchylaj się do tyłu i nie pomagaj sobie nogami."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_elevation",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["upper_trapezius"],
+    "secondary": ["levator_scapulae", "rhomboids"],
+    "stabilizers": ["forearm_flexors", "core", "erector_spinae", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "upper_trapezius": "P10",
+    "levator_scapulae": "S6",
+    "rhomboids": "S4",
+    "forearm_flexors": "T4",
+    "core": "T2",
+    "erector_spinae": "T2",
+    "deltoids": "T1"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["band_handles", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-shrug", "barbell-shrug", "trap-bar-shrug"],
+    "alternatives": ["dumbbell-shrug", "cable-shrug", "barbell-shrug", "smith-machine-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand on the middle of the band — feet shoulder-width",
+      "Handles at hip level, arms hanging straight, neutral grip",
+      "Ribs down, chest tall, chin slightly tucked",
+      "Brace core lightly — torso stays vertical",
+      "Check band tension — it should be taut at the bottom, not slack"
+    ],
+    "setup_cues_pl": [
+      "Stań na środku gumy — stopy na szerokość barków",
+      "Uchwyty na wysokości bioder, ramiona swobodnie opuszczone, chwyt neutralny",
+      "Żebra w dół, klatka uniesiona, broda lekko ściągnięta",
+      "Lekko napnij brzuch — tułów pionowo",
+      "Sprawdź naciąg gumy — na dole ma być napięta, nie luźna"
+    ],
+    "execution_cues": [
+      "Shoulders straight up to the ears — pure elevation",
+      "Arms are just hooks — do not pull with the biceps",
+      "Squeeze the traps hard at the top for 1-2 seconds",
+      "Lower slow — feel the stretch at the bottom",
+      "Do not roll the shoulders forward or backward"
+    ],
+    "execution_cues_pl": [
+      "Barki prosto do góry, w kierunku uszu — czysta elewacja",
+      "Ramiona to tylko haki — nie ciągnij bicepsami",
+      "Mocno spinaj kaptury w górze przez 1-2 sekundy",
+      "Opuszczaj wolno — poczuj rozciąganie na dole",
+      "Nie rotuj barków do przodu ani do tyłu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the shoulders (forward or backward circles)",
+        "faultPl": "Rolowanie barków (koła do przodu lub do tyłu)",
+        "cause": "Belief that shoulder rolls 'work the traps better', or attempt to add range to a small movement",
+        "causePl": "Przekonanie, że rolowanie barków 'lepiej angażuje kaptury', lub próba zwiększenia zakresu ruchu w małym ćwiczeniu",
+        "cue": "Move shoulders only straight up and straight down — pretend there is a wall in front of and behind you.",
+        "cuePl": "Ruszaj barkami wyłącznie prosto w górę i prosto w dół — wyobraź sobie ścianę z przodu i z tyłu."
+      },
+      {
+        "fault": "Bending elbows to help lift (turning shrug into upright row)",
+        "faultPl": "Zginanie łokci (zamiana szragów w podciąganie sztangi wzdłuż tułowia)",
+        "cause": "Band tension too high, weak upper traps, or unconsciously recruiting biceps",
+        "causePl": "Zbyt duży opór gumy, słabe górne kaptury, lub nieświadome włączanie bicepsów",
+        "cue": "Lock elbows in slight extension and forget your arms exist. Use lighter band if needed.",
+        "cuePl": "Zablokuj łokcie w lekkim wyproście i zapomnij że masz ramiona. Użyj słabszej gumy jeśli trzeba."
+      },
+      {
+        "fault": "Partial range of motion (no full depression at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak pełnego opuszczenia łopatek na dole)",
+        "cause": "Constant low-grade tension in the traps (chronic 'shrugging' posture) preventing full reset",
+        "causePl": "Stałe napięcie kapturów (przewlekła postawa z uniesionymi barkami) uniemożliwiające pełny reset",
+        "cue": "Actively depress the shoulders at the bottom — try to push them down toward your back pockets.",
+        "cuePl": "Aktywnie opuszczaj barki na dole — próbuj ściągnąć je w kierunku tylnych kieszeni spodni."
+      },
+      {
+        "fault": "Forward head posture (chin pokes out as you shrug)",
+        "faultPl": "Wysuwanie głowy do przodu podczas wzruszenia",
+        "cause": "Compensation when the band is too heavy, or habitual upper-cross syndrome posture",
+        "causePl": "Kompensacja zbyt mocnej gumy, lub nawykowa postawa zespołu skrzyżowania górnego",
+        "cue": "Keep the chin slightly tucked — ears stack over shoulders the entire set.",
+        "cuePl": "Trzymaj brodę lekko ściągniętą — uszy nad barkami przez całą serię."
+      },
+      {
+        "fault": "Bouncing or using leg drive to start the shrug",
+        "faultPl": "Pomaganie nogami lub bujanie w celu rozpoczęcia szragu",
+        "cause": "Trying to overcome band tension that builds up rapidly, or rushing through reps",
+        "causePl": "Próba pokonania szybko narastającego oporu gumy, lub pospieszne wykonywanie powtórzeń",
+        "cue": "Knees stay slightly bent and locked. Shrug starts from a dead stop with no momentum.",
+        "cuePl": "Kolana lekko ugięte i zablokowane. Szrag startuje z zatrzymanej pozycji, bez rozpędu."
+      }
+    ],
+    "breathing": "Exhale on the way up (shrug). Inhale on the way down (lower the shoulders). Keep the breath shallow and the brace consistent throughout — this is a small range-of-motion movement that does not require deep Valsalva.",
+    "breathingPl": "Wydech w górę (szrag). Wdech w dół (opuszczanie barków). Oddech płytki, napięcie brzucha stałe przez całą serię — to ćwiczenie o małym zakresie ruchu, nie wymaga głębokiej manewry Valsalvy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_neck_pain_or_cervical_radiculopathy",
+      "severity": "avoid",
+      "modification": "Shrugs compress the upper cervical region and can aggravate nerve root irritation. Stop until cleared by a clinician. Once asymptomatic, return with very light band and short ROM.",
+      "modificationPl": "Szragi obciążają górny odcinek szyjny i mogą drażnić korzenie nerwowe. Odstaw do czasu konsultacji ze specjalistą. Po ustąpieniu objawów wróć z bardzo lekką gumą i skróconym zakresem ruchu.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "upper_trapezius_trigger_points_or_chronic_tension",
+      "severity": "caution",
+      "modification": "Chronically tight traps often need stretching and mid/lower trap work, not more elevation. Limit shrug volume, prioritize full bottom depression, and add prone Y-T-W work.",
+      "modificationPl": "Przewlekle napięte kaptury często wymagają rozciągania i pracy nad środkową/dolną częścią czworobocznego, a nie kolejnej elewacji. Ogranicz objętość szragów, kładź nacisk na pełne opuszczenie łopatek na dole i dodaj pracę nad mięśniami Y-T-W w leżeniu.",
+      "alternative": "prone-y-raise"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Tight upper traps and levator scapulae compress the brachial plexus. Avoid heavy shrugs entirely until symptoms resolve. If used, very light band, full depression at bottom, no holding at the top.",
+      "modificationPl": "Napięte górne kaptury i mięsień dźwigacz łopatki uciskają splot ramienny. Unikaj ciężkich szragów do ustąpienia objawów. Jeśli używasz — bardzo lekka guma, pełne opuszczenie łopatek na dole, bez zatrzymywania w górnej pozycji.",
+      "alternative": "scapular-pull-up"
+    },
+    {
+      "condition": "tension_type_or_cervicogenic_headache",
+      "severity": "caution",
+      "modification": "Shrugs can provoke headaches in sensitive individuals via suboccipital tension. Train with light load, full ROM, and stop immediately if headache symptoms begin.",
+      "modificationPl": "Szragi mogą wywoływać bóle głowy u wrażliwych osób przez napięcie podpotyliczne. Trenuj z lekkim obciążeniem, pełnym zakresem ruchu i natychmiast przerwij gdy pojawi się ból głowy.",
+      "alternative": "farmer-walk"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy, with 1-2s pause at top) | 2-3x15-25 (endurance/postural work) | 3x8-12 (strength, with strong band)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "band-shrug.gif",
+    "frames_extracted": [
+      "frames/band-shrug/frame_0_start.png",
+      "frames/band-shrug/frame_1_early.png",
+      "frames/band-shrug/frame_2_mid.png",
+      "frames/band-shrug/frame_3_late.png",
+      "frames/band-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/band-shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model stoi prosto na gumie oporowej rozciągniętej pod stopami, uchwyty po bokach przy biodrach, ramiona swobodnie opuszczone, górna część czworobocznego (kaptury) podświetlona na czerwono. Frame 2: pełna elewacja barków do góry — barki uniesione w kierunku uszu, łokcie pozostają w pełnym wyproście (bez zginania), tułów pionowo, kaptury w pełnym skurczu. Frame 4: powrót do pozycji startowej z pełną depresją łopatek. Ruch to czysta scapular elevation w płaszczyźnie czołowej — łokcie nie zginają się, brak rolowania barków. Bilateral, standing, isolation. Jednoznacznie zidentyfikowane jako Band Shrug. Wszystkie pola PL napisane od zera, nie tłumaczone.",
+
+  "tags": ["traps", "trapezius", "shoulders", "isolation", "band", "resistance_band", "home_workout", "travel_friendly", "posture", "upper_body", "beginner_friendly"]
+}

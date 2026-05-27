@@ -1,0 +1,205 @@
+{
+  "id": "smith-close-grip-bench-press",
+  "name": "Smith Machine Close-Grip Bench Press",
+  "namePl": "Wyciskanie sztangi chwytem wąskim w maszynie Smitha",
+  "aliases": ["smith close grip bench", "smith machine CGBP", "smith narrow grip bench press", "smith tricep bench press", "smith close-grip press"],
+  "aliasesPl": ["wyciskanie wąsko w smithcie", "smith close grip", "wyciskanie wąskim chwytem na smithcie", "CGBP w maszynie Smitha", "wyciskanie sztangi wąsko w smithcie", "wąskie wyciskanie w smithcie"],
+
+  "description": "Close-grip bench press performed in a Smith machine. Same mechanics as the free-bar version (triceps-focused horizontal press with hands shoulder-width or slightly narrower), but the Smith machine fixes the bar path on vertical rails. This eliminates the need to stabilize the bar laterally, which reduces stabilizer demand on the rotator cuff and pectoralis, letting the triceps absorb more of the load. Excellent for solo heavy training (built-in safety hooks), tricep mass work, and lifters with shoulder/stabilizer issues who still want a heavy compound press.",
+  "descriptionPl": "Wyciskanie wąskim chwytem wykonywane w maszynie Smitha. Mechanika identyczna jak w wariancie ze sztangą wolną (poziomy wycisk z naciskiem na tricepsy, dłonie na szerokość barków lub nieco węziej), ale maszyna Smitha fiksuje tor gryfu na pionowych szynach. Eliminuje to konieczność bocznej stabilizacji sztangi, co redukuje pracę stabilizatorów stożka rotatorów i klatki, pozwalając tricepsom przejąć więcej obciążenia. Świetne do solowego ciężkiego treningu (wbudowane haki bezpieczeństwa), budowy masy tricepsa i osób z problemami stabilizacyjnymi barku, które wciąż chcą ciężkiego ruchu złożonego.",
+
+  "instructions": [
+    "Position a flat bench under the Smith machine bar. Set safety hooks just below your chest level. Bar should be at eye level when lying down.",
+    "Lie on the bench with eyes directly under the bar. Feet planted firmly, knees bent ~90°.",
+    "Set your shoulder blades: retract and depress them. Slight natural arch in lower back.",
+    "Grip the bar with hands shoulder-width apart or slightly narrower (index fingers ~30-40 cm apart, NOT extremely close). Wrap thumbs around the bar.",
+    "Unrack the bar by extending your arms and rotating the hooks off (twist wrists slightly).",
+    "Take a big breath, brace your core, and lower the bar in a controlled manner toward your lower chest / upper abdomen.",
+    "Keep elbows tucked close to your torso (~20-30°, NOT flared). Forearms stay vertical.",
+    "Touch the chest lightly — do NOT bounce. The Smith bar will only move vertically, so let it follow the rails.",
+    "Press the bar up by extending the elbows aggressively. Triceps drive the movement; finish in full lockout.",
+    "After the last rep, twist the bar to re-engage the hooks and rack."
+  ],
+  "instructionsPl": [
+    "Ustaw poziomą ławkę pod gryfem maszyny Smitha. Ustaw haki bezpieczeństwa tuż pod poziomem klatki. Gryf na wysokości oczu w pozycji leżącej.",
+    "Połóż się na ławce z oczami bezpośrednio pod gryfem. Stopy mocno na podłodze, kolana zgięte ~90°.",
+    "Ustaw łopatki: ściągnij je razem i w dół. Lekki naturalny łuk w dolnych plecach.",
+    "Złap gryf na szerokość barków lub nieco węziej (wskazujące ~30-40 cm od siebie, NIE skrajnie wąsko). Owinij kciuki wokół gryfu.",
+    "Wyjmij gryf z haków prostując ramiona i obracając nadgarstki (lekkie skręcenie odpina haki).",
+    "Nabierz głęboki oddech, napnij brzuch i kontrolowanym ruchem opuszczaj gryf w stronę dolnej klatki / górnej części brzucha.",
+    "Trzymaj łokcie blisko tułowia (~20-30°, NIE rozsunięte). Przedramiona pionowe.",
+    "Lekko dotknij klatki — NIE odbijaj. Gryf Smitha porusza się tylko pionowo, pozwól mu jechać po szynach.",
+    "Wyciśnij gryf w górę agresywnym wyprostem łokci. Tricepsy napędzają ruch; zakończ pełnym lock-outem.",
+    "Po ostatnim powtórzeniu skręć gryf, by zaczepić haki i odłóż."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major_inner"],
+    "secondary": ["anterior_deltoids", "pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["core", "lats", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "pectoralis_major_inner": "P8",
+    "anterior_deltoids": "S6",
+    "pectoralis_major": "S5",
+    "serratus_anterior": "S4",
+    "lats": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "flat_bench"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["machine-chest-press", "diamond-push-up", "smith-machine-bench-press"],
+    "progression_to": ["barbell-close-grip-bench-press", "ez-bar-close-grip-bench-press", "smith-machine-decline-close-grip-bench-press"],
+    "alternatives": ["barbell-close-grip-bench-press", "ez-bar-close-grip-bench-press", "machine-chest-press-close-grip", "diamond-push-up", "cable-tricep-pressdown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench centered under the Smith bar — bar lands on lower chest / upper abdomen",
+      "Eyes directly under the bar, shoulder blades pinned to bench",
+      "Safety hooks set just below chest level — solo-safe",
+      "Hands shoulder-width or slightly narrower — NOT extremely close",
+      "Wrists stacked over elbows, bar in palm heel"
+    ],
+    "setup_cues_pl": [
+      "Ławka wycentrowana pod gryfem Smitha — gryf trafia na dolną klatkę / górną część brzucha",
+      "Oczy bezpośrednio pod gryfem, łopatki przyklejone do ławki",
+      "Haki bezpieczeństwa tuż pod klatką — bezpieczne dla treningu samemu",
+      "Dłonie na szerokość barków lub nieco węziej — NIE skrajnie wąsko",
+      "Nadgarstki w linii z łokciami, gryf w podstawie dłoni"
+    ],
+    "execution_cues": [
+      "Tuck elbows ~20-30° from torso — 'arrow shape', not 'T shape'",
+      "Touch lower chest / upper abdomen (lower than regular Smith bench)",
+      "Let the bar follow the rails — don't fight the fixed path",
+      "Lockout aggressively with triceps — 'punch the ceiling'",
+      "Forearms stay vertical, wrists neutral, no bending back"
+    ],
+    "execution_cues_pl": [
+      "Schowaj łokcie ~20-30° od tułowia — 'strzałka', nie 'litera T'",
+      "Dotknij dolnej klatki / górnej części brzucha (niżej niż w klasycznym Smith bench)",
+      "Pozwól gryfowi jechać po szynach — nie walcz z fiksowanym torem",
+      "Agresywny lock-out tricepsami — 'uderz w sufit'",
+      "Przedramiona pionowe, nadgarstki neutralne, nie odginaj do tyłu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bench positioned wrong — bar tracks to upper chest or face",
+        "faultPl": "Źle ustawiona ławka — gryf jedzie do górnej klatki lub twarzy",
+        "cause": "Smith bar path is fixed; if the bench is off-center, you can't adjust mid-set. Touchpoint shifts away from optimum for triceps work.",
+        "causePl": "Tor gryfu Smitha jest fiksowany; jeśli ławka jest źle ustawiona, nie poprawisz tego w trakcie serii. Punkt dotyku ucieka od optymalnego dla tricepsów.",
+        "cue": "Before lying down, do a dry-rep: lower the bar and check it lands on lower chest / upper abdomen. Reposition bench if needed.",
+        "cuePl": "Zanim się położysz, zrób próbną repkę: opuść gryf i sprawdź czy ląduje na dolnej klatce / górnym brzuchu. Przesuń ławkę jeśli trzeba."
+      },
+      {
+        "fault": "Grip too narrow (hands almost touching)",
+        "faultPl": "Chwyt zbyt wąski (dłonie prawie się dotykają)",
+        "cause": "Misconception that 'narrower = more triceps'. Extremely narrow grip wrecks wrists without extra tricep benefit, especially with the fixed Smith path.",
+        "causePl": "Mit, że 'węziej = więcej tricepsa'. Skrajnie wąski chwyt rujnuje nadgarstki bez dodatkowej korzyści dla tricepsa, szczególnie przy fiksowanym torze Smitha.",
+        "cue": "Hands shoulder-width or just inside. Index fingers ~30-40 cm apart, never closer than ~25 cm.",
+        "cuePl": "Dłonie na szerokość barków lub tuż węziej. Wskazujące ~30-40 cm od siebie, nigdy bliżej niż ~25 cm."
+      },
+      {
+        "fault": "Elbows flaring outward",
+        "faultPl": "Łokcie rozsuwane na boki",
+        "cause": "Habit from regular bench; loss of tricep recruitment. With Smith's fixed path you can't compensate by changing bar angle — flared elbows just dump load on shoulders.",
+        "causePl": "Nawyk z klasycznego bencha; utrata pracy tricepsów. Przy fiksowanym torze Smitha nie skorygujesz tego kątem gryfu — rozsunięte łokcie po prostu zrzucają obciążenie na barki.",
+        "cue": "Elbows BRUSH the ribs throughout. 'Pull elbows to your back pockets'.",
+        "cuePl": "Łokcie OCIERAJĄ żebra przez cały ruch. 'Wciągaj łokcie do tylnych kieszeni'."
+      },
+      {
+        "fault": "Bouncing the bar off the chest",
+        "faultPl": "Odbijanie gryfu od klatki",
+        "cause": "Smith machine feels stable so people get cocky with momentum. Bouncing kills triceps stimulus and risks chest/sternum injury.",
+        "causePl": "Maszyna Smitha wydaje się stabilna, więc ludzie odpalają z pędu. Odbijanie zabija bodziec dla tricepsa i grozi urazem klatki/mostka.",
+        "cue": "Controlled 2-second descent. Light touch — no bounce. Brief pause is allowed and builds triceps strength.",
+        "cuePl": "Kontrolowane schodzenie 2 sekundy. Lekki dotyk — bez odbicia. Krótka pauza jest dozwolona i buduje siłę tricepsa."
+      },
+      {
+        "fault": "Forgetting to twist-lock the bar before un-racking",
+        "faultPl": "Zapomnienie skręcenia gryfu przy wyjmowaniu/odkładaniu",
+        "cause": "Mental autopilot; trying to bench-press with bar still hooked, or letting bar fall when re-racking after last rep",
+        "causePl": "Mentalny autopilot; próba wyciskania z gryfem wciąż zaczepionym albo upuszczenie gryfu przy odkładaniu po ostatniej repce",
+        "cue": "Twist hands FORWARD to un-rack, BACKWARD to re-rack. Practice with empty bar first.",
+        "cuePl": "Skręć dłonie DO PRZODU by wyjąć gryf, DO TYŁU by odłożyć. Przećwicz z pustym gryfem najpierw."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold through the descent and press. Exhale at the top of the lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "The fixed Smith path can stress wrists if grip placement is off. Use wrist wraps, double-check palm-heel grip. Switch to EZ bar close-grip if pain persists.",
+      "modificationPl": "Fiksowany tor Smitha może obciążać nadgarstki przy złym ułożeniu chwytu. Użyj wraps, sprawdź czy gryf jest w podstawie dłoni. Przejdź na EZ close-grip jeśli ból utrzymuje się.",
+      "alternative": "ez-bar-close-grip-bench-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Heavy close-grip work hammers the triceps tendon. Reduce volume, slow eccentric, use 8-15 rep ranges. Smith allows safer high-rep work since no spotter needed.",
+      "modificationPl": "Ciężki close-grip mocno obciąża ścięgno tricepsa. Zredukuj objętość, spowolnij ekscentryczną, zakres 8-15 powtórzeń. Smith pozwala bezpieczniej trenować w wyższych zakresach bez asekuracji.",
+      "alternative": "cable-tricep-pressdown"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Close-grip is generally shoulder-friendlier than wide-grip. The fixed Smith path may force a non-natural shoulder position — if pain occurs, switch to free-bar version or machine press.",
+      "modificationPl": "Close-grip jest zazwyczaj łagodniejszy dla barków niż szeroki chwyt. Fiksowany tor Smitha może wymuszać nienaturalną pozycję barku — przy bólu przejdź na wersję ze sztangą wolną lub maszynę.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "modify",
+      "modification": "Smith machine actually reduces rotator cuff demand vs free-bar (no lateral stabilization needed). Can be a useful return-to-pressing option in late-stage rehab. Start light, controlled tempo.",
+      "modificationPl": "Maszyna Smitha faktycznie redukuje obciążenie stożka rotatorów względem sztangi wolnej (brak bocznej stabilizacji). Może być przydatną opcją powrotu do wyciskania w późnej fazie rehabilitacji. Zacznij lekko, kontrolowane tempo.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (strength/lockout) | 3-4x8-12 (hypertrophy/triceps mass) | 4x10-15 (accessory, high volume)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "smith-close-grip-bench-press.gif",
+    "frames_extracted": [
+      "frames/smith-close-grip-bench-press/frame_0_start.png",
+      "frames/smith-close-grip-bench-press/frame_1_early.png",
+      "frames/smith-close-grip-bench-press/frame_2_mid.png",
+      "frames/smith-close-grip-bench-press/frame_3_late.png",
+      "frames/smith-close-grip-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/smith-close-grip-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "GIF (12 klatek, 5 keyframes) pokazuje atletę leżącego na poziomej ławce pod gryfem maszyny Smitha (widoczne pionowe szyny i obciążniki po bokach). Chwyt wąski (~szerokość barków lub nieco węziej), gryf opuszczany do dolnej klatki / górnego brzucha z łokciami trzymanymi blisko tułowia. Frame 0/4 = pozycja dolna (gryf na klatce, łokcie zgięte), frame 1/3 = ruch w połowie, frame 2 = lock-out (gryf wyciśnięty nad barkami). Podświetlone grupy: tricepsy (najmocniej, P10), dolna/wewnętrzna część klatki (P8), w pozycji dolnej widać też akcent na przednie delty (S6 — niższa intensywność niż w wersji ze sztangą wolną bo Smith eliminuje boczną stabilizację). Movement pattern push_horizontal, mechanic compound, plane sagittal, force push, bilateral, lying. Smith fiksuje tor → safer dla solo training (built-in haki) + redukuje pracę rotator cuff. Difficulty 5 (beginner-friendly — łatwiejsze niż wersja barbell ze względu na fiksowany tor). Wszystkie pola PL od zera w polskim standardzie fitness ('wyciskanie sztangi chwytem wąskim w maszynie Smitha').",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "smith_machine", "triceps_focus", "lockout_strength", "inner_chest", "machine_press", "beginner_friendly", "solo_safe"]
+}

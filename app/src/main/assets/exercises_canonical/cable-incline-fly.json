@@ -1,0 +1,201 @@
+{
+  "id": "cable-incline-fly",
+  "name": "Cable Incline Fly",
+  "namePl": "Rozpiętki na wyciągu na ławce skośnej dodatniej",
+  "aliases": ["cable incline chest fly", "incline cable fly", "incline cable flye", "high cable incline fly"],
+  "aliasesPl": ["rozpiętki na wyciągu skos dodatni", "rozpiętki górą klatki na wyciągu", "incline fly na wyciągach", "rozpiętki na bramie skos dodatni"],
+
+  "description": "Isolation fly performed lying on a positive-incline bench (around 30-45°) set between two cable stacks. Arms travel in a wide arc from a deep stretch at chest level up and across to meet over the upper chest. The incline biases the fibers of the clavicular (upper) head of pectoralis major, while constant cable tension keeps the muscle loaded across the entire range — including the lengthened position where dumbbells unload. Excellent finishing or mid-session hypertrophy exercise for upper-chest development that minimises shoulder strain because the elbows stay slightly bent throughout.",
+  "descriptionPl": "Izolowane rozpiętki wykonywane leżąc na ławce skośnej dodatniej (około 30-45°) ustawionej między dwoma wyciągami. Ramiona zataczają szeroki łuk od głębokiego rozciągnięcia na wysokości klatki do spotkania rączek nad górną częścią klatki piersiowej. Skos dodatni przesuwa pracę na włókna obojczykowe (górne) mięśnia piersiowego większego, a stałe napięcie linki utrzymuje mięsień pod obciążeniem w całym zakresie ruchu — także w pozycji rozciągniętej, gdzie hantle nie obciążają mięśnia. Świetne ćwiczenie izolacyjne na zakończenie lub w środku jednostki na górne aktony klatki, jednocześnie oszczędne dla barku, ponieważ łokcie pozostają lekko ugięte przez cały ruch.",
+
+  "instructions": [
+    "Set an adjustable bench to a positive incline of 30-45° between two cable columns. Attach single-handle stirrups to the LOW pulleys on each side.",
+    "Grab both handles with a neutral-to-pronated grip, sit down on the bench and lie back. Plant your feet firmly on the floor.",
+    "Start with arms out wide at roughly shoulder level, elbows slightly bent (about 15-20°) and locked in that angle for the entire set. Wrists stay neutral, in line with forearms.",
+    "Pull your shoulder blades down and back into the bench and lift your chest slightly — this is your fixed shoulder position.",
+    "Exhale and pull both handles up and across in a wide arc, as if hugging a large barrel. The handles should travel toward each other and meet above the upper chest, not above the face.",
+    "At the top, squeeze the upper chest hard for a one-second peak contraction. Do not let the handles touch — keep tension on the cables.",
+    "Inhale and lower the handles slowly along the same arc over 2-3 seconds until you feel a deep stretch across the upper chest. Stop when upper arms are level with the bench or just below.",
+    "Maintain the bent-elbow angle the whole time — if elbows extend further, the movement becomes a press, not a fly. Repeat for the prescribed reps."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę regulowaną na skos dodatni 30-45° pomiędzy dwoma kolumnami wyciągu. Zaczep pojedyncze rączki (uchwyty strzemiona) do DOLNYCH bloczków po obu stronach.",
+    "Chwyć obie rączki neutralnym lub lekko nawróconym chwytem, usiądź na ławce i połóż się na plecach. Stopy mocno oparte o podłogę.",
+    "Pozycja startowa: ramiona szeroko, mniej więcej na wysokości barków, łokcie lekko ugięte (około 15-20°) i utrzymane w tym samym kącie przez całą serię. Nadgarstki neutralne, w linii z przedramieniem.",
+    "Ściągnij łopatki w dół i w tył, dociskając je do ławki, lekko unieś klatkę — to twoja stała pozycja obręczy barkowej.",
+    "Wydech: przyciągnij obie rączki w górę i do siebie szerokim łukiem, jakbyś obejmował dużą beczkę. Rączki mają spotkać się nad górną częścią klatki, nie nad twarzą.",
+    "W górnej pozycji mocno spinaj górne aktony klatki przez około sekundę. Nie stykaj rączek — utrzymuj napięcie na lince.",
+    "Wdech: opuszczaj rączki wolno tym samym łukiem przez 2-3 sekundy, aż poczujesz mocne rozciągnięcie w górnej części klatki. Zatrzymaj się gdy ramiona ponad łokciem znajdą się na wysokości ławki lub lekko poniżej.",
+    "Utrzymuj ten sam kąt zgięcia w łokciu przez cały ruch — jeśli łokcie się prostują, ruch zmienia się w wyciskanie, nie rozpiętki. Powtórz wyznaczoną liczbę razy."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["upper_chest"],
+    "secondary": ["anterior_deltoids", "chest"],
+    "stabilizers": ["serratus_anterior", "biceps_brachii", "core", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "upper_chest": "P10",
+    "anterior_deltoids": "S6",
+    "chest": "S4",
+    "serratus_anterior": "T3",
+    "biceps_brachii": "T3",
+    "core": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "incline_bench"],
+    "optional": ["single_handle_stirrups", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["incline-dumbbell-fly", "cable-chest-fly"],
+    "progression_to": ["incline-cable-fly-1-arm", "low-to-high-cable-fly", "cable-svend-press"],
+    "alternatives": ["incline-dumbbell-fly", "cable-chest-fly", "pec-deck-fly", "incline-dumbbell-press", "low-to-high-cable-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45° between two low pulleys",
+      "Handles to low pulleys, neutral grip",
+      "Shoulder blades pinned back and down into the bench",
+      "Elbows softly bent ~15-20° — lock that angle",
+      "Feet firmly planted, ribcage tall"
+    ],
+    "setup_cues_pl": [
+      "Ławka 30-45° pomiędzy dwoma dolnymi bloczkami",
+      "Rączki do dolnych bloczków, chwyt neutralny",
+      "Łopatki ściągnięte i dociśnięte do ławki",
+      "Łokcie lekko ugięte ~15-20° — utrzymaj ten kąt",
+      "Stopy mocno na podłodze, klatka uniesiona"
+    ],
+    "execution_cues": [
+      "Hug a barrel — wide arc, not a press",
+      "Meet handles above the upper chest, not the face",
+      "Squeeze the upper chest at the top for one second",
+      "Lower slowly for 2-3 seconds, feel the stretch",
+      "Lock the elbow angle — if it changes, you are pressing"
+    ],
+    "execution_cues_pl": [
+      "Obejmuj beczkę — szeroki łuk, nie wyciskanie",
+      "Rączki spotykają się nad górną klatką, nie nad twarzą",
+      "Spinaj górne aktony klatki w górze przez sekundę",
+      "Opuszczaj wolno przez 2-3 sekundy, poczuj rozciągnięcie",
+      "Łokieć w stałym kącie — jeśli się prostuje, to już wyciskanie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows extending and flexing during the rep (turning fly into a press)",
+        "faultPl": "Prostowanie i zginanie łokci w trakcie powtórzenia (rozpiętki zamieniają się w wyciskanie)",
+        "cause": "Load too heavy for an isolation movement, or unclear motor pattern",
+        "causePl": "Zbyt duży ciężar jak na ćwiczenie izolowane, lub niewyrobiony wzorzec ruchowy",
+        "cue": "Reduce the weight. Set the elbow angle in the mirror and freeze it — only the shoulder joint moves.",
+        "cuePl": "Zmniejsz ciężar. Ustaw kąt łokcia w lustrze i zamroź go — porusza się wyłącznie staw barkowy."
+      },
+      {
+        "fault": "Handles meet over the face/neck instead of upper chest",
+        "faultPl": "Rączki spotykają się nad twarzą/szyją zamiast nad górną klatką",
+        "cause": "Bench too upright or shoulder flexion taking over for horizontal adduction",
+        "causePl": "Ławka za bardzo pionowa lub zgięcie barku przejmuje pracę za przywodzenie poziome",
+        "cue": "Aim the handles to meet directly over your sternum / collarbones, not your eyes.",
+        "cuePl": "Celuj rączkami w punkt nad mostkiem / obojczykami, nie nad oczami."
+      },
+      {
+        "fault": "Shoulder blades lifting off the bench at the top (protraction)",
+        "faultPl": "Odrywanie łopatek od ławki w górnej pozycji (protrakcja)",
+        "cause": "Trying to extend range by pushing further — recruits anterior delts, robs upper chest",
+        "causePl": "Próba poszerzenia zakresu poprzez popchnięcie dalej — angażuje przednie aktony barków, zabiera pracę górnej klatce",
+        "cue": "Keep shoulder blades glued to the bench. Stop the contraction when handles approach the midline.",
+        "cuePl": "Łopatki dociśnięte do ławki przez cały czas. Zakończ skurcz gdy rączki zbliżą się do linii środkowej."
+      },
+      {
+        "fault": "Going too deep in the stretch — shoulders rolling forward",
+        "faultPl": "Za głębokie rozciągnięcie — barki rolują do przodu",
+        "cause": "Chasing 'feel' without respecting shoulder anatomy, weak rotator cuff",
+        "causePl": "Pogoń za wrażeniem rozciągnięcia bez szacunku dla anatomii barku, słaba stożek rotatorów",
+        "cue": "Stop when upper arms reach the level of the bench. No deeper.",
+        "cuePl": "Zatrzymaj się gdy ramiona ponad łokciem dojdą do wysokości ławki. Ani głębiej."
+      },
+      {
+        "fault": "Using torso momentum / arching the lower back",
+        "faultPl": "Pomaganie tułowiem / mocne wyginanie odcinka lędźwiowego",
+        "cause": "Load too heavy, or fatigue forcing compensations",
+        "causePl": "Zbyt duży ciężar lub kompensacje wymuszone przez zmęczenie",
+        "cue": "Keep lower back in light contact with the bench. Brace the core. Drop the weight if the back arches.",
+        "cuePl": "Lekki kontakt lędźwi z ławką przez cały czas. Napięty brzuch. Zmniejsz ciężar jeśli plecy się wyginają."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering, stretched position). Exhale forcefully during the concentric (bringing handles together). Brace lightly throughout to protect the lumbar spine.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (opuszczanie, pozycja rozciągnięta). Wydech siłowy w fazie koncentrycznej (zbliżanie rączek). Utrzymuj lekkie napięcie brzucha przez całą serię, aby chronić odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce range — do not let upper arms drop below bench level. Keep bench more upright (closer to 45°) to lessen anterior shoulder stress, and use lighter loads with higher reps (12-15).",
+      "modificationPl": "Ogranicz zakres ruchu — nie opuszczaj ramion ponad łokciem poniżej wysokości ławki. Ustaw ławkę bardziej pionowo (bliżej 45°) aby zmniejszyć obciążenie przedniej części barku, używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15).",
+      "alternative": "pec-deck-fly"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "modify",
+      "modification": "Avoid full horizontal adduction at the top — stop short of midline so the AC joint is not compressed. Reduce loads, focus on stretch-emphasised reps.",
+      "modificationPl": "Unikaj pełnego przywodzenia poziomego w górze — zakończ ruch przed osiągnięciem linii środkowej, aby nie zgniatać stawu barkowo-obojczykowego. Zmniejsz ciężar, skup się na fazie rozciągniętej.",
+      "alternative": "incline-dumbbell-press"
+    },
+    {
+      "condition": "pectoralis_major_strain_recovery",
+      "severity": "avoid",
+      "modification": "Skip until pain-free pressing is tolerated. The stretched position at the bottom of cable flies places maximal mechanical tension on the pec — risky during recovery.",
+      "modificationPl": "Pomiń aż wyciskanie będzie wolne od bólu. Pozycja rozciągnięta w dolnej fazie rozpiętek nakłada maksymalne napięcie mechaniczne na klatkę — niebezpieczne w okresie regeneracji.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "biceps_tendinopathy_long_head",
+      "severity": "caution",
+      "modification": "The bent-elbow isometric loads the long head of biceps. Reduce volume, avoid heavy weights, and switch to neutral grip handles to minimise supination stress.",
+      "modificationPl": "Izometryczne utrzymanie zgiętego łokcia obciąża głowę długą bicepsa. Zmniejsz objętość, unikaj ciężkich ciężarów i używaj rączek z chwytem neutralnym aby ograniczyć stres supinacyjny.",
+      "alternative": "pec-deck-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x12-20 (pump/finisher) | 2-3x15-20 (light tempo-focused work)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-incline-fly.gif",
+    "frames_extracted": [
+      "frames/cable-incline-fly/frame_0_start.png",
+      "frames/cable-incline-fly/frame_1_early.png",
+      "frames/cable-incline-fly/frame_2_mid.png",
+      "frames/cable-incline-fly/frame_3_late.png",
+      "frames/cable-incline-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-incline-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start): ćwiczący leży na ławce skośnej dodatniej (~30-45°) pomiędzy dwoma dolnymi wyciągami, ramiona szeroko na wysokości klatki, łokcie lekko ugięte, dłonie trzymają rączki strzemiona — górne aktony klatki i przedni akton barku podświetlone na czerwono. Frame 1-2 (early/mid): ramiona zataczają szeroki łuk do góry, dłonie zbliżają się nad górną częścią klatki, kąt w łokciu zachowany. Frame 3 (late): rączki spotykają się prawie nad mostkiem, pełen skurcz górnej klatki. Frame 4 (end): powrót do pozycji startowej, widoczny 'ghost' fazy szczytowej. Tułów cały czas leży na ławce, łopatki dociśnięte. Ćwiczenie jednoznacznie zidentyfikowane jako rozpiętki na wyciągach na ławce skośnej dodatniej (cable incline fly z dolnych bloczków). Praca izolacyjna, ruch wyłącznie w stawie barkowym (przywodzenie poziome) — łokieć w stałym kącie. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "chest", "upper_chest", "isolation", "cable", "incline", "fly", "upper_body", "hypertrophy"]
+}

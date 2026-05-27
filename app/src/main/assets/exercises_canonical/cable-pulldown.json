@@ -1,0 +1,208 @@
+{
+  "id": "cable-pulldown",
+  "name": "Cable Pulldown (Seated Lat Pulldown)",
+  "namePl": "Ściąganie drążka wyciągu górnego (lat pulldown na wyciągu)",
+  "aliases": ["cable pulldown", "lat pulldown", "seated lat pulldown", "cable lat pulldown", "wide-grip lat pulldown", "pulldown"],
+  "aliasesPl": ["ściąganie drążka wyciągu górnego", "lat pulldown", "wyciąg górny", "pulldown", "ściąganie drążka szerokim chwytem", "ściąganie wyciągu siedząc"],
+
+  "description": "Classic seated lat pulldown on a cable machine — the staple back-width builder. Seated with thighs locked under a pad, you grip a long lat bar overhead with a pronated (overhand) wide grip, then pull the bar DOWN to upper chest while driving elbows down and back. Hallmark vertical pulling movement: builds lat width (the 'V-taper'), trains scapular depression and retraction, and offers a safer, scalable alternative to the pull-up. Excellent for beginners learning the pull pattern and advanced lifters chasing hypertrophy with controllable load.",
+  "descriptionPl": "Klasyczne ściąganie drążka wyciągu górnego w pozycji siedzącej — fundament szerokości grzbietu. Siedzisz z udami zablokowanymi pod wałkiem, łapiesz długi drążek lat nad głową chwytem pronowanym (nachwytem) szerokim, a następnie ściągasz drążek W DÓŁ do górnej części klatki napierając łokciami w dół i do tyłu. Sztandarowe ćwiczenie pionowego ciągu: buduje szerokość najszerszych (tzw. 'V-taper'), trenuje opuszczanie i ściąganie łopatek oraz daje bezpieczniejszą, skalowaną alternatywę do podciągania. Doskonałe dla początkujących uczących się wzorca ciągu i zaawansowanych goniących za hipertrofią pod kontrolowanym obciążeniem.",
+
+  "instructions": [
+    "Attach a wide lat pulldown bar to the high cable. Set thigh pad so your thighs are firmly locked under it when seated.",
+    "Stand up, grab the bar with a pronated (overhand) grip, slightly wider than shoulder-width — about 1.3-1.5x shoulder width.",
+    "Sit down with arms fully extended overhead. Thighs pinned under pad, feet flat on floor.",
+    "Slight backward lean of the torso — about 10-20 degrees from vertical. Chest up, lower back arched, core braced.",
+    "Start position: arms fully extended overhead, lats stretched, shoulder blades slightly elevated by the cable.",
+    "Initiate by DEPRESSING the shoulder blades (pull them down) — then drive elbows down and back toward your ribs.",
+    "Pull the bar to the TOP of your upper chest / collarbone level. Elbows finish pointing down and slightly back, near the ribcage.",
+    "At the bottom: squeeze the lats hard, shoulder blades fully depressed and retracted, chest proud.",
+    "Reverse SLOWLY — let the bar rise overhead with full control, eccentric ~2-3 seconds, ending in deep lat stretch.",
+    "Maintain the same torso angle throughout — no swinging, no using the lower back to yank the weight."
+  ],
+  "instructionsPl": [
+    "Załóż szeroki drążek do wyciągu górnego. Ustaw wałek na uda tak, by uda były mocno zablokowane pod nim w pozycji siedzącej.",
+    "Wstań, złap drążek chwytem pronowanym (nachwytem), nieco szerszym niż barki — około 1.3-1.5x szerokości barków.",
+    "Usiądź z rękami w pełnym wyproście nad głową. Uda przyciśnięte pod wałkiem, stopy płasko na podłodze.",
+    "Lekkie odchylenie tułowia do tyłu — około 10-20 stopni od pionu. Klatka wypchnięta, dolny odcinek pleców łukowato, brzuch napięty.",
+    "Pozycja startowa: ręce w pełnym wyproście nad głową, najszersze rozciągnięte, łopatki lekko podniesione przez linkę.",
+    "Rozpocznij OPUSZCZANIEM łopatek (ściągnij je w dół) — następnie napieraj łokciami w dół i do tyłu w stronę żeber.",
+    "Ściągnij drążek do GÓRNEJ części klatki / wysokości obojczyków. Łokcie kończą skierowane w dół i lekko w tył, blisko klatki piersiowej.",
+    "Na dole: mocno ściśnij najszersze, łopatki w pełni opuszczone i ściągnięte, klatka dumnie wypchnięta.",
+    "Wracaj POWOLI — pozwól drążkowi unieść się nad głowę z pełną kontrolą, faza ekscentryczna ~2-3 sekundy, kończ w głębokim rozciągnięciu najszerszych.",
+    "Utrzymuj ten sam kąt tułowia przez cały czas — bez bujania, bez używania dolnego odcinka pleców do szarpania ciężaru."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "rhomboids", "teres_major", "posterior_deltoid", "brachialis", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "erector_spinae", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P7",
+    "trapezius_middle_lower": "S7",
+    "rhomboids": "S6",
+    "teres_major": "S8",
+    "posterior_deltoid": "S5",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "forearms": "S6",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "lat_pulldown_bar"],
+    "optional": ["wrist_straps", "chalk", "thigh_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["seated-cable-row", "scapular-pull-up"],
+    "progression_to": ["pull-up", "weighted-pull-up", "neutral-grip-lat-pulldown", "behind-neck-lat-pulldown"],
+    "alternatives": ["neutral-grip-lat-pulldown", "v-bar-lat-pulldown", "single-arm-cable-pulldown", "assisted-pull-up", "band-pulldown", "cable-lat-pulldown-full-range-of-motion"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Wide pronated grip — 1.3-1.5x shoulder width",
+      "Thighs locked tight under pad, feet flat",
+      "Slight backward lean ~10-20 degrees, chest up",
+      "Arms fully extended overhead in start position",
+      "Brace core before initiating the pull"
+    ],
+    "setup_cues_pl": [
+      "Szeroki nachwyt — 1.3-1.5x szerokości barków",
+      "Uda mocno zablokowane pod wałkiem, stopy płasko",
+      "Lekkie odchylenie do tyłu ~10-20 stopni, klatka wypchnięta",
+      "Ręce w pełnym wyproście nad głową w pozycji startowej",
+      "Napnij brzuch przed inicjacją ciągu"
+    ],
+    "execution_cues": [
+      "Initiate with shoulder blade depression — lats first, not arms",
+      "Drive ELBOWS down and back — don't think 'pull the bar'",
+      "Bar to upper chest / collarbone, NOT to the chin or neck",
+      "Squeeze lats hard at the bottom — pause briefly",
+      "Slow eccentric — control the bar back overhead, feel the stretch"
+    ],
+    "execution_cues_pl": [
+      "Inicjuj opuszczeniem łopatek — najszersze najpierw, nie ramiona",
+      "Napieraj ŁOKCIAMI w dół i do tyłu — nie myśl 'ściągnij drążek'",
+      "Drążek do górnej klatki / obojczyków, NIE do brody ani karku",
+      "Mocno ściśnij najszersze na dole — krótka pauza",
+      "Powolna faza ekscentryczna — kontroluj powrót drążka nad głowę, czuj rozciągnięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with arms (biceps-dominant) instead of lats",
+        "faultPl": "Ciąg ramionami (dominacja bicepsa) zamiast najszerszymi",
+        "cause": "No scapular initiation — gripping hard and curling the bar down",
+        "causePl": "Brak inicjacji łopatkami — mocny chwyt i ciągnięcie drążka jak w uginaniu",
+        "cue": "Imagine your hands are hooks. Initiate every rep by pulling shoulder blades DOWN before elbows move.",
+        "cuePl": "Wyobraź sobie że dłonie to haki. Inicjuj każde powtórzenie ściąganiem łopatek W DÓŁ zanim ruszą łokcie."
+      },
+      {
+        "fault": "Excessive backward lean / leaning into a row",
+        "faultPl": "Nadmierne odchylenie do tyłu / przekształcanie w wiosłowanie",
+        "cause": "Weight too heavy, ego lifting, using torso swing for momentum",
+        "causePl": "Za duże obciążenie, ego, bujanie tułowiem dla pędu",
+        "cue": "Cap the lean at ~15-20°. If you need more, drop the weight 15-20%. Stay tall, lats do the work.",
+        "cuePl": "Limit odchylenia ~15-20°. Jeśli potrzebujesz więcej — zmniejsz ciężar o 15-20%. Stój wysoko, niech pracują najszersze."
+      },
+      {
+        "fault": "Cutting ROM — bar stops at forehead or chin",
+        "faultPl": "Skracanie ROM — drążek zatrzymuje się na czole lub brodzie",
+        "cause": "Weight too heavy, weak lat contraction, no end-range squeeze",
+        "causePl": "Za duże obciążenie, słaby skurcz najszerszych, brak ściskania na końcu",
+        "cue": "Bar MUST touch upper chest / collarbone every rep. If it doesn't — too heavy.",
+        "cuePl": "Drążek MUSI dotknąć górnej klatki / obojczyków w każdym powtórzeniu. Jeśli nie — za ciężki."
+      },
+      {
+        "fault": "Pulling behind the neck (when not intended)",
+        "faultPl": "Ściąganie za kark (gdy nie jest to zamierzone)",
+        "cause": "Misunderstanding the movement, poor shoulder mobility forcing the bar behind head",
+        "causePl": "Nieprawidłowe rozumienie ruchu, słaba mobilność barków wymuszająca tor za głową",
+        "cue": "Bar comes DOWN in FRONT of the face to upper chest. Behind-neck pulldown is a separate, riskier variation.",
+        "cuePl": "Drążek schodzi W DÓŁ Z PRZODU twarzy do górnej klatki. Pulldown za kark to osobna, ryzykowniejsza wersja."
+      },
+      {
+        "fault": "Losing tension on the eccentric (cable yanks arms up)",
+        "faultPl": "Utrata napięcia w fazie ekscentrycznej (linka szarpie ramiona w górę)",
+        "cause": "Releasing the lats at the top, treating concentric as the only working phase",
+        "causePl": "Rozluźnienie najszerszych w górze, traktowanie tylko fazy koncentrycznej jako roboczej",
+        "cue": "Fight the cable on the way up. 2-3 seconds eccentric, end in deep stretch with control.",
+        "cuePl": "Walcz z linką w powrocie. 2-3 sekundy fazy ekscentrycznej, kończ w głębokim rozciągnięciu z kontrolą."
+      }
+    ],
+    "breathing": "Inhale at the top (stretch position). Exhale during the pull down. Inhale on the controlled return overhead.",
+    "breathingPl": "Wdech w górze (pozycja rozciągnięcia). Wydech podczas ciągu w dół. Wdech podczas kontrolowanego powrotu nad głowę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Switch to neutral grip (palms facing each other) and reduce ROM at top — start the pull from just above shoulder height. Avoid behind-neck variant entirely.",
+      "modificationPl": "Przejdź na chwyt neutralny (dłonie do siebie) i zmniejsz ROM w górze — zaczynaj ciąg tuż nad wysokością barków. Całkowicie unikaj wersji za kark.",
+      "alternative": "neutral-grip-lat-pulldown"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Pause loaded overhead pulling until cleared by physiotherapist. Resume with light horizontal rowing first.",
+      "modificationPl": "Wstrzymaj ciąg nad głową pod obciążeniem do zgody fizjoterapeuty. Wracaj przez lekkie wiosłowanie poziome.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Use straps to reduce grip stress on forearms. Reduce weight by 30-40% and focus on lat engagement instead of grip pull.",
+      "modificationPl": "Użyj pasków by zmniejszyć obciążenie chwytu na przedramiona. Zmniejsz ciężar o 30-40% i skup się na aktywacji najszerszych zamiast ciągu chwytem.",
+      "alternative": "straight-arm-pulldown"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Minimize backward lean — stay near vertical. Engage core firmly throughout. Lower weight if you cannot avoid leaning.",
+      "modificationPl": "Zminimalizuj odchylenie do tyłu — pozostań blisko pionu. Mocno napinaj brzuch przez cały czas. Zmniejsz ciężar jeśli nie możesz uniknąć odchylania.",
+      "alternative": "machine-lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4 x 8-12 (hypertrophy) | 4-5 x 6-10 (strength) | 3 x 12-20 (lat focus / pump)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-pulldown.gif",
+    "frames_extracted": [
+      "frames/cable-pulldown/frame_0_start.png",
+      "frames/cable-pulldown/frame_1_early.png",
+      "frames/cable-pulldown/frame_2_mid.png",
+      "frames/cable-pulldown/frame_3_late.png",
+      "frames/cable-pulldown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-pulldown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Klasyczny seated lat pulldown — najszerzej znane ćwiczenie pionowego ciągu. Frames potwierdzają standardową konfigurację: użytkownik siedzi na ławce z wałkiem na uda, łapie długi drążek lat nachwytem szerokim, ręce nad głową w pełnym wyproście (frame 0/4 = pozycja startowa/końcowa). Frame 1/3: faza ciągu, łokcie schodzą w dół wzdłuż boków, drążek mija twarz z przodu. Frame 2: pozycja końcowa (bottom) — drążek ściągnięty do górnej części klatki/obojczyków, łopatki mocno opuszczone i ściągnięte, najszersze w pełnym skurczu. Tor ruchu w płaszczyźnie czołowej (frontal — ramiona ściągane na boki, łokcie do żeber), kinetic_chain: open (nogi nie są bazą napędową, jedynie stabilizatorem przez wałek). primary: latissimus_dorsi P10 (główny cel — szerokość grzbietu), biceps_brachii P7 (silnie zaangażowany w zgięciu łokcia). teres_major S8 (zawsze mocno aktywny w pull_vertical). difficulty 4 — łatwiejsze niż pull-up bo obciążenie skalowalne, ale wymaga prawidłowej techniki (inicjacja łopatkami, kontrola ekscentrycznej fazy). Equipment: cable_machine + lat_pulldown_bar (długi szeroki drążek lat) + thigh_pad jako stabilizator. Wzorzec z cable-lat-pulldown-full-range-of-motion.json — różnica: tamto stojąc na crossoverze z dwiema linkami i pojedynczymi uchwytami D, ten siedząc z jednym drążkiem (klasyk siłowni).",
+
+  "tags": ["cable", "compound", "upper_body", "vertical_pull", "back", "lats", "biceps", "hypertrophy", "seated", "lat_width", "v_taper", "beginner_friendly", "staple_exercise"]
+}

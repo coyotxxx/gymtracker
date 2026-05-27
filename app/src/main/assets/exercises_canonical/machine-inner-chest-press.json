@@ -1,0 +1,204 @@
+{
+  "id": "machine-inner-chest-press",
+  "name": "Machine Inner Chest Press",
+  "namePl": "Inner chest press w maszynie",
+  "aliases": ["inner chest press machine", "converging chest press", "machine chest press narrow", "seated inner chest press"],
+  "aliasesPl": ["wyciskanie na maszynie ze ściągniętym chwytem", "maszyna na środek klatki", "chest press maszyna na inner chest", "wyciskanie siedząc na maszynie - środek klatki"],
+
+  "description": "Seated horizontal press performed on a converging chest press machine where the handles travel forward AND slightly inward toward the midline. The converging path increases the demand on the sternal (inner) head of the pectoralis major during the lockout, mimicking the adduction component of a fly while still allowing heavy compound loading. Fixed path reduces stabilizer demand compared to dumbbells, making it a safer mass builder and an excellent finishing or volume movement to bring up the inner/middle chest.",
+  "descriptionPl": "Wyciskanie poziome w pozycji siedzącej na maszynie typu converging chest press, w której uchwyty poruszają się do przodu I lekko do środka, w stronę osi ciała. Zbieżna trajektoria zwiększa zaangażowanie głowy mostkowej (środkowej części) mięśnia piersiowego większego w fazie końcowej, naśladując komponent przywodzenia z rozpiętek, ale wciąż pozwalając na ciężkie obciążenie compound. Ustalona ścieżka zmniejsza wymagania względem mięśni stabilizujących w porównaniu z hantlami, co czyni ten ruch bezpieczniejszym budulcem masy i świetnym ćwiczeniem wykończeniowym lub objętościowym na wyciągnięcie środkowej części klatki.",
+
+  "instructions": [
+    "Adjust the seat height so the handles align with the middle of your chest (mid-sternum), NOT the shoulders or upper chest.",
+    "Set the weight pin to a manageable load — converging machines feel heavier in the lockout than flat presses.",
+    "Sit down with your back fully against the pad, feet flat on the floor or footrest, slight natural arch in lower back.",
+    "Retract and depress the shoulder blades, pinning them against the pad. Chest up and slightly proud.",
+    "Grip the inner handles (narrow grip — the ones closer to the midline) with a neutral or pronated grip depending on machine design.",
+    "Inhale, brace the core, and press the handles forward and slightly inward in one smooth converging arc. Stop just short of elbow lockout.",
+    "At the top, squeeze the inner chest hard — imagine pressing the handles together to crush an object between your fists. Hold for 1 second.",
+    "Lower the handles in a controlled 2-3 second eccentric back to the start position, allowing the elbows to track just behind the torso line for a stretch — do NOT slam the weight stack.",
+    "Repeat without losing scapular position or letting the shoulders roll forward."
+  ],
+  "instructionsPl": [
+    "Wyreguluj wysokość siedziska tak, aby uchwyty były na wysokości środka klatki (środek mostka), NIE barków ani górnej klatki.",
+    "Ustaw szpilkę na poprawny ciężar — converging machine wydaje się cięższa w końcowej fazie wyciskania niż klasyczny press.",
+    "Usiądź z plecami w pełni opartymi o oparcie, stopy płasko na podłodze lub podnóżku, lekki naturalny łuk w dolnym odcinku.",
+    "Ściągnij łopatki w dół i razem, dociśnij je do oparcia. Klatka wypchnięta, lekko wystawiona do przodu.",
+    "Chwyć wewnętrzne uchwyty (wąski chwyt — te bliżej osi ciała) chwytem neutralnym lub pronowanym, w zależności od konstrukcji maszyny.",
+    "Wdech, napięcie brzucha, wyciskaj uchwyty do przodu i lekko do środka jednym płynnym łukiem zbieżnym. Zatrzymaj się tuż przed sztywnym lock-out łokci.",
+    "Na szczycie mocno spnij środek klatki — wyobraź sobie, że zgniatasz coś między pięściami, próbując złączyć uchwyty. Przytrzymaj 1 sekundę.",
+    "Opuszczaj uchwyty z kontrolą przez 2-3 sekundy, pozwalając łokciom zejść tuż za linię tułowia dla rozciągnięcia — NIE rzucaj stosem.",
+    "Powtarzaj nie tracąc pozycji łopatek i nie pozwalając barkom rolować do przodu."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_sternal", "pectoralis_major_clavicular"],
+    "secondary": ["anterior_deltoid", "triceps_brachii"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "core", "biceps_short_head"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_sternal": "P9",
+    "pectoralis_major_clavicular": "P7",
+    "anterior_deltoid": "S6",
+    "triceps_brachii": "S6",
+    "serratus_anterior": "T4",
+    "rotator_cuff": "T3",
+    "core": "T2",
+    "biceps_short_head": "T2"
+  },
+
+  "equipment": {
+    "required": ["chest_press_machine_converging"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["push-up"],
+    "progression_to": ["barbell-bench-press", "dumbbell-bench-press", "incline-machine-chest-press"],
+    "alternatives": ["machine-chest-press", "cable-crossover", "dumbbell-bench-press", "pec-deck-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Handles aligned with mid-sternum, NOT with shoulders",
+      "Back fully against the pad, shoulder blades retracted and depressed",
+      "Feet planted firmly — drive through the floor for stability",
+      "Grip the inner (narrow) handles to maximize converging path",
+      "Chest UP and proud before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Uchwyty na wysokości środka mostka, NIE barków",
+      "Plecy w pełni oparte o oparcie, łopatki ściągnięte w dół i razem",
+      "Stopy mocno zaparte — napieraj o podłogę dla stabilizacji",
+      "Trzymaj wewnętrzne (wąskie) uchwyty by zmaksymalizować trajektorię zbieżną",
+      "Klatka WYPCHNIĘTA przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Press forward AND inward — let the converging path do the work",
+      "At the top: squeeze chest hard, 'crush' the handles together for 1 second",
+      "Eccentric ~2-3 seconds, feel the stretch at the bottom",
+      "Elbows tracked at ~45° from torso, NOT flared to 90°",
+      "Mind-muscle connection: think about driving INNER chest fibers"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj do przodu I do środka — niech zbieżna trajektoria zrobi robotę",
+      "Na szczycie: mocno spnij klatkę, 'zgnieć' uchwyty razem przez 1 sekundę",
+      "Faza ekscentryczna ~2-3 sekundy, poczuj rozciągnięcie na dole",
+      "Łokcie pod kątem ~45° od tułowia, NIE rozsunięte na 90°",
+      "Mind-muscle connection: myśl o napinaniu włókien środkowej klatki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Shoulders roll forward at lockout",
+        "faultPl": "Barki rolują się do przodu w końcowej fazie wyciskania",
+        "cause": "Chasing extra ROM with shoulder protraction instead of pec contraction",
+        "causePl": "Pogoń za dodatkowym zakresem przez protrakcję barków zamiast napinania klatki",
+        "cue": "Keep shoulder blades pinned to the pad. Stop pressing when shoulders start to round.",
+        "cuePl": "Łopatki przyklejone do oparcia. Przestań wyciskać gdy barki zaczynają się zaokrąglać."
+      },
+      {
+        "fault": "Seat too high or too low — handles miss the chest line",
+        "faultPl": "Siedzisko za wysokie lub za niskie — uchwyty mijają linię klatki",
+        "cause": "Skipping seat adjustment, copying previous user's settings",
+        "causePl": "Pomijanie regulacji siedziska, kopiowanie ustawień poprzedniego użytkownika",
+        "cue": "Set the seat so handles meet mid-sternum. Too high = shoulders take over. Too low = upper chest only.",
+        "cuePl": "Ustaw siedzisko tak by uchwyty były na wysokości środka mostka. Za wysoko = barki przejmują. Za nisko = tylko górna klatka."
+      },
+      {
+        "fault": "Locking out elbows hard at the top",
+        "faultPl": "Sztywny lock-out łokci na szczycie",
+        "cause": "Resting in the lockout instead of maintaining tension on the chest",
+        "causePl": "Odpoczywanie w lock-out zamiast utrzymywania napięcia na klatce",
+        "cue": "Stop just shy of full extension. Keep tension on the pecs through every rep.",
+        "cuePl": "Zatrzymaj się tuż przed pełnym wyprostem. Utrzymuj napięcie na klatce w każdym powtórzeniu."
+      },
+      {
+        "fault": "Slamming the weight stack at the bottom",
+        "faultPl": "Walenie stosem na dole",
+        "cause": "No eccentric control, weight too heavy, ego lifting",
+        "causePl": "Brak kontroli fazy ekscentrycznej, za duży ciężar, ego lifting",
+        "cue": "3-second descent. The plates should NEVER clang against the stack — that's where growth happens.",
+        "cuePl": "3-sekundowe opuszczanie. Płytki NIGDY nie powinny stukać o stos — tam dzieje się wzrost."
+      },
+      {
+        "fault": "Pressing with arms only, no chest squeeze at top",
+        "faultPl": "Wyciskanie tylko ramionami, bez spięcia klatki na szczycie",
+        "cause": "Treating machine like a tricep extension, missing the adduction benefit",
+        "causePl": "Traktowanie maszyny jak prostowanie tricepsów, ignorowanie benefitu z przywodzenia",
+        "cue": "The whole point of converging press is the SQUEEZE at lockout. Pause and crush the inner chest.",
+        "cuePl": "Cały sens converging press to SPIĘCIE na szczycie. Przytrzymaj i zgnieć środek klatki."
+      }
+    ],
+    "breathing": "Inhale during eccentric (lowering), exhale forcefully during concentric (pressing forward). Optional 1-second hold at peak contraction.",
+    "breathingPl": "Wdech podczas fazy ekscentrycznej (opuszczanie), mocny wydech podczas fazy koncentrycznej (wyciskanie do przodu). Opcjonalna 1-sekundowa pauza w peak contraction."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Limit ROM at the bottom (don't let elbows go too far back). Keep elbows at ~30-45° from torso, never 90°. If pain persists, switch to incline variation.",
+      "modificationPl": "Ogranicz ROM na dole (nie pozwalaj by łokcie schodziły za bardzo do tyłu). Łokcie pod kątem ~30-45° od tułowia, nigdy 90°. Jeśli ból nie ustępuje, przejdź na wariant skośny w górę.",
+      "alternative": "machine-incline-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Even a fixed path machine loads the cuff. Stop pressing until cleared by physio. Switch to band pull-aparts and isometric chest holds.",
+      "modificationPl": "Nawet maszyna z ustaloną ścieżką obciąża stożek rotatorów. Wstrzymaj wyciskanie do zgody fizjoterapeuty. Przejdź na band pull-aparty i izometryczne spięcia klatki.",
+      "alternative": "cable-crossover"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Converging path puts max stretch + max squeeze on the pec — exactly what aggravates a strained pec. Wait for full healing.",
+      "modificationPl": "Trajektoria zbieżna powoduje maksymalne rozciągnięcie + maksymalne spięcie klatki — dokładnie to co drażni naderwany mięsień. Poczekaj na pełne wygojenie.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use neutral grip handles if machine offers them. Pronated grip stresses the wrist more in the lockout position.",
+      "modificationPl": "Użyj uchwytów z chwytem neutralnym jeśli maszyna ma taką opcję. Chwyt pronowany bardziej obciąża nadgarstek w pozycji końcowej.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, default) | 4x8-10 (strength-hypertrophy) | 3x15-20 (pump/finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "machine-inner-chest-press.gif",
+    "frames_extracted": [
+      "frames/machine-inner-chest-press/frame_0_start.png",
+      "frames/machine-inner-chest-press/frame_1_early.png",
+      "frames/machine-inner-chest-press/frame_2_mid.png",
+      "frames/machine-inner-chest-press/frame_3_late.png",
+      "frames/machine-inner-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/machine-inner-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Frame 0 (start, pełne wyciśnięcie): atleta siedzi na maszynie chest press, ramiona w pełni wyprostowane do przodu, uchwyty zbieżne w stronę środka, podświetlona cała klatka piersiowa (głowa mostkowa najmocniej + obojczykowa). Frame 2 (dół, faza ekscentryczna): łokcie ugięte, uchwyty blisko klatki, widoczne mocne aktywowanie głowy mostkowej pectoralis major (kolor czerwony na środku klatki). Frame 4 (powrót na szczyt): identyczna jak frame 0, ramiona wyprostowane. Klasyczna seated converging chest press machine z naciskiem na inner chest poprzez zbieżny tor ruchu uchwytów. Bilateral, compound, push. PL nazwa 'Inner chest press w maszynie' zgodna z polską terminologią siłowniową (anglicyzm 'inner chest press' jest powszechny). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Plane sklasyfikowany jako transverse (dominujący komponent przywodzenia poziomego — co odróżnia ten ruch od klasycznej chest press machine z czysto sagittal plane).",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest_mass", "machine", "inner_chest", "converging", "beginner_friendly", "shoulder_friendly", "isolation_feel"]
+}

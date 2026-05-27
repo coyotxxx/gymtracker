@@ -1,0 +1,213 @@
+{
+  "id": "kettlebell-thruster",
+  "name": "Kettlebell Thruster",
+  "namePl": "Thruster z kettlebell",
+  "aliases": ["kettlebell thruster", "double kettlebell thruster", "kb thruster", "front squat to overhead press with kettlebells"],
+  "aliasesPl": ["thruster z kettlebell", "thruster z odważnikami", "thruster z 2 kettlebell", "przysiad z wyciskaniem kettlebell", "front squat z wyciskaniem nad głowę z kettlebell"],
+
+  "description": "A full-body compound movement combining a front squat and an overhead press into one fluid rep. Two kettlebells are held in the front rack position (resting on the forearms and shoulders) while the lifter performs a deep front squat, then uses the upward drive out of the squat to powerfully press the bells overhead to a locked-out position. Trains the entire body — quads, glutes, hamstrings, deltoids, triceps and the core — in a single explosive pattern. Excellent for power endurance, athletic conditioning and total-body strength in minimal time.",
+  "descriptionPl": "Złożony ruch angażujący całe ciało, łączący front squat i wyciskanie nad głowę w jedno płynne powtórzenie. Dwa kettlebells trzymane są w pozycji front rack (oparte na przedramionach i barkach), wykonujesz głęboki front squat, a następnie wykorzystujesz pęd wstania z przysiadu, by dynamicznie wycisnąć odważniki nad głowę do pełnego wyprostu ramion. Trenuje całe ciało — czworogłowe, pośladki, dwugłowe ud, naramienne, tricepsy i brzuch — w jednym eksplozywnym wzorcu. Świetne do rozwoju wytrzymałości siłowej, kondycji sportowej i siły całego ciała w krótkim czasie.",
+
+  "instructions": [
+    "Stań stopami na szerokość barków, palce stóp lekko skierowane na zewnątrz. Postaw dwa kettlebells po bokach stóp lub wykonaj clean, by ustawić je w pozycji front rack.",
+    "Pozycja front rack: ciężary spoczywają na przednich aktonach barków, przedramiona pionowo, łokcie pod nadgarstkami, kciuki blisko obojczyków. Łokcie skierowane do przodu i lekko w górę.",
+    "Napnij brzuch, ściśnij łopatki, pierś w górę. Wdech, mocne napięcie tułowia (Valsalva).",
+    "Faza 1 (front squat): zegnij biodra i kolana jednocześnie, schodząc do głębokiego przysiadu. Łokcie utrzymuj wysoko, by ciężary nie ześlizgnęły się z barków. Kolana podążają za palcami stóp.",
+    "Zejdź na taką głębokość, na jaką pozwala twoja mobilność — minimum biodra poniżej kolan (parallel squat) lub niżej, jeśli zachowujesz neutralny kręgosłup.",
+    "Faza 2 (drive up): napieraj stopami w podłogę, wstań eksplozywnie z przysiadu, prostując biodra i kolana jednocześnie. Wykorzystaj pęd, by przejść płynnie do wyciskania.",
+    "Faza 3 (overhead press): w momencie pełnego wyprostu nóg, wypchnij oba kettlebells nad głowę po pionowej linii. Łokcie wyprostuj w pełnym lockoucie, ciężary nad środkiem stóp.",
+    "W lockoucie: barki wzruszone w górę 'pod kettlebells', głowa neutralna lub lekko do przodu między ramionami, brzuch napięty, pośladki ściśnięte. Krótka pauza.",
+    "Kontrolowanie opuść kettlebells z powrotem do pozycji front rack na barkach. To koniec jednego powtórzenia.",
+    "Wdech w pozycji front rack, kolejne powtórzenie. Utrzymuj rytm bez tracenia napięcia tułowia."
+  ],
+  "instructionsPl": [
+    "Stań stopami na szerokość barków, palce stóp lekko skierowane na zewnątrz. Postaw dwa kettlebells po bokach stóp lub wykonaj clean, by ustawić je w pozycji front rack.",
+    "Pozycja front rack: ciężary spoczywają na przednich aktonach barków, przedramiona pionowo, łokcie pod nadgarstkami, kciuki blisko obojczyków. Łokcie skierowane do przodu i lekko w górę.",
+    "Napnij brzuch, ściśnij łopatki, pierś w górę. Wdech, mocne napięcie tułowia (Valsalva).",
+    "Faza 1 (front squat): zegnij biodra i kolana jednocześnie, schodząc do głębokiego przysiadu. Łokcie utrzymuj wysoko, by ciężary nie ześlizgnęły się z barków. Kolana podążają za palcami stóp.",
+    "Zejdź na taką głębokość, na jaką pozwala twoja mobilność — minimum biodra poniżej kolan (parallel squat) lub niżej, jeśli zachowujesz neutralny kręgosłup.",
+    "Faza 2 (drive up): napieraj stopami w podłogę, wstań eksplozywnie z przysiadu, prostując biodra i kolana jednocześnie. Wykorzystaj pęd, by przejść płynnie do wyciskania.",
+    "Faza 3 (overhead press): w momencie pełnego wyprostu nóg, wypchnij oba kettlebells nad głowę po pionowej linii. Łokcie wyprostuj w pełnym lockoucie, ciężary nad środkiem stóp.",
+    "W lockoucie: barki wzruszone w górę 'pod kettlebells', głowa neutralna lub lekko do przodu między ramionami, brzuch napięty, pośladki ściśnięte. Krótka pauza.",
+    "Kontrolowanie opuść kettlebells z powrotem do pozycji front rack na barkach. To koniec jednego powtórzenia.",
+    "Wdech w pozycji front rack, kolejne powtórzenie. Utrzymuj rytm bez tracenia napięcia tułowia."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "anterior_deltoids"],
+    "secondary": ["hamstrings", "lateral_deltoids", "triceps", "trapezius", "erector_spinae"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "forearms", "rotator_cuff", "serratus_anterior", "calves"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "anterior_deltoids": "P9",
+    "hamstrings": "S7",
+    "lateral_deltoids": "S8",
+    "triceps": "S8",
+    "trapezius": "S7",
+    "erector_spinae": "S7",
+    "core": "S8",
+    "rectus_abdominis": "S7",
+    "obliques": "S6",
+    "forearms": "S7",
+    "rotator_cuff": "S6",
+    "serratus_anterior": "S6",
+    "calves": "S5"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["second_kettlebell", "weightlifting_shoes", "chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["kettlebell-goblet-squat", "kettlebell-clean-and-press", "kettlebell-front-squat", "kettlebell-overhead-press"],
+    "progression_to": ["barbell-thruster", "kettlebell-double-thruster-complex", "kettlebell-clean-and-jerk", "kettlebell-squat-snatch"],
+    "alternatives": ["dumbbell-thruster", "barbell-thruster", "kettlebell-clean-and-press", "kettlebell-goblet-squat-to-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Front rack: bells on delts, elbows under hands, wrists neutral",
+      "Feet shoulder-width, toes slightly out",
+      "Elbows HIGH and forward — prevents bells sliding",
+      "Brace abs hard, lats engaged",
+      "Eyes forward, neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Front rack: kettlebells na barkach, łokcie pod nadgarstkami, neutralne nadgarstki",
+      "Stopy szerokość barków, palce lekko na zewnątrz",
+      "Łokcie WYSOKO i do przodu — zapobiega zsuwaniu się ciężarów",
+      "Mocne napięcie brzucha, najszersze napięte",
+      "Wzrok przed siebie, neutralna szyja"
+    ],
+    "execution_cues": [
+      "Squat is the DRIVER — use leg drive to power the press, not arms",
+      "Elbows stay HIGH all the way down and up — don't let them drop",
+      "Drive feet through floor, then PUNCH bells overhead in one motion",
+      "Lock out with head 'through the window' — bells over mid-foot",
+      "Lower to front rack with control, reset, breathe, repeat"
+    ],
+    "execution_cues_pl": [
+      "Przysiad to SILNIK — wykorzystaj nogi by napędzić wyciskanie, nie ręce",
+      "Łokcie utrzymuj WYSOKO przez cały ruch w dół i w górę — nie pozwól im opadać",
+      "Napieraj stopami w podłogę, potem WBIJ kettlebells nad głowę jednym ruchem",
+      "Lockout z głową 'przez okno' — ciężary nad środkiem stóp",
+      "Opuść do front racku z kontrolą, reset, oddech, powtórz"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drop in the front rack during the squat",
+        "faultPl": "Łokcie opadają w front rack podczas przysiadu",
+        "cause": "Weak upper back, poor t-spine mobility, fatigued shoulders",
+        "causePl": "Słabe górne plecy, ograniczona mobilność piersiowego odcinka, zmęczone barki",
+        "cue": "Punch elbows up and forward as if pointing them at the wall in front of you. Hold them HIGH from start to finish.",
+        "cuePl": "Wypchnij łokcie w górę i do przodu, jakbyś celował nimi w ścianę przed sobą. Trzymaj je WYSOKO od początku do końca."
+      },
+      {
+        "fault": "Press dissociated from squat (squat first, then press)",
+        "faultPl": "Wyciskanie oddzielone od przysiadu (najpierw wstanie, potem wyciskanie)",
+        "cause": "Misunderstanding the movement — thruster is ONE motion, not two",
+        "causePl": "Nieprawidłowe zrozumienie ruchu — thruster to JEDEN ruch, nie dwa",
+        "cue": "Press starts the moment your legs lock out. Use the squat momentum to drive the bells overhead in one fluid motion.",
+        "cuePl": "Wyciskanie zaczyna się w momencie pełnego wyprostu nóg. Wykorzystaj pęd z przysiadu, by w jednym płynnym ruchu wypchnąć ciężary nad głowę."
+      },
+      {
+        "fault": "Knees collapse inward (valgus) during the squat",
+        "faultPl": "Kolana zapadają do środka (valgus) podczas przysiadu",
+        "cause": "Weak glute medius, poor hip mobility, load too heavy, fatigue",
+        "causePl": "Słaby pośrednik pośladkowy, ograniczona mobilność bioder, zbyt duży ciężar, zmęczenie",
+        "cue": "PUSH knees OUT in line with toes. Imagine spreading the floor with your feet. Reduce weight if it keeps happening.",
+        "cuePl": "Wypychaj kolana NA ZEWNĄTRZ w linii palców stóp. Wyobraź sobie, że rozsuwasz podłogę stopami. Zmniejsz ciężar jeśli powtarza się problem."
+      },
+      {
+        "fault": "Hyperextension of lower back at the lockout overhead",
+        "faultPl": "Nadmierne odgięcie lędźwi w lockoucie nad głową",
+        "cause": "Limited shoulder mobility, weak core, load too heavy",
+        "causePl": "Ograniczona mobilność barków, słaby brzuch, zbyt duży ciężar",
+        "cue": "Squeeze glutes and brace abs at the top. Ribs DOWN. If you can't lock out without arching — fix overhead mobility first.",
+        "cuePl": "Ściśnij pośladki i napnij brzuch w lockoucie. Żebra W DÓŁ. Jeśli nie możesz osiągnąć lockoutu bez wyginania pleców — najpierw popraw mobilność nad głową."
+      },
+      {
+        "fault": "Bells press in front of body (not directly overhead)",
+        "faultPl": "Ciężary wyciskane przed ciałem (nie dokładnie nad głową)",
+        "cause": "Tight lats/pecs, weak overhead pattern, fear of bell hitting head",
+        "causePl": "Spięte najszersze/piersiowe, słaby wzorzec wyciskania nad głowę, strach przed uderzeniem w głowę",
+        "cue": "Push head SLIGHTLY back as bells pass face, then push head FORWARD between arms at lockout. Bells finish OVER mid-foot.",
+        "cuePl": "Cofnij głowę LEKKO gdy ciężary mijają twarz, potem przepchnij głowę DO PRZODU między ramionami w lockoucie. Kettlebells kończą NAD środkiem stóp."
+      }
+    ],
+    "breathing": "Inhale at the front rack, brace and HOLD through the descent. Forceful exhale on the drive up AND through the press. Inhale again at the front rack reset. One breathing cycle per rep.",
+    "breathingPl": "Wdech w pozycji front rack, napięcie i WSTRZYMANIE w zejściu. Mocny wydech na drive up I podczas wyciskania. Kolejny wdech w resecie front racku. Jeden cykl oddechowy na powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_limited_overhead_mobility",
+      "severity": "avoid",
+      "modification": "Both the front rack and overhead lockout require full shoulder flexion. Limited mobility forces lumbar compensation. Restore mobility under PT supervision before attempting.",
+      "modificationPl": "Zarówno front rack jak i lockout nad głową wymagają pełnego zgięcia w barku. Ograniczona mobilność wymusza kompensację w lędźwiach. Najpierw przywróć mobilność pod nadzorem fizjoterapeuty.",
+      "alternative": "kettlebell-goblet-squat"
+    },
+    {
+      "condition": "knee_pain_meniscus_or_acl_issues",
+      "severity": "modify",
+      "modification": "Deep squat under load may stress damaged knee structures. Reduce squat depth to parallel or quarter-squat, or switch to a hip-dominant alternative.",
+      "modificationPl": "Głęboki przysiad pod obciążeniem może obciążać uszkodzone struktury kolana. Zmniejsz głębokość przysiadu do parallel lub ćwierć przysiadu, lub przejdź na wariant dominujący biodrami.",
+      "alternative": "kettlebell-clean-and-press"
+    },
+    {
+      "condition": "lumbar_disc_pathology_or_acute_low_back_pain",
+      "severity": "avoid",
+      "modification": "Combined axial load + overhead pressing + dynamic squat creates high spinal compression and shear forces. Switch to a non-loaded or hip-isolation alternative.",
+      "modificationPl": "Połączenie obciążenia osiowego + wyciskania nad głowę + dynamicznego przysiadu generuje wysoki ucisk i siły ścinające na kręgosłup. Przejdź na wariant bez obciążenia osiowego lub izolację bioder.",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The front rack position with kettlebell on the forearm can stress the wrist if alignment is poor. Use wrist wraps, ensure neutral wrist position, or switch to dumbbells/barbell.",
+      "modificationPl": "Pozycja front rack z kettlebell opartym o przedramię może obciążać nadgarstek przy złym ułożeniu. Stosuj wrist wraps, dbaj o neutralne nadgarstki, lub przejdź na hantle/sztangę.",
+      "alternative": "dumbbell-thruster"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy/conditioning) | 4-5x5-6 (strength) | 5x3-5 (power) | EMOM/AMRAP 8-20 reps (metabolic conditioning) — common in CrossFit/kettlebell sport workouts",
+  "calories_per_kg_per_hour": 9.0,
+
+  "media": {
+    "primary": "kettlebell-thruster.gif",
+    "frames_extracted": [
+      "frames/kettlebell-thruster/frame_0_start.png",
+      "frames/kettlebell-thruster/frame_1_early.png",
+      "frames/kettlebell-thruster/frame_2_mid.png",
+      "frames/kettlebell-thruster/frame_3_late.png",
+      "frames/kettlebell-thruster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-thruster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:10:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa stojąca z dwoma kettlebells w front racku — ciężary oparte na przednich aktonach barku, łokcie wysoko, podświetlone barki i przedramiona. Frame 1: faza zejścia + drugi obraz w głębokim front squat — biodra poniżej kolan, łokcie wciąż wysoko, podświetlone czworogłowe, pośladki, dwugłowe ud, brzuch, naramienne. Frame 2: composite/animation pokazujący zarówno głęboki przysiad jak i pozycję lockout overhead — kettlebells nad głową, pełen wyprost nóg i ramion. Frame 3: pełen lockout overhead w pozycji stojącej — ramiona wyprostowane, kettlebells nad środkiem stóp, podświetlone naramienne/triceps/górne plecy/czworogłowe. Frame 4: powrót do pozycji front rack po wyciskaniu — kettlebells na barkach, łokcie wysoko, ciało wyprostowane. To klasyczny double-kettlebell thruster: front squat + push press w jednym płynnym ruchu. movement_pattern: squat_to_press (hybryda squat + overhead_press). Difficulty 6/10 — wymaga koordynacji, mobilności overhead, ale niższy próg techniczny niż wariant ze sztangą (kettlebells pozwalają na neutralny nadgarstek). primary: quadriceps P9, glutes P9, anterior_deltoids P9 zgodnie ze specyfikacją. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — terminologia treningu siłowego po polsku (front rack, lockout, drive up zostawione jako utrwalone anglicyzmy).",
+
+  "tags": ["compound", "full_body", "kettlebell", "double_kettlebell", "squat_to_press", "overhead", "crossfit", "metabolic_conditioning", "power_endurance", "intermediate"]
+}

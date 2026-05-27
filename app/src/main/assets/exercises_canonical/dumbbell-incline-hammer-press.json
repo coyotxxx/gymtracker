@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-incline-hammer-press",
+  "name": "Dumbbell Incline Hammer Press",
+  "namePl": "Hammer press z hantlami na ławce skośnej",
+  "aliases": ["incline neutral grip dumbbell press", "incline DB hammer press", "neutral-grip incline dumbbell bench press", "incline parallel grip DB press"],
+  "aliasesPl": ["wyciskanie hantli skos chwytem neutralnym", "wyciskanie hantli skos chwytem młotkowym", "incline hammer press", "wyciskanie hantli na skosie z dłońmi do siebie"],
+
+  "description": "Variation of the incline dumbbell bench press performed with a neutral (hammer) grip — palms facing each other, dumbbells parallel throughout the lift. The incline bench angle (typically 30-45°, here at a steep ~60-75°) shifts emphasis toward the upper / clavicular fibers of the pectoralis major and increases anterior deltoid involvement compared to flat pressing. The neutral grip is significantly more shoulder-friendly than the pronated grip: it positions the humerus in less external rotation, reduces subacromial impingement risk, and is often the first choice for trainees with shoulder discomfort. It also tends to recruit slightly more triceps and inner-pec fibers at lockout because the elbows can travel closer to the body.",
+  "descriptionPl": "Wariant wyciskania hantli na ławce skośnej wykonywany chwytem neutralnym (młotkowym) — dłonie zwrócone do siebie, hantle ustawione równolegle przez cały ruch. Nachylenie ławki (zwykle 30-45°, tutaj stromo ~60-75°) przesuwa nacisk na górne / obojczykowe włókna mięśnia piersiowego i zwiększa udział przedniego aktonu naramiennego w porównaniu z wyciskaniem poziomym. Chwyt neutralny jest znacząco bardziej przyjazny dla barków niż chwyt pronowany: ustawia kość ramienną w mniejszej rotacji zewnętrznej, zmniejsza ryzyko konfliktu podbarkowego i często jest pierwszym wyborem dla osób z dyskomfortem w barku. Dodatkowo wyraźniej angażuje tricepsy i wewnętrzne włókna klatki w fazie końcowej, ponieważ łokcie mogą prowadzić bliżej tułowia.",
+
+  "instructions": [
+    "Set the bench to a steep incline (60-75° here, though 30-45° is more common for general use). Sit down with a dumbbell in each hand resting on the thighs.",
+    "Kick the dumbbells up to shoulder level one at a time as you settle against the backrest. Hold them with a neutral grip — palms facing each other, dumbbells parallel.",
+    "Plant feet firmly, drive the lower back lightly into the pad, retract and depress the shoulder blades.",
+    "Start with the dumbbells at upper-chest / shoulder height, elbows tucked at roughly 30-45° from the torso (much closer than in a pronated grip).",
+    "Inhale, brace the core. Press both dumbbells straight up in a vertical line above the upper chest until the arms are extended but elbows are not rigidly locked. Dumbbells stay parallel — DO NOT rotate the wrists.",
+    "Exhale at the top. Pause briefly without letting the dumbbells clang together.",
+    "Lower with control along the same path back to shoulder level. Maintain the neutral grip — wrists do not flare out.",
+    "Keep the elbows tracking close to the torso throughout. Repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę na stromy skos (tutaj 60-75°, choć 30-45° jest popularniejsze ogólnie). Usiądź z hantlem w każdej ręce opartym o uda.",
+    "Wybij hantle do wysokości barków pojedynczo, gdy układasz się na oparciu. Trzymaj je chwytem neutralnym — dłonie zwrócone do siebie, hantle równolegle.",
+    "Stopy mocno na podłodze, dolny odcinek pleców lekko dociśnięty do oparcia, łopatki ściągnięte w dół i do siebie.",
+    "Start z hantlami na wysokości górnej klatki / barków, łokcie zgięte i przyciągnięte do tułowia pod kątem ok. 30-45° (znacznie bliżej niż przy chwycie pronowanym).",
+    "Wdech, napnij brzuch. Wyciśnij oba hantle pionowo w górę nad górną klatką aż do wyprostu ramion — bez sztywnego lock-out. Hantle pozostają równolegle — NIE obracaj nadgarstków.",
+    "Wydech na szczycie. Krótka pauza bez stukania hantli o siebie.",
+    "Opuszczaj kontrolowanym ruchem tą samą ścieżką z powrotem na wysokość barków. Utrzymuj chwyt neutralny — nadgarstki nie rozsuwają się.",
+    "Łokcie cały czas prowadzone blisko tułowia. Powtórz zaplanowaną liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "pectoralis_major_sternal"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back", "biceps", "brachialis"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "serratus_anterior": "S5",
+    "pectoralis_major_sternal": "S4",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "biceps": "T2",
+    "brachialis": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up", "machine-chest-press", "dumbbell-bench-press"],
+    "progression_to": ["incline-dumbbell-bench-press", "single-arm-incline-dumbbell-press", "incline-barbell-bench-press"],
+    "alternatives": ["incline-dumbbell-bench-press", "neutral-grip-dumbbell-bench-press", "incline-machine-chest-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at incline (30-45° for upper-chest focus; steep here)",
+      "Dumbbells on thighs, kick them up to shoulders one at a time",
+      "Neutral grip from start — palms facing each other, parallel dumbbells",
+      "Shoulder blades retracted and depressed against the pad",
+      "Elbows tucked closer to torso than with pronated grip (~30-45°)"
+    ],
+    "setup_cues_pl": [
+      "Ławka na skosie (30-45° dla górnej klatki; tutaj stromo)",
+      "Hantle na udach, wybijaj je do barków pojedynczo",
+      "Chwyt neutralny od startu — dłonie do siebie, hantle równolegle",
+      "Łopatki ściągnięte i opuszczone, dociśnięte do oparcia",
+      "Łokcie bliżej tułowia niż przy chwycie pronowanym (~30-45°)"
+    ],
+    "execution_cues": [
+      "Press straight up — vertical line above upper chest",
+      "Keep dumbbells parallel — wrists DO NOT rotate during the lift",
+      "Lower with control to shoulder height, feel stretch in upper chest",
+      "Elbows track close to ribs — that's the whole point of hammer grip",
+      "Don't clang dumbbells at the top — stop just before contact"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę — pionowa linia nad górną klatką",
+      "Trzymaj hantle równolegle — nadgarstki NIE obracają się w trakcie ruchu",
+      "Opuszczaj z kontrolą do wysokości barków, poczuj rozciągnięcie górnej klatki",
+      "Łokcie prowadzone blisko żeber — w tym cały sens chwytu młotkowego",
+      "Nie stukaj hantlami na górze — zatrzymaj się tuż przed kontaktem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrists rotating to pronated grip during the press",
+        "faultPl": "Nadgarstki obracają się do chwytu pronowanego w trakcie wyciskania",
+        "cause": "Habit from regular bench press; not consciously controlling forearm position",
+        "causePl": "Nawyk z klasycznego wyciskania; brak świadomej kontroli ustawienia przedramion",
+        "cue": "Hammer means parallel from start to finish. Imagine holding two cans of soda — keep them upright.",
+        "cuePl": "Hammer znaczy równolegle od początku do końca. Wyobraź sobie, że trzymasz dwie puszki — utrzymuj je pionowo."
+      },
+      {
+        "fault": "Elbows flaring out away from the torso",
+        "faultPl": "Łokcie wychodzą na boki od tułowia",
+        "cause": "Trying to mimic pronated bench mechanics; losing the benefit of neutral grip",
+        "causePl": "Próba kopiowania mechaniki pronowanego wyciskania; utrata zalety chwytu neutralnego",
+        "cue": "Hammer grip = elbows IN. Keep them ~30-45° from torso, not 60-90°. That's what protects the shoulder.",
+        "cuePl": "Chwyt młotkowy = łokcie BLISKO. Trzymaj je ~30-45° od tułowia, nie 60-90°. To właśnie chroni bark."
+      },
+      {
+        "fault": "Pressing path drifts forward instead of vertical",
+        "faultPl": "Tor wyciskania ucieka do przodu zamiast pionowo w górę",
+        "cause": "Loss of upper back tightness; treating it like a flat press from incline position",
+        "causePl": "Utrata napięcia w górnej części pleców; traktowanie ruchu jak poziomego wyciskania z pozycji skośnej",
+        "cue": "Dumbbells go STRAIGHT up over the upper chest, not over the face or shoulders. Vertical bar path.",
+        "cuePl": "Hantle idą PROSTO w górę nad górną klatkę, nie nad twarz ani barki. Pionowa linia ruchu."
+      },
+      {
+        "fault": "Insufficient ROM at the bottom",
+        "faultPl": "Za mały zakres ruchu na dole",
+        "cause": "Bench angle too steep limits stretch; or trainee stops short out of caution",
+        "causePl": "Zbyt stromy kąt ławki ogranicza rozciągnięcie; lub osoba świadomie zatrzymuje hantle za wcześnie",
+        "cue": "Dumbbells should reach shoulder level. If you can't, lower the bench angle slightly (30-45° is the sweet spot).",
+        "cuePl": "Hantle powinny dojść do wysokości barków. Jeśli nie potrafisz, zmniejsz kąt ławki (30-45° to optimum)."
+      },
+      {
+        "fault": "Bouncing dumbbells together at the top",
+        "faultPl": "Stukanie hantli o siebie na szczycie",
+        "cause": "Loss of tension at lockout, ego-driven momentum",
+        "causePl": "Utrata napięcia w fazie końcowej, ego-driven momentum",
+        "cue": "Stop the dumbbells just before they touch. Keep tension on the chest and triceps — no clang.",
+        "cuePl": "Zatrzymaj hantle tuż przed dotknięciem. Utrzymaj napięcie klatki i tricepsów — żadnego stukania."
+      }
+    ],
+    "breathing": "Inhale at shoulder level, brace, hold during the press up. Exhale at the top through lockout.",
+    "breathingPl": "Wdech na wysokości barków, napięcie, wstrzymaj oddech podczas wyciskania w górę. Wydech na szczycie po wyprostowaniu ramion."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "This exercise is already friendly for impingement thanks to neutral grip. If pain persists, reduce ROM (don't go below shoulder level) and lower bench angle to 30°.",
+      "modificationPl": "To ćwiczenie jest już przyjazne przy konflikcie podbarkowym dzięki chwytowi neutralnemu. Jeśli ból utrzymuje się, zmniejsz ROM (nie schodź poniżej barków) i obniż kąt ławki do 30°.",
+      "alternative": "incline-machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Even hammer grip pressing destabilizes a torn cuff. Switch to fixed-path machine pressing until cleared by physiotherapist.",
+      "modificationPl": "Nawet wyciskanie chwytem młotkowym destabilizuje naderwany stożek. Przejdź na wyciskanie na maszynie z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "incline-machine-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Reduce bench angle to flat or low incline (15-20°) — steep incline loads the AC joint heavily. Stay in pain-free ROM.",
+      "modificationPl": "Zmniejsz kąt ławki do poziomu lub niskiego skosu (15-20°) — stromy skos mocno obciąża staw barkowo-obojczykowy. Pozostań w zakresie bez bólu.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "ok",
+      "modification": "Neutral grip is the MOST wrist-friendly pressing variation — wrists stay in neutral alignment naturally. Optionally use wrist wraps for heavier loads.",
+      "modificationPl": "Chwyt neutralny to NAJBARDZIEJ przyjazna dla nadgarstków wersja wyciskania — nadgarstki naturalnie pozostają w neutralnym ustawieniu. Opcjonalnie użyj wraps przy większych ciężarach.",
+      "alternative": null
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-incline-hammer-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-hammer-press/frame_0_start.png",
+      "frames/dumbbell-incline-hammer-press/frame_1_early.png",
+      "frames/dumbbell-incline-hammer-press/frame_2_mid.png",
+      "frames/dumbbell-incline-hammer-press/frame_3_late.png",
+      "frames/dumbbell-incline-hammer-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-incline-hammer-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start, dół): hantle na wysokości barków, dłonie zwrócone do siebie (neutralny chwyt młotkowy), hantle ustawione równolegle, łokcie zgięte i przyciągnięte do tułowia. Widoczne podświetlenie górnej klatki piersiowej (clavicular pec), przednich aktonów naramiennych i bocznych łokci/triceps — typowa sygnatura mięśniowa dla incline press z neutralnym chwytem. Frame 2 (góra): pełne wyciśnięcie, hantle nad górną klatką, ramiona wyprostowane, hantle nadal równolegle (chwyt zachowany). Frame 1 i 3: faza przejściowa — widoczna pionowa trajektoria z motion blur. Frame 4: powrót z motion blur idący w dół tą samą ścieżką. Renderowanie jahel pokazuje pozycję z perspektywy zbliżonej do pionu, co sugeruje stromy skos (~60-75°), ale mechanika i wzorzec mięśniowy są jednoznacznie incline DB press z neutralnym chwytem. Klasyfikacja push_horizontal pasuje (incline press nadal mieści się w grupie horizontal push, plane sagittal). Primary mięśnie: pectoralis_major_clavicular (P9 — incline = górna klatka), anterior_deltoids (P8 — neutralny chwyt + steep incline = mocniej delta przednia), triceps (P7). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Polska nazwa 'Hammer press z hantlami na ławce skośnej' zgodna z polskim slangiem siłowniowym (anglicyzm 'hammer press' jest powszechnie używany w PL fitness, podobnie jak 'curl' czy 'press').",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "upper_chest", "dumbbell", "incline", "neutral_grip", "hammer_grip", "shoulder_friendly", "wrist_friendly"]
+}

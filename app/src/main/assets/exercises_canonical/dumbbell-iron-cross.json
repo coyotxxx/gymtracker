@@ -1,0 +1,207 @@
+{
+  "id": "dumbbell-iron-cross",
+  "name": "Dumbbell Iron Cross",
+  "namePl": "Dumbbell iron cross (krzyż żelazny)",
+  "aliases": ["iron cross raise", "dumbbell front-to-lateral raise", "dumbbell T-raise from front", "cross raise"],
+  "aliasesPl": ["krzyż żelazny z hantlami", "wznosy z pozycji frontalnej w pozycję T", "iron cross na barki", "wznosy w kształt krzyża"],
+
+  "description": "An isolation/shape exercise for the deltoid complex that combines a front raise start position with a horizontal abduction finish — forming a cross or 'T' shape with the arms. Holding light dumbbells with arms extended forward at shoulder height, the lifter sweeps the arms out to the sides in the transverse plane, finishing with arms perpendicular to the torso. The continuous arc keeps tension on all three heads of the deltoid throughout the rep — the front delt resists in the start, the lateral delt drives the opening, and the rear delt finishes the squeeze. Demanding on the shoulder joint and best performed with light weights for high reps as a pre-exhaust or finisher.",
+  "descriptionPl": "Izolowane, kształtujące ćwiczenie na cały kompleks deltoidów łączące pozycję wyjściową wznosu frontalnego z zakończeniem ruchu w odwodzeniu poziomym — tworzące kształt krzyża lub litery 'T' z ramion. Trzymając lekkie hantle z ramionami wyciągniętymi przed sobą na wysokości barków, ćwiczący rozprowadza ramiona na boki w płaszczyźnie poprzecznej, kończąc z ramionami prostopadle do tułowia. Ciągły łuk utrzymuje napięcie na wszystkich trzech głowach deltoidu przez całe powtórzenie — przedni akton pracuje w pozycji startowej, akton boczny napędza otwieranie, a tylny akton kończy ruch ściśnięciem. Wymagające dla stawu barkowego i najlepiej wykonywane z lekkimi ciężarami w wysokim zakresie powtórzeń jako pre-exhaust lub wykończeniówka.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart, knees soft, core braced.",
+    "Hold a light dumbbell in each hand with a neutral grip (palms facing each other).",
+    "Raise both arms straight forward to shoulder height so the dumbbells nearly touch in front of your chest. Arms are extended with a small fixed bend (~10-15°) at the elbows. This is the start position.",
+    "Keeping the arms at shoulder height the entire time, sweep the dumbbells out horizontally to the sides in a wide arc, as if opening a pair of double doors.",
+    "Finish in a T-shape — arms fully abducted to the sides, in line with the torso, dumbbells at shoulder height. This is the 'iron cross' position.",
+    "Hold the top for 1 second, actively squeezing the shoulder blades together and pressing the arms 'long' to the sides.",
+    "Reverse the motion smoothly along the same horizontal arc, bringing the dumbbells back to the front start position over 2-3 seconds.",
+    "Do not let the arms drop below shoulder level between reps — keep them floating to keep continuous tension on the delts.",
+    "Use light loads — this exercise is about shoulder integrity and high reps, not heavy weight."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte, brzuch napięty.",
+    "Złap lekkie hantle chwytem neutralnym (dłonie zwrócone do siebie).",
+    "Unieś oba ramiona prosto przed siebie do wysokości barków, tak żeby hantle prawie stykały się przed klatką. Ramiona wyprostowane z lekkim, stałym ugięciem (~10-15°) w łokciach. To pozycja wyjściowa.",
+    "Utrzymując ramiona stale na wysokości barków, rozprowadź hantle poziomo na boki szerokim łukiem, jakbyś otwierał podwójne drzwi.",
+    "Zakończ w kształcie litery T — ramiona w pełni odwiedzione na boki, w linii z tułowiem, hantle na wysokości barków. To pozycja 'iron cross' (krzyż żelazny).",
+    "Zatrzymaj się w górnej pozycji na 1 sekundę, aktywnie ściągając łopatki i 'wyciągając' ramiona długo na boki.",
+    "Płynnie odwróć ruch tą samą poziomą drogą, sprowadzając hantle z powrotem do pozycji frontalnej przez 2-3 sekundy.",
+    "Nie pozwól ramionom opaść poniżej wysokości barków między powtórzeniami — utrzymuj je 'lewitujące' aby zachować ciągłe napięcie na deltoidach.",
+    "Używaj lekkich ciężarów — to ćwiczenie kładzie nacisk na integralność stawu barkowego i wysokie powtórzenia, nie na ciężar."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "posterior_deltoids"],
+    "secondary": ["supraspinatus", "infraspinatus", "trapezius_middle"],
+    "stabilizers": ["serratus_anterior", "rhomboids", "trapezius_lower", "core", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P9",
+    "anterior_deltoids": "P8",
+    "posterior_deltoids": "P7",
+    "supraspinatus": "S6",
+    "infraspinatus": "S5",
+    "trapezius_middle": "S5",
+    "serratus_anterior": "T3",
+    "rhomboids": "T3",
+    "trapezius_lower": "T3",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-lateral-raise", "dumbbell-front-raise"],
+    "progression_to": ["cable-iron-cross", "weighted-iron-cross-hold"],
+    "alternatives": ["dumbbell-lateral-raise", "dumbbell-front-raise", "cable-lateral-raise", "scaption-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Light dumbbells — go lighter than you think",
+      "Stand tall, soft knees, braced core",
+      "Neutral grip, palms facing each other",
+      "Arms raised straight forward to shoulder height to start",
+      "Small fixed bend in elbows (~10-15°), locked the whole set"
+    ],
+    "setup_cues_pl": [
+      "Lekkie hantle — weź lżejsze niż myślisz",
+      "Stań prosto, lekko ugięte kolana, napięty brzuch",
+      "Chwyt neutralny, dłonie zwrócone do siebie",
+      "Ramiona uniesione prosto przed siebie do wysokości barków na start",
+      "Lekkie, stałe ugięcie łokci (~10-15°), zablokowane przez całą serię"
+    ],
+    "execution_cues": [
+      "Open like double doors — pure horizontal arc",
+      "Keep arms exactly at shoulder height — no dipping, no rising",
+      "Pull the dumbbells 'long' away from your center",
+      "Squeeze rear delts and pinch shoulder blades at the T",
+      "Slow eccentric — control the closing 2-3 seconds"
+    ],
+    "execution_cues_pl": [
+      "Otwieraj jak podwójne drzwi — czysty poziomy łuk",
+      "Trzymaj ramiona dokładnie na wysokości barków — bez opadania, bez unoszenia",
+      "Wyciągaj hantle 'długo' na boki od środka ciała",
+      "Spinaj tylne aktony i ściągaj łopatki w pozycji T",
+      "Wolna faza ekscentryczna — kontroluj zamykanie przez 2-3 sekundy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Arms drop below shoulder level during the arc",
+        "faultPl": "Ramiona opadają poniżej wysokości barków w trakcie łuku",
+        "cause": "Load too heavy or shoulder fatigue — gravity wins and the lifter cheats by lowering the lever",
+        "causePl": "Zbyt duży ciężar lub zmęczenie barków — grawitacja wygrywa i ćwiczący oszukuje obniżając dźwignię",
+        "cue": "Use lighter dumbbells. Imagine balancing a glass of water on each wrist — keep them flat at shoulder height.",
+        "cuePl": "Użyj lżejszych hantli. Wyobraź sobie szklankę wody na każdym nadgarstku — utrzymuj je płasko na wysokości barków."
+      },
+      {
+        "fault": "Bending the elbows progressively during the set",
+        "faultPl": "Stopniowe uginanie łokci w trakcie serii",
+        "cause": "The lever gets long and uncomfortable — bending the elbow shortens the moment arm and cheats the load",
+        "causePl": "Dźwignia staje się długa i niewygodna — uginanie łokcia skraca ramię momentu i oszukuje obciążenie",
+        "cue": "Lock the elbow angle in setup and treat it as if welded. If you have to bend it, the weight is too heavy.",
+        "cuePl": "Zablokuj kąt łokcia na starcie i traktuj go jakby był zespawany. Jeśli musisz go uginać, ciężar jest za duży."
+      },
+      {
+        "fault": "Shrugging shoulders into the ears at the T-position",
+        "faultPl": "Wciąganie barków do uszu w pozycji T",
+        "cause": "Upper trapezius takes over when the deltoid loses tension at the top",
+        "causePl": "Trapez górny przejmuje pracę gdy deltoid traci napięcie w górnej pozycji",
+        "cue": "Actively press shoulders down and away from ears the entire set. Long neck.",
+        "cuePl": "Aktywnie spychaj barki w dół i od uszu przez całą serię. Długa szyja."
+      },
+      {
+        "fault": "Swinging hips and using momentum",
+        "faultPl": "Bujanie biodrami i używanie rozmachu",
+        "cause": "Load too heavy, no scapular setup, or trying to get more reps than the muscle can produce",
+        "causePl": "Zbyt duży ciężar, brak ustawienia łopatek, lub próba wyciśnięcia większej liczby powtórzeń niż mięsień jest w stanie wykonać",
+        "cue": "Brace abs hard. Glue heels to floor. If your hips move, the set is over.",
+        "cuePl": "Mocno napnij brzuch. Przyklej pięty do podłogi. Jeśli biodra się ruszają, seria jest zakończona."
+      },
+      {
+        "fault": "Letting wrists tilt or rotate (palms turning down)",
+        "faultPl": "Pozwalanie nadgarstkom na pochylenie lub rotację (dłonie obracające się w dół)",
+        "cause": "Forearm fatigue from holding wide grip — palms drop into pronation, putting strain on the supraspinatus and AC joint",
+        "causePl": "Zmęczenie przedramion od trzymania w szerokim chwycie — dłonie wpadają w pronację, obciążając mięsień nadgrzebieniowy i staw barkowo-obojczykowy",
+        "cue": "Keep thumbs slightly up (semi-neutral). Imagine pouring water from the dumbbells — but only a tiny tilt.",
+        "cuePl": "Trzymaj kciuki lekko do góry (półneutralnie). Wyobraź sobie wylewanie wody z hantli — ale tylko delikatne przechylenie."
+      }
+    ],
+    "breathing": "Exhale as the arms open out into the T (concentric). Inhale as the arms close back to the front (eccentric). Keep a light core brace — don't hold full breath, the set is high-rep.",
+    "breathingPl": "Wydech podczas rozwierania ramion do pozycji T (faza koncentryczna). Wdech podczas zamykania ramion z powrotem do przodu (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha — nie wstrzymuj pełnego oddechu, seria jest wysokopowtórzeniowa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "avoid",
+      "modification": "The combined front-raise + lateral-raise arc passes through the entire impingement zone. During acute phase avoid completely. Substitute with scaption raises (30° forward of pure lateral) which keep the humerus out of the impingement arc.",
+      "modificationPl": "Łączony łuk wznosu frontalnego i wznosu bokiem przechodzi przez całą strefę konfliktu podbarkowego. W fazie ostrej całkowicie unikaj. Zastąp wznosami w płaszczyźnie łopatkowej (30° przed czystym bokiem), które utrzymują kość ramienną poza strefą konfliktu.",
+      "alternative": "scaption-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy_or_tear",
+      "severity": "avoid",
+      "modification": "The horizontal abduction at shoulder height loads the supraspinatus in its most vulnerable position. Avoid completely until cleared by physiotherapist. Use band external rotations and face pulls during rehab.",
+      "modificationPl": "Odwodzenie poziome na wysokości barków obciąża mięsień nadgrzebieniowy w jego najbardziej wrażliwej pozycji. Całkowicie unikaj do zatwierdzenia przez fizjoterapeutę. W trakcie rehabilitacji używaj rotacji zewnętrznych z gumą i face pull.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "modify",
+      "modification": "The T-position compresses the AC joint. Reduce range — stop the lateral opening at 70-75° of abduction rather than full 90°. Keep dumbbells slightly forward of the body plane.",
+      "modificationPl": "Pozycja T uciska staw barkowo-obojczykowy. Zmniejsz zakres ruchu — zatrzymuj rozwieranie bokiem na 70-75° odwiedzenia zamiast pełnych 90°. Utrzymuj hantle lekko przed płaszczyzną tułowia.",
+      "alternative": "dumbbell-lateral-raise"
+    },
+    {
+      "condition": "biceps_tendinopathy_long_head",
+      "severity": "caution",
+      "modification": "Holding arms isometrically at shoulder height loads the long head of biceps continuously. With biceps tendon pain reduce hold time at the top, lower load further, and prefer machine alternatives that allow forearm support.",
+      "modificationPl": "Izometryczne trzymanie ramion na wysokości barków obciąża głowę długą bicepsa w sposób ciągły. Przy bólu ścięgna bicepsa skróć czas wytrzymania w górnej pozycji, dalej zmniejsz ciężar i preferuj alternatywy maszynowe z podparciem przedramienia.",
+      "alternative": "machine-lateral-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy/standard) | 2-3x20-30 (pre-exhaust/finisher, very light) | 4x10-12 (intensity-focus with strict tempo)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-iron-cross.gif",
+    "frames_extracted": [
+      "frames/dumbbell-iron-cross/frame_0_start.png",
+      "frames/dumbbell-iron-cross/frame_1_early.png",
+      "frames/dumbbell-iron-cross/frame_2_mid.png",
+      "frames/dumbbell-iron-cross/frame_3_late.png",
+      "frames/dumbbell-iron-cross/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-iron-cross"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). UWAGA: ta wersja iron cross jest wykonywana z dolną fazą w niskim przysiadzie — ćwiczący zaczyna w głębokim przysiadzie z ramionami wyciągniętymi prosto przed siebie na wysokości barków, hantle prawie się stykają, a następnie podczas wstawania (faza koncentryczna) rozprowadza ramiona poziomo na boki, kończąc w pełnej pozycji stojącej z ramionami w kształcie litery T (krzyż żelazny). Frame 0 i 4 pokazują dolną pozycję (przysiad + ramiona z przodu na wysokości barków), z podświetlonymi na czerwono przednim aktonem deltoidu i mięśniem piersiowym. Frame 2 pokazuje pełną pozycję stojącą z ramionami rozwiedzionymi do pozycji T, z podświetlonymi WSZYSTKIMI trzema głowami deltoidu (przedni, boczny, tylny) plus trapez. Klasyfikacja: instructions w JSON opisują CZYSTĄ wersję barkową (bez przysiadu), bo wersja z przysiadem to bardziej compound full-body — większość praktyków wykonuje to ćwiczenie ze stojąca pozycją, a GIF z przysiadem jest stylizowaną demonstracją aktywacji mięśniowej. Mięśnie primary: wszystkie 3 głowy deltoidu (lateral najwyżej, bo to dominujący ruch w płaszczyźnie poprzecznej). Secondary: stożek rotatorów (supraspinatus + infraspinatus) i trapez środkowy. Plane=transverse (poziome odwodzenie z neutralną pozycją), mechanic=isolation, force=push (ramię oddala się od ciała), bilateral. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "deltoids", "all_deltoid_heads", "isolation", "dumbbells", "upper_body", "standing", "hypertrophy", "shoulder_specialization", "pre_exhaust", "finisher"]
+}

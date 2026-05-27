@@ -1,0 +1,208 @@
+{
+  "id": "cable-floor-seated-wide-grip-row",
+  "name": "Cable Floor Seated Wide Grip Row",
+  "namePl": "Wiosłowanie z wyciągu siedząc na podłodze chwytem szerokim",
+  "aliases": ["floor seated cable row wide grip", "wide grip cable row floor seated", "cable row floor wide bar", "seated floor cable wide row"],
+  "aliasesPl": ["wiosłowanie na podłodze wyciąg szeroki chwyt", "wiosłowanie siedząc na podłodze szerokim drążkiem", "wide grip wiosło na wyciągu siedząc na podłodze", "wiosłowanie z dolnego wyciągu siedząc na podłodze szeroki chwyt"],
+
+  "description": "Horizontal pulling variant of the cable row performed seated directly ON THE FLOOR (no bench, no foot platform) using a wide lat-pulldown bar in a pronated wide grip. With legs extended on the floor and no foot bracing, the core must work much harder to keep the torso stable. The wide grip and high pulling line (bar travels to the upper abdomen / lower chest, elbows flared out) shift emphasis away from the lats and toward the mid/upper back — rhomboids, mid-trapezius and rear deltoids. It is essentially a horizontal pull executed in the TRANSVERSE plane (elbows flare out) rather than the sagittal plane of a classic V-handle row. Useful as a back-thickness / rear-delt complement and as a core-challenging row variant when no seated row platform is available.",
+  "descriptionPl": "Wariant wiosłowania poziomego na dolnym wyciągu wykonywany siedząc bezpośrednio NA PODŁODZE (bez ławki, bez platformy pod stopy) z użyciem szerokiego drążka do ściągania (lat pulldown bar) trzymanego nachwytem na szerokim rozstawie dłoni. Nogi wyprostowane na podłodze, bez oparcia stóp, więc mięśnie głębokie i brzuch muszą znacznie mocniej stabilizować tułów. Szeroki chwyt i wyższa linia ciągu (drążek wędruje do górnej części brzucha / dolnej klatki, łokcie rozchylone na boki) przesuwają akcent z najszerszych grzbietu na środkową i górną część pleców — równoległoboczne, środkowe czworoboczne i tylne aktony naramiennych. To w istocie ciąg poziomy wykonywany w płaszczyźnie POPRZECZNEJ (łokcie rozchylone) zamiast strzałkowej jak w klasycznym wiosłowaniu uchwytem V. Świetne uzupełnienie objętości grubości pleców i pracy nad tylnymi naramiennymi, a także przydatne jako wymagające wiosło dla brzucha, gdy nie ma dostępnej platformy seated row.",
+
+  "instructions": [
+    "Set the cable to the lowest position. Attach a wide lat-pulldown bar (wide pronated grip).",
+    "Sit on the floor directly in front of the cable column, legs extended forward, knees slightly bent (not locked). No bench, no foot platform.",
+    "Grab the bar with a wide pronated grip (hands wider than shoulders, palms facing down). Sit tall — torso upright or leaned back ~10-15 degrees, neutral spine, chest proud.",
+    "Brace the core HARD — without foot bracing, the abs and hip flexors are the only thing keeping the torso stable against the cable load.",
+    "Initiate the pull by depressing and retracting the shoulder blades BEFORE the elbows bend.",
+    "Pull the bar toward the UPPER abdomen / lower chest. Elbows travel BACK and FLARED OUT (roughly 60-90 degrees from the torso), wrists stay neutral and straight.",
+    "At the end position the bar touches the upper belly / lower sternum, elbows are behind the line of the torso and high (level with mid-ribs), shoulder blades fully retracted. Hold the squeeze 1 second.",
+    "Reverse the motion under control. Let the scapulae protract slightly at the end of the eccentric for a full mid-back stretch — without rounding the lower back.",
+    "Keep the torso angle stable through the entire set — no rocking, no using lumbar extension to muscle the weight.",
+    "Repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg w najniższej pozycji. Załóż szeroki drążek do ściągania (lat pulldown bar) — szeroki nachwyt.",
+    "Usiądź na podłodze dokładnie naprzeciwko kolumny wyciągu, nogi wyprostowane przed sobą, kolana lekko ugięte (nie zablokowane). Bez ławki, bez platformy pod stopy.",
+    "Złap drążek szerokim nachwytem (dłonie szerzej niż barki, dłonie skierowane w dół). Siedź wyprostowany — tułów pionowy lub odchylony do tyłu o ~10-15 stopni, kręgosłup neutralny, klatka wysunięta.",
+    "Napnij MOCNO brzuch — bez oparcia stóp tylko mięśnie brzucha i zginacze biodra utrzymują tułów stabilny przeciw obciążeniu linki.",
+    "Rozpocznij ciąg ŚCIĄGNIĘCIEM i obniżeniem łopatek ZANIM zegniesz łokcie.",
+    "Pociągnij drążek w stronę GÓRNEJ części brzucha / dolnej klatki. Łokcie idą w TYŁ i ROZCHYLONE NA BOKI (około 60-90 stopni od tułowia), nadgarstki neutralne i proste.",
+    "W pozycji końcowej drążek dotyka górnej części brzucha / dolnego mostka, łokcie są za linią tułowia i wysoko (na wysokości środkowych żeber), łopatki maksymalnie ściągnięte. Zatrzymaj napięcie na 1 sekundę.",
+    "Odwróć ruch w pełnej kontroli. Pozwól łopatkom lekko 'odpłynąć' w przód na końcu fazy ekscentrycznej — bez zaokrąglania odcinka lędźwiowego.",
+    "Trzymaj kąt tułowia stabilny przez całą serię — bez bujania, bez używania wyprostu lędźwi do dźwigania ciężaru.",
+    "Powtórz zaplanowaną liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rhomboids", "trapezius_middle_lower", "posterior_deltoids"],
+    "secondary": ["latissimus_dorsi", "biceps_brachii", "brachialis"],
+    "stabilizers": ["core", "erector_spinae", "hip_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "rhomboids": "P10",
+    "trapezius_middle_lower": "P9",
+    "posterior_deltoids": "P9",
+    "latissimus_dorsi": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "core": "S7",
+    "erector_spinae": "S6",
+    "hip_flexors": "S5"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "lat_pulldown_bar"],
+    "optional": ["lifting_straps", "chalk", "exercise_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["cable-low-seated-row", "seated-machine-row"],
+    "progression_to": ["barbell-bent-over-row", "t-bar-row-wide-grip", "pendlay-row"],
+    "alternatives": ["cable-low-seated-row", "chest-supported-row", "seal-row", "face-pull", "wide-grip-seated-cable-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on the floor directly in front of the low cable, legs straight ahead, knees soft",
+      "Wide lat-pulldown bar — pronated grip, hands wider than shoulders",
+      "Torso upright or slight backward lean (10-15 degrees), neutral spine, chest up",
+      "Arms fully extended, lats and mid-back lengthened — but shoulders not collapsing forward",
+      "Brace the core HARD before the first rep — no foot bracing means abs are your anchor"
+    ],
+    "setup_cues_pl": [
+      "Siadaj na podłodze dokładnie naprzed niskim wyciągiem, nogi wyprostowane przed sobą, kolana miękkie",
+      "Szeroki drążek do ściągania — nachwyt, dłonie szerzej niż barki",
+      "Tułów pionowy lub lekko odchylony do tyłu (10-15 stopni), neutralny kręgosłup, klatka wysunięta",
+      "Ramiona w pełni wyprostowane, najszersze i środkowe plecy rozciągnięte — ale barki nie zapadają się w przód",
+      "Napnij MOCNO brzuch przed pierwszym powtórzeniem — bez oparcia stóp brzuch jest twoją kotwicą"
+    ],
+    "execution_cues": [
+      "Scapulae first — retract before you bend the elbows",
+      "Drive elbows BACK AND OUT to the sides — wide path, not tucked to ribs",
+      "Bar to the upper belly / lower chest — NOT to the low belly",
+      "Squeeze the mid-back together at the end — 'pinch a pencil between your shoulder blades'",
+      "Torso angle stays locked — no rocking with the hips or lower back"
+    ],
+    "execution_cues_pl": [
+      "Najpierw łopatki — ściągnij je zanim zegniesz łokcie",
+      "Prowadź łokcie W TYŁ I NA BOKI — szeroka ścieżka, nie blisko żeber",
+      "Drążek do GÓRNEJ części brzucha / dolnej klatki — NIE do dolnego brzucha",
+      "Ściśnij środkowe plecy razem na końcu — 'zgnieć ołówek między łopatkami'",
+      "Kąt tułowia zablokowany — bez bujania biodrami ani odcinkiem lędźwiowym"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rocking torso forward/backward (no foot bracing = lots of momentum temptation)",
+        "faultPl": "Bujanie tułowia w przód i w tył (brak oparcia stóp = duża pokusa używania pędu)",
+        "cause": "Without a foot platform the only stabilizer is the core — when load is too heavy, users compensate by swinging the torso",
+        "causePl": "Bez platformy pod stopy jedynym stabilizatorem jest brzuch — przy zbyt dużym ciężarze użytkownicy kompensują bujaniem tułowia",
+        "cue": "Reduce weight by 25-30%. The torso is a FIXED post — only the shoulder joint and scapulae move. If the floor version forces rocking, switch to the bench/foot-platform seated row.",
+        "cuePl": "Zmniejsz ciężar o 25-30%. Tułów to STAŁY słupek — porusza się tylko staw barkowy i łopatki. Jeśli wersja z podłogi wymusza bujanie, przejdź na seated row z ławką i platformą pod stopy."
+      },
+      {
+        "fault": "Pulling the bar to the lower belly (treating it like a V-handle row)",
+        "faultPl": "Ciąganie drążka do dolnej części brzucha (traktowanie ćwiczenia jak wiosłowania uchwytem V)",
+        "cause": "Habit from neutral-grip seated row carries over and elbows tuck to the ribs — but this kills the mid-back / rear delt focus that the wide grip is designed for",
+        "causePl": "Nawyk z seated rowa chwytem neutralnym przenosi się i łokcie chowają się do żeber — ale to zabija akcent na środkowe plecy i tylne aktony, dla których stworzony jest szeroki chwyt",
+        "cue": "Bar travels to the UPPER belly / lower sternum, elbows FLARE OUT to ~75-90 degrees. If you're pulling to the navel with elbows tucked, you're doing a different exercise — switch handles.",
+        "cuePl": "Drążek wędruje do GÓRNEJ części brzucha / dolnego mostka, łokcie ROZCHYLONE do około 75-90 stopni. Jeśli ciągniesz do pępka z łokciami przy żebrach, robisz inne ćwiczenie — zmień uchwyt."
+      },
+      {
+        "fault": "Rounded lower back at the end of the eccentric",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy w końcowej fazie ekscentrycznej",
+        "cause": "Trying to get extra range by collapsing the lumbar spine — particularly dangerous on the floor because there is no back support and no foot bracing to control the cable's forward pull",
+        "causePl": "Próba uzyskania większego zakresu przez zapadanie odcinka lędźwiowego — szczególnie niebezpieczne na podłodze, bo nie ma oparcia pleców ani oparcia stóp, by kontrolować ciągnięcie linki w przód",
+        "cue": "Stretch comes from the SHOULDER BLADES protracting forward — not from spine flexion. If the cable starts pulling you into a forward slump, stop the eccentric earlier or reduce weight.",
+        "cuePl": "Rozciągnięcie wynika z PROTRAKCJI ŁOPATEK do przodu — nie ze zgięcia kręgosłupa. Jeśli linka zaczyna ciągnąć cię w zgarbioną pozycję, zatrzymaj ekscentryk wcześniej lub zmniejsz ciężar."
+      },
+      {
+        "fault": "Wrists bending / curling under load (wide pronated grip is wrist-vulnerable)",
+        "faultPl": "Zginanie / wykrzywianie nadgarstków pod obciążeniem (szeroki nachwyt jest narażony na kontuzje nadgarstków)",
+        "cause": "Pronated wide grip puts the wrists in a less neutral position than V-handle; under heavy load the wrist tends to flex if forearms are weak",
+        "causePl": "Szeroki nachwyt ustawia nadgarstki w mniej neutralnej pozycji niż uchwyt V; pod dużym obciążeniem nadgarstek się zgina jeśli przedramiona są słabe",
+        "cue": "Wrists stay STRAIGHT and aligned with forearms throughout. Use lifting straps if grip/wrists give out before the back. If chronic wrist pain — switch to V-handle or rope.",
+        "cuePl": "Nadgarstki zostają PROSTE i w jednej linii z przedramionami przez cały ruch. Użyj pasków jeśli chwyt lub nadgarstki puszczają przed plecami. Jeśli chroniczny ból nadgarstków — zmień na uchwyt V lub linę."
+      },
+      {
+        "fault": "Sliding forward on the floor as the cable pulls (no friction control)",
+        "faultPl": "Zjeżdżanie w przód po podłodze pod naciągiem linki (brak kontroli tarcia)",
+        "cause": "On smooth gym floors with light shorts, the cable load can drag the user forward little by little — distance to the cable changes mid-set, ROM goes wonky",
+        "causePl": "Na śliskich podłogach siłowni w lekkich spodenkach obciążenie linki może powoli ciągnąć użytkownika w przód — odległość od wyciągu zmienia się w trakcie serii, zakres ruchu się rozjeżdża",
+        "cue": "Use a non-slip mat under the hips. Plant the heels and dig them slightly into the floor. If sliding still happens, reduce weight or use the seated-row platform variant.",
+        "cuePl": "Połóż antypoślizgową matę pod biodrami. Wbij pięty lekko w podłogę. Jeśli nadal zjeżdżasz, zmniejsz ciężar lub przejdź na wersję z platformą seated row."
+      }
+    ],
+    "breathing": "Inhale at the start (arms extended). Exhale through the pull as the bar approaches the upper abdomen. Inhale on the controlled return. For heavier sets brace and hold breath through the concentric.",
+    "breathingPl": "Wdech na starcie (ramiona wyprostowane). Wydech w trakcie ciągu gdy drążek zbliża się do górnej części brzucha. Wdech podczas kontrolowanego powrotu. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Floor seated position lacks back support and forces the core/lumbar to stabilize against the cable pull. With acute LBP use chest-supported row instead. If absolutely needed, sit propped against a wall or box for back support and keep torso strictly vertical.",
+      "modificationPl": "Pozycja siedząca na podłodze nie daje oparcia pleców i zmusza brzuch/lędźwie do stabilizacji przeciw ciągnięciu linki. Przy ostrym bólu lędźwi użyj wiosłowania z podparciem klatki. Jeśli koniecznie musisz, oprzyj plecy o ścianę lub skrzynię i trzymaj tułów ściśle pionowo.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Wide pronated grip with flared elbows can be provocative if the bar is pulled too high (toward upper chest / collarbone). Pull only to the upper belly / lower sternum and limit elbow elevation to mid-rib level.",
+      "modificationPl": "Szeroki nachwyt z rozchylonymi łokciami może prowokować ból jeśli drążek ciągniesz zbyt wysoko (do górnej klatki / obojczyka). Ciągnij tylko do górnej części brzucha / dolnego mostka i ogranicz uniesienie łokci do wysokości środkowych żeber.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "wrist_pain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Wide pronated grip stresses the wrists more than a neutral V-handle grip. Use lifting straps to take pressure off the grip, keep wrists strictly in line with forearms, or switch to neutral-grip seated row.",
+      "modificationPl": "Szeroki nachwyt obciąża nadgarstki bardziej niż chwyt neutralny z uchwytem V. Użyj pasków by odciążyć chwyt, trzymaj nadgarstki ściśle w linii z przedramionami lub przejdź na seated row z chwytem neutralnym.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "hip_flexor_tightness_or_pain",
+      "severity": "modify",
+      "modification": "Sitting on the floor with legs extended demands hip flexor and hamstring length. If tight, sit on a low cushion or rolled mat to elevate the hips, or bend the knees more.",
+      "modificationPl": "Siedzenie na podłodze z wyprostowanymi nogami wymaga długości zginaczy biodra i dwugłowych ud. Jeśli masz napięcie, usiądź na niskiej poduszce lub zrolowanej macie, by unieść biodra, lub zegnij mocniej kolana.",
+      "alternative": "cable-low-seated-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength — uncommon, core often limits) | 3x10-15 (general) | 3x15-20 (rear delt / mid-back pump work)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-floor-seated-wide-grip-row.gif",
+    "frames_extracted": [
+      "frames/cable-floor-seated-wide-grip-row/frame_0_start.png",
+      "frames/cable-floor-seated-wide-grip-row/frame_1_early.png",
+      "frames/cable-floor-seated-wide-grip-row/frame_2_mid.png",
+      "frames/cable-floor-seated-wide-grip-row/frame_3_late.png",
+      "frames/cable-floor-seated-wide-grip-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cable-floor-seated-wide-grip-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): osoba siedzi BEZPOŚREDNIO NA PODŁODZE (brak ławki, brak platformy seated row, brak oparcia stóp), nogi wyprostowane do przodu, kolana lekko ugięte. Trzyma SZEROKI DRĄŻEK do ściągania (lat pulldown bar) — wyraźnie pronowany nachwyt, dłonie szerzej niż barki. Tułów pionowy, ramiona w pełni wyprostowane do przodu. Frame 2 (mid): faza koncentryczna — łokcie WYRAŹNIE rozchylone na boki (transverse plane, nie tucked do żeber jak przy V-handle), drążek wędruje w stronę górnej części brzucha. Frame 4 (end): pełne ściągnięcie łopatek, drążek dotyka górnej części brzucha / dolnego mostka, łokcie WYRAŹNIE wysoko (na poziomie środkowych żeber) i za linią tułowia. Podświetlone mięśnie: cały środkowy i górny grzbiet (równoległoboczne dominują — P10), środkowe/dolne czworoboczne, tylne aktony naramiennych są również wyraźnie wyróżnione. Najszersze są zaangażowane ale wyraźnie MNIEJ niż w klasycznym seated row z V-handle — dlatego degraded do secondary S7. Klasyfikacja: pull_horizontal w płaszczyźnie transverse (nie sagittal jak V-handle row — to kluczowa różnica). Equipment: cable_machine + lat_pulldown_bar (szeroki drążek). Difficulty 5 (o 1 więcej niż klasyczny seated row z platformą) — bez oparcia stóp core musi mocniej pracować, łatwo o bujanie tułowia, plus szeroki nachwyt mniej forgiving dla nadgarstków. Primary: rhomboids P10 (klasyczny ruch wide-grip mid-back), trapezius_middle_lower P9, posterior_deltoids P9 — zgodnie ze specyfikacją zadania. Stabilizers: core S7 (znacznie wyżej niż seated row z platformą — S5), hip_flexors S5 (pomagają trzymać tułów). Wszystkie pola PL napisane od zera, polski standard fitness.",
+
+  "tags": ["compound", "horizontal_pull", "cable", "mid_back", "rear_delts", "rhomboid_developer", "core_demanding", "wide_grip", "floor_seated", "back_thickness"]
+}

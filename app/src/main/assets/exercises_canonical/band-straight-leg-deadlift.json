@@ -1,0 +1,202 @@
+{
+  "id": "band-straight-leg-deadlift",
+  "name": "Band Straight-Leg Deadlift",
+  "namePl": "Deadlift z prostymi nogami z gumą",
+  "aliases": ["band SLDL", "resistance band straight-leg deadlift", "banded straight-leg deadlift", "band stiff-leg deadlift (locked-knee variant)"],
+  "aliasesPl": ["SLDL z gumą", "deadlift na prostych nogach z gumą oporową", "martwy ciąg na prostych nogach z gumą", "wariant SLDL z gumą"],
+
+  "description": "A hip-hinge exercise performed with a resistance band as load, with the knees kept FULLY straight (locked) throughout the entire movement. The key distinction from the stiff-leg deadlift (where knees may be slightly bent) and from the Romanian deadlift (where knees stay at ~10-20° flexion) is the rigid, locked-knee position. This locked-knee posture forces maximum hamstring stretch and removes any quad contribution — making it one of the most aggressive hamstring-stretch exercises available. The band provides accommodating resistance (lighter at the bottom, heavier at the top), which is gentle on the lower back compared to free-weight equivalents. Stand on the band, hold both ends, and hinge from the hips with completely straight legs. Excellent for hamstring mobility, glute activation, and posterior-chain warm-ups.",
+  "descriptionPl": "Ćwiczenie hip hinge wykonywane z gumą oporową jako obciążeniem, z kolanami trzymanymi CAŁKOWICIE PROSTO (zablokowanymi) przez cały ruch. Kluczowa różnica od stiff-leg deadlift (gdzie kolana mogą być lekko ugięte) i od rumuńskiego martwego ciągu (gdzie kolana pozostają w zgięciu ~10-20°) to sztywna, zablokowana pozycja kolan. Ta zablokowana pozycja wymusza maksymalny rozciąg dwugłowych ud i eliminuje udział czworogłowych — czyniąc to ćwiczenie jednym z najbardziej agresywnych rozciągających hamstringi dostępnych ruchów. Guma daje opór akomodacyjny (lżejszy na dole, cięższy na górze), co jest delikatne dla lędźwi w porównaniu do wolnych ciężarów. Stań na gumie, chwyć oba końce i wykonaj hinge w biodrach z całkowicie prostymi nogami. Doskonałe do mobilności dwugłowych ud, aktywacji pośladków i rozgrzewki tylnego łańcucha.",
+
+  "instructions": [
+    "Stand on the middle of the resistance band with feet hip-width apart. Grip one end of the band in each hand (or both ends together with both hands).",
+    "Stand tall with arms hanging straight down, band under light tension at the top. Lock your knees completely — legs stay STRAIGHT for the entire set.",
+    "Set your back: chest up, shoulder blades pulled down and back, neutral spine, core braced.",
+    "Take a breath, brace, and begin the descent by pushing your hips BACKWARD. Knees stay locked straight — do NOT bend them at any point.",
+    "Lower the hands along the front of your legs as the torso hinges forward. The band stretches and resistance increases.",
+    "Descend only as far as your hamstring flexibility allows WITHOUT rounding the lower back. Most people stop around mid-shin level — for many, that means hands at knee height. Do NOT chase the floor.",
+    "Reverse the movement: drive the hips forward, stand up against the band's resistance. Keep the legs straight and locked the whole way up.",
+    "Finish standing tall with a strong glute squeeze. The legs never bend — that is the defining feature of this variant."
+  ],
+  "instructionsPl": [
+    "Stań na środku gumy oporowej, stopy na szerokość bioder. Chwyć jeden koniec gumy w każdą rękę (lub oba końce razem dwoma rękami).",
+    "Stań prosto z ramionami zwisającymi prosto w dół, guma pod lekkim napięciem na górze. Zablokuj kolana całkowicie — nogi pozostają PROSTE przez całą serię.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, neutralny kręgosłup, brzuch napięty.",
+    "Nabierz oddechu, napnij brzuch i zacznij schodzenie przez wypchnięcie bioder DO TYŁU. Kolana pozostają zablokowane prosto — NIE zginaj ich w żadnym momencie.",
+    "Opuszczaj ręce wzdłuż przedniej części nóg w miarę pochylania się tułowia. Guma się rozciąga, opór rośnie.",
+    "Schodź tylko tak głęboko, jak pozwala mobilność hamstringów BEZ zaokrąglania lędźwi. Większość osób kończy ruch na wysokości połowy goleni — dla wielu oznacza to ręce na wysokości kolan. NIE goń podłogi.",
+    "Wróć ruchem: wepchnij biodra do przodu, wstań przeciwko oporowi gumy. Trzymaj nogi proste i zablokowane przez całą drogę w górę.",
+    "Zakończ stojąc prosto z mocnym ściśnięciem pośladków. Nogi nigdy się nie zginają — to cecha definiująca ten wariant."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "erector_spinae"],
+    "secondary": ["glutes"],
+    "stabilizers": ["core", "adductors", "calves", "latissimus_dorsi", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "erector_spinae": "P8",
+    "glutes": "S6",
+    "core": "S5",
+    "adductors": "S3",
+    "calves": "S3",
+    "latissimus_dorsi": "S3",
+    "forearms": "S3"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["hip-hinge-dowel-drill", "bodyweight-good-morning"],
+    "progression_to": ["band-stiff-leg-deadlift", "dumbbell-rdl", "kettlebell-rdl", "barbell-romanian-deadlift"],
+    "alternatives": ["band-stiff-leg-deadlift", "band-good-morning", "kettlebell-rdl", "cable-pull-through"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand on the MIDDLE of the band — even tension on both sides",
+      "Feet hip-width, toes forward, weight even on whole foot",
+      "Lock knees COMPLETELY straight — this is the defining feature",
+      "Chest up, shoulder blades down and back, neutral spine",
+      "Light tension on the band at the top — arms hang straight"
+    ],
+    "setup_cues_pl": [
+      "Stań na ŚRODKU gumy — równe napięcie po obu stronach",
+      "Stopy na szerokość bioder, palce do przodu, ciężar równo na całej stopie",
+      "Zablokuj kolana CAŁKOWICIE prosto — to cecha definiująca",
+      "Klatka w górze, łopatki w dół i do tyłu, neutralny kręgosłup",
+      "Lekkie napięcie gumy na górze — ręce zwisają prosto"
+    ],
+    "execution_cues": [
+      "Hips BACK, not down — push your butt to the wall behind you",
+      "Knees stay LOCKED straight the entire rep — zero bend",
+      "Feel the stretch in the hamstrings — that's the primary target",
+      "Stop the descent when the lower back starts to round — not deeper",
+      "Squeeze glutes hard at the top, full hip extension, no leaning back"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU, nie w dół — wypchnij pośladki do ściany za tobą",
+      "Kolana pozostają ZABLOKOWANE prosto przez całe powtórzenie — zero ugięcia",
+      "Czuj rozciąg w dwugłowych ud — to główny cel",
+      "Zatrzymaj schodzenie gdy lędźwie zaczynają się zaokrąglać — nie głębiej",
+      "Mocno ściśnij pośladki na górze, pełen wyprost bioder, bez odchylania się"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knees during the descent — turning it into an RDL",
+        "faultPl": "Zginanie kolan podczas schodzenia — zamienia ćwiczenie w RDL",
+        "cause": "Tight hamstrings, reflex to bend knees when stretch becomes uncomfortable, misunderstanding the variant",
+        "causePl": "Sztywne dwugłowe ud, odruch zginania kolan gdy rozciąg staje się niekomfortowy, niezrozumienie wariantu",
+        "cue": "Knees STAY locked — that's the whole point. If you have to bend them, you went too low. Reduce ROM.",
+        "cuePl": "Kolana POZOSTAJĄ zablokowane — to cała istota. Jeśli musisz je zgiąć, zeszedłeś za nisko. Zmniejsz zakres."
+      },
+      {
+        "fault": "Rounded lower back at the bottom — chasing depth beyond hamstring flexibility",
+        "faultPl": "Zaokrąglone plecy lędźwiowe na dole — gonienie głębokości poza mobilność hamstringów",
+        "cause": "Limited hamstring/hip flexibility forces lumbar compensation, ego, copying advanced lifters",
+        "causePl": "Ograniczona mobilność hamstringów/bioder wymusza kompensację lędźwiową, ego, kopiowanie zaawansowanych",
+        "cue": "Stop AT the stretch, not past it. Lower back stays neutral the whole time — if it rounds, that rep is over.",
+        "cuePl": "Zatrzymaj się NA rozciągu, nie poza nim. Lędźwie pozostają neutralne cały czas — jeśli się zaokrąglają, powtórzenie jest skończone."
+      },
+      {
+        "fault": "Hips not moving back — just bending forward at the waist",
+        "faultPl": "Biodra nie cofają się — tylko pochylanie się w pasie",
+        "cause": "No understanding of hip hinge pattern, weak posterior chain, hip mobility issues",
+        "causePl": "Brak zrozumienia wzorca hip hinge, słaby tylny łańcuch, problemy z mobilnością bioder",
+        "cue": "Imagine a wall behind you 30 cm away — touch it with your butt. Hips travel back, NOT torso forward.",
+        "cuePl": "Wyobraź sobie ścianę za tobą w odległości 30 cm — dotknij jej pośladkami. Biodra cofają się, NIE tułów do przodu."
+      },
+      {
+        "fault": "Hyperextending the lower back at the top (overarching)",
+        "faultPl": "Nadmierne odchylenie lędźwi na górze (przeprost)",
+        "cause": "Confusing 'glute squeeze' with leaning backwards, weak core, habit from poor lockouts",
+        "causePl": "Mylenie 'ściśnięcia pośladków' z odchylaniem się do tyłu, słaby brzuch, nawyk ze słabych lock-outów",
+        "cue": "Stand tall, ribs DOWN, finish in a neutral vertical position — not arched back.",
+        "cuePl": "Stań prosto, żebra W DÓŁ, kończ w neutralnej pionowej pozycji — nie odchylając się do tyłu."
+      },
+      {
+        "fault": "Band rolling under the feet — losing balance",
+        "faultPl": "Guma zwija się pod stopami — utrata równowagi",
+        "cause": "Band positioned too far forward/back on foot, narrow stance, uneven tension",
+        "causePl": "Guma ustawiona zbyt z przodu/tyłu stopy, wąska stójka, nierówne napięcie",
+        "cue": "Band sits directly under the arch of each foot. Press the whole foot into the floor — toes, heel, midfoot equally.",
+        "cuePl": "Guma siedzi bezpośrednio pod sklepieniem każdej stopy. Wciskaj całą stopę w podłogę — palce, pięta, środek równo."
+      }
+    ],
+    "breathing": "Inhale at the top, brace the core, hold breath during the descent and the most-stretched bottom position, exhale on the way up as you pass the knees. For warm-up sets with light tension, continuous breathing is fine.",
+    "breathingPl": "Wdech na górze, napnij brzuch, wstrzymaj oddech podczas schodzenia i pozycji największego rozciągnięcia, wydech w drodze do góry gdy mijasz kolana. Dla serii rozgrzewkowych z lekkim napięciem, ciągły oddech jest w porządku."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Total rest. Locked-knee hinge places the greatest possible shear stress on the lumbar — strictly avoid until cleared. Do not load the spine in flexion.",
+      "modificationPl": "Pełen odpoczynek. Hinge z zablokowanymi kolanami daje największe możliwe siły ścinające na lędźwie — całkowicie unikaj do czasu zgody fizjoterapeuty. Nie obciążaj kręgosłupa w zgięciu.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "The locked-knee position maximizes lumbar load — high risk for disc-related issues. Use cable pull-through or seated leg curl instead.",
+      "modificationPl": "Pozycja z zablokowanymi kolanami maksymalizuje obciążenie lędźwi — wysokie ryzyko przy problemach z dyskami. Zamień na cable pull-through lub uginanie nóg siedząc.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Sharply limit the range of motion — stop the descent well above the knee. The locked-knee position will reach end-range much earlier than RDL. Work on hamstring mobility separately.",
+      "modificationPl": "Mocno ogranicz zakres ruchu — zatrzymaj schodzenie grubo powyżej kolana. Pozycja z zablokowanymi kolanami osiąga koniec zakresu znacznie wcześniej niż RDL. Pracuj nad mobilnością hamstringów osobno.",
+      "alternative": "band-stiff-leg-deadlift"
+    },
+    {
+      "condition": "hamstring_strain_history",
+      "severity": "caution",
+      "modification": "Begin with very light band tension, half range of motion, controlled tempo. The maximum hamstring stretch in this variant can re-aggravate prior strains — start conservative.",
+      "modificationPl": "Zacznij od bardzo lekkiej gumy, połowy zakresu ruchu, kontrolowanego tempa. Maksymalny rozciąg hamstringów w tym wariancie może podrażnić wcześniejsze naciągnięcia — zacznij ostrożnie.",
+      "alternative": "kettlebell-rdl"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 (warm-up / activation — most common use) | 3x15-20 (hamstring mobility / posterior-chain pump) | 3x8-12 (hypertrophy with heavy band)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-straight-leg-deadlift.gif",
+    "frames_extracted": [
+      "frames/band-straight-leg-deadlift/frame_0_start.png",
+      "frames/band-straight-leg-deadlift/frame_1_early.png",
+      "frames/band-straight-leg-deadlift/frame_2_mid.png",
+      "frames/band-straight-leg-deadlift/frame_3_late.png",
+      "frames/band-straight-leg-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "spine/band-straight-leg-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (12 oryginalnych klatek). Frame 0: dolna pozycja — głęboki hip hinge, tułów prawie poziomy, ręce trzymają końce gumy przy stopach, kolana CAŁKOWICIE WYPROSTOWANE (zablokowane) — to klucz odróżniający od stiff-leg gdzie kolana mogą być lekko ugięte. Frame 2: pozycja stojąca/lockout — pełen wyprost bioder, ręce zwisają, guma pod napięciem, wyraźnie zaznaczone podświetlenia na prostownikach grzbietu (cały tor lędźwiowo-piersiowy) i pośladkach. Frame 4: powrót w dół z tym samym pełnym zablokowaniem kolan. Dominują podświetlenia: hamstringi (cały tył uda, intensywnie), prostowniki grzbietu (kolumna piersiowo-lędźwiowa), pośladki maximus. Klasyfikacja: hinge / pull / compound / bilateral / sagittal / closed-chain. Equipment: tylko resistance_band. Trudność 3 (beginner) — guma to delikatny opór, brak ciężaru osiowego, technicznie proste o ile mobilność pozwala; jednak kolano zablokowane wymaga dyscypliny. Główne mięśnie: hamstrings P10 (maksymalny rozciąg z powodu zablokowanych kolan — większy niż w RDL gdzie kolana ~15° flex daje 'zapas' na hamstringach) i erector_spinae P8 (duże obciążenie izometryczne ze względu na długi moment w hip hinge i brak kompensacji przez ugięte kolano). Glutes SECONDARY (S6) — pracują na koncentryku, ale max stretch jest na hamstringach, nie na pośladkach jak w RDL gdzie hamstringi mają trochę 'mniej' przez ugięcie. To kluczowe odróżnienie zgodnie ze specyfikacją zadania: 'primary hamstrings (max stretch), erector_spinae; secondary glutes'. Wszystkie pola PL napisane od zera w polskiej terminologii fitness (hip hinge, hamstringi, lock-out, pośladki, rozciąg ekscentryczny, guma oporowa). 5 faults pokrywa najczęstsze błędy: bending knees (zaprzecza istocie wariantu), rounded lower back, no hip hinge, hyperextension top, band rolling. 4 contraindications: ostry uraz lędźwi (avoid), dysk lędźwiowy (avoid — locked-knee max obciąża lędźwie), ograniczona mobilność hamstringów (modify), historia naciągnięcia hamstringów (caution).",
+
+  "tags": ["mobility", "warm_up", "posterior_chain", "hamstring_stretch", "hip_hinge", "resistance_band", "compound", "beginner_friendly", "low_spine_load", "activation"]
+}

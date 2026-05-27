@@ -1,0 +1,210 @@
+{
+  "id": "run",
+  "name": "Run",
+  "namePl": "Bieganie",
+  "aliases": ["running", "jogging", "outdoor running", "road running", "free running"],
+  "aliasesPl": ["bieg", "trucht", "jogging", "bieganie na świeżym powietrzu", "bieg ciągły"],
+
+  "description": "Classic locomotor cardio — alternating bilateral strides where one foot is always airborne (the 'flight phase' that distinguishes running from walking). Run is arguably the most fundamental human cardiovascular exercise: zero equipment beyond shoes, infinite scalability from 6 min/km jog to 3 min/km sprint, and the broadest endurance training history of any movement. Builds cardiovascular capacity (VO2max, lactate threshold, stroke volume), lower-body muscular endurance (quads, glutes, hamstrings, calves), bone density (impact loading), and mental resilience. Calorie burn ~10-15 kcal/min depending on pace and bodyweight. Unlike treadmill running, outdoor running adds variable terrain, wind, navigation and proprioceptive demand — closer to true athletic conditioning. The trade-off vs treadmill or stationary bike is joint impact: every stride lands with ~2.5-3× bodyweight on a single leg, so technique, footwear and progressive volume matter. Trains the stretch-shortening cycle (SSC) of the gastrocnemius-Achilles complex and the posterior chain coordination that transfers to sprinting, jumping and most field sports.",
+  "descriptionPl": "Klasyczne cardio lokomocyjne — naprzemienne obunożne kroki, w których jedna stopa zawsze znajduje się w powietrzu (faza lotu odróżniająca bieg od marszu). Bieganie to prawdopodobnie najbardziej fundamentalne ludzkie ćwiczenie wytrzymałościowe: zero sprzętu poza butami, nieskończona skalowalność od truchtu 6 min/km do sprintu 3 min/km i najszersza historia treningu wytrzymałościowego ze wszystkich ruchów. Buduje wydolność tlenową (VO2max, próg mleczanowy, objętość wyrzutową serca), wytrzymałość mięśniową dolnej części ciała (czworogłowe, pośladki, dwugłowe uda, łydki), gęstość kości (obciążenie impaktowe) i odporność psychiczną. Wydatek kaloryczny ~10-15 kcal/min zależnie od tempa i masy ciała. W przeciwieństwie do bieżni, bieganie w terenie dodaje zmienną nawierzchnię, wiatr, nawigację i wymagania proprioceptywne — bliżej prawdziwego treningu sportowego. Kosztem względem bieżni czy roweru stacjonarnego jest obciążenie stawów: każde lądowanie to ~2.5-3× masy ciała na jedną nogę, więc technika, obuwie i stopniowe zwiększanie objętości mają znaczenie. Trenuje cykl rozciągnięcie-skrócenie (SSC) kompleksu brzuchatego łydki i ścięgna Achillesa oraz koordynację tylnego łańcucha, która transferuje na sprint, skoki i większość sportów zespołowych.",
+
+  "instructions": [
+    "Załóż buty biegowe odpowiednie do nawierzchni (asfalt = amortyzowane drogowe, trail = trailowe z agresywnym bieżnikiem). Strój oddychający, w chłodniejsze dni warstwowo.",
+    "Rozgrzej się: 5-10 minut marszu + dynamiczne otwieranie bioder (kolano do klatki, wymachy nóg, krok kraba). Nie rozciągaj statycznie przed biegiem.",
+    "Zacznij truchtem 1-2 minuty, stopniowo dochodząc do docelowego tempa. Ciało potrzebuje 5-10 minut na pełne uruchomienie układu krążenia (rozgrzane mięśnie, stałe HR).",
+    "Sylwetka: lekkie pochylenie tułowia z kostek (nie z bioder), wzrok 10-20 m przed siebie, barki rozluźnione i nisko, dłonie luźne (nie zaciskaj pięści).",
+    "Lądowanie pod biodrem (nie przed nim) na śródstopiu lub całej stopie — nie 'sięgaj' nogą daleko do przodu (heel strike z wyprostowanym kolanem to hamulec i przeciążenie kolan).",
+    "Kadencja docelowa 170-180 kroków/min (75-90 na jedną nogę) — krótsze, częstsze kroki obniżają obciążenie stawów. Możesz mierzyć smartwatch'em.",
+    "Ramiona: zgięte w łokciach pod ~90°, swobodny ruch przód-tył wzdłuż tułowia (nie w poprzek!), kciuk lekko ku górze, dłoń w kierunku przeciwległego biodra na końcu zamachu.",
+    "Oddychaj rytmicznie — popularne wzorce: 3:3 (3 kroki wdech, 3 kroki wydech) przy spokojnym tempie, 2:2 przy szybszym, 2:1 przy progowym. Oddychaj nosem i ustami.",
+    "Wychłodzenie: ostatnie 5 minut zwolnij do truchtu, potem 5 minut marszu, na końcu lekkie rozciąganie statyczne (łydki, czworogłowe, dwugłowe, pośladki, biodra)."
+  ],
+  "instructionsPl": [
+    "Załóż buty biegowe odpowiednie do nawierzchni (asfalt = amortyzowane drogowe, trail = trailowe z agresywnym bieżnikiem). Strój oddychający, w chłodniejsze dni warstwowo.",
+    "Rozgrzej się: 5-10 minut marszu + dynamiczne otwieranie bioder (kolano do klatki, wymachy nóg, krok kraba). Nie rozciągaj statycznie przed biegiem.",
+    "Zacznij truchtem 1-2 minuty, stopniowo dochodząc do docelowego tempa. Ciało potrzebuje 5-10 minut na pełne uruchomienie układu krążenia (rozgrzane mięśnie, stałe HR).",
+    "Sylwetka: lekkie pochylenie tułowia z kostek (nie z bioder), wzrok 10-20 m przed siebie, barki rozluźnione i nisko, dłonie luźne (nie zaciskaj pięści).",
+    "Lądowanie pod biodrem (nie przed nim) na śródstopiu lub całej stopie — nie 'sięgaj' nogą daleko do przodu (heel strike z wyprostowanym kolanem to hamulec i przeciążenie kolan).",
+    "Kadencja docelowa 170-180 kroków/min (75-90 na jedną nogę) — krótsze, częstsze kroki obniżają obciążenie stawów. Możesz mierzyć smartwatch'em.",
+    "Ramiona: zgięte w łokciach pod ~90°, swobodny ruch przód-tył wzdłuż tułowia (nie w poprzek!), kciuk lekko ku górze, dłoń w kierunku przeciwległego biodra na końcu zamachu.",
+    "Oddychaj rytmicznie — popularne wzorce: 3:3 (3 kroki wdech, 3 kroki wydech) przy spokojnym tempie, 2:2 przy szybszym, 2:1 przy progowym. Oddychaj nosem i ustami.",
+    "Wychłodzenie: ostatnie 5 minut zwolnij do truchtu, potem 5 minut marszu, na końcu lekkie rozciąganie statyczne (łydki, czworogłowe, dwugłowe, pośladki, biodra)."
+  ],
+
+  "classification": {
+    "movement_pattern": "locomotion",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["cardiovascular", "quadriceps", "glutes", "hamstrings", "calves"],
+    "secondary": ["hip_flexors", "core"],
+    "stabilizers": ["anterior_tibialis", "intrinsic_foot_muscles", "obliques", "lower_back", "shoulders"]
+  },
+
+  "muscle_intensity": {
+    "cardiovascular": "P10",
+    "quadriceps": "P8",
+    "glutes": "P8",
+    "hamstrings": "P8",
+    "calves": "P9",
+    "hip_flexors": "S7",
+    "core": "S6",
+    "anterior_tibialis": "T5",
+    "intrinsic_foot_muscles": "T6",
+    "obliques": "T4",
+    "lower_back": "T4",
+    "shoulders": "T3"
+  },
+
+  "equipment": {
+    "required": [],
+    "optional": ["running_shoes", "smartwatch", "heart_rate_monitor", "running_belt", "headphones"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["walking", "march-in-place"],
+    "progression_to": ["interval-run", "hill-run", "tempo-run", "long-run", "fartlek-run", "sprint"],
+    "alternatives": ["treadmill", "stationary-bike", "elliptical", "rowing-machine", "jump-rope", "swimming"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Buty dopasowane do nawierzchni i Twojego pronowania — sklep biegowy zrobi analizę chodu (przepronacja, supinacja, neutralny)",
+      "Rozgrzewka 5-10 min: marsz + dynamiczne otwieranie bioder + 4-6 wymachów nóg — NIE statyczne rozciąganie przed biegiem",
+      "Wybierz trasę pod cel: równa i twarda (asfalt) = tempo i intervały; miękka (park, trail) = długie i regeneracyjne biegi",
+      "Pierwsza 1-2 min to trucht — pozwól tętnu i mięśniom się obudzić, nie wchodź z marszu od razu w docelowe tempo",
+      "Sprawdź pogodę i ubierz się 'na 10 stopni cieplej' — w trakcie biegu rozgrzejesz się o ~10°C względem startu"
+    ],
+    "setup_cues_pl": [
+      "Buty dopasowane do nawierzchni i Twojego pronowania — sklep biegowy zrobi analizę chodu (przepronacja, supinacja, neutralny)",
+      "Rozgrzewka 5-10 min: marsz + dynamiczne otwieranie bioder + 4-6 wymachów nóg — NIE statyczne rozciąganie przed biegiem",
+      "Wybierz trasę pod cel: równa i twarda (asfalt) = tempo i intervały; miękka (park, trail) = długie i regeneracyjne biegi",
+      "Pierwsza 1-2 min to trucht — pozwól tętnu i mięśniom się obudzić, nie wchodź z marszu od razu w docelowe tempo",
+      "Sprawdź pogodę i ubierz się 'na 10 stopni cieplej' — w trakcie biegu rozgrzejesz się o ~10°C względem startu"
+    ],
+    "execution_cues": [
+      "Lądowanie POD BIODREM, nie przed nim — wyobraź sobie, że stopa 'spada' pod ciałem, nie 'wyprzedza' tułów",
+      "Krótkie, szybkie kroki — kadencja 170-180/min. Lepiej zwiększyć liczbę kroków niż wydłużyć krok",
+      "Sylwetka pochylona z KOSTEK (nie z bioder) — całe ciało pod kątem ~3-5° do przodu, biodro neutralne, brzuch lekko napięty",
+      "Ramiona pracują PRZÓD-TYŁ wzdłuż tułowia, nie w poprzek. Łokieć ~90°, dłoń luźna 'jak trzymasz chipsa'",
+      "Wzrok 10-20 m PRZED SIEBIE, nie pod nogi — głowa neutralna, szyja przedłużeniem kręgosłupa",
+      "Oddychaj nosem-ustami w rytmie kroków (3:3 spokojnie, 2:2 mocniej) — jeśli nie możesz mówić pełnymi zdaniami, jesteś za szybko jak na biegi regeneracyjne"
+    ],
+    "execution_cues_pl": [
+      "Lądowanie POD BIODREM, nie przed nim — wyobraź sobie, że stopa 'spada' pod ciałem, nie 'wyprzedza' tułów",
+      "Krótkie, szybkie kroki — kadencja 170-180/min. Lepiej zwiększyć liczbę kroków niż wydłużyć krok",
+      "Sylwetka pochylona z KOSTEK (nie z bioder) — całe ciało pod kątem ~3-5° do przodu, biodro neutralne, brzuch lekko napięty",
+      "Ramiona pracują PRZÓD-TYŁ wzdłuż tułowia, nie w poprzek. Łokieć ~90°, dłoń luźna 'jak trzymasz chipsa'",
+      "Wzrok 10-20 m PRZED SIEBIE, nie pod nogi — głowa neutralna, szyja przedłużeniem kręgosłupa",
+      "Oddychaj nosem-ustami w rytmie kroków (3:3 spokojnie, 2:2 mocniej) — jeśli nie możesz mówić pełnymi zdaniami, jesteś za szybko jak na biegi regeneracyjne"
+    ],
+    "common_faults": [
+      {
+        "fault": "Overstriding — lądowanie z piętą daleko przed biodrem, wyprostowane kolano",
+        "faultPl": "Nadkrok — lądowanie z piętą daleko przed biodrem, wyprostowane kolano",
+        "cause": "Próba 'sięgania' nogą dla wydłużenia kroku, niska kadencja (<160/min), brak techniki — generuje pionową siłę hamującą i przeciąża kolana oraz piszczele (shin splints, runner's knee)",
+        "causePl": "Próba 'sięgania' nogą dla wydłużenia kroku, niska kadencja (<160/min), brak techniki — generuje pionową siłę hamującą i przeciąża kolana oraz piszczele (shin splints, runner's knee)",
+        "cue": "Zwiększ kadencję o 5-10% (mierz smartwatchem) — automatycznie skróci krok i przesunie lądowanie pod biodro. Wyobraź sobie, że biegniesz po gorących węglach: krótkie, szybkie kontakty.",
+        "cuePl": "Zwiększ kadencję o 5-10% (mierz smartwatchem) — automatycznie skróci krok i przesunie lądowanie pod biodro. Wyobraź sobie, że biegniesz po gorących węglach: krótkie, szybkie kontakty."
+      },
+      {
+        "fault": "Rotacja ramion w poprzek tułowia (zamiast przód-tył)",
+        "faultPl": "Rotacja ramion w poprzek tułowia (zamiast przód-tył)",
+        "cause": "Spięte barki, słaba stabilizacja tułowia, kompensacja słabego napędu z bioder — ramiona 'krzyżują się' przed klatką piersiową i wymuszają rotację miednicy, marnując energię",
+        "causePl": "Spięte barki, słaba stabilizacja tułowia, kompensacja słabego napędu z bioder — ramiona 'krzyżują się' przed klatką piersiową i wymuszają rotację miednicy, marnując energię",
+        "cue": "Łokieć ~90°, ramię pracuje JAK WAHADŁO przód-tył wzdłuż tułowia. Wyobraź sobie, że biegniesz w wąskim korytarzu — ramiona nie mogą wychodzić poza linię barków. Barki nisko i luźne, nie przy uszach.",
+        "cuePl": "Łokieć ~90°, ramię pracuje JAK WAHADŁO przód-tył wzdłuż tułowia. Wyobraź sobie, że biegniesz w wąskim korytarzu — ramiona nie mogą wychodzić poza linię barków. Barki nisko i luźne, nie przy uszach."
+      },
+      {
+        "fault": "Pochylenie tułowia z bioder (zgarbiona sylwetka)",
+        "faultPl": "Pochylenie tułowia z bioder (zgarbiona sylwetka)",
+        "cause": "Zmęczenie, słaby core, długi czas siedzący w ciągu dnia (skrócone biodrowo-lędźwiowe) — głowa wisi w dół, biodra 'siadają', stopy lądują przed ciałem",
+        "causePl": "Zmęczenie, słaby core, długi czas siedzący w ciągu dnia (skrócone biodrowo-lędźwiowe) — głowa wisi w dół, biodra 'siadają', stopy lądują przed ciałem",
+        "cue": "Pochyl się Z KOSTEK, nie z bioder — całe ciało jak deska pod kątem 3-5° do przodu. Brzuch lekko napięty, klatka otwarta, biodra w przód. Mantra: 'biegnę dumnie, nie zwiędły'.",
+        "cuePl": "Pochyl się Z KOSTEK, nie z bioder — całe ciało jak deska pod kątem 3-5° do przodu. Brzuch lekko napięty, klatka otwarta, biodra w przód. Mantra: 'biegnę dumnie, nie zwiędły'."
+      },
+      {
+        "fault": "Za szybkie tempo biegu regeneracyjnego (junk miles)",
+        "faultPl": "Za szybkie tempo biegu regeneracyjnego (śmieciowe kilometry)",
+        "cause": "Ego, brak monitora tętna, niezrozumienie celu treningu — biegi w 'szarej strefie' (75-85% HRmax) nie budują wydolności tlenowej ani nie regenerują, tylko zmęczają",
+        "causePl": "Ego, brak monitora tętna, niezrozumienie celu treningu — biegi w 'szarej strefie' (75-85% HRmax) nie budują wydolności tlenowej ani nie regenerują, tylko zmęczają",
+        "cue": "Test rozmowy: na biegu regeneracyjnym (Z2, ~65-75% HRmax) musisz móc mówić CAŁYMI ZDANIAMI bez zadyszki. Jeśli sapiesz po 3 słowach — zwolnij. 80% objętości tygodniowej = wolno; 20% = szybko/intervały.",
+        "cuePl": "Test rozmowy: na biegu regeneracyjnym (Z2, ~65-75% HRmax) musisz móc mówić CAŁYMI ZDANIAMI bez zadyszki. Jeśli sapiesz po 3 słowach — zwolnij. 80% objętości tygodniowej = wolno; 20% = szybko/intervały."
+      },
+      {
+        "fault": "Zbyt szybkie zwiększanie objętości (>10%/tydz)",
+        "faultPl": "Zbyt szybkie zwiększanie objętości (>10%/tydz)",
+        "cause": "Entuzjazm początkujących, zewnętrzna motywacja (plan maratońka z internetu), brak progresji — tkanki łączne (ścięgna, kości, więzadła) potrzebują tygodni-miesięcy na adaptację, szybciej niż mięśnie generując kontuzje przeciążeniowe",
+        "causePl": "Entuzjazm początkujących, zewnętrzna motywacja (plan maratońka z internetu), brak progresji — tkanki łączne (ścięgna, kości, więzadła) potrzebują tygodni-miesięcy na adaptację, szybciej niż mięśnie generując kontuzje przeciążeniowe",
+        "cue": "Reguła 10%: każdy tydzień max 10% więcej km lub minut niż poprzedni. Co 4. tydzień = deload (-30%). Pierwsze 3 miesiące biegania to budowanie BAZY (Z2 only) — szybkość przyjdzie później.",
+        "cuePl": "Reguła 10%: każdy tydzień max 10% więcej km lub minut niż poprzedni. Co 4. tydzień = deload (-30%). Pierwsze 3 miesiące biegania to budowanie BAZY (Z2 only) — szybkość przyjdzie później."
+      }
+    ],
+    "breathing": "Oddychaj rytmicznie w tempie kroków: wzorce 3:3 (3 kroki wdech, 3 wydech) przy biegu regeneracyjnym Z2, 2:2 przy tempo (Z3-Z4), 2:1 lub 1:1 przy progowym/intervałach (Z4-Z5). Oddychaj nosem-ustami jednocześnie — czyste oddychanie samym nosem jest niewystarczające przy intensywnościach >60% VO2max. Głęboko brzuchem, nie klatką piersiową. NIGDY nie wstrzymuj oddechu.",
+    "breathingPl": "Oddychaj rytmicznie w tempie kroków: wzorce 3:3 (3 kroki wdech, 3 wydech) przy biegu regeneracyjnym Z2, 2:2 przy tempo (Z3-Z4), 2:1 lub 1:1 przy progowym/intervałach (Z4-Z5). Oddychaj nosem-ustami jednocześnie — czyste oddychanie samym nosem jest niewystarczające przy intensywnościach >60% VO2max. Głęboko brzuchem, nie klatką piersiową. NIGDY nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_runners_knee_or_patellar_tendinopathy",
+      "severity": "modify",
+      "modification": "Bieganie generuje ~2.5-3× masy ciała na kolano przy każdym lądowaniu. Przy aktywnym bólu kolan zamień bieg na orbitrek lub rower (zero impactu) na 4-8 tygodni. Po powrocie: krótkie biegi (15-20 min) na miękkiej nawierzchni (trawa, tartanowa bieżnia), wysoka kadencja (180/min), zero zbiegów ani sprintów. Wzmacniaj wokół kolana: squad, hip thrust, single-leg deadlift.",
+      "modificationPl": "Bieganie generuje ~2.5-3× masy ciała na kolano przy każdym lądowaniu. Przy aktywnym bólu kolan zamień bieg na orbitrek lub rower (zero impactu) na 4-8 tygodni. Po powrocie: krótkie biegi (15-20 min) na miękkiej nawierzchni (trawa, tartanowa bieżnia), wysoka kadencja (180/min), zero zbiegów ani sprintów. Wzmacniaj wokół kolana: squad, hip thrust, single-leg deadlift.",
+      "alternative": "elliptical"
+    },
+    {
+      "condition": "shin_splints_or_stress_fracture",
+      "severity": "avoid",
+      "modification": "Aktywne shin splints (zapalenie okostnej piszczeli) lub złamania zmęczeniowe to bezwzględne przeciwwskazanie do biegania — kontynuacja przekształca shin splints w pełne złamanie. Pełna pauza 4-12 tygodni, RTG/MR u ortopedy, w zamian rower lub pływanie. Powrót stopniowy: walk-run protocol (1 min bieg / 2 min marsz, progresja co tydzień).",
+      "modificationPl": "Aktywne shin splints (zapalenie okostnej piszczeli) lub złamania zmęczeniowe to bezwzględne przeciwwskazanie do biegania — kontynuacja przekształca shin splints w pełne złamanie. Pełna pauza 4-12 tygodni, RTG/MR u ortopedy, w zamian rower lub pływanie. Powrót stopniowy: walk-run protocol (1 min bieg / 2 min marsz, progresja co tydzień).",
+      "alternative": "stationary-bike"
+    },
+    {
+      "condition": "achilles_tendinopathy_or_plantar_fasciitis",
+      "severity": "modify",
+      "modification": "Bieganie obciąża ścięgno Achillesa i rozcięgno podeszwowe ekstremalnymi ekscentrykami. Przy aktywnej tendinopatii: pauza 2-4 tyg, równolegle eccentric heel drops (3×15 dziennie) i rolowanie podeszwy. Powrót: trucht 10-15 min na płaskim, miękkim podłożu, w butach z większym dropem (8-12 mm). Unikaj sprintów i zbiegów do pełnego ustąpienia bólu.",
+      "modificationPl": "Bieganie obciąża ścięgno Achillesa i rozcięgno podeszwowe ekstremalnymi ekscentrykami. Przy aktywnej tendinopatii: pauza 2-4 tyg, równolegle eccentric heel drops (3×15 dziennie) i rolowanie podeszwy. Powrót: trucht 10-15 min na płaskim, miękkim podłożu, w butach z większym dropem (8-12 mm). Unikaj sprintów i zbiegów do pełnego ustąpienia bólu.",
+      "alternative": "stationary-bike"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiac_disease",
+      "severity": "avoid",
+      "modification": "Bieganie szybko podbija tętno do 75-95% HRmax. Bez konsultacji kardiologicznej i kontroli ciśnienia (zwłaszcza po 40. roku życia lub przy niekontrolowanym nadciśnieniu) — NIE biegaj. Progresja przez marsz (Z1), potem szybki marsz (Z2 na pulsometrze), potem walk-run protocol pod nadzorem. Test wysiłkowy EKG zalecany przed startem treningu biegowego.",
+      "modificationPl": "Bieganie szybko podbija tętno do 75-95% HRmax. Bez konsultacji kardiologicznej i kontroli ciśnienia (zwłaszcza po 40. roku życia lub przy niekontrolowanym nadciśnieniu) — NIE biegaj. Progresja przez marsz (Z1), potem szybki marsz (Z2 na pulsometrze), potem walk-run protocol pod nadzorem. Test wysiłkowy EKG zalecany przed startem treningu biegowego.",
+      "alternative": "march-in-place"
+    }
+  ],
+
+  "typical_sets_reps": "Bieg regeneracyjny Z2: 30-60 min ciągłego biegu, tempo 'rozmowne' | Long run: 60-180 min, raz w tygodniu, 20-30% objętości tygodniowej | Tempo run Z3-Z4: 20-40 min w 'komfortowym dyskomforcie', tempo półmaratońskie | Interwały: 6-12×400 m lub 4-6×1000 m z 90-180 s przerwy aktywnej | Fartlek: 30-45 min biegu ze zmiennymi przyspieszeniami (np. 1-2-3-2-1 min mocno/lekko) | Bieg kontrolny: 5/10 km lub półmaraton co 6-8 tygodni",
+  "calories_per_kg_per_hour": 10.0,
+
+  "media": {
+    "primary": "run.gif",
+    "frames_extracted": [
+      "frames/run/frame_0_start.png",
+      "frames/run/frame_1_early.png",
+      "frames/run/frame_2_mid.png",
+      "frames/run/frame_3_late.png",
+      "frames/run/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/run"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pełnej fazie biegowej widziana z lekkim ujęciem trzy-czwarte z przodu — prawa noga w fazie wyprostu pod biodrem (właśnie odepchnęła się od podłoża, calf mocno czerwony), lewa noga uniesiona w przód z mocno zgiętym kolanem (hip flexion). Tułów lekko pochylony do przodu z kostek, ramię prawe odprowadzone do tyłu z zgiętym łokciem, lewe ramię w przód — typowy contralateral arm swing. Podświetlone: quadriceps lewej nogi (mocno czerwony — uniesienie kolana = hip flexion z czworogłowymi i biodrowo-lędźwiowym), hamstrings prawej (knee flexion + hip extension), calves (P10 — odbicie i lądowanie), obliques boczne (rotacja tułowia w fazie kroku), forearms (uchwyt + napięcie ramion). Frame 2 (mid): podobna pozycja, faza środkowa kroku — wszystkie podświetlenia wzmocnione, dodatkowo widać prace pleców (rotation control). Frame 4 (end): zamknięcie cyklu kroku — postać w pozycji bliskiej startowej, druga noga przejmuje napęd. Przez całą sekwencję podświetlenia jasno wskazują: PRIMARY — cardiovascular (P10 — globalny układ krążenia), quadriceps + glutes + hamstrings + calves (P8-P9 — napęd lokomocyjny). SECONDARY — hip_flexors (S7 — uniesienie kolana), core (S6 — stabilizacja antyrotacyjna). STABILIZERS — anterior_tibialis (dorsiflexja przy lądowaniu), foot intrinsics, obliques, lower back (przeciwdziałanie rotacji miednicy w fazie lotu), shoulders (utrzymanie ramion w pozycji). movement_pattern: locomotion — to definicja lokomocyjnego cardio bilateral alternating, z fazą lotu (oba pasują do running vs walking). category: cardio. force: both — odbicie (push przez triple extension biodro-kolano-kostka) + przyciągnięcie nogi w fazie swing (pull przez hip flexion i hamstrings). plane: sagittal — ruch dominujący w płaszczyźnie strzałkowej (przód-tył), z drobną asymetrią w transverse (anti-rotation). bilateral alternating laterality. Bodyweight — brak required equipment, opcjonalne running_shoes (silnie zalecane) i smartwatch. Difficulty 3 — niski próg techniczny (każdy umiejący chodzić może zacząć trucht), ale wysokie ryzyko kontuzji przy złej technice/progresji co podnosi 'safety floor'. Wszystkie pola PL napisane od zera w polskim standardzie sportów wytrzymałościowych (terminologia: 'kadencja', 'overstriding/nadkrok', 'Z2', 'fartlek', 'walk-run protocol', 'shin splints' — brak slawistycznych kalek z angielskiego).",
+
+  "tags": ["bodyweight", "cardio", "endurance", "running", "outdoor", "locomotion", "aerobic", "vo2max", "lactate_threshold", "fat_loss", "weight_loss", "marathon", "5k", "10k", "half_marathon", "no_gym", "outdoor_workout", "quadriceps", "glutes", "hamstrings", "calves"]
+}

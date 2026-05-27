@@ -1,0 +1,204 @@
+{
+  "id": "lever-seated-reverse-fly",
+  "name": "Lever Seated Reverse Fly (Pec Deck Reverse)",
+  "namePl": "Odwrotne rozpiętki na maszynie siedząc",
+  "aliases": ["reverse pec deck", "machine rear delt fly", "seated reverse pec fly", "rear delt machine", "reverse butterfly machine"],
+  "aliasesPl": ["reverse pec deck", "rozpiętki odwrotne na maszynie", "tylne aktony na maszynie pec deck", "butterfly odwrotny", "maszyna na tylne aktony"],
+
+  "description": "Machine-based isolation exercise for the posterior deltoids performed seated facing the pad of a reverse pec deck (butterfly) machine. The chest is pressed against the pad and the hands grip the handles, then the arms are swept outward and backward in a horizontal abduction movement. The fixed path of the machine eliminates the need for stabilization, allowing maximum tension and isolation on the rear delts and mid-back — making this widely regarded as the single safest and most effective rear delt exercise for beginners and intermediate lifters alike.",
+  "descriptionPl": "Izolowane ćwiczenie maszynowe na tylne aktony barków wykonywane w pozycji siedzącej, twarzą do oparcia maszyny pec deck (butterfly) w wersji odwrotnej. Klatka piersiowa jest oparta o poduszkę, dłonie chwytają uchwyty, a ramiona są rozsuwane na boki i do tyłu w ruchu odwiedzenia poziomego. Stała trajektoria maszyny eliminuje potrzebę stabilizacji, pozwalając na maksymalne napięcie i izolację tylnych aktonów oraz mięśni środka pleców — czyni to ćwiczenie powszechnie uznawanym za jedno z najbezpieczniejszych i najskuteczniejszych dla tylnych aktonów, zarówno dla początkujących, jak i średniozaawansowanych.",
+
+  "instructions": [
+    "Set the seat height so the handles are at shoulder level when seated. The chest pad should make full contact with your sternum.",
+    "Adjust the starting position of the arms (if the machine allows) so the handles begin together in front of you with arms nearly straight.",
+    "Sit down facing the pad with chest pressed firmly against it. Feet flat on the floor, hips and knees at roughly 90 degrees.",
+    "Grip the handles with a neutral grip (palms facing each other) or pronated grip (palms down) depending on machine design. Maintain a slight, fixed bend in the elbows (~15-20 degrees).",
+    "Retract and depress the shoulder blades. Brace the core and keep the chest firmly against the pad throughout the set.",
+    "Sweep the arms outward and backward in a wide horizontal arc, leading with the elbows, until the upper arms align with (or slightly behind) the torso.",
+    "Pause briefly at the peak contraction and squeeze the rear delts and mid-back. Do not let the chest lift off the pad.",
+    "Return the handles forward along the same arc under control over 2-3 seconds. Stop just before the weight stack touches down to maintain tension.",
+    "Avoid jerking, using momentum, or letting the shoulders shrug toward the ears."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska tak, aby uchwyty znajdowały się na poziomie barków w pozycji siedzącej. Poduszka piersiowa powinna w pełni stykać się z mostkiem.",
+    "Wyreguluj pozycję startową ramion (jeśli maszyna na to pozwala) tak, by uchwyty zaczynały razem z przodu z ramionami prawie wyprostowanymi.",
+    "Usiądź twarzą do oparcia, mocno dociśnij klatkę piersiową do poduszki. Stopy płasko na podłodze, biodra i kolana mniej więcej pod kątem 90 stopni.",
+    "Złap uchwyty chwytem neutralnym (dłonie zwrócone do siebie) lub nachwytem (dłonie w dół), zależnie od konstrukcji maszyny. Utrzymuj lekkie, stałe ugięcie łokci (~15-20 stopni).",
+    "Ściągnij łopatki w tył i w dół. Napnij brzuch i utrzymuj klatkę mocno dociśniętą do poduszki przez całą serię.",
+    "Rozsuń ramiona na boki i do tyłu szerokim, poziomym łukiem, prowadząc ruch łokciami, aż ramiona ponad łokciem znajdą się w linii (lub lekko za) tułowiem.",
+    "Zatrzymaj się na chwilę w maksymalnym skurczu i mocno spinaj tylne aktony oraz mięśnie środka pleców. Nie pozwól, by klatka oderwała się od poduszki.",
+    "Wracaj uchwyty do przodu tą samą drogą w sposób kontrolowany przez 2-3 sekundy. Zatrzymaj tuż przed zetknięciem się stosu ciężarów, by zachować napięcie.",
+    "Unikaj szarpania, używania rozpędu i wciągania barków w stronę uszu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids"],
+    "secondary": ["rhomboids", "trapezius_middle", "infraspinatus"],
+    "stabilizers": ["teres_minor", "trapezius_lower", "core", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P10",
+    "rhomboids": "S7",
+    "trapezius_middle": "S7",
+    "infraspinatus": "S5",
+    "teres_minor": "T4",
+    "trapezius_lower": "T3",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["pec_deck_machine"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["cable-rear-delt-fly", "dumbbell-lying-rear-lateral-raise", "face-pull"],
+    "alternatives": ["cable-rear-delt-fly", "dumbbell-lying-rear-lateral-raise", "face-pull", "bent-over-dumbbell-reverse-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height set so handles are at shoulder level",
+      "Chest pressed firmly against the pad — no air gap",
+      "Feet flat on the floor, knees at ~90°",
+      "Small fixed bend in elbows (~15-20°)",
+      "Shoulder blades pulled back and down before first rep"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska tak, by uchwyty były na poziomie barków",
+      "Klatka piersiowa mocno dociśnięta do poduszki — bez prześwitu",
+      "Stopy płasko na podłodze, kolana pod kątem ~90°",
+      "Lekkie, stałe ugięcie łokci (~15-20°)",
+      "Łopatki ściągnięte w tył i w dół przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Lead with the elbows, not the hands",
+      "Sweep wide — think 'open the door with your shoulder blades'",
+      "Stop when arms align with torso, not behind it",
+      "Squeeze rear delts for 1 second at the peak",
+      "Control the negative — 2-3 seconds back"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami, nie dłońmi",
+      "Rozsuwaj szeroko — pomyśl 'otwórz drzwi łopatkami'",
+      "Zatrzymaj, gdy ramiona są w linii z tułowiem, nie za nim",
+      "Spinaj tylne aktony przez 1 sekundę w maksymalnym skurczu",
+      "Kontroluj fazę negatywną — 2-3 sekundy powrotu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Chest lifting off the pad",
+        "faultPl": "Odrywanie klatki piersiowej od poduszki",
+        "cause": "Load too heavy, or unconsciously using the lower back and torso swing to move the weight",
+        "causePl": "Zbyt duży ciężar, lub nieświadome wykorzystywanie dolnego odcinka pleców i bujania tułowia, by poruszyć ciężar",
+        "cue": "Lower the weight. Stay glued to the pad — chest contact is the strict rule. If you lose contact, the rep doesn't count.",
+        "cuePl": "Zmniejsz ciężar. Pozostań przyklejony do poduszki — kontakt klatki z poduszką to żelazna zasada. Jeśli tracisz kontakt, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Shrugging — upper traps taking over",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują ruch",
+        "cause": "Weak rear delts, load too heavy, or losing scapular depression during the set",
+        "causePl": "Słabe tylne aktony, zbyt duży ciężar, lub utrata depresji łopatek w trakcie serii",
+        "cue": "Actively press shoulders down and away from the ears the entire set. Lower the load if shrugging persists.",
+        "cuePl": "Aktywnie wciskaj barki w dół i od uszu przez całą serię. Zmniejsz ciężar, jeśli wciąganie barków utrzymuje się."
+      },
+      {
+        "fault": "Bending the elbows progressively (cheating with biceps/back)",
+        "faultPl": "Stopniowe uginanie łokci (oszukiwanie bicepsami/plecami)",
+        "cause": "Load too heavy — lifter shortens the lever to move the weight, turning a fly into a row",
+        "causePl": "Zbyt duży ciężar — ćwiczący skraca dźwignię, by poruszyć ciężar, zamieniając rozpiętki w wiosłowanie",
+        "cue": "Lock the elbow angle on rep 1 and keep it identical on every rep. If you can't, the weight is too heavy.",
+        "cuePl": "Zablokuj kąt łokcia w 1 powtórzeniu i utrzymaj go identycznie w każdym kolejnym. Jeśli nie potrafisz, ciężar jest zbyt duży."
+      },
+      {
+        "fault": "Overshooting — pulling arms behind the torso",
+        "faultPl": "Przeciąganie ramion za tułów",
+        "cause": "Trying to feel more stretch or contraction, but actually transferring load to rhomboids and stressing the AC joint",
+        "causePl": "Próba zwiększenia rozciągnięcia lub skurczu, ale w rzeczywistości przeniesienie obciążenia na romboidy i stres na staw barkowo-obojczykowy",
+        "cue": "Stop when upper arms align with the torso. Beyond that the rear delt no longer drives the movement.",
+        "cuePl": "Zatrzymaj, gdy ramiona ponad łokciem są w linii z tułowiem. Powyżej tylny akton przestaje napędzać ruch."
+      },
+      {
+        "fault": "Bouncing the stack at the bottom",
+        "faultPl": "Obijanie stosu ciężarów na dole",
+        "cause": "Letting the handles return too fast or all the way to rest — uses momentum instead of muscle",
+        "causePl": "Pozwalanie uchwytom wracać zbyt szybko lub w pełni do oparcia — używa rozpędu zamiast mięśni",
+        "cue": "Stop the negative just before the stack touches. Maintain tension. Reset only between sets, not reps.",
+        "cuePl": "Zatrzymaj fazę negatywną tuż przed zetknięciem się stosu. Utrzymuj napięcie. Resetuj tylko między seriami, nie między powtórzeniami."
+      }
+    ],
+    "breathing": "Exhale on the way out (concentric) as the arms sweep back. Inhale on the way in (eccentric) as the handles return forward. Keep a light brace throughout.",
+    "breathingPl": "Wydech podczas rozsuwania ramion (faza koncentryczna). Wdech podczas powrotu uchwytów do przodu (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez cały czas."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "The fixed machine path is generally well tolerated, but reduce ROM by 15-20% and use a neutral grip if available. Stop range short of any pinching sensation.",
+      "modificationPl": "Stała trajektoria maszyny jest zwykle dobrze tolerowana, ale zmniejsz zakres ruchu o 15-20% i stosuj chwyt neutralny, jeśli dostępny. Zatrzymuj zakres przed jakimkolwiek uczuciem szczypania.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Reverse pec deck is one of the safer rear delt options because the machine controls the path. Use light loads (40-60% of normal) and partial ROM during rehab phases. Avoid in acute pain.",
+      "modificationPl": "Reverse pec deck to jedno z bezpieczniejszych ćwiczeń na tylne aktony, ponieważ maszyna kontroluje trajektorię. Używaj lekkich ciężarów (40-60% normalnego) i niepełnego zakresu ruchu w fazach rehabilitacji. Unikaj w fazie ostrego bólu.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "Do not pull arms behind the torso — keep ROM to torso alignment only. Avoid overshooting at the peak which can compress the AC joint.",
+      "modificationPl": "Nie przeciągaj ramion za tułów — utrzymuj zakres ruchu tylko do linii tułowia. Unikaj przeciągania w maksymalnym skurczu, co może uciskać staw barkowo-obojczykowy.",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "thoracic_spine_or_sternum_pain",
+      "severity": "modify",
+      "modification": "Direct chest pressure against the pad can aggravate sternum/thoracic conditions (e.g. costochondritis). Pad the chest with a folded towel, or switch to a non-chest-supported variant.",
+      "modificationPl": "Bezpośredni nacisk klatki na poduszkę może nasilać dolegliwości mostka/kręgosłupa piersiowego (np. zapalenie chrząstek żebrowych). Podłóż złożony ręcznik pod klatkę lub przejdź na wariant bez podparcia klatki.",
+      "alternative": "cable-rear-delt-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/standard) | 4-5x15-25 (rear delt specialization/pump) | 3x10-12 (strength-focus, rare)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "lever-seated-reverse-fly.gif",
+    "frames_extracted": [
+      "frames/lever-seated-reverse-fly/frame_0_start.png",
+      "frames/lever-seated-reverse-fly/frame_1_early.png",
+      "frames/lever-seated-reverse-fly/frame_2_mid.png",
+      "frames/lever-seated-reverse-fly/frame_3_late.png",
+      "frames/lever-seated-reverse-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/lever-seated-reverse-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi twarzą do maszyny pec deck z klatką dociśniętą do poduszki, ramiona wyciągnięte przed siebie chwytem do przodu, tylne aktony i górna część pleców podświetlone na czerwono. Frame 2 (mid): uchwyty rozsunięte szeroko na boki, ramiona ponad łokciami niemal w linii z tułowiem, łokcie prowadzą ruch, klatka cały czas dociśnięta do poduszki. Frame 4: powrót do pozycji wyjściowej. Ruch w płaszczyźnie poprzecznej (transverse — horizontal abduction), klasyczna izolacja tylnych aktonów typu reverse fly z prowadnicą maszyny. Bezpieczna trajektoria, brak rotacji, brak bujania. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "isolation", "machine", "upper_body", "chest_supported", "hypertrophy", "beginner_friendly", "rear_delt_specialization"]
+}

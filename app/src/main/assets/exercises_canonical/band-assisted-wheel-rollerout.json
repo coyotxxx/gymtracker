@@ -1,0 +1,202 @@
+{
+  "id": "band-assisted-wheel-rollerout",
+  "name": "Band-Assisted Ab Wheel Rollout",
+  "namePl": "Ab wheel rollout z asystą gumy",
+  "aliases": ["assisted ab wheel rollout", "banded ab wheel rollout", "band-assisted wheel rollout", "resistance band ab wheel rollout"],
+  "aliasesPl": ["rollout z kółkiem na brzuch z asystą gumy", "wykrok rolką z gumą", "ab roller z gumą oporową", "rolka brzuszna z taśmą oporową", "wheel rollout z asystą"],
+
+  "description": "Regression of the full ab wheel rollout using a resistance band anchored in front of the athlete (attached to the wheel or around the torso) to assist the return phase from the bottom position. The band stores energy as the wheel rolls forward and releases it on the way back, reducing the load required from the rectus abdominis at the most challenging point (deep stretch / full extension). Excellent stepping stone between knee plank progressions and an unassisted ab wheel rollout. Trains anti-extension core strength, lat engagement and shoulder stability in the stretched overhead position.",
+  "descriptionPl": "Regresja pełnego rollout z kółkiem na brzuch — z gumą oporową zaczepioną przed atletą (do koła lub wokół tułowia), która pomaga w powrocie z dolnej pozycji. Guma magazynuje energię, gdy koło toczy się do przodu, i oddaje ją podczas powrotu, zmniejszając obciążenie mięśnia prostego brzucha w najtrudniejszym punkcie (pełny stretch / maksymalne wyciągnięcie). Świetny stopień pośredni między progresjami w klęku a pełnym, nieasystowanym ab wheel rollout. Trenuje siłę anty-ekstensji core, zaangażowanie najszerszych grzbietu i stabilność barków w pozycji nadgłowowej.",
+
+  "instructions": [
+    "Anchor a resistance band to a low, sturdy point in front of you (rack base, door anchor near the floor) and attach the other end to the handle of the ab wheel — or loop it around your torso so it pulls you backward.",
+    "Kneel on a mat with the ab wheel on the floor directly under your shoulders. Grip the handles with a neutral grip, arms vertical, hips stacked over knees.",
+    "Brace your core hard — ribs down, glutes squeezed, pelvis posteriorly tucked so the lower back does not arch.",
+    "Inhale, then slowly roll the wheel forward by extending the shoulders and hips at the same rate. Keep the spine neutral as the body lowers toward the floor.",
+    "Roll out as far as you can control without losing neutral spine — ideally until the torso is nearly parallel to the floor and arms are fully overhead.",
+    "Pause briefly in the stretched bottom position. Feel the band pulling you back.",
+    "Exhale and pull the wheel back toward your knees by contracting the abs and lats — use the band's assistance to help bridge the hardest portion of the return.",
+    "Return to the start position with arms vertical over the wheel and reset bracing before the next rep."
+  ],
+  "instructionsPl": [
+    "Zaczep gumę oporową o niskie, stabilne mocowanie przed sobą (podstawa klatki, kotwica drzwiowa przy podłodze) i przymocuj drugi koniec do uchwytu kółka — lub przełóż ją wokół tułowia tak, by ciągnęła cię do tyłu.",
+    "Klęknij na macie z kółkiem na podłodze dokładnie pod barkami. Chwyć uchwyty neutralnym chwytem, ramiona pionowo, biodra nad kolanami.",
+    "Mocno napnij brzuch — żebra w dół, pośladki ściśnięte, miednica w tylnym pochyleniu, by dolne plecy się nie wyginały.",
+    "Wdech, następnie powoli rolluj kółko do przodu, jednocześnie wyciągając ramiona i biodra w tym samym tempie. Utrzymuj neutralny kręgosłup, gdy ciało obniża się ku podłodze.",
+    "Wytocz tak daleko, jak potrafisz kontrolować bez utraty neutralnego kręgosłupa — najlepiej aż tułów będzie niemal równoległy do podłogi, a ramiona w pełni wyciągnięte nad głową.",
+    "Zatrzymaj się krótko w dolnej, rozciągniętej pozycji. Poczuj jak guma ciągnie cię z powrotem.",
+    "Wydech i przyciągnij kółko z powrotem do kolan, napinając brzuch i najszersze grzbietu — wykorzystaj asystę gumy w najtrudniejszym fragmencie powrotu.",
+    "Wróć do pozycji startowej z ramionami pionowo nad kółkiem i wyresetuj napięcie przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_extension",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["serratus_anterior", "latissimus_dorsi", "obliques"],
+    "stabilizers": ["erector_spinae", "transverse_abdominis", "deltoids", "triceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "serratus_anterior": "S7",
+    "latissimus_dorsi": "S7",
+    "obliques": "S6",
+    "transverse_abdominis": "T5",
+    "erector_spinae": "T4",
+    "deltoids": "T4",
+    "triceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["ab_wheel", "resistance_band"],
+    "optional": ["mat", "rack_anchor", "door_anchor"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["plank", "dead-bug", "kneeling-ab-wheel-half-rollout"],
+    "progression_to": ["ab-wheel-rollout", "standing-ab-wheel-rollout"],
+    "alternatives": ["kneeling-ab-wheel-rollout", "barbell-rollout", "stability-ball-rollout", "ab-wheel-rollout-from-elevated-stop"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Band anchored low in front — tension light at start, strong at full rollout",
+      "Knees under hips, hands directly under shoulders on the handles",
+      "Posterior pelvic tilt — tuck the tailbone, ribs down",
+      "Bracing 360 — push abs into an imaginary belt",
+      "Eyes down at the wheel, neck neutral"
+    ],
+    "setup_cues_pl": [
+      "Guma zaczepiona nisko z przodu — naprężenie lekkie na starcie, silne w pełnym rollout",
+      "Kolana pod biodrami, dłonie dokładnie pod barkami na uchwytach",
+      "Tylne pochylenie miednicy — podwiń kość ogonową, żebra w dół",
+      "Napięcie 360 — wciśnij brzuch w wyimaginowany pas",
+      "Wzrok w dół na kółko, szyja w neutralnej pozycji"
+    ],
+    "execution_cues": [
+      "Roll out slowly — 3 seconds to the bottom, no falling",
+      "Hips and shoulders extend at the same rate — body stays a straight line",
+      "Lats pull the wheel back, not the lower back",
+      "Exhale hard on the way back — air out, abs crunch",
+      "Stop at the range you can return from without arching"
+    ],
+    "execution_cues_pl": [
+      "Toczy się powoli — 3 sekundy do dołu, bez opadania",
+      "Biodra i barki wyciągają się w tym samym tempie — ciało pozostaje prostą linią",
+      "Najszersze grzbietu przyciągają kółko z powrotem, nie dolne plecy",
+      "Mocny wydech podczas powrotu — wypuść powietrze, brzuch się napina",
+      "Zatrzymaj się w zakresie, z którego potrafisz wrócić bez wyginania pleców"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back arching (hyperextension) at full rollout",
+        "faultPl": "Wyginanie się dolnego odcinka pleców (hiperekstensja) w pełnym rollout",
+        "cause": "Hip flexors take over when the rectus abdominis cannot resist the load — pelvis tips anteriorly",
+        "causePl": "Zginacze biodra przejmują pracę, gdy mięsień prosty brzucha nie wytrzymuje obciążenia — miednica pochyla się do przodu",
+        "cue": "Shorten the rollout range, use a stronger assistance band, and keep the tailbone tucked the entire rep",
+        "cuePl": "Skróć zakres rollout, użyj mocniejszej gumy asystującej i trzymaj kość ogonową podwiniętą przez całe powtórzenie"
+      },
+      {
+        "fault": "Hips piking up / shooting back instead of extending forward",
+        "faultPl": "Biodra cofają się do tyłu / unoszą się zamiast wyciągać do przodu",
+        "cause": "Avoiding the hard part by sitting back into a child's pose-like shape, offloading the abs",
+        "causePl": "Unikanie najtrudniejszej części przez cofnięcie się jak do pozycji dziecka, zrzucenie pracy z brzucha",
+        "cue": "Push the hips forward as the wheel rolls out — torso, hips and shoulders should travel as one rigid line",
+        "cuePl": "Wypychaj biodra do przodu, gdy kółko się toczy — tułów, biodra i barki powinny przesuwać się jak jedna sztywna linia"
+      },
+      {
+        "fault": "Using only the band's recoil — no abdominal contraction on the way back",
+        "faultPl": "Powrót wyłącznie na sile odbicia gumy — bez skurczu mięśnia prostego brzucha",
+        "cause": "Band too strong for the range used; lifter passively rides the elastic energy",
+        "causePl": "Guma zbyt mocna dla używanego zakresu; ćwiczący pasywnie korzysta z energii sprężystości",
+        "cue": "Choose a band light enough that you must still contract the abs hard — 30–50% assistance, not 100%",
+        "cuePl": "Wybierz gumę na tyle lekką, byś nadal musiał mocno napinać brzuch — asysta 30–50%, nie 100%"
+      },
+      {
+        "fault": "Elbows bending and bending under load",
+        "faultPl": "Łokcie zginają się i wyginają pod obciążeniem",
+        "cause": "Triceps fatigue or attempt to shorten the lever — turns the movement into a triceps extension",
+        "causePl": "Zmęczenie tricepsów lub próba skrócenia dźwigni — zamienia ruch w prostowanie tricepsa",
+        "cue": "Lock the elbows soft-straight throughout — arms are rigid struts, not pistons",
+        "cuePl": "Zablokuj łokcie w lekkim wyproście przez cały czas — ramiona są sztywnymi podporami, nie tłokami"
+      },
+      {
+        "fault": "Holding breath during the rollout",
+        "faultPl": "Wstrzymywanie oddechu podczas rollout",
+        "cause": "Default Valsalva habit on heavy core work, often combined with red face and rising intra-abdominal pressure",
+        "causePl": "Domyślny nawyk Valsalvy przy ciężkiej pracy core, często z czerwoną twarzą i rosnącym ciśnieniem śródbrzusznym",
+        "cue": "Inhale on the way out, exhale forcefully on the way back — exhale matches the hardest part of the rep",
+        "cuePl": "Wdech podczas wytaczania, mocny wydech podczas powrotu — wydech zgrywa się z najtrudniejszą częścią powtórzenia"
+      }
+    ],
+    "breathing": "Inhale and brace before initiating the rollout. Maintain the brace throughout the eccentric (rolling out). Forceful exhale on the concentric (returning) — the exhale should peak at the hardest sticking point near the bottom.",
+    "breathingPl": "Wdech i napięcie brzucha przed rozpoczęciem rollout. Utrzymuj napięcie przez całą fazę ekscentryczną (toczenie do przodu). Mocny wydech podczas fazy koncentrycznej (powrót) — szczyt wydechu w najtrudniejszym punkcie, blisko dolnej pozycji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Ab wheel rollouts heavily load the lumbar spine in anti-extension; do not perform during acute lower back flare-ups. Switch to dead bug or plank progressions until pain-free for 2+ weeks.",
+      "modificationPl": "Ab wheel rollout mocno obciąża odcinek lędźwiowy w anty-ekstensji; nie wykonuj podczas ostrego zaostrzenia bólu pleców. Przejdź na dead bug lub progresje deski do czasu min. 2 tygodni bez bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Lumbar extension under load can compress posterior disc structures and aggravate radiculopathy. Use neutral-spine isometric core work instead.",
+      "modificationPl": "Wyprost odcinka lędźwiowego pod obciążeniem może uciskać tylne struktury krążka i nasilać objawy korzeniowe. Zamiast tego stosuj izometryczne ćwiczenia core w neutralnej pozycji kręgosłupa.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "End-range overhead loaded position can pinch the supraspinatus. Reduce range — stop at 70% rollout — and check that the band is light enough so the shoulder doesn't have to grind through the sticking point.",
+      "modificationPl": "Pozycja końcowego wyciągnięcia nadgłowowego pod obciążeniem może uciskać mięsień nadgrzebieniowy. Zmniejsz zakres — zatrzymaj się na 70% rollout — i sprawdź, czy guma jest dostatecznie lekka, by bark nie musiał przebijać się przez bolesny punkt.",
+      "alternative": "stability-ball-rollout"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Heavy anti-extension demand can stress the linea alba and worsen midline separation, especially postpartum. Rehab the transverse abdominis first.",
+      "modificationPl": "Wysokie wymagania anty-ekstensji mogą obciążać kresę białą i pogłębiać rozejście, szczególnie poporodowe. Najpierw zrehabilituj mięsień poprzeczny brzucha.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x6-10 (strength) | 3x8-12 (hypertrophy) | 4x5 with 3s eccentric (tempo focus)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "band-assisted-wheel-rollerout.gif",
+    "frames_extracted": [
+      "frames/band-assisted-wheel-rollerout/frame_0_start.png",
+      "frames/band-assisted-wheel-rollerout/frame_1_early.png",
+      "frames/band-assisted-wheel-rollerout/frame_2_mid.png",
+      "frames/band-assisted-wheel-rollerout/frame_3_late.png",
+      "frames/band-assisted-wheel-rollerout/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/band-assisted-wheel-rollerout"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): klęk podparty, ab wheel pod barkami, ramiona pionowo, guma pozioma biegnąca z przodu (poziome zaczepienie nisko przed atletą). Klatka 1-3 (early/mid/late): progresywne wytaczanie koła do przodu, ciało obniża się jak długa prosta linia od kolan do barków, ramiona wyciągają się nadgłowowo, widoczny stretch lats + serratus + rectus abdominis (highlight czerwony w klatkach na bokach żeber/brzuchu). Klatka 4 (end): powrót do pozycji wyjściowej z 'ghost' śladem fazy poprzedniej. Guma w klatkach wyraźnie zachowuje napięcie poziome — asystuje przeciwko ruchowi rollout do przodu i pomaga w powrocie. Klasyfikacja: anti_extension (kluczowa funkcja rectus abdominis tu — przeciwstawianie się ekstensji lumbar pod obciążeniem grawitacji w stretch position), compound (staw barkowy + biodrowy + kręgosłup pracują razem), bilateral, sagittal, closed kinetic chain (ręce na wheel w kontakcie z podłożem), force=both (eccentric rolling out + concentric pulling back). Primary: rectus_abdominis P9. Secondary: serratus_anterior i latissimus_dorsi S7 (mocno aktywne w stretch overhead — shoulder extension control + scapular protraction), obliques S6. Stabilizatory: TVA, erector spinae (kontrolnie, ekscentrycznie), deltoids, triceps. Nazwa PL: 'Ab wheel rollout z asystą gumy' — najbardziej rozpoznawalne wśród polskich trenerów; ab wheel jest zwykle zostawiane w angielskim. Aliasy obejmują 'kółko brzuszne', 'rolka', 'wheel'. Difficulty 6/10 — łatwiejsze niż pełny rollout (8/10) dzięki asyście, ale wciąż wymaga solidnego anty-extension i kontroli barków. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["core", "abs", "anti_extension", "ab_wheel", "band_assisted", "regression", "intermediate", "rectus_abdominis", "serratus", "lats"]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "seated-glute-stretch",
+  "name": "Seated Glute Stretch",
+  "namePl": "Stretch pośladka w siadzie",
+  "aliases": ["seated cross-body knee hug", "seated piriformis stretch", "seated knee-to-chest glute stretch", "seated figure-four variant"],
+  "aliasesPl": ["rozciąganie pośladka w siadzie", "stretch piriformisa w siadzie", "przyciąganie kolana do klatki w siadzie", "rozciąganie mięśnia gruszkowatego w siadzie"],
+
+  "description": "A floor-based unilateral glute and piriformis stretch performed from a seated long-leg position. One leg stays extended on the floor while the other knee is bent and actively pulled across the body toward the opposite shoulder with both arms wrapping the shin. The trainee leans the torso slightly back/upright to deepen the stretch through the posterior hip. Excellent recovery and mobility drill for runners, lifters and anyone with tight glutes or sciatic-irritation patterns.",
+  "descriptionPl": "Rozciąganie pośladka i mięśnia gruszkowatego (piriformis) wykonywane jednostronnie z pozycji siedzącej na podłodze z jedną nogą wyprostowaną. Jedna noga pozostaje wyprostowana na podłożu, druga jest zgięta w kolanie i aktywnie przyciągana w poprzek ciała w kierunku przeciwnego barku — obie ręce obejmują goleń i kolano. Tułów pozostaje wyprostowany lub lekko odchylony do tyłu, by pogłębić rozciąganie w tylnej części biodra. Świetne ćwiczenie regeneracyjne i mobilizacyjne dla biegaczy, podnoszących ciężary oraz osób z napiętymi pośladkami lub objawami podrażnienia nerwu kulszowego.",
+
+  "instructions": [
+    "Sit on the floor with both legs extended in front of you. Place your hands on the floor behind your hips with fingers pointing slightly back; keep the chest tall and spine long.",
+    "Bend the right knee and lift the right foot off the floor. Keep the left leg long and relaxed along the ground.",
+    "Reach across your body with both arms and wrap them around the right shin (or hug the knee and ankle separately), so that the right knee is pulled diagonally toward the LEFT shoulder.",
+    "Sit tall through the spine and gently draw the bent leg into the chest and across the body — you should feel a strong but tolerable stretch deep in the right glute and posterior hip.",
+    "Hold for 20-30 seconds, breathing slowly and continuously. Keep the resting leg long on the floor and the shoulders relaxed.",
+    "Release the leg slowly back to the floor, return to the starting position and repeat 2-3 times per side before switching legs."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z obiema nogami wyprostowanymi przed sobą. Oprzyj dłonie z tyłu za biodrami, palce skierowane lekko do tyłu; klatka wysoko, kręgosłup wydłużony.",
+    "Zegnij prawe kolano i unieś prawą stopę nad podłogę. Lewa noga pozostaje wyprostowana i rozluźniona na podłożu.",
+    "Sięgnij oburącz w poprzek ciała i obejmij prawą goleń (lub osobno kolano i kostkę), tak by prawe kolano kierowało się ukośnie w stronę LEWEGO barku.",
+    "Wyciągnij się w pionie kręgosłupa i delikatnie przyciągnij zgiętą nogę do klatki i w poprzek ciała — powinieneś poczuć mocne, ale komfortowe rozciąganie głęboko w prawym pośladku i tylnej części biodra.",
+    "Utrzymaj pozycję 20-30 sekund, oddychając wolno i nieprzerwanie. Druga noga pozostaje wyprostowana na podłodze, barki rozluźnione.",
+    "Powoli odłóż nogę z powrotem na podłogę, wróć do pozycji wyjściowej i powtórz 2-3 razy na stronę, zanim zmienisz nogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gluteus_maximus", "piriformis"],
+    "secondary": ["gluteus_medius", "tensor_fasciae_latae"],
+    "stabilizers": ["core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "gluteus_maximus": "P9",
+    "piriformis": "P9",
+    "gluteus_medius": "S6",
+    "tensor_fasciae_latae": "S5",
+    "core": "T3",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "mobility",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["pigeon-pose", "figure-4-stretch"],
+    "alternatives": ["lying-figure-4-stretch", "supine-knee-to-chest-stretch", "pigeon-pose"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall on a mat with both legs long in front of you",
+      "Anchor your hands behind your hips for support — chest open",
+      "Pick one knee to bend; keep the other leg relaxed and straight",
+      "Wrap both arms around the bent shin or knee/ankle combo",
+      "Aim the bent knee diagonally across the body toward the opposite shoulder"
+    ],
+    "setup_cues_pl": [
+      "Usiądź wyprostowany na macie z obiema nogami długo wyciągniętymi przed sobą",
+      "Oprzyj dłonie z tyłu za biodrami dla stabilizacji — klatka otwarta",
+      "Wybierz jedno kolano do zgięcia; druga noga rozluźniona i prosta",
+      "Obejmij oburącz goleń lub kombinację kolano/kostka zgiętej nogi",
+      "Skieruj zgięte kolano ukośnie w poprzek ciała, w stronę przeciwnego barku"
+    ],
+    "execution_cues": [
+      "Pull the knee gently TOWARD the opposite shoulder, not just to the chest",
+      "Stay tall through the spine — don't collapse into the chest",
+      "Feel the stretch deep in the buttock of the bent leg, not in the knee joint",
+      "Keep the resting leg long and the foot relaxed on the floor",
+      "Breathe slowly — let each exhale soften the hip a bit more"
+    ],
+    "execution_cues_pl": [
+      "Przyciągaj kolano łagodnie W KIERUNKU przeciwnego barku, nie tylko do klatki",
+      "Zachowaj wysoki kręgosłup — nie zapadaj się w klatkę",
+      "Czuj rozciąganie głęboko w pośladku zgiętej nogi, nie w stawie kolanowym",
+      "Druga noga pozostaje wyprostowana, stopa rozluźniona na podłodze",
+      "Oddychaj wolno — pozwól, by każdy wydech delikatnie rozluźnił biodro"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the knee straight to the chest instead of across the body",
+        "faultPl": "Przyciąganie kolana prosto do klatki zamiast w poprzek ciała",
+        "cause": "Misunderstanding the diagonal vector — losing the cross-body angle reduces the piriformis/deep glute stretch",
+        "causePl": "Niezrozumienie kierunku ukośnego — utrata kąta poprzecznego zmniejsza rozciąganie piriformisa i głębokich pośladkowych",
+        "cue": "Aim the knee toward the OPPOSITE shoulder, not your own chin — that diagonal is where the real glute stretch lives",
+        "cuePl": "Kieruj kolano w stronę PRZECIWNEGO barku, nie własnej brody — to właśnie po przekątnej znajduje się prawdziwy stretch pośladka"
+      },
+      {
+        "fault": "Rounding the lower back and collapsing the chest",
+        "faultPl": "Zaokrąglanie odcinka lędźwiowego i zapadanie klatki",
+        "cause": "Trying to force more range by hunching over the leg instead of keeping the torso upright",
+        "causePl": "Próba wymuszenia większego zakresu poprzez kulenie się nad nogą zamiast utrzymania prostego tułowia",
+        "cue": "Sit TALL — grow taller through the crown of the head while drawing the knee in; the stretch comes from the hip, not the spine",
+        "cuePl": "Siedź WYPROSTOWANY — wyciągaj się czubkiem głowy w górę, jednocześnie przyciągając kolano; rozciąganie idzie z biodra, nie z kręgosłupa"
+      },
+      {
+        "fault": "Lifting the straight leg off the floor",
+        "faultPl": "Unoszenie wyprostowanej nogi nad podłogę",
+        "cause": "Hip flexor tension or core instability — body tries to compensate by tilting the pelvis",
+        "causePl": "Napięte zginacze biodra lub słaba stabilizacja korpusu — ciało kompensuje przez przechylenie miednicy",
+        "cue": "Press the back of the straight knee down toward the mat — anchor that heel and keep the leg long",
+        "cuePl": "Dociśnij tył kolana prostej nogi w stronę maty — zakotwicz piętę i utrzymuj nogę wyciągniętą"
+      },
+      {
+        "fault": "Pulling on the knee joint (not the shin) and bending the knee sideways",
+        "faultPl": "Ciągnięcie za sam staw kolanowy (a nie goleń) i wyginanie kolana w bok",
+        "cause": "Hands placed across the kneecap and pulling laterally — stresses the medial knee ligaments",
+        "causePl": "Dłonie ułożone na rzepce i ciągnięcie bocznie — naciska na więzadła przyśrodkowe kolana",
+        "cue": "Wrap the arms around the SHIN below the kneecap; if the knee is sensitive, support behind the thigh instead",
+        "cuePl": "Obejmij ramionami GOLEŃ poniżej rzepki; jeśli kolano jest wrażliwe, podtrzymaj zamiast tego z tyłu uda"
+      },
+      {
+        "fault": "Holding the breath while pulling deeper",
+        "faultPl": "Wstrzymywanie oddechu podczas pogłębiania rozciągania",
+        "cause": "Bracing against discomfort instead of breathing through it",
+        "causePl": "Napinanie się przeciwko dyskomfortowi zamiast oddychania przez niego",
+        "cue": "Inhale to find the position, exhale to gently increase the stretch — never force on a held breath",
+        "cuePl": "Wdech, by ustawić pozycję; wydech, by delikatnie pogłębić rozciąganie — nigdy nie wymuszaj go na zatrzymanym oddechu"
+      }
+    ],
+    "breathing": "Breathe smoothly and continuously throughout the hold. Use inhales to lengthen the spine and exhales to draw the knee a touch closer to the opposite shoulder.",
+    "breathingPl": "Oddychaj płynnie i nieprzerwanie przez cały czas trwania pozycji. Wdechy wykorzystuj do wydłużenia kręgosłupa, a wydechy do delikatnego pogłębienia przyciągania kolana w stronę przeciwnego barku."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_hip_or_groin_injury",
+      "severity": "avoid",
+      "modification": "Skip this stretch until cleared by a physiotherapist — deep hip flexion combined with adduction can aggravate acute hip pathology.",
+      "modificationPl": "Pomiń to rozciąganie do czasu zgody fizjoterapeuty — głębokie zgięcie biodra w połączeniu z addukcją może zaostrzyć ostre dolegliwości stawu biodrowego.",
+      "alternative": "lying-figure-4-stretch"
+    },
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "Do not pull on the kneecap. Wrap the arms behind the thigh instead of around the shin, and limit knee flexion to a pain-free range.",
+      "modificationPl": "Nie ciągnij za rzepkę. Obejmij ramionami tył uda zamiast goleni i ograniczaj zgięcie kolana do zakresu bez bólu.",
+      "alternative": "supine-knee-to-chest-stretch"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_disc_issue",
+      "severity": "modify",
+      "modification": "Avoid rounding the lumbar spine. Sit on a folded blanket or yoga block to elevate the hips, keep the torso upright and reduce range; stop if symptoms worsen.",
+      "modificationPl": "Unikaj zaokrąglania odcinka lędźwiowego. Usiądź na złożonym kocu lub bloku jogi, by unieść biodra, utrzymuj wyprostowany tułów i zmniejsz zakres; przerwij, jeśli objawy się nasilają.",
+      "alternative": "lying-figure-4-stretch"
+    },
+    {
+      "condition": "late_pregnancy",
+      "severity": "modify",
+      "modification": "Avoid deep cross-body knee pulls that compress the abdomen. Switch to a side-lying or supine variant with the knee drawn outward rather than across.",
+      "modificationPl": "Unikaj głębokiego przyciągania kolana w poprzek, które uciska brzuch. Zamień na wariant w leżeniu bokiem lub na plecach z kolanem ciągniętym na zewnątrz, nie w poprzek.",
+      "alternative": "lying-figure-4-stretch"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x20-30 sekund na stronę",
+  "calories_per_kg_per_hour": 2.0,
+
+  "media": {
+    "primary": "seated-glute-stretch.gif",
+    "frames_extracted": [
+      "frames/seated-glute-stretch/frame_0_start.png",
+      "frames/seated-glute-stretch/frame_1_early.png",
+      "frames/seated-glute-stretch/frame_2_mid.png",
+      "frames/seated-glute-stretch/frame_3_late.png",
+      "frames/seated-glute-stretch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/seated-glute-stretch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Model siedzi z prawą nogą wyprostowaną na podłodze i lewą nogą zgiętą w kolanie (frame_0, frame_4 — pozycja wyjściowa). W klatkach 1-3 widać fazę aktywną: obie ręce obejmują goleń zgiętej nogi i przyciągają kolano ukośnie w stronę przeciwnego (prawego) barku, tułów lekko pochylony nad nogą, plecy zaokrąglone w łagodny sposób, druga noga pozostaje rozciągnięta. Czerwone podświetlenie skupione na pośladku zgiętej nogi (gluteus maximus + region piriformisa głęboko pod nim) — to potwierdza, że primary muscles to gluteus_maximus i piriformis. GIF NIE pokazuje klasycznej pozycji figure-4 (kostka na udzie) — to wariant 'cross-body knee hug' z siadu prostego. Klasyfikacja: category=mobility (rozciąganie/regeneracja), mechanic=isometric (statyczne utrzymanie), force=static, plane=sagittal (główny ruch — zgięcie biodra w przód, z dodatkową adduckcją poprzeczną), laterality=unilateral. 5 setup + 5 execution cues, 5 common_faults (cross-body angle, rounded back, lifted straight leg, knee joint stress, breath holding), 4 contraindications (acute hip, knee injury, acute lower back, pregnancy). Wszystkie pola PL napisane od zera, naturalna polszczyzna trenera personalnego, bez kalek z angielskiego.",
+
+  "tags": ["mobility", "stretching", "cooldown", "recovery", "no_equipment", "beginner_friendly", "hip_mobility", "post_lower_body", "sciatica_friendly", "unilateral"]
+}

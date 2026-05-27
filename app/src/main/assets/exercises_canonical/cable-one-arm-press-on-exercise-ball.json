@@ -1,0 +1,205 @@
+{
+  "id": "cable-one-arm-press-on-exercise-ball",
+  "name": "Cable One-Arm Press on Exercise Ball",
+  "namePl": "Cable press jednorącz na piłce",
+  "aliases": ["single-arm cable press on stability ball", "unilateral cable bench press on ball", "one-arm cable chest press on swiss ball", "cable floor press on ball"],
+  "aliasesPl": ["wyciskanie linki jednorącz na piłce", "jednoręczne wyciskanie wyciągu na piłce gimnastycznej", "cable press jednorącz na swiss ball", "unilateralne wyciskanie na piłce z linki"],
+
+  "description": "Unilateral horizontal pressing variation performed lying supine on a stability ball with only the upper back and head supported (hips held up in a glute bridge), using a low cable column and a D-handle in one hand. The setup creates a triple challenge: (1) unilateral load demands aggressive anti-rotation work from the core to prevent the torso from rotating toward the cable, (2) the stability ball multiplies instability, recruiting glutes, hamstrings and deep stabilizers, and (3) the cable provides constant tension throughout the entire ROM — unlike dumbbells, the resistance does not fall off at the top. The free arm typically rests on the torso. This is a hybrid stability/hypertrophy/anti-rotation exercise, not a max-load chest builder.",
+  "descriptionPl": "Unilateralny wariant poziomego wyciskania wykonywany leżąc plecami na piłce gimnastycznej z podparciem jedynie górnej części pleców i głowy (biodra utrzymane w mostku pośladkowym), z wyciągu dolnego z uchwytem D w jednej ręce. Taki setup tworzy potrójne wyzwanie: (1) jednostronne obciążenie wymusza agresywną pracę anty-rotacyjną korpusu, aby nie pozwolić tułowiowi obrócić się w stronę wyciągu, (2) piłka gimnastyczna mnoży niestabilność, angażując pośladki, dwugłowe ud i głębokie stabilizatory, (3) wyciąg zapewnia stałe napięcie przez cały zakres ruchu — w przeciwieństwie do hantli opór nie spada na szczycie. Wolna ręka zwykle spoczywa na tułowiu. To ćwiczenie hybrydowe — stabilizacja/hipertrofia/anty-rotacja, a nie maksymalny budulec masy klatki.",
+
+  "instructions": [
+    "Set the cable pulley to LOW position (or just below shoulder height when lying on the ball). Attach a single D-handle.",
+    "Stand next to the cable column with one side facing the machine. Grab the D-handle with the hand FARTHEST from the machine (so the cable runs across your body when you lie down).",
+    "Sit on the stability ball, then walk your feet forward and lower your upper back onto the ball until only your upper back and head are supported. Hips up in a glute bridge — line from knees to shoulders.",
+    "Feet flat on floor, knees ~90°, shoulder-width or slightly wider for stability. Glutes squeezed, core braced.",
+    "Bring the working arm to the start position: handle near the chest/shoulder of the working side, elbow at ~45-60° from torso, pectoral stretched, palm facing forward (pronated) or neutral.",
+    "Inhale, brace anti-rotation through the core — do NOT let the torso rotate toward the cable.",
+    "Press the handle up and slightly across the midline of the body (toward the opposite shoulder), exhaling. Finish over the chest with elbow extended but not locked. Feel the pec contract hard.",
+    "Pause briefly at the top, then lower the handle under control back to chest level, resisting the cable's pull throughout the ROM (~2-3 seconds eccentric).",
+    "Complete all reps on one side. Stand up carefully (cable still loaded — don't let it yank you), switch sides, and repeat with the other arm."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek wyciągu w pozycji DOLNEJ (lub nieco poniżej wysokości barku w leżeniu na piłce). Załóż pojedynczy uchwyt D.",
+    "Stań obok kolumny wyciągu jedną stroną do maszyny. Chwyć uchwyt ręką ZAGRANICZNĄ względem maszyny (żeby linka biegła w poprzek ciała gdy się położysz).",
+    "Usiądź na piłce, przejdź stopami do przodu i opuść górną część pleców na piłkę aż tylko górne plecy i głowa będą podparte. Biodra w górze w mostku pośladkowym — linia od kolan do barków.",
+    "Stopy płasko na podłodze, kolana ~90°, na szerokość barków lub szerzej dla stabilności. Pośladki napięte, brzuch spięty.",
+    "Ustaw pracującą rękę w pozycji startowej: uchwyt przy klatce/barku po stronie pracującej, łokieć ~45-60° od tułowia, klatka rozciągnięta, dłoń skierowana do przodu (pronowana) lub neutralna.",
+    "Wdech, napnij anty-rotacyjnie brzuch — NIE pozwól tułowiowi obrócić się w stronę wyciągu.",
+    "Wyciśnij uchwyt w górę i lekko w poprzek linii środkowej ciała (w stronę przeciwnego barku), wydech. Skończ nad klatką z łokciem wyprostowanym ale nie zablokowanym. Poczuj mocne napięcie klatki.",
+    "Krótka pauza na szczycie, potem opuszczaj uchwyt z kontrolą do poziomu klatki, opierając się pociągowi linki przez cały zakres (~2-3 sekundy fazy ekscentrycznej).",
+    "Wykonaj wszystkie powtórzenia na jednej stronie. Wstań ostrożnie (linka nadal pod obciążeniem — nie pozwól żeby cię szarpnęła), zmień stronę i powtórz drugą ręką."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major"],
+    "secondary": ["anterior_deltoids", "triceps"],
+    "stabilizers": ["core", "obliques", "glutes", "hamstrings", "serratus_anterior", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "anterior_deltoids": "S7",
+    "triceps": "S6",
+    "obliques": "T6",
+    "core": "T6",
+    "glutes": "T5",
+    "serratus_anterior": "T4",
+    "hamstrings": "T3",
+    "rotator_cuff": "T4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "d_handle", "stability_ball"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "cable-chest-press", "glute-bridge"],
+    "progression_to": ["single-arm-dumbbell-bench-press", "landmine-press", "cable-chest-fly"],
+    "alternatives": ["single-arm-dumbbell-bench-press", "cable-chest-press", "machine-chest-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Cable pulley at low/shoulder height with D-handle",
+      "Upper back and head ONLY on the ball — hips bridged up",
+      "Feet wide for stability, knees ~90°, glutes squeezed",
+      "Grab handle with arm farthest from machine — cable crosses body",
+      "Free arm rests on torso, working arm starts at chest level"
+    ],
+    "setup_cues_pl": [
+      "Bloczek wyciągu na dole/wysokości barku z uchwytem D",
+      "TYLKO górne plecy i głowa na piłce — biodra w mostku",
+      "Stopy szeroko dla stabilności, kolana ~90°, pośladki napięte",
+      "Chwyć uchwyt ręką dalszą od maszyny — linka biegnie przez ciało",
+      "Wolna ręka na tułowiu, pracująca ręka startuje na poziomie klatki"
+    ],
+    "execution_cues": [
+      "Brace anti-rotation — do NOT let cable pull your torso into rotation",
+      "Press up AND slightly across body toward opposite shoulder",
+      "Keep hips bridged the whole set — don't drop the glutes",
+      "Eccentric controlled 2-3s, resist the cable's pull back",
+      "Squeeze the pec at the top before lowering"
+    ],
+    "execution_cues_pl": [
+      "Anty-rotacyjne napięcie — NIE pozwól linkce wykręcić tułowia",
+      "Wyciskaj w górę I lekko w poprzek ciała w stronę przeciwnego barku",
+      "Trzymaj biodra w mostku przez cały set — nie opuszczaj pośladków",
+      "Faza ekscentryczna kontrolowana 2-3s, opieraj się pociągowi linki",
+      "Napnij mocno klatkę na szczycie przed opuszczeniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates toward the cable (loss of anti-rotation)",
+        "faultPl": "Tułów obraca się w stronę wyciągu (utrata anty-rotacji)",
+        "cause": "Weak obliques, weight too heavy, no conscious bracing",
+        "causePl": "Słabe mięśnie skośne, za ciężki ciężar, brak świadomego napięcia",
+        "cue": "Imagine a steel rod from shoulder to opposite hip — keep it rigid. Reduce weight if you can't hold square.",
+        "cuePl": "Wyobraź sobie stalowy pręt od barku do przeciwnego biodra — trzymaj go sztywno. Zmniejsz ciężar jeśli nie utrzymujesz prosto."
+      },
+      {
+        "fault": "Hips drop during the set",
+        "faultPl": "Biodra opadają w trakcie serii",
+        "cause": "Glute fatigue, focus only on the pressing arm, weak posterior chain",
+        "causePl": "Zmęczenie pośladków, skupienie tylko na pracującej ręce, słaby tylny łańcuch",
+        "cue": "Squeeze glutes HARD every rep. Knees-to-shoulders should stay a straight line throughout.",
+        "cuePl": "Mocno ŚCISKAJ pośladki w każdym powtórzeniu. Linia kolana-barki ma być prosta przez cały czas."
+      },
+      {
+        "fault": "Pressing straight up instead of slightly across body",
+        "faultPl": "Wyciskanie prosto w górę zamiast lekko w poprzek ciała",
+        "cause": "Treating it like a barbell bench, ignoring cable line of pull",
+        "causePl": "Traktowanie ćwiczenia jak wyciskania sztangą, ignorowanie linii pociągu wyciągu",
+        "cue": "Cable wants you to press across the midline — go with it. Aim handle toward opposite shoulder at top.",
+        "cuePl": "Linka chce żebyś wyciskał w poprzek linii środkowej — pójdź za tym. Celuj uchwytem w przeciwny bark na szczycie."
+      },
+      {
+        "fault": "Bouncing off the ball or rolling unstably",
+        "faultPl": "Odbijanie się od piłki lub rolowanie niestabilnie",
+        "cause": "Wrong ball size, slack core, ego with heavy weight",
+        "causePl": "Zła wielkość piłki, luźny brzuch, ego ze zbyt ciężkim ciężarem",
+        "cue": "Tighten everything. If ball still rolls, weight is too heavy OR ball is wrong size. Stability comes first.",
+        "cuePl": "Napnij wszystko. Jeśli piłka nadal się rolluje, ciężar za duży LUB piłka zła. Stabilność na pierwszym miejscu."
+      },
+      {
+        "fault": "Insufficient ROM — short pressing range",
+        "faultPl": "Niedostateczny zakres ruchu — krótkie wyciskanie",
+        "cause": "Fear of cable load at full stretch, weight too heavy",
+        "causePl": "Strach przed obciążeniem linki w pełnym rozciągnięciu, za ciężki ciężar",
+        "cue": "Allow handle to come back to chest level fully — cable's constant tension is the WHOLE point. Use the stretch.",
+        "cuePl": "Pozwól uchwytowi wrócić do poziomu klatki w pełni — stałe napięcie linki to CAŁY sens. Wykorzystaj rozciągnięcie."
+      }
+    ],
+    "breathing": "Inhale and brace at the chest position, exhale during the press up, brace stays continuous to prevent torso rotation.",
+    "breathingPl": "Wdech i napięcie w pozycji przy klatce, wydech podczas wyciskania w górę, napięcie utrzymane bez przerwy by zapobiec rotacji tułowia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palm facing inward) and reduce ROM at the bottom — don't let the handle pass behind the chest line. Lower cable angle to reduce overhead component.",
+      "modificationPl": "Użyj chwytu neutralnego (dłoń skierowana do środka) i zmniejsz ROM na dole — nie pozwól by uchwyt zaszedł za linię klatki. Niższy kąt wyciągu by zredukować komponent ponad głowę.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Bridged hip position loads the lumbar spine if glutes aren't doing the work. If pain occurs, switch to flat bench or floor press instead of ball.",
+      "modificationPl": "Pozycja z biodrami w mostku obciąża lędźwie jeśli pośladki nie pracują. Jeśli pojawi się ból, zamień piłkę na płaską ławkę lub press z podłogi.",
+      "alternative": "single-arm-dumbbell-bench-press"
+    },
+    {
+      "condition": "balance_disorder",
+      "severity": "avoid",
+      "modification": "Stability ball + unilateral load = high fall risk. Use flat bench with the same cable setup until balance improves.",
+      "modificationPl": "Piłka gimnastyczna + jednostronne obciążenie = wysokie ryzyko upadku. Użyj płaskiej ławki z tym samym ustawieniem wyciągu do czasu poprawy równowagi.",
+      "alternative": "cable-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Unilateral cable pressing on unstable surface puts maximal stress on the cuff. Switch to machine chest press in fixed path until physio clearance.",
+      "modificationPl": "Jednostronne wyciskanie z linki na niestabilnej powierzchni daje maksymalne obciążenie pierścienia rotatorów. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per side (hypertrophy, default) | 3-4x8-10 per side (strength-stability hybrid) | 2-3x15 per side (core endurance / activation)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-one-arm-press-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-press-on-exercise-ball/frame_0_start.png",
+      "frames/cable-one-arm-press-on-exercise-ball/frame_1_early.png",
+      "frames/cable-one-arm-press-on-exercise-ball/frame_2_mid.png",
+      "frames/cable-one-arm-press-on-exercise-ball/frame_3_late.png",
+      "frames/cable-one-arm-press-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-one-arm-press-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): leżenie supinacyjne na piłce gimnastycznej, podparte tylko górne plecy i głowa, biodra w mostku pośladkowym (linia od kolan do barków), stopy szeroko na podłodze. Prawa ręka trzyma uchwyt D wyciągu przy klatce, łokieć zgięty ~90°, linka biegnie od dolnego/bocznego bloczka po prawej. Lewa ręka spoczywa na tułowiu. Pectoralis major prawej strony podświetlony (rozciągnięty). Frame 2 (góra/koncentryczna): pełne wyciśnięcie nad klatką, ramię wyprostowane, lekko w stronę linii środkowej. Pec, anterior delt i triceps prawej strony zaangażowane (highlight). Frame 4 (powrót): kontrolowane opuszczanie. Klasyfikacja unilateral (jedna ręka), compound (staw barkowy + łokciowy), plane=sagittal, force=push. Główne wyzwanie: anty-rotacja korpusu (skośne brzucha) + stabilizacja na piłce (pośladki/dwugłowe). Nie maksymalny budulec masy klatki — hybrydowe ćwiczenie stabilność/hipertrofia/core. PL nazwa 'Cable press jednorącz na piłce' to standard polskiego fitness (cable press / wyciskanie z linki). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest", "cable", "unilateral", "stability_ball", "anti_rotation", "core_challenge", "constant_tension", "intermediate"]
+}

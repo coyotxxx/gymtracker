@@ -1,0 +1,209 @@
+{
+  "id": "cable-upright-row",
+  "name": "Cable Upright Row",
+  "namePl": "Cable upright row (wiosło stojące)",
+  "aliases": ["cable upright row", "low-pulley upright row", "standing cable upright row", "cable narrow-grip upright row"],
+  "aliasesPl": ["wiosłowanie pionowe na wyciągu", "upright row z wyciągu dolnego", "podciąganie drążka z wyciągu wzdłuż tułowia", "wiosło stojące z wyciągu"],
+
+  "description": "A vertical-pull shoulder builder performed at a low-pulley cable station with a short straight bar (or EZ-bar) attachment. Standing close to the column, the lifter pulls the handle straight up the front of the body, leading with the elbows, until it reaches chin / upper-chest height. Unlike the free-weight version, the cable keeps tension constant through the entire range of motion — there is no 'dead zone' at the bottom and the lateral deltoids / upper trapezius stay loaded from the first millimetre of the pull. The cable's slight forward line of pull also helps the lifter keep the bar close to the body and discourages hip-kipping. Like every upright row variant, however, the combination of humeral elevation and internal rotation places the supraspinatus tendon under the acromion, so the exercise is best reserved for lifters with healthy shoulders and good scapular control.",
+  "descriptionPl": "Pionowe pociąganie barków wykonywane na stacji wyciągu dolnego z krótkim gryfem prostym (lub łamanym EZ). Zawodnik staje blisko kolumny wyciągu i podciąga uchwyt pionowo wzdłuż przedniej części tułowia prowadząc ruch łokciami, aż uchwyt dotrze na wysokość brody / górnej części klatki. W przeciwieństwie do wersji z wolnym ciężarem, linka wyciągu utrzymuje stałe napięcie w całym zakresie ruchu — nie ma 'martwej strefy' na dole, a boczne aktony naramiennego i górna część czworobocznego pracują od pierwszego milimetra ruchu. Lekko skośna linia ciągu wyciągu pomaga też prowadzić drążek blisko ciała i zniechęca do oszukiwania zamachem bioder. Jak każdy wariant upright row ćwiczenie wymusza jednak kombinację uniesienia kości ramiennej i rotacji wewnętrznej, która przygniata ścięgno mięśnia nadgrzebieniowego pod wyrostkiem barkowym — najlepiej zostawić je zawodnikom ze zdrowymi barkami i dobrą kontrolą łopatek.",
+
+  "instructions": [
+    "Attach a short straight bar (or EZ-bar) to the lowest setting of a cable column. Select the working weight.",
+    "Stand facing the column, feet hip-to-shoulder-width apart, knees soft, toes just behind the bar so the cable runs vertically when the arms hang.",
+    "Grip the bar with a pronated (overhand) grip at approximately shoulder-width — hands roughly directly under the shoulders.",
+    "Step back a few centimetres so the weight stack is slightly lifted and the cable is taut. Arms fully extended, bar at thigh level.",
+    "Set the shoulders back and down, chest tall, core braced. The torso stays vertical throughout the set.",
+    "Initiate the pull by driving the elbows up and slightly out to the sides — lead with the elbows, not the hands.",
+    "Pull the bar straight up the front of the body, keeping it close to the torso, until it reaches collarbone / upper-chest height.",
+    "At the top the elbows are at shoulder level (or just below), the upper arms roughly parallel to the floor. Pause for a brief squeeze.",
+    "Lower the bar under control over 2-3 seconds back to the fully extended starting position at the thighs — do not let the stack slam.",
+    "Exhale during the pull, inhale during the descent. Keep the torso vertical — no swinging, no leaning back."
+  ],
+  "instructionsPl": [
+    "Zamontuj krótki gryf prosty (lub łamany EZ) na najniższym położeniu kolumny wyciągu. Wybierz roboczy ciężar.",
+    "Stań twarzą do kolumny, stopy na szerokość bioder do barków, kolana lekko ugięte, palce stóp tuż za drążkiem aby linka biegła pionowo gdy ramiona wiszą.",
+    "Złap drążek nachwytem (dłonie w dół) na szerokość barków — dłonie mniej więcej dokładnie pod barkami.",
+    "Cofnij się o kilka centymetrów aby stos lekko się uniósł i linka była napięta. Ramiona w pełnym wyproście, drążek na wysokości ud.",
+    "Ściągnij barki w tył i w dół, klatka w górze, brzuch napięty. Tułów pozostaje pionowy przez całą serię.",
+    "Zainicjuj ruch wypychając łokcie w górę i lekko na boki — prowadź ruch łokciami, nie dłońmi.",
+    "Podciągnij drążek pionowo wzdłuż przedniej części tułowia, blisko ciała, aż dotrze na wysokość obojczyków / górnej części klatki.",
+    "W górnej pozycji łokcie są na wysokości barków (lub nieznacznie poniżej), a ramiona ponad łokciem są mniej więcej równoległe do podłogi. Zatrzymaj na chwilę dla skurczu.",
+    "Opuszczaj drążek w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu ramion w pozycji wyjściowej przy udach — nie pozwól aby stos uderzył.",
+    "Wydech podczas unoszenia, wdech podczas opuszczania. Tułów pionowy — bez bujania ani odchylania się w tył."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids", "trapezius_upper"],
+    "secondary": ["anterior_deltoid", "biceps_brachii", "rhomboids", "trapezius_middle"],
+    "stabilizers": ["rotator_cuff", "brachialis", "forearm_flexors", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P10",
+    "trapezius_upper": "P9",
+    "anterior_deltoid": "S6",
+    "biceps_brachii": "S6",
+    "rhomboids": "S5",
+    "trapezius_middle": "S5",
+    "rotator_cuff": "T4",
+    "brachialis": "T4",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "low_pulley", "straight_bar_attachment"],
+    "optional": ["ez_bar_attachment", "lifting_straps", "weightlifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-lateral-raise", "cable-lateral-raise", "barbell-shrug"],
+    "progression_to": ["barbell-upright-row", "barbell-high-pull", "barbell-power-clean"],
+    "alternatives": ["barbell-upright-row", "barbell-wide-grip-upright-row", "ez-bar-upright-row", "dumbbell-upright-row", "kettlebell-upright-row", "dumbbell-lateral-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Short straight bar on the low pulley — hands at shoulder-width, overhand grip",
+      "Stand close to the column, toes just behind the bar — cable runs vertically",
+      "Step back a few cm to pre-load the stack — tension on from frame one",
+      "Chest up, shoulders packed back and down, core braced",
+      "Feet hip-to-shoulder-width, knees soft — stable base, torso vertical"
+    ],
+    "setup_cues_pl": [
+      "Krótki gryf prosty na dolnym wyciągu — dłonie na szerokość barków, nachwyt",
+      "Stań blisko kolumny, palce stóp tuż za drążkiem — linka biegnie pionowo",
+      "Cofnij się o kilka cm aby napiąć stos — napięcie od pierwszej milisekundy",
+      "Klatka w górze, barki ściągnięte w tył i w dół, brzuch napięty",
+      "Stopy na szerokość bioder do barków, kolana lekko ugięte — stabilna baza, tułów pionowo"
+    ],
+    "execution_cues": [
+      "Lead with the elbows — drive them up and slightly out, hands just hang from the bar",
+      "Bar travels straight up the front of the body, almost brushing the shirt",
+      "Stop when the bar reaches collarbone height and elbows are at shoulder level — no higher",
+      "Feel the lateral delts and upper traps working, not the biceps — the cable keeps tension constant, use it",
+      "Lower under control over 2-3 seconds — let the cable resist you, don't drop the stack"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch łokciami — wypychaj je w górę i lekko na boki, dłonie tylko zwisają z drążka",
+      "Drążek porusza się pionowo wzdłuż przedniej części tułowia, niemal ocierając się o koszulkę",
+      "Zatrzymaj gdy drążek dotrze na wysokość obojczyków a łokcie na wysokość barków — ani milimetra wyżej",
+      "Czuj pracę bocznych aktonów barków i górnej części czworobocznego, nie bicepsów — linka utrzymuje stałe napięcie, wykorzystaj to",
+      "Opuszczaj kontrolowanie przez 2-3 sekundy — pozwól linie cię opierać, nie rzucaj stosem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling elbows excessively above shoulder height",
+        "faultPl": "Zbyt wysokie unoszenie łokci ponad linię barków",
+        "cause": "Trying to maximize range of motion, copying high-pull / power-clean technique, not understanding the impingement mechanism",
+        "causePl": "Próba maksymalizacji zakresu ruchu, kopiowanie techniki high-pull / podciągnięcia rwaniowego, brak świadomości mechanizmu konfliktu podbarkowego",
+        "cue": "Stop when the upper arms are parallel to the floor. Going higher forces internal humeral rotation and can pinch the supraspinatus tendon against the acromion.",
+        "cuePl": "Zatrzymaj gdy ramiona ponad łokciem są równolegle do podłogi. Wyżej wymusza rotację wewnętrzną kości ramiennej i może uciskać ścięgno mięśnia nadgrzebieniowego o wyrostek barkowy."
+      },
+      {
+        "fault": "Standing too far back from the cable column",
+        "faultPl": "Stanie zbyt daleko od kolumny wyciągu",
+        "cause": "Not understanding the cable line of pull — diagonal cable pulls the bar away from the body and turns the movement into a front-raise / cable row hybrid",
+        "causePl": "Brak zrozumienia linii ciągu wyciągu — skośna linka odciąga drążek od ciała i zamienia ruch w hybrydę front raise / wiosłowania",
+        "cue": "Toes just behind the bar, cable runs vertically when arms hang. If the cable is angled forward — step in closer.",
+        "cuePl": "Palce stóp tuż za drążkiem, linka biegnie pionowo gdy ramiona wiszą. Jeśli linka jest skośna w przód — podejdź bliżej."
+      },
+      {
+        "fault": "Using hip momentum (kipping the bar up)",
+        "faultPl": "Wykorzystywanie zamachu biodrami (oszukiwanie biodrami)",
+        "cause": "Load too heavy for the shoulders, prioritizing weight on the stack over muscle stimulus",
+        "causePl": "Zbyt duży ciężar dla barków, stawianie kilogramów nad bodźcem mięśniowym",
+        "cue": "Drop the weight 20-30%. Hips stay still — only the arms and shoulder girdle move. The cable amplifies kipping, so cheating here is even more obvious.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Biodra nieruchome — pracują tylko ramiona i obręcz barkowa. Linka pogłębia oszukiwanie biodrami, więc tu widać je jeszcze wyraźniej."
+      },
+      {
+        "fault": "Letting the stack slam at the bottom",
+        "faultPl": "Rzucanie stosem na końcu fazy negatywnej",
+        "cause": "No eccentric control, rushing reps, treating cable like a free weight that 'falls'",
+        "causePl": "Brak kontroli ekscentrycznej, pośpiech, traktowanie wyciągu jak wolny ciężar który 'spada'",
+        "cue": "The cable's biggest advantage is constant tension — throw it away by slamming the stack and you've turned a great exercise into a mediocre one. 2-3 second eccentric, always.",
+        "cuePl": "Największa zaleta wyciągu to stałe napięcie — rzucając stosem wyrzucasz ją do kosza i zmieniasz świetne ćwiczenie w przeciętne. Faza negatywna 2-3 sekundy, zawsze."
+      },
+      {
+        "fault": "Wrists collapse / hyperflex at the top",
+        "faultPl": "Załamywanie nadgarstków / nadmierne zginanie w górnej pozycji",
+        "cause": "Weak forearm flexors, trying to pull bar higher than necessary, fatigued grip",
+        "causePl": "Słabe zginacze przedramienia, próba podniesienia drążka wyżej niż potrzeba, zmęczenie chwytu",
+        "cue": "Keep wrists straight, in line with forearms. If they collapse — end the set, the working muscles are spent. Try the EZ-bar attachment if straight bar irritates the wrists.",
+        "cuePl": "Nadgarstki proste, w linii z przedramieniem. Jeśli się załamują — zakończ serię, mięśnie robocze są wyczerpane. Wypróbuj uchwyt EZ jeśli prosty gryf drażni nadgarstki."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pull up). Inhale during the eccentric (lower down). Maintain a light brace throughout to stabilize the spine against the bilateral pulling load.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby stabilizować kręgosłup pod obustronnym obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_subacromial_syndrome",
+      "severity": "avoid",
+      "modification": "Upright row at shoulder-width grip is a textbook impingement provocation — the combination of humeral elevation and internal rotation pinches the supraspinatus tendon against the acromion. The cable's constant tension does not change this geometry. Avoid entirely during active impingement. Switch to lateral raises in the scapular plane (cable or dumbbell, thumbs slightly up) and return to upright row variants only after symptoms have fully resolved.",
+      "modificationPl": "Upright row chwytem na szerokość barków to wręcz podręcznikowy test prowokacyjny konfliktu podbarkowego — kombinacja uniesienia kości ramiennej i rotacji wewnętrznej przygniata ścięgno mięśnia nadgrzebieniowego do wyrostka barkowego. Stałe napięcie wyciągu nie zmienia tej geometrii. Unikaj zupełnie przy aktywnym konflikcie. Przejdź na odwodzenia w płaszczyźnie łopatkowej (wyciąg lub hantle, kciuki lekko w górę) i wracaj do wariantów upright row dopiero po pełnym ustąpieniu objawów.",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy_or_tear",
+      "severity": "avoid",
+      "modification": "Vertical pulling combined with internal humeral rotation is contraindicated for active rotator cuff pathology. Use lateral raises with thumbs-up grip (scaption) instead — they load the lateral delts without forcing internal rotation.",
+      "modificationPl": "Pionowe pociąganie połączone z rotacją wewnętrzną kości ramiennej jest przeciwwskazane przy aktywnej patologii stożka rotatorów. Zamiast tego stosuj odwodzenia z kciukami w górę (scaption) — obciążają boczne aktony naramiennego bez wymuszania rotacji wewnętrznej.",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "avoid",
+      "modification": "End-range upright row compresses the acromioclavicular joint. Avoid entirely during active AC joint inflammation or arthropathy. Use lateral raises with the range capped at 80 degrees abduction, or machine lateral raise where range can be limited mechanically.",
+      "modificationPl": "Końcowy zakres ruchu upright row uciska staw barkowo-obojczykowy. Unikaj zupełnie przy aktywnym zapaleniu lub artropatii stawu AC. Stosuj odwodzenia z zatrzymaniem na 80 stopniach lub maszynę lateral raise gdzie zakres można ograniczyć mechanicznie.",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "A straight bar attachment locks the wrists in fixed pronation, which can aggravate the ulnar side under load. Switch to an EZ-bar (cambered, angled grip) attachment, or use a rope and pull thumb-up — both reduce wrist stress without changing the shoulder mechanics.",
+      "modificationPl": "Gryf prosty blokuje nadgarstki w stałej pronacji, co drażni stronę łokciową pod obciążeniem. Przejdź na uchwyt EZ (gryf łamany, kąt chwytu) lub linkę z chwytem 'kciuki w górę' — oba zmniejszają obciążenie nadgarstków bez zmiany mechaniki barku.",
+      "alternative": "ez-bar-upright-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / cable shoulder pump) | 3-4x8-12 (general hypertrophy) | 3x15-20 (high-volume finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-upright-row.gif",
+    "frames_extracted": [
+      "frames/cable-upright-row/frame_0_start.png",
+      "frames/cable-upright-row/frame_1_early.png",
+      "frames/cable-upright-row/frame_2_mid.png",
+      "frames/cable-upright-row/frame_3_late.png",
+      "frames/cable-upright-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-upright-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0 (start): zawodnik stoi przy kolumnie wyciągu, krótki gryf prosty zamontowany na najniższym położeniu dolnego wyciągu, ramiona w pełnym wyproście, drążek na wysokości ud, chwyt nachwytem mniej więcej na szerokość barków, linka biegnie pionowo z dolnego bloku do drążka. Frame 2 (mid): drążek uniesiony do brody / górnej części klatki, łokcie wypchnięte wysoko w górę i wyraźnie na boki na wysokość barków, intensywne podświetlenie na czerwono bocznych aktonów naramiennego, górnej części czworobocznego i równoległobocznych — klasyczna szczytowa pozycja upright row. Frame 4 (end): powrót do pozycji wyjściowej, drążek znowu przy udach, widoczny 'ghost' fazy szczytowej. Specyfika cable vs barbell: linka zachowuje stałe napięcie w całym zakresie (constant tension — brak 'martwej strefy' u dołu), lekko skośna linia ciągu pomaga prowadzić drążek blisko ciała. Pozycja stojąca, bilateral, plane=frontal, mechanic=compound, force=pull — zgodnie z prośbą. Contraindication shoulder_impingement na poziomie severity=avoid dodana zgodnie z poleceniem — geometria stawu jest identyczna jak w wersji ze sztangą, cable nie zmienia ryzyka konfliktu podbarkowego. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "delts", "lateral_deltoids", "traps", "compound", "cable", "upper_body", "vertical_pull", "constant_tension"]
+}

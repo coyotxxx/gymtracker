@@ -1,0 +1,205 @@
+{
+  "id": "sled-45-degrees-one-leg-press",
+  "name": "Sled 45 Degrees One Leg Press",
+  "namePl": "Suwnica 45° jednonóż",
+  "aliases": ["45 degree leg press one leg", "single-leg sled press", "unilateral 45° leg press", "one leg sled press"],
+  "aliasesPl": ["suwnica 45 stopni jednonóż", "leg press 45° jednonóż", "prasa skośna na jedną nogę", "jednonożna suwnica skośna", "suwnica unilateralna 45°"],
+
+  "description": "Unilateral variant of the classic 45° sled leg press, performed by loading only one foot on the platform while the opposite leg is held off to the side. The lifter is positioned on a reclined back pad with the sled traveling on a 45° track, producing a closed-chain knee and hip extension on the working leg without spinal compression. Unilateral loading exposes left/right strength imbalances and forces hard isolation of the working quadriceps and glutes, while demanding active pelvic stability to prevent the hip from rotating off the pad. Typical use case: hypertrophy of a lagging leg, post-injury return work, or a finisher after bilateral leg press.",
+  "descriptionPl": "Jednonożna wersja klasycznej suwnicy 45°, w której ćwiczący opiera tylko jedną stopę na platformie, a druga noga pozostaje odsunięta na bok. Pozycja półleżąca na oparciu skierowanym pod 45°, sanki poruszają się po pochylonym torze — daje to zamknięty łańcuch kinematyczny w wyproście kolana i biodra pracującej nogi, bez obciążenia kręgosłupa. Unilateralne obciążenie ujawnia różnice siły między lewą a prawą stroną i wymusza twardą izolację czworogłowego i pośladków pracującej nogi, jednocześnie wymagając aktywnej stabilizacji miednicy, by biodro nie obracało się od oparcia. Typowe zastosowanie: hipertrofia słabszej nogi, powrót po kontuzji lub praca wykończeniowa po obustronnej suwnicy.",
+
+  "instructions": [
+    "Load the sled with a weight noticeably lighter than your bilateral working weight — start with 30-40% of your two-leg load and progress from there. Lock plates with collars.",
+    "Adjust the back pad so that at the bottom of the rep the working knee reaches ~90° without your lower back rounding off the pad.",
+    "Sit down, set the working foot on the platform shoulder-width from the centerline, toes slightly turned out (5-15°). Heel and whole foot in contact with the plate.",
+    "The non-working leg is held off the platform, bent at the knee and resting to the side of the carriage — do not let it rest on the platform or push.",
+    "Grip the side handles, press your back and pelvis firmly into the pad, brace your core hard.",
+    "Disengage the safety stops by extending the working leg and rotating the handles. The working knee is softly extended — this is the starting position.",
+    "Inhale and lower the sled in a controlled tempo (2-3 s), letting the working knee come toward your chest along the line of the foot.",
+    "Stop at a depth where your knee is bent ~90° or where your pelvis is about to lift off the pad — whichever comes first.",
+    "Press through the heel and mid-foot of the working leg back to near full extension. Don't lock the knee hard. Exhale on the press.",
+    "Complete all planned reps on one leg, then re-engage the safety stops, switch legs and repeat. Same volume on each side."
+  ],
+  "instructionsPl": [
+    "Załaduj suwnicę ciężarem wyraźnie mniejszym niż twój roboczy ciężar obunóż — zacznij od 30-40% obciążenia z dwóch nóg i progresuj od tego punktu. Zabezpiecz talerze zaciskami.",
+    "Wyreguluj oparcie tak, by w dolnej pozycji pracujące kolano zgięte było do ~90°, a dolny odcinek pleców nie odrywał się od oparcia.",
+    "Usiądź, ustaw pracującą stopę na platformie na szerokość barków od osi środkowej, palce lekko na zewnątrz (5-15°). Pięta i cała stopa stykają się z platformą.",
+    "Niepracująca noga pozostaje poza platformą, ugięta w kolanie i odsunięta na bok wózka — nie opieraj jej o platformę i nie wspieraj się nią.",
+    "Złap boczne uchwyty, mocno wciśnij plecy i miednicę w oparcie, napnij brzuch.",
+    "Zwolnij blokady bezpieczeństwa prostując pracującą nogę i przekręcając uchwyty. Pracujące kolano delikatnie wyprostowane — to pozycja startowa.",
+    "Nabierz wdech i opuszczaj sanki kontrolowanym tempem (2-3 s), kolano kieruje się ku klatce piersiowej wzdłuż linii stopy.",
+    "Zatrzymaj się na głębokości, na której kolano zgięte jest do ~90° lub gdy miednica zaczyna odrywać się od oparcia — co zdarzy się wcześniej.",
+    "Wypchnij przez piętę i śródstopie pracującej nogi z powrotem do niemal pełnego wyprostu. Nie blokuj kolana z impetem. Wydech podczas wypychania.",
+    "Wykonaj wszystkie zaplanowane powtórzenia na jednej nodze, następnie aktywuj blokady, zmień nogę i powtórz. Identyczna objętość po każdej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "adductors": "S5",
+    "core": "S4",
+    "calves": "T3",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["leg_press_machine"],
+    "optional": ["lifting_belt", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["leg-press", "lever-alternate-leg-press", "bodyweight-squat"],
+    "progression_to": ["barbell-bulgarian-split-squat", "barbell-back-squat", "single-leg-squat-pistol"],
+    "alternatives": ["lever-alternate-leg-press", "leg-press", "hack-squat", "smith-machine-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Use 30-40% of your bilateral leg-press load to start",
+      "Working foot centered shoulder-width on the plate, heel pressed in",
+      "Non-working leg held to the side of the carriage — not on the plate",
+      "Lower back and pelvis flat against the pad",
+      "Brace the core hard before unracking — single-leg load wants to rotate the pelvis"
+    ],
+    "setup_cues_pl": [
+      "Zacznij od 30-40% obciążenia obunożnej suwnicy",
+      "Pracująca stopa na środku platformy na szerokość barków, pięta wciśnięta",
+      "Niepracująca noga z boku wózka — nie na platformie",
+      "Dolny odcinek pleców i miednica płasko przy oparciu",
+      "Napnij brzuch mocno przed zwolnieniem blokad — jednonożne obciążenie próbuje obrócić miednicę"
+    ],
+    "execution_cues": [
+      "Lower the sled slowly (2-3 s), press faster",
+      "Drive through the heel and mid-foot, not the toes",
+      "Don't lock the knee hard at the top",
+      "Stop the descent before your pelvis lifts off the pad",
+      "Keep both hips square to the pad — don't let the working hip rotate up"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj sanki powoli (2-3 s), wypchnij szybciej",
+      "Wypchnij przez piętę i śródstopie, nie przez palce",
+      "Nie blokuj kolana z impetem na górze",
+      "Zatrzymaj schodzenie zanim miednica oderwie się od oparcia",
+      "Oba biodra trzymaj równo na oparciu — nie pozwól pracującemu biodru się obracać"
+    ],
+    "common_faults": [
+      {
+        "fault": "Working hip rotates off the pad (twisting the pelvis)",
+        "faultPl": "Pracujące biodro obraca się od oparcia (skręcenie miednicy)",
+        "cause": "Load too heavy for unilateral work, weak glute medius, foot placed too far off-centerline",
+        "causePl": "Zbyt duży ciężar na pracę jednonóż, słabe pośladkowe średnie, stopa za daleko od osi środkowej",
+        "cue": "Reduce load. Center the foot near the centerline of the plate. Squeeze both glutes evenly.",
+        "cuePl": "Zmniejsz ciężar. Ustaw stopę bliżej osi środkowej platformy. Napnij oba pośladki równo."
+      },
+      {
+        "fault": "Lower back rounds / pelvis lifts off the pad at the bottom",
+        "faultPl": "Zaokrąglenie dolnego odcinka pleców / oderwanie miednicy na dole",
+        "cause": "Going too deep for hip mobility, seat too far back, load too heavy",
+        "causePl": "Zbyt głębokie schodzenie poza zakres mobilności bioder, siedzisko za daleko, zbyt duży ciężar",
+        "cue": "Stop the descent earlier. Adjust the seat closer or work on hip mobility separately.",
+        "cuePl": "Zatrzymaj schodzenie wcześniej. Przysuń siedzisko bliżej lub popraw mobilność bioder osobno."
+      },
+      {
+        "fault": "Knee valgus (knee collapses inward) on the working leg",
+        "faultPl": "Koślawienie kolana (kolano ucieka do środka) pracującej nogi",
+        "cause": "Weak glute medius, foot rotated inward, or load too heavy for unilateral work",
+        "causePl": "Słabe pośladkowe średnie, stopa obrócona do wewnątrz, lub zbyt duży ciężar na pracę jednonóż",
+        "cue": "Push the knee out toward your little toe. Reduce load until alignment is clean.",
+        "cuePl": "Wypchnij kolano na zewnątrz w kierunku małego palca. Zmniejsz ciężar aż technika będzie czysta."
+      },
+      {
+        "fault": "Locking out the knee hard at the top",
+        "faultPl": "Twarde blokowanie kolana w wyproście",
+        "cause": "Ego / habit of rushing reps, no awareness of joint stress",
+        "causePl": "Pośpiech / nawyk forsowania powtórzeń, brak świadomości obciążenia stawu",
+        "cue": "Stop just shy of full extension — keep tension on the quad, save the joint.",
+        "cuePl": "Zatrzymaj się tuż przed pełnym wyprostem — utrzymaj napięcie na czworogłowym, oszczędź staw."
+      },
+      {
+        "fault": "Heel rises off the plate at the bottom",
+        "faultPl": "Pięta odrywa się od platformy na dole",
+        "cause": "Foot too high on the plate, poor ankle mobility, or going below your effective ROM",
+        "causePl": "Stopa za wysoko na platformie, słaba mobilność stawu skokowego, lub zakres ruchu za duży",
+        "cue": "Move the foot lower on the plate or limit depth. Press through the heel.",
+        "cuePl": "Przesuń stopę niżej na platformie lub ogranicz głębokość. Wypchnij przez piętę."
+      }
+    ],
+    "breathing": "Inhale on the descent, exhale on the press. Maintain abdominal brace through the full set — unilateral load needs more anti-rotation than bilateral. Use a Valsalva on the hardest portion of heavy reps.",
+    "breathingPl": "Wdech podczas opuszczania, wydech podczas wypychania. Utrzymuj napięcie brzucha przez cały serię — jednonożne obciążenie wymaga większej antyrotacji niż obustronne. Przy ciężkich powtórzeniach zastosuj Valsalvę na najtrudniejszej części."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_knee_injury",
+      "severity": "avoid",
+      "modification": "Rest until cleared by a physiotherapist. Unilateral loading on an injured knee will worsen the issue.",
+      "modificationPl": "Odpoczynek do czasu kwalifikacji przez fizjoterapeutę. Obciążenie jednonóż na uszkodzonym kolanie pogłębi problem.",
+      "alternative": "lever-leg-extension"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Limit depth to a pain-free range (above 90° knee flexion). Keep the foot slightly higher on the plate to reduce knee shear.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu (kolano powyżej 90° zgięcia). Ustaw stopę wyżej na platformie, by zmniejszyć obciążenie ścinające kolano.",
+      "alternative": "lever-leg-extension"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "Don't let the pelvis lift from the pad. Stop the descent earlier than normal. Avoid loading if the position causes any nerve symptoms.",
+      "modificationPl": "Nie pozwól by miednica odrywała się od oparcia. Zatrzymaj schodzenie wcześniej niż zwykle. Unikaj obciążenia jeśli pozycja wywołuje objawy neurologiczne.",
+      "alternative": "lever-lying-leg-curl"
+    },
+    {
+      "condition": "hip_replacement",
+      "severity": "modify",
+      "modification": "Avoid deep hip flexion (>90°). Use a high foot position on the plate and limit ROM. Consult the surgeon about loading parameters.",
+      "modificationPl": "Unikaj głębokiego zgięcia biodra (>90°). Ustaw stopę wysoko na platformie i ogranicz zakres ruchu. Skonsultuj parametry obciążenia z chirurgiem.",
+      "alternative": "lever-lying-leg-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6-8 per leg (strength) | 2-3x15-20 per leg (endurance/burnout)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "sled-45-degrees-one-leg-press.gif",
+    "frames_extracted": [
+      "frames/sled-45-degrees-one-leg-press/frame_0_start.png",
+      "frames/sled-45-degrees-one-leg-press/frame_1_early.png",
+      "frames/sled-45-degrees-one-leg-press/frame_2_mid.png",
+      "frames/sled-45-degrees-one-leg-press/frame_3_late.png",
+      "frames/sled-45-degrees-one-leg-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/sled-45-degrees-one-leg-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Suwnica typu 45° (sled) — pochylony tor sanek, ćwiczący w pozycji półleżącej na oparciu skierowanym pod kątem do podłogi. Tylko jedna stopa (lewa na klatkach) opiera się na platformie, druga noga jest poza platformą i pozostaje pasywna. Klatki 0→2→4 pokazują pełen ruch: start z lekko ugiętym kolanem, schodzenie do ~90° zgięcia w kolanie pracującej nogi, powrót do niemal pełnego wyprostu. Mięśnie podświetlone na ilustracji: czworogłowe (główne) — pasuje do squat-pattern w pozycji półleżącej. Laterality unilateral — w obrębie pojedynczego setu pracuje tylko jedna noga (kontrast do lever-alternate-leg-press, gdzie pracuje naprzemiennie w tym samym secie). Źródło jahel błędnie listuje secondaryMuscles jako triceps/delts (oczywisty copy-paste z innego ćwiczenia) — pominięte, użyto poprawnej anatomii kończyny dolnej. Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego. Equipment: leg_press_machine (jahel 'sled' znormalizowany do standardowej taksonomii canonical).",
+
+  "tags": ["leg_press", "unilateral", "single_leg", "machine", "quad_dominant", "lower_body", "hypertrophy", "imbalance_correction", "45_degree_sled"]
+}

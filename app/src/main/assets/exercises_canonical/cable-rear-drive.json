@@ -1,0 +1,201 @@
+{
+  "id": "cable-rear-drive",
+  "name": "Cable Rear Drive",
+  "namePl": "Rear drive z wyciągu (cable tricep kickback)",
+  "aliases": ["cable single-arm tricep kickback", "cable rear arm drive", "standing cable tricep extension behind"],
+  "aliasesPl": ["wyprost ramienia w tył z wyciągu", "kickback tricepsa z wyciągu jednorącz", "napęd ramienia w tył na wyciągu"],
+
+  "description": "Unilateral isolation exercise for the triceps brachii performed at a low-to-mid cable pulley. The athlete stands sideways to the column with the working arm extended forward and the elbow flexed near 90°, then drives the hand straight back behind the body while keeping the upper arm pinned to the torso. The constant horizontal tension from the cable loads the triceps from the stretched position all the way through the lockout — superior to a free-weight kickback, which loses load at the top. Excellent for honing the lockout and finishing arm sessions with high reps.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na mięsień trójgłowy ramienia wykonywane przy niskim lub średnim wyciągu. Ćwiczący staje bokiem do kolumny z pracującym ramieniem wyciągniętym do przodu i łokciem ugiętym pod kątem około 90°, następnie napędza dłoń prosto w tył za tułów, utrzymując ramię ponad łokciem przyklejone do boku. Stałe poziome napięcie linki obciąża triceps od pozycji rozciągniętej aż do pełnego wyprostu — przewaga nad kickbackiem z hantlą, który traci obciążenie w górnej fazie. Świetne do dopracowania pełnego wyprostu i kończenia treningu ramion seriami z wysoką liczbą powtórzeń.",
+
+  "instructions": [
+    "Set a single-handle attachment on a cable pulley at mid-to-low height. Select a light to moderate load — kickbacks rarely tolerate heavy weight.",
+    "Stand sideways to the column so the cable runs toward your working side. Step away until there is light tension at the bottom of the range.",
+    "Grip the handle with a neutral or slight pronated grip, hinge the torso 10-20° forward and pin the working upper arm against your ribs.",
+    "Starting position: elbow flexed ~90°, forearm pointing forward toward the pulley, cable line resisting backward motion of the hand.",
+    "Drive the hand straight back behind your hip by extending only at the elbow. Keep the upper arm completely still — only the forearm moves.",
+    "At full extension the arm is locked, palm facing the floor or inward, triceps squeezed hard. Pause for 1 second to feel the contraction.",
+    "Return the hand forward in a controlled 2-3 second eccentric, letting the elbow flex back to ~90° without losing torso position.",
+    "Complete all reps on one side, then switch and mirror the setup for the opposite arm."
+  ],
+  "instructionsPl": [
+    "Załóż pojedynczą rączkę na wyciągu na średniej lub niskiej wysokości. Dobierz lekki lub umiarkowany ciężar — kickbacki rzadko znoszą duże obciążenie.",
+    "Stań bokiem do kolumny tak, aby linka biegła w stronę pracującego ramienia. Odsuń się na tyle, by w dolnej pozycji była lekka tensja.",
+    "Złap rączkę chwytem neutralnym lub lekko nawrotnym, pochyl tułów 10-20° do przodu i przyklej pracujące ramię do żeber.",
+    "Pozycja startowa: łokieć zgięty pod kątem ~90°, przedramię skierowane do przodu w stronę wyciągu, linka stawia opór przed cofnięciem dłoni.",
+    "Napędź dłoń prosto w tył za biodro wyprostowując ramię WYŁĄCZNIE w łokciu. Ramię ponad łokciem ma pozostać całkowicie nieruchome — pracuje tylko przedramię.",
+    "W pełnym wyproście ręka zablokowana, dłoń skierowana w dół lub do wewnątrz, mocno spinasz triceps. Zatrzymaj na 1 sekundę aby poczuć skurcz.",
+    "Wracaj dłonią do przodu w kontrolowanej fazie negatywnej 2-3 sekundy, pozwalając łokciowi wrócić do ~90° bez utraty pozycji tułowia.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, następnie zmień stronę i wykonaj lustrzane ustawienie dla drugiego ramienia."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["posterior_deltoid", "latissimus_dorsi", "core", "rotator_cuff", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "posterior_deltoid": "T3",
+    "latissimus_dorsi": "T2",
+    "core": "T3",
+    "rotator_cuff": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle"],
+    "optional": ["wrist_strap", "lifting_gloves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-tricep-kickback"],
+    "progression_to": ["cable-tricep-pushdown", "cable-overhead-tricep-extension", "skull-crusher"],
+    "alternatives": ["dumbbell-tricep-kickback", "cable-tricep-pushdown", "cable-rope-pushdown", "bench-dip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulley at mid-to-low height, light load",
+      "Stand sideways, hinge 10-20° forward",
+      "Upper arm glued to ribs",
+      "Elbow starts at 90°, forearm pointing toward pulley",
+      "Brace core, soft knees, hips square"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg na średniej-niskiej wysokości, lekki ciężar",
+      "Stoisz bokiem, pochyl 10-20° do przodu",
+      "Ramię ponad łokciem przyklejone do żeber",
+      "Łokieć startuje na 90°, przedramię w stronę wyciągu",
+      "Napnij brzuch, kolana lekko ugięte, biodra ustawione równo"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm frozen",
+      "Drive the hand straight back, not down",
+      "Lock the elbow fully and squeeze triceps for 1 second",
+      "Control the negative — 2-3 seconds back to 90°",
+      "Keep the wrist neutral, no flexing or extending"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem zamrożone",
+      "Napędzaj dłoń prosto w tył, nie w dół",
+      "Zablokuj łokieć w pełnym wyproście i spinaj triceps 1 sekundę",
+      "Kontroluj fazę negatywną — 2-3 sekundy powrotu do 90°",
+      "Nadgarstek neutralny, bez zginania ani prostowania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arm swings backward (humerus moves with the rep)",
+        "faultPl": "Ramię ponad łokciem buja w tył (kość ramienna porusza się razem z powtórzeniem)",
+        "cause": "Load too heavy or weak triceps recruitment — the body recruits the lat and posterior delt to finish the rep",
+        "causePl": "Zbyt duży ciężar lub słaba aktywacja tricepsa — ciało rekrutuje najszerszy grzbietu i tylny akton do dokończenia ruchu",
+        "cue": "Lower the weight. Press the elbow into your ribs as if holding a magazine — only the forearm should move.",
+        "cuePl": "Zmniejsz ciężar. Dociskaj łokieć do żeber jakbyś trzymał tam gazetę — porusza się tylko przedramię."
+      },
+      {
+        "fault": "Shoulder hikes up toward the ear",
+        "faultPl": "Bark unosi się w stronę ucha",
+        "cause": "Lack of scapular control or grip too tight, causing upper-trap dominance",
+        "causePl": "Brak kontroli łopatki lub zbyt mocny chwyt, co powoduje dominację mięśnia czworobocznego górnego",
+        "cue": "Drop the shoulder away from the ear and pack the scapula down before each rep.",
+        "cuePl": "Opuść bark od ucha i ściągnij łopatkę w dół przed każdym powtórzeniem."
+      },
+      {
+        "fault": "Partial extension (elbow never fully locks)",
+        "faultPl": "Niepełny wyprost (łokieć nigdy w pełni zablokowany)",
+        "cause": "Load too heavy, weak lockout strength, or rushing the tempo",
+        "causePl": "Zbyt duży ciężar, słaba siła w pełnym wyproście lub zbyt szybkie tempo",
+        "cue": "Reduce the weight. Pause and squeeze hard at full lockout every single rep — that is the entire point of this lift.",
+        "cuePl": "Zmniejsz ciężar. Zatrzymuj i mocno spinaj w pełnym wyproście przy każdym powtórzeniu — to cały sens tego ćwiczenia."
+      },
+      {
+        "fault": "Torso rotates with the rep (twisting away from the cable)",
+        "faultPl": "Tułów obraca się razem z powtórzeniem (skręcanie od linki)",
+        "cause": "Insufficient core bracing or pulling with the shoulder instead of the triceps",
+        "causePl": "Niewystarczające napięcie brzucha lub ciągnięcie barkiem zamiast tricepsem",
+        "cue": "Square your hips and ribs to the wall opposite the pulley. Brace as if expecting a punch — torso stays locked the whole set.",
+        "cuePl": "Ustaw biodra i żebra równo do ściany naprzeciw wyciągu. Napnij brzuch jak przed ciosem — tułów zablokowany przez całą serię."
+      },
+      {
+        "fault": "Hyperextending the elbow at lockout",
+        "faultPl": "Przeprostowywanie łokcia w fazie końcowej",
+        "cause": "Snapping into the lockout with momentum, or anatomical elbow hypermobility",
+        "causePl": "Wbijanie się w wyprost z rozpędu lub anatomiczna nadmierna ruchomość łokcia",
+        "cue": "Stop just short of full lock — squeeze hard but do not snap the joint. Hypermobile elbows should leave a few degrees of flexion at the end.",
+        "cuePl": "Zatrzymuj się tuż przed pełnym zablokowaniem — mocno spinaj, ale nie 'wbijaj' stawu. Osoby z nadruchomością łokcia powinny zostawić kilka stopni zgięcia na końcu."
+      }
+    ],
+    "breathing": "Exhale during the extension (the drive back). Inhale on the controlled return to the 90° position. Maintain a light brace throughout to keep the torso stable.",
+    "breathingPl": "Wydech podczas wyprostu (napęd w tył). Wdech podczas kontrolowanego powrotu do pozycji 90°. Utrzymuj lekkie napięcie brzucha przez całą serię aby ustabilizować tułów."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "End-range extension under cable tension irritates the lateral epicondyle. Use higher reps with very light load, stop short of full lockout, and consider switching to rope pushdowns for a more elbow-friendly grip angle.",
+      "modificationPl": "Pełny wyprost pod napięciem linki drażni przyczep boczny łokcia. Stosuj wyższe powtórzenia z bardzo lekkim ciężarem, zatrzymuj się przed pełnym wyprostem i rozważ zmianę na pushdowny z liną dla bardziej przyjaznego kąta chwytu.",
+      "alternative": "cable-rope-pushdown"
+    },
+    {
+      "condition": "triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The distal triceps tendon is loaded heavily at full lockout. Reduce load, increase reps (15-20), keep tempo slow, and avoid pause-at-lockout cues until pain-free.",
+      "modificationPl": "Dalszy przyczep tricepsa jest mocno obciążony w pełnym wyproście. Zmniejsz ciężar, zwiększ powtórzenia (15-20), spowolnij tempo i unikaj zatrzymań w wyproście aż do ustąpienia bólu.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_pain",
+      "severity": "modify",
+      "modification": "If pinning the upper arm to the ribs reproduces shoulder symptoms, raise the pulley to mid-height to reduce the internal-rotation component, or substitute a pushdown which keeps the shoulder more neutral.",
+      "modificationPl": "Jeśli dociskanie ramienia do żeber wywołuje objawy w barku, podnieś wyciąg na średnią wysokość aby zmniejszyć komponentę rotacji wewnętrznej, lub zastąp pushdownem, który utrzymuje bark w neutralnej pozycji.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "The forward-hinged position requires isometric lumbar bracing. Reduce the forward lean to almost upright, or sit on a bench facing the pulley to remove the hinge entirely.",
+      "modificationPl": "Pozycja z pochyleniem do przodu wymaga izometrycznego napięcia lędźwiowego. Zmniejsz pochylenie niemal do pionu lub usiądź na ławce twarzą do wyciągu aby zupełnie wyeliminować pochylenie.",
+      "alternative": "cable-tricep-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / pump) | 3x12-20 (finisher) | 2x15-20 per side (metabolic/burnout)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-rear-drive.gif",
+    "frames_extracted": [
+      "frames/cable-rear-drive/frame_0_start.png",
+      "frames/cable-rear-drive/frame_1_early.png",
+      "frames/cable-rear-drive/frame_2_mid.png",
+      "frames/cable-rear-drive/frame_3_late.png",
+      "frames/cable-rear-drive/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-rear-drive"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Atleta stoi bokiem do wyciągu, linka biegnie od kolumny zza pleców do dłoni jednego ramienia. Frame 0 (start): łokieć ugięty pod kątem ~90°, przedramię skierowane do przodu w stronę wyciągu, ramię ponad łokciem przyklejone do boku tułowia, triceps na tylnej stronie ramienia podświetlony czerwono. Frame 2 (mid): łokieć w trakcie wyprostu, dłoń wędruje w bok-do-tyłu. Frame 4 (end): pełny wyprost łokcia, ramię całkowicie zablokowane prosto, dłoń za linią barku. Ruch izolowany w stawie łokciowym, ramię ponad łokciem nieruchome przez cały zakres — klasyczny wzorzec kickbacku tricepsa, wersja jednorącz z wyciągu (zaleta: stałe napięcie w pełnym wyproście, którego brakuje w wersji z hantlą). Primary mover jednoznacznie triceps brachii. Mechanic=isolation, laterality=unilateral, force=push (wyprost łokcia). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "unilateral", "upper_body", "finisher", "pump"]
+}

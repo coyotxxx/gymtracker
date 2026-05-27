@@ -1,0 +1,206 @@
+{
+  "id": "shoulder-tap-push-up",
+  "name": "Shoulder Tap Push-Up",
+  "namePl": "Pompka z shoulder tap",
+  "aliases": ["shoulder tap pushup", "push-up with shoulder tap", "plank tap push-up", "alternating shoulder tap push-up"],
+  "aliasesPl": ["pompka z dotknięciem barku", "pompka z naprzemiennym dotykaniem barków", "pompka shoulder tap", "pompka z tapnięciem barku", "pompka anti-rotation"],
+
+  "description": "Bodyweight push-up variant combined with an alternating shoulder tap performed at the top of each rep (or between reps). After pressing up to the start position, the lifter lifts one hand off the floor and taps the opposite shoulder, then returns the hand and repeats on the other side. The shoulder tap forces the torso to resist rotation on a single supporting arm — turning a standard horizontal push into a push + anti-rotation core challenge. Excellent for core stability, scapular control and unilateral shoulder/triceps engagement without any equipment.",
+  "descriptionPl": "Bodyweight'owy wariant pompki połączony z naprzemiennym dotknięciem barku wykonywanym na górze każdego powtórzenia (lub pomiędzy powtórzeniami). Po wyciśnięciu się do pozycji wyjściowej ćwiczący odrywa jedną dłoń od podłogi i dotyka nią przeciwnego barku, po czym wraca dłonią na podłogę i powtarza ruch na drugą stronę. Shoulder tap zmusza tułów do oparcia się rotacji na pojedynczej ręce podporowej — zamieniając zwykłą pompkę horyzontalną w push + anti-rotation z dużym wyzwaniem dla core. Świetne na stabilność tułowia, kontrolę łopatek i jednostronne zaangażowanie barku/tricepsa bez sprzętu.",
+
+  "instructions": [
+    "Set up in a high plank / push-up start position: hands slightly wider than shoulders directly under the shoulder joints, feet hip-width apart (wider feet = easier, narrower = harder).",
+    "Brace your core hard and squeeze your glutes. Body forms one straight line from heels through hips to head.",
+    "Inhale and lower yourself into a full push-up — elbows tracking at ~45° from the torso, chest just above the floor.",
+    "Exhale and press back up to the top, fully extending the elbows (no hyperextension).",
+    "At the top, shift weight slightly toward the supporting side, lift one hand off the floor and tap the OPPOSITE shoulder (right hand → left shoulder).",
+    "Critical: keep hips SQUARE to the floor — do NOT let the pelvis rotate while one hand is lifted. Drive the supporting hand into the floor.",
+    "Return the tapping hand to the floor in the same spot, then perform the next push-up.",
+    "On the next rep, tap with the other hand (left hand → right shoulder). Alternate every rep.",
+    "Maintain a rigid plank throughout — feet are your anchor, hips do not sway side to side."
+  ],
+  "instructionsPl": [
+    "Ustaw się w pozycji wyjściowej high plank / pompki: dłonie nieco szerzej niż barki, bezpośrednio pod stawami barkowymi, stopy na szerokość bioder (szerzej = łatwiej, węziej = trudniej).",
+    "Mocno napnij brzuch i ściśnij pośladki. Ciało tworzy jedną prostą linię od pięt przez biodra do głowy.",
+    "Wdech, opuść się w pełnej pompce — łokcie pod ~45° od tułowia, klatka tuż nad podłogą.",
+    "Wydech, wyciśnij się do góry, w pełni prostując łokcie (bez przeprostu).",
+    "Na górze przenieś lekko ciężar na rękę podporową, oderwij drugą dłoń od podłogi i dotknij nią PRZECIWNEGO barku (prawa dłoń → lewy bark).",
+    "Kluczowe: utrzymaj biodra RÓWNOLEGLE do podłogi — NIE pozwól miednicy rotować się gdy jedna ręka jest oderwana. Napieraj ręką podporową w podłogę.",
+    "Wróć dłonią dotykającą na podłogę w to samo miejsce, potem wykonaj kolejną pompkę.",
+    "W następnym powtórzeniu dotknij drugą ręką (lewa dłoń → prawy bark). Naprzemiennie co powtórzenie.",
+    "Utrzymuj sztywną pozycję planka przez cały ruch — stopy są kotwicą, biodra nie kołyszą się na boki."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral_alternating",
+    "plane": "sagittal_and_transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "obliques"],
+    "secondary": ["anterior_deltoids", "core"],
+    "stabilizers": ["serratus_anterior", "glutes", "rotator_cuff", "scapular_stabilizers", "rectus_abdominis", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P8",
+    "obliques": "P7",
+    "anterior_deltoids": "S7",
+    "core": "S7",
+    "serratus_anterior": "T6",
+    "glutes": "T5",
+    "rotator_cuff": "T5",
+    "scapular_stabilizers": "T5",
+    "rectus_abdominis": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "push_up_handles"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "plank", "plank-shoulder-tap"],
+    "progression_to": ["spiderman-push-up", "archer-push-up", "one-arm-push-up", "weighted-shoulder-tap-push-up"],
+    "alternatives": ["plank-shoulder-tap", "push-up", "renegade-row", "spiderman-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands slightly wider than shoulders, directly under shoulder joints",
+      "Feet hip-width or wider — wider stance = more stability, easier anti-rotation",
+      "Pre-brace: squeeze glutes, abs, quads BEFORE you start",
+      "Body in one line from heels to crown — no piked hips, no sagging",
+      "Look at the floor ~30 cm in front of hands — neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Dłonie nieco szerzej niż barki, bezpośrednio pod stawami barkowymi",
+      "Stopy na szerokość bioder lub szerzej — szerszy rozstaw = więcej stabilności, łatwiejsze anti-rotation",
+      "Pre-bracing: ściśnij pośladki, brzuch, czworogłowe ZANIM zaczniesz",
+      "Ciało w jednej linii od pięt do czubka głowy — bez 'tyłka do góry', bez opadania bioder",
+      "Patrz na podłogę ~30 cm przed dłońmi — neutralna szyja"
+    ],
+    "execution_cues": [
+      "Push-up first — full ROM, then tap at the top",
+      "Tap is SLOW and controlled — not a flick, not a slap",
+      "Hips stay SQUARE — imagine a glass of water on your lower back",
+      "Drive the supporting hand into the floor — 'long arm, strong shoulder'",
+      "Alternate hands every rep — left tap, push-up, right tap, push-up"
+    ],
+    "execution_cues_pl": [
+      "Najpierw pompka — pełen zakres ruchu, potem tap na górze",
+      "Tap jest WOLNY i kontrolowany — nie machnięcie, nie klepnięcie",
+      "Biodra zostają RÓWNOLEGLE — wyobraź sobie szklankę wody na dolnym odcinku pleców",
+      "Napieraj ręką podporową w podłogę — 'długie ramię, mocny bark'",
+      "Naprzemiennie co powtórzenie — lewy tap, pompka, prawy tap, pompka"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips swaying / rotating during the tap",
+        "faultPl": "Biodra kołyszą się / rotują podczas tapu",
+        "cause": "Weak anti-rotation core, narrow feet stance, lifting hand too fast",
+        "causePl": "Słaby anti-rotation core, za wąsko ustawione stopy, zbyt szybkie odrywanie dłoni",
+        "cue": "Widen your feet, brace abs HARD before the tap, lift the hand only 5-10 cm off the floor — small slow tap beats a big sloppy one.",
+        "cuePl": "Rozstaw stopy szerzej, MOCNO napnij brzuch przed tapem, oderwij dłoń tylko 5-10 cm od podłogi — mały wolny tap jest lepszy niż duży niechlujny."
+      },
+      {
+        "fault": "Sagging hips during the push-up phase",
+        "faultPl": "Opadające biodra w fazie pompki",
+        "cause": "Weak core, no glute engagement, fatigue from the tap phase",
+        "causePl": "Słaby brzuch, brak napięcia pośladków, zmęczenie po fazie tapu",
+        "cue": "Squeeze glutes HARD between every rep. 'Plank first, push-up second, tap third'. If hips sag — regress to plank-shoulder-tap (no push-up).",
+        "cuePl": "MOCNO ściśnij pośladki między każdym powtórzeniem. 'Najpierw plank, potem pompka, potem tap'. Jeśli biodra opadają — wróć do plank-shoulder-tap (bez pompki)."
+      },
+      {
+        "fault": "Partial push-up ROM (just tap, barely lower)",
+        "faultPl": "Częściowy zakres pompki (tylko tap, bez głębokiego zejścia)",
+        "cause": "Ego — chasing tap reps, fatigue, lack of pressing strength",
+        "causePl": "Ego — gonienie za liczbą tapów, zmęczenie, brak siły wyciskania",
+        "cue": "Every push-up must reach chest within a fist of the floor. If you can't — switch to plank-shoulder-tap only and build push-up strength separately.",
+        "cuePl": "Każda pompka musi dojść klatką na wysokość pięści od podłogi. Jeśli nie dasz rady — przejdź na sam plank-shoulder-tap i buduj siłę pompki osobno."
+      },
+      {
+        "fault": "Rushed alternating taps (no control)",
+        "faultPl": "Pośpieszne naprzemienne tapy (brak kontroli)",
+        "cause": "Treating it like cardio instead of stability work",
+        "causePl": "Traktowanie jak cardio zamiast pracy stabilizacyjnej",
+        "cue": "1-second pause when the hand touches the shoulder. 'Tap and hold, then return'. This is core training, not a race.",
+        "cuePl": "1-sekundowa pauza gdy dłoń dotyka barku. 'Dotknij i przytrzymaj, potem wróć'. To trening core, nie wyścig."
+      },
+      {
+        "fault": "Elbows flared 90° during the push-up",
+        "faultPl": "Łokcie rozsunięte na 90° w pompce",
+        "cause": "Hands too wide, poor elbow tracking habit",
+        "causePl": "Dłonie za szeroko, zły nawyk toru łokci",
+        "cue": "Elbows track at ~45° from torso — 'tuck them toward your ribs'. Protects shoulders and improves triceps engagement.",
+        "cuePl": "Łokcie pod ~45° od tułowia — 'schowaj je do żeber'. Chroni barki i poprawia pracę tricepsów."
+      }
+    ],
+    "breathing": "Inhale on the descent of the push-up, exhale on the press up. Hold a light brace during the tap (do not hold your breath for full reps — keep breathing rhythmic). Reset breath every 2-4 reps if needed.",
+    "breathingPl": "Wdech w fazie schodzenia pompki, wydech podczas wyciskania. Lekkie napięcie podczas tapu (nie wstrzymuj oddechu przez całe powtórzenia — utrzymuj rytmiczny oddech). Reset oddechu co 2-4 powtórzenia w razie potrzeby."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles or fists (knuckles down) to keep the wrist neutral. The single-arm support during the tap loads the supporting wrist heavily.",
+      "modificationPl": "Użyj uchwytów do pompek lub pięści (knykcie w dół) aby utrzymać neutralny nadgarstek. Podpór na jednej ręce podczas tapu mocno obciąża nadgarstek podporowy.",
+      "alternative": "plank-shoulder-tap"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "modify",
+      "modification": "The single-arm support phase demands strong rotator cuff and scapular control. Reduce ROM (short tap to chest instead of shoulder), or regress to plank-shoulder-tap on knees.",
+      "modificationPl": "Faza podporu na jednej ręce wymaga mocnej grupy rotatorów i kontroli łopatek. Zmniejsz zakres (krótki tap do klatki zamiast do barku) lub wróć do plank-shoulder-tap na kolanach.",
+      "alternative": "incline-shoulder-tap-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Hip rotation/sagging during the tap loads the lumbar spine. If you can't keep hips square — drop the push-up component and master plank-shoulder-tap first.",
+      "modificationPl": "Rotacja/opadanie bioder podczas tapu obciąża odcinek lędźwiowy. Jeśli nie utrzymasz bioder równolegle — pomiń komponent pompki i opanuj najpierw plank-shoulder-tap.",
+      "alternative": "plank-shoulder-tap"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "modify",
+      "modification": "Prone position with abdominal pressure is contraindicated in late pregnancy. Switch to incline variant (hands on bench/wall) or upright anti-rotation work.",
+      "modificationPl": "Pozycja na brzuchu z naciskiem na powłoki brzuszne jest przeciwwskazana w późnej ciąży. Przejdź na wariant incline (dłonie na ławce/ścianie) lub stojącą pracę anti-rotation.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (16-24 total taps) | 3x30-45s AMRAP | 4x6-10 slow tempo (3s tap hold) for stability focus",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "shoulder-tap-push-up.gif",
+    "frames_extracted": [
+      "frames/shoulder-tap-push-up/frame_0_start.png",
+      "frames/shoulder-tap-push-up/frame_1_early.png",
+      "frames/shoulder-tap-push-up/frame_2_mid.png",
+      "frames/shoulder-tap-push-up/frame_3_late.png",
+      "frames/shoulder-tap-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/shoulder-tap-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji high plank / pompki — stopy na podłodze, jedna dłoń na podłodze jako podpora, druga dłoń uniesiona i dotykająca przeciwnego barku (prawa dłoń → lewy bark). Klatka piersiowa i mięsień zębaty wyraźnie podświetlone (anti-rotation + push). Frame 2 (mid): pełne opuszczenie w pompce — obie dłonie na podłodze, klatka tuż nad podłogą, łokcie zgięte pod ~45° od tułowia, tricepsy mocno zaakcentowane na anatomii (faza wyciskania). Frame 4 (end): powrót do shoulder tap — analogicznie jak frame 0. Frames 1 i 3 to nakładki przejściowe (transition overlay) między fazą tapu a fazą pompki — pokazują ruch ciała góra-dół. Cykl ruchu: tap → push-up (down/up) → tap drugą ręką → push-up → tap itd. Hips wyraźnie square w GIFie (brak rotacji miednicy). Wszystkie pola PL napisane od zera w polskim standardzie fitness. Bilateral alternating + anti-rotation core wymaga zaklasyfikowania obliques jako primary (faktyczna główna praca podczas fazy tap), pectoralis_major i triceps primary za fazę push-up.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "core", "anti_rotation", "unilateral_support", "home_workout", "no_equipment_friendly", "stability"]
+}

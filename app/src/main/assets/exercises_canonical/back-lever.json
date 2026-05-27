@@ -1,0 +1,207 @@
+{
+  "id": "back-lever",
+  "name": "Back Lever",
+  "namePl": "Back lever (gimnastyka)",
+  "aliases": ["back lever hold", "back lever hang", "BL", "reverse front lever"],
+  "aliasesPl": ["back lever", "horyzont tylny", "horyzont odwrotny", "back lever na drążku", "back lever na kółkach"],
+
+  "description": "Advanced gymnastic static hold. You hang from a pull-up bar or gymnastic rings, rotate forward through the bar and hold your body HORIZONTAL — parallel to the ground but FACE DOWN (opposite of front lever, which is face up). Arms remain fully extended behind you, shoulders in extreme extension. Demands enormous straight-arm pushing strength from chest and anterior deltoids, plus eccentric strength of biceps loaded in stretched position. A signature gymnastic ring/bar skill — looks deceptively simple but is brutal on the shoulders and elbows.",
+  "descriptionPl": "Zaawansowany statyczny hold z gimnastyki. Wisisz na drążku lub kółkach gimnastycznych, rotujesz ciało do przodu przez drążek i utrzymujesz pozycję POZIOMĄ — równolegle do podłogi, ale TWARZĄ W DÓŁ (odwrotnie do front lever, który jest twarzą do góry). Ramiona pozostają w pełni wyprostowane za tobą, barki w skrajnej ekstensji. Wymaga ogromnej siły z wyprostowanymi ramionami w klatce i przedniej części barków oraz ekscentrycznej siły bicepsa obciążonego w pozycji rozciągniętej. Charakterystyczny element gimnastyki na kółkach/drążku — wygląda zwodniczo prosto, ale jest brutalny dla barków i łokci.",
+
+  "instructions": [
+    "Grip a pull-up bar or gymnastic rings with palms facing TOWARDS your body (supinated/underhand) or pronated — supinated is more common for entry and is gentler on shoulders.",
+    "Start in a tucked inverted hang (German hang lead-in). Slowly rotate forward THROUGH the bar — your body passes between your arms and the bar.",
+    "From inverted hang, lower your hips and legs in front of you while extending the body. Arms straighten fully and rotate backward overhead.",
+    "Continue lowering until your body is HORIZONTAL — shoulders, hips and ankles aligned parallel to the floor, FACE DOWN.",
+    "Arms are COMPLETELY STRAIGHT behind you, shoulders in deep extension (the bar/rings are above and behind your head from your perspective).",
+    "Tighten the entire body: squeeze glutes hard, lock quads, point toes, brace core. Maintain a rigid straight line — no hip sag.",
+    "Hold the position for prescribed time. Breathe shallowly through the nose; do not hold your breath.",
+    "Reverse the motion under control — tuck back up to inverted hang, then down to dead hang. NEVER drop out of a back lever — it can wreck shoulders and biceps."
+  ],
+  "instructionsPl": [
+    "Złap drążek lub kółka gimnastyczne dłońmi skierowanymi DO siebie (chwyt supinated/podchwyt) lub nachwytem — supinated jest częstszy na wejście i łagodniejszy dla barków.",
+    "Zacznij z odwróconego zwisu w pozycji tuck (German hang jako wejście). Powoli rotuj do przodu PRZEZ drążek — ciało przechodzi między ramionami a drążkiem.",
+    "Z odwróconego zwisu opuszczaj biodra i nogi przed sobą, jednocześnie wydłużając ciało. Ramiona prostują się w pełni i rotują do tyłu nad głową.",
+    "Kontynuuj opuszczanie aż ciało będzie POZIOMO — barki, biodra i kostki w jednej linii równolegle do podłogi, TWARZĄ W DÓŁ.",
+    "Ramiona CAŁKOWICIE WYPROSTOWANE za tobą, barki w głębokiej ekstensji (drążek/kółka są nad i za twoją głową z twojej perspektywy).",
+    "Napnij całe ciało: ściśnij mocno pośladki, zablokuj czworogłowe, wyciągnij palce stóp, napnij brzuch. Utrzymaj sztywną prostą linię — bez opadania bioder.",
+    "Utrzymaj pozycję przez zalecany czas. Oddychaj płytko nosem; nie wstrzymuj oddechu.",
+    "Odwróć ruch kontrolowanie — wróć do tucka w odwróconym zwisie, potem do dead hang. NIGDY nie spadaj z back lever — może to zniszczyć barki i bicepsy."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "horizontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "anterior_deltoid", "pectoralis_major", "biceps_brachii"],
+    "secondary": ["core", "rectus_abdominis", "obliques", "erector_spinae", "glutes", "triceps_brachii"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "forearms", "quadriceps", "trapezius_middle_lower"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "anterior_deltoid": "P10",
+    "pectoralis_major": "P9",
+    "biceps_brachii": "P9",
+    "core": "S9",
+    "rectus_abdominis": "S8",
+    "obliques": "S7",
+    "erector_spinae": "S8",
+    "glutes": "S8",
+    "triceps_brachii": "S7",
+    "serratus_anterior": "S7",
+    "forearms": "S7",
+    "quadriceps": "S6"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["gymnastic_rings", "chalk", "wrist_wraps", "resistance_bands", "elbow_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["pull-up", "german-hang", "skin-the-cat", "tuck-back-lever", "advanced-tuck-back-lever", "straddle-back-lever", "one-leg-back-lever"],
+    "progression_to": ["back-lever-pull-up", "back-lever-press", "victorian-cross", "iron-cross", "maltese"],
+    "alternatives": ["tuck-back-lever", "advanced-tuck-back-lever", "straddle-back-lever", "band-assisted-back-lever", "back-lever-negatives"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Grip slightly wider than shoulders, supinated entry preferred",
+      "Enter through tuck inverted hang (NOT from dead hang)",
+      "Rotate forward THROUGH the bar — body between arms and bar",
+      "Arms locked completely straight at all times",
+      "Body rigid: glutes, quads, abs all firing"
+    ],
+    "setup_cues_pl": [
+      "Chwyt nieco szerzej niż barki, supinated na wejściu lepszy",
+      "Wchodź przez tuck w odwróconym zwisie (NIE z dead hang)",
+      "Rotuj do przodu PRZEZ drążek — ciało między ramionami a drążkiem",
+      "Ramiona zablokowane całkowicie prosto przez cały czas",
+      "Ciało sztywne: pośladki, czworogłowe, brzuch — wszystko napięte"
+    ],
+    "execution_cues": [
+      "Face DOWN, NOT up (opposite of front lever)",
+      "Arms LOCKED behind you — shoulders in deep extension",
+      "Push chest DOWN to the floor, push hips UP",
+      "Squeeze glutes hard — they keep the line straight",
+      "Toes pointed, legs together, hollow body engaged"
+    ],
+    "execution_cues_pl": [
+      "Twarzą W DÓŁ, NIE w górę (odwrotnie niż front lever)",
+      "Ramiona ZABLOKOWANE za tobą — barki w głębokiej ekstensji",
+      "Pchaj klatkę W DÓŁ do podłogi, biodra W GÓRĘ",
+      "Mocno ściśnij pośladki — to one trzymają prostą linię",
+      "Palce stóp wyciągnięte, nogi razem, hollow body napięte"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bent arms during the hold",
+        "faultPl": "Zgięte ramiona podczas utrzymywania",
+        "cause": "Insufficient straight-arm strength in shoulders/biceps in stretched position",
+        "causePl": "Niewystarczająca siła wyprostowanych ramion w barkach/bicepsie w pozycji rozciągniętej",
+        "cue": "If elbows bend = it's not a back lever. Regress to advanced tuck or straddle until you can hold with arms locked.",
+        "cuePl": "Jeśli łokcie się zginają = to nie jest back lever. Cofnij się do advanced tuck lub straddle aż utrzymasz z ramionami zablokowanymi."
+      },
+      {
+        "fault": "Hips sagging (body banana shape, head/feet higher than hips)",
+        "faultPl": "Biodra opadające (ciało w kształcie banana, głowa/stopy wyżej niż biodra)",
+        "cause": "Weak glutes/core, inability to maintain hollow body under load",
+        "causePl": "Słabe pośladki/core, brak umiejętności utrzymania hollow body pod obciążeniem",
+        "cue": "Squeeze glutes HARDER than you think possible. Push hips UP to ceiling. Practice hollow body holds first.",
+        "cuePl": "Ściśnij pośladki MOCNIEJ niż uważasz że możesz. Pchaj biodra W GÓRĘ do sufitu. Najpierw trenuj hollow body holds."
+      },
+      {
+        "fault": "Body not horizontal — torso angled (head too low, feet too high or vice versa)",
+        "faultPl": "Ciało nie poziome — tułów pod kątem (głowa za nisko, stopy za wysoko lub odwrotnie)",
+        "cause": "Insufficient strength to reach full horizontal, or fatigue",
+        "causePl": "Niewystarczająca siła do osiągnięcia pełnego poziomu, lub zmęczenie",
+        "cue": "Honest level check: hold the angle you can keep CLEAN. Use video feedback. Quality > duration.",
+        "cuePl": "Szczera ocena kąta: utrzymuj kąt który możesz trzymać CZYSTO. Użyj video feedback. Jakość > czas."
+      },
+      {
+        "fault": "Dropping out of back lever uncontrolled",
+        "faultPl": "Niekontrolowane opadanie z back lever",
+        "cause": "Holding to failure without exit strategy — biceps and shoulders explode under stretched eccentric",
+        "causePl": "Utrzymywanie do upadku bez strategii wyjścia — bicepsy i barki eksplodują pod rozciągniętym obciążeniem ekscentrycznym",
+        "cue": "ALWAYS end the hold while you still have strength. Tuck back up to inverted hang before fatigue ends you. Back lever blowouts can require surgery.",
+        "cuePl": "ZAWSZE kończ hold gdy nadal masz siłę. Wróć do tucka w odwróconym zwisie zanim zmęczenie cię złapie. Urazy z back lever wymagają nieraz operacji."
+      },
+      {
+        "fault": "Pronated grip entry without preparation (elbows getting hyperextended)",
+        "faultPl": "Wejście nachwytem bez przygotowania (łokcie nadmiernie wyprostowane)",
+        "cause": "Pronated grip locks the elbow in a vulnerable position under stretched load — risky without conditioning",
+        "causePl": "Nachwyt blokuje łokieć w pozycji podatnej na uraz pod obciążeniem rozciągającym — ryzykowny bez przygotowania",
+        "cue": "Start with supinated grip (palms toward you). Switch to pronated only after months of conditioning and never to failure.",
+        "cuePl": "Zacznij od podchwytu (dłonie do ciebie). Przejdź na nachwyt dopiero po miesiącach przygotowania i nigdy do upadku."
+      }
+    ],
+    "breathing": "Inhale and brace BEFORE entering position. During the hold: short shallow breaths through the nose, ribcage static, core rigid. Exhale on the controlled exit back to inverted hang. NEVER hold breath for the entire hold — oxygen debt causes sudden collapse, which is dangerous given the loaded biceps tendons.",
+    "breathingPl": "Wdech i napięcie PRZED wejściem w pozycję. Podczas utrzymywania: krótkie, płytkie oddechy nosem, klatka piersiowa statyczna, core sztywny. Wydech podczas kontrolowanego wyjścia do odwróconego zwisu. NIGDY nie wstrzymuj oddechu przez cały hold — deficyt tlenu powoduje nagły upadek, co jest niebezpieczne dla obciążonych ścięgien bicepsa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Back lever places extreme eccentric stretched load on biceps tendon — the most common cause of biceps tear in calisthenics. STOP completely until full recovery and prehab. Replace with tuck holds only.",
+      "modificationPl": "Back lever daje skrajne, rozciągające obciążenie ekscentryczne na ścięgno bicepsa — najczęstsza przyczyna zerwania bicepsa w calisthenics. ZATRZYMAJ całkowicie do pełnego wyleczenia i prehabu. Zastąp wyłącznie tuck holds.",
+      "alternative": "tuck-back-lever"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Straight-arm hyperextension under load directly aggravates elbow tendons (distal biceps + brachialis). Stop until pain-free. Address with eccentric biceps work first.",
+      "modificationPl": "Wyprost ramienia pod obciążeniem bezpośrednio drażni ścięgna łokcia (dystalny biceps + brachialis). Wstrzymaj do braku bólu. Najpierw popracuj nad ekscentrycznym bicepsem.",
+      "alternative": "german-hang"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Deep shoulder extension under load can crush anterior structures. Build shoulder health with controlled mobility work (German hang progressions) before attempting full lever.",
+      "modificationPl": "Głęboka ekstensja barku pod obciążeniem może zgnieść struktury przednie. Najpierw zbuduj zdrowie barku przez kontrolowaną pracę mobilizacyjną (progresje German hang) zanim podejdziesz do pełnego lever.",
+      "alternative": "german-hang"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Sagging hips load the lumbar in extension. If glutes/abs can't hold a straight line, the lower back takes the hit. Regress to tuck back lever and prioritize core stability.",
+      "modificationPl": "Opadające biodra obciążają odcinek lędźwiowy w ekstensji. Jeśli pośladki/brzuch nie utrzymują prostej linii, oberwie odcinek krzyżowy. Cofnij się do tuck back lever i priorytetuj stabilność core.",
+      "alternative": "tuck-back-lever"
+    }
+  ],
+
+  "typical_sets_reps": "3x3-15 sekund (hold) | 4-6x3-8s (akumulacja) | 3x negatywy 5-10s (progresja)",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "back-lever.gif",
+    "frames_extracted": [
+      "frames/back-lever/frame_0_start.png",
+      "frames/back-lever/frame_1_early.png",
+      "frames/back-lever/frame_2_mid.png",
+      "frames/back-lever/frame_3_late.png",
+      "frames/back-lever/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/back-lever"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frames 0/2/4: klasyczny back lever na drążku z support stand — ciało w pełni poziome, równolegle do podłogi, TWARZĄ W DÓŁ (cecha odróżniająca od front lever twarzą w górę). Ramiona całkowicie wyprostowane za tobą, barki w głębokiej ekstensji. Frame 2 podświetla pracujące mięśnie: przednia część naramiennego (P10) jako główny pracownik utrzymujący ramię w ekstensji pod obciążeniem, klatka piersiowa (P9) i najszersze (P9) wspierające stabilizację, biceps_brachii (P9) w izometrycznej kontraktcji pod rozciągnięciem (najczęstsze miejsce kontuzji w back lever), core/pośladki/erektory utrzymujące prostą linię ciała. Statyczna izometria — brak ruchu między frames. Mechanic: isometric. Plane: horizontal (ciało poziomo). Force: static. Difficulty 9/10 (jeden poziom niżej niż front lever — back lever łatwiejszy do wejścia ale potencjalnie BARDZIEJ niebezpieczny dla bicepsa i barku w razie błędu). PL nazwa 'Back lever (gimnastyka)' zachowuję jako bezpośrednią transliterację — wariant 'horyzont tylny' używany w polskim calisthenics istnieje, ale 'back lever' jest standardem rozpoznawalnym.",
+
+  "tags": ["calisthenics", "bodyweight", "gymnastics", "static_hold", "isometric", "advanced", "anterior_deltoid", "chest", "biceps", "rings", "hollow_body", "straight_arm_strength", "shoulder_extension", "high_injury_risk"]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "sissy-squat",
+  "name": "Sissy Squat",
+  "namePl": "Sissy squat",
+  "aliases": ["sissy squat bodyweight", "leaning back squat", "quad-isolation squat"],
+  "aliasesPl": ["sissy squat", "przysiad sissy", "przysiad izolujący czworogłowe", "przysiad z odchyleniem do tyłu"],
+
+  "description": "Bodyweight quadriceps-isolation movement performed by leaning the torso backward while the knees travel far forward over the toes. The hips stay fully extended throughout the rep, which removes the glutes and hamstrings from the equation and forces the quadriceps — especially the rectus femoris — to handle the entire load. Knees, hips and shoulders form a single straight line from start to finish. Classic old-school bodybuilding exercise used by Vince Gironda and Tom Platz for finishing quad work. Holding a bench, rack or sissy-squat bench for balance is standard.",
+  "descriptionPl": "Ćwiczenie izolujące mięśnie czworogłowe wykonywane z ciężarem własnego ciała: tułów odchyla się do tyłu, a kolana wysuwają się daleko przed palce stóp. Biodra przez cały ruch pozostają w pełnym wyproście, dzięki czemu pośladki i dwugłowe uda są wyłączone z pracy, a cały ciężar bierze na siebie czworogłowy uda — zwłaszcza mięsień prosty (rectus femoris). Kolana, biodra i barki tworzą jedną prostą linię od początku do końca powtórzenia. Klasyczne starodawne ćwiczenie kulturystyczne, używane przez Vince'a Girondę i Toma Platza jako wykończenie treningu czworogłowych. Standardowo wykonywane z podparciem o ławkę, stojak lub specjalną ławeczkę do sissy squat.",
+
+  "instructions": [
+    "Stand upright next to a bench or sturdy object you can grip with one hand for balance. Feet hip-width apart, toes slightly turned out.",
+    "Grip the support firmly with one hand at hip or chest height. Brace your core and squeeze your glutes — hip extension must be maintained throughout the entire rep.",
+    "Rise onto the balls of your feet (heels lifted) and lock your hips fully extended. Knees, hips, and shoulders should form one straight line.",
+    "Initiate the descent by letting your knees travel forward over your toes while simultaneously leaning your torso backward. Hips stay locked in extension.",
+    "Continue lowering until your knees are deeply bent (heels near glutes) and your torso is angled back as far as comfortable while maintaining a straight line from knee to shoulder.",
+    "Pause briefly at the bottom feeling intense stretch and tension in the quadriceps and front of the thighs.",
+    "Drive back up by powerfully extending the knees, keeping the body in the same straight line. Do not jackknife at the hips.",
+    "Finish standing tall in full hip and knee extension. Squeeze the quads at the top."
+  ],
+  "instructionsPl": [
+    "Stań prosto obok ławki lub stabilnego obiektu, którego możesz się przytrzymać jedną ręką dla równowagi. Stopy na szerokość bioder, palce lekko na zewnątrz.",
+    "Złap mocno podparcie jedną ręką na wysokości bioder lub klatki. Napnij brzuch i ściśnij pośladki — wyprost bioder musi być utrzymany przez całe powtórzenie.",
+    "Unieś się na śródstopia (pięty oderwane od podłogi) i zablokuj biodra w pełnym wyproście. Kolana, biodra i barki w jednej prostej linii.",
+    "Rozpocznij schodzenie pozwalając kolanom wysunąć się daleko przed palce, jednocześnie odchylając tułów do tyłu. Biodra ZOSTAJĄ wyprostowane.",
+    "Schodź aż kolana będą głęboko zgięte (pięty blisko pośladków), a tułów odchylony do tyłu na tyle, na ile pozwala mobilność — zachowując prostą linię od kolan do barków.",
+    "Zatrzymaj się na chwilę na dole czując silne rozciągnięcie i napięcie w czworogłowych i przedniej części ud.",
+    "Wróć w górę dynamicznie prostując kolana, utrzymując ciało w tej samej prostej linii. NIE składaj się w biodrach.",
+    "Zakończ w pełnym wyproście kolan i bioder, stojąc wyprostowanym. Ściśnij czworogłowe na górze."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps"],
+    "secondary": ["hip_flexors", "core"],
+    "stabilizers": ["calves", "rectus_abdominis", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "hip_flexors": "S6",
+    "core": "S5",
+    "calves": "T4",
+    "rectus_abdominis": "T3",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["bench", "squat_rack", "sissy_squat_bench", "dumbbell", "weight_plate"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-squat", "wall-sit", "goblet-squat"],
+    "progression_to": ["weighted-sissy-squat", "sissy-squat-bench", "pistol-squat"],
+    "alternatives": ["leg-extension", "spanish-squat", "cyclist-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Grip the support firmly with one hand",
+      "Rise onto the balls of your feet",
+      "Squeeze glutes hard — hips locked in extension",
+      "Knees, hips, shoulders in one straight line",
+      "Core braced, ribs down"
+    ],
+    "setup_cues_pl": [
+      "Mocno chwyć podparcie jedną ręką",
+      "Wstań na śródstopia (pięty w górze)",
+      "Mocno ściśnij pośladki — biodra zablokowane w wyproście",
+      "Kolana, biodra, barki w jednej prostej linii",
+      "Brzuch napięty, żebra w dół"
+    ],
+    "execution_cues": [
+      "Knees go far forward over the toes — that is the point",
+      "Lean torso back as knees travel forward (counterbalance)",
+      "Keep hips fully extended throughout — do not bend at the hip",
+      "Body stays in one straight line knee-hip-shoulder",
+      "Drive up by extending knees, NOT by pulling hips back"
+    ],
+    "execution_cues_pl": [
+      "Kolana wysuwają się daleko przed palce stóp — o to chodzi",
+      "Odchylaj tułów do tyłu w miarę jak kolana idą do przodu (kontrwaga)",
+      "Biodra przez cały ruch wyprostowane — NIE zginaj się w biodrach",
+      "Ciało w jednej prostej linii kolano-biodro-bark",
+      "Wstawaj prostując kolana, NIE wycofując bioder do tyłu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hip flexion (jackknifing at the hips)",
+        "faultPl": "Zginanie w biodrach (składanie się w biodrach)",
+        "cause": "Weak glutes, lack of awareness, treating it like a regular squat",
+        "causePl": "Słabe pośladki, brak świadomości ruchu, traktowanie jak zwykły przysiad",
+        "cue": "Squeeze the glutes harder. Imagine your body is a straight wooden plank from knee to shoulder.",
+        "cuePl": "Mocniej ściśnij pośladki. Wyobraź sobie że ciało to jedna prosta deska od kolana do barku."
+      },
+      {
+        "fault": "Heels stay on the ground",
+        "faultPl": "Pięty pozostają na podłodze",
+        "cause": "Limited ankle dorsiflexion, not understanding the movement, fear of falling",
+        "causePl": "Słaba dorsiflexja stawu skokowego, brak zrozumienia ruchu, strach przed upadkiem",
+        "cue": "Lift your heels up at the start. The whole rep is done on the balls of your feet — heels never touch.",
+        "cuePl": "Unieś pięty na samym początku. Całe powtórzenie wykonujesz na śródstopiach — pięty nigdy nie dotykają podłogi."
+      },
+      {
+        "fault": "Knees collapse inward (valgus)",
+        "faultPl": "Kolana uciekają do środka (koślawość)",
+        "cause": "Weak abductors, lack of control under the extreme knee position, fatigue",
+        "causePl": "Słabe odwodziciele biodra, brak kontroli w skrajnej pozycji kolan, zmęczenie",
+        "cue": "Track knees over the second toe. If knees cave, reduce ROM and add band around the knees.",
+        "cuePl": "Kolana prowadź nad drugim palcem stopy. Jeśli kolana koślawieją — zmniejsz zakres i dodaj gumę wokół kolan."
+      },
+      {
+        "fault": "Going too low too soon",
+        "faultPl": "Zbyt głębokie schodzenie zbyt wcześnie",
+        "cause": "Underestimating the knee stress, ego, attempting full range before quad strength is built up",
+        "causePl": "Niedocenianie obciążenia kolan, ego, próba pełnego zakresu zanim wzrośnie siła czworogłowych",
+        "cue": "Build up ROM gradually over weeks. Start at 45° knee flexion and add a few degrees each session.",
+        "cuePl": "Zwiększaj zakres ruchu stopniowo przez tygodnie. Zacznij od 45° zgięcia kolan i dodawaj kilka stopni co trening."
+      },
+      {
+        "fault": "Letting go of the support too early",
+        "faultPl": "Puszczanie podparcia zbyt wcześnie",
+        "cause": "Wanting to look advanced, lack of balance work, weak quads",
+        "causePl": "Chęć wyglądania na zaawansowanego, słaba praca równowagi, słabe czworogłowe",
+        "cue": "Keep one hand on the support until you can perform 3x10 perfect reps assisted.",
+        "cuePl": "Trzymaj jedną rękę na podparciu aż wykonasz 3x10 idealnych powtórzeń z asystą."
+      }
+    ],
+    "breathing": "Inhale during the descent. Hold breath at the bottom in the stretched position. Exhale forcefully on the way up.",
+    "breathingPl": "Wdech podczas schodzenia. Wstrzymaj oddech na dole w pozycji rozciągniętej. Mocny wydech podczas powrotu w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellar_tendinopathy",
+      "severity": "avoid",
+      "modification": "Knees far over toes places enormous shear and compressive load on the patellar tendon. Avoid until pain-free and tendon is rehabbed.",
+      "modificationPl": "Kolana daleko przed palcami stóp generują ogromne obciążenie ścięgna rzepki. Unikaj do czasu ustąpienia bólu i pełnej rehabilitacji ścięgna.",
+      "alternative": "spanish-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "avoid",
+      "modification": "Extreme knee flexion under load aggravates meniscal pathology. Do not perform.",
+      "modificationPl": "Skrajne zgięcie kolan pod obciążeniem nasila uraz łąkotki. Nie wykonywać.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "chondromalacia_patella",
+      "severity": "caution",
+      "modification": "Test small ROM first (45° knee flexion). Stop immediately if any anterior knee pain. Reduce frequency to 1x/week.",
+      "modificationPl": "Najpierw przetestuj mały zakres (45° zgięcia kolan). Przerwij natychmiast jeśli pojawi się ból z przodu kolana. Ogranicz częstotliwość do 1x/tydzień.",
+      "alternative": "cyclist-squat"
+    },
+    {
+      "condition": "lower_back_hyperextension_pain",
+      "severity": "modify",
+      "modification": "The locked-extended hip position with backward lean can stress the lumbar spine. Brace core hard or use sissy squat bench that supports the back of the legs.",
+      "modificationPl": "Pozycja zablokowanych wyprostowanych bioder z odchyleniem do tyłu może obciążać lędźwie. Mocno napnij brzuch lub użyj ławki do sissy squat, która podpiera tył nóg.",
+      "alternative": "leg-extension"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / quad finisher) | 2-3x8-12 weighted (advanced) | 3x AMRAP (burnout at end of leg day)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "sissy-squat.gif",
+    "frames_extracted": [
+      "frames/sissy-squat/frame_0_start.png",
+      "frames/sissy-squat/frame_1_early.png",
+      "frames/sissy-squat/frame_2_mid.png",
+      "frames/sissy-squat/frame_3_late.png",
+      "frames/sissy-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/sissy-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatki potwierdzają specyfikę ruchu: start w wyproście z ręką na ławce (frame_0), klatka 2 (mid) pokazuje skrajną pozycję — kolana daleko przed palcami, tułów odchylony do tyłu, biodra w pełnym wyproście, linia kolano-biodro-bark zachowana. Podświetlenie anatomii: czworogłowe (rectus femoris i całe quads) jako P10, brak pośladków/dwugłowych — pasuje do izolacji. Klatka 4 (end) — powrót do startu z subtelnym cieniem oryginalnej pozycji. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Klasyfikacja force=both bo to klasyczny ruch ekscentryczno-koncentryczny izolacji z dużą fazą ekscentryczną. Mechanic=isolation mimo że to wieloskładowy ruch — w praktyce funkcjonuje jako izolacja quadricepsa (brak hip extension/flexion na poziomie biodra).",
+
+  "tags": ["bodyweight", "quad_isolation", "rectus_femoris", "old_school", "vince_gironda", "tom_platz", "knee_dominant", "advanced_isolation", "finisher"]
+}

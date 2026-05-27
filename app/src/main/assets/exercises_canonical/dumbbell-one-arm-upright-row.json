@@ -1,0 +1,211 @@
+{
+  "id": "dumbbell-one-arm-upright-row",
+  "name": "Dumbbell One-Arm Upright Row",
+  "namePl": "Wiosłowanie hantla stojąc do brody jednorącz",
+  "aliases": ["single-arm dumbbell upright row", "one arm upright row", "unilateral dumbbell upright row", "db single arm upright row"],
+  "aliasesPl": ["wiosłowanie pionowe hantlem jednorącz", "podciąganie hantla wzdłuż tułowia jednorącz", "upright row jednorącz z hantlem", "jednostronne wiosłowanie hantlem do brody"],
+
+  "description": "A unilateral standing vertical pull performed by drawing a single dumbbell up the front of the body along the centerline of the working shoulder. Loading one arm at a time eliminates the bar-imposed forearm pronation of the barbell version, allows the wrist to find a neutral path, and exposes asymmetries between the left and right shoulder. The single-arm pattern also forces the contralateral obliques and quadratus lumborum to fight the lateral pull of the load — a meaningful anti-lateral-flexion core demand absent from the bilateral barbell variant. The lateral deltoid of the working side is the prime mover, with the upper trapezius assisting through the final third of the range.",
+  "descriptionPl": "Jednostronne pionowe pociąganie wykonywane stojąc — pojedynczy hantel prowadzimy w górę wzdłuż przedniej części tułowia, mniej więcej po linii pracującego barku. Obciążenie jednej strony eliminuje wymuszoną pronację przedramienia jak przy sztandze, pozwala nadgarstkowi znaleźć neutralny tor i ujawnia asymetrie między lewym a prawym barkiem. Wzorzec jednorącz dodatkowo zmusza skośne brzucha oraz mięsień czworoboczny lędźwi po stronie przeciwnej do walki z bocznym ściąganiem ciężaru — to istotne wymaganie antybocznego zgięcia tułowia, którego nie ma w wersji obustronnej ze sztangą. Boczny akton mięśnia naramiennego po stronie pracującej jest głównym sprawcą ruchu, a górna część czworobocznego włącza się wyraźnie w ostatniej trzeciej części zakresu.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart, knees soft. Hold one dumbbell in front of your thigh with a pronated (overhand) grip — palm facing your body.",
+    "Let the dumbbell rest lightly against the front of your thigh on the working side, arm fully extended.",
+    "Set the shoulders back and down, chest tall, core braced. Place the free hand on your opposite hip or let it hang at your side.",
+    "Keep the torso vertical and squared to the front — do not lean away from the load or rotate the shoulders.",
+    "Initiate the pull by driving the elbow up and slightly out to the side. Lead with the elbow, not the hand.",
+    "Pull the dumbbell straight up the front of your body, keeping it close to the torso, until the elbow reaches shoulder height.",
+    "At the top the dumbbell should sit around upper-chest / collarbone level. Do NOT pull the elbow higher than the shoulder.",
+    "Hold the top position for a brief squeeze, feeling the lateral deltoid and upper trap of the working side contract.",
+    "Lower the dumbbell under control over 2-3 seconds back to the fully extended starting position against the thigh.",
+    "Complete all reps on one side, then switch arms. Exhale on the way up, inhale on the way down."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte. Trzymaj jeden hantel przed udem nachwytem — wnętrze dłoni skierowane do ciała.",
+    "Hantel pozostaje lekko oparty o przednią część uda po stronie pracującej, ramię w pełnym wyproście.",
+    "Ściągnij barki w tył i w dół, klatka w górze, brzuch napięty. Wolną rękę połóż na przeciwległym biodrze lub pozwól jej zwisać przy boku.",
+    "Tułów ma być pionowy i ustawiony równo w przód — nie odchylaj się od ciężaru i nie skręcaj barków.",
+    "Zainicjuj ruch wypychając łokieć w górę i lekko na zewnątrz. Prowadź ruch łokciem, nie dłonią.",
+    "Podciągnij hantel pionowo w górę wzdłuż przedniej części tułowia, blisko ciała, aż łokieć dojdzie do wysokości barku.",
+    "W szczytowej pozycji hantel powinien znaleźć się mniej więcej na wysokości górnej klatki / obojczyka. NIE unoś łokcia wyżej niż bark.",
+    "Zatrzymaj na chwilę w górnej pozycji aby poczuć skurcz bocznego aktonu naramiennego oraz górnej części czworobocznego po stronie pracującej.",
+    "Opuszczaj hantel w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu ramienia przy udzie.",
+    "Wykonaj wszystkie powtórzenia jedną stroną, następnie zmień rękę. Wydech podczas unoszenia, wdech podczas opuszczania."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids", "trapezius_upper"],
+    "secondary": ["anterior_deltoid", "trapezius_middle", "biceps_brachii", "brachialis"],
+    "stabilizers": ["rotator_cuff", "rhomboids", "forearm_flexors", "obliques", "quadratus_lumborum", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P10",
+    "trapezius_upper": "P7",
+    "anterior_deltoid": "S6",
+    "trapezius_middle": "S4",
+    "biceps_brachii": "S5",
+    "brachialis": "S4",
+    "rotator_cuff": "T3",
+    "rhomboids": "T3",
+    "forearm_flexors": "T3",
+    "obliques": "T3",
+    "quadratus_lumborum": "T3",
+    "core": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["lifting_straps", "weightlifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-lateral-raise", "dumbbell-shrug"],
+    "progression_to": ["dumbbell-upright-row", "kettlebell-upright-row", "barbell-wide-grip-upright-row"],
+    "alternatives": ["dumbbell-upright-row", "kettlebell-one-arm-upright-row", "cable-one-arm-upright-row", "dumbbell-lateral-raise", "cable-lateral-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft — stable base",
+      "Single dumbbell, pronated grip, palm toward thigh",
+      "Dumbbell resting against front of working-side thigh",
+      "Chest up, shoulders packed back and down, ribs over hips",
+      "Free hand on opposite hip — keeps the torso honest and squared"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana lekko ugięte — stabilna baza",
+      "Jeden hantel, chwyt nachwytem, wnętrze dłoni do uda",
+      "Hantel oparty o przednią część uda po stronie pracującej",
+      "Klatka w górze, barki ściągnięte w tył i w dół, żebra nad biodrami",
+      "Wolna ręka na przeciwległym biodrze — pomaga utrzymać tułów równo i bez skrętów"
+    ],
+    "execution_cues": [
+      "Lead with the elbow — drive it up and slightly out, not the hand",
+      "Stop when the elbow reaches shoulder height — never higher",
+      "Dumbbell travels straight up close to the torso — almost brushing your shirt",
+      "Resist leaning to the opposite side — fight the lateral pull with the obliques",
+      "Lower slowly — 2-3 seconds eccentric back to thigh contact"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch łokciem — wypychaj go w górę i lekko na zewnątrz, nie dłonią",
+      "Zatrzymaj gdy łokieć dojdzie do wysokości barku — nigdy wyżej",
+      "Hantel porusza się pionowo, blisko tułowia — prawie ociera się o koszulkę",
+      "Nie odchylaj się w przeciwną stronę — walcz z bocznym ściąganiem za pomocą skośnych brzucha",
+      "Opuszczaj wolno — 2-3 sekundy fazy negatywnej aż hantel dotknie uda"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the elbow above shoulder height",
+        "faultPl": "Unoszenie łokcia powyżej wysokości barku",
+        "cause": "Chasing 'longer range of motion', not understanding the impingement mechanism, copying old-school technique",
+        "causePl": "Pogoń za 'większym zakresem ruchu', brak świadomości mechanizmu konfliktu podbarkowego, kopiowanie starej szkoły",
+        "cue": "Stop when the upper arm is parallel to the floor. Above that point the humerus internally rotates and the lateral delt has nothing left to contribute — only impingement risk rises.",
+        "cuePl": "Zatrzymaj gdy ramię ponad łokciem jest równolegle do podłogi. Powyżej tego punktu kość ramienna obraca się do wewnątrz, boczny akton naramiennego nie ma już co dodać, a rośnie tylko ryzyko konfliktu podbarkowego."
+      },
+      {
+        "fault": "Leaning the torso away from the working side",
+        "faultPl": "Odchylanie tułowia w stronę przeciwną do pracującego ramienia",
+        "cause": "Load too heavy for the lateral delt, weak anti-lateral-flexion core, unconsciously using torso side-bend to 'lift' the dumbbell higher",
+        "causePl": "Zbyt duży ciężar dla bocznego aktonu naramiennego, słaby tułów w pracy antybocznej, nieświadome 'wyrzucanie' hantla zgięciem tułowia",
+        "cue": "Drop the weight 20%. Imagine a wall pressed to your free-side shoulder — you must not lean into it. Free hand on the opposite hip helps you feel the lean instantly.",
+        "cuePl": "Zmniejsz ciężar o 20%. Wyobraź sobie ścianę przy barku po stronie wolnej — nie wolno się o nią oprzeć. Wolna ręka na przeciwległym biodrze pozwala od razu wyczuć odchylenie."
+      },
+      {
+        "fault": "Leading with the hand / dumbbell instead of the elbow",
+        "faultPl": "Prowadzenie ruchu dłonią / hantlem zamiast łokciem",
+        "cause": "Biceps-dominant pull pattern, no awareness of where the lateral delt 'sits' in the movement",
+        "causePl": "Wzorzec pociągania zdominowany przez biceps, brak świadomości w którym miejscu pracuje boczny akton naramiennego",
+        "cue": "Think 'elbow to the ceiling, then to the side'. The hand and dumbbell are just along for the ride.",
+        "cuePl": "Myśl 'łokieć w sufit, potem na zewnątrz'. Dłoń i hantel są tylko biernym pasażerem ruchu."
+      },
+      {
+        "fault": "Swinging hips or using kip to start the rep",
+        "faultPl": "Bujanie biodrami lub używanie zamachu na start powtórzenia",
+        "cause": "Load too heavy, prioritizing weight over stimulus, fatigue late in the set",
+        "causePl": "Zbyt duży ciężar, stawianie kilogramów nad bodźcem, zmęczenie pod koniec serii",
+        "cue": "Hips and knees frozen — only the shoulder girdle moves. If you need momentum, the set is over.",
+        "cuePl": "Biodra i kolana nieruchome — pracuje tylko obręcz barkowa. Jeśli musisz pomóc sobie zamachem, seria jest skończona."
+      },
+      {
+        "fault": "Dumbbell drifting away from the body",
+        "faultPl": "Oddalanie hantla od ciała",
+        "cause": "Pulling with the biceps in a curl-like arc, weak scapular control, grip slipping forward on the handle",
+        "causePl": "Pociąganie bicepsami po łuku jak przy uginaniu, słaba kontrola łopatki, przesuwająca się dłoń na rękojeści",
+        "cue": "The dumbbell should almost brush your shirt the whole way up. Pull it like you're zipping up a jacket on your working side.",
+        "cuePl": "Hantel powinien prawie ocierać się o koszulkę przez cały ruch. Pociągaj jakbyś zapinał kurtkę po stronie pracującej."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pull up). Inhale during the eccentric (lower down). Maintain a light brace throughout — the unilateral load demands constant anti-lateral-flexion stiffness through the core.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię — jednostronny ciężar wymaga ciągłej sztywności tułowia przeciwko bocznemu zgięciu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_subacromial_syndrome",
+      "severity": "caution",
+      "modification": "Even unilateral upright row can aggravate active impingement at end-range. Stop the pull below shoulder height (elbow at chest level) or switch to single-arm dumbbell lateral raise in the scapular plane.",
+      "modificationPl": "Nawet wariant jednorącz może drażnić aktywny konflikt podbarkowy w końcowym zakresie. Zakończ ruch poniżej wysokości barku (łokieć na poziomie klatki) lub przejdź na jednoręczne odwodzenie hantlem w płaszczyźnie łopatkowej.",
+      "alternative": "dumbbell-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy_or_tear",
+      "severity": "avoid",
+      "modification": "Vertical pulling combined with internal humeral rotation is contraindicated for active rotator cuff pathology. Use single-arm lateral raise with thumb-up grip (scaption) instead.",
+      "modificationPl": "Pionowe pociąganie połączone z rotacją wewnętrzną kości ramiennej jest przeciwwskazane przy aktywnej patologii stożka rotatorów. Zamiast tego stosuj jednoręczne odwodzenie z kciukiem w górę (scaption).",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "avoid",
+      "modification": "End-range upright row compresses the acromioclavicular joint of the working side. Avoid entirely during active AC joint inflammation. Use single-arm lateral raise stopping at 80 degrees abduction.",
+      "modificationPl": "Końcowy zakres ruchu upright row uciska staw barkowo-obojczykowy po stronie pracującej. Unikaj zupełnie przy aktywnym zapaleniu stawu AC. Stosuj jednoręczne odwodzenie z zatrzymaniem na 80 stopniach.",
+      "alternative": "dumbbell-lateral-raise"
+    },
+    {
+      "condition": "lumbar_lateral_instability_or_acute_low_back_pain",
+      "severity": "modify",
+      "modification": "Unilateral load creates a strong anti-lateral-flexion demand on the lumbar spine. With acute back pain, switch to bilateral barbell wide-grip upright row or seated/cable lateral raise — both remove the side-bending torque.",
+      "modificationPl": "Jednostronne obciążenie generuje silne wymaganie antybocznego zgięcia kręgosłupa lędźwiowego. Przy ostrym bólu lędźwi przejdź na obustronne wiosłowanie sztangą szerokim chwytem albo siedzące/wyciągowe odwodzenia — oba eliminują moment skręcający w bok.",
+      "alternative": "barbell-wide-grip-upright-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 4x6-8 per side (strength) | 3x12-15 per side (high-volume / shoulder pump)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-one-arm-upright-row.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-upright-row/frame_0_start.png",
+      "frames/dumbbell-one-arm-upright-row/frame_1_early.png",
+      "frames/dumbbell-one-arm-upright-row/frame_2_mid.png",
+      "frames/dumbbell-one-arm-upright-row/frame_3_late.png",
+      "frames/dumbbell-one-arm-upright-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-one-arm-upright-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0: stojąca postawa, jeden hantel trzymany nachwytem przed udem po prawej stronie ciała, ramię w pełnym wyproście, wnętrze dłoni do uda. Boczny akton mięśnia naramiennego oraz górna część czworobocznego po stronie pracującej (prawej) podświetlone na czerwono — jednoznacznie identyfikuje cele mięśniowe (lateral deltoid P10, trapezius upper P7). Wolna ręka zwisa swobodnie. Frame 2 (mid/peak): hantel uniesiony do wysokości górnej klatki / obojczyka, łokieć wypchnięty w górę i nieco na zewnątrz na wysokość barku, ramię ponad łokciem zbliżone do równoległego do podłogi. Akcent na bocznych deltach i górnym trapezie pracującej strony pozostaje wyraźny. Tułów pozostaje pionowy, bez bocznego zgięcia — wzorcowe wykonanie. Frame 4: powrót do pozycji wyjściowej, hantel ponownie przy udzie. Specyfika jednorącz: ten sam wzorzec ruchu co barbell upright row, ale (1) ograniczone obciążenie do tego co utrzyma jedna ręka, (2) wolna pronacja przedramienia (brak sztywnego pręta), (3) wymuszona praca antybocznego zgięcia tułowia po stronie wolnej (obliques + QL jako stabilizatory). Difficulty 4 (niższe niż 5 wariantu ze sztangą) — łatwiej technicznie, mniejszy ciężar bezwzględny, ale dodatkowa praca core. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["bodybuilding", "shoulders", "delts", "lateral_deltoids", "traps", "compound", "dumbbell", "unilateral", "upper_body", "vertical_pull", "core_stability"]
+}

@@ -1,0 +1,199 @@
+{
+  "id": "ez-barbell-curl",
+  "name": "EZ Barbell Curl",
+  "namePl": "Uginanie ramion z gryfem łamanym EZ",
+  "aliases": ["ez bar curl", "ez-bar biceps curl", "standing ez curl", "cambered bar curl"],
+  "aliasesPl": ["uginanie bicepsów z gryfem EZ", "curl z łamaną sztangą", "uginanie ramion ze sztangą łamaną stojąc", "ez curl"],
+
+  "description": "Bilateral biceps curl performed standing with an EZ (cambered) bar. The angled grips place the wrists in a semi-supinated position roughly midway between full supination and neutral, which reduces strain on the wrists and medial elbow while still loading the biceps brachii heavily. Often the preferred barbell curl variation for lifters with wrist or elbow discomfort, and a staple alternative to the straight-bar curl.",
+  "descriptionPl": "Obustronne uginanie bicepsów wykonywane stojąc z gryfem łamanym (EZ). Skośne uchwyty ustawiają nadgarstki w pozycji półsupinowanej — mniej więcej w połowie drogi między pełną supinacją a chwytem neutralnym — co zmniejsza napięcie nadgarstków i przyśrodkowej strony łokcia, jednocześnie nadal mocno obciążając mięsień dwugłowy ramienia. Często jest to preferowany wariant uginania ze sztangą dla osób z dyskomfortem w nadgarstkach lub łokciach i klasyczna alternatywa dla curla z gryfem prostym.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grip the EZ bar on the inner angled sections with a semi-supinated grip (palms tilted up and slightly inward), hands roughly shoulder-width.",
+    "Let the bar hang at arms' length in front of your thighs. Pin your elbows to your sides — they should stay there for the entire set.",
+    "Brace your core, lift your chest, and keep your shoulders pulled back and down.",
+    "Curl the bar upward by flexing at the elbows only. Exhale on the way up. Keep the upper arms vertical and stationary.",
+    "Continue until the bar reaches the front of your shoulders and the biceps are fully contracted. Squeeze hard for a brief pause.",
+    "Lower the bar under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "Avoid swinging the torso or using hip momentum. Each rep starts from a dead stop with arms fully extended."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap gryf EZ za wewnętrzne skośne odcinki chwytem półsupinowanym (dłonie skierowane do góry i lekko do środka), ręce na szerokość barków.",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przed udami. Przyklej łokcie do boków tułowia — mają tam pozostać przez całą serię.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół.",
+    "Uginaj ramiona w łokciach do góry — pracują wyłącznie przedramiona. Wydychaj w fazie koncentrycznej. Ramiona ponad łokciem mają pozostać pionowe i nieruchome.",
+    "Kontynuuj ruch aż sztanga dotrze na wysokość przednich aktonów barków i biceps będzie w pełnym skurczu. Mocno napnij na chwilę w górnej pozycji.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania.",
+    "Unikaj bujania tułowia i pomagania biodrami. Każde powtórzenie zaczynaj z zatrzymanej pozycji z w pełni wyprostowanymi ramionami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S7",
+    "brachioradialis": "S6",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["ez_barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["barbell-curl", "preacher-curl", "spider-curl", "incline-dumbbell-curl"],
+    "alternatives": ["barbell-curl", "dumbbell-curl", "hammer-curl", "cable-curl", "preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Grip the inner angled sections, hands shoulder-width",
+      "Palms semi-supinated — tilted up and slightly inward",
+      "Elbows pinned to your sides",
+      "Chest up, shoulders back and down — brace the core"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Złap wewnętrzne skośne odcinki gryfu, ręce na szerokość barków",
+      "Dłonie półsupinowane — skierowane do góry i lekko do środka",
+      "Łokcie przyklejone do boków",
+      "Klatka w górze, barki ściągnięte w tył i w dół — napnij brzuch"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay still",
+      "Wrists relaxed — let the cambered grip do its job",
+      "Squeeze the biceps hard at the top",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Full lockout at the bottom of each rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Nadgarstki rozluźnione — pozwól gryfowi pracować zgodnie z kątem",
+      "Mocno spinaj biceps w górnej pozycji",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Pełny wyprost łokci na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging the torso (kipping / cheat reps)",
+        "faultPl": "Bujanie tułowia (oszukiwanie biodrami)",
+        "cause": "Load too heavy, ego lifting, or trying to grind out reps after technical failure",
+        "causePl": "Zbyt duży ciężar, ego, lub forsowanie powtórzeń po technicznym wyczerpaniu",
+        "cue": "Lower the weight. Pin your back against a wall to force strict reps.",
+        "cuePl": "Zmniejsz ciężar. Oprzyj plecy o ścianę aby wymusić ścisłą technikę."
+      },
+      {
+        "fault": "Elbows drift forward at the top",
+        "faultPl": "Łokcie wędrują do przodu w górnej pozycji",
+        "cause": "Attempting to lift the bar higher than full biceps contraction allows, recruiting anterior delts",
+        "causePl": "Próba uniesienia sztangi wyżej niż pozwala na to pełny skurcz bicepsa, włączanie przednich aktonów barków",
+        "cue": "Stop the curl when forearms reach vertical. Keep elbows directly under shoulders.",
+        "cuePl": "Zakończ uginanie gdy przedramiona dojdą do pionu. Łokcie dokładnie pod barkami."
+      },
+      {
+        "fault": "Gripping the outer (wider) bends of the bar",
+        "faultPl": "Chwyt za zewnętrzne (szersze) odcinki gryfu",
+        "cause": "Misunderstanding of bar design — the outer bends place the wrist in a less favorable angle for this exercise",
+        "causePl": "Niezrozumienie konstrukcji gryfu — zewnętrzne odcinki ustawiają nadgarstek pod mniej korzystnym kątem dla tego ćwiczenia",
+        "cue": "Use the inner angled sections for the standard EZ curl. The outer bends are for reverse-grip curls.",
+        "cuePl": "Używaj wewnętrznych skośnych odcinków do klasycznego curla EZ. Zewnętrzne odcinki są przeznaczone do uginania nachwytem."
+      },
+      {
+        "fault": "Partial range of motion (cutting off the bottom)",
+        "faultPl": "Niepełny zakres ruchu (skracanie dolnej fazy)",
+        "cause": "Ego lifting, weak stretched-position strength, or fear of joint strain",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub strach przed obciążeniem stawu",
+        "cue": "Lower until elbows are fully extended every rep. Reduce weight if needed.",
+        "cuePl": "Opuszczaj aż łokcie będą w pełni wyprostowane przy każdym powtórzeniu. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Leaning back at the top of the rep",
+        "faultPl": "Odchylanie się do tyłu w górnej pozycji",
+        "cause": "Compensating for biceps fatigue using lumbar extension, or load too heavy",
+        "causePl": "Kompensacja zmęczenia bicepsów wyprostem lędźwiowym, lub zbyt duży ciężar",
+        "cue": "Stay vertical — your ears should stay over your hips the entire set.",
+        "cuePl": "Pozostań pionowo — uszy nad biodrami przez całą serię."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light brace throughout to protect the lower back.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby chronić odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume and use lighter loads with higher reps (12-15). Avoid heavy eccentrics. The EZ-bar's semi-supinated grip is already friendlier than a straight bar, but pain-free range is the priority.",
+      "modificationPl": "Zmniejsz objętość i używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15). Unikaj ciężkich faz negatywnych. Półsupinowany chwyt na gryfie EZ jest już łagodniejszy od prostej sztangi, ale priorytetem jest zakres bez bólu.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "EZ-bar is usually better tolerated than straight bar, but if pain persists switch to hammer grip (neutral wrist) and reduce intensity until pain-free.",
+      "modificationPl": "Sztanga łamana jest zwykle lepiej tolerowana niż prosta, ale jeśli ból nie ustępuje przejdź na chwyt młotkowy (nadgarstek neutralny) i zmniejsz intensywność do zakresu bez bólu.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "The EZ-bar's angled grip is the standard accommodation for wrist issues, but if the cambered position still causes pain switch to dumbbells (free supination) or hammer grip.",
+      "modificationPl": "Skośny chwyt gryfu EZ jest standardowym rozwiązaniem przy problemach z nadgarstkami, ale jeśli pozycja łamana nadal sprawia ból, przejdź na hantle (swobodna supinacja) lub chwyt młotkowy.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing. Perform seated or use preacher bench to remove spinal loading.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia lędźwiowego. Wykonuj siedząc lub używaj ławki modlitewnika aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "ez-barbell-preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x6-8 (strength) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "ez-barbell-curl.gif",
+    "frames_extracted": [
+      "frames/ez-barbell-curl/frame_0_start.png",
+      "frames/ez-barbell-curl/frame_1_early.png",
+      "frames/ez-barbell-curl/frame_2_mid.png",
+      "frames/ez-barbell-curl/frame_3_late.png",
+      "frames/ez-barbell-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/ez-barbell-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pełny wyprost ramion, gryf EZ przed udami, chwyt półsupinowany na wewnętrznych skośnych odcinkach gryfu na szerokość barków, biceps i przedramiona podświetlone na czerwono. Frame 2: pełny skurcz, sztanga na wysokości przednich aktonów barków, łokcie pozostają przy bokach tułowia, ramię ponad łokciem pionowo, widoczne kątowe ustawienie chwytu (półsupinacja zamiast pełnej supinacji). Frame 4: powrót do pełnego wyprostu (z widocznym 'ghostem' fazy szczytowej powyżej). Tułów stoi nieruchomo przez cały ruch. Ćwiczenie jednoznacznie zidentyfikowane jako EZ Barbell Curl — różni się od barbell-curl wyłącznie typem gryfu i kątem nadgarstków. Wszystkie pola PL napisane od zera, z uwzględnieniem specyfiki gryfu łamanego (półsupinacja, mniej stresu na nadgarstki/łokcie).",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "ez_bar", "upper_body", "wrist_friendly", "classic"]
+}

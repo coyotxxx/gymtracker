@@ -1,0 +1,194 @@
+{
+  "id": "push-and-pull-bodyweight",
+  "name": "Push and Pull Bodyweight",
+  "namePl": "Push and pull bodyweight",
+  "aliases": ["dynamic chest expansion", "bodyweight chest push and pull", "self-resisted chest opener", "standing push-pull chest activation", "isokinetic chest fly"],
+  "aliasesPl": ["dynamiczne rozpieranie klatki", "bodyweight ściskanie i rozciąganie klatki", "stojąca aktywacja klatki push-pull", "samo-oporowy ruch piersi", "rozpieracz klatki bez sprzętu"],
+
+  "description": "A dynamic bodyweight chest exercise performed while standing. The lifter alternates between two phases: a 'push' phase where the hands come together in front of the chest (or cross slightly past the midline) with the pectorals contracting forcefully, and a 'pull' phase where the arms open wide out to the sides with the shoulder blades retracting and the upper back squeezing. The movement requires no equipment, generating tension purely through internal muscular co-contraction — the chest works concentrically during the push, the upper back works concentrically during the pull, and the antagonist provides smooth eccentric resistance throughout. Excellent as a warm-up activation drill for upper-body training, a low-impact finisher to extend pec/rear-delt time-under-tension, or a travel-friendly home option that hits both press and row patterns in one move.",
+  "descriptionPl": "Dynamiczne ćwiczenie z masą własną na klatkę piersiową, wykonywane w pozycji stojącej. Ćwiczący na zmianę wykonuje dwie fazy: fazę 'push' — dłonie spotykają się przed klatką (lub lekko krzyżują się za linią środkową) z mocnym skurczem mięśni piersiowych, oraz fazę 'pull' — ramiona otwierają się szeroko na boki ze zsunięciem łopatek i ścisnięciem górnych pleców. Ruch nie wymaga sprzętu — napięcie generowane jest wyłącznie przez współskurcz wewnętrzny mięśni: klatka pracuje koncentrycznie podczas pushu, górne plecy pracują koncentrycznie podczas pulla, a mięśnie antagonistyczne dostarczają płynnego oporu ekscentrycznego przez cały ruch. Świetne jako rozgrzewkowa aktywacja przed treningiem górnej części ciała, niskoimpaktowy finisher wydłużający czas pod napięciem na klatce i tylnym aktonie naramiennego, lub przyjazna podróżna opcja w domu, która jednym ruchem trafia we wzorzec wyciskania i wiosłowania.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, knees soft, ribcage stacked over pelvis, core lightly braced.",
+    "Raise both arms to shoulder height in front of you, elbows nearly straight, palms facing each other. This is the start of the push phase.",
+    "PUSH PHASE: actively squeeze the chest and bring the hands together in front of the sternum (or let them lightly cross past the midline). Generate maximum internal tension as if pressing through resistance. Exhale.",
+    "Pause briefly at the squeeze. Now reverse — slowly open the arms wide out to the sides under control, keeping a small bend in the elbows and the arms at shoulder height.",
+    "PULL PHASE: drive the elbows back, retract the shoulder blades, and squeeze the upper back (rear delts and rhomboids) at the end-range. The chest opens fully. Inhale.",
+    "Pause briefly in the open position, then reverse again — bring the arms forward to meet in front of the chest with the same controlled tempo.",
+    "Continue alternating push and pull phases for the prescribed reps. Move slowly and deliberately — this is a tension exercise, not a momentum exercise."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, kolana lekko miękkie, klatka ułożona nad miednicą, brzuch delikatnie napięty.",
+    "Unieś oba ramiona na wysokość barków przed siebie, łokcie niemal wyprostowane, dłonie zwrócone do siebie. To początek fazy push.",
+    "FAZA PUSH: aktywnie ściśnij mięśnie klatki i zbliż dłonie do siebie przed mostkiem (lub pozwól im lekko skrzyżować się za linią środkową ciała). Wytworz maksymalne napięcie wewnętrzne, jakbyś przeciskał ramiona przez opór. Wydech.",
+    "Zatrzymaj się na chwilę w ściśniętej pozycji. Teraz wróć — powoli otwieraj ramiona szeroko na boki pod kontrolą, utrzymując lekkie ugięcie w łokciach i ramiona na wysokości barków.",
+    "FAZA PULL: prowadź łokcie do tyłu, ściągnij łopatki i ściśnij górne plecy (tylny akton naramiennego oraz mięśnie równoległoboczne) w końcowym zakresie ruchu. Klatka pełni się otwiera. Wdech.",
+    "Zatrzymaj się na chwilę w otwartej pozycji, a następnie ponownie odwróć ruch — przyciągnij ramiona do przodu, by spotkały się przed klatką w tym samym kontrolowanym tempie.",
+    "Kontynuuj naprzemienne fazy push i pull przez przepisaną liczbę powtórzeń. Ruszaj się wolno i świadomie — to ćwiczenie na napięcie, a nie na rozpęd."
+  ],
+
+  "classification": {
+    "movement_pattern": "horizontal_press_pull",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "rear_deltoid"],
+    "secondary": ["rhomboids", "middle_trapezius", "anterior_deltoid"],
+    "stabilizers": ["core", "serratus_anterior", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "rear_deltoid": "P8",
+    "rhomboids": "S6",
+    "middle_trapezius": "S6",
+    "anterior_deltoid": "S4",
+    "serratus_anterior": "T3",
+    "core": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": []
+  },
+
+  "category": "mobility",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["band-chest-fly", "band-reverse-fly", "push-ups", "inverted-row"],
+    "alternatives": ["isometric-chest-squeeze", "band-reverse-fly", "band-chest-fly", "dynamic-chest-stretch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, ribcage over pelvis, knees soft and unlocked",
+      "Arms at shoulder height — not too high, not dropping",
+      "Slight bend in the elbows — don't lock them out",
+      "Shoulders pulled DOWN away from the ears before starting",
+      "Brace the core lightly — no arching the lower back"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, klatka nad miednicą, kolana miękkie i niezablokowane",
+      "Ramiona na wysokości barków — nie za wysoko, nie opadają",
+      "Lekkie ugięcie w łokciach — nie blokuj ich",
+      "Barki ściągnięte W DÓŁ od uszu przed rozpoczęciem",
+      "Lekko napnij brzuch — bez wyginania dolnych pleców"
+    ],
+    "execution_cues": [
+      "PUSH: imagine pressing through dense water with the chest leading",
+      "PULL: drive the elbows BACK, not just open the arms — squeeze the shoulder blades",
+      "Keep tension throughout — no rest at the endpoints",
+      "Slow tempo: 2 sec push, 1 sec squeeze, 2 sec pull, 1 sec squeeze",
+      "Wrists stay neutral and relaxed — don't grip or flex the hands"
+    ],
+    "execution_cues_pl": [
+      "PUSH: wyobraź sobie, że przepychasz ramiona przez gęstą wodę, klatka prowadzi ruch",
+      "PULL: prowadź łokcie DO TYŁU, nie tylko rozkładaj ramiona — ściśnij łopatki",
+      "Utrzymuj napięcie przez cały czas — bez odpoczynku w punktach końcowych",
+      "Wolne tempo: 2 sek push, 1 sek ścisk, 2 sek pull, 1 sek ścisk",
+      "Nadgarstki neutralne i rozluźnione — nie zaciskaj ani nie wyginaj dłoni"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using momentum / swinging the arms",
+        "faultPl": "Wykorzystywanie rozpędu / machanie ramionami",
+        "cause": "Without external load the body defaults to bouncing through reps, killing the chest/back tension that is the whole point of the drill",
+        "causePl": "Bez obciążenia zewnętrznego ciało domyślnie skacze przez powtórzenia, niwecząc napięcie klatki/pleców, które jest sednem ćwiczenia",
+        "cue": "Move as if pressing through wet sand — slow and continuously resisted in both directions",
+        "cuePl": "Ruszaj się jak przy przepychaniu przez mokry piasek — wolno i z ciągłym oporem w obu kierunkach"
+      },
+      {
+        "fault": "Arms drift below shoulder height during the pull",
+        "faultPl": "Ramiona opadają poniżej linii barków podczas fazy pull",
+        "cause": "Tired anterior delts or weak rear delts let the arms sag, shifting tension onto the biceps and away from the target muscles",
+        "causePl": "Zmęczone przednie aktony naramiennego lub słabe tylne aktony pozwalają ramionom opadać, przerzucając napięcie na bicepsy i z dala od mięśni docelowych",
+        "cue": "Hands stay at sternum-to-shoulder height the entire time — if they drop, stop and reset",
+        "cuePl": "Dłonie pozostają na wysokości od mostka do barków przez cały czas — gdy opadają, zatrzymaj się i ustaw od nowa"
+      },
+      {
+        "fault": "Shrugging shoulders up toward the ears during the pull phase",
+        "faultPl": "Wciąganie barków w górę w kierunku uszu podczas fazy pull",
+        "cause": "Substituting upper trap activation for proper scapular retraction; common in people with desk posture",
+        "causePl": "Zastępowanie prawidłowego zsunięcia łopatek pracą czworobocznego górnego; częste u osób z postawą biurową",
+        "cue": "Actively pull the shoulders DOWN and the elbows back at the same time — chest opens, neck stays long",
+        "cuePl": "Aktywnie ściągnij barki W DÓŁ i łokcie do tyłu jednocześnie — klatka się otwiera, kark pozostaje długi"
+      },
+      {
+        "fault": "Hyperextending the lower back during the pull phase",
+        "faultPl": "Nadmierne wygięcie dolnych pleców podczas fazy pull",
+        "cause": "Lack of core bracing allows the chest to 'open' by arching the lumbar spine instead of retracting the thoracic spine",
+        "causePl": "Brak napięcia brzucha pozwala 'otworzyć' klatkę przez wygięcie w odcinku lędźwiowym zamiast cofnięcia odcinka piersiowego",
+        "cue": "Squeeze the glutes lightly and keep the ribcage stacked over the pelvis — open the thoracic, not the lumbar",
+        "cuePl": "Lekko napnij pośladki i utrzymuj klatkę nad miednicą — otwieraj odcinek piersiowy, nie lędźwiowy"
+      },
+      {
+        "fault": "Generating no internal tension — going through the motions",
+        "faultPl": "Brak generowania napięcia wewnętrznego — bezmyślne wykonywanie ruchu",
+        "cause": "Treating the exercise like a stretch instead of a strength/activation drill; common when no external load creates a false sense of 'easy'",
+        "causePl": "Traktowanie ćwiczenia jak rozciąganie zamiast aktywacyjnego ćwiczenia siłowego; częste, gdy brak obciążenia tworzy fałszywe wrażenie 'łatwizny'",
+        "cue": "Squeeze HARD at each endpoint as if breaking a brick with your chest or back — the chest/back should burn within 15-20 reps",
+        "cuePl": "Ściskaj MOCNO w każdym punkcie końcowym, jakbyś rozbijał cegłę klatką lub plecami — klatka/plecy powinny zacząć piec w ciągu 15-20 powtórzeń"
+      }
+    ],
+    "breathing": "Exhale during the push phase (hands coming together — chest contracting). Inhale during the pull phase (arms opening — chest stretching, back contracting). Continuous diaphragmatic breathing; never hold the breath.",
+    "breathingPl": "Wydech podczas fazy push (dłonie zbliżają się — klatka się kurczy). Wdech podczas fazy pull (ramiona się otwierają — klatka się rozciąga, plecy się kurczą). Ciągły oddech przeponowy; nigdy nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce range of motion — keep the hands closer together and avoid maximum scapular retraction. If pain persists, switch to a pain-free isolated movement (band pull-apart at low intensity).",
+      "modificationPl": "Zredukuj zakres ruchu — trzymaj dłonie bliżej siebie i unikaj maksymalnego zsunięcia łopatek. Jeśli ból nie ustępuje, przejdź na bezbólowy ruch izolowany (band pull-apart o niskiej intensywności).",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "recent_chest_or_shoulder_surgery",
+      "severity": "avoid",
+      "modification": "Skip until cleared by a physiotherapist. Even bodyweight push-pull patterns can stress surgical repair sites (pec tendon, AC joint, rotator cuff, labrum).",
+      "modificationPl": "Pomiń do czasu zgody fizjoterapeuty. Nawet wzorce push-pull z masą własną mogą obciążyć miejsca operowane (ścięgno piersiowego, staw barkowo-obojczykowy, stożek rotatorów, obrąbek stawowy).",
+      "alternative": "isometric-chest-squeeze"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy",
+      "severity": "caution",
+      "modification": "Move slowly and keep the elbows slightly below shoulder height to reduce impingement risk. Avoid forcing end-range scapular retraction. Stop if any sharp pain in the front or top of the shoulder.",
+      "modificationPl": "Ruszaj się powoli i trzymaj łokcie nieco poniżej wysokości barków, by zmniejszyć ryzyko konfliktu w barku. Unikaj wymuszania maksymalnego zsunięcia łopatek na końcu zakresu. Przerwij przy ostrym bólu z przodu lub na szczycie barku.",
+      "alternative": "band-pull-apart"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x12-20 (mobility/activation) | 3x15-25 (endurance) | 3x30-45 sek (continuous tension finisher)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "push-and-pull-bodyweight.gif",
+    "frames_extracted": [
+      "frames/push-and-pull-bodyweight/frame_0_start.png",
+      "frames/push-and-pull-bodyweight/frame_1_early.png",
+      "frames/push-and-pull-bodyweight/frame_2_mid.png",
+      "frames/push-and-pull-bodyweight/frame_3_late.png",
+      "frames/push-and-pull-bodyweight/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/push-and-pull-bodyweight",
+    "yuhonas_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Model stoi prosto z ramionami na wysokości barków. Klatka 0 (start): ramiona złączone przed klatką (faza push w szczycie ściskania) — pectoralis major mocno podświetlony na czerwono, łokcie lekko ugięte, dłonie blisko siebie na wysokości mostka. Klatka 1-3 (early/mid/late): ramiona stopniowo rozkładają się szeroko na boki (faza pull) — najpierw pectoralis pozostaje podświetlony, potem aktywują się tylne aktony naramiennego i mięśnie górnych pleców (rear delt + middle trapezius + rhomboids — wszystkie podświetlone na czerwono w pełnym rozłożeniu). Klatka 4 (end): powrót do pozycji wyjściowej z ramionami przed sobą. Ruch potwierdzony jako dynamiczna addukcja/abdukcja ramion w płaszczyźnie poziomej — to NIE jest push-up + bodyweight row (mylące w nazwie), tylko stojące rozpieranie klatki + ściąganie łopatek. Klasyfikacja: horizontal_press_pull (mieszany wzorzec horyzontalny), force=both (push concentryczny chest + pull concentryczny back), mechanic=compound (2 stawy: bark + łopatka), bilateral, plane=transverse (płaszczyzna pozioma), kinetic_chain=open (dłonie wolne). Mięśnie główne: pectoralis_major P8 (faza push) + rear_deltoid P8 (faza pull) — równe primary, oba dostają mocny skurcz koncentryczny. Drugorzędne: rhomboids/middle_trapezius (przy ściąganiu łopatek), anterior_deltoid (utrzymanie ramion w pozycji). Category=mobility (dynamiczne ćwiczenie aktywacyjne/rozgrzewkowe bez obciążenia zewnętrznego, idealne na warm-up lub finisher). Difficulty=2, level=beginner (technika prosta, brak ryzyka kontuzji przy umiarkowanym tempie). Nazwa PL: zostawiłem oryginalną angielską 'Push and pull bodyweight' jako namePl (brak ugruntowanej polskiej nazwy w środowisku fitness), aliasy PL opisowe: 'dynamiczne rozpieranie klatki', 'bodyweight ściskanie i rozciąganie klatki'. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "no_equipment", "mobility", "activation", "warmup", "finisher", "chest", "upper_back", "home_workout", "beginner_friendly", "rehab_friendly", "push_pull"]
+}

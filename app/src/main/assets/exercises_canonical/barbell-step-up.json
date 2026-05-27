@@ -1,0 +1,206 @@
+{
+  "id": "barbell-step-up",
+  "name": "Barbell Step-Up",
+  "namePl": "Wchodzenie na ławkę ze sztangą",
+  "aliases": ["barbell box step-up", "back-loaded step-up", "weighted step-up barbell", "barbell bench step-up"],
+  "aliasesPl": ["wchodzenie na podwyższenie ze sztangą", "wejścia na ławkę ze sztangą", "step-up ze sztangą", "wchodzenie na skrzynię ze sztangą"],
+
+  "description": "Unilateral lower-body compound exercise. Athlete stands in front of a sturdy bench or plyo box with the barbell racked on the upper traps (as in a back squat), places one foot fully on the platform, then drives through the front heel to step up until the working leg is fully extended. The trailing leg either lightly taps the box at the top or remains hovering. The athlete then lowers in a controlled manner back to the floor. Targets quads and glutes of the working leg with strong gluteus medius and core stabilization. The unilateral, full-ROM nature exposes left-right asymmetries and develops single-leg strength carryover to running, sprinting and hiking.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała. Trenujący staje przed stabilną ławką lub skrzynią plyo ze sztangą opartą na górnej części trapezów (jak w przysiadzie tylnym), stawia jedną stopę całą powierzchnią na podwyższeniu, a następnie wypycha się przez piętę przedniej nogi do pełnego wyprostu nogi roboczej. Tylna noga albo lekko dotyka skrzyni w górze, albo zostaje uniesiona. Następnie kontrolowanie schodzi z powrotem na podłogę. Angażuje czworogłowe i pośladki nogi roboczej z silną pracą pośladka średniego i core. Charakter jednostronny i pełen zakres ruchu ujawniają asymetrie lewo-prawo oraz rozwijają siłę jednonóż użyteczną w bieganiu, sprincie i chodzeniu po górach.",
+
+  "instructions": [
+    "Place a sturdy flat bench or plyo box (knee-height) in an open area with enough room behind a squat rack.",
+    "Set the bar in the rack at upper-chest height, load both sides with light to moderate weight and secure with collars.",
+    "Step under the bar and rack it across your upper traps. Grip slightly wider than shoulder-width, elbows down, chest up.",
+    "Unrack the bar by extending your legs. Take two controlled steps back and position yourself about a foot in front of the box facing it.",
+    "Stand tall with feet hip-width apart. Brace your core, retract shoulder blades, take a deep breath and hold (Valsalva).",
+    "Place one foot fully on top of the box. The entire foot should be on the surface — heel, mid-foot and toes. Knee bent roughly 90°.",
+    "Drive through the heel and mid-foot of the foot on the box. Push your body up — do not push off the floor with the trailing leg.",
+    "Step up until the working leg is fully extended and you stand tall on top of the box. The trailing leg either taps the surface lightly or hovers next to the working leg.",
+    "Lower yourself in a controlled manner by bending the working leg. Place the trailing leg back on the floor first, then bring the working leg down.",
+    "Complete all reps on one side before switching legs, or alternate each rep depending on programming."
+  ],
+  "instructionsPl": [
+    "Ustaw stabilną płaską ławkę lub skrzynię plyo (wysokość do kolana) na otwartej przestrzeni z miejscem za stojakiem.",
+    "Ustaw sztangę w stojaku na wysokości górnej klatki, załaduj z obu stron lekkim lub średnim obciążeniem i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów. Chwyt nieco szerszy niż barki, łokcie w dół, klatka w górze.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się dwoma kontrolowanymi krokami i ustaw się około 30 cm przed skrzynią twarzą do niej.",
+    "Wyprostowana sylwetka, stopy na szerokość bioder. Napnij brzuch, ściągnij łopatki, weź głęboki wdech i przytrzymaj (Valsalva).",
+    "Postaw jedną stopę całą powierzchnią na skrzyni. Cała stopa powinna być na podwyższeniu — pięta, śródstopie i palce. Kolano zgięte około 90°.",
+    "Wypchnij się przez piętę i śródstopie nogi na skrzyni. Wypchnij ciało w górę — nie odbijaj się drugą nogą od podłogi.",
+    "Wchodź aż noga robocza będzie w pełni wyprostowana i staniesz wyprostowany na skrzyni. Tylna noga albo lekko dotyka powierzchni, albo zawisa obok nogi roboczej.",
+    "Schodź kontrolowanie, zginając nogę roboczą. Najpierw postaw tylną nogę na podłodze, potem schodź nogą roboczą.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę przed zmianą nogi lub zmieniaj naprzemiennie — zależnie od programu treningowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "gluteus_medius", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "core": "S6",
+    "gluteus_medius": "S7",
+    "calves": "T4",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "box_or_bench"],
+    "optional": ["squat_rack", "belt", "lifting_shoes", "collars"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-step-up", "goblet-step-up", "dumbbell-step-up", "barbell-back-squat"],
+    "progression_to": ["barbell-deficit-step-up", "barbell-lateral-step-up", "barbell-bulgarian-split-squat", "barbell-pistol-squat"],
+    "alternatives": ["dumbbell-step-up", "goblet-step-up", "smith-step-up", "barbell-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps — same setup as back squat",
+      "Box at knee height — thigh should be roughly parallel when foot is on top",
+      "Stand about one foot away from the box, facing it square",
+      "Whole foot on the box — heel, mid-foot, toes all in contact",
+      "Brace the core and lock the rib cage down before stepping up"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na górnej części trapezów — to samo ustawienie co w przysiadzie tylnym",
+      "Skrzynia na wysokości kolana — udo powinno być mniej więcej równolegle gdy stopa jest na górze",
+      "Stań około 30 cm od skrzyni, twarzą prosto do niej",
+      "Cała stopa na skrzyni — pięta, śródstopie i palce w kontakcie",
+      "Napnij brzuch i ściągnij żebra w dół przed wejściem"
+    ],
+    "execution_cues": [
+      "Drive through the heel of the foot on the box — not the toes",
+      "Don't push off the floor with the trailing leg — the working leg does the work",
+      "Stand tall at the top — full hip and knee extension",
+      "Lower under control — 2-3 seconds down",
+      "Keep the torso vertical throughout — bar tracks straight up and down"
+    ],
+    "execution_cues_pl": [
+      "Wypychaj się przez piętę nogi na skrzyni — nie przez palce",
+      "Nie odbijaj się tylną nogą od podłogi — pracę wykonuje noga robocza",
+      "Wyprostuj się na górze — pełen wyprost biodra i kolana",
+      "Schodź kontrolowanie — 2-3 sekundy w dół",
+      "Trzymaj tułów pionowo przez cały ruch — sztanga porusza się prosto w górę i w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pushing off the floor with the trailing leg",
+        "faultPl": "Odbijanie się tylną nogą od podłogi",
+        "cause": "Reduces the load on the working leg and turns the exercise into a jump-assisted step. Defeats the purpose of unilateral training.",
+        "causePl": "Zmniejsza obciążenie nogi roboczej i zamienia ćwiczenie w wejście wspomagane odbiciem. Niszczy sens treningu jednostronnego.",
+        "cue": "Lift the toes of the trailing foot before stepping up — eliminates the option to push off",
+        "cuePl": "Podnieś palce tylnej nogi przed wejściem — eliminuje możliwość odbicia"
+      },
+      {
+        "fault": "Box too high (hip flexors overload, lower back rounds)",
+        "faultPl": "Za wysoka skrzynia (przeciążenie zginaczy bioder, zaokrąglenie dolnego kręgosłupa)",
+        "cause": "Box above knee-height forces the hip into deep flexion under load — uncomfortable and reduces glute activation",
+        "causePl": "Skrzynia powyżej kolana zmusza biodro do głębokiego zgięcia pod obciążeniem — niewygodne i zmniejsza aktywację pośladków",
+        "cue": "Use a knee-height box. Thigh roughly parallel to the floor when foot is on top — that's the sweet spot.",
+        "cuePl": "Użyj skrzyni na wysokości kolana. Udo mniej więcej równolegle do podłogi gdy stopa jest na górze — to optymalna wysokość."
+      },
+      {
+        "fault": "Knee caves inward (valgus collapse) on the way up",
+        "faultPl": "Kolano zapada do wewnątrz (koślawość) podczas wchodzenia",
+        "cause": "Weak gluteus medius, poor hip control under unilateral load, or load too heavy",
+        "causePl": "Słaby pośladkowy średni, słaba kontrola biodra pod obciążeniem jednostronnym lub zbyt duży ciężar",
+        "cue": "Push the knee out toward the little toe. If still caves — reduce load and add lateral band work.",
+        "cuePl": "Wypychaj kolano na zewnątrz w kierunku małego palca. Jeśli nadal się zapada — zmniejsz ciężar i dodaj pracę z gumą bocznie."
+      },
+      {
+        "fault": "Excessive forward lean / torso bend",
+        "faultPl": "Nadmierne pochylenie do przodu / kładzenie tułowia",
+        "cause": "Weak quads, lazy core or trying to use back muscles to lever the load up",
+        "causePl": "Słabe czworogłowe, leniwy brzuch lub próba użycia mięśni grzbietu jako dźwigni do wyciągnięcia ciężaru",
+        "cue": "Chest up and proud, push the back of your head into the bar lightly. Pretend you have a glass of water on top of your head.",
+        "cuePl": "Klatka w górze i dumnie, lekko dociskaj tył głowy do gryfu. Wyobraź sobie szklankę wody na głowie."
+      },
+      {
+        "fault": "Dropping down on the way back to the floor",
+        "faultPl": "Opadanie podczas schodzenia na podłogę",
+        "cause": "Letting gravity do the work instead of controlling the eccentric — loses muscle-building stimulus and risks ankle/knee injury on landing",
+        "causePl": "Pozwalanie grawitacji wykonać pracę zamiast kontroli ekscentrycznej — traci się bodziec do budowy mięśni i ryzykuje urazem kostki/kolana przy lądowaniu",
+        "cue": "Down for a 2-3 second count. Trailing foot touches the floor lightly, not slams.",
+        "cuePl": "Schodzenie przez 2-3 sekundy. Tylna stopa lekko dotyka podłogi, nie trzaska."
+      }
+    ],
+    "breathing": "Inhale and brace at the bottom with foot already on the box. Hold breath through the step up (Valsalva). Exhale at the top when fully extended, then inhale before lowering.",
+    "breathingPl": "Wdech i napięcie na dole, gdy stopa jest już na skrzyni. Wstrzymaj oddech podczas wchodzenia (Valsalva). Wydech na górze przy pełnym wyproście, potem wdech przed schodzeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Reduce box height to below knee. Limit ROM to pain-free range. Switch to dumbbell or unloaded version to reduce axial load.",
+      "modificationPl": "Zmniejsz wysokość skrzyni poniżej kolana. Ogranicz zakres ruchu do bezbólowego. Przejdź na wersję z hantlami lub bez obciążenia, aby zmniejszyć obciążenie osiowe.",
+      "alternative": "dumbbell-step-up"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Knee-dominant step-ups with axial load can aggravate. Use lower box and lighter load, or substitute with reverse lunge.",
+      "modificationPl": "Wchodzenie dominujące kolanem z obciążeniem osiowym może drażnić. Użyj niższej skrzyni i mniejszego ciężaru lub zastąp wykrokiem w tył.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "avoid",
+      "modification": "Loaded unilateral step-up onto an elevated surface poses a high fall risk. Use bilateral, stable ground variants until balance improves.",
+      "modificationPl": "Wchodzenie jednonóż z obciążeniem na podwyższenie niesie wysokie ryzyko upadku. Stosuj warianty obustronne na stabilnym podłożu, dopóki równowaga się nie poprawi.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid spinal loading. Use unloaded step-ups or wait for full recovery and physiotherapist clearance.",
+      "modificationPl": "Unikaj obciążania kręgosłupa. Stosuj wchodzenie bez obciążenia lub poczekaj na pełne wyzdrowienie i zgodę fizjoterapeuty.",
+      "alternative": "bodyweight-step-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6 per leg (strength) | 3x15 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-step-up.gif",
+    "frames_extracted": [
+      "frames/barbell-step-up/frame_0_start.png",
+      "frames/barbell-step-up/frame_1_early.png",
+      "frames/barbell-step-up/frame_2_mid.png",
+      "frames/barbell-step-up/frame_3_late.png",
+      "frames/barbell-step-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-step-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Klatka 0: postać stoi za płaską ławką ze sztangą high-bar na trapezach (podświetlone czworogłowe obu nóg w pozycji wyjściowej). Klatka 2 (mid): jedna noga postawiona na ławce z kolanem zgiętym ~90°, postać wypycha się w górę — podświetlone czworogłowe i pośladki nogi roboczej. Klatka 4 (end): postać stoi wyprostowana na ławce, druga noga uniesiona obok. Wariant STEP-UP klasyczny na płaską ławkę knee-height. Mięśnie podświetlone w GIFie: czworogłowe (najmocniej) + pośladki nogi roboczej — pasuje do P9/P9. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'wchodzenie na ławkę ze sztangą' / 'wchodzenie na podwyższenie'.",
+
+  "tags": ["unilateral", "lower_body", "step_up", "barbell", "compound", "asymmetry_corrector", "stabilizer_heavy", "athletic_carryover"]
+}

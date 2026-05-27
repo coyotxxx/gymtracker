@@ -1,0 +1,203 @@
+{
+  "id": "kneeling-push-up-male",
+  "name": "Kneeling Push-Up",
+  "namePl": "Pompka w klęku (knee push-up)",
+  "aliases": ["knee push-up", "modified push-up", "beginner push-up", "girl push-up", "half push-up from knees"],
+  "aliasesPl": ["pompki damskie", "pompki z kolan", "pompki na kolanach", "pompki dla początkujących", "modyfikowane pompki", "pompki w podporze klęczącym"],
+
+  "description": "Beginner-friendly regression of the standard push-up performed with knees on the floor instead of toes. By shortening the lever arm (pivot point moves from feet to knees), the load on the hands drops from ~64% bodyweight to ~49% — making it ideal for people building base pressing strength, returning from injury, or doing high-rep finishers. Same primary muscles as a regular push-up (chest, triceps, anterior deltoid) but with reduced core demand and reduced spinal loading. The classic 'gateway' push-up before progressing to full push-ups.",
+  "descriptionPl": "Wariant pompki dla początkujących wykonywany z kolanami na podłodze zamiast palców stóp. Skrócenie ramienia dźwigni (punkt obrotu przesuwa się ze stóp na kolana) zmniejsza obciążenie rąk z ~64% masy ciała do ~49% — co czyni je idealnymi dla osób budujących bazową siłę wyciskania, wracających po kontuzji lub robiących serie dobijające w wysokiej liczbie powtórzeń. Te same mięśnie pierwotne co w klasycznej pompce (klatka, tricepsy, przednie aktony), ale z mniejszym wymaganiem od brzucha i mniejszym obciążeniem kręgosłupa. Klasyczna 'brama wejściowa' do pełnych pompek.",
+
+  "instructions": [
+    "Kneel on a soft mat (foam pad or folded towel under knees if floor is hard).",
+    "Place hands on the floor slightly wider than shoulders, fingers spread, middle finger pointing forward.",
+    "Walk hands forward until your body forms a straight line from KNEES through hips to head (not feet — knees are now the pivot point).",
+    "Cross or lift ankles behind you. Keep thighs and torso in one rigid line — no piking at hips, no sagging.",
+    "Brace your core and squeeze your glutes. Shoulders stacked over wrists at the top.",
+    "Inhale and lower yourself in a controlled manner. Elbows track at ~45° from the torso. Descend until chest is within a fist's height from the floor.",
+    "Brief pause at the bottom — no bouncing off the floor.",
+    "Exhale and press the floor away — extend elbows fully without locking out aggressively, return to start.",
+    "Head stays neutral — chin slightly tucked, eyes a hand-length ahead of fingers."
+  ],
+  "instructionsPl": [
+    "Uklęknij na miękkiej macie (pod kolana podłóż piankę lub złożony ręcznik, jeśli podłoga jest twarda).",
+    "Połóż dłonie na podłodze nieco szerzej niż barki, palce rozłożone, palec środkowy skierowany do przodu.",
+    "Przejdź rękami do przodu, aż ciało utworzy prostą linię od KOLAN przez biodra do głowy (nie od stóp — kolana są teraz punktem obrotu).",
+    "Skrzyżuj lub unieś kostki za sobą. Utrzymuj uda i tułów w jednej sztywnej linii — bez 'tyłka do góry', bez opadania bioder.",
+    "Napnij brzuch i ściśnij pośladki. Barki ułożone pionowo nad nadgarstkami w pozycji wyjściowej.",
+    "Wdech, opuszczaj się kontrolowanym ruchem. Łokcie pod kątem ~45° od tułowia. Schodź aż klatka będzie na wysokość pięści od podłogi.",
+    "Krótka pauza na dole — nie odbijaj się od podłogi.",
+    "Wydech, wypchnij podłogę — wyprostuj łokcie w pełni bez agresywnego blokowania, wróć do pozycji wyjściowej.",
+    "Głowa neutralna — broda lekko schowana, wzrok na długość dłoni przed palcami."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior", "pectoralis_major_clavicular"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P7",
+    "triceps": "P7",
+    "anterior_deltoids": "P6",
+    "serratus_anterior": "S5",
+    "pectoralis_major_clavicular": "S4",
+    "core": "T3",
+    "glutes": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["yoga_mat", "knee_pad", "push_up_handles"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["wall-push-up", "incline-push-up"],
+    "progression_to": ["push-up", "incline-push-up", "negative-push-up", "knee-push-up-paused"],
+    "alternatives": ["incline-push-up", "wall-push-up", "machine-chest-press", "resistance-band-chest-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Soft pad under knees — protect kneecaps from bare floor",
+      "Hands slightly wider than shoulders, directly under shoulder line",
+      "Body in straight line from knees to head — NOT from feet",
+      "Ankles crossed or lifted — feet do not push off the floor",
+      "Pre-brace: glutes squeezed, abs tight, ribs down before first rep"
+    ],
+    "setup_cues_pl": [
+      "Miękka mata pod kolana — ochrona rzepek przed twardą podłogą",
+      "Dłonie nieco szerzej niż barki, bezpośrednio pod linią barków",
+      "Ciało w prostej linii od kolan do głowy — NIE od stóp",
+      "Kostki skrzyżowane lub uniesione — stopy nie odpychają się od podłogi",
+      "Pre-bracing: pośladki ściśnięte, brzuch napięty, żebra w dół przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — controlled tempo, not free-fall",
+      "Chest reaches a fist's height from the floor — full ROM or it doesn't count",
+      "Elbows ~45° from torso — 'hide your armpits'",
+      "Push the floor away — drive through palms, not fingertips",
+      "Hips do not lead the press — chest and hips rise together as one piece"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontrolowane tempo, bez 'free-fall'",
+      "Klatka dochodzi na wysokość pięści od podłogi — pełny ROM albo się nie liczy",
+      "Łokcie pod ~45° od tułowia — 'schowaj pachy'",
+      "Wypychaj podłogę — napieraj przez wnętrza dłoni, nie przez opuszki palców",
+      "Biodra nie prowadzą wyciskania — klatka i biodra unoszą się razem jako jeden element"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips piking up (butt in the air)",
+        "faultPl": "Biodra uniesione do góry ('tyłek w górze')",
+        "cause": "Trying to shorten range of motion, weak core, instinctively converting to a kneeling triceps press",
+        "causePl": "Próba skrócenia zakresu ruchu, słaby brzuch, instynktowna zamiana na klęczne wyciskanie tricepsowe",
+        "cue": "Squeeze glutes hard. Imagine a broomstick along your back touching the back of your head, upper back and tailbone — all three points contact at the same time.",
+        "cuePl": "Mocno ściśnij pośladki. Wyobraź sobie kij od miotły wzdłuż pleców dotykający tyłu głowy, górnych pleców i kości ogonowej — wszystkie trzy punkty stykają się jednocześnie."
+      },
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "No core or glute engagement — body 'hangs' on the lumbar spine",
+        "causePl": "Brak napięcia brzucha lub pośladków — ciało 'wisi' na odcinku lędźwiowym",
+        "cue": "Plank position FIRST, then push-up. Brace abs as if expecting a punch. Lift hips a fingertip-width higher than feels natural.",
+        "cuePl": "Najpierw plank, potem pompka. Napnij brzuch jakbyś spodziewał się ciosu. Unieś biodra o szerokość palca wyżej niż wydaje się naturalne."
+      },
+      {
+        "fault": "Elbows flared 90° (T-shape)",
+        "faultPl": "Łokcie rozsunięte na 90° (kształt litery T)",
+        "cause": "Hands too wide, no awareness of elbow tracking, copying gym 'bro-rep' form",
+        "causePl": "Dłonie za szeroko, brak świadomości toru łokci, kopiowanie 'bro-repów' z siłowni",
+        "cue": "Tuck elbows to ~45° from torso. Protects shoulders, recruits triceps and lower pec fibres better.",
+        "cuePl": "Schowaj łokcie do ~45° od tułowia. Chroni barki, lepiej angażuje tricepsy i dolne włókna klatki."
+      },
+      {
+        "fault": "Partial range of motion (chest stays high)",
+        "faultPl": "Częściowy zakres ruchu (klatka zostaje wysoko)",
+        "cause": "Lack of strength at full ROM, ego-counting reps that don't reach chest-to-floor",
+        "causePl": "Brak siły w pełnym ROM, ego-liczenie powtórzeń bez dochodzenia klatki do podłogi",
+        "cue": "Chest within a fist's height of the floor every rep. If you can't — do fewer reps, or use an incline (hands on a bench) until knee push-ups feel solid in full ROM.",
+        "cuePl": "Klatka na wysokość pięści od podłogi w każdym powtórzeniu. Jeśli nie dasz rady — zrób mniej powtórzeń lub przejdź na pompki na podwyższeniu (dłonie na ławce), dopóki pompki w klęku nie zaczną być pewne w pełnym ROM."
+      },
+      {
+        "fault": "Head dropping or craning (chin to chest or neck extended)",
+        "faultPl": "Opadająca lub zadarta głowa (broda do klatki albo szyja wyprostowana w górę)",
+        "cause": "Forgetting head/neck posture during the rep, watching chest descend",
+        "causePl": "Zapominanie o postawie głowy/szyi podczas powtórzenia, obserwowanie schodzącej klatki",
+        "cue": "Neutral spine — chin slightly tucked, ears in line with shoulders. Eyes look at a spot a hand-length in front of your fingers.",
+        "cuePl": "Neutralny kręgosłup — broda lekko schowana, uszy w linii z barkami. Wzrok na punkt na długość dłoni przed palcami."
+      }
+    ],
+    "breathing": "Inhale during descent, brace through the bottom, exhale during the press up. For higher rep sets you can also brace-and-press 3-5 reps before a reset breath.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech podczas wyciskania. Przy wyższych powtórzeniach można też napiąć-i-wycisnąć 3-5 powtórzeń przed oddechem-resetującym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Use a thick pad, folded towel or yoga mat under knees. If pain persists — switch to incline push-up (hands on a bench, feet on the floor) to remove load from kneecaps entirely.",
+      "modificationPl": "Użyj grubej podkładki, złożonego ręcznika lub maty pod kolana. Jeśli ból nie ustępuje — przejdź na pompki na podwyższeniu (dłonie na ławce, stopy na podłodze), aby całkowicie zdjąć obciążenie z rzepek.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles, dumbbells held with neutral grip, or fists (knuckles down) to keep wrist in neutral instead of extended.",
+      "modificationPl": "Użyj uchwytów do pompek, hantli trzymanych chwytem neutralnym lub pięści (knykcie w dół), aby utrzymać nadgarstki w neutralnej pozycji zamiast wyprostowanej.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce range of motion (don't drop chest fully), narrow grip, tuck elbows tighter (~30-45°). Avoid if any position is painful.",
+      "modificationPl": "Zmniejsz zakres ruchu (nie dochodź klatką do końca), węższy chwyt, mocniej schowaj łokcie (~30-45°). Unikaj, jeśli jakakolwiek pozycja boli.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Knee push-ups REDUCE lumbar load vs full push-ups (shorter lever). If you still feel back pain — your hips are sagging. Lift hips higher and squeeze glutes harder, or regress to wall push-ups.",
+      "modificationPl": "Pompki w klęku ZMNIEJSZAJĄ obciążenie lędźwi w porównaniu do pełnych pompek (krótsza dźwignia). Jeśli mimo to boli plecy — biodra ci opadają. Unieś biodra wyżej i mocniej ściśnij pośladki, lub wróć do pompek o ścianę.",
+      "alternative": "wall-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (technique/endurance) | 3-4x15-20 (hypertrophy progression) | AMRAP as a finisher after harder push-up variations",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "kneeling-push-up-male.gif",
+    "frames_extracted": [
+      "frames/kneeling-push-up-male/frame_0_start.png",
+      "frames/kneeling-push-up-male/frame_1_early.png",
+      "frames/kneeling-push-up-male/frame_2_mid.png",
+      "frames/kneeling-push-up-male/frame_3_late.png",
+      "frames/kneeling-push-up-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/kneeling-push-up-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Frame 2 (lockout/szczyt): postać męska w podporze, kolana ZGIĘTE i oparte na podłodze (klasyczna pompka w klęku — punkt obrotu na kolanach, nie na palcach stóp), ramiona w pełnym wyproście, biodra na linii z barkami i kolanami, tricepsy mocno podświetlone na czerwono (faza koncentryczna). Frame 0 i 4 (dół): klatka tuż nad podłogą, łokcie zgięte i ułożone pod ~45° od tułowia (nie rozsunięte na 90°), tricepsy i klatka podświetlone — typowa biomechanika horizontal push. Biodra przez cały ruch utrzymują linię od kolan do głowy (brak piking, brak sagging). Stopy uniesione/skrzyżowane za sobą — nie odpychają się od podłogi. Klasyczna regresja pełnej pompki: ~49% bodyweight na rękach vs ~64% w pełnej pompce (zgodne z badaniami biomechanicznymi nad knee push-up). Mięśnie pierwotne tożsame z pełną pompką (pectoralis major / triceps / anterior deltoid), tylko z niższą intensywnością P (7 vs 8 dla pełnej pompki) i znacznie zmniejszonym wymaganiem od core (T3 vs T6+). Idealne dla początkujących, powracających po kontuzji barku/łokcia, lub jako finisher AMRAP po cięższych wariantach pompek. Wszystkie pola PL napisane od zera w polskim standardzie fitness, z lokalnymi terminami ('pompki damskie', 'pompki z kolan', 'pompki na kolanach').",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "beginner_friendly", "regression", "home_workout", "no_equipment", "knee_friendly_alternative", "rehab_friendly"]
+}

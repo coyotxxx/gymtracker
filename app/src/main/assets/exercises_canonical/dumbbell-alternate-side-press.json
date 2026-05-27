@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-alternate-side-press",
+  "name": "Dumbbell Alternate Side Press",
+  "namePl": "Side press z hantlami naprzemiennie",
+  "aliases": ["dumbbell side press", "alternating side press", "old-school side press", "bent press lite", "strongman side press"],
+  "aliasesPl": ["side press z hantlami", "naprzemienne wyciskanie boczne", "old-school side press", "side press strongmanowy", "wyciskanie boczne naprzemienne"],
+
+  "description": "Old-school strongman / unilateral overhead pressing variant. Standing with two dumbbells racked at shoulder level, you press one dumbbell overhead while the torso leans laterally AWAY from the pressing arm — this creates a mechanical advantage for the deltoid AND demands huge anti-lateral-flexion control from the obliques and quadratus lumborum. Pressing arms alternate. Distinct from a strict standing dumbbell press because of the deliberate lateral torso lean, and distinct from a true 'bent press' because the lean is moderate (not extreme low torso). Builds shoulders, triceps, and side-core like nothing else.",
+  "descriptionPl": "Old-schoolowy wariant strongmanowy / jednostronne wyciskanie nad głowę. Stojąc z dwoma hantlami trzymanymi na wysokości barków, wyciskasz JEDEN hantel nad głowę, jednocześnie pochylając tułów W BOK w kierunku PRZECIWNYM do pracującej ręki — to daje mechaniczną dźwignię dla aktonów ORAZ wymaga ogromnej kontroli anty-lateralnej zgięcia od skośnych brzucha i quadratus lumborum. Ramiona pracują naprzemiennie. Różni się od strict standing dumbbell press celowym lateralnym pochyleniem tułowia, i od prawdziwego 'bent press' tym, że pochylenie jest umiarkowane (nie ekstremalnie nisko). Buduje barki, tricepsy i boczny core jak nic innego.",
+
+  "instructions": [
+    "Stand with feet shoulder-width apart. Hold two dumbbells at shoulder level (front-rack position), palms facing each other or slightly forward, elbows tucked.",
+    "Brace core HARD. Take a big breath and hold it (Valsalva for the first portion).",
+    "Press the LEFT dumbbell straight up overhead. As you press, allow a moderate lateral lean of the torso to the RIGHT (away from the pressing arm). The lean is controlled — NOT a collapse.",
+    "Finish with the left arm fully locked out overhead, bicep near the ear, weight stacked over the shoulder joint. The right dumbbell stays parked at shoulder level.",
+    "Return to upright with the left dumbbell, then lower it back to the rack position with control.",
+    "Repeat on the RIGHT side — press the right dumbbell up, lean torso to the LEFT.",
+    "Continue alternating. Count reps PER SIDE (e.g. 6 each = 12 total).",
+    "Exhale at the top or as the dumbbell descends — do NOT hold breath through the entire alternation."
+  ],
+  "instructionsPl": [
+    "Stań ze stopami na szerokość barków. Trzymaj dwa hantle na wysokości barków (pozycja front-rack), dłonie naprzeciw siebie lub lekko do przodu, łokcie przy żebrach.",
+    "Napnij brzuch MOCNO. Nabierz dużego oddechu i go trzymaj (Valsalva na pierwszą część ruchu).",
+    "Wyciśnij LEWY hantel prosto w górę nad głowę. W trakcie wyciskania pozwól na umiarkowane pochylenie tułowia W PRAWO (od strony pracującego ramienia). Pochylenie jest KONTROLOWANE — nie zawalenie się.",
+    "Zakończ z lewym ramieniem w pełnym lock-out nad głową, biceps przy uchu, ciężar nad stawem barkowym. Prawy hantel czeka na wysokości barku.",
+    "Wróć do pionu z lewym hantlem, potem opuść go kontrolowanie do pozycji front-rack.",
+    "Powtórz po PRAWEJ — wyciśnij prawy hantel w górę, pochyl tułów W LEWO.",
+    "Kontynuuj naprzemiennie. Licz powtórzenia NA STRONĘ (np. 6 każda = 12 łącznie).",
+    "Wydech na szczycie lub przy opuszczaniu hantla — NIE trzymaj oddechu przez całą naprzemienną serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids", "anterior_deltoids", "obliques"],
+    "secondary": ["triceps", "upper_trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "quadratus_lumborum", "rectus_abdominis", "rotator_cuff", "glutes", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P9",
+    "anterior_deltoids": "P8",
+    "obliques": "P8",
+    "triceps": "S7",
+    "upper_trapezius": "S6",
+    "serratus_anterior": "S5",
+    "core": "S8",
+    "quadratus_lumborum": "S7",
+    "glutes": "T3",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["belt", "wrist_wraps", "mirror_for_form_check"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dumbbell-shoulder-press", "dumbbell-standing-overhead-press", "single-arm-dumbbell-press", "side-plank"],
+    "progression_to": ["bent-press", "windmill", "turkish-get-up", "barbell-side-press"],
+    "alternatives": ["dumbbell-standing-overhead-press", "single-arm-dumbbell-press", "kettlebell-side-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two dumbbells racked at shoulder level, elbows tucked",
+      "Feet shoulder-width, slight knee softness (NOT locked)",
+      "Brace core HARD before first rep",
+      "Eyes forward, neutral neck",
+      "Decide rep count PER SIDE — count out loud if needed"
+    ],
+    "setup_cues_pl": [
+      "Dwa hantle w front-rack na wysokości barków, łokcie przy żebrach",
+      "Stopy na szerokość barków, kolana lekko miękkie (NIE zablokowane)",
+      "Napnij brzuch MOCNO przed pierwszym powtórzeniem",
+      "Wzrok do przodu, szyja neutralna",
+      "Ustal liczbę powtórzeń NA STRONĘ — licz na głos jeśli trzeba"
+    ],
+    "execution_cues": [
+      "Press up AND lean torso away from the working arm",
+      "Lean is MODERATE — about 15-25 degrees, NOT a side-bend",
+      "Lock out arm fully overhead, bicep by ear",
+      "Resting dumbbell stays AT shoulder, doesn't drop",
+      "Alternate strictly — one side, then the other, no doubling up"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj W GÓRĘ I pochyl tułów OD strony pracującego ramienia",
+      "Pochylenie jest UMIARKOWANE — około 15-25 stopni, NIE głębokie zgięcie boczne",
+      "Pełen lock-out ramienia nad głową, biceps przy uchu",
+      "Spoczywający hantel zostaje NA barku, nie opada",
+      "Naprzemienne ściśle — jedna strona, potem druga, bez podwajania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Excessive lateral lean (collapse into the lean, lumbar side-bend)",
+        "faultPl": "Nadmierne pochylenie boczne (zawalenie się w pochylenie, zgięcie boczne lędźwiowe)",
+        "cause": "Weight too heavy, weak obliques/QL, treating it like a true bent press",
+        "causePl": "Zbyt duży ciężar, słabe skośne/QL, traktowanie jak prawdziwy bent press",
+        "cue": "Lean is CONTROLLED — 15-25°, not 45°. If you can't stand back up smoothly, reduce weight.",
+        "cuePl": "Pochylenie jest KONTROLOWANE — 15-25°, nie 45°. Jeśli nie wracasz płynnie do pionu — zmniejsz ciężar."
+      },
+      {
+        "fault": "Pressing forward instead of straight up",
+        "faultPl": "Wyciskanie do przodu zamiast prosto w górę",
+        "cause": "Poor overhead mobility, avoiding the lean, or trying to compensate with pec engagement",
+        "causePl": "Słaba mobilność overhead, unikanie pochylenia, lub kompensacja klatką",
+        "cue": "Dumbbell finishes OVER the shoulder joint, not in front of the face. Stack the bone column.",
+        "cuePl": "Hantel kończy NAD stawem barkowym, nie przed twarzą. Ułóż kości w kolumnę."
+      },
+      {
+        "fault": "Lower-back hyperextension (arching back instead of leaning sideways)",
+        "faultPl": "Przeprost lędźwiowy (wygięcie pleców do tyłu zamiast bocznego pochylenia)",
+        "cause": "Substituting frontal-plane lean with sagittal-plane back-bend (the wrong movement)",
+        "causePl": "Zastępowanie pochylenia w płaszczyźnie czołowej wyginaniem w płaszczyźnie strzałkowej (zły ruch)",
+        "cue": "Ribs DOWN. Glutes tight. The lean is SIDEWAYS, not backwards. Practice in front of a mirror.",
+        "cuePl": "Żebra W DÓŁ. Pośladki napięte. Pochylenie JEST W BOK, nie do tyłu. Trenuj przed lustrem."
+      },
+      {
+        "fault": "Resting dumbbell drifts down or away from shoulder",
+        "faultPl": "Spoczywający hantel zsuwa się w dół lub od barku",
+        "cause": "Loss of front-rack discipline, fatigued grip, asymmetric core engagement",
+        "causePl": "Utrata dyscypliny front-rack, zmęczony chwyt, asymetryczne napięcie core",
+        "cue": "Resting elbow stays HIGH and TIGHT. Squeeze the resting dumbbell into the shoulder.",
+        "cuePl": "Łokieć spoczywający WYSOKO i ŚCISŁO. Wciśnij spoczywający hantel w bark."
+      },
+      {
+        "fault": "Knees buckling or hips shifting (looking for leg drive)",
+        "faultPl": "Uginanie kolan lub przesuwanie bioder (szukanie napędu z nóg)",
+        "cause": "Trying to use a hip dip / push-press cheat to move heavier weight",
+        "causePl": "Próba użycia dipu biodrami / cheat push-press dla cięższego ciężaru",
+        "cue": "Glutes and quads LOCKED. The press is STRICT from the shoulder, lean is from the obliques.",
+        "cuePl": "Pośladki i czworogłowe ZABLOKOWANE. Wyciskanie jest ŚCISŁE z barku, pochylenie ze skośnych."
+      }
+    ],
+    "breathing": "Brace and inhale before each press. Exhale at lockout or as the dumbbell descends. Do NOT hold breath through both sides of an alternation — re-brace between reps.",
+    "breathingPl": "Napięcie i wdech przed każdym wyciskaniem. Wydech w lock-out lub przy opuszczaniu hantla. NIE trzymaj oddechu przez obie strony naprzemiennej serii — przebraż napięcie między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_or_lumbar_disc_issues",
+      "severity": "avoid",
+      "modification": "The deliberate lateral spinal flexion under load is high-risk for lumbar disc issues. Switch to strict standing dumbbell press (no lean) until cleared.",
+      "modificationPl": "Celowe boczne zgięcie kręgosłupa pod obciążeniem jest wysokiego ryzyka przy problemach z dyskami lędźwiowymi. Przejdź na strict standing dumbbell press (bez pochylenia) do zgody specjalisty.",
+      "alternative": "dumbbell-standing-overhead-press"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Reduce ROM or switch to landmine press (angled, more shoulder-friendly). Avoid full overhead lockout until cleared.",
+      "modificationPl": "Zmniejsz ROM lub przejdź na landmine press (kątowo, przyjazne dla barku). Unikaj pełnego lock-out overhead do zgody specjalisty.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Limited overhead range makes the side-press lean compensate awkwardly. Work mobility first, regress to seated dumbbell press.",
+      "modificationPl": "Ograniczony zakres overhead sprawia że pochylenie side-press niezgrabnie kompensuje. Najpierw pracuj nad mobilnością, cofnij się do seated dumbbell press.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    },
+    {
+      "condition": "oblique_strain_or_side-core_injury",
+      "severity": "avoid",
+      "modification": "The whole point of this exercise is loading the side-core under lateral lean — actively contraindicated during oblique recovery. Use strict bilateral press instead.",
+      "modificationPl": "Cała istota tego ćwiczenia to obciążanie bocznego core pod lateralnym pochyleniem — aktywnie przeciwwskazane podczas regeneracji skośnych. Użyj strict obustronnego wyciskania.",
+      "alternative": "dumbbell-standing-overhead-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-8 per side (strength) | 3x10-12 per side (hypertrophy + core endurance) | 4-5x3-5 per side (strongman style, heavy)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-alternate-side-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-alternate-side-press/frame_0_start.png",
+      "frames/dumbbell-alternate-side-press/frame_1_early.png",
+      "frames/dumbbell-alternate-side-press/frame_2_mid.png",
+      "frames/dumbbell-alternate-side-press/frame_3_late.png",
+      "frames/dumbbell-alternate-side-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-alternate-side-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — stojąca, dwa hantle w front-rack na wysokości barków, łokcie przy żebrach, postawa neutralna. Frame 2: prawe ramię w pełnym lock-out nad głową (hantel nad stawem barkowym), lewy hantel zostaje na wysokości barku, podświetlone obliques po prawej stronie + lateral/anterior deltoid + triceps pracującej ręki. Frame 4: powrót do front-rack z ghost-image overhead pokazującym ścieżkę ruchu. GIF demonstruje wersję z umiarkowanym pochyleniem (15-25°) — klasyczna 'side press' wariacja, naprzemiennie ramionami. Primary muscles widoczne w highlight: lateralne delty (główna mechaniczna dźwignia z pochylenia), anterior delty, obliques (anty-lateral-flexion w opuszczaniu, lateral flexion w pochyleniu). Mechanic=compound, plane=frontal (z powodu lateralnego pochylenia tułowia), laterality=unilateral_alternating. Klasyk old-school strongman, wymaga kontroli core i zdrowego dolnego odcinka kręgosłupa.",
+
+  "tags": ["strongman", "old_school", "shoulders", "core", "obliques", "unilateral", "overhead_press", "dumbbell", "anti_lateral_flexion", "vertical_push", "intermediate_advanced"]
+}

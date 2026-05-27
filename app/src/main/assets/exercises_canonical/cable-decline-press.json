@@ -1,0 +1,198 @@
+{
+  "id": "cable-decline-press",
+  "name": "Cable Decline Press",
+  "namePl": "Wyciskanie na wyciągu na ławce skośnej ujemnej",
+  "aliases": ["cable decline bench press", "decline cable press", "low cable decline press", "decline cable chest press"],
+  "aliasesPl": ["wyciskanie linkami na skosie ujemnym", "wyciskanie na wyciągach na ławce ujemnej", "decline cable press", "wyciskanie linkami głową w dół"],
+
+  "description": "Horizontal pressing variation performed on a decline bench placed between two low cable stations (head lower than hips, feet hooked under pads). The lifter grips two D-handles attached to the low pulleys and presses upward and slightly inward over the lower chest. Unlike free-weight decline pressing, cables provide CONSTANT tension throughout the entire range of motion — there is no 'rest' at the top because the cables pull the hands back down and outward. The negative torso angle (~15-30° below horizontal) shifts emphasis to the sternocostal (lower) head of the pectoralis major, while the cable line of pull from below produces a strong squeeze at the top. Excellent finisher for lower chest development; less spine and cardiovascular load than barbell decline because weight is moderate.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany na ławce skośnej ujemnej ustawionej między dwoma dolnymi wyciągami (głowa niżej niż biodra, stopy zaczepione pod wałkami). Ćwiczący chwyta dwie rękojeści typu D przypięte do dolnych bloczków i wyciska je w górę i lekko do środka nad dolną klatkę. W przeciwieństwie do wyciskania z wolnym ciężarem, linki dają STAŁE napięcie przez cały zakres ruchu — nie ma 'odpoczynku' na górze, bo linki ciągną ręce z powrotem w dół i na zewnątrz. Ujemny kąt tułowia (~15-30° poniżej poziomu) przenosi nacisk na głowę mostkowo-żebrową (dolną) klatki piersiowej, a kierunek napięcia linek od dołu produkuje mocny squeeze na szczycie. Świetny finisher na rozwój dolnej klatki; mniejsze obciążenie kręgosłupa i sercowo-naczyniowe niż wyciskanie sztangą na decline, bo ciężary umiarkowane.",
+
+  "instructions": [
+    "Position a decline bench between two low cable stations (or in a functional trainer with adjustable arms set to the lowest position). The bench should be centered so cables pull symmetrically.",
+    "Attach D-handle attachments to both low pulleys.",
+    "Set the decline angle to ~15-30° below horizontal. Lock the bench in place.",
+    "Sit on the bench, hook your feet under the foot pads at the high end, and grab both handles BEFORE lying back if possible (otherwise have a partner hand them).",
+    "Lie back into the decline position. Position handles at chest level, palms facing toward your feet (pronated grip), elbows bent ~90°. Shoulder blades retracted and pressed into the bench.",
+    "Inhale, brace the core. Press the handles up and slightly INWARD over the lower chest until arms are extended — elbows NOT locked rigid.",
+    "At the top, briefly squeeze the chest (cables make this position 'work' — there is no rest at the top).",
+    "Exhale during the press. Then lower the handles in a controlled arc back to the lower chest level, fighting the cable tension. Elbows tracked at ~45-60° from torso.",
+    "Stop when the handles reach the lower chest line — do NOT continue past the chest plane (cables don't 'punish' you mechanically there, but you lose pec emphasis).",
+    "Maintain shoulder blade retraction throughout. To finish: lower the handles to the chest under control and either pass them to a partner or carefully sit up with hands close to body to release them onto the floor."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną ujemną między dwoma dolnymi wyciągami (lub w functional trainerze z regulowanymi ramionami ustawionymi w najniższej pozycji). Ławka wyśrodkowana, żeby linki ciągnęły symetrycznie.",
+    "Przypnij rękojeści typu D do obu dolnych bloczków.",
+    "Ustaw kąt decline na ~15-30° poniżej poziomu. Zablokuj ławkę.",
+    "Usiądź na ławce, zaczep stopy pod wałkami przy górnej krawędzi i chwyć obie rękojeści PRZED położeniem się jeśli możliwe (w przeciwnym razie poproś partnera o podanie).",
+    "Połóż się w pozycji decline. Rękojeści na wysokości klatki, dłonie zwrócone w stronę stóp (chwyt pronowany), łokcie zgięte ~90°. Łopatki ściągnięte i wciśnięte w ławkę.",
+    "Wdech, napięcie brzucha. Wyciśnij rękojeści w górę i lekko DO ŚRODKA nad dolną klatkę aż ramiona wyprostowane — łokcie BEZ sztywnego lock-out.",
+    "Na szczycie krótki squeeze klatki (linki sprawiają że ta pozycja 'pracuje' — nie ma odpoczynku na górze).",
+    "Wydech podczas wyciskania. Następnie opuszczaj rękojeści kontrolowanym łukiem z powrotem do poziomu dolnej klatki, walcząc z napięciem linek. Łokcie pod kątem ~45-60° od tułowia.",
+    "Zatrzymaj się gdy rękojeści dojdą do linii dolnej klatki — NIE schodź poniżej (linki cię tam mechanicznie nie 'karzą', ale tracisz nacisk na klatkę).",
+    "Łopatki ściągnięte przez cały set. Zakończenie: opuść rękojeści do klatki kontrolnie i albo przekaż partnerowi, albo ostrożnie usiądź z rękoma blisko ciała żeby zwolnić je na podłogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lower_pectoralis", "triceps"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "lower_pectoralis": "P10",
+    "triceps": "P8",
+    "anterior_deltoids": "S6",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "core": "T4",
+    "upper_back": "T3"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "decline_bench"],
+    "optional": ["d_handle_attachment", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "cable-chest-press", "push-up"],
+    "progression_to": ["dumbbell-decline-bench-press", "barbell-decline-bench-press", "weighted-dip"],
+    "alternatives": ["dumbbell-decline-bench-press", "machine-decline-chest-press", "dip", "low-cable-fly", "decline-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Center the decline bench between cables so pull is symmetric — uneven setup = uneven recruitment",
+      "Set both pulleys to the LOWEST position; D-handle attachments on both",
+      "Decline angle ~15-30° — too steep makes setup with cables awkward",
+      "Grab handles BEFORE lying back if cable line allows, otherwise have partner hand them",
+      "Shoulder blades retracted and pressed into the bench BEFORE the first press"
+    ],
+    "setup_cues_pl": [
+      "Wyśrodkuj ławkę między wyciągami, żeby ciągnęło symetrycznie — krzywe ustawienie = krzywe zaangażowanie mięśni",
+      "Oba bloczki w NAJNIŻSZEJ pozycji; rękojeści D na obu",
+      "Kąt decline ~15-30° — za stromo robi setup z linkami niewygodny",
+      "Chwyć rękojeści PRZED położeniem się jeśli długość linki pozwala, w przeciwnym razie partner poda",
+      "Łopatki ściągnięte i wciśnięte w ławkę PRZED pierwszym wyciśnięciem"
+    ],
+    "execution_cues": [
+      "Press up and slightly INWARD — cables let you converge hands at the top for stronger lower-chest squeeze than dumbbells",
+      "Feel CONSTANT tension top-to-bottom — that's the whole point of cables vs. free weights",
+      "Lower with control, FIGHT the cable pull — don't let cables yank your arms down",
+      "Keep elbows at ~45-60° from torso — decline + cables pulling outward tempts elbow flare",
+      "Top position 'works' — cables resist there, hold the squeeze briefly before lowering"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę i lekko DO ŚRODKA — linki pozwalają zbliżyć dłonie na szczycie do mocniejszego squeeze'a dolnej klatki niż hantle",
+      "Czuj STAŁE napięcie od góry do dołu — to cała idea linek vs. wolne ciężary",
+      "Opuszczaj z kontrolą, WALCZ z napięciem linki — nie pozwól linkom szarpnąć rąk w dół",
+      "Łokcie pod kątem ~45-60° od tułowia — decline + linki ciągnące na zewnątrz kuszą do rozsunięcia łokci",
+      "Pozycja górna 'pracuje' — linki opierają się tam, przytrzymaj squeeze chwilę przed opuszczaniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Letting cables pull arms outward / losing tension control on the eccentric",
+        "faultPl": "Pozwalanie linkom ciągnąć ręce na zewnątrz / utrata kontroli napięcia w fazie ekscentrycznej",
+        "cause": "Underestimating cable resistance vector — cables pull both down AND outward from low pulleys, not just down like gravity on free weights",
+        "causePl": "Niedocenianie wektora napięcia linek — linki ciągną w dół I na zewnątrz z dolnych bloczków, nie tylko w dół jak grawitacja na wolnych ciężarach",
+        "cue": "Active elbow control on the way down — fight to keep elbows at 45-60°, don't let cables open you up like a fly.",
+        "cuePl": "Aktywna kontrola łokci w drodze w dół — walcz o łokcie pod kątem 45-60°, nie pozwól linkom otworzyć cię jak rozpiętki."
+      },
+      {
+        "fault": "Asymmetric press (one arm pressing faster/higher than the other)",
+        "faultPl": "Asymetryczne wyciskanie (jedna ręka wyciska szybciej/wyżej niż druga)",
+        "cause": "Decline position amplifies imbalances; uneven bench placement between cables; weaker side compensated by torso rotation",
+        "causePl": "Pozycja decline wzmacnia asymetrie; nierówne ustawienie ławki między linkami; słabsza strona kompensowana rotacją tułowia",
+        "cue": "Move both handles in sync, watch them in your peripheral vision. Recenter the bench if pull feels uneven.",
+        "cuePl": "Ruszaj oba rękojeści synchronicznie, obserwuj je peryferyjnie. Wyśrodkuj ławkę ponownie jeśli ciągnie nierówno."
+      },
+      {
+        "fault": "Pressing straight up instead of converging hands inward",
+        "faultPl": "Wyciskanie prosto w górę zamiast zbiegania rąk do środka",
+        "cause": "Treating cable press like dumbbell press; not using the cables' biggest advantage (top-position convergence)",
+        "causePl": "Traktowanie cable press jak dumbbell press; nie wykorzystywanie największej zalety linek (zbieganie na szczycie)",
+        "cue": "Converge handles at the top — bring them slightly inward (without clanging). This is what makes cables BETTER than dumbbells for lower chest squeeze.",
+        "cuePl": "Zbiegaj rękojeści na szczycie — przyciągnij je lekko do środka (bez stukania). Właśnie to czyni linki LEPSZYMI od hantli dla squeeze'a dolnej klatki."
+      },
+      {
+        "fault": "Going too heavy — cables make stabilization harder than dumbbells in decline",
+        "faultPl": "Za ciężki ciężar — linki utrudniają stabilizację bardziej niż hantle na decline",
+        "cause": "Ego from familiar dumbbell weights; underestimating constant tension fatigue",
+        "causePl": "Ego oparte na znanych ciężarach hantli; niedocenianie zmęczenia stałym napięciem",
+        "cue": "Cables = MORE muscle work per kg than dumbbells because of constant tension. Use ~70-80% of your decline DB weight.",
+        "cuePl": "Linki = WIĘCEJ pracy mięśniowej na kg niż hantle z powodu stałego napięcia. Użyj ~70-80% twojego ciężaru hantli na decline."
+      },
+      {
+        "fault": "Stopping above the chest (short ROM)",
+        "faultPl": "Zatrzymywanie powyżej klatki (skrócony ROM)",
+        "cause": "Cables can mask poor ROM because tension stays anyway; fear of decline position; lack of stretch awareness",
+        "causePl": "Linki mogą maskować kiepski ROM, bo napięcie i tak zostaje; strach przed pozycją decline; brak świadomości rozciągnięcia",
+        "cue": "Bring handles to the lower chest line on every rep — full stretch is where hypertrophy lives.",
+        "cuePl": "Doprowadź rękojeści do linii dolnej klatki w każdym powtórzeniu — pełne rozciągnięcie to miejsce hipertrofii."
+      }
+    ],
+    "breathing": "Inhale at the bottom (chest stretched), brace, exhale during the press up. Bracing is important on decline because head-down position raises blood pressure; cables don't make it heavier but constant tension extends time-under-tension per rep.",
+    "breathingPl": "Wdech na dole (klatka rozciągnięta), napięcie, wydech podczas wyciskania w górę. Napięcie ważne na decline bo pozycja głową w dół podnosi ciśnienie; linki nie czynią tego cięższym, ale stałe napięcie wydłuża czas pod napięciem na powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hypertension",
+      "severity": "avoid",
+      "modification": "Head-down position raises intracranial and blood pressure. If you have uncontrolled hypertension or cardiovascular risk, avoid decline variants entirely.",
+      "modificationPl": "Pozycja głową w dół podnosi ciśnienie wewnątrzczaszkowe i tętnicze. Jeśli masz niekontrolowane nadciśnienie lub ryzyko sercowo-naczyniowe, unikaj wariantów decline całkowicie.",
+      "alternative": "low-cable-fly"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Cable decline is usually friendlier than dumbbell/barbell decline because cables allow natural arm path. Use neutral grip if pain, and stop above chest level.",
+      "modificationPl": "Cable decline zazwyczaj jest łagodniejszy niż dumbbell/barbell decline, bo linki pozwalają na naturalną ścieżkę ramienia. Użyj chwytu neutralnego przy bólu i zatrzymaj się powyżej linii klatki.",
+      "alternative": "machine-decline-chest-press"
+    },
+    {
+      "condition": "acid_reflux_gerd",
+      "severity": "modify",
+      "modification": "Head-down position aggravates reflux. Train on empty stomach or substitute with low-cable fly performed standing (similar lower-chest emphasis without decline).",
+      "modificationPl": "Pozycja głową w dół drażni refluks. Trenuj na czczo lub zastąp świecami z dolnych wyciągów w pozycji stojącej (podobny nacisk na dolną klatkę bez decline).",
+      "alternative": "low-cable-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 (hypertrophy, default — cables thrive in moderate reps) | 4x8-10 (volume) | 3x12-15 (metabolic finisher) — typically programmed as a SECONDARY or FINISHER chest movement after primary flat/incline pressing",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-decline-press.gif",
+    "frames_extracted": [
+      "frames/cable-decline-press/frame_0_start.png",
+      "frames/cable-decline-press/frame_1_early.png",
+      "frames/cable-decline-press/frame_2_mid.png",
+      "frames/cable-decline-press/frame_3_late.png",
+      "frames/cable-decline-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-decline-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): leżenie na ławce decline (głowa niżej niż biodra, stopy zaczepione pod wałkami przy górze ławki), obie ręce trzymają rękojeści D od dwóch dolnych wyciągów, łokcie zgięte na poziomie klatki, chwyt pronowany. Frame 2 (góra): pełne wyciśnięcie, ręce zbiegają lekko do środka nad dolną klatką, ramiona wyprostowane. Frame 4 (powrót z motion blur): kontrolowane opuszczanie z widocznym napięciem linek. Anatomicznie podświetlona DOLNA klatka piersiowa (sternocostal head) + lekko triceps. Linki widoczne od dolnych bloczków po obu stronach, kierunek napięcia od dołu — sygnatura cable decline press. Klasyczny pronated grip. PL nazwa zgodna z polskim standardem fitness ('Wyciskanie na wyciągu na ławce skośnej ujemnej'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Difficulty 6 (intermediate) — setup wymaga doświadczenia (ustawienie ławki między dwoma wyciągami, koordynacja chwytu z pozycji decline). Kluczowa różnica vs. dumbbell-decline-bench-press: stałe napięcie linek przez cały ROM, możliwość konwergencji rąk na szczycie (silniejszy squeeze dolnej klatki), brak 'rest position' na górze. Anterior deltoids = secondary (S6), nie primary, bo cable line of pull od dołu redukuje udział przednich delt jeszcze bardziej niż klasyczny decline z hantlami.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "lower_chest", "cable", "chest", "decline", "intermediate", "constant_tension", "shoulder_friendly"]
+}

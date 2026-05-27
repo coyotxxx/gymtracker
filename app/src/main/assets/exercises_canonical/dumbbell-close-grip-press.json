@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-close-grip-press",
+  "name": "Dumbbell Close-Grip Press",
+  "namePl": "Wyciskanie hantlami chwytem wąskim / neutralnym",
+  "aliases": ["dumbbell squeeze press", "Sven press", "dumbbell crush press", "neutral grip dumbbell press", "DB close-grip press", "dumbbell tate press alternative"],
+  "aliasesPl": ["squeeze press hantlami", "Sven press", "wyciskanie hantli stykiem", "wyciskanie hantli chwytem neutralnym", "wyciskanie hantli wąsko", "crush press hantlami"],
+
+  "description": "Horizontal dumbbell press performed with both dumbbells held tightly together throughout the entire movement, typically with a neutral (palms-facing) grip. The constant inward squeeze keeps the dumbbells pressed against each other, mimicking a 'closed kinetic chain' feel and dramatically increasing recruitment of the inner pectorals and triceps. Excellent shoulder-friendly variation: the neutral grip and tucked elbows reduce stress on the anterior capsule. Popular as a finisher for chest/triceps or as a main lift for lifters with shoulder issues. Often called 'Squeeze Press' or 'Sven Press' after powerlifter Sven Karlsen.",
+  "descriptionPl": "Poziome wyciskanie hantli wykonywane z hantlami trzymanymi mocno przy sobie przez cały ruch, zazwyczaj chwytem neutralnym (dłonie zwrócone do siebie). Ciągłe ściskanie do środka utrzymuje hantle stykające się ze sobą, naśladując wrażenie 'zamkniętego łańcucha kinematycznego' i drastycznie zwiększając aktywację wewnętrznej części klatki i tricepsów. Doskonała wariacja przyjazna barkom: chwyt neutralny i schowane łokcie redukują obciążenie przedniej torebki stawowej. Popularne jako finisher klatki/tricepsów lub jako główne ćwiczenie dla osób z problemami z barkami. Często nazywane 'Squeeze Press' lub 'Sven Press' od pseudonimu strongmana Svena Karlsena.",
+
+  "instructions": [
+    "Sit on the edge of a flat bench with a dumbbell in each hand resting on your thighs. Use lighter weights than regular DB press — squeeze press demands lighter loads.",
+    "Kick the dumbbells up and lie back, bringing the dumbbells to chest level. Hold them with a NEUTRAL grip (palms facing each other).",
+    "Press the dumbbells together so they touch in the middle. This contact must be maintained throughout the ENTIRE set — no separation.",
+    "Set up: shoulder blades retracted and depressed into the bench, feet flat on the floor, slight natural arch.",
+    "Press the dumbbells straight up over the chest, keeping them mashed together. Elbows track close to the torso (tucked).",
+    "At the top, dumbbells stay in contact — actively squeeze them together as hard as possible (this is the key contraction).",
+    "Lower the dumbbells slowly and under control toward the middle of the chest. Keep the inward squeeze pressure constant.",
+    "Light touch on the chest, then drive them back up while continuing to squeeze. Elbows stay tucked, not flared.",
+    "Maintain the squeeze for every rep — the moment they separate, the magic of this exercise is lost."
+  ],
+  "instructionsPl": [
+    "Usiądź na brzegu poziomej ławki z hantlami w obu dłoniach opartymi o uda. Użyj lżejszych ciężarów niż w klasycznym wyciskaniu hantli — squeeze press wymaga mniejszych obciążeń.",
+    "Wyrzuć hantle do góry i połóż się, opuszczając je na wysokość klatki. Trzymaj chwytem NEUTRALNYM (dłonie skierowane do siebie).",
+    "Dociśnij hantle do siebie tak, aby stykały się na środku. Ten kontakt musi być utrzymany przez CAŁY zestaw — bez rozdzielania.",
+    "Setup: łopatki ściągnięte i wciśnięte w ławkę, stopy płasko na podłodze, lekki naturalny łuk pleców.",
+    "Wyciśnij hantle prosto w górę nad klatką, trzymając je sklejone razem. Łokcie biegną blisko tułowia (schowane).",
+    "Na górze hantle pozostają w kontakcie — aktywnie ściskaj je do siebie tak mocno jak potrafisz (to kluczowa kontrakcja).",
+    "Opuszczaj hantle powoli i kontrolowanie ku środkowi klatki. Utrzymuj stałe napięcie ściskania do środka.",
+    "Lekko dotknij klatki, potem wyciśnij z powrotem w górę kontynuując ściskanie. Łokcie schowane, nie rozsunięte.",
+    "Utrzymuj ściskanie w każdym powtórzeniu — w chwili gdy hantle się rozdzielą, sens tego ćwiczenia znika."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major_inner"],
+    "secondary": ["pectoralis_major", "anterior_deltoids"],
+    "stabilizers": ["rotator_cuff", "core", "serratus_anterior", "wrist_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P9",
+    "pectoralis_major_inner": "P9",
+    "pectoralis_major": "S7",
+    "anterior_deltoids": "S6",
+    "serratus_anterior": "T4",
+    "core": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-bench-press", "push-up"],
+    "progression_to": ["dumbbell-incline-close-grip-press", "barbell-close-grip-bench-press", "single-arm-dumbbell-press"],
+    "alternatives": ["barbell-close-grip-bench-press", "diamond-push-up", "machine-chest-press", "cable-crossover-low", "ez-bar-close-grip-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Neutral grip — palms facing each other, dumbbells touching",
+      "Use LIGHTER weight than regular DB press (~60-70% of normal)",
+      "Shoulder blades pinned, slight arch, feet planted",
+      "Dumbbells stay glued together from the very first rep",
+      "Elbows pre-tucked close to torso"
+    ],
+    "setup_cues_pl": [
+      "Chwyt neutralny — dłonie skierowane do siebie, hantle stykają się",
+      "Użyj LŻEJSZEGO ciężaru niż w klasycznym DB press (~60-70% normy)",
+      "Łopatki przyklejone, lekki łuk, stopy płasko",
+      "Hantle sklejone razem od pierwszego powtórzenia",
+      "Łokcie schowane blisko tułowia jeszcze przed startem"
+    ],
+    "execution_cues": [
+      "SQUEEZE the dumbbells together — this is the whole point",
+      "Press straight up over the chest, elbows brushing the ribs",
+      "At lockout, crush the dumbbells like you're trying to break them",
+      "Lower to mid-chest under control, never let them drift apart",
+      "Triceps and inner chest light up — feel the burn"
+    ],
+    "execution_cues_pl": [
+      "ŚCISKAJ hantle razem — to cały sens ćwiczenia",
+      "Wyciskaj prosto w górę nad klatką, łokcie ocierają żebra",
+      "W lock-out zgnieć hantle jakbyś chciał je rozbić",
+      "Opuszczaj do środka klatki kontrolowanie, nigdy nie pozwól im się rozjechać",
+      "Tricepsy i wewnętrzna klatka się palą — poczuj to napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dumbbells separating during the press (lose contact)",
+        "faultPl": "Hantle rozdzielają się podczas wyciskania (tracą kontakt)",
+        "cause": "Loss of inward squeeze, fatigue, or weight too heavy for this variation",
+        "causePl": "Utrata ściskania do środka, zmęczenie lub zbyt duży ciężar dla tej wariacji",
+        "cue": "Use lighter weight. Actively squeeze every inch — visualize crushing the dumbbells together.",
+        "cuePl": "Użyj lżejszego ciężaru. Aktywnie ściskaj na każdym centymetrze — wizualizuj zgniatanie hantli razem."
+      },
+      {
+        "fault": "Elbows flaring outward (like regular DB bench)",
+        "faultPl": "Łokcie rozsuwane na boki (jak w klasycznym DB bench)",
+        "cause": "Habit from standard pressing; weight too heavy forces compensation",
+        "causePl": "Nawyk z klasycznego wyciskania; zbyt duży ciężar wymusza kompensację",
+        "cue": "Elbows brush the ribs. If they flare, drop the weight 2-3 kg per side.",
+        "cuePl": "Łokcie ocierają żebra. Jeśli się rozsuwają, zmniejsz ciężar o 2-3 kg na stronę."
+      },
+      {
+        "fault": "Using too much weight — sloppy ROM",
+        "faultPl": "Zbyt duży ciężar — niedbały zakres ruchu",
+        "cause": "Ego lifting; treating squeeze press like regular DB press",
+        "causePl": "Ego lifting; traktowanie squeeze press jak klasycznego DB press",
+        "cue": "This is a high-tension, low-load exercise. Use 60-70% of your normal DB press weight.",
+        "cuePl": "To ćwiczenie o wysokim napięciu i niskim obciążeniu. Użyj 60-70% normalnego ciężaru DB press."
+      },
+      {
+        "fault": "Wrists buckling sideways under squeeze pressure",
+        "faultPl": "Nadgarstki uginają się na boki pod naciskiem ściskania",
+        "cause": "Weak forearm/wrist stability; gripping too low on the dumbbell handle",
+        "causePl": "Słaba stabilność przedramienia/nadgarstka; chwyt zbyt nisko na rączce hantla",
+        "cue": "Wrists stacked straight over forearms. Grip dumbbells in the center of the handle.",
+        "cuePl": "Nadgarstki ustawione prosto nad przedramionami. Chwyć hantle na środku rączki."
+      },
+      {
+        "fault": "Bouncing dumbbells off the chest",
+        "faultPl": "Odbijanie hantli od klatki",
+        "cause": "Trying to use momentum to maintain contact between dumbbells",
+        "causePl": "Próba użycia momentu by utrzymać kontakt między hantlami",
+        "cue": "Light touch only. Pause for half a second, then drive up while squeezing.",
+        "cuePl": "Tylko lekki dotyk. Pauza pół sekundy, potem wyciśnij w górę kontynuując ściskanie."
+      }
+    ],
+    "breathing": "Inhale at the top while squeezing, brace, hold during descent. Exhale forcefully at the top of the press while maintaining the squeeze.",
+    "breathingPl": "Wdech na górze podczas ściskania, napięcie, trzymaj podczas schodzenia. Energiczny wydech na szczycie wyciskania z zachowanym ściskaniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Neutral grip is already wrist-friendly. Check grip placement (center of handle), reduce weight, use lighter dumbbells.",
+      "modificationPl": "Chwyt neutralny jest już przyjazny nadgarstkom. Sprawdź pozycję chwytu (środek rączki), zmniejsz ciężar, użyj lżejszych hantli.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Squeeze press is one of the most shoulder-friendly bench variations — neutral grip and tucked elbows protect the joint. If pain persists, reduce ROM or switch to floor press version.",
+      "modificationPl": "Squeeze press to jedna z najbardziej przyjaznych barkom wariacji bench press — chwyt neutralny i schowane łokcie chronią staw. Jeśli ból się utrzymuje, zmniejsz zakres lub przejdź na wersję floor press.",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Constant tricep tension can aggravate tennis/golfer's elbow. Reduce volume, slow eccentric, use moderate weight.",
+      "modificationPl": "Ciągłe napięcie tricepsa może drażnić łokieć tenisisty/golfisty. Zredukuj objętość, spowolnij ekscentryczną, użyj umiarkowanego ciężaru.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "modify",
+      "modification": "Generally safer than wide-grip bench, but heavy loading still risky. Use very light weight or switch to machine.",
+      "modificationPl": "Zazwyczaj bezpieczniejsze niż szerokie wyciskanie, ale ciężkie obciążenia nadal ryzykowne. Użyj bardzo lekkiego ciężaru lub przejdź na maszynę.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (squeeze press is high-rep by nature) | 3-4x12-20 (chest/tricep finisher) | 2-3x15-20 (shoulder-friendly main lift)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-close-grip-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-close-grip-press/frame_0_start.png",
+      "frames/dumbbell-close-grip-press/frame_1_early.png",
+      "frames/dumbbell-close-grip-press/frame_2_mid.png",
+      "frames/dumbbell-close-grip-press/frame_3_late.png",
+      "frames/dumbbell-close-grip-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-close-grip-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:13:00Z",
+  "verification_notes": "Frame 0: hantle w pełnym lock-out nad klatką, sklejone razem, chwyt neutralny (palms facing). Frame 2: hantle nadal w kontakcie podczas opuszczania, łokcie blisko tułowia, prowadzone wzdłuż żeber. Frame 4: pełne opuszczenie do środka klatki, hantle wciąż się stykają, łokcie schowane (NIE rozsunięte). Podświetlone tricepsy (P9), wewnętrzna klatka (P9) i przednia delta (S6) — zgodne z anatomią squeeze/crush press. Klasyczny Sven press: ciągły kontakt hantli + chwyt neutralny + łokcie tucked. Bilateral, flat bench, plane=sagittal, mechanic=compound. Difficulty 4 (beginner — łatwiejszy niż barbell CGBP, ale wymaga lekkich ciężarów i koordynacji ściskania). PL nazwa: 'wyciskanie hantlami chwytem wąskim / neutralnym' — zachowuje obie polskie konwencje. Wszystkie pola PL od zera.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "dumbbell", "triceps_focus", "inner_chest", "squeeze_press", "neutral_grip", "shoulder_friendly", "finisher", "bench_variation"]
+}

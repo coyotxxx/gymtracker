@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-straight-leg-deadlift",
+  "name": "Dumbbell Straight-Leg Deadlift",
+  "namePl": "Deadlift z prostymi nogami z hantlami",
+  "aliases": ["dumbbell SLDL", "DB stiff-leg deadlift", "dumbbell stiff-legged deadlift", "DB straight-leg deadlift"],
+  "aliasesPl": ["SLDL z hantlami", "martwy ciąg z prostymi nogami z hantlami", "stiff-leg deadlift z hantlami", "deadlift na prostych nogach z hantlami"],
+
+  "description": "A hip-hinge movement performed with dumbbells where the knees stay essentially STRAIGHT (only a tiny soft-knee position, not bent) throughout the entire range of motion. The straight-knee position locks the quadriceps out of the movement and forces the hamstrings into a deeper stretch than RDL — making this the most stretch-loaded hamstring variation. Dumbbells allow the load to travel slightly outside the legs and increase ROM compared to a barbell. Excellent for hamstring hypertrophy via stretch-mediated tension, but more demanding on hamstring flexibility and lumbar control than RDL. Lower load capacity than barbell version.",
+  "descriptionPl": "Ruch hip hinge wykonywany z hantlami, w którym kolana pozostają w praktyce PROSTE (minimalna miękka pozycja, nie ugięte) przez cały zakres ruchu. Pozycja prostych kolan wyłącza czworogłowe ud z ruchu i zmusza dwugłowe ud do głębszego rozciągu niż w RDL — czyniąc ten wariant najbardziej obciążającym rozciąg dwugłowych. Hantle pozwalają na poprowadzenie ciężaru tuż obok nóg i większy zakres ruchu niż przy sztandze. Świetne na hipertrofię dwugłowych ud przez napięcie w pozycji rozciągniętej, ale bardziej wymagające dla mobilności hamstringów i kontroli lędźwiowej niż RDL. Mniejszy ciężar niż przy wariancie ze sztangą.",
+
+  "instructions": [
+    "Stand tall holding a dumbbell in each hand at your sides, feet hip-width apart. Knees STRAIGHT but not hyper-locked — soft, neutral position.",
+    "Set your back: chest up, shoulder blades pulled down and back, lats engaged. Keep dumbbells close to the thighs.",
+    "Take a big breath, brace your core hard (Valsalva). This is the start.",
+    "Begin the descent by pushing your hips BACKWARD — keep knees straight. Do NOT bend them as you go down.",
+    "Lower the dumbbells along the front of your legs — keep them close, sliding past the knees and down toward the shins or floor depending on your hamstring flexibility.",
+    "Hinge until you feel a strong, deep stretch in the hamstrings — STOP there. Do NOT round the lower back to chase more depth.",
+    "Reverse the movement: drive the hips forward, pull the dumbbells up along the legs. Knees STAY straight the whole time.",
+    "Squeeze the glutes hard at the top — full hip extension, stand tall without hyperextending the lumbar."
+  ],
+  "instructionsPl": [
+    "Stań prosto trzymając hantle w obu rękach przy bokach, stopy na szerokość bioder. Kolana PROSTE, ale nie zablokowane na siłę — miękka, neutralna pozycja.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, najszersze napięte. Trzymaj hantle blisko ud.",
+    "Nabierz głęboki oddech, mocno napnij brzuch (Valsalva). To jest start.",
+    "Zacznij schodzenie przez wypchnięcie bioder DO TYŁU — utrzymuj kolana proste. NIE zginaj ich w trakcie schodzenia.",
+    "Opuszczaj hantle wzdłuż przedniej części nóg — trzymaj je blisko, zsuwając obok kolan w dół ku goleniom lub podłodze, zależnie od mobilności hamstringów.",
+    "Hingiuj aż poczujesz mocny, głęboki rozciąg w dwugłowych ud — ZATRZYMAJ się tam. NIE zaokrąglaj lędźwi by zejść głębiej.",
+    "Wróć ruchem: wepchnij biodra do przodu, podciągnij hantle wzdłuż nóg. Kolana POZOSTAJĄ proste przez cały czas.",
+    "Mocno ściśnij pośladki na górze — pełen wyprost biodra, stań prosto bez nadmiernego odgięcia lędźwi."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "erector_spinae"],
+    "secondary": ["glutes", "trapezius", "forearms"],
+    "stabilizers": ["core", "latissimus_dorsi", "rhomboids", "rectus_abdominis", "obliques", "adductors", "calves"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "erector_spinae": "P8",
+    "glutes": "S7",
+    "trapezius": "S5",
+    "forearms": "S7",
+    "latissimus_dorsi": "S5",
+    "core": "S7",
+    "adductors": "S4",
+    "calves": "S3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["belt", "wrist_straps", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-rdl", "kettlebell-rdl", "hip-hinge-dowel-drill", "good-morning"],
+    "progression_to": ["barbell-straight-leg-deadlift", "deficit-dumbbell-sldl", "single-leg-dumbbell-sldl"],
+    "alternatives": ["dumbbell-rdl", "barbell-romanian-deadlift", "kettlebell-rdl", "good-morning", "lying-leg-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbell in each hand at your sides, palms facing thighs (neutral grip)",
+      "Feet hip-width apart, toes forward",
+      "Knees STRAIGHT but soft — not locked, not bent",
+      "Chest up, shoulder blades pulled down and back, lats engaged",
+      "Dumbbells close to the body — almost touching the thighs at start"
+    ],
+    "setup_cues_pl": [
+      "Po jednym hantlu w każdej ręce przy bokach, dłonie zwrócone do ud (chwyt neutralny)",
+      "Stopy na szerokość bioder, palce do przodu",
+      "Kolana PROSTE, ale miękkie — nie zablokowane, nie ugięte",
+      "Klatka w górze, łopatki ściągnięte w dół i do tyłu, najszersze napięte",
+      "Hantle blisko ciała — prawie dotykające ud na starcie"
+    ],
+    "execution_cues": [
+      "Hips BACK, not down — push your butt to the wall behind you",
+      "Knees STAY straight the whole rep — this is the key difference vs RDL",
+      "Dumbbells slide along the front of the legs — keep them close",
+      "Stop when you feel a deep hamstring stretch — do NOT chase the floor with a rounded back",
+      "Drive hips forward to stand tall, squeeze glutes — no leaning back at the top"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU, nie w dół — wypchnij pośladki do ściany za tobą",
+      "Kolana POZOSTAJĄ proste przez całe powtórzenie — to kluczowa różnica vs RDL",
+      "Hantle zsuwają się wzdłuż przedniej części nóg — trzymaj je blisko",
+      "Zatrzymaj się gdy poczujesz głęboki rozciąg dwugłowych — NIE goń podłogi z zaokrąglonymi plecami",
+      "Wepchnij biodra do przodu by stanąć prosto, ściśnij pośladki — bez odchylania się do tyłu na górze"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back at the bottom of the movement",
+        "faultPl": "Zaokrąglone plecy lędźwiowe w dolnej pozycji ruchu",
+        "cause": "Going lower than current hamstring flexibility allows, weak erectors, poor core bracing, dumbbells too heavy for the ROM",
+        "causePl": "Schodzenie głębiej niż pozwala obecna mobilność hamstringów, słabe prostowniki, słabe napięcie brzucha, hantle za ciężkie na ten zakres",
+        "cue": "STOP at the stretch — do not chase the floor. Straight knees = limited ROM by nature. Reduce weight, master flexibility first.",
+        "cuePl": "ZATRZYMAJ się na rozciągu — nie goń podłogi. Proste kolana = z natury ograniczony zakres. Zmniejsz ciężar, najpierw pracuj nad mobilnością."
+      },
+      {
+        "fault": "Bending knees during the descent — turning it into a regular RDL or deadlift",
+        "faultPl": "Zginanie kolan podczas schodzenia — zamienia ruch w zwykły RDL lub deadlift",
+        "cause": "Trying to use quads to lift, insufficient hamstring flexibility, misunderstanding the exercise",
+        "causePl": "Próba wykorzystania czworogłowych do dźwigania, niewystarczająca mobilność hamstringów, niezrozumienie ćwiczenia",
+        "cue": "Knees LOCKED in straight position — only the hips hinge. If you have to bend knees, switch to RDL until flexibility improves.",
+        "cuePl": "Kolana ZABLOKOWANE w prostej pozycji — tylko biodra się zginają. Jeśli musisz zginać kolana, przejdź na RDL aż mobilność się poprawi."
+      },
+      {
+        "fault": "Dumbbells drift away from the body — load moves forward of the legs",
+        "faultPl": "Hantle oddalają się od ciała — ciężar przesuwa się do przodu od nóg",
+        "cause": "Lats not engaged, hips not pushing back enough, leaning forward instead of hinging",
+        "causePl": "Najszersze nie napięte, biodra nie wypychają się wystarczająco do tyłu, pochylanie do przodu zamiast hingowania",
+        "cue": "Pull dumbbells INTO your thighs — keep them glued. Engage lats. Hips travel back, dumbbells travel down close to the body.",
+        "cuePl": "Pociągnij hantle W uda — trzymaj je przyklejone. Napnij najszersze. Biodra cofają się, hantle schodzą blisko ciała."
+      },
+      {
+        "fault": "Overextending the lumbar at the top (leaning back)",
+        "faultPl": "Nadmierne odgięcie lędźwi na górze (odchylanie się do tyłu)",
+        "cause": "Confusing lockout with leaning back, weak glutes that can't finish the hip extension",
+        "causePl": "Mylenie lock-out z odchylaniem się do tyłu, słabe pośladki nie kończące wyprostu biodra",
+        "cue": "Stand tall — ribs DOWN, pelvis neutral. Lockout is glute squeeze + full hip extension, NOT lumbar arch.",
+        "cuePl": "Stań prosto — żebra W DÓŁ, miednica neutralna. Lock-out to ściskanie pośladków + pełen wyprost biodra, NIE wygięcie lędźwi."
+      },
+      {
+        "fault": "Hyper-locking the knees — joint stress instead of muscle work",
+        "faultPl": "Nadmierne zablokowanie kolan na siłę — stres stawowy zamiast pracy mięśniowej",
+        "cause": "Confusing 'straight' with 'rigid', trying to maximize stretch artificially",
+        "causePl": "Mylenie 'prostych' z 'sztywnymi', próba sztucznego maksymalizowania rozciągu",
+        "cue": "Knees are STRAIGHT but SOFT — like standing relaxed. Locked-out joints = stress on ligaments instead of muscles.",
+        "cuePl": "Kolana PROSTE ale MIĘKKIE — jak przy swobodnym staniu. Nadmierne zablokowanie = stres na więzadłach zamiast mięśniach."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace (Valsalva), hold during descent and ascent. Exhale at the top of the lockout. NEVER exhale during the eccentric — that is when the spine needs maximum bracing.",
+    "breathingPl": "Głęboki wdech na górze, napięcie (Valsalva), trzymaj podczas schodzenia i wchodzenia. Wydech na szczycie lock-out. NIGDY wydech podczas ekscentryku — wtedy kręgosłup potrzebuje maksymalnego napięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Straight-leg variations put high shear forces on the lumbar — avoid completely until pain-free.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Warianty z prostymi nogami dają duże siły ścinające na lędźwie — unikaj całkowicie do ustąpienia bólu.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion with straight legs is very high-risk. Switch to seated/lying leg curl (zero spinal load) for hamstring work.",
+      "modificationPl": "Obciążona flexja kręgosłupa z prostymi nogami to bardzo wysokie ryzyko. Przejdź na uginanie nóg siedząc/leżąc (zero obciążenia kręgosłupa) by trenować hamstringi.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Drastically reduce ROM — stop when knees enter view. Switch to dumbbell RDL (slightly bent knees) until flexibility improves. Work hamstring mobility daily.",
+      "modificationPl": "Drastycznie zmniejsz zakres ruchu — zatrzymaj się gdy kolana wejdą w pole widzenia. Przejdź na RDL z hantlami (lekko ugięte kolana) aż mobilność się poprawi. Pracuj nad mobilnością hamstringów codziennie.",
+      "alternative": "dumbbell-rdl"
+    },
+    {
+      "condition": "hamstring_strain_recent",
+      "severity": "avoid",
+      "modification": "Wait minimum 4-6 weeks pain-free after a strain. Stretch-loaded eccentric work is the highest re-injury risk movement for hamstrings.",
+      "modificationPl": "Odczekaj minimum 4-6 tygodni bez bólu po naciągnięciu. Praca ekscentryczna pod rozciągiem to najwyższe ryzyko ponownej kontuzji dla hamstringów.",
+      "alternative": "seated-leg-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — preferred for hamstring stretch-mediated growth) | 3x10-15 (endurance) | 3x6-8 (strength — but barbell version preferred for heavy loads)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-straight-leg-deadlift.gif",
+    "frames_extracted": [
+      "frames/dumbbell-straight-leg-deadlift/frame_0_start.png",
+      "frames/dumbbell-straight-leg-deadlift/frame_1_early.png",
+      "frames/dumbbell-straight-leg-deadlift/frame_2_mid.png",
+      "frames/dumbbell-straight-leg-deadlift/frame_3_late.png",
+      "frames/dumbbell-straight-leg-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-straight-leg-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa. Frame 0 (start GIFa): dolna pozycja hingu — postać głęboko pochylona do przodu, hantle prawie dotykają podłogi obok stóp, kolana CAŁKOWICIE PROSTE (zero ugięcia — to jest kluczowa różnica vs RDL który ma 10-20° ugięcia kolan). Mocno podświetlone czerwono: hamstringi (cały tył uda do pośladków), prostowniki grzbietu (cała linia od krzyża do ramion), górne trapezius. Frame 2: pozycja wyprostowana stojąca z hantlami trzymanymi neutralnie przy biodrach — to jest lockout/start ćwiczenia (ruch idzie top-down, GIF zaczyna w połowie). Frame 4: powrót w dół do głębokiego hip hinge. Klasyfikacja jako 'hinge' (czysty hip hinge bez ruchu kolan). Equipment: dumbbells. Trudność 6 (intermediate) — wymaga opanowanego hingowania i dobrej mobilności hamstringów (bez ugięcia kolan zakres ruchu zależy w 100% od elastyczności tylnej taśmy). Główne mięśnie: hamstrings P10 (maksymalny stretch pod obciążeniem — najlepszy bodziec hipertroficzny w 'stretched position'), erector_spinae P8 (znacznie większe obciążenie prostowników niż w RDL ze względu na większy zakres flexji tułowia z prostymi nogami). Glutes spadły na secondary S7 (bo prosty zakres kolan ogranicza udział pośladków vs RDL gdzie kolana lekko ugięte pozwalają na większy hip extension u góry). Plane sagittal, force pull, mechanic compound, bilateral. Wszystkie pola PL napisane od zera — używam polskiej terminologii (hip hinge, ekscentryk, lock-out, hamstringi, hantle, najszersze, prostowniki). Kluczowe akcenty w cuesach i faults: kolana PROSTE (nie ugięte jak w RDL, nie zablokowane na siłę), zatrzymanie na rozciągu (większe ryzyko zaokrąglenia lędźwi niż w RDL).",
+
+  "tags": ["bodybuilding", "posterior_chain", "hamstring_hypertrophy", "hip_hinge", "dumbbell", "compound", "eccentric_focused", "stretch_mediated", "assistance_lift", "free_weights"]
+}

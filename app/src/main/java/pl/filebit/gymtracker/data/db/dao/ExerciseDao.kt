@@ -220,4 +220,28 @@ interface ExerciseDao {
     /** v1.25.7: bezpieczne usuwanie ćwiczenia (po wcześniejszym re-link FK). */
     @Query("DELETE FROM exercises WHERE id = :id")
     suspend fun deleteById(id: Long)
+
+    // === v2.0.0 — canonical exercise-db queries ===
+
+    @Query("SELECT * FROM exercises WHERE slug = :slug LIMIT 1")
+    suspend fun findBySlug(slug: String): Exercise?
+
+    @Query("SELECT * FROM exercises WHERE LOWER(namePl) = LOWER(:namePl) LIMIT 1")
+    suspend fun findByNamePl(namePl: String): Exercise?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateBySlug(exercise: Exercise): Long
+
+    @Query("SELECT COUNT(*) FROM exercises WHERE slug IS NOT NULL")
+    suspend fun countCanonical(): Int
+
+    @Query("SELECT * FROM exercises WHERE category = :category ORDER BY name COLLATE NOCASE ASC")
+    suspend fun getByCategory(category: String): List<Exercise>
+
+    @Query("SELECT * FROM exercises WHERE movementPattern = :pattern ORDER BY name COLLATE NOCASE ASC")
+    suspend fun getByMovementPattern(pattern: String): List<Exercise>
+
+    /** v2.0.0: ustawia isFavorite=1 po canonical slug. Idempotent. */
+    @Query("UPDATE exercises SET isFavorite = 1 WHERE slug = :slug")
+    suspend fun markFavoriteBySlug(slug: String): Int
 }

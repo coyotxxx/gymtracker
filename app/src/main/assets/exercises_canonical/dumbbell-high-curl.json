@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-high-curl",
+  "name": "Dumbbell High Curl",
+  "namePl": "Wysokie uginanie ramion z hantlami",
+  "aliases": ["lateral raise curl", "high biceps curl", "shoulder-level dumbbell curl", "field goal curl", "horizontal curl"],
+  "aliasesPl": ["wysokie uginanie bicepsów z hantlami", "uginanie hantli na wysokości barków", "uginanie hantli w pozycji T", "curl wysoki z hantlami"],
+
+  "description": "Isolation exercise for the biceps brachii performed with arms abducted to roughly 90 degrees (shoulder-level, T-position). From this elevated starting position with dumbbells held in a supinated grip at arm's length to the sides, the lifter curls the dumbbells toward the temples by flexing only at the elbows. The horizontal arm position keeps the biceps under near-constant tension throughout the entire range of motion and changes the angle of the resistance vector, providing a unique stimulus compared to the classic standing curl. Also referred to in fitness slang as the 'field goal curl' because the start position resembles a football referee signaling a field goal.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień dwugłowy ramienia wykonywane z ramionami odwiedzionymi do około 90 stopni (na wysokości barków, pozycja T). Z tej uniesionej pozycji startowej, z hantlami trzymanymi podchwytem na wyprostowanych ramionach po bokach, ćwiczący ugina hantle w kierunku skroni, pracując wyłącznie w stawach łokciowych. Poziome ustawienie ramion utrzymuje biceps pod niemal stałym napięciem przez cały zakres ruchu oraz zmienia kąt działania siły obciążenia, co daje unikalny bodziec w porównaniu do klasycznego uginania stojąc. W slangu fitness określane też jako 'field goal curl', ponieważ pozycja startowa przypomina sędziego sygnalizującego zdobycie pola w futbolu amerykańskim.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart. Hold a dumbbell in each hand with a supinated grip (palms facing up).",
+    "Raise both arms out to the sides until upper arms are parallel to the floor and elbows are fully extended — body forms a T shape with dumbbells at shoulder height.",
+    "Keep upper arms locked in this horizontal position. Squeeze the shoulder blades slightly back and down to stabilize.",
+    "Brace your core and keep your torso upright. Do not let the arms drop during the set.",
+    "Curl both dumbbells inward toward your temples by flexing only at the elbows. Exhale on the way up. Upper arms remain horizontal and stationary.",
+    "At the top, the dumbbells should be close to your ears with the biceps fully contracted. Squeeze hard for a brief pause.",
+    "Lower the dumbbells under control over 2-3 seconds back to full elbow extension out to the sides. Inhale on the descent.",
+    "Maintain the horizontal upper-arm position for every rep — if your arms start to drop, end the set."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków. W każdej dłoni trzymaj hantel chwytem podchwytem (dłonie skierowane w górę).",
+    "Unieś obie ręce w bok aż ramiona ponad łokciem będą równoległe do podłogi, a łokcie w pełnym wyproście — ciało tworzy literę T z hantlami na wysokości barków.",
+    "Utrzymuj ramiona ponad łokciem zablokowane w tej poziomej pozycji. Lekko ściągnij łopatki w tył i w dół dla stabilizacji.",
+    "Napnij brzuch i trzymaj tułów pionowo. Nie pozwól, by ramiona opadły w trakcie serii.",
+    "Uginaj oba hantle w kierunku skroni, pracując wyłącznie w stawach łokciowych. Wydychaj w fazie unoszenia. Ramiona ponad łokciem pozostają poziome i nieruchome.",
+    "W górze hantle powinny znaleźć się blisko uszu, a biceps w pełnym skurczu. Mocno napnij na chwilę w szczytowej pozycji.",
+    "Opuszczaj hantle w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu łokci na boki. Wdech podczas opuszczania.",
+    "Utrzymuj poziomą pozycję ramion przy każdym powtórzeniu — jeśli ramiona zaczynają opadać, zakończ serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["lateral_deltoid", "anterior_deltoid", "rotator_cuff", "upper_trapezius", "forearm_flexors", "core"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S4",
+    "lateral_deltoid": "T5",
+    "anterior_deltoid": "T4",
+    "rotator_cuff": "T3",
+    "upper_trapezius": "T3",
+    "forearm_flexors": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl", "dumbbell-lateral-raise"],
+    "progression_to": ["dumbbell-high-curl-isohold", "cable-high-curl", "lying-supine-cable-curl"],
+    "alternatives": ["dumbbell-curl", "incline-dumbbell-curl", "spider-curl", "cable-curl-from-low-pulleys", "hammer-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft",
+      "Supinated grip — palms facing up the whole set",
+      "Arms abducted to 90 degrees — perfect T shape",
+      "Upper arms parallel to the floor, elbows fully extended",
+      "Brace core, chest tall, shoulders packed"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana lekko ugięte",
+      "Chwyt podchwytem — dłonie skierowane w górę przez całą serię",
+      "Ramiona odwiedzione do 90 stopni — idealna litera T",
+      "Ramiona ponad łokciem równolegle do podłogi, łokcie w pełnym wyproście",
+      "Napięty brzuch, klatka w górze, barki ściągnięte"
+    ],
+    "execution_cues": [
+      "Curl hands toward your temples — not in front of your face",
+      "Upper arms stay horizontal — do not let them drop",
+      "Squeeze the biceps hard when dumbbells reach your ears",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Keep wrists neutral and locked in supination"
+    ],
+    "execution_cues_pl": [
+      "Uginaj dłonie w kierunku skroni — nie przed twarz",
+      "Ramiona ponad łokciem pozostają poziomo — nie pozwól im opaść",
+      "Mocno spinaj biceps gdy hantle dotrą do uszu",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Nadgarstki neutralne, zablokowane w supinacji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms drop during the set",
+        "faultPl": "Ramiona ponad łokciem opadają w trakcie serii",
+        "cause": "Fatigue of the lateral deltoid which holds the arm at 90 degrees abduction, or weight too heavy",
+        "causePl": "Zmęczenie aktonu bocznego barku, który utrzymuje ramię w odwiedzeniu 90 stopni, lub zbyt duży ciężar",
+        "cue": "Lock the upper arms in horizontal position — if you cannot, lower the weight or end the set.",
+        "cuePl": "Zablokuj ramiona ponad łokciem w poziomie — jeśli nie potrafisz, zmniejsz ciężar lub zakończ serię."
+      },
+      {
+        "fault": "Curling the dumbbells forward instead of inward",
+        "faultPl": "Uginanie hantli do przodu zamiast do wewnątrz (w kierunku głowy)",
+        "cause": "Misunderstanding of the movement path or weak biceps in this elongated position",
+        "causePl": "Złe zrozumienie toru ruchu lub słaby biceps w tej wydłużonej pozycji",
+        "cue": "Aim the dumbbells at your ears — the hands should travel in the frontal plane.",
+        "cuePl": "Celuj hantlami w uszy — dłonie powinny poruszać się w płaszczyźnie czołowej (na boki)."
+      },
+      {
+        "fault": "Shrugging shoulders to the ears",
+        "faultPl": "Wzruszanie barkami do uszu",
+        "cause": "Upper trapezius compensating for weak deltoid stabilization at 90 degrees abduction",
+        "causePl": "Mięsień czworoboczny górny kompensuje słabą stabilizację aktonu barków w odwiedzeniu 90 stopni",
+        "cue": "Pull the shoulders down and away from the ears — keep the neck long.",
+        "cuePl": "Ściągnij barki w dół, z dala od uszu — szyja długa i wyciągnięta."
+      },
+      {
+        "fault": "Using momentum / swinging the body",
+        "faultPl": "Pomaganie zamachem / bujanie ciałem",
+        "cause": "Load too heavy for this disadvantageous position, ego lifting",
+        "causePl": "Ciężar zbyt duży dla tej niekorzystnej biomechanicznie pozycji, ego",
+        "cue": "This is a finisher exercise — use 30-40% of your standard curl weight and stay strict.",
+        "cuePl": "To ćwiczenie wykończeniowe — używaj 30-40% ciężaru ze standardowego uginania i trzymaj ścisłą formę."
+      },
+      {
+        "fault": "Partial range — not extending fully out to the sides",
+        "faultPl": "Niepełny zakres ruchu — brak pełnego wyprostu łokci na boki",
+        "cause": "Avoiding the hardest stretched position where leverage is worst",
+        "causePl": "Unikanie najtrudniejszej pozycji rozciągniętej, gdzie dźwignia jest najgorsza",
+        "cue": "Fully straighten the elbows at the bottom of every rep — that is where the magic happens.",
+        "cuePl": "W pełni prostuj łokcie na dole każdego powtórzenia — to tam dzieje się prawdziwa praca."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curling toward temples). Inhale during the eccentric (extending back out). Maintain a light brace throughout to support the elevated arm position.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uginanie w kierunku skroni). Wdech w fazie ekscentrycznej (wyprost ramion na boki). Utrzymuj lekkie napięcie brzucha przez całą serię, aby wspierać uniesione ramiona."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "avoid",
+      "modification": "Sustained 90-degree abduction with external rotation aggravates subacromial impingement. Use classic dumbbell curl with arms at the sides instead.",
+      "modificationPl": "Utrzymane odwiedzenie 90 stopni z rotacją zewnętrzną drażni konflikt podbarkowy. Zamiast tego użyj klasycznego uginania z hantlami przy bokach tułowia.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce arm abduction to 60-70 degrees instead of full 90 degrees. Use lighter loads and avoid heavy eccentrics. Stop if pain occurs.",
+      "modificationPl": "Zmniejsz odwiedzenie ramion do 60-70 stopni zamiast pełnych 90 stopni. Używaj lżejszych ciężarów i unikaj ciężkich faz negatywnych. Przerwij ćwiczenie przy bólu.",
+      "alternative": "incline-dumbbell-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The stretched start position at full elbow extension places high load on the distal biceps tendon. Reduce ROM, use higher reps (12-15) with light loads.",
+      "modificationPl": "Rozciągnięta pozycja startowa z pełnym wyprostem łokci mocno obciąża ścięgno dystalne bicepsa. Zmniejsz zakres ruchu, używaj większej liczby powtórzeń (12-15) z lekkim obciążeniem.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "acute_neck_pain_or_upper_trap_strain",
+      "severity": "caution",
+      "modification": "Holding arms at 90 degrees abduction recruits upper trapezius for stabilization. Lower the dumbbell weight significantly or replace with a seated variation against a backrest.",
+      "modificationPl": "Trzymanie ramion w odwiedzeniu 90 stopni angażuje mięsień czworoboczny górny do stabilizacji. Znacznie zmniejsz ciężar hantli lub zastąp wariantem siedzącym z oparciem.",
+      "alternative": "seated-incline-dumbbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/finisher) | 2-3x12-20 (high-rep pump) | not recommended for heavy strength work",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-high-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-high-curl/frame_0_start.png",
+      "frames/dumbbell-high-curl/frame_1_early.png",
+      "frames/dumbbell-high-curl/frame_2_mid.png",
+      "frames/dumbbell-high-curl/frame_3_late.png",
+      "frames/dumbbell-high-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-high-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 kluczowych klatek z GIFa jahel. Frame 0 (start): pozycja T — ramiona odwiedzione do 90 stopni równolegle do podłogi, łokcie w pełnym wyproście, hantle na wysokości barków, chwyt podchwytem, biceps podświetlony na czerwono. Frame 1: początek fazy koncentrycznej, łokcie zaczynają się uginać, hantle podnoszą się w łuku w kierunku głowy. Frame 2 (top): pełny skurcz, hantle blisko skroni/uszu, łokcie zgięte ~30 stopni, ramiona ponad łokciem WCIĄŻ poziome (kluczowe!). Frame 3: faza ekscentryczna, hantle wracają w bok. Frame 4 (end): powrót do pozycji T z 'ghostem' fazy szczytowej. Ruch w płaszczyźnie czołowej (frontal), ramiona ponad łokciem nieruchome i poziome przez cały cykl — jedynie przedramiona pracują. Klasyfikacja: izolacja bicepsa, plane=frontal (nie sagittal!), wymaga znacznej stabilizacji aktonów barków. Jednoznacznie zidentyfikowane jako Dumbbell High Curl / 'field goal curl'. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbells", "upper_body", "finisher", "unique_angle"]
+}

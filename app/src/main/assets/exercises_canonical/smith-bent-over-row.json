@@ -1,0 +1,197 @@
+{
+  "id": "smith-bent-over-row",
+  "name": "Smith Bent-Over Row",
+  "namePl": "Wiosłowanie w opadzie na maszynie Smith",
+  "aliases": ["smith machine bent over row", "smith row", "smith machine row", "bent-over smith row"],
+  "aliasesPl": ["wiosłowanie na Smith machine w opadzie", "wiosłowanie na smithcie w opadzie", "wiosłowanie sztangą prowadzoną w opadzie", "wiosłowanie na maszynie Smitha"],
+
+  "description": "A guided-bar variant of the classic bent-over row performed inside a Smith machine. You hinge the torso forward to roughly 45 degrees, hold the Smith bar with arms hanging straight down, and pull the bar to the lower abdomen along the machine's fixed vertical track. Because the Smith rails lock the bar into a strictly vertical path, you cannot drift the bar forward or backward — the trajectory is decided for you. This removes the stabilization demand of a free barbell row and lets you focus almost entirely on contracting the lats, rhomboids and mid-traps. The trade-off: less core/erector stabilizer work, and the fixed path may not align perfectly with everyone's biomechanics — if your natural row arc differs from a pure vertical line, the wrists or shoulders can feel pinched. Best used as a hypertrophy-focused row when you want to push the back muscles without coordination as a limiter.",
+  "descriptionPl": "Wersja klasycznego wiosłowania w opadzie wykonywana na maszynie Smitha z prowadzonym torem gryfu. Pochylasz tułów do około 45 stopni w przód, trzymasz gryf maszyny z ramionami zwisającymi pionowo w dół i przyciągasz gryf do dolnej części brzucha po sztywnej, pionowej ścieżce wyznaczonej przez szyny maszyny. Ponieważ prowadnice Smitha blokują gryf na ściśle pionowej trajektorii, nie możesz przesuwać sztangi w przód lub w tył — tor jest narzucony. Eliminuje to wymóg stabilizacji wolnej sztangi i pozwala skupić się niemal w całości na napinaniu najszerszych, równoległobocznych i środkowych czworobocznych. Kompromis: mniej pracy stabilizatorów core/prostowników grzbietu, a sztywny tor może nie pasować idealnie do biomechaniki każdego — jeśli twój naturalny łuk wiosłowania różni się od czystej pionu, nadgarstki lub barki mogą czuć ucisk. Najlepiej stosować jako wiosłowanie ukierunkowane na hipertrofię, gdy chcesz mocno wycisnąć plecy bez ograniczenia ze strony koordynacji.",
+
+  "instructions": [
+    "Set the Smith bar to mid-shin / just below knee height. Stand with feet shoulder-width apart, mid-foot directly under the bar.",
+    "Grip the bar slightly wider than shoulders with an overhand (pronated) grip. Unlock the bar by rotating the wrists if your Smith requires it.",
+    "Hinge at the hips, push the glutes back, bend the knees slightly. Set the torso angle at ~45 degrees to the floor. Back flat, neutral spine, chest proud.",
+    "With arms fully extended straight down, the bar hangs directly below your shoulders along the Smith track. Brace the core and engage the lats.",
+    "Pull the bar UP along the fixed vertical track to the lower abdomen / top of the hips. Elbows drive back and slightly out, NOT flared 90 degrees.",
+    "Squeeze the shoulder blades together hard at the top. Hold the contraction for a beat — the Smith stability lets you focus on the squeeze.",
+    "Lower the bar under full control along the same vertical track until arms are completely extended. Do not let the torso angle rise.",
+    "Keep the torso angle locked through the entire set — the bar's vertical path forces this, but it is still your job to maintain the hinge. Reset between reps."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smitha na wysokości środka goleni / tuż pod kolanami. Stań stopami na szerokość barków, środek stopy bezpośrednio pod gryfem.",
+    "Złap gryf nieco szerzej niż barki nachwytem (dłonie skierowane w dół). Odblokuj gryf obracając nadgarstki, jeśli twój Smith tego wymaga.",
+    "Zegnij się w biodrach, wypchnij pośladki do tyłu, lekko ugnij kolana. Ustaw kąt tułowia ~45 stopni do podłoża. Plecy płaskie, kręgosłup neutralny, klatka wysunięta.",
+    "Przy w pełni wyprostowanych ramionach skierowanych prosto w dół, gryf zwisa bezpośrednio pod barkami wzdłuż szyn Smitha. Napnij brzuch i aktywuj najszersze.",
+    "Pociągnij gryf w GÓRĘ po sztywnym, pionowym torze do dolnej części brzucha / górnej części bioder. Łokcie prowadź w tył i lekko na boki, NIE odgięte na 90 stopni.",
+    "Mocno ściśnij łopatki na szczycie. Przytrzymaj skurcz przez moment — stabilność Smitha pozwala skupić się na ściśnięciu.",
+    "Opuść gryf w pełnej kontroli po tej samej pionowej trajektorii aż do całkowitego wyprostu ramion. Nie pozwól, by kąt tułowia się podniósł.",
+    "Trzymaj kąt tułowia zablokowany przez całą serię — pionowy tor gryfu wymusza to, ale to nadal twoja rola, by utrzymać hip hinge. Resetuj się między powtórzeniami."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle"],
+    "secondary": ["trapezius_lower", "posterior_deltoids", "biceps_brachii", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle": "P9",
+    "trapezius_lower": "S8",
+    "posterior_deltoids": "S8",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "erector_spinae": "S6",
+    "forearms": "S7",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["lifting_straps", "chalk", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-bent-over-row", "seated-cable-row", "chest-supported-row"],
+    "progression_to": ["barbell-bent-over-row", "pendlay-row", "t-bar-row"],
+    "alternatives": ["barbell-bent-over-row", "chest-supported-row", "t-bar-row", "seated-cable-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Set bar to mid-shin / just below knee height in the Smith",
+      "Feet shoulder-width, mid-foot directly under the bar",
+      "Overhand grip, slightly wider than shoulders, unlock the bar",
+      "Hinge hips back, slight knee bend, torso ~45 degrees, neutral spine",
+      "Arms hang straight down — bar directly below your shoulders on the track"
+    ],
+    "setup_cues_pl": [
+      "Ustaw gryf na wysokości środka goleni / tuż pod kolanami w Smithcie",
+      "Stopy na szerokość barków, środek stopy bezpośrednio pod gryfem",
+      "Chwyt nachwytem, nieco szerzej niż barki, odblokuj gryf",
+      "Wypchnij biodra w tył, lekko ugnij kolana, tułów ~45 stopni, neutralny kręgosłup",
+      "Ramiona zwisają prosto w dół — gryf bezpośrednio pod barkami na szynie"
+    ],
+    "execution_cues": [
+      "Pull straight UP along the track — let the rails do the path, you do the pull",
+      "Drive elbows back and slightly out, NOT flared 90 degrees",
+      "Bar to the LOWER abs / top of hips — not to the chest",
+      "Squeeze the shoulder blades together HARD at the top — Smith lets you focus on the contraction",
+      "Lock the torso angle — the bar is fixed but you still have to hold the hinge"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij prosto w GÓRĘ wzdłuż szyny — szyny prowadzą tor, ty wykonujesz ciąg",
+      "Prowadź łokcie w tył i lekko na boki, NIE odgięte na 90 stopni",
+      "Gryf do DOLNEJ części brzucha / górnej części bioder — nie do klatki",
+      "MOCNO ściśnij łopatki na szczycie — Smith pozwala skupić się na skurczu",
+      "Zablokuj kąt tułowia — gryf jest prowadzony, ale to ty musisz utrzymać hip hinge"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrong foot position relative to the bar (bar pulls forward or back into the body)",
+        "faultPl": "Złe ustawienie stóp względem gryfu (gryf ciągnie do przodu lub wbija się w ciało)",
+        "cause": "Smith bar travels on a fixed vertical line — if feet are not directly under the bar, the trajectory fights your natural row arc",
+        "causePl": "Gryf Smitha porusza się po sztywnej pionowej linii — jeśli stopy nie są bezpośrednio pod gryfem, trajektoria walczy z naturalnym łukiem wiosłowania",
+        "cue": "Set up so the bar hangs in a straight line from your shoulders to mid-foot. If the bar drags away from your body or jams into your thighs, step forward/back to fix it before the set.",
+        "cuePl": "Ustaw się tak, by gryf zwisał w linii prostej od barków do środka stopy. Jeśli gryf ciągnie cię od ciała lub uderza w uda, zrób krok do przodu/tyłu by to poprawić przed serią."
+      },
+      {
+        "fault": "Rounded lower back (lumbar flexion under load)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy (zgięcie pod obciążeniem)",
+        "cause": "Smith stability creates false confidence to load heavy — but the spine is still loaded in a hinged position",
+        "causePl": "Stabilność Smitha daje fałszywe poczucie pewności do dużych ciężarów — ale kręgosłup nadal jest obciążony w pozycji pochylonej",
+        "cue": "Brace the core before every rep. Neutral spine, chest proud, lats engaged. The Smith machine does NOT protect your spine — bracing does.",
+        "cuePl": "Napnij brzuch przed każdym powtórzeniem. Neutralny kręgosłup, klatka wysunięta, najszersze napięte. Smith NIE chroni twojego kręgosłupa — to robi napięcie brzucha."
+      },
+      {
+        "fault": "Torso too vertical (turning into an upright row on rails)",
+        "faultPl": "Zbyt pionowy tułów (zamienia się w wiosłowanie stojąc na szynach)",
+        "cause": "Avoiding the work of holding the hinge, or believing the Smith fixes everything",
+        "causePl": "Unikanie wysiłku utrzymania hip hinge lub wiara, że Smith naprawia wszystko",
+        "cue": "Torso 45 degrees or LOWER — close to parallel with the floor. If your torso is above 60 degrees, the bar is hitting upper traps and rear delts, not lats. Film yourself from the side.",
+        "cuePl": "Tułów 45 stopni lub NIŻEJ — blisko równolegle do podłogi. Jeśli tułów ma więcej niż 60 stopni, gryf trafia w górne czworoboczne i tylne naramienne, nie w najszersze. Nagraj się z boku."
+      },
+      {
+        "fault": "Pulling the bar to the chest (wrong target on a fixed track)",
+        "faultPl": "Ciąg gryfu do klatki (zła targeting na sztywnym torze)",
+        "cause": "Habitual upright-row pattern, or trying to feel rear delts/upper traps instead of lats",
+        "causePl": "Nawyk wzorca uprightu lub próba poczucia tylnych naramiennych/górnych czworobocznych zamiast najszerszych",
+        "cue": "Position your feet so that the bar's vertical track ends at your lower abs / hips. If the track ends at your chest, your foot position is wrong — step forward.",
+        "cuePl": "Ustaw stopy tak, by pionowy tor gryfu kończył się przy dolnym brzuchu / biodrach. Jeśli tor kończy się przy klatce, masz złą pozycję stóp — zrób krok w przód."
+      },
+      {
+        "fault": "Wrist pain from fighting the fixed track",
+        "faultPl": "Ból nadgarstków z walki ze sztywnym torem",
+        "cause": "Smith bar enforces a strictly vertical path, but your natural row arc may curve slightly — wrists absorb the mismatch",
+        "causePl": "Gryf Smitha wymusza ściśle pionowy tor, ale twój naturalny łuk wiosłowania może być lekko zakrzywiony — nadgarstki absorbują tę niezgodność",
+        "cue": "Try a slightly different foot position to find the spot where the bar lines up with your natural pull. If wrists still hurt after 2-3 setup tweaks, the Smith just does not fit you — switch to free barbell or T-bar row.",
+        "cuePl": "Spróbuj nieco innej pozycji stóp by znaleźć miejsce, gdzie gryf trafia w twój naturalny tor ciągu. Jeśli nadgarstki nadal bolą po 2-3 próbach ustawienia, Smith po prostu do ciebie nie pasuje — przejdź na wolną sztangę lub T-bar."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of the hinge before each rep. Exhale through the pull as the bar approaches the body. Inhale on the controlled descent. The Smith's stability makes it easier to maintain consistent bracing across reps.",
+    "breathingPl": "Wdech i napięcie brzucha na szczycie pochylenia przed każdym powtórzeniem. Wydech w trakcie ciągu gdy gryf zbliża się do ciała. Wdech podczas kontrolowanego opuszczania. Stabilność Smitha ułatwia utrzymanie stałego napięcia w kolejnych powtórzeniach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared by physiotherapist. Smith stability does NOT protect the spine — load is still applied in a hinged position.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody fizjoterapeuty. Stabilność Smitha NIE chroni kręgosłupa — obciążenie nadal działa w pozycji pochylonej.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "wrist_pain_from_fixed_bar_path",
+      "severity": "modify",
+      "modification": "If wrists hurt during the Smith path (mismatch between machine's vertical track and your natural row arc), try a different foot position. If still painful, switch to a free barbell row or T-bar where you can adjust the trajectory.",
+      "modificationPl": "Jeśli nadgarstki bolą podczas toru Smitha (niezgodność pionowej szyny maszyny z twoim naturalnym łukiem wiosłowania), spróbuj innej pozycji stóp. Jeśli ból się utrzymuje, przejdź na wolną sztangę lub T-bar, gdzie możesz dostosować trajektorię.",
+      "alternative": "barbell-bent-over-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use narrower grip and keep elbows closer to body — less abduction = less impingement. Fixed bar path can aggravate impingement if the trajectory does not match your shoulder mechanics.",
+      "modificationPl": "Stosuj węższy chwyt i trzymaj łokcie bliżej ciała — mniej odwodzenia = mniej impingement. Sztywny tor gryfu może nasilać impingement, jeśli trajektoria nie pasuje do mechaniki twoich barków.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x10-15 (general / volume) | 3x12-15 (endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-bent-over-row.gif",
+    "frames_extracted": [
+      "frames/smith-bent-over-row/frame_0_start.png",
+      "frames/smith-bent-over-row/frame_1_early.png",
+      "frames/smith-bent-over-row/frame_2_mid.png",
+      "frames/smith-bent-over-row/frame_3_late.png",
+      "frames/smith-bent-over-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/smith-bent-over-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T10:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): postać w klasycznym hip hinge ~45 stopni wewnątrz ramy Smitha, kolana lekko ugięte, gryf z dużymi obciążnikami trzymany nachwytem na wysokości środka goleni / tuż pod kolanami, ramiona w pełnym wyproście pionowo w dół, podświetlone najszersze grzbietu oraz środkowe czworoboczne/równoległoboczne. Frames 1-2 (early/mid): koncentryczny ciąg gryfu PIONOWO w GÓRĘ po szynach Smitha — łokcie wędrują do tyłu i lekko na boki, sztanga zbliża się do dolnej części brzucha. Frames 3-4 (late/end): pełne ściągnięcie łopatek, łokcie za linią tułowia, gryf przy dolnym brzuchu/górnej części bioder, kąt tułowia STABILNY przez cały ruch — brak kippingu (Smith ułatwia trzymanie tego). Kluczowa specyfika: pionowy tor gryfu wymuszony przez szyny — to NIE jest wolna sztanga. equipment: smith_machine (jedyny wymóg). difficulty: 5 (niższy niż wolna sztanga 7 — eliminacja stabilizacji). Klasyfikacja pull_horizontal potwierdzona (tułów horyzontalny → ciąg horyzontalny względem tułowia, mimo że tor gryfu jest pionowy względem podłogi). Trzy primary movery zgodnie ze specyfikacją: latissimus_dorsi P10 (najwyższe — Smith pozwala maksymalnie skupić się na łatach bez rozproszenia stabilizacją), rhomboids P9, trapezius_middle P9. Wszystkie pola PL napisane od zera. Polski standard: 'Wiosłowanie w opadzie na maszynie Smith' / 'Smith machine'.",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "smith_machine", "guided_bar", "mid_back", "lat_developer", "hypertrophy_focused", "stabilization_reduced"]
+}

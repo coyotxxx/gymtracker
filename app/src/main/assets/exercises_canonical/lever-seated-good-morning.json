@@ -1,0 +1,201 @@
+{
+  "id": "lever-seated-good-morning",
+  "name": "Lever Seated Good Morning",
+  "namePl": "Good morning w maszynie siedząc",
+  "aliases": ["seated good morning machine", "lever back extension seated", "seated hyperextension machine", "machine seated good morning"],
+  "aliasesPl": ["good morning na maszynie siedząc", "siedzący good morning w dźwigni", "maszyna do prostowników siedząc", "back extension siedząc"],
+
+  "description": "A seated hip-hinge/back-extension movement performed on a lever (plate-loaded or selectorized) machine. The lifter sits on a fixed seat with legs anchored under rollers/pad, grips a handle or chest pad connected to the lever arm, and performs the movement by bending forward at the hips (eccentric) and then extending back to upright against the machine's resistance (concentric). Functionally equivalent to a barbell good morning but with two big advantages: (1) the load vector is directed by the machine — the spine doesn't have to balance a free weight, dramatically reducing shear forces on the lumbar; (2) the seated position with anchored legs isolates the hip hinge and back extension, removing the need for full-body balance. Excellent assistance lift for the posterior chain (erector spinae primary), and a much safer entry point to hip-hinge loading for beginners or for anyone returning from low-back issues.",
+  "descriptionPl": "Siedzący ruch hip hinge / prostowania grzbietu wykonywany na maszynie dźwigniowej (talerzykowej lub stosowej). Ćwiczący siada na stałym siedzisku z nogami zablokowanymi pod rolkami/poduszką, chwyta uchwyt lub pad piersiowy połączony z ramieniem dźwigni i wykonuje ruch zginając się do przodu w biodrach (ekscentryk), a następnie prostując się do pozycji pionowej przeciwko oporowi maszyny (koncentryk). Funkcjonalnie odpowiednik good morning ze sztangą, ale z dwiema dużymi zaletami: (1) wektor obciążenia jest narzucony przez maszynę — kręgosłup nie musi balansować wolnym ciężarem, co drastycznie redukuje siły ścinające na lędźwiach; (2) pozycja siedząca z zablokowanymi nogami izoluje ruch hip hinge i prostowanie grzbietu, eliminując potrzebę utrzymania równowagi całego ciała. Doskonałe ćwiczenie pomocnicze na tylny łańcuch (prostowniki grzbietu na pierwszym miejscu) i znacznie bezpieczniejsze wejście w obciążanie hip hinge dla początkujących lub osób wracających po problemach z lędźwiami.",
+
+  "instructions": [
+    "Set the seat height and roller pad so that when seated, your feet are flat on the platform and your shins are firmly anchored under the leg rollers — no slack.",
+    "Select the load. Start LIGHT — this machine surprises people with the leverage. Lever good morning is an assistance lift, not a max-effort lift.",
+    "Sit upright, grip the handles (or place chest against the pad, depending on machine design). Brace the core, set the spine neutral, chest up.",
+    "Take a breath, brace (Valsalva). Begin the eccentric by hinging forward at the HIPS — let the torso rotate down toward the thighs.",
+    "Lower under control until you feel a strong stretch in the hamstrings and lower back — typically when the torso is parallel to the floor or slightly above. Do not round the lumbar deliberately to chase more depth.",
+    "Reverse the movement: drive through the glutes and erectors, extending the hips and unfolding the spine segment by segment back to vertical. Exhale near the top.",
+    "Return to upright — do NOT hyperextend backward past vertical. The endpoint is a tall, stacked spine, not a layback.",
+    "Pause briefly at the top, reset the brace, and continue. Move with control — this is a tempo/technique lift, not a power lift."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska i rolki tak, aby siedząc mieć stopy płasko na platformie, a golenie mocno zablokowane pod rolkami — bez luzu.",
+    "Wybierz obciążenie. Zacznij LEKKO — ta maszyna zaskakuje dźwignią. Lever good morning to ćwiczenie pomocnicze, nie maksowe.",
+    "Usiądź prosto, chwyć uchwyty (lub oprzyj klatkę o pad, zależnie od konstrukcji maszyny). Napnij brzuch, neutralny kręgosłup, klatka w górze.",
+    "Nabierz oddech, napięcie (Valsalva). Zacznij fazę ekscentryczną zginając się w BIODRACH — pozwól tułowiowi schylić się w stronę ud.",
+    "Schodź pod kontrolą aż poczujesz mocny rozciąg dwugłowych ud i dolnego odcinka grzbietu — zwykle gdy tułów jest równoległy do podłogi lub nieco powyżej. Nie zaokrąglaj lędźwi celowo żeby zejść głębiej.",
+    "Wróć ruchem: napęd z pośladków i prostowników, wyprostuj biodra i rozwiń kręgosłup segment po segmencie do pionu. Wydech blisko góry.",
+    "Wróć do pionu — NIE odginaj się do tyłu poza pion. Punkt końcowy to wyprostowany, ułożony kręgosłup, nie odchył do tyłu.",
+    "Krótka pauza na górze, zresetuj napięcie, kontynuuj. Ruszaj się pod kontrolą — to ćwiczenie tempa i techniki, nie siły maksymalnej."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["erector_spinae", "glutes"],
+    "secondary": ["hamstrings"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "latissimus_dorsi", "trapezius"]
+  },
+
+  "muscle_intensity": {
+    "erector_spinae": "P10",
+    "glutes": "P8",
+    "hamstrings": "S7",
+    "core": "S6",
+    "rectus_abdominis": "S5",
+    "latissimus_dorsi": "S4",
+    "trapezius": "S4"
+  },
+
+  "equipment": {
+    "required": ["lever_machine"],
+    "optional": ["belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bird-dog", "glute-bridge", "back-extension-45-degree"],
+    "progression_to": ["barbell-good-morning", "barbell-romanian-deadlift", "reverse-hyperextension"],
+    "alternatives": ["back-extension-45-degree", "back-extension-horizontal", "barbell-good-morning", "barbell-romanian-deadlift", "cable-pull-through"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Shins anchored firmly under the roller pad — no slack, no slipping",
+      "Hips pressed back into the seat, sitting tall",
+      "Spine neutral, chest up, lats lightly engaged",
+      "Start LIGHT — the leverage is deceptive on this machine",
+      "Grip the handles (or chest into pad) — wrists relaxed, the work is in the back/hips"
+    ],
+    "setup_cues_pl": [
+      "Golenie mocno zablokowane pod rolką — bez luzu, bez wyślizgu",
+      "Biodra wciśnięte w siedzisko, siedzisz prosto",
+      "Neutralny kręgosłup, klatka w górze, najszersze lekko napięte",
+      "Zacznij LEKKO — dźwignia tej maszyny jest podstępna",
+      "Chwyć uchwyty (lub klatka w pad) — nadgarstki rozluźnione, pracują plecy/biodra"
+    ],
+    "execution_cues": [
+      "Hinge at the HIPS — let the torso fold forward, not collapse",
+      "Lower under CONTROL — 2-3 seconds down, feel the stretch",
+      "Stop at hamstring/lower-back stretch — usually torso ~parallel to floor",
+      "Drive UP from the glutes and erectors — unfold the spine segment by segment",
+      "Stop at vertical — do NOT layback past upright"
+    ],
+    "execution_cues_pl": [
+      "Hinge w BIODRACH — pozwól tułowiowi złożyć się do przodu, nie zapaść się",
+      "Schodź pod KONTROLĄ — 2-3 sekundy w dół, poczuj rozciąg",
+      "Zatrzymaj na rozciągu hamstringów/lędźwi — zwykle tułów ~równolegle do podłogi",
+      "Wstawaj NAPĘDEM pośladków i prostowników — rozwijaj kręgosłup segment po segmencie",
+      "Zatrzymaj na pionie — NIE odchylaj się do tyłu poza pion"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hyperextending backward past vertical at the top",
+        "faultPl": "Odchylanie się do tyłu poza pion na górze",
+        "cause": "Misunderstanding the endpoint, trying to 'get more work', mimicking lat-pulldown layback",
+        "causePl": "Niezrozumienie punktu końcowego, próba 'dorobienia' pracy, naśladowanie odchyłu z lat pulldownu",
+        "cue": "The top is a TALL, STACKED spine — not a layback. Stop at vertical. Hyperextension under load is exactly what we want to avoid here.",
+        "cuePl": "Góra to PROSTY, UŁOŻONY kręgosłup — nie odchył. Zatrzymaj na pionie. Hyperextensja pod obciążeniem to dokładnie to, czego tu chcemy uniknąć."
+      },
+      {
+        "fault": "Rounded lumbar (deliberate flexion) at the bottom of the descent",
+        "faultPl": "Zaokrąglone lędźwie (celowa flexja) na dole",
+        "cause": "Chasing range of motion, weight too heavy, weak erectors, poor brace",
+        "causePl": "Gonienie zakresu ruchu, zbyt duży ciężar, słabe prostowniki, słabe napięcie",
+        "cue": "Stop at the STRETCH, not at the floor. The lower back stays neutral the entire rep. If it rounds, you went too far OR the weight is too heavy.",
+        "cuePl": "Zatrzymaj się na ROZCIĄGU, nie przy podłodze. Lędźwie zostają neutralne przez całe powtórzenie. Jeśli się zaokrąglają — zszedłeś za daleko LUB ciężar za duży."
+      },
+      {
+        "fault": "Using arms / yanking the handle instead of hinging",
+        "faultPl": "Praca rękami / szarpanie uchwytu zamiast hip hinge",
+        "cause": "Lack of mind-muscle connection with erectors and glutes, weight too heavy",
+        "causePl": "Brak czucia mięśniowego prostowników i pośladków, zbyt duży ciężar",
+        "cue": "The arms are HOOKS — they just hold the handle. The work happens in the hips and back. If your forearms are pumped, you're cheating.",
+        "cuePl": "Ręce są HACZYKAMI — tylko trzymają uchwyt. Praca dzieje się w biodrach i plecach. Jeśli przedramiona są napompowane — oszukujesz."
+      },
+      {
+        "fault": "Jerking out of the bottom — using momentum instead of muscle",
+        "faultPl": "Szarpanie z dołu — używanie rozpędu zamiast mięśni",
+        "cause": "Weight too heavy, fatigue, impatience",
+        "causePl": "Zbyt duży ciężar, zmęczenie, brak cierpliwości",
+        "cue": "Pause briefly at the bottom — kill the stretch reflex. Then drive up under tension. This is a control lift, not a bounce.",
+        "cuePl": "Krótka pauza na dole — zabij odruch rozciągowy. Potem wstawaj pod napięciem. To jest ćwiczenie kontroli, nie sprężynowania."
+      },
+      {
+        "fault": "Lifting the hips off the seat / shins out of rollers",
+        "faultPl": "Odrywanie bioder od siedziska / goleni z rolek",
+        "cause": "Setup too loose, leg rollers not adjusted, weight far too heavy",
+        "causePl": "Zbyt luźne ustawienie, źle wyregulowane rolki, ciężar zdecydowanie za duży",
+        "cue": "Re-check the setup BEFORE every set. Hips glued to the seat, shins glued under the rollers. If they lift, drop the weight.",
+        "cuePl": "Sprawdź ustawienie PRZED każdą serią. Biodra wklejone w siedzisko, golenie wklejone pod rolkami. Jeśli się unoszą — zmniejsz ciężar."
+      }
+    ],
+    "breathing": "Inhale at the top, brace. Hold the brace through the eccentric and into the bottom. Drive up and exhale through the back-half of the concentric. Reset breath at the top. Never exhale during the descent — that's when the spine needs the most internal pressure.",
+    "breathingPl": "Wdech na górze, napięcie. Trzymaj napięcie przez ekscentryk i do dołu. Wstawaj i wydech w drugiej połowie koncentryku. Reset oddechu na górze. Nigdy wydech podczas schodzenia — wtedy kręgosłup potrzebuje najmocniejszego ciśnienia wewnętrznego."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Acute pain means no loaded spinal flexion/extension. Rest, see a physio. Even with the machine's support, this exercise loads the spine through a hinge.",
+      "modificationPl": "Ostry ból oznacza zero obciążonej flexji/extensji kręgosłupa. Odpoczynek, fizjoterapeuta. Nawet ze wsparciem maszyny, to ćwiczenie obciąża kręgosłup przez hinge.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "Loaded lumbar flexion is risky for disc pathologies. Use very small ROM (stop well above parallel), light weight, high reps. Stop entirely if symptoms reproduce. Consult medical professional.",
+      "modificationPl": "Obciążona flexja lędźwi jest ryzykowna przy patologiach dysków. Bardzo mały zakres (zatrzymaj się grubo nad równoległą), lekki ciężar, dużo powtórzeń. Przerwij całkowicie jeśli objawy się odtwarzają. Konsultacja z lekarzem.",
+      "alternative": "reverse-hyperextension"
+    },
+    {
+      "condition": "spondylolisthesis",
+      "severity": "avoid",
+      "modification": "Loaded hip-hinge with spinal extension at the top is contraindicated for spondylolisthesis. Choose isometric core/glute work instead under physio guidance.",
+      "modificationPl": "Obciążony hip hinge z prostowaniem kręgosłupa na górze jest przeciwwskazany przy spondylolistezie. Wybierz pracę izometryczną brzucha/pośladków pod kierunkiem fizjoterapeuty.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Limit ROM to where the lumbar stays neutral. Work mobility separately. The machine is actually a great tool to PROGRESS hinge mobility safely — just respect the neutral spine cue.",
+      "modificationPl": "Ogranicz zakres do miejsca gdzie lędźwie zostają neutralne. Pracuj nad mobilnością osobno. Maszyna jest świetnym narzędziem do BEZPIECZNEGO progresu mobilności hinge — szanuj neutralny kręgosłup.",
+      "alternative": "back-extension-45-degree"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / posterior chain assistance — most common usage) | 3x12-20 (endurance / rehab progression) | 4x6-8 (strength focus — only after solid technique)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-seated-good-morning.gif",
+    "frames_extracted": [
+      "frames/lever-seated-good-morning/frame_0_start.png",
+      "frames/lever-seated-good-morning/frame_1_early.png",
+      "frames/lever-seated-good-morning/frame_2_mid.png",
+      "frames/lever-seated-good-morning/frame_3_late.png",
+      "frames/lever-seated-good-morning/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/lever-seated-good-morning"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (12 oryginalnych klatek). Maszyna typu seated lever back extension / seated good morning: stałe siedzisko po prawej z poduszką pod kolanami / rolkami na golenie, pionowe ramię dźwigni po lewej z uchwytem na dole. Frame 2 (mid): ćwiczący siedzi pionowo, ramiona wyciągnięte do przodu i w dół trzymając uchwyt dźwigni — pozycja END koncentryku (wyprost). Frame 0/4 (eccentric/bottom): tułów schylony do przodu w hip hinge, ramiona nadal trzymają uchwyt blisko platformy, kręgosłup nadal w neutralnym wyproście (NIE zaokrąglony), pośladki na siedzisku, golenie zablokowane pod rolką. Wyraźne czerwone podświetlenie: prostowniki grzbietu (cały tył kręgosłupa, lędźwie najmocniej) i pośladki. Klasyfikacja: hinge (czysty ruch w biodrze + prostowanie kręgosłupa, kolana zablokowane), force=both (faza ekscentryczna zginanie do przodu — czyli opuszczanie/pull-back, faza koncentryczna wyprost — push back to upright), bilateral (oba uda na siedzisku, oba golenie pod rolką), sagittal (czyste zginanie/prostowanie biodra i tułowia w płaszczyźnie strzałkowej), mechanic=compound (biodro + kręgosłup). Kinetic chain=open (nogi zablokowane, ale tułów się porusza wolno — to nie jest klasyczny closed chain jak deadlift gdzie stopy pchają o podłoże; tu siedzimy a tułów się rusza przeciw oporowi maszyny). Muscle intensity: erector_spinae P10 (główny mover, wyraźnie podświetlony, ćwiczenie nazwane 'good morning' = klasyczna budowniczka prostowników), glutes P8 (drugi mover wyprostu biodra, ale w pozycji siedzącej ich udział jest mniejszy niż w stojącym good morning), hamstrings S7 (asystują wyprost biodra, mniej rozciągnięte niż w stojącym good morning bo kolana ugięte siedząc). Equipment: lever_machine (talerzykowa lub stosowa, zależnie od modelu). Trudność 4 (beginner-friendly) — bezpieczniejsza niż barbell good morning bo maszyna kieruje wektor obciążenia i nie wymaga balansowania wolnym ciężarem; klasyczny lift wprowadzający w obciążanie hip hinge. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii fitness (hip hinge, ekscentryk/koncentryk, prostowniki grzbietu, lędźwie, Valsalva, hyperextensja). Notatka filozoficzna: progression_to wskazuje barbell-good-morning i barbell-romanian-deadlift — maszyna to świetny stepping stone do wolnych ciężarów.",
+
+  "tags": ["bodybuilding", "posterior_chain", "lower_back", "hip_hinge", "machine", "compound", "beginner_friendly", "assistance_lift", "rehab_friendly", "seated"]
+}

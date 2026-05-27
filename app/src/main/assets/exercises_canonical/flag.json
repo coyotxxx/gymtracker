@@ -1,0 +1,208 @@
+{
+  "id": "flag",
+  "name": "Human Flag",
+  "namePl": "Flaga",
+  "aliases": ["human flag", "flag hold", "side flag", "vertical pole flag"],
+  "aliasesPl": ["flaga", "ludzka flaga", "flaga na słupie", "human flag", "flaga calisthenics"],
+
+  "description": "Elite-level bodyweight isometric calisthenics hold. The lifter grips a vertical pole with both hands stacked one above the other and presses the body into a horizontal position parallel to the ground, suspended sideways like a flag flying from a flagpole. The top arm pulls toward the pole while the bottom arm pushes away from it, creating an opposing force couple that locks the torso into a rigid horizontal line. A demonstration of extreme relative strength, particularly in the lateral chain — obliques, lats, and shoulders.",
+  "descriptionPl": "Elitarne ćwiczenie izometryczne z masą własnego ciała na poziomie zaawansowanej kalisteniki. Ćwiczący chwyta pionowy słup oburącz (jedna dłoń nad drugą) i napiera ciałem do pozycji poziomej, równoległej do podłoża — zawieszony bokiem niczym flaga powiewająca na maszcie. Górna ręka pociąga w stronę słupa, dolna odpycha się od niego, tworząc parę sił przeciwnych, która usztywnia tułów w prostą linię. Pokaz ekstremalnej siły względnej, szczególnie łańcucha bocznego — mięśni skośnych brzucha, najszerszych grzbietu i barków.",
+
+  "instructions": [
+    "Approach a sturdy vertical pole that can support your full bodyweight in shear. Stand sideways to the pole.",
+    "Grip the pole with the top hand in an overhand (pronated) grip at about head height, fingers pointing forward over the pole.",
+    "Place the bottom hand below the top hand in an underhand (supinated) grip, roughly shoulder-width apart on the pole. The bottom arm will push, the top arm will pull.",
+    "Brace the entire core hard — abs, obliques, glutes, and lats simultaneously. Squeeze the legs together as one rigid unit.",
+    "Kick the legs up sideways, driving the hips toward the horizontal. The top hand pulls the pole into the body while the bottom hand presses the pole away — this scissor force levers the body up.",
+    "At the top, the body forms a straight horizontal line parallel to the ground: feet, hips, shoulders, and head all level. Look straight ahead, not down.",
+    "Hold the position isometrically. Maintain tension head-to-toe — no sagging hips, no bent knees, no piked torso.",
+    "Lower the legs under control back to the starting standing position. Do not let go of the pole and drop."
+  ],
+  "instructionsPl": [
+    "Podejdź do solidnego pionowego słupa, który utrzyma twój ciężar w obciążeniu poprzecznym. Stań bokiem do słupa.",
+    "Chwyć słup górną ręką nachwytem (pronacja) na wysokości głowy, palce skierowane do przodu nad słupem.",
+    "Dolną rękę umieść poniżej górnej w podchwycie (supinacja), mniej więcej na szerokość barków od górnej ręki. Dolna ręka będzie pchać, górna ciągnąć.",
+    "Mocno napnij cały rdzeń — brzuch, skośne, pośladki i najszersze grzbietu jednocześnie. Ściśnij nogi razem jako jedną sztywną całość.",
+    "Wybij nogi w bok, wpychając biodra do poziomu. Górna ręka pociąga słup w stronę ciała, dolna odpycha słup od ciała — ta para sił dźwigniowo unosi ciało.",
+    "W górze ciało tworzy prostą linię poziomą równoległą do ziemi: stopy, biodra, barki i głowa na jednym poziomie. Patrz przed siebie, nie w dół.",
+    "Utrzymuj pozycję izometrycznie. Zachowaj napięcie od głowy do stóp — żadnego opadania bioder, zgiętych kolan ani złamanego tułowia.",
+    "Opuść nogi kontrolowanym ruchem do pozycji wyjściowej. Nie puszczaj słupa i nie spadaj swobodnie."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_lateral_flexion",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "latissimus_dorsi", "deltoid_anterior"],
+    "secondary": ["triceps_brachii", "rectus_abdominis", "deltoid_lateral"],
+    "stabilizers": ["transverse_abdominis", "gluteus_medius", "serratus_anterior", "forearms", "quadriceps", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "latissimus_dorsi": "P9",
+    "deltoid_anterior": "P9",
+    "triceps_brachii": "S8",
+    "rectus_abdominis": "S7",
+    "deltoid_lateral": "S7",
+    "transverse_abdominis": "T6",
+    "gluteus_medius": "T6",
+    "serratus_anterior": "T5",
+    "forearms": "T7",
+    "quadriceps": "T4",
+    "adductors": "T5"
+  },
+
+  "equipment": {
+    "required": ["vertical_pole"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 10,
+    "prerequisites": ["side-plank", "hanging-leg-raise", "pull-up", "handstand-hold", "tuck-flag", "vertical-flag"],
+    "progression_to": ["full-flag-press", "flag-pull-up", "one-arm-flag"],
+    "alternatives": ["side-plank", "tuck-flag", "vertical-flag", "straddle-flag", "windshield-wiper"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Side-on to the pole — feet shoulder-width, body close",
+      "Top hand overhand at head height, fingers gripping over the pole",
+      "Bottom hand underhand below, palm facing up — push grip",
+      "Hands roughly shoulder-width apart on the pole, not too close",
+      "Pre-brace core, lats, and glutes before lifting — no slack"
+    ],
+    "setup_cues_pl": [
+      "Stań bokiem do słupa — stopy na szerokość barków, ciało blisko",
+      "Górna ręka nachwytem na wysokości głowy, palce nad słupem",
+      "Dolna ręka podchwytem poniżej, dłoń skierowana w górę — chwyt do odpychania",
+      "Dłonie na słupie w odstępie mniej więcej barków, nie za blisko siebie",
+      "Wstępne napięcie brzucha, najszerszych i pośladków przed wybiciem — żadnego luzu"
+    ],
+    "execution_cues": [
+      "Top arm PULLS the pole hard into your body — like a one-arm row",
+      "Bottom arm PUSHES the pole away — straight elbow, locked triceps",
+      "Squeeze obliques and glutes to lift hips to horizontal",
+      "Legs together, toes pointed, body one rigid plank",
+      "Eyes forward — looking down drops the hips"
+    ],
+    "execution_cues_pl": [
+      "Górna ręka mocno PCIĄGA słup w stronę ciała — jak wiosłowanie jednorącz",
+      "Dolna ręka ODPYCHA słup — łokieć wyprostowany, triceps zablokowany",
+      "Ściśnij skośne i pośladki, by unieść biodra do poziomu",
+      "Nogi razem, palce u stóp wyciągnięte, ciało jak sztywna deska",
+      "Wzrok przed siebie — patrzenie w dół opuszcza biodra"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging below horizontal (banana flag)",
+        "faultPl": "Biodra opadają poniżej linii poziomej (flaga w kształcie banana)",
+        "cause": "Weak obliques and glutes; insufficient core bracing; bottom-arm push collapses",
+        "causePl": "Słabe mięśnie skośne i pośladki; niewystarczające napięcie rdzenia; dolna ręka traci nacisk",
+        "cue": "Squeeze your glutes like cracking a walnut and push your hips up to the ceiling. Bottom arm pushes harder.",
+        "cuePl": "Ściśnij pośladki jakbyś rozgniatał orzech i wypchnij biodra w stronę sufitu. Dolna ręka pcha mocniej."
+      },
+      {
+        "fault": "Knees bent / legs tucked (not full flag)",
+        "faultPl": "Zgięte kolana / nogi podciągnięte (to nie jest pełna flaga)",
+        "cause": "Lack of strength to hold full lever — body shortens to reduce torque demand",
+        "causePl": "Brak siły do utrzymania pełnej dźwigni — ciało skraca się, by zmniejszyć wymagany moment",
+        "cue": "If you can't extend fully, regress to straddle flag or tuck flag for now. Don't half-rep the full flag.",
+        "cuePl": "Jeśli nie utrzymasz pełnego wyprostu, cofnij się do flagi w rozkroku lub flagi z podciągniętymi nogami. Nie wykonuj połówkowych powtórzeń pełnej flagi."
+      },
+      {
+        "fault": "Top arm bending / elbow collapsing",
+        "faultPl": "Górna ręka się zgina / łokieć opada",
+        "cause": "Weak lat pull or trying to muscle the position with biceps instead of lats",
+        "causePl": "Słabe pociągnięcie najszerszych albo próba wymuszenia pozycji bicepsem zamiast najszerszymi",
+        "cue": "Pull the pole like a heavy one-arm cable row — drive elbow down toward hip, engage lat first.",
+        "cuePl": "Ciągnij słup jak ciężkie wiosłowanie linką jednorącz — łokieć w dół ku biodru, najpierw aktywuj najszerszy."
+      },
+      {
+        "fault": "Body rotates — chest opens toward sky or floor (loss of frontal plane)",
+        "faultPl": "Ciało rotuje — klatka otwiera się do góry lub do podłoża (utrata płaszczyzny czołowej)",
+        "cause": "Imbalanced grip pressure between top and bottom hand; weak serratus anterior",
+        "causePl": "Niezbalansowany nacisk między górną a dolną ręką; słaby mięsień zębaty przedni",
+        "cue": "Keep shoulders, hips and feet stacked in one frontal plane. Look at the pole's edge to confirm alignment.",
+        "cuePl": "Trzymaj barki, biodra i stopy w jednej płaszczyźnie czołowej. Patrz na krawędź słupa, by sprawdzić ułożenie."
+      },
+      {
+        "fault": "Holding breath / Valsalva for too long",
+        "faultPl": "Wstrzymywanie oddechu / zbyt długa próba Valsalvy",
+        "cause": "Treating it like a 1RM lift instead of an isometric hold — leads to dizziness and grip failure",
+        "causePl": "Traktowanie ćwiczenia jak ciężaru 1RM zamiast jak izometrycznego trzymania — prowadzi do zawrotów głowy i utraty chwytu",
+        "cue": "Short controlled breaths through pursed lips. Brace remains tight while air moves shallowly.",
+        "cuePl": "Krótkie, kontrolowane oddechy przez zaciśnięte usta. Napięcie utrzymane, oddech płytki."
+      }
+    ],
+    "breathing": "Take a deep breath before kicking up and brace hard. During the hold, take small shallow breaths through pursed lips while keeping the core locked — do not fully exhale and lose intra-abdominal pressure. Exhale fully only after dismounting.",
+    "breathingPl": "Wykonaj głęboki wdech przed wybiciem i mocno napnij rdzeń. Podczas utrzymania bierz krótkie, płytkie oddechy przez zaciśnięte usta, zachowując napięcie tłoczni brzusznej — nie wypuszczaj całego powietrza, by nie stracić ciśnienia śródbrzusznego. Pełny wydech dopiero po zejściu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_injury_or_impingement",
+      "severity": "avoid",
+      "modification": "Massive shear and compressive load on both glenohumeral joints, especially the bottom (pushing) shoulder. Resolve impingement and rebuild rotator cuff strength before attempting.",
+      "modificationPl": "Olbrzymie obciążenie ścinające i ściskające oba stawy ramienne, zwłaszcza dolny (odpychający). Wylecz zespół ciasnoty i odbuduj siłę stożka rotatorów przed próbą.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "wrist_injury_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Both wrists support full bodyweight in awkward positions (top wrist hyperextends, bottom wrist bears compression). Train with gentler grip-based work first.",
+      "modificationPl": "Oba nadgarstki utrzymują pełen ciężar ciała w niekorzystnych pozycjach (górny w przeproście, dolny w kompresji). Najpierw trenuj łagodniejszymi ćwiczeniami na chwyt.",
+      "alternative": "hanging-knee-raise"
+    },
+    {
+      "condition": "hypertension_uncontrolled",
+      "severity": "avoid",
+      "modification": "Maximal isometric efforts with Valsalva spike systolic BP dramatically. Get BP controlled and physician clearance before training maximal isometrics.",
+      "modificationPl": "Maksymalne wysiłki izometryczne z Valsalvą znacząco podnoszą ciśnienie skurczowe. Uzyskaj kontrolę ciśnienia i zgodę lekarza przed treningiem maksymalnych izometrii.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "lower_back_injury",
+      "severity": "caution",
+      "modification": "Sagging hips load the lumbar spine in lateral flexion with massive torque. If you can't maintain a perfect line, regress to tuck or straddle flag where the lever arm is shorter.",
+      "modificationPl": "Opadające biodra obciążają kręgosłup lędźwiowy w bocznym zgięciu z dużym momentem. Jeśli nie utrzymasz idealnej linii, cofnij się do flagi z podciągniętymi nogami lub w rozkroku, gdzie ramię dźwigni jest krótsze.",
+      "alternative": "tuck-flag"
+    }
+  ],
+
+  "typical_sets_reps": "5x10-15s (strength) | 3x20-30s (endurance) | 5x max hold (skill practice)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "flag.gif",
+    "frames_extracted": [
+      "frames/flag/frame_0_start.png",
+      "frames/flag/frame_1_early.png",
+      "frames/flag/frame_2_mid.png",
+      "frames/flag/frame_3_late.png",
+      "frames/flag/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/flag",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki z GIFa jahel (start/mid/end). Pozycja klasycznej human flag: ciało zawodnika ułożone idealnie poziomo, równolegle do podłogi, oburącz na pionowym słupku z metalową podstawą. Górna dłoń trzyma słup nachwytem na wysokości głowy (mięsień najszerszy podświetlony — pull), dolna dłoń poniżej w pozycji odpychającej (triceps + deltoid przedni podświetlone — push). Klatka mid podświetla aktywne grupy mięśniowe: latissimus_dorsi (lewa strona pleców), obliques (boczna ściana brzucha — kluczowa dla utrzymania linii), deltoid przedni, triceps, oraz subtelnie rectus_abdominis. Nogi proste, stopy razem, palce wyciągnięte — pełna izometria w płaszczyźnie czołowej. Klasyfikacja: anti_lateral_flexion (rdzeń opiera się sile grawitacji która próbuje zgiąć ciało w bok), isometric (statyczny hold), bilateral (obie ręce niezbędne, choć asymetrycznie — push vs pull), plane=frontal, force=static, kinetic_chain=closed (dłonie zamocowane na słupie). Mięśnie primary potwierdzone: obliques (P10 — krytyczne dla anti-lateral flexion), latissimus_dorsi (P9 — top arm pull), deltoid_anterior (P9 — bottom arm push i top arm stabilizacja). Nazwa PL: 'Flaga' to powszechna nazwa w polskiej calisthenice, dodałem aliasy 'ludzka flaga', 'flaga na słupie'. Difficulty=10/10 (elite calisthenics skill, wymagający lat trening progressions: tuck flag → straddle → full). Level=advanced (prereqs: side-plank, pull-up, handstand minimum). Brak źródeł yuhonas/glowupp — to ćwiczenie z bazy jahel. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego, terminologia kalistenika polska."
+,
+  "tags": ["bodyweight", "calisthenics", "isometric", "core", "abs", "obliques", "advanced", "elite", "lateral_chain", "pole", "skill"]
+}

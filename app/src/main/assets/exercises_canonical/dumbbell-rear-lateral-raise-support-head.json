@@ -1,0 +1,206 @@
+{
+  "id": "dumbbell-rear-lateral-raise-support-head",
+  "name": "Dumbbell Rear Lateral Raise with Head Support",
+  "namePl": "Wznosy tylnego aktonu z hantlami z głową opartą",
+  "aliases": ["head-supported rear delt fly", "incline bench head-supported rear lateral raise", "forehead-supported bent-over rear raise", "head-rested dumbbell reverse fly"],
+  "aliasesPl": ["wznosy tylnych aktonów z głową opartą o ławkę", "rozpiętki w opadzie z hantlami z czołem opartym o pad", "head-supported rear delt fly z hantlami", "wznosy bokiem na tylne aktony z podpartą głową"],
+
+  "description": "Strict-form rear lateral raise performed standing in a bent-over position with the forehead resting on an incline bench pad (~45° pad angle). The head support locks the torso in place and eliminates the cheating tendency of a free standing bent-over raise — no swing, no hip extension, no upper-back rocking. Arms hang freely under the shoulders and travel in a wide horizontal abduction arc, isolating the posterior deltoids and mid-back almost exclusively. One of the strictest rear-delt isolations available with free weights.",
+  "descriptionPl": "Ściśle techniczna wersja wznosów na tylne aktony wykonywana w pozycji stojącej w opadzie, z czołem opartym o pad ławki incline (kąt pada ~45°). Oparcie głowy blokuje tułów i eliminuje pokusę oszukiwania znaną z wersji w opadzie stojąc swobodnie — brak bujania, wyprostu bioder, kołysania górnej części pleców. Ramiona zwisają swobodnie pod barkami i poruszają się szerokim łukiem odwodzenia poziomego, izolując niemal wyłącznie tylne aktony i środkową część pleców. Jedna z najbardziej restrykcyjnych technicznie izolacji tylnego aktonu z wolnym ciężarem.",
+
+  "instructions": [
+    "Set an incline bench to roughly 30-45°. Stand on the long side of the bench, facing the pad.",
+    "Take a dumbbell in each hand with a neutral grip (palms facing each other).",
+    "Hinge forward at the hips, place your forehead (or upper crown) gently on the top of the incline pad. Feet roughly hip-width, knees slightly bent.",
+    "Let the arms hang straight down from the shoulders so the dumbbells are directly under the chest. Set a small, fixed bend in the elbows (~15-20°).",
+    "Retract and depress the shoulder blades. Brace the core. Press the forehead lightly into the pad — do not push hard, just enough to keep contact. This is the start position.",
+    "Lead with the elbows and raise both dumbbells out to the sides in a wide arc until the upper arms reach roughly shoulder height (in line with the torso).",
+    "Pause briefly at the top, squeezing the rear delts and pinching the shoulder blades together.",
+    "Lower the dumbbells back along the same arc under control over 2-3 seconds, inhaling on the way down.",
+    "Maintain forehead contact with the pad for the entire set — losing contact means you are using the back to cheat."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę incline pod kątem ~30-45°. Stań przy długim boku ławki, twarzą do oparcia.",
+    "Złap hantle chwytem neutralnym (dłonie zwrócone do siebie).",
+    "Wykonaj skłon w biodrach i delikatnie oprzyj czoło (lub górną część głowy) o szczyt pada ławki incline. Stopy na szerokość bioder, kolana lekko ugięte.",
+    "Pozwól ramionom swobodnie zwisać prosto w dół od barków, tak żeby hantle znalazły się dokładnie pod klatką piersiową. Ustaw lekkie, stałe ugięcie w łokciach (~15-20°).",
+    "Ściągnij łopatki w tył i w dół. Napnij brzuch. Lekko dociśnij czoło do pada — bez forsowania, wystarczy żeby utrzymać kontakt. To pozycja wyjściowa.",
+    "Prowadząc ruch łokciami, unieś obie hantle bokiem szerokim łukiem, aż ramiona ponad łokciem dotrą do wysokości barków (w linii z tułowiem).",
+    "Zatrzymaj się na chwilę w górnej pozycji, mocno spinając tylne aktony i ściągając łopatki.",
+    "Opuszczaj hantle tą samą drogą w sposób kontrolowany przez 2-3 sekundy, wdech podczas opuszczania.",
+    "Utrzymuj kontakt czoła z padem przez całą serię — utrata kontaktu oznacza, że oszukujesz pracą pleców."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids"],
+    "secondary": ["rhomboids", "trapezius_middle", "infraspinatus"],
+    "stabilizers": ["teres_minor", "trapezius_lower", "erector_spinae", "core", "forearm_flexors", "neck_flexors"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P10",
+    "rhomboids": "S7",
+    "trapezius_middle": "S7",
+    "infraspinatus": "S5",
+    "teres_minor": "T4",
+    "trapezius_lower": "T3",
+    "erector_spinae": "T3",
+    "core": "T3",
+    "forearm_flexors": "T2",
+    "neck_flexors": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bent-over-dumbbell-rear-delt-row"],
+    "progression_to": ["cable-rear-lateral-raise", "machine-rear-delt-fly", "reverse-pec-deck"],
+    "alternatives": ["dumbbell-rear-fly", "dumbbell-lying-rear-lateral-raise", "chest-supported-incline-rear-delt-fly", "face-pull", "reverse-pec-deck", "cable-rear-delt-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Incline bench at ~30-45°, stand facing the pad",
+      "Forehead rests gently on top of the pad",
+      "Feet hip-width, knees soft, hips hinged back",
+      "Neutral grip, dumbbells hanging directly under chest",
+      "Small fixed bend in elbows (~15-20°), scapulae retracted and depressed"
+    ],
+    "setup_cues_pl": [
+      "Ławka incline ~30-45°, stań twarzą do oparcia",
+      "Czoło delikatnie oparte o szczyt pada",
+      "Stopy na szerokość bioder, kolana lekko ugięte, biodra cofnięte",
+      "Chwyt neutralny, hantle zwisają dokładnie pod klatką",
+      "Lekkie, stałe ugięcie łokci (~15-20°), łopatki ściągnięte w tył i w dół"
+    ],
+    "execution_cues": [
+      "Lead with the elbows, not the hands",
+      "Think 'spread the wings to the sides'",
+      "Forehead stays glued to the pad the whole set",
+      "Stop at shoulder level — no higher",
+      "Squeeze rear delts and pinch shoulder blades at the top"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami, nie dłońmi",
+      "Pomyśl: 'rozłóż skrzydła na boki'",
+      "Czoło przyklejone do pada przez całą serię",
+      "Zatrzymaj na wysokości barków — nie wyżej",
+      "Spinaj tylne aktony i ściągaj łopatki w górnej pozycji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the head off the pad during the rep",
+        "faultPl": "Odrywanie głowy od pada w trakcie powtórzenia",
+        "cause": "Load too heavy — lifter unconsciously extends spine to throw the weight up, defeating the purpose of head support",
+        "causePl": "Zbyt duży ciężar — ćwiczący nieświadomie prostuje kręgosłup, żeby zarzucić ciężar w górę, co niweczy sens podparcia głowy",
+        "cue": "Lower the weight. Forehead glued to the pad — if it lifts off, the set is over. This is a strict-form exercise.",
+        "cuePl": "Zmniejsz ciężar. Czoło przyklejone do pada — jeśli się oderwie, seria jest zakończona. To ćwiczenie strict-form."
+      },
+      {
+        "fault": "Shrugging — upper traps take over the movement",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują ruch",
+        "cause": "Load too heavy, weak rear delts, or losing scapular depression mid-rep",
+        "causePl": "Zbyt duży ciężar, słabe tylne aktony, lub utrata depresji łopatek w trakcie powtórzenia",
+        "cue": "Use lighter dumbbells. Actively press shoulders away from the ears the entire set.",
+        "cuePl": "Użyj lżejszych hantli. Aktywnie odsuwaj barki od uszu przez całą serię."
+      },
+      {
+        "fault": "Pressing forehead too hard into the pad (neck strain)",
+        "faultPl": "Zbyt mocne dociskanie czoła do pada (przeciążenie szyi)",
+        "cause": "Misunderstanding of the support — the pad is for position reference, not for bearing significant load",
+        "causePl": "Nieporozumienie co do roli oparcia — pad służy jako punkt odniesienia, nie do przenoszenia znacznego obciążenia",
+        "cue": "Light contact only — imagine a thin sheet of paper between your forehead and the pad you must not crumple but also not let fall.",
+        "cuePl": "Tylko lekki kontakt — wyobraź sobie kartkę papieru między czołem a padem, której nie można zgnieść, ale też nie pozwolić jej upaść."
+      },
+      {
+        "fault": "Elbows straightening (lever too long)",
+        "faultPl": "Łokcie prostujące się w trakcie ruchu (zbyt długa dźwignia)",
+        "cause": "Lock-out happens when load gets heavy and the lifter unconsciously uses the triceps",
+        "causePl": "Wyprost następuje gdy ciężar staje się duży i ćwiczący nieświadomie pomaga sobie tricepsem",
+        "cue": "Imagine a string between wrist and shoulder holding the elbow angle. Lock it.",
+        "cuePl": "Wyobraź sobie sznurek między nadgarstkiem a barkiem trzymający kąt łokcia. Zablokuj go."
+      },
+      {
+        "fault": "Lifting too high — past horizontal of upper arms",
+        "faultPl": "Unoszenie hantli za wysoko — powyżej poziomu ramion",
+        "cause": "Trying to get more 'feel' but actually shifting work to upper traps and rotator cuff",
+        "causePl": "Próba zwiększenia 'czucia' mięśnia, ale w rzeczywistości przeniesienie pracy na trapezy górne i stożek rotatorów",
+        "cue": "Stop when upper arms align with the torso. Beyond that the rear delt is no longer the prime mover.",
+        "cuePl": "Zatrzymaj gdy ramiona ponad łokciem znajdą się w linii z tułowiem. Powyżej tylny akton przestaje być głównym wykonawcą ruchu."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Maintain a steady, light abdominal brace — head pressure on the pad must not increase or decrease across the rep.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj równe, lekkie napięcie brzucha — docisk głowy do pada nie powinien rosnąć ani maleć w trakcie powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_spine_issues_or_neck_pain",
+      "severity": "avoid",
+      "modification": "The forehead contact loads the cervical spine in a flexed position. With acute neck pain or known cervical disc issues use the chest-supported incline rear fly instead — same biomechanics, no neck loading.",
+      "modificationPl": "Oparcie czoła obciąża odcinek szyjny kręgosłupa w zgięciu. Przy ostrym bólu szyi lub znanych problemach z dyskami szyjnymi użyj zamiast tego rozpiętek na ławce skośnej z podparciem klatki — ta sama biomechanika, brak obciążenia szyi.",
+      "alternative": "chest-supported-incline-rear-delt-fly"
+    },
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — do not raise above 80% of horizontal. Stick to neutral grip and avoid pronation. Use lighter loads (40-50% of normal).",
+      "modificationPl": "Zmniejsz zakres ruchu — nie unoś powyżej 80% poziomu. Stosuj chwyt neutralny i unikaj pronacji. Używaj lżejszych ciężarów (40-50% normalnego).",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid free-weight rear flyes during acute phase. Substitute with cable face pulls or band pull-aparts which load rear delts in a safer scapular plane.",
+      "modificationPl": "Unikaj rozpiętek w opadzie z wolnym ciężarem w fazie ostrej. Zastąp face pull na wyciągu lub odwodzeniami z gumą, które obciążają tylne aktony w bezpieczniejszej płaszczyźnie łopatkowej.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "lumbar_disc_issues_or_acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Although the head support reduces low-back cheating, the bent-over position still loads the lumbar spine isometrically. With acute back pain switch to the chest-supported (prone) version on an incline bench, or to machine rear delt fly.",
+      "modificationPl": "Mimo że oparcie głowy ogranicza oszukiwanie odcinkiem lędźwiowym, pozycja w opadzie nadal obciąża izometrycznie kręgosłup lędźwiowy. Przy ostrym bólu pleców przejdź na wersję z podparciem klatki (leżąc na ławce skośnej) lub na maszynę reverse pec deck.",
+      "alternative": "dumbbell-lying-rear-lateral-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/standard) | 4-5x15-25 (rear delt specialization/pump) | 3x10-12 (strength-focus, rare)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-rear-lateral-raise-support-head.gif",
+    "frames_extracted": [
+      "frames/dumbbell-rear-lateral-raise-support-head/frame_0_start.png",
+      "frames/dumbbell-rear-lateral-raise-support-head/frame_1_early.png",
+      "frames/dumbbell-rear-lateral-raise-support-head/frame_2_mid.png",
+      "frames/dumbbell-rear-lateral-raise-support-head/frame_3_late.png",
+      "frames/dumbbell-rear-lateral-raise-support-head/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-rear-lateral-raise-support-head"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem wszystkie 5 wyekstrahowanych klatek z GIFa jahel. Frame 0 (start): ćwiczący stoi w opadzie przy długim boku ławki incline (~30-45° pad), czoło/górna część głowy oparte o szczyt pada ławki, stopy płasko na podłodze na szerokość bioder, plecy poziomo, hantle wiszą prosto w dół pod barkami (chwyt neutralny, hantle za udami/łydkami). Tylne aktony, środek pleców i ramiona podświetlone na czerwono. Frame 2 (top/mid): hantle uniesione szerokim łukiem na boki do mniej więcej wysokości barków, ramiona ponad łokciem w linii z tułowiem, łokcie prowadzą ruch, łopatki ściągnięte, czoło NADAL oparte o pad. Frames 1,3,4 (z 'ghostami' poprzednich faz widocznymi po bokach): hantle wracają tą samą drogą, kontakt głowy z padem utrzymany. Kluczowa różnica vs dumbbell-rear-fly (siedząc na końcu ławki): tutaj ćwiczący STOI w opadzie, a głowa jest oparta o pad ławki incline (head supported). To eliminuje pokusę bujania tułowiem i prostowania się — stąd nazwa 'strict-form'. Ruch w płaszczyźnie poziomej (transverse — horizontal abduction). Klasyczna izolacja tylnych aktonów. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "isolation", "dumbbells", "upper_body", "standing", "bent_over", "head_supported", "strict_form", "hypertrophy", "rear_delt_specialization"]
+}

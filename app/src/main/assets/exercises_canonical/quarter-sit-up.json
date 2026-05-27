@@ -1,0 +1,189 @@
+{
+  "id": "quarter-sit-up",
+  "name": "Quarter Sit-up",
+  "namePl": "Ćwierć sit-up",
+  "aliases": ["quarter sit up", "quarter crunch", "short range crunch", "shoulder blade crunch"],
+  "aliasesPl": ["ćwierć brzuszek", "ćwierć crunch", "krótki crunch", "mini brzuszek", "brzuszek częściowy"],
+
+  "description": "Beginner-friendly isolation exercise for the upper rectus abdominis performed lying supine with legs flat on the floor. Only the head and shoulder blades lift a few centimetres off the mat — approximately 25% of a full sit-up's range of motion. The minimal ROM keeps tension high on the upper abs, removes the hip flexors from the equation almost entirely, and eliminates the lower-back stress associated with full sit-ups. Ideal for absolute beginners, rehabilitation, and high-rep finishers.",
+  "descriptionPl": "Izolowane ćwiczenie dla początkujących skupione na górnej części mięśnia prostego brzucha, wykonywane w leżeniu na plecach z nogami płasko na podłodze. Tylko głowa i łopatki unoszą się kilka centymetrów nad matą — około 25% pełnego zakresu sit-upa. Niewielki zakres ruchu utrzymuje napięcie na górnych mięśniach brzucha, niemal całkowicie wyłącza zginacze biodra z pracy i eliminuje obciążenie odcinka lędźwiowego typowe dla pełnych sit-upów. Idealne dla absolutnie początkujących, rehabilitacji oraz jako wykończenie treningu w dużej liczbie powtórzeń.",
+
+  "instructions": [
+    "Lie flat on your back on a mat. Extend your legs straight along the floor and keep them relaxed throughout the set.",
+    "Place your hands lightly behind your head with fingertips at the temples, or cross them over your chest. Elbows stay wide.",
+    "Press your lower back gently into the mat to remove the lumbar arch. Take a small breath in and lightly brace the core.",
+    "Exhale and slowly curl just your head and upper shoulder blades a few centimetres off the floor — imagine bringing the bottom of your rib cage toward your hips. The lower back and legs do not move.",
+    "Hold the contracted position for one second and squeeze the upper abs hard. The movement is short — about a quarter of the way up.",
+    "Inhale and lower the head and shoulders back to the mat under control. Do not let the head crash down — touch lightly and immediately start the next rep."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach na macie. Wyprostuj nogi wzdłuż podłogi i trzymaj je rozluźnione przez całą serię.",
+    "Połóż dłonie lekko za głową, opuszki palców przy skroniach, lub skrzyżuj ręce na klatce piersiowej. Łokcie utrzymuj szeroko.",
+    "Delikatnie dociśnij dolne plecy do maty, likwidując łuk w odcinku lędźwiowym. Krótki wdech i lekkie napięcie brzucha.",
+    "Wydech — powoli oderwij od podłogi tylko głowę i górną część łopatek, kilka centymetrów w górę. Wyobraź sobie, że zbliżasz dolne żebra do bioder. Dolne plecy i nogi pozostają nieruchome.",
+    "Zatrzymaj się w pozycji skurczu na sekundę i mocno ściśnij górną część brzucha. Ruch jest krótki — około jednej czwartej drogi w górę.",
+    "Wdech — opuść kontrolowanie głowę i łopatki z powrotem na matę. Nie pozwól by głowa uderzyła o matę — delikatnie dotknij i natychmiast rozpocznij kolejne powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques"],
+    "stabilizers": ["transverse_abdominis", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P8",
+    "obliques": "S4",
+    "transverse_abdominis": "T3",
+    "serratus_anterior": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["crunch", "sit-up", "cocoons"],
+    "alternatives": ["crunch", "dead-bug", "lying-leg-raise", "pelvic-tilt"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat on the mat — full body relaxed",
+      "Legs straight along the floor, slight tension in the quads",
+      "Hands lightly behind the head — fingertips, not palms",
+      "Lower back gently pressed into the mat",
+      "Chin tucked slightly — small space under the chin"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko na macie — całe ciało rozluźnione",
+      "Nogi proste wzdłuż podłogi, lekkie napięcie w czworogłowych",
+      "Dłonie lekko za głową — opuszkami palców, nie całymi dłońmi",
+      "Dolne plecy delikatnie dociśnięte do maty",
+      "Broda lekko podciągnięta — mała przestrzeń pod brodą"
+    ],
+    "execution_cues": [
+      "Lift only the head and shoulder blades — a few centimetres",
+      "Imagine ribs sliding toward hips, not torso to knees",
+      "Forceful exhale through pursed lips during the lift",
+      "Pause one second at the top and squeeze the upper abs",
+      "Lower under control — light touch of the head on the mat"
+    ],
+    "execution_cues_pl": [
+      "Unieś tylko głowę i łopatki — kilka centymetrów",
+      "Wyobraź sobie, że żebra zbliżają się do bioder, a nie tułów do kolan",
+      "Mocny wydech przez ściągnięte usta podczas unoszenia",
+      "Zatrzymaj się na sekundę w szczycie i ściśnij górne mięśnie brzucha",
+      "Opuszczaj kontrolowanie — delikatne dotknięcie głowy o matę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the head with the hands / neck strain",
+        "faultPl": "Szarpanie głowy rękami / nadwyrężanie szyi",
+        "cause": "Hands behind the head get used as a lever when the abs are weak or fatigued",
+        "causePl": "Dłonie za głową służą jako dźwignia, gdy brzuch jest słaby lub zmęczony",
+        "cue": "Keep elbows wide, fingertips only at the temples — try crossing arms over chest if you can't stop pulling",
+        "cuePl": "Trzymaj łokcie szeroko, tylko opuszki palców przy skroniach — skrzyżuj ręce na klatce, jeśli nie potrafisz przestać szarpać"
+      },
+      {
+        "fault": "Lifting too high — turning it into a full sit-up",
+        "faultPl": "Unoszenie się zbyt wysoko — zamiana w pełny sit-up",
+        "cause": "Misunderstanding the exercise's purpose; trying to go 'further' for more burn",
+        "causePl": "Niezrozumienie celu ćwiczenia; próba wykonania 'większego' ruchu dla większego pieczenia",
+        "cue": "Only shoulder blades clear the mat. If your mid-back leaves the floor — you went too far",
+        "cuePl": "Tylko łopatki unoszą się znad maty. Jeśli środek pleców odrywa się od podłogi — poszedłeś za daleko"
+      },
+      {
+        "fault": "Chin jamming into the chest",
+        "faultPl": "Broda dociśnięta do klatki piersiowej",
+        "cause": "Excessive cervical flexion from focusing on lifting the head rather than the chest",
+        "causePl": "Nadmierne zgięcie odcinka szyjnego ze skupienia na unoszeniu głowy zamiast klatki piersiowej",
+        "cue": "Look at the ceiling at a 45-degree angle — keep a tennis-ball-sized space under the chin",
+        "cuePl": "Patrz w sufit pod kątem 45 stopni — zachowaj przestrzeń wielkości piłki tenisowej pod brodą"
+      },
+      {
+        "fault": "Using momentum / bouncing reps",
+        "faultPl": "Wykorzystywanie rozpędu / sprężynowanie powtórzeń",
+        "cause": "Rushing through reps or letting the head bounce off the mat to launch the next rep",
+        "causePl": "Pośpiech w powtórzeniach lub pozwalanie głowie odbijać się od maty, by wyrzucić kolejne powtórzenie",
+        "cue": "2 seconds up, 1 second hold, 2 seconds down. Light touch only — no bouncing.",
+        "cuePl": "2 sekundy w górę, 1 sekunda pauzy, 2 sekundy w dół. Tylko delikatne dotknięcie — bez odbijania."
+      },
+      {
+        "fault": "Holding breath through the set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Subconscious bracing without exhalation, common when learning core exercises",
+        "causePl": "Nieświadome napinanie bez wydechu, częste przy uczeniu się ćwiczeń brzucha",
+        "cue": "Forceful exhale on the way up — let the rib cage compress down as you crunch",
+        "cuePl": "Mocny wydech podczas unoszenia — pozwól, by klatka piersiowa się zacisnęła w trakcie skurczu"
+      }
+    ],
+    "breathing": "Inhale on the way down (head returning to mat). Forceful exhale on the way up (head and shoulders lifting) — the exhale itself contracts the rectus abdominis and makes the rep stronger.",
+    "breathingPl": "Wdech podczas opuszczania (głowa wraca na matę). Mocny wydech podczas unoszenia (głowa i łopatki w górę) — sam wydech aktywuje mięsień prosty brzucha i wzmacnia powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Although the lower back stays on the mat, any spinal flexion can irritate acute lumbar pain. Switch to dead bug or pelvic tilts until pain-free.",
+      "modificationPl": "Mimo że dolne plecy pozostają na macie, każde zgięcie kręgosłupa może drażnić ostry ból lędźwi. Przejdź na dead bug lub pelvic tilt do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Direct rectus abdominis crunching can worsen midline separation. Begin with transverse-abdominis breathing and pelvic tilts; reintroduce when the gap is <2 fingers.",
+      "modificationPl": "Bezpośrednie zwijanie mięśnia prostego brzucha może pogłębić rozejście kresy białej. Zacznij od oddychania mięśniem poprzecznym brzucha i pelvic tilt; wróć do ćwiczenia, gdy szczelina <2 palce.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Don't pull the neck. Cross hands over chest instead of behind head and look at the ceiling, not the knees. If neck flares, stop and use anti-extension core work.",
+      "modificationPl": "Nie szarp szyją. Skrzyżuj dłonie na klatce zamiast trzymać je za głową i patrz w sufit, nie na kolana. Jeśli kark zaczyna boleć, przerwij i przejdź na ćwiczenia anty-ekstensji.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x15-20 (beginner) | 3x20-30 (endurance) | 2-3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "quarter-sit-up.gif",
+    "frames_extracted": [
+      "frames/quarter-sit-up/frame_0_start.png",
+      "frames/quarter-sit-up/frame_1_early.png",
+      "frames/quarter-sit-up/frame_2_mid.png",
+      "frames/quarter-sit-up/frame_3_late.png",
+      "frames/quarter-sit-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/quarter-sit-up",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): pełne leżenie na plecach, nogi proste płasko na podłodze, głowa na macie — anatomia podświetla górną część mięśnia prostego brzucha. Klatka 2 (mid): głowa i górna część łopatek lekko uniesione kilka cm nad matę — minimalny ROM (~25% pełnego sit-upa), reszta pleców i nogi nieruchome. Klatka 4 (end): powrót do leżenia. Ruch potwierdzony: izolowane zgięcie górnego odcinka kręgosłupa, hip flexors praktycznie nieaktywne (nogi nie ruszają się), tylko upper rectus abdominis pracuje. Klasyfikacja: core_flexion, isolation (jeden staw — kręgosłup górny), bilateral, sagittal, bodyweight, beginner. Force=both (koncentryczny w górę + ekscentryczny w dół wymaga kontroli). Mięsień główny: rectus_abdominis P8 (górna część), obliques S4 (drobna stabilizacja). Nazwa PL: 'Ćwierć sit-up' to dosłowne tłumaczenie odzwierciedlające ROM, aliasy 'ćwierć brzuszek' i 'mini brzuszek' są naturalniejsze dla polskiego użytkownika. Trudność 2/10 — najłatwiejsza regresja brzuszków, idealna dla absolutnych początkujących. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "no_equipment", "home_workout", "beginner", "rehabilitation", "low_impact", "upper_abs"]
+}

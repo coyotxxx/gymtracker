@@ -1,0 +1,210 @@
+{
+  "id": "sledge-hammer",
+  "name": "Sledge Hammer Strikes",
+  "namePl": "Uderzenia młotem kowalskim",
+  "aliases": ["sledge hammer strikes", "sledgehammer swings", "tire smash", "sledgehammer tire strikes", "hammer chops"],
+  "aliasesPl": ["uderzenia młotem kowalskim", "młot kowalski w oponę", "sledgehammer", "tire smash", "uderzenia młotem w oponę"],
+
+  "description": "Strongman/conditioning movement. Standing in a staggered or athletic stance facing a large heavy tire on the ground, you grip a sledgehammer and swing it overhead in a powerful chopping arc, striking the tire surface with maximum force on each rep. The bottom hand slides along the shaft on the downswing to generate whip-like acceleration. Combines explosive rotational power, anti-rotation core work, grip endurance and cardiovascular conditioning. Trains the entire posterior chain dynamically with heavy emphasis on lats, obliques and forearms — one of the few movements where heavy grip work meets metabolic conditioning under load.",
+  "descriptionPl": "Ruch strongman i kondycyjny. Stojąc w pozycji nożycowej lub atletycznej przodem do dużej ciężkiej opony na ziemi, łapiesz młot kowalski i wymachujesz nim nad głową w mocnym ruchu rąbiącym, uderzając w powierzchnię opony z maksymalną siłą w każdym powtórzeniu. Dolna dłoń przesuwa się po trzonku w fazie opuszczania, by wygenerować przyspieszenie jak z bicza. Łączy eksplozywną moc rotacyjną, antyrotacyjną pracę core, wytrzymałość chwytu i kondycję krążeniowo-oddechową. Trenuje cały tylny łańcuch dynamicznie z mocnym akcentem na najszersze, skośne i przedramiona — jeden z niewielu ruchów, gdzie ciężka praca chwytu spotyka się z metabolicznym obciążeniem.",
+
+  "instructions": [
+    "Set up a large heavy tire flat on the ground. Stand facing it, feet roughly hip-to-shoulder width apart, can be staggered (one foot slightly back) or square stance.",
+    "Grip the sledgehammer with both hands: dominant hand near the head of the hammer, non-dominant hand at the base of the shaft. The hammer hangs in front of you.",
+    "Brace the core, lats engaged, knees soft. Slightly hinge at the hips to load the swing.",
+    "Initiate the swing by driving the hammer up and back over the shoulder of the dominant side. The hammer travels in a vertical or slightly diagonal arc above the head.",
+    "At the top of the swing, the dominant hand stays near the head while the non-dominant hand grips firmly at the base — the hammer is loaded high overhead.",
+    "Drive the hammer DOWN explosively. The bottom (non-dominant) hand stays fixed near the base; the top (dominant) hand SLIDES down the shaft toward the base hand as the hammer accelerates.",
+    "Both hands meet at the base just before impact — this 'whip' action generates the speed. Strike the tire surface squarely with maximum force.",
+    "Absorb the rebound with bent knees and soft core. Reset to the start position by sliding the dominant hand back up the shaft, ready for the next rep.",
+    "Alternate sides every set (or every rep, depending on style) to balance rotational stress on the spine. Breathe forcefully — exhale on every strike."
+  ],
+  "instructionsPl": [
+    "Połóż dużą ciężką oponę płasko na ziemi. Stań przodem do niej, stopy mniej więcej rozstaw biodra-barki, możesz w pozycji nożycowej (jedna stopa lekko w tyle) lub równolegle.",
+    "Chwyć młot kowalski obiema dłońmi: dominująca blisko głowicy młota, niedominująca u podstawy trzonka. Młot wisi z przodu ciała.",
+    "Spnij brzuch, najszersze napięte, kolana miękkie. Lekko schyl się w biodrze, by załadować zamach.",
+    "Rozpocznij zamach napierając młotem w górę i do tyłu nad bark strony dominującej. Młot porusza się w pionowym lub lekko ukośnym łuku nad głową.",
+    "Na szczycie zamachu dominująca dłoń zostaje przy głowicy, niedominująca trzyma mocno u podstawy — młot jest załadowany wysoko nad głową.",
+    "Napieraj młotem W DÓŁ eksplozywnie. Dolna (niedominująca) dłoń zostaje przy podstawie; górna (dominująca) ZSUWA się po trzonku w stronę dolnej w miarę jak młot przyspiesza.",
+    "Obie dłonie spotykają się u podstawy tuż przed uderzeniem — ten ruch 'bicza' generuje prędkość. Uderz w powierzchnię opony prostopadle z maksymalną siłą.",
+    "Wytłum odbicie zgiętymi kolanami i miękkim core. Wróć do pozycji startowej wsuwając dominującą dłoń z powrotem w górę po trzonku, gotowy do kolejnego powtórzenia.",
+    "Zmieniaj strony co serię (lub co powtórzenie, w zależności od stylu), by zbalansować obciążenie rotacyjne kręgosłupa. Oddychaj mocno — wydech przy każdym uderzeniu."
+  ],
+
+  "classification": {
+    "movement_pattern": "conditioning",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "obliques", "forearms", "core"],
+    "secondary": ["trapezius", "rhomboids", "anterior_deltoids", "posterior_deltoids", "triceps", "rectus_abdominis"],
+    "stabilizers": ["erector_spinae", "glutes", "quadriceps", "hamstrings", "calves"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "obliques": "P9",
+    "forearms": "P10",
+    "core": "P9",
+    "trapezius": "S8",
+    "rhomboids": "S7",
+    "anterior_deltoids": "S7",
+    "posterior_deltoids": "S7",
+    "triceps": "S7",
+    "rectus_abdominis": "S8",
+    "erector_spinae": "S8",
+    "glutes": "S6",
+    "quadriceps": "S6",
+    "hamstrings": "S5"
+  },
+
+  "equipment": {
+    "required": ["sledgehammer", "large_tire"],
+    "optional": ["gloves", "chalk"]
+  },
+
+  "category": "strongman",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["plank", "farmer-walk", "russian-twist", "wood-chop"],
+    "progression_to": ["heavier-sledgehammer-strikes", "sledgehammer-strikes-for-time", "alternating-sledgehammer-emom"],
+    "alternatives": ["wood-chop", "battle-rope-slam", "medicine-ball-slam", "kettlebell-swing", "tire-flip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Athletic stance — feet hip-to-shoulder width, knees soft, hips hinged slightly",
+      "Top hand near the hammer head, bottom hand at the base of the shaft",
+      "Tire roughly an arm-and-a-half away — hammer head reaches the center on impact",
+      "Brace core, lats tight, eyes on the strike point",
+      "Test the swing arc dry once — make sure the hammer clears your body safely"
+    ],
+    "setup_cues_pl": [
+      "Pozycja atletyczna — stopy szerokość biodra-barków, kolana miękkie, lekkie schylenie w biodrze",
+      "Górna dłoń blisko głowicy, dolna u podstawy trzonka",
+      "Opona oddalona o około 1.5 długości ramienia — głowica trafia w środek przy uderzeniu",
+      "Spnij brzuch, najszersze napięte, oczy na punkt uderzenia",
+      "Przetestuj zamach na sucho raz — upewnij się, że młot bezpiecznie omija ciało"
+    ],
+    "execution_cues": [
+      "Drive the hammer UP and BACK over the dominant shoulder — load it high",
+      "Top hand SLIDES down the shaft on the way down — bottom hand fixed",
+      "Whip the hammer DOWN — explode through the lats and obliques",
+      "Strike with the FACE of the hammer head, not the corner — flat, square contact",
+      "Absorb rebound with knees, then slide the hand back up for the next rep"
+    ],
+    "execution_cues_pl": [
+      "Napieraj młotem W GÓRĘ i DO TYŁU nad dominujący bark — załaduj go wysoko",
+      "Górna dłoń ZSUWA się po trzonku w fazie opuszczania — dolna jest stała",
+      "Trzaśnij młotem W DÓŁ — eksplozja z najszerszych i skośnych",
+      "Uderzaj POWIERZCHNIĄ głowicy, nie rogiem — płaski, prostopadły kontakt",
+      "Wytłum odbicie kolanami, potem wsuń dłoń z powrotem do góry na kolejne powtórzenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging with arms only — no lat/oblique drive",
+        "faultPl": "Zamach tylko ramionami — bez pracy najszerszych i skośnych",
+        "cause": "Treating the movement as a triceps/shoulder exercise instead of a full-body chop",
+        "causePl": "Traktowanie ruchu jako ćwiczenia trójgłowych/barków zamiast pełnociałowego rąbania",
+        "cue": "Power comes from the BACK and OBLIQUES, not the arms. Arms guide; torso drives. Feel the lats fire on the downswing.",
+        "cuePl": "Moc idzie z PLECÓW i SKOŚNYCH, nie z ramion. Ręce prowadzą; tułów napiera. Poczuj najszersze odpalające się przy opuszczaniu."
+      },
+      {
+        "fault": "Top hand grips the shaft tightly through the whole swing (no slide)",
+        "faultPl": "Górna dłoń trzyma trzonek mocno przez cały zamach (brak ślizgu)",
+        "cause": "Not understanding the whip mechanic — both hands at the base before impact",
+        "causePl": "Brak zrozumienia mechaniki bicza — obie dłonie u podstawy przed uderzeniem",
+        "cue": "Top hand RELAXES and SLIDES down on the descent. It's a lever shortening into a whip — that's where the speed comes from.",
+        "cuePl": "Górna dłoń ROZLUŹNIA się i ZJEŻDŻA w dół przy opuszczaniu. Dźwignia skraca się w bicz — stąd bierze się prędkość."
+      },
+      {
+        "fault": "Hyperextending the lower back at the top of the swing",
+        "faultPl": "Przeprost odcinka lędźwiowego na szczycie zamachu",
+        "cause": "Loose core, leaning back too far to load the hammer instead of using hip hinge",
+        "causePl": "Luźny brzuch, zbyt mocne odchylenie do tyłu by załadować młot zamiast użycia hingea",
+        "cue": "RIBS DOWN. Brace the abs as the hammer goes overhead — load comes from the lats and hip hinge, not lumbar extension.",
+        "cuePl": "ŻEBRA W DÓŁ. Spnij brzuch gdy młot idzie nad głowę — załadowanie idzie z najszerszych i hingea bioder, nie z przeprostu lędźwi."
+      },
+      {
+        "fault": "Striking with the corner of the hammer head (slipping/glancing blow)",
+        "faultPl": "Uderzanie rogiem głowicy (ślizg/uderzenie pod kątem)",
+        "cause": "Hands not aligned at impact, body twisted away from the tire, or distance wrong",
+        "causePl": "Dłonie nieustawione równo przy uderzeniu, ciało skręcone od opony, lub zła odległość",
+        "cue": "FACE of the hammer flush on the tire. Both hands meet at the base, body square, eyes locked on the strike point.",
+        "cuePl": "POWIERZCHNIA głowicy płasko na oponie. Obie dłonie u podstawy, ciało równo, oczy na punkcie uderzenia."
+      },
+      {
+        "fault": "Only working one side — never switching",
+        "faultPl": "Praca tylko jedną stroną — brak zmiany",
+        "cause": "Dominant-side bias or fatigue of non-dominant side",
+        "causePl": "Preferencja strony dominującej lub zmęczenie niedominującej",
+        "cue": "ALTERNATE every set minimum. Asymmetric rotational load week after week wrecks the spine. Even sets/even reps per side.",
+        "cuePl": "ZMIENIAJ stronę minimum co serię. Asymetryczne obciążenie rotacyjne tydzień po tygodniu rujnuje kręgosłup. Równa liczba serii i powtórzeń na stronę."
+      }
+    ],
+    "breathing": "Inhale and brace as you load the hammer overhead. Exhale forcefully and audibly on the strike — synchronize the exhale with the impact. Quick recovery breath as you reset between reps.",
+    "breathingPl": "Wdech i spięcie gdy ładujesz młot nad głowę. Mocny i słyszalny wydech przy uderzeniu — zsynchronizuj wydech z momentem impaktu. Szybki oddech regeneracyjny przy resetowaniu między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_injury",
+      "severity": "avoid",
+      "modification": "Repetitive overhead loading with rotational and asymmetric forces is high risk for the lumbar spine. Do not perform.",
+      "modificationPl": "Powtarzalne obciążenie nad głową z siłami rotacyjnymi i asymetrycznymi to wysokie ryzyko dla odcinka lędźwiowego. Nie wykonuj.",
+      "alternative": "farmer-walk"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "The overhead arc may aggravate impingement. Reduce the swing height (chop from shoulder height instead of overhead), use a lighter hammer, or substitute.",
+      "modificationPl": "Łuk nad głową może nasilić impingement. Zmniejsz wysokość zamachu (rąb z wysokości barku zamiast nad głową), użyj lżejszego młota, lub zastąp.",
+      "alternative": "battle-rope-slam"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "The impact shock and grip work load the elbow tendons heavily. Reduce hammer weight, lower reps, ensure full rest between sessions.",
+      "modificationPl": "Wstrząs uderzeniowy i praca chwytu mocno obciążają ścięgna łokcia. Zmniejsz wagę młota, mniej powtórzeń, pełna regeneracja między sesjami.",
+      "alternative": "medicine-ball-slam"
+    },
+    {
+      "condition": "pregnancy_late_term",
+      "severity": "avoid",
+      "modification": "Heavy rotational and explosive work with overhead load is not appropriate in the second/third trimester.",
+      "modificationPl": "Ciężka praca rotacyjna i eksplozywna z obciążeniem nad głową jest niewłaściwa w drugim/trzecim trymestrze.",
+      "alternative": "farmer-walk"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x10-20 strikes per side (conditioning) | 4-6 rounds of 30s on / 30s off (HIIT/finisher) | 5x5 heavy hammer per side (power)",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "sledge-hammer.gif",
+    "frames_extracted": [
+      "frames/sledge-hammer/frame_0_start.png",
+      "frames/sledge-hammer/frame_1_early.png",
+      "frames/sledge-hammer/frame_2_mid.png",
+      "frames/sledge-hammer/frame_3_late.png",
+      "frames/sledge-hammer/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/sledge-hammer"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0/4: pozycja startowa/końcowa — atletyczna postawa przodem do opony, młot przy lewym biodrze, podświetlone klatka piersiowa i brzuch (napięcie startowe). Frame 1: faza ładowania — młot uniesiony za prawym barkiem nad głowę, mocno podświetlone najszersze, biceps prawy, przedramiona — klasyczny moment 'load high'. Frame 2: szczyt zamachu — obie dłonie wysoko, młot pionowo nad głową, podświetlone obie strony tułowia (skośne, najszersze, przedramiona) — pełne napięcie antyrotacyjne. Frame 3: faza opuszczania/uderzenia — silna rotacja w bok, mocno podświetlone prawe skośne i lewy najszerszy + przedramiona + lewy quad stabilizujący — moment największej mocy. Klasyfikacja: movement_pattern 'conditioning' zgodnie ze spec (mimo że mechanicznie to chop/swing), bo zastosowanie metaboliczne/strongman. Force 'push' (młot popychany w dół). Plane 'frontal' (ruch w głównej mierze góra-dół z lekką rotacją). Laterality 'unilateral' bo każde powtórzenie dominuje jedna strona (przy zmianie strony co set/rep). Equipment: sledgehammer + large_tire. Difficulty 6/10 — wymaga koordynacji ślizgu dłoni i timingu, ale technicznie prostsze niż tire flip. Wszystkie pola PL napisane od zera, idiomatycznie. 5 common_faults pokrywa: brak pracy lat/obliques, brak ślizgu dłoni, hiperekstensja lędźwi, uderzenie rogiem, brak zmiany stron. 4 contraindications: lower back, shoulder impingement, elbow tendinopathy, ciąża późna. 5 setup + 5 execution cues PL/EN. muscle_intensity dokładnie odzwierciedla mapę z gifa: forearms P10 (grip + impact shock), lats/obliques/core P9.",
+
+  "tags": ["strongman", "conditioning", "compound", "explosive", "rotational", "full_body", "grip", "metabolic", "tire", "power_endurance"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "modified-push-up-to-lower-arms",
+  "name": "Modified Push-Up to Lower Arms",
+  "namePl": "Zmodyfikowana pompka z opuszczeniem na przedramiona",
+  "aliases": ["kneeling push-up to forearms", "modified push-up to forearm plank", "knee push-up to elbows", "kneeling plank up-down", "modified up-down plank"],
+  "aliasesPl": ["pompka damska z opuszczeniem na łokcie", "pompka na kolanach z przejściem na przedramiona", "pompka kolanowa z przejściem na łokcie", "pompka up-down na kolanach", "pompka z opuszczaniem na łokcie (na kolanach)"],
+
+  "description": "A regressed (kneeling) push-up variation where you start in a kneeling high-plank position on the hands and lower your entire torso all the way down onto your forearms, then press back up onto the hands. Combines a chest/triceps push-up with a transition into a forearm plank, training both pushing strength and shoulder-girdle/forearm stability. The 'modified' tag refers to the kneeling base, which reduces load on the upper body — a perfect bridge between standard kneeling push-ups and full plank up-downs (commando) for beginners and people working on wrist/elbow control.",
+  "descriptionPl": "Zregresowany (kolanowy) wariant pompki, w którym startujesz w pozycji wysokiej planki na dłoniach z kolanami na podłodze i opuszczasz cały tułów aż na przedramiona — następnie wypychasz się z powrotem na dłonie. Łączy klasyczną pompkę (klatka + tricepsy) z przejściem w plankę na przedramionach, ucząc zarówno siły wypychania, jak i stabilizacji obręczy barkowej i przedramion. Słowo 'zmodyfikowana' odnosi się do pozycji na kolanach, która zmniejsza obciążenie górnej części ciała — to idealny pomost między pompkami damskimi a pełnymi 'plank up-downami' (komandoskimi) dla początkujących i osób pracujących nad kontrolą nadgarstków/łokci.",
+
+  "instructions": [
+    "Kneel on a mat. Place hands directly under shoulders, knees under hips. Walk your hands forward into a high-plank-on-knees position: straight line from knees through hips to head.",
+    "Brace your core and squeeze glutes lightly — no sagging hips, no piked butt.",
+    "Inhale and lower yourself in a controlled manner. Bend the elbows back along the ribs (~45° from torso, not flared) and let your chest/torso descend toward the floor.",
+    "Continue lowering past the standard push-up bottom: place one forearm on the floor, then the other — until you are resting on both forearms (kneeling forearm plank).",
+    "Brief pause on the forearms — rigid line knees-hips-shoulders, shoulders directly over elbows, gaze just in front of the hands.",
+    "Exhale and press back up: place one hand on the floor and extend the elbow, then the other — returning to the starting high-plank-on-knees position.",
+    "On the next rep alternate which arm leads (down: right forearm first → up: right hand first; next rep mirror) so both shoulders work evenly.",
+    "Move slowly — quality over speed. 2 seconds down, brief hold, 2 seconds up."
+  ],
+  "instructionsPl": [
+    "Uklęknij na macie. Połóż dłonie bezpośrednio pod barkami, kolana pod biodrami. Przejdź rękami do przodu do pozycji wysokiej planki na kolanach: prosta linia od kolan przez biodra do głowy.",
+    "Napnij brzuch i lekko ściśnij pośladki — żadnego opadania bioder ani 'tyłka do góry'.",
+    "Wdech, opuszczaj się kontrolowanym ruchem. Zegnij łokcie wzdłuż żeber (~45° od tułowia, nie rozstawione na boki) i pozwól, by klatka/tułów schodziły w stronę podłogi.",
+    "Schodź dalej, niżej niż w standardowej pompce: połóż na podłodze najpierw jedno przedramię, potem drugie — aż oprzesz się na obu przedramionach (planka na łokciach na kolanach).",
+    "Krótka pauza na przedramionach — sztywna linia kolana-biodra-barki, barki dokładnie nad łokciami, wzrok lekko przed dłonie.",
+    "Wydech, wypchnij się z powrotem: postaw jedną dłoń na podłodze i wyprostuj łokieć, potem drugą — wracając do wyjściowej pozycji wysokiej planki na kolanach.",
+    "W kolejnym powtórzeniu zmień prowadzącą rękę (w dół: najpierw prawe przedramię → w górę: najpierw prawa dłoń; następne powtórzenie odwrotnie), żeby oba barki pracowały równo.",
+    "Ruszaj się wolno — jakość ważniejsza od tempa. 2 sekundy w dół, krótkie zatrzymanie, 2 sekundy w górę."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "core"],
+    "secondary": ["anterior_deltoids", "forearms"],
+    "stabilizers": ["serratus_anterior", "scapular_stabilizers", "rotator_cuff", "obliques", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P8",
+    "core": "P7",
+    "anterior_deltoids": "S6",
+    "forearms": "S6",
+    "serratus_anterior": "T5",
+    "scapular_stabilizers": "T5",
+    "obliques": "T5",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "mat"],
+    "optional": ["push_up_handles", "knee_pad"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["knee-push-up", "forearm-plank", "high-plank-knees"],
+    "progression_to": ["plank-up-down", "commando-push-up", "push-up", "push-up-to-forearm-plank"],
+    "alternatives": ["knee-push-up", "incline-push-up", "forearm-plank-shoulder-tap"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Mat under knees — protect kneecaps; bare feet or grippy soles",
+      "Hands directly under shoulders, fingers spread, knuckles pressed into the floor",
+      "Knees under hips at the start, then walk hands forward to high-plank-on-knees",
+      "Body in straight line from knees through hips to crown of head — no sagging, no piking",
+      "Pre-brace: belly in, ribs down, light glute squeeze before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Mata pod kolanami — chroń rzepki; bose stopy lub buty z przyczepnością",
+      "Dłonie bezpośrednio pod barkami, palce rozstawione, knykcie wbite w podłogę",
+      "Kolana pod biodrami na starcie, potem przejdź rękami do przodu do wysokiej planki na kolanach",
+      "Ciało w prostej linii od kolan przez biodra do czubka głowy — bez opadania, bez 'tyłka do góry'",
+      "Pre-bracing: brzuch wciągnięty, żebra w dół, lekkie ściśnięcie pośladków przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Elbows track backward along the ribs (~45°), not flared sideways",
+      "Place forearms down ONE AT A TIME — never collapse onto both at once",
+      "On the forearms: shoulders stacked DIRECTLY over elbows (not in front, not behind)",
+      "Pressing up: drive the floor away through the heel of the palm, lead arm fully extends before the second hand plants",
+      "Alternate the lead arm every rep — keeps both shoulders balanced"
+    ],
+    "execution_cues_pl": [
+      "Łokcie schodzą do tyłu wzdłuż żeber (~45°), nie rozstawione na boki",
+      "Stawiaj przedramiona na podłodze PO KOLEI — nigdy nie 'padaj' na oba naraz",
+      "Na przedramionach: barki DOKŁADNIE nad łokciami (nie przed, nie za)",
+      "Wypychanie: napieraj na podłogę nasadą dłoni, prowadząca ręka pełnie się prostuje zanim postawisz drugą",
+      "Zmieniaj prowadzącą rękę w każdym powtórzeniu — oba barki pracują równomiernie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Collapsing onto both forearms at once (free-fall)",
+        "faultPl": "'Padanie' na oba przedramiona naraz (free-fall)",
+        "cause": "Lack of eccentric strength, treating the movement as a 'drop' instead of a controlled lower",
+        "causePl": "Brak siły ekscentrycznej, traktowanie ruchu jako 'upadku' zamiast kontrolowanego opuszczenia",
+        "cue": "Place the forearms ONE at a time: right elbow down → left elbow down. If you can't control it, do fewer reps with full control rather than more reps of collapse.",
+        "cuePl": "Stawiaj przedramiona PO JEDNYM: prawy łokieć w dół → lewy łokieć w dół. Jeśli nie kontrolujesz, zrób mniej powtórzeń z pełną kontrolą zamiast więcej z 'padania'."
+      },
+      {
+        "fault": "Hips sagging or rotating side to side",
+        "faultPl": "Opadające biodra lub rotacja bioder na boki",
+        "cause": "Weak core/obliques, no anti-rotation control when one arm transitions",
+        "causePl": "Słaby brzuch/skośne, brak kontroli antyrotacyjnej gdy jedna ręka się przemieszcza",
+        "cue": "Squeeze glutes the whole set. Imagine a glass of water on your lower back — don't spill it as you switch arms.",
+        "cuePl": "Ściskaj pośladki przez całą serię. Wyobraź sobie szklankę wody na dolnym odcinku pleców — nie wylej jej zmieniając ręce."
+      },
+      {
+        "fault": "Hands creeping forward of shoulders on the forearm position",
+        "faultPl": "Dłonie/łokcie wysunięte do przodu, barki nie nad łokciami",
+        "cause": "Forgetting the elbow-under-shoulder rule when transitioning to forearms",
+        "causePl": "Zapominanie zasady 'łokieć pod barkiem' podczas przejścia na przedramiona",
+        "cue": "When forearms touch the floor, check: shoulder DIRECTLY over elbow. If your elbow is in front of your shoulder, walk knees back slightly before the next rep.",
+        "cuePl": "Gdy przedramiona dotkną podłogi, sprawdź: bark BEZPOŚREDNIO nad łokciem. Jeśli łokieć jest przed barkiem, przesuń kolana lekko do tyłu przed kolejnym powtórzeniem."
+      },
+      {
+        "fault": "Always leading with the same arm",
+        "faultPl": "Zawsze prowadzenie tą samą ręką",
+        "cause": "Habit / dominant side preference",
+        "causePl": "Przyzwyczajenie / preferencja silniejszej strony",
+        "cue": "Alternate: rep 1 down-right-first/up-right-first, rep 2 down-left-first/up-left-first. Count: 'right rep, left rep, right rep…' out loud if needed.",
+        "cuePl": "Naprzemiennie: powtórzenie 1 w dół-najpierw prawą/w górę-najpierw prawą, powtórzenie 2 w dół-najpierw lewą/w górę-najpierw lewą. Licz na głos: 'prawe, lewe, prawe…' jeśli pomaga."
+      },
+      {
+        "fault": "Head/neck craning down (chin to chest) or up (looking forward hard)",
+        "faultPl": "Opadająca głowa (broda do klatki) lub mocno zadarta (mocne patrzenie w przód)",
+        "cause": "Forgetting neutral cervical spine during the transition",
+        "causePl": "Zapominanie o neutralnej szyi podczas przejścia",
+        "cue": "Neutral neck: ears in line with shoulders, eyes look at a point ~20 cm in front of hands/elbows. Imagine carrying a tennis ball under your chin.",
+        "cuePl": "Neutralna szyja: uszy w linii z barkami, wzrok na punkt ~20 cm przed dłońmi/łokciami. Wyobraź sobie, że trzymasz piłkę tenisową pod brodą."
+      }
+    ],
+    "breathing": "Inhale as you lower onto the forearms (one arm at a time), brief pause and brace at the bottom, exhale as you press back up to the hands. If reps are slow you may add an extra breath at the top.",
+    "breathingPl": "Wdech podczas schodzenia na przedramiona (ręka po ręce), krótka pauza i napięcie na dole, wydech podczas wypychania z powrotem na dłonie. Przy wolnych powtórzeniach można dodać oddech na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles or perform on fists (knuckles down) — the bottom is on forearms, so wrist load is only on the high-plank phase. Push-up grips eliminate wrist extension.",
+      "modificationPl": "Użyj uchwytów do pompek lub wykonuj na pięściach (knykcie w dół) — dół powtórzenia jest na przedramionach, więc nadgarstki są obciążone tylko w fazie wysokiej planki. Uchwyty eliminują wyprost w nadgarstku.",
+      "alternative": "knee-push-up"
+    },
+    {
+      "condition": "elbow_pain_olecranon_bursitis",
+      "severity": "avoid",
+      "modification": "Placing bodyweight directly on the elbow points (olecranon) on a hard floor irritates bursitis. Skip this variation until pain resolves; use kneeling push-ups instead.",
+      "modificationPl": "Opieranie ciężaru ciała bezpośrednio na łokciach (wyrostek łokciowy) na twardej podłodze drażni kaletkę. Pomiń ten wariant do czasu ustąpienia bólu; rób zwykłe pompki na kolanach.",
+      "alternative": "knee-push-up"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Add a folded towel or knee pad under the kneecaps. If pain persists, regress to incline push-ups (hands elevated, feet on floor) — no knee contact required.",
+      "modificationPl": "Podłóż złożony ręcznik lub poduszkę pod rzepki. Jeśli ból nie ustępuje, przejdź na pompki na podwyższeniu (dłonie wyżej, stopy na podłodze) — brak kontaktu kolan z podłogą.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Keep elbows at ~30-45° from torso (not flared). Move slowly through the transition — fast/jerky arm switches stress the shoulder. If pain at any point, skip the lower-arms portion and do regular kneeling push-ups.",
+      "modificationPl": "Trzymaj łokcie pod kątem ~30-45° od tułowia (nie rozstawione). Przejście wykonuj wolno — szybkie/szarpane zmiany rąk obciążają bark. Jeśli boli w jakimś punkcie, pomiń część na przedramionach i zrób zwykłe pompki na kolanach.",
+      "alternative": "knee-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x6-12 (technique/endurance) | 3x8-15 alternating lead arm (conditioning) | 2-3x as many as form allows for beginners",
+  "calories_per_kg_per_hour": 4.2,
+
+  "media": {
+    "primary": "modified-push-up-to-lower-arms.gif",
+    "frames_extracted": [
+      "frames/modified-push-up-to-lower-arms/frame_0_start.png",
+      "frames/modified-push-up-to-lower-arms/frame_1_early.png",
+      "frames/modified-push-up-to-lower-arms/frame_2_mid.png",
+      "frames/modified-push-up-to-lower-arms/frame_3_late.png",
+      "frames/modified-push-up-to-lower-arms/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/modified-push-up-to-lower-arms"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/end position resting on forearms): postać klęczy (kolana na podłodze), tułów opuszczony na przedramiona, łokcie pod barkami, klatka tuż nad podłogą — pozycja planki na przedramionach na kolanach. Podświetlone: przedramiona (czerwone) + lekko klatka. Frames 1-3 (early/mid/late): faza przejścia — w klatce mocno podświetlony pectoralis major, tułów lekko uniesiony — to moment wypychania z forearm plank do high plank (lub odwrotnie). Frame 4: powrót do dołu na przedramiona, ponownie podświetlone przedramiona. To NIE jest klasyczna pompka decline/incline ani standardowy plank up-down z pełnej planki — to MODIFIED (kolanowa) wersja przejścia hand-plank ↔ forearm-plank. Knees stay on the floor through the entire rep (laterality bilateral z naprzemiennym prowadzeniem ramienia w transition). Pole `force` = 'both' bo część w dół (eccentric/lower) i w górę (concentric/press) są tak samo istotne — różni się to od czystej pompki gdzie 'push' dominuje. Klasyfikuję jako compound, sagittal, push_horizontal (bo główny ruch klatka/tricepsy w płaszczyźnie strzałkowej), closed kinetic chain (dłonie/przedramiona na podłodze). Primary muscles dostosowane do tego co widać na GIF: pectoralis (klatka — pompka), triceps (wyprost łokcia w fazie up), core (anti-rotation/anti-sag przez całe powtórzenie). Forearms jako secondary bo widoczne na anatomii i pracują izometrycznie podczas planka na łokciach. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Difficulty 4/10 — to wariant dla początkujących/średniozaawansowanych, łatwiejszy niż pełny commando push-up dzięki pozycji na kolanach.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "triceps", "forearms", "core_stability", "kneeling", "beginner_friendly", "home_workout", "no_equipment_friendly", "regression", "transition_movement"]
+}

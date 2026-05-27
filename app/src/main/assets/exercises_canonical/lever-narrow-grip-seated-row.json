@@ -1,0 +1,203 @@
+{
+  "id": "lever-narrow-grip-seated-row",
+  "name": "Lever Narrow Grip Seated Row",
+  "namePl": "Wiosło chwytem wąskim w maszynie",
+  "aliases": ["machine narrow grip row", "plate-loaded narrow grip seated row", "close grip machine row", "neutral grip machine row", "lever close grip row"],
+  "aliasesPl": ["wiosłowanie wąskim chwytem w maszynie", "wiosłowanie chwytem neutralnym w maszynie", "wiosło na maszynie wąsko", "close grip row na maszynie", "wiosłowanie siedząc w maszynie wąskim chwytem"],
+
+  "description": "Horizontal pulling exercise performed seated on a plate-loaded (lever) row machine using the narrow, neutral-grip handles (palms facing each other). The chest is supported against a pad (in chest-supported variants) or the torso stays upright against the seatback, removing lower-back fatigue and locking the torso angle. The narrow neutral grip puts the elbows close to the ribs throughout the entire pull, which strongly biases lat thickness (especially the lower lats) and the mid-back (rhomboids, mid-traps), with biceps and brachialis as significant secondary movers. Because the machine provides a fixed groove and the chest/torso is braced, it is one of the safest and most beginner-friendly rowing variants — you cannot 'cheat' with lower-back momentum the way you can with a barbell row, and load is easy to scale plate by plate.",
+  "descriptionPl": "Ćwiczenie ciągowe w płaszczyźnie poziomej wykonywane siedząc na maszynie typu lever (obciążanej talerzami) z wąskimi uchwytami o chwycie neutralnym (dłonie zwrócone do siebie). Klatka opiera się o oparcie (w wariantach chest-supported) lub tułów pozostaje pionowy przy oparciu siedziska, co eliminuje obciążenie odcinka lędźwiowego i blokuje kąt tułowia. Wąski chwyt neutralny sprawia, że łokcie poruszają się blisko żeber przez cały ciąg, co mocno akcentuje grubość najszerszych grzbietu (zwłaszcza dolnych partii) i środkowe plecy (równoległoboczne, środkowy czworoboczny), z bicepsami i ramienno-promieniowym jako istotnymi wspomagającymi. Ponieważ maszyna prowadzi ruch po stałym torze a tułów jest podparty, jest to jedna z najbezpieczniejszych i najprzyjaźniejszych dla początkujących odmian wiosłowania — nie można 'oszukiwać' pędem lędźwi jak przy wiosłowaniu sztangą, a obciążenie skaluje się płynnie talerz po talerzu.",
+
+  "instructions": [
+    "Adjust the seat height so the narrow handles align with your lower chest / upper abdomen when arms are extended. Set foot platform if available.",
+    "Sit down, brace feet on the floor or platform. If the machine has a chest pad, place the chest firmly against it. Otherwise keep torso upright against the seatback.",
+    "Grab the narrow neutral grip handles (palms facing each other). Arms fully extended forward, lats lengthened, shoulders not collapsing forward.",
+    "Brace the core. Initiate the pull by depressing and retracting the shoulder blades BEFORE the elbows bend (lats wake up first).",
+    "Pull the handles toward the lower ribs / upper abdomen. Elbows travel back close to the torso, NOT flaring out to the sides. Keep wrists neutral and aligned with forearms.",
+    "At the end position, elbows are behind the line of the torso, shoulder blades fully retracted and depressed, chest stays proud. Hold the squeeze for 1 second.",
+    "Reverse the motion in full control. Let the shoulder blades protract slightly at the end of the eccentric for full lat stretch — without losing torso position or shrugging the shoulders up.",
+    "Keep the torso angle stable throughout — the machine pad/seatback should bear the load, not your lower back. Repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Wyreguluj wysokość siedziska tak, by wąskie uchwyty były na wysokości dolnej części klatki / górnego brzucha gdy ramiona są wyprostowane. Ustaw platformę pod stopy jeśli jest.",
+    "Usiądź, oprzyj stopy o podłoże lub platformę. Jeśli maszyna ma oparcie pod klatkę, dociśnij do niego klatkę. W przeciwnym razie trzymaj tułów pionowo przy oparciu siedziska.",
+    "Złap wąskie uchwyty chwytem neutralnym (dłonie zwrócone do siebie). Ramiona w pełni wyprostowane do przodu, najszersze rozciągnięte, barki nie zapadają się w przód.",
+    "Napnij brzuch. Rozpocznij ciąg ŚCIĄGNIĘCIEM i obniżeniem łopatek ZANIM zaczniesz zginać łokcie (najszersze włączają się jako pierwsze).",
+    "Pociągnij uchwyty w stronę dolnych żeber / górnej części brzucha. Łokcie idą w tył blisko tułowia, NIE rozchylaj ich na boki. Nadgarstki neutralne i w jednej linii z przedramieniem.",
+    "W pozycji końcowej łokcie są za linią tułowia, łopatki maksymalnie ściągnięte i obniżone, klatka pozostaje wysunięta. Zatrzymaj napięcie na 1 sekundę.",
+    "Odwróć ruch w pełnej kontroli. Pozwól łopatkom lekko 'odpłynąć' w przód na końcu fazy ekscentrycznej dla pełnego rozciągnięcia najszerszych — bez tracenia pozycji tułowia i bez wzruszania barków do góry.",
+    "Trzymaj kąt tułowia stabilny przez cały czas — oparcie maszyny powinno nieść ciężar, nie twój odcinek lędźwiowy. Powtórz zaplanowaną liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "biceps_brachii": "P8",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoids": "S6",
+    "brachialis": "S7",
+    "forearms": "S7",
+    "erector_spinae": "S4",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["lever_machine", "narrow_neutral_grip_handles"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["seated-machine-row", "inverted-row"],
+    "progression_to": ["cable-low-seated-row", "single-arm-dumbbell-row", "t-bar-row", "barbell-bent-over-row", "pendlay-row"],
+    "alternatives": ["cable-low-seated-row", "chest-supported-row", "single-arm-dumbbell-row", "t-bar-row", "machine-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height set so handles align with lower chest / upper abdomen at full extension",
+      "Feet firmly braced on floor or platform",
+      "Chest against the pad (or torso upright against seatback) — locked position",
+      "Narrow neutral grip — palms facing each other, wrists neutral",
+      "Brace the core BEFORE the first rep, shoulders down and back"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska tak, by uchwyty były na wysokości dolnej klatki / górnego brzucha przy wyproście",
+      "Stopy mocno oparte o podłoże lub platformę",
+      "Klatka do oparcia (lub tułów pionowo przy oparciu) — pozycja zablokowana",
+      "Wąski chwyt neutralny — dłonie zwrócone do siebie, nadgarstki neutralne",
+      "Napnij brzuch PRZED pierwszym powtórzeniem, barki w dół i w tył"
+    ],
+    "execution_cues": [
+      "Start with the scapulae — retract before you bend the elbows",
+      "Pull with the elbows, hands are just hooks on the handles",
+      "Elbows travel BACK and CLOSE to the torso — never flared out",
+      "Handles to the lower ribs / upper belly — chest stays proud",
+      "Squeeze the shoulder blades together for 1 second at the end of every rep"
+    ],
+    "execution_cues_pl": [
+      "Zacznij od łopatek — ściągnij je zanim zaczniesz zginać łokcie",
+      "Ciągnij łokciami, dłonie to tylko haki na uchwytach",
+      "Łokcie idą w TYŁ i BLISKO tułowia — nigdy rozchylone na boki",
+      "Uchwyty do dolnych żeber / górnego brzucha — klatka pozostaje wysunięta",
+      "Ściśnij łopatki razem na 1 sekundę na końcu każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with arms only — no scapular retraction (biceps-dominant row)",
+        "faultPl": "Ciągnięcie samymi rękami — brak ściągnięcia łopatek (wiosło zdominowane przez bicepsy)",
+        "cause": "Narrow neutral grip strongly recruits biceps and brachialis — easy to default to arm pulling instead of back pulling",
+        "causePl": "Wąski chwyt neutralny mocno angażuje bicepsy i ramienno-promieniowy — łatwo zsunąć się w ciąganie rękami zamiast plecami",
+        "cue": "BEFORE the elbow bends, the shoulder blade retracts. Pause at the end with the squeeze. Think 'crack a walnut between the shoulder blades.' If the biceps burn before the back, the back isn't doing its job.",
+        "cuePl": "ZANIM zegnie się łokieć, łopatka się ściąga. Zatrzymaj się na końcu ze ściągniętymi łopatkami. Pomyśl 'zgnieć orzecha między łopatkami'. Jeśli bicepsy palą zanim plecy, plecy nie robią swojej roboty."
+      },
+      {
+        "fault": "Elbows flaring out to the sides",
+        "faultPl": "Łokcie rozchylane na boki",
+        "cause": "Habit from wide-grip rows or face pulls — wrong elbow path for a narrow neutral grip row",
+        "causePl": "Nawyk z wiosłowań szerokim chwytem lub face pull — niewłaściwa droga łokci dla wiosła wąskim chwytem neutralnym",
+        "cue": "With a narrow neutral grip, elbows tuck CLOSE to the torso and skim past the ribs. Imagine you have a tennis ball squeezed between your elbow and your side — keep it pinned. Handles go to the LOWER ribs, not the upper chest.",
+        "cuePl": "Z wąskim chwytem neutralnym łokcie idą BLISKO tułowia i muskają żebra. Wyobraź sobie piłkę tenisową ściśniętą między łokciem a bokiem — trzymaj ją tam. Uchwyty lądują na DOLNYCH żebrach, nie na górnej klatce."
+      },
+      {
+        "fault": "Shrugging the shoulders up at the end of the pull",
+        "faultPl": "Wzruszanie barków do góry na końcu ciągu",
+        "cause": "Upper traps taking over from mid-traps and rhomboids, often due to too heavy load or poor scapular control",
+        "causePl": "Górne czworoboczne przejmują pracę środkowych i równoległobocznych, najczęściej przez zbyt duży ciężar lub słabą kontrolę łopatek",
+        "cue": "Shoulder blades go DOWN and BACK — not UP. Think 'long neck, low shoulders.' If you see the traps bunching up to the ears, reduce weight and re-cue depression of the scapulae before retraction.",
+        "cuePl": "Łopatki idą W DÓŁ i W TYŁ — nie DO GÓRY. Pomyśl 'długa szyja, niskie barki'. Jeśli widzisz że kapturowe podchodzą do uszu, zmniejsz ciężar i przypomnij sobie najpierw obniżyć łopatki zanim je ściągniesz."
+      },
+      {
+        "fault": "Partial range — short pull / not letting the lats stretch on the eccentric",
+        "faultPl": "Niepełny zakres — krótki ciąg / brak rozciągnięcia najszerszych w fazie ekscentrycznej",
+        "cause": "Ego load — too heavy a weight to complete a full ROM, or rushed tempo",
+        "causePl": "Ego — zbyt duży ciężar by wykonać pełny zakres, lub zbyt szybkie tempo",
+        "cue": "Full extension at the bottom (arms straight, shoulder blades slightly protracted, lats stretched), full retraction at the top (elbows behind the torso, blades pinned together). If you can't hit both endpoints under control, the weight is too heavy.",
+        "cuePl": "Pełen wyprost na dole (ramiona proste, łopatki lekko w protrakcji, najszersze rozciągnięte), pełne ściągnięcie na górze (łokcie za linią tułowia, łopatki ściśnięte). Jeśli nie potrafisz kontrolować obu końców ruchu, ciężar jest za duży."
+      },
+      {
+        "fault": "Pushing with the legs / using torso extension to move the weight",
+        "faultPl": "Wypychanie nogami / używanie wyprostu tułowia by przesunąć ciężar",
+        "cause": "Whole-body cheating when the load exceeds what the back can pull",
+        "causePl": "Oszukiwanie całym ciałem gdy obciążenie przekracza możliwości pleców",
+        "cue": "Torso angle is fixed — only the shoulders and elbows move. The seat/pad does its job: locks the torso. If your hips or chest are lifting off the support, the weight is too heavy. Reduce load by 15-20%.",
+        "cuePl": "Kąt tułowia jest stały — poruszają się tylko barki i łokcie. Siedzisko/oparcie robi swoją robotę: blokują tułów. Jeśli biodra lub klatka odrywają się od oparcia, ciężar jest za duży. Zmniejsz obciążenie o 15-20%."
+      }
+    ],
+    "breathing": "Inhale at the start (arms extended). Exhale through the pull as the handles approach the torso. Inhale on the controlled return. For heavier sets, brace and hold breath through the concentric, exhale at the top of the squeeze.",
+    "breathingPl": "Wdech na starcie (ramiona wyprostowane). Wydech w trakcie ciągu gdy uchwyty zbliżają się do tułowia. Wdech podczas kontrolowanego powrotu. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech na szczycie ściągnięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "If the machine has a chest pad, use it — it removes lower back load entirely. Keep torso fully against the support. Reduce weight. Stop if pain persists.",
+      "modificationPl": "Jeśli maszyna ma oparcie pod klatkę, użyj go — całkowicie eliminuje obciążenie lędźwi. Trzymaj tułów dociśnięty do oparcia. Zmniejsz ciężar. Przerwij jeśli ból nie ustępuje.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Narrow neutral grip is shoulder-friendly by default. Ensure elbows stay close to the torso (no flaring). Reduce range if pain occurs at end of pull.",
+      "modificationPl": "Wąski chwyt neutralny jest domyślnie przyjazny dla barków. Upewnij się, że łokcie pozostają blisko tułowia (bez rozchylania). Zmniejsz zakres jeśli ból pojawia się na końcu ciągu.",
+      "alternative": "single-arm-dumbbell-row"
+    },
+    {
+      "condition": "medial_epicondylitis",
+      "severity": "caution",
+      "modification": "Neutral grip is gentler on the inner elbow than pronated grip, but heavy biceps/brachialis recruitment can still aggravate. Use lifting straps to reduce forearm gripping demand and lower the load.",
+      "modificationPl": "Chwyt neutralny jest łagodniejszy dla wewnętrznej strony łokcia niż chwyt pronowany, ale silna praca bicepsa/ramienno-promieniowego może i tak drażnić. Użyj pasków by zmniejszyć obciążenie przedramienia i obniż ciężar.",
+      "alternative": "machine-row"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Narrow neutral grip heavily recruits the biceps long head — can flare up tendinopathy. Switch to wider grip or chest-supported row with pronated grip to reduce biceps demand. Lower volume if pain.",
+      "modificationPl": "Wąski chwyt neutralny mocno angażuje długą głowę bicepsa — może rozdrażnić tendinopatię. Przejdź na szerszy chwyt lub wiosłowanie z podparciem klatki chwytem pronowanym by zmniejszyć obciążenie bicepsa. Zmniejsz objętość jeśli boli.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x10-15 (general) | 3x15-20 (endurance / pump work)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-narrow-grip-seated-row.gif",
+    "frames_extracted": [
+      "frames/lever-narrow-grip-seated-row/frame_0_start.png",
+      "frames/lever-narrow-grip-seated-row/frame_1_early.png",
+      "frames/lever-narrow-grip-seated-row/frame_2_mid.png",
+      "frames/lever-narrow-grip-seated-row/frame_3_late.png",
+      "frames/lever-narrow-grip-seated-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/lever-narrow-grip-seated-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa (start, mid, end). Frame 0 (start): osoba siedzi na maszynie typu lever (plate-loaded — widoczny talerz po lewej), stopy na podłożu, tułów pionowy, ramiona w pełni wyprostowane do przodu trzymając wąskie uchwyty z chwytem neutralnym (dłonie zwrócone do siebie). Podświetlone mocno: cały kompleks pleców (najszersze grzbietu — pełny zakres od dolnej części do górnej, równoległoboczne, środkowe/dolne czworoboczne), tylne aktony naramiennych obu stron, oraz bicepsy obu ramion. Frame 2 (mid): faza koncentryczna w toku — łokcie idą w tył blisko tułowia (BLISKO żeber, nie flared na boki — co potwierdza specyfikę 'narrow grip'), uchwyty mniej więcej w połowie drogi do tułowia, łopatki zaczynają się ściągać, podświetlenie tych samych grup widoczne nadal. Frame 4 (end): pełne ściągnięcie łopatek, uchwyty przy dolnych żebrach / górnym brzuchu, łokcie wyraźnie za linią tułowia, tułów pozostaje pionowy/stabilny (brak nadmiernego odchylenia w tył — maszyna i siedzenie blokują pozycję). Klasyfikacja 'pull_horizontal', mechanic compound, plane sagittal, force pull, bilateral — wszystko zgodnie ze specyfikacją zadania. Equipment: lever_machine (plate-loaded, widoczny talerz) + narrow_neutral_grip_handles. Difficulty 3 — to jeden z NAJŁATWIEJSZYCH wariantów wiosłowania dla początkujących: maszyna prowadzi ruch po stałym torze, tułów jest stabilny, brak ryzyka błędu technicznego z kręgosłupa, łatwa progresja talerzami. Primary muscles zgodnie ze specyfikacją zadania: latissimus_dorsi P10, rhomboids P9, biceps_brachii P8 — chwyt neutralny + wąski silnie angażuje bicepsy (mocniej niż w wariancie pronowanym lub szerokim, dlatego biceps trafia do primary a nie secondary; trapezius_middle_lower spada do secondary S8). Wszystkie pola PL napisane od zera w polskim standardzie fitness ('Wiosło chwytem wąskim w maszynie' — nazwa zgodna z dyrektywą Macieja).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "machine", "lever", "narrow_grip", "neutral_grip", "lat_developer", "mid_back", "beginner_friendly", "bilateral", "low_back_friendly"]
+}

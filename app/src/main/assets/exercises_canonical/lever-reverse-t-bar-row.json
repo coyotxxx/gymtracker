@@ -1,0 +1,205 @@
+{
+  "id": "lever-reverse-t-bar-row",
+  "name": "Reverse-Grip T-Bar Row (Machine)",
+  "namePl": "Wiosłowanie T-bar w maszynie chwytem podchwytem",
+  "aliases": ["lever reverse t-bar row", "underhand t-bar row machine", "supinated t-bar row", "reverse grip lever t-bar row", "chest-supported reverse grip t-bar row", "Yates-style t-bar row machine"],
+  "aliasesPl": ["T-bar row podchwytem na maszynie", "T-bar w maszynie chwytem dolnym", "supinowane T-bar row", "reverse grip T-bar maszyna", "wiosłowanie T-bar podchwytem z podparciem klatki", "T-bar row w stylu Yatesa na maszynie"],
+
+  "description": "Heavy horizontal pulling exercise performed on a leverage T-bar row machine with chest support, executed with a SUPINATED (palms-up / underhand) grip. The supinated grip externally rotates the shoulders, which naturally tucks the elbows close to the torso during the pull. This elbow path biases the bias of the row toward the LOWER lats, teres major and biceps brachii — compared to the neutral/overhand version which hits more mid-back. The chest pad eliminates lower-back stabilization demand and isolates the pulling chain. A classic mass-builder popularized by Dorian Yates and considered one of the most effective movements for thickness in the lower-lat region, while doubling as a heavy biceps stimulator due to the supinated, elbow-flexion-dominant pull.",
+  "descriptionPl": "Ciężkie ćwiczenie ciągu poziomego wykonywane na maszynie dźwigniowej T-bar z podparciem klatki, w chwycie SUPINOWANYM (dłonie do góry, podchwyt). Chwyt podchwytem rotuje barki na zewnątrz, co naturalnie przyciąga łokcie blisko tułowia podczas ciągu. Taka ścieżka łokci nakierowuje pracę na DOLNĄ część najszerszych grzbietu, mięsień obły większy i dwugłowy ramienia — w porównaniu do wersji neutralnej/nachwytem, która mocniej angażuje środkową część pleców. Poduszka klatki eliminuje konieczność stabilizacji odcinka lędźwiowego i izoluje łańcuch ciągu. Klasyczne ćwiczenie masowe spopularyzowane przez Doriana Yatesa, uznawane za jedno z najskuteczniejszych dla grubości w dolnej części najszerszych, a przy okazji potężny stymulator bicepsów dzięki supinowanemu, zdominowanemu zgięciem w łokciu ciągowi.",
+
+  "instructions": [
+    "Load the T-bar with plates. Adjust the chest pad height so that when you press your chest against it, the handle hangs naturally below your shoulders at arm's length.",
+    "Step onto the foot platform, feet hip- to shoulder-width apart. Place your chest firmly against the pad with the upper edge at sternum / upper-chest level.",
+    "Hinge forward at the hips, knees slightly bent. Reach down and grasp the handle with a SUPINATED (palms-up / underhand) grip, hands shoulder-width or slightly narrower.",
+    "Pull the slack out — set the lats, retract the shoulders slightly off the pad, brace the core, neutral neck, eyes down-forward.",
+    "Drive the elbows BACK and DOWN — keep them tight to your sides (the underhand grip helps this naturally). Pull the handle toward the lower abdomen / hip crease.",
+    "Squeeze the shoulder blades together and feel the LOWER lats contract hard at the top. Hold the contracted position for 1 second.",
+    "Lower the handle in full control until arms are completely extended and the lats are fully stretched at the bottom. Do not let the weight slam.",
+    "Keep the chest pressed to the pad through every single rep. The supinated grip should NOT change your back position — only the elbow path is different from the neutral grip version."
+  ],
+  "instructionsPl": [
+    "Załaduj uchwyt T-bar talerzami. Wyreguluj wysokość poduszki klatki tak, by gdy oprzesz o nią klatkę, uchwyt zwisał naturalnie pod barkami przy wyprostowanych ramionach.",
+    "Wejdź na platformę nożną, stopy na szerokość bioder lub barków. Oprzyj klatkę mocno o poduszkę — górna krawędź poduszki na wysokości mostka / górnej części klatki.",
+    "Zegnij się w biodrach, kolana lekko ugięte. Sięgnij w dół i chwyć uchwyt PODCHWYTEM (dłonie do góry, palce skierowane do przodu), ręce na szerokość barków lub nieco węziej.",
+    "Wybierz luz — aktywuj najszersze, lekko ściągnij łopatki od poduszki, napnij brzuch, neutralny kark, wzrok w dół-do przodu.",
+    "Wprowadź łokcie W TYŁ i W DÓŁ — trzymaj je blisko tułowia (chwyt podchwytem ułatwia to naturalnie). Ciągnij uchwyt w stronę dolnej części brzucha / linii bioder.",
+    "Ściśnij łopatki razem i poczuj mocny skurcz DOLNYCH najszerszych na szczycie. Przytrzymaj pozycję skurczu przez 1 sekundę.",
+    "Opuszczaj uchwyt w pełnej kontroli aż do całkowitego wyprostu ramion i pełnego rozciągnięcia najszerszych w dole. Nie pozwól ciężarowi spaść.",
+    "Trzymaj klatkę przyciśniętą do poduszki przez każde powtórzenie. Chwyt podchwytem NIE zmienia pozycji pleców — różnicą wobec chwytu neutralnego jest tylko ścieżka łokci."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii", "rhomboids"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoids", "brachialis", "teres_major"],
+    "stabilizers": ["core", "forearms", "glutes", "hamstrings"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P9",
+    "rhomboids": "P8",
+    "trapezius_middle_lower": "S7",
+    "posterior_deltoids": "S6",
+    "brachialis": "S7",
+    "teres_major": "S7",
+    "forearms": "S7",
+    "core": "S5",
+    "glutes": "S4",
+    "hamstrings": "S4"
+  },
+
+  "equipment": {
+    "required": ["lever_t_bar_row_machine", "weight_plates"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["seated-cable-row", "dumbbell-bent-over-row", "lever-t-bar-row"],
+    "progression_to": ["barbell-reverse-grip-bent-over-row", "yates-row", "barbell-bent-over-row"],
+    "alternatives": ["lever-t-bar-row", "barbell-reverse-grip-bent-over-row", "chest-supported-row", "seated-cable-row-underhand", "landmine-t-bar-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Adjust pad height so handle hangs naturally under shoulders with arms straight",
+      "Chest pressed firmly into the pad, sternum at top edge — and STAY there",
+      "Supinated grip — palms up, full grip, wrists neutral (not bent back)",
+      "Hands shoulder-width or slightly narrower — narrower than overhand T-bar",
+      "Brace core, lats engaged, neutral neck — eyes down-forward"
+    ],
+    "setup_cues_pl": [
+      "Ustaw wysokość poduszki tak, by uchwyt zwisał naturalnie pod barkami przy prostych ramionach",
+      "Klatka mocno wciśnięta w poduszkę, mostek na górnej krawędzi — i ZOSTAŃ tam",
+      "Chwyt podchwytem — dłonie do góry, pełny chwyt, nadgarstki neutralne (nie zgięte w tył)",
+      "Ręce na szerokość barków lub nieco węziej — węziej niż przy T-bar nachwytem",
+      "Napięty brzuch, najszersze aktywne, neutralny kark — wzrok w dół-do przodu"
+    ],
+    "execution_cues": [
+      "Drive the elbows BACK and DOWN — toward your hip pockets, not your ribs",
+      "Keep elbows TIGHT to your sides — that's the whole point of the underhand grip",
+      "Pull to the lower abdomen / hip crease — NOT to the chest like the overhand version",
+      "Squeeze the LOWER lats at the top — think 'biceps short-head + lower lat'",
+      "Full stretch at the bottom — arms straight, lats long, then drive again"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokcie W TYŁ i W DÓŁ — do tylnych kieszeni spodni, nie do żeber",
+      "Trzymaj łokcie BLISKO tułowia — to cały sens chwytu podchwytem",
+      "Ciągnij do dolnej części brzucha / linii bioder — NIE do klatki jak w wersji nachwytem",
+      "Ściśnij DOLNE najszersze na szczycie — pomyśl 'biceps krótka głowa + dolne lat'",
+      "Pełne rozciągnięcie w dole — ramiona proste, najszersze wydłużone, potem ciągnij ponownie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrists bending backward under heavy load",
+        "faultPl": "Nadgarstki zginają się w tył pod ciężkim obciążeniem",
+        "cause": "Weak grip relative to the load, or grip too loose on a supinated handle",
+        "causePl": "Słaby chwyt względem obciążenia lub luźny chwyt na uchwycie supinowanym",
+        "cue": "Grip the bar HARD with neutral wrists — straight line from forearm through hand. If wrists keep buckling, use lifting straps in a reverse-grip configuration. Supinated grip is biomechanically weaker — respect it with appropriate loads.",
+        "cuePl": "Trzymaj uchwyt MOCNO, nadgarstki neutralne — linia prosta od przedramienia przez dłoń. Jeśli nadgarstki nadal się łamią, użyj pasków naciągowych w konfiguracji podchwytem. Chwyt podchwytem jest biomechanicznie słabszy — uszanuj to dobierając ciężar."
+      },
+      {
+        "fault": "Lifting the chest off the pad to use body english",
+        "faultPl": "Odrywanie klatki od poduszki by używać pędu ciała",
+        "cause": "Load too heavy, ego lifting, or trying to row like a free-weight reverse-grip row",
+        "causePl": "Zbyt duży ciężar, ego lifting lub próba wiosłowania jak w wersji wolnoobciążeniowej podchwytem",
+        "cue": "Reduce weight by 20%. The chest pad IS the exercise — if you lift off, you lose the lat isolation and turn this into a sloppy biceps curl. Chest glued.",
+        "cuePl": "Zmniejsz ciężar o 20%. Poduszka klatki to ESENCJA tego ćwiczenia — jeśli ją odrywasz, tracisz izolację najszerszych i robisz niechlujne uginanie bicepsa. Klatka przyklejona."
+      },
+      {
+        "fault": "Elbows flaring out to the sides instead of staying tight",
+        "faultPl": "Łokcie rozjeżdżają się na boki zamiast trzymać się blisko tułowia",
+        "cause": "Forgetting the whole point of the underhand grip, or grip set too wide",
+        "causePl": "Zapomnienie o celu chwytu podchwytem lub zbyt szeroki chwyt",
+        "cue": "Elbows TIGHT — they should brush past your ribs. If they flare out, you are doing a wider rear-delt row, not a reverse-grip lat builder. Narrow your grip and squeeze your elbows in.",
+        "cuePl": "Łokcie BLISKO — powinny ocierać się o żebra. Jeśli się rozjeżdżają, robisz szersze wiosłowanie na tylne naramienne, nie reverse-grip na najszersze. Zwęź chwyt i ściśnij łokcie do tułowia."
+      },
+      {
+        "fault": "Biceps takes over — back stops working",
+        "faultPl": "Biceps przejmuje pracę — plecy przestają pracować",
+        "cause": "Pulling with the hands instead of the elbows, or load too heavy for lats so biceps compensates",
+        "causePl": "Ciąg dłońmi zamiast łokciami lub ciężar zbyt duży dla najszerszych, więc biceps kompensuje",
+        "cue": "Think 'elbows, not hands' — your hands are just hooks. Initiate every rep with the lats: feel them set, THEN drive the elbow. If you cannot feel the lats, lower the weight by 15-20%.",
+        "cuePl": "Myśl 'łokcie, nie dłonie' — dłonie są tylko hakami. Każde powtórzenie inicjuj najszerszymi: poczuj ich napięcie, DOPIERO POTEM prowadź łokieć. Jeśli nie czujesz najszerszych, zmniejsz ciężar o 15-20%."
+      },
+      {
+        "fault": "Partial range — not extending arms fully at the bottom",
+        "faultPl": "Niepełny zakres — brak pełnego wyprostu ramion w dole",
+        "cause": "Load too heavy, or worrying that arms straight = biceps tendon stress with underhand grip",
+        "causePl": "Zbyt duży ciężar lub obawa że proste ramiona = obciążenie ścięgna bicepsa przy podchwycie",
+        "cue": "Let the arms FULLY extend at the bottom — lats need the stretch for hypertrophy. With a supinated grip the biceps long-head IS loaded at full extension, but that is the point — it's a feature, not a bug. If pain occurs (not stretch), lower the weight.",
+        "cuePl": "Pozwól ramionom pełnie się wyprostować w dole — najszersze potrzebują rozciągnięcia dla hipertrofii. Przy podchwycie długa głowa bicepsa JEST obciążona w pełnym wyproście, ale o to chodzi — to cecha, nie błąd. Jeśli pojawia się ból (nie rozciągnięcie), zmniejsz ciężar."
+      }
+    ],
+    "breathing": "Inhale at the bottom of the movement (arms extended, lats stretched). Exhale through the pull as the handle drives toward the hip crease. Inhale on the controlled descent. For heavy sets, hold a Valsalva-style brace through 1-2 reps then re-breathe.",
+    "breathingPl": "Wdech na dole ruchu (ramiona wyprostowane, najszersze rozciągnięte). Wydech w trakcie ciągu gdy uchwyt zbliża się do linii bioder. Wdech na kontrolowanym opuszczaniu. Przy ciężkich seriach trzymaj napięcie typu Valsalva przez 1-2 powtórzenia, potem odetchnij."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy_or_distal_biceps_strain",
+      "severity": "avoid",
+      "modification": "Supinated grip + heavy load = maximum stress on distal biceps tendon. Switch to NEUTRAL or OVERHAND grip T-bar variant until fully healed. This is the #1 contraindication for reverse-grip rows.",
+      "modificationPl": "Chwyt podchwytem + ciężki ciężar = maksymalne obciążenie ścięgna dystalnego bicepsa. Zmień na NEUTRALNY lub NACHWYT do pełnego wyleczenia. To kontraindykacja numer 1 dla reverse-grip rows.",
+      "alternative": "lever-t-bar-row"
+    },
+    {
+      "condition": "acute_chest_or_rib_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely — the chest pad applies direct pressure on sternum/ribs which will aggravate injuries. Use seated cable row with underhand grip instead until healed.",
+      "modificationPl": "Unikaj całkowicie — poduszka uciska bezpośrednio mostek/żebra, co pogłębi kontuzję. Stosuj wiosłowanie siedząc z linki podchwytem do wyleczenia.",
+      "alternative": "seated-cable-row-underhand"
+    },
+    {
+      "condition": "wrist_pain_or_carpal_tunnel",
+      "severity": "modify",
+      "modification": "Supinated wrist position under heavy load can aggravate carpal tunnel and wrist extensor issues. Reduce load, use lifting straps to offload grip stress, or switch to neutral-grip T-bar variant.",
+      "modificationPl": "Pozycja supinowana nadgarstka pod ciężkim obciążeniem może zaostrzyć cieśń nadgarstka i problemy z prostownikami. Zmniejsz ciężar, użyj pasków by odciążyć chwyt lub zmień na T-bar w chwycie neutralnym.",
+      "alternative": "lever-t-bar-row"
+    },
+    {
+      "condition": "lumbar_disc_problems",
+      "severity": "modify",
+      "modification": "Chest support significantly reduces spinal load vs barbell row — usually well-tolerated. Keep chest firmly on pad, avoid any spinal rounding, moderate loads. Good alternative to free-weight reverse-grip rows for users with lower-back issues.",
+      "modificationPl": "Podparcie klatki znacząco zmniejsza obciążenie kręgosłupa vs wiosłowanie sztangą — zwykle dobrze tolerowane. Trzymaj klatkę mocno na poduszce, unikaj zaokrąglania kręgosłupa, umiarkowane obciążenia. Dobra alternatywa dla wolnoobciążeniowych reverse-grip rows przy problemach lędźwiowych.",
+      "alternative": "seated-cable-row-underhand"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — main use, lower lats + biceps) | 4x6-8 (strength / mass) | 3x10-15 (volume / pump) | 2-3x12-20 (metabolic finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-reverse-t-bar-row.gif",
+    "frames_extracted": [
+      "frames/lever-reverse-t-bar-row/frame_0_start.png",
+      "frames/lever-reverse-t-bar-row/frame_1_early.png",
+      "frames/lever-reverse-t-bar-row/frame_2_mid.png",
+      "frames/lever-reverse-t-bar-row/frame_3_late.png",
+      "frames/lever-reverse-t-bar-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/lever-reverse-t-bar-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Maszyna dźwigniowa T-bar z chest pad (pochyła poduszka) + platforma nożna — atleta klęczy/stoi w pochyleniu, tułów oparty o poduszkę. Frame 0 (start): tułów pochylony ~45 stopni, klatka na poduszce, kolana ugięte, ramiona wyprostowane w dół, uchwyt T-bar zwisa pod barkami — chwyt PODCHWYTEM (dłonie skierowane do tułowia w pozycji wyprostowanej = supinowane). Podświetlenie czerwone na całej szerokości najszerszych grzbietu + środkowy/dolny trapez + tylne naramienne + sygnalizowany biceps. Frame 1-2 (early/mid): łokcie idą w tył i w dół, BLISKO tułowia (kluczowy detal reverse-grip — łokcie nie rozjeżdżają się na boki tak jak przy nachwycie/neutral), uchwyt zbliża się ku dolnej części brzucha/biodrom. Frame 3-4 (late/end): pełne ściągnięcie, łokieć za linią tułowia, uchwyt blisko bioder, intensywne podświetlenie dolnej części najszerszych — typowy efekt reverse-grip biased toward lower lats. Klatka NADAL przyklejona do poduszki przez cały zakres (zero kippingu). Klasyfikacja 'pull_horizontal' potwierdzona. Equipment: dedykowana maszyna lever t-bar z chest pad + talerze. Difficulty 5 (identyczne jak wersja neutralna — poduszka eliminuje stabilizację tułowia). Primary muscles: latissimus_dorsi P10 (dolna część szczególnie aktywna dzięki torowi łokci), biceps_brachii P9 (znacznie wyższe niż w wersji neutralnej P7 — supinowany chwyt + zgięcie łokcia dominuje), rhomboids P8. Secondary: trapezius_middle_lower S7 (niżej niż w wersji neutralnej P9 bo elbow path nie aktywuje tak mocno scapular retraction), teres_major S7 (charakterystyczne dla reverse-grip), brachialis S7, posterior_deltoids S6. Różnice względem wersji neutralnej (lever-t-bar-row): biceps P10→P9 primary, trapezius_middle_lower z primary do secondary, dodany teres_major (klasyczny aktywator reverse-grip rows). Wszystkie pola PL napisane od zera, polski standard fitness ('T-bar row podchwytem' to powszechna nazwa w polskich siłowniach, 'reverse grip' / 'chwyt dolny' jako alias). Common faults specyficzne dla reverse-grip: nadgarstki zginają się w tył pod ciężkim obciążeniem, biceps przejmuje pracę pleców, elbows flaring (czego NIE powinno być w reverse-grip). Contraindications: biceps tendinopathy jako #1 (klasyczna kontuzja Yates-style rows), wrist pain (supinowana pozycja).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "machine", "chest_supported", "lower_lats", "lat_developer", "biceps_builder", "reverse_grip", "supinated_grip", "yates_style", "lower_back_friendly", "bodybuilding_classic", "lever_machine"]
+}

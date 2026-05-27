@@ -1,0 +1,203 @@
+{
+  "id": "band-reverse-fly",
+  "name": "Band Reverse Fly",
+  "namePl": "Odwrotne rozpiętki z gumą",
+  "aliases": ["band rear delt fly", "resistance band reverse fly", "band rear delt raise", "standing band reverse fly"],
+  "aliasesPl": ["rozpiętki tyłem z gumą", "wznosy tylnych aktonów z gumą", "reverse fly z gumą oporową", "rozpiętki odwrotne z taśmą"],
+
+  "description": "Standing isolation exercise for the posterior deltoids using a horizontally anchored resistance band. The lifter stands sideways or facing the anchor, holds the band with arms extended forward, and pulls the band outward in a wide arc to the sides — squeezing the rear delts and mid-back at the end position. The band provides ascending resistance: tension increases as the arms move further from the anchor, which mirrors the natural strength curve of the rear delt and reduces strain at the start. Excellent for home training, warm-ups, post-pressing accessory work, and rehab of posterior shoulder weakness.",
+  "descriptionPl": "Izolowane ćwiczenie w pozycji stojącej na tylne aktony barków z użyciem gumy oporowej zakotwiczonej poziomo. Ćwiczący stoi bokiem lub przodem do punktu zaczepienia, trzyma gumę z ramionami wyprostowanymi przed sobą i rozciąga ją na boki szerokim łukiem — spinając tylne aktony i mięśnie środka pleców w pozycji końcowej. Guma zapewnia wzrastający opór: napięcie rośnie wraz z oddalaniem rąk od kotwicy, co odzwierciedla naturalną krzywą siły tylnego aktonu i zmniejsza obciążenie na początku ruchu. Doskonałe do treningu w domu, rozgrzewki, pracy uzupełniającej po wyciskaniach oraz rehabilitacji słabości tylnej części barku.",
+
+  "instructions": [
+    "Anchor a resistance band at chest or shoulder height (door anchor, squat rack pin, sturdy pole). The band should run horizontally.",
+    "Stand facing the anchor (or use a single arm version with side stance). Grab the band with both hands using a neutral grip, palms facing each other.",
+    "Step back to create initial tension. Arms extended forward at shoulder height, slight bend in elbows (15-20 degrees) — locked for the whole set.",
+    "Set the shoulders: pull shoulder blades back and down, chest tall, core braced, knees soft. Feet shoulder-width apart.",
+    "Pull the band apart in a wide horizontal arc, leading with the elbows and the back of the hands. Move both arms simultaneously out to the sides.",
+    "Finish with arms in line with the torso (T-position) — hands roughly at shoulder height, knuckles pointing outward. Squeeze rear delts and mid-back.",
+    "Pause for 1 second at end range. Then return the arms forward to the starting position in 2-3 controlled seconds, resisting the band's recoil.",
+    "Avoid shrugging the shoulders, arching the lower back, or letting the band snap back without control."
+  ],
+  "instructionsPl": [
+    "Zaczep gumę oporową na wysokości klatki lub barków (kotwica drzwiowa, trzpień klatki, solidny słupek). Guma powinna biec poziomo.",
+    "Stań przodem do punktu zaczepienia (lub w wersji jednorącz — bokiem). Złap gumę obiema dłońmi chwytem neutralnym, dłonie zwrócone do siebie.",
+    "Cofnij się o krok, by uzyskać wstępne napięcie gumy. Ramiona wyciągnięte przed sobą na wysokości barków, lekkie ugięcie łokci (15-20 stopni) — niezmienne przez całą serię.",
+    "Ustaw barki: ściągnij łopatki w tył i w dół, klatka uniesiona, brzuch napięty, kolana lekko ugięte. Stopy na szerokość barków.",
+    "Rozciągaj gumę na boki szerokim, poziomym łukiem, prowadząc ruch łokciami i grzbietem dłoni. Oba ramiona ruszają jednocześnie na boki.",
+    "Zakończ z ramionami w linii z tułowiem (pozycja T) — dłonie mniej więcej na wysokości barków, knykcie skierowane na zewnątrz. Mocno spinaj tylne aktony i mięśnie środka pleców.",
+    "Zatrzymaj się na 1 sekundę w pozycji końcowej. Następnie wracaj ramiona do przodu w sposób kontrolowany przez 2-3 sekundy, stawiając opór sile gumy.",
+    "Unikaj wciągania barków w stronę uszu, wyginania dolnego odcinka pleców i pozwalania gumie na niekontrolowany powrót."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids"],
+    "secondary": ["rhomboids", "trapezius_middle", "infraspinatus", "teres_minor"],
+    "stabilizers": ["trapezius_lower", "core", "forearm_flexors", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P10",
+    "rhomboids": "S6",
+    "trapezius_middle": "S6",
+    "infraspinatus": "S5",
+    "teres_minor": "S4",
+    "trapezius_lower": "T3",
+    "core": "T2",
+    "forearm_flexors": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["door_anchor", "band_handles"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["band-pull-apart"],
+    "progression_to": ["cable-rear-delt-fly", "reverse-pec-deck", "dumbbell-lying-rear-lateral-raise"],
+    "alternatives": ["band-pull-apart", "face-pull", "cable-rear-delt-fly", "dumbbell-rear-lateral-raise", "reverse-pec-deck"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Band anchored horizontally at chest/shoulder height",
+      "Neutral grip, palms facing each other",
+      "Arms extended forward, slight bend in elbows (~15-20°)",
+      "Shoulder blades back and down, chest tall",
+      "Feet shoulder-width, knees soft, core braced"
+    ],
+    "setup_cues_pl": [
+      "Guma zaczepiona poziomo na wysokości klatki/barków",
+      "Chwyt neutralny, dłonie zwrócone do siebie",
+      "Ramiona wyciągnięte przed sobą, lekkie ugięcie łokci (~15-20°)",
+      "Łopatki ściągnięte w tył i w dół, klatka uniesiona",
+      "Stopy na szerokość barków, kolana lekko ugięte, brzuch napięty"
+    ],
+    "execution_cues": [
+      "Lead with the elbows and the back of the hands",
+      "Pull the band apart — 'spread your wings'",
+      "Keep arms at shoulder height — no rising or dropping",
+      "Squeeze rear delts and pinch shoulder blades at end range",
+      "Resist the band on the way back — no snapping"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami i grzbietem dłoni",
+      "Rozciągaj gumę na boki — 'rozłóż skrzydła'",
+      "Trzymaj ramiona na wysokości barków — nie unoś ani nie opuszczaj",
+      "Spinaj tylne aktony i ściągaj łopatki w pozycji końcowej",
+      "Stawiaj opór gumie podczas powrotu — bez gwałtownego puszczania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Shrugging — upper traps take over the movement",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują ruch",
+        "cause": "Band tension too high, weak rear delts, or losing scapular depression",
+        "causePl": "Zbyt mocna guma, słabe tylne aktony, lub utrata depresji łopatek",
+        "cue": "Use a lighter band. Press shoulders down and away from ears throughout the entire set.",
+        "cuePl": "Użyj słabszej gumy. Aktywnie spychaj barki w dół i od uszu przez całą serię."
+      },
+      {
+        "fault": "Elbows straightening (lever too long)",
+        "faultPl": "Łokcie prostujące się w trakcie ruchu (zbyt długa dźwignia)",
+        "cause": "Band tension increases at end range — lifter unconsciously locks out to help with triceps",
+        "causePl": "Napięcie gumy rośnie w pozycji końcowej — ćwiczący nieświadomie prostuje łokcie próbując pomagać tricepsem",
+        "cue": "Imagine a string between wrist and shoulder locking the elbow angle. Lock it for the whole set.",
+        "cuePl": "Wyobraź sobie sznurek między nadgarstkiem a barkiem blokujący kąt łokcia. Zablokuj go na całą serię."
+      },
+      {
+        "fault": "Letting the band snap back — no eccentric control",
+        "faultPl": "Pozwalanie gumie na niekontrolowany powrót — brak kontroli ekscentrycznej",
+        "cause": "Rushing reps, treating bands as 'just a warm-up', ego using too strong a band",
+        "causePl": "Pospieszne powtórzenia, traktowanie gumy jako 'tylko rozgrzewki', ego — zbyt mocna guma",
+        "cue": "Take 2-3 seconds on the return. The eccentric is where hypertrophy lives.",
+        "cuePl": "Wracaj ramiona w 2-3 sekundy. To w fazie ekscentrycznej buduje się masa mięśniowa."
+      },
+      {
+        "fault": "Arching the lower back to gain leverage",
+        "faultPl": "Wyginanie dolnego odcinka pleców dla lepszej dźwigni",
+        "cause": "Band too strong, weak core bracing, or trying to 'throw' the band open",
+        "causePl": "Zbyt mocna guma, słabe napięcie brzucha, lub próba 'wyrzucenia' gumy",
+        "cue": "Brace your core like before a punch. Ribs down, pelvis neutral. Reduce band tension if needed.",
+        "cuePl": "Napnij brzuch jak przed ciosem. Żebra w dół, miednica neutralnie. Zmniejsz napięcie gumy jeśli trzeba."
+      },
+      {
+        "fault": "Pulling the band too far back — past the body line",
+        "faultPl": "Pociąganie gumy zbyt daleko — poza linię tułowia",
+        "cause": "Trying to maximize 'squeeze' but actually overloading the rotator cuff and AC joint",
+        "causePl": "Próba maksymalnego 'spinu' mięśni, ale w rzeczywistości przeciążenie stożka rotatorów i stawu barkowo-obojczykowego",
+        "cue": "Stop when arms align with the torso — T-position. Beyond that the rear delt is no longer the prime mover.",
+        "cuePl": "Zatrzymaj gdy ramiona znajdą się w linii z tułowiem — pozycja T. Powyżej tylny akton przestaje być głównym wykonawcą ruchu."
+      }
+    ],
+    "breathing": "Exhale during the concentric (band pulled apart). Inhale during the eccentric (return to start). Maintain a light core brace throughout — don't hold breath.",
+    "breathingPl": "Wydech podczas fazy koncentrycznej (rozciąganie gumy). Wdech podczas fazy ekscentrycznej (powrót). Utrzymuj lekkie napięcie brzucha przez cały czas — nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop short of full T-position. Keep arms slightly in front of torso line. Use a lighter band (40-50% of normal tension).",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj się przed pełną pozycją T. Trzymaj ramiona lekko przed linią tułowia. Używaj słabszej gumy (40-50% normalnego napięcia).",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "caution",
+      "modification": "Band reverse fly is generally safer than free-weight rear raises (ascending resistance), but during acute phase reduce ROM and use very light band. Avoid end-range squeeze.",
+      "modificationPl": "Rozpiętki tyłem z gumą są zwykle bezpieczniejsze niż wznosy z wolnym ciężarem (wzrastający opór), ale w fazie ostrej zmniejsz zakres ruchu i użyj bardzo słabej gumy. Unikaj maksymalnego spinu w pozycji końcowej.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses at end range with arms fully horizontal. Reduce ROM, keep arms 10-15° in front of body line rather than purely lateral. Stop short of pain.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji w pozycji końcowej z ramionami w pełni poziomo. Zmniejsz zakres ruchu, trzymaj ramiona 10-15° przed linią tułowia zamiast czysto bokiem. Zatrzymuj zakres przed bólem.",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Wide arm abduction with band tension can compress neurovascular structures. Use lower anchor (waist height), reduce ROM, watch for tingling/numbness in arms.",
+      "modificationPl": "Szerokie odwodzenie ramion przy napięciu gumy może uciskać struktury nerwowo-naczyniowe. Użyj niższego punktu zaczepienia (na wysokości pasa), zmniejsz zakres ruchu, obserwuj mrowienie/drętwienie ramion.",
+      "alternative": "band-pull-apart"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy/standard) | 2-3x15-25 (warm-up/activation) | 3x20-30 (rear delt specialization with light band)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "band-reverse-fly.gif",
+    "frames_extracted": [
+      "frames/band-reverse-fly/frame_0_start.png",
+      "frames/band-reverse-fly/frame_1_early.png",
+      "frames/band-reverse-fly/frame_2_mid.png",
+      "frames/band-reverse-fly/frame_3_late.png",
+      "frames/band-reverse-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/band-reverse-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): ćwiczący stoi przodem do kotwicy, prawą ręką trzyma uchwyt gumy zakotwiczonej poziomo z prawej strony, lewa ręka w boku, ramię wyprostowane przed sobą — pozycja wyjściowa pojedynczego pociągnięcia (jednoręczna faza GIFa). Frame 2 (mid): obie ręce trzymają gumę i są rozłożone na boki w szerokim łuku, ramiona w linii z tułowiem (pozycja T), tylne aktony i mięśnie środka pleców mocno podświetlone na czerwono. Frame 4 (end): końcowa pozycja, ramiona szeroko na boki, 'ghost' pokazuje pełny zakres ruchu od przodu do boków. Ruch w płaszczyźnie poprzecznej (transverse) — horizontal abduction. Klasyczna izolacja tylnych aktonów typu reverse fly z gumą zamiast hantli. Animacja pokazuje że narzędzie pracy to guma oporowa zakotwiczona horyzontalnie. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "isolation", "resistance_band", "upper_body", "home_workout", "hypertrophy", "rehab_friendly", "warm_up", "rear_delt_specialization"]
+}

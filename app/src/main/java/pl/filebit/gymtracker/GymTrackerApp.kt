@@ -59,8 +59,8 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
     @Inject lateinit var workerRescheduler: pl.filebit.gymtracker.service.WorkerRescheduler
     // v1.20.3: naprawa wag po cumulative deload bug (np. 41.99 zamiast 42.5)
     @Inject lateinit var deloadService: pl.filebit.gymtracker.data.repository.DeloadService
-    // v1.25.0: ExerciseDB integration — 1500 ćwiczeń z GIFami, MIT licensed
-    @Inject lateinit var exerciseDbBootstrap: pl.filebit.gymtracker.data.repository.ExerciseDbBootstrap
+    // v2.0.0: canonical exercise-db — 1317 ćwiczeń własnych z GIFami z R2 CDN
+    @Inject lateinit var canonicalExerciseBootstrap: pl.filebit.gymtracker.data.repository.CanonicalExerciseBootstrap
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -96,9 +96,9 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
             // v1.20.3: napraw wagi planu po cumulative deload bug (np. 41.99 zamiast 42.5).
             // Idempotentny — działa tylko gdy aktywny deload + wykryje korupcję.
             runCatching { deloadService.repairWeightsIfCorrupted() }
-            // v1.25.1: fuzzy match istniejących + import wszystkich 1500 ćwiczeń.
-            // Idempotentny przez externalId — duplikatów nie tworzy.
-            runCatching { exerciseDbBootstrap.bootstrap() }
+            // v2.0.0: canonical exercise-db — import 1317 ćwiczeń + reimport historii.
+            // Idempotentny przez `slug` (UNIQUE). Nowe ćwiczenia dodaje automatycznie.
+            runCatching { canonicalExerciseBootstrap.bootstrap() }
         }
         observeActiveWorkoutForReminder()
     }

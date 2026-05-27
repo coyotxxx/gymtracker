@@ -1,0 +1,197 @@
+{
+  "id": "dumbbell-seated-shoulder-press",
+  "name": "Dumbbell Seated Shoulder Press",
+  "namePl": "OHP z hantlami w siadzie",
+  "aliases": ["seated dumbbell press", "seated DB shoulder press", "seated DB OHP", "dumbbell military press seated"],
+  "aliasesPl": ["wyciskanie hantli nad głowę w siadzie", "OHP hantle siedząc", "wyciskanie żołnierskie z hantlami w siadzie", "siedzący OHP z hantlami"],
+
+  "description": "Classic bilateral overhead press performed seated on an upright bench with dumbbells. The back support eliminates leg drive and lower-back loading, isolating the shoulders. Dumbbells allow each arm to track its own natural groove and demand more stabilization than a barbell. Primary mass builder for anterior and lateral deltoids; triceps assist.",
+  "descriptionPl": "Klasyczne dwustronne wyciskanie nad głowę wykonywane w siadzie na ławce z oparciem prostym, z hantlami. Oparcie eliminuje napęd z nóg i obciążenie lędźwi, izolując barki. Hantle pozwalają każdej ręce iść własnym naturalnym torem i wymagają większej stabilizacji niż sztanga. Podstawowy budulec masy przedniego i bocznego aktonu naramiennego; tricepsy wspomagają.",
+
+  "instructions": [
+    "Set an upright bench to 90° (fully vertical) — back fully supported. Sit down with hantle on each thigh.",
+    "Kick one dumbbell at a time onto your shoulders, finishing in the start position: dumbbells at shoulder level, palms facing forward (pronated), elbows under wrists, slightly outside shoulder line.",
+    "Plant feet flat on the floor, brace core, press low back into the bench.",
+    "Inhale, brace, and press both dumbbells straight up until arms are fully locked out overhead. Dumbbells can lightly touch at the top or finish hands shoulder-width apart — DO NOT clang them hard.",
+    "Pause briefly at the top with biceps near ears, wrists stacked over elbows.",
+    "Lower under control back to shoulder level (~2-3 seconds eccentric). Stop when elbows are roughly at shoulder height — don't drop the elbows below.",
+    "Exhale at the top of the press. Keep low back glued to the bench — no excessive arching."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę z oparciem na 90° (w pionie) — plecy w pełni oparte. Usiądź z hantlem na każdym udzie.",
+    "Wyrzuć kolanami po kolei każdy hantel na barki, do pozycji startowej: hantle na wysokości barków, dłonie skierowane do przodu (pronacja), łokcie pod nadgarstkami, lekko poza linią barków.",
+    "Stopy płasko na podłodze, napnij brzuch, wciśnij dolną część pleców w oparcie.",
+    "Wdech, napięcie, wyciśnij oba hantle prosto w górę aż do pełnego lock-out ramion nad głową. Hantle mogą się lekko zetknąć na górze lub zakończyć na szerokość barków — NIE uderzaj nimi mocno o siebie.",
+    "Krótka pauza na górze: bicepsy przy uszach, nadgarstki nad łokciami.",
+    "Opuszczaj kontrolowanym ruchem do wysokości barków (~2-3 sekundy faza ekscentryczna). Zatrzymaj się gdy łokcie są mniej więcej na wysokości barków — nie schodź łokciami niżej.",
+    "Wydech na szczycie wyciskania. Trzymaj dolną część pleców przyklejoną do oparcia — bez nadmiernego wyginania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps_brachii", "upper_trapezius"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "core", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P10",
+    "lateral_deltoid": "P8",
+    "triceps_brachii": "S7",
+    "upper_trapezius": "S5",
+    "serratus_anterior": "S4",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "upright_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-front-raise", "machine-shoulder-press"],
+    "progression_to": ["dumbbell-standing-overhead-press", "barbell-overhead-press", "arnold-press"],
+    "alternatives": ["machine-shoulder-press", "dumbbell-standing-overhead-press", "barbell-seated-overhead-press", "arnold-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench fully vertical — 90°, no recline",
+      "Low back pressed into the bench, ribs DOWN",
+      "Feet planted flat, drive heels into the floor",
+      "Dumbbells at shoulder level, palms forward",
+      "Elbows under wrists at start (not flared way back)"
+    ],
+    "setup_cues_pl": [
+      "Ławka w pełnym pionie — 90°, bez odchylenia",
+      "Dolne plecy wciśnięte w oparcie, żebra W DÓŁ",
+      "Stopy płasko, wciskaj pięty w podłogę",
+      "Hantle na wysokości barków, dłonie do przodu",
+      "Łokcie pod nadgarstkami na starcie (nie odchylone mocno do tyłu)"
+    ],
+    "execution_cues": [
+      "Press straight up — dumbbells travel slightly toward each other",
+      "Wrists stacked over elbows the whole way",
+      "Finish biceps by ears, full lockout",
+      "Lower under control — feel the delts stretch at shoulder height",
+      "Keep low back GLUED to the bench"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę — hantle delikatnie zbliżają się do siebie",
+      "Nadgarstki nad łokciami przez cały ruch",
+      "Zakończ bicepsami przy uszach, pełny lock-out",
+      "Opuszczaj kontrolowanym ruchem — czuj rozciąganie aktonu na wysokości barku",
+      "Trzymaj dolne plecy PRZYKLEJONE do oparcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Excessive lumbar arch (back coming off the bench)",
+        "faultPl": "Nadmierne wygięcie lędźwiowe (plecy odrywają się od oparcia)",
+        "cause": "Weight too heavy, weak core, or trying to push press style",
+        "causePl": "Za duży ciężar, słaby brzuch, lub próba wyciskania w stylu push press",
+        "cue": "Ribs DOWN. Glue the low back to the bench. Reduce weight if arch persists — that's an OHP signal you're maxed out.",
+        "cuePl": "Żebra W DÓŁ. Przyklej dolne plecy do oparcia. Zmniejsz ciężar jeśli wygięcie wraca — to sygnał że hantle są za ciężkie."
+      },
+      {
+        "fault": "Clanging dumbbells together at the top",
+        "faultPl": "Uderzanie hantli o siebie na szczycie",
+        "cause": "Bro-style ego lifting, sloppy lockout",
+        "causePl": "Chamskie wyciskanie z ego, niedbały lock-out",
+        "cue": "Stop the dumbbells 2-5 cm apart at the top. The clang costs you triceps tension and risks finger injury.",
+        "cuePl": "Zatrzymaj hantle 2-5 cm od siebie na górze. Uderzenie kradnie napięcie tricepsa i grozi przytrzaśnięciem palca."
+      },
+      {
+        "fault": "Elbows flaring way behind the body at the bottom",
+        "faultPl": "Łokcie mocno odchylane za linię ciała na dole",
+        "cause": "Trying to mimic barbell groove, poor shoulder mobility",
+        "causePl": "Próba kopiowania toru sztangi, słaba mobilność barku",
+        "cue": "Elbows roughly under the wrists — slight outward angle (~15°), not pulled all the way back. This protects the shoulder capsule.",
+        "cuePl": "Łokcie z grubsza pod nadgarstkami — lekko na zewnątrz (~15°), nie odchylone do tyłu na maksa. Chroni to torebkę stawu barkowego."
+      },
+      {
+        "fault": "Half reps — not locking out at the top",
+        "faultPl": "Połowiczne powtórzenia — brak lock-out na górze",
+        "cause": "Weight too heavy, ego, weak triceps",
+        "causePl": "Za duży ciężar, ego, słabe tricepsy",
+        "cue": "Full lockout every rep — biceps by ears. If you can't lock out, reduce the weight or switch to machine press to build the top range.",
+        "cuePl": "Pełen lock-out w każdym powtórzeniu — bicepsy przy uszach. Jeśli nie domykasz, zmniejsz ciężar lub przejdź na maszynę by zbudować górny zakres."
+      },
+      {
+        "fault": "Dropping elbows below shoulder height (excessive ROM)",
+        "faultPl": "Opuszczanie łokci poniżej linii barków (przesadne ROM)",
+        "cause": "Stretching for 'more range', poor cuff strength",
+        "causePl": "Próba dodania zakresu, słabe rotatory",
+        "cue": "Stop when elbows reach shoulder height. Going lower risks impingement and biceps tendon stress.",
+        "cuePl": "Zatrzymaj się gdy łokcie dochodzą do wysokości barków. Niżej grozi konflikt podbarkowy i przeciążenie ścięgna bicepsa."
+      }
+    ],
+    "breathing": "Inhale and brace at the bottom (shoulder level). Hold breath through the press. Exhale at lockout. For heavy sets keep the brace until you re-rack at the end.",
+    "breathingPl": "Wdech i napięcie na dole (na wysokości barków). Wstrzymaj oddech przez wyciskanie. Wydech w lock-out. Przy ciężkich seriach trzymaj napięcie aż do odłożenia hantli."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Switch to neutral-grip (palms facing each other) dumbbell press — more shoulder-friendly. Reduce ROM (stop at ear height).",
+      "modificationPl": "Przejdź na chwyt neutralny (dłonie zwrócone do siebie) — bardziej przyjazne dla barku. Zmniejsz ROM (zatrzymaj się na wysokości uszu).",
+      "alternative": "dumbbell-neutral-grip-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded overhead pressing until cleared by PT. Use machine shoulder press with fixed groove and light weight as a return-to-lift.",
+      "modificationPl": "Unikaj obciążonego wyciskania overhead do zgody fizjoterapeuty. Wróć do treningu przez maszynę z ustalonym torem i lekkim ciężarem.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work thoracic and shoulder mobility first. Use landmine press or machine press until you can lock out overhead with biceps by ears.",
+      "modificationPl": "Pracuj najpierw nad mobilnością piersiową i barku. Używaj landmine press lub maszyny do czasu pełnego lock-out z bicepsami przy uszach.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "caution",
+      "modification": "Use wrist wraps. Try neutral-grip dumbbell press (palms facing each other) — softer on the wrists than pronated grip.",
+      "modificationPl": "Użyj wraps na nadgarstki. Spróbuj chwytu neutralnego (dłonie do siebie) — łagodniejszy dla nadgarstków niż pronacja.",
+      "alternative": "dumbbell-neutral-grip-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x6-8 (strength-hypertrophy) | 3x12-15 (volume/pump)",
+
+  "media": {
+    "primary": "dumbbell-seated-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-shoulder-press/frame_0_start.png",
+      "frames/dumbbell-seated-shoulder-press/frame_1_early.png",
+      "frames/dumbbell-seated-shoulder-press/frame_2_mid.png",
+      "frames/dumbbell-seated-shoulder-press/frame_3_late.png",
+      "frames/dumbbell-seated-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-seated-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF potwierdza klasyczny bilateralny seated DB OHP na ławce z oparciem pionowym (90°). Frame 0: pozycja startowa — hantle na wysokości barków, dłonie skierowane do przodu (pronacja), łokcie lekko poza linią barków. Frame 2: pełny lock-out overhead, bicepsy przy uszach, hantle blisko siebie (nie stykające się). Frame 4: powrót do pozycji startowej. Plecy oparte o ławkę przez cały ruch — eliminacja napędu z nóg i obciążenia lędźwi (kluczowa różnica vs standing OHP). Podświetlone mięśnie na renderze: anterior delt (najmocniej), lateral delt, triceps, upper chest delikatnie. Mechanic=compound, plane=frontal (hantle idą lekko bocznie+w górę), force=push, laterality=bilateral, kinetic_chain=open. Difficulty 5 (beginner-friendly — oparcie eliminuje wymagania core/balance). Klasyk PPL/UL na delty.",
+
+  "tags": ["bodybuilding", "shoulders", "vertical_push", "compound", "dumbbell", "seated", "hypertrophy", "beginner_friendly", "back_supported"]
+}

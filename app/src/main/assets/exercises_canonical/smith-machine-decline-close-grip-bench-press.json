@@ -1,0 +1,200 @@
+{
+  "id": "smith-machine-decline-close-grip-bench-press",
+  "name": "Smith Machine Decline Close-Grip Bench Press",
+  "namePl": "Wyciskanie wąskim chwytem na Smith na ławce skośnej ujemnej",
+  "aliases": ["smith decline close grip", "decline close grip smith press", "smith CGBP decline"],
+  "aliasesPl": ["smith decline close grip", "wyciskanie wąskim chwytem skos ujemny smith", "wąski chwyt na maszynie smitha skos ujemny", "decline CGBP smith"],
+
+  "description": "Triceps-focused horizontal push performed on a Smith Machine on a decline bench. Combines three modifications of the classic bench press: decline angle (head below hips), narrow grip (hands ~shoulder-width or narrower), and the fixed bar path of the Smith Machine. Loads the long head of the triceps and the lower chest with high stability and no balance demand. Useful as a triceps mass builder and a safe option when training without a spotter.",
+  "descriptionPl": "Poziome pchnięcie z akcentem na tricepsy wykonywane na maszynie Smitha na ławce skośnej ujemnej. Łączy trzy modyfikacje klasycznego wyciskania: ujemny kąt (głowa poniżej bioder), wąski chwyt (dłonie ~na szerokość barków lub węziej) oraz ustaloną torowanie gryfu w prowadnicach Smitha. Mocno obciąża długą głowę tricepsa i dolną część klatki przy wysokiej stabilności i braku wymogu balansowania ciężarem. Dobre ćwiczenie na masę tricepsa i bezpieczna opcja gdy trenujesz bez asekuracji.",
+
+  "instructions": [
+    "Set the decline bench inside the Smith Machine so the bar will track over the lower chest / sternum area when the bench is positioned. Lock your feet into the foot pads at the bench's high end.",
+    "Lie back. Your head should be lower than your hips. Set the shoulder blades — retract and depress them ('pinch and tuck'). Slight natural arch in the lower back.",
+    "Reach up and grip the bar with hands about shoulder-width apart or slightly narrower (~biacromial width). Wrap thumbs around the bar (no suicide grip).",
+    "Unrack by extending the arms and rotating the bar hooks. The bar should sit directly over your lower chest line in the Smith track.",
+    "Take a deep breath, brace the core, tuck the elbows to roughly 30-45° from the torso (closer than a regular bench).",
+    "Lower the bar in a controlled tempo to your lower chest / sternum area. Touch lightly — do NOT bounce. The bar travels straight down because of the Smith guides.",
+    "Press the bar straight back up to lockout, focusing on driving with the triceps. Finish with elbows extended but not hyperextended.",
+    "Exhale at the top. Reset the breath and brace before the next rep. After your last rep, rotate the hooks to re-rack the bar."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną ujemną wewnątrz maszyny Smitha tak, by gryf przebiegał nad dolną klatką / mostkiem po położeniu. Zablokuj stopy w wałkach na wyższym końcu ławki.",
+    "Połóż się. Głowa powinna być niżej niż biodra. Ustaw łopatki — ściągnij je razem i w dół ('zegnij i schowaj'). Lekki naturalny łuk w dolnych plecach.",
+    "Sięgnij w górę i złap gryf na szerokość barków lub nieco węziej (~szerokość obojczykowa). Owinij kciuki wokół gryfu (NIE chwyt 'samobójczy').",
+    "Wypnij gryf prostując ramiona i obracając haki. Gryf powinien znaleźć się dokładnie nad linią dolnej klatki w torze Smitha.",
+    "Nabierz głęboki oddech, napnij brzuch, schowaj łokcie do ok. 30-45° od tułowia (bliżej niż w klasycznym bench).",
+    "Opuszczaj gryf kontrolowanym tempem do dolnej klatki / mostka. Dotknij lekko — NIE odbijaj. Gryf idzie prosto w dół dzięki prowadnicom Smitha.",
+    "Wyciśnij gryf prosto w górę do lock-out, prowadząc ruch tricepsami. Kończ z łokciami wyprostowanymi, ale bez przeprostu.",
+    "Wydech na górze. Zresetuj oddech i napięcie przed następnym powtórzeniem. Po ostatniej powtórce obróć haki, by odłożyć gryf."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "lower_pectoralis"],
+    "secondary": ["anterior_deltoids", "pectoralis_major"],
+    "stabilizers": ["serratus_anterior", "core", "rotator_cuff", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "lower_pectoralis": "P8",
+    "anterior_deltoids": "S6",
+    "pectoralis_major": "S5",
+    "serratus_anterior": "T3",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "decline_bench"],
+    "optional": ["wrist_wraps", "belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["close-grip-bench-press", "smith-machine-bench-press", "triceps-pushdown"],
+    "progression_to": ["barbell-decline-close-grip-bench-press", "weighted-dips", "close-grip-bench-press"],
+    "alternatives": ["barbell-decline-close-grip-bench-press", "close-grip-bench-press", "smith-machine-close-grip-bench-press", "weighted-dips", "dumbbell-decline-triceps-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar tracks over lower chest / sternum",
+      "Feet locked in pads, head below hips",
+      "Shoulder blades retracted and depressed",
+      "Grip ~shoulder-width, thumbs wrapped",
+      "Elbows tucked to ~30-45° from torso"
+    ],
+    "setup_cues_pl": [
+      "Gryf w torze nad dolną klatką / mostkiem",
+      "Stopy zablokowane w wałkach, głowa niżej niż biodra",
+      "Łopatki ściągnięte i opuszczone",
+      "Chwyt ~na szerokość barków, kciuki owinięte",
+      "Łokcie schowane do ~30-45° od tułowia"
+    ],
+    "execution_cues": [
+      "Drive with the triceps, not just chest",
+      "Touch lower chest lightly, no bounce",
+      "Bar path is straight up and down (Smith guides)",
+      "Lockout elbows without hyperextending",
+      "Keep shoulder blades pinned to bench throughout"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch tricepsami, nie samą klatką",
+      "Lekko dotknij dolnej klatki, bez odbijania",
+      "Ścieżka gryfu prosto w górę i w dół (prowadnice Smitha)",
+      "Lock-out łokci bez przeprostu",
+      "Łopatki przyciśnięte do ławki przez cały ruch"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip too narrow (hands touching or <biacromial width)",
+        "faultPl": "Chwyt za wąski (dłonie się stykają lub <szerokość obojczykowa)",
+        "cause": "Misconception that 'narrower = more triceps', causing wrist and elbow stress",
+        "causePl": "Mit że 'węziej = więcej tricepsa', co powoduje stres nadgarstków i łokci",
+        "cue": "Hands ~shoulder-width (biacromial). Index fingers on the knurling rings is a good reference.",
+        "cuePl": "Dłonie ~na szerokość barków (obojczykowa). Wskaziciele na pierścieniach gryfu to dobry punkt odniesienia."
+      },
+      {
+        "fault": "Elbows flared 70-90° from torso",
+        "faultPl": "Łokcie rozsunięte 70-90° od tułowia",
+        "cause": "Treating it like a regular bench press, not a close-grip variant",
+        "causePl": "Traktowanie jak klasyczne wyciskanie, nie wariant wąskochwytny",
+        "cue": "Tuck elbows close — ~30-45°. 'Brush them past the ribs on the way down'.",
+        "cuePl": "Schowaj łokcie blisko — ~30-45°. 'Niech otrą się o żebra po drodze w dół'."
+      },
+      {
+        "fault": "Bouncing the bar off the chest",
+        "faultPl": "Odbijanie gryfu od klatki",
+        "cause": "Decline angle + Smith stability tempts ego loading and momentum",
+        "causePl": "Kąt ujemny + stabilność Smitha kuszą do ego liftingu i pędu",
+        "cue": "Control the eccentric (2-3s down). Touch and pause briefly. Cut weight if you cannot.",
+        "cuePl": "Kontroluj fazę ekscentryczną (2-3s w dół). Dotknij i krótka pauza. Zmniejsz ciężar jeśli nie dajesz rady."
+      },
+      {
+        "fault": "Wrists bent back under load",
+        "faultPl": "Nadgarstki zagięte do tyłu pod obciążeniem",
+        "cause": "Bar resting on fingers instead of palm heel; narrow grip increases the leverage on wrist",
+        "causePl": "Gryf w palcach zamiast podstawy dłoni; wąski chwyt zwiększa dźwignię na nadgarstek",
+        "cue": "Bar in the palm heel, stack wrist over forearm. Use wrist wraps if needed.",
+        "cuePl": "Gryf w podstawie dłoni, nadgarstek nad przedramieniem. Użyj wraps jeśli trzeba."
+      },
+      {
+        "fault": "Losing tightness / shoulder blades flattening at lockout",
+        "faultPl": "Utrata napięcia / spłaszczanie łopatek w lock-out",
+        "cause": "Pushing the shoulders 'up off the bench' at top, especially under decline angle",
+        "causePl": "Wypychanie barków 'do góry' z ławki na szczycie, szczególnie pod kątem ujemnym",
+        "cue": "Keep shoulder blades retracted. Lock the elbows, don't 'reach' with the shoulders.",
+        "cuePl": "Trzymaj łopatki ściągnięte. Zablokuj łokcie, nie 'sięgaj' barkami."
+      }
+    ],
+    "breathing": "Inhale at top, brace, hold through the descent and press. Exhale at lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech w lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_pain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Close grip increases triceps tendon stress. Widen the grip to shoulder-width, reduce weight, or replace with cable triceps work.",
+      "modificationPl": "Wąski chwyt zwiększa stres ścięgna tricepsa. Poszerz chwyt do barków, zmniejsz ciężar, lub zamień na pracę na wyciągu.",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps and make sure the bar is in the palm heel, not the fingers. Drop grip slightly wider if pain persists.",
+      "modificationPl": "Użyj wraps i upewnij się że gryf jest w podstawie dłoni, nie w palcach. Poszerz chwyt jeśli ból dalej.",
+      "alternative": "close-grip-bench-press"
+    },
+    {
+      "condition": "high_blood_pressure_or_GERD",
+      "severity": "avoid",
+      "modification": "Head-below-hips position raises intracranial/blood pressure and may trigger reflux. Use flat or incline bench variant instead.",
+      "modificationPl": "Pozycja głowa-niżej-niż-biodra podnosi ciśnienie i może wywołać refluks. Użyj wariantu na poziomej lub skośnej dodatniej ławce.",
+      "alternative": "close-grip-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Tucked elbows actually help here vs. regular bench — but avoid heavy 1RM attempts. If irritated, switch to dips or cable triceps.",
+      "modificationPl": "Schowane łokcie raczej pomagają vs. klasyczny bench — ale unikaj ciężkich 1RM. Jeśli drażni, przejdź na dipy lub triceps na wyciągu.",
+      "alternative": "weighted-dips"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy / triceps focus) | 4-5x6-8 (strength accessory)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-machine-decline-close-grip-bench-press.gif",
+    "frames_extracted": [
+      "frames/smith-machine-decline-close-grip-bench-press/frame_0_start.png",
+      "frames/smith-machine-decline-close-grip-bench-press/frame_1_early.png",
+      "frames/smith-machine-decline-close-grip-bench-press/frame_2_mid.png",
+      "frames/smith-machine-decline-close-grip-bench-press/frame_3_late.png",
+      "frames/smith-machine-decline-close-grip-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/smith-machine-decline-close-grip-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:05:00Z",
+  "verification_notes": "Frame 0 (start): gryf nad dolną klatką, ławka skośna ujemna (głowa niżej niż biodra), stopy zablokowane w wałkach, łokcie schowane blisko tułowia — pełna pozycja dolna z dotykiem klatki. Frame 2 (mid): gryf wyciśnięty pionowo w górę po prowadnicy Smitha, ramiona prawie wyprostowane, tricepsy w pełnym skurczu. Frame 4 (end): powrót do pozycji dolnej. Tricepsy + dolna klatka podświetlone — zgodne z biomechaniką: close grip + decline angle akcentuje długą głowę tricepsa i dolny przyczep piersiowych. Smith zapewnia stałą ścieżkę pionową, eliminując potrzebę balansowania. Wszystkie pola PL od zera. Difficulty 6 (intermediate) — wymaga kontroli i znajomości close-grip mechaniki, ale Smith eliminuje balans.",
+
+  "tags": ["smith_machine", "triceps", "lower_chest", "close_grip", "decline", "horizontal_push", "compound", "machine_stability"]
+}

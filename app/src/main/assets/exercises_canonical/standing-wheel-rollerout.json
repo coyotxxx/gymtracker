@@ -1,0 +1,201 @@
+{
+  "id": "standing-wheel-rollerout",
+  "name": "Standing Wheel Rollout",
+  "namePl": "Wheel rollout w pozycji stojącej",
+  "aliases": ["standing ab wheel rollout", "standing ab roller", "standing wheel rollouts", "full standing rollout"],
+  "aliasesPl": ["wheel rollout stojąc", "ab roller stojąc", "standing rollout", "rolka brzuszna stojąca", "kółko brzuszne ze stania", "stojący rollout"],
+
+  "description": "The most advanced variation of the ab wheel rollout, performed from a standing position instead of kneeling. The lifter bends forward at the hips, places the wheel on the floor and rolls it out until the body reaches a fully horizontal plank-like position, then rolls back up to standing using only the core and lats. Eliminating the knee anchor multiplies the lever arm and creates extreme anti-extension demand on the abdominal wall — considered an elite-level core movement requiring years of progressive training. Primary stress falls on the rectus abdominis (resisting lumbar extension) and the latissimus dorsi (decelerating and pulling the wheel back).",
+  "descriptionPl": "Najbardziej zaawansowana odmiana wheel rolloutu, wykonywana z pozycji stojącej zamiast klęczącej. Ćwiczący pochyla się w biodrach, kładzie kółko na podłodze i rolką je do osiągnięcia pełnej pozycji deski poziomej, po czym wraca z powrotem do stania używając wyłącznie mięśni brzucha i grzbietu. Brak oparcia na kolanach drastycznie wydłuża ramię dźwigni i tworzy ekstremalne obciążenie anty-ekstensyjne na ścianie brzucha — uznawane za ruch elitarny wymagający lat progresywnego treningu. Główne obciążenie spada na mięsień prosty brzucha (opór przeciw ekstensji lędźwi) oraz mięśnie najszersze grzbietu (hamowanie i ściąganie kółka z powrotem).",
+
+  "instructions": [
+    "Stand with feet hip-width apart, holding an ab wheel with both hands in front of your hips. Bend forward at the hips and place the wheel on the floor in front of your feet — knees may bend slightly. This is the starting position.",
+    "Brace the core hard — set neutral spine, ribs tucked, glutes slightly engaged. Take a deep breath in.",
+    "Slowly roll the wheel forward in front of you, allowing the body to descend toward the floor in a controlled arc. Keep the arms extended and the spine rigid — do not let the lower back sag.",
+    "Continue rolling until the body reaches a fully horizontal position — torso parallel to the floor, arms extended overhead, feet still planted, body in one straight line.",
+    "Exhale and pull the wheel back toward your feet using the lats and abs simultaneously. The hips rise as you stand back up — do not push through the lower back.",
+    "Return to the starting bent-over standing position with the wheel near your feet. Pause briefly, reset bracing, then repeat."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku na szerokość bioder, trzymając ab wheel oburącz przed biodrami. Pochyl się w biodrach i postaw kółko na podłodze przed stopami — kolana mogą być lekko ugięte. To pozycja wyjściowa.",
+    "Mocno napnij brzuch — ustaw neutralny kręgosłup, schowane żebra, lekko spięte pośladki. Weź głęboki wdech.",
+    "Powoli rolką kółko do przodu, pozwalając ciału zejść w kontrolowanym łuku w kierunku podłogi. Trzymaj ramiona wyprostowane, a kręgosłup sztywny — nie pozwól by dolne plecy się wygięły.",
+    "Kontynuuj rolowanie aż ciało osiągnie w pełni poziomą pozycję — tułów równolegle do podłogi, ramiona wyciągnięte nad głową, stopy nadal w miejscu, ciało w jednej prostej linii.",
+    "Wydech i ściągnij kółko z powrotem w stronę stóp, używając jednocześnie mięśni najszerszych grzbietu i brzucha. Biodra unoszą się gdy wracasz do stania — nie pchaj dolnymi plecami.",
+    "Wróć do pozycji wyjściowej w pochyleniu, z kółkiem przy stopach. Krótka pauza, zresetuj napięcie i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_anti_extension",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "latissimus_dorsi"],
+    "secondary": ["obliques", "transverse_abdominis", "deltoids_anterior", "serratus_anterior"],
+    "stabilizers": ["triceps", "pectoralis_major", "erector_spinae", "glutes", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "latissimus_dorsi": "P8",
+    "obliques": "S7",
+    "transverse_abdominis": "S7",
+    "deltoids_anterior": "S6",
+    "serratus_anterior": "S6",
+    "triceps": "T4",
+    "pectoralis_major": "T3",
+    "erector_spinae": "T4",
+    "glutes": "T3",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["ab_wheel"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["plank", "kneeling-ab-wheel-rollout", "hardstyle-plank", "rkc-plank"],
+    "progression_to": [],
+    "alternatives": ["kneeling-ab-wheel-rollout", "barbell-rollout", "stability-ball-rollout", "ring-rollout"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width apart, wheel placed in front of toes",
+      "Hands centered on the wheel handles — neutral grip",
+      "Hinge at the hips — bend forward with rigid spine, slight knee bend allowed",
+      "Brace core 360 degrees — like preparing for a punch",
+      "Lats engaged — feel armpits 'squeeze' before initiating the roll"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kółko ustawione przed palcami stóp",
+      "Dłonie wycentrowane na uchwytach kółka — chwyt neutralny",
+      "Hinge w biodrach — pochyl się sztywnym kręgosłupem, lekkie ugięcie kolan dozwolone",
+      "Napnij brzuch z każdej strony 360 stopni — jak przed przyjęciem ciosu",
+      "Aktywuj najszersze grzbietu — poczuj jak pachy się 'ściskają' przed rozpoczęciem ruchu"
+    ],
+    "execution_cues": [
+      "Roll out SLOWLY — 4-6 seconds eccentric phase, never lose control",
+      "Keep ribs tucked toward hips — no rib flare, no lumbar arch",
+      "Body in one straight line at the bottom — head, shoulders, hips, knees, feet",
+      "Pull wheel back like you're trying to drag the floor toward you with the lats",
+      "Exhale forcefully on the way up — abs and lats work simultaneously to fold you back"
+    ],
+    "execution_cues_pl": [
+      "Roluj WOLNO — 4-6 sekund fazy ekscentrycznej, nigdy nie trać kontroli",
+      "Schowaj żebra w stronę bioder — bez rozwarcia żeber, bez łuku lędźwiowego",
+      "Ciało w jednej prostej linii w dolnej pozycji — głowa, barki, biodra, kolana, stopy",
+      "Ściągaj kółko jakbyś próbował przyciągnąć podłogę do siebie mięśniami najszerszymi",
+      "Mocny wydech podczas powrotu — brzuch i grzbiet pracują jednocześnie, by cię złożyć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back arching / lumbar hyperextension during the rollout",
+        "faultPl": "Wyginanie dolnych pleców w łuk / hiperekstensja lędźwi podczas rolowania",
+        "cause": "Weak rectus abdominis cannot resist the extension torque — the spine collapses instead of staying neutral",
+        "causePl": "Słaby mięsień prosty brzucha nie wytrzymuje momentu ekstensji — kręgosłup zapada się zamiast pozostać w neutralnej pozycji",
+        "cue": "Tuck the pelvis under (posterior tilt), squeeze glutes, and stop the rollout at the depth where you can still hold neutral spine — even if that's only 30%",
+        "cuePl": "Podwiń miednicę pod siebie (tylne przechylenie), spnij pośladki i zatrzymaj rolowanie na głębokości, gdzie nadal utrzymasz neutralny kręgosłup — choćby było to tylko 30% zakresu"
+      },
+      {
+        "fault": "Going too deep / collapsing onto the floor",
+        "faultPl": "Zbyt głębokie rolowanie / opadanie na podłogę",
+        "cause": "Ego training — attempting full ROM without the necessary core strength to return",
+        "causePl": "Ego trening — próba pełnego zakresu ruchu bez wystarczającej siły core do powrotu",
+        "cue": "Use a wall as a stopper at first — the wheel hits the wall before you go past your control zone. Add 5cm to your max safe depth per month.",
+        "cuePl": "Na początku używaj ściany jako stopera — kółko uderza w ścianę zanim przekroczysz strefę kontroli. Dodawaj 5 cm do bezpiecznego zakresu co miesiąc."
+      },
+      {
+        "fault": "Pushing through the lower back to stand up (no lat engagement)",
+        "faultPl": "Pchanie dolnymi plecami przy powrocie do stania (brak aktywacji grzbietu)",
+        "cause": "Lats are passive — the lifter tries to muscle the wheel back with the spine instead of the back muscles",
+        "causePl": "Mięśnie najszersze grzbietu są pasywne — ćwiczący próbuje siłą kręgosłupa ściągnąć kółko zamiast pracy mięśniami grzbietu",
+        "cue": "Think 'pull the wheel toward the toes' with the lats — like a straight-arm pulldown. Hips follow the lats, not the other way around.",
+        "cuePl": "Myśl 'ściągnij kółko w stronę palców stóp' mięśniami najszerszymi grzbietu — jak straight-arm pulldown. Biodra podążają za grzbietem, nie odwrotnie."
+      },
+      {
+        "fault": "Rolling too fast / using momentum",
+        "faultPl": "Zbyt szybkie rolowanie / wykorzystywanie rozpędu",
+        "cause": "Lack of eccentric control or fear of falling — the lifter dives instead of descending",
+        "causePl": "Brak kontroli ekscentrycznej lub strach przed upadkiem — ćwiczący nurkuje zamiast schodzić",
+        "cue": "Count out loud: '1...2...3...4' on the way down. If you can't, you're not ready for this version — regress to kneeling rollout.",
+        "cuePl": "Licz głośno: '1...2...3...4' w fazie schodzenia. Jeśli nie dasz rady — nie jesteś gotowy na tę wersję, wróć do wariantu klęczącego."
+      },
+      {
+        "fault": "Shrugging shoulders / losing scapular control",
+        "faultPl": "Wzruszanie ramion / utrata kontroli łopatek",
+        "cause": "Anterior deltoids and traps take over when the lats disengage at full extension",
+        "causePl": "Mięsień naramienny przedni i czworoboczny przejmują pracę, gdy mięśnie najszersze grzbietu się rozluźniają w pełnym wyciągnięciu",
+        "cue": "Keep shoulders 'packed' — actively pull shoulder blades down and away from ears throughout the entire range",
+        "cuePl": "Trzymaj barki 'zapakowane' — aktywnie ściągaj łopatki w dół i z dala od uszu przez cały zakres ruchu"
+      }
+    ],
+    "breathing": "Inhale deeply at the top while standing, brace before initiating the rollout. Hold breath against the brace during the descent (modified Valsalva). Forceful exhale during the return to standing as the abs and lats contract maximally.",
+    "breathingPl": "Głęboki wdech na górze w pozycji stojącej, napnij brzuch przed rozpoczęciem rolowania. Wstrzymaj oddech utrzymując napięcie podczas schodzenia (zmodyfikowany manewr Valsalvy). Mocny wydech podczas powrotu do stania, gdy mięśnie brzucha i grzbietu maksymalnie się kurczą."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_any",
+      "severity": "avoid",
+      "modification": "The extreme anti-extension load on the lumbar spine makes this the highest-risk core exercise for any lifter with current or recurrent low back pain. Do not attempt — regress to plank or kneeling rollout only after pain-free for 3+ months.",
+      "modificationPl": "Ekstremalne obciążenie anty-ekstensyjne kręgosłupa lędźwiowego czyni to ćwiczenie najbardziej ryzykownym ze wszystkich ćwiczeń core dla osób z aktualnym lub nawracającym bólem dolnych pleców. Nie próbuj — wracaj do deski lub klęczącego rolloutu dopiero po 3+ miesiącach bez bólu.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Full overhead arm extension under load aggravates impingement. Wait until pain-free overhead pressing is restored before attempting standing rollouts.",
+      "modificationPl": "Pełne wyciągnięcie ramion nad głowę pod obciążeniem nasila zespół ciasnoty podbarkowej. Poczekaj aż wrócisz do bezbolesnego wyciskania nad głowę przed próbą standing rollouts.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Absolute contraindication — the lever arm in the bottom position creates shear and compression forces that risk severe re-injury. Switch to anti-flexion/anti-rotation work in neutral spine only.",
+      "modificationPl": "Bezwzględne przeciwwskazanie — ramię dźwigni w dolnej pozycji tworzy siły ścinające i kompresyjne, które grożą poważną retraumatyzacją. Przejdź na ćwiczenia anty-zgięciowe/anty-rotacyjne wyłącznie w neutralnym kręgosłupie.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Maximal intra-abdominal pressure during the rollout will worsen midline separation. Restore transverse abdominis function and close the gap before considering any rollout variations.",
+      "modificationPl": "Maksymalne ciśnienie wewnątrzbrzuszne podczas rolloutu pogłębi rozejście kresy białej. Przywróć funkcję mięśnia poprzecznego brzucha i zamknij rozejście przed rozważeniem jakiejkolwiek odmiany rolloutu.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-6 (strength) | 3x6-8 (hypertrophy) | 3xAMRAP with strict form (rare — most lifters max 5-8 reps)",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "standing-wheel-rollerout.gif",
+    "frames_extracted": [
+      "frames/standing-wheel-rollerout/frame_0_start.png",
+      "frames/standing-wheel-rollerout/frame_1_early.png",
+      "frames/standing-wheel-rollerout/frame_2_mid.png",
+      "frames/standing-wheel-rollerout/frame_3_late.png",
+      "frames/standing-wheel-rollerout/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/standing-wheel-rollerout"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): atleta stoi pochylony w biodrach (hinge), kółko na podłodze przed stopami, mocno podświetlone mięśnie najszersze grzbietu (latissimus_dorsi) i mięśnie pleców — wskazują że to pozycja wyjściowa standing rollout. Klatka 2 (mid): pełne wyciągnięcie poziome — ciało równolegle do podłogi, ramiona wyciągnięte nad głowę z kółkiem, stopy nadal w miejscu, anatomicznie podświetlony mięsień prosty brzucha (maksymalna anti-extension). Klatka 4 (end): powrót do pozycji stojącej z 'ghost' w tle pokazującym fazę powrotu — pełna ścieżka ruchu widoczna. Ruch potwierdzony: STANDING ab wheel rollout — bez wsparcia na kolanach, maksymalne ramię dźwigni. Klasyfikacja: core_anti_extension (rdzeń ruchu = opór przeciw ekstensji lędźwi, nie zgięcie kręgosłupa), compound (kręgosłup + biodra + barki), force=both (ekscentryczne wyciąganie + koncentryczne ściąganie = obie fazy istotne). Primary: rectus_abdominis (P10 — najwyższy poziom w bazie, anti-extension) + latissimus_dorsi (P8 — ściąganie ramion przyciąga kółko). Secondary: obliques, transverse_abdominis, deltoids_anterior (overhead position), serratus_anterior (scapular stability). Equipment: ab_wheel REQUIRED. Level: ELITE (difficulty_1_10=10) — to NAJTRUDNIEJSZA forma rolloutu, większość trenujących nigdy do niej nie dojdzie. Prerequisites: plank, kneeling-ab-wheel-rollout, hardstyle-plank, rkc-plank. Brak progression_to — to szczyt drabiny rolloutów. Nazwa PL: 'Wheel rollout w pozycji stojącej' (najbardziej opisowa, odróżnia od kneeling); aliasy: 'ab roller stojąc', 'rolka brzuszna stojąca'. 5 faults pokrywa krytyczne błędy bezpieczeństwa (lumbar arch = ryzyko kontuzji #1, ego depth, brak lat, momentum, shoulder shrug). 4 contraindications wszystkie 'avoid' (poza 1 'avoid' jak inne) — to ćwiczenie ma ekstremalny próg ryzyka. Wszystkie pola PL pisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["ab_wheel", "core", "abs", "anti_extension", "elite", "advanced", "compound", "lats", "full_body", "max_difficulty"]
+}

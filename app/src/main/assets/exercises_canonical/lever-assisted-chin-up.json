@@ -1,0 +1,204 @@
+{
+  "id": "lever-assisted-chin-up",
+  "name": "Lever Assisted Chin-Up",
+  "namePl": "Podciąganie z asystą na maszynie (podchwyt)",
+  "aliases": ["assisted chin-up machine", "machine assisted chin-up", "lever assisted pull-up (supinated)", "gravitron chin-up", "assisted underhand pull-up"],
+  "aliasesPl": ["podciąganie z asystą podchwyt", "podciąganie z asekuracją na maszynie podchwytem", "asystowane podciąganie podchwytem", "podciąganie na maszynie wspomagającej (podchwyt)", "gravitron chin-up"],
+
+  "description": "Assisted vertical pulling exercise on a lever-based pull-up machine. You kneel on a padded counterweight platform that pushes you upward, reducing your effective bodyweight by a selected load. Performed with supinated (underhand) grip — palms facing you. This setup makes the chin-up accessible for beginners who cannot yet pull their full bodyweight, while preserving the same movement pattern, scapular mechanics and elbow drive as the unassisted version. The machine assists ONLY in the concentric (pulling) phase via the counterbalance pad — eccentric remains partially loaded if you lift knees off pad. Primary stepping stone toward strict bodyweight chin-ups for beginner trainees.",
+  "descriptionPl": "Asystowane ćwiczenie pionowego ciągu na dźwigniowej maszynie do podciągania. Klęczysz na wyściełanej platformie przeciwwagi, która wypycha cię w górę, redukując efektywną masę ciała o wybrane obciążenie. Wykonywane chwytem podchwytem (supinated) — dłonie skierowane do siebie. Ten układ sprawia że podciąganie jest dostępne dla początkujących, którzy nie podciągają jeszcze pełnej masy ciała, zachowując ten sam wzorzec ruchowy, mechanikę łopatek i napieranie łokciami co wersja bez asysty. Maszyna pomaga TYLKO w fazie koncentrycznej (ciąg w górę) przez wyściełaną przeciwwagę — ekscentryk pozostaje częściowo obciążony jeśli uniesiesz kolana z poduszki. Podstawowy krok pośredni w drodze do strict podciągania własną masą dla początkujących.",
+
+  "instructions": [
+    "Select the assistance weight on the stack — MORE weight selected = MORE help (lifts you up). Start with ~50-60% of bodyweight assistance if new.",
+    "Step onto the platform side handles. Grip the upper bar with palms facing TOWARD you (supinated/underhand), hands roughly shoulder-width apart.",
+    "Place your knees on the padded counterweight platform one at a time. Let the pad lift you to the dead-hang position with arms fully extended.",
+    "Engage your shoulder blades by pulling them DOWN (depression) — do not let them shrug up. Brace your core. This is the start position.",
+    "Initiate the pull by driving elbows DOWN AND FORWARD toward your ribs. Squeeze biceps actively from the bottom.",
+    "Keep chest up, torso vertical or slightly leaned back. Do not bounce on the knee pad — strict tempo.",
+    "Pull until your chin is clearly ABOVE the bar. Top of the rep: upper chest near the bar, elbows close to ribs.",
+    "Lower with control, fully extending arms at the bottom. Maintain shoulder blade depression throughout the descent.",
+    "When finished: step off carefully back onto the side platforms — do NOT let go of the bar while still kneeling, the pad will jerk up violently."
+  ],
+  "instructionsPl": [
+    "Ustaw ciężar asysty na stosie — WIĘKSZY ciężar = WIĘCEJ pomocy (mocniej cię unosi). Zacznij od ok. 50-60% masy ciała asysty jeśli jesteś początkujący.",
+    "Wejdź na boczne platformy maszyny. Złap górny drążek dłońmi skierowanymi DO siebie (chwyt podchwytem/supinated), ręce mniej więcej na szerokość barków.",
+    "Ustaw kolana na wyściełanej platformie przeciwwagi po jednym. Pozwól poduszce podnieść cię do pozycji dead-hang z ramionami w pełnym wyproście.",
+    "Aktywuj łopatki ściągając je W DÓŁ (depresja) — nie pozwól im się unieść. Napnij brzuch. To pozycja startowa.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO PRZODU w stronę żeber. Aktywnie napnij bicepsy od samego dołu.",
+    "Klatka w górze, tułów pionowo lub lekko odchylony do tyłu. Bez odbijania na poduszce kolan — strict tempo.",
+    "Podciągaj aż broda będzie WYRAŹNIE nad drążkiem. Szczyt powtórzenia: górna część klatki blisko drążka, łokcie blisko żeber.",
+    "Opuszczaj kontrolowanym ruchem, pełen wyprost ramion na dole. Utrzymuj depresję łopatek przez całe schodzenie.",
+    "Po zakończeniu: ostrożnie zejdź z powrotem na boczne platformy — NIE puszczaj drążka będąc na kolanach, poduszka wystrzeli gwałtownie w górę."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["brachialis", "trapezius_middle_lower", "rhomboids", "teres_major", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P8",
+    "brachialis": "S7",
+    "teres_major": "S6",
+    "trapezius_middle_lower": "S6",
+    "rhomboids": "S5",
+    "forearms": "S5",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["assisted_pullup_machine"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dead-hang", "lat-pulldown", "inverted-row"],
+    "progression_to": ["band-assisted-chin-up", "negative-chin-up", "chin-up", "neutral-grip-pull-up"],
+    "alternatives": ["band-assisted-chin-up", "lat-pulldown", "negative-chin-up", "lever-assisted-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Choose assistance: MORE weight on stack = MORE help",
+      "Supinated (underhand) grip, hands shoulder-width apart",
+      "Kneel on the pad one knee at a time",
+      "Full hang — elbows fully extended, shoulder blades DOWN",
+      "Core braced, torso vertical"
+    ],
+    "setup_cues_pl": [
+      "Wybierz asystę: WIĘCEJ ciężaru na stosie = WIĘCEJ pomocy",
+      "Chwyt podchwytem (supinated), ręce na szerokość barków",
+      "Klęknij na poduszce po jednym kolanie",
+      "Pełny zwis — łokcie wyprostowane, łopatki W DÓŁ",
+      "Brzuch napięty, tułów pionowo"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN AND FORWARD toward ribs",
+      "Squeeze biceps actively from the bottom of the rep",
+      "Chin OVER the bar (not at level)",
+      "Full extension at the bottom — no half reps",
+      "Strict tempo, NO bouncing on the knee pad"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ I DO PRZODU w stronę żeber",
+      "Aktywnie napnij bicepsy od samego dołu powtórzenia",
+      "Broda NAD drążkiem (nie na poziomie)",
+      "Pełen wyprost na dole — bez połowy powtórzeń",
+      "Strict tempo, BEZ odbijania na poduszce kolan"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using too much assistance (machine does the work)",
+        "faultPl": "Zbyt duża asysta (maszyna wykonuje pracę)",
+        "cause": "Beginner sets ~80% bodyweight assistance — chin-ups become almost passive, no training stimulus",
+        "causePl": "Początkujący ustawia ~80% masy ciała asysty — chin-upy stają się niemal pasywne, brak bodźca treningowego",
+        "cue": "Pick a weight where last 1-2 reps of a set of 8-10 are HARD. Reduce assistance by 5kg per week.",
+        "cuePl": "Wybierz ciężar przy którym ostatnie 1-2 powtórzenia serii 8-10 są TRUDNE. Zmniejszaj asystę o 5kg tygodniowo."
+      },
+      {
+        "fault": "Bouncing on the knee pad for momentum",
+        "faultPl": "Odbijanie na poduszce kolan dla pędu",
+        "cause": "Treating the pad like a springboard — using lower body kick to assist the pull",
+        "causePl": "Traktowanie poduszki jak trampoliny — używanie kopnięcia nogami dla wspomożenia ciągu",
+        "cue": "Knees passive on pad. Pull starts from arms and lats only. Tempo 2-0-2.",
+        "cuePl": "Kolana pasywne na poduszce. Ciąg z ramion i najszerszych. Tempo 2-0-2."
+      },
+      {
+        "fault": "Half reps (chin not over bar) or partial extension",
+        "faultPl": "Połowiczne powtórzenia (broda nie nad drążkiem) lub niepełny wyprost",
+        "cause": "Avoiding hardest portion of pull (top) or eccentric (bottom). Ego counting reps.",
+        "causePl": "Unikanie najtrudniejszej części ciągu (góra) lub ekscentryka (dół). Ego w liczeniu powtórzeń.",
+        "cue": "Chin clearly OVER bar at top. Full elbow extension at bottom. Increase assistance if you can't complete full ROM.",
+        "cuePl": "Broda wyraźnie NAD drążkiem na górze. Pełen wyprost łokci na dole. Zwiększ asystę jeśli nie masz pełnego ROM."
+      },
+      {
+        "fault": "Letting go of the bar while kneeling on pad",
+        "faultPl": "Puszczanie drążka stojąc na poduszce kolan",
+        "cause": "Ending set incorrectly — pad shoots up violently when load is released, risk of strike to chin/chest",
+        "causePl": "Złe kończenie serii — poduszka wystrzeliwuje gwałtownie w górę po zwolnieniu obciążenia, ryzyko uderzenia w brodę/klatkę",
+        "cue": "ALWAYS step off onto side platforms FIRST, then release the bar. Never release while still kneeling.",
+        "cuePl": "ZAWSZE najpierw zejdź na boczne platformy, potem puszczaj drążek. Nigdy nie puszczaj będąc na kolanach."
+      },
+      {
+        "fault": "Hyperextending lower back to clear the bar",
+        "faultPl": "Hiperextensja dolnego odcinka kręgosłupa dla osiągnięcia brody nad drążkiem",
+        "cause": "Trying to get chin over bar via spinal extension instead of pulling power",
+        "causePl": "Próba doprowadzenia brody nad drążek przez wygięcie kręgosłupa zamiast siły ciągu",
+        "cue": "Keep core tight, ribs DOWN. Chin clears bar through pulling, not arching.",
+        "cuePl": "Brzuch napięty, żebra W DÓŁ. Broda nad drążkiem przez ciąg, nie przez wyginanie."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Exhale on the pull up. Inhale on the way down. Don't hold breath — assisted chin-ups are usually performed for moderate-to-high reps (8-15) so breathing rhythm matters more than bracing.",
+    "breathingPl": "Wdech na dole (zwis). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Nie wstrzymuj — chin-upy z asystą zwykle wykonujesz na umiarkowanej-wysokiej liczbie powtórzeń (8-15) więc rytm oddechu ma znaczenie ważniejsze niż bracing."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid until tendon healed — chin-ups maximally load biceps tendon at the elbow even with assistance. Switch to lat pulldown with neutral grip.",
+      "modificationPl": "Unikaj do wyleczenia ścięgna — chin-upy maksymalnie obciążają ścięgno bicepsa w łokciu nawet z asystą. Przejdź na lat pulldown chwytem neutralnym.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Increase assistance significantly (reduce elbow load), use neutral grip if machine permits, or shift to lat pulldown.",
+      "modificationPl": "Znacznie zwiększ asystę (zmniejsz obciążenie łokci), użyj chwytu neutralnego jeśli maszyna pozwala, lub przejdź na lat pulldown.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Kneeling on the pad may aggravate knee pain. Some machines have foot-platform version (stand on pad). If none — switch to band-assisted variant.",
+      "modificationPl": "Klęczenie na poduszce może nasilać ból kolan. Niektóre maszyny mają wersję ze stopami (stoisz na poduszce). Jeśli brak — przejdź na wariant z gumą.",
+      "alternative": "band-assisted-chin-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Chin-up grip (supinated) is generally better tolerated than pronated due to external rotation. If pain persists, switch to neutral grip or pulldown.",
+      "modificationPl": "Chwyt podchwytem (supinated) zwykle lepiej tolerowany niż nachwytem z powodu rotacji zewnętrznej. Jeśli ból trwa — przejdź na chwyt neutralny lub pulldown.",
+      "alternative": "neutral-grip-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy with assistance progressively decreasing) | 4x10-15 (volume/endurance) | 5x5 (strength, with minimal assistance)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "lever-assisted-chin-up.gif",
+    "frames_extracted": [
+      "frames/lever-assisted-chin-up/frame_0_start.png",
+      "frames/lever-assisted-chin-up/frame_1_early.png",
+      "frames/lever-assisted-chin-up/frame_2_mid.png",
+      "frames/lever-assisted-chin-up/frame_3_late.png",
+      "frames/lever-assisted-chin-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/lever-assisted-chin-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — postać klęczy na wyściełanej platformie przeciwwagi dźwigniowej maszyny do podciągania, chwyt podchwytem (dłonie do siebie) na górnym drążku, ręce mniej więcej na szerokość barków, ramiona w pełnym wyproście (dead-hang). Najszersze grzbietu i ramiona podświetlone czerwienią. Widać charakterystyczną konstrukcję maszyny: dwa pionowe słupy, górny drążek do podciągania, dolna poduszka kolan przymocowana do dźwigni połączonej ze stosem ciężarków po lewej stronie maszyny. Frame 2: szczyt powtórzenia — broda nad drążkiem, łokcie zgięte i blisko żeber, klatka blisko drążka, poduszka kolan podniesiona razem z ciałem, bicepsy i najszersze maksymalnie aktywne. Frame 3/4: faza ekscentryczna powrót do dead-hang. Klasyczna asystowana wersja chin-upa — supinated grip, kneeling pad, lever counterweight. Różnice od bodyweight chin-up: maszyna redukuje efektywne obciążenie (level=beginner 3/10 vs intermediate 7/10), tor ruchu jest narzucony przez dźwignię (mniej stabilizacji), ale wzorzec ruchowy i mięśnie zaangażowane identyczne. PL nazwa 'Podciąganie z asystą na maszynie (podchwyt)' — odróżnia od wariantu nachwyt (lever-assisted-pull-up). Słowo 'asysta' i 'podchwyt' to standard polskiego fitness.",
+
+  "tags": ["machine", "compound", "upper_body", "vertical_pull", "assisted", "beginner_friendly", "back", "biceps", "lat_builder", "chin_up_progression"]
+}

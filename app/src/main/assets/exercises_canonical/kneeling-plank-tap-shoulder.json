@@ -1,0 +1,204 @@
+{
+  "id": "kneeling-plank-tap-shoulder",
+  "name": "Kneeling Plank Shoulder Tap",
+  "namePl": "Plank klęczący z dotykaniem barków",
+  "aliases": ["kneeling plank with shoulder taps", "modified plank shoulder tap", "knee plank shoulder tap", "regressed shoulder tap plank", "kneeling shoulder tap"],
+  "aliasesPl": ["plank na kolanach z dotykaniem barków", "deska klęcząca z klepnięciem barku", "plank z kolan z dotykaniem ramion", "deska na kolanach z dotykiem barku", "deska klęcząca z naprzemiennym dotykaniem barków"],
+
+  "description": "A regression of the classic shoulder tap plank performed from a kneeling forearm plank position. The lifter holds a forearm plank with knees on the floor (instead of feet), then alternately lifts one hand off the ground and taps the opposite shoulder while resisting hip and trunk rotation. The reduced lever arm (knees vs. feet) lowers the absolute load on the core but PRESERVES the anti-rotation challenge — the obliques must still fire to prevent the hips from twisting when one point of support is removed. Ideal for beginners building anti-rotation strength, post-injury reintroduction, or as a warm-up drill before full-plank variations. No equipment required.",
+  "descriptionPl": "Regresja klasycznego planku z dotykaniem barków wykonywana z pozycji klęczącej deski na przedramionach. Ćwiczący utrzymuje deskę na przedramionach z kolanami na podłodze (zamiast stóp), następnie naprzemiennie podnosi jedną dłoń i klepie przeciwny bark, jednocześnie opierając się rotacji bioder i tułowia. Mniejsza dźwignia (kolana zamiast stóp) zmniejsza bezwzględne obciążenie core, ale ZACHOWUJE wyzwanie anty-rotacyjne — mięśnie skośne nadal muszą pracować, by zapobiec skręcaniu się bioder gdy jeden punkt podparcia znika. Idealne dla początkujących budujących siłę anty-rotacyjną, w powrocie po kontuzji lub jako rozgrzewka przed pełnymi wariantami planku. Bez sprzętu.",
+
+  "instructions": [
+    "Kneel on a mat with knees hip-width apart and place the forearms on the floor in front of you — elbows directly under the shoulders, forearms parallel.",
+    "Walk the knees back until your body forms a straight line from the head through the hips to the knees. Tops of the feet rest on the floor; toes pointed back.",
+    "Brace the core, squeeze the glutes, and press the forearms firmly into the floor. Shoulders packed, neck long, gaze down between the forearms.",
+    "Without shifting the hips, lift the right hand off the floor and tap the LEFT shoulder with the fingertips.",
+    "Place the right hand back down with control, return to the neutral kneeling forearm plank.",
+    "Repeat with the opposite side: lift the left hand and tap the RIGHT shoulder.",
+    "The KEY: hips must NOT rotate or shift to the side when a hand lifts — the obliques and glutes work to keep the pelvis level and square to the floor.",
+    "Alternate sides with controlled tempo. Stop the set when the hips start twisting, not when the abs simply burn."
+  ],
+  "instructionsPl": [
+    "Uklęknij na macie z kolanami na szerokość bioder i połóż przedramiona na podłodze przed sobą — łokcie dokładnie pod barkami, przedramiona równoległe.",
+    "Cofnij kolana aż twoje ciało utworzy prostą linię od głowy przez biodra do kolan. Wierzchy stóp leżą na podłodze; palce skierowane do tyłu.",
+    "Napnij brzuch, ściśnij pośladki i mocno wciśnij przedramiona w podłogę. Barki spakowane, szyja długa, wzrok skierowany w dół między przedramiona.",
+    "Bez przemieszczania bioder, oderwij prawą dłoń od podłogi i klepnij LEWY bark opuszkami palców.",
+    "Odłóż prawą dłoń z powrotem z kontrolą, wróć do neutralnej klęczącej deski na przedramionach.",
+    "Powtórz na przeciwną stronę: oderwij lewą dłoń i klepnij PRAWY bark.",
+    "KLUCZ: biodra NIE MOGĄ rotować ani przesuwać się na bok, gdy dłoń się unosi — mięśnie skośne i pośladki pracują, by utrzymać miednicę poziomą i kwadratową do podłogi.",
+    "Naprzemiennie z kontrolowanym tempem. Zakończ serię gdy biodra zaczynają się skręcać, nie gdy brzuch po prostu pali."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_rotation",
+    "force": "static",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis"],
+    "secondary": ["transverse_abdominis", "serratus_anterior", "glutes"],
+    "stabilizers": ["anterior_deltoids", "quadratus_lumborum", "erector_spinae", "triceps", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "P8",
+    "transverse_abdominis": "S7",
+    "serratus_anterior": "S6",
+    "glutes": "S5",
+    "anterior_deltoids": "T4",
+    "quadratus_lumborum": "T4",
+    "erector_spinae": "T3",
+    "triceps": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["plank-from-knees", "kneeling-plank", "dead-bug"],
+    "progression_to": ["plank-shoulder-tap", "plank-with-hip-rotation", "front-plank-with-twist"],
+    "alternatives": ["kneeling-plank", "bird-dog", "dead-bug", "plank-from-knees"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Elbows directly under the shoulders — not in front, not behind",
+      "Knees hip-width apart, tops of feet flat on the floor behind you",
+      "Body forms ONE straight line from head through hips to knees — no pike, no sag",
+      "Brace the abs and squeeze the glutes BEFORE the first tap — pre-tension is everything",
+      "Press the forearms down into the floor to pack the shoulders — long neck, gaze down"
+    ],
+    "setup_cues_pl": [
+      "Łokcie dokładnie pod barkami — nie przed, nie za",
+      "Kolana na szerokość bioder, wierzchy stóp płasko na podłodze za tobą",
+      "Ciało tworzy JEDNĄ prostą linię od głowy przez biodra do kolan — bez wypiętej miednicy, bez zwisania",
+      "Napnij brzuch i ściśnij pośladki ZANIM klepniesz pierwszy raz — wstępne napięcie to wszystko",
+      "Wciśnij przedramiona w podłogę żeby spakować barki — długa szyja, wzrok w dół"
+    ],
+    "execution_cues": [
+      "HIPS STAY SQUARE — imagine a glass of water on your lower back that cannot tip",
+      "Tap with the FINGERTIPS, not a slap — minimal hand movement, maximum hip stillness",
+      "Widen the knees slightly if your hips wobble — broader base = more anti-rotation help",
+      "Move slowly — 1 second up, light tap, 1 second back down. Speed = momentum = cheating",
+      "Push hard through the SUPPORTING forearm when one hand lifts — that's where the work is"
+    ],
+    "execution_cues_pl": [
+      "BIODRA POZOSTAJĄ KWADRATOWE — wyobraź sobie szklankę wody na dolnych plecach, która nie może się przewrócić",
+      "Klepnij OPUSZKAMI palców, nie klapsem — minimum ruchu dłoni, maksimum stabilności bioder",
+      "Rozszerz kolana lekko jeśli biodra się chwieją — szersza baza = większa pomoc anty-rotacyjna",
+      "Pracuj wolno — 1 sekunda w górę, lekkie klepnięcie, 1 sekunda w dół. Szybkość = rozpęd = oszustwo",
+      "Mocno odpychaj się PODPIERAJĄCYM przedramieniem gdy jedna dłoń się podnosi — tam jest praca"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips rotating or shifting sideways when a hand lifts off",
+        "faultPl": "Biodra rotują lub przesuwają się na bok gdy dłoń się unosi",
+        "cause": "Insufficient oblique brace; obliques fail to resist the asymmetric load when one support disappears",
+        "causePl": "Niewystarczające napięcie skośnych; mięśnie skośne nie opierają się asymetrycznemu obciążeniu gdy znika jeden punkt podparcia",
+        "cue": "Widen the knees for a broader base. Brace harder BEFORE lifting the hand. The hand should not move until the brace is locked in.",
+        "cuePl": "Rozszerz kolana dla szerszej bazy. Mocniej napnij brzuch ZANIM oderwiesz dłoń. Dłoń się nie rusza dopóki napięcie nie jest zablokowane."
+      },
+      {
+        "fault": "Hips sagging toward the floor between or during taps",
+        "faultPl": "Biodra opadają w stronę podłogi między klepnięciami lub podczas nich",
+        "cause": "Loss of glute engagement; treating it like rest position between reps",
+        "causePl": "Utrata napięcia pośladków; traktowanie pozycji między powtórzeniami jako odpoczynku",
+        "cue": "Squeeze the glutes as if you're cracking a walnut between your cheeks — the whole set. The plank position never relaxes.",
+        "cuePl": "Ściśnij pośladki tak, jakbyś rozłupywał orzecha — przez całą serię. Pozycja deski się nigdy nie rozluźnia."
+      },
+      {
+        "fault": "Hips piking up toward the ceiling (butt in the air)",
+        "faultPl": "Biodra zadzierające się do sufitu (pupa w górze)",
+        "cause": "Trying to make the exercise easier by transferring weight back to the knees; loss of plank line",
+        "causePl": "Próba ułatwienia ćwiczenia przez przenoszenie ciężaru z powrotem na kolana; utrata linii deski",
+        "cue": "Drive the hips slightly forward so head, hips, knees are in line. If you see your knees when you look down, the hips are too high.",
+        "cuePl": "Wypchnij biodra lekko do przodu, by głowa, biodra i kolana były w linii. Jeśli widzisz kolana patrząc w dół, biodra są za wysoko."
+      },
+      {
+        "fault": "Slapping the shoulder fast / using momentum to swing the hand up",
+        "faultPl": "Szybkie klepanie barku / używanie rozpędu do wyrzucenia dłoni w górę",
+        "cause": "Chasing reps instead of quality; momentum hides the anti-rotation challenge",
+        "causePl": "Pogoń za powtórzeniami zamiast jakością; rozpęd ukrywa wyzwanie anty-rotacyjne",
+        "cue": "Move slowly: 1s lift, light tap, 1s back. If you can't go slow, the hips ARE rotating — you just don't see it.",
+        "cuePl": "Pracuj wolno: 1s w górę, lekkie klepnięcie, 1s z powrotem. Jeśli nie umiesz wolno, biodra ROTUJĄ — po prostu tego nie widzisz."
+      },
+      {
+        "fault": "Neck cranked up or chin jutted forward looking at a mirror",
+        "faultPl": "Szyja zadarta lub broda wystawiona do przodu w stronę lustra",
+        "cause": "Trying to check form visually; tension migrates from core to neck and traps",
+        "causePl": "Próba kontroli techniki wzrokiem; napięcie przenosi się z core do szyi i czworobocznych",
+        "cue": "Long neck, ears away from shoulders. Gaze on the floor between your forearms. If you need to see form, record yourself.",
+        "cuePl": "Długa szyja, uszy daleko od barków. Wzrok w podłogę między przedramionami. Jeśli musisz zobaczyć technikę, nagraj się."
+      }
+    ],
+    "breathing": "Exhale as the hand LIFTS to tap the shoulder (the brace tightens with the exhale, stabilizing the rotation). Inhale as the hand returns to the floor. Never hold the breath — held breath under anti-rotation load spikes intra-abdominal pressure unevenly and destabilizes the hips. Slow, controlled breathing matches the slow, controlled tempo.",
+    "breathingPl": "Wydech gdy dłoń się PODNOSI do klepnięcia barku (wydech zaciska napięcie, stabilizując rotację). Wdech przy powrocie dłoni na podłogę. Nigdy nie wstrzymuj oddechu — wstrzymany oddech pod obciążeniem anty-rotacyjnym podnosi ciśnienie wewnątrzbrzuszne nierównomiernie i destabilizuje biodra. Powolny, kontrolowany oddech idzie w parze z powolnym, kontrolowanym tempem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Although the forearm position spares the wrists more than a high plank, transferring weight onto one forearm during taps can still stress an injured wrist. Use closed fists or a folded towel under the wrist; stop if pain appears.",
+      "modificationPl": "Choć pozycja na przedramionach oszczędza nadgarstki bardziej niż wysoka deska, przenoszenie ciężaru na jedno przedramię podczas klepnięć może obciążać kontuzjowany nadgarstek. Używaj zaciśniętych pięści lub zwiniętego ręcznika pod nadgarstkiem; przerwij jeśli pojawi się ból.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "abdominal_diastasis",
+      "severity": "modify",
+      "modification": "Postpartum diastasis recti benefits from anti-rotation work, but plank-style intra-abdominal pressure may worsen the midline gap. Consult a pelvic-floor specialist; use connection-breath drills or modified bird-dog instead until cleared.",
+      "modificationPl": "Rozejście kresy białej po porodzie korzysta z ćwiczeń anty-rotacyjnych, ale ciśnienie wewnątrzbrzuszne w pozycji deski może pogłębić rozejście. Skonsultuj się z fizjoterapeutą uroginekologicznym; w międzyczasie używaj ćwiczeń oddechowo-stabilizacyjnych lub zmodyfikowanego bird-doga.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "knee_pain_or_patellar_issues",
+      "severity": "modify",
+      "modification": "Direct kneecap pressure on a hard surface can flare patellar tendinopathy or pre-patellar bursitis. Use a thick mat, double up a towel under the knees, or switch to a full-foot plank with assisted hold from a wall.",
+      "modificationPl": "Bezpośredni nacisk rzepki na twardą powierzchnię może nasilić tendinopatię rzepkową lub zapalenie kaletki przedrzepkowej. Używaj grubej maty, podwójnie złożonego ręcznika pod kolanami, lub przerzuć się na pełną deskę z asystą o ścianę.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Lifting one arm while loaded on the opposite forearm can stress an irritated shoulder. Reduce range — tap the chest or elbow instead of the shoulder, or hold the kneeling plank statically without taps until pain-free.",
+      "modificationPl": "Unoszenie jednego ramienia z obciążeniem na drugim przedramieniu może obciążać podrażniony bark. Zmniejsz zakres — klepnij klatkę lub łokieć zamiast barku, lub utrzymuj klęczącą deskę statycznie bez klepnięć aż do ustąpienia bólu.",
+      "alternative": "kneeling-plank"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-16 alternating taps | 3x20-30 sec | 4x8 reps per side",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "kneeling-plank-tap-shoulder-male.gif",
+    "frames_extracted": [
+      "frames/kneeling-plank-tap-shoulder-male/frame_0_start.png",
+      "frames/kneeling-plank-tap-shoulder-male/frame_1_early.png",
+      "frames/kneeling-plank-tap-shoulder-male/frame_2_mid.png",
+      "frames/kneeling-plank-tap-shoulder-male/frame_3_late.png",
+      "frames/kneeling-plank-tap-shoulder-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/kneeling-plank-tap-shoulder-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (18 ramek w GIFie). frame_0_start: pozycja wyjściowa — KLĘCZĄCA deska na przedramionach (kolana na podłodze, NIE stopy), dłonie złożone w pięści, łokcie pod barkami, ciało w linii od głowy przez biodra do kolan. Podświetlone obliques i rectus_abdominis jako baseline napięcia anty-rotacyjnego. frame_1_early i frame_3_late: pozycja klepnięcia — jedna dłoń uniesiona dotykając PRZECIWNEGO barku (silhouette pokazuje 'fade' pełnej amplitudy uniesienia ręki), druga ręka mocno wciśnięta w podłogę jako podpora. Mocno podświetlony rectus_abdominis i obliques — pracują przeciwko rotacji bioder gdy jeden punkt podparcia znika. frame_2_mid: pozycja środkowa — dłoń bliżej barku, body neutral. frame_4_end: druga strona (mirror frame_1, lustro). Charakterystyka: KLĘCZĄCA wersja (knee-supported) = regresja klasycznego shoulder tap planka — mniejsze ramię dźwigni od bioder do punktu podparcia (kolana zamiast stóp) zmniejsza absolute load ale ZACHOWUJE primary stimulus = anti-rotation. movement_pattern: anti_rotation — to klasyczna nazwa dla shoulder tap planka, ponieważ głównym celem jest opieranie się rotacji bioder gdy ręka się unosi. force: static (tułów się nie porusza, ruch wykonuje tylko ręka). plane: transverse (rotacja, której się opieramy, jest w płaszczyźnie poprzecznej). laterality: alternating (na zmianę lewa/prawa). Difficulty 3: regresja klasycznego planka shoulder tap (4-5), wciąż wymaga bracingu ale wybaczalniejsza dla początkujących. minimum: beginner (vs. intermediate dla klasycznego). Equipment: bodyweight (mata opcjonalna dla komfortu kolan). Primary: obliques P9 (najmocniej pracują przy oporze rotacji), rectus_abdominis P8 (anty-wyprost). Glutes secondary S5 (nie tak intensywne jak w pełnym planku bo nogi nie utrzymują ciężaru w taki sam sposób — kolana są oparte). Quadratus lumborum przesunięty z secondary (jak w front-plank-with-twist) do stabilizers bo asymetria mniejsza w kneeling vs pełna rotacja. Triceps stabilizer T3 — utrzymują pozycję na przedramieniu gdy druga ręka się unosi. Polskie nazewnictwo: 'Plank klęczący z dotykaniem barków' to standardowa polska forma fitness — 'plank' wszedł do polszczyzny treningowej, 'deska klęcząca' jako alias dla purystów językowych. Wszystkie pola PL napisane od zera po polsku (klęczący plank, dotykanie barków, anty-rotacja, opieranie się rotacji, opuszki palców) — brak tłumaczenia maszynowego.",
+
+  "tags": ["core", "obliques", "anti_rotation", "bodyweight", "no_equipment", "alternating", "plank_variation", "compound", "beginner", "regression", "kneeling", "isometric", "stability", "ab_isolation"]
+}

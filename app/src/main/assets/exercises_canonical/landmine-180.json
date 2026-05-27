@@ -1,0 +1,201 @@
+{
+  "id": "landmine-180",
+  "name": "Landmine 180",
+  "namePl": "Landmine 180 (rotacja w landmine)",
+  "aliases": ["landmine twist", "landmine rotation", "landmine oblique twist", "barbell landmine 180"],
+  "aliasesPl": ["landmine twist", "rotacja sztangą w landmine", "skręty w landmine", "twist sztangą po łuku", "landmine rotacja tułowia"],
+
+  "description": "Standing rotational core exercise. One end of a barbell is anchored in a landmine attachment (or wedged into a corner), the free end is gripped with both hands at hip height. The lifter pivots the torso through a wide 180° arc, swinging the bar from one hip down past the body to the opposite hip. The obliques and rectus abdominis drive the rotation while the deltoids and erectors stabilise the bar — a powerful compound rotational exercise that trains the anti-rotation/rotation continuum carried over to almost every athletic movement (throwing, swinging, change of direction).",
+  "descriptionPl": "Rotacyjne ćwiczenie core wykonywane w pozycji stojącej. Jeden koniec sztangi jest osadzony w landmine (lub zaklinowany w kącie pomieszczenia), wolny koniec trzymasz oburącz na wysokości bioder. Wykonujesz szeroki łuk 180° tułowiem, prowadząc sztangę od jednego biodra w dół przed ciałem do drugiego biodra. Skośne brzucha i mięsień prosty napędzają rotację, a barki i prostowniki grzbietu stabilizują sztangę — silne złożone ćwiczenie rotacyjne, które trenuje cały zakres rotacja/anty-rotacja przenoszący się na większość ruchów sportowych (rzuty, zamachy, zmiany kierunku).",
+
+  "instructions": [
+    "Set up a landmine attachment or wedge one end of a barbell securely into a corner. Load light to moderate weight on the free end (start with the bare bar).",
+    "Stand facing the bar with feet slightly wider than shoulder-width, knees soft, hips squared toward the anchor.",
+    "Grip the free end of the bar with both hands, fingers interlaced or one hand on top of the other. Lift the bar to roughly hip height with arms extended but elbows soft.",
+    "Brace the core, set a neutral spine, draw shoulder blades down and back.",
+    "Initiate the movement from the obliques and hips — rotate the torso and the bar in a wide arc down toward one hip while pivoting the rear foot to allow the hips to follow.",
+    "Decelerate the bar near the hip, then reverse the motion smoothly through the arc to the opposite hip — that is one full 180° repetition.",
+    "Keep arms long and elbows just unlocked throughout; let the torso, not the shoulders, do the work.",
+    "Maintain a steady tempo — 2 seconds per side, no jerking or whip at the endpoints."
+  ],
+  "instructionsPl": [
+    "Zamontuj landmine lub mocno zaklinuj jeden koniec sztangi w kącie pomieszczenia. Załaduj lekki lub średni ciężar na wolny koniec (zacznij od samej sztangi).",
+    "Stań przodem do sztangi, stopy nieco szerzej niż barki, kolana lekko ugięte, biodra ustawione frontem do zakotwiczenia.",
+    "Złap wolny koniec sztangi oburącz, palce splecione lub jedna dłoń na drugiej. Unieś sztangę na wysokość bioder, ramiona wyciągnięte ale łokcie nie blokowane.",
+    "Napnij brzuch, ustaw kręgosłup w neutralnej pozycji, ściągnij łopatki w dół i do tyłu.",
+    "Rozpocznij ruch ze skośnych brzucha i bioder — obracaj tułów i sztangę szerokim łukiem w dół, w kierunku jednego biodra, jednocześnie odkręcając tylną stopę tak by biodra mogły podążyć.",
+    "Wyhamuj sztangę przy biodrze, następnie odwróć ruch płynnie wykonując łuk w przeciwną stronę — to jedno pełne powtórzenie 180°.",
+    "Utrzymuj długie ramiona, łokcie jedynie odblokowane — pracuje tułów, nie barki.",
+    "Trzymaj równe tempo — 2 sekundy na stronę, bez szarpania i ‘bicia bicza’ na końcach łuku."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis"],
+    "secondary": ["deltoid_anterior", "erector_spinae"],
+    "stabilizers": ["transverse_abdominis", "glutes", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "P7",
+    "deltoid_anterior": "S6",
+    "erector_spinae": "S6",
+    "transverse_abdominis": "T4",
+    "glutes": "T3",
+    "serratus_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "landmine"],
+    "optional": ["weight_plate"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["plank", "russian-twist", "pallof-press"],
+    "progression_to": ["landmine-meadows-row", "landmine-press", "rotational-medicine-ball-throw"],
+    "alternatives": ["cable-woodchopper", "russian-twist", "medicine-ball-rotational-throw", "pallof-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor the bar securely — landmine sleeve or deep corner",
+      "Feet slightly wider than shoulders, knees soft",
+      "Grip the free end with both hands, arms long",
+      "Bar at hip height — not chest, not overhead",
+      "Brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Mocno zakotwicz sztangę — tuleja landmine lub głęboki kąt",
+      "Stopy nieco szerzej niż barki, kolana lekko ugięte",
+      "Złap wolny koniec oburącz, ramiona wyciągnięte",
+      "Sztanga na wysokości bioder — nie klatki, nie nad głową",
+      "Napnij brzuch zanim ruszysz w pierwsze powtórzenie"
+    ],
+    "execution_cues": [
+      "Rotate from the obliques, not from the arms",
+      "Let the rear foot pivot — hips follow the torso",
+      "Arms stay long — bar moves because YOU rotate",
+      "Decelerate before the endpoint, then reverse smoothly",
+      "Exhale through each rotation, inhale at the centre"
+    ],
+    "execution_cues_pl": [
+      "Obrót ze skośnych brzucha, nie z ramion",
+      "Pozwól tylnej stopie się odkręcić — biodra podążają za tułowiem",
+      "Ramiona pozostają długie — sztanga rusza się bo TY się obracasz",
+      "Wyhamuj przed punktem skrajnym, potem płynnie odwróć kierunek",
+      "Wydech na każdej rotacji, wdech w pozycji centralnej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the bar with the arms instead of rotating",
+        "faultPl": "Ciągnięcie sztangi ramionami zamiast rotacji tułowiem",
+        "cause": "Trying to lift too much weight or weak core forcing the shoulders to compensate",
+        "causePl": "Próba ćwiczenia ze zbyt dużym ciężarem lub słaby brzuch zmuszający barki do kompensacji",
+        "cue": "Lock the elbows just shy of straight and freeze them — feel the abs initiate every rep",
+        "cuePl": "Ustaw łokcie tuż przed pełnym wyprostem i ‘zamroź’ je — poczuj jak brzuch rozpoczyna każde powtórzenie"
+      },
+      {
+        "fault": "Locking the rear foot flat — torsion through the knee",
+        "faultPl": "Sztywno przyklejona tylna stopa — skręt w kolanie",
+        "cause": "Trying to keep hips ‘square’ throughout, which forces the rotation into the knee joint",
+        "causePl": "Próba utrzymania bioder ‘kwadratowo’ przez cały ruch, co przenosi rotację na staw kolanowy",
+        "cue": "Pivot the rear heel up — hips and feet rotate together with the torso",
+        "cuePl": "Pozwól pięcie tylnej stopy się unieść — biodra i stopy obracają się razem z tułowiem"
+      },
+      {
+        "fault": "Using momentum / whipping the bar at endpoints",
+        "faultPl": "Wykorzystywanie rozpędu / ‘bicie bicza’ sztangą na końcach łuku",
+        "cause": "Speed prioritised over control, especially with light weights",
+        "causePl": "Priorytet szybkości nad kontrolą, szczególnie przy lekkich ciężarach",
+        "cue": "2 seconds per side, controlled deceleration. If you can't, lower the weight.",
+        "cuePl": "2 sekundy na stronę, kontrolowane wyhamowanie. Jeśli nie dasz rady — zmniejsz ciężar."
+      },
+      {
+        "fault": "Lumbar hyperextension at the endpoint",
+        "faultPl": "Przeprost lędźwiowy w punkcie skrajnym",
+        "cause": "Loss of brace at the end of the rotation, exaggerating the range",
+        "causePl": "Utrata napięcia brzucha pod koniec rotacji, zbyt duży zakres ruchu",
+        "cue": "Stop the rotation when hips reach max — don't chase extra range with the lower back",
+        "cuePl": "Zatrzymaj rotację gdy biodra osiągną maksimum — nie szukaj większego zakresu lędźwiami"
+      },
+      {
+        "fault": "Bar drifts too high (toward chest) — turning it into a chop",
+        "faultPl": "Sztanga zbyt wysoko (do klatki) — ruch staje się ‘chopem’",
+        "cause": "Hands creeping up during fatigue, losing the hip-to-hip arc",
+        "causePl": "Dłonie podnoszą się ze zmęczenia, traci się łuk biodro-biodro",
+        "cue": "Bar passes hip-to-hip in a low arc — if it climbs, reset and lower the load",
+        "cuePl": "Sztanga przechodzi biodro-biodro niskim łukiem — jeśli pełznie wyżej, zresetuj i zmniejsz ciężar"
+      }
+    ],
+    "breathing": "Exhale forcefully during each rotation as you cross the midline. Brief inhale at the centre position before initiating the next sweep. Do not hold the breath — Valsalva on a rotational movement spikes blood pressure without benefit.",
+    "breathingPl": "Mocny wydech podczas każdej rotacji, gdy przekraczasz środek. Krótki wdech w pozycji centralnej zanim rozpoczniesz kolejny łuk. Nie wstrzymuj oddechu — manewr Valsalvy przy ruchu rotacyjnym podnosi ciśnienie bez korzyści."
+  },
+
+  "contraindications": [
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Loaded rotation under axial flexion stresses lumbar discs (McGill: rotation + flexion = highest disc injury risk). Switch to anti-rotation exercises (Pallof press) until cleared by a physiotherapist.",
+      "modificationPl": "Obciążona rotacja w pozycji zgięcia osiowego obciąża krążki lędźwiowe (McGill: rotacja + zgięcie = najwyższe ryzyko urazu krążka). Przejdź na ćwiczenia anty-rotacyjne (Pallof press) do czasu wyleczenia.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Rotational load contraindicated until acute symptoms resolve. Begin with isometric anti-rotation work, progress to bodyweight rotation, then load.",
+      "modificationPl": "Obciążenie rotacyjne przeciwwskazane do czasu ustąpienia ostrych objawów. Zacznij od izometrycznych ćwiczeń anty-rotacyjnych, przejdź do rotacji z masą ciała, potem obciążenie.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Keep the bar low (hip-to-hip arc) — avoid letting it drift to chest or overhead where impingement angles occur. Use lighter loads and shorter ranges.",
+      "modificationPl": "Trzymaj sztangę nisko (łuk biodro-biodro) — nie pozwól by powędrowała do klatki lub nad głowę, gdzie występują kąty kompresji. Używaj lżejszych ciężarów i krótszych zakresów.",
+      "alternative": "russian-twist"
+    },
+    {
+      "condition": "knee_meniscus_injury",
+      "severity": "caution",
+      "modification": "Pivot the rear foot freely — never grind a fixed foot against a rotating torso. If pivoting is restricted, use cable rotation instead where stance can remain neutral.",
+      "modificationPl": "Pozwól tylnej stopie się swobodnie odkręcać — nigdy nie blokuj stopy przy obracającym się tułowiu. Jeśli rotacja stopy jest ograniczona, zastosuj rotację na wyciągu, gdzie postawa może pozostać neutralna.",
+      "alternative": "cable-woodchopper"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per side (hypertrophy) | 3x6-8 per side heavy (strength) | 3x12-20 per side light (endurance/conditioning)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "landmine-180.gif",
+    "frames_extracted": [
+      "frames/landmine-180/frame_0_start.png",
+      "frames/landmine-180/frame_1_early.png",
+      "frames/landmine-180/frame_2_mid.png",
+      "frames/landmine-180/frame_3_late.png",
+      "frames/landmine-180/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/landmine-180"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): ćwiczący stoi przodem, sztanga w landmine, trzyma wolny koniec oburącz przy jednym biodrze — podświetlone na czerwono mięśnie skośne brzucha (po stronie skrótu). Klatka 1 (early): widok z tyłu, sztanga przechodzi środkową fazę łuku, podświetlone latissimus dorsi i prostowniki grzbietu (stabilizatory rotacji). Klatka 2 (mid): widok z tyłu, sztanga już za biodrem po drugiej stronie, podświetlone obliques po drugiej stronie tułowia i erector spinae. Klatka 3 (late): jak klatka 1 (powrót). Klatka 4 (end): jak klatka 0 ale ze śladem ruchu — pełen łuk 180° widoczny. Potwierdzony ruch: rotacja tułowia po łuku biodro-do-biodra, sztanga nisko, tylna stopa pivotuje. Klasyfikacja: rotation pattern (jasne), plane=transverse (główna płaszczyzna), mechanic=compound (kręgosłup + biodra + barki), force=both (koncentryczna jedna strona, ekscentryczna druga w tym samym ruchu), kinetic_chain=closed (stopy na podłodze). Primary muscles: obliques (P9 — wyraźnie podświetlone w klatkach 0 i 2), rectus_abdominis (P7 — udział w skróceniu przedniej ściany przy rotacji). Secondary: deltoid_anterior (S6 — trzymanie sztangi długimi ramionami), erector_spinae (S6 — stabilizacja i częściowy napęd, podświetlone w klatce 1). Stabilizatory: transverse_abdominis, glutes (pivot biodra), serratus_anterior. Difficulty=6, intermediate (wymaga koordynacji rotacji + odpowiedniej kontroli kręgosłupa). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Aliasy PL: zostawiłem ‘landmine twist’ bo to nazwa funkcjonująca w polskim środowisku siłowniowym, dodałem opisowe ‘rotacja sztangą w landmine’ i ‘skręty w landmine’.",
+
+  "tags": ["landmine", "barbell", "core", "rotation", "obliques", "anti_rotation", "athletic", "functional", "compound"]
+}

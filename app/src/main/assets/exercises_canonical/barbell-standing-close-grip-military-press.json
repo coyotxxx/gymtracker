@@ -1,0 +1,203 @@
+{
+  "id": "barbell-standing-close-grip-military-press",
+  "name": "Barbell Standing Close-Grip Military Press",
+  "namePl": "Military press chwytem wąskim w staniu",
+  "aliases": ["close grip OHP", "narrow grip military press", "close grip strict press", "close grip overhead press"],
+  "aliasesPl": ["military press wąskim chwytem", "OHP wąskim chwytem", "strict press chwytem wąskim", "wyciskanie nad głowę wąskim chwytem"],
+
+  "description": "Variation of the classic standing military press with a CLOSE grip (~shoulder-width or slightly narrower). Stopy razem (military stance) and no leg drive (strict press). The narrow grip pulls the elbows in close to the body, shifting more load to the anterior deltoids and triceps compared to the standard OHP. Excellent triceps and front delt builder, also more demanding on overhead mobility because the bar must clear the face on a tighter path.",
+  "descriptionPl": "Wariant klasycznego military press w staniu z WĄSKIM chwytem (~na szerokość barków lub węziej). Stopy razem (postawa militarna) i bez napędu z nóg (strict press). Wąski chwyt zbliża łokcie do tułowia, przenosząc więcej obciążenia na przednie aktony i tricepsy w porównaniu do standardowego OHP. Świetny budulec tricepsa i przedniego aktonu, bardziej wymagający dla mobilności overhead — gryf musi minąć twarz po ciaśniejszej ścieżce.",
+
+  "instructions": [
+    "Set the bar in a rack at upper-chest height. Take a CLOSE grip — approximately shoulder-width or slightly narrower, palms up. Hands inside your delts.",
+    "Unrack onto the front rack: bar resting on front delts and upper chest, elbows tucked closer to the body (not flared) directly under the bar, wrists straight.",
+    "Step back and place feet TOGETHER (military stance), or hip-width if balance is hard. Squeeze glutes, brace core, lock quads — full-body tension.",
+    "Take a big breath, brace hard, and press the bar straight up. Because the grip is narrow, the bar must travel close to the face — push your head 'through the window' as the bar clears the chin.",
+    "Lock out arms fully overhead — biceps near ears, bar directly over mid-foot from the side. Elbows finish stacked under the bar.",
+    "Lower with control along the same vertical path back to the front rack. Keep elbows IN (do not let them flare).",
+    "Strict press only — NO knee bend, NO hip drive. If you cannot press it strictly, reduce the weight.",
+    "Exhale near the top of the rep."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Złap WĄSKIM chwytem — około szerokości barków lub nieco węziej, dłonie w supinacji. Ręce wewnątrz aktonów.",
+    "Wyciągnij na front rack: gryf na przednich aktonach i górnej klatce, łokcie przyciągnięte do tułowia (nie rozstawione) bezpośrednio pod gryfem, nadgarstki proste.",
+    "Cofnij się i ustaw stopy RAZEM (postawa militarna), lub na szerokość bioder jeśli trudno utrzymać balans. Ściśnij pośladki, napnij brzuch, zablokuj czworogłowe — napięcie całego ciała.",
+    "Nabierz głęboki oddech, mocne napięcie i wyciśnij gryf prosto w górę. Wąski chwyt sprawia, że gryf przechodzi blisko twarzy — wepchnij głowę 'przez okno' gdy gryf mija brodę.",
+    "Pełen lock-out ramion nad głową — bicepsy przy uszach, gryf bezpośrednio nad środkiem stóp z boku. Łokcie kończą ułożone w linii pod gryfem.",
+    "Opuszczaj kontrolowanym ruchem po tej samej pionowej ścieżce do front rack. Trzymaj łokcie BLISKO (nie pozwól im się rozłożyć).",
+    "Tylko strict press — BEZ ugięcia kolan, BEZ napędu z bioder. Jeśli nie potrafisz wyciskać strict, zmniejsz ciężar.",
+    "Wydech przy szczycie powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "triceps"],
+    "secondary": ["lateral_deltoids", "upper_trapezius", "serratus_anterior", "upper_chest"],
+    "stabilizers": ["core", "glutes", "quadriceps", "rotator_cuff", "rectus_abdominis", "obliques", "spinal_erectors"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "triceps": "P9",
+    "lateral_deltoids": "S6",
+    "upper_trapezius": "S5",
+    "serratus_anterior": "S5",
+    "upper_chest": "S4",
+    "core": "S8",
+    "glutes": "S6",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack_or_squat_rack"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["barbell-overhead-press", "dumbbell-shoulder-press", "seated-barbell-overhead-press"],
+    "progression_to": ["push-press", "z-press", "behind-the-neck-press", "split-jerk"],
+    "alternatives": ["barbell-overhead-press", "dumbbell-standing-overhead-press", "seated-barbell-overhead-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands inside the delts — narrow grip",
+      "Bar on front delts, elbows IN under the bar",
+      "Wrists straight, bar in palm heel",
+      "Feet together (military stance), glutes locked",
+      "Brace core HARD before unracking"
+    ],
+    "setup_cues_pl": [
+      "Ręce wewnątrz aktonów — wąski chwyt",
+      "Gryf na przednich aktonach, łokcie BLISKO pod gryfem",
+      "Nadgarstki proste, gryf w podstawie dłoni",
+      "Stopy razem (postawa militarna), pośladki zablokowane",
+      "MOCNE napięcie brzucha przed wyciągnięciem"
+    ],
+    "execution_cues": [
+      "Press STRAIGHT up — bar close to the face",
+      "Head 'through the window' the moment the bar passes the chin",
+      "Keep elbows IN — do not flare",
+      "Finish biceps by ears, bar over mid-foot",
+      "Glutes + quads LOCKED — no leg drive"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj PROSTO w górę — gryf blisko twarzy",
+      "Głowa 'przez okno' gdy gryf mija brodę",
+      "Trzymaj łokcie BLISKO — nie rozkładaj ich",
+      "Zakończ bicepsami przy uszach, gryf nad środkiem stóp",
+      "Pośladki + czworogłowe ZABLOKOWANE — bez napędu nóg"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out during the press (losing the close grip benefit)",
+        "faultPl": "Rozkładanie łokci podczas wyciskania (utrata korzyści wąskiego chwytu)",
+        "cause": "Habit from wider OHP, weak triceps, or grip too narrow for the lifter's structure",
+        "causePl": "Nawyk z szerszego OHP, słabe tricepsy lub chwyt za wąski dla budowy lifter'a",
+        "cue": "Think 'elbows under the bar' the entire press. Squeeze the bar tight to keep tension in the triceps.",
+        "cuePl": "Myśl 'łokcie pod gryfem' przez całe wyciskanie. Ściśnij gryf mocno by utrzymać napięcie w tricepsach."
+      },
+      {
+        "fault": "Pressing forward to avoid hitting the face (bar drifts away)",
+        "faultPl": "Wyciskanie do przodu by uniknąć uderzenia w twarz (gryf oddala się)",
+        "cause": "Narrow grip brings the bar very close to the chin — lifters subconsciously push it forward",
+        "causePl": "Wąski chwyt prowadzi gryf bardzo blisko brody — lifter podświadomie pcha go do przodu",
+        "cue": "Push the HEAD back/forward through the window — do NOT push the bar around the face.",
+        "cuePl": "Przesuwaj GŁOWĘ tył/przód 'przez okno' — NIE prowadź gryfu wokół twarzy."
+      },
+      {
+        "fault": "Excessive lower-back arch (lumbar hyperextension)",
+        "faultPl": "Nadmierne wygięcie lędźwiowe (przeprost odcinka L)",
+        "cause": "Weak core, weight too heavy, glutes not engaged — exaggerated because feet are together",
+        "causePl": "Słaby brzuch, zbyt duży ciężar, niezaangażowane pośladki — gorsze bo stopy razem",
+        "cue": "Ribs DOWN, glutes squeezed HARD. If back keeps arching — reduce weight or widen stance slightly.",
+        "cuePl": "Żebra W DÓŁ, pośladki ŚCIŚNIĘTE MOCNO. Jeśli plecy się odginają — zmniejsz ciężar lub poszerz stopy."
+      },
+      {
+        "fault": "Using leg drive (push press, not strict press)",
+        "faultPl": "Użycie napędu z nóg (push press, nie strict press)",
+        "cause": "Trying to grind through a weight beyond strict-press capacity",
+        "causePl": "Próba wyciśnięcia ciężaru ponad możliwości strict press",
+        "cue": "Knees and hips LOCKED throughout. If you must dip — the weight is too heavy.",
+        "cuePl": "Kolana i biodra ZABLOKOWANE przez cały ruch. Jeśli musisz uginać — ciężar za duży."
+      },
+      {
+        "fault": "Wrist extended/bent backwards under load",
+        "faultPl": "Wygięty nadgarstek pod obciążeniem",
+        "cause": "Bar resting in fingers instead of palm heel, weak wrists, elbow too low",
+        "causePl": "Gryf w palcach zamiast w podstawie dłoni, słabe nadgarstki, łokieć za nisko",
+        "cue": "Bar in palm heel, wrist NEUTRAL. Elbow up under the bar. Use wrist wraps if needed.",
+        "cuePl": "Gryf w podstawie dłoni, nadgarstek NEUTRALNY. Łokieć w górze pod gryfem. Wrist wraps jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale and brace HARD before unracking. Hold the brace through the press. Exhale at lockout or just past the sticking point. Feet-together stance makes bracing even more critical than in standard OHP.",
+    "breathingPl": "Wdech i mocne napięcie przed wyciągnięciem ze stojaka. Trzymaj napięcie przez wyciskanie. Wydech w lock-out lub tuż po sticking point. Stopy razem sprawiają, że napięcie jest jeszcze ważniejsze niż w standardowym OHP."
+  },
+
+  "contraindications": [
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Close grip requires excellent thoracic/shoulder mobility. Use standard OHP or landmine press until mobility improves.",
+      "modificationPl": "Wąski chwyt wymaga doskonałej mobilności piersiowej/barku. Używaj standardowego OHP lub landmine press do poprawy mobilności.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Close grip increases impingement risk due to internal rotation under load. Switch to neutral-grip dumbbell press or landmine press.",
+      "modificationPl": "Wąski chwyt zwiększa ryzyko konfliktu z powodu rotacji wewnętrznej pod obciążeniem. Przejdź na DB press chwytem neutralnym lub landmine press.",
+      "alternative": "dumbbell-standing-overhead-press"
+    },
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Narrow grip puts more stress on wrists than standard OHP. Use wrist wraps, or switch to dumbbells where wrist can rotate.",
+      "modificationPl": "Wąski chwyt obciąża nadgarstki bardziej niż standardowy OHP. Użyj wrist wraps lub przejdź na hantle, gdzie nadgarstek może się obrócić.",
+      "alternative": "dumbbell-standing-overhead-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Feet-together stance increases lumbar load. Widen stance to shoulder-width, or switch to seated press with back support.",
+      "modificationPl": "Postawa stopy-razem zwiększa obciążenie lędźwiowe. Poszerz stopy do barków lub przejdź na seated press z oparciem.",
+      "alternative": "seated-barbell-overhead-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x5-8 (strength/hypertrophy mix) | 3x6-10 (hypertrophy + triceps focus) | 5x3-5 (max strength)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-standing-close-grip-military-press.gif",
+    "frames_extracted": [
+      "frames/barbell-standing-close-grip-military-press/frame_0_start.png",
+      "frames/barbell-standing-close-grip-military-press/frame_1_early.png",
+      "frames/barbell-standing-close-grip-military-press/frame_2_mid.png",
+      "frames/barbell-standing-close-grip-military-press/frame_3_late.png",
+      "frames/barbell-standing-close-grip-military-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-standing-close-grip-military-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa front rack, sztanga na przednich aktonach, wąski chwyt (~szerokość barków), stopy blisko siebie (military stance), łokcie blisko tułowia. Frame 2: pełen lock-out nad głową, ramiona wyprostowane, bicepsy w okolicach uszu, tricepsy mocno podświetlone (wąski chwyt = większy udział tricepsa). Frame 4: kontrolowany powrót do front rack. Highlighty mięśniowe: przednie aktony + tricepsy bardzo intensywnie (P10/P9), aktony boczne i czworoboczne górne wspomagająco. Klasyczny strict press — brak ugięcia kolan/bioder przez cały ruch. Wąski chwyt + stopy razem = klasyczny 'military press' w ścisłym znaczeniu (zwarta sylwetka żołnierza). PL nazwa = 'Military press chwytem wąskim w staniu' (zgodnie z poleceniem usera).",
+
+  "tags": ["compound", "upper_body", "vertical_push", "barbell", "shoulders", "triceps_focus", "strict_press", "close_grip", "military_press", "strength"]
+}

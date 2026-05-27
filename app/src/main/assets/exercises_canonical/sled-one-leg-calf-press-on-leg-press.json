@@ -1,0 +1,209 @@
+{
+  "id": "sled-one-leg-calf-press-on-leg-press",
+  "name": "Sled One-Leg Calf Press on Leg Press",
+  "namePl": "Single-leg calf press na sledzie",
+  "aliases": ["single leg calf press", "one leg sled calf press", "unilateral leg press calf raise", "single-leg sled calf raise", "one-legged calf press on leg press"],
+  "aliasesPl": ["jednonóż calf press na sledzie", "wspięcia na palce jednonóż na suwnicy", "unilateralne wspięcia łydek na sledzie", "calf press jedną nogą na leg pressie", "wyciskanie łydką jednonóż na sledzie"],
+
+  "description": "Unilateral isolation exercise for the calves performed on the 45-degree leg press (sled). The lifter sits back in the seat with one foot placed near the bottom edge of the platform — only the ball of the foot in contact — while the other leg is removed and rests off to the side. With the knee held nearly locked (a slight unlock to protect the joint), the working leg pushes the platform through plantarflexion of the ankle. Because the knee is extended, the gastrocnemius is placed in a lengthened, biomechanically advantaged position and takes the majority of the load, with the soleus assisting. Performing one leg at a time doubles the relative load per calf compared to bilateral work, exposes side-to-side strength asymmetries, increases stabilizer demand around the ankle, and allows much deeper, more deliberate stretch and squeeze on each rep. Common in bodybuilding for calf hypertrophy and in rehab/strength settings to correct unilateral weakness.",
+  "descriptionPl": "Izolowane ćwiczenie unilateralne na łydki wykonywane na suwnicy pod kątem 45 stopni (leg press, sled). Ćwiczący opiera się o oparcie, jedną stopę ustawia przy dolnej krawędzi platformy — kontakt tylko poprzez śródstopie — drugą nogę zdejmuje z platformy i odkłada na bok. Przy kolanie utrzymanym w pozycji niemal wyprostowanej (lekko ugiętym dla ochrony stawu) noga robocza pcha platformę poprzez zgięcie podeszwowe stawu skokowego. Ponieważ kolano jest wyprostowane, mięsień brzuchaty łydki (gastrocnemius) znajduje się w pozycji wydłużonej i biomechanicznie korzystnej, przejmując większość obciążenia, natomiast mięsień płaszczkowaty (soleus) wspiera ruch. Praca jedną nogą podwaja względne obciążenie pojedynczej łydki w porównaniu do wersji obunóż, ujawnia asymetrie siły między stronami, zwiększa zapotrzebowanie stabilizatorów stawu skokowego oraz umożliwia znacznie głębsze i bardziej kontrolowane rozciągnięcie oraz spięcie w każdym powtórzeniu. Powszechnie stosowane w kulturystyce do rozbudowy łydek oraz w rehabilitacji i treningu siłowym do wyrównywania jednostronnych słabości.",
+
+  "instructions": [
+    "Set the leg press sled to a moderate load — start lighter than a bilateral set because all the weight goes through one calf.",
+    "Sit on the leg press with back firmly against the pad. Release the safety catches and assume the unlocked position.",
+    "Place ONLY ONE foot on the platform — typically the right foot first — with just the ball of the foot in contact near the lower edge, heel hanging off the platform.",
+    "Position the foot directly under the line of the working knee, toes pointed neutral (straight ahead).",
+    "Take the other foot off the platform entirely and let that leg rest comfortably off to the side (knee bent and out of the way).",
+    "Slightly unlock the working knee — do NOT lock it out hard. Maintain this fixed knee angle throughout the entire set.",
+    "Press the heel up by extending only the ankle (plantarflexion) until the calf is fully contracted. Exhale on the way up.",
+    "Hold the peak contraction for 1-2 seconds — feel the working calf squeeze tight.",
+    "Lower the platform slowly over 2-3 seconds, allowing the heel to drop below the toes into a deep, controlled stretch. Inhale during the descent.",
+    "Pause briefly at the bottom stretch — no bouncing. Complete all reps on one leg, then switch to the other leg matching the rep count exactly."
+  ],
+  "instructionsPl": [
+    "Ustaw obciążenie na suwnicy umiarkowane — zacznij lżej niż w wersji obunóż, ponieważ całe obciążenie przechodzi przez jedną łydkę.",
+    "Usiądź na leg pressie z plecami mocno opartymi o oparcie. Zwolnij zabezpieczenia i przyjmij pozycję wyjściową.",
+    "Postaw na platformie TYLKO JEDNĄ stopę — zazwyczaj najpierw prawą — opierając się jedynie śródstopiem przy dolnej krawędzi, pięta zwisa poza platformą.",
+    "Ustaw stopę dokładnie w linii kolana roboczego, palce skierowane neutralnie (prosto przed siebie).",
+    "Drugą stopę zdejmij całkowicie z platformy i odsuń tę nogę wygodnie na bok (kolano zgięte, poza torem ruchu).",
+    "Lekko ugnij kolano nogi roboczej — NIE blokuj go mocno na sztywno. Utrzymuj stały kąt w kolanie przez całą serię.",
+    "Wypchnij piętę w górę wyłącznie poprzez wyprost stawu skokowego (zgięcie podeszwowe), aż łydka będzie w pełnym skurczu. Wydech w trakcie wypychania.",
+    "Utrzymaj szczytowe spięcie przez 1-2 sekundy — poczuj jak pracująca łydka mocno się napina.",
+    "Opuszczaj platformę powoli przez 2-3 sekundy, pozwalając pięcie opaść poniżej poziomu palców w głęboki, kontrolowany rozciąg. Wdech podczas opuszczania.",
+    "Krótka pauza w dolnym rozciągu — bez odbijania. Wykonaj wszystkie powtórzenia na jednej nodze, następnie zmień nogę i wykonaj dokładnie tę samą liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius", "soleus"],
+    "secondary": ["tibialis_posterior"],
+    "stabilizers": ["peroneals", "foot_intrinsics", "quadriceps", "hamstrings", "core", "hip_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P9",
+    "soleus": "P7",
+    "tibialis_posterior": "S4",
+    "peroneals": "T3",
+    "foot_intrinsics": "T3",
+    "quadriceps": "T2",
+    "hamstrings": "T2",
+    "core": "T2",
+    "hip_stabilizers": "T2"
+  },
+
+  "equipment": {
+    "required": ["leg_press_machine"],
+    "optional": ["weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["sled-calf-press-on-leg-press", "bodyweight-calf-raise"],
+    "progression_to": ["heavy-sled-one-leg-calf-press", "weighted-single-leg-calf-raise", "donkey-calf-raise"],
+    "alternatives": ["sled-calf-press-on-leg-press", "single-leg-calf-raise", "dumbbell-single-leg-calf-raise", "machine-standing-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "One foot only on the platform, ball of foot at the lower edge, heel hanging free",
+      "Foot directly under the working knee, toes pointed straight ahead",
+      "Other leg fully off the platform, resting comfortably to the side",
+      "Knee slightly unlocked — never hyperextended, never bent more than ~10 degrees",
+      "Back firmly pressed into the seat pad, hips neutral, core lightly braced"
+    ],
+    "setup_cues_pl": [
+      "Tylko jedna stopa na platformie, śródstopie przy dolnej krawędzi, pięta zwisa swobodnie",
+      "Stopa dokładnie pod kolanem roboczym, palce skierowane prosto przed siebie",
+      "Druga noga całkowicie poza platformą, wygodnie odłożona na bok",
+      "Kolano lekko ugięte — nigdy w przeproście, nigdy zgięte więcej niż ~10 stopni",
+      "Plecy mocno wciśnięte w oparcie siedzenia, biodra neutralnie, lekkie napięcie brzucha"
+    ],
+    "execution_cues": [
+      "Push only with the ankle — knee stays fixed at the same angle the whole set",
+      "Drive the platform until the calf is fully contracted, foot in extreme plantarflexion",
+      "Squeeze hard at the top for 1-2 seconds — single-leg means double the focus",
+      "Lower the platform slowly, letting the heel drop below the toes for a deep stretch",
+      "Pause in the stretched position — no rebound, no bouncing off the bottom"
+    ],
+    "execution_cues_pl": [
+      "Pchaj wyłącznie stawem skokowym — kolano przez całą serię w jednym kącie",
+      "Wypychaj platformę aż łydka będzie w pełnym skurczu, stopa w skrajnym zgięciu podeszwowym",
+      "Mocno spinaj w górze przez 1-2 sekundy — jednonóż oznacza podwójną koncentrację",
+      "Opuszczaj platformę powoli, pozwalając pięcie opaść poniżej palców w głęboki rozciąg",
+      "Pauza w pozycji rozciągniętej — bez odbicia, bez bouncing'u z dołu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending and straightening the knee to help push the platform",
+        "faultPl": "Zginanie i prostowanie kolana, aby pomóc wypchnąć platformę",
+        "cause": "Weight too heavy for a single calf, or unconsciously using the quad to assist plantarflexion",
+        "causePl": "Ciężar zbyt duży dla jednej łydki lub nieświadome wspomaganie się czworogłowym przy zgięciu podeszwowym",
+        "cue": "Lock the knee angle visually — if it moves more than a few degrees during a rep, the leg press is doing the work, not the calf. Reduce the load.",
+        "cuePl": "Zafiksuj wzrokowo kąt w kolanie — jeśli zmienia się o więcej niż kilka stopni w trakcie powtórzenia, pracuje noga jako leg press, nie łydka. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Foot positioned too high or fully on the platform (heel supported)",
+        "faultPl": "Stopa ustawiona zbyt wysoko lub w całości na platformie (pięta podparta)",
+        "cause": "Misunderstanding the setup — for a calf press, heel must hang free so the ankle can move through full ROM",
+        "causePl": "Niezrozumienie ustawienia — w calf press pięta musi zwisać swobodnie, aby staw skokowy mógł pracować w pełnym zakresie",
+        "cue": "Slide foot down until only the ball is in contact at the bottom edge. The heel must be free to drop below the toes.",
+        "cuePl": "Przesuń stopę w dół, aż tylko śródstopie dotyka dolnej krawędzi. Pięta musi mieć swobodę opadania poniżej palców."
+      },
+      {
+        "fault": "Bouncing reps off the stretched position using Achilles tendon rebound",
+        "faultPl": "Odbijane powtórzenia z dołu z wykorzystaniem odbicia ścięgna Achillesa",
+        "cause": "Going too heavy, chasing reps, mistaking elastic energy return for muscular work — risky for single-leg loading",
+        "causePl": "Zbyt duży ciężar, pogoń za powtórzeniami, mylenie odbicia sprężystego z pracą mięśniową — szczególnie ryzykowne przy obciążeniu jednonóż",
+        "cue": "Pause 1 second at the bottom stretch on every rep. If you cannot pause, drop the weight — single-leg eats ego fast.",
+        "cuePl": "Pauza 1 sekundę w dolnym rozciągu w każdym powtórzeniu. Jeśli nie potrafisz wytrzymać pauzy, zmniejsz ciężar — wersja jednonóż szybko weryfikuje ego."
+      },
+      {
+        "fault": "Heel rolling sideways (inversion/eversion) instead of pushing straight up",
+        "faultPl": "Pięta uciekająca w bok (inwersja/ewersja) zamiast wypychania prosto w górę",
+        "cause": "Weak ankle stabilizers under unilateral load, or foot placement not aligned under the knee",
+        "causePl": "Słabe stabilizatory stawu skokowego pod obciążeniem unilateralnym lub niewłaściwe ustawienie stopy pod kolanem",
+        "cue": "Drive straight up through the big toe AND second toe evenly. Foot must track in line with the knee — no rolling.",
+        "cuePl": "Wypychaj prosto w górę równomiernie przez paluch I drugi palec. Stopa musi pracować w linii kolana — bez przekrzywiania."
+      },
+      {
+        "fault": "Asymmetric work — doing more reps or heavier load on the dominant leg",
+        "faultPl": "Asymetryczna praca — większa liczba powtórzeń lub większy ciężar na nodze dominującej",
+        "cause": "Habit of starting with the strong leg and grinding extra reps, then settling for fewer on the weak side",
+        "causePl": "Nawyk zaczynania od silniejszej nogi i wyciągania dodatkowych powtórzeń, a potem zadowalania się mniejszą liczbą po słabszej stronie",
+        "cue": "Always start the set with the WEAKER leg, then match the exact rep count on the stronger leg. This is the whole point of single-leg work.",
+        "cuePl": "Zawsze zaczynaj serię od SŁABSZEJ nogi, a następnie wykonaj dokładnie tę samą liczbę powtórzeń mocniejszą. To cały sens pracy jednonóż."
+      }
+    ],
+    "breathing": "Exhale during the concentric phase (pressing the platform away). Inhale during the eccentric phase (lowering into the stretch). Maintain a light core brace throughout to support the spine pressed into the pad.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wypychanie platformy). Wdech w fazie ekscentrycznej (opuszczanie w rozciąg). Utrzymuj lekkie napięcie brzucha przez cały czas, aby wspierać kręgosłup przyciśnięty do oparcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Single-leg loading doubles the stress on the Achilles compared to bilateral. Avoid heavy loads and deep eccentrics during the irritable phase. Reduce ROM (do not drop heel below neutral), use moderate load with slow controlled tempo. Discontinue if pain exceeds 3/10 during or after sets.",
+      "modificationPl": "Obciążenie jednonóż podwaja stres na ścięgnie Achillesa w porównaniu do wersji obunóż. Unikaj dużych ciężarów i głębokich faz negatywnych w fazie podrażnienia. Ogranicz zakres ruchu (nie opuszczaj pięty poniżej poziomu neutralnego), używaj umiarkowanego obciążenia z powolnym tempem. Przerwij jeśli ból przekracza 3/10 w trakcie lub po seriach.",
+      "alternative": "sled-calf-press-on-leg-press"
+    },
+    {
+      "condition": "knee_hyperextension_or_instability",
+      "severity": "modify",
+      "modification": "Pressing with an unlocked but extended knee under heavy load can stress an unstable knee. Keep a more pronounced knee bend (10-15 degrees), reduce load, and avoid full lockout cues. If hyperextension is habitual or knee gives way, switch exercise.",
+      "modificationPl": "Wypychanie z kolanem w pozycji bliskiej wyprostu pod dużym obciążeniem może obciążać niestabilne kolano. Utrzymuj bardziej wyraźne ugięcie (10-15 stopni), zmniejsz ciężar i unikaj pełnego wyprostu. W razie nawykowego przeprostu lub uciekania kolana zmień ćwiczenie.",
+      "alternative": "single-leg-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not perform under unilateral load during the acute phase — risk of re-injury is high. Once cleared by a physio, return with bodyweight bilateral calf raises and gradually progress through bilateral sled press before attempting single-leg loading again.",
+      "modificationPl": "Nie wykonuj pod obciążeniem unilateralnym w fazie ostrej — ryzyko nawrotu kontuzji jest wysokie. Po wygojeniu przez fizjoterapeutę wracaj od wspięć z masą własnego ciała na obu nogach i stopniowo przechodź przez wersję obunóż na sledzie, zanim wrócisz do obciążenia jednonóż.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "ankle_instability_chronic",
+      "severity": "modify",
+      "modification": "Chronic ankle instability (recurrent sprains) makes single-leg plantarflexion under load risky due to lateral foot roll. Reduce load significantly, focus on slow tempo with feet aligned, or work on stabilizer strength first (bilateral version, banded ankle work) before progressing.",
+      "modificationPl": "Przewlekła niestabilność stawu skokowego (nawracające skręcenia) sprawia, że jednonożne zgięcie podeszwowe pod obciążeniem jest ryzykowne ze względu na boczne uciekanie stopy. Znacznie zmniejsz obciążenie, postaw na powolne tempo z prawidłowym ustawieniem stopy lub najpierw wzmocnij stabilizatory (wersja obunóż, praca z taśmą na stawie skokowym) przed progresją.",
+      "alternative": "sled-calf-press-on-leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per leg (hypertrophy) | 4x12-20 per leg (volume/pump) | 3x8-10 per leg (heavy strength)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "sled-one-leg-calf-press-on-leg-press.gif",
+    "frames_extracted": [
+      "frames/sled-one-leg-calf-press-on-leg-press/frame_0_start.png",
+      "frames/sled-one-leg-calf-press-on-leg-press/frame_1_early.png",
+      "frames/sled-one-leg-calf-press-on-leg-press/frame_2_mid.png",
+      "frames/sled-one-leg-calf-press-on-leg-press/frame_3_late.png",
+      "frames/sled-one-leg-calf-press-on-leg-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/sled-one-leg-calf-press-on-leg-press",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (frame_0_start, frame_2_mid, frame_4_end). Frame 0: model leży na sledzie pod kątem 45 stopni z plecami opartymi o pad, JEDNA noga (prawa) na platformie z śródstopiem przy dolnej krawędzi i piętą zwisającą, druga noga zdjęta całkowicie z platformy i odłożona na bok (zgięte kolano poza torem ruchu), łydka roboczej nogi podświetlona na czerwono — pozycja wyjściowa (heel dropped, stretch). Frame 2: platforma wypchnięta o kilka cm wyżej, stopa w zgięciu podeszwowym, łydka w pełnym skurczu, kolano nadal niemal wyprostowane (ten sam kąt co w frame 0) — szczyt ruchu. Frame 4: powrót do pozycji wyjściowej z piętą poniżej palców. Drugie kolano przez cały ruch poza platformą — jednoznaczna identyfikacja jako UNILATERAL calf press. Kolano nogi roboczej praktycznie nie zmienia kąta — pracuje tylko staw skokowy. Klasyfikacja: mechanic=isolation, plane=sagittal, force=push, laterality=unilateral, kinetic_chain=open. Muscle_intensity: gastrocnemius P9 (wyprostowane kolano = wydłużony i aktywny gastrocnemius — kluczowa różnica vs seated calf), soleus P7 (asystuje), tibialis_posterior S4 (stabilizacja sklepienia stopy pod obciążeniem unilateralnym). Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego. Yuhonas i glowupp nie mają tej wariacji jednonóż. Difficulty 5/10 — wymaga umiejętności bilateralnej wersji jako prerequisite, większe wymagania stabilizacyjne, zaleceń dla intermediate.",
+
+  "tags": ["bodybuilding", "calves", "gastrocnemius", "soleus", "isolation", "unilateral", "single_leg", "leg_press", "sled", "lower_body", "lower_legs", "machine"]
+}

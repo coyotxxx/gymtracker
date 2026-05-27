@@ -1,0 +1,204 @@
+{
+  "id": "barbell-high-bar-squat",
+  "name": "Barbell High-Bar Squat",
+  "namePl": "Przysiad ze sztangą high-bar (na trapezach)",
+  "aliases": ["high bar squat", "high-bar back squat", "olympic squat", "olympic back squat", "high bar back squat"],
+  "aliasesPl": ["przysiad high-bar", "przysiad olimpijski", "high-bar back squat", "przysiad na trapezach", "przysiad ze sztangą wysoko"],
+
+  "description": "Bilateral compound squat with the barbell positioned high on the upper trapezius (at the base of the neck), favoured by olympic weightlifters. The high bar placement forces a more upright torso and shifts mechanical emphasis toward the quadriceps compared to the low-bar variation. Allows greater squat depth (typically rock-bottom) while maintaining a vertical bar path over mid-foot. A fundamental movement for building leg size, strength and athletic squat depth.",
+  "descriptionPl": "Dwustronny złożony przysiad ze sztangą ułożoną wysoko na górnej części trapezów (u podstawy karku), preferowany przez sztangistów olimpijskich. Wysokie ułożenie gryfu wymusza bardziej pionowy tułów i przesuwa nacisk mechaniczny w stronę czworogłowych w porównaniu do wariantu low-bar. Pozwala na większą głębokość (zwykle do samego dołu) przy zachowaniu pionowej ścieżki gryfu nad środkiem stopy. Fundament budowania masy nóg, siły i sportowej głębokości przysiadu.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load plates symmetrically and secure with collars.",
+    "Step under the bar and position it HIGH on the upper trapezius — at the base of the neck, sitting on the meaty shelf created by squeezing the upper back. Not on the cervical spine.",
+    "Grip the bar slightly wider than shoulder-width, drive elbows DOWN and slightly forward (not flared back). This locks the bar into the traps.",
+    "Unrack by extending the legs, take two short controlled steps back. Set feet shoulder-width with toes turned out 10-25°.",
+    "Brace the core hard, big breath in (Valsalva), chest up, eyes forward or slightly down.",
+    "Initiate the descent by breaking at the knees AND hips simultaneously — knees travel forward over the toes, torso stays more upright than in a low-bar squat.",
+    "Descend until your hip crease is below the top of the knee (parallel) or deeper into the hole — full ROM is the goal in high-bar style.",
+    "Drive up by pushing the floor away through the whole foot. Keep the torso angle stable, knees tracking over toes, chest UP.",
+    "Maintain a vertical bar path directly over mid-foot throughout the entire rep. Exhale near lockout, reset breath at the top."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj talerze symetrycznie i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją WYSOKO na górnej części trapezów — u podstawy karku, na mięsistej półce powstałej przez ściągnięcie górnej części pleców. NIE na kręgach szyjnych.",
+    "Złap gryf nieco szerzej niż na szerokość barków, łokcie skieruj W DÓŁ i lekko do przodu (nie odchylaj ich do tyłu). To blokuje gryf na trapezach.",
+    "Wyciągnij sztangę prostując nogi, cofnij się 2 krótkimi kontrolowanymi krokami. Stopy na szerokość barków, palce skierowane na zewnątrz 10-25°.",
+    "Mocno napnij brzuch, weź głęboki wdech (Valsalva), klatka do góry, wzrok przed siebie lub lekko w dół.",
+    "Rozpocznij schodzenie zginając jednocześnie kolana I biodra — kolana wędrują do przodu nad palce stóp, tułów pozostaje bardziej pionowy niż w przysiadzie low-bar.",
+    "Schodź aż linia bioder zejdzie poniżej szczytu kolana (parallel) lub głębiej — w stylu high-bar celem jest pełen zakres ruchu.",
+    "Wstań napierając przez całą stopę, wypychając podłogę. Utrzymuj kąt tułowia, kolana podążają za palcami stóp, klatka W GÓRZE.",
+    "Utrzymuj pionową ścieżkę gryfu dokładnie nad środkiem stopy przez całe powtórzenie. Wydech blisko zakończenia, reset oddechu na górze."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "erector_spinae"],
+    "stabilizers": ["core", "calves", "upper_back", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "adductors": "S6",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "calves": "T3",
+    "upper_back": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "front-squat-bodyweight"],
+    "progression_to": ["barbell-front-squat", "pause-back-squat", "tempo-back-squat", "pin-squat", "box-squat", "barbell-overhead-squat"],
+    "alternatives": ["barbell-back-squat", "barbell-front-squat", "safety-bar-squat", "smith-machine-squat", "leg-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar HIGH on upper traps, not on the cervical spine",
+      "Elbows down and slightly forward — pin the bar into the shelf",
+      "Feet shoulder-width, toes out 10-25°",
+      "Big breath, brace 360° around the spine",
+      "Chest up, eyes forward, neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Sztanga WYSOKO na górnej części trapezów, NIE na kręgach szyjnych",
+      "Łokcie w dół i lekko do przodu — wbij gryf w półkę trapezów",
+      "Stopy na szerokość barków, palce na zewnątrz 10-25°",
+      "Głęboki wdech, napięcie 360° wokół kręgosłupa",
+      "Klatka w górze, wzrok przed siebie, neutralna szyja"
+    ],
+    "execution_cues": [
+      "Knees travel forward over toes — high-bar is more quad-dominant",
+      "Stay vertical — torso more upright than low-bar squat",
+      "Bar stays directly over mid-foot",
+      "Descend to full depth (hip crease below knee or deeper)",
+      "Drive the floor away — push with the whole foot, not just heels"
+    ],
+    "execution_cues_pl": [
+      "Kolana wędrują do przodu nad palce — high-bar mocniej angażuje czworogłowe",
+      "Pozostań pionowo — tułów bardziej pionowy niż w low-bar",
+      "Gryf cały czas dokładnie nad środkiem stopy",
+      "Zejdź do pełnej głębokości (linia bioder poniżej kolana lub głębiej)",
+      "Wypchnij podłogę — naciśnij całą stopą, nie tylko piętami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee valgus (knees cave in)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius, weak hip external rotators, or load too heavy",
+        "causePl": "Słabe pośladkowe średnie, słabe rotatory zewnętrzne biodra, lub zbyt duży ciężar",
+        "cue": "Spread the floor — push your knees out toward your pinky toes throughout the rep",
+        "cuePl": "Rozepchnij podłogę — wypchnij kolana na zewnątrz w kierunku małych palców przez całe powtórzenie"
+      },
+      {
+        "fault": "Forward lean / good morning out of the hole",
+        "faultPl": "Pochylenie do przodu / wyjście jak good morning",
+        "cause": "Weak quads relative to posterior chain, poor ankle dorsiflexion, or losing upper back tightness",
+        "causePl": "Słabe czworogłowe względem tylnego łańcucha, słaba dorsiflexja stawu skokowego, lub utrata napięcia górnej części pleców",
+        "cue": "Drive your chest UP first, then stand. Keep elbows under the bar.",
+        "cuePl": "Najpierw popchnij klatkę W GÓRĘ, dopiero potem wstań. Trzymaj łokcie pod gryfem."
+      },
+      {
+        "fault": "Butt wink (lumbar tuck at bottom)",
+        "faultPl": "Butt wink (podwijanie miednicy na dole)",
+        "cause": "Going below individual hip mobility limit, especially with narrow stance or FAI",
+        "causePl": "Schodzenie poniżej indywidualnego limitu mobilności bioder, zwłaszcza przy wąskim rozstawie lub FAI",
+        "cue": "Stop 1-2 cm above the depth where tuck happens. Widen stance slightly. Work mobility separately.",
+        "cuePl": "Zatrzymaj się 1-2 cm nad głębokością gdzie miednica się podwija. Lekko poszerz rozstaw stóp. Pracuj nad mobilnością osobno."
+      },
+      {
+        "fault": "Heel rise at the bottom",
+        "faultPl": "Unoszenie pięt na dole",
+        "cause": "Poor ankle dorsiflexion, wrong footwear, or pelvis shifting forward",
+        "causePl": "Słaba dorsiflexja stawu skokowego, niewłaściwe obuwie, lub miednica przesuwająca się do przodu",
+        "cue": "Lifting shoes with elevated heel. Or limit depth until ankle mobility improves. Drive whole foot into the floor.",
+        "cuePl": "Buty do podnoszenia z podniesioną piętą. Lub ogranicz głębokość do czasu poprawy mobilności. Wciskaj całą stopę w podłogę."
+      },
+      {
+        "fault": "Bar position too high — sitting on cervical spine",
+        "faultPl": "Gryf za wysoko — leży na kręgach szyjnych",
+        "cause": "Not creating the upper-trap shelf, weak upper back, or insufficient cue from coach",
+        "causePl": "Brak utworzenia półki na trapezach, słabe górne plecy, lub brak korekty od trenera",
+        "cue": "Squeeze your upper back HARD before unracking — that creates the muscle shelf for the bar to sit on.",
+        "cuePl": "MOCNO ściśnij górne plecy przed wyjęciem gryfu — tworzy się mięśniowa półka na której siądzie gryf."
+      }
+    ],
+    "breathing": "Big breath at the top, brace hard (Valsalva). Hold through the descent and the sticking point. Exhale near lockout, reset breath standing.",
+    "breathingPl": "Głęboki wdech na górze, mocne napięcie (Valsalva). Wstrzymaj przez całe schodzenie i najtrudniejszy punkt powrotu. Wydech blisko końca, reset oddechu w pozycji stojącej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid axial spinal loading entirely until cleared.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj osiowego obciążania kręgosłupa do czasu odzyskania sprawności.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "knee_meniscus_or_patellar_tendinopathy",
+      "severity": "modify",
+      "modification": "High-bar emphasizes knee flexion more than low-bar — limit depth to pain-free range or switch to a knee-friendlier variation.",
+      "modificationPl": "High-bar bardziej obciąża zgięcie kolana niż low-bar — ogranicz głębokość do zakresu bez bólu lub zmień na wariant przyjazny kolanom.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "shoulder_mobility_restriction",
+      "severity": "modify",
+      "modification": "Holding the bar high requires shoulder external rotation. If painful, widen grip, use a thumbless grip, or use safety squat bar.",
+      "modificationPl": "Trzymanie gryfu wysoko wymaga rotacji zewnętrznej barku. Jeśli boli, poszerz chwyt, używaj chwytu bezkciukowego lub zastosuj safety squat bar.",
+      "alternative": "safety-bar-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Deep high-bar squats can aggravate FAI. Test wider stance and slight toe-out, or limit depth to above-parallel.",
+      "modificationPl": "Głębokie high-bar mogą drażnić FAI. Wypróbuj szerszy rozstaw i lekko bardziej rozłożone palce, lub ogranicz głębokość do parallel.",
+      "alternative": "sumo-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (strength) | 3-4x6-10 (hypertrophy) | 3-5x3-5 (heavy strength) | 4x8-12 (volume/quad emphasis)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-high-bar-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-high-bar-squat/frame_0_start.png",
+      "frames/barbell-high-bar-squat/frame_1_early.png",
+      "frames/barbell-high-bar-squat/frame_2_mid.png",
+      "frames/barbell-high-bar-squat/frame_3_late.png",
+      "frames/barbell-high-bar-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-high-bar-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 i 4 (góra): sztanga wyraźnie WYSOKO na trapezach u podstawy karku — klasyczna pozycja high-bar (nie na tylnych deltach jak low-bar). Klatka 2 (dół): bardzo głęboki przysiad, biodra znacznie poniżej parallel, tułów stosunkowo pionowy — sygnatura stylu high-bar olimpijskiego. Mięśnie podświetlone (czerwony) na ilustracji: bardzo mocno czworogłowe (głównie vastus), pośladki, dwugłowe i przywodziciele — pasuje do mechaniki high-bar (większy nacisk na quad niż low-bar). Wszystkie pola PL napisane od zera, nie tłumaczone z angielskiego.",
+
+  "tags": ["olympic_weightlifting", "powerlifting", "compound", "lower_body", "quad_dominant", "strength_fundamental", "barbell", "high_bar"]
+}

@@ -1,0 +1,195 @@
+{
+  "id": "lever-seated-crunch",
+  "name": "Lever Seated Crunch",
+  "namePl": "Crunch w maszynie siedząc",
+  "aliases": ["seated ab machine", "ab crunch machine", "selectorized ab crunch", "plate-loaded ab crunch", "seated abdominal machine"],
+  "aliasesPl": ["spinanie brzucha na maszynie", "maszyna do brzucha siedząc", "ab maszyna", "crunch na ab maszynie", "spinanie tułowia w maszynie siedząc"],
+
+  "description": "Machine-based isolation exercise for the rectus abdominis performed in a seated position. The lifter sits with the back supported, grips overhead handles (or rests forearms on a chest pad) and curls the torso forward against a weighted lever, producing pure spinal flexion. Because the trunk is loaded and stabilized by the machine, hip-flexor contribution is minimized compared with sit-ups — making this one of the most direct overload tools for the abs and a useful option for hypertrophy work in the 8–15 rep range.",
+  "descriptionPl": "Izolowane ćwiczenie na mięsień prosty brzucha wykonywane w maszynie w pozycji siedzącej. Ćwiczący siedzi z plecami opartymi o oparcie, chwyta uchwyty nad głową (lub kładzie przedramiona na padzie na klatce) i zwija tułów do przodu przeciwko obciążonej dźwigni, wykonując czyste zgięcie kręgosłupa. Dzięki podparciu i prowadzeniu przez maszynę udział zginaczy biodra jest minimalny w porównaniu z brzuszkami — co czyni to ćwiczenie jednym z najlepszych narzędzi do progresywnego obciążania brzucha i pracy hipertroficznej w zakresie 8–15 powtórzeń.",
+
+  "instructions": [
+    "Set the seat height so that the upper chest pad (or overhead handles) sits comfortably across the upper chest. Select a moderate weight.",
+    "Sit down with your back flat against the backrest, place your feet under the footpads, and grip the overhead handles with elbows pointing forward and down.",
+    "Sit tall, brace your core, take a small breath in. This is the starting position — torso upright, slight tension already on the cable.",
+    "Exhale and crunch your ribcage down toward your pelvis by flexing the spine, pulling the handles down with the abs — not the arms. The shoulders curl forward, the lower back stays in contact with the pad.",
+    "Pause for 1 second at the bottom of the rep when the abs are maximally shortened. Do not let the hips do the work.",
+    "Inhale and return under control to the upright starting position. Stop just before the weight stack touches down to keep tension on the abs."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska tak, by pad na klatce (lub uchwyty nad głową) wygodnie spoczywał na górnej części klatki piersiowej. Wybierz umiarkowany ciężar.",
+    "Usiądź z plecami płasko opartymi o oparcie, włóż stopy pod podkładki i chwyć uchwyty nad głową — łokcie skierowane do przodu i w dół.",
+    "Wyprostuj się, napnij brzuch, lekki wdech. To pozycja wyjściowa — tułów pionowo, lekkie napięcie już na linie.",
+    "Wydech i zwiń klatkę piersiową w stronę miednicy zginając kręgosłup — uchwyty ciągniesz brzuchem, nie ramionami. Barki idą do przodu, dolne plecy pozostają w kontakcie z padem.",
+    "Zatrzymaj się na 1 sekundę w dolnej części powtórzenia, gdy brzuch jest maksymalnie skrócony. Nie pozwól pracować biodrom.",
+    "Wdech i wróć kontrolowanym ruchem do pozycji wyjściowej. Zatrzymaj się tuż przed zetknięciem stosu z bazą, by utrzymać napięcie na brzuchu."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques", "hip_flexors"],
+    "stabilizers": ["transverse_abdominis", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "obliques": "S6",
+    "hip_flexors": "S4",
+    "transverse_abdominis": "T4",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["ab_crunch_machine"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["crunch", "plank"],
+    "progression_to": ["cable-crunch", "weighted-decline-crunch", "hanging-leg-raise"],
+    "alternatives": ["cable-crunch", "crunch", "decline-crunch", "machine-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height so the chest pad sits on the upper chest",
+      "Back glued to the backrest, hips deep in the seat",
+      "Feet anchored under the footpads — not pushing hard",
+      "Grip handles with elbows down and forward",
+      "Take half a breath in, brace abs before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska tak, by pad spoczywał na górnej części klatki",
+      "Plecy przyklejone do oparcia, biodra głęboko w siedzisku",
+      "Stopy zakotwiczone pod podkładkami — nie napieraj na nie mocno",
+      "Chwyć uchwyty z łokciami w dół i do przodu",
+      "Pół wdechu, napnij brzuch przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Crunch ribs toward hips — think 'shorten the abs'",
+      "Exhale forcefully through the concentric — squeeze at the bottom",
+      "Pull with the abs, not the arms — hands just hold the handle",
+      "Spine rounds — chin tucks slightly to the chest",
+      "Control the eccentric — 2 seconds back to the top, no bounce"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj żebra w stronę bioder — myśl 'skróć brzuch'",
+      "Mocny wydech w fazie koncentrycznej — ścisnij w dolnym punkcie",
+      "Ciągnij brzuchem, nie ramionami — dłonie tylko trzymają uchwyt",
+      "Kręgosłup zaokrąglony — broda lekko do klatki",
+      "Kontroluj fazę ekscentryczną — 2 sekundy z powrotem do góry, bez odbicia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with the arms instead of the abs",
+        "faultPl": "Ciągnięcie ramionami zamiast brzuchem",
+        "cause": "Grip too tight, mind-muscle connection focused on hands instead of abdominal wall",
+        "causePl": "Zbyt mocny chwyt, koncentracja na dłoniach zamiast na ścianie brzucha",
+        "cue": "Loosen the grip, drop the elbows passively, drive the movement from the sternum down",
+        "cuePl": "Rozluźnij chwyt, łokcie opadają biernie, ruch napędzaj od mostka w dół"
+      },
+      {
+        "fault": "Hip flexion taking over (folding at the hips, not the spine)",
+        "faultPl": "Praca zginaczy biodra zamiast zginania kręgosłupa (zgięcie w biodrach)",
+        "cause": "Trying to move more weight than the abs can handle; thighs lift the footpad up",
+        "causePl": "Próba podniesienia większego ciężaru niż brzuch jest w stanie udźwignąć; uda unoszą podkładkę",
+        "cue": "Reduce the weight, keep thighs heavy on the seat, focus on rounding the upper back not closing the hips",
+        "cuePl": "Zmniejsz ciężar, uda ciężko opadnięte na siedzisko, skup się na zaokrąglaniu górnych pleców, nie na zamykaniu bioder"
+      },
+      {
+        "fault": "Lower back leaving the backrest at the top",
+        "faultPl": "Dolne plecy odrywają się od oparcia w górnej pozycji",
+        "cause": "Letting the weight stack pull you up too far on the eccentric — into spinal extension",
+        "causePl": "Ciężar wyciąga cię w górę za daleko w fazie ekscentrycznej — kręgosłup wchodzi w wyprost",
+        "cue": "Stop the eccentric just before lumbar arch — keep the lower back pressed to the pad throughout",
+        "cuePl": "Zatrzymaj fazę ekscentryczną tuż przed łukiem lędźwiowym — dolne plecy dociśnięte do oparcia przez cały ruch"
+      },
+      {
+        "fault": "Half reps / cutting the bottom of the range",
+        "faultPl": "Połowiczne powtórzenia / skracanie dolnej fazy",
+        "cause": "Ego — too much weight, can't reach full spinal flexion",
+        "causePl": "Ego — za duży ciężar, brak możliwości dojścia do pełnego zgięcia kręgosłupa",
+        "cue": "Lower the weight until you can crunch all the way down with a 1-sec squeeze at the bottom",
+        "cuePl": "Zmniejsz ciężar tak, byś mógł zwinąć się do końca z 1-sekundowym ściskiem w dolnym punkcie"
+      },
+      {
+        "fault": "Neck cranking forward / chin jutting out",
+        "faultPl": "Wypychanie szyi do przodu / podbródek wystaje",
+        "cause": "Compensation for weak abs by using neck flexors, or chasing handle path with the head",
+        "causePl": "Kompensacja słabego brzucha przez zginacze szyi, lub podążanie głową za torem uchwytu",
+        "cue": "Keep chin softly tucked, look at the belly button — head moves only with the upper spine",
+        "cuePl": "Trzymaj brodę lekko podwiniętą, patrz na pępek — głowa porusza się tylko z górnym kręgosłupem"
+      }
+    ],
+    "breathing": "Inhale at the top in the upright position. Forceful exhale through the entire concentric crunch — empty the lungs to maximize rectus abdominis contraction. Inhale on the eccentric return.",
+    "breathingPl": "Wdech w górnej pozycji, pionowo. Mocny wydech przez całą fazę koncentryczną (zwijanie) — opróżnij płuca, by zmaksymalizować skurcz mięśnia prostego brzucha. Wdech w fazie ekscentrycznej (powrót)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated loaded spinal flexion is contraindicated in lumbar disc protrusion (McGill protocol). Switch to anti-extension and anti-rotation core work.",
+      "modificationPl": "Powtarzane zginanie kręgosłupa pod obciążeniem jest przeciwwskazane przy przepuklinie krążka lędźwiowego (protokół McGilla). Przejdź na ćwiczenia anty-ekstensji i anty-rotacji.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion can aggravate acute lumbar pain. Train abs isometrically (planks, dead bug) until pain-free.",
+      "modificationPl": "Zginanie kręgosłupa pod obciążeniem może nasilać ostry ból lędźwi. Trenuj brzuch izometrycznie (deska, dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Loaded rectus crunching can worsen midline separation (post-partum or otherwise). Restore deep core function with transverse-focused work first.",
+      "modificationPl": "Zwijanie mięśnia prostego pod obciążeniem może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Najpierw odbuduj funkcję głębokiego brzucha pracą na mięśniu poprzecznym.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Keep chin neutral, do not crane the neck forward to chase the handle. If neck flares up, use a chest-pad-only machine variant or switch to cable crunches with neutral neck.",
+      "modificationPl": "Trzymaj brodę w neutralnej pozycji, nie wyciągaj szyi do przodu za uchwytem. Jeśli pojawia się ból karku, użyj wariantu maszyny tylko z padem na klatce lub przejdź na crunche na wyciągu z neutralną szyją.",
+      "alternative": "cable-crunch"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x15-20 (endurance) | 4x6-8 (heavy overload)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-seated-crunch.gif",
+    "frames_extracted": [
+      "frames/lever-seated-crunch/frame_0_start.png",
+      "frames/lever-seated-crunch/frame_1_early.png",
+      "frames/lever-seated-crunch/frame_2_mid.png",
+      "frames/lever-seated-crunch/frame_3_late.png",
+      "frames/lever-seated-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/lever-seated-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): ćwiczący siedzi pionowo w maszynie z plecami opartymi o oparcie, dłonie chwytają górne uchwyty po obu stronach głowy, kolana zgięte ~90°, stopy oparte o niższy pad — pozycja wyjściowa z lekkim napięciem na linie. Klatka 2 (mid): tułów zwinięty mocno do przodu, klatka piersiowa zbliżona do ud, kręgosłup w pełnym zgięciu, kolana lekko podchodzą do pad pod nogi (sprzężenie ramion), mięsień prosty brzucha mocno podświetlony na pomarańczowo — punkt szczytowego skurczu. Klatka 4 (end): powrót do pozycji pionowej, identyczna jak start. Ruch potwierdzony: czysty crunch tułowia przeciwko opo dźwigni — izolacja mięśnia prostego brzucha. Klasyfikacja: core_flexion (zgięcie kręgosłupa), isolation (1 staw — kręgosłup, ruch w kolanie jest sprzężony przez maszynę i pasywny), bilateral, plane=sagittal, force=both (pull w koncentrycznej, push przez pad — ćwiczący ciągnie uchwyty W DÓŁ przez tułów, ale jednocześnie pad na klatce pcha siłą oporu). Primary: rectus_abdominis P9. Secondary: obliques S6 (stabilizacja przy zgięciu), hip_flexors S4 (sprzężony ruch kolan). Stabilizers: transverse_abdominis T4, quadriceps T2. Equipment: ab_crunch_machine. Difficulty 3/10, beginner — maszyna prowadzi ruch, dobra opcja startowa do progresywnego obciążania brzucha. Nazwa PL: 'Crunch w maszynie siedząc' (z prompta), aliasy potoczne: 'spinanie brzucha na maszynie', 'ab maszyna'. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["machine", "isolation", "core", "abs", "gym", "hypertrophy", "beginner_friendly", "loaded_crunch"]
+}

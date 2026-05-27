@@ -1,0 +1,210 @@
+{
+  "id": "handstand",
+  "name": "Handstand",
+  "namePl": "Stanie na rękach",
+  "aliases": ["free handstand", "handstand hold", "hand balance", "HS"],
+  "aliasesPl": ["stanie na rękach", "stójka na rękach", "stójka", "handstand", "stanie na dłoniach"],
+
+  "description": "Advanced gymnastic static balance skill. You support the entire body upside down on your hands with arms fully extended, body stacked vertically — shoulders over hands, hips over shoulders, feet over hips. Pure isometric hold against gravity demanding shoulder strength, scapular control, core tension and fine balance from the fingers. The freestanding version (no wall, no support) is significantly harder than wall-assisted variants — it requires constant micro-corrections through the fingertips and wrists to stay vertical.",
+  "descriptionPl": "Zaawansowana statyczna umiejętność równoważna z gimnastyki. Utrzymujesz całe ciało do góry nogami na rękach z w pełni wyprostowanymi ramionami, ciało ułożone pionowo — barki nad dłońmi, biodra nad barkami, stopy nad biodrami. Czysta izometria przeciwko grawitacji wymagająca siły barków, kontroli łopatek, napięcia core i precyzyjnej równowagi z palców. Wersja wolno stojąca (bez ściany, bez podparcia) jest znacznie trudniejsza niż warianty przy ścianie — wymaga ciągłych mikro-korekcji palcami i nadgarstkami aby utrzymać pion.",
+
+  "instructions": [
+    "Place hands on the floor shoulder-width apart, fingers spread WIDE, fingertips actively gripping the floor.",
+    "From a standing or lunge position, kick one leg up while pushing the floor away with both arms.",
+    "As the body rotates over the hands, follow with the second leg and lock the hips into a vertical stack.",
+    "Press the floor away through the shoulders — full elevation (shoulders by the ears), elbows locked straight.",
+    "Stack the body line: shoulders directly over wrists, hips over shoulders, feet over hips. Toes pointed.",
+    "Engage the entire body: glutes squeezed, ribs tucked down (hollow body), legs together and straight.",
+    "Balance is controlled through the FINGERS — press fingertips down if falling forward, press palm heel down if falling backward.",
+    "Hold for prescribed time (5-60 seconds depending on level), then exit controlled: either cartwheel out to one side, or pike down softly to feet."
+  ],
+  "instructionsPl": [
+    "Ułóż dłonie na podłodze na szerokość barków, palce SZEROKO rozłożone, opuszki palców aktywnie chwytają podłogę.",
+    "Z pozycji stojącej lub wykroku odbij się jedną nogą w górę, jednocześnie odpychając podłogę obiema rękami.",
+    "Gdy ciało obraca się nad rękami, dodaj drugą nogę i ustaw biodra w pionowym stosie.",
+    "Odpychaj podłogę przez barki — pełna elewacja (barki przy uszach), łokcie zablokowane prosto.",
+    "Ułóż ciało w linii: barki dokładnie nad nadgarstkami, biodra nad barkami, stopy nad biodrami. Palce stóp wyciągnięte.",
+    "Napnij całe ciało: pośladki ściśnięte, żebra schowane w dół (hollow body), nogi razem i wyprostowane.",
+    "Równowagę kontrolujesz PALCAMI — naciskaj opuszkami gdy lecisz do przodu, naciskaj nasadą dłoni gdy lecisz do tyłu.",
+    "Utrzymaj przez zalecany czas (5-60 sekund w zależności od poziomu), następnie wyjdź kontrolowanie: gwiazdą w bok lub pikowaniem miękko na stopy."
+  ],
+
+  "classification": {
+    "movement_pattern": "gymnastics",
+    "force": "push",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "core", "triceps_brachii"],
+    "secondary": ["trapezius_upper", "serratus_anterior", "rectus_abdominis", "obliques", "erector_spinae", "forearms", "wrists"],
+    "stabilizers": ["rotator_cuff", "glutes", "quadriceps", "adductors", "rhomboids", "pectoralis_major"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P9",
+    "core": "P10",
+    "triceps_brachii": "P8",
+    "trapezius_upper": "S8",
+    "serratus_anterior": "S8",
+    "rectus_abdominis": "S8",
+    "obliques": "S7",
+    "erector_spinae": "S7",
+    "forearms": "S8",
+    "wrists": "S8",
+    "rotator_cuff": "S7",
+    "glutes": "S7",
+    "quadriceps": "S6",
+    "rhomboids": "S6",
+    "pectoralis_major": "S5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["wall", "parallettes", "gymnastic_mat", "chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["pike-push-up", "wall-handstand-hold", "wall-walk", "crow-pose", "pike-hold", "hollow-body-hold"],
+    "progression_to": ["handstand-push-up", "handstand-walk", "one-arm-handstand", "press-to-handstand", "planche", "handstand-on-parallettes"],
+    "alternatives": ["wall-handstand", "headstand", "forearm-stand", "pike-push-up", "feet-elevated-pike-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands shoulder-width, fingers spread WIDE",
+      "Fingertips actively grip the floor",
+      "Eyes on the floor between hands",
+      "Shoulders fully elevated — push the ground away",
+      "Brace core, squeeze glutes before kick-up"
+    ],
+    "setup_cues_pl": [
+      "Dłonie na szerokość barków, palce SZEROKO rozłożone",
+      "Opuszki palców aktywnie chwytają podłogę",
+      "Wzrok na podłogę między dłońmi",
+      "Barki maksymalnie uniesione — odpychaj podłogę",
+      "Napnij core, ściśnij pośladki przed wyrzutem"
+    ],
+    "execution_cues": [
+      "Stack: wrists, shoulders, hips, ankles in ONE vertical line",
+      "Elbows LOCKED — never let them bend",
+      "Hollow body: ribs down, posterior pelvic tilt",
+      "Balance with FINGERS — not by piking or arching",
+      "Push the floor AWAY — protraction, full elevation"
+    ],
+    "execution_cues_pl": [
+      "Stos: nadgarstki, barki, biodra, kostki w JEDNEJ pionowej linii",
+      "Łokcie ZABLOKOWANE — nigdy nie pozwól się zgiąć",
+      "Hollow body: żebra w dół, miednica w tyłopochyleniu",
+      "Równoważ PALCAMI — nie pikowaniem ani wygięciem",
+      "Odpychaj podłogę OD SIEBIE — protrakcja, pełna elewacja"
+    ],
+    "common_faults": [
+      {
+        "fault": "Banana back (excessive lumbar arch, ribs flared)",
+        "faultPl": "Wygięty kręgosłup (nadmierna lordoza lędźwiowa, wystające żebra)",
+        "cause": "Weak core/glutes, lack of hollow body strength, compensating shoulder mobility deficit with the lower back",
+        "causePl": "Słaby core/pośladki, brak siły hollow body, kompensowanie braku mobilności barku odcinkiem lędźwiowym",
+        "cue": "Squeeze glutes HARD, tuck the ribs down, posterior pelvic tilt. Train hollow body holds against the wall first.",
+        "cuePl": "Ściśnij MOCNO pośladki, schowaj żebra w dół, miednica w tyłopochyleniu. Trenuj najpierw hollow body przy ścianie."
+      },
+      {
+        "fault": "Bent arms during the hold",
+        "faultPl": "Zgięte ramiona podczas utrzymywania",
+        "cause": "Insufficient shoulder/triceps strength, collapsing under bodyweight, fear of falling",
+        "causePl": "Niewystarczająca siła barków/tricepsa, zapadanie się pod ciężarem ciała, strach przed upadkiem",
+        "cue": "Lock elbows from the start. If they bend you will collapse. Regress to pike push-ups and wall handstands.",
+        "cuePl": "Zablokuj łokcie od początku. Jeśli się zegną — runiesz. Cofnij się do pike push-ups i wall handstands."
+      },
+      {
+        "fault": "Shoulders not fully open (no elevation/protraction)",
+        "faultPl": "Barki niepełnie otwarte (brak elewacji/protrakcji)",
+        "cause": "Limited shoulder flexion mobility, weak serratus, lack of overhead pressing pattern",
+        "causePl": "Ograniczona mobilność zgięcia barku, słaby serratus, brak wzorca pchania nad głową",
+        "cue": "Push the ground AWAY — shoulders by your ears. Pre-train overhead mobility and active hangs daily.",
+        "cuePl": "Odpychaj podłogę OD SIEBIE — barki przy uszach. Trenuj wcześniej mobilność nad głową i active hangs codziennie."
+      },
+      {
+        "fault": "Falling forward (overshooting the balance point)",
+        "faultPl": "Padanie do przodu (przekraczanie punktu równowagi)",
+        "cause": "Too aggressive kick-up, not using fingertips to brake, no balance training",
+        "causePl": "Zbyt agresywny wyrzut, brak hamowania opuszkami palców, brak treningu równowagi",
+        "cue": "Press fingertips into the floor to claw back. Practice controlled kick-ups against a wall first.",
+        "cuePl": "Naciskaj opuszkami palców aby ściągnąć się z powrotem. Trenuj najpierw kontrolowane wyrzuty przy ścianie."
+      },
+      {
+        "fault": "Hands too close or too far apart",
+        "faultPl": "Dłonie za blisko lub za daleko od siebie",
+        "cause": "No consistent setup routine, copying others without checking own anatomy",
+        "causePl": "Brak stałej rutyny ustawienia, kopiowanie innych bez sprawdzenia własnej anatomii",
+        "cue": "Hands EXACTLY shoulder-width — too narrow = unstable, too wide = leaks shoulder strength. Mark the floor.",
+        "cuePl": "Dłonie DOKŁADNIE na szerokość barków — za wąsko = brak stabilności, za szeroko = strata siły z barków. Oznacz podłogę."
+      }
+    ],
+    "breathing": "Inhale and brace BEFORE kick-up. During the hold: short, shallow nasal breaths keeping core rigid — no deep belly breathing or you will lose hollow body and fall. Exhale on the way down. Never hold breath the entire hold.",
+    "breathingPl": "Wdech i napięcie PRZED wyrzutem. Podczas utrzymywania: krótkie, płytkie oddechy nosem przy sztywnym core — żadnego głębokiego brzusznego oddechu lub stracisz hollow body i upadniesz. Wydech podczas zejścia. Nigdy nie wstrzymuj oddechu przez cały hold."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "avoid",
+      "modification": "Full bodyweight on wrists in extension is extremely demanding. Stop until pain-free. Build wrist prep with prehab routine (wrist rolls, prone planche, finger push-ups), or use parallettes for neutral wrist.",
+      "modificationPl": "Pełen ciężar ciała na nadgarstkach w wyproście jest wymagający. Wstrzymaj do ustąpienia bólu. Buduj nadgarstki prehabem (rolowanie, planche prone, push-up na palcach) lub użyj parallettes dla neutralnego nadgarstka.",
+      "alternative": "handstand-on-parallettes"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Full overhead loading requires healthy shoulder flexion and serratus function. Address impingement first with prehab, scapular work and mobility.",
+      "modificationPl": "Pełne obciążenie nad głową wymaga zdrowego zgięcia barku i pracy serratus. Najpierw zadbaj o konflikt barkowy prehabem, pracą łopatek i mobilnością.",
+      "alternative": "pike-push-up"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "avoid",
+      "modification": "Inverted position spikes intracranial blood pressure significantly. Avoid until blood pressure is medically controlled. Stick to upright pressing variants.",
+      "modificationPl": "Pozycja odwrócona znacznie podnosi ciśnienie wewnątrzczaszkowe. Unikaj do medycznej kontroli ciśnienia. Trzymaj się wariantów pchania w pozycji stojącej.",
+      "alternative": "pike-push-up"
+    },
+    {
+      "condition": "vertigo",
+      "severity": "avoid",
+      "modification": "Inverted positions trigger vestibular instability and risk of falling. Replace with feet-on-ground pressing patterns until vestibular system stable.",
+      "modificationPl": "Pozycja odwrócona wywołuje niestabilność błędnika i ryzyko upadku. Zastąp wariantami pchania ze stopami na podłodze do ustabilizowania błędnika.",
+      "alternative": "pike-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x10-30s hold | EMOM 5-10x15-30s | praktyka codzienna 5-15min akumulacji",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "handstand.gif",
+    "frames_extracted": [
+      "frames/handstand/frame_0_start.png",
+      "frames/handstand/frame_1_early.png",
+      "frames/handstand/frame_2_mid.png",
+      "frames/handstand/frame_3_late.png",
+      "frames/handstand/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/handstand"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frames pokazują przejście ze stania (frame 0/4) do pełnej stójki na rękach (frame 2) — ciało pionowo do góry nogami, barki nad dłońmi, biodra nad barkami, stopy nad biodrami. Czysta izometria — frames demonstrują fazę kick-up i hold. Frame 2 podświetla najmocniej zaangażowane: barki przednie i boczne (P10/P9 — pełne obciążenie nad głową), core (P10 — kontrola hollow body przy odwróceniu), triceps (P8 — łokcie zablokowane). Wysokie zaangażowanie przedramion/nadgarstków (S8) wynika z balansu palcami. Movement pattern: gymnastics (klasyczna umiejętność gimnastyczna). Mechanic: isometric. Difficulty 9/10 — wolne stanie wymaga lat pracy z progresji wall handstand → wall walk → freestanding. PL nazwa 'Stanie na rękach' to poprawny standard polski; potoczne 'stójka' też w użyciu.",
+
+  "tags": ["calisthenics", "bodyweight", "gymnastics", "static_hold", "isometric", "inverted", "balance", "shoulders", "core", "advanced", "skill", "hollow_body", "straight_arm_strength", "vertical_press"]
+}

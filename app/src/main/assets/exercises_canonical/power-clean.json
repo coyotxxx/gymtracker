@@ -1,0 +1,210 @@
+{
+  "id": "power-clean",
+  "name": "Power Clean",
+  "namePl": "Power clean (zarzut na podchwyt)",
+  "aliases": ["barbell power clean", "power clean from floor"],
+  "aliasesPl": ["zarzut sztangi (power clean)", "zarzut bez przysiadu", "zarzut na półprzysiadzie", "power clean ze sztangą"],
+
+  "description": "A classic Olympic-style total-body explosive lift. The barbell is pulled from the floor and caught in the front rack position in a quarter-squat (not a full squat) — this is what separates the POWER clean from the (full) squat clean. The movement chains a deadlift-style first pull, an aggressive triple extension of hips/knees/ankles (the 'jump'), a fast pull under the bar, and a stable catch on the front delts. Trains maximal rate of force development, posterior chain power, full-body coordination and bar speed. A staple in athletic performance, weightlifting and CrossFit programming.",
+  "descriptionPl": "Klasyczny ruch olimpijski angażujący całe ciało, wykonywany eksplozywnie. Sztanga jest pociągana z ziemi i łapana w pozycji front rack w półprzysiadzie (a NIE w pełnym przysiadzie) — to właśnie odróżnia POWER clean od pełnego squat clean. Ruch łączy pierwsze pociągnięcie w stylu martwego ciągu, agresywny potrójny wyprost bioder/kolan/kostek ('wyskok'), szybkie podciągnięcie się pod gryf i stabilne złapanie sztangi na przednich aktonach barków. Trenuje maksymalną szybkość narastania siły (RFD), moc tylnego łańcucha, koordynację całego ciała i prędkość gryfu. Podstawa programów sportowych, podnoszenia ciężarów i CrossFit.",
+
+  "instructions": [
+    "Załaduj sztangę na ziemi. Stań tak, by środek stóp był pod gryfem, stopy na szerokość bioder (węższe niż w przysiadzie), palce lekko na zewnątrz.",
+    "Zgnij w biodrach, potem w kolanach. Złap sztangę chwytem podwójnym nachwytem tuż na zewnątrz kolan (opcjonalnie hook grip — kciuk pod palcami).",
+    "Pozycja startowa: ramiona tuż przed gryfem, klatka wysoko, najszersze napięte (oś gryfu pod łopatkami), neutralny kręgosłup, wzrok ~2 m przed sobą.",
+    "Pierwsze pociągnięcie (first pull): napieraj stopami w ziemię. Sztanga sunie blisko goleni. Biodra i barki wstają w tym samym tempie do wysokości tuż nad kolanami. Tułów zachowuje stały kąt pochylenia.",
+    "Przejście (scoop/transition): gdy gryf mija kolana, dociśnij kolana do przodu i przesuń biodra do gryfu — sztanga delikatnie dotyka ud. To moment przygotowania do eksplozji.",
+    "Drugie pociągnięcie (second pull) — TUTAJ jest moc: eksplozywnie wyprostuj biodra, kolana i kostki (potrójny wyprost). Mocno wzrusz barkami. To 'wyskok' — gryf przyspiesza maksymalnie.",
+    "Pociągnięcie pod gryf (third pull): natychmiast po wyproście, agresywnie podciągnij się POD gryf, obracając łokcie wokół sztangi do przodu i w górę.",
+    "Catch w półprzysiadzie: złap sztangę w pozycji front rack — łokcie wysoko i do przodu, gryf opiera się na przednich aktonach barków przy gardle, kolana ugięte do około 1/4 przysiadu. Stopy mogą rozszerzyć się nieco w bok (catch stance).",
+    "Wstań w pełni z pozycji catch — wyprostuj biodra i kolana, sztanga pozostaje w front rack.",
+    "Opuszczanie: zrzuć sztangę z front rack i przyjmij ją na pasie/biodrach lub kontrolowanie opuść na ziemię (drop dla cięższych ciężarów na platformie). Zresetuj pozycję przed kolejnym powtórzeniem."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę na ziemi. Stań tak, by środek stóp był pod gryfem, stopy na szerokość bioder (węższe niż w przysiadzie), palce lekko na zewnątrz.",
+    "Zgnij w biodrach, potem w kolanach. Złap sztangę chwytem podwójnym nachwytem tuż na zewnątrz kolan (opcjonalnie hook grip — kciuk pod palcami).",
+    "Pozycja startowa: ramiona tuż przed gryfem, klatka wysoko, najszersze napięte (oś gryfu pod łopatkami), neutralny kręgosłup, wzrok ~2 m przed sobą.",
+    "Pierwsze pociągnięcie (first pull): napieraj stopami w ziemię. Sztanga sunie blisko goleni. Biodra i barki wstają w tym samym tempie do wysokości tuż nad kolanami. Tułów zachowuje stały kąt pochylenia.",
+    "Przejście (scoop/transition): gdy gryf mija kolana, dociśnij kolana do przodu i przesuń biodra do gryfu — sztanga delikatnie dotyka ud. To moment przygotowania do eksplozji.",
+    "Drugie pociągnięcie (second pull) — TUTAJ jest moc: eksplozywnie wyprostuj biodra, kolana i kostki (potrójny wyprost). Mocno wzrusz barkami. To 'wyskok' — gryf przyspiesza maksymalnie.",
+    "Pociągnięcie pod gryf (third pull): natychmiast po wyproście, agresywnie podciągnij się POD gryf, obracając łokcie wokół sztangi do przodu i w górę.",
+    "Catch w półprzysiadzie: złap sztangę w pozycji front rack — łokcie wysoko i do przodu, gryf opiera się na przednich aktonach barków przy gardle, kolana ugięte do około 1/4 przysiadu. Stopy mogą rozszerzyć się nieco w bok (catch stance).",
+    "Wstań w pełni z pozycji catch — wyprostuj biodra i kolana, sztanga pozostaje w front rack.",
+    "Opuszczanie: zrzuć sztangę z front rack i przyjmij ją na pasie/biodrach lub kontrolowanie opuść na ziemię (drop dla cięższych ciężarów na platformie). Zresetuj pozycję przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "trapezius", "hamstrings"],
+    "secondary": ["erector_spinae", "anterior_deltoids", "calves", "latissimus_dorsi"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "forearms", "rotator_cuff", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "quadriceps": "P9",
+    "trapezius": "P9",
+    "hamstrings": "P8",
+    "erector_spinae": "S8",
+    "anterior_deltoids": "S7",
+    "calves": "S7",
+    "latissimus_dorsi": "S7",
+    "core": "S8",
+    "forearms": "S8",
+    "rotator_cuff": "S6",
+    "rhomboids": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weightlifting_shoes", "chalk", "lifting_platform", "bumper_plates", "wrist_wraps", "belt"]
+  },
+
+  "category": "olympic",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["barbell-deadlift", "barbell-hang-clean", "front-squat", "barbell-romanian-deadlift", "barbell-high-pull"],
+    "progression_to": ["squat-clean", "clean-and-jerk", "power-clean-and-jerk", "barbell-snatch"],
+    "alternatives": ["barbell-hang-clean", "dumbbell-power-clean", "kettlebell-clean", "barbell-high-pull"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar over mid-foot, 1-2 cm from shins",
+      "Feet hip-width (narrower than squat stance), toes slightly out",
+      "Grip just outside knees, double-overhand with hook grip",
+      "Chest up, lats engaged (bar pulled into shins), neutral spine",
+      "Brace HARD — power clean is too fast to brace mid-rep"
+    ],
+    "setup_cues_pl": [
+      "Gryf nad środkiem stóp, 1-2 cm od goleni",
+      "Stopy na szerokość bioder (węższe niż przysiad), palce lekko na zewnątrz",
+      "Chwyt tuż na zewnątrz kolan, podwójny nachwyt z hook grip",
+      "Klatka w górze, najszersze napięte (gryf 'przyciśnięty' do goleni), neutralny kręgosłup",
+      "Mocne napięcie brzucha — power clean jest zbyt szybki by napinać się w trakcie"
+    ],
+    "execution_cues": [
+      "First pull is SLOW and patient — same hip/shoulder angle until bar passes knees",
+      "Scoop — knees re-bend slightly as bar passes thighs, bar contacts hips",
+      "JUMP the bar — triple extension, full plantar flexion, aggressive shrug",
+      "Pull yourself UNDER the bar — elbows whip around fast",
+      "Catch in QUARTER squat with high elbows — this is POWER clean, not squat clean"
+    ],
+    "execution_cues_pl": [
+      "Pierwsze pociągnięcie jest WOLNE i cierpliwe — ten sam kąt biodra/barków aż sztanga minie kolana",
+      "Scoop — kolana lekko 'wracają' pod gryf gdy mija uda, sztanga lekko dotyka bioder",
+      "WYSKOCZ ze sztangą — potrójny wyprost, pełne wstawanie na palce, mocny shrug",
+      "Podciągnij się POD sztangę — łokcie błyskawicznie obracają się do przodu",
+      "Catch w ĆWIERĆ przysiadzie z wysokimi łokciami — to POWER clean, nie squat clean"
+    ],
+    "common_faults": [
+      {
+        "fault": "Catching too low (almost a full squat clean)",
+        "faultPl": "Catch za nisko (prawie pełny squat clean)",
+        "cause": "Insufficient triple extension/bar speed — body doesn't elevate the bar high enough, so the lifter has to drop deeper to receive it",
+        "causePl": "Niedostateczny potrójny wyprost/prędkość gryfu — ciało nie podnosi sztangi wystarczająco wysoko, więc trzeba zejść głębiej by ją złapać",
+        "cue": "Drive HARDER through the floor and finish the shrug aggressively. The bar should peak around lower-sternum height; catch above parallel.",
+        "cuePl": "Mocniej napieraj stopami i agresywnie kończ shrug. Gryf powinien osiągnąć szczyt na wysokości dolnej części mostka; łap powyżej linii równoległej."
+      },
+      {
+        "fault": "Early arm bend ('curling' the bar)",
+        "faultPl": "Wcześniejsze zgięcie ramion ('curlowanie' sztangi)",
+        "cause": "Trying to muscle the bar up with the biceps instead of using leg/hip drive",
+        "causePl": "Próba podniesienia sztangi bicepsami zamiast wykorzystania siły nóg/bioder",
+        "cue": "Arms are LONG and RELAXED until full triple extension. Think 'jump first, pull second'.",
+        "cuePl": "Ramiona są DŁUGIE i ROZLUŹNIONE aż do pełnego potrójnego wyprostu. Pomyśl 'najpierw skok, potem pociągnięcie'."
+      },
+      {
+        "fault": "Bar swings forward away from the body",
+        "faultPl": "Sztanga odchodzi w przód od ciała",
+        "cause": "Hips shooting back during second pull instead of forward/up, or jumping forward",
+        "causePl": "Biodra cofają się w drugim pociągnięciu zamiast iść w przód/górę, albo wyskok do przodu",
+        "cue": "Bar STAYS on the body — brush the thighs/hips in the scoop. Jump UP, not forward.",
+        "cuePl": "Sztanga ZOSTAJE na ciele — musnij uda/biodra w scoop. Skacz W GÓRĘ, nie do przodu."
+      },
+      {
+        "fault": "Low elbows / soft front rack catch",
+        "faultPl": "Niskie łokcie / miękki catch w front rack",
+        "cause": "Poor wrist/lat/triceps mobility, slow elbow turnover, weak upper back",
+        "causePl": "Słaba mobilność nadgarstków/najszerszych/tricepsów, wolny obrót łokci, słabe górne plecy",
+        "cue": "Punch elbows UP and FORWARD fast. Bar on delts, NOT on hands. Daily front-rack mobility drills.",
+        "cuePl": "Wypchnij łokcie W GÓRĘ i W PRZÓD szybko. Gryf na barkach, NIE na dłoniach. Codzienne drille mobilności front rack."
+      },
+      {
+        "fault": "Hyperextending at the top of the pull (leaning back)",
+        "faultPl": "Nadmierne odgięcie pleców na szczycie pociągnięcia",
+        "cause": "Trying to elongate the second pull, weak glutes/abs, ribs flaring",
+        "causePl": "Próba 'wydłużenia' drugiego pociągnięcia, słabe pośladki/brzuch, żebra wystające",
+        "cue": "Finish vertical, not leaning back. Squeeze glutes hard at extension, keep ribs DOWN.",
+        "cuePl": "Kończ w pionie, nie wychylając się w tył. Mocno ściśnij pośladki w wyproście, żebra W DÓŁ."
+      }
+    ],
+    "breathing": "Big inhale at the floor before pulling. Brace and HOLD breath through the entire pull, second pull and catch — there is no time to breathe mid-rep. Exhale only after standing up from the catch. Reset breath between reps.",
+    "breathingPl": "Głęboki wdech na ziemi przed pociągnięciem. Napięcie i WSTRZYMANIE oddechu przez całe pierwsze pociągnięcie, drugie pociągnięcie i catch — w trakcie powtórzenia nie ma czasu na oddech. Wydech dopiero po pełnym wstaniu z catch. Reset oddechu między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_pathology_or_acute_low_back_pain",
+      "severity": "avoid",
+      "modification": "Olympic lifts generate extreme spinal loads at very high velocity — strongly contraindicated for active disc problems or acute lumbar pain. Switch to slow, non-explosive variations.",
+      "modificationPl": "Ćwiczenia olimpijskie generują skrajne obciążenia kręgosłupa przy bardzo wysokiej prędkości — silnie przeciwwskazane przy aktywnych problemach dyskowych lub ostrym bólu lędźwiowym. Przejdź na wolne, nieeksplozywne warianty.",
+      "alternative": "barbell-romanian-deadlift"
+    },
+    {
+      "condition": "wrist_pain_or_limited_wrist_extension",
+      "severity": "modify",
+      "modification": "Front rack catch requires significant wrist extension. Use wrist wraps and work mobility daily, or substitute a high pull / dumbbell power clean (neutral wrist).",
+      "modificationPl": "Catch w front rack wymaga znacznego wyprostu nadgarstka. Stosuj wrist wraps i pracuj nad mobilnością codziennie, lub zamień na high pull / power clean z hantlami (neutralny nadgarstek).",
+      "alternative": "dumbbell-power-clean"
+    },
+    {
+      "condition": "shoulder_impingement_or_AC_joint_pain",
+      "severity": "modify",
+      "modification": "Aggressive elbow whip and front rack position can aggravate AC joint and impingement. Reduce load, work shoulder/lat mobility, or switch to hang clean from above-knee position.",
+      "modificationPl": "Agresywny obrót łokci i pozycja front rack mogą drażnić staw barkowo-obojczykowy i konflikt podbarkowy. Zmniejsz ciężar, pracuj nad mobilnością barku/najszerszych, lub przejdź na hang clean z pozycji powyżej kolan.",
+      "alternative": "barbell-hang-clean"
+    },
+    {
+      "condition": "knee_meniscus_or_patellar_tendinopathy",
+      "severity": "modify",
+      "modification": "Quarter-squat catch under load stresses the patellar tendon and meniscus. Reduce load to teaching weight, focus on technique, and consider hang variations to skip the floor pull.",
+      "modificationPl": "Catch w półprzysiadzie pod obciążeniem obciąża więzadło rzepkowe i łąkotkę. Zmniejsz ciężar do treningu technicznego, skup się na technice i rozważ warianty z zwisu (hang) by pominąć pociągnięcie z ziemi.",
+      "alternative": "barbell-hang-clean"
+    }
+  ],
+
+  "typical_sets_reps": "5x3 (power/RFD) | 4-5x2 (strength) | 5-6x1 (max strength/peaking) | 3x5 EMOM (conditioning) — never to muscular failure, technique decay is dangerous",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "power-clean.gif",
+    "frames_extracted": [
+      "frames/power-clean/frame_0_start.png",
+      "frames/power-clean/frame_1_early.png",
+      "frames/power-clean/frame_2_mid.png",
+      "frames/power-clean/frame_3_late.png",
+      "frames/power-clean/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "hamstrings/power-clean"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:05:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa z ziemi — głęboki przysiad/hinge, sztanga przy goleniach, podświetlone czworogłowe/pośladki/dwugłowe ud/górne plecy/przedramiona (klasyczny clean setup, stopy hip-width). Frame 1: pełne stanie po pierwszym pociągnięciu i tuż przed eksplozją (sztanga w zwisie na biodrach) — widoczne brzuch i nogi. Frame 2: catch w front rack w półprzysiadzie — sztanga na barkach, łokcie wysoko, kolana lekko ugięte (NIE pełny przysiad!), podświetlone barki/brzuch/czworogłowe. Frame 3: stanie z sztangą w front rack po wstaniu z catch. Frame 4: composite zwrotny — opuszczanie sztangi do pozycji startowej (overlay catch + start). To klasyczny POWER clean — catch w ćwierć/półprzysiadzie, nie pełnym squat clean. movement_pattern: olympic_lift (hinge-dominant explosive pull). primary: glutes/quads/trapezius P9, hamstrings P8 (zgodnie z briefem). Trudność 9/10 — wysoka technika, koordynacja, wymagania mobilności (wrist/shoulder/ankle/hip). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["olympic_weightlifting", "compound", "full_body", "power", "explosive", "barbell", "triple_extension", "athletic_performance", "rate_of_force_development", "advanced"]
+}

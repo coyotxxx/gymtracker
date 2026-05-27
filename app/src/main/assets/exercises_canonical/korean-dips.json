@@ -1,0 +1,208 @@
+{
+  "id": "korean-dips",
+  "name": "Korean Dips",
+  "namePl": "Korean dips",
+  "aliases": ["korean dip", "horizontal dip", "advanced chest dip"],
+  "aliasesPl": ["dipy koreańskie", "dipy horyzontalne", "dipy z mocnym pochyleniem"],
+
+  "description": "Advanced calisthenics chest variation of the parallel-bar dip in which the body is pitched into a near-horizontal position to maximally load the pectoralis major and front delts. The torso leans aggressively forward (45-70° from vertical), the legs trail behind in a planche-like line, and the elbows track wide to deepen the chest stretch. Compared to a classic vertical dip — which mostly works the triceps — Korean dips bias the loading toward the pectoralis and demand far more scapular stability, anterior shoulder control and core compression. They are a stepping stone toward planche pushups and ring chest dips and are not suitable for beginners.",
+  "descriptionPl": "Zaawansowany kalisteniczny wariant dipów na poręczach równoległych, w którym ciało jest mocno pochylone do pozycji niemal poziomej, żeby maksymalnie obciążyć mięsień piersiowy większy i przednie delty. Tułów pochyla się agresywnie do przodu (45-70° od pionu), nogi ciągną się z tyłu w linii zbliżonej do planche, a łokcie prowadzone są szerzej, żeby pogłębić rozciągnięcie klatki. W przeciwieństwie do klasycznych pionowych dipów — które pracują głównie tricepsem — Korean dips przesuwają obciążenie na klatkę i wymagają znacznie większej stabilizacji łopatek, kontroli przedniego barku i napięcia korpusu. Są pomostem do planche pushups i dipów piersiowych na kółkach i nie nadają się dla początkujących.",
+
+  "instructions": [
+    "Mount the parallel bars with a neutral grip, shoulder-width, and press up to a strong support hold with elbows locked.",
+    "Pack the shoulders down hard, brace the core like a hollow body, and squeeze the glutes. Point the toes behind you.",
+    "Pitch the torso forward by leaning the chest aggressively over the bars while letting the hips and legs drift back, creating a near-horizontal body line.",
+    "Initiate the descent by bending the elbows and continuing to lean forward. Let the elbows travel slightly out and back at the same time.",
+    "Lower under strict control over 2-3 seconds. The chest leads the movement and ends up below the level of the bars at the bottom.",
+    "At the bottom the upper arms are above-parallel to the floor with shoulders deep, chest in a strong stretch, body close to horizontal — no piking at the hips.",
+    "Pause briefly without bouncing. Keep the shoulders packed and the front delt actively resisting collapse.",
+    "Press back up by driving the bars away and slightly down, keeping the forward lean so the chest stays loaded. Do not pop the torso up to vertical mid-rep.",
+    "Reach a strong lockout with the elbows fully extended and the body still leaning forward. Reset the brace and repeat."
+  ],
+  "instructionsPl": [
+    "Wejdź na poręcze chwytem neutralnym na szerokość barków i wepchnij się do mocnego podporu z zablokowanymi łokciami.",
+    "Mocno ściągnij barki w dół, napnij brzuch jak w hollow body i ściśnij pośladki. Palce stóp wyciągnięte do tyłu.",
+    "Pochyl tułów agresywnie do przodu, kładąc klatkę nad poręcze i pozwalając biodrom i nogom przesunąć się w tył — sylwetka zbliżona do poziomej.",
+    "Zacznij schodzenie zginając łokcie i utrzymując pochylenie. Łokcie prowadź lekko na zewnątrz i jednocześnie w tył.",
+    "Schodź w pełnej kontroli przez 2-3 sekundy. Klatka prowadzi ruch i na dole znajduje się poniżej poziomu poręczy.",
+    "Na dole ramiona są powyżej równoległej do podłogi z barkami zanurzonymi głęboko, klatka w mocnym rozciągnięciu, ciało prawie poziomo — bez załamania w biodrach.",
+    "Zatrzymaj się krótko bez odbijania. Trzymaj barki ściągnięte, a przedni delt aktywnie opieraj się zapadnięciu.",
+    "Wepchnij się do góry odpychając poręcze w dół i nieco do siebie, zachowując pochylenie, żeby klatka pozostała pod obciążeniem. Nie wyrzucaj tułowia do pionu w połowie powtórzenia.",
+    "Sięgnij mocnej blokady z pełnym wyprostem łokci, wciąż z pochyloną sylwetką. Złap napięcie i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior", "lower_pectoralis"],
+    "stabilizers": ["rotator_cuff", "core", "rectus_abdominis", "obliques", "rhomboids", "lats", "forearms", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "triceps": "P8",
+    "anterior_deltoids": "P8",
+    "serratus_anterior": "S7",
+    "lower_pectoralis": "S7",
+    "rotator_cuff": "S6",
+    "core": "S6",
+    "rectus_abdominis": "S5",
+    "obliques": "S4",
+    "rhomboids": "T3",
+    "lats": "T3",
+    "forearms": "T4",
+    "biceps": "T4"
+  },
+
+  "equipment": {
+    "required": ["parallel_bars"],
+    "optional": ["dip_belt", "weight_vest", "wrist_wraps", "chalk"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["triceps-dip", "weighted-triceps-dip", "ring-dips"],
+    "progression_to": ["ring-korean-dip", "planche-pushup"],
+    "alternatives": ["triceps-dip", "ring-dips"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bars no wider than shoulder-width — extra width destroys the front shoulder in the deep lean",
+      "Lock arms and pack shoulders down hard before you even start leaning forward",
+      "Hollow body: ribs down, glutes squeezed, toes pointed behind you",
+      "Set the forward lean at the top before the first rep — don't add lean mid-descent",
+      "Pick a target body angle (45-70° from vertical) and own it for the whole set"
+    ],
+    "setup_cues_pl": [
+      "Poręcze nie szerzej niż barki — większy rozstaw rozwala przedni bark w głębokim pochyleniu",
+      "Zablokuj ręce i mocno ściągnij barki w dół, zanim w ogóle zaczniesz pochylać tułów",
+      "Hollow body: żebra w dół, pośladki ściśnięte, palce stóp wyciągnięte w tył",
+      "Ustaw pochylenie na górze przed pierwszym powtórzeniem — nie dokładaj pochylenia w trakcie schodzenia",
+      "Wybierz docelowy kąt ciała (45-70° od pionu) i utrzymaj go przez całą serię"
+    ],
+    "execution_cues": [
+      "Chest leads down and forward, not straight down — think 'dive over the bars'",
+      "Elbows track slightly outward at 45-60° from torso to load the pecs, not 90° flare",
+      "Stay horizontal the entire rep — if the hips drop and torso pops vertical, it's a regular dip",
+      "Press the bars away from you and slightly down toward the feet on the way up",
+      "Finish each rep with chest still over the bars and elbows fully locked"
+    ],
+    "execution_cues_pl": [
+      "Klatka prowadzi w dół i do przodu, nie prosto w dół — wyobraź sobie 'nurkowanie nad poręcze'",
+      "Łokcie prowadź lekko na zewnątrz pod kątem 45-60° od tułowia, żeby obciążyć klatkę, ale nie rozkładaj ich na 90°",
+      "Utrzymaj pozycję poziomą przez całe powtórzenie — jeśli biodra opadają, a tułów wyrzuca się do pionu, to zwykły dip",
+      "Odpychaj poręcze od siebie i lekko w dół, w kierunku stóp, w drodze do góry",
+      "Każde powtórzenie kończ z klatką wciąż nad poręczami i pełną blokadą łokci"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso pops back to vertical during the press",
+        "faultPl": "Tułów wyrzuca się z powrotem do pionu w trakcie pchnięcia",
+        "cause": "Lack of anterior core and chest strength in the leaned position. The athlete unconsciously cheats out of the loaded angle to make the rep easier — turning it into a regular triceps dip.",
+        "causePl": "Brak siły przedniej części korpusu i klatki w pozycji pochylonej. Ciało nieświadomie wymyka się z obciążonego kąta, żeby ułatwić sobie powtórzenie — i zamienia ćwiczenie w zwykły tricepsowy dip.",
+        "cue": "Lock in the forward lean at the top and refuse to lose it. Drop the weight, the reps or the depth — never the lean. Use a slow tempo (3-1-1) to enforce position discipline.",
+        "cuePl": "Zablokuj pochylenie na górze i nie pozwól mu zniknąć. Lepiej zrzuć obciążenie, powtórzenia albo zakres niż utracić pochylenie. Wymuś dyscyplinę tempem (3-1-1)."
+      },
+      {
+        "fault": "Shoulders rolling forward and collapsing at the bottom",
+        "faultPl": "Barki wjeżdżają do przodu i zapadają się na dole",
+        "cause": "Weak scapular stabilizers in the horizontal pushing position. The humeral head slides anterior, severely stressing the rotator cuff, biceps tendon and AC joint at high load.",
+        "causePl": "Słabe stabilizatory łopatek w pozycji pchania horyzontalnego. Głowa kości ramiennej wsuwa się do przodu, mocno obciążając stożek rotatorów, ścięgno bicepsa i staw barkowo-obojczykowy pod dużym obciążeniem.",
+        "cue": "Actively pull the shoulders away from the ears throughout the entire rep. If you can't hold packed shoulders at depth, you're not ready for this exercise yet — go back to weighted dips and scap work.",
+        "cuePl": "Aktywnie ściągaj barki z dala od uszu przez cały ruch. Jeśli nie utrzymasz ściągniętych barków na głębi, jeszcze nie jesteś gotowy na to ćwiczenie — wróć do dipów z obciążeniem i pracy łopatek."
+      },
+      {
+        "fault": "Hips dropping / loss of hollow body line",
+        "faultPl": "Opadanie bioder / utrata linii hollow body",
+        "cause": "Insufficient core compression for a horizontal body position. The arch breaks the planche-like line, places shear stress on the lower back and unloads the chest.",
+        "causePl": "Niewystarczające napięcie korpusu dla pozycji poziomej. Lordoza łamie linię planche, generuje siłę ścinającą w odcinku lędźwiowym i zdejmuje obciążenie z klatki.",
+        "cue": "Squeeze glutes, posteriorly tilt the pelvis, point the toes behind you. Body should be one straight line from head to feet. Train tuck planche holds outside dips.",
+        "cuePl": "Ściśnij pośladki, podwiń miednicę, wyciągnij palce stóp do tyłu. Ciało powinno być jedną prostą linią od głowy do stóp. Trenuj tuck planche holds poza dipami."
+      },
+      {
+        "fault": "Excessive elbow flare (90°+ from torso)",
+        "faultPl": "Nadmierne rozłożenie łokci (90°+ od tułowia)",
+        "cause": "Trying to chase a deeper chest stretch carelessly. Combined with the forward lean and load, this puts the anterior shoulder capsule and biceps tendon into a high-risk position.",
+        "causePl": "Niechlujne szukanie głębszego rozciągnięcia klatki. W połączeniu z pochyleniem i obciążeniem stawia przednią torebkę stawową barku i ścięgno bicepsa w pozycji wysokiego ryzyka.",
+        "cue": "Cap elbow flare at about 45-60° from the torso. If the bars are too wide to allow this, find a narrower station — never compensate with extra elbow angle.",
+        "cuePl": "Ogranicz rozłożenie łokci do ok. 45-60° od tułowia. Jeśli poręcze są zbyt szerokie, znajdź węższą stację — nigdy nie kompensuj większym kątem łokci."
+      },
+      {
+        "fault": "Partial ROM disguising lack of strength in the position",
+        "faultPl": "Częściowy zakres ruchu maskujący brak siły w tej pozycji",
+        "cause": "Going only a few centimeters down because the bottom position is genuinely hard. Cheats the pec stretch and trains an illusion of progress.",
+        "causePl": "Schodzenie tylko o kilka centymetrów, bo dolna pozycja jest naprawdę trudna. Okrada klatkę z rozciągnięcia i utrwala iluzję progresu.",
+        "cue": "Lower until the upper arms are above-parallel and you feel a strong stretch across the pec. If you can't hit depth, regress to deep weighted dips first.",
+        "cuePl": "Schodź aż ramiona będą powyżej równoległej do podłogi i poczujesz mocne rozciągnięcie klatki. Jeśli nie sięgasz głębi, cofnij się do głębokich dipów z obciążeniem."
+      }
+    ],
+    "breathing": "Inhale fully at the top and brace the core hard. Hold the breath through the eccentric and the hardest part of the press (Valsalva). Exhale at the lockout while keeping the lean. For higher-rep sets, take a quick top-of-rep reset breath.",
+    "breathingPl": "Pełen wdech na górze i mocne napięcie korpusu. Wstrzymaj oddech w ekscentryku i w najtrudniejszej fazie pchnięcia (Valsalva). Wydech na blokadzie, z zachowaniem pochylenia. Przy większej liczbie powtórzeń krótki oddech na resetowanie pomiędzy powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "The horizontal loaded position is one of the highest-stress positions for the anterior shoulder. Stay off this exercise until impingement is fully resolved and reintroduce only after pain-free vertical dips. Use incline pushups or floor presses in the meantime.",
+      "modificationPl": "Pozioma obciążona pozycja jest jedną z najbardziej obciążających dla przedniego barku. Trzymaj się z dala od tego ćwiczenia do pełnego ustąpienia objawów konfliktu barkowego i wracaj dopiero po bezbólowych pionowych dipach. W międzyczasie używaj pompek na podwyższeniu lub floor press.",
+      "alternative": "triceps-dip"
+    },
+    {
+      "condition": "ac_joint_separation",
+      "severity": "avoid",
+      "modification": "Deep horizontal dipping under bodyweight or extra load stresses the AC joint at end range. Avoid until full clinical recovery and a successful reintroduction of weighted bench press and regular dips.",
+      "modificationPl": "Głęboki horyzontalny dip pod masą ciała lub z dodatkowym obciążeniem mocno obciąża staw barkowo-obojczykowy w skrajnym zakresie. Unikaj do pełnego klinicznego wyzdrowienia i bezproblemowego powrotu do bench press z obciążeniem oraz klasycznych dipów.",
+      "alternative": "barbell-bench-press"
+    },
+    {
+      "condition": "anterior_shoulder_instability",
+      "severity": "avoid",
+      "modification": "The deep horizontal position drives the humeral head forward in the socket — exactly what an unstable shoulder cannot tolerate. Hard contraindication until clearance from a physio and a structured stabilization program.",
+      "modificationPl": "Głęboka pozycja pozioma popycha głowę kości ramiennej do przodu w panewce — dokładnie tego nie znosi niestabilny bark. Twarde przeciwwskazanie do uzyskania zgody fizjoterapeuty i przejścia programu stabilizacji.",
+      "alternative": "barbell-bench-press"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Forward lean loads the wrists in extension at an awkward angle. Use stiff wrist wraps, reduce volume, and if pain persists switch to ring dips where the wrists can rotate freely.",
+      "modificationPl": "Pochylenie do przodu obciąża nadgarstki w wyproście pod niekorzystnym kątem. Używaj sztywnych opasek, zmniejsz objętość, a przy utrzymującym się bólu przejdź na dipy na kółkach, gdzie nadgarstki swobodnie rotują.",
+      "alternative": "ring-dips"
+    }
+  ],
+
+  "typical_sets_reps": "4x4-8 (advanced hypertrophy) | 3-4x3-5 (strength, slow tempo) | 5x AMRAP (skill conditioning, never to failure)",
+
+  "media": {
+    "primary": "korean-dips.gif",
+    "frames_extracted": [
+      "frames/korean-dips/frame_0_start.png",
+      "frames/korean-dips/frame_1_early.png",
+      "frames/korean-dips/frame_2_mid.png",
+      "frames/korean-dips/frame_3_late.png",
+      "frames/korean-dips/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/korean-dips"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 z GIFa jahel. Klatka 0 (start): postać w pełnym podporze na sztywnych poręczach równoległych (stacja typu power tower), ręce wyprostowane, tułów blisko pionu z lekkim pochyleniem, nogi pionowo w dół, klatka piersiowa i przedni delt anatomicznie podświetlone — start klasycznej pozycji podporu. Klatka 2 (mid/bottom): zaskakująco horyzontalna pozycja — tułów mocno pochylony do przodu (kąt ok. 50-60° od pionu, prawie poziomo), nogi ciągną się z tyłu w linii planche, łokcie zgięte i lekko rozłożone, klatka piersiowa i tricepsy mocno wyróżnione kolorem; klatka znajduje się znacznie poniżej poziomu poręczy. Klatka 4 (end): powrót do pełnego wyprostu rąk, sylwetka znów blisko pionowa (widoczne 'echo' pochylonej pozycji z poprzedniej klatki). UWAGA do zadania: pierwotny opis mówił o pull-up bar z chwytem nachwytem ramiona na boki, ale GIF jednoznacznie pokazuje sztywne poręcze równoległe ze stacji dipowej i mocne pochylenie tułowia. Opis i instrukcje napisałem zgodnie z tym, co faktycznie pokazuje GIF — wariant 'horizontal/leaning' chest-focused dip na poręczach (znany w calisthenics community jako 'Korean dip'). Klasyfikacja: push horizontal (nie vertical jak w klasycznych dipach), pectoralis_major jako primary nad tricepsem. Wszystkie pola PL napisane od zera, terminologia kalisteniki (planche, hollow body, ściągnięte barki, Valsalva). Level: advanced (9/10) ze względu na wymaganą stabilność barku i siłę przedniej części klatki w obciążonej pozycji horyzontalnej.",
+
+  "tags": ["calisthenics", "bodyweight", "parallel_bars", "upper_body", "push", "chest_builder", "advanced", "compound", "horizontal_push", "planche_progression", "skill"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "lever-high-row",
+  "name": "Lever High Row",
+  "namePl": "Wiosło wysokie w maszynie",
+  "aliases": ["plate-loaded high row", "hammer strength high row", "machine high row", "iso-lateral high row", "lever pulldown row"],
+  "aliasesPl": ["wiosło wysokie na maszynie", "wiosło wysokie hammer strength", "high row na maszynie", "wiosłowanie wysokie talerzowe", "wiosło z góry w maszynie"],
+
+  "description": "Plate-loaded lever machine exercise that combines elements of a lat pulldown and a row. You sit at the machine with chest against the pad, grip the handles overhead with a pronated or neutral grip, and pull them down-and-back toward your upper torso while driving the elbows behind the body. The fixed lever path with independent or unified arms guides the motion along a slightly diagonal plane between pure vertical pulldown and pure horizontal row, hitting the upper lats, rhomboids and mid-traps especially hard. The chest-supported seated position eliminates lower-back fatigue and makes this an excellent thickness builder for the upper back — popular with intermediate and advanced lifters as a heavy-loading alternative to barbell rows.",
+  "descriptionPl": "Ćwiczenie wykonywane na maszynie dźwigniowej (plate-loaded), łączące cechy ściągania drążka i wiosłowania. Siedzisz przy maszynie z klatką opartą o oparcie, chwytasz rączki nad głową chwytem pronowanym lub neutralnym i ciągniesz je w dół i do tyłu w stronę górnej części tułowia, prowadząc łokcie za linię ciała. Stała ścieżka dźwigni — niezależna dla każdej ręki lub wspólna — prowadzi ruch w lekko ukośnej płaszczyźnie, pomiędzy pionowym ściąganiem a poziomym wiosłem, mocno aktywując górne pasma najszerszych, równoległoboczne i środkową część czworobocznych. Pozycja siedząca z podparciem klatki eliminuje zmęczenie odcinka lędźwiowego i czyni to ćwiczenie świetnym budowniczym grubości górnych pleców — popularnym wśród średniozaawansowanych i zaawansowanych jako ciężka alternatywa dla wiosła sztangą.",
+
+  "instructions": [
+    "Load the desired weight on the plate pegs. Set the seat height so the handles are slightly above shoulder level when you sit down (arms extended diagonally up-and-forward).",
+    "Sit on the machine with your chest firmly against the support pad. Plant your feet flat on the platform shoulder-width apart for stability.",
+    "Grab the handles with a pronated (overhand) or neutral grip — whichever the machine allows. Arms fully extended overhead-and-forward at roughly 30-45 degrees above horizontal.",
+    "Brace the core, set the chest into the pad, retract and depress the shoulder blades BEFORE the elbows bend (lats engage first).",
+    "Pull the handles DOWN AND BACK toward your upper torso / front of the shoulders. Drive the elbows DOWN and BEHIND the line of the body — not flaring out wide.",
+    "At the end position, elbows are at or behind the torso line, handles near the upper chest/shoulders, shoulder blades fully retracted and depressed. Squeeze the mid-back for 1 second.",
+    "Reverse the motion in full control. Let the arms extend back to the start while keeping tension in the lats — do NOT let the weight stack slam at the top.",
+    "Keep the chest pressed into the pad throughout the entire set — no rocking back to use momentum. Repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Załaduj wybrany ciężar na trzpienie maszyny. Ustaw wysokość siedziska tak, by rączki były lekko powyżej linii barków gdy usiądziesz (ramiona wyciągnięte ukośnie w górę i w przód).",
+    "Usiądź na maszynie z klatką piersiową mocno opartą o oparcie. Postaw stopy płasko na platformie na szerokość barków dla stabilności.",
+    "Złap rączki chwytem pronowanym (nachwytem) lub neutralnym — w zależności od konstrukcji maszyny. Ramiona w pełni wyprostowane, skierowane ukośnie w górę i do przodu pod kątem około 30-45 stopni nad poziomem.",
+    "Napnij brzuch, dociśnij klatkę do oparcia, ściągnij i obniż łopatki ZANIM zegniesz łokcie (najszersze włączają się jako pierwsze).",
+    "Pociągnij rączki W DÓŁ I DO TYŁU w stronę górnej części tułowia / przodu barków. Prowadź łokcie W DÓŁ i ZA linię ciała — nie rozchylaj ich szeroko na boki.",
+    "W końcowej pozycji łokcie są na lub za linią tułowia, rączki przy górnej klatce/barkach, łopatki maksymalnie ściągnięte i obniżone. Ściśnij środkowe plecy na 1 sekundę.",
+    "Odwróć ruch w pełnej kontroli. Pozwól ramionom wyprostować się z powrotem do pozycji startowej utrzymując napięcie w najszerszych — NIE pozwól by ciężar uderzył o górę.",
+    "Trzymaj klatkę dociśniętą do oparcia przez całą serię — bez odchylania się do tyłu dla pędu. Powtórz zaplanowaną liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids"],
+    "secondary": ["biceps_brachii", "trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S6",
+    "erector_spinae": "S4",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["lever_machine", "plate_loaded_machine"],
+    "optional": ["lifting_straps", "chalk", "weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["seated-machine-row", "lat-pulldown"],
+    "progression_to": ["barbell-bent-over-row", "t-bar-row", "weighted-pull-up", "pendlay-row"],
+    "alternatives": ["cable-low-seated-row", "chest-supported-row", "t-bar-row", "single-arm-dumbbell-row", "lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Chest firmly pressed into the support pad — stays there the whole set",
+      "Seat height set so handles are slightly above shoulder level at start",
+      "Feet flat on platform, shoulder-width apart, for a stable base",
+      "Pronated or neutral grip — arms extended diagonally up-and-forward",
+      "Brace the core and depress the shoulder blades BEFORE the first pull"
+    ],
+    "setup_cues_pl": [
+      "Klatka mocno dociśnięta do oparcia — zostaje tam przez całą serię",
+      "Siedzisko ustawione tak by rączki były lekko powyżej linii barków na starcie",
+      "Stopy płasko na platformie, na szerokość barków, dla stabilnej bazy",
+      "Chwyt pronowany lub neutralny — ramiona wyciągnięte ukośnie w górę i w przód",
+      "Napnij brzuch i obniż łopatki PRZED pierwszym ciągiem"
+    ],
+    "execution_cues": [
+      "Pull DOWN and BACK — not straight back, not straight down",
+      "Lead with the elbows — hands are just hooks on the handles",
+      "Drive elbows DOWN and BEHIND the torso line",
+      "Squeeze the shoulder blades together at the end of every rep",
+      "Control the eccentric — never let the weight crash at the top"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij W DÓŁ i DO TYŁU — nie prosto w tył, nie prosto w dół",
+      "Prowadź łokciami — dłonie to tylko haki na rączkach",
+      "Prowadź łokcie W DÓŁ i ZA linię tułowia",
+      "Ściśnij łopatki razem na końcu każdego powtórzenia",
+      "Kontroluj fazę ekscentryczną — nigdy nie pozwól by ciężar uderzył o górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Chest comes off the pad to gain leverage",
+        "faultPl": "Odrywanie klatki od oparcia by uzyskać dźwignię",
+        "cause": "Load too heavy, ego lifting, or weak mid-back failing to handle the load",
+        "causePl": "Zbyt duży ciężar, ego lifting, lub słabe środkowe plecy nie radzące sobie z obciążeniem",
+        "cue": "Reduce weight by 20-30%. Chest stays glued to the pad the whole set. If you lose contact, the rep doesn't count. Your mid-back — not your hip extensors — does the work.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Klatka jest przyklejona do oparcia przez całą serię. Jeśli odrywasz się od pada, powtórzenie się nie liczy. Twoje środkowe plecy — nie biodra — wykonują pracę."
+      },
+      {
+        "fault": "Pulling with arms only — biceps dominate, scapulae don't move",
+        "faultPl": "Ciągnięcie samymi rękami — bicepsy dominują, łopatki się nie ruszają",
+        "cause": "Habit of biceps-first pulling, weak rhomboids/mid-traps, no scapular cue",
+        "causePl": "Nawyk ciągnięcia bicepsami w pierwszej kolejności, słabe równoległoboczne/środkowe czworoboczne, brak świadomości pracy łopatek",
+        "cue": "Shoulder blades retract and depress BEFORE the elbows bend. Think 'put your elbows in your back pockets.' Lats and mid-back finish the rep, not biceps.",
+        "cuePl": "Łopatki ściągają się i opadają ZANIM zegną się łokcie. Pomyśl 'włóż łokcie do tylnych kieszeni'. Najszersze i środkowe plecy kończą powtórzenie, nie bicepsy."
+      },
+      {
+        "fault": "Elbows flaring out wide — pulling toward the face instead of the torso",
+        "faultPl": "Łokcie rozchylone szeroko na boki — ciąg w stronę twarzy zamiast tułowia",
+        "cause": "Confusing high row with face pull or rear delt row, or wrong handle angle",
+        "causePl": "Mylenie high row z face pullem lub wiosłowaniem na tylne aktony, lub zły kąt rączek",
+        "cue": "Elbows track DOWN AND BACK toward the lower ribs/hips — not up-and-out toward the ears. Handle goes to the upper chest line, not the face. If you want rear delts, do a face pull separately.",
+        "cuePl": "Łokcie prowadzą W DÓŁ I DO TYŁU w stronę dolnych żeber/bioder — nie w górę i na boki w stronę uszu. Rączka idzie do linii górnej klatki, nie do twarzy. Jeśli chcesz tylnych naramiennych, zrób face pull osobno."
+      },
+      {
+        "fault": "Letting the weight crash at the top of the eccentric",
+        "faultPl": "Pozwalanie by ciężar uderzył o górę w fazie ekscentrycznej",
+        "cause": "Loss of focus, fatigue, or treating the lever like a free weight that 'returns by itself'",
+        "causePl": "Utrata koncentracji, zmęczenie, lub traktowanie dźwigni jak ciężaru który 'wraca sam'",
+        "cue": "The eccentric is HALF the exercise. Resist the lever back over 2-3 seconds, keep lats engaged at the stretch position, then start the next rep. No clanking plates.",
+        "cuePl": "Faza ekscentryczna to POŁOWA ćwiczenia. Opieraj się dźwigni przez 2-3 sekundy, utrzymuj napięcie w najszerszych w pozycji rozciągnięcia, dopiero potem zacznij kolejne powtórzenie. Bez stukania talerzami."
+      },
+      {
+        "fault": "Incomplete range of motion — short reps that don't fully retract or fully stretch",
+        "faultPl": "Niepełny zakres ruchu — krótkie powtórzenia bez pełnej retrakcji i bez pełnego rozciągnięcia",
+        "cause": "Load too heavy, fatigue, or no awareness of full ROM benefits",
+        "causePl": "Zbyt duży ciężar, zmęczenie, lub brak świadomości korzyści z pełnego zakresu",
+        "cue": "Full stretch at the top (arms fully extended, lats lengthened) + full squeeze at the bottom (elbows behind torso, scapulae locked together). If you can't get both, the weight is too heavy.",
+        "cuePl": "Pełne rozciągnięcie u góry (ramiona w pełni wyprostowane, najszersze rozciągnięte) + pełne ściągnięcie u dołu (łokcie za tułowiem, łopatki zablokowane razem). Jeśli nie możesz uzyskać obu, ciężar jest za duży."
+      }
+    ],
+    "breathing": "Inhale at the top with arms extended. Exhale through the pull as the handles approach the torso. Inhale on the controlled return. For heavier sets, brace and hold breath through the concentric, exhale at the squeeze.",
+    "breathingPl": "Wdech u góry z wyprostowanymi ramionami. Wydech w trakcie ciągu gdy rączki zbliżają się do tułowia. Wdech podczas kontrolowanego powrotu. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech w momencie ściśnięcia łopatek."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use a neutral grip if available. Reduce starting arm angle (lower the seat slightly so handles are at shoulder level, not above). Avoid full overhead stretch if pain at start position. Reduce weight.",
+      "modificationPl": "Użyj chwytu neutralnego jeśli dostępny. Zmniejsz kąt startowy ramion (obniż lekko siedzisko tak by rączki były na wysokości barków, nie nad). Unikaj pełnego rozciągnięcia nad głową jeśli ból w pozycji startowej. Zmniejsz ciężar.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Chest-supported design already protects lower back. Avoid lifting off the pad. Reduce weight. Stop if pain refers down the leg.",
+      "modificationPl": "Konstrukcja z podparciem klatki już chroni odcinek lędźwiowy. Unikaj odrywania się od oparcia. Zmniejsz ciężar. Przerwij jeśli ból promieniuje do nogi.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Use neutral grip if available — easier on the long head of biceps. Reduce range at the stretched position. Lower weight by 30%. Avoid pause at full stretch.",
+      "modificationPl": "Użyj chwytu neutralnego jeśli dostępny — łagodniejszy dla długiej głowy bicepsa. Zmniejsz zakres w pozycji rozciągniętej. Obniż ciężar o 30%. Unikaj pauzy w pełnym rozciągnięciu.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "scapular_dyskinesis",
+      "severity": "caution",
+      "modification": "Use lighter weight and focus on scapular retraction/depression sequencing. Consider unilateral version if machine allows iso-lateral arms. Stop if shoulder blade winging or clicking occurs.",
+      "modificationPl": "Użyj lżejszego ciężaru i skup się na sekwencji ściągania/obniżania łopatek. Rozważ wersję jednostronną jeśli maszyna pozwala na niezależne ramiona. Przerwij jeśli łopatka odstaje lub klika.",
+      "alternative": "single-arm-dumbbell-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x10-15 (general) | 3x15-20 (endurance / pump work)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-high-row.gif",
+    "frames_extracted": [
+      "frames/lever-high-row/frame_0_start.png",
+      "frames/lever-high-row/frame_1_early.png",
+      "frames/lever-high-row/frame_2_mid.png",
+      "frames/lever-high-row/frame_3_late.png",
+      "frames/lever-high-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/lever-high-row",
+    "glowupp_slug": "lever-high-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa (frame 0/2/4). Maszyna typu plate-loaded lever (Hammer Strength style) z dwoma ramionami dźwigni i talerzami zamontowanymi z tyłu. Frame 0 (start): osoba siedzi z klatką dociśniętą do oparcia, stopy na platformie, ramiona wyciągnięte ukośnie w GÓRĘ I W PRZÓD pod kątem ~30-45 stopni nad poziomem trzymając rączki nad linią barków. Frame 2 (mid): faza koncentryczna — ramiona ciągną rączki W DÓŁ I DO TYŁU, łokcie zaczynają przechodzić linię barków, plecy zaczynają się ściągać. Frame 4 (end): łokcie wyraźnie za linią tułowia w dolnej pozycji, rączki przy górnej klatce/barkach, łopatki maksymalnie ściągnięte. Podświetlenie mięśni: cały plecy — najszersze (cała długość, ale szczególnie GÓRNE pasma ze względu na kąt ciągu z góry), równoległoboczne i środkowa część czworobocznych mocno zaznaczone. Klasyfikacja: pull_horizontal (mimo lekkiego skosu z góry — ścieżka jest ukośna, ale dominuje komponenta horyzontalna jak w wiosłowaniu, nie wertykalna jak w pulldown). Mechanic compound, plane sagittal, force pull, bilateral, kinetic chain open (handles wolne w przestrzeni mimo prowadzenia dźwigni). Equipment: lever_machine + plate_loaded_machine. Difficulty 4 — to klasyka średnio-łatwa, chest-supported design eliminuje pracę stabilizatorów lędźwi, fixed path prowadzi ruch. primary: latissimus_dorsi P10, rhomboids P9 (jak wymaga specyfikacja). trapezius_middle_lower P→S8 (przeniesione do secondary bo wymóg zadania mówi 'secondary: biceps, mid-trapezius'). 5 faults (chest off pad, biceps-only pull, elbows flaring, eccentric crash, partial ROM), 4 contraindications (shoulder impingement, lower back pain, biceps tendinopathy, scapular dyskinesis). Wszystkie pola PL napisane od zera — polski standard 'wiosło wysokie w maszynie' / 'high row'.",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "plate_loaded", "lever_machine", "chest_supported", "upper_back", "lat_developer", "mid_back", "hammer_strength_style"]
+}

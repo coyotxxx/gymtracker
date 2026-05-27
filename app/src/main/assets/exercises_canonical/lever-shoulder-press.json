@@ -1,0 +1,205 @@
+{
+  "id": "lever-shoulder-press",
+  "name": "Lever Shoulder Press (Machine)",
+  "namePl": "Wyciskanie nad głowę na maszynie",
+  "aliases": ["machine shoulder press", "machine overhead press", "plate-loaded shoulder press", "lever overhead press", "hammer strength shoulder press", "seated machine OHP"],
+  "aliasesPl": ["wyciskanie barków na maszynie", "wyciskanie OHP na maszynie", "machine shoulder press", "wyciskanie żołnierskie na maszynie", "hammer strength shoulder press", "siedzące wyciskanie nad głowę na maszynie"],
+
+  "description": "Bilateral overhead press performed seated on a dedicated lever/plate-loaded shoulder press machine. The athlete sits with back firmly supported by an upright pad, feet flat on the floor, and presses two independent handles (or a connected bar) overhead along a fixed or semi-fixed arc dictated by the machine geometry. Because the back is supported and the movement path is guided, the demand on stabilizers and core is dramatically reduced compared to standing barbell/DB or cable OHP — this makes the lever shoulder press the most beginner-friendly vertical pressing variation, ideal for safely loading the anterior deltoids without technical breakdown. The fixed path also allows training closer to failure with reduced injury risk, making it excellent for hypertrophy work and high-volume training. Closed kinetic chain feel (back pinned to pad), bilateral, compound.",
+  "descriptionPl": "Dwustronne wyciskanie nad głowę wykonywane na siedząco na dedykowanej maszynie dźwigniowej / na płyty (lever/plate-loaded shoulder press). Trenujący siedzi z plecami mocno opartymi o pionowy pad, stopami płasko na podłodze, i wyciska dwa niezależne uchwyty (lub połączony drążek) nad głowę po stałej lub półstałej trajektorii narzuconej przez geometrię maszyny. Ponieważ plecy są oparte a tor ruchu prowadzony, obciążenie stabilizatorów i core jest dramatycznie mniejsze niż przy stojącym barbell/DB lub cable OHP — to czyni machine shoulder press najbardziej przyjazną dla początkujących wersją pionowego wyciskania, idealną do bezpiecznego obciążania przednich deltoidów bez załamania techniki. Stała ścieżka pozwala też trenować bliżej upadku z mniejszym ryzykiem kontuzji, co czyni to ćwiczenie świetnym do hipertrofii i wysokiego wolumenu. Closed kinetic chain feeling (plecy przyparte do padu), bilateral, compound.",
+
+  "instructions": [
+    "Adjust the seat height so the handles align with or sit slightly below shoulder level when you sit down — too high forces excessive shrug, too low limits ROM.",
+    "Load the machine with appropriate weight (start light — machine path is unfamiliar even to experienced lifters).",
+    "Sit down with back firmly pressed against the upright pad. Feet flat on the floor, hip- to shoulder-width. Grip the handles with a pronated grip (palms forward) or neutral grip if the machine offers it.",
+    "Starting position: handles at shoulder level, elbows pointing down and slightly forward, wrists stacked over elbows. Chest up, neutral spine.",
+    "Brace core, ribs DOWN — do not let the lumbar arch off the pad.",
+    "Inhale, then press both handles smoothly up and slightly inward along the machine's natural arc until elbows are fully locked out overhead.",
+    "At the top: full lockout, arms vertical, no shrug at the top — keep traps relaxed (down).",
+    "Lower under control back to the start position (handles to shoulder level, NOT below — protect the shoulders from extreme stretch under load).",
+    "Exhale at the top of each rep. Keep the back glued to the pad throughout the entire set."
+  ],
+  "instructionsPl": [
+    "Wyreguluj wysokość siedziska tak, by uchwyty znajdowały się na wysokości barków lub lekko poniżej kiedy siadasz — zbyt wysoko wymusza nadmierny shrug, zbyt nisko ogranicza ROM.",
+    "Załaduj maszynę odpowiednim ciężarem (zacznij lekko — tor maszyny jest nieznany nawet doświadczonym).",
+    "Usiądź z plecami mocno opartymi o pionowy pad. Stopy płasko na podłodze, na szerokość bioder do barków. Chwyć uchwyty chwytem pronowanym (dłonie do przodu) lub neutralnym jeśli maszyna pozwala.",
+    "Pozycja startowa: uchwyty na wysokości barków, łokcie skierowane w dół i lekko do przodu, nadgarstki nad łokciami. Klatka uniesiona, neutralny kręgosłup.",
+    "Napnij brzuch, żebra W DÓŁ — nie pozwól odkleić lędźwi od padu.",
+    "Wdech, następnie wyciśnij oba uchwyty płynnie w górę i lekko do wewnątrz po naturalnym łuku maszyny aż do pełnego lock-out łokci nad głową.",
+    "Na szczycie: pełen lock-out, ramiona pionowo, BEZ shrug na górze — kapturowe rozluźnione (w dół).",
+    "Opuszczaj kontrolowanym ruchem do pozycji startowej (uchwyty na wysokość barków, NIE niżej — chroń barki przed nadmiernym rozciągnięciem pod obciążeniem).",
+    "Wydech na szczycie każdego powtórzenia. Plecy przyklejone do padu przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "triceps"],
+    "secondary": ["upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "rotator_cuff", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P8",
+    "triceps": "P7",
+    "upper_chest": "S5",
+    "trapezius": "S5",
+    "serratus_anterior": "S6",
+    "core": "S4",
+    "rotator_cuff": "S5"
+  },
+
+  "equipment": {
+    "required": ["shoulder_press_machine"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["seated-dumbbell-shoulder-press", "cable-shoulder-press", "dumbbell-standing-overhead-press", "barbell-overhead-press"],
+    "alternatives": ["seated-dumbbell-shoulder-press", "cable-shoulder-press", "smith-machine-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height — handles at or slightly below shoulder level on sit-down",
+      "Back FLAT against the upright pad — no daylight behind lumbar",
+      "Feet flat on floor, hip- to shoulder-width, planted",
+      "Grip handles firmly — pronated or neutral depending on machine",
+      "Chest up, ribs DOWN, neutral neck before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska — uchwyty na lub lekko poniżej wysokości barków po usiądnięciu",
+      "Plecy PŁASKO przyparte do pionowego padu — żadnego prześwitu za lędźwiami",
+      "Stopy płasko na podłodze, na szerokość bioder do barków, mocno wparte",
+      "Chwyć uchwyty pewnie — pronowany lub neutralny w zależności od maszyny",
+      "Klatka uniesiona, żebra W DÓŁ, szyja neutralna przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Press straight up along the machine's path — don't fight the arc",
+      "Lock out fully overhead — biceps near ears, elbows extended",
+      "No shrug at the top — keep traps quiet, deltoids do the work",
+      "Lower with control to shoulder level — do NOT drop below",
+      "Back stays glued to pad the entire set — no arching to cheat the rep"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę po torze maszyny — nie walcz z łukiem",
+      "Wyprostuj pełnym lock-out nad głową — bicepsy przy uszach, łokcie wyprostowane",
+      "BEZ shrug na szczycie — kapturowe ciche, robotę robią delty",
+      "Opuszczaj kontrolowanie do wysokości barków — NIE niżej",
+      "Plecy przyklejone do padu przez całą serię — bez wyginania by oszukać powtórzenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back arching off the pad (lumbar hyperextension)",
+        "faultPl": "Odklejanie lędźwi od padu (przeprost lędźwiowy)",
+        "cause": "Weight too heavy, weak core, machine seat set too low forcing leverage cheat, ego lifting near failure",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, siedzisko ustawione za nisko wymuszając kompensację, ego liftng blisko upadku",
+        "cue": "Lumbar GLUED to the pad — if it arches, the set is over. Brace core HARD. Reduce weight.",
+        "cuePl": "Lędźwie PRZYKLEJONE do padu — jeśli się odklejają, seria koniec. Napnij MOCNO brzuch. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete lockout (stopping short at the top)",
+        "faultPl": "Niepełen lock-out (zatrzymanie przed pełnym wyprostem)",
+        "cause": "Weak triceps, weight too heavy, fear of locking out under load, limited overhead mobility",
+        "causePl": "Słabe tricepsy, zbyt duży ciężar, obawa przed lock-out pod obciążeniem, ograniczona mobilność overhead",
+        "cue": "Lock OUT every rep — elbows fully extended, biceps by ears. Half reps = half results.",
+        "cuePl": "Wyprostuj KAŻDE powtórzenie — łokcie w pełnym wyproście, bicepsy przy uszach. Pół powtórzeń = pół wyników."
+      },
+      {
+        "fault": "Excessive shrug at the top (traps take over)",
+        "faultPl": "Nadmierny shrug na szczycie (kapturowe przejmują pracę)",
+        "cause": "Trying to extend ROM beyond joint capacity, attempting more lockout when arms are already extended, habit from upright row patterns",
+        "causePl": "Próba rozszerzenia ROM ponad możliwości stawu, próba dalszego wyprostu gdy ramiona już wyprostowane, nawyk z upright row",
+        "cue": "Stop pressing once elbows are locked. Keep shoulders DOWN at the top. Traps quiet — delts do the work.",
+        "cuePl": "Przestań wyciskać gdy łokcie wyprostowane. Trzymaj barki W DÓŁ na szczycie. Kapturowe ciche — robotę robią delty."
+      },
+      {
+        "fault": "Lowering handles too far down (below shoulder/jaw level)",
+        "faultPl": "Opuszczanie uchwytów zbyt nisko (poniżej barków/żuchwy)",
+        "cause": "Chasing extra stretch, ego ROM, machine seat too low, mimicking dumbbell deep-stretch presses",
+        "causePl": "Pogoń za rozciągnięciem, ego ROM, siedzisko za nisko, naśladowanie głębokiego stretchu z hantli",
+        "cue": "Bottom = handles at shoulder/ear level. Deeper = unnecessary anterior capsule stress under load. Stop where the machine path naturally ends.",
+        "cuePl": "Dolna pozycja = uchwyty na wysokości barków/ucha. Głębiej = niepotrzebny stres torebki przedniej pod obciążeniem. Zatrzymaj się tam gdzie kończy się naturalny tor maszyny."
+      },
+      {
+        "fault": "Using leg drive / bouncing the seat (kipping)",
+        "faultPl": "Używanie napędu nóg / sprężynowanie na siedzisku (kipping)",
+        "cause": "Weight too heavy, end-of-set fatigue, no awareness that machine isolates shoulders",
+        "causePl": "Zbyt duży ciężar, zmęczenie pod koniec serii, brak świadomości że maszyna izoluje barki",
+        "cue": "Feet stay PLANTED but PASSIVE — they support the body, they don't push. Strict press only. If you need legs, the weight is too heavy.",
+        "cuePl": "Stopy ZAKOTWICZONE ale PASYWNE — podpierają ciało, nie pchają. Tylko strict press. Jeśli potrzebujesz nóg, ciężar za duży."
+      }
+    ],
+    "breathing": "Inhale and brace at the bottom (handles at shoulder level). Hold during the press up. Exhale at the top after lockout, or as you begin the controlled descent. Bracing is less critical than free-weight OHP (back is supported) but still helps stabilize and protect the lumbar from arching.",
+    "breathingPl": "Wdech i napięcie na dole (uchwyty na wysokości barków). Trzymaj podczas wyciskania w górę. Wydech na szczycie po lock-out, lub gdy zaczynasz kontrolowane opuszczanie. Napięcie mniej krytyczne niż przy wolnych ciężarach (plecy oparte) ale wciąż pomaga stabilizować i chronić lędźwie przed wygięciem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) if machine allows — it reduces internal rotation stress. Reduce ROM if pain occurs near lockout. Try machine front raises and lateral raises as a build-up before pressing.",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie do siebie) jeśli maszyna pozwala — zmniejsza stres rotacji wewnętrznej. Zmniejsz ROM jeśli ból w okolicy lock-out. Jako rozgrzewka machine front raises i lateral raises przed wyciskaniem.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Machine shoulder press is one of the SAFER overhead press options post-rehab (fixed path, back supported). Start with very light weight, high reps, full controlled ROM. Avoid going below shoulder level on the eccentric. Stop if any cuff pain returns.",
+      "modificationPl": "Machine shoulder press to jedna z BEZPIECZNIEJSZYCH opcji wyciskania overhead po rehabilitacji (stała ścieżka, oparte plecy). Zacznij z bardzo lekkim ciężarem, wysokie powtórzenia, pełen kontrolowany ROM. Unikaj schodzenia poniżej wysokości barków w ekscentryku. Przerwij jeśli wraca jakikolwiek ból stożka.",
+      "alternative": "cable-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Machine path is fixed — if your overhead ROM doesn't match the machine's lockout angle, you'll compensate by arching the lumbar. Work thoracic and shoulder mobility drills (wall slides, thoracic extension over foam roller). Use partial ROM (90-95% lockout) until full ROM is achievable without compensation.",
+      "modificationPl": "Tor maszyny jest stały — jeśli twój ROM overhead nie pasuje do kąta lock-out maszyny, skompensujesz wygięciem lędźwi. Pracuj nad mobilnością piersiową i barków (wall slides, ekstensja piersiowa na foam rollerze). Używaj częściowego ROM (90-95% lock-out) do uzyskania pełnego ROM bez kompensacji.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Bilateral overhead pressing stresses the AC joint at lockout. Reduce weight, slightly reduce ROM (don't fully lock out), or switch temporarily to incline press variations that take pressure off the AC joint. Resume after AC pain resolves.",
+      "modificationPl": "Dwustronne wyciskanie overhead obciąża staw barkowo-obojczykowy w lock-out. Zmniejsz ciężar, lekko zredukuj ROM (nie wyprostuj w pełni), lub przejdź tymczasowo na warianty wyciskania na ławce skośnej co odciąża staw AC. Wróć gdy ból AC ustąpi.",
+      "alternative": "incline-dumbbell-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, classic shoulder building) | 3x12-15 (endurance / volume work / finisher) | 4-5x6-8 (strength-hypertrophy with longer rest) | 2-3x15-20 (high-rep pump / drop set candidate)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/lever-shoulder-press/frame_0_start.png",
+      "frames/lever-shoulder-press/frame_1_early.png",
+      "frames/lever-shoulder-press/frame_2_mid.png",
+      "frames/lever-shoulder-press/frame_3_late.png",
+      "frames/lever-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/lever-shoulder-press",
+    "master_slug": "lever-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Wizualizacja Jahel pokazuje renderer ćwiczenia z charakterystycznym 'machine lever' wskazanym przez płytę obciążeniową i dźwignię — model anatomiczny wykonuje sekwencję wyciskania overhead z pozycji siedzącej/podpartej do pełnego lock-out z rękami nad głową, a następnie kontrolowane opuszczanie. Podświetlone grupy mięśniowe: dominujące przednie i boczne deltoidy (P10/P8), tricepsy (P7) szczególnie aktywne w fazie lock-out, drugorzędnie górna klatka, kapturowe i ząbkowany przedni jako stabilizatory łopatki. Tor ruchu prosty pionowy zgodny z geometrią lever shoulder press machine — uchwyty unoszone z poziomu barków po stałym łuku do pełnego wyprostu ramion. Brak elementu wolnego ciężaru (sztanga/hantle/kable) — wyraźnie maszyna dźwigniowa z płytą obciążeniową. Pasuje 1:1 do specyfikacji: equipment shoulder_press_machine, primary anterior_deltoids P10 (dominują), lateral_deltoids P8, triceps P7, difficulty 3 (beginner-friendly dzięki podporze pleców i stałemu torowi).",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "machine", "compound", "bilateral", "beginner_friendly", "back_supported", "fixed_path", "hypertrophy_friendly", "low_stabilization_demand"]
+}

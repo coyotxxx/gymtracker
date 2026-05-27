@@ -1,0 +1,201 @@
+{
+  "id": "cable-pushdown-straight-arm-v-2",
+  "name": "Cable Straight-Arm Pulldown (Variant 2)",
+  "namePl": "Straight-arm pushdown z wyciągu (wariant 2)",
+  "aliases": ["straight-arm pulldown", "stiff-arm pulldown", "cable lat pushdown", "straight-arm lat pulldown"],
+  "aliasesPl": ["pushdown z prostymi ramionami", "wyprost ramion z linki górnej", "przyciąganie linki prostymi ramionami", "stiff-arm pulldown na wyciągu"],
+
+  "description": "Single-joint cable isolation exercise targeting the latissimus dorsi. Performed standing in front of a high pulley with a straight bar attachment, the lifter pulls the bar from forehead height down to the thighs in an arcing motion while keeping the elbows fully extended (locked) throughout the entire range. Because elbow flexion is removed, the lats must perform shoulder extension without help from the biceps. A staple finisher for back hypertrophy programs and an excellent mind-muscle drill for lifters who struggle to feel their lats during compound rows and pulldowns.",
+  "descriptionPl": "Jednostawowe ćwiczenie izolowane na wyciągu skierowane na mięsień najszerszy grzbietu. Wykonywane stojąc przed górnym wyciągiem z drążkiem prostym — ćwiczący przyciąga drążek z wysokości czoła do ud po łuku, utrzymując łokcie wyprostowane (zablokowane) przez cały zakres ruchu. Ponieważ zgięcie w łokciu jest wyeliminowane, najszerszy grzbietu musi wykonać prostowanie w stawie ramiennym bez pomocy bicepsa. Klasyczne ćwiczenie wykończeniowe w programach hipertrofii pleców oraz doskonałe ćwiczenie do nauki czucia najszerszego u osób, które gubią pracę pleców podczas wiosłowań i ściągania drążka.",
+
+  "instructions": [
+    "Attach a straight bar to the high pulley. Stand facing the machine about an arm's length away, feet hip- to shoulder-width apart.",
+    "Grip the bar with an overhand (pronated) grip slightly wider than shoulder-width. Step back so there is constant tension on the cable.",
+    "Lock your elbows in full extension — they will stay locked for the entire set. Hinge slightly at the hips so your torso leans forward maybe 10-20 degrees.",
+    "Set the bar at roughly forehead/eye height with arms straight in front of you. Brace your core, pull your shoulder blades down.",
+    "Drive the bar downward in a wide arc toward the front of your thighs by pulling your upper arms down to your sides — the movement comes entirely from the shoulder joint.",
+    "Squeeze the lats hard when the bar touches or comes close to your thighs. Pause for a count.",
+    "Return slowly under control, letting the cable raise your arms back to the starting position. Maintain straight arms and constant lat tension throughout."
+  ],
+  "instructionsPl": [
+    "Zamocuj drążek prosty do górnego wyciągu. Stań twarzą do maszyny w odległości około wyciągniętego ramienia, stopy na szerokość bioder lub barków.",
+    "Złap drążek nachwytem górnym (chwyt prostowany) nieco szerzej niż barki. Odejdź krok do tyłu, aby na lince przez cały czas było napięcie.",
+    "Zablokuj łokcie w pełnym wyproście — pozostaną wyprostowane przez całą serię. Lekko pochyl tułów w biodrach, około 10-20 stopni do przodu.",
+    "Ustaw drążek na wysokości czoła/oczu z prostymi rękami przed sobą. Napnij brzuch, ściągnij łopatki w dół.",
+    "Prowadź drążek po szerokim łuku w dół do przednich powierzchni ud, ściągając ramiona do boków tułowia — ruch zachodzi wyłącznie w stawie ramiennym.",
+    "Mocno spinaj najszerszy grzbietu gdy drążek dotrze do ud. Zatrzymaj na chwilę.",
+    "Wracaj powoli i z kontrolą, pozwalając lince unieść ramiona do pozycji wyjściowej. Utrzymuj wyprostowane ręce i stałe napięcie najszerszego przez cały ruch."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_shoulder_extension",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["teres_major", "rhomboids", "long_head_triceps"],
+    "stabilizers": ["core", "lower_trapezius", "posterior_deltoid", "forearm_flexors", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "teres_major": "S7",
+    "rhomboids": "S5",
+    "long_head_triceps": "S4",
+    "core": "T3",
+    "lower_trapezius": "T3",
+    "posterior_deltoid": "T2",
+    "forearm_flexors": "T2",
+    "glutes": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "high_pulley", "straight_bar_attachment"],
+    "optional": ["lifting_straps", "rope_attachment"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["lat-pulldown", "pull-up", "bent-over-barbell-row"],
+    "alternatives": ["lat-pulldown", "dumbbell-pullover", "cable-pullover", "kneeling-cable-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand arm's length from the stack",
+      "Overhand grip, shoulder-width on a straight bar",
+      "Elbows locked — they stay locked the whole set",
+      "Slight forward hip hinge, neutral spine",
+      "Bar at forehead height, cable under tension"
+    ],
+    "setup_cues_pl": [
+      "Stań w odległości wyciągniętego ramienia od wyciągu",
+      "Nachwyt górny, na szerokość barków na drążku prostym",
+      "Łokcie zablokowane — pozostają proste przez całą serię",
+      "Lekkie pochylenie w biodrach, kręgosłup neutralny",
+      "Drążek na wysokości czoła, linka napięta"
+    ],
+    "execution_cues": [
+      "Drive the bar down with your lats, not your triceps",
+      "Think 'pull elbows to hip pockets' even though arms are straight",
+      "Arc, do not push — the bar travels along the body in a curve",
+      "Squeeze lats hard at the bottom for a 1-count",
+      "Control the eccentric — let the cable stretch you, do not throw the bar up"
+    ],
+    "execution_cues_pl": [
+      "Wbijaj drążek w dół najszerszym grzbietu, nie tricepsem",
+      "Myśl 'ściągam łokcie do kieszeni spodni' mimo że ramiona są proste",
+      "Łuk, nie pchnięcie — drążek wędruje wzdłuż ciała po krzywej",
+      "Mocno spinaj najszerszy na dole przez 1 sekundę",
+      "Kontroluj fazę negatywną — pozwól lince Cię rozciągnąć, nie wyrzucaj drążka w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows turns the movement into a triceps pushdown",
+        "faultPl": "Zginanie łokci zamienia ruch w wyprostowywanie tricepsa",
+        "cause": "Load too heavy, weak lats taking over with arms, or no awareness of the shoulder-extension cue",
+        "causePl": "Zbyt duży ciężar, słaby najszerszy przejmowany przez ramiona, lub brak świadomości ruchu w stawie ramiennym",
+        "cue": "Lower the weight. Lock the elbows BEFORE the rep starts and check in the mirror — arms straight at every point of the arc.",
+        "cuePl": "Zmniejsz ciężar. Zablokuj łokcie ZANIM zaczniesz powtórzenie i kontroluj w lustrze — ramiona proste w każdym punkcie łuku."
+      },
+      {
+        "fault": "Using torso flexion to push the bar down (crunching forward)",
+        "faultPl": "Pomaganie skłonem tułowia w dół (zgięcie kręgosłupa)",
+        "cause": "Load too heavy, fatigue, or no core bracing",
+        "causePl": "Zbyt duży ciężar, zmęczenie, lub brak napięcia brzucha",
+        "cue": "Set the torso angle BEFORE the rep and freeze it. Only the shoulders move.",
+        "cuePl": "Ustaw kąt tułowia PRZED powtórzeniem i zamroź go. Ruszają się tylko barki."
+      },
+      {
+        "fault": "Standing too close so the cable angle is vertical",
+        "faultPl": "Zbyt bliska pozycja, przez co linka schodzi pionowo",
+        "cause": "Setup error — lifter does not step back to create a forward-arcing path for the bar",
+        "causePl": "Błąd ustawienia — ćwiczący nie odchodzi do tyłu, by stworzyć łukowy tor drążka",
+        "cue": "Step back until your arms are at ~45 degrees overhead in the start position. You need a diagonal cable.",
+        "cuePl": "Odejdź do tyłu tak, by ramiona w pozycji startowej były pod kątem około 45 stopni nad głową. Linka musi schodzić ukośnie."
+      },
+      {
+        "fault": "Bouncing the bar at the top to start each rep",
+        "faultPl": "Odbijanie drążka w górze przy każdym powtórzeniu",
+        "cause": "Letting the stack crash at the top, losing tension and using momentum to start the next rep",
+        "causePl": "Pozwalanie aby stos uderzył w górze, utrata napięcia i odbicie startujące kolejne powtórzenie",
+        "cue": "Stop the upward motion 2-3 cm before the stack touches down. Keep constant tension on the lats.",
+        "cuePl": "Zatrzymaj ruch w górę 2-3 cm przed dobiciem stosu. Utrzymuj stałe napięcie na najszerszym."
+      },
+      {
+        "fault": "Shrugging the shoulders up toward the ears at the top",
+        "faultPl": "Wzruszanie barków w górę do uszu w pozycji wyjściowej",
+        "cause": "Upper traps taking over because the lats are weak in the stretched position",
+        "causePl": "Górne czworoboczne przejmują pracę, bo najszerszy jest słaby w pozycji rozciągniętej",
+        "cue": "Pull the shoulder blades DOWN and slightly back before each rep. Long neck, low traps.",
+        "cuePl": "Ściągnij łopatki W DÓŁ i lekko w tył przed każdym powtórzeniem. Długa szyja, niskie czworoboczne."
+      }
+    ],
+    "breathing": "Exhale as you pull the bar down to your thighs. Inhale as you let the bar travel back up to the starting position. Keep a light brace throughout.",
+    "breathingPl": "Wydech podczas przyciągania drążka do ud. Wdech podczas powrotu drążka do pozycji wyjściowej. Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "caution",
+      "modification": "The overhead start position can pinch the supraspinatus. Reduce starting height (begin with the bar at chin level rather than forehead) or use a narrower grip to keep the humerus in a less impinged position.",
+      "modificationPl": "Pozycja startowa nad głową może drażnić mięsień nadgrzebieniowy. Zmniejsz wysokość startową (zaczynaj z drążkiem na wysokości brody, nie czoła) lub użyj węższego chwytu, by ramię było w mniej drażniącej pozycji.",
+      "alternative": "kneeling-cable-pulldown"
+    },
+    {
+      "condition": "elbow_hyperextension",
+      "severity": "modify",
+      "modification": "Locked-elbow position can stress hyperextending elbows. Maintain a soft micro-bend (5-10 degrees) instead of full lockout, keeping the bend consistent throughout the rep.",
+      "modificationPl": "Pozycja z zablokowanymi łokciami może obciążać łokcie z tendencją do przeprostu. Utrzymuj miękkie mikrougięcie (5-10 stopni) zamiast pełnego zablokowania, zachowując ten sam kąt przez całe powtórzenie.",
+      "alternative": "dumbbell-pullover"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Forward hip hinge plus overhead cable tension increases lumbar load. Perform from a half-kneeling position to remove standing brace demand, or reduce weight significantly.",
+      "modificationPl": "Pochylenie w biodrach plus napięcie linki od góry zwiększa obciążenie odcinka lędźwiowego. Wykonuj z pozycji półklęku, by zmniejszyć wymagania na napięcie stojące, albo wyraźnie zmniejsz ciężar.",
+      "alternative": "kneeling-cable-pulldown"
+    },
+    {
+      "condition": "long_head_biceps_tendinitis",
+      "severity": "caution",
+      "modification": "Overhead-to-down arc loads the long head of biceps in a stretched position. Limit the starting range so arms do not exceed shoulder height at the top, and use moderate weight only.",
+      "modificationPl": "Łuk od pozycji nad głową do dołu obciąża głowę długą bicepsa w pozycji rozciągniętej. Ogranicz zakres startowy tak, by ramiona nie przekraczały wysokości barków na górze, używaj wyłącznie umiarkowanego ciężaru.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/finisher) | 3x15-20 (mind-muscle / pump) | 2-3x10-12 (pre-exhaust before rows)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-pushdown-straight-arm-v-2.gif",
+    "frames_extracted": [
+      "frames/cable-pushdown-straight-arm-v-2/frame_0_start.png",
+      "frames/cable-pushdown-straight-arm-v-2/frame_1_early.png",
+      "frames/cable-pushdown-straight-arm-v-2/frame_2_mid.png",
+      "frames/cable-pushdown-straight-arm-v-2/frame_3_late.png",
+      "frames/cable-pushdown-straight-arm-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-pushdown-straight-arm-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący stoi twarzą do wyciągu, ramiona wyprostowane skierowane w górę pod kątem ~45 stopni, drążek prosty na wysokości czoła, łokcie ZABLOKOWANE w pełnym wyproście, najszerszy grzbietu i tylne aktony barków podświetlone na czerwono. Frame 2: faza końcowa — drążek przy udach, łokcie nadal całkowicie wyprostowane, ramiona po łuku zeszły wzdłuż boków tułowia, najszerszy w pełnym skurczu. Frame 4: powrót do pozycji wyjściowej z widocznym 'ghostem' fazy końcowej. KLUCZOWE: łokcie są wyprostowane przez CAŁY ruch — to jednoznacznie straight-arm pulldown (nie tricep pushdown). Brak zgięcia w łokciu = brak pracy tricepsa jako primary. Podświetlenie obejmuje najszerszy (red) i delty tylne — typowe dla straight-arm pulldownu. Primary: latissimus_dorsi. Secondary: teres major, rhomboids, długa głowa tricepsa (jako stabilizator wyprostu łokcia). Mechanic=isolation (single-joint: tylko staw ramienny), force=pull, plane=sagittal, bilateral, standing. Wszystkie pola PL napisane od zera, nie tłumaczone.",
+
+  "tags": ["bodybuilding", "back", "lats", "isolation", "cable", "upper_body", "finisher", "mind_muscle"]
+}

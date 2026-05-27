@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-lying-hammer-press",
+  "name": "Dumbbell Lying Hammer Press (Neutral Grip Bench Press)",
+  "namePl": "Hammer press z hantlami leżąc (neutral grip bench)",
+  "aliases": ["neutral grip dumbbell bench press", "hammer grip DB press", "parallel grip dumbbell bench", "DB neutral press flat", "palms-in dumbbell bench press"],
+  "aliasesPl": ["wyciskanie hantli chwytem neutralnym", "DB bench chwytem młotkowym", "wyciskanie hantli równolegle", "neutralny chwyt na ławce poziomej", "hammer bench z hantlami"],
+
+  "description": "Flat dumbbell bench press performed with a neutral (hammer) grip — palms facing each other throughout the entire range of motion, dumbbells held parallel along the long axis of the body. Compared to the classic pronated DB bench press, the neutral grip keeps the elbows naturally tucked closer to the torso (~30-45° from sides), which significantly reduces stress on the anterior shoulder capsule and rotator cuff. This makes it one of the most shoulder-friendly horizontal pressing variations available. Hits the sternal (inner/middle) fibers of the pectoralis major hard while shifting some load to the triceps long head due to the tucked elbow path. Excellent choice for trainees who feel pinching during pronated benching, for high-volume hypertrophy work, and as the primary chest builder for athletes with prior shoulder injuries.",
+  "descriptionPl": "Wyciskanie hantli na ławce poziomej z chwytem neutralnym (młotkowym) — dłonie zwrócone do siebie przez cały zakres ruchu, hantle trzymane równolegle do długiej osi tułowia. W porównaniu do klasycznego wyciskania hantli chwytem pronowanym, chwyt neutralny utrzymuje łokcie naturalnie schowane bliżej tułowia (~30-45° od boków), co znacząco redukuje obciążenie przedniej torebki stawu barkowego i stożka rotatorów. To czyni go jednym z najprzyjaźniejszych dla barków wariantów wyciskania poziomego. Mocno aktywuje włókna mostkowe (środkowe/wewnętrzne) klatki piersiowej, jednocześnie przenosząc część obciążenia na głowę długą tricepsa dzięki schowanej ścieżce łokcia. Doskonały wybór dla osób, które odczuwają szczypanie przy chwycie pronowanym, do objętościowej pracy hipertroficznej oraz jako główny budulec klatki u sportowców po przebytych kontuzjach barków.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with a dumbbell resting on each thigh, palms already facing each other (neutral grip).",
+    "Lie back, using your thighs to kick the dumbbells up to chest level. Keep the neutral grip — palms continue to face each other throughout.",
+    "Plant feet firmly on the floor, knees bent ~90°. Retract and depress the shoulder blades, slight natural arch in the lower back, glutes on bench.",
+    "Press the dumbbells up so they meet (or come close) over the middle/upper chest — arms extended but elbows NOT locked rigid. Dumbbells stay parallel to each other and to the long axis of your body. This is the starting position.",
+    "Inhale, brace the core, and lower the dumbbells in a controlled arc down to chest level. Elbows tracked at ~30-45° from torso — they should naturally tuck closer than in pronated bench thanks to the neutral grip.",
+    "Pause briefly at the bottom — dumbbells alongside the chest, NOT bouncing off the rib cage. Feel a controlled stretch in the inner chest.",
+    "Press the dumbbells back up along the same parallel path, finishing over the middle chest. The dumbbells can lightly touch at the top but should not clang or fight for space.",
+    "Exhale at the top. Keep shoulder blades retracted throughout the set. To finish: bring dumbbells to chest, sit up with momentum and place them on thighs."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu poziomej ławki z hantlami opartymi o uda, dłonie już zwrócone do siebie (chwyt neutralny).",
+    "Połóż się, wybijając hantle z ud do wysokości klatki. Utrzymaj chwyt neutralny — dłonie cały czas zwrócone do siebie.",
+    "Stopy mocno na podłodze, kolana zgięte ~90°. Ściągnij łopatki w dół i razem, lekki naturalny łuk w dolnych plecach, pośladki na ławce.",
+    "Wyciśnij hantle w górę aż spotkają się (lub zbliżą) nad środkową/górną klatką — ramiona wyprostowane, ale łokcie BEZ sztywnego lock-out. Hantle pozostają równoległe do siebie i do długiej osi ciała. To pozycja startowa.",
+    "Wdech, napięcie brzucha, opuszczaj hantle kontrolowanym łukiem do poziomu klatki. Łokcie pod kątem ~30-45° od tułowia — dzięki neutralnemu chwytowi naturalnie chowają się bliżej niż przy chwycie pronowanym.",
+    "Krótka pauza na dole — hantle obok klatki, BEZ odbijania od żeber. Poczuj kontrolowane rozciągnięcie w wewnętrznej części klatki.",
+    "Wyciśnij hantle w górę po tej samej równoległej ścieżce, kończąc nad środkową klatką. Hantle mogą lekko się stykać na szczycie, ale bez stukania i walki o miejsce.",
+    "Wydech na górze. Łopatki ściągnięte przez cały set. Zakończenie: ściągnij hantle do klatki, usiądź z impetem i odłóż hantle na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "biceps", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "triceps": "P8",
+    "anterior_deltoids": "P7",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "forearms": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up", "machine-chest-press"],
+    "progression_to": ["incline-dumbbell-hammer-press", "single-arm-dumbbell-neutral-press", "dumbbell-bench-press", "dumbbell-floor-press"],
+    "alternatives": ["dumbbell-bench-press", "machine-chest-press", "swiss-bar-bench-press", "push-up-neutral-grip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit at end of bench, dumbbells on thighs with palms ALREADY facing each other",
+      "Kick dumbbells up as you lie back — keep the neutral grip the whole way",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Slight arch in lower back, glutes glued to the bench",
+      "Start with dumbbells parallel over the middle chest, elbows soft"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na końcu ławki, hantle na udach z dłońmi JUŻ zwróconymi do siebie",
+      "Wybij hantle gdy się kładziesz — utrzymaj chwyt neutralny przez cały ruch",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Lekki łuk w dolnych plecach, pośladki przyklejone do ławki",
+      "Start z hantlami równolegle nad środkową klatką, łokcie miękkie"
+    ],
+    "execution_cues": [
+      "Keep the palms facing each other the ENTIRE set — no rotating to pronated",
+      "Elbows tucked at ~30-45° from torso — neutral grip lets them stay naturally close",
+      "Lower until dumbbells touch the sides of your chest, NOT crash into the rib cage",
+      "Press up along a straight parallel path — dumbbells stay in line with your body",
+      "Eccentric ~2-3 seconds, concentric strong but controlled, hard chest squeeze at top"
+    ],
+    "execution_cues_pl": [
+      "Trzymaj dłonie zwrócone do siebie przez CAŁY set — bez rotacji do pronacji",
+      "Łokcie schowane ~30-45° od tułowia — neutralny chwyt naturalnie utrzymuje je blisko",
+      "Opuszczaj aż hantle dotkną boków klatki, NIE rozbijaj się o żebra",
+      "Wyciskaj po prostej równoległej ścieżce — hantle w linii z ciałem",
+      "Faza ekscentryczna ~2-3 sekundy, koncentryczna mocna ale kontrolowana, mocne ściśnięcie klatki na szczycie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip rotates toward pronated mid-set (palms turning to face feet)",
+        "faultPl": "Chwyt obraca się w kierunku pronowanym w trakcie setu (dłonie skręcają w stronę stóp)",
+        "cause": "Habit from pronated bench press; weak wrist/forearm stabilization; fatigue",
+        "causePl": "Nawyk z pronowanego wyciskania; słaba stabilizacja nadgarstka/przedramienia; zmęczenie",
+        "cue": "Lock the wrists — palms face each other from rack-up to rack-down. If you rotate, the exercise becomes regular DB bench. Drop weight if needed.",
+        "cuePl": "Zablokuj nadgarstki — dłonie zwrócone do siebie od wybicia do odłożenia. Jeśli rotujesz, ćwiczenie zamienia się w zwykły DB bench. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Dumbbells fight for space at the top (clanging together)",
+        "faultPl": "Hantle walczą o miejsce na szczycie (stukają o siebie)",
+        "cause": "Pressing too far inward; trying to mimic close-grip barbell press",
+        "causePl": "Wyciskanie zbyt mocno do środka; próba kopiowania wyciskania sztangą wąsko",
+        "cue": "Press straight UP, not inward. Dumbbells should be parallel, just kissing at the top — no crashing.",
+        "cuePl": "Wyciskaj prosto DO GÓRY, nie do środka. Hantle równolegle, ledwie się dotykają na szczycie — bez walenia o siebie."
+      },
+      {
+        "fault": "Elbows flared wide despite neutral grip",
+        "faultPl": "Łokcie szeroko rozsunięte mimo neutralnego chwytu",
+        "cause": "Old habit from pronated benching overriding the natural tuck of neutral grip",
+        "causePl": "Stary nawyk z pronowanego wyciskania nadpisuje naturalne schowanie łokci przy neutralnym chwycie",
+        "cue": "Let the neutral grip do its job — elbows want to tuck to 30-45°, don't fight it. This is the whole point of the variation.",
+        "cuePl": "Pozwól neutralnemu chwytowi zrobić swoje — łokcie chcą zejść do 30-45°, nie walcz z tym. To jest cały sens tego wariantu."
+      },
+      {
+        "fault": "Insufficient ROM — stopping high above chest",
+        "faultPl": "Za mały zakres ruchu — zatrzymanie wysoko nad klatką",
+        "cause": "Fear of stretch, ego with too much weight, lack of awareness",
+        "causePl": "Strach przed rozciągnięciem, ego ze zbyt ciężkim ciężarem, brak świadomości",
+        "cue": "Dumbbells should touch the sides of the chest at the bottom — neutral grip allows deep, safe ROM. Use it.",
+        "cuePl": "Hantle powinny dotknąć boków klatki na dole — neutralny chwyt pozwala na głęboki, bezpieczny zakres. Wykorzystaj to."
+      },
+      {
+        "fault": "Asymmetry between arms (one dumbbell pressing higher/faster)",
+        "faultPl": "Asymetria między rękoma (jeden hantel wyciska wyżej/szybciej)",
+        "cause": "Dominant side compensating; weak stabilizers on non-dominant side",
+        "causePl": "Strona dominująca kompensuje; słabe stabilizatory po stronie niedominującej",
+        "cue": "Move both dumbbells in perfect sync. Pause at the top to reset symmetry. Add single-arm neutral press as accessory if gap persists.",
+        "cuePl": "Ruszaj oba hantle w idealnej synchronizacji. Pauza na szczycie by zresetować symetrię. Dodaj jednorączne wyciskanie neutralnym chwytem jako akcesoryjne jeśli różnica się utrzymuje."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Neutral grip IS the modification for shoulder issues — already shoulder-friendly. If still painful, reduce ROM by 10-20% on the bottom and avoid full depth until pain resolves.",
+      "modificationPl": "Chwyt neutralny JEST modyfikacją dla problemów z barkami — już jest przyjazny dla barków. Jeśli nadal boli, zmniejsz ROM o 10-20% na dole i unikaj pełnej głębi do ustąpienia bólu.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Despite being shoulder-friendly, heavy free-weight pressing still loads the cuff. Switch to fixed-path machine until cleared by physio.",
+      "modificationPl": "Mimo przyjaznego dla barków charakteru, ciężkie wyciskanie z wolnymi ciężarami nadal obciąża stożek rotatorów. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Stop pressing variations until pec heals. Deep ROM with dumbbells aggravates strained tissue. Return through light cable work first.",
+      "modificationPl": "Wstrzymaj wszystkie warianty wyciskania do wygojenia klatki. Głęboki zakres z hantlami drażni naderwaną tkankę. Wróć przez lekką pracę na wyciągu.",
+      "alternative": "cable-chest-press-light"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "ok",
+      "modification": "Neutral grip IS one of the wrist-friendliest pressing positions — bones stacked, no extreme wrist extension. Usually a non-issue but use wrist wraps if you have chronic wrist sensitivity.",
+      "modificationPl": "Chwyt neutralny JEST jedną z najłagodniejszych dla nadgarstków pozycji wyciskania — kości ułożone w linii, brak skrajnego wyprostu nadgarstka. Zwykle bez problemu, ale użyj wraps na nadgarstki jeśli masz chroniczną wrażliwość.",
+      "alternative": null
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-lying-hammer-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-hammer-press/frame_0_start.png",
+      "frames/dumbbell-lying-hammer-press/frame_1_early.png",
+      "frames/dumbbell-lying-hammer-press/frame_2_mid.png",
+      "frames/dumbbell-lying-hammer-press/frame_3_late.png",
+      "frames/dumbbell-lying-hammer-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-lying-hammer-press",
+    "yuhonas_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): hantle przy bokach klatki na poziomie środkowej klatki, chwyt wyraźnie NEUTRALNY (dłonie zwrócone do siebie, hantle równoległe do długiej osi tułowia), łokcie schowane bliżej tułowia (~30-45°), łopatki ściągnięte. Frame 2 (góra): pełne wyciśnięcie, hantle równolegle nad środkową klatką, dłonie nadal zwrócone do siebie (NIE rotują do pronacji), ramiona wyprostowane bez sztywnego lock-out. Frame 4 (motion blur powrotu w dół): widać kontrolowane opuszczanie po prostej równoległej ścieżce. Podświetlone: pectoralis major (włókna mostkowe, środek klatki) jako primary, widoczne zaangażowanie tricepsów i przednich delt — zgodne z biomechaniką neutral grip bench press. Schowane łokcie i równoległa ścieżka hantli to klasyczna sygnatura shoulder-friendly hammer press. PL nazwa zachowuje 'hammer press' jako rozpoznawalny termin branżowy plus polski opis 'z hantlami leżąc (neutral grip bench)'. Wszystkie pola PL napisane od zera z uwzględnieniem specyfiki neutralnego chwytu (różnice względem pronowanego DB bench), nie tłumaczone z EN."
+}

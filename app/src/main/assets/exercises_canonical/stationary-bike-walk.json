@@ -1,0 +1,189 @@
+{
+  "id": "stationary-bike-walk",
+  "name": "Stationary Bike (Walk)",
+  "namePl": "Rowerek stacjonarny — marsz (niska intensywność)",
+  "aliases": ["stationary bike easy pedaling", "exercise bike walk pace", "recovery spin", "easy stationary cycling", "upright bike low cadence", "bike walking pace", "stationary bike standing easy"],
+  "aliasesPl": ["rowerek stacjonarny marsz", "rower stacjonarny spokojnie", "rower stacjonarny lekko", "regeneracyjny rower stacjonarny", "easy spin", "rowerek w tempie marszu", "rowerek stacjonarny na stojąco lekko"],
+
+  "description": "Stationary Bike (Walk) is a very low-intensity form of indoor cycling on an upright exercise bike — performed at a walking pace effort (RPE 3-5/10, zone 1-2, 100-120 bpm in most adults). The rider sits or stands slightly out of the saddle leaning lightly on the handlebars, pedaling at an easy cadence (50-70 rpm) with low-to-medium resistance, just enough to keep the flywheel turning smoothly. This is NOT a fat-burning HIIT session, NOT a sprint workout, NOT a heavy hill simulation — it's a deliberately gentle, joint-friendly movement designed for active recovery between hard training sessions, warm-up before strength work, cool-down after intense efforts, rehabilitation from lower-body injuries, deconditioned beginners building the habit of daily movement, and elderly populations. Because the bike is non-impact (no ground reaction forces), it's safer for knees, hips and ankles than walking on hard surfaces, while still moving blood through the legs, lubricating joints, clearing metabolic by-products, and contributing modest cardiovascular volume. Typical session: 15-40 minutes, conversational pace (full sentences possible), no breathlessness.",
+  "descriptionPl": "Rowerek stacjonarny — marsz to bardzo niska intensywność jazdy na rowerze stacjonarnym (pionowym) — wykonywana z wysiłkiem na poziomie spaceru (RPE 3-5/10, strefa 1-2, 100-120 ud./min u większości dorosłych). Trenujący siedzi lub lekko wstaje z siodełka opierając się na kierownicy, pedałuje w spokojnej kadencji (50-70 obr./min) z niskim lub umiarkowanym oporem — tylko tyle, by koło zamachowe płynnie się obracało. To NIE jest sesja spalająca tłuszcz w HIIT, NIE jest to trening sprinterski, NIE jest to ciężka symulacja podjazdu — to świadomie łagodny, przyjazny stawom ruch zaprojektowany pod aktywną regenerację między ciężkimi treningami, rozgrzewkę przed siłą, cool-down po intensywnym wysiłku, rehabilitację po kontuzjach dolnej części ciała, osoby początkujące budujące nawyk codziennego ruchu i seniorów. Ponieważ rower jest bezudarowy (brak sił reakcji podłoża), jest bezpieczniejszy dla kolan, bioder i kostek niż chodzenie po twardych nawierzchniach — a jednocześnie przepompowuje krew przez nogi, smaruje stawy, usuwa metabolity i daje umiarkowany wkład w objętość cardio. Typowa sesja: 15-40 minut, tempo konwersacyjne (możesz mówić pełnymi zdaniami), bez zadyszki.",
+
+  "instructions": [
+    "Adjust seat height first: when the heel is on the pedal at the bottom of the stroke, the knee should be ALMOST fully extended (slight bend ~5°). Too low = knee pain; too high = hips rock.",
+    "Adjust handlebar height: for the 'walk' variant they should be HIGH and close — comfortable to lean lightly on, no aggressive forward lean.",
+    "Mount the bike, place the ball of the foot on the pedal with the strap/cage secured. Start the resistance at the LOWEST level (1-2 out of 20).",
+    "Begin pedaling at a slow, smooth cadence around 50-60 rpm. The flywheel should turn easily — you should feel almost no load on the legs.",
+    "After 1-2 minutes, raise resistance by 1-2 levels only — just enough that you can feel light tension in the quads and glutes, but breathing stays calm and conversational.",
+    "Optional 'walk standing' variant (as shown in the demo): rise slightly out of the saddle, hands lightly on the bars, pedaling at the same easy cadence. Use this for variety — do NOT add resistance when standing.",
+    "Keep posture tall, shoulders relaxed, hands light on the bars (no white-knuckle grip). Don't slump or hunch over the handlebars.",
+    "Hold for 15-40 minutes. Cool down the last 2-3 minutes at minimum resistance. Step off carefully — legs may feel slightly heavy."
+  ],
+  "instructionsPl": [
+    "Najpierw ustaw wysokość siodełka: gdy pięta jest na pedale w najniższym punkcie, kolano powinno być PRAWIE wyprostowane (lekkie ugięcie ~5°). Zbyt nisko = ból kolan; zbyt wysoko = biodra się kołyszą.",
+    "Ustaw wysokość kierownicy: w wariancie 'marsz' powinna być WYSOKO i blisko — wygodna do lekkiego oparcia, bez agresywnego pochylenia do przodu.",
+    "Wsiądź na rower, postaw śródstopie na pedale i zapnij pasek/koszyk. Zacznij od NAJNIŻSZEGO oporu (1-2 na 20).",
+    "Zacznij pedałować w spokojnej, płynnej kadencji około 50-60 obr./min. Koło zamachowe powinno obracać się bez wysiłku — prawie nie czujesz obciążenia w nogach.",
+    "Po 1-2 minutach podnieś opór o 1-2 poziomy — tyle, byś czuł lekkie napięcie w czworogłowych i pośladkach, ale oddech pozostaje spokojny i konwersacyjny.",
+    "Opcjonalny wariant 'marsz na stojąco' (jak na demo): lekko wstań z siodełka, dłonie luźno na kierownicy, pedałuj w tej samej spokojnej kadencji. Używaj dla urozmaicenia — NIE dodawaj oporu gdy stoisz.",
+    "Utrzymuj postawę wysoką, barki rozluźnione, dłonie lekko na kierownicy (bez zaciskania). Nie garb się i nie pochylaj agresywnie nad kierownicą.",
+    "Pedałuj przez 15-40 minut. Ostatnie 2-3 minuty cool-down na minimalnym oporze. Zsiądź ostrożnie — nogi mogą być lekko ciężkie."
+  ],
+
+  "classification": {
+    "movement_pattern": "locomotion",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "calves", "hip_flexors"],
+    "stabilizers": ["core", "erector_spinae", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P6",
+    "glutes": "P5",
+    "hamstrings": "S4",
+    "calves": "S4",
+    "hip_flexors": "S5",
+    "core": "T4",
+    "erector_spinae": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["stationary_bike"],
+    "optional": ["heart_rate_monitor", "water_bottle", "towel", "cycling_shoes", "padded_shorts"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["single-leg-balance"],
+    "progression_to": ["stationary-bike-run", "stationary-bike-resistance", "stationary-bike-intervals", "spin-class", "outdoor-cycling"],
+    "alternatives": ["walking-on-incline-treadmill", "elliptical-cross-trainer", "recumbent-bike", "walking-flat-treadmill", "swimming-easy"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height first — heel on pedal at the bottom = leg almost straight; this is the single biggest predictor of knee comfort",
+      "Handlebars HIGH and close for the walk variant — comfort, not aero — you shouldn't be reaching down",
+      "Resistance starts at 1-2/20 — you can always add more, but starting too heavy will spike the heart rate and ruin the 'walk' intent",
+      "Ball of foot on the pedal, NOT the arch — even at easy pace, arch contact strains the Achilles over 30 minutes",
+      "Water bottle and towel in reach before starting — don't break tempo to fetch them"
+    ],
+    "setup_cues_pl": [
+      "Najpierw wysokość siodełka — pięta na pedale w dole = noga prawie prosta; to największy pojedynczy czynnik komfortu kolan",
+      "Kierownica WYSOKO i blisko w wariancie marsz — komfort, nie aero — nie powinieneś sięgać w dół",
+      "Opór startuje na 1-2/20 — zawsze możesz dodać więcej, ale za ciężki start podbije tętno i zniszczy ideę 'marszu'",
+      "Śródstopie na pedale, NIE łuk stopy — nawet przy spokojnym tempie kontakt łukiem męczy ścięgno Achillesa po 30 minutach",
+      "Butelka wody i ręcznik w zasięgu ręki przed startem — nie przerywaj rytmu, by je dosięgnąć"
+    ],
+    "execution_cues": [
+      "Smooth, ROUND pedal stroke — push down AND pull up slightly through the back of the stroke; don't just stomp on the down phase",
+      "Cadence 50-70 rpm — slow enough to feel deliberate, fast enough not to grind; if legs feel heavy, reduce resistance, don't slow further",
+      "Hands LIGHT on the bars — like resting on a windowsill; tight grip raises blood pressure and tenses the upper back unnecessarily",
+      "Hips STAY in the saddle in the seated version — no rocking side to side; rocking means the seat is too high or resistance too heavy",
+      "If standing (the 'walk' variant in the demo), keep weight stacked over the pedals, knees tracking forward not bowing in or out",
+      "Conversational breath — if you can't speak a full sentence, you're going too hard for a walk session; back off"
+    ],
+    "execution_cues_pl": [
+      "Płynny, OKRĄGŁY ruch pedałów — naciskaj w dół ORAZ delikatnie ciągnij w górę z tyłu obrotu; nie tylko tłucz pedał w dół",
+      "Kadencja 50-70 obr./min — wolno na tyle, by czuć kontrolę, szybko na tyle, by nie męczyć siłowo; jeśli nogi ciężkie, zmniejsz opór, nie zwalniaj dalej",
+      "Dłonie LEKKO na kierownicy — jak na parapecie; mocny chwyt podnosi ciśnienie i niepotrzebnie spina górną część pleców",
+      "Biodra ZOSTAJĄ w siodełku w wersji siedzącej — bez bujania na boki; bujanie = siodełko za wysokie albo opór za ciężki",
+      "Gdy stoisz (wariant 'marsz' z demo), ciężar nad pedałami, kolana w linii z palcami stóp — nie do środka, nie na zewnątrz",
+      "Oddech konwersacyjny — jeśli nie możesz wypowiedzieć pełnego zdania, jedziesz za ciężko jak na sesję marszową; odpuść"
+    ],
+    "common_faults": [
+      {
+        "fault": "Resistance too high — turns the 'walk' into a slow grind",
+        "faultPl": "Za wysoki opór — zamienia 'marsz' w wolne molenie",
+        "cause": "Ego, treating every session as a workout, copying intense spin class settings, misreading the intent",
+        "causePl": "Ego, traktowanie każdej sesji jako trening, kopiowanie ustawień z intensywnego spinningu, błędne rozumienie celu",
+        "cue": "Lower the resistance until pedaling feels EASY. This is recovery / warm-up — the point is light circulation, not leg burn. If quads pump, resistance is too high.",
+        "cuePl": "Zmniejsz opór, aż pedałowanie będzie LEKKIE. To regeneracja / rozgrzewka — celem jest lekki przepływ krwi, nie pieczenie ud. Jeśli czworogłowe pieką, opór za duży."
+      },
+      {
+        "fault": "Knees collapsing inward or bowing outward during pedal stroke",
+        "faultPl": "Kolana zapadają się do środka lub uciekają na zewnątrz w trakcie obrotu",
+        "cause": "Weak gluteus medius, poor seat alignment, foot rotated on pedal, hip mobility limits",
+        "causePl": "Słaby pośladek średni, źle wyrównane siodełko, stopa skręcona na pedale, ograniczenia ruchomości biodra",
+        "cue": "Knees should track over the second toe — imagine pushing the knees gently OUT against an imaginary band. If pain develops, stop and check foot/saddle position.",
+        "cuePl": "Kolana w linii drugiego palca stopy — wyobraź sobie, że delikatnie wypychasz kolana NA ZEWNĄTRZ przeciwko gumie. Gdy pojawi się ból, zatrzymaj się i sprawdź pozycję stopy/siodełka."
+      },
+      {
+        "fault": "Hunching over the handlebars / rounded upper back",
+        "faultPl": "Garbienie się nad kierownicą / zaokrąglone górne plecy",
+        "cause": "Handlebars too low/far, fatigue creeping in, scrolling on phone while pedaling, weak postural muscles",
+        "causePl": "Kierownica za nisko/za daleko, narastające zmęczenie, przewijanie telefonu w trakcie, słabe mięśnie posturalne",
+        "cue": "Tall spine, chest open, shoulder blades down and back — like sitting upright on a chair. Raise the handlebars or move them closer if you can't maintain posture.",
+        "cuePl": "Wysoki kręgosłup, klatka otwarta, łopatki w dół i do tyłu — jak siedząc prosto na krześle. Podnieś kierownicę albo przysuń ją bliżej, jeśli nie utrzymasz postawy."
+      },
+      {
+        "fault": "Pedaling only with the down-stroke (stomping)",
+        "faultPl": "Pedałowanie tylko fazą w dół (tłuczenie pedałów)",
+        "cause": "Beginners' default pattern, no foot strap/cage, lack of cycling experience, fatigue",
+        "causePl": "Domyślny wzorzec początkujących, brak paska/koszyka na pedale, brak doświadczenia rowerowego, zmęczenie",
+        "cue": "Think 'wipe the mud off the bottom of your shoe' through the back of the stroke — engages hamstrings and creates a smooth circle, not a series of stomps.",
+        "cuePl": "Pomyśl 'wytrzyj błoto z podeszwy' w tylnej fazie obrotu — angażuje dwugłowe i tworzy okrągły obrót zamiast serii tłuczeń."
+      }
+    ],
+    "breathing": "Quiet, nasal breathing throughout. This is a zone 1-2 effort — if you can't comfortably breathe through your nose, the resistance is too high. You should be able to speak in full sentences without gasping. Heart rate typically 100-120 bpm in healthy adults (50-65% of HRmax).",
+    "breathingPl": "Cichy, nosowy oddech przez cały czas. To wysiłek strefy 1-2 — jeśli nie możesz komfortowo oddychać nosem, opór jest za wysoki. Powinieneś móc mówić pełnymi zdaniami bez łapania powietrza. Tętno zwykle 100-120 ud./min u zdrowych dorosłych (50-65% HRmax)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_knee_injury_with_active_swelling",
+      "severity": "modify",
+      "modification": "Cycling at very low resistance is often RECOMMENDED in knee rehab (no impact, controlled ROM), but acute swelling and pain >4/10 mean tissue is still inflamed. Wait 48-72h, then start with 5-10 minutes at minimum resistance and only if completely pain-free. If pain returns, stop immediately.",
+      "modificationPl": "Jazda przy bardzo niskim oporze jest często ZALECANA w rehabilitacji kolan (brak udaru, kontrolowany zakres ruchu), ale ostry obrzęk i ból >4/10 oznaczają trwający stan zapalny. Odczekaj 48-72h, potem zacznij od 5-10 min na minimalnym oporze i tylko jeśli zupełnie bez bólu. Gdy ból wraca, przerwij natychmiast.",
+      "alternative": "swimming-easy"
+    },
+    {
+      "condition": "saddle_pain_perineal_numbness_or_pudendal_neuralgia",
+      "severity": "modify",
+      "modification": "Pressure on the perineum can cause numbness or nerve irritation, particularly in longer sessions. Switch to a recumbent bike, use a noseless / cutout saddle, or break the session into 5-10 min chunks. Numbness lasting >24h after riding requires medical evaluation.",
+      "modificationPl": "Ucisk na krocze może powodować drętwienie lub podrażnienie nerwów, zwłaszcza przy dłuższych sesjach. Przejdź na rower poziomy (recumbent), używaj siodełka bez nosa / z wycięciem, albo podziel sesję na 5-10 min bloki. Drętwienie utrzymujące się >24h po jeździe wymaga oceny lekarskiej.",
+      "alternative": "recumbent-bike"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_recent_cardiac_event",
+      "severity": "modify",
+      "modification": "Although walk-pace cycling is one of the SAFEST cardio options for cardiac populations, any recent event (MI, stent, surgery) requires medical clearance before unsupervised activity. Start at 5 minutes / minimum resistance / monitored heart rate, increase only with cardiologist sign-off.",
+      "modificationPl": "Choć rowerek w tempie marszu jest jedną z NAJBEZPIECZNIEJSZYCH form cardio dla kardiologów, każde świeże zdarzenie (zawał, stent, operacja) wymaga zielonego światła lekarza przed samodzielną aktywnością. Zacznij od 5 minut / minimalny opór / monitorowane tętno, zwiększaj tylko za zgodą kardiologa.",
+      "alternative": "walking-flat-treadmill"
+    }
+  ],
+
+  "typical_sets_reps": "15-20 min @ resistance 1-3/20, 50-65 rpm (warm-up before strength) | 20-30 min @ resistance 2-4/20, 55-70 rpm (active recovery between hard sessions) | 30-45 min @ resistance 3-5/20, 60-70 rpm (zone 1-2 base cardio, daily movement) | 5-10 min @ minimum resistance (cool-down after intense workout)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "stationary-bike-walk.gif",
+    "frames_extracted": [
+      "frames/stationary-bike-walk/frame_0_start.png",
+      "frames/stationary-bike-walk/frame_1_early.png",
+      "frames/stationary-bike-walk/frame_2_mid.png",
+      "frames/stationary-bike-walk/frame_3_late.png",
+      "frames/stationary-bike-walk/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/stationary-bike-walk"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Źródłowy GIF z Jahel (sources/jahel/cardio/stationary-bike-walk.gif) pokazuje postać na rowerze stacjonarnym pionowym — lekko wstaje z siodełka, ręce oparte na kierownicy, spokojne pedałowanie w tempie marszu. Podświetlenia anatomiczne: czworogłowe (obie głowy boczne i przyśrodkowe widoczne), pośladek wielki, łydki — typowy wzorzec rekrutacji niskiej intensywności na rowerze. classification.movement_pattern: locomotion (cykliczny ruch napędowy, mimo stacjonarnej maszyny — zgodnie z konwencją używaną w walking-on-incline-treadmill). force: push (każdy obrót = wypchnięcie pedału w dół, prostowanie biodra i kolana). mechanic: compound (biodro+kolano+staw skokowy). laterality: bilateral (oba pedały naprzemiennie ale symetrycznie). plane: sagittal. kinetic_chain: closed (stopy w stałym kontakcie z pedałem). muscles.primary: quadriceps P6 (główny prostownik kolana w fazie push przy niskim oporze — P6 nie P7/P8 bo to LEKKIE pedałowanie, opór 1-4/20), glutes P5 (prostowanie biodra przy niskiej intensywności — pośladki pracują, ale daleko od peaku jak przy podjeździe). secondary: hamstrings, calves, hip_flexors. category: cardio. equipment.required: stationary_bike. difficulty: 2 (najłatwiejsze cardio jakie istnieje — siadasz i kręcisz; jedyne wyzwanie to ustawienie siodełka). calories_per_kg_per_hour: 3.5 (MET ~3.5 dla cyklingu <50W, niewiele więcej niż chodzenie). 4 typowe protokoły obejmujące rozgrzewkę, recovery, base cardio i cool-down. 3 contraindications: ostra kontuzja kolana z obrzękiem (uwaga: rower jest CZĘSTO ZALECANY w rehab kolan, dlatego severity: modify nie avoid), ból krocza/drętwienie (charakterystyczne dla siodełka rowerowego), niewydolność krążenia / świeży zawał (mimo że to jedna z najbezpieczniejszych form cardio kardiologicznie, każde świeże zdarzenie wymaga zgody lekarza). Coaching cues podkreślają NAJWAŻNIEJSZE 2 rzeczy: (1) opór musi być NISKI — typowy błąd to traktowanie każdej sesji jako treningu i podkręcanie oporu, co niszczy regeneracyjny charakter; (2) wysokość siodełka — pojedynczy największy czynnik komfortu kolan. PL tłumaczenia napisane od zera w polskim standardzie fitness: 'kadencja', 'obr./min', 'śródstopie', 'siodełko', 'koło zamachowe', 'strefa 1-2', 'opór', 'cool-down'. Wariant 'walk' różni się od 'stationary-bike-run' niższą intensywnością (P6/P5 vs P7/P7+) i intencją (recovery vs trening cardio); różni się od recumbent-bike pionową pozycją z opcjonalnym wstawaniem z siodełka jak na demo.",
+
+  "tags": ["cardio", "low_impact", "low_intensity", "zone_1", "zone_2", "beginner_friendly", "recovery", "warm_up", "cool_down", "stationary_bike", "rehab_friendly", "elderly_friendly", "knee_friendly", "joint_friendly", "indoor", "steady_state", "active_recovery", "daily_movement"]
+}

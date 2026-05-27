@@ -1,0 +1,205 @@
+{
+  "id": "triceps-press",
+  "name": "Triceps Press (Smith Machine Incline Close-Grip Push-Up)",
+  "namePl": "Triceps press (wyciskanie wąsko)",
+  "aliases": ["smith machine incline close-grip push-up", "smith machine triceps push-up", "incline close-grip push-up on smith bar", "smith bar narrow push-up", "incline narrow push-up smith"],
+  "aliasesPl": ["pompki na maszynie Smitha wąsko", "pompki tricepsowe na Smithie", "wyciskanie wąsko na Smithie w skosie", "incline close-grip pompki Smith", "pompki wąskim chwytem na drążku Smith"],
+
+  "description": "Inclined close-grip push-up performed against a fixed bar in a Smith machine (or any sturdy horizontal bar set at hip-to-waist height). Body forms a stiff straight plank tilted forward, feet on the floor, hands shoulder-width on the bar, elbows tracking close to the torso. Lowering the chest to the bar with elbows tucked biases the load heavily onto the triceps and the inner/lower chest, while the incline angle scales difficulty — the higher the bar, the easier; the lower the bar, the closer to a floor push-up. Excellent intermediate progression between regular push-ups and full bodyweight close-grip push-ups, and a great triceps finisher when the floor variant is too hard or pec/shoulder fatigue limits the lower body angle.",
+  "descriptionPl": "Pompki w skosie wykonywane oporowo o nieruchomy gryf maszyny Smitha (lub dowolny stabilny drążek poziomy ustawiony na wysokości bioder lub pasa). Ciało tworzy sztywną prostą plankę pochyloną do przodu, stopy na podłodze, dłonie na gryfie na szerokość barków, łokcie sunące blisko tułowia. Opuszczanie klatki do gryfu z łokciami przyciągniętymi do żeber mocno przesuwa obciążenie na tricepsy oraz wewnętrzną/dolną część klatki, a kąt nachylenia steruje trudnością — im wyżej gryf, tym łatwiej; im niżej, tym bliżej do klasycznych pompek z podłogi. Świetna progresja średniozaawansowana między zwykłymi pompkami a pełnymi pompkami wąskim chwytem z podłogi oraz doskonały finisher tricepsowy, gdy wariant na podłodze jest jeszcze za trudny lub zmęczenie klatki/barków ogranicza pracę w pełnym pochyleniu.",
+
+  "instructions": [
+    "Ustaw gryf maszyny Smitha (lub stabilny drążek) na wysokości bioder/pasa — wyżej = łatwiej, niżej = trudniej. Zablokuj gryf zabezpieczeniami!",
+    "Stań twarzą do gryfu, chwyć go pronowanym chwytem na szerokość barków (NIE szerzej — to wąski chwyt).",
+    "Cofnij stopy do tyłu, aż ciało utworzy prostą linię od pięt przez biodra, barki do głowy w pozycji pochylonej do przodu (~30-50° od podłogi).",
+    "Stopy złącz lub ustaw na szerokość bioder, ciężar oprzyj na śródstopiu, pięty uniesione lub na podłodze (zależnie od kąta).",
+    "Mocno napnij brzuch i pośladki — pre-bracing planki PRZED pierwszym powtórzeniem. Łopatki schowaj w dół (downward rotation), nie unoś barków.",
+    "Wdech, opuszczaj klatkę kontrolowanym ruchem (2-3 sekundy) ku gryfowi. Łokcie trzymaj WĄSKO — ~20-30° od tułowia, sunąć obok żeber.",
+    "Schodź aż klatka delikatnie dotknie gryfu (lub znajdzie się tuż nad nim), łokcie zgięte do ~90°.",
+    "Wydech, dynamicznie wyciśnij się do góry — łokcie idą do tyłu i prostują się, nie rozsuwając na boki.",
+    "Na szczycie w pełni wyprostuj łokcie i mocno ŚCIŚNIJ tricepsy w pozycji zablokowanej (lockout).",
+    "Utrzymuj sztywną pozycję planki przez cały zakres ruchu — biodra nie opadają, pośladki nie wystają do góry."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf maszyny Smitha (lub stabilny drążek) na wysokości bioder/pasa — wyżej = łatwiej, niżej = trudniej. Zablokuj gryf zabezpieczeniami!",
+    "Stań twarzą do gryfu, chwyć go pronowanym chwytem na szerokość barków (NIE szerzej — to wąski chwyt).",
+    "Cofnij stopy do tyłu, aż ciało utworzy prostą linię od pięt przez biodra, barki do głowy w pozycji pochylonej do przodu (~30-50° od podłogi).",
+    "Stopy złącz lub ustaw na szerokość bioder, ciężar oprzyj na śródstopiu, pięty uniesione lub na podłodze (zależnie od kąta).",
+    "Mocno napnij brzuch i pośladki — pre-bracing planki PRZED pierwszym powtórzeniem. Łopatki schowaj w dół (downward rotation), nie unoś barków.",
+    "Wdech, opuszczaj klatkę kontrolowanym ruchem (2-3 sekundy) ku gryfowi. Łokcie trzymaj WĄSKO — ~20-30° od tułowia, sunąć obok żeber.",
+    "Schodź aż klatka delikatnie dotknie gryfu (lub znajdzie się tuż nad nim), łokcie zgięte do ~90°.",
+    "Wydech, dynamicznie wyciśnij się do góry — łokcie idą do tyłu i prostują się, nie rozsuwając na boki.",
+    "Na szczycie w pełni wyprostuj łokcie i mocno ŚCIŚNIJ tricepsy w pozycji zablokowanej (lockout).",
+    "Utrzymuj sztywną pozycję planki przez cały zakres ruchu — biodra nie opadają, pośladki nie wystają do góry."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "pectoralis_major": "P6",
+    "anterior_deltoids": "S5",
+    "serratus_anterior": "S4",
+    "core": "T5",
+    "glutes": "T4",
+    "rotator_cuff": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["fixed_horizontal_bar", "power_rack_with_bar", "exercise_mat"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up-wall", "push-up-knees"],
+    "progression_to": ["close-grip-push-up", "diamond-push-up", "decline-close-grip-push-up", "barbell-close-grip-bench-press"],
+    "alternatives": ["incline-close-grip-push-up", "close-grip-push-up", "barbell-close-grip-bench-press", "dumbbell-close-grip-bench-press", "machine-triceps-press", "diamond-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Gryf zablokowany w Smithie na wysokości bioder/pasa — sprawdź zabezpieczenia PRZED chwytem",
+      "Dłonie na szerokość barków, pronowany chwyt (kciuki do siebie), palce mocno obejmują gryf",
+      "Stopy cofnięte tak, aby ciało było w prostej linii pochylonej do przodu (NIE wygięte w lędźwiach)",
+      "Łopatki schowane w dół, klatka 'dumna' — NIE garbisz pleców, NIE wypychasz głowy do przodu",
+      "Pre-bracing planka: napnij brzuch + pośladki ZANIM zaczniesz schodzić — sztywna jak deska"
+    ],
+    "setup_cues_pl": [
+      "Gryf zablokowany w Smithie na wysokości bioder/pasa — sprawdź zabezpieczenia PRZED chwytem",
+      "Dłonie na szerokość barków, pronowany chwyt (kciuki do siebie), palce mocno obejmują gryf",
+      "Stopy cofnięte tak, aby ciało było w prostej linii pochylonej do przodu (NIE wygięte w lędźwiach)",
+      "Łopatki schowane w dół, klatka 'dumna' — NIE garbisz pleców, NIE wypychasz głowy do przodu",
+      "Pre-bracing planka: napnij brzuch + pośladki ZANIM zaczniesz schodzić — sztywna jak deska"
+    ],
+    "execution_cues": [
+      "Schodź 2-3 sekundy — kontrolowany ekscentryk, klatka prowadzi ruch (NIE głowa)",
+      "Łokcie WĄSKO — ~20-30° od tułowia, sunąć obok żeber, NIE rozsuwaj na 45-90°",
+      "Klatka delikatnie dotyka gryfu (lub tuż nad nim), łokcie ~90° — pełen ROM",
+      "Wypchnij dynamicznie, łokcie WSTECZ — prostuj je do tyłu, nie wypychaj barków do przodu",
+      "Na szczycie pełen lockout + mocny ŚCISK tricepsów — to jest 'triceps press'"
+    ],
+    "execution_cues_pl": [
+      "Schodź 2-3 sekundy — kontrolowany ekscentryk, klatka prowadzi ruch (NIE głowa)",
+      "Łokcie WĄSKO — ~20-30° od tułowia, sunąć obok żeber, NIE rozsuwaj na 45-90°",
+      "Klatka delikatnie dotyka gryfu (lub tuż nad nim), łokcie ~90° — pełen ROM",
+      "Wypchnij dynamicznie, łokcie WSTECZ — prostuj je do tyłu, nie wypychaj barków do przodu",
+      "Na szczycie pełen lockout + mocny ŚCISK tricepsów — to jest 'triceps press'"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out to 45-90°",
+        "faultPl": "Rozsunięte łokcie (45-90° od tułowia)",
+        "cause": "Nawyk ze zwykłych pompek lub wyciskania klasycznego — łokcie 'uciekają' na boki, gdy tricepsy są słabe",
+        "causePl": "Nawyk ze zwykłych pompek lub wyciskania klasycznego — łokcie 'uciekają' na boki, gdy tricepsy są słabe",
+        "cue": "Łokcie obok żeber, 'pachy schowane'. Pomyśl: 'wyciskanie wąskie ze sztangą'. Jeśli łokcie wystrzeliwują — podnieś gryf wyżej (mniejszy kąt = mniejsze obciążenie).",
+        "cuePl": "Łokcie obok żeber, 'pachy schowane'. Pomyśl: 'wyciskanie wąskie ze sztangą'. Jeśli łokcie wystrzeliwują — podnieś gryf wyżej (mniejszy kąt = mniejsze obciążenie)."
+      },
+      {
+        "fault": "Sagging hips / piked hips (broken plank)",
+        "faultPl": "Opadające biodra / wypchnięte do góry pośladki (złamana planka)",
+        "cause": "Słaby core, brak pre-bracingu planki, zmęczenie pod koniec serii",
+        "causePl": "Słaby core, brak pre-bracingu planki, zmęczenie pod koniec serii",
+        "cue": "ŚCIŚNIJ pośladki i napnij brzuch PRZED pierwszym powtórzeniem. 'Najpierw planka, potem pompka'. Jeśli biodra zaczynają opadać — kończ serię.",
+        "cuePl": "ŚCIŚNIJ pośladki i napnij brzuch PRZED pierwszym powtórzeniem. 'Najpierw planka, potem pompka'. Jeśli biodra zaczynają opadać — kończ serię."
+      },
+      {
+        "fault": "Partial range of motion — not lowering chest to bar",
+        "faultPl": "Częściowy zakres ruchu — klatka nie dochodzi do gryfu",
+        "cause": "Za niski gryf (za duże obciążenie), słabe tricepsy w dolnej fazie, ego — liczenie 'połowicznych' powtórzeń",
+        "causePl": "Za niski gryf (za duże obciążenie), słabe tricepsy w dolnej fazie, ego — liczenie 'połowicznych' powtórzeń",
+        "cue": "Klatka MUSI dojść do gryfu (lub odległość 1-2 cm). Jeśli nie dasz rady w pełnym ROM — podnieś gryf wyżej i wróć do pełnych powtórzeń.",
+        "cuePl": "Klatka MUSI dojść do gryfu (lub odległość 1-2 cm). Jeśli nie dasz rady w pełnym ROM — podnieś gryf wyżej i wróć do pełnych powtórzeń."
+      },
+      {
+        "fault": "Head dropping forward / chin to bar",
+        "faultPl": "Głowa wypchnięta do przodu / broda dotyka gryfu",
+        "cause": "Próba 'pomocy' szyją gdy tricepsy nie wyrabiają, brak utrzymania neutralnej pozycji głowy",
+        "causePl": "Próba 'pomocy' szyją gdy tricepsy nie wyrabiają, brak utrzymania neutralnej pozycji głowy",
+        "cue": "Patrz LEKKO w dół na podłogę, NIE na gryf. Głowa = przedłużenie kręgosłupa, broda 'schowana'. Jeśli głowa wyprzedza klatkę — podnieś gryf wyżej.",
+        "cuePl": "Patrz LEKKO w dół na podłogę, NIE na gryf. Głowa = przedłużenie kręgosłupa, broda 'schowana'. Jeśli głowa wyprzedza klatkę — podnieś gryf wyżej."
+      },
+      {
+        "fault": "Wrists hyperextended / pain in wrists",
+        "faultPl": "Przeprostowane nadgarstki / ból w nadgarstkach",
+        "cause": "Wąski chwyt + pochylenie ciała = znaczny nacisk na nadgarstki, szczególnie u osób ze sztywnymi nadgarstkami",
+        "causePl": "Wąski chwyt + pochylenie ciała = znaczny nacisk na nadgarstki, szczególnie u osób ze sztywnymi nadgarstkami",
+        "cue": "Zaciśnij gryf mocno (zamiast luźno trzymać) — aktywuje to mięśnie przedramienia i stabilizuje nadgarstek. Rozgrzej nadgarstki przed serią (krążenia, łagodne wyprosty).",
+        "cuePl": "Zaciśnij gryf mocno (zamiast luźno trzymać) — aktywuje to mięśnie przedramienia i stabilizuje nadgarstek. Rozgrzej nadgarstki przed serią (krążenia, łagodne wyprosty)."
+      }
+    ],
+    "breathing": "Wdech podczas opuszczania klatki do gryfu, krótka pauza i napięcie na dole, mocny wydech podczas wyciskania do góry i lockoutu. Nie wstrzymuj oddechu na cały zakres.",
+    "breathingPl": "Wdech podczas opuszczania klatki do gryfu, krótka pauza i napięcie na dole, mocny wydech podczas wyciskania do góry i lockoutu. Nie wstrzymuj oddechu na cały zakres."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Wąski chwyt + pochylenie ciała zwiększa nacisk na nadgarstki. Ustaw gryf wyżej (mniejszy kąt = mniejsze obciążenie nadgarstków) lub użyj uchwytów neutralnych na maszynie. Jeśli ból nie ustępuje, zamień na wyciskanie wąskim chwytem hantlami (chwyt neutralny — kciuki do góry) lub maszynę triceps press.",
+      "modificationPl": "Wąski chwyt + pochylenie ciała zwiększa nacisk na nadgarstki. Ustaw gryf wyżej (mniejszy kąt = mniejsze obciążenie nadgarstków) lub użyj uchwytów neutralnych na maszynie. Jeśli ból nie ustępuje, zamień na wyciskanie wąskim chwytem hantlami (chwyt neutralny — kciuki do góry) lub maszynę triceps press.",
+      "alternative": "dumbbell-close-grip-bench-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "Wąski chwyt mocno obciąża przyczep tricepsa na łokciu — częsta przyczyna zaostrzenia 'tennis elbow' lub tendinopatii tricepsa. Podnieś gryf wyżej (mniejsze obciążenie), skróć ROM (nie schodź do końca), zwiększ tempo ekscentryczne (4-5 sekund opuszczania). Jeśli ból utrzymuje się, przerwij i wybierz wariant z mniejszym ROM.",
+      "modificationPl": "Wąski chwyt mocno obciąża przyczep tricepsa na łokciu — częsta przyczyna zaostrzenia 'tennis elbow' lub tendinopatii tricepsa. Podnieś gryf wyżej (mniejsze obciążenie), skróć ROM (nie schodź do końca), zwiększ tempo ekscentryczne (4-5 sekund opuszczania). Jeśli ból utrzymuje się, przerwij i wybierz wariant z mniejszym ROM.",
+      "alternative": "machine-triceps-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Wąski chwyt zwykle jest LEPSZY dla barków niż szeroki (łokcie blisko tułowia chronią staw barkowy), ale pełen ROM w dolnej pozycji może drażnić w przypadku impingement. Skróć zakres — zatrzymaj się w punkcie, gdzie nie boli (zwykle łokcie ~110-120° zamiast 90°).",
+      "modificationPl": "Wąski chwyt zwykle jest LEPSZY dla barków niż szeroki (łokcie blisko tułowia chronią staw barkowy), ale pełen ROM w dolnej pozycji może drażnić w przypadku impingement. Skróć zakres — zatrzymaj się w punkcie, gdzie nie boli (zwykle łokcie ~110-120° zamiast 90°).",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Opadające biodra obciążają lędźwia. Jeśli nie utrzymujesz sztywnej planki — podnieś gryf wyżej (mniejszy kąt = łatwiej utrzymać planki) lub zacznij od pompek wąskim chwytem o ścianę (wall variant). Mocny pre-bracing core PRZED każdym powtórzeniem.",
+      "modificationPl": "Opadające biodra obciążają lędźwia. Jeśli nie utrzymujesz sztywnej planki — podnieś gryf wyżej (mniejszy kąt = łatwiej utrzymać planki) lub zacznij od pompek wąskim chwytem o ścianę (wall variant). Mocny pre-bracing core PRZED każdym powtórzeniem.",
+      "alternative": "push-up-wall"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hipertrofia tricepsa, średni kąt) | 4x8-12 z niskim gryfem (siła, więcej obciążenia) | 3xAMRAP z wysokim gryfem jako finisher tricepsowy",
+  "calories_per_kg_per_hour": 4.2,
+
+  "media": {
+    "primary": "triceps-press.gif",
+    "frames_extracted": [
+      "frames/triceps-press/frame_0_start.png",
+      "frames/triceps-press/frame_1_early.png",
+      "frames/triceps-press/frame_2_mid.png",
+      "frames/triceps-press/frame_3_late.png",
+      "frames/triceps-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/triceps-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frame 0 (start): pozycja wyjściowa — ciało w prostej pochylonej linii (planka pod kątem ~30-40° od podłogi), stopy na podłodze, dłonie na gryfie maszyny Smitha (wyraźnie widoczna stojakowa konstrukcja z prowadnicami), wąski chwyt na szerokość barków, łokcie wyprostowane na szczycie. Frame 2 (mid): dolna faza — klatka przy gryfie, łokcie zgięte do ~90° i WĄSKO przy tułowiu (NIE rozsunięte na boki), na anatomii silnie podświetlone TRICEPSY (tylna część obu ramion). Frame 4 (end): powrót do lockoutu — łokcie wyprostowane, ciało utrzymane w sztywnej planki, tricepsy nadal podświetlone (full lockout squeeze). Klasyfikacja primary: triceps P10 (główny target przy wąskim chwycie na pochylonym push-up) + pectoralis_major P6 (wewnętrzna/dolna część klatki — mniejsza intensywność niż w klasycznym wyciskaniu bo to wariant pochylony). Equipment: smith_machine (główne), opcjonalnie inne stabilne drążki poziome. Difficulty 4 — niższe od pełnego close-grip push-up (5-6) bo pochylenie ciała zmniejsza obciążenie (~50-70% masy ciała vs 100% w pełnej pompce z podłogi). Bardzo dobre dla początkujących i średniozaawansowanych jako brama wejściowa do pełnych pompek wąskim chwytem. Wszystkie teksty PL napisane od zera w polskim standardzie fitness. Zachowano filozofię silnika: prerequisites wall + knee push-up; progression do close-grip-push-up → diamond → decline-close-grip-push-up; alternatives w wariantach incline/floor/sztandze/hantlach/maszynie.",
+
+  "tags": ["bodyweight", "calisthenics", "smith_machine", "upper_body", "horizontal_push", "triceps", "triceps_focus", "inner_chest", "close_grip", "narrow_push_up", "incline_push_up", "beginner_friendly", "progression_to_close_grip_push_up", "gym_workout"]
+}

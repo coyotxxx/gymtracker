@@ -1,0 +1,207 @@
+{
+  "id": "front-lever",
+  "name": "Front Lever",
+  "namePl": "Horyzont (Front lever)",
+  "aliases": ["front lever hold", "front lever hang", "FL"],
+  "aliasesPl": ["horyzont", "front lever", "horyzont przedni", "horyzont na drążku", "horyzont na kółkach"],
+
+  "description": "Elite-level gymnastic static hold. You hang from a pull-up bar or gymnastic rings with arms fully extended and pull your body until it is HORIZONTAL — parallel to the ground, face up. The entire body forms a rigid straight line from shoulders to toes. One of the hardest bodyweight skills, requiring massive lat strength, total-body tension and core control. Pure isometric — no movement, just hold position against full gravity moment arm.",
+  "descriptionPl": "Statyczna izometria z gimnastyki na poziomie elite. Wisisz na drążku lub kółkach z w pełni wyprostowanymi ramionami i podciągasz ciało do pozycji POZIOMEJ — równolegle do podłogi, twarzą do góry. Całe ciało tworzy sztywną prostą linię od barków do palców stóp. Jedna z najtrudniejszych umiejętności w wadze własnego ciała — wymaga ogromnej siły najszerszych grzbietu, totalnego napięcia ciała i kontroli core. Czysta izometria — bez ruchu, tylko utrzymanie pozycji przeciwko pełnemu ramieniu siły grawitacji.",
+
+  "instructions": [
+    "Grip a pull-up bar or gymnastic rings with palms facing AWAY (pronated/overhand grip), hands shoulder-width.",
+    "Start from a dead hang. Engage shoulder blades by pulling them DOWN AND TOGETHER (depression + retraction).",
+    "Tighten your entire body: brace core hard, glutes squeezed maximally, quads locked, toes pointed.",
+    "Initiate the lever by pulling the bar/rings DOWN toward your hips while simultaneously rotating your body backward (hollow body engagement).",
+    "Keep arms COMPLETELY STRAIGHT throughout — elbows locked. This is non-negotiable; bending arms = not a front lever.",
+    "Continue rotating until your body is HORIZONTAL — shoulders, hips and ankles in one straight line parallel to the ground, face up.",
+    "Hold the position. Eyes look up at the ceiling. Maintain protraction of shoulders against the bar (push the bar away while pulling it down).",
+    "Hold for prescribed time (3-30 seconds depending on level), then lower under control to dead hang. Do not drop."
+  ],
+  "instructionsPl": [
+    "Złap drążek lub kółka gimnastyczne dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce na szerokość barków.",
+    "Zacznij z pełnego zwisu (dead hang). Aktywuj łopatki ściągając je W DÓŁ I DO SIEBIE (depresja + retrakcja).",
+    "Napnij CAŁE ciało: brzuch maksymalnie napięty, pośladki ściśnięte do maksimum, czworogłowe zablokowane, palce stóp wyciągnięte.",
+    "Rozpocznij horyzont napierając drążkiem/kółkami W DÓŁ w kierunku bioder, jednocześnie rotując ciało do tyłu (aktywacja hollow body).",
+    "Ramiona CAŁKOWICIE WYPROSTOWANE przez cały czas — łokcie zablokowane. To absolutnie niepodlega dyskusji; zgięte ramiona = to nie jest horyzont.",
+    "Kontynuuj rotację aż ciało będzie POZIOMO — barki, biodra i kostki w jednej prostej linii równolegle do podłogi, twarzą do góry.",
+    "Utrzymaj pozycję. Wzrok w sufit. Utrzymuj protrakcję barków przeciwko drążkowi (popychaj drążek od siebie, ciągnąc go w dół).",
+    "Utrzymaj przez zalecany czas (3-30 sekund w zależności od poziomu), następnie kontrolowanie opuść do dead hang. Nie spadaj."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "pull",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "core", "rectus_abdominis"],
+    "secondary": ["teres_major", "trapezius_middle_lower", "rhomboids", "obliques", "glutes", "erector_spinae"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "forearms", "quadriceps", "biceps_brachii", "triceps_brachii"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "core": "P10",
+    "rectus_abdominis": "P9",
+    "teres_major": "S8",
+    "trapezius_middle_lower": "S8",
+    "rhomboids": "S7",
+    "obliques": "S8",
+    "glutes": "S8",
+    "erector_spinae": "S7",
+    "serratus_anterior": "S7",
+    "forearms": "S7",
+    "quadriceps": "S6",
+    "biceps_brachii": "S5"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["gymnastic_rings", "chalk", "wrist_wraps", "resistance_bands"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["pull-up", "weighted-pull-up", "hollow-body-hold", "tuck-front-lever", "advanced-tuck-front-lever", "straddle-front-lever", "one-leg-front-lever"],
+    "progression_to": ["front-lever-pull-up", "front-lever-raise", "victorian-cross", "ice-cream-maker", "one-arm-front-lever"],
+    "alternatives": ["tuck-front-lever", "straddle-front-lever", "band-assisted-front-lever", "front-lever-negatives"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pronated grip, shoulder-width",
+      "Dead hang start — arms locked straight",
+      "Shoulder blades DOWN and BACK (depressed + retracted)",
+      "Body rigid: glutes squeezed, quads locked, toes pointed",
+      "Eyes forward, breath braced"
+    ],
+    "setup_cues_pl": [
+      "Chwyt nachwytem, na szerokość barków",
+      "Start z dead hang — ramiona zablokowane prosto",
+      "Łopatki W DÓŁ I DO TYŁU (depresja + retrakcja)",
+      "Ciało sztywne: pośladki ściśnięte, czworogłowe zablokowane, palce stóp wyciągnięte",
+      "Wzrok do przodu, oddech zablokowany"
+    ],
+    "execution_cues": [
+      "Arms LOCKED straight — never bend elbows",
+      "Pull bar DOWN to hips, not body up",
+      "Rotate body backward — hollow position",
+      "Squeeze glutes HARDER than you think you can",
+      "Push bar away while pulling down — protraction"
+    ],
+    "execution_cues_pl": [
+      "Ramiona ZABLOKOWANE prosto — nigdy nie zginaj łokci",
+      "Ciągnij drążek W DÓŁ do bioder, nie ciało w górę",
+      "Rotuj ciało do tyłu — pozycja hollow",
+      "Ściśnij pośladki MOCNIEJ niż uważasz że możesz",
+      "Odpychaj drążek jednocześnie ciągnąc w dół — protrakcja"
+    ],
+    "common_faults": [
+      {
+        "fault": "Body sagging at hips (banana shape)",
+        "faultPl": "Biodra opadające (kształt banana)",
+        "cause": "Weak core / glutes, inability to maintain hollow body position",
+        "causePl": "Słaby core / pośladki, brak umiejętności utrzymania pozycji hollow",
+        "cue": "Squeeze glutes HARD, brace abs as if expecting a punch. Practice hollow body holds first.",
+        "cuePl": "Ściśnij MOCNO pośladki, napnij brzuch jak przed uderzeniem. Trenuj najpierw hollow body holds."
+      },
+      {
+        "fault": "Bent arms during the hold",
+        "faultPl": "Zgięte ramiona podczas utrzymywania",
+        "cause": "Lack of straight-arm strength (lats / serratus), trying to muscle through with biceps",
+        "causePl": "Brak siły z wyprostowanymi ramionami (najszersze / serratus), próba siłowania bicepsami",
+        "cue": "If arms bend = it's a pull-up, not a front lever. Regress to tuck/advanced tuck until you can hold straight-arm.",
+        "cuePl": "Jeśli ramiona się zginają = to pull-up, nie front lever. Cofnij się do tuck/advanced tuck aż utrzymasz prosto."
+      },
+      {
+        "fault": "Body angled (not horizontal — hips too high or too low)",
+        "faultPl": "Ciało pod kątem (nie poziomo — biodra za wysoko lub za nisko)",
+        "cause": "Insufficient lat strength to reach full horizontal, or fatigue",
+        "causePl": "Niewystarczająca siła najszerszych do osiągnięcia pełnego horyzontu, lub zmęczenie",
+        "cue": "Honest assessment: hold the position you can maintain CLEAN. Better 5s perfect than 15s sagging.",
+        "cuePl": "Szczera ocena: utrzymuj pozycję którą możesz utrzymać CZYSTO. Lepiej 5s perfekcyjnie niż 15s opadająco."
+      },
+      {
+        "fault": "Looking down instead of up — head dropped",
+        "faultPl": "Patrzenie w dół zamiast w górę — głowa opuszczona",
+        "cause": "Lack of postural awareness, neck not engaged with body line",
+        "causePl": "Brak świadomości postawy, szyja nie zaangażowana w linię ciała",
+        "cue": "Eyes UP at ceiling. Neck is part of the line — slight chin tuck, head neutral.",
+        "cuePl": "Oczy W GÓRĘ do sufitu. Szyja jest częścią linii — lekki chin tuck, głowa neutralna."
+      },
+      {
+        "fault": "Holding breath until failure",
+        "faultPl": "Wstrzymywanie oddechu do upadku",
+        "cause": "Confusing total brace with apnea — instant failure when oxygen runs out",
+        "causePl": "Mylenie pełnego napięcia z bezdechem — natychmiastowy upadek gdy zabraknie tlenu",
+        "cue": "Short shallow breaths during hold. Brace doesn't mean no breathing — keep abs tight, ribs static.",
+        "cuePl": "Krótkie, płytkie oddechy podczas utrzymywania. Napięcie nie oznacza braku oddechu — brzuch napięty, żebra statyczne."
+      }
+    ],
+    "breathing": "Inhale and brace BEFORE pulling into position. During the hold: short shallow breaths through the nose, keeping core rigid. Exhale on the way down to dead hang. Never hold breath for the entire hold — you will fail prematurely from oxygen debt.",
+    "breathingPl": "Wdech i napięcie PRZED wchodzeniem w pozycję. Podczas utrzymywania: krótkie, płytkie oddechy nosem, utrzymując sztywny core. Wydech podczas opuszczania do dead hang. Nigdy nie wstrzymuj oddechu przez cały hold — szybko upadniesz z deficytu tlenu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Straight-arm loading places massive stress on biceps tendon at elbow. Stop until full recovery. Replace with tuck holds or scapular pull-ups (bent arm).",
+      "modificationPl": "Obciążenie wyprostowanymi ramionami daje ogromny stres na ścięgno bicepsa w łokciu. Wstrzymaj do pełnego wyleczenia. Zastąp tuck holds lub scapular pull-ups (ramiona zgięte).",
+      "alternative": "tuck-front-lever"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "The protraction + depression demand under load can aggravate impingement. Address shoulder health first with scapular work and prehab.",
+      "modificationPl": "Wymagania protrakcji + depresji pod obciążeniem mogą zaostrzyć konflikt barkowy. Najpierw zadbaj o zdrowie barku przez pracę nad łopatkami i prehab.",
+      "alternative": "scapular-pull-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Hollow body position can compress lumbar if glutes/abs not balanced. Stop if pain. Regress to advanced tuck and prioritize core stability work.",
+      "modificationPl": "Pozycja hollow body może uciskać odcinek lędźwiowy jeśli pośladki/brzuch nie są zbalansowane. Wstrzymaj przy bólu. Cofnij się do advanced tuck i priorytet na stabilność core.",
+      "alternative": "advanced-tuck-front-lever"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Long static holds on bar stress wrists. Use rings (auto-rotating grip), wrist wraps, or shorter holds.",
+      "modificationPl": "Długie statyczne utrzymywania na drążku obciążają nadgarstki. Użyj kółek (auto-rotujący chwyt), wraps lub krótszych holds.",
+      "alternative": "front-lever-on-rings"
+    }
+  ],
+
+  "typical_sets_reps": "3x5-30 sekund (hold) | 4-6x3-10s (acumulation) | EMOM 5-10s holds",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "front-lever.gif",
+    "frames_extracted": [
+      "frames/front-lever/frame_0_start.png",
+      "frames/front-lever/frame_1_early.png",
+      "frames/front-lever/frame_2_mid.png",
+      "frames/front-lever/frame_3_late.png",
+      "frames/front-lever/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/front-lever"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Frames 0/2/4: klasyczny front lever na drążku — ciało w pełni poziome, równolegle do podłogi, twarzą do góry. Ramiona całkowicie wyprostowane (locked), chwyt nachwytem (pronated). Frame 2 podświetla pracujące mięśnie: najszersze grzbietu (P10), prosty brzucha + core (P10/P9), pośladki i czworogłowe utrzymujące napięcie ciała. Statyczna izometria — brak ruchu między frames (to ekspozycja pozycji, nie sekwencja ruchowa). Mechanic: isometric. Movement pattern: stretch (hold pod pełnym ramieniem siły grawitacji). Difficulty 10/10 — skrajnie trudne ćwiczenie gimnastyczne wymagające lat progresji od tuck/advanced tuck/straddle. PL nazwa 'Horyzont' to standard polskiego calisthenics; zachowuję wariant 'Front lever' dla rozpoznawalności międzynarodowej.",
+
+  "tags": ["calisthenics", "bodyweight", "gymnastics", "static_hold", "isometric", "elite_skill", "core", "lats", "back", "advanced", "rings", "hollow_body", "straight_arm_strength"]
+}

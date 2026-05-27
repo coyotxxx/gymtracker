@@ -1,0 +1,205 @@
+{
+  "id": "band-close-grip-push-up",
+  "name": "Band Close-Grip Push-Up",
+  "namePl": "Pompki wąskim chwytem z gumą",
+  "aliases": ["resistance band close-grip push-up", "diamond push-up with band", "narrow push-up with band", "banded close push-up", "close-hand push-up with resistance band"],
+  "aliasesPl": ["pompki diamentowe z gumą", "pompki wąskie z gumą oporową", "pompki tricepsowe z gumą", "pompki z taśmą oporową wąskim chwytem", "pompki na tricepsy z gumą"],
+
+  "description": "Bodyweight close-grip push-up loaded with a resistance band looped across the upper back and anchored under the palms. Hands stay roughly shoulder-width apart (narrower than a standard push-up) so the elbows track close to the torso and the load is biased onto the triceps and inner (sternal) chest. The band adds progressive resistance — easy at the bottom, hardest at lockout — which matches the natural strength curve of pushing and amplifies the triceps demand at full extension. Excellent home-friendly progression once standard push-ups feel light and pure bodyweight close-grip push-ups are mastered.",
+  "descriptionPl": "Pompki na masie ciała z wąskim chwytem, dociążone gumą oporową przerzuconą przez górną część pleców i przytrzymywaną pod dłońmi. Dłonie ustawione mniej więcej na szerokość barków (węziej niż w klasycznych pompkach), dzięki czemu łokcie sunąć blisko tułowia, a obciążenie przesuwa się na tricepsy i wewnętrzną (mostkową) część klatki. Guma dodaje progresywny opór — najlżej na dole, najciężej na blokadzie — co idealnie pasuje do naturalnej krzywej siły w wyciskaniu i znacząco zwiększa pracę tricepsa w fazie pełnego wyprostu. Świetna progresja na warunkach domowych, gdy zwykłe pompki stały się za lekkie, a czyste pompki wąskim chwytem opanowane.",
+
+  "instructions": [
+    "Przygotuj gumę oporową — dobierz opór tak, abyś zrobił 8-12 czystych powtórzeń z prawidłową techniką.",
+    "Klęknij i przeciągnij gumę za plecami (na wysokości łopatek), trzymając oba końce w dłoniach lub używając uchwytów.",
+    "Ustaw dłonie na podłodze na szerokość barków lub odrobinę węziej, palce skierowane do przodu, końce gumy/uchwyty pod wnętrzami dłoni.",
+    "Wyciągnij nogi do tyłu w pozycję planka — ciało w prostej linii od pięt przez biodra, barki do głowy.",
+    "Mocno napnij brzuch i pośladki. Łopatki zbliż do siebie i schowaj w dół (downward rotation), ale bez nadmiernego ściskania.",
+    "Wdech, opuszczaj się kontrolowanym ruchem (2-3 sekundy). Łokcie trzymaj blisko tułowia (~20-30° — wąsko, nie 45°).",
+    "Schodź aż klatka znajdzie się tuż nad podłogą, a guma na plecach lekko się poluzuje (lub łokcie osiągną kąt ~90°).",
+    "Wydech, wyciśnij się dynamicznie, ale pod kontrolą — guma będzie maksymalnie napięta w górnej fazie ruchu.",
+    "W pozycji końcowej w pełni wyprostuj łokcie i mocno ŚCIŚNIJ tricepsy — to tu pracuje najwięcej.",
+    "Utrzymuj sztywną pozycję planka przez cały ruch — biodra nie opadają, nie wypychasz pośladków do góry."
+  ],
+  "instructionsPl": [
+    "Przygotuj gumę oporową — dobierz opór tak, abyś zrobił 8-12 czystych powtórzeń z prawidłową techniką.",
+    "Klęknij i przeciągnij gumę za plecami (na wysokości łopatek), trzymając oba końce w dłoniach lub używając uchwytów.",
+    "Ustaw dłonie na podłodze na szerokość barków lub odrobinę węziej, palce skierowane do przodu, końce gumy/uchwyty pod wnętrzami dłoni.",
+    "Wyciągnij nogi do tyłu w pozycję planka — ciało w prostej linii od pięt przez biodra, barki do głowy.",
+    "Mocno napnij brzuch i pośladki. Łopatki zbliż do siebie i schowaj w dół (downward rotation), ale bez nadmiernego ściskania.",
+    "Wdech, opuszczaj się kontrolowanym ruchem (2-3 sekundy). Łokcie trzymaj blisko tułowia (~20-30° — wąsko, nie 45°).",
+    "Schodź aż klatka znajdzie się tuż nad podłogą, a guma na plecach lekko się poluzuje (lub łokcie osiągną kąt ~90°).",
+    "Wydech, wyciśnij się dynamicznie, ale pod kontrolą — guma będzie maksymalnie napięta w górnej fazie ruchu.",
+    "W pozycji końcowej w pełni wyprostuj łokcie i mocno ŚCIŚNIJ tricepsy — to tu pracuje najwięcej.",
+    "Utrzymuj sztywną pozycję planka przez cały ruch — biodra nie opadają, nie wypychasz pośladków do góry."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "pectoralis_major": "P7",
+    "anterior_deltoids": "S6",
+    "serratus_anterior": "S5",
+    "core": "T5",
+    "glutes": "T4",
+    "rotator_cuff": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "resistance_band"],
+    "optional": ["push_up_handles", "exercise_mat"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "close-grip-push-up", "diamond-push-up", "band-push-up"],
+    "progression_to": ["weighted-close-grip-push-up", "diamond-push-up-decline", "ring-close-grip-push-up", "one-arm-push-up"],
+    "alternatives": ["close-grip-push-up", "diamond-push-up", "band-push-up", "barbell-close-grip-bench-press", "dumbbell-close-grip-bench-press", "triceps-dip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stabilna guma — dobierz opór na 8-12 czystych powtórzeń",
+      "Guma przerzucona przez górną część pleców (linia łopatek), nie przez kark",
+      "Końce gumy/uchwyty pod wnętrzami dłoni — guma nie przesuwa się podczas ruchu",
+      "Dłonie na szerokość barków (NIE diament, NIE szerokie pompki) — palce do przodu",
+      "Ciało w prostej linii: pięty-biodra-barki-głowa — pre-bracing planka przed pierwszym powtórzeniem"
+    ],
+    "setup_cues_pl": [
+      "Stabilna guma — dobierz opór na 8-12 czystych powtórzeń",
+      "Guma przerzucona przez górną część pleców (linia łopatek), nie przez kark",
+      "Końce gumy/uchwyty pod wnętrzami dłoni — guma nie przesuwa się podczas ruchu",
+      "Dłonie na szerokość barków (NIE diament, NIE szerokie pompki) — palce do przodu",
+      "Ciało w prostej linii: pięty-biodra-barki-głowa — pre-bracing planka przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Opuszczaj 2-3 sekundy — nie pozwól gumie wymusić szybkiego ruchu w dół",
+      "Łokcie WĄSKO — ~20-30° od tułowia, sunąć obok żeber, NIE rozsuwaj na 45°",
+      "Na dole klatka tuż nad podłogą, łokcie ~90° — guma chwilę 'odpuści'",
+      "Wypchnij dynamicznie, ale pod kontrolą — guma stawia największy opór na końcu wyprostu",
+      "Na szczycie ŚCIŚNIJ tricepsy — to tu pracuje najwięcej (band loading)"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj 2-3 sekundy — nie pozwól gumie wymusić szybkiego ruchu w dół",
+      "Łokcie WĄSKO — ~20-30° od tułowia, sunąć obok żeber, NIE rozsuwaj na 45°",
+      "Na dole klatka tuż nad podłogą, łokcie ~90° — guma chwilę 'odpuści'",
+      "Wypchnij dynamicznie, ale pod kontrolą — guma stawia największy opór na końcu wyprostu",
+      "Na szczycie ŚCIŚNIJ tricepsy — to tu pracuje najwięcej (band loading)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out (45° or wider)",
+        "faultPl": "Rozsunięte łokcie (45° lub szerzej)",
+        "cause": "Habit from regular push-ups, weak triceps trying to 'cheat' by recruiting chest/delts",
+        "causePl": "Nawyk ze zwykłych pompek, słabe tricepsy 'oszukujące' przez angażowanie klatki i barków",
+        "cue": "Łokcie obok żeber, 'pachy schowane'. Pomyśl: 'ramiona przy tułowiu jak na wyciskaniu wąskim'. Jeśli łokcie wystrzeliwują — zmniejsz opór gumy.",
+        "cuePl": "Łokcie obok żeber, 'pachy schowane'. Pomyśl: 'ramiona przy tułowiu jak na wyciskaniu wąskim'. Jeśli łokcie wystrzeliwują — zmniejsz opór gumy."
+      },
+      {
+        "fault": "Sagging hips / piked hips (broken plank)",
+        "faultPl": "Opadające biodra / wypchnięte do góry pośladki (złamana planka)",
+        "cause": "Słaby core, brak pre-bracingu, zmęczenie pod koniec serii",
+        "causePl": "Słaby core, brak pre-bracingu, zmęczenie pod koniec serii",
+        "cue": "Mocno ŚCIŚNIJ pośladki i napnij brzuch PRZED pierwszym powtórzeniem. 'Najpierw plank, potem pompka'. Jeśli biodra opadają — kończ serię.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki i napnij brzuch PRZED pierwszym powtórzeniem. 'Najpierw plank, potem pompka'. Jeśli biodra opadają — kończ serię."
+      },
+      {
+        "fault": "Band sliding off the back or under the hands",
+        "faultPl": "Guma zsuwa się z pleców lub spod dłoni",
+        "cause": "Guma na karku zamiast łopatek, brak kontroli końców gumy pod dłońmi, palce nie obejmują gumy",
+        "causePl": "Guma na karku zamiast łopatek, brak kontroli końców gumy pod dłońmi, palce nie obejmują gumy",
+        "cue": "Guma DOKŁADNIE na linii łopatek (nie na karku, nie na pasie). Końce gumy schowaj pod kciukami i wnętrzami dłoni — palce mocno zaciśnięte.",
+        "cuePl": "Guma DOKŁADNIE na linii łopatek (nie na karku, nie na pasie). Końce gumy schowaj pod kciukami i wnętrzami dłoni — palce mocno zaciśnięte."
+      },
+      {
+        "fault": "Partial range of motion — not lowering chest near floor",
+        "faultPl": "Częściowy zakres ruchu — klatka nie schodzi blisko podłogi",
+        "cause": "Za mocna guma, słabe tricepsy w dolnej fazie, ego — liczenie 'połowicznych' powtórzeń",
+        "causePl": "Za mocna guma, słabe tricepsy w dolnej fazie, ego — liczenie 'połowicznych' powtórzeń",
+        "cue": "Klatka MUSI dojść na wysokość pięści od podłogi. Jeśli nie dasz rady w pełnym ROM — zmniejsz opór gumy lub wróć do pompek wąskich bez gumy.",
+        "cuePl": "Klatka MUSI dojść na wysokość pięści od podłogi. Jeśli nie dasz rady w pełnym ROM — zmniejsz opór gumy lub wróć do pompek wąskich bez gumy."
+      },
+      {
+        "fault": "Wrists collapsing or excessive wrist extension",
+        "faultPl": "Padające nadgarstki lub nadmierne wyprostowanie nadgarstków",
+        "cause": "Wąski chwyt + guma = większe obciążenie na nadgarstki niż w zwykłych pompkach",
+        "causePl": "Wąski chwyt + guma = większe obciążenie na nadgarstki niż w zwykłych pompkach",
+        "cue": "Wbij wnętrza dłoni w podłogę, palce rozłożone i naciskaj opuszkami. Lub użyj uchwytów do pompek — neutralna pozycja nadgarstka, brak kompresji.",
+        "cuePl": "Wbij wnętrza dłoni w podłogę, palce rozłożone i naciskaj opuszkami. Lub użyj uchwytów do pompek — neutralna pozycja nadgarstka, brak kompresji."
+      }
+    ],
+    "breathing": "Wdech podczas schodzenia, krótka pauza i napięcie na dole, mocny wydech podczas wyciskania (zwłaszcza w górnej fazie gdy guma stawia największy opór). Nie wstrzymuj oddechu na całe powtórzenie.",
+    "breathingPl": "Wdech podczas schodzenia, krótka pauza i napięcie na dole, mocny wydech podczas wyciskania (zwłaszcza w górnej fazie gdy guma stawia największy opór). Nie wstrzymuj oddechu na całe powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Użyj uchwytów do pompek lub pięści (knykcie w dół) aby utrzymać neutralny nadgarstek. Wąski chwyt + opór gumy obciąża nadgarstki bardziej niż klasyczne pompki — jeśli ból nie ustępuje, zmień na wyciskanie wąskim chwytem na maszynie lub hantlami.",
+      "modificationPl": "Użyj uchwytów do pompek lub pięści (knykcie w dół) aby utrzymać neutralny nadgarstek. Wąski chwyt + opór gumy obciąża nadgarstki bardziej niż klasyczne pompki — jeśli ból nie ustępuje, zmień na wyciskanie wąskim chwytem na maszynie lub hantlami.",
+      "alternative": "dumbbell-close-grip-bench-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "Wąski chwyt + opór gumy maksymalnie obciąża tricepsy i przyczep ścięgna na łokciu — częsta przyczyna nasilenia bólu w 'tennis/golfer elbow' lub przeciążeniu ścięgna tricepsa. Zmniejsz opór gumy o połowę, zmniejsz ROM (nie schodź do końca), zwiększ tempo ekscentryczne.",
+      "modificationPl": "Wąski chwyt + opór gumy maksymalnie obciąża tricepsy i przyczep ścięgna na łokciu — częsta przyczyna nasilenia bólu w 'tennis/golfer elbow' lub przeciążeniu ścięgna tricepsa. Zmniejsz opór gumy o połowę, zmniejsz ROM (nie schodź do końca), zwiększ tempo ekscentryczne.",
+      "alternative": "close-grip-push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Wąski chwyt zwykle jest LEPSZY dla barków niż szeroki (łokcie blisko tułowia chronią staw), ale opór gumy w dolnej fazie ROM może drażnić. Skróć zakres — nie schodź do podłogi, zatrzymaj w punkcie gdzie nie boli.",
+      "modificationPl": "Wąski chwyt zwykle jest LEPSZY dla barków niż szeroki (łokcie blisko tułowia chronią staw), ale opór gumy w dolnej fazie ROM może drażnić. Skróć zakres — nie schodź do podłogi, zatrzymaj w punkcie gdzie nie boli.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Opadające biodra obciążają lędźwia, a wąski chwyt utrudnia utrzymanie stabilnej planki przy zmęczeniu. Jeśli nie utrzymujesz sztywnej planki bez bólu — zacznij od pompek wąskim chwytem na kolanach lub na podwyższeniu (dłonie na ławce).",
+      "modificationPl": "Opadające biodra obciążają lędźwia, a wąski chwyt utrudnia utrzymanie stabilnej planki przy zmęczeniu. Jeśli nie utrzymujesz sztywnej planki bez bólu — zacznij od pompek wąskim chwytem na kolanach lub na podwyższeniu (dłonie na ławce).",
+      "alternative": "incline-close-grip-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy triceps) | 4-5x6-8 z mocną gumą (siła) | AMRAP z lekką gumą jako finisher tricepsowy",
+  "calories_per_kg_per_hour": 4.6,
+
+  "media": {
+    "primary": "band-close-grip-push-up.gif",
+    "frames_extracted": [
+      "frames/band-close-grip-push-up/frame_0_start.png",
+      "frames/band-close-grip-push-up/frame_1_early.png",
+      "frames/band-close-grip-push-up/frame_2_mid.png",
+      "frames/band-close-grip-push-up/frame_3_late.png",
+      "frames/band-close-grip-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/band-close-grip-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:15:00Z",
+  "verification_notes": "Frame 0 (start): pozycja pompkowa, klasyczna planka pozioma (NIE decline), dłonie na podłodze na szerokość barków (wąski chwyt), guma oporowa wyraźnie widoczna — przerzucona przez górne plecy/łopatki i przytrzymywana z uchwytami pod wnętrzami dłoni. Frame 2 (mid): pełne opuszczenie — klatka tuż nad podłogą, łokcie zgięte i WĄSKO (~20-30° od tułowia, NIE rozsunięte), na anatomii silnie podświetlone TRICEPSY (tylna część ramion) i wewnętrzna/dolna część klatki — zgodne z biomechaniką close-grip push-up. Guma widoczna nadal opięta na plecach. Frame 4 (end): powrót do pozycji wyjściowej, łokcie wyprostowane, guma maksymalnie napięta na szczycie (band loading w fazie końcowej). Klasyfikacja primary: triceps P10 (główny target przy wąskim chwycie + opór gumy) + pectoralis_major P7 (wewnętrzna/dolna część klatki, nie obojczykowa — guma + close grip nie sprzyjają górnej klatce). Equipment: bodyweight + resistance_band. Difficulty 6 — wyższe od decline push-up (5), bo wąski chwyt + opór gumy = wymagana baza siły tricepsa + stabilność. Wszystkie teksty PL napisane od zera w polskim standardzie fitness. Zachowano filozofię silnika: prerequisites push-up + close-grip + diamond + band-push-up; progression do weighted/ring/jednoręcznych; alternatives w wyciskaniach wąskim chwytem na sztandze/hantlach + dipach.",
+
+  "tags": ["bodyweight", "calisthenics", "resistance_band", "upper_body", "horizontal_push", "triceps", "triceps_focus", "inner_chest", "home_workout", "no_machine", "close_grip", "narrow_push_up", "progression_from_push_up"]
+}

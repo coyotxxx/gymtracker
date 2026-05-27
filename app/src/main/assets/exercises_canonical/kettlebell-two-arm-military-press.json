@@ -1,0 +1,203 @@
+{
+  "id": "kettlebell-two-arm-military-press",
+  "name": "Kettlebell Two-Arm Military Press (Standing)",
+  "namePl": "Military press z kettlebellami oburącz stojąc",
+  "aliases": ["double KB military press", "two kettlebell strict press", "double bell press", "KB double overhead press", "GS double press"],
+  "aliasesPl": ["wyciskanie dwóch kettli nad głowę", "strict press z dwoma kettlami", "double kettlebell press", "wyciskanie żołnierskie z kettlami", "podwójny KB press"],
+
+  "description": "Bilateral strict overhead press with two kettlebells held in the rack position (bells behind the wrists, forearms vertical). Standing, no leg drive — pure shoulder/triceps/core work. Classic Girevoy Sport (GS) staple. Unique advantages: neutral grip and KB rack force scapular stability and serratus engagement, while the off-center load (bell hanging behind the wrist) demands constant rotator cuff and core control. Distinct from push press (no dip-drive) and from double KB jerk (no leg involvement at lockout).",
+  "descriptionPl": "Dwustronne strict wyciskanie nad głowę z dwoma kettlebellami trzymanymi w pozycji rack (kule za nadgarstkami, przedramiona pionowo). Stojąc, bez napędu z nóg — czysta praca barków, tricepsów i core. Klasyk Girevoy Sport (GS). Unikalne zalety: neutralny chwyt i KB rack wymuszają stabilność łopatki i pracę zębatego przedniego, a niesymetryczne obciążenie (kula wisi za nadgarstkiem) wymaga ciągłej kontroli rotatorów i core. Różny od push press (brak ugięcia/napędu) i od double KB jerk (brak pracy nóg w lock-out).",
+
+  "instructions": [
+    "Clean two kettlebells to the rack position: bells resting on the forearms/shoulders, elbows down and tight to ribs, forearms vertical, knuckles facing up, thumbs near collarbones.",
+    "Set stance: feet hip- to shoulder-width, knees soft but locked, glutes tight, ribs down, core braced HARD.",
+    "Inhale, brace abdomen. Initiate the press by driving the bells straight up — NO leg dip, NO hip drive (strict press).",
+    "As the bells pass the head, slightly tuck the chin back so the bells travel close to a vertical line; do not press around the head.",
+    "Lock out overhead: elbows fully extended, bells stacked over shoulders/mid-foot, biceps near ears, wrists neutral (knuckles to ceiling).",
+    "Pause briefly at lockout. Exhale.",
+    "Lower under control back to the rack: elbows tuck back to ribs, bells return onto the forearms. Wrists stay neutral throughout.",
+    "Keep glutes and quads locked the whole set — if you start using leg drive, the set is over (or reduce the weight)."
+  ],
+  "instructionsPl": [
+    "Wyrzuć (clean) dwa kettlebelle do pozycji rack: kule oparte o przedramiona/barki, łokcie w dół i blisko żeber, przedramiona pionowo, knykcie do góry, kciuki przy obojczykach.",
+    "Postawa: stopy na szerokość bioder do barków, kolana miękkie ale zablokowane, pośladki napięte, żebra w dół, brzuch napięty MOCNO.",
+    "Wdech, napnij brzuch. Rozpocznij wyciskanie pchając kule prosto w górę — BEZ ugięcia nóg, BEZ napędu bioder (strict press).",
+    "Gdy kule mijają głowę, lekko cofnij brodę tak by kule szły blisko pionu; nie wyciskaj wokół głowy.",
+    "Lock-out nad głową: łokcie pełen wyprost, kule ułożone nad barkami/środkiem stóp, bicepsy przy uszach, nadgarstki neutralne (knykcie do sufitu).",
+    "Krótka pauza w lock-out. Wydech.",
+    "Opuść kontrolowanym ruchem do rack: łokcie wracają do żeber, kule wracają na przedramiona. Nadgarstki cały czas neutralne.",
+    "Trzymaj pośladki i czworogłowe zablokowane przez całą serię — jeśli zaczynasz używać nóg, kończ serię (lub zmniejsz ciężar)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps", "upper_trapezius", "serratus_anterior", "core"],
+    "stabilizers": ["rotator_cuff", "rectus_abdominis", "obliques", "glutes", "quadriceps", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P9",
+    "lateral_deltoid": "P8",
+    "triceps": "S7",
+    "upper_trapezius": "S6",
+    "serratus_anterior": "S6",
+    "core": "S7",
+    "rotator_cuff": "S5",
+    "glutes": "S4",
+    "forearms": "S5"
+  },
+
+  "equipment": {
+    "required": ["kettlebells_pair"],
+    "optional": ["belt", "wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["kettlebell-one-arm-military-press", "dumbbell-shoulder-press", "kettlebell-clean"],
+    "progression_to": ["kettlebell-two-arm-push-press", "kettlebell-double-jerk", "kettlebell-bottoms-up-press", "barbell-overhead-press"],
+    "alternatives": ["dumbbell-standing-overhead-press", "barbell-overhead-press", "kettlebell-one-arm-military-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bells in rack: elbows down, tight to ribs",
+      "Forearms vertical, knuckles up",
+      "Feet hip- to shoulder-width, glutes squeezed",
+      "Ribs DOWN, brace core HARD",
+      "Wrists NEUTRAL (knuckles to ceiling)"
+    ],
+    "setup_cues_pl": [
+      "Kule w rack: łokcie w dół, blisko żeber",
+      "Przedramiona pionowo, knykcie do góry",
+      "Stopy na szerokość bioder do barków, pośladki napięte",
+      "Żebra W DÓŁ, brzuch napięty MOCNO",
+      "Nadgarstki NEUTRALNE (knykcie do sufitu)"
+    ],
+    "execution_cues": [
+      "Press straight up — bells stay close to head",
+      "Glutes and quads LOCKED — no leg dip",
+      "Slight chin tuck as bells pass face",
+      "Finish biceps by ears, knuckles to ceiling",
+      "Lower with control to rack — elbows back to ribs"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę — kule blisko głowy",
+      "Pośladki i czworogłowe ZABLOKOWANE — bez ugięcia nóg",
+      "Lekko cofnij brodę gdy kule mijają twarz",
+      "Zakończ bicepsami przy uszach, knykcie do sufitu",
+      "Opuszczaj kontrolowanym ruchem do rack — łokcie z powrotem do żeber"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using leg drive (turning strict press into push press)",
+        "faultPl": "Używanie napędu z nóg (zamiana strict press w push press)",
+        "cause": "Weight too heavy for strict capacity, or habit from jerk training",
+        "causePl": "Zbyt duży ciężar dla strict, lub nawyk z treningu jerka",
+        "cue": "Glutes and quads LOCKED. If you can't press without a dip, lower the weight.",
+        "cuePl": "Pośladki i czworogłowe ZABLOKOWANE. Jeśli nie wyciskasz bez ugięcia — zmniejsz ciężar."
+      },
+      {
+        "fault": "Leaning back excessively (lumbar hyperextension)",
+        "faultPl": "Nadmierne odchylanie do tyłu (przeprost lędźwiowy)",
+        "cause": "Weak core/glutes, weight too heavy, poor overhead mobility forces compensation",
+        "causePl": "Słaby brzuch/pośladki, zbyt duży ciężar, słaba mobilność overhead wymusza kompensację",
+        "cue": "Ribs DOWN, glutes ON. Imagine someone about to punch your stomach — stay rigid.",
+        "cuePl": "Żebra W DÓŁ, pośladki NAPIĘTE. Wyobraź sobie że ktoś zaraz uderzy cię w brzuch — pozostań sztywny."
+      },
+      {
+        "fault": "Wrists collapsing backward (bells pull hands into extension)",
+        "faultPl": "Załamane nadgarstki do tyłu (kule ciągną dłonie do ekstensji)",
+        "cause": "Weak forearms/wrists, improper rack position (handle too low in palm)",
+        "causePl": "Słabe przedramiona/nadgarstki, niepoprawne rack (rączka za nisko w dłoni)",
+        "cue": "Knuckles to the ceiling. Bell rests on FOREARM, not pulled back by handle.",
+        "cuePl": "Knykcie do sufitu. Kula opiera się na PRZEDRAMIENIU, nie ciągnie wstecz za rączkę."
+      },
+      {
+        "fault": "Pressing around the head (bells drift forward, then back)",
+        "faultPl": "Wyciskanie wokół głowy (kule odchodzą do przodu, potem do tyłu)",
+        "cause": "Avoiding the face — never learned to tuck chin and let bells pass close",
+        "causePl": "Unikanie twarzy — nie nauczyłeś cofać brody i przepuszczać kul blisko",
+        "cue": "Slight chin tuck. Bells go in a vertical line, brushing close to the head.",
+        "cuePl": "Lekko cofnij brodę. Kule idą po pionie, blisko głowy."
+      },
+      {
+        "fault": "Incomplete lockout (elbows soft, biceps not by ears)",
+        "faultPl": "Niepełen lock-out (miękkie łokcie, bicepsy nie przy uszach)",
+        "cause": "Limited thoracic/shoulder mobility, weak triceps, or fear of overhead position",
+        "causePl": "Ograniczona mobilność piersiowa/barku, słabe tricepsy, lub strach przed pozycją overhead",
+        "cue": "Fully extend elbows, push the shoulders into the ears at the top. Work overhead mobility separately.",
+        "cuePl": "Pełen wyprost łokci, wciśnij barki w uszy na szczycie. Pracuj osobno nad mobilnością overhead."
+      }
+    ],
+    "breathing": "Inhale and brace before the press. Hold tension through the press. Short exhale ('tss') at lockout, then re-inhale for the next rep. Bracing matters even more than in barbell OHP because of the asymmetric KB load.",
+    "breathingPl": "Wdech i napięcie przed wyciskaniem. Trzymaj napięcie przez ruch. Krótki wydech ('tss') w lock-out, potem ponowny wdech na kolejne powtórzenie. Napięcie jest jeszcze ważniejsze niż w OHP ze sztangą z powodu asymetrycznego obciążenia kettla."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't go past clavicle at the bottom) or switch to landmine press / one-arm KB press (less demanding overhead position).",
+      "modificationPl": "Zmniejsz ROM (nie schodź poniżej obojczyka) lub przejdź na landmine press / jednoramienny KB press (mniej wymagająca pozycja overhead).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work thoracic extension and shoulder flexion mobility first. Use landmine press or seated KB press with back support until full overhead lockout is possible.",
+      "modificationPl": "Najpierw pracuj nad ekstensją piersiową i mobilnością zgięcia barku. Używaj landmine press lub seated KB press z oparciem do czasu pełnego lock-out overhead.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Ensure proper rack position (bell on forearm, not pulled by handle). Use wrist wraps. If pain persists, switch to dumbbell shoulder press (better wrist alignment).",
+      "modificationPl": "Sprawdź prawidłowy rack (kula na przedramieniu, nie ciągnięta za rączkę). Użyj wraps. Jeśli ból nie ustępuje — przejdź na dumbbell shoulder press (lepsze ułożenie nadgarstka).",
+      "alternative": "dumbbell-standing-overhead-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to seated KB press or seated DB press until pain resolves. Standing strict press demands aggressive core/glute bracing — not advisable with active LBP.",
+      "modificationPl": "Przejdź na seated KB press lub seated DB press do ustąpienia bólu. Strict press stojąc wymaga agresywnego napięcia core/pośladków — niewskazane przy aktywnym LBP.",
+      "alternative": "dumbbell-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (strength) | 3-5x3-5 (max strength) | 3-4x6-10 (hypertrophy) | 5-10 min ladder/EMOM (GS-style endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "kettlebell-two-arm-military-press.gif",
+    "frames_extracted": [
+      "frames/kettlebell-two-arm-military-press/frame_0_start.png",
+      "frames/kettlebell-two-arm-military-press/frame_1_early.png",
+      "frames/kettlebell-two-arm-military-press/frame_2_mid.png",
+      "frames/kettlebell-two-arm-military-press/frame_3_late.png",
+      "frames/kettlebell-two-arm-military-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-two-arm-military-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Frame 0 (start): pozycja rack — dwa kettle na przedramionach przy barkach, łokcie w dół, knykcie do góry, przedramiona pionowo, stopy ~na szerokość barków. Frame 2 (mid): pełen lock-out — oba kettle nad głową, bicepsy przy uszach, łokcie wyprostowane, sylwetka pionowa (bez odchylenia). Frame 4 (end): powrót do rack. Brak ugięcia nóg w żadnej klatce → strict press potwierdzony. Klasyczny standing two-arm KB military press / double bell press. Podświetlone: przednie i boczne delty (P), tricepsy (S). Plane=frontal bo kettle idą przy bokach ciała symetrycznie, ścieżka w płaszczyźnie czołowej. Bilateral, compound, push. PL nazwa zgodna ze stylem GymTrackera ('Military press z kettlebellami oburącz stojąc').",
+
+  "tags": ["kettlebell", "girevoy_sport", "GS", "compound", "upper_body", "vertical_push", "strict_press", "double_bell", "shoulders", "strength_fundamental"]
+}

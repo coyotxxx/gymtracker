@@ -1,0 +1,201 @@
+{
+  "id": "resistance-band-seated-chest-press",
+  "name": "Resistance Band Seated Chest Press",
+  "namePl": "Chest press z gumą w siadzie",
+  "aliases": ["seated band chest press", "band chest press sitting", "resistance band bench press seated", "seated banded press"],
+  "aliasesPl": ["wyciskanie gumą w siadzie", "chest press z taśmą oporową siedząc", "seated band press", "wyciskanie gumy przed siebie w siadzie"],
+
+  "description": "Horizontal pressing variation performed in a seated position using a resistance band looped behind the back (around the torso or anchored behind). Handles or band ends held in each hand at chest level; arms are pressed forward in a horizontal push pattern. The band provides ascending resistance (heaviest at full extension), making it excellent for warm-ups, rehab, home training, travel, or accessory work for the chest. Joint-friendly, low-stress on the spine, and easy to scale by band thickness or grip distance from the body.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany w pozycji siedzącej, z gumą oporową przeciągniętą za plecami (wokół tułowia lub zakotwiczoną za plecami). Uchwyty lub końce gumy trzymane w obu rękach na wysokości klatki; ramiona są wyciskane do przodu w schemacie poziomego pchania. Guma daje opór narastający (najcięższy przy pełnym wyproście), co czyni ćwiczenie świetnym do rozgrzewki, rehabilitacji, treningu w domu, podróży albo jako akcesoryjne uzupełnienie klatki. Przyjazne dla stawów, mało obciążające kręgosłup, łatwe do skalowania przez grubość gumy lub odległość chwytu od ciała.",
+
+  "instructions": [
+    "Sit upright on a sturdy bench, chair, or box with feet flat on the floor.",
+    "Loop a resistance band behind your upper-mid back (just under the shoulder blades) and grasp a handle or end of the band in each hand.",
+    "Bring the hands to chest level, elbows at ~45-60° from torso, palms facing down or slightly inward (whichever feels comfortable).",
+    "Sit tall — neutral spine, ribs stacked over hips, shoulder blades retracted and depressed. Brace the core.",
+    "Inhale and prepare. Exhale as you press both hands forward in a controlled arc, extending the arms in front of the chest. Hands converge slightly at the end of the press.",
+    "At full extension, elbows are nearly straight (NOT hyperextended), arms parallel to the floor, hands at chest height. Pause briefly and squeeze the chest.",
+    "Inhale and return the hands toward the chest under control, resisting the band's pull. Stop when handles approach the chest — don't let the band yank them back.",
+    "Keep the torso still throughout — no leaning forward or backward. The arms move, the trunk stays anchored."
+  ],
+  "instructionsPl": [
+    "Usiądź wyprostowany na stabilnej ławce, krześle lub skrzyni, stopy płasko na podłodze.",
+    "Przeciągnij gumę oporową za plecami w okolicy górno-środkowej części pleców (tuż pod łopatkami) i chwyć uchwyt lub końcówkę gumy w każdą rękę.",
+    "Trzymaj ręce na wysokości klatki, łokcie pod kątem ~45-60° od tułowia, dłonie zwrócone w dół lub lekko do środka (jak wygodniej).",
+    "Usiądź wysoko — neutralny kręgosłup, żebra nad biodrami, łopatki ściągnięte i opuszczone w dół. Napnij brzuch.",
+    "Wdech i przygotuj się. Wydech podczas wyciskania obu rąk do przodu kontrolowanym łukiem, prostując ramiona przed klatką. Dłonie lekko schodzą się na końcu wyciskania.",
+    "W pełnym wyproście łokcie są prawie wyprostowane (NIE przeprostowane), ramiona równolegle do podłogi, dłonie na wysokości klatki. Krótka pauza i zaciśnij klatkę.",
+    "Wdech i wracaj rękami w stronę klatki kontrolowanie, opierając się przed naciągiem gumy. Zatrzymaj się gdy uchwyty zbliżą się do klatki — nie pozwól gumie szarpnąć rąk z powrotem.",
+    "Trzymaj tułów nieruchomy przez cały ruch — bez pochylania się do przodu czy tyłu. Ręce się ruszają, korpus zostaje zakotwiczony."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior"],
+    "stabilizers": ["core", "rotator_cuff", "upper_back", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P7",
+    "anterior_deltoids": "P7",
+    "serratus_anterior": "S6",
+    "core": "T4",
+    "rotator_cuff": "T3",
+    "rhomboids": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["bench", "chair", "handles", "band_anchor"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["push-up-knees", "band-pull-apart"],
+    "progression_to": ["dumbbell-bench-press", "machine-chest-press", "push-up", "barbell-bench-press"],
+    "alternatives": ["machine-chest-press", "dumbbell-bench-press", "push-up", "cable-chest-press-standing"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall on bench/chair, feet planted hip-width",
+      "Band wrapped behind upper-mid back, just under shoulder blades",
+      "Handles at chest level, elbows tucked ~45-60°",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Brace core, ribs over hips, neutral spine"
+    ],
+    "setup_cues_pl": [
+      "Usiądź wysoko na ławce/krześle, stopy zaparte na szerokość bioder",
+      "Guma owinięta za plecami w okolicy górno-środkowych pleców, tuż pod łopatkami",
+      "Uchwyty na wysokości klatki, łokcie schowane pod ~45-60°",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Napięty brzuch, żebra nad biodrami, neutralny kręgosłup"
+    ],
+    "execution_cues": [
+      "Press both hands forward together — sync left and right",
+      "Drive through palms, finish with hands slightly converging in front of chest",
+      "Don't lock out the elbows hard — soft finish",
+      "Resist the band on the way back — slow eccentric, no snap-back",
+      "Keep torso still — no leaning forward to 'help' the press"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj obie ręce do przodu razem — synchronizuj lewą i prawą",
+      "Napieraj przez wnętrza dłoni, kończ z rękami lekko schodzącymi się przed klatką",
+      "Nie blokuj łokci na sztywno — miękkie zakończenie",
+      "Opieraj się gumie w powrocie — wolna faza ekscentryczna, bez szarpnięcia",
+      "Trzymaj tułów nieruchomy — bez pochylania się do przodu by 'pomóc' w wyciskaniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning forward to 'help' the press",
+        "faultPl": "Pochylanie się do przodu by 'pomóc' w wyciskaniu",
+        "cause": "Band too heavy, weak chest, ego compensation",
+        "causePl": "Za mocna guma, słaba klatka, kompensacja z ego",
+        "cue": "Sit tall, back against a wall if needed. If you can't press without leaning, use a lighter band.",
+        "cuePl": "Siedź wysoko, plecami o ścianę jeśli trzeba. Jeśli nie umiesz wycisnąć bez pochylania, użyj lżejszej gumy."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Mimicking fly motion, lack of awareness, band positioned too low on back",
+        "causePl": "Kopiowanie ruchu rozpiętek, brak świadomości, guma za nisko na plecach",
+        "cue": "Tuck elbows to ~45-60° from torso. 'Hide your armpits from the side'. Protects the shoulders.",
+        "cuePl": "Schowaj łokcie pod ~45-60° od tułowia. 'Schowaj pachy z boku'. Chroni barki."
+      },
+      {
+        "fault": "Letting the band snap the hands back to the chest",
+        "faultPl": "Pozwolenie gumie szarpnąć ręce z powrotem do klatki",
+        "cause": "No eccentric control, treating return as rest",
+        "causePl": "Brak kontroli ekscentrycznej, traktowanie powrotu jako odpoczynku",
+        "cue": "Resist the band — 2-3 second eccentric. The negative builds the chest just as much as the press.",
+        "cuePl": "Opieraj się gumie — 2-3 sekundy faza ekscentryczna. Faza negatywna buduje klatkę tak samo jak wyciskanie."
+      },
+      {
+        "fault": "Shoulders shrugging up at full extension",
+        "faultPl": "Barki podciągają się do góry w pełnym wyproście",
+        "cause": "Loss of scapular depression, weak lower traps, pressing too high",
+        "causePl": "Utrata depresji łopatek, słabe dolne czworoboczne, wyciskanie zbyt wysoko",
+        "cue": "Keep shoulder blades down and back throughout. Press FORWARD, not UP. Pretend you have a coin between scapula and ribs.",
+        "cuePl": "Trzymaj łopatki w dół i razem przez cały ruch. Wyciskaj DO PRZODU, nie DO GÓRY. Wyobraź sobie monetę między łopatką a żebrami."
+      },
+      {
+        "fault": "Band slips off the back or out of position",
+        "faultPl": "Guma ześlizguje się z pleców lub wypada z pozycji",
+        "cause": "Band placed too low, band too thin, slick clothing",
+        "causePl": "Guma za nisko, guma za cienka, śliska odzież",
+        "cue": "Position band just under shoulder blades, not on lower back. If slips repeatedly, anchor it behind a post or have a partner hold it.",
+        "cuePl": "Umieść gumę tuż pod łopatkami, nie na lędźwiach. Jeśli ześlizguje się notorycznie, zakotwicz ją za słupem lub poproś partnera o przytrzymanie."
+      }
+    ],
+    "breathing": "Inhale during return (eccentric, hands toward chest), exhale during the press forward (concentric).",
+    "breathingPl": "Wdech podczas powrotu (faza ekscentryczna, ręce do klatki), wydech podczas wyciskania do przodu (faza koncentryczna)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Band press is generally shoulder-friendly. Reduce ROM if pain at full extension, use neutral grip (palms facing each other) instead of pronated.",
+      "modificationPl": "Wyciskanie gumą jest zwykle przyjazne dla barków. Zmniejsz ROM jeśli ból w pełnym wyproście, użyj chwytu neutralnego (dłonie zwrócone do siebie) zamiast pronowanego.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "modify",
+      "modification": "Light band only, full pain-free ROM, no heavy resistance until cleared by physio. Often used as rehab exercise.",
+      "modificationPl": "Tylko lekka guma, pełny bezbolesny ROM, brak ciężkiego oporu do czasu zgody fizjoterapeuty. Często używane jako ćwiczenie rehabilitacyjne.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use band with handles (not loop around wrists). Keep wrists neutral — straight line from forearm through knuckles.",
+      "modificationPl": "Używaj gumy z uchwytami (nie zawijaj wokół nadgarstków). Trzymaj nadgarstki w neutralnej pozycji — linia prosta od przedramienia przez kostki.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Sit against a back support (chair with back). Engage core to prevent excessive lumbar arch when pressing.",
+      "modificationPl": "Usiądź z oparciem (krzesło z plecami). Napnij brzuch by zapobiec nadmiernemu wygięciu lędźwi podczas wyciskania.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (hypertrophy/endurance, default) | 3-4x10-12 (strength accessory) | 2-3x15-20 (warm-up/activation)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "resistance-band-seated-chest-press.gif",
+    "frames_extracted": [
+      "frames/resistance-band-seated-chest-press/frame_0_start.png",
+      "frames/resistance-band-seated-chest-press/frame_1_early.png",
+      "frames/resistance-band-seated-chest-press/frame_2_mid.png",
+      "frames/resistance-band-seated-chest-press/frame_3_late.png",
+      "frames/resistance-band-seated-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/resistance-band-seated-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): osoba siedzi wyprostowana na ławce, ręce trzymają końce gumy na wysokości klatki, łokcie zgięte i lekko schowane, łopatki ściągnięte. Klatka piersiowa, przednie delty i tricepsy podświetlone (primary movers). Frame 2 (środek/wyciśnięcie): ręce wyciągnięte do przodu, guma w pełnym napięciu (żółta linia widoczna), ramiona równolegle do podłogi na wysokości klatki — klasyczny horizontal push, plane=transverse. Frame 4 (powrót): ręce wracają w stronę klatki, motion blur na lewej ręce wskazuje fazę ekscentryczną. Pozycja siedząca stabilna przez cały ruch, brak pochylania się do przodu. Klasyczny bilateral seated band press, brak ławki oparcia (sturdy bench), nogi na podłodze. PL nazwa 'Chest press z gumą w siadzie' zgodna z polskim slangiem fitness (anglicyzm 'chest press' szeroko używany, 'w siadzie' jednoznacznie definiuje pozycję). Wszystkie pola PL napisane od zera, nie tłumaczone z EN — opis akcentuje narastający opór gumy, scaling i zastosowania (rehab/home/travel).",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest", "band", "resistance_band", "seated", "home_workout", "rehab_friendly", "shoulder_friendly", "beginner_friendly", "travel_friendly"]
+}

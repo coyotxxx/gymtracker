@@ -1,0 +1,202 @@
+{
+  "id": "weighted-standing-hand-squeeze",
+  "name": "Weighted Standing Hand Squeeze (Grip Squeeze)",
+  "namePl": "Ściskanie dłoni z obciążeniem stojąc (trening chwytu)",
+  "aliases": ["plate pinch hold", "standing grip squeeze", "weighted hand crush", "static grip squeeze"],
+  "aliasesPl": ["ściskanie talerza", "plate pinch", "statyczny uchwyt z talerzem", "trening siły chwytu z obciążeniem"],
+
+  "description": "Isolation exercise for grip and forearm flexor strength performed standing with a weight plate (or dumbbell) held in one hand. The athlete actively squeezes the implement with maximum finger and thumb force, either statically (hold for time) or with repeated rhythmic crushing contractions. Builds crushing grip strength, finger flexor endurance, and forearm hypertrophy. A staple in strongman, grappling, climbing, and any sport requiring a strong hand.",
+  "descriptionPl": "Ćwiczenie izolowane na siłę chwytu i zginacze przedramienia wykonywane stojąc, z talerzem obciążeniowym (lub hantlem) trzymanym w jednej ręce. Ćwiczący aktywnie zaciska palce i kciuk z maksymalną siłą — statycznie (utrzymanie na czas) lub rytmicznie powtarzającymi się skurczami. Buduje siłę zgniatającą chwytu, wytrzymałość zginaczy palców i hipertrofię przedramienia. Podstawowe ćwiczenie w strongmanie, sportach walki w parterze, wspinaczce i każdym sporcie wymagającym mocnej dłoni.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Pick up a weight plate by pinching the smooth side between your thumb and fingers (or grip a dumbbell handle).",
+    "Let the loaded arm hang straight down at your side. Keep your shoulder packed (down and back), elbow fully extended.",
+    "The other arm hangs relaxed at your other side. Maintain an upright torso, neutral spine, ribs down.",
+    "Actively squeeze the implement with maximum finger force — drive the fingertips into the palm as if trying to crush the plate. Thumb stays clamped.",
+    "Hold the maximal squeeze for the prescribed time (typically 15-45 seconds) — this is a static / isometric variant.",
+    "For the dynamic variant: rhythmically squeeze and partially release (without dropping the plate) for the prescribed reps — usually 10-20 hard crushes.",
+    "Breathe normally throughout — do not hold your breath. Keep wrist neutral, do not let it collapse into flexion or extension.",
+    "Set the plate down under control before fatigue causes a drop. Switch hands and repeat for the other side."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Podnieś talerz obciążeniowy chwytając go za gładką powierzchnię — kciuk z jednej strony, palce z drugiej (lub złap trzon hantla).",
+    "Pozwól ręce z obciążeniem zwisać prosto wzdłuż tułowia. Bark ściągnięty (w dół i w tył), łokieć w pełnym wyproście.",
+    "Druga ręka zwisa swobodnie wzdłuż drugiego boku. Utrzymuj wyprostowany tułów, neutralny kręgosłup, żebra w dół.",
+    "Aktywnie zaciskaj talerz maksymalną siłą palców — wciskaj opuszki w wewnętrzną stronę dłoni, jakbyś chciał zgnieść talerz. Kciuk mocno przyciśnięty.",
+    "Utrzymaj maksymalny zacisk przez wyznaczony czas (zwykle 15-45 sekund) — to wariant statyczny (izometryczny).",
+    "Dla wariantu dynamicznego: rytmicznie zaciskaj i częściowo rozluźniaj (nie upuszczając talerza) przez wyznaczoną liczbę powtórzeń — zwykle 10-20 mocnych zaciśnięć.",
+    "Oddychaj normalnie przez cały czas — nie wstrzymuj oddechu. Trzymaj nadgarstek w pozycji neutralnej, nie pozwól mu zgiąć się ani przeprostować.",
+    "Odłóż talerz pod kontrolą zanim zmęczenie spowoduje upuszczenie. Zmień rękę i powtórz po drugiej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "grip_isometric",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis", "thumb_adductor"],
+    "stabilizers": ["biceps_brachii", "anterior_deltoid", "upper_trapezius", "core", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "brachioradialis": "S5",
+    "thumb_adductor": "S4",
+    "biceps_brachii": "T3",
+    "anterior_deltoid": "T2",
+    "upper_trapezius": "T2",
+    "core": "T1",
+    "rotator_cuff": "T1"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["dumbbell", "hex_dumbbell", "thick_grip_attachment", "chalk", "pinch_block"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["farmers-walk", "dead-hang", "pinch-block-hold", "thick-bar-hold"],
+    "alternatives": ["farmers-walk", "dead-hang", "wrist-curl", "captains-of-crush-gripper"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, tall posture",
+      "Shoulder packed — down and back",
+      "Pinch the smooth side of the plate, thumb opposing fingers",
+      "Wrist neutral — in line with the forearm",
+      "Other arm relaxed, torso vertical"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, wyprostowana sylwetka",
+      "Bark ściągnięty — w dół i w tył",
+      "Złap gładką stronę talerza — kciuk naprzeciwko palców",
+      "Nadgarstek neutralny — w linii z przedramieniem",
+      "Druga ręka rozluźniona, tułów pionowo"
+    ],
+    "execution_cues": [
+      "Crush the plate — drive fingertips into the palm",
+      "Thumb actively clamps against the fingers",
+      "Keep breathing — do not Valsalva",
+      "Wrist stays straight under load",
+      "Set down under control before the grip slips"
+    ],
+    "execution_cues_pl": [
+      "Zgniataj talerz — wciskaj opuszki palców w wewnętrzną stronę dłoni",
+      "Kciuk aktywnie dociska palce z drugiej strony",
+      "Oddychaj normalnie — bez wstrzymywania oddechu",
+      "Nadgarstek pozostaje prosty pod obciążeniem",
+      "Odłóż talerz pod kontrolą zanim chwyt zacznie ślizgać"
+    ],
+    "common_faults": [
+      {
+        "fault": "Passive holding instead of active squeezing",
+        "faultPl": "Bierne trzymanie zamiast aktywnego ściskania",
+        "cause": "Treating the exercise as a static carry rather than a maximal grip contraction",
+        "causePl": "Traktowanie ćwiczenia jak biernego utrzymania zamiast maksymalnego skurczu chwytu",
+        "cue": "Mentally crush the plate every second. Imagine breaking it in half between your fingers and thumb.",
+        "cuePl": "Świadomie zgniataj talerz w każdej sekundzie. Wyobraź sobie, że łamiesz go między palcami a kciukiem."
+      },
+      {
+        "fault": "Wrist collapse into flexion or extension",
+        "faultPl": "Załamanie nadgarstka w zgięciu lub przeproście",
+        "cause": "Fatigued forearm flexors, plate too heavy, or weak wrist stabilizers",
+        "causePl": "Zmęczone zginacze przedramienia, zbyt ciężki talerz, lub słabe stabilizatory nadgarstka",
+        "cue": "Keep the knuckles in line with the back of the forearm. Lighten the load before form breaks.",
+        "cuePl": "Trzymaj kostki w linii z grzbietem przedramienia. Zmniejsz ciężar zanim technika się załamie."
+      },
+      {
+        "fault": "Shrugging the shoulder upward to assist the grip",
+        "faultPl": "Wzruszanie barkiem do góry by wspomóc chwyt",
+        "cause": "Trying to take tension off the fingers by hanging from the upper trap, or load too heavy",
+        "causePl": "Próba odciążenia palców przez wisienie na czworobocznym, lub zbyt duży ciężar",
+        "cue": "Pull the shoulder down toward the back pocket and lock it there. Long arm, packed shoulder.",
+        "cuePl": "Ściągnij bark w dół w stronę tylnej kieszeni i zablokuj go tam. Długie ramię, ściągnięty bark."
+      },
+      {
+        "fault": "Holding breath / Valsalva for the whole set",
+        "faultPl": "Wstrzymywanie oddechu (Valsalva) przez całą serię",
+        "cause": "Instinctive bracing under maximal effort, especially during long isometric holds",
+        "causePl": "Odruchowe napinanie podczas maksymalnego wysiłku, szczególnie przy długich utrzymaniach izometrycznych",
+        "cue": "Breathe in shallow rhythm through the nose. Spikes in blood pressure are real on long holds.",
+        "cuePl": "Oddychaj płytkim, rytmicznym oddechem przez nos. Skoki ciśnienia przy długich utrzymaniach są realne."
+      },
+      {
+        "fault": "Dropping the plate uncontrolled at fatigue",
+        "faultPl": "Niekontrolowane upuszczenie talerza przy zmęczeniu",
+        "cause": "Going to absolute grip failure without a safety plan — risk to feet and floor",
+        "causePl": "Doprowadzanie do całkowitego wyczerpania chwytu bez planu bezpieczeństwa — ryzyko dla stóp i podłogi",
+        "cue": "Stop one rep / 5 seconds short of failure. Set the plate on a bench or rack, never the foot.",
+        "cuePl": "Zakończ jedno powtórzenie / 5 sekund przed wyczerpaniem. Odkładaj talerz na ławkę lub stojak — nigdy na stopę."
+      }
+    ],
+    "breathing": "Breathe in a normal shallow rhythm throughout. Do NOT hold your breath — grip work combined with Valsalva spikes intrathoracic pressure unnecessarily on long isometric holds. Set the plate down between sets, do not switch hands mid-air.",
+    "breathingPl": "Oddychaj normalnym, płytkim rytmem przez cały czas. NIE wstrzymuj oddechu — praca chwytu w połączeniu z Valsalva niepotrzebnie podnosi ciśnienie wewnątrz klatki przy długich utrzymaniach izometrycznych. Odkładaj talerz między seriami, nie zmieniaj rąk w powietrzu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Heavy grip work directly loads the medial epicondyle flexor origin. Drop load 30-50%, use higher reps with sub-maximal effort, increase rest. Avoid maximal static holds until pain-free.",
+      "modificationPl": "Ciężka praca chwytu obciąża bezpośrednio przyczep zginaczy na nadkłykciu przyśrodkowym. Zmniejsz ciężar o 30-50%, używaj większej liczby powtórzeń z submaksymalnym wysiłkiem, wydłuż przerwy. Unikaj maksymalnych utrzymań statycznych aż do ustąpienia bólu.",
+      "alternative": "wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Sustained maximal grip squeeze compresses the carpal tunnel and aggravates median nerve symptoms. Limit hold time to 10-15 seconds, avoid wrist flexion under load, take frequent breaks.",
+      "modificationPl": "Długie maksymalne ściskanie chwytu uciska kanał nadgarstka i nasila objawy nerwu pośrodkowego. Ogranicz utrzymanie do 10-15 sekund, unikaj zginania nadgarstka pod obciążeniem, rób częste przerwy.",
+      "alternative": "wrist-curl"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "modify",
+      "modification": "Maximal isometric grip is a classic stimulus for acute blood pressure spikes. Avoid long maximal holds — use short (5-10s) submaximal squeezes with normal breathing. Clear with a physician.",
+      "modificationPl": "Maksymalny izometryczny chwyt klasycznie powoduje skoki ciśnienia. Unikaj długich maksymalnych utrzymań — używaj krótkich (5-10s) submaksymalnych zacisków z normalnym oddechem. Konsultacja z lekarzem.",
+      "alternative": "farmers-walk"
+    },
+    {
+      "condition": "finger_or_thumb_tendon_injury",
+      "severity": "avoid",
+      "modification": "Active pulley/tendon injuries in the fingers (climbing-type A2 pulley, trigger finger, thumb UCL sprain) are aggravated by maximal crush grip. Skip until cleared, then return with a wide-handle dumbbell to spare the thumb.",
+      "modificationPl": "Aktywne kontuzje troczków/ścięgien palców (typowe wspinaczkowe A2, palec strzelający, skręcenie UCL kciuka) są zaostrzane przez maksymalny chwyt zgniatający. Pomiń aż do wyleczenia, potem wróć z hantlem o szerokim trzonie aby oszczędzać kciuk.",
+      "alternative": "dead-hang"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x20-45s hold (isometric grip endurance) | 3-4x10-15 crushes (dynamic) | 5-6x10-20s heavy hold (max strength)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "weighted-standing-hand-squeeze.gif",
+    "frames_extracted": [
+      "frames/weighted-standing-hand-squeeze/frame_0_start.png",
+      "frames/weighted-standing-hand-squeeze/frame_1_early.png",
+      "frames/weighted-standing-hand-squeeze/frame_2_mid.png",
+      "frames/weighted-standing-hand-squeeze/frame_3_late.png",
+      "frames/weighted-standing-hand-squeeze/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/weighted-standing-hand-squeeze"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Wszystkie trzy klatki praktycznie identyczne — to ćwiczenie statyczne (izometryczne). Model stoi prosto, w prawej ręce trzyma okrągły talerz obciążeniowy w plate-pinch grip (kciuk z jednej strony gładkiej powierzchni, palce z drugiej — brak rączki, brak otworu na palce). Ramię zwisa wzdłuż tułowia, łokieć w pełnym wyproście, bark ściągnięty, nadgarstek neutralny. Lewa ręka rozluźniona wzdłuż lewego boku. Wyraźnie podświetlone na czerwono mięśnie zginaczy przedramienia (forearm flexors) prawej ręki — to jednoznacznie identyfikuje primary mover. Brak ruchu w ramieniu/łokciu/nadgarstku przez cały loop GIFa — czyste izometryczne ściskanie chwytu. Ćwiczenie zaklasyfikowane jako unilateral isolation grip work (mechanic=isolation, laterality=unilateral, force=pull jako anatomiczny kierunek pracy zginaczy palców). Brak yuhonas/glowupp odpowiednika. Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["forearms", "grip", "isometric", "isolation", "unilateral", "weight_plate", "pinch_grip", "strongman", "grip_strength", "upper_body"]
+}

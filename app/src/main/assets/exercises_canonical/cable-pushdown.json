@@ -1,0 +1,203 @@
+{
+  "id": "cable-pushdown",
+  "name": "Cable Pushdown",
+  "namePl": "Prostowanie ramion na wyciągu",
+  "aliases": ["cable triceps pushdown", "straight bar pushdown", "tricep pushdown", "cable pressdown", "bar pushdown"],
+  "aliasesPl": ["prostowanie ramion na wyciągu górnym", "wyciskanie linki na triceps", "pushdown na drążku", "pressdown na wyciągu", "prostowanie tricepsa na drążku"],
+
+  "description": "Classic bilateral isolation exercise for the triceps performed at a high cable pulley with a straight bar. Both hands work simultaneously which allows for heavier loading than unilateral variants. The constant cable tension loads the triceps through the full range of motion and the cable angle keeps mechanical tension consistent at the bottom — unlike free-weight extensions where the load drops off at lockout. The most popular triceps accessory in bodybuilding, fitness and physiotherapy programs because it is joint-friendly and easy to learn.",
+  "descriptionPl": "Klasyczne dwustronne ćwiczenie izolowane na triceps wykonywane na wyciągu górnym z prostym drążkiem. Obie ręce pracują jednocześnie, co pozwala na większe obciążenie niż w wariancie jednorącz. Stałe napięcie linki obciąża triceps w pełnym zakresie ruchu, a kąt linki utrzymuje napięcie mechaniczne w fazie pełnego wyprostu — w przeciwieństwie do prostowań z wolnym ciężarem, gdzie obciążenie spada na końcu ruchu. Najpopularniejsze ćwiczenie pomocnicze na triceps w kulturystyce, fitnessie i fizjoterapii, ponieważ jest przyjazne dla stawów i łatwe do nauczenia.",
+
+  "instructions": [
+    "Set the cable pulley to the highest position and attach a straight bar (or short EZ-bar attachment).",
+    "Stand facing the machine, feet hip- to shoulder-width apart, one foot may be slightly staggered for balance.",
+    "Grip the bar with a pronated (overhand) grip, hands shoulder-width apart or slightly narrower.",
+    "Pin both elbows tightly to your sides (ribcage). Upper arms must stay fixed there for the entire set.",
+    "Start with elbows flexed to roughly 90 degrees, forearms parallel or slightly above parallel to the floor. Brace your core, keep your torso upright and chest up.",
+    "Press the bar downward by extending only at the elbows until the arms are fully straight and the triceps are maximally contracted. Exhale during the press.",
+    "Squeeze the triceps hard for a 1-second pause at full extension (bar near the front of the thighs).",
+    "Slowly return the bar upward to the starting 90-degree position over 2-3 seconds, keeping the elbows glued to your sides. Inhale on the way up.",
+    "Repeat for the full set. Do not let the weight stack touch down between reps — maintain constant tension."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg w najwyższej pozycji i przypnij prosty drążek (lub krótkie ramię typu EZ).",
+    "Stań twarzą do maszyny, stopy na szerokość bioder lub barków, jedna stopa może być lekko wysunięta dla równowagi.",
+    "Złap drążek nachwytem (chwyt pronowany), ręce na szerokość barków lub trochę węziej.",
+    "Mocno przyklej oba łokcie do boków tułowia (do żeber). Ramiona ponad łokciem mają pozostać w tej pozycji przez całą serię.",
+    "Pozycja startowa: łokcie ugięte około 90 stopni, przedramiona równolegle lub lekko powyżej poziomu podłogi. Napnij brzuch, utrzymaj tułów pionowo, klatka wysoko.",
+    "Wyciśnij drążek w dół prostując wyłącznie w łokciach, aż ramiona będą w pełni wyprostowane a tricepsy maksymalnie napięte. Wydech podczas prostowania.",
+    "Mocno spinaj tricepsy przez 1 sekundę w pozycji pełnego wyprostu (drążek przy przedniej stronie ud).",
+    "Powoli wracaj drążkiem w górę do pozycji wyjściowej 90 stopni przez 2-3 sekundy, trzymając łokcie przyklejone do boków. Wdech podczas powrotu.",
+    "Powtórz przez całą serię. Nie pozwól by stos opadł między powtórzeniami — utrzymuj stałe napięcie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["forearm_extensors", "anterior_deltoid", "core", "latissimus_dorsi", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "forearm_extensors": "T4",
+    "anterior_deltoid": "T3",
+    "latissimus_dorsi": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["cable-rope-tricep-pushdown", "cable-one-arm-tricep-pushdown", "cable-overhead-tricep-extension", "tricep-dips"],
+    "alternatives": ["cable-rope-tricep-pushdown", "cable-one-arm-tricep-pushdown", "dumbbell-overhead-tricep-extension", "tricep-dumbbell-kickback", "ez-bar-skull-crushers"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulley at the top, straight bar attached",
+      "Face the stack, feet hip- to shoulder-width apart",
+      "Pronated grip, hands shoulder-width",
+      "Both elbows glued to your ribs",
+      "Start with elbows at 90 degrees, forearms horizontal, torso upright"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg w górnej pozycji, prosty drążek",
+      "Twarzą do stosu, stopy na szerokość bioder do barków",
+      "Chwyt nachwytem, ręce na szerokość barków",
+      "Oba łokcie przyklejone do żeber",
+      "Start: łokcie ugięte 90 stopni, przedramiona poziomo, tułów pionowo"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay nailed to your sides",
+      "Press the bar straight down, not forward",
+      "Lock out the elbows and squeeze the triceps at the bottom for 1 second",
+      "Return slowly over 2-3 seconds — control the cable, do not let it pull you up",
+      "Keep wrists neutral and straight — do not flex or extend them under the load"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyklejone do boków",
+      "Wyciskaj drążek prosto w dół, nie do przodu",
+      "Zablokuj łokcie i spinaj tricepsy na dole przez 1 sekundę",
+      "Wracaj wolno przez 2-3 sekundy — kontroluj linkę, nie pozwól by ciągnęła cię w górę",
+      "Nadgarstki neutralne i proste — nie zginaj ani nie prostuj ich pod obciążeniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drifting forward and away from the body",
+        "faultPl": "Łokcie uciekają do przodu i odklejają się od tułowia",
+        "cause": "Load too heavy, shoulder flexors (anterior delts) taking over, lack of triceps engagement",
+        "causePl": "Zbyt duży ciężar, włączają się zginacze barku (przedni akton), słaba praca tricepsów",
+        "cue": "Pin elbows to your ribs. If they drift, lower the weight by 30%.",
+        "cuePl": "Przyklej łokcie do żeber. Jeśli uciekają, zmniejsz ciężar o 30%."
+      },
+      {
+        "fault": "Leaning the torso forward over the bar",
+        "faultPl": "Pochylanie tułowia do przodu nad drążkiem",
+        "cause": "Using bodyweight to push the bar down, ego lifting, weak triceps",
+        "causePl": "Wykorzystywanie masy ciała do wyciskania drążka, ego, słaby triceps",
+        "cue": "Stay vertical — ears stay over your hips. Reduce the load and let the triceps do the work.",
+        "cuePl": "Pozostań pionowo — uszy nad biodrami. Zmniejsz ciężar i pozwól tricepsowi pracować."
+      },
+      {
+        "fault": "Incomplete lockout at the bottom",
+        "faultPl": "Niepełny wyprost w łokciach na dole",
+        "cause": "Ego lifting, weak short head of the triceps, or failing to focus on the contraction",
+        "causePl": "Ego, słaba głowa krótka tricepsa, lub brak skupienia na skurczu",
+        "cue": "Fully straighten the arms and squeeze the triceps for 1 second every rep.",
+        "cuePl": "W pełni wyprostuj ramiona i spinaj tricepsy przez 1 sekundę przy każdym powtórzeniu."
+      },
+      {
+        "fault": "Wrist flexion under the load (curling the bar)",
+        "faultPl": "Zginanie nadgarstków pod obciążeniem (zwijanie drążka)",
+        "cause": "Weak forearm extensors, bar too far from fingers, grip too narrow",
+        "causePl": "Słabe prostowniki przedramienia, drążek za daleko od palców, zbyt wąski chwyt",
+        "cue": "Keep knuckles facing the floor. Wrist stays in line with the forearm — no curl.",
+        "cuePl": "Knykcie skierowane w dół podłogi. Nadgarstek w linii z przedramieniem — żadnego zwijania."
+      },
+      {
+        "fault": "Bouncing the weight stack at the top",
+        "faultPl": "Odbijanie stosu na górze (między powtórzeniami)",
+        "cause": "Rushed tempo, plates touching down between reps, loss of tension",
+        "causePl": "Pośpiech, talerze stykają się między powtórzeniami, utrata napięcia",
+        "cue": "Stop 2-3 cm before the stack touches. Keep constant tension on the triceps.",
+        "cuePl": "Zatrzymaj się 2-3 cm przed dotknięciem stosu. Utrzymuj stałe napięcie na tricepsie."
+      }
+    ],
+    "breathing": "Exhale during the concentric phase (pressing the bar down). Inhale during the eccentric (returning to 90 degrees). Maintain a light core brace throughout the set.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wyciskanie drążka w dół). Wdech w fazie ekscentrycznej (powrót do 90 stopni). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Pronated grip on a straight bar stresses the extensor tendons at the lateral epicondyle. Switch to a rope attachment (neutral grip) or use lighter weight (40-50% of normal) with higher reps (15-20) in pain-free range.",
+      "modificationPl": "Chwyt nachwytem na prostym drążku obciąża przyczepy prostowników na nadkłykciu bocznym. Przejdź na linkę (chwyt neutralny) lub używaj lżejszego ciężaru (40-50% normalnego) z większą liczbą powtórzeń (15-20) w zakresie bez bólu.",
+      "alternative": "cable-rope-tricep-pushdown"
+    },
+    {
+      "condition": "triceps_tendinopathy_at_olecranon",
+      "severity": "modify",
+      "modification": "Avoid forceful lockout. Stop short of full elbow extension (around 170 degrees) to reduce traction on the triceps tendon. Use higher reps (15-20) and lighter loads.",
+      "modificationPl": "Unikaj forsownego pełnego wyprostu. Zatrzymaj się przed pełnym wyprostem (około 170 stopni) by zmniejszyć ciągnięcie ścięgna tricepsa. Używaj większej liczby powtórzeń (15-20) i lżejszych ciężarów.",
+      "alternative": "cable-rope-tricep-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The fully pronated grip on a straight bar can stress the wrist into ulnar deviation. Switch to a rope or V-bar (neutral grip) or wrap the wrists with stiff wraps. Reduce weight until pain-free.",
+      "modificationPl": "Pełny chwyt nachwytem na prostym drążku może obciążać nadgarstek w odwiedzeniu łokciowym. Przejdź na linkę lub V-bar (chwyt neutralny) lub załóż sztywne opaski. Zmniejsz ciężar do zakresu bez bólu.",
+      "alternative": "cable-rope-tricep-pushdown"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Keep shoulders packed (down and back) and do not let them roll forward during the press. Avoid leaning over the bar which closes the subacromial space.",
+      "modificationPl": "Trzymaj barki spakowane (w dół i w tył) i nie pozwól by rolowały do przodu podczas prostowania. Unikaj pochylania nad drążkiem, co zamyka przestrzeń podbarkową.",
+      "alternative": "cable-one-arm-tricep-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (strength/hypertrophy) | 3-4x12-15 (hypertrophy) | 2-3x15-20 (pump/burnout/rehab)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-pushdown.gif",
+    "frames_extracted": [
+      "frames/cable-pushdown/frame_0_start.png",
+      "frames/cable-pushdown/frame_1_early.png",
+      "frames/cable-pushdown/frame_2_mid.png",
+      "frames/cable-pushdown/frame_3_late.png",
+      "frames/cable-pushdown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-pushdown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja startowa — postać stoi twarzą do wyciągu, obie ręce trzymają prosty drążek na wysokości klatki, łokcie ugięte około 90 stopni i przyklejone do boków tułowia. Oba tricepsy podświetlone na czerwono — wariant dwustronny. Frame 2: faza pełnego wyprostu — ramiona w pełni wyprostowane w dół, drążek na wysokości przednich stron ud, łokcie nadal przy bokach, tricepsy maksymalnie napięte. Frame 4: powrót do pozycji startowej (90 stopni). Tułów pionowo, stopy stabilne na szerokość bioder. Wyciąg ustawiony w górnej pozycji, prosty drążek. Modelowa technika dwustronnego pushdown'a — łokcie nieruchomo przy bokach przez cały ruch, ruch tylko w łokciu. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "bilateral", "upper_body", "accessory", "beginner_friendly", "rehab_friendly"]
+}

@@ -1,0 +1,205 @@
+{
+  "id": "lever-decline-chest-press",
+  "name": "Lever Decline Chest Press (Machine)",
+  "namePl": "Decline chest press w maszynie",
+  "aliases": ["machine decline chest press", "plate-loaded decline chest press", "hammer strength decline press", "decline lever press", "lever decline press"],
+  "aliasesPl": ["wyciskanie skośne ujemne na maszynie", "wyciskanie ujemne na maszynie dźwigniowej", "decline chest press maszynowy", "decline na maszynie hammer strength", "wyciskanie skośne w dół na maszynie"],
+
+  "description": "Decline chest press performed on a plate-loaded lever machine. The lifter sits upright on a seated chest press machine whose handles travel along a DOWNWARD-ANGLED path (handles start at upper chest / shoulder level and finish lower, away from the body and slightly down) — geometrically equivalent to lying on a decline bench. The downward-angled trajectory shifts emphasis to the sternocostal (lower) head of the pectoralis major and reduces involvement of the anterior deltoid compared to a flat or incline-angled lever press. Because the machine guides the path mechanically, the decline pattern can be trained safely WITHOUT actually lying head-down — there is no spike in intracranial / blood pressure, no risk of dropping weights on the face, and no setup difficulty. This makes it one of the safest ways to train the lower chest at high intensity, suitable for beginners and recommended over free-weight decline bench for trainees with hypertension, GERD, or shoulder issues.",
+  "descriptionPl": "Decline chest press wykonywany na maszynie dźwigniowej ładowanej talerzami. Ćwiczący siedzi wyprostowany na maszynie typu seated chest press, której uchwyty poruszają się po ŚCIEŻCE NACHYLONEJ W DÓŁ (uchwyty startują na wysokości górnej klatki / barku i kończą niżej, dalej od ciała i lekko w dół) — geometrycznie równoważne leżeniu na ławce skośnej ujemnej. Trajektoria pochylona w dół przenosi nacisk na głowę mostkowo-żebrową (dolną) mięśnia piersiowego większego i zmniejsza zaangażowanie przedniego aktona barku w porównaniu do wyciskania poziomego lub na skosie dodatnim w maszynie. Ponieważ maszyna mechanicznie prowadzi ścieżkę, wzorzec decline można trenować bezpiecznie BEZ realnego leżenia głową w dół — nie ma skoku ciśnienia wewnątrzczaszkowego / tętniczego, nie ma ryzyka upuszczenia ciężaru w twarz i nie ma trudności z konfiguracją. To czyni je jednym z najbezpieczniejszych sposobów trenowania dolnej klatki na wysokiej intensywności, odpowiednim dla początkujących i zalecanym zamiast wolnociężarowego decline bench dla osób z nadciśnieniem, refluksem lub problemami z barkiem.",
+
+  "instructions": [
+    "Load the machine with appropriate plates on each arm/side (start lighter to learn the downward path).",
+    "Adjust the seat height so the handles align with the UPPER chest / shoulder line in the start position — the handles will travel DOWNWARD as you press, finishing at lower chest level.",
+    "Sit down, plant feet firmly on the floor or footrest, press the back flat against the backrest, glutes against the seat.",
+    "Retract and depress the scapulae — pin them back and down against the backrest. Maintain this position throughout the set.",
+    "Grip the handles with a neutral or pronated grip depending on machine type. Wrists stacked over forearms.",
+    "Inhale, brace the core. Press both handles FORWARD and slightly DOWNWARD along the machine's guided path, extending the arms until elbows are nearly locked.",
+    "At lock-out: brief peak contraction — squeeze the lower chest for ~1 second.",
+    "Return to the start position under control over 2-3 seconds, feeling the lower chest stretch as the handles travel back UPWARD toward the shoulder line.",
+    "Do NOT let the handles travel deeper than the chest plane — protect the anterior shoulder capsule.",
+    "Exhale during the press (concentric), inhale during the return (eccentric)."
+  ],
+  "instructionsPl": [
+    "Załaduj maszynę odpowiednimi talerzami na każde ramię / stronę (zacznij lżej by nauczyć się toru pochylonego w dół).",
+    "Wyreguluj wysokość siedziska tak, by w pozycji startowej uchwyty były na wysokości GÓRNEJ klatki / barków — uchwyty będą wędrowały W DÓŁ podczas wyciskania, kończąc na wysokości dolnej klatki.",
+    "Usiądź, mocno zaprzyj stopy o podłogę lub podnóżek, dociśnij plecy do oparcia, pośladki do siedziska.",
+    "Ściągnij i opuść łopatki — wbij je w oparcie. Utrzymuj tę pozycję przez całą serię.",
+    "Złap uchwyty chwytem neutralnym lub nachwytem, zależnie od typu maszyny. Nadgarstki w jednej linii z przedramieniem.",
+    "Wdech, napięcie brzucha. Wyciśnij oba uchwyty DO PRZODU i lekko W DÓŁ podążając za prowadzoną ścieżką maszyny, prostując ramiona aż łokcie są prawie zablokowane.",
+    "W lock-out: krótki peak contraction — ściśnij dolną klatkę przez ~1 sekundę.",
+    "Wróć do pozycji startowej kontrolowanie w tempie 2-3 sekundy, czując rozciąganie dolnej klatki gdy uchwyty wędrują z powrotem W GÓRĘ ku linii barków.",
+    "NIE pozwól by uchwyty zeszły głębiej niż płaszczyzna klatki — chroń przednią torebkę stawową barku.",
+    "Wydech podczas wyciskania (koncentryka), wdech podczas powrotu (ekscentryka)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lower_pectoralis", "triceps"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "lower_pectoralis": "P10",
+    "triceps": "P8",
+    "anterior_deltoids": "S6",
+    "serratus_anterior": "S4",
+    "rotator_cuff": "T3",
+    "upper_back": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["chest_press_machine"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["push-up"],
+    "progression_to": ["dumbbell-decline-bench-press", "barbell-decline-bench-press", "dip"],
+    "alternatives": ["dumbbell-decline-bench-press", "barbell-decline-bench-press", "dip", "lever-chest-press", "cable-seated-chest-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Adjust seat so handles START at upper chest / shoulder line — they will travel DOWN to lower chest at lock-out",
+      "Back flat against backrest, glutes glued to seat, feet planted firmly",
+      "Scapulae retracted AND depressed — pin them back and down against the pad",
+      "Neutral wrists stacked over forearms, full grip on handles",
+      "Brace core before the first rep, exhale through the press"
+    ],
+    "setup_cues_pl": [
+      "Wyreguluj siedzisko tak by uchwyty STARTOWAŁY na wysokości górnej klatki / barków — pojadą W DÓŁ do dolnej klatki w lock-out",
+      "Plecy płasko przy oparciu, pośladki przyklejone do siedziska, stopy mocno zaparte",
+      "Łopatki ściągnięte I opuszczone — wbite w tył i w dół w oparcie",
+      "Nadgarstki neutralne w jednej linii z przedramieniem, pełen chwyt na uchwytach",
+      "Napnij brzuch przed pierwszym powtórzeniem, wydech podczas wyciskania"
+    ],
+    "execution_cues": [
+      "Press FORWARD AND SLIGHTLY DOWN — follow the guided downward path of the machine",
+      "Drive both arms synchronously, do not let one side outpace the other",
+      "Stop the eccentric when handles reach the upper chest / shoulder line — do NOT let them travel behind that plane",
+      "Eccentric controlled 2-3 sec, no bouncing off the bottom",
+      "Keep scapulae pinned and DOWN throughout — depression matters more than retraction for lower chest targeting"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj DO PRZODU I LEKKO W DÓŁ — podążaj za prowadzoną pochylą ścieżką maszyny",
+      "Napędzaj oba ramiona synchronicznie, nie pozwól by jedna strona wyprzedzała drugą",
+      "Zatrzymaj ekscentrykę gdy uchwyty dojdą do linii górnej klatki / barków — NIE pozwól im przejść za tę płaszczyznę",
+      "Ekscentryka kontrolowana 2-3 sek, bez odbijania na dole",
+      "Łopatki ściągnięte I OPUSZCZONE przez cały ruch — opuszczenie liczy się bardziej niż ściągnięcie dla aktywacji dolnej klatki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Seat height too low — handles start at lower chest / abdomen instead of upper chest",
+        "faultPl": "Siedzisko za nisko — uchwyty startują na dolnej klatce / brzuchu zamiast górnej klatki",
+        "cause": "Misunderstanding of decline pattern — lifters set up as if it were a flat lever press. Result: the downward path ends BELOW the chest plane, overstretching the anterior shoulder.",
+        "causePl": "Niezrozumienie wzorca decline — ćwiczący ustawia się jak do flat lever press. Wynik: pochylona ścieżka kończy się PONIŻEJ płaszczyzny klatki, nadmiernie rozciągając przedni akton barku.",
+        "cue": "Raise the seat. The handles must START at upper chest / shoulder line so they FINISH at lower chest — that is what defines the decline path.",
+        "cuePl": "Podnieś siedzisko. Uchwyty muszą STARTOWAĆ na linii górnej klatki / barków, by ZAKOŃCZYĆ na dolnej klatce — to definiuje ścieżkę decline."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Treating the press like a fly, or copying a wide bench press grip onto the machine — exposes the anterior shoulder, especially in the decline path where the trajectory pulls handles down and back.",
+        "causePl": "Traktowanie wyciskania jak rozpiętek lub przeniesienie szerokiego chwytu z bench press na maszynę — odsłania przedni akton barku, szczególnie w ścieżce decline gdzie trajektoria ciągnie uchwyty w dół i w tył.",
+        "cue": "Tuck elbows to ~45-60° from torso. 'Hide your armpits from the side'. Critical on decline lever because the path itself does not constrain elbow angle — you have to.",
+        "cuePl": "Schowaj łokcie do ~45-60° od tułowia. 'Schowaj pachy z boku'. Kluczowe na decline lever bo sama ścieżka nie ogranicza kąta łokci — musisz to zrobić sam."
+      },
+      {
+        "fault": "Lifting butt off the seat / arching back excessively (cheating)",
+        "faultPl": "Unoszenie pośladków z siedziska / nadmierne wyginanie pleców (oszukiwanie)",
+        "cause": "Weight too heavy — body recruits hip drive and back arch to substitute press strength with momentum, defeating the safety of the machine.",
+        "causePl": "Zbyt duży ciężar — ciało rekrutuje napęd biodrami i wygięcie pleców by zastąpić siłę wyciskania momentem pędu, niwecząc bezpieczeństwo maszyny.",
+        "cue": "Sit upright, glutes and back glued to the pad. If you cannot keep posture — reduce the load by 10-15%.",
+        "cuePl": "Siedź wyprostowany, pośladki i plecy przyklejone do oparcia. Jeśli nie utrzymujesz postawy — zmniejsz ciężar o 10-15%."
+      },
+      {
+        "fault": "Going too deep on the eccentric (handles travel behind shoulder plane)",
+        "faultPl": "Zbyt głęboka ekscentryka (uchwyty schodzą za płaszczyznę barków)",
+        "cause": "Trying to maximize stretch on a machine — but the guided path forces the shoulder into deeper extension than the joint tolerates safely under load, especially in the decline angle.",
+        "causePl": "Próba maksymalizacji rozciągnięcia na maszynie — ale prowadzona ścieżka wymusza większą ekstensję barku niż staw bezpiecznie toleruje pod obciążeniem, szczególnie w kącie decline.",
+        "cue": "Stop when handles reach upper chest / shoulder line. Use mental cue or range-of-motion limiters if the machine allows. Stretch is fine, joint pain is not.",
+        "cuePl": "Zatrzymaj się gdy uchwyty dojdą do linii górnej klatki / barków. Użyj mentalnego limitu lub ograniczników zakresu jeśli maszyna pozwala. Rozciąganie jest OK, ból w stawie nie."
+      },
+      {
+        "fault": "Scapulae protracting at lock-out (shoulders rolling forward)",
+        "faultPl": "Łopatki rozsuwające się w lock-out (barki rolujące do przodu)",
+        "cause": "Trying to extend the range of motion by pushing the shoulders forward — disengages the chest at peak and dumps the load onto the anterior shoulder.",
+        "causePl": "Próba wydłużenia zakresu przez wypchnięcie barków do przodu — odłącza klatkę w szczycie i przerzuca obciążenie na przedni akton barku.",
+        "cue": "Keep scapulae pinned to the pad throughout. Lock out with the elbows, NOT by rolling shoulders forward.",
+        "cuePl": "Trzymaj łopatki wbite w oparcie przez cały ruch. Blokuj łokciami, NIE rolowaniem barków do przodu."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (return), brace the core, exhale during the press (concentric). Unlike free-weight decline bench, there is no head-down position — breathing pattern is identical to a flat seated press.",
+    "breathingPl": "Wdech podczas ekscentryki (powrót), napięcie brzucha, wydech podczas wyciskania (koncentryka). W przeciwieństwie do wolnociężarowego decline bench, nie ma pozycji głową w dół — wzorzec oddychania jest identyczny jak przy zwykłym seated press."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Decline path on a lever machine is usually friendlier than flat or incline because the trajectory exits below the shoulder line, reducing anterior delt loading. Use neutral grip, raise the seat slightly if pain at start position, and stop the eccentric BEFORE handles reach the shoulder plane.",
+      "modificationPl": "Ścieżka decline na maszynie dźwigniowej zazwyczaj jest łagodniejsza niż flat lub incline, bo trajektoria wychodzi poniżej linii barków, redukując obciążenie przedniego aktona. Użyj chwytu neutralnego, podnieś siedzisko o pół zębatki jeśli ból w pozycji startowej i zatrzymaj ekscentrykę PRZED tym jak uchwyty dojdą do płaszczyzny barków.",
+      "alternative": "cable-seated-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Even though the path is guided, end-range loading at the decline angle stresses an injured cuff. Complete rehab first; return with very light loads and partial range of motion under supervision.",
+      "modificationPl": "Mimo że ścieżka jest prowadzona, obciążenie w końcowym zakresie pod kątem decline obciąża uszkodzony stożek rotatorów. Najpierw rehabilitacja; wracaj z bardzo lekkimi ciężarami i częściowym zakresem ruchu pod nadzorem.",
+      "alternative": "cable-seated-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Reduce the load, shorten the lock-out (stop just before full elbow extension), and avoid peak contraction squeeze. Decline angle compresses the AC joint differently than flat press — test with light weight first.",
+      "modificationPl": "Zmniejsz ciężar, skróć lock-out (zatrzymaj tuż przed pełnym wyprostem łokci) i unikaj peak contraction. Kąt decline obciąża staw AC inaczej niż flat press — przetestuj najpierw z lekkim ciężarem.",
+      "alternative": "lever-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. Handle should sit in the base of the palm, not in the fingers. Keep the wrist stacked directly over the forearm — the downward pressing angle of decline can subtly bend the wrist if grip drifts. Prefer neutral-grip handles if available.",
+      "modificationPl": "Użyj wraps na nadgarstki. Uchwyt powinien spoczywać w podstawie dłoni, nie w palcach. Trzymaj nadgarstek bezpośrednio nad przedramieniem — pochyły w dół kąt decline może subtelnie zginać nadgarstek jeśli chwyt się przesunie. Wybierz uchwyty neutralne jeśli dostępne.",
+      "alternative": "cable-seated-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hipertrofia — główne zastosowanie, drugi ruch klatkowy po flat / incline) | 3-4x10-15 (volume / pump finisher na koniec dnia klatkowego) | 4x6-10 (siła — gdy używany jako główny ruch dolnej klatki) | 2-3x12-20 lekko (nauka wzorca / rozgrzewka)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-decline-chest-press.gif",
+    "frames_extracted": [
+      "frames/lever-decline-chest-press/frame_0_start.png",
+      "frames/lever-decline-chest-press/frame_1_early.png",
+      "frames/lever-decline-chest-press/frame_2_mid.png",
+      "frames/lever-decline-chest-press/frame_3_late.png",
+      "frames/lever-decline-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/lever-decline-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Ćwiczący siedzi WYPROSTOWANY na maszynie dźwigniowej ładowanej talerzami (plate-loaded lever decline chest press machine, talerz 45 lbs widoczny po prawej stronie). Plecy oparte o pionowe oparcie, stopy na podłodze. Frame 0/4 (pozycja startowa/końcowa cyklu): uchwyty wysoko na wysokości górnej klatki / barków, łokcie zgięte ostro i schowane lekko za tułów — pozycja stretch. Frame 2 (lock-out): ramiona wyprostowane do przodu i LEKKO W DÓŁ — uchwyty zakończyły ruch niżej niż startowały, co potwierdza pochylą ścieżkę decline. Wyraźnie podświetlona DOLNA cześć mięśnia piersiowego większego (sternocostal head / lower chest) — to potwierdza specyfikę decline (vs. flat lever-chest-press, gdzie podświetlona była cała pectoralis). Tułów pionowy bez pozycji head-down (kluczowe odróżnienie od wolnociężarowego decline bench — brak skoku ciśnienia śródczaszkowego, brak GERD trigger, brak ryzyka upuszczenia hantli). Chwyt neutralny / pronowany na uchwytach. Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Difficulty 3 (beginner-friendly: prowadzona ścieżka, brak balansowania, brak asekuracji — większość przeciwwskazań decline bench znika). Primary intensity: lower_pectoralis P10, triceps P8 (P8 bo decline angle bardziej angażuje triceps w lock-out niż flat lever), anterior_deltoids zdegradowane do secondary S6 (zgodnie ze specyfikacją decline). Plane = sagittal (ruch w płaszczyźnie strzałkowej — pochyła trajektoria forward-and-down) zgodnie ze wzorcem dumbbell-decline-bench-press. PL nazwa zgodnie z polskim standardem fitness ('Decline chest press w maszynie' — termin EN powszechnie używany w polskich siłowniach jako kalka).",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "lower_chest", "machine", "guided_trajectory", "seated", "decline", "hypertrophy_staple", "shoulder_friendly", "beginner_friendly", "no_spotter_needed", "alternative_to_decline_bench"]
+}

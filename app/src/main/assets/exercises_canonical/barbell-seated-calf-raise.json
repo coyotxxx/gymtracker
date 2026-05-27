@@ -1,0 +1,205 @@
+{
+  "id": "barbell-seated-calf-raise",
+  "name": "Barbell Seated Calf Raise",
+  "namePl": "Wspięcia na palce ze sztangą siedząc",
+  "aliases": ["seated barbell calf raise", "bb seated calf raise", "seated calf raise with barbell"],
+  "aliasesPl": ["wspięcia na palce siedząc ze sztangą", "wspięcia na palce z obciążeniem na udach", "siedzące wspięcia łydek ze sztangą", "calf raise siedząc ze sztangą"],
+
+  "description": "Seated isolation exercise targeting the calves with the barbell resting across the thighs just above the knees. Because the knee is bent to roughly 90 degrees, the gastrocnemius is placed in a shortened, slack position and contributes very little to plantarflexion. This shifts the workload almost entirely onto the soleus — the deeper, slow-twitch calf muscle responsible for endurance and ankle stability. The seated barbell version is a budget alternative to a dedicated seated calf raise machine and is commonly programmed for soleus development, lower-leg detail, and improved standing calf strength.",
+  "descriptionPl": "Izolowane ćwiczenie na łydki wykonywane w pozycji siedzącej ze sztangą opartą na udach tuż nad kolanami. Ponieważ kolano jest zgięte pod kątem zbliżonym do 90 stopni, mięsień brzuchaty łydki znajduje się w pozycji skróconej i nieaktywnej, prawie nie uczestnicząc w zgięciu podeszwowym. Pracę przejmuje niemal w całości mięsień płaszczkowaty (soleus) — głębszy, wolnokurczliwy mięsień łydki odpowiedzialny za wytrzymałość i stabilność stawu skokowego. Wersja siedząca ze sztangą jest budżetową alternatywą dla dedykowanej maszyny do wspięć siedząc i jest powszechnie stosowana do rozbudowy płaszczkowatego, detalu podudzia oraz poprawy siły wspięć w staniu.",
+
+  "instructions": [
+    "Sit on a flat bench with feet flat on the floor about hip-width apart, knees bent to roughly 90 degrees.",
+    "Place the balls of your feet on a sturdy elevated surface (weight plate, block, or low platform) so your heels can drop below toe level. A 5-10 cm elevation works well.",
+    "Rest a loaded barbell across the lower thighs, 2-3 cm above the kneecaps. Pad the bar with a towel or barbell pad — it will dig into the quads under load.",
+    "Hold the bar in place with both hands, palms down, just outside the knees. Sit tall with a neutral spine.",
+    "Allow the heels to drop slowly into a deep stretch under the weight of the bar. This is your starting position.",
+    "Drive through the balls of the feet and push the heels up as high as possible, raising the bar with the legs only. Exhale on the way up.",
+    "Squeeze the calves hard at the top for a 1-2 second hold, with knees angled slightly forward.",
+    "Lower the heels under control over 2-3 seconds back to the deep stretch. Inhale during the descent.",
+    "Do not bounce or use ankle momentum — every rep starts from a paused stretched position."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce płaskiej, stopy płasko na podłodze na szerokość bioder, kolana zgięte pod kątem około 90 stopni.",
+    "Ustaw śródstopia na stabilnej podwyższonej powierzchni (krążek, klocek, niska platforma) tak, aby pięty mogły opaść poniżej poziomu palców. Podwyższenie 5-10 cm sprawdza się najlepiej.",
+    "Połóż obciążoną sztangę w poprzek dolnej części ud, 2-3 cm nad rzepkami. Owiń gryf ręcznikiem lub załóż ochraniacz — pod obciążeniem wbije się w mięśnie czworogłowe.",
+    "Przytrzymuj sztangę obiema rękami, nachwytem, tuż za kolanami. Usiądź wyprostowany z neutralnym kręgosłupem.",
+    "Pozwól piętom powoli opaść w głęboki rozciąg pod ciężarem sztangi. To pozycja wyjściowa.",
+    "Pchnij przez śródstopia i wypchnij pięty w górę tak wysoko jak to możliwe, unosząc sztangę wyłącznie pracą podudzi. Wydech w trakcie unoszenia.",
+    "Mocno spinaj łydki w górnej pozycji przez 1-2 sekundy, kolana lekko skierowane do przodu.",
+    "Opuszczaj pięty w sposób kontrolowany przez 2-3 sekundy z powrotem do głębokiego rozciągu. Wdech podczas opuszczania.",
+    "Nie odbijaj i nie używaj rozmachu w stawie skokowym — każde powtórzenie zaczynaj z zatrzymanej pozycji rozciągniętej."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["soleus"],
+    "secondary": ["gastrocnemius"],
+    "stabilizers": ["tibialis_posterior", "peroneals", "foot_intrinsics", "quadriceps", "core"]
+  },
+
+  "muscle_intensity": {
+    "soleus": "P10",
+    "gastrocnemius": "S4",
+    "tibialis_posterior": "T3",
+    "peroneals": "T3",
+    "foot_intrinsics": "T2",
+    "quadriceps": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench"],
+    "optional": ["weight_plates", "barbell_pad", "towel", "elevated_block", "calf_block"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-calf-raise"],
+    "progression_to": ["heavy-seated-calf-raise", "machine-seated-calf-raise", "donkey-calf-raise"],
+    "alternatives": ["machine-seated-calf-raise", "dumbbell-seated-calf-raise", "smith-machine-seated-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Knees bent to 90 degrees, shins vertical",
+      "Balls of feet on a 5-10 cm block, heels free to drop below",
+      "Bar across lower thighs, padded, just above the kneecaps",
+      "Hands outside the knees, palms down, hold bar steady",
+      "Sit tall, neutral spine, brace core lightly"
+    ],
+    "setup_cues_pl": [
+      "Kolana zgięte pod 90 stopni, golenie pionowo",
+      "Śródstopia na klocku 5-10 cm, pięty swobodne do opadania poniżej",
+      "Sztanga w poprzek dolnej części ud, z ochraniaczem, tuż nad rzepkami",
+      "Dłonie na zewnątrz kolan, nachwytem, utrzymuj sztangę stabilnie",
+      "Siedź wyprostowany, neutralny kręgosłup, lekko napnij brzuch"
+    ],
+    "execution_cues": [
+      "Push through the balls of the feet, not the toes",
+      "Drive heels as high as possible, knees track forward",
+      "Hold the top squeeze for 1-2 seconds — feel the soleus burn",
+      "Lower slowly into a deep stretch — feel the calf lengthen",
+      "No bouncing — pause briefly at the bottom of every rep"
+    ],
+    "execution_cues_pl": [
+      "Pchaj przez śródstopia, nie przez same palce",
+      "Wypchnij pięty maksymalnie wysoko, kolana wędrują do przodu",
+      "Utrzymaj szczytowy skurcz 1-2 sekundy — poczuj pracę płaszczkowatego",
+      "Opuszczaj wolno w głęboki rozciąg — poczuj wydłużenie łydki",
+      "Bez odbijania — krótka pauza w dolnej pozycji każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Partial range of motion (no deep stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak głębokiego rozciągu na dole)",
+        "cause": "Feet placed flat on floor instead of elevated, or stopping the descent too early under heavy load",
+        "causePl": "Stopy ustawione płasko na podłodze zamiast na podwyższeniu, lub zatrzymywanie ruchu zbyt wcześnie pod dużym ciężarem",
+        "cue": "Use a 5-10 cm block under the balls of the feet and let heels drop fully below toe level on every rep.",
+        "cuePl": "Użyj klocka 5-10 cm pod śródstopiami i pozwól piętom w pełni opaść poniżej poziomu palców w każdym powtórzeniu."
+      },
+      {
+        "fault": "Fast bouncing reps using ankle/Achilles tendon stretch reflex",
+        "faultPl": "Szybkie odbijane powtórzenia wykorzystujące odruch rozciągowy ścięgna Achillesa",
+        "cause": "Going too heavy, chasing rep count, mistaking tendon rebound for muscular work",
+        "causePl": "Zbyt duży ciężar, gonienie za liczbą powtórzeń, mylenie odbicia ścięgnistego z pracą mięśniową",
+        "cue": "Pause 1 second at the bottom stretch. If you cannot pause, the weight is too heavy — reduce it.",
+        "cuePl": "Zatrzymaj się 1 sekundę w dolnym rozciągu. Jeśli nie potrafisz wytrzymać pauzy, ciężar jest za duży — zmniejsz go."
+      },
+      {
+        "fault": "Knee angle too open (greater than ~110 degrees)",
+        "faultPl": "Zbyt otwarty kąt w kolanie (powyżej około 110 stopni)",
+        "cause": "Bench too high or feet placed too far forward, which partially recruits gastrocnemius and reduces soleus isolation",
+        "causePl": "Ławka za wysoka lub stopy ustawione zbyt daleko z przodu, co częściowo aktywuje brzuchaty łydki i zmniejsza izolację płaszczkowatego",
+        "cue": "Sit so shins are vertical, knee bent close to 90 degrees. The whole point of seated is to isolate soleus.",
+        "cuePl": "Usiądź tak, aby golenie były pionowe, kolano zgięte blisko 90 stopni. Cała sens wersji siedzącej polega na izolacji płaszczkowatego."
+      },
+      {
+        "fault": "No pause at the top — skipping peak contraction",
+        "faultPl": "Brak pauzy w górnej pozycji — pomijanie szczytowego skurczu",
+        "cause": "Rushing through reps, treating it as a 'finisher' exercise rather than a quality stimulus",
+        "causePl": "Pośpieszne wykonywanie powtórzeń, traktowanie ćwiczenia jako szybkiego dobicia zamiast jakościowego bodźca",
+        "cue": "Hold the top squeeze for a deliberate 1-2 second count on every rep. Time under tension matters for calves.",
+        "cuePl": "Świadomie utrzymuj szczytowy skurcz przez 1-2 sekundy w każdym powtórzeniu. Czas pod napięciem ma duże znaczenie dla łydek."
+      },
+      {
+        "fault": "Bar sliding toward the knees or onto the kneecaps",
+        "faultPl": "Sztanga zsuwająca się w kierunku kolan lub na rzepki",
+        "cause": "Bar placed too low on thighs, no padding, or grip not actively holding the bar in place",
+        "causePl": "Sztanga położona zbyt nisko na udach, brak ochraniacza, lub bierne trzymanie sztangi",
+        "cue": "Position the bar 2-3 cm above the kneecaps with a thick pad, and grip it actively just outside the knees.",
+        "cuePl": "Połóż sztangę 2-3 cm nad rzepkami z grubym ochraniaczem i aktywnie trzymaj ją tuż za kolanami."
+      }
+    ],
+    "breathing": "Exhale during the concentric (driving heels up). Inhale during the eccentric (lowering into the stretch). Keep a light brace to support upright sitting posture.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wypychanie pięt w górę). Wdech w fazie ekscentrycznej (opuszczanie w rozciąg). Utrzymuj lekkie napięcie brzucha, aby wspierać wyprostowaną pozycję siedzącą."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid heavy loads and deep eccentrics during the irritable phase. Reduce ROM (do not drop heels below neutral) and emphasize slow controlled tempo with moderate load. Discontinue if pain exceeds 3/10 during or after sets.",
+      "modificationPl": "Unikaj dużych ciężarów i głębokich faz negatywnych w fazie podrażnienia. Ogranicz zakres ruchu (nie opuszczaj pięt poniżej poziomu neutralnego) i postaw na powolne kontrolowane tempo ze średnim obciążeniem. Przerwij jeśli ból przekracza 3/10 w trakcie lub po seriach.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "knee_pain_patellofemoral",
+      "severity": "modify",
+      "modification": "The bar pressing on the lower thighs near the kneecap can aggravate anterior knee pain. Use a thick pad, position bar higher up the thigh, or switch to a machine version that loads the knees from above with a pad.",
+      "modificationPl": "Sztanga uciskająca dolną część ud blisko rzepki może nasilać ból przedniej części kolana. Użyj grubego ochraniacza, ustaw sztangę wyżej na udzie lub przejdź na wersję maszynową obciążającą uda z góry przez podkładkę.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not perform under load during acute phase. Once cleared, return with bodyweight calf raises and gradually add load over weeks, avoiding deep stretch until pain-free.",
+      "modificationPl": "Nie wykonuj pod obciążeniem w fazie ostrej. Po wygojeniu wracaj od wspięć z masą własnego ciała i stopniowo dodawaj obciążenie przez kilka tygodni, unikając głębokiego rozciągu do całkowitego ustąpienia bólu.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "quadriceps_contusion_or_thigh_bruising",
+      "severity": "modify",
+      "modification": "The bar resting across the thighs is contraindicated with active quad bruising or pain. Use a heavier pad, switch loading position, or use dumbbells on the thighs instead. Otherwise switch exercise.",
+      "modificationPl": "Sztanga leżąca na udach jest przeciwwskazana przy aktywnym stłuczeniu czworogłowego. Użyj grubszej podkładki, zmień miejsce obciążenia, lub zastąp hantlami opieranymi na udach. W razie braku poprawy zmień ćwiczenie.",
+      "alternative": "machine-seated-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy) | 4-5x8-12 (heavy soleus emphasis) | 2-3x20-30 (endurance/pump)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "barbell-seated-calf-raise.gif",
+    "frames_extracted": [
+      "frames/barbell-seated-calf-raise/frame_0_start.png",
+      "frames/barbell-seated-calf-raise/frame_1_early.png",
+      "frames/barbell-seated-calf-raise/frame_2_mid.png",
+      "frames/barbell-seated-calf-raise/frame_3_late.png",
+      "frames/barbell-seated-calf-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/barbell-seated-calf-raise",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model siedzi na ławce płaskiej, kolano zgięte pod ~90 stopni, sztanga oparta w poprzek dolnej części ud tuż nad kolanami, stopy płasko, łydki podświetlone na czerwono — pozycja wyjściowa z piętami przy podłodze. Frame 2: pięty uniesione, śródstopia obciążone, sztanga wraz z udami uniesiona o kilka cm, łydki w pełnym skurczu, kolana lekko skierowane do przodu — szczyt ruchu. Frame 4: powrót do pozycji wyjściowej z piętami na podłodze. Plecy proste przez cały ruch, ramiona przytrzymują sztangę nachwytem tuż za kolanami. Ćwiczenie jednoznacznie zidentyfikowane jako Barbell Seated Calf Raise — klasyczna izolacja płaszczkowatego (soleus) z barbell. UWAGA: GIF jahel pokazuje stopy płasko bez podwyższenia — w opisie zalecam klocek 5-10 cm dla pełnego ROM (standard biomechaniczny). Klasyfikacja zgodna z biomechaniką: zgięte kolano dezaktywuje gastrocnemius (P10 dla soleus, S4 dla gastrocnemius). Wszystkie pola PL napisane od zera. Yuhonas i glowupp nie mają tego ćwiczenia.",
+
+  "tags": ["bodybuilding", "calves", "soleus", "isolation", "barbell", "lower_body", "lower_legs", "seated"]
+}

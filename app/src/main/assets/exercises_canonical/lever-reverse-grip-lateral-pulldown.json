@@ -1,0 +1,207 @@
+{
+  "id": "lever-reverse-grip-lateral-pulldown",
+  "name": "Lever Reverse-Grip Lateral Pulldown (Iso-Lateral, Plate-Loaded)",
+  "namePl": "Przyciąganie do klatki w maszynie lateral chwytem podchwytem",
+  "aliases": ["iso lateral reverse grip pulldown", "hammer strength reverse grip pulldown", "plate loaded underhand pulldown", "lever underhand lat pulldown", "iso lateral supinated pulldown"],
+  "aliasesPl": ["lateral pulldown podchwytem", "iso-lateral pulldown chwytem podchwytem", "hammer strength pulldown podchwytem", "maszyna lateral - ściąganie podchwytem", "ściąganie do klatki w maszynie iso-lateral podchwytem"],
+
+  "description": "Lat pulldown performed on a plate-loaded iso-lateral lever machine (Hammer Strength style) with a SUPINATED (underhand/reverse) grip. You sit on the machine with knees locked under the thigh pad, grasp the handles with palms facing you, and pull DOWN AND BACK toward your upper torso. The reverse grip shortens the biceps' line of pull and shifts emphasis toward the LOWER LATS and biceps while reducing the stretch on the upper lats compared to a pronated grip. Iso-lateral arms move independently but here both pull bilaterally. The fixed machine path makes this safer than barbell rows or pull-ups for beginners — a great learning tool and a heavy lat builder.",
+  "descriptionPl": "Ściąganie do klatki w maszynie iso-lateral typu Hammer Strength (ładowanej talerzami) chwytem PODCHWYTEM (supinated, dłonie skierowane do siebie). Siedzisz w maszynie z kolanami zablokowanymi pod wałkiem, łapiesz uchwyty dłońmi skierowanymi do siebie i ciągniesz W DÓŁ I DO TYŁU w kierunku górnej części tułowia. Chwyt podchwytem skraca linię ciągu bicepsa i przesuwa nacisk na DOLNĄ część najszerszych oraz biceps, jednocześnie zmniejszając rozciągnięcie górnych włókien najszerszych w porównaniu z chwytem nachwytem. Ramiona maszyny iso-lateral poruszają się niezależnie, ale w tym wariancie ciągniesz oboma rękami bilateralnie. Sztywna ścieżka maszyny czyni to ćwiczenie bezpieczniejszym niż wiosłowanie sztangą czy podciąganie — świetne narzędzie do nauki ruchu i ciężki budulec najszerszych.",
+
+  "instructions": [
+    "Load the machine with appropriate weight on both sides — start light to learn the groove.",
+    "Adjust the seat so handles overhead are within easy reach with arms fully extended. Set thigh pad snug against quads.",
+    "Sit down, slide knees under the thigh pad to lock the body in place.",
+    "Reach up and grasp the handles with SUPINATED grip — palms facing your body, thumbs pointing outward.",
+    "Start position: arms fully extended overhead but slightly bent at elbow, lats stretched, chest tall, shoulder blades slightly elevated by the load.",
+    "Initiate the pull by depressing shoulder blades DOWN and squeezing lats — elbows lead the motion straight down and back.",
+    "Pull the handles down toward the upper chest / front of shoulders. Elbows finish close to your sides, slightly behind torso.",
+    "Squeeze hard at the bottom — feel the lower lats and biceps fully contracted. Pause 1 second.",
+    "Reverse SLOWLY — control the eccentric back to full overhead stretch (2-3 seconds). Resist the weight, don't drop it.",
+    "Keep the torso UPRIGHT throughout — minimal leaning back. No swinging, no jerking, no shrugging at the top."
+  ],
+  "instructionsPl": [
+    "Załaduj maszynę odpowiednim ciężarem po obu stronach — zacznij lekko, by nauczyć się toru ruchu.",
+    "Wyreguluj siedzenie tak, by uchwyty nad głową były w zasięgu rąk w pełnym wyproście. Ustaw wałek udowy ciasno do mięśni czworogłowych.",
+    "Usiądź, wsuń kolana pod wałek udowy by zablokować ciało.",
+    "Sięgnij w górę i złap uchwyty chwytem PODCHWYTEM — dłonie skierowane do ciała, kciuki na zewnątrz.",
+    "Pozycja startowa: ręce w pełnym wyproście nad głową, lekko ugięte w łokciach, najszersze rozciągnięte, klatka wysoko, łopatki lekko podniesione przez obciążenie.",
+    "Rozpocznij ciąg opuszczeniem łopatek W DÓŁ i ściśnięciem najszerszych — łokcie prowadzą ruch prosto w dół i do tyłu.",
+    "Ściągnij uchwyty w dół w kierunku górnej części klatki / przedniej części barków. Łokcie kończą blisko boków, lekko za tułowiem.",
+    "Mocno ściśnij na dole — poczuj pełen skurcz dolnych najszerszych i bicepsa. Przytrzymaj 1 sekundę.",
+    "Wracaj POWOLI — kontroluj fazę ekscentryczną do pełnego rozciągnięcia nad głową (2-3 sekundy). Stawiaj opór ciężarowi, nie puszczaj.",
+    "Utrzymuj tułów PROSTO przez cały czas — minimalne odchylenie do tyłu. Bez bujania, szarpania, bez unoszenia barków w górze."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["rhomboids", "trapezius_middle_lower", "teres_major", "brachialis", "posterior_deltoid"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P8",
+    "rhomboids": "S6",
+    "trapezius_middle_lower": "S6",
+    "teres_major": "S7",
+    "brachialis": "S6",
+    "posterior_deltoid": "S5",
+    "forearms": "S5",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["lever_machine", "iso_lateral_pulldown_machine", "thigh_pad"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["seated-cable-row", "lat-pulldown"],
+    "progression_to": ["pull-up", "weighted-pull-up", "barbell-row", "chin-up"],
+    "alternatives": ["lat-pulldown", "reverse-grip-lat-pulldown", "chin-up", "cable-lat-pulldown-full-range-of-motion", "neutral-grip-lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Load both sides EVENLY with appropriate weight",
+      "Seat height: handles overhead reachable with arms FULLY extended",
+      "Thigh pad SNUG against quads — no slipping out under load",
+      "Supinated grip — palms toward you, thumbs OUT",
+      "Chest tall, shoulder blades actively depressed before first rep"
+    ],
+    "setup_cues_pl": [
+      "Załaduj obie strony RÓWNO odpowiednim ciężarem",
+      "Wysokość siedzenia: uchwyty nad głową w zasięgu z PEŁNYM wyprostem rąk",
+      "Wałek udowy CIASNO do mięśni — bez wyskakiwania pod obciążeniem",
+      "Chwyt podchwytem — dłonie do siebie, kciuki NA ZEWNĄTRZ",
+      "Klatka wysoko, łopatki aktywnie opuszczone przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Lead with ELBOWS — pull elbows down to your ribs",
+      "Aim for upper chest — handles finish at clavicle / front delt level",
+      "Squeeze lats AND biceps at the bottom — 1 second hold",
+      "Control the eccentric — 2-3 seconds back overhead",
+      "Stay upright — no leaning back, no torso swing"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ŁOKCIAMI — ściągaj łokcie do żeber",
+      "Cel: górna klatka — uchwyty kończą na wysokości obojczyka / przednich naramiennych",
+      "Ściśnij najszersze I biceps na dole — 1 sekunda przytrzymania",
+      "Kontroluj fazę ekscentryczną — 2-3 sekundy z powrotem nad głowę",
+      "Stój prosto w tułowiu — bez odchylania, bez bujania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Biceps-dominant pull (curling the weight down)",
+        "faultPl": "Ciąg dominowany przez biceps (\"curlowanie\" ciężaru w dół)",
+        "cause": "Reverse grip naturally engages biceps strongly; without lat cue, biceps takes over",
+        "causePl": "Chwyt podchwytem naturalnie mocno angażuje biceps; bez świadomej aktywacji najszerszych biceps przejmuje robotę",
+        "cue": "Think 'elbows DOWN', not 'hands down'. Initiate every rep with shoulder blade depression — lats fire first, biceps assists.",
+        "cuePl": "Myśl 'łokcie W DÓŁ', nie 'dłonie w dół'. Inicjuj każde powtórzenie opuszczeniem łopatek — najszersze pierwsze, biceps pomaga."
+      },
+      {
+        "fault": "Leaning back excessively to use bodyweight (row pattern)",
+        "faultPl": "Mocne odchylanie tułowia do tyłu by użyć masy ciała (wzorzec wiosłowania)",
+        "cause": "Weight too heavy, ego lifting, weak lats can't pull alone",
+        "causePl": "Za duży ciężar, ego, słabe najszersze nie ciągną same",
+        "cue": "Lock the torso vertical. If you must lean to finish, drop 15-20% of the weight and re-feel the lats.",
+        "cuePl": "Zablokuj tułów pionowo. Jeśli musisz się odchylać by zakończyć powtórzenie, zmniejsz ciężar o 15-20% i poczuj najszersze."
+      },
+      {
+        "fault": "Partial ROM — not reaching full overhead stretch",
+        "faultPl": "Częściowy ROM — brak pełnego rozciągnięcia nad głową",
+        "cause": "Avoiding the hard stretched position, weight too heavy, shoulder mobility limit",
+        "causePl": "Unikanie trudnej pozycji rozciągnięcia, za duży ciężar, ograniczona mobilność barków",
+        "cue": "Full extension overhead each rep — even if grip pressure increases. Stretch builds the lats; half reps build ego.",
+        "cuePl": "Pełen wyprost nad głową w każdym powtórzeniu — nawet jeśli rośnie napięcie chwytu. Rozciągnięcie buduje najszersze; połowiczne powtórzenia budują ego."
+      },
+      {
+        "fault": "Shrugging shoulders to ears during the eccentric",
+        "faultPl": "Unoszenie barków do uszu w fazie ekscentrycznej",
+        "cause": "Letting the weight pull arms up uncontrolled, no scapular discipline at the top",
+        "causePl": "Pozwalanie ciężarowi szarpać ramiona w górę bez kontroli, brak dyscypliny łopatkowej w górze",
+        "cue": "At the top — stretch the lats, but KEEP shoulder blades down. Don't let traps take over.",
+        "cuePl": "W górze — rozciągnij najszersze, ale TRZYMAJ łopatki w dole. Nie pozwól, by czworoboczne przejęły pracę."
+      },
+      {
+        "fault": "Pulling handles to the lap instead of upper chest",
+        "faultPl": "Ściąganie uchwytów do podołka zamiast do górnej klatki",
+        "cause": "Confusing motion with low row pattern; elbows drift too far back and down",
+        "causePl": "Mylenie ruchu ze wzorcem dolnego wiosłowania; łokcie wędrują zbyt mocno w tył i w dół",
+        "cue": "Target: handles to clavicle / upper chest. Elbows finish at the SIDES of the ribs, not at the hips.",
+        "cuePl": "Cel: uchwyty do obojczyka / górnej klatki. Łokcie kończą przy BOKACH żeber, nie przy biodrach."
+      }
+    ],
+    "breathing": "Inhale at the top in the stretched position. Exhale during the pull down (concentric). Inhale on the controlled return to overhead.",
+    "breathingPl": "Wdech w górze w pozycji rozciągnięcia. Wydech podczas ciągu w dół (faza koncentryczna). Wdech podczas kontrolowanego powrotu nad głowę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Reverse grip stresses the biceps tendon heavily. Switch to pronated or neutral grip until pain resolves.",
+      "modificationPl": "Chwyt podchwytem mocno obciąża ścięgno bicepsa. Przejdź na chwyt nachwytem lub neutralnym do ustąpienia bólu.",
+      "alternative": "neutral-grip-lat-pulldown"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce overhead ROM — start the pull from slightly below full extension. Lower weight by 20-30%.",
+      "modificationPl": "Zmniejsz ROM w górze — zaczynaj ciąg z pozycji lekko poniżej pełnego wyprostu. Zmniejsz ciężar o 20-30%.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Use lifting straps to reduce grip stress. Drop weight by 30-40% and emphasize lat activation over arm pull.",
+      "modificationPl": "Użyj pasków ciągowych by zmniejszyć napięcie chwytu. Zmniejsz ciężar o 30-40% i podkreśl aktywację najszerszych nad ciągiem ramionami.",
+      "alternative": "straight-arm-pulldown"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded overhead reaching positions until cleared by physio. Substitute with low-pulley rows and band pull-aparts.",
+      "modificationPl": "Unikaj pozycji nad głową pod obciążeniem do zgody fizjoterapeuty. Zastąp dolnymi wiosłowaniami i rozpiętkami z gumą.",
+      "alternative": "seated-cable-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4 x 8-12 (hypertrophy) | 4 x 6-10 (strength) | 3 x 12-15 (volume / lat focus)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-reverse-grip-lateral-pulldown.gif",
+    "frames_extracted": [
+      "frames/lever-reverse-grip-lateral-pulldown/frame_0_start.png",
+      "frames/lever-reverse-grip-lateral-pulldown/frame_1_early.png",
+      "frames/lever-reverse-grip-lateral-pulldown/frame_2_mid.png",
+      "frames/lever-reverse-grip-lateral-pulldown/frame_3_late.png",
+      "frames/lever-reverse-grip-lateral-pulldown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/lever-reverse-grip-lateral-pulldown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Maszyna: plate-loaded iso-lateral lever pulldown (typ Hammer Strength) z talerzami po lewej stronie i wałkiem udowym blokującym kolana. Frames 0/4 (start/end): user siedzi z rękami w PEŁNYM wyproście nad głową, chwyt PODCHWYTEM (palms supinated, dłonie skierowane do siebie/do twarzy — widoczne że kciuki są na zewnątrz a wewnętrzna strona dłoni do siebie). Frame 2 (mid/bottom): uchwyty ściągnięte w dół do wysokości górnej klatki / przednich naramiennych, łokcie blisko boków lekko za tułowiem, najszersze + biceps + przedramię wyraźnie podświetlone czerwono. Frames 1/3: pozycje pośrednie ruchu. Tułów PIONOWY przez cały ruch — bez odchylania (sztywna ścieżka maszyny narzuca dobrą formę). Equipment: lever_machine + iso_lateral_pulldown_machine + thigh_pad. Plane: frontal (ręce ciągnięte w dół wzdłuż boków w płaszczyźnie czołowej, łokcie wędrują w dół a nie do przodu). Mechanic: compound. Laterality: bilateral (oba ramiona w tym wariancie ciągną razem, choć maszyna mechanicznie jest iso-lateral). Difficulty 3 (niższe niż klasyczny pulldown z linką 4, niższe niż pull-up) — sztywna ścieżka maszyny + thigh pad blokujący kontrtorqe. Reverse grip → P9 lats (nie P10 jak full ROM cable, bo iso-lateral ma krótszy ROM) + P8 biceps (wyższy niż w nachwycie gdzie biceps to S7).",
+
+  "tags": ["lever_machine", "iso_lateral", "plate_loaded", "compound", "upper_body", "vertical_pull", "back", "lats", "lower_lats", "biceps", "reverse_grip", "underhand", "supinated", "hypertrophy", "beginner_friendly", "hammer_strength"]
+}

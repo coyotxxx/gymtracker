@@ -1,0 +1,211 @@
+{
+  "id": "barbell-one-arm-side-deadlift",
+  "name": "Barbell One-Arm Side Deadlift (Suitcase Deadlift)",
+  "namePl": "Suitcase deadlift jednorącz ze sztangą (one-arm side deadlift)",
+  "aliases": ["suitcase deadlift", "one-arm side deadlift", "barbell suitcase deadlift", "single-arm side deadlift"],
+  "aliasesPl": ["suitcase deadlift jednorącz", "martwy ciąg walizkowy ze sztangą", "side deadlift jednorącz", "boczny martwy ciąg jednorącz"],
+
+  "description": "Asymmetric unilateral deadlift variant where the barbell is held in ONE hand at the side of the body, like carrying a suitcase. The bar is oriented sideways (perpendicular to normal stance) and gripped in the middle with a single hand. The lifter stands beside/over the bar and lifts it from the floor to a standing position while the entire weight pulls down on one side. Demands maximal anti-lateral-flexion core strength — obliques and quadratus lumborum (QL) must resist sideways bending of the torso. Brutal for grip due to one-handed loading.",
+  "descriptionPl": "Asymetryczny jednostronny wariant martwego ciągu, w którym sztanga trzymana jest JEDNĄ ręką z boku ciała — jak walizka. Gryf ustawiony jest bokiem (prostopadle do typowej postawy) i chwytany jedną ręką w środku. Ćwiczący stoi obok/nad gryfem i podnosi go z podłogi do pozycji stojącej, podczas gdy cały ciężar ciągnie w dół po jednej stronie. Wymaga maksymalnej siły anty-lateralnej-flexji brzucha — skośne i mięsień czworoboczny lędźwi (QL) muszą oprzeć się bocznemu zginaniu tułowia. Brutalne dla chwytu z powodu jednostronnego obciążenia.",
+
+  "instructions": [
+    "Load a barbell on the floor with light to moderate weight (much lighter than two-handed deadlift — single-hand grip is the limiter).",
+    "Stand beside the bar so that the bar runs perpendicular to your stance, with the middle of the bar next to your foot.",
+    "Feet hip-width apart, weight balanced evenly on both legs. The bar should be roughly under the hand that will grip it.",
+    "Hinge at the hips and bend the knees to lower yourself, reaching down with ONE hand to grip the center of the bar (overhand grip).",
+    "Set your position: neutral spine, chest up, shoulders LEVEL (resist the pull to drop the loaded-side shoulder), pelvis SQUARE.",
+    "Brace the core HARD — especially the contralateral obliques and QL — to prevent lateral flexion. Free arm hangs naturally or slightly out for balance.",
+    "Drive through both feet evenly, stand up tall keeping the torso vertical. The bar travels along the side of your thigh.",
+    "At the top: stand fully upright, shoulders level, do NOT lean toward or away from the bar. Hip extension complete, glutes squeezed.",
+    "Lower with control by hinging at the hips first then bending knees, keeping the torso strictly vertical the whole way down.",
+    "Complete all reps on one side, then switch hands and repeat on the other side. ALWAYS train both sides equally."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę na ziemi lekkim lub umiarkowanym ciężarem (znacznie mniejszym niż przy obustronnym deadlifcie — chwyt jednoręczny jest limiterem).",
+    "Stań obok sztangi tak, by gryf biegł prostopadle do Twojej postawy, a środek gryfu znajdował się obok Twojej stopy.",
+    "Stopy na szerokość bioder, ciężar równomiernie na obu nogach. Gryf powinien być mniej więcej pod dłonią, którą go złapiesz.",
+    "Zegnij biodra i kolana, schodząc w dół. Sięgnij JEDNĄ ręką po środek gryfu (chwyt nachwytem).",
+    "Ustaw pozycję: neutralny kręgosłup, klatka w górze, barki RÓWNE (oprzyj się pokusie opuszczenia barku po stronie obciążonej), miednica SYMETRYCZNA.",
+    "MOCNO napnij brzuch — szczególnie skośne i QL po stronie przeciwnej do obciążenia — żeby nie dopuścić do bocznego zgięcia. Wolna ręka zwisa naturalnie lub lekko odstaje dla równowagi.",
+    "Napieraj równomiernie obiema stopami i wstań prosto z pionowym tułowiem. Gryf sunie wzdłuż uda od strony obciążonej.",
+    "Na górze: stań w pełni wyprostowany, barki równe, NIE pochylaj się ku gryfowi ani od niego. Pełen wyprost bioder, pośladki ściśnięte.",
+    "Opuszczaj kontrolowanie — najpierw biodra do tyłu, potem zginaj kolana, trzymając tułów ściśle pionowo przez cały ruch.",
+    "Wykonaj wszystkie powtórzenia po jednej stronie, potem zmień rękę i powtórz po drugiej. ZAWSZE trenuj obie strony jednakowo."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "secondary_plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "obliques", "quadratus_lumborum"],
+    "secondary": ["hamstrings", "erector_spinae", "forearms"],
+    "stabilizers": ["core", "rectus_abdominis", "latissimus_dorsi", "trapezius", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P8",
+    "quadriceps": "P8",
+    "obliques": "P9",
+    "quadratus_lumborum": "P9",
+    "hamstrings": "S7",
+    "erector_spinae": "S8",
+    "forearms": "S10",
+    "core": "S9",
+    "latissimus_dorsi": "S6",
+    "trapezius": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["chalk", "lifting_straps", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["barbell-deadlift", "dumbbell-suitcase-deadlift", "kettlebell-suitcase-deadlift", "farmers-carry"],
+    "progression_to": ["barbell-one-arm-side-deadlift-deficit", "suitcase-carry"],
+    "alternatives": ["dumbbell-suitcase-deadlift", "kettlebell-suitcase-deadlift", "trap-bar-deadlift", "single-arm-farmers-carry"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar perpendicular to stance, middle of bar next to foot",
+      "Feet hip-width, weight balanced 50/50",
+      "Grip the bar exactly in the middle — find balance point",
+      "Shoulders LEVEL — do not drop the loaded side",
+      "Pelvis square, no rotation toward the bar",
+      "Free arm relaxed, slightly out for counterbalance"
+    ],
+    "setup_cues_pl": [
+      "Gryf prostopadle do postawy, środek gryfu przy stopie",
+      "Stopy szerokość bioder, ciężar 50/50",
+      "Złap gryf DOKŁADNIE na środku — znajdź punkt równowagi",
+      "Barki RÓWNE — nie opuszczaj strony obciążonej",
+      "Miednica symetryczna, bez rotacji w stronę gryfu",
+      "Wolna ręka rozluźniona, lekko odstaje dla balansu"
+    ],
+    "execution_cues": [
+      "Brace HARD — imagine someone trying to pull you sideways",
+      "Stand up STRAIGHT — torso stays vertical, no lean",
+      "Push the floor with both feet evenly",
+      "Keep shoulders level — fight the asymmetric load",
+      "Lock out with hips, squeeze glutes evenly on both sides"
+    ],
+    "execution_cues_pl": [
+      "Napnij brzuch MOCNO — wyobraź sobie że ktoś ciągnie Cię na bok",
+      "Wstań PROSTO — tułów pionowy, bez przechylenia",
+      "Napieraj podłogę równomiernie obiema stopami",
+      "Trzymaj barki na równym poziomie — walcz z asymetrycznym obciążeniem",
+      "Lock-out biodrami, ściśnij pośladki równo po obu stronach"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lateral flexion — torso bends toward the loaded side",
+        "faultPl": "Boczne zgięcie — tułów wygina się w stronę obciążenia",
+        "cause": "Weak contralateral obliques/QL, load too heavy, insufficient core bracing",
+        "causePl": "Słabe skośne/QL po stronie przeciwnej, zbyt duży ciężar, słabe napięcie brzucha",
+        "cue": "Reduce weight by 30-40%. Imagine a string pulling the top of your head straight up. Brace as if expecting a punch to the side.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Wyobraź sobie nić ciągnącą czubek głowy prosto w górę. Napnij brzuch jakbyś spodziewał się ciosu w bok."
+      },
+      {
+        "fault": "Shoulder drops on the loaded side",
+        "faultPl": "Bark opada po stronie obciążonej",
+        "cause": "Passive arm hanging, not actively engaging the lat and upper traps to support the shoulder",
+        "causePl": "Bierne zwisanie ręki, brak aktywnego napięcia najszerszego i czworobocznego do podtrzymania barku",
+        "cue": "Pack the shoulder — pull it down and back, engage the lat actively as if holding the bar UP into the socket.",
+        "cuePl": "Spakuj bark — ściągnij go w dół i do tyłu, aktywnie napnij najszersze jakbyś trzymał gryf W GÓRĘ w stawie."
+      },
+      {
+        "fault": "Pelvis rotates toward the bar",
+        "faultPl": "Miednica rotuje w stronę gryfu",
+        "cause": "Reaching across the body with the gripping hand, feet positioned asymmetrically",
+        "causePl": "Sięganie po sztangę przez ciało, asymetryczne ustawienie stóp",
+        "cue": "Plant both feet square forward. Hand goes straight down to the bar — do not twist to reach.",
+        "cuePl": "Ustaw obie stopy równolegle do przodu. Ręka idzie prosto w dół do gryfu — nie skręcaj się żeby sięgnąć."
+      },
+      {
+        "fault": "Bar swings or rotates because hand is off-center",
+        "faultPl": "Sztanga buja się lub obraca, bo ręka nie jest na środku",
+        "cause": "Imprecise grip placement — even 5 cm off-center creates a torque arm",
+        "causePl": "Niedokładne położenie chwytu — nawet 5 cm od środka tworzy ramię momentu",
+        "cue": "Mark the middle of the bar with chalk or tape. Grip there every rep. Lighter weight allows precision practice.",
+        "cuePl": "Zaznacz środek gryfu magnezją lub taśmą. Łap dokładnie tam w każdym powtórzeniu. Lżejszy ciężar pozwala ćwiczyć precyzję."
+      },
+      {
+        "fault": "Grip fails before legs/core — bar dropped mid-rep",
+        "faultPl": "Chwyt 'puszcza' przed nogami/brzuchem — gryf upuszczony w środku ruchu",
+        "cause": "Forearm strength is the limiting factor in suitcase deadlift; one hand carries 100% of the load on a 2 cm shaft",
+        "causePl": "Siła przedramienia to czynnik limitujący w suitcase deadlift; jedna ręka dźwiga 100% ciężaru na gryfie o średnicy 2 cm",
+        "cue": "Use chalk every set. Train static suitcase holds for time. For heavier loads use lifting straps but it removes the grip benefit.",
+        "cuePl": "Używaj magnezji w każdej serii. Trenuj statyczne podtrzymania suitcase na czas. Przy większych ciężarach użyj pasków — ale tracisz korzyść chwytową."
+      }
+    ],
+    "breathing": "Inhale at the top, brace HARD before lifting (Valsalva), hold the brace through the entire rep. Exhale at the top of the lockout. The brace must be maximal — anti-lateral-flexion demands far stronger bracing than a regular deadlift.",
+    "breathingPl": "Wdech na górze, napnij MOCNO przed podniesieniem (Valsalva), trzymaj napięcie przez całe powtórzenie. Wydech na szczycie lock-out. Napięcie musi być maksymalne — anty-lateralna-flexja wymaga znacznie mocniejszego napięcia niż zwykły deadlift."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. The asymmetric load makes this exercise particularly dangerous on injured spine. Consult physiotherapist.",
+      "modificationPl": "Pełen odpoczynek. Asymetryczne obciążenie czyni to ćwiczenie szczególnie niebezpiecznym przy uszkodzonym kręgosłupie. Konsultacja z fizjoterapeutą.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "scoliosis_or_existing_spinal_asymmetry",
+      "severity": "caution",
+      "modification": "Asymmetric loading may exacerbate existing spinal curves. Train ONLY under expert supervision with very light loads, and consider regression to dumbbell suitcase deadlift first.",
+      "modificationPl": "Asymetryczne obciążenie może pogłębić istniejące krzywizny kręgosłupa. Trenuj TYLKO pod nadzorem eksperta z bardzo lekkim ciężarem i rozważ regresję do suitcase deadlift z hantlem.",
+      "alternative": "dumbbell-suitcase-deadlift"
+    },
+    {
+      "condition": "shoulder_instability_or_labrum_injury",
+      "severity": "modify",
+      "modification": "The one-arm hanging load can stress the inferior glenohumeral capsule. If shoulder is unstable, regress to two-arm deadlift variant or use a lighter load focused on perfect form.",
+      "modificationPl": "Jednoręczne zwisające obciążenie obciąża dolną torebkę stawu ramienno-łopatkowego. Przy niestabilnym barku — regresja do wariantu oburącznego lub lżejszy ciężar z naciskiem na perfekcyjną technikę.",
+      "alternative": "trap-bar-deadlift"
+    },
+    {
+      "condition": "carpal_tunnel_or_wrist_pathology",
+      "severity": "modify",
+      "modification": "100% of the load goes through one wrist on a thin barbell shaft. Use thick-grip attachments to spread pressure, or switch to dumbbell which sits in the palm more comfortably.",
+      "modificationPl": "100% ciężaru przechodzi przez jeden nadgarstek na cienkim gryfie. Użyj grubych nakładek by rozłożyć nacisk, lub przejdź na hantel, który wygodniej leży w dłoni.",
+      "alternative": "dumbbell-suitcase-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 per side (hypertrophy/core) | 3-5x3-5 per side (strength) | 3x20-40s static holds (anti-lateral-flexion endurance)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-one-arm-side-deadlift.gif",
+    "frames_extracted": [
+      "frames/barbell-one-arm-side-deadlift/frame_0_start.png",
+      "frames/barbell-one-arm-side-deadlift/frame_1_early.png",
+      "frames/barbell-one-arm-side-deadlift/frame_2_mid.png",
+      "frames/barbell-one-arm-side-deadlift/frame_3_late.png",
+      "frames/barbell-one-arm-side-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-one-arm-side-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frames 0/2: ćwiczący w pozycji squat-style nad gryfem, gryf ustawiony bokiem (prostopadle do postawy), podświetlone pośladki — pozycja startowa/dolna. Frames 1/3/4: lockout stojący, gryf trzymany jedną ręką (na środku gryfu), podświetlone czworogłowe, sztanga przy boku ciała jak walizka. To NIE jest klasyczny deadlift — gryf jest perpendykularnie do postawy, chwyt jednoręczny w środku. Klasyfikacja: hinge dominant ale plane primary=sagittal z secondary=frontal (anti-lateral-flexion). Laterality=unilateral. Primary muscles: glutes+quadriceps (od ruchu hip+knee extension), obliques+QL (anty-boczne zgięcie tułowia — ABSOLUTNIE kluczowe dla tego wariantu). Secondary: hamstrings, erector_spinae, forearms (limiter siły — jednoręczny chwyt). Difficulty 7/10 — mniej obciążone niż klasyczny deadlift bo grip-limited, ale wymaga większej kontroli motorycznej. Equipment: tylko barbell. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["unilateral", "asymmetric_load", "anti_lateral_flexion", "core_strength", "obliques", "ql", "grip_strength", "barbell", "hip_hinge", "functional"]
+}

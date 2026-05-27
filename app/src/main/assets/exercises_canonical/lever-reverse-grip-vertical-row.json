@@ -1,0 +1,203 @@
+{
+  "id": "lever-reverse-grip-vertical-row",
+  "name": "Lever Reverse Grip Vertical Row",
+  "namePl": "Pionowe wiosło w maszynie chwytem podchwytem",
+  "aliases": ["machine underhand row", "lever underhand row", "supinated grip machine row", "reverse grip seated row machine", "underhand vertical grip machine row"],
+  "aliasesPl": ["wiosłowanie w maszynie podchwytem", "wiosłowanie w maszynie z chwytem supinowanym", "wiosło w maszynie chwytem dolnym", "lever row podchwytem", "siedzące wiosłowanie w maszynie podchwytem"],
+
+  "description": "Seated machine row performed on a plate-loaded or selectorized lever row machine with vertical handles gripped underhand (supinated, palms facing up). The chest is supported against the pad, torso fixed, and you pull the vertical handles back toward the lower ribs/abdomen while driving the elbows down and back along the sides of the torso. The underhand grip externally rotates the shoulder, places the biceps in a strong mechanical position, and biases the lower fibers of the latissimus dorsi — making this one of the best lever-machine variants for lower lat thickness and biceps loading inside a back-day. Because the machine fixes the path and the chest pad removes lumbar load, this is one of the safest and easiest rows to overload progressively.",
+  "descriptionPl": "Siedzące wiosłowanie w maszynie dźwigniowej (lever) z pionowymi uchwytami trzymanymi PODCHWYTEM (dłonie zwrócone do góry). Klatka opiera się o oparcie maszyny, tułów jest unieruchomiony, a pionowe uchwyty przyciągasz w stronę dolnych żeber/brzucha prowadząc łokcie w dół i w tył wzdłuż boków tułowia. Chwyt podchwytem rotuje bark na zewnątrz, ustawia biceps w mocnej dźwigniowej pozycji i mocniej angażuje dolne włókna najszerszego grzbietu — co czyni ten wariant jednym z najlepszych dźwigniowych wiosłowań na grubość DOLNYCH najszerszych i obciążenie bicepsa w ramach treningu pleców. Ponieważ maszyna prowadzi tor ruchu a oparcie eliminuje obciążenie kręgosłupa, jest to jedno z najbezpieczniejszych i najłatwiejszych do progresywnego przeciążania wiosłowań.",
+
+  "instructions": [
+    "Adjust the seat so the vertical handles align with your lower chest / upper abdomen when seated against the chest pad.",
+    "Sit down, chest firmly against the pad, feet flat on the floor or foot platform. Grab the VERTICAL handles UNDERHAND — palms facing the ceiling (supinated grip).",
+    "Pre-set the shoulders: depress the scapulae down and slightly back, chest into the pad, neutral neck. Arms fully extended in front, lats lengthened.",
+    "Brace the core. Initiate the pull by retracting and depressing the shoulder blades FIRST — lats wake up before biceps.",
+    "Pull the handles back driving the elbows DOWN and BACK along your sides (not flared out). Forearms stay vertical, palms still pointing up.",
+    "Finish with the handles next to your lower ribs / waist, elbows BEHIND the line of the torso, shoulder blades fully retracted. Hold the squeeze for 1 second.",
+    "Reverse in full control on a 2-3 second eccentric. Let the scapulae protract slightly at the bottom to feel a full lat stretch — without losing chest contact with the pad.",
+    "Repeat for prescribed reps maintaining strict chest contact and stable torso throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw siedzisko tak, by pionowe uchwyty znajdowały się na wysokości dolnej klatki / górnej części brzucha gdy siedzisz oparty o poduszkę.",
+    "Usiądź, klatka MOCNO oparta o poduszkę, stopy płasko na podłodze lub platformie. Złap PIONOWE uchwyty PODCHWYTEM — dłonie zwrócone do sufitu (chwyt supinowany).",
+    "Ustaw barki: opuść łopatki w dół i lekko do tyłu, klatka wciśnięta w poduszkę, neutralny kark. Ramiona w pełni wyprostowane przed sobą, najszersze rozciągnięte.",
+    "Napnij brzuch. Rozpocznij ciąg ŚCIĄGNIĘCIEM i obniżeniem łopatek NAJPIERW — najszersze włączają się przed bicepsem.",
+    "Przyciągnij uchwyty prowadząc łokcie W DÓŁ i W TYŁ wzdłuż boków (NIE rozchylaj ich). Przedramiona zostają pionowe, dłonie nadal zwrócone do góry.",
+    "Zakończ ruch z uchwytami przy dolnych żebrach / talii, łokcie ZA linią tułowia, łopatki maksymalnie ściągnięte. Zatrzymaj napięcie na 1 sekundę.",
+    "Wróć w pełnej kontroli na 2-3 sekundach ekscentryku. Pozwól łopatkom lekko 'odpłynąć' do przodu na dole, by poczuć rozciągnięcie najszerszych — bez tracenia kontaktu klatki z poduszką.",
+    "Powtórz zaplanowaną liczbę powtórzeń utrzymując ścisły kontakt klatki z oparciem i stabilny tułów przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["rhomboids", "trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P9",
+    "rhomboids": "S8",
+    "trapezius_middle_lower": "S7",
+    "posterior_deltoids": "S6",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "erector_spinae": "S3",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["lever_row_machine"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["seated-machine-row", "lever-row"],
+    "progression_to": ["barbell-bent-over-row-underhand", "single-arm-dumbbell-row", "t-bar-row", "pendlay-row"],
+    "alternatives": ["lever-row", "machine-row-overhand", "cable-low-seated-row", "single-arm-dumbbell-row", "barbell-bent-over-row-underhand"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Adjust seat — handles at lower chest / upper abdomen level",
+      "Chest firmly into the pad, feet flat, neutral neck",
+      "Vertical handles UNDERHAND — palms up (supinated)",
+      "Depress scapulae, arms fully extended, lats lengthened",
+      "Brace the core BEFORE the first rep"
+    ],
+    "setup_cues_pl": [
+      "Ustaw siedzisko — uchwyty na wysokości dolnej klatki / górnego brzucha",
+      "Klatka mocno wciśnięta w poduszkę, stopy płasko, neutralny kark",
+      "Pionowe uchwyty PODCHWYTEM — dłonie do góry (supinowane)",
+      "Opuść łopatki, ramiona w pełni wyprostowane, najszersze rozciągnięte",
+      "Napnij brzuch PRZED pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Scapulae first — retract before the elbow bends",
+      "Drive ELBOWS down and back along your ribs — not biceps curl",
+      "Forearms stay VERTICAL, palms point up throughout",
+      "Handles to the lower ribs / waist — not the chest",
+      "Squeeze lats and hold 1 second at the back — slow 2-3 second eccentric"
+    ],
+    "execution_cues_pl": [
+      "Łopatki najpierw — ściągnij je zanim zegnie się łokieć",
+      "Prowadź ŁOKCIE w dół i w tył wzdłuż żeber — to nie uginanie bicepsa",
+      "Przedramiona zostają PIONOWE, dłonie do góry przez cały ruch",
+      "Uchwyty do dolnych żeber / talii — NIE do klatki",
+      "Ściśnij najszersze i wytrzymaj 1 sekundę na końcu — powolny ekscentryk 2-3 s"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with biceps only (turning the row into a row-curl)",
+        "faultPl": "Ciągnięcie samymi bicepsami (zamiana wiosła w hybrydę wiosło-uginanie)",
+        "cause": "Underhand grip naturally biases biceps; without lat cue and scapular retraction the biceps dominates the lift",
+        "causePl": "Chwyt podchwytem naturalnie faworyzuje biceps; bez świadomego włączenia najszerszych i ściągnięcia łopatek biceps przejmuje ruch",
+        "cue": "Think 'elbows drive back', not 'pull the handle'. Hands are just hooks. Initiate every rep from the shoulder blade, finish with elbows BEHIND the torso. If biceps cramps before back fatigues, you're curling.",
+        "cuePl": "Myśl 'łokcie w tył', nie 'przyciągnij uchwyt'. Dłonie to tylko haki. Każde powtórzenie zaczynaj od łopatki, kończ z łokciami ZA tułowiem. Jeśli biceps się skurczy zanim plecy się zmęczą, to uginasz a nie wiosłujesz."
+      },
+      {
+        "fault": "Elbows flaring out to the sides",
+        "faultPl": "Łokcie rozchylone na boki",
+        "cause": "Loss of underhand grip discipline (forearms rotate), or trying to hit rear delts instead of lats",
+        "causePl": "Utrata dyscypliny chwytu podchwytem (przedramiona obracają się) lub próba zaangażowania tylnych aktonów zamiast najszerszych",
+        "cue": "Palms point UP the entire set. Elbows GLUE to your sides as they travel back — like pulling two suitcases on rails. Flared elbows = wrong exercise (use overhand grip for rear delts).",
+        "cuePl": "Dłonie do GÓRY przez całą serię. Łokcie PRZYKLEJONE do boków gdy idą w tył — jak ciągnięcie dwóch walizek po szynach. Rozchylone łokcie = inne ćwiczenie (na tylne aktony użyj nachwytu)."
+      },
+      {
+        "fault": "Chest losing contact with the pad (leaning back)",
+        "faultPl": "Klatka odrywa się od oparcia (odchylanie się do tyłu)",
+        "cause": "Load too heavy — using torso extension to move weight instead of pulling with the back",
+        "causePl": "Zbyt duży ciężar — używanie wyprostu tułowia by ruszyć ciężar zamiast ciągnąć plecami",
+        "cue": "Chest STAYS pressed into the pad from first rep to last. If you have to peel off the pad to finish the rep, drop the weight 20%. Machine prevents cheating — let it.",
+        "cuePl": "Klatka WCIŚNIĘTA w oparcie od pierwszego do ostatniego powtórzenia. Jeśli musisz się odrywać żeby skończyć powtórzenie, zmniejsz ciężar o 20%. Maszyna nie pozwala oszukiwać — wykorzystaj to."
+      },
+      {
+        "fault": "Partial range — not extending fully at the bottom",
+        "faultPl": "Niepełny zakres — brak pełnego wyprostu ramion na dole",
+        "cause": "Ego loading, or fear of stretching the shoulder under load",
+        "causePl": "Ego lifting, lub strach przed rozciągnięciem barku pod obciążeniem",
+        "cue": "At the bottom, arms FULLY EXTEND and scapulae protract slightly forward. That stretch IS the growth stimulus for the lats. Half reps = half results.",
+        "cuePl": "Na dole ramiona PEŁNY wyprost i łopatki lekko 'odpływają' w przód. To rozciągnięcie JEST bodźcem wzrostowym dla najszerszych. Półpowtórzenia = połowa rezultatów."
+      },
+      {
+        "fault": "Wrists bending under load",
+        "faultPl": "Nadgarstki zginają się pod obciążeniem",
+        "cause": "Weak grip, no neutral wrist cue, or handles too thick for hand size",
+        "causePl": "Słaby chwyt, brak świadomości neutralnego nadgarstka lub uchwyty zbyt grube dla ręki",
+        "cue": "Wrists STRAIGHT — knuckles line up with the forearm. If your wrist collapses, use straps. Bent wrists under heavy underhand load risk biceps tendon strain.",
+        "cuePl": "Nadgarstki PROSTE — kostki w linii z przedramieniem. Jeśli nadgarstek się załamuje, użyj pasków. Zgięte nadgarstki pod ciężkim podchwytem grożą naciągnięciem ścięgna bicepsa."
+      }
+    ],
+    "breathing": "Inhale at the start (arms extended). Exhale through the pull as handles approach the ribs. Inhale on the controlled return. For heavy sets, brace and hold breath through the concentric, exhale at the squeeze.",
+    "breathingPl": "Wdech na starcie (ramiona wyprostowane). Wydech podczas ciągu gdy uchwyty zbliżają się do żeber. Wdech podczas kontrolowanego powrotu. Przy ciężkich seriach napnij brzuch i trzymaj oddech przez koncentryk, wydech na szczycie ściśnięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Underhand grip loads the biceps tendon at the elbow heavily. If active biceps tendinitis, switch to NEUTRAL or OVERHAND grip on the same machine. Reduce weight 30-40% if proceeding.",
+      "modificationPl": "Chwyt podchwytem mocno obciąża ścięgno bicepsa przy łokciu. Przy aktywnym zapaleniu ścięgna bicepsa przejdź na chwyt NEUTRALNY lub NACHWYTEM na tej samej maszynie. Zmniejsz ciężar o 30-40% jeśli kontynuujesz.",
+      "alternative": "lever-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Underhand grip externally rotates the shoulder — generally shoulder-friendly. Keep elbows TIGHT to ribs (no flaring). If pain at full stretch, reduce starting range.",
+      "modificationPl": "Chwyt podchwytem rotuje bark zewnętrznie — generalnie przyjazny dla barku. Trzymaj łokcie BLISKO żeber (bez rozchylania). Jeśli ból w pełnym rozciągnięciu, zmniejsz zakres startowy.",
+      "alternative": "lever-row"
+    },
+    {
+      "condition": "elbow_pain_medial_epicondylitis",
+      "severity": "modify",
+      "modification": "Supinated grip stresses the medial elbow (golfer's elbow region) more than neutral. Use NEUTRAL grip variant or single-arm dumbbell row. If proceeding, reduce weight and use straps to offload forearms.",
+      "modificationPl": "Chwyt supinowany obciąża przyśrodkową stronę łokcia (rejon łokcia golfisty) bardziej niż neutralny. Użyj wariantu z chwytem NEUTRALNYM lub wiosłowania hantlą jednorącz. Jeśli kontynuujesz, zmniejsz ciężar i użyj pasków by odciążyć przedramiona.",
+      "alternative": "single-arm-dumbbell-row"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Chest pad already removes most lumbar load. Keep chest pressed firmly — do not lean back. This is actually one of the safer rows for lumbar issues compared to barbell variants.",
+      "modificationPl": "Oparcie na klatkę już eliminuje większość obciążenia lędźwiowego. Trzymaj klatkę mocno wciśniętą — nie odchylaj się do tyłu. To w zasadzie jedno z bezpieczniejszych wiosłowań przy problemach z lędźwiami w porównaniu do wariantów ze sztangą.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x10-15 (general) | 3x15-20 (endurance / pump work)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-reverse-grip-vertical-row.gif",
+    "frames_extracted": [
+      "frames/lever-reverse-grip-vertical-row/frame_0_start.png",
+      "frames/lever-reverse-grip-vertical-row/frame_1_early.png",
+      "frames/lever-reverse-grip-vertical-row/frame_2_mid.png",
+      "frames/lever-reverse-grip-vertical-row/frame_3_late.png",
+      "frames/lever-reverse-grip-vertical-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/lever-reverse-grip-vertical-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): osoba siedzi w maszynie lever row z poduszką oparcia na klatkę, stopy płasko, ramiona w pełni wyprostowane do przodu trzymając PIONOWE uchwyty, dłonie ustawione PODCHWYTEM (palms up, supinowane). Stos obciążeń widoczny po lewej stronie maszyny (selectorized lever). Podświetlone są: cały plecy z dominacją najszerszego grzbietu (latissimus, mocno czerwone) oraz równoległoboczne/górne czworoboczne, plus tylne aktony naramiennych. Frame 1-2 (early/mid): faza koncentryczna — łokcie wędrują w dół i w tył wzdłuż boków tułowia (NIE flared), przedramiona zostają pionowe, łopatki zaczynają się ściągać, klatka wciąż na poduszce. Frame 4 (end): pełne ściągnięcie łopatek, uchwyty przy dolnych żebrach / talii, łokcie wyraźnie ZA linią tułowia, palms nadal do góry — klasyczna końcowa pozycja underhand row. Mocno podświetlone DOLNE pasmo najszerszych — co potwierdza specyfikę chwytu podchwytem (bias na dolne lats + biceps). Klasyfikacja 'pull_horizontal' compound bilateral potwierdzona. Equipment: lever_row_machine (widoczny stos obciążeń, brak linki — to maszyna dźwigniowa, nie cable). primary muscles zgodnie ze specyfikacją zadania: latissimus_dorsi P10 (dolne włókna) + biceps_brachii P9 (mocniejszy bias przez supinację). Secondary: rhomboids S8 (zgodnie z zadaniem przeniesione z primary do secondary by uwypuklić biceps jako primary). Difficulty 3 — łatwiejsze niż klasyczny cable seated row bo maszyna prowadzi tor i oparcie kompletnie eliminuje obciążenie lędźwiowe. Wszystkie pola PL napisane od zera, polski standard fitness (Pionowe wiosło w maszynie chwytem podchwytem).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "machine", "lever", "lower_lats", "biceps_builder", "beginner_friendly", "chest_supported", "underhand_grip", "lumbar_safe"]
+}

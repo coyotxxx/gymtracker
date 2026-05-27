@@ -1,0 +1,204 @@
+{
+  "id": "deep-push-up",
+  "name": "Deep Push-Up",
+  "namePl": "Pompki głębokie",
+  "aliases": ["deep pushup", "deficit push-up", "dumbbell handle push-up", "extended range push-up", "push-up on handles"],
+  "aliasesPl": ["pompki głębokie na hantlach", "pompki z deficytem", "pompki na uchwytach", "pompki z pełnym ROM", "pompki na pushupbarach"],
+
+  "description": "Bodyweight push-up variation performed with hands elevated on two dumbbells (or push-up handles/parallettes), allowing the chest to descend below the line of the hands. This extended range of motion (ROM) increases the stretch on the pectoralis major at the bottom — directly improving hypertrophy stimulus and lengthened-position strength compared to a floor push-up. Hands on dumbbell handles also keep the wrist neutral, removing a common limiter of push-up volume.",
+  "descriptionPl": "Wariant pompek z ciężarem ciała wykonywany z dłońmi opartymi na dwóch hantlach (lub uchwytach do pompek / parallettes), co pozwala klatce zejść PONIŻEJ linii dłoni. Ten powiększony zakres ruchu (ROM) zwiększa rozciągnięcie mięśnia piersiowego na dole — bezpośrednio poprawia bodziec hipertroficzny i siłę w pozycji wydłużonej w porównaniu z pompkami na podłodze. Dłonie na uchwytach hantli utrzymują też neutralny nadgarstek, eliminując częsty czynnik ograniczający objętość pompek.",
+
+  "instructions": [
+    "Ustaw dwa równoważne hantle (uchwyty równolegle) na podłodze, na szerokość nieco większą niż barki. Sprawdź czy hantle nie będą się toczyć — gumowane lub heksagonalne są najbezpieczniejsze.",
+    "Złap uchwyty hantli neutralnym chwytem (dłonie zwrócone do siebie). Nadgarstki, łokcie i barki ułożone w jednej pionowej linii.",
+    "Wyprostuj nogi w plank — palce stóp oparte o podłogę, ciało w prostej linii od pięt przez biodra do głowy.",
+    "Napnij mocno brzuch i pośladki. Ściągnij łopatki — to twoja sztywna baza.",
+    "Wdech, opuszczaj się kontrolowanym ruchem (2-3 sekundy). Łokcie pod kątem ~45° od tułowia, nie rozsunięte na 90°.",
+    "Schodź NIŻEJ niż w zwykłej pompce — klatka schodzi PONIŻEJ linii dłoni, aż poczujesz pełne rozciągnięcie w klatce i przednich aktonach.",
+    "Krótka, kontrolowana pauza na dole (0.5-1 sekunda) — nie odbijaj się od dna, nie 'sprężynuj' w stawach.",
+    "Wydech, wypchnij się dynamicznie do góry. W pełni wyprostuj łokcie na szczycie, ale bez przeprostu.",
+    "Utrzymuj sztywną pozycję planka przez całą serię — biodra nie opadają, miednica nie unosi się 'do tyłka'."
+  ],
+  "instructionsPl": [
+    "Ustaw dwa równoważne hantle (uchwyty równolegle) na podłodze, na szerokość nieco większą niż barki. Sprawdź czy hantle nie będą się toczyć — gumowane lub heksagonalne są najbezpieczniejsze.",
+    "Złap uchwyty hantli neutralnym chwytem (dłonie zwrócone do siebie). Nadgarstki, łokcie i barki ułożone w jednej pionowej linii.",
+    "Wyprostuj nogi w plank — palce stóp oparte o podłogę, ciało w prostej linii od pięt przez biodra do głowy.",
+    "Napnij mocno brzuch i pośladki. Ściągnij łopatki — to twoja sztywna baza.",
+    "Wdech, opuszczaj się kontrolowanym ruchem (2-3 sekundy). Łokcie pod kątem ~45° od tułowia, nie rozsunięte na 90°.",
+    "Schodź NIŻEJ niż w zwykłej pompce — klatka schodzi PONIŻEJ linii dłoni, aż poczujesz pełne rozciągnięcie w klatce i przednich aktonach.",
+    "Krótka, kontrolowana pauza na dole (0.5-1 sekunda) — nie odbijaj się od dna, nie 'sprężynuj' w stawach.",
+    "Wydech, wypchnij się dynamicznie do góry. W pełni wyprostuj łokcie na szczycie, ale bez przeprostu.",
+    "Utrzymuj sztywną pozycję planka przez całą serię — biodra nie opadają, miednica nie unosi się 'do tyłka'."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["pectoralis_major_clavicular", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "pectoralis_major_clavicular": "S6",
+    "serratus_anterior": "S6",
+    "core": "T5",
+    "glutes": "T4",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "dumbbells"],
+    "optional": ["push_up_handles", "parallettes", "weighted_vest", "resistance_band"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "knee-push-up", "incline-push-up"],
+    "progression_to": ["weighted-deep-push-up", "ring-push-up", "archer-push-up", "single-arm-push-up", "decline-deep-push-up"],
+    "alternatives": ["push-up", "ring-push-up", "decline-push-up", "dumbbell-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stable, non-rolling dumbbells — heksagonalne lub gumowane, nie okrągłe płytki",
+      "Hands neutral grip on handles — nadgarstki w prostej linii z przedramionami",
+      "Dumbbells nieco szerzej niż barki, bezpośrednio pod linią barków",
+      "Pre-brace plank — napięte brzuch i pośladki PRZED pierwszym powtórzeniem",
+      "Łopatki ściągnięte i 'zaparkowane' w dolnej pozycji"
+    ],
+    "setup_cues_pl": [
+      "Stabilne, nieobracające się hantle — heksagonalne lub gumowane, nie okrągłe płytki",
+      "Neutralny chwyt na uchwytach — nadgarstki w prostej linii z przedramionami",
+      "Hantle nieco szerzej niż barki, bezpośrednio pod linią barków",
+      "Pre-bracing planka — napięte brzuch i pośladki PRZED pierwszym powtórzeniem",
+      "Łopatki ściągnięte i 'zaparkowane' w dolnej pozycji"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — wykorzystaj rozszerzony ROM, nie pędź",
+      "Schodź aż klatka będzie WYRAŹNIE poniżej dłoni — poczuj rozciągnięcie klatki",
+      "Elbows track at ~45° — 'pin them to your ribs', nie rozsuwaj na 90°",
+      "Press przez całą dłoń, nie tylko opuszki palców — siłę generujesz z całej powierzchni styku",
+      "Wyciśnij i ściśnij klatkę na szczycie — krótkie maksymalne napięcie na top'ie"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — wykorzystaj rozszerzony ROM, nie pędź",
+      "Schodź aż klatka będzie WYRAŹNIE poniżej dłoni — poczuj rozciągnięcie klatki",
+      "Łokcie pod ~45° — 'przyklej je do żeber', nie rozsuwaj na 90°",
+      "Naciskaj całą dłonią, nie tylko opuszkami palców — siłę generujesz z całej powierzchni styku",
+      "Wyciśnij i ściśnij klatkę na szczycie — krótkie maksymalne napięcie na top'ie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dumbbells rolling or sliding out",
+        "faultPl": "Hantle obracają się lub rozjeżdżają",
+        "cause": "Użyte okrągłe hantle (z gumowanymi płytkami), śliska podłoga lub nadgarstki łamane w bok",
+        "causePl": "Użyte okrągłe hantle (z gumowanymi płytkami), śliska podłoga lub nadgarstki łamane w bok",
+        "cue": "Użyj wyłącznie hantli heksagonalnych lub specjalnych push-up handles. Ustaw na macie/dywanie zamiast śliskich paneli. Trzymaj nadgarstki sztywno w linii przedramion.",
+        "cuePl": "Użyj wyłącznie hantli heksagonalnych lub specjalnych push-up handles. Ustaw na macie/dywanie zamiast śliskich paneli. Trzymaj nadgarstki sztywno w linii przedramion."
+      },
+      {
+        "fault": "Ego depth — dropping too low, shoulders rolling forward",
+        "faultPl": "Zbyt głębokie schodzenie 'na siłę' — barki rolują się do przodu",
+        "cause": "Pogoń za 'jeszcze niżej' bez kontroli stawu barkowego, słabe scapular control",
+        "causePl": "Pogoń za 'jeszcze niżej' bez kontroli stawu barkowego, słabe scapular control",
+        "cue": "Schodź TAK głęboko, jak utrzymujesz ściągnięte łopatki. Gdy łopatki 'wyskakują' do przodu — masz limit ROM. Buduj mobilność i siłę stopniowo, nie forsuj.",
+        "cuePl": "Schodź TAK głęboko, jak utrzymujesz ściągnięte łopatki. Gdy łopatki 'wyskakują' do przodu — masz limit ROM. Buduj mobilność i siłę stopniowo, nie forsuj."
+      },
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym",
+        "cue": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. 'Najpierw plank, potem pompka'. Wyobraź sobie sznurek unoszący biodra do sufitu.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. 'Najpierw plank, potem pompka'. Wyobraź sobie sznurek unoszący biodra do sufitu."
+      },
+      {
+        "fault": "Elbows flared 90° (T-shape)",
+        "faultPl": "Łokcie rozsunięte na 90° (kształt litery T)",
+        "cause": "Hantle za szeroko, brak świadomości toru łokci",
+        "causePl": "Hantle za szeroko, brak świadomości toru łokci",
+        "cue": "Zwęź ustawienie hantli, schowaj łokcie do ~45° od tułowia. 'Schowaj pachy'. Chroni barki i pozwala wykorzystać rozszerzony ROM bez ryzyka kontuzji.",
+        "cuePl": "Zwęź ustawienie hantli, schowaj łokcie do ~45° od tułowia. 'Schowaj pachy'. Chroni barki i pozwala wykorzystać rozszerzony ROM bez ryzyka kontuzji."
+      },
+      {
+        "fault": "Bouncing at the bottom",
+        "faultPl": "Odbijanie na dole",
+        "cause": "Wykorzystywanie energii sprężystej zamiast siły mięśniowej — pogoń za liczbą powtórzeń",
+        "causePl": "Wykorzystywanie energii sprężystej zamiast siły mięśniowej — pogoń za liczbą powtórzeń",
+        "cue": "Krótka, kontrolowana pauza (0.5-1s) na dole. Cały sens deep push-up to czas pod napięciem w pozycji wydłużonej — bouncing kasuje benefity.",
+        "cuePl": "Krótka, kontrolowana pauza (0.5-1s) na dole. Cały sens deep push-up to czas pod napięciem w pozycji wydłużonej — bouncing kasuje benefity."
+      }
+    ],
+    "breathing": "Wdech podczas schodzenia, napięcie (Valsalva) na dole, wydech podczas wyciskania. Przy wyższych powtórzeniach możesz napiąć-i-wycisnąć kilka powtórzeń przed oddechem-resetującym.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie (Valsalva) na dole, wydech podczas wyciskania. Przy wyższych powtórzeniach możesz napiąć-i-wycisnąć kilka powtórzeń przed oddechem-resetującym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Rozszerzony ROM zwiększa stres w dolnej pozycji. Skróć ROM (zatrzymaj się na poziomie dłoni), zwęź chwyt, mocniej schowaj łokcie (~30-45°). Wróć do zwykłych pompek do czasu ustąpienia objawów.",
+      "modificationPl": "Rozszerzony ROM zwiększa stres w dolnej pozycji. Skróć ROM (zatrzymaj się na poziomie dłoni), zwęź chwyt, mocniej schowaj łokcie (~30-45°). Wróć do zwykłych pompek do czasu ustąpienia objawów.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "anterior_shoulder_pain",
+      "severity": "modify",
+      "modification": "Pozycja wydłużona obciąża przednią torebkę stawu barkowego. Zmniejsz głębokość, pracuj nad mobilnością piersiową i scapular control. Jeśli ból utrzymuje się — skonsultuj z fizjoterapeutą.",
+      "modificationPl": "Pozycja wydłużona obciąża przednią torebkę stawu barkowego. Zmniejsz głębokość, pracuj nad mobilnością piersiową i scapular control. Jeśli ból utrzymuje się — skonsultuj z fizjoterapeutą.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "minor",
+      "modification": "Co ciekawe — deep push-up często ŁAGODZI ból nadgarstka (neutralny chwyt). Jeśli chwyt na uchwytach hantli boli — sprawdź czy uchwyt ma odpowiednią średnicę, lub przejdź na dedykowane push-up handles z miękką piankową okładziną.",
+      "modificationPl": "Co ciekawe — deep push-up często ŁAGODZI ból nadgarstka (neutralny chwyt). Jeśli chwyt na uchwytach hantli boli — sprawdź czy uchwyt ma odpowiednią średnicę, lub przejdź na dedykowane push-up handles z miękką piankową okładziną.",
+      "alternative": "push-up-on-fists"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Opadające biodra obciążają odcinek lędźwiowy. Jeśli nie utrzymujesz sztywnej planki przez całą serię — wróć do pompek na podwyższeniu (dłonie wyżej, stopy na podłodze) do czasu wzmocnienia brzucha.",
+      "modificationPl": "Opadające biodra obciążają odcinek lędźwiowy. Jeśli nie utrzymujesz sztywnej planki przez całą serię — wróć do pompek na podwyższeniu (dłonie wyżej, stopy na podłodze) do czasu wzmocnienia brzucha.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hipertrofia, fokus na ROM) | 4-5x6-8 z kamizelką (siła) | AMRAP z 2s pauzą na dole (intensywność)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "deep-push-up.gif",
+    "frames_extracted": [
+      "frames/deep-push-up/frame_0_start.png",
+      "frames/deep-push-up/frame_1_early.png",
+      "frames/deep-push-up/frame_2_mid.png",
+      "frames/deep-push-up/frame_3_late.png",
+      "frames/deep-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/deep-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej — dłonie na uchwytach DWÓCH HANTLI (heksagonalne płytki), nogi wyprostowane palcami stóp na podłodze, ramiona w pełnym wyproście, ciało w linii prostej. Frame 2 (mid): pełne opuszczenie — klatka WYRAŹNIE PONIŻEJ linii dłoni/hantli (klasyczny deficit), łokcie zgięte i utrzymane ~45° od tułowia, ciało pozostaje w prostej linii (brak sag bioder). Frame 4 (end): powrót do pozycji wyjściowej. Klatka piersiowa (środkowa część) i tricepsy mocno podświetlone na anatomii — zgodne z biomechaniką deep push-up (większy ROM = większe rozciągnięcie pectoralis major). Sprzęt: bodyweight + dumbbells (heksagonalne, neutralny chwyt). NIE są to parallettes ani push-up handles — wyraźnie widać kształt płytek hantli. Wszystkie pola PL napisane od zera w polskim standardzie fitness. primary: pectoralis_major P10 (najwyższe rozciągnięcie w pozycji wydłużonej), anterior_deltoids P8, triceps P7. difficulty 6 (intermediate+).",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "full_rom", "stretch_overload", "lengthened_position", "neutral_grip", "home_workout", "progression_from_push_up"]
+}

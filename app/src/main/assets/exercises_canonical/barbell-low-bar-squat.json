@@ -1,0 +1,205 @@
+{
+  "id": "barbell-low-bar-squat",
+  "name": "Barbell Low-Bar Squat",
+  "namePl": "Przysiad ze sztangą low-bar (na rear delts)",
+  "aliases": ["low-bar squat", "low-bar back squat", "powerlifting squat", "low bar squat"],
+  "aliasesPl": ["low-bar squat", "low bar squat", "przysiad low-bar", "przysiad powerliftingowy", "przysiad ze sztangą nisko na plecach"],
+
+  "description": "Powerlifting variant of the back squat with the barbell racked LOW across the rear deltoids and lower trapezius (roughly 5-7 cm below the high-bar position). The lower bar placement shifts the torso more forward and creates a stronger hip-hinge pattern, transferring load away from the quadriceps toward the posterior chain (glutes, hamstrings, adductors). Allows heavier loads to be moved than high-bar squat and is the competition standard in powerlifting (IPF, USAPL).",
+  "descriptionPl": "Powerliftingowa odmiana przysiadu ze sztangą ułożoną NISKO na tylnych aktonach mięśnia naramiennego i dolnych włóknach czworobocznego (ok. 5-7 cm poniżej pozycji high-bar). Niższe ułożenie gryfu wymusza większe pochylenie tułowia do przodu i mocniejszy hip-hinge, przenosząc obciążenie z czworogłowych na tylny łańcuch (pośladki, dwugłowe uda, przywodziciele). Pozwala dźwigać większe ciężary niż w wariancie high-bar i jest standardem startowym w trójboju siłowym (IPF, USAPL).",
+
+  "instructions": [
+    "Set the bar in a rack at mid-chest height. Load the desired weight on each side and secure with collars.",
+    "Step under the bar and place it LOW — across the rear deltoids and lower traps, below the spine of the scapula. The bar should sit on a 'shelf' created by retracting your shoulder blades and flexing the rear delts.",
+    "Grip the bar tightly, slightly wider than shoulder-width. Wrists straight or slightly bent back, elbows pointing down and back to lock the bar in place.",
+    "Unrack by extending your legs. Take two controlled steps back. Set feet slightly wider than shoulder-width with toes turned out 15-30°.",
+    "Brace your core hard, draw shoulder blades down and together, keep chest proud but allow the torso to lean forward more than in high-bar. Inhale deeply and hold (Valsalva).",
+    "Initiate the descent by breaking at the HIPS FIRST, then knees. Sit back into the squat with a more pronounced forward lean than high-bar. Keep weight on whole foot.",
+    "Descend until your hip crease passes below the top of your knee (powerlifting depth) while maintaining a neutral spine and the bar locked on your back.",
+    "Drive up by pushing the floor away and extending hips and knees together. Keep the chest from collapsing — drive hips forward AND chest up simultaneously.",
+    "Maintain a vertical bar path over mid-foot. Lock out at the top by fully extending hips and knees, then re-brace for the next rep."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości środka klatki. Załaduj obciążenie po obu stronach i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją NISKO — na tylnych aktonach naramiennego i dolnych włóknach trapezów, poniżej grzebienia łopatki. Gryf ma leżeć na 'półce' utworzonej przez ściągnięte łopatki i napięte tylne delty.",
+    "Złap gryf mocno, nieco szerzej niż na szerokość barków. Nadgarstki proste lub lekko odchylone do tyłu, łokcie skierowane w dół i do tyłu, aby zablokować gryf w pozycji.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się 2 kontrolowane kroki. Ustaw stopy nieco szerzej niż na szerokość barków, palce skręcone na zewnątrz 15-30°.",
+    "Mocno napnij brzuch, ściągnij łopatki w dół i razem, klatka wysunięta — ale pozwól tułowiowi pochylić się bardziej do przodu niż przy high-bar. Nabierz głęboki wdech i przytrzymaj (Valsalva).",
+    "Rozpocznij schodzenie od BIODER (najpierw biodra, potem kolana). Siadaj do tyłu z wyraźnym pochyleniem tułowia do przodu — bardziej niż przy high-bar. Ciężar na całej stopie.",
+    "Schodź aż linia bioder zejdzie poniżej szczytu kolan (głębokość zawodnicza w powerliftingu) zachowując neutralny kręgosłup i gryf zablokowany na plecach.",
+    "Wypchnij się w górę napierając przez całą stopę, prostując biodra i kolana jednocześnie. Nie pozwól klatce zapaść się — wypychaj biodra do przodu I klatkę do góry równocześnie.",
+    "Trzymaj pionową ścieżkę gryfu nad środkiem stopy. Zakończ powtórzenie pełnym wyprostem bioder i kolan, następnie ponownie napnij brzuch przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "quadriceps"],
+    "secondary": ["erector_spinae", "adductors"],
+    "stabilizers": ["core", "upper_back", "calves", "rectus_abdominis", "rear_delts"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "hamstrings": "P8",
+    "quadriceps": "P8",
+    "erector_spinae": "S8",
+    "adductors": "S7",
+    "core": "S7",
+    "upper_back": "S5",
+    "rear_delts": "T3",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps", "flat_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 8,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "barbell-back-squat"],
+    "progression_to": ["pause-low-bar-squat", "pin-squat", "box-squat", "competition-squat"],
+    "alternatives": ["barbell-back-squat", "safety-bar-squat", "box-squat", "good-morning"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar LOW across rear delts, not on traps",
+      "Make a shelf — squeeze scapulae together and flex rear delts",
+      "Elbows down and back, grip the bar tight",
+      "Feet slightly wider than shoulders, toes out 15-30°",
+      "Big breath, brace hard, chest proud"
+    ],
+    "setup_cues_pl": [
+      "Gryf NISKO na tylnych deltach, nie na trapezach",
+      "Zrób półkę — ściśnij łopatki razem i napnij tylne delty",
+      "Łokcie w dół i do tyłu, mocno ściśnij gryf",
+      "Stopy nieco szerzej niż barki, palce na zewnątrz 15-30°",
+      "Głęboki wdech, mocno napnij brzuch, klatka wysunięta"
+    ],
+    "execution_cues": [
+      "Break at the HIPS first, then knees",
+      "Lean forward more — chest over the bar",
+      "Sit back into the heels but keep whole foot pressed",
+      "Drive hips forward AND chest up on the way up",
+      "Bar travels straight up and down over mid-foot"
+    ],
+    "execution_cues_pl": [
+      "Najpierw BIODRA, potem kolana",
+      "Pochyl się bardziej do przodu — klatka nad gryfem",
+      "Siadaj na pięty ale wciskaj całą stopę",
+      "Wypychaj biodra do przodu I klatkę do góry w drodze w górę",
+      "Gryf porusza się pionowo nad środkiem stopy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Good morning squat (hips shoot up first)",
+        "faultPl": "Przysiad-good morning (biodra wystrzelają do góry pierwsze)",
+        "cause": "Quadriceps too weak relative to back/hips, or losing upper-back tightness at the bottom",
+        "causePl": "Czworogłowe za słabe względem pleców/bioder, lub utrata napięcia górnej części pleców na dole",
+        "cue": "Drive chest up FIRST, then drive hips through. Add front squats and pause squats to balance.",
+        "cuePl": "Najpierw wypchnij klatkę do góry, dopiero potem biodra do przodu. Dodaj front squaty i pause squaty do balansu."
+      },
+      {
+        "fault": "Bar slides up onto the traps during the lift",
+        "faultPl": "Gryf wjeżdża na trapezy podczas ruchu",
+        "cause": "Lost upper-back tightness, rear delts not flexed enough, or chest dropping",
+        "causePl": "Utrata napięcia górnej części pleców, niedostatecznie napięte tylne delty, lub opadająca klatka",
+        "cue": "Squeeze the bar harder, pull elbows down and back, keep rear delts active throughout the rep",
+        "cuePl": "Ściśnij gryf mocniej, ściągnij łokcie w dół i do tyłu, trzymaj tylne delty napięte przez całe powtórzenie"
+      },
+      {
+        "fault": "Knee valgus (knees cave in) under heavy load",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka) pod ciężarem",
+        "cause": "Weak glute medius / external rotators, or load too heavy for current strength",
+        "causePl": "Słabe pośladki średnie / rotatory zewnętrzne, lub zbyt duży ciężar",
+        "cue": "Spread the floor with your feet — push knees out toward little toes throughout the entire range",
+        "cuePl": "Rozpychaj podłogę stopami — wypychaj kolana na zewnątrz w kierunku małych palców przez cały zakres"
+      },
+      {
+        "fault": "Excessive forward lean — chest collapses below parallel",
+        "faultPl": "Nadmierne pochylenie do przodu — klatka opada poniżej parallel",
+        "cause": "Weak erector spinae, insufficient core bracing, or stance too narrow",
+        "causePl": "Słabe prostowniki grzbietu, niedostateczne napięcie brzucha, lub zbyt wąski rozstaw stóp",
+        "cue": "Brace harder before descent. Try slightly wider stance. Add back extensions and good mornings as accessories.",
+        "cuePl": "Mocniej napnij brzuch przed schodzeniem. Spróbuj szerszego rozstawu. Dodaj back extensions i good morningi jako akcesoria."
+      },
+      {
+        "fault": "Wrist pain from low-bar grip",
+        "faultPl": "Ból nadgarstków od grypu low-bar",
+        "cause": "Trying to support bar weight with hands instead of letting it rest on the back shelf, or too narrow grip",
+        "causePl": "Próba podtrzymywania gryfu rękami zamiast pozwolenia mu spocząć na półce z pleców, lub za wąski grypa",
+        "cue": "Hands only stabilize — let the back carry the weight. Widen the grip, use wrist wraps, keep wrists in line with forearms.",
+        "cuePl": "Ręce tylko stabilizują — pozwól plecom nieść ciężar. Rozszerz grypa, użyj wrist wraps, trzymaj nadgarstki w linii z przedramionami."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before unracking. Hold breath through the descent and the hardest part of the ascent (Valsalva). Exhale only after passing the sticking point near the top of the rep.",
+    "breathingPl": "Wdech i napięcie na górze przed wyciągnięciem ze stojaka. Wstrzymaj oddech przez całe schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech dopiero po przejściu sticking point blisko górnej części powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Low-bar position loads the lower back significantly due to forward lean. Rest and consult a physiotherapist. Avoid spinal loading entirely.",
+      "modificationPl": "Pozycja low-bar mocno obciąża dolny odcinek pleców z powodu pochylenia tułowia. Odpoczynek i konsultacja z fizjoterapeutą. Unikaj obciążenia kręgosłupa.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "shoulder_mobility_restriction",
+      "severity": "modify",
+      "modification": "Low-bar grip requires significant shoulder external rotation and extension. If painful, switch to high-bar, safety squat bar, or front squat.",
+      "modificationPl": "Grypa low-bar wymaga znacznej rotacji zewnętrznej i wyprostu w stawie barkowym. Jeśli bolesny, zmień na high-bar, safety squat bar lub front squat.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Low-bar position can stress wrists if grip is too narrow or hands try to support the bar. Use wrist wraps, widen grip, or switch to safety squat bar.",
+      "modificationPl": "Pozycja low-bar może obciążać nadgarstki gdy grypa jest za wąska lub ręce próbują podtrzymywać gryf. Użyj wrist wraps, rozszerz grypa lub zmień na safety squat bar.",
+      "alternative": "safety-bar-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Forward lean and depth may aggravate impingement. Test wider stance with more toe-out. Limit depth to pain-free range.",
+      "modificationPl": "Pochylenie do przodu i głębokość mogą drażnić impingement. Spróbuj szerszego rozstawu z większym skrętem palców na zewnątrz. Ogranicz głębokość do zakresu bez bólu.",
+      "alternative": "box-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (strength) | 3-5x3-5 (powerlifting) | 3-4x6-8 (hypertrophy) | 1-3x1-3 (peaking)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-low-bar-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-low-bar-squat/frame_0_start.png",
+      "frames/barbell-low-bar-squat/frame_1_early.png",
+      "frames/barbell-low-bar-squat/frame_2_mid.png",
+      "frames/barbell-low-bar-squat/frame_3_late.png",
+      "frames/barbell-low-bar-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-low-bar-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel/glutes/barbell-low-bar-squat. Klatka 0/4: pozycja stojąca z gryfem ułożonym NISKO na tylnych aktonach mięśnia naramiennego — wyraźnie poniżej linii górnych trapezów (potwierdzenie wariantu low-bar, nie high-bar). Klatka 2: pełna głębokość z wyraźnym pochyleniem tułowia do przodu (klatka praktycznie nad gryfem), miednica poniżej szczytu kolan — klasyczny powerliftingowy hip-hinge. Mięśnie podświetlone na ilustracji: pośladki (główny — duże czerwone podświetlenie w klatce 2), dwugłowe uda i czworogłowe — pasuje do anatomii low-bar (większy nacisk na tylny łańcuch niż w high-bar). Klasyfikacja P10/glutes, P8/hamstrings, P8/quads odzwierciedla powerliftingową charakterystykę. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Kategoryzacja jahel: 'glutes' potwierdza, że to wariant z naciskiem na pośladki (nie na quady jak w 'quadriceps/barbell-full-squat').",
+
+  "tags": ["powerlifting", "compound_king", "lower_body", "strength_fundamental", "barbell", "posterior_chain", "hip_hinge", "competition_lift"]
+}

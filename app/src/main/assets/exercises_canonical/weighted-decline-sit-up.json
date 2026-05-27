@@ -1,0 +1,195 @@
+{
+  "id": "weighted-decline-sit-up",
+  "name": "Weighted Decline Sit-up",
+  "namePl": "Brzuszki na ławce skośnej z obciążeniem",
+  "aliases": ["weighted decline situp", "decline bench weighted sit-up", "decline sit-up with plate", "loaded decline sit-up"],
+  "aliasesPl": ["weighted decline sit-up", "sit-up na ławce skośnej z obciążeniem", "brzuszki na ławce ujemnej z talerzem", "decline sit-up z ciężarem", "spinanie brzucha na skosie z talerzem"],
+
+  "description": "Loaded full sit-up performed on a decline bench (head lower than hips) while holding a weight plate or dumbbell on the chest. The decline angle increases the range of motion and lengthens the rectus abdominis at the bottom, while the external load shifts the exercise from endurance to true strength/hypertrophy work. Feet are hooked under the bench pads for stability. A classic 'big lift' for the abs that progresses well with added weight over time.",
+  "descriptionPl": "Pełny sit-up z obciążeniem wykonywany na ławce skośnej (głowa niżej niż biodra), z talerzem lub hantlą trzymaną na klatce piersiowej. Skośne ustawienie zwiększa zakres ruchu i mocniej rozciąga mięsień prosty brzucha w dolnej pozycji, a zewnętrzny ciężar przesuwa ćwiczenie z pracy wytrzymałościowej w stronę realnej siły i hipertrofii. Stopy zaczepione pod wałkami ławki dla stabilizacji. To jeden z najpoważniejszych ruchów na brzuch, który dobrze progresuje się ciężarem w czasie.",
+
+  "instructions": [
+    "Set a decline bench to a moderate angle (15-30°) and hook your feet securely under the foot pads. Lie back so your hips and torso rest on the bench.",
+    "Pick up a weight plate or dumbbell and hold it on your chest with both hands. Start with a light weight to learn the pattern; advanced lifters can hold the plate overhead.",
+    "Inhale and lower yourself under control until your torso is on the bench (or slightly arched below the hip line if mobility allows). Keep a small natural arch in the lower back — don't hyperextend.",
+    "Exhale and curl up by flexing the spine first, then continuing the motion by flexing at the hips. Sit up until the torso is roughly perpendicular to the floor.",
+    "At the top, briefly squeeze the abdominals — do not rest by sitting fully upright passively. Keep the weight close to the chest.",
+    "Inhale and lower under control over 2-3 seconds back to the starting position. Do not let gravity drop you down — the eccentric is half the value of the rep."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną na umiarkowanym kącie (15-30°) i mocno zaczep stopy pod wałkami. Połóż się tak, by biodra i tułów spoczywały na ławce.",
+    "Chwyć talerz lub hantlę i trzymaj go oburącz na klatce piersiowej. Zacznij od lekkiego obciążenia, by opanować wzorzec; zaawansowani mogą trzymać talerz nad głową.",
+    "Wdech — opuszczaj się kontrolowanie aż tułów położy się na ławce (lub lekko poniżej linii bioder, jeśli pozwala mobilność). Zachowaj naturalny mały łuk w lędźwiach — nie przeprostowuj kręgosłupa.",
+    "Wydech — unoś się zwijając najpierw kręgosłup, a następnie kontynuując ruch zgięciem w biodrach. Wstań do momentu, gdy tułów jest mniej więcej prostopadły do podłogi.",
+    "Na górze krótko zaciśnij brzuch — nie odpoczywaj siedząc pasywnie wyprostowany. Trzymaj ciężar blisko klatki.",
+    "Wdech — opuszczaj się kontrolowanie przez 2-3 sekundy do pozycji wyjściowej. Nie pozwalaj grawitacji rzucać tobą — ekscentryk to połowa wartości powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["hip_flexors", "obliques"],
+    "stabilizers": ["transverse_abdominis", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "hip_flexors": "S8",
+    "obliques": "S6",
+    "transverse_abdominis": "T4",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["decline_bench", "weight_plate"],
+    "optional": ["dumbbell", "kettlebell"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["sit-up", "decline-sit-up", "crunch"],
+    "progression_to": ["weighted-decline-sit-up-overhead", "dragon-flag", "weighted-toes-to-bar"],
+    "alternatives": ["decline-sit-up", "weighted-sit-up", "cable-crunch", "weighted-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hooked firmly under pads — no slip during the rep",
+      "Bench angle 15-30° — steeper = harder",
+      "Plate held flat against the chest with both hands",
+      "Lower back keeps a small natural arch — not flattened, not hyperextended",
+      "Chin packed slightly — neutral neck, not chin-to-chest"
+    ],
+    "setup_cues_pl": [
+      "Stopy mocno zaczepione pod wałkami — żadnego ślizgu w trakcie powtórzenia",
+      "Kąt ławki 15-30° — większy kąt = trudniej",
+      "Talerz trzymany płasko na klatce oburącz",
+      "Lędźwie zachowują naturalny mały łuk — ani spłaszczone, ani przeprostowane",
+      "Broda lekko schowana — szyja w neutralnej pozycji, nie ściągana do klatki"
+    ],
+    "execution_cues": [
+      "Curl spine first, then hinge at the hips — not one big swing",
+      "Exhale forcefully as you sit up — drive the ribs toward the pelvis",
+      "Keep the plate glued to the chest the whole rep",
+      "Stop sitting up at perpendicular — no need to come fully forward",
+      "Lower 2-3 seconds — eccentric is where growth happens"
+    ],
+    "execution_cues_pl": [
+      "Najpierw zwiń kręgosłup, potem zegnij się w biodrach — nie jeden szarpany ruch",
+      "Mocny wydech podczas unoszenia — ściągaj żebra do miednicy",
+      "Trzymaj talerz przyklejony do klatki przez całe powtórzenie",
+      "Zatrzymaj się gdy tułów jest prostopadle — nie musisz wchodzić w pełny przód",
+      "Opuszczaj 2-3 sekundy — to w fazie ekscentrycznej rośnie mięsień"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using momentum / throwing the plate forward",
+        "faultPl": "Korzystanie z rozpędu / wyrzucanie talerza do przodu",
+        "cause": "Weight too heavy or weak abs — lifter compensates by swinging the load",
+        "causePl": "Zbyt duży ciężar lub słaby brzuch — ćwiczący kompensuje wyrzucając obciążenie",
+        "cue": "Drop the weight by 25% and slow down: 2s up, 1s squeeze, 3s down",
+        "cuePl": "Zmniejsz ciężar o 25% i zwolnij: 2s w górę, 1s spięcia, 3s w dół"
+      },
+      {
+        "fault": "Pulling the head with the hands / cervical strain",
+        "faultPl": "Szarpanie głowy rękami / nadwyrężanie szyi",
+        "cause": "Hands move from the chest to behind the neck to 'help' pull the torso up",
+        "causePl": "Ręce wędrują z klatki za kark, by 'pomóc' wyciągnąć tułów do góry",
+        "cue": "Hands stay locked on the plate against the chest — the abs lift you, not the arms",
+        "cuePl": "Ręce zablokowane na talerzu przy klatce — to brzuch cię podnosi, nie ramiona"
+      },
+      {
+        "fault": "Hyperextending the lower back at the bottom",
+        "faultPl": "Przeprost dolnych pleców w dolnej pozycji",
+        "cause": "Letting the spine fall into a deep arch below the bench, looking for extra stretch",
+        "causePl": "Pozwalanie kręgosłupowi opaść w głęboki łuk pod ławką w poszukiwaniu dodatkowego rozciągnięcia",
+        "cue": "Stop the descent when the upper back touches the bench — don't dive below the hip line if the back complains",
+        "cuePl": "Zatrzymaj opuszczanie gdy górne plecy dotykają ławki — nie schodź poniżej linii bioder jeśli lędźwie protestują"
+      },
+      {
+        "fault": "Hip flexors taking over — leg/quad cramping",
+        "faultPl": "Zginacze biodra przejmują pracę — skurcze w nogach/udach",
+        "cause": "Anchoring the feet hard and pulling with the legs instead of crunching the spine first",
+        "causePl": "Mocne zapieranie stopami i ciągnięcie nogami zamiast zwijania kręgosłupa najpierw",
+        "cue": "Initiate the rep by crunching shoulders off the bench — hips and legs activate only in the second half",
+        "cuePl": "Inicjuj powtórzenie ściągając łopatki z ławki — biodra i nogi włączają się dopiero w drugiej połowie"
+      },
+      {
+        "fault": "Holding breath / Valsalva on every rep",
+        "faultPl": "Wstrzymywanie oddechu / Valsalva przy każdym powtórzeniu",
+        "cause": "Habit from heavy compound lifts; unnecessary at moderate ab loads and raises blood pressure",
+        "causePl": "Nawyk z ciężkich ćwiczeń wielostawowych; niepotrzebny przy umiarkowanym obciążeniu brzucha i podnosi ciśnienie krwi",
+        "cue": "Exhale audibly through pursed lips during the sit-up — inhale on the way down",
+        "cuePl": "Słyszalny wydech przez zaciśnięte usta podczas wstawania — wdech podczas opuszczania"
+      }
+    ],
+    "breathing": "Inhale on the descent (eccentric, going back to the bench). Forceful exhale during the sit-up (concentric) — this maximises rectus abdominis contraction and helps stabilise the trunk under the external load.",
+    "breathingPl": "Wdech podczas opuszczania (faza ekscentryczna, powrót na ławkę). Mocny wydech podczas siadania (faza koncentryczna) — maksymalizuje skurcz mięśnia prostego brzucha i pomaga stabilizować tułów pod zewnętrznym obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion is one of the highest disc-compression exercises (McGill). With acute or chronic low back pain, switch entirely to anti-extension and anti-rotation core work until pain-free.",
+      "modificationPl": "Obciążone zgięcie kręgosłupa to jedno z ćwiczeń najmocniej kompresujących krążki międzykręgowe (McGill). Przy ostrym lub przewlekłym bólu lędźwi przejdź całkowicie na ćwiczenia anty-ekstensji i anty-rotacji do czasu ustąpienia bólu.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion strongly contraindicated in lumbar disc protrusion. Use neutral-spine, isometric ab work (planks, dead bug, Pallof press) instead.",
+      "modificationPl": "Obciążone zgięcie kręgosłupa zdecydowanie przeciwwskazane przy przepuklinie dysku lędźwiowego. Zastosuj ćwiczenia w neutralnej pozycji kręgosłupa — izometryczne (deska, dead bug, Pallof press).",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "hypertension_uncontrolled",
+      "severity": "caution",
+      "modification": "Head-below-heart position on a decline bench combined with Valsalva can spike blood pressure dramatically. Use flat sit-up or cable crunch instead until BP is controlled.",
+      "modificationPl": "Pozycja głowa-poniżej-serca na ławce skośnej w połączeniu z manewrem Valsalvy może gwałtownie podnieść ciśnienie krwi. Zamiast tego użyj sit-upów na płaskim podłożu lub spinania na wyciągu do czasu ustabilizowania ciśnienia.",
+      "alternative": "cable-crunch"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Heavy rectus abdominis loading can worsen midline separation (postpartum or otherwise). Rebuild transverse abdominis and obliques first; reintroduce after closure to <2 finger-widths.",
+      "modificationPl": "Ciężkie obciążanie mięśnia prostego brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Najpierw odbuduj mięsień poprzeczny brzucha i skośne; wracaj dopiero po zamknięciu rozejścia do <2 palców.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, plate 5-15 kg) | 3x6-8 (strength, plate 15-25 kg) | 3x15-20 (endurance, light plate)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "weighted-decline-sit-up.gif",
+    "frames_extracted": [
+      "frames/weighted-decline-sit-up/frame_0_start.png",
+      "frames/weighted-decline-sit-up/frame_1_early.png",
+      "frames/weighted-decline-sit-up/frame_2_mid.png",
+      "frames/weighted-decline-sit-up/frame_3_late.png",
+      "frames/weighted-decline-sit-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/weighted-decline-sit-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): ćwiczący leży na ławce skośnej (głowa niżej, biodra wyżej), stopy zaczepione pod górnymi wałkami, oburącz trzyma talerz obciążeniowy z uchwytem na klatce piersiowej — anatomia podświetla mięsień prosty brzucha. Klatka 2 (mid): pełny sit-up — tułów prostopadły do podłogi, kolana zgięte, kręgosłup zgięty, ramiona z talerzem nad głową w trakcie ruchu, brzuch mocno spięty. Klatka 4 (end): powrót do pozycji wyjściowej z 'duchem' fazy szczytowej w tle. Ruch potwierdzony: pełny sit-up na decline bench z dodatkowym obciążeniem trzymanym na klatce (talerz z uchwytem). Klasyfikacja: core_flexion (zgięcie kręgosłupa + zgięcie biodra), mechanic=isolation (głównie 1 grupa — rectus_abdominis pomimo dwóch stawów; standardowa konwencja dla sit-up/crunch), bilateral, sagittal, force=both (silna faza koncentryczna + obciążona faza ekscentryczna pod kontrolą). Primary: rectus_abdominis (P10 — flagowe ćwiczenie obciążone). Secondary: hip_flexors (S8 — wyraźnie pracują w drugiej połowie ruchu), obliques (S6 — stabilizacja). Equipment: decline_bench + weight_plate (jak na klatce). Nazwa PL: 'Brzuszki na ławce skośnej z obciążeniem' to najczęstsza polska forma w siłowniach; dodałem aliasy zarówno angielskie jak i opisowe polskie. Difficulty=6 (intermediate) — wymaga opanowanego wzorca sit-up + tolerancji na obciążone zgięcie kręgosłupa. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego, z uwzględnieniem realiów polskiej siłowni.",
+
+  "tags": ["weighted", "core", "abs", "decline_bench", "hypertrophy", "strength", "gym", "loaded_flexion"]
+}

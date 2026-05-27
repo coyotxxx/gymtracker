@@ -1,0 +1,204 @@
+{
+  "id": "barbell-drag-curl",
+  "name": "Barbell Drag Curl",
+  "namePl": "Drag curl ze sztangą",
+  "aliases": ["drag curl", "vince gironda drag curl", "bb drag curl", "torso drag curl"],
+  "aliasesPl": ["drag curl ze sztangą prostą", "uginanie sztangi wzdłuż tułowia", "drag curl Vince'a Girondy"],
+
+  "description": "A unique variation of the barbell curl popularized by golden-era trainer Vince Gironda. Instead of curling the bar in an arc out in front of the body, the lifter pulls the elbows backward behind the torso line so the bar literally drags up the front of the body, never losing contact with the abdomen and chest. This trajectory keeps the line of force closer to the long head of the biceps brachii, removes the anterior deltoid's leverage to assist, and creates constant tension on the biceps throughout the (shorter) range of motion. The range is intentionally limited — the bar stops at the lower chest, never higher.",
+  "descriptionPl": "Wyjątkowa odmiana uginania ze sztangą spopularyzowana przez Vince'a Girondę, legendarnego trenera z lat 60. Zamiast uginać sztangę po łuku przed sobą, ćwiczący odciąga łokcie do tyłu za linię tułowia, tak że sztanga dosłownie 'sunie' (drag) w górę po przedniej części ciała, nie tracąc kontaktu z brzuchem i klatką. Taka trajektoria utrzymuje linię siły bliżej długiej głowy bicepsa, odbiera przednim aktonom barków dźwignię do pomagania i wymusza stałe napięcie na bicepsie przez cały (krótszy) zakres ruchu. Zakres jest celowo ograniczony — sztanga kończy ruch na wysokości dolnej klatki, nigdy wyżej.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grip a barbell with a supinated (palms up) grip slightly wider than shoulder-width.",
+    "Hold the bar at arms' length in front of your thighs with the bar touching your body. This is your start position.",
+    "Brace your core, lift your chest, and pin your shoulder blades back and down.",
+    "Begin the rep by simultaneously bending the elbows AND pulling them backward behind your torso. The bar must stay in contact with your body — it 'drags' up the abdomen.",
+    "Continue dragging the bar up your torso until it reaches your lower chest / upper abdomen. Your elbows will be well behind your sides at the top.",
+    "Squeeze the biceps hard for a brief pause — focus on the long head along the outside of the upper arm.",
+    "Lower the bar under control, keeping it in contact with your body the entire descent. Reverse the path until arms are fully extended.",
+    "Do not let the bar drift away from your torso at any point. Do not shrug the shoulders to lift the bar higher than the lower chest."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap sztangę nachwytem dolnym (dłonie skierowane w górę) nieco szerzej niż na szerokość barków.",
+    "Trzymaj sztangę na wyprostowanych ramionach przed udami, tak by dotykała ciała. To pozycja startowa.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij łopatki w tył i w dół.",
+    "Zacznij powtórzenie jednocześnie zginając łokcie I odciągając je do tyłu, za linię tułowia. Sztanga musi pozostać w kontakcie z ciałem — 'sunie' w górę po brzuchu.",
+    "Kontynuuj 'sunięcie' sztangi w górę aż dotrze do dolnej klatki piersiowej / górnej części brzucha. Łokcie będą wtedy mocno za linią tułowia.",
+    "Mocno spinaj biceps na chwilę w górnej pozycji — skoncentruj się na długiej głowie po zewnętrznej stronie ramienia.",
+    "Opuszczaj sztangę w sposób kontrolowany, utrzymując kontakt z ciałem przez cały ruch w dół. Wracaj tą samą drogą aż do pełnego wyprostu ramion.",
+    "Nie pozwól sztandze oddalić się od tułowia w żadnym momencie. Nie wzruszaj barkami aby unieść sztangę wyżej niż dolna klatka."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["posterior_deltoid", "brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "core", "upper_trapezius", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "posterior_deltoid": "S5",
+    "brachialis": "S4",
+    "brachioradialis": "T3",
+    "forearm_flexors": "T3",
+    "rhomboids": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps", "smith_machine"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-curl", "dumbbell-curl"],
+    "progression_to": ["smith-machine-drag-curl", "behind-the-back-cable-curl", "spider-curl"],
+    "alternatives": ["barbell-curl", "ez-bar-curl", "incline-dumbbell-curl", "preacher-curl", "behind-the-back-cable-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft, vertical torso",
+      "Supinated grip slightly wider than shoulders",
+      "Bar touching the front of your thighs",
+      "Chest tall, shoulder blades retracted and depressed",
+      "Brace core — torso must stay vertical the whole set"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte, tułów pionowy",
+      "Chwyt nachwytem dolnym nieco szerzej niż barki",
+      "Sztanga dotyka przedniej części ud",
+      "Klatka w górze, łopatki ściągnięte w tył i w dół",
+      "Napnij brzuch — tułów musi pozostać pionowy przez całą serię"
+    ],
+    "execution_cues": [
+      "Drive the elbows BACKWARD — not forward — as you curl",
+      "Bar slides up the body — never leaves your torso",
+      "Stop at the lower chest, do not curl higher",
+      "Feel the squeeze in the outer head of the biceps",
+      "Lower slowly, bar still touching your skin"
+    ],
+    "execution_cues_pl": [
+      "Odciągaj łokcie DO TYŁU — nie do przodu — w trakcie uginania",
+      "Sztanga ślizga się po ciele — nie odrywa się od tułowia",
+      "Zakończ na wysokości dolnej klatki, nie wyżej",
+      "Czuj skurcz w zewnętrznej (długiej) głowie bicepsa",
+      "Opuszczaj wolno, sztanga ciągle dotyka ciała"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drift forward like a standard curl",
+        "faultPl": "Łokcie wędrują do przodu jak w klasycznym uginaniu",
+        "cause": "Lifter defaults to the more familiar curl pattern; load too heavy to maintain the drag",
+        "causePl": "Ćwiczący wraca do bardziej znanego wzorca klasycznego curla; ciężar zbyt duży aby utrzymać drag",
+        "cue": "Actively think 'elbows back' on every rep. Reduce weight 30-40% versus standard curl.",
+        "cuePl": "Aktywnie myśl 'łokcie w tył' przy każdym powtórzeniu. Zmniejsz ciężar o 30-40% w porównaniu do klasycznego curla."
+      },
+      {
+        "fault": "Bar swings away from the torso",
+        "faultPl": "Sztanga odrywa się od tułowia",
+        "cause": "Loss of the defining feature of the drag curl — usually from fatigue or trying to load too heavy",
+        "causePl": "Utrata głównej cechy drag curla — zwykle od zmęczenia lub próby zaaplikowania zbyt dużego ciężaru",
+        "cue": "If the bar leaves the body, the set is over. Use lighter weight to keep contact through the full range.",
+        "cuePl": "Jeśli sztanga opuści ciało — seria zakończona. Użyj lżejszego ciężaru aby utrzymać kontakt przez cały zakres."
+      },
+      {
+        "fault": "Trying to curl too high (past the lower chest)",
+        "faultPl": "Próba uniesienia sztangi za wysoko (powyżej dolnej klatki)",
+        "cause": "Misunderstanding the exercise — applying standard curl ROM expectations to a deliberately shorter movement",
+        "causePl": "Niezrozumienie ćwiczenia — stosowanie zakresu ruchu z klasycznego curla do celowo krótszego ruchu",
+        "cue": "The bar stops at the lower chest. Higher than that and you're cheating with shoulders.",
+        "cuePl": "Sztanga kończy ruch na dolnej klatce. Wyżej oznacza oszukiwanie barkami."
+      },
+      {
+        "fault": "Shoulder shrugging or trapezius activation",
+        "faultPl": "Wzruszanie ramionami lub angażowanie czworobocznych",
+        "cause": "Compensating with the upper traps when the elbows cannot pull further back",
+        "causePl": "Kompensacja czworobocznymi gdy łokcie nie mogą już cofnąć się dalej",
+        "cue": "Keep shoulders DOWN throughout. If you need to shrug to finish — the rep ended too late.",
+        "cuePl": "Trzymaj barki W DÓŁ przez cały ruch. Jeśli musisz wzruszyć ramionami aby skończyć — powtórzenie skończyło się zbyt późno."
+      },
+      {
+        "fault": "Leaning back to make room for the bar",
+        "faultPl": "Odchylanie się do tyłu aby zrobić miejsce dla sztangi",
+        "cause": "Limited shoulder extension mobility or load too heavy; lumbar hyperextension to clear the abdomen",
+        "causePl": "Ograniczona mobilność wyprostu w stawie barkowym lub zbyt duży ciężar; hiperekstensja lędźwiowa by ominąć brzuch",
+        "cue": "Stay vertical. Brace the abs hard. If you cannot reach the chest without leaning, work on shoulder extension mobility.",
+        "cuePl": "Stój pionowo. Mocno napnij brzuch. Jeśli nie potrafisz dojść do klatki bez odchylenia, popraw mobilność wyprostu barku."
+      }
+    ],
+    "breathing": "Exhale during the concentric (drag up). Inhale during the eccentric (controlled descent). Keep a steady abdominal brace to prevent any lumbar leaning back.",
+    "breathingPl": "Wydech w fazie koncentrycznej (sunięcie w górę). Wdech w fazie ekscentrycznej (kontrolowane opuszczanie). Utrzymuj stałe napięcie brzucha aby zapobiec odchylaniu się w odcinku lędźwiowym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "modify",
+      "modification": "The shoulder-extended position at the top can compress anterior structures in some lifters. Reduce ROM at the top, keep elbows closer to the sides instead of fully back, or substitute incline dumbbell curl.",
+      "modificationPl": "Pozycja wyprostu w stawie barkowym w górnym położeniu może uciskać struktury przednie u niektórych ćwiczących. Zmniejsz zakres w górze, trzymaj łokcie bliżej boków zamiast w pełni z tyłu, lub zamień na incline dumbbell curl.",
+      "alternative": "incline-dumbbell-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Constant tension on the biceps long head can aggravate distal tendon issues. Use EZ-bar to reduce supination stress, lighter loads (12-15 reps), no heavy eccentrics.",
+      "modificationPl": "Stałe napięcie na długiej głowie bicepsa może drażnić dystalny przyczep ścięgna. Użyj sztangi łamanej aby zmniejszyć stres supinacyjny, lżejsze ciężary (12-15 powtórzeń), bez ciężkich faz negatywnych.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locks wrists in full supination while the bar drags across the body, adding pressure. Use EZ-bar drag curl or switch to dumbbells held in a neutral grip.",
+      "modificationPl": "Sztanga prosta blokuje nadgarstki w pełnej supinacji podczas gdy sztanga sunie po ciele, dodając nacisk. Użyj wariantu z łamaną sztangą lub przejdź na hantle w chwycie neutralnym.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "lumbar_spine_instability",
+      "severity": "caution",
+      "modification": "Standing version requires strict bracing — many lifters compensate with lumbar hyperextension to make room for the bar. Use a Smith-machine drag curl or seated incline dumbbell curl.",
+      "modificationPl": "Wersja stojąca wymaga ścisłego napięcia — wielu ćwiczących kompensuje hiperekstensją lędźwiową aby zrobić miejsce sztandze. Użyj drag curla w maszynie Smitha lub siedzącego incline dumbbell curl.",
+      "alternative": "incline-dumbbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — best application) | 3x12-15 (finisher / pump) | NOT recommended for low-rep strength work due to limited ROM and lighter loads",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-drag-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-drag-curl/frame_0_start.png",
+      "frames/barbell-drag-curl/frame_1_early.png",
+      "frames/barbell-drag-curl/frame_2_mid.png",
+      "frames/barbell-drag-curl/frame_3_late.png",
+      "frames/barbell-drag-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/barbell-drag-curl",
+    "yuhonas_id": "Drag_Curl",
+    "glowupp_id": "barbell_drag_curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start): pełny wyprost, sztanga przed udami dotyka ciała, biceps + bocznych deltoidów podświetlone. Frame 1 (early): sztanga ślizga się po brzuchu, łokcie zaczynają iść do tyłu (nie do przodu!), widoczne zaangażowanie tylnych aktonów barku. Frame 2 (mid/top): sztanga na wysokości dolnej klatki, łokcie wyraźnie za linią tułowia, drag jednoznacznie odróżnia ćwiczenie od klasycznego curla — bar NIE jest na wysokości barków (jak w barbell-curl frame 2), tylko niżej. Frame 3 (descent): kontrolowane opuszczanie, sztanga nadal w kontakcie z ciałem. Frame 4 (end): powrót do startu z 'ghostem' fazy szczytowej widocznym powyżej. Tułów nieruchomy, pionowy przez cały ruch. Yuhonas potwierdza 'elbows close to torso and BACK' + 'drag bar up by keeping it in contact with your torso'. Glowupp potwierdza 'constant tension' i 'reduces front deltoid involvement'. Klasyfikacja: isolation (mimo że yuhonas dał compound — ruch tylko w łokciu i barku z minimalną ekstensją, technicznie wciąż 1 staw jest primary, a drugi to akcesoryjne shoulder extension dla wzorca dragu — klasyfikuję jako isolation_curl zgodnie z barbell-curl). Mięśnie wg specu: biceps_brachii P10 (akcent na long head), posterior_deltoids S5 (aktywny pull-back łokci). Difficulty 5 — wymaga świadomości mind-muscle, intermediate. Wszystkie pola PL napisane od zera, nie tłumaczone z angielskiego.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "barbell", "upper_body", "golden_era", "vince_gironda", "long_head_emphasis", "constant_tension"]
+}

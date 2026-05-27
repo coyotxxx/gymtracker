@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-alternate-preacher-curl",
+  "name": "Dumbbell Alternate Preacher Curl",
+  "namePl": "Naprzemienne uginanie ramion z hantlami na modlitewniku",
+  "aliases": ["alternating dumbbell preacher curl", "alternating scott curl with dumbbells", "preacher bench alternating curl", "dumbbell alternating scott curl"],
+  "aliasesPl": ["naprzemienne uginanie hantli na modlitewniku", "alternating preacher curl z hantlami", "modlitewnik naprzemiennie z hantlami", "scott curl naprzemienny z hantlami"],
+
+  "description": "Strict biceps isolation performed on a preacher (Scott) bench with two dumbbells curled one arm at a time. Both upper arms remain supported on the angled pad throughout the entire set — the working arm curls a dumbbell up while the opposite arm holds an isometric position at the bottom. Because the pad eliminates body english and the alternating tempo lets you focus 100% of mental drive on one biceps at a time, this is one of the cleanest unilateral hypertrophy exercises for the lower biceps and brachialis. The free dumbbell grip also lets each forearm supinate naturally, sparing wrists that struggle on a straight bar.",
+  "descriptionPl": "Ścisłe ćwiczenie izolowane na biceps wykonywane na ławce modlitewnika (Scotta) z dwoma hantlami uginanymi naprzemiennie — jedno ramię w danym momencie. Oba ramiona ponad łokciem są oparte na skośnej podstawce przez całą serię — pracujące ramię unosi hantel w górę, drugie utrzymuje pozycję izometryczną w dolnej fazie. Ponieważ podstawka eliminuje bujanie tułowiem, a naprzemienne tempo pozwala skupić 100% uwagi na jednym bicepsie naraz, jest to jedno z najczystszych jednostronnych ćwiczeń na hipertrofię dolnej części dwugłowego i mięśnia ramiennego (brachialis). Swobodny chwyt hantla pozwala każdemu przedramieniu na naturalną supinację, co odciąża nadgarstki, które źle znoszą sztangę prostą.",
+
+  "instructions": [
+    "Set the preacher bench so that the top of the pad sits in your armpits when you lean forward. Pick up two dumbbells of the same weight.",
+    "Sit down on the bench and rest the back of both upper arms flat against the pad, elbows roughly shoulder-width apart. Hold the dumbbells with a supinated grip (palms facing up) and let both arms hang slightly bent at the elbow (~10°) — never fully locked out.",
+    "Brace your core, keep your chest tall and your feet planted. This is the starting position.",
+    "Curl ONE dumbbell upward by flexing only at the elbow. Exhale on the way up. Keep the upper arm of the working side glued to the pad. The non-working arm stays in the bottom isometric hold.",
+    "Continue until the forearm is roughly vertical and the biceps is fully contracted. Squeeze for 1 second at the top.",
+    "Lower that same dumbbell under control over 2-3 seconds back to the start position. Inhale during the descent. Stop just before full elbow extension.",
+    "Without resting, repeat the rep with the OTHER arm. One rep on each arm = one alternating cycle (count both arms or count each as one rep — be consistent).",
+    "Keep the rhythm steady. The arm waiting at the bottom is doing useful isometric work — do not let it rest fully or sag below the protected start angle."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę modlitewnika tak, aby górna krawędź podstawki opierała się w pachach gdy pochylisz się do przodu. Weź dwa hantle o tym samym ciężarze.",
+    "Usiądź na ławce i oprzyj tylną stronę obu ramion ponad łokciem płasko o podstawkę, łokcie mniej więcej na szerokość barków. Trzymaj hantle chwytem supinowanym (dłonie skierowane do góry) i pozwól obu ramionom zwisać w lekkim zgięciu w łokciu (~10°) — nigdy w pełnym wyproście.",
+    "Napnij brzuch, trzymaj klatkę wysoko i stopy płasko na podłodze. To pozycja startowa.",
+    "Uginaj JEDEN hantel zginając wyłącznie w łokciu. Wydychaj w fazie wznoszenia. Ramię ponad łokciem pracującej strony ma pozostać przyklejone do podstawki. Drugie ramię trzyma izometrię w dolnej pozycji.",
+    "Kontynuuj aż przedramię będzie w przybliżeniu pionowo, a biceps w pełnym skurczu. Spinaj przez 1 sekundę w szczycie.",
+    "Opuszczaj ten sam hantel kontrolowanie przez 2-3 sekundy do pozycji startowej. Wdech w fazie ekscentrycznej. Zatrzymaj się tuż przed pełnym wyprostem łokcia.",
+    "Bez przerwy powtórz ruch DRUGIM ramieniem. Jedno powtórzenie każdym ramieniem = jeden cykl naprzemienny (licz oba ramiona lub każde jako osobne powtórzenie — zachowaj spójność).",
+    "Utrzymuj równe tempo. Ramię czekające w dolnej pozycji wykonuje użyteczną pracę izometryczną — nie pozwól mu odpocząć całkiem ani opaść poniżej bezpiecznego kąta startowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "upper_trapezius", "core"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S8",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "upper_trapezius": "T1",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["preacher_bench", "dumbbells"],
+    "optional": ["wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl", "alternate-incline-dumbbell-curl"],
+    "progression_to": ["dumbbell-preacher-curl", "single-arm-dumbbell-preacher-curl", "spider-curl"],
+    "alternatives": ["dumbbell-preacher-curl", "barbell-preacher-curl", "ez-bar-preacher-curl", "alternate-incline-dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pad sits high — top edge in the armpit, not on the chest",
+      "Both upper arms flat on the pad, elbows shoulder-width",
+      "Supinated grip (palms up), wrists neutral and straight",
+      "Slight bend at both elbows in start — never fully locked",
+      "Feet flat, chest tall, no leaning back off the seat"
+    ],
+    "setup_cues_pl": [
+      "Podstawka wysoko — górna krawędź w pasze, nie na klatce",
+      "Oba ramiona ponad łokciem płasko na podstawce, łokcie na szerokość barków",
+      "Chwyt supinowany (dłonie do góry), nadgarstki neutralne i proste",
+      "Lekkie zgięcie obu łokci w pozycji startowej — nigdy pełen wyprost",
+      "Stopy płasko, klatka wysoko, nie odchylaj się od siedziska"
+    ],
+    "execution_cues": [
+      "One arm at a time — full focus on the curling side",
+      "Squeeze hard for 1 second at the top, then lower 3 seconds",
+      "Non-working arm holds the isometric — do not let it drop dead",
+      "Keep BOTH upper arms glued to the pad the whole set",
+      "No rocking the torso to help the curl — pad does the locking"
+    ],
+    "execution_cues_pl": [
+      "Jedno ramię naraz — pełna koncentracja na uginającej stronie",
+      "Mocno spinaj przez 1 sekundę w szczycie, potem opuszczaj 3 sekundy",
+      "Drugie ramię trzyma izometrię — nie pozwól mu zwiotczeć",
+      "Trzymaj OBA ramiona ponad łokciem przyklejone do podstawki przez całą serię",
+      "Nie bujaj tułowiem do pomocy — podstawka ma blokować ruch"
+    ],
+    "common_faults": [
+      {
+        "fault": "Locking out the elbow at the bottom of each rep",
+        "faultPl": "Pełen wyprost łokcia w dolnej pozycji każdego powtórzenia",
+        "cause": "Letting gravity pull the dumbbell down without active control on the eccentric",
+        "causePl": "Pozwalanie grawitacji opuścić hantel bez aktywnej kontroli fazy negatywnej",
+        "cue": "Stop the descent with the elbow at ~10° flexion. The preacher pad position multiplies stretch on the distal biceps tendon — full lockout under load is the #1 cause of biceps tendon tears here.",
+        "cuePl": "Zatrzymaj opuszczanie przy łokciu zgiętym do ~10°. Kąt podstawki potęguje rozciąganie dystalnego ścięgna bicepsa — pełny wyprost pod obciążeniem jest tu główną przyczyną zerwań ścięgna."
+      },
+      {
+        "fault": "Non-working arm sags and drops fully when the other is curling",
+        "faultPl": "Drugie ramię opada w pełen wyprost gdy pierwsze pracuje",
+        "cause": "Treating the isometric arm as 'rest' — it's still under load on a preacher pad",
+        "causePl": "Traktowanie ramienia izometrycznego jako 'odpoczynku' — nadal jest pod obciążeniem na modlitewniku",
+        "cue": "Hold the resting arm at ~15-20° elbow flexion — do not let it dangle in full extension. It costs little energy but protects the tendon.",
+        "cuePl": "Trzymaj odpoczywające ramię w ~15-20° zgięcia łokcia — nie pozwól mu zwisać w pełnym wyproście. Kosztuje to mało energii, a chroni ścięgno."
+      },
+      {
+        "fault": "Twisting the torso toward the working arm (kipping)",
+        "faultPl": "Skręcanie tułowia w stronę pracującego ramienia (kipping)",
+        "cause": "Weight too heavy, or trying to grind out reps past technical failure",
+        "causePl": "Zbyt duży ciężar, lub forsowanie powtórzeń po technicznym wyczerpaniu",
+        "cue": "Keep the chest square to the pad. If the torso rotates, the set is over — drop weight by 20%.",
+        "cuePl": "Klatka kwadratowo do podstawki. Jeśli tułów się obraca — seria jest skończona, zmniejsz ciężar o 20%."
+      },
+      {
+        "fault": "Wrist breaking (curling at the top with the wrist)",
+        "faultPl": "Załamanie nadgarstka (uginanie w nadgarstku w szczycie)",
+        "cause": "Trying to add extra ROM after the biceps has fully contracted",
+        "causePl": "Próba dodania zakresu ruchu po pełnym skurczu bicepsa",
+        "cue": "Lock the wrists straight from start to finish. The forearm and the dumbbell move as one unit.",
+        "cuePl": "Zablokuj nadgarstki prosto od startu do końca. Przedramię i hantel poruszają się jak jedna sztywna jednostka."
+      },
+      {
+        "fault": "Asymmetric reps — one arm stronger so its tempo is faster",
+        "faultPl": "Asymetryczne powtórzenia — silniejsze ramię ma szybsze tempo",
+        "cause": "Existing strength imbalance, or lack of attention to the weaker side",
+        "causePl": "Istniejąca asymetria siłowa, lub brak uwagi na słabszą stronę",
+        "cue": "Match tempo on both sides (2s up, 1s squeeze, 3s down). Start each set with the WEAKER arm so it sets the standard — the stronger arm matches it.",
+        "cuePl": "Dopasuj tempo po obu stronach (2s w górę, 1s skurcz, 3s w dół). Zaczynaj każdą serię SŁABSZYM ramieniem aby to ono ustalało wzorzec — silniejsze ramię się do niego dostosowuje."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up) on each arm. Inhale during the eccentric (lower down). Maintain a light brace throughout to stabilise the torso against the pad.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uginanie w górę) każdym ramieniem. Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie tułowia aby stabilizować się na podstawce."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Preacher position puts maximum stress on the distal biceps tendon in the stretched position. Switch to standing curls with shorter ROM, or rest from direct biceps work until pain-free.",
+      "modificationPl": "Pozycja modlitewnika daje maksymalny stres na dystalne ścięgno bicepsa w pozycji rozciągniętej. Przejdź na uginania stojąc z krótszym zakresem ruchu, lub odpocznij od bicepsa do zakresu bez bólu.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "The stretched eccentric loads the flexor tendons heavily. Reduce load by 30%, raise reps to 12-15, avoid full elbow extension, and stop the set at the first sign of medial elbow pain.",
+      "modificationPl": "Faza negatywna w rozciągnięciu mocno obciąża ścięgna zginaczy. Zmniejsz ciężar o 30%, zwiększ powtórzenia do 12-15, unikaj pełnego wyprostu łokcia, i przerwij serię przy pierwszych oznakach bólu po przyśrodkowej stronie łokcia.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "Free dumbbells already allow natural wrist supination (a benefit over the straight bar), but heavy loads still stress the wrist. Reduce load, use wrist wraps, and keep wrists strictly neutral (no curling at the top).",
+      "modificationPl": "Swobodne hantle pozwalają na naturalną supinację nadgarstka (zaleta nad sztangą prostą), ale duże ciężary i tak obciążają nadgarstek. Zmniejsz ciężar, użyj wrist wraps i trzymaj nadgarstki ściśle neutralnie (bez uginania w szczycie).",
+      "alternative": "ez-bar-preacher-curl"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "The fixed shoulder position against the pad may stress the anterior capsule in some people. Adjust the pad to a steeper angle so the arms hang more vertically, or switch to standing alternating curls.",
+      "modificationPl": "Stała pozycja barku na podstawce może stresować przednią torebkę stawową u niektórych osób. Ustaw podstawkę pod większym kątem aby ramiona zwisały bardziej pionowo, lub przejdź na naprzemienne uginania stojąc.",
+      "alternative": "alternate-incline-dumbbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 na ramię (hipertrofia, główne zastosowanie) | 3x10-15 na ramię (pump/wykończenie bicepsa) | 4x6-8 na ramię (siła, rzadko)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-alternate-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-alternate-preacher-curl/frame_0_start.png",
+      "frames/dumbbell-alternate-preacher-curl/frame_1_early.png",
+      "frames/dumbbell-alternate-preacher-curl/frame_2_mid.png",
+      "frames/dumbbell-alternate-preacher-curl/frame_3_late.png",
+      "frames/dumbbell-alternate-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-alternate-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): atleta siedzi na ławce modlitewnika z dwoma hantlami, oba ramiona ponad łokciem oparte płasko na skośnej podstawce, LEWA ręka w pełnym skurczu (hantel przy ramieniu, biceps podświetlony na czerwono), PRAWA ręka w dolnej pozycji w lekkim zgięciu — klasyczny obraz naprzemiennej fazy. Chwyt supinowany (dłonie skierowane do góry/do siebie), nadgarstki neutralne. Frame 2 (mid): faza odwrócona — PRAWA ręka teraz w szczycie skurczu z bicepsem podświetlonym, LEWA ręka opuszcza się w dół, oba ramiona nadal mocno przyklejone do podstawki. Frame 4 (end): obie ręce w pozycji środkowej z motion blur sugerującym ruch — widoczne 'ghosty' poprzednich pozycji co potwierdza naprzemienny rytm. Ławka modlitewnika z trójnogim stojakiem widoczna jednoznacznie. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Alternate Preacher Curl. Wszystkie pola PL napisane od zera w polskim standardzie fitness (modlitewnik, scott curl, naprzemienne uginanie). Klasyfikacja: laterality=unilateral_alternating (kluczowa różnica od dumbbell-preacher-curl).",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbell", "preacher_bench", "upper_body", "scott", "unilateral", "alternating"]
+}

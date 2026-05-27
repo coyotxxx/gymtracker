@@ -1,0 +1,202 @@
+{
+  "id": "smith-shrug",
+  "name": "Smith Machine Shrug",
+  "namePl": "Wzruszenia barkami na maszynie Smitha",
+  "aliases": ["smith machine shrug", "smith shrug", "smith machine trap shrug"],
+  "aliasesPl": ["szrugsy na smith machine", "wzruszenia barkami na smithcie", "wzruszenia ramion na maszynie Smitha", "szrugsy na maszynie Smitha"],
+
+  "description": "Isolation exercise for the upper trapezius performed standing inside a Smith machine, holding the fixed-path barbell with arms hanging straight down. The movement consists purely of scapular elevation — lifting the shoulders straight up toward the ears against gravity. The Smith machine's vertical guide rails lock the bar onto a perfectly vertical path, which removes the need to balance the bar and lets the lifter focus 100% of attention on contracting the upper traps. The guided path also allows safe training to near failure (no fear of losing the bar forward or back) and frequently permits heavier loading than free-weight shrugs for trained lifters who can already shrug their bodyweight with good form.",
+  "descriptionPl": "Ćwiczenie izolowane na górne aktony mięśnia czworobocznego (kapturowego) wykonywane stojąc wewnątrz maszyny Smitha, z prowadzoną sztangą trzymaną na wyprostowanych ramionach przed udami. Ruch polega wyłącznie na elewacji łopatek — unoszeniu barków prosto w górę w kierunku uszu przeciwko grawitacji. Pionowe prowadnice maszyny Smitha blokują sztangę na idealnie pionowym torze, co eliminuje konieczność balansowania ciężarem i pozwala skierować 100% uwagi na napinanie górnych kapturów. Prowadzony tor umożliwia również bezpieczny trening blisko upadku mięśniowego (brak obawy przed utratą kontroli nad sztangą w przód lub w tył) i często pozwala na większe obciążenie niż w wersji z wolną sztangą u zaawansowanych zawodników.",
+
+  "instructions": [
+    "Set the Smith machine bar at hip height. Stand inside the rack with feet hip-width apart, body positioned directly under the bar so the bar will travel up your front side without scraping the thighs.",
+    "Grip the bar with a pronated (overhand) grip slightly wider than shoulder-width, palms facing your thighs. Unrack by rotating the wrists to release the safety hooks.",
+    "Let the bar hang at arms' length in front of your thighs with elbows fully extended and shoulders fully depressed. Brace your core, lift your chest and keep the neck neutral.",
+    "Keep the arms completely straight throughout the entire set — they are just hooks holding the bar.",
+    "Initiate the movement by elevating both shoulders straight up toward your ears. Exhale on the way up.",
+    "Lift as high as you can. Pause and squeeze the upper traps hard at the top for 1-2 seconds.",
+    "Lower the shoulders under control back to the fully depressed (relaxed) starting position. Inhale on the descent.",
+    "Do not bend the elbows, do not bounce, do not lean forward or backward — the Smith bar dictates a pure vertical path and your body must stay vertical with it. After the last rep, re-rack by rotating the wrists."
+  ],
+  "instructionsPl": [
+    "Ustaw drążek maszyny Smitha na wysokości bioder. Stań wewnątrz ramy ze stopami na szerokość bioder, ciało dokładnie pod drążkiem tak aby sztanga przesuwała się w górę wzdłuż przedniej strony tułowia bez ocierania o uda.",
+    "Złap drążek nachwytem górnym (dłonie skierowane w dół) nieco szerzej niż na szerokość barków. Wypnij sztangę z zaczepów obracając nadgarstki.",
+    "Pozwól sztandze wisieć na w pełni wyprostowanych ramionach przed udami, z barkami w pełnej depresji. Napnij brzuch, unieś klatkę piersiową, szyja neutralna.",
+    "Trzymaj ramiona całkowicie wyprostowane przez całą serię — pełnią rolę zaczepów trzymających sztangę.",
+    "Rozpocznij ruch unosząc oba barki prosto w górę w kierunku uszu. Wydech w trakcie unoszenia.",
+    "Unieś tak wysoko jak możesz. W górnej pozycji zatrzymaj się i mocno spinaj górne kaptury przez 1-2 sekundy.",
+    "Opuszczaj barki w sposób kontrolowany do pełnej depresji łopatek (pozycji wyjściowej). Wdech w trakcie opuszczania.",
+    "Nie zginaj łokci, nie odbijaj, nie pochylaj się w przód ani w tył — drążek Smitha narzuca czysto pionowy tor i twoje ciało musi pozostać pionowe razem z nim. Po ostatnim powtórzeniu zapnij sztangę z powrotem na zaczepy obracając nadgarstki."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_shrug",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_upper"],
+    "secondary": ["levator_scapulae", "rhomboids"],
+    "stabilizers": ["forearm_flexors", "core", "erector_spinae", "deltoids", "trapezius_middle"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_upper": "P10",
+    "levator_scapulae": "S6",
+    "rhomboids": "S4",
+    "forearm_flexors": "T4",
+    "trapezius_middle": "T3",
+    "deltoids": "T1",
+    "core": "T1",
+    "erector_spinae": "T1"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["weight_plates", "collars", "lifting_straps", "wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-shrug"],
+    "progression_to": ["barbell-shrug", "behind-the-back-smith-shrug", "heavy-barbell-shrug"],
+    "alternatives": ["barbell-shrug", "dumbbell-shrug", "cable-shrug", "trap-bar-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at hip height, body positioned directly under the bar",
+      "Feet hip-width, knees soft, stand tall",
+      "Pronated grip slightly wider than shoulders",
+      "Arms fully straight — they are hooks, not levers",
+      "Chest up, neck neutral, eyes forward"
+    ],
+    "setup_cues_pl": [
+      "Drążek na wysokości bioder, ciało dokładnie pod sztangą",
+      "Stopy na szerokość bioder, kolana lekko ugięte, stań prosto",
+      "Nachwyt górny nieco szerzej niż barki",
+      "Ramiona całkowicie wyprostowane — pełnią rolę zaczepów, nie dźwigni",
+      "Klatka w górze, szyja neutralna, wzrok przed siebie"
+    ],
+    "execution_cues": [
+      "Shrug straight up to the ears — the Smith path is already vertical, follow it",
+      "Squeeze and hold at the top for 1-2 seconds — this is where the trap grows",
+      "Lower slowly — fight the eccentric, do not let the bar drop",
+      "Keep elbows locked — no biceps cheating",
+      "Stay tall under the bar — do not lean back to compensate for heavy load"
+    ],
+    "execution_cues_pl": [
+      "Wzruszaj prosto w górę do uszu — tor Smitha już jest pionowy, podążaj za nim",
+      "Spinaj i przytrzymaj w górnej pozycji 1-2 sekundy — to tu rośnie kaptur",
+      "Opuszczaj wolno — kontroluj fazę negatywną, nie pozwól sztandze opaść",
+      "Łokcie zablokowane wyprostowane — żadnego oszukiwania bicepsem",
+      "Stój prosto pod drążkiem — nie odchylaj się do tyłu kompensując ciężarem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows and using biceps",
+        "faultPl": "Zginanie łokci i włączanie bicepsa",
+        "cause": "Load too heavy for the upper traps alone, fatigue late in the set",
+        "causePl": "Zbyt duży ciężar dla samego górnego kaptura, zmęczenie pod koniec serii",
+        "cue": "Lock the elbows straight from the first rep. Arms are hooks, not levers. If you cannot keep them straight, reduce the load.",
+        "cuePl": "Zablokuj łokcie wyprostowane od pierwszego powtórzenia. Ramiona to zaczepy, nie dźwignie. Jeśli nie potrafisz utrzymać ich prostych, zmniejsz ciężar."
+      },
+      {
+        "fault": "Insufficient range of motion (mini-shrugs)",
+        "faultPl": "Niepełny zakres ruchu (mini-szrugsy)",
+        "cause": "Load too heavy for clean execution — ego lifting boosted by the safety of the Smith machine",
+        "causePl": "Zbyt duży ciężar dla czystej techniki — ego, podkręcone poczuciem bezpieczeństwa maszyny Smitha",
+        "cue": "Lighten the bar until you can lift the shoulders fully to the ears and lower them fully into depression. Smith safety should not become an excuse for ego loading.",
+        "cuePl": "Zmniejsz ciężar aż będziesz w stanie unieść barki w pełni do uszu i opuścić w pełni w dół (do depresji łopatek). Bezpieczeństwo Smitha nie powinno stać się wymówką do ego."
+      },
+      {
+        "fault": "Standing too far forward or behind the bar",
+        "faultPl": "Stanie zbyt daleko z przodu lub za sztangą",
+        "cause": "Poor setup — body not aligned under the vertical guide rails",
+        "causePl": "Złe ustawienie — ciało nie ustawione w osi pionowych prowadnic",
+        "cue": "Set up directly under the bar so it travels up your front side without scraping thighs and without you having to lean to reach it.",
+        "cuePl": "Ustaw się dokładnie pod drążkiem aby przesuwał się w górę wzdłuż przedniej strony tułowia, bez ocierania o uda i bez konieczności pochylania się aby do niego dosięgnąć."
+      },
+      {
+        "fault": "Fast, bouncy reps without pause at the top",
+        "faultPl": "Szybkie, odbijane powtórzenia bez pauzy w górnej pozycji",
+        "cause": "Using momentum instead of trap contraction, ignoring time-under-tension",
+        "causePl": "Wykorzystanie momentu pędu zamiast skurczu kaptura, ignorowanie czasu pod napięciem",
+        "cue": "Pause 1-2 seconds at the top of every rep. The squeeze — not the speed — is what grows the trapezius.",
+        "cuePl": "Pauzuj 1-2 sekundy na szczycie każdego powtórzenia. To skurcz — nie szybkość — buduje kaptur."
+      },
+      {
+        "fault": "Rolling the shoulders forward or backward",
+        "faultPl": "Wykonywanie kółek barkami w przód lub w tył",
+        "cause": "Old-school myth that rolling 'works the traps more'; less common in Smith due to fixed bar path but still attempted by some",
+        "causePl": "Stary mit że 'kółka lepiej angażują kaptur'; rzadsze w Smith przez stały tor sztangi, ale wciąż przez niektórych próbowane",
+        "cue": "The Smith path is a vertical line — your shoulders should follow it. Pure elevation and depression, no circles.",
+        "cuePl": "Tor Smitha to linia pionowa — twoje barki powinny za nią podążać. Czysta elewacja i depresja, żadnych kółek."
+      }
+    ],
+    "breathing": "Exhale during the shrug (concentric). Inhale during the lowering phase (eccentric). Keep a light brace throughout to protect the lower back under heavy load.",
+    "breathingPl": "Wydech w trakcie wzruszania (faza koncentryczna). Wdech w trakcie opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię aby chronić odcinek lędźwiowy przy dużym obciążeniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_spine_pain_or_disc_issues",
+      "severity": "modify",
+      "modification": "Heavy shrugs can aggravate cervical disc pathology via traction and trap hypertonus. Reduce load, perform with chin tucked and neck neutral, avoid extreme elevation. The Smith's stable path is actually helpful here as it removes the need for cervical stabilization to balance the bar.",
+      "modificationPl": "Ciężkie szrugsy mogą drażnić patologie dysków szyjnych przez trakcję i hipertonię kaptura. Zmniejsz ciężar, wykonuj z brodą lekko cofniętą i szyją neutralną, unikaj skrajnej elewacji. Stabilny tor Smitha jest tu pomocny — eliminuje potrzebę stabilizacji szyją w celu balansowania sztangą.",
+      "alternative": "trap-bar-shrug"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_disc_issues",
+      "severity": "modify",
+      "modification": "Heavy bar at arms' length axially loads the lumbar spine even in Smith machine. Use lifting belt, reduce load, or switch to seated dumbbell shrug to remove spinal compression.",
+      "modificationPl": "Ciężka sztanga na wyprostowanych ramionach obciąża osiowo odcinek lędźwiowy nawet w maszynie Smitha. Użyj pasa treningowego, zmniejsz ciężar lub przejdź na szrugsy z hantlami siedząc aby wyeliminować kompresję kręgosłupa.",
+      "alternative": "seated-dumbbell-shrug"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_pathology",
+      "severity": "modify",
+      "modification": "Elevation under heavy load can compress structures in the subacromial space if scapular kinematics are dysfunctional. Reduce range and load, focus on clean straight-up movement, address scapular control first with cable shrugs at lighter loads.",
+      "modificationPl": "Elewacja pod dużym obciążeniem może uciskać struktury w przestrzeni podbarkowej przy dysfunkcyjnej kinematyce łopatki. Zmniejsz zakres i ciężar, skup się na czystym ruchu prosto w górę, najpierw popraw kontrolę łopatki szrugsami na wyciągu z mniejszym obciążeniem.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "avoid",
+      "modification": "Chronic upper trap hypertrophy and tightness can compress the brachial plexus and vascular structures. Avoid loaded shrugs until evaluated by a specialist. Focus on lower/middle trap work instead.",
+      "modificationPl": "Przewlekły przerost i napięcie górnego kaptura mogą uciskać splot ramienny i struktury naczyniowe. Unikaj szrugsów z obciążeniem do czasu oceny przez specjalistę. Skup się na pracy dolnego i środkowego kaptura.",
+      "alternative": "face-pull"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4-5x6-8 (strength) | 2-3x15-20 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "smith-shrug.gif",
+    "frames_extracted": [
+      "frames/smith-shrug/frame_0_start.png",
+      "frames/smith-shrug/frame_1_early.png",
+      "frames/smith-shrug/frame_2_mid.png",
+      "frames/smith-shrug/frame_3_late.png",
+      "frames/smith-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/smith-shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end), widok od przodu. Frame 0 (start): atleta stoi prosto wewnątrz ramy maszyny Smitha, sztanga przed udami na w pełni wyprostowanych ramionach, barki w pełnej depresji, górne kaptury podświetlone na czerwono (mięsień pracujący). Frame 2 (mid): pełna elewacja barków — barki wyraźnie uniesione w kierunku uszu, sztanga uniesiona pionowo wzdłuż prowadnic Smitha, ramiona nadal w pełni wyprostowane (łokcie zablokowane, brak udziału bicepsa), górne kaptury maksymalnie spięte. Frame 4 (end): powrót do pełnej depresji łopatek, sztanga ponownie zwisa na wyprostowanych ramionach. Ruch ściśle wertykalny po prowadnicach Smitha — brak rotacji barków, brak kółek, brak pochylania tułowia, tułów nieruchomy. Pionowy tor maszyny widoczny w tle (białe prowadnice ramy). Klatki kalibrowe (sznurkowe) widoczne po obu stronach sztangi co potwierdza identyfikację Smith machine. Ćwiczenie jednoznacznie zidentyfikowane jako Smith Machine Shrug. Wszystkie pola PL napisane od zera w standardzie polskiego fitness. Equipment poprawnie ustawione na smith_machine. Wzorzec strukturalny przejęty z barbell-shrug z dostosowaniem opisu, instrukcji i cues do specyfiki maszyny Smitha (pionowy tor, eliminacja balansu, bezpieczeństwo blisko upadku mięśniowego).",
+
+  "tags": ["bodybuilding", "back", "upper_back", "traps", "trapezius", "isolation", "smith_machine", "upper_body", "machine", "guided"]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "lever-seated-fly",
+  "name": "Lever Seated Fly (Pec Deck)",
+  "namePl": "Fly w maszynie siedząc (pec deck)",
+  "aliases": ["pec deck", "machine fly", "butterfly machine", "seated chest fly machine", "pec deck fly", "lever pec deck"],
+  "aliasesPl": ["maszyna butterfly", "rozpiętki w maszynie siedząc", "pec deck maszyna", "rozpiętki na maszynie pec deck", "fly na maszynie siedząc", "maszyna do rozpiętek motylek"],
+
+  "description": "Classic chest isolation performed on a dedicated pec deck (butterfly) machine. The lifter sits upright with the back firmly against a pad, forearms resting against vertical lever pads, and pushes the pads together in front of the chest in a horizontal arc. Because the movement follows a fixed mechanical path, the elbow angle is set by the machine and the lifter does not need to actively manage stretch depth or stabilization — this makes it the safest fly variation and the textbook tool for direct, fatigue-isolated work on the pectoralis major. Pure horizontal adduction in the transverse plane, with the anterior deltoid as a small secondary contributor.",
+  "descriptionPl": "Klasyczna izolacja klatki piersiowej na dedykowanej maszynie pec deck (butterfly). Ćwiczący siedzi wyprostowany z plecami mocno opartymi o oparcie, przedramiona oparte na pionowych pelotach maszyny, i ściska peloty do siebie przed klatką w poziomym łuku. Ponieważ ruch porusza się po stałej, mechanicznej ścieżce, kąt w łokciu jest ustalony przez maszynę, a ćwiczący nie musi aktywnie kontrolować głębokości rozciągnięcia ani stabilizacji — czyni to najbezpieczniejszą wersję rozpiętek i podręcznikowe narzędzie do bezpośredniej, izolowanej pracy nad mięśniem piersiowym większym. Czyste przywodzenie poziome w płaszczyźnie poprzecznej, z przednim aktonem barku jako drobnym dodatkowym współpracownikiem.",
+
+  "instructions": [
+    "Set the seat height so that when you sit down with your back flat against the pad, the lever handles/pads sit roughly at chest height (not shoulder height, not stomach).",
+    "Set the start position (range) so the pads start slightly behind the line of your shoulders — enough stretch to feel the chest, but never so far back that you feel pulling in the front of the shoulder.",
+    "Sit down, back firmly flat against the pad, feet flat on the floor for stability, hips and shoulders pressed into the seat back.",
+    "Grip the handles (or press forearms into the pads, depending on machine type). Maintain a slight, comfortable bend in the elbows — the machine sets the angle, just stay relaxed in the arms.",
+    "Pull the shoulder blades back and down, chest up — keep this rigid posture for the entire set.",
+    "Exhale and squeeze the chest to bring the pads together in front of you in a smooth arc. Move the elbows, not the hands.",
+    "Pause for a 1-second squeeze when the pads meet (or come close) in front of the chest — focus on the contraction in the pecs.",
+    "Inhale and slowly let the pads travel back to the start position in 2-3 seconds. Stop when you feel a comfortable stretch — do not let the weight stack slam down or pull you past your active range.",
+    "Maintain back contact with the pad through the whole set — if your shoulders start to roll forward at the end of the stretch, reduce the range or the load."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska tak, aby gdy usiądziesz z plecami płasko opartymi o oparcie, peloty/uchwyty maszyny znalazły się mniej więcej na wysokości klatki piersiowej (nie na wysokości barków, nie żołądka).",
+    "Ustaw pozycję startową (zakres ruchu) tak, aby peloty startowały nieco za linią barków — wystarczająco aby czuć rozciągnięcie klatki, ale nigdy tak daleko, aby czuć ciągnięcie z przodu barku.",
+    "Usiądź, plecy mocno przyklejone do oparcia, stopy płasko na podłodze dla stabilności, biodra i barki wciśnięte w oparcie.",
+    "Złap uchwyty (lub oprzyj przedramiona o peloty — zależnie od typu maszyny). Utrzymuj lekkie, swobodne ugięcie w łokciach — maszyna ustawia kąt, ramiona pozostawiasz rozluźnione.",
+    "Ściągnij łopatki w dół i do tyłu, klatka wypchnięta — utrzymuj tę sztywną postawę przez całą serię.",
+    "Wydech i spinając klatkę przyciągnij peloty do siebie z przodu w płynnym łuku. Ruch wykonuj łokciami, nie dłońmi.",
+    "Zatrzymaj się na 1 sekundę spinając klatkę gdy peloty się spotkają (lub zbliżą) z przodu klatki — skup się na skurczu mięśnia piersiowego.",
+    "Wdech i powoli prowadź peloty z powrotem do pozycji startowej przez 2-3 sekundy. Zatrzymaj się gdy poczujesz komfortowe rozciągnięcie — nie pozwól by stos opadł z hukiem i nie wychodź poza swój aktywny zakres ruchu.",
+    "Utrzymuj kontakt pleców z oparciem przez całą serię — jeśli barki zaczynają się rolować do przodu na końcu rozciągnięcia, zmniejsz zakres lub ciężar."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major"],
+    "secondary": ["anterior_deltoids"],
+    "stabilizers": ["biceps_brachii", "serratus_anterior", "core"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "S4",
+    "biceps_brachii": "T2",
+    "serratus_anterior": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["pec_deck_machine"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["cable-fly", "dumbbell-fly", "incline-dumbbell-fly"],
+    "alternatives": ["cable-fly", "dumbbell-fly", "incline-dumbbell-fly", "decline-dumbbell-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height: pads at chest level, not shoulder, not stomach",
+      "Back flat against the pad, glutes back into the corner of the seat",
+      "Feet planted firmly on the floor for stability",
+      "Start range only as deep as you can hold scapular retraction",
+      "Forearms/grip relaxed — let the chest do the work, not the hands"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska: peloty na wysokości klatki, nie barków, nie żołądka",
+      "Plecy płasko do oparcia, pośladki wsunięte w róg siedziska",
+      "Stopy mocno oparte o podłogę dla stabilności",
+      "Zakres startowy tylko tak głęboki by utrzymać ściągnięte łopatki",
+      "Przedramiona/chwyt rozluźnione — niech klatka pracuje, nie dłonie"
+    ],
+    "execution_cues": [
+      "Squeeze elbows together in front of you, not hands",
+      "1-second hold at full contraction — feel the pec squeeze",
+      "Eccentric ~2-3 seconds, controlled — no banging the stack",
+      "Stop the stretch before the shoulders roll forward",
+      "Breathe out hard on the squeeze, in slowly on the open"
+    ],
+    "execution_cues_pl": [
+      "Spinaj łokcie do siebie z przodu, nie dłonie",
+      "1 sekunda przytrzymania w pełnym skurczu — czuj spięcie klatki",
+      "Faza ekscentryczna ~2-3 sekundy, kontrolowana — bez stukania stosem",
+      "Zatrzymaj rozciągnięcie zanim barki zaczną rolować się do przodu",
+      "Wydech mocny przy ściskaniu, wdech wolny przy rozkładaniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pushing with the hands instead of squeezing with the elbows/chest",
+        "faultPl": "Pchanie dłońmi zamiast spinanie łokciami/klatką",
+        "cause": "Grip too tight, treating it like a press, lack of pec mind-muscle connection",
+        "causePl": "Zbyt mocny chwyt, traktowanie jak wyciskanie, brak czucia mięśnia piersiowego",
+        "cue": "Relax the grip. Imagine the hands are not there — drive the elbows together. The forearms are just a connection to the lever, nothing more.",
+        "cuePl": "Rozluźnij chwyt. Wyobraź sobie że dłoni nie ma — prowadź łokcie do siebie. Przedramiona to tylko połączenie z dźwignią, nic więcej."
+      },
+      {
+        "fault": "Shoulders rolling forward at the stretch position",
+        "faultPl": "Rolowanie barków do przodu w pozycji rozciągniętej",
+        "cause": "Range of motion set too wide, load too heavy, weak upper back, loss of scapular retraction",
+        "causePl": "Zakres ruchu ustawiony zbyt szeroko, zbyt duży ciężar, słabe górne plecy, utrata ściągnięcia łopatek",
+        "cue": "Reduce the starting range until the shoulder blades can stay pinned to the pad through the full rep. Shoulders forward = you're now stretching the anterior capsule, not the pec.",
+        "cuePl": "Zmniejsz zakres startowy, aż łopatki utrzymają kontakt z oparciem przez cały ruch. Barki do przodu = rozciągasz teraz torebkę przednią stawu, a nie klatkę."
+      },
+      {
+        "fault": "Letting the weight stack drop / using momentum to throw the pads back",
+        "faultPl": "Rzucanie stosem / wykorzystywanie rozpędu by odrzucić peloty do tyłu",
+        "cause": "Load too heavy, no eccentric control, focus only on the concentric phase",
+        "causePl": "Zbyt duży ciężar, brak kontroli fazy ekscentrycznej, skupianie się tylko na fazie koncentrycznej",
+        "cue": "Half of the work is on the way back — count 2-3 seconds on the eccentric. If you can't slow it down, drop the weight 20-30%.",
+        "cuePl": "Połowa pracy to faza powrotu — licz 2-3 sekundy na ekscentrykę. Jeśli nie umiesz spowolnić, zmniejsz ciężar o 20-30%."
+      },
+      {
+        "fault": "Back peeling off the pad / leaning forward to press the lever",
+        "faultPl": "Odrywanie pleców od oparcia / pochylanie się do przodu by docisnąć dźwignię",
+        "cause": "Load too heavy, lazy posture, compensating with front delts and momentum",
+        "causePl": "Zbyt duży ciężar, leniwa postawa, kompensacja przednimi aktonami barków i rozpędem",
+        "cue": "Glue the entire back to the pad from glutes to upper traps. If your back leaves the pad you are no longer doing a fly — reduce the weight.",
+        "cuePl": "Przyklej całe plecy do oparcia od pośladków po górę barków. Jeśli plecy odrywają się od oparcia, to już nie robisz rozpiętek — zmniejsz ciężar."
+      },
+      {
+        "fault": "Stopping short of full contraction (not bringing pads together)",
+        "faultPl": "Skracanie zakresu w skurczu (nieprzyciąganie pelot do siebie)",
+        "cause": "Load too heavy at end of set, fatigue, lack of awareness — common with cheating reps",
+        "causePl": "Zbyt duży ciężar pod koniec serii, zmęczenie, brak świadomości — typowe dla powtórzeń oszukiwanych",
+        "cue": "Bring the pads to within a few cm of each other and HOLD for 1 second. Half-reps build half a chest.",
+        "cuePl": "Doprowadź peloty na kilka cm od siebie i WSTRZYMAJ na 1 sekundę. Połowiczne powtórzenia budują połowiczną klatkę."
+      }
+    ],
+    "breathing": "Inhale slowly during the eccentric (pads opening). Exhale forcefully during the concentric squeeze. Maintain mild abdominal tension throughout to keep the back glued to the pad.",
+    "breathingPl": "Wdech powolny w fazie ekscentrycznej (rozkładanie pelot). Mocny wydech w fazie koncentrycznego spięcia. Utrzymuj lekkie napięcie brzucha przez cały ruch, aby plecy pozostały przyklejone do oparcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_instability_or_capsulitis",
+      "severity": "modify",
+      "modification": "Reduce the starting range of motion significantly — set the start position so the pads are roughly in line with the shoulders (not behind). Even though pec deck is the safest fly variation, deep horizontal abduction still loads the anterior capsule. Use lighter weight and higher reps (12-15).",
+      "modificationPl": "Znacząco zmniejsz startowy zakres ruchu — ustaw pozycję startową tak, aby peloty znajdowały się mniej więcej na linii barków (nie za nimi). Mimo że pec deck to najbezpieczniejsza wersja rozpiętek, głębokie odwiedzenie poziome wciąż obciąża torebkę przednią stawu. Stosuj lżejszy ciężar i więcej powtórzeń (12-15).",
+      "alternative": "cable-fly"
+    },
+    {
+      "condition": "pectoralis_strain_or_tear_history",
+      "severity": "modify",
+      "modification": "Pec deck is actually one of the better choices after a pec injury (versus dumbbells) — the fixed path and limited range reduce the risk of the tendon failing under load. Start with very light weight, limited range (do not go past shoulder line), focus on the contraction only. Get physiotherapist clearance before return.",
+      "modificationPl": "Pec deck to faktycznie jeden z lepszych wyborów po kontuzji klatki (w porównaniu z hantlami) — stała ścieżka i ograniczony zakres zmniejszają ryzyko pęknięcia ścięgna pod obciążeniem. Zacznij od bardzo lekkiego ciężaru, ograniczonego zakresu (nie wychodź poza linię barków), skup się tylko na skurczu. Uzyskaj zgodę fizjoterapeuty przed powrotem.",
+      "alternative": "cable-fly"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce the starting range so the pads start in line with the shoulders or slightly in front — avoid deep horizontal abduction which can pinch tissue under the acromion. Keep reps moderate (10-15) and stop the set before form breaks down.",
+      "modificationPl": "Zmniejsz startowy zakres tak, aby peloty zaczynały na linii barków lub nieco z przodu — unikaj głębokiego odwiedzenia poziomego, które może uciskać tkanki pod wyrostkiem barkowym. Utrzymuj umiarkowane powtórzenia (10-15) i przerwij serię zanim technika się załamie.",
+      "alternative": "cable-fly"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "modify",
+      "modification": "The fully crunched-together end position can compress the AC joint. Stop the squeeze a few cm short of full pad contact — focus on a strong contraction without forcing the cross-body finish. If pain persists, switch to wide-grip cable rows or other AC-friendly chest variations.",
+      "modificationPl": "Pełna pozycja zacisku może uciskać staw barkowo-obojczykowy. Zatrzymaj spięcie kilka cm przed pełnym kontaktem pelot — skup się na mocnym skurczu bez wymuszania finiszu na wprost. Jeśli ból nie ustępuje, przejdź na wioślowanie z linkami szerokim chwytem lub inne wersje klatki przyjazne stawowi AC.",
+      "alternative": "cable-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, default) | 3x12-20 (pump/finisher na koniec treningu klatki) | 4x8-12 (mass focus, controlled tempo 3-1-2-1)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-seated-fly.gif",
+    "frames_extracted": [
+      "frames/lever-seated-fly/frame_0_start.png",
+      "frames/lever-seated-fly/frame_1_early.png",
+      "frames/lever-seated-fly/frame_2_mid.png",
+      "frames/lever-seated-fly/frame_3_late.png",
+      "frames/lever-seated-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/lever-seated-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 (pozycja startowa/rozciągnięta): osoba siedzi wyprostowana na maszynie pec deck z plecami przy oparciu, ramiona rozłożone szeroko na boki (na wysokości barków/klatki), łokcie zgięte ~90°, przedramiona oparte o pionowe peloty maszyny po obu stronach — klasyczne otwarcie pec deck. Mięsień piersiowy podświetlony na czerwono = pełne rozciągnięcie. Frame 2 (skurcz/pozycja końcowa koncentryki): ramiona zwarte z przodu klatki, peloty maszyny stykają się/prawie się stykają na środku, łokcie zgięte i ściśnięte do siebie z przodu — pełna kontrakcja horizontal adduction. Frame 4 (powrót do startu): identyczne otwarcie jak Frame 0. Klucz identyfikacji: (1) maszyna pec deck z dwoma pionowymi pelotami (forearm pads, nie handle grip dumbbell variant), (2) pozycja siedząca z plecami przy oparciu, (3) ruch w płaszczyźnie poziomej (transverse) — horizontal adduction, (4) łokieć zgięty 90° i ZMIENIA położenie ale kąt stawu łokciowego pozostaje stały (machine constraint), (5) bilateralny, fixed path. To klasyczny machine pec deck, NIE dumbbell fly i NIE cable fly. movement_pattern: isolation_fly. plane: transverse. primary: pectoralis_major P10 (główny producent ruchu), anterior_deltoids S4 (mniejszy udział niż przy dumbbell fly bo brak komponentu antygrawitacyjnego - maszyna prowadzi horyzontalnie). Mechanic isolation, force push, laterality bilateral — wszystko zgodne z briefem. Difficulty 2 (najprostsza technicznie wersja flya — fixed path, brak konieczności balansu, idealne dla początkujących i jako finiszer dla zaawansowanych). PL nazwa zgodna z briefem ('Fly w maszynie siedząc (pec deck)'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. 4 contraindications zgodnie z briefem (anterior_shoulder_instability, pec_tear_history, shoulder_impingement, ac_joint_pathology). 5 setup_cues + 5 execution_cues zgodnie z briefem. 5 common_faults zgodnie z briefem.",
+
+  "tags": ["bodybuilding", "chest", "pectorals", "isolation", "machine", "pec_deck", "upper_body", "hypertrophy", "fly", "horizontal_adduction", "beginner_friendly", "seated"]
+}

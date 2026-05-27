@@ -1,0 +1,201 @@
+{
+  "id": "barbell-shrug",
+  "name": "Barbell Shrug",
+  "namePl": "Wzruszenia barkami ze sztangą",
+  "aliases": ["standing barbell shrug", "bb shrug", "olympic shrug"],
+  "aliasesPl": ["wzruszenia ramion ze sztangą", "szrugsy ze sztangą", "wzruszenia barków ze sztangą stojąc"],
+
+  "description": "Isolation exercise for the upper trapezius performed standing, holding a loaded barbell with arms hanging straight down. The movement consists purely of scapular elevation — lifting the shoulders straight up toward the ears against gravity. The bilateral barbell variant allows the heaviest loading of all shrug variations, making it the most direct mass-builder for the upper traps. A staple in strongman, powerlifting and bodybuilding programming.",
+  "descriptionPl": "Ćwiczenie izolowane na górne aktony mięśnia czworobocznego (kapturowego) wykonywane stojąc, z obciążoną sztangą trzymaną na wyprostowanych ramionach przed udami. Ruch polega wyłącznie na elewacji łopatek — unoszeniu barków prosto w górę w kierunku uszu przeciwko grawitacji. Wariant ze sztangą obustronnie pozwala na największe obciążenie spośród wszystkich szrugsów, co czyni go najskuteczniejszym ćwiczeniem na budowę masy górnych kapturów. Podstawa w treningu strongman, trójboju siłowego i kulturystyce.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grip the barbell with a pronated (overhand) grip slightly wider than shoulder-width, palms facing your thighs.",
+    "Let the bar hang at arms' length in front of your thighs with elbows fully extended. Brace your core, lift your chest and pull your head back slightly so the neck is neutral.",
+    "Keep the arms completely straight throughout the entire set — they are just hooks holding the bar.",
+    "Initiate the movement by elevating both shoulders straight up toward your ears. Exhale on the way up.",
+    "Lift as high as you can. Pause and squeeze the upper traps hard at the top for 1-2 seconds.",
+    "Lower the shoulders under control back to the fully depressed (relaxed) starting position. Inhale on the descent.",
+    "Do not roll the shoulders forward or backward — the path is straight up and straight down. Do not bend the elbows. Do not bounce."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap sztangę nachwytem górnym (dłonie skierowane w dół, do ud) nieco szerzej niż na szerokość barków.",
+    "Pozwól sztandze wisieć na w pełni wyprostowanych ramionach przed udami. Napnij brzuch, unieś klatkę piersiową i lekko cofnij głowę aby szyja była w pozycji neutralnej.",
+    "Trzymaj ramiona całkowicie wyprostowane przez całą serię — pełnią rolę zaczepów trzymających sztangę.",
+    "Rozpocznij ruch unosząc oba barki prosto w górę w kierunku uszu. Wydech w trakcie unoszenia.",
+    "Unieś tak wysoko jak możesz. W górnej pozycji zatrzymaj się i mocno spinaj górne kaptury przez 1-2 sekundy.",
+    "Opuszczaj barki w sposób kontrolowany do pełnej depresji łopatek (pozycji wyjściowej). Wdech w trakcie opuszczania.",
+    "Nie wykonuj kółek barkami do przodu ani do tyłu — tor ruchu to prosto w górę i prosto w dół. Nie zginaj łokci. Nie odbijaj."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_shrug",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_upper"],
+    "secondary": ["levator_scapulae", "rhomboids"],
+    "stabilizers": ["forearm_flexors", "core", "erector_spinae", "deltoids", "trapezius_middle"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_upper": "P10",
+    "levator_scapulae": "S6",
+    "rhomboids": "S4",
+    "forearm_flexors": "T4",
+    "trapezius_middle": "T3",
+    "core": "T2",
+    "erector_spinae": "T2",
+    "deltoids": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "lifting_straps", "wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-shrug"],
+    "progression_to": ["heavy-barbell-shrug", "behind-the-back-barbell-shrug", "snatch-grip-shrug"],
+    "alternatives": ["dumbbell-shrug", "cable-shrug", "trap-bar-shrug", "smith-machine-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Pronated grip slightly wider than shoulders",
+      "Arms fully straight — they are hooks",
+      "Chest up, neck neutral, eyes forward",
+      "Use straps when load exceeds your grip — protect the prime mover"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Nachwyt górny, nieco szerzej niż barki",
+      "Ramiona całkowicie wyprostowane — pełnią rolę zaczepów",
+      "Klatka w górze, szyja neutralna, wzrok przed siebie",
+      "Używaj pasków treningowych gdy ciężar przekracza siłę chwytu — chroń pracę głównego mięśnia"
+    ],
+    "execution_cues": [
+      "Shrug straight up to the ears — not forward or back",
+      "Squeeze and hold at the top for 1-2 seconds",
+      "Lower slowly — fight the eccentric, do not let the bar yank you down",
+      "Keep elbows locked — no biceps cheating",
+      "Stay tall — do not lean back or nod the head"
+    ],
+    "execution_cues_pl": [
+      "Wzruszaj prosto w górę do uszu — nie do przodu ani do tyłu",
+      "Spinaj i przytrzymaj w górnej pozycji 1-2 sekundy",
+      "Opuszczaj wolno — kontroluj fazę negatywną, nie pozwól sztandze szarpnąć cię w dół",
+      "Łokcie zablokowane wyprostowane — żadnego oszukiwania bicepsem",
+      "Stój prosto — nie odchylaj się do tyłu ani nie kiwaj głową"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the shoulders (making circles)",
+        "faultPl": "Wykonywanie kółek barkami (rotacja stawu barkowego)",
+        "cause": "Old-school myth that rolling 'works the traps more', or attempt to hide insufficient elevation",
+        "causePl": "Stary mit że 'kółka lepiej angażują kaptur', lub próba ukrycia za małej amplitudy",
+        "cue": "Move the shoulders STRAIGHT up and STRAIGHT down. The path is a vertical line — no circles.",
+        "cuePl": "Tor ruchu prosto W GÓRĘ i prosto W DÓŁ. To linia pionowa — żadnych kółek."
+      },
+      {
+        "fault": "Insufficient range of motion (mini-shrugs)",
+        "faultPl": "Niepełny zakres ruchu (mini-szrugsy)",
+        "cause": "Load too heavy for clean execution, ego lifting",
+        "causePl": "Zbyt duży ciężar dla czystej techniki, ego",
+        "cue": "Lighten the bar until you can lift the shoulders fully to the ears and lower them fully to depression.",
+        "cuePl": "Zmniejsz ciężar aż będziesz w stanie unieść barki w pełni do uszu i opuścić w pełni w dół (do depresji łopatek)."
+      },
+      {
+        "fault": "Bending the elbows and using biceps",
+        "faultPl": "Zginanie łokci i włączanie bicepsa",
+        "cause": "Trying to lift heavier than the traps can handle, or fatigue late in the set",
+        "causePl": "Próba uniesienia większego ciężaru niż kaptur jest w stanie udźwignąć, lub zmęczenie pod koniec serii",
+        "cue": "Lock the elbows straight from the start. Arms are hooks, not levers.",
+        "cuePl": "Zablokuj łokcie wyprostowane od początku. Ramiona to zaczepy, nie dźwignie."
+      },
+      {
+        "fault": "Fast, bouncy reps without pause at the top",
+        "faultPl": "Szybkie, odbijane powtórzenia bez pauzy w górnej pozycji",
+        "cause": "Using momentum instead of trap contraction, ignoring time-under-tension",
+        "causePl": "Wykorzystanie momentu pędu zamiast skurczu kaptura, ignorowanie czasu pod napięciem",
+        "cue": "Pause 1-2 seconds at the top of every rep. The squeeze is where the trap grows.",
+        "cuePl": "Pauzuj 1-2 sekundy na szczycie każdego powtórzenia. To w skurczu rośnie kaptur."
+      },
+      {
+        "fault": "Bar drifts forward or behind the body",
+        "faultPl": "Sztanga odchyla się do przodu lub za tułów",
+        "cause": "Inappropriate grip width, lack of core brace, leaning forward/backward to compensate",
+        "causePl": "Nieodpowiednia szerokość chwytu, brak napięcia brzucha, kompensacyjne pochylanie się",
+        "cue": "Bar stays glued to the front of your thighs the whole set. Brace the core and stay vertical.",
+        "cuePl": "Sztanga przyklejona do przedniej części ud przez całą serię. Napnij brzuch i stój pionowo."
+      }
+    ],
+    "breathing": "Exhale during the shrug (concentric). Inhale during the lowering phase (eccentric). Keep a light brace throughout to protect the lower back under heavy load.",
+    "breathingPl": "Wydech w trakcie wzruszania (faza koncentryczna). Wdech w trakcie opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię aby chronić odcinek lędźwiowy przy dużym obciążeniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_spine_pain_or_disc_issues",
+      "severity": "modify",
+      "modification": "Heavy shrugs can aggravate cervical disc pathology via traction and trap hypertonus. Reduce load, perform with chin tucked and neck neutral, avoid extreme elevation. Use trap-bar to keep load symmetrical and closer to body.",
+      "modificationPl": "Ciężkie szrugsy mogą drażnić patologie dysków szyjnych przez trakcję i hipertonię kaptura. Zmniejsz ciężar, wykonuj z brodą lekko cofniętą i szyją neutralną, unikaj skrajnej elewacji. Użyj trap-bara aby ciężar był symetryczny i bliżej tułowia.",
+      "alternative": "trap-bar-shrug"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_disc_issues",
+      "severity": "modify",
+      "modification": "Heavy barbell at arms' length axially loads the lumbar spine. Use lifting belt, reduce load, or switch to seated dumbbell shrug to remove spinal compression.",
+      "modificationPl": "Ciężka sztanga na wyprostowanych ramionach obciąża osiowo odcinek lędźwiowy. Użyj pasa treningowego, zmniejsz ciężar lub przejdź na szrugsy z hantlami siedząc aby wyeliminować kompresję kręgosłupa.",
+      "alternative": "seated-dumbbell-shrug"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_pathology",
+      "severity": "modify",
+      "modification": "Elevation under heavy load can compress structures in the subacromial space if scapular kinematics are dysfunctional. Reduce range, focus on clean straight-up movement without rolling, address scapular control first.",
+      "modificationPl": "Elewacja pod dużym obciążeniem może uciskać struktury w przestrzeni podbarkowej przy dysfunkcyjnej kinematyce łopatki. Zmniejsz zakres, skup się na czystym ruchu prosto w górę bez kółek, najpierw popraw kontrolę łopatki.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "avoid",
+      "modification": "Chronic upper trap hypertrophy and tightness can compress the brachial plexus and vascular structures. Avoid loaded shrugs until evaluated by a specialist. Focus on lower/middle trap work instead.",
+      "modificationPl": "Przewlekły przerost i napięcie górnego kaptura mogą uciskać splot ramienny i struktury naczyniowe. Unikaj szrugsów z obciążeniem do czasu oceny przez specjalistę. Skup się na pracy dolnego i środkowego kaptura.",
+      "alternative": "face-pull"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4-5x6-8 (strength/strongman) | 2-3x15-20 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-shrug.gif",
+    "frames_extracted": [
+      "frames/barbell-shrug/frame_0_start.png",
+      "frames/barbell-shrug/frame_1_early.png",
+      "frames/barbell-shrug/frame_2_mid.png",
+      "frames/barbell-shrug/frame_3_late.png",
+      "frames/barbell-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/barbell-shrug",
+    "yuhonas_id": "Barbell_Shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end), widok od tyłu. Frame 0 (start): pełna depresja łopatek, barki opuszczone, sztanga zwisa na wyprostowanych ramionach za udami (widok z tyłu), górne kaptury podświetlone na czerwono (mięsień pracujący). Frame 2 (mid): pełna elewacja barków — szyja wizualnie 'znika' między uniesionymi barkami, sztanga uniesiona pionowo o ~5-8 cm, ramiona nadal całkowicie wyprostowane (brak zginania łokci), górne kaptury maksymalnie spięte. Frame 4 (end): powrót do pełnej depresji łopatek z widocznym 'ghostem' szczytowej pozycji. Ruch ściśle wertykalny — brak rotacji barków, brak kółek, brak pochylania tułowia. Tułów nieruchomy, ramiona ponad łokciem nie pracują. Modelowe wykonanie czystego isolation upper trapezius. Ćwiczenie jednoznacznie zidentyfikowane jako Barbell Shrug. Yuhonas zgodny. Wszystkie pola PL napisane od zera w standardzie polskiego fitness.",
+
+  "tags": ["bodybuilding", "back", "upper_back", "traps", "trapezius", "isolation", "barbell", "upper_body", "strongman", "powerlifting"]
+}

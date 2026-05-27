@@ -1,0 +1,201 @@
+{
+  "id": "cable-rope-lying-on-floor-tricep-extension",
+  "name": "Cable Rope Lying on Floor Tricep Extension",
+  "namePl": "Wyciskanie francuskie z liną z wyciągu leżąc na podłodze",
+  "aliases": ["floor skull crusher with rope cable", "lying cable rope tricep extension floor", "cable rope floor skullcrusher"],
+  "aliasesPl": ["francuskie z liną z wyciągu na podłodze", "skull crusher z liną leżąc na podłodze", "tricep extension z liną leżąc na podłodze", "wyciskanie francuskie z liną z dolnego wyciągu na podłodze"],
+
+  "description": "Isolation triceps exercise performed lying supine on the floor with the head positioned near a low cable pulley fitted with a rope attachment. The lifter grips the rope ends overhead and extends the elbows skyward, mimicking a skull crusher pattern. Performing the movement on the floor (instead of a bench) limits the descent of the elbows below shoulder level, which protects the shoulder and elbow joints but also reduces the stretch on the long head of the triceps. The rope attachment allows free wrist rotation and a small neutral-grip spread at lockout, increasing peak contraction in the lateral and medial heads. The constant cable tension keeps the triceps loaded through the entire range, unlike free-weight skull crushers which lose tension at the top.",
+  "descriptionPl": "Izolowane ćwiczenie na triceps wykonywane leżąc na plecach na podłodze, z głową ustawioną przy dolnym wyciągu z zamontowaną liną. Ćwiczący chwyta końce liny nad głową i prostuje łokcie pionowo w górę, naśladując wzorzec skull crushera. Wykonywanie ruchu na podłodze (zamiast na ławce) ogranicza opuszczanie łokci poniżej linii barków, co odciąża stawy barkowe i łokciowe, ale też redukuje rozciągnięcie głowy długiej tricepsa. Lina pozwala na swobodną rotację nadgarstków i lekkie rozejście się końców w pozycji szczytowej, zwiększając szczytowy skurcz głowy bocznej i przyśrodkowej. Stałe napięcie liny utrzymuje triceps pod obciążeniem przez cały zakres ruchu — w przeciwieństwie do skull crushera ze sztangą, który traci napięcie w górnej pozycji.",
+
+  "instructions": [
+    "Set a cable pulley to the lowest position and attach a rope handle. Position a mat on the floor in line with the pulley.",
+    "Lie supine on the floor with your head close to the pulley, knees bent at roughly 90 degrees, feet flat on the floor for stability.",
+    "Reach overhead and grab the two rope ends with a neutral grip (palms facing each other). Press your forearms up so the cable is taut.",
+    "Set the start position: upper arms angled toward the pulley at roughly 70-80 degrees from the floor, elbows fully extended, rope held above your face.",
+    "Bend at the elbows only and lower the rope toward the top of your head. Inhale on the descent. Keep upper arms locked in place.",
+    "Stop when your elbows reach about 90 degrees of flexion or just before the rope touches the floor / your head. The floor naturally limits over-stretching.",
+    "Extend the elbows powerfully back to the start position. Exhale on the way up. At lockout, spread the rope ends slightly apart for a hard triceps squeeze.",
+    "Maintain neutral spine pressed against the floor through the entire set. Do not let the upper arms drift back toward the floor."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg w najniższej pozycji i podłącz linę. Połóż matę na podłodze w osi wyciągu.",
+    "Połóż się na plecach na podłodze z głową blisko wyciągu, kolana ugięte pod kątem około 90 stopni, stopy płasko na podłodze dla stabilizacji.",
+    "Sięgnij rękami za głowę i złap oba końce liny chwytem neutralnym (dłonie zwrócone do siebie). Wypchnij przedramiona w górę aż lina będzie napięta.",
+    "Ustaw pozycję startową: ramiona ponad łokciem skierowane w stronę wyciągu pod kątem około 70-80 stopni do podłogi, łokcie w pełni wyprostowane, lina nad twarzą.",
+    "Uginaj łokcie wyłącznie w stawie łokciowym i opuszczaj linę w stronę czubka głowy. Wdech podczas opuszczania. Ramiona ponad łokciem nieruchome.",
+    "Zatrzymaj się gdy łokcie osiągną około 90 stopni zgięcia lub tuż przed kontaktem liny z podłogą lub głową. Podłoga w naturalny sposób ogranicza nadmierne rozciągnięcie.",
+    "Wyprostuj łokcie dynamicznie z powrotem do pozycji startowej. Wydech podczas prostowania. W pełnym wyproście lekko rozsuń końce liny na boki, mocno spinając triceps.",
+    "Utrzymuj neutralny kręgosłup dociśnięty do podłogi przez całą serię. Nie pozwól ramionom opadać w tył w stronę podłogi."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["anterior_deltoid", "posterior_deltoid", "core", "forearm_flexors", "latissimus_dorsi"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P9",
+    "anconeus": "S5",
+    "anterior_deltoid": "T3",
+    "posterior_deltoid": "T2",
+    "core": "T2",
+    "forearm_flexors": "T2",
+    "latissimus_dorsi": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope_attachment"],
+    "optional": ["exercise_mat", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["tricep-pushdown", "cable-rope-tricep-pushdown"],
+    "progression_to": ["lying-cable-tricep-extension", "ez-bar-skullcrusher", "decline-skullcrusher", "overhead-cable-tricep-extension"],
+    "alternatives": ["lying-cable-tricep-extension", "cable-rope-tricep-pushdown", "dumbbell-floor-skullcrusher", "ez-bar-skullcrusher"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Head close to the pulley, body in line with the cable",
+      "Knees bent, feet flat — lower back pressed into the floor",
+      "Neutral grip on the rope, palms facing each other",
+      "Upper arms angled toward the pulley, not vertical",
+      "Cable taut before the first rep — no slack"
+    ],
+    "setup_cues_pl": [
+      "Głowa blisko wyciągu, ciało w linii kabla",
+      "Kolana ugięte, stopy płasko — odcinek lędźwiowy dociśnięty do podłogi",
+      "Chwyt neutralny na linie, dłonie zwrócone do siebie",
+      "Ramiona ponad łokciem skierowane w stronę wyciągu, nie pionowo",
+      "Lina napięta przed pierwszym powtórzeniem — żadnego luzu"
+    ],
+    "execution_cues": [
+      "Move only at the elbow — upper arms locked in place",
+      "Let the floor stop you — do not bang elbows down",
+      "Spread the rope at lockout for peak contraction",
+      "Control the eccentric — 2 seconds down",
+      "Keep wrists neutral and forearms aligned with the cable"
+    ],
+    "execution_cues_pl": [
+      "Ruch wyłącznie w łokciu — ramiona ponad łokciem nieruchome",
+      "Pozwól podłodze zatrzymać ruch — nie uderzaj łokciami w podłogę",
+      "Rozsuń linę w pełnym wyproście dla maksymalnego skurczu",
+      "Kontroluj fazę negatywną — 2 sekundy w dół",
+      "Nadgarstki neutralne, przedramiona w linii kabla"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms drift backward toward the floor during the descent",
+        "faultPl": "Ramiona ponad łokciem opadają w tył w stronę podłogi w fazie negatywnej",
+        "cause": "Loss of shoulder stabilization, weight too heavy, or trying to gain more range of motion",
+        "causePl": "Utrata stabilizacji barków, zbyt duży ciężar, lub próba zwiększenia zakresu ruchu",
+        "cue": "Lock the upper arms at 70-80 degrees and keep them there. If they drift, drop the weight.",
+        "cuePl": "Zablokuj ramiona pod kątem 70-80 stopni i utrzymaj je tam. Jeśli wędrują w tył, zmniejsz ciężar."
+      },
+      {
+        "fault": "Banging elbows into the floor at the bottom",
+        "faultPl": "Uderzanie łokciami o podłogę w dolnej pozycji",
+        "cause": "Loss of control of the eccentric phase, going too deep, or rope length set too short",
+        "causePl": "Utrata kontroli nad fazą negatywną, schodzenie za nisko, lub za krótko ustawione przedramiona względem liny",
+        "cue": "Stop 1-2 cm above the floor. The floor is a safety limiter, not a target.",
+        "cuePl": "Zatrzymaj się 1-2 cm nad podłogą. Podłoga to bezpiecznik, nie cel."
+      },
+      {
+        "fault": "Flaring elbows out wide during the press",
+        "faultPl": "Rozsuwanie łokci na boki w fazie pozytywnej",
+        "cause": "Weak triceps long head, recruiting pec major and anterior delts to assist",
+        "causePl": "Słaba głowa długa tricepsa, wspomaganie ruchu mięśniami piersiowymi i przednim aktonem barku",
+        "cue": "Keep elbows pointing toward the ceiling — same width throughout the rep.",
+        "cuePl": "Łokcie wycelowane w sufit — ta sama szerokość przez całe powtórzenie."
+      },
+      {
+        "fault": "Arching the lower back off the floor",
+        "faultPl": "Odrywanie odcinka lędźwiowego od podłogi",
+        "cause": "Weight too heavy, weak core bracing, or upper arms angled too vertically pulling the lats up",
+        "causePl": "Zbyt duży ciężar, słabe napięcie brzucha, lub ramiona ponad łokciem zbyt pionowo, co ciągnie najszerszy w górę",
+        "cue": "Ribs down, low back pressed into the mat. Brace as if for a sit-up.",
+        "cuePl": "Żebra w dół, lędźwie dociśnięte do maty. Napnij brzuch jak do brzuszka."
+      },
+      {
+        "fault": "Letting the rope go slack at lockout",
+        "faultPl": "Pozwalanie na luz liny w pozycji szczytowej",
+        "cause": "Not pulling through the full elbow extension or stopping short of full triceps contraction",
+        "causePl": "Brak doprowadzenia łokcia do pełnego wyprostu lub zatrzymywanie ruchu przed pełnym skurczem tricepsa",
+        "cue": "Lock the elbows hard and spread the rope — cable should never go loose.",
+        "cuePl": "Zablokuj łokcie i rozsuń linę — kabel nie może mieć luzu."
+      }
+    ],
+    "breathing": "Inhale on the eccentric (lowering rope toward head). Exhale forcefully on the concentric (extending elbows up). Maintain a light brace throughout to keep the lower back glued to the floor.",
+    "breathingPl": "Wdech podczas fazy negatywnej (opuszczanie liny w stronę głowy). Dynamiczny wydech podczas fazy pozytywnej (prostowanie łokci w górę). Utrzymuj lekkie napięcie brzucha przez całą serię, aby odcinek lędźwiowy pozostał dociśnięty do podłogi."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy_triceps_or_distal",
+      "severity": "modify",
+      "modification": "The skull crusher pattern stresses the distal triceps tendon at the olecranon. Reduce load to 50%, use higher reps (12-15), eliminate the eccentric pause and avoid full elbow flexion at the bottom.",
+      "modificationPl": "Wzorzec skull crushera obciąża dystalne ścięgno tricepsa przy wyrostku łokciowym. Zmniejsz ciężar do 50%, używaj większej liczby powtórzeń (12-15), wyeliminuj pauzę w dole i unikaj pełnego zgięcia łokcia.",
+      "alternative": "cable-rope-tricep-pushdown"
+    },
+    {
+      "condition": "shoulder_impingement_or_subacromial_pain",
+      "severity": "caution",
+      "modification": "Holding the upper arms at 70-80 degrees overhead can provoke impingement. Angle the arms more vertically (closer to 90 degrees) to reduce shoulder flexion demand, or switch to a pushdown variation.",
+      "modificationPl": "Trzymanie ramion pod kątem 70-80 stopni nad głową może drażnić ciasnotę podbarkową. Ustaw ramiona bardziej pionowo (bliżej 90 stopni) aby zmniejszyć zapotrzebowanie na zgięcie barku, lub przejdź na wariant z wyciskaniem w dół.",
+      "alternative": "cable-rope-tricep-pushdown"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "The lying position with knees bent is usually back-friendly, but heavy loads can pull the lumbar spine into extension. Use lighter loads and keep one foot elevated on a step to flatten the lumbar curve.",
+      "modificationPl": "Pozycja leżąca z ugiętymi kolanami zwykle nie obciąża pleców, ale ciężkie obciążenia mogą wciągać kręgosłup lędźwiowy w wyprost. Używaj lżejszych ciężarów i podnieś jedną stopę na podwyższeniu aby spłaszczyć krzywiznę lędźwiową.",
+      "alternative": "tricep-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The rope allows free wrist rotation which is gentler than a bar, but at lockout the wrists can pronate or hyperextend under load. Use wrist wraps and consciously hold a neutral wrist position.",
+      "modificationPl": "Lina pozwala na swobodną rotację nadgarstków, co jest delikatniejsze niż drążek, ale w pełnym wyproście nadgarstki mogą się nawrócić lub przeprostować pod obciążeniem. Używaj usztywniaczy i świadomie utrzymuj neutralną pozycję nadgarstka.",
+      "alternative": "lying-cable-tricep-extension"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x12-20 (pump/finisher) | 2-3x15-20 (endurance)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-rope-lying-on-floor-tricep-extension.gif",
+    "frames_extracted": [
+      "frames/cable-rope-lying-on-floor-tricep-extension/frame_0_start.png",
+      "frames/cable-rope-lying-on-floor-tricep-extension/frame_1_early.png",
+      "frames/cable-rope-lying-on-floor-tricep-extension/frame_2_mid.png",
+      "frames/cable-rope-lying-on-floor-tricep-extension/frame_3_late.png",
+      "frames/cable-rope-lying-on-floor-tricep-extension/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-rope-lying-on-floor-tricep-extension"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): osoba leży na plecach na podłodze, kolana ugięte ~90 stopni, stopy płasko, głowa blisko źródła kabla (wyciąg po prawej stronie kadru). Ramiona trzymają linę nad głową/twarzą, łokcie zgięte ~90 stopni, ramiona ponad łokciem skierowane w stronę wyciągu pod kątem ~70-80 stopni. Triceps i przedramiona podświetlone na czerwono. Frame 2 (mid): pełny wyprost w łokciach — ramiona wyciągnięte pionowo w górę, lina napięta, końce liny lekko rozsunięte. Triceps w pełnym skurczu. Frame 4 (end): powrót do pozycji zgięcia, widoczny 'ghost' fazy szczytowej powyżej. Cały ruch w sagittalnej płaszczyźnie, izolowany w stawie łokciowym. Tułów stabilny, brak ruchu w odcinku lędźwiowym. Mechanika 1:1 ze skull crusherem, ale wykonywana na podłodze co naturalnie limituje ROM. Lina dodaje free wrist rotation i constant tension cable'a. Klasyfikacja: izolacja, sagittal, push (extension), bilateral. Wszystkie pola PL napisane od zera, terminologia anatomiczna polska (głowa długa/boczna/przyśrodkowa, wyrostek łokciowy, ciasnota podbarkowa).",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "rope", "floor", "skullcrusher", "lying", "upper_body"]
+}

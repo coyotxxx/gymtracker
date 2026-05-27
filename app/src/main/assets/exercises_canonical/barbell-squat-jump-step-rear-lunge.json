@@ -1,0 +1,229 @@
+{
+  "id": "barbell-squat-jump-step-rear-lunge",
+  "name": "Barbell Squat Jump to Step Rear Lunge",
+  "namePl": "Przysiad ze sztangą z wyskokiem do wykroku w tył",
+  "aliases": [
+    "barbell jump squat to reverse lunge",
+    "loaded squat jump to rear lunge",
+    "barbell squat to jump rear lunge combo",
+    "barbell squat jump reverse lunge"
+  ],
+  "aliasesPl": [
+    "przysiad ze sztangą z wyskokiem i wykrokiem w tył",
+    "loaded jump squat z wykrokiem",
+    "kombinacja przysiad-wyskok-wykrok tylny ze sztangą",
+    "przysiad ze sztangą + jump + rear lunge"
+  ],
+
+  "description": "Advanced sport-specific compound plyometric combo combining three movements in one rep: a deep barbell back squat, a concentric jump out of the bottom, and a controlled landing into a rear (reverse) lunge. Loads the entire lower kinetic chain with both strength and reactive (stretch-shortening cycle) demands. Used in athletic preparation, MMA, basketball, and football off-season conditioning. Extremely demanding on coordination, ankle and knee absorption capacity, and spinal stabilization under load.",
+  "descriptionPl": "Zaawansowane, atletyczne ćwiczenie plyometryczne łączące trzy ruchy w jednym powtórzeniu: głęboki przysiad ze sztangą, wyskok koncentryczny z dołu i kontrolowane lądowanie w wykroku w tył (rear lunge). Obciąża cały dolny łańcuch kinetyczny zarówno siłowo, jak i reaktywnie (cykl rozciągnięcie-skurcz). Wykorzystywane w przygotowaniu motorycznym sportowców walki, koszykarzy, piłkarzy w okresie przygotowawczym. Ekstremalnie wymagające pod względem koordynacji, zdolności amortyzacji stawu skokowego i kolanowego oraz stabilizacji kręgosłupa pod obciążeniem.",
+
+  "instructions": [
+    "Set the barbell in a squat rack at upper-chest height with a light to moderate load (typically 20-40% of 1RM back squat — this is a power/plyo movement, NOT a max-strength lift).",
+    "Unrack the bar onto your upper traps (high-bar position) with hands slightly wider than shoulders. Walk out and set feet shoulder-width apart.",
+    "Brace your core hard, take a big breath, and descend into a full back squat with knees tracking over toes. The barbell stays vertical over mid-foot.",
+    "Without pausing in the hole, drive aggressively through the entire foot and explode upward — feet leave the floor in a controlled jump. Keep the bar tight on the traps; do NOT let it bounce off the back.",
+    "As you peak, immediately split your legs in mid-air: one foot stays forward, the other travels backward.",
+    "Land softly with the front foot flat on the floor and the rear foot on the ball of the foot, knees bending simultaneously into a deep rear lunge position. Hips and torso stay tall and upright.",
+    "From the lunge, drive through the front heel to step the rear foot forward and return to the standing squat position. Take one or two breaths to re-brace.",
+    "Repeat for the prescribed reps, ALTERNATING which leg lands in the back position each rep (or perform sets of equal reps per side, depending on programming)."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej części klatki z lekkim do średniego obciążeniem (zwykle 20-40% CM przysiadu — to ruch mocy/plyo, NIE maksymalnego ciężaru).",
+    "Wyciągnij sztangę na górną część trapezów (pozycja high-bar), dłonie nieco szerzej niż barki. Wyjdź ze stojaka i ustaw stopy na szerokość barków.",
+    "Mocno napnij brzuch, weź głęboki wdech i schodź w pełny przysiad ze sztangą, kolana podążają za palcami stóp. Gryf pozostaje pionowo nad środkiem stopy.",
+    "Bez zatrzymania na dole, wypchnij się dynamicznie przez całą stopę i eksploduj w górę — stopy odrywają się od podłogi w kontrolowanym wyskoku. Trzymaj sztangę mocno na trapezach; NIE pozwól, by odbijała się na plecach.",
+    "W szczycie wyskoku rozdziel nogi w powietrzu: jedna stopa zostaje z przodu, druga przenosi się do tyłu.",
+    "Wyląduj miękko — przednia stopa płasko na podłodze, tylna na śródstopiu, oba kolana zginają się jednocześnie schodząc w głęboki wykrok tylny. Biodra i tułów pozostają wyprostowane.",
+    "Z pozycji wykroku zepnij przez piętę przedniej nogi i przysuń tylną nogę z powrotem do pozycji stojącej w przysiadzie. Weź jeden lub dwa oddechy, by ponownie napiąć tułów.",
+    "Powtórz przez zalecaną liczbę powtórzeń, NAPRZEMIENNIE zmieniając, która noga ląduje z tyłu (lub wykonaj równą liczbę powtórzeń na każdą stronę, w zależności od programowania)."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "hamstrings"],
+    "secondary": ["calves", "core", "erector_spinae"],
+    "stabilizers": ["adductors", "gluteus_medius", "tibialis_anterior", "upper_back", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "hamstrings": "P7",
+    "calves": "S7",
+    "core": "S7",
+    "erector_spinae": "S6",
+    "adductors": "S5",
+    "gluteus_medius": "S5",
+    "upper_back": "T3",
+    "tibialis_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "lifting_shoes", "knee_sleeves", "plyometric_mat"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": [
+      "bodyweight-squat",
+      "barbell-back-squat",
+      "bodyweight-reverse-lunge",
+      "bodyweight-squat-jump",
+      "barbell-reverse-lunge",
+      "dumbbell-jump-squat"
+    ],
+    "progression_to": [
+      "barbell-squat-jump-to-split-jump",
+      "barbell-bulgarian-jump-lunge",
+      "barbell-alternating-jump-lunge"
+    ],
+    "alternatives": [
+      "dumbbell-squat-jump-to-rear-lunge",
+      "bodyweight-squat-jump-to-rear-lunge",
+      "barbell-jump-squat",
+      "barbell-alternating-reverse-lunge"
+    ]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Use a LIGHT load — this is a power exercise, not 1RM",
+      "Bar tight on traps, squeeze hard so it does not bounce",
+      "Feet shoulder-width, toes slightly out",
+      "Take a big breath and brace before every rep",
+      "Pick a focal point straight ahead to keep torso vertical"
+    ],
+    "setup_cues_pl": [
+      "Używaj LEKKIEGO obciążenia — to ruch mocy, nie ciężaru maksymalnego",
+      "Gryf mocno na trapezach, ściśnij go tak, by się nie odbijał",
+      "Stopy na szerokość barków, palce lekko na zewnątrz",
+      "Weź głęboki wdech i napnij brzuch przed każdym powtórzeniem",
+      "Wybierz punkt na wprost, by utrzymać tułów pionowo"
+    ],
+    "execution_cues": [
+      "Squat full depth, then EXPLODE up — no pause at the bottom",
+      "Stay tall — torso does not pitch forward during the jump",
+      "Split legs in mid-air, not after landing",
+      "Land soft: knees and ankles absorb together like a spring",
+      "Front shin vertical at the bottom of the lunge — knee over (not past) toes"
+    ],
+    "execution_cues_pl": [
+      "Pełny przysiad, potem EKSPLODUJ w górę — bez zatrzymania na dole",
+      "Wysoki tułów — nie pochylaj się do przodu podczas wyskoku",
+      "Rozdziel nogi w powietrzu, nie po wylądowaniu",
+      "Ląduj miękko: kolana i stawy skokowe amortyzują razem jak sprężyna",
+      "Goleń przedniej nogi pionowo na dole wykroku — kolano nad palcami, nie za nimi"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hard, audible landing (no absorption)",
+        "faultPl": "Twarde, głośne lądowanie (brak amortyzacji)",
+        "cause": "Locking the knees on landing, dropping straight without preparing to absorb, insufficient eccentric ankle/knee strength",
+        "causePl": "Blokowanie kolan podczas lądowania, lądowanie prosto bez przygotowania do amortyzacji, brak siły ekscentrycznej stawu skokowego/kolanowego",
+        "cue": "Land quiet — imagine a ninja. Knees and hips bend the moment your feet touch.",
+        "cuePl": "Ląduj cicho — wyobraź sobie ninję. Kolana i biodra zginają się w chwili, gdy stopy dotykają podłogi."
+      },
+      {
+        "fault": "Bar bouncing on the back during the jump",
+        "faultPl": "Sztanga odbijająca się na plecach podczas wyskoku",
+        "cause": "Bar position too high (on neck), weak upper-back tightness, grip too loose, load too heavy",
+        "causePl": "Sztanga za wysoko (na karku), słabe napięcie górnej części pleców, zbyt luźny chwyt, zbyt duże obciążenie",
+        "cue": "Crush the bar with your hands, pull elbows down hard, lower the weight if it still bounces.",
+        "cuePl": "Zmiażdż gryf rękami, mocno ściągnij łokcie w dół, zmniejsz obciążenie jeśli mimo to odbija."
+      },
+      {
+        "fault": "Front knee collapses inward on lunge landing",
+        "faultPl": "Przednie kolano ucieka do środka podczas lądowania w wykroku",
+        "cause": "Weak gluteus medius, poor frontal-plane control under fatigue, landing with feet too close to a straight line",
+        "causePl": "Słaby mięsień pośladkowy średni, słaba kontrola w płaszczyźnie czołowej pod zmęczeniem, lądowanie ze stopami zbyt blisko jednej linii",
+        "cue": "Land with feet on two parallel rails, not one line. Push the front knee out toward the pinky toe.",
+        "cuePl": "Ląduj ze stopami na dwóch równoległych szynach, nie na jednej linii. Wypchnij przednie kolano na zewnątrz w kierunku małego palca."
+      },
+      {
+        "fault": "Forward torso lean (good-morning pattern)",
+        "faultPl": "Pochylenie tułowia do przodu (wzorzec good-morning)",
+        "cause": "Load too heavy for power output, weak quads/core, fatigue accumulating across reps",
+        "causePl": "Obciążenie zbyt duże jak na ruch mocy, słabe czworogłowe/tułów, narastające zmęczenie w serii",
+        "cue": "Chest up, eyes forward, drive elbows down. Cut the set if technique breaks.",
+        "cuePl": "Klatka w górę, wzrok przed siebie, łokcie w dół. Przerwij serię, jeśli technika się sypie."
+      },
+      {
+        "fault": "Rear knee slammed into the floor at lunge bottom",
+        "faultPl": "Tylne kolano uderza w podłogę na dole wykroku",
+        "cause": "Lack of eccentric control, dropping into the lunge instead of lowering",
+        "causePl": "Brak kontroli ekscentrycznej, opadanie do wykroku zamiast schodzenia",
+        "cue": "Hover the rear knee 2-3 cm above the floor. Slow the descent of the lunge phase.",
+        "cuePl": "Trzymaj tylne kolano 2-3 cm nad podłogą. Spowolnij fazę schodzenia do wykroku."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before the squat. Hold breath through the descent and the explosive jump. Begin to exhale only after landing has been absorbed and you are stable in the lunge. Re-inhale before standing back up.",
+    "breathingPl": "Wdech i napięcie na górze przed przysiadem. Wstrzymaj oddech podczas schodzenia i eksplozywnego wyskoku. Zacznij wydech dopiero po zaabsorbowaniu lądowania i ustabilizowaniu się w wykroku. Ponowny wdech przed powrotem do pozycji stojącej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Loaded plyometrics with spinal compression are contraindicated. Heal first; use unloaded patterns.",
+      "modificationPl": "Plyometria z obciążeniem osiowym kręgosłupa jest przeciwwskazana. Najpierw wylecz uraz; używaj wzorców bez obciążenia.",
+      "alternative": "bodyweight-squat-jump-to-rear-lunge"
+    },
+    {
+      "condition": "knee_meniscus_or_acl_injury",
+      "severity": "avoid",
+      "modification": "Landing forces and unilateral knee load are too aggressive. Wait until cleared by physiotherapist and progress through unloaded plyo first.",
+      "modificationPl": "Siły lądowania i jednostronne obciążenie kolana są zbyt agresywne. Czekaj na zgodę fizjoterapeuty i przechodź najpierw przez plyo bez obciążenia.",
+      "alternative": "barbell-reverse-lunge"
+    },
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Reactive landings spike Achilles load. Reduce load and depth, or substitute a step-up variant without jump.",
+      "modificationPl": "Reaktywne lądowania mocno obciążają ścięgno Achillesa. Zmniejsz obciążenie i głębokość lub zamień na step-up bez wyskoku.",
+      "alternative": "barbell-reverse-lunge"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Bar on traps with the bouncing/landing component can aggravate the shoulder. Switch to dumbbells held at sides.",
+      "modificationPl": "Sztanga na trapezach z elementem odbicia/lądowania może drażnić bark. Zamień na hantle trzymane wzdłuż ciała.",
+      "alternative": "dumbbell-squat-jump-to-rear-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x4-6 per leg (power/sport prep) | 4x3-5 per leg (peaking) | 3x6 alternating (conditioning, low load)",
+
+  "media": {
+    "primary": "barbell-squat-jump-step-rear-lunge.gif",
+    "frames_extracted": [
+      "frames/barbell-squat-jump-step-rear-lunge/frame_0_start.png",
+      "frames/barbell-squat-jump-step-rear-lunge/frame_1_early.png",
+      "frames/barbell-squat-jump-step-rear-lunge/frame_2_mid.png",
+      "frames/barbell-squat-jump-step-rear-lunge/frame_3_late.png",
+      "frames/barbell-squat-jump-step-rear-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-squat-jump-step-rear-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Klatka 0: pozycja wyjściowa stojąca, sztanga na trapezach (high-bar), step/platforma przed sobą (rekwizyt wizualny — nie jest funkcjonalnie używana w ruchu). Klatka 1: pełny głęboki przysiad poniżej parallel, podświetlone czworogłowe i pośladki, semi-transparent overlay pokazuje pozycję wyjściową — sugerując wybicie z dołu. Klatka 2: faza wstawania/wybicia, podświetlone czworogłowe obu nóg + łydki, sylwetka delikatnie uniesiona. Klatka 3: lądowanie w głębokim wykroku tylnym — jedna noga zgięta w kolanie z przodu (goleń pionowa), tylne kolano nisko nad podłogą, podświetlone czworogłowe i pośladki obu nóg, łydki podświetlone (amortyzacja). Klatka 4: powrót do stojącej pozycji wyjściowej. Step/platforma w GIFie jest wyłącznie wizualnym kontekstem (sport-spec), nie częścią wzorca ruchu — opis nie wymaga step-upu. Klasyfikacja: jump_plyometric + alternating laterality (każde powtórzenie wymienia nogę z tyłu), force=both (push przy wyskoku + amortyzacja przy lądowaniu). Difficulty 9/10 — łączy ryzyko spinal compression z reaktywnym lądowaniem unilateralnym. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["plyometric", "sport_specific", "power", "athletic_preparation", "advanced", "compound", "lower_body", "barbell", "combo_movement", "reactive_strength"]
+}

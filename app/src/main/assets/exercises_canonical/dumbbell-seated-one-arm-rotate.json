@@ -1,0 +1,198 @@
+{
+  "id": "dumbbell-seated-one-arm-rotate",
+  "name": "Dumbbell Seated One-Arm Rotation",
+  "namePl": "Rotacja hantlą jednorącz w siadzie",
+  "aliases": ["seated dumbbell forearm rotation", "seated dumbbell pronation supination", "seated one-arm wrist rotation", "concentration forearm rotation", "thigh-supported forearm twist"],
+  "aliasesPl": ["rotacja przedramienia hantlą w siadzie", "supinacja-pronacja hantlą jednorącz", "rotacja nadgarstka z hantlą w podporze o udo", "skrętna rotacja przedramienia w siadzie", "ćwiczenie pronatorów i supinatorów hantlą"],
+
+  "description": "An isolation exercise for the forearm rotators (pronators and supinators) performed seated on a flat bench. The working arm rests with the back of the upper arm/elbow braced against the inner thigh in a concentration-curl posture, and the hand grips a single dumbbell. The forearm rotates back and forth between full pronation (palm down) and full supination (palm up) while the elbow and upper arm remain motionless. Trains a frequently neglected pattern critical for grip-related strength, healthy elbows (medial/lateral epicondyle), and sport-specific rotational forearm work (combat sports, climbing, racket sports).",
+  "descriptionPl": "Izolowane ćwiczenie na rotatory przedramienia (pronatory i supinatory) wykonywane w siadzie na płaskiej ławce. Ramię pracujące oparte tylną częścią o wewnętrzną stronę uda w pozycji jak przy uginaniu „koncentrycznym”, dłoń trzyma jedną hantlę. Przedramię rotuje naprzemiennie z pełnej pronacji (dłoń skierowana w dół) do pełnej supinacji (dłoń skierowana w górę), podczas gdy łokieć i ramię pozostają nieruchome. Trenuje często pomijany wzorzec, kluczowy dla siły chwytu, zdrowych łokci (nadkłykcie przyśrodkowy i boczny) oraz sportów wymagających rotacji przedramienia (sporty walki, wspinaczka, sporty rakietowe).",
+
+  "instructions": [
+    "Sit on the end of a flat bench with feet wider than hip-width and planted firmly on the floor.",
+    "Hold a light dumbbell in one hand. Lean forward from the hips and rest the back of that upper arm / elbow against the inside of the same-side thigh, just above the knee.",
+    "Extend the forearm so the hand hangs past the knee. Start in a neutral grip (thumb pointing forward, palm facing inward).",
+    "Without moving the elbow, slowly rotate the forearm so the palm turns fully UP (supination). Pause briefly at end range.",
+    "Reverse the motion and rotate the forearm so the palm turns fully DOWN (pronation). Pause briefly at end range.",
+    "Continue rotating slowly and under full control for the prescribed reps. Keep the elbow glued to the thigh — only the forearm/hand moves.",
+    "Switch the dumbbell to the other hand and repeat for the opposite arm. Use a weight light enough that the wrist stays neutral throughout."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu płaskiej ławki, stopy szerzej niż biodra, mocno oparte o podłogę.",
+    "Weź lekką hantlę w jedną rękę. Pochyl tułów do przodu z bioder i oprzyj tylną część ramienia / łokcia o wewnętrzną stronę uda tej samej strony, tuż nad kolanem.",
+    "Wyprostuj przedramię tak, by dłoń zwisała poza kolano. Zacznij w chwycie neutralnym (kciuk skierowany do przodu, dłoń bokiem do ciała).",
+    "Bez ruchu w łokciu wolno obróć przedramię tak, by dłoń skierowała się w pełni W GÓRĘ (supinacja). Zatrzymaj się krótko w pełnym zakresie.",
+    "Odwróć ruch i obróć przedramię tak, by dłoń skierowała się w pełni W DÓŁ (pronacja). Zatrzymaj się krótko w pełnym zakresie.",
+    "Kontynuuj rotację wolno i w pełnej kontroli przez zadaną liczbę powtórzeń. Trzymaj łokieć przyklejony do uda — pracuje tylko przedramię i dłoń.",
+    "Przełóż hantlę do drugiej ręki i powtórz na drugą stronę. Dobierz ciężar na tyle lekki, by nadgarstek przez cały czas pozostał neutralny."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors", "forearm_extensors"],
+    "secondary": ["biceps_brachii", "brachioradialis"],
+    "stabilizers": ["core", "trapezius_upper"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P9",
+    "forearm_extensors": "P9",
+    "biceps_brachii": "S5",
+    "brachioradialis": "S5",
+    "core": "T2",
+    "trapezius_upper": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "bench"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-wrist-curl", "dumbbell-reverse-wrist-curl"],
+    "alternatives": ["dumbbell-wrist-rotation-standing", "dumbbell-wrist-curl", "dumbbell-reverse-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on the bench edge, feet wider than hips and planted",
+      "Lean forward; brace upper arm against inner thigh just above the knee",
+      "Hand hangs past the knee in neutral grip (thumb forward)",
+      "Pick a LIGHT dumbbell — this is a rotation drill, not a curl",
+      "Free hand can rest on the opposite knee for stability"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na krawędzi ławki, stopy szerzej niż biodra, mocno na podłodze",
+      "Pochyl tułów; oprzyj ramię o wewnętrzną stronę uda tuż nad kolanem",
+      "Dłoń zwisa poza kolano w chwycie neutralnym (kciuk do przodu)",
+      "Dobierz LEKKI ciężar — to ćwiczenie rotacyjne, nie uginanie",
+      "Wolna ręka może spocząć na przeciwnym kolanie dla stabilizacji"
+    ],
+    "execution_cues": [
+      "Rotate ONLY the forearm — elbow stays glued to the thigh",
+      "Turn palm fully UP (supination), then fully DOWN (pronation)",
+      "Keep the wrist neutral — don't let it flex or extend",
+      "Move slowly: 2 sec each direction; squeeze briefly at end range",
+      "Breathe steadily; never hold the breath"
+    ],
+    "execution_cues_pl": [
+      "Rotuj TYLKO przedramieniem — łokieć przyklejony do uda",
+      "Obróć dłoń w pełni W GÓRĘ (supinacja), potem w pełni W DÓŁ (pronacja)",
+      "Trzymaj nadgarstek neutralny — nie pozwól mu się zginać",
+      "Wolne tempo: 2 sek w każdą stronę; krótkie napięcie w końcowym zakresie",
+      "Oddychaj spokojnie; nigdy nie wstrzymuj oddechu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Moving the elbow / lifting the upper arm off the thigh",
+        "faultPl": "Ruch w łokciu / odrywanie ramienia od uda",
+        "cause": "Dumbbell too heavy or attempting to swing the weight through the rotation",
+        "causePl": "Zbyt ciężka hantla lub próba zamachowego prowadzenia ciężaru przez rotację",
+        "cue": "Lighten the load and consciously press the elbow into the thigh; only the forearm rotates",
+        "cuePl": "Zmniejsz ciężar i świadomie wciskaj łokieć w udo; rotuje tylko przedramię"
+      },
+      {
+        "fault": "Letting the wrist flex or extend instead of rotating",
+        "faultPl": "Zginanie/prostowanie nadgarstka zamiast samej rotacji",
+        "cause": "Confusing forearm rotation with a wrist curl pattern",
+        "causePl": "Mylenie rotacji przedramienia ze wzorcem uginania nadgarstka",
+        "cue": "Lock the wrist in a straight line with the forearm; the hand turns like a key, not a hinge",
+        "cuePl": "Zablokuj nadgarstek w linii z przedramieniem; dłoń obraca się jak klucz, nie zawias"
+      },
+      {
+        "fault": "Partial range of motion — never reaching full supination or full pronation",
+        "faultPl": "Częściowy zakres ruchu — brak pełnej supinacji lub pełnej pronacji",
+        "cause": "Ego lifting, tight forearm rotators, or fear of light weight not 'feeling' it",
+        "causePl": "Ego, ciasne rotatory przedramienia lub myślenie, że lekki ciężar „nic nie daje”",
+        "cue": "Drop the load if needed and rotate until the palm faces fully up, then fully down — the burn comes from range, not weight",
+        "cuePl": "W razie potrzeby zmniejsz ciężar i rotuj aż dłoń skierowana jest w pełni w górę i w pełni w dół — efekt daje zakres, nie ciężar"
+      },
+      {
+        "fault": "Rushing the reps and swinging the dumbbell",
+        "faultPl": "Pośpieszne powtórzenia i zamachowe szarpanie hantlą",
+        "cause": "Treating it like a curl; momentum bypasses the small rotator muscles",
+        "causePl": "Traktowanie jak uginania; rozpęd omija małe mięśnie rotacyjne",
+        "cue": "Slow tempo 2 sec each way; if the dumbbell makes a sound on the floor at end range, you're swinging it",
+        "cuePl": "Wolne tempo 2 sek w każdą stronę; jeśli hantla uderza o podłogę w końcowym zakresie — szarpiesz"
+      },
+      {
+        "fault": "Bracing the upper arm with too much weight, causing medial elbow pain",
+        "faultPl": "Zbyt duży ciężar przy ramieniu opartym o udo — ból po wewnętrznej stronie łokcia",
+        "cause": "Overload of the pronator teres at its insertion on the medial epicondyle",
+        "causePl": "Przeciążenie pronatora obłego w przyczepie na nadkłykciu przyśrodkowym",
+        "cue": "Cut the weight in half, increase reps to 15-20, and stop the set the moment you feel sharp elbow pain",
+        "cuePl": "Zmniejsz ciężar o połowę, zwiększ powtórzenia do 15-20 i przerwij serię gdy tylko poczujesz ostry ból łokcia"
+      }
+    ],
+    "breathing": "Exhale during the harder direction (usually supination if you are right-handed turning a screwdriver-style motion) and inhale on the return. Keep breath steady — never hold.",
+    "breathingPl": "Wydech podczas trudniejszego kierunku (zwykle supinacja, ruch jak dokręcanie śrubokrętem) i wdech przy powrocie. Oddech spokojny — nigdy go nie wstrzymuj."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_or_lateral_epicondylitis",
+      "severity": "modify",
+      "modification": "Reduce weight to 1-2 kg, perform in pain-free range only, and treat as rehab. Stop immediately if sharp elbow pain appears at the epicondyle.",
+      "modificationPl": "Zmniejsz ciężar do 1-2 kg, wykonuj tylko w zakresie bez bólu i traktuj jak rehabilitację. Przerwij natychmiast, jeśli pojawi się ostry ból w okolicy nadkłykcia.",
+      "alternative": "dumbbell-wrist-rotation-standing"
+    },
+    {
+      "condition": "acute_wrist_injury",
+      "severity": "avoid",
+      "modification": "Skip until cleared by a physiotherapist — even unloaded rotation can aggravate ligament or TFCC injuries.",
+      "modificationPl": "Pomiń do czasu zgody fizjoterapeuty — nawet rotacja bez obciążenia może zaostrzyć urazy więzadeł lub kompleksu TFCC.",
+      "alternative": null
+    },
+    {
+      "condition": "recent_distal_biceps_tear_or_repair",
+      "severity": "avoid",
+      "modification": "Supination loads the distal biceps tendon directly. Avoid until your surgeon/rehab specialist clears resisted supination.",
+      "modificationPl": "Supinacja obciąża bezpośrednio ścięgno dystalne bicepsa. Unikaj do zgody lekarza/rehabilitanta na supinację z oporem.",
+      "alternative": null
+    },
+    {
+      "condition": "carpal_tunnel_syndrome_active",
+      "severity": "modify",
+      "modification": "Use a very light load and limit pronation depth if numbness or tingling appears in fingers; finish the set on the symptom side.",
+      "modificationPl": "Stosuj bardzo lekki ciężar i ogranicz głębokość pronacji, jeśli pojawia się drętwienie lub mrowienie w palcach; przerwij serię po objawowej stronie.",
+      "alternative": "dumbbell-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x12-20 na rękę",
+  "calories_per_kg_per_hour": 3.0,
+
+  "media": {
+    "primary": "dumbbell-seated-one-arm-rotate.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-one-arm-rotate/frame_0_start.png",
+      "frames/dumbbell-seated-one-arm-rotate/frame_1_early.png",
+      "frames/dumbbell-seated-one-arm-rotate/frame_2_mid.png",
+      "frames/dumbbell-seated-one-arm-rotate/frame_3_late.png",
+      "frames/dumbbell-seated-one-arm-rotate/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/dumbbell-seated-one-arm-rotate"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Model siedzi na płaskiej ławce, mocno pochylony do przodu z ramieniem opartym tylną stroną o wewnętrzną stronę uda tuż nad kolanem (postawa concentration-curl). Dłoń z hantlą zwisa poza kolano. Pomiędzy klatkami 0-4 dłoń wyraźnie rotuje wokół osi przedramienia — widać zmianę orientacji hantli (raz uchwyt poprzeczny do osi nogi, raz wzdłuż osi nogi), przy całkowitym braku ruchu w łokciu i ramieniu. To jest klasyczna supinacja-pronacja przedramienia z hantlą jednorącz, nie uginanie nadgarstka i nie hammer curl. Schema enum dla muscles primary nie ma osobnych pól 'pronator_teres'/'supinator', dlatego użyłem najbliższych dostępnych ('forearm_flexors' dla pronatorów i flexor carpi grupy, 'forearm_extensors' dla supinatora i extensor carpi grupy — supinator anatomicznie leży w warstwie ekstensorów). Biceps_brachii (krótka głowa, jako wspomagający supinator) i brachioradialis jako secondary. Mechanic=isolation, plane=transverse (rotacja wokół długiej osi przedramienia), force='both' (praca koncentryczna w obu kierunkach naprzemiennie), laterality=unilateral. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego. 5 faults + 4 contraindications + 5+5 cues zgodnie z wytycznymi.",
+
+  "tags": ["forearms", "grip_strength", "rotation", "isolation", "unilateral", "rehab_friendly", "combat_sports", "climbing", "elbow_health", "pronation_supination"]
+}

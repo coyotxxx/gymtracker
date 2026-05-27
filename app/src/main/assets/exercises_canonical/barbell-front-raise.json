@@ -1,0 +1,202 @@
+{
+  "id": "barbell-front-raise",
+  "name": "Barbell Front Raise",
+  "namePl": "Wznosy sztangi w przód",
+  "aliases": ["standing barbell front raise", "bb front raise", "barbell anterior raise"],
+  "aliasesPl": ["wznosy sztangi do przodu", "wznosy sztangi przed siebie", "unoszenie sztangi w przód", "front raise ze sztangą"],
+
+  "description": "Isolation exercise for the anterior (front) deltoid performed standing with a barbell held in a pronated (overhand) grip in front of the thighs. The lifter raises the bar with arms extended through the sagittal plane until it reaches shoulder height, then lowers it under control. Bilateral loading allows heavier weight than the dumbbell version and creates a strong stimulus for the front shoulder. A classic accessory movement in bodybuilding, strength sports and athletic shoulder development.",
+  "descriptionPl": "Ćwiczenie izolowane na przedni akton mięśnia naramiennego, wykonywane stojąc ze sztangą trzymaną nachwytem górnym (palce w dół) przed udami. Ćwiczący unosi sztangę na wyprostowanych ramionach w płaszczyźnie strzałkowej aż do wysokości barków, po czym kontrolowanie opuszcza. Obustronne obciążenie pozwala użyć większego ciężaru niż w wariancie z hantlami i daje mocny bodziec dla przedniego barku. Klasyczne ćwiczenie pomocnicze w kulturystyce, sportach siłowych i ogólnym rozwoju barków.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grip the barbell with a pronated (palms down) grip slightly wider than shoulder-width.",
+    "Let the bar hang at arms' length in front of your thighs, arms fully extended with a soft (not locked) elbow.",
+    "Brace your core, lift your chest, and pull your shoulders back and down. Glutes squeezed — no swinging.",
+    "With straight arms, raise the bar forward and upward in a smooth arc, leading with the back of your hands. Exhale on the way up.",
+    "Stop when the bar reaches shoulder height (arms parallel to the floor). Do not lift higher — the upper traps would take over.",
+    "Pause briefly at the top, feel the contraction in the front delts.",
+    "Lower the bar under control over 2-3 seconds back to the starting position. Inhale on the descent.",
+    "Avoid using hip thrust, leg drive or back arch to swing the weight up. Each rep starts from a dead stop with the bar resting against the thighs."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap sztangę nachwytem górnym (dłonie skierowane w dół) nieco szerzej niż na szerokość barków.",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przed udami, łokcie wyprostowane ale nie zablokowane.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół. Spinaj pośladki — żadnego bujania.",
+    "Z wyprostowanymi ramionami unoś sztangę do przodu i w górę po łuku, prowadząc grzbietami dłoni. Wydychaj w fazie unoszenia.",
+    "Zatrzymaj się gdy sztanga osiągnie wysokość barków (ramiona równolegle do podłogi). Nie unoś wyżej — wtedy włącza się kaptur.",
+    "Krótko zatrzymaj w górnej pozycji, poczuj skurcz w przednim aktonie naramiennego.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy do pozycji wyjściowej. Wdech podczas opuszczania.",
+    "Unikaj wybijania ciężaru biodrami, nogami lub odchylania pleców. Każde powtórzenie zaczynaj z zatrzymanej pozycji ze sztangą opartą o uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["lateral_deltoids", "upper_pectorals", "serratus_anterior"],
+    "stabilizers": ["upper_trapezius", "core", "forearm_flexors", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "S5",
+    "upper_pectorals": "S4",
+    "serratus_anterior": "S3",
+    "upper_trapezius": "T4",
+    "core": "T3",
+    "forearm_flexors": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-front-raise"],
+    "progression_to": ["barbell-overhead-press", "incline-barbell-front-raise", "landmine-press", "plate-front-raise"],
+    "alternatives": ["dumbbell-front-raise", "cable-front-raise", "plate-front-raise", "ez-bar-front-raise", "landmine-front-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Pronated grip slightly wider than shoulders",
+      "Bar resting against the thighs, arms straight",
+      "Chest up, shoulders back and down",
+      "Brace core and squeeze glutes — no kipping"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Chwyt nachwytem górnym nieco szerzej niż barki",
+      "Sztanga oparta o uda, ramiona wyprostowane",
+      "Klatka w górze, barki ściągnięte w tył i w dół",
+      "Napnij brzuch i pośladki — żadnego bujania"
+    ],
+    "execution_cues": [
+      "Lead with the back of your hands, not the bar",
+      "Stop at shoulder height — no higher",
+      "Keep arms straight but elbows not locked",
+      "Lower slowly — control the eccentric for 2-3 seconds",
+      "Stay tall — no leaning back to lift the weight"
+    ],
+    "execution_cues_pl": [
+      "Prowadź grzbietami dłoni, nie sztangą",
+      "Zatrzymaj na wysokości barków — nie wyżej",
+      "Ramiona wyprostowane ale nie blokuj łokci",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Stój pionowo — żadnego odchylania się do tyłu pod ciężarem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging the bar up with hip thrust",
+        "faultPl": "Wybijanie sztangi biodrami",
+        "cause": "Load too heavy, ego lifting, or trying to grind out reps after technical failure",
+        "causePl": "Zbyt duży ciężar, ego, lub forsowanie powtórzeń po technicznym wyczerpaniu",
+        "cue": "Lower the weight. Stand with back against a wall to eliminate hip momentum.",
+        "cuePl": "Zmniejsz ciężar. Stań plecami do ściany aby wyeliminować pomoc bioder."
+      },
+      {
+        "fault": "Raising the bar above shoulder height",
+        "faultPl": "Unoszenie sztangi powyżej linii barków",
+        "cause": "Belief that 'higher = more work', recruiting upper traps to lift the bar past the deltoid's leverage",
+        "causePl": "Przekonanie że 'wyżej = lepiej', włączanie kaptura aby unieść sztangę poza zakres pracy aktonu przedniego",
+        "cue": "Stop when the bar reaches your eye-line of the shoulders. Past that, traps take over.",
+        "cuePl": "Zatrzymaj gdy sztanga jest na wysokości barków. Wyżej — przejmują kaptury."
+      },
+      {
+        "fault": "Leaning back at the top of the rep",
+        "faultPl": "Odchylanie się do tyłu w górnej pozycji",
+        "cause": "Compensating for anterior delt fatigue using lumbar extension, or load too heavy",
+        "causePl": "Kompensacja zmęczenia przedniego aktonu wyprostem lędźwiowym, lub zbyt duży ciężar",
+        "cue": "Stay vertical — your ears must stay over your hips the entire set.",
+        "cuePl": "Pozostań pionowo — uszy nad biodrami przez całą serię."
+      },
+      {
+        "fault": "Bending the elbows mid-rep",
+        "faultPl": "Zginanie łokci w trakcie powtórzenia",
+        "cause": "Anterior delt weakness or fatigue — the lifter converts the front raise into a partial curl-press hybrid",
+        "causePl": "Słabość lub zmęczenie przedniego aktonu — ćwiczący zamienia wznos w hybrydę uginanie-wyciskanie",
+        "cue": "Lock the elbow angle at the start. If you have to bend the elbow, drop the weight.",
+        "cuePl": "Zablokuj kąt w łokciu od początku ruchu. Jeśli musisz zginać — zmniejsz ciężar."
+      },
+      {
+        "fault": "Shrugging the shoulders up under load",
+        "faultPl": "Wzruszanie barkami w górę pod obciążeniem",
+        "cause": "Upper trapezius taking over because the anterior delt cannot handle the weight in pure isolation",
+        "causePl": "Przejmowanie pracy przez kaptur, bo przedni akton nie jest w stanie unieść ciężaru w pełnej izolacji",
+        "cue": "Keep shoulders pulled down throughout the rep. Long neck, low traps.",
+        "cuePl": "Trzymaj barki ściągnięte w dół przez całe powtórzenie. Długa szyja, kaptury nisko."
+      }
+    ],
+    "breathing": "Exhale during the concentric (raising the bar). Inhale during the eccentric (lowering). Keep a light brace throughout to protect the lower back.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie sztangi). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby chronić odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Pure flexion in the sagittal plane often pinches the supraspinatus. Limit ROM to below shoulder height (~80 degrees), use neutral grip or switch to landmine press which moves on a friendlier arc.",
+      "modificationPl": "Czyste zgięcie w płaszczyźnie strzałkowej często drażni mięsień nadgrzebieniowy. Ogranicz zakres do poziomu poniżej barków (~80 stopni), użyj chwytu neutralnego lub przejdź na landmine press, który porusza się po przyjaźniejszym torze.",
+      "alternative": "landmine-front-raise"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy",
+      "severity": "modify",
+      "modification": "Pronated grip increases internal rotation stress on the cuff. Use plate front raise (neutral grip) or dumbbells with neutral grip. Reduce intensity until pain-free.",
+      "modificationPl": "Chwyt nachwytem zwiększa stres rotacji wewnętrznej dla stożka rotatorów. Użyj wznosów z talerzem (chwyt neutralny) lub hantli w chwycie neutralnym. Zmniejsz intensywność do zakresu bez bólu.",
+      "alternative": "plate-front-raise"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing — every rep is a moving lever on the spine. Perform seated against a backrest to eliminate spinal loading.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia lędźwiowego — każde powtórzenie to ruchoma dźwignia na kręgosłupie. Wykonuj siedząc oparty o oparcie aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "seated-dumbbell-front-raise"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locks the wrists in full pronation under significant moment arm. Use EZ-bar (angled grip) or dumbbells with neutral grip. Wrist wraps can help mild cases.",
+      "modificationPl": "Sztanga prosta blokuje nadgarstki w pełnej pronacji przy znacznym ramieniu dźwigni. Użyj sztangi łamanej (kąt chwytu) lub hantli w chwycie neutralnym. Opaski na nadgarstki mogą pomóc w lekkich przypadkach.",
+      "alternative": "ez-bar-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3-4x8-12 (strength accessory) | 2-3x15-20 (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "barbell-front-raise.gif",
+    "frames_extracted": [
+      "frames/barbell-front-raise/frame_0_start.png",
+      "frames/barbell-front-raise/frame_1_early.png",
+      "frames/barbell-front-raise/frame_2_mid.png",
+      "frames/barbell-front-raise/frame_3_late.png",
+      "frames/barbell-front-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-front-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:10:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel (start/early/mid/late/end). Frame 0: pozycja wyjściowa — stoi pionowo, sztanga w nachwycie górnym przed udami, ramiona wyprostowane, przedni akton naramiennego oraz biceps/przedramiona podświetlone na czerwono. Frame 1 i 3 ('ghost' o ~45 stopni nachylenia ramion): faza pośrednia w drodze w górę/w dół. Frame 2: pełny skurcz — sztanga na wysokości barków, ramiona równolegle do podłogi, łokcie zablokowane lekko ugięte, prawy przedni akton naramiennego mocno zaczerwieniony. Frame 4: powrót do dolnej pozycji z widocznym ghostem fazy szczytowej powyżej. Tułów stoi nieruchomo przez cały ruch — brak kipping. Ćwiczenie jednoznacznie zidentyfikowane jako Barbell Front Raise (wariant stojący ze sztangą prostą). Wszystkie pola PL napisane od zera (nie tłumaczenie). Skala difficulty 4 zgodna z barbell-curl (oba: izolacja stojąc, wymaga technical strict reps ale brak progu skomplikowania jak overhead press lub clean).",
+
+  "tags": ["bodybuilding", "shoulders", "delts", "anterior_deltoid", "isolation", "barbell", "upper_body", "accessory"]
+}

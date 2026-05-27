@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-bench-press",
+  "name": "Dumbbell Bench Press (Flat)",
+  "namePl": "Wyciskanie hantli na ławce poziomej",
+  "aliases": ["dumbbell bench", "DB bench press", "flat dumbbell press", "flat DB bench"],
+  "aliasesPl": ["wyciskanie hantli poziomo", "wyciskanie hantli na płaskiej ławce", "DB bench", "wyciskanie hantlami na ławce"],
+
+  "description": "Horizontal pressing variation performed lying on a flat bench with a dumbbell in each hand. Compared to the barbell version, each arm works independently — requiring greater stabilization, allowing a deeper range of motion (dumbbells can descend below chest level), and reducing total absolute load but improving per-side hypertrophy stimulus. Excellent mass builder for the chest and a foundational alternative for trainees with shoulder issues from barbell pressing.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany leżąc na poziomej ławce, z hantlem w każdej ręce. W porównaniu do wersji ze sztangą każda ręka pracuje niezależnie — wymaga większej stabilizacji, pozwala na głębszy zakres ruchu (hantle mogą zejść poniżej linii klatki) i ogranicza maksymalny ciężar absolutny, ale poprawia bodziec hipertroficzny per stronę. Świetny budulec masy klatki i podstawowa alternatywa dla osób, u których wyciskanie sztangą drażni barki.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with a dumbbell resting on each thigh, palms facing each other.",
+    "Lie back, using your thighs to kick the dumbbells up to chest level as you lower yourself. End with dumbbells at chest height, palms facing forward (pronated grip).",
+    "Plant feet firmly on the floor, knees bent ~90°. Retract and depress the shoulder blades, slight natural arch in the lower back.",
+    "Press the dumbbells up so they meet over the upper chest — arms extended but elbows NOT locked rigid. This is the starting position.",
+    "Inhale, brace the core, and lower the dumbbells in a controlled arc down to chest level (or slightly below for full ROM). Elbows tracked at ~45-60° from torso, NOT flared to 90°.",
+    "Pause briefly at the bottom — feel the stretch in the chest. Do NOT bounce the dumbbells off the chest.",
+    "Press the dumbbells back up and slightly inward, finishing over the chest. Do not let them collide at the top.",
+    "Exhale at the top. Keep shoulder blades retracted throughout the set. To finish: bring dumbbells to chest, sit up with momentum and place them on thighs."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu poziomej ławki z hantlami opartymi o uda, dłonie zwrócone do siebie.",
+    "Połóż się, wybijając hantle z ud do wysokości klatki w trakcie kładzenia. Skończ z hantlami na wysokości klatki, dłonie zwrócone w stronę stóp (chwyt pronowany).",
+    "Stopy mocno na podłodze, kolana zgięte ~90°. Ściągnij łopatki w dół i razem, lekki naturalny łuk w dolnych plecach.",
+    "Wyciśnij hantle w górę aż spotkają się nad górną klatką — ramiona wyprostowane, ale łokcie BEZ sztywnego lock-out. To jest pozycja startowa.",
+    "Wdech, napięcie brzucha, opuszczaj hantle kontrolowanym łukiem do wysokości klatki (lub nieco poniżej dla pełnego ROM). Łokcie pod kątem ~45-60° od tułowia, NIE rozsunięte na 90°.",
+    "Krótka pauza na dole — poczuj rozciągnięcie klatki. NIE odbijaj hantli od klatki.",
+    "Wyciśnij hantle w górę i lekko do środka, kończąc nad klatką. Nie pozwól im zderzyć się na szczycie.",
+    "Wydech na górze. Łopatki ściągnięte przez cały set. Zakończenie: ściągnij hantle do klatki, usiądź z impetem i odłóż hantle na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up", "machine-chest-press"],
+    "progression_to": ["incline-dumbbell-bench-press", "single-arm-dumbbell-bench-press", "neutral-grip-dumbbell-bench-press", "dumbbell-floor-press"],
+    "alternatives": ["barbell-bench-press", "machine-chest-press", "push-up", "smith-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit at end of bench, dumbbells on thighs, kick them up as you lie back",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Slight arch in lower back, glutes on bench",
+      "Feet planted, drive through heels",
+      "Start with dumbbells over upper chest, pronated grip"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na końcu ławki, hantle na udach, wybij je gdy się kładziesz",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Lekki łuk w dolnych plecach, pośladki na ławce",
+      "Stopy zaparte, napieraj przez pięty",
+      "Start z hantlami nad górną klatką, chwyt pronowany"
+    ],
+    "execution_cues": [
+      "Lower with control to chest level — feel the stretch",
+      "Keep elbows at ~45-60° from torso, NOT flared to 90°",
+      "Drive through both dumbbells evenly — don't let one lag",
+      "Press up and slightly inward, but don't clang them together",
+      "Eccentric ~2-3 seconds, concentric explosive but controlled"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj z kontrolą do poziomu klatki — poczuj rozciągnięcie",
+      "Łokcie ~45-60° od tułowia, NIE rozsunięte na 90°",
+      "Naciskaj na oba hantle równo — nie pozwól by jeden odstawał",
+      "Wyciskaj w górę i lekko do środka, ale nie waląc hantlami o siebie",
+      "Faza ekscentryczna ~2-3 sekundy, koncentryczna wybuchowa ale kontrolowana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dumbbells drift apart at the top",
+        "faultPl": "Hantle rozjeżdżają się na szczycie",
+        "cause": "Loss of pec engagement at lockout, treating it like a fly",
+        "causePl": "Utrata napięcia klatki na szczycie, traktowanie ruchu jak rozpiętek",
+        "cue": "Press up AND inward. Bring dumbbells close at top without clanging. Keep triceps engaged.",
+        "cuePl": "Wyciskaj w górę I do środka. Zbliż hantle na szczycie bez stukania. Napięte tricepsy."
+      },
+      {
+        "fault": "Asymmetry between arms (one side pressing faster/higher)",
+        "faultPl": "Asymetria między rękoma (jedna strona wyciska szybciej/wyżej)",
+        "cause": "Dominant side compensating; weak stabilizers on non-dominant side",
+        "causePl": "Strona dominująca kompensuje; słabe stabilizatory po stronie niedominującej",
+        "cue": "Move both dumbbells in sync. If gap is large, do single-arm DB press to fix imbalance.",
+        "cuePl": "Ruszaj oba hantle synchronicznie. Jeśli różnica duża, wykonaj single-arm DB press by naprawić asymetrię."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Improper grip orientation; mimicking fly motion; lack of awareness",
+        "causePl": "Niepoprawne ustawienie chwytu; kopiowanie ruchu rozpiętek; brak świadomości",
+        "cue": "Tuck elbows to ~45-60°. 'Hide your armpits from the ceiling'. Protects the shoulders.",
+        "cuePl": "Schowaj łokcie do ~45-60°. 'Schowaj pachy przed sufitem'. Chroni barki."
+      },
+      {
+        "fault": "No eccentric control — dropping the dumbbells",
+        "faultPl": "Brak kontroli ekscentrycznej — opuszczanie hantli niekontrolowanie",
+        "cause": "Ego lifting, focus only on concentric, weight too heavy",
+        "causePl": "Ego lifting, skupienie tylko na fazie koncentrycznej, za ciężki ciężar",
+        "cue": "Lower for 2-3 seconds. Most of muscle growth comes from controlled eccentric. Reduce weight if needed.",
+        "cuePl": "Opuszczaj 2-3 sekundy. Większość wzrostu mięśniowego pochodzi z kontrolowanej fazy ekscentrycznej. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Insufficient ROM — stopping dumbbells above chest level",
+        "faultPl": "Za mały zakres ruchu — zatrzymanie hantli powyżej linii klatki",
+        "cause": "Fear of stretching, weak position at bottom, ego with too heavy weight",
+        "causePl": "Strach przed rozciągnięciem, słaba pozycja na dole, ego ze zbyt ciężkim ciężarem",
+        "cue": "DB benefit IS the deeper ROM — dumbbells should reach chest level or just below. Use it.",
+        "cuePl": "Zaletą hantli JEST głębszy zakres — hantle powinny dojść do poziomu klatki lub nieco niżej. Wykorzystaj to."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) — much friendlier to the shoulder joint. Reduce ROM if pain on bottom.",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie zwrócone do siebie) — znacznie przyjaźniejszy dla stawu barkowego. Zmniejsz ROM jeśli ból na dole.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy dumbbell pressing destabilizes shoulder. Switch to fixed-path machine until cleared by physio.",
+      "modificationPl": "Ciężkie wyciskanie hantli destabilizuje bark. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Stop DB bench (deep ROM aggravates a strained pec). Resume with light machine work first.",
+      "modificationPl": "Wstrzymaj DB bench (głęboki ROM drażni naderwaną klatkę). Wróć przez lekkie maszyny.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use neutral grip — much easier on wrists than pronated. Use wrist wraps if needed.",
+      "modificationPl": "Użyj chwytu neutralnego — znacznie łagodniejszy dla nadgarstków niż pronowany. Użyj wraps na nadgarstki jeśli trzeba.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-bench-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-bench-press/frame_0_start.png",
+      "frames/dumbbell-bench-press/frame_1_early.png",
+      "frames/dumbbell-bench-press/frame_2_mid.png",
+      "frames/dumbbell-bench-press/frame_3_late.png",
+      "frames/dumbbell-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-bench-press",
+    "yuhonas_id": "Dumbbell_Bench_Press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:35:00Z",
+  "verification_notes": "Frame 0 (start/dół): hantle na poziomie klatki, łokcie zgięte ~90° w odniesieniu do ławki, chwyt pronowany (dłonie w stronę stóp), łopatki ściągnięte. Frame 2 (góra): pełne wyciśnięcie, hantle nad górną klatką, ramiona wyprostowane (bez sztywnego lock-out). Frame 4 (powrót w dół z motion blur): widać kontrolowane opuszczanie. Klatka piersiowa + przednie delty + tricepsy podświetlone — zgodne z anatomią dla flat DB bench press. Klasyczny pronated grip, lekki arch, stopy na podłodze. PL nazwa zgodna z polskim standardem fitness ('Wyciskanie hantli na ławce poziomej'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest_mass", "dumbbell", "chest", "shoulder_friendly", "unilateral_control"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "lever-seated-hip-abduction",
+  "name": "Lever Seated Hip Abduction (Machine)",
+  "namePl": "Maszyna na odwodziciele bioder (abduktor siedząc)",
+  "aliases": ["machine hip abduction", "seated hip abductor machine", "outer thigh machine", "abductor machine"],
+  "aliasesPl": ["abduktor siedząc", "maszyna na odwodziciele", "maszyna na pośladki średnie", "odwodzenie bioder na maszynie", "maszyna abduktor", "rozszerzanie nóg siedząc"],
+
+  "description": "Seated machine isolation exercise for the hip abductors performed on a dedicated lever-driven abductor machine. The lifter sits upright with the outside of the knees pressed against padded levers and the trunk supported by a backrest. By pushing the knees apart against resistance, the exercise drives pure frontal-plane hip abduction with the working muscles fixed to the femur (gluteus medius and minimus, upper gluteus maximus fibres and tensor fasciae latae). The seated, supported position eliminates balance demands and lumbar load, making it one of the cleanest options for hammering the side-glute muscles for hypertrophy, hip stability and lateral pelvic control.",
+  "descriptionPl": "Siedzące ćwiczenie izolowane na mięśnie odwodziciele biodra wykonywane na dedykowanej maszynie dźwigniowej (abduktorze). Ćwiczący siedzi wyprostowany, zewnętrzne strony kolan opiera o wyściełane wałki, plecy o oparcie. Rozsuwając kolana na zewnątrz przeciwko oporowi, realizuje czyste odwodzenie biodra w płaszczyźnie czołowej, angażując mięśnie przyczepiające się do kości udowej (pośladkowy średni i mały, górne włókna pośladkowego wielkiego i napinacz powięzi szerokiej). Pozycja siedząca z podparciem eliminuje wymóg równowagi i obciążenie lędźwi, dlatego to jedna z najczystszych opcji do hipertrofii bocznych pośladków oraz poprawy stabilizacji biodra i kontroli bocznej miednicy.",
+
+  "instructions": [
+    "Select the load on the stack and adjust the seat/pad position so that the outer side of each knee rests against the lever pads with the legs comfortably together at the start.",
+    "Sit upright with your back flat against the backrest and your buttocks pushed deep into the seat. Grip the side handles lightly for stability.",
+    "Plant your feet flat on the foot platforms with knees bent to roughly 90 degrees. Keep ankles relaxed.",
+    "Pre-tense the side-glutes — feel them switch on before you move the lever.",
+    "Exhale and push your knees apart by driving against the outside of the pads with the outer thigh/glute, not by leaning back.",
+    "Open until you feel a strong contraction in the side glutes (typically a few degrees past your individual passive range). Do not force the bottom of the stack.",
+    "Pause for one full count at peak abduction, squeezing the gluteus medius hard.",
+    "Inhale and slowly return the knees together over 2-3 seconds, resisting the pads on the way back. Stop just before the weight stack touches down to keep tension on the muscle.",
+    "Maintain an upright torso throughout — no leaning back to add weight or rocking the pelvis."
+  ],
+  "instructionsPl": [
+    "Wybierz obciążenie na stosie i ustaw siedzenie/wałki tak, by zewnętrzne strony kolan opierały się o pady, a nogi w pozycji startowej były wygodnie złączone.",
+    "Usiądź wyprostowany, plecy płasko przy oparciu, pośladki głęboko wsunięte w siedzisko. Złap boczne uchwyty lekko dla stabilizacji.",
+    "Stopy oprzyj płasko na podnóżkach, kolana ugięte mniej więcej pod kątem 90 stopni. Kostki rozluźnione.",
+    "Wstępnie napnij boczne pośladki — poczuj jak się aktywują zanim ruszysz dźwignią.",
+    "Z wydechem rozsuń kolana, naciskając pady zewnętrzną stroną uda i pośladka, a nie odchylając się do tyłu.",
+    "Rozsuń nogi aż poczujesz mocny skurcz bocznych pośladków (zwykle kilka stopni za swój pasywny zakres). Nie wymuszaj końca zakresu siłą.",
+    "Zatrzymaj się na pełną sekundę w pozycji pełnego odwiedzenia, mocno spinając mięsień pośladkowy średni.",
+    "Z wdechem powoli złącz kolana z powrotem przez 2-3 sekundy, opierając się padom. Zatrzymaj tuż przed kontaktem stosu, by utrzymać napięcie na mięśniu.",
+    "Utrzymuj wyprostowany tułów przez całe powtórzenie — nie odchylaj się do tyłu, by dołożyć ciężar i nie kołysz miednicą."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_abduction",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gluteus_medius"],
+    "secondary": ["gluteus_maximus", "tensor_fasciae_latae", "gluteus_minimus"],
+    "stabilizers": ["core", "erector_spinae", "obliques", "quadratus_lumborum"]
+  },
+
+  "muscle_intensity": {
+    "gluteus_medius": "P10",
+    "tensor_fasciae_latae": "P8",
+    "gluteus_maximus": "P7",
+    "gluteus_minimus": "S7",
+    "core": "T3",
+    "erector_spinae": "T2",
+    "obliques": "T2",
+    "quadratus_lumborum": "T2"
+  },
+
+  "equipment": {
+    "required": ["hip_abduction_machine"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["cable-hip-abduction", "standing-hip-abduction", "banded-clamshell", "single-leg-glute-bridge-abduction"],
+    "alternatives": ["resistance-band-seated-hip-abduction", "side-lying-hip-abduction", "cable-hip-abduction", "banded-clamshell", "standing-hip-abduction"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit deep — buttocks all the way back against the seat",
+      "Back flat against the backrest — no gap at the lumbar",
+      "Outer knees firmly against the pads — start position legs together",
+      "Feet flat on the platforms, knees at about 90 degrees",
+      "Light grip on the side handles for stability, not pulling"
+    ],
+    "setup_cues_pl": [
+      "Siadaj głęboko — pośladki maksymalnie wsunięte przy oparciu",
+      "Plecy płasko przy oparciu — żadnej szpary w odcinku lędźwiowym",
+      "Zewnętrzne strony kolan mocno przy padach — start z nogami złączonymi",
+      "Stopy płasko na podnóżkach, kolana zgięte około 90 stopni",
+      "Boczne uchwyty trzymaj lekko dla stabilizacji, nie szarp ich"
+    ],
+    "execution_cues": [
+      "Push the knees apart — feel the side of the glute drive the pad",
+      "Squeeze at the top for a full second — peak contraction wins",
+      "Stay upright — torso does not lean back to help",
+      "Lower slowly — 2-3 seconds against the pad on the way in",
+      "Stop just shy of the stack touching — keep tension on the glute"
+    ],
+    "execution_cues_pl": [
+      "Rozpychaj kolana na zewnątrz — czuj jak bok pośladka napiera na pad",
+      "Spinaj w górnej pozycji przez pełną sekundę — szczytowy skurcz buduje masę",
+      "Tułów wyprostowany — nie odchylaj się do tyłu, by sobie pomóc",
+      "Wracaj wolno — 2-3 sekundy oporu o pad w drodze powrotnej",
+      "Zatrzymuj tuż przed kontaktem stosu — utrzymaj napięcie na pośladku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning the torso backward to push more weight",
+        "faultPl": "Odchylanie tułowia do tyłu, by przerzucić więcej ciężaru",
+        "cause": "Load is too heavy and the lifter recruits the lumbar extensors and adds momentum instead of using the abductors",
+        "causePl": "Zbyt duży ciężar i ćwiczący angażuje prostowniki lędźwi oraz pęd zamiast pracy odwodzicieli",
+        "cue": "Press your lower back into the pad through the whole rep. If you have to lean back — drop the weight.",
+        "cuePl": "Wciskaj lędźwie w oparcie przez całe powtórzenie. Jeśli musisz się odchylać — zmniejsz ciężar."
+      },
+      {
+        "fault": "Bouncing the legs at the end range to ricochet weight",
+        "faultPl": "Sprężyste odbijanie nóg w końcowym zakresie, by rozpędzić ciężar",
+        "cause": "Using elastic recoil of the tissues to throw the next rep, skipping the strongest portion of the contraction",
+        "causePl": "Wykorzystywanie sprężystego odbicia tkanek do nadania pędu kolejnemu powtórzeniu, omijając najsilniejszy odcinek skurczu",
+        "cue": "Pause one full second at full abduction — no bouncing, no rebound.",
+        "cuePl": "Zatrzymaj się na pełną sekundę w maksymalnym odwiedzeniu — żadnego odbijania, żadnego sprężynowania."
+      },
+      {
+        "fault": "Letting the stack slam down on the eccentric",
+        "faultPl": "Pozwalanie by stos opadał z hukiem w fazie ekscentrycznej",
+        "cause": "Loss of tension on the way back — typically too heavy a load or rushed tempo",
+        "causePl": "Utrata napięcia w drodze powrotnej — zwykle zbyt duży ciężar lub zbyt szybkie tempo",
+        "cue": "Resist the pad coming in — count 2-3 seconds and stop just before the stack rests.",
+        "cuePl": "Stawiaj opór padom w drodze do siebie — licz 2-3 sekundy i zatrzymaj tuż przed odpoczynkiem stosu."
+      },
+      {
+        "fault": "Knees collapsing inward at the start (poor pad contact)",
+        "faultPl": "Zapadanie kolan do środka w pozycji startowej (słaby kontakt z padami)",
+        "cause": "Pad position set too narrow or the lifter relaxes between reps, losing the active outer-thigh contact",
+        "causePl": "Zbyt wąskie ustawienie padów lub rozluźnianie między powtórzeniami i utrata aktywnego kontaktu zewnętrzną stroną uda",
+        "cue": "Maintain pressure into the pads from rep one to last — never go fully passive.",
+        "cuePl": "Utrzymuj nacisk na pady od pierwszego do ostatniego powtórzenia — nigdy się całkowicie nie rozluźniaj."
+      },
+      {
+        "fault": "Trying to use maximum ROM with shaking and pain",
+        "faultPl": "Forsowanie maksymalnego zakresu ruchu z drżeniem i bólem",
+        "cause": "Confusing a wider ROM with better stimulus; the abductors have a relatively short functional range",
+        "causePl": "Mylenie szerszego zakresu z lepszym bodźcem; odwodziciele mają stosunkowo krótki zakres funkcjonalny",
+        "cue": "Open to a strong squeeze, not to your absolute limit. Wider is not better — harder contraction is.",
+        "cuePl": "Rozsuwaj do mocnego spięcia, nie do absolutnego limitu. Szerzej nie znaczy lepiej — silniejszy skurcz znaczy lepiej."
+      }
+    ],
+    "breathing": "Exhale during the abduction (knees pushing apart). Inhale during the eccentric (knees returning together). Maintain a light core brace and stay pressed into the backrest throughout to keep the lumbar spine neutral.",
+    "breathingPl": "Wydech podczas odwodzenia (rozsuwanie kolan). Wdech podczas fazy ekscentrycznej (powrót kolan do siebie). Utrzymuj lekkie napięcie brzucha i nieprzerwany kontakt pleców z oparciem przez całą serię, by zachować neutralny odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_hip_pain_greater_trochanter_bursitis",
+      "severity": "modify",
+      "modification": "End-range abduction can compress the gluteus medius tendon against the greater trochanter and aggravate bursitis. Reduce ROM, drop the load, and prioritise mid-range pause reps. Stop if pain is reproduced on the side of the hip.",
+      "modificationPl": "Końcowy zakres odwodzenia może uciskać ścięgno mięśnia pośladkowego średniego o krętarz większy i nasilać zapalenie kaletki. Zmniejsz zakres, opuść ciężar, postaw na powtórzenia z pauzą w środkowym zakresie. Przerwij jeśli pojawi się ból z boku biodra.",
+      "alternative": "side-lying-hip-abduction"
+    },
+    {
+      "condition": "hip_impingement_femoroacetabular",
+      "severity": "caution",
+      "modification": "Forced end-range abduction with the hip in deep flexion (seated) can pinch the joint. Use a more upright/less reclined seat setting, smaller ROM and lighter loads. If pinching occurs, switch to standing or side-lying abduction.",
+      "modificationPl": "Wymuszony końcowy zakres odwodzenia przy głębokim zgięciu biodra (siad) może uciskać staw. Ustaw siedzisko bardziej pionowo (mniej odchylone), zmniejsz zakres i ciężar. Jeśli pojawia się szczypanie — przejdź na wersję stojącą lub leżąc na boku.",
+      "alternative": "standing-hip-abduction"
+    },
+    {
+      "condition": "iliotibial_band_syndrome",
+      "severity": "caution",
+      "modification": "TFL is a strong synergist on this machine and overloading it can worsen ITB tightness/lateral knee pain. Use lighter loads with longer holds and prioritise glute-medius bias (slight pelvic posterior tilt) rather than TFL bias.",
+      "modificationPl": "Napinacz powięzi szerokiej (TFL) jest silnym synergistą na tej maszynie i jego przeciążenie może nasilać napięcie pasma biodrowo-piszczelowego i ból bocznej strony kolana. Używaj lżejszych ciężarów z dłuższym przytrzymaniem i pracuj raczej na pośladek średni (lekkie tylne pochylenie miednicy) niż na TFL.",
+      "alternative": "banded-clamshell"
+    },
+    {
+      "condition": "acute_lower_back_pain_lumbar",
+      "severity": "caution",
+      "modification": "Although seated and supported, leaning back to add weight loads the lumbar spine. Reduce weight, keep back firmly against the pad, and avoid any torso movement. If pain persists, swap to side-lying or banded clamshell.",
+      "modificationPl": "Mimo siedzącej pozycji z podparciem, odchylanie się dla dodatkowego ciężaru obciąża odcinek lędźwiowy. Zmniejsz ciężar, plecy mocno przy oparciu, unikaj jakiegokolwiek ruchu tułowia. Jeśli ból się utrzymuje — przejdź na wersję leżąc na boku lub clamshell z gumą.",
+      "alternative": "side-lying-hip-abduction"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy — glute focus) | 2-3x20-30 (endurance/activation/burnout) | 3x15 + 15s isometric hold at peak (gluteus medius stability)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "lever-seated-hip-abduction.gif",
+    "frames_extracted": [
+      "frames/lever-seated-hip-abduction/frame_0_start.png",
+      "frames/lever-seated-hip-abduction/frame_1_early.png",
+      "frames/lever-seated-hip-abduction/frame_2_mid.png",
+      "frames/lever-seated-hip-abduction/frame_3_late.png",
+      "frames/lever-seated-hip-abduction/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abductors/lever-seated-hip-abduction"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi wyprostowany na maszynie typu abduktor, plecy oparte o backrest, zewnętrzne strony kolan przy wyściełanych padach, stopy na podnóżkach, nogi złączone — pośladkowy średni i okolica TFL podświetlone czerwono. Frame 2: kolana rozsunięte częściowo na zewnątrz, pady poruszają się z nogami, mięśnie boczne pośladka w trakcie skurczu. Frame 4: pełne odwiedzenie, kolana maksymalnie na zewnątrz, region pośladkowego średniego i górnej części pośladkowego wielkiego najjaśniej czerwony — szczytowy skurcz. Tułów nieruchomy przez cały ruch, brak odchylania. Klasyfikacja: hip_abduction (movement_pattern), bilateral (obie nogi razem), frontal plane, open chain (dystalny segment porusza się przeciw oporowi). Equipment: hip_abduction_machine. Pierwotnie pośladkowy średni P10 (główny abductor biodra), gluteus_maximus P7 i TFL P8 jako secondary (oba mocno aktywne — TFL nawet silniej niż max gluteus podczas seated abduction z biodrami w zgięciu). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["bodybuilding", "lower_body", "glutes", "gluteus_medius", "isolation", "machine", "bilateral", "outer_thigh", "hip_stability", "beginner_friendly"]
+}

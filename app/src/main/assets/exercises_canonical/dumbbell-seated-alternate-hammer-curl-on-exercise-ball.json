@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-seated-alternate-hammer-curl-on-exercise-ball",
+  "name": "Dumbbell Seated Alternate Hammer Curl on Exercise Ball",
+  "namePl": "Hammer curl z hantlami siedząc na piłce naprzemiennie",
+  "aliases": ["seated alternating hammer curl on stability ball", "swiss ball seated hammer curl", "neutral grip alternating curl on ball"],
+  "aliasesPl": ["uginanie młotkowe z hantlami siedząc na piłce naprzemiennie", "hammer curl naprzemienny na piłce gimnastycznej", "uginanie ramion chwytem neutralnym siedząc na piłce"],
+
+  "description": "Isolation exercise for the elbow flexors performed seated on a stability ball with dumbbells held in a neutral (hammer) grip and curled one arm at a time in an alternating pattern. The hammer grip biases load onto the brachialis and brachioradialis rather than biceps brachii, while the unstable ball seat recruits the core and hip stabilizers throughout the set. Alternating execution allows full concentration on each working arm and natural rest between reps on the same side.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze stawu łokciowego wykonywane siedząc na piłce gimnastycznej, z hantlami trzymanymi chwytem neutralnym (młotkowym), uginanymi naprzemiennie — najpierw jedna ręka, potem druga. Chwyt młotkowy przenosi obciążenie na mięsień ramienny (brachialis) i ramienno-promieniowy (brachioradialis) zamiast na biceps brachii, a niestabilna piłka angażuje przez całą serię mięśnie głębokie brzucha i stabilizatory bioder. Wykonanie naprzemienne pozwala w pełni skoncentrować się na pracującym ramieniu i daje naturalną przerwę między powtórzeniami po tej samej stronie.",
+
+  "instructions": [
+    "Sit upright on a stability ball with feet flat on the floor at shoulder-width. Hold a dumbbell in each hand at arms' length by your sides with a neutral grip (palms facing your thighs).",
+    "Brace your core, set a slight pelvic tilt to stabilize on the ball, and pull your shoulders back and down. The ball should not roll — your hips stay centered.",
+    "Pin both elbows to the sides of your torso. Keep the non-working arm relaxed and extended down.",
+    "Curl one dumbbell upward by flexing only the elbow. Wrist stays neutral throughout — thumb points toward the shoulder, palm faces inward. Exhale on the way up.",
+    "Continue until the dumbbell reaches shoulder height with the brachialis fully contracted. Pause for a brief squeeze.",
+    "Lower the dumbbell under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "As soon as the first arm reaches full extension, begin the curl on the opposite side. Continue alternating for the prescribed total reps.",
+    "Keep your torso vertical and the ball stationary throughout — no leaning, swinging, or rolling."
+  ],
+  "instructionsPl": [
+    "Usiądź prosto na piłce gimnastycznej, stopy płasko na podłodze na szerokość barków. Trzymaj hantle wzdłuż ciała na wyprostowanych ramionach chwytem neutralnym (dłonie zwrócone do ud).",
+    "Napnij brzuch, ustaw lekkie napięcie w miednicy aby ustabilizować się na piłce, ściągnij barki w tył i w dół. Piłka nie powinna się toczyć — biodra pozostają wycentrowane.",
+    "Przyklej oba łokcie do boków tułowia. Niepracująca ręka pozostaje rozluźniona i wyprostowana w dół.",
+    "Uginaj jedną rękę w górę zginając wyłącznie staw łokciowy. Nadgarstek pozostaje neutralny przez cały ruch — kciuk skierowany ku barkowi, dłoń zwrócona do środka. Wydech podczas unoszenia.",
+    "Kontynuuj aż hantel dotrze na wysokość barku i mięsień ramienny będzie w pełnym skurczu. Krótka pauza ze spięciem.",
+    "Opuszczaj hantel w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciu. Wdech podczas opuszczania.",
+    "Gdy tylko pierwsza ręka dojdzie do pełnego wyprostu, zacznij uginanie po drugiej stronie. Kontynuuj naprzemiennie do osiągnięcia zaplanowanej liczby powtórzeń łącznie.",
+    "Tułów pozostaje pionowy, piłka nieruchoma przez całą serię — żadnego przechylania, bujania ani toczenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis", "biceps_brachii"],
+    "secondary": ["forearm_flexors", "core"],
+    "stabilizers": ["anterior_deltoid", "obliques", "hip_flexors", "erector_spinae", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P9",
+    "brachioradialis": "P8",
+    "biceps_brachii": "P7",
+    "forearm_flexors": "S5",
+    "core": "S4",
+    "anterior_deltoid": "T3",
+    "obliques": "T3",
+    "hip_flexors": "T2",
+    "erector_spinae": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "exercise_ball"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["hammer-curl", "dumbbell-alternate-biceps-curl"],
+    "progression_to": ["dumbbell-seated-hammer-curl", "incline-dumbbell-hammer-curl", "cross-body-hammer-curl"],
+    "alternatives": ["hammer-curl", "dumbbell-seated-hammer-curl", "cross-body-hammer-curl", "cable-hammer-curl-with-rope"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall on the ball, feet flat at shoulder-width",
+      "Neutral grip — palms face your thighs, thumbs forward",
+      "Elbows pinned to your sides, both arms extended",
+      "Brace core to keep the ball perfectly still",
+      "Shoulders down and back, chest tall"
+    ],
+    "setup_cues_pl": [
+      "Usiądź prosto na piłce, stopy płasko na szerokość barków",
+      "Chwyt neutralny — dłonie do ud, kciuki do przodu",
+      "Łokcie przyklejone do boków, obie ręce wyprostowane",
+      "Napnij brzuch aby piłka pozostała nieruchoma",
+      "Barki w dół i w tył, klatka uniesiona"
+    ],
+    "execution_cues": [
+      "Hammer grip the entire rep — thumb up, no rotation",
+      "Only one arm moves at a time — the other hangs relaxed",
+      "Squeeze the brachialis (outside of the upper arm) at the top",
+      "Lower slowly — 2-3 second eccentric, full lockout at the bottom",
+      "Ball stays glued to the floor — no rolling or hip shifts"
+    ],
+    "execution_cues_pl": [
+      "Chwyt młotkowy przez cały ruch — kciuk w górę, żadnej rotacji",
+      "Pracuje tylko jedna ręka — druga wisi rozluźniona",
+      "Spinaj brachialis (zewnętrzną stronę ramienia) w górnej pozycji",
+      "Opuszczaj wolno — 2-3 sekundy fazy negatywnej, pełen wyprost na dole",
+      "Piłka przyklejona do podłogi — żadnego toczenia ani przesuwania bioder"
+    ],
+    "common_faults": [
+      {
+        "fault": "Curling both arms simultaneously instead of alternating",
+        "faultPl": "Uginanie obu rąk jednocześnie zamiast naprzemiennie",
+        "cause": "Habit from regular dumbbell curls, lack of focus on single-side execution",
+        "causePl": "Nawyk z klasycznego uginania z hantlami, brak skupienia na pracy jednostronnej",
+        "cue": "Wait until the working arm is fully extended before starting the other side.",
+        "cuePl": "Poczekaj aż pracująca ręka wyprostuje się całkowicie zanim zaczniesz drugą stronę."
+      },
+      {
+        "fault": "Wrist rotating toward supination during the curl",
+        "faultPl": "Rotacja nadgarstka w stronę supinacji podczas uginania",
+        "cause": "Subconscious shift to biceps-favoring position, weak brachialis",
+        "causePl": "Nieświadome przejście do pozycji faworyzującej biceps, słaby brachialis",
+        "cue": "Keep the thumb pointing forward the entire rep — palm faces inward, never up.",
+        "cuePl": "Trzymaj kciuk skierowany do przodu przez cały ruch — dłoń do środka, nigdy w górę."
+      },
+      {
+        "fault": "Rolling or bouncing on the ball during the curl",
+        "faultPl": "Toczenie się lub odbijanie na piłce podczas uginania",
+        "cause": "Insufficient core bracing, using ball momentum to lift the weight",
+        "causePl": "Niewystarczające napięcie mięśni głębokich brzucha, używanie sprężystości piłki do uniesienia ciężaru",
+        "cue": "Brace as if pre-empting a punch. If the ball still rolls, reduce weight and master the bracing first.",
+        "cuePl": "Napnij brzuch jak przed uderzeniem. Jeśli piłka nadal się toczy, zmniejsz ciężar i opanuj najpierw stabilizację."
+      },
+      {
+        "fault": "Elbow drifting forward and up at the top",
+        "faultPl": "Łokieć wędruje do przodu i w górę w fazie szczytowej",
+        "cause": "Trying to lift the dumbbell higher than full brachialis contraction allows, anterior delt recruitment",
+        "causePl": "Próba uniesienia hantla wyżej niż pozwala pełny skurcz brachialis, włączanie przednich aktonów barków",
+        "cue": "Stop when the forearm is vertical. Keep the elbow tucked at your side throughout.",
+        "cuePl": "Zatrzymaj się gdy przedramię dojdzie do pionu. Łokieć przyklejony do boku przez cały ruch."
+      },
+      {
+        "fault": "Non-working arm tensing or partially curling",
+        "faultPl": "Niepracująca ręka napina się lub częściowo ugina",
+        "cause": "Compensatory tension from instability of the ball, loss of unilateral focus",
+        "causePl": "Kompensacyjne napięcie z powodu niestabilności piłki, utrata jednostronnej koncentracji",
+        "cue": "Let the resting dumbbell hang heavy. Only the working arm fires — the other is fully relaxed.",
+        "cuePl": "Niech odpoczywający hantel wisi swobodnie. Pracuje tylko aktywna ręka — druga jest w pełni rozluźniona."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curling up) of the working arm. Inhale during the eccentric (lowering). Maintain a continuous light brace through the abdomen to keep the ball still — never fully relax the core mid-set.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie) pracującego ramienia. Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj ciągłe lekkie napięcie brzucha aby piłka pozostała nieruchoma — nigdy nie rozluźniaj brzucha w trakcie serii."
+  },
+
+  "contraindications": [
+    {
+      "condition": "balance_disorders_or_vestibular_issues",
+      "severity": "modify",
+      "modification": "Unstable ball seat creates fall risk in users with vertigo, vestibular dysfunction, or poor proprioception. Switch to seated bench version.",
+      "modificationPl": "Niestabilna piłka stwarza ryzyko upadku u osób z zawrotami głowy, zaburzeniami błędnika lub słabą propriocepcją. Przejdź na wariant siedząc na ławce.",
+      "alternative": "dumbbell-seated-hammer-curl"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Hammer grip heavily loads brachioradialis and common extensor origin. Reduce weight, increase reps (12-15), and avoid heavy eccentrics until pain-free.",
+      "modificationPl": "Chwyt młotkowy mocno obciąża brachioradialis i przyczep wspólny prostowników. Zmniejsz ciężar, zwiększ powtórzenia (12-15), unikaj ciężkich faz negatywnych aż do ustąpienia bólu.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_disc_issues",
+      "severity": "modify",
+      "modification": "Sitting unsupported on a ball requires constant lumbar stabilization which can aggravate acute pain. Perform on a bench with backrest until symptoms resolve.",
+      "modificationPl": "Siedzenie bez podparcia na piłce wymaga ciągłej stabilizacji odcinka lędźwiowego, co może drażnić ostry ból. Wykonuj na ławce z oparciem aż objawy ustąpią.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "elbow_flexor_tendinopathy",
+      "severity": "modify",
+      "modification": "Hammer grip can still load the distal biceps and brachialis tendons. Lighten the load, slow the eccentric to 4-5 seconds (tendon-friendly), and work in pain-free range.",
+      "modificationPl": "Chwyt młotkowy nadal obciąża dystalne przyczepy bicepsa i brachialis. Zmniejsz ciężar, spowolnij fazę negatywną do 4-5 sekund (przyjazne ścięgnom), pracuj w zakresie bez bólu.",
+      "alternative": "cable-hammer-curl-with-rope"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 per arm (hypertrophy) | 3x8-10 per arm (strength-endurance) | 2-3x12-15 per arm (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-seated-alternate-hammer-curl-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-alternate-hammer-curl-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-seated-alternate-hammer-curl-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-seated-alternate-hammer-curl-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-seated-alternate-hammer-curl-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-seated-alternate-hammer-curl-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-seated-alternate-hammer-curl-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: atleta siedzi prosto na piłce gimnastycznej, lewa ręka uniesiona z hantlem na wysokości barku (chwyt neutralny, kciuk do przodu, dłoń do środka), prawa ręka wyprostowana w dół wzdłuż ciała z hantlem przy biodrze. Czerwone podświetlenie na brachialis i brachioradialis obu ramion — biceps brachii w mniejszym stopniu. Frame 2: faza pośrednia — lewa ręka opuszczona, prawa zaczyna uginanie (klasyczny rytm naprzemienny). Frame 4: pełen powrót do pozycji wyjściowej (lustro frame 0). Tułów pionowy, łokcie przyklejone do boków, piłka nieruchoma. Ćwiczenie jednoznacznie zidentyfikowane: alternujący hammer curl na piłce. Wszystkie pola PL napisane od zera, terminologia anatomiczna (brachialis, brachioradialis, dystalne przyczepy) sprawdzona.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "isolation", "dumbbell", "exercise_ball", "unilateral", "alternating", "core_stability", "upper_body"]
+}

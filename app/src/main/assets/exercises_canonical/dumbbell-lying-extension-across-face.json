@@ -1,0 +1,199 @@
+{
+  "id": "dumbbell-lying-extension-across-face",
+  "name": "Dumbbell Lying Extension Across Face",
+  "namePl": "Wyprost ramion z hantlami leżąc po skosie do twarzy",
+  "aliases": ["lying cross-face dumbbell extension", "dumbbell skull crusher across face", "rolling dumbbell extension", "cross-face tricep extension"],
+  "aliasesPl": ["francuski wyciskanie po skosie", "skull crusher hantlami po skosie", "wyprost trójgłowych leżąc po skosie do twarzy", "tricep extension cross-body hantlami"],
+
+  "description": "Isolation exercise for the triceps performed lying supine on a flat bench, where each dumbbell is lowered along a diagonal (cross-body) path toward the opposite side of the face. Both arms work simultaneously, but each follows an independent trajectory in the transverse plane combined with elbow flexion in the sagittal plane. The cross-face path biases the long head of the triceps because of the increased stretch at the shoulder, while reducing direct stress on the elbow joint compared to a standard skull crusher.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień trójgłowy ramienia wykonywane leżąc na plecach na płaskiej ławce, w którym każdy hantel opuszcza się po torze skośnym (cross-body) w stronę przeciwnej części twarzy. Obydwie ręce pracują jednocześnie, ale każda porusza się po niezależnej trajektorii w płaszczyźnie poprzecznej połączonej ze zgięciem łokcia w płaszczyźnie strzałkowej. Skośny tor zwiększa zaangażowanie głowy długiej trójgłowego dzięki większemu rozciągnięciu w stawie ramiennym, a jednocześnie zmniejsza bezpośrednie obciążenie stawu łokciowego w porównaniu z klasycznym skull crusher.",
+
+  "instructions": [
+    "Lie supine on a flat bench with feet planted firmly on the floor. Hold a dumbbell in each hand with a neutral grip (palms facing each other).",
+    "Press both dumbbells up to full elbow extension directly above your chest. Wrists stack over elbows, elbows stack over shoulders.",
+    "Brace your core and pin your shoulder blades to the bench. Keep the upper arms angled slightly back toward your head — they will stay in that position throughout.",
+    "Lower the dumbbells in a cross-body arc: the right dumbbell travels toward the left side of your face/head, the left dumbbell toward the right side. Bend only at the elbows.",
+    "Continue until the dumbbells reach a position just past the opposite side of your face, with the elbows pointing up and slightly outward. Feel a strong stretch in the long head of the triceps.",
+    "Reverse the motion by extending the elbows. Drive the dumbbells back along the same diagonal path to the starting position above the chest. Squeeze the triceps at the top.",
+    "Keep both arms moving in mirrored synchronization. Do not let one arm lag behind the other. Avoid flaring the elbows outward away from the head."
+  ],
+  "instructionsPl": [
+    "Połóż się na plecach na płaskiej ławce, stopy stabilnie oparte na podłodze. Trzymaj hantle w każdej ręce chwytem neutralnym (dłonie zwrócone do siebie).",
+    "Wyciśnij hantle w górę do pełnego wyprostu łokci nad klatką piersiową. Nadgarstki nad łokciami, łokcie nad barkami.",
+    "Napnij brzuch i dociśnij łopatki do ławki. Ramiona ponad łokciem skieruj nieco w kierunku głowy — ta pozycja ma się utrzymać przez cały ruch.",
+    "Opuszczaj hantle po skośnym łuku w stronę przeciwnej części głowy: prawy hantel wędruje do lewej strony twarzy, lewy hantel do prawej strony. Zginaj wyłącznie w łokciach.",
+    "Kontynuuj aż hantle znajdą się tuż za przeciwną stroną twarzy, łokcie skierowane w górę i lekko na zewnątrz. Poczuj mocne rozciągnięcie głowy długiej trójgłowego.",
+    "Odwróć ruch prostując łokcie. Prowadź hantle z powrotem po tym samym skośnym torze do pozycji wyjściowej nad klatką piersiową. Spinaj trójgłowe w górze.",
+    "Obie ręce poruszają się równocześnie i symetrycznie. Nie pozwól by jedno ramię zostawało w tyle. Unikaj odchylania łokci na boki, daleko od głowy."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension_lying_cross_body",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal_and_transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["anterior_deltoid", "pectoralis_major_clavicular", "forearm_flexors", "core", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S4",
+    "anterior_deltoid": "T3",
+    "pectoralis_major_clavicular": "T2",
+    "forearm_flexors": "T2",
+    "core": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-lying-triceps-extension", "tricep-pushdown"],
+    "progression_to": ["one-arm-dumbbell-lying-extension-across-face", "incline-dumbbell-extension-across-face", "barbell-skull-crusher"],
+    "alternatives": ["dumbbell-lying-triceps-extension", "ez-bar-skull-crusher", "overhead-dumbbell-extension", "tricep-pushdown", "cross-body-cable-tricep-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat, feet planted, glutes and lats engaged",
+      "Neutral grip, dumbbells stacked over chest at full lockout",
+      "Upper arms angled slightly back toward the head",
+      "Shoulder blades pinned, ribs down, core braced",
+      "Pick a target spot on the opposite side of your face for each arm"
+    ],
+    "setup_cues_pl": [
+      "Leż płasko, stopy oparte, pośladki i grzbiet napięte",
+      "Chwyt neutralny, hantle nad klatką w pełnym wyproście",
+      "Ramiona ponad łokciem skierowane lekko w stronę głowy",
+      "Łopatki dociśnięte, żebra w dół, brzuch napięty",
+      "Każda ręka celuje w przeciwną stronę twarzy"
+    ],
+    "execution_cues": [
+      "Only the forearms move — keep the upper arms fixed",
+      "Right hand to left ear, left hand to right ear — diagonal path",
+      "Feel the stretch on the long head at the bottom",
+      "Lower slowly (2-3 sec eccentric), drive back hard",
+      "Both arms move in perfect mirror — no lag"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Prawa ręka do lewego ucha, lewa do prawego — tor skośny",
+      "Poczuj rozciągnięcie głowy długiej w dolnej pozycji",
+      "Opuszczaj wolno (2-3 sek faza negatywna), wyciskaj mocno z powrotem",
+      "Obie ręce poruszają się symetrycznie — bez opóźnień"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flare outward away from the head",
+        "faultPl": "Łokcie odchylają się na boki, z dala od głowy",
+        "cause": "Loss of shoulder stability or load too heavy, turning the movement into a pressing pattern",
+        "causePl": "Utrata stabilności w barku lub zbyt duży ciężar, ruch zamienia się we wzór wyciskania",
+        "cue": "Keep elbows pointing up and slightly toward the head. Reduce weight if you cannot control the path.",
+        "cuePl": "Łokcie skierowane do góry i lekko w stronę głowy. Zmniejsz ciężar jeśli nie kontrolujesz toru."
+      },
+      {
+        "fault": "Upper arms drop toward the chest (humeral flexion during the rep)",
+        "faultPl": "Ramiona ponad łokciem opadają w stronę klatki (zgięcie w barku podczas powtórzenia)",
+        "cause": "Trying to add a pullover component to lift heavier, fatigue of triceps long head",
+        "causePl": "Próba doklejenia ruchu pullover aby udźwignąć więcej, zmęczenie głowy długiej trójgłowego",
+        "cue": "Lock the upper arm angle at the start and do not change it. Only the elbow flexes and extends.",
+        "cuePl": "Zablokuj kąt ramienia ponad łokciem na starcie i nie zmieniaj go. Tylko łokieć zgina się i prostuje."
+      },
+      {
+        "fault": "Asymmetric tempo — one arm lags behind the other",
+        "faultPl": "Asymetryczny rytm — jedna ręka zostaje w tyle",
+        "cause": "Strength imbalance between sides, distraction, or load too heavy for the weaker arm",
+        "causePl": "Dysbalans siłowy między stronami, brak skupienia, lub ciężar zbyt duży dla słabszej ręki",
+        "cue": "Move both dumbbells as one unit. If imbalance persists, switch to one-arm version to fix the lagging side.",
+        "cuePl": "Poruszaj obydwoma hantlami jak jednym układem. Przy utrzymującej się asymetrii przejdź na wariant jednorącz aby wzmocnić słabszą stronę."
+      },
+      {
+        "fault": "Dumbbells lowered straight down toward the face (no cross-body path)",
+        "faultPl": "Hantle opuszczane prosto w dół do twarzy (brak toru skośnego)",
+        "cause": "Defaulting to the standard skull crusher pattern, lack of cue awareness",
+        "causePl": "Powrót do wzorca klasycznego skull crusher, brak świadomości docelowego toru",
+        "cue": "Aim across — right dumbbell to LEFT side of your face, left dumbbell to RIGHT side. The path is diagonal, not vertical.",
+        "cuePl": "Celuj na krzyż — prawy hantel do LEWEJ strony twarzy, lewy do PRAWEJ. Tor jest skośny, nie pionowy."
+      },
+      {
+        "fault": "Wrists cave back under the load (hyperextension)",
+        "faultPl": "Nadgarstki wyginają się do tyłu pod obciążeniem (przeprost)",
+        "cause": "Weak grip, fatigue, or holding the dumbbell too far back in the palm",
+        "causePl": "Słaby chwyt, zmęczenie, lub trzymanie hantli za daleko w dłoni",
+        "cue": "Grip the dumbbell firmly, knuckles up, wrist straight in line with the forearm.",
+        "cuePl": "Trzymaj hantel pewnie, kostki w górę, nadgarstek prosto w linii z przedramieniem."
+      }
+    ],
+    "breathing": "Inhale as you lower the dumbbells along the diagonal path. Exhale forcefully as you extend the elbows back to lockout. Maintain a light brace throughout to protect the lower back.",
+    "breathingPl": "Wdech podczas opuszczania hantli po torze skośnym. Mocny wydech podczas prostowania łokci do pełnego wyprostu. Utrzymuj lekkie napięcie brzucha przez całą serię aby chronić odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy_triceps_or_medial",
+      "severity": "modify",
+      "modification": "Reduce range of motion (stop before deep elbow flexion), use lighter dumbbells with higher reps (12-15), and avoid heavy eccentrics. If pain persists, switch to cable pushdown for less compressive joint load.",
+      "modificationPl": "Zmniejsz zakres ruchu (zatrzymaj się przed głębokim zgięciem łokcia), używaj lżejszych hantli z większą liczbą powtórzeń (12-15), unikaj ciężkich faz negatywnych. Przy utrzymującym się bólu przejdź na pushdown z linki — mniejsze obciążenie kompresyjne stawu.",
+      "alternative": "tricep-pushdown"
+    },
+    {
+      "condition": "shoulder_impingement_or_anterior_shoulder_pain",
+      "severity": "modify",
+      "modification": "The cross-body path can compress the anterior shoulder if upper arms drift forward. Keep the humerus angled back toward the head and limit how far across the dumbbell travels. Reduce volume.",
+      "modificationPl": "Tor skośny może uciskać przednią część barku jeśli ramiona ponad łokciem wędrują do przodu. Trzymaj kość ramienną nachyloną w stronę głowy i ogranicz jak daleko hantel przekracza linię ciała. Zmniejsz objętość.",
+      "alternative": "tricep-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "Neutral grip is wrist-friendly, but heavy loads with a slight cross-body torque can still aggravate the joint. Use wrist wraps, lighter loads, and keep the wrist stacked perfectly over the forearm.",
+      "modificationPl": "Chwyt neutralny jest przyjazny dla nadgarstków, ale duże ciężary z lekkim skrętem cross-body mogą drażnić staw. Użyj usztywniaczy, lżejszych ciężarów i trzymaj nadgarstek dokładnie nad przedramieniem.",
+      "alternative": "tricep-pushdown"
+    },
+    {
+      "condition": "recent_distal_biceps_or_triceps_tendon_repair",
+      "severity": "avoid",
+      "modification": "Avoid loaded elbow extension with stretched-position eccentrics until cleared by your physiotherapist. Begin rehab with banded extensions or isometrics, progress to cable pushdowns before returning to free-weight skull crusher variations.",
+      "modificationPl": "Unikaj obciążonego prostowania łokcia z fazą negatywną w pozycji rozciągniętej do czasu zgody fizjoterapeuty. Rehabilitację rozpocznij od prostowania z gumą lub izometrii, przejdź na pushdown z linki przed powrotem do wariantów skull crusher z wolnym ciężarem.",
+      "alternative": "tricep-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy) | 4x8-10 (strength-hypertrophy) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-lying-extension-across-face.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-extension-across-face/frame_0_start.png",
+      "frames/dumbbell-lying-extension-across-face/frame_1_early.png",
+      "frames/dumbbell-lying-extension-across-face/frame_2_mid.png",
+      "frames/dumbbell-lying-extension-across-face/frame_3_late.png",
+      "frames/dumbbell-lying-extension-across-face/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-lying-extension-across-face"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 kluczowych klatek z GIFa jahel (start/early/mid/late/end). Frame 0 (start): osoba leży na płaskiej ławce, obydwa hantle wyciśnięte w pełnym wyproście łokci nad klatką piersiową, chwyt neutralny, lewy triceps mocno podświetlony na czerwono (widok 3/4 z lewej strony — czerwień widoczna na bliższym ramieniu, drugie ramię ten sam ruch). Frame 1-2 (early-mid): łokcie zginają się, hantle opadają po torze skośnym w stronę przeciwnej części głowy — prawy hantel idzie do lewej strony twarzy, lewy do prawej, łokcie skierowane do góry, ramiona ponad łokciem pozostają nieruchome. Frame 3-4 (late-end): powrót po tym samym skośnym torze do pełnego wyprostu nad klatką. Obydwa ramiona pracują symetrycznie i jednocześnie — to ćwiczenie BILATERAL, nie unilateral (spec w prompcie była nieścisła; canonical odzwierciedla rzeczywisty GIF). Mechanic=isolation, force=push, plane=sagittal_and_transverse (zgięcie łokcia + skośna trajektoria poprzeczna). Primary triceps_brachii (P10) z naciskiem na głowę długą dzięki nieco cofniętemu kątowi ramienia. Secondary anconeus. Klatki potwierdzają unikalność toru cross-body — to nie jest klasyczny skull crusher. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "dumbbell", "upper_body", "lying", "cross_body", "long_head_bias"]
+}

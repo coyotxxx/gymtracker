@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-stiff-leg-deadlift",
+  "name": "Dumbbell Stiff-Leg Deadlift",
+  "namePl": "Stiff-leg deadlift z hantlami",
+  "aliases": ["dumbbell SLDL", "DB stiff-leg deadlift", "dumbbell straight-leg deadlift", "dumbbell RDL variation"],
+  "aliasesPl": ["SLDL z hantlami", "martwy ciąg na prostych nogach z hantlami", "martwy ciąg na sztywnych nogach z hantlami", "DB rumuński martwy ciąg"],
+
+  "description": "A hip-hinge posterior chain exercise performed with a dumbbell in each hand at the sides of the body. Compared to the barbell version, dumbbells allow a more natural arm path (no need to clear the knees) and a slightly deeper stretch for taller lifters. Knees stay only minimally bent (~5-15°, 'stiff' but not locked) — the movement comes from the hips driving back. Excellent for hamstring hypertrophy because the long lever arm of the dumbbells outside the legs creates a strong eccentric stretch under load. The lighter loading vs. a barbell makes it ideal for beginners learning the hinge, for hypertrophy work, and for unilateral imbalance correction.",
+  "descriptionPl": "Ćwiczenie hip hinge na tylny łańcuch mięśniowy wykonywane z hantlem w każdej ręce po bokach ciała. W porównaniu do wersji ze sztangą, hantle pozwalają na bardziej naturalną ścieżkę ruchu rąk (nie trzeba omijać kolan) i nieco głębszy rozciąg u wyższych ćwiczących. Kolana pozostają tylko minimalnie ugięte (~5-15°, 'sztywne' ale nie zablokowane) — ruch wychodzi z bioder cofających się do tyłu. Świetne na hipertrofię dwugłowych ud, bo długie ramię dźwigni hantli po bokach nóg tworzy mocny ekscentryczny rozciąg pod obciążeniem. Lżejsze obciążenie w porównaniu do sztangi czyni je idealnym dla początkujących uczących się hip hinge, do pracy hipertroficznej i do korekcji asymetrii jednostronnej.",
+
+  "instructions": [
+    "Pick up a pair of dumbbells and stand tall with feet hip-width apart, dumbbells hanging at the sides of your thighs, palms facing your body (neutral grip).",
+    "Set your back: chest up, shoulder blades pulled down and back, lats engaged. Soften the knees to ~5-15° — 'stiff' but not locked. This is the START.",
+    "Take a big breath, brace your core (Valsalva). Begin the descent by pushing your hips BACKWARD — not by bending the knees further.",
+    "Lower the dumbbells slowly along the sides of your legs — they slide down past the outside of the thighs and knees. Keep them close to the body.",
+    "Knees stay in the SAME slightly-bent position the whole time — they do not break further. The movement is pure hip hinge.",
+    "Lower until you feel a strong stretch in the hamstrings — typically the dumbbells reach mid-shin or just below the knees (depends on hamstring flexibility). DO NOT round the lower back to go lower.",
+    "Reverse the movement: drive the hips forward, pull the dumbbells up along the legs. Squeeze the glutes hard at the top — full hip extension. Stand tall (no hyperextension).",
+    "Maintain a neutral spine throughout. The dumbbells stay in line with the body — do not let them swing forward or out to the sides."
+  ],
+  "instructionsPl": [
+    "Podnieś parę hantli i stań prosto, stopy na szerokość bioder, hantle wiszą po bokach ud, dłonie zwrócone do ciała (chwyt neutralny).",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, najszersze napięte. Zmiękcz kolana do ~5-15° — 'sztywne' ale nie zablokowane. To jest START.",
+    "Nabierz głęboki oddech, napnij brzuch (Valsalva). Zacznij schodzenie przez wypchnięcie bioder DO TYŁU — nie przez dalsze zginanie kolan.",
+    "Opuszczaj hantle powoli wzdłuż boków nóg — zsuwają się obok zewnętrznej strony ud i kolan. Trzymaj je blisko ciała.",
+    "Kolana pozostają w TEJ SAMEJ lekko ugiętej pozycji przez cały czas — nie zginaj ich bardziej. Ruch to czysty hip hinge.",
+    "Schodź aż poczujesz mocny rozciąg w dwugłowych ud — zazwyczaj hantle dochodzą do połowy goleni lub tuż poniżej kolan (zależnie od mobilności hamstringów). NIE zaokrąglaj lędźwi by zejść niżej.",
+    "Wróć ruchem: wepchnij biodra do przodu, podciągnij hantle wzdłuż nóg. Mocno ściśnij pośladki na górze — pełen wyprost biodra. Stań prosto (bez nadmiernego odgięcia).",
+    "Utrzymuj neutralny kręgosłup przez cały ruch. Hantle pozostają w linii ciała — nie pozwól im odchylać się do przodu ani na boki."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "glutes"],
+    "secondary": ["erector_spinae", "forearms", "trapezius"],
+    "stabilizers": ["core", "latissimus_dorsi", "rhomboids", "rectus_abdominis", "obliques", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "glutes": "P9",
+    "erector_spinae": "S7",
+    "forearms": "S7",
+    "trapezius": "S5",
+    "latissimus_dorsi": "S4",
+    "core": "S6",
+    "adductors": "S4"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["belt", "lifting_straps", "chalk", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["hip-hinge-dowel-drill", "kettlebell-rdl", "bodyweight-good-morning"],
+    "progression_to": ["barbell-romanian-deadlift", "single-leg-dumbbell-rdl", "deficit-dumbbell-rdl", "barbell-stiff-leg-deadlift"],
+    "alternatives": ["barbell-romanian-deadlift", "kettlebell-rdl", "single-leg-rdl", "cable-pull-through", "good-morning"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, feet hip-width apart, toes forward",
+      "Dumbbells at the sides of the thighs, neutral grip (palms facing in)",
+      "Knees only slightly bent (~5-15°) — 'stiff' but not locked",
+      "Chest up, shoulder blades down and back, lats engaged",
+      "Brace the core — big breath in, abs tight before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, stopy na szerokość bioder, palce do przodu",
+      "Hantle po bokach ud, chwyt neutralny (dłonie do ciała)",
+      "Kolana tylko lekko ugięte (~5-15°) — 'sztywne' ale nie zablokowane",
+      "Klatka w górze, łopatki w dół i do tyłu, najszersze napięte",
+      "Napnij brzuch — głęboki wdech, mięśnie spięte przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Hips BACK, not down — push your butt to the wall behind you",
+      "Dumbbells slide down the SIDES of the legs — keep them close to the body",
+      "Knees stay in the SAME bent position the whole rep — do not bend them more",
+      "Lower until you feel a strong hamstring stretch — dumbbells reach mid-shin or just below knees",
+      "Drive hips forward to lockout, squeeze glutes — no leaning back at the top"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU, nie w dół — wypchnij pośladki do ściany za tobą",
+      "Hantle zsuwają się po BOKACH nóg — trzymaj je blisko ciała",
+      "Kolana pozostają w TEJ SAMEJ ugiętej pozycji przez całe powtórzenie — nie zginaj ich bardziej",
+      "Schodź aż poczujesz mocny rozciąg dwugłowych ud — hantle do połowy goleni lub tuż poniżej kolan",
+      "Wepchnij biodra do przodu do lock-out, ściśnij pośladki — bez odchylania się do tyłu na górze"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back (lumbar flexion) at the bottom",
+        "faultPl": "Zaokrąglone plecy lędźwiowe (zgięcie lędźwiowe) na dole",
+        "cause": "Going too low for current hamstring flexibility, weak erectors, poor bracing, or load too heavy",
+        "causePl": "Schodzenie za nisko jak na obecną mobilność hamstringów, słabe prostowniki, słabe napięcie brzucha, lub zbyt duży ciężar",
+        "cue": "Stop the descent when you feel the stretch — do NOT chase the floor. Reduce range of motion, reduce weight, master the hinge first.",
+        "cuePl": "Zatrzymaj schodzenie gdy poczujesz rozciąg — NIE goń podłogi. Zmniejsz zakres, zmniejsz ciężar, opanuj hip hinge."
+      },
+      {
+        "fault": "Locked knees (truly straight legs) — risky for the lower back",
+        "faultPl": "Zablokowane kolana (całkowicie wyprostowane nogi) — ryzyko dla lędźwi",
+        "cause": "Literal interpretation of 'stiff-leg', confusion with straight-leg deadlift extremes, hyperextension habit",
+        "causePl": "Dosłowna interpretacja 'sztywnych nóg', mylenie z ekstremalnymi wersjami straight-leg, nawyk hiperekstensji kolan",
+        "cue": "'Stiff-leg' means soft, not locked. Keep a 5-15° bend — like you're holding the position, not pushing back into the joint.",
+        "cuePl": "'Sztywne nogi' znaczy miękkie, nie zablokowane. Trzymaj zgięcie 5-15° — jakbyś trzymał pozycję, nie wpychał kolan do tyłu."
+      },
+      {
+        "fault": "Dumbbells drift away from the body (swing forward or outward)",
+        "faultPl": "Hantle oddalają się od ciała (kołyszą się do przodu lub na boki)",
+        "cause": "Lats not engaged, no scapular control, hips not going back enough, using momentum",
+        "causePl": "Najszersze nie napięte, brak kontroli łopatek, biodra nie cofają się wystarczająco, używanie rozpędu",
+        "cue": "Pull the dumbbells INTO your thighs the whole way. Engage lats hard. Slow eccentric — no swinging.",
+        "cuePl": "Pociągnij hantle W uda przez cały ruch. Mocno napnij najszersze. Powolny ekscentryk — bez kołysania."
+      },
+      {
+        "fault": "Excessive knee bend — turning SLDL into a squat-deadlift hybrid",
+        "faultPl": "Zbyt mocne zginanie kolan — zamienia SLDL w hybrydę przysiadu z martwym ciągiem",
+        "cause": "Weak hamstrings trying to compensate with quads, misunderstanding of hip-hinge mechanics",
+        "causePl": "Słabe dwugłowe ud próbujące kompensować przez czworogłowe, niezrozumienie mechaniki hip hinge",
+        "cue": "Knees STAY quiet — only the hips move. Imagine your knees are frozen at 10°. Film yourself from the side.",
+        "cuePl": "Kolana POZOSTAJĄ nieruchome — tylko biodra się ruszają. Wyobraź sobie że kolana są zamrożone na 10°. Nagraj się z boku."
+      },
+      {
+        "fault": "Looking up — neck hyperextension",
+        "faultPl": "Patrzenie w górę — hiperekstensja szyi",
+        "cause": "Old cue 'eyes up', confusion about neutral spine, anxiety about losing balance",
+        "causePl": "Stary cue 'oczy w górę', mylenie pojęcia neutralnego kręgosłupa, lęk przed utratą równowagi",
+        "cue": "Neutral neck — eyes on the floor ~2 meters in front. Spine straight from head to tailbone.",
+        "cuePl": "Neutralna szyja — wzrok na podłodze ~2 m przed sobą. Kręgosłup prosty od głowy do kości ogonowej."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace (Valsalva), hold during descent and ascent. Exhale at the top of the lockout. NEVER exhale during the eccentric — that's where the spine needs the most bracing.",
+    "breathingPl": "Głęboki wdech na górze, napięcie (Valsalva), trzymaj podczas schodzenia i wchodzenia. Wydech na szczycie lock-out. NIGDY wydech podczas ekscentryku — tam kręgosłup potrzebuje najmocniejszego napięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Do not load the spine — even partial SLDL puts shear forces on the lumbar.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nie obciążaj kręgosłupa — nawet częściowy SLDL daje siły ścinające na lędźwie.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion is high-risk. Switch to seated/lying leg curl or cable pull-through (less spinal load).",
+      "modificationPl": "Obciążona flexja kręgosłupa to wysokie ryzyko. Przejdź na uginanie nóg siedząc/leżąc lub cable pull-through (mniejsze obciążenie kręgosłupa).",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop above the knee. Stand on a slightly elevated surface to make the bottom feel deeper without going lower in ROM. Work flexibility separately.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj się powyżej kolana. Stań na lekko podwyższonej powierzchni by dół wydawał się głębszy bez schodzenia dalej w zakresie. Pracuj nad mobilnością osobno.",
+      "alternative": "kettlebell-rdl"
+    },
+    {
+      "condition": "grip_weakness",
+      "severity": "modify",
+      "modification": "Use lifting straps to take grip out of the equation, so hamstrings can be properly overloaded. Or use mixed/hook grip with chalk.",
+      "modificationPl": "Użyj pasków do podnoszenia by wyłączyć chwyt z równania, dzięki czemu hamstringi mogą być prawidłowo obciążone. Lub używaj chwytu mieszanego/hook z magnezją.",
+      "alternative": "barbell-romanian-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — preferred range for hamstring growth) | 3x12-15 (endurance/glute focus) | 4x6-8 (strength with heavier dumbbells)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "dumbbell-stiff-leg-deadlift.gif",
+    "frames_extracted": [
+      "frames/dumbbell-stiff-leg-deadlift/frame_0_start.png",
+      "frames/dumbbell-stiff-leg-deadlift/frame_1_early.png",
+      "frames/dumbbell-stiff-leg-deadlift/frame_2_mid.png",
+      "frames/dumbbell-stiff-leg-deadlift/frame_3_late.png",
+      "frames/dumbbell-stiff-leg-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-stiff-leg-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa. Frame 0 (start): pozycja stojąca, sylwetka trzyma parę hantli po bokach ud chwytem neutralnym, stopy na szerokość bioder, kolana minimalnie ugięte. Frame 2 (mid): pełen hip hinge w dolnej pozycji — tułów pochylony do przodu prawie do równoległej, biodra mocno cofnięte, hantle wiszą po zewnętrznej stronie nóg na wysokości połowy goleni / poniżej kolan, kolana nadal tylko lekko ugięte (NIE głęboko jak w przysiadzie ani konwencjonalnym DL). Podświetlone mocno: hamstringi (cały tył uda), pośladki, prostowniki grzbietu, dolna część trapezius. Frame 4 (powrót do startu): widać 'ghost' poprzedniej pozycji pochylonej, sylwetka wraca do wyprostowanej pozycji stojącej. Kluczowa obserwacja w porównaniu z RDL ze sztangą: hantle prowadzone są PO BOKACH nóg (nie z przodu), co pozwala na bardziej naturalną ścieżkę i ewentualnie nieco głębszy rozciąg u wyższych ćwiczących. Klasyfikacja: czysty hip hinge, plane sagittal, mechanic compound, force pull, bilateral. Equipment: dumbbells. Trudność 5 (beginner-friendly — łatwiejsze niż barbell RDL bo nie trzeba uczyć się utrzymania gryfu w linii i bo lżejsze obciążenia są naturalne dla początkujących). Główne mięśnie: hamstrings P10 i glutes P9 (SLDL/RDL są superior dla hipertrofii hamstringów przez długi ekscentryk pod obciążeniem w pozycji rozciągniętej). Erector spinae S7 (statyczna praca antyfleksyjna). Forearms S7 (długie izometryczne trzymanie hantli). Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego — polska terminologia fitness (hip hinge, ekscentryk, lock-out, hamstringi, pośladki, SLDL, chwyt neutralny).",
+
+  "tags": ["bodybuilding", "posterior_chain", "hamstring_hypertrophy", "hip_hinge", "dumbbell", "compound", "eccentric_focused", "beginner_friendly", "home_gym_compatible", "assistance_lift"]
+}

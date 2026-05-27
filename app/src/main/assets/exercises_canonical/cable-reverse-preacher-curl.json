@@ -1,0 +1,202 @@
+{
+  "id": "cable-reverse-preacher-curl",
+  "name": "Cable Reverse Preacher Curl",
+  "namePl": "Reverse curl na modlitewniku z wyciągu",
+  "aliases": ["cable pronated preacher curl", "preacher reverse curl cable", "low pulley reverse preacher curl"],
+  "aliasesPl": ["uginanie nachwytem na modlitewniku z wyciągu", "reverse curl z dolnego wyciągu na modlitewniku", "uginanie przedramion nachwytem na modlitewniku"],
+
+  "description": "Isolation exercise for the brachialis and brachioradialis performed seated at a preacher bench with a short straight bar attached to a low pulley. The pronated (overhand) grip removes biceps brachii from the strongest line of pull and shifts the load onto the brachialis (which lies underneath the biceps) and the brachioradialis (the bulk of the upper forearm). The cable provides constant tension across the full arc, including the stretched position at the bottom which is where preacher curls excel. The bench pad eliminates swing and isolates the elbow flexors strictly. A premium choice for building upper-arm thickness (brachialis pushes the biceps higher) and forearm mass.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień ramienny i ramienno-promieniowy wykonywane siedząc na ławce modlitewnika, z krótkim gryfem prostym podpiętym do dolnego wyciągu. Chwyt nachwytem (palce w dół) wyłącza mięsień dwugłowy z najsilniejszej linii pracy i przenosi obciążenie na ramienny (leży pod bicepsem) oraz ramienno-promieniowy (większość masy górnej części przedramienia). Wyciąg zapewnia stałe napięcie przez cały zakres ruchu, w tym w pozycji rozciągniętej na dole — która jest największą zaletą wariantów na modlitewniku. Pad ławki eliminuje bujanie i ściśle izoluje zginacze stawu łokciowego. Doskonałe ćwiczenie do budowania grubości ramienia (ramienny wypycha biceps wyżej) i masy przedramion.",
+
+  "instructions": [
+    "Set the preacher bench close to a low pulley so the cable runs in a straight line up to your hands. Attach a short straight bar to the low pulley.",
+    "Sit on the bench. Lock your armpits against the top edge of the pad and rest the entire length of your upper arms (triceps side) flat against the angled surface.",
+    "Grip the bar with a pronated grip (palms facing down) at shoulder width. Keep wrists straight and locked.",
+    "Start with the elbows fully extended but not hyperextended — biceps and brachialis under stretch, cable taut.",
+    "Curl the bar upward by flexing only at the elbows. Keep your upper arms glued to the pad. Exhale during the lift.",
+    "Continue until forearms are vertical or just past — the bar should approach the upper chest / lower face. Pause and squeeze the brachialis and forearm extensors hard for 1 second.",
+    "Lower the bar slowly under control over 2-3 seconds back to full elbow extension. Inhale during the descent. Keep tension on the cable — do not let the stack rest mid-set.",
+    "Keep your torso upright and chest against the pad. No swinging, no shoulder shrugging, no wrist curling."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę modlitewnika blisko dolnego wyciągu tak, aby linka biegła prostą linią do dłoni. Podepnij krótki gryf prosty do dolnego wyciągu.",
+    "Usiądź na ławce. Zablokuj pachy o górną krawędź padu i oprzyj całą długość ramion ponad łokciem (stroną tricepsową) płasko o kąt padu.",
+    "Chwyć gryf nachwytem (dłonie skierowane w dół) na szerokość barków. Nadgarstki proste i zablokowane.",
+    "Zaczynaj z łokciami w pełnym wyproście, ale nie hiperwyprostowane — biceps i ramienny w rozciągnięciu, linka napięta.",
+    "Uginaj gryf do góry, pracując wyłącznie w stawach łokciowych. Ramiona ponad łokciem pozostają przyklejone do padu. Wydech w fazie koncentrycznej.",
+    "Kontynuuj aż przedramiona osiągną pion lub minimalnie go przekroczą — gryf powinien zbliżyć się do górnej części klatki/dolnej części twarzy. Zatrzymaj się na 1 sekundę i mocno spinaj ramienny oraz prostowniki przedramienia.",
+    "Opuszczaj gryf wolno i pod kontrolą przez 2-3 sekundy aż do pełnego wyprostu łokci. Wdech w fazie ekscentrycznej. Utrzymuj napięcie linki — nie pozwól ciężarom osiąść w połowie serii.",
+    "Tułów wyprostowany, klatka przy padzie. Żadnego bujania, wzruszania barków ani zginania nadgarstków."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis"],
+    "secondary": ["biceps_brachii", "forearm_extensors"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "brachioradialis": "P9",
+    "biceps_brachii": "S5",
+    "forearm_extensors": "S6",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "preacher_bench", "straight_bar_attachment"],
+    "optional": ["ez_bar_attachment", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-reverse-curl", "preacher-curl", "cable-curl"],
+    "progression_to": ["barbell-reverse-preacher-curl", "ez-bar-reverse-preacher-curl", "one-arm-cable-reverse-preacher-curl"],
+    "alternatives": ["barbell-reverse-curl", "ez-bar-reverse-curl", "hammer-preacher-curl", "cable-reverse-curl-standing", "dumbbell-reverse-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench pulled close to the low pulley — cable runs straight",
+      "Armpits jammed against the top of the pad",
+      "Pronated grip at shoulder width, wrists locked straight",
+      "Sit tall, chest against the pad, feet flat",
+      "Full elbow extension before the first rep — feel the stretch"
+    ],
+    "setup_cues_pl": [
+      "Ławka blisko dolnego wyciągu — linka biegnie prosto",
+      "Pachy zaklinowane o górną krawędź padu",
+      "Chwyt nachwytem na szerokość barków, nadgarstki proste i zablokowane",
+      "Siedź wyprostowany, klatka przy padzie, stopy płasko",
+      "Pełny wyprost łokci przed pierwszym powtórzeniem — czuj rozciągnięcie"
+    ],
+    "execution_cues": [
+      "Drive the knuckles toward the ceiling — not the bar toward the chin",
+      "Squeeze the top of the forearm hard at the peak",
+      "Lower for 2-3 seconds — never let the stack crash down",
+      "Keep wrists straight — knuckles in line with the back of the forearm",
+      "Upper arms welded to the pad — nothing moves above the elbows"
+    ],
+    "execution_cues_pl": [
+      "Wpychaj kostki dłoni w sufit — nie ciągnij gryfu do brody",
+      "Mocno spinaj szczyt przedramienia w górnej pozycji",
+      "Opuszczaj przez 2-3 sekundy — nigdy nie pozwól ciężarom uderzyć",
+      "Nadgarstki proste — kostki w linii z grzbietem przedramienia",
+      "Ramiona ponad łokciem przyspawane do padu — nic się tam nie rusza"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrist flexes upward during the curl (wrist curling)",
+        "faultPl": "Nadgarstek zgina się do góry w trakcie ruchu (dorzucanie nadgarstkiem)",
+        "cause": "Forearm extensors fatigue before brachialis, brain compensates by recruiting wrist flexors to lift the bar",
+        "causePl": "Prostowniki przedramienia męczą się przed ramiennym, mózg kompensuje rekrutując zginacze nadgarstka aby unieść gryf",
+        "cue": "Lower the weight. Drive knuckles UP throughout — imagine pushing a wall above you with the backs of your hands.",
+        "cuePl": "Zmniejsz ciężar. Wpychaj kostki dłoni do góry przez cały ruch — wyobraź sobie że pchasz grzbietami dłoni ścianę nad sobą."
+      },
+      {
+        "fault": "Elbows lift off the pad at the bottom",
+        "faultPl": "Łokcie odrywają się od padu w dolnej pozycji",
+        "cause": "Cable angle is wrong (bench too far from pulley), or the lifter tries to use a weight that pulls the arms off the bench in the stretched position",
+        "causePl": "Zły kąt linki (ławka za daleko od wyciągu), lub używanie ciężaru który ściąga ramiona z ławki w pozycji rozciągniętej",
+        "cue": "Move the bench closer to the pulley until the cable rises vertically. Reduce load if elbows still lift.",
+        "cuePl": "Przysuń ławkę bliżej wyciągu aż linka będzie biec pionowo do góry. Zmniejsz ciężar jeśli łokcie nadal się unoszą."
+      },
+      {
+        "fault": "Partial range of motion (not reaching full extension at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak pełnego wyprostu na dole)",
+        "cause": "Stretched position is mechanically weak — lifters cut it off to save the rep",
+        "causePl": "Pozycja rozciągnięta jest mechanicznie słaba — ćwiczący skracają ją aby uratować powtórzenie",
+        "cue": "Lower until elbows are FULLY straight every rep. The bottom stretch is the entire point of preacher work.",
+        "cuePl": "Opuszczaj aż łokcie będą W PEŁNI wyprostowane przy każdym powtórzeniu. Rozciągnięcie na dole to cały sens ćwiczeń na modlitewniku."
+      },
+      {
+        "fault": "Shoulders shrug up and forward to help the lift",
+        "faultPl": "Barki wzruszają się do góry i przodu pomagając podnieść ciężar",
+        "cause": "Load too heavy, or upper traps overactive substituting for tired brachialis",
+        "causePl": "Zbyt duży ciężar, lub nadaktywne czworoboczne górne zastępują zmęczony ramienny",
+        "cue": "Pull shoulders down and back before each rep. If they shrug — set is over.",
+        "cuePl": "Ściągnij barki w dół i tył przed każdym powtórzeniem. Jeśli się wzruszą — seria skończona."
+      },
+      {
+        "fault": "Grip too wide / too narrow",
+        "faultPl": "Chwyt zbyt szeroki lub zbyt wąski",
+        "cause": "Default attachment placement copied from biceps work without adjusting for pronated mechanics",
+        "causePl": "Skopiowanie ustawienia z pracy bicepsowej bez dostosowania do mechaniki nachwytu",
+        "cue": "Hands at shoulder width — wider stresses the wrists, narrower kills brachialis leverage.",
+        "cuePl": "Dłonie na szerokość barków — szerzej obciąża nadgarstki, węziej zabija dźwignię ramiennego."
+      }
+    ],
+    "breathing": "Exhale during the curl (concentric). Inhale during the controlled lowering (eccentric). Maintain a light brace throughout — there is minimal spinal loading but a tight midsection helps you keep upper arms locked to the pad.",
+    "breathingPl": "Wydech w trakcie uginania (faza koncentryczna). Wdech w trakcie kontrolowanego opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie tułowia przez całą serię — obciążenie kręgosłupa jest minimalne, ale napięty brzuch pomaga utrzymać ramiona przyklejone do padu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Pronated grip directly loads the wrist extensors' common tendon at the lateral epicondyle. Reduce load drastically, use higher reps (15-20), or switch to neutral (hammer) grip until pain subsides.",
+      "modificationPl": "Chwyt nachwytem bezpośrednio obciąża wspólne przyczepy prostowników nadgarstka na nadkłykciu bocznym. Mocno zmniejsz ciężar, używaj większej liczby powtórzeń (15-20), lub przejdź na chwyt neutralny (młotkowy) do ustąpienia bólu.",
+      "alternative": "hammer-preacher-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar in pronation locks the wrists rigidly. Use an EZ-bar attachment (angled grip) which is friendlier to the radioulnar joint, or use rope handle for free supination.",
+      "modificationPl": "Sztanga prosta w pronacji blokuje nadgarstki w sztywnej pozycji. Użyj sztangi łamanej (kąt chwytu) bardziej przyjaznej dla stawu promieniowo-łokciowego, lub linki dla swobodnej supinacji.",
+      "alternative": "ez-bar-reverse-preacher-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Preacher position with full stretch loads the distal biceps tendon heavily even with pronated grip. Avoid maximal stretched-position loads. Stop short of full extension if pain appears.",
+      "modificationPl": "Pozycja modlitewnika z pełnym rozciągnięciem mocno obciąża dystalny przyczep bicepsa nawet przy nachwycie. Unikaj maksymalnego obciążenia w pozycji rozciągniętej. Zatrzymaj się przed pełnym wyprostem jeśli pojawia się ból.",
+      "alternative": "standing-cable-reverse-curl"
+    },
+    {
+      "condition": "elbow_hyperextension_history",
+      "severity": "modify",
+      "modification": "Preacher pad and cable tension can passively pull the elbow into hyperextension at the bottom. Stop the eccentric just before full lockout, keep a slight bend.",
+      "modificationPl": "Pad modlitewnika i napięcie linki mogą biernie wciągać łokieć w hiperwyprost w dolnej pozycji. Zatrzymaj fazę negatywną tuż przed pełnym wyprostem, utrzymuj minimalne zgięcie.",
+      "alternative": "barbell-reverse-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/brachialis focus) | 3x12-15 (arm-day finisher) | 3x15-20 (pump/forearm endurance)",
+  "calories_per_kg_per_hour": 4.8,
+
+  "media": {
+    "primary": "cable-reverse-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/cable-reverse-preacher-curl/frame_0_start.png",
+      "frames/cable-reverse-preacher-curl/frame_1_early.png",
+      "frames/cable-reverse-preacher-curl/frame_2_mid.png",
+      "frames/cable-reverse-preacher-curl/frame_3_late.png",
+      "frames/cable-reverse-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-reverse-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): atleta siedzi na ławce modlitewnika z czarnym padem, ramiona ponad łokciem oparte całą długością o pad pod kątem ~45 stopni. Trzyma krótki gryf prosty z dwoma gałkami końcowymi (cable attachment) chwytem nachwytem (palce w dół) na szerokość barków. Linka biegnie ukośnie w dół-w-prawo do dolnego wyciągu stojaka. Łokcie maksymalnie zgięte, gryf przy szyi — pełny skurcz. Podświetlone na czerwono: brachialis (zewnętrzna strona ramienia) i mięśnie przedramienia (głównie brachioradialis na grzbiecie). Frame 2 (mid): faza ekscentryczna w trakcie, ramiona prawie wyprostowane, gryf na wysokości środka padu, linka dalej napięta. Frame 4 (end): powrót do pełnego zgięcia identyczny jak frame 0. Tułów stoi nieruchomo cały ruch — modelowe wykonanie. Bilateralne (oba ramiona równocześnie). Ćwiczenie jednoznacznie zidentyfikowane: cable + preacher bench + short straight bar + pronated grip = Cable Reverse Preacher Curl. Pozycjonowanie ławki blisko wyciągu zapewnia stałe napięcie. Wszystkie pola PL napisane od zera w standardowej polskiej terminologii fitness.",
+
+  "tags": ["bodybuilding", "arms", "brachialis", "brachioradialis", "forearms", "isolation", "cable", "preacher", "upper_body", "constant_tension"]
+}

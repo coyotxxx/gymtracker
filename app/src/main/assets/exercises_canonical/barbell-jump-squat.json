@@ -1,0 +1,208 @@
+{
+  "id": "barbell-jump-squat",
+  "name": "Barbell Jump Squat",
+  "namePl": "Skok z przysiadu ze sztangą",
+  "aliases": ["weighted jump squat", "loaded jump squat", "back squat jump", "barbell squat jump"],
+  "aliasesPl": ["wyskok z przysiadu ze sztangą", "obciążony skok z przysiadu", "sztanga skoki z przysiadu", "skoki z przysiadem ze sztangą na karku", "przysiad ze skokiem ze sztangą"],
+
+  "description": "Advanced bilateral plyometric lower-body exercise combining a back squat with an explosive vertical jump while a barbell is loaded across the upper back. Athlete unracks a barbell into back squat position, lowers into a parallel or near-parallel squat, then drives both feet through the floor to jump explosively upward, landing softly into the next squat position. The added external load dramatically increases power output, rate of force development (RFD) and neuromuscular recruitment compared to bodyweight jump squats. The exercise is a staple in strength-power blocks for athletes (sprinters, jumpers, throwers, contact sports) and trains the high-velocity/medium-load segment of the force-velocity curve. Because impact forces and spinal loading both stack, the movement is reserved for trained lifters with a solid back squat base and sound landing mechanics.",
+  "descriptionPl": "Zaawansowane obustronne plyometryczne ćwiczenie dolnej części ciała łączące tylny przysiad z eksplozywnym wyskokiem w górę, ze sztangą umieszczoną na górnej części pleców. Trenujący zdejmuje sztangę ze stojaków do pozycji tylnego przysiadu, opuszcza się do przysiadu równoległego lub niemal równoległego, następnie eksplozywnie wypycha obie stopy w podłogę by wyskoczyć w górę i miękko ląduje wracając do kolejnego przysiadu. Dodatkowe obciążenie zewnętrzne drastycznie zwiększa moc wyjściową, szybkość rozwoju siły (RFD) i rekrutację nerwowo-mięśniową w porównaniu do skoków z przysiadu bez obciążenia. Ćwiczenie to podstawa bloków siłowo-mocowych u sportowców (sprinterzy, skoczkowie, miotacze, sporty kontaktowe) i trenuje segment wysokiej prędkości/średniego obciążenia na krzywej siła-prędkość. Ponieważ siły uderzeniowe i obciążenie kręgosłupa kumulują się, ruch zarezerwowany jest dla wytrenowanych osób z solidną bazą tylnego przysiadu i poprawną techniką lądowania.",
+
+  "instructions": [
+    "Set up a barbell in a power rack at approximately upper-chest height. Load with a moderate weight — typically 20-30% of 1RM back squat for power work (do NOT use heavy squat loads).",
+    "Approach the bar, position it across the upper trapezius (high-bar) or rear deltoids (low-bar). Grip slightly wider than shoulder-width, elbows pulled forward, chest up.",
+    "Unrack the barbell, step back into your squat stance — feet shoulder to slightly wider, toes turned out 5-15°. Brace the core hard.",
+    "Lower yourself in a controlled squat — knees track over toes, hips push back, descend to approximately parallel (top of thigh at hip height) or just above.",
+    "Without bouncing in the hole, drive both feet explosively through the floor — extend hips, knees and ankles simultaneously to jump straight up.",
+    "Get airborne — feet leave the floor. Keep the bar tight on the back, do not let it bounce. Maintain a neutral spine and braced core throughout flight.",
+    "Land softly on the balls of both feet first, then mid-foot/heel, immediately absorbing the impact by bending knees and hips back into the squat position.",
+    "Reset briefly in the bottom or rebound directly — depending on protocol (cluster sets favor reset, contrast/PAP work favors rebound).",
+    "Complete prescribed reps, then carefully step forward and re-rack the barbell. Never abandon the bar mid-set.",
+    "Rest fully between sets (2-4 min) — this is a POWER exercise, not conditioning. Quality over quantity."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w klatce siłowej na wysokości górnej części klatki piersiowej. Załaduj umiarkowanym ciężarem — zazwyczaj 20-30% 1RM tylnego przysiadu dla pracy nad mocą (NIE używaj ciężarów z klasycznego przysiadu).",
+    "Podejdź do sztangi, ułóż ją na górnej części czworobocznych (high-bar) lub tylnych deltoidach (low-bar). Chwyt nieco szerszy niż barki, łokcie skierowane do przodu, klatka uniesiona.",
+    "Zdejmij sztangę ze stojaków, zrób krok w tył do pozycji przysiadu — stopy na szerokość barków lub nieco szerzej, palce skierowane na zewnątrz pod kątem 5-15°. Mocno napnij brzuch.",
+    "Opuść się w kontrolowanym przysiadzie — kolana w linii z palcami stóp, biodra cofnięte, schodzisz do około równoległej (góra uda na wysokości biodra) lub nieco wyżej.",
+    "Bez odbijania się w dolnej pozycji, eksplozywnie wypchnij obie stopy w podłogę — jednocześnie wyprostuj biodra, kolana i kostki by wyskoczyć prosto w górę.",
+    "Oderwij się od podłoża — stopy opuszczają podłogę. Sztanga ciasno na plecach, nie pozwól jej się odbić. Utrzymuj neutralny kręgosłup i napięty brzuch przez cały lot.",
+    "Ląduj miękko najpierw na śródstopiu obu stóp, potem śródstopie/pięta, natychmiast amortyzując uderzenie zginając kolana i biodra z powrotem do pozycji przysiadu.",
+    "Krótko zresetuj się w dolnej pozycji lub odbij bezpośrednio — w zależności od protokołu (serie klastrowe preferują reset, praca kontrastowa/PAP preferuje odbicie).",
+    "Wykonaj zaplanowaną liczbę powtórzeń, następnie ostrożnie zrób krok do przodu i odłóż sztangę na stojaki. Nigdy nie porzucaj sztangi w trakcie serii.",
+    "Odpoczywaj pełne 2-4 minuty między seriami — to ćwiczenie MOCY, nie kondycji. Jakość ważniejsza niż ilość."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "calves", "adductors", "erector_spinae"],
+    "stabilizers": ["core", "gluteus_medius", "upper_back", "tibialis_anterior"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P10",
+    "hamstrings": "S7",
+    "calves": "S8",
+    "adductors": "S6",
+    "erector_spinae": "S8",
+    "core": "S8",
+    "gluteus_medius": "S6",
+    "upper_back": "S6",
+    "tibialis_anterior": "T5"
+  },
+
+  "equipment": {
+    "required": ["barbell", "weight_plates", "power_rack"],
+    "optional": ["weightlifting_shoes", "lifting_belt", "barbell_pad"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-back-squat", "squat-jump", "box-jump", "front-squat"],
+    "progression_to": ["depth-jump-to-squat", "trap-bar-jump", "cluster-jump-squat", "contrast-training-pap"],
+    "alternatives": ["squat-jump", "trap-bar-jump", "dumbbell-jump-squat", "kettlebell-swing", "power-clean"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar position high on the traps or on the rear delt shelf — never on the neck",
+      "Elbows under or slightly behind the bar — chest stays up",
+      "Stance shoulder-width or slightly wider, toes 5-15° out",
+      "Brace 360° — big breath into the belly, lock the ribcage down",
+      "Load light — 20-30% 1RM back squat for power, NOT heavy"
+    ],
+    "setup_cues_pl": [
+      "Sztanga wysoko na czworobocznych lub na półce z tylnych deltoidów — nigdy na szyi",
+      "Łokcie pod sztangą lub nieco za nią — klatka uniesiona w górę",
+      "Stopy na szerokość barków lub nieco szerzej, palce 5-15° na zewnątrz",
+      "Napnij brzuch 360° — duży wdech do brzucha, żebra ściągnij w dół",
+      "Obciążaj lekko — 20-30% 1RM tylnego przysiadu dla mocy, NIE ciężko"
+    ],
+    "execution_cues": [
+      "Descend controlled, ascend EXPLOSIVE — fast bar speed is the point",
+      "Drive through the WHOLE foot, finish on the balls and ankles",
+      "Triple extension at the top — hips, knees and ankles all lock out in flight",
+      "Keep the bar GLUED to your back — no slap, no float",
+      "Land soft, knees track over toes, absorb back into the squat"
+    ],
+    "execution_cues_pl": [
+      "Schodź kontrolowanie, wstawaj EKSPLOZYWNIE — szybkość sztangi to sens ćwiczenia",
+      "Wypychaj CAŁĄ stopą, kończ na śródstopiu i kostkach",
+      "Potrójne wyprostowanie w szczycie — biodra, kolana i kostki w pełnym wyproście w locie",
+      "Sztanga PRZYKLEJONA do pleców — żadnego odbicia, żadnego luzu",
+      "Ląduj miękko, kolana w linii z palcami, amortyzuj wracając do przysiadu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using too heavy a load (squat weight instead of power weight)",
+        "faultPl": "Używanie zbyt ciężkiego obciążenia (ciężar z przysiadu zamiast ciężaru do mocy)",
+        "cause": "Misunderstanding the goal — this is a POWER/RFD exercise, not max strength. Heavy loads kill bar speed, increase injury risk and turn the lift into a slow squat with a hop.",
+        "causePl": "Niezrozumienie celu — to ćwiczenie MOCY/RFD, nie maksymalnej siły. Ciężkie obciążenia zabijają szybkość sztangi, zwiększają ryzyko urazu i zmieniają ruch w powolny przysiad z podskokiem.",
+        "cue": "If you can't get clearly airborne, reduce the weight. 20-30% of squat 1RM is the sweet spot. Speed > load.",
+        "cuePl": "Jeśli nie odrywasz się wyraźnie od podłoża, zredukuj ciężar. 20-30% 1RM przysiadu to optymalna strefa. Szybkość > obciążenie."
+      },
+      {
+        "fault": "Hard, jarring landings (no eccentric absorption)",
+        "faultPl": "Twarde, gwałtowne lądowania (brak amortyzacji ekscentrycznej)",
+        "cause": "Stiff ankles/knees on landing, fatigue, ego-driven set length. Combined with bar load this hammers the spine, knees and ankles.",
+        "causePl": "Sztywne kostki i kolana przy lądowaniu, zmęczenie, długość serii pod wpływem ego. W połączeniu z obciążeniem sztangi mocno obciąża to kręgosłup, kolana i kostki.",
+        "cue": "Land silently. Ball-of-foot first, then mid-foot, then heel — let the squat absorb the impact. If you hear a slap, stop the set.",
+        "cuePl": "Ląduj cicho. Najpierw śródstopie, potem środek stopy, potem pięta — niech przysiad zamortyzuje uderzenie. Jeśli słyszysz klaśnięcie, przerwij serię."
+      },
+      {
+        "fault": "Bar bounces off the back during flight",
+        "faultPl": "Sztanga odbija się od pleców podczas lotu",
+        "cause": "Loose upper-back grip, weak bracing, bar position too low. Bar can shift, slam down on landing, cause loss of control or back injury.",
+        "causePl": "Luźny chwyt na górze pleców, słabe napięcie, zbyt niska pozycja sztangi. Sztanga może się przesunąć, uderzyć przy lądowaniu, spowodować utratę kontroli lub uraz pleców.",
+        "cue": "Pull the bar DOWN into the traps with the hands. Active upper back, never passive. Bar must travel with you, not behind you.",
+        "cuePl": "Wciśnij sztangę W DÓŁ w czworoboczne rękami. Aktywne plecy, nigdy bierne. Sztanga musi się poruszać z tobą, nie za tobą."
+      },
+      {
+        "fault": "Knees cave inward on landing (valgus collapse)",
+        "faultPl": "Kolana zapadają się do środka przy lądowaniu (koślawość)",
+        "cause": "Weak gluteus medius, fatigue late in set, load exceeding control capacity. High injury risk with bar load adding axial stress.",
+        "causePl": "Słaby pośladkowy średni, zmęczenie pod koniec serii, obciążenie przekraczające zdolność kontroli. Wysokie ryzyko urazu — obciążenie sztangi dodaje stresu osiowego.",
+        "cue": "Push knees OUT over second/third toe — both on descent AND landing. If they cave, STOP THE SET immediately.",
+        "cuePl": "Wypychaj kolana NA ZEWNĄTRZ, w linii z drugim/trzecim palcem — zarówno przy schodzeniu, JAK i przy lądowaniu. Jeśli się zapadają, NATYCHMIAST przerwij serię."
+      },
+      {
+        "fault": "Going too deep (full ATG squat with load)",
+        "faultPl": "Zbyt głębokie schodzenie (pełny przysiad ATG z obciążeniem)",
+        "cause": "Habit from regular squat training. Deeper depth slows the rebound, magnifies eccentric load on knees/spine and reduces jump height drastically.",
+        "causePl": "Nawyk z klasycznego treningu przysiadów. Większa głębokość spowalnia odbicie, zwiększa obciążenie ekscentryczne kolan/kręgosłupa i drastycznie redukuje wysokość skoku.",
+        "cue": "Parallel or just above — top of thigh at hip crease. This is a POWER lift, not a depth test.",
+        "cuePl": "Równolegle lub nieco wyżej — góra uda na wysokości zagięcia biodra. To ćwiczenie MOCY, nie test głębokości."
+      }
+    ],
+    "breathing": "Brace and hold per rep (Valsalva-style): big breath in at the top, hold during descent and jump, exhale forcefully at peak of jump or upon landing. Re-breathe between reps if resetting. Never hyperventilate; never hold across multiple reps without resetting.",
+    "breathingPl": "Napięcie i wstrzymanie oddechu na powtórzenie (styl Valsalvy): duży wdech na górze, wstrzymanie podczas schodzenia i skoku, forsowny wydech w szczycie skoku lub przy lądowaniu. Oddychaj między powtórzeniami jeśli resetujesz. Nigdy nie hiperwentyluj; nigdy nie wstrzymuj oddechu na wiele powtórzeń bez resetu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_injury_or_chronic_low_back_pain",
+      "severity": "avoid",
+      "modification": "Combined axial bar load plus landing impact severely stresses lumbar discs. Use unloaded squat jumps or trap-bar jumps (lower spinal compression) once cleared by a physiotherapist.",
+      "modificationPl": "Połączone obciążenie osiowe sztangi i siła lądowania mocno obciąża krążki lędźwiowe. Stosuj nieobciążone skoki z przysiadu lub skoki z trap barem (mniejsza kompresja kręgosłupa) po uzyskaniu zgody fizjoterapeuty.",
+      "alternative": "squat-jump"
+    },
+    {
+      "condition": "knee_pain_patellar_tendinopathy_or_meniscus_issue",
+      "severity": "avoid",
+      "modification": "High-impact landings with external load are highly aggravating. Switch to non-impact loaded squats or unilateral step-ups while healing.",
+      "modificationPl": "Wysokoudarowe lądowania z obciążeniem zewnętrznym mocno nasilają objawy. Przejdź na nieudarowe obciążone przysiady lub jednostronne wchodzenie na podest podczas leczenia.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "achilles_tendinopathy_or_ankle_instability",
+      "severity": "avoid",
+      "modification": "Loaded plyometric landings dramatically increase Achilles and ankle joint stress. Rehab with isometrics and unloaded calf work before returning.",
+      "modificationPl": "Lądowania plyometryczne z obciążeniem drastycznie zwiększają stres dla ścięgna Achillesa i stawu skokowego. Rehabilituj się izometrią i nieobciążoną pracą łydek przed powrotem.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "shoulder_mobility_deficit_or_cervical_spine_issue",
+      "severity": "modify",
+      "modification": "If unable to hold the bar safely on the upper back, switch to a front-rack hold (front squat jump) or use a safety squat bar / trap bar to eliminate the rack position.",
+      "modificationPl": "Jeśli nie jesteś w stanie bezpiecznie trzymać sztangi na górnej części pleców, przejdź na chwyt frontowy (front squat skok) lub użyj safety squat bar / trap baru aby wyeliminować pozycję rack.",
+      "alternative": "trap-bar-jump"
+    }
+  ],
+
+  "typical_sets_reps": "4-6x3-5 reps @ 20-30% 1RM with full rest 2-4 min (power/RFD) | 3-5x3 reps as part of contrast/PAP set after heavy squat (post-activation potentiation) | 5-8x1-3 reps with maximal effort (peak power/athletic prep) | Avoid high-rep conditioning protocols with loaded bar — use unloaded squat jumps for that",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "barbell-jump-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-jump-squat/frame_0_start.png",
+      "frames/barbell-jump-squat/frame_1_early.png",
+      "frames/barbell-jump-squat/frame_2_mid.png",
+      "frames/barbell-jump-squat/frame_3_late.png",
+      "frames/barbell-jump-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-jump-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Obejrzalem 5 klatek kluczowych z GIFa jahel (glutes/barbell-jump-squat). Klatka 0/4 (start/end): pozycja stojaca ze sztanga na gornej czesci czworobocznych (high-bar back squat position), obie nogi rownolegle, wyraznie podswietlone czworoglowe i lydki — to nie jest variant front-squat. Klatka 2 (mid): faza dolna przysiadu, uda blisko rownoleglej, biodra cofniete, tulow lekko pochylony do przodu, obie strony podswietlone symetrycznie (bilateral, kompletny przysiad ze sztanga). Klatki 1 i 3 (early/late): faza powietrzna z pelnym wyprostem nog i przesunieta sztanga ponad pozycja wyjsciowa — wyrazny lot. Animacja jednoznacznie pokazuje BACK SQUAT JUMP, nie front squat jump ani trap-bar. Difficulty 8 (vs 4 dla semi-squat-jump): dolozenie sztangi na karku wymaga (a) solidnego back squat, (b) idealnej techniki landing, (c) doswiadczenia w plyometrii, (d) kontroli osiowego obciazenia kregoslupa. Movement pattern jump_plyometric (zgodnie z prosba). Primary quadriceps P10 + glutes P10 (potwierdzone podswietleniem). Erector spinae i upper_back jako secondary/stabilizers ze wzgledu na utrzymanie sztangi i pozycji tulowia podczas lotu i ladowania — typowo nieobecne lub slabsze w wersji bodyweight. Prerequisites: barbell-back-squat (baza siły), squat-jump (baza plyometryczna), box-jump (control landing). NIE jest to cwiczenie hipertroficzne — to power lift, dlatego typical_sets_reps zaczynaja sie od 4-6x3-5 @ 20-30% 1RM, NIE 3x10. Wszystkie pola PL napisane od zera w jezyku polskim, zgodnym z polska terminologia silowni (np. 'tylny przysiad', 'klatka silowa', 'odbicie ekscentryczne').",
+
+  "tags": ["bilateral", "lower_body", "squat", "plyometric", "barbell", "weighted", "explosive", "power", "high_impact", "compound", "advanced", "athletic_performance", "rfd", "contrast_training"]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "kettlebell-double-snatch",
+  "name": "Kettlebell Double Snatch",
+  "namePl": "Rwanie dwoma kettlebell",
+  "aliases": ["double kettlebell snatch", "two-handed kettlebell snatch", "double KB snatch", "double bell snatch"],
+  "aliasesPl": ["rwanie dwoma kettlebell", "double snatch z kettlebell", "snatch dwoma kettlebellami", "rwanie dwoma kettlami"],
+
+  "description": "Highly advanced full-body power exercise: two kettlebells are pulled simultaneously from the hang/floor to a locked-out overhead position in a single explosive movement. The trajectory is one continuous arc — hip drive launches both bells, the elbows pull high, and the hands punch through under the bells to receive them overhead with the wrists straight and arms locked. Trains the entire posterior chain, hip extensors, shoulders and grip in one of the most metabolically demanding kettlebell drills used in girevoy sport, hardstyle programming and CrossFit. Doubling the load roughly doubles the systemic and grip cost compared to the one-arm snatch, while symmetry of the bilateral load demands a much more rigid trunk.",
+  "descriptionPl": "Wysoce zaawansowane, mocowe ćwiczenie całego ciała: dwa kettlebelle wyrywane są jednocześnie z zawisu/podłogi do pełnego stabilnego wyprostu nad głową — w jednym płynnym, eksplozywnym ruchu. Trajektoria to jeden ciągły łuk: napęd biodrowy wystrzeliwuje oba ciężary, łokcie podciągają wysoko, a dłonie 'przebijają się' pod kettlebellami żeby przyjąć je nad głową z prostymi nadgarstkami i zablokowanymi ramionami. Trenuje cały tylny łańcuch, prostowniki bioder, barki i chwyt w jednym z najbardziej obciążających metabolicznie ćwiczeń kettlebellowych — używane w girevoy sport, treningu hardstyle i CrossFitcie. Podwojenie obciążenia praktycznie dubluje koszt systemowy i obciążenie chwytu w porównaniu do snatcha jednorącz, a symetria obustronnego ładunku wymaga znacznie sztywniejszego tułowia.",
+
+  "instructions": [
+    "Place two kettlebells of equal weight on the floor between your feet, slightly outside shoulder width. Stand with feet shoulder-width apart, toes slightly out.",
+    "Hinge at the hips, push the butt back, soft knees. Grip both handles with a neutral overhand grip, knuckles forward, shoulders pulled down into the sockets.",
+    "Brace the core hard, neutral spine. The bells start just in front of the shins or slightly behind (hike position).",
+    "Hike both kettlebells back between your legs in a powerful hike pass — same as a double swing — using a hip-hinge backswing.",
+    "Explosively reverse: drive the hips forward, extend the knees, and stand up tall. As the bells reach hip level, let them float upward — do NOT muscle them with the arms.",
+    "As the bells rise, the elbows pull high and tight to the body, then the hands rotate around the handles ('the punch') so the wrists end up straight under the bells.",
+    "Lock out both arms overhead simultaneously: biceps near the ears, wrists neutral, palms facing forward, knees and hips fully extended, glutes squeezed.",
+    "Pause one second in the lockout to demonstrate control — this is the rep.",
+    "Drop the bells back down: actively pull them down close to the body, redirect into the hips, absorb the load with another hinge — and hike straight into the next rep.",
+    "Quality over quantity: stop the set the moment form breaks. The double snatch is unforgiving."
+  ],
+  "instructionsPl": [
+    "Ustaw dwa kettlebelle o równej wadze na podłodze między stopami, lekko na zewnątrz szerokości barków. Stań ze stopami na szerokość barków, palce lekko na zewnątrz.",
+    "Zegnij się w biodrach, wypchnij pośladki do tyłu, lekko ugięte kolana. Chwyć oba uchwyty neutralnym nachwytem, knykcie do przodu, barki ściągnięte w panewki.",
+    "Mocno napnij brzuch, neutralny kręgosłup. Kettlebelle startują tuż przed goleniami lub lekko za nimi (pozycja hike).",
+    "Wciągnij oba kettlebelle do tyłu między nogi mocnym ruchem hike — tak samo jak w double swing — wykorzystując zawias biodrowy.",
+    "Eksplozywnie odwróć ruch: napęd biodrami do przodu, wyprost kolan, wyprostuj się wysoko. Gdy kettlebelle dochodzą do wysokości bioder, pozwól im 'unieść się' — NIE szarp ich rękami.",
+    "Gdy kettlebelle lecą w górę, łokcie podciągają wysoko i blisko ciała, następnie dłonie obracają się wokół rączek ('punch') tak żeby nadgarstki znalazły się prosto pod kettlebellami.",
+    "Zablokuj oba ramiona nad głową jednocześnie: bicepsy przy uszach, nadgarstki neutralne, dłonie skierowane do przodu, kolana i biodra w pełnym wyproście, pośladki napięte.",
+    "Zatrzymaj się sekundę w lockoucie pokazując kontrolę — to jest powtórzenie.",
+    "Opuść kettlebelle w dół: aktywnie ściągnij je blisko ciała, przekieruj w biodra, zaabsorbuj obciążenie kolejnym zawiasem — i od razu odpalaj kolejne powtórzenie z hike.",
+    "Jakość ponad ilość: zakończ serię w momencie, gdy technika zaczyna się sypać. Double snatch nie wybacza."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "deltoids"],
+    "secondary": ["hamstrings", "quadriceps", "trapezius", "erector_spinae", "lateral_deltoids", "forearms"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "triceps_brachii", "rhomboids", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "deltoids": "P10",
+    "hamstrings": "P8",
+    "quadriceps": "S7",
+    "trapezius": "P8",
+    "erector_spinae": "S8",
+    "lateral_deltoids": "P9",
+    "forearms": "S9",
+    "core": "S9",
+    "triceps_brachii": "S7",
+    "obliques": "S7"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["chalk", "lifting_shoes", "wrist_guards"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "expert",
+    "difficulty_1_10": 9,
+    "prerequisites": ["kettlebell-swing", "kettlebell-sumo-high-pull", "kettlebell-clean", "barbell-overhead-press"],
+    "progression_to": ["barbell-snatch", "kettlebell-snatch-jerk-combo"],
+    "alternatives": ["kettlebell-swing", "kettlebell-sumo-high-pull", "dumbbell-one-arm-snatch", "barbell-one-arm-snatch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two equal-weight kettlebells, just outside shoulder width",
+      "Feet shoulder-width, toes slightly out — same as double swing stance",
+      "Neutral overhand grip, knuckles forward, shoulders packed down",
+      "Hinge — butt back, soft knees, neutral spine, bells in front of shins",
+      "Brace 360° before the first hike"
+    ],
+    "setup_cues_pl": [
+      "Dwa kettlebelle o równej wadze, lekko na zewnątrz szerokości barków",
+      "Stopy na szerokość barków, palce lekko na zewnątrz — tak jak w double swing",
+      "Neutralny nachwyt, knykcie do przodu, barki ściągnięte w panewki",
+      "Zawias — pośladki w tył, ugięte kolana, neutralny kręgosłup, kettlebelle przed goleniami",
+      "Napnij brzuch 360° zanim wciągniesz pierwszy hike"
+    ],
+    "execution_cues": [
+      "Hike the bells back HARD between the legs — load the hips",
+      "Hips snap forward, knees lock — the bells float on hip drive, not arm pull",
+      "Elbows pull high and tight, then PUNCH the hands through under the bells",
+      "No banging the wrists — silent lockout, bells settle smoothly on the heel of the palm",
+      "Full lockout: biceps to ears, glutes squeezed, ribs down, knees straight"
+    ],
+    "execution_cues_pl": [
+      "Wciągnij kettlebelle MOCNO w tył między nogi — załaduj biodra",
+      "Strzał biodrami do przodu, kolana w lock — kettlebelle 'lecą' na napędzie biodrowym, nie na ramionach",
+      "Łokcie wysoko i blisko ciała, potem WBIJ dłonie pod kettlebelle (punch)",
+      "Bez walenia w nadgarstki — cichy lockout, kettlebelle siadają miękko na podstawie dłoni",
+      "Pełen wyprost: bicepsy przy uszach, pośladki napięte, żebra w dół, kolana proste"
+    ],
+    "common_faults": [
+      {
+        "fault": "Muscling the bells up with the arms (curl-press)",
+        "faultPl": "Wciąganie kettlebelli rękami (curl-press) zamiast napędem bioder",
+        "cause": "Lack of hip drive, weak posterior chain, treating the snatch like a high pull + press",
+        "causePl": "Brak napędu biodrami, słaby tylny łańcuch, traktowanie snatcha jak high pull + wyciskanie",
+        "cue": "Hike harder, snap the hips, let the bells float. Arms are passengers — they guide, they do not lift.",
+        "cuePl": "Mocniejszy hike, eksplozywny strzał biodrami, pozwól kettlebellom unieść się. Ramiona są pasażerami — prowadzą trajektorię, nie podnoszą ciężaru."
+      },
+      {
+        "fault": "Banging the wrists at the top",
+        "faultPl": "Walenie kettlebellami w nadgarstki na górze",
+        "cause": "Late or absent hand punch — fingers stay locked around the handle so the bell flips and slams the wrist",
+        "causePl": "Zbyt późny lub brak ruchu 'punch' — palce trzymają kurczowo rączkę, kettlebell przewraca się i bije w nadgarstek",
+        "cue": "Open the fingers slightly at the top of the arc and punch the hand THROUGH the handle. The bell should settle, not crash.",
+        "cuePl": "Lekko otwórz palce w szczytowej fazie łuku i wbij dłoń POD rączkę. Kettlebell ma osiąść, nie spaść z hukiem."
+      },
+      {
+        "fault": "Asymmetric lockout (one arm bent, one straight)",
+        "faultPl": "Asymetryczny lockout (jedno ramię ugięte, drugie proste)",
+        "cause": "Weaker side, shoulder mobility deficit, or uneven hip drive — one bell rises faster",
+        "causePl": "Słabsza strona, deficyt mobilności barku, lub niesymetryczny napęd bioder — jeden kettlebell leci szybciej",
+        "cue": "Stop the set. Build double-snatch capacity from double cleans + presses first. Both arms must lock simultaneously or the rep is junk volume.",
+        "cuePl": "Zakończ serię. Najpierw budujesz pojemność na double clean + press. Oba ramiona muszą zablokować się jednocześnie, inaczej powtórzenie to śmieciowa objętość."
+      },
+      {
+        "fault": "Rounded back at the hike",
+        "faultPl": "Zaokrąglone plecy w fazie hike",
+        "cause": "Hips too low (squatting), weak bracing, bells too heavy, or fatigue late in a set",
+        "causePl": "Biodra za nisko (przysiad zamiast zawiasu), słabe napięcie, kettlebelle za ciężkie, lub zmęczenie pod koniec serii",
+        "cue": "Reset to hinge — hips above knees, shins almost vertical. Brace harder. Drop weight if the lumbar still rounds.",
+        "cuePl": "Wróć do zawiasu — biodra wyżej niż kolana, golenie prawie pionowo. Napnij mocniej brzuch. Zmniejsz obciążenie jeśli lędźwie wciąż się zaokrąglają."
+      },
+      {
+        "fault": "Soft lockout — knees and hips not fully extended overhead",
+        "faultPl": "Miękki lockout — biodra i kolana nie w pełnym wyproście nad głową",
+        "cause": "Lack of glute squeeze at the top, anterior pelvic tilt, or weak overhead position",
+        "causePl": "Brak napięcia pośladków w szczycie, przodopochylenie miednicy, lub słaba pozycja nad głową",
+        "cue": "Glutes ON, ribs DOWN, biceps to ears. The top is a plank — head, shoulders, hips, knees, ankles in one line.",
+        "cuePl": "Pośladki NAPIĘTE, żebra W DÓŁ, bicepsy do uszu. Góra to deska — głowa, barki, biodra, kolana, kostki w jednej linii."
+      }
+    ],
+    "breathing": "Anatomical breathing for power sets (≤5 reps): inhale on the descent/hike, sharp exhale through the snatch and lockout. Paradoxical/Girevoy breathing for long sets: short sniff inhale through the nose at the top lockout, exhale on the drop — one micro-breath per rep at high cadence.",
+    "breathingPl": "Oddech anatomiczny do serii mocowych (≤5 powtórzeń): wdech podczas opuszczania/hike, ostry wydech podczas snatcha i lockoutu. Oddech paradoksalny/girevoy do długich serii: krótki wdech nosem w pełnym lockoucie, wydech podczas opuszczania — jeden mikro-oddech na powtórzenie przy wysokiej kadencji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability_or_labral_tear",
+      "severity": "avoid",
+      "modification": "The terminal overhead lockout under impact load is one of the most provocative positions for an unstable shoulder. Avoid until cleared and rehabilitated.",
+      "modificationPl": "Końcowy lockout nad głową pod obciążeniem impaktowym to jedna z najbardziej prowokacyjnych pozycji dla niestabilnego barku. Unikaj do czasu rehabilitacji i zgody specjalisty.",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Bilateral ballistic hinging under double load is contraindicated until cleared. Substitute hip extension isometrics and light hinges.",
+      "modificationPl": "Obustronny balistyczny zawias pod podwójnym obciążeniem jest przeciwwskazany do czasu wyjścia z urazu. Zastąp izometrycznym wyprostem bioder i lekkim zawiasem.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "wrist_injury_or_unhealed_tendinopathy",
+      "severity": "avoid",
+      "modification": "The 'punch through' transition is brutal on irritated wrists. Heal the wrist first, build tolerance with cleans and presses before returning to snatch.",
+      "modificationPl": "Faza 'punch' jest bardzo agresywna dla podrażnionych nadgarstków. Najpierw zalecz nadgarstek, buduj tolerancję na cleanach i wyciskaniach zanim wrócisz do snatcha.",
+      "alternative": "kettlebell-clean"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiovascular_disease",
+      "severity": "avoid",
+      "modification": "Double snatch produces extreme blood-pressure spikes and cardiac demand. Get medical clearance before doing high-rep ballistic sets.",
+      "modificationPl": "Double snatch wywołuje ekstremalne skoki ciśnienia i bardzo wysokie zapotrzebowanie sercowe. Uzyskaj zgodę lekarską zanim wejdziesz w wysokie objętości serii balistycznych.",
+      "alternative": "kettlebell-swing"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (power) | 3-5x6-10 (strength-endurance) | 10-min set @ 10-12 RPM (girevoy/conditioning) | EMOM 5-8 reps for 8-12 min (metabolic)",
+  "calories_per_kg_per_hour": 12.0,
+
+  "media": {
+    "primary": "kettlebell-double-snatch.gif",
+    "frames_extracted": [
+      "frames/kettlebell-double-snatch/frame_0_start.png",
+      "frames/kettlebell-double-snatch/frame_1_early.png",
+      "frames/kettlebell-double-snatch/frame_2_mid.png",
+      "frames/kettlebell-double-snatch/frame_3_late.png",
+      "frames/kettlebell-double-snatch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-double-snatch",
+    "yuhonas_id": "Kettlebell_Double_Snatch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa stojąca z dwoma kettlebellami przy biodrach (podświetlone naramienne, czworoboczne, przedramiona, pośladki, czworogłowe — pełne ładowanie do hike). Frame 1: faza hike-back/early pull — głęboki zawias, oba kettlebelle nisko między nogami, mocno podświetlone pośladki, dwugłowe ud, czworogłowe, naramienne — przejście z hike w napęd biodrowy. Frame 2: faza mid — pełen lockout nad głową z obydwoma kettlebellami, ramiona proste, bicepsy przy uszach, podświetlone naramienne (P10), czworoboczne, prostowniki grzbietu, pośladki, czworogłowe — pełna stabilizacja overhead. Frame 3-4: powrót w dół, kettlebelle nad głową i zaczynają opadać. Klasyfikacja jako hinge (dominujący wzór ruchu to ekstensja bioder z hike — identyczny launch jak swing) + pull (vertical pull do overhead). Bilateral. Difficulty 9 — wymaga opanowania snatcha jednorącz, double clean, double press oraz idealnego punch pod dwoma bellami jednocześnie. Primary: glutes P10 (napęd biodrowy dla dwóch bell), deltoids P10 (catch + lockout overhead pod podwojonym obciążeniem). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["kettlebell", "double_kettlebell", "compound", "explosive", "power", "ballistic", "overhead", "posterior_chain", "girevoy_sport", "hardstyle", "crossfit", "metabolic", "hip_hinge", "olympic_style", "expert_level"]
+}

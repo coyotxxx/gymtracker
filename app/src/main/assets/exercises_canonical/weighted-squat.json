@@ -1,0 +1,203 @@
+{
+  "id": "weighted-squat",
+  "name": "Weighted Squat (Plate Belt Squat from Deficit)",
+  "namePl": "Przysiad z dodatkowym obciążeniem (plate belt squat z deficytu)",
+  "aliases": ["belt squat", "plate belt squat", "loaded squat", "weighted bodyweight squat", "deficit belt squat"],
+  "aliasesPl": ["belt squat", "przysiad z talerzem na pasie", "przysiad obciążony", "przysiad z dodatkowym ciężarem", "belt squat z deficytu"],
+
+  "description": "Squat variation in which the lifter stands on two raised platforms (benches/blocks) creating a deficit, with a weight plate suspended on a dipping belt between the legs. Arms are extended forward for counterbalance (a la pistol/zercher front-load style). Loads the lower body without compressing the spine, making it ideal for trainees with back issues or as an accessory to barbell squats. Allows deep ROM and emphasizes quads and glutes with minimal axial loading.",
+  "descriptionPl": "Wariant przysiadu, w którym ćwiczący stoi na dwóch podwyższonych platformach (ławkach/blokach) tworząc deficyt, a talerz obciążeniowy zwisa na pasie do dipów między nogami. Ramiona wyciągnięte przed siebie dla równowagi (w stylu pistol/zercher). Obciąża dolną część ciała bez kompresji kręgosłupa — idealne dla osób z problemami pleców lub jako uzupełnienie przysiadu ze sztangą. Pozwala na głęboki zakres ruchu i mocno angażuje czworogłowe oraz pośladki przy minimalnym obciążeniu osiowym.",
+
+  "instructions": [
+    "Place two stable flat benches or boxes shoulder-width apart so you can stand on them with the gap in the middle for the plate to hang freely.",
+    "Attach a dipping belt around your hips. Thread the belt's loading strap through the hole of a weight plate (or use a loading pin with multiple plates).",
+    "Step up onto the two benches with one foot on each, plate hanging between your legs into the gap. Feet shoulder-width, toes slightly out (10-20°).",
+    "Extend your arms straight forward at shoulder height for counterbalance. Brace your core, lift your chest, draw shoulder blades back.",
+    "Inhale and initiate the descent by simultaneously breaking at the hips and knees. Let the plate hang freely between the benches.",
+    "Descend as deep as your mobility allows — typically below parallel since the deficit setup permits full ROM. Knees track over toes.",
+    "Drive up by pushing through the entire foot, extending hips and knees together. Keep arms extended forward to maintain balance.",
+    "Lock out at the top with full hip extension. Reset breath and bracing before the next rep."
+  ],
+  "instructionsPl": [
+    "Ustaw dwie stabilne płaskie ławki lub skrzynie w rozstawie szerokości barków, tak aby można było na nich stanąć z przerwą pośrodku, gdzie swobodnie zawiśnie talerz.",
+    "Załóż pas do dipów na biodra. Przewleć pasek obciążeniowy przez otwór talerza (lub użyj trzpienia obciążającego z kilkoma talerzami).",
+    "Wejdź na obie ławki — po jednej stopie na każdej — talerz zwisa między nogami w przerwę. Stopy na szerokość barków, palce lekko na zewnątrz (10-20°).",
+    "Wyciągnij ramiona prosto przed siebie na wysokość barków dla równowagi. Napnij brzuch, klatka do góry, ściągnij łopatki do tyłu.",
+    "Zrób wdech i rozpocznij schodzenie zginając jednocześnie biodra i kolana. Talerz swobodnie zwisa między ławkami.",
+    "Schodź tak głęboko, jak pozwala mobilność — zwykle poniżej parallel, bo deficyt umożliwia pełen zakres ruchu. Kolana podążają za palcami stóp.",
+    "Wypchnij się w górę napierając przez całą stopę, prostując biodra i kolana razem. Trzymaj ramiona wyciągnięte do przodu dla balansu.",
+    "Zakończ na górze pełnym wyprostem bioder. Złap oddech i napnij brzuch przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "erector_spinae"],
+    "stabilizers": ["core", "calves", "hip_flexors", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "adductors": "S6",
+    "erector_spinae": "S5",
+    "core": "S6",
+    "calves": "T3",
+    "hip_flexors": "T3",
+    "deltoids": "T2"
+  },
+
+  "equipment": {
+    "required": ["dipping_belt", "weight_plate", "benches"],
+    "optional": ["loading_pin", "lifting_shoes", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "goblet-squat"],
+    "progression_to": ["barbell-back-squat", "barbell-front-squat", "bulgarian-split-squat"],
+    "alternatives": ["goblet-squat", "barbell-back-squat", "leg-press", "hack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two benches stable, gap wide enough for the plate",
+      "Belt snug on hips, plate hanging centered between legs",
+      "Feet shoulder-width on the benches, toes slightly out",
+      "Arms forward at shoulder height for counterbalance",
+      "Chest up, ribs down, core braced"
+    ],
+    "setup_cues_pl": [
+      "Dwie ławki stabilne, przerwa szeroka na tyle by talerz przeszedł",
+      "Pas ciasno na biodrach, talerz zwisa wycentrowany między nogami",
+      "Stopy na szerokość barków na ławkach, palce lekko na zewnątrz",
+      "Ramiona przed sobą na wysokość barków dla równowagi",
+      "Klatka do góry, żebra w dół, brzuch napięty"
+    ],
+    "execution_cues": [
+      "Sit back AND down at the same time",
+      "Keep knees tracking over toes — don't let them cave in",
+      "Drive through the whole foot, not just the heels",
+      "Plate hangs freely — don't let it swing",
+      "Arms stay forward all the way through the rep"
+    ],
+    "execution_cues_pl": [
+      "Siadaj jednocześnie do tyłu I w dół",
+      "Kolana podążają za palcami stóp — nie pozwól im uciekać do środka",
+      "Napieraj całą stopą, nie tylko piętami",
+      "Talerz zwisa swobodnie — nie pozwól mu się huśtać",
+      "Ramiona pozostają z przodu przez całe powtórzenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee valgus (knees cave in)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius, lack of hip external rotation, or unstable bench placement",
+        "causePl": "Słabe mięśnie pośladkowe średnie, brak rotacji zewnętrznej biodra, lub niestabilne ustawienie ławek",
+        "cue": "Push your knees out toward your pinky toes, screw your feet into the benches",
+        "cuePl": "Wypchnij kolana na zewnątrz w kierunku małych palców, wkręć stopy w ławki"
+      },
+      {
+        "fault": "Plate swinging / loss of balance",
+        "faultPl": "Talerz się huśta / utrata równowagi",
+        "cause": "Tempo too fast, weak core, or arms dropping",
+        "causePl": "Zbyt szybkie tempo, słabe mięśnie głębokie, lub opuszczanie ramion",
+        "cue": "Slow eccentric, brace the core, keep arms locked forward at shoulder height",
+        "cuePl": "Wolniejsza faza ekscentryczna, napnij brzuch, trzymaj ramiona przed sobą na wysokości barków"
+      },
+      {
+        "fault": "Bench instability / foot slipping",
+        "faultPl": "Niestabilność ławki / ślizganie się stopy",
+        "cause": "Benches too far apart, surface too narrow, or rushed setup",
+        "causePl": "Ławki ustawione za daleko, zbyt wąska powierzchnia, lub niedbały setup",
+        "cue": "Test the stance unloaded first. Use wider, sturdier platforms if possible.",
+        "cuePl": "Sprawdź ustawienie bez obciążenia. Użyj szerszych, bardziej stabilnych platform jeśli to możliwe."
+      },
+      {
+        "fault": "Forward lean / butt rising too fast",
+        "faultPl": "Pochylenie do przodu / pośladki uciekają za szybko",
+        "cause": "Weak quads, arms dropping, or load too heavy",
+        "causePl": "Słabe czworogłowe, opuszczanie ramion, lub zbyt duży ciężar",
+        "cue": "Chest up, arms forward, drive knees forward as you stand up",
+        "cuePl": "Klatka do góry, ramiona przed siebie, wypchnij kolana do przodu w fazie wstawania"
+      },
+      {
+        "fault": "Insufficient depth",
+        "faultPl": "Niewystarczająca głębokość",
+        "cause": "Fear of losing balance, plate touching the floor, or ankle/hip mobility limits",
+        "causePl": "Strach przed utratą równowagi, talerz dotyka podłogi, lub ograniczenia mobilności kostki/biodra",
+        "cue": "Add more height to the benches if plate touches ground. Practice depth gradually.",
+        "cuePl": "Zwiększ wysokość ławek jeśli talerz dotyka podłogi. Stopniowo zwiększaj głębokość."
+      }
+    ],
+    "breathing": "Inhale and brace at the top, hold throughout the descent, exhale near the top of the ascent. The lack of spinal load makes Valsalva less critical than back squat but bracing still matters.",
+    "breathingPl": "Wdech i napięcie brzucha na górze, wstrzymaj przez całe schodzenie, wydech blisko końca fazy wstawania. Brak obciążenia kręgosłupa sprawia, że Valsalva jest mniej krytyczna niż przy back squat, ale napięcie brzucha nadal ma znaczenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_knee_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded squats. Use isometric or partial ROM until cleared.",
+      "modificationPl": "Unikaj obciążonych przysiadów. Stosuj izometryczne lub ograniczony zakres ruchu do czasu poprawy.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "hip_belt_friction_irritation",
+      "severity": "caution",
+      "modification": "Use padded dipping belt or weight vest alternative. Wear long shorts to prevent skin irritation.",
+      "modificationPl": "Użyj wyściełanego pasa do dipów lub kamizelki obciążającej. Załóż długie spodenki by uniknąć podrażnienia skóry.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "balance_or_vestibular_disorder",
+      "severity": "modify",
+      "modification": "The deficit + forward-arm setup demands balance. Practice the movement without weight on the ground first, or switch to a stable surface variant.",
+      "modificationPl": "Setup z deficytem i ramionami z przodu wymaga równowagi. Najpierw przećwicz ruch bez obciążenia na podłodze, lub przejdź na wariant na stabilnym podłożu.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "severe_hip_flexor_tightness",
+      "severity": "caution",
+      "modification": "Maintaining arms forward and deep ROM may aggravate tight hip flexors. Limit depth and mobilize first.",
+      "modificationPl": "Utrzymywanie ramion z przodu i głęboki zakres mogą podrażniać napięte zginacze biodra. Ogranicz głębokość i wcześniej rozciągnij.",
+      "alternative": "box-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x6-8 (strength accessory) | 3x15-20 (endurance/burnout)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "weighted-squat.gif",
+    "frames_extracted": [
+      "frames/weighted-squat/frame_0_start.png",
+      "frames/weighted-squat/frame_1_early.png",
+      "frames/weighted-squat/frame_2_mid.png",
+      "frames/weighted-squat/frame_3_late.png",
+      "frames/weighted-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/weighted-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Wbrew nazwie 'weighted-squat' (sugerującej trzymanie hantli/kettlebell w rękach), GIF pokazuje konkretną wersję: ćwiczący stoi na DWÓCH ławkach tworzących deficyt, talerz obciążeniowy zwisa na pasie do dipów między nogami, ramiona wyciągnięte przed siebie dla równowagi. To jest plate-loaded belt squat z deficytu — wariant odciążający kręgosłup. Klatka 2 potwierdza głębokość poniżej parallel z swobodnie zwisającym talerzem. Mięśnie podświetlone na ilustracji: czworogłowe (główne, jaskrawo) i pośladki — pasuje. Opis i instrukcje napisane od zera w PL by odzwierciedlać dokładnie to co pokazuje GIF, nie ogólny 'weighted squat'. Aliasy obejmują obie nazwy by ułatwić wyszukiwanie.",
+
+  "tags": ["lower_body", "spine_friendly", "deficit_squat", "belt_squat", "quad_dominant", "back_safe", "accessory", "no_barbell"]
+}

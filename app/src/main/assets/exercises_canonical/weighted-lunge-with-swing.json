@@ -1,0 +1,209 @@
+{
+  "id": "weighted-lunge-with-swing",
+  "name": "Weighted Lunge with Swing",
+  "namePl": "Wykrok z wymachem hantla nad głowę",
+  "aliases": ["lunge with overhead swing", "lunge with dumbbell swing", "lunge to overhead raise", "kettlebell lunge with swing", "lunge press-up combo"],
+  "aliasesPl": ["wykrok z hantlą nad głowę", "wykrok z wymachem kettlebell", "wykrok z wyrzutem hantli", "wykrok ze wznosem ciężaru w górę", "funkcjonalny wykrok ze swingiem"],
+
+  "description": "Functional compound combo combining a forward lunge with an overhead swing of a single dumbbell or kettlebell held in both hands. The athlete starts standing with the weight hanging at hip level in front, steps forward into a deep lunge while simultaneously swinging the weight upward in a straight-arm arc until the arms are fully extended overhead. The descent reverses both movements — weight comes back down between the legs as the rear leg drives the body back to standing. Trains lower-body strength under hip-shoulder dissociation while challenging core anti-rotation, shoulder stability, and athletic coordination.",
+  "descriptionPl": "Funkcjonalne ćwiczenie wielostawowe łączące wykrok w przód z wymachem hantli lub kettlebell trzymanej oburącz nad głowę. Trenujący zaczyna w pozycji stojącej z ciężarem zawieszonym przed biodrami i jednocześnie wykonuje długi krok w przód do głębokiego wykroku, wymachując ciężarem po łuku z prostymi rękami aż do pełnego wyprostu nad głową. Powrót odwraca oba ruchy — ciężar wraca w dół między nogi, gdy tylna noga napędza ciało z powrotem do pozycji stojącej. Trenuje siłę dolnej części ciała przy dysocjacji biodro-bark, stymuluje stabilizację łopatek i barków oraz koordynację atletyczną.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, holding a single dumbbell or kettlebell with both hands in front of the hips, arms straight, weight hanging like a pendulum.",
+    "Brace your core, set shoulders down and back, look straight ahead. Inhale.",
+    "In one coordinated motion, step forward into a long lunge with one leg while swinging the weight forward and upward in a straight-arm arc.",
+    "Time it so the weight reaches the overhead position (arms fully extended, biceps near ears) exactly when the front thigh becomes parallel to the floor and the back knee hovers 2-3 cm above the ground.",
+    "At the bottom: front shin vertical, torso upright, weight directly above the head, lats engaged so shoulders are not shrugged into the ears.",
+    "Reverse the motion — swing the weight back down with control while pushing through the front heel to drive the body up and the front leg back to the start.",
+    "End the rep standing fully upright with the weight hanging between the legs. Exhale.",
+    "Alternate legs each rep, or complete all reps on one side before switching, depending on programming.",
+    "Use a controlled tempo (about 2 sec down, 2 sec up). This is a strength-coordination drill, not a ballistic kettlebell swing — do not rely on momentum to overhead.",
+    "Keep the swing path tight to the body and the spine neutral throughout — no excessive lower-back arch at the overhead lockout."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, trzymaj jedną hantlę lub kettlebell oburącz przed biodrami, ręce wyprostowane, ciężar zwisa jak wahadło.",
+    "Napnij brzuch, ułóż barki w dół i w tył, wzrok prosto przed siebie. Weź wdech.",
+    "W jednym skoordynowanym ruchu wykonaj długi krok w przód jedną nogą, jednocześnie wymachując ciężarem do przodu i w górę po łuku z wyprostowanymi rękami.",
+    "Zsynchronizuj ruch tak, aby ciężar dotarł nad głowę (ręce w pełnym wyproście, biceps przy uszach) dokładnie gdy przednie udo będzie równoległe do podłogi, a tylne kolano zawiśnie 2-3 cm nad ziemią.",
+    "W dolnej pozycji: piszczel przedniej nogi pionowo, tułów prosto, ciężar dokładnie nad głową, mięśnie najszersze grzbietu napięte tak, aby barki nie wjeżdżały w uszy.",
+    "Odwróć ruch — opuść ciężar z kontrolą, jednocześnie wypychając się przez piętę przedniej nogi i wracając przednią nogą do pozycji startowej.",
+    "Zakończ powtórzenie w pełnej pozycji stojącej z ciężarem zwisającym między nogami. Zrób wydech.",
+    "Zmieniaj nogi co powtórzenie lub wykonaj całą serię na jednej nodze przed zmianą — zależnie od programu treningowego.",
+    "Stosuj kontrolowane tempo (około 2 sek w dół, 2 sek w górę). To ćwiczenie siłowo-koordynacyjne, nie balistyczny swing kettlebell — nie polegaj na rozpędzie żeby wyrzucić ciężar nad głowę.",
+    "Tor wymachu trzymaj blisko ciała, kręgosłup neutralnie przez cały ruch — żadnego nadmiernego wygięcia lędźwi w górnej pozycji."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "shoulders"],
+    "secondary": ["core", "hamstrings"],
+    "stabilizers": ["upper_back", "gluteus_medius", "adductors", "calves", "erector_spinae", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P8",
+    "glutes": "P8",
+    "shoulders": "P7",
+    "core": "S7",
+    "hamstrings": "S6",
+    "upper_back": "S5",
+    "gluteus_medius": "S6",
+    "adductors": "S5",
+    "calves": "T4",
+    "erector_spinae": "T4",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell_or_kettlebell"],
+    "optional": ["lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-lunge", "goblet-lunge", "dumbbell-front-raise", "overhead-press"],
+    "progression_to": ["walking-lunge-with-overhead-press", "single-arm-kettlebell-lunge", "snatch-lunge-combo"],
+    "alternatives": ["goblet-lunge", "dumbbell-lunge", "lunge-with-front-raise", "kettlebell-clean-and-press-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Single dumbbell or kettlebell held with both hands, weight in front of hips, arms straight",
+      "Feet hip-width apart, weight balanced on mid-foot",
+      "Shoulders packed down, lats engaged — no shrug",
+      "Core braced, ribs down — no flared chest",
+      "Pick a focal point at eye level — head stays neutral as the weight passes the face"
+    ],
+    "setup_cues_pl": [
+      "Jedna hantla lub kettlebell trzymana oburącz, ciężar przed biodrami, ręce wyprostowane",
+      "Stopy na szerokość bioder, ciężar ciała na środku stopy",
+      "Barki w dół, najszersze napięte — żadnego wjeżdżania barków w uszy",
+      "Brzuch napięty, żebra w dół — żadnego wypychania klatki do góry",
+      "Ustal punkt skupienia wzroku — głowa zostaje neutralna, gdy ciężar mija twarz"
+    ],
+    "execution_cues": [
+      "Step and swing in one motion — front foot lands at the same instant the arms reach overhead",
+      "Straight arms throughout the swing — this is a front raise arc, not a clean or jerk",
+      "At the top: biceps by the ears, weight stacked directly over the crown of the head",
+      "Front shin stays vertical at the bottom — knee tracks over the second toe",
+      "Drive through the front heel on the way up and let the weight come down on a tight arc"
+    ],
+    "execution_cues_pl": [
+      "Krok i wymach w jednym ruchu — przednia stopa ląduje dokładnie gdy ręce dochodzą nad głowę",
+      "Proste ręce przez cały wymach — to łuk wznosu w przód, nie zarzut ani jerk",
+      "Na górze: biceps przy uszach, ciężar dokładnie nad czubkiem głowy",
+      "Piszczel przedniej nogi pionowo na dole — kolano w linii drugiego palca stopy",
+      "Wypychaj się przez piętę przedniej nogi w górę, a ciężar prowadź w dół po wąskim łuku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Timing mismatch — weight reaches overhead too early or too late",
+        "faultPl": "Brak synchronizacji — ciężar dochodzi nad głowę za wcześnie lub za późno",
+        "cause": "Treating lunge and swing as separate phases; coordination not yet ingrained",
+        "causePl": "Traktowanie wykroku i wymachu jako osobnych faz; brak wyrobionej koordynacji",
+        "cue": "Practice with no weight first. Step + raise = one count. Land + lockout = same instant.",
+        "cuePl": "Najpierw ćwicz bez ciężaru. Krok + wznos = jeden rytm. Lądowanie + wyprost nad głową = ten sam moment."
+      },
+      {
+        "fault": "Excessive lower-back arch at the overhead lockout",
+        "faultPl": "Nadmierne wygięcie lędźwi w górnej pozycji nad głową",
+        "cause": "Limited shoulder flexion mobility — the body cheats by extending the spine to get the weight overhead",
+        "causePl": "Ograniczona mobilność zgięcia barków — ciało oszukuje przez wyginanie kręgosłupa, by ciężar znalazł się nad głową",
+        "cue": "Ribs down, glutes squeezed at the top. If you can't reach a straight overhead position without arching, use lighter weight and work shoulder mobility.",
+        "cuePl": "Żebra w dół, pośladki napięte na górze. Jeśli nie potrafisz osiągnąć pionu nad głową bez wyginania — zmniejsz ciężar i popracuj nad mobilnością barków."
+      },
+      {
+        "fault": "Using a ballistic swing to throw the weight overhead",
+        "faultPl": "Używanie balistycznego rzutu, by wyrzucić ciężar nad głowę",
+        "cause": "Weight too heavy for strict front raise or copying kettlebell swing technique",
+        "causePl": "Zbyt duży ciężar do ścisłego wznosu w przód lub kopiowanie techniki klasycznego swingu kettlebell",
+        "cue": "Slow it down — 2 sec up, 2 sec down. If you need momentum, the weight is too heavy.",
+        "cuePl": "Zwolnij — 2 sek w górę, 2 sek w dół. Jeśli potrzebujesz rozpędu, ciężar jest za duży."
+      },
+      {
+        "fault": "Front knee caves inward at the bottom (valgus)",
+        "faultPl": "Przednie kolano zapada się do środka w dolnej pozycji (koślawość)",
+        "cause": "Weak gluteus medius, distraction from the overhead component, or load shifted by the swing path",
+        "causePl": "Słaby pośladkowy średni, rozproszenie przez ruch nad głową lub przesunięcie ciężaru przez tor wymachu",
+        "cue": "Knee tracks over the second toe. Push the floor apart with your feet on the way down.",
+        "cuePl": "Kolano w linii drugiego palca stopy. W trakcie schodzenia 'rozpychaj' podłogę stopami na zewnątrz."
+      },
+      {
+        "fault": "Torso tips forward as the weight goes overhead",
+        "faultPl": "Tułów pochyla się do przodu, gdy ciężar idzie nad głowę",
+        "cause": "Weak anterior core, lack of T-spine extension, or load behind the body's center of mass",
+        "causePl": "Słaby przedni rdzeń, brak wyprostu kręgosłupa piersiowego lub ciężar za środkiem ciężkości ciała",
+        "cue": "Stand tall and stack — ribs over hips, weight over head, head between the arms. Imagine pressing the floor away with your back leg.",
+        "cuePl": "Stań wysoko i ułóż stos — żebra nad biodrami, ciężar nad głową, głowa między ramionami. Wyobraź sobie, że tylną nogą odpychasz podłogę."
+      }
+    ],
+    "breathing": "Inhale and brace at the standing start. Hold breath through the descent into the lunge and overhead lockout. Begin exhale on the way up and finish exhale when standing tall with the weight back at hip level.",
+    "breathingPl": "Wdech i napięcie w pozycji stojącej startowej. Wstrzymaj oddech podczas schodzenia w wykrok i wyprostu nad głową. Zacznij wydech w drodze w górę i zakończ wydech w pełnym staniu z ciężarem przy biodrach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Overhead component aggravates impingement. Limit swing to chest or eye level (front raise instead of overhead), or switch to a goblet-hold lunge with no swing.",
+      "modificationPl": "Komponent nad głową drażni konflikt podbarkowy. Ogranicz wymach do wysokości klatki lub oczu (wznos w przód zamiast nad głowę) lub przejdź na wykrok w pozycji goblet bez wymachu.",
+      "alternative": "goblet-lunge"
+    },
+    {
+      "condition": "knee_meniscus_tear_or_acute_knee_pain",
+      "severity": "modify",
+      "modification": "Limit lunge depth to pain-free range. Avoid deep front-knee flexion. Switch to reverse lunge with overhead raise (less shear on front knee).",
+      "modificationPl": "Ogranicz głębokość wykroku do zakresu bez bólu. Unikaj głębokiego zgięcia przedniego kolana. Przejdź na wykrok w tył z wznosem nad głowę (mniej sił ścinających na przednie kolano).",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Overhead loaded movement combined with lunge stresses the lumbar spine. Wait for physiotherapist clearance and rebuild with unloaded bodyweight lunges first.",
+      "modificationPl": "Ruch z obciążeniem nad głową w połączeniu z wykrokiem obciąża odcinek lędźwiowy. Poczekaj na zgodę fizjoterapeuty i odbuduj formę zaczynając od wykroków bez obciążenia.",
+      "alternative": "bodyweight-lunge"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Moving load overhead while in unilateral stance is highly destabilizing for vestibular issues. Use stationary split squat with goblet hold and no overhead component until cleared.",
+      "modificationPl": "Ruch ciężaru nad głową w pozycji jednostronnej silnie destabilizuje przy problemach przedsionkowych. Stosuj statyczny split squat z chwytem goblet bez ruchu nad głowę, dopóki nie ustaną objawy.",
+      "alternative": "goblet-split-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-10 per leg (hypertrophy/conditioning) | 3x6 per leg (strength-coordination) | 3x10-12 per leg with light load (warm-up/movement prep)",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "weighted-lunge-with-swing.gif",
+    "frames_extracted": [
+      "frames/weighted-lunge-with-swing/frame_0_start.png",
+      "frames/weighted-lunge-with-swing/frame_1_early.png",
+      "frames/weighted-lunge-with-swing/frame_2_mid.png",
+      "frames/weighted-lunge-with-swing/frame_3_late.png",
+      "frames/weighted-lunge-with-swing/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/weighted-lunge-with-swing"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Klatka 0 i 4 = pozycja stojąca, ciężar (pojedyncza hantla/kettlebell trzymana oburącz) zwisa przed biodrami, ręce proste. Klatki 1-3 = pełen wykrok w przód (prawa noga przed lewą), przednie udo równoległe do podłogi, tylne kolano blisko ziemi, JEDNOCZEŚNIE ręce wyprostowane nad głową z ciężarem nad czubkiem głowy. Klatka 4 (end) pokazuje obie pozycje w nakładce — wyraźnie widać synchroniczne ruchy: lunge + overhead raise w jednym tempie. Wyróżnione mięśnie w GIFie: czworogłowe przedniej nogi (najmocniej), pośladki wielki przedniej nogi, naramienne przednie (oba), trapezy, najszersze grzbietu, łydki tylnej nogi — wszystko pasuje do anatomii ruchu lunge + front raise to overhead. To NIE jest ballistic kettlebell swing (ciężar nie idzie z tyłu między nogi, tylko z przodu w górę) — to lunge z prostą-ramienną wznoską nad głowę. Klasyfikacja jahel pod 'glutes' potwierdzona (główny target = przednia noga + pośladki), ale my dodajemy shoulders P7 bo overhead raise to znaczący komponent. Mechanic=compound, plane=sagittal (czysty przód-tył dla nóg i rąk), force=push (oba ruchy: kolana wyprost i barki flexion = push). Polski standard fitness 'wykrok z wymachem hantla nad głowę' lub 'wykrok ze swingiem'. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "shoulders", "overhead", "compound", "functional", "coordination", "athletic", "full_body_combo"]
+}

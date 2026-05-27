@@ -1,0 +1,204 @@
+{
+  "id": "cable-standing-hip-extension",
+  "name": "Cable Standing Hip Extension",
+  "namePl": "Wyprost biodra na wyciągu stojąc",
+  "aliases": ["cable glute kickback", "standing cable kickback", "cable hip extension", "cable donkey kick standing"],
+  "aliasesPl": ["kickback na wyciągu", "wyrzut nogi na wyciągu", "wyprost nogi w tył na bramie", "cable glute kickback stojąc", "wymachy nogą w tył na wyciągu"],
+
+  "description": "Standing single-leg isolation exercise for the gluteus maximus performed at a low cable pulley. With an ankle strap attached to the working leg, the lifter stands facing the stack and drives the leg straight back behind the body against the cable's resistance. The open-chain, unilateral pattern delivers maximum tension on the glute at the lockout (peak hip extension), making it one of the cleanest tools for targeted glute hypertrophy, mind-muscle connection, and correcting left-right glute asymmetries.",
+  "descriptionPl": "Jednonóż wykonywane stojąco ćwiczenie izolowane na mięsień pośladkowy wielki, realizowane przy dolnym wyciągu. Z opaską na kostce pracującej nogi ćwiczący stoi przodem do stosu i wyrzuca nogę prosto w tył za linię ciała przeciwko oporowi linki. Otwarty łańcuch kinetyczny i praca jednostronna dostarczają maksymalne napięcie na pośladku w pozycji końcowej (szczytowy wyprost biodra), co czyni to ćwiczenie jednym z najczystszych narzędzi do izolowanej hipertrofii pośladka, budowania kontaktu nerwowo-mięśniowego i korekty asymetrii lewa-prawa.",
+
+  "instructions": [
+    "Attach an ankle strap to the low pulley of a cable machine and fasten it around the ankle of the leg you want to train.",
+    "Stand facing the machine, close enough that the cable is taut with the working leg slightly in front (hip mildly flexed) in the starting position.",
+    "Grab the machine frame or the upright with both hands for balance. Brace your core, stand tall — slight forward hinge of the torso (10-15 degrees) is acceptable.",
+    "Soft bend in the standing knee. Keep the working leg long and straight (slight knee softness fine), foot flexed or relaxed — toes pointing down.",
+    "Exhale and drive the working leg straight back behind your body using the glute. Lead with the heel, not the toes. Squeeze the glute hard at the top.",
+    "Reach peak hip extension when the working leg is behind the line of the torso (approximately 15-25 degrees of hip extension). Do not arch the lower back to gain extra range.",
+    "Pause for one count at the top with the glute fully contracted.",
+    "Inhale and slowly return the leg to the starting position under control over 2-3 seconds. Do not let the weight stack slam down.",
+    "Complete all reps on one side, then switch the strap to the other ankle and repeat."
+  ],
+  "instructionsPl": [
+    "Zapnij opaskę na kostkę do dolnego bloczka wyciągu i przyczep ją do kostki nogi, którą chcesz trenować.",
+    "Stań przodem do maszyny, na tyle blisko, by linka była napięta, a pracująca noga znajdowała się lekko z przodu (biodro w lekkim zgięciu) w pozycji startowej.",
+    "Złap obiema rękami ramę maszyny lub pionowy słup dla równowagi. Napnij brzuch, stań prosto — lekkie pochylenie tułowia do przodu (10-15 stopni) jest dopuszczalne.",
+    "Lekkie ugięcie w kolanie nogi stojącej. Pracującą nogę utrzymuj długą i wyprostowaną (delikatne ugięcie kolana dopuszczalne), stopa zgięta grzbietowo lub luźna — palce skierowane w dół.",
+    "Z wydechem wyrzuć pracującą nogę prosto w tył za linię ciała używając pośladka. Prowadź ruch piętą, nie palcami. Mocno spinaj pośladek w pozycji końcowej.",
+    "Osiągnij szczytowy wyprost biodra, gdy pracująca noga znajduje się za linią tułowia (około 15-25 stopni wyprostu biodra). Nie wyginaj odcinka lędźwiowego, by zwiększyć zakres ruchu.",
+    "Zatrzymaj się na chwilę w pozycji końcowej z pełnym skurczem pośladka.",
+    "Z wdechem powoli wróć nogą do pozycji wyjściowej — kontroluj ruch przez 2-3 sekundy. Nie pozwól stosowi opaść z hukiem.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie przepnij opaskę na drugą kostkę i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_extension",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gluteus_maximus"],
+    "secondary": ["hamstrings", "erector_spinae"],
+    "stabilizers": ["gluteus_medius", "core", "obliques", "quadriceps", "calves"]
+  },
+
+  "muscle_intensity": {
+    "gluteus_maximus": "P10",
+    "hamstrings": "S6",
+    "erector_spinae": "S4",
+    "gluteus_medius": "T4",
+    "core": "T4",
+    "obliques": "T3",
+    "quadriceps": "T2",
+    "calves": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "ankle_strap"],
+    "optional": ["low_pulley_handle"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["cable-pull-through", "hip-thrust", "romanian-deadlift", "single-leg-romanian-deadlift"],
+    "alternatives": ["bodyweight-glute-kickback", "resistance-band-glute-kickback", "machine-glute-kickback", "donkey-kick"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Face the stack — working leg slightly in front at start",
+      "Hold the frame with both hands for stability",
+      "Soft bend in standing knee, foot firmly planted",
+      "Tall spine, light forward hinge of 10-15 degrees acceptable",
+      "Cable taut from the first millimeter — no slack"
+    ],
+    "setup_cues_pl": [
+      "Stań przodem do stosu — pracująca noga lekko z przodu na starcie",
+      "Trzymaj ramę obiema rękami dla stabilizacji",
+      "Lekkie ugięcie w kolanie nogi stojącej, stopa mocno wbita w podłoże",
+      "Tułów wyprostowany, lekkie pochylenie do przodu 10-15 stopni dopuszczalne",
+      "Linka napięta od pierwszego milimetra — żadnego luzu"
+    ],
+    "execution_cues": [
+      "Drive the leg back with the glute — lead with the heel",
+      "Squeeze the glute hard at the top — pause one count",
+      "Keep the working leg long — do not bend the knee",
+      "No lower-back arch — stop the leg where the glute does the work",
+      "Lower slowly — control the stack for 2-3 seconds"
+    ],
+    "execution_cues_pl": [
+      "Wyrzuć nogę w tył pośladkiem — prowadź piętą",
+      "Mocno spinaj pośladek w górze — zatrzymaj na sekundę",
+      "Pracująca noga długa — nie uginaj kolana",
+      "Bez wyginania lędźwi — zatrzymaj nogę tam, gdzie pracuje pośladek",
+      "Opuszczaj wolno — kontroluj stos przez 2-3 sekundy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Arching the lower back to extend the leg further",
+        "faultPl": "Wyginanie odcinka lędźwiowego, by zwiększyć wyprost nogi",
+        "cause": "Working weight is too heavy or the lifter chases artificial ROM with lumbar hyperextension instead of pure hip extension",
+        "causePl": "Zbyt duży ciężar lub próba sztucznego zwiększenia zakresu hiperekstensją lędźwi zamiast czystego wyprostu biodra",
+        "cue": "Ribs over hips throughout. Stop the leg when the glute stops working — that's full ROM.",
+        "cuePl": "Żebra nad biodrami przez cały ruch. Zatrzymaj nogę, gdy pośladek przestaje pracować — to pełen zakres."
+      },
+      {
+        "fault": "Bending the working knee to swing the leg back",
+        "faultPl": "Uginanie kolana pracującej nogi, by wyrzucić ją w tył",
+        "cause": "Glute fatigues and lifter unconsciously bends the knee to recruit hamstrings/calves and shorten the lever",
+        "causePl": "Zmęczenie pośladka i nieświadome zginanie kolana, by zaangażować dwugłowe/łydki i skrócić dźwignię",
+        "cue": "Working leg long and straight — imagine a stick from hip to ankle. Heel leads.",
+        "cuePl": "Pracująca noga długa i wyprostowana — wyobraź sobie kij od biodra do kostki. Pięta prowadzi."
+      },
+      {
+        "fault": "Leaning the torso forward to fake extra range",
+        "faultPl": "Pochylanie tułowia do przodu, by udawać większy zakres",
+        "cause": "Excessive forward hinge (over 30 degrees) creates apparent hip extension but the lifter is just bowing forward — the glute does not work harder",
+        "causePl": "Nadmierne pochylenie tułowia (ponad 30 stopni) tworzy pozorny wyprost biodra, ale ćwiczący tylko skłania się do przodu — pośladek nie pracuje mocniej",
+        "cue": "Pick a torso angle and hold it — only the leg moves, not the body.",
+        "cuePl": "Wybierz kąt tułowia i go utrzymaj — porusza się tylko noga, nie ciało."
+      },
+      {
+        "fault": "Letting the weight stack slam down",
+        "faultPl": "Pozwalanie by stos opadał z hukiem",
+        "cause": "Loss of tension on the eccentric — usually too heavy a load or rushing the tempo",
+        "causePl": "Utrata napięcia w fazie ekscentrycznej — zwykle zbyt duży ciężar lub zbyt szybkie tempo",
+        "cue": "Control all the way back — keep tension on the stack until the last rep ends.",
+        "cuePl": "Kontroluj cały powrót — utrzymuj napięcie na stosie aż do końca ostatniego powtórzenia."
+      },
+      {
+        "fault": "Rotating the hip outward (external rotation) during the kick",
+        "faultPl": "Rotacja biodra na zewnątrz podczas wyrzutu nogi",
+        "cause": "Compensation that brings in piriformis and TFL while reducing glute max engagement — common when the load is too high",
+        "causePl": "Kompensacja, która włącza mięsień gruszkowaty i TFL kosztem pośladka wielkiego — częsta przy zbyt dużym obciążeniu",
+        "cue": "Toes pointing down, kneecap pointing down — keep the leg neutral.",
+        "cuePl": "Palce skierowane w dół, rzepka skierowana w dół — utrzymaj nogę w pozycji neutralnej."
+      }
+    ],
+    "breathing": "Exhale during the kick back (hip extension). Inhale during the eccentric (controlled return to start). Maintain a light core brace throughout for pelvic and lumbar stability.",
+    "breathingPl": "Wydech podczas wyrzutu nogi w tył (wyprost biodra). Wdech podczas fazy ekscentrycznej (kontrolowany powrót do startu). Utrzymuj lekkie napięcie brzucha przez całą serię dla stabilizacji miednicy i lędźwi."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_lumbar",
+      "severity": "caution",
+      "modification": "Hip extension can become lumbar extension if pelvic control is poor. Reduce ROM — stop the working leg in line with the torso rather than going behind it. Keep ribs over hips and never arch the back. If symptoms flare, switch to bodyweight quadruped kickback.",
+      "modificationPl": "Wyprost biodra może zmienić się w wyprost lędźwi przy słabej kontroli miednicy. Zmniejsz zakres ruchu — zatrzymuj nogę na linii tułowia, zamiast wyprowadzać ją dalej. Trzymaj żebra nad biodrami i nigdy nie wyginaj pleców. Jeśli objawy się nasilą, przejdź na kickback w klęku podpartym z masą ciała.",
+      "alternative": "bodyweight-glute-kickback"
+    },
+    {
+      "condition": "hip_impingement_femoroacetabular",
+      "severity": "modify",
+      "modification": "End-range hip extension is generally well tolerated, but if pinching occurs in the front of the hip, reduce ROM and ensure the lifter is not over-arching. Use lighter loads and higher reps.",
+      "modificationPl": "Końcowy zakres wyprostu biodra jest zwykle dobrze tolerowany, ale jeśli pojawia się ucisk w przedniej części biodra, zmniejsz zakres ruchu i upewnij się, że ćwiczący nie wygina lędźwi. Używaj lżejszych ciężarów i większej liczby powtórzeń.",
+      "alternative": "machine-glute-kickback"
+    },
+    {
+      "condition": "hamstring_strain",
+      "severity": "modify",
+      "modification": "Hamstrings act as synergists. Acute strain — avoid until symptom-free. Sub-acute — use very light loads, keep the working knee slightly bent to shorten the hamstring lever, and stop reps short of any pulling sensation.",
+      "modificationPl": "Mięśnie dwugłowe pełnią rolę synergistów. Świeże naderwanie — unikaj do ustąpienia objawów. Faza podostra — używaj bardzo lekkich ciężarów, utrzymuj kolano pracującej nogi lekko ugięte, by skrócić dźwignię dwugłowego, i kończ powtórzenia przed pojawieniem się jakiegokolwiek uczucia ciągnięcia.",
+      "alternative": "hip-thrust"
+    },
+    {
+      "condition": "balance_disorder_vestibular",
+      "severity": "caution",
+      "modification": "Single-leg standing position challenges balance. Hold the frame firmly with both hands, place the working foot back down between reps if needed, or switch to a quadruped or floor-based variation that removes the balance demand.",
+      "modificationPl": "Pozycja stojąca na jednej nodze wymaga równowagi. Trzymaj ramę mocno obiema rękami, stawiaj pracującą stopę z powrotem między powtórzeniami w razie potrzeby, lub przejdź na wariant w klęku podpartym albo na podłodze, który eliminuje wymóg równowagi.",
+      "alternative": "bodyweight-glute-kickback"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 per leg (hypertrophy) | 3-4x15-20 per leg (endurance/activation) | 2-3x20-25 per leg (warmup/glute pre-fatigue)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-standing-hip-extension.gif",
+    "frames_extracted": [
+      "frames/cable-standing-hip-extension/frame_0_start.png",
+      "frames/cable-standing-hip-extension/frame_1_early.png",
+      "frames/cable-standing-hip-extension/frame_2_mid.png",
+      "frames/cable-standing-hip-extension/frame_3_late.png",
+      "frames/cable-standing-hip-extension/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/cable-standing-hip-extension"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzalem 5 klatek GIFa jahel (start/early/mid/late/end). Frame 0: cwiczacy stoi przodem do dolnego bloczka, prawa noga ma na kostce opaske polaczona z linka, noga lekko z przodu w pozycji odwiedzionej-zgietej, lewa noga stojaca, jedna reka uniesiona dla rownowagi. Posladek prawej strony i przebieg dwuglowego juz widocznie podswietlone. Frame 2: noga w trakcie wyrzutu w tyl, opaska na kostce ciagnie linke do tylu, posladek wielki w skurczu (czerwony), dwuglowy aktywowany. Frame 4: noga w pelnym wyprosc biodra za linia tulowia, posladek w maksymalnym skurczu (najjasniejszy czerwony). Tulow w lekkim pochyleniu do przodu (10-15 stopni) przez caly ruch, brak hiperekstensji ledzwi. Klasyfikacja: hip_extension (movement_pattern), unilateral (laterality), sagittal plane, open chain. primary: gluteus_maximus P10, secondary: hamstrings S6 (synergista przy wyproscie biodra), erector_spinae S4 (stabilizacja podczas wyrzutu). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "lower_body", "glutes", "isolation", "cable", "unilateral", "booty", "glute_isolation"]
+}

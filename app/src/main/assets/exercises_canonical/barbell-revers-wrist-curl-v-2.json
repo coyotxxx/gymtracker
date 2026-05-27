@@ -1,0 +1,201 @@
+{
+  "id": "barbell-revers-wrist-curl-v-2",
+  "name": "Barbell Reverse Wrist Curl (Variant 2 — Seated, Forearms on Thighs)",
+  "namePl": "Reverse wrist curl ze sztangą (wariant 2 — siedząc, przedramiona na udach)",
+  "aliases": ["seated barbell reverse wrist curl", "barbell wrist extension seated", "reverse wrist curl over knees with barbell", "pronated wrist curl seated"],
+  "aliasesPl": ["siedząc reverse wrist curl ze sztangą", "wyprost nadgarstków siedząc ze sztangą", "uginanie nadgarstków nachwytem siedząc", "reverse curl nadgarstków siedząc na udach"],
+
+  "description": "Isolation exercise for the wrist extensors of the forearm performed seated on a flat bench with the barbell held in a pronated (overhand) grip. Unlike the kneeling variant (forearms on the bench pad), the athlete sits on the bench, leans the torso forward and rests both forearms flat on the thighs with the wrists hanging just past the knees. The bar is curled upward via wrist extension (dorsiflexion). The seated-over-thighs setup is faster to set up (no kneeling on the floor), more comfortable for the lower back/knees, and lets the athlete pin the elbows against the thighs for maximum stability. It directly trains the extensor carpi radialis longus/brevis and extensor digitorum — muscles chronically underdeveloped relative to the flexors and crucial for elbow health and prevention of lateral epicondylitis (tennis elbow).",
+  "descriptionPl": "Ćwiczenie izolowane na prostowniki nadgarstka (ekstensory przedramienia) wykonywane w pozycji siedzącej na płaskiej ławce ze sztangą trzymaną nachwytem górnym (pronated grip). W odróżnieniu od wariantu klęczącego (przedramiona na ławce), ćwiczący siedzi na ławce, pochyla tułów do przodu i opiera oba przedramiona płasko na udach — nadgarstki zwisają tuż za kolanami. Sztanga jest unoszona poprzez wyprost nadgarstków (dorsiflexion). Pozycja siedząca z przedramionami na udach jest szybsza w ustawieniu (bez klękania na podłodze), wygodniejsza dla lędźwiowego odcinka kręgosłupa i kolan, a dodatkowo pozwala docisnąć łokcie do ud dla maksymalnej stabilizacji. Bezpośrednio angażuje extensor carpi radialis longus/brevis oraz extensor digitorum — mięśnie chronicznie zaniedbane w stosunku do zginaczy i kluczowe dla zdrowia stawu łokciowego oraz profilaktyki łokcia tenisisty.",
+
+  "instructions": [
+    "Sit on a flat bench with feet planted shoulder-width apart on the floor. Hold a loaded barbell with a pronated (overhand) grip, hands shoulder-width.",
+    "Lean the torso forward and rest both forearms flat on the thighs, palms facing down. Wrists hang just past the knees.",
+    "Press the elbows lightly into the quads — forearms become a stable lever, elbows do not move during the set.",
+    "Allow the wrists to flex downward under the weight of the bar — the bar should roll toward the fingertips at the bottom of the range.",
+    "Curl the bar upward by extending the wrists only (dorsiflexion). The fists rise as high as wrist mobility allows. Exhale on the way up.",
+    "Pause and squeeze the forearm extensors hard at the top for 1 second.",
+    "Lower the bar slowly under control (2-3 seconds) back to full wrist flexion. Inhale on the descent.",
+    "Keep the forearms glued to the thighs throughout — only the hands and wrists move.",
+    "Use significantly lighter weight than wrist curls — extensors are 2-3x weaker than flexors."
+  ],
+  "instructionsPl": [
+    "Usiądź na płaskiej ławce, stopy płasko na podłodze na szerokość barków. Złap sztangę nachwytem górnym (pronated), dłonie na szerokość barków.",
+    "Pochyl tułów do przodu i oprzyj oba przedramiona płasko na udach, dłonie skierowane w dół. Nadgarstki zwisają tuż za kolanami.",
+    "Lekko dociśnij łokcie do mięśni czworogłowych — przedramiona stają się stabilną dźwignią, łokcie nie ruszają się przez całą serię.",
+    "Pozwól nadgarstkom zgiąć się w dół pod ciężarem sztangi — sztanga powinna zsunąć się ku opuszkom palców w dolnej pozycji.",
+    "Unieś sztangę poprzez wyprost nadgarstków (dorsiflexion). Pięści wędrują tak wysoko, jak pozwala ruchomość nadgarstka. Wydech w fazie unoszenia.",
+    "Zatrzymaj się i mocno spinaj prostowniki przedramienia w górnej pozycji przez 1 sekundę.",
+    "Opuszczaj sztangę powoli pod kontrolą (2-3 sekundy) do pełnego zgięcia nadgarstków. Wdech podczas opuszczania.",
+    "Przez cały ruch trzymaj przedramiona przyklejone do ud — pracują wyłącznie dłonie i nadgarstki.",
+    "Stosuj znacznie mniejszy ciężar niż przy wrist curl — prostowniki są 2-3 razy słabsze od zginaczy."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_wrist_extension",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_extensors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["forearm_flexors", "biceps_brachii", "core"]
+  },
+
+  "muscle_intensity": {
+    "forearm_extensors": "P10",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T3",
+    "biceps_brachii": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell", "bench"],
+    "optional": ["weight_plates", "collars", "ez_bar"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["barbell-standing-back-wrist-curl", "dumbbell-reverse-wrist-curl"],
+    "alternatives": ["barbell-reverse-wrist-curl", "dumbbell-reverse-wrist-curl", "cable-reverse-wrist-curl", "band-reverse-wrist-curl", "ez-bar-reverse-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on flat bench, feet shoulder-width on the floor",
+      "Lean torso forward, forearms flat on the thighs",
+      "Pronated (overhand) grip, hands shoulder-width",
+      "Wrists hang just past the knees",
+      "Use much lighter weight than wrist curl (50-60%)"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na płaskiej ławce, stopy na szerokość barków",
+      "Pochyl tułów, przedramiona płasko na udach",
+      "Chwyt nachwytem górnym (pronated), dłonie na szerokość barków",
+      "Nadgarstki zwisają tuż za kolanami",
+      "Użyj znacznie mniejszego ciężaru niż przy wrist curl (50-60%)"
+    ],
+    "execution_cues": [
+      "Only the wrists move — drive the knuckles to the ceiling",
+      "Press elbows lightly into quads — forearms stay anchored",
+      "Full range: let bar roll toward fingertips at bottom",
+      "Squeeze extensors hard at the top for 1 second",
+      "Lower slowly for 2-3 seconds — control the eccentric"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko nadgarstki — pchaj knykcie w sufit",
+      "Lekko dociśnij łokcie do ud — przedramiona pozostają stabilne",
+      "Pełny zakres: pozwól sztandze zsunąć się ku opuszkom palców w dole",
+      "Mocno spinaj prostowniki w górze przez 1 sekundę",
+      "Opuszczaj powoli przez 2-3 sekundy — kontroluj fazę negatywną"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting forearms off the thighs to add momentum",
+        "faultPl": "Odrywanie przedramion od ud dla nadania rozpędu",
+        "cause": "Weight too heavy for the small wrist extensors, attempting to ego-lift",
+        "causePl": "Ciężar zbyt duży dla małych prostowników nadgarstka, próba ego-liftingu",
+        "cue": "Drop the weight by 30-40%. Forearms must stay glued to the thighs for the entire set.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Przedramiona muszą pozostać przyklejone do ud przez całą serię."
+      },
+      {
+        "fault": "Rounding the lumbar spine excessively while leaning forward",
+        "faultPl": "Nadmierne zaokrąglanie lędźwiowego odcinka kręgosłupa przy pochyleniu",
+        "cause": "Tight hamstrings, weak spinal erectors, leaning too far forward",
+        "causePl": "Napięte mięśnie tylne uda, słabe prostowniki grzbietu, zbyt głębokie pochylenie",
+        "cue": "Hinge from the hips, keep a slight arch in the lower back, head neutral. If you feel the back, sit more upright.",
+        "cuePl": "Pochyl się w biodrach, zachowaj lekkie wygięcie lędźwiowe, głowa neutralnie. Jeśli czujesz plecy — usiądź bardziej pionowo."
+      },
+      {
+        "fault": "Partial range of motion (skipping the stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (pomijanie rozciągnięcia w dolnej pozycji)",
+        "cause": "Fear of wrist strain, weak stretched-position strength, ego lifting",
+        "causePl": "Strach przed przeciążeniem nadgarstka, słabość w pozycji rozciągniętej, ego",
+        "cue": "Let the bar roll to the fingertips at the bottom every rep. Full stretch grows muscle.",
+        "cuePl": "Pozwól sztandze zsunąć się ku opuszkom palców w dole przy każdym powtórzeniu. Pełne rozciągnięcie buduje mięsień."
+      },
+      {
+        "fault": "Loosening the grip and dropping the bar at the bottom",
+        "faultPl": "Rozluźnianie chwytu i gubienie sztangi w dolnej pozycji",
+        "cause": "Weak grip, wrist flexor fatigue, or improper hand position",
+        "causePl": "Słaby chwyt, zmęczenie zginaczy nadgarstka, lub nieprawidłowa pozycja dłoni",
+        "cue": "Allow the bar to roll along the fingers but keep thumbs wrapped — never release the bar.",
+        "cuePl": "Pozwól sztandze toczyć się po palcach, ale kciuki zawsze zaciśnięte — nigdy nie wypuszczaj sztangi."
+      },
+      {
+        "fault": "Bouncing the bar at the bottom (using momentum)",
+        "faultPl": "Odbijanie sztangi w dolnej pozycji (używanie rozpędu)",
+        "cause": "Trying to lift weight too heavy for strict execution, no eccentric control",
+        "causePl": "Próba podniesienia ciężaru zbyt dużego dla ścisłej techniki, brak kontroli fazy negatywnej",
+        "cue": "Pause for 1 second at the bottom — dead-stop reps. Reduce weight if you cannot.",
+        "cuePl": "Zatrzymaj się na 1 sekundę w dolnej pozycji — powtórzenia z zatrzymaniem. Zmniejsz ciężar jeśli się nie da."
+      }
+    ],
+    "breathing": "Exhale during the concentric (wrist extension up). Inhale during the eccentric (slow lowering). Breathing is light — this is a small-muscle isolation exercise.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wyprost nadgarstków w górę). Wdech w fazie ekscentrycznej (powolne opuszczanie). Oddech lekki — to ćwiczenie izolowane na małe mięśnie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "If acute and painful, avoid. In the rehab phase, reverse wrist curls are therapeutic — start with very light load (2-5 kg), high reps (15-25), focus on slow eccentrics (3-5s).",
+      "modificationPl": "W ostrej fazie bólowej unikać. W fazie rehabilitacji reverse wrist curl jest terapeutyczny — zacznij z bardzo małym ciężarem (2-5 kg), wysoką liczbą powtórzeń (15-25), skup się na wolnej fazie negatywnej (3-5s).",
+      "alternative": "dumbbell-reverse-wrist-curl"
+    },
+    {
+      "condition": "wrist_pain_or_arthritis",
+      "severity": "modify",
+      "modification": "Straight bar can force the wrists into an uncomfortable position. Use EZ-bar or dumbbells (each hand can rotate freely). Reduce ROM if needed.",
+      "modificationPl": "Sztanga prosta może wymuszać niewygodną pozycję nadgarstków. Użyj sztangi łamanej lub hantli (każda dłoń może swobodnie się obracać). Zmniejsz zakres ruchu jeśli trzeba.",
+      "alternative": "dumbbell-reverse-wrist-curl"
+    },
+    {
+      "condition": "lower_back_pain_lumbar_disc_issues",
+      "severity": "modify",
+      "modification": "Forward-leaning seated position loads the lumbar spine in flexion. Sit more upright, reduce torso lean, or switch to the kneeling variant where the bench supports the torso. Avoid in acute phase.",
+      "modificationPl": "Pozycja siedząca z pochyleniem obciąża lędźwiowy odcinek w zgięciu. Usiądź bardziej pionowo, zmniejsz pochylenie tułowia lub przejdź na wariant klęczący — ławka podpiera tułów. Unikać w ostrej fazie bólowej.",
+      "alternative": "barbell-reverse-wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Wrist extension can compress the carpal tunnel under load. Avoid in acute flare-ups. In stable cases use very light weight and limit ROM at the top.",
+      "modificationPl": "Wyprost nadgarstka pod obciążeniem może uciskać kanał nadgarstka. Unikaj w ostrych zaostrzeniach. W stabilnych przypadkach używaj bardzo małego ciężaru i ogranicz zakres w górze.",
+      "alternative": "band-reverse-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-20 (hypertrophy) | 2-3x15-25 (rehab/prehab) | 3-4x10-15 (strength)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "barbell-revers-wrist-curl-v-2.gif",
+    "frames_extracted": [
+      "frames/barbell-revers-wrist-curl-v-2/frame_0_start.png",
+      "frames/barbell-revers-wrist-curl-v-2/frame_1_early.png",
+      "frames/barbell-revers-wrist-curl-v-2/frame_2_mid.png",
+      "frames/barbell-revers-wrist-curl-v-2/frame_3_late.png",
+      "frames/barbell-revers-wrist-curl-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/barbell-revers-wrist-curl-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Wariant 2 RÓŻNI SIĘ od podstawowego barbell-reverse-wrist-curl pozycją ciała: tutaj ćwiczący SIEDZI na płaskiej ławce, pochyla tułów do przodu i opiera oba przedramiona płasko na UDACH (nad kolanami) — nadgarstki zwisają tuż za kolanami. W wariancie podstawowym pozycja jest klęcząca a przedramiona leżą na ławce. Chwyt sztangi nachwytem górnym (pronated/overhand), dłonie na szerokość barków, podświetlone prostowniki przedramienia po grzbietowej stronie + brachioradialis przy łokciach. Mały zakres ruchu w nadgarstkach (specyfika wrist extension ~60-80°). Główna zaleta wariantu 2: szybszy setup, brak klękania, łokcie docisnięte do quadów = większa stabilizacja. Główna wada: pozycja pochylenia obciąża lędźwiowy odcinek kręgosłupa — dodano dedykowane przeciwwskazanie lower_back_pain. Zachowano slug z typo 'revers' zgodnie z poleceniem. Wszystkie pola PL napisane od zera. Calories 3.5 (mała grupa, niski wydatek).",
+
+  "tags": ["bodybuilding", "forearms", "isolation", "barbell", "wrist_extensors", "elbow_health", "tennis_elbow_prevention", "rehab", "seated", "upper_body"]
+}

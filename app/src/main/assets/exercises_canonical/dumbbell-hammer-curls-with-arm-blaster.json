@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-hammer-curls-with-arm-blaster",
+  "name": "Dumbbell Hammer Curls with Arm Blaster",
+  "namePl": "Hammer curl z hantlami z arm blaster",
+  "aliases": ["arm blaster hammer curl", "hammer curl with arm blaster", "isolator hammer curl"],
+  "aliasesPl": ["uginanie młotkowe z arm blaster", "hammer curl z izolatorem", "uginanie młotkowe z hantlami z arm blaster", "młotki z arm blaster"],
+
+  "description": "Hammer curl variation performed while wearing an arm blaster — a rigid pad strapped around the neck and resting against the upper torso, on which the elbows are anchored. The blaster locks the elbows in front of the body and completely eliminates shoulder swing, momentum, and elbow drift. The neutral (hammer) grip emphasizes the brachialis and brachioradialis more than the biceps brachii itself. A classic Golden Era bodybuilding tool popularized by Arnold Schwarzenegger for building thick upper arms and a powerful forearm-to-elbow look.",
+  "descriptionPl": "Wariant uginania młotkowego wykonywany w arm blaster — sztywnym padzie zawieszonym na szyi i opartym o górną część tułowia, na którym spoczywają łokcie. Blaster blokuje łokcie z przodu ciała i całkowicie eliminuje swing barków, momentum oraz przesuwanie łokci. Chwyt neutralny (młotkowy) mocniej akcentuje ramienny (brachialis) i ramienno-promieniowy (brachioradialis) niż sam dwugłowy ramienia. Klasyczne narzędzie z Złotej Ery kulturystyki, spopularyzowane przez Arnolda Schwarzeneggera do budowy grubych ramion i potężnego przejścia przedramię-łokieć.",
+
+  "instructions": [
+    "Strap the arm blaster around your neck with the rigid pad resting against your lower chest / upper abdomen. Tighten the strap so the pad stays in place.",
+    "Pick up a dumbbell in each hand with a neutral (hammer) grip — palms facing each other, thumbs pointing forward.",
+    "Stand tall, feet hip-width apart, knees soft. Plant your elbows firmly against the blaster pad — they must stay glued there for the entire set.",
+    "Let the dumbbells hang at arms' length with palms facing your thighs. Wrists neutral and straight.",
+    "Curl both dumbbells upward by flexing at the elbows only. Keep palms facing each other the whole way up — no rotation.",
+    "Continue until the dumbbells reach shoulder height and the brachialis is fully contracted. Squeeze hard for a brief pause.",
+    "Lower the dumbbells under control over 2-3 seconds back to full elbow extension. Keep the elbows pinned to the pad.",
+    "Breathe out on the way up, breathe in on the way down. Do not let the blaster shift or unload from your chest."
+  ],
+  "instructionsPl": [
+    "Załóż arm blaster na szyję — sztywny pad ma spoczywać na dolnej części klatki piersiowej / górze brzucha. Dociągnij pasek tak, aby pad nie zsuwał się.",
+    "Chwyć po jednej hantli do każdej ręki chwytem neutralnym (młotkowym) — dłonie skierowane do siebie, kciuki do przodu.",
+    "Stań prosto, stopy na szerokość bioder, kolana lekko ugięte. Wciśnij łokcie mocno w pad arm blastera — mają tam pozostać przez całą serię.",
+    "Pozwól hantlom wisieć na wyprostowanych ramionach, dłonie skierowane w stronę ud. Nadgarstki neutralne i proste.",
+    "Uginaj obie hantle do góry, pracując wyłącznie w łokciach. Dłonie skierowane do siebie przez cały ruch — bez obrotu nadgarstka.",
+    "Kontynuuj aż hantle dotrą na wysokość barków, a brachialis będzie w pełnym skurczu. Mocno spinaj w górnej pozycji.",
+    "Opuszczaj hantle w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Łokcie pozostają wciśnięte w pad.",
+    "Wydech w fazie unoszenia, wdech w fazie opuszczania. Nie pozwól, aby blaster przesuwał się lub odlatywał od klatki."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis", "biceps_brachii"],
+    "secondary": ["forearm_flexors"],
+    "stabilizers": ["core", "upper_trapezius", "anterior_deltoid", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "brachioradialis": "P9",
+    "biceps_brachii": "P8",
+    "forearm_flexors": "S6",
+    "core": "T3",
+    "upper_trapezius": "T2",
+    "anterior_deltoid": "T1",
+    "rotator_cuff": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "arm_blaster"],
+    "optional": ["wrist_wraps", "lifting_straps", "weightlifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl", "hammer-curl"],
+    "progression_to": ["dumbbell-alternate-bicep-curl", "preacher-curl", "spider-curl", "cable-hammer-curls-rope-attachment"],
+    "alternatives": ["hammer-curl", "cable-hammer-curls-rope-attachment", "preacher-curl", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Strap blaster snug — pad against lower chest",
+      "Neutral grip, thumbs forward, wrists straight",
+      "Elbows pressed hard into the pad",
+      "Feet hip-width, soft knees, glutes tight",
+      "Brace core — blaster does not move"
+    ],
+    "setup_cues_pl": [
+      "Pasek blastera dociągnięty — pad na dolnej klatce",
+      "Chwyt neutralny, kciuki do przodu, nadgarstki proste",
+      "Łokcie mocno wciśnięte w pad",
+      "Stopy na szerokość bioder, kolana lekko ugięte, pośladki napięte",
+      "Napnij brzuch — blaster ma nie ruszać się"
+    ],
+    "execution_cues": [
+      "Only the forearms move — elbows glued to the pad",
+      "Palms stay facing each other — no rotation",
+      "Squeeze brachialis hard at the top",
+      "Lower slow — fight the eccentric 2-3 seconds",
+      "Full elbow extension at the bottom of each rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — łokcie wklejone w pad",
+      "Dłonie cały czas skierowane do siebie — bez obrotu",
+      "Mocno spinaj brachialis w górnej pozycji",
+      "Opuszczaj wolno — kontroluj negatyw 2-3 sekundy",
+      "Pełny wyprost łokci na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drift off the blaster pad",
+        "faultPl": "Łokcie odchodzą od pada arm blastera",
+        "cause": "Load too heavy or fatigue — body recruits front delts to push the weight up",
+        "causePl": "Zbyt duży ciężar lub zmęczenie — ciało włącza przednie aktony barków, aby wypchnąć ciężar",
+        "cue": "If the elbows leave the pad, the rep does not count. Reduce the weight.",
+        "cuePl": "Jeśli łokcie schodzą z pada, powtórzenie się nie liczy. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Wrist rotation toward supination during the curl",
+        "faultPl": "Obracanie nadgarstków w kierunku supinacji podczas uginania",
+        "cause": "Habit from supinated curls, weak brachialis trying to recruit biceps brachii",
+        "causePl": "Nawyk z curlów podchwytem, słaby brachialis próbuje włączyć biceps brachii",
+        "cue": "Lock the wrists neutral. Knuckles point forward the entire rep.",
+        "cuePl": "Zablokuj nadgarstki w pozycji neutralnej. Kostki dłoni przez cały ruch skierowane do przodu."
+      },
+      {
+        "fault": "Blaster pad slides up and unloads",
+        "faultPl": "Pad arm blastera podjeżdża w górę i przestaje pełnić funkcję podparcia",
+        "cause": "Strap too loose or pad set too high — torso pushes it up during exertion",
+        "causePl": "Zbyt luźny pasek lub pad zbyt wysoko — tułów wypycha go w górę podczas wysiłku",
+        "cue": "Tighten the strap and set the pad against the lower chest, not the upper chest.",
+        "cuePl": "Dociągnij pasek mocniej i ustaw pad na dolnej klatce, nie na górze klatki."
+      },
+      {
+        "fault": "Partial range of motion — not locking out at the bottom",
+        "faultPl": "Niepełny zakres ruchu — brak pełnego wyprostu na dole",
+        "cause": "Ego lifting, weak stretched-position strength, or avoidance of full eccentric",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub unikanie pełnej fazy negatywnej",
+        "cue": "Touch the dumbbells back to a hanging arms position every rep. No half reps.",
+        "cuePl": "Wracaj hantlami do pełnego wyprostu ramion przy każdym powtórzeniu. Żadnych połówek."
+      },
+      {
+        "fault": "Leaning back as you curl up",
+        "faultPl": "Odchylanie się do tyłu podczas uginania",
+        "cause": "Compensating for fatigue with lumbar extension, or trying to lift more than the brachialis can handle",
+        "causePl": "Kompensacja zmęczenia wyprostem lędźwiowym lub próba uniesienia większego ciężaru niż brachialis może udźwignąć",
+        "cue": "Stay vertical — ears over hips. Squeeze glutes if you tend to arch.",
+        "cuePl": "Stój pionowo — uszy nad biodrami. Napnij pośladki, jeśli masz tendencję do przeprostu."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light brace throughout so the blaster does not shift.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha, aby blaster nie przesuwał się."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_spine_pain_or_disc_issues",
+      "severity": "avoid",
+      "modification": "Arm blaster hangs from a strap around the neck and loads the cervical spine under tension. With neck pain or cervical disc issues, switch to hammer curls without the blaster.",
+      "modificationPl": "Arm blaster wisi na pasku wokół szyi i obciąża odcinek szyjny pod napięciem. W razie bólu szyi lub problemów z dyskami szyjnymi przejdź na hammer curl bez blastera.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Neutral grip is generally elbow-friendly, but heavy isolated brachialis loading can flare medial epicondyle. Reduce load, use higher reps (12-15), pause 1 sec at the top instead of grinding.",
+      "modificationPl": "Chwyt neutralny jest na ogół przyjazny łokciom, ale ciężkie izolowane obciążenie brachialis może rozdrażnić przyśrodkowy nadkłykieć. Zmniejsz ciężar, używaj wyższego zakresu powtórzeń (12-15), zatrzymuj 1 sek w górze zamiast forsować.",
+      "alternative": "cable-hammer-curls-rope-attachment"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Neutral grip already offloads the distal biceps tendon compared to supinated curls — this is often a safer option. Still reduce load and avoid heavy eccentrics until pain-free.",
+      "modificationPl": "Chwyt neutralny już odciąża dystalny przyczep bicepsa w porównaniu z chwytem podchwytem — to często bezpieczniejszy wybór. Mimo to zmniejsz ciężar i unikaj ciężkich faz negatywnych, dopóki ból nie ustąpi.",
+      "alternative": "cable-hammer-curls-rope-attachment"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing position with weight hanging in front requires isometric lumbar bracing. Switch to seated hammer curl or preacher bench to remove spinal load.",
+      "modificationPl": "Pozycja stojąca z ciężarem zwisającym z przodu wymaga izometrycznego napięcia odcinka lędźwiowego. Przejdź na hammer curl siedząc lub ławkę modlitewnika, aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-hammer-curls-with-arm-blaster.gif",
+    "frames_extracted": [
+      "frames/dumbbell-hammer-curls-with-arm-blaster/frame_0_start.png",
+      "frames/dumbbell-hammer-curls-with-arm-blaster/frame_1_early.png",
+      "frames/dumbbell-hammer-curls-with-arm-blaster/frame_2_mid.png",
+      "frames/dumbbell-hammer-curls-with-arm-blaster/frame_3_late.png",
+      "frames/dumbbell-hammer-curls-with-arm-blaster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-hammer-curls-with-arm-blaster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja stojąca, arm blaster (ciemny/pomarańczowy pad) zapięty na pasku wokół szyi, oparty na dolnej klatce piersiowej; łokcie wciśnięte w pad; dwie hantle wiszą na wyprostowanych ramionach chwytem neutralnym (młotkowym, dłonie skierowane do siebie); podświetlone na czerwono: brachialis, brachioradialis i przedramiona po obu stronach. Frame 2: pełny skurcz, hantle przy barkach, łokcie nadal wciśnięte w pad, dłonie nadal skierowane do siebie (brak supinacji), tułów pionowy bez kompensacji. Frame 4: powrót do pełnego wyprostu — widoczne 'ghosty' szczytowej fazy nad ramionami sugerują pełen ROM (down → up → down). Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Hammer Curls with Arm Blaster. Klasyfikacja primary: brachialis > brachioradialis > biceps_brachii (typowe dla hammer-grip — neutralny chwyt zmienia kąt pociągnięcia bicepsa, brachialis pracuje maksymalnie bo jest pod bicepsem i ma stałe ramię siły niezależnie od supinacji). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "forearms", "isolation", "dumbbell", "arm_blaster", "upper_body", "golden_era"]
+}

@@ -1,0 +1,208 @@
+{
+  "id": "dumbbell-standing-calf-raise",
+  "name": "Dumbbell Standing Calf Raise",
+  "namePl": "Wspięcia na łydki z hantlami stojąc",
+  "aliases": ["standing dumbbell calf raise", "db standing calf raise", "two dumbbell calf raise", "farmers calf raise"],
+  "aliasesPl": ["stojące wspięcia na łydki z hantlami", "wspięcia na palce z hantlami stojąc", "wspięcia na łydki dwururącz z hantlami", "calf raise stojąc z hantlami"],
+
+  "description": "Standing isolation exercise targeting the calves with a dumbbell held in each hand at the sides of the body, farmer-carry style. Because the knee is held straight (or only minimally flexed), the gastrocnemius is fully lengthened across both the knee and ankle joints, making it the dominant prime mover — supported by the soleus underneath. Performing the exercise with the balls of the feet on an elevated block allows the heels to drop below toe level for a deep stretch and full plantarflexion at the top, which is critical for calf hypertrophy. The two-dumbbell version distributes load symmetrically through the spine, gives the grip and forearms significant secondary work (a true Farmers-style hold), and is a highly accessible alternative to standing calf raise machines or barbell variants.",
+  "descriptionPl": "Izolowane ćwiczenie na łydki wykonywane w pozycji stojącej z hantlami trzymanymi po obu bokach ciała (styl Farmer's walk). Ponieważ kolano pozostaje wyprostowane (lub jedynie minimalnie ugięte), mięsień brzuchaty łydki (gastrocnemius) jest w pełni rozciągnięty na obu stawach — kolanowym i skokowym — i pełni rolę głównego pracownika ruchu, wspierany od spodu przez płaszczkowaty (soleus). Wykonywanie ćwiczenia ze śródstopiami na podwyższonym klocku pozwala piętom opaść poniżej poziomu palców w głęboki rozciąg oraz w pełni wyprostować staw skokowy w szczycie ruchu — co jest kluczowe dla hipertrofii łydek. Wersja z dwoma hantlami rozkłada obciążenie symetrycznie przez kręgosłup, daje znaczącą pracę dla chwytu i przedramion (prawdziwy Farmer's hold) oraz stanowi bardzo dostępną alternatywę dla maszyn do stojących wspięć i wariantów ze sztangą.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, balls of the feet on a sturdy elevated block (calf block, weight plate, low platform) — heels free to drop below toe level. A 5-10 cm elevation works well.",
+    "Pick up a dumbbell in each hand with a neutral grip (palms facing the thighs) and let the arms hang straight at the sides — like a farmer's carry.",
+    "Set posture: chest up, shoulders pulled slightly back, neck neutral, eyes forward. Brace the core lightly to keep the torso upright.",
+    "Lock the knees out straight (or with a tiny soft bend) — this is critical to keep the gastrocnemius under tension across both joints.",
+    "Allow the heels to drop slowly under the load of the dumbbells into a deep calf stretch. This is your starting position.",
+    "Drive through the balls of the feet and push the heels up as high as possible, raising the body smoothly with the calves only. Exhale on the way up.",
+    "Squeeze the calves hard at the top for a 1-2 second hold — get as high on the toes as you can.",
+    "Lower the heels under control over 2-3 seconds back down past the block into a deep stretch. Inhale during the descent.",
+    "Do not bounce, do not bend the knees, do not use the hips or shoulders to swing the dumbbells — only the ankles should move."
+  ],
+  "instructionsPl": [
+    "Stań wyprostowany ze stopami na szerokość bioder, śródstopia na stabilnym podwyższonym klocku (klocek do łydek, krążek, niska platforma) — pięty mają swobodę opadania poniżej poziomu palców. Podwyższenie 5-10 cm sprawdza się najlepiej.",
+    "Chwyć po jednym hantlu w każdą rękę chwytem neutralnym (dłonie skierowane do ud) i pozwól ramionom zwisać swobodnie wzdłuż tułowia — jak w marszu farmera.",
+    "Ustaw sylwetkę: klatka uniesiona, łopatki lekko ściągnięte, szyja neutralna, wzrok przed siebie. Lekko napnij brzuch, aby utrzymać wyprostowany tułów.",
+    "Wyprostuj kolana (lub pozostaw minimalne miękkie ugięcie) — jest to kluczowe, aby utrzymać napięcie brzuchatego łydki na obu stawach.",
+    "Pozwól piętom powoli opaść pod ciężarem hantli w głęboki rozciąg łydek. To pozycja wyjściowa.",
+    "Pchnij przez śródstopia i wypchnij pięty maksymalnie wysoko, unosząc ciało płynnie wyłącznie pracą łydek. Wydech w trakcie unoszenia.",
+    "Mocno spinaj łydki w górnej pozycji przez 1-2 sekundy — wejdź na palce tak wysoko, jak potrafisz.",
+    "Opuszczaj pięty w sposób kontrolowany przez 2-3 sekundy z powrotem poniżej poziomu klocka w głęboki rozciąg. Wdech podczas opuszczania.",
+    "Nie odbijaj, nie zginaj kolan, nie używaj bioder ani ramion do bujania hantlami — pracować ma wyłącznie staw skokowy."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius", "soleus"],
+    "secondary": ["tibialis_posterior", "forearm_flexors"],
+    "stabilizers": ["peroneals", "foot_intrinsics", "quadriceps", "core", "erector_spinae", "trapezius"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P9",
+    "soleus": "P7",
+    "tibialis_posterior": "S3",
+    "forearm_flexors": "S4",
+    "peroneals": "T3",
+    "foot_intrinsics": "T2",
+    "quadriceps": "T2",
+    "core": "T2",
+    "erector_spinae": "T2",
+    "trapezius": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["elevated_block", "calf_block", "weight_plates", "wrist_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-calf-raise"],
+    "progression_to": ["single-leg-dumbbell-calf-raise", "barbell-standing-calf-raise", "machine-standing-calf-raise", "smith-machine-calf-raise"],
+    "alternatives": ["barbell-standing-calf-raise", "machine-standing-calf-raise", "smith-machine-calf-raise", "bodyweight-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width apart, balls of feet on a 5-10 cm block",
+      "Dumbbell in each hand, neutral grip, arms hanging like a farmer's carry",
+      "Stand tall — chest up, shoulders back, neck neutral",
+      "Lock the knees straight (or barely soft) — gastrocnemius needs this",
+      "Brace core, weight balanced over the balls of the feet"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, śródstopia na klocku 5-10 cm",
+      "Hantel w każdej dłoni, chwyt neutralny, ramiona zwisają jak w marszu farmera",
+      "Stań wyprostowany — klatka uniesiona, barki cofnięte, szyja neutralna",
+      "Wyprostuj kolana (lub zostaw minimalne ugięcie) — brzuchaty łydki tego wymaga",
+      "Napnij brzuch, ciężar równo nad śródstopiami"
+    ],
+    "execution_cues": [
+      "Push through the balls of the feet, drive heels as high as possible",
+      "Keep knees locked — do not let them bend to cheat the rep",
+      "Squeeze the calves hard at the top for 1-2 seconds",
+      "Lower slowly into a deep stretch — feel the calf lengthen below the block",
+      "Move only at the ankles — no hip swing, no shoulder shrug, no bounce"
+    ],
+    "execution_cues_pl": [
+      "Pchaj przez śródstopia, wypchnij pięty maksymalnie wysoko",
+      "Trzymaj kolana wyprostowane — nie zginaj ich, aby nie oszukać powtórzenia",
+      "Mocno spinaj łydki w górnej pozycji przez 1-2 sekundy",
+      "Opuszczaj wolno w głęboki rozciąg — poczuj wydłużenie łydki poniżej klocka",
+      "Ruch wyłącznie w stawie skokowym — bez bujania biodrami, wzruszania barkami i odbijania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knees during the rep (turning it into a half-squat)",
+        "faultPl": "Zginanie kolan podczas powtórzenia (zamiana w półprzysiad)",
+        "cause": "Weight too heavy, fatigue, or treating the lift as a leg movement instead of an ankle movement",
+        "causePl": "Zbyt duży ciężar, zmęczenie lub traktowanie ruchu jako pracy nogami zamiast pracy stawu skokowego",
+        "cue": "Lock knees straight and freeze them — only the ankles move. If knees keep bending, lighten the load.",
+        "cuePl": "Wyprostuj kolana i zablokuj je — pracuje wyłącznie staw skokowy. Jeśli kolana wciąż się zginają, zmniejsz ciężar."
+      },
+      {
+        "fault": "Partial range of motion — no deep stretch, no full top contraction",
+        "faultPl": "Niepełny zakres ruchu — brak głębokiego rozciągu i pełnego skurczu na górze",
+        "cause": "Standing flat on the floor instead of a block, going too heavy, or short choppy reps",
+        "causePl": "Stanie płasko na podłodze zamiast na klocku, zbyt duży ciężar lub krótkie, urywane powtórzenia",
+        "cue": "Stand on a 5-10 cm block. Heels drop below toe level at the bottom, full peak rise at the top, on every rep.",
+        "cuePl": "Stań na klocku 5-10 cm. Pięty opadają poniżej poziomu palców na dole, pełne uniesienie w szczycie — w każdym powtórzeniu."
+      },
+      {
+        "fault": "Bouncing reps using the Achilles stretch reflex",
+        "faultPl": "Odbijane powtórzenia wykorzystujące odruch rozciągowy ścięgna Achillesa",
+        "cause": "Going too heavy, chasing reps, mistaking tendon rebound for calf work",
+        "causePl": "Zbyt duży ciężar, gonienie za liczbą powtórzeń, mylenie odbicia ścięgnistego z pracą łydek",
+        "cue": "Pause 1 second at the bottom stretch on every rep. If you cannot pause, the weight is too heavy.",
+        "cuePl": "Zatrzymaj się 1 sekundę w dolnym rozciągu w każdym powtórzeniu. Jeśli nie potrafisz wytrzymać pauzy, ciężar jest za duży."
+      },
+      {
+        "fault": "Hip or shoulder swing — using momentum to throw the dumbbells up",
+        "faultPl": "Bujanie biodrami lub barkami — używanie rozmachu do podrzucania hantli w górę",
+        "cause": "Weight too heavy, fatigue, or unconscious cheating to keep rep count",
+        "causePl": "Zbyt duży ciężar, zmęczenie lub nieświadome oszukiwanie, aby utrzymać liczbę powtórzeń",
+        "cue": "Keep the torso rigid like a board. Only the ankles move. If hips swing, drop the weight.",
+        "cuePl": "Utrzymuj tułów sztywny jak deska. Pracuje wyłącznie staw skokowy. Jeśli biodra bujają, zmniejsz ciężar."
+      },
+      {
+        "fault": "Grip failing before calves do — dropping the dumbbells early",
+        "faultPl": "Chwyt poddaje się szybciej niż łydki — wcześniejsze odkładanie hantli",
+        "cause": "Weak forearm strength relative to calf strength, sweaty hands, no strap on heavy sets",
+        "causePl": "Słabszy chwyt względem łydek, spocone dłonie, brak pasów przy ciężkich seriach",
+        "cue": "Use wrist straps on heavy work sets so the calves — not the grip — limit the set.",
+        "cuePl": "Użyj pasów do podciągu (wrist straps) w ciężkich seriach roboczych, aby seria kończyła się na łydkach, a nie na chwycie."
+      }
+    ],
+    "breathing": "Exhale during the concentric (driving heels up). Inhale during the eccentric (lowering into the stretch). Keep a light brace throughout to support upright posture with the load.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wypychanie pięt w górę). Wdech w fazie ekscentrycznej (opuszczanie w rozciąg). Utrzymuj lekkie napięcie brzucha przez cały czas, aby wspierać wyprostowaną sylwetkę pod obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid heavy loads and deep eccentrics during the irritable phase. Reduce ROM (do not drop heels below neutral) and emphasize slow controlled tempo with moderate load. Discontinue if pain exceeds 3/10 during or after sets.",
+      "modificationPl": "Unikaj dużych ciężarów i głębokich faz negatywnych w fazie podrażnienia. Ogranicz zakres ruchu (nie opuszczaj pięt poniżej poziomu neutralnego) i postaw na powolne kontrolowane tempo ze średnim obciążeniem. Przerwij, jeśli ból przekracza 3/10 w trakcie lub po seriach.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not perform under load during the acute phase. Once cleared, return with bodyweight calf raises and gradually add load over weeks, avoiding deep stretch until pain-free.",
+      "modificationPl": "Nie wykonuj pod obciążeniem w fazie ostrej. Po wygojeniu wracaj od wspięć z masą własnego ciała i stopniowo dodawaj obciążenie przez kilka tygodni, unikając głębokiego rozciągu do całkowitego ustąpienia bólu.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "modify",
+      "modification": "Holding heavy dumbbells at the sides imposes axial compression on the spine. With an acute flare, use light dumbbells, reduce volume, or switch to seated/machine variants that do not load the spine.",
+      "modificationPl": "Trzymanie ciężkich hantli po bokach generuje osiowe obciążenie kręgosłupa. W ostrym epizodzie używaj lekkich hantli, zmniejsz objętość, lub przejdź na wersję siedzącą/maszynową, która nie obciąża kręgosłupa.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "ankle_instability_or_recent_sprain",
+      "severity": "modify",
+      "modification": "Heavy loaded plantarflexion with heels dropped below toe level can overload an unstable ankle. Reduce ROM, lower load, or train one leg at a time on a stable surface before returning to loaded bilateral work.",
+      "modificationPl": "Obciążone zgięcie podeszwowe z piętami poniżej poziomu palców może przeciążyć niestabilny staw skokowy. Ogranicz zakres ruchu, zmniejsz ciężar lub trenuj jedną nogę na raz na stabilnym podłożu przed powrotem do obciążonej pracy obunóż.",
+      "alternative": "bodyweight-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy) | 4-5x8-12 (heavy gastrocnemius emphasis) | 2-3x20-30 (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-standing-calf-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-calf-raise/frame_0_start.png",
+      "frames/dumbbell-standing-calf-raise/frame_1_early.png",
+      "frames/dumbbell-standing-calf-raise/frame_2_mid.png",
+      "frames/dumbbell-standing-calf-raise/frame_3_late.png",
+      "frames/dumbbell-standing-calf-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/dumbbell-standing-calf-raise",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model stoi wyprostowany na klocku/platformie, śródstopia na podwyższeniu, pięty swobodnie opuszczone w dół, hantle trzymane po obu bokach ciała chwytem neutralnym (palms in), ramiona zwisają wzdłuż tułowia jak w marszu farmera, kolana wyprostowane, łydki podświetlone na czerwono jako mięśnie pracujące. Frame 2: model uniesiony na palcach, pięty wysoko nad klockiem, łydki w pełnym skurczu, ciało wyższe o kilkanaście centymetrów, hantle wraz z całym ciałem uniesione — szczyt ruchu. Kolana cały czas wyprostowane. Frame 4: powrót do pozycji wyjściowej (z duchem górnej pozycji widocznym w tle) — pięty z powrotem opuszczone w głęboki rozciąg. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Standing Calf Raise — klasyczne wspięcia na łydki z hantlami trzymanymi po bokach (Farmers carry style) wykonywane na podwyższeniu. Klasyfikacja zgodna z biomechaniką: wyprostowane kolano aktywuje gastrocnemius jako prime mover (P9), z soleusem jako wsparciem (P7); chwyt obciążonych hantli daje istotną pracę przedramion (S4). Mechanic=isolation, plane=sagittal, force=push, bilateral. Wszystkie pola PL napisane od zera. Yuhonas i glowupp nie mają tego ćwiczenia jako bezpośredniego matcha.",
+
+  "tags": ["bodybuilding", "calves", "gastrocnemius", "soleus", "isolation", "dumbbell", "lower_body", "lower_legs", "standing", "grip"]
+}

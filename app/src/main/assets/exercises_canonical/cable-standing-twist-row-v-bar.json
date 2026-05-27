@@ -1,0 +1,206 @@
+{
+  "id": "cable-standing-twist-row-v-bar",
+  "name": "Cable Standing Twist Row V-Bar",
+  "namePl": "Wiosło stojące z wyciągu z V-bar ze skrętem tułowia",
+  "aliases": ["standing cable row with twist", "cable twist row v-bar", "rotational cable row", "standing cable row rotation", "cable row with torso rotation"],
+  "aliasesPl": ["wiosłowanie stojące z wyciągu z rotacją", "wiosło stojące z V-bar z rotacją tułowia", "rotacyjne wiosłowanie z wyciągu", "wiosło z wyciągu ze skrętem"],
+
+  "description": "Hybrid pulling exercise that combines a horizontal cable row (V-bar, neutral grip) with deliberate torso rotation through the transverse plane. You stand facing the cable column with feet shoulder-width, knees slightly bent, arms extended forward holding the V-handle. As you pull the handle toward the lower ribs, the torso rotates roughly 30-45 degrees away from the working arm/pull line — engaging obliques and core rotators alongside the lats and rhomboids. This makes it functionally different from a strict seated row: it's a 'pull + rotate' pattern useful for athletes who need rotational strength (combat sports, golf, tennis, throwing) and as accessory work for both back thickness and anti-rotation/rotation core strength. The standing position adds full-body bracing demand vs. the seated version.",
+  "descriptionPl": "Hybrydowe ćwiczenie ciągowe łączące horyzontalne wiosłowanie z wyciągu (uchwyt V, chwyt neutralny) ze świadomą rotacją tułowia w płaszczyźnie poprzecznej. Stoisz przodem do kolumny wyciągu, stopy na szerokość barków, kolana lekko ugięte, ramiona wyprostowane do przodu trzymając uchwyt V. Podczas ciągnięcia uchwytu do dolnych żeber tułów obraca się o około 30-45 stopni w kierunku przeciwnym do linii ciągu — angażując skośne brzucha i rotatory tułowia obok najszerszych grzbietu i równoległobocznych. To różni je od klasycznego seated rowa: jest to wzorzec 'ciągnij + obróć', przydatny dla sportowców potrzebujących siły rotacyjnej (sporty walki, golf, tenis, rzuty) oraz jako akcesorium na grubość pleców i siłę rotacyjną/antyrotacyjną core. Pozycja stojąca dodaje wymóg stabilizacji całego ciała vs. wariant siedzący.",
+
+  "instructions": [
+    "Set the cable pulley at chest/shoulder height. Attach a V-handle (neutral grip).",
+    "Stand facing the cable column with feet shoulder-width apart, knees slightly bent (athletic stance). Step back so the cable is taut with arms extended.",
+    "Grab the V-handle with both hands, palms facing each other. Arms fully extended forward, slight forward lean (~10 degrees), neutral spine, chest proud.",
+    "Brace the core hard. Set the shoulder blades — neither protracted forward nor over-retracted. Stable base, weight evenly on both feet.",
+    "Initiate the pull by retracting the shoulder blades, THEN bend the elbows and pull the handle toward the lower ribs / belly.",
+    "SIMULTANEOUSLY rotate the torso 30-45 degrees in the same direction as the pulling motion (so if elbows drive back-right, torso rotates right). Rotation comes from the thoracic spine and hips — NOT from the lumbar.",
+    "At the end position: handle near the lower ribs, elbows behind the torso line, shoulder blades retracted, torso rotated to one side. Hold the squeeze 1 second.",
+    "Reverse smoothly: rotate the torso back to neutral as the arms extend forward, returning to the start position. Full control on eccentric.",
+    "Repeat for prescribed reps. Alternate the rotation direction set-to-set, or perform half the reps rotating left and half rotating right within one set."
+  ],
+  "instructionsPl": [
+    "Ustaw rolkę wyciągu na wysokości klatki/barków. Podłącz uchwyt V (chwyt neutralny).",
+    "Stań przodem do kolumny wyciągu, stopy na szerokość barków, kolana lekko ugięte (postawa atletyczna). Odejdź o tyle, by linka była napięta przy wyprostowanych ramionach.",
+    "Złap uchwyt V oboma rękami, dłonie zwrócone do siebie. Ramiona w pełni wyprostowane do przodu, lekkie pochylenie tułowia (~10 stopni), neutralny kręgosłup, klatka wysunięta.",
+    "Mocno napnij brzuch. Ustaw łopatki — ani nie wypchnięte w przód, ani nie nadmiernie ściągnięte. Stabilna baza, ciężar równo na obu stopach.",
+    "Rozpocznij ciąg ściągnięciem łopatek, NASTĘPNIE zegnij łokcie i przyciągnij uchwyt do dolnych żeber / brzucha.",
+    "JEDNOCZEŚNIE obróć tułów o 30-45 stopni w tym samym kierunku co ruch ciągu (jeśli łokcie idą w tył-prawo, tułów rotuje w prawo). Rotacja pochodzi z odcinka piersiowego i bioder — NIE z odcinka lędźwiowego.",
+    "Pozycja końcowa: uchwyt przy dolnych żebrach, łokcie za linią tułowia, łopatki ściągnięte, tułów obrócony w jedną stronę. Zatrzymaj napięcie na 1 sekundę.",
+    "Płynnie odwróć ruch: obróć tułów z powrotem do neutralnej pozycji gdy ramiona wracają do wyprostu, do pozycji startowej. Pełna kontrola w fazie ekscentrycznej.",
+    "Powtórz zaplanowaną liczbę powtórzeń. Naprzemiennie zmieniaj kierunek rotacji seria w serię, albo wykonaj połowę powtórzeń z rotacją w lewo i połowę w prawo w jednej serii."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal_transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "obliques"],
+    "secondary": ["biceps_brachii", "trapezius_middle_lower", "posterior_deltoids"],
+    "stabilizers": ["erector_spinae", "core", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P8",
+    "obliques": "P9",
+    "trapezius_middle_lower": "S7",
+    "posterior_deltoids": "S6",
+    "biceps_brachii": "S7",
+    "forearms": "S7",
+    "erector_spinae": "S7",
+    "core": "S8",
+    "glutes": "S5"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "v_handle"],
+    "optional": ["lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["cable-low-seated-row", "standing-cable-row", "cable-woodchop"],
+    "progression_to": ["landmine-rotation-row", "single-arm-cable-row-with-rotation", "pallof-press-row-combo"],
+    "alternatives": ["standing-cable-row", "cable-woodchop", "landmine-row", "single-arm-cable-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Athletic stance, feet shoulder-width, knees soft",
+      "Cable at chest height, V-handle neutral grip",
+      "Step back so the cable is taut at arms extended",
+      "Brace the core HARD before the first rep",
+      "Even weight on both feet — don't shift to one side"
+    ],
+    "setup_cues_pl": [
+      "Postawa atletyczna, stopy na szerokość barków, kolana miękkie",
+      "Wyciąg na wysokości klatki, uchwyt V z chwytem neutralnym",
+      "Cofnij się tak by linka była napięta przy wyprostowanych ramionach",
+      "MOCNO napnij brzuch PRZED pierwszym powtórzeniem",
+      "Ciężar równo na obu stopach — nie przerzucaj się na jedną stronę"
+    ],
+    "execution_cues": [
+      "Pull and rotate TOGETHER — not pull-then-rotate",
+      "Rotation from the ribcage and hips, NOT from the lower back",
+      "Elbows drive back close to the ribs as the torso turns",
+      "Squeeze the working-side lat and the opposite oblique at the same time",
+      "Return slowly — un-rotate as you extend the arms"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij i rotuj RAZEM — nie najpierw ciąg, potem rotacja",
+      "Rotacja z klatki piersiowej i bioder, NIE z odcinka lędźwiowego",
+      "Łokcie idą w tył blisko żeber gdy tułów się obraca",
+      "Ściśnij najszersze pracującej strony i przeciwległe skośne JEDNOCZEŚNIE",
+      "Wracaj powoli — rozkręć tułów gdy ramiona się prostują"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotation comes from the lumbar spine instead of the thoracic spine and hips",
+        "faultPl": "Rotacja pochodzi z odcinka lędźwiowego zamiast z piersiowego i bioder",
+        "cause": "Stiff hips/t-spine, weak obliques, or simply not understanding which segment should rotate",
+        "causePl": "Sztywne biodra/odcinek piersiowy, słabe skośne, lub brak świadomości który segment ma rotować",
+        "cue": "Lower back stays NEUTRAL — it does not twist. Imagine your belt buckle and your sternum rotating as ONE unit. Rotation comes from above the navel (t-spine) and from the hips/feet (pivot the back foot slightly). The lumbar segment is locked.",
+        "cuePl": "Odcinek lędźwiowy zostaje NEUTRALNY — nie skręca się. Wyobraź sobie że klamra paska i mostek obracają się JAKO JEDNA bryła. Rotacja pochodzi z powyżej pępka (klatka piersiowa) i z bioder/stóp (lekko obracaj tylną stopą). Lędźwie są zablokowane."
+      },
+      {
+        "fault": "Pulling first, then twisting (or twisting first, then pulling) — segmented movement",
+        "faultPl": "Najpierw ciągnięcie, potem skręt (albo najpierw skręt, potem ciągnięcie) — ruch segmentowy",
+        "cause": "Lack of coordination between back and core, or load too heavy forcing strongest segment to fire first",
+        "causePl": "Brak koordynacji między plecami a tułowiem, lub zbyt duży ciężar wymuszający pracę najsilniejszego segmentu jako pierwszego",
+        "cue": "Pull and rotate are ONE movement — not two. Start the rotation the moment the scapula starts retracting. Lighter weight, slower tempo, find the rhythm. The handle and the sternum move on the same arc.",
+        "cuePl": "Ciąg i rotacja to JEDEN ruch — nie dwa. Zacznij rotację w momencie gdy łopatka zaczyna się ściągać. Mniejszy ciężar, wolniejsze tempo, znajdź rytm. Uchwyt i mostek poruszają się po tym samym łuku."
+      },
+      {
+        "fault": "Torso leans backward at the end of the pull (using extension as leverage)",
+        "faultPl": "Tułów odchyla się do tyłu na końcu ciągu (używanie wyprostu jako dźwigni)",
+        "cause": "Load too heavy, or compensating because rotation strength is the limiter",
+        "causePl": "Zbyt duży ciężar, lub kompensacja gdy siła rotacyjna jest ogniwem limitującym",
+        "cue": "Stay tall through the entire rep. Rotation is HORIZONTAL — not backward lean. If you have to lean back to finish the pull, the weight is too heavy. Drop 20%, fix the pattern.",
+        "cuePl": "Pozostań wyprostowany przez całe powtórzenie. Rotacja jest POZIOMA — nie odchyleniem do tyłu. Jeśli musisz odchylać się żeby skończyć ciąg, ciężar jest zbyt duży. Zmniejsz o 20%, popraw wzorzec."
+      },
+      {
+        "fault": "Foot position fixed — feet don't pivot during rotation (creates knee/hip torque)",
+        "faultPl": "Stopy zablokowane — nie obracają się podczas rotacji (tworzy nacisk na kolana/biodra)",
+        "cause": "Treating the exercise like a strict seated row instead of an athletic rotational movement",
+        "causePl": "Traktowanie ćwiczenia jak sztywny seated row zamiast atletyczny ruch rotacyjny",
+        "cue": "Allow the back foot (opposite to rotation direction) to pivot slightly on the ball of the foot. This unloads the knee and lets the hips rotate freely. Think 'punch + pivot' like in a boxing rotation.",
+        "cuePl": "Pozwól tylnej stopie (przeciwnej do kierunku rotacji) lekko obracać się na śródstopiu. To odciąża kolano i pozwala biodrom swobodnie rotować. Pomyśl 'cios + obrót' jak w bokserskiej rotacji."
+      },
+      {
+        "fault": "Doing all reps in one direction (asymmetric loading)",
+        "faultPl": "Wykonywanie wszystkich powtórzeń w jedną stronę (asymetryczne obciążenie)",
+        "cause": "Forgetting that this is a bilateral handle exercise that needs symmetric rotational volume",
+        "causePl": "Zapominanie że jest to ćwiczenie dwustronnym uchwytem wymagające symetrycznej objętości rotacyjnej",
+        "cue": "Either alternate left/right each rep, or split the set: half the reps rotating right, half rotating left. Volume must be EQUAL on both sides or you'll build a rotational imbalance.",
+        "cuePl": "Albo zmieniaj lewo/prawo co powtórzenie, albo podziel serię: połowa powtórzeń w prawo, połowa w lewo. Objętość musi być RÓWNA po obu stronach lub zbudujesz dysbalans rotacyjny."
+      }
+    ],
+    "breathing": "Inhale at start (arms extended, torso neutral). Exhale through the pull-and-rotate combined motion. Inhale on the controlled return to neutral. For heavier sets, brace and hold breath through concentric, exhale at the end.",
+    "breathingPl": "Wdech na starcie (ramiona wyprostowane, tułów neutralny). Wydech przez połączony ruch ciągu i rotacji. Wdech podczas kontrolowanego powrotu do pozycji neutralnej. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech na końcu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Skip rotational variations during acute pain. Use chest-supported row or seated cable row (no rotation) instead. Return to rotational work only after pain-free full ROM in basic flexion/extension is restored.",
+      "modificationPl": "Pomiń warianty rotacyjne podczas ostrego bólu. Użyj wiosłowania z podparciem klatki lub seated cable row (bez rotacji). Wróć do pracy rotacyjnej dopiero po przywróceniu bezbolesnego pełnego zakresu w podstawowym zgięciu/wyproście.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "avoid",
+      "modification": "Rotation + axial load is contraindicated for disc herniation/bulge. Use anti-rotation work (Pallof press) and non-rotational rows (chest-supported row) instead.",
+      "modificationPl": "Rotacja + obciążenie osiowe są przeciwwskazane przy przepuklinie/wybrzuszeniu dysku. Użyj pracy antyrotacyjnej (Pallof press) i wiosłowania bez rotacji (chest-supported row).",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Neutral grip with V-handle is shoulder-friendly. Keep elbows close to ribs and reduce rotation range if pain at end position. Avoid if pulling provokes pain even with good technique.",
+      "modificationPl": "Chwyt neutralny z uchwytem V jest przyjazny dla barków. Trzymaj łokcie blisko żeber i zmniejsz zakres rotacji jeśli ból w pozycji końcowej. Unikaj jeśli sam ciąg prowokuje ból nawet przy poprawnej technice.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "SI_joint_dysfunction",
+      "severity": "caution",
+      "modification": "Rotational loading can aggravate SI joint pain. Limit rotation to 15-20 degrees, keep both feet flat (no pivoting), or substitute with non-rotational row.",
+      "modificationPl": "Obciążenie rotacyjne może nasilać ból stawu krzyżowo-biodrowego. Ogranicz rotację do 15-20 stopni, trzymaj obie stopy płasko (bez obrotu), lub zastąp wiosłowaniem bez rotacji.",
+      "alternative": "standing-cable-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 each side (hypertrophy + rotational strength) | 3x6-8 (heavier rotational strength) | 3x12-15 (endurance / athletic conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "cable-standing-twist-row-v-bar.gif",
+    "frames_extracted": [
+      "frames/cable-standing-twist-row-v-bar/frame_0_start.png",
+      "frames/cable-standing-twist-row-v-bar/frame_1_early.png",
+      "frames/cable-standing-twist-row-v-bar/frame_2_mid.png",
+      "frames/cable-standing-twist-row-v-bar/frame_3_late.png",
+      "frames/cable-standing-twist-row-v-bar/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cable-standing-twist-row-v-bar"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): osoba stoi przodem do wyciągu, stopy na szerokość barków, kolana lekko ugięte (postawa atletyczna), ramiona wyprostowane do przodu trzymając uchwyt V (chwyt neutralny). Podświetlone są: tylne aktony naramiennych, ramiona, klatka — pozycja startowa horyzontalnego ciągu. Frame 1-2 (early-mid): faza koncentryczna — łokcie zaczynają iść w tył, uchwyt zbliża się do dolnej części klatki/żeber. Widoczna jest wyraźnie zaznaczona praca najszerszych grzbietu (lat), równoległobocznych, środkowego trapezu — typowa mapa pracy ciągu horyzontalnego. Frame 3-4 (late-end): łokcie wyraźnie za linią tułowia, uchwyt blisko brzucha/żeber, łopatki ściągnięte, klatka piersiowa wysunięta — pełne ściągnięcie pleców. Specyfika ćwiczenia (twist row): w GIFie animacja sugeruje rotację tułowia podczas ciągu (klasyczna technika tego ruchu z V-bar w pozycji stojącej, gdzie tułów rotuje 30-45 stopni). Klasyfikacja: pull_horizontal w płaszczyźnie sagittal_transverse (połączenie ciągu w sagittal + rotacja w transverse). Equipment: cable_machine + v_handle. Difficulty 6 (intermediate) — wymaga koordynacji ciągu z rotacją, świadomości segmentacji rotacji (t-spine + biodra, nie lędźwie), oraz wystarczającej siły core'a do bezpiecznej obsługi obciążenia rotacyjnego. Primary: latissimus_dorsi P9, rhomboids P8, obliques P9 — zgodnie ze specyfikacją (łączy pull horizontal z core rotation). Secondary: biceps_brachii S7, trapezius_middle_lower S7, posterior_deltoids S6. Wszystkie pola PL napisane od zera w polskim standardzie fitness. 5 faults pokrywa kluczowe błędy techniczne (lumbar rotation, segmented movement, backward lean, fixed feet, asymmetric volume). 4 contraindications (acute_lower_back_pain AVOID, lumbar_disc_issues AVOID — rotation pod obciążeniem jest jednoznacznie przeciwwskazana, shoulder_impingement CAUTION, SI_joint_dysfunction CAUTION). Cues 5+5 zgodnie ze schematem.",
+
+  "tags": ["compound", "horizontal_pull", "rotational", "cable", "core_rotation", "obliques", "athletic", "functional", "anti_imbalance", "back_thickness", "sport_specific"]
+}

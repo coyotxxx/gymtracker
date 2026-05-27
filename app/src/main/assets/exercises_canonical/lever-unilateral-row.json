@@ -1,0 +1,201 @@
+{
+  "id": "lever-unilateral-row",
+  "name": "Lever Unilateral Row",
+  "namePl": "Unilateral row w maszynie",
+  "aliases": ["iso-lateral row", "single-arm machine row", "plate-loaded unilateral row", "hammer strength row", "iso row one arm", "machine single arm row"],
+  "aliasesPl": ["wiosłowanie jednorącz na maszynie", "iso-lateral row", "wiosłowanie unilateralne w maszynie", "hammer strength row jednorącz", "wiosłowanie jednorącz na maszynie talerzowej", "single-arm machine row"],
+
+  "description": "Single-arm rowing variant performed on an iso-lateral (plate-loaded) row machine — typically a Hammer Strength or similar lever machine with independent arms. The lifter stands or kneels alongside the machine, chest supported against a vertical pad, one arm extended forward gripping a handle, and pulls the handle back toward the hip in a strict horizontal rowing pattern. Working one arm at a time eliminates the strong-side dominance you get with bilateral rows, exposes left/right asymmetries, and forces the core (especially obliques and deep stabilizers) to resist rotation — making it a hybrid back-thickness + anti-rotation core movement. The fixed lever path is more forgiving on technique than free-weight one-arm dumbbell rows, so it is excellent for higher-rep hypertrophy work and for trainees who struggle to feel their lats during bilateral pulls.",
+  "descriptionPl": "Jednorączny wariant wiosłowania wykonywany na maszynie iso-lateral (talerzowej) — zazwyczaj Hammer Strength lub podobnej maszynie dźwigniowej z niezależnymi ramionami. Ćwiczący stoi lub klęka obok maszyny, klatka oparta o pionową poduszkę, jedno ramię wyprostowane do przodu trzyma rączkę i przyciąga ją do biodra w ścisłym wzorcu wiosłowania poziomego. Praca jedną ręką na raz eliminuje dominację silniejszej strony znaną z wiosłowań obustronnych, ujawnia asymetrie lewa/prawa i zmusza core (szczególnie mięśnie skośne i głębokie stabilizatory) do oporowania rotacji — tworząc hybrydę ćwiczenia na grubość pleców i anty-rotacyjnego ćwiczenia core. Stała ścieżka dźwigni jest bardziej wybaczająca techniki niż wiosłowanie hantlą jednorącz, więc świetnie sprawdza się w wyższej liczbie powtórzeń na hipertrofię i u osób, które mają trudność z czuciem najszerszych w wiosłowaniach obustronnych.",
+
+  "instructions": [
+    "Set the seat / chest pad height so the handle is at mid-torso level when seated or kneeling. Load plates evenly on the working arm — start light to learn the path.",
+    "Position yourself alongside or astride the machine with chest pressed against the pad. Stagger your stance: working-side foot back, opposite knee on the kneepad (or both feet planted, hips squared toward the machine).",
+    "Grip the handle with neutral grip (palm facing in). Free hand grips the machine frame or rests on the pad for support — DO NOT use it to push or pull.",
+    "Set the start position: working arm fully extended forward, shoulder blade protracted (lat stretched), torso flat against the pad, neutral spine, eyes forward and down.",
+    "Brace the core HARD — anti-rotation is the secondary job of this lift. Imagine your spine is a steel rod from skull to tailbone.",
+    "Initiate the pull by retracting the shoulder blade FIRST, then drive the elbow back and close to the ribs. Forearm stays roughly perpendicular to the torso.",
+    "Pull until the handle reaches the lower ribs / hip and the elbow is BEHIND the line of the torso. Shoulder blade fully retracted and depressed. Pause 1 second with a hard squeeze.",
+    "Lower under control through the full eccentric — let the shoulder blade protract at the end to get full lat stretch, but DO NOT let the torso rotate toward the weight.",
+    "Complete all reps on one side before switching. Match reps and tempo exactly on the other side."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska / poduszki klatki tak, by rączka była na wysokości środka tułowia gdy siedzisz lub klęczysz. Załaduj talerze równomiernie na ramieniu roboczym — zacznij lekko by nauczyć się ścieżki.",
+    "Ustaw się obok lub okrakiem nad maszyną, klatka mocno dociśnięta do poduszki. Postaw się w pozycji okrocznej: stopa po stronie roboczej z tyłu, przeciwne kolano na poduszce klęczącej (lub obie stopy na podłodze, biodra ustawione równolegle do maszyny).",
+    "Złap rączkę chwytem neutralnym (dłoń skierowana do środka). Wolna ręka trzyma ramę maszyny lub spoczywa na poduszce dla podparcia — NIE używaj jej do popychania ani ciągnięcia.",
+    "Ustaw pozycję startową: ramię robocze w pełni wyprostowane do przodu, łopatka w protrakcji (najszerszy rozciągnięty), tułów płaski do poduszki, neutralny kręgosłup, wzrok w przód i lekko w dół.",
+    "Napnij brzuch MOCNO — anty-rotacja to drugorzędne zadanie tego ćwiczenia. Wyobraź sobie że kręgosłup to stalowy pręt od czaszki do kości ogonowej.",
+    "Rozpocznij ciąg ŚCIĄGNIĘCIEM łopatki NAJPIERW, potem prowadź łokieć w tył i blisko żeber. Przedramię zostaje mniej więcej prostopadle do tułowia.",
+    "Ciągnij aż rączka dotrze do dolnych żeber / biodra, a łokieć będzie ZA linią tułowia. Łopatka w pełni ściągnięta i obniżona. Zatrzymaj na 1 sekundę z mocnym ściśnięciem.",
+    "Opuszczaj pod kontrolą przez całą fazę ekscentryczną — pozwól łopatce na protrakcję na końcu by uzyskać pełne rozciągnięcie najszerszego, ale NIE pozwól tułowiowi obrócić się w stronę ciężaru.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę zanim zmienisz. Dopasuj liczbę powtórzeń i tempo dokładnie na drugiej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "obliques"],
+    "secondary": ["biceps_brachii", "trapezius_middle_lower", "posterior_deltoids"],
+    "stabilizers": ["erector_spinae", "core", "forearms", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "obliques": "P8",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "erector_spinae": "S6",
+    "core": "S7",
+    "glutes": "S4"
+  },
+
+  "equipment": {
+    "required": ["lever_machine", "plates"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["seated-machine-row", "cable-low-seated-row"],
+    "progression_to": ["single-arm-dumbbell-row", "meadows-row", "kroc-row"],
+    "alternatives": ["single-arm-dumbbell-row", "single-arm-cable-row", "chest-supported-row", "meadows-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Chest pad height at mid-torso — handle in line with the bottom of your sternum",
+      "Stagger stance: working-side leg back, opposite knee on pad (or feet square if standing)",
+      "Neutral grip on the handle — palm faces the machine",
+      "Free hand grips the frame for support, NOT for pushing or pulling",
+      "Brace core HARD before the first rep — anti-rotation is part of the job"
+    ],
+    "setup_cues_pl": [
+      "Poduszka klatki na wysokości środka tułowia — rączka na linii dolnego mostka",
+      "Stojąc okrocznie: noga po stronie roboczej z tyłu, przeciwne kolano na poduszce (lub stopy równolegle jeśli stoisz)",
+      "Chwyt neutralny na rączce — dłoń skierowana do maszyny",
+      "Wolna ręka trzyma ramę dla podparcia, NIE do popychania ani ciągnięcia",
+      "Napnij brzuch MOCNO przed pierwszym powtórzeniem — anty-rotacja to część zadania"
+    ],
+    "execution_cues": [
+      "Scapula first — retract the shoulder blade BEFORE bending the elbow",
+      "Drive the elbow back and CLOSE to the ribs — never flared out",
+      "Handle to the lower ribs / hip — not to the chest, not to the shoulder",
+      "RESIST rotation — hips and torso stay square to the machine the entire set",
+      "Squeeze for 1 second at the top, then control the eccentric for 2-3 seconds"
+    ],
+    "execution_cues_pl": [
+      "Łopatka pierwsza — ściągnij ją ZANIM zegnij łokieć",
+      "Prowadź łokieć w tył i BLISKO żeber — nigdy na boki",
+      "Rączka do dolnych żeber / biodra — nie do klatki, nie do barku",
+      "OPÓR ROTACJI — biodra i tułów zostają równolegle do maszyny przez całą serię",
+      "Ściśnij na 1 sekundę na szczycie, potem kontroluj ekscentryk przez 2-3 sekundy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates toward the weight at the top of the pull",
+        "faultPl": "Tułów obraca się w stronę ciężaru na szczycie ciągu",
+        "cause": "Weak core / obliques, load too heavy, or no conscious anti-rotation cue",
+        "causePl": "Słaby core / mięśnie skośne, zbyt duży ciężar lub brak świadomego sygnału anty-rotacji",
+        "cue": "Hips and shoulders STAY SQUARE to the machine. Imagine a laser pointer on your sternum — it should point straight ahead the whole set. If you can't stop the rotation, reduce weight 20-30% and focus on bracing.",
+        "cuePl": "Biodra i barki ZOSTAJĄ RÓWNOLEGLE do maszyny. Wyobraź sobie laser na mostku — powinien pokazywać prosto przed siebie przez całą serię. Jeśli nie możesz zatrzymać rotacji, zmniejsz ciężar o 20-30% i skup się na napięciu brzucha."
+      },
+      {
+        "fault": "Pulling the elbow high and wide (toward the shoulder instead of the hip)",
+        "faultPl": "Ciągnięcie łokcia wysoko i na bok (w stronę barku zamiast biodra)",
+        "cause": "Confusing this with a face pull / rear delt row, or trying to feel rear deltoids instead of lats",
+        "causePl": "Mylenie z face pullem / wiosłowaniem na tylne aktony lub próba poczucia tylnych naramiennych zamiast najszerszego",
+        "cue": "Elbow tracks BACKWARD along the ribs, ending behind the hip — not up and out. Think 'put your elbow in your back pocket.' This is a LAT exercise, not a rear delt exercise.",
+        "cuePl": "Łokieć przemieszcza się w TYŁ wzdłuż żeber, kończąc za biodrem — nie w górę i na bok. Pomyśl 'włóż łokieć do tylnej kieszeni'. To ćwiczenie na NAJSZERSZY, nie na tylne aktony."
+      },
+      {
+        "fault": "Free hand pushing or pulling on the frame to assist the rep",
+        "faultPl": "Wolna ręka popycha lub ciągnie ramę by pomóc w powtórzeniu",
+        "cause": "Load too heavy, fatigue, or habit of two-arm rowing",
+        "causePl": "Zbyt duży ciężar, zmęczenie lub nawyk wiosłowania obustronnego",
+        "cue": "Free hand RESTS on the frame — fingers loose, no white knuckles. If you catch yourself pushing or pulling with the non-working arm, drop the weight or end the set.",
+        "cuePl": "Wolna ręka SPOCZYWA na ramie — palce luźno, bez bielenia kostek. Jeśli zauważysz że popychasz lub ciągniesz nieroboczą ręką, zmniejsz ciężar lub zakończ serię."
+      },
+      {
+        "fault": "Pulling with the arm only — no scapular retraction or no full extension at start",
+        "faultPl": "Ciągnięcie samą ręką — brak ściągnięcia łopatki lub brak pełnego wyprostu na starcie",
+        "cause": "Bicep-dominant pulling pattern or partial range of motion to lift more weight",
+        "causePl": "Wzorzec dominacji bicepsem lub niepełny zakres ruchu by podnieść większy ciężar",
+        "cue": "Each rep starts with FULL extension and a stretched lat. Shoulder blade moves first, then the elbow. Hand is just a hook on the handle — biceps don't finish the rep, the LAT does.",
+        "cuePl": "Każde powtórzenie startuje z PEŁNYM wyprostem i rozciągniętym najszerszym. Łopatka rusza pierwsza, potem łokieć. Dłoń to tylko hak na rączce — bicepsy nie kończą powtórzenia, NAJSZERSZY kończy."
+      },
+      {
+        "fault": "Asymmetric reps / tempo between sides",
+        "faultPl": "Asymetryczne powtórzenia / tempo między stronami",
+        "cause": "Treating strong side as 'normal' and weak side as 'extra' — leads to widening imbalance",
+        "causePl": "Traktowanie silnej strony jako 'normalnej' a słabej jako 'dodatkowej' — prowadzi do pogłębiania asymetrii",
+        "cue": "Start every set on the WEAK side. Match its rep count and tempo on the strong side — even if you could do more. Unilateral lifts are tools for closing gaps, not widening them.",
+        "cuePl": "Zaczynaj każdą serię od SŁABEJ strony. Dopasuj jej liczbę powtórzeń i tempo na silnej stronie — nawet jeśli mógłbyś zrobić więcej. Ćwiczenia jednostronne to narzędzia do zamykania luk, nie do ich powiększania."
+      }
+    ],
+    "breathing": "Inhale at the start (arm extended). Exhale through the pull as the handle approaches the hip. Inhale on the controlled return. For heavy sets, brace and hold breath through the concentric, exhale at top.",
+    "breathingPl": "Wdech na starcie (ramię wyprostowane). Wydech w trakcie ciągu gdy rączka zbliża się do biodra. Wdech podczas kontrolowanego powrotu. Przy ciężkich seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech na szczycie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Chest-supported position helps but anti-rotation load still stresses the lumbar spine. Reduce weight 30-40%, lock torso completely flat against pad, focus on smooth tempo. Stop if pain increases.",
+      "modificationPl": "Pozycja z podparciem klatki pomaga, ale obciążenie anty-rotacyjne wciąż obciąża odcinek lędźwiowy. Zmniejsz ciężar o 30-40%, dociśnij tułów płasko do poduszki, skup się na płynnym tempie. Przerwij jeśli ból się nasila.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Neutral grip is shoulder-friendly. Make sure elbow stays close to ribs (no flaring up toward shoulder). Reduce range of motion at the stretched start if pain at full extension.",
+      "modificationPl": "Chwyt neutralny jest przyjazny dla barku. Upewnij się że łokieć zostaje blisko żeber (bez rozchylania w górę w stronę barku). Zmniejsz zakres w pozycji rozciągnięcia na starcie jeśli ból przy pełnym wyproście.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "active_oblique_strain",
+      "severity": "avoid",
+      "modification": "Unilateral rowing is a heavy anti-rotation challenge for the obliques. With active strain, switch to bilateral chest-supported or seated cable row until healed.",
+      "modificationPl": "Wiosłowanie jednorącz to mocne anty-rotacyjne obciążenie dla mięśni skośnych. Przy aktywnym naciągnięciu zmień na obustronne wiosłowanie z podparciem klatki lub seated cable row do czasu wyleczenia.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 4x6-8 per side (strength) | 3x10-15 per side (general) | 3x12-20 per side (back specialization / pump)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lever-unilateral-row.gif",
+    "frames_extracted": [
+      "frames/lever-unilateral-row/frame_0_start.png",
+      "frames/lever-unilateral-row/frame_1_early.png",
+      "frames/lever-unilateral-row/frame_2_mid.png",
+      "frames/lever-unilateral-row/frame_3_late.png",
+      "frames/lever-unilateral-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/lever-unilateral-row",
+    "glowupp_slug": "lever-unilateral-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa (start/mid/end). Maszyna: iso-lateral lever row (plate-loaded, typu Hammer Strength) — talerze widoczne w środku maszyny, niezależne ramię robocze po jednej stronie, pionowa poduszka piersiowa. Pozycja ćwiczącego: stojąca w rozkroku, jedno kolano oparte na poduszce klęczącej maszyny (noga po stronie nieroboczej zgięta i podparta), druga noga wyprostowana z tyłu, klatka piersiowa dociśnięta do pionowej poduszki. Frame 0 (start): ramię robocze w pełni wyprostowane do przodu chwytem neutralnym, łopatka w protrakcji, najszersze rozciągnięte. Frame 2 (mid): faza koncentryczna — łokieć ciągnie w tył blisko żeber, podświetlone najszersze grzbietu (cały plecy intensywnie), środkowe czworoboczne, równoległoboczne, tylne aktony, oraz wyraźnie mięsień skośny (oblique) po stronie roboczej — anty-rotacja zaangażowana. Frame 4 (end): zbliżona do startowej (gif jest cykliczny). Klasyfikacja 'pull_horizontal' + 'unilateral' potwierdzona — to wiosłowanie poziome jednorącz. Equipment: lever_machine + plates. Difficulty 4 — łatwiejsze niż wiosłowanie hantlą jednorącz (stała ścieżka dźwigni), trudniejsze niż chest-supported bilateral (anty-rotacja). primary: latissimus_dorsi P10 (główny ciągnący), rhomboids P9, obliques P8 (kluczowe dla anty-rotacji — zgodnie ze specyfikacją zadania). secondary: biceps P7, trap_middle_lower S8, rear delts P7. Wszystkie pola PL napisane od zera, polski standard fitness — 'Unilateral row w maszynie' jako forma rozpowszechniona w polskich siłowniach (zachowany anglicyzm 'unilateral row' jak na karcie maszyny Hammer Strength).",
+
+  "tags": ["compound", "unilateral", "back_mass_builder", "horizontal_pull", "lever_machine", "plate_loaded", "lat_developer", "anti_rotation", "asymmetry_correction", "hammer_strength", "iso_lateral"]
+}

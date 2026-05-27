@@ -1,0 +1,206 @@
+{
+  "id": "cable-seated-chest-press",
+  "name": "Cable Seated Chest Press",
+  "namePl": "Wyciskanie klatki na wyciągu siedząc",
+  "aliases": ["seated cable chest press", "cable chest press seated", "seated cable press"],
+  "aliasesPl": ["wyciskanie na wyciągu siedząc", "wyciskanie klatki na bramie siedząc", "wyciskanie linkami siedząc", "siedzące wyciskanie na wyciągu", "wyciskanie poziome na wyciągu siedząc"],
+
+  "description": "Horizontal chest press performed seated upright on a flat bench positioned between two cable pulleys, with the cables set roughly at chest height. The athlete presses both handles forward (horizontally, not upward) until the arms are fully extended in front of the chest, then returns under control. The defining characteristic of this variant is CONSTANT TENSION on the pectoralis major throughout the entire range of motion — unlike free-weight presses, the cables maintain mechanical load even at lock-out, making it an outstanding hypertrophy tool for the sternal head (mid-chest). Compared to lying bench press, the seated upright position reduces front-deltoid involvement and isolates the chest more cleanly. Joint-friendly: independent arm paths accommodate individual shoulder mechanics, and there is no spotter requirement.",
+  "descriptionPl": "Poziome wyciskanie klatki piersiowej wykonywane w pozycji siedzącej wyprostowanej na płaskiej ławce ustawionej pomiędzy dwoma bloczkami wyciągu, z linkami umieszczonymi mniej więcej na wysokości klatki. Ćwiczący wyciska oba uchwyty do przodu (poziomo, nie do góry) aż do pełnego wyprostu ramion na wysokości klatki, a następnie kontrolowanie wraca. Cechą definiującą ten wariant jest STAŁE NAPIĘCIE na mięśniu piersiowym większym przez cały zakres ruchu — w przeciwieństwie do wyciskań z wolnymi ciężarami, linki utrzymują obciążenie mechaniczne także w lock-out, co czyni je doskonałym narzędziem hipertroficznym na środek klatki (głowa mostkowa). W porównaniu z wyciskaniem leżąc na ławce, wyprostowana pozycja siedząca zmniejsza udział przednich aktonów barku i czyściej izoluje klatkę. Przyjazne stawom: niezależne ścieżki rąk dopasowują się do indywidualnej mechaniki barków, brak potrzeby asekuracji.",
+
+  "instructions": [
+    "Set both cable pulleys at approximately chest height (slightly below shoulder level). Attach two single D-handles.",
+    "Position a flat bench (or chest press seat) centrally between the pulleys, facing AWAY from the machine — your back to the cable column.",
+    "Grab both handles, sit down with your back against the backrest (or upright on a flat bench, torso vertical). Feet planted firmly on the floor.",
+    "Start position: handles at the level of the upper chest / armpits, elbows bent ~90° and tucked ~45° from the torso, cables taut.",
+    "Retract and depress the scapulae — pin them down and back against the backrest (or actively hold them retracted on a flat bench).",
+    "Inhale, brace the core. Press both handles HORIZONTALLY forward, extending the arms in front of the chest until elbows are nearly locked.",
+    "At peak: optionally bring the handles slightly together for additional pectoral squeeze (use the constant tension advantage of cables).",
+    "Return to the start position under control over 2-3 seconds, feeling the chest stretch at the end of the range.",
+    "Keep scapulae retracted throughout. Do NOT let the cables pull your arms behind the torso line — control the eccentric range.",
+    "Exhale during the press (concentric), inhale during the return (eccentric)."
+  ],
+  "instructionsPl": [
+    "Ustaw oba bloczki wyciągu na wysokości około klatki piersiowej (lekko poniżej linii barków). Podepnij dwa pojedyncze uchwyty D-handle.",
+    "Ustaw płaską ławkę (lub siedzisko z oparciem) centralnie pomiędzy bloczkami, twarzą W KIERUNKU PRZECIWNYM do maszyny — plecami do słupka wyciągu.",
+    "Złap oba uchwyty, usiądź z plecami przy oparciu (lub wyprostowany na płaskiej ławce, tułów pionowo). Stopy mocno zaparte na podłodze.",
+    "Pozycja startowa: uchwyty na wysokości górnej klatki / pach, łokcie zgięte ~90° i schowane ~45° od tułowia, linki naprężone.",
+    "Ściągnij i opuść łopatki — wbij je w oparcie (lub aktywnie trzymaj ściągnięte na płaskiej ławce).",
+    "Nabierz wdech, napnij brzuch. Wyciśnij oba uchwyty POZIOMO do przodu, prostując ramiona na wysokości klatki aż łokcie są prawie zablokowane.",
+    "W szczycie: opcjonalnie zbliż uchwyty do siebie dla dodatkowego ściśnięcia klatki (wykorzystaj stałe napięcie linek).",
+    "Wróć do pozycji startowej kontrolowanie w tempie 2-3 sekundy, czując rozciąganie klatki na końcu zakresu.",
+    "Łopatki ściągnięte przez cały ruch. NIE pozwól by linki ciągnęły ramiona za linię tułowia — kontroluj zakres ekscentryki.",
+    "Wydech podczas wyciskania (koncentryka), wdech podczas powrotu (ekscentryka)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "pectoralis_major_clavicular"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "pectoralis_major_clavicular": "S5",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "upper_back": "T4",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "flat_bench"],
+    "optional": ["d_handles", "backrest", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up", "machine-chest-press"],
+    "progression_to": ["barbell-bench-press", "dumbbell-bench-press", "single-arm-cable-chest-press", "cable-incline-bench-press"],
+    "alternatives": ["machine-chest-press", "dumbbell-bench-press", "barbell-bench-press", "cable-chest-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulleys at approximately chest height (slightly below shoulders)",
+      "Bench positioned centrally between pulleys, back to the cable column",
+      "Sit upright, scapulae retracted and depressed",
+      "Feet planted firmly on the floor, hips/knees ~90°",
+      "Handles at upper chest / armpit level at start, cables taut"
+    ],
+    "setup_cues_pl": [
+      "Bloczki na wysokości około klatki piersiowej (lekko poniżej linii barków)",
+      "Ławka centralnie pomiędzy bloczkami, plecami do słupka wyciągu",
+      "Usiądź wyprostowany, łopatki ściągnięte i opuszczone",
+      "Stopy mocno zaparte na podłodze, biodra/kolana ~90°",
+      "Uchwyty na wysokości górnej klatki / pach przy starcie, linki naprężone"
+    ],
+    "execution_cues": [
+      "Press HORIZONTALLY forward — not upward, not downward",
+      "Elbows tucked ~45° from torso (not flared to 90°)",
+      "Optional peak contraction: bring handles slightly together, squeeze chest 1 sec",
+      "Eccentric controlled 2-3 sec — exploit the constant tension",
+      "Do NOT let cables pull elbows behind the torso line"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj POZIOMO do przodu — nie do góry, nie w dół",
+      "Łokcie schowane ~45° od tułowia (nie rozsunięte na 90°)",
+      "Opcjonalny peak contraction: zbliż uchwyty do siebie, ściśnij klatkę 1 sek",
+      "Ekscentryka kontrolowana 2-3 sek — wykorzystaj stałe napięcie",
+      "NIE pozwól by linki ciągnęły łokcie za linię tułowia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pressing upward instead of horizontally",
+        "faultPl": "Wyciskanie do góry zamiast poziomo",
+        "cause": "Improper pulley height (too low) or habit transferred from incline press. Changes the exercise into an upper-chest variant and reduces sternal head activation.",
+        "causePl": "Niewłaściwa wysokość bloczków (za nisko) lub nawyk z wyciskania na skosie. Zmienia ćwiczenie w wariant na górną klatkę i zmniejsza aktywację głowy mostkowej.",
+        "cue": "Set pulleys at chest height. Press FORWARD in a perfectly horizontal line, ending with hands directly in front of the sternum.",
+        "cuePl": "Ustaw bloczki na wysokości klatki. Wyciskaj DO PRZODU w idealnie poziomej linii, kończąc z dłońmi bezpośrednio przed mostkiem."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Excessively wide trajectory — places enormous strain on the anterior shoulder capsule, especially dangerous with cables because constant tension keeps loading the joint at end-range.",
+        "causePl": "Nadmiernie szeroka trajektoria — daje ogromne obciążenie przedniej torebki stawowej barku, szczególnie groźne z linkami ze względu na stałe napięcie również w końcowym zakresie.",
+        "cue": "Tuck elbows ~45° from torso. Imagine pressing a narrow bar, not the widest possible grip.",
+        "cuePl": "Schowaj łokcie ~45° od tułowia. Wyobraź sobie że wyciskasz wąską sztangę, nie najszerszy możliwy chwyt."
+      },
+      {
+        "fault": "Letting cables pull arms behind the torso line",
+        "faultPl": "Pozwolenie linkom by ciągnęły ramiona za linię tułowia",
+        "cause": "Loss of eccentric control — the constant tension can pull arms past the safe start position, overstretching the anterior shoulder capsule and risking impingement.",
+        "causePl": "Utrata kontroli ekscentryki — stałe napięcie może pociągnąć ramiona za bezpieczną pozycję startową, nadmiernie rozciągając przednią torebkę barku i grożąc impingement.",
+        "cue": "Stop the eccentric when handles reach upper chest / armpit level. Do NOT let the cables yank your elbows backward.",
+        "cuePl": "Zatrzymaj ekscentrykę gdy uchwyty są na wysokości górnej klatki / pach. NIE pozwól by linki szarpnęły łokcie do tyłu."
+      },
+      {
+        "fault": "Torso leaning back or hips lifting (cheating)",
+        "faultPl": "Odchylanie tułowia do tyłu lub unoszenie bioder (oszukiwanie)",
+        "cause": "Weight too heavy — body recruits torso lean / hip extension to substitute press strength with momentum, converting the movement into a sloppy decline press.",
+        "causePl": "Zbyt duży ciężar — ciało rekrutuje odchylenie tułowia / wyprost bioder by zastąpić siłę wyciskania momentem pędu, zamieniając ruch w niechlujne wyciskanie skośne ujemne.",
+        "cue": "Sit upright, torso vertical. Hips and back glued to the bench. If you cannot keep posture — reduce the load.",
+        "cuePl": "Siedź wyprostowany, tułów pionowo. Biodra i plecy przyklejone do ławki. Jeśli nie utrzymujesz postawy — zmniejsz ciężar."
+      },
+      {
+        "fault": "Asymmetric press (one arm faster than the other)",
+        "faultPl": "Asymetryczny ruch (jedna ręka szybciej niż druga)",
+        "cause": "Dominant side outpaces the weaker. Visible with cables because there is no rigid bar connecting the arms — each side moves independently.",
+        "causePl": "Dominująca strona wyprzedza słabszą. Widoczne z linkami bo nie ma sztywnej sztangi łączącej ramiona — każda strona porusza się niezależnie.",
+        "cue": "Press both handles SYNCHRONOUSLY. If the imbalance persists — add 1-2 sets of single-arm cable chest press on the weaker side.",
+        "cuePl": "Wyciskaj oba uchwyty SYNCHRONICZNIE. Jeśli asymetria się utrzymuje — dodaj 1-2 serie single-arm cable chest press na słabszą stronę."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (return), brace the core, exhale during the press (concentric) and any peak contraction.",
+    "breathingPl": "Wdech podczas ekscentryki (powrót), napięcie brzucha, wydech podczas wyciskania (koncentryka) i ewentualnego peak contraction."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Narrow the trajectory (elbows closer to torso, ~30°), reduce the eccentric range so the handles do not travel past the chest line, and control eccentric speed strictly to prevent cables from pulling arms backward. Seated cable chest press is often BETTER tolerated than barbell bench press because each arm moves independently.",
+      "modificationPl": "Zwęź trajektorię (łokcie bliżej tułowia, ~30°), ogranicz zakres ekscentryki tak by uchwyty nie przechodziły za linię klatki, i ściśle kontroluj tempo ekscentryki by linki nie ciągnęły ramion do tyłu. Wyciskanie na wyciągu siedząc jest zazwyczaj LEPIEJ tolerowane niż wyciskanie sztangą leżąc, bo każde ramię porusza się niezależnie.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Constant cable tension combined with the ability to pull the arm past a neutral range can deepen rotator cuff damage. Use a fixed-range machine or follow a rehabilitation protocol before returning to free-pulley work.",
+      "modificationPl": "Stałe napięcie linek w połączeniu z możliwością pociągnięcia ramienia poza neutralny zakres może pogłębić uszkodzenia stożka rotatorów. Użyj maszyny z fixed range of motion lub przejdź protokół rehabilitacji przed powrotem do pracy na wyciągu.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Lower the load, avoid peak contraction (do not bring handles together), keep elbows tucked closer to the torso, and skip lock-out if it provokes pain. Stop short of full arm extension.",
+      "modificationPl": "Zmniejsz ciężar, unikaj peak contraction (nie zbliżaj uchwytów do siebie), trzymaj łokcie bliżej tułowia i pomiń lock-out jeśli prowokuje ból. Zatrzymuj się przed pełnym wyprostem ramion.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. Verify grip — handle should sit in the base of the palm, not in the fingers. Keep the wrist stacked directly over the forearm throughout the movement.",
+      "modificationPl": "Użyj wraps na nadgarstki. Sprawdź chwyt — uchwyt powinien spoczywać w podstawie dłoni, nie w palcach. Trzymaj nadgarstek bezpośrednio nad przedramieniem przez cały ruch.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy — główne zastosowanie, wykorzystanie stałego napięcia) | 3x12-20 (volume / pump finisher na koniec dnia klatkowego) | 4x8-12 (gdy używany jako główny ruch wyciskający dla początkujących)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-seated-chest-press.gif",
+    "frames_extracted": [
+      "frames/cable-seated-chest-press/frame_0_start.png",
+      "frames/cable-seated-chest-press/frame_1_early.png",
+      "frames/cable-seated-chest-press/frame_2_mid.png",
+      "frames/cable-seated-chest-press/frame_3_late.png",
+      "frames/cable-seated-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-seated-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T10:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Ćwiczący siedzi WYPROSTOWANY na ławce z oparciem, plecami do słupka wyciągu (dual cable machine). Bloczki ustawione na wysokości klatki piersiowej. Frame 0/4 (pozycja startowa): uchwyty na wysokości górnej klatki / pach, łokcie zgięte ~90° i schowane do tułowia, linki ciągną poziomo do tyłu. Frame 2 (lock-out): ramiona całkowicie wyprostowane POZIOMO przed klatką, uchwyty zbliżone do siebie nad środkiem klatki (peak contraction). Trajektoria ruchu = horyzontalna, nie ku górze. Wyraźnie podświetlony cały mięsień piersiowy większy (pec major sternal head / mid-chest) — anatomicznie zgodne z mechaniką poziomego wyciskania. Drugorzędnie aktywne przednie aktony barku i triceps. Tułów pionowy, biodra i plecy stabilne, brak unoszenia bioder. Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Difficulty 4 (beginner-friendly: stała ścieżka, brak skill barbella, niezależne ramiona). Plane = transverse (ruch w płaszczyźnie poziomej).",
+
+  "tags": ["upper_body", "horizontal_push", "chest", "mid_chest", "cable", "constant_tension", "seated", "hypertrophy_staple", "shoulder_friendly", "beginner_friendly"]
+}

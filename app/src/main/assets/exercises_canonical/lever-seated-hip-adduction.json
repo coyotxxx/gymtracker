@@ -1,0 +1,201 @@
+{
+  "id": "lever-seated-hip-adduction",
+  "name": "Lever Seated Hip Adduction",
+  "namePl": "Hip adduction w maszynie siedząc",
+  "aliases": ["machine hip adduction", "seated adductor machine", "inner thigh machine", "thigh master machine", "seated leg adduction"],
+  "aliasesPl": ["maszyna na przywodziciele", "spinanie ud na maszynie", "siedzące przywodzenie ud", "maszyna na wewnętrzną stronę uda", "przywodzenie w siadzie na maszynie"],
+
+  "description": "Seated isolation exercise for the hip adductors performed on a dedicated lever machine. The lifter sits with the back against a pad, places the inner thighs against two padded levers in an abducted (legs spread) starting position, and squeezes the legs together against resistance. Bilateral, closed-system loading makes it the most stable and beginner-friendly way to load the adductor group with progressive weight. Standard hypertrophy and rehabilitation tool for the inner thigh.",
+  "descriptionPl": "Siedzące ćwiczenie izolowane na mięśnie przywodziciele biodra wykonywane na dedykowanej maszynie. Ćwiczący siada z plecami opartymi o oparcie, ustawia wewnętrzną stronę ud przy padach po obu stronach w pozycji odwiedzionej (nogi rozsunięte) i ściska nogi do siebie przeciwko oporowi. Obustronne, zamknięte obciążenie sprawia, że jest to najbardziej stabilny i przyjazny początkującym sposób na progresywne obciążenie grupy przywodzicieli. Standardowe narzędzie do hipertrofii i rehabilitacji wewnętrznej strony uda.",
+
+  "instructions": [
+    "Sit down on the machine with your back flat against the back pad. Place your feet on the footrests with knees bent at roughly 90 degrees.",
+    "Adjust the starting position lever so the pads spread your legs to a comfortable stretched position — you should feel a light pull in the inner thighs but no pain.",
+    "Position the inner sides of your knees and lower thighs firmly against the resistance pads. Grab the side handles or the seat edge for trunk stability.",
+    "Sit tall, brace your core, and keep your hips and lower back pressed into the seat throughout the movement.",
+    "Exhale and squeeze your legs together by driving the pads inward with your inner thighs. Move smoothly — do not jerk.",
+    "Pause for one count when your knees come close together (or as far as the machine allows) and consciously contract the adductors.",
+    "Inhale and slowly let the legs spread back to the starting position over 2-3 seconds. Maintain control — do not let the stack slam down.",
+    "Complete all reps. To dismount safely, release the start-position lever to lock the pads, then exit."
+  ],
+  "instructionsPl": [
+    "Usiądź na maszynie, plecy płasko oparte o oparcie. Ustaw stopy na podnóżkach, kolana ugięte mniej więcej pod kątem 90 stopni.",
+    "Wyreguluj dźwignię pozycji startowej tak, by pady rozsunęły nogi do wygodnej, lekko rozciągniętej pozycji — powinieneś czuć delikatne naciągnięcie przywodzicieli, ale bez bólu.",
+    "Ustaw wewnętrzną stronę kolan i dolnej części ud mocno przy padach oporowych. Złap boczne uchwyty lub krawędź siedziska dla stabilizacji tułowia.",
+    "Wyprostuj plecy, napnij brzuch i utrzymuj biodra oraz dolny odcinek pleców mocno dociśnięte do siedziska przez cały ruch.",
+    "Z wydechem ściśnij nogi do siebie, dociskając pady do wewnątrz wewnętrzną stroną ud. Poruszaj się płynnie — bez szarpnięć.",
+    "Zatrzymaj się na chwilę, gdy kolana zbliżą się do siebie (na tyle, na ile pozwala maszyna) i świadomie napnij przywodziciele.",
+    "Z wdechem powoli pozwól nogom rozsunąć się z powrotem do pozycji wyjściowej przez 2-3 sekundy. Kontroluj ruch — nie pozwól stosowi opaść z hukiem.",
+    "Wykonaj wszystkie powtórzenia. By bezpiecznie zejść z maszyny, zwolnij dźwignię pozycji startowej żeby zablokować pady, następnie wstań."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_adduction",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["adductors"],
+    "secondary": ["pectineus", "gracilis"],
+    "stabilizers": ["core", "obliques", "erector_spinae", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "adductors": "P10",
+    "pectineus": "S6",
+    "gracilis": "S6",
+    "core": "T3",
+    "obliques": "T2",
+    "erector_spinae": "T2",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["hip_adduction_machine"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["cable-hip-adduction", "copenhagen-plank", "cossack-squat", "sumo-deadlift"],
+    "alternatives": ["cable-hip-adduction", "side-lying-adduction", "copenhagen-plank", "resistance-band-hip-adduction"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Back flat against the pad — no gap at the lumbar",
+      "Set the start position to a comfortable stretch — not painful",
+      "Inner thighs and knees pressed firmly into the pads",
+      "Hold the side handles or seat — do not push with the arms",
+      "Sit tall, ribs over hips, core lightly braced"
+    ],
+    "setup_cues_pl": [
+      "Plecy płasko do oparcia — bez prześwitu w lędźwiach",
+      "Ustaw pozycję startową na komfortowe rozciągnięcie — bez bólu",
+      "Wewnętrzna strona ud i kolan mocno wciśnięta w pady",
+      "Trzymaj boczne uchwyty lub siedzisko — nie pomagaj rękami",
+      "Siedź wyprostowany, żebra nad biodrami, lekkie napięcie brzucha"
+    ],
+    "execution_cues": [
+      "Squeeze the knees together — drive from the inner thighs",
+      "Pause and contract hard at the top — knees close together",
+      "Lower slowly for 2-3 seconds — fight the eccentric",
+      "Keep the pelvis still — only the legs move",
+      "Breathe out as you squeeze in, breathe in as you spread out"
+    ],
+    "execution_cues_pl": [
+      "Ściśnij kolana do siebie — napęd z wewnętrznej strony ud",
+      "Zatrzymaj i mocno napnij w pozycji końcowej — kolana blisko siebie",
+      "Opuszczaj powoli przez 2-3 sekundy — walcz z fazą ekscentryczną",
+      "Miednica nieruchoma — poruszają się tylko nogi",
+      "Wydech podczas ściskania, wdech podczas rozsuwania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Starting ROM too wide — overstretching the adductors",
+        "faultPl": "Zbyt szeroki zakres startowy — przeciążenie rozciągniętych przywodzicieli",
+        "cause": "Lifter sets the start lever to maximum opening before the muscle is conditioned, risking adductor strain in the lengthened position",
+        "causePl": "Ćwiczący ustawia dźwignię startową na maksymalne rozsunięcie zanim mięsień jest przygotowany, ryzykując naderwanie przywodzicieli w pozycji wydłużonej",
+        "cue": "Start at a moderate stretch — increase ROM gradually over weeks as tissue tolerance grows.",
+        "cuePl": "Zaczynaj od umiarkowanego rozciągnięcia — zwiększaj zakres stopniowo przez tygodnie, w miarę adaptacji tkanki."
+      },
+      {
+        "fault": "Bouncing the pads at the end range to use momentum",
+        "faultPl": "Odbijanie padów w końcowej fazie z użyciem zamachu",
+        "cause": "Working weight too heavy — lifter uses elastic rebound at the bottom (legs spread) to start the concentric phase",
+        "causePl": "Zbyt duży ciężar roboczy — ćwiczący wykorzystuje sprężynowanie tkanek w dolnej pozycji (nogi rozsunięte) do startu fazy koncentrycznej",
+        "cue": "Stop completely at full stretch for 1 second — no bounce — then squeeze.",
+        "cuePl": "Zatrzymaj się całkowicie w pełnym rozciągnięciu na 1 sekundę — bez odbicia — następnie ściśnij."
+      },
+      {
+        "fault": "Lifting the hips off the seat or arching the lower back",
+        "faultPl": "Odrywanie bioder od siedziska lub wyginanie lędźwi w łuk",
+        "cause": "Compensation when weight is too heavy — using hip extension or lumbar arch to assist the adductors",
+        "causePl": "Kompensacja przy zbyt dużym ciężarze — używanie wyprostu biodra lub wygięcia lędźwi do wspomagania przywodzicieli",
+        "cue": "Glue your lower back to the pad — if the back lifts, drop the weight.",
+        "cuePl": "Przyklej lędźwie do oparcia — jeśli plecy się unoszą, zmniejsz ciężar."
+      },
+      {
+        "fault": "Pushing the pads with the arms via the side handles",
+        "faultPl": "Pomaganie sobie rękami przez naciskanie bocznych uchwytów",
+        "cause": "Lifter unconsciously assists the legs by pulling on the handles or pushing the knees inward with the hands",
+        "causePl": "Ćwiczący nieświadomie wspomaga nogi pociągając za uchwyty lub naciskając kolana do wewnątrz rękami",
+        "cue": "Hands rest light on the handles — only for balance. Inner thighs do 100% of the work.",
+        "cuePl": "Ręce lekko na uchwytach — tylko dla równowagi. Wewnętrzna strona ud wykonuje 100% pracy."
+      },
+      {
+        "fault": "Holding the breath through the entire set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Beginner mistake — Valsalva on every rep spikes blood pressure unnecessarily for an isolation lift",
+        "causePl": "Błąd początkujących — manewr Valsalvy w każdym powtórzeniu niepotrzebnie podnosi ciśnienie krwi w ćwiczeniu izolowanym",
+        "cue": "Exhale as you squeeze in, inhale as you open up — keep airflow continuous.",
+        "cuePl": "Wydech podczas ściskania, wdech podczas otwierania — utrzymuj ciągły przepływ powietrza."
+      }
+    ],
+    "breathing": "Exhale during the concentric (squeezing the legs together). Inhale during the eccentric (controlled spreading back to start). Light core brace throughout — avoid full Valsalva on an isolation lift.",
+    "breathingPl": "Wydech podczas fazy koncentrycznej (ściskanie nóg do siebie). Wdech podczas fazy ekscentrycznej (kontrolowany powrót do rozsunięcia). Lekkie napięcie brzucha przez całą serię — unikaj pełnego manewru Valsalvy w ćwiczeniu izolowanym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "groin_strain_adductor_strain",
+      "severity": "avoid",
+      "modification": "Acute strain — avoid loaded adduction completely until pain-free during daily activity. Reintroduce with isometric ball squeezes, then very light machine work with reduced ROM (do not start from the most-stretched position).",
+      "modificationPl": "Świeże naderwanie — całkowicie unikaj obciążonego przywodzenia do ustąpienia bólu w codziennej aktywności. Wprowadzaj ponownie od izometrycznego ściskania piłki, potem bardzo lekka praca na maszynie ze zmniejszonym zakresem (nie zaczynaj od pozycji najbardziej rozciągniętej).",
+      "alternative": "isometric-adductor-squeeze"
+    },
+    {
+      "condition": "osteitis_pubis",
+      "severity": "avoid",
+      "modification": "Direct adductor loading aggravates inflammation of the pubic symphysis. Avoid the machine until cleared by a physiotherapist. Substitute with isometric glute work and light hip mobility first.",
+      "modificationPl": "Bezpośrednie obciążanie przywodzicieli drażni zapalenie spojenia łonowego. Unikaj maszyny do zgody fizjoterapeuty. Zastąp początkowo izometryczną pracą pośladków i lekką mobilnością bioder.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "hip_impingement_femoroacetabular",
+      "severity": "modify",
+      "modification": "End-range adduction (knees fully together) can pinch the joint in FAI. Reduce the closed-range stop — finish the rep with knees still 10-15 cm apart. Use lighter loads, higher reps.",
+      "modificationPl": "Końcowy zakres przywodzenia (kolana całkowicie złączone) może uciskać staw przy konflikcie udowo-panewkowym. Zmniejsz zakres końcowy — kończ powtórzenie z kolanami nadal w odległości 10-15 cm. Lżejsze ciężary, większa liczba powtórzeń.",
+      "alternative": "side-lying-adduction"
+    },
+    {
+      "condition": "lower_back_pain_lumbar",
+      "severity": "caution",
+      "modification": "Generally safe — the seated position supports the spine. If lumbar discomfort appears, check that you are not arching the back during the squeeze and that the seat back is fully upright. Reduce load if pain persists.",
+      "modificationPl": "Generalnie bezpieczne — pozycja siedząca podpiera kręgosłup. Jeśli pojawi się dyskomfort lędźwiowy, sprawdź czy nie wyginasz pleców podczas ściskania i czy oparcie jest ustawione pionowo. Zmniejsz ciężar, jeśli ból utrzymuje się.",
+      "alternative": "cable-hip-adduction"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (hypertrophy) | 3-4x15-20 (endurance/rehab) | 2x20-25 (warmup/activation) | 4x8-12 with slow eccentric (strength/hypertrophy bias)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "lever-seated-hip-adduction.gif",
+    "frames_extracted": [
+      "frames/lever-seated-hip-adduction/frame_0_start.png",
+      "frames/lever-seated-hip-adduction/frame_1_early.png",
+      "frames/lever-seated-hip-adduction/frame_2_mid.png",
+      "frames/lever-seated-hip-adduction/frame_3_late.png",
+      "frames/lever-seated-hip-adduction/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "adductors/lever-seated-hip-adduction"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi na maszynie hip adduction z plecami opartymi o pionowe oparcie, kolana ugięte ~90 stopni, nogi rozsunięte szeroko (pozycja odwiedziona), pady oporowe po wewnętrznej stronie ud powyżej kolan, mięśnie przywodzicieli obu nóg podświetlone na czerwono w pełnym rozciągnięciu. Frame 2: nogi w trakcie zbliżania do siebie, pady przesunięte do wewnątrz, kolana znacznie bliżej siebie, mięśnie przywodzicieli nadal podświetlone — faza koncentryczna w toku. Frame 4: powrót do pozycji rozsuniętej (cykliczny GIF), pełne rozciągnięcie przywodzicieli, mięśnie czerwone. Klasyfikacja: hip_adduction (movement_pattern), bilateral (laterality — obie nogi pracują jednocześnie), frontal plane, push force (pady są wypychane do wewnątrz), isolation (mechanic — pojedynczy staw biodrowy w jednej płaszczyźnie). Primary: adductor magnus/longus/brevis (grupa adductors), secondary: pectineus i gracilis (gracilis jest formalnie częścią adductors group, ale ze względu na pracę przez 2 stawy często wymieniany osobno). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["bodybuilding", "lower_body", "adductors", "isolation", "machine", "bilateral", "beginner_friendly", "rehab_friendly", "inner_thigh", "seated"]
+}

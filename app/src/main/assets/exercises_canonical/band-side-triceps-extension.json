@@ -1,0 +1,203 @@
+{
+  "id": "band-side-triceps-extension",
+  "name": "Band Side Triceps Extension",
+  "namePl": "Tricep extension bokiem z gumą",
+  "aliases": ["banded lateral triceps extension", "band side tricep press", "one arm band triceps extension sideways"],
+  "aliasesPl": ["wyprost ramienia z gumą bokiem", "prostowanie ramienia z gumą w bok", "jednostronne prostowanie tricepsa z gumą"],
+
+  "description": "Unilateral triceps isolation performed with a resistance band anchored to the side. The lifter stands with the shoulder abducted to roughly 90 degrees, elbow flexed so the hand sits near the back of the head, and extends the elbow horizontally out to the side against band tension. The frontal-plane trajectory differs from a classic overhead extension by keeping the upper arm parallel to the floor, biasing the long head of triceps in a stretched position and adding a strong isometric demand on the lateral deltoid that holds the arm in abduction.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na triceps z gumą zaczepioną z boku. Ćwiczący stoi z ramieniem odwiedzionym do około 90 stopni, łokieć jest ugięty tak, że dłoń znajduje się obok karku, a następnie prostujesz łokieć poziomo na zewnątrz, przeciw oporowi gumy. Trajektoria w płaszczyźnie czołowej różni się od klasycznego prostowania zza głowy — ramię nad łokciem pozostaje równolegle do podłogi, co lepiej obciąża głowę długą tricepsa w pozycji rozciągniętej i dokłada mocną pracę izometryczną dla aktonu bocznego mięśnia naramiennego, który trzyma ramię w odwiedzeniu.",
+
+  "instructions": [
+    "Anchor a resistance band at roughly head height on one side (door anchor, rack peg, or partner's grip). Stand sideways relative to the anchor.",
+    "Grab the band with the hand farther from the anchor. Step away until the band is under light tension at the start position.",
+    "Raise the working upper arm out to the side so it is parallel to the floor (shoulder abducted to ~90 degrees). Bend the elbow so your hand sits behind your head, near the opposite ear.",
+    "Set your stance: feet shoulder-width, knees soft, ribs down, glutes and core braced. The non-working hand can rest on the hip.",
+    "Extend the elbow horizontally out to the side until the arm is fully straight, in line with the shoulder. The upper arm does not move — only the forearm rotates around the elbow.",
+    "Pause briefly in the locked-out position and feel the triceps contract. Do not let the shoulder drop or rise.",
+    "Reverse the motion slowly over 2-3 seconds, returning the hand to the start position behind the head. Keep tension on the band throughout.",
+    "Complete all reps on one side, then switch the band to the other hand and repeat."
+  ],
+  "instructionsPl": [
+    "Zaczep gumę na wysokości głowy z jednej strony (zaczep do drzwi, klatka treningowa, ręka partnera). Stań bokiem do zaczepu.",
+    "Złap gumę dłonią dalszą od zaczepu. Odejdź na tyle, by guma na pozycji startowej była już lekko napięta.",
+    "Unieś pracujące ramię w bok tak, by ramię ponad łokciem było równoległe do podłogi (odwiedzenie barku ~90 stopni). Ugnij łokieć tak, by dłoń znalazła się za głową, w okolicy przeciwnego ucha.",
+    "Ustaw postawę: stopy na szerokość barków, kolana lekko ugięte, żebra w dół, pośladki i brzuch napięte. Niepracująca dłoń może spoczywać na biodrze.",
+    "Prostuj łokieć poziomo na zewnątrz, aż ramię będzie w pełni wyprostowane, w jednej linii z barkiem. Ramię ponad łokciem nieruchome — porusza się tylko przedramię.",
+    "Zatrzymaj się na chwilę w pozycji wyprostowanej i wyczuj skurcz tricepsa. Nie pozwól, by bark opadł albo się uniósł.",
+    "Wracaj powoli przez 2-3 sekundy, sprowadzając dłoń za głowę do pozycji startowej. Utrzymuj napięcie gumy przez cały ruch.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem przełóż gumę do drugiej dłoni i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["lateral_deltoid", "forearm_extensors"],
+    "stabilizers": ["rotator_cuff", "core", "upper_trapezius", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P9",
+    "lateral_deltoid": "S6",
+    "forearm_extensors": "S4",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "upper_trapezius": "T2",
+    "serratus_anterior": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["door_anchor", "rack_peg", "handle_attachment"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["band-overhead-triceps-extension", "cable-triceps-extension", "dumbbell-triceps-kickback", "skull-crusher"],
+    "alternatives": ["band-overhead-triceps-extension", "dumbbell-triceps-kickback", "cable-triceps-pushdown", "triceps-pushdown-with-band"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor at head height, stand fully sideways",
+      "Upper arm parallel to floor, shoulder at 90 degrees abduction",
+      "Hand behind head near the opposite ear at the start",
+      "Ribs down, glutes squeezed, core braced",
+      "Light pre-tension on the band before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Zaczep na wysokości głowy, stań całkiem bokiem",
+      "Ramię ponad łokciem równolegle do podłogi, bark w odwiedzeniu 90 stopni",
+      "Dłoń za głową przy przeciwnym uchu na starcie",
+      "Żebra w dół, pośladki spięte, brzuch napięty",
+      "Lekkie napięcie wstępne gumy przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — pin the upper arm in place",
+      "Lock out the elbow in line with the shoulder, not in front",
+      "Squeeze the triceps for one second at full extension",
+      "Return slowly — fight the band, do not let it snap back",
+      "Keep the shoulder packed; do not shrug or drop the elbow"
+    ],
+    "execution_cues_pl": [
+      "Porusza się tylko przedramię — ramię ponad łokciem unieruchom",
+      "Wyprostuj łokieć w linii z barkiem, nie przed sobą",
+      "Spinaj triceps przez sekundę w pełnym wyproście",
+      "Wracaj powoli — walcz z gumą, nie pozwól jej cię cofnąć",
+      "Bark stabilny — żadnego unoszenia ani opuszczania łokcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arm drifts forward or downward during the rep",
+        "faultPl": "Ramię ponad łokciem ucieka do przodu lub opada w trakcie powtórzenia",
+        "cause": "Triceps fatigue or band tension too high — the lifter compensates by changing shoulder position to gain leverage",
+        "causePl": "Zmęczenie tricepsa lub zbyt mocna guma — ćwiczący kompensuje, zmieniając ustawienie barku by uzyskać dźwignię",
+        "cue": "Imagine balancing a glass of water on your elbow — keep the upper arm parallel to the floor the whole set.",
+        "cuePl": "Wyobraź sobie szklankę wody postawioną na łokciu — ramię ponad łokciem ma być równolegle do podłogi przez całą serię."
+      },
+      {
+        "fault": "Incomplete elbow extension (short range of motion)",
+        "faultPl": "Niepełny wyprost łokcia (skrócony zakres ruchu)",
+        "cause": "Band too stiff, fear of joint stress, or trying to keep constant tension without finishing the lockout",
+        "causePl": "Zbyt twarda guma, strach przed obciążeniem stawu lub próba utrzymania ciągłego napięcia bez dokończenia wyprostu",
+        "cue": "Finish every rep in a full lockout, hand in line with the shoulder. Use a lighter band if you cannot reach it.",
+        "cuePl": "Kończ każde powtórzenie pełnym wyprostem, dłoń w linii z barkiem. Użyj lżejszej gumy jeśli nie dajesz rady dojść."
+      },
+      {
+        "fault": "Trunk leans away from the band (torso shifts to use lats)",
+        "faultPl": "Tułów odchyla się od gumy (przesuwanie tułowia by pomóc grzbietem)",
+        "cause": "Band tension exceeds triceps strength; the lifter uses bodyweight as a counter-lever",
+        "causePl": "Opór gumy przekracza siłę tricepsa; ćwiczący używa masy ciała jako przeciwwagi",
+        "cue": "Stand vertical — your spine should stay neutral, not tilt sideways. Reduce band resistance if needed.",
+        "cuePl": "Stój pionowo — kręgosłup neutralny, bez bocznego przechylenia. Zmniejsz opór gumy jeśli trzeba."
+      },
+      {
+        "fault": "Wrist collapses or hyperextends under load",
+        "faultPl": "Nadgarstek zapada się lub przeprostowuje pod obciążeniem",
+        "cause": "Weak forearm extensors or grip on the band that lets the wrist bend back",
+        "causePl": "Słabe prostowniki przedramienia lub chwyt gumy pozwalający na zgięcie nadgarstka w tył",
+        "cue": "Make a fist around the band, knuckles in line with forearm — wrist neutral every rep.",
+        "cuePl": "Zaciśnij pięść na gumie, kostki w linii z przedramieniem — nadgarstek neutralny w każdym powtórzeniu."
+      },
+      {
+        "fault": "Shoulder hikes up toward the ear",
+        "faultPl": "Bark wędruje w górę w stronę ucha",
+        "cause": "Upper trapezius takes over because the lateral deltoid is fatigued or weak in the abducted hold",
+        "causePl": "Mięsień czworoboczny przejmuje pracę, bo akton boczny naramiennego jest zmęczony lub słaby w pozycji odwiedzionej",
+        "cue": "Pull the shoulder blade down — long neck, ear away from shoulder.",
+        "cuePl": "Ściągnij łopatkę w dół — długa szyja, ucho daleko od barku."
+      }
+    ],
+    "breathing": "Exhale as you extend the elbow against the band. Inhale during the controlled return to the start position. Maintain a light core brace throughout to keep the trunk vertical.",
+    "breathingPl": "Wydech podczas prostowania łokcia przeciw oporowi gumy. Wdech w fazie kontrolowanego powrotu do pozycji startowej. Utrzymuj lekkie napięcie brzucha przez całą serię, aby tułów pozostał pionowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy_tennis_or_golfers_elbow",
+      "severity": "modify",
+      "modification": "Reduce band resistance, slow the eccentric to 4-5 seconds, and avoid full snap-back lockouts. Stop if sharp pain at the elbow appears.",
+      "modificationPl": "Zmniejsz opór gumy, spowolnij fazę negatywną do 4-5 sekund i unikaj gwałtownego dochodzenia do końcowego wyprostu. Przerwij, jeśli pojawi się ostry ból łokcia.",
+      "alternative": "cable-triceps-pushdown"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_irritation",
+      "severity": "modify",
+      "modification": "The 90-degree abducted hold can provoke impingement. Lower the working arm to 60-70 degrees abduction or switch to overhead/pushdown variations that keep the shoulder in a more neutral position.",
+      "modificationPl": "Utrzymanie ramienia w odwiedzeniu 90 stopni może drażnić zespół ciasnoty podbarkowej. Opuść ramię do 60-70 stopni odwiedzenia lub przejdź na warianty zza głowy / wyprost na wyciągu, które trzymają bark w bardziej neutralnej pozycji.",
+      "alternative": "triceps-pushdown-with-band"
+    },
+    {
+      "condition": "acute_distal_triceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Skip elbow-extension loading until the tendon is asymptomatic. Use isometric holds at mid-range only if cleared by a physio.",
+      "modificationPl": "Pomiń obciążanie wyprostu łokcia, dopóki ścięgno nie będzie bezbólowe. Wykonuj wyłącznie izometryczne utrzymania w średnim zakresie, jeśli wyrazi na to zgodę fizjoterapeuta.",
+      "alternative": null
+    },
+    {
+      "condition": "wrist_or_grip_pain",
+      "severity": "modify",
+      "modification": "Use a handle attachment on the band instead of wrapping it directly around the hand to keep the wrist neutral. Reduce resistance.",
+      "modificationPl": "Użyj uchwytu na gumie zamiast owijać gumę bezpośrednio wokół dłoni, by nadgarstek pozostał neutralny. Zmniejsz opór.",
+      "alternative": "cable-triceps-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 per arm (hypertrophy) | 2-3x15-20 per arm (endurance/pump) | 3-4x10-12 per arm (strength endurance)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-side-triceps-extension.gif",
+    "frames_extracted": [
+      "frames/band-side-triceps-extension/frame_0_start.png",
+      "frames/band-side-triceps-extension/frame_1_early.png",
+      "frames/band-side-triceps-extension/frame_2_mid.png",
+      "frames/band-side-triceps-extension/frame_3_late.png",
+      "frames/band-side-triceps-extension/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/band-side-triceps-extension",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 GIFa jahel. Frame 0 (start): atleta stoi przodem, jedna ręka uniesiona w bok z barkiem odwiedzionym ~90°, łokieć mocno zgięty tak że dłoń jest za głową/karkiem; guma biegnie od dłoni poziomo do zaczepu po przeciwnej stronie; triceps i przedramię podświetlone na czerwono. Frame 2 (mid → pełny wyprost): ramię ponad łokciem nadal równolegle do podłogi, łokieć w pełni wyprostowany, dłoń w linii z barkiem na zewnątrz — wyraźnie widać że ruch odbywa się w płaszczyźnie czołowej, a nie zza głowy w dół. Frame 4 (end): powrót do pozycji startowej z dłonią za głową, widoczny 'duch' fazy szczytowej powyżej. Tułów stoi nieruchomo, drugie ramię spoczywa na biodrze. Klasyfikacja: izolacja, push (wyprost łokcia), plane=frontal (ramię w odwiedzeniu, ruch poziomy), unilateral, open chain. Primary triceps_brachii — głowa długa silnie zaangażowana w pozycji rozciągniętej. Secondary: lateral_deltoid (intensywna praca izometryczna trzymająca ramię w odwiedzeniu) i forearm_extensors (chwyt gumy). Brak dopasowania w yuhonas/glowupp — slug tylko z jahel. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["arms", "triceps", "isolation", "band", "unilateral", "upper_body", "home_workout", "travel_friendly"]
+}

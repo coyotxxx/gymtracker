@@ -1,0 +1,208 @@
+{
+  "id": "straddle-maltese",
+  "name": "Straddle Maltese",
+  "namePl": "Maltańczyk w rozkroku (straddle maltese)",
+  "aliases": ["straddle maltese cross", "straddle maltese hold", "straddle malta", "open-leg maltese"],
+  "aliasesPl": ["maltańczyk w rozkroku", "krzyż maltański w rozkroku", "straddle maltese", "rozkroczny maltańczyk", "maltańczyk z rozsuniętymi nogami"],
+
+  "description": "Elite-level gymnastic isometric hold and the most common progression to the full Maltese cross. The athlete supports the entire bodyweight on fully locked straight arms on rings (or sometimes parallettes), with the body held parallel to the floor face-down. The arms are abducted out to the sides at the level of the chest/shoulders forming a 'T' shape while the legs are split wide (straddle) to shorten the effective moment arm from the shoulder fulcrum. The wide leg position makes the hold marginally easier than the full Maltese (typically rated FIG B/C versus the full Maltese D-value) but still demands years of dedicated straight-arm strength work — full planche, butterfly press, iron cross — and supervised progressions.",
+  "descriptionPl": "Ekstremalnie zaawansowane gimnastyczne ćwiczenie izometryczne i najczęstsza progresja do pełnego maltańczyka. Zawodnik podpiera cały ciężar ciała na całkowicie wyprostowanych ramionach na kółkach (rzadziej parallettkach), z ciałem utrzymywanym poziomo nad podłogą twarzą w dół. Ramiona są odwiedzione na boki na wysokości klatki/barków, tworząc kształt litery 'T', podczas gdy nogi są szeroko rozstawione w rozkroku, co skraca efektywne ramię dźwigni względem osi barku. Szeroka pozycja nóg czyni tę pozycję nieco łatwiejszą od pełnego maltańczyka (typowo wartość FIG B/C w porównaniu z D dla pełnego maltańczyka), ale nadal wymaga wieloletniej pracy nad siłą ramion prostych — pełna planche, butterfly press, krzyż — oraz nadzorowanych progresji.",
+
+  "instructions": [
+    "Set the rings at a height where, in the final hold, your body will clear the floor by 10-30 cm. Confirm strap stability and that the rings are dry — slippery rings prevent a safe lockout.",
+    "Mount into a support hold with rings turned out (RTO), scapulae depressed and protracted, full hollow body. Pre-tension the elbows in maximum lockout — biceps tendon must be pre-loaded.",
+    "Open the legs into a wide straddle (about 90-120 degrees between the legs). Point the toes and keep the legs straight — the straddle is what makes this variant trainable.",
+    "Lean the shoulders far forward over the rings and progressively lower the body toward horizontal while abducting the arms out to the sides. Elbows remain fully locked through the entire descent — any bend invalidates the position.",
+    "Reach the straddle Maltese: body completely parallel to the floor face-down, arms straight at the level of the chest/shoulders in a 'T' shape, legs split wide, rings turned out, head neutral.",
+    "Hold isometrically for the prescribed time (typically 2-5 seconds at competition quality). Breathe shallowly with the diaphragm — do not lose the line.",
+    "Exit by retracting the arms back under the body and pressing to support, or lower under control. Never let the elbows collapse under load."
+  ],
+  "instructionsPl": [
+    "Ustaw kółka na wysokości, przy której w końcowej pozycji ciało będzie 10-30 cm nad podłogą. Sprawdź stabilność pasów i suchość kółek — śliskie kółka uniemożliwiają bezpieczną blokadę ramion.",
+    "Wejdź w pozycję podparcia z kółkami skręconymi na zewnątrz (RTO), łopatki opuszczone i odprowadzone, pełny hollow body. Wstępnie napnij łokcie w maksymalnym wyproście — ścięgno bicepsa musi być pre-loaded.",
+    "Rozstaw nogi szeroko w rozkroku (około 90-120 stopni między nogami). Wyciągnij palce stóp i trzymaj nogi proste — to właśnie rozkrok czyni ten wariant trenowalnym.",
+    "Pochyl mocno barki do przodu nad kółkami i stopniowo opuszczaj ciało do poziomu, jednocześnie odwodząc ramiona na boki. Łokcie pozostają w pełni zablokowane przez cały ruch w dół — najmniejsze ugięcie unieważnia pozycję.",
+    "Osiągnij straddle maltańczyka: ciało całkowicie równolegle do podłogi twarzą w dół, ramiona proste na wysokości klatki/barków w kształcie 'T', nogi szeroko rozsunięte, kółka skręcone na zewnątrz, głowa neutralna.",
+    "Utrzymaj pozycję izometrycznie przez wymagany czas (typowo 2-5 sekund jakości zawodniczej). Oddychaj płytko przeponowo — nie trać linii ciała.",
+    "Wyjdź ściągając ramiona z powrotem pod ciało i wciskając do podparcia, albo opuść się kontrolowanie. Nigdy nie pozwól na załamanie się łokci pod obciążeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "static_hold",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "biceps_brachii", "deltoid_anterior", "deltoid_lateral", "rectus_abdominis"],
+    "secondary": ["latissimus_dorsi", "triceps_brachii", "deltoid_posterior", "serratus_anterior", "obliques"],
+    "stabilizers": ["rotator_cuff", "wrist_flexors", "glutes", "erector_spinae", "rhomboids", "hip_adductors"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "biceps_brachii": "P10",
+    "deltoid_anterior": "P10",
+    "deltoid_lateral": "P9",
+    "rectus_abdominis": "P9",
+    "latissimus_dorsi": "S8",
+    "triceps_brachii": "S7",
+    "deltoid_posterior": "S8",
+    "serratus_anterior": "S8",
+    "obliques": "S8",
+    "rotator_cuff": "T7",
+    "wrist_flexors": "T6",
+    "glutes": "T7",
+    "erector_spinae": "T7",
+    "rhomboids": "T6",
+    "hip_adductors": "T5"
+  },
+
+  "equipment": {
+    "required": ["rings"],
+    "optional": ["chalk", "wrist_straps", "spotter", "parallettes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["full-planche", "iron-cross", "butterfly-press", "straddle-planche", "straight-arm-strength-base"],
+    "progression_to": ["full-maltese", "victorian-cross", "maltese-press"],
+    "alternatives": ["straddle-planche", "iron-cross", "butterfly-hold"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Rings turned out aggressively — biceps facing forward, knuckles pointing back",
+      "Scapulae depressed and protracted — shoulders pulled away from the ears, ribcage pushed up",
+      "Elbows hyper-locked before the descent — pre-stress the biceps tendon to handle the load",
+      "Legs spread wide (90-120 degrees), toes pointed, hip adductors actively engaged",
+      "Full hollow body — ribs down, glutes squeezed, posterior pelvic tilt locked in"
+    ],
+    "setup_cues_pl": [
+      "Kółka mocno skręcone na zewnątrz — bicepsy do przodu, kostki dłoni wskazują w tył",
+      "Łopatki opuszczone i odprowadzone — barki daleko od uszu, klatka uniesiona do góry",
+      "Łokcie maksymalnie zablokowane przed zejściem — wstępnie napięte ścięgno bicepsa pod obciążenie",
+      "Nogi szeroko rozstawione (90-120 stopni), palce stóp wyciągnięte, przywodziciele bioder aktywnie napięte",
+      "Pełny hollow body — żebra w dół, pośladki ściśnięte, miednica w tylnym pochyleniu"
+    ],
+    "execution_cues": [
+      "Lean shoulders forward AS the arms open out to the sides — two motions executed simultaneously",
+      "Press the rings down and away from the body — imagine pushing the floor apart with the rings",
+      "Drive the chest toward the floor while keeping the body perfectly horizontal — no piking, no arching",
+      "Eyes look down at the floor — head neutral, NOT lifted (lifting the head extends the cervical spine and breaks the line)",
+      "Hold a steady shallow breath at sternum level — short, controlled diaphragm breaths only"
+    ],
+    "execution_cues_pl": [
+      "Pochylaj barki do przodu RÓWNOCZEŚNIE z rozkładaniem ramion na boki — dwa ruchy wykonywane jednocześnie",
+      "Wciskaj kółka w dół i na zewnątrz od ciała — wyobraź sobie, że rozpychasz kółkami podłogę na boki",
+      "Pchaj klatkę piersiową ku podłodze, jednocześnie trzymając ciało idealnie poziomo — bez zginania w biodrach, bez wyginania pleców",
+      "Patrz w podłogę — głowa neutralna, NIE uniesiona (uniesienie głowy zgina szyję i łamie linię)",
+      "Utrzymuj spokojny płytki oddech na wysokości mostka — wyłącznie krótkie, kontrolowane oddechy przeponowe"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbow bend during the hold ('soft elbows')",
+        "faultPl": "Ugięcie łokci podczas trzymania ('miękkie łokcie')",
+        "cause": "Insufficient straight-arm strength — biceps tendon and triceps long head cannot maintain extension under load. This is the single most common failure mode and the highest injury risk.",
+        "causePl": "Niewystarczająca siła ramion prostych — ścięgno bicepsa i głowa długa tricepsa nie utrzymują wyprostu pod obciążeniem. To najczęstszy tryb porażki i największe ryzyko kontuzji.",
+        "cue": "End the attempt. Return to butterfly holds, butterfly press progressions, and straight-arm dips for 6-12 more weeks. Never train Maltese with bent arms — it loads completely different tissue and builds the wrong adaptation.",
+        "cuePl": "Zakończ próbę. Wróć do butterfly hold, progresji butterfly press i straight-arm dips na kolejne 6-12 tygodni. Nigdy nie trenuj maltańczyka z ugiętymi ramionami — obciąża to zupełnie inne tkanki i buduje błędną adaptację."
+      },
+      {
+        "fault": "Legs piked up (hips higher than shoulders) or head lifted above the line",
+        "faultPl": "Nogi uniesione (biodra wyżej niż barki) lub głowa uniesiona nad linię",
+        "cause": "Athlete cheats the moment arm by lifting the hips — judges and serious training partners count this as a failed Maltese. The position must be flat-horizontal head-to-feet.",
+        "causePl": "Zawodnik oszukuje dźwignię unosząc biodra — sędziowie i poważni partnerzy treningowi uznają to za nieudany maltański. Pozycja musi być płaska-poziom od głowy do stóp.",
+        "cue": "Film yourself from the side every set. Line from head to toe must be parallel to the floor. If hips drift up under load, deload to straddle planche and rebuild horizontal control.",
+        "cuePl": "Nagrywaj się z boku przy każdej serii. Linia od głowy do palców stóp musi być równoległa do podłogi. Jeśli biodra uciekają do góry pod obciążeniem, cofnij się do straddle planche i odbuduj kontrolę poziomu."
+      },
+      {
+        "fault": "Arms abducted too high (above the shoulder/chest plane) — this is approaching Victorian cross, not Maltese",
+        "faultPl": "Ramiona odwiedzione za wysoko (powyżej linii barków/klatki) — to zbliżenie do krzyża wiktoriańskiego, nie maltańczyka",
+        "cause": "Athlete is closer to iron cross strength than Maltese strength; rings drift up to reduce the moment arm at the shoulder",
+        "causePl": "Zawodnik bliżej siły krzyża niż maltańczyka; kółka unoszą się dla skrócenia ramienia dźwigni w barku",
+        "cue": "Maltese position: rings level with the chest/shoulder plane. Victorian: rings at the hip line. Verify ring position with a side-on camera every set before counting the rep.",
+        "cuePl": "Pozycja maltańczyka: kółka na linii klatki/barków. Wiktoriański: kółka na linii bioder. Weryfikuj pozycję kółek kamerą z boku przy każdej serii zanim zaliczysz powtórzenie."
+      },
+      {
+        "fault": "Lumbar spine sagging / loss of hollow body / loose straddle legs",
+        "faultPl": "Wygięcie odcinka lędźwiowego / utrata hollow body / luźne nogi w rozkroku",
+        "cause": "Core and adductor fatigue under massive anterior load — lumbar gives way before the shoulders fail. Straddle Maltese also relies on adductor co-contraction to keep the legs rigid in the wide position.",
+        "causePl": "Zmęczenie core i przywodzicieli pod ogromnym obciążeniem przedniej strony — odcinek lędźwiowy się poddaje wcześniej niż barki. Straddle maltańczyk dodatkowo polega na ko-skurczu przywodzicieli, by utrzymać sztywne nogi w szerokiej pozycji.",
+        "cue": "Ribs down, glutes max squeeze, posterior pelvic tilt, adductors actively pulling legs apart. If you cannot hold the line for 2 clean seconds, the position is not yet trainable — drop to straddle planche.",
+        "cuePl": "Żebra w dół, pośladki maksymalnie napięte, miednica w tylnym pochyleniu, przywodziciele aktywnie rozciągające nogi na boki. Jeśli nie utrzymasz linii 2 czystych sekund — pozycja jeszcze nie do trenowania, cofnij się do straddle planche."
+      },
+      {
+        "fault": "Rings drifting forward or rotating inward (loss of external rotation / RTO)",
+        "faultPl": "Kółka uciekają do przodu albo obracają się do wewnątrz (utrata rotacji zewnętrznej / RTO)",
+        "cause": "Rotator cuff and biceps not strong enough to hold rings turned out at full shoulder abduction with the lever loaded",
+        "causePl": "Stożek rotatorów i biceps niewystarczająco silne, by utrzymać kółka skręcone na zewnątrz przy pełnej abdukcji barku z obciążoną dźwignią",
+        "cue": "Add ring support holds RTO, L-sit RTO and straddle-L RTO to accessory work. Without dedicated RTO strength the Maltese will always collapse inward — that is when the labrum and biceps tendon get injured.",
+        "cuePl": "Dodaj support hold RTO, L-sit RTO oraz straddle-L RTO jako pracę akcesoryjną. Bez celowo trenowanej siły RTO maltańczyk zawsze będzie się zwalał do środka — wtedy właśnie dochodzi do urazów obrąbka i ścięgna bicepsa."
+      }
+    ],
+    "breathing": "Take a normal breath before entering the hold and exhale slowly through pursed lips during the 2-5 second hold. Do not perform a hard Valsalva — chest pressurisation against already extreme anterior chain load can spike blood pressure and stress the pectoral tendon.",
+    "breathingPl": "Zrób normalny wdech przed wejściem w pozycję i wydychaj powoli przez zwężone usta podczas 2-5 sekundowego trzymania. Nie wykonuj manewru Valsalvy — wzrost ciśnienia w klatce przy już ekstremalnym obciążeniu przedniego łańcucha może gwałtownie podnieść ciśnienie krwi i obciążyć ścięgno piersiowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendon_pathology",
+      "severity": "avoid",
+      "modification": "Straddle Maltese places maximal isometric load on the long head of the biceps tendon with the elbow locked out. Any current biceps tendinopathy, partial tear, or post-surgical state is an absolute contraindication. Complete physiotherapy-supervised rehab (eccentric loading, sleeper stretch) before considering progression.",
+      "modificationPl": "Straddle maltańczyk obciąża maksymalnie izometrycznie ścięgno głowy długiej bicepsa przy zablokowanym łokciu. Każda aktualna tendinopatia, częściowe naderwanie czy stan pooperacyjny to bezwzględne przeciwwskazanie. Najpierw dokończ rehabilitację pod okiem fizjoterapeuty (obciążenia ekscentryczne, sleeper stretch) zanim rozważysz progresję.",
+      "alternative": "planche-tuck"
+    },
+    {
+      "condition": "shoulder_instability_or_labrum_injury",
+      "severity": "avoid",
+      "modification": "Extreme glenohumeral abduction with anterior chain loading is one of the most provocative positions for SLAP and labral tears and AC joint pathology. Requires orthopaedic clearance and complete scapular control rebuild before any Maltese-family progression.",
+      "modificationPl": "Skrajne odwiedzenie w stawie ramiennym z obciążeniem przedniego łańcucha to jedna z najbardziej prowokacyjnych pozycji dla uszkodzeń obrąbka SLAP i stawu barkowo-obojczykowego. Wymaga zgody ortopedy i pełnej odbudowy kontroli łopatkowej zanim wrócisz do jakiegokolwiek ćwiczenia z rodziny maltańczyka.",
+      "alternative": "ring-support-hold"
+    },
+    {
+      "condition": "elbow_tendon_pathology_or_hyperextension",
+      "severity": "avoid",
+      "modification": "Locked-out straight arms under maximal load stress the distal biceps insertion, brachialis, and elbow joint capsule. Anyone with currently active golfer's/tennis elbow, distal biceps tendinopathy, or pronounced elbow hyperextension must not train Maltese variants.",
+      "modificationPl": "Zablokowane wyprostowane ramiona pod maksymalnym obciążeniem obciążają dystalny przyczep bicepsa, mięsień ramienny i torebkę stawu łokciowego. Osoby z aktywnym łokciem golfisty/tenisisty, tendinopatią dystalnego bicepsa lub wyraźną hiperextensją łokcia nie powinny trenować wariantów maltańczyka.",
+      "alternative": "butterfly-hold"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiovascular_disease",
+      "severity": "caution",
+      "modification": "Maximal isometric holds spike systemic blood pressure significantly. Athletes with uncontrolled hypertension or any cardiovascular disease must consult their cardiologist before training high-intensity static gymnastic elements.",
+      "modificationPl": "Maksymalne trzymania izometryczne gwałtownie i znacząco podnoszą ciśnienie krwi. Sportowcy z niekontrolowanym nadciśnieniem lub jakąkolwiek chorobą sercowo-naczyniową muszą skonsultować się z kardiologiem zanim zaczną trenować wysokointensywne elementy statyczne gimnastyki.",
+      "alternative": "tuck-planche"
+    }
+  ],
+
+  "typical_sets_reps": "5-8 x 2-5s hold (competition quality) | 3-5 x 1-3s (developmental, full reset between sets) | accessory: 3 x max-quality seconds with perfect form",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "straddle-maltese.gif",
+    "frames_extracted": [
+      "frames/straddle-maltese/frame_0_start.png",
+      "frames/straddle-maltese/frame_1_early.png",
+      "frames/straddle-maltese/frame_2_mid.png",
+      "frames/straddle-maltese/frame_3_late.png",
+      "frames/straddle-maltese/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/straddle-maltese"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Wszystkie klatki pokazują tę samą statyczną pozycję — ciało dokładnie poziomo do podłogi (twarzą w dół), ramiona całkowicie wyprostowane w łokciach i odwiedzione na boki tworząc kształt litery T na linii barków/klatki, nogi szeroko rozstawione w rozkroku (~100 stopni między udami) z wyciągniętymi palcami stóp. To kluczowa różnica wobec full-maltese gdzie nogi są zwarte. Klatka mid (#2) ma kolorowanie aktywnych mięśni — wyraźnie zaznaczone: mięsień piersiowy większy obustronnie (jasna czerwień całej klatki), bicepsy ramienia (mocno czerwone), przedni deltoid, prosty brzucha (cała linia hollow body), oraz serratus anterior po boku klatki. Klasyfikacja: static_hold (czysta izometria 2-5s), mechanic=isometric, force=static, plane=transverse (ramiona w abdukcji w płaszczyźnie poprzecznej względem długiej osi ciała poziomego), bilateral, kinetic_chain=closed (ręce zamocowane na obręczach). Wszystkie 5 primary movers oznaczone P10 / P9 — to ekstremalne elite (10/10) ćwiczenie gdzie pectoralis, biceps i anterior delt pracują na granicy wytrzymałości. Rectus abdominis P9 ze względu na anty-pike anti-arch role przy ogromnej dźwigni przedniej. Sekundarne: lats (jako stabilizator pozycji barku), triceps (przeciwdziała ugięciu łokcia), tylny delt (balans rotacji), serratus (protrakcja łopatki), obliques (anti-rotation). Stabilizatory dodano hip_adductors T5 — w wariancie straddle przywodziciele aktywnie utrzymują nogi w szerokiej pozycji (ko-skurcz przeciwko grawitacji i bezwładności). Sprzęt: rings obowiązkowe (parallettes wariant jest rzadszy ale możliwy jako optional). Difficulty=10/10 — choć straddle jest 'łatwiejszy' od full maltese, nadal pozostaje na poziomie elite. Prerequisites: full-planche, iron-cross, butterfly-press, straddle-planche. Progression_to: full-maltese (zamknięcie nóg), victorian-cross (uniesienie ramion). 4 przeciwwskazania: biceps_tendon_pathology (KRYTYCZNE — najczęstsza kontuzja w treningu maltańczyka), shoulder_instability/labrum (SLAP w skrajnej abdukcji), elbow_tendon/hyperextension (lockout pod max load), uncontrolled_hypertension (max izometria → BP spike). 5 setup cues + 5 execution cues — wszystkie konkretne i actionable. 5 common faults: soft elbows / piked legs / arms za wysoko (= Victorian) / sag lędźwiowy + luźne nogi straddle / utrata RTO. Typical sets/reps zgodne ze standardem treningowym progresji do FIG: 5-8 serii x 2-5s w jakości zawodniczej, 3-5 x 1-3s w fazie developmentalnej. Calories=7.5 kcal/kg/h (wysokie dla statycznego elite ćwiczenia ze względu na ogromny neural drive i napięcie całego ciała). Nazwa PL: 'Maltańczyk w rozkroku' (najbardziej precyzyjny PL termin gimnastyczny), aliasy zachowują angielski 'straddle maltese' (powszechny w społeczności calisthenics PL). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — terminologia gimnastyczna PL (kółka, hollow body zachowane jako termin profesjonalny, RTO=rings turned out, parallettki jako spolszczone parallettes). Brak yuhonas_id i glowupp_id w sources — jahel jako jedyne źródło dla tego elite ćwiczenia.",
+
+  "tags": ["gymnastics", "rings", "static_hold", "isometric", "elite", "shoulders", "chest", "biceps", "core", "calisthenics_advanced", "skill", "straddle", "maltese_family"]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "barbell-rear-delt-row",
+  "name": "Barbell Rear Delt Row",
+  "namePl": "Wiosłowanie sztangą na tylne aktony naramiennych",
+  "aliases": ["rear delt barbell row", "wide-grip bent-over row to chest", "barbell rear deltoid row", "high row with barbell"],
+  "aliasesPl": ["wiosłowanie sztangą na tylne aktony", "wiosłowanie sztangą szerokim chwytem do klatki", "wiosłowanie sztangą na tylne barki", "high row sztangą"],
+
+  "description": "A variation of the bent-over barbell row reshaped to bias the posterior deltoids and the upper mid-back. The torso is hinged forward to roughly 45 degrees as in a classic row, but the grip is significantly wider than shoulder width and the bar is pulled HIGH — toward the lower chest / upper abdomen rather than to the hip. The wide grip plus the high pull path forces the elbows to travel up and outward (shoulder transverse abduction), which shifts emphasis off the latissimus dorsi and onto the rear (posterior) deltoids, rhomboids and middle trapezius. Excellent accessory for shoulder health, posture and visual rear-delt thickness — fixes the common imbalance from too much horizontal pressing.",
+  "descriptionPl": "Wariant wiosłowania sztangą w opadzie przebudowany tak, by celował w tylne aktony naramiennych i górną część środkowych pleców. Tułów jest pochylony w przód do około 45 stopni jak w klasycznym wiosłowaniu, ale chwyt jest wyraźnie szerszy niż barki, a sztanga ciągnięta jest WYSOKO — do dolnej części klatki / górnej części brzucha, a nie do bioder. Szeroki chwyt w połączeniu z wysoką trajektorią ciągu zmusza łokcie do pracy w górę i na boki (poziome odwodzenie w stawie barkowym), co przenosi pracę z najszerszych grzbietu na tylne aktony naramiennych, równoległoboczne i środkowy czworoboczny. Świetne ćwiczenie akcesoryjne dla zdrowia barków, postawy i grubości tylnych delt — koryguje typową dysproporcję wynikającą z nadmiaru wyciskań w poziomie.",
+
+  "instructions": [
+    "Load the barbell. Stand with feet shoulder-width apart, mid-foot under the bar.",
+    "Grip the bar overhand (pronated), significantly wider than shoulder width — roughly 1.5x shoulder width or more, so that at the top of the rep your forearms are vertical.",
+    "Unrack from the floor with a stiff-leg deadlift to standing — this is your reset position between sets.",
+    "Hinge at the hips, push the glutes back, bend the knees slightly. Torso angle ~45 degrees to the floor. Back flat, neutral spine, chest proud. Bar hanging at mid-shin to knee level with arms straight.",
+    "Brace the core, set the shoulder blades — pull them slightly down and back without bending the elbows.",
+    "Pull the bar HIGH — to the lower chest / upper abdomen. Elbows travel UP and OUT, away from the torso, ending roughly at shoulder height (or slightly above) with the bar near the sternum.",
+    "Squeeze the shoulder blades hard at the top — feel the rear delts and the area between the shoulder blades crunch together. Pause 1 second.",
+    "Lower the bar under control along the same path until arms are fully extended. Do not lose the torso angle.",
+    "Use lighter weight than a conventional bent-over row — this is a posterior deltoid exercise, not a powerlifting movement. Form over load."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę. Stań stopami na szerokość barków, środek stopy pod gryfem.",
+    "Złap sztangę nachwytem (dłonie skierowane w dół), wyraźnie szerzej niż barki — około 1,5x szerokość barków lub więcej, tak by na szczycie powtórzenia przedramiona były pionowe.",
+    "Podnieś gryf z ziemi martwym ciągiem na sztywnych nogach do pozycji stojącej — to twoja pozycja resetu między seriami.",
+    "Zegnij się w biodrach, wypchnij pośladki do tyłu, lekko ugnij kolana. Kąt tułowia ~45 stopni do podłoża. Plecy płaskie, kręgosłup neutralny, klatka wysunięta. Sztanga zwisa na wysokości środka goleni / kolan z prostymi ramionami.",
+    "Napnij brzuch, ustaw łopatki — ściągnij je lekko w dół i do tyłu bez zginania łokci.",
+    "Pociągnij gryf WYSOKO — do dolnej części klatki / górnej części brzucha. Łokcie idą W GÓRĘ i NA BOKI, oddalają się od tułowia, kończąc mniej więcej na wysokości barków (lub lekko wyżej) ze sztangą blisko mostka.",
+    "Mocno ściśnij łopatki na szczycie — poczuj jak tylne aktony naramiennych i obszar między łopatkami zgniatają się razem. Zatrzymaj na 1 sek.",
+    "Opuść gryf w pełnej kontroli tą samą trajektorią aż do pełnego wyprostu ramion. Nie trać kąta tułowia.",
+    "Używaj mniejszego ciężaru niż w klasycznym wiosłowaniu w opadzie — to jest ćwiczenie na tylne aktony naramiennych, nie ruch siłowy. Technika ważniejsza niż obciążenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids", "rhomboids", "trapezius_middle"],
+    "secondary": ["trapezius_lower", "infraspinatus", "teres_minor", "biceps_brachii", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle": "P9",
+    "trapezius_lower": "S7",
+    "infraspinatus": "S7",
+    "teres_minor": "S7",
+    "biceps_brachii": "S6",
+    "brachialis": "S5",
+    "erector_spinae": "S8",
+    "forearms": "S6",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["lifting_straps", "chalk", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-bent-over-row", "face-pull", "dumbbell-rear-lateral-raise", "romanian-deadlift"],
+    "progression_to": ["pendlay-rear-delt-row", "chest-supported-rear-delt-row", "yates-row-wide-grip"],
+    "alternatives": ["face-pull", "dumbbell-rear-lateral-raise", "cable-rear-delt-row", "chest-supported-rear-delt-row", "reverse-pec-deck"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, mid-foot under the bar",
+      "Overhand grip WIDER than shoulders (~1.5x shoulder width)",
+      "Hinge hips back, slight knee bend, torso ~45 degrees",
+      "Neutral spine, chest proud, shoulder blades set",
+      "Bar hanging directly below the shoulders with straight arms"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, środek stopy pod gryfem",
+      "Chwyt nachwytem SZERSZY niż barki (~1,5x szerokość barków)",
+      "Wypchnij biodra w tył, lekko ugnij kolana, tułów ~45 stopni",
+      "Neutralny kręgosłup, klatka wysunięta, łopatki ustawione",
+      "Sztanga zwisa pionowo pod barkami przy wyprostowanych ramionach"
+    ],
+    "execution_cues": [
+      "Pull the bar to the LOWER CHEST, not to the hip",
+      "Elbows go UP and OUT — flare them away from the torso",
+      "At the top, elbows should be at shoulder height with forearms vertical",
+      "Squeeze the rear delts and the space between the shoulder blades for 1 sec",
+      "Lighter weight than a conventional row — this is rear delt isolation, not powerlifting"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij sztangę do DOLNEJ KLATKI, nie do biodra",
+      "Łokcie idą W GÓRĘ i NA BOKI — odchyl je od tułowia",
+      "Na szczycie łokcie powinny być na wysokości barków, przedramiona pionowe",
+      "Ściśnij tylne aktony naramiennych i przestrzeń między łopatkami na 1 sek.",
+      "Mniejszy ciężar niż w klasycznym wiosłowaniu — to izolacja tylnych delt, nie powerlifting"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the bar to the hip (turns into conventional row)",
+        "faultPl": "Ciąg gryfu do biodra (zmienia się w klasyczne wiosłowanie)",
+        "cause": "Habit from doing classic bent-over rows, or load too heavy to pull high",
+        "causePl": "Nawyk z klasycznego wiosłowania w opadzie lub zbyt duży ciężar by ciągnąć wysoko",
+        "cue": "Reduce weight. Bar goes to the LOWER CHEST. Elbows finish at shoulder height — if elbows finish at the ribs, you are doing a different exercise. Touch the sternum if needed for feedback.",
+        "cuePl": "Zmniejsz ciężar. Sztanga idzie do DOLNEJ KLATKI. Łokcie kończą na wysokości barków — jeśli łokcie kończą przy żebrach, robisz inne ćwiczenie. Dotknij mostka jako sygnał zwrotny jeśli trzeba."
+      },
+      {
+        "fault": "Grip too narrow (rear delts under-recruited)",
+        "faultPl": "Zbyt wąski chwyt (tylne aktony naramiennych słabo zaangażowane)",
+        "cause": "Defaulting to shoulder-width grip from conventional rows",
+        "causePl": "Domyślne ustawienie chwytu na szerokość barków z klasycznego wiosłowania",
+        "cue": "Hands at least 1.5x shoulder width — at the top of the rep forearms should be roughly vertical. Narrow grip = lats. Wide grip = rear delts.",
+        "cuePl": "Dłonie co najmniej 1,5x szerokość barków — na szczycie powtórzenia przedramiona powinny być w przybliżeniu pionowe. Wąski chwyt = najszersze. Szeroki chwyt = tylne aktony."
+      },
+      {
+        "fault": "Rounded lower back (lumbar flexion under load)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy (zgięcie pod obciążeniem)",
+        "cause": "Weak erectors, weak hip hinge pattern, load too heavy, or poor bracing",
+        "causePl": "Słabe prostowniki, słaby wzorzec hip hinge, zbyt duży ciężar lub słabe napięcie brzucha",
+        "cue": "Reset. Lighter weight. Brace before every rep, chest proud. Master RDL pattern first. Consider chest-supported variant to remove spinal load.",
+        "cuePl": "Reset. Mniejszy ciężar. Napnij brzuch przed każdym powtórzeniem, klatka wysunięta. Najpierw opanuj wzór RDL. Rozważ wariant z podparciem klatki by wyeliminować obciążenie kręgosłupa."
+      },
+      {
+        "fault": "Using hip momentum / kipping the torso",
+        "faultPl": "Używanie pędu bioder / bujanie tułowia (kipping)",
+        "cause": "Load too heavy for rear delts, ego lifting, or treating it like a strength row",
+        "causePl": "Ciężar za duży dla tylnych delt, ego lifting lub traktowanie ćwiczenia jak siłowego wiosłowania",
+        "cue": "Reduce weight by 30-40%. Rear delts are small — they cannot lift powerlifting weights cleanly. Strict tempo: 1 sec up, 1 sec squeeze, 2 sec down. No torso bounce.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Tylne aktony naramiennych są małe — nie udźwigną powerliftingowych ciężarów czysto. Ścisłe tempo: 1 sek w górę, 1 sek ściśnięcie, 2 sek w dół. Bez bujania tułowia."
+      },
+      {
+        "fault": "Elbows tucked / pulling like a lat row",
+        "faultPl": "Łokcie schowane przy ciele / ciąg jak w pracy najszerszych",
+        "cause": "Insufficient transverse abduction at the shoulder, or grip too narrow",
+        "causePl": "Niewystarczające odwodzenie horyzontalne w stawie barkowym lub zbyt wąski chwyt",
+        "cue": "Elbows must point OUT to the sides, not back. Think 'flare the elbows like an upright row but bent over.' If your elbows graze your ribs, you are not training rear delts.",
+        "cuePl": "Łokcie muszą wskazywać NA BOKI, nie do tyłu. Pomyśl 'odchyl łokcie jak w upright row, tylko w pochyleniu'. Jeśli łokcie ocierają o żebra, nie trenujesz tylnych delt."
+      }
+    ],
+    "breathing": "Inhale and brace at the bottom (arms extended). Exhale through the pull as the bar approaches the lower chest. Inhale on the controlled descent. Maintain steady brace — rep tempo is slower than a conventional row.",
+    "breathingPl": "Wdech i napięcie brzucha na dole (ramiona wyprostowane). Wydech w trakcie ciągu gdy sztanga zbliża się do dolnej klatki. Wdech podczas kontrolowanego opuszczania. Utrzymuj stabilne napięcie — tempo powtórzeń wolniejsze niż w klasycznym wiosłowaniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared. Hinged loaded spinal position too risky. Use chest-supported alternatives instead.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody. Pochylona pozycja kręgosłupa pod obciążeniem zbyt ryzykowna. Stosuj alternatywy z podparciem klatki.",
+      "alternative": "chest-supported-rear-delt-row"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_issues",
+      "severity": "modify",
+      "modification": "High elbow flare can aggravate impingement. Reduce elbow height (finish at ribcage instead of shoulder) or switch to face pulls / reverse pec deck which are friendlier on the joint.",
+      "modificationPl": "Wysokie odchylenie łokci może nasilić impingement. Zmniejsz wysokość łokci (kończ na wysokości żeber zamiast barków) lub przejdź na face pulls / reverse pec deck, które są bardziej przyjazne dla stawu.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Switch to chest-supported variant (incline bench) or cable-based alternatives to eliminate spinal loading.",
+      "modificationPl": "Przejdź na wersję z podparciem klatki (ławka skośna) lub alternatywy z linki, by wyeliminować obciążenie kręgosłupa.",
+      "alternative": "chest-supported-rear-delt-row"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "caution",
+      "modification": "Reduce range of motion at the top — do not bring the bar all the way to the chest. Stop where the shoulder remains pain-free.",
+      "modificationPl": "Zmniejsz zakres ruchu na górze — nie ciągnij sztangi do samej klatki. Zatrzymaj się tam, gdzie staw barkowy jest wolny od bólu.",
+      "alternative": "dumbbell-rear-lateral-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, recommended) | 4x12-20 (high-rep rear delt work) | 3x8-12 (general)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-rear-delt-row.gif",
+    "frames_extracted": [
+      "frames/barbell-rear-delt-row/frame_0_start.png",
+      "frames/barbell-rear-delt-row/frame_1_early.png",
+      "frames/barbell-rear-delt-row/frame_2_mid.png",
+      "frames/barbell-rear-delt-row/frame_3_late.png",
+      "frames/barbell-rear-delt-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-rear-delt-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): tułów pochylony ~45 stopni, kolana lekko ugięte, sztanga z dużymi obciążnikami przy wyprostowanych ramionach na wysokości środka goleni / kolan, chwyt wyraźnie SZERSZY niż barki (kluczowa różnica vs. klasyczne wiosłowanie). Podświetlone są tylne aktony naramiennych (mocno czerwone), równoległoboczne i środkowy czworoboczny — DOKŁADNIE inny zakres mięśniowy niż classic bent-over row. Frames 1-2 (early/mid): ruch koncentryczny — łokcie idą W GÓRĘ I NA BOKI (transverse abduction w stawie barkowym), sztanga zbliża się do KLATKI (nie do biodra) — to definiuje to ćwiczenie. Frames 3-4 (late/end): pełne ściągnięcie łopatek, łokcie na wysokości barków lub lekko wyżej, przedramiona w przybliżeniu pionowe, sztanga przy dolnej klatce / górze brzucha. Klasyfikacja jako 'pull_horizontal' z plane 'transverse' (główny ruch — poziome odwodzenie w stawie barkowym, czyli płaszczyzna poprzeczna). Equipment: barbell + obciążniki. posterior_deltoids P10 (główny target, podświetlone najmocniej), rhomboids P9 i trapezius_middle P9 (silnie zaangażowane przy ściąganiu łopatek z szerokim chwytem). Difficulty 6 (niższe niż classic BOR=7 bo mniejsze ciężary, ale wymaga świadomości pozycji łokcia i kontroli scapular). Wszystkie pola PL napisane od zera, polski standard fitness ('wiosłowanie na tylne aktony naramiennych' — popularna forma w PL kulturystyce).",
+
+  "tags": ["compound", "rear_delts", "horizontal_pull", "barbell", "posterior_chain", "shoulder_health", "posture_corrective", "bodybuilding", "accessory"]
+}

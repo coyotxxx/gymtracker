@@ -538,6 +538,91 @@ object AppModule {
         }
     }
 
+    /**
+     * v2.0.0 — całkowita wymiana bazy ćwiczeń (ExerciseDB → canonical exercise-db).
+     *
+     * Strategia: backup nazw ćwiczeń z historii (workout_sets/plan_exercises/goals/
+     * training_events) do tabel `_backup_*`, czyszczenie istniejących FK referencji,
+     * DELETE wszystkich row-ów exercises (1500 ExerciseDB), ADD 21 nowych kolumn
+     * canonical schema. Po migracji `CanonicalExerciseBootstrap` ładuje 1317 canonical
+     * z assets/exercises_canonical/ i przemapuje historię przez fuzzy match po nazwie.
+     */
+    internal val MIGRATION_65_66 = object : Migration(65, 66) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            // 1. Backup historii z nazwami ćwiczeń (do reimportu po canonical insert)
+            db.execSQL("""
+                CREATE TABLE IF NOT EXISTS _backup_workout_sets AS
+                SELECT ws.*, e.name AS _legacy_exercise_name
+                FROM workout_sets ws
+                LEFT JOIN exercises e ON ws.exerciseId = e.id
+            """.trimIndent())
+            db.execSQL("""
+                CREATE TABLE IF NOT EXISTS _backup_plan_exercises AS
+                SELECT pe.*, e.name AS _legacy_exercise_name
+                FROM plan_exercises pe
+                LEFT JOIN exercises e ON pe.exerciseId = e.id
+            """.trimIndent())
+            db.execSQL("""
+                CREATE TABLE IF NOT EXISTS _backup_goals AS
+                SELECT g.*, e.name AS _legacy_exercise_name
+                FROM goals g
+                LEFT JOIN exercises e ON g.exerciseId = e.id
+            """.trimIndent())
+            db.execSQL("""
+                CREATE TABLE IF NOT EXISTS _backup_training_events AS
+                SELECT te.*, e.name AS _legacy_exercise_name
+                FROM training_events te
+                LEFT JOIN exercises e ON te.exerciseId = e.id
+            """.trimIndent())
+
+            // 2. Wyłączenie FK (workout_sets/plan_exercises mają RESTRICT)
+            db.execSQL("PRAGMA foreign_keys = OFF")
+
+            // 3. DELETE historii (zostaną reimportowane przez bootstrap)
+            db.execSQL("DELETE FROM workout_sets")
+            db.execSQL("DELETE FROM plan_exercises")
+            db.execSQL("UPDATE goals SET exerciseId = NULL WHERE exerciseId IS NOT NULL")
+            db.execSQL("UPDATE training_events SET exerciseId = NULL WHERE exerciseId IS NOT NULL")
+
+            // 4. DELETE starych ExerciseDB rows
+            db.execSQL("DELETE FROM exercises")
+            db.execSQL("DELETE FROM sqlite_sequence WHERE name = 'exercises'")
+
+            // 5. ADD nowe kolumny canonical (wszystkie nullable — bezpieczne)
+            db.execSQL("ALTER TABLE exercises ADD COLUMN slug TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN namePl TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN descriptionPl TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN aliasesEnJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN aliasesPlJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN framesDirUrl TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN category TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN movementPattern TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN mechanic TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN force TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN kineticChain TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN plane TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN laterality TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN levelMin TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN difficulty1To10 INTEGER")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN muscleIntensityJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN coachingCuesJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN commonFaultsJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN contraindicationsJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN prerequisitesJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN progressionToJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN alternativesJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN tagsJson TEXT")
+            db.execSQL("ALTER TABLE exercises ADD COLUMN equipmentOptionalCsv TEXT")
+
+            // 6. Index na slug (UNIQUE) + category + movementPattern
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS index_exercises_slug ON exercises(slug)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS index_exercises_category ON exercises(category)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS index_exercises_movementPattern ON exercises(movementPattern)")
+
+            db.execSQL("PRAGMA foreign_keys = ON")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -558,7 +643,8 @@ object AppModule {
                 MIGRATION_61_62,
                 MIGRATION_62_63,
                 MIGRATION_63_64,
-                MIGRATION_64_65
+                MIGRATION_64_65,
+                MIGRATION_65_66
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

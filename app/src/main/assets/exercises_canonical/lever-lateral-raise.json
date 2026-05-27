@@ -1,0 +1,205 @@
+{
+  "id": "lever-lateral-raise",
+  "name": "Lever Lateral Raise",
+  "namePl": "Lateral raise w maszynie",
+  "aliases": ["machine lateral raise", "plate-loaded lateral raise machine", "seated machine lateral raise", "machine shoulder lateral raise"],
+  "aliasesPl": ["wznosy bokiem na maszynie", "lateral raise machine plate-loaded", "wznosy bokiem siedząc na maszynie", "wznosy ramion w bok w maszynie"],
+
+  "description": "Seated lateral raise performed on a plate-loaded lever machine. The user grips two side handles at hip level and drives the arms outwards in a fixed frontal-plane arc, with pads pressing against the outer arms. The fixed path eliminates much of the stabilisation work required for dumbbell versions, allowing very focused tension on the lateral deltoid and clean overload past failure (drop sets, rest-pause). Excellent finisher or main isolation movement for medial delt hypertrophy.",
+  "descriptionPl": "Wznosy bokiem wykonywane w pozycji siedzącej na maszynie dźwigniowej (lever machine, plate-loaded). Ćwiczący chwyta dwa boczne uchwyty na wysokości bioder i unosi ramiona na boki po stałym łuku w płaszczyźnie czołowej, z poduszkami opartymi o zewnętrzną stronę ramion. Stała tor ruchu eliminuje większość pracy stabilizatorów wymaganej w wersji z hantlami, pozwalając na bardzo skoncentrowane napięcie w bocznym aktonie naramiennego i czyste przeciążenie nawet po upadku mięśniowym (drop sety, rest-pause). Świetne ćwiczenie wykończeniowe lub główne izolowane na hipertrofię środkowego aktonu naramiennego.",
+
+  "instructions": [
+    "Adjust the seat height so that the pivot of the lever arms aligns roughly with your shoulder joints when seated upright.",
+    "Sit down with the back firmly against the back pad and feet flat on the floor. Chest tall, shoulders depressed.",
+    "Grip the side handles with a neutral grip (palms facing each other / inward). Upper arms rest against the side pads.",
+    "Set the elbows in a soft, fixed angle (~90-110° depending on machine design — most machines fix this for you).",
+    "Brace the core, exhale, and drive the elbows / upper arms outward and upward against the pads in a wide arc.",
+    "Raise until the upper arms reach roughly shoulder height (parallel to the floor) — do not shrug to push higher.",
+    "Pause briefly at the top, feeling tension on the side of the shoulder. Avoid pushing the pads with the hands; pressure goes through the outer arms.",
+    "Lower the lever arms back down under control over 2-3 seconds, inhaling on the way down. Do not let the weight stack slam.",
+    "Stop just before the pads touch the start blocks to keep continuous tension on the lateral delts, then drive into the next rep."
+  ],
+  "instructionsPl": [
+    "Wyreguluj wysokość siedziska tak, aby oś obrotu dźwigni maszyny znajdowała się mniej więcej na wysokości stawów barkowych, gdy siedzisz wyprostowany.",
+    "Usiądź z plecami solidnie opartymi o oparcie i stopami płasko na podłodze. Klatka wysunięta, barki ściągnięte w dół.",
+    "Chwyć boczne uchwyty chwytem neutralnym (dłonie zwrócone do siebie / do wewnątrz). Ramiona ponad łokciem oprzyj o boczne poduszki.",
+    "Ustaw łokcie w lekkim, stałym ugięciu (~90-110° w zależności od konstrukcji maszyny — większość maszyn ustawia to za Ciebie).",
+    "Napnij brzuch, zrób wydech i wypychaj łokcie / ramiona ponad łokciem na zewnątrz i w górę przeciw poduszkom szerokim łukiem.",
+    "Unoś, aż ramiona ponad łokciem dojdą mniej więcej do wysokości barków (równolegle do podłogi) — nie wciągaj barków, żeby unieść wyżej.",
+    "Zatrzymaj się na chwilę w górnej pozycji, czując napięcie na bocznej stronie barku. Nie napieraj poduszek dłońmi; nacisk ma iść przez zewnętrzną stronę ramion.",
+    "Opuszczaj dźwignie kontrolowanie przez 2-3 sekundy, wdech podczas opuszczania. Nie pozwól, żeby stos uderzył.",
+    "Zatrzymaj się tuż przed dotknięciem poduszek blokad startowych, aby utrzymać stałe napięcie na bocznych aktonach, i przechodź do kolejnego powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoid"],
+    "secondary": ["supraspinatus", "trapezius_upper"],
+    "stabilizers": ["anterior_deltoid", "posterior_deltoid", "serratus_anterior", "rotator_cuff", "core", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoid": "P10",
+    "supraspinatus": "S6",
+    "trapezius_upper": "S5",
+    "anterior_deltoid": "T4",
+    "posterior_deltoid": "T3",
+    "serratus_anterior": "T3",
+    "rotator_cuff": "T3",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["lateral_raise_machine"],
+    "optional": ["lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-lateral-raise", "cable-lateral-raise", "leaning-cable-lateral-raise"],
+    "alternatives": ["dumbbell-lateral-raise", "cable-lateral-raise", "leaning-dumbbell-lateral-raise", "seated-dumbbell-lateral-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height: machine pivot aligned with shoulder joint",
+      "Back flat against the pad, feet planted",
+      "Neutral grip on side handles — relaxed, no death grip",
+      "Outer arms (not hands) pressed against the pads",
+      "Shoulders pulled down and back before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska: oś maszyny w linii ze stawem barkowym",
+      "Plecy płasko oparte o poduszkę, stopy mocno na podłodze",
+      "Chwyt neutralny na bocznych uchwytach — luźny, bez zaciskania",
+      "Zewnętrzna strona ramion (nie dłonie) opiera się o poduszki",
+      "Barki ściągnięte w dół i w tył przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive with the elbows — hands just hold on",
+      "Push the pads up, not the handles",
+      "Stop at shoulder level — no shrugging past it",
+      "Squeeze the side of the shoulder at the top for 1 second",
+      "Control the negative — fight the weight on the way down"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami — dłonie tylko trzymają",
+      "Wypychaj poduszki w górę, nie uchwyty",
+      "Zatrzymaj na wysokości barków — bez wciągania powyżej",
+      "Spinaj boczną stronę barku w górnej pozycji przez 1 sekundę",
+      "Kontroluj fazę negatywną — walcz z ciężarem podczas opuszczania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pushing with the hands instead of the outer arms",
+        "faultPl": "Wypychanie dłońmi zamiast zewnętrzną stroną ramion",
+        "cause": "Habit from dumbbell raises or grip too tight; lifter recruits forearms and biceps",
+        "causePl": "Nawyk z wznosów z hantlami lub zbyt mocny chwyt; ćwiczący angażuje przedramiona i biceps",
+        "cue": "Relax the grip. Imagine the handles aren't there — push the pads up with the back of your upper arm.",
+        "cuePl": "Rozluźnij chwyt. Wyobraź sobie, że uchwytów nie ma — wypychaj poduszki górną krawędzią ramienia."
+      },
+      {
+        "fault": "Shrugging — upper traps lift instead of the side delt",
+        "faultPl": "Wciąganie barków — trapezy górne unoszą zamiast bocznego aktonu",
+        "cause": "Load too heavy or losing scapular depression at the top of the rep",
+        "causePl": "Zbyt duży ciężar lub utrata depresji łopatek na szczycie powtórzenia",
+        "cue": "Drop the weight. Keep shoulders pressed down away from the ears the entire set.",
+        "cuePl": "Zmniejsz ciężar. Trzymaj barki wciśnięte w dół, z dala od uszu przez całą serię."
+      },
+      {
+        "fault": "Wrong seat height — pivot not aligned with shoulder",
+        "faultPl": "Nieprawidłowa wysokość siedziska — oś maszyny nie pokrywa się z barkiem",
+        "cause": "Skipping setup; pivot too high or too low forces shoulder into mechanically poor positions",
+        "causePl": "Pominięcie regulacji; oś za wysoko lub za nisko zmusza bark do mechanicznie złych pozycji",
+        "cue": "Stand up, adjust the seat, sit again. 60 seconds of setup saves your shoulder.",
+        "cuePl": "Wstań, wyreguluj siedzisko, usiądź ponownie. 60 sekund regulacji ratuje Twój bark."
+      },
+      {
+        "fault": "Slamming the negative / using stretch reflex at the bottom",
+        "faultPl": "Upuszczanie ciężaru w fazie ekscentrycznej / odbijanie z dolnej pozycji",
+        "cause": "Trying to do more reps with too heavy load; eliminates tension on the lateral delt",
+        "causePl": "Próba zrobienia większej ilości powtórzeń ze zbyt dużym ciężarem; eliminuje napięcie z bocznego aktonu",
+        "cue": "3 seconds down. Stop just short of the pads touching the stops. Reset, then drive up.",
+        "cuePl": "3 sekundy w dół. Zatrzymaj tuż przed dotknięciem poduszek blokad. Reset, potem unoś."
+      },
+      {
+        "fault": "Lifting past horizontal — going too high",
+        "faultPl": "Unoszenie powyżej poziomu — za wysoko",
+        "cause": "Trying to maximise ROM, but past 90° the upper trap takes over and the lateral delt is no longer the prime mover",
+        "causePl": "Próba maksymalizacji zakresu ruchu, ale powyżej 90° trapez górny przejmuje pracę, a boczny akton przestaje być głównym wykonawcą",
+        "cue": "Stop when the upper arm hits horizontal. Anything more works traps, not side delts.",
+        "cuePl": "Zatrzymaj, gdy ramię ponad łokciem dojdzie do poziomu. Wszystko ponad to pracuje na trapezy, nie na boczne aktony."
+      }
+    ],
+    "breathing": "Exhale on the concentric (lifting) phase. Inhale on the eccentric (lowering) phase. Maintain a light core brace throughout — the back pad should not have to do the bracing work for you.",
+    "breathingPl": "Wydech podczas fazy koncentrycznej (unoszenia). Wdech podczas fazy ekscentrycznej (opuszczania). Utrzymuj lekkie napięcie brzucha przez cały ruch — oparcie nie powinno wykonywać pracy stabilizującej za Ciebie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop the lift 10-20° below horizontal where impingement symptoms typically peak. Use lighter loads (40-50% of normal) and prioritise slow tempo.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj unoszenie 10-20° poniżej poziomu, gdzie objawy konfliktu barkowego zwykle są najsilniejsze. Używaj lżejszych ciężarów (40-50% normalnego) i preferuj wolne tempo.",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid lateral raises during the acute phase. The fixed path of the machine can be aggravating if alignment is poor. Substitute with isometric scapular work and cable face pulls until cleared.",
+      "modificationPl": "Unikaj wznosów bokiem w fazie ostrej. Stała tor ruchu maszyny może drażnić bark przy złym ustawieniu. Zastąp pracą izometryczną łopatek i face pull na wyciągu, aż objawy ustąpią.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses heavily at the top of any lateral raise. Reduce ROM, never go past 80° of abduction, and stop short of any sharp pain.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega silnej kompresji w górnej pozycji każdego wznosu. Zmniejsz zakres ruchu, nigdy nie przekraczaj 80° odwodzenia i zatrzymuj zakres przed ostrym bólem.",
+      "alternative": "leaning-cable-lateral-raise"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Long head of biceps can be irritated by overhand grip with internal rotation. Keep grip strictly neutral and avoid pronating at the top of the rep.",
+      "modificationPl": "Głowa długa bicepsa może być drażniona przez chwyt pronowany z rotacją wewnętrzną. Trzymaj chwyt ściśle neutralny i unikaj pronacji w górnej pozycji powtórzenia.",
+      "alternative": "cable-lateral-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/standard) | 4-5x15-25 (lateral delt specialization, drop sets) | 3x8-12 (strength-focus, rare for laterals)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "lever-lateral-raise.gif",
+    "frames_extracted": [
+      "frames/lever-lateral-raise/frame_0_start.png",
+      "frames/lever-lateral-raise/frame_1_early.png",
+      "frames/lever-lateral-raise/frame_2_mid.png",
+      "frames/lever-lateral-raise/frame_3_late.png",
+      "frames/lever-lateral-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/lever-lateral-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi wyprostowany na maszynie dźwigniowej lateral raise (plate-loaded), plecy o oparcie, stopy płasko, chwyta dwa boczne uchwyty na wysokości bioder chwytem neutralnym, ramiona przy tułowiu — boczne aktony naramiennego podświetlone na czerwono jako mięsień celowy. Frame 2 (top): obie dźwignie uniesione na boki, ramiona ponad łokciem doszły do poziomu barków (~90° odwodzenia), łokcie w lekkim ugięciu, ruch w czystej płaszczyźnie czołowej (frontal plane abduction), boczne aktony pracują jako primary mover. Frame 4: powrót do pozycji wyjściowej (z 'ghostem' szczytu widocznym po bokach). Tułów stabilny przez cały ruch — pleców nie odkleja, brak bujania ani wciągania barków. To klasyczna izolacja środkowego aktonu naramiennego w stałym torze maszyny. Mechanic=isolation, plane=frontal, force=push (odwodzenie ramienia przeciw oporowi), bilateral, kinetic_chain=open. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "lateral_delts", "isolation", "machine", "upper_body", "seated", "hypertrophy", "beginner_friendly", "lateral_delt_specialization"]
+}

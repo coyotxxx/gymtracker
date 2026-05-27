@@ -1,0 +1,203 @@
+{
+  "id": "lever-one-arm-shoulder-press",
+  "name": "Lever One-Arm Shoulder Press",
+  "namePl": "OHP jednorącz w maszynie",
+  "aliases": ["iso-lateral one-arm shoulder press", "machine single-arm overhead press", "unilateral lever press", "one-arm hammer strength shoulder press"],
+  "aliasesPl": ["wyciskanie barków jednorącz w maszynie", "iso-lateral shoulder press jednorącz", "hammer press jednorącz", "maszyna barki unilateralnie"],
+
+  "description": "Unilateral vertical pressing in a plate-loaded iso-lateral (lever) shoulder press machine. Pressing with one arm at a time forces the trunk to resist rotation — heavy obliques and core involvement on top of the deltoid work. The machine path is fixed (typically angled, not pure vertical), which makes the movement joint-friendly and easy to load. Excellent for fixing side-to-side strength imbalances and for those who can't tolerate barbell OHP.",
+  "descriptionPl": "Pionowe wyciskanie jednorącz w maszynie iso-lateral (dźwigniowej) na talerze. Wyciskanie pojedynczą ręką zmusza tułów do oporu przed rotacją — mocna praca skośnych i całego core'a na dokładkę do aktonów barku. Tor maszyny jest narzucony (zwykle pod kątem, nie czysto pionowo), co jest łagodne dla stawów i łatwe do obciążenia. Świetne do wyrównywania dysproporcji prawo/lewo i dla osób, które nie tolerują OHP ze sztangą.",
+
+  "instructions": [
+    "Load the working side of the machine. Sit (or stand, depending on machine — this version is performed standing with slight forward lean) on the platform with chest pad supporting the torso.",
+    "Grip the handle with one hand in neutral or pronated grip (depending on machine), elbow at ~90°, handle at shoulder level.",
+    "Free hand grips the frame or rests on the hip — DO NOT press it on your knee to cheat.",
+    "Brace core HARD — actively resist letting the trunk rotate toward the loaded side. Squeeze the OPPOSITE oblique.",
+    "Press the handle up and slightly forward along the machine's path until the elbow is nearly locked (don't slam the stop).",
+    "Pause briefly at the top, then lower with control back to shoulder level. 2-3 second eccentric.",
+    "Keep the chest pressed against the support pad and the hips square throughout the set.",
+    "Complete all reps on one side, then switch. Match reps exactly side-to-side."
+  ],
+  "instructionsPl": [
+    "Załaduj pracującą stronę maszyny. Wejdź na platformę (lub usiądź — w tej wersji ćwiczenie wykonywane stojąc z lekkim pochyleniem do przodu) z piersią opartą o oparcie.",
+    "Złap uchwyt jedną ręką chwytem neutralnym lub w pronacji (zależnie od maszyny), łokieć ~90°, uchwyt na wysokości barku.",
+    "Wolna ręka trzyma ramę maszyny lub spoczywa na biodrze — NIE odpychaj się nią od kolana, żeby oszukać.",
+    "Napnij core MOCNO — aktywnie opieraj się rotacji tułowia w stronę obciążenia. Ściśnij PRZECIWLEGŁY mięsień skośny.",
+    "Wyciskaj uchwyt do góry i lekko do przodu po torze maszyny, aż łokieć będzie prawie wyprostowany (nie waląc w ogranicznik).",
+    "Krótka pauza na górze, potem opuszczaj kontrolowanym ruchem do wysokości barku. 2-3 sekundy ekscentryku.",
+    "Pierś dociśnięta do oparcia, biodra ustawione równo przez całą serię.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, potem zmień. Zachowaj IDENTYCZNĄ liczbę powtórzeń lewo/prawo."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid", "obliques"],
+    "secondary": ["triceps", "upper_chest", "serratus_anterior"],
+    "stabilizers": ["core", "rectus_abdominis", "trapezius", "rotator_cuff", "quadratus_lumborum"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P9",
+    "lateral_deltoid": "P7",
+    "obliques": "P8",
+    "triceps": "S6",
+    "upper_chest": "S4",
+    "serratus_anterior": "S5",
+    "core": "S8",
+    "rectus_abdominis": "S6",
+    "trapezius": "T3"
+  },
+
+  "equipment": {
+    "required": ["lever_machine", "plate_loaded_shoulder_press"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["machine-shoulder-press", "dumbbell-shoulder-press"],
+    "progression_to": ["dumbbell-single-arm-overhead-press", "single-arm-landmine-press", "barbell-overhead-press"],
+    "alternatives": ["dumbbell-single-arm-overhead-press", "single-arm-landmine-press", "machine-shoulder-press", "cable-one-arm-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Chest pressed firmly into the pad",
+      "Hips square — don't twist toward the load",
+      "Handle at shoulder height, elbow under wrist",
+      "Brace core BEFORE you press",
+      "Free hand on frame or hip — never on knee"
+    ],
+    "setup_cues_pl": [
+      "Pierś mocno dociśnięta do oparcia",
+      "Biodra równe — nie skręcaj się w stronę obciążenia",
+      "Uchwyt na wysokości barku, łokieć pod nadgarstkiem",
+      "Napnij core ZANIM zaczniesz wyciskać",
+      "Wolna ręka na ramie lub biodrze — nigdy na kolanie"
+    ],
+    "execution_cues": [
+      "Press up AND slightly forward — follow the machine's track",
+      "Squeeze the OPPOSITE oblique to resist rotation",
+      "Don't slam the lockout — controlled stop",
+      "3-second eccentric back to start",
+      "Same reps both sides — no exceptions"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę I LEKKO do przodu — podążaj po torze maszyny",
+      "Ściśnij PRZECIWLEGŁY mięsień skośny żeby oprzeć się rotacji",
+      "Nie waląc w lock-out — kontrolowany stop",
+      "3-sekundowy ekscentryk do startu",
+      "Te same powtórzenia po obu stronach — bez wyjątków"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward the loaded side",
+        "faultPl": "Rotacja tułowia w stronę obciążenia",
+        "cause": "Weak obliques, weight too heavy, no conscious anti-rotation bracing",
+        "causePl": "Słabe mięśnie skośne, za duży ciężar, brak świadomego napięcia anty-rotacyjnego",
+        "cue": "Squeeze the OPPOSITE oblique like you're crunching sideways AWAY from the load. Reduce weight if you can't stay square.",
+        "cuePl": "Ściśnij PRZECIWLEGŁY skośny, jakbyś robił bok-crunch W PRZECIWNĄ stronę od obciążenia. Zmniejsz ciężar jeśli nie utrzymujesz równych bioder."
+      },
+      {
+        "fault": "Pushing off the knee with free hand",
+        "faultPl": "Odpychanie się wolną ręką od kolana",
+        "cause": "Cheating to lift heavier — kills the core anti-rotation benefit",
+        "causePl": "Oszukiwanie żeby unieść więcej — zabija korzyść anty-rotacyjną core'a",
+        "cue": "Free hand on the FRAME of the machine or on your HIP. Never on the knee/thigh.",
+        "cuePl": "Wolna ręka na RAMIE maszyny lub na BIODRZE. Nigdy na kolanie/udzie."
+      },
+      {
+        "fault": "Lifting the chest off the pad (loss of stability)",
+        "faultPl": "Odrywanie piersi od oparcia (utrata stabilności)",
+        "cause": "Weight too heavy, leaning back to recruit lats/lower back",
+        "causePl": "Za duży ciężar, odchylanie się żeby zaangażować najszerszy/lędźwie",
+        "cue": "Chest GLUED to the pad. If it lifts, the weight is too heavy.",
+        "cuePl": "Pierś PRZYKLEJONA do oparcia. Jeśli się odrywa — ciężar za duży."
+      },
+      {
+        "fault": "Unequal reps left vs right side",
+        "faultPl": "Nierówna liczba powtórzeń lewo vs prawo",
+        "cause": "Dominant side does more — entrenches imbalance instead of fixing it",
+        "causePl": "Strona dominująca robi więcej — utrwala dysproporcję zamiast ją naprawiać",
+        "cue": "Start with the WEAKER side. Cap the stronger side at the same number.",
+        "cuePl": "Zaczynaj od strony SŁABSZEJ. Ogranicz silniejszą do tej samej liczby powtórzeń."
+      },
+      {
+        "fault": "Slamming into the top stop",
+        "faultPl": "Walenie w górny ogranicznik maszyny",
+        "cause": "Loss of control at lockout — momentum-based lifting",
+        "causePl": "Utrata kontroli w lock-out — wyciskanie 'na rozpęd'",
+        "cue": "Decelerate as you approach lockout. Quiet stop = controlled rep.",
+        "cuePl": "Zwalniaj zbliżając się do lock-out. Cichy stop = kontrolowane powtórzenie."
+      }
+    ],
+    "breathing": "Inhale and brace before each rep. Exhale at lockout. Reset brace before lowering — the anti-rotation demand is highest during the press itself.",
+    "breathingPl": "Wdech i napięcie przed każdym powtórzeniem. Wydech w lock-out. Odbuduj napięcie przed opuszczaniem — wymaganie anty-rotacyjne jest największe w fazie samego wyciskania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (start higher, don't go all the way down). Many lever machines have an angled path that's already friendlier than vertical barbell OHP.",
+      "modificationPl": "Zmniejsz ROM (zaczynaj wyżej, nie schodź do końca w dół). Wiele maszyn dźwigniowych ma kąt łagodniejszy niż pionowy OHP ze sztangą.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Use very light weight, high reps. Fixed path can be more forgiving than free weights, but stop if pain.",
+      "modificationPl": "Używaj bardzo lekkich ciężarów, dużo powtórzeń. Stały tor może być łagodniejszy niż wolny ciężar, ale przerwij jeśli boli.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "active_oblique_strain",
+      "severity": "avoid",
+      "modification": "The anti-rotation demand on the trunk is the entire point — with an oblique injury, switch to bilateral press until healed.",
+      "modificationPl": "Wymaganie anty-rotacyjne tułowia jest sednem ćwiczenia — przy kontuzji skośnych przejdź na wyciskanie obustronne do wyleczenia.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Ensure chest stays pressed to pad — no leaning back. If pain persists, switch to seated bilateral machine press.",
+      "modificationPl": "Pierś dociśnięta do oparcia — bez odchylania się. Jeśli ból nie ustępuje, przejdź na siedzące dwustronne wyciskanie w maszynie.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x12-15 (volume / weak-side correction) | 4x6-8 (strength)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-one-arm-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/lever-one-arm-shoulder-press/frame_0_start.png",
+      "frames/lever-one-arm-shoulder-press/frame_1_early.png",
+      "frames/lever-one-arm-shoulder-press/frame_2_mid.png",
+      "frames/lever-one-arm-shoulder-press/frame_3_late.png",
+      "frames/lever-one-arm-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/lever-one-arm-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany na 5 klatkach. Pozycja STOJĄCA z lekkim pochyleniem do przodu (nie siedząca, mimo briefu) — pierś oparta o oparcie iso-lateral lever shoulder press. Jednoramienne wyciskanie pod kątem w górę/przód po torze maszyny. Frame 0: start z uchwytem na wysokości barku, łokieć ~90°. Frame 2: pełny lock-out, ramię prawie wyprostowane. Frame 3-4: powrót. Podświetlenie obejmuje przedni i boczny akton + skośne brzucha (anti-rotation core) — co potwierdza unilateral compound z silnym wymaganiem anty-rotacyjnym. Tricepsy jako secondary. Plane = frontal (ruch pod kątem, nie czysto sagittal). Wzorzec push_vertical, mechanic compound, unilateral. PL nazwa = 'OHP jednorącz w maszynie' (zgodnie z briefem).",
+
+  "tags": ["unilateral", "machine", "vertical_push", "shoulders", "anti_rotation", "core", "imbalance_correction", "joint_friendly", "iso_lateral", "hypertrophy"]
+}

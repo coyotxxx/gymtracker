@@ -1,0 +1,205 @@
+{
+  "id": "kneeling-jump-squat",
+  "name": "Kneeling Jump Squat",
+  "namePl": "Wybuchowe wstawanie z klęku do przysiadu",
+  "aliases": ["kneeling jump to squat", "kneeling explosive jump", "tall kneeling jump to squat", "kneeling to squat jump", "kneeling power jump"],
+  "aliasesPl": ["skok z klęku do przysiadu", "wybuchowe wstawanie z klęku", "skok z wysokiego klęku", "klęk-do-przysiadu plyo", "explosive kneeling jump"],
+
+  "description": "Advanced plyometric exercise starting from a tall kneeling position (both knees on the floor, hips fully extended, torso upright) and finishing in an athletic squat or higher. The athlete loads the hips and hamstrings, then explosively extends the hips while swinging the arms, drives the knees forward and snaps both feet under the body to land in a stable squat. Trains rate of force development of the gluteus maximus and hamstrings in a deeply specific way — the lift-off occurs from zero knee leverage, forcing pure hip-driven power. Builds explosive triple extension, core anti-flexion strength, and landing mechanics. A high-skill movement used by athletes (track, MMA, basketball) and as a glute power finisher.",
+  "descriptionPl": "Zaawansowane ćwiczenie plyometryczne startujące z pozycji wysokiego klęku (oba kolana na podłodze, biodra w pełni wyprostowane, tułów pionowo) i kończące się w stabilnym przysiadzie lub wyżej. Ćwiczący ładuje biodra i tylne mięśnie uda, następnie eksplozywnie prostuje biodra przy jednoczesnym zamachu rąk, wbija kolana do przodu i błyskawicznie wsuwa obie stopy pod ciało, lądując w stabilnym przysiadzie. Trenuje szybkość rozwoju siły mięśnia pośladkowego wielkiego i tylnych mięśni uda w wyjątkowo specyficzny sposób — moment startu odbywa się przy zerowej dźwigni kolana, wymuszając czystą moc napędzaną biodrem. Buduje eksplozywne potrójne wyprostowanie (kostka-kolano-biodro), siłę antyflektorową brzucha oraz mechanikę lądowania. Ruch o wysokim poziomie umiejętności, stosowany przez sportowców (lekkoatletyka, MMA, koszykówka) oraz jako wykończeniówka mocy pośladków.",
+
+  "instructions": [
+    "Begin in a tall kneeling position on a padded surface or mat — both knees down, shins flat, ankles relaxed (toes flat or tucked — choose what feels stable). Knees roughly hip-width apart.",
+    "Hips fully extended (no sitting back on heels), glutes squeezed, torso vertical, core braced. Arms by sides or in 'ready' position with elbows slightly bent.",
+    "Initiate by hinging the hips slightly back and reaching the arms behind you — this is a brief counter-movement to load the glutes and hamstrings (do not collapse forward).",
+    "Explosively reverse the motion: swing the arms forward and up, fully extend the hips, and drive the knees forward and up off the ground simultaneously.",
+    "At the apex of the hip extension, snap both feet under the body — feet land flat at roughly shoulder width, knees track over the toes.",
+    "Absorb the landing in a controlled squat position: hips back, chest up, knees bent to roughly 90° (parallel) or slightly higher. Feet quiet, weight distributed across the whole foot.",
+    "Stabilize fully in the squat — pause 1-2 seconds for the first sets to groove the landing.",
+    "Stand up, return to the tall kneeling position for the next rep (step down one knee at a time, or lower controlled), and repeat.",
+    "Perform low reps (3-6) with full recovery between sets — this is a max-effort power exercise, not a conditioning drill."
+  ],
+  "instructionsPl": [
+    "Rozpocznij w pozycji wysokiego klęku na macie lub miękkiej powierzchni — oba kolana na podłodze, podudzia płasko, kostki rozluźnione (palce stóp wyprostowane lub podkulone — wybierz wariant stabilny). Kolana mniej więcej na szerokość bioder.",
+    "Biodra w pełni wyprostowane (nie siadaj na piętach), pośladki napięte, tułów pionowo, brzuch napięty. Ręce wzdłuż ciała lub w pozycji 'gotowości' z lekko zgiętymi łokciami.",
+    "Zainicjuj ruch lekkim odchyleniem bioder w tył i sięgnięciem rękami za siebie — to krótki ruch przeciwny do załadowania pośladków i tylnych ud (nie opadaj do przodu).",
+    "Eksplozywnie odwróć ruch: zamachnij rękami do przodu i w górę, w pełni wyprostuj biodra i jednocześnie wybij kolana do przodu i w górę od podłogi.",
+    "W szczycie wyprostu bioder błyskawicznie wsuń obie stopy pod ciało — stopy lądują płasko na szerokość barków, kolana w linii z palcami.",
+    "Amortyzuj lądowanie w kontrolowanej pozycji przysiadu: biodra w tył, klatka w górze, kolana zgięte do około 90° (równolegle) lub nieco wyżej. Ciche stopy, ciężar rozłożony na całej stopie.",
+    "Ustabilizuj się w pełni w przysiadzie — przy pierwszych seriach zatrzymaj się na 1-2 sekundy, by 'wyrobić' lądowanie.",
+    "Wstań, wróć do pozycji wysokiego klęku przed kolejnym powtórzeniem (zejdź kontrolowanie jedno kolano po drugim) i powtórz.",
+    "Wykonuj mało powtórzeń (3-6) z pełną przerwą między seriami — to ćwiczenie maksymalnej mocy, nie kondycyjne."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps"],
+    "secondary": ["hamstrings", "calves", "adductors"],
+    "stabilizers": ["core", "erector_spinae", "gluteus_medius", "tibialis_anterior"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "quadriceps": "P9",
+    "hamstrings": "S8",
+    "calves": "S7",
+    "adductors": "S6",
+    "core": "S7",
+    "erector_spinae": "S6",
+    "gluteus_medius": "S5",
+    "tibialis_anterior": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["padded_mat", "knee_pads", "athletic_shoes"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "glute-bridge", "hip-thrust", "kneeling-hip-thrust", "squat-jump"],
+    "progression_to": ["weighted-kneeling-jump-squat", "kneeling-jump-to-box", "kneeling-jump-to-broad-jump", "depth-jump"],
+    "alternatives": ["squat-jump", "broad-jump", "kneeling-hip-thrust", "hip-thrust", "kettlebell-swing"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Tall kneeling — hips fully open, glutes squeezed, no sitting on heels",
+      "Knees hip-width apart, shins flat on the mat",
+      "Torso vertical, chest proud, eyes forward",
+      "Core braced like bracing for a punch",
+      "Padded surface — protect the knees, this is not a hard-floor drill"
+    ],
+    "setup_cues_pl": [
+      "Wysoki klęk — biodra w pełni otwarte, pośladki napięte, nie siadaj na piętach",
+      "Kolana na szerokość bioder, podudzia płasko na macie",
+      "Tułów pionowo, klatka 'dumnie' wysunięta, wzrok do przodu",
+      "Brzuch napięty jak przed przyjęciem ciosu",
+      "Miękka powierzchnia — chroń kolana, to nie ćwiczenie na twardą podłogę"
+    ],
+    "execution_cues": [
+      "Counter-move SHORT — small hip hinge back, don't collapse the spine",
+      "Throw the arms UP and FORWARD — they generate 20-25% of the jump",
+      "Hips explode FIRST, knees follow — think 'glute snap then feet'",
+      "Tuck the feet under FAST — late feet means hard landing on tailbone",
+      "Land in a quiet, balanced squat — pause, check position, then reset"
+    ],
+    "execution_cues_pl": [
+      "Ruch przeciwny KRÓTKI — małe odchylenie bioder, nie zapadaj kręgosłupa",
+      "Wyrzuć ręce W GÓRĘ i DO PRZODU — dają 20-25% wysokości skoku",
+      "Biodra eksplodują NAJPIERW, kolana podążają — myśl 'snap pośladkami potem stopy'",
+      "Wsuń stopy pod ciało SZYBKO — spóźnione stopy = twarde lądowanie na kości ogonowej",
+      "Ląduj w cichym, zbalansowanym przysiadzie — zatrzymaj się, sprawdź pozycję, dopiero potem reset"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hinging too far back (sitting on heels) before the jump",
+        "faultPl": "Zbyt głębokie odchylenie w tył (siadanie na piętach) przed skokiem",
+        "cause": "Trying to generate extra range, lack of glute pre-tension, mistaking it for a hip hinge exercise. Wastes energy and breaks the hip-driven power transfer.",
+        "causePl": "Próba wygenerowania dodatkowego zakresu, brak wstępnego napięcia pośladków, mylenie ćwiczenia z hip hinge. Marnuje energię i zaburza przekaz mocy z bioder.",
+        "cue": "Counter-move is INCHES, not feet. Quick, sharp, then explode. Pre-load the glutes — don't deload them.",
+        "cuePl": "Ruch przeciwny to CENTYMETRY, nie pół metra. Szybko, ostro, potem wybuch. Pre-load pośladków — nie rozluźniaj ich."
+      },
+      {
+        "fault": "Feet land too narrow or too wide on landing",
+        "faultPl": "Stopy lądują za wąsko lub za szeroko",
+        "cause": "No mental rehearsal of landing position, hips not opening fully in flight, asymmetric knee drive",
+        "causePl": "Brak mentalnego planu pozycji lądowania, biodra nie otwierają się w pełni w locie, asymetryczne wybicie kolan",
+        "cue": "Visualize the squat stance BEFORE you jump. Tuck the feet to exactly shoulder width — feel the air under both heels equally.",
+        "cuePl": "Wyobraź sobie pozycję przysiadu PRZED skokiem. Wsuń stopy dokładnie na szerokość barków — czuj powietrze pod obiema piętami tak samo."
+      },
+      {
+        "fault": "Landing on toes only (cannot get heels down)",
+        "faultPl": "Lądowanie tylko na palcach (pięty nie schodzą)",
+        "cause": "Insufficient hip extension at takeoff (jump goes forward not up), limited ankle dorsiflexion, fear of going deep",
+        "causePl": "Niewystarczający wyprost bioder na starcie (skok idzie do przodu zamiast w górę), ograniczona dorsofleksja kostki, strach przed głębokim przysiadem",
+        "cue": "Drive the hips THROUGH, not forward. Heels down on landing = squat absorbs the force. Toes-only landing = knees absorb it (bad).",
+        "cuePl": "Wypchnij biodra DO KOŃCA, nie do przodu. Pięty na podłodze przy lądowaniu = przysiad amortyzuje siłę. Lądowanie na palcach = kolana amortyzują (źle)."
+      },
+      {
+        "fault": "Knees buckle inward on landing (valgus collapse)",
+        "faultPl": "Kolana zapadają się do środka przy lądowaniu (koślawość)",
+        "cause": "Weak gluteus medius, fatigue, asymmetric force production at takeoff, narrow landing stance",
+        "causePl": "Słaby pośladkowy średni, zmęczenie, asymetryczna produkcja siły na starcie, za wąska pozycja lądowania",
+        "cue": "Land with knees ACTIVELY pushed out — track over second toe. If you can't control it on rep 4, stop the set.",
+        "cuePl": "Ląduj z kolanami AKTYWNIE wypchniętymi na zewnątrz — w linii z drugim palcem. Jeśli nie kontrolujesz na 4. powtórzeniu, przerwij serię."
+      },
+      {
+        "fault": "Continuous reps without resetting to tall kneel",
+        "faultPl": "Ciągłe powtórzenia bez resetu do wysokiego klęku",
+        "cause": "Treating it like a conditioning drill, rushing reps, fatigue. Loses the power-development purpose entirely.",
+        "causePl": "Traktowanie jak ćwiczenie kondycyjne, pośpiech, zmęczenie. Kompletnie zaburza cel rozwoju mocy.",
+        "cue": "Each rep is a MAX EFFORT single. Reset fully, check position, breathe, then jump. 6 perfect > 15 sloppy.",
+        "cuePl": "Każde powtórzenie to MAKSYMALNY pojedynczy wysiłek. Pełen reset, sprawdź pozycję, oddech, dopiero skok. 6 perfekcyjnych > 15 byle jakich."
+      }
+    ],
+    "breathing": "Power-rep breathing: deep inhale during the brief counter-movement (load), explosive sharp exhale on the jump (release), controlled inhale-exhale during landing stabilization. Reset breath before the next rep. Never hold breath through multiple reps.",
+    "breathingPl": "Oddychanie typu power: głęboki wdech podczas krótkiego ruchu przeciwnego (załadowanie), eksplozywny ostry wydech przy skoku (uwolnienie), kontrolowany wdech-wydech podczas stabilizacji lądowania. Zresetuj oddech przed kolejnym powtórzeniem. Nigdy nie wstrzymuj oddechu przez wiele powtórzeń."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_or_patellar_tendinopathy",
+      "severity": "avoid",
+      "modification": "Landing impact and pre-jump knee position on hard surfaces aggravate the knee joint. Rehabilitate fully with isometrics and tempo squats before attempting plyometrics.",
+      "modificationPl": "Lądowanie i pozycja startowa kolana na twardej powierzchni nasilają dolegliwości stawu kolanowego. Zrehabilituj się w pełni izometrią i tempo squat'em przed próbą plyometrii.",
+      "alternative": "hip-thrust"
+    },
+    {
+      "condition": "lumbar_spine_injury_or_disc_issues",
+      "severity": "avoid",
+      "modification": "Explosive hip extension and landing forces transfer to the spine. Use static glute work (hip thrusts, glute bridges) until cleared by a physiotherapist.",
+      "modificationPl": "Eksplozywny wyprost bioder i siły lądowania przenoszą się na kręgosłup. Stosuj statyczną pracę pośladków (hip thrust, glute bridge) do czasu zgody fizjoterapeuty.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "avoid",
+      "modification": "The snap-down of feet under the body loads the Achilles tendon at end-range dorsiflexion. Avoid all plyometrics during active tendinopathy.",
+      "modificationPl": "Wsuwanie stóp pod ciało obciąża ścięgno Achillesa na końcu zakresu dorsofleksji. Unikaj wszystkich ćwiczeń plyometrycznych w trakcie aktywnej tendinopatii.",
+      "alternative": "kneeling-hip-thrust"
+    },
+    {
+      "condition": "pregnancy_any_trimester",
+      "severity": "avoid",
+      "modification": "Plyometric impact, rapid intra-abdominal pressure changes, and balance demands are not appropriate during pregnancy. Use bodyweight squats with hip thrusts.",
+      "modificationPl": "Obciążenia plyometryczne, gwałtowne zmiany ciśnienia w jamie brzusznej i wymagania równowagi nie są odpowiednie w ciąży. Stosuj bodyweight squat z hip thrustem.",
+      "alternative": "bodyweight-squat"
+    }
+  ],
+
+  "typical_sets_reps": "4-6x3-5 reps with 2-3 min rest (power/RFD focus) | 3-4x5-6 reps (athletic conditioning) | 3x6-8 reps as glute power finisher | 5x3 reps with maximal intent (peak power)",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "kneeling-jump-squat.gif",
+    "frames_extracted": [
+      "frames/kneeling-jump-squat/frame_0_start.png",
+      "frames/kneeling-jump-squat/frame_1_early.png",
+      "frames/kneeling-jump-squat/frame_2_mid.png",
+      "frames/kneeling-jump-squat/frame_3_late.png",
+      "frames/kneeling-jump-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/kneeling-jump-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:15:00Z",
+  "verification_notes": "Obejrzalem wszystkie 5 klatek kluczowych z GIFa jahel. Klatka 0 (start) i 4 (end) pokazuja wysoki klek — oba kolana na podlodze, biodra w pelnym wyproscie, tulow pionowo, posladki+czworogłowe wyraznie podswietlone jako pre-load. Klatki 1 i 3 (early/late) pokazuja faze przejscia z naladowanymi posladkami (czerwone) i podudziami unoszacymi sie z podlogi — moment eksplozywnego wyprostu bioder z snap'em kolan. Klatka 2 (mid) pokazuje lqdowanie w pelnym przysiadzie (parallel) z mocno podswietlonymi posladkami, czworogłowymi i biodrami — kluczowa faza amortyzacji. To czysto biodrowo-napedzane plyo (P10 glutes, P9 quads) — bez dzwigni kolana na starcie wymusza maksymalna moc glute snap. Bilateral, bodyweight, plyometric. Polski standard fitness to 'wybuchowe wstawanie z klęku do przysiadu' lub 'skok z klęku do przysiadu' — uzylem obu w aliases. Trudnosc 6 wg wytycznych usera (wysoka umiejetnosc ale nizsza intensywnosc niz depth jump). Wszystkie pola PL napisane od zera, nie tlumaczone.",
+
+  "tags": ["bilateral", "lower_body", "glutes", "plyometric", "bodyweight", "explosive", "power", "hip_extension", "compound", "advanced", "high_skill"]
+}

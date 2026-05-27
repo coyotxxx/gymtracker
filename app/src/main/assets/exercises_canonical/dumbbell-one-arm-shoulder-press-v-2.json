@@ -1,0 +1,206 @@
+{
+  "id": "dumbbell-one-arm-shoulder-press-v-2",
+  "name": "Dumbbell One-Arm Shoulder Press (Neutral Grip, V2)",
+  "namePl": "OHP hantlą jednorącz (wariant 2 — chwyt neutralny)",
+  "aliases": ["single-arm dumbbell neutral-grip overhead press", "one-arm DB hammer press", "single-arm DB Arnold-style press (neutral)", "unilateral neutral-grip shoulder press", "single-arm palm-in overhead press"],
+  "aliasesPl": ["wyciskanie hantla nad głowę jednorącz chwyt neutralny", "jednorącz OHP z hantlą hammer", "wyciskanie barków hantlą jedną ręką chwyt młotkowy", "unilateralne wyciskanie hantla nad głowę dłoń do wewnątrz", "single-arm OHP neutralny chwyt"],
+
+  "description": "Variation of the unilateral standing dumbbell overhead press performed with a NEUTRAL grip (palm facing inward toward the head, hammer-style) instead of the standard pronated grip. The neutral grip rotates the humerus into a more shoulder-friendly position — less external rotation demand on the gleno-humeral joint — making it a go-to for athletes with impingement, AC joint sensitivity, or limited shoulder mobility. Like the V1, this is a single-dumbbell unilateral exercise that creates an anti-lateral flexion challenge for the core (the load on one side tries to pull the trunk sideways, obliques and QL resist). The V2 also keeps the non-working hand free (hanging by the side), simplifying setup vs. V1 where some athletes hold a counter-balance dumbbell.",
+  "descriptionPl": "Wariant unilateralnego stojącego wyciskania hantli nad głowę wykonywany z chwytem NEUTRALNYM (dłoń skierowana do wewnątrz, w stronę głowy — styl młotkowy / hammer) zamiast standardowego chwytu pronowanego. Chwyt neutralny rotuje kość ramienną do bardziej przyjaznej pozycji dla barku — mniejsze wymaganie rotacji zewnętrznej stawu ramiennego — co czyni go ulubionym wyborem dla osób z impingementem, wrażliwym stawem barkowo-obojczykowym (AC) lub ograniczoną mobilnością. Tak jak V1, jest to ćwiczenie unilateralne z jedną hantlą tworzące wyzwanie anty-fleksji lateralnej dla brzucha (obciążenie po jednej stronie próbuje ściągnąć tułów na bok, skośne i QL się temu opierają). V2 trzyma również wolną rękę luźno przy ciele (zwisa wzdłuż tułowia), upraszczając setup w porównaniu z V1, gdzie część atletów trzyma drugą hantlę jako przeciwwagę.",
+
+  "instructions": [
+    "Take a single dumbbell in one hand. Stand with feet shoulder-width apart for a stable base. The non-working hand hangs naturally by your side (or rests on hip for proprioception).",
+    "Bring the dumbbell to shoulder level with a NEUTRAL grip — palm facing inward toward your head (thumb forward, pinky back), elbow bent ~90°, elbow pointing slightly forward (not flared out to the side).",
+    "Brace core HARD — especially the side opposite to the pressing arm (anti-lateral flexion). Squeeze glutes, ribs DOWN. Stand tall — both hips and shoulders square.",
+    "Inhale, lock the brace, and press the dumbbell straight up overhead, maintaining the neutral grip throughout (DO NOT rotate the palm forward — that would turn it into the standard V1).",
+    "At the top: arm fully locked out, dumbbell directly over the shoulder of the working side, palm still facing inward (the two heads of the dumbbell point forward-back), bicep near ear.",
+    "Lower with control — full ROM, dumbbell back to shoulder level (slightly below ear), neutral grip preserved.",
+    "Complete all reps on one side, then switch arms. Keep trunk vertical — no sideways lean toward the non-working side.",
+    "Exhale at the top of each press."
+  ],
+  "instructionsPl": [
+    "Chwyć jedną hantlę w jedną rękę. Stań ze stopami na szerokość barków dla stabilnej podstawy. Wolna ręka zwisa naturalnie wzdłuż ciała (lub opiera się o biodro dla propriocepcji).",
+    "Podnieś hantel na wysokość barku w chwycie NEUTRALNYM — dłoń skierowana do wewnątrz, w stronę głowy (kciuk do przodu, mały palec do tyłu), łokieć zgięty ~90°, łokieć wskazuje lekko do przodu (a nie odstaje na bok).",
+    "Napnij MOCNO brzuch — zwłaszcza stronę przeciwną do wyciskającej ręki (anty-fleksja lateralna). Ściśnij pośladki, żebra W DÓŁ. Stój wysoko — biodra i barki ustawione równo.",
+    "Wdech, zablokuj napięcie i wyciśnij hantel prosto w górę nad głowę, utrzymując chwyt neutralny przez cały ruch (NIE obracaj dłoni do pronacji — wtedy zmieni się to w standardową V1).",
+    "Na szczycie: ramię w pełnym lock-out, hantel bezpośrednio nad barkiem pracującej strony, dłoń wciąż skierowana do wewnątrz (oba talerze hantla wskazują przód-tył), biceps blisko ucha.",
+    "Opuszczaj kontrolowanym ruchem — pełen ROM, hantel wraca na wysokość barku (lekko poniżej ucha), chwyt neutralny zachowany.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień rękę. Tułów pionowy — bez odchylenia w stronę wolnej ręki.",
+    "Wydech na szczycie każdego wyciskania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "obliques"],
+    "secondary": ["triceps", "upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["quadratus_lumborum", "glutes", "rotator_cuff", "rectus_abdominis", "core"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P9",
+    "obliques": "P8",
+    "triceps": "S7",
+    "upper_chest": "S4",
+    "trapezius": "S6",
+    "serratus_anterior": "S6",
+    "quadratus_lumborum": "S8",
+    "glutes": "S6",
+    "rotator_cuff": "S6",
+    "core": "S8"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-standing-overhead-press", "seated-dumbbell-shoulder-press", "machine-shoulder-press", "dumbbell-standing-one-arm-palm-in-press"],
+    "progression_to": ["half-kneeling-single-arm-dumbbell-press", "single-arm-landmine-press", "single-arm-push-press", "bottoms-up-kettlebell-press", "dumbbell-one-arm-shoulder-press"],
+    "alternatives": ["dumbbell-one-arm-shoulder-press", "dumbbell-standing-one-arm-palm-in-press", "single-arm-landmine-press", "half-kneeling-single-arm-dumbbell-press", "kettlebell-single-arm-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Neutral grip — palm faces your ear, thumb forward",
+      "Dumbbell at shoulder, elbow pointing forward (not flared)",
+      "Feet shoulder-width — wider base for unilateral stability",
+      "Squeeze glutes, brace core HARD on the non-pressing side",
+      "Ribs DOWN, eyes forward, neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Chwyt neutralny — dłoń skierowana do ucha, kciuk do przodu",
+      "Hantel na wysokości barku, łokieć wskazuje do przodu (nie odstaje)",
+      "Stopy na szerokość barków — szersza podstawa dla unilateralnej stabilności",
+      "Ściśnij pośladki, napnij MOCNO brzuch po stronie wolnej ręki",
+      "Żebra W DÓŁ, wzrok do przodu, szyja neutralna"
+    ],
+    "execution_cues": [
+      "Press STRAIGHT up over the working shoulder, not toward the midline",
+      "KEEP the neutral grip — don't rotate palm forward at the top",
+      "Resist lean toward the free side — obliques work HARD",
+      "Wrist stacked over elbow, elbow over shoulder at lockout",
+      "Bicep by ear, palm still facing inward at full lockout"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj PROSTO w górę nad pracujący bark, nie do linii środkowej",
+      "UTRZYMAJ chwyt neutralny — nie obracaj dłoni do pronacji na szczycie",
+      "Walcz z odchyleniem w stronę wolnej ręki — skośne brzucha pracują MOCNO",
+      "Nadgarstek nad łokciem, łokieć nad barkiem w lock-out",
+      "Biceps przy uchu, dłoń wciąż skierowana do wewnątrz w pełnym lock-out"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip rotating to pronated (palm forward) during press — turns V2 into V1",
+        "faultPl": "Chwyt obraca się do pronacji (dłoń do przodu) podczas wyciskania — zmienia V2 w V1",
+        "cause": "Habit from standard OHP, weak supinator/forearm awareness, ego lifting",
+        "causePl": "Nawyk ze standardowego OHP, słaba świadomość supinatora/przedramienia, ego lifting",
+        "cue": "Lock the grip neutral the WHOLE rep. Thumb forward, pinky back — top to bottom.",
+        "cuePl": "Trzymaj chwyt neutralnie PRZEZ CAŁY ruch. Kciuk do przodu, mały palec do tyłu — od dołu do góry."
+      },
+      {
+        "fault": "Lateral lean to the non-working side (trunk tilts away from dumbbell)",
+        "faultPl": "Odchylenie boczne w stronę wolnej ręki (tułów ucieka od hantla)",
+        "cause": "Weak obliques/QL on the working side, weight too heavy, no core brace",
+        "causePl": "Słabe skośne brzucha / QL po stronie pracującej, zbyt duży ciężar, brak napięcia",
+        "cue": "Brace HARD on the side opposite the dumbbell. Reduce weight until you can stand vertical. Film from front.",
+        "cuePl": "Napnij MOCNO stronę przeciwną do hantla. Zmniejsz ciężar aż utrzymasz pion. Nagraj się od przodu."
+      },
+      {
+        "fault": "Elbow flaring out (~90° to the side) at start — defeats the shoulder-friendly point of V2",
+        "faultPl": "Łokieć odstaje na bok (~90°) na starcie — niweczy bezpieczny dla barku sens V2",
+        "cause": "Default 'standard OHP' setup applied to neutral grip, lack of cueing",
+        "causePl": "Domyślny setup 'standardowego OHP' zastosowany do chwytu neutralnego, brak wskazówek",
+        "cue": "Elbow points FORWARD at start, not out. Imagine it pointing at a wall in front of you.",
+        "cuePl": "Łokieć wskazuje DO PRZODU na starcie, nie na bok. Wyobraź sobie że celuje w ścianę przed tobą."
+      },
+      {
+        "fault": "Lower back arching (lumbar hyperextension) under heavy load",
+        "faultPl": "Nadmierne wygięcie dolnych pleców (przeprost lędźwiowy) pod ciężarem",
+        "cause": "Weight too heavy, weak core, limited overhead mobility compensated by lumbar extension",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, ograniczona mobilność overhead kompensowana lordozą lędźwiową",
+        "cue": "Squeeze glutes HARD. Ribs DOWN. Reduce weight. Try half-kneeling version to remove lumbar compensation.",
+        "cuePl": "Ściśnij MOCNO pośladki. Żebra W DÓŁ. Zmniejsz ciężar. Spróbuj wersji w półklęku by usunąć kompensację lędźwiową."
+      },
+      {
+        "fault": "Trunk rotation (working shoulder rotates forward during press)",
+        "faultPl": "Rotacja tułowia (pracujący bark wyrotowuje do przodu podczas wyciskania)",
+        "cause": "Weak anti-rotation core control, asymmetric scapular setup",
+        "causePl": "Słaba kontrola anty-rotacyjna brzucha, asymetryczne ustawienie łopatek",
+        "cue": "Both shoulders squared forward. Sternum points straight ahead the entire rep.",
+        "cuePl": "Oba barki ustawione równo do przodu. Mostek przez cały ruch wskazuje prosto przed siebie."
+      }
+    ],
+    "breathing": "Inhale and brace before each rep. Hold during the press. Exhale at the top or on the descent. Bracing is CRITICAL — the asymmetric load demands constant intra-abdominal pressure. The neutral grip slightly reduces shoulder strain so you can focus more on core stiffness.",
+    "breathingPl": "Wdech i napięcie przed każdym powtórzeniem. Trzymaj podczas wyciskania. Wydech na szczycie lub w dół. Napięcie jest KRYTYCZNE — asymetryczne obciążenie wymaga ciągłego ciśnienia w jamie brzusznej. Chwyt neutralny lekko redukuje obciążenie barku, dzięki czemu możesz skupić się bardziej na sztywności brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "V2 (neutral grip) is already the modification — but if pain persists, reduce ROM (don't go below ear), or switch to single-arm landmine press for an angled, shoulder-friendly path.",
+      "modificationPl": "V2 (chwyt neutralny) jest już modyfikacją — ale jeśli ból nie ustępuje, zmniejsz ROM (nie schodź poniżej ucha), lub przejdź na jednorącz landmine press dla skośnej, przyjaznej dla barku ścieżki.",
+      "alternative": "single-arm-landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to half-kneeling single-arm DB press — removes standing lumbar load and locks the pelvis, eliminating most anti-lateral flexion demand.",
+      "modificationPl": "Przejdź na half-kneeling jednorącz DB press — usuwa stojące obciążenie lędźwiowe i blokuje miednicę, eliminując większość wymagań anty-fleksji lateralnej.",
+      "alternative": "half-kneeling-single-arm-dumbbell-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Neutral grip is friendlier than pronated for the rotator cuff, but with active injury — avoid heavy overhead pressing until cleared by a physiotherapist. Resume with machine shoulder press and low-weight high-rep cuff rehab.",
+      "modificationPl": "Chwyt neutralny jest przyjaźniejszy niż pronowany dla rotatorów, ale przy aktywnej kontuzji — unikaj ciężkiego wyciskania overhead do zgody fizjoterapeuty. Wróć przez machine shoulder press i niskoobciążeniową wysokopowtórzeniową rehabilitację rotatorów.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "core_weakness_or_diastasis_recti",
+      "severity": "modify",
+      "modification": "Skip unilateral standing version until core is strong enough to resist lateral flexion. Start with seated supported DB press or half-kneeling variant.",
+      "modificationPl": "Pomiń unilateralną wersję stojącą do czasu gdy brzuch będzie wystarczająco silny by oprzeć się fleksji lateralnej. Zacznij od siedzącej wersji DB press lub wariantu w półklęku.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 4x6-8 per side (strength) | 3x10-12 per side (shoulder-friendly stabilization focus)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-one-arm-shoulder-press-v-2.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-shoulder-press-v-2/frame_0_start.png",
+      "frames/dumbbell-one-arm-shoulder-press-v-2/frame_1_early.png",
+      "frames/dumbbell-one-arm-shoulder-press-v-2/frame_2_mid.png",
+      "frames/dumbbell-one-arm-shoulder-press-v-2/frame_3_late.png",
+      "frames/dumbbell-one-arm-shoulder-press-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-one-arm-shoulder-press-v-2",
+    "master_slug": "dumbbell-one-arm-shoulder-press-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Kluczowa różnica vs V1: chwyt NEUTRALNY (palm-in / hammer) zamiast pronowanego, oraz BRAK przeciwwagi w drugiej ręce (wolna ręka zwisa wzdłuż ciała). Frame 0 (start): postawa stojąca, stopy ~na szerokość barków, prawa ręka trzyma hantel na wysokości prawego barku w chwycie neutralnym (dłoń skierowana do wewnątrz, do głowy), łokieć wskazuje DO PRZODU (nie odstaje na bok jak w V1 z pronacją), lewa ręka zwisa swobodnie wzdłuż ciała. Podświetlone delty (przednie+lateralne) po prawej stronie + skośne brzucha po stronie wolnej ręki. Frame 2 (mid/szczyt): prawa ręka w pełnym lock-out nad głową — hantel bezpośrednio nad prawym barkiem, ramię wyprostowane, biceps blisko ucha, DŁOŃ WCIĄŻ NEUTRALNA (oba talerze hantli wskazują przód-tył, nie boki), triceps aktywnie podświetlony. Tułów pionowy — bez odchylenia bocznego. Frame 4 (powrót): hantel wraca na wysokość barku, neutralny chwyt utrzymany, ścieżka pionowa nad prawym barkiem. Wariant V2 = shoulder-friendly: chwyt neutralny redukuje rotację zewnętrzną w stawie ramiennym, mniej impingement risk. Plane=frontal (zgodnie z briefem — load po jednej stronie ciała w płaszczyźnie czołowej obciąża anty-fleksję lateralną). Primary muscles: anterior_deltoid + lateral_deltoid + obliques (zgodnie z briefem). Pasuje 1:1 do specyfikacji.",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "dumbbell", "compound", "unilateral", "free_weights", "neutral_grip", "shoulder_friendly", "core_anti_lateral_flexion", "stabilization_demand", "imbalance_correction"]
+}

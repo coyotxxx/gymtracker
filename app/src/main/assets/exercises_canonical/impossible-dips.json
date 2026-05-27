@@ -1,0 +1,205 @@
+{
+  "id": "impossible-dips",
+  "name": "Impossible Dips",
+  "namePl": "Impossible dips",
+  "aliases": ["impossible dip", "impossible dip hold", "planche lean L-sit dip hold", "advanced static dip hold"],
+  "aliasesPl": ["impossible dipy", "statyczny podpór typu impossible dip", "L-sit z pochyleniem typu planche", "zaawansowany statyczny dip"],
+
+  "description": "Advanced static isometric hold performed on a pair of fixed parallel bars. The athlete holds a full support position (arms locked out) while simultaneously raising the legs into an L-sit (legs parallel to the floor) and leaning the torso forward into a planche-lean position. The combination of a horizontal L-sit and a forward shoulder lean dramatically extends the effective lever, throwing enormous static load onto the triceps, lower chest, anterior deltoids and the entire anterior chain. This is an elite calisthenics skill — a key bridge between L-sit, straddle planche and one-arm dip work. Holds are typically measured in seconds (3-15 s) rather than reps, and the move trains tendons, scapular control and full-body line stiffness more than pure hypertrophy.",
+  "descriptionPl": "Zaawansowany statyczny podpór izometryczny wykonywany na parze sztywnych poręczy równoległych. Atleta utrzymuje pełny podpór z wyprostowanymi rękoma, jednocześnie unosząc nogi do pozycji L-sit (nogi równolegle do podłogi) i przechylając tułów do przodu w pozycji planche-lean. Połączenie poziomego L-sit z pochyleniem barków do przodu drastycznie wydłuża dźwignię, ładując ogromne napięcie statyczne na tricepsy, dolną klatkę, przednie delty i cały łańcuch przedni. To elitarny element kalisteniki — pomost między L-sit, planche w rozkroku i pracą nad dipem na jednej ręce. Czas trzymania liczy się w sekundach (3-15 s), a nie w powtórzeniach, ruch trenuje przede wszystkim ścięgna, kontrolę łopatki i sztywność linii ciała, w mniejszym stopniu hipertrofię.",
+
+  "instructions": [
+    "Step into the dip station and grip the parallel bars with a neutral grip, hands directly under the shoulders, knuckles facing outward.",
+    "Press up into a strong support hold: arms fully locked out, elbows hyper-stable, shoulders depressed and protracted (pushed slightly forward), chest tall, core braced like for a maximal squat.",
+    "Slowly raise the straight legs forward until they are parallel to the floor — toes pointed, quads tight, glutes squeezed. This is the L-sit component.",
+    "From the L-sit support, simultaneously lean the torso forward 20-35° so the shoulders travel in front of the hands — this is the planche-lean component.",
+    "Lock the entire body in one rigid line from shoulders to toes. Do not let the hips sag or the legs drop.",
+    "Hold the position breathing shallowly through the nose. The whole length of the arm, chest and anterior shoulder should feel a maximal static contraction.",
+    "Time the hold: start with 3-5 s clean holds, progress toward 10-15 s as control improves. End the hold by either lowering the legs first then standing out of the bars, or by exiting under control to a clean L-sit.",
+    "Rest 90-180 seconds between holds. Treat each hold like a heavy strength set, not a conditioning rep."
+  ],
+  "instructionsPl": [
+    "Wejdź na stację do dipów i chwyć poręcze chwytem neutralnym, dłonie dokładnie pod barkami, knykcie skierowane na zewnątrz.",
+    "Wepchnij się w mocny podpór: ręce w pełnym wyproście, łokcie maksymalnie stabilne, barki ściągnięte w dół i lekko wypchnięte do przodu (protrakcja), klatka wysoko, brzuch napięty jak do maksymalnego przysiadu.",
+    "Powoli unieś proste nogi do przodu aż będą równoległe do podłogi — palce wyciągnięte, czworogłowe napięte, pośladki ściśnięte. To komponent L-sit.",
+    "Z podporu w L-sit jednocześnie pochyl tułów do przodu o 20-35°, tak żeby barki wyszły przed dłonie — to komponent planche-lean.",
+    "Zablokuj całe ciało w jednej sztywnej linii od barków do palców stóp. Nie pozwól biodrom opaść ani nogom zlecieć w dół.",
+    "Utrzymaj pozycję oddychając płytko przez nos. Cała długość ramienia, klatka i przedni bark powinny czuć maksymalny skurcz statyczny.",
+    "Mierz czas trzymania: zacznij od czystych holdów 3-5 s, dochodź do 10-15 s wraz z kontrolą. Wyjdź albo opuszczając najpierw nogi i stając na ziemi, albo wracając do czystego L-sit.",
+    "Odpoczywaj 90-180 sekund między próbami. Traktuj każdy hold jak ciężką serię siłową, nie kondycyjną."
+  ],
+
+  "classification": {
+    "movement_pattern": "isometric_push",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii", "pectoralis_major", "anterior_deltoid"],
+    "secondary": ["serratus_anterior", "rectus_abdominis", "hip_flexors"],
+    "stabilizers": ["rotator_cuff", "core", "obliques", "quadriceps", "forearms", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "pectoralis_major": "P9",
+    "anterior_deltoid": "P9",
+    "serratus_anterior": "S8",
+    "rectus_abdominis": "S8",
+    "hip_flexors": "S7",
+    "rotator_cuff": "S6",
+    "core": "S7",
+    "obliques": "S5",
+    "quadriceps": "S5",
+    "forearms": "S5",
+    "rhomboids": "T3"
+  },
+
+  "equipment": {
+    "required": ["parallel_bars"],
+    "optional": ["chalk", "wrist_wraps", "parallettes"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["l-sit", "straight-bar-dip", "weighted-triceps-dip", "planche-lean"],
+    "progression_to": ["straddle-planche", "one-arm-dip", "full-planche"],
+    "alternatives": ["l-sit", "planche-lean", "ring-support-hold"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lock the elbows hard before adding any lean — never lean with bent arms",
+      "Shoulders down and slightly protracted, not shrugged up to the ears",
+      "Brace the trunk first, then raise the legs — never the other way round",
+      "Bars exactly shoulder width — too wide multiplies the shoulder torque",
+      "Chalk the hands and check grip — slipping out of impossible dip is dangerous"
+    ],
+    "setup_cues_pl": [
+      "Najpierw mocno zablokuj łokcie, dopiero potem dodaj pochylenie — nigdy nie pochylaj się z ugiętymi rękoma",
+      "Barki w dół i lekko wypchnięte do przodu (protrakcja), nie wzruszone do uszu",
+      "Najpierw napnij korpus, dopiero potem unoś nogi — nigdy odwrotnie",
+      "Poręcze dokładnie na szerokość barków — zbyt szeroko mnoży moment obrotowy w barku",
+      "Naczepuj magnezję i sprawdź chwyt — zlecenie z impossible dipa jest niebezpieczne"
+    ],
+    "execution_cues": [
+      "Push the bars down to the floor — long arms, packed shoulders, the whole hold",
+      "Lean the shoulders in front of the hands as if you wanted to plank on the bars",
+      "Squeeze quads, toes, glutes — make the legs feel like a single steel rod",
+      "Count seconds out loud or with a timer — finish the hold on your terms, not when you crack",
+      "Exit clean: lower legs to L-sit first, then drop feet to the floor — never just collapse out"
+    ],
+    "execution_cues_pl": [
+      "Wciskaj poręcze w dół do podłogi — długie ręce, ściągnięte barki, przez cały hold",
+      "Wypchnij barki przed dłonie, jakbyś chciał zrobić deskę na poręczach",
+      "Ściśnij czworogłowe, palce stóp, pośladki — niech nogi czują się jak jeden stalowy pręt",
+      "Licz sekundy na głos lub stoperem — kończ hold na swoich warunkach, nie kiedy się złamiesz",
+      "Wyjdź czysto: najpierw opuść nogi do L-sit, dopiero potem zejdź na ziemię — nigdy nie pozwól sobie po prostu zlecieć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bent / unlocked elbows during the hold",
+        "faultPl": "Zgięte / niezablokowane łokcie podczas holdu",
+        "cause": "Insufficient triceps strength for the lever, or fatigue cracking the lockout. Bent elbows turn an isometric strength move into a slow eccentric — a fast track to elbow tendon overload.",
+        "causePl": "Niewystarczająca siła tricepsa dla tej dźwigni lub zmęczenie łamiące blokadę. Zgięte łokcie zmieniają izometrię siłową w powolny ekscentryk — najszybsza droga do przeciążenia ścięgien łokcia.",
+        "cue": "If you cannot keep the elbows fully locked, you are not ready for impossible dips — return to straight L-sit on bars and planche-lean separately until both are 15 s clean.",
+        "cuePl": "Jeśli nie utrzymasz w pełni zablokowanych łokci, nie jesteś gotowy na impossible dipy — wróć do osobnego L-sit na poręczach i planche-lean aż każdy z nich będzie czysty 15 s."
+      },
+      {
+        "fault": "Hips sagging / legs dropping below horizontal",
+        "faultPl": "Biodra opadają / nogi schodzą poniżej poziomu",
+        "cause": "Weak hip flexors, weak compression strength, or losing core brace. The hold becomes a regular support with leaning torso — the lever shortens and the difficulty drops dramatically, but the move stops looking like impossible dip.",
+        "causePl": "Słabe zginacze biodra, słaba siła kompresji lub utrata napięcia korpusu. Hold zmienia się w zwykły podpór z pochylonym tułowiem — dźwignia się skraca i trudność drastycznie spada, ale ruch przestaje być impossible dipem.",
+        "cue": "Actively pull the toes toward your face and pinch the front of the hip — picture lifting the feet up to a shelf above you. End the hold the moment the legs drop, even if the time was short.",
+        "cuePl": "Aktywnie ciągnij palce stóp w stronę twarzy i ściskaj przód biodra — wyobraź sobie, że unosisz stopy na półkę nad tobą. Zakończ hold w momencie, gdy nogi spadną, nawet jeśli czas był krótki."
+      },
+      {
+        "fault": "No real planche-lean (torso stays vertical)",
+        "faultPl": "Brak prawdziwego pochylenia planche (tułów zostaje pionowo)",
+        "cause": "Fear of falling forward, weak anterior shoulders, or being unfamiliar with planche-lean as a separate skill. Without the forward lean the move is just an L-sit support hold and trains a completely different stimulus.",
+        "causePl": "Strach przed upadkiem do przodu, słabe przednie barki lub brak osobnego treningu planche-lean. Bez pochylenia do przodu ruch jest tylko podporem w L-sit i trenuje zupełnie inny bodziec.",
+        "cue": "Train planche-lean on floor parallettes for 3-4 weeks before chasing impossible dips — only when 20 s lean is comfortable do you have business stacking the L-sit on top.",
+        "cuePl": "Przez 3-4 tygodnie trenuj planche-lean na parallettes na ziemi, zanim weźmiesz się za impossible dipy — dopiero gdy 20 s pochylenia jest wygodne, masz interes nakładać L-sit na górę."
+      },
+      {
+        "fault": "Shoulders shrugged / rolling forward into the bars",
+        "faultPl": "Barki wzruszone / wjeżdżające do przodu w poręcze",
+        "cause": "Loss of scapular control under high static load. The humeral head migrates anteriorly in the socket, irritating the anterior capsule, biceps tendon and labrum — a classic gymnast injury pattern.",
+        "causePl": "Utrata kontroli łopatki pod dużym obciążeniem statycznym. Głowa kości ramiennej wjeżdża do przodu w panewce, drażniąc przednią torebkę stawową, ścięgno bicepsa i obrąbek — klasyczny wzorzec urazu u gimnastyków.",
+        "cue": "Throughout the hold keep ears as far from shoulders as possible and feel the lats engage. The second the shoulders start rolling, exit the hold — that is your true rep limit.",
+        "cuePl": "Przez cały hold trzymaj uszy jak najdalej od barków i czuj zaangażowanie grzbietu (najszerszy). W sekundzie, w której barki zaczynają się rolować do przodu, wychodź z holdu — to jest twój prawdziwy limit."
+      },
+      {
+        "fault": "Holding the breath / red-face Valsalva for full duration",
+        "faultPl": "Wstrzymywanie oddechu / pełna Valsalva przez cały hold",
+        "cause": "Treating impossible dip like a 1RM bench press. A 10-second static hold with closed glottis causes a sharp blood pressure spike and risks blackout in the recovery phase.",
+        "causePl": "Traktowanie impossible dipa jak maksymalnego wyciskania. 10-sekundowy hold z zamkniętą głośnią powoduje gwałtowny skok ciśnienia i grozi utratą przytomności w fazie powrotu.",
+        "cue": "Take a deep diaphragmatic breath before entering the hold, then breathe shallowly through the nose during the hold. Never close the glottis for more than 2-3 seconds.",
+        "cuePl": "Zrób głęboki wdech przeponowy przed wejściem w hold, potem oddychaj płytko przez nos w trakcie holdu. Nigdy nie zamykaj głośni na dłużej niż 2-3 sekundy."
+      }
+    ],
+    "breathing": "Inhale deeply and brace the core before lifting the legs. During the hold breathe shallowly through the nose — small sips of air, never a full Valsalva for more than 2-3 seconds. Exhale slowly and stand out under control at the end of the hold.",
+    "breathingPl": "Weź głęboki wdech i napnij brzuch zanim uniesiesz nogi. Podczas holdu oddychaj płytko przez nos — małe łyki powietrza, nigdy pełna Valsalva dłuższa niż 2-3 sekundy. Wydychaj powoli i wychodź pod kontrolą na końcu holdu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "The forward planche-lean component drives the humeral head into the anterior capsule under maximal static load. Avoid until pain-free and asymptomatic in regular dips and L-sit. Switch to closed-chain pushing without anterior lean.",
+      "modificationPl": "Komponent planche-lean wpycha głowę kości ramiennej w przednią torebkę stawową pod maksymalnym obciążeniem statycznym. Unikaj do ustąpienia bólu i braku objawów w zwykłych dipach i L-sit. Przejdź na pchanie zamkniętego łańcucha bez pochylenia do przodu.",
+      "alternative": "l-sit"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Long isometric holds under high lever load are extremely irritating to a compromised distal triceps or common extensor tendon. Reduce to short L-sit holds with vertical torso, and rebuild tendon capacity with slow eccentric dips before returning.",
+      "modificationPl": "Długie izometryczne holdy pod dużą dźwignią są wyjątkowo drażniące dla osłabionego dystalnego ścięgna tricepsa lub wspólnego ścięgna prostowników. Zredukuj do krótkich holdów L-sit z pionowym tułowiem i odbuduj wytrzymałość ścięgna powolnymi ekscentrykami dipów przed powrotem.",
+      "alternative": "l-sit"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "The forward lean shifts a huge portion of bodyweight onto the wrist joint in extension under static load. Use rigid wrist wraps, reduce lean angle to 10-15° and shorten holds to 3-5 s, or switch to parallettes for a slightly more wrist-friendly position.",
+      "modificationPl": "Pochylenie do przodu przerzuca olbrzymią część masy ciała na staw nadgarstkowy w wyproście pod obciążeniem statycznym. Używaj sztywnych opasek, zmniejsz kąt pochylenia do 10-15° i skróć holdy do 3-5 s, lub przejdź na parallettes dla lekko bardziej przyjaznej nadgarstkom pozycji.",
+      "alternative": "planche-lean"
+    },
+    {
+      "condition": "lumbar_disc_issue",
+      "severity": "modify",
+      "modification": "Maximal L-sit compression with hip flexors firing can yank on the lumbar spine if core bracing fails. Train compression and dead bug variations first; perform the hold with knees tucked instead of straight legs to reduce lever and lumbar pull.",
+      "modificationPl": "Maksymalna kompresja L-sit z napiętymi zginaczami biodra może ciągnąć odcinek lędźwiowy, jeśli zawiedzie napięcie korpusu. Najpierw trenuj kompresję i warianty dead bug; wykonuj hold ze zgiętymi kolanami zamiast prostych nóg, by skrócić dźwignię i odciążyć lędźwie.",
+      "alternative": "tucked-impossible-dip"
+    }
+  ],
+
+  "typical_sets_reps": "5x 3-5 s hold (strength skill work) | 3-4x 8-12 s hold (advanced static endurance) | EMOM 6-10 min x 1 quality hold (skill density)",
+
+  "media": {
+    "primary": "impossible-dips.gif",
+    "frames_extracted": [
+      "frames/impossible-dips/frame_0_start.png",
+      "frames/impossible-dips/frame_1_early.png",
+      "frames/impossible-dips/frame_2_mid.png",
+      "frames/impossible-dips/frame_3_late.png",
+      "frames/impossible-dips/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/impossible-dips"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Klatka 0 (start): postać w pełnym podporze na sztywnych poręczach stacji do dipów (power tower z drugą belką do knee raise w tle), ręce całkowicie wyprostowane i zablokowane, NOGI WYPROSTOWANE I UNIESIONE DO PRZODU RÓWNOLEGLE DO PODŁOGI (wyraźny L-sit), tułów lekko pochylony do przodu — początek holdu. Klatka 1 (early) i klatki 3 (late) pokazują podwójny obrys postaci ('echo' GIFa) sygnalizujący że pomiędzy klatkami praktycznie nie ma ruchu zgięcia łokci — to NIE jest dynamiczny dip. Klatka 2 (mid): wyraźniej widać pochylenie tułowia do przodu ~20-30° (planche-lean), barki przed dłońmi, nogi nadal w L-sit poziomo, łokcie nadal całkowicie wyprostowane — to charakterystyczna pozycja IMPOSSIBLE DIP HOLD (połączenie L-sit + planche-lean na zablokowanych rękach), a nie zwykły dip z ruchem zginania/prostowania. Klatka 4 (end): powrót do pozycji startowej, identyczna sylwetka jak klatka 0. WNIOSEK: to STATYCZNY izometryczny hold — elitarna umiejętność kalisteniki, mierzona w sekundach holdu, nie powtórzeniach. Mięśnie podświetlone anatomicznie: tricepsy (cała tylna część ramienia, maksymalne napięcie izometryczne), klatka piersiowa (mocno), przedni delt (mocno), serratus anterior (protrakcja barków), brzuch (utrzymanie L-sit), zginacze biodra. Klasyfikacja: isometric_push / compound / bilateral / sagittal / closed_chain. Difficulty 9/10 — bezpośrednio przed planche skills. Pełna terminologia PL napisana od zera (impossible dipy, podpór izometryczny, planche-lean, L-sit, knykcie, protrakcja, dźwignia, izometria, Valsalva, ekscentryk), bez tłumaczenia maszynowego, ze zwrotami specyficznymi dla polskiej kalisteniki ('hold', 'planche-lean' zostawione w oryginale jako uznane terminy międzynarodowe).",
+
+  "tags": ["calisthenics", "bodyweight", "parallel_bars", "upper_body", "push", "isometric", "static_hold", "l_sit", "planche_lean", "advanced", "elite_skill", "compound", "triceps_builder", "anterior_chain"]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "hands-bike",
+  "name": "Hands Bike",
+  "namePl": "Hands bike (rower rękami)",
+  "aliases": ["hand bike", "upper body ergometer", "arm ergometer", "arm bike", "arm crank ergometer", "UBE", "upper body cycle"],
+  "aliasesPl": ["rower rękami", "ergometr ramienny", "ergometr górnej części ciała", "ręczny rowerek", "rower dla rąk", "korba ramienna"],
+
+  "description": "An upper body cardio and dynamic warm-up performed on a seated arm ergometer (hand bike, UBE). The user sits on the platform, grips the two rotating handles, and pedals them in a continuous circular motion — pushing one handle away while pulling the other toward the body, just like cycling but with the arms. Used as a low-impact warm-up before pressing or pulling sessions, as conditioning when the lower body is injured, and as a mobility-friendly cardio option for shoulders and thoracic spine. Recruits the chest and front delts during the push phase, the back and biceps during the pull phase, and the rotator cuff continuously as a stabilizer.",
+  "descriptionPl": "Trening cardio i dynamiczna rozgrzewka górnej części ciała wykonywana na siedzącym ergometrze ramiennym (hands bike, UBE). Użytkownik siada na platformie, chwyta dwa obrotowe uchwyty i pedałuje nimi w ciągłym ruchu kołowym — jedną ręką pcha rączkę od siebie, drugą przyciąga do siebie, dokładnie jak na rowerze, ale rękami. Wykorzystywany jako delikatna rozgrzewka przed treningiem pchania lub ciągnięcia, jako forma kondycji gdy dolne ciało jest kontuzjowane, oraz jako bezpieczna dla stawów opcja cardio dla barków i odcinka piersiowego kręgosłupa. W fazie pchania pracują klatka i przednie aktony naramiennych, w fazie ciągnięcia plecy i biceps, a stożek rotatorów stabilizuje przez cały czas.",
+
+  "instructions": [
+    "Sit on the platform of the upper body ergometer with feet flat on the foot rests. Adjust the seat so that, with the arms extended at the farthest point of the cycle, the elbows are slightly bent — never fully locked.",
+    "Grip both handles with a neutral grip (palms facing each other) or pronated grip, whichever the machine offers. Keep the wrists straight.",
+    "Sit tall: ribcage stacked over pelvis, shoulders pulled slightly down and back, core gently braced.",
+    "Begin pedaling the handles forward in smooth circles. One hand pushes the handle away from the chest while the opposite hand pulls its handle toward the chest — the motion is continuous and alternating, like cycling.",
+    "Match the cadence to the goal: 50–60 rpm for an easy warm-up (3–5 minutes), 70–90 rpm for steady cardio (10–20 minutes), faster bursts for intervals.",
+    "Breathe rhythmically with the cadence — never hold the breath. Keep the torso quiet; the work happens at the shoulders, not by rocking the back.",
+    "After the working time is up, gradually slow the cadence over 30–60 seconds for an active cooldown. Many machines also allow reverse-direction pedaling — alternate forward/backward to balance push and pull demand."
+  ],
+  "instructionsPl": [
+    "Usiądź na platformie ergometru ramiennego, stopy płasko na podnóżkach. Ustaw siedzisko tak, by w najdalszym punkcie cyklu, gdy ramiona są wyprostowane, łokcie były jeszcze lekko ugięte — nigdy w pełni zablokowane.",
+    "Chwyć oba uchwyty chwytem neutralnym (dłonie zwrócone do siebie) lub nachwytem — w zależności od konstrukcji urządzenia. Nadgarstki trzymaj proste.",
+    "Usiądź wyprostowany: klatka piersiowa nad miednicą, barki lekko ściągnięte w dół i do tyłu, brzuch delikatnie napięty.",
+    "Zacznij pedałować rączkami do przodu w płynnych okręgach. Jedna ręka pcha uchwyt od klatki, druga w tym samym czasie przyciąga swój uchwyt do klatki — ruch jest ciągły i naprzemienny, dokładnie jak na rowerze.",
+    "Dopasuj kadencję do celu: 50–60 obr./min na lekką rozgrzewkę (3–5 min), 70–90 obr./min na spokojne cardio (10–20 min), szybsze zrywy na interwały.",
+    "Oddychaj rytmicznie zgodnie z kadencją — nigdy nie wstrzymuj oddechu. Trzymaj tułów spokojny; praca odbywa się w barkach, nie przez kołysanie pleców.",
+    "Po zakończeniu czasu pracy stopniowo zwalniaj kadencję przez 30–60 sekund jako aktywne wyciszenie. Wiele maszyn pozwala też pedałować do tyłu — zmieniaj kierunek, by zbalansować obciążenie pchania i ciągnięcia."
+  ],
+
+  "classification": {
+    "movement_pattern": "conditioning",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoid"],
+    "secondary": ["rotator_cuff", "latissimus_dorsi", "biceps_brachii", "triceps_brachii", "trapezius_upper"],
+    "stabilizers": ["core", "serratus_anterior", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P7",
+    "anterior_deltoid": "P7",
+    "rotator_cuff": "S6",
+    "latissimus_dorsi": "S6",
+    "biceps_brachii": "S5",
+    "triceps_brachii": "S5",
+    "trapezius_upper": "S4",
+    "core": "T3",
+    "serratus_anterior": "T3",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["upper_body_ergometer"],
+    "optional": []
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["rowing-machine", "battle-rope-waves", "ski-erg"],
+    "alternatives": ["arm-circles", "band-pull-apart", "shoulder-dislocates-with-band", "rowing-machine"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat distance set so elbows stay slightly bent at the farthest reach — never lock out",
+      "Sit tall, ribs stacked over hips, shoulders pulled gently down",
+      "Neutral grip on the handles, wrists straight",
+      "Feet planted flat on the foot rests for a stable base",
+      "Core lightly braced — torso stays quiet through the whole cycle"
+    ],
+    "setup_cues_pl": [
+      "Ustaw odległość siedziska tak, by w najdalszym punkcie łokcie były ciągle lekko ugięte — nigdy w pełni wyprostowane",
+      "Usiądź prosto, żebra nad biodrami, barki delikatnie ściągnięte w dół",
+      "Chwyt neutralny na uchwytach, nadgarstki proste",
+      "Stopy płasko na podnóżkach jako stabilna baza",
+      "Brzuch lekko napięty — tułów spokojny przez cały cykl ruchu"
+    ],
+    "execution_cues": [
+      "Pedal in smooth circles — think 'paint a full circle', not push-pull jerks",
+      "One hand pushes while the other pulls — continuous, alternating, no dead spots",
+      "Keep elbows in their natural arc; don't fling them out wide",
+      "Breathe with the rhythm — typically 1 breath per 2–3 revolutions",
+      "Stay seated upright; resist the urge to rock the torso for momentum"
+    ],
+    "execution_cues_pl": [
+      "Pedałuj w płynnych okręgach — myśl 'narysuj pełne koło', nie szarpane pchnięcia/przyciągnięcia",
+      "Jedna ręka pcha, druga w tym czasie ciągnie — ciągle, naprzemiennie, bez martwych punktów",
+      "Łokcie poruszaj w naturalnym łuku, nie odpychaj ich szeroko na boki",
+      "Oddychaj w rytmie — zwykle 1 oddech na 2–3 obroty",
+      "Pozostań wyprostowany w siedzeniu; nie kołysz tułowiem, by pomagać sobie rozpędem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Locking the elbows at the far point of the cycle",
+        "faultPl": "Blokowanie łokci w najdalszym punkcie cyklu",
+        "cause": "Seat set too far from the machine, or reaching aggressively to feel a stretch",
+        "causePl": "Siedzenie ustawione zbyt daleko od maszyny lub agresywne sięganie w celu poczucia rozciągnięcia",
+        "cue": "Bring the seat closer until elbows have a small bend at maximum reach — protect the elbow joint and biceps tendon",
+        "cuePl": "Przysuń siedzisko bliżej, aż łokcie w najdalszym punkcie zachowają niewielkie zgięcie — chronisz staw łokciowy i ścięgno bicepsa"
+      },
+      {
+        "fault": "Rocking the torso to push the handles",
+        "faultPl": "Kołysanie tułowiem, by pchać uchwyty",
+        "cause": "Resistance set too high for the user's level, or weak shoulder endurance — the body recruits the trunk for momentum",
+        "causePl": "Zbyt duży opór jak na poziom użytkownika lub słaba wytrzymałość barków — ciało wspomaga się rozpędem tułowia",
+        "cue": "Lower the resistance until the torso can stay completely still and the arms do all the work",
+        "cuePl": "Zmniejsz opór, aż tułów może pozostać zupełnie nieruchomy, a całą pracę wykonują ramiona"
+      },
+      {
+        "fault": "Shrugging shoulders up toward the ears",
+        "faultPl": "Wciąganie barków w górę w kierunku uszu",
+        "cause": "Upper traps overpowering the chest and delts; typical for desk workers and after long sessions",
+        "causePl": "Górne trapezy przejmują pracę klatki i naramiennych; typowe dla osób pracujących przy biurku oraz przy dłuższych sesjach",
+        "cue": "Set the shoulders DOWN and back before starting; check posture every 30 seconds during the work",
+        "cuePl": "Ustaw barki W DÓŁ i delikatnie do tyłu przed startem; co 30 sekund sprawdzaj postawę w trakcie pracy"
+      },
+      {
+        "fault": "Holding the breath during harder intervals",
+        "faultPl": "Wstrzymywanie oddechu na trudniejszych interwałach",
+        "cause": "Effort spikes, ribcage locks, intra-thoracic pressure jumps — counterproductive for cardio work",
+        "causePl": "Skok wysiłku, klatka się usztywnia, ciśnienie wewnątrz klatki rośnie — odwrotny efekt do zamierzonego w treningu cardio",
+        "cue": "Match breath to cadence — if you can't talk in short sentences, the resistance is too high for steady cardio",
+        "cuePl": "Dopasuj oddech do kadencji — jeśli nie da się rzucić krótkim zdaniem, opór jest za duży na spokojne cardio"
+      },
+      {
+        "fault": "Uneven cadence — one arm dominates",
+        "faultPl": "Nierówna kadencja — jedna ręka dominuje",
+        "cause": "Strength asymmetry between sides; weaker side fails to push/pull with the same force, dominant side compensates",
+        "causePl": "Asymetria siły między stronami; słabsza strona nie pcha/ciągnie z tą samą siłą, dominująca kompensuje",
+        "cue": "Match cadence on both sides; if it's hard, do short sessions of single-arm pedaling (where machine allows) to balance the sides",
+        "cuePl": "Wyrównuj kadencję po obu stronach; jeśli to trudne, rób krótkie sesje pedałowania jedną ręką (jeśli maszyna pozwala), by zbalansować strony"
+      }
+    ],
+    "breathing": "Match the breath to the cadence — typically one full breath cycle (inhale + exhale) per 2–3 handle revolutions during easy work, faster during intervals. Never hold the breath; if you find yourself bracing, lower the resistance.",
+    "breathingPl": "Dopasuj oddech do kadencji — zwykle pełen cykl oddechu (wdech + wydech) na 2–3 obroty uchwytów przy lekkim wysiłku, szybciej na interwałach. Nigdy nie wstrzymuj oddechu; jeśli się napinasz — zmniejsz opór."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_injury",
+      "severity": "avoid",
+      "modification": "Repetitive circular motion under load can aggravate rotator cuff strains, AC joint sprains, and labral irritation. Skip until cleared by a physiotherapist.",
+      "modificationPl": "Powtarzalny ruch kołowy pod obciążeniem może zaostrzyć naderwania stożka rotatorów, skręcenia stawu AC i podrażnienia obrąbka. Pomiń do czasu zgody fizjoterapeuty.",
+      "alternative": "stationary-bike-walk"
+    },
+    {
+      "condition": "recent_shoulder_surgery",
+      "severity": "modify",
+      "modification": "Use only after clearance from your surgeon/rehab specialist. Start with no resistance, partial ROM, short durations (1–2 min), and progress gradually under guidance.",
+      "modificationPl": "Stosuj wyłącznie za zgodą chirurga/rehabilitanta. Zacznij bez oporu, w częściowym zakresie ruchu, na krótkich czasach (1–2 min) i stopniowo progresuj pod nadzorem.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Upper-body cardio raises blood pressure more than lower-body cardio at the same workload. Keep intensity easy-to-moderate and monitor BP; consult your doctor before higher-intensity intervals.",
+      "modificationPl": "Cardio górną częścią ciała podnosi ciśnienie krwi mocniej niż dolną przy tym samym obciążeniu. Trzymaj intensywność lekką do umiarkowanej i monitoruj ciśnienie; przed interwałami o wyższej intensywności skonsultuj się z lekarzem.",
+      "alternative": "stationary-bike-walk"
+    },
+    {
+      "condition": "wrist_or_elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "Continuous gripping and circular motion can flare tendinopathies. Use lighter resistance, neutral grip when possible, and shorter durations; stop if pain increases.",
+      "modificationPl": "Ciągły chwyt i ruch kołowy mogą zaostrzyć tendinopatie. Stosuj lżejszy opór, chwyt neutralny gdy to możliwe oraz krótsze czasy; przerwij, jeśli ból narasta.",
+      "alternative": "stationary-bike-walk"
+    }
+  ],
+
+  "typical_sets_reps": "Rozgrzewka: 3-5 min lekko (50-60 rpm) | Cardio: 10-20 min umiarkowanie (70-90 rpm) | Interwały: 8-10x 30s on / 30s off",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "hands-bike.gif",
+    "frames_extracted": [
+      "frames/hands-bike/frame_0_start.png",
+      "frames/hands-bike/frame_1_early.png",
+      "frames/hands-bike/frame_2_mid.png",
+      "frames/hands-bike/frame_3_late.png",
+      "frames/hands-bike/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/hands-bike"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek). To NIE jest dynamic warm-up gdzie ręce naśladują pedały — to siedzący ergometr ramienny (Upper Body Ergometer, UBE) z dwoma obrotowymi uchwytami. Model siedzi na platformie z podnóżkami, stopy płasko, chwyta dwa uchwyty zamontowane na korbach przed sobą i pedałuje nimi w okręgach jak rękami na rowerze. Frame_0/start: pozycja siedząca, ramiona blisko ciała, podświetlone klatka piersiowa, przednie aktony, lats, trapezy górne, biceps. Frame_2/mid: ruch ghost-overlay pokazuje rotację jednej ręki do przodu (faza pchania klatką/delts) i drugiej w kierunku ciała (faza ciągnięcia lats/biceps). Frame_4/end: powrót do pozycji wyjściowej. Klasyczny ruch ergometru ramiennego. Decyzje schema: category=cardio (UBE to cardio dla górnej części ciała, jest używany jako warm-up i full cardio — schema nie ma 'mobility' w enum); mechanic=compound (dynamiczny, wielostawowy ruch — NIE isometric mimo sugestii w taskiem, bo to ciągłe pedałowanie a nie utrzymanie pozycji); movement_pattern=conditioning (zgodnie ze schema dla cardio/UBE); force=both (jedna ręka pcha, druga ciągnie w tym samym cyklu); laterality=alternating (każda ręka w innym punkcie cyklu, jak prawdziwy rower); plane=transverse (ruch kołowy odbywa się w płaszczyźnie poprzecznej względem klatki); kinetic_chain=open (ręce na uchwytach, nie na podłożu). Mięśnie zgodne z task i z podświetleniem na GIFie. P7/P7 dla pecs + ant_delt — moderately high, nie najwyższe bo to cardio nie hipertrofia. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego; użyto polskiej terminologii fitness (ergometr ramienny, hands bike, korba ramienna, kadencja, obroty/min). Brak yuhonas_id — ten konkretny ruch (UBE) nie istnieje w bazie yuhonas (która ma głównie hantle/sztanga/maszyny siłowe). GIF skopiowany: 296 KB.",
+
+  "tags": ["cardio", "upper_body_cardio", "warmup", "conditioning", "machine", "low_impact", "rehab_friendly", "beginner_friendly", "shoulder_friendly", "no_lower_body"]
+}

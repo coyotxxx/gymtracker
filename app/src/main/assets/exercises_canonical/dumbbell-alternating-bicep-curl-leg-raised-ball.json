@@ -1,0 +1,207 @@
+{
+  "id": "dumbbell-alternating-bicep-curl-leg-raised-ball",
+  "name": "Dumbbell Alternating Bicep Curl on Exercise Ball with Leg Raised",
+  "namePl": "Naprzemienne uginanie ramion z hantlami na piłce gimnastycznej z uniesioną nogą",
+  "aliases": ["alternating db curl on stability ball single leg", "single-leg seated alternating dumbbell curl on swiss ball", "stability ball alternating curl leg lift"],
+  "aliasesPl": ["naprzemienne uginanie hantli siedząc na piłce z uniesioną nogą", "alternujące uginanie bicepsów na piłce gimnastycznej jednonóż", "curl naprzemienny na piłce z podniesioną nogą"],
+
+  "description": "Alternating dumbbell biceps curl performed seated on a Swiss ball with one leg lifted off the floor. The combination of an unstable seat (the ball), a single point of ground contact (one foot) and unilateral upper-body loading creates a large anti-rotation and anti-lateral-flexion demand on the core while still providing a meaningful curl stimulus for the elbow flexors. Each arm curls one at a time so the rest of the body must resist tipping toward the working side. This is a low-load, core-integration variant of the standard alternating dumbbell curl rather than a heavy mass-builder for the arms.",
+  "descriptionPl": "Naprzemienne uginanie ramion z hantlami wykonywane w siadzie na piłce gimnastycznej z jedną nogą uniesioną nad podłogę. Połączenie niestabilnej podstawy (piłka), pojedynczego punktu kontaktu z podłogą (jedna stopa) i jednostronnego obciążenia górnej części ciała tworzy duże wymaganie antyrotacyjne i antylateralfleksyjne dla mięśni głębokich (core), zachowując jednocześnie istotny bodziec uginający dla zginaczy łokcia. Każde ramię ugina się osobno, więc reszta ciała musi opierać się przechylaniu w stronę pracującego ramienia. Jest to wariant uginania naprzemiennego z hantlami zorientowany na integrację z core przy niskim obciążeniu, a nie ciężkie ćwiczenie masowe na ramiona.",
+
+  "instructions": [
+    "Sit upright on a properly inflated Swiss ball with one dumbbell in each hand, arms hanging at your sides in a neutral (palms-in) grip.",
+    "Place both feet flat on the floor under your knees. Set your pelvis neutral, ribs stacked over hips, chest tall and shoulders pulled back and down.",
+    "Lift one foot off the floor and hold the knee at roughly 90 degrees, thigh roughly parallel to the floor. Keep this leg raised for the entire set (or alternate legs set-to-set).",
+    "Brace your core hard — feel the obliques on the side of the standing leg switch on to stop the ball from rolling.",
+    "Curl one dumbbell up by flexing the elbow, rotating the wrist into supination (palm up) as the dumbbell passes the bottom third of the range. Exhale during the curl.",
+    "At the top, biceps fully contracted, the working hand stops at shoulder height with the palm facing the shoulder. Briefly squeeze.",
+    "Lower that dumbbell under control to full elbow extension while rotating the wrist back to neutral. Inhale during the descent.",
+    "Repeat on the opposite arm. Throughout the alternation the torso must remain vertical and the lifted knee must remain at the same height — do not let the body tilt toward the working arm.",
+    "Complete the prescribed reps per arm, swap the lifted leg for the next set so the obliques work on both sides equally."
+  ],
+  "instructionsPl": [
+    "Usiądź wyprostowany na prawidłowo napompowanej piłce gimnastycznej z hantlą w każdej ręce, ramiona swobodnie wzdłuż tułowia, chwyt neutralny (dłonie do siebie).",
+    "Postaw obie stopy płasko na podłodze, dokładnie pod kolanami. Miednica neutralna, żebra ułożone nad biodrami, klatka uniesiona, barki ściągnięte w tył i w dół.",
+    "Unieś jedną stopę nad podłogę i utrzymaj kolano zgięte około 90 stopni, udo mniej więcej równolegle do podłogi. Trzymaj tę nogę uniesioną przez całą serię (lub zmieniaj nogę między seriami).",
+    "Mocno napnij brzuch — poczuj jak mięśnie skośne po stronie nogi stojącej włączają się, żeby piłka nie odjechała.",
+    "Ugnij jedną hantlę w górę zginając staw łokciowy, jednocześnie obracając nadgarstek do supinacji (dłoń do góry) gdy hantla minie dolną jedną trzecią ruchu. Wydychaj w fazie uginania.",
+    "W górnej pozycji biceps jest w pełnym skurczu, pracująca dłoń zatrzymuje się na wysokości barku, dłoń skierowana w stronę barku. Krótko napnij.",
+    "Opuść tę hantlę w sposób kontrolowany do pełnego wyprostu łokcia, obracając nadgarstek z powrotem do pozycji neutralnej. Wdech podczas opuszczania.",
+    "Powtórz drugim ramieniem. Podczas naprzemiennej pracy tułów musi pozostać pionowo, a uniesione kolano musi pozostać na tej samej wysokości — nie pozwól ciału przechylić się w stronę pracującego ramienia.",
+    "Wykonaj zadaną liczbę powtórzeń na ramię, w kolejnej serii zmień nogę uniesioną, żeby skośne pracowały równo po obu stronach."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "core"],
+    "secondary": ["brachialis", "brachioradialis", "obliques"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "hip_flexors", "quadriceps", "erector_spinae", "glute_medius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P9",
+    "core": "P7",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "obliques": "S6",
+    "hip_flexors": "T4",
+    "quadriceps": "T3",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "erector_spinae": "T3",
+    "glute_medius": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "exercise_ball"],
+    "optional": ["wall_for_safety", "mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-curl", "seated-dumbbell-curl", "stability-ball-seated-balance"],
+    "progression_to": ["dumbbell-curl-on-stability-ball-with-leg-raised-both-arms-together", "single-leg-standing-dumbbell-curl", "bosu-ball-alternating-curl"],
+    "alternatives": ["dumbbell-alternating-bicep-curl-on-exercise-ball", "seated-alternating-dumbbell-curl", "standing-alternating-dumbbell-curl", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Ball firmly inflated — hips slightly above knees when seated",
+      "Sit tall, ribs over hips, shoulders pulled back and down",
+      "Dumbbells hanging in neutral grip, elbows tight to the ribs",
+      "Lift one knee to roughly 90 degrees, thigh parallel to floor",
+      "Brace core before the first curl — obliques of the standing-leg side wake up"
+    ],
+    "setup_cues_pl": [
+      "Piłka dobrze napompowana — biodra nieco wyżej niż kolana w siadzie",
+      "Siedź wyprostowany, żebra nad biodrami, barki ściągnięte w tył i w dół",
+      "Hantle wiszą w chwycie neutralnym, łokcie przyklejone do żeber",
+      "Unieś jedno kolano do około 90 stopni, udo równolegle do podłogi",
+      "Napnij core przed pierwszym powtórzeniem — skośne po stronie nogi stojącej włączają się"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm stays pinned to your side",
+      "Supinate the wrist as you curl up, neutral back to start",
+      "Squeeze the biceps at the top, palm facing the shoulder",
+      "Lower under control 2-3 seconds, full elbow extension at the bottom",
+      "Torso stays vertical — do not lean toward the curling arm or let the lifted knee drop"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem przyklejone do boku",
+      "Supinuj nadgarstek podczas uginania, wracaj do neutralnego w dolnej pozycji",
+      "Spinaj biceps w górnej pozycji, dłoń skierowana w stronę barku",
+      "Opuszczaj kontrolowanie 2-3 sekundy, pełny wyprost łokcia na dole",
+      "Tułów pionowo — nie pochylaj się w stronę pracującego ramienia i nie opuszczaj uniesionego kolana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso tilts toward the working arm",
+        "faultPl": "Tułów przechyla się w stronę pracującego ramienia",
+        "cause": "Weak contralateral obliques, load too heavy for the unstable setup, no anti-lateral-flexion bracing established before the first rep",
+        "causePl": "Słabe mięśnie skośne po przeciwnej stronie, zbyt duży ciężar jak na niestabilną podstawę, brak antylateralnego napięcia core przed pierwszym powtórzeniem",
+        "cue": "Picture a string from the crown of your head straight to the ceiling. Brace the side opposite the curling arm BEFORE you lift.",
+        "cuePl": "Wyobraź sobie nitkę ciągnącą czubek głowy prosto do sufitu. Napnij stronę przeciwną do pracującego ramienia ZANIM zaczniesz uginać."
+      },
+      {
+        "fault": "Lifted leg drops or swings to help the rep",
+        "faultPl": "Uniesiona noga opada lub kołysze pomagając w powtórzeniu",
+        "cause": "Hip flexor endurance limit, using leg momentum to drive the curl, loss of focus on the lower body",
+        "causePl": "Wyczerpanie zginaczy biodra, używanie momentum nogi do napędzenia uginania, utrata kontroli nad dolną częścią ciała",
+        "cue": "Keep that knee frozen at 90 degrees. If it drops, the set is over — lower the dumbbells and reset.",
+        "cuePl": "Utrzymuj to kolano nieruchomo na 90 stopniach. Jeśli opada, seria się kończy — odłóż hantle i zacznij od nowa."
+      },
+      {
+        "fault": "Bouncing on the ball during the curl",
+        "faultPl": "Odbijanie się na piłce podczas uginania",
+        "cause": "Using ball spring as momentum to throw the dumbbell up, weak core, load too heavy",
+        "causePl": "Wykorzystywanie sprężystości piłki do wyrzucania hantli, słaby core, zbyt duży ciężar",
+        "cue": "Heavy on the ball — sit like the ball is glued to the floor. The ball should not move.",
+        "cuePl": "Ciężko siedź na piłce — tak jakby była przyklejona do podłogi. Piłka nie powinna się ruszać."
+      },
+      {
+        "fault": "Elbow drifts forward at the top of the curl",
+        "faultPl": "Łokieć wędruje do przodu w górnej pozycji",
+        "cause": "Trying to lift the dumbbell higher than full biceps contraction allows, recruiting anterior deltoid for extra height",
+        "causePl": "Próba uniesienia hantli wyżej niż pozwala na to pełny skurcz bicepsa, włączanie przedniego aktona barku dla dodatkowej wysokości",
+        "cue": "Stop the curl when the forearm reaches vertical. Elbow stays under the shoulder.",
+        "cuePl": "Zakończ uginanie gdy przedramię dojdzie do pionu. Łokieć pozostaje pod barkiem."
+      },
+      {
+        "fault": "Rounded thoracic spine / slumped posture on the ball",
+        "faultPl": "Zaokrąglony odcinek piersiowy / przygarbiona postawa na piłce",
+        "cause": "Dumbbells too heavy to hold upright posture, weak thoracic erectors, ball under-inflated and forcing flexion",
+        "causePl": "Hantle zbyt ciężkie aby utrzymać wyprostowaną postawę, słabe prostowniki piersiowe, słabo napompowana piłka wymuszająca zgięcie",
+        "cue": "Long spine, sternum proud. Reduce load until you can stay tall for every rep.",
+        "cuePl": "Wydłużony kręgosłup, mostek do przodu. Zmniejsz ciężar do takiego, przy którym utrzymasz wyprost przez każde powtórzenie."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up) on each arm. Inhale during the eccentric (lower down). Keep a continuous low-level core brace throughout to keep the ball stable.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uginanie w górę) na każdym ramieniu. Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj ciągłe lekkie napięcie core przez całą serię, żeby ustabilizować piłkę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "balance_or_vestibular_disorders",
+      "severity": "avoid",
+      "modification": "Single-leg seated balance on a Swiss ball is contraindicated with vertigo, BPPV, or post-concussion symptoms — fall risk is real and dumbbells make it worse. Perform standard seated alternating curl on a bench.",
+      "modificationPl": "Jednonożna równowaga w siadzie na piłce jest przeciwwskazana przy zawrotach głowy, BPPV lub po wstrząśnieniu mózgu — realne ryzyko upadku, a hantle pogarszają sytuację. Wykonuj klasyczne naprzemienne uginanie siedząc na ławce.",
+      "alternative": "seated-alternating-dumbbell-curl"
+    },
+    {
+      "condition": "lumbar_disc_pathology_or_acute_low_back_pain",
+      "severity": "modify",
+      "modification": "Active anti-lateral-flexion bracing while seated on a moving surface can provoke lumbar symptoms. Use a stable bench, both feet on the floor, until symptoms resolve.",
+      "modificationPl": "Aktywne napięcie antylateralne w siadzie na ruchomej podstawie może drażnić objawy lędźwiowe. Używaj stabilnej ławki, obie stopy na podłodze, do ustąpienia objawów.",
+      "alternative": "seated-alternating-dumbbell-curl"
+    },
+    {
+      "condition": "distal_biceps_or_elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Full supination under load aggravates distal biceps tendon. Use hammer (neutral) grip on the ball or remove the ball entirely. Lighter loads, 12-15 reps, no heavy eccentrics.",
+      "modificationPl": "Pełna supinacja pod obciążeniem drażni przyczep dystalny bicepsa. Użyj chwytu młotkowego (neutralnego) na piłce lub w ogóle zrezygnuj z piłki. Lżejsze ciężary, 12-15 powtórzeń, bez ciężkich faz negatywnych.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "Holding the knee up isometrically loads rectus femoris and iliopsoas of the lifted leg. With a strain, keep both feet on the floor or perform the variant without the leg lift.",
+      "modificationPl": "Utrzymywanie kolana w górze izometrycznie obciąża prosty uda i biodrowo-lędźwiowy uniesionej nogi. Przy naciągnięciu trzymaj obie stopy na podłodze lub wykonuj wariant bez uniesienia nogi.",
+      "alternative": "dumbbell-alternating-bicep-curl-on-exercise-ball"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per arm (core-integration / hypertrophy with strict form) | 3x12-15 per arm (endurance / stabilization focus)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-alternating-bicep-curl-leg-raised-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-alternating-bicep-curl-with-leg-raised-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-alternating-bicep-curl-with-leg-raised-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-alternating-bicep-curl-with-leg-raised-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-alternating-bicep-curl-with-leg-raised-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-alternating-bicep-curl-with-leg-raised-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-alternating-bicep-curl-with-leg-raised-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 kluczowych klatek z GIFa jahel. Frame 0 (start): siad na piłce gimnastycznej, lewa noga uniesiona z kolanem ~90 stopni i udem mniej więcej równolegle do podłogi, prawa stopa płasko na podłodze; lewe ramię w trakcie uginania (hantla na wysokości barku, pełna supinacja, biceps i przedramię podświetlone czerwono), prawe ramię wyprostowane w dół, hantla przy udzie. Frame 1 (early): lewe ramię opuszczane z 'ghostem' fazy szczytowej w górze, prawe nadal w dole — wyraźnie widać naprzemienność. Frame 2 (mid): pełne lustro frame'u 0 — prawe ramię w górnej pozycji z pełną supinacją (czerwone), lewe ramię w dole. Frame 3 (late): symetria frame'u 1 po przeciwnej stronie. Frame 4 (end): powrót do startu (lewe znów w górze). Tułów stoi pionowo przez cały cykl, uniesiona noga się nie rusza, łokcie przyklejone do żeber. Jednoznaczna identyfikacja: Alternating DB Curl seated on Swiss ball with one leg raised. Wszystkie pola PL napisane od zera. P9 dla bicepsa (nie P10 jak w barbell curl — niestabilna podstawa = niższe obciążenie absolutne), P7 dla core (kluczowy element ćwiczenia — antylateralfleksja + antyrotacja). Difficulty 5.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbells", "stability_ball", "core_integration", "balance", "unilateral", "upper_body"]
+}

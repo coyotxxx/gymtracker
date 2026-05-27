@@ -1,0 +1,240 @@
+{
+  "id": "cable-rear-delt-row-stirrups",
+  "name": "Cable Rear Delt Row with Stirrups",
+  "namePl": "Rear delt row na wyciągu z uchwytami strzemionkowymi",
+  "aliases": [
+    "cable high row to face with stirrups",
+    "cable seated face pull row",
+    "stirrup handle rear delt row",
+    "twin D-handle rear delt row",
+    "cable rear delt pull to face",
+    "cable rear delt row with single D-handles"
+  ],
+  "aliasesPl": [
+    "wiosłowanie na tylne aktony z uchwytami strzemionkowymi",
+    "face pull siedząc z uchwytami D",
+    "wiosłowanie na wyciągu do twarzy ze strzemionkami",
+    "rear delt row z pojedynczymi uchwytami D-handle",
+    "wiosłowanie z wysoko prowadzonymi łokciami z dwoma D-handle",
+    "wiosłowanie do twarzy z dwoma strzemionkami"
+  ],
+
+  "description": "Seated cable row variation in which two single stirrup (D-handle) attachments are pulled toward the face with high elbows. The path of motion is closer to a face pull than to a classic mid-back row — elbows travel up and out, hands finish at face/ear level, and the wrists separate at the end of the pull in a 'W' position. This loads the posterior deltoids, rhomboids and middle trapezius far more than a standard low row. The independent stirrup handles allow each side to externally rotate freely and the shoulder blades to retract symmetrically.",
+  "descriptionPl": "Wariant wiosłowania siedząc na wyciągu, w którym dwa pojedyncze uchwyty strzemionkowe (D-handle) ciągniesz w kierunku twarzy z wysoko uniesionymi łokciami. Tor ruchu przypomina raczej face pull niż klasyczne wiosłowanie środka pleców — łokcie wędrują w górę i na zewnątrz, dłonie kończą na wysokości twarzy/uszu, a nadgarstki rozchodzą się na końcu ruchu w pozycję 'W'. Takie wykonanie znacznie mocniej obciąża tylne aktony barków, romboidy i środkową część kapturowych niż standardowy niski wiosło. Niezależne uchwyty strzemionkowe pozwalają każdej stronie swobodnie się rotować zewnętrznie, a łopatki ściągają się symetrycznie.",
+
+  "instructions": [
+    "Attach two single stirrup (D-handle) attachments to the low cable pulley. Sit on the bench facing the stack with feet braced against the foot platform and knees slightly bent.",
+    "Grab one stirrup in each hand with a pronated (palms-down) or neutral grip — palms-down emphasises the rear delts.",
+    "Sit tall, chest up, shoulders down and back. Brace the core and set the back at a slight forward lean (~10-15°) — this is the start position. Arms are extended in front of you at roughly chest height.",
+    "Initiate the pull by retracting and depressing the shoulder blades, then drive the elbows high, up and out to the sides — not down to the ribs.",
+    "Continue pulling until the hands reach face/ear level and the upper arms are roughly parallel to the floor. At the end of the pull, externally rotate slightly so the wrists drift apart and finish in a 'W' position (hands wider than elbows).",
+    "Pause for a count, squeezing the rear delts and pinching the shoulder blades together.",
+    "Return the handles forward under control over 2-3 seconds, letting the shoulder blades protract slightly at the end without rounding the upper back.",
+    "Keep the torso angle constant the whole set — do not lean back to drag the weight."
+  ],
+  "instructionsPl": [
+    "Przyczep dwa pojedyncze uchwyty strzemionkowe (D-handle) do dolnego wyciągu. Usiądź na ławce twarzą do stosu, stopy oparte o platformę, kolana lekko ugięte.",
+    "Złap po jednym strzemionku w każdą dłoń chwytem nachwytnym (dłonie do dołu) lub neutralnym — chwyt nachwytny mocniej akcentuje tylne aktony.",
+    "Usiądź wysoko, klatka wypchnięta, barki w dół i w tył. Napnij brzuch i ustaw plecy w lekkim pochyleniu do przodu (~10-15°) — to pozycja wyjściowa. Ramiona wyciągnięte przed sobą mniej więcej na wysokości klatki.",
+    "Zainicjuj ruch ściągnięciem i opuszczeniem łopatek, a następnie poprowadź łokcie wysoko — w górę i na zewnątrz, NIE w dół do żeber.",
+    "Ciągnij dalej, aż dłonie znajdą się na wysokości twarzy/uszu, a ramiona ponad łokciem będą mniej więcej równolegle do podłogi. Na końcu ruchu wykonaj lekką rotację zewnętrzną, tak by nadgarstki rozeszły się i skończyły w pozycji 'W' (dłonie szerzej niż łokcie).",
+    "Zatrzymaj się na liczenie, mocno spinając tylne aktony i ściągając łopatki razem.",
+    "Wróć z uchwytami do przodu w sposób kontrolowany przez 2-3 sekundy, pozwalając łopatkom lekko rozejść się na końcu — bez zaokrąglania górnej części pleców.",
+    "Trzymaj stały kąt tułowia przez całą serię — nie odchylaj się w tył, żeby zarzucić ciężar."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids", "rhomboids", "trapezius_middle"],
+    "secondary": ["rotator_cuff", "biceps_brachii", "trapezius_upper"],
+    "stabilizers": ["trapezius_lower", "core", "erector_spinae", "forearm_flexors", "latissimus_dorsi"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P9",
+    "rhomboids": "P8",
+    "trapezius_middle": "P8",
+    "rotator_cuff": "S6",
+    "biceps_brachii": "S5",
+    "trapezius_upper": "S5",
+    "trapezius_lower": "T4",
+    "core": "T3",
+    "erector_spinae": "T3",
+    "forearm_flexors": "T3",
+    "latissimus_dorsi": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "stirrup_handles", "seated_row_bench"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["face-pull", "cable-low-seated-row"],
+    "progression_to": ["cable-rear-delt-fly", "reverse-pec-deck", "rope-face-pull"],
+    "alternatives": [
+      "face-pull",
+      "rope-face-pull",
+      "cable-rear-delt-fly",
+      "reverse-pec-deck",
+      "dumbbell-rear-fly",
+      "band-pull-apart"
+    ]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two stirrup handles on a low cable — one per hand",
+      "Feet braced, knees slightly bent, sit tall",
+      "Pronated grip (palms down) to bias rear delts",
+      "Chest up, shoulders down and back",
+      "Slight forward lean (~10-15°) — torso angle stays fixed"
+    ],
+    "setup_cues_pl": [
+      "Dwa uchwyty strzemionkowe na niskim wyciągu — jeden w każdej dłoni",
+      "Stopy oparte, kolana lekko ugięte, siedź wysoko",
+      "Chwyt nachwytny (dłonie do dołu) dla akcentu na tylne aktony",
+      "Klatka wypchnięta, barki w dół i w tył",
+      "Lekkie pochylenie do przodu (~10-15°) — kąt tułowia stały"
+    ],
+    "execution_cues": [
+      "Elbows go UP and OUT, not down to ribs",
+      "Pull the handles to your ears, not to your belly",
+      "Spread the wrists apart at the end — finish in a 'W'",
+      "Squeeze the rear delts at the top, pinch shoulder blades",
+      "Lead with the elbows — wrists follow the elbows"
+    ],
+    "execution_cues_pl": [
+      "Łokcie idą W GÓRĘ i NA ZEWNĄTRZ, nie w dół do żeber",
+      "Ciągnij uchwyty do uszu, nie do brzucha",
+      "Rozsuń nadgarstki na końcu ruchu — kończ w pozycji 'W'",
+      "Spinaj tylne aktony w górnej pozycji, ściskaj łopatki",
+      "Prowadź łokciami — nadgarstki podążają za łokciami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling elbows low to the ribs (turning the exercise into a regular row)",
+        "faultPl": "Prowadzenie łokci nisko do żeber (zamiana ćwiczenia w klasyczne wiosłowanie)",
+        "cause": "Default 'row' motor pattern, lats hijack the movement, weak rear delts",
+        "causePl": "Domyślny wzorzec ruchowy 'wiosła', mięśnie najszersze grzbietu przejmują ruch, słabe tylne aktony",
+        "cue": "Set the cable at face height in your mind — elbows must rise to shoulder level. Cue 'show me your armpits'.",
+        "cuePl": "W głowie ustaw wyciąg na wysokości twarzy — łokcie muszą sięgać do poziomu barków. Cue: 'pokaż mi pachy'."
+      },
+      {
+        "fault": "Shrugging — upper traps dominate the pull",
+        "faultPl": "Wciąganie barków — trapezy górne dominują ruch",
+        "cause": "Load too heavy or losing scapular depression mid-rep",
+        "causePl": "Zbyt duży ciężar lub utrata depresji łopatek w trakcie powtórzenia",
+        "cue": "Drop the weight 20%. Actively press shoulders away from ears the entire set; depress the scapulae before each rep.",
+        "cuePl": "Zmniejsz ciężar o 20%. Aktywnie odsuwaj barki od uszu przez całą serię; opuszczaj łopatki przed każdym powtórzeniem."
+      },
+      {
+        "fault": "Leaning back to drag the weight (turning row into a recline)",
+        "faultPl": "Odchylanie się w tył by zarzucić ciężar (zamiana wiosła w odchylanie tułowia)",
+        "cause": "Torso extension used to compensate for too heavy load",
+        "causePl": "Wyprost tułowia używany do kompensacji zbyt dużego ciężaru",
+        "cue": "Sit on a fixed bench angle, imagine a vertical pole behind your back — back stays at the SAME angle the entire set.",
+        "cuePl": "Usiądź pod stałym kątem ławki, wyobraź sobie pionowy pręt za plecami — plecy zostają pod tym SAMYM kątem przez całą serię."
+      },
+      {
+        "fault": "Wrists collapse — no external rotation at the top, no 'W' finish",
+        "faultPl": "Nadgarstki opadają — brak rotacji zewnętrznej na szczycie, brak finiszu w 'W'",
+        "cause": "Weak external rotators or not understanding the cue 'spread the wrists'",
+        "causePl": "Słabe rotatory zewnętrzne lub niezrozumienie cue'a 'rozsuń nadgarstki'",
+        "cue": "At the end of the pull, point your knuckles outward and pull the stirrups apart as if trying to break them.",
+        "cuePl": "Na końcu ruchu skieruj kostki dłoni na zewnątrz i rozciągaj strzemionka w bok, jakbyś chciał je rozerwać."
+      },
+      {
+        "fault": "Range too short — handles never reach face level",
+        "faultPl": "Zbyt krótki zakres — uchwyty nigdy nie sięgają wysokości twarzy",
+        "cause": "Load too heavy or fear of the high-elbow position",
+        "causePl": "Zbyt duży ciężar lub brak czucia wysokiej pozycji łokci",
+        "cue": "Reduce load. Touch the stirrups to your cheekbones every rep — that is the full ROM.",
+        "cuePl": "Zmniejsz ciężar. Dotykaj strzemionkami kości policzkowych przy każdym powtórzeniu — to pełen zakres ruchu."
+      }
+    ],
+    "breathing": "Inhale at the start, exhale during the pull (concentric), inhale on the controlled return (eccentric). Keep a light brace the entire set.",
+    "breathingPl": "Wdech na starcie, wydech podczas ciągnięcia (faza koncentryczna), wdech podczas kontrolowanego powrotu (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "The face-pull-style high-elbow finish can pinch the subacromial space in symptomatic shoulders. Reduce ROM (stop at chin level instead of forehead), use a slightly lower cable angle, and use neutral grip instead of pronated.",
+      "modificationPl": "Wysokie ustawienie łokci typu face pull może uciskać przestrzeń podbarkową w objawowych barkach. Zmniejsz zakres ruchu (kończ na brodzie zamiast czole), użyj nieco niższego kąta wyciągu oraz chwytu neutralnego zamiast nachwytnego.",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "caution",
+      "modification": "External rotation under load at the end range stresses the cuff. In acute or post-injury phases lighten significantly and stop at the start of the 'W' position (no end-range rotation).",
+      "modificationPl": "Rotacja zewnętrzna pod obciążeniem na końcu zakresu obciąża stożek rotatorów. W fazie ostrej lub po kontuzji znacznie zmniejsz ciężar i zatrzymuj zakres na początku pozycji 'W' (bez rotacji w końcowym zakresie).",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint loads at the top of the high-elbow row. Drop the elbows slightly below shoulder level and bring the path closer to a mid-row (chest-pull). Stop short of pain.",
+      "modificationPl": "Staw barkowo-obojczykowy obciąża się w górnej pozycji wiosła z wysokimi łokciami. Opuść łokcie nieco poniżej linii barków i przybliż tor ruchu do klasycznego wiosła do klatki. Zatrzymuj zakres przed bólem.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "lumbar_disc_issues_or_acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "The seated forward lean loads the lumbar spine isometrically. With acute back pain switch to a chest-supported variant or use very light loads with a more upright torso.",
+      "modificationPl": "Siedzące pochylenie do przodu obciąża izometrycznie odcinek lędźwiowy kręgosłupa. Przy ostrym bólu pleców przejdź na wariant z podparciem klatki lub używaj bardzo małych ciężarów z bardziej wyprostowanym tułowiem.",
+      "alternative": "reverse-pec-deck"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/standard) | 4x15-20 (rear delt specialization) | 3x10-12 (strength-focus, rare)",
+  "calories_per_kg_per_hour": 4.8,
+
+  "media": {
+    "primary": "cable-rear-delt-row-stirrups.gif",
+    "frames_extracted": [
+      "frames/cable-rear-delt-row-stirrups/frame_0_start.png",
+      "frames/cable-rear-delt-row-stirrups/frame_1_early.png",
+      "frames/cable-rear-delt-row-stirrups/frame_2_mid.png",
+      "frames/cable-rear-delt-row-stirrups/frame_3_late.png",
+      "frames/cable-rear-delt-row-stirrups/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-rear-delt-row-stirrups"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Frame 0 (start): ćwiczący siedzi na ławce do wiosłowania z stopami opartymi o platformę, ramiona wyciągnięte do przodu, trzyma DWA pojedyncze uchwyty strzemionkowe (D-handle) chwytem nachwytnym/pronowanym; tułów lekko pochylony, podświetlone przedramiona i częściowo barki na czerwono. Frame 2 (mid/top): ramiona pociągnięte do wysokości twarzy, łokcie wysoko (powyżej linii barków, ramiona ponad łokciem mniej więcej równolegle do podłogi), dłonie blisko uszu/skroni — klasyczna pozycja końcowa face pull / rear delt row; podświetlone na czerwono: tylne aktony, romboidy, środkowe i górne trapezy. Frame 3-4: powrót do pozycji wyjściowej, kontrolowany. UWAGA: Setup w GIFie wykorzystuje POJEDYNCZY niski wyciąg (jeden stos, jedna ławka do wiosła) z dwoma uchwytami strzemionkowymi przyczepionymi do jednego punktu — NIE dwa osobne wyciągi typu cable crossover, jak sugerował opis zadania. Niemniej charakter ruchu (wysoki tor łokci, finisz przy twarzy, pozycja 'W') jest zgodny z nazwą slug 'rear delt row with stirrups'. Opisałem ruch zgodnie z tym co WIDAĆ na GIFie, zachowując slug. Klasyfikacja: pull_horizontal (płaszczyzna transverse — ruch w poprzek ciała), compound, bilateral. Wszystkie pola PL napisane od zera, polski standard fitness (tylne aktony, łopatki, trapezy/kapturowe, wiosłowanie, rotacja zewnętrzna).",
+
+  "tags": [
+    "bodybuilding",
+    "shoulders",
+    "rear_delts",
+    "upper_back",
+    "cable",
+    "stirrups",
+    "d_handle",
+    "face_pull_variant",
+    "seated",
+    "rear_delt_specialization",
+    "hypertrophy",
+    "posture",
+    "pull_horizontal"
+  ]
+}

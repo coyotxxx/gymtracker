@@ -1,0 +1,201 @@
+{
+  "id": "lever-hammer-grip-preacher-curl",
+  "name": "Lever Hammer Grip Preacher Curl",
+  "namePl": "Hammer curl na modlitewniku w maszynie",
+  "aliases": ["machine hammer preacher curl", "neutral grip machine preacher curl", "lever preacher hammer curl"],
+  "aliasesPl": ["uginanie ramion młotkowe na modlitewniku w maszynie", "preacher curl chwytem neutralnym w maszynie", "modlitewnik młotkowy maszyna"],
+
+  "description": "Seated machine preacher curl performed with a neutral (palms facing each other) hammer grip. The fixed lever path and braced upper arms remove cheating and shoulder involvement, isolating the elbow flexors. The neutral grip places the brachialis (deep elbow flexor under the biceps) and brachioradialis (forearm) under heavier load than a supinated curl, making this variation excellent for thickening the upper arm and bridging biceps/forearm development.",
+  "descriptionPl": "Uginanie ramion w maszynie typu modlitewnik wykonywane w pozycji siedzącej chwytem neutralnym (młotkowym, dłonie skierowane do siebie). Stała tor dźwigni i oparcie ramion na pulpicie eliminują oszukiwanie i pracę barków, izolując zginacze stawu łokciowego. Chwyt neutralny mocniej obciąża mięsień ramienny (brachialis — głęboki zginacz pod bicepsem) i ramienno-promieniowy (przedramię) niż wariant podchwytem, co czyni to ćwiczenie świetnym do pogrubiania ramienia i łączenia rozwoju bicepsa z przedramieniem.",
+
+  "instructions": [
+    "Adjust the seat height so the top edge of the preacher pad sits just under your armpits when seated. Set the load on the weight stack.",
+    "Sit down, plant your feet flat on the floor, and rest your chest against the pad. Reach out and grip the two vertical (neutral) handles with palms facing each other.",
+    "Press the back of your upper arms firmly into the pad. Arms should be extended but not locked into hyperextension at the start.",
+    "Brace your core, keep your shoulders down and back, and look forward. The torso stays still throughout the set.",
+    "Curl the handles upward by flexing only at the elbows. Exhale on the way up. Keep the wrists neutral and in line with the forearms.",
+    "Stop the curl when the forearms are roughly vertical and the biceps/brachialis are fully contracted. Squeeze for a brief pause.",
+    "Lower the handles under control over 2-3 seconds back to a stretched (but not painful) elbow extension. Inhale on the descent.",
+    "Keep the upper arms glued to the pad for every rep. Do not bounce out of the bottom — control the stretch."
+  ],
+  "instructionsPl": [
+    "Wyreguluj wysokość siedziska tak, aby górna krawędź pulpitu modlitewnika znajdowała się tuż pod pachami po usiądnięciu. Ustaw obciążenie na stosie.",
+    "Usiądź, oprzyj stopy płasko na podłodze, a klatkę piersiową na pulpicie. Sięgnij po dwa pionowe (neutralne) uchwyty, dłonie skierowane do siebie.",
+    "Mocno dociśnij tylną część ramion do pulpitu. Ramiona są wyprostowane, ale nie zablokowane w przeproście na starcie.",
+    "Napnij brzuch, ściągnij barki w tył i w dół, patrz przed siebie. Tułów pozostaje nieruchomy przez całą serię.",
+    "Uginaj uchwyty do góry pracując wyłącznie w łokciach. Wydychaj w fazie koncentrycznej. Trzymaj nadgarstki neutralne w linii z przedramieniem.",
+    "Zakończ uginanie gdy przedramiona dojdą do mniej więcej pionu, a biceps i brachialis będą w pełnym skurczu. Mocno spinaj przez chwilę.",
+    "Opuszczaj uchwyty w sposób kontrolowany przez 2-3 sekundy do rozciągniętego (ale nie bolesnego) wyprostu w łokciach. Wdech podczas opuszczania.",
+    "Przyklej tylną część ramion do pulpitu przy każdym powtórzeniu. Nie odbijaj z dolnej pozycji — kontroluj rozciąganie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "biceps_brachii"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "biceps_brachii": "P8",
+    "brachioradialis": "S7",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T1",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["lever_machine", "preacher_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["hammer-curl"],
+    "progression_to": ["preacher-curl", "spider-curl", "incline-dumbbell-curl"],
+    "alternatives": ["hammer-curl", "rope-hammer-curl", "preacher-curl", "ez-bar-preacher-curl", "dumbbell-hammer-preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height: top of pad sits just under armpits",
+      "Chest pressed against the pad, feet flat on floor",
+      "Palms face each other on the vertical handles",
+      "Back of upper arms glued to the pad",
+      "Shoulders down and back, core braced"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska: górna krawędź pulpitu tuż pod pachami",
+      "Klatka dociśnięta do pulpitu, stopy płasko na podłodze",
+      "Dłonie skierowane do siebie na pionowych uchwytach",
+      "Tylna część ramion przyklejona do pulpitu",
+      "Barki w dół i w tył, brzuch napięty"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay glued to the pad",
+      "Squeeze brachialis and biceps hard at the top",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Wrists stay neutral, in line with forearms — no bending",
+      "Control the bottom — no bouncing out of the stretch"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona przyklejone do pulpitu",
+      "Mocno spinaj brachialis i biceps w górnej pozycji",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Nadgarstki neutralne, w linii z przedramieniem — bez zginania",
+      "Kontroluj dół — nie odbijaj z rozciągnięcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms lifting off the pad at the bottom",
+        "faultPl": "Ramiona odrywają się od pulpitu w dolnej pozycji",
+        "cause": "Load too heavy, or trying to add range of motion by shrugging the shoulders forward",
+        "causePl": "Zbyt duży ciężar lub próba zwiększenia zakresu ruchu przez wypychanie barków do przodu",
+        "cue": "Lower the weight. Actively press the back of your arms into the pad through the entire rep.",
+        "cuePl": "Zmniejsz ciężar. Aktywnie dociskaj tylną część ramion do pulpitu przez całe powtórzenie."
+      },
+      {
+        "fault": "Bouncing out of the bottom stretched position",
+        "faultPl": "Odbijanie z dolnej rozciągniętej pozycji",
+        "cause": "Using stretch reflex/momentum instead of muscular contraction; high risk of distal biceps tendon strain",
+        "causePl": "Wykorzystywanie odruchu rozciągowego/rozpędu zamiast skurczu mięśniowego; wysokie ryzyko nadwerężenia dystalnego przyczepu bicepsa",
+        "cue": "Pause for half a second at the bottom of every rep. Reverse the motion smoothly, not violently.",
+        "cuePl": "Zatrzymuj się na pół sekundy w dolnej pozycji każdego powtórzenia. Zmieniaj kierunek płynnie, nie szarpnięciem."
+      },
+      {
+        "fault": "Wrist flexion (curling wrists toward forearms)",
+        "faultPl": "Zginanie nadgarstków (uginanie nadgarstka w stronę przedramienia)",
+        "cause": "Forearm flexors trying to compensate for fatigued elbow flexors; load too heavy",
+        "causePl": "Zginacze nadgarstka próbują kompensować zmęczone zginacze łokcia; zbyt duży ciężar",
+        "cue": "Imagine your hand and forearm are a single rigid bar. Reduce weight if wrists keep bending.",
+        "cuePl": "Wyobraź sobie że dłoń i przedramię to jeden sztywny pręt. Zmniejsz ciężar jeśli nadgarstki się zginają."
+      },
+      {
+        "fault": "Leaning back / standing up from the seat",
+        "faultPl": "Odchylanie się do tyłu / odrywanie od siedziska",
+        "cause": "Compensating for fatigue by using bodyweight as counterbalance — defeats the purpose of preacher",
+        "causePl": "Kompensowanie zmęczenia ciężarem ciała jako przeciwwaga — niweczy sens modlitewnika",
+        "cue": "Stay seated, chest on pad, eyes forward. If you cannot finish strict, end the set.",
+        "cuePl": "Pozostań na siedzisku, klatka na pulpicie, wzrok przed siebie. Jeśli nie możesz zrobić ścisłego powtórzenia — zakończ serię."
+      },
+      {
+        "fault": "Cutting the range — stopping short of full extension at the bottom",
+        "faultPl": "Skracanie zakresu — zatrzymywanie się przed pełnym wyprostem na dole",
+        "cause": "Avoiding the stretched-position challenge or fear of elbow strain",
+        "causePl": "Unikanie trudnej pozycji rozciągniętej lub strach przed obciążeniem łokcia",
+        "cue": "Lower until arms are nearly straight under control. The stretch is where the brachialis grows.",
+        "cuePl": "Opuszczaj kontrolnie aż ramiona będą prawie wyprostowane. Rozciągnięcie to miejsce wzrostu brachialisa."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Light core brace throughout to keep the torso stable against the pad.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Lekkie napięcie brzucha przez całą serię, aby utrzymać tułów stabilnie na pulpicie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid the bottom 20% of range (deepest stretch) and heavy eccentrics. Use lighter loads with higher reps (12-15) and partial ROM until pain-free.",
+      "modificationPl": "Unikaj dolnych 20% zakresu (największe rozciągnięcie) i ciężkich faz negatywnych. Używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15) i częściowego zakresu do ustąpienia bólu.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Neutral grip is generally tolerated, but heavy loads still stress the medial elbow. Reduce intensity, increase reps, avoid forced eccentrics until symptoms resolve.",
+      "modificationPl": "Chwyt neutralny jest zwykle dobrze tolerowany, ale ciężkie obciążenia nadal drażnią przyśrodkową stronę łokcia. Zmniejsz intensywność, zwiększ liczbę powtórzeń, unikaj wymuszonych faz negatywnych do ustąpienia objawów.",
+      "alternative": "rope-hammer-curl"
+    },
+    {
+      "condition": "shoulder_impingement_with_overhead_reach",
+      "severity": "caution",
+      "modification": "Setting up onto the preacher pad requires forward reach with shoulder flexion. Adjust seat lower or use lower handles; help bar into position with a partner if needed.",
+      "modificationPl": "Ustawienie się na pulpicie wymaga sięgnięcia do przodu w zgięciu barku. Obniż siedzisko lub użyj niższych uchwytów; poproś partnera o podanie chwytu jeśli trzeba.",
+      "alternative": "dumbbell-hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Neutral grip is the most wrist-friendly curl variation. If pain persists, use wrist wraps and reduce load. Avoid wrist flexion under load.",
+      "modificationPl": "Chwyt neutralny to najbardziej przyjazny dla nadgarstków wariant curl-a. Jeśli ból się utrzymuje, użyj opasek na nadgarstki i zmniejsz ciężar. Unikaj zginania nadgarstka pod obciążeniem.",
+      "alternative": "rope-hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy) | 4x8-10 (strength) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-hammer-grip-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/lever-hammer-grip-preacher-curl/frame_0_start.png",
+      "frames/lever-hammer-grip-preacher-curl/frame_1_early.png",
+      "frames/lever-hammer-grip-preacher-curl/frame_2_mid.png",
+      "frames/lever-hammer-grip-preacher-curl/frame_3_late.png",
+      "frames/lever-hammer-grip-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/lever-hammer-grip-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIF-a jahel (start/mid/end). Frame 0: pozycja siedząca w maszynie modlitewnikowej, klatka oparta o pulpit, dłonie skierowane do siebie na pionowych uchwytach (chwyt neutralny/młotkowy), ramiona wyprostowane na pulpicie, biceps i brachialis podświetlone na czerwono. Frame 2: pełny skurcz, uchwyty na wysokości barków, dłonie nadal w pozycji neutralnej (palms-in), ramiona pozostają na pulpicie, łokcie ugięte w pełni. Frame 4: powrót do pozycji startowej z 'ghostem' fazy szczytowej powyżej. Ćwiczenie jednoznacznie zidentyfikowane jako preacher curl w maszynie z chwytem neutralnym/młotkowym. Pionowe uchwyty + palms-in = brachialis primary (anatomia zgina się neutralnym chwytem przez głębszy zginacz pod bicepsem). Mechanic isolation, plane sagittal, force pull, bilateral, seated. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "isolation", "machine", "preacher", "hammer_grip", "neutral_grip", "upper_body", "seated", "beginner_friendly"]
+}

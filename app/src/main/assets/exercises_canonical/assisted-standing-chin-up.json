@@ -1,0 +1,204 @@
+{
+  "id": "assisted-standing-chin-up",
+  "name": "Assisted Standing Chin-Up",
+  "namePl": "Asystowane chin-up w staniu",
+  "aliases": ["band-assisted chin-up", "assisted chin-up standing", "machine-assisted chin-up", "supported chin-up"],
+  "aliasesPl": ["asystowane chin-up", "podciąganie podchwytem z asystą", "chin-up z gumą", "chin-up na maszynie asystującej", "asystowane podciąganie podchwytem"],
+
+  "description": "Beginner-friendly regression of the chin-up performed with assistance that offsets a percentage of bodyweight. Two common variants: (1) a resistance band looped over the bar with one foot in the band, or (2) an assisted pull-up machine with a kneeling/standing platform on a weight stack — the chosen weight is the assistance, not load. Supinated (underhand) grip biases biceps and lower lats while teaching the full chin-up movement pattern. The classic stepping-stone toward a strict bodyweight chin-up.",
+  "descriptionPl": "Regresja chin-up dla początkujących wykonywana z asystą która kompensuje % wagi ciała. Dwa warianty: (1) guma oporowa zaczepiona na drążku, jedna stopa w gumie, lub (2) maszyna do asystowanego podciągania z platformą stojącą/klęczącą na stosie ciężarków — wybrana waga to asysta, nie obciążenie. Chwyt podchwytem (supinated) mocniej angażuje bicepsy i dolne najszersze grzbietu jednocześnie ucząc pełnego wzorca chin-up. Klasyczny etap przejściowy do strict chin-up w wadze ciała.",
+
+  "instructions": [
+    "Setup: select assistance level (heavier weight on machine = MORE help; thicker band = MORE help). Aim for an assistance that lets you complete 6-10 strict reps with chin clearly over the bar.",
+    "Grip the handles or bar with palms facing TOWARD you (supinated/underhand), hands approximately shoulder-width apart.",
+    "Step onto the platform (machine) or place one foot firmly into the band loop. Keep the supporting leg straight and active.",
+    "Begin in a near-full hang: arms fully extended, shoulder blades engaged DOWN (slight depression). Chest tall, core braced.",
+    "Pull by driving elbows DOWN and slightly forward (chin-up mechanic). Think 'pull the bar down toward your collarbone'.",
+    "Continue until your chin is clearly ABOVE the bar — chest comes close to the handles, elbows finish near your ribs.",
+    "Lower with control over 2-3 seconds back to a full hang (do NOT relax onto the assistance — the eccentric is where strength is built).",
+    "Each rep: full extension at the bottom, full chin-over-bar at the top. As you progress, reduce assistance (lighter weight on machine / thinner band) until you can do strict bodyweight chin-ups."
+  ],
+  "instructionsPl": [
+    "Setup: wybierz poziom asysty (większy ciężar na maszynie = WIĘKSZA pomoc; grubsza guma = WIĘKSZA pomoc). Celuj w taką asystę, która pozwala wykonać 6-10 strict powtórzeń z brodą wyraźnie nad drążkiem.",
+    "Złap rączki lub drążek dłońmi skierowanymi DO siebie (chwyt podchwytem/supinated), ręce mniej więcej na szerokość barków.",
+    "Wejdź na platformę (maszyna) lub umieść jedną stopę pewnie w pętli gumy. Noga podporowa wyprostowana i aktywna.",
+    "Pozycja startowa: prawie pełen zwis, ramiona wyprostowane, łopatki ściągnięte W DÓŁ (lekka depresja). Klatka wysoko, brzuch napięty.",
+    "Ciągnij napierając łokciami W DÓŁ i lekko do przodu (mechanika chin-up). Myśl: 'ciągnij drążek W DÓŁ do obojczyka'.",
+    "Kontynuuj aż broda będzie wyraźnie NAD drążkiem — klatka blisko rączek, łokcie kończą blisko żeber.",
+    "Opuszczaj kontrolowanym ruchem przez 2-3 sekundy do pełnego zwisu (NIE opuszczaj się luźno na asystę — faza ekscentryczna buduje siłę).",
+    "Każde powtórzenie: pełen wyprost na dole, broda wyraźnie nad drążkiem na górze. W miarę progresji zmniejszaj asystę (mniejszy ciężar na maszynie / cieńsza guma) aż wykonasz strict chin-up w wadze ciała."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed",
+    "assistance": "assisted"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["rhomboids", "trapezius_middle_lower", "brachialis", "teres_major", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P8",
+    "biceps_brachii": "P8",
+    "rhomboids": "S6",
+    "trapezius_middle_lower": "S6",
+    "brachialis": "S6",
+    "teres_major": "S6",
+    "brachioradialis": "S5",
+    "forearms": "S6",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["assisted_pull_up_machine"],
+    "optional": ["resistance_band", "pull_up_bar", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dead-hang", "inverted-row", "lat-pulldown"],
+    "progression_to": ["chin-up", "pull-up", "weighted-chin-up", "neutral-grip-pull-up"],
+    "alternatives": ["negative-chin-up", "band-assisted-pull-up", "lat-pulldown-underhand", "inverted-row-underhand"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Supinated (underhand) grip, shoulder-width",
+      "Choose assistance for 6-10 strict reps",
+      "Foot firmly on platform or in band loop",
+      "Shoulders DOWN, away from ears",
+      "Core braced, chest tall"
+    ],
+    "setup_cues_pl": [
+      "Chwyt podchwytem (supinated), na szerokość barków",
+      "Wybierz asystę pod 6-10 strict powtórzeń",
+      "Stopa pewnie na platformie lub w gumie",
+      "Łopatki W DÓŁ, daleko od uszu",
+      "Brzuch napięty, klatka wysoko"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN to ribs",
+      "Chin OVER the bar — not just to it",
+      "Slow 2-3 sec eccentric — don't drop",
+      "Don't push with the assist leg",
+      "Full hang at the bottom every rep"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ do żeber",
+      "Broda NAD drążkiem — nie tylko do poziomu",
+      "Powolna 2-3 sek faza ekscentryczna — nie opadaj",
+      "Nie odpychaj się nogą wspomagającą",
+      "Pełen zwis na dole w każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pushing off the platform/band with the assist leg",
+        "faultPl": "Odpychanie się nogą wspomagającą (platforma/guma)",
+        "cause": "Treating the assist as a launching pad instead of constant counterweight",
+        "causePl": "Traktowanie asysty jako odbicia zamiast stałej kompensacji",
+        "cue": "Keep the assist leg passive — let the band/machine do constant work. If you have to push, reduce assistance.",
+        "cuePl": "Noga wspomagająca pasywna — pozwól gumie/maszynie pracować stale. Jeśli musisz się odbić, zmniejsz asystę."
+      },
+      {
+        "fault": "Chin not clearing the bar (half reps)",
+        "faultPl": "Broda nie nad drążkiem (połowiczne powtórzenia)",
+        "cause": "Too little assistance for current strength, or fatigue at end of set",
+        "causePl": "Za mała asysta dla obecnej siły, lub zmęczenie pod koniec serii",
+        "cue": "Add more assistance and complete full ROM. Half reps don't transfer to real chin-ups.",
+        "cuePl": "Dodaj więcej asysty i zrób pełne ROM. Połowiczne powtórzenia nie przenoszą się na realny chin-up."
+      },
+      {
+        "fault": "Dropping fast on the way down (passive eccentric)",
+        "faultPl": "Szybkie opadanie (pasywna faza ekscentryczna)",
+        "cause": "Letting the assist absorb the descent — losing the most valuable strength stimulus",
+        "causePl": "Pozwalanie asyście pochłonąć schodzenie — utrata najcenniejszego bodźca siłowego",
+        "cue": "Lower in 2-3 seconds, controlled. The eccentric is where the chin-up strength is built.",
+        "cuePl": "Opuszczaj 2-3 sekundy, kontrolowanie. Faza ekscentryczna buduje siłę chin-up."
+      },
+      {
+        "fault": "Shoulders shrugging up at the start of the pull",
+        "faultPl": "Łopatki unoszą się na początku ciągu",
+        "cause": "Lats not engaged before the pull — pulling with arms only",
+        "causePl": "Najszersze nieaktywne przed ciągiem — ciąg samymi ramionami",
+        "cue": "Initiate by DEPRESSING shoulder blades (down/back), THEN bend elbows. 'Long neck, low shoulders.'",
+        "cuePl": "Rozpocznij OPUSZCZAJĄC łopatki (w dół/do tyłu), DOPIERO POTEM zegnij łokcie. 'Długa szyja, niskie łopatki.'"
+      },
+      {
+        "fault": "Excessive backward lean or kipping",
+        "faultPl": "Nadmierne odchylenie do tyłu lub kipping",
+        "cause": "Trying to convert to easier mechanics or generate momentum",
+        "causePl": "Próba uproszczenia mechaniki lub wygenerowania pędu",
+        "cue": "Body near vertical, slight lean only. If you can't strict-pull, increase assistance.",
+        "cuePl": "Ciało prawie pionowe, tylko lekkie odchylenie. Jeśli nie ciągniesz strict — zwiększ asystę."
+      }
+    ],
+    "breathing": "Inhale at the bottom (full hang). Exhale on the pull up. Inhale on the slow eccentric down. Don't hold breath — controlled tempo means breathing pattern matters.",
+    "breathingPl": "Wdech na dole (pełen zwis). Wydech podczas ciągu w górę. Wdech podczas powolnego schodzenia. Nie wstrzymuj — kontrolowane tempo wymaga rytmu oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM at the top (do not force chin fully over bar if painful). Try neutral grip if available. Increase assistance to reduce load on irritated tissues.",
+      "modificationPl": "Zmniejsz ROM na górze (nie wymuszaj brody nad drążkiem jeśli boli). Spróbuj chwytu neutralnego jeśli dostępny. Zwiększ asystę by zredukować obciążenie podrażnionych tkanek.",
+      "alternative": "lat-pulldown-neutral-grip"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Chin-up grip is usually GENTLER on elbows than pull-up. Reduce volume, slow tempo, ensure full ROM. If pain persists, switch to machine pulldown.",
+      "modificationPl": "Chwyt chin-up jest zwykle ŁAGODNIEJSZY dla łokci niż pull-up. Zmniejsz objętość, wolne tempo, pełne ROM. Jeśli ból trwa — przejdź na lat pulldown.",
+      "alternative": "lat-pulldown-underhand"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. If pain in supinated position, switch to neutral grip variant or lat pulldown.",
+      "modificationPl": "Użyj wraps na nadgarstki. Jeśli ból w pozycji supinated — przejdź na chwyt neutralny lub lat pulldown.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Chin-up grip heavily loads biceps. Avoid until recovery. Use straight-arm pulldowns or lat-only exercises temporarily.",
+      "modificationPl": "Chwyt chin-up mocno obciąża bicepsy. Unikaj do wyzdrowienia. Tymczasowo wykonuj pulldown prostymi rękami lub ćwiczenia tylko na najszersze.",
+      "alternative": "straight-arm-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (with appropriate assistance) | 3x8 controlled tempo (2-3s eccentric) | progression: reduce assistance every 1-2 weeks",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "assisted-standing-chin-up.gif",
+    "frames_extracted": [
+      "frames/assisted-standing-chin-up/frame_0_start.png",
+      "frames/assisted-standing-chin-up/frame_1_early.png",
+      "frames/assisted-standing-chin-up/frame_2_mid.png",
+      "frames/assisted-standing-chin-up/frame_3_late.png",
+      "frames/assisted-standing-chin-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/assisted-standing-chin-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Klatki GIF pokazują wariant z asystowaną MASZYNĄ do podciągania (platforma stojąca na stosie ciężarków), nie band-assisted. Treść opisuje OBA warianty (maszyna i guma) bo mechanika i celowanie mięśniowe identyczne — różni się tylko sposób podawania asysty. Frame 0: start z prawie pełnym zwisem, stopa na platformie maszyny, podświetlone najszersze grzbietu + środkowy trapez + bicepsy. Frame 2: top — broda nad drążkiem, łokcie blisko tułowia. Chwyt ciasny, dłonie do siebie = chin-up (supinated/underhand). Klasyczna regresja chin-up dla początkujących, difficulty 4/10 (vs 8/10 dla strict chin-up).",
+
+  "tags": ["beginner_friendly", "assisted", "vertical_pull", "regression", "lats", "biceps", "supinated_grip", "machine", "band", "upper_body", "back", "calisthenics_progression", "stepping_stone"]
+}

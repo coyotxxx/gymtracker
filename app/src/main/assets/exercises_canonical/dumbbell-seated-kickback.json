@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-seated-kickback",
+  "name": "Dumbbell Seated Kickback",
+  "namePl": "Tricep kickback z hantlami w siadzie",
+  "aliases": ["seated dumbbell tricep kickback", "bent over seated kickback", "two arm seated kickback"],
+  "aliasesPl": ["kickback z hantlami siedząc", "wyprost ramion w opadzie tułowia w siadzie", "tricep kickback siedząc oburącz"],
+
+  "description": "Isolation exercise for the triceps brachii performed seated on a flat bench with the torso bent forward, parallel to the floor. Both arms work simultaneously — the upper arms are pinned to the sides of the torso, and the forearms extend backward against gravity until the elbows are locked. The seated bent-over position eliminates lumbar fatigue and torso swing seen in the standing single-arm version, making it a cleaner stimulus for the triceps long head and lateral head in the shortened (peak-contracted) position.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień trójgłowy ramienia wykonywane w siadzie na ławce płaskiej z tułowiem pochylonym do przodu, równolegle do podłogi. Obie ręce pracują jednocześnie — ramiona ponad łokciem są przyklejone do boków tułowia, a przedramiona wyprostowują się w tył wbrew grawitacji aż do pełnego wyprostu w łokciach. Pozycja siedząca w opadzie eliminuje zmęczenie lędźwi i bujanie tułowia znane z wersji stojącej jednorącz, dając czystszy bodziec na głowę długą i boczną tricepsa w fazie skurczu (szczytowej).",
+
+  "instructions": [
+    "Sit on the end of a flat bench with your feet flat on the floor, shoulder-width apart. Hold a dumbbell in each hand with a neutral grip (palms facing each other).",
+    "Bend forward at the hips until your torso is nearly parallel to the floor. Keep your back flat — do not round the upper back. Eyes look down at the floor a few feet in front.",
+    "Bring your upper arms up alongside your torso so they are parallel to the floor, elbows bent at roughly 90 degrees. The dumbbells hang straight down beside your hips.",
+    "Pin your elbows tightly to your sides — they must stay there for the entire set. Brace your core to lock the spine in neutral.",
+    "Exhale and extend both forearms backward by straightening the elbows until the arms are fully locked out, parallel to the floor. Squeeze the triceps hard at the top.",
+    "Hold the peak contraction for 1 second — the dumbbells should be behind your hips, palms facing up or in.",
+    "Inhale and lower the dumbbells under control back to the 90-degree start by bending only at the elbows. Take 2-3 seconds on the way down.",
+    "Repeat for the prescribed reps. The upper arms and torso must remain motionless — only the forearms rotate around the elbow joint."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu ławki płaskiej, stopy płasko na podłodze, na szerokość barków. Złap po hantli w każdą rękę chwytem neutralnym (dłonie zwrócone do siebie).",
+    "Pochyl się w biodrach do przodu aż tułów będzie niemal równolegle do podłogi. Plecy proste — nie zaokrąglaj górnej części pleców. Wzrok w dół, na podłogę kilka kroków przed sobą.",
+    "Unieś ramiona ponad łokciem wzdłuż tułowia tak, by były równolegle do podłogi, łokcie zgięte mniej więcej pod kątem 90 stopni. Hantle zwisają pionowo w dół obok bioder.",
+    "Mocno przyklej łokcie do boków tułowia — mają tam pozostać przez całą serię. Napnij brzuch aby zablokować kręgosłup w pozycji neutralnej.",
+    "Wydychaj i wyprostuj oba przedramiona w tył prostując łokcie aż do pełnego wyprostu ramion, równolegle do podłogi. Mocno spinaj triceps w górnej pozycji.",
+    "Zatrzymaj szczytowy skurcz na 1 sekundę — hantle powinny być za biodrami, dłonie zwrócone w górę lub do siebie.",
+    "Wdech i opuść hantle w sposób kontrolowany z powrotem do pozycji 90 stopni zginając wyłącznie łokcie. Faza negatywna trwa 2-3 sekundy.",
+    "Powtarzaj zgodnie z planem powtórzeń. Ramiona ponad łokciem i tułów pozostają nieruchome — pracują wyłącznie przedramiona obracając się wokół stawu łokciowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["posterior_deltoid", "rotator_cuff", "core", "spinal_erectors", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "posterior_deltoid": "T3",
+    "rotator_cuff": "T2",
+    "core": "T3",
+    "spinal_erectors": "T4",
+    "rhomboids": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-kickback"],
+    "progression_to": ["cable-kickback", "lying-dumbbell-triceps-extension", "skullcrusher", "close-grip-bench-press"],
+    "alternatives": ["dumbbell-kickback", "cable-kickback", "bent-over-dumbbell-kickback", "triceps-pushdown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on bench end, feet flat shoulder-width",
+      "Hinge at the hips — torso nearly parallel to floor",
+      "Flat back, neutral neck — eyes down",
+      "Upper arms pinned along your ribs, parallel to floor",
+      "Brace core to lock the spine"
+    ],
+    "setup_cues_pl": [
+      "Siad na końcu ławki, stopy płasko na szerokość barków",
+      "Zawias w biodrach — tułów niemal równolegle do podłogi",
+      "Plecy proste, szyja neutralna — wzrok w dół",
+      "Ramiona ponad łokciem przyklejone wzdłuż żeber, równolegle do podłogi",
+      "Napnij brzuch aby zablokować kręgosłup"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay glued to the ribs",
+      "Lock the elbow at the top — triceps fully contracted",
+      "Hold the peak squeeze for one count",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Keep the torso still — no rocking with the weight"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyklejone do żeber",
+      "Zablokuj łokieć w górnej pozycji — triceps w pełnym skurczu",
+      "Trzymaj szczytowy skurcz przez jedną sekundę",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Tułów nieruchomo — bez bujania pod ciężarem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arm drops below parallel during the rep",
+        "faultPl": "Ramię ponad łokciem opada poniżej poziomu równoległego do podłogi",
+        "cause": "Posterior deltoid fatigue, weight too heavy, or insufficient elbow lift at setup",
+        "causePl": "Zmęczenie tylnego aktonu barku, zbyt duży ciężar, lub niewystarczające uniesienie łokcia na starcie",
+        "cue": "Reset the upper arm parallel to the floor before every rep. If it keeps dropping, lower the weight.",
+        "cuePl": "Resetuj ramię równolegle do podłogi przed każdym powtórzeniem. Jeśli wciąż opada, zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete lockout — failing to fully extend the elbow",
+        "faultPl": "Niepełny wyprost — brak pełnego prostowania łokcia",
+        "cause": "Loss of triceps tension at end range, weight too heavy, or lack of mind-muscle connection",
+        "causePl": "Utrata napięcia tricepsa w końcowym zakresie, zbyt duży ciężar, lub brak czucia mięśniowego",
+        "cue": "Drive the dumbbell back until the arm is dead-straight. The squeeze is the whole point of this exercise.",
+        "cuePl": "Wypchnij hantel w tył aż ramię będzie idealnie proste. Szczytowy skurcz to cały sens tego ćwiczenia."
+      },
+      {
+        "fault": "Swinging the dumbbell with shoulder motion",
+        "faultPl": "Bujanie hantla ruchem w stawie ramiennym",
+        "cause": "Load too heavy, elbow not stabilized, or using momentum to complete reps",
+        "causePl": "Zbyt duży ciężar, niestabilny łokieć, lub używanie rozpędu do dokończenia powtórzeń",
+        "cue": "Lower the weight. Imagine your elbow is a hinge bolted to your ribs — only the forearm moves.",
+        "cuePl": "Zmniejsz ciężar. Wyobraź sobie że łokieć to zawias przykręcony do żeber — porusza się tylko przedramię."
+      },
+      {
+        "fault": "Rounding the upper back",
+        "faultPl": "Zaokrąglanie górnej części pleców",
+        "cause": "Tight pecs, weak thoracic erectors, or hinge too deep without core control",
+        "causePl": "Skrócone mięśnie piersiowe, słabe prostowniki piersiowego odcinka kręgosłupa, lub zbyt głęboki zawias bez kontroli brzucha",
+        "cue": "Lift your chest slightly, pinch shoulder blades down. Hinge less deep if you cannot keep the back flat.",
+        "cuePl": "Lekko unieś klatkę piersiową, ściągnij łopatki w dół. Mniej głęboki zawias jeśli nie utrzymujesz prostych pleców."
+      },
+      {
+        "fault": "Rotating the dumbbell at the top (palms turning down)",
+        "faultPl": "Rotacja hantla w górnej pozycji (dłonie obracane w dół)",
+        "cause": "Misinterpretation of the cue, attempting to recruit forearm rotators, or wrist fatigue",
+        "causePl": "Złe zrozumienie wskazówki, próba angażowania nawracaczy przedramienia, lub zmęczenie nadgarstków",
+        "cue": "Keep the wrist neutral — palms stay facing in or slightly up at lockout. No active twist.",
+        "cuePl": "Trzymaj nadgarstek neutralnie — dłonie zwrócone do siebie lub lekko w górę w wyproście. Bez aktywnego skręcania."
+      }
+    ],
+    "breathing": "Exhale during the concentric (extending the arms back). Inhale during the eccentric (lowering to 90 degrees). Maintain a light core brace throughout to protect the bent-over spine.",
+    "breathingPl": "Wydech w fazie koncentrycznej (prostowanie ramion w tył). Wdech w fazie ekscentrycznej (opuszczanie do 90 stopni). Utrzymuj lekkie napięcie brzucha przez całą serię aby chronić kręgosłup w opadzie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "olecranon_bursitis_or_posterior_elbow_pain",
+      "severity": "modify",
+      "modification": "Full lockout compresses the olecranon. Stop short of full extension (~10 degrees from lockout) and reduce load until pain-free.",
+      "modificationPl": "Pełny wyprost ściska wyrostek łokciowy. Zatrzymaj ruch przed pełnym wyprostem (~10 stopni od pełnego zablokowania) i zmniejsz obciążenie do zakresu bez bólu.",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "distal_triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid heavy eccentric overload at lockout. Use lighter loads, higher reps (12-15) and slow controlled tempo. Skip the peak hold until tendon is asymptomatic.",
+      "modificationPl": "Unikaj ciężkiej fazy negatywnej przy pełnym wyproście. Używaj lżejszych ciężarów, większej liczby powtórzeń (12-15) i wolnego, kontrolowanego tempa. Pomijaj szczytowe zatrzymanie aż ścięgno będzie bezobjawowe.",
+      "alternative": "cable-kickback"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_disc_issue",
+      "severity": "modify",
+      "modification": "The bent-over seated posture loads the lumbar spine in flexion. Switch to standing cable kickback or lying triceps extension that keeps the spine neutral.",
+      "modificationPl": "Pozycja siedząca w opadzie obciąża odcinek lędźwiowy w zgięciu. Zamień na kickback z linki stojąc lub wyprosty ramion w leżeniu, które utrzymują kręgosłup w neutralnej pozycji.",
+      "alternative": "cable-kickback"
+    },
+    {
+      "condition": "shoulder_impingement_posterior",
+      "severity": "caution",
+      "modification": "Maintaining the upper arm parallel to the floor stresses the posterior cuff in some lifters. Drop the upper arm slightly below parallel or use cable variant to vary the resistance angle.",
+      "modificationPl": "Utrzymywanie ramienia ponad łokciem równolegle do podłogi obciąża tylną część stożka rotatorów u niektórych ćwiczących. Opuść ramię nieco poniżej poziomu lub użyj wariantu z linką aby zmienić kąt obciążenia.",
+      "alternative": "triceps-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x12-20 (endurance/pump) | finishing exercise after compound triceps work",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-seated-kickback.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-kickback/frame_0_start.png",
+      "frames/dumbbell-seated-kickback/frame_1_early.png",
+      "frames/dumbbell-seated-kickback/frame_2_mid.png",
+      "frames/dumbbell-seated-kickback/frame_3_late.png",
+      "frames/dumbbell-seated-kickback/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-seated-kickback"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model siedzi na ławce płaskiej w opadzie tułowia (tułów niemal równolegle do podłogi), trzyma dwa hantle chwytem neutralnym, ramiona ponad łokciem przyklejone do boków klatki i równolegle do podłogi, łokcie zgięte ~90 stopni, hantle zwisają obok bioder. Tylne aktony barków i triceps podświetlone na czerwono. Frame 2: pełny wyprost — przedramiona wyprostowane w tył, ramiona pozostają równolegle do podłogi, hantle za biodrami, triceps w szczytowym skurczu. Frame 4: powrót do startu (z 'ghostem' wyprostu w tle). Tułów i ramiona ponad łokciem nieruchome przez cały ruch — modelowe wykonanie izolacyjne. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Seated Kickback (bilateral, bent-over seated). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "dumbbell", "upper_body", "bench", "seated", "finisher"]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "dumbbell-push-press",
+  "name": "Dumbbell Push Press",
+  "namePl": "Push press z hantlami",
+  "aliases": ["DB push press", "dumbbell push jerk", "standing dumbbell push press"],
+  "aliasesPl": ["push press hantlami", "wyciskanie hantli z dipem", "wyciskanie z napędem nóg hantlami", "DB push press stojąc"],
+
+  "description": "Bilateral overhead press with leg drive — a hybrid power/strength exercise combining a quarter-squat dip with explosive vertical press. Unlike strict OHP (which isolates the shoulders), push press recruits the lower body to drive the dumbbells off the shoulders, allowing heavier loads and developing total-body explosive power. The leg drive 'breaks' the dumbbells past the sticking point, after which the deltoids and triceps finish the lockout. Excellent for athletes and intermediate-advanced lifters who have plateaued on strict press. Higher technical demand than strict DB OHP due to dip timing and rebound coordination.",
+  "descriptionPl": "Dwustronne wyciskanie hantli nad głowę z napędem nóg — hybrydowe ćwiczenie mocy/siły łączące lekkie ugięcie kolan z eksplozywnym wyciskaniem pionowym. W przeciwieństwie do strict OHP (które izoluje barki), push press angażuje dolne partie ciała by wybić hantle z barków, pozwalając użyć większego ciężaru i rozwijać moc eksplozywną całego ciała. Napęd z nóg 'wybija' hantle przez sticking point, po czym delty i tricepsy kończą wyciskanie do lock-out. Doskonałe dla sportowców i osób średniozaawansowanych-zaawansowanych, które utknęły na strict press. Wyższy wymóg techniczny niż strict DB OHP ze względu na timing dipa i rebound.",
+
+  "instructions": [
+    "Grab a dumbbell in each hand. Stand with feet hip-width to shoulder-width apart.",
+    "Bring dumbbells to shoulder level — elbows bent, palms facing forward (pronated) or semi-neutral. Elbows tucked slightly in front.",
+    "Brace core HARD, squeeze glutes. Ribs DOWN. Eyes forward.",
+    "Inhale and initiate a short, fast quarter-squat dip — knees bend ~10-15 cm, torso stays UPRIGHT (no forward lean).",
+    "Without pausing at the bottom, REVERSE explosively — drive through the floor with the legs to launch the dumbbells off the shoulders.",
+    "As the legs reach full extension, press the dumbbells the rest of the way to overhead lockout — arms straight, biceps near ears.",
+    "Lower the dumbbells with control back to the shoulders. Reset stance, brace, and repeat.",
+    "Exhale near lockout or on the descent."
+  ],
+  "instructionsPl": [
+    "Chwyć hantel w każdą rękę. Stań ze stopami na szerokość bioder do barków.",
+    "Podnieś hantle na wysokość barków — łokcie zgięte, dłonie skierowane do przodu (pronacja) lub półneutralnie. Łokcie lekko z przodu.",
+    "Napnij brzuch MOCNO, ściśnij pośladki. Żebra W DÓŁ. Wzrok do przodu.",
+    "Wdech i wykonaj krótki, szybki dip — lekkie ugięcie kolan ~10-15 cm, tułów PIONOWO (bez pochylania do przodu).",
+    "Bez pauzy na dole — ODWRÓĆ ruch EKSPLOZYWNIE — odepchnij się od podłogi nogami by wybić hantle z barków.",
+    "Gdy nogi osiągają pełen wyprost, dociśnij hantle resztę drogi do lock-out nad głową — ramiona proste, bicepsy przy uszach.",
+    "Opuść hantle kontrolowanym ruchem z powrotem na barki. Ustaw postawę, napnij się ponownie, powtórz.",
+    "Wydech blisko lock-out lub przy opuszczaniu."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "triceps", "quadriceps"],
+    "secondary": ["lateral_deltoids", "glutes", "upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "rotator_cuff", "erector_spinae", "calves"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "triceps": "P8",
+    "quadriceps": "P7",
+    "lateral_deltoids": "S6",
+    "glutes": "S6",
+    "upper_chest": "S5",
+    "trapezius": "S5",
+    "serratus_anterior": "S5",
+    "core": "S7",
+    "rotator_cuff": "S6",
+    "erector_spinae": "S5",
+    "calves": "S4"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-standing-overhead-press", "seated-dumbbell-shoulder-press"],
+    "progression_to": ["barbell-push-press", "dumbbell-push-jerk", "barbell-clean-and-press"],
+    "alternatives": ["barbell-push-press", "dumbbell-standing-overhead-press", "kettlebell-push-press", "landmine-push-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells racked at shoulders, elbows slightly forward",
+      "Feet hip- to shoulder-width, weight on midfoot",
+      "Brace core HARD, squeeze glutes",
+      "Ribs DOWN — torso stays vertical through the dip",
+      "Eyes forward, neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Hantle na barkach, łokcie lekko z przodu",
+      "Stopy na szerokość bioder do barków, ciężar na śródstopiu",
+      "Napnij brzuch MOCNO, ściśnij pośladki",
+      "Żebra W DÓŁ — tułów pionowo przez cały dip",
+      "Wzrok do przodu, szyja neutralna"
+    ],
+    "execution_cues": [
+      "Dip SHORT and FAST — quarter squat only, knees track over toes",
+      "Torso STAYS VERTICAL — no forward lean during the dip",
+      "No pause at the bottom — instant reversal (rebound)",
+      "Drive through the FLOOR with the legs — launch the dumbbells",
+      "Finish with full lockout — biceps by ears, ribs still down"
+    ],
+    "execution_cues_pl": [
+      "Dip KRÓTKI i SZYBKI — tylko ćwierć przysiadu, kolana w linii palców",
+      "Tułów PIONOWO — bez pochylania do przodu podczas dipa",
+      "Bez pauzy na dole — natychmiastowe odwrócenie (rebound)",
+      "Odepchnij się od PODŁOGI nogami — wybij hantle",
+      "Zakończ pełnym lock-out — bicepsy przy uszach, żebra dalej w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso leans forward during the dip (squat instead of dip)",
+        "faultPl": "Tułów pochyla się do przodu podczas dipa (przysiad zamiast dipa)",
+        "cause": "Quad-dominant pattern, weak core bracing, dumbbells drift forward off shoulders",
+        "causePl": "Wzorzec kwadrycepsowy, słabe napięcie brzucha, hantle uciekają z barków do przodu",
+        "cue": "Sit STRAIGHT DOWN like an elevator — chest UP. Knees track forward, NOT hips back. Dip is vertical, not hip-hinge.",
+        "cuePl": "Usiądź PROSTO W DÓŁ jak winda — klatka W GÓRĘ. Kolana do przodu, NIE biodra do tyłu. Dip pionowy, nie zawias biodrowy."
+      },
+      {
+        "fault": "Dip too deep (turns into a thruster or squat-press)",
+        "faultPl": "Zbyt głęboki dip (zamienia się w thruster lub squat-press)",
+        "cause": "Misunderstanding the lift, using legs as primary mover instead of force amplifier, low-load training mindset",
+        "causePl": "Niezrozumienie ruchu, używanie nóg jako głównego prime movera zamiast wzmacniacza siły, mentalność lekkiego treningu",
+        "cue": "Dip is ONLY a quarter squat — ~10-15 cm bend. The legs initiate, the shoulders finish. If you'd call it a squat, it's too deep.",
+        "cuePl": "Dip to TYLKO ćwierć przysiadu — ~10-15 cm ugięcia. Nogi inicjują, barki kończą. Jeśli można by to nazwać przysiadem, jest za głęboki."
+      },
+      {
+        "fault": "Mistimed leg drive (press too early or too late)",
+        "faultPl": "Zły timing napędu nóg (wyciskanie za wcześnie lub za późno)",
+        "cause": "Lack of practice, no rhythm, pressing with arms before legs finish driving, or stalling at top of leg drive",
+        "causePl": "Brak praktyki, brak rytmu, wyciskanie ramionami zanim nogi skończą napęd, lub zatrzymanie na szczycie napędu nóg",
+        "cue": "Legs FIRST, arms SECOND. Feel the dumbbells 'float' off your shoulders at the top of the leg drive — then press through.",
+        "cuePl": "Najpierw NOGI, potem RAMIONA. Poczuj jak hantle 'unoszą się' z barków na szczycie napędu nóg — wtedy dopchnij do końca."
+      },
+      {
+        "fault": "Excessive lower back arching at lockout (compensating overhead mobility)",
+        "faultPl": "Nadmierne wygięcie dolnych pleców w lock-out (kompensacja mobilności overhead)",
+        "cause": "Limited thoracic/shoulder mobility, weak core, weight too heavy, momentum carries lumbar into hyperextension",
+        "causePl": "Ograniczona mobilność piersiowa/barku, słaby brzuch, zbyt duży ciężar, rozpęd ciągnie lędźwie w przeprost",
+        "cue": "Ribs DOWN through the lockout. Squeeze glutes at the top to lock the pelvis. If mobility is the cap, regress to strict press.",
+        "cuePl": "Żebra W DÓŁ przez lock-out. Ściśnij pośladki na szczycie by zablokować miednicę. Jeśli mobilność ogranicza, wróć do strict press."
+      },
+      {
+        "fault": "Soft landing of the dumbbells onto the shoulders (no reset between reps)",
+        "faultPl": "Miękkie lądowanie hantli na barkach (brak resetu między powtórzeniami)",
+        "cause": "Fatigue, rushing reps, not absorbing the eccentric, leading to sloppy form on subsequent reps",
+        "causePl": "Zmęczenie, pośpieszne powtórzenia, brak amortyzacji ekscentryka, prowadzi do bałaganu w kolejnych powtórzeniach",
+        "cue": "RESET on every rep — full brace, ribs down, dumbbells settled. Push press is power work, not metcon. Quality over rep speed.",
+        "cuePl": "RESET przy każdym powtórzeniu — pełne napięcie, żebra w dół, hantle ustabilizowane. Push press to praca mocy, nie metcon. Jakość ponad tempo."
+      }
+    ],
+    "breathing": "Inhale and brace before the dip. Hold the brace through the dip-drive-press sequence (Valsalva). Exhale near lockout or during the descent. Bracing is critical to protect the spine under heavier loads.",
+    "breathingPl": "Wdech i napięcie przed dipem. Trzymaj napięcie przez całą sekwencję dip-napęd-wyciskanie (Valsalva). Wydech blisko lock-out lub przy opuszczaniu. Napięcie jest krytyczne dla ochrony kręgosłupa przy większych ciężarach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_injury",
+      "severity": "modify",
+      "modification": "Avoid the dip — perform strict dumbbell overhead press instead. The dip places acute load on the knees during reversal.",
+      "modificationPl": "Unikaj dipa — wykonuj strict dumbbell overhead press zamiast tego. Dip generuje ostre obciążenie kolan podczas odwrócenia.",
+      "alternative": "dumbbell-standing-overhead-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "Standing dip-drive + overhead load is high-demand for the lumbar spine. Switch to seated dumbbell press until cleared.",
+      "modificationPl": "Stojący dip z napędem + obciążenie nad głową bardzo obciążają odcinek lędźwiowy. Przejdź na seated dumbbell press do zgody fizjoterapeuty.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) or reduce ROM. The added load from leg drive can aggravate impingement — consider landmine push press.",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie do siebie) lub zmniejsz ROM. Dodatkowy ciężar z napędu nóg może zaostrzyć impingement — rozważ landmine push press.",
+      "alternative": "landmine-push-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Push press demands explosive overhead lockout — incomplete mobility leads to lumbar compensation. Work mobility separately; use strict seated press in the meantime.",
+      "modificationPl": "Push press wymaga eksplozywnego lock-out overhead — ograniczona mobilność prowadzi do kompensacji lędźwiowej. Pracuj nad mobilnością osobno; tymczasem używaj strict seated press.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "4-5x3-5 (power/strength) | 4x6-8 (strength-hypertrophy) | 3x8-10 (hypertrophy with explosive intent)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "dumbbell-push-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-push-press/frame_0_start.png",
+      "frames/dumbbell-push-press/frame_1_early.png",
+      "frames/dumbbell-push-press/frame_2_mid.png",
+      "frames/dumbbell-push-press/frame_3_late.png",
+      "frames/dumbbell-push-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-push-press",
+    "master_slug": "dumbbell-push-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany na 5 klatkach. Frame 0 (start): postawa stojąca, stopy na szerokość barków, hantle racked na wysokości barków, łokcie pod nadgarstkami w pozycji ~90°, dłonie skierowane do przodu (pronacja), nogi proste, tułów pionowy, podświetlone przednie/lateralne delty, kwadrycepsy i klatka. Frame 1 (early/dip): WYRAŹNE ugięcie kolan ~10-15 cm — klasyczny quarter-squat dip, tułów pozostaje pionowy (BEZ pochylenia do przodu), kwadrycepsy mocno podświetlone — to kluczowa różnica vs strict OHP, potwierdza leg drive. Frame 2 (mid/szczyt): pełen lock-out nad głową, ramiona w wyproście, bicepsy blisko uszu, nogi proste, tricepsy aktywne. Frame 3 (late): hantle nadal nad głową, faza utrzymania/początek ekscentryka, podświetlone tricepsy i przednie delty. Frame 4 (end): powrót hantli na wysokość barków, faza ekscentryczna (widać duchowe rozmycie hantli w pełnym torze pionowym), gotowe do następnego powtórzenia. Klasyczny bilateral standing push press z hantlami — dip → drive → lockout. Quadriceps highlighting w frame 1 jednoznacznie potwierdza zaangażowanie nóg (P7). Pasuje 1:1 do specyfikacji.",
+
+  "tags": ["upper_body", "lower_body_assist", "vertical_push", "shoulders", "power", "dumbbell", "compound", "bilateral", "free_weights", "explosive", "athletic", "stabilization_demand"]
+}

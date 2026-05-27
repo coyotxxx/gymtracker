@@ -1,0 +1,201 @@
+{
+  "id": "smith-standing-behind-head-military-press",
+  "name": "Smith Standing Behind-Head Military Press",
+  "namePl": "Wyciskanie żołnierskie zza karku w Smith Machine (stojąc)",
+  "aliases": ["smith behind the neck press standing", "smith BTN press", "smith standing BTN military press", "smith machine behind neck press"],
+  "aliasesPl": ["smith behind the neck press", "wyciskanie zza karku Smith stojąc", "wyciskanie spoza karku w Smith Machine", "Smith BTN press"],
+
+  "description": "HIGHLY CONTROVERSIAL exercise. Standing military press performed in a Smith machine with the bar lowered BEHIND the neck (behind-the-head). The fixed bar path of the Smith machine forces a strictly vertical line of pull, which combined with the behind-the-neck position places the glenohumeral joint in extreme external rotation + abduction — a classic impingement and labral-stress position. Targets anterior and lateral deltoids, triceps, and upper traps, but the safer alternative (front-rack OHP or Smith front military press) gives nearly identical hypertrophy benefit with FAR lower injury risk. Only consider with excellent overhead mobility, light loads, and a partial ROM (stopping at ear level).",
+  "descriptionPl": "MOCNO KONTROWERSYJNE ćwiczenie. Wyciskanie żołnierskie wykonywane stojąc w Smith Machine z gryfem opuszczanym ZA KARK (behind-the-head). Sztywna, pionowa ścieżka Smith Machine wymusza ruch po linii prostej, co w połączeniu z pozycją zza karku wprowadza staw ramienny w skrajną rotację zewnętrzną + odwiedzenie — klasyczne ustawienie pod konflikt podbarkowy (impingement) i obciążenie obrąbka. Angażuje przednie i boczne aktony naramienne, tricepsy oraz górną część kapturowych, ale BEZPIECZNIEJSZA alternatywa (wyciskanie z front rack lub Smith front military press) daje niemal identyczny efekt hipertroficzny przy ZNACZNIE niższym ryzyku kontuzji. Rozważ TYLKO przy świetnej mobilności overhead, z lekkim ciężarem i niepełnym ROM (zatrzymanie na wysokości uszu).",
+
+  "instructions": [
+    "Set up the Smith machine bar at upper-chest height. Stand UNDER the bar, facing AWAY from the rack so the bar sits behind your neck (on upper traps, NOT on cervical spine).",
+    "Grip the bar wider than shoulder-width — wide enough that forearms are vertical when the bar is at ear level.",
+    "Unrack by twisting the bar. Feet hip- to shoulder-width apart, knees soft.",
+    "Brace core HARD, squeeze glutes, slight chest up — DO NOT lean forward (you'll lose the behind-the-neck path) or excessively back.",
+    "Inhale, press the bar straight up to a full lockout overhead. Bar path is vertical (fixed by Smith machine).",
+    "Lower with strict control toward the back of the head/upper traps. STOP at ear level or just above if you lack mobility — DO NOT bounce off the traps.",
+    "Exhale at the top. Re-rack by twisting the bar back into the hooks.",
+    "Keep loads LIGHT (often 40-60% of front OHP). This is a hypertrophy/finisher tool — never test 1RM here."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smith Machine na wysokości górnej klatki. Stań POD gryfem, twarzą OD stojaka, tak by gryf spoczął za karkiem (na górnych kapturowych, NIE na kręgosłupie szyjnym).",
+    "Chwyć gryf szerzej niż na szerokość barków — na tyle szeroko, by przedramiona były pionowo gdy gryf jest na wysokości uszu.",
+    "Wyciągnij gryf ze stojaka przekręcając go. Stopy na szerokość bioder do barków, kolana lekko ugięte.",
+    "Napnij brzuch MOCNO, ściśnij pośladki, klatka lekko w górę — NIE pochylaj się do przodu (stracisz ścieżkę zza karku) ani nadmiernie do tyłu.",
+    "Wdech, wyciśnij gryf prosto w górę do pełnego lock-outu nad głową. Ścieżka pionowa (wymuszona przez Smith).",
+    "Opuszczaj ZE ŚCISŁĄ KONTROLĄ w stronę tyłu głowy/górnych kapturowych. ZATRZYMAJ na wysokości uszu lub nieco wyżej jeśli brak mobilności — NIE odbijaj od kapturowych.",
+    "Wydech w górze. Wsadź gryf z powrotem do haków poprzez przekręcenie.",
+    "Trzymaj LEKKIE ciężary (często 40-60% twojego front OHP). To narzędzie do hipertrofii/finisher — NIGDY nie testuj tu 1RM."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps", "upper_trapezius"],
+    "stabilizers": ["rotator_cuff", "core", "rectus_abdominis", "obliques", "glutes", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P9",
+    "lateral_deltoid": "P9",
+    "triceps": "S7",
+    "upper_trapezius": "S6",
+    "rotator_cuff": "S5",
+    "core": "S5",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-overhead-press", "smith-shoulder-press", "seated-barbell-overhead-press"],
+    "progression_to": [],
+    "alternatives": ["smith-shoulder-press", "barbell-overhead-press", "seated-barbell-overhead-press", "machine-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps, NOT on cervical spine",
+      "Grip wide — forearms vertical at ear level",
+      "Feet hip- to shoulder-width, knees soft",
+      "Brace core, squeeze glutes",
+      "Torso UPRIGHT — no forward lean"
+    ],
+    "setup_cues_pl": [
+      "Gryf na górnych kapturowych, NIE na kręgosłupie szyjnym",
+      "Szeroki chwyt — przedramiona pionowo na wysokości uszu",
+      "Stopy na szerokość bioder do barków, kolana lekko ugięte",
+      "Napięty brzuch, ściśnięte pośladki",
+      "Tułów PIONOWO — bez pochylania do przodu"
+    ],
+    "execution_cues": [
+      "Press straight up — bar path is fixed",
+      "Stop lowering at EAR LEVEL, do not bounce off traps",
+      "Keep elbows under the bar — wrists neutral",
+      "Lock out fully — biceps near ears",
+      "Light weight, slow eccentric — this is a hypertrophy tool"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę — ścieżka i tak wymuszona",
+      "Zatrzymaj opuszczanie na WYSOKOŚCI USZU, nie odbijaj od kapturowych",
+      "Łokcie pod gryfem — nadgarstki neutralne",
+      "Pełen lock-out — bicepsy przy uszach",
+      "Lekki ciężar, wolna ekscentryka — to narzędzie hipertrofii"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lowering bar to base of neck (impingement & cervical risk)",
+        "faultPl": "Opuszczanie gryfu do podstawy karku (impingement + ryzyko szyjne)",
+        "cause": "Trying to maximize ROM without sufficient overhead mobility",
+        "causePl": "Próba maksymalizacji ROM bez wystarczającej mobilności overhead",
+        "cue": "STOP at ear level. Partial ROM is the correct ROM for behind-the-neck pressing.",
+        "cuePl": "ZATRZYMAJ na wysokości uszu. Niepełen ROM to PRAWIDŁOWY ROM dla wyciskania zza karku."
+      },
+      {
+        "fault": "Forward head/neck lean to allow bar to pass",
+        "faultPl": "Pochylanie głowy/szyi do przodu by gryf mógł przejść",
+        "cause": "Smith bar path doesn't match natural anatomy — body compensates by tilting head",
+        "causePl": "Ścieżka Smith nie pasuje do naturalnej anatomii — ciało kompensuje pochylając głowę",
+        "cue": "Head NEUTRAL, eyes forward. If you must tilt the head to fit, the exercise is wrong for you — switch to front Smith press.",
+        "cuePl": "Głowa NEUTRALNA, wzrok do przodu. Jeśli musisz pochylać głowę by się zmieścić — to ćwiczenie nie dla ciebie, przejdź na Smith z przodu."
+      },
+      {
+        "fault": "Bouncing off upper traps at the bottom",
+        "faultPl": "Odbijanie od górnych kapturowych w dolnej pozycji",
+        "cause": "Loss of tension, weight too heavy, ego lifting",
+        "causePl": "Utrata napięcia, zbyt duży ciężar, ego lifting",
+        "cue": "Pause 1 second at the bottom. Reduce weight if you cannot control the eccentric.",
+        "cuePl": "Pauza 1 sekunda na dole. Zmniejsz ciężar jeśli nie kontrolujesz ekscentryki."
+      },
+      {
+        "fault": "Grip too narrow (excessive shoulder external rotation)",
+        "faultPl": "Zbyt wąski chwyt (nadmierna rotacja zewnętrzna barku)",
+        "cause": "Copying front-OHP grip width to behind-the-neck variant",
+        "causePl": "Skopiowanie szerokości chwytu z front-OHP do wariantu zza karku",
+        "cue": "Grip WIDE — forearms must be vertical when bar is at ear level.",
+        "cuePl": "SZEROKI chwyt — przedramiona muszą być pionowo gdy gryf jest na wysokości uszu."
+      },
+      {
+        "fault": "Going heavy (treating BTN press like front OHP)",
+        "faultPl": "Cieżkie wyciskanie (traktowanie BTN press jak front OHP)",
+        "cause": "Misunderstanding the purpose — this is a finisher/hypertrophy tool, not a 1RM lift",
+        "causePl": "Niezrozumienie celu — to finisher/narzędzie hipertroficzne, nie 1RM",
+        "cue": "Cap loads at 40-60% of your front OHP. Reps 8-15, never below 6.",
+        "cuePl": "Limituj ciężar do 40-60% twojego front OHP. Powtórzenia 8-15, nigdy poniżej 6."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before each rep. Hold during the descent and the press. Exhale at lockout. Tension is critical because the joint is in a vulnerable position.",
+    "breathingPl": "Wdech i napięcie na górze przed każdym powtórzeniem. Trzymaj przez opuszczanie i wyciskanie. Wydech w lock-out. Napięcie KLUCZOWE bo staw jest w wrażliwej pozycji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Behind-the-neck pressing is the classic impingement-provoking position. Switch entirely to front-rack press (Smith front or barbell OHP) or landmine press.",
+      "modificationPl": "Wyciskanie zza karku to klasyczna pozycja wywołująca impingement. Przejdź całkowicie na wyciskanie z front rack (Smith z przodu lub barbell OHP) lub landmine press.",
+      "alternative": "smith-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared by PT. Resume overhead work with machine shoulder press or light landmine press only.",
+      "modificationPl": "Unikaj całkowicie do zgody fizjoterapeuty. Wróć do pracy overhead wyłącznie przez machine shoulder press lub lekki landmine press.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "avoid",
+      "modification": "Behind-the-neck pressing REQUIRES excellent thoracic + shoulder mobility. Without it, this exercise is dangerous. Switch to front Smith press or seated barbell OHP.",
+      "modificationPl": "Wyciskanie zza karku WYMAGA świetnej mobilności piersiowej + barków. Bez niej to ćwiczenie jest niebezpieczne. Przejdź na Smith z przodu lub seated barbell OHP.",
+      "alternative": "smith-shoulder-press"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "avoid",
+      "modification": "Bar position near cervical spine + forced head posture = significant risk. Avoid entirely. Use front-pressing variants only.",
+      "modificationPl": "Pozycja gryfu blisko kręgosłupa szyjnego + wymuszona postawa głowy = znaczne ryzyko. Unikaj całkowicie. Używaj wyłącznie wariantów wyciskania z przodu.",
+      "alternative": "smith-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy ONLY) | NEVER below 6 reps | light-moderate load 40-60% of front OHP",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "smith-standing-behind-head-military-press.gif",
+    "frames_extracted": [
+      "frames/smith-standing-behind-head-military-press/frame_0_start.png",
+      "frames/smith-standing-behind-head-military-press/frame_1_early.png",
+      "frames/smith-standing-behind-head-military-press/frame_2_mid.png",
+      "frames/smith-standing-behind-head-military-press/frame_3_late.png",
+      "frames/smith-standing-behind-head-military-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/smith-standing-behind-head-military-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Klatki potwierdzają wykonanie: stojąca postawa w Smith Machine, gryf opuszczany ZA KARK (behind-the-neck/head) na wysokość uszu/górnych kapturowych, pełen lock-out overhead. Frame 0/4: pozycja końcowa z gryfem za karkiem (akcent na przednie + boczne aktony, podświetlone bilateralnie). Frame 1/3: faza pośrednia. Frame 2: pełen lock-out. Klasyczne ćwiczenie kontrowersyjne — wszystkie nowoczesne źródła (NSCA, NASM) odradzają ze względu na ryzyko impingement + obciążenie obrąbka stawu ramiennego. Zachowano w bazie z bardzo mocnymi ostrzeżeniami: severity 'avoid' dla 4 stanów (impingement, RC injury, mobility, cervical). PL nazwa = 'Wyciskanie żołnierskie zza karku w Smith Machine (stojąc)' — opisowa, standard PL.",
+
+  "tags": ["controversial", "behind_the_neck", "smith_machine", "shoulders", "vertical_push", "hypertrophy", "advanced_only", "high_injury_risk"]
+}

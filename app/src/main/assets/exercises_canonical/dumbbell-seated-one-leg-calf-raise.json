@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-seated-one-leg-calf-raise",
+  "name": "Dumbbell Seated One-Leg Calf Raise",
+  "namePl": "Wspięcia na palce hantlem siedząc na jednej nodze",
+  "aliases": ["single-leg seated dumbbell calf raise", "unilateral seated calf raise", "one-legged dumbbell calf raise"],
+  "aliasesPl": ["jednonóż wspięcia na palce z hantlem siedząc", "unilateralne wspięcia siedzące z hantlem", "wspięcia jednonóż na łydki z hantlem"],
+
+  "description": "Unilateral seated calf raise variant performed with a single dumbbell loaded on one thigh while the foot of that leg sits on a low elevation (step or block). Because the knee is bent to roughly 90 degrees, the gastrocnemius is shortened and slack, shifting almost all of the workload onto the soleus — the deeper, slow-twitch dominant plantarflexor that responds best to higher-rep, controlled work. The unilateral setup adds two more benefits: it lets each side use its true working weight (eliminating side-to-side compensation) and it dramatically reduces the absolute load needed compared to a bilateral seated raise, making it ideal for home training or rehab.",
+  "descriptionPl": "Jednonożna odmiana wspięć na palce w siadzie wykonywana z jednym hantlem opartym na udzie pracującej nogi, której śródstopie znajduje się na niskiej podwyższce (stepie lub klocku). Kolano ugięte do około 90 stopni skraca i wyłącza z pracy mięsień brzuchaty łydki (gastrocnemius), przez co niemal całe obciążenie przejmuje mięsień płaszczkowaty (soleus) — głębsza warstwa łydki, dominująca włóknami wolnokurczliwymi, która najlepiej reaguje na powtórzenia w wyższym zakresie i kontrolowane tempo. Wersja unilateralna daje dwie dodatkowe korzyści: każda strona pracuje swoim realnym ciężarem (brak kompensacji silniejszą nogą) oraz potrzebny absolutny ciężar jest dużo mniejszy niż w wersji obunożnej — idealne do treningu domowego i rehabilitacji.",
+
+  "instructions": [
+    "Place a low step, plate, or wooden block about 30 cm in front of a flat bench. Sit on the bench with your back tall and feet flat on the floor.",
+    "Grab a dumbbell in the hand on the same side as the leg you will train. Rest it vertically on top of your thigh, 5-8 cm above the knee, and hold it in place with both hands.",
+    "Place the ball of the foot of the working leg on the edge of the step so the heel hangs free. The opposite foot stays flat on the floor as a stabilizer only — it does not push.",
+    "Make sure the knee of the working leg is bent at roughly 90 degrees. Shin vertical, thigh horizontal. This angle is what isolates the soleus.",
+    "Lower the heel slowly toward the floor, letting the ankle dorsiflex fully. You should feel a strong stretch deep in the lower calf. Inhale on the way down.",
+    "Drive through the ball of the foot and push the heel as high as it will go. Exhale as you contract. Squeeze the calf hard at the top for a brief one-second pause.",
+    "Lower under control over 2-3 seconds. Avoid bouncing out of the bottom — it removes tension from the soleus and stresses the Achilles tendon.",
+    "Complete all prescribed reps on one leg first, then switch the dumbbell to the other thigh and repeat. Always start with the weaker side."
+  ],
+  "instructionsPl": [
+    "Postaw niski step, talerz lub drewniany klocek około 30 cm przed płaską ławką. Usiądź na ławce z wyprostowanymi plecami, stopy płasko na podłodze.",
+    "Złap hantel w rękę po tej samej stronie co noga, którą będziesz trenować. Oprzyj go pionowo na udzie 5-8 cm powyżej kolana i przytrzymaj oburącz.",
+    "Postaw śródstopie pracującej nogi na krawędzi stepu tak, aby pięta wisiała swobodnie w powietrzu. Druga stopa zostaje płasko na podłodze tylko jako podpora — nie pchaj nią.",
+    "Upewnij się, że kolano pracującej nogi jest ugięte do około 90 stopni. Goleń pionowo, udo poziomo. Ten kąt to klucz do izolacji soleusa.",
+    "Powoli opuszczaj piętę w stronę podłogi pozwalając stawowi skokowemu na pełne zgięcie grzbietowe. Powinieneś czuć mocne rozciągnięcie głęboko w dolnej części łydki. Wdech podczas opuszczania.",
+    "Wypchnij przez śródstopie i wynieś piętę najwyżej jak potrafisz. Wydech podczas spinania. Mocno napnij łydkę w górnej pozycji i przytrzymaj jedną sekundę.",
+    "Opuszczaj w sposób kontrolowany przez 2-3 sekundy. Nie odbijaj z dolnej pozycji — to zdejmuje napięcie z soleusa i obciąża ścięgno Achillesa.",
+    "Wykonaj wszystkie zaplanowane powtórzenia na jednej nodze, następnie przełóż hantel na drugie udo i powtórz. Zawsze zaczynaj od słabszej strony."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["soleus"],
+    "secondary": ["gastrocnemius"],
+    "stabilizers": ["tibialis_posterior", "peroneals", "foot_intrinsics", "core", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "soleus": "P10",
+    "gastrocnemius": "S4",
+    "tibialis_posterior": "T3",
+    "peroneals": "T3",
+    "foot_intrinsics": "T3",
+    "core": "T1",
+    "forearm_flexors": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["step_platform", "weight_plate", "wooden_block", "foam_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-calf-raise"],
+    "progression_to": ["heavy-dumbbell-seated-one-leg-calf-raise", "plate-loaded-seated-calf-raise", "machine-seated-calf-raise"],
+    "alternatives": ["dumbbell-seated-calf-raise", "machine-seated-calf-raise", "barbell-seated-calf-raise", "smith-machine-seated-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Knee bent to exactly 90 degrees — shin vertical, thigh horizontal",
+      "Ball of foot on the step, heel hanging free with full vertical clearance",
+      "Dumbbell vertical on the thigh, 5-8 cm above the knee, held with both hands",
+      "Pad the dumbbell handle with a towel if it digs into your quad",
+      "Tall spine, opposite foot flat on the floor as passive support only"
+    ],
+    "setup_cues_pl": [
+      "Kolano ugięte dokładnie do 90 stopni — goleń pionowo, udo poziomo",
+      "Śródstopie na krawędzi stepu, pięta wisi swobodnie z pełnym zapasem w dół",
+      "Hantel pionowo na udzie 5-8 cm nad kolanem, trzymany oburącz",
+      "Podłóż ręcznik pod gryf hantla jeśli wbija się w mięsień czworogłowy",
+      "Plecy proste, druga stopa płasko na podłodze tylko jako bierna podpora"
+    ],
+    "execution_cues": [
+      "Stretch deep at the bottom — let the heel sink as far as it will go",
+      "Push the heel up as high as possible, not just to neutral",
+      "One-second squeeze at the top of every rep",
+      "Lower under control over 2-3 seconds — no bouncing",
+      "Same tempo and same rep count on both legs"
+    ],
+    "execution_cues_pl": [
+      "Głębokie rozciągnięcie na dole — pozwól piętę opaść tak nisko jak się da",
+      "Wypchnij piętę najwyżej jak potrafisz, nie tylko do poziomu zera",
+      "Sekundowy skurcz w górnej pozycji każdego powtórzenia",
+      "Opuszczaj kontrolowanie przez 2-3 sekundy — bez odbijania",
+      "Identyczne tempo i liczba powtórzeń na obu nogach"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee angle greater than 90 degrees (thigh sliding forward)",
+        "faultPl": "Kąt w kolanie większy niż 90 stopni (udo wysuwa się do przodu)",
+        "cause": "Step placed too far in front of the bench, or thigh drifting as the calf fatigues",
+        "causePl": "Step ustawiony zbyt daleko od ławki lub udo wysuwa się wraz ze zmęczeniem łydki",
+        "cue": "Move the step closer until your knee is exactly above your ankle in the bottom position.",
+        "cuePl": "Przysuń step bliżej aż kolano znajdzie się dokładnie nad kostką w dolnej pozycji."
+      },
+      {
+        "fault": "Partial range of motion (no stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak rozciągnięcia na dole)",
+        "cause": "Step too low, ego loading, or fear of Achilles stretch",
+        "causePl": "Zbyt niski step, zbyt duży ciężar lub strach przed rozciągnięciem Achillesa",
+        "cue": "Use a step at least 5 cm tall and lower the heel until you feel deep tension before pushing back up.",
+        "cuePl": "Użyj stepu o wysokości co najmniej 5 cm i opuszczaj piętę aż poczujesz głębokie napięcie zanim pchniesz w górę."
+      },
+      {
+        "fault": "Bouncing out of the bottom position",
+        "faultPl": "Odbijanie z dolnej pozycji",
+        "cause": "Using stretch reflex to generate force instead of muscular work — typical of ego loading",
+        "causePl": "Wykorzystywanie odruchu rozciągania zamiast pracy mięśniowej — typowe przy zbyt dużym ciężarze",
+        "cue": "Pause one second at the bottom of every rep. If you cannot pause, the weight is too heavy.",
+        "cuePl": "Zatrzymaj się na jedną sekundę na dole każdego powtórzenia. Jeśli nie potrafisz, ciężar jest za duży."
+      },
+      {
+        "fault": "Asymmetric work — always starting with the dominant leg",
+        "faultPl": "Asymetria pracy — zawsze zaczynanie od silniejszej nogi",
+        "cause": "Habit / preference, leading to the weaker leg getting fewer reps because it fatigues against the same target",
+        "causePl": "Nawyk i preferencja powodujące, że słabsza noga wykonuje mniej powtórzeń bo zmęczy się przy tym samym celu",
+        "cue": "Always start the working set with your weaker leg. Match its rep count on the stronger side, even if you have more reps left.",
+        "cuePl": "Zawsze zaczynaj serię od słabszej nogi. Powtórz tę samą liczbę powtórzeń silniejszą nogą, nawet jeśli mógłbyś więcej."
+      },
+      {
+        "fault": "Pushing through the opposite (resting) foot",
+        "faultPl": "Pomaganie sobie drugą (spoczynkową) nogą",
+        "cause": "Subconsciously extending the non-working leg to share the load, especially as fatigue accumulates",
+        "causePl": "Nieświadome prostowanie nogi spoczynkowej w celu rozłożenia obciążenia, zwłaszcza w miarę narastania zmęczenia",
+        "cue": "Keep the resting foot completely passive — only flat contact, zero quad tension.",
+        "cuePl": "Trzymaj nogę spoczynkową całkowicie biernie — tylko płaski kontakt ze stopą, zero napięcia uda."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering the heel into the stretch). Exhale forcefully as you press the heel up. Holding the breath here is unnecessary and raises blood pressure with no performance gain.",
+    "breathingPl": "Wdech podczas opuszczania pięty (faza ekscentryczna i rozciąganie). Mocny wydech podczas wypychania pięty w górę. Wstrzymywanie oddechu jest niepotrzebne i tylko podnosi ciśnienie bez żadnej korzyści dla efektu treningu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce range at the bottom — do not let the heel drop below neutral until pain-free. Use lighter loads with higher reps (15-20) and slow eccentrics (3-4 seconds) which are therapeutic for tendon remodeling.",
+      "modificationPl": "Zmniejsz zakres na dole — nie opuszczaj pięty poniżej zera dopóki nie jest bezboleśnie. Używaj lżejszych ciężarów z większą liczbą powtórzeń (15-20) i wolnych faz ekscentrycznych (3-4 sek), które są terapeutyczne dla remodelu ścięgna.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "plantar_fasciitis",
+      "severity": "caution",
+      "modification": "Avoid deep stretch under load during acute phase. Train within pain-free range only and keep loads moderate until symptoms settle.",
+      "modificationPl": "Unikaj głębokiego rozciągania pod obciążeniem w fazie ostrej. Trenuj tylko w zakresie bez bólu i utrzymuj umiarkowane ciężary do ustąpienia objawów.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "knee_joint_pain_with_loaded_flexion",
+      "severity": "modify",
+      "modification": "The dumbbell rests directly on the thigh near the knee and can aggravate patellofemoral pain. Place a thick foam pad under the dumbbell or switch to a machine version that loads the knee differently.",
+      "modificationPl": "Hantel spoczywa bezpośrednio na udzie blisko kolana i może drażnić ból rzepkowo-udowy. Podłóż gruby piankowy pad pod hantel lub przejdź na wersję maszynową z innym wzorcem obciążenia kolana.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "ankle_instability_or_recent_sprain",
+      "severity": "caution",
+      "modification": "The single-leg setup demands full ankle stability under load. Use a wider contact surface (full ball of foot, not just the edge) and reduce range during early rehab.",
+      "modificationPl": "Wariant jednonożny wymaga pełnej stabilności stawu skokowego pod obciążeniem. Używaj szerszej powierzchni kontaktu (całe śródstopie, nie tylko krawędź) i ograniczaj zakres we wczesnej fazie rehabilitacji.",
+      "alternative": "dumbbell-seated-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 per leg (hypertrophy — preferred for soleus) | 4x8-12 per leg (strength) | 2-3x20-30 per leg (endurance / blood flow)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "dumbbell-seated-one-leg-calf-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-one-leg-calf-raise/frame_0_start.png",
+      "frames/dumbbell-seated-one-leg-calf-raise/frame_1_early.png",
+      "frames/dumbbell-seated-one-leg-calf-raise/frame_2_mid.png",
+      "frames/dumbbell-seated-one-leg-calf-raise/frame_3_late.png",
+      "frames/dumbbell-seated-one-leg-calf-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/dumbbell-seated-one-leg-calf-raise",
+    "yuhonas_id": "Dumbbell_Seated_One-Leg_Calf_Raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:30:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: osoba siedzi na płaskiej ławce, prawe udo z hantlem trzymanym oburącz, śródstopie prawej nogi na krawędzi niskiego stepu, pięta w pełnym dolnym zgięciu grzbietowym (rozciągnięcie). Lewa noga oparta neutralnie obok stepu jako stabilizator. Frame 2: pełne wypchnięcie na palce — pięta wysoko, łydka w pełnym skurczu (zaznaczona na czerwono — soleus + dolna część gastrocnemiusa). Frame 4: powrót do pozycji dolnej z widocznym 'ghostem' fazy szczytowej. Kolano przez cały ruch ugięte do ~90 stopni — kluczowy sygnał izolacji soleusa zgodnie z biomechaniką. Ćwiczenie jednoznacznie zidentyfikowane jako unilateralny seated calf raise z hantlem. Yuhonas potwierdza opis (block + bench + dumbbell na udzie). Wszystkie pola PL napisane od zera, nie tłumaczone z angielskiego.",
+
+  "tags": ["bodybuilding", "lower_body", "calves", "soleus", "isolation", "unilateral", "dumbbell", "home_friendly", "rehab_friendly"]
+}

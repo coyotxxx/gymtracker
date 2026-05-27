@@ -1,0 +1,201 @@
+{
+  "id": "barbell-one-arm-snatch",
+  "name": "Barbell One-Arm Snatch",
+  "namePl": "Rwanie sztangą jednorącz",
+  "aliases": ["one-arm barbell snatch", "single-arm barbell snatch", "barbell single-arm snatch", "one-handed barbell snatch"],
+  "aliasesPl": ["rwanie sztangą jednorącz", "snatch sztangą jednorącz", "jednoręczne rwanie sztangą", "rwanie sztangi jedną ręką"],
+
+  "description": "An extremely niche, advanced strongman/odd-object lift — the entire barbell is snatched from floor to overhead with ONE arm gripping the bar at its center of mass. Combines an explosive triple extension pull with a deep overhead catch (often in a quarter-squat or split position) on a single arm. Massively asymmetric load demands huge anti-rotation core stability, single-arm overhead shoulder strength and bulletproof grip. Trains posterior chain, glutes and anterior deltoids with extreme unilateral demands. Not for general gym population — primarily a strongman/grip-sport competition movement.",
+  "descriptionPl": "Skrajnie niszowy, zaawansowany ruch strongman — cała sztanga jest rwana z ziemi nad głowę JEDNĄ ręką, chwytaną w jej środku ciężkości. Łączy eksplozywne pociągnięcie z potrójnym wyprostem z głębokim catchem nad głową (często w ćwierć przysiadzie lub split) na jednym ramieniu. Ogromnie asymetryczne obciążenie wymaga olbrzymiej anty-rotacyjnej stabilizacji brzucha, jednoręcznej siły barku w pozycji nad głową i niezawodnego chwytu. Trenuje tylny łańcuch, pośladki i przednie aktony barków z ekstremalnymi wymaganiami jednostronnymi. Nie dla przeciętnego trenującego — głównie ruch zawodów strongman i sportów chwytu.",
+
+  "instructions": [
+    "Załaduj sztangę umiarkowanym ciężarem (znacznie lżejszym niż w klasycznym rwaniu oburącz). Stań nad sztangą, środek stóp pod gryfem, stopy nieco szerzej niż szerokość barków, palce lekko na zewnątrz.",
+    "Zgnij w biodrach i kolanach, sięgnij JEDNĄ ręką po gryf DOKŁADNIE w jego środku (środek ciężkości). Drugą rękę trzymaj swobodnie z boku dla balansu. Klatka w górze, neutralny kręgosłup, ramiona równo (pomimo asymetrii chwytu).",
+    "Pierwsze pociągnięcie: napieraj stopami w ziemię, podnieś biodra i klatkę równocześnie. Trzymaj sztangę BLISKO ciała. Trzymaj barki kwadratowo do podłogi — opór skręcaniu tułowia.",
+    "Drugie pociągnięcie (eksplozja): gdy sztanga mija kolana, eksplozywnie wyprostuj biodra, kolana i kostki (potrójny wyprost). Wzrusz barkiem trzymającym sztangę, kontynuuj pociągnięcie ramienia w górę po linii ciała.",
+    "Pociągnij się POD sztangę: opuść się w ćwierć/pół przysiad gdy sztanga leci w górę. Wybij ramię prosto do góry, by złapać sztangę z wyprostowanym łokciem.",
+    "Catch: sztanga nad głową z wyprostowanym łokciem dokładnie nad środkiem stóp, drugie ramię odciągnięte na bok dla balansu, biodra/kolana zgięte by przyjąć obciążenie. Bark wciśnięty 'pod sztangę' (active shoulder).",
+    "Wstań w pełni z catchu utrzymując sztangę nad głową. Lockout: pełen wyprost łokcia, bark wzruszony w górę, brzuch napięty, drugie ramię stabilizuje balans.",
+    "Opuść sztangę kontrolowanie: z lockoutu do barku (jedną ręką), potem do zwisu i kontrolowanie do podłogi. NIE rzucaj sztangą jednorącz — moment obrotowy jest niebezpieczny.",
+    "Zresetuj pozycję, wykonaj zaplanowaną liczbę powtórzeń na jedną stronę, ZMIEŃ rękę i powtórz tę samą liczbę powtórzeń na drugą — symetria obciążenia OBOWIĄZKOWA."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "pull_push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "anterior_deltoids", "hamstrings"],
+    "secondary": ["trapezius", "quadriceps", "triceps", "erector_spinae", "lateral_deltoids", "latissimus_dorsi"],
+    "stabilizers": ["core", "obliques", "rectus_abdominis", "rotator_cuff", "forearms", "serratus_anterior", "calves"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "anterior_deltoids": "P9",
+    "hamstrings": "P8",
+    "core": "P10",
+    "obliques": "S9",
+    "trapezius": "S8",
+    "quadriceps": "S7",
+    "triceps": "S8",
+    "erector_spinae": "S8",
+    "lateral_deltoids": "S7",
+    "latissimus_dorsi": "S6",
+    "rotator_cuff": "S8",
+    "forearms": "S9",
+    "serratus_anterior": "S7",
+    "rectus_abdominis": "S7",
+    "calves": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["chalk", "wrist_wraps", "weightlifting_shoes", "belt", "lifting_strap"]
+  },
+
+  "category": "olympic_weightlifting",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["barbell-snatch", "dumbbell-one-arm-snatch", "kettlebell-one-arm-snatch", "turkish-get-up", "barbell-overhead-press"],
+    "progression_to": [],
+    "alternatives": ["dumbbell-one-arm-snatch", "kettlebell-one-arm-snatch", "barbell-snatch", "dumbbell-snatch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Gryf w środku ciężkości — palpuj środek przed chwytem (przesunięcie = niekontrolowane przechylenie sztangi)",
+      "Stopy nieco szerzej niż barki dla większej stabilności w asymetrycznym ruchu",
+      "Druga ręka swobodnie z boku — nie trzymaj nogi, potrzebujesz jej do kontroli balansu",
+      "Klatka w górze, barki kwadratowo do podłogi mimo asymetrii — nie skręcaj tułowia",
+      "Mocne napięcie brzucha PRZED pociągnięciem — sztanga będzie chciała Cię obrócić"
+    ],
+    "setup_cues_pl": [
+      "Gryf w środku ciężkości — wymacaj środek przed chwytem (przesunięcie = niekontrolowane przechylenie sztangi)",
+      "Stopy nieco szerzej niż barki dla większej stabilności w asymetrycznym ruchu",
+      "Druga ręka swobodnie z boku — nie trzymaj nogi, potrzebujesz jej do kontroli balansu",
+      "Klatka w górze, barki kwadratowo do podłogi mimo asymetrii — nie skręcaj tułowia",
+      "Mocne napięcie brzucha PRZED pociągnięciem — sztanga będzie chciała Cię obrócić"
+    ],
+    "execution_cues": [
+      "Potrójny wyprost — biodra, kolana, kostki strzelają jednocześnie, nie 'wyciągaj' sztangi ramieniem",
+      "Trzymaj sztangę BLISKO ciała przez cały tor — jak zamek błyskawiczny po środku tułowia",
+      "Wbij się POD sztangę w catch — opuść biodra, ramię prosto w górę, łokieć wyprostowany",
+      "ACTIVE SHOULDER w lockout — wciśnij bark 'pod sztangę', staw glenoidalny napakowany",
+      "Drugie ramię jak ster — wyciągnij na bok dla balansu, koryguj nim odchylenia sztangi"
+    ],
+    "execution_cues_pl": [
+      "Potrójny wyprost — biodra, kolana, kostki strzelają jednocześnie, nie 'wyciągaj' sztangi ramieniem",
+      "Trzymaj sztangę BLISKO ciała przez cały tor — jak zamek błyskawiczny po środku tułowia",
+      "Wbij się POD sztangę w catch — opuść biodra, ramię prosto w górę, łokieć wyprostowany",
+      "ACTIVE SHOULDER w lockout — wciśnij bark 'pod sztangę', staw glenoidalny napakowany",
+      "Drugie ramię jak ster — wyciągnij na bok dla balansu, koryguj nim odchylenia sztangi"
+    ],
+    "common_faults": [
+      {
+        "fault": "Chwyt poza środkiem ciężkości sztangi",
+        "faultPl": "Chwyt poza środkiem ciężkości sztangi",
+        "cause": "Brak wymacania środka przed startem — sztanga przechyla się gwałtownie podczas pociągnięcia",
+        "causePl": "Brak wymacania środka przed startem — sztanga przechyla się gwałtownie podczas pociągnięcia",
+        "cue": "Przed każdym powtórzeniem palpuj gryf dwoma dłońmi i znajdź dokładny środek. Możesz zaznaczyć kredą. Asymetria 2 cm = przechylenie w locie.",
+        "cuePl": "Przed każdym powtórzeniem wymacaj gryf dwoma dłońmi i znajdź dokładny środek. Możesz zaznaczyć kredą. Asymetria 2 cm = przechylenie w locie."
+      },
+      {
+        "fault": "Skręt tułowia podczas pociągnięcia (rotacja)",
+        "faultPl": "Skręt tułowia podczas pociągnięcia (rotacja)",
+        "cause": "Słaba anty-rotacyjna stabilizacja brzucha, asymetryczne obciążenie wciąga w rotację",
+        "causePl": "Słaba anty-rotacyjna stabilizacja brzucha, asymetryczne obciążenie wciąga w rotację",
+        "cue": "Trzymaj barki KWADRATOWO do podłogi, brzuch napięty jak na cios. Wzmacniaj Pallof press i suitcase deadlift między sesjami.",
+        "cuePl": "Trzymaj barki KWADRATOWO do podłogi, brzuch napięty jak na cios. Wzmacniaj Pallof press i suitcase deadlift między sesjami."
+      },
+      {
+        "fault": "Łokieć ugięty w lockout (brak wyprostu)",
+        "faultPl": "Łokieć ugięty w lockout (brak wyprostu)",
+        "cause": "Słabe tricepsy/barki w pozycji nad głową, niedostateczne 'wbicie się pod' sztangę",
+        "causePl": "Słabe tricepsy/barki w pozycji nad głową, niedostateczne 'wbicie się pod' sztangę",
+        "cue": "Łokieć MUSI być wyprostowany do końca — w przeciwnym razie staw barkowy bierze całe obciążenie biomechanicznie. Pracuj nad single-arm OH press.",
+        "cuePl": "Łokieć MUSI być wyprostowany do końca — w przeciwnym razie staw barkowy bierze całe obciążenie biomechanicznie. Pracuj nad single-arm OH press."
+      },
+      {
+        "fault": "Sztanga przed lub za linią ciała w lockout",
+        "faultPl": "Sztanga przed lub za linią ciała w lockout",
+        "cause": "Słaby tor pociągnięcia, brak kontroli linii prowadzącej, ramię nie jest dokładnie nad głową",
+        "causePl": "Słaby tor pociągnięcia, brak kontroli linii prowadzącej, ramię nie jest dokładnie nad głową",
+        "cue": "Sztanga powinna kończyć DOKŁADNIE nad środkiem stóp, ramię w 180° od podłogi. Patrz w lustro lub nagrywaj się z boku.",
+        "cuePl": "Sztanga powinna kończyć DOKŁADNIE nad środkiem stóp, ramię w 180° od podłogi. Patrz w lustro lub nagrywaj się z boku."
+      },
+      {
+        "fault": "Asymetryczny trening — więcej powtórzeń na 'silniejsze' ramię",
+        "faultPl": "Asymetryczny trening — więcej powtórzeń na 'silniejsze' ramię",
+        "cause": "Preferowanie dominującej strony, brak dyscypliny w odliczaniu serii",
+        "causePl": "Preferowanie dominującej strony, brak dyscypliny w odliczaniu serii",
+        "cue": "ZAWSZE ta sama liczba powtórzeń i ten sam ciężar na każdą stronę. Zacznij od słabszej strony, dyktuj ciężar/objętość silniejszej.",
+        "cuePl": "ZAWSZE ta sama liczba powtórzeń i ten sam ciężar na każdą stronę. Zacznij od słabszej strony, dyktuj ciężar/objętość silniejszej."
+      }
+    ],
+    "breathing": "Głęboki wdech na ziemi, napięcie i WSTRZYMANIE przez cały tor pociągnięcia i catch. Krótki wydech po ustabilizowaniu lockoutu nad głową. Wdech przy opuszczaniu, wydech przy odstawieniu sztangi.",
+    "breathingPl": "Głęboki wdech na ziemi, napięcie i WSTRZYMANIE przez cały tor pociągnięcia i catch. Krótki wydech po ustabilizowaniu lockoutu nad głową. Wdech przy opuszczaniu, wydech przy odstawieniu sztangi."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "avoid",
+      "modification": "Ekstremalne wymagania pojedynczego stawu barkowego pod ciężką sztangą — przeciwwskazane przy jakiejkolwiek dysfunkcji barku. Najpierw przywróć pełną mobilność i stabilność jednoręczną pod nadzorem fizjoterapeuty.",
+      "modificationPl": "Ekstremalne wymagania pojedynczego stawu barkowego pod ciężką sztangą — przeciwwskazane przy jakiejkolwiek dysfunkcji barku. Najpierw przywróć pełną mobilność i stabilność jednoręczną pod nadzorem fizjoterapeuty.",
+      "alternative": "kettlebell-one-arm-snatch"
+    },
+    {
+      "condition": "lumbar_disc_pathology_or_active_back_pain",
+      "severity": "avoid",
+      "modification": "Asymetryczny ruch eksplozywny generuje siły ścinające i rotacyjne w kręgosłupie lędźwiowym. Bezwzględnie przeciwwskazane przy aktywnych problemach dyskowych.",
+      "modificationPl": "Asymetryczny ruch eksplozywny generuje siły ścinające i rotacyjne w kręgosłupie lędźwiowym. Bezwzględnie przeciwwskazane przy aktywnych problemach dyskowych.",
+      "alternative": "dumbbell-one-arm-snatch"
+    },
+    {
+      "condition": "wrist_pain_or_limited_grip_strength",
+      "severity": "avoid",
+      "modification": "Trzymanie całej sztangi jednorącz w środku ciężkości wymaga olbrzymiej siły chwytu i nadgarstka. Niewystarczająca siła = upuszczenie sztangi w locie = poważna kontuzja.",
+      "modificationPl": "Trzymanie całej sztangi jednorącz w środku ciężkości wymaga olbrzymiej siły chwytu i nadgarstka. Niewystarczająca siła = upuszczenie sztangi w locie = poważna kontuzja.",
+      "alternative": "dumbbell-one-arm-snatch"
+    },
+    {
+      "condition": "rotator_cuff_pathology",
+      "severity": "avoid",
+      "modification": "Catch w pozycji overhead na jednym ramieniu pod dynamicznym obciążeniem maksymalnie obciąża stożek rotatorów. Przeciwwskazane przy aktywnych dolegliwościach stożka.",
+      "modificationPl": "Catch w pozycji overhead na jednym ramieniu pod dynamicznym obciążeniem maksymalnie obciąża stożek rotatorów. Przeciwwskazane przy aktywnych dolegliwościach stożka.",
+      "alternative": "kettlebell-one-arm-snatch"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x2-3 na stronę (siła/moc) | 4-5x1-2 na stronę (max strength) | 3x4-5 na stronę (kondycja, lekki ciężar) — NIGDY do niepowodzenia, technika musi być perfekcyjna",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "barbell-one-arm-snatch.gif",
+    "frames_extracted": [
+      "frames/barbell-one-arm-snatch/frame_0_start.png",
+      "frames/barbell-one-arm-snatch/frame_1_early.png",
+      "frames/barbell-one-arm-snatch/frame_2_mid.png",
+      "frames/barbell-one-arm-snatch/frame_3_late.png",
+      "frames/barbell-one-arm-snatch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-one-arm-snatch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pochylenie nad sztangą leżącą na podłodze, podświetlone pośladki/dwugłowe ud/górne plecy/przedramiona/barki — klasyczny snatch setup. Frame 1: pozycja stojąca po pierwszym pociągnięciu, sztanga przed biodrami, jedna ręka chwyta gryf w środku, druga swobodnie z boku — widać asymetryczny chwyt jednorącz. Frame 2: faza catch — głęboki ćwierć/pół przysiad, sztanga już nad głową na jednym wyprostowanym ramieniu, drugie ramię odciągnięte dla balansu. Podświetlone: czworogłowe, brzuch, skośne, barki, plecy. Frame 3: pełen lockout overhead — wyprostowane ramię ze sztangą nad środkiem stóp, drugie ramię odciągnięte na bok dla kontry, podświetlone barki/pośladki/czworogłowe/brzuch. Frame 4: composite klatka pokazująca zakres ruchu od podłogi do lockoutu. To pełne rwanie sztangą jednorącz (NIE dwurącz, NIE z hangu) — widoczna asymetria chwytu w środku gryfu i kontra drugiego ramienia. movement_pattern: olympic_lift. laterality: unilateral. core P10 ze względu na ekstremalne wymagania anty-rotacyjne. forearms S9 (chwyt całej sztangi jednorącz w środku ciężkości). Niszowy ruch strongman — difficulty 9/10. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["olympic_weightlifting", "strongman", "compound", "unilateral", "asymmetric", "power", "explosive", "barbell", "overhead", "anti_rotation", "advanced", "niche", "grip_strength"]
+}

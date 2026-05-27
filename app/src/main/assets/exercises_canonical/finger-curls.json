@@ -1,0 +1,201 @@
+{
+  "id": "finger-curls",
+  "name": "Finger Curls",
+  "namePl": "Uginanie palców (finger curls)",
+  "aliases": ["barbell finger curls", "seated finger curls", "finger roll curls"],
+  "aliasesPl": ["uginanie palców ze sztangą", "finger curls siedząc", "zwijanie palców ze sztangą", "trening zginaczy palców"],
+
+  "description": "Highly targeted isolation exercise for the finger flexors (flexor digitorum profundus and superficialis). Performed seated with forearms resting on the thighs and a barbell held in a supinated grip, the lifter intentionally lets the bar roll out to the fingertips, then curls the fingers back to a full closed grip. Unlike wrist curls which flex the wrist joint, finger curls isolate the long flexors of the digits — the prime movers of crushing grip strength. A staple of grip specialists, climbers, strongman athletes and forearm bodybuilders.",
+  "descriptionPl": "Wysoce ukierunkowane ćwiczenie izolowane na zginacze palców (mięsień zginacz głęboki i powierzchowny palców). Wykonywane siedząc, z przedramionami opartymi o uda i sztangą trzymaną podchwytem — celowo pozwalasz sztandze stoczyć się po palcach aż do ich końców, a następnie zwijasz palce z powrotem do pełnego zamkniętego chwytu. W przeciwieństwie do zwykłego uginania nadgarstków (które zgina staw nadgarstkowy), finger curls izolują długie zginacze palców — główne mięśnie odpowiedzialne za siłę miażdżącego uścisku. Podstawowe ćwiczenie dla specjalistów gripowych, wspinaczy, zawodników strongman i kulturystów rozbudowujących przedramiona.",
+
+  "instructions": [
+    "Sit on a flat bench with feet flat on the floor, knees roughly at 90 degrees and slightly wider than hip-width.",
+    "Grip a barbell with a supinated (palms up) shoulder-width grip. Rest your forearms along your thighs so the wrists hang just past the knees with palms facing the ceiling.",
+    "Lean your torso slightly forward and pin the elbows down — only the hands should move.",
+    "Slowly release your grip and allow the bar to roll down across your palms toward your fingertips. Let it descend as far as possible without dropping it — the fingers should reach near full extension.",
+    "From the fingertips, actively curl the fingers closed one at a time (pinky → ring → middle → index), rolling the bar back into a full, tight palm grip.",
+    "Once fully gripped, finish the rep with a small wrist flexion to fully shorten the finger flexors. Squeeze hard for 1 second.",
+    "Reverse the motion under control — open the hand slowly and let the bar roll out again. Repeat for reps.",
+    "Keep forearms in contact with thighs throughout. Do not let the wrists lift off the knees or the elbows flare outward."
+  ],
+  "instructionsPl": [
+    "Usiądź na płaskiej ławce, stopy płasko na podłodze, kolana mniej więcej pod kątem 90 stopni, lekko szerzej niż biodra.",
+    "Złap sztangę podchwytem (dłonie skierowane do góry) na szerokość barków. Oprzyj przedramiona o uda tak, aby nadgarstki wystawały tuż za kolana, a dłonie były skierowane w górę.",
+    "Lekko pochyl tułów do przodu i dociśnij łokcie — pracować mają wyłącznie dłonie.",
+    "Powoli rozluźnij chwyt i pozwól sztandze stoczyć się po wewnętrznej stronie dłoni aż do końców palców. Pozwól jej zjechać jak najdalej bez upuszczania — palce powinny dojść niemal do pełnego wyprostu.",
+    "Z pozycji na końcach palców aktywnie zwijaj palce po kolei (mały → serdeczny → środkowy → wskazujący), przetaczając sztangę z powrotem do pełnego, mocnego chwytu w środku dłoni.",
+    "Gdy chwyt jest pełny, zakończ powtórzenie lekkim zgięciem nadgarstka aby maksymalnie skrócić zginacze palców. Mocno napnij na 1 sekundę.",
+    "Odwróć ruch w sposób kontrolowany — powoli otwórz dłoń i pozwól sztandze ponownie się stoczyć. Powtórz.",
+    "Przez cały ruch trzymaj przedramiona przyklejone do ud. Nie odrywaj nadgarstków od kolan ani nie rozchylaj łokci na boki."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["flexor_digitorum_profundus", "flexor_digitorum_superficialis"],
+    "secondary": ["forearm_flexors", "flexor_pollicis_longus"],
+    "stabilizers": ["biceps_brachii", "brachioradialis", "core"]
+  },
+
+  "muscle_intensity": {
+    "flexor_digitorum_profundus": "P10",
+    "flexor_digitorum_superficialis": "P10",
+    "forearm_flexors": "S7",
+    "flexor_pollicis_longus": "S5",
+    "biceps_brachii": "T2",
+    "brachioradialis": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "flat_bench", "dumbbell", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["wrist-curl"],
+    "progression_to": ["barbell-wrist-roller", "plate-pinch", "farmers-walk", "captains-of-crush"],
+    "alternatives": ["dumbbell-finger-curls", "wrist-curl", "reverse-wrist-curl", "barbell-wrist-roller", "dead-hang"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit, forearms flat on thighs, wrists past the knees",
+      "Supinated grip, shoulder-width, no thumb wrap optional for full ROM",
+      "Elbows pinned down, torso slightly forward",
+      "Bar starts in a full palm grip",
+      "Feet planted, no torso movement during set"
+    ],
+    "setup_cues_pl": [
+      "Usiądź, przedramiona płasko na udach, nadgarstki za kolanami",
+      "Chwyt podchwytem na szerokość barków, opcjonalnie bez kciuka dla pełnego zakresu",
+      "Łokcie dociśnięte, tułów lekko pochylony do przodu",
+      "Sztanga startuje w pełnym chwycie środkiem dłoni",
+      "Stopy stabilne, brak ruchu tułowia w serii"
+    ],
+    "execution_cues": [
+      "Let the bar roll all the way to the fingertips — full extension",
+      "Curl fingers one by one back into a full crushing grip",
+      "Finish with a small wrist flex at the top — squeeze 1 second",
+      "Move slowly — 2 seconds down, 2 seconds up",
+      "Only the fingers and wrist move — forearms glued to thighs"
+    ],
+    "execution_cues_pl": [
+      "Pozwól sztandze stoczyć się aż do końców palców — pełny wyprost",
+      "Zwijaj palce po kolei z powrotem do pełnego miażdżącego chwytu",
+      "Zakończ lekkim zgięciem nadgarstka na górze — napnij 1 sekundę",
+      "Ruch powolny — 2 sekundy w dół, 2 sekundy w górę",
+      "Pracują tylko palce i nadgarstek — przedramiona przyklejone do ud"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar slips because the lifter rushes the eccentric",
+        "faultPl": "Sztanga wymyka się z dłoni bo ćwiczący zbyt szybko opuszcza",
+        "cause": "Letting gravity drop the bar instead of actively controlling finger extension",
+        "causePl": "Pozwalanie grawitacji upuszczać sztangę zamiast aktywnej kontroli wyprostu palców",
+        "cue": "Slow eccentric — 2-3 seconds to roll out. Hold each rep at fingertips for 1 second before curling back.",
+        "cuePl": "Powolna faza negatywna — 2-3 sekundy na stoczenie. Zatrzymaj sztangę na końcach palców na 1 sekundę przed zwinięciem."
+      },
+      {
+        "fault": "Confusing finger curl with wrist curl (no finger extension)",
+        "faultPl": "Mylenie finger curl ze zwykłym wrist curl (brak wyprostu palców)",
+        "cause": "Keeping the bar in the palm and only flexing the wrist — misses the finger flexors entirely",
+        "causePl": "Trzymanie sztangi środkiem dłoni i tylko zginanie nadgarstka — całkowicie pomija zginacze palców",
+        "cue": "The bar MUST roll out to the fingertips. If your fingers stay closed, you're doing wrist curls, not finger curls.",
+        "cuePl": "Sztanga MUSI stoczyć się na końce palców. Jeśli palce zostają zamknięte, robisz wrist curl, nie finger curl."
+      },
+      {
+        "fault": "Forearms lift off the thighs",
+        "faultPl": "Przedramiona odrywają się od ud",
+        "cause": "Recruiting biceps and shoulder to assist, or load too heavy for the fingers alone",
+        "causePl": "Włączanie bicepsa i barku do pomocy, lub zbyt duży ciężar dla samych palców",
+        "cue": "Press forearms into thighs throughout. If they lift, drop the weight by 30%.",
+        "cuePl": "Dociskaj przedramiona do ud przez cały ruch. Jeśli się odrywają, zmniejsz ciężar o 30%."
+      },
+      {
+        "fault": "Partial range — fingers never reach full extension",
+        "faultPl": "Niepełny zakres — palce nigdy nie dochodzą do pełnego wyprostu",
+        "cause": "Fear of dropping the bar, or weak finger extension strength",
+        "causePl": "Strach przed upuszczeniem sztangi, lub słaba siła w fazie rozciągniętej palców",
+        "cue": "Lighter weight. Open the hand fully — the bar should rest on the last segment of the fingers before curling.",
+        "cuePl": "Lżejszy ciężar. Otwórz dłoń całkowicie — sztanga powinna leżeć na ostatnich paliczkach przed zwinięciem."
+      },
+      {
+        "fault": "Gripping with the thumb wrapped, blocking finger extension",
+        "faultPl": "Chwyt z kciukiem zaciśniętym, blokujący wyprost palców",
+        "cause": "Habit from heavy lifts (deadlift grip) carried over — the thumb prevents the bar from rolling out",
+        "causePl": "Nawyk z ciężkich bojów (chwyt do martwego ciągu) — kciuk uniemożliwia stoczenie się sztangi",
+        "cue": "Use a false (thumbless) grip with thumb on the same side as fingers. Bar rolls freely to fingertips.",
+        "cuePl": "Użyj chwytu otwartego (bez kciuka) — kciuk po tej samej stronie co palce. Sztanga toczy się swobodnie do końców palców."
+      }
+    ],
+    "breathing": "Light, continuous breathing. Exhale on the curl-up (finger flexion), inhale on the roll-out (eccentric). No Valsalva needed — loads are too small to require intra-abdominal pressure.",
+    "breathingPl": "Lekki, ciągły oddech. Wydech podczas zwijania palców (faza koncentryczna), wdech podczas stoczenia sztangi (faza ekscentryczna). Bez manewru Valsalvy — ciężary są zbyt małe by wymagać tłoczni brzusznej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "trigger_finger_stenosing_tenosynovitis",
+      "severity": "modify",
+      "modification": "Repeated finger flexion under load aggravates trigger finger. Reduce weight by 50%, perform pain-free range only, and avoid the deep fingertip position. Stop if clicking or locking occurs.",
+      "modificationPl": "Powtarzane zginanie palców pod obciążeniem nasila palec strzelający. Zmniejsz ciężar o 50%, wykonuj tylko w zakresie bezbólowym i unikaj głębokiej pozycji na końcach palców. Przerwij jeśli pojawia się klikanie lub blokowanie.",
+      "alternative": "dead-hang"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Repetitive finger and wrist flexion can compress the median nerve. Use lighter loads with strict neutral wrist position (no wrist flexion at the top), or substitute with isometric grip work.",
+      "modificationPl": "Powtarzane zginanie palców i nadgarstka może uciskać nerw pośrodkowy. Używaj lżejszych ciężarów ze ścisłą neutralną pozycją nadgarstka (bez zginania nadgarstka na górze) lub zastąp izometryczną pracą gripową.",
+      "alternative": "plate-pinch"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Heavy finger and wrist flexion strains the flexor tendons at the medial epicondyle. Drop intensity to 50%, use reverse pyramid (drop sets) at lighter weights, and avoid forced reps.",
+      "modificationPl": "Ciężkie zginanie palców i nadgarstka obciąża przyczepy zginaczy na nadkłykciu przyśrodkowym. Zmniejsz intensywność do 50%, używaj odwróconej piramidy (drop sets) z lżejszymi ciężarami, unikaj powtórzeń wymuszonych.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "acute_finger_or_hand_injury",
+      "severity": "avoid",
+      "modification": "Acute fractures, sprains, tendon ruptures or post-surgical hand conditions require complete avoidance until cleared by a hand therapist. Substitute with isometric grip work on the uninjured hand only.",
+      "modificationPl": "Świeże złamania, skręcenia, zerwania ścięgien lub stany po operacji ręki wymagają całkowitego unikania do czasu zgody terapeuty ręki. Zastąp izometryczną pracą gripową wyłącznie na zdrowej ręce.",
+      "alternative": null
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy / grip endurance) | 4-5x8-12 (grip strength) | 2-3x20-30 (forearm pump / blood flow)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "finger-curls.gif",
+    "frames_extracted": [
+      "frames/finger-curls/frame_0_start.png",
+      "frames/finger-curls/frame_1_early.png",
+      "frames/finger-curls/frame_2_mid.png",
+      "frames/finger-curls/frame_3_late.png",
+      "frames/finger-curls/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/finger-curls"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Pozycja: siedząc na ławce, tułów lekko pochylony do przodu, przedramiona oparte o uda, sztanga trzymana podchwytem (dłonie do góry) na szerokość barków. Wyróżnione mięśnie: przednia strona przedramienia (zginacze palców) podświetlona na czerwono. Frame 0/4: pełne stoczenie sztangi na końce palców — palce wyprostowane, dłoń otwarta. Frame 1/2/3: palce zwinięte, sztanga w pełnym chwycie środka dłoni z lekkim zgięciem nadgarstka na szczycie. Ruch krótki, izolowany, tylko palce + minimalna praca nadgarstka. Tułów nieruchomy. Jednoznacznie zidentyfikowane jako finger curls (nie wrist curls — kluczowa różnica to stoczenie sztangi na palce). Brak yuhonas/glowupp — tylko jahel jako źródło. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "forearms", "grip", "fingers", "isolation", "barbell", "grip_strength", "lower_arms", "climbing", "strongman"]
+}

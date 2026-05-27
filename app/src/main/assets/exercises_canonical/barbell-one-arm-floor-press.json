@@ -1,0 +1,205 @@
+{
+  "id": "barbell-one-arm-floor-press",
+  "name": "Barbell One-Arm Floor Press",
+  "namePl": "Floor press jednorącz ze sztangą (landmine)",
+  "aliases": ["one arm barbell floor press", "landmine floor press", "single-arm barbell floor press", "1-arm barbell floor press"],
+  "aliasesPl": ["floor press jednorącz sztangą", "wyciskanie sztangi jednorącz z podłogi", "landmine floor press", "jednoręczne wyciskanie sztangi z podłogi"],
+
+  "description": "Unilateral horizontal press performed lying on the floor with one end of a barbell anchored (landmine or corner) and the free end held in one hand. Floor limits elbow descent — protects shoulders and emphasizes lockout / triceps strength. The asymmetric load creates an enormous anti-rotation demand on the core and challenges the rotator cuff. Excellent for shoulder rehab, athletes with bench-press shoulder pain, and core-integrated pressing.",
+  "descriptionPl": "Jednostronne pchnięcie poziome wykonywane na podłodze: jeden koniec sztangi zakotwiczony w landmine (lub w kącie ściany), drugi trzymany jedną ręką. Podłoga ogranicza schodzenie łokcia — chroni barki i akcentuje lockout oraz siłę tricepsa. Asymetryczne obciążenie wymusza ogromną pracę antyrotacyjną tułowia i angażuje stożek rotatorów. Świetne w rehabilitacji barku, dla zawodników z bólem barku przy bench press oraz do pracy nad core w kontekście wyciskania.",
+
+  "instructions": [
+    "Set up: anchor one end of the barbell in a landmine pivot or wedged into a stable corner. Load the free end.",
+    "Lie flat on your back on the floor, perpendicular to the bar so that the free end sits near one shoulder.",
+    "Grip the bar with one hand near the loaded sleeve (palm facing midline, neutral grip). Place the free hand on your torso or flat on the floor for balance.",
+    "Set the working shoulder: pack it down into the floor, brace the core HARD (anti-rotation), pin both feet flat on the floor with knees bent ~90°.",
+    "Press the bar up to full lockout directly over the shoulder — not over the chest centerline.",
+    "Lower the bar in a controlled arc, letting the elbow travel back at ~45° to the torso (not flared 90°).",
+    "Touch the elbow gently to the floor (do NOT slam). Pause briefly — the floor stops the eccentric naturally.",
+    "Press back up explosively while keeping the opposite hip and shoulder GLUED to the floor — no rotation.",
+    "Complete all reps on one side before switching arms."
+  ],
+  "instructionsPl": [
+    "Setup: zakotwicz jeden koniec sztangi w landmine lub mocno wciśnij w stabilny kąt. Załaduj wolny koniec.",
+    "Połóż się płasko na plecach na podłodze, prostopadle do sztangi tak, by wolny koniec znajdował się przy jednym barku.",
+    "Złap gryf jedną ręką blisko załadowanego końca (dłoń skierowana do środka, chwyt neutralny). Wolna ręka na tułowiu lub płasko na podłodze dla balansu.",
+    "Ustaw pracujący bark: dociśnij łopatkę do podłogi, NAPNIJ MOCNO core (antyrotacja), oba chodaki płasko na ziemi, kolana zgięte ~90°.",
+    "Wyciśnij sztangę w górę do pełnego lock-out dokładnie nad barkiem — nie nad środkiem klatki.",
+    "Opuszczaj kontrolowanym łukiem, łokieć schodzi pod kątem ~45° do tułowia (nie rozsunięty na 90°).",
+    "Delikatnie dotknij łokciem podłogi (NIE waluj). Krótka pauza — podłoga naturalnie zatrzymuje fazę ekscentryczną.",
+    "Wyciśnij dynamicznie w górę utrzymując przeciwne biodro i bark PRZYKLEJONE do podłogi — zero rotacji.",
+    "Dokończ wszystkie powtórzenia po jednej stronie, potem zmień rękę."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["obliques", "rotator_cuff", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "lats", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P9",
+    "pectoralis_major": "P8",
+    "anterior_deltoids": "P7",
+    "obliques": "S7",
+    "rotator_cuff": "S6",
+    "serratus_anterior": "S5",
+    "core": "T7",
+    "glutes": "T4",
+    "lats": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "landmine_or_corner_anchor"],
+    "optional": ["weight_plates", "mat", "wrist_wrap"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dumbbell-floor-press", "barbell-floor-press", "landmine-press", "push-up"],
+    "progression_to": ["one-arm-landmine-press-standing", "single-arm-dumbbell-bench-press", "kettlebell-floor-press"],
+    "alternatives": ["dumbbell-floor-press", "one-arm-dumbbell-floor-press", "landmine-press", "single-arm-dumbbell-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar anchored solidly — test pivot before loading",
+      "Lie perpendicular, free end at shoulder height",
+      "Working shoulder packed into the floor",
+      "Free hand on opposite hip or floor for stability",
+      "Feet flat, knees bent ~90°, glutes squeezed"
+    ],
+    "setup_cues_pl": [
+      "Sztanga solidnie zakotwiczona — sprawdź pivot przed załadowaniem",
+      "Połóż się prostopadle, wolny koniec na wysokości barku",
+      "Pracująca łopatka dociśnięta do podłogi",
+      "Wolna ręka na przeciwnym biodrze lub podłodze dla stabilizacji",
+      "Stopy płasko, kolana ~90°, pośladki napięte"
+    ],
+    "execution_cues": [
+      "Press straight up over the shoulder, not the chest",
+      "Elbow tucked ~45°, NOT flared",
+      "Anti-rotate — opposite shoulder stays glued to floor",
+      "Floor catches the elbow — no slam",
+      "Pause 1 sec at the bottom, drive back up"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę nad barkiem, nie nad klatką",
+      "Łokieć schowany ~45°, NIE rozsunięty",
+      "Antyrotacja — przeciwny bark przyklejony do podłogi",
+      "Podłoga zatrzymuje łokieć — nie waluj",
+      "Pauza 1 sek na dole, dynamiczne pchnięcie w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward the working arm",
+        "faultPl": "Rotacja tułowia w stronę pracującej ręki",
+        "cause": "Weak anti-rotation core, load too heavy, free hand not anchoring",
+        "causePl": "Słaby antyrotacyjny core, zbyt ciężki ciężar, wolna ręka bez zakotwiczenia",
+        "cue": "Press the free shoulder INTO the floor. 'Glue the opposite scapula down'. Lower the weight.",
+        "cuePl": "Wciśnij wolny bark W podłogę. 'Przyklej przeciwną łopatkę do ziemi'. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Slamming elbow into the floor",
+        "faultPl": "Walenie łokciem o podłogę",
+        "cause": "Loss of eccentric control, treating floor as a 'rest stop'",
+        "causePl": "Utrata kontroli fazy ekscentrycznej, traktowanie podłogi jako 'przystanku'",
+        "cue": "Lower under tension, kiss the floor, pause 1 sec, then press. Protect the elbow joint.",
+        "cuePl": "Opuszczaj pod napięciem, 'pocałuj' podłogę, pauza 1 sek, wyciśnij. Chroń staw łokciowy."
+      },
+      {
+        "fault": "Elbow flared 90° (chicken wing)",
+        "faultPl": "Łokieć rozsunięty na 90° (kurze skrzydełko)",
+        "cause": "Mimicking dumbbell flye, weak triceps shifting load to chest/shoulder",
+        "causePl": "Kopiowanie ruchu rozpiętki, słabe tricepsy przerzucają obciążenie na klatkę/bark",
+        "cue": "Tuck elbow to ~45°. Think 'pressing past the ribs', not 'opening wide'.",
+        "cuePl": "Schowaj łokieć do ~45°. Myśl 'wyciskanie obok żeber', nie 'otwieranie szeroko'."
+      },
+      {
+        "fault": "Bar path drifts toward feet or head",
+        "faultPl": "Ścieżka sztangi wędruje w stronę stóp lub głowy",
+        "cause": "Pressing over chest center (bilateral pattern) instead of over the working shoulder",
+        "causePl": "Wyciskanie nad środkiem klatki (wzorzec bilateralny) zamiast nad pracującym barkiem",
+        "cue": "Lock out DIRECTLY over the working shoulder. The bar tilts diagonally — that's normal due to landmine arc.",
+        "cuePl": "Lock-out DOKŁADNIE nad pracującym barkiem. Sztanga przechylona po przekątnej — to normalne przez łuk landmine."
+      },
+      {
+        "fault": "Holding breath through multiple reps",
+        "faultPl": "Wstrzymywanie oddechu przez wiele powtórzeń",
+        "cause": "Over-bracing, fear of losing core tension during unilateral load",
+        "causePl": "Nadmierne napięcie, obawa przed utratą core tension przy jednostronnym obciążeniu",
+        "cue": "Inhale before descent, exhale on the press. Re-brace each rep.",
+        "cuePl": "Wdech przed schodzeniem, wydech na wyciskaniu. Resetuj napięcie każde powtórzenie."
+      }
+    ],
+    "breathing": "Inhale before lowering, hold brace through the eccentric and bottom pause, exhale forcefully on the press up. Anti-rotation brace is non-negotiable.",
+    "breathingPl": "Wdech przed schodzeniem, trzymaj napięcie przez fazę ekscentryczną i pauzę na dole, mocny wydech na wyciskaniu w górę. Antyrotacyjne napięcie jest obowiązkowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "modify",
+      "modification": "If pain-free in protected ROM, this exercise is often preferred over bench press (floor limits ROM). Start light, prioritize control. Consult physio for active tears.",
+      "modificationPl": "Jeśli bez bólu w ograniczonym ROM, to ćwiczenie często jest preferowane nad bench press (podłoga ogranicza ROM). Zacznij lekko, priorytet kontrola. Konsultuj fizjoterapeutę przy aktywnym uszkodzeniu.",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Floor press is shoulder-friendly — limited ROM avoids the painful end-range. Keep elbow tucked, avoid going over the head.",
+      "modificationPl": "Floor press jest przyjazny dla barku — ograniczone ROM unika bolesnego zakresu końcowego. Trzymaj łokieć schowany, unikaj przenoszenia nad głową.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Lying flat is usually safe. If asymmetric load aggravates the back, bend knees more and tighten core, or switch to dumbbell variation.",
+      "modificationPl": "Pozycja leżąca jest zwykle bezpieczna. Jeśli asymetryczne obciążenie drażni plecy, mocniej zegnij kolana i napnij brzuch, lub przejdź na wariant z hantlem.",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "elbow_pain",
+      "severity": "modify",
+      "modification": "Use a mat under the elbow to soften the touch. Never slam. Reduce weight if joint discomfort persists.",
+      "modificationPl": "Podłóż matę pod łokieć by zmiękczyć kontakt. Nigdy nie waluj. Zmniejsz ciężar jeśli dyskomfort stawu się utrzymuje.",
+      "alternative": "dumbbell-floor-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 per arm (hypertrophy/strength) | 4-5x4-6 per arm (heavy strength) | 3x12-15 per arm (rehab/endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-one-arm-floor-press.gif",
+    "frames_extracted": [
+      "frames/barbell-one-arm-floor-press/frame_0_start.png",
+      "frames/barbell-one-arm-floor-press/frame_1_early.png",
+      "frames/barbell-one-arm-floor-press/frame_2_mid.png",
+      "frames/barbell-one-arm-floor-press/frame_3_late.png",
+      "frames/barbell-one-arm-floor-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-one-arm-floor-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: leżenie na plecach, sztanga trzymana jedną ręką, łokieć ugięty przy podłodze (pozycja dolna — ROM ograniczony przez podłogę). Frame 2: pełne wyciśnięcie w górę nad barkiem, lock-out, sztanga lekko przechylona przez landmine arc. Frame 4: powrót do pozycji dolnej. Podświetlony triceps jednej ręki — zgodne z primary mover w floor press (akcent na lockout = triceps). Klasyfikacja: jednostronny (unilateral) horizontal push, compound, sagittal plane, kinetic open. Jednostronne obciążenie generuje silny anti-rotation challenge dla obliques/core. Floor press = ROM ograniczony, friendly dla barków (rotator cuff). Wszystkie pola PL od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["barbell", "landmine", "unilateral", "horizontal_push", "floor_press", "triceps_focus", "shoulder_friendly", "anti_rotation", "core_integrated"]
+}

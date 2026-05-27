@@ -1,0 +1,207 @@
+{
+  "id": "burpee",
+  "name": "Burpee",
+  "namePl": "Burpee",
+  "aliases": ["squat thrust with jump", "full burpee", "standard burpee", "bodyweight burpee"],
+  "aliasesPl": ["burpees", "burpee pełne", "przysiad-plank-pompka-wyskok", "ćwiczenie żołnierza", "burpee z pompką i wyskokiem"],
+
+  "description": "Full-body, multi-joint conditioning exercise that strings together a deep squat-to-floor, kick-back into a plank, a push-up at the bottom, a knee-tuck back to a squat, and a vertical jump with arms overhead. Originally invented in 1939 by physiologist Royal H. Burpee as a 4-count fitness test, the modern 'full burpee' has evolved into one of the most demanding bodyweight exercises — combining strength, power, anaerobic capacity and coordination in a single rep. Hits chest, shoulders, triceps, quads, glutes, hamstrings, calves and the entire core. The vertical jump and the push-up make it a true plyometric-conditioning hybrid, raising heart rate within seconds. A go-to drill for HIIT, CrossFit-style metcons, military/firefighter testing and general conditioning where space and equipment are limited.",
+  "descriptionPl": "Pełnociałowe, wielostawowe ćwiczenie kondycyjne łączące w jednym powtórzeniu: głęboki przysiad do podłogi, wyrzut nóg do tyłu do planka, pompkę na dole, podciągnięcie kolan z powrotem do przysiadu i wyskok pionowy z rękami nad głową. Wymyślone w 1939 r. przez fizjologa Royal'a H. Burpee jako 4-fazowy test sprawności, współczesny 'pełny burpee' rozwinął się do jednego z najbardziej wymagających ćwiczeń bodyweight — łączy siłę, moc, wydolność beztlenową i koordynację w jednym powtórzeniu. Pracuje na klatce, barkach, tricepsach, czworogłowych, pośladkach, dwugłowych uda, łydkach i całym corze. Wyskok pionowy i pompka czynią z niego prawdziwą hybrydę plyometryki i conditioningu — tętno strzela w górę w kilka sekund. Klasyk HIIT, metconów w stylu CrossFit, testów sprawności wojska/straży pożarnej i ogólnego conditioningu tam, gdzie brakuje miejsca i sprzętu.",
+
+  "instructions": [
+    "Start standing tall, feet roughly hip- to shoulder-width apart, arms relaxed at the sides. Take a breath and brace your core.",
+    "Drop into a deep squat and place both palms on the floor in front of your feet, just outside the knees. Hands ~shoulder-width, fingers spread.",
+    "Shoot both feet straight back simultaneously (or step back if you're regressing) until you land in a strong plank position — body in one straight line, core tight, shoulders stacked over wrists.",
+    "Perform a strict push-up: lower your chest to the floor with elbows tucked at ~45°, then press the floor away to full elbow extension. (Optional for strict variants — chest must touch the floor.)",
+    "Jump (or step) both feet forward toward your hands, landing back in a deep squat with feet outside the hands and chest up.",
+    "Drive through your feet and explode straight up into a vertical jump — fully extend hips, knees and ankles ('triple extension') with arms reaching overhead.",
+    "Land softly on the balls of the feet then settle to mid-foot, absorbing impact through bent knees and hips. Immediately transition into the next rep.",
+    "Repeat for the prescribed time (e.g. 30s on / 30s off) or reps (e.g. 5x10). Pace yourself — burpees crush conditioning fast."
+  ],
+  "instructionsPl": [
+    "Start na stojąco, stopy mniej więcej na szerokości bioder/barków, ręce luźno wzdłuż ciała. Wdech i napięcie brzucha.",
+    "Schodzisz do głębokiego przysiadu i kładziesz obie dłonie na podłodze przed stopami, tuż obok kolan. Dłonie ~na szerokość barków, palce rozstawione.",
+    "Wyrzucasz obie stopy równocześnie do tyłu (lub krokiem do tyłu w wersji regresji) aż wylądujesz w mocnym planku — ciało w jednej prostej linii, napięty core, barki nad nadgarstkami.",
+    "Wykonujesz pełną pompkę: opuszczasz klatkę do podłogi z łokciami schowanymi pod ~45°, potem wypychasz podłogę do pełnego wyprostu łokci. (W ścisłych wariantach — klatka musi dotknąć podłogi.)",
+    "Wyskakujesz (lub przechodzisz krokiem) obiema stopami do przodu w kierunku dłoni, lądując z powrotem w głębokim przysiadzie ze stopami na zewnątrz dłoni i wyprostowaną klatką.",
+    "Wybijasz się stopami i eksplodujesz w górę w pionowym wyskoku — pełny wyprost bioder, kolan i stawów skokowych ('potrójne wyprostowanie') z rękami nad głową.",
+    "Lądujesz miękko najpierw na śródstopiu, potem na całych stopach, amortyzując uderzenie w zgiętych kolanach i biodrach. Od razu przechodzisz do kolejnego powtórzenia.",
+    "Powtarzaj przez zadany czas (np. 30s pracy / 30s przerwy) lub powtórzenia (np. 5x10). Dawkuj tempo — burpee bardzo szybko gaszą kondycję."
+  ],
+
+  "classification": {
+    "movement_pattern": "conditioning",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "quadriceps", "glutes", "core"],
+    "secondary": ["triceps", "anterior_deltoids", "hamstrings", "calves", "hip_flexors"],
+    "stabilizers": ["serratus_anterior", "scapular_stabilizers", "erector_spinae", "rotator_cuff", "tibialis_anterior"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P7",
+    "quadriceps": "P8",
+    "glutes": "P7",
+    "core": "P7",
+    "triceps": "S7",
+    "anterior_deltoids": "S6",
+    "hamstrings": "S6",
+    "calves": "S6",
+    "hip_flexors": "S5",
+    "serratus_anterior": "T5",
+    "erector_spinae": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "weighted_vest", "plyo_box"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "bodyweight-squat", "plank", "squat-thrust"],
+    "progression_to": ["burpee-pull-up", "burpee-box-jump-over", "burpee-broad-jump", "burpee-tuck-jump", "devil-press", "single-arm-burpee"],
+    "alternatives": ["mountain-climbers", "jumping-jacks", "squat-thrust", "thruster", "kettlebell-swing", "high-knees"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Clear ~2x2 m of floor — no obstacles in jump landing zone",
+      "Non-slip surface or mat — palms and feet must grip",
+      "Start tall: feet hip- to shoulder-width, arms at sides, eyes forward",
+      "Pre-brace core before the first rep — you won't reset mid-set",
+      "Pick a tempo: strict (chest-to-floor + full jump) or paced (regression for conditioning)"
+    ],
+    "setup_cues_pl": [
+      "Wyczyść ~2x2 m podłogi — żadnych przeszkód w strefie lądowania",
+      "Antypoślizgowa powierzchnia lub mata — dłonie i stopy muszą trzymać",
+      "Start wysoko: stopy na szerokość bioder/barków, ręce wzdłuż ciała, wzrok przed siebie",
+      "Napnij core przed pierwszym powtórzeniem — nie zresetujesz się w trakcie serii",
+      "Wybierz tempo: ścisłe (klatka-do-podłogi + pełny wyskok) lub kontrolowane (regresja dla conditioningu)"
+    ],
+    "execution_cues": [
+      "Hands down BEFORE feet kick back — control the descent, don't faceplant",
+      "Kick to plank — body one line, no piked hips, no sagging belly",
+      "Real push-up: chest to floor, elbows at 45°, full lockout — not a half-rep collapse",
+      "Knees to hands — jump feet OUTSIDE hands so chest stays tall in the squat",
+      "Triple extension on the jump — hips, knees, ankles fully open with arms overhead",
+      "Land soft: balls of feet first, knees track over toes, immediate next rep without bouncing"
+    ],
+    "execution_cues_pl": [
+      "Dłonie na podłodze ZANIM nogi wyskoczą do tyłu — kontroluj zejście, bez 'rzucania się' na pysk",
+      "Wyskok do planka — ciało w jednej linii, bez 'tyłka do góry' ani opadającego brzucha",
+      "Prawdziwa pompka: klatka do podłogi, łokcie pod 45°, pełny wyprost — nie połowiczna kapitulacja",
+      "Kolana do dłoni — wyskakuj stopami NA ZEWNĄTRZ dłoni, by klatka pozostała wysoko w przysiadzie",
+      "Potrójne wyprostowanie w wyskoku — biodra, kolana i stawy skokowe w pełni otwarte, ręce nad głową",
+      "Miękkie lądowanie: najpierw śródstopie, kolana w linii palców, od razu kolejne powtórzenie bez odbicia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips in the plank/push-up phase ('worm burpee')",
+        "faultPl": "Opadające biodra w fazie planka/pompki ('robaczkowy burpee')",
+        "cause": "Fatigue, weak core, dropping torso to floor first and then hips ('worming' the body down)",
+        "causePl": "Zmęczenie, słaby core, opuszczanie tułowia do podłogi a potem bioder ('robaczkowanie' ciała)",
+        "cue": "Body is ONE board from heels to head. Brace abs and squeeze glutes before lowering. If you can't hold plank — regress to step-back burpee or stop the set.",
+        "cuePl": "Ciało to JEDNA deska od pięt do głowy. Napnij brzuch i ściśnij pośladki przed schodzeniem. Jeśli nie utrzymasz planka — przejdź na burpee krokiem lub zakończ serię."
+      },
+      {
+        "fault": "Skipping the push-up (chest never touches the floor)",
+        "faultPl": "Pomijanie pompki (klatka nigdy nie dotyka podłogi)",
+        "cause": "Fatigue, ego — counting reps without doing the strict movement",
+        "causePl": "Zmęczenie, ego — liczenie powtórzeń bez wykonania ścisłego ruchu",
+        "cue": "If it's a 'burpee with push-up' — chest must touch the floor every rep. Otherwise call it a squat-thrust, not a burpee. Honest reps > inflated count.",
+        "cuePl": "Jeśli to 'burpee z pompką' — klatka MUSI dotknąć podłogi w każdym powtórzeniu. W przeciwnym razie nazwij to squat-thrust, nie burpee. Uczciwe powtórzenia > zawyżony licznik."
+      },
+      {
+        "fault": "Knees collapsing inward (valgus) on landing",
+        "faultPl": "Zapadające się kolana do środka (valgus) przy lądowaniu",
+        "cause": "Weak glute medius, fatigue, landing flat-footed, no glute pre-tension",
+        "causePl": "Słaby pośladek średni, zmęczenie, lądowanie na całych stopach, brak napięcia pośladków",
+        "cue": "Push knees OUT in line with second toe on every landing. 'Land like a spring — knees wide, hips back'. Slow down if you can't control it — knees > reps.",
+        "cuePl": "Wypychaj kolana NA ZEWNĄTRZ w linii drugiego palca przy każdym lądowaniu. 'Ląduj jak sprężyna — kolana szeroko, biodra do tyłu'. Zwolnij jeśli nie kontrolujesz — kolana > powtórzenia."
+      },
+      {
+        "fault": "Rounded lower back when reaching to the floor / coming up",
+        "faultPl": "Zaokrąglony dolny odcinek pleców przy schodzeniu/wstawaniu",
+        "cause": "Tight hamstrings/hips, dropping like a 'rag doll' instead of squatting down",
+        "causePl": "Spięte dwugłowe uda/biodra, 'rzucanie się' jak szmaciana lalka zamiast przysiadania",
+        "cue": "Squat DOWN to the floor (hips back, chest up) — don't fold forward at the lumbar. Use a wider stance if hip mobility limits you.",
+        "cuePl": "PRZYSIĄD do podłogi (biodra do tyłu, klatka wysoko) — nie zginaj się w lędźwiach. Użyj szerszej postawy jeśli mobilność bioder Cię ogranicza."
+      },
+      {
+        "fault": "No jump at the top — just standing up",
+        "faultPl": "Brak wyskoku na górze — zwykłe wstawanie",
+        "cause": "Fatigue, treating it as squat-thrust, no power production cue",
+        "causePl": "Zmęczenie, traktowanie ćwiczenia jak squat-thrust, brak intencji generowania mocy",
+        "cue": "Reach for the ceiling on every rep — hands fully overhead, hips fully extended, feet leave the floor. If you can't jump anymore — that's the end of the set.",
+        "cuePl": "Sięgaj sufitu w każdym powtórzeniu — ręce w pełni nad głową, biodra w pełnym wyproście, stopy odrywają się od podłogi. Jeśli nie potrafisz już wyskoczyć — to koniec serii."
+      }
+    ],
+    "breathing": "Exhale on the squat down + kick-back, inhale at the bottom of the push-up, exhale on the press up + jump forward, inhale on the landing/reset. For high-intensity intervals — breathe rhythmically, don't hold breath.",
+    "breathingPl": "Wydech podczas przysiadu i wyrzutu nóg, wdech na dole pompki, wydech podczas wyciskania i wyskoku do przodu, wdech przy lądowaniu/resecie. Przy interwałach o wysokiej intensywności — oddychaj rytmicznie, nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Burpees load wrists hard in plank/push-up phase. Use push-up handles, fists (knuckles down) or step-back regression to reduce shock. If pain persists — replace with mountain-climbers or rowing.",
+      "modificationPl": "Burpees mocno obciążają nadgarstki w fazie planka/pompki. Użyj uchwytów do pompek, pięści (knykcie w dół) lub regresji krokiem, by zmniejszyć szok. Jeśli ból się utrzymuje — zastąp wspinaczem górskim lub wioślarzem.",
+      "alternative": "mountain-climbers"
+    },
+    {
+      "condition": "knee_pain_or_meniscus_issues",
+      "severity": "modify",
+      "modification": "Vertical landing impact and deep squat-to-floor stress knees. Skip the jump (stand up only), step back instead of kicking, or replace with a low-impact alternative until pain-free.",
+      "modificationPl": "Uderzenie z lądowania i głęboki przysiad do podłogi obciążają kolana. Pomiń wyskok (tylko wstań), wchodź krokiem zamiast wyrzucać nogi, lub zamień na alternatywę o niskim impakcie aż do ustąpienia bólu.",
+      "alternative": "squat-thrust"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiac_disease",
+      "severity": "avoid",
+      "modification": "Burpees spike heart rate and blood pressure rapidly — head-down + intense effort + breath-holding tendency. Get medical clearance and progress slowly with low-impact conditioning first (walking, rowing).",
+      "modificationPl": "Burpee gwałtownie podbijają tętno i ciśnienie — pozycja głową w dół + intensywny wysiłek + tendencja do wstrzymywania oddechu. Najpierw zielone światło od lekarza i powolna progresja na conditioningu o niskim impakcie (marsz, wioślarz).",
+      "alternative": "march-in-place"
+    },
+    {
+      "condition": "lower_back_pain_or_disc_herniation",
+      "severity": "modify",
+      "modification": "Repeated flexion-extension of the spine and impact landings provoke discs. Regress to step-back burpee without push-up, keep the back rigid, or replace entirely with kettlebell swings/rowing until back is bulletproof.",
+      "modificationPl": "Powtarzalne zginanie-prostowanie kręgosłupa i lądowania z impaktem drażnią dyski. Cofnij się do burpee krokiem bez pompki, trzymaj sztywne plecy lub całkowicie zamień na swingi z kettlebellem/wioślarz aż plecy będą stabilne.",
+      "alternative": "kettlebell-swing"
+    }
+  ],
+
+  "typical_sets_reps": "AMRAP 30-60s (HIIT/conditioning) | 5x10 reps (volume) | 10-1 descending ladder (CrossFit/EMOM) | 100 reps for time (benchmark)",
+  "calories_per_kg_per_hour": 10.0,
+
+  "media": {
+    "primary": "burpee.gif",
+    "frames_extracted": [
+      "frames/burpee/frame_0_start.png",
+      "frames/burpee/frame_1_early.png",
+      "frames/burpee/frame_2_mid.png",
+      "frames/burpee/frame_3_late.png",
+      "frames/burpee/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/burpee"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej — stojąco, stopy razem/lekko rozstawione, ramiona luźno wzdłuż ciała. Frame 1 (early): głęboki przysiad/klęczenie z dłońmi na podłodze przed stopami — początek transferu do planka, podświetlone barki/triceps/quads jako pracujące w fazie ekscentrycznej. Frame 2 (mid): pełny plank/dół pompki — ciało w prostej linii, ramiona zgięte, klatka tuż nad podłogą, podświetlone pectorals + anterior delts + triceps + core jako primary movers. Frame 3 (late): faza wyskoku — postać w locie z wyciągniętymi ramionami nad głową, triple extension hips/knees/ankles, podświetlone quads + glutes + calves + abs jako agonisty mocy. Frame 4 (end): powrót do pozycji wyjściowej stojącej — zamknięcie cyklu pełnego burpee. Sekwencja zgodna ze standardem 'full burpee' (Royal H. Burpee 1939 + nowoczesna ewolucja z pompką i wyskokiem). movement_pattern: conditioning — to ćwiczenie hybrydowe, łączące push-pattern, squat-pattern i wyskok plyometryczny — kategoryzowane jako conditioning bo żaden pojedynczy pattern go nie definiuje. category: plyometrics ze względu na finalny wyskok z triple extension. primary muscles według biomechaniki: pectoralis_major (faza pompki), quadriceps + glutes (przysiad + wyskok), core (transfer i stabilizacja całej sekwencji). Wszystkie pola PL napisane od zera w polskim standardzie fitness/CrossFit (terminologia: 'plank', 'triple extension', 'pompka', 'wyskok', 'burpee' — bez polonizacji nazwy własnej ćwiczenia).",
+
+  "tags": ["bodyweight", "conditioning", "hiit", "plyometrics", "full_body", "calisthenics", "no_equipment_friendly", "home_workout", "crossfit", "metcon", "anaerobic", "fat_loss"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "barbell-straight-leg-deadlift",
+  "name": "Barbell Straight-Leg Deadlift",
+  "namePl": "Deadlift z prostymi nogami ze sztangą",
+  "aliases": ["SLDL", "straight leg deadlift", "stiff leg deadlift", "barbell SLDL", "locked-knee deadlift"],
+  "aliasesPl": ["SLDL", "deadlift na prostych nogach", "martwy ciąg na prostych nogach", "martwy ciąg z prostymi nogami", "sztywno-nogi martwy ciąg"],
+
+  "description": "A hip-hinge exercise that emphasizes maximum hamstring stretch by keeping the knees fully extended (locked or near-locked) throughout the entire range of motion. Differs from the Romanian Deadlift (RDL) — where knees stay slightly bent (~10-20°) — by removing that soft-knee position entirely. The straight-knee posture forces all the bending to come from the hips and lengthens the hamstrings to their absolute maximum stretch under load. This makes SLDL one of the most effective movements for hamstring growth and flexibility, but also the most demanding on hamstring mobility and lower-back position. The bar lowers along the front of the legs while the hips travel back; depth depends entirely on individual hamstring flexibility — never round the lower back to reach further.",
+  "descriptionPl": "Ćwiczenie hip hinge które maksymalizuje rozciąg dwugłowych ud poprzez utrzymanie kolan całkowicie wyprostowanych (zablokowanych lub prawie zablokowanych) przez cały zakres ruchu. Różni się od rumuńskiego martwego ciągu (RDL) — gdzie kolana pozostają lekko ugięte (~10-20°) — przez całkowite usunięcie tej miękkiej pozycji kolan. Wyprostowane kolana zmuszają cały ruch do dziania się w biodrach i wydłużają dwugłowe ud do absolutnie maksymalnego rozciągu pod obciążeniem. To czyni SLDL jednym z najskuteczniejszych ruchów dla wzrostu i mobilności hamstringów, ale jednocześnie najbardziej wymagającym dla mobilności dwugłowych i pozycji lędźwi. Sztanga schodzi wzdłuż przedniej strony nóg podczas gdy biodra cofają się; głębokość zależy w pełni od indywidualnej mobilności hamstringów — nigdy nie zaokrąglaj lędźwi by dosięgnąć niżej.",
+
+  "instructions": [
+    "Stand tall with the bar in front of you at the hips (lift it from a rack at hip height, or deadlift it cleanly into the starting position). Grip just outside the hips, double-overhand.",
+    "Feet hip-width apart, toes pointing forward. Lock your knees straight — fully extended, NOT bent. This is the key difference from RDL.",
+    "Set the upper back: chest tall, shoulder blades pulled down and back, lats engaged, neutral spine. Take a big breath and brace the core (Valsalva).",
+    "Begin by pushing the hips BACKWARD — the bar slides down the front of the thighs. The knees remain completely straight throughout — do not let them bend.",
+    "Lower the bar slowly along the legs. Keep it in contact with or very close to the body. The descent is driven entirely by hip flexion, not knee flexion.",
+    "Continue lowering only as far as your hamstring flexibility allows WITHOUT rounding the lower back. For most lifters this is below the knees; for very flexible lifters the bar may approach the floor.",
+    "STOP the descent the moment you feel the lower back wanting to round — quality of position beats depth every time.",
+    "Reverse by driving the hips forward, pulling the bar up along the legs until you stand fully upright. Squeeze the glutes at the top — full hip extension, no leaning back."
+  ],
+  "instructionsPl": [
+    "Stań prosto ze sztangą przed sobą na wysokości bioder (podnieś ze stojaka na wysokości bioder lub czysto wyciągnij z ziemi do pozycji startowej). Chwyt tuż na zewnątrz bioder, podwójny nachwyt.",
+    "Stopy na szerokość bioder, palce skierowane do przodu. Zablokuj kolana prosto — całkowicie wyprostowane, NIE ugięte. To kluczowa różnica vs RDL.",
+    "Ustaw górne plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, najszersze napięte, neutralny kręgosłup. Nabierz głęboki oddech i napnij brzuch (Valsalva).",
+    "Zacznij ruch przez wypchnięcie bioder DO TYŁU — gryf zsuwa się po przedniej stronie ud. Kolana pozostają całkowicie wyprostowane przez cały ruch — nie pozwól im się ugiąć.",
+    "Opuszczaj sztangę powoli wzdłuż nóg. Trzymaj ją w kontakcie z ciałem lub bardzo blisko. Schodzenie generuje wyłącznie zgięcie bioder, nie kolan.",
+    "Schodź tylko tak nisko jak pozwala mobilność dwugłowych ud BEZ zaokrąglania lędźwi. Dla większości ćwiczących to poniżej kolan; dla bardzo elastycznych gryf może zbliżyć się do ziemi.",
+    "ZATRZYMAJ schodzenie w momencie gdy poczujesz że lędźwie chcą się zaokrąglić — jakość pozycji bije głębokość za każdym razem.",
+    "Wróć ruchem przez wepchnięcie bioder do przodu, podciągając gryf wzdłuż nóg aż staniesz prosto. Ściśnij pośladki na górze — pełen wyprost bioder, bez odchylania się do tyłu."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "erector_spinae"],
+    "secondary": ["glutes"],
+    "stabilizers": ["core", "latissimus_dorsi", "trapezius", "rhomboids", "forearms", "rectus_abdominis", "obliques", "adductors", "calves"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "erector_spinae": "P9",
+    "glutes": "S8",
+    "trapezius": "S6",
+    "latissimus_dorsi": "S5",
+    "forearms": "S7",
+    "core": "S7",
+    "adductors": "S4",
+    "calves": "S3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["belt", "lifting_straps", "chalk", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-romanian-deadlift", "dumbbell-rdl", "good-morning", "hip-hinge-dowel-drill"],
+    "progression_to": ["deficit-straight-leg-deadlift", "snatch-grip-straight-leg-deadlift", "tempo-straight-leg-deadlift"],
+    "alternatives": ["barbell-romanian-deadlift", "dumbbell-rdl", "good-morning", "single-leg-rdl", "lying-leg-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at hip height, feet hip-width apart, toes forward",
+      "Grip just outside the hips, double-overhand",
+      "Knees FULLY STRAIGHT — lock them, do not soften them like in RDL",
+      "Chest tall, shoulder blades down and back, lats engaged",
+      "Big breath, brace the core HARD — straight knees demand stronger bracing"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na wysokości bioder, stopy na szerokość bioder, palce do przodu",
+      "Chwyt tuż na zewnątrz bioder, podwójny nachwyt",
+      "Kolana CAŁKOWICIE PROSTE — zablokuj je, nie zmiękczaj jak w RDL",
+      "Klatka w górze, łopatki w dół i do tyłu, najszersze napięte",
+      "Głęboki wdech, napnij brzuch MOCNO — proste kolana wymagają silniejszego napięcia"
+    ],
+    "execution_cues": [
+      "Hips BACK first — push your butt to the wall behind you, knees stay locked",
+      "Bar glued to the legs — slide it down the thighs and over the kneecaps",
+      "Knees DO NOT bend — even slightly. If they bend, you're doing RDL, not SLDL",
+      "Stop when the lower back wants to round — depth is dictated by hamstring flexibility, not ego",
+      "Drive hips forward to stand up, squeeze glutes at the top — full lockout"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU najpierw — wypchnij pośladki do ściany za tobą, kolana zablokowane",
+      "Gryf przyklejony do nóg — zsuwaj go po udach i nad rzepkami",
+      "Kolana SIĘ NIE ZGINAJĄ — nawet lekko. Jeśli się zginają, robisz RDL, nie SLDL",
+      "Zatrzymaj gdy lędźwie chcą się zaokrąglić — głębokość dyktuje mobilność hamstringów, nie ego",
+      "Wepchnij biodra do przodu by się wyprostować, ściśnij pośladki na górze — pełen lock-out"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back at the bottom — most dangerous SLDL fault",
+        "faultPl": "Zaokrąglone lędźwie na dole — najgroźniejszy błąd w SLDL",
+        "cause": "Hamstring flexibility insufficient for the chosen depth, weak erectors, going too low to 'reach the floor', loss of brace",
+        "causePl": "Niewystarczająca mobilność dwugłowych jak na wybraną głębokość, słabe prostowniki, schodzenie za nisko by 'dosięgnąć ziemi', utrata napięcia",
+        "cue": "STOP the descent at the limit of your flexibility — do NOT chase the floor. Straight knees mean shorter ROM than RDL for most people. Reduce weight and master the position.",
+        "cuePl": "ZATRZYMAJ schodzenie na granicy swojej mobilności — NIE goń podłogi. Proste kolana oznaczają krótszy zakres niż w RDL dla większości osób. Zmniejsz ciężar i opanuj pozycję."
+      },
+      {
+        "fault": "Knees bending during the descent — converting SLDL into RDL",
+        "faultPl": "Kolana uginają się podczas schodzenia — zamienia SLDL w RDL",
+        "cause": "Tight hamstrings 'cheating' the stretch, lack of awareness, defaulting to RDL pattern",
+        "causePl": "Napięte dwugłowe ud 'oszukują' rozciąg, brak świadomości, automatyczne wracanie do wzorca RDL",
+        "cue": "Knees LOCKED the whole rep. If they want to bend — you've reached your honest depth. Film yourself from the side to verify.",
+        "cuePl": "Kolana ZABLOKOWANE przez całe powtórzenie. Jeśli chcą się ugiąć — osiągnąłeś szczerą głębokość. Nagraj się z boku by zweryfikować."
+      },
+      {
+        "fault": "Bar drifts away from the body (in front of the legs)",
+        "faultPl": "Gryf oddala się od ciała (przed nogami)",
+        "cause": "Lats disengaged, hips not traveling back enough, leaning forward from the upper back",
+        "causePl": "Najszersze rozluźnione, biodra nie cofają się wystarczająco, pochylanie z górnej części pleców",
+        "cue": "Pull the bar INTO your legs the whole time. Lats hard, hips back. The bar must brush the thighs.",
+        "cuePl": "Pociągnij gryf W nogi przez cały czas. Najszersze mocno, biodra do tyłu. Gryf musi muskać uda."
+      },
+      {
+        "fault": "Hyperextension at the top (leaning back to 'finish' the rep)",
+        "faultPl": "Hiperekstensja na górze (odchylanie do tyłu by 'dokończyć' powtórzenie)",
+        "cause": "Confusing 'full hip extension' with leaning back, weak glutes compensating with lumbar extension",
+        "causePl": "Mylenie 'pełnego wyprostu bioder' z odchylaniem do tyłu, słabe pośladki kompensujące lumbarną ekstensją",
+        "cue": "Stand tall and STOP. Glutes squeeze, ribs down, no leaning back. The rep ends at vertical.",
+        "cuePl": "Stań prosto i ZATRZYMAJ się. Pośladki ściśnięte, żebra w dół, bez odchylania. Powtórzenie kończy się w pionie."
+      },
+      {
+        "fault": "Bouncing the bar off the floor between reps",
+        "faultPl": "Odbijanie sztangi od podłogi między powtórzeniami",
+        "cause": "Going to the floor on SLDL, treating it like a conventional deadlift, losing tension on the eccentric",
+        "causePl": "Schodzenie do ziemi w SLDL, traktowanie jak klasyczny martwy ciąg, utrata napięcia w ekscentryku",
+        "cue": "SLDL is a continuous tension exercise. Do not touch the floor. Stop at your stretch limit, reverse smoothly. Reset between reps if needed, but never bounce.",
+        "cuePl": "SLDL to ćwiczenie ciągłego napięcia. Nie dotykaj podłogi. Zatrzymaj się na granicy rozciągu, wróć płynnie. Zresetuj między powtórzeniami jeśli trzeba, ale nigdy nie odbijaj."
+      }
+    ],
+    "breathing": "Inhale and brace HARD at the top (Valsalva — straight knees demand more spinal stability). Hold the brace through the entire descent AND ascent. Exhale at the top of the lockout. Re-brace before the next rep. NEVER exhale during the eccentric.",
+    "breathingPl": "Wdech i napięcie MOCNE na górze (Valsalva — proste kolana wymagają większej stabilności kręgosłupa). Trzymaj napięcie przez całe schodzenie ORAZ wchodzenie. Wydech na szczycie lock-out. Ponownie napnij przed kolejnym powtórzeniem. NIGDY nie wydychaj podczas ekscentryku."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest from loaded spinal hinging. SLDL puts very high shear and compressive forces on the lumbar — even higher than RDL due to longer lever. Consult physiotherapist before resuming.",
+      "modificationPl": "Pełen odpoczynek od obciążonego hingowania kręgosłupa. SLDL nakłada bardzo wysokie siły ścinające i ściskające na lędźwie — wyższe nawet niż w RDL ze względu na dłuższą dźwignię. Konsultacja z fizjoterapeutą przed wznowieniem.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion with locked knees is one of the highest-risk movements for disc injury. Switch to seated/lying leg curl or cable pull-through with strict neutral spine.",
+      "modificationPl": "Obciążona flexja kręgosłupa z zablokowanymi kolanami to jeden z najbardziej ryzykownych ruchów dla dysków. Przejdź na uginanie nóg siedząc/leżąc lub cable pull-through z bezwzględnie neutralnym kręgosłupem.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Switch to RDL (slight knee bend) until hamstring mobility improves. SLDL with tight hamstrings forces lumbar flexion under load — a recipe for injury. Work on flexibility separately (PNF stretching, Jefferson curls with light load).",
+      "modificationPl": "Przejdź na RDL (lekko ugięte kolana) dopóki mobilność dwugłowych ud się nie poprawi. SLDL z napiętymi hamstringami wymusza flexję lędźwi pod obciążeniem — prosta droga do kontuzji. Pracuj nad mobilnością osobno (PNF stretching, Jefferson curls z lekkim ciężarem).",
+      "alternative": "barbell-romanian-deadlift"
+    },
+    {
+      "condition": "hamstring_strain_recent",
+      "severity": "avoid",
+      "modification": "Maximum hamstring stretch under load is contraindicated during healing. Wait full clearance from physiotherapist. Return progressively via lying leg curls → RDL → SLDL over weeks.",
+      "modificationPl": "Maksymalny rozciąg dwugłowych pod obciążeniem jest przeciwwskazany podczas gojenia. Poczekaj na pełne zezwolenie od fizjoterapeuty. Wracaj progresywnie przez uginanie nóg leżąc → RDL → SLDL przez tygodnie.",
+      "alternative": "lying-leg-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy — preferred for hamstring growth and flexibility) | 4x5-6 (strength assistance) | 3x8-12 (mobility-focused with submaximal load)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-straight-leg-deadlift.gif",
+    "frames_extracted": [
+      "frames/barbell-straight-leg-deadlift/frame_0_start.png",
+      "frames/barbell-straight-leg-deadlift/frame_1_early.png",
+      "frames/barbell-straight-leg-deadlift/frame_2_mid.png",
+      "frames/barbell-straight-leg-deadlift/frame_3_late.png",
+      "frames/barbell-straight-leg-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "hamstrings/barbell-straight-leg-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa. Frame 0 (start cyklu): dolna pozycja SLDL — sztanga poniżej kolan, ciężar zawieszony nisko, plecy mocno pochylone do przodu z neutralnym kręgosłupem, KOLANA CAŁKOWICIE WYPROSTOWANE (kluczowa różnica vs RDL gdzie kolana są lekko ugięte ~15°). Podświetlone mocno: hamstringi (cały tył uda — najmocniej oświetlone, primary P10), pośladki, prostowniki grzbietu (cały tylny łańcuch lędźwiowy — primary P9 ze względu na dłuższą dźwignię vs RDL), trapezius. Frame 2: lockout pełna pozycja stojąca z sztangą przy biodrach — to faktyczny START ćwiczenia (SLDL idzie top-down), kolana wyraźnie wyprostowane. Frame 4: powrót w dół do pozycji pochylonej, kolana nadal proste. Kluczowa obserwacja: kolana SĄ proste przez cały zakres — nie ma żadnego ugięcia jak w RDL. To czyni SLDL trudniejszym (advanced, difficulty 8 vs RDL 6) i bardziej ryzykownym dla dolnego odcinka kręgosłupa, ale daje maksymalny rozciąg hamstringów. Klasyfikacja jako 'hinge' (czysty hip hinge, zero ruchu w kolanach). Equipment: tylko barbell. Główne mięśnie: hamstrings P10 (max stretch pod obciążeniem) ORAZ erector_spinae P9 (proste kolana = dłuższa dźwignia = większe obciążenie prostowników niż w RDL, dlatego erector dostaje primary zamiast secondary), glutes spadają do secondary S8 (mniejsze zaangażowanie niż w RDL ze względu na zmodyfikowaną mechanikę). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii fitness (hip hinge, SLDL, ekscentryk, lock-out, hamstringi, hiperekstensja, prostowniki grzbietu). Przeciwwskazania: dodano hamstring_strain_recent jako specyficzne dla SLDL — max stretch pod obciążeniem to bezpośrednie zagrożenie dla świeżo gojących się hamstringów.",
+
+  "tags": ["bodybuilding", "powerlifting", "posterior_chain", "hamstring_hypertrophy", "hamstring_flexibility", "hip_hinge", "barbell", "compound", "eccentric_focused", "max_stretch", "advanced"]
+}

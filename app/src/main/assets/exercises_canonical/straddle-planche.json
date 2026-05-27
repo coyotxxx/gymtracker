@@ -1,0 +1,209 @@
+{
+  "id": "straddle-planche",
+  "name": "Straddle Planche",
+  "namePl": "Planche w pozycji rozkrocznej",
+  "aliases": ["straddle planche hold", "straddle planche press", "straddle planche static", "open planche"],
+  "aliasesPl": ["planche rozkroczne", "rozkroczna planche", "planche w rozkroku", "straddle planche"],
+
+  "description": "Elite-level gymnastic static hold. You support your entire bodyweight on the FLOOR with arms locked straight, body lifted PARALLEL to the ground, face down — but legs spread WIDE to the sides (straddle position). Spreading the legs shortens the lever arm versus full planche, making it the gateway skill before full planche. Pure isometric horizontal hold against full gravity moment arm. Demands brutal anterior deltoid, serratus anterior, and full-body tension.",
+  "descriptionPl": "Statyczna izometria z gimnastyki na poziomie elite. Cały ciężar ciała opiera się na PODŁODZE z ramionami wyprostowanymi prosto, ciało uniesione RÓWNOLEGLE do podłogi twarzą w dół — ale nogi szeroko rozłożone na boki (pozycja straddle / rozkroczna). Rozłożenie nóg SKRACA ramię siły w porównaniu do pełnego planche, co czyni je pomostowym ćwiczeniem przed full planche. Czysta izometria pozioma przeciwko pełnemu ramieniu siły grawitacji. Wymaga brutalnej siły przednich aktonów barków, mięśnia zębatego przedniego i napięcia całego ciała.",
+
+  "instructions": [
+    "Start in a planche lean position: hands on the floor shoulder-width apart, fingers pointing forward (or slightly outward for wrist comfort).",
+    "Lock elbows COMPLETELY straight — slight bias of inner elbow facing forward (sup or neutral) protects the joint.",
+    "Lean SHOULDERS forward FAR past the hands — your shoulders should be in front of your wrists. This is the critical leverage.",
+    "Protract scapulae HARD — push the floor away, rounding the upper back slightly (NO scapular retraction).",
+    "Engage the entire body: brace core, squeeze glutes, point toes — spread legs WIDE into a straddle (legs forming a V).",
+    "Lift the legs off the floor by leaning further forward and pressing down through the hands — body rises to horizontal.",
+    "Reach the position where shoulders, hips and feet are in one HORIZONTAL line parallel to the floor, face down, with legs spread wide.",
+    "Hold for prescribed time (3-15 seconds depending on level). Maintain rigid line. Then lower under control — do not collapse."
+  ],
+  "instructionsPl": [
+    "Zacznij w pozycji planche lean: dłonie na podłodze na szerokość barków, palce skierowane do przodu (lub lekko na zewnątrz dla wygody nadgarstków).",
+    "Zablokuj łokcie CAŁKOWICIE prosto — lekkie nastawienie wewnętrznej strony łokcia do przodu (supinacja lub neutral) chroni staw.",
+    "Wychyl BARKI mocno do przodu DALEKO przed dłonie — barki powinny być przed nadgarstkami. To kluczowa dźwignia.",
+    "MOCNO protrakuj łopatki — odpychaj podłogę, lekko zaokrąglając górną część pleców (BEZ retrakcji łopatek).",
+    "Aktywuj całe ciało: napnij brzuch, ściśnij pośladki, wyciągnij palce stóp — rozłóż nogi SZEROKO w straddle (nogi formują V).",
+    "Unieś nogi z podłogi przez dalsze wychylenie do przodu i nacisk dłońmi — ciało wznosi się do poziomu.",
+    "Osiągnij pozycję gdzie barki, biodra i stopy są w jednej POZIOMEJ linii równolegle do podłogi, twarzą w dół, z nogami szeroko rozłożonymi.",
+    "Utrzymaj przez zalecany czas (3-15 sekund w zależności od poziomu). Utrzymaj sztywną linię. Następnie kontrolowanie opuść — nie zapadaj się."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "push",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "serratus_anterior", "core", "rectus_abdominis"],
+    "secondary": ["pectoralis_major", "trapezius_lower", "biceps_brachii", "obliques", "glutes", "erector_spinae"],
+    "stabilizers": ["rotator_cuff", "triceps_brachii", "forearms", "wrist_flexors", "quadriceps", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "serratus_anterior": "P9",
+    "core": "P9",
+    "rectus_abdominis": "P9",
+    "pectoralis_major": "S8",
+    "trapezius_lower": "S8",
+    "biceps_brachii": "S8",
+    "obliques": "S7",
+    "glutes": "S8",
+    "erector_spinae": "S7",
+    "triceps_brachii": "S7",
+    "forearms": "S8",
+    "wrist_flexors": "S8",
+    "quadriceps": "S6",
+    "adductors": "S6"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["parallettes", "push_up_handles", "gymnastic_rings", "resistance_bands", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["planche-lean", "tuck-planche", "advanced-tuck-planche", "push-up", "pseudo-planche-push-up", "hollow-body-hold"],
+    "progression_to": ["half-lay-planche", "full-planche", "straddle-planche-push-up", "planche-push-up", "maltese"],
+    "alternatives": ["advanced-tuck-planche", "band-assisted-straddle-planche", "straddle-planche-negatives", "planche-lean"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands shoulder-width, fingers forward",
+      "Elbows LOCKED straight — pits facing forward",
+      "Shoulders WAY past wrists (deep lean)",
+      "Scapulae PROTRACTED — push floor away",
+      "Legs spread WIDE in straddle V"
+    ],
+    "setup_cues_pl": [
+      "Dłonie na szerokość barków, palce do przodu",
+      "Łokcie ZABLOKOWANE prosto — doły łokciowe do przodu",
+      "Barki DALEKO przed nadgarstkami (głęboki lean)",
+      "Łopatki PROTRAKOWANE — odpychaj podłogę",
+      "Nogi rozłożone SZEROKO w literę V"
+    ],
+    "execution_cues": [
+      "Push the floor DOWN and AWAY",
+      "Lean SHOULDERS forward more than feels safe",
+      "Glutes squeezed HARD, hollow body",
+      "Toes pointed, legs wide — open the V",
+      "Stay HORIZONTAL — hips do not sag"
+    ],
+    "execution_cues_pl": [
+      "Naciskaj podłogę W DÓŁ i OD SIEBIE",
+      "Wychyl BARKI do przodu bardziej niż wydaje się bezpieczne",
+      "Pośladki MOCNO ściśnięte, hollow body",
+      "Palce stóp wyciągnięte, nogi szeroko — otwórz literę V",
+      "Pozostań POZIOMO — biodra nie opadają"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging — body not horizontal",
+        "faultPl": "Biodra opadające — ciało nie poziome",
+        "cause": "Insufficient shoulder lean / weak anterior delts and serratus, glutes not engaged",
+        "causePl": "Niewystarczające wychylenie barków / słabe przednie aktony i zębaty przedni, pośladki nie zaangażowane",
+        "cue": "Lean shoulders FURTHER forward, push the floor harder, squeeze glutes. Regress to advanced tuck if needed.",
+        "cuePl": "Wychyl barki BARDZIEJ do przodu, naciskaj podłogę mocniej, ściśnij pośladki. Cofnij się do advanced tuck w razie potrzeby."
+      },
+      {
+        "fault": "Bent elbows during the hold",
+        "faultPl": "Zgięte łokcie podczas utrzymywania",
+        "cause": "Lack of straight-arm strength, trying to push with triceps instead of locking out and using scapular strength",
+        "causePl": "Brak siły z wyprostowanymi ramionami, próba wypychania tricepsem zamiast lockowania i używania siły łopatkowej",
+        "cue": "Lock elbows BEFORE starting. If they bend = it's a planche push-up, not a planche hold. Build straight-arm capacity with leans.",
+        "cuePl": "Zablokuj łokcie PRZED rozpoczęciem. Jeśli się zginają = to planche push-up, nie planche hold. Buduj zdolność prostych ramion przez leans."
+      },
+      {
+        "fault": "Legs not spread wide enough — closer to tuck than straddle",
+        "faultPl": "Nogi nierozłożone wystarczająco szeroko — bliżej tucka niż straddle",
+        "cause": "Tight hip adductors, fear of full leg spread, or trying to make it easier",
+        "causePl": "Spięte przywodziciele bioder, strach przed pełnym rozłożeniem nóg, lub próba ułatwienia",
+        "cue": "Open legs as wide as your mobility allows — wider straddle = shorter lever = easier hold. Work hip mobility separately.",
+        "cuePl": "Rozłóż nogi tak szeroko jak pozwala mobilność — szerszy straddle = krótsza dźwignia = łatwiejszy hold. Pracuj nad mobilnością bioder osobno."
+      },
+      {
+        "fault": "Scapular retraction (shoulders pulling back) instead of protraction",
+        "faultPl": "Retrakcja łopatek (barki ściągnięte) zamiast protrakcji",
+        "cause": "Habit from rowing exercises, lack of scapular push-up training",
+        "causePl": "Nawyk z ćwiczeń wioślarskich, brak treningu scapular push-up",
+        "cue": "PUSH THE FLOOR AWAY — round upper back slightly. Planche is a 'push out', front lever is a 'pull down'.",
+        "cuePl": "ODPYCHAJ PODŁOGĘ — lekko zaokrąglij górną część pleców. Planche to 'wypchnięcie', front lever to 'pociągnięcie w dół'."
+      },
+      {
+        "fault": "Wrist pain / collapsing wrists",
+        "faultPl": "Ból nadgarstków / zapadające się nadgarstki",
+        "cause": "Insufficient wrist conditioning, no warm-up, fingers not actively gripping the floor",
+        "causePl": "Niewystarczające przygotowanie nadgarstków, brak rozgrzewki, palce nieaktywnie chwytają podłogę",
+        "cue": "Use parallettes (neutral grip) to reduce extension. Always warm up wrists 5-10 min. Grip floor with fingertips.",
+        "cuePl": "Używaj parallettes (chwyt neutralny) by zredukować wyprost. Zawsze rozgrzej nadgarstki 5-10 min. Chwytaj podłogę opuszkami palców."
+      }
+    ],
+    "breathing": "Inhale and brace BEFORE lifting into the hold. During the hold: short shallow breaths through the nose, keeping core rigid and ribs static. Exhale on the way down. Never hold breath the entire time — you will fail prematurely from oxygen debt.",
+    "breathingPl": "Wdech i napięcie PRZED uniesieniem w pozycję. Podczas utrzymywania: krótkie, płytkie oddechy nosem, utrzymując sztywny core i statyczne żebra. Wydech podczas opuszczania. Nigdy nie wstrzymuj oddechu przez cały czas — szybko upadniesz z deficytu tlenu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "avoid",
+      "modification": "Full bodyweight on extended wrists with deep forward lean places extreme stress on the wrist joint. Stop until pain-free. Use parallettes (neutral grip) when returning, build wrist conditioning gradually.",
+      "modificationPl": "Pełen ciężar ciała na wyprostowanych nadgarstkach z głębokim wychyleniem do przodu daje ekstremalny stres na staw. Wstrzymaj do braku bólu. Po powrocie używaj parallettes (chwyt neutralny), stopniowo buduj wytrzymałość nadgarstków.",
+      "alternative": "tuck-planche-on-parallettes"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Straight-arm loading with forward shoulder lean places huge stress on biceps tendon insertion. Stop until full recovery. Replace with scapular work and wrist/forearm prehab.",
+      "modificationPl": "Obciążenie wyprostowanymi ramionami z wychyleniem barków do przodu daje ogromny stres na ścięgno bicepsa. Wstrzymaj do pełnego wyleczenia. Zastąp pracą nad łopatkami i prehabem nadgarstków/przedramion.",
+      "alternative": "planche-lean"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Extreme protraction under load can aggravate impingement. Address shoulder health first with scapular push-ups, serratus activation and proper warm-up.",
+      "modificationPl": "Ekstremalna protrakcja pod obciążeniem może zaostrzyć konflikt barkowy. Najpierw zadbaj o zdrowie barku przez scapular push-ups, aktywację zębatego przedniego i odpowiednią rozgrzewkę.",
+      "alternative": "scapular-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Maintaining horizontal hollow body under planche stress can compress lumbar if glutes/abs not balanced. Stop if pain. Regress to advanced tuck planche and prioritize core/glute strength.",
+      "modificationPl": "Utrzymywanie poziomego hollow body pod stresem planche może uciskać lędźwie jeśli pośladki/brzuch nie są zbalansowane. Wstrzymaj przy bólu. Cofnij się do advanced tuck planche i priorytet na siłę core/pośladków.",
+      "alternative": "advanced-tuck-planche"
+    }
+  ],
+
+  "typical_sets_reps": "3x5-15 sekund (hold) | 4-6x3-8s (akumulacja) | EMOM 5-8s holds",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "straddle-planche.gif",
+    "frames_extracted": [
+      "frames/straddle-planche/frame_0_start.png",
+      "frames/straddle-planche/frame_1_early.png",
+      "frames/straddle-planche/frame_2_mid.png",
+      "frames/straddle-planche/frame_3_late.png",
+      "frames/straddle-planche/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/straddle-planche"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frames 0/2/4: klasyczna pozycja straddle planche — ciało w pełni poziome, równolegle do podłogi, twarzą w dół. Ramiona całkowicie wyprostowane (locked), dłonie na podłodze, barki głęboko wychylone przed nadgarstki (deep forward lean). Nogi szeroko rozłożone w straddle V — co skraca ramię siły w porównaniu z full planche (dlatego difficulty 9, nie 10). Frame 2 podświetla pracujące mięśnie: przednie aktony barków (P10), zębaty przedni (P9), prosty brzucha + core (P9), bicepsy ramienia (S8), pośladki utrzymujące napięcie. Statyczna izometria — brak ruchu między frames. Mechanic: isometric. Force: push (przeciwna polaryzacja do front lever — planche to wypchnięcie/protrakcja, front lever to pociągnięcie/depresja). Difficulty 9/10 — gateway skill przed full planche. PL nazwa 'Planche w pozycji rozkrocznej' — opisowa, ponieważ 'straddle planche' jest też powszechnie używane w polskiej społeczności calisthenics. Klasyfikacja w źródle jahel jako 'abs' jest myląca — to fundamentalnie ćwiczenie barków/serratus (delts), dlatego trafia do delts/canonical.",
+
+  "tags": ["calisthenics", "bodyweight", "gymnastics", "static_hold", "isometric", "elite_skill", "shoulders", "delts", "serratus", "core", "advanced", "parallettes", "hollow_body", "straight_arm_strength", "planche_progression"]
+}

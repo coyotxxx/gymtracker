@@ -1,0 +1,199 @@
+{
+  "id": "barbell-standing-wide-grip-curl",
+  "name": "Barbell Standing Wide-Grip Curl",
+  "namePl": "Uginanie ramion sztangą szerokim chwytem",
+  "aliases": ["wide grip barbell curl", "wide stance bb curl", "wide-grip standing curl"],
+  "aliasesPl": ["uginanie sztangą szerokim chwytem stojąc", "curl szerokim chwytem", "uginanie bicepsów sztangą szerokim chwytem", "szeroki curl ze sztangą"],
+
+  "description": "A variation of the classic standing barbell curl performed with a grip wider than shoulder-width. The wide hand placement rotates the upper arm slightly inward and lengthens the line of pull on the short (inner) head of the biceps brachii, biasing the movement toward the short head and producing a more pronounced inner-biceps contraction at the top. Excellent accessory work for filling out the inner biceps and building the 'peak from below'.",
+  "descriptionPl": "Wariant klasycznego uginania sztangą stojąc wykonywany chwytem szerszym niż barki. Szeroki chwyt powoduje lekką wewnętrzną rotację ramienia ponad łokciem i wydłuża linię działania na głowę krótką (wewnętrzną) mięśnia dwugłowego, przesuwając akcent na tę właśnie głowę i dając wyraźniejsze napięcie wewnętrznej części bicepsa w górnej pozycji. Świetne ćwiczenie pomocnicze do wypełnienia wewnętrznej części bicepsa i budowania 'szczytu od dołu'.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grip the barbell with a supinated (palms up) grip noticeably wider than shoulder-width — hands roughly 1.5x shoulder width apart.",
+    "Let the bar hang at arms' length in front of your thighs. Pin your elbows to your sides and slightly back — they should stay there for the entire set.",
+    "Brace your core, lift your chest, and keep your shoulders pulled back and down. Wrists stay neutral and in line with the forearms.",
+    "Curl the bar upward by flexing at the elbows only. Exhale on the way up. Keep the upper arms vertical — do not let elbows drift forward.",
+    "Continue until the bar reaches the front of your shoulders and the inner biceps are fully contracted. Squeeze hard for a brief pause.",
+    "Lower the bar under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "Avoid swinging the torso or using hip momentum. The wide grip rewards strict form — keep each rep clean and start from a dead stop."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap sztangę nachwytem dolnym (dłonie skierowane w górę) wyraźnie szerzej niż na szerokość barków — dłonie mniej więcej 1,5 razy szerzej niż barki.",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przed udami. Przyklej łokcie do boków tułowia i lekko w tył — mają tam pozostać przez całą serię.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół. Nadgarstki neutralne, w linii z przedramieniem.",
+    "Uginaj ramiona w łokciach do góry — pracują wyłącznie przedramiona. Wydychaj w fazie koncentrycznej. Ramiona ponad łokciem mają pozostać pionowe — nie pozwól by łokcie wędrowały do przodu.",
+    "Kontynuuj ruch aż sztanga dotrze na wysokość przednich aktonów barków, a wewnętrzna część bicepsa będzie w pełnym skurczu. Mocno napnij na chwilę w górnej pozycji.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania.",
+    "Unikaj bujania tułowia i pomagania biodrami. Szeroki chwyt wymaga ścisłej techniki — każde powtórzenie czyste, z zatrzymanej pozycji startowej."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S5",
+    "brachioradialis": "S4",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["barbell-curl"],
+    "progression_to": ["preacher-curl", "spider-curl", "barbell-drag-curl", "ez-bar-curl"],
+    "alternatives": ["barbell-curl", "ez-bar-curl", "barbell-narrow-grip-curl", "cable-curl", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft, core braced",
+      "Supinated grip 1.5x shoulder width — clearly wider than usual",
+      "Elbows pinned to your sides and slightly back",
+      "Wrists neutral, in line with forearms — no extension",
+      "Chest up, shoulders back and down, ribcage stacked over pelvis"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte, brzuch napięty",
+      "Podchwyt 1,5x szerszy niż barki — wyraźnie szerzej niż zwykle",
+      "Łokcie przyklejone do boków i lekko w tył",
+      "Nadgarstki neutralne, w linii z przedramieniem — bez przeprostu",
+      "Klatka w górze, barki ściągnięte w tył i w dół, żebra nad miednicą"
+    ],
+    "execution_cues": [
+      "Push the elbows back as you curl — feel the short head fire",
+      "Only the forearms move — upper arms stay vertical",
+      "Squeeze the inner biceps hard at the top",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Full lockout at the bottom, no bouncing"
+    ],
+    "execution_cues_pl": [
+      "Pchnij łokcie lekko w tył podczas uginania — poczuj pracę głowy krótkiej",
+      "Pracują tylko przedramiona — ramiona ponad łokciem pionowo",
+      "Mocno spinaj wewnętrzną część bicepsa w górnej pozycji",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Pełny wyprost łokci na dole, bez odbijania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip too wide causes wrist or elbow pain",
+        "faultPl": "Zbyt szeroki chwyt powoduje ból nadgarstków lub łokci",
+        "cause": "Hand spacing exceeds individual shoulder/forearm anatomy, forcing the wrist into uncomfortable supination",
+        "causePl": "Rozstaw dłoni przekracza indywidualną anatomię barków i przedramion, wymuszając niewygodną supinację nadgarstka",
+        "cue": "Narrow the grip until wrists feel neutral. 'Wider than shoulders' is enough — do not exaggerate.",
+        "cuePl": "Zwęź chwyt tak by nadgarstki czuły się neutralnie. 'Szerzej niż barki' wystarczy — nie przesadzaj."
+      },
+      {
+        "fault": "Elbows flare outward instead of staying at the sides",
+        "faultPl": "Łokcie odstają na boki zamiast pozostawać przy tułowiu",
+        "cause": "Wide grip naturally tempts the elbows to follow the hands; lifter loses position under load",
+        "causePl": "Szeroki chwyt naturalnie kusi by łokcie podążyły za dłońmi; zawodnik traci pozycję pod obciążeniem",
+        "cue": "Drive your elbows back and down. Imagine pinching a piece of paper between your ribs and biceps.",
+        "cuePl": "Wciśnij łokcie w tył i w dół. Wyobraź sobie że ściskasz kartkę między żebrami a bicepsami."
+      },
+      {
+        "fault": "Swinging the torso (kipping / cheat reps)",
+        "faultPl": "Bujanie tułowia (oszukiwanie biodrami)",
+        "cause": "Wide grip is mechanically weaker than standard — load is too heavy and lifter compensates with hips",
+        "causePl": "Szeroki chwyt jest mechanicznie słabszy od standardowego — ciężar za duży i zawodnik kompensuje biodrami",
+        "cue": "Drop 20-30% of your standard curl weight. This variation needs lighter loads.",
+        "cuePl": "Zmniejsz ciężar o 20-30% w stosunku do standardowego curla. Ten wariant wymaga lżejszych ciężarów."
+      },
+      {
+        "fault": "Wrist hyperextension under load",
+        "faultPl": "Przeprostowanie nadgarstków pod obciążeniem",
+        "cause": "Wide grip increases supination stress; weak wrist flexors give in, especially with a straight bar",
+        "causePl": "Szeroki chwyt zwiększa stres supinacyjny; słabe zginacze nadgarstka ustępują, zwłaszcza ze sztangą prostą",
+        "cue": "Keep wrists straight, knuckles in line with forearms. Use wrist wraps or switch to EZ-bar.",
+        "cuePl": "Trzymaj nadgarstki proste, kostki w linii z przedramieniem. Użyj usztywniaczy nadgarstków lub przejdź na sztangę łamaną."
+      },
+      {
+        "fault": "Partial range of motion — not fully extending at the bottom",
+        "faultPl": "Niepełny zakres ruchu — brak pełnego wyprostu na dole",
+        "cause": "Stretched-position weakness is more exposed with wide grip; ego protects the bottom of the rep",
+        "causePl": "Słabość w pozycji rozciągniętej jest wyraźniejsza przy szerokim chwycie; ego chroni dolną fazę powtórzenia",
+        "cue": "Touch full lockout at the bottom each rep. Stretched biceps = bigger short-head stimulus.",
+        "cuePl": "Dotknij pełnego wyprostu na dole każdego powtórzenia. Rozciągnięty biceps = większy bodziec dla głowy krótkiej."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light brace throughout — the wider grip can tempt lumbar extension at the top.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię — szerszy chwyt może kusić do przeprostu lędźwiowego w górnej pozycji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Wide grip locks the wrists in deep supination which strongly aggravates ulnar-side and dorsal wrist pain. Switch to EZ-bar wide curl (angled grip) or use dumbbells for free supination.",
+      "modificationPl": "Szeroki chwyt blokuje nadgarstki w głębokiej supinacji, co mocno drażni stronę łokciową i grzbietową nadgarstka. Przejdź na sztangę łamaną z szerokim chwytem (kąt chwytu) lub użyj hantli ze swobodną supinacją.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Wide grip increases tension on the distal biceps insertion. Reduce volume and load, use 12-15 reps, avoid heavy eccentrics, or temporarily switch to a hammer-grip variant.",
+      "modificationPl": "Szeroki chwyt zwiększa napięcie na dalszym przyczepie bicepsa. Zmniejsz objętość i ciężar, używaj 12-15 powtórzeń, unikaj ciężkich faz negatywnych, lub czasowo przejdź na wariant młotkowy.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Straight bar wide grip provokes pronator/flexor tendon attachments at the medial epicondyle. Use EZ-bar or reduce intensity until pain-free.",
+      "modificationPl": "Szeroki chwyt na prostej sztandze drażni przyczepy mięśni nawracającego i zginaczy na nadkłykciu przyśrodkowym kości ramiennej. Użyj sztangi łamanej lub zmniejsz intensywność do zakresu bez bólu.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing and the wide grip's poor leverage can tempt cheat reps. Perform seated, use preacher bench, or substitute a machine curl.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia lędźwiowego, a słaba dźwignia szerokiego chwytu może kusić do oszukiwania. Wykonuj siedząc, używaj ławki modlitewnika, lub zastąp curlem na maszynie.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy, short-head focus) | 3x12-15 (pump/finisher) | 3x8-10 (strength, lighter than standard curl)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-standing-wide-grip-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-standing-wide-grip-curl/frame_0_start.png",
+      "frames/barbell-standing-wide-grip-curl/frame_1_early.png",
+      "frames/barbell-standing-wide-grip-curl/frame_2_mid.png",
+      "frames/barbell-standing-wide-grip-curl/frame_3_late.png",
+      "frames/barbell-standing-wide-grip-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/barbell-standing-wide-grip-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:35:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0: pełny wyprost ramion, sztanga przed udami, chwyt podchwytem wyraźnie szerszy niż barki (dłonie poza linią obojczyków), biceps i przedramiona podświetlone na czerwono. Frame 2: pełny skurcz, sztanga na wysokości przednich aktonów barków, łokcie pozostają przy bokach tułowia, ramiona ponad łokciem pionowo. Frame 4: powrót do pełnego wyprostu z widocznym 'ghostem' fazy szczytowej powyżej. Tułów stoi nieruchomo przez cały ruch — modelowe wykonanie bez kipping. Ćwiczenie jednoznacznie zidentyfikowane jako Barbell Standing Wide-Grip Curl — wariant biasujący głowę krótką bicepsa. Akcent na short head obniżono brachialis z S6 (jak w standardowym curlu) na S5 oraz brachioradialis z S5 na S4 (szeroki chwyt mniej angażuje te dwa mięśnie pomocnicze). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "barbell", "upper_body", "wide_grip", "short_head_focus"]
+}

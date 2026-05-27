@@ -1,0 +1,203 @@
+{
+  "id": "side-to-side-chin",
+  "name": "Side-to-Side Chin-Up (Alternating Archer Chin)",
+  "namePl": "Side-to-side chin-up (naprzemienny chin-up)",
+  "aliases": ["side to side chin-up", "alternating archer chin-up", "shifting chin-up", "side-loaded chin-up"],
+  "aliasesPl": ["chin-up naprzemienny", "chin-up bok-bok", "podciąganie podchwytem naprzemienne", "archer chin-up naprzemienny"],
+
+  "description": "Unilateral variation of the chin-up where the body is pulled alternately toward one hand and then the other. Each rep loads ONE arm dominantly while the opposite arm assists in a more extended position. Builds asymmetrical lat/biceps strength and is a key progression step toward the one-arm chin-up. Bilateral grip, alternating loading — every rep changes the dominant side.",
+  "descriptionPl": "Wariant unilateralny chin-up'a, w którym ciało podciągane jest naprzemiennie raz w stronę jednej dłoni, raz drugiej. Każde powtórzenie obciąża dominująco JEDNĄ rękę, podczas gdy druga asystuje w bardziej wyprostowanej pozycji. Buduje asymetryczną siłę najszerszych grzbietu i bicepsów — kluczowy krok progresji w stronę chin-up'a na jednej ręce. Chwyt obustronny, obciążenie naprzemienne — każde powtórzenie zmienia stronę dominującą.",
+
+  "instructions": [
+    "Grip the bar with both hands SUPINATED (palms facing you — chin-up grip), shoulder-width apart.",
+    "Hang at full arm extension. Engage shoulder blades by pulling them DOWN. Brace your core, cross or bend your legs.",
+    "Pull up shifting your body TOWARD ONE HAND (e.g. right) — that arm flexes fully while the OPPOSITE arm stays more extended, almost straight, acting as a guide.",
+    "At the top: chin clears the bar on the loaded (working) side, your nose/shoulder is close to that hand, the other arm is nearly straight reaching across.",
+    "Lower with control back to dead-hang at center.",
+    "Next rep: pull up toward the OPPOSITE hand (left). Alternate every rep.",
+    "Keep core tight throughout — do not let the body twist or swing. The motion is lateral SHIFT, not rotation.",
+    "Count one rep per side, or count total reps (each side every other rep)."
+  ],
+  "instructionsPl": [
+    "Złap drążek obiema rękami SUPINOWANYMI (dłonie do siebie — chwyt chin-up), na szerokość barków.",
+    "Zwiśnij w pełnym wyproście. Aktywuj łopatki ściągając je W DÓŁ. Napnij brzuch, skrzyżuj lub zegnij nogi.",
+    "Podciągnij się przesuwając ciało W KIERUNKU JEDNEJ RĘKI (np. prawej) — to ramię zgina się w pełni, podczas gdy DRUGIE pozostaje bardziej wyprostowane, niemal proste, pełniąc rolę prowadnicy.",
+    "Na górze: broda nad drążkiem po stronie pracującej, nos/bark blisko tej dłoni, drugie ramię niemal proste przechodzi w poprzek.",
+    "Opuść kontrolowanie z powrotem do dead-hang na środku.",
+    "Następne powtórzenie: podciągnij się w stronę PRZECIWNEJ dłoni (lewej). Naprzemiennie co powtórzenie.",
+    "Trzymaj brzuch napięty cały czas — nie pozwól ciału się skręcać ani bujać. To ruch BOCZNY (shift), nie rotacja.",
+    "Licz jedno powtórzenie na stronę, albo licz łącznie (każda strona co drugie powtórzenie)."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["obliques", "rhomboids", "trapezius_middle_lower", "teres_major", "brachialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P8",
+    "obliques": "S7",
+    "rhomboids": "S6",
+    "trapezius_middle_lower": "S6",
+    "teres_major": "S7",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["chin-up", "pull-up", "weighted-pull-up", "archer-pull-up"],
+    "progression_to": ["one-arm-chin-up", "weighted-archer-chin-up", "typewriter-pull-up"],
+    "alternatives": ["archer-pull-up", "chin-up", "uneven-pull-up", "commando-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Supinated grip — palms facing YOU",
+      "Hands shoulder-width (not wide)",
+      "Full hang, shoulder blades DOWN",
+      "Core braced, legs together or crossed",
+      "Decide which side you'll start — commit"
+    ],
+    "setup_cues_pl": [
+      "Chwyt podchwytem — dłonie DO SIEBIE",
+      "Ręce na szerokość barków (nie szeroko)",
+      "Pełny zwis, łopatki W DÓŁ",
+      "Brzuch napięty, nogi razem lub skrzyżowane",
+      "Zdecyduj od której strony zaczynasz — trzymaj plan"
+    ],
+    "execution_cues": [
+      "SHIFT toward one hand, don't rotate",
+      "Loaded arm fully flexed at top — assist arm extended",
+      "Chin clears bar on the WORKING side",
+      "Return to center hang before switching",
+      "Strict tempo — no kipping, no swinging"
+    ],
+    "execution_cues_pl": [
+      "PRZESUŃ ciało w stronę jednej dłoni, NIE skręcaj",
+      "Pracujące ramię w pełni zgięte na górze — drugie wyprostowane",
+      "Broda nad drążkiem po stronie PRACUJĄCEJ",
+      "Wróć do centralnego zwisu przed zmianą strony",
+      "Strict tempo — bez kippingu i bujania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Body twisting instead of laterally shifting",
+        "faultPl": "Skręcanie ciała zamiast przesunięcia bocznego",
+        "cause": "Weak core control, treating the move as a rotation",
+        "causePl": "Słaba kontrola brzucha, traktowanie ruchu jako rotacji",
+        "cue": "Keep hips and shoulders facing forward. Shift LATERALLY — like sliding side-to-side, not turning.",
+        "cuePl": "Trzymaj biodra i barki frontem do przodu. Przesuwaj się BOCZNIE — jak ślizg na boki, nie obrót."
+      },
+      {
+        "fault": "Not enough lean to the side — looks like a normal chin-up",
+        "faultPl": "Za małe przesunięcie w bok — wygląda jak zwykły chin-up",
+        "cause": "Lack of strength on one arm, fear of falling off-balance",
+        "causePl": "Brak siły na jedną rękę, strach przed utratą balansu",
+        "cue": "Chin should be NEXT TO the working hand at top, not centered. Assist arm should nearly straighten.",
+        "cuePl": "Broda powinna być OBOK pracującej dłoni na górze, nie po środku. Drugie ramię niemal się prostuje."
+      },
+      {
+        "fault": "Kipping or using legs to swing",
+        "faultPl": "Kipping lub bujanie nogami",
+        "cause": "Trying to compensate for insufficient unilateral strength",
+        "causePl": "Próba kompensacji braku siły unilateralnej",
+        "cue": "Cross feet, brace core hard. If you can't do strict — regress to archer pull-up or band-assisted.",
+        "cuePl": "Skrzyżuj stopy, mocno napnij brzuch. Jeśli nie strict — wróć do archer pull-up lub asysty z gumą."
+      },
+      {
+        "fault": "Loaded elbow flaring out instead of staying close to torso",
+        "faultPl": "Pracujący łokieć rozkłada się na bok zamiast iść blisko tułowia",
+        "cause": "Trying to use shoulder more than lat/bicep",
+        "causePl": "Próba użycia barku zamiast najszerszych/bicepsa",
+        "cue": "Drive working elbow DOWN to your hip on that side — close to body.",
+        "cuePl": "Napieraj pracującym łokciem W DÓŁ do biodra po tej stronie — blisko ciała."
+      },
+      {
+        "fault": "Skipping side or unequal reps left/right",
+        "faultPl": "Pomijanie strony lub nierówna liczba powtórzeń L/P",
+        "cause": "Stronger side dominates the set, weaker side fails first",
+        "causePl": "Mocniejsza strona dominuje serię, słabsza odpada pierwsza",
+        "cue": "Always start the set with your WEAKER side. End the set when the weaker side fails.",
+        "cuePl": "Zawsze zaczynaj serię od SŁABSZEJ strony. Kończ serię gdy słabsza strona odpadnie."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Exhale on the pull to one side. Inhale on the way down. Stay rhythmic — alternating loads require steady breathing.",
+    "breathingPl": "Wdech na dole (zwis). Wydech podczas ciągu w bok. Wdech podczas schodzenia. Trzymaj rytm — naprzemienne obciążenie wymaga równego oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "The assist arm goes into deep extension — irritating for impingement. Switch to neutral-grip archer or regress to standard chin-up.",
+      "modificationPl": "Asystujące ramię wchodzi w głęboki wyprost — drażniące przy impingement. Przejdź na archer z chwytem neutralnym lub wróć do zwykłego chin-up.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Asymmetric load on extended arm is very stressful for elbow tendons. Stop until full recovery.",
+      "modificationPl": "Asymetryczne obciążenie na wyprostowanym ramieniu silnie obciąża ścięgna łokcia. Wstrzymaj do pełnego wyzdrowienia.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "lat_strain",
+      "severity": "avoid",
+      "modification": "Unilateral loading concentrates stress on one lat — high re-injury risk. Wait for full recovery.",
+      "modificationPl": "Obciążenie unilateralne koncentruje stres na jednym mięśniu najszerszym — wysokie ryzyko nawrotu. Czekaj na pełne wyzdrowienie.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Supinated grip + asymmetric load stresses wrists. Use wrist wraps or switch to neutral grip variation.",
+      "modificationPl": "Chwyt podchwytem + asymetryczne obciążenie obciąża nadgarstki. Użyj wraps lub przejdź na wariant z chwytem neutralnym.",
+      "alternative": "neutral-grip-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x4-8 per side (strict) | 4x6 alternating | EMOM 1 per side",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "side-to-side-chin.gif",
+    "frames_extracted": [
+      "frames/side-to-side-chin/frame_0_start.png",
+      "frames/side-to-side-chin/frame_1_early.png",
+      "frames/side-to-side-chin/frame_2_mid.png",
+      "frames/side-to-side-chin/frame_3_late.png",
+      "frames/side-to-side-chin/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/side-to-side-chin"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start, oba ramiona wyprostowane, chwyt podchwytem (supinated/chin-up grip). Frame 2: top position z ciałem przesuniętym W BOK w stronę jednej dłoni — wyraźny side-load, jedno ramię w pełni zgięte, drugie bardziej wyprostowane. Frame 4: powrót z ghost-overlay pokazującym naprzemienność ruchu (poprzednie powtórzenie po drugiej stronie). Podświetlone: najszersze grzbietu (intensywnie), środkowy/dolny trapez, rhomboids, bicepsy, przedramiona. Klasyfikacja: bilateral_alternating (obie ręce trzymają drążek, ale obciążenie alternuje na każde powtórzenie). Plane=sagittal z lekkim frontal shift. Mechanic=compound. Force=pull. Bodyweight, advanced (krok przed one-arm chin-up).",
+
+  "tags": ["calisthenics", "bodyweight", "advanced", "unilateral", "alternating", "vertical_pull", "back", "biceps", "lat_width", "one_arm_progression", "asymmetric_loading"]
+}

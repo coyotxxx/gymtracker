@@ -1,0 +1,205 @@
+{
+  "id": "barbell-stiff-leg-good-morning",
+  "name": "Barbell Stiff-Leg Good Morning",
+  "namePl": "Dzień dobry ze sztangą na prostych nogach",
+  "aliases": ["stiff-leg good morning", "straight-leg good morning", "SLGM", "barbell SLGM"],
+  "aliasesPl": ["good morning na prostych nogach", "dzień dobry na sztywnych nogach", "SLGM", "GM na prostych"],
+
+  "description": "Advanced hip-hinge variation of the classic good morning, performed with knees kept nearly straight throughout the entire movement (only minimal soft bend, ~5-10°). The bar sits on the upper back (high-bar position, like a back squat) and the lifter hinges forward at the hips, lowering the torso toward parallel with the floor. Because the knees do not bend, the hamstrings are maximally stretched and bear the bulk of the load — this is one of the most aggressive hamstring stretching exercises with a barbell. The erector spinae work isometrically against a long lever arm, making it extremely demanding for the lower back. Considered an advanced posterior chain assistance lift used primarily by powerlifters, strongmen, and advanced bodybuilders for hamstring hypertrophy and back strength.",
+  "descriptionPl": "Zaawansowany wariant klasycznego good morninga, wykonywany z kolanami trzymanymi niemal w pełnym wyproście przez cały ruch (tylko minimalne miękkie ugięcie, ~5-10°). Sztanga leży na górnej części pleców (pozycja high-bar, jak w przysiadzie tyłowym), a ćwiczący schyla się w biodrach do przodu, opuszczając tułów do pozycji równoległej z podłogą. Ponieważ kolana się nie zginają, dwugłowe ud są maksymalnie rozciągnięte i przejmują główne obciążenie — to jedno z najmocniej rozciągających dwugłowe ud ćwiczeń ze sztangą. Prostowniki grzbietu pracują izometrycznie na długiej dźwigni, co czyni je ekstremalnie wymagającym dla dolnego odcinka pleców. Uznawany za zaawansowane ćwiczenie pomocnicze na tylny łańcuch, używane głównie przez powerlifterów, strongmanów i zaawansowanych kulturystów do hipertrofii dwugłowych ud i wzmocnienia pleców.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Approach the bar, place it on your upper traps (high-bar position), grip slightly wider than shoulders.",
+    "Unrack the bar, take 2-3 steps back, set your feet hip-width apart (slightly narrower than squat stance). Toes pointing straight forward.",
+    "Lock the knees to nearly full extension — only a tiny soft unlock (~5-10°), NOT bent like in a normal good morning. Knees stay frozen in this position the entire set.",
+    "Big breath in, brace your core hard (Valsalva). Set your back: chest up, lats engaged, neutral spine, eyes forward or slightly down.",
+    "Begin the descent by pushing your hips BACKWARD and hinging at the hips ONLY — do not bend the knees further, do not round the back.",
+    "Lower the torso slowly under control. The bar moves down because your torso tips forward, not because anything bends in the lower body besides the hips.",
+    "Continue until torso reaches approximately parallel to the floor — or stop earlier where you feel a deep, controlled hamstring stretch without losing neutral spine.",
+    "Reverse: drive the hips forward, contract the hamstrings and glutes to bring the torso back upright. Squeeze glutes at the top — do not hyperextend backward.",
+    "Use significantly lighter loads than for regular good mornings — typically 30-50% of regular GM weight, never ego-loaded."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej części klatki. Podejdź pod gryf, połóż go na górnym czworobocznym (pozycja high-bar), chwyt nieco szerszy niż barki.",
+    "Wyjmij sztangę, zrób 2-3 kroki w tył, ustaw stopy na szerokość bioder (nieco węziej niż w przysiadzie). Palce skierowane prosto przed siebie.",
+    "Wyprostuj kolana niemal całkowicie — tylko minimalne miękkie odblokowanie (~5-10°), NIE ugięte jak w zwykłym good morningu. Kolana pozostają zamrożone w tej pozycji przez całą serię.",
+    "Głęboki wdech, mocno napnij brzuch (Valsalva). Ustaw plecy: klatka w górze, najszersze napięte, neutralny kręgosłup, wzrok prosto lub lekko w dół.",
+    "Zacznij schodzenie wypychając biodra DO TYŁU i hingując WYŁĄCZNIE w biodrach — nie zginaj kolan bardziej, nie zaokrąglaj pleców.",
+    "Opuszczaj tułów powoli, pod kontrolą. Sztanga schodzi w dół ponieważ tułów się pochyla, nie dlatego że coś się zgina w dolnej części ciała poza biodrami.",
+    "Kontynuuj aż tułów osiągnie pozycję mniej więcej równoległą do podłogi — lub zatrzymaj się wcześniej gdy poczujesz głęboki, kontrolowany rozciąg dwugłowych ud bez utraty neutralnego kręgosłupa.",
+    "Wróć ruchem: wepchnij biodra do przodu, napnij dwugłowe ud i pośladki by podnieść tułów z powrotem do pionu. Ściśnij pośladki na górze — nie odchylaj się do tyłu w hipreekstensji.",
+    "Używaj wyraźnie lżejszych ciężarów niż w zwykłym good morningu — typowo 30-50% ciężaru regularnego GM, nigdy ciężary z ego."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "erector_spinae", "glutes"],
+    "secondary": ["trapezius", "rhomboids"],
+    "stabilizers": ["core", "latissimus_dorsi", "rectus_abdominis", "obliques", "adductors", "calves"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "erector_spinae": "P9",
+    "glutes": "P7",
+    "trapezius": "S5",
+    "rhomboids": "S5",
+    "core": "S8",
+    "latissimus_dorsi": "S5",
+    "adductors": "S4",
+    "calves": "S3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "barbell_pad", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-good-morning", "barbell-romanian-deadlift", "hip-hinge-dowel-drill", "back-extension"],
+    "progression_to": ["seated-good-morning", "zercher-good-morning", "deficit-stiff-leg-good-morning", "tempo-stiff-leg-good-morning"],
+    "alternatives": ["barbell-good-morning", "barbell-romanian-deadlift", "stiff-leg-deadlift", "cable-pull-through", "nordic-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps (high-bar position) — NOT on the neck, NOT on rear delts",
+      "Feet hip-width apart, toes straight forward",
+      "Knees nearly LOCKED — only a hair of soft bend (~5-10°), nothing more",
+      "Brace HARD — this is a heavy spinal load on a long lever",
+      "Use 30-50% of your regular good morning weight — this is brutal"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na górnym czworobocznym (high-bar) — NIE na karku, NIE na tylnych aktonach",
+      "Stopy na szerokość bioder, palce prosto przed siebie",
+      "Kolana niemal ZABLOKOWANE — tylko minimalna miękkość (~5-10°), nic więcej",
+      "Napięcie MOCNE — to ciężkie obciążenie kręgosłupa na długiej dźwigni",
+      "Używaj 30-50% ciężaru ze zwykłego good morninga — to brutalne ćwiczenie"
+    ],
+    "execution_cues": [
+      "Hips BACK — push your butt to the wall behind you, do not bend knees",
+      "Knees FROZEN — they do not move from the starting position the entire rep",
+      "Hinge SLOWLY — control the eccentric, do not free-fall onto the spine",
+      "Stop when you feel hamstring stretch maxed out — do not round the back to go lower",
+      "Drive hips THROUGH on the way up — hamstrings and glutes do the work, not the lower back"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU — wypchnij pośladki do ściany za tobą, nie zginaj kolan",
+      "Kolana ZAMROŻONE — nie ruszają się z pozycji startowej przez całe powtórzenie",
+      "Hinguj POWOLI — kontroluj ekscentryk, nie spadaj swobodnie na kręgosłup",
+      "Zatrzymaj się gdy rozciąg dwugłowych ud osiągnie maksimum — nie zaokrąglaj pleców by zejść niżej",
+      "Wepchnij biodra DO PRZODU w drodze do góry — dwugłowe ud i pośladki wykonują pracę, nie dolny odcinek pleców"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back at bottom (lumbar flexion under load)",
+        "faultPl": "Zaokrąglone lędźwie na dole (flexja lędźwiowa pod obciążeniem)",
+        "cause": "Going too low for current hamstring flexibility, insufficient bracing, weight too heavy, poor hip mobility",
+        "causePl": "Schodzenie za nisko jak na obecną mobilność hamstringów, słabe napięcie brzucha, za ciężki ciężar, słaba mobilność bioder",
+        "cue": "Stop at the maximum DEPTH where back stays neutral — that may be 30°, 45°, or 60° from vertical. NEVER round to get more depth.",
+        "cuePl": "Zatrzymaj się w maksymalnej GŁĘBOKOŚCI gdzie plecy pozostają neutralne — to może być 30°, 45° lub 60° od pionu. NIGDY nie zaokrąglaj by zejść głębiej."
+      },
+      {
+        "fault": "Bending the knees during descent — turns SLGM into regular good morning or RDL",
+        "faultPl": "Zginanie kolan podczas schodzenia — zamienia SLGM w zwykły good morning lub RDL",
+        "cause": "Hamstrings reach end-range and lifter unconsciously bends knees to escape the stretch; weight too heavy",
+        "causePl": "Dwugłowe ud osiągają koniec zakresu i ćwiczący nieświadomie zgina kolana by uciec od rozciągu; za ciężki ciężar",
+        "cue": "Knees LOCK and stay locked. If you cannot maintain straight knees, reduce ROM or weight. Film yourself from the side.",
+        "cuePl": "Kolana ZABLOKOWANE i pozostają zablokowane. Jeśli nie utrzymujesz prostych kolan, zmniejsz zakres lub ciężar. Nagraj się z boku."
+      },
+      {
+        "fault": "Using too much weight — ego loading",
+        "faultPl": "Za duży ciężar — ego loading",
+        "cause": "Comparing to regular good morning or back squat numbers; underestimating leverage disadvantage",
+        "causePl": "Porównywanie do ciężarów ze zwykłego good morninga lub przysiadu; niedoceniane niekorzyści dźwigni",
+        "cue": "SLGM is brutally hard on the lower back. Start at 30% of your good morning. This is an assistance lift, not a max-effort lift.",
+        "cuePl": "SLGM jest brutalnie ciężkie dla dolnego odcinka pleców. Zacznij od 30% ciężaru ze zwykłego good morninga. To ćwiczenie pomocnicze, nie maksymalne."
+      },
+      {
+        "fault": "Bar slipping forward off the upper traps",
+        "faultPl": "Sztanga ześlizgująca się do przodu z górnego czworobocznego",
+        "cause": "Bar placed too high on neck, weak upper back, not enough lat tension, head pulled down too far",
+        "causePl": "Sztanga położona za wysoko na karku, słabe górne plecy, niewystarczające napięcie najszerszych, głowa pociągnięta za nisko",
+        "cue": "Bar on upper TRAPS, not neck. Keep upper back tight, head neutral. Pull elbows DOWN to glue the bar in place.",
+        "cuePl": "Sztanga na górnym CZWOROBOCZNYM, nie na karku. Trzymaj górne plecy napięte, głowa neutralna. Pociągnij łokcie W DÓŁ by przykleić sztangę."
+      },
+      {
+        "fault": "Hyperextension at the top (leaning back to lock out)",
+        "faultPl": "Hipreekstensja na górze (odchylanie do tyłu na lock-out)",
+        "cause": "Confusing 'standing tall' with 'leaning back'; trying to feel a contraction by overextending",
+        "causePl": "Mylenie 'stania prosto' z 'odchylaniem do tyłu'; próba poczucia napięcia przez nadmierne wyprostowanie",
+        "cue": "Lock-out is STANDING TALL with glutes squeezed — ribs DOWN, not flared. No leaning back behind vertical.",
+        "cuePl": "Lock-out to STANIE PROSTO ze ściśniętymi pośladkami — żebra W DÓŁ, nie wystawione. Bez odchylania się za pion."
+      }
+    ],
+    "breathing": "Big breath at the top, brace hard (Valsalva), hold through the descent and ascent. Exhale at the top after the rep. NEVER exhale during the lift — the spine is under heavy load on a long lever and needs maximum bracing.",
+    "breathingPl": "Głęboki wdech na górze, mocno napnij brzuch (Valsalva), trzymaj podczas schodzenia i wstawania. Wydech na górze po powtórzeniu. NIGDY wydech podczas ruchu — kręgosłup jest pod ciężkim obciążeniem na długiej dźwigni i potrzebuje maksymalnego napięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete avoidance. SLGM places massive shear and compression on the lumbar spine on a long lever — one of the worst exercises for an injured back. Consult a physiotherapist.",
+      "modificationPl": "Całkowite unikanie. SLGM nakłada ogromne siły ścinające i kompresyjne na kręgosłup lędźwiowy na długiej dźwigni — jedno z najgorszych ćwiczeń dla kontuzjowanego kręgosłupa. Konsultacja z fizjoterapeutą.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Absolute contraindication. Loaded spinal flexion on a long lever risks disc compression/extrusion. Switch to seated leg curl or supine hamstring isolation.",
+      "modificationPl": "Bezwzględne przeciwwskazanie. Obciążona flexja kręgosłupa na długiej dźwigni ryzykuje kompresję/ekstruzję dysku. Przejdź na uginanie nóg siedząc lub izolację dwugłowych ud w leżeniu.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Severely limit ROM — torso may only tilt 30-45° from vertical before back rounds. Work hamstring mobility separately. Start with bodyweight or empty bar variations of regular good morning first.",
+      "modificationPl": "Mocno ogranicz zakres ruchu — tułów może pochylać się tylko 30-45° od pionu zanim plecy się zaokrąglą. Pracuj nad mobilnością dwugłowych ud osobno. Zacznij od zwykłego good morninga z masą ciała lub pustym gryfem.",
+      "alternative": "barbell-good-morning"
+    },
+    {
+      "condition": "weak_core_or_erector_stability",
+      "severity": "caution",
+      "modification": "Build base strength first with back extensions, RDLs, regular good mornings. SLGM is for advanced trainees with proven hinge mechanics and ability to brace under heavy load.",
+      "modificationPl": "Najpierw buduj bazową siłę z hiperextensjami, RDL, zwykłymi good morningami. SLGM jest dla zaawansowanych z udowodnioną techniką hingowania i umiejętnością napięcia pod dużym obciążeniem.",
+      "alternative": "barbell-good-morning"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy/assistance — main use case) | 3x4-6 (strength assistance, light loads) | 2-3x12-15 (hamstring stretch focus, very light)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-stiff-leg-good-morning.gif",
+    "frames_extracted": [
+      "frames/barbell-stiff-leg-good-morning/frame_0_start.png",
+      "frames/barbell-stiff-leg-good-morning/frame_1_early.png",
+      "frames/barbell-stiff-leg-good-morning/frame_2_mid.png",
+      "frames/barbell-stiff-leg-good-morning/frame_3_late.png",
+      "frames/barbell-stiff-leg-good-morning/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-stiff-leg-good-morning"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (12 oryginalnych klatek). Frame 0: dolna pozycja — tułów pochylony do mniej więcej równolegle z podłogą, sztanga na górnym czworobocznym (high-bar), kolana niemal w pełnym wyproście (~5-10° miękkiego ugięcia, wyraźnie prostsze niż w klasycznym good morningu), mocno podświetlone: dwugłowe ud (cały tył uda od pośladków do kolan w intensywnym kolorze), pośladki, prostowniki grzbietu. Frame 2: pozycja stojąca — pełen wyprost bioder, sztanga na górze. Frame 4: ponowne schodzenie w dół. Kluczowa różnica vs barbell-good-morning: kolana niemal proste przez cały ruch (vs ~20-30° ugięcia w klasycznym GM), co znacząco zwiększa rozciąg dwugłowych ud i obciążenie na długiej dźwigni. Klasyfikacja jako 'hinge' (czysty hip hinge, kolana zablokowane). Equipment: barbell + squat_rack. Trudność 8 (advanced) — wymaga opanowanego hingowania, mocnych prostowników, mobilności hamstringów i umiejętności bracingu na długiej dźwigni. Główne mięśnie: hamstrings P10 (maksymalny rozciąg), erector_spinae P9 (ekstremalna izometryczna praca na długiej dźwigni), glutes P7. Core S8 (bardzo wysokie napięcie izometryczne). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polska terminologia fitness (hip hinge, high-bar, lock-out, dwugłowe ud, prostowniki grzbietu, Valsalva, ego loading).",
+
+  "tags": ["powerlifting", "strongman", "advanced", "posterior_chain", "hamstring_hypertrophy", "hamstring_stretch", "hip_hinge", "barbell", "compound", "assistance_lift", "spinal_loading", "back_strength"]
+}

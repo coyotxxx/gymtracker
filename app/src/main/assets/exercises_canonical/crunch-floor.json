@@ -1,0 +1,195 @@
+{
+  "id": "crunch-floor",
+  "name": "Crunch (Floor)",
+  "namePl": "Brzuszki na podłodze",
+  "aliases": ["floor crunch", "basic crunch", "abdominal crunch", "classic crunch"],
+  "aliasesPl": ["brzuszki", "brzuszki klasyczne", "crunch", "spinanie brzucha", "zwijanie tułowia na podłodze"],
+
+  "description": "The foundational abdominal isolation exercise. Lying supine with knees bent and feet on the floor, the lifter contracts the rectus abdominis to peel only the shoulder blades off the mat through a short range of motion (approximately 30 degrees of spinal flexion). Unlike a full sit-up, the lower back stays in contact with the floor and the hips do not flex — isolating the upper portion of the rectus abdominis. The hands can rest behind the head (light fingertip support) or crossed on the chest.",
+  "descriptionPl": "Fundamentalne ćwiczenie izolowane na brzuch. Leżąc na plecach z kolanami zgiętymi i stopami płasko na podłodze, ćwiczący napina mięsień prosty brzucha, by oderwać od maty wyłącznie łopatki w krótkim zakresie ruchu (około 30 stopni zgięcia kręgosłupa). W przeciwieństwie do pełnego sit-upa, dolny odcinek pleców pozostaje w kontakcie z podłogą, a biodra się nie zginają — izoluje to górną część mięśnia prostego brzucha. Dłonie mogą lekko podtrzymywać głowę (palce za głową) lub być skrzyżowane na klatce piersiowej.",
+
+  "instructions": [
+    "Lie on your back on a mat. Bend the knees to approximately 90 degrees and place the feet flat on the floor, hip-width apart.",
+    "Place the hands lightly behind the head (fingertips only, do not interlock) or cross them on the chest. Elbows wide, not pinned forward.",
+    "Inhale and press the lower back gently into the mat to remove any lumbar arch. Set the chin off the chest by about a fist's width.",
+    "Exhale and curl the shoulder blades off the floor by contracting the rectus abdominis. The movement is short — only the upper back lifts, the lower back stays planted.",
+    "Pause for one second at the top, squeezing the abs hard. Do not lift the hips or curl into a full sit-up.",
+    "Inhale and lower the shoulder blades back to the mat under control over two seconds. Lightly touch and immediately begin the next rep without losing tension."
+  ],
+  "instructionsPl": [
+    "Połóż się na plecach na macie. Zegnij kolana do około 90 stopni i postaw stopy płasko na podłodze, na szerokość bioder.",
+    "Ułóż dłonie luźno za głową (tylko opuszki palców, nie splataj rąk) lub skrzyżuj je na klatce piersiowej. Łokcie szeroko, nie ściągaj ich do przodu.",
+    "Wdech — delikatnie dociśnij dolne plecy do maty, likwidując łuk lędźwiowy. Ustaw brodę w pozycji oddalonej od klatki o około szerokość pięści.",
+    "Wydech — oderwij łopatki od podłogi przez skurcz mięśnia prostego brzucha. Ruch jest krótki — unosi się tylko górny odcinek pleców, dolny pozostaje na macie.",
+    "Zatrzymaj się na sekundę w szczycie, mocno ściskając brzuch. Nie unoś bioder ani nie przechodź w pełny sit-up.",
+    "Wdech — opuść kontrolowanie łopatki na matę w ciągu dwóch sekund. Lekko dotknij maty i natychmiast zacznij kolejne powtórzenie, nie tracąc napięcia."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques"],
+    "stabilizers": ["transverse_abdominis", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "obliques": "S6",
+    "transverse_abdominis": "T4",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["weighted-crunch", "decline-crunch", "cable-crunch", "dragon-flag"],
+    "alternatives": ["dead-bug", "plank", "hollow-hold", "reverse-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat — knees bent 90 degrees, feet hip-width on the floor",
+      "Lower back pressed gently into the mat — no lumbar gap",
+      "Fingertips behind the ears, elbows wide (or arms crossed on chest)",
+      "Chin off the chest — fist-width space under the jaw",
+      "Inhale through the nose, brace the core lightly"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko — kolana zgięte 90 stopni, stopy na szerokość bioder na podłodze",
+      "Dolne plecy delikatnie dociśnięte do maty — bez prześwitu w odcinku lędźwiowym",
+      "Opuszki palców za uszami, łokcie szeroko (lub ręce skrzyżowane na klatce)",
+      "Broda odsunięta od klatki — przestrzeń wielkości pięści pod żuchwą",
+      "Wdech nosem, lekko napnij brzuch"
+    ],
+    "execution_cues": [
+      "Exhale and crunch — drive ribs toward hips, not chin toward chest",
+      "Lift only the shoulder blades — lower back stays glued to the floor",
+      "Short ROM — about 30 degrees of spinal flexion, no more",
+      "Squeeze the abs for one second at the top — feel the contraction",
+      "Lower with control — 2 seconds eccentric, no flopping down"
+    ],
+    "execution_cues_pl": [
+      "Wydech i zwijanie — pchaj żebra w kierunku bioder, nie brodę do klatki",
+      "Unoś tylko łopatki — dolne plecy przyklejone do podłogi",
+      "Krótki zakres — około 30 stopni zgięcia kręgosłupa, nie więcej",
+      "Ściśnij brzuch przez sekundę w szczycie — poczuj skurcz",
+      "Opuszczaj kontrolowanie — 2 sekundy fazy ekscentrycznej, bez opadania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the head with the hands / neck strain",
+        "faultPl": "Pociąganie głowy rękami / napinanie szyi",
+        "cause": "Weak rectus abdominis recruits neck flexors as a substitute; hands grip the back of the head",
+        "causePl": "Słaby mięsień prosty brzucha kompensuje pracą zginaczy szyi; dłonie ściskają tył głowy",
+        "cue": "Only fingertips touch the head — imagine an apple under the chin, keep that distance. Let the abs do the lifting, not the neck.",
+        "cuePl": "Tylko opuszki palców dotykają głowy — wyobraź sobie jabłko pod brodą i utrzymuj tę odległość. Niech pracuje brzuch, nie szyja."
+      },
+      {
+        "fault": "Performing a full sit-up instead of a crunch",
+        "faultPl": "Wykonywanie pełnego sit-upa zamiast brzuszków",
+        "cause": "Lifting the whole back off the floor engages the hip flexors and offloads the rectus abdominis",
+        "causePl": "Unoszenie całych pleców angażuje zginacze stawu biodrowego i zdejmuje pracę z mięśnia prostego brzucha",
+        "cue": "Lift only the shoulder blades — lower back stays on the mat. The top of the rep is when the shoulder blades just clear the floor.",
+        "cuePl": "Unoś tylko łopatki — dolne plecy zostają na macie. Szczyt powtórzenia to moment, gdy łopatki ledwo oderwały się od podłogi."
+      },
+      {
+        "fault": "Using momentum / bouncing off the floor",
+        "faultPl": "Wykorzystywanie rozpędu / odbijanie się od podłogi",
+        "cause": "Going too fast to chase rep counts, dropping down and using elastic recoil for the next rep",
+        "causePl": "Zbyt szybkie tempo w pogoni za liczbą powtórzeń, opadanie i wykorzystywanie sprężystości tkanek do kolejnego powtórzenia",
+        "cue": "2 seconds up, 1 second squeeze, 2 seconds down. If you can't do that for the planned reps — lower the volume.",
+        "cuePl": "2 sekundy w górę, 1 sekunda ściśnięcia, 2 sekundy w dół. Jeśli nie dasz rady wykonać tak zaplanowanych powtórzeń — zmniejsz objętość."
+      },
+      {
+        "fault": "Insufficient range of motion / barely moving",
+        "faultPl": "Niewystarczający zakres ruchu / minimalne unoszenie",
+        "cause": "Fear of neck strain or weak abs leads to micro-reps where shoulder blades don't actually leave the floor",
+        "causePl": "Obawa przed napięciem szyi lub słaby brzuch prowadzą do mikro-powtórzeń, w których łopatki w ogóle nie odrywają się od podłogi",
+        "cue": "Both shoulder blades must clearly clear the mat at the top of each rep — that's the minimum ROM. Then squeeze.",
+        "cuePl": "Obie łopatki muszą wyraźnie oderwać się od maty w szczycie każdego powtórzenia — to minimalny zakres. Potem ściśnij."
+      },
+      {
+        "fault": "No pause at the top — rushing through the contraction",
+        "faultPl": "Brak pauzy w szczycie — przeskakiwanie przez fazę skurczu",
+        "cause": "Treating reps as a counting exercise rather than a contraction exercise; abs are skipped",
+        "causePl": "Traktowanie powtórzeń jako liczenia, a nie jako pracy na skurcz; brzuch jest pomijany",
+        "cue": "At the top, hold for a one-second 'squeeze' — feel the rectus abdominis bunch up. That second is where hypertrophy happens.",
+        "cuePl": "W szczycie zatrzymaj się na sekundę 'ścisnięcia' — poczuj, jak mięsień prosty brzucha się zbiera. Ta sekunda buduje hipertrofię."
+      }
+    ],
+    "breathing": "Inhale through the nose during the descent and at the bottom position. Forceful exhale through the mouth during the crunch as the shoulder blades leave the mat — the rib cage compresses, intensifying the rectus abdominis contraction.",
+    "breathingPl": "Wdech nosem podczas opuszczania i w pozycji dolnej. Mocny wydech ustami podczas zwijania, gdy łopatki odrywają się od maty — klatka piersiowa się ściska, intensyfikując skurcz mięśnia prostego brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Repeated spinal flexion under tension can aggravate acute lumbar pain and disc issues. Switch to anti-extension core work (planks, dead bug) until pain-free for at least two weeks.",
+      "modificationPl": "Powtarzane zginanie kręgosłupa pod napięciem może nasilać ostry ból lędźwi i problemy dyskowe. Przejdź na ćwiczenia anty-ekstensji (deska, dead bug) do czasu ustąpienia bólu na co najmniej dwa tygodnie.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Stuart McGill's research strongly contraindicates repeated spinal flexion in lumbar disc protrusion — each rep adds compressive shear. Use neutral-spine isometric core work.",
+      "modificationPl": "Badania Stuarta McGilla wyraźnie przeciwwskazują powtarzane zginanie kręgosłupa przy przepuklinie krążka lędźwiowego — każde powtórzenie zwiększa siłę ścinającą. Zastosuj izometryczną pracę brzucha w neutralnej pozycji kręgosłupa.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Direct crunching can widen midline separation (typical postpartum or in advanced pregnancy). Heal the linea alba first with transverse-abdominis-focused work before adding rectus loading.",
+      "modificationPl": "Bezpośrednie zwijanie brzucha może poszerzyć rozejście kresy białej (typowe po porodzie lub w zaawansowanej ciąży). Najpierw zregeneruj kresę białą ćwiczeniami na mięsień poprzeczny brzucha, zanim wprowadzisz obciążenie prostego.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "If the neck flares up, switch to chest-crossed arm position and consciously look up at the ceiling rather than toward the knees — this keeps the cervical spine neutral.",
+      "modificationPl": "Jeśli boli kark, przejdź na pozycję rąk skrzyżowanych na klatce i świadomie patrz w sufit, a nie w stronę kolan — utrzyma to odcinek szyjny w neutralnej pozycji.",
+      "alternative": "hollow-hold"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy) | 3x15-25 (endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "crunch-floor.gif",
+    "frames_extracted": [
+      "frames/crunch-floor/frame_0_start.png",
+      "frames/crunch-floor/frame_1_early.png",
+      "frames/crunch-floor/frame_2_mid.png",
+      "frames/crunch-floor/frame_3_late.png",
+      "frames/crunch-floor/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/crunch-floor",
+    "glowupp_id": "crunch_floor"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Klatka 0 (start): leżenie na plecach na podłodze, kolana zgięte ~90 stopni z piętami na ziemi, dłonie luźno za głową, łokcie wskazują na boki — anatomia podświetla mięsień prosty brzucha na pełnej długości jako mięsień docelowy. Klatka 2 (mid): łopatki oderwane od podłogi, tułów zwinięty około 30 stopni, dolne plecy nadal w kontakcie z matą, miednica nieruchoma, biodra nie zgięte — klasyczny crunch, NIE sit-up. Podświetlenie anatomiczne mocniej skupione w górnej części rectus abdominis. Klatka 4 (end): powrót do leżenia, widoczny ślad fazy pośredniej (animacja powrotna). Ruch potwierdzony: spinanie tylko górnego odcinka pleców, krótki ROM, izolacja mięśnia prostego brzucha. Klasyfikacja: core_flexion (zgięcie kręgosłupa w odcinku piersiowym), isolation (1 staw: kręgosłup, biodra zablokowane), bodyweight. Force=pull. Mięsień główny: rectus_abdominis P10 (najwyższa intensywność, klasyczne dedykowane ćwiczenie), obliques S6 (wspierają zgięcie). Difficulty=3 (beginner — łatwy ruch, dostępny od pierwszego treningu, ale wymaga świadomości by nie wpaść w sit-up). Nazwa PL 'Brzuszki na podłodze' — najczęstsza forma polskiego standardu fitness (źródła: Akademie Wychowania Fizycznego, popularne aplikacje fitness). Aliasy obejmują też 'crunch' (angielszczyzna powszechna w polskich siłowniach). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — terminologia trenerska (łopatki, miednica, mięsień prosty brzucha, kresa biała, faza ekscentryczna).",
+
+  "tags": ["bodyweight", "core", "abs", "no_equipment", "home_workout", "beginner_friendly", "isolation", "upper_abs"]
+}

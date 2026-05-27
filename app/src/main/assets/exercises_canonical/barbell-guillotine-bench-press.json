@@ -1,0 +1,204 @@
+{
+  "id": "barbell-guillotine-bench-press",
+  "name": "Barbell Guillotine Bench Press",
+  "namePl": "Wyciskanie sztangi giljotyna",
+  "aliases": ["guillotine press", "Gironda guillotine press", "neck press", "barbell neck press", "wide-grip neck press"],
+  "aliasesPl": ["giljotyna", "wyciskanie do szyi", "wyciskanie Gironda", "wyciskanie sztangi do szyi", "neck press"],
+
+  "description": "Advanced bench press variation popularized by 'Iron Guru' Vince Gironda for upper chest specialization. Performed lying on a flat bench with a very wide grip, lowering the bar to the neck/clavicle area instead of the lower chest. Maximizes stretch and recruitment of the upper pectoral fibers and clavicular head, but places the shoulders in a vulnerable externally rotated, abducted position — making it one of the riskiest free-weight chest exercises. Requires a strong shoulder base, healthy joints, and ideally a spotter or safety pins.",
+  "descriptionPl": "Zaawansowany wariant wyciskania spopularyzowany przez 'Iron Guru' Vince Gironda dla specjalizacji górnej klatki. Wykonywany na poziomej ławce, bardzo szerokim chwytem, z opuszczaniem sztangi do okolicy szyi/obojczyków zamiast do dolnej klatki. Maksymalizuje rozciągnięcie i rekrutację górnych włókien piersiowych i głowy obojczykowej, ale stawia stawy barkowe w wrażliwej pozycji rotacji zewnętrznej i odwiedzenia — przez co należy do najbardziej ryzykownych ćwiczeń klatki z wolnym ciężarem. Wymaga mocnej bazy barków, zdrowych stawów oraz najlepiej asekuracji lub belek bezpieczeństwa.",
+
+  "instructions": [
+    "Set safety pins in the rack just above your neck/throat level — non-negotiable. Use a spotter if possible.",
+    "Lie on a flat bench with eyes under the bar. Plant feet firmly, slight natural arch in the lower back.",
+    "Take a VERY wide grip — wider than standard bench, hands roughly at the smooth rings or 1-2 fingers wider. Forearms should be near-vertical when the bar touches the neck.",
+    "Retract and depress the shoulder blades, then unrack the bar to a starting position directly over the upper chest / clavicle line.",
+    "Inhale, brace the core, and lower the bar slowly and under FULL control toward the neck / collarbones — never to the throat itself.",
+    "Lightly touch the upper chest at the base of the neck (clavicle area). NEVER bounce. Pause briefly to confirm control.",
+    "Press the bar straight up over the upper chest — vertical bar path. Do not press it back toward the face.",
+    "Lock out elbows softly (do not hyperextend). Reset breath between reps. Use lighter weights than standard bench press — this is a hypertrophy/isolation lift, not a strength lift.",
+    "If form breaks down or shoulders feel pinchy, STOP the set. Re-rack carefully."
+  ],
+  "instructionsPl": [
+    "Ustaw belki bezpieczeństwa w klatce tuż NAD wysokością szyi/gardła — to obowiązkowe. Najlepiej asekurant.",
+    "Połóż się na poziomej ławce, oczy pod gryfem. Stopy mocno zaparte, lekki naturalny łuk w dolnych plecach.",
+    "Złap BARDZO szerokim chwytem — szerzej niż standard bench, dłonie mniej więcej na gładkich pierścieniach gryfu lub 1-2 palce szerzej. Przedramiona prawie pionowe gdy gryf dotyka szyi.",
+    "Ściągnij i opuść łopatki, wyciągnij sztangę ze stojaka do pozycji startowej bezpośrednio nad górną klatką / linią obojczyków.",
+    "Wdech, napięcie brzucha, opuszczaj gryf POWOLI i pod PEŁNĄ kontrolą w stronę szyi / obojczyków — nigdy do gardła.",
+    "Lekko dotknij górnej klatki u podstawy szyi (rejon obojczyków). NIGDY nie odbijaj. Krótka pauza dla potwierdzenia kontroli.",
+    "Wyciśnij gryf prosto w górę nad górną klatką — ścieżka pionowa. Nie pchaj go w stronę twarzy.",
+    "Łokcie miękko wyprostuj (bez przeprostu). Reset oddechu między powtórzeniami. Używaj LŻEJSZYCH ciężarów niż w klasycznym wyciskaniu — to ćwiczenie hipertroficzne/izolacyjne, nie siłowe.",
+    "Jeśli technika się załamie lub barki zaczną kłuć — PRZERWIJ serię. Odłóż sztangę ostrożnie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids"],
+    "secondary": ["triceps", "pectoralis_major_sternal"],
+    "stabilizers": ["rotator_cuff", "serratus_anterior", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P10",
+    "anterior_deltoids": "P8",
+    "triceps": "P6",
+    "pectoralis_major_sternal": "S5",
+    "rotator_cuff": "T6",
+    "serratus_anterior": "S4",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench", "power_rack_or_safety_pins"],
+    "optional": ["spotter", "wrist_wraps", "belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-bench-press", "incline-barbell-bench-press", "wide-grip-bench-press"],
+    "progression_to": [],
+    "alternatives": ["incline-barbell-bench-press", "larsen-press", "high-incline-dumbbell-press", "smith-guillotine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Safety pins set just above neck level — every single rep",
+      "Very wide grip (smooth rings or wider)",
+      "Eyes directly under the bar at unrack",
+      "Shoulder blades fully retracted and depressed BEFORE unracking",
+      "Use ~50-60% of your standard bench weight — this is NOT a 1RM lift"
+    ],
+    "setup_cues_pl": [
+      "Belki bezpieczeństwa tuż nad linią szyi — na KAŻDĄ powtórkę",
+      "Bardzo szeroki chwyt (gładkie pierścienie gryfu lub szerzej)",
+      "Oczy bezpośrednio pod gryfem przy zdejmowaniu",
+      "Łopatki pełni ściągnięte i opuszczone PRZED zdjęciem sztangi",
+      "Używaj ~50-60% swojego standardowego ciężaru bench — to NIE jest test 1RM"
+    ],
+    "execution_cues": [
+      "Lower SLOWER than normal bench — 3-4 seconds down",
+      "Touch the clavicle line, NOT the throat — feel the upper chest stretch",
+      "Vertical bar path — straight up, not back over the face",
+      "Stop the set the moment form degrades or shoulders pinch",
+      "Squeeze the upper chest at lockout — mind-muscle connection over weight"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj WOLNIEJ niż w klasycznym bench — 3-4 sekundy w dół",
+      "Dotknij linii obojczyków, NIE gardła — czuj rozciągnięcie górnej klatki",
+      "Pionowa ścieżka gryfu — prosto w górę, nie do tyłu nad twarz",
+      "Przerwij serię w momencie pogorszenia techniki lub kłucia barków",
+      "Spinaj górną klatkę w lock-out — mind-muscle connection ponad ciężar"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pressing without safety pins or spotter",
+        "faultPl": "Wyciskanie bez belek bezpieczeństwa lub asekuranta",
+        "cause": "Underestimating the risk — bar drop onto throat is catastrophic",
+        "causePl": "Lekceważenie ryzyka — upadek sztangi na gardło to katastrofa",
+        "cue": "NEVER perform this lift without pins set just above neck height OR a competent spotter. No exceptions.",
+        "cuePl": "NIGDY nie wykonuj tego ćwiczenia bez belek tuż nad szyją LUB kompetentnego asekuranta. Bez wyjątków."
+      },
+      {
+        "fault": "Insufficient shoulder mobility / external rotation range",
+        "faultPl": "Niewystarczająca mobilność barków / zakres rotacji zewnętrznej",
+        "cause": "Wide-grip flared elbow position demands healthy GH joint and rotator cuff",
+        "causePl": "Szeroki chwyt z rozsuniętymi łokciami wymaga zdrowego stawu barkowego i pierścienia rotatorów",
+        "cue": "Test position empty bar first. If shoulders pinch or arc is limited — skip this exercise entirely. Build mobility with face pulls, band pull-aparts, sleeper stretches.",
+        "cuePl": "Najpierw przetestuj pozycję pustym gryfem. Jeśli barki kłują lub łuk jest ograniczony — całkowicie zrezygnuj z tego ćwiczenia. Buduj mobilność przez face pulls, band pull-aparts, sleeper stretches."
+      },
+      {
+        "fault": "Stopping the bar above the chest (cheating ROM)",
+        "faultPl": "Zatrzymywanie sztangi nad klatką (skracanie zakresu)",
+        "cause": "Fear of touching the neck, or weight too heavy to lower fully",
+        "causePl": "Strach przed dotknięciem szyi lub ciężar zbyt duży by w pełni opuścić",
+        "cue": "If you can't touch the clavicle line lightly, the weight is too heavy. Drop the load — purpose is full stretch of upper chest, not partial pumping.",
+        "cuePl": "Jeśli nie możesz lekko dotknąć linii obojczyków — ciężar jest za duży. Zmniejsz obciążenie — celem jest pełne rozciągnięcie górnej klatki, nie częściowa pompka."
+      },
+      {
+        "fault": "Using too heavy a weight (treating it like flat bench)",
+        "faultPl": "Zbyt duży ciężar (traktowanie jak klasyczny bench)",
+        "cause": "Ego lifting, transferring 1RM mentality to an isolation/hypertrophy lift",
+        "causePl": "Ego lifting, przenoszenie mentalności 1RM na ćwiczenie izolacyjne/hipertroficzne",
+        "cue": "Stay in 8-15 rep range. ~50-60% of standard bench. This is a finisher / specialization exercise — heavy loads ruin the leverage and destroy shoulders.",
+        "cuePl": "Pozostań w zakresie 8-15 powtórzeń. ~50-60% standardowego bench. To ćwiczenie wykończeniowe / specjalizacyjne — duże ciężary niszczą dźwignię i barki."
+      },
+      {
+        "fault": "Bouncing the bar off the chest/neck",
+        "faultPl": "Odbijanie sztangi od klatki/szyi",
+        "cause": "Loss of control under load, momentum dependency",
+        "causePl": "Utrata kontroli pod obciążeniem, zależność od pędu",
+        "cue": "Slow eccentric (3-4s), light touch, brief pause, then press. Bouncing here = trip to ER.",
+        "cuePl": "Powolny eccentric (3-4s), lekki dotyk, krótka pauza, potem wyciskanie. Odbijanie tutaj = wizyta na SOR-ze."
+      }
+    ],
+    "breathing": "Inhale at the top, brace the core, hold during the entire descent, exhale forcefully during the press past the sticking point.",
+    "breathingPl": "Wdech na górze, napięcie brzucha, trzymaj przez cały zjazd, mocny wydech podczas wyciskania za punktem oporu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "This lift maximally stresses an impinged subacromial space. Switch entirely to incline barbell bench or high-incline dumbbell press.",
+      "modificationPl": "To ćwiczenie maksymalnie obciąża zaciśniętą przestrzeń podbarkową. Przejdź całkowicie na incline barbell bench lub high-incline dumbbell press.",
+      "alternative": "incline-barbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Wide-grip flared-elbow pressing is among the worst positions for rotator cuff. Do NOT attempt during recovery — even after recovery, consider permanently skipping.",
+      "modificationPl": "Szeroki chwyt z rozsuniętymi łokciami to jedna z najgorszych pozycji dla pierścienia rotatorów. NIE próbuj podczas rekonwalescencji — nawet po wyzdrowieniu rozważ trwałą rezygnację.",
+      "alternative": "incline-barbell-bench-press"
+    },
+    {
+      "condition": "anterior_shoulder_instability",
+      "severity": "avoid",
+      "modification": "Externally rotated abducted position can dislocate an unstable shoulder. Choose machine or close-grip variants.",
+      "modificationPl": "Pozycja w rotacji zewnętrznej z odwiedzeniem może wybić niestabilny bark. Wybierz warianty maszynowe lub wąskim chwytem.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain_or_tear_history",
+      "severity": "avoid",
+      "modification": "Extreme stretch position at bottom is exactly where pec tears happen. Permanent contraindication after a tear.",
+      "modificationPl": "Pozycja ekstremalnego rozciągnięcia w dolnym punkcie to dokładnie miejsce, gdzie pękają piersiowe. Trwałe przeciwwskazanie po naderwaniu.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (hypertrophy, light-moderate load) | finisher / specialization only",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-guillotine-bench-press.gif",
+    "frames_extracted": [
+      "frames/barbell-guillotine-bench-press/frame_0_start.png",
+      "frames/barbell-guillotine-bench-press/frame_1_early.png",
+      "frames/barbell-guillotine-bench-press/frame_2_mid.png",
+      "frames/barbell-guillotine-bench-press/frame_3_late.png",
+      "frames/barbell-guillotine-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/barbell-guillotine-bench-press",
+    "yuhonas_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Frame 0 + frame 4: sztanga przy szyi / linii obojczyków na poziomej ławce — pozycja dolna giljotyny (NIE dolna klatka jak w klasycznym bench). Frame 2: pełne wyciśnięcie, gryf pionowo nad górną klatką. Bardzo szeroki chwyt widoczny, łokcie wyraźnie rozsunięte (~90°) — typowe dla giljotyny i jednocześnie powód ryzyka dla barków. Obrazek podświetla górną klatkę (pectoralis major clavicular head) + przednie delty + tricepsy — anatomicznie zgodne. Klasyfikacja: push_horizontal compound, advanced (difficulty 8) ze względu na ryzyko kontuzji. Brak progresji 'do góry' — to terminal isolation/specialization move (Vince Gironda). Wszystkie pola PL napisane od zera ze szczególnym naciskiem na ostrzeżenia bezpieczeństwa (belki, asekurant, lżejsze ciężary).",
+
+  "tags": ["upper_chest", "horizontal_push", "barbell", "chest", "advanced", "high_risk", "vince_gironda", "specialization", "hypertrophy", "wide_grip"]
+}

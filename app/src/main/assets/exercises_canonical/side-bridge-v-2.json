@@ -1,0 +1,204 @@
+{
+  "id": "side-bridge-v-2",
+  "name": "Side Bridge (wariant 2)",
+  "namePl": "Side bridge (wariant 2)",
+  "aliases": ["side plank", "side bridge", "side plank hold", "lateral plank", "side forearm plank"],
+  "aliasesPl": ["deska bokiem", "boczny most", "side plank", "boczna deska", "deska boczna na przedramieniu", "izometryczna deska bokiem"],
+
+  "description": "Classic isometric side plank held on the forearm and the outer edge of the bottom foot, with the top arm resting on the top hip. This 'v2' variant of the side bridge differs from the v1 only in the top-arm position (hand on hip rather than extended vertically toward the ceiling) — making it slightly easier and more accessible for beginners or for longer time-under-tension sets. The exercise builds anti-lateral-flexion strength of the entire lateral chain: obliques and quadratus lumborum hold the spine in a neutral line, gluteus medius keeps the top hip from dropping, and the shoulder girdle (serratus anterior, lower trapezius, rotator cuff) stabilises the bottom shoulder against bodyweight. McGill's research identifies side plank as one of the 'Big 3' core exercises with the lowest lumbar compression for the resulting muscle activation — making it a staple of safe core programming.",
+  "descriptionPl": "Klasyczna izometryczna deska bokiem oparta na przedramieniu i zewnętrznej krawędzi dolnej stopy, z górną dłonią ułożoną na górnym biodrze. Ten 'wariant 2' side bridge'a różni się od wariantu 1 jedynie ułożeniem górnej ręki (dłoń na biodrze zamiast wyciągniętej pionowo w górę) — co czyni go nieco łatwiejszym i bardziej dostępnym dla początkujących lub dla dłuższych serii izometrycznych. Ćwiczenie buduje siłę antyzgięcia bocznego całego bocznego łańcucha: skośne brzucha i czworoboczny lędźwi utrzymują kręgosłup w neutralnej linii, mięsień pośladkowy średni zapobiega opadaniu górnego biodra, a obręcz barkowa (zębaty przedni, dolny czworoboczny, stożek rotatorów) stabilizuje dolny bark pod ciężarem ciała. Badania Stuarta McGilla wskazują deskę bokiem jako jeden z 'Wielkiej Trójki' ćwiczeń core'a o najniższej kompresji odcinka lędźwiowego względem osiąganej aktywacji mięśniowej — co czyni ją podstawą bezpiecznego programowania treningu core'a.",
+
+  "instructions": [
+    "Lie on your side on a mat with legs fully extended, top leg stacked directly on the bottom leg.",
+    "Place the bottom forearm flat on the floor — elbow directly under the bottom shoulder, forearm pointing forward perpendicular to the body, palm flat or in a light fist.",
+    "Set the bottom foot on its outer edge; top foot stacked exactly on top of it (or staggered with top foot in front for easier balance).",
+    "Pre-brace: tighten the core, squeeze both glutes, draw the bottom shoulder away from the ear, and align ribs over hips.",
+    "Lift the hips off the floor in one smooth motion until the body forms a perfectly straight diagonal line from the heels through the hips, shoulders and head.",
+    "Rest the top hand gently on the top hip (this is the v2 position — easier than the arm-overhead variant). Keep the gaze forward, neck long.",
+    "Hold the position for the prescribed time (typical: 20-60 seconds per side). Breathe steady shallow breaths through the chest — do NOT hold your breath.",
+    "To finish, lower the hips slowly and under control until the bottom leg touches the floor. Switch sides and repeat with the opposite forearm down."
+  ],
+  "instructionsPl": [
+    "Połóż się bokiem na macie z nogami całkowicie wyprostowanymi, górna noga ułożona dokładnie na dolnej.",
+    "Połóż dolne przedramię płasko na podłodze — łokieć dokładnie pod dolnym barkiem, przedramię skierowane do przodu prostopadle do ciała, dłoń płasko lub w lekkiej pięści.",
+    "Ustaw dolną stopę na zewnętrznej krawędzi; górną stopę dokładnie na dolnej (lub odrobinę przesuniętą do przodu dla łatwiejszej równowagi).",
+    "Wstępne napięcie: napnij brzuch, ściśnij oba pośladki, odciągnij dolny bark od ucha i ułóż żebra nad biodrami.",
+    "Unieś biodra z podłogi jednym płynnym ruchem, aż ciało utworzy idealnie prostą skośną linię od pięt przez biodra, barki i głowę.",
+    "Górną dłoń oprzyj delikatnie na górnym biodrze (to ułożenie wariantu 2 — łatwiejsze niż wersja z ramieniem wyciągniętym w górę). Wzrok kieruj przed siebie, szyja długa.",
+    "Wytrzymaj pozycję przez zaplanowany czas (typowo: 20-60 sekund na stronę). Oddychaj spokojnymi płytkimi oddechami klatką piersiową — NIE wstrzymuj oddechu.",
+    "Aby zakończyć, opuść biodra powoli i pod kontrolą, aż dolna noga dotknie podłogi. Zmień stronę i powtórz z drugim przedramieniem na podłodze."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_rotation",
+    "force": "isometric",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "quadratus_lumborum"],
+    "secondary": ["glutes_medius", "deltoids", "transverse_abdominis"],
+    "stabilizers": ["serratus_anterior", "lower_trapezius", "rotator_cuff", "adductors", "glutes_maximus", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "quadratus_lumborum": "P9",
+    "glutes_medius": "S7",
+    "deltoids": "S5",
+    "transverse_abdominis": "S6",
+    "serratus_anterior": "T4",
+    "lower_trapezius": "T3",
+    "rotator_cuff": "T4",
+    "adductors": "T3",
+    "glutes_maximus": "T3"
+  },
+
+  "equipment": {
+    "required": [],
+    "optional": ["yoga_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["plank", "side-plank-from-knees", "dead-bug"],
+    "progression_to": ["side-plank-with-leg-raise", "star-side-plank", "copenhagen-plank", "side-plank-with-hip-dip"],
+    "alternatives": ["side-plank-from-knees", "bodyweight-incline-side-plank", "pallof-press", "suitcase-carry"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Mat under the bottom forearm and hip — skin-on-floor pressure points need padding",
+      "Bottom elbow DIRECTLY under the bottom shoulder — not in front, not behind",
+      "Forearm perpendicular to the body, fingers spread or light fist — don't clench",
+      "Feet stacked (harder) or top foot in front of bottom (easier balance)",
+      "Pre-brace BEFORE lifting hips: core tight, both glutes squeezed, ribs over hips"
+    ],
+    "setup_cues_pl": [
+      "Mata pod dolnym przedramieniem i biodrem — punkty nacisku skóry o podłogę wymagają miękkiego podłoża",
+      "Dolny łokieć DOKŁADNIE pod dolnym barkiem — nie z przodu, nie z tyłu",
+      "Przedramię prostopadle do ciała, palce rozłożone lub lekka pięść — nie zaciskaj",
+      "Stopy jedna na drugiej (trudniej) lub górna z przodu (łatwiejsza równowaga)",
+      "Wstępne napięcie PRZED uniesieniem bioder: brzuch napięty, oba pośladki ściśnięte, żebra nad biodrami"
+    ],
+    "execution_cues": [
+      "One long line: heel - hip - shoulder - ear all aligned in the same diagonal",
+      "Push the bottom forearm DOWN into the floor — this packs the shoulder and lifts the ribcage off the bottom",
+      "Drive the top hip toward the ceiling — never let it sag below the line",
+      "Squeeze the glute of the bottom leg — it stabilises the entire side chain",
+      "Long neck — top of the head reaches away from the heels, eyes forward not down"
+    ],
+    "execution_cues_pl": [
+      "Jedna długa linia: pięta - biodro - bark - ucho — wszystko ustawione w tej samej skośnej",
+      "Wciskaj dolne przedramię W DÓŁ w podłogę — pakuje to bark i unosi klatkę piersiową znad podłoża",
+      "Wypychaj górne biodro w stronę sufitu — nigdy nie pozwól mu opaść poniżej linii",
+      "Ściśnij pośladek dolnej nogi — stabilizuje cały boczny łańcuch",
+      "Długa szyja — czubek głowy oddala się od pięt, oczy w przód a nie w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging toward the floor",
+        "faultPl": "Biodra opadają w stronę podłogi",
+        "cause": "Weak obliques and quadratus lumborum, accumulated fatigue, or no core pre-brace",
+        "causePl": "Słabe skośne brzucha i czworoboczny lędźwi, narastające zmęczenie, lub brak napięcia brzucha przed uniesieniem",
+        "cue": "Drive the top hip toward the ceiling. If hips drop mid-hold — stop the set. Quality beats duration.",
+        "cuePl": "Wypchnij górne biodro w stronę sufitu. Jeśli biodra opadają w trakcie — przerwij serię. Jakość przed czasem."
+      },
+      {
+        "fault": "Bottom shoulder shrugged up to the ear",
+        "faultPl": "Dolny bark podciągnięty do ucha",
+        "cause": "Passive collapse onto the shoulder joint instead of active scapular support; weak serratus and lower trap",
+        "causePl": "Bierne opadanie na staw barkowy zamiast aktywnego podparcia łopatki; słaby zębaty przedni i dolny czworoboczny",
+        "cue": "Press forearm DOWN into the floor as if pushing the floor away. Pull the shoulder DOWN — long neck, ear far from shoulder.",
+        "cuePl": "Wciskaj przedramię W DÓŁ w podłogę, jakbyś odpychał ją od siebie. Ściągnij bark W DÓŁ — długa szyja, ucho daleko od barku."
+      },
+      {
+        "fault": "Body rotated — chest facing the floor or the ceiling",
+        "faultPl": "Ciało rotowane — klatka skierowana w podłogę lub w sufit",
+        "cause": "Lack of anti-rotation control; subconscious leaning toward an easier position",
+        "causePl": "Brak kontroli antyrotacji; podświadome opadanie do łatwiejszej pozycji",
+        "cue": "Imagine you're sandwiched between two panes of glass — chest, hips and knees ALL face the same wall.",
+        "cuePl": "Wyobraź sobie, że jesteś między dwoma szybami — klatka, biodra i kolana skierowane W TĘ SAMĄ stronę."
+      },
+      {
+        "fault": "Holding the breath",
+        "faultPl": "Wstrzymywanie oddechu",
+        "cause": "Mistaking isometric tension for Valsalva manoeuvre — bracing 100% for 30-60 seconds",
+        "causePl": "Mylenie napięcia izometrycznego z manewrem Valsalvy — napinanie się na 100% przez 30-60 sekund",
+        "cue": "Short, shallow chest breaths. Brace 30-40% — not max. You should be able to talk while holding.",
+        "cuePl": "Krótkie, płytkie oddechy klatką piersiową. Napięcie na 30-40% — nie na maksimum. Powinieneś móc mówić w trakcie."
+      },
+      {
+        "fault": "Top foot 'piking' forward to assist with balance",
+        "faultPl": "Górna stopa wysuwana do przodu dla wsparcia równowagi",
+        "cause": "Weak balance or weak gluteus medius — cheating by widening the base of support",
+        "causePl": "Słaba równowaga lub słaby mięsień pośladkowy średni — oszukiwanie przez poszerzanie podstawy podparcia",
+        "cue": "Feet STACKED — top directly on bottom. If you can't hold it, regress to side plank from the knees instead of staggering feet.",
+        "cuePl": "Stopy NA SOBIE — górna dokładnie na dolnej. Jeśli nie utrzymasz — wróć do deski bokiem z kolan zamiast rozsuwać stopy."
+      }
+    ],
+    "breathing": "Steady shallow chest breathing throughout the isometric hold. Do NOT hold your breath — 30-60 seconds without breathing spikes blood pressure and forces premature termination. Brace the core to ~30-40% of max, leaving capacity for normal breathing.",
+    "breathingPl": "Spokojne, płytkie oddychanie klatką piersiową przez cały czas utrzymywania pozycji izometrycznej. NIE wstrzymuj oddechu — 30-60 sekund bez oddychania podnosi ciśnienie i wymusza przedwczesne zakończenie. Napnij brzuch na ~30-40% maksimum, zostawiając zapas na normalny oddech."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_pain",
+      "severity": "modify",
+      "modification": "The bottom shoulder bears a significant portion of bodyweight as a stabiliser. Reduce hold time, verify elbow is exactly under the shoulder. If pain remains — regress to side plank from the knees (much lower shoulder load) or substitute with pallof press.",
+      "modificationPl": "Dolny bark dźwiga znaczną część ciężaru ciała jako stabilizator. Skróć czas utrzymania i sprawdź czy łokieć jest dokładnie pod barkiem. Jeśli ból się utrzymuje — wróć do deski bokiem z kolan (znacznie mniejsze obciążenie barku) lub zastąp pallof press.",
+      "alternative": "side-plank-from-knees"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "A drooping pelvis or excess rotation can stress the lumbar spine. If you can't maintain a clean line for 20 seconds, regress to side plank from the knees. With strict form this is one of the SAFEST lumbar exercises (McGill's 'Big 3' includes the side plank).",
+      "modificationPl": "Opadająca miednica lub nadmierna rotacja mogą obciążać odcinek lędźwiowy. Jeśli nie utrzymasz czystej linii przez 20 sekund — wróć do deski bokiem z kolan. Przy ścisłej technice to jedno z NAJBEZPIECZNIEJSZYCH ćwiczeń odcinka lędźwiowego ('Wielka Trójka' McGilla zawiera deskę bokiem).",
+      "alternative": "side-plank-from-knees"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "The bottom shoulder works isometrically as a stabiliser under bodyweight load. Avoid until pain-free in front plank and side plank from the knees. Substitute with supine anti-rotation work (dead bug).",
+      "modificationPl": "Dolny bark pracuje izometrycznie jako stabilizator pod ciężarem ciała. Unikaj, aż przedni plank i deska bokiem z kolan będą bezbolesne. Zastąp pracą antyrotacyjną w leżeniu (dead bug).",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "elbow_pain",
+      "severity": "modify",
+      "modification": "The bottom elbow is loaded directly under bodyweight on a hard surface. Use a thick mat, folded towel or elbow pad under the contact point. If pain persists in the joint itself (not just skin pressure) — substitute with a side plank on the hand (extended arm) or pallof press.",
+      "modificationPl": "Dolny łokieć jest obciążony bezpośrednio ciężarem ciała na twardym podłożu. Użyj grubej maty, złożonego ręcznika lub ochraniacza pod punktem kontaktu. Jeśli ból dotyczy samego stawu (a nie tylko nacisku na skórę) — zastąp deską bokiem na dłoni (ramię wyprostowane) lub pallof press.",
+      "alternative": "pallof-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-45 sekund per stronę | 4x30-60 sekund (zaawansowani) | 2-3 serie do utraty formy (AMRAP czasowy)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "side-bridge-v-2.gif",
+    "frames_extracted": [
+      "frames/side-bridge-v-2/frame_0_start.png",
+      "frames/side-bridge-v-2/frame_1_early.png",
+      "frames/side-bridge-v-2/frame_2_mid.png",
+      "frames/side-bridge-v-2/frame_3_late.png",
+      "frames/side-bridge-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/side-bridge-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel (0/1/2/3/4). Wszystkie klatki pokazują identyczną pozycję izometryczną — to NIE jest hip dip ani leg lift, lecz czysty static side bridge. Frame 0/2/4 (klatki ostre): postać w pełnej desce bokiem na podłodze, dolne przedramię oparte na ziemi, łokieć pod barkiem, nogi wyprostowane, stopy jedna na drugiej, ciało w prostej skośnej linii, GÓRNA DŁOŃ ULOŻONA NA GÓRNYM BIODRZE. Frame 2 (mid): wyraźnie PODŚWIETLONE na czerwono mięśnie skośne brzucha (oblique) ORAZ pasmo wzdłuż boku tułowia od żeber w stronę biodra (czworoboczny lędźwi/QL) — to potwierdza primary muscles = obliques + quadratus_lumborum. Frame 1/3 to klatki przejściowe (lekka 'ghost' transparentność) — wejście/wyjście z izometrii, ale sama pozycja trzymana jest identyczna. Wariant 'v-2' w nazewnictwie jahel odnosi się do alternatywnego ustawienia GÓRNEJ ręki (na biodrze) vs wariant 1 (zwykle ręka wyciągnięta pionowo w górę) — to bardziej dostępna wersja dla początkujących. Klasyfikacja: movement_pattern=anti_rotation (klasycznie dla side plank — anti-lateral-flexion i anti-rotation razem), force=isometric, mechanic=isolation (jak na specyfikację Macieja — izolowana praca core bez wieloplanowego compound), laterality=unilateral, plane=frontal (linia ciała w płaszczyźnie czołowej), kinetic_chain=closed. Primary: obliques P10 + quadratus_lumborum P9 (kontra side-plank z bench gdzie QL był S — tu na podłodze QL jest bardziej obciążony bo pełna dźwignia). Secondary: glutes_medius S7 (utrzymanie odwiedzenia górnego biodra przeciw grawitacji), deltoids S5 (izometryczne podparcie barku), transverse_abdominis S6. Stabilizers: serratus T4, lower_trapezius T3, rotator_cuff T4, adductors T3, glutes_maximus T3. Equipment: required=[] (czyste bodyweight na podłodze), optional=yoga_mat. Difficulty 5 — łatwiejszy niż wersja z ramieniem w górze (która byłaby 6), trudniejszy niż side plank z kolan (3). Minimum level: beginner — to fundamentalne ćwiczenie core'a dostępne dla początkujących z prerekwizytem klasycznego planka. 5 common_faults: opadające biodra, podciągnięty bark, rotacja tułowia, wstrzymanie oddechu, wysuwanie górnej stopy do przodu (nowy fault specyficzny dla feet-stacked). 4 contraindications: shoulder_pain (modify), lower_back_pain (caution — McGill Big 3 reference), rotator_cuff_injury (avoid), elbow_pain (modify — nacisk łokcia na twarde podłoże, NOWY fault specyficzny dla wariantu z podłogi vs ławka). Sets/reps: '3x20-45 sek per stronę | 4x30-60 sek zaawansowani'. Polska nazwa 'Side bridge (wariant 2)' zgodnie z prośbą Macieja — alias 'deska bokiem' jako najczęstsza polska forma w fitnessie. Wszystkie pola PL napisane od zera w polskim standardzie fitness, nie tłumaczone maszynowo.",
+
+  "tags": ["bodyweight", "core", "obliques", "quadratus_lumborum", "anti_lateral_flexion", "anti_rotation", "isometric", "side_plank_variant", "no_equipment", "home_workout", "unilateral", "shoulder_stability", "mcgill_big_3", "beginner_friendly"]
+}

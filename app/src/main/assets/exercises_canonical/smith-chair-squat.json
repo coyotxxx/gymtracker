@@ -1,0 +1,201 @@
+{
+  "id": "smith-chair-squat",
+  "name": "Smith Machine Chair Squat",
+  "namePl": "Smith chair squat (przysiad krzesełkowy)",
+  "aliases": ["smith chair squat", "smith machine deep squat", "smith machine sit-back squat", "chair squat smith"],
+  "aliasesPl": ["smith chair squat", "przysiad krzesełkowy w Smith", "głęboki przysiad w Smith", "przysiad siadany w maszynie Smitha"],
+
+  "description": "A deep, sit-back style squat performed in the Smith machine, mimicking the act of sitting down onto a low chair. The fixed vertical bar path of the Smith machine allows for greater hip flexion and forward torso lean than a free squat, intensifying quadriceps and gluteal recruitment at full depth. Useful for trainees building leg mass with reduced demand on balance and lower-back stabilization.",
+  "descriptionPl": "Głęboki przysiad w stylu siadania na niskie krzesło, wykonywany w maszynie Smitha. Sztywny pionowy tor gryfu pozwala na większe zgięcie biodra i wychylenie tułowia do przodu niż w wolnym przysiadzie, intensyfikując zaangażowanie czworogłowych i pośladków w pełnej głębokości. Przydatny dla osób budujących masę nóg przy mniejszym wymaganiu balansu i stabilizacji dolnego kręgosłupa.",
+
+  "instructions": [
+    "Set the Smith machine bar at upper-chest height. Load the desired weight on each side and secure with collars.",
+    "Step under the bar, position it across your upper traps (high-bar). Grip the bar slightly wider than shoulder-width with both hands.",
+    "Unrack the bar by rotating your wrists. Place your feet shoulder-width apart, slightly in front of the bar so the descent traces a 'sit-back' path.",
+    "Brace your core, keep your chest up and take a deep breath.",
+    "Initiate the descent by pushing your hips back and bending your knees as if sitting down onto a low chair. Allow a moderate forward lean of the torso.",
+    "Descend slowly and under control until your thighs are well below parallel and your hip crease drops below your knees (deep 'chair' position).",
+    "Drive up by pushing through the whole foot, extending knees and hips simultaneously. Exhale as you pass the sticking point.",
+    "Return to a fully upright position with knees and hips locked out, then re-rack the bar after finishing the set."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf maszyny Smitha na wysokości górnej klatki. Załaduj odpowiednie obciążenie i zabezpiecz zaciskami.",
+    "Wejdź pod gryf, oprzyj go na górnej części trapezów (high-bar). Chwyć drążek nieco szerzej niż na szerokość barków.",
+    "Wyjmij gryf obracając nadgarstkami. Ustaw stopy na szerokość barków, lekko przed gryfem, żeby ruch w dół przypominał siadanie do tyłu.",
+    "Napnij brzuch, trzymaj klatkę w górze i nabierz głęboki wdech.",
+    "Rozpocznij schodzenie odsuwając biodra do tyłu i zginając kolana, jakbyś siadał na niskie krzesło. Pozwól na umiarkowane wychylenie tułowia do przodu.",
+    "Schodź powoli i pod kontrolą aż uda znajdą się wyraźnie poniżej parallel, a linia bioder zejdzie poniżej kolan (głęboka pozycja 'krzesła').",
+    "Wypchnij się w górę napierając całą stopą, prostując kolana i biodra jednocześnie. Wydech w trakcie pokonywania najtrudniejszego punktu.",
+    "Wróć do pełnego wyprostu z zablokowanymi kolanami i biodrami, po zakończeniu serii odstaw gryf na zaczepy."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "erector_spinae"],
+    "stabilizers": ["core", "calves", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "erector_spinae": "S5",
+    "core": "S5",
+    "adductors": "S4",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "goblet-squat"],
+    "progression_to": ["smith-machine-squat", "barbell-back-squat", "barbell-front-squat"],
+    "alternatives": ["smith-machine-squat", "hack-squat", "leg-press", "goblet-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar across upper traps, not on the neck",
+      "Feet shoulder-width, slightly forward of the bar",
+      "Toes turned out 10-20° for hip clearance",
+      "Chest up, core braced, neutral spine",
+      "Big breath in before descending"
+    ],
+    "setup_cues_pl": [
+      "Gryf na trapezach, nie na karku",
+      "Stopy szerokość barków, lekko przed gryfem",
+      "Palce skierowane na zewnątrz 10-20° dla swobody bioder",
+      "Klatka w górze, brzuch napięty, neutralny kręgosłup",
+      "Głęboki wdech przed zejściem"
+    ],
+    "execution_cues": [
+      "Sit back as if onto a low chair",
+      "Knees track over toes — let them travel forward",
+      "Descend slowly, hips below knees",
+      "Push the floor away with the whole foot",
+      "Lock out hips and knees at the top of each rep"
+    ],
+    "execution_cues_pl": [
+      "Siadaj do tyłu jak na niskie krzesło",
+      "Kolana podążają za palcami stóp — pozwól im wyjść do przodu",
+      "Schodź powoli, biodra poniżej kolan",
+      "Wypchnij podłogę całą stopą",
+      "Zablokuj biodra i kolana na górze każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Heels lift off the floor at depth",
+        "faultPl": "Pięty odrywają się od podłogi w dolnej pozycji",
+        "cause": "Poor ankle dorsiflexion, feet placed too far back, or stance too narrow",
+        "causePl": "Słaba dorsiflexja stawu skokowego, stopy ustawione za daleko z tyłu, lub zbyt wąski rozstaw",
+        "cue": "Move feet slightly forward of the bar and keep the whole foot planted",
+        "cuePl": "Przestaw stopy lekko przed gryf i trzymaj całą stopę na podłodze"
+      },
+      {
+        "fault": "Lumbar flexion (butt wink) at the bottom",
+        "faultPl": "Zgięcie lędźwiowe (butt wink) w dolnej pozycji",
+        "cause": "Going below individual hip mobility, weak core bracing, or pelvis tucking under load",
+        "causePl": "Schodzenie poniżej indywidualnej mobilności biodra, słabe napięcie brzucha, lub podwijanie miednicy pod obciążeniem",
+        "cue": "Stop just above the depth where your pelvis tucks. Brace harder before the descent.",
+        "cuePl": "Zatrzymaj się tuż nad głębokością gdzie miednica się podwija. Mocniej napnij brzuch przed schodzeniem."
+      },
+      {
+        "fault": "Knee valgus (knees collapse inward)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak gluteus medius, lack of hip external rotation, or excessive load",
+        "causePl": "Słabe pośladkowe średnie, brak rotacji zewnętrznej biodra, lub zbyt duży ciężar",
+        "cue": "Push your knees out toward your pinky toes throughout the rep",
+        "cuePl": "Wypychaj kolana na zewnątrz w kierunku małych palców przez całe powtórzenie"
+      },
+      {
+        "fault": "Bouncing out of the bottom",
+        "faultPl": "Odbijanie się w dolnej pozycji",
+        "cause": "Using momentum instead of muscular control, ego loading, or rushed tempo",
+        "causePl": "Wykorzystywanie pędu zamiast kontroli mięśniowej, zbyt duży ciężar, lub szybkie tempo",
+        "cue": "Pause for a half-second at the bottom, then drive up with intent",
+        "cuePl": "Zatrzymaj się na pół sekundy na dole, potem wybijaj się świadomie"
+      },
+      {
+        "fault": "Feet positioned too far forward (over-leveraging the Smith)",
+        "faultPl": "Stopy ustawione za daleko z przodu (nadmierne wykorzystanie maszyny Smitha)",
+        "cause": "Trying to remove lower back involvement entirely, mimicking hack-squat position",
+        "causePl": "Próba całkowitego wyłączenia dolnego kręgosłupa, naśladowanie pozycji hack-squat",
+        "cue": "Place feet only slightly ahead of the bar — heel still under your hip line",
+        "cuePl": "Ustaw stopy tylko lekko przed gryfem — pięta nadal pod linią bioder"
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and the first half of the ascent. Exhale near lockout.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech podczas schodzenia i pierwszej połowy powrotu. Wydech blisko pełnego wyprostu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to above parallel. Deep chair position aggravates a damaged meniscus. Use shorter ROM until cleared.",
+      "modificationPl": "Ogranicz głębokość do powyżej parallel. Głęboka pozycja krzesła obciąża uszkodzoną łąkotkę. Krótszy zakres do czasu rehabilitacji.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Forward torso lean and axial loading aggravate lumbar issues. Rest and consult a physiotherapist.",
+      "modificationPl": "Pochylenie tułowia do przodu i obciążenie osiowe drażnią dolny kręgosłup. Odpoczynek i konsultacja z fizjoterapeutą.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "caution",
+      "modification": "Deep knee flexion under load can flare anterior knee pain. Reduce depth and load until symptoms subside.",
+      "modificationPl": "Głębokie zgięcie kolana pod obciążeniem może nasilać ból przedniej strony kolana. Zmniejsz głębokość i ciężar do ustąpienia objawów.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "The fixed bar path forces a specific hip angle that may compress an impinged joint. Try widening stance and turning toes out more.",
+      "modificationPl": "Sztywny tor gryfu wymusza konkretny kąt biodra, który może drażnić staw z impingementem. Spróbuj poszerzyć rozstaw i bardziej odwrócić palce stóp.",
+      "alternative": "sumo-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x12-15 (endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-chair-squat.gif",
+    "frames_extracted": [
+      "frames/smith-chair-squat/frame_0_start.png",
+      "frames/smith-chair-squat/frame_1_early.png",
+      "frames/smith-chair-squat/frame_2_mid.png",
+      "frames/smith-chair-squat/frame_3_late.png",
+      "frames/smith-chair-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/smith-chair-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel/quads/smith-chair-squat. Klatka 0/4: pozycja startowa stojąca, gryf na trapezach w maszynie Smitha. Klatka 1/3: faza przejścia, widoczny początek zgięcia bioder i kolan. Klatka 2: dolna pozycja — uda wyraźnie poniżej parallel, biodra poniżej kolan (głęboka pozycja krzesła), tułów wychylony do przodu ~30-40°, kolana wysunięte daleko ponad palce stóp. Podświetlone mięśnie: czworogłowe (silne czerwone, główne) + pośladkowe (na dolnej klatce). Mechanic=compound, plane=sagittal, force=both, bilateral — zgodne z poleceniem. Charakterystyka 'chair squat' (większe zgięcie tułowia + głębokość) potwierdzona wizualnie wobec standardowego smith squat. Wszystkie pola PL pisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["quadriceps", "glutes", "lower_body", "smith_machine", "hypertrophy", "guided_movement", "deep_squat"]
+}

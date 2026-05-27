@@ -1,0 +1,201 @@
+{
+  "id": "decline-push-up",
+  "name": "Decline Push-Up",
+  "namePl": "Pompki ze stopami na podwyższeniu",
+  "aliases": ["decline pushup", "feet-elevated push-up", "elevated feet push-up", "decline press-up"],
+  "aliasesPl": ["decline pompki", "pompki z nogami na ławce", "pompki ze stopami na ławce", "pompki z uniesionymi stopami", "pompki na podwyższeniu (stopy)"],
+
+  "description": "Bodyweight push-up variation with feet elevated on a bench, box or stable surface, placing the torso in a head-down angle. This decline angle shifts the load toward the upper (clavicular) chest and anterior deltoids — a bodyweight analog of the incline barbell bench press. Greater bodyweight percentage on the hands (~70%+ vs ~64% in a standard push-up) makes it a natural progression from regular push-ups.",
+  "descriptionPl": "Wariant pompek z bodyweight, w którym stopy są uniesione na ławce, boksie lub stabilnym podwyższeniu — co ustawia tułów pod kątem 'głową w dół'. Ten kąt przesuwa obciążenie na górną (obojczykową) część klatki i przednie aktony — to bodyweight'owy odpowiednik wyciskania sztangi na skosie dodatnim. Większy procent masy ciała spoczywa na rękach (~70%+ w porównaniu do ~64% w standardowych pompkach), co czyni je naturalną progresją zwykłych pompek.",
+
+  "instructions": [
+    "Set up a stable bench, box or sturdy chair (knee-height ~30-50 cm is a great starting point). Higher elevation = harder.",
+    "Place the tops of your feet on the bench (or rest the balls of your feet on the edge — whichever is more stable).",
+    "Walk your hands out into a push-up position: hands slightly wider than shoulders, directly under your shoulders.",
+    "Brace your core hard. Squeeze glutes. Your body should form a straight line from feet through hips to head — no sagging hips, no piked hips.",
+    "Inhale and lower yourself in a controlled manner. Elbows track at ~45° from your torso (not flared 90°). Lower until chest is just above the floor.",
+    "Brief pause at the bottom — do not bounce.",
+    "Exhale and press the floor away. Drive through palms, extend elbows fully but do not hyperextend.",
+    "Maintain rigid plank position throughout. Head neutral — chin slightly tucked, eyes looking slightly ahead of hands."
+  ],
+  "instructionsPl": [
+    "Przygotuj stabilną ławkę, boks lub solidne krzesło (wysokość kolan ~30-50 cm to dobry start). Wyższe podwyższenie = trudniej.",
+    "Połóż grzbiety stóp na ławce (lub oprzyj palce stóp o krawędź — co jest stabilniejsze).",
+    "Przejdź rękami w pozycję pompkową: dłonie nieco szerzej niż barki, bezpośrednio pod barkami.",
+    "Mocno napnij brzuch. Ściśnij pośladki. Ciało musi tworzyć prostą linię od stóp przez biodra do głowy — bez opadania bioder, bez 'tyłka do góry'.",
+    "Wdech, opuszczaj się kontrolowanym ruchem. Łokcie pod kątem ~45° od tułowia (nie rozsunięte na 90°). Schodź aż klatka będzie tuż nad podłogą.",
+    "Krótka pauza na dole — nie odbijaj.",
+    "Wydech, wypchnij podłogę. Napieraj przez wnętrza dłoni, w pełni wyprostuj łokcie, ale bez przeprostu.",
+    "Utrzymuj sztywną pozycję planka przez cały ruch. Głowa neutralna — broda lekko schowana, wzrok lekko przed dłonie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids", "triceps"],
+    "secondary": ["pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P9",
+    "triceps": "P8",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S6",
+    "core": "T5",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "elevated_surface"],
+    "optional": ["push_up_handles", "weighted_vest", "resistance_band"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["push-up", "knee-push-up", "incline-push-up"],
+    "progression_to": ["weighted-decline-push-up", "single-arm-decline-push-up", "decline-push-up-feet-on-ball", "handstand-push-up", "pike-push-up"],
+    "alternatives": ["incline-barbell-bench-press", "incline-dumbbell-bench-press", "push-up", "ring-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stable elevated surface — bench, box or sturdy chair won't slide",
+      "Feet on the bench, hands on the floor (not the other way around)",
+      "Hands slightly wider than shoulders, directly under shoulder line",
+      "Body in straight line from heels to head — pre-brace plank",
+      "Wrists, elbows and shoulders stacked vertically at the top"
+    ],
+    "setup_cues_pl": [
+      "Stabilne podwyższenie — ławka, boks lub solidne krzesło które się nie ślizga",
+      "Stopy na ławce, dłonie na podłodze (nie odwrotnie)",
+      "Dłonie nieco szerzej niż barki, bezpośrednio pod linią barków",
+      "Ciało w prostej linii od pięt do głowy — pre-bracing planka",
+      "Nadgarstki, łokcie i barki ułożone pionowo w pozycji wyjściowej"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — controlled, no free-fall",
+      "Touch chest just above the floor (head-down means chest reaches floor before face)",
+      "Elbows track at ~45° — 'pin them to your ribs'",
+      "Squeeze upper chest at lockout — feel the clavicular pec contract",
+      "Brace abs and squeeze glutes the entire set — no sagging hips"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontrolowanie, bez 'free-fall'",
+      "Klatka tuż nad podłogą (głowa niżej oznacza że klatka dotyka podłogi przed twarzą)",
+      "Łokcie pod ~45° — 'przyklej je do żeber'",
+      "Ściśnij górę klatki na szczycie — poczuj jak obojczykowy pec się napina",
+      "Napięte brzuch i pośladki przez całą serię — biodra nie opadają"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "Weak core, no glute engagement — body 'hangs' on lumbar spine",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym",
+        "cue": "Squeeze glutes HARD before lowering. 'Plank position first, then push-up'. Imagine a string lifting your hips toward ceiling.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. 'Najpierw plank, potem pompka'. Wyobraź sobie sznurek unoszący biodra do sufitu."
+      },
+      {
+        "fault": "Elbows flared 90° (T-shape)",
+        "faultPl": "Łokcie rozsunięte na 90° (kształt litery T)",
+        "cause": "Hands too wide, no awareness of elbow tracking",
+        "causePl": "Dłonie za szeroko, brak świadomości toru łokci",
+        "cue": "Tuck elbows to ~45° from torso. 'Hide your armpits'. Protects shoulders and recruits triceps better.",
+        "cuePl": "Schowaj łokcie do ~45° od tułowia. 'Schowaj pachy'. Chroni barki i lepiej angażuje tricepsy."
+      },
+      {
+        "fault": "Partial range of motion (half push-up)",
+        "faultPl": "Częściowy zakres ruchu (połowiczne pompki)",
+        "cause": "Lack of strength at full ROM, ego — counting reps that don't reach chest-to-floor",
+        "causePl": "Brak siły w pełnym ROM, ego — liczenie powtórzeń które nie dochodzą do klatki przy podłodze",
+        "cue": "Chest must reach within a fist's height from the floor. If you can't — lower the elevation or switch to regular push-ups.",
+        "cuePl": "Klatka musi dojść na wysokość pięści od podłogi. Jeśli nie dasz rady — obniż podwyższenie lub wróć do zwykłych pompek."
+      },
+      {
+        "fault": "Head dropping (looking at feet) or craning (looking up)",
+        "faultPl": "Opadająca głowa (patrzenie na stopy) lub zadarta (patrzenie w górę)",
+        "cause": "Forgetting head/neck posture during the rep",
+        "causePl": "Zapominanie o postawie głowy/szyi podczas powtórzenia",
+        "cue": "Neutral spine — chin slightly tucked, ears in line with shoulders. Eyes look at a spot ~30 cm in front of hands.",
+        "cuePl": "Neutralny kręgosłup — broda lekko schowana, uszy w linii z barkami. Wzrok na punkt ~30 cm przed dłońmi."
+      },
+      {
+        "fault": "Feet sliding off the bench",
+        "faultPl": "Stopy zsuwają się z ławki",
+        "cause": "Unstable bench, slippery surface, feet placed too close to edge",
+        "causePl": "Niestabilna ławka, śliska powierzchnia, stopy za blisko krawędzi",
+        "cue": "Use bench against a wall, or place feet flat on top of bench (not balls-of-feet on edge). Bare feet or grippy soles.",
+        "cuePl": "Ustaw ławkę przy ścianie, lub połóż całe stopy na ławce (nie palce na krawędzi). Bose stopy lub buty z dobrą przyczepnością."
+      }
+    ],
+    "breathing": "Inhale during descent, brace through the bottom, exhale during the press up. For higher reps you can also brace-and-press multiple reps before a reset breath.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech podczas wyciskania. Przy wyższych powtórzeniach można też napiąć-i-wycisnąć kilka powtórzeń przed oddechem-resetującym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles or fists (knuckles down) to keep wrist neutral. Decline position loads wrists more than standard push-ups.",
+      "modificationPl": "Użyj uchwytów do pompek lub pięści (knykcie w dół) aby utrzymać neutralny nadgarstek. Pozycja decline obciąża nadgarstki bardziej niż zwykłe pompki.",
+      "alternative": "incline-dumbbell-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce elevation height (lower bench/step), narrow grip, tuck elbows tighter (~30-45°). Avoid if pain in any position.",
+      "modificationPl": "Zmniejsz wysokość podwyższenia (niższa ławka/stopień), węższy chwyt, mocniej schowaj łokcie (~30-45°). Unikaj jeśli boli w jakiejkolwiek pozycji.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Head-below-heart position increases intracranial pressure. Use lower elevation or switch to standard push-up until BP controlled.",
+      "modificationPl": "Pozycja głowy poniżej serca zwiększa ciśnienie wewnątrzczaszkowe. Użyj niższego podwyższenia lub wróć do zwykłych pompek do czasu kontroli ciśnienia.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Sagging hips load the lumbar spine. If you can't hold a rigid plank — regress to incline push-ups (hands elevated, feet on floor) until core stronger.",
+      "modificationPl": "Opadające biodra obciążają odcinek lędźwiowy. Jeśli nie utrzymujesz sztywnej planki — wróć do pompek na podwyższeniu (dłonie wyżej, stopy na podłodze) do czasu wzmocnienia brzucha.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (hypertrophy) | 5x5 weighted variant (strength) | AMRAP for conditioning",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "decline-push-up.gif",
+    "frames_extracted": [
+      "frames/decline-push-up/frame_0_start.png",
+      "frames/decline-push-up/frame_1_early.png",
+      "frames/decline-push-up/frame_2_mid.png",
+      "frames/decline-push-up/frame_3_late.png",
+      "frames/decline-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/decline-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:40:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej — stopy na ławce (po lewej, wyżej), dłonie na podłodze (po prawej, niżej), ramiona wyprostowane, ciało w prostej linii od stóp przez biodra do głowy. Frame 2 (mid): pełne opuszczenie — klatka tuż nad podłogą, łokcie zgięte i ułożone pod ~45° od tułowia (nie rozsunięte na 90°), ciało nadal w linii prostej, brak opadania bioder. Frame 4 (end): powrót do wyjściowej pozycji (zamknięcie cyklu). Górna klatka i przednie delty wyraźnie podświetlone na anatomii — zgodne z biomechaniką decline angle (większy nacisk na clavicular pec / front delt). Stopy na ławce wyraźnie wyżej niż dłonie — klasyczny decline push-up. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Bodyweight equivalent decline bench (analog incline barbell bench — kąt głowa-w-dół odpowiada wyciskaniu na skosie dodatnim siedząc/leżąc).",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "upper_chest", "home_workout", "no_equipment_friendly", "progression_from_push_up"]
+}

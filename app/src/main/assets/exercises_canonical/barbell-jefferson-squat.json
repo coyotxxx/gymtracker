@@ -1,0 +1,207 @@
+{
+  "id": "barbell-jefferson-squat",
+  "name": "Barbell Jefferson Squat (Jefferson Deadlift)",
+  "namePl": "Przysiad Jeffersona ze sztangą",
+  "aliases": ["jefferson squat", "jefferson deadlift", "jefferson lift", "straddle deadlift", "straddle lift"],
+  "aliasesPl": ["jefferson squat", "jefferson deadlift", "martwy ciąg Jeffersona", "straddle lift", "ciąg okrakiem"],
+
+  "description": "Unconventional asymmetric compound lift performed with the lifter straddling the barbell — one foot on each side of the bar — using a mixed grip (one hand pronated, one supinated). Combines hip hinge with deep knee flexion to produce a movement that hits glutes, quads and hamstrings simultaneously while loading the body asymmetrically. Trains anti-rotational core stability, single-side hip strength and frontal-plane control in ways a conventional barbell squat or deadlift cannot. Old-school strongman lift (named after early 20th-century strongman Charles Jefferson) used today for unilateral hip strength, athletic carryover and breaking through plateaus.",
+  "descriptionPl": "Nietypowy, asymetryczny ruch wielostawowy wykonywany w pozycji okrakiem nad sztangą — jedna stopa po każdej stronie gryfu — z chwytem mieszanym (jedna ręka nachwytem, druga podchwytem). Łączy hip hinge z głębokim zgięciem kolan, dając ruch który jednocześnie obciąża pośladki, czworogłowe i dwugłowe ud, przy asymetrycznym obciążeniu całego ciała. Trenuje stabilność rotacyjną brzucha, jednostronną siłę bioder i kontrolę w płaszczyźnie czołowej — w sposób niedostępny w klasycznym przysiadzie ani martwym ciągu. Staroszkolny ruch strongmanów (od nazwiska siłacza Charlesa Jeffersona z początku XX w.) używany dziś dla jednostronnej siły bioder, przenośności do sportu i przełamywania plateau.",
+
+  "instructions": [
+    "Place the loaded barbell on the floor. Stand directly over it, straddling the bar so one foot is on each side. The bar should be roughly under your crotch / centerline.",
+    "Feet are wider than shoulder-width, toes pointed slightly out (lead foot may turn out 30-45 degrees). One foot is forward, one slightly back — a small offset stance.",
+    "Squat down by bending knees and hinging at the hips. Keep torso as upright as possible, chest up.",
+    "Reach down: lead hand grips the bar in front of your lead leg with a supinated (underhand) grip; trail hand grips behind/beside the trail leg with a pronated (overhand) grip — a mixed grip.",
+    "Set the back: chest up, shoulders pulled back, neutral spine. Brace the core HARD — this lift loads you asymmetrically and the obliques must work.",
+    "Take a deep breath, brace (Valsalva). Drive through both feet evenly into the floor.",
+    "Stand up by extending knees and hips simultaneously. Keep the bar traveling vertically — DO NOT let it swing or rotate.",
+    "Lock out tall: full hip extension, glutes squeezed, shoulders neutral. The bar sits at hip level.",
+    "Lower under control by bending knees and hips together, keeping the torso upright. Bar returns to the floor between reps.",
+    "Alternate the stance (which foot is forward, which grip is supinated) set to set or workout to workout to balance asymmetric loading."
+  ],
+  "instructionsPl": [
+    "Połóż załadowaną sztangę na ziemi. Stań dokładnie nad nią okrakiem — jedna stopa po każdej stronie gryfu. Sztanga powinna znajdować się mniej więcej pod kroczem / linią środka ciała.",
+    "Stopy szerzej niż barki, palce skierowane lekko na zewnątrz (wiodąca stopa może być wyłożona na 30-45 stopni). Jedna stopa wysunięta do przodu, druga lekko z tyłu — niewielki offset stójki.",
+    "Zejdź do przysiadu, zginając kolana i schodząc biodrami w dół. Trzymaj tułów jak najbardziej pionowo, klatka w górze.",
+    "Sięgnij w dół: wiodąca ręka łapie gryf przed wiodącą nogą podchwytem (supinacja), tylna ręka łapie z tyłu/obok tylnej nogi nachwytem (pronacja) — chwyt mieszany.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte, kręgosłup neutralny. Mocno napnij brzuch — ten ruch obciąża cię asymetrycznie i skośne muszą pracować.",
+    "Nabierz głęboki oddech, napięcie (Valsalva). Napieraj równo obydwiema stopami w ziemię.",
+    "Wstań prostując kolana i biodra jednocześnie. Trzymaj gryf w pionowej trajektorii — NIE pozwól mu się huśtać ani obracać.",
+    "Stań wyprostowany w lock-out: pełen wyprost biodra, pośladki ściśnięte, barki neutralne. Sztanga jest na wysokości bioder.",
+    "Opuszczaj pod kontrolą, zginając kolana i biodra razem, trzymając tułów pionowo. Gryf wraca na ziemię między powtórzeniami.",
+    "Zmieniaj stójkę (która noga z przodu, która ręka w supinacji) między seriami lub treningami, by zbilansować asymetryczne obciążenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "asymmetric",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "hamstrings"],
+    "secondary": ["erector_spinae", "adductors", "trapezius", "forearms"],
+    "stabilizers": ["core", "obliques", "rectus_abdominis", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "quadriceps": "P9",
+    "hamstrings": "P7",
+    "erector_spinae": "S7",
+    "adductors": "S7",
+    "trapezius": "S6",
+    "forearms": "S8",
+    "core": "S8",
+    "obliques": "S8"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["belt", "chalk", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-deadlift", "barbell-back-squat", "goblet-squat", "sumo-deadlift"],
+    "progression_to": ["zercher-squat", "anderson-squat", "deficit-jefferson-squat"],
+    "alternatives": ["sumo-deadlift", "trap-bar-deadlift", "zercher-squat", "bulgarian-split-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Straddle the bar — one foot each side, bar under crotch",
+      "Lead foot turned out 30-45°, trail foot points forward",
+      "Mixed grip: lead hand underhand in front, trail hand overhand behind",
+      "Chest up, neutral spine, BRACE the core hard before pulling",
+      "Bar travels vertically — no rotation, no swing"
+    ],
+    "setup_cues_pl": [
+      "Okrakiem nad gryfem — jedna stopa z każdej strony, sztanga pod kroczem",
+      "Wiodąca stopa wyłożona 30-45° na zewnątrz, tylna stopa do przodu",
+      "Chwyt mieszany: wiodąca ręka podchwytem z przodu, tylna nachwytem z tyłu",
+      "Klatka w górze, neutralny kręgosłup, MOCNE napięcie brzucha przed ciągiem",
+      "Gryf idzie pionowo — bez obrotu, bez huśtania"
+    ],
+    "execution_cues": [
+      "Drive both feet evenly into the floor — not just the dominant leg",
+      "Knees and hips extend together — torso stays upright",
+      "Anti-rotation: resist the bar trying to twist you",
+      "Lock out with glutes — full hip extension, neutral pelvis",
+      "Alternate stance and grip each set to balance both sides"
+    ],
+    "execution_cues_pl": [
+      "Napieraj równo obydwiema stopami — nie tylko dominującą nogą",
+      "Kolana i biodra prostują się razem — tułów pozostaje pionowy",
+      "Anty-rotacja: opieraj się tendencji gryfu do skręcania tobą",
+      "Lock-out pośladkami — pełen wyprost biodra, neutralna miednica",
+      "Zmieniaj stójkę i chwyt co serię, by zbilansować obie strony"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation under load (twisting toward dominant side)",
+        "faultPl": "Rotacja tułowia pod obciążeniem (skręcanie w stronę silniejszą)",
+        "cause": "Weak obliques/anti-rotation core, asymmetric leg strength, grip uneven",
+        "causePl": "Słabe skośne / mięśnie anty-rotacyjne, asymetryczna siła nóg, nierówny chwyt",
+        "cue": "Brace harder. Imagine a rod through your spine — body stays square. Reduce weight if rotation persists.",
+        "cuePl": "Mocniej napnij brzuch. Wyobraź sobie pręt przez kręgosłup — ciało zostaje równe. Zmniejsz ciężar jeśli rotacja nie znika."
+      },
+      {
+        "fault": "Bar swings forward or backward instead of going straight up",
+        "faultPl": "Sztanga buja się w przód lub tył zamiast iść pionowo",
+        "cause": "Uneven foot pressure, leaning during the lift, grip too far forward or back",
+        "causePl": "Nierówny nacisk stóp, pochylanie się w trakcie ruchu, chwyt zbyt z przodu lub z tyłu",
+        "cue": "Bar over the mid-foot of BOTH feet. Vertical bar path only. Film yourself from the side.",
+        "cuePl": "Sztanga nad środkiem stopy OBYDWU stóp. Tylko pionowa trajektoria gryfu. Nagraj się z boku."
+      },
+      {
+        "fault": "Lumbar spine flexes (rounded back) due to awkward grip position",
+        "faultPl": "Zgięcie lędźwiowego (zaokrąglone plecy) przez niewygodną pozycję chwytu",
+        "cause": "Trying to reach too low without proper hip mobility, hips too high at start, weak erectors for asymmetric load",
+        "causePl": "Próba sięgnięcia zbyt nisko bez odpowiedniej mobilności bioder, biodra za wysoko w starcie, słabe prostowniki dla asymetrycznego obciążenia",
+        "cue": "Sit DOWN into the squat — chest up, hips low. Reduce weight. Build hip mobility with goblet squats.",
+        "cuePl": "Zejdź W DÓŁ w przysiad — klatka w górze, biodra nisko. Zmniejsz ciężar. Pracuj mobilność bioder przysiadami goblet."
+      },
+      {
+        "fault": "Always using the same stance/grip orientation",
+        "faultPl": "Zawsze ta sama stójka / orientacja chwytu",
+        "cause": "Habit, comfort, ignorance of asymmetric loading risk",
+        "causePl": "Nawyk, wygoda, brak świadomości ryzyka asymetrycznego obciążenia",
+        "cue": "Alternate EVERY set. Pattern: set 1 left-forward, set 2 right-forward. Build symmetry, not asymmetry.",
+        "cuePl": "Zmieniaj KAŻDĄ serię. Wzór: seria 1 lewa z przodu, seria 2 prawa z przodu. Buduj symetrię, nie asymetrię."
+      },
+      {
+        "fault": "Knee caving inward on dominant leg",
+        "faultPl": "Kolano dominującej nogi zapada się do środka",
+        "cause": "Weak glute medius, hip abductor weakness, overloading the strong side",
+        "causePl": "Słaby pośladek średni, słabe odwodziciele biodra, przeciążenie silniejszej strony",
+        "cue": "Knees track over the toes. Push knees OUT. Pre-activate glute medius with band walks before lifting.",
+        "cuePl": "Kolana w linii palców. Wypchnij kolana NA ZEWNĄTRZ. Przed treningiem aktywuj pośladek średni gumami (band walks)."
+      }
+    ],
+    "breathing": "Big inhale at the top of the setup, brace hard (Valsalva), hold throughout the entire rep. Exhale at the lockout. Never exhale during the concentric — asymmetric load demands maximum bracing.",
+    "breathingPl": "Głęboki wdech na szczycie setup, mocno napnij brzuch (Valsalva), trzymaj przez całe powtórzenie. Wydech w lock-out. Nigdy nie wydychaj w fazie koncentrycznej — asymetryczne obciążenie wymaga maksymalnego napięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_injury",
+      "severity": "avoid",
+      "modification": "Asymmetric load on the spine is high-risk for an injured back. Do not perform until cleared by physio.",
+      "modificationPl": "Asymetryczne obciążenie kręgosłupa jest wysokoryzykowne dla uszkodzonych pleców. Nie wykonuj do czasu zgody fizjoterapeuty.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "scoliosis_or_si_joint_dysfunction",
+      "severity": "avoid",
+      "modification": "Asymmetric loading can exacerbate spinal/sacroiliac asymmetries. Use bilateral lifts (back squat, conventional deadlift) instead.",
+      "modificationPl": "Asymetryczne obciążenie może pogłębiać asymetrie kręgosłupa / stawu krzyżowo-biodrowego. Używaj ruchów bilateralnych (back squat, klasyczny deadlift).",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "The straddle stance and deep hip flexion can provoke FAI symptoms. Test with light load first. Switch to sumo deadlift if uncomfortable.",
+      "modificationPl": "Stójka okrakiem i głębokie zgięcie biodra mogą prowokować objawy FAI. Najpierw przetestuj lekkim ciężarem. Przejdź na sumo deadlift jeśli niewygodne.",
+      "alternative": "sumo-deadlift"
+    },
+    {
+      "condition": "knee_instability_or_meniscus_injury",
+      "severity": "modify",
+      "modification": "Asymmetric deep squat puts unusual shear on the lead knee. Reduce depth and load, or switch to a bilateral squat variant.",
+      "modificationPl": "Asymetryczny głęboki przysiad daje nietypowe siły ścinające na wiodące kolano. Zmniejsz głębokość i ciężar, lub przejdź na bilateralny wariant przysiadu.",
+      "alternative": "trap-bar-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x5-8 (strength) | 3-4x8-12 (hypertrophy) | 3x6-10 per stance side (balanced bilateral training)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-jefferson-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-jefferson-squat/frame_0_start.png",
+      "frames/barbell-jefferson-squat/frame_1_early.png",
+      "frames/barbell-jefferson-squat/frame_2_mid.png",
+      "frames/barbell-jefferson-squat/frame_3_late.png",
+      "frames/barbell-jefferson-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-jefferson-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja stojąca z gryfem między nogami, sztanga na wysokości bioder, chwyt mieszany (jedna ręka z przodu, druga z tyłu), podświetlone czworogłowe i przedramiona. Frame 2: pozycja dolna — głęboki przysiad okrakiem nad gryfem, tułów raczej pionowy (nie tak pochylony jak klasyczny deadlift), podświetlone czworogłowe i pośladki — typowy hybrid hinge+squat. Frame 4: powrót do pozycji stojącej. Mimo nazwy 'squat' ruch klasyfikowany jako hinge (asymetryczny straddle deadlift / Jefferson lift) — wzorzec ruchu zdominowany przez ekstensję biodra z towarzyszącym zgięciem kolan. Laterality 'asymmetric' (NIE bilateral ani unilateral) — obie strony pracują ale w innych pozycjach (mixed grip + offset stance). Equipment: tylko barbell. Wszystkie pola PL napisane od zera, nie tłumaczone maszynowo.",
+
+  "tags": ["asymmetric", "old_school", "strongman", "hip_hinge", "barbell", "anti_rotation", "core_intensive", "advanced", "athletic_carryover"]
+}

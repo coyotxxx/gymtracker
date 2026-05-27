@@ -1,0 +1,206 @@
+{
+  "id": "barbell-single-leg-deadlift",
+  "name": "Barbell Single-Leg Deadlift",
+  "namePl": "Deadlift jednonóż ze sztangą",
+  "aliases": ["single leg RDL", "barbell SLDL", "barbell single leg romanian deadlift", "one-leg deadlift", "B-stance deadlift (variation)"],
+  "aliasesPl": ["jednonożny RDL", "martwy ciąg na jednej nodze", "RDL na jednej nodze", "single-leg RDL ze sztangą", "deadlift na jednej nodze"],
+
+  "description": "A unilateral hip-hinge that loads ONE leg at a time while the opposite leg extends backward as a counterbalance — like a moving 'T' or scale. Built for glute (especially gluteus medius), hamstring and core anti-rotation strength, plus single-leg balance. Brutal on stability: the spine resists rotation while the standing-leg hip resists collapse inward. Often programmed as an accessory after bilateral deadlifts/RDLs, or as a primary movement for athletes, runners, and anyone fixing hip-strength asymmetries. Bar load is far lower than a bilateral RDL — balance is the bottleneck before strength.",
+  "descriptionPl": "Jednostronny hip hinge obciążający JEDNĄ nogę naraz, podczas gdy druga noga wyciąga się do tyłu jako przeciwwaga — niczym ruchoma litera 'T' lub waga szalkowa. Stworzony do budowy siły pośladków (szczególnie pośladkowego średniego), dwugłowych ud i antyrotacyjnej siły core, plus balansu na jednej nodze. Brutalny dla stabilizacji: kręgosłup opiera się rotacji, a biodro nogi stojącej opiera się zapadaniu do środka. Często programowany jako accessory po obustronnych martwych ciągach/RDL, lub jako główny ruch dla sportowców, biegaczy i osób korygujących asymetrie biodrowe. Ciężar na sztandze jest znacznie niższy niż w obustronnym RDL — balans jest wąskim gardłem zanim dojdziesz do limitu siły.",
+
+  "instructions": [
+    "Stand tall holding a barbell in both hands at hip height (deadlift it up first or take it from a rack). Feet hip-width.",
+    "Shift weight onto ONE leg (the working leg). Keep that knee SOFT — ~10-20° bent, not locked.",
+    "Set the back: chest up, lats engaged, shoulder blades down and back, neutral spine. Take a big breath and brace.",
+    "Begin the descent: push the standing-leg hip BACKWARD while the OPPOSITE leg simultaneously extends straight behind you — like a seesaw rotating around the hip.",
+    "The back leg should reach roughly parallel to the floor at the bottom — body forms a long 'T' / scale shape from heel to head.",
+    "Keep hips SQUARE to the floor — do NOT let the back-leg hip rotate open. The biggest enemy of this lift is hip rotation.",
+    "Lower the bar along the front of the standing leg until you feel a strong stretch in the hamstring/glute — typically bar reaches mid-shin. DO NOT round the lower back.",
+    "Reverse by driving the standing-leg hip forward — squeeze the glute hard. The back leg returns under you. Stand tall and re-balance before the next rep.",
+    "Complete all reps on one side before switching, OR alternate sides if doing low-rep balance work."
+  ],
+  "instructionsPl": [
+    "Stań prosto, trzymając sztangę w obu rękach na wysokości bioder (najpierw podnieś ją z ziemi lub zdejmij ze stojaka). Stopy na szerokość bioder.",
+    "Przenieś ciężar na JEDNĄ nogę (noga robocza). Kolano tej nogi MIĘKKIE — ugięte ~10-20°, nie zablokowane.",
+    "Ustaw plecy: klatka w górze, najszersze napięte, łopatki w dół i do tyłu, neutralny kręgosłup. Nabierz głęboki oddech i napnij brzuch.",
+    "Zacznij schodzenie: wypchnij biodro nogi stojącej DO TYŁU, a JEDNOCZEŚNIE druga noga wyciąga się prosto za tobą — niczym huśtawka obracająca się wokół biodra.",
+    "Tylna noga na dole powinna być mniej więcej równolegle do podłogi — ciało tworzy długie 'T' / wagę szalkową od pięty do głowy.",
+    "Trzymaj biodra RÓWNO do podłogi — NIE pozwól by biodro tylnej nogi obróciło się w górę. Największym wrogiem tego ćwiczenia jest rotacja bioder.",
+    "Opuszczaj sztangę wzdłuż przedniej części nogi stojącej aż poczujesz mocny rozciąg w dwugłowym uda/pośladku — zazwyczaj gryf dochodzi do połowy goleni. NIE zaokrąglaj lędźwi.",
+    "Wróć ruchem wpychając biodro nogi stojącej do przodu — mocno ściśnij pośladek. Tylna noga wraca pod ciebie. Stań prosto i odzyskaj balans przed kolejnym powtórzeniem.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę przed zmianą, LUB naprzemiennie jeśli robisz low-rep z naciskiem na balans."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "gluteus_medius"],
+    "secondary": ["erector_spinae", "core", "adductors"],
+    "stabilizers": ["obliques", "rectus_abdominis", "latissimus_dorsi", "calves", "tibialis_anterior", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "hamstrings": "P9",
+    "gluteus_medius": "P8",
+    "erector_spinae": "S7",
+    "core": "S8",
+    "obliques": "S7",
+    "adductors": "S6",
+    "latissimus_dorsi": "S4",
+    "calves": "S5",
+    "forearms": "S5"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["lifting_straps", "chalk", "low_platform_for_back_foot"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 8,
+    "prerequisites": ["dumbbell-single-leg-rdl", "kettlebell-single-leg-rdl", "barbell-romanian-deadlift", "single-leg-glute-bridge", "hip-hinge-dowel-drill"],
+    "progression_to": ["deficit-single-leg-rdl", "barbell-single-leg-rdl-on-platform", "landmine-single-leg-rdl", "kickstand-deadlift-loaded"],
+    "alternatives": ["dumbbell-single-leg-rdl", "kettlebell-single-leg-rdl", "b-stance-rdl", "kickstand-rdl", "barbell-romanian-deadlift"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Start standing tall, bar at hips, feet hip-width — then SHIFT all weight onto one foot",
+      "Standing knee SOFT (~10-20°) — not locked, not deep",
+      "Hips SQUARE to the floor before you start — pretend a laser is shooting forward from each hip bone",
+      "Chest up, lats engaged, shoulders pulled back — same back set as a bilateral RDL",
+      "Big breath, brace HARD — the offset load wants to twist your spine"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, sztanga przy biodrach, stopy na szerokość bioder — potem PRZENIEŚ cały ciężar na jedną stopę",
+      "Kolano nogi stojącej MIĘKKIE (~10-20°) — nie zablokowane, nie głębokie",
+      "Biodra RÓWNO do podłogi zanim zaczniesz — wyobraź sobie laser strzelający w przód z każdej kości biodrowej",
+      "Klatka w górze, najszersze napięte, barki ściągnięte — to samo ustawienie pleców co w obustronnym RDL",
+      "Głęboki oddech, MOCNO napnij brzuch — niesymetryczne obciążenie chce skręcić ci kręgosług"
+    ],
+    "execution_cues": [
+      "Hip BACK, back leg UP — they move TOGETHER as one seesaw motion around the standing hip",
+      "Keep hips SQUARE — back-leg hip should NEVER rotate open to the ceiling",
+      "Bar slides down the standing leg — keep it glued, not floating forward",
+      "Stop the descent at the stretch — bar around mid-shin, body roughly parallel to floor ('T' shape)",
+      "Drive the standing-leg hip FORWARD and squeeze the glute — back leg returns under you, stand tall, then re-balance"
+    ],
+    "execution_cues_pl": [
+      "Biodro DO TYŁU, tylna noga DO GÓRY — ruszają się RAZEM jak huśtawka wokół biodra nogi stojącej",
+      "Trzymaj biodra RÓWNO — biodro tylnej nogi NIGDY nie powinno otworzyć się do sufitu",
+      "Gryf zsuwa się po nodze stojącej — trzymaj go przyklejonego, nie wystającego do przodu",
+      "Zatrzymaj schodzenie na rozciągu — gryf w okolicy połowy goleni, ciało w przybliżeniu równolegle do podłogi (kształt 'T')",
+      "Wepchnij biodro nogi stojącej DO PRZODU i ściśnij pośladek — tylna noga wraca pod ciebie, stań prosto, potem odzyskaj balans"
+    ],
+    "common_faults": [
+      {
+        "fault": "Back-leg hip rotates open ('open hip') — torso twists, lifter looks like a corkscrew",
+        "faultPl": "Biodro tylnej nogi otwiera się ('otwarte biodro') — tułów się skręca, ćwiczący wygląda jak korkociąg",
+        "cause": "Weak glute medius on the standing leg, no awareness of hip position, load too heavy for unilateral control",
+        "causePl": "Słaby pośladkowy średni nogi stojącej, brak świadomości pozycji bioder, ciężar za duży na jednostronną kontrolę",
+        "cue": "Point the toe of the back foot DOWN at the floor — that automatically squares the hips. Drop the weight and film yourself from behind.",
+        "cuePl": "Skieruj palce stopy tylnej nogi W DÓŁ do podłogi — to automatycznie równa biodra. Zmniejsz ciężar i nagraj się od tyłu."
+      },
+      {
+        "fault": "Standing knee caves inward (valgus) at the bottom",
+        "faultPl": "Kolano nogi stojącej zapada się do środka (koślawienie) na dole",
+        "cause": "Weak gluteus medius, weak hip abductors, foot collapsing into pronation, load too heavy",
+        "causePl": "Słaby pośredni pośladkowy, słabe abduktory biodra, stopa zapadająca się w pronację, za duży ciężar",
+        "cue": "Press the BIG TOE into the floor and 'spread the floor' with the standing foot. Imagine pushing the knee out toward the same-side wall.",
+        "cuePl": "Wciśnij DUŻY PALEC w podłogę i 'rozepchnij podłogę' stopą stojącą. Wyobraź sobie wypychanie kolana na zewnątrz w stronę ściany po tej samej stronie."
+      },
+      {
+        "fault": "Rounded lower back at the bottom — chasing range instead of stopping at the stretch",
+        "faultPl": "Zaokrąglone plecy lędźwiowe na dole — gonienie zakresu zamiast zatrzymania na rozciągu",
+        "cause": "Trying to touch the bar to the floor, weak erectors, poor bracing under offset load",
+        "causePl": "Próba dotknięcia gryfem podłogi, słabe prostowniki, słabe napięcie brzucha pod niesymetrycznym obciążeniem",
+        "cue": "Stop the moment the back rounds OR the hamstring stretch stops the hip hinge — usually mid-shin. Range comes after technique.",
+        "cuePl": "Zatrzymaj się w momencie gdy plecy zaokrąglają się LUB rozciąg hamstringu zatrzymuje hip hinge — zazwyczaj połowa goleni. Zakres przychodzi po technice."
+      },
+      {
+        "fault": "Hopping or stumbling between reps — no balance reset",
+        "faultPl": "Skakanie lub potykanie się między powtórzeniami — brak resetu balansu",
+        "cause": "Going too fast, rep starts before lifter is stable, weight too heavy for current proprioception",
+        "causePl": "Za szybkie tempo, powtórzenie startuje zanim ćwiczący jest stabilny, ciężar za duży na obecną propriocepcję",
+        "cue": "PAUSE 1 second at the top of every rep — re-establish balance, then start the next descent. Slow rep > sloppy rep.",
+        "cuePl": "ZATRZYMAJ się na 1 sekundę na górze każdego powtórzenia — odzyskaj balans, potem zacznij kolejne schodzenie. Wolne powtórzenie > sypana technika."
+      },
+      {
+        "fault": "Back leg too low (not lifted) — turns into a one-legged stiff-leg deadlift without counterbalance",
+        "faultPl": "Tylna noga za nisko (nieuniesiona) — zamienia się w martwy ciąg na jednej nodze bez przeciwwagi",
+        "cause": "Misunderstanding of the movement, weak posterior chain, fear of falling",
+        "causePl": "Niezrozumienie ruchu, słaby tylny łańcuch, strach przed upadkiem",
+        "cue": "Back leg and torso move TOGETHER — when chest goes down, leg goes UP to the same angle. Like a seesaw.",
+        "cuePl": "Tylna noga i tułów ruszają się RAZEM — gdy klatka idzie w dół, noga idzie W GÓRĘ pod tym samym kątem. Niczym huśtawka."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace and HOLD through both the descent and the ascent (the offset load demands maximum bracing throughout). Exhale only after the lockout. Re-breathe between reps during the pause.",
+    "breathingPl": "Głęboki wdech na górze, napnij brzuch i TRZYMAJ przez całe schodzenie i wchodzenie (niesymetryczne obciążenie wymaga maksymalnego napięcia przez cały ruch). Wydech dopiero po pełnym wyproście. Oddech między powtórzeniami podczas pauzy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "balance_disorders_vertigo",
+      "severity": "avoid",
+      "modification": "Single-leg stance with offset load is high fall-risk for anyone with vestibular issues. Switch to B-stance / kickstand RDL (back foot stays on the floor for support) or bilateral RDL.",
+      "modificationPl": "Stanie na jednej nodze z niesymetrycznym obciążeniem to wysokie ryzyko upadku przy zaburzeniach przedsionkowych. Przejdź na B-stance / kickstand RDL (tylna stopa zostaje na podłodze dla podparcia) lub obustronny RDL.",
+      "alternative": "b-stance-rdl"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Offset/unilateral loading puts asymmetric shear forces on the lumbar — worse than a bilateral RDL for an acute lower back. Complete rest and consult a physiotherapist.",
+      "modificationPl": "Niesymetryczne/jednostronne obciążenie daje asymetryczne siły ścinające na lędźwie — gorzej niż obustronny RDL przy ostrym urazie. Pełen odpoczynek i konsultacja z fizjoterapeutą.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "ankle_instability",
+      "severity": "modify",
+      "modification": "The standing ankle works overtime. Wear stable shoes (no soft running shoes), train barefoot-strength separately, reduce load, OR switch to a kickstand variant until ankle is solid.",
+      "modificationPl": "Kostka nogi stojącej pracuje ponad normę. Załóż stabilne buty (nie miękkie biegowe), pracuj nad siłą stopy osobno, zmniejsz ciężar, LUB przejdź na wariant kickstand do czasu wzmocnienia kostki.",
+      "alternative": "kickstand-rdl"
+    },
+    {
+      "condition": "knee_pain_patellofemoral",
+      "severity": "caution",
+      "modification": "Watch for the standing knee caving inward (valgus). If pain appears, reduce load, focus on glute medius activation, and consider switching temporarily to B-stance RDL where both feet share load.",
+      "modificationPl": "Uważaj na zapadanie kolana stojącej nogi do środka (koślawienie). Jeśli pojawia się ból, zmniejsz ciężar, skup się na aktywacji pośladkowego średniego i rozważ tymczasowe przejście na B-stance RDL gdzie obie stopy dzielą obciążenie.",
+      "alternative": "b-stance-rdl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 per leg (hypertrophy — preferred range for glute/hamstring) | 4x4-6 per leg (strength) | 2-3x10-12 per leg (balance/control work, lighter load)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-single-leg-deadlift.gif",
+    "frames_extracted": [
+      "frames/barbell-single-leg-deadlift/frame_0_start.png",
+      "frames/barbell-single-leg-deadlift/frame_1_early.png",
+      "frames/barbell-single-leg-deadlift/frame_2_mid.png",
+      "frames/barbell-single-leg-deadlift/frame_3_late.png",
+      "frames/barbell-single-leg-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-single-leg-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa. Frame 0 (start cyklu): pozycja stojąca na jednej nodze (lewej widać w kadrze jako stojąca, prawa już lekko uniesiona z tyłu), sztanga trzymana oburącz na wysokości bioder. Frame 2 (środek): pełna pozycja 'T' / waga szalkowa — tułów pochylony niemal równolegle do podłogi, tylna noga wyciągnięta prosto w tył równolegle do podłogi, sztanga przy goleni stojącej nogi. Klatka pokazuje kluczową cechę: hip hinge + counterbalance tylnej nogi. Frame 4 (koniec/powrót): powrót do stójki, widać ghost-image tylnej nogi w pozycji wyciągniętej oraz sztangi na dole — animacja pokazuje pełen zakres ruchu. Podświetlone mocno na anatomii: gluteus maximus stojącej nogi (najjaśniej!), hamstringi (cały tył uda nogi stojącej), erector spinae (cała linia kręgosłupa), trapezius, łydka stojącej nogi (gastrocnemius — pracuje na stabilizację kostki). Klasyfikacja: 'hinge' (czysty hip hinge wokół jednego biodra), unilateral, mechanic compound. Płaszczyzna formalnie sagittal (ruch hinge sagittal), ale z dużym komponentem frontal/transverse stabilization (anti-rotation core, glute medius walczy z koślawieniem) — w schema jako 'sagittal' z zaznaczeniem w opisie i cues. Difficulty 8 (intermediate na wyższym końcu, prawie advanced) — wymaga opanowanego RDL + dobrego balansu + silnego glute medius. Equipment: tylko barbell + opcjonalnie straps przy cięższych setach. Główne mięśnie: glutes P10 (gluteus maximus to silnik koncentrycznej fazy), hamstrings P9 (ekscentryk + stretch), gluteus_medius P8 (anti-valgus + anti-rotation — jego siła decyduje o jakości lifta). Core S8 (bardzo wysoko — anti-rotation pod offset load). Erector spinae S7. Wymieniłem 3 unique faults specyficzne dla unilateral (open hip rotation, valgus standing knee, back-leg too low), 1 ogólny (rounded lumbar) i 1 dla balance (hopping). 4 contraindications: balance_disorders (avoid — wysokie ryzyko upadku), acute_lower_back (avoid — offset jest gorszy niż bilateral), ankle_instability (modify — stojąca kostka pracuje ponadnormatywnie), knee_pain_patellofemoral (caution — valgus risk). Calories 6.5 (wyżej niż bilateral RDL 6.0 ze względu na ciągłą stabilizację). Wszystkie pola PL pisane od zera z polską terminologią fitness (hip hinge, RDL, hamstringi, pośladkowy średni, koślawienie, kickstand, B-stance).",
+
+  "tags": ["bodybuilding", "athletic_performance", "unilateral", "posterior_chain", "glute_hypertrophy", "hamstring", "hip_hinge", "barbell", "balance", "anti_rotation", "asymmetry_correction", "single_leg"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "push-up-bosu-ball",
+  "name": "Push-Up on BOSU Ball",
+  "namePl": "Pompka z dłońmi na BOSU ball",
+  "aliases": ["bosu push-up", "bosu ball push-up", "push-up on bosu", "unstable surface push-up", "bosu pushup"],
+  "aliasesPl": ["pompki na BOSU", "pompki z rękami na BOSU", "pompki na półpiłce", "pompki na niestabilnym podłożu", "BOSU pompka"],
+
+  "description": "Push-up variation with hands placed on a BOSU ball (half-ball balance trainer) — typically with the flat platform side facing up (most common, easier to grip the edges) or the dome side up (harder, more instability). The unstable surface forces continuous micro-corrections, dramatically increasing recruitment of the rotator cuff, scapular stabilizers and core compared to a standard push-up. Primary chest/triceps loading remains, but absolute load tolerance drops — use as a stability-focused accessory, not a pure strength lift.",
+  "descriptionPl": "Wariant pompki z dłońmi opartymi o BOSU ball (półpiłka treningowa) — najczęściej stroną płaską platformy do góry (łatwiej chwycić krawędzie, popularniejszy wariant) lub kopułką do góry (trudniej, większa niestabilność). Niestabilne podłoże wymusza ciągłe mikro-korekcje, co drastycznie zwiększa zaangażowanie pierścienia rotatorów, stabilizatorów łopatki i core w porównaniu do zwykłych pompek. Pierwotne obciążenie klatki i tricepsa pozostaje, ale tolerowane obciążenie spada — używaj jako ćwiczenia akcesoryjnego na stabilizację, nie czystej siły.",
+
+  "instructions": [
+    "Place the BOSU ball on the floor — flat platform side up is the standard (more grip surface, more stable). Dome up is the advanced variant.",
+    "Kneel in front of the BOSU and grip the edges of the flat platform with both hands — fingers wrapping the rim, thumbs on top.",
+    "Walk your feet back into a high plank position: arms straight, hands on BOSU under shoulders, feet shoulder-width on the floor.",
+    "Brace your core, squeeze glutes. Body forms a straight line from heels through hips to head — no sagging, no piking.",
+    "Inhale and lower yourself slowly. Elbows track at ~45° from the torso (not flared 90°). The BOSU will want to wobble — actively press its edges down.",
+    "Lower until chest is just above the platform — control the wobble at the bottom, brief pause.",
+    "Exhale and press the BOSU away. Fully extend the elbows without hyperextending. Keep the platform level — don't let one side tip.",
+    "Maintain a rigid plank throughout. Head neutral, eyes looking just ahead of the BOSU."
+  ],
+  "instructionsPl": [
+    "Połóż BOSU na podłodze — standardowo płaską platformą do góry (więcej miejsca na chwyt, stabilniej). Kopułką do góry to wariant zaawansowany.",
+    "Uklęknij przed BOSU i chwyć krawędzie płaskiej platformy obiema dłońmi — palce zaciśnięte na obręczy, kciuki na wierzchu.",
+    "Cofnij stopy do wysokiej planki: ramiona wyprostowane, dłonie na BOSU pod barkami, stopy na podłodze na szerokość barków.",
+    "Napnij brzuch, ściśnij pośladki. Ciało tworzy prostą linię od pięt przez biodra do głowy — bez opadania bioder, bez 'tyłka do góry'.",
+    "Wdech, opuszczaj się powoli. Łokcie pod kątem ~45° od tułowia (nie rozsunięte na 90°). BOSU będzie chciało się kołysać — aktywnie dociskaj jego krawędzie w dół.",
+    "Schodź aż klatka będzie tuż nad platformą — kontroluj kołysanie na dole, krótka pauza.",
+    "Wydech, odepchnij BOSU. W pełni wyprostuj łokcie bez przeprostu. Trzymaj platformę poziomo — nie pozwól jednej stronie się przechylić.",
+    "Utrzymuj sztywną plankę przez cały ruch. Głowa neutralna, wzrok tuż przed BOSU."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps"],
+    "secondary": ["anterior_deltoids", "core", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "scapular_stabilizers", "obliques", "glutes", "wrist_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "triceps": "P8",
+    "anterior_deltoids": "S7",
+    "core": "S7",
+    "serratus_anterior": "S6",
+    "rotator_cuff": "T6",
+    "obliques": "T5",
+    "glutes": "T4",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "bosu_ball"],
+    "optional": ["weighted_vest"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "knee-push-up", "plank"],
+    "progression_to": ["push-up-bosu-ball-dome-up", "single-arm-push-up-bosu", "push-up-on-medicine-ball", "weighted-push-up-bosu"],
+    "alternatives": ["push-up", "push-up-on-stability-ball", "ring-push-up", "push-up-on-medicine-ball"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "BOSU flat-side up on a non-slip floor — platform won't slide",
+      "Grip the rim of the platform with all fingers — thumbs on top, like steering a wheel",
+      "Hands directly under shoulders, BOSU centered between them",
+      "Body in straight line from heels to head — pre-brace plank before first rep",
+      "Wrists, elbows and shoulders stacked at the top — eyes just past the BOSU"
+    ],
+    "setup_cues_pl": [
+      "BOSU płaską stroną do góry, na nieślizgającej się podłodze — platforma się nie przesunie",
+      "Chwyć obręcz platformy wszystkimi palcami — kciuki na wierzchu, jak przy kierownicy",
+      "Dłonie bezpośrednio pod barkami, BOSU wycentrowane między nimi",
+      "Ciało w prostej linii od pięt do głowy — pre-bracing planka przed pierwszym powtórzeniem",
+      "Nadgarstki, łokcie i barki ułożone pionowo na górze — wzrok tuż przed BOSU"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — instability magnifies sloppy form",
+      "'Crush the platform' — actively press hands DOWN and OUT to kill the wobble",
+      "Elbows at ~45° — pin them to the ribs, do not let them flare",
+      "Keep the BOSU level — if one side tips, you're shifting weight; reset and press evenly",
+      "Brace core and glutes the ENTIRE set — unstable surface punishes any energy leak"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — niestabilność potęguje każdy błąd techniki",
+      "'Zgnieć platformę' — aktywnie wciskaj dłonie W DÓŁ i NA ZEWNĄTRZ, żeby zabić kołysanie",
+      "Łokcie pod ~45° — przyklej je do żeber, nie pozwól im się rozsunąć",
+      "Trzymaj BOSU poziomo — jeśli jedna strona się przechyla, przesuwasz ciężar; zresetuj i naciskaj równomiernie",
+      "Napięte brzuch i pośladki przez CAŁĄ serię — niestabilność karze każdy spadek napięcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "BOSU tipping side-to-side (uneven hand pressure)",
+        "faultPl": "BOSU przechyla się na boki (nierównomierny nacisk dłoni)",
+        "cause": "Dominant arm pressing harder, no active 'crushing' of the platform",
+        "causePl": "Silniejsza ręka naciska mocniej, brak aktywnego 'gniecenia' platformy",
+        "cue": "Press both hands DOWN with equal force — imagine you're trying to crush the BOSU flat. If it tips, slow down and reset before the next rep.",
+        "cuePl": "Naciskaj obie dłonie W DÓŁ z równą siłą — wyobraź sobie że gniecsz BOSU na płasko. Jeśli się przechyla, zwolnij i zresetuj przed kolejnym powtórzeniem."
+      },
+      {
+        "fault": "Sagging hips (broken plank line)",
+        "faultPl": "Opadające biodra (złamana linia planki)",
+        "cause": "Core fatigue, no glute engagement — instability accelerates the loss of bracing",
+        "causePl": "Zmęczenie brzucha, brak napięcia pośladków — niestabilność przyspiesza utratę bracingu",
+        "cue": "Squeeze glutes BEFORE the first rep and re-tighten between reps. Plank position first, then push-up. Stop the set when hips drop — quality > reps.",
+        "cuePl": "Ściśnij pośladki PRZED pierwszym powtórzeniem i ponawiaj napięcie między powtórzeniami. Najpierw planka, potem pompka. Kończ serię gdy biodra opadają — jakość > powtórzenia."
+      },
+      {
+        "fault": "Elbows flared 90° (T-shape)",
+        "faultPl": "Łokcie rozsunięte na 90° (kształt litery T)",
+        "cause": "Hands gripping the BOSU too far apart, no awareness of elbow tracking",
+        "causePl": "Dłonie chwytają BOSU za szeroko, brak świadomości toru łokci",
+        "cue": "Tuck elbows to ~45° — 'hide your armpits'. The BOSU is small, so your natural grip is already shoulder-width — keep it there.",
+        "cuePl": "Schowaj łokcie do ~45° — 'schowaj pachy'. BOSU jest małe, więc naturalny chwyt to już szerokość barków — zostań przy niej."
+      },
+      {
+        "fault": "Partial range — too scared to lower fully",
+        "faultPl": "Częściowy zakres — strach przed pełnym opuszczeniem",
+        "cause": "Fear of falling on the unstable platform, lack of practice",
+        "causePl": "Strach przed upadkiem na niestabilnej platformie, brak praktyki",
+        "cue": "Lower until chest hovers just above the platform. If you can't — drop to knee push-ups on the BOSU first, build confidence, then return to full ROM.",
+        "cuePl": "Schodź aż klatka będzie tuż nad platformą. Jeśli nie dasz rady — najpierw rób pompki na kolanach na BOSU, zbuduj pewność, potem wracaj do pełnego zakresu."
+      },
+      {
+        "fault": "Holding breath the entire set (Valsalva loop)",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię (pętla Valsalvy)",
+        "cause": "Tension from instability — body 'locks down' and forgets to breathe",
+        "causePl": "Napięcie od niestabilności — ciało się 'zamyka' i zapomina oddychać",
+        "cue": "Inhale on the way down, exhale on the way up. The brace stays — only the diaphragm cycles. Dizziness = stop and reset.",
+        "cuePl": "Wdech przy schodzeniu, wydech przy wyciskaniu. Napięcie zostaje — porusza się tylko przepona. Zawroty głowy = stop i reset."
+      }
+    ],
+    "breathing": "Inhale during descent, brace at the bottom, exhale during the press. The instability invites breath-holding — be deliberate about cycling air. For higher reps, brace-and-press multiple times before a reset breath.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech podczas wyciskania. Niestabilność zachęca do wstrzymywania oddechu — świadomie wymuszaj cykl oddechu. Przy wyższych powtórzeniach możesz napiąć-i-wycisnąć kilka razy przed oddechem-resetującym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Gripping the BOSU rim keeps wrists more neutral than flat-palm push-ups, but instability adds load. If pain — use push-up handles on the floor or skip BOSU entirely.",
+      "modificationPl": "Chwyt obręczy BOSU utrzymuje nadgarstki bardziej neutralnie niż pompki na płaskich dłoniach, ale niestabilność dodaje obciążenia. Jeśli boli — użyj uchwytów do pompek na podłodze lub całkiem pomiń BOSU.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "shoulder_instability_history",
+      "severity": "avoid",
+      "modification": "Prior shoulder dislocation/subluxation — the instability challenge can re-aggravate. Build rotator cuff stability with isometric work first.",
+      "modificationPl": "Wcześniejsze zwichnięcie/podwichnięcie barku — wyzwanie niestabilności może ponownie zaostrzyć problem. Najpierw zbuduj stabilność pierścienia rotatorów ćwiczeniami izometrycznymi.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Tuck elbows tighter (~30°), narrow hand placement on the BOSU rim, reduce range. Switch to standard push-up if pain persists.",
+      "modificationPl": "Mocniej schowaj łokcie (~30°), węższy chwyt obręczy BOSU, zmniejsz zakres. Wróć do zwykłych pompek jeśli ból nie ustępuje.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "balance_disorders_vertigo",
+      "severity": "avoid",
+      "modification": "Constant micro-corrections + head-near-floor position can trigger dizziness. Use stable surface until balance issues are resolved.",
+      "modificationPl": "Ciągłe mikro-korekcje + pozycja głowy blisko podłogi mogą wywołać zawroty głowy. Używaj stabilnego podłoża do czasu rozwiązania problemów z równowagą.",
+      "alternative": "push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 (stability focus) | 3-4x6-10 (hypertrophy accessory) | 2-3x AMRAP-2 (conditioning). Reduce load 20-30% vs standard push-up — instability cost.",
+  "calories_per_kg_per_hour": 4.8,
+
+  "media": {
+    "primary": "push-up-bosu-ball.gif",
+    "frames_extracted": [
+      "frames/push-up-bosu-ball/frame_0_start.png",
+      "frames/push-up-bosu-ball/frame_1_early.png",
+      "frames/push-up-bosu-ball/frame_2_mid.png",
+      "frames/push-up-bosu-ball/frame_3_late.png",
+      "frames/push-up-bosu-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/push-up-bosu-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w wysokiej plance, dłonie chwytają krawędzie BOSU ball (widoczna czarna platforma z dome'em pod spodem — flat-side up wariant), stopy na podłodze, ciało w prostej linii od pięt do głowy, ramiona wyprostowane. Frame 2 (mid): pełne opuszczenie — klatka tuż nad BOSU, łokcie zgięte i ułożone pod ~45° od tułowia, ciało nadal w linii prostej (sztywna planka utrzymana), brak opadania bioder. Pectoralis_major (klatka piersiowa) i triceps_brachii wyraźnie podświetlone na anatomii — zgodne z biomechaniką push-up. Frame 4 (end): powrót do pozycji wyjściowej (zamknięcie cyklu, ghost-frame poprzedniej pozycji widoczny). Klasyczny push-up z dodanym wyzwaniem stabilizacji przez niestabilne podłoże — wymaga zaangażowania pierścienia rotatorów, stabilizatorów łopatki i core znacznie powyżej zwykłej pompki. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Difficulty 6/10 — pośredni między zwykłą pompką a pompką jednorącz / pompką na piłce gimnastycznej.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "bosu", "unstable_surface", "stability", "core_intensive", "rotator_cuff_engaging", "home_workout", "functional"]
+}

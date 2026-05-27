@@ -1,0 +1,205 @@
+{
+  "id": "cable-twisting-pull",
+  "name": "Cable Twisting Pull",
+  "namePl": "Twist pull na wyciągu",
+  "aliases": ["cable twisting pull", "cable rotational pull", "cable cross-body twist pull", "rotational cable row", "cable woodchop pull"],
+  "aliasesPl": ["twist pull na wyciągu", "rotacyjne przyciąganie linki", "cable twist pull jednorącz", "skośne przyciąganie wyciągu", "rotacyjny pull z linki"],
+
+  "description": "Single-arm cable pull combined with powerful torso rotation. The lifter stands in a wide split stance angled away from the cable column, grabs the handle with the far arm, and pulls it diagonally across the body while rotating the trunk through the transverse plane. Hybrid movement — trains the lats and mid-back through the pulling component AND the obliques + rotational core through the twist. Common in athletic/functional training for transferring rotational power (golf, tennis, throwing) and as a corrective exercise to wake up the posterior oblique sling (lat + opposite glute).",
+  "descriptionPl": "Przyciąganie linki wyciągu jednorącz połączone z mocną rotacją tułowia. Ćwiczący stoi w szerokim rozkroku ustawiony bokiem do kolumny wyciągu, łapie uchwyt dalszą ręką i pociąga go po skosie przez tułów rotując jednocześnie tułów w płaszczyźnie poprzecznej. Ćwiczenie hybrydowe — angażuje grzbiet (najszerszy, środek pleców) przez komponent przyciągania ORAZ skośne i rdzeń rotacyjny przez skręt. Popularne w treningu sportowym/funkcjonalnym do przenoszenia mocy rotacyjnej (golf, tenis, rzuty) i jako korekcyjne ćwiczenie aktywujące tylny pas skośny (najszerszy + przeciwległy pośladek).",
+
+  "instructions": [
+    "Set the cable pulley at chest or shoulder height. Attach a single-handle attachment.",
+    "Stand in a wide split stance, side-on to the cable column — front foot toward the machine, back foot away. The handle should be on the side opposite to your dominant grabbing arm.",
+    "Grab the handle with the far arm (the one furthest from the machine). The arm starts extended across the body, near the front shoulder.",
+    "Brace the core, soften the knees, hips facing roughly forward. The torso is rotated TOWARD the cable in the start position.",
+    "Pull the handle diagonally across the body while rotating the torso AWAY from the cable — drive the elbow back and across, leading the rotation through the ribcage.",
+    "Finish with the working arm pulled back past the ribs, torso rotated open, chest now facing AWAY from the cable. Squeeze the lat and feel the obliques on the opposite side.",
+    "Return under control along the exact same arc — let the cable rotate you back to the start position. Do NOT let it yank you — resist the eccentric.",
+    "Complete all reps on one side, then switch stance and arm. Breathe: exhale on the pull/twist, inhale on the return."
+  ],
+  "instructionsPl": [
+    "Ustaw rolkę wyciągu na wysokości klatki lub barku. Załóż pojedynczy uchwyt jednorączny.",
+    "Stań w szerokim rozkroku bokiem do kolumny wyciągu — przednia noga w stronę maszyny, tylna noga w przeciwną. Uchwyt powinien być po stronie przeciwnej do twojej ręki roboczej.",
+    "Złap uchwyt dalszą ręką (tą która jest dalej od maszyny). Ramię startuje wyciągnięte przez tułów, blisko przedniego barku.",
+    "Napnij brzuch, lekko ugnij kolana, biodra mniej więcej w przód. Tułów jest w starcie obrócony W STRONĘ wyciągu.",
+    "Pociągnij uchwyt po skosie przez tułów obracając jednocześnie tułów OD wyciągu — prowadź łokciem w tył i w skos, rotację inicjuj klatką piersiową.",
+    "Skończ z ramieniem roboczym ściągniętym za żebra, tułów obrócony otwarty, klatka teraz skierowana OD wyciągu. Ściśnij najszerszy i poczuj skośne po przeciwnej stronie.",
+    "Wróć kontrolowanie po dokładnie tym samym łuku — pozwól lince obrócić cię z powrotem do startu. NIE pozwól się szarpnąć — opieraj się fazie ekscentrycznej.",
+    "Zrób wszystkie powtórzenia na jedną stronę, potem zmień pozycję i rękę. Oddech: wydech na pociągnięciu/skręcie, wdech na powrocie."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "lats"],
+    "secondary": ["rhomboids", "teres_major", "posterior_deltoid", "rectus_abdominis"],
+    "stabilizers": ["erector_spinae", "glutes", "quadriceps", "transverse_abdominis", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "lats": "P8",
+    "rhomboids": "S6",
+    "teres_major": "S6",
+    "posterior_deltoid": "S5",
+    "rectus_abdominis": "S5",
+    "erector_spinae": "T4",
+    "glutes": "T4",
+    "transverse_abdominis": "T3",
+    "quadriceps": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle"],
+    "optional": ["adjustable_pulley"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["seated-cable-row", "cable-woodchopper", "pallof-press"],
+    "progression_to": ["landmine-rotation", "medicine-ball-rotational-throw", "cable-rotational-row-heavy"],
+    "alternatives": ["cable-woodchopper", "cable-standing-twist-row-v-bar", "landmine-twist", "russian-twist", "medicine-ball-rotational-slam"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Wide split stance, side-on to the cable column",
+      "Far arm grabs the handle — cross-body start position",
+      "Soft knees, brace the core BEFORE you pull",
+      "Hips face forward, only the torso rotates",
+      "Start with the torso rotated INTO the cable"
+    ],
+    "setup_cues_pl": [
+      "Szeroki rozkrok, bokiem do kolumny wyciągu",
+      "Dalsza ręka łapie uchwyt — start z ramieniem przez tułów",
+      "Lekko ugięte kolana, napnij brzuch ZANIM pociągniesz",
+      "Biodra w przód, rotuje TYLKO tułów",
+      "Start z tułowiem obróconym W STRONĘ wyciągu"
+    ],
+    "execution_cues": [
+      "Lead with the elbow, not the hand — drive it back and across",
+      "Rotate through the ribcage — feel the obliques fire",
+      "Squeeze the lat at the back of the rotation",
+      "Hips stay relatively still — knees do not buckle inward",
+      "Resist the cable on the return — slow eccentric"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciem, nie dłonią — wbij go w tył i w skos",
+      "Rotuj klatką piersiową — poczuj jak załapują skośne",
+      "Ściśnij najszerszy w skrajnej tylnej pozycji rotacji",
+      "Biodra stoją w miejscu — kolana nie zapadają się do środka",
+      "Opieraj się sile linki na powrocie — wolna ekscentryka"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with the arm only (no torso rotation)",
+        "faultPl": "Przyciąganie samym ramieniem (bez rotacji tułowia)",
+        "cause": "Treating the exercise like a one-arm row — forgetting the rotational component which is the whole point",
+        "causePl": "Traktowanie ćwiczenia jak wiosłowania jednorącz — pomijanie komponentu rotacyjnego, który jest sednem ruchu",
+        "cue": "Lighten the weight by 30%. Film yourself from above — your shoulders should sweep through 90°+ of rotation, not stay square to the cable.",
+        "cuePl": "Zmniejsz ciężar o 30%. Nagraj się z góry — barki powinny przejść 90°+ rotacji, nie zostawać równolegle do wyciągu."
+      },
+      {
+        "fault": "Hip rotation instead of trunk rotation",
+        "faultPl": "Rotacja biodrami zamiast tułowiem",
+        "cause": "Trying to lift too much weight — the body cheats by spinning the whole pelvis instead of working the obliques",
+        "causePl": "Próba przeciągnięcia zbyt dużego ciężaru — ciało oszukuje obracając całą miednicą zamiast pracując skośnymi",
+        "cue": "Plant the back foot harder. Imagine your belt buckle stays pointing forward through the entire rep — only the ribcage rotates.",
+        "cuePl": "Mocniej wciśnij tylną stopę w ziemię. Wyobraź sobie że klamra paska zostaje skierowana przed siebie przez całe powtórzenie — rotuje tylko klatka."
+      },
+      {
+        "fault": "Rounded lower back at the end position",
+        "faultPl": "Zaokrąglony dół pleców w końcowej pozycji",
+        "cause": "Reaching for extra ROM by collapsing the spine, or weight too heavy forcing compensation",
+        "causePl": "Próba zwiększenia zakresu przez załamanie kręgosłupa, lub zbyt duży ciężar wymuszający kompensację",
+        "cue": "Stay tall through the whole arc. Stop the rotation where you can still maintain a long spine — usually shoulders rotate ~90° total, not more.",
+        "cuePl": "Pozostań wyprostowany przez cały łuk. Zatrzymaj rotację tam gdzie nadal trzymasz wydłużony kręgosłup — zwykle barki rotują w sumie ~90°, nie więcej."
+      },
+      {
+        "fault": "Cable yanks the lifter back on the eccentric",
+        "faultPl": "Linka szarpie ćwiczącego z powrotem w fazie ekscentrycznej",
+        "cause": "Releasing tension after the pull, treating the return as 'rest' instead of controlled eccentric",
+        "causePl": "Puszczenie napięcia po pociągnięciu, traktowanie powrotu jako 'odpoczynek' zamiast kontrolowanej ekscentryki",
+        "cue": "Eccentric should take 2-3 seconds. Fight the cable back to start — the obliques work on the way back too.",
+        "cuePl": "Ekscentryka powinna trwać 2-3 sekundy. Walcz z linką w drodze powrotnej — skośne pracują też podczas powrotu."
+      },
+      {
+        "fault": "Front knee collapsing inward (valgus)",
+        "faultPl": "Przednie kolano zapadające się do środka (koślawość)",
+        "cause": "Weak hip abductors or trying to brace against too heavy a load by twisting through the leg",
+        "causePl": "Słabe odwodziciele biodra lub próba stabilizacji przy zbyt dużym ciężarze poprzez skręcanie nogi",
+        "cue": "Drive the knee out, in line with the second toe. If you can't hold it, the weight is too heavy.",
+        "cuePl": "Wypchnij kolano na zewnątrz, w linii z drugim palcem stopy. Jeśli nie utrzymasz, ciężar za duży."
+      }
+    ],
+    "breathing": "Exhale forcefully on the pull/twist — this engages the obliques and transverse abdominis simultaneously. Inhale through the nose on the controlled return. Do not hold your breath — this is a flowing, rotational movement, not a max-effort lift.",
+    "breathingPl": "Wydychaj mocno na pociągnięciu/skręcie — to jednocześnie angażuje skośne i poprzeczne brzucha. Wdech nosem na kontrolowanym powrocie. Nie wstrzymuj oddechu — to ruch płynny, rotacyjny, nie wysiłek maksymalny."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded trunk rotation under tension is a high-risk pattern for disc injury. Switch to anti-rotation exercises (pallof press, dead-bug) until cleared by a physio.",
+      "modificationPl": "Obciążona rotacja tułowia pod napięciem to wzorzec wysokiego ryzyka dla dysku. Przejdź na ćwiczenia anty-rotacyjne (pallof press, dead-bug) do czasu zgody fizjoterapeuty.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Rotational load under acute pain can worsen the condition. Use isometric core work (planks, dead-bug) while pain resolves.",
+      "modificationPl": "Obciążenie rotacyjne przy ostrym bólu może pogorszyć stan. Stosuj izometryczne ćwiczenia rdzenia (deski, dead-bug) podczas ustępowania bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Lower the pulley to hip height to reduce overhead/forward stress on the working shoulder. Keep the elbow lower than the shoulder throughout.",
+      "modificationPl": "Obniż rolkę do wysokości bioder by zmniejszyć stres na pracujący bark od góry/przodu. Trzymaj łokieć poniżej barku przez cały ruch.",
+      "alternative": "cable-woodchopper"
+    },
+    {
+      "condition": "si_joint_dysfunction",
+      "severity": "caution",
+      "modification": "Asymmetric loaded rotation can aggravate sacroiliac joint instability. Reduce weight, focus on symmetric pelvic position, or switch to bilateral rotation (medicine ball with two hands).",
+      "modificationPl": "Asymetryczna rotacja pod obciążeniem może zaostrzyć niestabilność stawu krzyżowo-biodrowego. Zmniejsz ciężar, skup się na symetrycznej pozycji miednicy, lub przejdź na rotację oburącz (piłka lekarska).",
+      "alternative": "russian-twist"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 reps per side | 3-4x8-10 with heavier load for power emphasis",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-twisting-pull.gif",
+    "frames_extracted": [
+      "frames/cable-twisting-pull/frame_0_start.png",
+      "frames/cable-twisting-pull/frame_1_early.png",
+      "frames/cable-twisting-pull/frame_2_mid.png",
+      "frames/cable-twisting-pull/frame_3_late.png",
+      "frames/cable-twisting-pull/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-twisting-pull"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek w GIFie). Pełny cykl pokazuje rotacyjne przyciąganie cable z pozycji szerokiego rozkroku bokiem do wyciągu: frame_0/4 = pozycja końcowa (tułów obrócony OD wyciągu, ramię pociągnięte za żebra, podświetlone najszerszy + środek pleców + skośne); frame_2 = środek ruchu (ramię na wysokości klatki, podświetlone te same mięśnie + dodatkowo widać aktywację mięśni grzbietowych); frame_1/3 = przejściowe pozycje rotacji. Pozycja stóp: szeroki, asymetryczny split stance, przednia noga ugięta, tylna wyprostowana, tułów rotuje w płaszczyźnie poprzecznej. Mocno widoczna rotacja przez klatkę piersiową. Choć jahel klasyfikuje to jako 'lats', graficznie najbardziej widoczna jest aktywacja skośnych + lats razem — dlatego dałem obliques P10 (rotacja jest pierwotnym wzorcem ruchu) i lats P8 (znaczny komponent przyciągania). To jest klasyczne hybrydowe ćwiczenie sport-specific. Difficulty 4 zgodnie z poleceniem usera. Wszystkie pola PL napisane od zera (terminologia: najszerszy, skośne, rolka wyciągu, rozkrok, klatka, miednica).",
+
+  "tags": ["core", "obliques", "lats", "rotation", "cable", "unilateral", "functional", "sport_specific", "intermediate", "athletic_performance", "anti_rotation_progression"]
+}

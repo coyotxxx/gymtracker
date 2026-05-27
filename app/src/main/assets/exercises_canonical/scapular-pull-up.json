@@ -1,0 +1,201 @@
+{
+  "id": "scapular-pull-up",
+  "name": "Scapular Pull-Up",
+  "namePl": "Podciąganie łopatkowe (scapular pull-up)",
+  "aliases": ["scapular pullup", "scap pull-up", "scapula pull-up", "scapular retraction hang"],
+  "aliasesPl": ["podciąganie łopatkowe", "scap pull-up", "depresja łopatek na drążku", "aktywny zwis"],
+
+  "description": "Foundational scapular control drill performed hanging from a pull-up bar. Elbows stay LOCKED in full extension — the entire movement comes from the shoulder blades. You depress and slightly retract the scapulae, which raises the body ~5 cm. Builds lower trapezius strength, scapular awareness, and the bottom-end mechanics required to initiate a real pull-up. Classic prerequisite drill on the road to first pull-up.",
+  "descriptionPl": "Fundamentalny drill kontroli łopatek wykonywany w zwisie na drążku. Łokcie POZOSTAJĄ ZABLOKOWANE w pełnym wyproście — cały ruch wychodzi z łopatek. Opuszczasz i lekko ściągasz łopatki (depresja), co unosi ciało o ~5 cm. Buduje siłę dolnego trapezu, świadomość pracy łopatek i mechanikę startową niezbędną do zainicjowania prawdziwego podciągnięcia. Klasyczny drill przygotowawczy przed pierwszym pull-upem.",
+
+  "instructions": [
+    "Grip a pull-up bar with palms facing AWAY from you (pronated grip), hands shoulder-width apart.",
+    "Hang in a passive dead-hang: arms fully extended, shoulders relaxed UP toward the ears.",
+    "Lock your elbows — they must NOT bend at any point during the rep.",
+    "Brace your core and slightly cross or bend your legs to stop swinging.",
+    "DEPRESS the shoulder blades — pull them DOWN and slightly TOGETHER. Your body rises ~5 cm (2 inches).",
+    "Feel the squeeze in your lower trapezius and lats. Chest rises slightly, shoulders move away from ears.",
+    "Pause briefly at the top (1-2 sec), then release the scapulae back to a passive hang (shoulders rise toward ears).",
+    "Repeat for prescribed reps. Quality over quantity — 5-10 strict reps beats 20 sloppy ones."
+  ],
+  "instructionsPl": [
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt nachwytem), ręce na szerokość barków.",
+    "Zwiśnij w pasywnym dead-hang: ramiona w pełnym wyproście, barki rozluźnione W GÓRĘ w stronę uszu.",
+    "Zablokuj łokcie — NIE mogą się zginać w żadnym momencie powtórzenia.",
+    "Napnij brzuch i lekko skrzyżuj lub zegnij nogi by zatrzymać bujanie.",
+    "OPUŚĆ łopatki — ściągnij je W DÓŁ i lekko DO SIEBIE. Ciało uniesie się o ~5 cm.",
+    "Poczuj ściśnięcie w dolnym trapezie i najszerszych. Klatka lekko się unosi, barki oddalają od uszu.",
+    "Krótka pauza na górze (1-2 sek), potem zwolnij łopatki do pasywnego zwisu (barki wracają do uszu).",
+    "Powtórz przez zalecaną liczbę powtórzeń. Jakość nad ilością — 5-10 strict powtórzeń bije 20 niechlujnych."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_depression",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_lower", "latissimus_dorsi"],
+    "secondary": ["rhomboids", "trapezius_middle", "forearms"],
+    "stabilizers": ["core", "rotator_cuff", "serratus_anterior", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_lower": "P10",
+    "latissimus_dorsi": "P7",
+    "rhomboids": "S6",
+    "trapezius_middle": "S6",
+    "forearms": "S7",
+    "rotator_cuff": "S5",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dead-hang"],
+    "progression_to": ["negative-pull-up", "band-assisted-pull-up", "pull-up", "chin-up"],
+    "alternatives": ["lat-pulldown-scapular", "inverted-row-scapular-retraction", "prone-y-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pronated grip, shoulder-width apart",
+      "Full passive dead-hang first",
+      "ELBOWS LOCKED — straight arms entire set",
+      "Legs crossed or bent, no swinging",
+      "Shoulders begin shrugged up to ears"
+    ],
+    "setup_cues_pl": [
+      "Chwyt nachwytem, na szerokość barków",
+      "Najpierw pełen pasywny dead-hang",
+      "ŁOKCIE ZABLOKOWANE — proste ramiona przez całą serię",
+      "Nogi skrzyżowane lub zgięte, bez bujania",
+      "Barki startują uniesione do uszu"
+    ],
+    "execution_cues": [
+      "Pull shoulder blades DOWN AND TOGETHER",
+      "Body rises ~5 cm — small movement, big squeeze",
+      "Elbows STAY STRAIGHT — if they bend, it's a half pull-up",
+      "Squeeze lower traps and lats at the top",
+      "Slow controlled lowering, full passive hang at bottom"
+    ],
+    "execution_cues_pl": [
+      "Ściągaj łopatki W DÓŁ I DO SIEBIE",
+      "Ciało unosi się ~5 cm — mały ruch, mocne ściśnięcie",
+      "Łokcie ZOSTAJĄ PROSTE — jeśli się zginają, to half pull-up",
+      "Ściśnij dolne trapezy i najszersze na górze",
+      "Wolne kontrolowane opuszczanie, pełen pasywny zwis na dole"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows (turning it into a partial pull-up)",
+        "faultPl": "Zginanie łokci (zamiana w częściowe podciąganie)",
+        "cause": "Wanting more range, not feeling the scapular movement, or weak lower traps",
+        "causePl": "Chęć większego zakresu, brak czucia ruchu łopatek lub słabe dolne trapezy",
+        "cue": "LOCK elbows — film yourself from the side. Body should only rise ~5 cm, not 20 cm.",
+        "cuePl": "ZABLOKUJ łokcie — nagrywaj się z boku. Ciało powinno unieść się ~5 cm, nie 20 cm."
+      },
+      {
+        "fault": "No visible movement — just dead-hanging",
+        "faultPl": "Brak widocznego ruchu — tylko zwis",
+        "cause": "Lacking scapular awareness, shoulders already 'stuck' in depressed position",
+        "causePl": "Brak świadomości pracy łopatek, barki już 'zablokowane' w opuszczeniu",
+        "cue": "First fully RELAX — let shoulders rise to ears. THEN actively pull blades down. Look for visible up-down body shift.",
+        "cuePl": "Najpierw pełen ROZLUŹ — pozwól barkom unieść się do uszu. POTEM aktywnie ściągnij łopatki w dół. Szukaj widocznego przesunięcia ciała w górę-w dół."
+      },
+      {
+        "fault": "Swinging or kipping the legs",
+        "faultPl": "Bujanie lub kipping nogami",
+        "cause": "Lack of core control, momentum compensation for weak scapular muscles",
+        "causePl": "Brak kontroli brzucha, kompensacja pędem dla słabych mięśni łopatkowych",
+        "cue": "Cross feet, brace abs, slow tempo. If you swing, you skip the lower trap work.",
+        "cuePl": "Skrzyżuj stopy, napnij brzuch, wolne tempo. Jeśli bujasz, pomijasz pracę dolnych trapezów."
+      },
+      {
+        "fault": "Shrugging shoulders UP instead of DOWN",
+        "faultPl": "Unoszenie barków W GÓRĘ zamiast W DÓŁ",
+        "cause": "Confusing upper trap shrug with scapular depression",
+        "causePl": "Mylenie ściągnięcia górnego trapezu z depresją łopatek",
+        "cue": "Push shoulders AWAY from ears. Imagine pushing the bar UP while staying still — opposite of a shrug.",
+        "cuePl": "Odsuwaj barki OD uszu. Wyobraź sobie że napierasz drążek W GÓRĘ stojąc w miejscu — przeciwieństwo shruga."
+      },
+      {
+        "fault": "Holding breath, going too fast for reps",
+        "faultPl": "Wstrzymywanie oddechu, za szybkie tempo dla powtórzeń",
+        "cause": "Treating it like a strength exercise instead of motor control drill",
+        "causePl": "Traktowanie jako ćwiczenie siłowe zamiast drill kontroli motorycznej",
+        "cue": "1-2 sec hold at top, controlled lowering. Breathe steadily. This is a SKILL drill, not a max effort.",
+        "cuePl": "1-2 sek pauza na górze, kontrolowane opuszczanie. Spokojny oddech. To drill TECHNIKI, nie wysiłek maksymalny."
+      }
+    ],
+    "breathing": "Inhale at the bottom (passive hang). Exhale as you depress the scapulae. Hold breath briefly at the top, then inhale again on the descent.",
+    "breathingPl": "Wdech na dole (pasywny zwis). Wydech podczas opuszczania łopatek. Krótka zatrzymana faza na górze, potem wdech podczas zejścia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce hang time, avoid full passive elevation if it pinches. Try standing scapular pulldowns on cable first.",
+      "modificationPl": "Skróć czas zwisu, unikaj pełnej elewacji pasywnej jeśli boli. Spróbuj najpierw cable scapular pulldown stojąc.",
+      "alternative": "lat-pulldown-scapular"
+    },
+    {
+      "condition": "lat_strain",
+      "severity": "avoid",
+      "modification": "Pause all loaded hanging until healed. Resume with low-load supine scapular work.",
+      "modificationPl": "Wstrzymaj wszystkie zwisy obciążone do wyzdrowienia. Wróć przez niskoobciążone leżące drill łopatek.",
+      "alternative": "prone-y-raise"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps, thicker bar grip, or shorten set length. Switch to cable scapular pulldown if pain persists.",
+      "modificationPl": "Użyj wraps na nadgarstki, grubszego chwytu, lub skróć serię. Przejdź na cable scapular pulldown jeśli ból trwa.",
+      "alternative": "lat-pulldown-scapular"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Do not perform until medical clearance. Hanging loads the cuff significantly.",
+      "modificationPl": "Nie wykonuj do akceptacji lekarza. Zwisanie znacząco obciąża stożek rotatorów.",
+      "alternative": "prone-y-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (skill drill) | 3x30s holds (isometric variation) | 2-3x AMRAP as warm-up before pull-ups",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "scapular-pull-up.gif",
+    "frames_extracted": [
+      "frames/scapular-pull-up/frame_0_start.png",
+      "frames/scapular-pull-up/frame_1_early.png",
+      "frames/scapular-pull-up/frame_2_mid.png",
+      "frames/scapular-pull-up/frame_3_late.png",
+      "frames/scapular-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/scapular-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: pasywny dead-hang, barki uniesione do uszu, łopatki w elewacji. Frame 2: aktywna depresja łopatek, ciało uniesione ~5 cm, dolny trapez + najszersze podświetlone na czerwono. Łokcie ZOSTAJĄ wyprostowane przez cały ruch (kluczowa różnica od pull-upa). Klasyczny drill kontroli łopatek — prerekwizyt przed pull-upem. Cel: nauka depresji łopatek + budowa siły dolnego trapezu + bottom-end pull. Difficulty 4/10 — dostępne dla początkujących pod warunkiem opanowania dead-hang.",
+
+  "tags": ["calisthenics", "bodyweight", "scapular_control", "prerequisite_drill", "isolation", "lower_trap", "back", "skill_drill", "pull_up_progression", "warm_up"]
+}

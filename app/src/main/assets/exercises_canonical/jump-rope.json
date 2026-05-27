@@ -1,0 +1,206 @@
+{
+  "id": "jump-rope",
+  "name": "Jump Rope",
+  "namePl": "Skakanka",
+  "aliases": ["skipping rope", "rope skipping", "skipping", "speed rope", "basic bounce"],
+  "aliasesPl": ["skakanie na skakance", "skipping", "skakanka klasyczna", "skok obunóż na skakance", "basic bounce na skakance"],
+
+  "description": "Classic full-body cardio and coordination drill — small, repeated bilateral jumps over a rotating rope swung in front-to-back arcs by the wrists. Despite its 'playground' image, jump rope is one of the most efficient conditioning tools in sport: it builds aerobic and anaerobic capacity, calf and foot endurance, ankle stiffness, foot-eye-hand coordination and rhythm. Boxers, MMA fighters and basketball players use it daily for footwork and breathing. Calorie burn rivals or exceeds running (≈600-1000 kcal/h depending on tempo) at a fraction of the joint impact when done on the balls of the feet. Equipment is minimal (a rope and ~2x2 m of clearance) and intensity scales from gentle 60-rpm warm-up to 180+ rpm speed work or double-unders. Trains the elastic component of the calf-Achilles complex like no other tool — short ground contact, high repetition, low absolute load.",
+  "descriptionPl": "Klasyczne ćwiczenie cardio i koordynacyjne na całe ciało — drobne, powtarzalne obunożne wyskoki nad obracającą się skakanką, którą wprawiasz w ruch nadgarstkami w łuku przód-tył. Mimo 'szkolnego' wizerunku, skakanka to jedno z najefektywniejszych narzędzi conditioningu w sporcie: buduje wydolność tlenową i beztlenową, wytrzymałość łydek i stóp, sztywność stawów skokowych, koordynację oko-ręka-stopa i rytm. Bokserzy, zawodnicy MMA i koszykarze używają jej codziennie do pracy nad footworkiem i oddechem. Wydatek kaloryczny dorównuje lub przewyższa bieganie (~600-1000 kcal/h zależnie od tempa) przy ułamku obciążenia stawów, gdy skaczesz na śródstopiu. Sprzęt minimalny (skakanka i ~2x2 m wolnej przestrzeni), intensywność skaluje się od spokojnej rozgrzewki 60 obr/min do speed worku 180+ obr/min lub double-underów. Jak żadne inne narzędzie trenuje sprężystą składową kompleksu łydka-ścięgno Achillesa — krótki kontakt z podłożem, wysoka powtarzalność, niskie absolutne obciążenie.",
+
+  "instructions": [
+    "Stań prosto, stopy razem lub na szerokość bioder, ciężar na śródstopiu. Łokcie blisko tułowia, dłonie na wysokości bioder, lekko z przodu.",
+    "Dobierz długość skakanki: nastąp jedną stopą na środek liny — rączki powinny sięgać linii pach (skakanka klasyczna) lub dolnej linii klatki piersiowej (speed rope).",
+    "Trzymaj rączki luźno opuszkami palców — uchwyt 'pen grip', nie zaciskaj pięści. Nadgarstki napięte, ramiona rozluźnione.",
+    "Zacznij rotację skakanką ruchem NADGARSTKÓW (nie ramion) — narysuj małe kółka po bokach ciała. Lina przechodzi za plecami i nad głową w jednostajnym łuku.",
+    "Gdy lina zbliża się do stóp, wykonaj mały wyskok obunóż na ~2-3 cm nad podłogę — wystarczy tyle, by lina przeszła pod stopami.",
+    "Ląduj miękko na śródstopiu (NIGDY na piętach), kolana lekko ugięte, pięty ledwie dotykają podłogi. Każdy kontakt z podłożem ma być krótki i sprężysty.",
+    "Utrzymuj rytm: 'tik-tok' — jeden wyskok = jedno obrotowe przejście liny. Tempo początkowe ~60-80 obr/min, docelowe 120-180+ obr/min.",
+    "Wzrok przed siebie (nie na linę ani stopy), tułów spokojny, brzuch lekko napięty. Oddychaj rytmicznie nosem lub nosem-ustami w tempie wyskoków."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy razem lub na szerokość bioder, ciężar na śródstopiu. Łokcie blisko tułowia, dłonie na wysokości bioder, lekko z przodu.",
+    "Dobierz długość skakanki: nastąp jedną stopą na środek liny — rączki powinny sięgać linii pach (skakanka klasyczna) lub dolnej linii klatki piersiowej (speed rope).",
+    "Trzymaj rączki luźno opuszkami palców — uchwyt 'pen grip', nie zaciskaj pięści. Nadgarstki napięte, ramiona rozluźnione.",
+    "Zacznij rotację skakanką ruchem NADGARSTKÓW (nie ramion) — narysuj małe kółka po bokach ciała. Lina przechodzi za plecami i nad głową w jednostajnym łuku.",
+    "Gdy lina zbliża się do stóp, wykonaj mały wyskok obunóż na ~2-3 cm nad podłogę — wystarczy tyle, by lina przeszła pod stopami.",
+    "Ląduj miękko na śródstopiu (NIGDY na piętach), kolana lekko ugięte, pięty ledwie dotykają podłogi. Każdy kontakt z podłożem ma być krótki i sprężysty.",
+    "Utrzymuj rytm: 'tik-tok' — jeden wyskok = jedno obrotowe przejście liny. Tempo początkowe ~60-80 obr/min, docelowe 120-180+ obr/min.",
+    "Wzrok przed siebie (nie na linę ani stopy), tułów spokojny, brzuch lekko napięty. Oddychaj rytmicznie nosem lub nosem-ustami w tempie wyskoków."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["calves", "forearms"],
+    "secondary": ["quadriceps", "hamstrings", "glutes", "anterior_tibialis"],
+    "stabilizers": ["core", "shoulders", "scapular_stabilizers", "intrinsic_foot_muscles"]
+  },
+
+  "muscle_intensity": {
+    "calves": "P10",
+    "forearms": "P7",
+    "quadriceps": "S5",
+    "hamstrings": "S4",
+    "glutes": "S4",
+    "anterior_tibialis": "S6",
+    "core": "T5",
+    "shoulders": "T4",
+    "scapular_stabilizers": "T4",
+    "intrinsic_foot_muscles": "T6"
+  },
+
+  "equipment": {
+    "required": ["jump_rope"],
+    "optional": ["weighted_rope", "speed_rope", "beaded_rope", "exercise_mat", "athletic_shoes"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["jumping-jacks", "calf-raise", "pogo-hops"],
+    "progression_to": ["jump-rope-double-under", "jump-rope-crossover", "jump-rope-high-knees", "jump-rope-boxer-skip", "jump-rope-single-leg", "jump-rope-side-to-side"],
+    "alternatives": ["jumping-jacks", "high-knees", "pogo-hops", "stationary-bike", "elliptical", "rowing-machine", "burpee"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dobierz długość skakanki: stopa na środku liny → rączki na wysokości pach (klasyk) lub klatki (speed rope)",
+      "Wyczyść ~2x2 m wolnej przestrzeni, sufit min. 2.5 m — bez żyrandoli i przeszkód nad głową",
+      "Powierzchnia: drewno, mata fitness lub gładki beton — NIE trawa (lina się zaczepia), NIE asfalt (zniszczy rope)",
+      "Stopy razem lub na szerokość bioder, ciężar na śródstopiu, kolana miękkie",
+      "Łokcie blisko tułowia (3-5 cm od żeber), dłonie na wysokości bioder lekko z przodu — to twoje 'okno operacyjne'"
+    ],
+    "setup_cues_pl": [
+      "Dobierz długość skakanki: stopa na środku liny → rączki na wysokości pach (klasyk) lub klatki (speed rope)",
+      "Wyczyść ~2x2 m wolnej przestrzeni, sufit min. 2.5 m — bez żyrandoli i przeszkód nad głową",
+      "Powierzchnia: drewno, mata fitness lub gładki beton — NIE trawa (lina się zaczepia), NIE asfalt (zniszczy rope)",
+      "Stopy razem lub na szerokość bioder, ciężar na śródstopiu, kolana miękkie",
+      "Łokcie blisko tułowia (3-5 cm od żeber), dłonie na wysokości bioder lekko z przodu — to twoje 'okno operacyjne'"
+    ],
+    "execution_cues": [
+      "Kręć NADGARSTKAMI, nie ramionami — barki spokojne, łokcie nieruchome przy żebrach",
+      "Wyskakuj NISKO — 2-3 cm, tyle żeby lina przeszła. Wysokie wyskoki marnują energię i zabijają rytm",
+      "Ląduj na ŚRÓDSTOPIU, pięty ledwie dotykają lub w ogóle — to klucz do sprężystości i ochrony kolan",
+      "Krótki kontakt z podłożem — wyobraź sobie 'gorącą podłogę', odbijaj się od niej",
+      "Wzrok przed siebie na linię horyzontu — nie patrz na linę ani na stopy",
+      "Oddychaj rytmicznie nosem (lub nosem-ustami przy wyższej intensywności) w tempie wyskoków — bez wstrzymywania"
+    ],
+    "execution_cues_pl": [
+      "Kręć NADGARSTKAMI, nie ramionami — barki spokojne, łokcie nieruchome przy żebrach",
+      "Wyskakuj NISKO — 2-3 cm, tyle żeby lina przeszła. Wysokie wyskoki marnują energię i zabijają rytm",
+      "Ląduj na ŚRÓDSTOPIU, pięty ledwie dotykają lub w ogóle — to klucz do sprężystości i ochrony kolan",
+      "Krótki kontakt z podłożem — wyobraź sobie 'gorącą podłogę', odbijaj się od niej",
+      "Wzrok przed siebie na linię horyzontu — nie patrz na linę ani na stopy",
+      "Oddychaj rytmicznie nosem (lub nosem-ustami przy wyższej intensywności) w tempie wyskoków — bez wstrzymywania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Jumping too high (5+ cm) — 'pogo stick' style",
+        "faultPl": "Za wysokie wyskoki (5+ cm) — styl 'na pogo'",
+        "cause": "Brak zaufania do rytmu, próba 'przeskoczyć' linę zamiast pozwolić jej przejść, słaba świadomość wysokości",
+        "causePl": "Brak zaufania do rytmu, próba 'przeskoczyć' linę zamiast pozwolić jej przejść, słaba świadomość wysokości",
+        "cue": "Wyskok ma być MINIMALNY — 2-3 cm, kartka papieru przejdzie pod stopą. Skup się na rytmie liny, nie na wyskoku. Im niżej, tym szybciej i dłużej wytrzymasz.",
+        "cuePl": "Wyskok ma być MINIMALNY — 2-3 cm, kartka papieru przejdzie pod stopą. Skup się na rytmie liny, nie na wyskoku. Im niżej, tym szybciej i dłużej wytrzymasz."
+      },
+      {
+        "fault": "Kręcenie skakanką całymi ramionami zamiast nadgarstkami",
+        "faultPl": "Kręcenie skakanką całymi ramionami zamiast nadgarstkami",
+        "cause": "Spięte barki, sztywne nadgarstki, brak techniki — łokcie 'latają' szeroko, ramiona się męczą po 30 sekundach",
+        "causePl": "Spięte barki, sztywne nadgarstki, brak techniki — łokcie 'latają' szeroko, ramiona się męczą po 30 sekundach",
+        "cue": "Łokcie PRZYKLEJONE do żeber. Nadgarstki kręcą małe kółka — wyobraź sobie, że mieszasz mały garnek po obu stronach ciała. Ramiona = zero ruchu.",
+        "cuePl": "Łokcie PRZYKLEJONE do żeber. Nadgarstki kręcą małe kółka — wyobraź sobie, że mieszasz mały garnek po obu stronach ciała. Ramiona = zero ruchu."
+      },
+      {
+        "fault": "Lądowanie na piętach (heel strike)",
+        "faultPl": "Lądowanie na piętach (heel strike)",
+        "cause": "Zmęczone łydki, niewytrenowane stopy, próba 'odpoczynku' przez opadanie na pięty",
+        "causePl": "Zmęczone łydki, niewytrenowane stopy, próba 'odpoczynku' przez opadanie na pięty",
+        "cue": "PIĘTY NIE DOTYKAJĄ podłogi (lub ledwo). Cały kontakt na śródstopiu, łydki pracują jak sprężyna. Jeśli musisz odpocząć — przerwij serię, nie ląduj na piętach.",
+        "cuePl": "PIĘTY NIE DOTYKAJĄ podłogi (lub ledwo). Cały kontakt na śródstopiu, łydki pracują jak sprężyna. Jeśli musisz odpocząć — przerwij serię, nie ląduj na piętach."
+      },
+      {
+        "fault": "Patrzenie w dół na linę lub stopy",
+        "faultPl": "Patrzenie w dół na linę lub stopy",
+        "cause": "Brak zaufania do rytmu, próba 'wzrokowej kontroli' liny — powoduje pochylenie głowy i sztywność szyi",
+        "causePl": "Brak zaufania do rytmu, próba 'wzrokowej kontroli' liny — powoduje pochylenie głowy i sztywność szyi",
+        "cue": "Wzrok PRZED SIEBIE na linię horyzontu — głowa neutralna, szyja przedłużeniem kręgosłupa. Czuj linę, nie patrz na nią. Słuch (cykanie liny o podłogę) > wzrok.",
+        "cuePl": "Wzrok PRZED SIEBIE na linię horyzontu — głowa neutralna, szyja przedłużeniem kręgosłupa. Czuj linę, nie patrz na nią. Słuch (cykanie liny o podłogę) > wzrok."
+      },
+      {
+        "fault": "Zbyt długa lub zbyt krótka skakanka",
+        "faultPl": "Zbyt długa lub zbyt krótka skakanka",
+        "cause": "Brak dopasowania długości — za długa = lina uderza w podłogę przed stopami i się plącze; za krótka = uderza w głowę/plecy",
+        "causePl": "Brak dopasowania długości — za długa = lina uderza w podłogę przed stopami i się plącze; za krótka = uderza w głowę/plecy",
+        "cue": "Test: nastąp stopą na środek liny — rączki powinny sięgać linii pach (początkujący) lub klatki/ramion (zaawansowani). Jeśli źle — skróć/wydłuż linę (większość skakanek ma regulację).",
+        "cuePl": "Test: nastąp stopą na środek liny — rączki powinny sięgać linii pach (początkujący) lub klatki/ramion (zaawansowani). Jeśli źle — skróć/wydłuż linę (większość skakanek ma regulację)."
+      }
+    ],
+    "breathing": "Oddychaj rytmicznie w tempie wyskoków — 2-4 wyskoki na wdech, 2-4 na wydech, w zależności od intensywności. Przy niższym tempie (60-100 obr/min) tylko nosem. Przy wyższym (120+ obr/min) nos-usta. NIGDY nie wstrzymuj oddechu — to ćwiczenie tlenowe.",
+    "breathingPl": "Oddychaj rytmicznie w tempie wyskoków — 2-4 wyskoki na wdech, 2-4 na wydech, w zależności od intensywności. Przy niższym tempie (60-100 obr/min) tylko nosem. Przy wyższym (120+ obr/min) nos-usta. NIGDY nie wstrzymuj oddechu — to ćwiczenie tlenowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "ankle_instability_or_recent_sprain",
+      "severity": "modify",
+      "modification": "Powtarzalne lądowania mocno obciążają stawy skokowe. Po skręceniu odczekaj do pełnej rehabilitacji (min. 4-6 tygodni bez bólu). Na początku skacz w stabilnym obuwiu sportowym (nie boso) i ogranicz serie do 20-30 sekund. Alternatywa: rower stacjonarny lub orbitrek.",
+      "modificationPl": "Powtarzalne lądowania mocno obciążają stawy skokowe. Po skręceniu odczekaj do pełnej rehabilitacji (min. 4-6 tygodni bez bólu). Na początku skacz w stabilnym obuwiu sportowym (nie boso) i ogranicz serie do 20-30 sekund. Alternatywa: rower stacjonarny lub orbitrek.",
+      "alternative": "stationary-bike"
+    },
+    {
+      "condition": "achilles_tendinopathy_or_calf_strain",
+      "severity": "avoid",
+      "modification": "Skakanka to ekstremalne obciążenie kompleksu łydka-ścięgno Achillesa — krótkie, powtarzalne ekscentryki w wysokim tempie. Przy aktywnej tendinopatii lub naderwaniu — pełna pauza i rehabilitacja (eccentric heel drops, stretching) zanim wrócisz. Wcześniejszy powrót pogłębia uraz.",
+      "modificationPl": "Skakanka to ekstremalne obciążenie kompleksu łydka-ścięgno Achillesa — krótkie, powtarzalne ekscentryki w wysokim tempie. Przy aktywnej tendinopatii lub naderwaniu — pełna pauza i rehabilitacja (eccentric heel drops, stretching) zanim wrócisz. Wcześniejszy powrót pogłębia uraz.",
+      "alternative": "stationary-bike"
+    },
+    {
+      "condition": "knee_pain_or_patellar_tendinopathy",
+      "severity": "modify",
+      "modification": "Choć skakanka jest niskoimpaktowa w porównaniu do biegania, przy aktywnym bólu kolan ogranicz serie do 20-30 s i skacz wyłącznie na miękkiej powierzchni (mata, drewno). Skup się na technice — lądowanie na śródstopiu, miękkie kolana. Jeśli ból się utrzymuje — zamień na rower.",
+      "modificationPl": "Choć skakanka jest niskoimpaktowa w porównaniu do biegania, przy aktywnym bólu kolan ogranicz serie do 20-30 s i skacz wyłącznie na miękkiej powierzchni (mata, drewno). Skup się na technice — lądowanie na śródstopiu, miękkie kolana. Jeśli ból się utrzymuje — zamień na rower.",
+      "alternative": "stationary-bike"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiac_disease",
+      "severity": "avoid",
+      "modification": "Skakanka szybko podbija tętno do 80-90% HRmax — to wysiłek beztlenowy. Bez zgody lekarza i kontroli ciśnienia nie wykonuj. Najpierw progresja przez marsz, niska intensywność cardio (rower 60% HRmax).",
+      "modificationPl": "Skakanka szybko podbija tętno do 80-90% HRmax — to wysiłek beztlenowy. Bez zgody lekarza i kontroli ciśnienia nie wykonuj. Najpierw progresja przez marsz, niska intensywność cardio (rower 60% HRmax).",
+      "alternative": "march-in-place"
+    }
+  ],
+
+  "typical_sets_reps": "3-5 rund × 1-3 min ciągłego skakania (rozgrzewka/conditioning) | EMOM 10 min × 30 s pracy (interwały) | 100-500 skoków na czas (benchmark) | Boxer's round: 3 min praca / 1 min przerwa, 3-12 rund | Speed work: 30 s max tempo × 6-10 rund (HIIT)",
+  "calories_per_kg_per_hour": 10.0,
+
+  "media": {
+    "primary": "jump-rope.gif",
+    "frames_extracted": [
+      "frames/jump-rope/frame_0_start.png",
+      "frames/jump-rope/frame_1_early.png",
+      "frames/jump-rope/frame_2_mid.png",
+      "frames/jump-rope/frame_3_late.png",
+      "frames/jump-rope/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/jump-rope"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać widoczna z tyłu w pozycji wyjściowej — stojąco, stopy na szerokość bioder, dłonie z rączkami skakanki przy biodrach, lina widoczna w górnym łuku nad głową (właśnie zaczyna spadać do przodu). Podświetlone calves (mocno czerwone — primary mover) oraz pośladki i tylne uda — co potwierdza pracę dolnej części ciała. Frame 1 (early): faza wyskoku — postać uniesiona, lina przeszła pod stopami. Podświetlone calves intensywnie + forearms (uchwyt + rotacja nadgarstków). Frame 2 (mid): kolejny cykl wyskoku, lina widoczna w łuku za plecami — moment zbliżenia liny do stóp z drugiej strony. Frame 3 (late): faza środkowa cyklu, lina nad głową, postać w trakcie kolejnego wyskoku. Frame 4 (end): zamknięcie cyklu — postać w pozycji bliskiej startowej, lina znów w fazie góra-łuk. Przez całą sekwencję podświetlenie utrzymuje się na: calves (P10 — głównych pracujących, krótkie kontakty + ekscentryki), forearms (P7 — rotacja nadgarstków napędza linę), quads/hamstrings/glutes (sekundarne — niska intensywność przy małych wyskokach), tibialis anterior (S6 — dorsiflexja stóp przy lądowaniu). movement_pattern: jump_plyometric — to klasyczny mały plyometryczny wyskok obunóż (pogo-hop z liną) z krótkim ground contact time i wysoką częstotliwością. category: cardio — dominujący profil to wydolność tlenowa/beztlenowa. equipment: jump_rope (skakanka klasyczna z dwiema rączkami i regulowaną długością). difficulty 3 — wymaga koordynacji rytm-nadgarstek-stopa, ale niski próg wejścia (1-2 sesje wystarczają by złapać rytm). Wszystkie pola PL napisane od zera w polskim standardzie fitness/conditioning (terminologia: 'skakanka', 'wyskok obunóż', 'śródstopie', 'obroty na minutę', 'double-under' — bez przekładania nazwy własnej 'jump rope' na siłę).",
+
+  "tags": ["bodyweight", "cardio", "conditioning", "hiit", "plyometrics", "jump_rope", "coordination", "calves", "boxing", "mma", "fat_loss", "low_impact", "no_gym", "home_workout", "footwork"]
+}

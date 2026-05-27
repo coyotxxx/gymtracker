@@ -1,0 +1,201 @@
+{
+  "id": "close-grip-push-up",
+  "name": "Close-Grip Push-Up",
+  "namePl": "Pompka chwytem wąskim (close grip)",
+  "aliases": ["close grip pushup", "narrow push-up", "narrow grip push-up", "tricep push-up", "close-stance push-up"],
+  "aliasesPl": ["pompki wąskim chwytem", "pompki wąsko", "pompki tricepsowe", "pompki na triceps", "pompki z bliskim ustawieniem rąk", "pompki narrow grip"],
+
+  "description": "Bodyweight push-up variation performed with hands placed close together — directly under the shoulders or slightly narrower — rather than at the standard shoulder-width-plus position of a regular push-up. The narrower hand placement shifts mechanical demand from the pectorals to the triceps brachii and emphasizes the sternal (inner) head of the pectoralis major. Elbows track close to the torso (~20-30° flare) instead of flaring wide. Sits between the standard push-up and the diamond push-up on the difficulty/triceps-emphasis spectrum — harder than a regular push-up but more accessible than the extreme narrow position of the diamond.",
+  "descriptionPl": "Wariant pompek z masą ciała wykonywany z dłońmi ustawionymi blisko siebie — bezpośrednio pod barkami lub nieco węziej — zamiast w standardowej pozycji szerszej niż barki jak w zwykłych pompkach. Węższe ustawienie rąk przenosi obciążenie mechaniczne z mięśni piersiowych na triceps i akcentuje wewnętrzną (mostkową) głowę mięśnia piersiowego większego. Łokcie biegną blisko tułowia (~20-30° odchylenia) zamiast rozkładać się szeroko. Plasuje się pomiędzy zwykłą pompką a pompką diamentową na skali trudności i akcentu na triceps — trudniejsza niż zwykła pompka, ale bardziej dostępna niż skrajnie wąskie ustawienie w pompce diamentowej.",
+
+  "instructions": [
+    "Get into a plank position on the floor — hands placed directly under your shoulders or slightly narrower (NOT shoulder-width-plus like a regular push-up, NOT touching like a diamond).",
+    "Spread fingers wide, weight evenly distributed across palms. Index fingers pointing forward.",
+    "Extend legs back, feet hip-width or together. Body forms a straight line from heels through hips to head.",
+    "Brace core hard, squeeze glutes, set neutral neck (eyes look at a spot just in front of hands).",
+    "Inhale and lower your chest toward the floor in a controlled tempo. Elbows track close to your ribs (~20-30° flare, NOT 90° wide).",
+    "Lower until chest is just above (or lightly touching) the floor between your hands. Keep elbows tight.",
+    "Exhale and press the floor away forcefully, driving through the palms and locking out the elbows at the top.",
+    "Maintain a rigid plank from rep to rep — no sagging hips, no hip-pike. Reset bracing and continue."
+  ],
+  "instructionsPl": [
+    "Przyjmij pozycję planku na podłodze — dłonie ustaw bezpośrednio pod barkami lub nieco węziej (NIE szerzej niż barki jak w zwykłych pompkach, NIE stykające się jak w diamencie).",
+    "Rozłóż palce szeroko, ciężar równomiernie na całych dłoniach. Palce wskazujące skierowane do przodu.",
+    "Wyprostuj nogi, stopy na szerokość bioder lub razem. Ciało tworzy prostą linię od pięt przez biodra do głowy.",
+    "Mocno napnij brzuch, ściśnij pośladki, ustaw neutralny kark (wzrok na punkt tuż przed dłońmi).",
+    "Wdech, kontrolowanym tempem opuszczaj klatkę w stronę podłogi. Łokcie biegną blisko żeber (~20-30° odchylenia, NIE 90° szeroko).",
+    "Schodź aż klatka jest tuż nad podłogą (lub lekko jej dotyka) pomiędzy dłońmi. Łokcie cały czas blisko ciała.",
+    "Wydech, energicznie wypchnij podłogę, napierając przez dłonie i prostując łokcie na samej górze.",
+    "Utrzymuj sztywną pozycję planku z powtórzenia na powtórzenie — bez opadania bioder, bez 'tyłka do góry'. Zresetuj napięcie i kontynuuj."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major_sternal"],
+    "secondary": ["pectoralis_major", "anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P9",
+    "pectoralis_major_sternal": "P7",
+    "pectoralis_major": "S6",
+    "anterior_deltoids": "S5",
+    "serratus_anterior": "S4",
+    "core": "T5",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handles", "weighted_vest", "resistance_band", "elevated_surface"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["push-up", "knee-push-up"],
+    "progression_to": ["diamond-push-up", "decline-close-grip-push-up", "weighted-close-grip-push-up", "archer-push-up"],
+    "alternatives": ["diamond-push-up", "push-up", "tricep-dips", "close-grip-bench-press", "band-close-grip-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands UNDER the shoulders or slightly narrower — not shoulder-width-plus, not touching",
+      "Index fingers point straight forward, fingers spread wide for stable base",
+      "Body in straight line — pre-brace plank BEFORE the first rep, glutes squeezed",
+      "Elbows pre-set close to ribs at the top — they should NEVER flare out to 90°",
+      "Eyes look at a spot just in front of hands — neck neutral, not craned"
+    ],
+    "setup_cues_pl": [
+      "Dłonie POD barkami lub trochę węziej — nie szerzej niż barki, nie stykające się",
+      "Palce wskazujące prosto do przodu, palce rozłożone szeroko dla stabilnej podstawy",
+      "Ciało w prostej linii — ustaw planka ZANIM zrobisz pierwsze powtórzenie, pośladki ściśnięte",
+      "Łokcie już w pozycji wyjściowej blisko żeber — NIGDY nie rozkładają się do 90°",
+      "Wzrok na punkt tuż przed dłońmi — kark neutralny, nie wyciągnięty"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — control the descent, feel the triceps stretch",
+      "Elbows graze your ribs — 'glue them to your sides', not chicken wings",
+      "Chest touches between the hands — full range, not half reps",
+      "Drive the floor away — full lockout at the top, squeeze the triceps",
+      "Brace abs and squeeze glutes EVERY rep — no hip sag, no pike"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontroluj zejście, poczuj rozciągnięcie tricepsa",
+      "Łokcie ocierają się o żebra — 'przyklej je do boków', nie skrzydełka kurczaka",
+      "Klatka dotyka pomiędzy dłońmi — pełen zakres, nie połowiczne powtórzenia",
+      "Wypchnij podłogę — pełne wyprostowanie łokci na górze, ściśnij triceps",
+      "Napnij brzuch i ściśnij pośladki w KAŻDYM powtórzeniu — bez opadania bioder, bez 'tyłka do góry'"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out to 90° (standard push-up habit)",
+        "faultPl": "Łokcie rozkładają się do 90° (nawyk ze zwykłych pompek)",
+        "cause": "Default push-up motor pattern, weak triceps offloading work to chest/shoulders",
+        "causePl": "Domyślny wzorzec ruchowy zwykłych pompek, słaby triceps przerzucający pracę na klatkę i barki",
+        "cue": "Tuck elbows to 20-30° from torso — 'elbows graze your ribs'. If they flare wide you're doing a standard push-up with narrow hands, not a close-grip push-up.",
+        "cuePl": "Schowaj łokcie do 20-30° od tułowia — 'łokcie ocierają się o żebra'. Jak rozkładają się szeroko, robisz zwykłą pompkę z bliżej ułożonymi rękami, a nie pompkę chwytem wąskim."
+      },
+      {
+        "fault": "Sagging hips (banana shape)",
+        "faultPl": "Opadające biodra (kształt banana)",
+        "cause": "Weak core, no glute engagement, or fatigue from triceps-dominant variant",
+        "causePl": "Słaby brzuch, brak napięcia pośladków, lub zmęczenie z wariantu zdominowanego przez triceps",
+        "cue": "Plank first, push-up second. Squeeze glutes HARD, brace abs as if expecting a punch — body = rigid board.",
+        "cuePl": "Najpierw plank, potem pompka. Mocno ŚCIŚNIJ pośladki, napnij brzuch jak przed uderzeniem — ciało = sztywna deska."
+      },
+      {
+        "fault": "Partial range of motion (chest not lowering between hands)",
+        "faultPl": "Niepełny zakres ruchu (klatka nie schodzi pomiędzy dłonie)",
+        "cause": "Insufficient triceps strength, ego-counting half reps, fatigue",
+        "causePl": "Niewystarczająca siła tricepsa, ego — liczenie połowicznych powtórzeń, zmęczenie",
+        "cue": "Chest must come down between the hands — light touch on the floor or 2-3 cm above. If you can't — regress to incline close-grip (hands on bench).",
+        "cuePl": "Klatka musi schodzić pomiędzy dłonie — lekki dotyk podłogi lub 2-3 cm nad. Jak nie dajesz rady — wróć do wariantu na podwyższeniu (dłonie na ławce)."
+      },
+      {
+        "fault": "Head leading the descent (chin dropping before chest)",
+        "faultPl": "Głowa prowadzi schodzenie (broda opada przed klatką)",
+        "cause": "Trying to cheat ROM by dipping the head, weak postural control",
+        "causePl": "Próba oszukania ROM przez opuszczanie głowy, słaba kontrola posturalna",
+        "cue": "Chest leads, head follows. Keep neck neutral — imagine a tennis ball under your chin, don't squash it but don't lose it.",
+        "cuePl": "Klatka prowadzi, głowa za nią. Trzymaj neutralny kark — wyobraź sobie piłeczkę pod brodą — nie zgnieć jej, ale i nie zgub."
+      },
+      {
+        "fault": "Wrist hyperextension and wrist pain",
+        "faultPl": "Przeprost nadgarstków i ból nadgarstków",
+        "cause": "All bodyweight loaded through wrists in dorsiflexion, narrow hand position concentrates pressure",
+        "causePl": "Cała masa ciała na nadgarstkach w zgięciu grzbietowym, wąskie ustawienie dłoni zwiększa nacisk",
+        "cue": "Use push-up handles or perform on fists (knuckle push-ups) to keep wrists neutral. Pre-stretch wrists with circles before the set.",
+        "cuePl": "Użyj uchwytów do pompek lub wykonuj na pięściach (knuckle push-ups) by utrzymać neutralne nadgarstki. Rozgrzej nadgarstki krążeniami przed serią."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering) phase, brace at the bottom, exhale forcefully during the press up. For higher rep sets maintain bracing across multiple reps and use a reset breath at the top lockout.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (schodzenie), napięcie na dole, mocny wydech przy wyciskaniu. Przy wyższych powtórzeniach utrzymuj napięcie przez kilka powtórzeń i używaj oddechu-resetującego w pełnym wyproście na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Narrow hand position concentrates wrist load. Use push-up handles or perform on fists (knuckle push-ups) to keep wrists neutral. Pre-warm wrists with circles before the set.",
+      "modificationPl": "Wąskie ustawienie dłoni koncentruje obciążenie na nadgarstkach. Użyj uchwytów do pompek lub wykonuj na pięściach (knuckle push-ups) by utrzymać neutralne nadgarstki. Rozgrzej nadgarstki krążeniami przed serią.",
+      "alternative": "close-grip-bench-press"
+    },
+    {
+      "condition": "elbow_pain",
+      "severity": "modify",
+      "modification": "Close-grip variants are triceps-dominant and may aggravate elbow tendinopathies (tennis/golfer's elbow). Reduce ROM or switch to regular push-ups (wider hands) until pain resolves.",
+      "modificationPl": "Warianty wąskim chwytem są zdominowane przez triceps i mogą nasilać zapalenia ścięgien łokcia (łokieć tenisisty/golfisty). Zmniejsz zakres ruchu lub wróć do zwykłych pompek (szersze dłonie) do czasu ustąpienia bólu.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Keep elbows tightly tucked to ribs (NOT flared) — flared elbows in a narrow position stress the anterior shoulder. Reduce ROM or perform on incline (hands elevated) until symptoms resolve.",
+      "modificationPl": "Trzymaj łokcie ściśle blisko żeber (NIE rozkładane) — rozłożone łokcie przy wąskim ustawieniu obciążają przednią część barku. Zmniejsz zakres ruchu lub wykonuj na podwyższeniu (dłonie wyżej) do czasu ustąpienia objawów.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "If core can't hold a rigid plank — hips will sag and load the lumbar spine. Regress to incline close-grip push-ups (hands on bench, feet on floor) until core is stronger.",
+      "modificationPl": "Jeśli brzuch nie utrzymuje sztywnego planka — biodra opadną i obciążą odcinek lędźwiowy. Wróć do pompek wąskim chwytem na podwyższeniu (dłonie na ławce, stopy na podłodze) do czasu wzmocnienia brzucha.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (hypertrophy, triceps focus) | 4x6-10 with weighted vest (strength) | AMRAP as finisher after pressing work",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "close-grip-push-up.gif",
+    "frames_extracted": [
+      "frames/close-grip-push-up/frame_0_start.png",
+      "frames/close-grip-push-up/frame_1_early.png",
+      "frames/close-grip-push-up/frame_2_mid.png",
+      "frames/close-grip-push-up/frame_3_late.png",
+      "frames/close-grip-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/close-grip-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0/4 (start/end): pełna pozycja planku, ramiona wyprostowane, dłonie blisko siebie POD barkami (węziej niż w zwykłej pompce, ale NIE stykające się jak w diamencie), ciało w prostej linii od stóp przez biodra do głowy, palce skierowane do przodu. Frame 2 (mid): pełne opuszczenie — klatka tuż nad podłogą pomiędzy dłońmi, łokcie zgięte i przyklejone do tułowia (~20-30° odchylenia od żeber, NIE szerokie 90°), ciało nadal w linii prostej. Na anatomii podświetlony triceps (tylna część ramienia) i wewnętrzna część klatki piersiowej (mostkowa) — zgodne z biomechaniką wąskiego ustawienia dłoni. Klasyczna pompka wąskim chwytem — pośrednia trudnością i akcentem na triceps pomiędzy zwykłą pompką a diamentem. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Difficulty 5 (intermediate) — wyższy niż zwykłe pompki (4), niższy niż diament (6). Primary muscles: triceps P9 (główny target, dominacja zgodna z EMG ale niższa niż w diamencie P10), inner pectoralis P7 (akcent mostkowej części klatki).",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "triceps", "triceps_focus", "inner_chest", "home_workout", "no_equipment", "narrow_grip", "progression_from_push_up"]
+}

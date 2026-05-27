@@ -1,0 +1,204 @@
+{
+  "id": "push-up-on-bosu-ball",
+  "name": "Push-Up on BOSU Ball",
+  "namePl": "Pompka na BOSU ball",
+  "aliases": ["bosu push-up", "push-up on bosu (dome up)", "bosu ball pushup", "pushup on bosu dome"],
+  "aliasesPl": ["pompki na BOSU (kopułka do góry)", "pompki na BOSU dome up", "pompki na półkuli BOSU", "pompki z dłońmi na BOSU", "pompki na piłce BOSU"],
+
+  "description": "Bodyweight push-up performed with hands on the rounded dome side of a BOSU ball (dome up, flat platform on the floor). The unstable, curved surface dramatically increases recruitment of stabilizer muscles — especially the rotator cuff, scapular stabilizers and the entire core — while the pressing chain (pectorals, anterior deltoids, triceps) still does the primary work. The dome 'gives' slightly under load, creating a longer time under tension and forcing the lifter to control wrist, elbow and shoulder alignment on every rep. Useful for shoulder pre-hab, proprioception and breaking through staleness in classic push-ups — but not a substitute for heavy pressing work.",
+  "descriptionPl": "Pompka bodyweight wykonywana z dłońmi na zaokrąglonej kopułce piłki BOSU (kopułka do góry, płaska platforma na podłodze). Niestabilna, wypukła powierzchnia znacząco zwiększa pracę mięśni stabilizujących — przede wszystkim stożka rotatorów, stabilizatorów łopatki i całego core — podczas gdy łańcuch wyciskający (klatka, przednie aktony, tricepsy) nadal wykonuje pracę główną. Kopułka delikatnie 'ustępuje' pod obciążeniem, co wydłuża czas pod napięciem i wymusza kontrolę ustawienia nadgarstka, łokcia i barku w każdym powtórzeniu. Świetne do prehab barków, propriocepcji i rozbicia rutyny zwykłych pompek — ale nie zastępuje ciężkiego wyciskania.",
+
+  "instructions": [
+    "Place the BOSU ball on the floor dome side UP (rounded surface facing the ceiling, flat platform on the ground). Make sure the platform is on a non-slip surface.",
+    "Kneel in front of the BOSU and place both hands on the dome, slightly wider than shoulder width. Spread the fingers and grip the rubber surface.",
+    "Walk your feet back into a high plank: arms extended, wrists under shoulders, body in a straight line from heels to head.",
+    "Brace your core and squeeze your glutes — the unstable surface will try to wobble you, so pre-tension everything.",
+    "Inhale and lower yourself in a controlled manner. Elbows track at ~45° from the torso (not flared). Lower until chest is just above (or lightly touches) the top of the dome.",
+    "Brief pause at the bottom — do not bounce or use the dome's spring. Keep tension.",
+    "Exhale and press the BOSU away from you. Drive evenly through both hands — if one side dips, you'll feel it immediately.",
+    "Lock out elbows fully (without hyperextension) and stabilize at the top before the next rep. Keep wrists neutral the entire set."
+  ],
+  "instructionsPl": [
+    "Postaw BOSU na podłodze kopułką do GÓRY (zaokrąglona strona ku sufitowi, płaska platforma na ziemi). Upewnij się, że platforma stoi na nieślizgającej się powierzchni.",
+    "Uklęknij przed BOSU i połóż obie dłonie na kopułce, nieco szerzej niż barki. Rozłóż palce i 'chwyć' gumową powierzchnię.",
+    "Wycofaj stopy do wysokiego planka: ramiona wyprostowane, nadgarstki pod barkami, ciało w prostej linii od pięt do głowy.",
+    "Napnij brzuch i ściśnij pośladki — niestabilna powierzchnia będzie próbowała Cię zachwiać, więc wstępnie napnij wszystko.",
+    "Wdech, opuszczaj się kontrolowanym ruchem. Łokcie pod kątem ~45° od tułowia (nie rozsunięte). Schodź aż klatka będzie tuż nad (lub lekko dotknie) szczytu kopułki.",
+    "Krótka pauza na dole — nie odbijaj i nie wykorzystuj sprężynowania kopułki. Trzymaj napięcie.",
+    "Wydech, odepchnij BOSU od siebie. Napieraj równomiernie obiema dłońmi — jeśli jedna strona opadnie, od razu to poczujesz.",
+    "Wyprostuj łokcie w pełni (bez przeprostu) i ustabilizuj się na górze przed następnym powtórzeniem. Nadgarstki neutralne przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "rotator_cuff", "scapular_stabilizers", "obliques", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P8",
+    "anterior_deltoids": "S7",
+    "serratus_anterior": "S6",
+    "core": "T8",
+    "rotator_cuff": "T7",
+    "scapular_stabilizers": "T7",
+    "obliques": "T6",
+    "glutes": "T5",
+    "forearms": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "bosu_ball"],
+    "optional": ["mat"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["push-up", "knee-push-up", "plank"],
+    "progression_to": ["bosu-push-up-feet-elevated", "single-arm-bosu-push-up", "bosu-clap-push-up", "ring-push-up"],
+    "alternatives": ["push-up", "stability-ball-push-up", "ring-push-up", "push-up-bosu-ball"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "BOSU dome side UP — flat platform stable on a non-slip floor",
+      "Hands on the dome slightly wider than shoulders, fingers spread, gripping the rubber",
+      "Wrists under shoulders, arms locked out at the top",
+      "Body in a straight line from heels to head — pre-brace plank before the first rep",
+      "Eyes look at a spot ~30 cm in front of the dome, neck neutral"
+    ],
+    "setup_cues_pl": [
+      "BOSU kopułką do GÓRY — płaska platforma stabilnie na podłodze nieślizgającej się",
+      "Dłonie na kopułce nieco szerzej niż barki, palce rozłożone, 'chwyt' gumy",
+      "Nadgarstki pod barkami, ramiona wyprostowane w pozycji wyjściowej",
+      "Ciało w prostej linii od pięt do głowy — wstępny plank przed pierwszym powtórzeniem",
+      "Wzrok na punkt ~30 cm przed kopułką, szyja neutralna"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — controlled, the dome will not 'catch you' safely",
+      "Press evenly through BOTH hands — if you wobble, slow down even more",
+      "Elbows at ~45° from torso — 'hide armpits', don't flare to T-shape",
+      "Squeeze the dome with your palms — active grip helps recruit forearms and stabilize shoulders",
+      "Brace abs and glutes the entire set — the dome amplifies any core leak"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontrolowanie, kopułka Cię bezpiecznie 'nie złapie'",
+      "Napieraj równomiernie OBIEMA dłońmi — jeśli kołyszesz się, zwolnij jeszcze bardziej",
+      "Łokcie pod ~45° od tułowia — 'schowaj pachy', nie rozsuwaj na kształt T",
+      "Ściskaj kopułkę dłońmi — aktywny chwyt angażuje przedramiona i stabilizuje barki",
+      "Napięte brzuch i pośladki przez całą serię — kopułka uwypukla każdy spadek napięcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wobbling side-to-side (loss of stability)",
+        "faultPl": "Kołysanie na boki (utrata stabilności)",
+        "cause": "Insufficient core/shoulder bracing, hands too narrow or asymmetrical, descent too fast",
+        "causePl": "Słabe napięcie brzucha/barków, dłonie za wąsko lub niesymetrycznie, zbyt szybkie schodzenie",
+        "cue": "Pre-brace plank BEFORE lowering. Slow tempo (3s down). 'Lock' shoulders into sockets by spreading fingers and gripping the dome.",
+        "cuePl": "Wstępnie napnij plank PRZED schodzeniem. Wolne tempo (3s w dół). 'Zablokuj' barki w panewkach poprzez rozłożenie palców i 'chwyt' kopułki."
+      },
+      {
+        "fault": "Sagging hips on unstable surface",
+        "faultPl": "Opadające biodra na niestabilnej powierzchni",
+        "cause": "Core fatigue amplified by BOSU — what works on the floor breaks down here",
+        "causePl": "Zmęczenie brzucha wzmocnione przez BOSU — to co działa na podłodze, nie działa tutaj",
+        "cue": "Squeeze glutes hard, ribs down. End the set BEFORE technique breaks — quality over quantity on BOSU.",
+        "cuePl": "Mocno ściśnij pośladki, żebra w dół. Kończ serię ZANIM technika się załamie — na BOSU jakość przed ilością."
+      },
+      {
+        "fault": "Bouncing off the dome (using its spring)",
+        "faultPl": "Odbijanie od kopułki (wykorzystywanie sprężynowania)",
+        "cause": "Treating BOSU like a regular floor and 'free-falling' onto it",
+        "causePl": "Traktowanie BOSU jak zwykłej podłogi i 'opadanie' na nią",
+        "cue": "Lower slowly, brief pause, then press. The dome is a stability challenge, not a trampoline.",
+        "cuePl": "Opuszczaj wolno, krótka pauza, potem wyciskaj. Kopułka to wyzwanie stabilności, nie trampolina."
+      },
+      {
+        "fault": "Wrist hyperextension on the curved surface",
+        "faultPl": "Przeprost nadgarstka na zakrzywionej powierzchni",
+        "cause": "BOSU dome forces a slight hyperextension angle vs flat floor",
+        "causePl": "Kopułka BOSU wymusza lekki kąt przeprostu w porównaniu do płaskiej podłogi",
+        "cue": "Distribute weight onto the heel of palm and base of fingers — not the wrist crease. If pain persists, use fists or push-up handles on the dome.",
+        "cuePl": "Rozłóż ciężar na nasadę dłoni i podstawy palców — nie na fałd nadgarstka. Jeśli ból nie ustępuje, użyj pięści lub uchwytów do pompek na kopułce."
+      },
+      {
+        "fault": "Hands sliding on the dome",
+        "faultPl": "Dłonie ślizgające się po kopułce",
+        "cause": "Sweaty palms, smooth BOSU surface, hands placed too high on the curve",
+        "causePl": "Spocone dłonie, gładka powierzchnia BOSU, dłonie zbyt wysoko na łuku",
+        "cue": "Place hands on the flattest part near the top of dome, grip actively. Chalk or wipe hands dry between sets.",
+        "cuePl": "Połóż dłonie na najbardziej płaskiej części przy szczycie kopułki, aktywny chwyt. Magnezja lub wytarcie dłoni między seriami."
+      }
+    ],
+    "breathing": "Inhale during descent, brief brace at the bottom, exhale during the press. The instability rewards conscious breathing — short, sharp exhales help maintain intra-abdominal pressure.",
+    "breathingPl": "Wdech podczas schodzenia, krótkie napięcie na dole, wydech podczas wyciskania. Niestabilność nagradza świadomy oddech — krótkie, mocne wydechy pomagają utrzymać ciśnienie wewnątrzbrzuszne."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Curved dome puts wrists in slight hyperextension. Use fists (knuckles down) or push-up handles placed on the dome. If pain persists, switch to push-up on dumbbells or floor with wrist wraps.",
+      "modificationPl": "Zakrzywiona kopułka ustawia nadgarstki w lekkim przeproście. Użyj pięści (knykcie w dół) lub uchwytów do pompek położonych na kopułce. Jeśli ból nie ustępuje, przejdź na pompki na hantlach lub podłodze z opaskami na nadgarstki.",
+      "alternative": "push-up-on-dumbbells"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Unstable surface dramatically increases rotator cuff demand. Active cuff injury — avoid until cleared by physio. Substitute with machine chest press or floor push-up at lower volume.",
+      "modificationPl": "Niestabilna powierzchnia drastycznie zwiększa obciążenie stożka rotatorów. Aktywna kontuzja stożka — unikaj do czasu uwolnienia przez fizjoterapeutę. Zastąp wyciskaniem na maszynie lub pompkami z podłogi w mniejszej objętości.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "caution",
+      "modification": "BOSU push-up is paradoxically good for SUB-clinical instability (rehab tool) but bad for ACUTE instability. Start with knee version on BOSU first, progress slowly. Stop if shoulder 'clunks' or shifts.",
+      "modificationPl": "Pompki na BOSU paradoksalnie pomagają przy SUBKLINICZNEJ niestabilności (narzędzie rehabilitacji), ale szkodzą przy OSTREJ. Zacznij od wersji na kolanach na BOSU, progresuj wolno. Przerwij, jeśli bark 'klika' lub 'wyskakuje'.",
+      "alternative": "knee-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Hips sagging on unstable surface loads the lumbar spine more than regular push-up. If core isn't ready, regress to BOSU push-up from knees, then floor push-up, then back to BOSU when plank is solid.",
+      "modificationPl": "Opadające biodra na niestabilnej powierzchni obciążają odcinek lędźwiowy bardziej niż zwykłe pompki. Jeśli brzuch nie jest gotowy, wróć do pompek na BOSU z kolan, potem zwykłych pompek, dopiero potem BOSU gdy plank jest solidny.",
+      "alternative": "knee-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 (hypertrophy/stability) | 3x15-20 (endurance/conditioning) | 4x6 slow tempo (3-1-1) for prehab and motor control",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "push-up-on-bosu-ball.gif",
+    "frames_extracted": [
+      "frames/push-up-on-bosu-ball/frame_0_start.png",
+      "frames/push-up-on-bosu-ball/frame_1_early.png",
+      "frames/push-up-on-bosu-ball/frame_2_mid.png",
+      "frames/push-up-on-bosu-ball/frame_3_late.png",
+      "frames/push-up-on-bosu-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/push-up-on-bosu-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wysokiego planka — DŁONIE na kopułce BOSU (dome UP, kopułka do góry, płaska platforma na podłodze), stopy na podłodze za BOSU, ramiona wyprostowane, ciało w linii prostej od pięt do głowy. Frame 2 (mid): pełne opuszczenie — klatka tuż nad kopułką, łokcie zgięte pod ~45° od tułowia, ciało wciąż w prostej linii, brak opadania bioder. Frame 4 (end): powrót do pozycji wyjściowej. Anatomia podświetla pectoralis major, triceps brachii, anterior deltoid (głowa) oraz wyraźny core/obliques (stabilizacja na niestabilnej powierzchni). Krytyczna różnica vs push-up-bosu-ball (dome DOWN, dłonie na płaskiej platformie chwytając krawędzie): tutaj kopułka SKIEROWANA DO GÓRY, dłonie na zaokrąglonej, gumowej powierzchni — większy wyzwanie dla nadgarstków, stożka rotatorów i propriocepcji barków. Klasyczna wersja używana do prehabu i treningu stabilności. Wszystkie pola PL napisane od zera w polskim standardzie fitness — BOSU, kopułka, prehab itp.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "unstable_surface", "stability_training", "prehab", "bosu", "core_stability", "rotator_cuff", "proprioception"]
+}

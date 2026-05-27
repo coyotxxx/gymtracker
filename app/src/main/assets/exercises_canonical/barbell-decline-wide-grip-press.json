@@ -1,0 +1,202 @@
+{
+  "id": "barbell-decline-wide-grip-press",
+  "name": "Barbell Decline Wide-Grip Press",
+  "namePl": "Wyciskanie sztangi szerokim chwytem na ławce skośnej ujemnej",
+  "aliases": ["decline wide-grip bench press", "wide-grip decline press", "decline bench wide grip"],
+  "aliasesPl": ["wyciskanie sztangi szerokim chwytem na ujemnym skosie", "decline wide grip", "wyciskanie szerokim chwytem na ujemnej ławce", "wyciskanie skos ujemny szeroki chwyt"],
+
+  "description": "Combination of two intensifying variables on the classic bench press: decline angle (~15-30° head-below-hips) and wide grip (~1.5-2× shoulder width). The decline angle shifts emphasis to the LOWER pectoralis (sternocostal head), while the wide grip increases pec stretch and shortens triceps involvement. Result: a specialization lift for the lower chest 'shelf' and outer chest width. Demands shoulder mobility and bench with leg/foot anchors.",
+  "descriptionPl": "Połączenie dwóch wzmacniających zmiennych na klasycznym wyciskaniu: skos ujemny (~15-30° głowa poniżej bioder) i szeroki chwyt (~1,5-2× szerokość barków). Skos ujemny przenosi akcent na DOLNĄ klatkę (część mostkowa), a szeroki chwyt zwiększa rozciągnięcie piersi i skraca zaangażowanie tricepsów. Efekt: ćwiczenie specjalizacyjne na dolną 'półkę' klatki i jej zewnętrzną szerokość. Wymaga mobilności barków i ławki z mocowaniami na nogi/stopy.",
+
+  "instructions": [
+    "Set the decline bench at 15-30°. Secure your feet/ankles under the foot pads at the top of the bench.",
+    "Lie back with the bar at eye level (or slightly above, given the decline). Spotter strongly recommended for unrack.",
+    "Set your shoulder blades: retract and depress them hard into the bench. Maintain natural lumbar curve.",
+    "Grip the bar WIDE — about 1.5-2× shoulder width (or hands on or just inside the power-rings of an Olympic bar). Wrap thumbs around (NO suicide grip — decline + wide = high risk).",
+    "Unrack with extended arms (ask for a lift-off if available). Move the bar directly over your LOWER chest / upper abdomen, not over your face.",
+    "Inhale, brace your core, and lower the bar in a controlled manner to your lower chest / sternum line.",
+    "Touch the chest lightly — do NOT bounce. Pause briefly (the decline + wide grip pre-stretches the pecs heavily).",
+    "Press the bar up and slightly back over the lower chest. Lock out elbows without hyperextending.",
+    "Keep elbows tucked ~50-70° from torso (wider than flat bench, but NOT flared 90°). Re-rack with spotter assistance."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną ujemną na 15-30°. Zabezpiecz stopy/kostki pod podpórkami na górze ławki.",
+    "Połóż się ze sztangą na wysokości oczu (lub trochę wyżej z uwagi na skos). Asekurant zdecydowanie zalecany do zdjęcia sztangi.",
+    "Ustaw łopatki: ściągnij je razem i mocno wciśnij w ławkę. Zachowaj naturalny łuk lędźwiowy.",
+    "Złap gryf SZEROKO — ok. 1,5-2× szerokość barków (lub dłonie na/tuż w środku obręczy gryfu olimpijskiego). Owinij kciuki (NIE chwyt 'samobójczy' — skos ujemny + szeroki chwyt = wysokie ryzyko).",
+    "Wyciągnij sztangę z wyprostowanymi ramionami (poproś o lift-off jeśli możliwe). Przenieś gryf bezpośrednio nad DOLNĄ klatką / górą brzucha, nie nad twarzą.",
+    "Wdech, napnij brzuch, opuszczaj gryf kontrolowanym ruchem do linii dolnej klatki / mostka.",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza (skos ujemny + szeroki chwyt mocno rozciąga klatkę).",
+    "Wyciśnij gryf w górę i lekko do tyłu nad dolną klatkę. Lock-out łokci bez przeprostu.",
+    "Łokcie pod kątem ~50-70° od tułowia (szerzej niż flat bench, ale NIE rozsunięte na 90°). Odłóż gryf z pomocą asekuranta."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lower_pectoralis", "anterior_deltoids"],
+    "secondary": ["triceps", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "lower_pectoralis": "P10",
+    "anterior_deltoids": "P7",
+    "triceps": "S6",
+    "serratus_anterior": "S5",
+    "lats": "T3",
+    "core": "T4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "decline_bench"],
+    "optional": ["spotter", "wrist_wraps", "belt", "power_rack_or_bench_with_supports"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-bench-press", "dumbbell-decline-press", "push-up"],
+    "progression_to": ["weighted-dip", "pause-decline-bench-press", "board-press"],
+    "alternatives": ["barbell-decline-press", "dumbbell-decline-press", "weighted-dip", "machine-chest-press-decline"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet locked tight under foot pads BEFORE lying back",
+      "Shoulder blades retracted and crushed into bench",
+      "Eyes under the bar (head slightly past it given decline)",
+      "Wide grip — hands ~1.5-2× shoulder width, thumbs wrapped",
+      "Spotter ready for unrack and re-rack"
+    ],
+    "setup_cues_pl": [
+      "Stopy zablokowane pod podpórkami ZANIM się położysz",
+      "Łopatki ściągnięte i wciśnięte w ławkę",
+      "Oczy pod gryfem (głowa lekko za nim z uwagi na skos)",
+      "Szeroki chwyt — dłonie ~1,5-2× szerokość barków, kciuki owinięte",
+      "Asekurant gotowy do zdjęcia i odłożenia gryfu"
+    ],
+    "execution_cues": [
+      "Touch the LOWER chest / sternum, not upper chest",
+      "Bar path: up and slightly back over lower pecs",
+      "Elbows tucked ~50-70° — never flared to 90°",
+      "Pause on chest — no bounce (high injury risk with wide grip)",
+      "Pull the bar apart with your hands (engages lats and stabilizes)"
+    ],
+    "execution_cues_pl": [
+      "Dotknij DOLNEJ klatki / mostka, nie górnej klatki",
+      "Ścieżka gryfu: w górę i lekko do tyłu nad dolną klatką",
+      "Łokcie schowane ~50-70° — nigdy rozsunięte na 90°",
+      "Pauza na klatce — żadnego odbijania (wysokie ryzyko kontuzji przy szerokim chwycie)",
+      "Próbuj 'rozerwać' gryf rękami (angażuje najszersze i stabilizuje)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip too wide — wrists collapsing outward",
+        "faultPl": "Zbyt szeroki chwyt — nadgarstki załamują się na zewnątrz",
+        "cause": "Trying to maximize pec stretch beyond mobility, mimicking power-bench wide grip without prep",
+        "causePl": "Próba maksymalizacji rozciągnięcia klatki ponad mobilność, kopiowanie szerokiego chwytu z power-bench bez przygotowania",
+        "cue": "Bar in palm heel, wrists straight stacked over elbows. If wrists bend — narrow the grip.",
+        "cuePl": "Gryf w podstawie dłoni, nadgarstki proste w jednej linii z łokciami. Jeśli nadgarstki się zginają — zwęź chwyt."
+      },
+      {
+        "fault": "Elbows flared 90° (extreme shoulder stress)",
+        "faultPl": "Łokcie rozsunięte na 90° (ekstremalne obciążenie barków)",
+        "cause": "Wide grip naturally pushes elbows out; combined with decline angle = max impingement risk",
+        "causePl": "Szeroki chwyt naturalnie wypycha łokcie na bok; w połączeniu ze skosem ujemnym = maksymalne ryzyko impingementu",
+        "cue": "Even with wide grip, keep elbows at 50-70°. If you can't — your grip is too wide for your mobility.",
+        "cuePl": "Nawet przy szerokim chwycie trzymaj łokcie 50-70°. Jeśli nie potrafisz — twój chwyt jest za szeroki na twoją mobilność."
+      },
+      {
+        "fault": "Bar drifts toward face/throat (instead of lower chest)",
+        "faultPl": "Gryf wędruje w stronę twarzy/gardła (zamiast dolnej klatki)",
+        "cause": "Habit from flat bench, misjudging target due to decline angle",
+        "causePl": "Nawyk z flat bench, błędna ocena celu z uwagi na kąt skosu",
+        "cue": "Target = lower sternum / upper abs line. Press OVER lower chest, not over face. If unsure — film side angle.",
+        "cuePl": "Cel = dolna część mostka / linia górnego brzucha. Wyciskaj NAD dolną klatką, nie nad twarzą. Jeśli nie jesteś pewien — nagraj z boku."
+      },
+      {
+        "fault": "Bouncing the bar off the chest",
+        "faultPl": "Odbijanie gryfu od klatki",
+        "cause": "Ego lifting, especially because decline + wide grip = easier eccentric, harder concentric",
+        "causePl": "Ego lifting, zwłaszcza że skos ujemny + szeroki chwyt = łatwiejsza ekscentryka, trudniejsza koncentryka",
+        "cue": "1-second pause on chest. Combination of wide grip + bounce = recipe for pec tear.",
+        "cuePl": "Pauza 1 sekundy na klatce. Połączenie szerokiego chwytu + odbicia = przepis na zerwanie piersiowego."
+      },
+      {
+        "fault": "No spotter on unrack/re-rack",
+        "faultPl": "Brak asekuranta przy zdejmowaniu/odkładaniu",
+        "cause": "Underestimating risk — decline = head down, bar over face/neck during transition",
+        "causePl": "Niedocenianie ryzyka — skos ujemny = głowa w dole, gryf nad twarzą/szyją podczas przekazania",
+        "cue": "ALWAYS use a spotter or safety pins on decline bench. If pinned under the bar in decline — you can't roll it off.",
+        "cuePl": "ZAWSZE używaj asekuranta lub safety pins na ławce skośnej ujemnej. Jeśli przygwoździsz się gryfem na skosie ujemnym — nie zrolujesz go z siebie."
+      }
+    ],
+    "breathing": "Inhale at the top, brace hard, hold through descent and press. Exhale at the top of lockout. Don't hold breath too long — head-down position can spike intracranial pressure.",
+    "breathingPl": "Wdech na górze, mocne napięcie, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie lock-out. Nie wstrzymuj oddechu za długo — pozycja głową w dół może podbić ciśnienie wewnątrzczaszkowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Wide grip + decline = double impingement risk. Switch to neutral-grip decline dumbbell or close-grip incline.",
+      "modificationPl": "Szeroki chwyt + skos ujemny = podwójne ryzyko impingementu. Przejdź na dumbbell decline neutralnym chwytem lub close-grip incline.",
+      "alternative": "dumbbell-decline-press"
+    },
+    {
+      "condition": "high_blood_pressure",
+      "severity": "avoid",
+      "modification": "Head-below-heart position spikes blood pressure. Avoid decline pressing entirely.",
+      "modificationPl": "Pozycja głową poniżej serca podbija ciśnienie krwi. Unikaj wyciskania na skosie ujemnym całkowicie.",
+      "alternative": "barbell-bench-press"
+    },
+    {
+      "condition": "pec_strain_or_history",
+      "severity": "avoid",
+      "modification": "Wide grip pre-stretches the pectoralis maximally — highest pec tear risk variant. Stick to neutral-grip variants until fully recovered.",
+      "modificationPl": "Szeroki chwyt maksymalnie rozciąga piersiowy — wariant z najwyższym ryzykiem zerwania klatki. Trzymaj się wariantów z chwytem neutralnym do pełnego wyzdrowienia.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Wide grip + decline angle stresses wrists more than flat bench. Use wrist wraps and narrow the grip slightly.",
+      "modificationPl": "Szeroki chwyt + skos ujemny obciążają nadgarstki bardziej niż flat bench. Użyj wraps i lekko zwęź chwyt.",
+      "alternative": "barbell-decline-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy, lower chest specialization) | 4x5-6 (strength)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-decline-wide-grip-press.gif",
+    "frames_extracted": [
+      "frames/barbell-decline-wide-grip-press/frame_0_start.png",
+      "frames/barbell-decline-wide-grip-press/frame_1_early.png",
+      "frames/barbell-decline-wide-grip-press/frame_2_mid.png",
+      "frames/barbell-decline-wide-grip-press/frame_3_late.png",
+      "frames/barbell-decline-wide-grip-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/barbell-decline-wide-grip-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:15:00Z",
+  "verification_notes": "Frame 0: sztanga przy dolnej klatce na ławce skośnej ujemnej, stopy zablokowane pod podpórkami, szeroki chwyt widoczny (dłonie szeroko poza szerokością barków). Frame 2: pełne wyciśnięcie (lock-out) nad dolną klatką. Klatka (akcent dolny/zewnętrzny) + przednie delty + tricepsy podświetlone — zgodne z anatomią dla decline wide grip. Klasyfikacja: push_horizontal, compound. Primary: lower_pectoralis P10 (akcent głównego ruchu — szeroka, dolna klatka), anterior_deltoids P7 (skos ujemny zmniejsza udział przednich aktonów względem flat). Triceps zepchnięty do S6 (szeroki chwyt skraca dźwignię tricepsów). Difficulty 6 (intermediate — wymaga mobilności + asekuranta). 5 common_faults (grip too wide, elbows flared, bar drifts, bouncing, no spotter), 4 contraindications (impingement, BP, pec strain, wrist). Wszystkie pola PL od zera.",
+
+  "tags": ["barbell", "decline", "wide_grip", "lower_chest", "chest_specialization", "horizontal_push", "compound", "intermediate"]
+}

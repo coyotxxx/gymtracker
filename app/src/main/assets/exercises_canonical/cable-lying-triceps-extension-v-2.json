@@ -1,0 +1,200 @@
+{
+  "id": "cable-lying-triceps-extension-v-2",
+  "name": "Cable Lying Triceps Extension (V. 2)",
+  "namePl": "Tricep extension z wyciągu leżąc (wariant 2)",
+  "aliases": ["lying cable triceps extension", "supine cable skull crusher", "cable lying skull crusher", "floor cable triceps extension"],
+  "aliasesPl": ["wyciskanie francuskie z wyciągu leżąc", "skull crusher z wyciągu leżąc", "francuski z linki leżąc na podłodze", "tricep extension z dolnego wyciągu leżąc"],
+
+  "description": "Isolation triceps movement performed lying supine on the floor with the head positioned toward a low cable pulley, gripping a straight bar with an overhand (pronated) grip. The cable provides constant tension throughout the entire range of motion — unlike a barbell, the resistance does not drop off at the top, which makes peak contraction harder and the stretched position safer. Variant 2 specifically refers to the floor-based supine setup with a straight bar attachment, rather than a bench-based or rope-based variation. A useful lying triceps option for lifters who want skull-crusher-style mechanics without the elbow stress of a free barbell.",
+  "descriptionPl": "Izolowane ćwiczenie na mięsień trójgłowy ramienia wykonywane w leżeniu na plecach na podłodze, z głową skierowaną w stronę dolnego wyciągu, z prostym drążkiem trzymanym nachwytem górnym. Wyciąg zapewnia stałe napięcie w całym zakresie ruchu — w przeciwieństwie do sztangi, opór nie zanika w górnej pozycji, przez co szczytowy skurcz jest trudniejszy, a pozycja rozciągnięta bezpieczniejsza dla łokci. Wariant 2 oznacza konkretnie leżenie na podłodze z prostym drążkiem (a nie na ławce ani z liną). Dobra opcja dla osób które chcą mechaniki skull crushera bez obciążenia łokci wolną sztangą.",
+
+  "instructions": [
+    "Set the cable pulley to its lowest position and attach a straight bar. Lie supine on the floor with the top of your head about 30-50 cm from the pulley.",
+    "Reach back overhead and grasp the bar with a pronated (palms-down) grip slightly narrower than shoulder-width. Bring elbows to point at the ceiling.",
+    "Position the upper arms vertical (perpendicular to the floor), with elbows directly above the shoulders. Keep them there for the entire set.",
+    "Brace your core, flatten your lower back against the floor, and keep the head resting on the floor (no neck lifting).",
+    "Extend the elbows by contracting the triceps to lock out the arms — the bar should travel in an arc upward and slightly toward your hips, ending directly over the shoulders. Exhale on the way up.",
+    "Pause briefly at full lockout and squeeze the triceps hard. Do not let the upper arms drop forward.",
+    "Lower the bar under control over 2-3 seconds, allowing the elbows to bend until the bar comes close to the forehead or just behind it. Inhale on the descent.",
+    "Keep the upper arms locked in position throughout — only the forearms move. Each rep starts from full stretch and ends at full lockout."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek dolnego wyciągu na najniższej pozycji i zamocuj prosty drążek. Połóż się na plecach na podłodze tak, aby czubek głowy był ok. 30-50 cm od bloczka.",
+    "Sięgnij rękami za głowę i chwyć drążek nachwytem górnym (dłonie w stronę podłogi) nieco węziej niż szerokość barków. Skieruj łokcie w sufit.",
+    "Ustaw ramiona ponad łokciem pionowo (prostopadle do podłogi), z łokciami dokładnie nad barkami. Mają tam pozostać przez całą serię.",
+    "Napnij brzuch, dociśnij odcinek lędźwiowy do podłogi, głowę zostaw opartą na podłodze (nie unoś szyi).",
+    "Wyprostuj łokcie napinając triceps do pełnego wyprostu — drążek przesuwa się po łuku w górę i lekko w stronę bioder, kończąc dokładnie nad barkami. Wydech w fazie koncentrycznej.",
+    "Zatrzymaj się na chwilę w pełnym wyproście i mocno spinaj triceps. Nie pozwól ramionom opaść do przodu.",
+    "Opuszczaj drążek w sposób kontrolowany przez 2-3 sekundy, pozwalając łokciom uginać się aż drążek znajdzie się blisko czoła lub tuż za głową. Wdech podczas opuszczania.",
+    "Trzymaj ramiona ponad łokciem nieruchomo przez cały czas — pracują wyłącznie przedramiona. Każde powtórzenie zaczynaj z pełnego rozciągnięcia, kończ pełnym wyprostem łokci."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["forearm_extensors", "anterior_deltoid", "core", "latissimus_dorsi"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "forearm_extensors": "T4",
+    "anterior_deltoid": "T3",
+    "core": "T2",
+    "latissimus_dorsi": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar_attachment"],
+    "optional": ["mat", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bench-dip", "triceps-pushdown"],
+    "progression_to": ["lying-barbell-triceps-extension", "ez-bar-skull-crusher", "overhead-cable-triceps-extension"],
+    "alternatives": ["lying-barbell-triceps-extension", "ez-bar-skull-crusher", "cable-lying-triceps-extension", "triceps-pushdown", "overhead-cable-triceps-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulley at the lowest position, straight bar attached",
+      "Head 30-50 cm from the pulley, lying supine",
+      "Pronated grip slightly narrower than shoulders",
+      "Upper arms vertical — elbows stacked over shoulders",
+      "Lower back pressed flat, head resting on the floor"
+    ],
+    "setup_cues_pl": [
+      "Bloczek na najniższej pozycji, zamocowany prosty drążek",
+      "Głowa 30-50 cm od bloczka, leżenie na plecach",
+      "Chwyt nachwytem górnym nieco węziej niż barki",
+      "Ramiona ponad łokciem pionowo — łokcie nad barkami",
+      "Lędźwie dociśnięte do podłogi, głowa oparta na podłodze"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms locked vertical",
+      "Drive through the back of the hand to extend the elbows",
+      "Squeeze the triceps hard at full lockout",
+      "Control the eccentric — 2-3 seconds down to the forehead",
+      "Cable tension never drops — fight it the entire rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem zablokowane pionowo",
+      "Wypychaj grzbietem dłoni żeby wyprostować łokcie",
+      "Mocno spinaj triceps w pełnym wyproście",
+      "Kontroluj fazę negatywną — 2-3 sekundy do czoła",
+      "Napięcie linki nie znika — walcz z nim przez całe powtórzenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flare outward during the rep",
+        "faultPl": "Łokcie rozchodzą się na boki podczas ruchu",
+        "cause": "Weak triceps long head, grip too wide, or load too heavy forcing shoulder compensation",
+        "causePl": "Słaba głowa długa tricepsa, zbyt szeroki chwyt lub zbyt duży ciężar wymuszający kompensację barkami",
+        "cue": "Imagine squeezing a ball between your elbows. Keep upper arms parallel and vertical.",
+        "cuePl": "Wyobraź sobie że ściskasz piłkę między łokciami. Ramiona ponad łokciem równolegle i pionowo."
+      },
+      {
+        "fault": "Upper arms drift toward the pulley (shoulders flexing)",
+        "faultPl": "Ramiona ponad łokciem wędrują w stronę wyciągu (zgięcie barków)",
+        "cause": "Using shoulder flexion to help pull the bar over — turns the exercise into a pullover instead of a triceps extension",
+        "causePl": "Pomaganie sobie zgięciem w stawie barkowym aby przeciągnąć drążek — zmienia ćwiczenie w pullover zamiast wyprostu w łokciu",
+        "cue": "Lock the elbows over the shoulders. If they drift, lower the weight.",
+        "cuePl": "Zablokuj łokcie nad barkami. Jeśli odjeżdżają — zmniejsz ciężar."
+      },
+      {
+        "fault": "Partial range of motion — not lowering bar to forehead",
+        "faultPl": "Niepełny zakres ruchu — drążek nie schodzi do czoła",
+        "cause": "Ego lifting, weak triceps in the stretched position, or fear of hitting the face",
+        "causePl": "Ego, słabość tricepsa w pozycji rozciągniętej, lub strach przed uderzeniem w głowę",
+        "cue": "Lower until the bar is near your forehead every rep. Reduce weight if you cannot reach full stretch safely.",
+        "cuePl": "Opuszczaj aż drążek będzie blisko czoła przy każdym powtórzeniu. Zmniejsz ciężar jeśli nie możesz bezpiecznie osiągnąć pełnego rozciągnięcia."
+      },
+      {
+        "fault": "Lifting head off the floor / cervical strain",
+        "faultPl": "Unoszenie głowy nad podłogę / napinanie szyi",
+        "cause": "Anticipating the bar coming toward face, anxiety, or poor head positioning relative to pulley",
+        "causePl": "Antycypacja drążka schodzącego do twarzy, lęk lub złe ustawienie głowy względem bloczka",
+        "cue": "Rest the back of the head on the floor. If you flinch, scoot further from the pulley.",
+        "cuePl": "Trzymaj tył głowy na podłodze. Jeśli odruchowo unosisz głowę — odsuń się dalej od bloczka."
+      },
+      {
+        "fault": "Wrist hyperextension under load",
+        "faultPl": "Przeprostowanie nadgarstków pod obciążeniem",
+        "cause": "Bar pulls wrists backward at the bottom; weak wrist extensors or grip too pronated",
+        "causePl": "Drążek odciąga nadgarstki w tył w dolnej pozycji; słabe prostowniki nadgarstka lub zbyt mocny nachwyt",
+        "cue": "Keep knuckles pointing toward the ceiling at lockout. Use wrist wraps if needed.",
+        "cuePl": "Kłykcie skierowane w sufit w pozycji wyprostu. Użyj usztywniaczy nadgarstka jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale as you lower the bar toward the forehead (eccentric). Exhale forcefully as you extend the elbows to lockout (concentric). Maintain a light core brace throughout to keep the lower back flat.",
+    "breathingPl": "Wdech podczas opuszczania drążka do czoła (faza ekscentryczna). Mocny wydech podczas prostowania łokci do wyprostu (faza koncentryczna). Utrzymuj lekkie napięcie brzucha aby trzymać lędźwie płasko na podłodze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy_distal_triceps",
+      "severity": "modify",
+      "modification": "The stretched position loads the distal triceps tendon heavily. Reduce range of motion, use lighter weight with higher reps (12-15), and avoid slow heavy eccentrics. Consider pushdowns until pain subsides.",
+      "modificationPl": "Pozycja rozciągnięta mocno obciąża dystalne ścięgno tricepsa. Zmniejsz zakres ruchu, używaj lżejszego ciężaru z większą liczbą powtórzeń (12-15) i unikaj wolnych ciężkich faz negatywnych. Rozważ pushdowny aż ból ustąpi.",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "modify",
+      "modification": "Holding upper arms vertical overhead loads the shoulder in a flexed position. If painful, switch to a pushdown or kickback variation where the shoulder remains neutral.",
+      "modificationPl": "Trzymanie ramion ponad łokciem pionowo nad głową obciąża bark w pozycji zgięcia. Jeśli boli, przejdź na pushdowny lub kickbacki gdzie bark pozostaje w pozycji neutralnej.",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "wrist_pain_with_pronated_grip",
+      "severity": "modify",
+      "modification": "Straight bar locks wrists in full pronation. Swap to a rope attachment (neutral grip) or EZ-bar to reduce wrist stress.",
+      "modificationPl": "Prosty drążek blokuje nadgarstki w pełnej pronacji. Zamień na linę (chwyt neutralny) lub sztangę łamaną aby zmniejszyć obciążenie nadgarstków.",
+      "alternative": "cable-rope-overhead-triceps-extension"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "The supine floor position is generally back-friendly, but reaching the bar overhead can pull the lumbar into extension if core is weak. Bend knees with feet flat to keep lumbar pressed down, or perform from a bench with feet planted.",
+      "modificationPl": "Pozycja leżąc na podłodze jest na ogół bezpieczna dla pleców, ale sięganie drążka za głowę może wciągać lędźwie w wyprost gdy brzuch jest słaby. Ugnij kolana i postaw stopy płasko aby trzymać lędźwie dociśnięte, ewentualnie wykonaj na ławce ze stopami na podłodze.",
+      "alternative": "triceps-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x8-10 (strength accessory) | 2-3x15-20 (pump/finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-lying-triceps-extension-v-2.gif",
+    "frames_extracted": [
+      "frames/cable-lying-triceps-extension-v-2/frame_0_start.png",
+      "frames/cable-lying-triceps-extension-v-2/frame_1_early.png",
+      "frames/cable-lying-triceps-extension-v-2/frame_2_mid.png",
+      "frames/cable-lying-triceps-extension-v-2/frame_3_late.png",
+      "frames/cable-lying-triceps-extension-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-lying-triceps-extension-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Trenujący leży na plecach na podłodze (nie na ławce!), z głową skierowaną w stronę dolnego wyciągu cable, trzymając prosty drążek (straight bar attachment) nachwytem górnym. Frame 0: pozycja startowa — ramiona ponad łokciem pionowo nad barkami, łokcie zgięte ~90°, drążek nad czołem, triceps obu ramion podświetlony na czerwono. Frame 1-2: pełny wyprost łokci, ramiona ponad łokciem wciąż pionowe, drążek wyciągnięty maksymalnie w stronę bloczka (pozycja zablokowana), triceps i anconeus wyraźnie zaznaczone. Frame 3-4: powrót do pozycji zgiętej, drążek schodzi do czoła. Ramiona ponad łokciem pozostają pionowe przez cały ruch — modelowe wykonanie izolowanego wyprostu w łokciu bez kompensacji barkiem. Klasyfikacja jednoznaczna: isolation, sagittal plane, push (wyprost łokcia), bilateral, open chain. Wariant 2 vs wariant 1 — wariant 2 to leżenie na podłodze z prostym barem; wariant bez '-v-2' jest na ławce lub z innym uchwytem. Wszystkie pola PL napisane od zera, brak tłumaczeń maszynowych.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "upper_body", "lying", "skull_crusher_variant", "constant_tension"]
+}

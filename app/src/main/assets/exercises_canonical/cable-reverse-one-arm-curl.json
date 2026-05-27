@@ -1,0 +1,194 @@
+{
+  "id": "cable-reverse-one-arm-curl",
+  "name": "Cable Reverse One-Arm Curl",
+  "namePl": "Reverse curl jednorącz z wyciągu",
+  "aliases": ["cable reverse curl single arm", "low pulley reverse curl one arm", "pronated cable curl one arm", "single arm cable reverse curl"],
+  "aliasesPl": ["uginanie nachwytem jednorącz z wyciągu dolnego", "reverse curl z linki jednorącz", "uginanie pronowane jednorącz z wyciągu", "cable reverse curl jednorącz"],
+
+  "description": "Unilateral isolation exercise for the brachialis and brachioradialis performed standing at a low pulley with a single D-handle held in a pronated (palms-down) grip. The cable provides constant tension through the entire range of motion, while the pronated grip mechanically disadvantages the biceps brachii and shifts the load onto the brachialis and forearm extensors. Working one arm at a time eliminates strong-side compensation, exposes left-right imbalances, and allows full focus on contraction quality. Excellent finisher for forearm and elbow-flexor development with smaller loads than barbell versions.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na mięsień ramienny (brachialis) i ramienno-promieniowy (brachioradialis), wykonywane na stojąco przy dolnym wyciągu z pojedynczą rączką typu D trzymaną nachwytem górnym (dłoń skierowana w dół). Linka daje stałe napięcie przez cały zakres ruchu, a pronowany chwyt mechanicznie wyłącza dwugłowy ramienia i przenosi pracę na ramienny i prostowniki przedramienia. Praca jedną ręką eliminuje kompensację silniejszą stroną, ujawnia asymetrie i pozwala w pełni skupić się na jakości skurczu. Świetne ćwiczenie wykończeniowe na przedramiona i zginacze stawu łokciowego, wykonywane mniejszymi ciężarami niż wersje sztangowe.",
+
+  "instructions": [
+    "Set the pulley to the lowest position and attach a single D-handle. Stand facing the cable tower, feet hip-width apart, one stride away from the column.",
+    "Grasp the handle with one hand in a pronated grip (palm down, knuckles forward). Let the arm hang fully extended at your side, cable taut.",
+    "Stand tall — chest up, shoulders back and down, free hand resting on your hip or thigh for balance. Pin the working elbow to your side.",
+    "Brace the core and curl the handle upward by flexing only at the elbow. Keep the wrist straight and the upper arm completely still.",
+    "Continue the curl until the handle reaches the front of your shoulder or chest and the brachialis is fully contracted. Squeeze briefly at the top.",
+    "Lower the handle under control over 2-3 seconds back to full elbow extension. Maintain wrist neutrality and resist the cable on the eccentric.",
+    "Complete all reps on one side, then switch hands. Do NOT rest between sides — train the weaker arm first if there is a noticeable imbalance."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg w najniższej pozycji i zamontuj pojedynczą rączkę D. Stań przodem do bramy, stopy na szerokość bioder, jeden krok od kolumny.",
+    "Złap rączkę jedną dłonią nachwytem górnym (dłoń w dół, kostki do przodu). Pozwól ramieniu zwisać w pełnym wyproście wzdłuż boku, linka napięta.",
+    "Stań prosto — klatka w górze, barki ściągnięte w tył i w dół, wolna ręka oparta na biodrze lub udzie dla równowagi. Przyklej pracujący łokieć do boku tułowia.",
+    "Napnij brzuch i ugnij rączkę w górę zginając wyłącznie staw łokciowy. Nadgarstek prosty, ramię ponad łokciem nieruchome.",
+    "Kontynuuj ruch aż rączka znajdzie się przy przednim akcjonie barku lub klatce piersiowej, a mięsień ramienny będzie w pełnym skurczu. Krótko napnij w górnej pozycji.",
+    "Opuszczaj rączkę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu łokcia. Trzymaj nadgarstek neutralnie i opieraj się sile linki w fazie negatywnej.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie zmień rękę. NIE odpoczywaj między stronami — jeśli widzisz asymetrię, trenuj słabszą stronę jako pierwszą."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis"],
+    "secondary": ["biceps_brachii", "forearm_extensors"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius", "gluteus_medius"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P9",
+    "brachioradialis": "P8",
+    "biceps_brachii": "S5",
+    "forearm_extensors": "S5",
+    "forearm_flexors": "T3",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1",
+    "gluteus_medius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "low_pulley", "d_handle"],
+    "optional": ["wrist_wraps", "chalk", "lifting_gloves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-reverse-curl", "cable-curl"],
+    "progression_to": ["cable-reverse-curl", "barbell-reverse-curl", "ez-bar-reverse-curl", "cable-reverse-preacher-curl"],
+    "alternatives": ["dumbbell-reverse-curl", "cable-reverse-curl", "barbell-reverse-curl", "hammer-curl", "cable-hammer-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulley, single D-handle",
+      "Pronated grip — palm down, knuckles forward",
+      "Working elbow pinned to your side",
+      "Stand tall, free hand on hip for balance",
+      "One stride from the column — cable taut at start"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg dolny, pojedyncza rączka D",
+      "Chwyt nachwytem — dłoń w dół, kostki do przodu",
+      "Pracujący łokieć przyklejony do boku tułowia",
+      "Stań prosto, wolna ręka na biodrze dla równowagi",
+      "Jeden krok od kolumny — linka napięta od startu"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm stays still",
+      "Wrist locked straight — do not curl or flex it",
+      "Squeeze the brachialis at the top for one second",
+      "Lower slowly — fight the cable for 2-3 seconds",
+      "Full elbow extension at the bottom of every rep"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem nieruchome",
+      "Nadgarstek zablokowany prosto — nie zginaj go ani nie obracaj",
+      "Spinaj brachialis w górnej pozycji przez sekundę",
+      "Opuszczaj wolno — opieraj się sile linki przez 2-3 sekundy",
+      "Pełny wyprost łokcia na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrist flexion during the curl (curling the wrist instead of the elbow)",
+        "faultPl": "Zginanie nadgarstka podczas ruchu (uginanie nadgarstka zamiast łokcia)",
+        "cause": "Weak forearm extensors, load too heavy, or attempting to shorten the lever",
+        "causePl": "Słabe prostowniki przedramienia, zbyt duży ciężar, lub próba skrócenia dźwigni",
+        "cue": "Lock the wrist in line with the forearm — knuckles always point forward, never up.",
+        "cuePl": "Zablokuj nadgarstek w linii przedramienia — kostki zawsze do przodu, nigdy do góry."
+      },
+      {
+        "fault": "Elbow drifts forward or away from the torso",
+        "faultPl": "Łokieć wędruje do przodu lub odstaje od tułowia",
+        "cause": "Load too heavy, shoulder compensation, or trying to lift handle higher than full contraction allows",
+        "causePl": "Zbyt duży ciężar, kompensacja barkiem, lub próba uniesienia rączki wyżej niż pozwala na to pełny skurcz",
+        "cue": "Pin the elbow against your ribs and keep it there. Lower the weight if the elbow refuses to stay.",
+        "cuePl": "Przyklej łokieć do żeber i tam go trzymaj. Zmniejsz ciężar jeśli łokieć nie chce pozostać na miejscu."
+      },
+      {
+        "fault": "Torso rotation or leaning to the working side",
+        "faultPl": "Rotacja tułowia lub przechylanie się w stronę pracującej ręki",
+        "cause": "Cable pulls the body off-center, weak unilateral core, or load too heavy",
+        "causePl": "Linka ściąga ciało z osi, słaby jednostronny core, lub zbyt duży ciężar",
+        "cue": "Square your hips and shoulders to the cable. Brace obliques — both shoulders at the same height.",
+        "cuePl": "Ustaw biodra i barki prostopadle do linki. Napnij skośne — oba barki na tej samej wysokości."
+      },
+      {
+        "fault": "Partial range of motion at the bottom",
+        "faultPl": "Niepełny zakres ruchu w dolnej pozycji",
+        "cause": "Ego lifting, weak stretched-position strength, or fear of losing cable tension",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub strach przed utratą napięcia linki",
+        "cue": "Lower until the elbow is fully extended — the cable should still be taut at the bottom.",
+        "cuePl": "Opuszczaj aż łokieć będzie w pełnym wyproście — linka powinna nadal być napięta na dole."
+      },
+      {
+        "fault": "Using the free arm or torso to swing the handle up",
+        "faultPl": "Pomaganie sobie wolną ręką lub tułowiem przy unoszeniu rączki",
+        "cause": "Load too heavy, fatigue at end of set, or poor unilateral discipline",
+        "causePl": "Zbyt duży ciężar, zmęczenie pod koniec serii, lub brak dyscypliny przy pracy jednostronnej",
+        "cue": "Rest the free hand on your hip and keep it there. No torso swing — strict form only.",
+        "cuePl": "Trzymaj wolną rękę na biodrze i tam ją zostaw. Bez bujania tułowia — wyłącznie ścisła technika."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light brace throughout to resist the lateral pull of the cable.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby opierać się bocznemu ciągowi linki."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Pronated grip directly loads the wrist extensors at the lateral epicondyle. Reduce load, use higher reps (15-20), avoid heavy eccentrics. Stop if pain reproduces.",
+      "modificationPl": "Chwyt nachwytem bezpośrednio obciąża prostowniki nadgarstka przy nadkłykciu bocznym. Zmniejsz ciężar, używaj wyższych zakresów (15-20 powt.), unikaj ciężkich faz negatywnych. Przerwij jeśli ból się odtwarza.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Pronated grip stresses the radioulnar joint and dorsal wrist. Use wrist wraps, reduce intensity, or switch to neutral grip (hammer curl) until pain-free.",
+      "modificationPl": "Chwyt nachwytem obciąża staw promieniowo-łokciowy i grzbietową stronę nadgarstka. Użyj opasek na nadgarstki, zmniejsz intensywność, lub przejdź na chwyt neutralny (hammer curl) do zakresu bez bólu.",
+      "alternative": "cable-hammer-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Pronated curl unloads the distal biceps but the elbow flexion arc still loads the tendon. Use lighter weight, control the eccentric, avoid going to failure.",
+      "modificationPl": "Curl nachwytem odciąża dalszy przyczep bicepsa, ale łuk zginania łokcia nadal obciąża ścięgno. Używaj lżejszego ciężaru, kontroluj fazę negatywną, nie pracuj do upadku.",
+      "alternative": "cable-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/forearm focus) | 2-3x15-20 (endurance/pump) | 3x12 each side (balanced unilateral)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-reverse-one-arm-curl.gif",
+    "frames_extracted": [
+      "frames/cable-reverse-one-arm-curl/frame_0_start.png",
+      "frames/cable-reverse-one-arm-curl/frame_1_early.png",
+      "frames/cable-reverse-one-arm-curl/frame_2_mid.png",
+      "frames/cable-reverse-one-arm-curl/frame_3_late.png",
+      "frames/cable-reverse-one-arm-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-reverse-one-arm-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Frame 0: stojąca pozycja, ramię w pełnym wyproście wzdłuż boku, rączka D na lince z dolnego wyciągu, chwyt pronowany (dłoń w dół), podświetlone na czerwono brachialis i ekstensory przedramienia (boczna strona ramienia). Frame 2: pełny skurcz, rączka przy przedniej części barku, łokieć pozostaje przyklejony do boku tułowia, nadgarstek prosty (kostki nadal do przodu — nie do góry). Frame 4: powrót do pełnego wyprostu, linka nadal napięta. Tułów stoi nieruchomo, wolna ręka nie widoczna ale ciało stabilne. Praca jednostronna, pronowana — jednoznacznie reverse curl one-arm z dolnego wyciągu. Wszystkie pola PL napisane od zera. Tylko jedno źródło (jahel) — wariant niszowy.",
+
+  "tags": ["bodybuilding", "arms", "forearms", "brachialis", "brachioradialis", "isolation", "cable", "unilateral", "upper_body", "finisher"]
+}

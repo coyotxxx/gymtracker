@@ -1,0 +1,207 @@
+{
+  "id": "curtsey-squat",
+  "name": "Curtsey Squat",
+  "namePl": "Przysiad z dygnięciem (curtsey squat)",
+  "aliases": ["curtsy squat", "curtsy lunge", "curtsey lunge", "cross-behind lunge", "crossover lunge"],
+  "aliasesPl": ["przysiad dygnięcie", "wykrok krzyżowy", "curtsey lunge", "wykrok z krzyżowaniem nóg", "wykrok bocznie-w-tył"],
+
+  "description": "Unilateral lower-body compound exercise blending sagittal and transverse plane motion. From a standing position the athlete steps one leg diagonally behind and across the body — like a curtsey — and descends into a lunge before driving back to standing. The crossed stance shifts emphasis to the gluteus medius and adductors of the rear (working) leg while the front leg works as a typical lunge stance. Excellent for developing hip stability, frontal-plane glute strength and addressing imbalances often missed by purely sagittal squats and lunges.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała łączące ruch w płaszczyźnie strzałkowej i poprzecznej. Z pozycji stojącej trenujący wykonuje krok jedną nogą skośnie za i na bok drugiej — jak w dygnięciu — i schodzi do wykroku, a następnie wraca do stania. Skrzyżowana pozycja przenosi nacisk na pośladkowy średni i przywodziciele tylnej (pracującej) nogi, podczas gdy przednia noga pracuje jak w klasycznym wykroku. Świetne do rozwoju stabilności bioder, siły pośladków w płaszczyźnie czołowej i wyrównywania dysbalansów pomijanych przez czysto strzałkowe przysiady i wykroki.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Hands clasped at the chest or on the hips for balance.",
+    "Brace your core and shift your weight onto your front (planted) leg. Pick the leg you want to work as the rear/crossing leg.",
+    "Step the rear leg diagonally behind and across the planted leg — about 4-5 o'clock position relative to the front foot. Land softly on the ball of the rear foot.",
+    "Keep hips and shoulders square to the front. Resist the temptation to rotate the pelvis toward the crossing leg.",
+    "Lower into the lunge by bending both knees. The front knee tracks roughly over the front toes; the rear knee descends toward the floor behind and outside the front heel.",
+    "Descend until the front thigh is parallel to the floor (or as deep as mobility allows) and the rear knee hovers just above the ground.",
+    "Drive up by pushing through the heel and mid-foot of the front (planted) leg. Squeeze the front glute at the top.",
+    "Step the crossing leg back to the starting position, returning to a fully upright stance.",
+    "Complete all reps on one side before switching, or alternate legs depending on programming.",
+    "Optionally hold a dumbbell or kettlebell at chest level (goblet style) or single-side at the hip to add load."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Dłonie złożone przy klatce lub na biodrach dla równowagi.",
+    "Napnij brzuch i przenieś ciężar na przednią (postawioną) nogę. Wybierz nogę, którą chcesz pracować jako tylną/krzyżującą.",
+    "Krok tylną nogą skośnie za i na bok przedniej — pozycja około 4-5 godziny względem przedniej stopy. Wyląduj miękko na śródstopiu tylnej nogi.",
+    "Trzymaj biodra i barki ustawione frontalnie. Nie pozwól miednicy rotować w stronę krzyżującej nogi.",
+    "Opuść się do wykroku zginając oba kolana. Przednie kolano podąża mniej więcej nad palcami przedniej stopy, tylne kolano schodzi w dół za i na zewnątrz pięty przedniej.",
+    "Schodź aż przednie udo będzie równoległe do podłogi (lub tak głęboko jak pozwala mobilność), a tylne kolano zawiśnie tuż nad ziemią.",
+    "Wypychaj się w górę przez piętę i środek stopy przedniej (postawionej) nogi. Zaciśnij pośladek przedni na górze.",
+    "Cofnij krzyżującą nogę do pozycji wyjściowej, wracając do pełnego stania.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie przed zmianą, lub naprzemiennie — zależnie od programu.",
+    "Opcjonalnie trzymaj hantlę lub kettlebell przy klatce (goblet) albo jednostronnie przy biodrze dla obciążenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps"],
+    "secondary": ["adductors", "gluteus_medius", "hamstrings"],
+    "stabilizers": ["core", "obliques", "calves", "hip_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "quadriceps": "P8",
+    "gluteus_medius": "S8",
+    "adductors": "S7",
+    "hamstrings": "S6",
+    "core": "S6",
+    "obliques": "S5",
+    "calves": "T4",
+    "hip_stabilizers": "T4"
+  },
+
+  "equipment": {
+    "required": [],
+    "optional": ["dumbbell", "kettlebell", "resistance_band"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "reverse-lunge", "bodyweight-lunge"],
+    "progression_to": ["dumbbell-curtsey-squat", "goblet-curtsey-squat", "deficit-curtsey-lunge", "barbell-curtsey-lunge"],
+    "alternatives": ["reverse-lunge", "lateral-lunge", "bulgarian-split-squat", "cossack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, feet hip-width, weight even on both feet",
+      "Hands clasped at chest — helps balance and keeps torso upright",
+      "Pick a focal point at eye level to stabilize the head",
+      "Choose which leg crosses behind — that is the rear/working leg",
+      "Brace the core before stepping — solid pillar through the trunk"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, stopy na szerokość bioder, ciężar równo na obu stopach",
+      "Dłonie złożone przy klatce — pomaga w równowadze i utrzymaniu pionowego tułowia",
+      "Wybierz punkt skupienia wzroku, by ustabilizować głowę",
+      "Wybierz która noga krzyżuje za drugą — to noga tylna/pracująca",
+      "Napnij brzuch przed krokiem — solidny filar przez tułów"
+    ],
+    "execution_cues": [
+      "Step diagonally back to 4-5 o'clock — not straight back, not pure side",
+      "Hips and shoulders stay facing forward — don't twist the pelvis",
+      "Keep the front foot flat — heel does not lift",
+      "Drop the rear knee straight toward the floor behind your front heel",
+      "Drive through the front heel and squeeze the glute to stand up"
+    ],
+    "execution_cues_pl": [
+      "Krok skośnie w tył na godzinę 4-5 — nie prosto w tył, nie czysto w bok",
+      "Biodra i barki zostają ustawione frontalnie — nie skręcaj miednicy",
+      "Przednia stopa płasko na podłodze — pięta się nie odrywa",
+      "Opuść tylne kolano prosto w dół za pięta przedniej nogi",
+      "Wypychaj się przez piętę przedniej nogi i zaciśnij pośladek wstając"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pelvis rotates toward the crossing leg",
+        "faultPl": "Miednica rotuje w stronę krzyżującej nogi",
+        "cause": "Insufficient core control or stepping too far across the body. Loses tension on the gluteus medius and stresses the lower back.",
+        "causePl": "Niedostateczna kontrola brzucha lub krok za daleko w poprzek ciała. Traci się napięcie pośladkowego średniego i obciąża dolny odcinek pleców.",
+        "cue": "Hips square to the front wall. Imagine two headlights on your hipbones pointing straight ahead.",
+        "cuePl": "Biodra ustawione frontalnie. Wyobraź sobie dwa reflektory na biodrach świecące prosto przed siebie."
+      },
+      {
+        "fault": "Front knee collapses inward (valgus)",
+        "faultPl": "Przednie kolano zapada do środka (koślawość)",
+        "cause": "Weak gluteus medius, weight rolling to the inside of the front foot, or stepping too far across",
+        "causePl": "Słaby pośladkowy średni, ciężar przenoszony na wewnętrzną krawędź przedniej stopy lub zbyt szeroki krok krzyżowy",
+        "cue": "Push the front knee out, in line with the second and third toes. Weight through the heel.",
+        "cuePl": "Wypchnij przednie kolano na zewnątrz, w linii z drugim i trzecim palcem stopy. Ciężar przez piętę."
+      },
+      {
+        "fault": "Torso leans forward / collapses chest",
+        "faultPl": "Tułów pochyla się w przód / zapada klatka",
+        "cause": "Weak core, trying to compensate for weak quads or limited ankle mobility",
+        "causePl": "Słaby brzuch, kompensacja słabych czworogłowych lub ograniczona mobilność stawu skokowego",
+        "cue": "Chest tall, ribs down. Hands at chest help — drive the elbows down into the ribs.",
+        "cuePl": "Klatka wysoko, żebra w dół. Dłonie przy klatce pomagają — dociskaj łokcie do żeber."
+      },
+      {
+        "fault": "Rear foot too far behind (turns into reverse lunge)",
+        "faultPl": "Tylna stopa za daleko z tyłu (zamienia się w wykrok w tył)",
+        "cause": "Misunderstanding the curtsey diagonal — stepping straight back instead of across",
+        "causePl": "Niezrozumienie skośnego ruchu dygnięcia — krok prosto w tył zamiast w poprzek",
+        "cue": "Land the rear foot OUTSIDE the line of your front heel — across the body, not behind it.",
+        "cuePl": "Wyląduj tylną stopą NA ZEWNĄTRZ linii przedniej pięty — w poprzek ciała, nie za nim."
+      },
+      {
+        "fault": "Loss of balance / wobble side-to-side",
+        "faultPl": "Utrata równowagi / chwianie bokiem",
+        "cause": "Weak hip stabilizers, descending too fast, or eyes drifting down",
+        "causePl": "Słabe stabilizatory bioder, zbyt szybkie schodzenie lub wzrok w dół",
+        "cue": "Slow the descent — 2-3 seconds down. Eyes on a fixed point ahead. Engage the foot tripod.",
+        "cuePl": "Spowolnij schodzenie — 2-3 sekundy w dół. Wzrok na stałym punkcie przed sobą. Aktywuj trójkąt stopy."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before stepping back into the curtsey. Hold breath through the descent (light Valsalva is enough for bodyweight; full brace if loaded). Exhale as you drive up and return to standing.",
+    "breathingPl": "Wdech i napięcie na górze przed krokiem w dygnięcie. Wstrzymaj oddech przez schodzenie (lekki Valsalva wystarczy dla ćwiczenia z ciężarem ciała, pełne napięcie z obciążeniem). Wydech podczas wypychania się w górę i powrotu do stania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "The crossed stance adds rotational stress on the front knee. Avoid until cleared. Switch to straight-plane reverse lunge or split squat with no crossing.",
+      "modificationPl": "Skrzyżowana pozycja dodaje stresu rotacyjnego na przednie kolano. Unikaj do czasu zgody specjalisty. Przejdź na wykrok prosto w tył lub split squat bez krzyżowania.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "hip_impingement_FAI",
+      "severity": "modify",
+      "modification": "The internal rotation of the front hip can provoke impingement symptoms. Reduce depth and avoid extreme crossing — or switch to lateral lunge or cossack squat with external rotation.",
+      "modificationPl": "Rotacja wewnętrzna przedniego biodra może prowokować objawy konfliktu. Zmniejsz głębokość i unikaj mocnego krzyżowania — lub przejdź na wykrok boczny lub przysiad kozacki z rotacją zewnętrzną.",
+      "alternative": "lateral-lunge"
+    },
+    {
+      "condition": "iliotibial_band_syndrome",
+      "severity": "caution",
+      "modification": "Crossing pattern can flare up ITB tension. Start with bodyweight only, low volume, and ensure adequate hip mobility work first.",
+      "modificationPl": "Wzorzec krzyżowania może nasilać napięcie pasma biodrowo-piszczelowego. Zacznij od ciężaru ciała, niska objętość, najpierw zadbaj o mobilność bioder.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "The rotational component challenges spinal stability. Postpone until symptoms resolve and physiotherapist clears unilateral work.",
+      "modificationPl": "Komponent rotacyjny obciąża stabilność kręgosłupa. Odłóż do ustąpienia objawów i zgody fizjoterapeuty na pracę jednostronną.",
+      "alternative": "bodyweight-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 per leg (hypertrophy/bodyweight) | 3-4x8-12 per leg (loaded with dumbbell) | 2-3x15-20 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "curtsey-squat.gif",
+    "frames_extracted": [
+      "frames/curtsey-squat/frame_0_start.png",
+      "frames/curtsey-squat/frame_1_early.png",
+      "frames/curtsey-squat/frame_2_mid.png",
+      "frames/curtsey-squat/frame_3_late.png",
+      "frames/curtsey-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/curtsey-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Postać stoi prosto z dłońmi złożonymi przy klatce (równowaga), wykonuje krok prawą nogą skośnie za i na bok lewej (klasyczne curtsey) — prawe kolano schodzi za i na zewnątrz lewej pięty, lewa noga zgięta około 90° w pozycji wykroku. Tułów pionowy, dłonie zostają przy klatce. Klatka 2 (mid) pokazuje pełną głębokość z wyraźnym skrzyżowaniem nóg. Mięśnie podświetlone w GIFie: czworogłowe i pośladki obu nóg (mocniej przednia/postawiona), przywodziciele tylnej (krzyżującej) nogi — pasuje do anatomii wzorca curtsey. Brak obciążenia — bodyweight wariant. Klasyfikacja: lunge pattern, transverse plane (krzyżowanie), unilateral, beginner-friendly (difficulty 5). Master.json potwierdza slug 'curtsey-squat' w glutes. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'przysiad z dygnięciem' (popularna nazwa) + alias 'wykrok krzyżowy'.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "bodyweight", "compound", "glute_medius", "frontal_plane", "balance", "hip_stability", "no_equipment"]
+}

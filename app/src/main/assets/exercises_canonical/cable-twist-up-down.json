@@ -1,0 +1,200 @@
+{
+  "id": "cable-twist-up-down",
+  "name": "Cable Twist Up-Down (High-to-Low Woodchopper)",
+  "namePl": "Cable twist góra-dół (woodchopper variant)",
+  "aliases": ["high cable woodchopper", "high-to-low cable chop", "cable chop", "standing cable woodchop", "cable diagonal chop"],
+  "aliasesPl": ["woodchopper na wyciągu", "drwal na wyciągu", "diagonalny chop na wyciągu", "rąbanie drewna na wyciągu", "skos na wyciągu góra-dół", "cable chop"],
+
+  "description": "Standing rotational core exercise performed on a cable column. The cable is set at the highest pulley position; the lifter grips the handle with both hands above one shoulder and pulls it diagonally across the body down to the opposite hip, driving rotation through the obliques while keeping the hips relatively stable. The 'up-down' (high-to-low) chop trains the same anti-rotation and rotation patterns used in throwing, swinging and chopping sports — emphasising the obliques over the rectus abdominis and developing trunk power through the transverse plane.",
+  "descriptionPl": "Stojące rotacyjne ćwiczenie na mięśnie głębokie tułowia wykonywane na wyciągu linowym. Linkę ustawia się w najwyższym położeniu — ćwiczący chwyta uchwyt oburącz nad jednym ramieniem i ciągnie go diagonalnie w poprzek ciała w dół, w stronę przeciwnego biodra, generując rotację z mięśni skośnych przy względnie nieruchomych biodrach. Wariant 'góra-dół' (high-to-low) trenuje te same wzorce rotacji i anty-rotacji, które występują w rzutach, zamachach i rąbaniu — mocniej obciąża skośne niż mięsień prosty brzucha i rozwija moc tułowia w płaszczyźnie poprzecznej.",
+
+  "instructions": [
+    "Set the cable pulley to the highest position and attach a single-grip handle (D-handle or rope).",
+    "Stand side-on to the machine with feet roughly shoulder-width apart. Step out one stride so the cable is taut at full reach.",
+    "Grip the handle with both hands stacked together (top hand nearest the column) and bring the handle to a position above the shoulder closest to the machine. Arms are mostly straight, slight bend in the elbows.",
+    "Brace your core, exhale and pull the handle diagonally across the body and downward, rotating through the trunk so the handle finishes outside the opposite hip. Pivot the rear foot if needed to allow hips to follow.",
+    "At the bottom position the arms are extended low on the far side, torso has rotated, and obliques are fully contracted. Briefly pause.",
+    "Inhale and reverse under control — let the cable pull you back up along the same diagonal path until the handle returns above the starting shoulder. Do not let the weight stack slam.",
+    "Complete all reps on one side, then switch stance to work the opposite side equally."
+  ],
+  "instructionsPl": [
+    "Ustaw blok linowy w najwyższym położeniu i zamocuj pojedynczy uchwyt (D-handle lub linka).",
+    "Stań bokiem do wyciągu, stopy mniej więcej na szerokość barków. Odsuń się o krok, by linka była napięta przy pełnym wyciągnięciu rąk.",
+    "Chwyć uchwyt oburącz, dłonie złożone razem (górna dłoń bliżej kolumny) i przenieś uchwyt nad ramię bliższe maszyny. Ramiona są w większości proste, z lekkim ugięciem w łokciach.",
+    "Napnij brzuch, wydech i ciągnij uchwyt diagonalnie w poprzek ciała w dół, rotując tułów tak, by uchwyt zakończył ruch na zewnątrz przeciwnego biodra. Jeśli trzeba, podkręć stopę z tyłu, by biodra mogły podążyć za ruchem.",
+    "W dolnej pozycji ramiona są wyciągnięte nisko po przeciwnej stronie, tułów obrócony, mięśnie skośne maksymalnie napięte. Krótka pauza.",
+    "Wdech i wracaj kontrolowanym ruchem — pozwól, by linka prowadziła cię z powrotem po tej samej diagonalnej ścieżce, aż uchwyt wróci nad ramię startowe. Nie pozwól stosowi obciążeń uderzyć.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie zmień pozycję, by wytrenować drugą stronę równo."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["rectus_abdominis", "anterior_deltoid", "serratus_anterior"],
+    "stabilizers": ["glutes", "transverse_abdominis", "erector_spinae", "lats"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "S6",
+    "anterior_deltoid": "S5",
+    "serratus_anterior": "S5",
+    "glutes": "T4",
+    "transverse_abdominis": "T4",
+    "erector_spinae": "T3",
+    "lats": "T3"
+  },
+
+  "equipment": {
+    "required": ["cable_machine"],
+    "optional": ["d_handle", "rope_attachment"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["pallof-press", "russian-twist", "cable-standing-oblique-twist"],
+    "progression_to": ["medicine-ball-rotational-throw", "landmine-rotation", "cable-low-to-high-chop"],
+    "alternatives": ["landmine-rotation", "medicine-ball-rotational-throw", "russian-twist", "standing-oblique-cable-twist"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Cable at the highest pulley, D-handle or rope attached",
+      "Stand side-on, feet shoulder-width, far enough out that the cable stays taut",
+      "Both hands stacked on the handle, top hand nearest the column",
+      "Handle starts above the shoulder closest to the machine, arms nearly straight",
+      "Brace the core and set a slight knee bend before the first pull"
+    ],
+    "setup_cues_pl": [
+      "Linka w najwyższym bloku, D-handle lub linka zamocowana",
+      "Stań bokiem, stopy na szerokość barków, na tyle daleko by linka pozostała napięta",
+      "Obie dłonie złożone na uchwycie, górna dłoń bliżej kolumny",
+      "Uchwyt startuje nad ramieniem bliższym maszynie, ramiona prawie proste",
+      "Napnij brzuch i ugnij lekko kolana przed pierwszym pociągnięciem"
+    ],
+    "execution_cues": [
+      "Drive the rotation from the obliques, not the arms — hands just hold the handle",
+      "Pull diagonally across the body to the OPPOSITE hip, like swinging an axe",
+      "Exhale forcefully through the chop",
+      "Let the rear foot pivot if hips need to follow — knees stay over toes",
+      "Control the eccentric back to the top — 1 sec down, 2 sec up to start"
+    ],
+    "execution_cues_pl": [
+      "Generuj rotację z mięśni skośnych, nie z ramion — dłonie tylko trzymają uchwyt",
+      "Ciągnij diagonalnie w poprzek ciała do PRZECIWNEGO biodra, jakbyś machał siekierą",
+      "Mocny wydech podczas chopa",
+      "Pozwól tylnej stopie się obrócić, jeśli biodra muszą za ruchem podążyć — kolana nad palcami stóp",
+      "Kontroluj fazę ekscentryczną z powrotem do góry — 1 s w dół, 2 s w górę na start"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with the arms instead of rotating the trunk",
+        "faultPl": "Ciągnięcie ramionami zamiast rotacji tułowia",
+        "cause": "Treating the chop like a cable pulldown — using lats and biceps instead of obliques",
+        "causePl": "Traktowanie chopa jak ściągania pionowego — używanie najszerszych i bicepsa zamiast skośnych",
+        "cue": "Keep elbows nearly locked — lead with the rib cage rotating over the pelvis. The handle follows the shoulders.",
+        "cuePl": "Trzymaj łokcie prawie wyprostowane — prowadź ruchem z klatki rotującej nad miednicą. Uchwyt podąża za barkami."
+      },
+      {
+        "fault": "Hips and shoulders rotating as a single block (no spinal rotation)",
+        "faultPl": "Biodra i barki rotują jak jeden blok (brak rotacji w kręgosłupie)",
+        "cause": "Either too much pivoting at the feet or fear of working the obliques in isolation",
+        "causePl": "Zbyt mocne obracanie stóp lub obawa przed izolowanym obciążaniem skośnych",
+        "cue": "Hips stay relatively quiet — only a small pivot of the rear foot. The chest rotates further than the hips.",
+        "cuePl": "Biodra pozostają względnie spokojne — tylko mały obrót tylnej stopy. Klatka rotuje dalej niż biodra."
+      },
+      {
+        "fault": "Loss of bracing at the bottom — lumbar flexion / side bend",
+        "faultPl": "Utrata napięcia w dole — zgięcie lędźwiowe / boczne zgięcie",
+        "cause": "Going too heavy, letting the cable yank the torso into a side crunch",
+        "causePl": "Zbyt duże obciążenie, linka ściąga tułów do bocznego zgięcia",
+        "cue": "Maintain neutral spine throughout — if you collapse sideways, drop the weight 20-30%",
+        "cuePl": "Utrzymuj neutralną pozycję kręgosłupa — jeśli zapadasz się w bok, zmniejsz ciężar o 20-30%"
+      },
+      {
+        "fault": "Letting the weight stack slam on the eccentric / yanking back to start",
+        "faultPl": "Pozwalanie stosowi uderzać na fazie ekscentrycznej / szarpanie powrotu",
+        "cause": "Focus only on the concentric, ignoring that obliques work both ways",
+        "causePl": "Skupienie tylko na fazie koncentrycznej, ignorowanie że skośne pracują w obu kierunkach",
+        "cue": "2 seconds back up under control — resist the cable pulling you back",
+        "cuePl": "2 sekundy powrotu pod kontrolą — opieraj się linie ciągnącej cię z powrotem"
+      },
+      {
+        "fault": "Standing too close to the machine — cable goes slack at the top",
+        "faultPl": "Stoisz zbyt blisko maszyny — linka traci napięcie w pozycji startowej",
+        "cause": "Underestimating how much horizontal distance the chop needs",
+        "causePl": "Niedoszacowanie dystansu w poziomie potrzebnego do chopa",
+        "cue": "Step out until the cable is taut with arms extended overhead at the start — that's your anchor point",
+        "cuePl": "Odsuń się aż linka będzie napięta z ramionami wyciągniętymi nad głowę w pozycji startowej — to twój punkt zaczepienia"
+      }
+    ],
+    "breathing": "Inhale at the top with arms extended overhead. Exhale forcefully through the diagonal chop down — this maximises oblique contraction and intra-abdominal pressure. Inhale on the return.",
+    "breathingPl": "Wdech w górze, z ramionami wyciągniętymi nad głowę. Mocny wydech podczas diagonalnego chopa w dół — maksymalizuje skurcz skośnych i ciśnienie wewnątrzbrzuszne. Wdech podczas powrotu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Loaded rotation under compression is among the highest-risk movements for lumbar discs (McGill). Switch to anti-rotation (Pallof press) until cleared.",
+      "modificationPl": "Obciążona rotacja pod kompresją jest jednym z najbardziej ryzykownych ruchów dla krążków lędźwiowych (McGill). Przejdź na ćwiczenia anty-rotacyjne (Pallof press) do czasu wyzdrowienia.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Diagonal rotation with load can aggravate acute lumbar pain. Train anti-rotation and dead bug variations instead until pain-free.",
+      "modificationPl": "Diagonalna rotacja z obciążeniem może nasilać ostry ból lędźwi. Zamiast tego trenuj ćwiczenia anty-rotacyjne i dead bug do ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Overhead start position can compress the supraspinatus. Use a mid-high pulley (chest level) instead of the top setting and keep elbows below shoulder height.",
+      "modificationPl": "Pozycja startowa nad głową może uciskać mięsień nadgrzebieniowy. Użyj średnio-wysokiego bloku (na wysokości klatki) zamiast najwyższego ustawienia i trzymaj łokcie poniżej linii barków.",
+      "alternative": "standing-oblique-cable-twist"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "caution",
+      "modification": "Strong rotational forces on a growing abdomen are generally discouraged. Switch to gentle standing twists without load or anti-rotation Pallof press at low resistance.",
+      "modificationPl": "Mocne siły rotacyjne na rosnącym brzuchu są generalnie odradzane. Przejdź na delikatne skręty stojące bez obciążenia lub Pallof press z małym oporem.",
+      "alternative": "pallof-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12/strona (hypertrophy) | 3x12-15/strona (endurance) | 4x6-8/strona (power, eksplozywne tempo)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-twist-up-down.gif",
+    "frames_extracted": [
+      "frames/cable-twist-up-down/frame_0_start.png",
+      "frames/cable-twist-up-down/frame_1_early.png",
+      "frames/cable-twist-up-down/frame_2_mid.png",
+      "frames/cable-twist-up-down/frame_3_late.png",
+      "frames/cable-twist-up-down/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/cable-twist-up-down"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T05:10:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): stojąca pozycja boczna do wyciągu, ramiona oburącz wyciągnięte wysoko po jednej stronie (cable od góry), obie skośne podświetlone czerwono — szczególnie po prawej stronie tułowia. Klatka 2 (mid): diagonalny chop w trakcie — uchwyt przechodzi przez linię środkową ciała w dół, tułów wyraźnie zrotowany, hip hinge, skośne mocno napięte, glutes w tle aktywne stabilizująco. Klatka 4 (end): powrót do startu z lekkim śladem fazy pośredniej. Ruch potwierdzony: klasyczny high-to-low cable woodchopper — od wysokiej pozycji jednej strony, diagonalnie w dół do przeciwnego biodra. Klasyfikacja: rotation (płaszczyzna poprzeczna), compound (kręgosłup + biodra + barki), force=pull (ciągnięcie linki), bilateral (obie ręce na uchwycie, choć trening jednostronny per set). Primary: obliques (P9 — najmocniej podświetlone w GIFie). Secondary: rectus_abdominis (S6), anterior_deltoid (S5 — utrzymanie ramion w górze startowo), serratus_anterior (S5 — protrakcja przy chopie). Stabilizery: glutes, transverse_abdominis, erector_spinae, lats. Nazwa PL: 'Cable twist góra-dół (woodchopper variant)' wg promptu, aliasy: 'woodchopper na wyciągu', 'drwal na wyciągu', 'cable chop'. Glowupp/jahel level=intermediate (wymaga kontroli tułowia + zrozumienia rotacji vs anty-rotacji). 4-5 najczęstszych błędów technicznych z literatury fitness (McGill, Boyle, Cressey). 4 przeciwwskazania w tym pregnancy (rotacja brzucha) i shoulder impingement (start overhead). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["cable", "core", "obliques", "rotation", "woodchopper", "chop", "standing", "transverse_plane", "anti_rotation", "sports_performance"]
+}

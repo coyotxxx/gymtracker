@@ -1,0 +1,201 @@
+{
+  "id": "incline-close-grip-push-up",
+  "name": "Incline Close-Grip Push-Up",
+  "namePl": "Pompka chwytem wąskim na ławce skośnej",
+  "aliases": ["incline diamond push-up", "incline narrow push-up", "incline close-grip pushup", "elevated close-grip push-up", "bar close-grip push-up incline"],
+  "aliasesPl": ["pompka wąska na podwyższeniu", "pompka diamentowa na skosie", "pompka wąskim chwytem na drążku", "pompka tricepsowa na podwyższeniu", "pompka na sztandze (chwyt wąski, skos)"],
+
+  "description": "Close-grip push-up performed against an elevated bar (Smith machine bar, barbell in a rack, or sturdy bench edge) with hands placed close together — index fingers and thumbs roughly touching or within shoulder width. The incline angle reduces the bodyweight load on the hands (compared to floor close-grip push-up), making this a regression that's ideal for building triceps and inner chest strength when the standard floor variant is too hard. The narrow hand position shifts emphasis from the outer pec to the triceps brachii (all three heads) and the sternal/inner fibers of the pectoralis major.",
+  "descriptionPl": "Pompka chwytem wąskim wykonywana o uniesiony drążek (gryf w Smith machinie, sztanga w stojaku lub krawędź solidnej ławki) — dłonie blisko siebie, palce wskazujące i kciuki praktycznie się stykają lub maksymalnie na szerokość barków. Skośny kąt zmniejsza obciążenie masą ciała na dłoniach (w porównaniu do wersji podłogowej), co czyni ten wariant regresją idealną do budowy siły tricepsów i wewnętrznej klatki, gdy klasyczna wąska pompka z podłogi jest jeszcze za trudna. Wąskie ustawienie dłoni przesuwa akcent z zewnętrznej części piersiowego na tricepsy ramienne (wszystkie trzy głowy) oraz włókna mostkowe/wewnętrzne mięśnia piersiowego większego.",
+
+  "instructions": [
+    "Set a barbell in a power rack or Smith machine at hip-to-thigh height (higher bar = easier). Make sure the bar is locked and won't roll or slide.",
+    "Step back and place both hands on the bar close together — index fingers nearly touching, or thumbs within a fist's width.",
+    "Walk feet back until your body forms a straight diagonal line from heels to head. The further back the feet, the steeper the angle and the harder the rep.",
+    "Brace core, squeeze glutes, lock the ribcage down. Shoulders pulled away from the ears, scapulae set.",
+    "Inhale and lower yourself in a controlled tempo (2-3 seconds). Elbows track CLOSE to your torso — pinned to your ribs at ~20-30°, not flared.",
+    "Bring chest toward the bar until it lightly touches or stops a fist's width away. Do not bounce off the bar.",
+    "Exhale and press the bar away by extending elbows powerfully. Drive through palms and feel the tricepsy contract hard at lockout.",
+    "Lock out without hyperextending elbows. Maintain plank position throughout — no sagging hips, no piking."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w klatce treningowej lub Smith machine na wysokości biodra-uda (wyżej = łatwiej). Upewnij się że gryf jest zablokowany i nie zjedzie ani się nie obróci.",
+    "Cofnij się i połóż obie dłonie na gryfie blisko siebie — palce wskazujące prawie się stykają, lub kciuki w odległości pięści.",
+    "Cofaj stopy aż ciało utworzy prostą skośną linię od pięt do głowy. Im dalej stopy — tym ostrzejszy kąt i trudniejsze powtórzenie.",
+    "Napnij brzuch, ściśnij pośladki, ściągnij żebra w dół. Barki odciągnięte od uszu, łopatki ustawione.",
+    "Wdech i opuszczaj się kontrolowanym tempem (2-3 sekundy). Łokcie BLISKO tułowia — przyklejone do żeber pod ~20-30°, nie rozsunięte.",
+    "Doprowadź klatkę do gryfu aż lekko go dotknie lub zatrzyma się na szerokość pięści. Nie odbijaj się od drążka.",
+    "Wydech i wypchnij się od gryfu mocnym wyprostem łokci. Napieraj przez wnętrza dłoni i poczuj jak tricepsy napinają się mocno w pozycji końcowej.",
+    "Zablokuj łokcie bez hiperextensji. Utrzymuj pozycję planka przez cały ruch — bez opadania bioder, bez zadzierania pupy."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii", "pectoralis_major"],
+    "secondary": ["anterior_deltoids", "pectoralis_major_clavicular"],
+    "stabilizers": ["core", "glutes", "serratus_anterior", "scapular_stabilizers", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P9",
+    "pectoralis_major": "P8",
+    "anterior_deltoids": "S6",
+    "pectoralis_major_clavicular": "S5",
+    "serratus_anterior": "T5",
+    "core": "T5",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "barbell_or_smith_machine"],
+    "optional": ["bench", "push_up_handles", "weighted_vest"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["incline-push-up", "wall-push-up"],
+    "progression_to": ["close-grip-push-up", "diamond-push-up", "decline-close-grip-push-up"],
+    "alternatives": ["incline-push-up", "bench-dip", "close-grip-bench-press", "triceps-pushdown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar locked at hip-to-thigh height — never use a free-rolling bar",
+      "Hands close together — index fingers touching or thumbs within a fist's width",
+      "Body in straight line from heels to head — pre-brace plank before first rep",
+      "Shoulders away from ears, scapulae down and back",
+      "Feet far enough back that you feel real challenge but can hold plank position"
+    ],
+    "setup_cues_pl": [
+      "Gryf zablokowany na wysokości biodra-uda — nigdy nie używaj luźnej sztangi",
+      "Dłonie blisko siebie — palce wskazujące się dotykają lub kciuki w odległości pięści",
+      "Ciało w prostej linii od pięt do głowy — napnij plankę zanim zaczniesz",
+      "Barki z dala od uszu, łopatki ściągnięte w dół i do tyłu",
+      "Stopy na tyle daleko, że czujesz prawdziwe wyzwanie, ale utrzymujesz pozycję planka"
+    ],
+    "execution_cues": [
+      "Elbows pinned to ribs — 'wąskie' means narrow elbows, not just narrow hands",
+      "Lower in 2-3 seconds — controlled descent, no free-fall onto the bar",
+      "Chest to bar — light touch or fist's-width pause, never bounce",
+      "Drive through palms and squeeze triceps hard at lockout",
+      "Brace abs and squeeze glutes from first rep to last — hips never sag"
+    ],
+    "execution_cues_pl": [
+      "Łokcie przyklejone do żeber — 'wąsko' oznacza wąskie łokcie, nie tylko wąskie dłonie",
+      "Opuszczaj w 2-3 sekundy — kontrolowane schodzenie, bez 'free-fall' na gryf",
+      "Klatka do gryfu — lekki dotyk lub pauza na szerokość pięści, nigdy nie odbijaj",
+      "Napieraj przez wnętrza dłoni i mocno ściśnij tricepsy w pozycji końcowej",
+      "Napnij brzuch i ściśnij pośladki od pierwszego do ostatniego powtórzenia — biodra nigdy nie opadają"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring outward",
+        "faultPl": "Łokcie rozjeżdżające się na boki",
+        "cause": "Lack of triceps focus — body defaults to chest-press pattern with flared elbows",
+        "causePl": "Brak skupienia na tricepsach — ciało domyślnie wykonuje wzorzec wyciskania na klatkę z rozsuniętymi łokciami",
+        "cue": "Pin elbows to ribs at ~20-30°. 'Wąski chwyt = wąskie łokcie'. If they flare you lose the triceps emphasis.",
+        "cuePl": "Przyklej łokcie do żeber pod ~20-30°. 'Wąski chwyt = wąskie łokcie'. Jeśli się rozjeżdżają, tracisz akcent na tricepsy."
+      },
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "Weak core or no glute engagement on the incline angle",
+        "causePl": "Słaby brzuch lub brak napięcia pośladków przy kącie skośnym",
+        "cue": "Squeeze glutes HARD and brace abs before first rep. 'Najpierw plank, potem pompka'. Body is one rigid plank.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki i napnij brzuch przed pierwszym powtórzeniem. 'Najpierw plank, potem pompka'. Ciało to jedna sztywna deska."
+      },
+      {
+        "fault": "Partial range of motion (chest never reaches bar)",
+        "faultPl": "Częściowy zakres ruchu (klatka nie dochodzi do gryfu)",
+        "cause": "Lack of strength, ego — counting reps that stop halfway",
+        "causePl": "Brak siły, ego — liczenie powtórzeń które zatrzymują się w połowie",
+        "cue": "Chest must touch the bar or stop within a fist's-width. If you can't reach — raise the bar higher (regression).",
+        "cuePl": "Klatka musi dotknąć gryfu lub zatrzymać się na szerokość pięści. Jeśli nie sięgasz — podnieś gryf wyżej (regresja)."
+      },
+      {
+        "fault": "Bouncing off the bar at the bottom",
+        "faultPl": "Odbijanie się od gryfu na dole",
+        "cause": "Using elastic recoil instead of muscle force, rushing the eccentric",
+        "causePl": "Wykorzystywanie sprężystego odbicia zamiast siły mięśni, zbyt szybka faza ekscentryczna",
+        "cue": "Brief pause at the bar — 1 second. Then drive away with triceps. No bounce = real strength.",
+        "cuePl": "Krótka pauza przy gryfie — 1 sekunda. Potem wypchnij się tricepsami. Brak odbicia = prawdziwa siła."
+      },
+      {
+        "fault": "Head dropping or craning forward",
+        "faultPl": "Opadająca lub wystawiona do przodu głowa",
+        "cause": "Trying to 'see the bar' or strain compensation",
+        "causePl": "Próba 'zobaczenia gryfu' lub kompensacja zmęczenia",
+        "cue": "Neutral neck — chin slightly tucked, ears in line with shoulders. Eyes look at the bar, not above it.",
+        "cuePl": "Neutralny kark — broda lekko schowana, uszy w linii z barkami. Wzrok na gryf, nie ponad niego."
+      }
+    ],
+    "breathing": "Inhale during descent toward the bar, brace at the bottom, exhale forcefully during the press as you extend elbows. For higher reps you can use a 'brace-and-press' pattern across 2-3 reps.",
+    "breathingPl": "Wdech podczas opuszczania do gryfu, napięcie na dole, mocny wydech podczas wyciskania przy prostowaniu łokci. Przy wyższych powtórzeniach można stosować schemat 'napięcie-i-wyciśnij' przez 2-3 powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Wrap a towel around the bar for thicker grip, or use push-up handles attached to the bar. Bar grip is more wrist-friendly than floor push-ups (neutral angle).",
+      "modificationPl": "Owiń ręcznik na gryfie dla grubszego chwytu lub użyj uchwytów do pompek przymocowanych do gryfu. Chwyt na gryfie jest bardziej przyjazny dla nadgarstków niż pompki z podłogi (neutralny kąt).",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "elbow_pain",
+      "severity": "modify",
+      "modification": "Close grip loads triceps and elbow tendons heavily. Reduce ROM (chest stops higher above bar), use wider grip, or switch to standard incline push-up until elbow pain resolves.",
+      "modificationPl": "Wąski chwyt mocno obciąża tricepsy i ścięgna łokci. Zmniejsz ROM (klatka zatrzymuje się wyżej nad gryfem), użyj szerszego chwytu lub przerzuć się na zwykłą pompkę skośną do czasu ustąpienia bólu łokcia.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Keep elbows tucked tight (~20-30°) — narrow elbow path is actually shoulder-friendly. Raise bar higher to reduce ROM if any pinch felt.",
+      "modificationPl": "Trzymaj łokcie mocno schowane (~20-30°) — wąski tor łokci jest faktycznie przyjazny dla barków. Podnieś gryf wyżej aby zmniejszyć ROM, jeśli czujesz jakiekolwiek 'kłucie'.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Sagging hips on the incline load the lumbar spine. Raise the bar higher (more vertical body angle) and shorten the lever until core is strong enough to hold rigid plank.",
+      "modificationPl": "Opadające biodra w pozycji skośnej obciążają odcinek lędźwiowy. Podnieś gryf wyżej (bardziej pionowa pozycja ciała) i skróć dźwignię, aż brzuch będzie wystarczająco silny by utrzymać sztywną plankę.",
+      "alternative": "wall-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/endurance) | 4-5x6-10 (triceps strength focus) | AMRAP for conditioning",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "incline-close-grip-push-up.gif",
+    "frames_extracted": [
+      "frames/incline-close-grip-push-up/frame_0_start.png",
+      "frames/incline-close-grip-push-up/frame_1_early.png",
+      "frames/incline-close-grip-push-up/frame_2_mid.png",
+      "frames/incline-close-grip-push-up/frame_3_late.png",
+      "frames/incline-close-grip-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/incline-close-grip-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać stoi przed klatką treningową (Smith machine), gryf zablokowany na niskiej pozycji (poniżej bioder), obie dłonie blisko siebie na gryfie (wąski chwyt), ciało w prostej skośnej linii, łokcie wyprostowane — pozycja wyjściowa. Frame 2 (mid): pełne opuszczenie — klatka tuż nad gryfem, łokcie ZGIĘTE i PRZYKLEJONE do tułowia pod ~20-30° (nie rozsunięte na boki) — klasyczne ustawienie close grip. Ciało nadal w linii prostej. Frame 4 (end): powrót do wyjściowej pozycji (zamknięcie cyklu). Anatomia: TRICEPSY OBU RAMION wyraźnie podświetlone na czerwono (głowa boczna, długa, przyśrodkowa) — primary mover. Mięsień piersiowy większy (część mostkowa/wewnętrzna) również podświetlony — sekundarny akcent na inner pec. Klasyczna regresja close-grip push-up wykonywana na drążku Smith machine — incline angle redukuje % bodyweight na dłoniach, czyniąc ćwiczenie dostępniejszym niż wersja podłogowa. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Mechanic=compound (dwa stawy: łokieć + bark), plane=sagittal (ruch w przód-tył), force=push, bilateral (obie ręce symetrycznie).",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "triceps", "inner_chest", "triceps_focused", "beginner_friendly", "regression", "home_workout", "smith_machine_friendly", "barbell_optional"]
+}

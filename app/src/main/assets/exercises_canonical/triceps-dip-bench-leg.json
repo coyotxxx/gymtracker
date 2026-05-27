@@ -1,0 +1,207 @@
+{
+  "id": "triceps-dip-bench-leg",
+  "name": "Bench Dip with Legs Extended",
+  "namePl": "Tricep dip na ławce z nogami wyciągniętymi",
+  "aliases": ["bench dip legs straight", "straight-leg bench dip", "elevated bench dip", "bench dip with elevated legs", "two-bench dip"],
+  "aliasesPl": ["dip na ławce z prostymi nogami", "bench dip z wyciągniętymi nogami", "tricep dip między ławkami", "dipy między dwiema ławkami", "tricep dip z nogami na ławce"],
+
+  "description": "Progressed variation of the classic bench dip in which the lifter sits at the edge of a bench, grips the bench behind the hips and extends the legs straight out in front of the body — heels resting either on the floor or, in the harder version, on a second bench at the same height. Straightening the knees moves the centre of mass further from the support, shifting a much larger share of bodyweight onto the arms compared to the bent-knee bench dip. Primary loading falls on the triceps (especially the long and lateral heads), with secondary work on the anterior deltoid and lower pectoralis as the elbows flex. A staple intermediate triceps bodyweight movement and a logical stepping stone between the bent-knee bench dip and full parallel-bar dips.",
+  "descriptionPl": "Trudniejsza odmiana klasycznego dipa na ławce — ćwiczący siada na krawędzi ławki, chwyta jej brzeg za biodrami i prostuje nogi przed sobą; pięty opierają się na podłodze lub, w wersji trudniejszej, na drugiej ławce na tej samej wysokości. Wyprostowanie kolan przesuwa środek ciężkości dalej od podporu i przenosi znacznie większą część masy ciała na ręce niż w wariancie ze zgiętymi nogami. Główne obciążenie spada na tricepsy (zwłaszcza głowę długą i boczną), a uzupełniająco pracują przednie aktony naramienne i dolna część klatki przy zginaniu łokci. Solidne ćwiczenie tricepsowe z masą własnego ciała na poziomie średniozaawansowanym i naturalny most między bench dipem ze zgiętymi kolanami a pełnymi dipami na poręczach.",
+
+  "instructions": [
+    "Place a flat bench behind you. For the harder version, set a second bench in front at the same height (the heels will rest on it). For the standard version, the floor will support the heels.",
+    "Sit on the front edge of the bench. Place the hands on the edge next to the hips, fingers wrapping the edge and pointing forward toward the feet.",
+    "Slide the hips off the bench and support the body on straight arms. Hips stay close to the bench edge but do not touch it.",
+    "Extend the legs fully — knees locked, ankles together, toes pointed up or slightly toward you. Heels rest on the floor (standard) or on the second bench (harder).",
+    "Set the torso near-vertical, chest tall, shoulders pulled down and back away from the ears. Brace the core.",
+    "Begin the descent by bending the elbows straight back, tracking close to the ribs. Lower under control for 2-3 seconds.",
+    "Go down until the upper arms are roughly parallel to the floor (elbow angle approximately 90°). Avoid dropping the shoulders further — that pinches the shoulder capsule.",
+    "Pause briefly at the bottom without letting the shoulders shrug up or roll forward.",
+    "Press the bench down through the heels of the palms, extending the elbows hard and squeezing the triceps. Hips slide straight up — not forward, away from the bench.",
+    "Reach full lockout at the top, shoulders still packed down. Reset and repeat."
+  ],
+  "instructionsPl": [
+    "Ustaw płaską ławkę za sobą. W wariancie trudniejszym ustaw drugą ławkę z przodu, na tej samej wysokości — na niej oprzesz pięty. W standardowym wariancie pięty będą na podłodze.",
+    "Usiądź na przedniej krawędzi ławki. Połóż dłonie na krawędzi obok bioder, palce obejmują brzeg ławki i są skierowane do przodu, w stronę stóp.",
+    "Zsuń biodra z ławki i podeprzyj ciało na wyprostowanych rękach. Biodra blisko krawędzi, ale nie dotykają jej.",
+    "Wyprostuj nogi do końca — kolana zablokowane, kostki razem, palce stóp skierowane w górę lub lekko do siebie. Pięty na podłodze (wersja standardowa) lub na drugiej ławce (wersja trudniejsza).",
+    "Tułów blisko pionu, klatka wysoko, barki ściągnięte w dół i w tył, z dala od uszu. Napnij brzuch.",
+    "Rozpocznij schodzenie zginając łokcie prosto w tył, blisko żeber. Schodź kontrolowanie przez 2-3 sekundy.",
+    "Schodź aż ramiona będą mniej więcej równoległe do podłogi (kąt w łokciu ok. 90°). Nie schodź głębiej — to zaciska torebkę stawową barku.",
+    "Zatrzymaj się krótko na dole bez wzruszania barków i bez wjeżdżania nimi do przodu.",
+    "Wepchnij ławkę w dół częścią dłoni przy nadgarstku, mocno prostując łokcie i ściskając tricepsy. Biodra jadą prosto w górę — nie do przodu, z dala od ławki.",
+    "Sięgnij do pełnego wyprostu na górze, barki cały czas ściągnięte w dół. Złap oddech i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps"],
+    "secondary": ["anterior_deltoids", "lower_pectoralis"],
+    "stabilizers": ["rotator_cuff", "core", "rectus_abdominis", "scapular_stabilizers", "forearms", "wrists"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P9",
+    "anterior_deltoids": "S7",
+    "lower_pectoralis": "S6",
+    "pectoralis_major": "S5",
+    "rotator_cuff": "S5",
+    "core": "S4",
+    "rectus_abdominis": "S4",
+    "scapular_stabilizers": "S4",
+    "forearms": "T3",
+    "wrists": "T3"
+  },
+
+  "equipment": {
+    "required": ["flat_bench"],
+    "optional": ["second_bench", "weight_plate", "dip_belt", "wrist_wraps"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bench-dip", "close-grip-push-up"],
+    "progression_to": ["weighted-bench-dip", "triceps-dip", "ring-dips"],
+    "alternatives": ["bench-dip", "triceps-dip", "close-grip-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands on the bench edge right next to the hips, fingers wrapping the edge forward",
+      "Hips slide just off the bench — close enough to brush the edge but not resting on it",
+      "Lock the knees and squeeze the legs together — they are one long lever, not loose",
+      "Chest tall, shoulders pulled down and back before the first rep — no shrugging",
+      "Brace the core so the legs and torso stay one rigid line"
+    ],
+    "setup_cues_pl": [
+      "Dłonie na krawędzi ławki tuż obok bioder, palce obejmują krawędź w przód",
+      "Biodra zsuwają się tuż za ławkę — blisko krawędzi, ale jej nie dotykają",
+      "Zablokuj kolana i ściśnij nogi razem — to jedna długa dźwignia, nie luźne nogi",
+      "Klatka wysoko, barki ściągnięte w dół i w tył przed pierwszym powtórzeniem — żadnego wzruszania",
+      "Napnij brzuch tak, żeby nogi i tułów tworzyły jedną sztywną linię"
+    ],
+    "execution_cues": [
+      "Lead with the elbows going straight back — not the hips dropping forward",
+      "Down to 90° in the elbow, then drive up — depth beyond that hammers the front shoulder",
+      "Hips travel straight up and down close to the bench — don't let them drift forward",
+      "Press through the heel of the palm, squeeze the triceps hard at lockout",
+      "Lock out fully every rep — short lockouts cheat the triceps of their hardest contraction"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami prosto w tył — nie zsuwaj bioder do przodu",
+      "Schodź do 90° w łokciu i wypychaj się — głębiej oznacza młotek na przedni bark",
+      "Biodra jadą prosto w górę i dół blisko ławki — nie pozwól im odejść do przodu",
+      "Pchaj częścią dłoni przy nadgarstku, mocno ściskaj tricepsy na pełnym wyproście",
+      "Pełen wyprost łokci w każdym powtórzeniu — półwyprosty okradają tricepsy z najtrudniejszego skurczu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips drift forward away from the bench during the descent",
+        "faultPl": "Biodra odjeżdżają do przodu od ławki podczas schodzenia",
+        "cause": "Trying to relieve load on the triceps or weak triceps strength. As the hips move forward, leverage gets easier but the elbow load shifts dangerously onto the anterior shoulder capsule.",
+        "causePl": "Próba odciążenia tricepsów lub po prostu za słabe tricepsy. Gdy biodra jadą do przodu, dźwignia robi się łatwiejsza, ale obciążenie z łokci przesuwa się niebezpiecznie na przednią torebkę stawową barku.",
+        "cue": "Brush the bench with the back on the way down. If you can't keep the hips next to the bench, switch to the bent-knee bench dip until you build more triceps strength.",
+        "cuePl": "Muskaj plecami krawędź ławki w drodze w dół. Jeśli nie utrzymasz bioder przy ławce, wróć do bench dipa ze zgiętymi kolanami, aż zbudujesz więcej siły w tricepsie."
+      },
+      {
+        "fault": "Going too deep — shoulders below elbows / chest collapsing forward",
+        "faultPl": "Zbyt głębokie schodzenie — barki poniżej łokci / zapadnięcie klatki do przodu",
+        "cause": "Chasing more ROM without the prerequisite shoulder mobility and control. The bench fixes the shoulder height behind the body, so going below 90° at the elbow forces the humeral head against the anterior capsule — classic recipe for shoulder pain.",
+        "causePl": "Pogoń za większym zakresem bez wymaganej mobilności i kontroli barku. Ławka blokuje wysokość barku za ciałem, więc schodzenie poniżej 90° w łokciu wpycha głowę kości ramiennej w przednią torebkę stawową — klasyczny przepis na ból barku.",
+        "cue": "Stop at 90° in the elbow — that's full ROM for this exercise. If you want more depth, switch to parallel-bar dips, not deeper bench dips.",
+        "cuePl": "Zatrzymaj się przy 90° w łokciu — to jest pełen zakres tego ćwiczenia. Jeśli chcesz większej głębokości, przejdź na dipy na poręczach, a nie głębsze bench dipy."
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears at the bottom",
+        "faultPl": "Wzruszanie barków pod uszy na dole",
+        "cause": "Passive shoulder support — the scapular stabilizers disengage and the shoulder joint hangs in the capsule. Long-term recipe for impingement and rotator cuff irritation.",
+        "causePl": "Bierny podpór barków — stabilizatory łopatki odpuszczają i staw barkowy wisi w torebce. Długofalowo prosta droga do impingementu i podrażnienia stożka rotatorów.",
+        "cue": "Actively pull the shoulders down and back through the entire rep. If they shrug at the bottom, you're past your working depth — stop short.",
+        "cuePl": "Aktywnie ściągaj barki w dół i w tył przez całe powtórzenie. Jeśli wzruszają się na dole, jesteś poza swoją głębokością roboczą — zatrzymaj się wyżej."
+      },
+      {
+        "fault": "Bending the knees to cheat the rep",
+        "faultPl": "Zginanie kolan, żeby ułatwić sobie powtórzenie",
+        "cause": "Fatigue at the end of the set or simply choosing the wrong progression. Bending the knees reduces leverage and converts the exercise back into the easier bent-knee variant mid-set.",
+        "causePl": "Zmęczenie pod koniec serii albo zwyczajny błąd doboru progresji. Zgięcie kolan zmniejsza dźwignię i zamienia ćwiczenie w łatwiejszy wariant ze zgiętymi kolanami w środku serii.",
+        "cue": "Lock the knees and keep them locked. If you have to bend them to grind out reps, that rep doesn't count — end the set and progress next session.",
+        "cuePl": "Zablokuj kolana i trzymaj je zablokowane. Jeśli musisz je zgiąć, żeby wydusić powtórzenie, to się nie liczy — zakończ serię i progresuj następnym razem."
+      },
+      {
+        "fault": "Wrists hyperextending / sliding off the bench edge",
+        "faultPl": "Nadmierne wyprostowanie nadgarstków / zsuwanie się dłoni z krawędzi ławki",
+        "cause": "Fingers not wrapping the edge of the bench and full bodyweight loading the wrist in extension. Causes wrist pain and limits how long the set can last.",
+        "causePl": "Palce nieobejmujące krawędzi ławki i pełna masa ciała obciążająca nadgarstek w wyproście. Powoduje ból nadgarstka i skraca serię.",
+        "cue": "Wrap the fingers firmly around the edge of the bench like a hook. Keep the forearm vertical over the wrist — don't let the hand slide forward.",
+        "cuePl": "Mocno obejmij krawędź ławki palcami jak hakiem. Przedramię pionowo nad nadgarstkiem — nie pozwól dłoni odjechać do przodu."
+      }
+    ],
+    "breathing": "Inhale at the top and brace the core. Hold the breath through the descent and the hardest part of the press (light Valsalva). Exhale at the top lockout. For high-rep sets, exhale through the press and inhale on the way down.",
+    "breathingPl": "Wdech na górze, brzuch napięty. Wstrzymaj oddech podczas schodzenia i w najtrudniejszej części pchnięcia (lekka Valsalva). Wydech przy pełnym wyproście na górze. Przy wysokich powtórzeniach wydychaj przy pchaniu i wdychaj przy schodzeniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Bench dips fix the shoulders behind the body — the deep position pinches the anterior shoulder capsule especially with legs extended. Avoid until pain-free. Switch to close-grip push-ups or limited-ROM bent-knee bench dips.",
+      "modificationPl": "Bench dipy unieruchamiają barki za ciałem — głęboka pozycja zaciska przednią torebkę stawową barku, zwłaszcza z wyciągniętymi nogami. Unikaj do ustąpienia bólu. Przejdź na pompki wąskim chwytem lub bench dipy ze zgiętymi kolanami i ograniczonym zakresem.",
+      "alternative": "close-grip-push-up"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Hand position locks the wrist in extension under high load — especially in the straight-leg version. Use wrist wraps, reduce volume, or switch to parallel-bar dips where the wrist stays neutral.",
+      "modificationPl": "Pozycja dłoni blokuje nadgarstek w wyproście pod dużym obciążeniem — szczególnie w wersji z prostymi nogami. Używaj opasek na nadgarstki, zmniejsz objętość lub przejdź na dipy na poręczach, gdzie nadgarstek pozostaje w pozycji neutralnej.",
+      "alternative": "triceps-dip"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Full lockout under load stresses the distal triceps tendon. Stop short of complete extension (95-98%), reduce sets, and prioritize slow eccentric tempo over high reps.",
+      "modificationPl": "Pełen wyprost pod obciążeniem obciąża dystalne ścięgno tricepsa. Zatrzymuj się tuż przed całkowitym wyprostem (95-98%), zmniejsz liczbę serii i postaw na powolny ekscentryk zamiast wysokich powtórzeń.",
+      "alternative": "bench-dip"
+    },
+    {
+      "condition": "ac_joint_separation",
+      "severity": "avoid",
+      "modification": "Position of the shoulders behind the trunk plus deep elbow flexion loads the acromioclavicular joint at end range. Avoid until full clinical recovery. Use horizontal pushing variations instead.",
+      "modificationPl": "Pozycja barków za tułowiem plus głębokie zgięcie łokci obciąża staw barkowo-obojczykowy w skrajnym zakresie. Unikaj do pełnego klinicznego wyzdrowienia. Wybierz horyzontalne ćwiczenia pchające.",
+      "alternative": "close-grip-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (hypertrophy) | 3x AMRAP (bodyweight conditioning) | 4x6-10 with plate on lap (loaded progression)",
+
+  "media": {
+    "primary": "triceps-dip-bench-leg.gif",
+    "frames_extracted": [
+      "frames/triceps-dip-bench-leg/frame_0_start.png",
+      "frames/triceps-dip-bench-leg/frame_1_early.png",
+      "frames/triceps-dip-bench-leg/frame_2_mid.png",
+      "frames/triceps-dip-bench-leg/frame_3_late.png",
+      "frames/triceps-dip-bench-leg/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/triceps-dip-bench-leg"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki z GIFa jahel (frame 0/2/4). Klatka 0 (start): postać siedzi z biodrami zsuniętymi z tylnej ławki, dłonie na jej krawędzi obok bioder, ręce całkowicie wyprostowane w łokciach, NOGI WYPROSTOWANE PROSTO PRZED CIAŁEM z piętami opartymi na drugiej ławce tej samej wysokości — wariant trudniejszy 'dwie ławki' (two-bench dip). Anatomicznie podświetlone tricepsy obu ramion (tylna część ramienia) na czerwono, klatka i delty widoczne. Klatka 2 (mid/bottom): pozycja dolna — łokcie zgięte ok. 90°, prowadzone prosto w tył wzdłuż żeber (nie na boki), ramiona równoległe do podłogi, biodra zsuwają się w dół blisko krawędzi ławki, klatka lekko pochylona, nogi nadal proste — widać 'echo' poprzedniej klatki (efekt GIFa). Tricepsy nadal podświetlone — to nadal mięsień docelowy. Klatka 4 (end): powrót do pełnego wyprostu, sylwetka identyczna z klatką 0, pełna blokada łokci, nogi cały czas wyprostowane na drugiej ławce. GIF pokazuje wariant dwuławkowy (heels on second bench at same height as hands) — bardziej wymagający niż wariant z piętami na podłodze, bo eliminuje wsparcie nóg w pionie. Wszystkie pola PL napisane od zera przez Claude, standardowa polska terminologia fitness (bench dip, dipy, ławka, tricepsy, ekscentryk, Valsalva, impingement, stożek rotatorów, torebka stawowa), bez tłumaczenia maszynowego. Schema 1:1 z triceps-dip.json wzorcem.",
+
+  "tags": ["calisthenics", "bodyweight", "bench", "upper_body", "push", "triceps_builder", "intermediate", "compound", "home_friendly", "minimal_equipment"]
+}

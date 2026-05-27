@@ -1,0 +1,196 @@
+{
+  "id": "lever-kneeling-twist",
+  "name": "Lever Kneeling Twist",
+  "namePl": "Twist w klęku w maszynie",
+  "aliases": ["machine kneeling rotation", "kneeling torso rotation machine", "lever oblique twist", "kneeling rotary torso machine"],
+  "aliasesPl": ["rotacja tułowia w maszynie z klęku", "twist w maszynie", "skręt tułowia w klęku w maszynie", "maszyna rotacyjna z klęku", "kneeling twist na maszynie"],
+
+  "description": "Isolation exercise for the obliques performed on a rotational (rotary torso) lever machine in a kneeling position. The lifter kneels on the platform, locks the hips and lower body against the pads, grips the upper-body lever and rotates the torso through the transverse plane against resistance. Because the pelvis is fixed by the pads, the rotation is forced through the spine and obliques rather than the hips — making it one of the most direct loaded oblique exercises available in a commercial gym.",
+  "descriptionPl": "Izolowane ćwiczenie na mięśnie skośne brzucha wykonywane na maszynie rotacyjnej (lever / rotary torso) w pozycji klęczącej. Ćwiczący klęka na platformie, blokuje biodra i dolną część ciała o wałki, chwyta górne ramię maszyny i obraca tułów w płaszczyźnie poprzecznej przeciw oporowi. Ponieważ miednica jest unieruchomiona przez wałki, rotacja przechodzi przez kręgosłup i mięśnie skośne, a nie przez biodra — to jedno z najbardziej bezpośrednich obciążonych ćwiczeń na obliques dostępnych na siłowni.",
+
+  "instructions": [
+    "Set the machine: select a light weight to start, set the rotation start angle to one side, and adjust the kneeling pad and chest pad to your height.",
+    "Kneel on the platform with both knees, hips fully locked against the pads so the lower body cannot rotate. Place the chest/upper-body pad firmly against your torso and grip the handles.",
+    "Brace your core, sit tall through the spine, and inhale. This is the starting position with the torso rotated to one side.",
+    "Exhale and rotate your torso through the transverse plane to the opposite side, driving with the obliques — not by pushing with the arms. Move only through your available pain-free rotation (typically 45-60°).",
+    "Pause briefly at the end range with the obliques fully contracted. Do not force extra range.",
+    "Inhale and reverse the motion under control back to the starting position. Complete all reps to one side, then switch the machine and repeat to the other side."
+  ],
+  "instructionsPl": [
+    "Ustaw maszynę: wybierz lekki ciężar na początek, ustaw kąt startowy rotacji na jedną stronę i dopasuj wałek pod kolana oraz pad pod klatkę do swojego wzrostu.",
+    "Uklęknij na platformie obiema kolanami, biodra mocno zablokuj o wałki tak, by dolna część ciała nie mogła się obracać. Dociśnij pad piersiowy/torsowy do tułowia i chwyć uchwyty.",
+    "Napnij brzuch, wyciągnij kręgosłup w pionie, wdech. To pozycja startowa — tułów obrócony w jedną stronę.",
+    "Wydech — obróć tułów w płaszczyźnie poprzecznej na przeciwną stronę, pracując mięśniami skośnymi, a nie pchaniem ramion. Poruszaj się tylko w bezbólowym zakresie rotacji (zwykle 45-60°).",
+    "Zatrzymaj się na chwilę w końcowym zakresie z maksymalnie spiętymi mięśniami skośnymi. Nie wymuszaj większego zakresu.",
+    "Wdech — wróć kontrolowanym ruchem do pozycji startowej. Wykonaj wszystkie powtórzenia na jedną stronę, potem przestaw maszynę i powtórz na drugą stronę."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["rectus_abdominis", "transverse_abdominis"],
+    "stabilizers": ["quadratus_lumborum", "erector_spinae", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "S6",
+    "transverse_abdominis": "S5",
+    "quadratus_lumborum": "T4",
+    "erector_spinae": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["rotary_torso_machine"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["plank", "side-plank", "dead-bug"],
+    "progression_to": ["cable-woodchopper", "landmine-rotation", "pallof-press-rotation"],
+    "alternatives": ["seated-rotary-torso-machine", "cable-woodchopper", "russian-twist", "landmine-rotation"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pelvis locked against the pads — hips do not move",
+      "Tall spine — sit up through the crown of the head",
+      "Chest pad firmly against the torso",
+      "Light grip on the handles — let the obliques work, not the arms",
+      "Pre-brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Miednica zablokowana o wałki — biodra się nie ruszają",
+      "Wyciągnięty kręgosłup — siedź wysoko, czubek głowy w sufit",
+      "Pad piersiowy mocno dociśnięty do tułowia",
+      "Lekki chwyt uchwytów — niech pracują mięśnie skośne, nie ramiona",
+      "Napnij brzuch przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Rotate from the rib cage, not from the arms",
+      "Exhale into the contraction — squeeze the oblique on the working side",
+      "Stop at your pain-free end range — do not bounce",
+      "2 seconds eccentric back to start — control the negative",
+      "Same number of reps on both sides — train symmetrically"
+    ],
+    "execution_cues_pl": [
+      "Obracaj od klatki piersiowej, nie ramionami",
+      "Wydech w fazie skurczu — ściśnij mięsień skośny po stronie pracującej",
+      "Zatrzymaj się w bezbólowym końcowym zakresie — nie odbijaj",
+      "2 sekundy fazy ekscentrycznej z powrotem — kontroluj negatyw",
+      "Tyle samo powtórzeń na obie strony — trenuj symetrycznie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips rotating with the torso",
+        "faultPl": "Biodra obracają się razem z tułowiem",
+        "cause": "Pads not locked tight enough, or weight too heavy forcing the lower body to help",
+        "causePl": "Wałki za luźne, lub zbyt duży ciężar wymusza pomoc dolnej części ciała",
+        "cue": "Re-adjust the pads to lock the pelvis. Reduce the weight until you can keep hips completely still.",
+        "cuePl": "Popraw wałki by mocno zablokować miednicę. Zmniejsz ciężar tak, by biodra mogły pozostać całkowicie nieruchome."
+      },
+      {
+        "fault": "Pulling with the arms instead of rotating with the obliques",
+        "faultPl": "Ciągnięcie ramionami zamiast rotacji mięśniami skośnymi",
+        "cause": "Weak obliques substituting with stronger shoulder and arm muscles",
+        "causePl": "Słabe mięśnie skośne kompensują pracą silniejszych mięśni barków i ramion",
+        "cue": "Light grip — imagine your arms are just hooks. Drive the rotation from the side of your waist.",
+        "cuePl": "Lekki chwyt — wyobraź sobie że ramiona to tylko haczyki. Napędzaj rotację z boku talii."
+      },
+      {
+        "fault": "Hyper-rotation / forcing extreme end range",
+        "faultPl": "Hiper-rotacja / wymuszanie ekstremalnego zakresu",
+        "cause": "Trying to match the machine's full ROM beyond personal mobility — risks lumbar discs",
+        "causePl": "Próba dopasowania się do pełnego zakresu maszyny ponad osobistą mobilność — ryzyko urazu krążków lędźwiowych",
+        "cue": "Rotate only as far as you can with a tall, braced spine. The lumbar spine rotates only 5-15° safely — most rotation should come from the thoracic spine.",
+        "cuePl": "Obracaj się tylko na tyle, na ile możesz z wyciągniętym, napiętym kręgosłupem. Lędźwie rotują bezpiecznie tylko 5-15° — większość rotacji powinna pochodzić z odcinka piersiowego."
+      },
+      {
+        "fault": "Using momentum / fast jerky reps",
+        "faultPl": "Wykorzystywanie rozpędu / szybkie szarpane powtórzenia",
+        "cause": "Trying to lift too much weight or rushing the set",
+        "causePl": "Próba podniesienia zbyt dużego ciężaru lub pośpiech podczas serii",
+        "cue": "Tempo 2-1-2-1: 2s rotation, 1s squeeze, 2s back, 1s pause. If you can't, drop the weight.",
+        "cuePl": "Tempo 2-1-2-1: 2s rotacja, 1s skurcz, 2s powrót, 1s pauza. Jeśli nie dasz rady — zmniejsz ciężar."
+      },
+      {
+        "fault": "Slumping / spine flexed during rotation",
+        "faultPl": "Garbienie się / zgięty kręgosłup podczas rotacji",
+        "cause": "Combining flexion + rotation under load is the highest-risk position for lumbar discs",
+        "causePl": "Łączenie zgięcia + rotacji pod obciążeniem to pozycja największego ryzyka urazu krążków lędźwiowych",
+        "cue": "Sit tall, chest up, crown of head pushing toward the ceiling — rotate only with a neutral spine.",
+        "cuePl": "Siedź wysoko, klatka w górę, czubek głowy pcha w sufit — obracaj się tylko z neutralnym kręgosłupem."
+      }
+    ],
+    "breathing": "Inhale at the starting (rotated) position. Exhale forcefully through the rotation as the obliques contract. Inhale on the eccentric return.",
+    "breathingPl": "Wdech w pozycji startowej (obrócony tułów). Mocny wydech podczas rotacji — w fazie skurczu mięśni skośnych. Wdech podczas ekscentrycznego powrotu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_pathology",
+      "severity": "avoid",
+      "modification": "Loaded spinal rotation is one of the highest-risk movements for lumbar disc injuries (McGill). With existing herniation or radiculopathy, avoid this exercise — use anti-rotation training instead.",
+      "modificationPl": "Obciążona rotacja kręgosłupa to jeden z najbardziej ryzykownych ruchów dla krążków lędźwiowych (McGill). Przy istniejącej przepuklinie lub radikulopatii unikaj tego ćwiczenia — zamiast tego ćwicz anty-rotację.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Rotation under load aggravates most acute lumbar conditions. Wait until pain-free and start with bodyweight anti-rotation work before returning to this machine.",
+      "modificationPl": "Rotacja pod obciążeniem nasila większość ostrych dolegliwości lędźwiowych. Poczekaj na ustąpienie bólu i zacznij od ćwiczeń anty-rotacyjnych z masą ciała przed powrotem do tej maszyny.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "si_joint_dysfunction",
+      "severity": "modify",
+      "modification": "Pelvis is locked against the pad but rotational shear can still irritate the SI joint. Use a very light weight and limited ROM, or switch to standing cable woodchopper which is more hip-driven.",
+      "modificationPl": "Miednica jest zablokowana o wałek, ale siła tnąca z rotacji może drażnić staw krzyżowo-biodrowy. Użyj bardzo lekkiego ciężaru i ograniczonego zakresu, albo przejdź na stojący chop z linki, który bardziej angażuje biodra.",
+      "alternative": "cable-woodchopper"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Kneeling on a hard platform can aggravate patellofemoral or meniscal issues. Add a folded towel under the knees, or switch to the seated version of the rotary torso machine.",
+      "modificationPl": "Klęczenie na twardej platformie może nasilać dolegliwości rzepkowo-udowe lub łąkotkowe. Podłóż złożony ręcznik pod kolana, albo przejdź na siedzący wariant maszyny rotacyjnej.",
+      "alternative": "seated-rotary-torso-machine"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 na stronę (hipertrofia) | 3x15-20 na stronę (wytrzymałość) | 3x8-12 na stronę (siła)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-kneeling-twist.gif",
+    "frames_extracted": [
+      "frames/lever-kneeling-twist/frame_0_start.png",
+      "frames/lever-kneeling-twist/frame_1_early.png",
+      "frames/lever-kneeling-twist/frame_2_mid.png",
+      "frames/lever-kneeling-twist/frame_3_late.png",
+      "frames/lever-kneeling-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/lever-kneeling-twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 3 klatki z GIFa jahel (start/mid/end). Klatki potwierdzają: ćwiczący klęczy obiema kolanami na platformie maszyny rotacyjnej, miednica/biodra dociśnięte do wałków, klatka oparta o górny pad, dłonie na uchwytach. W klatce 0 (start) obliques po jednej stronie podświetlone na czerwono (aktywna strona pracująca). W klatce 2 (mid) tułów w pozycji przejściowej — zauważalne lekkie zaangażowanie rectus abdominis. W klatce 4 (end) obliques po przeciwnej stronie podświetlone — pełna rotacja na drugą stronę. To klasyczny pattern unilateral alternating rotation. Mechanika: isolation (jeden staw — kręgosłup), plane=transverse, force=pull (skurcz koncentryczny obliques). Primary: obliques (mocno). Secondary: rectus_abdominis (pomocniczo przy rotacji + stabilizacji), transverse_abdominis (głęboki core). Stabilizatory: quadratus lumborum (boczne zgięcie+rotacja), erector spinae (utrzymanie pozycji), quadriceps (utrzymanie pozycji klęczącej). Level: beginner (maszyna prowadzi tor ruchu, brak skomplikowanej koordynacji), ale difficulty=4 — wymaga świadomości technicznej (nie szarpać, nie wymuszać ROM, blokować biodra). Nazwa PL: 'Twist w klęku w maszynie' — wybrana forma najlepiej oddająca naturę ćwiczenia w polskim środowisku fitness (twist jako zapożyczenie jest powszechne). Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego, z naciskiem na bezpieczeństwo lędźwi (kluczowy aspekt rotacji pod obciążeniem wg McGilla).",
+
+  "tags": ["machine", "isolation", "obliques", "core", "rotation", "gym", "kneeling"]
+}

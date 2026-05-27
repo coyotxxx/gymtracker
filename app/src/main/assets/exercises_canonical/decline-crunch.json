@@ -1,0 +1,192 @@
+{
+  "id": "decline-crunch",
+  "name": "Decline Crunch",
+  "namePl": "Brzuszki na ławce skośnej ujemnej",
+  "aliases": ["decline sit-up crunch", "decline bench crunch", "negative incline crunch"],
+  "aliasesPl": ["brzuszki na ławce ujemnej", "crunche na ławce skośnej", "skłony na ławce ujemnej", "brzuszki głową w dół", "decline crunch"],
+
+  "description": "Isolation core exercise performed lying supine on a decline bench with the head positioned lower than the feet and the ankles hooked under the foot pads. From this position the lifter curls the upper torso toward the pelvis using only the abdominal muscles. The decline angle increases the range of motion compared to a standard floor crunch and adds gravitational resistance on the eccentric phase, producing a stronger contraction of the upper rectus abdominis. The hips and lower back remain on the bench throughout — it is a pure spinal flexion movement, not a sit-up.",
+  "descriptionPl": "Ćwiczenie izolowane na mięśnie brzucha wykonywane w leżeniu na ławce skośnej ujemnej, z głową niżej niż stopami i kostkami zaczepionymi pod wałkami. Z tej pozycji ćwiczący zwija górną część tułowia w kierunku miednicy, pracując wyłącznie brzuchem. Skośne ustawienie ławki zwiększa zakres ruchu w porównaniu do klasycznego crunchu na podłodze i dodaje opór grawitacji w fazie ekscentrycznej, co daje mocniejszy skurcz górnej części mięśnia prostego brzucha. Biodra i dolny odcinek pleców pozostają na ławce przez cały ruch — to czyste zgięcie kręgosłupa, nie sit-up.",
+
+  "instructions": [
+    "Set the decline bench to a moderate angle (20-35 degrees). Sit on the bench and hook your feet securely under the foot pads with knees bent.",
+    "Lie back so your head ends up lower than your feet. Place your hands lightly on either side of your head, fingertips at the temples — do not lace fingers behind the neck.",
+    "Inhale and brace your core. Press your lower back into the bench to remove any lumbar arch.",
+    "Exhale and curl your upper torso toward your knees by contracting your abs. Lift the shoulder blades 15-20 cm off the bench — the lower back stays in contact with the pad.",
+    "At the top, squeeze the abs hard and hold the contraction for 1 second. Keep the chin slightly off the chest, not jammed down.",
+    "Inhale and lower under control over 2 seconds back to the starting position. Don't crash down — keep tension on the abs throughout.",
+    "Repeat for the prescribed number of repetitions."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną pod umiarkowanym kątem (20-35 stopni). Usiądź na niej i zaczep stopy mocno pod wałkami, kolana ugięte.",
+    "Połóż się tak, by głowa znalazła się niżej niż stopy. Połóż dłonie lekko po obu stronach głowy, opuszki palców przy skroniach — nie splataj palców za karkiem.",
+    "Wdech i napnij brzuch. Dociśnij dolny odcinek pleców do ławki, eliminując łuk w lędźwiach.",
+    "Wydech i zwiń górny tułów w kierunku kolan, kurcząc mięśnie brzucha. Oderwij łopatki 15-20 cm od ławki — dolne plecy pozostają w kontakcie z oparciem.",
+    "W szczycie mocno ściśnij brzuch i utrzymaj skurcz przez 1 sekundę. Broda lekko oderwana od klatki, nie dociśnięta do mostka.",
+    "Wdech i opuść się kontrolowanym ruchem przez 2 sekundy do pozycji wyjściowej. Nie opadaj swobodnie — utrzymuj napięcie na brzuchu przez cały czas.",
+    "Powtórz zalecaną liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques", "hip_flexors"],
+    "stabilizers": ["transverse_abdominis", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "obliques": "S6",
+    "hip_flexors": "S5",
+    "transverse_abdominis": "T4",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["decline_bench"],
+    "optional": ["weight_plate", "dumbbell"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["crunch", "lying-leg-raise", "dead-bug"],
+    "progression_to": ["weighted-decline-crunch", "weighted-decline-twist-crunch"],
+    "alternatives": ["crunch", "cable-crunch", "hanging-leg-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Decline bench at 20-35 degrees — steeper = harder",
+      "Feet locked firmly under the foot pads, knees bent",
+      "Hands at the temples, elbows wide — do not lace behind the neck",
+      "Lower back pressed into the bench, lumbar flat",
+      "Inhale and pre-brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Ławka skośna pod kątem 20-35 stopni — większy kąt = trudniej",
+      "Stopy mocno zaczepione pod wałkami, kolana ugięte",
+      "Dłonie przy skroniach, łokcie szeroko — nie splataj palców za karkiem",
+      "Dolny odcinek pleców dociśnięty do ławki, lędźwie płasko",
+      "Wdech i wstępne napięcie brzucha przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Curl the rib cage toward the pelvis — not just lifting the head",
+      "Exhale forcefully on the way up, drive the ribs down",
+      "Lift only the shoulder blades — lower back stays glued to the bench",
+      "1-second squeeze at the top, abs hard",
+      "2-second eccentric — control the descent, don't drop"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj klatkę piersiową w kierunku miednicy — nie podnoś samej głowy",
+      "Mocny wydech w drodze do góry, dociśnij żebra w dół",
+      "Unoś tylko łopatki — dolne plecy przylepione do ławki",
+      "1 sekunda mocnego skurczu w szczycie, brzuch napięty",
+      "2 sekundy fazy ekscentrycznej — kontroluj opuszczanie, nie opadaj"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the head with the hands / neck strain",
+        "faultPl": "Szarpanie głowy rękami / nadwyrężanie szyi",
+        "cause": "Hands laced behind the neck and used to yank the torso up when the abs fatigue",
+        "causePl": "Dłonie splecione za karkiem i używane do szarpania tułowia, gdy brzuch się męczy",
+        "cue": "Fingertips only at the temples, elbows wide. If the neck strains, cross arms on the chest instead.",
+        "cuePl": "Tylko opuszki palców przy skroniach, łokcie szeroko. Jeśli boli kark, skrzyżuj ramiona na klatce."
+      },
+      {
+        "fault": "Using momentum / swinging body up",
+        "faultPl": "Wykorzystywanie rozpędu / kołysanie ciałem",
+        "cause": "Going too fast or trying to do reps the abs cannot handle",
+        "causePl": "Zbyt szybkie tempo lub próba wykonania powtórzeń, których brzuch nie udźwignie",
+        "cue": "2 seconds up, 1 second squeeze, 2 seconds down. Strict tempo over rep count.",
+        "cuePl": "2 sekundy w górę, 1 sekunda skurczu, 2 sekundy w dół. Ścisłe tempo ważniejsze niż liczba powtórzeń."
+      },
+      {
+        "fault": "Insufficient pause at the top — no peak contraction",
+        "faultPl": "Brak pauzy w szczycie — bez skurczu szczytowego",
+        "cause": "Bouncing through the top to chain reps faster",
+        "causePl": "Odbijanie się w szczycie, by szybciej łączyć powtórzenia",
+        "cue": "Stop at the top, squeeze for a full second, feel the abs cramp before lowering",
+        "cuePl": "Zatrzymaj się w szczycie, ściśnij brzuch przez całą sekundę, poczuj jak abs łapie napięcie zanim opuścisz"
+      },
+      {
+        "fault": "Partial range of motion — only lifting the head",
+        "faultPl": "Niepełny zakres ruchu — uniesienie samej głowy",
+        "cause": "Treating the move as a neck flexion instead of spinal flexion",
+        "causePl": "Traktowanie ruchu jako zgięcie szyi zamiast zgięcia kręgosłupa",
+        "cue": "Lift the shoulder blades clearly off the bench — chest rolls toward the hips",
+        "cuePl": "Wyraźnie oderwij łopatki od ławki — klatka zwija się w stronę bioder"
+      },
+      {
+        "fault": "Sitting all the way up like a sit-up (hip flexors take over)",
+        "faultPl": "Pełne unoszenie się jak w sit-upie (przejmują zginacze biodra)",
+        "cause": "Misunderstanding crunch vs sit-up — going past 30-40 degrees offloads the abs to the hip flexors",
+        "causePl": "Pomylenie crunchu z sit-upem — przejście za 30-40 stopni zrzuca pracę z brzucha na zginacze biodra",
+        "cue": "Stop when the shoulder blades clear the bench. The lower back must stay on the pad.",
+        "cuePl": "Zatrzymaj się gdy łopatki opuszczą ławkę. Dolny odcinek pleców musi pozostać na oparciu."
+      }
+    ],
+    "breathing": "Inhale during the descent. Forceful exhale during the crunch up to maximise rectus abdominis contraction and drive the rib cage down.",
+    "breathingPl": "Wdech podczas opuszczania. Mocny wydech podczas zwijania do góry — maksymalizuje skurcz mięśnia prostego brzucha i dociska klatkę piersiową w dół."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion is contraindicated for lumbar disc protrusion (McGill protocol). Switch to anti-extension and anti-rotation core work.",
+      "modificationPl": "Zginanie kręgosłupa pod obciążeniem jest przeciwwskazane przy przepuklinie krążka lędźwiowego (protokół McGilla). Przejdź na ćwiczenia anty-ekstensji i anty-rotacji.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "avoid",
+      "modification": "Inverted head position (decline) raises intracranial blood pressure — risky for hypertensive patients. Use flat-floor crunch variations instead.",
+      "modificationPl": "Pozycja głową w dół (skośna ujemna) podnosi ciśnienie wewnątrzczaszkowe — ryzykowne przy nadciśnieniu. Zamiast tego stosuj crunche na płaskiej podłodze.",
+      "alternative": "crunch"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Hands at the neck make it tempting to yank — if cervical pain flares up, cross arms on the chest or hold a plate on the chest instead.",
+      "modificationPl": "Dłonie przy karku kuszą do szarpania — jeśli pojawi się ból szyjnego odcinka kręgosłupa, skrzyżuj ramiona na klatce lub przytrzymaj tarczę na klatce piersiowej.",
+      "alternative": "crunch"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (hypertrophy) | 3x15-20 (endurance) | 3xAMRAP (finisher) | 4x6-10 weighted (advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "decline-crunch.gif",
+    "frames_extracted": [
+      "frames/decline-crunch/frame_0_start.png",
+      "frames/decline-crunch/frame_1_early.png",
+      "frames/decline-crunch/frame_2_mid.png",
+      "frames/decline-crunch/frame_3_late.png",
+      "frames/decline-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/decline-crunch",
+    "yuhonas_id": "Decline_Crunch",
+    "glowupp_id": "decline-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "Obejrzałem 3 klatki (start/mid/end) z GIFa jahel decline-crunch.gif. Klatka 0 (start): postać leży na ławce skośnej ujemnej — głowa niżej, stopy zaczepione na górze pod wałkami, kolana ugięte, dłonie wsparte za głową, plecy płasko, anatomia podświetla rectus abdominis. Klatka 2 (mid): wyraźne zwinięcie górnego tułowia, łopatki oderwane od ławki ok. 15-20 cm, dolne plecy pozostają na oparciu, brzuch w mocnym skurczu — klasyczny crunch (nie sit-up), klatka piersiowa zwija się w stronę miednicy. Klatka 4 (end): powrót do pozycji wyjściowej z lekkim widmem ruchu pośredniego. Klasyfikacja: core_flexion (zgięcie kręgosłupa), isolation (1 staw — kręgosłup), force=pull (skurcz koncentryczny). Mięsień główny: rectus_abdominis P10 (główny target, w skośnej ujemnej szczególnie górna część), drugorzędne: obliques S6, hip_flexors S5 (stabilizacja, lekka kontrybucja). Difficulty=4 (intermediate — wymaga ławki skośnej i kontroli, ale ruch sam w sobie prosty). Nazwa PL: 'Brzuszki na ławce skośnej ujemnej' — najbardziej opisowa i jednoznaczna forma stosowana w polskim środowisku fitness. Specyfika potwierdzona: dłuższy ROM niż standardowy crunch dzięki ujemnemu nachyleniu, mocniejszy nacisk na górną partię rectus abdominis. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["core", "abs", "decline_bench", "gym", "isolation", "intermediate", "upper_abs"]
+}

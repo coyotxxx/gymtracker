@@ -1,0 +1,199 @@
+{
+  "id": "standing-calves-calf-stretch",
+  "name": "Standing Calf Stretch",
+  "namePl": "Stretch łydki stojąc",
+  "aliases": ["bent-over calf stretch with foot on bench", "standing toe-pull calf stretch", "gastrocnemius stretch with elevated foot", "manual calf stretch"],
+  "aliasesPl": ["rozciąganie łydki stojąc z nogą na ławce", "stretch gastrocnemius z pociąganiem palców", "manualne rozciąganie łydki", "rozciąganie brzuchatego stojąc"],
+
+  "description": "A static stretch for the calf complex performed standing in a hinged position with one foot elevated on a bench. The trainee leans forward, grabs the toes of the elevated foot, and pulls them toward the shin (dorsiflexion) while keeping the knee fully extended. The combination of dorsiflexion and extended knee places the gastrocnemius under maximum length-tension, with secondary lengthening of the soleus and Achilles tendon. Excellent post-workout cooldown after running, jumping or heavy calf work.",
+  "descriptionPl": "Statyczne rozciąganie kompleksu łydki w pozycji stojącej z pochyleniem tułowia i jedną stopą opartą na ławce. Ćwiczący pochyla się do przodu, chwyta palce uniesionej stopy i pociąga je w kierunku piszczeli (zgięcie grzbietowe), utrzymując kolano w pełnym wyproście. Połączenie zgięcia grzbietowego stopy z wyprostowanym kolanem maksymalnie wydłuża mięsień brzuchaty łydki, drugorzędnie rozciągając mięsień płaszczkowaty i ścięgno Achillesa. Doskonały element schłodzenia po bieganiu, skokach lub ciężkim treningu łydek.",
+
+  "instructions": [
+    "Place a flat bench (or stable platform of similar height) directly in front of you.",
+    "Set one foot heel-first on the bench so the leg is straight, knee fully extended, toes pointing toward the ceiling.",
+    "Keep the standing leg vertical with the knee soft but not bent; both hips square to the bench.",
+    "Hinge forward from the hips with a long spine, sliding the hands down the elevated shin until you can reach the toes.",
+    "Wrap the fingers around the ball of the foot and gently pull the toes back toward your shin until you feel a strong stretch in the belly of the calf.",
+    "Hold this position for 20-30 seconds while breathing slowly; with each exhale ease slightly further into dorsiflexion.",
+    "Release the toes, stand up tall, then switch sides and repeat for 2-3 rounds per leg."
+  ],
+  "instructionsPl": [
+    "Ustaw płaską ławkę (lub stabilną platformę o podobnej wysokości) bezpośrednio przed sobą.",
+    "Połóż jedną stopę piętą na ławce — noga prosta, kolano w pełnym wyproście, palce skierowane do sufitu.",
+    "Noga podporowa pionowo, kolano lekko miękkie, ale nie ugięte; oba biodra ustawione równolegle do ławki.",
+    "Pochyl się do przodu z bioder, utrzymując długi kręgosłup — przesuwaj dłonie po uniesionej piszczeli aż do palców stopy.",
+    "Obejmij palcami śródstopie i delikatnie pociągnij palce w kierunku piszczeli, aż poczujesz wyraźne rozciąganie w brzuścu łydki.",
+    "Utrzymaj pozycję 20-30 sekund, oddychając spokojnie; z każdym wydechem nieznacznie pogłębiaj zgięcie grzbietowe.",
+    "Puść palce, wyprostuj się, następnie zmień nogę i wykonaj 2-3 powtórzenia na stronę."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius"],
+    "secondary": ["soleus", "achilles_tendon", "tibialis_posterior"],
+    "stabilizers": ["hamstrings", "erector_spinae", "core"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P9",
+    "soleus": "S6",
+    "achilles_tendon": "S5",
+    "tibialis_posterior": "S3",
+    "hamstrings": "T3",
+    "erector_spinae": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["bench"],
+    "optional": ["box", "step"]
+  },
+
+  "category": "stretching",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": [],
+    "alternatives": ["downward-dog-calf-stretch", "wall-calf-stretch", "soleus-stretch-bent-knee"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Place the bench directly in front, heel-first foot placement",
+      "Knee of the stretched leg fully extended — do not let it bend",
+      "Standing leg vertical, hips square to the bench",
+      "Long spine before hinging — chest leads, not the head",
+      "Both feet pointing forward, not turned out"
+    ],
+    "setup_cues_pl": [
+      "Ustaw ławkę bezpośrednio przed sobą, połóż stopę piętą",
+      "Kolano rozciąganej nogi w pełnym wyproście — nie pozwól mu się zgiąć",
+      "Noga podporowa pionowo, biodra równolegle do ławki",
+      "Długi kręgosłup przed pochyleniem — prowadzi klatka, nie głowa",
+      "Obie stopy skierowane do przodu, nie rotowane na zewnątrz"
+    ],
+    "execution_cues": [
+      "Hinge from the hips — back stays long, not rounded",
+      "Pull the toes back toward your shin, not toward your nose",
+      "Press the heel down INTO the bench while pulling the toes back",
+      "Breathe out and ease slightly deeper — never bounce",
+      "Stop at strong tension, never at sharp pain"
+    ],
+    "execution_cues_pl": [
+      "Pochylaj się z bioder — plecy długie, nie zaokrąglone",
+      "Pociągaj palce w kierunku piszczeli, nie w kierunku nosa",
+      "Wciskaj piętę w ławkę, jednocześnie ciągnąc palce do siebie",
+      "Wydech i delikatne pogłębienie — nigdy nie sprężynuj",
+      "Zatrzymaj się przy mocnym napięciu, nigdy w ostrym bólu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knee of the stretched leg",
+        "faultPl": "Uginanie kolana rozciąganej nogi",
+        "cause": "Tight gastrocnemius pulls the heel up; trainee compensates by softening the knee, which shifts stretch off gastroc onto soleus only",
+        "causePl": "Napięty brzuchaty ciągnie piętę w górę; ćwiczący kompensuje uginając kolano, co przerzuca rozciąganie z brzuchatego wyłącznie na płaszczkowatego",
+        "cue": "Lock the knee straight first, then back off the reach until you can hold full extension comfortably",
+        "cuePl": "Najpierw zablokuj kolano w wyproście, potem cofnij zasięg sięgnięcia tak, by utrzymać pełny wyprost komfortowo"
+      },
+      {
+        "fault": "Rounding the lower back instead of hinging at the hips",
+        "faultPl": "Zaokrąglanie dolnego odcinka pleców zamiast pochylania z bioder",
+        "cause": "Tight hamstrings or weak hip mobility — trainee compensates with spinal flexion to reach the toes",
+        "causePl": "Napięte mięśnie kulszowo-goleniowe lub słaba mobilność biodra — ćwiczący kompensuje zgięciem kręgosłupa, by sięgnąć palców stopy",
+        "cue": "Bend less and use a strap/towel around the foot to maintain a long spine",
+        "cuePl": "Pochyl się mniej i użyj paska lub ręcznika wokół stopy, by zachować długi kręgosłup"
+      },
+      {
+        "fault": "Rotating the hip of the stretched leg outward",
+        "faultPl": "Rotacja biodra rozciąganej nogi na zewnątrz",
+        "cause": "Easier to reach the foot when the leg externally rotates, but it twists the stretch off the calf onto the medial line",
+        "causePl": "Łatwiej sięgnąć stopy przy rotacji zewnętrznej, ale przerzuca to rozciąganie z łydki na linię przyśrodkową",
+        "cue": "Keep toes pointing straight at the ceiling — both knee-caps face forward throughout the hold",
+        "cuePl": "Trzymaj palce skierowane prosto do sufitu — obie rzepki kolan zwrócone do przodu przez cały czas trzymania pozycji"
+      },
+      {
+        "fault": "Bouncing into the stretch (ballistic stretching)",
+        "faultPl": "Sprężynowanie podczas rozciągania (rozciąganie balistyczne)",
+        "cause": "Impatience or attempt to gain range quickly; activates the stretch reflex and shortens the muscle instead of lengthening it",
+        "causePl": "Niecierpliwość lub próba szybkiego uzyskania zakresu; uruchamia odruch rozciągania i skraca mięsień zamiast go wydłużać",
+        "cue": "Hold the position completely still; deepen only on the exhale, slowly and continuously",
+        "cuePl": "Utrzymuj pozycję w pełnym bezruchu; pogłębiaj tylko na wydechu, wolno i ciągle"
+      },
+      {
+        "fault": "Pulling toes too aggressively into sharp pain",
+        "faultPl": "Zbyt agresywne pociąganie palców aż do ostrego bólu",
+        "cause": "Confusing stretch tension with pain; can irritate Achilles tendon or plantar fascia",
+        "causePl": "Mylenie napięcia rozciągającego z bólem; może podrażnić ścięgno Achillesa lub rozcięgno podeszwowe",
+        "cue": "Pull only to ~70% of max — should feel a strong but tolerable stretch, no sharp pinpoint pain at the heel",
+        "cuePl": "Pociągaj tylko do ok. 70% maksimum — powinieneś czuć mocne, ale komfortowe rozciąganie, bez ostrego punktowego bólu przy pięcie"
+      }
+    ],
+    "breathing": "Breathe slowly and continuously throughout the hold. Inhale to set the position, exhale to ease deeper into dorsiflexion. Never hold the breath.",
+    "breathingPl": "Oddychaj wolno i nieprzerwanie przez cały czas trzymania pozycji. Wdech, by ustawić pozycję, wydech, by delikatnie pogłębić zgięcie grzbietowe. Nigdy nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy_acute",
+      "severity": "modify",
+      "modification": "Avoid maximal dorsiflexion in the acute/painful phase — stay well within pain-free range or use bent-knee soleus stretch instead until symptoms calm down.",
+      "modificationPl": "Unikaj maksymalnego zgięcia grzbietowego w fazie ostrej/bolesnej — pozostań w zakresie bez bólu lub zastosuj rozciąganie płaszczkowatego z ugiętym kolanem do czasu ustąpienia objawów.",
+      "alternative": "soleus-stretch-bent-knee"
+    },
+    {
+      "condition": "plantar_fasciitis_acute",
+      "severity": "modify",
+      "modification": "Reduce dorsiflexion intensity and skip the toe-pull component; let the bodyweight passively lengthen the calf without active toe traction.",
+      "modificationPl": "Zmniejsz intensywność zgięcia grzbietowego i pomiń komponent pociągania palców; pozwól ciężarowi ciała biernie wydłużyć łydkę bez aktywnego ciągnięcia palców.",
+      "alternative": "wall-calf-stretch"
+    },
+    {
+      "condition": "recent_ankle_or_calf_strain",
+      "severity": "avoid",
+      "modification": "Skip until pain-free walking is restored and clearance from a physiotherapist is given. Forcing dorsiflexion on healing tissue can re-tear fibers.",
+      "modificationPl": "Pomiń do czasu powrotu bezbolesnego chodzenia i zgody fizjoterapeuty. Wymuszanie zgięcia grzbietowego na gojących się tkankach może ponownie naderwać włókna.",
+      "alternative": null
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "modify",
+      "modification": "The forward hinge can aggravate acute lumbar pain. Use a wall calf stretch in upright position instead, which avoids spinal flexion entirely.",
+      "modificationPl": "Pochylenie do przodu może nasilać ostry ból lędźwiowy. Zastosuj rozciąganie łydki przy ścianie w pozycji wyprostowanej, które całkowicie eliminuje zgięcie kręgosłupa.",
+      "alternative": "wall-calf-stretch"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x20-30 sekund na nogę",
+  "calories_per_kg_per_hour": 2.5,
+
+  "media": {
+    "primary": "standing-calves-calf-stretch.gif",
+    "frames_extracted": [
+      "frames/standing-calves-calf-stretch/frame_0_start.png",
+      "frames/standing-calves-calf-stretch/frame_1_early.png",
+      "frames/standing-calves-calf-stretch/frame_2_mid.png",
+      "frames/standing-calves-calf-stretch/frame_3_late.png",
+      "frames/standing-calves-calf-stretch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/standing-calves-calf-stretch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Wariant pokazany w GIFie to NIE klasyczny stretch pod ścianą w wykroku, ale wersja z jedną stopą na ławce: model staje przed płaską ławką (frame_0), stawia stopę piętą na ławce z kolanem w pełnym wyproście, pochyla się z bioder do przodu (frame_1), chwyta palce uniesionej stopy i pociąga je w kierunku piszczeli (frame_2 — szczytowa pozycja stretchu, brzusiec gastrocnemius wyraźnie podświetlony na czerwono), po czym wraca do pozycji wyjściowej (frame_3-4). Mięśnie podświetlone w klatce 2: brzuchaty łydki (gastrocnemius) w głównej intensywności, mniej widocznie płaszczkowaty (soleus) i ścięgno Achillesa. Stretch wykorzystuje połączenie wyprostowanego kolana + zgięcia grzbietowego stopy — to klasyczne ustawienie maksymalnie wydłużające gastrocnemius (mięsień dwustawowy). Plane: sagittal, bo cały ruch zgięcia grzbietowego i pochylenia tułowia odbywa się w płaszczyźnie strzałkowej. Laterality: unilateral (jedna noga na raz). Mechanic: isometric (schema nie ma 'stretch' w enum mechanic — najbliżej koncepcyjnie isometric, statyczne utrzymanie napięcia). Equipment required: bench (mimo nazwy 'standing', GIF jednoznacznie pokazuje wariant z ławką). Dodano 4 contraindications zgodnie z anatomią obciążenia: achilles tendinopathy, plantar fasciitis, świeży skręt kostki/naciągnięcie łydki, ostry ból lędźwiowy (forward hinge). 5 setup + 5 execution cues. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["mobility", "cooldown", "post_run", "post_leg_day", "calf_recovery", "beginner_friendly", "unilateral", "static_stretch"]
+}

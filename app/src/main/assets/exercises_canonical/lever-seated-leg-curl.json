@@ -1,0 +1,202 @@
+{
+  "id": "lever-seated-leg-curl",
+  "name": "Lever Seated Leg Curl (Machine)",
+  "namePl": "Uginanie nóg siedząc na maszynie",
+  "aliases": ["seated leg curl", "machine seated leg curl", "seated hamstring curl", "lever seated hamstring curl"],
+  "aliasesPl": ["uginanie nóg siedząc", "seated leg curl", "uginanie ud siedząc na maszynie", "maszynowe uginanie nóg siedząc", "uginanie hamstringów siedząc"],
+
+  "description": "An isolation hamstring exercise performed on a dedicated seated leg curl machine. The lifter sits upright with hips and knees at 90°, with a knee/thigh pad clamped firmly over the quads (to prevent hip lift) and the resistance roller positioned on the back of the ankles/Achilles. From a near-extended knee position, the lifter actively flexes the knees by curling the heels DOWN and UNDER the seat against the cam-loaded resistance, then controls the eccentric return. Because the hip is FLEXED (~90°), the long head of the biceps femoris (a biarticular muscle that crosses both hip and knee) is placed in a pre-stretched position — making the seated leg curl one of the BEST exercises for the long head specifically, with strong evidence (Maeo et al. 2021) for superior hypertrophy of the long head compared to lying or prone leg curl variants. Difficulty 3/10 — easy to learn, very safe, excellent for beginners and intermediates alike. A staple of evidence-based hamstring training.",
+  "descriptionPl": "Izolacyjne ćwiczenie na dwugłowe ud wykonywane na dedykowanej maszynie do uginania nóg siedząc. Ćwiczący siedzi wyprostowany z biodrami i kolanami pod kątem 90°, z poduszką dociskową mocno zaciśniętą nad udami (zapobiega unoszeniu się bioder) oraz wałkiem oporowym opartym o tylną część kostek/ścięgna Achillesa. Z pozycji bliskiej wyprostu kolan ćwiczący aktywnie zgina kolana, ciągnąc pięty W DÓŁ i POD siedzisko przeciw oporowi krzywki, następnie kontroluje powrót ekscentryczny. Ponieważ biodro jest ZGIĘTE (~90°), długa głowa dwugłowego uda (mięsień dwustawowy biegnący przez biodro i kolano) znajduje się we wstępnym rozciągnięciu — co czyni uginanie nóg siedząc JEDNYM Z NAJLEPSZYCH ćwiczeń specyficznie na długą głowę, z mocnymi dowodami (Maeo et al. 2021) na lepszą hipertrofię długiej głowy w porównaniu do uginania leżąc lub leżąc na brzuchu. Trudność 3/10 — łatwe do nauczenia, bardzo bezpieczne, świetne zarówno dla początkujących jak i średnio zaawansowanych. Klasyk treningu hamstringów opartego o evidence-based.",
+
+  "instructions": [
+    "Adjust the seat: back pad set so your knees align with the machine's rotation axis (pivot point), and the seat depth fits your thigh length — knees should pivot exactly at the cam center.",
+    "Set the thigh pad: pull it down firmly over the quads, just above the knees — it must clamp the legs to prevent hip lift during the curl.",
+    "Position the ankle roller: it should rest on the LOWER calf / Achilles area, just above the heels — not on the calf belly.",
+    "Sit upright with your back flat against the back pad, hips fully against the seat, hands gripping the side handles to anchor the torso.",
+    "Start position: knees nearly extended (but not locked out) — feel a light pre-stretch in the hamstrings.",
+    "Concentric phase: actively flex the knees, pulling the heels DOWN and UNDER the seat — focus on contracting the hamstrings, not just moving the lever.",
+    "Squeeze hard at the peak contraction (knees fully flexed) — pause 1 second to maximize tension.",
+    "Eccentric phase: slowly return the lever back to the start, controlling the negative for 2-3 seconds — DO NOT let the weight slam back.",
+    "Maintain hip and torso contact with the pads throughout — do not let the hips lift off the seat.",
+    "Foot position: dorsiflex (toes pulled toward shins) to bias hamstring over gastrocnemius — plantarflex (toes pointed) shifts some work to the calves."
+  ],
+  "instructionsPl": [
+    "Wyreguluj siedzenie: oparcie ustaw tak, by kolana pokrywały się z osią obrotu maszyny (punktem pivotowym), a głębokość siedziska pasowała do długości ud — kolana powinny pivotować dokładnie w środku krzywki.",
+    "Ustaw poduszkę udową: dociśnij ją mocno nad udami, tuż nad kolanami — musi zacisnąć nogi, by zapobiec unoszeniu bioder podczas uginania.",
+    "Ustaw wałek na kostkach: powinien spoczywać na DOLNEJ części łydki / okolicy ścięgna Achillesa, tuż nad piętami — nie na brzuścu łydki.",
+    "Usiądź wyprostowany z plecami płasko o oparcie, biodra dosunięte do siedziska, dłonie chwytają boczne uchwyty by ustabilizować tułów.",
+    "Pozycja startowa: kolana niemal wyprostowane (ale nie zablokowane) — poczuj lekkie wstępne rozciągnięcie dwugłowych ud.",
+    "Faza koncentryczna: aktywnie zegnij kolana, ciągnąc pięty W DÓŁ i POD siedzisko — skup się na napinaniu dwugłowych ud, nie tylko ruchu dźwigni.",
+    "Mocno ściśnij w szczycie skurczu (kolana w pełni zgięte) — przytrzymaj 1 sekundę by zmaksymalizować napięcie.",
+    "Faza ekscentryczna: powoli zwróć dźwignię do pozycji startowej, kontrolując ruch negatywny przez 2-3 sekundy — NIE pozwól ciężarowi wrócić siłą rozpędu.",
+    "Utrzymuj kontakt bioder i tułowia z poduszkami przez cały ruch — nie pozwól by biodra uniosły się z siedziska.",
+    "Pozycja stóp: zgięcie grzbietowe (palce do siebie) preferuje dwugłowe ud kosztem łydki — zgięcie podeszwowe (palce w dół) przenosi część pracy na łydki."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings"],
+    "secondary": ["gastrocnemius"],
+    "stabilizers": ["core", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "gastrocnemius": "S4",
+    "core": "S3",
+    "glutes": "S2"
+  },
+
+  "equipment": {
+    "required": ["seated_leg_curl_machine"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["lever-lying-leg-curl", "nordic-hamstring-curl", "glute-ham-raise", "single-leg-seated-leg-curl"],
+    "alternatives": ["lever-lying-leg-curl", "cable-seated-leg-curl", "stability-ball-leg-curl", "sliding-leg-curl", "glute-ham-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Knees aligned with the machine's rotation axis — sit deep into the seat",
+      "Thigh pad clamped firmly above the knees — locks the hips down",
+      "Ankle roller on lower calf / Achilles — not on calf belly",
+      "Back flat against the pad — torso supported, hands on side handles",
+      "Start with knees nearly extended — slight pre-stretch on the hamstrings"
+    ],
+    "setup_cues_pl": [
+      "Kolana w osi obrotu maszyny — usiądź głęboko w siedzisko",
+      "Poduszka udowa mocno zaciśnięta nad kolanami — blokuje biodra",
+      "Wałek na kostkach na dolnej łydce / ścięgnie Achillesa — nie na brzuścu łydki",
+      "Plecy płasko o oparcie — tułów podparty, dłonie na bocznych uchwytach",
+      "Start z kolanami niemal wyprostowanymi — lekkie wstępne rozciągnięcie dwugłowych ud"
+    ],
+    "execution_cues": [
+      "Pull heels DOWN and UNDER the seat — think 'curling under', not 'pulling back'",
+      "Squeeze the hamstrings hard at the bottom — 1 second pause at peak contraction",
+      "Control the eccentric — 2-3 seconds back to start, don't release the tension",
+      "Keep hips planted — if they lift, lower the weight",
+      "Dorsiflex feet (toes toward shins) to maximize hamstring activation"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij pięty W DÓŁ i POD siedzisko — myśl 'zwijam pod', a nie 'ciągnę do tyłu'",
+      "Mocno ściśnij dwugłowe ud na dole — 1 sekunda przytrzymania w szczycie skurczu",
+      "Kontroluj ekscentryk — 2-3 sekundy powrotu do startu, nie zwalniaj napięcia",
+      "Trzymaj biodra dociśnięte — jeśli się unoszą, zmniejsz ciężar",
+      "Zgnij stopy grzbietowo (palce do siebie) by zmaksymalizować aktywację dwugłowych ud"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips lifting off the seat during the curl",
+        "faultPl": "Unoszenie bioder z siedziska podczas uginania",
+        "cause": "Thigh pad too loose, weight too heavy, attempting to use hip extension to assist the curl",
+        "causePl": "Poduszka udowa luźna, za duży ciężar, próba użycia wyprostu biodra do wspomożenia uginania",
+        "cue": "Tighten the thigh pad firmly. Reduce the weight by 20% if hips still lift. Keep hips PLANTED — the curl is pure knee flexion.",
+        "cuePl": "Mocno dociśnij poduszkę udową. Zmniejsz ciężar o 20% jeśli biodra nadal się unoszą. Trzymaj biodra DOCIŚNIĘTE — uginanie to czyste zgięcie kolana."
+      },
+      {
+        "fault": "Using momentum and slamming the weight back on the eccentric",
+        "faultPl": "Używanie rozmachu i zrzucanie ciężaru na ekscentryku",
+        "cause": "Ego lifting with too heavy weight, lack of eccentric control awareness, rushing through reps",
+        "causePl": "Ego-lifting ze zbyt dużym ciężarem, brak świadomości kontroli ekscentryku, pośpiech w powtórzeniach",
+        "cue": "Lower for 2-3 seconds on every rep. The eccentric is where most of the hypertrophy happens — own it. If you can't control the return, the weight is too heavy.",
+        "cuePl": "Opuszczaj 2-3 sekundy w każdym powtórzeniu. Ekscentryk to gdzie dzieje się większość hipertrofii — opanuj go. Jeśli nie kontrolujesz powrotu, ciężar jest za duży."
+      },
+      {
+        "fault": "Partial range of motion — not extending or not fully flexing",
+        "faultPl": "Częściowy zakres ruchu — niepełny wyprost lub niepełne zgięcie",
+        "cause": "Hamstring stiffness, weight too heavy preventing full ROM, fear of bottom stretch position",
+        "causePl": "Sztywność dwugłowych ud, zbyt duży ciężar blokujący pełny zakres, strach przed pozycją rozciągniętą na dole",
+        "cue": "Full extension at the top (slight pre-stretch, not locked) + full flexion at the bottom (heels under the seat). Stretched-position training drives hamstring growth.",
+        "cuePl": "Pełny wyprost na górze (lekkie rozciągnięcie, nie blokada) + pełne zgięcie na dole (pięty pod siedziskiem). Trening w pozycji rozciągniętej napędza wzrost dwugłowych ud."
+      },
+      {
+        "fault": "Knees not aligned with the machine pivot — pad slides on the leg",
+        "faultPl": "Kolana nie w osi obrotu maszyny — wałek przesuwa się po nodze",
+        "cause": "Wrong seat depth or back pad position, didn't check setup before starting",
+        "causePl": "Zła głębokość siedziska lub pozycja oparcia, brak sprawdzenia ustawień przed startem",
+        "cue": "Before the first rep, check that your kneecap aligns with the visible pivot/cam center of the machine. Misalignment puts shear stress on the knee.",
+        "cuePl": "Przed pierwszym powtórzeniem sprawdź, czy rzepka pokrywa się z widocznym środkiem krzywki/osi maszyny. Niezgodność powoduje siły ścinające na kolanie."
+      },
+      {
+        "fault": "Cramping in the hamstring during set",
+        "faultPl": "Skurcze dwugłowych ud podczas serii",
+        "cause": "Pre-stretched position + max contraction creates extreme demand on the hamstring, especially long head; dehydration; low electrolytes",
+        "causePl": "Pozycja wstępnie rozciągnięta + maksymalny skurcz tworzą ekstremalne obciążenie dwugłowych ud, zwłaszcza długiej głowy; odwodnienie; niski poziom elektrolitów",
+        "cue": "Common with seated leg curl due to long-head pre-stretch. Drop the weight, finish the set with controlled tempo. Hydrate well + sodium pre-workout. Reduce ROM at the top slightly if cramping persists.",
+        "cuePl": "Częste przy uginaniu siedząc ze względu na wstępne rozciągnięcie długiej głowy. Zmniejsz ciężar, dokończ serię w kontrolowanym tempie. Dobre nawodnienie + sód przed treningiem. Lekko zmniejsz zakres na górze jeśli skurcze się powtarzają."
+      }
+    ],
+    "breathing": "Inhale at the top (start position, knees extended), exhale powerfully during the concentric curl as you pull the heels down. Inhale again on the controlled eccentric return. Never hold breath on full reps — only Valsalva for max-effort singles.",
+    "breathingPl": "Wdech na górze (pozycja startowa, kolana wyprostowane), mocny wydech podczas koncentrycznego uginania gdy ciągniesz pięty w dół. Ponowny wdech na kontrolowanym powrocie ekscentrycznym. Nigdy nie wstrzymuj oddechu w pełnych powtórzeniach — Valsalva tylko dla maksymalnych singli."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hamstring_strain_or_tear",
+      "severity": "avoid",
+      "modification": "The pre-stretched position of the long head + active knee flexion can re-injure a healing hamstring. With acute strain — DO NOT perform. Wait for full healing, then return with lying leg curl (less stretch on long head) before progressing back to seated variation.",
+      "modificationPl": "Wstępnie rozciągnięta pozycja długiej głowy + aktywne zgięcie kolana mogą ponownie uszkodzić gojącą się dwugłową uda. Przy świeżym naciągnięciu — NIE wykonuj. Poczekaj na pełne zagojenie, wracaj przez uginanie leżąc (mniejsze rozciągnięcie długiej głowy) przed powrotem do wariantu siedząc.",
+      "alternative": "lever-lying-leg-curl"
+    },
+    {
+      "condition": "posterior_knee_pain_or_meniscal_issues",
+      "severity": "caution",
+      "modification": "Deep knee flexion under load may compress the posterior knee compartment and aggravate meniscal or popliteal issues. Reduce ROM at the bottom (don't go to full flexion), reduce load, focus on slow eccentric. If pain persists, switch to RDL/back extension (hip extension hamstring work without deep knee flexion).",
+      "modificationPl": "Głębokie zgięcie kolana pod obciążeniem może ścisnąć tylny przedział kolana i nasilić problemy łąkotkowe lub w okolicy dołu podkolanowego. Zmniejsz zakres na dole (nie schodź do pełnego zgięcia), zmniejsz ciężar, skup się na powolnym ekscentryku. Jeśli ból się utrzymuje, przejdź na RDL/back extension (praca dwugłowych ud w wyproście biodra bez głębokiego zgięcia kolana).",
+      "alternative": "barbell-romanian-deadlift"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "safe_with_modifications",
+      "modification": "Generally very safe for lower back — seated position with back support and no spinal load makes this one of the SAFEST hamstring exercises for people with back issues. Often used as a replacement for RDL/deadlifts during back rehab. Just keep the back flat against the pad and don't round the lumbar spine when sitting down.",
+      "modificationPl": "Ogólnie bardzo bezpieczne dla dolnego odcinka pleców — pozycja siedząca z podparciem pleców i brak obciążenia kręgosłupa czynią to jedno z NAJBEZPIECZNIEJSZYCH ćwiczeń na dwugłowe ud dla osób z problemami z plecami. Często używane jako zamiennik RDL/martwego ciągu w rehabilitacji pleców. Po prostu trzymaj plecy płasko o oparcie i nie zaokrąglaj odcinka lędźwiowego siadając.",
+      "alternative": null
+    },
+    {
+      "condition": "knee_replacement_or_acl_reconstruction_acute",
+      "severity": "caution",
+      "modification": "Active knee flexion against resistance may stress reconstructed ligaments in acute post-op phase (first 3-6 months). Follow surgeon/physical therapist's protocol — usually cleared in mid-rehab (3-4 months). Start with very light weight, partial ROM, no momentum.",
+      "modificationPl": "Aktywne zgięcie kolana przeciw oporowi może obciążyć zrekonstruowane więzadła w ostrej fazie po operacji (pierwsze 3-6 miesięcy). Stosuj się do protokołu chirurga/fizjoterapeuty — zwykle dozwolone w środkowej fazie rehabilitacji (3-4 miesiące). Zaczynaj od bardzo lekkiego ciężaru, częściowy zakres, bez rozmachu.",
+      "alternative": "stability-ball-leg-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy — standard) | 3x12-20 (metabolic stress, drop sets, finisher) | 4x6-10 (strength focus, heavier load) | 3-4x8-12 with 2-3s eccentric (eccentric overload focus) | 2-3x/week — pairs well with RDL or lying leg curl in upper-vs-lower volume splits",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-seated-leg-curl.gif",
+    "frames_extracted": [
+      "frames/lever-seated-leg-curl/frame_0_start.png",
+      "frames/lever-seated-leg-curl/frame_1_early.png",
+      "frames/lever-seated-leg-curl/frame_2_mid.png",
+      "frames/lever-seated-leg-curl/frame_3_late.png",
+      "frames/lever-seated-leg-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "hamstrings/lever-seated-leg-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (12 oryginalnych). Aparatura: dedykowana maszyna do uginania nóg siedząc z pionowym oparciem, dociskową poduszką udową (widoczny mechanizm dociskający uda od góry tuż nad kolanami) i wałkiem na kostkach z przodu na ramieniu obracającym się wokół osi krzywki. Frame 0 (start): ćwiczący siedzi wyprostowany, kolana niemal wyprostowane, wałek na kostkach z przodu — pozycja startowa z lekkim wstępnym rozciągnięciem dwugłowych ud (widoczne podświetlenie tylnej strony ud). Frame 1-2: faza koncentryczna — kolana się zginają, wałek ciągnięty w dół i pod siedzisko (klasyczna trajektoria seated leg curl gdzie pięty 'zwijają się' pod ćwiczącego), dwugłowe ud mocno podświetlone w obu klatkach (P10 — najwyższa aktywacja). Frame 2 (mid): pozycja prawie maksymalnego zgięcia kolan — wałek nisko, dwugłowe ud w pełnym skurczu. Frame 3-4: powrót ekscentryczny — kontrolowany powrót do startu. Biodra przez cały ruch DOCIŚNIĘTE do siedziska (poduszka udowa skutecznie blokuje hip lift). KLUCZOWA SPECYFIKA vs lying/prone leg curl: hip flexion ~90° wstępnie rozciąga długą głowę dwugłowego uda (mięsień dwustawowy) — badanie Maeo et al. 2021 wykazało lepszą hipertrofię długiej głowy w seated vs lying leg curl. Dlatego seated leg curl to evidence-based wybór #1 na długą głowę hamstringa. Klasyfikacja: movement_pattern 'isolation' (jeden staw — kolano), force 'pull' (koncentryczne ciągnięcie pięt w dół), mechanic 'isolation' (single-joint), laterality 'bilateral', plane 'sagittal', kinetic_chain 'open' (stopy nie obciążają podłoża). Primary: hamstrings P10 (z naciskiem na długą głowę dzięki pre-stretch). Secondary: gastrocnemius S4 (drugi zginacz kolana — minimalny udział, większy gdy plantarflexja). Stabilizatory: core S3, glutes S2 (utrzymanie pozycji siedzącej i przeciwdziałanie hip lift). Equipment: seated_leg_curl_machine (dedykowana — różna od lying leg curl machine). Difficulty 3/10 — bardzo łatwe do nauczenia, jedno z najbezpieczniejszych ćwiczeń. Wszystkie pola PL pisane od zera — terminologia polska fitness (dwugłowe ud, długa głowa, hamstringi, ekscentryk, koncentryk, hipertrofia, zgięcie grzbietowe/podeszwowe). 5 common faults: hip lift (najczęstszy), brak kontroli ekscentryku, partial ROM, niezgodność osi kolana z osią maszyny, skurcze (typowe dla seated leg curl ze względu na pre-stretch długiej głowy). 4 contraindications: hamstring strain (avoid), posterior knee pain (caution), lower back pain (safe — to ćwiczenie jest często ZAMIENNIKIEM dla osób z problemami pleców), ACL/knee replacement post-op (caution). Progresje: do lying leg curl (różna pozycja biodra), Nordic curl (eccentric overload), GHR (compound). Alternatywy: lying leg curl, cable seated, stability ball, sliding, GHR.",
+
+  "tags": ["strength", "bodybuilding", "isolation", "hamstring_hypertrophy", "long_head_biceps_femoris", "evidence_based", "beginner_friendly", "knee_flexion", "machine", "back_safe", "rehab_friendly", "stretched_position"]
+}

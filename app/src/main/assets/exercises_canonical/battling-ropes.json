@@ -1,0 +1,209 @@
+{
+  "id": "battling-ropes",
+  "name": "Battling Ropes",
+  "namePl": "Liny treningowe",
+  "aliases": ["battle ropes", "battle rope waves", "heavy rope training", "double wave battle ropes", "rope slams", "combat ropes"],
+  "aliasesPl": ["fale na linach", "battle ropes", "liny bojowe", "rope waves", "fale linami", "ciężkie liny", "podwójne fale"],
+
+  "description": "Full-body conditioning exercise using a heavy anchored rope (typically 9-15 m long, 38-50 mm thick). The athlete adopts an athletic half-squat stance, grips one rope end in each hand and rhythmically generates waves down the rope by rapidly raising and lowering the arms. The double-wave variant shown here moves both arms in unison to produce symmetrical waves. Combines high cardiovascular demand with significant work for the shoulders (deltoids, especially anterior and lateral heads), forearms and grip, upper back and trapezius, and isometric core/lower-body bracing. Low joint impact compared to running or jumping, making it useful for conditioning around lower-limb injuries.",
+  "descriptionPl": "Ćwiczenie kondycyjne całego ciała wykonywane z ciężką liną zakotwiczoną z jednej strony (zazwyczaj 9-15 m długości, 38-50 mm grubości). Trenujący przyjmuje atletyczną postawę z lekkim półprzysiadem, chwyta po jednym końcu liny w każdą rękę i rytmicznie generuje fale w dół liny przez szybkie unoszenie i opuszczanie ramion. Pokazany wariant podwójnej fali (double wave) prowadzi obie ręce równolegle, tworząc symetryczne fale. Łączy wysoki bodziec sercowo-naczyniowy ze znaczną pracą barków (mięśnia naramiennego, zwłaszcza aktonu przedniego i bocznego), przedramion i chwytu, górnej części pleców i czworobocznego, a także izometryczną pracę core i dolnej części ciała stabilizującą postawę. Ma niski wpływ na stawy w porównaniu do biegu czy skoków, dlatego sprawdza się jako kondycja przy kontuzjach dolnych kończyn.",
+
+  "instructions": [
+    "Anchor a heavy training rope around a sturdy fixed point (pole, kettlebell, dedicated rope anchor) at ground level. Walk back until the rope is laid out straight with a slight slack.",
+    "Grip one end of the rope in each hand with a neutral grip (palms facing each other). Hold close to the very end to maximise wave amplitude.",
+    "Adopt an athletic stance: feet slightly wider than shoulder-width, toes pointing forward or slightly out, hips hinged back, knees bent into a quarter-to-half squat.",
+    "Brace your core, set a flat back, keep your chest up and gaze forward. Arms hang in front of your hips with a slight bend in the elbows.",
+    "Initiate the wave by explosively raising both arms to roughly shoulder height, then immediately driving them down with force. The rope follows the motion creating a continuous wave.",
+    "Maintain a fast, rhythmic up-down cadence with both arms moving together (double wave). Keep the stance locked — only the arms and shoulders move dynamically.",
+    "Continue waves for the prescribed time interval (typically 20-40 seconds) without slowing down. The faster and higher the arms move, the bigger the wave.",
+    "Breathe rhythmically — do not hold your breath. Short forceful exhalations during the down-stroke help maintain core brace.",
+    "Stop at the end of the interval, rest with hands on knees and recover before the next set."
+  ],
+  "instructionsPl": [
+    "Zakotwicz ciężką linę treningową wokół stabilnego punktu (słup, kettlebell, dedykowany kotwicznik) na poziomie podłoża. Cofnij się aż lina będzie wyciągnięta prosto z lekkim luzem.",
+    "Chwyć każdy koniec liny jedną ręką chwytem neutralnym (dłonie naprzeciw siebie). Trzymaj jak najbliżej końca, by zmaksymalizować amplitudę fali.",
+    "Przyjmij postawę atletyczną: stopy nieco szerzej niż barki, palce do przodu lub lekko na zewnątrz, biodra cofnięte, kolana zgięte w ćwierć- do półprzysiadu.",
+    "Napnij brzuch, ustaw plaski grzbiet, klatka w górze, wzrok przed siebie. Ramiona zwisają przed biodrami z lekko ugiętymi łokciami.",
+    "Rozpocznij falę wybuchowo unosząc obie ręce mniej więcej do wysokości barków, a następnie energicznie ściągnij je w dół. Lina podąża za ruchem tworząc ciągłą falę.",
+    "Utrzymuj szybką, rytmiczną kadencję w górę-w dół z oboma ramionami pracującymi razem (podwójna fala). Postawa pozostaje zablokowana — dynamicznie pracują tylko ramiona i barki.",
+    "Kontynuuj fale przez wyznaczony interwał czasowy (zazwyczaj 20-40 sekund) bez zwalniania. Im szybciej i wyżej ruszają się ramiona, tym większa fala.",
+    "Oddychaj rytmicznie — nie wstrzymuj oddechu. Krótkie energiczne wydechy podczas ruchu w dół pomagają utrzymać napięcie brzucha.",
+    "Zatrzymaj się na koniec interwału, odpocznij z dłońmi na kolanach i odzyskaj oddech przed kolejną serią."
+  ],
+
+  "classification": {
+    "movement_pattern": "conditioning",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["deltoids", "forearms", "core"],
+    "secondary": ["trapezius", "latissimus_dorsi", "biceps", "triceps"],
+    "stabilizers": ["quadriceps", "glutes", "calves", "erector_spinae", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "deltoids": "P9",
+    "forearms": "P10",
+    "core": "P8",
+    "trapezius": "S7",
+    "latissimus_dorsi": "S6",
+    "biceps": "S5",
+    "triceps": "S5",
+    "quadriceps": "S5",
+    "glutes": "T4",
+    "calves": "T3",
+    "erector_spinae": "T4",
+    "rotator_cuff": "T4"
+  },
+
+  "equipment": {
+    "required": ["battle_ropes", "anchor"],
+    "optional": ["heart_rate_monitor", "interval_timer", "rope_anchor_strap", "gloves"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["plank", "dumbbell-shoulder-press"],
+    "progression_to": ["battle-ropes-alternating-wave", "battle-ropes-slam", "battle-ropes-jumping-jack", "battle-ropes-side-to-side-wave", "battle-ropes-burpee"],
+    "alternatives": ["jump-rope", "rowing-machine", "kettlebell-swing", "mountain-climber", "burpee"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor low and walk back until the rope is straight with minimal slack",
+      "Grip the very ends of the ropes — more rope to whip means bigger wave",
+      "Feet wider than shoulders, hips back, knees soft in a quarter squat",
+      "Flat back, chest up, gaze forward — not down at the rope",
+      "Brace the core hard before the first wave — this is the anchor for everything"
+    ],
+    "setup_cues_pl": [
+      "Zakotwicz nisko i cofnij się aż lina będzie prosta z minimalnym luzem",
+      "Chwytaj same końce lin — więcej liny do machania = większa fala",
+      "Stopy szerzej niż barki, biodra w tył, kolana lekko ugięte w ćwierćprzysiadzie",
+      "Płaski grzbiet, klatka w górze, wzrok przed siebie — nie patrz w dół na linę",
+      "Napnij brzuch mocno przed pierwszą falą — to kotwica dla całej reszty"
+    ],
+    "execution_cues": [
+      "Move from the shoulders and lats — not the wrists",
+      "Both arms move together, same height, same speed (double wave)",
+      "Down-stroke is FAST — punch the rope into the floor",
+      "Keep the legs and hips frozen — only the upper body is dynamic",
+      "Short sharp exhale on each down-stroke to keep the core braced"
+    ],
+    "execution_cues_pl": [
+      "Ruch wychodzi z barków i najszerszych — nie z nadgarstków",
+      "Obie ręce ruszają się razem, na tę samą wysokość, z tą samą prędkością (podwójna fala)",
+      "Ruch w dół SZYBKI — wbij linę w podłogę",
+      "Trzymaj nogi i biodra zablokowane — dynamicznie pracuje tylko górna część ciała",
+      "Krótki ostry wydech przy każdym ruchu w dół, by utrzymać napięcie brzucha"
+    ],
+    "common_faults": [
+      {
+        "fault": "Standing too upright with locked knees",
+        "faultPl": "Stanie zbyt wyprostowanym z zablokowanymi kolanami",
+        "cause": "Without the athletic stance the lower back absorbs the shock of every down-stroke instead of the legs and core. Leads to lumbar fatigue and limits power transfer to the rope.",
+        "causePl": "Bez postawy atletycznej dolny grzbiet pochłania wstrząs każdego ruchu w dół zamiast nóg i brzucha. Prowadzi to do zmęczenia lędźwiowego i ogranicza transfer mocy do liny.",
+        "cue": "Sit back into a quarter squat as if a chair is behind you. Knees soft, ready to absorb force.",
+        "cuePl": "Usiądź w ćwierćprzysiadzie tak jakby krzesło stało za tobą. Kolana miękkie, gotowe pochłonąć siłę."
+      },
+      {
+        "fault": "Holding too far up the rope (away from the end)",
+        "faultPl": "Trzymanie za daleko od końca liny",
+        "cause": "Shortens the effective lever and dramatically reduces wave amplitude — looks like effort but the rope barely moves at the anchor end.",
+        "causePl": "Skraca efektywną dźwignię i drastycznie zmniejsza amplitudę fali — wygląda jak wysiłek, ale lina ledwo się rusza przy kotwicy.",
+        "cue": "Grip the very last 10 cm of each rope. If you can see rope past your hand, you're choking up too far.",
+        "cuePl": "Chwyć ostatnie 10 cm każdej liny. Jeśli widzisz linę za swoją dłonią, trzymasz za wysoko."
+      },
+      {
+        "fault": "Rounding the upper back / shrugging shoulders to ears",
+        "faultPl": "Garbienie górnej części pleców / wzruszanie ramion do uszu",
+        "cause": "Fatigue causes the lifter to shrug and round forward — overloads the upper trapezius and neck, reduces deltoid contribution, and can flare up cervical issues.",
+        "causePl": "Zmęczenie sprawia, że trenujący wzrusza barki i się garbi — przeciąża górny czworoboczny i kark, zmniejsza udział mięśnia naramiennego i może drażnić problemy szyjne.",
+        "cue": "Pull the shoulder blades down and back. Pretend you have an orange in each armpit and don't let it drop.",
+        "cuePl": "Ściągnij łopatki w dół i w tył. Wyobraź sobie pomarańczę pod każdą pachą i nie pozwól jej spaść."
+      },
+      {
+        "fault": "Going too slow / waves die out",
+        "faultPl": "Zbyt wolne tempo / fale gasną",
+        "cause": "Battle ropes only work as conditioning at high frequency. Slow waves remove the cardiovascular and metabolic stimulus — it becomes a light shoulder exercise instead.",
+        "causePl": "Liny treningowe działają jako kondycja tylko przy wysokiej częstotliwości. Wolne fale eliminują bodziec sercowo-naczyniowy i metaboliczny — stają się lekkim ćwiczeniem na barki.",
+        "cue": "Set an interval timer (20-30 s) and treat it as a sprint. The rope should look like an angry snake the whole time.",
+        "cuePl": "Ustaw timer interwałowy (20-30 s) i traktuj to jak sprint. Lina ma wyglądać jak wściekły wąż przez cały czas."
+      },
+      {
+        "fault": "Holding the breath throughout the set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Battle ropes are conditioning — they need open continuous breathing. Holding the breath spikes blood pressure, kills the cardio stimulus and forces premature failure.",
+        "causePl": "Liny treningowe to kondycja — wymagają otwartego ciągłego oddechu. Wstrzymywanie oddechu podnosi ciśnienie krwi, niszczy bodziec kardio i wymusza przedwczesną porażkę.",
+        "cue": "Short, sharp exhales on each down-stroke. Like a boxer hitting a heavy bag — every punch has its own breath.",
+        "cuePl": "Krótkie ostre wydechy przy każdym ruchu w dół. Jak bokser bijący w worek — każde uderzenie ma swój oddech."
+      }
+    ],
+    "breathing": "Continuous rhythmic breathing throughout the set — no Valsalva. Short forceful exhalations synchronised with each down-stroke help maintain core brace and a steady cardiovascular rhythm. Inhale through the nose on the up-stroke when possible.",
+    "breathingPl": "Ciągły rytmiczny oddech przez całą serię — żadnego Valsalva. Krótkie energiczne wydechy zsynchronizowane z każdym ruchem w dół pomagają utrzymać napięcie brzucha i stały rytm sercowo-naczyniowy. Wdech przez nos przy ruchu w górę gdy to możliwe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_impingement",
+      "severity": "modify",
+      "modification": "High-rep overhead-tending movement of the shoulder under load can aggravate impingement. Lower the wave height to below shoulder level or substitute with a lower-body conditioning tool until the shoulder is asymptomatic.",
+      "modificationPl": "Powtórzeniowy ruch barku w okolicach wysokości głowy pod obciążeniem może drażnić zespół ciasnoty. Obniż wysokość fali poniżej poziomu barków lub zastąp narzędziem kondycyjnym na dolne partie aż bark przestanie boleć.",
+      "alternative": "rowing-machine"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Battle ropes spike heart rate and systolic blood pressure rapidly. Get medical clearance, work in shorter intervals (10-15 s) with longer rest, and monitor blood pressure before/after.",
+      "modificationPl": "Liny treningowe gwałtownie podnoszą tętno i ciśnienie skurczowe. Uzyskaj zgodę lekarza, pracuj w krótszych interwałach (10-15 s) z dłuższymi przerwami i mierz ciśnienie przed/po.",
+      "alternative": "walking-on-incline-treadmill"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "avoid",
+      "modification": "Repetitive forceful gripping of a thick heavy rope is one of the worst possible loads for inflamed common extensor tendons at the lateral elbow. Avoid completely until pain-free.",
+      "modificationPl": "Powtarzający się siłowy chwyt grubej ciężkiej liny to jedno z najgorszych możliwych obciążeń dla zapalonych przyczepów prostowników w bocznym łokciu. Całkowicie unikaj aż do braku bólu.",
+      "alternative": "stationary-bike-walk"
+    },
+    {
+      "condition": "rotator_cuff_tear_acute",
+      "severity": "avoid",
+      "modification": "Explosive repetitive shoulder flexion against rope inertia stresses the rotator cuff. Wait for full rehab and physiotherapist clearance before reintroducing.",
+      "modificationPl": "Wybuchowe powtarzające się zginanie barku przeciw bezwładności liny obciąża pierścień rotatorów. Poczekaj na pełną rehabilitację i zgodę fizjoterapeuty przed powrotem do ćwiczenia.",
+      "alternative": "stationary-bike-run-v-3"
+    }
+  ],
+
+  "typical_sets_reps": "4-6x30 s on / 30 s rest (conditioning) | 8-10x15 s sprint / 45 s rest (HIIT) | 3x60 s steady (endurance) | EMOM 20 s every minute for 10 min (metcon)",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "battling-ropes.gif",
+    "thumb": "battling-ropes.thumb.webp",
+    "frames_extracted": [
+      "frames/battling-ropes/frame_0_start.png",
+      "frames/battling-ropes/frame_1_early.png",
+      "frames/battling-ropes/frame_2_mid.png",
+      "frames/battling-ropes/frame_3_late.png",
+      "frames/battling-ropes/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/battling-ropes"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek kluczowych (start/early/mid/late/end) z GIFa jahel/delts/battling-ropes.gif. Wszystkie klatki pokazują tę samą sylwetkę w atletycznej postawie półprzysiadu, twarzą w lewo, trzymającą po jednym końcu grubej liny w każdej ręce. Lina biegnie w prawą stronę kadru — widać symetryczne fale wzdłuż jej długości. Obie ręce trzymane są na tej samej wysokości w każdej klatce, co potwierdza wariant DOUBLE WAVE (podwójna fala), nie alternatywny ani slam. Podświetlone mięśnie w GIFie: bardzo intensywnie aktony przedni i boczny mięśnia naramiennego oraz cały bark, mocno górna część pleców i czworoboczny, wyraźnie przedramiona, lekko brzuch i czworogłowe — co odpowiada P9 deltoids, P10 forearms, P8 core, S7 trapezius. Pomimo że źródło jahel klasyfikuje jako 'delts/strength' z 'band', poprawiłem na category=cardio, equipment=battle_ropes (nie 'band' — to są zupełnie inne narzędzia), movement_pattern=conditioning zgodnie z prawdziwą fizjologią ćwiczenia. Instrukcje źródłowe ze źródła jahel (5 generycznych kroków o gumie) były bezużyteczne — wszystkie napisane od zera na podstawie standardów coachingowych battle ropes. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'liny treningowe' (najpopularniejsze) z aliasami 'battle ropes' (oryginalna nazwa używana w PL siłowniach) i 'fale na linach' (opisowe).",
+
+  "tags": ["conditioning", "cardio", "metcon", "full_body", "shoulders", "grip", "core", "hiit_friendly", "low_impact", "anaerobic", "athletic_carryover", "no_running_alternative"]
+}

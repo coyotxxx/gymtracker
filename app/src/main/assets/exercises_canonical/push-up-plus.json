@@ -1,0 +1,201 @@
+{
+  "id": "push-up-plus",
+  "name": "Push-Up Plus",
+  "namePl": "Pompka plus (protrakcja łopatek)",
+  "aliases": ["pushup plus", "scapular push-up plus", "serratus push-up", "plus push-up", "protraction push-up"],
+  "aliasesPl": ["pompka plus", "pompka serratus", "pompka z protrakcją", "pompka z wypchnięciem łopatek", "pompka aktywująca serratus anterior"],
+
+  "description": "Push-up variation that adds a scapular protraction ('plus' motion) at the top of every rep. After fully extending the elbows, you actively push the upper back toward the ceiling — separating the shoulder blades and 'rounding' the upper back. This isolates the serratus anterior, a deep stabilizer that 'pins' the scapula to the rib cage. A weak serratus → winged scapula, poor overhead mechanics, shoulder impingement. Push-up plus is a staple prehab/rehab exercise (PT clinics, shoulder programs) but also a serious accessory for lifters and bodyweight athletes who want healthy, well-controlled scapulae.",
+  "descriptionPl": "Wariant pompki, w którym na końcu każdego powtórzenia dodajesz protrakcję łopatek (ruch 'plus'). Po pełnym wyprostowaniu łokci aktywnie wypychasz górną część pleców do sufitu — łopatki rozsuwają się na boki i 'zaokrąglasz' górę pleców. Izoluje to mięsień zębaty przedni (serratus anterior), głęboki stabilizator, który 'przykleja' łopatkę do klatki piersiowej. Słaby serratus → odstająca łopatka ('skrzydłowa'), zła mechanika nad głową, konflikt podbarkowy. Pompka plus to klasyk prehab/rehab (gabinety fizjo, programy barkowe), ale też świetne ćwiczenie pomocnicze dla osób trenujących siłowo i kalisteniką, które chcą zdrowe i kontrolowane łopatki.",
+
+  "instructions": [
+    "Set up in standard push-up position: hands shoulder-width (or slightly wider), directly under shoulders. Feet together or hip-width.",
+    "Brace your core. Squeeze glutes. Body forms a straight line from heels through hips to head — no sagging, no pike.",
+    "Inhale and lower yourself in a controlled manner. Elbows track at ~45° from your torso. Lower until chest is just above the floor.",
+    "Brief pause at the bottom — no bounce.",
+    "Exhale and press the floor away, extending the elbows fully (this is the normal push-up portion).",
+    "AT THE TOP — with elbows locked out — actively push your upper back toward the ceiling. Imagine separating your shoulder blades wide and 'rounding' the upper back. This is the 'plus' motion (scapular protraction).",
+    "Hold the protracted position for 1-2 seconds — feel the serratus contract under your armpit and along your ribs.",
+    "Relax the protraction (let shoulder blades return to neutral) before starting the next rep. Maintain plank throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw się w standardowej pozycji pompkowej: dłonie na szerokość barków (lub nieco szerzej), bezpośrednio pod barkami. Stopy razem lub na szerokość bioder.",
+    "Napnij brzuch. Ściśnij pośladki. Ciało tworzy prostą linię od pięt przez biodra do głowy — bez opadania, bez 'tyłka do góry'.",
+    "Wdech, opuszczaj się kontrolowanym ruchem. Łokcie pod kątem ~45° od tułowia. Schodź aż klatka będzie tuż nad podłogą.",
+    "Krótka pauza na dole — nie odbijaj.",
+    "Wydech, wypchnij podłogę i w pełni wyprostuj łokcie (to klasyczna część pompki).",
+    "NA GÓRZE — przy wyprostowanych łokciach — aktywnie wypchnij górną część pleców do sufitu. Wyobraź sobie, że rozsuwasz łopatki szeroko na boki i 'zaokrąglasz' górę pleców. To jest ruch 'plus' (protrakcja łopatek).",
+    "Wytrzymaj w pozycji protrakcji 1-2 sekundy — poczuj jak serratus napina się pod pachą i wzdłuż żeber.",
+    "Rozluźnij protrakcję (pozwól łopatkom wrócić do neutralnej pozycji) przed kolejnym powtórzeniem. Utrzymuj sztywną planka przez cały czas."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["serratus_anterior", "pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["core"],
+    "stabilizers": ["rotator_cuff", "scapular_stabilizers", "glutes", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "serratus_anterior": "P9",
+    "pectoralis_major": "P7",
+    "anterior_deltoids": "P7",
+    "triceps": "P6",
+    "core": "S6",
+    "glutes": "T4",
+    "rotator_cuff": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handles", "mat", "resistance_band"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["plank", "scapular-push-up"],
+    "progression_to": ["push-up", "decline-push-up-plus", "single-arm-scapular-push-up"],
+    "alternatives": ["scapular-push-up", "wall-slide", "serratus-wall-slide", "bear-crawl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands shoulder-width or slightly wider, directly under shoulders",
+      "Body in a straight plank line — heels to head",
+      "Core braced, glutes squeezed BEFORE first rep",
+      "Head neutral — eyes look just ahead of hands",
+      "Pre-set scapulae in neutral (neither pinched back nor protracted)"
+    ],
+    "setup_cues_pl": [
+      "Dłonie na szerokość barków lub nieco szerzej, bezpośrednio pod barkami",
+      "Ciało w prostej linii planka — od pięt do głowy",
+      "Brzuch napięty, pośladki ściśnięte PRZED pierwszym powtórzeniem",
+      "Głowa neutralna — wzrok lekko przed dłońmi",
+      "Łopatki wstępnie ustawione w neutralnej pozycji (ani ściśnięte, ani rozsunięte)"
+    ],
+    "execution_cues": [
+      "At top: 'push the floor away with your upper back' — that's the plus",
+      "Round the upper back like a 'cat cow' — but only between the shoulder blades, no lumbar movement",
+      "Hold the plus 1-2 seconds — feel the serratus 'wake up' under your armpit",
+      "Don't shrug! Shoulders stay DOWN, away from ears, during the plus",
+      "Lower portion is identical to a regular push-up — elbows ~45°, full ROM"
+    ],
+    "execution_cues_pl": [
+      "Na górze: 'wypchnij podłogę górną częścią pleców' — to jest ruch plus",
+      "Zaokrąglaj górną część pleców jak 'koci grzbiet' — ale tylko między łopatkami, bez ruchu lędźwi",
+      "Trzymaj plusa 1-2 sekundy — poczuj jak serratus 'budzi się' pod pachą",
+      "Nie wzruszaj barkami! Barki zostają W DÓŁ, daleko od uszu, podczas plusa",
+      "Dolna część jest identyczna jak zwykła pompka — łokcie ~45°, pełen zakres ruchu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Shrugging shoulders up to ears during the plus",
+        "faultPl": "Wzruszanie barkami do uszu podczas plusa",
+        "cause": "Substituting upper trapezius for serratus anterior — overactive traps dominate",
+        "causePl": "Zastępowanie zębatego przedniego górnym czworobocznym — nadaktywne trapezy przejmują pracę",
+        "cue": "Shoulders DOWN, away from ears. 'Long neck' during the plus. Push your back UP, not your shoulders.",
+        "cuePl": "Barki W DÓŁ, daleko od uszu. 'Długa szyja' podczas plusa. Wypychaj plecy DO GÓRY, nie barki."
+      },
+      {
+        "fault": "No actual protraction (just a regular push-up)",
+        "faultPl": "Brak rzeczywistej protrakcji (po prostu zwykła pompka)",
+        "cause": "Lockout treated as 'top of rep' — no extra range achieved",
+        "causePl": "Wyprost łokci traktowany jako 'szczyt powtórzenia' — brak dodatkowego zakresu",
+        "cue": "After locking elbows, KEEP pushing — your upper back should visibly rise 5-10 cm more. Imagine a string lifting between your shoulder blades.",
+        "cuePl": "Po wyproście łokci NADAL wypychaj — górna część pleców powinna widocznie unieść się jeszcze 5-10 cm. Wyobraź sobie sznurek unoszący przestrzeń między łopatkami."
+      },
+      {
+        "fault": "Sagging hips (broken plank)",
+        "faultPl": "Opadające biodra (zepsuta planka)",
+        "cause": "Weak core, no glute engagement — body 'hangs' on lumbar spine",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym",
+        "cue": "Squeeze glutes HARD before lowering. 'Plank first, push-up second, plus third.'",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. 'Najpierw plank, potem pompka, na końcu plus.'"
+      },
+      {
+        "fault": "Hyperextending the elbows to fake the plus",
+        "faultPl": "Przeprost łokci by udawać plusa",
+        "cause": "Confusing extra elbow extension with scapular protraction",
+        "causePl": "Mylenie dodatkowego wyprostu łokci z protrakcją łopatek",
+        "cue": "Lock elbows softly, then the movement comes from BETWEEN the shoulder blades, not the elbows. Soft elbow lockout = healthy joints.",
+        "cuePl": "Wyprostuj łokcie miękko, potem ruch przychodzi z PRZESTRZENI MIĘDZY ŁOPATKAMI, nie z łokci. Miękki wyprost łokci = zdrowe stawy."
+      },
+      {
+        "fault": "Lumbar rounding instead of upper-back rounding",
+        "faultPl": "Zaokrąglanie odcinka lędźwiowego zamiast górnej części pleców",
+        "cause": "Ruch przenoszony na dolny kręgosłup — łatwiejsza droga gdy serratus słaby",
+        "causePl": "Ruch przenoszony na dolny kręgosłup — łatwiejsza droga gdy serratus słaby",
+        "cue": "Movement is ONLY between the shoulder blades. Hips and lower back stay stable like in a plank — only the upper back rounds.",
+        "cuePl": "Ruch JEST TYLKO między łopatkami. Biodra i dolny odcinek pleców stabilne jak w plance — tylko górna część pleców się zaokrągla."
+      }
+    ],
+    "breathing": "Inhale during descent, exhale during the press, finish exhale during the plus protraction. The plus often coincides with the strongest part of the exhale — using diaphragmatic pressure to assist the serratus.",
+    "breathingPl": "Wdech podczas schodzenia, wydech podczas wyciskania, dokończ wydech podczas protrakcji plus. Ruch plus często zbiega się z najmocniejszą częścią wydechu — wykorzystanie ciśnienia przepony wspomaga pracę serratusa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles or perform on fists (knuckles down) to keep wrist neutral. Or regress to scapular push-up on knees.",
+      "modificationPl": "Użyj uchwytów do pompek lub wykonuj na pięściach (knykcie w dół) aby utrzymać neutralny nadgarstek. Lub wróć do scapular push-up na kolanach.",
+      "alternative": "scapular-push-up"
+    },
+    {
+      "condition": "winged_scapula_active_pain",
+      "severity": "caution",
+      "modification": "Push-up plus IS often prescribed for winged scapula — but only without pain. If you feel sharp shoulder pain or pinching, regress to wall slides or quadruped serratus pushes under PT supervision.",
+      "modificationPl": "Pompka plus jest CZĘSTO zalecana przy odstającej łopatce — ale tylko bez bólu. Jeśli czujesz ostry ból w barku lub szczypanie, wróć do wall slide lub quadruped serratus push pod nadzorem fizjoterapeuty.",
+      "alternative": "serratus-wall-slide"
+    },
+    {
+      "condition": "shoulder_impingement_acute",
+      "severity": "caution",
+      "modification": "Reduce range — perform the plus only to the point of comfort, not maximum protraction. Avoid if pain in any position. Strengthening serratus typically HELPS impingement long-term, but acute phases need rest.",
+      "modificationPl": "Zmniejsz zakres — wykonuj plusa tylko do granicy komfortu, nie maksymalnej protrakcji. Unikaj jeśli boli w jakiejkolwiek pozycji. Wzmacnianie serratusa zazwyczaj POMAGA przy konflikcie długoterminowo, ale ostre fazy wymagają odpoczynku.",
+      "alternative": "serratus-wall-slide"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "If you can't hold a rigid plank for the entire set, regress to push-up plus on knees (knee plank position) until core stronger.",
+      "modificationPl": "Jeśli nie utrzymujesz sztywnej planki przez całą serię, wróć do push-up plus na kolanach (pozycja planka z kolanami) do czasu wzmocnienia brzucha.",
+      "alternative": "kneeling-push-up-plus"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 (prehab/rehab) | 3x15-20 (serratus hypertrophy) | 2x20+ (endurance, warm-up)",
+  "calories_per_kg_per_hour": 3.8,
+
+  "media": {
+    "primary": "push-up-plus.gif",
+    "frames_extracted": [
+      "frames/push-up-plus/frame_0_start.png",
+      "frames/push-up-plus/frame_1_early.png",
+      "frames/push-up-plus/frame_2_mid.png",
+      "frames/push-up-plus/frame_3_late.png",
+      "frames/push-up-plus/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/push-up-plus"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): pozycja pompkowa z ramionami wyprostowanymi i AKTYWNĄ protrakcją łopatek na górze — wyraźnie widoczne zaokrąglenie górnej części pleców i podświetlony serratus anterior pod pachą (czerwona aktywacja boczna klatki piersiowej). Frame 2 (mid): dolna pozycja pompki — klatka tuż nad podłogą, łokcie zgięte pod ~45°. Frame 4 (end): powrót na górę z protrakcją (zamknięcie cyklu plus). Anatomia jasno podświetla zębaty przedni (serratus anterior) jako główny pracujący mięsień, plus pectoralis i przednie delty. Klasyczny prehab/rehab exercise zalecany przy odstającej łopatce (winged scapula) i konflikcie podbarkowym. Wszystkie pola PL napisane od zera w polskim standardzie fitness/fizjoterapii.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "serratus_anterior", "prehab", "rehab", "shoulder_health", "scapular_control", "winged_scapula", "home_workout", "no_equipment", "beginner_friendly"]
+}

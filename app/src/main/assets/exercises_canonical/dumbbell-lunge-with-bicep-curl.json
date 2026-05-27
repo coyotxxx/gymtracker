@@ -1,0 +1,212 @@
+{
+  "id": "dumbbell-lunge-with-bicep-curl",
+  "name": "Dumbbell Lunge with Bicep Curl",
+  "namePl": "Wykrok z uginaniem ramion hantlami",
+  "aliases": ["lunge and curl", "dumbbell lunge curl combo", "curl lunge", "walking lunge with curl"],
+  "aliasesPl": ["wykrok z curlem", "wykrok hantlami z uginaniem", "lunge z curlem", "wykrok z bicepsem"],
+
+  "description": "Compound combo exercise that pairs a stationary forward lunge with a simultaneous dumbbell bicep curl. Athlete steps forward into a split stance, descending until both knees reach approximately 90°, while curling both dumbbells from hip level up to the shoulders. The eccentric lowering of the dumbbells coincides with rising from the lunge. Trains lower body (quads, glutes) and biceps in one pattern — a full-body conditioning movement often used in metabolic finishers, circuits, and time-efficient workouts. Despite hitting two muscle groups, neither receives optimal isolation loading, so it is more useful for conditioning than for maximal hypertrophy of any single muscle.",
+  "descriptionPl": "Wielostawowe ćwiczenie łączące stacjonarny wykrok w przód z jednoczesnym uginaniem ramion z hantlami. Trenujący wykonuje krok w przód do pozycji wykroku, schodzi aż oba kolana osiągną około 90°, jednocześnie unosząc hantle od bioder do barków poprzez uginanie w łokciach. Faza ekscentryczna (opuszczanie hantli) zbiega się z wychodzeniem z wykroku. Trenuje dolną część ciała (czworogłowe, pośladki) i bicepsy w jednym wzorcu — pełnowymiarowy ruch kondycyjny często używany w finishery metaboliczne, obwody i treningi oszczędzające czas. Mimo angażowania dwóch grup mięśniowych żadna nie otrzymuje optymalnego izolowanego obciążenia, więc ćwiczenie służy bardziej kondycji niż maksymalnej hipertrofii pojedynczego mięśnia.",
+
+  "instructions": [
+    "Pick two dumbbells of moderate weight — limit is usually set by your curl strength, not your lunge strength.",
+    "Stand tall with feet hip-width apart, dumbbells hanging at your sides with a neutral grip (palms facing thighs).",
+    "Brace your core, draw shoulder blades back, look straight ahead. Take a controlled breath in.",
+    "Step forward with one leg into a long stride (about 1.5x your normal step). Plant the front foot flat on the floor.",
+    "As you lower into the lunge, simultaneously rotate the wrists so palms face up (supination) and curl the dumbbells toward your shoulders by bending at the elbows.",
+    "Descend until the front thigh is parallel to the floor and the back knee hovers 2-3 cm above the ground. Torso stays vertical, elbows stay close to your sides.",
+    "At the bottom, both dumbbells should be at shoulder level with biceps fully contracted. Pause briefly.",
+    "Drive up by pushing through the front heel while simultaneously lowering the dumbbells with control back to the sides, rotating wrists back to neutral.",
+    "Bring the front leg back to meet the rear leg, returning to a fully upright stance with dumbbells at your sides.",
+    "Alternate legs each rep, or complete all reps on one side before switching — programming choice."
+  ],
+  "instructionsPl": [
+    "Wybierz dwa hantle o umiarkowanym ciężarze — limit zazwyczaj wyznacza twoja siła curla, nie wykroku.",
+    "Stań wyprostowany ze stopami na szerokość bioder, hantle wzdłuż ciała w chwycie neutralnym (dłonie w stronę ud).",
+    "Napnij brzuch, ściągnij łopatki w tył, wzrok prosto. Spokojny wdech.",
+    "Wykonaj długi krok w przód jedną nogą (około 1,5 normalnej długości kroku). Postaw przednią stopę płasko na podłodze.",
+    "Schodząc do wykroku, jednocześnie obróć nadgarstki tak by dłonie były skierowane w górę (supinacja) i ugnij ramiona unosząc hantle do barków.",
+    "Schodź aż przednie udo będzie równoległe do podłogi, a tylne kolano zatrzyma się 2-3 cm nad ziemią. Tułów pionowo, łokcie blisko tułowia.",
+    "Na dole oba hantle powinny być na wysokości barków z pełnym napięciem bicepsów. Krótka pauza.",
+    "Wypchnij się przez piętę przedniej nogi w górę, jednocześnie opuszczając hantle z kontrolą wzdłuż ciała i wracając do chwytu neutralnego.",
+    "Wróć przednią nogą do tylnej, wracając do pełnej pozycji stojącej z hantlami wzdłuż ciała.",
+    "Zmieniaj nogi co powtórzenie lub wykonaj całą serię na jedną stronę przed zmianą — zależnie od programu."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "mixed",
+    "secondary_pattern": "isolation_curl"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "biceps_brachii"],
+    "secondary": ["hamstrings", "adductors", "brachialis", "brachioradialis"],
+    "stabilizers": ["core", "calves", "gluteus_medius", "erector_spinae", "forearms", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "biceps_brachii": "P8",
+    "hamstrings": "S6",
+    "adductors": "S6",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "core": "S6",
+    "gluteus_medius": "S5",
+    "forearms": "S5",
+    "calves": "T4",
+    "erector_spinae": "T4",
+    "deltoids": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-lunge", "dumbbell-lunge", "dumbbell-bicep-curl"],
+    "progression_to": ["dumbbell-walking-lunge-with-curl", "dumbbell-reverse-lunge-with-curl", "dumbbell-thruster"],
+    "alternatives": ["dumbbell-lunge", "dumbbell-bicep-curl", "dumbbell-squat-to-curl", "kettlebell-lunge-with-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells hang at the sides with neutral grip — palms facing thighs",
+      "Feet hip-width apart, weight evenly distributed",
+      "Chest up, shoulder blades retracted, core braced",
+      "Elbows tucked against the rib cage — keep them pinned during the curl",
+      "Pick a focal point at eye level — keeps the head neutral"
+    ],
+    "setup_cues_pl": [
+      "Hantle wzdłuż ciała w chwycie neutralnym — dłonie w stronę ud",
+      "Stopy na szerokość bioder, ciężar rozłożony równomiernie",
+      "Klatka w górze, łopatki ściągnięte, brzuch napięty",
+      "Łokcie przyciśnięte do żeber — trzymaj je w miejscu przez cały curl",
+      "Ustal punkt skupienia wzroku — pomaga utrzymać neutralną pozycję głowy"
+    ],
+    "execution_cues": [
+      "Lunge and curl move together — start both at the same time, finish both at the same time",
+      "Step long enough that the front shin can stay vertical at the bottom",
+      "Drop straight down, not forward — the back knee descends toward the floor",
+      "Supinate the wrists fully at the top of the curl for maximal biceps contraction",
+      "Elbows stay close to the ribs — don't swing the dumbbells with shoulder flexion"
+    ],
+    "execution_cues_pl": [
+      "Wykrok i curl ruszają razem — zaczynają w tym samym momencie i kończą w tym samym momencie",
+      "Krok wystarczająco długi, aby piszczel przedniej nogi mogła pozostać pionowa na dole",
+      "Schodź prosto w dół, nie do przodu — tylne kolano opada w kierunku podłogi",
+      "Pełna supinacja nadgarstków na górze curla dla maksymalnego skurczu bicepsa",
+      "Łokcie zostają blisko żeber — nie wymachuj hantli zginając w barku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Curl turns into a shoulder swing (elbows drift forward)",
+        "faultPl": "Curl zamienia się w wymach z barku (łokcie wędrują do przodu)",
+        "cause": "Dumbbells too heavy for biceps relative to lunge load, or using momentum to lift",
+        "causePl": "Hantle zbyt ciężkie dla bicepsa w stosunku do obciążenia wykroku lub używanie pędu do podniesienia",
+        "cue": "Pin your elbows to your ribs. If you can't lift cleanly, lighten the load.",
+        "cuePl": "Przyciśnij łokcie do żeber. Jeśli nie potrafisz unieść czysto, zmniejsz ciężar."
+      },
+      {
+        "fault": "Front knee crosses past the toes",
+        "faultPl": "Przednie kolano przekracza linię palców",
+        "cause": "Step too short or pushing forward instead of straight down",
+        "causePl": "Za krótki krok lub pchanie w przód zamiast prosto w dół",
+        "cue": "Take a longer step and lower the back knee straight toward the floor",
+        "cuePl": "Wykonaj dłuższy krok i opuszczaj tylne kolano prosto w dół"
+      },
+      {
+        "fault": "Tempo mismatch between lunge and curl",
+        "faultPl": "Niedopasowane tempo wykroku i curla",
+        "cause": "Treating the two movements as separate — usually curl finishes before reaching lunge bottom",
+        "causePl": "Traktowanie ruchów jak oddzielnych — najczęściej curl kończy się przed dolną pozycją wykroku",
+        "cue": "Sync the rhythm — both arms and legs reach their bottom and top at the same moment",
+        "cuePl": "Zsynchronizuj rytm — ręce i nogi osiągają górę i dół w tym samym momencie"
+      },
+      {
+        "fault": "Torso leans forward to help with curl",
+        "faultPl": "Pochylenie tułowia w przód aby pomóc w curlu",
+        "cause": "Weak biceps trying to recruit hip flexors and momentum",
+        "causePl": "Słabe bicepsy próbują rekrutować zginacze bioder i pęd",
+        "cue": "Chest stays proud and vertical throughout. If torso leans, drop curl weight.",
+        "cuePl": "Klatka dumnie i pionowo przez cały ruch. Jeśli tułów się pochyla, zmniejsz ciężar curla."
+      },
+      {
+        "fault": "Lateral wobble or shifting hip during the lunge",
+        "faultPl": "Boczne chwianie lub przesuwanie biodra w wykroku",
+        "cause": "Weak gluteus medius, narrow base, or fatigued stabilizers from the simultaneous arm work",
+        "causePl": "Słaby pośladkowy średni, wąska podstawa lub zmęczone stabilizatory przez jednoczesną pracę ramion",
+        "cue": "Set feet on parallel lines (hip-width). Slow the tempo and master the rhythm before adding weight.",
+        "cuePl": "Stopy na równoległych liniach (szerokość bioder). Zwolnij tempo i opanuj rytm przed dodaniem ciężaru."
+      }
+    ],
+    "breathing": "Inhale at the top of the stance. Exhale through the descent into the lunge and the curl up (toughest moment). Inhale on the way back to standing as the dumbbells lower. For higher reps with lighter weight you can also reverse: inhale down, exhale up.",
+    "breathingPl": "Wdech na górze pozycji wyjściowej. Wydech podczas schodzenia do wykroku i unoszenia hantli (najtrudniejszy moment). Wdech wracając do stania gdy hantle opadają. Przy wyższych powtórzeniach z lżejszym ciężarem możesz odwrócić: wdech w dół, wydech w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "The curl component irritates damaged biceps tendon insertion. Drop the curl entirely and perform plain dumbbell lunges holding the weights at the sides.",
+      "modificationPl": "Komponent curla drażni uszkodzone przyczepy ścięgna bicepsa. Pomiń curl i wykonuj zwykły wykrok z hantlami trzymanymi wzdłuż ciała.",
+      "alternative": "dumbbell-lunge"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Forward lunges load the patellofemoral joint heavily. Switch to reverse lunge with curl or remove the lunge depth.",
+      "modificationPl": "Wykroki w przód mocno obciążają staw rzepkowo-udowy. Przejdź na wykrok w tył z curlem lub ogranicz głębokość wykroku.",
+      "alternative": "dumbbell-reverse-lunge-with-curl"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Dual-task coordination (legs + arms) increases dizziness risk. Perform exercises separately: lunge first, curl second.",
+      "modificationPl": "Podwójne zadanie ruchowe (nogi + ręce) zwiększa ryzyko zawrotów. Wykonuj ćwiczenia osobno: najpierw wykrok, potem curl.",
+      "alternative": "dumbbell-lunge"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "Holding dumbbells while lunging loads the spine asymmetrically as you step. Reduce load, slow the tempo, or switch to bilateral squats with curl after.",
+      "modificationPl": "Trzymanie hantli podczas wykroku obciąża kręgosłup asymetrycznie przy każdym kroku. Zmniejsz ciężar, zwolnij tempo lub przejdź na obustronne przysiady z curlem po nich.",
+      "alternative": "dumbbell-squat-to-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per leg (hypertrophy/conditioning) | 3x8 per leg (strength-endurance) | 3-4x15 per leg (metabolic finisher)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "dumbbell-lunge-with-bicep-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lunge-with-bicep-curl/frame_0_start.png",
+      "frames/dumbbell-lunge-with-bicep-curl/frame_1_early.png",
+      "frames/dumbbell-lunge-with-bicep-curl/frame_2_mid.png",
+      "frames/dumbbell-lunge-with-bicep-curl/frame_3_late.png",
+      "frames/dumbbell-lunge-with-bicep-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-lunge-with-bicep-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Wariant STATIONARY lunge z combo curlem hantlami. Klatka 0 (start): postać stoi wyprostowana z hantlami wzdłuż ciała w chwycie neutralnym, podświetlone czworogłowe (gotowość) + bicepsy + przedramiona. Klatka 2 (mid/bottom): pełna głębokość wykroku z prawą nogą przed lewą, oba hantle uniesione do barków w pełnym curlu (supinacja), łokcie przy żebrach, tułów pionowy — najwyraźniejsza definicja bicepsów + czworogłowych przedniej nogi + pośladków. Klatka 4 (end): powrót do stania z duchem dolnej pozycji widocznym w tle (cykl). Brak walking pattern (postać wraca do tej samej pozycji, nie idzie do przodu). Dwa wzorce ruchu odbywają się jednocześnie: squat (wykrok) + isolation curl. movement_pattern='squat' z dodatkowym 'secondary_pattern: isolation_curl' bo jahel klasyfikuje pod biceps i bicepsy są tak samo istotne jak czworogłowe. P9 quadriceps (najmocniej obciążone przy schodzeniu pod ciężarem hantli), P8 glutes (ekstensor biodra), P8 biceps_brachii (curl pod pełnym obciążeniem hantli). Difficulty 6 — koordynacja dwóch wzorców podnosi trudność ponad zwykły dumbbell-lunge (5) i zwykły curl (3-4), ale niżej niż barbell-lunge (7) bo bilateral hold zamiast load on traps. Equipment tylko dumbbells. Polski standard fitness 'wykrok z uginaniem ramion hantlami' — wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["combo", "full_body", "lower_body", "biceps", "lunge", "curl", "dumbbell", "compound", "conditioning", "time_efficient", "metabolic"]
+}

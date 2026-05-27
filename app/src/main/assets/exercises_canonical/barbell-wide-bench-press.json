@@ -1,0 +1,202 @@
+{
+  "id": "barbell-wide-bench-press",
+  "name": "Barbell Wide-Grip Bench Press",
+  "namePl": "Wyciskanie sztangi szerokim chwytem na ławce poziomej",
+  "aliases": ["wide grip bench press", "wide bench", "wide-grip bench", "powerlifting wide bench"],
+  "aliasesPl": ["wyciskanie szerokim chwytem", "wide grip bench", "wyciskanie sztangi szerokim chwytem", "szeroki bench"],
+
+  "description": "Variant of the flat barbell bench press performed with a wider-than-shoulder grip (typically index fingers at the power rings of the barbell or just outside). The wider grip shortens the range of motion, places greater stretch on the pectoralis major (especially outer fibers), and reduces triceps contribution compared to medium/close grip. Popular among powerlifters for raw bench specialization and among bodybuilders for chest hypertrophy.",
+  "descriptionPl": "Wariant wyciskania sztangi na ławce poziomej wykonywany szerszym niż na barki chwytem (zazwyczaj palce wskazujące na pierścieniach gryfu olimpijskiego lub tuż za nimi). Szerszy chwyt skraca zakres ruchu, mocniej rozciąga mięsień piersiowy (zwłaszcza zewnętrzne włókna) i zmniejsza udział tricepsów w porównaniu do chwytu medium/wąskiego. Popularny wśród trójboistów w specjalistycznym treningu bench pressu i kulturystów dla hipertrofii klatki.",
+
+  "instructions": [
+    "Lie on a flat bench with the bar at eye level. Plant feet firmly on the floor, knees bent ~90°.",
+    "Set your shoulder blades: retract and depress them hard ('pinch them together, tuck into back pockets'). Create a slight natural arch in the lower back.",
+    "Grip the bar WIDE — index fingers at the rings of the Olympic bar (~81 cm between hands) or slightly outside. Wrap thumbs around the bar (NOT suicide grip).",
+    "Unrack the bar by extending your arms. Bring it directly over your shoulders.",
+    "Take a big breath, brace your core. Begin a controlled descent toward your UPPER chest / nipple line (wide grip naturally touches higher).",
+    "Touch chest lightly — DO NOT bounce. Pause briefly (1s for paused style) and feel a strong stretch in the outer pec fibers.",
+    "Press the bar up and slightly back, driving with the chest. ROM is shorter than medium grip — finish over the shoulders.",
+    "Keep shoulder blades retracted throughout. Exhale at the top of the press.",
+    "WARNING: Wide grip stresses the anterior shoulder more. Do not max out if you feel any shoulder discomfort."
+  ],
+  "instructionsPl": [
+    "Połóż się na poziomej ławce ze sztangą na wysokości oczu. Stopy mocno na podłodze, kolana zgięte ~90°.",
+    "Ustaw łopatki: mocno ściągnij je razem i w dół ('ściśnij i schowaj do tylnych kieszeni'). Lekki naturalny łuk w dolnych plecach.",
+    "Chwyć gryf SZEROKO — palce wskazujące na pierścieniach gryfu olimpijskiego (~81 cm między dłońmi) lub nieco szerzej. Owinij kciuki wokół gryfu (NIE chwyt samobójczy).",
+    "Wyciągnij sztangę z stojaka prostując ramiona. Przenieś ją bezpośrednio nad barki.",
+    "Nabierz głęboki oddech, napnij brzuch. Zacznij kontrolowane schodzenie do GÓRNEJ klatki / linii sutków (szeroki chwyt naturalnie dotyka wyżej).",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza (1s dla wersji z pauzą) i poczuj mocne rozciągnięcie zewnętrznych włókien klatki.",
+    "Wyciśnij gryf w górę i nieco do tyłu, napędzając ruch klatką. Zakres ruchu jest krótszy niż przy chwycie medium — zakończ nad barkami.",
+    "Łopatki ściągnięte przez cały ruch. Wydech na szczycie wyciskania.",
+    "UWAGA: Szeroki chwyt mocniej obciąża przednią część barku. Nie wyciskaj maksymalnych ciężarów jeśli czujesz dyskomfort w barku."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids"],
+    "secondary": ["triceps", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P8",
+    "triceps": "S6",
+    "serratus_anterior": "S4",
+    "lats": "T3",
+    "core": "T4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench", "power_rack_or_bench_with_supports"],
+    "optional": ["belt", "wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-bench-press", "dumbbell-bench-press", "push-up"],
+    "progression_to": ["paused-wide-bench-press", "wide-grip-incline-bench-press", "board-press-wide-grip"],
+    "alternatives": ["barbell-bench-press", "dumbbell-bench-press", "smith-wide-grip-bench-press", "machine-chest-press", "dumbbell-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Eyes directly under the bar",
+      "Index fingers on the rings (~81 cm grip)",
+      "Shoulder blades retracted HARD — wide grip demands extra back tightness",
+      "Slight arch, glutes on bench, feet planted",
+      "Forearms should still be roughly vertical at chest touch (not flared past 90°)"
+    ],
+    "setup_cues_pl": [
+      "Oczy bezpośrednio pod gryfem",
+      "Palce wskazujące na pierścieniach (~81 cm chwyt)",
+      "Łopatki ściągnięte MOCNO — szeroki chwyt wymaga większego napięcia pleców",
+      "Lekki łuk, pośladki na ławce, stopy zaparte",
+      "Przedramiona nadal mniej więcej pionowe przy dotyku klatki (nie rozsunięte poza 90°)"
+    ],
+    "execution_cues": [
+      "Touch UPPER chest / nipple line — not lower sternum",
+      "Feel the stretch in outer pec at the bottom",
+      "Press with the chest, not the arms — 'spread the bar apart'",
+      "Shorter ROM than medium grip — don't try to lower it further than the bar allows",
+      "Press up and slightly back over the shoulders"
+    ],
+    "execution_cues_pl": [
+      "Dotknij GÓRNEJ klatki / linii sutków — nie dolnego mostka",
+      "Poczuj rozciągnięcie zewnętrznej części klatki na dole",
+      "Wyciskaj klatką, nie ramionami — 'rozciągaj gryf na boki'",
+      "Krótszy zakres niż przy chwycie medium — nie próbuj opuszczać niżej niż pozwala gryf",
+      "Wyciskaj w górę i nieco do tyłu nad barkami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flared past 90° (T-shape arms)",
+        "faultPl": "Łokcie rozsunięte ponad 90° (litera T)",
+        "cause": "Wide grip naturally encourages flaring — combined with loss of retraction, becomes dangerous for the shoulder",
+        "causePl": "Szeroki chwyt naturalnie sprzyja rozsuwaniu — w połączeniu z utratą ściągnięcia łopatek staje się niebezpieczny dla barku",
+        "cue": "Even with wide grip, keep elbows at ~70-75° (not full 90°). Touch upper chest, not throat.",
+        "cuePl": "Nawet przy szerokim chwycie utrzymaj łokcie pod ~70-75° (nie pełne 90°). Dotknij górnej klatki, nie szyi."
+      },
+      {
+        "fault": "Bouncing the bar to use a wide grip's short ROM as an excuse",
+        "faultPl": "Odbijanie gryfu w celu wykorzystania krótszego zakresu jako wymówki",
+        "cause": "Ego lifting — wide grip allows heavier weights, tempting cheating",
+        "causePl": "Ego lifting — szeroki chwyt pozwala na większe ciężary, kuszące do oszukiwania",
+        "cue": "Pause 1s on chest. Wide grip with bounce = shoulder injury waiting to happen.",
+        "cuePl": "Pauza 1s na klatce. Szeroki chwyt z odbiciem = czekająca kontuzja barku."
+      },
+      {
+        "fault": "Losing shoulder blade retraction at the bottom",
+        "faultPl": "Utrata ściągnięcia łopatek w pozycji dolnej",
+        "cause": "Wide grip puts more stretch on the chest; if back is loose, shoulders roll forward",
+        "causePl": "Szeroki chwyt mocniej rozciąga klatkę; jeśli plecy są luźne, barki rolują do przodu",
+        "cue": "'Bend the bar' — actively pull the bar apart with your lats and rear delts engaged.",
+        "cuePl": "'Wygnij gryf' — aktywnie rozciągaj gryf na boki z napiętymi najszerszymi i tylnymi aktonami."
+      },
+      {
+        "fault": "Touching too low (lower sternum / belly)",
+        "faultPl": "Dotyk za nisko (dolny mostek / brzuch)",
+        "cause": "Mimicking a medium-grip bar path with a wide grip",
+        "causePl": "Kopiowanie ścieżki gryfu z chwytu medium na chwycie szerokim",
+        "cue": "Wide grip = bar touches HIGHER on chest (nipple line). Lower touch with wide grip flares elbows dangerously.",
+        "cuePl": "Szeroki chwyt = gryf dotyka WYŻEJ klatki (linia sutków). Niższy dotyk przy szerokim chwycie niebezpiecznie rozsuwa łokcie."
+      },
+      {
+        "fault": "Going too heavy too soon",
+        "faultPl": "Zbyt duży ciężar zbyt szybko",
+        "cause": "Wide grip feels stronger (shorter ROM), but anterior shoulder fatigues faster",
+        "causePl": "Szeroki chwyt wydaje się mocniejszy (krótszy zakres), ale przedni akton barku męczy się szybciej",
+        "cue": "Start ~10% LIGHTER than your medium-grip bench. Build up gradually over weeks.",
+        "cuePl": "Zacznij ~10% LŻEJ niż swój bench medium. Buduj stopniowo przez tygodnie."
+      }
+    ],
+    "breathing": "Inhale at the top, brace hard, hold through the descent and press. Exhale at lockout.",
+    "breathingPl": "Wdech na górze, mocno napięcie, trzymaj przez schodzenie i wyciskanie. Wydech w lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Wide grip increases shoulder external rotation stress. Switch to medium or close grip, or use dumbbells.",
+      "modificationPl": "Szeroki chwyt zwiększa obciążenie rotacji zewnętrznej barku. Przejdź na chwyt medium lub wąski, albo użyj hantli.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "avoid",
+      "modification": "Wide grip with elbows flared puts the AC joint at the end of its compressive range. Avoid until pain resolved.",
+      "modificationPl": "Szeroki chwyt z rozsuniętymi łokciami obciąża staw barkowo-obojczykowy w skrajnym zakresie. Unikaj do ustąpienia bólu.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy wide-grip barbell pressing strongly aggravates. Switch to machine or rehab protocol.",
+      "modificationPl": "Ciężkie wyciskanie szerokim chwytem mocno drażni. Przejdź na press maszynowy lub protokół rehabilitacyjny.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Wide grip maximally stretches pec — exactly the position where strain re-tears occur. Wait for full recovery.",
+      "modificationPl": "Szeroki chwyt maksymalnie rozciąga klatkę — dokładnie pozycja w której dochodzi do nawrotów naderwania. Czekaj na pełne wyzdrowienie.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-8 (hypertrophy) | 3-5x3-5 (strength/powerlifting) | 3x8-12 (chest accessory)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-wide-bench-press.gif",
+    "frames_extracted": [
+      "frames/barbell-wide-bench-press/frame_0_start.png",
+      "frames/barbell-wide-bench-press/frame_1_early.png",
+      "frames/barbell-wide-bench-press/frame_2_mid.png",
+      "frames/barbell-wide-bench-press/frame_3_late.png",
+      "frames/barbell-wide-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/barbell-wide-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Frame 0/4: sztanga w dolnej pozycji nad górną klatką, chwyt wyraźnie szerszy niż na barki (palce poza pierścieniami), łokcie rozsunięte w bok. Frame 2: lock-out nad barkami. Animacja pokazuje klasyczny wide-grip bench: krótszy ROM, mocno podświetlona klatka (zwłaszcza zewnętrzne włókna), przednie delty zaangażowane, tricepsy mniej intensywnie niż w medium grip — anatomia zgodna. Niższa intensywność tricepsów (S6 vs P8 w medium grip) odzwierciedla biomechanikę wariantu. Wszystkie pola PL od zera.",
+
+  "tags": ["powerlifting", "upper_body", "horizontal_push", "barbell", "chest", "chest_focus", "wide_grip", "hypertrophy", "outer_chest"]
+}

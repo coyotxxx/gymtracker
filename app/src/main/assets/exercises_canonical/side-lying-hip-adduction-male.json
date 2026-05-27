@@ -1,0 +1,206 @@
+{
+  "id": "side-lying-hip-adduction-male",
+  "name": "Side-Lying Hip Adduction",
+  "namePl": "Przywodzenie biodra leżąc na boku",
+  "aliases": ["side lying adductor raise", "lying inner thigh raise", "side-lying bottom leg lift", "inner thigh lift"],
+  "aliasesPl": ["unoszenie dolnej nogi leżąc na boku", "unoszenie nogi na przywodziciele", "podnoszenie wewnętrznej części uda", "przywodzenie nogi leżąc bokiem"],
+
+  "description": "Classic bodyweight isolation exercise for the hip adductors (inner thigh muscles). Performed lying on one side with the top leg bent and crossed in front, while the bottom (straight) leg is raised toward the ceiling against gravity. Targets adductor magnus, longus and gracilis with minimal equipment. Widely used in rehab, prehab, dance/martial arts conditioning, and aesthetic inner-thigh training.",
+  "descriptionPl": "Klasyczne ćwiczenie izolowane z masą własną ciała na przywodziciele biodra (mięśnie wewnętrznej strony uda). Wykonywane leżąc na boku z górną nogą zgiętą i położoną przed sobą, podczas gdy dolna (wyprostowana) noga jest unoszona do góry, w kierunku sufitu, walcząc z grawitacją. Angażuje mięsień przywodziciel wielki, długi i smukły bez potrzeby sprzętu. Powszechnie używane w rehabilitacji, prehabilitacji, treningu tancerzy i sztuk walki oraz w estetycznym treningu wewnętrznej strony uda.",
+
+  "instructions": [
+    "Lie on your side on a mat. Support your head with the lower arm (bent at the elbow) or rest it on your bicep.",
+    "Stack your hips and shoulders vertically — your body should form a straight line from head to bottom heel.",
+    "Bend your top leg at the knee and place that foot flat on the floor in front of your bottom knee. This clears the path for the bottom leg.",
+    "Keep your bottom leg fully straight with the foot flexed (toes pulled toward shin). This is your working leg.",
+    "Brace your core to prevent the hips from rolling forward or backward.",
+    "Slowly lift the bottom (straight) leg upward toward the ceiling by squeezing the inner thigh. Exhale on the way up.",
+    "Raise as high as your adductor flexibility allows (typically 15-30 cm off the floor) without losing hip alignment.",
+    "Pause for 1 second at the top, then lower the leg under control over 2-3 seconds back toward — but not touching — the floor.",
+    "Keep tension on the muscle throughout. Complete all reps on one side, then switch."
+  ],
+  "instructionsPl": [
+    "Połóż się bokiem na macie. Podeprzyj głowę dolnym ramieniem (ugiętym w łokciu) lub oprzyj ją na bicepsie.",
+    "Ustaw biodra i barki dokładnie jedno nad drugim — ciało ma tworzyć prostą linię od głowy do pięty dolnej nogi.",
+    "Zegnij górną nogę w kolanie i połóż jej stopę płasko na podłodze przed kolanem dolnej nogi. To zrobi miejsce dla dolnej nogi.",
+    "Trzymaj dolną nogę w pełni wyprostowaną, stopa w dorsifleksji (palce ciągnięte w kierunku piszczeli). To jest twoja pracująca noga.",
+    "Napnij brzuch aby zapobiec przetaczaniu się bioder do przodu lub do tyłu.",
+    "Powoli unieś dolną (wyprostowaną) nogę do góry, w kierunku sufitu, spinając wewnętrzną stronę uda. Wydech podczas unoszenia.",
+    "Unieś tak wysoko jak pozwala elastyczność przywodzicieli (zwykle 15-30 cm nad podłogę) bez tracenia ustawienia bioder.",
+    "Zatrzymaj na 1 sekundę w górnej pozycji, następnie opuszczaj nogę w sposób kontrolowany przez 2-3 sekundy w kierunku podłogi — ale nie dotykaj jej.",
+    "Utrzymuj napięcie mięśnia przez cały czas. Wykonaj wszystkie powtórzenia na jednej stronie, potem zmień."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_adduction",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["adductor_magnus", "adductor_longus", "adductor_brevis", "gracilis"],
+    "secondary": ["pectineus", "hip_flexors"],
+    "stabilizers": ["obliques", "quadratus_lumborum", "core", "gluteus_medius"]
+  },
+
+  "muscle_intensity": {
+    "adductor_magnus": "P9",
+    "adductor_longus": "P9",
+    "adductor_brevis": "P8",
+    "gracilis": "P7",
+    "pectineus": "S5",
+    "hip_flexors": "S4",
+    "obliques": "T3",
+    "quadratus_lumborum": "T3",
+    "core": "T2",
+    "gluteus_medius": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "mat"],
+    "optional": ["ankle_weight", "resistance_band", "mini_band"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["copenhagen-plank", "cable-hip-adduction", "adductor-machine", "side-lying-hip-adduction-with-ankle-weight"],
+    "alternatives": ["cable-hip-adduction", "adductor-machine", "seated-hip-adduction", "sumo-squat", "cossack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie on your side, head supported by lower arm",
+      "Stack hips and shoulders vertically",
+      "Top leg bent, foot flat in front of bottom knee",
+      "Bottom leg straight, foot flexed (toes to shin)",
+      "Brace core — keep hips square"
+    ],
+    "setup_cues_pl": [
+      "Połóż się bokiem, głowa podparta dolnym ramieniem",
+      "Biodra i barki dokładnie jedno nad drugim",
+      "Górna noga zgięta, stopa płasko przed dolnym kolanem",
+      "Dolna noga prosta, stopa w dorsifleksji (palce do piszczeli)",
+      "Napnij brzuch — biodra ustawione równo"
+    ],
+    "execution_cues": [
+      "Lift the bottom leg by squeezing the inner thigh",
+      "Lead with the heel, not the toes",
+      "Keep the knee straight — no bending",
+      "Pause 1 second at the top, feel the adductor contract",
+      "Lower slowly — fight gravity for 2-3 seconds"
+    ],
+    "execution_cues_pl": [
+      "Unoś dolną nogę spinając wewnętrzną stronę uda",
+      "Prowadź ruch piętą, nie palcami",
+      "Trzymaj kolano wyprostowane — bez uginania",
+      "Pauza 1 sekunda w górze, czuj skurcz przywodziciela",
+      "Opuszczaj wolno — kontroluj grawitację przez 2-3 sekundy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the hips backward to lift higher",
+        "faultPl": "Przetaczanie bioder do tyłu aby unieść nogę wyżej",
+        "cause": "Limited adductor flexibility — body cheats by rotating the pelvis instead of pure adduction",
+        "causePl": "Ograniczona elastyczność przywodzicieli — ciało oszukuje obracając miednicę zamiast czystego przywodzenia",
+        "cue": "Stop lifting before the hips rotate. A small ROM with perfect alignment beats a big ROM with cheating.",
+        "cuePl": "Przestań unosić zanim biodra zaczną się obracać. Mały zakres ruchu z perfekcyjnym ustawieniem bije duży zakres z oszukiwaniem."
+      },
+      {
+        "fault": "Bending the working knee mid-rep",
+        "faultPl": "Uginanie pracującego kolana w trakcie powtórzenia",
+        "cause": "Hip flexors take over when adductors fatigue, naturally pulling the knee into flexion",
+        "causePl": "Zginacze biodra przejmują pracę gdy przywodziciele się męczą, naturalnie ciągnąc kolano do zgięcia",
+        "cue": "Lock the knee out. Imagine the leg is a long lever from hip to heel.",
+        "cuePl": "Zablokuj kolano w wyproście. Wyobraź sobie nogę jako długą dźwignię od biodra do pięty."
+      },
+      {
+        "fault": "Pointing the toes (plantar flexion) instead of dorsiflexing",
+        "faultPl": "Wyciąganie palców (plantarflexja) zamiast dorsiflexji",
+        "cause": "Habitual ballerina-style foot point reduces adductor activation and shifts work to hip flexors",
+        "causePl": "Nawykowe baletowe wyciąganie palców zmniejsza aktywację przywodzicieli i przenosi pracę na zginacze biodra",
+        "cue": "Flex the foot — toes hard toward the shin. Lead with the heel.",
+        "cuePl": "Trzymaj stopę zgiętą — palce mocno w stronę piszczeli. Prowadź piętą."
+      },
+      {
+        "fault": "Letting the leg touch the floor between reps",
+        "faultPl": "Pozwalanie nodze dotykać podłogi między powtórzeniami",
+        "cause": "Loss of focus, fatigue, or treating it as a 'rest' between reps",
+        "causePl": "Utrata koncentracji, zmęczenie, lub traktowanie tego jako 'odpoczynku' między powtórzeniami",
+        "cue": "Stop 2-3 cm above the floor — keep constant tension on the inner thigh.",
+        "cuePl": "Zatrzymaj 2-3 cm nad podłogą — utrzymuj stałe napięcie wewnętrznej strony uda."
+      },
+      {
+        "fault": "Using momentum / swinging the leg up",
+        "faultPl": "Używanie rozpędu / wymachiwanie nogą do góry",
+        "cause": "Trying to lift higher than adductor strength allows, or rushing reps",
+        "causePl": "Próba uniesienia wyżej niż pozwala siła przywodzicieli, lub pospieszanie powtórzeń",
+        "cue": "Slow tempo: 2 seconds up, 1 second hold, 3 seconds down. No swinging.",
+        "cuePl": "Wolne tempo: 2 sekundy w górę, 1 sekunda pauzy, 3 sekundy w dół. Bez wymachu."
+      }
+    ],
+    "breathing": "Exhale during the lift (concentric). Inhale during the lowering phase (eccentric). Keep a light core brace throughout — do not hold your breath.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię — nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "groin_strain_adductor_tendinopathy",
+      "severity": "caution",
+      "modification": "Acute strain: stop and rehab with isometrics first (Copenhagen ISO holds at short ranges). Chronic tendinopathy: reduce ROM, use slow eccentrics only, stop at pain threshold.",
+      "modificationPl": "Ostre naciągnięcie: przerwij i zacznij rehab od izometrii w krótkim zakresie (Copenhagen ISO). Przewlekła tendinopatia: zmniejsz zakres ruchu, wykonuj tylko wolne fazy negatywne, zatrzymaj się przed bólem.",
+      "alternative": "isometric_adductor_squeeze_with_ball"
+    },
+    {
+      "condition": "hip_labral_tear_or_femoroacetabular_impingement",
+      "severity": "modify",
+      "modification": "End-range adduction may pinch the labrum. Limit ROM to mid-range, avoid combining with hip flexion, and stop before any clicking or sharp pain.",
+      "modificationPl": "Końcowy zakres przywodzenia może uciskać obrąbek. Ogranicz zakres ruchu do połowy, unikaj łączenia ze zgięciem biodra i przestań przed jakimkolwiek klikaniem lub ostrym bólem.",
+      "alternative": "seated_adductor_machine_short_range"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_si_joint_dysfunction",
+      "severity": "modify",
+      "modification": "Side-lying position can stress the SI joint if hips roll. Place a small pillow under the waist to support lateral spine, keep ROM small, ensure perfect hip stacking.",
+      "modificationPl": "Pozycja leżąca na boku może obciążać staw krzyżowo-biodrowy gdy biodra się przetaczają. Połóż małą poduszkę pod talią aby podeprzeć bok kręgosłupa, ogranicz zakres ruchu, dbaj o idealne ustawienie bioder.",
+      "alternative": "seated_adductor_machine"
+    },
+    {
+      "condition": "post_hip_replacement_or_hip_surgery",
+      "severity": "avoid",
+      "modification": "Hip precautions typically restrict adduction past midline for 6-12 weeks post-op (risk of dislocation in posterior approach). Get clearance from your surgeon/PT before any adduction loading.",
+      "modificationPl": "Zalecenia po endoprotezoplastyce zwykle zabraniają przywodzenia za linię środkową ciała przez 6-12 tygodni po operacji (ryzyko zwichnięcia przy dostępie tylnym). Skonsultuj z chirurgiem/fizjoterapeutą zanim zaczniesz obciążać przywodziciele.",
+      "alternative": "consult_physiotherapist"
+    }
+  ],
+
+  "typical_sets_reps": "3x15-20 each side (hypertrophy/endurance) | 2-3x20-30 (rehab/activation) | 3x10-12 with ankle weight (strength)",
+  "calories_per_kg_per_hour": 3.0,
+
+  "media": {
+    "primary": "side-lying-hip-adduction-male.gif",
+    "frames_extracted": [
+      "frames/side-lying-hip-adduction-male/frame_0_start.png",
+      "frames/side-lying-hip-adduction-male/frame_1_early.png",
+      "frames/side-lying-hip-adduction-male/frame_2_mid.png",
+      "frames/side-lying-hip-adduction-male/frame_3_late.png",
+      "frames/side-lying-hip-adduction-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "adductors/side-lying-hip-adduction-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model leży na lewym boku, lewa (dolna) noga w pełni wyprostowana płasko na podłodze, prawa (górna) noga zgięta w kolanie z prawą stopą postawioną na podłodze przed lewym kolanem — przywodziciele (wewnętrzna strona uda) i pas mięśniowy biodra podświetlone na czerwono. Frame 2 (mid): dolna (lewa) noga uniesiona do góry w kierunku sufitu o ok. 30-40 stopni, pozostaje w pełni wyprostowana, stopa w dorsifleksji, biodra utrzymane w stabilnej pozycji bocznej. Frame 4: powrót w dół z widocznym 'ghostem' fazy szczytowej. Ruch jednoznacznie zidentyfikowany jako side-lying hip ADDUCTION (przywodzenie biodra) — unosi się dolna prosta noga, która porusza się w kierunku górnej (przywodzenie do linii środkowej ciała w pozycji leżącej oznacza ruch w kierunku sufitu). Klasyk izolacji przywodzicieli bez sprzętu. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodyweight", "isolation", "adductors", "inner_thigh", "lower_body", "rehab", "prehab", "floor_exercise", "no_equipment", "beginner_friendly"]
+}

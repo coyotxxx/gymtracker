@@ -1,0 +1,202 @@
+{
+  "id": "smith-deadlift",
+  "name": "Smith Machine Deadlift",
+  "namePl": "Martwy ciąg na Smith machine",
+  "aliases": ["smith machine deadlift", "smith deadlift", "machine deadlift on smith"],
+  "aliasesPl": ["martwy ciąg na smithcie", "deadlift na smith machine", "martwy ciąg na maszynie smitha"],
+
+  "description": "Conventional deadlift performed on a Smith machine. The fixed vertical bar path removes the need for path control and stabilization, which makes the lift easier to learn and safer for beginners. Trade-off: less carryover to free-weight deadlifts, no stabilizer recruitment, and the forced vertical path is biomechanically unnatural for a deadlift — the bar normally drifts slightly backward as hips extend. Useful as a teaching tool, as accessory work, or for hypertrophy of the posterior chain when free-weight loading is contraindicated.",
+  "descriptionPl": "Klasyczny martwy ciąg wykonywany na maszynie Smitha. Stały pionowy tor gryfu eliminuje potrzebę kontroli ścieżki i stabilizacji, co czyni ćwiczenie łatwiejszym do nauki i bezpieczniejszym dla początkujących. Wadą jest mniejszy transfer do martwego ciągu z wolną sztangą, brak rekrutacji mięśni stabilizujących oraz biomechanicznie nienaturalny tor — w klasycznym deadlifcie gryf delikatnie wędruje do tyłu wraz z wyprostem bioder, a tutaj jest do tego zmuszony do pionu. Przydatny jako narzędzie nauki, ćwiczenie pomocnicze lub do hipertrofii tylnego łańcucha gdy obciążenie wolne jest przeciwwskazane.",
+
+  "instructions": [
+    "Set the Smith bar at the lowest pin position, loaded with plates resting on the floor (or use blocks if the bar does not reach the floor).",
+    "Stand with mid-foot under the bar — because the bar path is fixed, your foot position relative to the bar may need to be slightly forward compared to a free-weight deadlift to keep balance.",
+    "Feet shoulder-width apart, toes pointing forward or slightly out.",
+    "Hinge at the hips, then bend the knees to grip the bar just outside your knees. Rotate the bar to unhook from the safety pins.",
+    "Set your back: chest up, shoulder blades pulled down, neutral spine, lats engaged.",
+    "Brace your core (Valsalva) and drive through the floor with the legs — bar travels in a straight vertical line.",
+    "As the bar passes the knees, drive the hips forward to lock out. Squeeze the glutes at the top — full hip extension, neutral pelvis.",
+    "Lower the bar by pushing hips back first (hip hinge), keep the bar close to the body. Return to the floor between reps (dead-stop) for strength, or use touch-and-go for hypertrophy."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smitha na najniższej pozycji bezpiecznika, załaduj talerze (gryf opiera się na ziemi lub użyj podstawek jeśli nie dosięga).",
+    "Stań tak, by środek stóp był pod gryfem — ze względu na stały tor pionowy stopa może wymagać lekko przedniej pozycji w stosunku do wolnej sztangi, by utrzymać równowagę.",
+    "Stopy na szerokość barków, palce skierowane do przodu lub lekko na zewnątrz.",
+    "Zegnij biodra, potem kolana, by złapać gryf tuż na zewnątrz kolan. Obróć gryf by go zdjąć z bezpieczników.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół, neutralny kręgosłup, najszersze napięte.",
+    "Napnij brzuch (Valsalva) i napieraj nogami w podłogę — gryf idzie po linii prosto w górę.",
+    "Gdy gryf mija kolana, wepchnij biodra do przodu do lock-out. Ściśnij pośladki na górze — pełen wyprost biodra, neutralna miednica.",
+    "Opuszczaj gryf wypychając najpierw biodra do tyłu (hip hinge), trzymaj gryf blisko ciała. Wróć na ziemię między powtórzeniami (dead-stop) dla siły lub touch-and-go dla hipertrofii."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "erector_spinae"],
+    "secondary": ["quadriceps", "trapezius", "latissimus_dorsi", "forearms"],
+    "stabilizers": ["core", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P9",
+    "erector_spinae": "P9",
+    "quadriceps": "S6",
+    "trapezius": "S6",
+    "latissimus_dorsi": "S5",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "lifting_straps", "chalk", "blocks"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["romanian-deadlift", "kettlebell-deadlift"],
+    "progression_to": ["barbell-deadlift", "trap-bar-deadlift", "sumo-deadlift"],
+    "alternatives": ["barbell-deadlift", "trap-bar-deadlift", "rack-pull", "romanian-deadlift"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at lowest pin, plates resting on floor or blocks",
+      "Foot position slightly forward of bar (compensating for fixed path)",
+      "Feet shoulder-width, toes slightly out",
+      "Grip just outside knees, double-overhand or mixed",
+      "Chest up, lats engaged, neutral spine"
+    ],
+    "setup_cues_pl": [
+      "Gryf na najniższej pozycji bezpiecznika, talerze na ziemi lub podstawkach",
+      "Stopa lekko przed gryfem (kompensacja stałego toru)",
+      "Stopy szerokość barków, palce lekko na zewnątrz",
+      "Chwyt tuż na zewnątrz kolan, podwójny nachwyt lub mieszany",
+      "Klatka w górze, najszersze napięte, neutralny kręgosłup"
+    ],
+    "execution_cues": [
+      "Push the floor away — drive with the legs first",
+      "Bar travels in a straight vertical line — don't fight the machine",
+      "Hips and shoulders rise at the same rate",
+      "Lock out by squeezing glutes — neutral pelvis, no hyperextension",
+      "On descent: hips back FIRST, then knees bend"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij podłogę — najpierw nogi",
+      "Gryf idzie pionowo w górę — nie walcz z maszyną",
+      "Biodra i barki wstają w tym samym tempie",
+      "Lock-out ściśnięciem pośladków — neutralna miednica, bez odginania pleców",
+      "Opuszczanie: NAJPIERW biodra do tyłu, potem kolana się zginają"
+    ],
+    "common_faults": [
+      {
+        "fault": "Fighting the fixed bar path (trying to pull the bar back)",
+        "faultPl": "Walka ze stałym torem gryfu (próba przyciągania gryfu do siebie)",
+        "cause": "Habit from free-weight deadlift where the bar drifts back as hips extend",
+        "causePl": "Nawyk z wolnej sztangi gdzie gryf wędruje do tyłu wraz z wyprostem bioder",
+        "cue": "Accept that the bar is fixed. Position your feet correctly at setup — the bar will follow the rails, not you.",
+        "cuePl": "Zaakceptuj że gryf jest stały. Ustaw stopy prawidłowo w starcie — gryf idzie po szynach, nie za tobą."
+      },
+      {
+        "fault": "Rounded lower back at the start of the pull",
+        "faultPl": "Zaokrąglone plecy lędźwiowe na starcie ciągu",
+        "cause": "Weak erectors, poor bracing, or load too heavy",
+        "causePl": "Słabe prostowniki, słabe napięcie brzucha lub zbyt duży ciężar",
+        "cue": "Reset position. Chest up, lats engaged. Reduce weight and master the hinge pattern.",
+        "cuePl": "Wróć do pozycji. Klatka w górze, najszersze napięte. Zmniejsz ciężar i opanuj wzór hip hinge."
+      },
+      {
+        "fault": "Foot position too far back (under bar like free deadlift)",
+        "faultPl": "Stopa za daleko z tyłu (pod gryfem jak w wolnej sztandze)",
+        "cause": "Habit from conventional deadlift — but fixed bar path forces tipping forward",
+        "causePl": "Nawyk z klasycznego deadliftu — ale stały tor wymusza wychylenie do przodu",
+        "cue": "Step slightly forward so the bar is over the front of the mid-foot. You should feel balanced at lockout.",
+        "cuePl": "Stań lekko do przodu, by gryf był nad przodem śródstopia. Powinieneś czuć balans w lock-out."
+      },
+      {
+        "fault": "Hyperextension at lockout",
+        "faultPl": "Nadmierne odgięcie kręgosłupa w lock-out",
+        "cause": "Trying to 'finish' the lift, misunderstanding of full hip extension vs lumbar extension",
+        "causePl": "Próba 'dokończenia' ciągu, niezrozumienie pełnego wyprostu biodra vs odgięcia lędźwi",
+        "cue": "Lock out is glutes-only. Stand tall, neutral pelvis. No leaning back.",
+        "cuePl": "Lock-out to TYLKO pośladki. Stań prosto, neutralna miednica. Bez odchylania się do tyłu."
+      },
+      {
+        "fault": "Forgetting to rotate the bar off the safety hooks before pulling",
+        "faultPl": "Zapomnienie o obróceniu gryfu z bezpiecznika przed ciągiem",
+        "cause": "Inexperience with Smith machine mechanics",
+        "causePl": "Brak doświadczenia z mechaniką Smitha",
+        "cue": "Always rotate the bar OFF the hooks during setup. After the last rep, lower and rotate back ONTO the hooks before letting go.",
+        "cuePl": "Zawsze obróć gryf POZA bezpiecznik podczas setupu. Po ostatnim powtórzeniu opuść i obróć z powrotem NA bezpiecznik przed puszczeniem."
+      }
+    ],
+    "breathing": "Big inhale at the top of the setup, brace (Valsalva), hold throughout the entire rep. Exhale at the top of the lockout. NEVER exhale during the pull.",
+    "breathingPl": "Głęboki wdech na szczycie setup, napięcie (Valsalva), trzymaj przez całe powtórzenie. Wydech na szczycie lock-out. NIGDY wydech podczas ciągu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Do not load the spine even with fixed path.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nie obciążaj kręgosłupa nawet ze stałym torem.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Smith deadlift is often used as a rehab tool because of stability, but only with light loads and supervision. Consider rack pulls above injury level.",
+      "modificationPl": "Smith deadlift bywa używany w rehabilitacji ze względu na stabilność, ale tylko z lekkimi ciężarami i pod nadzorem. Rozważ rack pull powyżej linii kontuzji.",
+      "alternative": "rack-pull"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Reduce range of motion — start from blocks at knee height instead of floor.",
+      "modificationPl": "Zmniejsz zakres ruchu — startuj z podstawek na wysokości kolan zamiast z ziemi.",
+      "alternative": "rack-pull"
+    },
+    {
+      "condition": "knee_arthritis",
+      "severity": "caution",
+      "modification": "The fixed path may force unnatural knee tracking. Reduce ROM, avoid deep starting position, or switch to RDL.",
+      "modificationPl": "Stały tor może wymusić nienaturalne ułożenie kolan. Zmniejsz ROM, unikaj głębokiej pozycji startowej lub przejdź na RDL.",
+      "alternative": "romanian-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy) | 4-5x5 (strength accessory) | 3x8-12 (rehab/teaching)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-deadlift.gif",
+    "frames_extracted": [
+      "frames/smith-deadlift/frame_0_start.png",
+      "frames/smith-deadlift/frame_1_early.png",
+      "frames/smith-deadlift/frame_2_mid.png",
+      "frames/smith-deadlift/frame_3_late.png",
+      "frames/smith-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0/4: pozycja startowa, sztanga na ziemi, plecy pochylone, podświetlone pośladki/dwugłowe ud/erectors/przedramiona. Frame 2: lockout — pełen wyprost, sztanga przy biodrach, podświetlone górne plecy/erectors/pośladki. Stały pionowy tor — w odróżnieniu od wolnej sztangi gryf nie wędruje do tyłu wraz z wyprostem. Stopa w klatkach jest lekko przed gryfem (kompensacja stałego toru). Klasyfikacja jako 'hinge' (NIE squat). Equipment: tylko smith_machine. Trudność 5 (łatwiejszy niż wolna sztanga = 8 dzięki stałemu torowi). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["smith_machine", "posterior_chain", "hip_hinge", "compound", "beginner_friendly", "hypertrophy", "rehabilitation"]
+}

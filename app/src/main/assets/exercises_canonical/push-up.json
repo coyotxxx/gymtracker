@@ -1,0 +1,201 @@
+{
+  "id": "push-up",
+  "name": "Push-Up",
+  "namePl": "Pompka (klasyczna)",
+  "aliases": ["pushup", "press-up", "standard push-up", "regular push-up", "floor press-up"],
+  "aliasesPl": ["pompka", "pompki", "pompka klasyczna", "klasyczne pompki", "pompka na podłodze", "pompki na podłodze"],
+
+  "description": "The foundational bodyweight pushing exercise — a closed-chain horizontal press performed from a rigid plank with hands and feet on the floor. The push-up trains the entire anterior pushing chain (chest, triceps, front delts) and demands full-body bracing from the core, glutes and quads. Roughly ~64% of bodyweight is loaded on the hands in the standard position. It is the gateway movement for upper-body calisthenics and the gold-standard regression/progression hub for the horizontal push pattern.",
+  "descriptionPl": "Fundamentalne ćwiczenie pchające z masą ciała — wyciskanie poziome w łańcuchu zamkniętym, wykonywane ze sztywnej pozycji planka, z dłońmi i stopami na podłodze. Pompka trenuje cały przedni łańcuch pchający (klatka, tricepsy, przednie aktony) i wymaga napięcia całego ciała: brzucha, pośladków i czworogłowych. W standardowej pozycji na rękach spoczywa ok. 64% masy ciała. To wejściowy ruch do całej kalisteniki na górę ciała i centralny punkt regresji/progresji dla wzorca pchania poziomego.",
+
+  "instructions": [
+    "Get on the floor: hands flat under shoulders, slightly wider than shoulder-width. Feet together or up to hip-width apart.",
+    "Walk feet back until your body forms a straight line from heels to head — this is a plank. Squeeze glutes, brace abs.",
+    "Set your shoulders: pull shoulder blades down and slightly back, then 'protract' (push the floor away) so blades are not pinched.",
+    "Inhale and lower yourself in 2-3 seconds. Elbows track at ~45° from the torso — NOT flared to 90°. Wrists stay under elbows.",
+    "Lower until your chest is about a fist's height from the floor (or chest lightly touches the floor if you want full ROM).",
+    "Brief pause at the bottom — do not bounce or rest on the floor.",
+    "Exhale and press the floor away explosively but controlled. Fully extend elbows at the top without locking out aggressively.",
+    "At the top, push the floor away one more centimetre — that 'reach' protracts the scapulae and engages serratus anterior. Repeat."
+  ],
+  "instructionsPl": [
+    "Połóż się na podłodze: dłonie płasko pod barkami, nieco szerzej niż barki. Stopy razem lub na szerokość bioder.",
+    "Cofnij stopy aż ciało utworzy prostą linię od pięt do głowy — to jest plank. Ściśnij pośladki, napnij brzuch.",
+    "Ustaw barki: ściągnij łopatki w dół i lekko do tyłu, potem 'odpychnij podłogę' (protrakcja) tak by łopatki nie były zaciśnięte.",
+    "Wdech, opuszczaj się w 2-3 sekundy. Łokcie pod kątem ~45° od tułowia — NIE rozłożone na 90°. Nadgarstki pod łokciami.",
+    "Schodź aż klatka będzie na wysokość pięści od podłogi (albo lekko dotknij klatką podłogi dla pełnego ROM).",
+    "Krótka pauza na dole — nie odbijaj się, nie kładź się na podłodze.",
+    "Wydech, dynamicznie ale kontrolowanie odepchnij podłogę. W pełni wyprostuj łokcie na górze, bez agresywnego blokowania.",
+    "Na górze odepchnij podłogę jeszcze o centymetr — to 'sięgnięcie' protrahuje łopatki i włącza zębaty przedni. Powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior", "core"],
+    "stabilizers": ["glutes", "quadriceps", "rotator_cuff", "scapular_stabilizers", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "triceps": "P8",
+    "anterior_deltoids": "P8",
+    "serratus_anterior": "S6",
+    "core": "S6",
+    "glutes": "T4",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handles", "exercise_mat", "weighted_vest", "resistance_band"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["knee-push-up", "incline-push-up", "wall-push-up"],
+    "progression_to": ["decline-push-up", "diamond-push-up", "archer-push-up", "weighted-push-up", "ring-push-up", "one-arm-push-up"],
+    "alternatives": ["barbell-bench-press", "dumbbell-bench-press", "machine-chest-press", "dumbbell-floor-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands flat, slightly wider than shoulders, fingers spread for grip",
+      "Wrists, elbows and shoulders stacked vertically at the top position",
+      "Body in one straight line — head, hips and heels in a line",
+      "Pre-brace: squeeze glutes, draw belly button to spine before first rep",
+      "Eyes look at a spot ~30 cm in front of hands — neutral neck, not staring at the floor"
+    ],
+    "setup_cues_pl": [
+      "Dłonie płasko, nieco szerzej niż barki, palce rozłożone dla lepszego chwytu",
+      "Nadgarstki, łokcie i barki ułożone pionowo w pozycji wyjściowej (na górze)",
+      "Ciało w jednej linii prostej — głowa, biodra i pięty w jednej linii",
+      "Pre-napięcie: ściśnij pośladki, ściągnij pępek do kręgosłupa przed pierwszym powtórzeniem",
+      "Wzrok na punkt ~30 cm przed dłońmi — neutralny kark, nie patrz prosto w podłogę"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds, controlled — no free-fall, no bouncing off the floor",
+      "Elbows track at ~45° from ribs — 'tuck the armpits', not 'T-shape'",
+      "Press the floor away, don't 'lift yourself' — think pushing the earth down",
+      "Reach through hands at the top to fully protract scapulae (serratus engagement)",
+      "Brace abs and squeeze glutes the entire set — body stays a rigid plank"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy, kontrolowanie — bez 'free-fall', bez odbijania od podłogi",
+      "Łokcie pod ~45° od żeber — 'schowaj pachy', nie na kształt litery T",
+      "Odpychaj podłogę, a nie 'podnoś siebie' — myśl o wciskaniu ziemi w dół",
+      "Sięgnij przez dłonie na górze by w pełni protrahować łopatki (włącza zębaty przedni)",
+      "Napięte brzuch i pośladki przez całą serię — ciało pozostaje sztywnym plankiem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "Weak core, no glute engagement — body 'hangs' on lumbar spine, hips drop below shoulder-heel line",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym, biodra opadają poniżej linii bark-pięta",
+        "cue": "Squeeze glutes HARD before lowering. 'Plank first, then push-up.' Imagine a string pulling your hips up toward the ceiling.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. 'Najpierw plank, potem pompka.' Wyobraź sobie sznurek ciągnący biodra do sufitu."
+      },
+      {
+        "fault": "Elbows flared to 90° (T-shape)",
+        "faultPl": "Łokcie rozłożone na 90° (kształt litery T)",
+        "cause": "Hands too wide, no awareness of elbow tracking — shoulders take the load instead of chest/triceps",
+        "causePl": "Dłonie za szeroko, brak świadomości toru łokci — barki przejmują obciążenie zamiast klatki/tricepsów",
+        "cue": "Tuck elbows to ~45° from ribs. 'Hide your armpits.' This protects shoulders and recruits chest + triceps far better.",
+        "cuePl": "Schowaj łokcie do ~45° od żeber. 'Schowaj pachy.' To chroni barki i dużo lepiej angażuje klatkę i tricepsy."
+      },
+      {
+        "fault": "Partial range of motion (half-rep)",
+        "faultPl": "Częściowy zakres ruchu (połowiczne powtórzenie)",
+        "cause": "Lack of strength at full ROM, ego counting reps that never reach proper depth",
+        "causePl": "Brak siły w pełnym ROM, ego — liczenie powtórzeń które nigdy nie osiągają prawidłowej głębi",
+        "cue": "Chest must reach within a fist's height from the floor. If you can't — regress to incline push-ups (hands on bench) until you can.",
+        "cuePl": "Klatka musi dojść na wysokość pięści od podłogi. Jeśli nie dajesz rady — wróć do pompek na podwyższeniu (dłonie na ławce) aż dasz."
+      },
+      {
+        "fault": "Head dropping or neck craning",
+        "faultPl": "Opadająca głowa lub zadarta szyja",
+        "cause": "Forgetting head/neck posture during the rep — looking at toes or staring forward",
+        "causePl": "Zapominanie o postawie głowy/szyi podczas powtórzenia — patrzenie na palce stóp lub prosto przed siebie",
+        "cue": "Neutral spine — chin slightly tucked, ears in line with shoulders. Eyes look at a spot ~30 cm in front of hands.",
+        "cuePl": "Neutralny kręgosłup — broda lekko schowana, uszy w linii z barkami. Wzrok na punkt ~30 cm przed dłońmi."
+      },
+      {
+        "fault": "Wrist pain from collapsed/bent wrists",
+        "faultPl": "Ból nadgarstków od załamanych/zgiętych nadgarstków",
+        "cause": "All bodyweight loaded onto wrists in 90° extension, weak forearms, hands not actively gripping the floor",
+        "causePl": "Cała masa ciała na nadgarstkach w 90° zgięcia, słabe przedramiona, dłonie biernie leżące na podłodze",
+        "cue": "Spread fingers wide and 'grip' the floor — palms create a slight dome. Use push-up handles or do them on fists if wrists still hurt.",
+        "cuePl": "Szeroko rozłóż palce i 'chwytaj' podłogę — dłonie tworzą lekką kopułę. Użyj uchwytów do pompek lub rób na pięściach jeśli nadgarstki nadal bolą."
+      }
+    ],
+    "breathing": "Inhale during the descent, brace through the bottom, exhale powerfully during the press up. For longer sets you can grab a quick reset breath at the top between reps.",
+    "breathingPl": "Wdech podczas opuszczania, napięcie w dolnej pozycji, mocny wydech podczas wyciskania w górę. Przy dłuższych seriach możesz złapać krótki oddech-reset na górze między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles or perform on fists (knuckles down) to keep the wrist in a neutral position. Spread fingers wide and actively grip the floor with palms 'doming'.",
+      "modificationPl": "Użyj uchwytów do pompek lub rób na pięściach (knykcie w dół) żeby utrzymać neutralny nadgarstek. Szeroko rozłóż palce i aktywnie 'chwytaj' podłogę tworząc kopułę z dłoni.",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Tuck elbows tighter (~30°), narrow the hand placement to shoulder-width, reduce ROM to whatever is pain-free. Avoid entirely if pain in any position.",
+      "modificationPl": "Mocniej schowaj łokcie (~30°), zwęź rozstaw dłoni do szerokości barków, zmniejsz ROM do zakresu bez bólu. Całkowicie unikaj jeśli boli w jakiejkolwiek pozycji.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "If you cannot hold a rigid plank, the hips will sag and load the lumbar spine. Regress to knee push-ups or incline push-ups (hands elevated on bench) until core is strong enough.",
+      "modificationPl": "Jeśli nie utrzymujesz sztywnej planki, biodra opadną i obciążą odcinek lędźwiowy. Wróć do pompek na kolanach lub pompek na podwyższeniu (dłonie na ławce) aż brzuch się wzmocni.",
+      "alternative": "knee-push-up"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Horizontal position with heavy bracing transiently spikes blood pressure (Valsalva). Avoid breath-holding, maintain steady breathing, keep reps moderate (RPE 6-7) until BP is controlled.",
+      "modificationPl": "Pozycja pozioma z mocnym napięciem chwilowo podnosi ciśnienie (manewr Valsalvy). Unikaj wstrzymywania oddechu, utrzymuj równy rytm oddechu, RPE 6-7 do czasu kontroli ciśnienia.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-20 (hypertrophy/endurance) | 5x5 weighted vest (strength) | AMRAP for conditioning/tests",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "push-up.gif",
+    "frames_extracted": [
+      "frames/push-up/frame_0_start.png",
+      "frames/push-up/frame_1_early.png",
+      "frames/push-up/frame_2_mid.png",
+      "frames/push-up/frame_3_late.png",
+      "frames/push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej planka — stopy i dłonie na podłodze (TEN SAM poziom, brak podwyższenia), ramiona w pełni wyprostowane, ciało w linii prostej od pięt przez biodra do głowy. Frame 2 (mid): pełne opuszczenie — klatka tuż nad podłogą, łokcie zgięte i ułożone pod ~45° od tułowia (nie rozłożone na boki), ciało dalej w linii prostej, brak opadania bioder. Frame 4 (end): powrót do wyjściowej (zamknięcie cyklu). Anatomia na grafice: klatka piersiowa (pectoralis major) wyraźnie podświetlona jako kluczowy mięsień + tricepsy + przednie aktony delty + zaznaczony brzuch jako stabilizator. Brak podwyższenia stóp ani dłoni — to klasyczna pompka pozioma (horizontal push pattern, sagittal plane). Wszystkie pola PL napisane od zera w polskim standardzie fitness/kalisteniki. Klasyczna pompka to fundament wzorca pchania poziomego, gateway do wszystkich progresji push-up i bodyweight equivalent flat bench press.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "fundamental", "no_equipment", "home_workout", "beginner_friendly", "compound", "anywhere"]
+}

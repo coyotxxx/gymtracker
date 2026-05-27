@@ -1,0 +1,206 @@
+{
+  "id": "dumbbell-seated-biceps-curl-to-shoulder-press",
+  "name": "Dumbbell Seated Biceps Curl to Shoulder Press",
+  "namePl": "Curl bicepsa + OHP z hantlami w siadzie (combo)",
+  "aliases": ["seated curl and press", "seated dumbbell curl to overhead press", "seated arnold-style curl press", "dumbbell curl-press combo seated"],
+  "aliasesPl": ["uginanie i wyciskanie hantli w siadzie", "curl + wyciskanie nad głowę w siadzie", "curl-press z hantlami siedząc", "combo biceps + OHP siedząc"],
+
+  "description": "Hybrid compound movement that chains a supinated biceps curl directly into a vertical (overhead) shoulder press while seated on a bench with back support. The seated position eliminates lower-body drive and forces the upper body to do the work, making the lift more strict than the standing version. Time-efficient — combines an elbow-flexor isolation exercise with a major upper-body push in one fluid rep. Popular in bodybuilding finishers, supersets and time-saving full-arm/shoulder routines.",
+  "descriptionPl": "Hybrydowe ćwiczenie złożone łączące uginanie ramion podchwytem płynnie przechodzące w wyciskanie hantli nad głowę, wykonywane w siadzie na ławce z oparciem. Pozycja siedząca eliminuje pomoc nóg i wymusza pracę górnej części ciała, przez co ruch jest bardziej ścisły niż wariant stojący. Oszczędza czas — łączy izolację zginaczy łokcia z głównym ruchem wypychającym górnej części ciała w jednym płynnym powtórzeniu. Popularne jako finisher kulturystyczny, w superseriach i w treningach łączących ramiona z barkami.",
+
+  "instructions": [
+    "Sit on a bench with back support. Plant your feet flat on the floor shoulder-width apart and press your lower back into the pad.",
+    "Hold a dumbbell in each hand with a neutral or slightly supinated grip, arms hanging at your sides, palms facing forward.",
+    "Brace your core, lift your chest, and pull your shoulders back and down against the bench.",
+    "Phase 1 — Curl: with elbows pinned to your sides, flex at the elbows and curl both dumbbells up to shoulder level. Wrists remain in supination.",
+    "Phase 2 — Press transition: from the top of the curl, rotate your elbows out and forward so the dumbbells line up with the front of your shoulders, palms facing forward.",
+    "Phase 3 — Press up: exhale and press both dumbbells straight up overhead until elbows are fully extended (but not locked hard). The bells finish over your shoulders.",
+    "Phase 4 — Lower the press: inhale and lower the dumbbells under control back to the shoulder-level transition position.",
+    "Phase 5 — Reverse curl: rotate elbows back down to your sides and lower the dumbbells slowly to the starting hang. Each full rep = curl + press + reverse press + reverse curl.",
+    "Move smoothly between phases — no bouncing or jerking. Use a load you can press strictly; the curl will tolerate more than the press."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce z oparciem. Stopy płasko na podłodze na szerokość barków, dolny odcinek pleców dociśnij do oparcia.",
+    "W każdej dłoni trzymaj hantel chwytem neutralnym lub lekko supinowanym, ramiona zwisają wzdłuż tułowia, dłonie skierowane do przodu.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół, dociskając je do oparcia.",
+    "Faza 1 — Uginanie: trzymając łokcie przyklejone do boków, ugnij ramiona w łokciach i zwiń obie hantle na wysokość barków. Nadgarstki w supinacji.",
+    "Faza 2 — Przejście w wyciskanie: ze szczytu uginania obróć łokcie na zewnątrz i do przodu tak, żeby hantle ustawiły się na linii przednich aktonów barków, dłonie zwrócone do przodu.",
+    "Faza 3 — Wyciskanie w górę: wydech, wyciśnij obie hantle prosto nad głowę do pełnego wyprostu w łokciach (bez agresywnego zaryglowania). Hantle kończą tor nad barkami.",
+    "Faza 4 — Opuszczanie wyciskania: wdech, kontrolowanie opuść hantle do pozycji przejściowej na wysokości barków.",
+    "Faza 5 — Odwrócone uginanie: obróć łokcie z powrotem do boków i powoli opuść hantle do pozycji startowej wzdłuż tułowia. Pełne powtórzenie = curl + press + reverse press + reverse curl.",
+    "Płynnie przechodź między fazami — bez odbijania i szarpania. Dobierz ciężar, którym wyciśniesz ścisło; curl wytrzyma więcej niż wyciskanie."
+  ],
+
+  "classification": {
+    "movement_pattern": "curl_to_vertical_push",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal_and_frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "anterior_deltoid"],
+    "secondary": ["triceps_brachii", "brachialis", "upper_trapezius", "lateral_deltoid"],
+    "stabilizers": ["core", "forearm_flexors", "rotator_cuff", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P8",
+    "anterior_deltoid": "P8",
+    "triceps_brachii": "S6",
+    "brachialis": "S5",
+    "upper_trapezius": "S5",
+    "lateral_deltoid": "S4",
+    "core": "T3",
+    "forearm_flexors": "T3",
+    "rotator_cuff": "T3",
+    "serratus_anterior": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bench_with_back_support"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-curl", "seated-dumbbell-shoulder-press"],
+    "progression_to": ["arnold-press", "standing-dumbbell-curl-to-press", "dumbbell-clean-and-press"],
+    "alternatives": ["arnold-press", "standing-dumbbell-curl-to-press", "seated-dumbbell-shoulder-press", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall, lower back glued to the pad",
+      "Feet flat, shoulder-width, knees ~90 degrees",
+      "Neutral grip at sides, palms forward",
+      "Chest up, shoulder blades back and down",
+      "Pick a weight you can press strictly, not just curl"
+    ],
+    "setup_cues_pl": [
+      "Usiądź prosto, lędźwie dociśnij do oparcia",
+      "Stopy płasko na szerokość barków, kolana ~90 stopni",
+      "Chwyt neutralny przy bokach, dłonie do przodu",
+      "Klatka w górę, łopatki ściągnięte w tył i w dół",
+      "Dobierz ciężar, którym wyciśniesz ścisło, nie tylko ugniesz"
+    ],
+    "execution_cues": [
+      "Curl first — elbows stay at your sides until the dumbbells reach the shoulders",
+      "Smooth rotation: elbows out and forward to transition into the press",
+      "Press straight up, not forward — bells finish over the shoulders",
+      "Don't lean back or arch the lower back when pressing overhead",
+      "Reverse the path exactly: press down, then uncurl down"
+    ],
+    "execution_cues_pl": [
+      "Najpierw uginanie — łokcie przy bokach aż hantle dotrą do barków",
+      "Płynna rotacja: łokcie na zewnątrz i do przodu, przejście w wyciskanie",
+      "Wyciskaj prosto w górę, nie do przodu — hantle kończą tor nad barkami",
+      "Nie odchylaj się i nie wyginaj lędźwi podczas wyciskania nad głowę",
+      "Wracaj dokładnie tą samą drogą: opuść wyciskanie, potem rozwiń curl w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pressing forward instead of straight up",
+        "faultPl": "Wyciskanie w przód zamiast prosto w górę",
+        "cause": "Anterior deltoid dominance, tight thoracic extension, or skipping the elbow rotation in transition",
+        "causePl": "Dominacja przedniego aktonu barku, sztywny odcinek piersiowy, lub pominięcie rotacji łokci w przejściu",
+        "cue": "Finish with the dumbbells stacked over your ears/shoulders, not over your nose.",
+        "cuePl": "Kończ tak, żeby hantle były nad uszami/barkami, nie nad nosem."
+      },
+      {
+        "fault": "Lower back arching during the press phase",
+        "faultPl": "Wygięcie lędźwi podczas wyciskania",
+        "cause": "Limited shoulder flexion, weight too heavy, or weak core bracing",
+        "causePl": "Ograniczone zgięcie w stawie ramiennym, zbyt duży ciężar, lub słabe napięcie brzucha",
+        "cue": "Glue your lower back to the pad. If you can't, drop the weight or work on overhead mobility.",
+        "cuePl": "Dociśnij lędźwie do oparcia. Jeśli nie umiesz, zmniejsz ciężar lub popraw mobilność barków nad głową."
+      },
+      {
+        "fault": "Rushing the transition (no clear curl-then-press)",
+        "faultPl": "Przyspieszanie przejścia (curl i press w jeden zamach)",
+        "cause": "Using momentum, treating it as a clean & press rather than two phases stacked",
+        "causePl": "Wykorzystanie rozpędu, traktowanie jak zarzut + wyciskanie zamiast dwóch faz w jednym ruchu",
+        "cue": "Pause briefly at the top of the curl before initiating the press. Both phases should be visible.",
+        "cuePl": "Zatrzymaj się na chwilę w górnej pozycji uginania zanim zaczniesz wyciskać. Obie fazy mają być widoczne."
+      },
+      {
+        "fault": "Elbows flaring out during the curl",
+        "faultPl": "Łokcie odjeżdżają na boki podczas uginania",
+        "cause": "Loss of scapular set, recruiting anterior delts to help the curl",
+        "causePl": "Utrata pozycji łopatek, włączanie przednich aktonów barków do pomocy w uginaniu",
+        "cue": "Keep elbows pinned at your ribs through the entire curl phase.",
+        "cuePl": "Łokcie przyklejone do żeber przez całą fazę uginania."
+      },
+      {
+        "fault": "Locking out the elbows hard at the top of the press",
+        "faultPl": "Agresywne ryglowanie łokci na szczycie wyciskania",
+        "cause": "Trying to rest at the top, or using a load that requires elbow-bone support to hold",
+        "causePl": "Próba odpoczynku w górze, lub ciężar wymagający kostnej blokady łokci do utrzymania",
+        "cue": "Stop just shy of full lockout — keep tension on the deltoids and triceps.",
+        "cuePl": "Zatrzymaj się tuż przed pełnym wyprostem — utrzymaj napięcie na barkach i tricepsie."
+      }
+    ],
+    "breathing": "Inhale before the curl. Exhale through the press up. Inhale on the way down (press, then curl). Reset breath each rep — don't hold past one full cycle.",
+    "breathingPl": "Wdech przed uginaniem. Wydech podczas wyciskania w górę. Wdech przy opuszczaniu (najpierw wyciskania, potem uginania). Resetuj oddech co powtórzenie — nie wstrzymuj dłużej niż jeden pełny cykl."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_acromioclavicular_pain",
+      "severity": "modify",
+      "modification": "Overhead pressing aggravates impingement. Replace the press phase with a curl-only or use neutral-grip (Arnold-style) finish at forehead height rather than full overhead.",
+      "modificationPl": "Wyciskanie nad głowę drażni konflikt podbarkowy. Zastąp fazę wyciskania samym uginaniem lub kończ chwytem neutralnym (typu Arnold) na wysokości czoła zamiast w pełni nad głową.",
+      "alternative": "seated-dumbbell-shoulder-press-neutral-grip"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The supinated curl loads the distal biceps tendon. Use a neutral (hammer) grip for the curl phase to reduce supination stress, lower the load, and avoid heavy eccentrics.",
+      "modificationPl": "Uginanie supinowane obciąża dystalne ścięgno bicepsa. Użyj chwytu neutralnego (młotkowego) w fazie uginania aby zmniejszyć stres supinacyjny, zmniejsz ciężar i unikaj ciężkich faz negatywnych.",
+      "alternative": "hammer-curl-to-press"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_instability",
+      "severity": "caution",
+      "modification": "Overhead loading transfers force into the spine even when seated. Reduce load to RPE 6, ensure the bench has a high vertical back pad, brace the core throughout. Stop if lumbar pain reproduces.",
+      "modificationPl": "Obciążenie nad głową przenosi siłę na kręgosłup nawet w siadzie. Zmniejsz ciężar do RPE 6, używaj ławki z wysokim pionowym oparciem, napinaj brzuch przez całe ćwiczenie. Przerwij jeśli ból lędźwiowy powraca.",
+      "alternative": "seated-dumbbell-curl"
+    },
+    {
+      "condition": "rotator_cuff_pathology",
+      "severity": "modify",
+      "modification": "The elbow-rotation transition stresses the supraspinatus and external rotators. Limit ROM to a 90/90 press (stop at the shoulder-level transition), or omit the press phase entirely during the rehab phase.",
+      "modificationPl": "Rotacja łokci w przejściu obciąża nadgrzebieniowy i rotatory zewnętrzne. Ogranicz zakres do wyciskania 90/90 (zatrzymaj się w pozycji przejściowej na wysokości barków), lub pomiń fazę wyciskania na etapie rehabilitacji.",
+      "alternative": "seated-dumbbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy / combo finisher) | 3x6-8 (strength) | 2-3x12-15 (endurance, lighter loads)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "dumbbell-seated-biceps-curl-to-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-biceps-curl-to-shoulder-press/frame_0_start.png",
+      "frames/dumbbell-seated-biceps-curl-to-shoulder-press/frame_1_early.png",
+      "frames/dumbbell-seated-biceps-curl-to-shoulder-press/frame_2_mid.png",
+      "frames/dumbbell-seated-biceps-curl-to-shoulder-press/frame_3_late.png",
+      "frames/dumbbell-seated-biceps-curl-to-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-seated-biceps-curl-to-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start): pełny wyprost ramion w siadzie na ławce z oparciem, hantle wiszą przy bokach, dłonie skierowane do przodu, podświetlone bicepsy i przedramiona. Frame 1 (early): faza koncentryczna uginania — hantle na wysokości barków, łokcie nadal przy tułowiu, bicepsy w pełnym skurczu. Frame 2 (mid): pozycja przejściowa — hantle nad barkami w trakcie wyciskania w górę, łokcie rozłożone na boki, podświetlone przednie aktony barków i tricepsy. Frame 3 (late): pełen wyprost ramion nad głową — szczyt wyciskania, hantle stykają się nad głową, łokcie wyprostowane. Frame 4 (end): powrót do pozycji startowej z widocznymi ghost-frames pełnej trajektorii (curl + press). Ćwiczenie jednoznacznie zidentyfikowane jako combo seated curl-to-shoulder-press z hantlami. Pełen ruch złożony bilateralny w siadzie z oparciem. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "shoulders", "biceps", "compound", "combo", "dumbbell", "seated", "upper_body", "time_efficient"]
+}

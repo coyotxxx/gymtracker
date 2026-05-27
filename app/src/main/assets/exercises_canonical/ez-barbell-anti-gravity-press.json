@@ -1,0 +1,206 @@
+{
+  "id": "ez-barbell-anti-gravity-press",
+  "name": "EZ Barbell Anti-Gravity Press",
+  "namePl": "Anti-gravity press z gryfem EZ na ławce skośnej (leżąc na brzuchu)",
+  "aliases": ["prone incline EZ bar front raise", "prone EZ bar press", "chest-supported EZ front raise", "anti-gravity front raise"],
+  "aliasesPl": ["wyciskanie anti-gravity z gryfem EZ", "wznosy frontowe EZ na ławce skośnej leżąc na brzuchu", "prone EZ press", "wznosy przodem EZ z podparciem klatką"],
+
+  "description": "An isolation/compound hybrid for the anterior deltoids and upper back, performed prone (chest-down) on an incline bench. The athlete grips an EZ bar with arms hanging vertically and drives the bar forward and upward in an arcing motion — fighting gravity in the horizontal plane (hence 'anti-gravity'). Because the torso is supported by the bench, all lumbar/postural cheating is eliminated and the front delts, upper traps, and rhomboids get strict, isolated loading. The EZ bar's cambered grip is more wrist- and elbow-friendly than a straight bar. Excellent accessory for shoulder hypertrophy and posture (counters rounded-shoulder posture).",
+  "descriptionPl": "Hybryda izolacji i compound dla przednich aktonów naramiennych oraz górnej części pleców, wykonywana leżąc na brzuchu (klatką w dół) na ławce skośnej. Atleta trzyma gryf EZ z ramionami zwisającymi pionowo i wypycha drążek do przodu i w górę po łuku — walcząc z grawitacją w płaszczyźnie poziomej (stąd nazwa 'anti-gravity'). Ponieważ tułów jest podparty przez ławkę, eliminuje się wszelkie oszustwa lędźwiowe i posturalne — przednie delty, kapturowe górne oraz rhomboidy dostają ścisłe, izolowane obciążenie. Łamany chwyt gryfu EZ jest bardziej przyjazny dla nadgarstków i łokci niż gryf prosty. Świetne ćwiczenie pomocnicze na hipertrofię barków i postawę (przeciwdziała postawie zaokrąglonych ramion).",
+
+  "instructions": [
+    "Set an adjustable bench to ~30-45° incline. Place an EZ bar on the floor in front of the bench.",
+    "Lie face-down (prone) on the bench with chest fully supported and feet flat on the floor (legs straight, toes down).",
+    "Reach down and grab the EZ bar with a pronated (overhand) grip on the angled portions, hands ~shoulder-width apart.",
+    "Let the bar hang straight down below the chest — arms vertical, slight bend at the elbows, shoulder blades neutral.",
+    "Brace core. Keep neck neutral (do not crane up to look forward — chin tucked).",
+    "Drive the bar FORWARD and UP in an arc — elbows lead, then extend — until the bar reaches roughly head/eye level in front of you (arms nearly parallel to the floor, slight upward angle).",
+    "Squeeze the front delts and upper back at the top. Pause briefly.",
+    "Lower the bar under control along the same arc back to the hanging start position. Full ROM.",
+    "Inhale on the way down, exhale on the push up. Do NOT swing or use momentum."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę regulowaną pod kątem ~30-45°. Połóż gryf EZ na podłodze przed ławką.",
+    "Połóż się klatką w dół (prone) na ławce — klatka w pełni podparta, stopy płasko na podłodze (nogi proste, palce w dół).",
+    "Sięgnij w dół i chwyć gryf EZ chwytem pronowanym (nachwytem) na łamanych częściach gryfu, dłonie na szerokość barków.",
+    "Pozwól by gryf zwisał prosto w dół pod klatką — ramiona pionowo, lekkie ugięcie w łokciach, łopatki neutralnie.",
+    "Napnij brzuch. Trzymaj szyję w neutralnej pozycji (nie unoś głowy — broda lekko schowana).",
+    "Wypchnij gryf DO PRZODU i W GÓRĘ po łuku — łokcie prowadzą, potem prostujesz ramiona — aż gryf znajdzie się na wysokości głowy/oczu przed tobą (ramiona prawie równolegle do podłogi, lekko w górę).",
+    "Ściśnij przednie aktony naramienne i górną część pleców na szczycie. Krótka pauza.",
+    "Opuść gryf kontrolowanym ruchem po tym samym łuku z powrotem do zwisającej pozycji startowej. Pełen ROM.",
+    "Wdech w fazie negatywnej, wydech podczas wypychania. NIE bujaj i nie używaj rozpędu."
+  ],
+
+  "classification": {
+    "movement_pattern": "shoulder_flexion",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["lateral_deltoids", "upper_chest", "trapezius", "rhomboids"],
+    "stabilizers": ["rotator_cuff", "core", "rear_deltoids", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "S6",
+    "upper_chest": "S6",
+    "trapezius": "S7",
+    "rhomboids": "S6",
+    "rotator_cuff": "S5",
+    "core": "S3",
+    "rear_deltoids": "S4",
+    "serratus_anterior": "S4"
+  },
+
+  "equipment": {
+    "required": ["ez_barbell", "incline_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-front-raise", "barbell-front-raise", "dumbbell-standing-overhead-press"],
+    "progression_to": ["barbell-overhead-press", "incline-dumbbell-front-raise", "landmine-press"],
+    "alternatives": ["incline-dumbbell-front-raise", "dumbbell-front-raise", "barbell-front-raise", "cable-front-raise", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench ~30-45° — chest fully on the pad, feet flat",
+      "EZ bar grip on the angled portions, pronated, shoulder-width",
+      "Neck neutral, chin tucked — eyes down, not forward",
+      "Shoulder blades neutral (NOT retracted, NOT shrugged)",
+      "Brace core lightly — bench does the support work"
+    ],
+    "setup_cues_pl": [
+      "Ławka ~30-45° — klatka całkowicie na oparciu, stopy płasko",
+      "Chwyt EZ na łamanych częściach, nachwyt, na szerokość barków",
+      "Szyja neutralna, broda schowana — wzrok w dół, nie do przodu",
+      "Łopatki neutralnie (NIE ściągnięte, NIE uniesione)",
+      "Lekkie napięcie brzucha — ławka robi główną pracę podporową"
+    ],
+    "execution_cues": [
+      "Drive the bar FORWARD first, then UP — arcing motion, not vertical",
+      "Lead with the elbows in the first third of the lift",
+      "Stop at head/eye level — arms ~parallel to floor",
+      "Squeeze front delts and pinch upper back at the top",
+      "Lower SLOWLY — 2-3s eccentric, control the negative"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij gryf NAJPIERW DO PRZODU, potem W GÓRĘ — ruch łukiem, nie pionowo",
+      "Prowadź łokciami w pierwszej trzeciej fazie ruchu",
+      "Zatrzymaj na wysokości głowy/oczu — ramiona ~równolegle do podłogi",
+      "Ściśnij przednie delty i zsuń górną część pleców na szczycie",
+      "Opuszczaj POWOLI — 2-3s ekscentryk, kontroluj negatyw"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the chest off the bench (using torso to swing the bar up)",
+        "faultPl": "Odrywanie klatki od ławki (używanie tułowia do podrzucania gryfu)",
+        "cause": "Weight too heavy, ego lifting, trying to recreate standing front raise mechanics",
+        "causePl": "Zbyt duży ciężar, ego lifting, próba odtworzenia mechaniki front raise w pozycji stojącej",
+        "cue": "Chest GLUED to the pad. If it lifts — drop the weight. The whole point of this exercise is the strict prone position.",
+        "cuePl": "Klatka PRZYKLEJONA do oparcia. Jeśli się unosi — zmniejsz ciężar. Cały sens tego ćwiczenia to ścisła pozycja prone."
+      },
+      {
+        "fault": "Going too high (bar above eye level / shoulders shrugging into ears)",
+        "faultPl": "Wykonywanie ruchu za wysoko (gryf powyżej linii oczu / barki podnoszące się do uszu)",
+        "cause": "Misunderstanding the ROM, weak front delts compensated by upper trap, ego pushing for more range",
+        "causePl": "Niezrozumienie ROM, słabe przednie delty kompensowane przez kapturowy górny, ego dążące do większego zakresu",
+        "cue": "Stop at head/eye level — arms parallel to the floor. Past that, upper traps take over and tension leaves the delts.",
+        "cuePl": "Zatrzymaj na wysokości głowy/oczu — ramiona równolegle do podłogi. Powyżej tego przejmuje kapturowy a delty tracą napięcie."
+      },
+      {
+        "fault": "Swinging / using momentum / bouncing at the bottom",
+        "faultPl": "Bujanie / używanie rozpędu / odbijanie na dole",
+        "cause": "Weight too heavy, trying to grind out more reps, poor mind-muscle connection",
+        "causePl": "Zbyt duży ciężar, próba wydusza dodatkowych powtórzeń, słabe połączenie umysł-mięsień",
+        "cue": "Pause 1s at the bottom — dead stop. Then drive up smoothly. No bouncing.",
+        "cuePl": "Pauza 1s na dole — pełne zatrzymanie. Potem płynnie wypychasz w górę. Bez odbijania."
+      },
+      {
+        "fault": "Cranking the neck up to look forward (cervical hyperextension)",
+        "faultPl": "Zadzieranie głowy do góry by patrzeć przed siebie (przeprost szyi)",
+        "cause": "Habit from standing presses, trying to see the bar, lack of awareness",
+        "causePl": "Nawyk ze stojących wyciskań, próba zobaczenia gryfu, brak świadomości",
+        "cue": "Chin TUCKED. Eyes down at the floor or rest forehead lightly on the pad. Don't crane the neck.",
+        "cuePl": "Broda SCHOWANA. Wzrok w dół na podłogę lub czoło lekko na oparciu. Nie zadzieraj szyi."
+      },
+      {
+        "fault": "Elbows flaring excessively (turning it into a wide row)",
+        "faultPl": "Łokcie nadmiernie rozchylone na boki (zmiana ćwiczenia w szeroki row)",
+        "cause": "Grip too wide, shoulder mobility issues, attempting to load lateral delts/rear delts instead of front",
+        "causePl": "Zbyt szeroki chwyt, problemy z mobilnością barku, próba zaangażowania bocznych/tylnych delt zamiast przednich",
+        "cue": "Elbows track ~45° from torso, not 90°. Keep the bar in a sagittal arc — front delts, not side delts.",
+        "cuePl": "Łokcie ~45° od tułowia, nie 90°. Trzymaj gryf w łuku strzałkowym — przednie delty, nie boczne."
+      }
+    ],
+    "breathing": "Inhale on the way down (eccentric), exhale on the push forward and up (concentric). Hold a light brace throughout — full Valsalva not needed since the bench supports the spine.",
+    "breathingPl": "Wdech w fazie negatywnej (ekscentryk), wydech podczas wypychania do przodu i w górę (koncentryk). Trzymaj lekkie napięcie przez cały ruch — pełna manewrowa Valsalva niepotrzebna, bo ławka podpiera kręgosłup."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM — stop at ~3/4 of full range (just below parallel arms). Use lighter weight and slower tempo. If pain persists, switch to landmine press.",
+      "modificationPl": "Zmniejsz ROM — zatrzymaj na ~3/4 pełnego zakresu (lekko poniżej równoległych ramion). Użyj lżejszego ciężaru i wolniejszego tempa. Jeśli ból nie ustępuje — przejdź na landmine press.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "EZ bar grip should help (vs straight bar). If still painful, use neutral grip with dumbbells — incline DB front raise gives same effect.",
+      "modificationPl": "Chwyt EZ powinien pomóc (vs gryf prosty). Jeśli nadal boli — użyj chwytu neutralnego z hantlami — incline DB front raise daje ten sam efekt.",
+      "alternative": "incline-dumbbell-front-raise"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid front raise variants until cleared by therapist. Resume with light cable front raise or scapular wall slides for rehab.",
+      "modificationPl": "Unikaj wariantów front raise do zgody fizjoterapeuty. Wróć przez lekki cable front raise lub scapular wall slides w fazie rehabilitacji.",
+      "alternative": "cable-front-raise"
+    },
+    {
+      "condition": "lower_back_disc_issues",
+      "severity": "modify",
+      "modification": "Generally safe due to chest-supported position — but ensure the bench supports the chest fully and feet stay flat. If extension at hips feels uncomfortable, reduce bench angle.",
+      "modificationPl": "Zazwyczaj bezpieczne dzięki pozycji z podparciem klatki — upewnij się że klatka jest w pełni podparta i stopy płasko. Jeśli wyprost w biodrach jest niewygodny — zmniejsz kąt ławki.",
+      "alternative": "cable-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, recommended) | 4x12-20 (endurance/pump) | 3x8-10 (heavier loading, advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "ez-barbell-anti-gravity-press.gif",
+    "frames_extracted": [
+      "frames/ez-barbell-anti-gravity-press/frame_0_start.png",
+      "frames/ez-barbell-anti-gravity-press/frame_1_early.png",
+      "frames/ez-barbell-anti-gravity-press/frame_2_mid.png",
+      "frames/ez-barbell-anti-gravity-press/frame_3_late.png",
+      "frames/ez-barbell-anti-gravity-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/ez-barbell-anti-gravity-press",
+    "master_slug": "ez-barbell-anti-gravity-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Frame 0 (start): atleta leży na brzuchu na ławce skośnej (~35-45°), klatka w pełni podparta, nogi proste z palcami opartymi o podłogę, gryf EZ zwisa pionowo pod klatką, ramiona prawie pionowe z lekkim ugięciem łokci. Mocno podświetlone: przednie delty (czerwone), kapturowy górny, rhomboidy/górna część pleców. Frame 1-2 (early-mid): gryf wypychany do przodu i w górę po łuku — łokcie prowadzą, ramiona wychodzą z pionu do pozycji ~równoległej do podłogi (na wysokości głowy/oczu). Podświetlenie delt i pleców wyraźniejsze. Frame 3-4 (late-end): pozycja szczytowa — gryf na wysokości głowy/oczu w odległości od ciała, ramiona ~równoległe do podłogi z lekkim kątem w górę, łokcie prawie wyprostowane. Na frame 4 widać duchowe rozmycie pełnego toru ruchu — gryf w pozycji startowej (dół) i końcowej (góra) jednocześnie. Ruch zdecydowanie sagittal/shoulder_flexion (a nie horizontal abduction — łokcie blisko tułowia, nie rozchylone na boki). Klasyczne 'anti-gravity' — front delts pracują w płaszczyźnie poziomej, walcząc z grawitacją bez wsparcia tułowia. Klatka pozostaje na ławce przez cały ruch — brak swing'u. Klasyfikuję jako bilateral shoulder flexion isolation z dodatkową pracą upper back. EZ bar zamiast prostego gryfu — przyjaźniej dla nadgarstków.",
+
+  "tags": ["upper_body", "shoulders", "front_delts", "isolation", "ez_bar", "free_weights", "prone", "chest_supported", "anti_gravity", "shoulder_flexion", "posture"]
+}

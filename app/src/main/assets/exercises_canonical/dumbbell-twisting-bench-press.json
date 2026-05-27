@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-twisting-bench-press",
+  "name": "Dumbbell Twisting Bench Press",
+  "namePl": "Bench press z hantlami ze skrętem dłoni",
+  "aliases": ["twisting dumbbell press", "rotational dumbbell bench press", "Arnold-style flat press", "rotating grip dumbbell bench"],
+  "aliasesPl": ["wyciskanie hantli ze skrętem nadgarstków", "wyciskanie hantli z rotacją chwytu", "twisting press na ławce poziomej", "rotacyjny bench press z hantlami"],
+
+  "description": "Variation of the flat dumbbell bench press in which the grip rotates during the lift: neutral (palms facing each other) at the bottom and pronated (palms toward feet) at the top of each rep — and reverses on the descent. The rotation pre-stretches and progressively engages the pectoralis major (particularly the sternal fibers and clavicular fibers near lockout), boosts anterior deltoid involvement at the top, and strongly recruits the triceps brachii through full elbow extension. The neutral bottom position is shoulder-friendly (similar to a neutral DB press), making this a popular choice for trainees seeking pec stimulus without the impingement risk of a fully pronated bottom.",
+  "descriptionPl": "Wariant wyciskania hantli na ławce poziomej, w którym chwyt obraca się podczas ruchu: neutralny (dłonie zwrócone do siebie) na dole i pronowany (dłonie w stronę stóp) na górze każdego powtórzenia — i odwrotnie podczas opuszczania. Rotacja wstępnie rozciąga i progresywnie angażuje mięsień piersiowy większy (zwłaszcza włókna mostkowe oraz obojczykowe blisko lock-outu), zwiększa udział przedniego aktonu naramiennego na szczycie i mocno rekrutuje tricepsy poprzez pełny wyprost w łokciu. Neutralna pozycja na dole jest przyjazna dla barków (podobnie jak neutralny DB press), co czyni to ćwiczenie popularnym wyborem dla osób szukających bodźca na klatkę bez ryzyka konfliktu barkowego typowego dla w pełni pronowanego dolnego ułożenia.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with a dumbbell resting on each thigh, palms facing each other (neutral grip).",
+    "Lie back, using your thighs to kick the dumbbells up to chest level. Keep palms facing each other (neutral) at chest height.",
+    "Plant feet firmly on the floor, knees bent ~90°. Retract and depress the shoulder blades, slight natural arch in the lower back.",
+    "From the bottom with neutral grip, press the dumbbells up while progressively rotating the wrists outward so that at lockout your palms face toward your feet (pronated grip).",
+    "Finish with arms extended over the upper chest, palms pronated. Elbows soft, not rigidly locked. Dumbbells close but not clanging.",
+    "Inhale, brace, then lower the dumbbells in a controlled arc while rotating the wrists back inward, returning to a neutral grip at chest level.",
+    "Eccentric ~2-3 seconds with smooth rotation. Feel the stretch in the chest at the bottom, palms facing each other.",
+    "Exhale on the press up. Keep shoulder blades retracted throughout. To finish: bring dumbbells to chest in neutral, sit up with momentum, place on thighs."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu poziomej ławki z hantlami opartymi o uda, dłonie zwrócone do siebie (chwyt neutralny).",
+    "Połóż się, wybijając hantle z ud do wysokości klatki. Utrzymaj dłonie zwrócone do siebie (neutralnie) na poziomie klatki.",
+    "Stopy mocno na podłodze, kolana zgięte ~90°. Ściągnij łopatki w dół i razem, lekki naturalny łuk w dolnych plecach.",
+    "Z dolnej pozycji w chwycie neutralnym wyciskaj hantle w górę, jednocześnie stopniowo obracając nadgarstki na zewnątrz tak, by w lock-oucie dłonie były zwrócone w stronę stóp (chwyt pronowany).",
+    "Zakończ z ramionami wyprostowanymi nad górną klatką, dłonie pronowane. Łokcie miękkie, bez sztywnego lock-outu. Hantle blisko siebie, ale bez stukania.",
+    "Wdech, napięcie brzucha, opuszczaj hantle kontrolowanym łukiem obracając nadgarstki z powrotem do środka, wracając do chwytu neutralnego na poziomie klatki.",
+    "Faza ekscentryczna ~2-3 sekundy z płynną rotacją. Poczuj rozciągnięcie klatki na dole, dłonie zwrócone do siebie.",
+    "Wydech podczas wyciskania w górę. Łopatki ściągnięte przez cały set. Zakończenie: ściągnij hantle do klatki w chwycie neutralnym, usiądź z impetem i odłóż hantle na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal_transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "biceps", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T5",
+    "core": "T3",
+    "forearms": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-bench-press", "neutral-grip-dumbbell-bench-press"],
+    "progression_to": ["arnold-press", "incline-dumbbell-twisting-press", "single-arm-dumbbell-twisting-press"],
+    "alternatives": ["dumbbell-bench-press", "neutral-grip-dumbbell-bench-press", "arnold-press", "machine-chest-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit at end of bench, dumbbells on thighs, neutral grip — kick them up as you lie back",
+      "Start at chest with palms facing EACH OTHER (neutral grip), not toward feet",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Feet planted, slight arch, glutes on bench",
+      "Plan the rotation: neutral at bottom → pronated at top. Smooth, not jerky"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na końcu ławki, hantle na udach, chwyt neutralny — wybij je gdy się kładziesz",
+      "Start na klatce z dłońmi zwróconymi DO SIEBIE (chwyt neutralny), a nie w stronę stóp",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Stopy zaparte, lekki łuk, pośladki na ławce",
+      "Zaplanuj rotację: neutralny na dole → pronowany na górze. Płynnie, nie szarpiąc"
+    ],
+    "execution_cues": [
+      "Press up while rotating wrists OUTWARD — palms finish facing your feet",
+      "Rotation should be gradual through the whole ROM, not snapped at the top",
+      "At lockout: arms extended, dumbbells close but NOT colliding, pronated grip",
+      "Lower with control rotating wrists back inward — neutral grip at chest level",
+      "Match the rotation tempo to the press tempo — eccentric ~2-3s, concentric controlled"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę obracając nadgarstki NA ZEWNĄTRZ — dłonie kończą zwrócone w stronę stóp",
+      "Rotacja powinna być stopniowa przez cały zakres, nie szarpnięta na szczycie",
+      "W lock-oucie: ramiona wyprostowane, hantle blisko, ale BEZ stukania, chwyt pronowany",
+      "Opuszczaj z kontrolą obracając nadgarstki z powrotem do środka — chwyt neutralny na poziomie klatki",
+      "Dopasuj tempo rotacji do tempa wyciskania — ekscentryka ~2-3s, koncentryka kontrolowana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Snapping the rotation at the top instead of rotating gradually",
+        "faultPl": "Szarpana rotacja na samym szczycie zamiast stopniowej",
+        "cause": "Treating rotation as separate from press; trying to rush the rep",
+        "causePl": "Traktowanie rotacji jako osobnego ruchu od wyciskania; pospiech",
+        "cue": "Rotation and press are ONE motion. Start the twist as you start the press. Slow down the rep.",
+        "cuePl": "Rotacja i wyciskanie to JEDEN ruch. Zacznij skręt razem z wyciskaniem. Zwolnij tempo."
+      },
+      {
+        "fault": "Wrists collapse during rotation (bent wrists under load)",
+        "faultPl": "Zapadnięte nadgarstki podczas rotacji (zgięte nadgarstki pod obciążeniem)",
+        "cause": "Weak forearms relative to load; awkward rotation under heavy weight",
+        "causePl": "Słabe przedramiona względem ciężaru; niewygodna rotacja pod dużym obciążeniem",
+        "cue": "Keep wrists STRAIGHT and stacked over forearms through the whole rotation. Drop the weight, use wrist wraps.",
+        "cuePl": "Trzymaj nadgarstki PROSTE i ułożone nad przedramieniem przez całą rotację. Zmniejsz ciężar, użyj wraps."
+      },
+      {
+        "fault": "Elbows flare to 90° at the bottom (pronated grip too early)",
+        "faultPl": "Łokcie rozsunięte na 90° na dole (zbyt wczesna pronacja)",
+        "cause": "Starting rotation too early or finishing it too late; treating it like a regular DB bench at bottom",
+        "causePl": "Zbyt wczesny początek lub zbyt późne zakończenie rotacji; mylenie z klasycznym DB bench na dole",
+        "cue": "Bottom = NEUTRAL grip, elbows tucked ~45° from torso. Pronation only happens as you press up. Shoulder-friendly.",
+        "cuePl": "Dół = chwyt NEUTRALNY, łokcie schowane ~45° od tułowia. Pronacja tylko podczas wyciskania w górę. Przyjaźnie dla barków."
+      },
+      {
+        "fault": "Asymmetric rotation — one wrist rotates more/faster than the other",
+        "faultPl": "Asymetryczna rotacja — jeden nadgarstek obraca się bardziej/szybciej niż drugi",
+        "cause": "Dominant side leads; lack of mind-muscle awareness per side",
+        "causePl": "Strona dominująca prowadzi; brak świadomości mięśniowej per strona",
+        "cue": "Match both wrists in time. If a gap is large, slow tempo or do single-arm version to fix.",
+        "cuePl": "Synchronizuj oba nadgarstki w czasie. Jeśli różnica duża, zwolnij tempo lub zrób wersję jednorącz, by naprawić."
+      },
+      {
+        "fault": "Loading too heavy and losing the rotation entirely (becomes a regular DB bench)",
+        "faultPl": "Zbyt ciężki ciężar i utrata rotacji (zmienia się w klasyczny DB bench)",
+        "cause": "Ego lifting; rotation requires lighter loads than straight pressing",
+        "causePl": "Ego lifting; rotacja wymaga lżejszych ciężarów niż wyciskanie prostym chwytem",
+        "cue": "Use ~70-80% of your regular DB bench weight. The rotation is the point — if it disappears, you're doing the wrong exercise.",
+        "cuePl": "Używaj ~70-80% ciężaru z klasycznego DB bench. Rotacja to sens ćwiczenia — jeśli znika, robisz inne ćwiczenie."
+      }
+    ],
+    "breathing": "Inhale at the top after lockout, brace, hold through the descent + rotation back to neutral. Exhale on the press up + rotation to pronated.",
+    "breathingPl": "Wdech na górze po lock-oucie, napięcie, trzymaj przez schodzenie + rotację z powrotem do neutralnego. Wydech podczas wyciskania w górę + rotacji do pronowanego."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "The rotation loads wrists in changing positions. If pain — switch to neutral-grip DB bench (no rotation) or use wrist wraps and reduce load.",
+      "modificationPl": "Rotacja obciąża nadgarstki w zmieniających się pozycjach. Jeśli ból — przejdź na neutralny chwyt DB bench (bez rotacji) lub użyj wraps i zmniejsz ciężar.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Stick to neutral grip throughout (no top pronation) — pronation at lockout can aggravate impingement. Reduce ROM if pain.",
+      "modificationPl": "Pozostań w chwycie neutralnym przez cały ruch (bez pronacji na górze) — pronacja w lock-oucie może drażnić konflikt barkowy. Zmniejsz ROM jeśli ból.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Rotational loading is contraindicated for a torn cuff — switch to fixed-path machine pressing until cleared by physio.",
+      "modificationPl": "Obciążanie rotacyjne jest przeciwwskazane przy uszkodzeniu stożka rotatorów — przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Twisting under load can irritate medial/lateral epicondylitis. Use lighter weight, slower rotation, or switch to a non-rotating press until symptoms settle.",
+      "modificationPl": "Skręcanie pod obciążeniem może drażnić zapalenie nadkłykcia przyśrodkowego/bocznego. Użyj lżejszego ciężaru, wolniejszej rotacji lub przejdź na wyciskanie bez rotacji do ustąpienia objawów.",
+      "alternative": "dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 3x10-15 (controlled tempo, mind-muscle focus) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.2,
+
+  "media": {
+    "primary": "dumbbell-twisting-bench-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-twisting-bench-press/frame_0_start.png",
+      "frames/dumbbell-twisting-bench-press/frame_1_early.png",
+      "frames/dumbbell-twisting-bench-press/frame_2_mid.png",
+      "frames/dumbbell-twisting-bench-press/frame_3_late.png",
+      "frames/dumbbell-twisting-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-twisting-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): hantle na poziomie klatki, dłonie zwrócone DO SIEBIE (chwyt neutralny), łokcie schowane ~45° od tułowia, łopatki ściągnięte — pozycja przyjazna dla barków. Frame 2 (góra, lock-out): pełne wyciśnięcie, hantle nad górną klatką, dłonie zwrócone W STRONĘ STÓP (chwyt pronowany), ramiona wyprostowane. Frame 4 (powrót w dół z motion blur): widać kontrolowane opuszczanie z odwrotną rotacją. Podświetlone: klatka piersiowa (mocno), przednie delty, tricepsy — zgodne z anatomią dla compound horizontal push z dodatkową rotacją. Rotacja w płaszczyźnie poprzecznej (transverse) nakłada się na sagittal push, stąd plane=sagittal_transverse. Klasyfikacja jako intermediate (difficulty 5) ze względu na koordynację rotacji z wyciskaniem. PL nazwa zgodna z polskim standardem fitness — 'Bench press z hantlami ze skrętem dłoni' (alternatywnie 'wyciskanie hantli ze skrętem nadgarstków'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Źródło: jahel/triceps (mimo że primary mover to klatka — w klasyfikacji jahel ujęte w triceps przez pełny wyprost w łokciu).",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest_mass", "dumbbell", "chest", "rotation", "transverse_plane", "shoulder_friendly_bottom", "wrist_mobility", "intermediate"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "full-maltese",
+  "name": "Maltese (Maltese cross)",
+  "namePl": "Maltańczyk (krzyż maltański)",
+  "aliases": ["maltese cross", "full maltese", "maltese hold", "maltese planche"],
+  "aliasesPl": ["krzyż maltański", "pełny maltańczyk", "maltese", "izometria maltańska", "krzyż na kółkach"],
+
+  "description": "Elite-level static gymnastic hold performed on the rings. The athlete supports the entire bodyweight on fully straight arms while the body remains parallel to the floor (face-down) and the arms are abducted out to the sides at roughly shoulder height — forming a horizontal 'T' shape. The Maltese is one of the highest-difficulty strength elements in artistic gymnastics (FIG D-value), requiring extreme straight-arm scapular, deltoid, pectoral and biceps tendon strength as well as full-body line tension. Requires multiple years of dedicated straight-arm strength training (planche, iron cross, butterfly press) and supervised progressions.",
+  "descriptionPl": "Ekstremalnie zaawansowane gimnastyczne ćwiczenie izometryczne wykonywane na obręczach (kółkach). Ciało jest utrzymywane poziomo nad podłogą, twarzą w dół, a ramiona — całkowicie wyprostowane w łokciach — odwiedzione na boki na wysokości barków, tworząc poziomy kształt litery 'T'. Maltańczyk to jedna z najtrudniejszych statycznych pozycji siłowych w gimnastyce sportowej (wartość D wg FIG). Wymaga skrajnej siły barków, klatki piersiowej, ścięgien bicepsów oraz pełnej tension całego ciała przy zablokowanych łokciach. Realizacja wymaga wieloletniego przygotowania siłowego (planche, krzyż, butterfly press) pod okiem trenera.",
+
+  "instructions": [
+    "Set the rings at a height where, in the final hold, your body will clear the floor by 10-30 cm. Check that the straps are stable and the rings are warm/dry — slippery rings ruin the lockout.",
+    "Mount into a support hold (arms straight, rings turned out, scapulae depressed and protracted). Engage a full hollow body — glutes squeezed, ribs down, toes pointed.",
+    "Lean the shoulders far forward over the rings and progressively lower the body toward horizontal while opening the arms out to the sides (abduction). Keep the elbows fully locked — any bend ends the position.",
+    "Reach the Maltese position: body completely parallel to the floor face-down, arms straight and abducted at roughly shoulder line (T-shape), rings turned out slightly, head in line with the spine.",
+    "Hold the position isometrically for the prescribed time (typically 2-5 seconds at FIG standard). Breathe shallowly through the diaphragm — do not lose the line.",
+    "Exit by retracting the arms back under the body and pressing back up to support, or lowering controlled into an inverted hang. Never collapse the elbows under load."
+  ],
+  "instructionsPl": [
+    "Ustaw kółka na wysokości, przy której w końcowej pozycji ciało będzie 10-30 cm nad podłogą. Sprawdź stabilność pasów i suchość kółek — śliskie kółka uniemożliwią blokadę ramion.",
+    "Wejdź w pozycję podparcia (ramiona proste, kółka skręcone na zewnątrz, łopatki ściągnięte w dół i odprowadzone). Napnij całe ciało w hollow body — pośladki ściśnięte, żebra w dół, palce stóp wyciągnięte.",
+    "Pochyl barki mocno do przodu nad kółkami i stopniowo opuszczaj ciało do poziomu, jednocześnie rozkładając ramiona na boki (abdukcja). Łokcie pozostają w pełni wyprostowane — najmniejsze ugięcie kończy pozycję.",
+    "Osiągnij pozycję maltańczyka: ciało całkowicie równolegle do podłogi twarzą w dół, ramiona proste i odwiedzione mniej więcej na linii barków (kształt T), kółka lekko skręcone na zewnątrz, głowa w linii kręgosłupa.",
+    "Utrzymaj pozycję izometrycznie przez wymagany czas (typowo 2-5 sekund wg standardu FIG). Oddychaj płytko przeponowo — nie trać linii ciała.",
+    "Wyjdź z pozycji ściągając ramiona z powrotem pod ciało i wciskając do podparcia, albo kontrolowanie obniż do zwisu odwrotnego. Nigdy nie pozwól na załamanie się łokci pod obciążeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "static_hold",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "horizontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["deltoid_anterior", "deltoid_lateral", "deltoid_posterior", "pectoralis_major", "biceps_brachii"],
+    "secondary": ["latissimus_dorsi", "rectus_abdominis", "obliques", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "wrist_flexors", "glutes", "erector_spinae", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "deltoid_anterior": "P10",
+    "deltoid_lateral": "P10",
+    "deltoid_posterior": "P9",
+    "pectoralis_major": "P10",
+    "biceps_brachii": "P10",
+    "latissimus_dorsi": "S8",
+    "rectus_abdominis": "S8",
+    "obliques": "S7",
+    "serratus_anterior": "S8",
+    "rotator_cuff": "T7",
+    "wrist_flexors": "T6",
+    "glutes": "T7",
+    "erector_spinae": "T7",
+    "rhomboids": "T6"
+  },
+
+  "equipment": {
+    "required": ["rings"],
+    "optional": ["chalk", "wrist_straps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["full-planche", "iron-cross", "butterfly-press", "victorian-cross-progression", "straight-arm-bent-arm-strength-base"],
+    "progression_to": ["victorian-cross", "inverted-cross-to-maltese", "maltese-press"],
+    "alternatives": ["planche-on-rings", "iron-cross", "butterfly-hold"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Rings turned out — biceps facing forward",
+      "Scapulae depressed and protracted — shoulders pulled away from ears",
+      "Elbows hyper-locked before lowering — pre-stress the biceps tendon",
+      "Full hollow body — ribs down, glutes squeezed, toes pointed",
+      "Wrists straight in line with the forearm — no bending"
+    ],
+    "setup_cues_pl": [
+      "Kółka skręcone na zewnątrz — bicepsy skierowane do przodu",
+      "Łopatki opuszczone w dół i odprowadzone — barki daleko od uszu",
+      "Łokcie maksymalnie zablokowane przed opuszczaniem — wstępnie napnij ścięgno bicepsa",
+      "Pełny hollow body — żebra w dół, pośladki ściśnięte, palce stóp wyciągnięte",
+      "Nadgarstki w linii prostej z przedramieniem — żadnego zginania"
+    ],
+    "execution_cues": [
+      "Lean shoulders forward AS the arms open out — two motions in one",
+      "Drive the chest down toward the floor while pushing the rings out and down",
+      "Keep the body completely parallel — no piking, no arching",
+      "Eyes look down at the floor — head neutral, not lifted",
+      "Hold breath at sternum level — shallow diaphragm breaths only"
+    ],
+    "execution_cues_pl": [
+      "Pochylaj barki do przodu RÓWNOCZEŚNIE z rozkładaniem ramion na boki — dwa ruchy w jednym",
+      "Pchaj klatkę piersiową w dół ku podłodze, jednocześnie wypychając kółka na zewnątrz i w dół",
+      "Trzymaj ciało całkowicie poziomo — bez zginania w biodrach, bez wyginania pleców",
+      "Patrz w podłogę — głowa neutralna, nie uniesiona",
+      "Krótki bezdech na wysokości mostka — płytkie oddechy przeponowe między próbami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbow bend during the hold ('soft elbows')",
+        "faultPl": "Ugięcie łokci podczas trzymania ('miękkie łokcie')",
+        "cause": "Insufficient straight-arm strength — biceps tendon and triceps long head can't hold extension under load",
+        "causePl": "Niewystarczająca siła ramion prostych — ścięgno bicepsa i głowa długa tricepsa nie utrzymują wyprostu pod obciążeniem",
+        "cue": "Drop the position. Go back to butterfly holds and straight-arm dips for 6-12 more weeks. Never train Maltese with bent arms — it's a different exercise and trains the wrong tissue.",
+        "cuePl": "Zakończ próbę. Cofnij się do butterfly hold i straight-arm dips przez kolejne 6-12 tygodni. Nigdy nie trenuj maltańczyka z ugiętymi ramionami — to inne ćwiczenie i nieprawidłowo obciąża tkanki."
+      },
+      {
+        "fault": "Body angled (head higher than feet, or hips piked above the line)",
+        "faultPl": "Ciało pod kątem (głowa wyżej niż stopy lub biodra uniesione nad linię)",
+        "cause": "Easier shoulder lever — judges and athletes alike treat this as a failed Maltese, not a valid one",
+        "causePl": "Łatwiejsza dźwignia barku — sędziowie i zawodnicy uznają to za nieudany maltański, nie za prawidłowy",
+        "cue": "Film yourself from the side every set. The line from head to toe must be parallel to the floor — if it isn't, deload and rebuild.",
+        "cuePl": "Nagrywaj się z boku przy każdej serii. Linia od głowy do palców stóp musi być równoległa do podłogi — jeśli nie jest, cofnij się i przebuduj."
+      },
+      {
+        "fault": "Arms abducted too high (above shoulder line) — this is a Victorian cross, not a Maltese",
+        "faultPl": "Ramiona odwiedzione za wysoko (powyżej linii barków) — to jest krzyż wiktoriański, nie maltańczyk",
+        "cause": "Athlete is closer to iron cross strength than Maltese strength; rings drift up to reduce moment arm at the shoulder",
+        "causePl": "Zawodnik bliżej siły krzyża niż maltańczyka; kółka unoszą się dla skrócenia ramienia dźwigni w barku",
+        "cue": "Maltese = rings level with the chest/shoulder plane. Victorian = rings at the hips. Confirm position with side video before counting reps.",
+        "cuePl": "Maltańczyk = kółka na linii klatki / barków. Wiktoriański = kółka na linii bioder. Potwierdź pozycję wideo z boku zanim policzysz powtórzenie."
+      },
+      {
+        "fault": "Sagging in the lower back / loss of hollow body",
+        "faultPl": "Wygięcie w dolnej części pleców / utrata hollow body",
+        "cause": "Core fatigue under massive anterior load — lumbar gives way before shoulders do",
+        "causePl": "Zmęczenie core pod ogromnym obciążeniem przedniej strony — odcinek lędźwiowy się poddaje wcześniej niż barki",
+        "cue": "Ribs down, glutes max squeeze, posterior pelvic tilt. If you can't hold the line for 2 seconds, the hold isn't yet trainable — work hollow body planche progressions.",
+        "cuePl": "Żebra w dół, pośladki maksymalnie napięte, miednica w tylnym pochyleniu. Jeśli nie utrzymasz linii 2 sekund — pozycja jeszcze nie do trenowania, pracuj nad planche z hollow body."
+      },
+      {
+        "fault": "Rings drifting forward or rotating in (loss of external rotation)",
+        "faultPl": "Kółka uciekają do przodu albo obracają się do wewnątrz (utrata rotacji zewnętrznej)",
+        "cause": "Rotator cuff and biceps not strong enough to hold rings turned out at full abduction",
+        "causePl": "Stożek rotatorów i biceps niewystarczająco silne, by utrzymać kółka skręcone na zewnątrz przy pełnej abdukcji",
+        "cue": "Add support holds with rings turned out (RTO) and L-sit RTO into accessory work. Without RTO strength the Maltese will always collapse inward.",
+        "cuePl": "Dodaj support hold z kółkami skręconymi na zewnątrz (RTO) oraz L-sit RTO jako pracę akcesoryjną. Bez siły RTO maltańczyk zawsze będzie się zwalał do środka."
+      }
+    ],
+    "breathing": "Take a normal breath before entering the hold and exhale slowly through pursed lips during the 2-5 second hold. Do not perform a hard Valsalva — chest pressurisation against an already extreme anterior chain load can spike blood pressure and risk pectoral tendon strain.",
+    "breathingPl": "Zrób normalny wdech przed wejściem w pozycję i wydychaj powoli przez zwężone usta podczas 2-5 sekundowego trzymania. Nie wykonuj manewru Valsalvy — wzrost ciśnienia w klatce przy już ekstremalnym obciążeniu przedniego łańcucha może gwałtownie podnieść ciśnienie krwi i zagrażać ścięgnu piersiowemu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendon_pathology",
+      "severity": "avoid",
+      "modification": "Maltese places maximal eccentric / isometric load on the long head of the biceps tendon — any current biceps tendinopathy, partial tear, or post-surgical state is an absolute contraindication. Train rehab progressions (sleeper stretch, eccentric curls) under physiotherapy first.",
+      "modificationPl": "Maltańczyk obciąża maksymalnie ekscentrycznie/izometrycznie ścięgno głowy długiej bicepsa — każda aktualna tendinopatia, częściowe naderwanie czy stan pooperacyjny to bezwzględne przeciwwskazanie. Najpierw protokoły rehabilitacyjne (sleeper stretch, ćwiczenia ekscentryczne) pod okiem fizjoterapeuty.",
+      "alternative": "planche-tuck"
+    },
+    {
+      "condition": "shoulder_instability_or_labrum_injury",
+      "severity": "avoid",
+      "modification": "Extreme glenohumeral abduction with anterior load is one of the most provocative positions for SLAP / labral pathology and AC joint problems. Get cleared by an orthopaedist and rebuild scapular control before any Maltese progression.",
+      "modificationPl": "Skrajne odwiedzenie w stawie ramiennym z obciążeniem przedniej strony to jedna z najbardziej prowokacyjnych pozycji dla patologii obrąbka (SLAP) i stawu barkowo-obojczykowego. Wymagana konsultacja ortopedyczna i odbudowa kontroli łopatkowej przed jakąkolwiek progresją do maltańczyka.",
+      "alternative": "ring-support-hold"
+    },
+    {
+      "condition": "elbow_tendon_pathology_or_hyperextension",
+      "severity": "avoid",
+      "modification": "Locked-out straight arms under maximal load can stress the distal biceps insertion, brachialis, and joint capsule. Anyone with golfer's/tennis elbow currently active, or marked elbow hyperextension, must not train Maltese.",
+      "modificationPl": "Zablokowane wyprostowane ramiona pod maksymalnym obciążeniem mogą obciążać dystalny przyczep bicepsa, mięsień ramienny i torebkę stawową. Osoby z aktywnym łokciem golfisty/tenisisty lub wyraźną hiperextensją łokcia nie powinny trenować maltańczyka.",
+      "alternative": "butterfly-hold"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Maximal isometric holds spike systemic blood pressure. Athletes with uncontrolled hypertension or cardiovascular disease should consult their cardiologist before any high-intensity static gymnastic element.",
+      "modificationPl": "Maksymalne trzymania izometryczne gwałtownie podnoszą ciśnienie krwi. Sportowcy z niekontrolowanym nadciśnieniem lub chorobami sercowo-naczyniowymi powinni skonsultować się z kardiologiem przed jakimkolwiek wysokointensywnym statycznym elementem gimnastycznym.",
+      "alternative": "tuck-planche"
+    }
+  ],
+
+  "typical_sets_reps": "5-8 x 2-5s hold (FIG competition strength) | 3-5 x 1-3s (developmental, with full reset) | hold for time accessory: 3 x max-quality seconds",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "full-maltese.gif",
+    "frames_extracted": [
+      "frames/full-maltese/frame_0_start.png",
+      "frames/full-maltese/frame_1_early.png",
+      "frames/full-maltese/frame_2_mid.png",
+      "frames/full-maltese/frame_3_late.png",
+      "frames/full-maltese/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/full-maltese"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Wszystkie klatki pokazują identyczną statyczną pozycję — ciało dokładnie poziomo do podłogi (twarzą w dół), ramiona całkowicie wyprostowane w łokciach i odwiedzione na boki w kształt litery T, na linii barków. Klatka mid (#2) ma kolorowanie aktywnych mięśni — wyraźnie zaznaczone: cały deltoid (przedni/boczny/tylny), mięsień piersiowy większy obustronnie, oraz mięsień prosty brzucha (linia tension hollow body). To klasyczny FIG Maltese cross na kółkach. Klasyfikacja: static_hold (czysta izometria), mechanic=isometric, force=static, plane=horizontal (ramiona w abdukcji w płaszczyźnie czołowej-poziomej), bilateral, kinetic_chain=closed (ręce zamocowane na obręczach). Mięśnie główne wszystkie oznaczone P10 — to ekstremalne ćwiczenie elite (10/10 difficulty) gdzie WSZYSTKIE primary movery pracują na granicy. Biceps_brachii P10 ze względu na obciążenie ścięgna głowy długiej przy zablokowanym łokciu (główna kontuzja ryzyko). Sekundarne: lats, core (rectus + obliques) jako anti-pike anti-arch, serratus jako protrakcja łopatki. Sprzęt: rings (obowiązkowe — bez kółek nie ma maltańczyka), chalk i wrist straps jako optional. 4 przeciwwskazania: biceps_tendon_pathology (KRYTYCZNE — najczęstsza kontuzja przy maltańczyku), shoulder_instability/labrum (SLAP w skrajnej abdukcji), elbow_tendon/hyperextension (lockout pod max load), uncontrolled_hypertension (max izometria → BP spike). 5 setup + 5 execution cues. 5 common faults: soft elbows / body angle / arms too high (= Victorian cross, nie Maltese) / sag lędźwiowy / utrata RTO. Typical sets/reps zgodne z FIG: 2-5s holds w 5-8 seriach. Calories=7.5 kcal/kg/h (wysokie dla ćwiczenia gdzie cały bodyweight + neural drive). Nazwa PL: 'Maltańczyk' (odpowiednik gimnastyczny zgodny z polską terminologią Federacji), aliasy 'krzyż maltański' (najczęstsza dosłowna forma). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — terminologia gimnastyczna PL (kółka zamiast 'pierścienie', hollow body zachowane jako termin profesjonalny, RTO=rings turned out). Brak yuhonas_id i glowupp_id w sources — jahel jest jedynym źródłem dla tego elite ćwiczenia.",
+
+  "tags": ["gymnastics", "rings", "static_hold", "isometric", "elite", "shoulders", "chest", "biceps", "calisthenics_advanced", "skill"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "bear-crawl",
+  "name": "Bear Crawl",
+  "namePl": "Bear crawl (chód niedźwiedzia)",
+  "aliases": ["quadruped crawl", "bear walk", "table-top crawl", "knee-hover crawl"],
+  "aliasesPl": ["chód niedźwiedzia", "chód misia", "czołganie niedźwiedzia", "bear walk", "marsz na czworaka z uniesionymi kolanami"],
+
+  "description": "A full-body locomotion drill performed on hands and feet (quadruped) with the knees hovering 2-5 cm above the floor. The lifter crawls forward (or backward/sideways) using contralateral coordination — opposite hand and foot move together (left hand + right foot, then right hand + left foot). Brutally taxing on the anterior core (anti-extension and anti-rotation), shoulder girdle and hip flexors, while keeping the spine neutral. Staple of functional fitness, athletic warm-ups and core conditioning.",
+  "descriptionPl": "Pełnociałowy ruch lokomocyjny wykonywany na dłoniach i stopach (czworakowanie) z kolanami unoszącymi się 2-5 cm nad podłogą. Ćwiczący przemieszcza się do przodu (lub do tyłu / na boki) ruchem kontralateralnym — przeciwległa ręka i stopa idą razem (lewa ręka + prawa stopa, potem prawa ręka + lewa stopa). Brutalnie obciąża przedni core (anty-ekstensja i anty-rotacja), obręcz barkową i zginacze bioder, jednocześnie utrzymując kręgosłup w pozycji neutralnej. Klasyk treningu funkcjonalnego, rozgrzewek atletycznych i kondycjonowania core.",
+
+  "instructions": [
+    "Start on all fours: hands directly under shoulders, knees under hips, toes tucked. Spine neutral, gaze slightly forward.",
+    "Brace the core hard and lift the knees 2-5 cm off the floor. This is the bear position — back flat 'like a table you could rest a glass of water on'.",
+    "Step the right hand and the left foot forward simultaneously by a short distance (15-25 cm). Keep the hips low and stable.",
+    "Immediately step the left hand and the right foot forward. Keep the knees hovering and the back flat throughout — no hip swing.",
+    "Continue alternating contralateral steps for the prescribed distance, time or rep count. Maintain a tight midsection and stable shoulders.",
+    "To finish, lower the knees gently to the floor and reset. Breathe rhythmically with each step — do not hold breath."
+  ],
+  "instructionsPl": [
+    "Pozycja wyjściowa na czworaka: dłonie pod barkami, kolana pod biodrami, palce stóp podwinięte. Kręgosłup neutralny, wzrok lekko w przód.",
+    "Mocno napnij core i unieś kolana 2-5 cm nad podłogę. To pozycja niedźwiedzia — plecy płaskie 'jak stół, na którym mógłbyś postawić szklankę wody'.",
+    "Jednocześnie zrób krok prawą ręką i lewą stopą na krótki dystans (15-25 cm). Trzymaj biodra nisko i stabilnie.",
+    "Natychmiast zrób krok lewą ręką i prawą stopą do przodu. Kolana cały czas wiszą nad podłogą, plecy płaskie — żadnego kołysania bioder.",
+    "Kontynuuj naprzemienne kroki kontralateralne na zadanym dystansie, czasie lub liczbie kroków. Utrzymuj napięty brzuch i stabilne barki.",
+    "Zakończenie: delikatnie opuść kolana na podłogę i zresetuj. Oddychaj rytmicznie przy każdym kroku — nie wstrzymuj oddechu."
+  ],
+
+  "classification": {
+    "movement_pattern": "locomotion",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "front_deltoids", "hip_flexors"],
+    "secondary": ["serratus_anterior", "glutes", "quadriceps", "triceps", "obliques"],
+    "stabilizers": ["transverse_abdominis", "rotator_cuff", "wrist_flexors", "calves"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P8",
+    "front_deltoids": "P7",
+    "hip_flexors": "P7",
+    "serratus_anterior": "S6",
+    "obliques": "S6",
+    "glutes": "S5",
+    "quadriceps": "S5",
+    "triceps": "S5",
+    "transverse_abdominis": "T4",
+    "rotator_cuff": "T3",
+    "wrist_flexors": "T3",
+    "calves": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "functional",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["plank", "bird-dog", "dead-bug"],
+    "progression_to": ["weighted-bear-crawl", "lateral-bear-crawl", "bear-crawl-with-shoulder-tap", "spider-crawl"],
+    "alternatives": ["plank-shoulder-tap", "bird-dog", "dead-bug", "mountain-climber"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands under shoulders, fingers spread, push the floor away",
+      "Knees under hips, toes tucked, weight on the balls of the feet",
+      "Spine neutral — flat back, no hip drop or pike",
+      "Core braced hard before lifting the knees",
+      "Knees hover 2-5 cm — close enough to tap, never touch"
+    ],
+    "setup_cues_pl": [
+      "Dłonie pod barkami, palce rozstawione, odpychaj podłogę",
+      "Kolana pod biodrami, palce stóp podwinięte, ciężar na śródstopiu",
+      "Kręgosłup neutralny — płaskie plecy, biodra ani nie opadają, ani nie wystają w górę",
+      "Mocne napięcie brzucha przed uniesieniem kolan",
+      "Kolana wiszą 2-5 cm nad podłogą — blisko, ale nigdy nie dotykają"
+    ],
+    "execution_cues": [
+      "Opposite hand and opposite foot move together (left + right)",
+      "Short, controlled steps — quality over distance",
+      "Keep the hips low and level — don't let them swing side to side",
+      "Imagine balancing a glass of water on your lower back",
+      "Breathe with each step — exhale on the harder side"
+    ],
+    "execution_cues_pl": [
+      "Przeciwległa ręka i przeciwległa stopa ruszają razem (lewa + prawa)",
+      "Krótkie, kontrolowane kroki — jakość ważniejsza od dystansu",
+      "Trzymaj biodra nisko i równo — nie pozwól im kołysać się na boki",
+      "Wyobraź sobie, że balansujesz szklanką wody na dolnym odcinku pleców",
+      "Oddychaj przy każdym kroku — wydech na trudniejszej stronie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips swinging side to side (hip sway)",
+        "faultPl": "Kołysanie biodrami na boki",
+        "cause": "Weak anti-rotation core (obliques, transverse abdominis); steps too long",
+        "causePl": "Słaby core anty-rotacyjny (skośne, mięsień poprzeczny brzucha); zbyt długie kroki",
+        "cue": "Shorten the steps to 15 cm and pretend a broomstick lies along your lower back — keep it level",
+        "cuePl": "Skróć kroki do 15 cm i wyobraź sobie kij od miotły leżący na dolnych plecach — utrzymuj go poziomo"
+      },
+      {
+        "fault": "Hips piking high in the air (downward dog position)",
+        "faultPl": "Biodra wystrzelone wysoko w górę (pozycja jak w 'psie z głową w dół')",
+        "cause": "Trying to relieve the core by shifting load to legs; tight hamstrings",
+        "causePl": "Próba odciążenia brzucha przez przerzucenie pracy na nogi; napięte dwugłowe uda",
+        "cue": "Drop the hips until your back is parallel to the floor — table-top, not mountain",
+        "cuePl": "Opuść biodra, aż plecy będą równoległe do podłogi — blat stołu, nie góra"
+      },
+      {
+        "fault": "Lower back sagging (lumbar extension)",
+        "faultPl": "Dolne plecy się wyginają (hiperekstensja lędźwiowa)",
+        "cause": "Lost core brace mid-set, especially as fatigue accumulates",
+        "causePl": "Utracone napięcie brzucha w trakcie serii, szczególnie wraz z narastającym zmęczeniem",
+        "cue": "Ribs down, belly tight — exhale forcefully every 2 steps to reset the brace",
+        "cuePl": "Żebra w dół, brzuch ciasny — mocny wydech co 2 kroki, by zresetować napięcie"
+      },
+      {
+        "fault": "Ipsilateral pattern (same-side hand and foot together)",
+        "faultPl": "Wzorzec ipsilateralny (ta sama strona — ręka i noga razem)",
+        "cause": "Coordination error — defaulting to a 'lizard' or 'shuffle' instead of contralateral crawl",
+        "causePl": "Błąd koordynacji — domyślny 'jaszczurkowy' lub 'szuranie' zamiast kontralateralnego czołgania",
+        "cue": "Right hand + LEFT foot. Say it out loud first 3 reps. Cross-body wiring is the point.",
+        "cuePl": "Prawa ręka + LEWA stopa. Powiedz to na głos przy pierwszych 3 powtórzeniach. Krzyżowanie ciała to sedno ruchu."
+      },
+      {
+        "fault": "Knees dragging on the floor / touching down",
+        "faultPl": "Kolana sunące po podłodze / dotykające jej",
+        "cause": "Core fatigues, knees drop; tries to 'rest' between steps",
+        "causePl": "Brzuch się męczy, kolana opadają; próba 'odpoczynku' między krokami",
+        "cue": "Hover means hover — if they touch, stop the set. Build to longer sets gradually.",
+        "cuePl": "Wiszą oznacza wiszą — jeśli dotykają, przerwij serię. Buduj wytrzymałość stopniowo."
+      }
+    ],
+    "breathing": "Rhythmic breathing — one breath cycle every 2-4 steps. Do not hold the breath (Valsalva) for the whole length — it causes blood-pressure spikes and core collapses by the end of the lane.",
+    "breathingPl": "Rytmiczny oddech — jeden cykl oddechowy co 2-4 kroki. Nie wstrzymuj oddechu (manewr Valsalvy) na całej długości — powoduje to skoki ciśnienia i utratę napięcia core pod koniec dystansu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_injury_or_pain",
+      "severity": "modify",
+      "modification": "Loading hands in extended wrist position aggravates wrist sprains, carpal tunnel and TFCC issues. Use parallettes, push-up handles or fists to keep the wrist neutral, or substitute with a forearm-based crawl.",
+      "modificationPl": "Obciążenie dłoni w pozycji wyprostowanego nadgarstka pogarsza skręcenia, zespół cieśni nadgarstka i problemy z TFCC. Użyj parallettes, uchwytów do pompek lub pięści, aby utrzymać nadgarstek w neutralnej pozycji, albo zastąp ćwiczeniem na przedramionach.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Loaded shoulder flexion under bodyweight can flare impingement. Keep elbow pits forward, externally rotate the shoulders, and shorten range. Stop if pain in front of the shoulder.",
+      "modificationPl": "Obciążone zgięcie barku pod ciężarem ciała może nasilać konflikt podbarkowy. Trzymaj zgięcia łokciowe skierowane do przodu, rotuj barki zewnętrznie i skróć zakres. Przerwij, jeśli ból z przodu barku.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "If core gives out, the lumbar spine takes the load. Master plank and bird-dog with neutral spine first. Stop the set the moment the back sags.",
+      "modificationPl": "Jeśli core puści, dolny odcinek kręgosłupa przejmuje obciążenie. Najpierw opanuj deskę i bird-dog z neutralnym kręgosłupem. Przerwij serię w momencie, gdy plecy zaczynają opadać.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "modify",
+      "modification": "Quadruped position with belly hanging can increase intra-abdominal pressure and worsen diastasis recti. Use bird-dog or wall-supported variations instead.",
+      "modificationPl": "Pozycja na czworaka z wiszącym brzuchem może zwiększać ciśnienie wewnątrzbrzuszne i pogłębiać rozejście kresy białej. Zamiast tego stosuj bird-dog lub warianty z podparciem o ścianę.",
+      "alternative": "bird-dog"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-40 kroków (kondycjonowanie) | 3x20-30 s (warm-up) | 4x10 m tam i z powrotem (functional finisher)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "bear-crawl.gif",
+    "frames_extracted": [
+      "frames/bear-crawl/frame_0_start.png",
+      "frames/bear-crawl/frame_1_early.png",
+      "frames/bear-crawl/frame_2_mid.png",
+      "frames/bear-crawl/frame_3_late.png",
+      "frames/bear-crawl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/bear-crawl",
+    "yuhonas_id": "Bear_Crawl",
+    "glowupp_id": "bear-crawl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (cardio/bear-crawl). Klatka 0 (start): pozycja czworaczna z uniesionymi kolanami 2-5 cm nad podłogą — sylwetka podświetla mocno rectus abdominis (cała długość brzucha), przedni deltoid, triceps, mięsień prosty uda i pośladek strony pracującej. Klatka 2 (mid): widoczne nakładanie się dwóch faz kroku — przeciwległa ręka i noga wysuwają się razem (ruch kontralateralny), tułów obraca się minimalnie, kręgosłup pozostaje płaski. Klatka 4 (end): krok zakończony, druga strona przygotowuje się do wysunięcia. Ruch potwierdzony: locomotion w płaszczyźnie sagittal, closed chain (dłonie + stopy na podłodze), unilateral (jedna strona na raz mimo że narzędzia często klasyfikują jako bilateral). Mechanic=compound (biodro+kolano+bark+łokieć+nadgarstek). Force=both — koncentryczny dla zginaczy biodra/triceps, izometryczny dla całego anti-extension core. Primary: rectus_abdominis P8 (anti-extension to dominanta), front_deltoids P7 (utrzymanie sylwetki + push), hip_flexors P7 (każdy krok = zgięcie biodra w łańcuchu zamkniętym). Secondary: serratus_anterior (protrakcja łopatek), obliques (anti-rotation), glutes/quads/triceps S5-S6. Category=functional (klasyk functional fitness — Animal Flow, CrossFit warm-up, athletic prep). Level: beginner-friendly difficulty 5 (technicznie dostępny, ale wymaga koordynacji kontralateralnej — niektórzy domyślnie idą ipsilateralnie). Nazwa PL: 'Bear crawl (chód niedźwiedzia)' — termin angielski jest powszechnie używany w polskim środowisku fitness (CrossFit, animal flow), tłumaczenie 'chód niedźwiedzia' dodane w nawiasie. Aliasy: 'chód misia' (popularne potoczne), 'czołganie niedźwiedzia'. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — terminologia z polskich szkółek functional/CrossFit.",
+
+  "tags": ["bodyweight", "functional", "core", "anti_extension", "locomotion", "warm_up", "athletic", "no_equipment", "home_workout", "full_body"]
+}

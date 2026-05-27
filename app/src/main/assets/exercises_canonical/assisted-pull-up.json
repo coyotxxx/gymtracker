@@ -1,0 +1,204 @@
+{
+  "id": "assisted-pull-up",
+  "name": "Assisted Pull-Up (Machine)",
+  "namePl": "Podciąganie asystowane (na maszynie)",
+  "aliases": ["machine assisted pull-up", "gravitron pull-up", "counterweight pull-up", "assisted pullup"],
+  "aliasesPl": ["podciąganie z asystą", "podciąganie na maszynie", "podciąganie z odciążeniem", "asystowane podciąganie", "podciąganie w maszynie assisted"],
+
+  "description": "Beginner-friendly progression toward a strict pull-up. Performed on a dedicated assisted pull-up machine where you kneel (or stand) on a counterweight pad. The pad subtracts a chosen percentage of your bodyweight, making the pull lighter while preserving the full ROM and movement pattern. Excellent for building lat strength, scapular control and grip endurance before transitioning to bodyweight pull-ups.",
+  "descriptionPl": "Progresja dla początkujących w drodze do strict pull-up. Wykonywane na dedykowanej maszynie assisted, gdzie klękasz (lub stoisz) na padzie counterweight. Pad odejmuje wybrany procent masy ciała, przez co ciąg jest lżejszy, ale zachowuje pełen ROM i wzorzec ruchowy. Doskonałe do budowy siły najszerszych grzbietu, kontroli łopatek i wytrzymałości chwytu zanim przejdziesz do podciągania w pełnej wadze ciała.",
+
+  "instructions": [
+    "Set the counterweight stack (more weight = MORE assistance, less load on you). Start with ~50-60% of bodyweight assistance if you're new.",
+    "Climb onto the platform and place your knees (or feet) on the pad. Grip the bar with palms facing AWAY (pronated/overhand), hands slightly wider than shoulder-width.",
+    "Lower yourself off the platform so the pad takes your weight. Hang at full arm extension with shoulder blades depressed (pulled DOWN, not shrugged up).",
+    "Brace core. This is the start position — equivalent to a dead-hang but lighter.",
+    "Initiate the pull by driving elbows DOWN AND BACK toward your hips. Imagine pulling the bar toward your collarbone.",
+    "Keep chest up, slight backward lean. Do not bounce off the pad or kip.",
+    "Pull until your chin is clearly ABOVE the bar. Pause briefly at the top.",
+    "Lower with control to a full hang (arms fully extended). Maintain scapular depression throughout.",
+    "Each rep starts from full hang to chin-over-bar. As you get stronger, REDUCE the assistance (less weight on stack) over weeks."
+  ],
+  "instructionsPl": [
+    "Ustaw stos counterweight (więcej kg = WIĘCEJ asysty, mniej obciążenia dla Ciebie). Zacznij od ~50-60% masy ciała jako asysta jeśli jesteś początkujący.",
+    "Wejdź na platformę i połóż kolana (lub stopy) na padzie. Złap drążek dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce nieco szerzej niż barki.",
+    "Zsuń się z platformy żeby pad przejął ciężar. Zwiśnij w pełnym wyproście ramion, łopatki opuszczone (W DÓŁ, nie uniesione).",
+    "Napnij brzuch. To pozycja startowa — odpowiednik dead-hang, ale lżejsza.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w kierunku bioder. Wyobraź sobie że ciągniesz gryf do obojczyka.",
+    "Klatka w górze, lekkie odchylenie do tyłu. Nie odbijaj się od pada ani nie kipuj.",
+    "Podciągaj aż broda będzie WYRAŹNIE nad drążkiem. Krótka pauza w szczycie.",
+    "Opuszczaj kontrolowanym ruchem do pełnego zwisu (ramiona w pełni wyprostowane). Utrzymuj depresję łopatek przez cały ruch.",
+    "Każde powtórzenie od pełnego zwisu do brody nad drążkiem. W miarę przyrostu siły ZMNIEJSZAJ asystę (mniej kg na stosie) z tygodnia na tydzień."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["rhomboids", "trapezius_middle_lower", "teres_major", "brachialis", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P6",
+    "rhomboids": "S7",
+    "trapezius_middle_lower": "S6",
+    "teres_major": "S7",
+    "brachialis": "S5",
+    "forearms": "S6",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["assisted_pull_up_machine"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["lat-pulldown", "inverted-row", "dead-hang"],
+    "progression_to": ["negative-pull-up", "band-assisted-pull-up", "pull-up", "chin-up", "neutral-grip-pull-up"],
+    "alternatives": ["band-assisted-pull-up", "lat-pulldown", "negative-pull-up", "inverted-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Counterweight 50-60% bodyweight (start)",
+      "Pronated grip, hands slightly wider than shoulders",
+      "Knees firmly on pad — do not slide off",
+      "Full hang at start — elbows extended",
+      "Shoulder blades DOWN (no shrug up)"
+    ],
+    "setup_cues_pl": [
+      "Counterweight 50-60% masy ciała (start)",
+      "Chwyt nachwytem, ręce nieco szerzej niż barki",
+      "Kolana mocno na padzie — nie ześlizguj się",
+      "Pełen zwis na starcie — łokcie wyprostowane",
+      "Łopatki W DÓŁ (bez unoszenia)"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN, not 'pull up'",
+      "Chin clearly OVER the bar each rep",
+      "Full extension at the bottom — no half reps",
+      "Smooth tempo, NO bouncing off the pad",
+      "Reduce assistance progressively over weeks"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ, nie 'podciągaj się'",
+      "Broda WYRAŹNIE nad drążkiem w każdym powtórzeniu",
+      "Pełen wyprost na dole — bez połowy powtórzeń",
+      "Płynne tempo, BEZ odbijania od pada",
+      "Stopniowo zmniejszaj asystę z tygodnia na tydzień"
+    ],
+    "common_faults": [
+      {
+        "fault": "Too much assistance — barely working",
+        "faultPl": "Za duża asysta — minimalny wysiłek",
+        "cause": "Counterweight set too high; user wants to do high reps easily",
+        "causePl": "Counterweight ustawiony za wysoko; chęć łatwego wykonania dużej liczby powtórzeń",
+        "cue": "Set assistance so last 2-3 reps of 8-10 are HARD. If you finish 10 easily, reduce assistance next set.",
+        "cuePl": "Ustaw asystę tak by ostatnie 2-3 powtórzenia z 8-10 były TRUDNE. Jeśli kończysz 10 z łatwością — zmniejsz asystę w kolejnej serii."
+      },
+      {
+        "fault": "Bouncing off the pad to gain momentum",
+        "faultPl": "Odbijanie się od pada dla pędu",
+        "cause": "Trying to fake reps by using pad as a launcher",
+        "causePl": "Próba oszukiwania powtórzeń traktując pad jako odbijnik",
+        "cue": "Smooth descent, no bounce. Pause briefly at the bottom before next rep.",
+        "cuePl": "Płynne schodzenie, bez odbicia. Krótka pauza na dole przed kolejnym powtórzeniem."
+      },
+      {
+        "fault": "Half reps (chin not over bar)",
+        "faultPl": "Połowiczne powtórzenia (broda nie nad drążkiem)",
+        "cause": "Wrong assistance level (too low) or fatigue late in set",
+        "causePl": "Złe ustawienie asysty (za mała) lub zmęczenie na końcu serii",
+        "cue": "Chin clearly OVER the bar. Increase assistance rather than do half reps.",
+        "cuePl": "Broda wyraźnie NAD drążkiem. Zwiększ asystę zamiast robić połowiczne powtórzenia."
+      },
+      {
+        "fault": "Shoulders shrugging up before pulling",
+        "faultPl": "Łopatki unoszą się przed ciągiem",
+        "cause": "Lack of scapular control, weak lower trap activation",
+        "causePl": "Brak kontroli łopatek, słaba aktywacja dolnych trapezów",
+        "cue": "Depress shoulders DOWN before bending elbows. Scapular pulls drill from full hang.",
+        "cuePl": "Opuść łopatki W DÓŁ zanim zaczniesz zginać łokcie. Drill scapular pull z pełnego zwisu."
+      },
+      {
+        "fault": "Hips swinging or feet off the pad",
+        "faultPl": "Biodra bujają się lub stopy schodzą z pada",
+        "cause": "Loose core, knees slipping; using legs/hips instead of lats",
+        "causePl": "Luźny brzuch, kolana się ślizgają; użycie nóg/bioder zamiast najszerszych",
+        "cue": "Brace core, knees firmly on pad. If pad is too narrow — adjust position or use machine with foot platform.",
+        "cuePl": "Napnij brzuch, kolana mocno na padzie. Jeśli pad za wąski — dostosuj pozycję lub użyj maszyny z platformą na stopy."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Exhale on the pull up. Inhale on the way down. Steady rhythm — usually performed in higher rep ranges.",
+    "breathingPl": "Wdech na dole (zwis). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Równy rytm — zwykle wykonywane w wyższym zakresie powtórzeń."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Switch to neutral grip handles if available, reduce ROM at the top, or use lat pulldown instead.",
+      "modificationPl": "Przejdź na chwyt neutralny (jeśli maszyna ma uchwyty), zmniejsz ROM w górnej fazie, lub użyj lat pulldown.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume. Switch to chin-up grip (supinated) — less elbow stress for some lifters.",
+      "modificationPl": "Zmniejsz objętość. Przejdź na chwyt podchwytem (chin-up) — mniej stresu na łokcie dla części osób.",
+      "alternative": "assisted-chin-up"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Some machines have a foot platform option instead of knee pad — switch to that. Otherwise add foam padding under knees.",
+      "modificationPl": "Niektóre maszyny mają opcję platformy na stopy zamiast pada na kolana — przejdź na nią. Lub podłóż piankę pod kolana.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. If pain persists, switch to lat pulldown with neutral grip.",
+      "modificationPl": "Użyj wraps na nadgarstki. Jeśli ból trwa — przejdź na lat pulldown z chwytem neutralnym.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (z asystą 40-60% bw) | piramida malejąca asysty | 5x5 (low assist)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "assisted-pull-up.gif",
+    "frames_extracted": [
+      "frames/assisted-pull-up/frame_0_start.png",
+      "frames/assisted-pull-up/frame_1_early.png",
+      "frames/assisted-pull-up/frame_2_mid.png",
+      "frames/assisted-pull-up/frame_3_late.png",
+      "frames/assisted-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/assisted-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF potwierdzony: dedykowana maszyna assisted pull-up z padem counterweight (widoczne kolana na padzie + stos obciążenia po prawej). Chwyt pronated (nachwytem), ręce ~szerokość barków. Frame 0/4: top position (broda przy drążku, łokcie zgięte, łopatki ściągnięte). Frame 2: bottom (pełen wyprost ramion, zwis na padzie). Mięśnie podświetlone: latissimus dorsi (mocno), środkowe trapezy + romboidy + teres major, bicepsy + przedramiona. Pad asystuje (counterweight) → klasyfikacja jako beginner progression. PL nazwa 'Podciąganie asystowane (na maszynie)' rozróżnia od band-assisted pull-up (z gumą).",
+
+  "tags": ["machine", "beginner", "progression", "upper_body", "vertical_pull", "back", "biceps", "assisted_bodyweight", "lat_builder", "scapular_control"]
+}

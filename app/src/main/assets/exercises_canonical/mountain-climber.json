@@ -1,0 +1,206 @@
+{
+  "id": "mountain-climber",
+  "name": "Mountain Climber",
+  "namePl": "Wspinaczka w planku",
+  "aliases": ["mountain climbers", "running plank", "alternating knee drives in plank", "plank knee drives"],
+  "aliasesPl": ["mountain climber", "wspinanie się w planku", "alpinista", "naprzemienne podciąganie kolan w desce", "biegacz w desce"],
+
+  "description": "A dynamic full-body conditioning exercise performed from a high plank position. The lifter alternates driving each knee straight forward toward the chest in a rhythmic running motion, while keeping the upper body locked in a stable plank. Acts as a hybrid drill — moderate core stimulus (anti-extension + hip flexion) combined with significant cardiovascular and conditioning demand. Hips stay low and level throughout; only the lower body moves. No equipment required. One of the most accessible high-intensity bodyweight movements, used in HIIT, warm-ups, and finishers.",
+  "descriptionPl": "Dynamiczne ćwiczenie kondycyjne angażujące całe ciało, wykonywane z pozycji wysokiej deski (plank). Ćwiczący naprzemiennie podciąga kolana prosto w kierunku klatki piersiowej w rytmie przypominającym bieganie, jednocześnie utrzymując górną część ciała nieruchomo w stabilnej desce. Hybrydowy bodziec — średnie obciążenie core (anty-wyprost + zgięcie biodra) połączone ze znacznym wysiłkiem krążeniowo-oddechowym. Biodra przez cały ruch pozostają nisko i poziomo; pracuje wyłącznie dolna połowa ciała. Bez sprzętu. Jedno z najpopularniejszych ćwiczeń HIIT z masą ciała, stosowane w treningach interwałowych, rozgrzewkach i wykończeniach.",
+
+  "instructions": [
+    "Set up in a high plank: hands directly under shoulders, arms straight, body forming a straight line from head to heels.",
+    "Brace the core, squeeze the glutes, and shift weight slightly forward so the shoulders are just past the wrists.",
+    "Drive one knee straight forward toward the chest in a quick, controlled motion. The foot lifts off the floor; the supporting leg stays straight.",
+    "As that knee retracts back to the starting position, immediately drive the opposite knee forward — like running in place horizontally.",
+    "Maintain a steady rhythm. The shoulders, head, and hips stay locked in plank position; only the legs move.",
+    "Keep the hips LOW and LEVEL — do not let them pike up or sag down. If form breaks, slow the tempo.",
+    "Breathe rhythmically — one breath cycle per 2-4 knee drives.",
+    "Continue for the planned time (typically 20-45 seconds) or rep count. End the set when form breaks, not when the legs burn."
+  ],
+  "instructionsPl": [
+    "Ustaw się w wysokiej desce: dłonie dokładnie pod barkami, ramiona wyprostowane, ciało tworzy prostą linię od głowy do pięt.",
+    "Napnij brzuch, ściśnij pośladki i przenieś ciężar lekko do przodu, tak aby barki były nieco za nadgarstkami.",
+    "Prowadź jedno kolano szybko i prosto w kierunku klatki piersiowej. Stopa unosi się nad podłogę; druga noga pozostaje prosta.",
+    "Gdy kolano wraca do pozycji wyjściowej, natychmiast prowadź drugie kolano do przodu — jak bieg w miejscu w poziomie.",
+    "Utrzymuj równe tempo. Barki, głowa i biodra są nieruchome w pozycji deski; ruszają się tylko nogi.",
+    "Trzymaj biodra NISKO i POZIOMO — nie pozwól im zadrzeć się w górę ani opaść. Jeśli technika się łamie, zwolnij tempo.",
+    "Oddychaj rytmicznie — jeden cykl oddechowy na 2-4 ruchy kolanem.",
+    "Kontynuuj przez zaplanowany czas (zwykle 20-45 sekund) lub liczbę powtórzeń. Zakończ serię gdy łamie się technika, nie gdy palą nogi."
+  ],
+
+  "classification": {
+    "movement_pattern": "conditioning",
+    "force": "static",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors", "anterior_deltoids"],
+    "secondary": ["obliques", "transverse_abdominis", "serratus_anterior", "quadriceps"],
+    "stabilizers": ["pectoralis_major", "triceps_brachii", "erector_spinae", "glutes", "calves"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P8",
+    "hip_flexors": "P9",
+    "anterior_deltoids": "P7",
+    "obliques": "S6",
+    "transverse_abdominis": "S6",
+    "serratus_anterior": "S5",
+    "quadriceps": "S5",
+    "pectoralis_major": "T4",
+    "triceps_brachii": "T4",
+    "erector_spinae": "T3",
+    "glutes": "T3",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "sliders", "push_up_handles"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["plank", "high-plank-shoulder-tap", "dead-bug"],
+    "progression_to": ["bridge-mountain-climber-cross-body", "mountain-climber-with-sliders", "spider-plank", "burpee"],
+    "alternatives": ["bridge-mountain-climber-cross-body", "high-knees", "bear-crawl", "plank-with-knee-to-elbow", "jumping-jacks"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands directly under the shoulders, fingers spread wide for stability",
+      "Shoulders stacked just past the wrists, weight forward",
+      "Body forms one straight line — head, hips, heels aligned",
+      "Brace the core BEFORE the first knee drive",
+      "Squeeze the glutes to lock the pelvis in neutral position"
+    ],
+    "setup_cues_pl": [
+      "Dłonie dokładnie pod barkami, palce szeroko rozłożone dla stabilizacji",
+      "Barki ustaw lekko za nadgarstkami, ciężar do przodu",
+      "Ciało tworzy jedną prostą linię — głowa, biodra, pięty",
+      "Napnij brzuch ZANIM ruszysz pierwsze kolano",
+      "Ściśnij pośladki, aby zablokować miednicę w pozycji neutralnej"
+    ],
+    "execution_cues": [
+      "Drive the knee STRAIGHT toward the chest — not toward the opposite elbow",
+      "Keep the hips LOW and LEVEL — no piking up, no sagging down",
+      "Shoulders stay still and stacked over the wrists — only the legs move",
+      "Match the tempo to your control — speed is a result of form, not the goal",
+      "Place the foot back DOWN with control — don't let it slam"
+    ],
+    "execution_cues_pl": [
+      "Prowadź kolano PROSTO do klatki piersiowej — nie do przeciwnego łokcia",
+      "Trzymaj biodra NISKO i POZIOMO — bez zadzierania w górę, bez opadania",
+      "Barki nieruchome nad nadgarstkami — pracują tylko nogi",
+      "Dopasuj tempo do swojej kontroli — szybkość to wynik techniki, nie cel",
+      "Odstaw stopę W DÓŁ z kontrolą — nie pozwól jej walnąć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips piking up (forming an upside-down V)",
+        "faultPl": "Biodra zadzierają się do góry (tworząc odwrócone V)",
+        "cause": "Weak core failing to anti-extend; the lifter uses the hip flexors to whip the knee forward instead of bracing the trunk",
+        "causePl": "Słaby core nie utrzymuje anty-wyprostu; ćwiczący szarpie kolanem w przód używając zginaczy biodra zamiast napięcia tułowia",
+        "cue": "Imagine a coin on your lower back — keep it from falling. Slow the tempo until you can hold the hip line. Reduce the knee range if needed.",
+        "cuePl": "Wyobraź sobie monetę na dole pleców — nie pozwól jej spaść. Zwolnij tempo aż utrzymasz linię bioder. Skróć zakres ruchu kolana jeśli trzeba."
+      },
+      {
+        "fault": "Lower back sagging (hammock position)",
+        "faultPl": "Opadanie dolnego odcinka pleców (pozycja hamaka)",
+        "cause": "Glutes and transverse abdominis not engaged; pelvis tilts anteriorly under fatigue and the abdomen drops toward the floor",
+        "causePl": "Pośladki i mięsień poprzeczny brzucha nie są napięte; miednica przechyla się do przodu pod wpływem zmęczenia, a brzuch opada w stronę podłogi",
+        "cue": "Squeeze the glutes hard and pull the navel toward the spine. End the set the moment the lower back drops — quality over duration.",
+        "cuePl": "Mocno ściśnij pośladki i wciągnij pępek w stronę kręgosłupa. Zakończ serię w momencie gdy dół pleców opada — jakość ponad czas."
+      },
+      {
+        "fault": "Going too fast and bouncing through the shoulders",
+        "faultPl": "Zbyt szybkie tempo i odbijanie się na barkach",
+        "cause": "Treating it purely as a cardio drill; momentum replaces control, shoulders shrug and weight shifts off the wrists",
+        "causePl": "Traktowanie jak czysto kardio; rozpęd zastępuje kontrolę, barki się unoszą, a ciężar zsuwa się z nadgarstków",
+        "cue": "Push the floor away with straight arms. Long neck, ears away from shoulders. Halve the tempo — rotation in the hips, not bouncing in the chest.",
+        "cuePl": "Odpychaj podłogę wyprostowanymi ramionami. Długa szyja, uszy daleko od barków. Zwolnij tempo o połowę — praca w biodrach, nie odbijanie w klatce."
+      },
+      {
+        "fault": "Foot slamming back to the floor",
+        "faultPl": "Stopa walona z powrotem na podłogę",
+        "cause": "Reliance on momentum during the eccentric (return) phase; the lifter drops the foot instead of placing it",
+        "causePl": "Poleganie na rozpędzie w fazie ekscentrycznej (powrót); ćwiczący upuszcza stopę zamiast ją odkładać",
+        "cue": "Place the foot back — don't drop it. Control both directions. If you can't, slow the tempo until you can.",
+        "cuePl": "Odstaw stopę — nie upuszczaj. Kontroluj oba kierunki. Jeśli nie umiesz, zwolnij tempo aż dasz radę."
+      },
+      {
+        "fault": "Holding the breath",
+        "faultPl": "Wstrzymywanie oddechu",
+        "cause": "High intensity triggers a reflex Valsalva; common in beginners who confuse 'brace' with 'hold breath'",
+        "causePl": "Wysoka intensywność uruchamia odruch Valsalvy; częste u początkujących mylących 'napięcie' z 'wstrzymaniem oddechu'",
+        "cue": "Breathe rhythmically — one cycle per 2-4 knee drives. If you can't speak a short word during the set, you're holding the breath.",
+        "cuePl": "Oddychaj rytmicznie — jeden cykl na 2-4 ruchy kolanem. Jeśli nie umiesz wypowiedzieć krótkiego słowa podczas serii, wstrzymujesz oddech."
+      }
+    ],
+    "breathing": "Breathe rhythmically — typically one breath cycle per 2-4 knee drives. Never hold the breath; that destabilizes the core and spikes blood pressure. Match breath to tempo; if you can't breathe smoothly, you're going too fast. As a conditioning drill, breathing rate naturally rises — that's expected, but never gasping.",
+    "breathingPl": "Oddychaj rytmicznie — zwykle jeden cykl oddechowy na 2-4 ruchy kolanem. Nie wstrzymuj oddechu; to destabilizuje core i podnosi ciśnienie. Dopasuj oddech do tempa; jeśli nie umiesz oddychać płynnie, jesteś za szybko. Jako ćwiczenie kondycyjne naturalnie podnosi częstotliwość oddechu — to normalne, ale nigdy nie powinno być łapania powietrza."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Loaded wrist extension under bodyweight may aggravate strains, tendinopathy, or carpal tunnel syndrome. Perform on fists, on push-up handles, or on forearms (forearm plank with knee drives). Reduce duration.",
+      "modificationPl": "Obciążenie nadgarstków w pozycji wyprostu pod masą ciała może nasilać naciągnięcia, tendinopatie lub zespół cieśni nadgarstka. Wykonuj na pięściach, na uchwytach do pompek lub na przedramionach (deska na przedramionach z podciąganiem kolan). Skróć czas trwania.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "modify",
+      "modification": "Dynamic hip flexion under plank load can aggravate acute lower back flare-ups, especially with poor hip control. Switch to static anti-extension work (dead-bug, bird-dog, plank holds) until pain settles. Avoid if the pain is radicular (radiates down the leg).",
+      "modificationPl": "Dynamiczne zgięcie biodra pod obciążeniem deski może nasilać ostry ból lędźwiowy, zwłaszcza przy słabej kontroli bioder. Przerzuć się na statyczne ćwiczenia anty-wyprostne (dead-bug, bird-dog, deska statyczna) do czasu ustąpienia bólu. Unikaj jeśli ból promieniuje do nogi (rwa kulszowa).",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Sustained closed-chain shoulder loading combined with the bouncing of dynamic knee drives can irritate impingement syndrome. Perform on forearms (forearm plank knee drives) or shorten sets significantly. Stop immediately if shoulder pain appears.",
+      "modificationPl": "Stałe obciążenie barku w łańcuchu zamkniętym połączone z odbijaniem przy dynamicznych ruchach kolanem może drażnić zespół ciasnoty podbarkowej. Wykonuj na przedramionach (deska na przedramionach z podciąganiem kolan) lub znacznie skróć serie. Natychmiast przerwij jeśli pojawi się ból barku.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "modify",
+      "modification": "High-intensity bodyweight conditioning raises heart rate and blood pressure rapidly. If hypertension is uncontrolled, reduce intensity (slow tempo, shorter intervals) and emphasize rhythmic breathing. Avoid Valsalva. Consult a physician before HIIT-style protocols.",
+      "modificationPl": "Wysokointensywne ćwiczenie kondycyjne szybko podnosi tętno i ciśnienie krwi. Przy niekontrolowanym nadciśnieniu zmniejsz intensywność (wolniejsze tempo, krótsze interwały) i kładź nacisk na rytmiczny oddech. Unikaj manewru Valsalvy. Skonsultuj się z lekarzem przed protokołami HIIT.",
+      "alternative": "high-knees"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x20-45 sec | 3x30-50 reps total (alternating) | HIIT 30s on / 30s off",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "mountain-climber.gif",
+    "frames_extracted": [
+      "frames/mountain-climber/frame_0_start.png",
+      "frames/mountain-climber/frame_1_early.png",
+      "frames/mountain-climber/frame_2_mid.png",
+      "frames/mountain-climber/frame_3_late.png",
+      "frames/mountain-climber/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/mountain-climber"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (24 ramki w GIFie). frame_0_start: wysoka deska na wyprostowanych ramionach, dłonie pod barkami, ciało w jednej linii — podświetlone rectus_abdominis i obliques jako baseline napięcia anty-wyprostnego, dodatkowo anterior_deltoids (statyczne obciążenie barków). frame_1_early: PRAWE kolano podciągnięte PROSTO pod klatkę — bez skrętu w poprzek (to KLUCZOWA różnica vs cross-body wariant). frame_2_mid: powrót do plank (przejściowa pozycja). frame_3_late: LEWE kolano podciągnięte prosto pod klatkę — lustrzane odbicie frame_1, ruch w płaszczyźnie strzałkowej. frame_4_end: faded sylwetka pokazuje pełną amplitudę naprzemiennego ruchu. Klasyfikacja: movement_pattern=conditioning (HIIT/cardio drill, nie czysty squat/push/pull), plane=sagittal (ruch w przód-tył, bez rotacji — odróżnia od bridge-mountain-climber-cross-body gdzie plane=transverse), force=static (tułów statyczny, dynamika tylko w nogach), laterality=alternating. Hip flexors P9: zginacze biodra są dominującą siłą napędową przy szybkim, naprzemiennym podciąganiu kolan — to nawet bardziej obciążone niż rectus_abdominis. Rectus abdominis P8: pracuje izometrycznie (anti-extension plank) + dynamicznie (każde podciągnięcie kolana to mini-crunch). Anterior deltoids P7: znaczne obciążenie statyczne przy długim trzymaniu wysokiej deski + tendencja do mikro-ruchów barków przy szybkim tempie. Category=cardio (zgodnie ze sourcem jahel + faktyczna funkcja w treningu — to HIIT/conditioning drill, nie hipertroficzny core). Difficulty 4: bardziej wymagające niż klasyczny plank (3) bo dochodzi dynamika i kondycja, ale łatwiejsze niż cross-body wariant (5) bo brak komponentu rotacyjnego. Polskie nazewnictwo: 'wspinaczka w planku' / 'mountain climber' / 'alpinista' — wszystkie używane wymiennie w polskim fitness; 'wspinaczka w planku' jako oficjalna nazwa PL bo opisowa i jednoznaczna. Aliases obejmują wszystkie warianty (mountain climbers liczba mnoga, running plank, naprzemienne podciąganie kolan). Polskie pola napisane od zera (anty-wyprost, deska, biodra poziomo, brzuch prosty, biodrowo-zgięciowy, faza ekscentryczna) — brak tłumaczenia maszynowego. Calories 8.5/kg/h: wyższe niż cross-body (8.0) bo brak fazy hamowania rotacyjnego = szybsze tempo, większy wydatek energetyczny.",
+
+  "tags": ["core", "cardio", "conditioning", "hiit", "bodyweight", "no_equipment", "high_intensity", "alternating", "plank_variation", "compound", "beginner_friendly", "warmup", "finisher", "full_body"]
+}

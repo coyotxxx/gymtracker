@@ -1,0 +1,208 @@
+{
+  "id": "donkey-calf-raise",
+  "name": "Donkey Calf Raise",
+  "namePl": "Wspięcia na palce w pochyleniu (donkey calf raise)",
+  "aliases": ["bent over calf raise", "donkey calves", "Arnold donkey raise"],
+  "aliasesPl": ["wspięcia na łydki w pochyleniu", "ośle wspięcia", "wspięcia w opadzie tułowia", "donkey raise"],
+
+  "description": "Classic bodyweight (or partner/machine loaded) calf isolation popularized by Arnold Schwarzenegger. The lifter hinges forward at the hips to roughly 90 degrees and supports the upper body on a bench while the balls of the feet rest on an elevated block. With the knees kept straight, the hips-flexed posture pre-stretches the gastrocnemius across both the knee and ankle joints, putting it in an extremely favorable length-tension position. In its original form a partner sits on the lifter's hips/lower back to add load; modern gyms use a dedicated donkey calf raise machine with a hip pad. Even unloaded, the deep stretch and biomechanical leverage make this one of the most effective gastrocnemius builders ever designed.",
+  "descriptionPl": "Klasyczne izolowane ćwiczenie na łydki, spopularyzowane przez Arnolda Schwarzeneggera. Trenujący wykonuje skłon w biodrach do około 90 stopni i podpiera górną część ciała o ławkę, a śródstopia opiera na podwyższonym klocku. Przy prostych kolanach pozycja zgiętych bioder rozciąga mięsień brzuchaty łydki jednocześnie w stawie kolanowym i skokowym, ustawiając go w bardzo korzystnej długości roboczej. W oryginalnej wersji partner siadał ćwiczącemu na biodrach/lędźwiach jako dodatkowe obciążenie; w nowoczesnych siłowniach stosuje się dedykowaną maszynę donkey z poduchą biodrową. Nawet bez obciążenia głęboki rozciąg i dźwignia biomechaniczna sprawiają, że jest to jedno z najskuteczniejszych ćwiczeń budujących brzuchaty łydki w historii kulturystyki.",
+
+  "instructions": [
+    "Place an elevated block or sturdy step (5-10 cm high) about half a meter in front of a flat bench or stable padded surface.",
+    "Stand on the block with the balls of both feet, heels hanging free, feet hip-width apart, toes pointed straight forward.",
+    "Hinge forward at the hips until the torso is roughly parallel to the floor (~90 degrees of hip flexion). Keep knees straight but not locked.",
+    "Place forearms or hands flat on the bench in front of you to support the upper body. Spine neutral, head in line with torso.",
+    "If using a partner: have them sit centered on your hips/lower back (above the sacrum, not on the lumbar spine). If using a machine: position the hip pad across the hips and brace.",
+    "Lower the heels slowly under control, allowing them to drop well below the level of the block into a deep gastrocnemius stretch. This is the starting position.",
+    "Drive through the balls of the feet and push the heels up as high as possible, lifting hips and load with calves only. Exhale on the way up.",
+    "Squeeze the calves hard at the top for a 1-2 second peak contraction, keeping knees straight throughout.",
+    "Lower the heels under control over 2-3 seconds back into the deep stretch. Inhale during the descent.",
+    "Do not bounce out of the bottom or bend the knees to generate momentum — the gastrocnemius must do the work."
+  ],
+  "instructionsPl": [
+    "Ustaw podwyższony klocek lub stabilny stopień (wysokość 5-10 cm) około pół metra przed ławką płaską lub stabilną podpartą powierzchnią.",
+    "Stań śródstopiami na klocku, pięty zwisają swobodnie, stopy na szerokość bioder, palce skierowane prosto do przodu.",
+    "Wykonaj skłon w biodrach aż tułów znajdzie się mniej więcej równolegle do podłoża (~90 stopni zgięcia w biodrach). Kolana proste, ale nie zablokowane.",
+    "Połóż przedramiona lub dłonie płasko na ławce przed sobą, aby podeprzeć górną część ciała. Kręgosłup neutralny, głowa w linii z tułowiem.",
+    "Jeśli ćwiczysz z partnerem: poproś go, by usiadł centralnie na Twoich biodrach/dolnym odcinku pleców (nad kością krzyżową, nie na lędźwiowym kręgosłupie). Jeśli używasz maszyny: ustaw poduchę biodrową na biodrach i napnij brzuch.",
+    "Powoli opuść pięty w sposób kontrolowany, pozwól im opaść znacznie poniżej poziomu klocka w głęboki rozciąg brzuchatego łydki. To pozycja wyjściowa.",
+    "Pchnij przez śródstopia i wypchnij pięty w górę tak wysoko, jak to możliwe, unosząc biodra i obciążenie wyłącznie pracą łydek. Wydech podczas unoszenia.",
+    "Mocno spinaj łydki w górnej pozycji przez 1-2 sekundy szczytowego skurczu, kolana cały czas proste.",
+    "Opuszczaj pięty w sposób kontrolowany przez 2-3 sekundy z powrotem w głęboki rozciąg. Wdech podczas opuszczania.",
+    "Nie odbijaj się z dołu i nie zginaj kolan dla generowania rozmachu — brzuchaty łydki musi wykonać całą pracę."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius"],
+    "secondary": ["soleus"],
+    "stabilizers": ["tibialis_posterior", "peroneals", "foot_intrinsics", "hamstrings", "erector_spinae", "core"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P10",
+    "soleus": "S5",
+    "tibialis_posterior": "T3",
+    "peroneals": "T3",
+    "foot_intrinsics": "T2",
+    "hamstrings": "T2",
+    "erector_spinae": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "flat_bench", "elevated_block"],
+    "optional": ["partner", "donkey_calf_raise_machine", "weight_belt", "weighted_vest", "calf_block"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-standing-calf-raise", "barbell-standing-calf-raise"],
+    "progression_to": ["machine-donkey-calf-raise", "weighted-donkey-calf-raise", "single-leg-donkey-calf-raise"],
+    "alternatives": ["barbell-standing-calf-raise", "bodyweight-standing-calf-raise", "machine-standing-calf-raise", "smith-machine-standing-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Balls of feet on 5-10 cm block, heels free to drop below",
+      "Hinge at hips to ~90 degrees, torso parallel to floor",
+      "Forearms or hands flat on bench, spine neutral",
+      "Knees straight but not locked throughout",
+      "Partner sits on hips/sacrum or machine pad on hips — never on lumbar spine"
+    ],
+    "setup_cues_pl": [
+      "Śródstopia na klocku 5-10 cm, pięty swobodne do opadania poniżej",
+      "Skłon w biodrach do ~90 stopni, tułów równolegle do podłogi",
+      "Przedramiona lub dłonie płasko na ławce, kręgosłup neutralny",
+      "Kolana proste, ale nie zablokowane przez cały ruch",
+      "Partner siada na biodrach/kości krzyżowej, poducha maszyny na biodrach — nigdy na lędźwiach"
+    ],
+    "execution_cues": [
+      "Drive through the balls of the feet, push heels as high as possible",
+      "Keep knees locked straight — bending knees recruits soleus and steals tension",
+      "Squeeze hard at the top 1-2 seconds, feel the gastrocnemius peak",
+      "Lower slowly into deep stretch, let heels drop well below the block",
+      "No bouncing, no momentum from hips — calves do 100% of the work"
+    ],
+    "execution_cues_pl": [
+      "Pchaj przez śródstopia, wypychaj pięty tak wysoko jak to możliwe",
+      "Trzymaj kolana wyprostowane — zgięcie kolan przenosi pracę na płaszczkowaty i kradnie napięcie z brzuchatego",
+      "Mocno spinaj na szczycie przez 1-2 sekundy, poczuj szczytową pracę brzuchatego",
+      "Opuszczaj powoli w głęboki rozciąg, pozwól piętom opaść znacznie poniżej klocka",
+      "Bez odbijania i bez rozmachu z bioder — łydki wykonują 100% pracy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knees during the rep",
+        "faultPl": "Zginanie kolan w trakcie powtórzenia",
+        "cause": "Trying to lift more load by recruiting the soleus, or unconscious knee flex under partner/machine weight",
+        "causePl": "Próba uniesienia większego obciążenia przez angażowanie płaszczkowatego, lub nieświadome zginanie kolan pod ciężarem partnera/maszyny",
+        "cue": "Lock the knees straight and keep them rigid the entire set — donkey raises are a gastrocnemius exercise, not a soleus one.",
+        "cuePl": "Wyprostuj kolana i utrzymuj je sztywno przez całą serię — donkey raise to ćwiczenie na brzuchaty łydki, nie na płaszczkowaty."
+      },
+      {
+        "fault": "Partial range of motion (no deep stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak głębokiego rozciągu na dole)",
+        "cause": "Feet on the floor instead of an elevated block, or stopping the descent short under load",
+        "causePl": "Stopy na podłodze zamiast na podwyższonym klocku, lub zatrzymywanie ruchu na dole pod obciążeniem",
+        "cue": "Always use a 5-10 cm block. Drop heels as low as possible — the gastrocnemius loves the stretched position.",
+        "cuePl": "Zawsze używaj klocka 5-10 cm. Opuszczaj pięty maksymalnie nisko — brzuchaty łydki uwielbia pozycję rozciągniętą."
+      },
+      {
+        "fault": "Rounding the lower back / loading the lumbar spine instead of the hips",
+        "faultPl": "Zaokrąglanie lędźwi / obciążanie odcinka lędźwiowego zamiast bioder",
+        "cause": "Partner sitting too high on the lower back, weak core brace, or poor hip hinge",
+        "causePl": "Partner siedzący zbyt wysoko na lędźwiach, słaby gorset mięśniowy, lub zły skłon w biodrach",
+        "cue": "Hinge from the hips with a flat back. Partner/pad must sit on the hips above the sacrum — never on the lumbar spine.",
+        "cuePl": "Skłaniaj się w biodrach z płaskimi plecami. Partner/poducha musi siedzieć na biodrach nad kością krzyżową — nigdy na lędźwiowym kręgosłupie."
+      },
+      {
+        "fault": "Bouncing reps from the stretched position",
+        "faultPl": "Odbijane powtórzenia z pozycji rozciągniętej",
+        "cause": "Going too heavy, chasing volume, using Achilles tendon rebound instead of muscle contraction",
+        "causePl": "Zbyt duże obciążenie, gonienie za objętością, wykorzystywanie odbicia ścięgna Achillesa zamiast skurczu mięśniowego",
+        "cue": "Pause 1 second in the deep stretch. If you cannot pause, reduce load — bouncing trains tendons, not calves.",
+        "cuePl": "Zatrzymaj się 1 sekundę w głębokim rozciągu. Jeśli nie potrafisz wytrzymać pauzy, zmniejsz obciążenie — odbijanie trenuje ścięgna, nie łydki."
+      },
+      {
+        "fault": "Skipping the top squeeze",
+        "faultPl": "Pomijanie szczytowego skurczu",
+        "cause": "Rushing through reps, treating donkey raises as a warm-up or pump finisher",
+        "causePl": "Pośpieszne wykonywanie powtórzeń, traktowanie donkey raise jako rozgrzewki lub szybkiej pompy",
+        "cue": "Hold the top contraction 1-2 seconds on every rep. Calves grow on time under tension, not on rep count.",
+        "cuePl": "Utrzymaj szczytowy skurcz 1-2 sekundy w każdym powtórzeniu. Łydki rosną od czasu pod napięciem, nie od liczby powtórzeń."
+      }
+    ],
+    "breathing": "Exhale during the concentric (driving heels up). Inhale during the eccentric (lowering into the deep stretch). Maintain a firm core brace throughout to protect the lumbar spine while bent over.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wypychanie pięt w górę). Wdech w fazie ekscentrycznej (opuszczanie w głęboki rozciąg). Utrzymuj solidne napięcie brzucha przez cały ruch, aby chronić odcinek lędźwiowy w pozycji pochylonej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation_or_acute_low_back_pain",
+      "severity": "avoid",
+      "modification": "The hip-flexed position with axial load (partner/pad on hips) increases compressive and shear stress on the lumbar spine. Avoid entirely during acute episodes. Once asymptomatic, replace with standing or seated calf raise variants that load the spine vertically.",
+      "modificationPl": "Pozycja zgiętych bioder z obciążeniem osiowym (partner/poducha na biodrach) zwiększa kompresję i naprężenia ścinające w odcinku lędźwiowym. Unikaj całkowicie podczas ostrych epizodów. Po ustąpieniu objawów zastąp wersjami stojącymi lub siedzącymi, które obciążają kręgosłup pionowo.",
+      "alternative": "machine-standing-calf-raise"
+    },
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce ROM (do not drop heels below the block) and use bodyweight only during the irritable phase. Emphasize slow controlled eccentric tempo without bouncing. Discontinue if pain exceeds 3/10 during or after sets.",
+      "modificationPl": "Ogranicz zakres ruchu (nie opuszczaj pięt poniżej poziomu klocka) i wykonuj wyłącznie z masą własnego ciała w fazie podrażnienia. Postaw na powolne kontrolowane tempo ekscentryczne bez odbijania. Przerwij jeśli ból przekracza 3/10 w trakcie lub po seriach.",
+      "alternative": "barbell-seated-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not perform under load during the acute phase. The deep stretch of the gastrocnemius is the most provocative position for a recent calf injury. Return only when pain-free with bodyweight standing calf raises first.",
+      "modificationPl": "Nie wykonuj pod obciążeniem w fazie ostrej. Głęboki rozciąg brzuchatego łydki to najbardziej prowokująca pozycja przy świeżym urazie łydki. Wracaj dopiero gdy ból ustąpi, zaczynając od wspięć w staniu z masą własnego ciała.",
+      "alternative": "bodyweight-standing-calf-raise"
+    },
+    {
+      "condition": "hamstring_injury_or_proximal_tendinopathy",
+      "severity": "modify",
+      "modification": "The 90-degree hip-flexed position with knees straight places the hamstrings under continuous passive stretch. Reduce hip flexion (less torso lean) or switch to a seated/standing calf raise until tendinopathy resolves.",
+      "modificationPl": "Pozycja 90 stopni zgięcia w biodrach przy prostych kolanach utrzymuje mięśnie kulszowo-goleniowe pod ciągłym biernym rozciągiem. Zmniejsz głębokość skłonu (mniejsze pochylenie tułowia) lub przejdź na wspięcia siedząc/stojąc do ustąpienia tendinopatii.",
+      "alternative": "barbell-seated-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x12-20 (hypertrophy, bodyweight or moderate partner load) | 4-5x8-12 (heavy machine donkey, gastrocnemius emphasis) | 2-3x20-30 (endurance/Arnold-style high rep finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "donkey-calf-raise.gif",
+    "frames_extracted": [
+      "frames/donkey-calf-raise/frame_0_start.png",
+      "frames/donkey-calf-raise/frame_1_early.png",
+      "frames/donkey-calf-raise/frame_2_mid.png",
+      "frames/donkey-calf-raise/frame_3_late.png",
+      "frames/donkey-calf-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/donkey-calf-raise",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model stoi pochylony do ~90 stopni w biodrach, przedramiona/dłonie podpierają tułów na ławce płaskiej, śródstopia oparte na niskim klocku, pięty opuszczone w głęboki rozciąg, kolana proste, łydki podświetlone na czerwono — pozycja wyjściowa. Frame 2: pięty maksymalnie uniesione, łydki w pełnym skurczu, brzuchaty łydki w szczycie pracy, kolana cały czas proste, tułów stabilnie podparty — szczyt ruchu. Frame 4: powrót w pozycję rozciągniętą. GIF jahel pokazuje wariant bez partnera i bez maszyny (sama masa ciała), ale ćwiczenie jest jednoznacznie zidentyfikowane jako Donkey Calf Raise: kombinacja skłonu w biodrach + prostych kolan + wspięcia na palce to definicyjna mechanika tego ruchu. W opisie/equipment uwzględniam wszystkie 3 warianty (bodyweight, partner, maszyna) i klasyfikuję ćwiczenie wg klasycznej Arnold/bodybuilding tradycji. Klasyfikacja zgodna z biomechaniką: pre-stretch gastrocnemius przez zgięte biodra + proste kolano = optymalna długość-napięcie dla brzuchatego (P10 gastrocnemius, S5 soleus — wciąż wkład wspomagający w plantarflexion). Difficulty=4 ze względu na koordynację skłonu, obciążenie partnera, ryzyko lędźwi. Wszystkie pola PL napisane od zera, dopasowane do specyfiki ćwiczenia (skłon w biodrach, kąt 90°, partner/maszyna). Yuhonas i glowupp nie mają tego ćwiczenia.",
+
+  "tags": ["bodybuilding", "calves", "gastrocnemius", "isolation", "bodyweight", "lower_body", "lower_legs", "hip_hinged", "arnold_classic"]
+}

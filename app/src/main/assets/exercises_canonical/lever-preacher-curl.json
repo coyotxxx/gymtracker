@@ -1,0 +1,193 @@
+{
+  "id": "lever-preacher-curl",
+  "name": "Lever Preacher Curl",
+  "namePl": "Preacher curl w maszynie",
+  "aliases": ["machine preacher curl", "plate-loaded preacher curl", "selectorized preacher curl", "lever biceps curl"],
+  "aliasesPl": ["uginanie ramion na modlitewniku w maszynie", "preacher curl maszynowy", "modlitewnik w maszynie dźwigniowej", "uginanie bicepsów na maszynie modlitewnika"],
+
+  "description": "Plate-loaded (lever / selectorized) preacher curl machine that fixes the upper arms on an angled pad and guides the resistance through a cam-driven arc. The bench and arm pad eliminate cheating from the shoulders, hips, and lower back, while the machine path keeps tension on the biceps through the entire range. Excellent for hypertrophy, post-rehab work, and finishers — beginners can build tension safely without balancing free weights.",
+  "descriptionPl": "Maszyna dźwigniowa (plate-loaded lub na stos) typu modlitewnik, w której ramiona ponad łokciem są ustabilizowane na ukośnej poduszce, a opór prowadzony jest po krzywce po określonym łuku. Ławka i podpora ramion eliminują oszukiwanie barkami, biodrami i odcinkiem lędźwiowym, a tor maszyny utrzymuje napięcie na bicepsie przez cały zakres ruchu. Doskonałe ćwiczenie do hipertrofii, pracy po rehabilitacji oraz jako wykończenie treningu — początkujący mogą budować napięcie bez konieczności balansowania wolnego ciężaru.",
+
+  "instructions": [
+    "Adjust the seat height so that your armpits sit on top of the arm pad — upper arms fully supported, shoulders relaxed downward.",
+    "Sit down with chest pressed against the pad, feet flat on the floor for stability.",
+    "Grip the handles with a supinated (palms up) grip. Wrists stay neutral, in line with the forearms.",
+    "Start with arms slightly bent — never let the machine yank you into full lockout under load.",
+    "Curl the handles toward your shoulders by flexing only at the elbows. Exhale on the way up.",
+    "At the top, squeeze the biceps hard for a brief pause without letting the elbows lift off the pad.",
+    "Lower under control over 2-3 seconds back to the start position. Inhale on the descent.",
+    "Maintain contact between the back of your upper arms and the pad on every rep. The torso and shoulders stay still."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska tak, aby pachy spoczywały na górnej krawędzi podpory ramion — ramiona ponad łokciem w pełni oparte, barki rozluźnione w dół.",
+    "Usiądź z klatką piersiową dociśniętą do poduszki, stopy płasko na podłodze dla stabilizacji.",
+    "Złap rączki nachwytem dolnym (dłonie skierowane w górę). Nadgarstki neutralne, w linii z przedramionami.",
+    "Zacznij z ramionami lekko ugiętymi — nigdy nie pozwól maszynie wyrwać Cię w pełny wyprost pod obciążeniem.",
+    "Uginaj rączki w stronę barków zginając wyłącznie łokcie. Wydech w fazie koncentrycznej.",
+    "W szczycie mocno spinaj bicepsy z krótką pauzą, bez odrywania łokci od poduszki.",
+    "Opuszczaj kontrolowanie przez 2-3 sekundy do pozycji wyjściowej. Wdech podczas opuszczania.",
+    "Utrzymuj kontakt tylnej części ramion z poduszką przy każdym powtórzeniu. Tułów i barki pozostają nieruchome."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S7",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T3",
+    "core": "T1",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["preacher_curl_machine"],
+    "optional": ["weight_plates", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["preacher-curl", "ez-bar-preacher-curl", "spider-curl", "barbell-curl"],
+    "alternatives": ["preacher-curl", "ez-bar-preacher-curl", "cable-preacher-curl", "spider-curl", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat high enough so armpits rest on top of the pad",
+      "Chest pressed against the pad — no gap",
+      "Feet flat on the floor, knees roughly 90°",
+      "Supinated grip, wrists neutral",
+      "Start with a slight bend in the elbows, never fully locked out under load"
+    ],
+    "setup_cues_pl": [
+      "Siedzisko ustawione tak wysoko, aby pachy spoczywały na górze poduszki",
+      "Klatka piersiowa dociśnięta do poduszki — bez prześwitu",
+      "Stopy płasko na podłodze, kolana w okolicach 90°",
+      "Chwyt podchwytem, nadgarstki neutralne",
+      "Start z lekko ugiętymi łokciami, nigdy w pełnym wyproście pod obciążeniem"
+    ],
+    "execution_cues": [
+      "Only the forearms move — keep upper arms glued to the pad",
+      "Squeeze the biceps hard at the top of every rep",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Keep wrists straight, in line with the forearms",
+      "Stop just short of full lockout to keep tension on the biceps"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyklejone do poduszki",
+      "Mocno spinaj biceps w szczycie każdego powtórzenia",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Nadgarstki proste, w linii z przedramieniem",
+      "Zatrzymaj się tuż przed pełnym wyprostem aby utrzymać napięcie na bicepsie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows lifting off the pad at the top",
+        "faultPl": "Łokcie odrywają się od poduszki w górnej pozycji",
+        "cause": "Trying to curl higher than the machine's natural top position, recruiting anterior delts",
+        "causePl": "Próba uniesienia rączek wyżej niż naturalna szczytowa pozycja maszyny, włączanie przednich aktonów barków",
+        "cue": "Stop the curl when forearms reach vertical. Keep both elbows pressed into the pad the entire set.",
+        "cuePl": "Zakończ uginanie gdy przedramiona dojdą do pionu. Przez całą serię dociskaj oba łokcie do poduszki."
+      },
+      {
+        "fault": "Slamming into full elbow extension at the bottom",
+        "faultPl": "Rzucanie ramion w pełny wyprost w dolnej pozycji",
+        "cause": "Letting the weight stack pull the arms straight when fatigued — high risk of biceps tendon strain",
+        "causePl": "Pozwalanie ciężarowi wyrwać ramiona w prosty wyprost przy zmęczeniu — wysokie ryzyko naciągnięcia ścięgna bicepsa",
+        "cue": "Always keep a slight bend at the bottom. Lower under control, never let the machine drop your arms.",
+        "cuePl": "Zawsze utrzymuj lekkie ugięcie na dole. Opuszczaj kontrolowanie, nigdy nie pozwól maszynie wyrwać Ci ramion."
+      },
+      {
+        "fault": "Standing up or rising off the seat to push the weight",
+        "faultPl": "Wstawanie z siedziska lub odrywanie się aby pomóc unieść ciężar",
+        "cause": "Load too heavy, ego lifting, or pushing past technical failure",
+        "causePl": "Zbyt duży ciężar, ego, lub forsowanie powtórzeń po technicznym wyczerpaniu",
+        "cue": "Sit firmly throughout. If you need to stand up to lift it, reduce the weight by 20%.",
+        "cuePl": "Siedź pewnie przez całą serię. Jeśli musisz wstać żeby unieść ciężar, zmniejsz obciążenie o 20%."
+      },
+      {
+        "fault": "Wrist hyperextension under load",
+        "faultPl": "Przeprostowanie nadgarstków pod obciążeniem",
+        "cause": "Weak wrist flexors or grip too far back on the handles",
+        "causePl": "Słabe zginacze nadgarstka lub chwyt zbyt głęboko na rączkach",
+        "cue": "Grip the handles fully in the palm. Keep wrists straight — imagine driving knuckles toward the ceiling.",
+        "cuePl": "Łap rączki głęboko w dłoń. Trzymaj nadgarstki proste — wyobraź sobie, że kierujesz kostkami w sufit."
+      },
+      {
+        "fault": "Partial range of motion — cutting off the bottom",
+        "faultPl": "Niepełny zakres ruchu — skracanie fazy dolnej",
+        "cause": "Ego lifting or weakness in the stretched position where leverage is worst",
+        "causePl": "Ego lub słabość w pozycji rozciągniętej, gdzie dźwignia jest najgorsza",
+        "cue": "Lower until elbows are nearly extended (small bend retained). The stretched portion builds the biceps.",
+        "cuePl": "Opuszczaj aż łokcie będą niemal wyprostowane (z zachowanym lekkim ugięciem). Pozycja rozciągnięta najlepiej buduje biceps."
+      }
+    ],
+    "breathing": "Exhale on the curl up. Inhale on the controlled lowering. Maintain a light brace through the torso to keep the chest pressed against the pad.",
+    "breathingPl": "Wydech podczas uginania. Wdech podczas kontrolowanego opuszczania. Utrzymuj lekkie napięcie tułowia aby klatka piersiowa była dociśnięta do poduszki."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The stretched bottom position of preacher work puts maximum stress on the distal biceps tendon. Reduce range (avoid full extension), use higher reps (12-15) with lighter loads, avoid slow eccentrics until pain-free.",
+      "modificationPl": "Rozciągnięta pozycja dolna na modlitewniku obciąża maksymalnie ścięgno dystalne bicepsa. Skróć zakres (unikaj pełnego wyprostu), używaj większej liczby powtórzeń (12-15) z lżejszym ciężarem, unikaj wolnych faz negatywnych do ustąpienia bólu.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "elbow_hyperextension_or_lax_elbow",
+      "severity": "caution",
+      "modification": "Plate-loaded machines can yank the elbow into hyperextension if you let go in the bottom. Never relax at the bottom — keep a slight bend and full muscular control throughout.",
+      "modificationPl": "Maszyny dźwigniowe potrafią wyrwać łokieć w przeprost jeśli zwolnisz napięcie na dole. Nigdy nie rozluźniaj się w dolnej pozycji — utrzymuj lekkie ugięcie i pełną kontrolę mięśniową przez cały ruch.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Fixed handles force a specific wrist angle. If the machine's handle angle aggravates the wrist, switch to a machine with angled/EZ-style handles or use dumbbells where supination is free.",
+      "modificationPl": "Sztywne rączki wymuszają konkretny kąt nadgarstka. Jeśli kąt rączki maszyny drażni nadgarstek, użyj maszyny z kątowymi rączkami (typu EZ) lub hantli, gdzie supinacja jest swobodna.",
+      "alternative": "dumbbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x10-15 (pump/finisher) | 4x6-8 (strength, controlled tempo)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/lever-preacher-curl/frame_0_start.png",
+      "frames/lever-preacher-curl/frame_1_early.png",
+      "frames/lever-preacher-curl/frame_2_mid.png",
+      "frames/lever-preacher-curl/frame_3_late.png",
+      "frames/lever-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/lever-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi na maszynie modlitewnikowej, oba ramiona ponad łokciem oparte na ukośnej poduszce, ręce w pełnym wyproście trzymają rączki w podchwycie, plate-loaded mechanizm z krzywką widoczny po prawej stronie. Frame 2: pełny skurcz koncentryczny, rączki uniesione na wysokość barków, biceps maksymalnie skurczony i wyraźnie podświetlony na czerwono, łokcie pozostają na poduszce. Frame 4: powrót do pozycji wyprostowanej (start), z widocznym 'ghostem' fazy szczytowej. Plecy stabilne przez cały ruch, brak kompensacji barkami/biodrami — maszyna eliminuje oszukiwanie. Zaznaczone na czerwono dwa mięśnie: biceps brachii (silniej) oraz brachialis. Klasyczne plate-loaded preacher curl machine z fixed path. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "machine", "beginner_friendly", "upper_body", "preacher"]
+}

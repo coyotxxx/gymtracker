@@ -1,0 +1,205 @@
+{
+  "id": "smith-reverse-grip-bent-over-row",
+  "name": "Smith Reverse-Grip Bent-Over Row",
+  "namePl": "Wiosłowanie w opadzie chwytem podchwytem w maszynie Smitha",
+  "aliases": ["smith machine reverse grip row", "smith underhand bent over row", "smith yates row", "underhand smith row", "supinated smith row"],
+  "aliasesPl": ["wiosłowanie podchwytem w smithu", "wiosłowanie w opadzie podchwytem na maszynie Smitha", "smith yates row", "wiosłowanie Yatesa w smithu", "wiosłowanie supinacyjne w smithu"],
+
+  "description": "Horizontal pulling exercise performed in a Smith machine with a supinated (underhand) grip. You hinge the torso forward to roughly 30-45 degrees, hold the fixed bar with palms facing forward, and pull it to the lower abdomen along the machine's locked vertical path. The supinated grip externally rotates the shoulder, naturally tucks the elbows close to the torso, and shifts emphasis to the lower portion of the latissimus dorsi while bringing the biceps in as a strong synergist — the classic Dorian Yates pattern. Because the Smith fixes the bar path, the lower back has to stabilize less torso sway and load-shifting than in a free-bar version, making this variant a useful regression for lifters with chronic lower-back sensitivity and a useful overload tool for advanced lifters who want lat focus without lockout-path drift.",
+  "descriptionPl": "Ćwiczenie ciągowe w płaszczyźnie poziomej wykonywane w maszynie Smitha chwytem podchwytem (dłonie skierowane do przodu). Pochylasz tułów do około 30-45 stopni w przód, trzymasz unieruchomiony gryf supinowanymi dłońmi i przyciągasz go do dolnej części brzucha po stałej pionowej ścieżce maszyny. Chwyt podchwytem rotuje zewnętrznie barki, naturalnie chowa łokcie blisko tułowia i przesuwa nacisk na dolną część najszerszego grzbietu, dokładając mocno dwugłowy ramienia jako synergistę — klasyczny wzorzec Doriana Yatesa. Ponieważ Smith fiksuje ścieżkę gryfu, dolny odcinek pleców mniej stabilizuje wahania tułowia i przesuwanie się obciążenia niż w wersji z wolną sztangą, dlatego ten wariant jest dobrą regresją dla osób z przewlekłą wrażliwością lędźwiowego i jednocześnie narzędziem przeciążeniowym dla zaawansowanych, którzy chcą skupienia na najszerszych bez dryfu ścieżki.",
+
+  "instructions": [
+    "Set the Smith bar height to about mid-shin / just below the knee. Load plates evenly.",
+    "Stand with feet shoulder-width apart, mid-foot directly under the bar. Grip the bar with a supinated (underhand) grip, slightly narrower than shoulder width — wrists relaxed, palms facing forward/up.",
+    "Unlock the bar by rotating it. Stand up to the finish position — this is your anchor.",
+    "Hinge at the hips, push glutes back, knees soft. Torso angle 30-45 degrees to the floor. Spine neutral, chest proud, head in line. Bar hovers just above the rack pins.",
+    "Brace the core, set the lats by pulling the bar slightly toward you without bending the elbows.",
+    "Pull the bar straight up along the Smith track to the lower abdomen / top of the hips. Elbows travel back along the sides of the body — drive them past the line of the torso. Squeeze the lower lats at the top.",
+    "Lower the bar under control along the same fixed path until arms are fully extended. Keep the torso angle locked.",
+    "Reset between reps or maintain tension. At the end of the set, return to standing and rotate the bar back into the hooks before letting go."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość gryfu w maszynie Smitha na około środek goleni / tuż pod kolanem. Załaduj talerze równo z obu stron.",
+    "Stań stopami na szerokość barków, środek stopy bezpośrednio pod gryfem. Chwyć gryf podchwytem (dłonie skierowane w górę/do przodu), nieco węziej niż barki — nadgarstki rozluźnione.",
+    "Odblokuj gryf obrotem nadgarstków. Wyprostuj się do pozycji stojącej — to jest twój punkt referencyjny.",
+    "Zegnij się w biodrach, wypchnij pośladki do tyłu, kolana lekko ugięte. Kąt tułowia 30-45 stopni do podłoża. Kręgosłup neutralny, klatka wysunięta, głowa w linii. Gryf wisi tuż nad podpórkami.",
+    "Napnij brzuch, aktywuj najszersze ściągając gryf lekko ku ciału bez zginania łokci.",
+    "Pociągnij gryf pionowo po torze Smitha do dolnej części brzucha / góry bioder. Łokcie wędrują w tył wzdłuż boków tułowia — przeprowadź je za linię tułowia. Ściśnij dolną część najszerszych na szczycie.",
+    "Opuść gryf w pełnej kontroli tą samą stałą trajektorią aż do pełnego wyprostu ramion. Trzymaj zablokowany kąt tułowia.",
+    "Resetuj się między powtórzeniami lub utrzymuj napięcie. Pod koniec serii wyprostuj się i zablokuj gryf w hakach obrotem nadgarstków zanim go puścisz."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii", "rhomboids"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P8",
+    "rhomboids": "P7",
+    "trapezius_middle_lower": "S7",
+    "posterior_deltoids": "S6",
+    "brachialis": "S7",
+    "erector_spinae": "S6",
+    "forearms": "S7",
+    "core": "S5",
+    "hamstrings": "T4",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["lifting_straps", "chalk", "lifting_belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["seated-cable-row", "chest-supported-row", "dumbbell-bent-over-row", "romanian-deadlift"],
+    "progression_to": ["barbell-bent-over-row", "yates-row", "pendlay-row", "t-bar-row"],
+    "alternatives": ["barbell-reverse-grip-bent-over-row", "yates-row", "smith-bent-over-row", "chest-supported-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar set to mid-shin / just below knee height",
+      "Feet shoulder-width, mid-foot under the bar",
+      "Supinated grip (palms up), slightly narrower than shoulders",
+      "Hinge hips back, soft knees, torso 30-45 degrees",
+      "Neutral spine, chest proud, lats pre-tensioned"
+    ],
+    "setup_cues_pl": [
+      "Gryf ustawiony na wysokości środka goleni / tuż pod kolanami",
+      "Stopy na szerokość barków, środek stopy pod gryfem",
+      "Chwyt podchwytem (dłonie w górę), nieco węziej niż barki",
+      "Wypchnij biodra w tył, kolana lekko ugięte, tułów 30-45 stopni",
+      "Neutralny kręgosłup, klatka wysunięta, najszersze napięte przed startem"
+    ],
+    "execution_cues": [
+      "Pull with the elbows along the body — drive them straight back, not flared out",
+      "Bar to LOWER abdomen / top of hips — let elbows go behind the line of the torso",
+      "Feel the LOWER lats — this grip targets the bottom of the wing, not upper back",
+      "Squeeze biceps and lats together at the top — 1 sec hold",
+      "Lock the torso angle — the Smith fixes the bar, you fix the body"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciami wzdłuż tułowia — prowadź je prosto w tył, nie na boki",
+      "Gryf do DOLNEJ części brzucha / góry bioder — łokcie mają minąć linię tułowia",
+      "Czuj DOLNE najszersze — ten chwyt celuje w spód skrzydła, nie górne plecy",
+      "Ściśnij biceps i najszersze razem na szczycie — przytrzymaj 1 sek.",
+      "Zablokuj kąt tułowia — Smith fiksuje gryf, ty fiksujesz ciało"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back (lumbar flexion under load)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy (zgięcie pod obciążeniem)",
+        "cause": "Weak erectors, poor hip hinge pattern, load too heavy, or letting fatigue collapse posture mid-set",
+        "causePl": "Słabe prostowniki, słaby wzorzec hip hinge, zbyt duży ciężar lub utrata postawy w trakcie serii ze zmęczenia",
+        "cue": "Reset. Lighter weight. Brace before every rep, chest proud. Smith fixing the bar does NOT protect your spine — only your bracing does. Master RDL pattern first.",
+        "cuePl": "Reset. Mniejszy ciężar. Napnij brzuch przed każdym powtórzeniem, klatka wysunięta. Smith fiksujący gryf NIE chroni kręgosłupa — chroni go tylko twoje napięcie brzucha. Najpierw opanuj wzór RDL."
+      },
+      {
+        "fault": "Using hip momentum to start the pull (kipping)",
+        "faultPl": "Używanie pędu bioder do zainicjowania ciągu (kipping)",
+        "cause": "Load too heavy, ego lifting, or weak lats compensated by hip extension",
+        "causePl": "Zbyt duży ciężar, ego lifting, lub słabe najszersze kompensowane wyprostem bioder",
+        "cue": "Reduce weight by 20-30%. Lock the torso angle from rep 1 to rep last. The Smith track will not stop you from kipping — only your discipline will. Pause 1 sec at the bottom of every rep.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Zablokuj kąt tułowia od pierwszego do ostatniego powtórzenia. Tor Smitha nie powstrzyma cię przed kippingiem — powstrzyma cię tylko twoja dyscyplina. Zatrzymaj się na 1 sek. na dole każdego powtórzenia."
+      },
+      {
+        "fault": "Standing too far from the bar (back leans forward over the bar)",
+        "faultPl": "Stanie za daleko od gryfu (tułów pochyla się nad gryfem)",
+        "cause": "Not adjusting foot position before unlocking, or assuming free-bar setup applies — but Smith bar travels VERTICALLY, not in an arc",
+        "causePl": "Brak ustawienia stóp przed odblokowaniem lub założenie że obowiązuje pozycja jak ze sztangą — ale gryf w Smithu porusza się PIONOWO, nie po łuku",
+        "cue": "Mid-foot under the bar. The bar travels straight up — if your shoulders are NOT directly above the bar at the bottom, you will get pulled forward every rep. Step closer.",
+        "cuePl": "Środek stopy pod gryfem. Gryf jedzie prosto w górę — jeśli twoje barki NIE są bezpośrednio nad gryfem na dole, każde powtórzenie wyciąga cię do przodu. Podejdź bliżej."
+      },
+      {
+        "fault": "Elbows flaring out (turning into a wide-grip row pattern)",
+        "faultPl": "Łokcie rozchodzące się na boki (zamiana w wiosłowanie szerokim chwytem)",
+        "cause": "Pulling toward the chest instead of lower abdomen, or forgetting that supinated grip = elbows tucked",
+        "causePl": "Ciąg w stronę klatki zamiast dolnej części brzucha, lub zapominanie że chwyt podchwytem = łokcie schowane",
+        "cue": "Underhand grip = elbows STAY along the body. They drive straight back, not out 45 degrees. If your elbows flare, you lost the lower-lat focus that this variant exists for. Bar to belly button, not to chest.",
+        "cuePl": "Chwyt podchwytem = łokcie ZOSTAJĄ przy tułowiu. Idą prosto w tył, nie na boki 45 stopni. Jeśli łokcie się rozchodzą, tracisz focus na dolne najszersze po który robisz ten wariant. Gryf do pępka, nie do klatki."
+      },
+      {
+        "fault": "Biceps overload / elbow strain (bar too heavy)",
+        "faultPl": "Przeciążenie bicepsa / nadwyrężenie łokcia (zbyt duży ciężar)",
+        "cause": "Supinated grip puts the biceps in its strongest mechanical position — egos load this like a regular barbell row and the elbow tendon takes the hit",
+        "causePl": "Chwyt podchwytem ustawia biceps w najsilniejszej pozycji mechanicznej — ego dokłada jak przy zwykłym wiosłowaniu i kapsuła łokcia bierze uderzenie",
+        "cue": "Use 70-80% of your overhand row weight, no more. Warm up biceps with light pulls. If you feel a stretch/pull on the inner elbow during reps — STOP. This grip is risky for distal biceps tendon.",
+        "cuePl": "Używaj 70-80% ciężaru z wiosłowania nachwytem, nie więcej. Rozgrzej bicepsy lekkimi ciągami. Jeśli czujesz rozciąganie/szarpnięcie w wewnętrznej części łokcia w czasie powtórzeń — STOP. Ten chwyt jest ryzykowny dla dystalnego ścięgna bicepsa."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of the hinge before each rep. Exhale through the pull as the bar approaches the lower abdomen. Inhale on the controlled descent. For heavier sets, hold the brace through 2-3 reps then re-breathe at the bottom with arms locked out.",
+    "breathingPl": "Wdech i napięcie brzucha na szczycie pochylenia przed każdym powtórzeniem. Wydech w trakcie ciągu gdy gryf zbliża się do dolnej części brzucha. Wdech podczas kontrolowanego opuszczania. Przy cięższych seriach trzymaj napięcie przez 2-3 powtórzenia, potem odetchnij na dole przy wyprostowanych ramionach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared. Loaded hip-hinge under spinal compression is too high-risk even with Smith stabilization. Consult physiotherapist.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody. Hip hinge pod obciążeniem ze ściskaniem kręgosłupa jest zbyt ryzykowny nawet ze stabilizacją Smitha. Konsultacja z fizjoterapeutą.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "The supinated grip maximally loads the distal biceps tendon — the exact tissue that is irritated. Switch to neutral or pronated grip until resolved.",
+      "modificationPl": "Chwyt podchwytem maksymalnie obciąża dystalne ścięgno bicepsa — dokładnie tę tkankę która jest podrażniona. Przejdź na chwyt neutralny lub nachwytem do wyleczenia.",
+      "alternative": "smith-bent-over-row"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Switch to chest-supported variant (incline bench row) to eliminate spinal loading and torso stabilization demand.",
+      "modificationPl": "Przejdź na wersję z podparciem klatki (wiosłowanie na ławce skośnej) by wyeliminować obciążenie kręgosłupa i wymóg stabilizacji tułowia.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "wrist_supination_pain",
+      "severity": "caution",
+      "modification": "Use a slightly narrower or wider grip to find comfortable wrist angle. If pain persists, switch to neutral-grip row variant.",
+      "modificationPl": "Wypróbuj nieco węższy lub szerszy chwyt by znaleźć komfortowy kąt nadgarstka. Jeśli ból pozostaje, przejdź na wariant chwytem neutralnym.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x10-15 (volume / lat focus) | 3x12-20 (endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-reverse-grip-bent-over-row.gif",
+    "frames_extracted": [
+      "frames/smith-reverse-grip-bent-over-row/frame_0_start.png",
+      "frames/smith-reverse-grip-bent-over-row/frame_1_early.png",
+      "frames/smith-reverse-grip-bent-over-row/frame_2_mid.png",
+      "frames/smith-reverse-grip-bent-over-row/frame_3_late.png",
+      "frames/smith-reverse-grip-bent-over-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/smith-reverse-grip-bent-over-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem 5 klatek GIFa wewnątrz ramy maszyny Smitha z talerzami po obu stronach gryfu. Frame 0 (start): atleta w opadzie tułowia ~30-40 stopni, kolana lekko ugięte, gryf Smitha trzymany chwytem podchwytem (dłonie skierowane do przodu/do góry) tuż nad podporami racka, ramiona wyprostowane do podłoża, podświetlone najszersze grzbietu (szczególnie środkowo-dolna część) i pas barków. Frames 1-2 (early/mid): faza koncentryczna — gryf przesuwa się PIONOWO po szynach Smitha (charakterystyczna stała trajektoria), łokcie wędrują w tył wzdłuż boków tułowia (nie rozchodzą się), zaczyna się aktywować ramię (biceps). Frames 3-4 (late/end): pełny zakres — gryf przyciągnięty do dolnej części brzucha / góry biodra, łokcie wyraźnie za linią tułowia, wyraźne zaangażowanie najszerszych w dolnej części + bicepsa, kąt tułowia STABILNY przez cały ruch (brak kippingu). Klasyczny Yates row w Smith machine. Klasyfikacja 'pull_horizontal' potwierdzona (poziomy ciąg względem tułowia w opadzie). Equipment: smith_machine + talerze, nic więcej. Chwyt podchwytem (supinated) → naturalne tuck łokci → focus dolne najszersze + biceps jako mocny synergist (P8 dla bicepsa). Wszystkie pola PL napisane od zera w polskim standardzie fitness (Wiosłowanie w opadzie chwytem podchwytem w maszynie Smitha). Specjalne contraindication dla distal_biceps_tendinopathy dodane bo ten chwyt maksymalnie ładuje to ścięgno — ważna informacja klinicznie.",
+
+  "tags": ["compound", "back", "horizontal_pull", "smith_machine", "reverse_grip", "underhand", "yates_row", "lower_lats", "biceps_synergist", "fixed_path", "intermediate"]
+}

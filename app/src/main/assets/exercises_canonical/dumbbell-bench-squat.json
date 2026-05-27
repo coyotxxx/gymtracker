@@ -1,0 +1,196 @@
+{
+  "id": "dumbbell-bench-squat",
+  "name": "Dumbbell Bench Squat",
+  "namePl": "Przysiad z hantlami z dotknięciem ławki",
+  "aliases": ["dumbbell bench squat", "DB box squat with dumbbells", "dumbbell box squat", "dumbbell squat to bench", "DB bench squat"],
+  "aliasesPl": ["przysiad z hantlami z dotknięciem ławki", "przysiad z hantlami do ławki", "przysiad pudełkowy z hantlami", "DB box squat", "przysiad z hantlami z box"],
+
+  "description": "Bilateral compound squat performed with dumbbells held at the sides (suitcase position) and a bench (or box) placed behind the lifter. At the bottom of each rep, the glutes lightly touch the bench to mark depth before driving back up. The bench acts as a depth target and proprioceptive cue, not a place to fully sit and relax — contact is brief and tension is maintained throughout. Excellent beginner variation: teaches consistent depth, reinforces the hip hinge, removes the guesswork of 'how low should I go', and is friendlier on the lower back than goblet squat because load is split into the hands at the sides rather than carried in front of the chest. Common in physical therapy progressions and as an entry point to barbell box squats.",
+  "descriptionPl": "Dwustronny ruch wielostawowy z hantlami trzymanymi po bokach (pozycja walizkowa) i ławką (lub skrzynią) ustawioną z tyłu. Na dole każdego powtórzenia pośladki delikatnie dotykają ławki, wyznaczając głębokość, po czym następuje wstanie do pełnego wyprostu. Ławka pełni rolę celownika głębokości i bodźca proprioceptywnego — nie jest miejscem do pełnego siadu z rozluźnieniem, kontakt jest krótki i napięcie utrzymywane przez cały ruch. Świetna wariacja dla początkujących: uczy stałej głębokości, wzmacnia wzorzec hip hinge, eliminuje zgadywanie 'jak nisko zejść' i jest łagodniejsza dla dolnego odcinka pleców niż goblet squat, bo obciążenie jest rozłożone po bokach zamiast trzymane z przodu klatki. Często stosowana w progresjach fizjoterapeutycznych i jako wstęp do przysiadu pudełkowego ze sztangą.",
+
+  "instructions": [
+    "Set a flat bench behind you. Stand 15-25 cm in front of it so when you squat down your glutes just barely touch the bench.",
+    "Grab two dumbbells, one in each hand, neutral grip (palms facing your body), arms hanging straight at your sides.",
+    "Feet shoulder-width apart, toes turned out slightly (10-20°). Chest up, shoulders back and down, core braced.",
+    "Inhale and brace your core hard, as if bracing for a punch. Keep dumbbells locked at your sides.",
+    "Initiate the descent by simultaneously sitting your hips back and bending your knees. Push knees out over your toes.",
+    "Descend under control until your glutes lightly touch the bench. Do NOT relax onto the bench — touch and immediately reverse.",
+    "Without rocking back or losing core tension, drive through the whole foot and stand up. Exhale near the top.",
+    "Lock out at the top: full hip and knee extension, dumbbells still hanging at your sides. Reset breath and brace for the next rep."
+  ],
+  "instructionsPl": [
+    "Ustaw płaską ławkę za sobą. Stań 15-25 cm przed nią, tak by w dolnej pozycji przysiadu pośladki ledwo dotykały ławki.",
+    "Złap dwa hantle, jeden w każdą rękę, chwyt neutralny (dłonie zwrócone do ciała), ramiona swobodnie po bokach.",
+    "Stopy na szerokość barków, palce lekko na zewnątrz (10-20°). Klatka wysoko, łopatki ściągnięte i opuszczone, brzuch napięty.",
+    "Wdech i mocne napięcie brzucha, jak przed uderzeniem. Hantle zablokowane po bokach.",
+    "Rozpocznij schodzenie cofając biodra do tyłu i jednocześnie zginając kolana. Wypchnij kolana na zewnątrz w linii palców stóp.",
+    "Schodź pod kontrolą aż pośladki delikatnie dotkną ławki. NIE rozluźniaj się na ławce — dotknij i natychmiast zawracaj.",
+    "Bez bujania do tyłu i bez utraty napięcia, wepchnij całą stopę w podłogę i wstań. Wydech blisko górnej pozycji.",
+    "Pełny wyprost na górze: biodra i kolana wyprostowane, hantle nadal po bokach. Wyrównaj oddech i napnij brzuch przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "erector_spinae"],
+    "stabilizers": ["core", "forearms", "trapezius", "calves"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "forearms": "S5",
+    "trapezius": "S4",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bench"],
+    "optional": ["lifting_shoes", "knee_sleeves", "box"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-squat", "bodyweight-box-squat"],
+    "progression_to": ["dumbbell-goblet-squat", "dumbbell-front-squat", "barbell-box-squat", "barbell-back-squat"],
+    "alternatives": ["dumbbell-goblet-squat", "kettlebell-goblet-squat", "bodyweight-box-squat", "landmine-squat", "leg-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench positioned so glutes touch at your desired depth — not lower",
+      "Dumbbells hang straight down, neutral grip, arms relaxed but shoulders packed",
+      "Feet shoulder-width, toes turned out 10-20°",
+      "Chest tall, shoulders back and down, core braced before the first rep",
+      "Eyes forward on a fixed point, neck neutral"
+    ],
+    "setup_cues_pl": [
+      "Ławka ustawiona tak, by pośladki dotykały na wybranej głębokości — nie głębiej",
+      "Hantle wiszą prosto w dół, chwyt neutralny, ramiona rozluźnione ale łopatki ściągnięte",
+      "Stopy na szerokość barków, palce na zewnątrz 10-20°",
+      "Klatka wysoko, łopatki ściągnięte i opuszczone, brzuch napięty przed pierwszym powtórzeniem",
+      "Wzrok przed siebie na stały punkt, szyja neutralna"
+    ],
+    "execution_cues": [
+      "Sit back AND down — hips and knees bend together, not hips first",
+      "Touch the bench, don't sit on it — light kiss, then drive up",
+      "Push knees out in line with your toes throughout the rep",
+      "Drive the whole foot through the floor on the way up",
+      "Keep dumbbells glued to your sides — don't let them swing forward"
+    ],
+    "execution_cues_pl": [
+      "Cofaj biodra I schodź jednocześnie — biodra i kolana zginają się razem, nie tylko biodra",
+      "Dotknij ławki, nie siadaj na niej — lekki pocałunek i wstajesz",
+      "Wypychaj kolana na zewnątrz w linii palców stóp przez cały ruch",
+      "Wepchnij całą stopę w podłogę wstając",
+      "Trzymaj hantle przyklejone po bokach — nie pozwól im się huśtać do przodu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Plopping / fully sitting on the bench",
+        "faultPl": "Plopping / pełne siadanie na ławce",
+        "cause": "Losing core tension at depth or going too deep relative to leg strength",
+        "causePl": "Utrata napięcia brzucha na dole lub schodzenie za głęboko dla aktualnej siły nóg",
+        "cue": "Touch and go — imagine the bench is hot. Keep tension, never relax at the bottom.",
+        "cuePl": "Dotknij i wstań — wyobraź sobie że ławka jest gorąca. Trzymaj napięcie, nigdy nie rozluźniaj się na dole."
+      },
+      {
+        "fault": "Forward lean / chest collapse with dumbbells swinging forward",
+        "faultPl": "Pochylenie do przodu / opadająca klatka z hantlami uciekającymi do przodu",
+        "cause": "Weak core, weight too heavy, or initiating with hips only instead of hips and knees together",
+        "causePl": "Słaby gorset mięśniowy, za ciężki ciężar lub schodzenie tylko biodrami zamiast biodrami i kolanami razem",
+        "cue": "Chest up, hantle przy bokach. Brace harder, lighter weight if needed.",
+        "cuePl": "Klatka do góry, hantle przy bokach. Mocniej napnij brzuch, zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Knee valgus (knees collapse inward at the bottom)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka na dole)",
+        "cause": "Weak glute medius, narrow stance, or insufficient hip external rotation",
+        "causePl": "Słabe mięśnie pośladkowe średnie, zbyt wąski rozstaw stóp, słaba rotacja zewnętrzna biodra",
+        "cue": "Spread the floor with your feet, push knees out toward pinky toes",
+        "cuePl": "Rozprzyj podłogę stopami, wypchnij kolana na zewnątrz w kierunku małych palców"
+      },
+      {
+        "fault": "Rocking back on the bench before standing",
+        "faultPl": "Bujanie do tyłu na ławce przed wstaniem",
+        "cause": "Trying to use momentum, loss of core tension, or pause too long at depth",
+        "causePl": "Próba wykorzystania momentum, utrata napięcia, lub zbyt długa pauza na dole",
+        "cue": "Touch and explode up. No bounce, no rocking — pure leg drive.",
+        "cuePl": "Dotknij i wybuchowo wstań. Bez odbicia, bez bujania — czysta praca nóg."
+      },
+      {
+        "fault": "Heel rise at the bottom",
+        "faultPl": "Unoszenie pięt na dole",
+        "cause": "Poor ankle dorsiflexion, going lower than the bench actually allows, or stance too narrow",
+        "causePl": "Słaba dorsiflexja stawu skokowego, schodzenie głębiej niż pozwala ławka, lub za wąski rozstaw stóp",
+        "cue": "Whole foot on the floor — big toe, little toe, heel. Raise the bench if you can't keep heels down.",
+        "cuePl": "Cała stopa na podłodze — duży palec, mały palec, pięta. Podnieś ławkę jeśli nie utrzymujesz pięt."
+      }
+    ],
+    "breathing": "Inhale at the top and brace your core hard. Hold the breath through the descent and the bench touch. Exhale near the top of the ascent. For higher-rep sets (12+), you may take a fresh breath at lockout between reps.",
+    "breathingPl": "Wdech na górze i mocno napnij brzuch. Wstrzymaj oddech przez schodzenie i dotknięcie ławki. Wydech blisko górnej pozycji wstawania. Przy wyższych zakresach powtórzeń (12+) możesz brać świeży oddech w pełnym wyproście między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "modify",
+      "modification": "Use lighter dumbbells and raise the bench so depth is shorter. Stop if any sharp pain. Can substitute bodyweight box squat until cleared.",
+      "modificationPl": "Użyj lżejszych hantli i podnieś ławkę, by skrócić zakres. Przerwij przy ostrym bólu. Możesz zastąpić przysiadem do skrzyni z masą własnego ciała do czasu poprawy.",
+      "alternative": "bodyweight-box-squat"
+    },
+    {
+      "condition": "knee_pain_patellofemoral",
+      "severity": "modify",
+      "modification": "Raise the bench higher so you stop above where pain occurs. Box squats are typically friendlier on knees than full-depth squats — use this to your advantage.",
+      "modificationPl": "Podnieś ławkę wyżej, by zatrzymać się powyżej miejsca występowania bólu. Przysiady do skrzyni są zwykle łagodniejsze dla kolan niż pełne przysiady — wykorzystaj to.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "shoulder_or_grip_injury",
+      "severity": "modify",
+      "modification": "Holding dumbbells at sides loads grip and shoulder stabilizers. Use lifting straps, lighter weight, or switch to goblet squat to remove grip demand.",
+      "modificationPl": "Trzymanie hantli po bokach obciąża chwyt i stabilizatory barku. Użyj pasków treningowych, lżejszego ciężaru lub przejdź na goblet squat, by usunąć wymóg chwytu.",
+      "alternative": "dumbbell-goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy / general) | 3x5-8 (strength) | 2-3x12-20 (warm-up / endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-bench-squat.gif",
+    "frames_extracted": [
+      "frames/dumbbell-bench-squat/frame_0_start.png",
+      "frames/dumbbell-bench-squat/frame_1_early.png",
+      "frames/dumbbell-bench-squat/frame_2_mid.png",
+      "frames/dumbbell-bench-squat/frame_3_late.png",
+      "frames/dumbbell-bench-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-bench-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (sources/jahel/glutes/dumbbell-bench-squat.gif). Klatki potwierdzają: dwa hantle trzymane po bokach (chwyt neutralny, pozycja walizkowa), ławka ustawiona z tyłu, sylwetka schodzi do przysiadu z tułowiem nieco pochylonym do przodu (typowe dla DB suitcase squat — w przeciwieństwie do goblet, gdzie tułów pionowy), pośladki dotykają ławki na samym dole (kontrola głębokości), powrót do pełnego wyprostu. Anatomia podświetlona: czworogłowe i pośladki dominujące (P9/P9 — zarówno faza koncentryczna jak i pozycja box squat angażują pośladki mocniej niż klasyczny squat). Plik źródłowy w katalogu glutes/ — zgodne z biomechaniką box squat (większy hip hinge = większy udział pośladków). Wszystkie pola PL pisane od zera. Difficulty 4 zgodnie ze specyfikacją (beginner-friendly, ale wymaga dwóch hantli + ławki + koordynacji touch-and-go vs goblet=3).",
+
+  "tags": ["beginner_friendly", "compound", "lower_body", "squat_pattern_teaching", "dumbbell", "box_squat", "depth_control", "physical_therapy_friendly", "rehab_progression"]
+}

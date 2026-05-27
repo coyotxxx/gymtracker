@@ -1,0 +1,201 @@
+{
+  "id": "diamond-push-up",
+  "name": "Diamond Push-Up",
+  "namePl": "Pompki diamentowe",
+  "aliases": ["diamond pushup", "triangle push-up", "close-grip push-up", "narrow push-up", "diamond press-up"],
+  "aliasesPl": ["pompki diamenty", "pompki w diament", "pompki trójkątne", "pompki wąskim chwytem", "pompki z dłońmi razem", "close-grip pompki"],
+
+  "description": "Bodyweight push-up variation performed with hands placed close together directly under the chest, with thumbs and index fingers touching to form a diamond (or triangle) shape. The ultra-narrow hand position dramatically increases triceps recruitment and emphasizes the inner (sternal) portion of the pectoralis major. Considered one of the most effective bodyweight triceps exercises — EMG studies consistently show triceps activation comparable to weighted close-grip bench press. Significant progression over standard push-ups due to reduced mechanical leverage at the elbow.",
+  "descriptionPl": "Wariant pompek z masą ciała wykonywany z dłońmi ustawionymi blisko siebie bezpośrednio pod klatką piersiową, gdzie kciuki i palce wskazujące stykają się tworząc kształt diamentu (lub trójkąta). Skrajnie wąskie ustawienie rąk dramatycznie zwiększa zaangażowanie tricepsa i akcentuje wewnętrzną (mostkową) część mięśnia piersiowego większego. Uważane za jedno z najskuteczniejszych bodyweight'owych ćwiczeń na triceps — badania EMG konsekwentnie pokazują aktywację tricepsa porównywalną do wyciskania sztangi wąskim chwytem na ławce. Wyraźna progresja względem standardowych pompek z powodu zmniejszonej dźwigni mechanicznej w stawie łokciowym.",
+
+  "instructions": [
+    "Get into a plank position on the floor — hands directly under the center of your chest (sternum level), not under shoulders.",
+    "Place hands close together so that thumbs and index fingers of both hands touch, forming a diamond (or triangle) shape under your chest.",
+    "Extend legs back, feet hip-width or together. Body forms a straight line from heels through hips to head.",
+    "Brace core hard. Squeeze glutes. Pre-set the plank before the first rep.",
+    "Inhale and lower your chest toward your hands in a controlled manner. Elbows track close to your torso (~20-30° flare, NOT wide).",
+    "Lower until chest lightly touches the back of your hands (the diamond). Brief pause — no bouncing off the floor.",
+    "Exhale and press the floor away, fully extending the elbows. Drive through the inner palms and feel the triceps fire.",
+    "At the top maintain rigid plank — do not let hips sag or pike. Reset for next rep."
+  ],
+  "instructionsPl": [
+    "Przyjmij pozycję planku na podłodze — dłonie bezpośrednio pod środkiem klatki piersiowej (na wysokości mostka), NIE pod barkami.",
+    "Ustaw dłonie blisko siebie tak, by kciuki i palce wskazujące obu rąk stykały się, tworząc kształt diamentu (lub trójkąta) pod klatką.",
+    "Wyprostuj nogi, stopy na szerokość bioder lub razem. Ciało tworzy prostą linię od pięt przez biodra do głowy.",
+    "Mocno napnij brzuch. Ściśnij pośladki. Ustaw planka zanim wykonasz pierwsze powtórzenie.",
+    "Wdech, kontrolowanym ruchem opuszczaj klatkę w stronę dłoni. Łokcie biegną blisko tułowia (~20-30° odchylenia, NIE szeroko).",
+    "Schodź aż klatka lekko dotknie grzbietów dłoni (diamentu). Krótka pauza — bez odbijania od podłogi.",
+    "Wydech, wypchnij podłogę, w pełni prostując łokcie. Napieraj przez wewnętrzne części dłoni i poczuj jak triceps się napina.",
+    "W górze utrzymaj sztywną pozycję planku — biodra nie opadają, nie idą w górę. Reset i następne powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major_sternal"],
+    "secondary": ["pectoralis_major", "anterior_deltoids"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "serratus_anterior", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "pectoralis_major_sternal": "P7",
+    "pectoralis_major": "S6",
+    "anterior_deltoids": "S5",
+    "serratus_anterior": "S5",
+    "core": "T5",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handles", "weighted_vest", "resistance_band", "elevated_surface"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "knee-push-up", "close-grip-push-up"],
+    "progression_to": ["weighted-diamond-push-up", "decline-diamond-push-up", "single-arm-push-up", "archer-push-up"],
+    "alternatives": ["close-grip-bench-press", "tricep-dips", "tricep-pushdown", "push-up", "close-grip-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands UNDER the chest (sternum), not under shoulders — this is the key difference",
+      "Thumbs and index fingers touch — actual diamond shape, not 'close-ish'",
+      "Body in straight line — pre-brace plank BEFORE first rep",
+      "Elbows pre-positioned close to ribs at the top",
+      "Eyes look at a spot just in front of hands — head neutral"
+    ],
+    "setup_cues_pl": [
+      "Dłonie POD klatką (mostek), nie pod barkami — to kluczowa różnica",
+      "Kciuki i palce wskazujące się stykają — prawdziwy diament, nie 'mniej więcej blisko'",
+      "Ciało w prostej linii — ustaw planka ZANIM zrobisz pierwsze powtórzenie",
+      "Łokcie ustawione blisko żeber już w pozycji wyjściowej",
+      "Wzrok na punkt tuż przed dłońmi — głowa neutralna"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — control the eccentric, feel the triceps stretch",
+      "Elbows brush the ribs — 'glue them to your sides', no flaring",
+      "Chest touches the diamond, not the floor — full ROM at the hand level",
+      "Drive through the heels of your palms — squeeze the triceps at lockout",
+      "Brace abs and squeeze glutes every rep — no sagging hips, no piking"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontroluj fazę ekscentryczną, poczuj rozciągnięcie tricepsa",
+      "Łokcie ocierają się o żebra — 'przyklej je do boków', bez rozkładania",
+      "Klatka dotyka diamentu, nie podłogi — pełen zakres na wysokości dłoni",
+      "Napieraj nasadą dłoni — ściśnij triceps na samej górze",
+      "Napięty brzuch i pośladki w każdym powtórzeniu — biodra nie opadają, tyłek nie idzie w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out (T-shape)",
+        "faultPl": "Łokcie rozkładają się na boki (kształt litery T)",
+        "cause": "Default push-up habit, weak triceps, hand position drifting wider",
+        "causePl": "Nawyk ze zwykłych pompek, słaby triceps, dłonie nieświadomie się rozszerzają",
+        "cue": "Tuck elbows to ~20-30° from torso — 'elbows scrape your ribs'. If you flare, it's a regular close-grip push-up, not diamond.",
+        "cuePl": "Schowaj łokcie do ~20-30° od tułowia — 'łokcie ocierają się o żebra'. Jak rozkładasz, to nie diament tylko zwykłe pompki wąskim chwytem."
+      },
+      {
+        "fault": "Hands placed too far forward (under the face, not the chest)",
+        "faultPl": "Dłonie ustawione za daleko do przodu (pod twarzą, nie pod klatką)",
+        "cause": "Misunderstanding of hand placement, copying poor form from videos",
+        "causePl": "Niezrozumienie ustawienia dłoni, kopiowanie błędnej techniki z filmów",
+        "cue": "Diamond directly under the sternum (mid-chest). If you can't see your thumbs without lifting your head, you're too far forward.",
+        "cuePl": "Diament dokładnie pod mostkiem (środek klatki). Jeśli nie widzisz kciuków bez podnoszenia głowy — ustawiłeś dłonie za daleko z przodu."
+      },
+      {
+        "fault": "Sagging hips or piking",
+        "faultPl": "Opadające biodra lub 'tyłek do góry'",
+        "cause": "Weak core, no glute squeeze, or compensating for triceps fatigue",
+        "causePl": "Słaby brzuch, brak napięcia pośladków, lub kompensacja zmęczenia tricepsa",
+        "cue": "Plank first, push-up second. Squeeze glutes HARD, brace abs as if expecting a punch. Body = rigid plank.",
+        "cuePl": "Najpierw plank, potem pompka. Mocno ŚCIŚNIJ pośladki, napnij brzuch jak przed uderzeniem. Ciało = sztywna deska."
+      },
+      {
+        "fault": "Partial range of motion (not touching the diamond)",
+        "faultPl": "Częściowy zakres ruchu (klatka nie dotyka diamentu)",
+        "cause": "Lack of triceps strength at full ROM, ego — counting half reps",
+        "causePl": "Brak siły tricepsa w pełnym ROM, ego — liczenie połowicznych powtórzeń",
+        "cue": "Chest must touch the back of your hands. If you can't — regress to close-grip push-up or do incline diamonds (hands on bench).",
+        "cuePl": "Klatka musi dotknąć grzbietów dłoni. Jak nie dasz rady — wróć do pompek wąskim chwytem lub diamenty na podwyższeniu (dłonie na ławce)."
+      },
+      {
+        "fault": "Wrist pain or excessive wrist hyperextension",
+        "faultPl": "Ból nadgarstków lub nadmierny przeprost nadgarstków",
+        "cause": "All bodyweight loads through wrists in extreme dorsiflexion, especially with narrow hand position",
+        "causePl": "Cała masa ciała na nadgarstkach w skrajnym zgięciu grzbietowym, szczególnie przy wąskim ustawieniu dłoni",
+        "cue": "Use push-up handles or perform on fists (knuckle push-ups) to keep wrists neutral. Pre-stretch wrists before set.",
+        "cuePl": "Użyj uchwytów do pompek lub wykonuj na pięściach (knuckle push-ups) by utrzymać neutralne nadgarstki. Rozgrzej nadgarstki przed serią."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering) phase, brace at the bottom, exhale forcefully during the press up. For high reps maintain bracing across multiple reps before a reset breath at the top.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (schodzenie), napięcie na dole, mocny wydech przy wyciskaniu. Przy wysokich powtórzeniach utrzymuj napięcie przez kilka powtórzeń przed oddechem-resetującym na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Narrow hand position dramatically increases wrist load. Use push-up handles or perform on fists (knuckle diamonds). Pre-warm wrists with circles.",
+      "modificationPl": "Wąskie ustawienie dłoni dramatycznie zwiększa obciążenie nadgarstków. Użyj uchwytów do pompek lub wykonuj na pięściach (knuckle diamond). Rozgrzej nadgarstki krążeniami przed serią.",
+      "alternative": "close-grip-bench-press"
+    },
+    {
+      "condition": "elbow_pain",
+      "severity": "modify",
+      "modification": "Diamond push-ups are triceps-dominant and may aggravate elbow tendinopathies (tennis/golfer's elbow). Reduce ROM or switch to regular push-ups until pain resolves.",
+      "modificationPl": "Pompki diamentowe są zdominowane przez triceps i mogą nasilać zapalenia ścięgien łokcia (łokieć tenisisty/golfisty). Zmniejsz zakres ruchu lub wróć do zwykłych pompek do czasu ustąpienia bólu.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Narrow grip can stress anterior shoulder more than expected. Keep elbows tightly tucked, reduce ROM, or perform on incline (hands elevated) to reduce loading.",
+      "modificationPl": "Wąski chwyt może obciążać przednią część barku bardziej niż się wydaje. Trzymaj łokcie blisko, zmniejsz zakres ruchu lub wykonuj na podwyższeniu (dłonie wyżej) by zmniejszyć obciążenie.",
+      "alternative": "close-grip-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "If the core can't hold a rigid plank — hips will sag and load the lumbar spine. Regress to incline diamond push-ups (hands on bench, feet on floor) until core stronger.",
+      "modificationPl": "Jeśli brzuch nie utrzymuje sztywnego planka — biodra opadną i obciążą odcinek lędźwiowy. Wróć do pompek diamentowych na podwyższeniu (dłonie na ławce, stopy na podłodze) do czasu wzmocnienia brzucha.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (hypertrophy, triceps focus) | 4x6-10 weighted vest (strength) | AMRAP as finisher after pressing work",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "diamond-push-up.gif",
+    "frames_extracted": [
+      "frames/diamond-push-up/frame_0_start.png",
+      "frames/diamond-push-up/frame_1_early.png",
+      "frames/diamond-push-up/frame_2_mid.png",
+      "frames/diamond-push-up/frame_3_late.png",
+      "frames/diamond-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/diamond-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Frame 0 (start): pełna pozycja planku, ramiona wyprostowane, dłonie blisko siebie POD klatką piersiową (nie pod barkami), ciało w prostej linii od stóp przez biodra do głowy. Frame 2 (mid): pełne opuszczenie — klatka tuż nad dłońmi/diamentem, łokcie zgięte i przyklejone do tułowia (~20-30° flare, NIE szerokie 90° jak w zwykłych pompkach), ciało nadal w linii prostej. Na anatomii wyraźnie podświetlony triceps (tylna część ramienia) i wewnętrzna część klatki piersiowej — zgodne z biomechaniką wąskiego ustawienia dłoni. Frame 4 (end): powrót do pozycji wyjściowej. Klasyczne diamentowe ustawienie dłoni — palce wskazujące i kciuki tworzą trójkąt/diament pod mostkiem. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Difficulty 6 (intermediate→advanced) — wyższy niż zwykłe pompki (4) i decline (5) z powodu skrajnego zaangażowania tricepsa i zmniejszonej dźwigni. Primary muscles: triceps P10 (główny target, dominacja zgodna z EMG), inner pectoralis P7 (akcent mostkowej części klatki).",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "triceps", "triceps_focus", "inner_chest", "home_workout", "no_equipment", "narrow_grip", "progression_from_push_up"]
+}

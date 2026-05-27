@@ -1,0 +1,209 @@
+{
+  "id": "forward-jump",
+  "name": "Forward Jump",
+  "namePl": "Wyskok w przód",
+  "aliases": ["broad jump", "standing broad jump", "standing long jump", "horizontal jump", "long jump"],
+  "aliasesPl": ["skok w dal z miejsca", "wyskok w dal", "skok daleki z miejsca", "broad jump", "skok horyzontalny"],
+
+  "description": "Classic bilateral plyometric jump in the sagittal plane: start standing tall, drop into a quarter-to-half squat with arms swinging back (loading phase), then explode forward and upward simultaneously — projecting the body horizontally through powerful triple extension of hips, knees and ankles, with arms swinging overhead for momentum. The flight phase carries the athlete forward (typically 1.5-3 m for trained individuals) and lands back in a deep squat to absorb impact. The broad jump is one of the gold-standard tests of lower-body power and is a foundational drill for athletes in sprinting, jumping, throwing and field sports. It teaches the stretch-shortening cycle (SSC), rate of force development (RFD) and horizontal force production — qualities that don't transfer fully from vertical jumps. Used in NFL Combine, Olympic track-and-field testing and youth physical literacy assessments. Pure plyometric exercise — bodyweight, no equipment.",
+  "descriptionPl": "Klasyczny obustronny wyskok plyometryczny w płaszczyźnie strzałkowej: start na stojąco, zejście do ćwierć- lub półprzysiadu z ramionami odchylonymi do tyłu (faza ładowania), a następnie eksplozywne wyrzucenie ciała równocześnie do przodu i w górę — projekcja horyzontalna przez potężny potrójny wyprost bioder, kolan i stawów skokowych, z wymachem ramion nad głowę dla momentu pędu. Faza lotu przenosi zawodnika do przodu (typowo 1,5-3 m u wytrenowanych osób) i kończy się lądowaniem w głębokim przysiadzie absorbującym uderzenie. Skok w dal z miejsca to jeden ze złotych testów mocy dolnej części ciała i fundamentalny drill dla sportowców sprintu, skoków, rzutów i sportów drużynowych. Uczy cyklu rozciągnięcie-skrócenie (SSC), tempa produkcji siły (RFD) i generowania siły horyzontalnej — cechy, które nie przenoszą się w pełni z wyskoków pionowych. Stosowany w NFL Combine, testach olimpijskiej lekkoatletyki i ocenach sprawności fizycznej młodzieży. Czysto plyometryczne ćwiczenie — bodyweight, bez sprzętu.",
+
+  "instructions": [
+    "Start standing tall behind a clear line, feet hip- to shoulder-width apart, weight on the mid-foot, eyes forward at a target ~3 m ahead.",
+    "Take a breath, brace your core, and initiate the loading phase: drop into a quarter-to-half squat by hinging at the hips and bending the knees simultaneously.",
+    "Simultaneously swing both arms BACK behind the hips, with shoulder extension — this pre-loads the elastic component of the posterior chain and shoulders.",
+    "At the bottom of the load (knees ~90-120°, torso angled forward), reverse direction instantly — there's no pause. This is the stretch-shortening cycle.",
+    "Explode FORWARD and UPWARD by aggressively driving the hips forward and pressing the floor away with both feet — full triple extension of ankles, knees and hips.",
+    "Simultaneously swing both arms FORWARD and OVERHEAD, generating additional horizontal momentum (arm swing adds ~10-15 cm to the jump distance).",
+    "In flight, tuck the knees toward the chest in the middle of the trajectory, then extend the legs forward for a long landing — feet should land in front of the body's center of mass.",
+    "Land softly on the mid-foot/balls of the feet first, immediately absorb impact through a deep squat (knees tracking over toes, hips back, chest up). Stick the landing — no extra hops.",
+    "Reset to standing tall, walk back to the starting line, and repeat for the prescribed reps (typically 3-5 reps x 3-5 sets, with full recovery between reps)."
+  ],
+  "instructionsPl": [
+    "Start na stojąco za wyraźną linią startową, stopy na szerokość bioder/barków, ciężar na śródstopiu, wzrok przed siebie na cel ~3 m w przodu.",
+    "Wdech, napięcie brzucha i rozpoczęcie fazy ładowania: zejście do ćwierć- lub półprzysiadu poprzez równoczesny ruch zawiasowy w biodrach i zginanie kolan.",
+    "Równocześnie zamach obu ramion DO TYŁU za biodra, z wyprostem w stawach barkowych — to wstępnie obciąża elastyczny komponent tylnego łańcucha i barków.",
+    "Na dole fazy ładowania (kolana ~90-120°, tułów pochylony do przodu) natychmiastowa zmiana kierunku — bez pauzy. To jest cykl rozciągnięcie-skrócenie (SSC).",
+    "Eksplozja DO PRZODU i W GÓRĘ poprzez agresywne wypchnięcie bioder do przodu i wyciśnięcie podłogi obiema stopami — pełny potrójny wyprost stawów skokowych, kolan i bioder.",
+    "Równocześnie zamach obu ramion DO PRZODU i NAD GŁOWĘ, generujący dodatkowy moment pędu horyzontalnego (zamach ramion dodaje ~10-15 cm do długości skoku).",
+    "W locie podciągnij kolana do klatki w środkowej fazie trajektorii, następnie wyprostuj nogi do przodu na długie lądowanie — stopy powinny wylądować przed środkiem ciężkości ciała.",
+    "Miękkie lądowanie najpierw na śródstopiu/przedniej części stopy, natychmiastowa absorpcja uderzenia w głębokim przysiadzie (kolana w linii palców, biodra do tyłu, klatka wysoko). Zatrzymaj lądowanie — bez dodatkowych podskoków.",
+    "Powrót do pozycji stojącej, marsz z powrotem do linii startowej i powtórzenie zadanej liczby powtórzeń (typowo 3-5 powtórzeń x 3-5 serii, z pełnym odpoczynkiem między powtórzeniami)."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "calves"],
+    "secondary": ["hamstrings", "core", "hip_flexors"],
+    "stabilizers": ["erector_spinae", "tibialis_anterior", "adductors", "obliques", "anterior_deltoids"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "calves": "P8",
+    "hamstrings": "S7",
+    "core": "S7",
+    "hip_flexors": "S6",
+    "erector_spinae": "T6",
+    "tibialis_anterior": "T6",
+    "adductors": "T5",
+    "obliques": "T5",
+    "anterior_deltoids": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["measuring_tape", "marking_cones", "exercise_mat", "grass_or_turf_surface"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "jump-squat", "squat-to-stand", "vertical-jump"],
+    "progression_to": ["bounding", "consecutive-broad-jumps", "single-leg-broad-jump", "broad-jump-to-vertical-jump", "depth-jump-to-broad-jump", "weighted-vest-broad-jump"],
+    "alternatives": ["jump-squat", "vertical-jump", "box-jump", "skater-jump", "tuck-jump"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Clear ~4 m runway on non-slip surface (grass, rubber gym floor, mat) — never on slick/wet floor",
+      "Mark starting line with tape or cone — measurement consistency matters",
+      "Feet hip- to shoulder-width, weight on mid-foot, eyes UP at a target ~3 m ahead (not down at feet)",
+      "Warm up first: 5 min of dynamic mobility + 2-3 sub-maximal squat jumps before max-effort broad jumps",
+      "Plan recovery: full rest (60-180s) between max-effort reps — this is POWER training, not conditioning"
+    ],
+    "setup_cues_pl": [
+      "Wyczyść ~4 m przebiegu na antypoślizgowej powierzchni (trawa, gumowa podłoga siłowni, mata) — nigdy na śliskiej/mokrej podłodze",
+      "Zaznacz linię startową taśmą lub pachołkiem — spójność pomiarów ma znaczenie",
+      "Stopy na szerokość bioder/barków, ciężar na śródstopiu, wzrok DO GÓRY na cel ~3 m w przodu (nie w dół na stopy)",
+      "Najpierw rozgrzewka: 5 min mobilności dynamicznej + 2-3 podskokowe przysiady submaksymalne przed skokami w dal na max",
+      "Zaplanuj odpoczynek: pełna przerwa (60-180s) między powtórzeniami maksymalnymi — to trening MOCY, nie kondycji"
+    ],
+    "execution_cues": [
+      "Arms back AND down on the load — full shoulder extension generates SSC pre-tension",
+      "No pause at the bottom — load and explode in ONE fluid motion ('rubber band' release)",
+      "Drive hips FORWARD, not just up — angle of takeoff ~45° for maximum horizontal distance",
+      "Arms swing forward AS you jump — they finish overhead at peak height, NOT after",
+      "Tuck knees mid-flight, extend forward for landing — long jumpers don't land in plank position",
+      "Stick the landing in a deep squat — knees over toes, no valgus collapse, no extra hops"
+    ],
+    "execution_cues_pl": [
+      "Ramiona DO TYŁU i W DÓŁ w fazie ładowania — pełny wyprost barków generuje wstępne napięcie SSC",
+      "Brak pauzy na dole — załaduj i eksploduj w JEDNYM płynnym ruchu (zwolnienie 'gumki')",
+      "Wypychaj biodra DO PRZODU, nie tylko w górę — kąt wyrzutu ~45° dla maksymalnej odległości horyzontalnej",
+      "Zamach ramion do przodu PODCZAS wyskoku — kończy się nad głową w szczycie lotu, NIE po",
+      "Podciągnij kolana w środku lotu, wyprostuj nogi do przodu na lądowanie — skoczkowie w dal nie lądują w pozycji planka",
+      "Zatrzymaj lądowanie w głębokim przysiadzie — kolana w linii palców, bez zapadania się do środka, bez dodatkowych podskoków"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pausing at the bottom of the load (no stretch-shortening cycle)",
+        "faultPl": "Pauza na dole fazy ładowania (brak cyklu rozciągnięcie-skrócenie)",
+        "cause": "Treating the jump as a 'squat then jump' instead of a single explosive sequence — kills elastic energy stored in tendons",
+        "causePl": "Traktowanie skoku jak 'przysiad a potem wyskok' zamiast jednej eksplozywnej sekwencji — niszczy energię sprężystą zmagazynowaną w ścięgnach",
+        "cue": "Bottom of the load is a TURNAROUND, not a stop. Think 'rubber band snap' — the deeper you go, the harder the spring back. 0.1s pause = ~20% less distance.",
+        "cuePl": "Dół fazy ładowania to ZAWRÓT, nie stop. Pomyśl 'wystrzał gumką' — im głębiej zejdziesz, tym mocniejszy odbój. 0,1s pauzy = ~20% mniej odległości."
+      },
+      {
+        "fault": "Jumping UP instead of FORWARD (wasted vertical component)",
+        "faultPl": "Wyskok DO GÓRY zamiast DO PRZODU (zmarnowana składowa pionowa)",
+        "cause": "Looking down at feet, not driving hips forward, no horizontal intent",
+        "causePl": "Patrzenie w dół na stopy, brak wypychania bioder do przodu, brak intencji horyzontalnej",
+        "cue": "Eyes UP at a target 3 m ahead. Drive hips through to the target — imagine jumping over a low wall in front of you. Takeoff angle ~45° (not 80°).",
+        "cuePl": "Wzrok DO GÓRY na cel 3 m w przodu. Wypychaj biodra do celu — wyobraź sobie wyskok nad niskim murkiem przed Tobą. Kąt wyrzutu ~45° (nie 80°)."
+      },
+      {
+        "fault": "Knees collapsing inward (valgus) on landing",
+        "faultPl": "Zapadające się kolana do środka (valgus) przy lądowaniu",
+        "cause": "Weak glute medius, fatigue, landing flat-footed, no glute pre-tension on touchdown",
+        "causePl": "Słaby pośladek średni, zmęczenie, lądowanie na całych stopach, brak napięcia pośladków przy lądowaniu",
+        "cue": "Push knees OUT in line with second toe on every landing. 'Land like a spring — knees wide, hips back, chest tall'. If you can't control valgus — reduce distance until you can.",
+        "cuePl": "Wypychaj kolana NA ZEWNĄTRZ w linii drugiego palca przy każdym lądowaniu. 'Ląduj jak sprężyna — kolana szeroko, biodra do tyłu, klatka wysoko'. Jeśli nie kontrolujesz valgusu — zmniejsz odległość."
+      },
+      {
+        "fault": "No arm swing or arms still at the sides",
+        "faultPl": "Brak zamachu ramion lub ramiona przy ciałach",
+        "cause": "Forgetting arms = ~10-15 cm of distance, treating broad jump as 'leg-only' exercise",
+        "causePl": "Zapomnienie o ramionach = ~10-15 cm odległości, traktowanie skoku w dal jak ćwiczenia 'tylko na nogi'",
+        "cue": "Arms BACK on load, arms FORWARD-and-UP on jump. They finish overhead at peak height. Without arm swing you lose 10-15% of distance — that's a lot.",
+        "cuePl": "Ramiona DO TYŁU w fazie ładowania, ramiona DO PRZODU i W GÓRĘ w fazie wyskoku. Kończą nad głową w szczycie lotu. Bez zamachu ramion tracisz 10-15% odległości — to dużo."
+      },
+      {
+        "fault": "Crash landing — feet landing under or behind center of mass",
+        "faultPl": "Lądowanie z 'rozkminą' — stopy lądują pod lub za środkiem ciężkości",
+        "cause": "Not extending legs forward in flight, fearing the distance, lack of mid-air control",
+        "causePl": "Brak wyprostu nóg do przodu w locie, strach przed odległością, brak kontroli w powietrzu",
+        "cue": "Mid-flight: knees tuck up, then EXTEND legs forward like a long-jumper. Feet land IN FRONT of hips — then absorb into squat. Practice with shorter, controlled jumps first.",
+        "cuePl": "W środku lotu: kolana podciągnięte do góry, potem WYPROSTUJ nogi do przodu jak skoczek w dal. Stopy lądują PRZED biodrami — potem absorbcja w przysiad. Trenuj najpierw krótsze, kontrolowane skoki."
+      }
+    ],
+    "breathing": "Inhale on the load (squat down + arms back), explosive exhale on the jump (drive forward), short inhale in flight, controlled exhale on the landing (absorb impact). For max-effort reps — don't hold breath, but a brief 'breath stack' at the load can stabilize the trunk.",
+    "breathingPl": "Wdech w fazie ładowania (przysiad + ramiona do tyłu), eksplozywny wydech w fazie wyskoku (wyrzut do przodu), krótki wdech w locie, kontrolowany wydech przy lądowaniu (absorbcja). Przy powtórzeniach maksymalnych — nie wstrzymuj oddechu, ale krótkie 'doładowanie powietrzem' w fazie ładowania może stabilizować tułów."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_or_acl_surgery_recent",
+      "severity": "avoid",
+      "modification": "Broad jumps generate very high landing forces (4-6x bodyweight) on knees — contraindicated for recent ACL/meniscus surgery (<6 months) or active knee pain. Get clearance from physio and progress through jump-squat → vertical jump → broad jump in steps.",
+      "modificationPl": "Skoki w dal generują bardzo wysokie siły lądowania (4-6x masy ciała) na kolana — przeciwwskazane dla niedawnej operacji ACL/łąkotki (<6 miesięcy) lub aktywnego bólu kolan. Zielone światło od fizjoterapeuty i progresja przez jump-squat → vertical jump → broad jump etapowo.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "ankle_sprain_or_achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Triple extension and landing put massive stress on Achilles tendon and ankle stabilizers. Skip until pain-free, then start with low-amplitude pogo hops, then jump squats, then broad jumps. Tape ankle for return-to-play.",
+      "modificationPl": "Potrójny wyprost i lądowanie obciążają ścięgno Achillesa i stabilizatory stawu skokowego. Pomiń do ustąpienia bólu, potem zacznij od niskoamplitudowych pogo hops, potem jump squats, potem skoki w dal. Tape stawu skokowego na powrót do sportu.",
+      "alternative": "jump-squat"
+    },
+    {
+      "condition": "lower_back_pain_or_disc_herniation",
+      "severity": "modify",
+      "modification": "Impact landings and deep squat absorption stress the lumbar spine. Avoid during acute flare-ups. When pain-free, regress to short jumps with conservative landing distance, focus on hip-dominant absorption (not lumbar flexion).",
+      "modificationPl": "Lądowania z uderzeniem i głęboka absorbcja w przysiadzie obciążają odcinek lędźwiowy. Unikaj podczas ostrych zaostrzeń. Po ustąpieniu bólu cofnij się do krótkich skoków z konserwatywną odległością lądowania, skup się na absorbcji w biodrach (nie w lędźwiach).",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiac_disease",
+      "severity": "avoid",
+      "modification": "Max-effort jumps cause acute blood pressure spikes and Valsalva-like loading. Avoid until medically cleared — start with low-impact strength work (goblet squats, leg press) before any plyometrics.",
+      "modificationPl": "Wyskoki maksymalnym wysiłkiem powodują ostre skoki ciśnienia krwi i obciążenie typu Valsalva. Unikaj do uzyskania zielonego światła od lekarza — zacznij od pracy siłowej o niskim impakcie (przysiady goblet, leg press) zanim cokolwiek plyometrycznego.",
+      "alternative": "bodyweight-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-5 reps x 3-5 sets, full recovery 60-180s (max-effort power) | 5-8 reps x 3 sets (jump endurance) | 1 rep for max distance (testing/benchmark)",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "forward-jump.gif",
+    "frames_extracted": [
+      "frames/forward-jump/frame_0_start.png",
+      "frames/forward-jump/frame_1_early.png",
+      "frames/forward-jump/frame_2_mid.png",
+      "frames/forward-jump/frame_3_late.png",
+      "frames/forward-jump/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/forward-jump"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): pozycja ładowania — głęboki przysiad/quarter-squat z tułowiem pochylonym do przodu, ramiona odchylone do tyłu za biodra (shoulder extension), podświetlone quadriceps + glutes + calves + erector spinae jako mięśnie pre-tensjonowane w SSC. Frame 1 (early): faza eksplozji/take-off — postać w locie z wyciągniętymi do góry ramionami (overhead reach), pełne triple extension hips/knees/ankles, ciało nachylone pod kątem ~45° do podłogi, podświetlone quadriceps + glutes + calves jako primary movers mocy. Frame 2 (mid): szczyt lotu — pełny wyprost ciała w powietrzu z ramionami nad głową, druga sylwetka w tle pokazuje już fazę przygotowania do lądowania (przysiad). Frame 3 (late): faza lądowania/absorbcji — głęboki przysiad z biodrami do tyłu, dłonie wsparte przed kolanami (lub zbliżające się do podłogi), podświetlone quadriceps + glutes jako mięśnie ekscentryczne pochłaniające impakt. Frame 4 (end): zakończenie cyklu — postać w przysiadzie z ciężarem ciała przesuniętym do przodu, gotowa do reset lub kolejnego powtórzenia. Sekwencja zgodna z biomechaniką klasycznego broad jump (NFL Combine standard) + plyometric SSC. movement_pattern: jump_plyometric — czysto plyometryczny ruch wyskokowy, mimo że bilateralny. category: plyometrics ze względu na finalny wyskok z triple extension i wykorzystanie cyklu rozciągnięcie-skrócenie. primary muscles według biomechaniki: quadriceps (rozprostowanie kolan w take-off), glutes (rozprostowanie bioder), calves (plantar flexion w stawach skokowych). Wszystkie pola PL napisane od zera w polskim standardzie fitness/sport (terminologia: 'skok w dal z miejsca', 'cykl rozciągnięcie-skrócenie', 'potrójny wyprost', 'faza ładowania', 'faza lotu', 'absorbcja' — bez kalek z angielskiego).",
+
+  "tags": ["bodyweight", "plyometrics", "power", "athletic_performance", "explosive", "lower_body", "jump_training", "no_equipment_friendly", "outdoor_friendly", "speed_power", "testing", "sport_specific"]
+}

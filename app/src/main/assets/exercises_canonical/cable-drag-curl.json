@@ -1,0 +1,203 @@
+{
+  "id": "cable-drag-curl",
+  "name": "Cable Drag Curl",
+  "namePl": "Drag curl z wyciągu",
+  "aliases": ["cable straight bar drag curl", "low cable drag curl", "standing cable drag curl"],
+  "aliasesPl": ["drag curl z dolnego wyciągu", "drag curl na wyciągu dolnym", "uginanie ramion drag curl z wyciągu", "drag curl ze sztangą z wyciągu"],
+
+  "description": "An isolation curl variation performed at a low cable pulley with a straight bar attachment, where the bar literally 'drags' up along the front of the torso. Unlike a standard curl, the elbows travel backward (behind the line of the body) instead of staying pinned at the sides. This pulls the bar straight up vertically and removes the contribution of the anterior deltoid, putting unusual mechanical emphasis on the long head of the biceps brachii. The constant cable tension keeps the muscle loaded across the entire range of motion. A favorite of classic bodybuilders (Vince Gironda popularized the dumbbell version) for adding 'peak' to the biceps.",
+  "descriptionPl": "Wariant izolowanego uginania ramion wykonywany przy dolnym wyciągu z prostym drążkiem, w którym drążek dosłownie 'ciągnie się' wzdłuż przedniej powierzchni tułowia. W przeciwieństwie do klasycznego curl'a, łokcie wędrują w tył (za linię tułowia) zamiast pozostawać przyklejone do boków. Dzięki temu drążek jedzie pionowo w górę i wyłączamy z pracy przednie aktony barków, co kładzie nietypowo duży nacisk na długą głowę mięśnia dwugłowego ramienia. Stałe napięcie linki utrzymuje mięsień pod obciążeniem w całym zakresie ruchu. Ulubione ćwiczenie klasycznych kulturystów (wariant z hantlami popularyzował Vince Gironda) do budowania 'szczytu' bicepsa.",
+
+  "instructions": [
+    "Set the cable pulley to the lowest position and attach a straight bar. Select a moderate weight — drag curls are mechanically weaker than standard curls.",
+    "Stand facing the machine with feet hip-width apart, knees slightly bent. Grip the bar with a supinated (palms up) shoulder-width grip.",
+    "Step back so the cable comes off the pulley at a slight forward angle. Let the bar rest at full arm extension against the front of your thighs.",
+    "Pin your shoulder blades back and down. Brace your core. Keep your wrists neutral.",
+    "Initiate the curl by pulling your elbows backward — not by curling the forearms up. The bar should travel straight up along your torso, almost touching it the entire time.",
+    "Continue dragging the bar upward until it reaches your lower ribs / sternum area. At the top, elbows are clearly behind your back, biceps fully shortened.",
+    "Squeeze the biceps hard for a 1-second pause at the top.",
+    "Reverse the motion under control — lower the bar by sliding it back down along the torso while the elbows return to neutral and then fully extend the arms.",
+    "Do not let the elbows drift forward at any point. If the bar leaves the torso, the load shifts to the front delts and you have lost the exercise."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek wyciągu w najniższej pozycji i zamocuj prosty drążek. Wybierz umiarkowany ciężar — drag curl jest mechanicznie słabszy niż klasyczny curl.",
+    "Stań przodem do maszyny, stopy na szerokość bioder, kolana lekko ugięte. Złap drążek nachwytem dolnym (dłonie do góry) na szerokość barków.",
+    "Cofnij się o krok, aby linka schodziła z bloczka pod lekkim kątem do przodu. Pozwól drążkowi spocząć na wyprostowanych ramionach przy przedniej powierzchni ud.",
+    "Ściągnij łopatki w tył i w dół. Napnij brzuch. Nadgarstki utrzymuj neutralnie.",
+    "Rozpocznij ruch ciągnąc łokcie do tyłu — nie unoś przedramion w górę. Drążek ma jechać pionowo w górę wzdłuż tułowia, niemal go dotykając przez cały czas.",
+    "Kontynuuj 'ciągnięcie' drążka w górę aż dojdzie do dolnych żeber / mostka. W górnej pozycji łokcie są wyraźnie za linią pleców, biceps maksymalnie skrócony.",
+    "Mocno spinaj biceps przez 1 sekundę w górnej pozycji.",
+    "Odwróć ruch pod kontrolą — opuszczaj drążek przesuwając go z powrotem w dół wzdłuż tułowia, łokcie wracają do pozycji neutralnej, a następnie ramiona w pełni się prostują.",
+    "Nie pozwól by łokcie wędrowały do przodu w żadnym momencie. Jeśli drążek odsunie się od tułowia, obciążenie przejmą przednie aktony barków i ćwiczenie traci sens."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["forearm_flexors", "rear_deltoid", "core", "upper_trapezius", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S5",
+    "forearm_flexors": "T4",
+    "rear_deltoid": "T3",
+    "rhomboids": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar_attachment"],
+    "optional": ["wrist_wraps", "ez_bar_attachment"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-curl", "cable-curl"],
+    "progression_to": ["barbell-drag-curl", "spider-curl", "preacher-curl"],
+    "alternatives": ["barbell-drag-curl", "cable-curl", "barbell-curl", "ez-bar-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulley + straight bar",
+      "Stand one step back from the machine",
+      "Supinated shoulder-width grip, wrists neutral",
+      "Shoulders back and down, chest up",
+      "Brace core — body stays vertical the whole set"
+    ],
+    "setup_cues_pl": [
+      "Dolny bloczek + prosty drążek",
+      "Stań krok od maszyny",
+      "Chwyt podchwytem na szerokość barków, nadgarstki neutralne",
+      "Barki ściągnięte w tył i w dół, klatka w górze",
+      "Napnij brzuch — tułów pionowy przez całą serię"
+    ],
+    "execution_cues": [
+      "Pull the elbows BACK, not the forearms up",
+      "The bar drags along your torso — never leaves it",
+      "Top position: elbows behind your back, bar at sternum",
+      "Squeeze the biceps hard at the top — peak contraction",
+      "Lower slowly, slide the bar back down along the body"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij ŁOKCIE w tył, a nie przedramiona w górę",
+      "Drążek ciągnie się po tułowiu — nigdy się od niego nie odrywa",
+      "Górna pozycja: łokcie za linią pleców, drążek na wysokości mostka",
+      "Mocno spinaj biceps w górnej pozycji — szczytowy skurcz",
+      "Opuszczaj wolno, zsuwając drążek po tułowiu w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Letting the bar drift away from the torso (turns into a regular curl)",
+        "faultPl": "Odrywanie drążka od tułowia (ćwiczenie zamienia się w klasyczny curl)",
+        "cause": "Habit from standard curls — lifter automatically pushes elbows forward to curl the weight up",
+        "causePl": "Nawyk z klasycznego curl'a — ćwiczący odruchowo wypycha łokcie do przodu by wycurlać ciężar",
+        "cue": "Force the bar to drag along your shirt. If it leaves your body, the rep does not count.",
+        "cuePl": "Wymuś by drążek sunął po koszulce. Jeśli oderwie się od ciała, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Elbows stay at the sides instead of traveling backward",
+        "faultPl": "Łokcie pozostają przy bokach zamiast wędrować w tył",
+        "cause": "Misunderstanding the movement — confusing it with a strict standard curl",
+        "causePl": "Niezrozumienie ruchu — mylenie go ze ścisłym klasycznym curl'em",
+        "cue": "Think 'row the elbows behind your ribcage' as you curl. Squeeze the rear delts to drive the elbows back.",
+        "cuePl": "Myśl 'wiosłuj łokciami za klatkę piersiową' podczas uginania. Spinaj tylne aktony barków by cofać łokcie."
+      },
+      {
+        "fault": "Using too much weight and recruiting front delts / leaning back",
+        "faultPl": "Zbyt duży ciężar i włączanie przednich aktonów barków / odchylanie się do tyłu",
+        "cause": "Treating drag curl like a heavy strength movement — but it is a feel/peak exercise",
+        "causePl": "Traktowanie drag curl'a jako ciężkiego ćwiczenia siłowego — a to ćwiczenie czuciowe na szczyt bicepsa",
+        "cue": "Drop the load 20-30% versus your standard curl. Drag curls are weaker by design.",
+        "cuePl": "Zmniejsz ciężar o 20-30% w porównaniu do klasycznego curl'a. Drag curl jest słabszy z natury."
+      },
+      {
+        "fault": "Curling the wrists at the top (flexing the wrist instead of the elbow)",
+        "faultPl": "Zaginanie nadgarstków w górnej pozycji (zginanie nadgarstka zamiast łokcia)",
+        "cause": "Trying to squeeze out extra range of motion when biceps is already maximally shortened",
+        "causePl": "Próba wyciśnięcia dodatkowego zakresu ruchu gdy biceps jest już maksymalnie skrócony",
+        "cue": "Lock wrists in line with the forearms. Stop the rep when elbows are fully behind the back.",
+        "cuePl": "Zablokuj nadgarstki w linii z przedramieniem. Zakończ powtórzenie gdy łokcie są w pełni za plecami."
+      },
+      {
+        "fault": "Cutting off the bottom of the range (no full elbow extension)",
+        "faultPl": "Skracanie dolnej fazy ruchu (brak pełnego wyprostu łokci)",
+        "cause": "Trying to keep constant tension by avoiding the lockout — but it cheats the stretched-position stimulus",
+        "causePl": "Próba utrzymania stałego napięcia przez unikanie pełnego wyprostu — ale odbiera to bodziec w pozycji rozciągniętej",
+        "cue": "Fully extend the elbows on every rep. The cable provides constant tension even at full stretch.",
+        "cuePl": "Pełny wyprost łokci przy każdym powtórzeniu. Linka zapewnia stałe napięcie nawet w maksymalnym rozciągnięciu."
+      }
+    ],
+    "breathing": "Exhale as you drag the bar up (concentric). Inhale as you lower under control (eccentric). Keep a light core brace throughout.",
+    "breathingPl": "Wydech podczas 'ciągnięcia' drążka w górę (faza koncentryczna). Wdech podczas kontrolowanego opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "modify",
+      "modification": "The backward elbow travel of a drag curl is usually shoulder-friendly, but a heavy load can still aggravate symptoms via scapular compensation. Reduce weight, ensure scapulae stay retracted, stop short of pain.",
+      "modificationPl": "Cofanie łokci w drag curl jest zazwyczaj przyjazne dla barku, ale ciężki ładunek nadal może prowokować objawy przez kompensację łopatkową. Zmniejsz ciężar, utrzymuj łopatki ściągnięte, zatrzymuj się przed bólem.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Constant cable tension at full stretch can irritate the distal biceps tendon. Use lighter loads (12-15 reps), avoid heavy eccentrics, consider EZ-bar attachment for less supination stress.",
+      "modificationPl": "Stałe napięcie linki w pełnym rozciągnięciu może drażnić dystalny przyczep bicepsa. Używaj lżejszych ciężarów (12-15 powtórzeń), unikaj ciężkich faz negatywnych, rozważ uchwyt łamany dla mniejszego stresu supinacyjnego.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locks the wrists in full supination. Substitute an EZ-bar attachment (angled grip) or use a rope for free wrist position.",
+      "modificationPl": "Prosty drążek blokuje nadgarstki w pełnej supinacji. Użyj łamanego uchwytu (kąt chwytu) lub linki, która pozwala na swobodne ustawienie nadgarstków.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing. Sit on a bench in front of the pulley, or move to a seated/preacher curl variation.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia odcinka lędźwiowego. Usiądź na ławce przed wyciągiem lub przejdź na wariant siedzący / modlitewnikowy.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy) | 3x12-15 (peak / finisher) | 2-3x15-20 (pump / drop set)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-drag-curl.gif",
+    "frames_extracted": [
+      "frames/cable-drag-curl/frame_0_start.png",
+      "frames/cable-drag-curl/frame_1_early.png",
+      "frames/cable-drag-curl/frame_2_mid.png",
+      "frames/cable-drag-curl/frame_3_late.png",
+      "frames/cable-drag-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-drag-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: stojąca pozycja przy maszynie z dolnym bloczkiem, prosty drążek trzymany podchwytem na szerokość barków, drążek przy udach, ramiona w pełnym wyprostze, biceps i przedramiona podświetlone na czerwono. Frame 2 (mid): drążek na wysokości dolnych żeber / talii, wyraźnie 'dragowany' wzdłuż przedniej powierzchni tułowia (niemal go dotyka), łokcie idą w tył (za linię tułowia), tułów pozostaje pionowy. Frame 4 (powrót): drążek z powrotem przy udach, pełny wyprost ramion — kompletny zakres ruchu. Animacja jednoznacznie pokazuje mechanikę drag curl'a: łokcie do tyłu, drążek sunie po tułowiu, brak wypychania łokci do przodu. Trening długiej głowy bicepsa, isolation, pull, sagittal, bilateral. Wszystkie pola PL napisane od zera — opis mechaniki, cele, charakter ćwiczenia (peak/Gironda).",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "cable", "upper_body", "long_head_biceps", "peak"]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "body-up",
+  "name": "Body-Up",
+  "namePl": "Body-up",
+  "aliases": ["sphinx push-up", "forearm to plank push-up", "plank up-down", "up-down plank push-up"],
+  "aliasesPl": ["body-up", "sfinks pompka", "pompka sfinks", "pompka z przedramion na dłonie", "plank up-down z wypychaniem"],
+
+  "description": "Bodyweight triceps and core exercise performed in a plank position. Starting on the forearms (sphinx/forearm plank), the lifter pushes the body upward by extending one elbow at a time until both arms are straight in a high plank, then reverses by lowering back down to the forearms one arm at a time. The motion is driven by powerful elbow extension against the resistance of the whole body, making it a closed-chain bodyweight loading drill for the triceps brachii, while the core works isometrically to keep the spine rigid and prevent the hips from rotating or sagging.",
+  "descriptionPl": "Ćwiczenie tricepsa i wzmacniające stabilizację tułowia, wykonywane z masą własnego ciała w pozycji deski. Startujesz w deski na przedramionach (sfinks), a następnie wypychasz ciało w górę prostując kolejno łokcie aż obie ręce są wyprostowane w pozycji deski na dłoniach. Następnie kontrolowanie opuszczasz się z powrotem na przedramiona, ręka po ręce. Ruch napędzany jest mocnym wyprostem łokcia przy oporze całej masy ciała, co czyni go zamkniętym łańcuchem kinetycznym obciążającym triceps brachii. Tułów pracuje izometrycznie utrzymując kręgosłup w neutralnej linii i zapobiegając rotacji bioder oraz zapadaniu się miednicy.",
+
+  "instructions": [
+    "Start in a forearm plank: elbows directly under the shoulders, forearms parallel and pressing into the floor, body forming one straight line from head to heels, toes tucked, glutes and abs braced.",
+    "Plant one hand on the floor directly under the shoulder where the elbow was, and push through that hand to extend the elbow.",
+    "Plant the second hand and push through it to fully extend the second elbow — you are now in a high plank position with arms straight, body still in one rigid line.",
+    "Reverse the motion: lower one arm at a time back down onto the forearm (elbow-then-elbow), returning to the starting sphinx position. Alternate which arm leads on each rep.",
+    "Drive the movement with the triceps — feel the back of the upper arm extending the elbow. Keep the hips square to the floor at all times; don't let them sway side to side.",
+    "Breathe: exhale as you push up, inhale as you lower back down."
+  ],
+  "instructionsPl": [
+    "Zacznij w desce na przedramionach: łokcie dokładnie pod barkami, przedramiona równolegle dociśnięte do podłoża, ciało tworzy jedną prostą linię od głowy do pięt, palce stóp podwinięte, pośladki i brzuch napięte.",
+    "Postaw jedną dłoń na podłodze dokładnie pod barkiem w miejscu gdzie był łokieć, i wypchnij się przez tę rękę prostując łokieć.",
+    "Postaw drugą dłoń i wypchnij się przez nią prostując drugi łokieć — jesteś teraz w desce na dłoniach z wyprostowanymi ramionami, ciało nadal w jednej sztywnej linii.",
+    "Odwróć ruch: opuść kolejno jedną rękę na przedramię (łokieć po łokciu) wracając do pozycji wyjściowej sfinksa. W każdym powtórzeniu zmieniaj rękę, która zaczyna ruch.",
+    "Napędzaj ruch tricepsem — czuj jak tył ramienia prostuje łokieć. Trzymaj biodra równo skierowane do podłogi przez cały czas; nie pozwól by kołysały się na boki.",
+    "Oddychanie: wydech przy wypchaniu w górę, wdech przy opuszczaniu w dół."
+  ],
+
+  "classification": {
+    "movement_pattern": "horizontal_push",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["pectoralis_major", "anterior_deltoid", "rectus_abdominis"],
+    "stabilizers": ["serratus_anterior", "obliques", "transverse_abdominis", "gluteus_maximus", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "pectoralis_major": "S5",
+    "anterior_deltoid": "S5",
+    "rectus_abdominis": "S6",
+    "serratus_anterior": "T5",
+    "obliques": "T5",
+    "transverse_abdominis": "T4",
+    "gluteus_maximus": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["forearm-plank", "push-up", "high-plank"],
+    "progression_to": ["diamond-push-up", "triceps-dip", "ring-dip"],
+    "alternatives": ["diamond-push-up", "close-grip-push-up", "triceps-dip", "bench-dip", "incline-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Forearm plank — elbows directly under shoulders, 90° at the elbow",
+      "Forearms parallel, palms flat or fists — choose what's comfortable",
+      "Body in one line: head, hips, heels — no sag, no pike",
+      "Glutes squeezed, quads engaged, abs braced toward the spine",
+      "Eyes down at the floor — neutral neck position"
+    ],
+    "setup_cues_pl": [
+      "Deska na przedramionach — łokcie dokładnie pod barkami, kąt 90° w łokciu",
+      "Przedramiona równolegle, dłonie płasko lub w pięści — jak ci wygodniej",
+      "Ciało w jednej linii: głowa, biodra, pięty — bez zapadania, bez wypiętej pupy",
+      "Pośladki ściśnięte, uda napięte, brzuch dociągnięty do kręgosłupa",
+      "Wzrok w dół na podłogę — neutralna pozycja szyi"
+    ],
+    "execution_cues": [
+      "Plant the hand directly under the shoulder — not too far forward",
+      "Push the floor away with the palm — drive through the triceps",
+      "Keep the hips square — don't twist or rock side to side",
+      "Move smoothly, one arm at a time — no jumping or popping",
+      "Alternate the leading arm each rep so both triceps load evenly"
+    ],
+    "execution_cues_pl": [
+      "Stawiaj dłoń dokładnie pod barkiem — nie za daleko z przodu",
+      "Odpychaj podłogę dłonią — napędzaj ruch tricepsem",
+      "Trzymaj biodra równo skierowane — bez skręcania i kołysania się",
+      "Płynny ruch ręka po ręce — bez podskakiwania ani szarpania",
+      "Zmieniaj startującą rękę w każdym powtórzeniu, by oba tricepsy obciążać równo"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips swaying side to side as each arm transitions",
+        "faultPl": "Biodra kołyszą się na boki przy każdej zmianie ręki",
+        "cause": "Weak anti-rotation core and obliques cannot stabilise against the unilateral load",
+        "causePl": "Słaby brzuch w zakresie anty-rotacji i skośne nie potrafią ustabilizować ciała przy jednostronnym obciążeniu",
+        "cue": "Imagine a glass of water on your lower back — keep hips perfectly level. Widen the feet for more base of support if needed.",
+        "cuePl": "Wyobraź sobie szklankę wody na dolnych plecach — utrzymaj biodra idealnie wypoziomowane. Rozstaw szerzej stopy dla lepszej podstawy, jeśli trzeba."
+      },
+      {
+        "fault": "Hips sagging or piking up (loss of plank line)",
+        "faultPl": "Biodra zapadają się lub wystrzelają w górę (utrata linii deski)",
+        "cause": "Core fatigue or shifting focus entirely to arm work and forgetting trunk bracing",
+        "causePl": "Zmęczenie brzucha lub przeniesienie uwagi tylko na pracę ramion z zaniedbaniem napięcia tułowia",
+        "cue": "Brace abs and glutes hard before starting the push — keep them tight throughout the whole rep",
+        "cuePl": "Mocno napnij brzuch i pośladki przed wypchnięciem — utrzymuj napięcie przez całe powtórzenie"
+      },
+      {
+        "fault": "Hand placed too far forward instead of directly under the shoulder",
+        "faultPl": "Dłoń ustawiona zbyt daleko z przodu, zamiast dokładnie pod barkiem",
+        "cause": "Trying to reach instead of pushing — shifts load off triceps onto the shoulder",
+        "causePl": "Próba sięgnięcia zamiast wypchania — przerzuca obciążenie z tricepsa na bark",
+        "cue": "Plant the palm exactly where the elbow was. The arm path should be vertical, not diagonal.",
+        "cuePl": "Postaw dłoń dokładnie tam, gdzie był łokieć. Tor ruchu ręki ma być pionowy, nie skośny."
+      },
+      {
+        "fault": "Always leading with the same (dominant) arm",
+        "faultPl": "Zawsze prowadzisz tą samą (dominującą) ręką",
+        "cause": "Habit and convenience — favouring the stronger triceps",
+        "causePl": "Nawyk i wygoda — preferowanie silniejszego tricepsa",
+        "cue": "Alternate the leading arm every rep, or do half the set leading right and half leading left",
+        "cuePl": "Zmieniaj startującą rękę w każdym powtórzeniu, lub wykonaj połowę serii prowadząc prawą, połowę lewą"
+      },
+      {
+        "fault": "Crashing down onto the forearms on the eccentric",
+        "faultPl": "Opadanie z hukiem na przedramiona w fazie ekscentrycznej",
+        "cause": "Skipping the controlled lowering and using gravity to reset",
+        "causePl": "Pomijanie kontrolowanego opuszczania i wykorzystywanie grawitacji do powrotu",
+        "cue": "Lower each forearm slowly under control — 2 seconds down. The eccentric is where triceps grow.",
+        "cuePl": "Opuszczaj każde przedramię wolno, pod kontrolą — 2 sekundy w dół. Faza ekscentryczna to moment, w którym triceps rośnie."
+      }
+    ],
+    "breathing": "Exhale during the concentric push-up phase as you extend each elbow. Inhale during the controlled lowering back down to the forearms. Steady rhythm — no breath holding.",
+    "breathingPl": "Wydech podczas fazy koncentrycznej (wypchanie w górę) podczas prostowania każdego łokcia. Wdech podczas kontrolowanego opuszczania z powrotem na przedramiona. Równy rytm — bez wstrzymywania oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_injury",
+      "severity": "modify",
+      "modification": "Repeated weighted elbow extension may aggravate triceps tendinopathy or olecranon bursitis. Reduce range or switch to a non-loaded triceps alternative until pain-free.",
+      "modificationPl": "Powtarzane wyprostowywanie łokcia pod obciążeniem może nasilać tendinopatię tricepsa lub zapalenie kaletki łokciowej. Zmniejsz zakres lub przejdź na nieobciążoną alternatywę tricepsową do czasu ustąpienia bólu.",
+      "alternative": "triceps-stretch"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "High plank position loads the wrists in extension. Use push-up handles or fists to keep wrists neutral, or limit the time spent in the high plank phase.",
+      "modificationPl": "Pozycja deski na dłoniach obciąża nadgarstki w wyproście. Użyj uchwytów do pompek lub pięści, by zachować neutralne nadgarstki, lub skróć czas spędzony w pozycji deski na dłoniach.",
+      "alternative": "close-grip-push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Repeated transition between forearm and high plank can irritate the anterior shoulder if scapular control is poor. Focus on protracting the shoulders (push the floor away) at the top.",
+      "modificationPl": "Powtarzane przejście między deską na przedramionach a deską na dłoniach może drażnić przednią część barku przy słabej kontroli łopatek. Skup się na protrakcji łopatek (odpychaniu podłogi) w pozycji górnej.",
+      "alternative": "bench-dip"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "Hip sag or asymmetric loading can stress the lumbar spine. Widen the feet for more stability and stop the set if you cannot maintain a neutral spine.",
+      "modificationPl": "Zapadnięte biodra lub niesymetryczne obciążenie mogą obciążać odcinek lędźwiowy. Rozstaw szerzej stopy dla większej stabilności i przerwij serię, jeśli nie potrafisz utrzymać neutralnego kręgosłupa.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per side (strength) | 3x12-15 (hypertrophy) | 3xAMRAP (endurance/finisher)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "body-up.gif",
+    "frames_extracted": [
+      "frames/body-up/frame_0_start.png",
+      "frames/body-up/frame_1_early.png",
+      "frames/body-up/frame_2_mid.png",
+      "frames/body-up/frame_3_late.png",
+      "frames/body-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/body-up",
+    "yuhonas_id": "Body-Up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:05:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (triceps/body-up.gif, NIE abs jak sugerowała instrukcja zadania). Anatomia podświetla wyraźnie triceps brachii na obu ramionach — to pomyłka w specyfikacji zadania (zadanie sugerowało abs/core_flexion, ale faktyczny GIF to ćwiczenie tricepsa). Klatka 0 (start): pozycja deski na przedramionach (sfinks), łokcie pod barkami, ciało w linii, triceps tylnej części ramienia podświetlony. Klatka 2 (mid): pełna deska na dłoniach — ramiona wyprostowane, triceps wciąż podświetlony jako pracujący w izometrii top. Klatki 1 i 3 (early/late, te same frame 11): faza przejściowa — jedna ręka wyprostowana, druga jeszcze na przedramieniu, czyli unilateral_alternating mechanika. Klatka 4 (end): powrót do sfinksa z lekkim śladem fazy pośredniej. Ruch potwierdzony: wypychanie z przedramion na dłonie poprzez wyprost łokcia, ręka po ręce. Klasyfikacja: horizontal_push (wyprost łokcia + lekkie protrakcyjne pchnięcie podłogi), push, compound (łokieć + bark + lekko łopatka), unilateral_alternating (ręka po ręce), closed kinetic chain (dłonie/przedramiona na podłodze). Mięsień główny: triceps_brachii (P10, jedyny prime mover dla wyprostu łokcia pod obciążeniem masy ciała). Sekundarne: pectoralis_major i anterior_deltoid (S5, pomagają przy wypchaniu), rectus_abdominis (S6, dynamiczna stabilizacja transferu). Difficulty 6/intermediate — wymaga już bazy w push-upach i forearm plank. Nazwa PL: 'Body-up' to przyjęta angielska forma w środowisku fitness; aliases zawierają 'sfinks pompka' jako opisową polską formę. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "triceps", "arms", "no_equipment", "home_workout", "plank_variation", "closed_chain", "calisthenics"]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-incline-fly",
+  "name": "Dumbbell Incline Fly",
+  "namePl": "Rozpiętki z hantlami na ławce skośnej dodatniej",
+  "aliases": ["incline dumbbell fly", "incline DB fly", "incline dumbbell flye", "upper chest dumbbell fly", "incline bench dumbbell fly"],
+  "aliasesPl": ["rozpiętki hantlami skos dodatni", "incline fly z hantlami", "rozpiętki górą klatki hantlami", "rozpiętki na skosie dodatnim z hantlami", "DB rozpiętki skos dodatni"],
+
+  "description": "Single-joint isolation exercise for the chest performed lying supine on a bench set to a positive incline (typically 30-45°), with a dumbbell in each hand. The arms travel in a wide arc out to the sides and back up while the elbows remain frozen at a slight bend (about 10-20°) — the motion happens at the shoulder joint, not the elbow. The incline angle shifts the line of pull so that the clavicular (upper) fibres of pectoralis major do the bulk of the work, making this a premium hypertrophy tool for filling out the upper chest and the area just below the collarbones. Compared to the flat-bench version, the anterior deltoid contributes slightly more, but the triceps are still removed from the equation — this is a textbook example of horizontal shoulder adduction biased upward in the transverse plane.",
+  "descriptionPl": "Jednostawowe ćwiczenie izolowane na klatkę piersiową, wykonywane w leżeniu tyłem na ławce ustawionej na skos dodatni (zwykle 30-45°), z hantlem w każdej ręce. Ramiona prowadzą szerokim łukiem na boki i z powrotem do góry, podczas gdy łokcie pozostają zamrożone w lekkim ugięciu (około 10-20°) — ruch odbywa się w stawie barkowym, nie w łokciu. Kąt skosu przesuwa linię obciążenia tak, że to włókna obojczykowe (górne) mięśnia piersiowego większego wykonują główną pracę, dzięki czemu jest to pierwszorzędne narzędzie hipertroficzne do dobudowania górnej części klatki i obszaru tuż pod obojczykami. W porównaniu do wersji na ławce poziomej przedni akton barku pracuje nieco mocniej, ale tricepsy nadal są wyłączone z pracy — to podręcznikowy przykład poziomego przywodzenia ramienia w płaszczyźnie poprzecznej z naciskiem na górne włókna klatki.",
+
+  "instructions": [
+    "Set an adjustable bench to a positive incline of 30-45°. Sit down with a dumbbell resting on each thigh, palms facing each other (neutral grip).",
+    "Lie back, using your thighs to kick the dumbbells up to chest level. Press them up over the upper chest so the dumbbells meet, palms still facing each other.",
+    "Set the shoulder blades — retract and depress them firmly into the bench. Plant feet flat on the floor, slight natural arch in the lower back, glutes pinned to the seat.",
+    "Put a slight bend in your elbows (about 10-20°). Lock this elbow angle and keep it frozen for the entire set — this is the rule that turns a press into a fly.",
+    "Inhale and slowly lower the dumbbells out to the sides in a wide arc. Lead with the elbows, the hands just follow along for the ride.",
+    "Stop when the dumbbells reach roughly chest/shoulder level and you feel a strong stretch across the upper chest. Do not let the shoulders roll forward off the bench.",
+    "Reverse the motion by squeezing the upper chest, bringing the dumbbells back up in the same arc until they nearly meet over the collarbones. Do NOT bend or straighten the elbows during the movement.",
+    "Squeeze the pecs hard at the top, exhale. Do not let the dumbbells clang together — keep tension on the upper chest by stopping just before contact."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę regulowaną na skos dodatni 30-45°. Usiądź z hantlami opartymi o uda, dłonie zwrócone do siebie (chwyt neutralny).",
+    "Połóż się, wybijając udami hantle na wysokość klatki. Wyciśnij je nad górną częścią klatki tak aby się spotkały, dłonie nadal zwrócone do siebie.",
+    "Ustaw łopatki — ściągnij je i opuść mocno wciskając w ławkę. Stopy płasko na podłodze, lekki naturalny łuk w dolnych plecach, pośladki przyklejone do siedziska.",
+    "Ugnij lekko łokcie (około 10-20°). Zablokuj ten kąt w łokciach i utrzymaj go zamrożony przez całą serię — to zasada która zmienia wyciskanie w rozpiętki.",
+    "Wdech i powoli opuszczaj hantle na boki szerokim łukiem. Prowadź łokciami, dłonie tylko podążają za ruchem.",
+    "Zatrzymaj się gdy hantle dojdą mniej więcej na wysokość klatki/barków i poczujesz mocne rozciągnięcie górnej części klatki. Nie pozwól by barki zarolowały się do przodu zsuwając się z ławki.",
+    "Odwróć kierunek ruchu spinając górę klatki, prowadząc hantle z powrotem do góry tym samym łukiem aż prawie się spotkają nad obojczykami. NIE zginaj ani nie prostuj łokci podczas ruchu.",
+    "Mocno spinaj klatkę w górze, wydech. Nie pozwól by hantle stuknęły się o siebie — utrzymaj napięcie na górnej klatce zatrzymując się tuż przed kontaktem."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["upper_chest"],
+    "secondary": ["pectoralis_major", "anterior_deltoids"],
+    "stabilizers": ["biceps_brachii", "serratus_anterior", "rotator_cuff", "core"]
+  },
+
+  "muscle_intensity": {
+    "upper_chest": "P10",
+    "pectoralis_major": "S6",
+    "anterior_deltoids": "S6",
+    "biceps_brachii": "T3",
+    "serratus_anterior": "T3",
+    "rotator_cuff": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-fly", "dumbbell-incline-bench-press", "machine-chest-press"],
+    "progression_to": ["cable-incline-fly", "low-to-high-cable-fly", "incline-svend-press"],
+    "alternatives": ["cable-incline-fly", "dumbbell-fly", "incline-pec-deck", "dumbbell-incline-bench-press", "low-to-high-cable-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench set to 30-45° — lower angle = more chest, higher angle = more front delt",
+      "Dumbbells on thighs, kick them up as you lie back",
+      "Shoulder blades retracted and pinned to the bench BEFORE the first rep",
+      "Slight elbow bend (10-20°) — lock that angle now and freeze it",
+      "Press dumbbells over the upper chest/collarbones, palms facing each other"
+    ],
+    "setup_cues_pl": [
+      "Ławka ustawiona na 30-45° — niższy kąt = więcej klatki, wyższy = więcej przedniego barku",
+      "Hantle na udach, wybij je gdy się kładziesz",
+      "Łopatki ściągnięte i wciśnięte w ławkę PRZED pierwszym powtórzeniem",
+      "Lekkie ugięcie łokci (10-20°) — zablokuj ten kąt już teraz i zamroź",
+      "Wyciśnij hantle nad górną klatką/obojczykami, dłonie zwrócone do siebie"
+    ],
+    "execution_cues": [
+      "Hug a giant barrel tilted up toward the ceiling — arc, do not press",
+      "Lead with the elbows, hands follow along for the ride",
+      "Feel the stretch in the area just under the collarbones, not in the front of the shoulder",
+      "Squeeze the upper pecs together at the top, stop before dumbbells touch",
+      "Eccentric ~3 seconds, concentric controlled — feel the upper chest, not the shoulders"
+    ],
+    "execution_cues_pl": [
+      "Obejmij wielką beczkę przechyloną w stronę sufitu — łuk, nie wyciskanie",
+      "Prowadź łokciami, dłonie tylko podążają za ruchem",
+      "Czuj rozciągnięcie w obszarze tuż pod obojczykami, nie z przodu barku",
+      "Ściśnij górną klatkę razem w górze, zatrzymaj się przed stuknięciem hantli",
+      "Faza ekscentryczna ~3 sekundy, koncentryczna kontrolowana — czuj górną klatkę, nie barki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending and straightening the elbows (turning the fly into a press)",
+        "faultPl": "Zginanie i prostowanie łokci (zamiana rozpiętek w wyciskanie)",
+        "cause": "Load too heavy, triceps unconsciously recruited to move more weight, lack of upper-chest mind-muscle connection",
+        "causePl": "Zbyt duży ciężar, nieświadome włączanie tricepsów aby przemieścić większy ciężar, brak czucia górnej klatki",
+        "cue": "Lock the elbow angle at setup and keep it frozen. If the elbows start opening and closing, drop the weight by 30-40% immediately.",
+        "cuePl": "Zablokuj kąt w łokciu przy starcie i utrzymaj go zamrożony. Jeśli łokcie zaczynają się otwierać i zamykać, zmniejsz ciężar o 30-40% natychmiast."
+      },
+      {
+        "fault": "Going too deep — dumbbells well below shoulder level",
+        "faultPl": "Zbyt głębokie schodzenie — hantle znacznie poniżej linii barków",
+        "cause": "Ego-driven 'maximum stretch' mentality, copying flat-bench depth without respect for the anterior shoulder capsule",
+        "causePl": "Mentalność 'maksymalne rozciągnięcie' napędzana ego, kopiowanie głębokości z ławki poziomej bez szacunku dla torebki przedniej barku",
+        "cue": "Hands stop roughly at shoulder/chest level. Below that you stress the anterior shoulder capsule, not the upper pec — and dumbbell flys are the leading cause of pec tears in the gym.",
+        "cuePl": "Dłonie zatrzymują się mniej więcej na wysokości barków/klatki. Niżej obciążasz torebkę przednią stawu, a nie górną klatkę — a rozpiętki z hantlami to najczęstsza przyczyna zerwań klatki na siłowni."
+      },
+      {
+        "fault": "Bench angle too steep (60° or more)",
+        "faultPl": "Zbyt stromy kąt ławki (60° lub więcej)",
+        "cause": "Belief that 'higher = more upper chest', not understanding that above 45° the front deltoid takes over",
+        "causePl": "Przekonanie że 'wyżej = więcej górnej klatki', brak zrozumienia że powyżej 45° pracę przejmuje przedni akton barku",
+        "cue": "Stick to 30-45°. Above that the line of pull falls on the anterior deltoid, not the clavicular pec — and you turn a chest exercise into a delt exercise.",
+        "cuePl": "Trzymaj się 30-45°. Powyżej linia obciążenia spada na przedni akton barku, nie na obojczykową część klatki — zamieniasz ćwiczenie klatki w ćwiczenie barku."
+      },
+      {
+        "fault": "Shoulders rolling forward at the bottom (loss of scapular retraction)",
+        "faultPl": "Rolowanie barków do przodu w dole (utrata ściągniętych łopatek)",
+        "cause": "Weak rear delts/upper back, load too heavy, fatigue at end of set",
+        "causePl": "Słabe tylne aktony barków/górne plecy, zbyt duży ciężar, zmęczenie pod koniec serii",
+        "cue": "Shoulder blades stay PINNED to the bench through the whole rep. If they peel off the pad, stop the set.",
+        "cuePl": "Łopatki POZOSTAJĄ przyklejone do oparcia przez cały ruch. Jeśli zaczynają się odrywać, przerwij serię."
+      },
+      {
+        "fault": "Dumbbells clanging together at the top",
+        "faultPl": "Stukanie hantli o siebie w górze",
+        "cause": "Following momentum past the contraction point, losing tension on the upper pecs at the top",
+        "causePl": "Podążanie za rozpędem za punkt skurczu, utrata napięcia górnej klatki w górze",
+        "cue": "Stop dumbbells about 5 cm apart at the top — keep tension on the upper chest, don't let the bones do the work.",
+        "cuePl": "Zatrzymaj hantle około 5 cm od siebie w górze — utrzymuj napięcie górnej klatki, nie pozwól by kości robiły robotę za mięśnie."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (arms opening to the stretch). Exhale forcefully during the concentric squeeze. Keep mild intra-abdominal pressure to protect the lumbar spine — important because the incline shifts more load through the upper torso.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (rozkładanie ramion do rozciągnięcia). Mocny wydech w fazie koncentrycznego ścisku. Utrzymuj lekkie napięcie tłoczni brzusznej aby chronić odcinek lędźwiowy — ważne, bo skos dodatni przenosi więcej obciążenia przez górną część tułowia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_instability_or_capsulitis",
+      "severity": "modify",
+      "modification": "Incline fly puts the glenohumeral joint in horizontal abduction with the arm overhead — one of the highest-risk positions for the anterior capsule. Limit stretch depth (stop hands above shoulder level), reduce load and increase reps (12-15). Avoid completely during acute flare-ups.",
+      "modificationPl": "Rozpiętki na skosie ustawiają staw ramienny w odwiedzeniu poziomym z ramieniem nad głową — jedna z najbardziej ryzykownych pozycji dla torebki przedniej. Ogranicz głębokość rozciągania (zatrzymaj dłonie powyżej linii barków), zmniejsz obciążenie i zwiększ powtórzenia (12-15). Całkowicie unikaj w okresach zaostrzenia.",
+      "alternative": "cable-incline-fly"
+    },
+    {
+      "condition": "pectoralis_strain_or_distal_tear_history",
+      "severity": "avoid",
+      "modification": "Dumbbell fly is statistically the #1 mechanism of pectoralis major tears in the gym — the stretched position under load is exactly where the tendon fails. After any pec strain or tear history avoid free-weight flys entirely until cleared by physiotherapist. Use machine or cable fly with limited ROM as substitute.",
+      "modificationPl": "Rozpiętki z hantlami to statystycznie najczęstszy mechanizm zerwania mięśnia piersiowego większego na siłowni — pozycja rozciągnięta pod obciążeniem to dokładnie miejsce gdzie ścięgno pęka. Po przebytym naderwaniu lub zerwaniu klatki całkowicie unikaj rozpiętek z wolnymi ciężarami do czasu zgody fizjoterapeuty. Stosuj maszynę lub linki z ograniczonym ROM jako zastępstwo.",
+      "alternative": "incline-pec-deck"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Horizontal abduction with the arms overhead can pinch tissue under the acromion — and the incline position amplifies this compared to flat-bench fly. Reduce stretch depth (stop dumbbells noticeably above chest level), lower the bench angle toward 25-30°, or switch to cable incline fly which lets you keep tension without going to maximum stretch.",
+      "modificationPl": "Odwiedzenie poziome z ramionami nad głową może uciskać tkanki pod wyrostkiem barkowym — a pozycja skośna dodatnia nasila to w porównaniu do ławki poziomej. Zmniejsz głębokość rozciągania (zatrzymaj hantle wyraźnie powyżej linii klatki), obniż kąt ławki w stronę 25-30° lub przejdź na rozpiętki na wyciągu skos dodatni, które pozwalają utrzymać napięcie bez schodzenia do maksymalnego rozciągnięcia.",
+      "alternative": "cable-incline-fly"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "modify",
+      "modification": "The crunched-together top position above the collarbones can compress the acromioclavicular joint, especially on incline where the dumbbells end closer to the AC joint than on flat bench. Stop the dumbbells with a wider gap at the top (about 15 cm apart). If pain persists switch to an incline pec-deck which keeps the AC joint in a friendlier position.",
+      "modificationPl": "Zacisnięta pozycja w górze nad obojczykami może uciskać staw barkowo-obojczykowy, zwłaszcza na skosie dodatnim gdzie hantle kończą bliżej stawu AC niż na ławce poziomej. Zatrzymaj hantle z większym odstępem w górze (około 15 cm od siebie). Jeśli ból nie ustępuje przejdź na maszynę butterfly na skosie, która jest łagodniejsza dla stawu AC.",
+      "alternative": "incline-pec-deck"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, default) | 3x12-20 (pump/finisher) | 3-4x8-12 (mass focus z tempo 3-1-2-1)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-incline-fly.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-fly/frame_0_start.png",
+      "frames/dumbbell-incline-fly/frame_1_early.png",
+      "frames/dumbbell-incline-fly/frame_2_mid.png",
+      "frames/dumbbell-incline-fly/frame_3_late.png",
+      "frames/dumbbell-incline-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-incline-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 (dół/rozciągnięcie): osoba leży na ławce ustawionej na skos dodatni (~30-45°), ramiona rozłożone szeroko na boki na wysokości barków/klatki, hantle po obu stronach, łokcie z wyraźnym lekkim ugięciem (nie wyprostowane), chwyt neutralny (dłonie zwrócone do siebie/do przodu). GÓRNA CZĘŚĆ KLATKI mocno podświetlona na czerwono — sygnatura ćwiczenia na upper chest (włókna obojczykowe). Frame 1 (early concentric): ramiona zaczynają wędrować do góry w łuku z motion blur ghost trail pokazującym pełen łuk od dołu, hantle nad klatką. Frame 2 (góra/skurcz): pełny skurcz — hantle blisko siebie nad górną klatką/obojczykami, ramiona uniesione, łokcie nadal w stałym lekkim zgięciu (NIE wyprostowane jak w pressie). Frame 3 (late): pozycja środkowa fazy ekscentryki, identyczna geometria jak Frame 1. Frame 4 (powrót na dół z ghost trail nad głową): widać pełen łuk z góry do dołu — klasyczny ruch fly. Klucz identyfikacji: (1) ławka pod kątem dodatnim (oparcie podniesione), (2) brak zmiany kąta w łokciu w trakcie ruchu, (3) chwyt neutralny dłonie do siebie, (4) szeroki łuk a nie pressing, (5) podświetlone tylko GÓRNE włókna klatki (nie cała pierś jak w flat fly). Klasyczne incline dumbbell fly. movement_pattern: isolation_fly, plane: transverse z biasem na włókna obojczykowe. primary: upper_chest P10 (zgodnie z briefem — akcent górnej klatki), pectoralis_major S6 (dolne włókna jako secondary), anterior_deltoids S6 (mocniej niż flat fly bo incline) — wszystko zgodne z briefem. Difficulty 5 (zgodnie z briefem — średnia trudność, technika wymagająca ścisłej kontroli kąta w łokciu i pozycji na skosie, ryzyko zerwania klatki jak we wszystkich flyach z hantlami). PL nazwa zgodna z polskim standardem fitness ('Rozpiętki z hantlami na ławce skośnej dodatniej'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Schema zachowana: 5 common_faults, 4 contraindications, 5 setup_cues + 5 execution_cues PL+EN, prerequisites/progression_to/alternatives.",
+
+  "tags": ["bodybuilding", "chest", "upper_chest", "pectorals", "isolation", "dumbbell", "incline_bench", "upper_body", "hypertrophy", "fly", "horizontal_adduction"]
+}

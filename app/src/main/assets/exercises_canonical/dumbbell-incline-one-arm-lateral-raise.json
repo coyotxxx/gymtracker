@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-incline-one-arm-lateral-raise",
+  "name": "Dumbbell Incline One-Arm Lateral Raise",
+  "namePl": "Wznosy bokiem jednorącz na ławce skośnej",
+  "aliases": ["side-lying lateral raise on incline bench", "incline side lying dumbbell lateral raise", "one arm incline lateral raise", "lying side lateral raise"],
+  "aliasesPl": ["wznosy bokiem jednorącz leżąc bokiem na ławce skośnej", "boczne wznosy hantla leżąc na boku", "jednoręczne wznosy bokiem na skosie", "side lateral raise leżąc na boku"],
+
+  "description": "Strict unilateral isolation exercise for the lateral (middle) deltoid head performed while lying on the side on an incline bench. The side-lying position eliminates virtually all cheating mechanisms — no torso swing, no upper-trap shrug, no leg drive — and places the lateral deltoid under tension across a longer portion of the range of motion than a standing lateral raise (resistance is maximal already from the bottom). One of the purest lateral-delt isolations in existence and a gold-standard movement for shoulder-width specialization.",
+  "descriptionPl": "Ściśle jednostronne ćwiczenie izolowane na boczny akton mięśnia naramiennego, wykonywane leżąc bokiem na ławce skośnej. Pozycja na boku eliminuje praktycznie wszystkie mechanizmy oszukiwania — brak bujania tułowiem, brak wciągania trapezów górnych, brak pomocy nogami — a boczny akton znajduje się pod napięciem przez dłuższy fragment zakresu ruchu niż w klasycznych wznosach na stojąco (opór jest maksymalny już od dolnej pozycji). Jedna z najczystszych izolacji bocznego aktonu i wzorcowe ćwiczenie do specjalizacji szerokości barków.",
+
+  "instructions": [
+    "Set an incline bench at roughly 45-60 degrees. Lie down on your side on the bench so that your back is pressed against the back-rest and your hips rest on the seat — your body forms a straight diagonal line.",
+    "Grip a dumbbell in your top hand (the arm furthest from the bench) with a neutral or slightly pronated grip. Let it hang down in front of your hips/thighs.",
+    "Wrap your bottom arm around the bench or rest your head on it for stability. Your bottom shoulder stays in contact with the bench.",
+    "Set a small fixed bend in the working elbow (about 10-15 degrees). This angle stays constant the entire rep.",
+    "Brace your core, keep the working-side shoulder blade slightly depressed (away from the ear), and exhale as you raise the dumbbell out in an arc directly upward — perpendicular to the floor.",
+    "Stop when the upper arm is roughly perpendicular to the torso (the dumbbell points directly toward the ceiling). Pause for 1 second at the top and squeeze the lateral delt.",
+    "Lower the dumbbell along the same arc in 2-3 seconds, maintaining tension throughout. Do not let it bang into your hip.",
+    "Complete all reps on one side, then switch sides. Do not alternate within a set."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną pod kątem około 45-60 stopni. Połóż się bokiem na ławce tak, by plecy były dociśnięte do oparcia, a biodra spoczywały na siedzisku — ciało tworzy prostą linię ukośną.",
+    "Złap hantel górną ręką (ta dalej od ławki) chwytem neutralnym lub lekko pronowanym. Pozwól mu zwisać w dół przed biodrami/udami.",
+    "Owiń dolną ręką ławkę lub oprzyj na niej głowę dla stabilizacji. Dolny bark pozostaje w kontakcie z ławką.",
+    "Ustaw lekkie, stałe ugięcie w pracującym łokciu (około 10-15 stopni). Ten kąt pozostaje niezmienny przez całe powtórzenie.",
+    "Napnij brzuch, utrzymuj lekko opuszczoną łopatkę po stronie pracującej (z dala od ucha) i wykonaj wydech, unosząc hantel łukiem prosto w górę — prostopadle do podłogi.",
+    "Zatrzymaj się, gdy ramię ponad łokciem jest mniej więcej prostopadłe do tułowia (hantel skierowany prosto w sufit). Zrób 1-sekundową pauzę w górnej pozycji i mocno spinaj boczny akton.",
+    "Opuszczaj hantel tą samą drogą przez 2-3 sekundy, utrzymując napięcie przez cały zakres. Nie pozwól, by uderzył o biodro.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, potem zmień stronę. Nie naprzemiennie w obrębie serii."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids"],
+    "secondary": ["anterior_deltoids", "supraspinatus"],
+    "stabilizers": ["trapezius_lower", "serratus_anterior", "core", "forearm_flexors", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P10",
+    "anterior_deltoids": "S4",
+    "supraspinatus": "S4",
+    "trapezius_lower": "T3",
+    "serratus_anterior": "T3",
+    "rotator_cuff": "T3",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "incline_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-lateral-raise"],
+    "progression_to": ["cable-one-arm-lateral-raise", "leaning-dumbbell-lateral-raise"],
+    "alternatives": ["dumbbell-lateral-raise", "cable-lateral-raise", "machine-lateral-raise", "leaning-dumbbell-lateral-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 45-60° — body in a straight diagonal line",
+      "Hip and back pressed firmly into the bench",
+      "Bottom arm anchors the body — no rolling",
+      "Working elbow slightly bent (~10-15°) and locked",
+      "Working shoulder pulled away from the ear"
+    ],
+    "setup_cues_pl": [
+      "Ławka pod kątem 45-60° — ciało w jednej linii ukośnej",
+      "Biodro i plecy mocno dociśnięte do ławki",
+      "Dolna ręka kotwiczy ciało — bez przewracania się",
+      "Pracujący łokieć lekko ugięty (~10-15°) i zablokowany",
+      "Pracujący bark opuszczony, z dala od ucha"
+    ],
+    "execution_cues": [
+      "Raise straight toward the ceiling — vertical path",
+      "Lead with the elbow, not the dumbbell",
+      "Stop when arm is perpendicular to torso",
+      "Squeeze lateral delt 1 second at the top",
+      "Lower under control — never drop the weight"
+    ],
+    "execution_cues_pl": [
+      "Unoś prosto w stronę sufitu — pionowa droga",
+      "Prowadź łokciem, nie hantlem",
+      "Zatrzymaj gdy ramię jest prostopadłe do tułowia",
+      "Spinaj boczny akton przez 1 sekundę w górze",
+      "Opuszczaj kontrolowanie — nigdy nie rzucaj ciężaru"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling onto the back during the lift",
+        "faultPl": "Przewracanie się na plecy podczas unoszenia",
+        "cause": "Weight too heavy and the lifter unconsciously shifts to a position where the front delt and pec can help",
+        "causePl": "Zbyt duży ciężar i ćwiczący nieświadomie zmienia pozycję na taką, w której przedni akton i klatka mogą pomagać",
+        "cue": "Lower the weight by 30-40%. Anchor your hip into the bench and keep your back flat against the back-rest for the entire set.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Zakotwicz biodro w ławce i trzymaj plecy płasko przy oparciu przez całą serię."
+      },
+      {
+        "fault": "Raising arm in front of the body instead of straight up",
+        "faultPl": "Unoszenie ręki przed ciało zamiast prosto w górę",
+        "cause": "Anterior-deltoid dominance taking over because the lateral delt is weak or untrained in this plane",
+        "causePl": "Dominacja przedniego aktonu przejmująca pracę, bo boczny akton jest słaby lub nieprzyzwyczajony do tej płaszczyzny",
+        "cue": "Imagine the dumbbell traveling up an invisible wall directly in line with your ear. Vertical, not forward.",
+        "cuePl": "Wyobraź sobie, że hantel jedzie po niewidzialnej ścianie dokładnie w linii z uchem. Pionowo, nie do przodu."
+      },
+      {
+        "fault": "Going past vertical at the top",
+        "faultPl": "Przekraczanie pionu w górnej pozycji",
+        "cause": "Trying to extend the range of motion, but the lateral delt is already maximally shortened — anything beyond shifts work to supraspinatus and trapezius",
+        "causePl": "Próba zwiększenia zakresu ruchu, ale boczny akton jest już maksymalnie skrócony — wszystko powyżej przenosi pracę na nadgrzebieniowy i czworoboczny",
+        "cue": "Stop when the dumbbell points straight at the ceiling. Pause there. Past that you are no longer training lateral delt.",
+        "cuePl": "Zatrzymaj gdy hantel pokazuje prosto w sufit. Zrób tam pauzę. Wyżej nie trenujesz już bocznego aktonu."
+      },
+      {
+        "fault": "Letting the elbow straighten under load",
+        "faultPl": "Wyprostowywanie łokcia pod obciążeniem",
+        "cause": "Lever arm becomes too long, lifter tries to reduce torque by extending — but this kills lateral-delt tension",
+        "causePl": "Dźwignia staje się za długa, ćwiczący próbuje zmniejszyć moment siły prostując ramię — ale to zabija napięcie bocznego aktonu",
+        "cue": "Fix the elbow angle at the start and treat the arm as a single rigid lever from shoulder to dumbbell.",
+        "cuePl": "Zablokuj kąt łokcia na początku i traktuj ramię jako jedną sztywną dźwignię od barku do hantla."
+      },
+      {
+        "fault": "Bouncing the dumbbell off the hip at the bottom",
+        "faultPl": "Odbijanie hantla od biodra w dolnej pozycji",
+        "cause": "Loss of tension at the bottom and using momentum to start the next rep — wastes the unique advantage of this exercise",
+        "causePl": "Utrata napięcia w dolnej pozycji i wykorzystywanie rozpędu do startu kolejnego powtórzenia — marnuje główną zaletę tego ćwiczenia",
+        "cue": "Pause for 0.5 second with the dumbbell 2-3 cm above the hip, then drive up. No contact, no bounce.",
+        "cuePl": "Zatrzymaj na 0,5 sekundy z hantlem 2-3 cm nad biodrem, dopiero potem unoś. Bez kontaktu, bez odbicia."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Keep a light core brace so the side-lying position stays stable.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha, by pozycja na boku pozostała stabilna."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion to 70% of vertical — stop before the dumbbell points straight up. Use a fully neutral grip (thumb leading) and keep the upper arm slightly in front of the frontal plane (scaption rather than pure abduction).",
+      "modificationPl": "Zmniejsz zakres ruchu do 70% pionu — zatrzymuj zanim hantel skieruje się prosto w górę. Stosuj chwyt całkowicie neutralny (kciuk prowadzi) i utrzymuj ramię lekko przed płaszczyzną czołową (scapcja zamiast czystego odwodzenia).",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Free-weight lateral raises load the supraspinatus aggressively in the bottom third. Avoid during acute phase. Substitute with cable or machine lateral raises that allow a partial ROM without losing tension.",
+      "modificationPl": "Wznosy bokiem z wolnym ciężarem mocno obciążają mięsień nadgrzebieniowy w dolnej części zakresu. Unikaj w fazie ostrej. Zastąp wznosami na wyciągu lub na maszynie, które pozwalają na częściowy zakres bez utraty napięcia.",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses at the top of the raise. Cap the range at shoulder height (90°) rather than going to vertical. Lighter loads, higher reps.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji w górnej pozycji wznosu. Ogranicz zakres do wysokości barku (90°) zamiast do pionu. Lżejsze ciężary, więcej powtórzeń.",
+      "alternative": "cable-lateral-raise"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "caution",
+      "modification": "Sustained dumbbell grip with pronated wrist aggravates extensor tendons. Use a neutral grip throughout and wear wrist wraps. Reduce sets if pain flares.",
+      "modificationPl": "Długotrwały chwyt hantla pronowanym nadgarstkiem podrażnia ścięgna prostowników. Stosuj chwyt neutralny przez cały czas i załóż opaski na nadgarstki. Zmniejsz liczbę serii jeśli ból narasta.",
+      "alternative": "cable-lateral-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy/standard) | 4-5x15-25 per arm (lateral delt specialization/pump) | 3x8-10 per arm (heavy strict focus, rare)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-incline-one-arm-lateral-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-one-arm-lateral-raise/frame_0_start.png",
+      "frames/dumbbell-incline-one-arm-lateral-raise/frame_1_early.png",
+      "frames/dumbbell-incline-one-arm-lateral-raise/frame_2_mid.png",
+      "frames/dumbbell-incline-one-arm-lateral-raise/frame_3_late.png",
+      "frames/dumbbell-incline-one-arm-lateral-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-incline-one-arm-lateral-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:30:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Ćwiczący leży na BOKU na ławce skośnej (~45-60°), plecy oparte o oparcie, biodro na siedzisku, ciało w jednej linii ukośnej. Frame 0 (start): hantel w dolnej ręce (ta od strony podłogi, dalej od oparcia) wisi w dół przy biodrze, druga ręka stabilizuje na biodrze/ławce, podświetlony BOCZNY akton ramienia od strony przodu (czerwony obszar na barku). Frame 1-2 (mid-top): hantel uniesiony pionowo w górę po łuku w płaszczyźnie czołowej — ramię ponad łokciem dochodzi do pozycji prostopadłej do tułowia, hantel pokazuje prosto w sufit, łokieć z lekkim ugięciem stałym, łopatka opuszczona. Frame 3-4 (return): kontrolowany powrót tą samą drogą. To nie jest 'leaning lateral raise' (gdzie ćwiczący trzyma się słupka stojąc) ani 'lying rear lateral raise' (gdzie leży brzuchem) — to ścisła izolacja BOCZNEGO aktonu (P10) w czystej płaszczyźnie czołowej, z eliminacją cheatingu dzięki pozycji na boku. movement_pattern: isolation_raise, laterality: unilateral. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "lateral_delts", "side_delts", "isolation", "dumbbell", "unilateral", "upper_body", "incline_bench", "hypertrophy", "shoulder_width_specialization", "anti_cheat"]
+}

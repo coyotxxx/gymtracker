@@ -1,0 +1,203 @@
+{
+  "id": "ez-bar-reverse-grip-bent-over-row",
+  "name": "EZ-Bar Reverse Grip Bent-Over Row",
+  "namePl": "Wiosło w opadzie EZ-barem chwytem podchwytem",
+  "aliases": ["ez bar reverse grip row", "ez bar underhand row", "ez bar yates row", "ez bar supinated row", "reverse grip ez bar row"],
+  "aliasesPl": ["wiosłowanie EZ-barem podchwytem", "wiosło EZ-barem podchwytem w opadzie", "Yates row EZ-barem", "wiosłowanie łamanym gryfem podchwytem", "wiosło gryfem łamanym chwytem dolnym"],
+
+  "description": "Bent-over row performed with an EZ-bar (cambered/curl bar) using a reverse (supinated, underhand) grip — popularized as the 'Yates row' style. The supinated grip forces the elbows to track close to the torso, biasing the lower lats and adding significant biceps load. The EZ-bar's angled grip sections place the wrists in a more neutral, friendlier position than a straight bar, reducing wrist and elbow strain during heavier sets. Torso angle is typically slightly more upright than a classic overhand bent-over row (around 45-60 degrees), which is functional and lat-friendly given the changed elbow path. Excellent mass-builder for the lower lats, biceps and a powerful complement to vertical pulling in a complete back program.",
+  "descriptionPl": "Wiosłowanie w opadzie wykonywane EZ-barem (gryfem łamanym/curl) chwytem podchwytem (supinowanym, dłonie do góry) — spopularyzowane jako tzw. 'Yates row'. Chwyt podchwytem wymusza prowadzenie łokci blisko tułowia, co przenosi nacisk na dolne aktony najszerszych grzbietu i mocno dociąża dwugłowe ramion. Łamany kształt gryfu ustawia nadgarstki w bardziej neutralnej, przyjaznej pozycji niż prosta sztanga, redukując napięcie nadgarstków i łokci przy cięższych seriach. Kąt tułowia jest zwykle nieco bardziej pionowy niż w klasycznym wiosłowaniu nachwytem (około 45-60 stopni), co jest funkcjonalne i przyjazne dla najszerszych przy zmienionej trajektorii łokci. Świetne ćwiczenie masowe na dolne lats, dwugłowe ramion i mocne uzupełnienie ciągu pionowego w pełnym planie treningu pleców.",
+
+  "instructions": [
+    "Load the EZ-bar. Stand with feet shoulder-width apart, mid-foot under the bar. Grip the angled inner sections of the bar with a supinated (underhand) grip, hands roughly shoulder-width.",
+    "Unrack from the floor with a stiff-leg deadlift to standing — this is your finish position.",
+    "Hinge at the hips, push the glutes back, bend the knees slightly. Torso angle approximately 45-60 degrees to the floor. Back flat, neutral spine, chest proud. Bar hanging at knee level with arms straight.",
+    "Brace the core, set the lats by pulling the bar slightly toward the body without bending the elbows.",
+    "Pull the bar to the lower abdomen / belly button. Elbows travel back and stay close to the torso (not flared out). Squeeze the shoulder blades together at the top while focusing on driving the elbows behind the ribs.",
+    "Lower the bar under control along the same path until arms are fully extended. Do not lose the torso angle or round the lower back.",
+    "Keep the torso angle locked throughout the entire set. The reverse grip can tempt you to stand up — resist it.",
+    "Reset between reps or maintain constant tension depending on the goal."
+  ],
+  "instructionsPl": [
+    "Załaduj EZ-bar. Stań stopami na szerokość barków, środek stopy pod gryfem. Złap zagięte wewnętrzne sekcje gryfu chwytem podchwytem (dłonie skierowane do góry), ręce mniej więcej na szerokość barków.",
+    "Podnieś gryf z ziemi martwym ciągiem na sztywnych nogach do pozycji stojącej — to jest twoja pozycja końcowa.",
+    "Zegnij się w biodrach, wypchnij pośladki do tyłu, lekko ugnij kolana. Kąt tułowia około 45-60 stopni do podłoża. Plecy płaskie, kręgosłup neutralny, klatka wysunięta. Sztanga zwisa na wysokości kolan z prostymi ramionami.",
+    "Napnij brzuch, aktywuj najszersze ściągając gryf lekko ku ciału bez zginania łokci.",
+    "Pociągnij gryf do dolnej części brzucha / pępka. Łokcie idą w tył i pozostają blisko tułowia (nie na boki). Ściśnij łopatki na szczycie skupiając się na prowadzeniu łokci za linię żeber.",
+    "Opuść gryf w pełnej kontroli tą samą trajektorią aż do pełnego wyprostu ramion. Nie trać kąta tułowia, nie zaokrąglaj odcinka lędźwiowego.",
+    "Trzymaj kąt tułowia stale taki sam przez całą serię. Chwyt podchwytem kusi by się wyprostować — opieraj się temu.",
+    "Resetuj się między powtórzeniami lub utrzymuj stałe napięcie w zależności od celu."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii", "rhomboids"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P8",
+    "rhomboids": "P8",
+    "trapezius_middle_lower": "S7",
+    "posterior_deltoids": "S6",
+    "brachialis": "S6",
+    "erector_spinae": "S8",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["ez_bar"],
+    "optional": ["lifting_straps", "chalk", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dumbbell-bent-over-row", "barbell-bent-over-row", "single-arm-dumbbell-row", "romanian-deadlift"],
+    "progression_to": ["yates-row", "pendlay-row", "t-bar-row"],
+    "alternatives": ["barbell-reverse-grip-row", "yates-row", "barbell-bent-over-row", "single-arm-dumbbell-row", "seated-cable-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, mid-foot under the bar",
+      "Supinated (underhand) grip on the angled sections of the EZ-bar",
+      "Hands roughly shoulder-width — narrower than a barbell row",
+      "Hinge hips back, slight knee bend, torso 45-60 degrees",
+      "Neutral spine, chest proud, lats engaged, bar below shoulders"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, środek stopy pod gryfem",
+      "Chwyt podchwytem (dłonie do góry) na zagiętych sekcjach EZ-baru",
+      "Ręce mniej więcej na szerokość barków — węziej niż przy zwykłej sztandze",
+      "Wypchnij biodra w tył, lekko ugnij kolana, tułów 45-60 stopni",
+      "Neutralny kręgosłup, klatka wysunięta, najszersze napięte, gryf pod barkami"
+    ],
+    "execution_cues": [
+      "Drive the elbows back AND close to the torso — not flared out",
+      "Pull the bar to the lower abdomen / belly button — feel the lower lats",
+      "Squeeze the shoulder blades together while keeping elbows tucked",
+      "Don't let the biceps take over — think 'lead with the elbows, not the hands'",
+      "Lock the torso angle — the reverse grip tempts you to stand up; resist"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokcie w tył I blisko tułowia — nie na boki",
+      "Ciągnij gryf do dolnej części brzucha / pępka — czuj dolne najszersze",
+      "Ściśnij łopatki przy łokciach trzymanych przy ciele",
+      "Nie pozwól by dwugłowe przejęły pracę — myśl 'prowadź łokciami, nie dłońmi'",
+      "Zablokuj kąt tułowia — chwyt podchwytem kusi by się wyprostować, opieraj się"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back (lumbar flexion under load)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy (zgięcie pod obciążeniem)",
+        "cause": "Weak erectors, weak hip hinge pattern, load too heavy, or poor bracing",
+        "causePl": "Słabe prostowniki, słaby wzorzec hip hinge, zbyt duży ciężar lub słabe napięcie brzucha",
+        "cue": "Reset. Lighter weight. Brace before every rep, chest proud, lats engaged. Master RDL pattern first. DANGER — biggest injury risk in this exercise.",
+        "cuePl": "Reset. Mniejszy ciężar. Napnij brzuch przed każdym powtórzeniem, klatka wysunięta, najszersze napięte. Najpierw opanuj wzór RDL. UWAGA — największe ryzyko kontuzji w tym ćwiczeniu."
+      },
+      {
+        "fault": "Biceps takeover — pulling with arms instead of back",
+        "faultPl": "Przejęcie pracy przez dwugłowe — ciąg ramionami zamiast plecami",
+        "cause": "Reverse grip naturally biases biceps; combined with arm-focused mental cue or rep tempo too fast",
+        "causePl": "Chwyt podchwytem naturalnie angażuje dwugłowe; w połączeniu z myślą skupioną na ramionach lub zbyt szybkim tempem",
+        "cue": "Think 'elbows back, not hands up.' Hands are hooks — they hold the bar, they don't lift it. Slow down the concentric to 2 sec, feel the lats and rhomboids working.",
+        "cuePl": "Myśl 'łokcie w tył, nie dłonie w górę'. Dłonie to haki — trzymają gryf, nie podnoszą go. Spowolnij ruch koncentryczny do 2 sek., czuj pracę najszerszych i równoległobocznych."
+      },
+      {
+        "fault": "Torso too vertical (standing up during the pull)",
+        "faultPl": "Zbyt pionowy tułów (prostowanie się podczas ciągu)",
+        "cause": "Avoiding fatigue in lower back, ego lifting with too heavy load, or lack of awareness during the rep",
+        "causePl": "Unikanie zmęczenia w odcinku lędźwiowym, ego lifting ze zbyt dużym ciężarem lub brak świadomości w trakcie powtórzenia",
+        "cue": "Lock the hip angle. Film yourself from the side — if your torso rises during the pull, you are cheating. Reduce weight by 20% and re-establish strict form.",
+        "cuePl": "Zablokuj kąt biodrowy. Nagraj się z boku — jeśli tułów się unosi podczas ciągu, to oszustwo. Zmniejsz ciężar o 20% i odbuduj ścisłą technikę."
+      },
+      {
+        "fault": "Elbows flaring out (treating it like an overhand row)",
+        "faultPl": "Łokcie odgięte na boki (jak w wersji nachwytem)",
+        "cause": "Habit from overhand bent-over row, or grip too wide forcing elbow abduction",
+        "causePl": "Nawyk z wiosłowania nachwytem lub zbyt szeroki chwyt wymuszający odwiedzenie łokci",
+        "cue": "Reverse grip = elbows IN. Brush the lats with your forearms on the way up. If elbows are flaring, narrow the grip on the EZ-bar's inner sections.",
+        "cuePl": "Podchwyt = łokcie BLISKO ciała. Ocieraj przedramionami o najszersze w drodze do góry. Jeśli łokcie idą na boki, zwęź chwyt na wewnętrznych sekcjach EZ-baru."
+      },
+      {
+        "fault": "Pulling the bar too high (to the chest/sternum)",
+        "faultPl": "Ciąg sztangi zbyt wysoko (do mostka/klatki)",
+        "cause": "Imitating upright row pattern, or trying to feel rear delts instead of lower lats",
+        "causePl": "Imitowanie wzorca uprightu lub próba poczucia tylnych naramiennych zamiast dolnych najszerszych",
+        "cue": "Bar goes to the LOWER abdomen / belly button. With reverse grip, the natural elbow path takes the bar low — let it. Chest pull turns it into a rear-delt exercise.",
+        "cuePl": "Sztanga idzie do DOLNEJ części brzucha / pępka. Przy chwycie podchwytem naturalna ścieżka łokci prowadzi gryf nisko — pozwól na to. Ciąg do klatki zamienia ćwiczenie w pracę tylnych naramiennych."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of the hinge. Exhale through the pull as the bar approaches the lower abdomen. Inhale on the controlled descent. For heavier sets, hold the brace through 2-3 reps then re-breathe.",
+    "breathingPl": "Wdech i napięcie brzucha na szczycie pochylenia. Wydech w trakcie ciągu gdy sztanga zbliża się do dolnej części brzucha. Wdech podczas kontrolowanego opuszczania. Przy cięższych seriach trzymaj napięcie przez 2-3 powtórzenia, potem odetchnij."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared. Loaded spinal flexion risk too high. Consult physiotherapist.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody. Ryzyko obciążonej flexji kręgosłupa zbyt duże. Konsultacja z fizjoterapeutą.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "biceps_tendinopathy_distal",
+      "severity": "modify",
+      "modification": "Reverse grip loads the distal biceps tendon heavily. Switch to overhand or neutral grip until symptoms resolve. If you must row, use chest-supported neutral-grip row.",
+      "modificationPl": "Chwyt podchwytem mocno obciąża dystalne ścięgno dwugłowego. Przejdź na chwyt nachwytem lub neutralny do ustąpienia objawów. Jeśli musisz wiosłować, użyj wersji z podparciem klatki chwytem neutralnym.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Switch to chest-supported variant (incline bench) to eliminate spinal loading. Or use seated cable row with neutral handle.",
+      "modificationPl": "Przejdź na wersję z podparciem klatki (ławka skośna) by wyeliminować obciążenie kręgosłupa. Lub wiosłowanie siedząc z linki uchwytem neutralnym.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "elbow_pain_medial",
+      "severity": "caution",
+      "modification": "EZ-bar is friendlier than straight bar for wrists, but heavy supinated pulling can aggravate medial epicondyle. Reduce load, use straps to offload grip, or switch to dumbbell row.",
+      "modificationPl": "EZ-bar jest przyjaźniejszy dla nadgarstków niż prosta sztanga, ale ciężki ciąg podchwytem może drażnić przyśrodkową stronę łokcia. Zmniejsz obciążenie, użyj pasków by odciążyć chwyt lub przejdź na wiosłowanie hantlą.",
+      "alternative": "single-arm-dumbbell-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy) | 4-5x4-6 (strength) | 3x8-12 (general) | 3x12-15 (endurance / volume)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "ez-bar-reverse-grip-bent-over-row.gif",
+    "frames_extracted": [
+      "frames/ez-bar-reverse-grip-bent-over-row/frame_0_start.png",
+      "frames/ez-bar-reverse-grip-bent-over-row/frame_1_early.png",
+      "frames/ez-bar-reverse-grip-bent-over-row/frame_2_mid.png",
+      "frames/ez-bar-reverse-grip-bent-over-row/frame_3_late.png",
+      "frames/ez-bar-reverse-grip-bent-over-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/ez-bar-reverse-grip-bent-over-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): tułów pochylony ~45-50 stopni, kolana lekko ugięte, EZ-bar (gryf łamany — wyraźnie widoczna charakterystyczna zagięta forma w środkowej części) z dużymi obciążnikami zwisa przy wyprostowanych ramionach na wysokości kolan, chwyt podchwytem (dłonie skierowane do przodu/góry, supinacja), plecy w neutralnej pozycji. Frame 1 (early): początek ciągu koncentrycznego, łokcie zaczynają iść w tył i pozostają BLISKO tułowia (charakterystyczne dla podchwytu — nie flarowane). Frames 2-3 (mid/late): pozycja szczytowa — gryf przy dolnej części brzucha / pępku, łokcie wyraźnie za linią tułowia, łopatki ściągnięte. Frame 4 (end): kontrolowane opuszczanie z powrotem do pełnego wyprostu ramion, tułów ZACHOWUJE kąt pochylenia (brak prostowania się). Podświetlone mięśnie: najszersze grzbietu (z naciskiem na DOLNĄ część — typowe dla podchwytu), dwugłowe ramion (mocno — supinacja maksymalizuje udział), równoległoboczne, środkowe czworoboczne. Klasyfikacja 'pull_horizontal' potwierdzona. Equipment: EZ-bar z obciążnikami. Wszystkie pola PL napisane od zera, polski standard fitness (Wiosło w opadzie EZ-barem chwytem podchwytem / Yates row EZ-barem). Primary muscles: latissimus_dorsi P9 (dolna część), biceps_brachii P8 (supinacja!), rhomboids P8 — to ćwiczenie buduje dolne lats i grubo dociąża dwugłowe.",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "ez_bar", "lower_lats", "yates_row", "underhand_grip", "biceps_loaded", "wrist_friendly", "bodybuilding_classic"]
+}

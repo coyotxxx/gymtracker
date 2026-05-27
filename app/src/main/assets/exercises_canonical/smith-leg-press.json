@@ -1,0 +1,204 @@
+{
+  "id": "smith-leg-press",
+  "name": "Smith Machine Leg Press (Sissy Press / Vertical Leg Press)",
+  "namePl": "Leg press na Smith Machine (pionowy wyciskanie nogami)",
+  "aliases": ["smith leg press", "smith machine leg press", "smith vertical leg press", "smith sissy press", "supine smith leg press", "lying smith leg press"],
+  "aliasesPl": ["leg press na Smith", "wyciskanie nogami na Smith Machine", "pionowy leg press na Smith", "wyciskanie nogami leżąc na Smith", "sissy press na Smith"],
+
+  "description": "Bilateral compound lower-body exercise performed in supine position underneath a Smith Machine. The lifter lies flat on the floor (or low mat) directly under the bar, plants both feet on the bar overhead, and presses the load vertically upward by extending the hips and knees. The fixed vertical rail of the Smith Machine guides the bar straight up and down, allowing focused quadriceps and glute loading without the balance demand of a free-weight overhead press or the limited range of a 45-degree sled leg press. The supine vertical orientation removes lower-back loading entirely (no spinal compression) while creating a long working range — knees can travel deep toward the chest at the bottom and lock out fully at the top. This is a niche substitute when a sled leg press is unavailable, popular in garage gyms and minimalist setups.",
+  "descriptionPl": "Obustronne wielostawowe ćwiczenie dolnej części ciała wykonywane w pozycji leżącej na plecach pod Smith Machine. Trenujący leży płasko na podłodze (lub niskiej macie) bezpośrednio pod gryfem, opiera obie stopy na gryfie nad sobą i wyciska obciążenie pionowo w górę prostując biodra i kolana. Sztywny pionowy tor Smith Machine prowadzi gryf prosto w górę i w dół, pozwalając na skupione obciążenie czworogłowych i pośladków bez wymagań równowagi typowych dla wyciskania wolnego nad głową, oraz bez ograniczonego zakresu jak w leg press pod 45°. Pionowa pozycja na plecach całkowicie eliminuje obciążenie lędźwi (zero kompresji kręgosłupa) jednocześnie tworząc długi zakres pracy — kolana mogą zejść głęboko ku klatce na dole i całkowicie wyprostować się u góry. To niszowy zamiennik gdy brak klasycznego leg press na sledzie, popularny w garażowych siłowniach i minimalistycznych setupach.",
+
+  "instructions": [
+    "Set the Smith Machine bar at approximately knee height when you are standing — this will be the starting height when you lie down. Load both sides evenly with LIGHT weight to start (this lift feels different from a sled press).",
+    "Place a thick mat or folded yoga mat directly under the bar's vertical line. Lie supine on the mat with your hips directly under the bar.",
+    "Plant both feet flat on the bar, shoulder-width apart, toes neutral or slightly turned out (5-10°). Feet should be on the metal bar between the sleeves, not on the knurling near plates.",
+    "Position so that with knees bent, your shins are roughly vertical and the bar sits over the middle of your hip-knee line. Adjust hip position by sliding your body up or down.",
+    "Place arms out to the sides on the floor (or grip the rack uprights) for stability. Do not grip the bar.",
+    "Brace the core, take a breath, and unhook the bar by rotating your feet to push and rotate the bar off the safety catches (or have a partner lift it off).",
+    "Lower the bar in a controlled manner by bending the knees and hips together. Knees travel toward the chest. Aim for ~90° knee bend or until your hips begin to lift off the floor.",
+    "Press the bar back up by extending the knees and hips simultaneously. Drive through the whole foot — mid-foot and heel push hardest.",
+    "Stop short of full knee lockout to maintain quad tension and protect the knee joint.",
+    "After completing all reps, rotate feet to rerack the bar onto the catches at the top, then carefully slide out from under the rack."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smith Machine na wysokości około kolan w pozycji stojącej — to będzie pozycja startowa gdy się położysz. Załaduj obie strony równomiernie LEKKIM ciężarem na start (to ćwiczenie czuje się inaczej niż leg press na sledzie).",
+    "Połóż grubą matę lub złożoną matę do jogi bezpośrednio pod pionową linią gryfu. Połóż się na plecach tak, by biodra znalazły się dokładnie pod gryfem.",
+    "Oprzyj obie stopy płasko na gryfie, na szerokość barków, palce neutralne lub lekko na zewnątrz (5-10°). Stopy mają być na metalowej rurze gryfu między tulejami, nie na radełkowaniu blisko talerzy.",
+    "Ustaw się tak, by przy zgiętych kolanach piszczele były z grubsza pionowe, a gryf znajdował się nad środkiem linii biodro-kolano. Skoryguj pozycję bioder przesuwając ciało w górę lub w dół.",
+    "Połóż ramiona na boki na podłodze (lub złap pionowe słupki ramy Smitha) dla stabilizacji. Nie chwytaj gryfu rękami.",
+    "Napnij brzuch, weź wdech i odepnij gryf obracając stopami aby pchnąć i obrócić gryf zwalniając go z haków (lub poproś partnera o zdjęcie).",
+    "Opuść gryf kontrolowanie zginając kolana i biodra jednocześnie. Kolana wędrują ku klatce. Celuj w ~90° zgięcia kolan lub dopóki biodra nie zaczną odrywać się od podłogi.",
+    "Wciśnij gryf z powrotem w górę prostując kolana i biodra równocześnie. Wypchnij całą stopą — środek stopy i pięta pchają najmocniej.",
+    "Zatrzymaj się tuż przed pełnym wyprostem kolan aby utrzymać napięcie czworogłowych i chronić staw kolanowy.",
+    "Po wykonaniu wszystkich powtórzeń, obróć stopy aby wpiąć gryf w haki na górze, potem ostrożnie wysuń się spod ramy."
+  ],
+
+  "classification": {
+    "movement_pattern": "leg_press",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "adductors": "S5",
+    "core": "S3",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["mat", "foam_pad", "yoga_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "lever-leg-press", "goblet-squat"],
+    "progression_to": ["sled-45-leg-press", "barbell-back-squat", "smith-hack-squat", "lever-hack-squat"],
+    "alternatives": ["sled-45-leg-press", "lever-leg-press", "lever-alternate-leg-press", "smith-hack-squat", "lever-hack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at knee height in standing position — when you lie down, this puts the bar at the right starting depth above your hips",
+      "Hips directly under the bar's vertical line — if hips are too low (towards head) the bar will scrape ribs, too high and knees won't bend enough",
+      "Feet shoulder-width on the smooth metal of the bar — NEVER on the knurling and never on the plates",
+      "Use a thick mat or pad under your hips and lower back — concrete floor will bruise the sacrum",
+      "Test the unrack with empty bar — practice the foot-twist to rotate the bar off the hooks before adding weight"
+    ],
+    "setup_cues_pl": [
+      "Gryf na wysokości kolan w pozycji stojącej — gdy się położysz, da to gryfowi właściwą głębokość startową nad biodrami",
+      "Biodra dokładnie pod pionową linią gryfu — jeśli biodra są za nisko (w kierunku głowy) gryf otrze o żebra, za wysoko i kolana nie zgną się wystarczająco",
+      "Stopy na szerokość barków na gładkim metalu gryfu — NIGDY na radełkowaniu i nigdy na talerzach",
+      "Połóż grubą matę pod biodra i dolne plecy — beton odbije ci kość krzyżową",
+      "Przetestuj odpięcie pustym gryfem — przećwicz obrót stóp aby zwolnić gryf z haków przed dodaniem ciężaru"
+    ],
+    "execution_cues": [
+      "Press straight up through the heels and mid-foot — toes only stabilize, do not push through them",
+      "Knees track in line with the toes — do not let them cave inward (valgus) under load",
+      "Lower until knees are at ~90° or hips just begin to lift — going deeper rolls the lower back off the floor and shifts load to the spine",
+      "Do not lock knees out at the top — stop 5-10° short of full extension to keep tension on the quads",
+      "Breathe out forcefully on the press, inhale and brace on the way down"
+    ],
+    "execution_cues_pl": [
+      "Wciskaj prosto w górę przez pięty i środek stopy — palce tylko stabilizują, nie pchaj przez nie",
+      "Kolana podążają w linii z palcami stóp — nie pozwól im zapaść się do środka (koślawość) pod obciążeniem",
+      "Schodź dopóki kolana nie są w ~90° lub biodra dopiero zaczynają unosić się — głębiej zwija dolne plecy z podłogi i przerzuca obciążenie na kręgosłup",
+      "Nie blokuj kolan na górze — zatrzymaj się 5-10° przed pełnym wyprostem aby utrzymać napięcie czworogłowych",
+      "Wydychaj zdecydowanie podczas wyciskania, wdech i napięcie podczas opuszczania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back lifting off the floor at the bottom of the rep",
+        "faultPl": "Dolne plecy unoszące się od podłogi w dolnej pozycji powtórzenia",
+        "cause": "Going too deep with the knees toward the chest — when hips flex beyond ~90°, the pelvis tilts posteriorly and the lumbar spine rounds off the mat. Concentrated shear on L4-L5 disc.",
+        "causePl": "Zbyt głębokie schodzenie kolan ku klatce — gdy biodra zginają się powyżej ~90°, miednica obraca się w tył i odcinek lędźwiowy odrywa się od maty. Skoncentrowane ścinanie krążków L4-L5.",
+        "cue": "Stop the rep the moment your tailbone starts to lift. Place a hand under your lower back as a self-check during early sets.",
+        "cuePl": "Zatrzymaj powtórzenie w momencie, gdy kość ogonowa zaczyna się unosić. Połóż rękę pod lędźwiami jako self-check podczas pierwszych serii."
+      },
+      {
+        "fault": "Knees collapsing inward (valgus) under load",
+        "faultPl": "Kolana zapadające się do środka (koślawość) pod obciążeniem",
+        "cause": "Weak hip abductors/glute medius or too narrow stance. The supine position makes valgus collapse harder to feel — you can damage the medial knee structures without realizing it.",
+        "causePl": "Słabe odwodziciele biodra / pośladek średni lub za wąska postawa. Pozycja na plecach utrudnia wyczucie zapadania kolan — możesz uszkodzić przyśrodkowe struktury kolana nie zdając sobie sprawy.",
+        "cue": "Cue 'push the floor apart with your feet' — actively press knees outward toward the pinky toe edge of each foot",
+        "cuePl": "Sygnał 'rozsuwaj podłogę stopami' — aktywnie wypychaj kolana na zewnątrz w kierunku zewnętrznych krawędzi stóp"
+      },
+      {
+        "fault": "Feet slipping off the bar mid-set",
+        "faultPl": "Stopy ślizgające się z gryfu w trakcie serii",
+        "cause": "Sweaty soles, smooth soles, or feet placed too close to the smooth center of the bar. With heavy load overhead, a slip is potentially catastrophic — bar drops straight onto hips or face.",
+        "causePl": "Spocone podeszwy, gładkie podeszwy, lub stopy ustawione za blisko gładkiego środka gryfu. Z ciężkim obciążeniem nad sobą, ślizg jest potencjalnie katastrofalny — gryf spada prosto na biodra lub twarz.",
+        "cue": "Use lifting shoes or hard flat-soled shoes (no running trainers). Set safety stops at the lowest safe position before starting.",
+        "cuePl": "Używaj butów do podnoszenia ciężarów lub twardych płaskich butów (nie biegowych). Ustaw bezpieczniki na najniższej bezpiecznej pozycji przed rozpoczęciem."
+      },
+      {
+        "fault": "Locking knees out hard at the top",
+        "faultPl": "Twarde blokowanie kolan w pełnym wyproście u góry",
+        "cause": "Habit from machine leg presses with cushy stops. Smith bar has hard mechanical hooks at the top — slamming into them rattles the knee joint and shifts load off the muscles.",
+        "causePl": "Nawyk z maszynowych leg pressów z miękkimi ogranicznikami. Gryf Smitha ma twarde mechaniczne haki na górze — uderzanie w nie wstrząsa stawem kolanowym i zdejmuje obciążenie z mięśni.",
+        "cue": "Stop 5-10° before full extension. Keep tension — the quads should feel pumped, not the knee joint",
+        "cuePl": "Zatrzymaj 5-10° przed pełnym wyprostem. Utrzymaj napięcie — czworogłowe mają być pompowane, nie staw kolanowy"
+      },
+      {
+        "fault": "Failed rep with no safety stops set",
+        "faultPl": "Nieudane powtórzenie bez ustawionych bezpieczników",
+        "cause": "Smith bar can be re-hooked at any height by rotating it — but only if you have strength and feet contact. Failing under heavy load with no safeties means the bar comes down onto your hips/chest/face. Multiple injury reports from this lift.",
+        "causePl": "Gryf Smitha można wpiąć na dowolnej wysokości obracając go — ale tylko gdy masz siłę i kontakt stóp. Niepowodzenie pod ciężkim obciążeniem bez bezpieczników oznacza, że gryf spada na biodra/klatkę/twarz. Wiele zgłoszonych kontuzji z tego ćwiczenia.",
+        "cue": "ALWAYS set the safety pins/stops 5-10 cm above your starting depth. If you fail, the bar catches. No safeties = no set.",
+        "cuePl": "ZAWSZE ustawiaj bezpieczniki/ograniczniki 5-10 cm powyżej głębokości startowej. Jeśli się załamiesz, gryf się złapie. Brak bezpieczników = brak serii."
+      }
+    ],
+    "breathing": "Inhale and brace the core at the top of the rep (knees extended). Hold the breath as you lower under control. Exhale forcefully during the press concentric, especially through the sticking point. Avoid full Valsalva for high reps — supine position with overhead load already raises intrathoracic pressure.",
+    "breathingPl": "Wdech i napięcie brzucha na górze powtórzenia (kolana wyprostowane). Wstrzymaj oddech opuszczając pod kontrolą. Wydychaj zdecydowanie podczas koncentryczego wyciskania, szczególnie przez punkt krytyczny. Unikaj pełnego Valsalva przy wysokich powtórzeniach — pozycja na plecach z obciążeniem nad sobą już podnosi ciśnienie wewnątrzklatkowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation_or_acute_low_back_pain",
+      "severity": "avoid",
+      "modification": "Even though the supine position removes axial compression, deep hip flexion under load creates posterior pelvic tilt which can compress disc bulges. Avoid until medical clearance. Use a sled leg press with controlled depth instead.",
+      "modificationPl": "Mimo że pozycja leżąca eliminuje kompresję osiową, głębokie zgięcie biodra pod obciążeniem tworzy retroversję miednicy która może uciskać przepukliny krążków. Unikaj do zgody lekarza. Użyj klasycznego leg press na sledzie z kontrolowaną głębokością.",
+      "alternative": "sled-45-leg-press"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Long ROM with knees deep toward chest highly loads the patellofemoral joint. Reduce depth to a pain-free range (90° knee bend max), reduce weight, and avoid full lockout. Consider switching to lever hack squat or terminal knee extensions until symptoms resolve.",
+      "modificationPl": "Długi zakres z kolanami głęboko ku klatce mocno obciąża staw rzepkowo-udowy. Zmniejsz głębokość do zakresu bez bólu (max 90° zgięcia kolan), zmniejsz ciężar i unikaj pełnego wyprostu. Rozważ przejście na hack squat maszynowy lub terminal knee extensions do ustąpienia objawów.",
+      "alternative": "lever-hack-squat"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_glaucoma",
+      "severity": "caution",
+      "modification": "Supine position with overhead load + Valsalva straining spikes intracranial and intraocular pressure dramatically. Avoid heavy strain. Use moderate loads with controlled breathing only, or substitute an upright leg press.",
+      "modificationPl": "Pozycja na plecach z obciążeniem nad sobą + napięcie Valsalva drastycznie podnoszą ciśnienie wewnątrzczaszkowe i wewnątrzgałkowe. Unikaj ciężkiego wysiłku. Stosuj umiarkowane obciążenia tylko z kontrolowanym oddechem lub zamień na leg press w pozycji siedzącej.",
+      "alternative": "lever-leg-press"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "avoid",
+      "modification": "Supine position after the first trimester compresses the inferior vena cava (returning blood to the heart). Combined with heavy overhead load, this is unsafe. Use an upright seated leg press or step-ups instead.",
+      "modificationPl": "Pozycja na plecach po pierwszym trymestrze uciska żyłę główną dolną (powrót krwi do serca). W połączeniu z ciężkim obciążeniem nad sobą jest to niebezpieczne. Stosuj leg press w pozycji siedzącej lub wykroki/step-up.",
+      "alternative": "lever-leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy — lighter weight than sled press, more reps) | 3x8-12 (moderate strength) | 2-3x15-20 (burnout finisher after sled press) | Avoid <5 reps heavy — risk-to-reward poor vs sled leg press for max strength",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "smith-leg-press.gif",
+    "frames_extracted": [
+      "frames/smith-leg-press/frame_0_start.png",
+      "frames/smith-leg-press/frame_1_early.png",
+      "frames/smith-leg-press/frame_2_mid.png",
+      "frames/smith-leg-press/frame_3_late.png",
+      "frames/smith-leg-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-leg-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T20:25:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. To WARIANT PIONOWY (supine vertical leg press) — postać leży na podłodze na plecach pod ramą Smith Machine, biodra dokładnie pod gryfem, obie stopy oparte na gryfie nad sobą. Frame_0_start i frame_4_end pokazują pozycję wyprostowaną (kolana praktycznie pełen wyprost, gryf wciśnięty wysoko nad ciałem). Frame_2_mid pokazuje pozycję dolną — kolana mocno zgięte ku klatce, biodra zgięte, gryf opuszczony nisko nad miednicą. Frames 1 i 3 to fazy przejściowe. Kluczowy wyróżnik vs smith-hack-squat: tutaj postać LEŻY (nie stoi) — to vertical leg press, nie squat. Mięśnie podświetlone w GIFie: quadriceps NAJMOCNIEJ (czerwono na obu nogach — frame_0 i frame_4 najwyraźniej), pośladki silnie (P8 — bardziej niż w hack squat bo długi zakres zgięcia biodra), łydki minimalnie (T3 tylko stabilizator). Source jahel klasyfikuje pod 'glutes' ale biomechanicznie quad-dominant z silnym akcentem pośladków (długi zakres zgięcia biodra na dole = duża aktywacja glute max). Difficulty 5 — niższe niż hack squat (6) bo mniej wymagań technicznych setupu (brak chwytu, brak balansu) ALE wyższe ryzyko bezpieczeństwa = wymóg bezpieczników. Equipment: smith_machine + mat (krytyczne — beton uszkadza kość krzyżową). 5 common_faults pokrywają najczęstsze problemy: lifting back, valgus, foot slipping, hard lockout, no safety stops. 4 contraindications: lumbar disc, PFPS, hypertension/glaucoma (supine + overhead = ICP spike), pregnancy (vena cava). Wszystkie pola PL napisane od zera, polski standard 'leg press na Smith Machine' (popularne w garażowych siłowniach). Aliases zawierają 'sissy press' bo tak czasem nazywane jest to ćwiczenie w PL/EN społeczności.",
+
+  "tags": ["bilateral", "lower_body", "leg_press", "smith_machine", "compound", "quad_dominant", "supine", "vertical_press", "low_back_friendly", "garage_gym", "niche", "alternative_to_sled"]
+}

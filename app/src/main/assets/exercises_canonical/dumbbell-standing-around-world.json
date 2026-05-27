@@ -1,0 +1,208 @@
+{
+  "id": "dumbbell-standing-around-world",
+  "name": "Dumbbell Standing Around the World",
+  "namePl": "Around the world z hantlami stojąc",
+  "aliases": ["standing dumbbell around the world", "dumbbell circle raise", "around-the-world dumbbell raise", "standing dumbbell circles"],
+  "aliasesPl": ["okrężne wznosy hantli stojąc", "wznosy hantli ruchem okrężnym", "krążenia hantlami stojąc", "wznosy hantli po łuku 360 stopni"],
+
+  "description": "A hybrid isolation movement combining a front raise, a lateral raise and an overhead arc in one continuous circular path. Standing with dumbbells at the hips, the lifter sweeps both arms forward and up, then continues laterally outward to overhead, finishing with the dumbbells touching above the head. The reverse path returns the weights along the same arc. The continuous circular trajectory takes the deltoid through nearly its full range of action in both the sagittal and frontal planes, with significant involvement of the clavicular (upper) pectoralis and serratus anterior during the overhead phase. A classic old-school bodybuilding shaping movement, prized for joint-friendly time-under-tension on the entire shoulder cap.",
+  "descriptionPl": "Hybrydowe ćwiczenie izolowane łączące wznos przodem, wznos bokiem i ruch nad głowę w jedną ciągłą trajektorię okrężną. Ćwiczący stoi z hantlami przy biodrach, następnie unosi obie ręce po łuku do przodu i w górę, kontynuując łukiem bokiem aż do pozycji nad głową, gdzie hantle stykają się nad czubkiem głowy. Powrót następuje tą samą drogą w odwrotnym kierunku. Ciągła trajektoria okrężna prowadzi deltoid przez niemal pełen zakres ruchu w obu płaszczyznach: strzałkowej i czołowej, ze znacznym udziałem górnej (obojczykowej) części piersiowej większej i mięśnia zębatego przedniego w fazie nad głową. Klasyczne ćwiczenie kształtujące barki w stylu old-school bodybuildingu, cenione za przyjazne dla stawów napięcie obejmujące cały kompleks deltoidu.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart, knees soft (not locked), core braced and chest up.",
+    "Hold a dumbbell in each hand with a pronated grip (palms facing the thighs), arms hanging at the sides of the hips.",
+    "Set a small fixed bend in the elbows (~10-15°) and keep it constant throughout the entire movement.",
+    "Begin the arc: sweep both dumbbells forward and slightly outward in a wide circular path, as if drawing a large circle on each side of the body.",
+    "Continue the arc upward and outward — at roughly shoulder height the dumbbells should be at your sides (lateral raise position).",
+    "Keep rotating the arms along the arc until the dumbbells meet above the head with the palms turned to face each other (or forward).",
+    "Pause briefly at the top — the entire shoulder cap should be loaded and stretched.",
+    "Reverse the path exactly: from overhead, sweep the dumbbells back down and outward along the sides, then forward, and back to the hips. The eccentric should take 2-3 seconds.",
+    "Avoid using leg drive or torso swing — the only thing moving is the shoulder complex.",
+    "One full circle (up and back down along the same arc) = one repetition. Some variations alternate direction every rep — pick one convention and stick to it within a set."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte (nieblokowane), brzuch napięty, klatka uniesiona.",
+    "Trzymaj hantle chwytem pronowanym (dłonie zwrócone do ud), ręce zwisają po bokach przy biodrach.",
+    "Ustaw lekkie, stałe ugięcie w łokciach (~10-15°) i utrzymuj je przez cały ruch.",
+    "Rozpocznij łuk: prowadź obie hantle do przodu i lekko na zewnątrz szerokim ruchem okrężnym, jakbyś rysował duże koło po obu stronach ciała.",
+    "Kontynuuj łuk w górę i na zewnątrz — na wysokości barków hantle powinny być po bokach (pozycja wznosu bokiem).",
+    "Prowadź dalej po łuku, aż hantle spotkają się nad głową z dłońmi zwróconymi do siebie (lub do przodu).",
+    "Zatrzymaj się na chwilę w górnej pozycji — cały kompleks deltoidu powinien być obciążony i rozciągnięty.",
+    "Powracaj tą samą drogą: znad głowy prowadź hantle w dół i na zewnątrz bokami, potem do przodu i z powrotem do bioder. Faza ekscentryczna powinna trwać 2-3 sekundy.",
+    "Nie używaj nóg ani bujania tułowia — ruch wykonuje wyłącznie kompleks barkowy.",
+    "Pełne koło (w górę i z powrotem tą samą drogą) = jedno powtórzenie. Niektóre warianty zmieniają kierunek co powtórzenie — wybierz jedną konwencję i trzymaj się jej w obrębie serii."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "multi",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "posterior_deltoids", "pectoralis_major_clavicular"],
+    "secondary": ["serratus_anterior", "trapezius_upper", "trapezius_middle"],
+    "stabilizers": ["rotator_cuff", "core", "erector_spinae", "forearm_flexors", "trapezius_lower"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P8",
+    "lateral_deltoids": "P8",
+    "posterior_deltoids": "P6",
+    "pectoralis_major_clavicular": "P7",
+    "serratus_anterior": "S6",
+    "trapezius_upper": "S5",
+    "trapezius_middle": "S4",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "erector_spinae": "T3",
+    "forearm_flexors": "T3",
+    "trapezius_lower": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-front-raise", "dumbbell-lateral-raise", "dumbbell-shoulder-press"],
+    "progression_to": ["cable-around-the-world", "weighted-around-the-world-with-pause"],
+    "alternatives": ["dumbbell-front-raise", "dumbbell-lateral-raise", "dumbbell-shoulder-press", "cable-shoulder-circles"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, feet shoulder-width, soft knees",
+      "Pronated grip, dumbbells touching the thighs",
+      "Small fixed bend in elbows (~10-15°) — lock it",
+      "Chest up, shoulder blades set down and back",
+      "Brace the core — no torso lean during the arc"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, stopy na szerokość barków, kolana lekko ugięte",
+      "Chwyt pronowany, hantle stykają się z udami",
+      "Lekkie, stałe ugięcie łokci (~10-15°) — zablokuj je",
+      "Klatka uniesiona, łopatki ściągnięte w tył i w dół",
+      "Napnij brzuch — brak bujania tułowia podczas łuku"
+    ],
+    "execution_cues": [
+      "Draw a big circle around your body",
+      "Same path up, same path down — no shortcuts",
+      "Keep elbows long but not locked the entire arc",
+      "At the top dumbbells touch — full stretch on shoulders",
+      "Slow eccentric (2-3 s) — feel the deltoid through the whole circle"
+    ],
+    "execution_cues_pl": [
+      "Rysuj duże koło wokół ciała",
+      "Ta sama droga w górę, ta sama w dół — bez skrótów",
+      "Łokcie wydłużone ale nie zablokowane przez cały łuk",
+      "Na górze hantle stykają się — pełne rozciągnięcie barków",
+      "Wolna faza ekscentryczna (2-3 s) — czuj deltoid przez całe koło"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending and straightening the elbows during the arc",
+        "faultPl": "Zginanie i prostowanie łokci w trakcie łuku",
+        "cause": "Load too heavy — lifter shortens lever to cheat the weight overhead",
+        "causePl": "Zbyt duży ciężar — ćwiczący skraca dźwignię żeby oszukać i wynieść ciężar nad głowę",
+        "cue": "Drop the weight. The elbow angle must look the same at start, at the side and overhead.",
+        "cuePl": "Zmniejsz ciężar. Kąt w łokciu musi wyglądać tak samo na starcie, w pozycji bocznej i nad głową."
+      },
+      {
+        "fault": "Swinging the torso back to launch the dumbbells up",
+        "faultPl": "Bujanie tułowia do tyłu żeby zarzucić hantle w górę",
+        "cause": "Anterior delt fatigues at horizontal — lumbar extension is used to finish overhead",
+        "causePl": "Przednie aktony męczą się na wysokości poziomu — wyprost lędźwiowy używany jest do skończenia ruchu nad głową",
+        "cue": "Lighter dumbbells. Glutes squeezed, ribs down — if you feel your lower back, the set is over.",
+        "cuePl": "Lżejsze hantle. Pośladki napięte, żebra ściągnięte w dół — jeśli czujesz dolne plecy, seria jest zakończona."
+      },
+      {
+        "fault": "Shrugging — upper traps dominate at shoulder height",
+        "faultPl": "Wciąganie barków — trapezy górne dominują na wysokości barków",
+        "cause": "Lateral phase of the circle exceeds deltoid strength, traps take over",
+        "causePl": "Faza boczna koła przekracza siłę deltoidów, trapezy przejmują ruch",
+        "cue": "Long neck, ears away from shoulders. Slow the tempo — let the side delt do the work.",
+        "cuePl": "Długa szyja, uszy z dala od barków. Zwolnij tempo — pozwól bocznemu aktonowi wykonać pracę."
+      },
+      {
+        "fault": "Different path going up vs coming down (cutting the circle)",
+        "faultPl": "Inna droga w górę i w dół (skracanie koła)",
+        "cause": "Eccentric is uncontrolled — lifter drops dumbbells straight down instead of tracing the arc",
+        "causePl": "Faza ekscentryczna jest niekontrolowana — ćwiczący opuszcza hantle prosto w dół zamiast prowadzić łukiem",
+        "cue": "Reverse the exact arc. 2-3 seconds down, same path. If you can't, the weight is too heavy.",
+        "cuePl": "Odwróć dokładnie ten sam łuk. 2-3 sekundy w dół, ta sama droga. Jeśli nie możesz, ciężar jest za duży."
+      },
+      {
+        "fault": "Dumbbells passing too close to the head at the top",
+        "faultPl": "Hantle przechodzące zbyt blisko głowy w górnej pozycji",
+        "cause": "Inattention or fatigue — risk of striking the head with the dumbbell",
+        "causePl": "Brak uwagi lub zmęczenie — ryzyko uderzenia hantlem w głowę",
+        "cue": "Plan the arc to clear the head by 10-15 cm. Look straight ahead, not up at the dumbbells.",
+        "cuePl": "Planuj łuk tak, by hantle mijały głowę o 10-15 cm. Patrz prosto przed siebie, nie w górę na hantle."
+      }
+    ],
+    "breathing": "Inhale at the start position (dumbbells at the hips). Exhale gradually during the ascending arc (the most demanding phase). Inhale on the way down. For very slow tempo work, take an extra breath at the overhead pause.",
+    "breathingPl": "Wdech w pozycji wyjściowej (hantle przy biodrach). Wydech stopniowo podczas łuku w górę (najtrudniejsza faza). Wdech podczas opuszczania. Przy bardzo wolnym tempie zrób dodatkowy oddech w górnej pozycji nad głową."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "avoid",
+      "modification": "The full circular arc forces the humerus through every angle of subacromial space — exactly the positions that provoke impingement. Avoid this exercise during symptomatic phases. Use scapular-plane front raises or face pulls instead, which spare the painful arc.",
+      "modificationPl": "Pełen łuk okrężny prowadzi kość ramienną przez wszystkie kąty przestrzeni podbarkowej — dokładnie te pozycje, które prowokują konflikt podbarkowy. Unikaj tego ćwiczenia w fazach objawowych. Zastąp wznosami przodem w płaszczyźnie łopatki lub face pull, które omijają bolesny zakres.",
+      "alternative": "dumbbell-front-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Combined overhead + horizontal abduction position loads supraspinatus and infraspinatus tendons under tension at the most vulnerable angle. Avoid completely during acute or subacute phase. Return only after pain-free isolation work on front, side and rear delts in single planes.",
+      "modificationPl": "Połączenie pozycji nad głową i odwodzenia poziomego obciąża ścięgna mięśnia nadgrzebieniowego i podgrzebieniowego pod napięciem w najbardziej wrażliwym kącie. Unikaj całkowicie w fazie ostrej i podostrej. Wracaj dopiero po bezbolesnej pracy izolowanej w pojedynczych płaszczyznach na przednie, boczne i tylne aktony.",
+      "alternative": "dumbbell-lateral-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "modify",
+      "modification": "AC joint is compressed when arms cross overhead. Limit ROM — stop the arc 15-20° short of the top, do not let dumbbells meet above the head. Use moderate loads (50-60% of normal).",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji gdy ręce krzyżują się nad głową. Ogranicz zakres ruchu — zatrzymuj łuk 15-20° przed górną pozycją, nie pozwalaj hantlom spotkać się nad głową. Stosuj umiarkowane ciężary (50-60% normalnego)."
+    },
+    {
+      "condition": "lumbar_disc_issues_or_acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing overhead loading with arms moving in front of the body shifts the centre of gravity and demands strong lumbar bracing. With acute back pain switch to seated version on a bench with back support, or skip this exercise during flare-ups.",
+      "modificationPl": "Obciążenie nad głową w pozycji stojącej z rękami pracującymi przed ciałem przesuwa środek ciężkości i wymaga silnego napięcia lędźwiowego. Przy ostrym bólu pleców przejdź na wersję siedzącą na ławce z podparciem, lub pomiń to ćwiczenie w okresach zaostrzeń."
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy/shaping, slow tempo) | 2-3x8-10 (control-focus with overhead pause) | 3x12-20 (high-volume burnout finisher)",
+  "calories_per_kg_per_hour": 4.8,
+
+  "media": {
+    "primary": "dumbbell-standing-around-world.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-around-world/frame_0_start.png",
+      "frames/dumbbell-standing-around-world/frame_1_early.png",
+      "frames/dumbbell-standing-around-world/frame_2_mid.png",
+      "frames/dumbbell-standing-around-world/frame_3_late.png",
+      "frames/dumbbell-standing-around-world/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-standing-around-world"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący stoi prosto z hantlami przy biodrach, chwyt pronowany (dłonie zwrócone do ud), stopy na szerokość barków, klatka uniesiona, pierwsze podświetlenie na barku (przedni/boczny akton). Frame 2 (top): hantle uniesione w pełnej pozycji nad głową stykające się nad czubkiem głowy, ramiona wyprostowane (z zachowanym lekkim ugięciem), widoczne 'ghosty' boczne dokumentujące przejście łukiem przez pozycję wznosu bokiem — to dowód że ruch idzie przez wszystkie 3 fazy: front raise → lateral raise → overhead, podświetlone przednie aktony, górna część piersiowej (obojczykowa) i zębaty przedni. Frame 4: powrót do pozycji wyjściowej z 'ghostem' fazy szczytowej nad głową, co potwierdza że eccentric idzie tą samą drogą. Płaszczyzna: multi (sagittal w fazie front + frontal w fazie boku + scapular nad głową). Mechanika: isolation (jeden staw — bark — ale w wielu kierunkach). Force: push (koncentryczny wynik to elewacja kości ramiennej). Bilateral, standing. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "deltoids", "isolation", "dumbbells", "upper_body", "standing", "multi_plane", "old_school", "shaping", "hypertrophy", "shoulder_specialization"]
+}

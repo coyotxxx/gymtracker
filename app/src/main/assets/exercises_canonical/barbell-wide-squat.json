@@ -1,0 +1,202 @@
+{
+  "id": "barbell-wide-squat",
+  "name": "Barbell Wide-Stance Squat",
+  "namePl": "Przysiad sumo ze sztangą",
+  "aliases": ["barbell sumo squat", "wide stance squat", "wide squat", "plié squat with barbell"],
+  "aliasesPl": ["barbell sumo squat", "przysiad szeroki ze sztangą", "przysiad plié ze sztangą", "wide squat ze sztangą"],
+
+  "description": "Bilateral compound squat performed with a very wide stance and toes turned outward 30-45°. The wide foot position shifts emphasis from quadriceps toward the adductors and gluteus maximus while reducing the range of motion at the knee. The torso stays more upright than in a conventional back squat, similar to a sumo deadlift posture. Popular for lifters chasing glute and adductor development, or those with hip impingement that limits narrower stances.",
+  "descriptionPl": "Dwustronny ruch wielostawowy ze sztangą wykonywany w bardzo szerokim rozstawie stóp i palcach skierowanych na zewnątrz pod kątem 30-45°. Szeroki rozstaw przesuwa akcent z czworogłowych na przywodziciele i mięsień pośladkowy wielki, a jednocześnie zmniejsza zakres ruchu w stawie kolanowym. Tułów pozostaje bardziej pionowy niż w klasycznym przysiadzie back squat, podobnie jak w pozycji sumo deadlifta. Wybierany przez osoby pracujące nad pośladkami i przywodzicielami oraz przez tych, u których ograniczona mobilność biodra (np. impingement) utrudnia węższe ustawienie stóp.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load both sides evenly and secure with collars.",
+    "Step under the bar and rack it across your upper traps (high-bar position). Grip slightly wider than shoulders, elbows pulled down to lock the bar in place.",
+    "Unrack the bar and take two controlled steps back. Set your feet 1.5-2x shoulder-width apart with toes turned out 30-45°.",
+    "Brace your core, draw shoulder blades down and back, chest tall. Inhale deeply and hold (Valsalva maneuver).",
+    "Initiate the descent by breaking at the hips and knees simultaneously, with knees tracking out along the line of your toes.",
+    "Descend until your hips drop to roughly knee level (parallel) or to the depth your hip mobility allows while keeping a neutral spine and torso fairly upright.",
+    "Drive up by pushing the floor away through the whole foot, actively spreading the knees outward. Squeeze the glutes and adductors hard at the top.",
+    "Exhale near the top of the rep. Maintain the same wide stance and bar path throughout every repetition."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj obciążenie równo po obu stronach i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów (pozycja high-bar). Chwyć drążek nieco szerzej niż barki, łokcie ściągnięte w dół blokują gryf.",
+    "Wyciągnij sztangę ze stojaka i cofnij się 2 kroki kontrolowanym ruchem. Ustaw stopy 1,5-2× szerzej niż barki, palce skierowane na zewnątrz pod kątem 30-45°.",
+    "Napnij brzuch, ściągnij łopatki w dół i do tyłu, klatka wysoko. Głęboki wdech i przytrzymaj (manewr Valsalvy).",
+    "Rozpocznij schodzenie zginając jednocześnie biodra i kolana, kolana podążają na zewnątrz po linii palców stóp.",
+    "Schodź aż biodra znajdą się na wysokości kolan (parallel) lub do głębokości, na którą pozwala mobilność biodra, utrzymując neutralny kręgosłup i stosunkowo pionowy tułów.",
+    "Wypchnij się w górę napierając całą stopą o podłoże, aktywnie rozpychając kolana na zewnątrz. Mocno ściśnij pośladki i przywodziciele na górze.",
+    "Wydech przy zbliżaniu się do góry. W każdym powtórzeniu utrzymuj ten sam szeroki rozstaw i tę samą ścieżkę gryfu."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "adductors", "quadriceps"],
+    "secondary": ["hamstrings", "erector_spinae"],
+    "stabilizers": ["core", "calves", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "adductors": "P9",
+    "quadriceps": "P8",
+    "hamstrings": "S6",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "calves": "T3",
+    "upper_back": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["goblet-sumo-squat", "barbell-back-squat", "bodyweight-sumo-squat"],
+    "progression_to": ["pause-wide-squat", "tempo-wide-squat", "low-bar-wide-squat"],
+    "alternatives": ["sumo-deadlift", "smith-sumo-squat", "dumbbell-sumo-squat", "barbell-back-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stance 1.5-2x shoulder-width, toes out 30-45°",
+      "Knees and toes pointing the same direction",
+      "Bar across upper traps, elbows pulled down",
+      "Chest tall, ribs down, core braced",
+      "Big breath in and hold before descent (Valsalva)"
+    ],
+    "setup_cues_pl": [
+      "Rozstaw 1,5-2× szerokość barków, palce na zewnątrz 30-45°",
+      "Kolana i palce stóp w tym samym kierunku",
+      "Gryf na górnej części trapezów, łokcie ściągnięte w dół",
+      "Klatka wysoko, żebra w dół, brzuch napięty",
+      "Głęboki wdech i przytrzymaj przed schodzeniem (Valsalva)"
+    ],
+    "execution_cues": [
+      "Spread the floor with your feet — push knees outward",
+      "Torso stays more upright than in a conventional squat",
+      "Hips drop straight down between your feet, not far back",
+      "Drive through the whole foot, hard on the outside edge",
+      "Squeeze glutes and adductors together at the top"
+    ],
+    "execution_cues_pl": [
+      "Rozpychaj podłogę stopami — wypchnij kolana na zewnątrz",
+      "Tułów bardziej pionowy niż w klasycznym przysiadzie",
+      "Biodra opadają prosto w dół pomiędzy stopy, nie daleko do tyłu",
+      "Napieraj całą stopą, mocno na zewnętrznej krawędzi",
+      "Na górze mocno ściśnij pośladki i przywodziciele"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee valgus (knees collapse inward)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius and hip external rotators, stance too wide for current mobility, or load too heavy",
+        "causePl": "Słabe pośladkowe średnie i rotatory zewnętrzne biodra, rozstaw za szeroki dla aktualnej mobilności lub zbyt duży ciężar",
+        "cue": "Push your knees out along the line of your toes — spread the floor",
+        "cuePl": "Wypchnij kolana na zewnątrz po linii palców stóp — rozpychaj podłogę"
+      },
+      {
+        "fault": "Toes and knees pointing in different directions",
+        "faultPl": "Palce stóp i kolana w różnych kierunkach",
+        "cause": "Habit from narrow-stance squats, weak external rotators, or poor body awareness",
+        "causePl": "Nawyk z wąskich przysiadów, słabe rotatory zewnętrzne lub słaba świadomość ciała",
+        "cue": "Knee always tracks straight over the second toe of the same foot",
+        "cuePl": "Kolano zawsze nad drugim palcem tej samej stopy"
+      },
+      {
+        "fault": "Excessive forward lean of the torso",
+        "faultPl": "Nadmierne pochylenie tułowia do przodu",
+        "cause": "Stance not actually wide enough, weak adductors, or treating the lift like a conventional back squat",
+        "causePl": "W praktyce zbyt wąski rozstaw, słabe przywodziciele lub wykonywanie ruchu jak klasycznego back squata",
+        "cue": "Chest up, hips down between the feet — stay more upright than a normal squat",
+        "cuePl": "Klatka w górze, biodra w dół pomiędzy stopy — bardziej pionowo niż w zwykłym przysiadzie"
+      },
+      {
+        "fault": "Heel rise or weight shifts to toes",
+        "faultPl": "Unoszenie pięt lub przenoszenie ciężaru na palce",
+        "cause": "Poor ankle dorsiflexion at extreme toe-out angles, or stance too narrow forcing knees forward",
+        "causePl": "Słaba dorsiflexja stawu skokowego przy mocno wyprostowanych palcach lub rozstaw za wąski wymuszający wyjście kolan do przodu",
+        "cue": "Drive through the whole foot, especially the outside edge of the heel",
+        "cuePl": "Napieraj całą stopą, szczególnie zewnętrzną krawędzią pięty"
+      },
+      {
+        "fault": "Going below mobility limit (butt wink, adductor strain)",
+        "faultPl": "Schodzenie poniżej limitu mobilności (butt wink, naciągnięcie przywodzicieli)",
+        "cause": "Trying to hit competition depth in a stance the hips do not allow yet",
+        "causePl": "Próba osiągnięcia głębokości zawodniczej w rozstawie, na który biodra jeszcze nie pozwalają",
+        "cue": "Stop at the deepest pain-free depth where the pelvis stays neutral. Work on hip mobility separately.",
+        "cuePl": "Zatrzymaj się na największej głębokości bez bólu, gdzie miednica pozostaje neutralna. Pracuj nad mobilnością biodra osobno."
+      }
+    ],
+    "breathing": "Big breath in at the top and brace. Hold the breath through the descent and the hardest part of the ascent (Valsalva). Exhale near lockout.",
+    "breathingPl": "Głęboki wdech na górze i napięcie tułowia. Wstrzymaj oddech przez całe schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech przy wyprostowaniu nóg."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_adductor_strain",
+      "severity": "avoid",
+      "modification": "The wide stance loads the adductors heavily. Stop and let the strain heal before returning. Use narrower squat variants in the meantime.",
+      "modificationPl": "Szeroki rozstaw mocno obciąża przywodziciele. Przerwij i pozwól tkance się zregenerować. W tym czasie korzystaj z węższych wariantów przysiadu.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to a pain-free range above parallel. Consider boxed variant for controlled depth.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu powyżej parallel. Rozważ wersję na skrzyni dla kontrolowanej głębokości.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "Wide-stance squat with upright torso can be friendlier to the lower back than conventional squat, but reduce load and depth until pain resolves.",
+      "modificationPl": "Szeroki przysiad z pionowym tułowiem bywa łagodniejszy dla dolnego odcinka pleców niż klasyczny przysiad, ale zmniejsz ciężar i głębokość do czasu ustąpienia bólu.",
+      "alternative": "goblet-sumo-squat"
+    },
+    {
+      "condition": "hip_replacement_or_severe_hip_pathology",
+      "severity": "caution",
+      "modification": "Extreme external rotation of the hip may be contraindicated after hip surgery. Consult a physiotherapist before performing.",
+      "modificationPl": "Skrajna rotacja zewnętrzna biodra może być przeciwwskazana po operacji biodra. Przed wykonaniem skonsultuj się z fizjoterapeutą.",
+      "alternative": "leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-10 (hypertrophy, glutes/adductors focus) | 5x5 (strength) | 3x12-15 (volume/endurance)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "barbell-wide-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-wide-squat/frame_0_start.png",
+      "frames/barbell-wide-squat/frame_1_early.png",
+      "frames/barbell-wide-squat/frame_2_mid.png",
+      "frames/barbell-wide-squat/frame_3_late.png",
+      "frames/barbell-wide-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-wide-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (quads/barbell-wide-squat). Klatki potwierdzają: bardzo szeroki rozstaw stóp (~1,5-2× barki), palce mocno skierowane na zewnątrz (~30-45°), sztanga w pozycji high-bar na trapezach, schodzenie do okolic parallel, tułów wyraźnie bardziej pionowy niż w klasycznym back squacie. Podświetlenia mięśni na ilustracji: czworogłowe, pośladki i wyraźnie przywodziciele po wewnętrznej stronie ud — co uzasadnia akcent na adductors w primary i intensywność P9. Jahel kategoryzuje to ćwiczenie jako quads, ale obraz i biomechanika (toes-out + wide stance) jasno pokazują dominację pośladków i przywodzicieli, dlatego primary przesuwam na glutes (P10) + adductors (P9) + quadriceps (P8). Wszystkie pola PL napisane od zera przez Claude, bez tłumaczenia maszynowego.",
+
+  "tags": ["lower_body", "glute_focused", "adductor_focused", "compound", "barbell", "sumo_stance"]
+}

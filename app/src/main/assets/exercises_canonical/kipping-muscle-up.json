@@ -1,0 +1,208 @@
+{
+  "id": "kipping-muscle-up",
+  "name": "Kipping Muscle-Up",
+  "namePl": "Kipping muscle-up (muscle-up z zamachem)",
+  "aliases": ["crossfit muscle-up", "kipping mu", "bar muscle-up kipping", "ring muscle-up kipping", "dynamic muscle-up"],
+  "aliasesPl": ["muscle-up kippingiem", "muscle-up crossfit", "muscle-up z zamachem", "kipping muscle up", "dynamiczny muscle-up", "muscle-up z biodra"],
+
+  "description": "Dynamic muscle-up variant using hip drive (kip) to generate momentum that helps transition from below the bar/rings to above. CrossFit-style movement combining gymnastic pull, hip kip and ballistic transition. Compared to strict muscle-up, kipping reduces pure strength demand but dramatically increases the demand for coordination, timing and shoulder/elbow integrity. Used for high-rep conditioning (Fran, Murph, Open workouts).",
+  "descriptionPl": "Dynamiczna odmiana muscle-up wykorzystująca napęd biodrami (kip) który generuje pęd pomagający przejść spod drążka/kółek nad drążek/kółka. Ruch w stylu CrossFit łączący gimnastyczne ciągnięcie, kip z biodra i balistyczne przejście. W porównaniu ze strict muscle-up, kipping zmniejsza wymóg czystej siły ale drastycznie zwiększa wymóg koordynacji, timingu i zdrowych barków/łokci. Używany do wysokopowtórzeniowego conditioningu (Fran, Murph, Open).",
+
+  "instructions": [
+    "Hang from a pull-up bar or gymnastic rings with false grip (rings) or overhand grip (bar). Hands shoulder-width.",
+    "Establish a tight hollow body position: ribs down, glutes squeezed, toes pointed forward.",
+    "Initiate the kip swing: alternate between hollow (knees back, body curved like a banana frontward) and arch (chest forward, knees pointing down behind) positions. Build amplitude over 2-3 swings.",
+    "At the front of the arch swing (toes traveling up and forward), aggressively drive hips UP and pull arms DOWN simultaneously.",
+    "As the hips reach peak height, lean torso forward over the bar/rings and 'punch' the bar/rings DOWN past your chest — this is the transition.",
+    "Catch in the support position: arms extended, elbows locked, chest above the bar/rings, hollow body.",
+    "Lower with control by reversing the transition (rings turn out, elbows bend, chest passes back under the bar/rings) and return to hollow swing.",
+    "Repeat without pausing — rhythm and timing carry the next rep."
+  ],
+  "instructionsPl": [
+    "Zwiśnij na drążku lub kółkach gimnastycznych z false grip (kółka) lub chwytem nachwytem (drążek). Ręce na szerokość barków.",
+    "Ustaw napiętą pozycję hollow body: żebra w dół, pośladki ściśnięte, palce stóp wyciągnięte do przodu.",
+    "Rozpocznij zamach kip: na przemian pozycje hollow (kolana do tyłu, ciało wygięte jak banan do przodu) i arch (klatka do przodu, kolana wskazują w dół za tobą). Buduj amplitudę przez 2-3 zamachy.",
+    "Na przedzie zamachu arch (palce stóp jadą do góry i do przodu) gwałtownie napędź biodra W GÓRĘ a ramionami napieraj W DÓŁ jednocześnie.",
+    "Gdy biodra osiągną szczyt — pochyl tułów do przodu nad drążek/kółka i 'wbij' drążek/kółka W DÓŁ za klatkę piersiową — to jest transition.",
+    "Zatrzymaj w pozycji support: ramiona wyprostowane, łokcie zablokowane, klatka nad drążkiem/kółkami, hollow body.",
+    "Opuszczaj kontrolowanym ruchem cofając transition (kółka się rozkręcają, łokcie się zginają, klatka wraca pod drążek/kółka) i wracaj do zamachu hollow.",
+    "Powtarzaj bez przerwy — rytm i timing niosą kolejne powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "gymnastics_ballistic",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "triceps_brachii"],
+    "secondary": ["pectoralis_major", "biceps_brachii", "deltoid_anterior", "deltoid_posterior", "trapezius_middle_lower", "teres_major", "rhomboids", "rectus_abdominis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "hip_flexors", "glutes", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "triceps_brachii": "P9",
+    "pectoralis_major": "S8",
+    "biceps_brachii": "S7",
+    "deltoid_anterior": "S8",
+    "deltoid_posterior": "S7",
+    "trapezius_middle_lower": "S7",
+    "teres_major": "S8",
+    "rhomboids": "S6",
+    "rectus_abdominis": "S8",
+    "hip_flexors": "S7",
+    "glutes": "S6",
+    "serratus_anterior": "S7",
+    "forearms": "S7"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar_or_rings"],
+    "optional": ["chalk", "gymnastic_rings", "pull_up_bar", "wrist_wraps", "tape", "grips"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["pull-up", "chest-to-bar-pull-up", "ring-dip", "kipping-pull-up", "hollow-body-hold", "false-grip-hang"],
+    "progression_to": ["bar-muscle-up-butterfly", "ring-muscle-up-strict", "weighted-muscle-up", "consecutive-bar-muscle-ups", "high-volume-muscle-ups-emom"],
+    "alternatives": ["strict-muscle-up", "band-assisted-muscle-up", "jumping-muscle-up", "chest-to-bar-pull-up", "ring-dip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hollow body grip — false grip on rings or pronated on bar",
+      "Hands shoulder-width, knuckles up",
+      "Active shoulders — pull lats down before swing",
+      "Toes pointed, legs together, core braced",
+      "Eyes forward, ribs tucked down"
+    ],
+    "setup_cues_pl": [
+      "Hollow body — false grip na kółkach lub nachwyt na drążku",
+      "Ręce na szerokość barków, kostki w górę",
+      "Aktywne barki — opuść łopatki przed zamachem",
+      "Palce stóp wyciągnięte, nogi razem, brzuch napięty",
+      "Wzrok przed siebie, żebra ściągnięte w dół"
+    ],
+    "execution_cues": [
+      "Big arch — big hollow — TIMING is everything",
+      "Hips DRIVE up at front of swing",
+      "Pull elbows DOWN as hips peak — not 'pull up'",
+      "Punch the bar/rings DOWN, lean chest OVER",
+      "Catch high — full extension at top, hollow body"
+    ],
+    "execution_cues_pl": [
+      "Mocny arch — mocny hollow — TIMING to wszystko",
+      "Biodra NAPĘDZAJĄ w górę na przedzie zamachu",
+      "Napieraj łokciami W DÓŁ gdy biodra osiągają szczyt — nie 'podciągaj się'",
+      "Wbij drążek/kółka W DÓŁ, klatka NAD",
+      "Łap wysoko — pełen wyprost na górze, hollow body"
+    ],
+    "common_faults": [
+      {
+        "fault": "Chicken-wing transition (one elbow comes over before the other)",
+        "faultPl": "Asymetryczne przejście — jeden łokieć przechodzi nad pierwszy (chicken wing)",
+        "cause": "Weak transition strength, asymmetric pull, missing false grip on rings",
+        "causePl": "Słaba siła transition, asymetryczny ciąg, brak false grip na kółkach",
+        "cue": "Drill strict muscle-up transitions on low rings. Pull SYMMETRICALLY. Risk of biceps tendon tear — stop if happening.",
+        "cuePl": "Trenuj strict transition na niskich kółkach. Ciągnij SYMETRYCZNIE. Ryzyko zerwania ścięgna bicepsa — przerwij jeśli to się dzieje."
+      },
+      {
+        "fault": "Pull-up first, then jump up to transition (no hip drive)",
+        "faultPl": "Najpierw podciąganie, potem skok przez transition (brak napędu biodrami)",
+        "cause": "Missing kip timing — treating it as a 'pull-up + dip'",
+        "causePl": "Brak timingu kip — traktowanie jako 'pull-up + dip'",
+        "cue": "Kip drives the bar/rings to your HIPS, not to your chin. Hips up FIRST, then chest forward.",
+        "cuePl": "Kip prowadzi drążek/kółka do BIODER, nie do brody. Biodra w górę PIERW, potem klatka do przodu."
+      },
+      {
+        "fault": "No false grip on rings — losing grip during transition",
+        "faultPl": "Brak false grip na kółkach — strata chwytu podczas transition",
+        "cause": "Not setting wrist over the ring at start, weak forearms",
+        "causePl": "Nie ustawiony nadgarstek nad kółkiem na starcie, słabe przedramiona",
+        "cue": "False grip = wrist BENT OVER the ring. Train false-grip hangs and rows before attempting.",
+        "cuePl": "False grip = nadgarstek WYGIĘTY NAD kółkiem. Trenuj zwisy i wiosła w false grip przed próbami."
+      },
+      {
+        "fault": "Excessive shoulder forward shrug at catch (rolled forward)",
+        "faultPl": "Zwijanie barków do przodu przy łapaniu (rolled forward)",
+        "cause": "Lack of straight-arm support strength, dive forward instead of UP",
+        "causePl": "Brak siły w pozycji wyprostowanej, nurkowanie do przodu zamiast w GÓRĘ",
+        "cue": "Catch with active shoulders — push DOWN through rings, ribs down, no shrug. Ring support holds 30s+.",
+        "cuePl": "Łap z aktywnymi barkami — naciskaj W DÓŁ przez kółka, żebra w dół, bez wzruszenia. Ring support 30s+."
+      },
+      {
+        "fault": "Crashing into bar/no control on descent",
+        "faultPl": "Walenie w drążek/brak kontroli na opuszczaniu",
+        "cause": "Skipping eccentric phase, fatigue at high reps",
+        "causePl": "Pomijanie fazy ekscentrycznej, zmęczenie przy wysokich powtórzeniach",
+        "cue": "Reverse the rep: drop hips first, then chest back under. Eccentric MUs build joint integrity.",
+        "cuePl": "Cofnij ruch: najpierw biodra w dół, potem klatka pod drążek. Negatywy MU budują zdrowe stawy."
+      }
+    ],
+    "breathing": "Inhale at the front of the kip (arch). Sharp exhale on the explosive hip drive and transition. Inhale on the descent. High-rep sets demand rhythmic breathing matching the kip cycle.",
+    "breathingPl": "Wdech na przedzie zamachu (arch). Ostry wydech na eksplozywnym napędzie biodrami i transition. Wdech na opuszczaniu. Wysokie serie wymagają rytmicznego oddechu zsynchronizowanego z cyklem kip."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_labral_tear",
+      "severity": "avoid",
+      "modification": "Kipping loads shoulder eccentrically at extreme ranges. Switch to strict pull/dip work until cleared by physio.",
+      "modificationPl": "Kipping obciąża bark ekscentrycznie w skrajnych zakresach. Przejdź na strict ciąg/dip do czasu zgody fizjoterapeuty.",
+      "alternative": "ring-dip"
+    },
+    {
+      "condition": "biceps_tendinopathy_or_distal_tear_history",
+      "severity": "avoid",
+      "modification": "Chicken-wing kipping muscle-ups are a classic mechanism for distal biceps tendon rupture. Do strict variants only and only after full recovery.",
+      "modificationPl": "Asymetryczne kipping muscle-upy są klasycznym mechanizmem zerwania dystalnego ścięgna bicepsa. Wykonuj tylko strict warianty i tylko po pełnym wyleczeniu.",
+      "alternative": "strict-muscle-up"
+    },
+    {
+      "condition": "wrist_or_elbow_acute_pain",
+      "severity": "avoid",
+      "modification": "False grip and transition place high stress on wrist and elbow. Skip until pain-free in pull-ups and dips.",
+      "modificationPl": "False grip i transition obciążają nadgarstki i łokcie. Wstrzymaj do czasu bezbólowych pull-up i dip.",
+      "alternative": "pull-up"
+    },
+    {
+      "condition": "lower_back_issues",
+      "severity": "modify",
+      "modification": "The arch (extension) phase loads the lumbar spine. Reduce kip amplitude, brace tightly, or stick with strict variants.",
+      "modificationPl": "Faza arch (wyprost) obciąża odcinek lędźwiowy. Zmniejsz amplitudę kip, mocno napnij brzuch, lub zostań przy wariantach strict.",
+      "alternative": "strict-muscle-up"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (skill work) | EMOM 10-15min x 2-5 reps (conditioning) | 30-50 for time (WOD) | 2-3xAMRAP unbroken (capacity)",
+  "calories_per_kg_per_hour": 10.0,
+
+  "media": {
+    "primary": "kipping-muscle-up.gif",
+    "frames_extracted": [
+      "frames/kipping-muscle-up/frame_0_start.png",
+      "frames/kipping-muscle-up/frame_1_early.png",
+      "frames/kipping-muscle-up/frame_2_mid.png",
+      "frames/kipping-muscle-up/frame_3_late.png",
+      "frames/kipping-muscle-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/kipping-muscle-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "GIF pokazuje muscle-up na kółkach gimnastycznych z kipem. Frame 0: hollow body hang, nogi zgięte. Frame 1: arch swing — kolana wysuwają się do przodu (kip back). Frame 2: peak kip — biodra napędzają, ciało prawie horyzontalne, kółka ciągnięte w dół do brzucha (transition). Frame 4: top — pełen wyprost ramion nad kółkami, support position. Klasyczny kipping ring muscle-up. Najszersze, trójgłowy, brzuch i przednie naramienne podświetlone. Trudność 8/10 — wymaga pull-up + dip + koordynacji. Equipment: bar lub rings (oznaczone jako pull_up_bar_or_rings). Niebezpieczeństwo chicken-wing transition i ryzyko zerwania ścięgna bicepsa — udokumentowane w faults i contraindications.",
+
+  "tags": ["calisthenics", "gymnastics", "crossfit", "bodyweight", "ballistic", "compound", "upper_body", "vertical_pull", "transition", "advanced_skill", "wod", "metcon", "rings", "bar"]
+}

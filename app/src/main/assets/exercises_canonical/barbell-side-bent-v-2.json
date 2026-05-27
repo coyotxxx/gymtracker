@@ -1,0 +1,199 @@
+{
+  "id": "barbell-side-bent-v-2",
+  "name": "Barbell Side Bend (Variant 2)",
+  "namePl": "Side bends ze sztangą (wariant 2)",
+  "aliases": ["barbell side bend v2", "standing barbell oblique bend", "barbell lateral flexion variant 2", "barbell side tilt"],
+  "aliasesPl": ["skłony boczne ze sztangą — wariant 2", "boczne skłony tułowia ze sztangą na barkach", "lateralne zgięcia tułowia ze sztangą", "side bend ze sztangą na karku — wariant 2"],
+
+  "description": "Standing oblique isolation exercise performed with an empty or lightly loaded barbell racked across the upper back (as in a back squat setup). The lifter performs controlled lateral flexion of the trunk to one side, allowing the bar to tilt diagonally — one end rises while the other dips. This variant differs from V1 (where the bar simply leans sideways with no rotation) by adding a slight tilt-and-rotation component of the bar, which lengthens the lever arm against the obliques and quadratus lumborum on the contracted side. Returns to a tall neutral stance and repeats to the opposite side or completes the set unilaterally.",
+  "descriptionPl": "Stojące izolowane ćwiczenie na mięśnie skośne brzucha wykonywane ze sztangą (pustą lub lekko obciążoną) ułożoną na karku/górnym odcinku pleców, jak przy przysiadzie tylnym. Ćwiczący wykonuje kontrolowane zgięcie boczne tułowia w jedną stronę, pozwalając, by sztanga przechyliła się ukośnie — jeden koniec gryfu unosi się, a drugi opada. Wariant 2 różni się od wariantu 1 (gdzie sztanga jedynie pochyla się bokiem bez rotacji) dodaniem lekkiego komponentu przechyłu i rotacji gryfu, który wydłuża ramię dźwigni działające na mięśnie skośne i czworoboczny lędźwi po stronie skracającej się. Powrót do wyprostowanej, neutralnej pozycji stojącej, następnie powtórzenie ruchu w przeciwną stronę lub dokończenie serii jednostronnie.",
+
+  "instructions": [
+    "Set the barbell across your upper back / rear deltoids (same rack position as a high-bar back squat). Use an empty bar or very light load — this is an isolation exercise, not a max-effort lift.",
+    "Stand tall with feet shoulder-width apart, knees soft (not locked), pelvis neutral and ribs stacked over hips. Grip the bar evenly outside the shoulders.",
+    "Brace your core and inhale at the top. Keep eyes forward and head neutral with the spine — do not jut the chin or look at the floor.",
+    "Exhale and bend laterally to one side by shortening the obliques on that side. Allow the bar to tilt with the torso so that one end of the bar drops and the other rises diagonally.",
+    "Bend only as far as feels controlled (typically 20–30 degrees of lateral flexion). Do not rotate the torso forward or backward, do not let the hips shift far to the opposite side.",
+    "Pause briefly at the bottom of the bend, feel the squeeze on the contracted-side obliques, then inhale and return actively to the tall upright position by pulling the bar back to horizontal.",
+    "Complete the prescribed reps on that side, then switch sides — or alternate side-to-side each rep, depending on programming."
+  ],
+  "instructionsPl": [
+    "Ułóż sztangę na karku / tylnych aktonach barków (ta sama pozycja co przysiad tylny high-bar). Użyj pustego gryfu lub bardzo małego obciążenia — to ćwiczenie izolowane, nie ruch siłowy.",
+    "Stań wyprostowany, stopy na szerokość barków, kolana lekko ugięte (nie blokuj), miednica neutralna, żebra ułożone nad biodrami. Chwyć gryf równomiernie na zewnątrz barków.",
+    "Napnij brzuch i nabierz powietrza w górnej pozycji. Wzrok prosto, głowa w jednej linii z kręgosłupem — nie wysuwaj brody ani nie patrz w podłogę.",
+    "Wydech i zegnij się bocznie w jedną stronę, skracając mięśnie skośne po tej stronie. Pozwól, by sztanga przechyliła się razem z tułowiem — jeden koniec gryfu opada, drugi unosi się ukośnie.",
+    "Zginaj się tylko tak daleko, jak masz kontrolę (zwykle 20–30 stopni zgięcia bocznego). Nie obracaj tułowia do przodu ani do tyłu, nie pozwól, by biodra mocno przesunęły się w przeciwną stronę.",
+    "Krótko zatrzymaj się w dolnej pozycji, poczuj skurcz mięśni skośnych po stronie skracającej się, następnie wdech i aktywnie wróć do wyprostowanej pozycji, ściągając sztangę z powrotem do poziomu.",
+    "Wykonaj zaprogramowaną liczbę powtórzeń na jedną stronę, następnie zmień stronę — lub naprzemiennie po jednym powtórzeniu na każdą stronę, w zależności od planu treningowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_lateral_flexion",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["quadratus_lumborum", "erector_spinae"],
+    "stabilizers": ["rectus_abdominis", "transverse_abdominis", "glutes", "trapezius"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "quadratus_lumborum": "S7",
+    "erector_spinae": "S5",
+    "rectus_abdominis": "T4",
+    "transverse_abdominis": "T4",
+    "glutes": "T3",
+    "trapezius": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["squat_rack"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-side-bend", "dumbbell-side-bend", "side-plank"],
+    "progression_to": ["weighted-side-plank", "windmill", "saxon-side-bend"],
+    "alternatives": ["dumbbell-side-bend", "cable-side-bend", "barbell-side-bend-v-1", "side-plank"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar racked on the upper back / rear delts — like a high-bar squat",
+      "Feet shoulder-width, knees soft, weight evenly on both feet",
+      "Ribs stacked over hips, pelvis neutral — no anterior pelvic tilt",
+      "Grip outside the shoulders, elbows pointing down",
+      "Inhale and brace lightly before initiating the bend"
+    ],
+    "setup_cues_pl": [
+      "Sztanga ułożona na karku / tylnych barkach — jak przy przysiadzie high-bar",
+      "Stopy na szerokość barków, kolana lekko ugięte, ciężar równomiernie na obu stopach",
+      "Żebra nad biodrami, miednica neutralna — bez przodopochylenia",
+      "Chwyt na zewnątrz barków, łokcie skierowane w dół",
+      "Wdech i lekkie napięcie brzucha przed rozpoczęciem skłonu"
+    ],
+    "execution_cues": [
+      "Bend straight to the side — imagine sliding between two panes of glass",
+      "Let the bar tilt diagonally with the torso, don't fight it",
+      "Squeeze the side obliques to pull you back up — don't push with the leg",
+      "Stop the bend at controlled range — 20–30 degrees, no more",
+      "Pause 1 second at the bottom to remove momentum"
+    ],
+    "execution_cues_pl": [
+      "Zginaj się prosto w bok — wyobraź sobie, że przesuwasz się między dwiema szybami szkła",
+      "Pozwól, by sztanga przechyliła się ukośnie wraz z tułowiem, nie walcz z tym",
+      "Ściągnij boczne mięśnie skośne, by wrócić w górę — nie pomagaj sobie nogą",
+      "Zatrzymaj skłon w kontrolowanym zakresie — 20–30 stopni, nie więcej",
+      "1-sekundowa pauza w dole, by wyeliminować rozpęd"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating the torso forward instead of pure lateral flexion",
+        "faultPl": "Obracanie tułowia do przodu zamiast czystego zgięcia bocznego",
+        "cause": "Limited frontal-plane mobility; subconscious substitution with thoracic rotation",
+        "causePl": "Ograniczona ruchomość w płaszczyźnie czołowej; podświadoma kompensacja rotacją odcinka piersiowego",
+        "cue": "Keep both bar ends in the same vertical plane as your shoulders — bar tilts diagonally, but does not corkscrew forward",
+        "cuePl": "Trzymaj oba końce gryfu w tej samej płaszczyźnie pionowej co barki — sztanga przechyla się ukośnie, ale nie wykręca się do przodu"
+      },
+      {
+        "fault": "Hips shifting laterally instead of trunk bending",
+        "faultPl": "Biodra przesuwają się w bok zamiast zginania tułowia",
+        "cause": "Lazy core engagement — easier to shift the pelvis than fire the obliques",
+        "causePl": "Słabe zaangażowanie brzucha — łatwiej przesunąć miednicę niż napiąć mięśnie skośne",
+        "cue": "Plant the feet, squeeze the glutes lightly to lock the pelvis, then bend only the spine",
+        "cuePl": "Wbij stopy w podłoże, lekko ściśnij pośladki, by ustabilizować miednicę, a następnie zginaj tylko kręgosłup"
+      },
+      {
+        "fault": "Loading the bar too heavy",
+        "faultPl": "Zbyt duże obciążenie sztangi",
+        "cause": "Treating an isolation exercise like a primary lift; ego loading",
+        "causePl": "Traktowanie ćwiczenia izolowanego jak głównego ruchu siłowego; ego-loading",
+        "cue": "Empty bar (20 kg) is plenty. The oblique line is small — heavy loads compress the spine without extra benefit",
+        "cuePl": "Pusty gryf (20 kg) wystarczy. Linia mięśni skośnych jest niewielka — duże obciążenia uciskają kręgosłup bez dodatkowych korzyści"
+      },
+      {
+        "fault": "Hyperextending the lower back at the top of the rep",
+        "faultPl": "Hiperekstensja dolnego odcinka pleców w górnej pozycji",
+        "cause": "Compensating for tight hip flexors; loose core between reps",
+        "causePl": "Kompensacja napiętych zginaczy biodra; rozluźniony brzuch między powtórzeniami",
+        "cue": "Stay tall and neutral at the top — don't arch back to 'reset'. Brace continuously through the set",
+        "cuePl": "Utrzymuj wyprostowaną neutralną pozycję na górze — nie wyginaj się w tył by się 'zresetować'. Napięcie brzucha utrzymuj przez całą serię"
+      },
+      {
+        "fault": "Bending the knees during the rep to fake range of motion",
+        "faultPl": "Uginanie kolan w trakcie powtórzenia, by udawać zwiększony zakres ruchu",
+        "cause": "Inability to reach desired ROM with trunk alone; substituting hip/knee bend",
+        "causePl": "Brak możliwości osiągnięcia zamierzonego zakresu samym tułowiem; kompensacja zginaniem biodra/kolana",
+        "cue": "Lock the hips and knees — the only joint that moves is the spine. Less ROM with clean form beats more ROM with cheat",
+        "cuePl": "Zablokuj biodra i kolana — jedyny staw, który się porusza, to kręgosłup. Mniejszy zakres z poprawną techniką jest lepszy niż większy z oszustwem"
+      }
+    ],
+    "breathing": "Inhale at the tall start position and brace the core. Exhale during the lateral flexion as the obliques contract. Inhale on the return to upright.",
+    "breathingPl": "Wdech w wyprostowanej pozycji wyjściowej i napięcie brzucha. Wydech podczas zgięcia bocznego, gdy mięśnie skośne się kurczą. Wdech podczas powrotu do pionu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded lateral flexion compresses the lumbar discs asymmetrically and can flare acute back pain. Use isometric anti-lateral-flexion work (side plank, suitcase carry) until pain-free.",
+      "modificationPl": "Obciążone zgięcie boczne asymetrycznie obciąża krążki lędźwiowe i może nasilić ostry ból pleców. Stosuj izometryczne ćwiczenia anty-lateralne (deska boczna, suitcase carry) do czasu ustąpienia bólu.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated loaded lateral flexion is contraindicated in lumbar disc protrusion. Replace with isometric oblique work in neutral spine.",
+      "modificationPl": "Powtarzane obciążone zgięcie boczne jest przeciwwskazane przy przepuklinie krążka lędźwiowego. Zastąp izometrycznymi ćwiczeniami mięśni skośnych w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "scoliosis",
+      "severity": "modify",
+      "modification": "Symmetrical lateral flexion under load can reinforce asymmetric loading patterns. Train only the convex side (away from the curve) and only under qualified supervision, or skip entirely.",
+      "modificationPl": "Symetryczne zgięcie boczne pod obciążeniem może utrwalać asymetryczne wzorce obciążenia. Trenuj tylko stronę wypukłą (przeciwną do krzywizny) i wyłącznie pod nadzorem specjalisty lub pomiń ćwiczenie.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_mobility_restriction",
+      "severity": "caution",
+      "modification": "Racking a barbell on the upper back requires external rotation of the shoulders. If shoulder mobility is limited, use a wider grip, a safety squat bar, or switch to dumbbells held at the sides.",
+      "modificationPl": "Ułożenie sztangi na karku wymaga rotacji zewnętrznej w stawach barkowych. Przy ograniczonej ruchomości barków zastosuj szerszy chwyt, gryf bezpieczny (safety squat bar) lub zmień ćwiczenie na hantle trzymane przy bokach.",
+      "alternative": "dumbbell-side-bend"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 per side (hypertrophy) | 3x15-20 per side (endurance) | 2x10 slow tempo per side (control work)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "barbell-side-bent-v-2.gif",
+    "frames_extracted": [
+      "frames/barbell-side-bent-v-2/frame_0_start.png",
+      "frames/barbell-side-bent-v-2/frame_1_early.png",
+      "frames/barbell-side-bent-v-2/frame_2_mid.png",
+      "frames/barbell-side-bent-v-2/frame_3_late.png",
+      "frames/barbell-side-bent-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/barbell-side-bent-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): wyprostowana pozycja stojąca, sztanga ułożona symetrycznie na karku/tylnych barkach (jak high-bar squat), chwyt szerszy niż barki, czerwone podświetlenie mięśni skośnych po prawej stronie brzucha pokazuje cel ćwiczenia. Klatka 2 (mid): wyraźne zgięcie boczne w prawą stronę — tułów pochyla się w bok, sztanga wyraźnie przechylona ukośnie (lewy koniec gryfu uniesiony znacznie wyżej niż prawy, ~25-30 stopni), miednica względnie stabilna. Klatka 3-4: powrót do pionu z echo poprzedniej pozycji (overlay GIF). Różnica względem V1: w wariancie 1 sztanga raczej pozostaje pozioma a tułów się zgina, w V2 sztanga AKTYWNIE przechyla się razem z tułowiem — wydłuża to ramię dźwigni i podkreśla rotację scapularną. Klasyfikacja: core_lateral_flexion (płaszczyzna czołowa), isolation (jedyny aktywny staw to kręgosłup), bilateral (obie ręce trzymają gryf), plane=frontal, force=both (skurcz ekscentryczny w fazie schodzenia + koncentryczny w fazie powrotu). Mięsień główny: obliques (jasno czerwone w GIFie). Drugorzędne: quadratus_lumborum (anatomicznie pracuje przy bocznym zgięciu pod obciążeniem), erector_spinae (boczne włókna stabilizują kręgosłup). Stabilizatory: rectus_abdominis i transverse_abdominis (anti-rotation), glutes (stabilizacja miednicy), trapezius (utrzymanie sztangi). Difficulty=5, level=intermediate (wymaga prawidłowego racka sztangi i kontroli core'a). Nazwa PL: 'Side bends ze sztangą (wariant 2)' — Maciej używa anglicyzmu 'side bends' w trenażerce i to jest najczęstsza forma w polskim środowisku siłowni. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["barbell", "core", "obliques", "isolation", "lateral_flexion", "standing", "gym"]
+}

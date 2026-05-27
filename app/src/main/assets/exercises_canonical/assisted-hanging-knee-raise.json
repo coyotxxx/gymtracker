@@ -1,0 +1,206 @@
+{
+  "id": "assisted-hanging-knee-raise",
+  "name": "Assisted Hanging Knee Raise",
+  "namePl": "Wznosy kolan z asystą na drążku",
+  "aliases": ["assisted hanging knee raise", "assisted knee raise on pull-up bar", "spotted hanging knee raise", "partner-assisted knee raise", "machine assisted knee raise"],
+  "aliasesPl": ["wznosy kolan z asystą na drążku", "wznosy kolan z asekuracją na drążku", "asystowane unoszenie kolan w zwisie", "podciąganie kolan z asystą partnera", "wznosy kolan w zwisie z pomocą"],
+
+  "description": "Beginner-friendly variation of the hanging knee raise where a partner or spotter assists with the concentric (upward) phase by supporting the hips/thighs from behind, or where the exercise is performed on a hanging machine with hip pad. The lifter hangs from a pull-up bar with arms fully extended and assistance is provided to help bring the knees up toward the chest. This dramatically reduces the abdominal strength requirement and removes much of the swing/momentum problem that beginners face, allowing them to focus on proper pelvic tilt, controlled tempo, and feeling the rectus abdominis contract. Excellent stepping stone from lying knee raises (floor) toward unassisted hanging knee raises, and eventually toward hanging leg raises and toes-to-bar.",
+  "descriptionPl": "Wariant wznosów kolan w zwisie przyjazny początkującym, w którym partner lub asekurujący wspomaga fazę koncentryczną (do góry) podtrzymując biodra/uda od tyłu, lub gdzie ćwiczenie wykonywane jest na maszynie z poduszką biodrową. Ćwiczący zwisa z drążka do podciągania z ramionami w pełnym wyproście, a asysta pomaga przyciągnąć kolana do klatki piersiowej. Drastycznie redukuje to wymóg siły mięśni brzucha i eliminuje większość problemu z rozhuśtaniem/momentem, z którym borykają się początkujący, pozwalając skupić się na prawidłowym tilcie miednicy, kontrolowanym tempie i czuciu napięcia prostego brzucha. Doskonały krok pośredni od wznosów kolan w leżeniu (na podłodze) w stronę nieasystowanych wznosów kolan w zwisie, a docelowo w stronę wznosów nóg w zwisie i toes-to-bar.",
+
+  "instructions": [
+    "Stand under a pull-up bar. Grip the bar with palms facing forward (pronated/overhand), hands roughly shoulder-width apart.",
+    "Hang from the bar with arms fully extended (dead-hang). Engage your shoulder blades by pulling them DOWN (depression) — do not let them shrug up to your ears.",
+    "Have your spotter stand behind you and place their hands on the BACK of your thighs or hips (NOT your knees). Their job is to assist the lift, not do it for you.",
+    "Brace your core. Tilt your pelvis posteriorly (tuck the tailbone slightly forward) — this is the start position.",
+    "Initiate the movement by curling your pelvis upward and pulling your knees toward your chest. Your spotter provides gentle upward pressure on the back of the thighs.",
+    "Bring the knees as high as possible — ideally above hip level, with thighs approaching your chest. The lower abs should round the back slightly at the top.",
+    "Pause briefly at the top — DO NOT let the spotter hold the position for you. Hold with your own abs.",
+    "Lower the legs SLOWLY and under control. The eccentric (lowering) phase is performed with MINIMAL spotter assistance — this is where most of the strength gain happens.",
+    "Return to dead-hang but DO NOT swing. Spotter may steady your hips to kill momentum. Reset and repeat.",
+    "Spotter cue: 'Help only as much as needed to complete the rep with good form. Reduce assistance over time.'"
+  ],
+  "instructionsPl": [
+    "Stań pod drążkiem do podciągania. Złap drążek dłońmi skierowanymi do przodu (nachwyt/pronated), ręce mniej więcej na szerokość barków.",
+    "Zwiśnij na drążku z ramionami w pełnym wyproście (dead-hang). Aktywuj łopatki ściągając je W DÓŁ (depresja) — nie pozwól im się unieść do uszu.",
+    "Asekurujący staje za tobą i kładzie dłonie z TYŁU twoich ud lub bioder (NIE na kolanach). Jego zadaniem jest wspomóc unoszenie, a nie wykonać je za ciebie.",
+    "Napnij brzuch. Wykonaj tilt miednicy do tyłu (lekko podwiń kość ogonową do przodu) — to pozycja startowa.",
+    "Rozpocznij ruch zwijając miednicę w górę i przyciągając kolana do klatki piersiowej. Asekurujący delikatnie napiera w górę na tył ud.",
+    "Unieś kolana jak najwyżej — najlepiej powyżej poziomu bioder, z udami zbliżającymi się do klatki piersiowej. Dolne partie brzucha powinny lekko zaokrąglić plecy na szczycie.",
+    "Krótka pauza na górze — NIE pozwól, by asekurujący trzymał za ciebie pozycję. Trzymaj własnymi mięśniami brzucha.",
+    "Opuszczaj nogi POWOLI i pod kontrolą. Faza ekscentryczna (opuszczanie) wykonywana z MINIMALNĄ asystą — to tutaj zachodzi większość przyrostu siły.",
+    "Wróć do dead-hang, ale BEZ rozhuśtania. Asekurujący może ustabilizować biodra by wygasić moment. Zresetuj i powtórz.",
+    "Wskazówka dla asekurującego: 'Pomagaj tylko tyle, ile potrzeba by zakończyć powtórzenie z dobrą techniką. Z czasem zmniejszaj asystę.'"
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors"],
+    "secondary": ["obliques", "transverse_abdominis", "rectus_femoris"],
+    "stabilizers": ["forearms", "shoulders", "lats", "grip"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "hip_flexors": "P8",
+    "obliques": "S6",
+    "transverse_abdominis": "S6",
+    "rectus_femoris": "S5",
+    "forearms": "S5",
+    "lats": "S4",
+    "shoulders": "S3"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["spotter", "wrist_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dead-hang", "lying-knee-raise", "crunch", "plank"],
+    "progression_to": ["hanging-knee-raise", "hanging-leg-raise", "toes-to-bar", "captain-chair-knee-raise"],
+    "alternatives": ["lying-knee-raise", "captain-chair-knee-raise", "reverse-crunch", "decline-bench-reverse-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pronated grip, shoulder-width on bar",
+      "Dead-hang — full arm extension, shoulder blades DOWN",
+      "Spotter behind, hands on BACK of thighs (not knees)",
+      "Posterior pelvic tilt — tuck tailbone slightly",
+      "Core braced before first rep"
+    ],
+    "setup_cues_pl": [
+      "Chwyt nachwytem na szerokość barków",
+      "Dead-hang — pełen wyprost ramion, łopatki W DÓŁ",
+      "Asekurujący z tyłu, dłonie na TYLE ud (nie na kolanach)",
+      "Tilt miednicy do tyłu — lekko podwiń kość ogonową",
+      "Brzuch napięty przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Curl pelvis UP first, then knees follow",
+      "Knees ABOVE hip level — thighs to chest",
+      "Pause at top with YOUR abs (not the spotter)",
+      "SLOW eccentric — count to 3 on the way down",
+      "No swinging — dead stop between reps"
+    ],
+    "execution_cues_pl": [
+      "Najpierw zwij miednicę W GÓRĘ, kolana podążają za nią",
+      "Kolana POWYŻEJ poziomu bioder — uda do klatki",
+      "Pauza na górze TWOIMI mięśniami brzucha (nie asekurującego)",
+      "POWOLNY ekscentryk — licz do 3 podczas opuszczania",
+      "Bez rozhuśtania — pełne zatrzymanie między powtórzeniami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Spotter does ALL the work (passive lift)",
+        "faultPl": "Asekurujący wykonuje CAŁĄ pracę (pasywne unoszenie)",
+        "cause": "Spotter pushes too hard or grabs under the knees — lifter becomes passive, no abdominal stimulus",
+        "causePl": "Asekurujący napiera zbyt mocno lub łapie pod kolanami — ćwiczący staje się pasywny, brak bodźca dla brzucha",
+        "cue": "Spotter: 'Help ONLY in last 30% of range, just enough to complete the rep.' Lifter must initiate the curl actively.",
+        "cuePl": "Asekurujący: 'Pomagaj TYLKO w ostatnich 30% zakresu, tyle by ukończyć powtórzenie.' Ćwiczący musi aktywnie zainicjować zwijanie."
+      },
+      {
+        "fault": "Hip flexor dominance — no pelvic tilt",
+        "faultPl": "Dominacja zginaczy bioder — brak tiltu miednicy",
+        "cause": "Lifter only lifts thighs at the hip joint without curling the pelvis — quadriceps and iliopsoas work, abs barely engage",
+        "causePl": "Ćwiczący unosi tylko uda w stawie biodrowym bez zwijania miednicy — pracują czworogłowe i biodrowo-lędźwiowy, brzuch ledwo aktywny",
+        "cue": "Posterior pelvic tilt FIRST. Imagine zipping up pants from belly button to chin. Knees follow the pelvis, not lead.",
+        "cuePl": "Najpierw tilt miednicy do tyłu. Wyobraź sobie zasuwanie zamka spodni od pępka do brody. Kolana podążają za miednicą, nie prowadzą."
+      },
+      {
+        "fault": "Swinging body / using momentum",
+        "faultPl": "Rozhuśtanie ciała / wykorzystywanie momentu",
+        "cause": "Beginner kips legs forward and back to throw weight upward — kills abdominal recruitment",
+        "causePl": "Początkujący wymachuje nogami w przód i tył by wyrzucić ciężar w górę — zabija rekrutację mięśni brzucha",
+        "cue": "Full dead-stop between reps. Spotter steadies hips. Tempo 2-1-3 (up-hold-down).",
+        "cuePl": "Pełne zatrzymanie między powtórzeniami. Asekurujący stabilizuje biodra. Tempo 2-1-3 (góra-pauza-dół)."
+      },
+      {
+        "fault": "Dropping legs uncontrolled (fast eccentric)",
+        "faultPl": "Niekontrolowane opuszczanie nóg (szybki ekscentryk)",
+        "cause": "Lifter lets legs fall under gravity — eccentric phase wasted, lower back may strain at the bottom",
+        "causePl": "Ćwiczący pozwala nogom opaść pod wpływem grawitacji — faza ekscentryczna zmarnowana, dolne plecy mogą się naderwać na dole",
+        "cue": "Eccentric is THE most valuable phase. Count to 3 on the way down. Hold abs engaged until full extension.",
+        "cuePl": "Ekscentryk to NAJBARDZIEJ wartościowa faza. Licz do 3 podczas opuszczania. Trzymaj brzuch napięty do pełnego wyprostu."
+      },
+      {
+        "fault": "Spotter grips knees (instead of back of thighs)",
+        "faultPl": "Asekurujący chwyta kolana (zamiast tyłu ud)",
+        "cause": "Spotter applies force at knees — creates shear, lifter feels uncomfortable, and movement vector is wrong",
+        "causePl": "Asekurujący przykłada siłę w kolanach — wywołuje siły ścinające, ćwiczący czuje dyskomfort, a wektor ruchu jest niewłaściwy",
+        "cue": "Spotter hands on BACK of thighs only (hamstrings area). Lift the pelvis, not the knee joint.",
+        "cuePl": "Dłonie asekurującego TYLKO z tyłu ud (okolica dwugłowego). Unoś miednicę, nie staw kolanowy."
+      }
+    ],
+    "breathing": "Exhale during the upward curl (concentric) — this enhances abdominal contraction. Inhale during the controlled descent (eccentric). Do not hold breath; assisted knee raises are typically performed for 10-15 reps so breath rhythm matters.",
+    "breathingPl": "Wydech podczas zwijania w górę (koncentryk) — wzmacnia napięcie brzucha. Wdech podczas kontrolowanego opuszczania (ekscentryk). Nie wstrzymuj oddechu; wznosy kolan z asystą wykonywane zwykle na 10-15 powtórzeń więc rytm oddechu ma znaczenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Hanging position can decompress or aggravate spine depending on cause. If lumbar disc issue — avoid; if muscle tension — may help. Start with lying knee raises on floor first.",
+      "modificationPl": "Pozycja w zwisie może odciążać lub nasilać kręgosłup w zależności od przyczyny. Przy problemie z dyskiem lędźwiowym — unikaj; przy napięciu mięśniowym — może pomóc. Zacznij od wznosów kolan w leżeniu na podłodze.",
+      "alternative": "lying-knee-raise"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Dead-hang puts shoulders in fully overhead position with passive scapular elevation, which may aggravate impingement. Maintain active scapular depression or switch to captain chair (no hanging).",
+      "modificationPl": "Dead-hang ustawia barki w pełnej pozycji nad głową z bierną elewacją łopatek, co może nasilać konflikt. Utrzymuj aktywną depresję łopatek lub przejdź na captain chair (bez zwisu).",
+      "alternative": "captain-chair-knee-raise"
+    },
+    {
+      "condition": "weak_grip_strength",
+      "severity": "modify",
+      "modification": "If grip fails before abs, you cannot get a training stimulus on the core. Use wrist straps to bypass grip limitation, or switch to captain chair which removes grip from the equation.",
+      "modificationPl": "Jeśli chwyt zawodzi szybciej niż brzuch, nie uzyskasz bodźca treningowego na core. Użyj pasków na nadgarstki by ominąć ograniczenie chwytu, lub przejdź na captain chair, który eliminuje chwyt z równania.",
+      "alternative": "captain-chair-knee-raise"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "avoid",
+      "modification": "Avoid in 2nd/3rd trimester — supine and hanging abdominal flexion not recommended, plus risk of diastasis recti. Switch to standing pelvic tilts or seated marches.",
+      "modificationPl": "Unikaj w 2/3 trymestrze — zginanie brzucha w zwisie nie jest zalecane, ryzyko diastasis recti. Przejdź na stojące tilty miednicy lub marsze w siadzie.",
+      "alternative": "standing-pelvic-tilt"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 with spotter (beginner) | 3-4x12-15 reducing assistance progressively | 3x8-12 strict with minimal assist (transition to unassisted)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "assisted-hanging-knee-raise.gif",
+    "frames_extracted": [
+      "frames/assisted-hanging-knee-raise/frame_0_start.png",
+      "frames/assisted-hanging-knee-raise/frame_1_early.png",
+      "frames/assisted-hanging-knee-raise/frame_2_mid.png",
+      "frames/assisted-hanging-knee-raise/frame_3_late.png",
+      "frames/assisted-hanging-knee-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/assisted-hanging-knee-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — postać zwisa z górnego drążka, chwyt nachwytem na szerokość barków, ramiona w pełnym wyproście (dead-hang), nogi proste i opuszczone w dół. Asekurujący stoi z prawej strony za ćwiczącym, dłonie przy biodrach/tylnej części ud. Podświetlone na czerwono: rectus abdominis (cała ściana brzucha) oraz hip flexors (przednia część bioder/uda). Frame 1: rozpoczęcie ruchu — kolana zaczynają unosić się do przodu, miednica w tilcie do tyłu, asekurujący przykłada dłoń pod tylną część ud. Frame 2: szczyt powtórzenia — kolana wysoko, uda powyżej poziomu bioder zbliżone do klatki piersiowej, miednica zwinięta w górę, dolne partie brzucha maksymalnie skurczone. To wzorcowa pozycja końcowa wznosów kolan w zwisie. Frame 3: faza ekscentryczna, kolana wracają w dół. Frame 4: powrót do dead-hang. Asysta pochodzi od partnera (spotter) na tej animacji, ale ten sam wzorzec dotyczy maszyny z poduszką biodrową. Klasyczna BEGINNER progresja core: floor (lying knee raise) → captain chair → assisted hanging → strict hanging knee raise → hanging leg raise → toes-to-bar. Polskie nazewnictwo 'wznosy kolan z asystą' jest standardem w polskim fitness. Difficulty 3/10 dobrze odzwierciedla łatwiejszy charakter ćwiczenia z pomocą, jako transition z ćwiczeń na podłodze do prawdziwego hanging.",
+
+  "tags": ["bodyweight", "isolation", "core", "abs", "hanging", "assisted", "beginner_friendly", "rectus_abdominis", "hip_flexors", "anti_extension", "vertical_pull_grip", "knee_raise_progression"]
+}

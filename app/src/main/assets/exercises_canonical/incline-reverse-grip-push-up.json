@@ -1,0 +1,204 @@
+{
+  "id": "incline-reverse-grip-push-up",
+  "name": "Incline Reverse-Grip Push-Up",
+  "namePl": "Pompka skośna chwytem podchwytem",
+  "aliases": ["incline supinated push-up", "underhand incline push-up", "reverse grip incline pushup", "incline palms-up push-up", "supinated grip push-up on bar"],
+  "aliasesPl": ["pompki na skosie chwytem podchwytem", "pompki na drążku podchwytem (skośne)", "incline pompki z chwytem supinowanym", "pompki na drążku Smitha podchwytem", "pompki na poprzeczce podchwytem", "skośne pompki dłońmi do góry"],
+
+  "description": "Incline push-up variant performed with a SUPINATED (reverse / underhand) grip — palms rotated outward, fingers pointing AWAY from the torso (typically toward the lifter's sides). Hands are usually placed on a fixed horizontal bar (Smith machine bar, low pull-up bar, or thick PVC) at chest/waist height. The supinated grip shifts emphasis to the upper (clavicular) pectoral fibers and recruits the biceps brachii as a co-mover, while still loading the anterior deltoid and triceps. It's a wrist-intensive position — the bar grip is mandatory because pressing palms-up on a flat surface would severely stress the wrists. Functionally a hybrid between an incline press, a row's grip, and a curl.",
+  "descriptionPl": "Wariant pompki skośnej wykonywany chwytem PODCHWYTEM (supinowanym) — dłonie odwrócone na zewnątrz, palce skierowane OD tułowia (zwykle w boki). Dłonie zwykle na nieruchomym, poziomym drążku (drążek Smitha, niski pull-up bar lub gruby PCV) na wysokości klatki/pasa. Chwyt supinowany przenosi akcent na górną (obojczykową) część klatki piersiowej i włącza biceps jako współgracza, jednocześnie obciążając przedni akton barku i tricepsy. To pozycja mocno obciążająca nadgarstki — chwyt na drążku jest obowiązkowy, bo wyciskanie dłońmi w supinacji z płaskiej powierzchni mocno przeciążałoby nadgarstki. Funkcjonalnie to hybryda wyciskania na skosie, chwytu wiosłowania i uginania na biceps.",
+
+  "instructions": [
+    "Set the bar at chest-to-waist height — Smith machine bar, low pull-up bar, or sturdy horizontal pole. Higher bar = easier.",
+    "Grip the bar with palms facing UP (supinated / underhand), slightly wider than shoulders. Fingers point outward/away from torso.",
+    "Walk feet back until your body forms a straight diagonal line — hands clearly higher than feet, weight loaded onto the bar.",
+    "Brace the core, squeeze glutes, retract scapulae slightly. Wrists stay straight — do NOT let them collapse backward.",
+    "Inhale and lower your upper chest toward the bar in 2-3 seconds. Elbows track CLOSE to the torso (~30° from ribs — narrower than a standard push-up because of the supinated grip).",
+    "Lower until upper chest is just above the bar (within a fist's height). Forearms approach vertical.",
+    "Brief pause at the bottom — feel the stretch in the upper chest and biceps.",
+    "Exhale and press the bar away, fully extending the elbows. Squeeze upper chest at the top.",
+    "Maintain the rigid plank shape throughout. Head neutral, eyes looking just past the bar."
+  ],
+  "instructionsPl": [
+    "Ustaw drążek na wysokości klatki/pasa — drążek Smitha, niski pull-up bar lub solidny poziomy słupek. Wyższy drążek = łatwiej.",
+    "Złap drążek dłońmi skierowanymi DO GÓRY (supinacja / podchwyt), nieco szerzej niż barki. Palce skierowane na zewnątrz / od tułowia.",
+    "Cofnij stopy aż ciało utworzy prostą skośną linię — dłonie wyraźnie wyżej niż stopy, ciężar oparty na drążku.",
+    "Napnij brzuch, ściśnij pośladki, lekko ściągnij łopatki. Nadgarstki proste — NIE pozwól im się zaginać do tyłu.",
+    "Wdech, opuszczaj górną część klatki w stronę drążka w 2-3 sekundy. Łokcie BLISKO tułowia (~30° od żeber — węziej niż w zwykłej pompce, ze względu na podchwyt).",
+    "Schodź aż górna klatka będzie tuż nad drążkiem (na wysokość pięści). Przedramiona zbliżają się do pionu.",
+    "Krótka pauza na dole — poczuj rozciąganie górnej klatki i bicepsa.",
+    "Wydech, wypchnij drążek, w pełni prostując łokcie. Ściśnij górną klatkę na szczycie.",
+    "Utrzymuj sztywną planką przez cały ruch. Głowa neutralna, wzrok tuż za drążek."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "biceps_brachii"],
+    "secondary": ["anterior_deltoids", "triceps"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "wrist_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P7",
+    "biceps_brachii": "P6",
+    "anterior_deltoids": "S6",
+    "triceps": "S5",
+    "pectoralis_major": "S5",
+    "core": "T4",
+    "glutes": "T3",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "horizontal_bar"],
+    "optional": ["smith_machine", "pull_up_bar", "thick_grip"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["incline-push-up", "inverted-row"],
+    "progression_to": ["reverse-grip-push-up", "reverse-grip-bench-press", "archer-push-up"],
+    "alternatives": ["incline-push-up", "incline-bench-press", "reverse-grip-bench-press", "bicep-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar fixed and stable — Smith machine locked, pull-up bar bolted, no slippery surface",
+      "Palms facing UP (supinated), fingers pointing outward/away — opposite of standard push-up grip",
+      "Hands slightly wider than shoulders — too narrow stresses the biceps tendon, too wide stresses the wrists",
+      "Body in a straight diagonal — pre-set the plank before unloading onto the bar",
+      "Higher bar = easier, lower bar = harder. Choose a height where 8-10 clean reps are challenging."
+    ],
+    "setup_cues_pl": [
+      "Drążek nieruchomy i stabilny — Smith zablokowany, pull-up bar przykręcony, brak śliskiej powierzchni",
+      "Dłonie skierowane DO GÓRY (supinacja), palce na zewnątrz / od tułowia — odwrotnie niż w zwykłej pompce",
+      "Dłonie nieco szerzej niż barki — za wąsko obciąża ścięgno bicepsa, za szeroko nadgarstki",
+      "Ciało w prostej skośnej linii — wcześniej napnij planka, zanim obciążysz drążek",
+      "Wyższy drążek = łatwiej, niższy = trudniej. Wybierz wysokość, na której 8-10 czystych powtórzeń jest wyzwaniem."
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — controlled, feel the stretch in upper chest and biceps",
+      "Elbows tight to the body (~30° from ribs) — narrow path because of the supinated grip",
+      "Touch upper chest (not lower) to the bar — the supinated grip aims the bar higher on the torso",
+      "Drive UP and slightly forward as you press — the press goes diagonally up the chest",
+      "Squeeze biceps + upper chest at lockout — co-contraction is part of the lift, not a flaw"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontrolowanie, poczuj rozciąganie górnej klatki i bicepsa",
+      "Łokcie blisko ciała (~30° od żeber) — wąski tor ze względu na podchwyt",
+      "Dotykaj GÓRNĄ klatką (nie dolną) drążka — podchwyt kieruje drążek wyżej na tułowiu",
+      "Napieraj W GÓRĘ i lekko do przodu — wyciskanie idzie skośnie w górę klatki",
+      "Ściśnij biceps + górną klatkę na szczycie — współskurcz to część ruchu, nie błąd"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrists collapsing backward (over-extension)",
+        "faultPl": "Nadgarstki zaginające się do tyłu (przeprost)",
+        "cause": "Too low bar + weak forearm flexors trying to hold the supinated position under load",
+        "causePl": "Za niski drążek + słabe zginacze przedramienia próbujące utrzymać supinację pod obciążeniem",
+        "cue": "Raise the bar height, squeeze the bar HARD (white-knuckle grip), keep forearm-to-back-of-hand in one line. Stop the set if wrists hurt.",
+        "cuePl": "Podnieś drążek wyżej, MOCNO ściskaj drążek (chwyt do białych knykci), trzymaj przedramię i grzbiet dłoni w jednej linii. Przerwij serię, jeśli boli nadgarstek."
+      },
+      {
+        "fault": "Elbows flaring out wide (T-shape)",
+        "faultPl": "Łokcie rozchodzące się na boki (kształt T)",
+        "cause": "Treating it like a standard push-up — but supinated grip biomechanically demands narrower elbow path",
+        "causePl": "Traktowanie tego jak zwykłej pompki — a podchwyt biomechanicznie wymaga węższego toru łokci",
+        "cue": "Tuck elbows tighter than normal — ~30° from ribs, not 45°. The supinated forearm rotates the elbow naturally inward.",
+        "cuePl": "Schowaj łokcie bardziej niż zwykle — ~30° od żeber, nie 45°. Supinacja przedramienia naturalnie skręca łokieć do środka."
+      },
+      {
+        "fault": "Touching lower chest instead of upper",
+        "faultPl": "Dotykanie dolnej zamiast górnej klatki",
+        "cause": "Body angle too horizontal (bar too low) or bending only at the hips instead of pressing in a straight line",
+        "causePl": "Zbyt poziome ustawienie ciała (drążek za nisko) lub zginanie tylko w biodrach zamiast prostego wyciskania",
+        "cue": "Aim upper chest / collarbone area at the bar. The supinated grip should hit clavicular pec — if you're touching with lower chest, raise the bar.",
+        "cuePl": "Celuj górną klatką / obojczykiem w drążek. Podchwyt powinien trafiać w obojczykową część klatki — jeśli dotykasz dolną klatką, podnieś drążek."
+      },
+      {
+        "fault": "Biceps overload — using arms instead of chest",
+        "faultPl": "Przeciążenie bicepsa — używanie ramion zamiast klatki",
+        "cause": "Pulling with the biceps as if doing a curl, instead of pressing through the palms",
+        "causePl": "Ciągnięcie bicepsem jak przy uginaniu, zamiast wyciskania przez wnętrza dłoni",
+        "cue": "Press THROUGH the palms — push the bar away with the chest, biceps only assists. If biceps fatigue first, the chest isn't doing its job.",
+        "cuePl": "Napieraj PRZEZ wnętrza dłoni — odpychaj drążek klatką, biceps tylko pomaga. Jeśli biceps męczy się pierwszy, klatka nie wykonuje swojej pracy."
+      },
+      {
+        "fault": "Sagging hips (broken plank line)",
+        "faultPl": "Opadające biodra (złamana linia planka)",
+        "cause": "Weak core, no glute engagement — body 'hangs' on the lower back",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na lędźwiach",
+        "cue": "Squeeze glutes HARD before the first rep. Plank first, then push. If hips sag mid-set, end the set — quality over quantity.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed pierwszym powtórzeniem. Najpierw plank, potem pompka. Jeśli biodra opadną w trakcie serii — zakończ serię, jakość ponad ilość."
+      }
+    ],
+    "breathing": "Inhale on descent, brace at the bottom, exhale on the press up. Don't hold breath for long sets — re-breathe every 2-3 reps if needed.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech podczas wyciskania. Nie wstrzymuj oddechu w długich seriach — bierz oddech co 2-3 powtórzenia, jeśli trzeba."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "avoid",
+      "modification": "Supinated grip is one of the harder wrist positions for push-ups. Switch to a neutral-grip incline push-up on handles, or standard incline push-up. Do NOT push through wrist pain.",
+      "modificationPl": "Podchwyt to jedna z trudniejszych pozycji dla nadgarstków w pompkach. Przejdź na pompkę skośną chwytem neutralnym (na uchwytach) lub zwykłą pompkę skośną. NIE przepychaj bólu w nadgarstku.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Supinated load on the biceps tendon at the bottom of the rep is exactly what aggravates distal biceps tendinopathy. Use a pronated (standard) grip until the tendon is asymptomatic.",
+      "modificationPl": "Obciążenie supinowane na ścięgnie bicepsa w dolnej fazie ruchu to dokładnie to, co podrażnia tendinopatię dystalnego bicepsa. Używaj chwytu pronowanego (zwykłego), póki ścięgno nie będzie bezobjawowe.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "The supinated grip with hands wide can pinch the front of the shoulder. Narrow the grip, raise the bar to limit ROM, or switch to a neutral grip.",
+      "modificationPl": "Podchwyt z szerokimi dłońmi może uciskać przód barku. Zwęź chwyt, podnieś drążek (mniejszy ROM) lub przejdź na chwyt neutralny.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "elbow_pain",
+      "severity": "caution",
+      "modification": "Supinated press loads the elbow joint differently — golfer's elbow (medial epicondylitis) and biceps insertion can flare up. Reduce volume, raise the bar, and if pain persists, regress to pronated incline push-up.",
+      "modificationPl": "Wyciskanie w supinacji obciąża staw łokciowy inaczej — łokieć golfisty (zapalenie nadkłykcia przyśrodkowego) i przyczep bicepsa mogą się zaognić. Zmniejsz objętość, podnieś drążek, a jeśli ból utrzymuje się — wróć do pompki skośnej pronowanej.",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 (hypertrophy, upper chest + biceps accessory) | 3-4x6-10 ramping bar lower over weeks (progression) | 2-3x10-15 light bar high for warm-up / activation",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "incline-reverse-grip-push-up.gif",
+    "frames_extracted": [
+      "frames/incline-reverse-grip-push-up/frame_0_start.png",
+      "frames/incline-reverse-grip-push-up/frame_1_early.png",
+      "frames/incline-reverse-grip-push-up/frame_2_mid.png",
+      "frames/incline-reverse-grip-push-up/frame_3_late.png",
+      "frames/incline-reverse-grip-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/incline-reverse-grip-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać przy ramie Smith machine z poziomym drążkiem na wysokości pasa. Dłonie chwytają drążek PODCHWYTEM (palmy do góry, palce skierowane na zewnątrz/w boki — supinacja). Stopy daleko z tyłu, ciało w skośnej linii, ramiona wyprostowane. Klasyczna pozycja incline z chwytem reverse. Frame 2 (mid): pełne opuszczenie — górna klatka tuż nad drążkiem, łokcie zgięte i prowadzone blisko żeber (~30° — wąsko, charakterystycznie dla podchwytu), ciało utrzymuje skośną linię prostą. Frame 4 (end): powrót do pozycji wyjściowej (ghost-frame nakładający się). Czerwono podświetlone na anatomii: górna (obojczykowa) część klatki, bicepsy i przednie aktony barków — zgodne z biomechaniką chwytu supinowanego (transfer akcentu na clavicular pec + co-contraction bicepsa). Wszystkie pola PL napisane od zera w polskim standardzie fitness. Klasyfikacja: compound + push + sagittal + bilateral + closed kinetic chain. Primary muscles: pectoralis_major_clavicular + biceps_brachii (P7/P6 intensity). Drążek (Smith machine bar / pull-up bar) jest wymagany — supinacja na płaskiej powierzchni byłaby zbyt obciążająca dla nadgarstków.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "upper_chest", "clavicular_pec", "biceps", "supinated_grip", "reverse_grip", "smith_machine", "pull_up_bar", "intermediate", "wrist_intensive", "push_up_variation"]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-seated-alternate-press",
+  "name": "Dumbbell Seated Alternate Press",
+  "namePl": "Naprzemienne wyciskanie OHP z hantlami w siadzie",
+  "aliases": ["seated alternating dumbbell shoulder press", "seated single-arm alternating OHP", "DB seated alternate press", "Arnold-style alternating press"],
+  "aliasesPl": ["naprzemienne wyciskanie hantli siedząc", "wyciskanie hantli na barki naprzemiennie w siadzie", "OHP z hantlami naprzemiennie siedząc", "siedzące naprzemienne wyciskanie hantli"],
+
+  "description": "Unilateral alternating overhead press performed seated on a bench with back support. One dumbbell is pressed to full lockout while the other waits at shoulder height — arms alternate every rep. Seated position eliminates leg drive and forces the deltoids to do all the work. Alternating tempo improves unilateral focus, time-under-tension per side, and core anti-rotation demand.",
+  "descriptionPl": "Jednostronne naprzemienne wyciskanie nad głowę wykonywane w siadzie na ławce z podparciem pleców. Jedna hantla wędruje do pełnego lock-out nad głową, druga czeka przy barku — ramiona zmieniają się przy każdym powtórzeniu. Pozycja siedząca eliminuje napęd z nóg i zmusza akton naramienny do pełnej pracy. Naprzemienny rytm poprawia jednostronną koncentrację, czas pod napięciem na stronę i obciąża brzuch antyrotacyjnie.",
+
+  "instructions": [
+    "Set an adjustable bench to 80-90° (near vertical). Sit with back firmly against the pad, feet flat on the floor.",
+    "Pick up two dumbbells and bring them to shoulder height — elbows under wrists, palms facing forward (pronated grip), forearms vertical.",
+    "Brace your core, glue your back to the pad, and keep shoulders down (away from ears).",
+    "Press ONE dumbbell straight up to full lockout — biceps near ear, wrist stacked over shoulder. The other dumbbell stays at shoulder height.",
+    "Lower the pressed dumbbell with control back to shoulder. As it returns, begin pressing the OTHER dumbbell up — alternating rhythm.",
+    "Both dumbbells never sit at the bottom simultaneously and never lock out simultaneously — it's a continuous alternating cadence.",
+    "Keep the resting dumbbell ACTIVE at shoulder height (don't drop it onto your collarbone).",
+    "Exhale on each press up, inhale on each descent."
+  ],
+  "instructionsPl": [
+    "Ustaw regulowaną ławkę na 80-90° (prawie pionowo). Usiądź z plecami mocno opartymi o oparcie, stopy płasko na podłodze.",
+    "Weź dwie hantle i unieś je na wysokość barków — łokcie pod nadgarstkami, dłonie skierowane do przodu (pronacja), przedramiona pionowo.",
+    "Napnij brzuch, przyklej plecy do oparcia, barki w dół (z dala od uszu).",
+    "Wyciśnij JEDNĄ hantlę prosto w górę do pełnego lock-out — biceps przy uchu, nadgarstek nad barkiem. Druga hantla pozostaje przy barku.",
+    "Opuszczaj kontrolowanym ruchem wyciśniętą hantlę z powrotem do barku. Gdy wraca, zacznij wyciskać DRUGĄ hantlę w górę — rytm naprzemienny.",
+    "Obie hantle nigdy nie są jednocześnie na dole ani jednocześnie w lock-out — to ciągła naprzemienna kadencja.",
+    "Trzymaj odpoczywającą hantlę AKTYWNIE na wysokości barku (nie opuszczaj jej na obojczyk).",
+    "Wydech przy każdym wyciskaniu w górę, wdech przy każdym opuszczaniu."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps_brachii", "upper_trapezius"],
+    "stabilizers": ["core", "rotator_cuff", "obliques", "serratus_anterior", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P9",
+    "lateral_deltoid": "P8",
+    "triceps_brachii": "S7",
+    "upper_trapezius": "S5",
+    "serratus_anterior": "S4",
+    "obliques": "S5",
+    "core": "S5",
+    "rotator_cuff": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "adjustable_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-seated-shoulder-press", "machine-shoulder-press"],
+    "progression_to": ["dumbbell-seated-shoulder-press", "dumbbell-standing-overhead-press", "single-arm-dumbbell-overhead-press", "arnold-press"],
+    "alternatives": ["dumbbell-seated-shoulder-press", "arnold-press", "machine-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 80-90° (near vertical)",
+      "Back GLUED to the pad, feet flat",
+      "Dumbbells at shoulder height, palms forward",
+      "Elbows under wrists, forearms vertical",
+      "Shoulders down, away from ears"
+    ],
+    "setup_cues_pl": [
+      "Ławka na 80-90° (prawie pionowo)",
+      "Plecy PRZYKLEJONE do oparcia, stopy płasko",
+      "Hantle na wysokości barków, dłonie do przodu",
+      "Łokcie pod nadgarstkami, przedramiona pionowo",
+      "Barki w dół, z dala od uszu"
+    ],
+    "execution_cues": [
+      "Press ONE up, the other STAYS at shoulder",
+      "Continuous rhythm — never both up, never both down",
+      "Biceps by ear at lockout",
+      "Resting dumbbell ACTIVE (don't drop it on collarbone)",
+      "Squeeze the core — resist rotation toward the pressing side"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj JEDNĄ, druga ZOSTAJE przy barku",
+      "Ciągły rytm — nigdy obie w górze, nigdy obie na dole",
+      "Biceps przy uchu w lock-out",
+      "Odpoczywająca hantla AKTYWNA (nie opuszczaj na obojczyk)",
+      "Napnij brzuch — opieraj się rotacji w stronę wyciskanego ramienia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Body twists toward the pressing arm (loss of anti-rotation)",
+        "faultPl": "Tułów skręca się w stronę wyciskanego ramienia (brak antyrotacji)",
+        "cause": "Weak core, weight too heavy, lazy bracing",
+        "causePl": "Słaby brzuch, zbyt duży ciężar, brak napięcia",
+        "cue": "Brace core HARD. Imagine holding both hips squared to the front. Reduce weight if you keep rotating.",
+        "cuePl": "Napnij brzuch MOCNO. Wyobraź sobie, że oba biodra są ustawione równo do przodu. Zmniejsz ciężar jeśli ciągle skręcasz."
+      },
+      {
+        "fault": "Resting dumbbell drops down to collarbone or chest",
+        "faultPl": "Odpoczywająca hantla opada na obojczyk lub klatkę",
+        "cause": "Trying to rest the off-arm — defeats the purpose of alternating",
+        "causePl": "Próba odpoczęcia drugim ramieniem — niweczy sens naprzemienności",
+        "cue": "Keep the resting dumbbell ACTIVE at shoulder height — same level you started.",
+        "cuePl": "Trzymaj odpoczywającą hantlę AKTYWNIE na wysokości barku — tam gdzie startowała."
+      },
+      {
+        "fault": "Lower back arches off the bench (lumbar hyperextension)",
+        "faultPl": "Lędźwie odrywają się od oparcia (przeprost lędźwiowy)",
+        "cause": "Weight too heavy, weak core, poor bench angle (too reclined)",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, zły kąt ławki (zbyt odchylona)",
+        "cue": "Ribs DOWN, glue lower back to pad. Set bench more upright (85-90°). Reduce weight.",
+        "cuePl": "Żebra W DÓŁ, przyklej lędźwie do oparcia. Ustaw ławkę bardziej pionowo (85-90°). Zmniejsz ciężar."
+      },
+      {
+        "fault": "Pressing in an arc (forward) instead of straight up",
+        "faultPl": "Wyciskanie po łuku (do przodu) zamiast prosto w górę",
+        "cause": "Poor overhead mobility, weight too heavy, elbows starting too far back",
+        "causePl": "Słaba mobilność overhead, zbyt duży ciężar, łokcie zbyt z tyłu na starcie",
+        "cue": "Wrist OVER shoulder at lockout. Press the dumbbell into the ceiling, not in front of your face.",
+        "cuePl": "Nadgarstek NAD barkiem w lock-out. Wyciskaj hantlę w sufit, nie przed twarz."
+      },
+      {
+        "fault": "Hyperextended wrist (dumbbell tilts back behind the forearm)",
+        "faultPl": "Przeprost nadgarstka (hantla przechyla się za przedramię)",
+        "cause": "Weak wrists, gripping the dumbbell too loosely",
+        "causePl": "Słabe nadgarstki, zbyt luźny chwyt",
+        "cue": "Wrist NEUTRAL, stacked over elbow. Grip the dumbbell HARD. Use wraps if needed.",
+        "cuePl": "Nadgarstek NEUTRALNY, ustawiony nad łokciem. Chwyć hantlę MOCNO. Użyj wraps jeśli trzeba."
+      }
+    ],
+    "breathing": "Exhale on each press up, inhale on the controlled descent. Maintain core brace throughout the alternating cadence — don't fully relax between reps.",
+    "breathingPl": "Wydech przy każdym wyciskaniu, wdech przy kontrolowanym opuszczaniu. Trzymaj brzuch napięty przez całą naprzemienną kadencję — nie rozluźniaj się całkowicie między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Switch to landmine press (angled trajectory, more shoulder-friendly) or neutral-grip dumbbell press. Avoid pronated grip if pinching occurs.",
+      "modificationPl": "Przejdź na landmine press (kątowa trajektoria, bardziej przyjazna dla barku) lub wyciskanie hantli neutralnym chwytem. Unikaj pronacji jeśli pojawia się 'pinch'.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid overhead pressing until cleared by PT. Resume with light machine work and high reps.",
+      "modificationPl": "Unikaj wyciskania nad głowę do zgody fizjoterapeuty. Wróć przez lekką maszynę i wysokie powtórzenia.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Reduce ROM (press to 80-90% lockout, not fully overhead) and work mobility separately. Use landmine press until you can fully lock out.",
+      "modificationPl": "Zmniejsz ROM (wyciskaj do 80-90% lock-out, nie w pełni nad głową) i pracuj osobno nad mobilnością. Używaj landmine press do czasu pełnego lock-out.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Use a more upright bench angle (85-90°), focus on core bracing. Reduce weight to control arch.",
+      "modificationPl": "Ustaw ławkę bardziej pionowo (85-90°), skup się na napięciu brzucha. Zmniejsz ciężar by kontrolować odgięcie.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 3x10-15 per side (endurance) | 4x6-8 per side (strength)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-seated-alternate-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-alternate-press/frame_0_start.png",
+      "frames/dumbbell-seated-alternate-press/frame_1_early.png",
+      "frames/dumbbell-seated-alternate-press/frame_2_mid.png",
+      "frames/dumbbell-seated-alternate-press/frame_3_late.png",
+      "frames/dumbbell-seated-alternate-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-seated-alternate-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — siad na ławce z wysokim oparciem (~85-90°), obie hantle na wysokości barków, dłonie w pronacji, przedramiona pionowo. Frame 2: pełny lock-out PRAWEGO ramienia nad głową (biceps przy uchu, nadgarstek nad barkiem), LEWA hantla pozostaje aktywnie przy barku — klasyczny naprzemienny wzorzec. Frame 4: prawe ramię wraca, lewe nadal czeka — ciągła naprzemienna kadencja. Podświetlone: przednie i boczne aktony naramienne (P), tricepsy (S). Brak napędu z nóg (pozycja siedząca to eliminuje). Mechanic=compound, plane=frontal (hantle w pronacji w bok od ciała), force=push, laterality=unilateral_alternating. PL nazwa zgodna z konwencją 'naprzemienne wyciskanie OHP z hantlami w siadzie'.",
+
+  "tags": ["dumbbell", "shoulders", "vertical_push", "unilateral", "alternating", "seated", "bodybuilding", "hypertrophy", "anti_rotation", "upper_body"]
+}

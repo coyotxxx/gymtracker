@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-fly",
+  "name": "Dumbbell Fly (Flat Bench)",
+  "namePl": "Rozpiętki hantlami na ławce poziomej",
+  "aliases": ["flat dumbbell fly", "flat DB fly", "dumbbell chest fly", "flat bench fly", "DB fly"],
+  "aliasesPl": ["rozpiętki hantlami poziomo", "rozpiętki na ławce płaskiej z hantlami", "fly z hantlami na ławce poziomej", "rozpiętki klatki hantlami", "DB rozpiętki poziome"],
+
+  "description": "Classic single-joint isolation exercise for the chest, performed lying supine on a flat bench with a dumbbell in each hand. The arms are held with a slight, fixed bend in the elbows (about 10-20 degrees) and travel in a wide arc out to the sides and back up — the motion happens at the shoulder joint, not the elbow. This puts the pectoralis major under deep stretch at the bottom and provides a strong contraction at the top. Unlike a press, the triceps are taken largely out of the equation, making this a premium hypertrophy tool for the chest and a textbook example of horizontal shoulder adduction in the transverse plane.",
+  "descriptionPl": "Klasyczne jednostawowe ćwiczenie izolowane na klatkę piersiową, wykonywane w leżeniu tyłem na ławce poziomej z hantlem w każdej ręce. Ramiona utrzymuje się z lekkim, stałym ugięciem łokci (około 10-20 stopni) i prowadzi szerokim łukiem na boki i z powrotem do góry — ruch odbywa się w stawie barkowym, nie w łokciu. Daje to głębokie rozciągnięcie mięśnia piersiowego większego w dole i mocny skurcz w górze. W przeciwieństwie do wyciskania tricepsy są praktycznie wyłączone z pracy, dzięki czemu jest to pierwszorzędne narzędzie hipertroficzne dla klatki i podręcznikowy przykład poziomego przywodzenia ramienia w płaszczyźnie poprzecznej.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with a dumbbell resting on each thigh, palms facing each other (neutral grip).",
+    "Lie back, using your thighs to kick the dumbbells up to chest level. Press them up over your chest so the dumbbells meet, palms still facing each other.",
+    "Set the shoulder blades — retract and depress them firmly into the bench. Plant feet on the floor, slight natural arch in the lower back.",
+    "Put a slight bend in your elbows (about 10-20 degrees). Lock this elbow angle and keep it frozen for the entire set.",
+    "Inhale and slowly lower the dumbbells out to the sides in a wide arc. Lead with the elbows, hands follow.",
+    "Stop when the dumbbells reach roughly chest level (hands about in line with the shoulders) and you feel a strong stretch across the pecs. Do not let the shoulders roll forward.",
+    "Reverse the motion by squeezing the chest, bringing the dumbbells back up in the same arc until they nearly meet over the chest. Do NOT bend or straighten the elbows during the movement.",
+    "Squeeze the pecs hard at the top, exhale. Do not let the dumbbells clang together — keep tension on the chest by stopping just before contact."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu poziomej ławki z hantlami opartymi o uda, dłonie zwrócone do siebie (chwyt neutralny).",
+    "Połóż się, wybijając udami hantle na wysokość klatki. Wyciśnij je nad klatkę tak aby się spotkały, dłonie nadal zwrócone do siebie.",
+    "Ustaw łopatki — ściągnij je i opuść mocno wciskając w ławkę. Stopy oparte o podłogę, lekki naturalny łuk w dolnych plecach.",
+    "Ugnij lekko łokcie (około 10-20 stopni). Zablokuj ten kąt w łokciach i utrzymaj go zamrożony przez całą serię.",
+    "Wdech i powoli opuszczaj hantle na boki szerokim łukiem. Prowadź łokciami, dłonie podążają.",
+    "Zatrzymaj się gdy hantle dojdą mniej więcej na wysokość klatki (dłonie na linii barków) i poczujesz mocne rozciągnięcie klatki. Nie pozwól by barki zarolowały się do przodu.",
+    "Odwróć kierunek ruchu spinając klatkę, prowadząc hantle z powrotem do góry tym samym łukiem aż prawie się spotkają nad klatką. NIE zginaj ani nie prostuj łokci podczas ruchu.",
+    "Mocno spinaj klatkę w górze, wydech. Nie pozwól by hantle stuknęły się o siebie — utrzymaj napięcie na klatce zatrzymując się tuż przed kontaktem."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major"],
+    "secondary": ["anterior_deltoids"],
+    "stabilizers": ["biceps_brachii", "serratus_anterior", "rotator_cuff", "core"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "S5",
+    "biceps_brachii": "T3",
+    "serratus_anterior": "T3",
+    "rotator_cuff": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-bench-press", "machine-chest-press", "push-up"],
+    "progression_to": ["incline-dumbbell-fly", "cable-fly", "decline-dumbbell-fly", "dumbbell-fly-on-exercise-ball"],
+    "alternatives": ["cable-fly", "pec-deck", "incline-dumbbell-fly", "decline-dumbbell-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells on thighs, kick them up to chest as you lie back",
+      "Shoulder blades retracted and pinned to the bench BEFORE the first rep",
+      "Slight elbow bend (10-20°) — lock that angle now",
+      "Press dumbbells up over chest, palms facing each other",
+      "Slight arch in lower back, feet planted, glutes on bench"
+    ],
+    "setup_cues_pl": [
+      "Hantle na udach, wybij je na klatkę gdy się kładziesz",
+      "Łopatki ściągnięte i wciśnięte w ławkę PRZED pierwszym powtórzeniem",
+      "Lekkie ugięcie łokci (10-20°) — zablokuj ten kąt już teraz",
+      "Wyciśnij hantle nad klatkę, dłonie zwrócone do siebie",
+      "Lekki łuk w dolnych plecach, stopy zaparte, pośladki na ławce"
+    ],
+    "execution_cues": [
+      "Hug a giant barrel — arc, do not press",
+      "Lead with the elbows, hands follow along for the ride",
+      "Stretch only until hands reach shoulder level — no deeper",
+      "Squeeze the pecs together at the top, stop before dumbbells touch",
+      "Eccentric ~3 seconds, concentric controlled — feel the chest, not the shoulders"
+    ],
+    "execution_cues_pl": [
+      "Obejmij wielką beczkę — łuk, nie wyciskanie",
+      "Prowadź łokciami, dłonie tylko podążają za ruchem",
+      "Rozciągaj tylko aż dłonie dojdą na wysokość barków — nie głębiej",
+      "Ściśnij klatkę razem w górze, zatrzymaj się przed stuknięciem hantli",
+      "Faza ekscentryczna ~3 sekundy, koncentryczna kontrolowana — czuj klatkę, nie barki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending and straightening the elbows (turning the fly into a press)",
+        "faultPl": "Zginanie i prostowanie łokci (zamiana rozpiętek w wyciskanie)",
+        "cause": "Load too heavy, triceps unconsciously recruited to move more weight, lack of pec mind-muscle connection",
+        "causePl": "Zbyt duży ciężar, nieświadome włączanie tricepsów aby przemieścić większy ciężar, brak czucia mięśnia piersiowego",
+        "cue": "Lock the elbow angle at setup and keep it frozen. If you cannot, drop the weight by 30-40% immediately.",
+        "cuePl": "Zablokuj kąt w łokciu przy starcie i utrzymaj go zamrożony. Jeśli nie umiesz, zmniejsz ciężar o 30-40% natychmiast."
+      },
+      {
+        "fault": "Going too deep — dumbbells well below shoulder level",
+        "faultPl": "Zbyt głębokie schodzenie — hantle znacznie poniżej linii barków",
+        "cause": "Ego-driven 'maximum stretch' mentality, lack of awareness of anterior capsule limits",
+        "causePl": "Mentalność 'maksymalne rozciągnięcie' napędzana ego, brak świadomości ograniczeń torebki przedniej stawu",
+        "cue": "Hands stop at shoulder height. Below that you stress the anterior shoulder capsule, not the pec — and dumbbell flys are the #1 cause of pec tears.",
+        "cuePl": "Dłonie zatrzymują się na wysokości barków. Niżej obciążasz torebkę przednią stawu, a nie klatkę — a rozpiętki z hantlami to najczęstsza przyczyna zerwań mięśnia piersiowego."
+      },
+      {
+        "fault": "Shoulders rolling forward at the bottom (loss of scapular retraction)",
+        "faultPl": "Rolowanie barków do przodu w dole (utrata ściągniętych łopatek)",
+        "cause": "Weak rear delts/upper back, load too heavy, fatigue at end of set",
+        "causePl": "Słabe tylne aktony barków/górne plecy, zbyt duży ciężar, zmęczenie pod koniec serii",
+        "cue": "Shoulder blades stay PINNED to the bench through the whole rep. If they peel off, stop the set.",
+        "cuePl": "Łopatki POZOSTAJĄ przyklejone do ławki przez cały ruch. Jeśli zaczynają się odrywać, przerwij serię."
+      },
+      {
+        "fault": "Dumbbells clanging together at the top",
+        "faultPl": "Stukanie hantli o siebie w górze",
+        "cause": "Following momentum past the contraction point, losing tension on the pecs at the top",
+        "causePl": "Podążanie za rozpędem za punkt skurczu, utrata napięcia klatki w górze",
+        "cue": "Stop dumbbells about 5 cm apart at the top — keep tension on the chest, don't let the bones do the work.",
+        "cuePl": "Zatrzymaj hantle około 5 cm od siebie w górze — utrzymuj napięcie klatki, nie pozwól by kości robiły robotę za mięśnie."
+      },
+      {
+        "fault": "Hips lifting off the bench / excessive lumbar arching",
+        "faultPl": "Unoszenie bioder z ławki / nadmierne wygięcie odcinka lędźwiowego",
+        "cause": "Compensating for chest fatigue, load too heavy, weak core bracing",
+        "causePl": "Kompensacja zmęczenia klatki, zbyt duży ciężar, słabe napięcie brzucha",
+        "cue": "Hips, lower back and shoulder blades stay glued to the bench. Reduce the weight if you can't hold position.",
+        "cuePl": "Biodra, odcinek lędźwiowy i łopatki przyklejone do ławki. Zmniejsz ciężar jeśli nie umiesz utrzymać pozycji."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (arms opening to the stretch). Exhale forcefully during the concentric squeeze. Keep mild intra-abdominal pressure to protect the lumbar spine.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (rozkładanie ramion do rozciągnięcia). Mocny wydech w fazie koncentrycznego ścisku. Utrzymuj lekkie napięcie tłoczni brzusznej aby chronić odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_instability_or_capsulitis",
+      "severity": "modify",
+      "modification": "Flat dumbbell fly puts the glenohumeral joint in horizontal abduction under significant load — one of the highest-risk positions for the anterior capsule. Limit stretch depth (stop hands well above shoulder level), reduce load and increase reps (12-15). Avoid completely during acute flare-ups.",
+      "modificationPl": "Rozpiętki z hantlami na ławce poziomej ustawiają staw ramienny w odwiedzeniu poziomym pod znacznym obciążeniem — jedna z najbardziej ryzykownych pozycji dla torebki przedniej. Ogranicz głębokość rozciągania (zatrzymaj dłonie znacznie powyżej linii barków), zmniejsz obciążenie i zwiększ powtórzenia (12-15). Całkowicie unikaj w okresach zaostrzenia.",
+      "alternative": "pec-deck"
+    },
+    {
+      "condition": "pectoralis_strain_or_distal_tear_history",
+      "severity": "avoid",
+      "modification": "Dumbbell fly is statistically the #1 mechanism of pectoralis major tears in the gym — the stretched position under load is exactly where the tendon fails. After any pec strain or tear history, avoid free-weight flys entirely until cleared by physiotherapist. Use machine or cable fly with limited ROM as substitute.",
+      "modificationPl": "Rozpiętki z hantlami to statystycznie najczęstszy mechanizm zerwania mięśnia piersiowego większego na siłowni — pozycja rozciągnięta pod obciążeniem to dokładnie miejsce gdzie ścięgno pęka. Po przebytym naderwaniu lub zerwaniu klatki całkowicie unikaj rozpiętek z wolnymi ciężarami do czasu zgody fizjoterapeuty. Stosuj maszynę lub linki z ograniczonym ROM jako zastępstwo.",
+      "alternative": "pec-deck"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Horizontal abduction in the bottom position can pinch tissue under the acromion. Reduce stretch depth — stop the dumbbells higher (about 30 cm above chest level). Switch to cable fly which lets you keep tension without going to maximum stretch.",
+      "modificationPl": "Odwiedzenie poziome w dolnej pozycji może uciskać tkanki pod wyrostkiem barkowym. Zmniejsz głębokość rozciągania — zatrzymaj hantle wyżej (około 30 cm nad klatką). Przejdź na linki, które pozwalają utrzymać napięcie bez schodzenia do maksymalnego rozciągnięcia.",
+      "alternative": "cable-fly"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "modify",
+      "modification": "The crunched-together top position can compress the acromioclavicular joint. Stop the dumbbells with a wider gap at the top (about 15 cm apart). If pain persists, switch to pec-deck which keeps the AC joint in a friendlier position.",
+      "modificationPl": "Zacisnięta pozycja w górze może uciskać staw barkowo-obojczykowy. Zatrzymaj hantle z większym odstępem w górze (około 15 cm od siebie). Jeśli ból nie ustępuje, przejdź na maszynę butterfly, która jest łagodniejsza dla stawu AC.",
+      "alternative": "pec-deck"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, default) | 3x12-20 (pump/finisher) | 3-4x8-12 (mass focus with strict 3-1-2-1 tempo)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-fly.gif",
+    "frames_extracted": [
+      "frames/dumbbell-fly/frame_0_start.png",
+      "frames/dumbbell-fly/frame_1_early.png",
+      "frames/dumbbell-fly/frame_2_mid.png",
+      "frames/dumbbell-fly/frame_3_late.png",
+      "frames/dumbbell-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 (dół/rozciągnięcie): osoba leży na ławce poziomej, ramiona rozłożone szeroko na boki na wysokości barków/klatki, hantle przy podłodze po obu stronach ławki, łokcie z lekkim zgięciem (nie wyprostowane), chwyt neutralny (dłonie zwrócone do siebie/do przodu w stosunku do ułożenia), klatka piersiowa mocno podświetlona na czerwono — pełne rozciągnięcie w pozycji horizontal abduction. Frame 1 (early concentric): ramiona zaczynają wędrować do góry w łuku, hantle na wysokości barków z motion blur ghost trail pokazującym ruch z dołu. Frame 2 (góra/skurcz): pełny skurcz — hantle blisko siebie nad klatką, ramiona uniesione, łokcie nadal w stałym lekkim zgięciu (NIE wyprostowane jak w pressie). Frame 3 (late): identyczna pozycja jak Frame 1 — środkowa faza ekscentryki. Frame 4 (powrót na dół z ghost): widać pełen łuk z góry do dołu — klasyczny ruch fly. Klucz identyfikacji: (1) brak zmiany kąta w łokciu w trakcie ruchu, (2) chwyt neutralny dłonie do siebie, (3) ławka poziomo (nie skos), (4) szeroki łuk a nie pressing. Klasyczne flat bench dumbbell fly. movement_pattern: isolation_fly, plane: transverse (horizontal adduction). primary: pectoralis_major P10, anterior_deltoids S5 — zgodne z briefem. Difficulty 5 (trudna technika mimo prostoty — najwyższe ryzyko zerwania klatki ze wszystkich ćwiczeń na siłowni, ścisła kontrola kąta w łokciu). PL nazwa zgodna z polskim standardem fitness ('Rozpiętki hantlami na ławce poziomej'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["bodybuilding", "chest", "pectorals", "isolation", "dumbbell", "flat_bench", "upper_body", "hypertrophy", "fly", "horizontal_adduction"]
+}

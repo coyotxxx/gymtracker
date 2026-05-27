@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-reverse-bench-press",
+  "name": "Dumbbell Reverse-Grip Bench Press (Flat)",
+  "namePl": "Wyciskanie hantli chwytem podchwytem na ławce",
+  "aliases": ["reverse grip dumbbell bench", "supinated DB bench press", "underhand dumbbell press", "reverse DB bench"],
+  "aliasesPl": ["wyciskanie hantli podchwytem na ławce poziomej", "wyciskanie hantli supinowanym chwytem", "DB bench podchwytem", "reverse grip wyciskanie hantli"],
+
+  "description": "Horizontal pressing variation performed lying on a flat bench with a dumbbell in each hand, using a supinated (reverse / underhand) grip — palms facing the face/head throughout the movement. The reverse grip naturally pulls the elbows close to the torso (~30-45° from the body), shifting emphasis to the upper/clavicular head of the pectoralis major and giving more involvement of the anterior deltoid and biceps. Loads are typically 60-75% of what a person can press with a pronated grip — this is a hypertrophy/finisher exercise, not a heavy strength lift. Excellent option for trainees who struggle to feel their upper chest with classic incline pressing or who want a shoulder-friendly alternative to barbell reverse grip bench.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany leżąc na poziomej ławce, z hantlem w każdej ręce, chwytem podchwytem (supinowanym) — dłonie zwrócone w stronę twarzy/głowy przez cały ruch. Chwyt podchwytem naturalnie ściąga łokcie blisko tułowia (~30-45° od ciała), przesuwając akcent na górną (obojczykową) część mięśnia piersiowego większego i zwiększając zaangażowanie przedniego aktona barku oraz bicepsów. Ciężary to zwykle 60-75% tego, co dana osoba wyciska chwytem nachwytem — to ćwiczenie hipertroficzne/wykończeniowe, nie ciężki bój siłowy. Świetna opcja dla osób, które słabo czują górną klatkę w klasycznym wyciskaniu na skosie, lub chcą przyjaźniejszą dla barku alternatywę dla wyciskania sztangą podchwytem.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with a dumbbell resting on each thigh, palms facing each other.",
+    "Lie back, kicking the dumbbells up to chest level. As you settle, rotate the wrists into a supinated grip — palms facing toward your head/face, NOT toward your feet.",
+    "Plant feet firmly on the floor, knees bent ~90°. Retract and depress the shoulder blades, slight natural arch in the lower back.",
+    "Start with dumbbells at chest level (lower chest / upper abdomen), elbows tucked close to the torso (~30-45° from sides) — the reverse grip naturally encourages this.",
+    "Inhale, brace the core, and press the dumbbells up and slightly toward the head — they should travel in a slight arc, finishing over the upper chest / clavicles, NOT over the lower chest.",
+    "Keep elbows tracking close to the body throughout the press. Do NOT let them flare out — that defeats the purpose of the variation.",
+    "At the top, arms extended but elbows NOT locked rigid. Squeeze the upper chest. Do not clang dumbbells together.",
+    "Lower with control (~2-3 seconds) back to the start at lower chest level. Maintain wrist position — palms always facing the head.",
+    "Exhale on the press up. To finish: bring dumbbells to chest, rotate back to neutral, sit up with momentum and place on thighs."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu poziomej ławki z hantlami opartymi o uda, dłonie zwrócone do siebie.",
+    "Połóż się, wybijając hantle do wysokości klatki. Gdy się układasz, obróć nadgarstki do chwytu podchwytem (supinowanego) — dłonie zwrócone w stronę głowy/twarzy, NIE w stronę stóp.",
+    "Stopy mocno na podłodze, kolana zgięte ~90°. Ściągnij łopatki w dół i razem, lekki naturalny łuk w dolnych plecach.",
+    "Start z hantlami na wysokości klatki (dolna klatka / górna część brzucha), łokcie schowane blisko tułowia (~30-45° od boków) — chwyt podchwytem naturalnie do tego zachęca.",
+    "Wdech, napięcie brzucha, wyciskaj hantle w górę i lekko w stronę głowy — powinny poruszać się po lekkim łuku, kończąc nad górną klatką / obojczykami, NIE nad dolną klatką.",
+    "Trzymaj łokcie blisko ciała przez cały wyciska. NIE pozwól im się rozsunąć — to niweczy sens tego wariantu.",
+    "Na szczycie ramiona wyprostowane, ale łokcie BEZ sztywnego lock-out. Spinaj górną klatkę. Nie waląc hantlami o siebie.",
+    "Opuszczaj z kontrolą (~2-3 sekundy) z powrotem do startu na wysokości dolnej klatki. Trzymaj pozycję nadgarstków — dłonie zawsze w stronę głowy.",
+    "Wydech podczas wyciskania w górę. Zakończenie: ściągnij hantle do klatki, obróć z powrotem do neutralnego, usiądź z impetem i odłóż na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids"],
+    "secondary": ["triceps", "biceps", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "S6",
+    "biceps": "S5",
+    "serratus_anterior": "S4",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-bench-press", "incline-dumbbell-bench-press"],
+    "progression_to": ["incline-dumbbell-reverse-bench-press", "barbell-reverse-bench-press"],
+    "alternatives": ["incline-dumbbell-bench-press", "low-incline-dumbbell-press", "neutral-grip-dumbbell-bench-press", "barbell-reverse-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit at end of bench, dumbbells on thighs, kick them up as you lie back",
+      "ROTATE wrists to supinated — palms toward your face/head before first rep",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Elbows tucked close to torso from the start — reverse grip naturally encourages this",
+      "Start with dumbbells over lower chest, not upper chest"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na końcu ławki, hantle na udach, wybij je gdy się kładziesz",
+      "OBRÓĆ nadgarstki do podchwytu — dłonie w stronę twarzy/głowy przed pierwszą powtórką",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Łokcie schowane blisko tułowia od startu — chwyt podchwytem do tego zachęca",
+      "Start z hantlami nad dolną klatką, nie nad górną"
+    ],
+    "execution_cues": [
+      "Press up AND toward the head — bar path travels in a slight arc",
+      "Keep elbows tucked at ~30-45° from torso THROUGHOUT the press",
+      "Feel the squeeze in the UPPER chest at the top, not the middle",
+      "Use 60-75% of your normal DB bench weight — this is NOT a heavy lift",
+      "Eccentric ~2-3 seconds, focus on upper chest stretch at the bottom"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę I w stronę głowy — tor ruchu po lekkim łuku",
+      "Łokcie schowane ~30-45° od tułowia PRZEZ CAŁY wyciska",
+      "Poczuj napięcie w GÓRNEJ klatce na szczycie, nie w środkowej",
+      "Używaj 60-75% normalnego ciężaru z DB bench — to NIE jest ciężki bój",
+      "Faza ekscentryczna ~2-3 sekundy, skup się na rozciągnięciu górnej klatki na dole"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flare out during the press",
+        "faultPl": "Łokcie rozsunięte na boki podczas wyciskania",
+        "cause": "Habit from classic bench press; weak grip control; too heavy weight forcing biomechanically easier path",
+        "causePl": "Nawyk z klasycznego wyciskania; słaba kontrola chwytu; zbyt ciężki ciężar wymuszający łatwiejszą biomechanicznie ścieżkę",
+        "cue": "Tuck elbows toward the hips. The whole point of reverse grip IS elbows in. If they flare, drop the weight.",
+        "cuePl": "Schowaj łokcie w stronę bioder. Sens chwytu podchwytem TO właśnie łokcie blisko. Jeśli rozsuwają się, zmniejsz ciężar."
+      },
+      {
+        "fault": "Wrist breaks back (palms tilt toward feet under load)",
+        "faultPl": "Nadgarstki załamują się (dłonie przechylają się w stronę stóp pod ciężarem)",
+        "cause": "Weak wrists / forearms; weight too heavy for supinated position; lack of grip discipline",
+        "causePl": "Słabe nadgarstki / przedramiona; ciężar za duży na pozycję supinowaną; brak dyscypliny chwytu",
+        "cue": "Keep wrists stacked over forearms — knuckles to the ceiling, palms to your face. Use wrist wraps. Drop weight if needed.",
+        "cuePl": "Trzymaj nadgarstki w linii z przedramieniem — knykcie w sufit, dłonie w stronę twarzy. Użyj wraps. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Pressing dumbbells straight up over chest instead of slight arc toward head",
+        "faultPl": "Wyciskanie hantli prosto w górę nad klatką zamiast lekkiego łuku w stronę głowy",
+        "cause": "Treating it like a regular DB bench press; missing the upper chest emphasis",
+        "causePl": "Traktowanie jak zwykłego DB bench press; brak akcentu na górną klatkę",
+        "cue": "Path: from lower chest at the bottom → toward clavicles/upper chest at the top. Slight diagonal, NOT straight up.",
+        "cuePl": "Tor: z dolnej klatki na dole → w stronę obojczyków / górnej klatki na górze. Lekka skośna, NIE prosto w górę."
+      },
+      {
+        "fault": "Using too much weight (ego transfer from classic DB bench)",
+        "faultPl": "Zbyt duży ciężar (ego transferowane z klasycznego DB bench)",
+        "cause": "Misunderstanding that reverse grip = weaker leverage; copying weight from regular DB bench",
+        "causePl": "Niezrozumienie że chwyt podchwytem = słabsze dźwignie; kopiowanie ciężaru ze zwykłego DB bench",
+        "cue": "Start with 60-70% of your normal DB bench weight. Form first, weight second. This is a finisher, not a strength lift.",
+        "cuePl": "Zacznij od 60-70% swojego normalnego ciężaru z DB bench. Najpierw forma, potem ciężar. To wykończenie, nie bój siłowy."
+      },
+      {
+        "fault": "Dumbbells drift apart at the top",
+        "faultPl": "Hantle rozjeżdżają się na szczycie",
+        "cause": "Loss of pec engagement at lockout; supinated grip makes top position less stable",
+        "causePl": "Utrata napięcia klatki na szczycie; chwyt podchwytem czyni szczyt mniej stabilnym",
+        "cue": "Press up AND slightly inward. Squeeze upper chest at the top. Don't clang dumbbells together.",
+        "cuePl": "Wyciskaj w górę I lekko do środka. Spinaj górną klatkę na szczycie. Bez stukania hantli o siebie."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "avoid",
+      "modification": "Supinated grip puts significantly more stress on the wrist than pronated. If wrists hurt, do NOT do this variation. Switch to neutral or pronated grip.",
+      "modificationPl": "Chwyt podchwytem znacznie bardziej obciąża nadgarstek niż nachwytem. Jeśli nadgarstki bolą, NIE rób tego wariantu. Przejdź na chwyt neutralny lub nachwyt.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Reverse grip recruits biceps significantly — aggravates tendinopathy of the long head. Wait until pain-free, return through light incline DB press first.",
+      "modificationPl": "Chwyt podchwytem mocno angażuje bicepsy — drażni zapalenie ścięgna długiej głowy. Poczekaj do braku bólu, wróć przez lekkie wyciskanie hantli na skosie.",
+      "alternative": "incline-dumbbell-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reverse grip is generally shoulder-friendly (elbows tucked), but some find supinated humerus painful. If pain on bottom, reduce ROM or switch to neutral grip.",
+      "modificationPl": "Chwyt podchwytem jest zazwyczaj przyjazny barkom (łokcie schowane), ale niektórzy odczuwają ból przy supinowanym ramieniu. Jeśli ból na dole, zmniejsz ROM lub przejdź na chwyt neutralny.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    },
+    {
+      "condition": "elbow_pain_distal_biceps",
+      "severity": "modify",
+      "modification": "Supinated grip loads the distal biceps tendon at the elbow. If elbow pain, reduce weight 30-40% and stop short of full lockout, or skip this variation.",
+      "modificationPl": "Chwyt podchwytem obciąża ścięgno dystalnego bicepsa przy łokciu. Jeśli ból łokcia, zmniejsz ciężar o 30-40% i nie dochodź do pełnego lock-out, lub pomiń ten wariant.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, default — light/moderate weight, high reps) | 3x12-15 (pump/finisher) | 4x8-10 (focused upper-chest hypertrophy)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-reverse-bench-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-reverse-bench-press/frame_0_start.png",
+      "frames/dumbbell-reverse-bench-press/frame_1_early.png",
+      "frames/dumbbell-reverse-bench-press/frame_2_mid.png",
+      "frames/dumbbell-reverse-bench-press/frame_3_late.png",
+      "frames/dumbbell-reverse-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-reverse-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany: Frame 0 (dół): hantle na poziomie dolnej klatki, chwyt podchwytem widoczny (knykcie w sufit, dłonie w stronę głowy), łokcie schowane blisko tułowia (~30-45° od ciała) — odróżnia od klasycznego DB bench gdzie łokcie ~45-60°. Frame 2 (szczyt): pełne wyciśnięcie, hantle nad górną klatką / w stronę obojczyków, lekki łuk w stronę głowy. Frame 4 (powrót z motion blur): kontrolowane opuszczanie po tej samej diagonali. Klatka piersiowa podświetlona z naciskiem na górną/clavicular część + brzuch (serratus/core) widoczne. Ławka pozioma, stopy na podłodze, łopatki ściągnięte. Klasyczny pattern dla reverse grip DB bench press: focus na clavicular head pectoralis_major, biceps jako significant secondary, lighter loading. PL nazwa zgodna z polskim standardem fitness ('Wyciskanie hantli chwytem podchwytem na ławce'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Specifity vs classic DB bench: niżej hantle na starcie, łuk do obojczyków, łokcie ciaśniej, ciężary ~60-75% normalnych.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "upper_chest", "clavicular_pec", "dumbbell", "chest", "biceps_involvement", "hypertrophy", "finisher", "reverse_grip", "supinated"]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "cable-standing-inner-curl",
+  "name": "Cable Standing Inner Curl",
+  "namePl": "Inner curl z wyciągu w staniu",
+  "aliases": ["high cable biceps curl", "double biceps cable curl", "cable front double biceps", "cable inner biceps curl"],
+  "aliasesPl": ["uginanie z górnego wyciągu w pozie podwójnego bicepsa", "double biceps z wyciągu", "uginanie do wewnątrz z wyciągu", "high cable curl na krótką głowę bicepsa"],
+
+  "description": "Standing biceps isolation performed between two high cable pulleys. The lifter stands in the middle with arms held out laterally at shoulder height, grasping a handle from each side. The cables pull outward and slightly downward, so to curl the hands toward the head the biceps must shorten in a fully shortened, supinated position — exactly the position that maximally loads the short head of biceps brachii. Often called a 'double biceps pose curl' because the finish position mimics the front double biceps stage pose. Provides constant tension and a strong peak contraction unavailable with free weights.",
+  "descriptionPl": "Izolowane ćwiczenie na biceps wykonywane stojąc pomiędzy dwoma górnymi wyciągami. Ćwiczący staje na środku z ramionami uniesionymi w bok do wysokości barków i chwyta uchwyt z każdej strony. Linki ciągną na zewnątrz i lekko w dół, więc aby uginać dłonie w stronę głowy biceps musi pracować w pozycji skróconej i supinowanej — czyli dokładnie tam, gdzie maksymalnie obciążana jest krótka głowa mięśnia dwugłowego ramienia. Często nazywane 'curlem do pozy podwójnego bicepsa', bo pozycja końcowa imituje pozę front double biceps z kulturystyki. Daje stałe napięcie i mocny szczytowy skurcz, nieosiągalne z wolnym ciężarem.",
+
+  "instructions": [
+    "Set both pulleys on a cable cross-over to slightly above shoulder height. Attach a single-handle (D-handle) to each side.",
+    "Stand exactly in the middle between the towers. Take one handle in each hand with a supinated (palms-up) grip.",
+    "Step back if needed so the cables go taut. Extend both arms out laterally at shoulder height, palms facing the ceiling — this is the start position. Elbows stay at shoulder level for the whole set.",
+    "Set the stance: feet hip-width, knees soft, chest tall, shoulders pulled back and down, core braced. Do not lean.",
+    "Curl both hands inward toward the sides of your head by flexing the elbows only. The upper arms must remain horizontal — only the forearms travel.",
+    "Squeeze the biceps hard in the fully shortened position, hands ending near the ears (front double biceps pose).",
+    "Reverse the motion slowly over 2-3 seconds back to fully extended arms held laterally. Resist the cables — never let them snap your arms straight.",
+    "Maintain a tall, stationary torso for every rep. The only moving joints are the elbows."
+  ],
+  "instructionsPl": [
+    "Ustaw oba wyciągi w bramie cable cross nieco powyżej wysokości barków. Załóż pojedyncze rączki (uchwyty D) po obu stronach.",
+    "Stań dokładnie na środku pomiędzy stojakami. Chwyć po jednej rączce w każdą rękę chwytem podchwytem (dłonie w górę).",
+    "Cofnij się jeśli trzeba, aby linki były napięte. Wyciągnij oba ramiona w bok na wysokości barków, dłonie skierowane ku sufitowi — to pozycja startowa. Łokcie zostają na wysokości barków przez całą serię.",
+    "Ustaw postawę: stopy na szerokość bioder, kolana lekko ugięte, klatka w górze, barki ściągnięte w tył i w dół, brzuch napięty. Nie odchylaj się.",
+    "Uginaj obie dłonie do wewnątrz, w stronę boków głowy, zginając ramiona tylko w łokciach. Ramiona ponad łokciem mają zostać poziomo — ruszają się tylko przedramiona.",
+    "Mocno spinaj bicepsy w pełnym skurczu, dłonie kończą blisko uszu (poza front double biceps).",
+    "Wracaj wolno przez 2-3 sekundy do pełnego wyprostu ramion uniesionych w bok. Opieraj się linkom — nie pozwól im wyszarpać ramion na prosto.",
+    "Utrzymuj wyprostowany, nieruchomy tułów przy każdym powtórzeniu. Jedynymi ruchomymi stawami są łokcie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "lateral_deltoid", "rotator_cuff", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S5",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T3",
+    "lateral_deltoid": "T3",
+    "rotator_cuff": "T2",
+    "core": "T2",
+    "upper_back": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "cable_crossover", "d_handle"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-curl", "dumbbell-curl", "cable-curl"],
+    "progression_to": ["cable-spider-curl", "cable-preacher-curl", "single-arm-cable-curl"],
+    "alternatives": ["cable-curl", "concentration-curl", "spider-curl", "preacher-curl", "high-cable-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulleys set just above shoulder height on both sides",
+      "Stand dead center between the towers",
+      "Supinated grip — palms face the ceiling at the start",
+      "Arms held out laterally at shoulder height, elbows fixed",
+      "Chest up, shoulders packed back and down, core braced"
+    ],
+    "setup_cues_pl": [
+      "Wyciągi ustawione tuż powyżej wysokości barków po obu stronach",
+      "Stań dokładnie na środku pomiędzy stojakami",
+      "Chwyt podchwytem — dłonie skierowane ku sufitowi na starcie",
+      "Ramiona uniesione w bok na wysokości barków, łokcie zafiksowane",
+      "Klatka w górze, barki ściągnięte w tył i w dół, brzuch napięty"
+    ],
+    "execution_cues": [
+      "Curl the hands toward the sides of your head — finish like a front double biceps pose",
+      "Upper arms stay horizontal — only the forearms move",
+      "Squeeze the short head of biceps hard at the top — think 'pose for the crowd'",
+      "Lower under control for 2-3 seconds — never let the cables snap you straight",
+      "Keep the torso vertical and motionless — no lean, no swing"
+    ],
+    "execution_cues_pl": [
+      "Uginaj dłonie w stronę boków głowy — zakończ pozą podwójnego bicepsa z przodu",
+      "Ramiona ponad łokciem zostają poziomo — ruszają się tylko przedramiona",
+      "Mocno spinaj krótką głowę bicepsa w górnej pozycji — 'pozuj dla publiczności'",
+      "Opuszczaj kontrolowanie przez 2-3 sekundy — nie pozwól linkom wyszarpać ramion na prosto",
+      "Tułów pionowy i nieruchomy — bez odchyleń, bez bujania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows dropping below shoulder height during the set",
+        "faultPl": "Łokcie opadają poniżej wysokości barków w trakcie serii",
+        "cause": "Lateral deltoids fatigue from holding arms out, or load too heavy",
+        "causePl": "Zmęczenie aktonów bocznych barku od utrzymywania ramion w bok, lub zbyt duży ciężar",
+        "cue": "Reduce the load. Mentally cue 'elbows pinned at shoulder level' every rep. If shoulders fatigue first, this exercise is too advanced — use cable curl instead.",
+        "cuePl": "Zmniejsz ciężar. Powtarzaj sobie 'łokcie na wysokości barków' przy każdym powtórzeniu. Jeśli barki męczą się pierwsze, to ćwiczenie jest dla ciebie za zaawansowane — wybierz uginanie z wyciągu."
+      },
+      {
+        "fault": "Standing off-center between the pulleys",
+        "faultPl": "Stanie nie na środku pomiędzy wyciągami",
+        "cause": "Not measuring the position, or shifting during fatigue",
+        "causePl": "Brak ustawienia środka przed serią, lub przesuwanie się w trakcie zmęczenia",
+        "cue": "Eyeball both pulleys before the first rep — feet equidistant from each tower. Tension should feel identical in both arms.",
+        "cuePl": "Spójrz na oba wyciągi przed pierwszym powtórzeniem — stopy w równej odległości od każdego stojaka. Napięcie powinno być identyczne w obu ramionach."
+      },
+      {
+        "fault": "Leaning forward or backward to finish the rep",
+        "faultPl": "Pochylanie się do przodu lub do tyłu aby skończyć powtórzenie",
+        "cause": "Load too heavy, or trying to grind reps past biceps failure using torso English",
+        "causePl": "Zbyt duży ciężar, lub forsowanie powtórzeń po wyczerpaniu bicepsa kosztem tułowia",
+        "cue": "Stay vertical — ears over hips. Stop the set when strict form fails rather than cheating with the torso.",
+        "cuePl": "Pozostań pionowo — uszy nad biodrami. Zakończ serię gdy ścisła technika zawodzi, nie oszukuj tułowiem."
+      },
+      {
+        "fault": "Wrists flexing inward (curling the wrists, not the elbows)",
+        "faultPl": "Zginanie nadgarstków do wewnątrz (uginanie nadgarstków zamiast łokci)",
+        "cause": "Weak biceps relative to load, trying to add range by curling the wrist",
+        "causePl": "Słaby biceps w stosunku do ciężaru, próba dodania zakresu ruchu zgięciem nadgarstka",
+        "cue": "Wrists stay neutral, in line with the forearm. The handle must move because the elbow flexes, not the wrist.",
+        "cuePl": "Nadgarstki neutralne, w linii z przedramieniem. Rączka ma się poruszać dlatego, że ugina się łokieć, a nie nadgarstek."
+      },
+      {
+        "fault": "Letting the cables drag the arms back fast in the eccentric",
+        "faultPl": "Wyszarpywanie ramion na prosto w fazie negatywnej",
+        "cause": "Insufficient eccentric control, ego lifting, or rushing the tempo",
+        "causePl": "Brak kontroli ekscentrycznej, ego, lub zbyt szybkie tempo",
+        "cue": "Count '1-2-3' on the way back. The biceps must work against the cable for the full descent — that is where most of the growth signal lives.",
+        "cuePl": "Licz '1-2-3' w fazie powrotnej. Biceps musi pracować pod obciążeniem przez całą fazę negatywną — to tam dzieje się większość bodźca wzrostowego."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curling hands toward the head). Inhale during the eccentric (returning to laterally extended arms). Light continuous brace protects the lumbar spine throughout.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uginanie dłoni w stronę głowy). Wdech w fazie ekscentrycznej (powrót do ramion wyprostowanych w bok). Lekkie ciągłe napięcie brzucha chroni odcinek lędźwiowy przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_supraspinatus_tendinopathy",
+      "severity": "modify",
+      "modification": "Holding arms abducted at 90° for an entire set heavily loads the supraspinatus and may pinch in the subacromial space. Drop the pulleys to chest height or switch to a standard cable curl until pain-free.",
+      "modificationPl": "Utrzymywanie ramion uniesionych w bok pod kątem 90° przez całą serię mocno obciąża mięsień nadgrzebieniowy i może powodować zakleszczanie w przestrzeni podbarkowej. Obniż wyciągi do wysokości klatki lub przejdź na klasyczne uginanie z wyciągu do czasu ustąpienia bólu.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Full supination plus shortened-position load is very demanding for the distal biceps tendon. Reduce intensity, increase reps to 12-15, eliminate heavy eccentrics, or substitute hammer-grip curl until symptoms resolve.",
+      "modificationPl": "Pełna supinacja z obciążeniem w pozycji skróconej jest bardzo wymagająca dla dystalnego ścięgna bicepsa. Zmniejsz intensywność, zwiększ powtórzenia do 12-15, wyeliminuj ciężkie fazy negatywne, lub zamień na uginanie chwytem młotkowym do czasu ustąpienia objawów.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "acromioclavicular_joint_pain",
+      "severity": "avoid",
+      "modification": "The 90° lateral arm position aggravates AC joint compression. Skip this variation entirely until cleared, perform low-cable or preacher variations instead.",
+      "modificationPl": "Pozycja ramion uniesionych w bok pod kątem 90° drażni staw barkowo-obojczykowy. Zrezygnuj z tego wariantu do czasu wyleczenia, wykonuj uginania z dolnego wyciągu lub na modlitewniku.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires sustained isometric lumbar bracing while arms work against horizontal cable pull. Sit on a bench between the pulleys, or use seated cable curl.",
+      "modificationPl": "Wersja stojąca wymaga utrzymywania izometrycznego napięcia lędźwiowego przy jednoczesnej pracy ramion przeciwko poziomemu naciągowi linek. Usiądź na ławce pomiędzy wyciągami lub wybierz uginanie z wyciągu w siadzie.",
+      "alternative": "cable-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy — preferred range) | 3x12-15 (pump / peak contraction finisher) | rarely used for strength <8 reps due to shoulder fatigue",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-standing-inner-curl.gif",
+    "frames_extracted": [
+      "frames/cable-standing-inner-curl/frame_0_start.png",
+      "frames/cable-standing-inner-curl/frame_1_early.png",
+      "frames/cable-standing-inner-curl/frame_2_mid.png",
+      "frames/cable-standing-inner-curl/frame_3_late.png",
+      "frames/cable-standing-inner-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-standing-inner-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący stoi na środku bramy cable cross, ramiona uniesione w bok na wysokości barków, oba przedramiona i bicepsy podświetlone na czerwono, dłonie chwytają rączki D z obu stron chwytem podchwytem, linki idą do góry i na zewnątrz (górne wyciągi). Frame 2: pełny skurcz — dłonie blisko boków głowy w klasycznej pozie front double biceps, ramiona ponad łokciem zostały poziomo, łokcie wciąż na wysokości barków, tułów pionowy i nieruchomy. Frame 4: powrót do pełnego wyprostu ramion w bok, identyczny jak start (z widocznym ghostingiem fazy szczytowej). Ćwiczenie obustronne (BILATERAL) — oba ramiona pracują równocześnie. Sklasyfikowane jako transverse plane bo dłonie poruszają się głównie w płaszczyźnie poziomej do wewnątrz/na zewnątrz. Primary biceps_brachii (P10) z naciskiem na krótką głowę w pozycji skróconej. Brachialis S5 (mniej niż w hammer/EZ bo pełna supinacja). Stabilizatory barku (lateral_deltoid, rotator_cuff) mocno zaangażowane przez izometryczne utrzymywanie pozycji 90° abdukcji. UWAGA: prompt usera wspomniał 'unilateral' i 'uchwyt po przeciwnej stronie ciała', ale GIF pokazuje jednoznacznie BILATERAL double-biceps-pose curl z obu wyciągów. Zapisałem zgodnie z faktycznym GIFem (laterality=bilateral). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "cable", "upper_body", "peak_contraction", "constant_tension", "pose", "short_head"]
+}

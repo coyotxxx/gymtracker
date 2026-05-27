@@ -1,0 +1,205 @@
+{
+  "id": "barbell-front-squat",
+  "name": "Barbell Front Squat",
+  "namePl": "Przysiad przedni ze sztangą",
+  "aliases": ["front squat", "olympic front squat", "clean-grip front squat"],
+  "aliasesPl": ["front squat", "przysiad przedni", "przysiad ze sztangą z przodu", "przysiad olimpijski przedni"],
+
+  "description": "Squat variant with the barbell racked across the front deltoids in a 'front rack' position (clean grip). The upright torso required to keep the bar from rolling forward shifts emphasis heavily onto the quadriceps and core, while reducing relative glute and posterior chain involvement compared to the back squat. Considered the king of quad builders and a staple of olympic weightlifting. Typically loaded at ~80% of one's back squat 1RM due to the limiting upper-back and wrist mobility demands.",
+  "descriptionPl": "Wariant przysiadu ze sztangą trzymaną na przednich aktonach barków w pozycji 'front rack' (chwyt rwaniowy/podrzutowy). Pionowy tułów, wymagany żeby gryf się nie stoczył do przodu, mocno przesuwa nacisk na czworogłowe i mięśnie core, redukując zaangażowanie pośladków i tylnego łańcucha względem klasycznego przysiadu (back squat). Uznawany za najlepszy hammer na czworogłowe i fundament dwuboju olimpijskiego. Maksymalne ciężary to zwykle ~80% 1RM back squat ze względu na ograniczenia mobilności górnej części pleców i nadgarstków.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load the desired weight and secure with collars.",
+    "Step under the bar and place it across your front deltoids, just below the collarbones. The bar should rest on the shelf formed by your shoulders, not on your hands.",
+    "Establish the front rack: grip the bar slightly wider than shoulder-width, drive your elbows high and forward so the upper arms are parallel to the floor. Fingers may relax under the bar if wrist mobility is limited.",
+    "Unrack the bar by extending your legs. Take two controlled steps back. Set your feet shoulder-width apart with toes slightly turned out (10-30°).",
+    "Brace your core hard, keep elbows high, chest tall. Inhale deeply and hold (Valsalva).",
+    "Initiate the descent by breaking at the knees AND hips simultaneously, keeping the torso as vertical as possible. Allow the knees to travel forward over the toes.",
+    "Descend until your hip crease passes below the top of your knee (full ATG depth) or to your individual mobility limit while keeping elbows up and torso upright.",
+    "Drive up by pushing through the whole foot, leading with the chest and elbows — never let the elbows drop. Exhale near the top of the rep.",
+    "Lock out at the top with full hip and knee extension, maintaining the front rack position throughout the entire set."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj odpowiednie obciążenie i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją na przednich aktonach barków, tuż poniżej obojczyków. Gryf spoczywa na półce utworzonej przez ramiona, nie na dłoniach.",
+    "Ustaw pozycję front rack: chwyć gryf nieco szerzej niż na szerokość barków, wypchnij łokcie wysoko i do przodu, tak aby ramiona były równoległe do podłogi. Palce mogą rozluźnić chwyt pod gryfem jeśli mobilność nadgarstków jest ograniczona.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się 2 kroki kontrolowanym ruchem. Ustaw stopy na szerokość barków, palce lekko na zewnątrz (10-30°).",
+    "Mocno napnij brzuch, łokcie wysoko, klatka do góry. Nabierz głęboki oddech i przytrzymaj (Valsalva).",
+    "Rozpocznij schodzenie zginając jednocześnie kolana I biodra, utrzymując tułów możliwie pionowo. Pozwól kolanom wysunąć się do przodu nad palce stóp.",
+    "Schodź aż linia bioder zejdzie poniżej szczytu kolan (pełna głębokość ATG) lub do indywidualnego limitu mobilności, utrzymując łokcie wysoko i tułów pionowo.",
+    "Wypchnij się w górę napierając całą stopą, prowadząc ruch klatką i łokciami — nigdy nie pozwól by łokcie opadły. Wydech blisko górnej części powtórzenia.",
+    "Zakończ powtórzenie pełnym wyprostem bioder i kolan, utrzymując pozycję front rack przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["upper_back", "erector_spinae"],
+    "stabilizers": ["core", "upper_traps", "rectus_abdominis", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "S7",
+    "upper_back": "S8",
+    "erector_spinae": "S6",
+    "core": "P9",
+    "upper_traps": "S6",
+    "rectus_abdominis": "S6",
+    "adductors": "S5",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 8,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "barbell-back-squat"],
+    "progression_to": ["pause-front-squat", "tempo-front-squat", "zercher-squat", "overhead-squat"],
+    "alternatives": ["goblet-squat", "safety-bar-squat", "hack-squat", "leg-press", "barbell-back-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on the shelf of front delts, not on the hands",
+      "Elbows high — upper arms parallel to floor",
+      "Fingers can relax if wrist mobility is limited",
+      "Feet shoulder-width, toes out 10-30°",
+      "Big breath, brace 360° around the spine"
+    ],
+    "setup_cues_pl": [
+      "Gryf na półce przednich aktonów, nie na dłoniach",
+      "Łokcie wysoko — ramiona równolegle do podłogi",
+      "Palce mogą rozluźnić chwyt jeśli mobilność nadgarstków słaba",
+      "Stopy szerokość barków, palce na zewnątrz 10-30°",
+      "Głęboki wdech, napięcie brzucha 360° wokół kręgosłupa"
+    ],
+    "execution_cues": [
+      "Keep elbows UP — chase them to the ceiling",
+      "Sit straight down between your feet, not back",
+      "Let knees travel forward over the toes — that's fine here",
+      "Torso stays vertical the entire rep",
+      "Lead the ascent with chest and elbows, never the hips"
+    ],
+    "execution_cues_pl": [
+      "Trzymaj łokcie WYSOKO — kieruj je do sufitu",
+      "Siadaj prosto w dół między stopami, nie do tyłu",
+      "Pozwól kolanom wysunąć się do przodu nad palce — tu to jest dobre",
+      "Tułów pionowo przez całe powtórzenie",
+      "Prowadź wstawanie klatką i łokciami, nigdy biodrami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drop / loss of front rack",
+        "faultPl": "Łokcie opadają / utrata front rack",
+        "cause": "Weak upper back, limited wrist/shoulder mobility, or excessive forward torso lean",
+        "causePl": "Słaba górna część pleców, ograniczona mobilność nadgarstków/barków, lub nadmierne pochylenie tułowia",
+        "cue": "Chase your elbows to the ceiling on every rep. If they drop the bar will roll forward and the rep is gone.",
+        "cuePl": "Kieruj łokcie do sufitu w każdym powtórzeniu. Jeśli opadną, gryf się stoczy i powtórzenie jest stracone."
+      },
+      {
+        "fault": "Forward lean / good morning front squat",
+        "faultPl": "Pochylenie do przodu / front squat-good morning",
+        "cause": "Weak quads relative to posterior chain, poor ankle mobility, or core fatigue",
+        "causePl": "Słabe czworogłowe względem tylnego łańcucha, słaba mobilność stawu skokowego, lub zmęczenie core",
+        "cue": "Stay vertical. Knees forward, chest up, elbows up. If you lean forward you will dump the bar.",
+        "cuePl": "Pozostań pionowo. Kolana do przodu, klatka do góry, łokcie do góry. Jeśli pochylisz się do przodu, zrzucisz gryf."
+      },
+      {
+        "fault": "Butt wink (lumbar flexion at depth)",
+        "faultPl": "Butt wink (zgięcie kręgosłupa lędźwiowego na dole)",
+        "cause": "Limited hip mobility or going below your individual squat depth",
+        "causePl": "Ograniczona mobilność bioder lub schodzenie poniżej indywidualnego zakresu",
+        "cue": "Stop one inch above the depth where your pelvis tucks. Work on hip mobility outside the lift.",
+        "cuePl": "Zatrzymaj się 2-3 cm nad głębokością gdzie miednica się podwija. Pracuj nad mobilnością bioder poza serią."
+      },
+      {
+        "fault": "Wrist pain in the rack",
+        "faultPl": "Ból nadgarstków w pozycji front rack",
+        "cause": "Trying to hold the bar IN the palms instead of letting it rest on the shoulders, or limited wrist extension mobility",
+        "causePl": "Próba trzymania gryfu W dłoniach zamiast pozwolenia by spoczął na barkach, lub ograniczona mobilność wyprostu nadgarstków",
+        "cue": "Open the hands — fingers stay under the bar only as a guide. The shoulders carry the weight, not the wrists.",
+        "cuePl": "Rozluźnij dłonie — palce pod gryfem tylko jako prowadzenie. Ciężar niosą barki, nie nadgarstki."
+      },
+      {
+        "fault": "Insufficient depth (cutting reps high)",
+        "faultPl": "Niedostateczna głębokość (powtórzenia ucinane wysoko)",
+        "cause": "Trying to lift more weight than mobility allows, or fear of losing the rack at depth",
+        "causePl": "Próba podniesienia większego ciężaru niż pozwala mobilność, lub strach przed utratą front rack na dole",
+        "cue": "Reduce the load. Hit hip crease below knee on every rep — that's a front squat. Higher reps without depth don't count.",
+        "cuePl": "Zmniejsz obciążenie. W każdym powtórzeniu schodź biodrami poniżej kolan — dopiero to jest front squat. Wyżej to nie liczy się."
+      }
+    ],
+    "breathing": "Big breath at the top, brace 360°, hold through the descent and the hardest part of the ascent (Valsalva). Exhale at the top of the rep. Re-brace between reps if doing heavy singles.",
+    "breathingPl": "Głęboki wdech na górze, napięcie brzucha 360°, wstrzymaj przez schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech na górze powtórzenia. Ponowne napięcie między powtórzeniami przy ciężkich pojedynczych."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_injury_or_limited_extension",
+      "severity": "modify",
+      "modification": "Use a cross-arm rack (bodybuilder grip) with arms crossed over the bar, OR use lifting straps wrapped around the bar to remove wrist demand entirely.",
+      "modificationPl": "Zastosuj chwyt skrzyżowany (bodybuilder grip) z rękami skrzyżowanymi nad gryfem, LUB użyj lifting strapsów owiniętych wokół gryfu by całkowicie usunąć obciążenie nadgarstków.",
+      "alternative": "safety-bar-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid axial loading of the spine entirely.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj osiowego obciążania kręgosłupa.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "shoulder_mobility_restriction",
+      "severity": "modify",
+      "modification": "Front rack requires shoulder flexion and external rotation. If limited, use cross-arm grip or work on mobility before loading heavy.",
+      "modificationPl": "Front rack wymaga zgięcia barku i rotacji zewnętrznej. Przy ograniczeniu użyj chwytu skrzyżowanego lub pracuj nad mobilnością przed cięższymi obciążeniami.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "knee_meniscus_or_patellar_tendinopathy",
+      "severity": "caution",
+      "modification": "Front squat loads the patellar tendon significantly more than back squat. Limit depth to pain-free range, lower load, and consider higher-foot stance.",
+      "modificationPl": "Front squat obciąża więzadło rzepki znacznie bardziej niż back squat. Ogranicz głębokość do zakresu bez bólu, zmniejsz obciążenie, rozważ węższy rozstaw stóp.",
+      "alternative": "box-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (strength) | 4x6-10 (hypertrophy / quad focus) | 3x1-3 (olympic prep)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-front-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-front-squat/frame_0_start.png",
+      "frames/barbell-front-squat/frame_1_early.png",
+      "frames/barbell-front-squat/frame_2_mid.png",
+      "frames/barbell-front-squat/frame_3_late.png",
+      "frames/barbell-front-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-front-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:45:00Z",
+  "verification_notes": "Obejrzałem 3 klatki z GIFa jahel (start, mid, end). Klatka 0 i 4 (identyczne): pozycja wyjściowa stojąca, sztanga na PRZEDNICH aktonach barków, łokcie wysoko wypchnięte do przodu (charakterystyczna pozycja front rack — ramiona prawie równoległe do podłogi). Klatka 2 (dół): pełny przysiad z biodrami poniżej kolan, TUŁÓW PIONOWY (kluczowa różnica vs back squat gdzie tułów się pochyla), sztanga utrzymana wysoko na barkach, łokcie nadal wysoko. Mięśnie podświetlone na ilustracji: czworogłowe MOCNO (cała przednia strona uda) — to potwierdza klasyfikację 'quad hammer'. Pośladki podświetlone słabiej niż w back squat — zgodne z anatomią pionowego tułowia. Klasyfikacja źródła w master.json ('glutes') jest myląca — to przede wszystkim ćwiczenie czworogłowych. Wszystkie pola PL napisane od zera (nie tłumaczenie maszynowe), z polskim standardem fitness ('przysiad przedni', 'front rack', 'czworogłowe').",
+
+  "tags": ["olympic_weightlifting", "quad_builder", "compound", "lower_body", "core_intensive", "barbell", "front_rack"]
+}

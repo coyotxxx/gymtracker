@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-incline-shoulder-raise",
+  "name": "Dumbbell Incline Shoulder Raise",
+  "namePl": "Wznosy hantli na ławce skośnej (scapular punch)",
+  "aliases": ["dumbbell incline scapular punch", "incline db scap punch", "serratus push on incline bench", "incline dumbbell scapular protraction"],
+  "aliasesPl": ["protrakcja łopatek z hantlami na skośnej ławce", "scapular punch na ławce skośnej z hantlami", "wypychanie łopatek z hantlami leżąc na skosie", "serratus punch na ławce skośnej"],
+
+  "description": "Isolation exercise targeting the serratus anterior performed lying back on an incline bench with two dumbbells pressed straight up. From a locked-out top position of an incline press, the lifter performs scapular protraction — pushing the shoulder blades forward around the rib cage so the dumbbells rise a few centimetres further. Elbows remain extended throughout; the movement is exclusively at the scapulothoracic joint, not the elbow. Useful for activating an often-neglected stabiliser, addressing scapular winging, and as warm-up work before heavy pressing.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień zębaty przedni wykonywane leżąc plecami na skośnej ławce, z dwoma hantlami wyciśniętymi pionowo w górę. Z pozycji końcowej wyciskania skośnego (ramiona w pełnym wyproście) wykonuje się protrakcję łopatek — łopatki wysuwają się do przodu wokół klatki piersiowej, dzięki czemu hantle podnoszą się jeszcze o kilka centymetrów. Łokcie pozostają wyprostowane przez cały ruch — pracuje wyłącznie staw łopatkowo-żebrowy, nie staw łokciowy. Przydatne do aktywacji często zaniedbywanego stabilizatora, korekcji odstających łopatek (scapular winging) oraz jako rozgrzewka przed ciężkim wyciskaniem.",
+
+  "instructions": [
+    "Set an adjustable bench to a moderate incline (45-60°). Sit back with two light-to-moderate dumbbells.",
+    "Press the dumbbells up to full lockout above the upper chest, palms facing each other or slightly forward, arms perfectly vertical.",
+    "This is the start position — elbows locked, dumbbells stacked over shoulders.",
+    "Keeping the elbows completely straight, push the dumbbells a few centimetres higher by protracting the scapulae — let the shoulder blades slide forward around the rib cage.",
+    "Imagine 'punching' the ceiling without bending the elbows. The dumbbells rise only because the shoulder blades move.",
+    "Pause briefly at the top with the serratus fully contracted (you should feel it on the side of your rib cage).",
+    "Lower under control by retracting the scapulae — let the shoulder blades sink back toward the bench until they are in a neutral position. Do not bend the elbows.",
+    "Repeat for the prescribed reps. Range of motion is small (3-8 cm) — focus on quality of scapular movement, not load.",
+    "When the set is done, lower the dumbbells to the chest as in an incline press and place them on the thighs / floor."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę regulowaną pod umiarkowanym kątem (45-60°). Usiądź z dwoma hantlami o lekkim lub średnim ciężarze.",
+    "Wyciśnij hantle do pełnego wyprostu ramion nad górną częścią klatki, dłonie zwrócone do siebie lub lekko do przodu, ramiona idealnie pionowe.",
+    "To jest pozycja startowa — łokcie zablokowane w wyproście, hantle dokładnie nad barkami.",
+    "Utrzymując łokcie całkowicie wyprostowane, wypchnij hantle o kilka centymetrów wyżej przez protrakcję łopatek — pozwól łopatkom wysunąć się do przodu wokół klatki piersiowej.",
+    "Wyobraź sobie, że 'uderzasz' w sufit bez uginania łokci. Hantle podnoszą się wyłącznie dlatego, że ruszają się łopatki.",
+    "Zatrzymaj się na chwilę w górnej pozycji z mięśniem zębatym w pełnym skurczu (powinieneś czuć go na bocznej ścianie klatki).",
+    "Opuszczaj w sposób kontrolowany przez retrakcję łopatek — pozwól łopatkom cofnąć się w stronę ławki do pozycji neutralnej. Nie uginaj łokci.",
+    "Powtórz zaplanowaną liczbę razy. Zakres ruchu jest mały (3-8 cm) — skup się na jakości ruchu łopatek, nie na ciężarze.",
+    "Po zakończeniu serii opuść hantle na klatkę jak w wyciskaniu skośnym i odłóż je na uda/podłogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["serratus_anterior"],
+    "secondary": ["lower_trapezius", "pectoralis_minor"],
+    "stabilizers": ["anterior_deltoid", "triceps_brachii", "rotator_cuff", "core", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "serratus_anterior": "P10",
+    "lower_trapezius": "S5",
+    "pectoralis_minor": "S5",
+    "anterior_deltoid": "T4",
+    "triceps_brachii": "T3",
+    "rotator_cuff": "T3",
+    "core": "T2",
+    "wrist_flexors": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["incline-dumbbell-press", "scapular-push-up"],
+    "progression_to": ["scapular-push-up-feet-elevated", "serratus-push-up-plus", "landmine-press-with-scap-punch"],
+    "alternatives": ["scapular-push-up", "cable-serratus-punch", "dumbbell-pullover-with-scap-punch", "wall-slide-with-protraction"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Incline bench at 45-60° — moderate angle, not flat, not vertical",
+      "Light dumbbells — this is not a press, the ROM is tiny",
+      "Press dumbbells to full lockout — that is the START position",
+      "Elbows locked, arms perfectly vertical, dumbbells over shoulders",
+      "Head and upper back firmly on the bench, feet flat on the floor"
+    ],
+    "setup_cues_pl": [
+      "Ławka skośna 45-60° — umiarkowany kąt, nie pozioma, nie pionowa",
+      "Lekkie hantle — to nie jest wyciskanie, zakres ruchu jest minimalny",
+      "Wyciśnij hantle do pełnego wyprostu — to jest pozycja STARTOWA",
+      "Łokcie zablokowane, ramiona idealnie pionowo, hantle nad barkami",
+      "Głowa i górna część pleców mocno na ławce, stopy płasko na podłodze"
+    ],
+    "execution_cues": [
+      "Move only the shoulder blades — elbows stay locked",
+      "Push the ceiling — let the scapulae glide forward around the ribs",
+      "Feel the serratus on the side of the rib cage contract",
+      "Tiny range — 3-8 cm is normal, more means you are bending the elbows",
+      "Slow eccentric — let the scapulae retract under control, no clunking"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko łopatki — łokcie pozostają zablokowane",
+      "Wypychaj sufit — pozwól łopatkom przesunąć się do przodu wokół żeber",
+      "Poczuj jak zębaty kurczy się na bocznej ścianie klatki piersiowej",
+      "Minimalny zakres — 3-8 cm to norma, więcej oznacza że uginasz łokcie",
+      "Wolna ekscentryka — pozwól łopatkom wrócić w retrakcję pod kontrolą, bez 'rzucania'"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows (turning it into a partial press)",
+        "faultPl": "Uginanie łokci (zamiana w częściowe wyciskanie)",
+        "cause": "Load too heavy, lack of awareness of scapular movement, or treating it as a press variation",
+        "causePl": "Zbyt duży ciężar, brak czucia ruchu łopatkami, lub traktowanie ćwiczenia jako odmiany wyciskania",
+        "cue": "Reduce weight drastically. Lock the elbows mentally — 'arm is a pole'. Move only the shoulder blades.",
+        "cuePl": "Zmniejsz ciężar drastycznie. Mentalnie zablokuj łokcie — 'ramię to drążek'. Ruszaj tylko łopatkami."
+      },
+      {
+        "fault": "Using too much weight (zero scapular movement)",
+        "faultPl": "Zbyt duży ciężar (brak ruchu łopatek)",
+        "cause": "Ego, treating it like a press, underestimating how light this movement needs to be",
+        "causePl": "Ego, traktowanie jak wyciskanie, niedoszacowanie jak lekkie ma być to ćwiczenie",
+        "cue": "Start with 2-5 kg dumbbells. The serratus is a small stabiliser, not a prime mover.",
+        "cuePl": "Zacznij od hantli 2-5 kg. Zębaty to mały stabilizator, nie główny ruchomy mięsień."
+      },
+      {
+        "fault": "Shrugging the upper traps instead of protracting",
+        "faultPl": "Wzruszanie barkami (górne czworoboczne) zamiast protrakcji",
+        "cause": "Substitution pattern when serratus is weak or inhibited — upper trap takes over",
+        "causePl": "Wzorzec kompensacyjny gdy zębaty jest słaby lub zahamowany — górny czworoboczny przejmuje pracę",
+        "cue": "Keep shoulders down and away from ears. The shoulder blades slide FORWARD, not UP.",
+        "cuePl": "Trzymaj barki opuszczone, z dala od uszu. Łopatki ślizgają się DO PRZODU, nie W GÓRĘ."
+      },
+      {
+        "fault": "Arching the lower back to add range",
+        "faultPl": "Wyginanie odcinka lędźwiowego dla zwiększenia zakresu",
+        "cause": "Trying to make the ROM look bigger by lifting the torso off the bench",
+        "causePl": "Próba 'powiększenia' zakresu przez odrywanie tułowia od ławki",
+        "cue": "Glue your lower back to the bench. ROM stays small — that is normal for this exercise.",
+        "cuePl": "Przyklej lędźwia do ławki. Zakres pozostaje mały — to normalne dla tego ćwiczenia."
+      },
+      {
+        "fault": "Rushed reps, no pause at the top",
+        "faultPl": "Pośpieszne powtórzenia bez zatrzymania w górze",
+        "cause": "Treating it as a high-rep finisher, ignoring the mind-muscle component",
+        "causePl": "Traktowanie jako szybkie wykończenie, ignorowanie pracy świadomej z mięśniem",
+        "cue": "1-2 second pause at the top with active squeeze. Slow tempo throughout — this is technique work.",
+        "cuePl": "Zatrzymaj się 1-2 s w górze z aktywnym napięciem. Wolne tempo przez cały czas — to praca techniczna."
+      }
+    ],
+    "breathing": "Exhale during the protraction (push up). Inhale during the retraction (lower). Light, calm breathing — this is not a heavy lift.",
+    "breathingPl": "Wydech w fazie protrakcji (wypychanie do góry). Wdech w fazie retrakcji (opuszczanie). Lekki, spokojny oddech — to nie jest ciężka praca siłowa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_instability",
+      "severity": "modify",
+      "modification": "End-range protraction can stress an unstable anterior capsule. Reduce ROM to mid-range only, or perform supine on the floor with limited reach.",
+      "modificationPl": "Pełna protrakcja może obciążać niestabilną torebkę przednią. Ogranicz zakres do połowy lub wykonuj leżąc na podłodze z mniejszym zasięgiem.",
+      "alternative": "scapular-push-up"
+    },
+    {
+      "condition": "acute_shoulder_impingement",
+      "severity": "caution",
+      "modification": "Position with arms vertical may aggravate impingement in sensitive individuals. Try slight angle (10-15° away from vertical) and reduce volume.",
+      "modificationPl": "Pozycja z ramionami pionowo może drażnić ciaśń u wrażliwych osób. Spróbuj lekkiego kąta (10-15° od pionu) i zmniejsz objętość.",
+      "alternative": "wall-slide-with-protraction"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "caution",
+      "modification": "Heavy protraction loads the AC joint. Drop weight significantly, perform only in pain-free range, or switch to scapular push-ups.",
+      "modificationPl": "Mocna protrakcja obciąża staw barkowo-obojczykowy. Wyraźnie zmniejsz ciężar, wykonuj tylko w zakresie bez bólu, lub przejdź na scapular push-ups.",
+      "alternative": "scapular-push-up"
+    },
+    {
+      "condition": "long_thoracic_nerve_palsy_winging_scapula",
+      "severity": "modify",
+      "modification": "This exercise is commonly prescribed for serratus weakness/winging — but progress slowly under guidance. Start with bodyweight scapular push-ups before adding load.",
+      "modificationPl": "Ćwiczenie często zalecane przy osłabieniu zębatego/odstających łopatkach — ale progresja musi być powolna pod nadzorem. Zacznij od scapular push-ups z masą ciała przed dodaniem obciążenia.",
+      "alternative": "scapular-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x12-15 (activation/warm-up) | 3x10-12 (hypertrophy, light load) | 3-4x15-20 (endurance/rehab)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "dumbbell-incline-shoulder-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-shoulder-raise/frame_0_start.png",
+      "frames/dumbbell-incline-shoulder-raise/frame_1_early.png",
+      "frames/dumbbell-incline-shoulder-raise/frame_2_mid.png",
+      "frames/dumbbell-incline-shoulder-raise/frame_3_late.png",
+      "frames/dumbbell-incline-shoulder-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "serratus-anterior/dumbbell-incline-shoulder-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:05:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Trener siedzi na ławce skośnej (~60°), trzyma dwa hantle w pełnym wyproście ramion nad klatką. Łokcie ZAWSZE proste przez cały ruch. Klatki 0-4 pokazują niewielki ruch hantli w górę (~5-10 cm) — wynika wyłącznie z PROTRAKCJI ŁOPATEK (scapular punch), nie z wyciskania. Czerwone podświetlenie na bocznej ścianie klatki piersiowej jednoznacznie wskazuje na serratus anterior. To NIE jest lateral raise ani shoulder press — to ćwiczenie izolowane na zębaty przedni metodą 'DB scap punch on incline'. Mimo mylącej nazwy źródłowej ('shoulder raise') ruch jest klasyfikowany jako isolation_raise z primary=serratus_anterior. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["isolation", "serratus_anterior", "scapular_control", "shoulder_health", "prehab", "rehab", "warm_up", "dumbbells", "incline_bench", "upper_body", "underrated"]
+}

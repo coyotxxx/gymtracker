@@ -1,0 +1,202 @@
+{
+  "id": "plyo-push-up",
+  "name": "Plyo Push-Up",
+  "namePl": "Pompka plyometryczna (clap push-up)",
+  "aliases": ["plyometric push-up", "clap push-up", "explosive push-up", "clapping push-up", "power push-up"],
+  "aliasesPl": ["pompka plyometryczna", "pompka z klepnięciem", "pompka wybuchowa", "clap push-up", "klepane pompki", "pompka eksplozywna"],
+
+  "description": "Explosive bodyweight push-up where the hands leave the floor during the concentric phase, driven by maximum power output through the chest, triceps and anterior deltoids. The optional clap variant (clap push-up) adds a hand-clap mid-air for additional power and timing demand. A classic upper-body plyometric (rate-of-force-development drill) used by athletes — combat sports, basketball, gymnastics, calisthenics — to translate strength into speed. Requires a base of at least 15-20 strict push-ups and healthy wrists/shoulders.",
+  "descriptionPl": "Eksplozywna pompka z bodyweight, w której dłonie odrywają się od podłogi w fazie koncentrycznej dzięki maksymalnej generacji mocy przez klatkę, tricepsy i przedni akton barku. Opcjonalny wariant z klepnięciem (clap push-up) dokłada klaśnięcie w powietrzu, co zwiększa wymagania mocy i koordynacji. To klasyczny plyometryk górnej części ciała (trening tempa rozwoju siły / RFD) stosowany przez sportowców — sporty walki, koszykówkę, gimnastykę, kalistenikę — aby przełożyć siłę na szybkość. Wymaga bazy minimum 15-20 prawidłowych pompek oraz zdrowych nadgarstków i barków.",
+
+  "instructions": [
+    "Get into a strict push-up position: hands slightly wider than shoulders, directly under the shoulder line, feet together or hip-width apart.",
+    "Brace the core, squeeze glutes — body forms a straight line from heels to head (rigid plank).",
+    "Inhale and lower yourself in a controlled 1-2 second descent. Elbows track at ~45° from torso. Lower until chest is just above the floor.",
+    "Without bouncing off the floor, EXPLODE upward as fast as possible — full triple-extension intent through the arms.",
+    "Drive hard enough that both hands leave the ground momentarily. For the clap variant: clap hands together while airborne, then re-extend arms to catch.",
+    "Land softly with slightly bent elbows on the same spot — absorb the landing through the chest and triceps (eccentric cushioning).",
+    "Reset rigid plank, then start the next rep. Quality over quantity — stop the set when you can no longer launch high enough for a controlled clap/airtime.",
+    "Recommended: 3-5 sets of 3-6 reps with full recovery between sets (this is a power drill, not a hypertrophy drill)."
+  ],
+  "instructionsPl": [
+    "Ustaw się w prawidłowej pozycji pompkowej: dłonie nieco szerzej niż barki, bezpośrednio pod linią barków, stopy razem lub na szerokość bioder.",
+    "Napnij brzuch, ściśnij pośladki — ciało tworzy prostą linię od pięt do głowy (sztywna planka).",
+    "Wdech i kontrolowane opuszczanie przez 1-2 sekundy. Łokcie pod kątem ~45° od tułowia. Schodź aż klatka będzie tuż nad podłogą.",
+    "Bez odbijania się od podłogi WYSTRZEL w górę najszybciej jak potrafisz — intencja pełnego, eksplozywnego wyprostu ramion.",
+    "Wybij się na tyle mocno, by obie dłonie oderwały się od podłogi. Wariant z klepnięciem: w locie zegnij ramiona, klaśnij dłońmi, potem szybko wyprostuj je z powrotem do lądowania.",
+    "Wyląduj miękko z lekko ugiętymi łokciami w to samo miejsce — zamortyzuj lądowanie klatką i tricepsem (faza ekscentryczna).",
+    "Zresetuj sztywną plankę i wykonaj kolejne powtórzenie. Jakość ponad ilość — przerwij serię gdy nie potrafisz już wybić się na wysokość kontrolowanego klaśnięcia.",
+    "Zalecenie: 3-5 serii po 3-6 powtórzeń z pełną przerwą między seriami (to trening mocy, nie hipertrofii)."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "pectoralis_major_clavicular"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "wrist_flexors", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "P9",
+    "serratus_anterior": "S6",
+    "pectoralis_major_clavicular": "S6",
+    "core": "T6",
+    "glutes": "T4",
+    "rotator_cuff": "T5"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat", "push_up_handles", "padded_floor"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 7,
+    "prerequisites": ["push-up", "decline-push-up", "kneeling-plyo-push-up"],
+    "progression_to": ["clap-behind-back-push-up", "superman-push-up", "aztec-push-up", "one-arm-plyo-push-up"],
+    "alternatives": ["medicine-ball-chest-pass", "bench-press-speed", "kneeling-plyo-push-up", "explosive-push-up-no-clap"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Warm up shoulders, wrists and chest thoroughly — this is a power lift, cold tissue snaps",
+      "Hands directly under shoulders, slightly wider — no flared 'T-shape' grip",
+      "Rigid plank: glutes squeezed, abs braced, ribs tucked",
+      "Floor underneath should be padded or mat — wood/concrete punishes failed reps",
+      "Pre-decide your rep count: stop while reps are still explosive (no grinding plyo)"
+    ],
+    "setup_cues_pl": [
+      "Dokładnie rozgrzej barki, nadgarstki i klatkę — to ćwiczenie mocy, zimne tkanki pękają",
+      "Dłonie bezpośrednio pod barkami, lekko szerzej — bez rozsuwania na 'T'",
+      "Sztywna planka: ściśnięte pośladki, napięty brzuch, schowane żebra",
+      "Podłoga powinna być wymoszczona matą — drewno/beton karzą za nieudane powtórzenia",
+      "Z góry ustal liczbę powtórzeń: kończ gdy wciąż są eksplozywne (żadnego mozolnego plyo)"
+    ],
+    "execution_cues": [
+      "EXPLODE — intent matters more than absolute height. Think 'punch the ground away'",
+      "Full triple-extension at the top — arms straight, even when airborne",
+      "Land with elbows slightly bent — absorb like a spring, don't snap them straight",
+      "Clap fast and return hands — late clap = late hands = face plant",
+      "Keep body rigid in flight — no piking hips or arching back to fake height"
+    ],
+    "execution_cues_pl": [
+      "WYSTRZEL — intencja ważniejsza od absolutnej wysokości. Myśl 'odepchnij podłogę'",
+      "Pełny wyprost ramion na szczycie — proste ręce nawet w locie",
+      "Lądowanie z lekko ugiętymi łokciami — amortyzuj jak sprężyna, nie blokuj na sztywno",
+      "Klepnij szybko i wróć dłońmi — spóźnione klaśnięcie = spóźnione dłonie = lądowanie twarzą",
+      "Ciało sztywne w locie — bez 'tyłka do góry' lub łuku w plecach żeby symulować wysokość"
+    ],
+    "common_faults": [
+      {
+        "fault": "Stiff-arm landing (locked elbows)",
+        "faultPl": "Lądowanie na zablokowane ręce (proste łokcie)",
+        "cause": "Catching weight on extended joints instead of absorbing through muscle",
+        "causePl": "Łapanie obciążenia na wyprostowanych stawach zamiast amortyzowania mięśniami",
+        "cue": "Land with elbows ~10-15° bent and immediately go into the next eccentric. 'Soft like a cat'.",
+        "cuePl": "Ląduj z łokciami ugiętymi ~10-15° i od razu wchodź w kolejną fazę opuszczania. 'Miękko jak kot'."
+      },
+      {
+        "fault": "Piking hips for fake height",
+        "faultPl": "Wypchnięte biodra do góry dla pozornej wysokości",
+        "cause": "Trying to compensate weak power by 'jumping' hips up instead of pressing arms",
+        "causePl": "Próba kompensacji słabej mocy przez podrzucanie bioder zamiast wyciskania ramionami",
+        "cue": "Brace glutes hard — body MUST stay straight from heels to head, even airborne. Record from the side to check.",
+        "cuePl": "Mocno napnij pośladki — ciało MUSI być proste od pięt do głowy, również w locie. Nagrywaj z boku, by zweryfikować."
+      },
+      {
+        "fault": "Late or rushed clap (hands not back in time)",
+        "faultPl": "Spóźnione lub pospieszne klaśnięcie (dłonie nie zdążyły wrócić)",
+        "cause": "Underestimating air-time needed — clap too low or too slow",
+        "causePl": "Zaniżanie potrzebnego czasu w powietrzu — klaśnięcie za nisko lub za wolno",
+        "cue": "First master no-clap explosive push-ups (hands fly 10+ cm off floor). Add clap only when air-time is comfortable.",
+        "cuePl": "Najpierw opanuj eksplozywne pompki bez klepnięcia (dłonie odrywają się 10+ cm). Dodaj klaśnięcie dopiero gdy czas w powietrzu jest komfortowy."
+      },
+      {
+        "fault": "Grinding through tired reps (no longer plyometric)",
+        "faultPl": "Mozolne wyciskanie zmęczonych powtórzeń (już nie plyometryczne)",
+        "cause": "Treating it like hypertrophy set — pushing through fatigue",
+        "causePl": "Traktowanie jak serii hipertroficznej — siłowanie się przez zmęczenie",
+        "cue": "When reps slow down or hands don't leave ground — STOP the set. Power drills end before failure, not at it.",
+        "cuePl": "Gdy powtórzenia zwalniają lub dłonie nie odrywają się — KOŃCZ serię. Trening mocy kończy się PRZED upadkiem, nie w nim."
+      },
+      {
+        "fault": "Wrist collapse on landing",
+        "faultPl": "Załamanie nadgarstka przy lądowaniu",
+        "cause": "Weak wrists, no warm-up, hard floor, fingers pointing inward",
+        "causePl": "Słabe nadgarstki, brak rozgrzewki, twarda podłoga, palce skierowane do środka",
+        "cue": "Spread fingers wide, grip the floor. Use push-up handles or fists if wrists are sore. Always warm up with wrist circles.",
+        "cuePl": "Rozstaw palce szeroko, 'chwyć' podłogę. Użyj uchwytów do pompek lub pięści jeśli nadgarstki boleją. Zawsze rozgrzej nadgarstki krążeniami."
+      }
+    ],
+    "breathing": "Sharp inhale on descent, hold and brace through the explosive press, exhale forcefully on the next descent. For 3-6 rep power sets — one breath per rep keeps intra-abdominal pressure high.",
+    "breathingPl": "Krótki wdech podczas schodzenia, wstrzymanie i napięcie podczas eksplozywnego wybicia, mocny wydech podczas kolejnego schodzenia. Przy seriach mocy 3-6 powt. — jeden oddech na powtórzenie utrzymuje wysokie ciśnienie wewnątrzbrzuszne."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "avoid",
+      "modification": "Impact landing punishes irritated wrists. Switch to medicine-ball chest pass or speed bench press until pain-free. If mild — use push-up handles to neutralize wrist extension.",
+      "modificationPl": "Lądowanie z impaktem dobija podrażnione nadgarstki. Wróć do rzutu piłką lekarską lub szybkiego wyciskania sztangi do czasu ustąpienia bólu. Jeśli lekki — użyj uchwytów do pompek by zneutralizować zgięcie nadgarstka.",
+      "alternative": "medicine-ball-chest-pass"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Repeated impact and end-range loading can flare AC joint and rotator cuff. Stop until pain-free strict push-ups for 4 weeks. Then re-introduce as kneeling plyo first.",
+      "modificationPl": "Powtarzający się impakt i obciążenie w skrajnym zakresie mogą podrażnić staw barkowo-obojczykowy i stożek rotatorów. Przerwij do czasu 4 tygodni bezbólowych prawidłowych pompek. Potem wracaj najpierw w wariancie na kolanach.",
+      "alternative": "kneeling-plyo-push-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Eccentric landing spikes triceps tendon load. Regress to strict push-ups + isometric holds until tendon settles (typically 6-12 weeks of progressive rehab).",
+      "modificationPl": "Faza ekscentryczna lądowania skokowo obciąża ścięgno tricepsa. Wróć do prawidłowych pompek + holdów izometrycznych do czasu wyciszenia ścięgna (zwykle 6-12 tygodni progresywnej rehabilitacji).",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Plyometric reps amplify any plank breakdown — sagging hips load the lumbar spine harder than static push-ups. Master rigid plank and 20+ strict push-ups before reintroducing plyo.",
+      "modificationPl": "Powtórzenia plyometryczne wzmacniają każdy błąd w plance — opadające biodra obciążają odcinek lędźwiowy mocniej niż statyczne pompki. Opanuj sztywną plankę i 20+ prawidłowych pompek przed powrotem do plyo.",
+      "alternative": "push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-6 (power/RFD, full rest 90-180s) | 4-6x AMRAP-3 quality reps (athletic conditioning) | EMOM 8-10 min x 3-5 reps (capacity)",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "plyo-push-up.gif",
+    "frames_extracted": [
+      "frames/plyo-push-up/frame_0_start.png",
+      "frames/plyo-push-up/frame_1_early.png",
+      "frames/plyo-push-up/frame_2_mid.png",
+      "frames/plyo-push-up/frame_3_late.png",
+      "frames/plyo-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/plyo-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Frame 0 (start): klasyczna pozycja pompkowa — dłonie pod barkami, stopy razem, ciało w prostej linii, ramiona wyprostowane. Frame 2 (mid): głębokie opuszczenie z motion-blur 'ghost' obu sylwetek (góra+dół) — wyraźnie widać fazę przejścia z dołu do wybicia (eksplozywny charakter), klatka praktycznie przy podłodze. Frame 3-4 (late/end): postać wraca do pełnego wyprostu z motion-blur w drugą stronę (góra->wyciśnięcie), klatka, przedni akton i tricepsy mocno podświetlone w czerwieni anatomicznej — primary movers zgodne ze specyfikacją (pectoralis major + anterior deltoid + triceps). GIF reprezentuje wariant explosive push-up (z lub bez klaśnięcia — clap nie jest w 100% widoczny, ale dynamika ghost-frames jasno wskazuje na faze powietrzną). Bodyweight, plane sagittal, mechanic compound, force push, jump_plyometric movement_pattern. Difficulty 7/10 (advanced) — wymaga ~15-20 strict push-ups jako baseline + zdrowe nadgarstki/barki. Wszystkie pola PL napisane od zera w polskim standardzie fitness/kalisteniki, terminologia spójna z polską literaturą treningu mocy (RFD, plyometria, faza koncentryczna/ekscentryczna).",
+
+  "tags": ["bodyweight", "plyometrics", "power", "explosive", "upper_body", "horizontal_push", "chest", "rfd", "athletic_performance", "calisthenics", "advanced", "no_equipment_friendly", "clap_push_up"]
+}

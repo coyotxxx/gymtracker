@@ -1,0 +1,195 @@
+{
+  "id": "reverse-crunch",
+  "name": "Reverse Crunch",
+  "namePl": "Brzuszki odwrotne",
+  "aliases": ["reverse crunch", "knee-to-chest crunch", "hip lift crunch", "pelvic curl"],
+  "aliasesPl": ["brzuszki odwrotne", "reverse crunch", "odwrócone brzuszki", "podciąganie kolan do klatki", "zwijanie miednicy", "brzuszki dolne"],
+
+  "description": "Bodyweight core exercise performed lying supine on a mat. With knees bent to roughly 90°, the lifter curls the pelvis off the floor and brings the knees toward the chest by rolling the lumbar spine and pelvis backward. The motion isolates the rectus abdominis with a clear emphasis on the lower portion (below the navel) and is generally considered harder than a standard crunch because the load sits on the longer lever of the legs and demands strict control to avoid using momentum.",
+  "descriptionPl": "Ćwiczenie brzucha z masą własnego ciała wykonywane w leżeniu na plecach na macie. Z kolanami zgiętymi do około 90° ćwiczący zwija miednicę nad podłogę i przyciąga kolana do klatki piersiowej, rolując odcinek lędźwiowy i miednicę do tyłu. Ruch izoluje mięsień prosty brzucha z wyraźnym naciskiem na jego dolną część (poniżej pępka) i jest uznawany za trudniejszy niż klasyczne brzuszki, ponieważ obciążenie spoczywa na dłuższej dźwigni nóg i wymaga ścisłej kontroli, by nie używać rozpędu.",
+
+  "instructions": [
+    "Lie flat on your back on a mat. Place your arms by your sides with palms pressed into the floor for stability. Bend your knees to about 90° so that the thighs are roughly perpendicular to the floor and shins parallel to it.",
+    "Press your lower back into the mat — there should be no gap between the lumbar spine and the floor. This is the starting position.",
+    "Inhale and brace the core. Exhale as you contract the lower abs to roll the pelvis backward, lifting the hips off the mat and pulling the knees toward your chest.",
+    "At the top, the tailbone and hips are clearly off the floor, knees are above the chest. Hold the contraction for one second and squeeze the abdominal wall.",
+    "Inhale and lower the hips back to the mat under control, returning the thighs to the perpendicular starting position. Do not let the feet drop or the lower back arch.",
+    "Keep the motion driven by the abs, not by swinging the legs. Hands stay pressed into the floor — do not push off with them."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach na macie. Ramiona ułóż wzdłuż tułowia, dłońmi dociśnij do podłogi dla stabilizacji. Zegnij kolana do około 90°, tak by uda były ustawione mniej więcej prostopadle do podłogi, a golenie równolegle do niej.",
+    "Dociśnij dolne plecy do maty — między odcinkiem lędźwiowym a podłogą nie powinno być prześwitu. To pozycja wyjściowa.",
+    "Wdech i napnij brzuch. Z wydechem napnij dolną część brzucha, by zwinąć miednicę do tyłu, unosząc biodra nad matę i przyciągając kolana do klatki.",
+    "W szczycie kość ogonowa i biodra są wyraźnie oderwane od podłogi, kolana znajdują się nad klatką. Zatrzymaj się na sekundę i mocno spnij ścianę brzucha.",
+    "Wdech i pod kontrolą opuść biodra z powrotem na matę, wracając udami do pozycji prostopadłej. Nie pozwól, by stopy opadły, a dolne plecy się wygięły.",
+    "Ruch napędza brzuch, nie rozpęd nóg. Dłonie cały czas dociśnięte do podłogi — nie odpychaj się nimi."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["hip_flexors"],
+    "stabilizers": ["obliques", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "hip_flexors": "S7",
+    "obliques": "T4",
+    "transverse_abdominis": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["crunch", "dead-bug", "lying-leg-raise"],
+    "progression_to": ["cable-reverse-crunch", "hanging-knee-raise", "hanging-leg-raise"],
+    "alternatives": ["dead-bug", "cable-reverse-crunch", "lying-leg-raise", "cocoons"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat on the mat — full back contact",
+      "Arms by your sides, palms pressed firmly into the floor",
+      "Knees bent to 90°, thighs perpendicular, shins parallel to the floor",
+      "Lower back pressed into the mat — eliminate the lumbar gap",
+      "Inhale and pre-brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko na macie — cały grzbiet styka się z podłożem",
+      "Ramiona wzdłuż tułowia, dłonie mocno dociśnięte do podłogi",
+      "Kolana zgięte do 90°, uda prostopadle, golenie równolegle do podłogi",
+      "Dolne plecy wciśnięte w matę — likwidujemy prześwit w lędźwiach",
+      "Wdech i wstępne napięcie brzucha przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Roll the pelvis up — think tailbone toward the ceiling",
+      "Exhale forcefully as the hips leave the floor",
+      "Knees travel toward the chest, not just up in the air",
+      "Pause one second at the top — squeeze the lower abs",
+      "Lower hips with 2-second eccentric — control, don't drop"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj miednicę — myśl 'kość ogonowa do sufitu'",
+      "Mocny wydech w momencie odrywania bioder od podłogi",
+      "Kolana wędrują do klatki, nie tylko 'w górę' do sufitu",
+      "Sekunda pauzy w szczycie — ściśnij dolny brzuch",
+      "Opuszczaj biodra przez 2 sekundy fazy ekscentrycznej — kontrola, nie opadanie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using momentum — swinging the legs to throw the hips up",
+        "faultPl": "Wykorzystywanie rozpędu — rzucanie nogami, by wybić biodra w górę",
+        "cause": "Weak lower abs offload the work to inertia and hip flexors when reps are done too fast",
+        "causePl": "Słaby dolny brzuch przerzuca pracę na bezwładność i zginacze biodra, gdy powtórzenia idą za szybko",
+        "cue": "Stop momentarily between reps with the back flat. 2 sekundy w górę, 1 pauza, 2 w dół.",
+        "cuePl": "Zatrzymaj się na moment między powtórzeniami z plecami płasko na macie. 2 sekundy w górę, 1 pauzy, 2 w dół."
+      },
+      {
+        "fault": "Partial range of motion — hips never leave the floor",
+        "faultPl": "Niepełen zakres ruchu — biodra nie odrywają się od podłogi",
+        "cause": "Treating the move as a 'knee tuck' instead of a pelvic curl; legs move but the pelvis stays anchored",
+        "causePl": "Wykonywanie ruchu jako 'podciągania kolan' zamiast zwijania miednicy; nogi się ruszają, ale miednica zostaje przyklejona do maty",
+        "cue": "The rep doesn't start until the tailbone clears the floor. Aim to see your knees above your chest.",
+        "cuePl": "Powtórzenie się nie zaczyna, dopóki kość ogonowa nie oderwie się od podłogi. Cel: zobaczyć kolana nad klatką."
+      },
+      {
+        "fault": "Skipping the eccentric — dropping the hips back to the mat",
+        "faultPl": "Pomijanie fazy ekscentrycznej — opadanie biodrami na matę",
+        "cause": "Tempo too fast; fatigue late in the set; treating eccentric as 'reset' rather than work",
+        "causePl": "Zbyt szybkie tempo; zmęczenie w końcówce serii; traktowanie ekscentryki jak 'resetu' zamiast pracy",
+        "cue": "Lower for a full 2-count. The eccentric is where the lower abs grow most.",
+        "cuePl": "Opuszczaj przez pełne 2 sekundy. To w fazie ekscentrycznej dolny brzuch rośnie najbardziej."
+      },
+      {
+        "fault": "Pulling with the hip flexors instead of the lower abs",
+        "faultPl": "Pociąganie zginaczami biodra zamiast dolnym brzuchem",
+        "cause": "Knees travel straight up (pure hip flexion) without pelvic posterior tilt — dominant tight hip flexors take over",
+        "causePl": "Kolana lecą prosto w górę (czyste zgięcie biodra) bez tylnego pochylenia miednicy — przejmują dominujące, napięte zginacze biodra",
+        "cue": "Think 'curl the pelvis, then bring knees in' — not 'bring knees in, then lift hips'",
+        "cuePl": "Myśl: 'najpierw zwiń miednicę, potem podciągnij kolana' — a nie 'podciągnij kolana, potem unieś biodra'"
+      },
+      {
+        "fault": "Pressing off the floor with the hands",
+        "faultPl": "Odpychanie się dłońmi od podłogi",
+        "cause": "Compensating with the upper body when lower abs are weak or fatigued",
+        "causePl": "Kompensacja górną częścią ciała, gdy dolny brzuch jest słaby lub zmęczony",
+        "cue": "Palms light on the floor — they balance, they don't push. If you must push, reduce reps.",
+        "cuePl": "Dłonie tylko leżą na podłodze — balansują, nie odpychają. Jeśli musisz odpychać — zmniejsz liczbę powtórzeń."
+      }
+    ],
+    "breathing": "Inhale on the way down to the starting position. Forceful exhale during the curl as the hips lift off the mat — rib cage should depress and the lower abs should crunch hard at the top.",
+    "breathingPl": "Wdech podczas opuszczania do pozycji wyjściowej. Mocny wydech podczas zwijania, gdy biodra odrywają się od maty — klatka piersiowa opada, a dolny brzuch mocno spina się w szczycie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Repeated lumbar flexion under load can aggravate acute back pain. Switch to anti-extension exercises (dead bug, plank) until pain-free for 7+ days.",
+      "modificationPl": "Powtarzane zginanie odcinka lędźwiowego pod obciążeniem może nasilać ostry ból pleców. Przejdź na ćwiczenia anty-ekstensji (dead bug, deska) do czasu ustąpienia bólu na co najmniej 7 dni.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Spinal flexion is contraindicated for active lumbar disc protrusion (McGill protocol). Use neutral-spine core work instead.",
+      "modificationPl": "Zginanie kręgosłupa jest przeciwwskazane przy aktywnej przepuklinie krążka lędźwiowego (protokół McGilla). Zamiast tego ćwicz brzuch w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Pelvic curl with abdominal doming can worsen midline separation (postpartum or otherwise). Start with TVA-focused breathing and dead bug variations first.",
+      "modificationPl": "Zwijanie miednicy z 'kopułowaniem' brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Zacznij od ćwiczeń oddechowych z mięśniem poprzecznym brzucha i wariantów dead bug.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "caution",
+      "modification": "Reverse crunch loads the hip flexors heavily as secondary movers. With an irritated psoas/iliacus, reduce ROM (smaller knee tuck) or switch to a pure pelvic-tilt drill without leg movement.",
+      "modificationPl": "Brzuszki odwrotne mocno angażują zginacze biodra jako mięśnie wspomagające. Przy podrażnionym mięśniu biodrowo-lędźwiowym zmniejsz zakres (mniejsze podciągnięcie kolan) lub przejdź na czysty trening pochylenia miednicy bez ruchu nóg.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy) | 3x12-20 (endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "reverse-crunch.gif",
+    "frames_extracted": [
+      "frames/reverse-crunch/frame_0_start.png",
+      "frames/reverse-crunch/frame_1_early.png",
+      "frames/reverse-crunch/frame_2_mid.png",
+      "frames/reverse-crunch/frame_3_late.png",
+      "frames/reverse-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/reverse-crunch",
+    "yuhonas_id": "Reverse_Crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki GIFa jahel (start/mid/end). Klatka 0 (start): leżenie na plecach na macie, kolana ugięte do ~90°, uda prostopadle do podłogi, golenie równolegle, ramiona wzdłuż tułowia, miednica i biodra na macie — czerwono podświetlony cały rectus abdominis. Klatka 2 (mid): biodra wyraźnie uniesione, miednica zwinięta do tyłu, kolana ściągnięte ku klatce (uda prawie pionowo nad torsem), tułów pozostaje na macie — dolna część brzucha mocno spięta. Klatka 4 (end): powrót do pozycji startowej z 'duchem' pozycji szczytowej w tle. Ruch zgodny z opisem yuhonas: jednoczesne podniesienie bioder + zwijanie miednicy + przyciąganie kolan do klatki. Klasyfikacja: core_flexion (zgięcie kręgosłupa lędźwiowego + zgięcie biodra), force=pull, mechanic=isolation (rectus_abdominis jako primary z hip_flexors jako secondary — 2 stawy zaangażowane, ale jeden mięsień jest wyraźnie targetowany, dlatego isolation a nie compound — analogicznie do cable-reverse-crunch w master). Mięsień główny: rectus_abdominis P10 (lower abs emphasis przekazany przez P10 — najwyższe primary score z całej bazy abs) + hip_flexors S7. Equipment: bodyweight + optional mat. Difficulty: 4 (intermediate — trudniejsze niż classic crunch, ale łatwiejsze niż hanging variants i cocoons). Master ma 'level: beginner' z jahel, ale realnie wymaga koordynacji pelvic tilt + kontroli rozpędu, więc minimum=intermediate. Nazwa PL: 'Brzuszki odwrotne' najpopularniejsza forma w polskim środowisku fitness; aliasy obejmują 'reverse crunch' (anglicyzm), 'odwrócone brzuszki', 'brzuszki dolne' (potoczne). 5 common_faults (rozpęd, niepełen ROM, niepełna ekscentryka, hip flexor dominance, odpychanie dłońmi) — dokładnie pod specyfikę ćwiczenia. 4 contraindications (acute back pain, disc herniation, diastasis recti, hip flexor strain). Progresje: cable-reverse-crunch → hanging-knee-raise → hanging-leg-raise. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "lower_abs", "no_equipment", "home_workout", "isolation", "mat"]
+}

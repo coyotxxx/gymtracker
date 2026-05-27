@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-press-on-exercise-ball",
+  "name": "Dumbbell Press on Exercise Ball",
+  "namePl": "Wyciskanie hantli na piłce gimnastycznej",
+  "aliases": ["DB press on stability ball", "dumbbell bench press on swiss ball", "stability ball DB press", "swiss ball dumbbell press"],
+  "aliasesPl": ["DB press na piłce gimnastycznej", "wyciskanie hantli na piłce", "wyciskanie hantli na piłce szwajcarskiej", "DB bench na piłce"],
+
+  "description": "Horizontal pressing variation where the exerciser lies back on a stability (swiss) ball — upper back and shoulders supported on the ball, hips elevated in a glute-bridge position, feet planted on the floor. Replacing the flat bench with an unstable surface dramatically increases demand on the core, glutes, and shoulder stabilizers, while the prime movers (pecs, anterior delts, triceps) still perform the press. Used absolute loads are typically 20-30% lighter than on a bench, so this is NOT a max-strength tool — it is a stabilization, core integration, and accessory hypertrophy drill. Best for intermediate trainees seeking variety, athletes who need carry-over to unstable real-world demands, or as a finishing movement after main pressing work.",
+  "descriptionPl": "Wariant poziomego wyciskania, w którym ćwiczący kładzie się na piłce gimnastycznej — górne plecy i barki oparte na piłce, biodra uniesione w pozycji mostka pośladkowego, stopy zaparte o podłogę. Zamiana stabilnej ławki na niestabilną powierzchnię drastycznie zwiększa zapotrzebowanie na pracę core, pośladków i stabilizatorów barku, podczas gdy główne mięśnie napędowe (klatka, przednie delty, tricepsy) nadal wykonują wyciskanie. Używane ciężary są zwykle 20-30% niższe niż na ławce, więc to NIE jest narzędzie do budowania maksymalnej siły — to ćwiczenie stabilizacyjne, integrujące core i akcesoryjne do hipertrofii. Najlepsze dla średniozaawansowanych szukających urozmaicenia, sportowców potrzebujących transferu na niestabilne warunki gry lub jako finisher po głównym pressingu.",
+
+  "instructions": [
+    "Sit on an inflated stability ball with dumbbells resting on your thighs, palms facing each other.",
+    "Walk your feet forward and simultaneously roll your back down the ball, kicking the dumbbells up to chest level. End with your upper back and shoulders on the ball, head supported.",
+    "Lift your hips so torso, hips, and thighs form a straight tabletop line. Knees bent ~90°, feet flat and slightly wider than shoulder-width for a stable base.",
+    "Squeeze glutes hard to lock the bridge — this becomes your 'bench'. Brace the core. Retract and depress shoulder blades against the ball.",
+    "Position the dumbbells over your shoulders, arms extended (not locked), palms facing forward (pronated grip). This is the starting position.",
+    "Inhale, brace, and lower the dumbbells in a controlled arc down to chest level. Elbows tracked at ~45-60° from torso. Keep hips HIGH — do not let them sag.",
+    "Pause briefly at the bottom — feel the stretch in the chest while the core fights rotation.",
+    "Press the dumbbells up and slightly inward, finishing over the upper chest. Exhale. Maintain the bridge throughout.",
+    "To finish the set: bring dumbbells to chest, lower hips to the ground, sit back up using the ball, and rest the dumbbells on your thighs."
+  ],
+  "instructionsPl": [
+    "Usiądź na napompowanej piłce gimnastycznej z hantlami na udach, dłonie zwrócone do siebie.",
+    "Idź stopami do przodu jednocześnie tocząc plecy po piłce w dół i wybijając hantle do wysokości klatki. Skończ z górnymi plecami i barkami opartymi na piłce, głowa podparta.",
+    "Unieś biodra tak, by tułów, biodra i uda tworzyły prostą linię (stół). Kolana zgięte ~90°, stopy płasko, nieco szerzej niż barki dla stabilnej podstawy.",
+    "Mocno napnij pośladki by zablokować mostek — to teraz twoja 'ławka'. Napnij core. Ściągnij i opuść łopatki opierając się o piłkę.",
+    "Ustaw hantle nad barkami, ramiona wyprostowane (bez lock-out), dłonie zwrócone w stronę stóp (chwyt pronowany). To pozycja startowa.",
+    "Wdech, napięcie, opuszczaj hantle kontrolowanym łukiem do wysokości klatki. Łokcie pod kątem ~45-60° od tułowia. Trzymaj biodra WYSOKO — nie pozwól im opaść.",
+    "Krótka pauza na dole — poczuj rozciągnięcie klatki, podczas gdy core walczy z rotacją.",
+    "Wyciśnij hantle w górę i lekko do środka, kończąc nad górną klatką. Wydech. Utrzymaj mostek przez cały ruch.",
+    "Aby zakończyć serię: ściągnij hantle do klatki, opuść biodra na podłogę, usiądź wykorzystując piłkę i odłóż hantle na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "core", "glutes"],
+    "stabilizers": ["rotator_cuff", "obliques", "transverse_abdominis", "hamstrings", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "anterior_deltoids": "P7",
+    "triceps": "P7",
+    "serratus_anterior": "S5",
+    "core": "S6",
+    "glutes": "S5",
+    "rotator_cuff": "T5",
+    "obliques": "T5",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "stability_ball"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "glute-bridge", "plank"],
+    "progression_to": ["single-arm-dumbbell-press-on-exercise-ball", "alternating-dumbbell-press-on-exercise-ball"],
+    "alternatives": ["dumbbell-bench-press", "neutral-grip-dumbbell-bench-press", "machine-chest-press", "floor-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Upper back and shoulders centered on the ball, head supported",
+      "Hips HIGH — straight line from shoulders to knees, glutes squeezed",
+      "Feet planted wider than shoulders for a stable tripod",
+      "Shoulder blades retracted AGAINST the ball before pressing",
+      "Start light — use 20-30% less weight than your flat DB bench"
+    ],
+    "setup_cues_pl": [
+      "Górne plecy i barki na środku piłki, głowa podparta",
+      "Biodra WYSOKO — prosta linia od barków do kolan, pośladki napięte",
+      "Stopy zaparte szerzej niż barki, stabilna trójnoga",
+      "Łopatki ściągnięte PRZYCIŚNIĘTE do piłki przed wyciskaniem",
+      "Zacznij lekko — używaj 20-30% mniej ciężaru niż na ławce poziomej"
+    ],
+    "execution_cues": [
+      "Lower with control to chest level — feel the stretch",
+      "Keep elbows at ~45-60° from torso, NOT flared to 90°",
+      "Hips stay HIGH the whole set — if they drop, the set is over",
+      "Press both dumbbells in sync — any wobble shows core leak",
+      "Slower tempo than flat bench (3-1-2) — instability rewards control"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj z kontrolą do poziomu klatki — poczuj rozciągnięcie",
+      "Łokcie ~45-60° od tułowia, NIE rozsunięte na 90°",
+      "Biodra WYSOKO przez całą serię — jeśli opadają, seria skończona",
+      "Naciskaj oba hantle synchronicznie — każdy kołysz to wyciek z core",
+      "Wolniejsze tempo niż na ławce (3-1-2) — niestabilność nagradza kontrolę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sag during the press (loss of bridge)",
+        "faultPl": "Biodra opadają w trakcie wyciskania (utrata mostka)",
+        "cause": "Weak glutes, no conscious squeeze, fatigue, too much weight",
+        "causePl": "Słabe pośladki, brak świadomego napięcia, zmęczenie, za ciężki ciężar",
+        "cue": "Squeeze glutes HARD before every rep. Cue 'hips to the ceiling'. If hips keep dropping, lower the weight or end the set.",
+        "cuePl": "Mocno napnij pośladki PRZED każdym powtórzeniem. Cue 'biodra do sufitu'. Jeśli biodra dalej opadają, zmniejsz ciężar lub zakończ serię."
+      },
+      {
+        "fault": "Excessive side-to-side wobble on the ball",
+        "faultPl": "Nadmierne kołysanie z boku na bok na piłce",
+        "cause": "Asymmetric press, weak core, feet too narrow, ball under-inflated",
+        "causePl": "Asymetryczne wyciskanie, słaby core, stopy zbyt blisko siebie, piłka za słabo napompowana",
+        "cue": "Widen the feet. Brace obliques like you're about to be punched. Move both dumbbells perfectly synced.",
+        "cuePl": "Rozszerz stopy. Napnij skośne brzucha jakbyś miał dostać cios. Ruszaj oba hantle idealnie synchronicznie."
+      },
+      {
+        "fault": "Elbows flared to 90° on the descent",
+        "faultPl": "Łokcie rozsunięte na 90° przy schodzeniu",
+        "cause": "Habit from fly machines, lack of shoulder awareness, weight too heavy",
+        "causePl": "Nawyk z maszyn do rozpiętek, brak świadomości barku, zbyt ciężki ciężar",
+        "cue": "Tuck elbows to ~45-60°. On unstable surface, flared elbows are an even bigger risk for the shoulder.",
+        "cuePl": "Schowaj łokcie do ~45-60°. Na niestabilnej powierzchni rozsunięte łokcie to jeszcze większe ryzyko dla barku."
+      },
+      {
+        "fault": "Using flat-bench weight on the ball (ego loading)",
+        "faultPl": "Używanie ciężaru z ławki poziomej na piłce (ego loading)",
+        "cause": "Not respecting the instability tax, missing the point of the exercise",
+        "causePl": "Brak respektu dla podatku za niestabilność, niezrozumienie celu ćwiczenia",
+        "cue": "Drop the weight 20-30%. This is a core/stabilizer drill, not a strength PR opportunity. Heavy = bench, ball = control.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. To ćwiczenie core/stabilizacyjne, nie okazja na PR siłowy. Ciężko = ławka, piłka = kontrola."
+      },
+      {
+        "fault": "Head/neck unsupported, craning to look at dumbbells",
+        "faultPl": "Głowa/szyja bez podparcia, zadzieranie by patrzeć na hantle",
+        "cause": "Ball positioned too low under the back, fear of unstable position",
+        "causePl": "Piłka ustawiona za nisko pod plecami, strach przed niestabilną pozycją",
+        "cue": "Roll up the ball until the back of your head rests on it. Look straight up — trust the press, don't watch it.",
+        "cuePl": "Toczyć piłkę w górę aż tył głowy się o nią oprze. Patrz prosto w sufit — ufaj wyciskaniu, nie obserwuj go."
+      }
+    ],
+    "breathing": "Inhale at the top, brace and hold during descent — bracing is critical for stability on the ball. Exhale forcefully on the press up.",
+    "breathingPl": "Wdech na górze, napięcie i trzymanie powietrza przy schodzeniu — napięcie kluczowe dla stabilności na piłce. Wydech wymuszony przy wyciskaniu w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "Unstable surface multiplies shoulder demand. Use a flat bench until shoulder is stable; rebuild with machine press first.",
+      "modificationPl": "Niestabilna powierzchnia mnoży obciążenie barku. Użyj ławki poziomej do stabilizacji barku; odbuduj formę najpierw na maszynie.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "The bridge position loads erectors. If pain occurs, do floor press or DB bench instead — they remove the back demand entirely.",
+      "modificationPl": "Pozycja mostka obciąża prostowniki grzbietu. Jeśli boli, wykonaj floor press lub DB bench na ławce — eliminują obciążenie pleców.",
+      "alternative": "floor-press"
+    },
+    {
+      "condition": "balance_disorders",
+      "severity": "avoid",
+      "modification": "Falling off the ball with dumbbells over your face is a serious injury risk. Use a stable surface.",
+      "modificationPl": "Spadnięcie z piłki z hantlami nad twarzą to poważne ryzyko urazu. Użyj stabilnej powierzchni.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "The bridge holds knees at ~90° for the entire set. If patellofemoral pain occurs, widen feet for less knee flexion or switch to bench.",
+      "modificationPl": "Mostek trzyma kolana w zgięciu ~90° przez całą serię. Jeśli ból rzepkowo-udowy, rozszerz stopy by zmniejszyć zgięcie lub przejdź na ławkę.",
+      "alternative": "dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 (default — stability/hypertrophy) | 3x12-15 (endurance, lower load) | 2-3x8 (heavier, only for advanced)",
+  "calories_per_kg_per_hour": 5.2,
+
+  "media": {
+    "primary": "dumbbell-press-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-press-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-press-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-press-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-press-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-press-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-press-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF (12 klatek, 5 wyekstrahowanych) potwierdza: ćwiczący leży na piłce gimnastycznej — górne plecy/barki oparte na piłce, biodra uniesione tworząc mostek (linia barki-biodra-kolana płaska/tabletop), kolana zgięte ~90°, stopy płasko na podłodze (szeroko rozstawione dla stabilizacji). Frame 0 (start): hantle nad barkami, ramiona prawie wyprostowane, chwyt pronowany. Frame 2 (góra/mid): pełne wyciśnięcie, hantle nad górną klatką. Frame 4 (powrót/end): hantle wracają w dół z motion blur — kontrolowane opuszczanie. Podświetlone mięśnie na grafice: pectoralis major (klatka), triceps brachii (tylne ramię), anterior deltoid (przedni bark), serratus anterior (zębaty przedni — widoczny pod pachą), obliques/core (skośne brzucha — widoczne ze względu na wymóg antyrotacji na niestabilnej powierzchni). Bilateral. Compound. Sagittal plane (push horizontal). Klasyfikacja level=intermediate (difficulty 6/10) ze względu na wymóg utrzymania mostka pośladkowego + balansu na piłce + synchronicznego wyciskania jednocześnie — nie dla początkujących bez bazy DB bench + glute bridge + plank. Muscle_intensity pectoralis_major obniżone do P8 (vs P9 dla flat DB bench) ponieważ ciężary są realnie 20-30% niższe; core podniesione do S6 (vs T3 flat) ze względu na demand antyrotacyjny i utrzymanie mostka. Wszystkie pola PL napisane od zera w polskim standardzie fitness (mostek pośladkowy, piłka gimnastyczna, łopatki ściągnięte itd.), nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "stability", "core_integration", "dumbbell", "stability_ball", "chest", "intermediate", "accessory"]
+}

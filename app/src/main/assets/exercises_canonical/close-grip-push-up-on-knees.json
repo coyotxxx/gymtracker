@@ -1,0 +1,185 @@
+{
+  "id": "close-grip-push-up-on-knees",
+  "name": "Close-Grip Push-Up on Knees",
+  "namePl": "Pompka chwytem wąskim w klęku",
+  "aliases": ["close grip pushup on knees", "narrow grip knee push-up", "diamond push-up on knees (wider variant)", "triceps push-up on knees", "knee close-grip pushup"],
+  "aliasesPl": ["pompka wąska w klęku", "pompka tricepsowa w klęku", "pompka z wąskim chwytem na kolanach", "pompki tricepsowe damskie", "wąska pompka damska"],
+
+  "description": "Beginner-friendly regression of the close-grip (narrow grip) push-up performed with knees on the floor instead of toes. The narrow hand placement (hands close together, often under the lower chest) shifts emphasis from the outer/mid chest to the triceps and inner (sternal) pectorals. The knee position reduces the lever arm — bodyweight load on the hands drops from ~64% (standard push-up) to ~49% (knee push-up) — making it the ideal entry point for trainees who cannot yet perform a full close-grip push-up. Ideal as a triceps-focused bodyweight exercise for beginners, deload sessions or high-volume burnout work.",
+  "descriptionPl": "Łatwiejsza regresja pompki wąskim chwytem, wykonywana z kolanami na podłodze zamiast na palcach stóp. Wąskie ustawienie dłoni (blisko siebie, często pod dolną krawędzią klatki) przenosi akcent z zewnętrznej/środkowej części klatki na tricepsy i wewnętrzną (mostkową) część piersiowych. Pozycja w klęku skraca dźwignię — obciążenie masą ciała na rękach spada z ~64% (zwykła pompka) do ~49% (pompka w klęku) — co czyni ten ruch idealnym wejściem dla osób, które nie są jeszcze gotowe na pełną pompkę wąskim chwytem. Świetne ćwiczenie tricepsowe z bodyweight dla początkujących, sesji deload lub wysokoobjętościowego dobicia mięśni.",
+
+  "instructions": [
+    "Kneel on a mat (knees padded if needed). Walk your hands forward and lower yourself onto your palms.",
+    "Place hands directly under the lower chest, close together — index fingers and thumbs roughly a hand-width apart (NOT in a diamond — that's a separate, harder exercise).",
+    "Cross your feet behind you or leave them flat on the mat — whichever feels more stable.",
+    "Form a straight line from knees through hips to head. No sagging hips, no piked hips. Pre-brace the core, squeeze glutes.",
+    "Inhale and lower yourself in a controlled 2-3 second descent. Elbows track tight to the ribs (~20-30° from torso, NOT flared).",
+    "Lower until chest is just above the hands (or 1-2 fists from the floor). Brief pause — no bounce.",
+    "Exhale and press the floor away. Drive through palms, extend elbows fully but do not lock out hard.",
+    "Keep the line knees-hips-shoulders rigid throughout. Head neutral — chin slightly tucked."
+  ],
+  "instructionsPl": [
+    "Uklęknij na macie (kolana podłóż czymś miękkim jeśli trzeba). Przejdź rękami do przodu i opuść się na dłonie.",
+    "Połóż dłonie bezpośrednio pod dolną krawędzią klatki, blisko siebie — palce wskazujące i kciuki w odległości około jednej szerokości dłoni (NIE w pozycji diamentu — to osobne, trudniejsze ćwiczenie).",
+    "Skrzyżuj stopy z tyłu lub zostaw je płasko na macie — co czujesz stabilniej.",
+    "Utrzymuj prostą linię od kolan przez biodra do głowy. Bez opadania bioder, bez 'tyłka do góry'. Wstępnie napnij brzuch, ściśnij pośladki.",
+    "Wdech, opuszczaj się kontrolowanym ruchem 2-3 sekundy. Łokcie przyklejone do żeber (~20-30° od tułowia, NIE rozsunięte).",
+    "Schodź aż klatka będzie tuż nad dłońmi (lub 1-2 pięści od podłogi). Krótka pauza — bez odbijania.",
+    "Wydech, wypchnij podłogę. Napieraj przez wnętrza dłoni, w pełni wyprostuj łokcie, ale nie 'zatrzaskuj' ich na siłę.",
+    "Utrzymuj sztywną linię kolana-biodra-barki przez cały ruch. Głowa neutralna — broda lekko schowana."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "scapular_stabilizers", "rotator_cuff", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P9",
+    "pectoralis_major": "P8",
+    "anterior_deltoids": "S6",
+    "serratus_anterior": "S5",
+    "core": "T4",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "push_up_handles", "resistance_band"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["knee-push-up", "plank"],
+    "progression_to": ["close-grip-push-up", "diamond-push-up-on-knees", "diamond-push-up", "triceps-bench-dip"],
+    "alternatives": ["knee-push-up", "incline-close-grip-push-up", "bench-triceps-dip", "cable-triceps-pushdown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands under the lower chest, close together — about a hand-width apart (not touching)",
+      "Knees on a mat or padded surface — protect kneecaps",
+      "Straight line from knees through hips to ears — no hinge at the hips",
+      "Pre-brace abs and squeeze glutes BEFORE the first rep",
+      "Shoulders stacked over wrists, elbows soft at the top"
+    ],
+    "setup_cues_pl": [
+      "Dłonie pod dolną krawędzią klatki, blisko siebie — odległość około szerokości dłoni (nie stykają się)",
+      "Kolana na macie lub miękkim podłożu — chroń rzepki",
+      "Prosta linia od kolan przez biodra do uszu — bez zagięcia w biodrach",
+      "Wstępnie napnij brzuch i ściśnij pośladki PRZED pierwszym powtórzeniem",
+      "Barki nad nadgarstkami, łokcie lekko miękkie w pozycji wyjściowej"
+    ],
+    "execution_cues": [
+      "Lower 2-3 seconds — slow, controlled. The triceps work harder in the eccentric.",
+      "'Drag the elbows back' — keep them pinned tight to your ribs",
+      "Chest reaches the floor between the hands (not in front of them)",
+      "Squeeze triceps hard at the top — feel the back of the upper arm lock out",
+      "Keep core tight — if hips drop, stop the set"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj 2-3 sekundy — wolno, kontrolowanie. Triceps pracuje mocniej w fazie ekscentrycznej.",
+      "'Cofaj łokcie' — trzymaj je przyklejone do żeber",
+      "Klatka dochodzi do podłogi pomiędzy dłońmi (nie przed nimi)",
+      "Mocno ściśnij tricepsy na szczycie — poczuj jak tył ramienia 'blokuje się'",
+      "Brzuch napięty — jeśli biodra opadają, kończ serię"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out wide (chicken-wing)",
+        "faultPl": "Łokcie rozsunięte na boki (kurze skrzydła)",
+        "cause": "Hands placed too wide for 'close grip' name, or shoulder muscles taking over from weak triceps",
+        "causePl": "Dłonie ustawione za szeroko jak na 'wąski chwyt', lub mięśnie barków przejmują pracę od słabego tricepsa",
+        "cue": "Pin elbows to your ribs — they should brush your sides on the way down. If you can't, narrow your hand position more.",
+        "cuePl": "Przyklej łokcie do żeber — w trakcie schodzenia powinny ocierać się o boki tułowia. Jeśli nie umiesz — ustaw dłonie jeszcze węziej."
+      },
+      {
+        "fault": "Sagging hips / piking hips",
+        "faultPl": "Opadające biodra / 'tyłek do góry'",
+        "cause": "No core engagement, ignoring the plank position from knees up",
+        "causePl": "Brak napięcia brzucha, ignorowanie pozycji planka od kolan w górę",
+        "cue": "Squeeze glutes HARD and brace abs. Imagine someone might lift you up by your belt — stay rigid from knees to head.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki i napnij brzuch. Wyobraź sobie, że ktoś unosi cię za pasek — bądź sztywna/y od kolan do głowy."
+      },
+      {
+        "fault": "Partial range of motion (chest stops 10+ cm above hands)",
+        "faultPl": "Częściowy zakres ruchu (klatka zatrzymuje się 10+ cm nad dłońmi)",
+        "cause": "Triceps weakness, fear of touching the floor, ego counting half-reps",
+        "causePl": "Słabość tricepsa, strach przed dotknięciem podłogi, ego liczące połowiczne powtórzenia",
+        "cue": "Chest within a fist's height from the hands. If you can't — switch to incline close-grip (hands on a bench, knees on floor).",
+        "cuePl": "Klatka w odległości pięści od dłoni. Jeśli nie dasz rady — przejdź na pompki wąskie na podwyższeniu (dłonie na ławce, kolana na podłodze)."
+      },
+      {
+        "fault": "Hinging at hips (only the upper body moves)",
+        "faultPl": "Zginanie w biodrach (rusza się tylko górna część ciała)",
+        "cause": "Trying to fake reps when triceps fatigue — leaving knees and hips behind, only torso moves up/down",
+        "causePl": "Próba 'oszukania' powtórzeń przy zmęczeniu tricepsa — kolana i biodra stoją w miejscu, tylko tułów się rusza w górę/dół",
+        "cue": "The whole body moves as ONE unit — knees, hips, shoulders, head travel down together as a line.",
+        "cuePl": "Całe ciało porusza się JAKO JEDNA bryła — kolana, biodra, barki, głowa schodzą razem w jednej linii."
+      }
+    ],
+    "breathing": "Inhale during the descent (eccentric), brace at the bottom, exhale forcefully on the way up (concentric). Reset breath every 3-5 reps if needed.",
+    "breathingPl": "Wdech podczas schodzenia (ekscentryk), napnij na dole, energiczny wydech podczas wyciskania w górę (koncentryk). W razie potrzeby reset oddechu co 3-5 powtórzeń."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles or fists (knuckles down) to keep wrist neutral. Close grip loads wrists asymmetrically — even more reason to neutralize.",
+      "modificationPl": "Użyj uchwytów do pompek lub pięści (knykcie w dół) by utrzymać neutralny nadgarstek. Wąski chwyt obciąża nadgarstki asymetrycznie — tym bardziej warto je zneutralizować.",
+      "alternative": "cable-triceps-pushdown"
+    },
+    {
+      "condition": "elbow_pain",
+      "severity": "modify",
+      "modification": "Close grip heavily loads the triceps tendon at the elbow. Reduce ROM, lower volume, or switch to incline variant. Stop if pain persists.",
+      "modificationPl": "Wąski chwyt mocno obciąża ścięgno tricepsa przy łokciu. Zmniejsz zakres ruchu, ogranicz objętość lub przejdź na wariant na podwyższeniu. Przerwij jeśli ból nie ustępuje.",
+      "alternative": "incline-close-grip-push-up"
+    },
+    {
+      "condition": "knee_pain_or_acute_kneeling_contraindication",
+      "severity": "modify",
+      "modification": "Use thick mat or folded towel under knees. If still painful — switch to standard close-grip push-up (toes on floor) or incline variant on a bench.",
+      "modificationPl": "Użyj grubej maty lub złożonego ręcznika pod kolanami. Jeśli nadal boli — przejdź na zwykłą pompkę wąską (palce na podłodze) lub wariant na podwyższeniu.",
+      "alternative": "incline-close-grip-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-15 (hypertrophy/beginner) | 2-3xAMRAP (volume burnout) | 4x6-10 as triceps assistance work",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "close-grip-push-up-on-knees.gif",
+    "frames_extracted": [
+      "frames/close-grip-push-up-on-knees/frame_0_start.png",
+      "frames/close-grip-push-up-on-knees/frame_1_early.png",
+      "frames/close-grip-push-up-on-knees/frame_2_mid.png",
+      "frames/close-grip-push-up-on-knees/frame_3_late.png",
+      "frames/close-grip-push-up-on-knees/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/close-grip-push-up-on-knees"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej — kolana na podłodze (po lewej, niżej), dłonie blisko siebie pod dolną krawędzią klatki (po prawej), ramiona wyprostowane, ciało w prostej linii od kolan przez biodra do głowy. Stopy uniesione/skrzyżowane z tyłu. Frame 2 (mid): pełne opuszczenie — klatka tuż nad dłońmi, łokcie zgięte i ULOŻONE BLISKO TUŁOWIA (~20-30°, nie rozsunięte na boki), wąski chwyt wyraźny — dłonie tuż obok siebie. Frame 4 (end): powrót do pozycji wyjściowej (ghost overlay pokazuje cykl). Anatomia: TRICEPS (tył ramienia) i WEWNĘTRZNA część pectoralis major (przy mostku) wyraźnie podświetlone na czerwono — zgodne z biomechaniką wąskiego chwytu. Wariant w klęku jest klasyczną regresją beginner — zmniejsza dźwignię z ~64% bodyweight na rękach (standard) do ~49% (knee variant). Wszystkie pola PL napisane od zera w polskim standardzie fitness. Difficulty 3/10 — beginner-friendly progression do close-grip-push-up i dalej do diamond push-up.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "triceps", "inner_chest", "beginner", "regression", "home_workout", "no_equipment", "knee_variant", "triceps_focus", "deload_friendly"]
+}

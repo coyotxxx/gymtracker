@@ -1,0 +1,209 @@
+{
+  "id": "one-arm-dip",
+  "name": "One-Arm Dip",
+  "namePl": "Dip jednorącz",
+  "aliases": ["single-arm dip", "one arm bench dip", "unilateral dip", "single-arm tricep dip"],
+  "aliasesPl": ["dip na jednej ręce", "jednoręczny dip na ławce", "dip jednoramienny", "tricepsowy dip jednorącz"],
+
+  "description": "Elite-level unilateral pushing movement in which the entire body is lowered and pressed back up using only one arm, typically on a flat bench with the legs extended in front and the free arm held forward for balance. Demands roughly double the relative pressing strength of a two-arm bench dip plus significant scapular control and anti-rotation core stability. Loads the triceps and lower chest of the working arm heavily, while the obliques and serratus anterior fight to keep the torso square. Treated as a calisthenics feat in the same family as one-arm pushups and ring dips, and is rarely programmed for hypertrophy — it lives in skill, strength and demonstration work.",
+  "descriptionPl": "Elitarne jednostronne ćwiczenie pchające, w którym całe ciało jest opuszczane i wypychane jedną ręką — najczęściej na płaskiej ławce, z nogami wyprostowanymi przed sobą i wolnym ramieniem wyciągniętym do przodu dla balansu. Wymaga około dwukrotnie większej względnej siły pchania niż dwustronny bench dip, plus mocnej kontroli łopatki i antyrotacyjnej stabilizacji korpusu. Mocno obciąża tricepsy i dolną klatkę pracującej ręki, a skośne mięśnie brzucha i mięsień zębaty przedni walczą o utrzymanie tułowia w jednej linii. To popisowy element kalisteniki z tej samej rodziny co pompki na jednej ręce i dipy na kółkach — rzadko programowany pod hipertrofię, należy do pracy nad umiejętnościami, siłą i demonstracjami.",
+
+  "instructions": [
+    "Sit on the edge of a sturdy flat bench. Place one hand on the bench right next to your hip, fingers pointing forward, palm flat and centered behind your shoulder line.",
+    "Scoot your hips just off the front edge of the bench so your bodyweight is supported entirely by that one hand.",
+    "Extend both legs straight out in front of you, heels on the floor, toes pointed up. The straighter the legs, the harder the dip; closer to the body = easier regression.",
+    "Hold the free arm straight out in front (or slightly to the side) as a counterbalance. Keep the chest tall and the shoulders pulled down away from the ear.",
+    "Square the hips and shoulders to face forward. Brace the obliques and lats hard — your body will want to rotate toward the working arm.",
+    "Initiate the descent by bending the working elbow. Lower the hips straight down under control over 2-3 seconds — elbow tracks back along the torso, not flaring sideways.",
+    "Descend until the working upper arm is approximately parallel to the floor (elbow around 90°). The hips travel close to the bench but never sit back on it.",
+    "Pause briefly at the bottom without shrugging or letting the working shoulder roll forward. Keep the torso facing dead ahead.",
+    "Press back up explosively by extending the elbow and driving the palm down into the bench. Squeeze the triceps to full lockout.",
+    "Finish each rep with the arm fully straight, shoulder packed down, hips lifted, free arm still extended. Reset and repeat — or switch sides."
+  ],
+  "instructionsPl": [
+    "Usiądź na krawędzi solidnej, płaskiej ławki. Połóż jedną dłoń na ławce tuż obok biodra, palce skierowane do przodu, dłoń płasko, ustawiona centralnie za linią barku.",
+    "Zsuń biodra tuż poza przednią krawędź ławki tak, by ciężar ciała wisiał całkowicie na tej jednej ręce.",
+    "Wyprostuj obie nogi przed siebie, pięty na podłodze, palce stóp uniesione. Im prostsze nogi, tym trudniejszy dip; bliżej ciała = łatwiejsza regresja.",
+    "Trzymaj wolne ramię wyciągnięte prosto do przodu (lub lekko w bok) jako kontrwagę. Klatka wysoko, bark pracujący ściągnięty w dół, z dala od ucha.",
+    "Ustaw biodra i barki frontem do przodu. Mocno napnij skośne brzucha i grzbiet — ciało będzie chciało skręcić się w stronę pracującej ręki.",
+    "Rozpocznij schodzenie zginając pracujący łokieć. Opuszczaj biodra prosto w dół kontrolowanie przez 2-3 sekundy — łokieć sunie w tył wzdłuż tułowia, nie rozkłada się na bok.",
+    "Schodź aż pracujące ramię będzie mniej więcej równoległe do podłogi (łokieć ok. 90°). Biodra zbliżają się do ławki, ale nigdy na niej nie siadają.",
+    "Zatrzymaj się krótko na dole bez wzruszania barków i bez puszczenia barku do przodu. Tułów cały czas zwrócony prosto przed siebie.",
+    "Wepchnij się dynamicznie do góry, prostując łokieć i wbijając dłoń w ławkę. Ściśnij triceps do pełnego wyprostu.",
+    "Każde powtórzenie kończ pełnym wyprostem ręki, barkiem ściągniętym w dół, biodrami w górze i wolnym ramieniem nadal wyciągniętym. Resetuj i powtarzaj — albo zmień stronę."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "pectoralis_major"],
+    "secondary": ["anterior_deltoids", "lower_pectoralis", "obliques"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "core", "rectus_abdominis", "lats", "forearms", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "pectoralis_major": "P9",
+    "anterior_deltoids": "S8",
+    "lower_pectoralis": "S8",
+    "obliques": "S7",
+    "serratus_anterior": "S6",
+    "rotator_cuff": "S6",
+    "core": "S6",
+    "rectus_abdominis": "S5",
+    "lats": "T4",
+    "forearms": "T5",
+    "wrist_flexors": "T4"
+  },
+
+  "equipment": {
+    "required": ["bench"],
+    "optional": ["parallel_bars", "parallettes", "wrist_wraps", "chalk"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["weighted-triceps-dip", "ring-dips", "triceps-dip", "one-arm-pushup"],
+    "progression_to": ["one-arm-ring-dip", "weighted-one-arm-dip"],
+    "alternatives": ["bench-dip", "triceps-dip", "ring-dips"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hand centered under the working shoulder — not in front, not behind",
+      "Fingers pointing forward, palm glued flat — wrist will take a big load",
+      "Free arm extended forward as a counterweight — don't let it dangle",
+      "Hips square, both shoulders facing forward — no twisting toward the working side",
+      "Lock the lats and obliques before you take weight onto one arm"
+    ],
+    "setup_cues_pl": [
+      "Dłoń ustawiona centralnie pod pracującym barkiem — nie z przodu, nie z tyłu",
+      "Palce skierowane do przodu, dłoń płasko przyklejona — nadgarstek dostanie duże obciążenie",
+      "Wolne ramię wyciągnięte do przodu jako kontrwaga — nie zostawiaj go luźno wiszącego",
+      "Biodra i oba barki zwrócone do przodu — żadnego skrętu w stronę pracującej ręki",
+      "Napnij grzbiet i skośne brzucha zanim przeniesiesz ciężar na jedną rękę"
+    ],
+    "execution_cues": [
+      "Drop the hips straight down — don't tip the torso toward the bench",
+      "Elbow tracks back along the ribs, never flaring out to the side",
+      "Keep the shoulder packed down on the way up — don't let it crawl toward the ear",
+      "Resist the urge to rotate — feel the obliques fighting on every rep",
+      "Full lockout at the top of every rep, then breathe and reset"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj biodra prosto w dół — nie pochylaj tułowia w stronę ławki",
+      "Łokieć sunie w tył wzdłuż żeber, nigdy nie rozkłada się na bok",
+      "Trzymaj bark ściągnięty w dół podczas pchnięcia — nie pozwól mu wjechać do ucha",
+      "Walcz z chęcią rotacji — czuj jak skośne brzucha pracują w każdym powtórzeniu",
+      "Pełen wyprost na górze każdego powtórzenia, potem oddech i reset"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates toward the working arm",
+        "faultPl": "Tułów skręca się w stronę pracującej ręki",
+        "cause": "Weak obliques and lack of anti-rotation control. Without active bracing, the body naturally turns to share load with the free side — destroying the unilateral training effect and stressing the working shoulder asymmetrically.",
+        "causePl": "Słabe mięśnie skośne i brak antyrotacyjnej kontroli. Bez aktywnego napięcia ciało naturalnie skręca się, by oddać część obciążenia wolnej stronie — niszczy to efekt treningu jednostronnego i asymetrycznie obciąża pracujący bark.",
+        "cue": "Set the free arm pointing dead ahead, square the chest to the front and pretend a laser shoots out of your sternum. If you can't hold square, regress to two-arm dips and build the prerequisite strength.",
+        "cuePl": "Ustaw wolne ramię prosto do przodu, zwróć klatkę frontem i wyobraź sobie laser strzelający z mostka. Jeśli nie utrzymasz kwadratu, cofnij się do dipów dwurącz i zbuduj wymaganą siłę."
+      },
+      {
+        "fault": "Elbow flares out to the side",
+        "faultPl": "Łokieć rozkłada się na bok",
+        "cause": "The lever is shorter and the bench dip becomes more of a chest fly — but at this load it places huge stress on the anterior shoulder capsule and biceps tendon, which are exactly the tissues most often injured during one-arm work.",
+        "causePl": "Dźwignia jest krótsza i ruch staje się bardziej rozpiętką klatki — ale przy tym obciążeniu generuje ogromny stres dla przedniej torebki stawowej barku i ścięgna bicepsa, czyli dokładnie tych tkanek, które najczęściej kontuzjują się przy pracy jednorącz.",
+        "cue": "Drive the elbow back behind you like you're elbowing someone standing behind your shoulder. Keep the upper arm close to the ribs throughout the entire range.",
+        "cuePl": "Prowadź łokieć w tył, jakbyś dźgał kogoś stojącego za twoim barkiem. Trzymaj ramię blisko żeber przez cały zakres ruchu."
+      },
+      {
+        "fault": "Hips slide back onto the bench / resting on bench",
+        "faultPl": "Biodra ślizgają się do tyłu na ławkę / opieranie się o ławkę",
+        "cause": "Loss of vertical descent — the hips drift back and the user partially sits on the bench, dramatically reducing the load on the working arm. Often a coping mechanism when the bottom of the rep becomes too hard.",
+        "causePl": "Utrata pionowego schodzenia — biodra dryfują w tył i osoba częściowo siada na ławce, drastycznie zmniejszając obciążenie pracującej ręki. Często mechanizm obronny, gdy dolna pozycja staje się za trudna.",
+        "cue": "Imagine your hips are dropping into a narrow slot directly below your working hand. If you can't keep the hips off the bench, end the set — partial reps don't build the strength needed.",
+        "cuePl": "Wyobraź sobie, że biodra spadają w wąską szczelinę dokładnie pod pracującą dłonią. Jeśli nie utrzymasz bioder w powietrzu, zakończ serię — częściowe powtórzenia nie zbudują potrzebnej siły."
+      },
+      {
+        "fault": "Shoulder rolls forward at the bottom",
+        "faultPl": "Bark wjeżdża do przodu w dolnej pozycji",
+        "cause": "Under unilateral load the working shoulder is far more vulnerable than in a two-arm dip — the humeral head can translate anteriorly into the capsule, risking impingement and labral irritation if depth is forced.",
+        "causePl": "Pod obciążeniem jednostronnym pracujący bark jest znacznie bardziej narażony niż w dwuręcznym dipie — głowa kości ramiennej może przesunąć się do przodu w torebce stawowej, ryzykując konflikt podbarkowy i podrażnienie obrąbka przy wymuszaniu głębokości.",
+        "cue": "Keep the working shoulder packed down and back the entire rep. Stop the descent the moment you feel the shoulder slip forward, even if you haven't hit 90°.",
+        "cuePl": "Trzymaj pracujący bark ściągnięty w dół i w tył przez całe powtórzenie. Zatrzymaj schodzenie w momencie, gdy poczujesz, że bark zaczyna uciekać do przodu, nawet jeśli nie osiągniesz 90°."
+      },
+      {
+        "fault": "Bouncing out of the bottom",
+        "faultPl": "Odbijanie z dolnej pozycji",
+        "cause": "Using momentum from a stretch reflex to power out of the hardest position. At one-arm intensity this transfers a shock load to the elbow tendons and anterior shoulder — the two most common injury sites in advanced calisthenics.",
+        "causePl": "Używanie rozmachu z odruchu rozciągowego, by wybić się z najtrudniejszej pozycji. Przy intensywności jednorącz przenosi to obciążenie szokowe na ścięgna łokcia i przedni bark — dwa najczęstsze miejsca kontuzji w zaawansowanej kalistenice.",
+        "cue": "Pause one full second at the bottom of every rep. If you can't pause-press a rep, that's your real limit — end the set and add assisted volume.",
+        "cuePl": "Zatrzymaj się na pełną sekundę na dole każdego powtórzenia. Jeśli nie możesz wypchnąć powtórzenia z pauzy, to jest twój rzeczywisty limit — zakończ serię i dorób objętość w wariancie asystowanym."
+      }
+    ],
+    "breathing": "Take a deep breath at the top and brace the entire torso (light Valsalva). Hold the air through the descent and the hardest part of the press. Exhale at the top lockout. Treat each rep as a near-maximal effort — re-brace every single time.",
+    "breathingPl": "Weź głęboki wdech na górze i napnij cały tułów (lekka Valsalva). Trzymaj powietrze przez schodzenie i najtrudniejszą fazę pchnięcia. Wydech przy pełnym wyproście na górze. Traktuj każde powtórzenie jak wysiłek bliski maksymalnemu — napinaj się od nowa za każdym razem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "Unilateral deep dip exposes a single shoulder to extreme anterior shear with no contralateral support. Avoid entirely until full clinical clearance — substitute with bilateral pushing variations and dedicated rotator cuff work first.",
+      "modificationPl": "Jednostronny głęboki dip naraża pojedynczy bark na ekstremalne ścinanie przednie bez wsparcia drugiej strony. Unikaj całkowicie do pełnego klinicznego wyzdrowienia — w zamian wykonuj dwustronne ruchy pchające i dedykowaną pracę nad stożkiem rotatorów.",
+      "alternative": "triceps-dip"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Loading 100% of bodyweight through a single triceps tendon will aggravate any existing tendinopathy. Drop to assisted bench dips or bench-supported variations until pain-free for several weeks of progressive bilateral work.",
+      "modificationPl": "Obciążenie 100% masy ciała przez jedno ścięgno tricepsa nasili każdą istniejącą tendinopatię. Cofnij się do dipów asystowanych lub wariantów z podparciem na ławce, dopóki kilka tygodni progresywnej pracy dwustronnej nie minie bez bólu.",
+      "alternative": "bench-dip"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "avoid",
+      "modification": "All bodyweight passes through one wrist locked in full extension — even healthy wrists feel this load. With existing injury, use wrist wraps or switch to parallettes/false grip work, but typically defer this exercise entirely until rehabilitated.",
+      "modificationPl": "Cały ciężar ciała przechodzi przez jeden nadgarstek zablokowany w pełnym wyproście — nawet zdrowe nadgarstki to czują. Przy istniejącej kontuzji używaj opasek lub przechodź na parallettes/chwyt fałszywy, ale zwykle odłóż to ćwiczenie do pełnej rehabilitacji.",
+      "alternative": "bench-dip"
+    },
+    {
+      "condition": "ac_joint_separation",
+      "severity": "avoid",
+      "modification": "Deep one-arm dip position places extreme strain on the acromioclavicular joint of the working side. Avoid until full clinical recovery; even mild residual symptoms make this exercise inadvisable.",
+      "modificationPl": "Głęboka pozycja jednostronnego dipa generuje skrajne obciążenie stawu barkowo-obojczykowego po pracującej stronie. Unikaj do pełnego klinicznego wyzdrowienia; nawet łagodne objawy resztkowe dyskwalifikują to ćwiczenie.",
+      "alternative": "barbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x1-3 per side (strength/skill) | 5x1 doubles or singles (peak demonstration) | 3x AMRAP only when fully owned",
+
+  "media": {
+    "primary": "one-arm-dip.gif",
+    "frames_extracted": [
+      "frames/one-arm-dip/frame_0_start.png",
+      "frames/one-arm-dip/frame_1_early.png",
+      "frames/one-arm-dip/frame_2_mid.png",
+      "frames/one-arm-dip/frame_3_late.png",
+      "frames/one-arm-dip/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/one-arm-dip"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 3 klatki z GIFa jahel (frame 0/2/4). Klatka 0 (start): postać siedzi na krawędzi płaskiej ławki, jedna dłoń (lewa na rysunku) wsparta na ławce tuż obok biodra, palce do przodu, ręka pracująca w pełnym wyproście. Wolne ramię (prawe) wyciągnięte prosto do przodu jako kontrwaga. Obie nogi wyprostowane przed sobą, pięty na podłodze, palce uniesione w górę — klasyczna pozycja bench dip, ale na jednej ręce. Podświetlone anatomicznie tricepsy pracującego ramienia i częściowo klatka piersiowa. Klatka 2 (bottom): pełne zejście, pracujący łokieć zgięty ok. 90°, ramię równoległe do podłogi, biodra opuszczone tuż obok ławki ale na niej nie spoczywają. Tułów utrzymany frontalnie, drugie ramię nadal wyciągnięte do przodu. Wyraźna praca tricepsa i klatki widoczna w mocniejszym czerwonym podświetleniu. Klatka 4 (return/end): powrót do pełnego wyprostu, niemal identyczna jak frame 0, widoczne 'echo' poprzedniej klatki świadczące o pełnym ROM. Zidentyfikowany wariant: bench-based one-arm dip (NIE parallel bars, jak mogłoby sugerować nazwa) — klasyczny progres od bench dip. Wszystkie pola PL napisane od zera przez Claude (dip jednorącz, kontrwaga, antyrotacja, ścięgno tricepsa, stożek rotatorów, Valsalva). Difficulty 10/10 zgodne ze specyfiką: wymaga ~2x bodyweight strength relative, prerequisitami są weighted dips i one-arm pushup, prograduje do one-arm ring dip.",
+
+  "tags": ["calisthenics", "bodyweight", "bench", "upper_body", "push", "unilateral", "elite", "skill_movement", "one_arm", "anti_rotation", "compound", "triceps_builder", "advanced_calisthenics"]
+}

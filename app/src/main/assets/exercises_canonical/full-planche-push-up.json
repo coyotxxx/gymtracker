@@ -1,0 +1,209 @@
+{
+  "id": "full-planche-push-up",
+  "name": "Full Planche Push-Up",
+  "namePl": "Pompka w planche",
+  "aliases": ["planche push-up", "full planche pushup", "FPL push-up", "planche pressup"],
+  "aliasesPl": ["pompka w pełnym planche", "planche pompka", "pompka w pozycji planche", "full planche pompka", "pompka kalisteniczna planche"],
+
+  "description": "The most advanced bodyweight push-up — performed in the full planche position (legs fully horizontal, parallel to the floor, no contact with ground). The lifter supports the entire bodyweight on hands alone while pressing through a full push-up range of motion. Requires years of dedicated planche progression training (tuck → advanced tuck → straddle → full planche static hold) before pressing reps become possible. An elite-level calisthenics movement that demands maximal straight-arm and bent-arm scapular strength, shoulder protraction, and full-body line tension. Considered the pinnacle of horizontal pressing strength in calisthenics.",
+  "descriptionPl": "Najbardziej zaawansowana pompka z masy ciała — wykonywana w pozycji pełnego planche (nogi w pełni poziomo, równolegle do podłogi, bez kontaktu z ziemią). Ćwiczący trzyma całe ciało na samych dłoniach, jednocześnie wykonując pompkę z pełnym zakresem ruchu. Wymaga wielu lat dedykowanego treningu progresji planche (tuck → zaawansowany tuck → rozkrok → pełne planche w izometrii) zanim w ogóle możliwe staną się powtórzenia z dynamiką. Ekstremalnie zaawansowany ruch kalisteniczny wymagający maksymalnej siły łopatek z wyprostowanymi i zgiętymi ramionami, protrakcji barków oraz pełnego napięcia liniowego ciała. Uznawana za szczyt siły poziomego wyciskania w kalistenice.",
+
+  "instructions": [
+    "Prerequisite: clean 10-15 second full planche static hold and strong pseudo planche push-ups. Without these — do not attempt.",
+    "Set up on parallettes (strongly recommended) or directly on floor. Parallettes save wrists by allowing neutral grip and deeper range.",
+    "Place hands slightly wider than shoulders, fingers spread, gripping handles or floor firmly. Lean shoulders forward of wrists.",
+    "Kick or press into full planche: protract shoulders aggressively, lean forward, lift legs to horizontal, point toes, squeeze glutes and quads HARD.",
+    "Lock the line: hollow body, posterior pelvic tilt, legs straight and together (or slight straddle for first reps).",
+    "Inhale and lower yourself in a slow controlled manner — elbows tracking ~45° from torso, shoulders moving FORWARD of the hands as you descend.",
+    "Lower until chest is just above hands (or parallettes' bars). Maintain horizontal leg line throughout — legs must NOT drop.",
+    "Exhale and press the ground away: re-protract shoulders, push back into full planche lockout. Re-establish hollow body line at the top.",
+    "Repeat for low reps (1-5). This is a max-strength movement — NEVER train to failure."
+  ],
+  "instructionsPl": [
+    "Wymóg wstępny: czysta izometria pełnego planche 10-15 sekund oraz mocne pseudo planche pompki. Bez tego — nie próbuj.",
+    "Ustaw się na parallettkach (mocno zalecane) lub bezpośrednio na podłodze. Parallettki chronią nadgarstki dzięki neutralnemu chwytowi i głębszemu zakresowi.",
+    "Dłonie nieco szerzej niż barki, palce rozstawione, mocny chwyt na uchwytach lub podłodze. Pochyl barki przed nadgarstki.",
+    "Wbij się lub wyciśnij do pełnego planche: agresywnie wyprotraktuj barki, pochyl ciało do przodu, unieś nogi do poziomu, wyciągnij palce stóp, MOCNO napnij pośladki i czworogłowe.",
+    "Zablokuj linię ciała: hollow body, tylne pochylenie miednicy, nogi proste i złączone (lub lekki rozkrok dla pierwszych powtórzeń).",
+    "Wdech, opuszczaj się powoli i kontrolowanie — łokcie pod ~45° od tułowia, barki wędrują DO PRZODU za nadgarstki podczas schodzenia.",
+    "Schodź aż klatka będzie tuż nad dłońmi (lub poprzeczkami parallettek). Utrzymuj poziomą linię nóg przez cały ruch — nogi NIE MOGĄ opadać.",
+    "Wydech, wypchnij podłogę: ponownie wyprotraktuj barki, wyciśnij do lockoutu pełnego planche. Odzyskaj linię hollow body na szczycie.",
+    "Powtarzaj w niskich zakresach (1-5). To ruch maksymalno-siłowy — NIGDY nie trenuj do upadku."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps", "serratus_anterior"],
+    "secondary": ["pectoralis_major_clavicular", "biceps", "latissimus_dorsi", "rotator_cuff"],
+    "stabilizers": ["core", "rectus_abdominis", "transverse_abdominis", "glutes", "quadriceps", "scapular_stabilizers", "wrist_flexors", "wrist_extensors", "spinal_erectors"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P10",
+    "triceps": "P10",
+    "serratus_anterior": "P10",
+    "pectoralis_major_clavicular": "S8",
+    "biceps": "S7",
+    "latissimus_dorsi": "S7",
+    "rotator_cuff": "S7",
+    "core": "T9",
+    "rectus_abdominis": "T9",
+    "glutes": "T8",
+    "quadriceps": "T7",
+    "wrist_flexors": "T8"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["parallettes", "push_up_handles", "rings", "wrist_wraps"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["tuck-planche-push-up", "advanced-tuck-planche-push-up", "straddle-planche-push-up", "pseudo-planche-push-up", "full-planche-hold"],
+    "progression_to": ["maltese-push-up", "planche-push-up-on-rings", "weighted-planche-push-up", "one-arm-planche-push-up"],
+    "alternatives": ["straddle-planche-push-up", "pseudo-planche-push-up", "handstand-push-up", "ring-push-up-archer"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Parallettes are king — wrists thank you and ROM is deeper",
+      "Hands slightly wider than shoulders, fingers actively gripping",
+      "Shoulders FORWARD of wrists — heavy forward lean is the planche secret",
+      "Protract shoulders HARD — 'push the ground away' before legs even leave",
+      "Lock hollow body: PPT, glutes squeezed, legs straight and tight before lift-off"
+    ],
+    "setup_cues_pl": [
+      "Parallettki to podstawa — nadgarstki podziękują, a zakres ruchu jest głębszy",
+      "Dłonie nieco szerzej niż barki, palce aktywnie obejmują uchwyt",
+      "Barki PRZED nadgarstkami — mocne pochylenie do przodu to sekret planche",
+      "Wyprotraktuj MOCNO barki — 'wypchnij podłogę' zanim w ogóle uniesiesz nogi",
+      "Zablokuj hollow body: PPT, pośladki ściśnięte, nogi proste i napięte przed startem"
+    ],
+    "execution_cues": [
+      "Descend slowly 3-4 seconds — this is a strength move, never rushed",
+      "Shoulders move MORE forward as you lower — chest goes DOWN AND IN, not just down",
+      "Legs stay PARALLEL to the floor the entire rep — if they drop, the rep is failed planche",
+      "Press by RE-PROTRACTING shoulders first, then extending elbows — not the other way around",
+      "Re-establish full planche line at lockout — pause, confirm, then next rep"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj powoli 3-4 sekundy — to ruch siłowy, nigdy w pośpiechu",
+      "Barki wędrują BARDZIEJ do przodu w trakcie schodzenia — klatka idzie W DÓŁ I DO ŚRODKA, nie tylko w dół",
+      "Nogi RÓWNOLEGLE do podłogi przez całe powtórzenie — jeśli opadają, to nie jest planche",
+      "Wyciskaj NAJPIERW przez ponowną protrakcję barków, dopiero potem prostując łokcie — nie odwrotnie",
+      "Odzyskaj pełną linię planche w lockout — pauza, potwierdzenie, dopiero kolejne powtórzenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Legs dropping (loss of horizontal line)",
+        "faultPl": "Opadające nogi (utrata poziomej linii)",
+        "cause": "Insufficient straight-arm strength / lower back not engaged / glutes not squeezed",
+        "causePl": "Niedostateczna siła wyprostowanych ramion / brak napięcia odcinka lędźwiowego / nieaktywne pośladki",
+        "cue": "Squeeze glutes HARDER, posterior pelvic tilt, point toes — if legs still drop, regress to straddle planche push-up.",
+        "cuePl": "Ściśnij pośladki MOCNIEJ, tylne pochylenie miednicy, wyciągnij palce stóp — jeśli nogi nadal opadają, wróć do straddle planche push-up."
+      },
+      {
+        "fault": "Shoulders not protracting at lockout (rounded retraction)",
+        "faultPl": "Brak protrakcji barków w lockoucie (zaokrąglone retrakcyjne ustawienie)",
+        "cause": "Weak serratus anterior, no awareness of scapular position",
+        "causePl": "Słaby zębaty przedni, brak świadomości pozycji łopatek",
+        "cue": "At the top: 'push through the floor', round upper back slightly, separate shoulder blades. Serratus is the planche muscle.",
+        "cuePl": "Na szczycie: 'wypchnij się przez podłogę', lekko zaokrąglij górną część pleców, rozsuń łopatki. Zębaty przedni to mięsień planche."
+      },
+      {
+        "fault": "Insufficient forward lean (vertical shoulders)",
+        "faultPl": "Niedostateczne pochylenie do przodu (pionowe ustawienie barków)",
+        "cause": "Fear of falling forward, weak straight-arm strength",
+        "causePl": "Strach przed upadkiem do przodu, słaba siła wyprostowanych ramion",
+        "cue": "Shoulders must travel FAR forward of wrists — 'nose past fingertips' at the bottom. Without lean, it's just a push-up with legs up.",
+        "cuePl": "Barki MUSZĄ wyjść daleko za nadgarstki — 'nos za czubki palców' w dolnej pozycji. Bez pochylenia to tylko pompka z uniesionymi nogami."
+      },
+      {
+        "fault": "Banana back / arched lumbar spine",
+        "faultPl": "Wygięte plecy / hiperlordoza odcinka lędźwiowego",
+        "cause": "No posterior pelvic tilt, weak core, compensating with lower back",
+        "causePl": "Brak tylnego pochylenia miednicy, słaby brzuch, kompensacja odcinkiem lędźwiowym",
+        "cue": "PPT — pelvis tucks under, lower abs contract, ribs DOWN. Hollow body is non-negotiable in planche.",
+        "cuePl": "PPT — miednica podwinięta pod, dolny brzuch napięty, żebra W DÓŁ. Hollow body to absolutna podstawa planche."
+      },
+      {
+        "fault": "Partial range of motion (half rep)",
+        "faultPl": "Częściowy zakres ruchu (połowiczne powtórzenie)",
+        "cause": "Strength gap in deeper ROM, ego — counting reps that don't reach full bottom",
+        "causePl": "Luka siłowa w głębszym zakresie, ego — liczenie powtórzeń bez pełnego zejścia",
+        "cue": "Chest to hands (or to parallette bars). Half-reps build half-strength. Lower the volume, raise the standard.",
+        "cuePl": "Klatka do dłoni (lub do poprzeczek parallettek). Połowiczne powtórzenia budują połowiczną siłę. Obniż objętość, podnieś standard."
+      }
+    ],
+    "breathing": "Brace HARD on descent — diaphragmatic bracing through the bottom, no exhalation. Sharp exhale only at the very top of the rep. Never breathe loosely mid-rep — intra-abdominal pressure holds the line.",
+    "breathingPl": "Mocne BRACING na zejściu — napięcie przeponowe przez dolną pozycję, bez wydechu. Ostry wydech dopiero na samym szczycie powtórzenia. Nigdy nie oddychaj luźno w trakcie ruchu — ciśnienie wewnątrzbrzuszne utrzymuje linię ciała."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "MANDATORY parallettes use — straight-wrist grip eliminates extension load. If wrist still painful, do NOT progress to planche. Build wrist conditioning first (knuckle push-ups, wrist mobility drills).",
+      "modificationPl": "OBOWIĄZKOWE użycie parallettek — prosty chwyt nadgarstka eliminuje przeprost. Jeśli nadgarstek nadal boli, NIE rób progresji do planche. Wzmacniaj nadgarstki (pompki na knykciach, mobility nadgarstków).",
+      "alternative": "pseudo-planche-push-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Full planche places extreme load on protracted, anteriorly rotated shoulder — high risk of biceps tendon and rotator cuff irritation. Do NOT perform with active impingement.",
+      "modificationPl": "Pełne planche obciąża skrajnie wyprotraktowany, przerotowany do przodu bark — wysokie ryzyko podrażnienia ścięgna bicepsa i stożka rotatorów. NIE wykonuj przy aktywnym impingement.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Straight-arm support phase loads biceps tendon at elbow and shoulder heavily. With golfer's/tennis elbow or distal biceps issues — STOP. Heal first.",
+      "modificationPl": "Faza podporu na wyprostowanych ramionach obciąża mocno ścięgno bicepsa na łokciu i barku. Przy łokciu golfisty/tenisisty lub problemach z dystalnym bicepsem — STOP. Najpierw wylecz.",
+      "alternative": "decline-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Anyone unable to maintain neutral spine + PPT under load will load lumbar spine. Master hollow body holds and dragon flag before attempting planche push-up.",
+      "modificationPl": "Każdy kto nie utrzymuje neutralnego kręgosłupa + PPT pod obciążeniem przeniesie nacisk na odcinek lędźwiowy. Opanuj hollow body i dragon flag zanim spróbujesz planche push-up.",
+      "alternative": "advanced-tuck-planche-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x1-3 (max strength) | 4-6x1 EMOM (skill practice) | 2-3x3-5 (when proficient) | NEVER train to failure",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "full-planche-push-up.gif",
+    "frames_extracted": [
+      "frames/full-planche-push-up/frame_0_start.png",
+      "frames/full-planche-push-up/frame_1_early.png",
+      "frames/full-planche-push-up/frame_2_mid.png",
+      "frames/full-planche-push-up/frame_3_late.png",
+      "frames/full-planche-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/full-planche-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T10:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej pełnego planche — całe ciało w poziomej linii równoległej do podłogi, nogi proste i złączone, barki nieco przed nadgarstkami, ramiona wyprostowane (lockout). Frame 2 (mid): pełne opuszczenie — klatka tuż nad podłogą/dłońmi, łokcie zgięte i ułożone pod ~45° od tułowia, barki MOCNO wyprotraktowane do przodu (znacznie za nadgarstki), nogi NADAL równolegle do podłogi (kluczowa cecha planche). Frame 4 (end): powrót do lockoutu planche (zamknięcie cyklu) — odbicie/cień widoczny na powierzchni potwierdza że stopy NIE dotykają podłogi w żadnym momencie. Klasyczna pompka w pełnym planche: anatomia podświetla głównie klatkę, przednie aktony, tricepsy i zębaty przedni — wszystkie cztery jako primary P10 (najtrudniejsza pompka, equal load distribution). Brak parallettek na grafice (na podłodze) — w opisie zalecone jako optional dla ochrony nadgarstków. Difficulty 10/10 (elite calisthenics). Wszystkie pola PL napisane od zera w polskim standardzie kalistenicznym (terminologia: planche, hollow body, PPT, protrakcja, lockout zachowane).",
+
+  "tags": ["bodyweight", "calisthenics", "advanced", "elite", "upper_body", "horizontal_push", "chest", "shoulders", "triceps", "core", "planche", "straight_arm_strength", "skill_strength", "parallettes_friendly", "no_equipment_friendly", "max_strength"]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "russian-twist",
+  "name": "Russian Twist",
+  "namePl": "Skręty rosyjskie",
+  "aliases": ["russian twist", "seated trunk twist", "seated oblique twist", "v-sit twist"],
+  "aliasesPl": ["skręty rosyjskie", "skręty tułowia siedząc", "skręty na skośne", "twist rosyjski"],
+
+  "description": "Rotational core exercise targeting the obliques. Performed in a V-sit position with knees bent and feet either lifted off the floor (harder) or planted (easier). The torso rotates side-to-side from a stable hip position. A staple isolation drill for the obliques that can be progressed by adding external load (plate, dumbbell, medicine ball, kettlebell).",
+  "descriptionPl": "Rotacyjne ćwiczenie na brzuch celujące w skośne. Wykonywane w pozycji V-sit z ugiętymi kolanami i stopami uniesionymi nad podłogę (trudniej) lub opartymi (łatwiej). Tułów obraca się na boki przy stabilnej pozycji bioder. Podstawowe ćwiczenie izolowane na skośne, łatwe do progresji przez dodanie obciążenia zewnętrznego (talerz, hantel, piłka lekarska, kettlebell).",
+
+  "instructions": [
+    "Sit on the floor with knees bent at ~90°. Lift your feet off the ground (advanced) or keep heels lightly resting (beginner).",
+    "Lean your torso back to about 45° from the floor — engage the core to maintain a strong, neutral spine (no rounded lower back).",
+    "Clasp your hands together at chest height (or hold a weight/medicine ball with both hands).",
+    "Rotate your torso to one side, leading with the shoulders and ribcage — hips stay still, the rotation comes from the trunk, not just the arms.",
+    "Pause briefly when your hands reach hip-level on that side, feeling a contraction in the obliques.",
+    "Rotate smoothly to the opposite side without losing the V-sit position or letting the lower back round.",
+    "Continue alternating sides for the prescribed reps (one rep = one twist; left+right = 2 reps).",
+    "Breathe rhythmically — exhale into each rotation, inhale on the return through center."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z kolanami ugiętymi pod kątem ~90°. Unieś stopy nad podłogę (zaawansowane) lub trzymaj pięty lekko oparte (początkujący).",
+    "Odchyl tułów do tyłu do kąta ok. 45° względem podłogi — napnij brzuch żeby utrzymać mocny, neutralny kręgosłup (bez zaokrąglonego dołu pleców).",
+    "Splej dłonie razem na wysokości klatki (lub trzymaj ciężar/piłkę lekarską oburącz).",
+    "Obróć tułów na jedną stronę prowadząc barkami i klatką piersiową — biodra stoją w miejscu, rotacja idzie z tułowia, nie tylko z ramion.",
+    "Zatrzymaj się na chwilę gdy dłonie dojdą do wysokości biodra po tej stronie, czując napięcie w skośnych.",
+    "Obróć płynnie na drugą stronę bez utraty pozycji V-sit i bez zaokrąglania dołu pleców.",
+    "Kontynuuj naprzemiennie zgodnie z planowaną liczbą powtórzeń (1 powtórzenie = 1 skręt; lewo+prawo = 2 powtórzenia).",
+    "Oddychaj rytmicznie — wydech na każdą rotację, wdech na powrocie przez środek."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis"],
+    "secondary": ["hip_flexors", "transverse_abdominis"],
+    "stabilizers": ["erector_spinae", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "rectus_abdominis": "P7",
+    "hip_flexors": "S6",
+    "transverse_abdominis": "S5",
+    "erector_spinae": "T3",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["medicine_ball", "plate", "dumbbell", "kettlebell", "ab_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dead-bug", "bicycle-crunch"],
+    "progression_to": ["weighted-russian-twist", "decline-russian-twist", "medicine-ball-russian-twist"],
+    "alternatives": ["bicycle-crunch", "cable-woodchopper", "side-plank-rotation", "standing-cable-rotation"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall first, then lean back to ~45°",
+      "Brace the core before you twist — don't go limp",
+      "Knees stay bent at ~90°, feet together",
+      "Chest open, eyes look slightly above horizon",
+      "Hands clasped or grip the weight tight"
+    ],
+    "setup_cues_pl": [
+      "Najpierw usiądź prosto, potem odchyl się do ~45°",
+      "Napnij brzuch ZANIM zaczniesz skręcać — nie wiotcz",
+      "Kolana ugięte ~90°, stopy razem",
+      "Klatka otwarta, wzrok lekko nad horyzont",
+      "Dłonie splecione lub mocno trzymaj ciężar"
+    ],
+    "execution_cues": [
+      "Rotate through the ribcage, not just the arms",
+      "Hips stay still — knees do not swing side to side",
+      "Hands track at hip-level, not chest-level",
+      "Pause briefly at each end position",
+      "Keep the lower back long — do not round it"
+    ],
+    "execution_cues_pl": [
+      "Obracaj przez klatkę piersiową, nie tylko ramionami",
+      "Biodra stoją — kolana nie kołyszą się na boki",
+      "Dłonie wędrują na wysokości bioder, nie klatki",
+      "Krótka pauza w każdej skrajnej pozycji",
+      "Trzymaj dół pleców wydłużony — nie zaokrąglaj"
+    ],
+    "common_faults": [
+      {
+        "fault": "Arms-only twist (no torso rotation)",
+        "faultPl": "Skręt tylko ramionami (brak rotacji tułowia)",
+        "cause": "Weak obliques, or focus on counting reps rather than feeling the muscle",
+        "causePl": "Słabe skośne, lub skupienie na liczeniu powtórzeń zamiast na pracy mięśnia",
+        "cue": "Hold a plate or ball in both hands — force the entire upper body to rotate as one unit. Watch your ribcage turn, not just your hands.",
+        "cuePl": "Trzymaj talerz lub piłkę oburącz — wymuś rotację całego tułowia jako jednej bryły. Patrz jak obraca się klatka piersiowa, nie tylko dłonie."
+      },
+      {
+        "fault": "Rounded lower back (lumbar flexion)",
+        "faultPl": "Zaokrąglony dół pleców (zgięcie lędźwiowe)",
+        "cause": "Weak core, leaning back too far, or tight hip flexors pulling pelvis posteriorly",
+        "causePl": "Słaby brzuch, zbyt mocne odchylenie do tyłu, lub spięte zginacze biodra ciągnące miednicę do tyłu",
+        "cue": "Sit more upright (closer to 60°), brace harder. Imagine a string pulling the crown of your head away from your tailbone.",
+        "cuePl": "Usiądź bardziej prosto (bliżej 60°), mocniej napnij brzuch. Wyobraź sobie sznurek ciągnący czubek głowy w górę i guzowatości w dół."
+      },
+      {
+        "fault": "Feet anchored to the floor",
+        "faultPl": "Stopy oparte o podłogę",
+        "cause": "Reduces oblique demand by letting quads/hip flexors stabilize. Often a default, not always wrong — but beginners stay there too long.",
+        "causePl": "Zmniejsza pracę skośnych, bo czworogłowe i zginacze biodra przejmują stabilizację. Często wybierane domyślnie — niezłe na początek, ale początkujący zostają na tym za długo.",
+        "cue": "Once you can do 3x15 with feet down, lift them. Start with calves parallel to the floor, knees at 90°.",
+        "cuePl": "Gdy zrobisz 3x15 ze stopami na podłodze, podnieś je. Zacznij od łydek równolegle do podłogi, kolana 90°."
+      },
+      {
+        "fault": "Fast, jerky tempo without control",
+        "faultPl": "Szybkie, szarpane tempo bez kontroli",
+        "cause": "Momentum-driven reps build no strength; trying to chase rep counts instead of muscle tension",
+        "causePl": "Powtórzenia z rozpędu nie budują siły; pogoń za liczbą zamiast napięciem mięśnia",
+        "cue": "1 second per side, brief pause at end position. If you can't pause, the weight is too heavy or tempo too fast.",
+        "cuePl": "1 sekunda na stronę, krótka pauza w skrajnej pozycji. Jeśli nie umiesz się zatrzymać, ciężar za duży lub tempo za szybkie."
+      },
+      {
+        "fault": "Hands tap the floor (excessive ROM)",
+        "faultPl": "Dłonie uderzają o podłogę (nadmierny zakres)",
+        "cause": "Trying to maximize ROM at the cost of core control, often combined with hip rotation",
+        "causePl": "Próba maksymalizacji zakresu kosztem kontroli brzucha, często z rotacją bioder",
+        "cue": "Stop the rotation when shoulders reach ~45° from center. Floor-tapping rotates from hips, not core.",
+        "cuePl": "Zatrzymaj rotację gdy barki dojdą do ~45° od środka. Stukanie podłogi to rotacja z bioder, nie z brzucha."
+      }
+    ],
+    "breathing": "Exhale forcefully into each rotation (helps engage the obliques and transverse). Inhale through the nose as you pass back through center. Avoid breath holding — this is a high-rep, controlled-tempo exercise.",
+    "breathingPl": "Wydychaj mocno na każdą rotację (pomaga zaangażować skośne i poprzeczne). Wdech nosem przy powrocie przez środek. Unikaj wstrzymywania oddechu — to ćwiczenie wysokopowtórzeniowe, w kontrolowanym tempie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Avoid loaded rotation on a flexed spine. Choose anti-rotation exercises (dead-bug, pallof press) until acute pain resolves.",
+      "modificationPl": "Unikaj obciążonej rotacji przy zgiętym kręgosłupie. Wybierz anty-rotacyjne (dead-bug, pallof press) do czasu ustąpienia ostrego bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Combined flexion + rotation under load is one of the highest-risk patterns for disc injury. Switch to bracing-based core work.",
+      "modificationPl": "Połączenie zgięcia i rotacji pod obciążeniem to jeden z najryzykowniejszych wzorców dla dysku. Przejdź na ćwiczenia napięciowe.",
+      "alternative": "side-plank-rotation"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "Keep feet planted on the floor instead of lifted — significantly reduces hip flexor demand.",
+      "modificationPl": "Trzymaj stopy oparte o podłogę zamiast unieść — znacznie zmniejsza obciążenie zginaczy biodra.",
+      "alternative": "bicycle-crunch"
+    },
+    {
+      "condition": "abdominal_diastasis",
+      "severity": "caution",
+      "modification": "Postpartum or with diastasis recti — rotation under bracing can worsen the gap. Get cleared by a pelvic-floor specialist first.",
+      "modificationPl": "Po porodzie lub przy rozejściu kresy białej — rotacja z napięciem może pogłębić rozejście. Najpierw konsultacja z fizjoterapeutą uroginekologicznym.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-40 reps (per side counted as half) | 3x12-15 with added weight",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "russian-twist.gif",
+    "frames_extracted": [
+      "frames/russian-twist/frame_0_start.png",
+      "frames/russian-twist/frame_1_early.png",
+      "frames/russian-twist/frame_2_mid.png",
+      "frames/russian-twist/frame_3_late.png",
+      "frames/russian-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/russian-twist",
+    "yuhonas_id": "Russian_Twist",
+    "glowupp_id": "russian_twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:40:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (24 ramki w GIFie). Klatki pokazują pełen cykl rotacji: frame_0/frame_2 = środek (tułów na środku, dłonie splecione na klatce), frame_1 = rotacja na lewą stronę (widać podświetlone skośne lewe + rectus), frame_3/frame_4 = rotacja na prawą stronę (podświetlone skośne prawe + dolny rectus). Pozycja: siedzi z odchyleniem do ~45°, kolana ugięte ~90°, stopy uniesione nad podłogę (wariant zaawansowany). Mięśnie podświetlone na ilustracji: skośne (główne, P10) + dolny rectus abdominis (P7). Yuhonas Russian_Twist opisuje to samo ćwiczenie. Glowupp ma muscle_intensity 'abs_/_core: P9' — zmapowałem na bardziej szczegółowo (obliques P10, rectus P7, hip_flexors S6). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii fitness (skośne, rectus, V-sit).",
+
+  "tags": ["core", "obliques", "rotation", "ab_isolation", "bodyweight", "high_rep", "warmup_friendly", "beginner_to_intermediate"]
+}

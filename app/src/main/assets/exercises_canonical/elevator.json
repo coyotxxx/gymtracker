@@ -1,0 +1,201 @@
+{
+  "id": "elevator",
+  "name": "Elevator",
+  "namePl": "Elevator (winda — wzrost ciała na drążku/kółkach)",
+  "aliases": ["hanging body elevator", "scapular elevator hang", "hanging scapular pull", "hanging shrug elevator", "ring elevator hang"],
+  "aliasesPl": ["winda na kółkach", "winda na drążku", "scapular elevator", "wciąganie ciała przez łopatki", "hanging shrug — winda"],
+
+  "description": "An advanced bodyweight back exercise performed from a dead hang on gymnastic rings or a pull-up bar. With arms locked completely straight, the lifter actively retracts and depresses the scapulae to raise the entire body upward by several centimeters — the body travels up and down like an elevator while the arms never bend. The motion isolates the scapular muscles (lower trapezius, rhomboids) and teaches active hang and shoulder packing, a critical prerequisite for strict pull-ups, muscle-ups and other advanced gymnastics pulling.",
+  "descriptionPl": "Zaawansowane ćwiczenie pleców z ciężarem własnym wykonywane w martwym zwisie na kółkach gimnastycznych lub drążku. Z ramionami całkowicie wyprostowanymi ćwiczący aktywnie ściąga i opuszcza łopatki, unosząc całe ciało o kilka centymetrów w górę — tułów jedzie w górę i w dół jak winda, a łokcie pozostają w pełni wyprostowane. Ruch izoluje mięśnie łopatkowe (dolne trapezy, romboidy) i uczy aktywnego zwisu oraz tzw. shoulder packing — niezbędnego fundamentu pod ścisłe podciągnięcia, muscle-up i pozostałą zaawansowaną gimnastykę.",
+
+  "instructions": [
+    "Chwyć dwa kółka gimnastyczne nachwytem (lub drążek na szerokość barków) i zawiśnij z ramionami w pełni wyprostowanymi. Stopy nie dotykają podłoża.",
+    "Pozwól ciału powiesić się w pasywnym zwisie — ramiona blisko uszu, łopatki uniesione (faza dolna 'windy').",
+    "Bez zginania łokci aktywnie opuść i ściągnij łopatki w dół oraz lekko do siebie — barki oddalają się od uszu, a klatka unosi się ku górze. Całe ciało wędruje o kilka centymetrów wyżej — tak jak winda jadąca w górę.",
+    "Utrzymaj górną pozycję 1-2 sekundy, czując napięcie w dolnych trapezach, romboidach oraz pod pachami (przyczepy szerokiego grzbietu).",
+    "Kontrolowanie pozwól łopatkom wrócić do góry — ciało powoli opuszcza się do startowego zwisu pasywnego, łokcie cały czas wyprostowane.",
+    "Wykonaj 8-12 powtórzeń w spokojnym tempie 2-1-2, koncentrując się na ruchu samej łopatki — nie na sile bicepsa czy szerokiego grzbietu.",
+    "Po zakończeniu serii zejdź pod kontrolą — odpocznij 60-90 sekund przed kolejną serią."
+  ],
+  "instructionsPl": [
+    "Chwyć dwa kółka gimnastyczne nachwytem (lub drążek na szerokość barków) i zawiśnij z ramionami w pełni wyprostowanymi. Stopy nie dotykają podłoża.",
+    "Pozwól ciału powiesić się w pasywnym zwisie — ramiona blisko uszu, łopatki uniesione (faza dolna 'windy').",
+    "Bez zginania łokci aktywnie opuść i ściągnij łopatki w dół oraz lekko do siebie — barki oddalają się od uszu, a klatka unosi się ku górze. Całe ciało wędruje o kilka centymetrów wyżej — tak jak winda jadąca w górę.",
+    "Utrzymaj górną pozycję 1-2 sekundy, czując napięcie w dolnych trapezach, romboidach oraz pod pachami (przyczepy szerokiego grzbietu).",
+    "Kontrolowanie pozwól łopatkom wrócić do góry — ciało powoli opuszcza się do startowego zwisu pasywnego, łokcie cały czas wyprostowane.",
+    "Wykonaj 8-12 powtórzeń w spokojnym tempie 2-1-2, koncentrując się na ruchu samej łopatki — nie na sile bicepsa czy szerokiego grzbietu.",
+    "Po zakończeniu serii zejdź pod kontrolą — odpocznij 60-90 sekund przed kolejną serią."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_middle_lower", "rhomboids"],
+    "secondary": ["latissimus_dorsi", "trapezius_upper", "teres_major", "posterior_deltoid"],
+    "stabilizers": ["forearms", "core", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_middle_lower": "P9",
+    "rhomboids": "P9",
+    "latissimus_dorsi": "S6",
+    "trapezius_upper": "S5",
+    "teres_major": "S4",
+    "posterior_deltoid": "S4",
+    "forearms": "T3",
+    "core": "T3",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["gymnastic_rings"],
+    "optional": ["pull_up_bar"]
+  },
+
+  "category": "compound",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dead-hang", "scapular-pull-up"],
+    "progression_to": ["pull-up", "muscle-up", "weighted-pull-up"],
+    "alternatives": ["scapular-pull-up", "inverted-row", "lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hang from rings or bar with arms 100% locked out",
+      "Pronated grip on rings/bar, hands shoulder-width apart",
+      "Feet off the ground — body in a slight hollow position",
+      "Start in passive hang — let shoulders shrug up toward ears",
+      "Eyes forward, neck neutral"
+    ],
+    "setup_cues_pl": [
+      "Zawiśnij na kółkach lub drążku z ramionami w 100% wyprostowanymi",
+      "Chwyt nachwytem, ręce na szerokość barków",
+      "Stopy nad podłożem — ciało w lekkiej pozycji hollow",
+      "Start w pasywnym zwisie — pozwól barkom wejść w kierunku uszu",
+      "Wzrok przed siebie, szyja neutralna"
+    ],
+    "execution_cues": [
+      "Without bending elbows, push shoulders DOWN away from ears",
+      "Imagine pulling shoulder blades into back pockets",
+      "Lift the chest up — let the body 'ride the elevator up'",
+      "Pause 1-2 seconds at the top — feel the squeeze under the armpits",
+      "Lower slowly — let scapulae rise back to passive hang"
+    ],
+    "execution_cues_pl": [
+      "Bez zginania łokci wepchnij barki W DÓŁ od uszu",
+      "Wyobraź sobie, że wkładasz łopatki do tylnych kieszeni spodni",
+      "Unieś klatkę do góry — pozwól ciału 'wjechać windą w górę'",
+      "Zatrzymaj 1-2 sekundy w górze — czuj napięcie pod pachami",
+      "Opuszczaj powoli — pozwól łopatkom wrócić do pasywnego zwisu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows (turning into a pull-up)",
+        "faultPl": "Zginanie łokci (zamiana ruchu w podciągnięcie)",
+        "cause": "Habit from pull-ups; weak scapular control so the biceps/lats take over",
+        "causePl": "Nawyk z podciągnięć; słaba kontrola łopatek powoduje przejęcie ruchu przez biceps i szeroki grzbiet",
+        "cue": "Lock elbows like superglue — only the shoulder blades move; if elbows bend, reset",
+        "cuePl": "Zablokuj łokcie jak superklejem — ruszają się tylko łopatki; jeśli łokcie się zginają, zrób reset"
+      },
+      {
+        "fault": "Shrugging up instead of pulling down",
+        "faultPl": "Wciąganie barków w górę zamiast w dół",
+        "cause": "Confusing the active phase — many beginners pull shoulders toward ears",
+        "causePl": "Mylenie fazy aktywnej — początkujący ciągną barki w kierunku uszu",
+        "cue": "Imagine you have a heavy backpack pulling shoulders DOWN — push body up by lowering shoulders",
+        "cuePl": "Wyobraź sobie ciężki plecak ciągnący barki W DÓŁ — unieś ciało poprzez opuszczenie barków"
+      },
+      {
+        "fault": "Using leg kick or hip thrust for momentum",
+        "faultPl": "Używanie wymachu nogami lub bioder do nabrania pędu",
+        "cause": "Body too weak for strict scapular work; trying to cheat",
+        "causePl": "Ciało zbyt słabe na ścisłą pracę łopatek; próba oszukiwania ruchu",
+        "cue": "Squeeze glutes, point toes, keep body absolutely still — move ONLY at the shoulder blades",
+        "cuePl": "Zaciśnij pośladki, wyciągnij palce stóp, trzymaj ciało absolutnie nieruchomo — ruch TYLKO w łopatkach"
+      },
+      {
+        "fault": "Insufficient range — micro pulses instead of full elevator travel",
+        "faultPl": "Niedostateczny zakres — mikropulsy zamiast pełnej jazdy windą",
+        "cause": "Tight upper traps or poor scapular mobility",
+        "causePl": "Sztywne górne trapezy lub słaba ruchomość łopatek",
+        "cue": "Travel a full inch (2-3 cm) up and down — record yourself from the side to verify range",
+        "cuePl": "Przejedź pełne 2-3 cm w górę i w dół — nagraj się z boku, by zweryfikować zakres"
+      },
+      {
+        "fault": "Holding the breath or straining the neck",
+        "faultPl": "Wstrzymywanie oddechu lub napinanie szyi",
+        "cause": "Excessive overall tension; treating scapular work like a max-effort lift",
+        "causePl": "Nadmierne napięcie ogólne; traktowanie pracy łopatek jak maksymalnego dźwigu",
+        "cue": "Exhale on the way up (depression), inhale on the way down — keep neck long and relaxed",
+        "cuePl": "Wydech przy jeździe w górę (depresja), wdech w dół — szyja długa i rozluźniona"
+      }
+    ],
+    "breathing": "Exhale on the active phase (pulling the shoulders down and body up), inhale on the descent back to passive hang. Steady rhythm — no breath-holding.",
+    "breathingPl": "Wydech w fazie aktywnej (ściąganie barków w dół i jazda ciała w górę), wdech podczas opuszczania do pasywnego zwisu. Stały rytm — bez wstrzymywania oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_labrum_tear",
+      "severity": "avoid",
+      "modification": "Active hangs can compress already irritated structures. Skip until cleared by physiotherapist; substitute with face-pull or banded scapular setup drills.",
+      "modificationPl": "Aktywny zwis może uciskać już podrażnione struktury. Pomiń do czasu zgody fizjoterapeuty; zastąp face-pull lub ćwiczeniami łopatkowymi z gumą.",
+      "alternative": "scapular-pull-up"
+    },
+    {
+      "condition": "acute_wrist_or_elbow_injury",
+      "severity": "avoid",
+      "modification": "Hanging puts significant tensile load on wrist flexors and elbow tendons. Avoid until pain-free in dead hang; use seated row alternatives.",
+      "modificationPl": "Zwisanie stwarza znaczne obciążenie rozciągające na zginacze nadgarstka i ścięgna łokcia. Pomiń do czasu zwisu bez bólu; użyj wiosłowania w siadzie.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "recent_shoulder_surgery",
+      "severity": "avoid",
+      "modification": "Full passive hang stresses the joint capsule. Wait minimum 4-6 months post-op and follow surgeon/PT protocol; use prone Y/T/W raises in early rehab.",
+      "modificationPl": "Pełny pasywny zwis obciąża torebkę stawową. Odczekaj minimum 4-6 miesięcy po operacji i postępuj zgodnie z protokołem chirurga/fizjoterapeuty; w wczesnej rehabilitacji wykonuj Y/T/W na ławce.",
+      "alternative": "scapular-pull-up"
+    },
+    {
+      "condition": "high_blood_pressure_uncontrolled",
+      "severity": "modify",
+      "modification": "Strict isometric holds in a hang can spike blood pressure. Skip pause at the top, perform smooth reps only, monitor symptoms; consult physician.",
+      "modificationPl": "Ścisłe izometrie w zwisie mogą podnosić ciśnienie. Pomiń pauzę w górze, wykonuj tylko płynne powtórzenia, monitoruj objawy; skonsultuj się z lekarzem.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 powtórzeń",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "elevator.gif",
+    "frames_extracted": [
+      "frames/elevator/frame_0_start.png",
+      "frames/elevator/frame_1_early.png",
+      "frames/elevator/frame_2_mid.png",
+      "frames/elevator/frame_3_late.png",
+      "frames/elevator/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/elevator"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Postać zwisa na dwóch kółkach gimnastycznych z ramionami w pełni wyprostowanymi (frame_0 — pasywny zwis, barki uniesione w kierunku uszu, klatka i barki podświetlone). W frame_1-2 ciało wjeżdża wyraźnie w górę o kilka centymetrów (przeźroczyste kontury ciała w pozycjach pośrednich potwierdzają translację pionową) — łokcie pozostają wyprostowane, a podświetlone mięśnie obejmują cały tylny pas grzbietowy: trapezy (środkowe i dolne), romboidy oraz szeroki grzbiet (najmocniejsza czerwień w połowie ruchu). Frame_3-4 pokazują powrót do pozycji wyjściowej. To klasyczna 'elevator' / 'scapular elevator hang' / 'hanging scapular depression' — izolowana praca depresji i retrakcji łopatek bez zginania łokci. Z konwencji nazewniczej GymTracker mechanic ustawione jako 'isolation' (ruch tylko w łopatkach), force/movement_pattern jako 'pull' (depresja łopatek ciągnie ciało w górę przeciwko grawitacji), plane: 'frontal' (przesuw barków w dół to ruch w płaszczyźnie czołowej), kinetic_chain: 'closed' (ręce nieruchome na kółkach, ciało się przemieszcza). Primary muscles: dolne trapezy i romboidy — to ich główne zadanie (depresja + retrakcja łopatek). Latissimus dorsi i upper traps jako secondary, bo również się włączają (lat przy stabilizacji ciała, upper trap w fazie ekscentrycznej). Prerequisites: dead-hang i scapular-pull-up, bo bez stabilnego zwisu i podstawowej kontroli łopatek to ćwiczenie nie ma sensu. Progression_to: pull-up i muscle-up (elevator jest fundamentem ich obu). Wszystkie pola PL napisane od zera, nie tłumaczone maszynowo.",
+
+  "tags": ["bodyweight", "calisthenics", "gymnastic_rings", "pull_up_bar", "scapular_control", "shoulder_packing", "prerequisite_pull_up", "no_weights", "back_isolation", "advanced_warmup"]
+}

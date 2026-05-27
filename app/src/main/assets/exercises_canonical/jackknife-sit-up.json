@@ -1,0 +1,197 @@
+{
+  "id": "jackknife-sit-up",
+  "name": "Jackknife Sit-Up",
+  "namePl": "Scyzoryk",
+  "aliases": ["jackknife", "jack-knife sit-up", "v-sit-up", "pike sit-up", "jackknife crunch"],
+  "aliasesPl": ["sit-up scyzorykowy", "scyzoryki", "scyzoryk brzuszkowy", "v-up", "v-sit", "składany scyzoryk", "brzuszek scyzorykowy"],
+
+  "description": "Dynamic bodyweight abdominal exercise performed lying supine with arms extended overhead and legs straight. The lifter simultaneously raises the legs and the torso to meet over the hips, folding the body into a 'V' (or jackknife) shape with the hands reaching toward the feet at the peak. Trains the entire rectus abdominis along its full length plus the hip flexors as the prime mover for hip flexion, making it one of the most demanding unloaded core exercises. Differs from cocoons in that the legs stay straight (longer lever, more hip-flexor demand) and from a v-up only in name conventions.",
+  "descriptionPl": "Dynamiczne ćwiczenie brzucha z masą własnego ciała wykonywane w leżeniu na plecach z ramionami wyciągniętymi za głowę i nogami prostymi. Ćwiczący jednocześnie unosi proste nogi oraz tułów, by spotkały się nad biodrami — ciało składa się w kształt litery 'V' (lub scyzoryka), a dłonie sięgają do stóp w pozycji szczytowej. Trenuje cały mięsień prosty brzucha na pełnej długości oraz zginacze biodra jako główny ruch zgięcia w biodrze, co czyni go jednym z najbardziej wymagających ćwiczeń core bez obciążenia. Różni się od kokonów tym, że nogi pozostają wyprostowane (dłuższe ramię dźwigni, większe obciążenie zginaczy biodra) — względem v-up'a różnica głównie nazewnicza.",
+
+  "instructions": [
+    "Lie flat on your back on a mat. Extend your legs straight together and stretch your arms overhead so the body forms one long line. Press the lower back gently into the mat. This is the starting position.",
+    "Inhale, brace the core lightly and tilt the pelvis posteriorly to remove any lumbar arch.",
+    "Exhale and simultaneously lift the straight legs upward and crunch the torso forward — keep the legs as straight as possible and reach the hands toward the toes. The pivot point is the hips.",
+    "At the top, the body forms a 'V' shape balanced on the buttocks: legs roughly 45–60° to the floor, torso a mirror angle on the opposite side. Squeeze the abs hard for a brief pause.",
+    "Inhale and reverse the movement under control — lower the legs and torso simultaneously back toward the floor. Stop just before the heels and shoulder blades touch down to keep tension on the abs.",
+    "Begin the next rep from this hovering bottom position. Maintain a straight-leg pattern throughout — bending the knees converts the movement into a tuck crunch or cocoon."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach na macie. Wyciągnij nogi prosto, złącz je i wyciągnij ramiona za głowę — ciało tworzy jedną długą linię. Lekko dociśnij dolne plecy do maty. To pozycja wyjściowa.",
+    "Wdech, lekko napnij brzuch i tyłopochyl miednicę, by zlikwidować łuk w odcinku lędźwiowym.",
+    "Wydech — jednocześnie unieś proste nogi do góry i zwiń tułów do przodu. Trzymaj nogi możliwie prosto i sięgnij dłońmi do stóp. Punkt obrotu znajduje się w biodrach.",
+    "W szczycie ciało tworzy literę 'V' balansującą na pośladkach: nogi pod kątem ok. 45–60° do podłogi, tułów pod tym samym kątem z drugiej strony. Mocno ściśnij brzuch i zatrzymaj się na chwilę.",
+    "Wdech i odwróć ruch kontrolowanie — jednocześnie opuść nogi i tułów w kierunku podłogi. Zatrzymaj ruch tuż przed dotknięciem pięt i łopatek do maty, by zachować napięcie brzucha.",
+    "Rozpocznij kolejne powtórzenie z tej uniesionej pozycji dolnej. Utrzymuj proste nogi przez cały ruch — zgięcie kolan zamienia ćwiczenie w tuck crunch lub kokon."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors"],
+    "secondary": ["obliques", "transverse_abdominis"],
+    "stabilizers": ["quadriceps", "serratus_anterior", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "hip_flexors": "P8",
+    "obliques": "S6",
+    "transverse_abdominis": "S5",
+    "quadriceps": "T3",
+    "serratus_anterior": "T2",
+    "adductors": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["crunch", "lying-leg-raise", "tuck-crunch", "cocoons"],
+    "progression_to": ["hollow-body-rock", "toes-to-bar", "hanging-straight-leg-raise"],
+    "alternatives": ["cocoons", "tuck-crunch", "v-up", "hanging-leg-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat — body in one long line head to toe",
+      "Legs straight and together, toes pointed",
+      "Arms overhead, biceps near the ears",
+      "Lower back pressed gently into the mat",
+      "Inhale and pre-brace the core before the lift"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko — ciało w jednej długiej linii od głowy do stóp",
+      "Nogi proste, złączone, palce stóp wyciągnięte",
+      "Ramiona za głowę, bicepsy blisko uszu",
+      "Dolne plecy lekko dociśnięte do maty",
+      "Wdech i wstępne napięcie brzucha przed unoszeniem"
+    ],
+    "execution_cues": [
+      "Hands and feet meet over the hips — pivot at the hips, not the lumbar spine",
+      "Forceful exhale during the fold — empty the lungs at the top",
+      "Keep the legs locked straight — fight the urge to bend the knees",
+      "Reach with the chest, not the chin — keep neck neutral",
+      "Lower with control over 2 seconds — never crash heels or head into the floor"
+    ],
+    "execution_cues_pl": [
+      "Dłonie i stopy spotykają się nad biodrami — obrót następuje w biodrach, nie w lędźwiach",
+      "Mocny wydech podczas składania — opróżnij płuca w szczycie",
+      "Trzymaj nogi zablokowane prosto — opieraj się pokusie zgięcia kolan",
+      "Sięgaj klatką, nie brodą — szyja pozostaje neutralna",
+      "Opuszczaj kontrolowanie przez 2 sekundy — nigdy nie uderzaj piętami ani głową o podłogę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knees bending during the lift (converting to tuck crunch)",
+        "faultPl": "Zginanie kolan podczas unoszenia (zamiana na tuck crunch)",
+        "cause": "Hip flexors or abs too weak to handle the long-lever straight-leg load — body cheats by shortening the lever",
+        "causePl": "Zbyt słabe zginacze biodra lub brzuch nie udźwigną długiej dźwigni z prostymi nogami — ciało oszukuje skracając dźwignię",
+        "cue": "Lock the knees and squeeze the quads. If you can't keep them straight, regress to cocoons or tuck-crunch for 4–6 weeks.",
+        "cuePl": "Zablokuj kolana i napnij czworogłowe. Jeśli nie potrafisz utrzymać prostych nóg, cofnij się do kokonów lub tuck-cruncha na 4–6 tygodni."
+      },
+      {
+        "fault": "Pulling with the neck / chin to chest",
+        "faultPl": "Szarpanie szyją / dociskanie brody do klatki",
+        "cause": "Trying to substitute neck flexors for weak rectus abdominis",
+        "causePl": "Próba zastąpienia słabego mięśnia prostego brzucha pracą zginaczy szyi",
+        "cue": "Look at your toes — keep a tennis-ball-sized gap under the chin. Reach with the hands, not the head.",
+        "cuePl": "Patrz na palce stóp — zachowaj odstęp wielkości piłki tenisowej pod brodą. Sięgaj rękami, nie głową."
+      },
+      {
+        "fault": "Using momentum — kipping or rocking",
+        "faultPl": "Wykorzystywanie rozpędu — kiping lub kołysanie",
+        "cause": "Going too fast or attempting too many reps; relying on inertia instead of muscular contraction",
+        "causePl": "Zbyt szybkie tempo lub zbyt wiele powtórzeń; poleganie na bezwładności zamiast skurczu mięśniowego",
+        "cue": "2 seconds up, 1 second hold at the V, 2 seconds down. Quality beats quantity.",
+        "cuePl": "2 sekundy w górę, 1 sekunda przytrzymania w pozycji 'V', 2 sekundy w dół. Jakość ważniejsza niż liczba powtórzeń."
+      },
+      {
+        "fault": "Lower back arching off the floor at the bottom",
+        "faultPl": "Wyginanie dolnego odcinka pleców w łuk w dolnej pozycji",
+        "cause": "Heels dropping with relaxed core; tight hip flexors pulling the lumbar spine into extension",
+        "causePl": "Pięty opadają z rozluźnionym brzuchem; napięte zginacze biodra ściągają lędźwie w wyprost",
+        "cue": "Keep heels 5–10 cm above the floor at the bottom and maintain a posterior pelvic tilt throughout the set",
+        "cuePl": "Trzymaj pięty 5–10 cm nad podłogą w dolnej pozycji i utrzymuj tyłopochylenie miednicy przez całą serię"
+      },
+      {
+        "fault": "Legs and torso not meeting simultaneously",
+        "faultPl": "Nogi i tułów nie spotykają się jednocześnie",
+        "cause": "Sequencing error — usually torso lifts first, legs trail (or vice versa); coordination gap",
+        "causePl": "Błąd sekwencji — zwykle tułów rusza pierwszy, nogi opóźnione (lub odwrotnie); brak koordynacji",
+        "cue": "Imagine a string from your toes to your fingertips pulling both ends toward the hips at the same instant",
+        "cuePl": "Wyobraź sobie sznurek od palców stóp do koniuszków palców rąk, który ściąga oba końce do bioder w tym samym momencie"
+      }
+    ],
+    "breathing": "Inhale during the extension phase (lying flat, legs and arms stretched). Forceful exhale during the fold into the V position — this maximises intra-abdominal pressure and rectus abdominis contraction.",
+    "breathingPl": "Wdech podczas fazy wyciągnięcia (leżenie płasko, nogi i ramiona wyciągnięte). Mocny wydech podczas składania do pozycji 'V' — maksymalizuje ciśnienie wewnątrzbrzuszne i skurcz mięśnia prostego brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Long-lever straight-leg loading combined with spinal flexion places very high compressive load on the lumbar discs. Switch to anti-extension core work (planks, dead bug) until pain-free.",
+      "modificationPl": "Długa dźwignia z prostymi nogami w połączeniu ze zgięciem kręgosłupa generuje bardzo duże obciążenie kompresyjne krążków lędźwiowych. Przejdź na ćwiczenia anty-ekstensji (deska, dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated full spinal flexion under high tension is contraindicated in lumbar disc protrusion (McGill protocol). Use neutral-spine core exercises instead.",
+      "modificationPl": "Powtarzane pełne zginanie kręgosłupa pod dużym napięciem jest przeciwwskazane przy przepuklinie krążka lędźwiowego (protokół McGilla). Zamiast tego ćwicz brzuch w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Aggressive rectus abdominis crunching against high intra-abdominal pressure can worsen midline separation (postpartum or otherwise). Build transverse abdominis first.",
+      "modificationPl": "Agresywne zwijanie mięśnia prostego brzucha przy wysokim ciśnieniu wewnątrzbrzusznym może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Najpierw odbuduj mięsień poprzeczny brzucha.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "Straight-leg variations place maximum load on the iliopsoas. Switch to bent-knee variations (cocoons, tuck crunch) until the strain heals — minimum 2–4 weeks rest from full ROM.",
+      "modificationPl": "Warianty z prostymi nogami maksymalnie obciążają mięsień biodrowo-lędźwiowy. Przejdź na warianty z ugiętymi kolanami (kokony, tuck crunch) do czasu wygojenia naciągnięcia — minimum 2–4 tygodnie przerwy od pełnego zakresu ruchu.",
+      "alternative": "tuck-crunch"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 (strength) | 3x12-15 (hypertrophy) | 3xAMRAP (finisher / conditioning)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "jackknife-sit-up.gif",
+    "frames_extracted": [
+      "frames/jackknife-sit-up/frame_0_start.png",
+      "frames/jackknife-sit-up/frame_1_early.png",
+      "frames/jackknife-sit-up/frame_2_mid.png",
+      "frames/jackknife-sit-up/frame_3_late.png",
+      "frames/jackknife-sit-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/jackknife-sit-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Klatka 0 (start): pełne leżenie na plecach, nogi proste złączone, ramiona za głowę — pełna ekstensja ciała, anatomia podświetla mięsień prosty brzucha na całej długości oraz zginacze biodra. Klatka 2 (mid): szczytowa pozycja składania — ciało zwinięte ciasno, ręce sięgają do stóp, miednica oderwana od podłogi, balans na pośladkach. UWAGA: w klatce mid jahel pokazuje stosunkowo mocno ugięte kolana (bliższe tuck-crunch niż klasycznemu prostemu V-up) — to częste w wizualizacjach 'jackknife sit-up' bo full straight-leg V to ekstremalna mobilność. W opisie i instrukcji zachowuję standardową definicję ćwiczenia (proste nogi) i dodaję wyraźne instrukcje o utrzymaniu wyprostu — to różnicuje od cocoons. Klatka 4 (end): powrót do wyciągnięcia z przezroczystym śladem fazy pośredniej (animacja). Ruch potwierdzony: jednoczesne unoszenie nóg i tułowia do spotkania nad biodrami. Klasyfikacja: core_flexion (zgięcie kręgosłupa + zgięcie biodra), compound (2 stawy: kręgosłup + biodra), bodyweight, sagittal, open chain. Force=pull (koncentryczny skurcz zginaczy). Mięśnie: rectus_abdominis P10 (główne obciążenie, pełna długość) + hip_flexors P8 (długa dźwignia z prostymi nogami zwiększa demand vs cocoons gdzie P7). Nazwa PL: 'Scyzoryk' to bezpośrednie i powszechnie używane tłumaczenie w polskim środowisku fitness (jackknife = scyzoryk). Dodatkowe aliasy 'sit-up scyzorykowy', 'scyzoryki', 'v-up', 'v-sit'. Difficulty=7 (intermediate-advanced) — wymaga koordynacji, siły core i mobilności hamstring; trudniejszy niż cocoons (6) ze względu na proste nogi. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — żelazna zasada bazy.",
+
+  "tags": ["bodyweight", "core", "abs", "no_equipment", "home_workout", "finisher", "hip_flexors", "v_shape"]
+}

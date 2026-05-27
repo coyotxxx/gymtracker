@@ -1,0 +1,203 @@
+{
+  "id": "cambered-bar-lying-row",
+  "name": "Cambered Bar Lying Row",
+  "namePl": "Wiosło leżąc z cambered bar (zakrzywiony gryf)",
+  "aliases": ["cambered bar chest-supported row", "prone cambered bar row", "lying cambered barbell row", "EZ-cambered prone row"],
+  "aliasesPl": ["wiosłowanie zakrzywionym gryfem leżąc", "wiosłowanie cambered bar z podparciem klatki", "prone row cambered bar", "wiosło leżąc na ławce płaskiej z cambered bar"],
+
+  "description": "Chest-supported horizontal row performed lying prone (face-down) on a flat bench with a cambered bar — a specialty barbell whose ends are bent downward, which extends the range of motion at the bottom of the rep. Because the torso is fully supported on the bench, the lower back is taken out of the equation and the entire pulling effort is delivered by the upper-back complex — lats, rhomboids and mid-trapezius — with strong assistance from the rear deltoids and biceps. The cambered shape lets the bar travel deeper than a straight barbell would (no collision with the bench), creating a longer stretch on the lats and a stronger contraction at the top. One of the cleanest mass-building back exercises with virtually zero spinal loading.",
+  "descriptionPl": "Ciąg poziomy z podparciem klatki, wykonywany leżąc na brzuchu na ławce płaskiej z cambered bar — specjalnym gryfem, którego końce są wygięte w dół, co zwiększa zakres ruchu w dolnej fazie powtórzenia. Ponieważ tułów jest w pełni podparty na ławce, dolny odcinek pleców zostaje wyłączony z pracy i cały wysiłek ciągu wykonuje kompleks pleców górnych — najszersze, równoległoboczne i środkowe czworoboczne — z mocnym wsparciem tylnych aktonów naramiennych i dwugłowych ramion. Wygięcie gryfu pozwala mu zejść głębiej niż w przypadku prostej sztangi (nie zderza się z ławką), co tworzy dłuższy rozciąg najszerszych i silniejszy skurcz na szczycie. Jedno z najczystszych ćwiczeń masowych na plecy, niemal bez obciążenia kręgosłupa.",
+
+  "instructions": [
+    "Load the cambered bar and place it on the floor directly under a flat bench. Set the bench high enough that the bar can hang with arms fully extended without plates touching the floor (use blocks or a high bench).",
+    "Lie face-down (prone) on the bench. Chest, abdomen and hips supported by the bench. Feet may be on the floor or on the bench for stability.",
+    "Reach down and grip the cambered bar with an overhand grip (pronated), hands shoulder-width or slightly wider, on the curved/cambered portions of the bar.",
+    "Let the bar hang fully — arms straight, shoulder blades stretched apart (protracted). This is the starting position with maximum lat stretch.",
+    "Brace the core lightly. Pull the bar straight up toward the underside of the bench by driving the elbows back and slightly out. Lead with the elbows, not the hands.",
+    "At the top of the rep, the bar should touch (or come close to) the bottom of the bench, with elbows behind the line of the torso. Squeeze the shoulder blades together hard.",
+    "Lower the bar under control along the same path until the arms are fully extended and the shoulder blades are stretched again. Full ROM every rep.",
+    "Keep the torso flat against the bench throughout the set — no lifting the chest off the bench to cheat the weight up."
+  ],
+  "instructionsPl": [
+    "Załaduj cambered bar i połóż go na podłodze bezpośrednio pod ławką płaską. Ustaw ławkę dostatecznie wysoko, by gryf mógł zwisać z pełnym wyprostem ramion bez dotykania obciążników do podłoża (użyj podestów lub wyższej ławki).",
+    "Połóż się twarzą w dół (prone) na ławce. Klatka, brzuch i biodra podparte na ławce. Stopy mogą stać na podłodze lub na ławce dla stabilności.",
+    "Sięgnij w dół i złap cambered bar nachwytem (dłonie w dół), ręce na szerokość barków lub nieco szerzej, na zakrzywionych częściach gryfu.",
+    "Pozwól gryfowi swobodnie zwisać — ramiona wyprostowane, łopatki rozciągnięte (protrakcja). To pozycja startowa z maksymalnym rozciągiem najszerszych.",
+    "Lekko napnij brzuch. Ciągnij gryf prosto w górę, w stronę spodu ławki, prowadząc łokcie w tył i lekko na boki. Prowadź łokciami, nie dłońmi.",
+    "Na szczycie powtórzenia gryf powinien dotknąć (lub zbliżyć się do) spodu ławki, łokcie za linią tułowia. Mocno ściśnij łopatki razem.",
+    "Opuść gryf w pełnej kontroli tą samą trajektorią aż do pełnego wyprostu ramion i ponownego rozciągu łopatek. Pełny zakres ruchu w każdym powtórzeniu.",
+    "Trzymaj tułów płasko przyklejony do ławki przez całą serię — bez odrywania klatki, by oszukać ciężar do góry."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower"],
+    "secondary": ["posterior_deltoids", "biceps_brachii", "brachialis"],
+    "stabilizers": ["forearms", "core", "trapezius_upper"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "P9",
+    "posterior_deltoids": "S8",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "core": "S4",
+    "trapezius_upper": "S5"
+  },
+
+  "equipment": {
+    "required": ["cambered_bar", "flat_bench"],
+    "optional": ["lifting_straps", "chalk", "bench_blocks", "weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["chest-supported-row", "dumbbell-bent-over-row", "seated-cable-row"],
+    "progression_to": ["barbell-bent-over-row", "pendlay-row", "t-bar-row"],
+    "alternatives": ["chest-supported-row", "barbell-bent-over-row", "t-bar-row", "seal-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench high enough that arms fully extend below it without plates hitting the floor",
+      "Lie fully prone — chest, abs and hips flat on the bench",
+      "Grip cambered bar overhand on the curved sections, shoulder-width or slightly wider",
+      "Start with arms fully extended and shoulder blades protracted (let them stretch)",
+      "Feet stable — floor or bench — head in neutral, looking down or slightly forward"
+    ],
+    "setup_cues_pl": [
+      "Ławka na tyle wysoka, by ramiona w pełni wyprostowane zwisały pod nią bez dotykania obciążników do podłogi",
+      "Połóż się całkowicie prone — klatka, brzuch i biodra płasko na ławce",
+      "Chwyć cambered bar nachwytem na zakrzywionych częściach, szerokość barków lub nieco szerzej",
+      "Zacznij z ramionami w pełnym wyproście i łopatkami w protrakcji (pozwól im się rozciągnąć)",
+      "Stopy stabilne — podłoga lub ławka — głowa w neutralnej pozycji, wzrok w dół lub lekko w przód"
+    ],
+    "execution_cues": [
+      "Pull with the elbows, drive them up toward the ceiling and slightly outward",
+      "Touch the underside of the bench with the bar — that is full ROM up top",
+      "Squeeze shoulder blades together HARD at the top, hold for 1 sec",
+      "Lower until arms are fully straight and you feel a stretch in the lats",
+      "Keep torso GLUED to the bench — no chest lift, no jerking"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciami, prowadź je w górę w stronę sufitu i lekko na zewnątrz",
+      "Dotknij gryfem spodu ławki — to pełen zakres na górze",
+      "MOCNO ściśnij łopatki razem na szczycie, przytrzymaj 1 sek.",
+      "Opuszczaj aż ramiona będą w pełni proste i poczujesz rozciągnięcie w najszerszych",
+      "Tułów PRZYKLEJONY do ławki — bez odrywania klatki, bez szarpania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the chest off the bench to cheat the weight up",
+        "faultPl": "Odrywanie klatki od ławki, by oszukać ciężar do góry",
+        "cause": "Load too heavy, ego lifting, or reverting to a free bent-over row pattern",
+        "causePl": "Zbyt duży ciężar, ego lifting, lub powrót do wzorca wolnego wiosła w opadzie",
+        "cue": "Reduce weight 20-30%. The whole point of this exercise is zero lower back loading — if you lift the chest, you killed the benefit. Glue your sternum to the bench.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Cały sens tego ćwiczenia to zerowe obciążenie pleców — jeśli odrywasz klatkę, zabijasz korzyść. Przyklej mostek do ławki."
+      },
+      {
+        "fault": "Partial range of motion — not lowering to full arm extension",
+        "faultPl": "Skrócony zakres ruchu — brak pełnego wyprostu ramion w dole",
+        "cause": "Bench too low and plates collide with floor, or trainee skips the stretch portion",
+        "causePl": "Ławka za nisko i obciążniki uderzają o podłoże, lub trening pomija fazę rozciągu",
+        "cue": "Raise the bench (blocks under legs or higher bench). The cambered bar gives you extra ROM at the bottom — USE IT. Full stretch = full hypertrophy.",
+        "cuePl": "Podnieś ławkę (klocki pod nogami lub wyższa ławka). Cambered bar daje dodatkowy zakres na dole — WYKORZYSTAJ TO. Pełen rozciąg = pełna hipertrofia."
+      },
+      {
+        "fault": "Pulling with the arms only, no scapular retraction",
+        "faultPl": "Ciąg samymi rękami, bez ściągnięcia łopatek",
+        "cause": "Bicep-dominant pattern, weak rhomboids/mid-traps, or rushed tempo",
+        "causePl": "Wzorzec zdominowany przez biceps, słabe równoległoboczne/środkowe czworoboczne lub zbyt szybkie tempo",
+        "cue": "At the top: 1-second squeeze of the shoulder blades. Think 'pinch a pencil between the scapulae.' Arms finish — back finishes the rep.",
+        "cuePl": "Na szczycie: 1-sek. ściśnięcie łopatek. Pomyśl 'przytrzaśnij ołówek między łopatkami'. Ramiona kończą — to plecy kończą powtórzenie."
+      },
+      {
+        "fault": "Flaring elbows 90 degrees out (turning into a face pull / rear-delt row)",
+        "faultPl": "Łokcie odgięte na 90 stopni (zmiana w face pull / wiosłowanie na tylne naramienne)",
+        "cause": "Grip too wide, or shifting focus from lats to rear delts",
+        "causePl": "Zbyt szeroki chwyt lub przesunięcie nacisku z najszerszych na tylne naramienne",
+        "cue": "Elbows back and SLIGHTLY out — about 45 degrees from the torso, not 90. Pull bar to belly side of bench (low), not chest side (high). Lats need elbows near the body.",
+        "cuePl": "Łokcie w tył i LEKKO na boki — około 45 stopni od tułowia, nie 90. Ciągnij gryf do strony brzucha ławki (nisko), nie do strony klatki (wysoko). Najszersze potrzebują łokci blisko ciała."
+      },
+      {
+        "fault": "Head craning up — neck extension under load",
+        "faultPl": "Wyciąganie głowy w górę — wyprost szyjny pod obciążeniem",
+        "cause": "Trying to see the mirror / look forward, habit from free-standing rows",
+        "causePl": "Próba patrzenia w lustro / w przód, nawyk z wolnych wioseł stojąc",
+        "cue": "Forehead light on the bench or eyes down. Neutral cervical spine. The bench supports you — let it support your neck too.",
+        "cuePl": "Czoło lekko na ławce lub wzrok w dół. Neutralny odcinek szyjny. Ławka cię podpiera — pozwól jej podpierać też szyję."
+      }
+    ],
+    "breathing": "Inhale and brace lightly at the bottom of the rep (arms extended). Exhale through the pull as the bar approaches the bench. Inhale on the controlled descent. Continuous breathing — no need for Valsalva because the spine is unloaded.",
+    "breathingPl": "Wdech i lekkie napięcie na dole powtórzenia (ramiona wyprostowane). Wydech w trakcie ciągu, gdy gryf zbliża się do ławki. Wdech podczas kontrolowanego opuszczania. Ciągłe oddychanie — Valsalva niepotrzebna, bo kręgosłup jest odciążony."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use narrower grip and reduce elbow flare. If pain at top, stop just short of bench contact. Or switch to neutral-grip variant.",
+      "modificationPl": "Stosuj węższy chwyt i zmniejsz odgięcie łokci na boki. Jeśli ból na szczycie, zatrzymaj się tuż przed dotknięciem ławki. Lub przejdź na wersję chwytem neutralnym.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "biceps_tendinopathy_or_distal_biceps_pain",
+      "severity": "caution",
+      "modification": "Reduce load and avoid full bottom stretch (cambered bar amplifies stretch loading on biceps tendons). Use straps to reduce supinator/biceps involvement.",
+      "modificationPl": "Zmniejsz obciążenie i unikaj pełnego dolnego rozciągu (cambered bar wzmacnia obciążenie ścięgien biceps w rozciągu). Użyj pasków, by zmniejszyć udział supinatora/biceps.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "acute_chest_or_rib_injury",
+      "severity": "modify",
+      "modification": "Lying prone places direct pressure on the sternum and rib cage. Avoid until healed, or use a higher angled bench / chest pad to redistribute pressure.",
+      "modificationPl": "Pozycja prone wywiera bezpośredni nacisk na mostek i klatkę piersiową. Unikaj do wygojenia, lub użyj wyższej skośnej ławki / podkładki na klatkę, by rozproszyć nacisk.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "wrist_pain_or_radial_ulnar_issues",
+      "severity": "caution",
+      "modification": "Cambered bar already reduces wrist strain vs straight barbell — but if pain persists, use lifting straps or switch to dumbbells for neutral wrist.",
+      "modificationPl": "Cambered bar już zmniejsza obciążenie nadgarstków vs prosta sztanga — ale jeśli ból nie ustępuje, użyj pasków lub przejdź na hantle dla neutralnego nadgarstka.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, primary use) | 4x6-8 (strength bias) | 3x12-15 (volume / pump) | 3x10-15 (general)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cambered-bar-lying-row.gif",
+    "frames_extracted": [
+      "frames/cambered-bar-lying-row/frame_0_start.png",
+      "frames/cambered-bar-lying-row/frame_1_early.png",
+      "frames/cambered-bar-lying-row/frame_2_mid.png",
+      "frames/cambered-bar-lying-row/frame_3_late.png",
+      "frames/cambered-bar-lying-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cambered-bar-lying-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 GIFa. Frame 0 (start): atleta leży prone (twarzą w dół) na ławce płaskiej, ramiona w pełnym wyproście zwisają pod ławką, cambered bar (wyraźnie widoczne wygięcie końców gryfu w dół — charakterystyczna 'fala') trzymany nachwytem na zakrzywionych częściach. Klatka, brzuch i biodra w pełni podparte. Frame 2 (mid): ruch koncentryczny — łokcie idą w górę i lekko na boki, gryf zbliża się do spodu ławki. Widoczna aktywacja najszerszych (na bokach), równoległobocznych (między łopatkami) i środkowych czworobocznych — wszystkie podświetlone na czerwono jak primary movers. Frame 4 (end): pełna kontrakcja, gryf praktycznie dotyka spodu ławki, łopatki ściągnięte. Tułów cały czas płasko na ławce — brak unoszenia klatki = brak obciążenia kręgosłupa, co jest kluczową korzyścią tego ćwiczenia. Equipment confirmed: cambered bar + flat bench + plates. Cambered bar zwiększa ROM w dole (końce gryfu zwisają niżej niż w prostym gryfie — pełniejszy stretch lats). Klasyfikacja pull_horizontal potwierdzona: tułów horyzontalny → ciąg horyzontalny względem tułowia. Bilateral (obie ręce ten sam gryf jednocześnie). Plane sagittal (łokcie poruszają się głównie w przód-tył względem tułowia). Mechanic compound (przegub barkowy + łokciowy + łopatka). Trzy primary movery na P9 — to klasyczne mass-builder dla mid-back, ale eliminuje obciążenie kręgosłupa vs barbell-bent-over-row. Difficulty=5 (intermediate, łatwiejsze technicznie niż barbell row bo nie ma hip hinge). Wszystkie pola PL napisane od zera, polski standard fitness (cambered bar = zakrzywiony gryf — termin techniczny pozostawiony w nawiasie dla jasności).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "cambered_bar", "chest_supported", "lower_back_friendly", "mid_back", "lat_developer", "prone_row", "specialty_bar"]
+}

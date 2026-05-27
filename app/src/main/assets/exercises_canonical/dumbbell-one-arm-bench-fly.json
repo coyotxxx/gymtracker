@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-one-arm-bench-fly",
+  "name": "Dumbbell One-Arm Bench Fly",
+  "namePl": "Fly z hantlą jednorącz na ławce",
+  "aliases": ["one-arm dumbbell fly", "single-arm DB fly", "unilateral dumbbell fly", "one-arm flat bench fly", "single-arm chest fly"],
+  "aliasesPl": ["jednoręczne rozpiętki hantlem na ławce", "rozpiętki jednorącz hantlem", "fly jednostronny z hantlem", "unilateral rozpiętki klatki", "rozpiętki jedną ręką z hantlem"],
+
+  "description": "Unilateral isolation exercise for the chest performed lying supine on a flat bench with a dumbbell in one hand at a time. The working arm travels in a wide arc — horizontal abduction at the bottom into horizontal adduction at the top — while the elbow stays frozen in a slight bend. The free hand rests on the chest or abdomen. Working one side at a time turns this from a pure isolation movement into a serious anti-rotation core challenge: the off-center load tries to rotate the torso toward the working side, and the obliques and deeper trunk stabilizers must fight to keep the shoulder blades pinned and hips square on the bench. Excellent for fixing left/right asymmetries, deepening mind-muscle connection per pec, and adding a stabilization stimulus that bilateral flys cannot provide.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na klatkę piersiową, wykonywane w leżeniu tyłem na ławce poziomej z hantlem w jednej ręce na raz. Pracujące ramię prowadzi szerokim łukiem — odwiedzenie poziome w dole i przywodzenie poziome w górze — przy zamrożonym lekkim ugięciu łokcia. Wolna ręka spoczywa na klatce lub brzuchu. Praca jednostronna zamienia czystą izolację w poważne wyzwanie antyrotacyjne dla brzucha: niesymetryczne obciążenie próbuje obrócić tułów w stronę pracującego ramienia, a skośne brzucha i głębsze stabilizatory tułowia muszą walczyć aby utrzymać łopatki przyklejone do ławki i biodra równo na ławce. Świetne do wyrównywania asymetrii lewo-prawo, pogłębiania czucia mięśnia per klatka oraz dodania bodźca stabilizacyjnego, którego rozpiętki obustronne nie dają.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with one dumbbell resting on the thigh of the working side, palm facing inward (neutral grip).",
+    "Lie back, using the thigh to kick the dumbbell up to chest level. Press it up over the chest, palm facing the midline.",
+    "Set the shoulder blades — retract and depress them firmly into the bench. Plant feet wide and flat for stability against the asymmetric load.",
+    "Place the free hand flat on the abdomen or chest, or grip the side of the bench. Brace the abs hard — the load will try to rotate you sideways.",
+    "Put a slight bend in the working elbow (about 10-20 degrees). Lock this angle and keep it frozen for the entire set.",
+    "Inhale and slowly lower the dumbbell out to the side in a wide arc. Lead with the elbow, hand follows. Resist torso rotation — keep both shoulder blades on the bench.",
+    "Stop when the dumbbell reaches roughly shoulder level and you feel a strong stretch across the working pec. Do not let that shoulder peel off the bench.",
+    "Reverse the motion by squeezing the chest, bringing the dumbbell back up in the same arc to over the chest. Do NOT bend or straighten the elbow during the movement.",
+    "Squeeze the working pec hard at the top, exhale. Complete all reps on one side, then switch the dumbbell to the other hand and repeat."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu poziomej ławki z hantlem opartym o udo strony pracującej, dłoń zwrócona do środka (chwyt neutralny).",
+    "Połóż się, wybijając udem hantel na wysokość klatki. Wyciśnij go nad klatkę, dłoń zwrócona do linii środkowej ciała.",
+    "Ustaw łopatki — ściągnij je i opuść mocno wciskając w ławkę. Stopy szeroko i płasko zaparte dla stabilności przeciw niesymetrycznemu obciążeniu.",
+    "Połóż wolną rękę płasko na brzuchu lub klatce, albo chwyć krawędź ławki. Mocno spnij brzuch — obciążenie będzie próbowało obrócić cię na bok.",
+    "Ugnij lekko łokieć pracującej ręki (około 10-20 stopni). Zablokuj ten kąt i utrzymaj go zamrożony przez całą serię.",
+    "Wdech i powoli opuszczaj hantel na bok szerokim łukiem. Prowadź łokciem, dłoń podąża. Opieraj się rotacji tułowia — utrzymaj obie łopatki na ławce.",
+    "Zatrzymaj się gdy hantel dojdzie mniej więcej na wysokość barku i poczujesz mocne rozciągnięcie pracującej klatki. Nie pozwól by ten bark oderwał się od ławki.",
+    "Odwróć kierunek ruchu spinając klatkę, prowadząc hantel z powrotem do góry tym samym łukiem nad klatkę. NIE zginaj ani nie prostuj łokcia podczas ruchu.",
+    "Mocno spinaj pracującą klatkę w górze, wydech. Wykonaj wszystkie powtórzenia na jedną stronę, potem przełóż hantel do drugiej ręki i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major"],
+    "secondary": ["anterior_deltoids", "obliques"],
+    "stabilizers": ["biceps_brachii", "serratus_anterior", "rotator_cuff", "core", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "S5",
+    "obliques": "S4",
+    "biceps_brachii": "T3",
+    "serratus_anterior": "T3",
+    "rotator_cuff": "T3",
+    "core": "T4",
+    "transverse_abdominis": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["wrist_wrap"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-fly", "dumbbell-bench-press", "machine-chest-press"],
+    "progression_to": ["incline-dumbbell-one-arm-fly", "one-arm-cable-fly", "one-arm-decline-dumbbell-fly"],
+    "alternatives": ["dumbbell-fly", "one-arm-cable-fly", "pec-deck", "incline-dumbbell-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "One dumbbell on the working-side thigh, kick it up to chest as you lie back",
+      "Both shoulder blades retracted and pinned to the bench — they stay that way",
+      "Free hand on the abdomen, abs braced HARD against rotation",
+      "Slight elbow bend on the working arm (10-20°) — lock it now",
+      "Feet planted wide for stability, hips square to the bench"
+    ],
+    "setup_cues_pl": [
+      "Jeden hantel na udzie strony pracującej, wybij go na klatkę gdy się kładziesz",
+      "Obie łopatki ściągnięte i przyklejone do ławki — i takie pozostają",
+      "Wolna ręka na brzuchu, brzuch MOCNO spięty przeciw rotacji",
+      "Lekkie ugięcie łokcia ręki pracującej (10-20°) — zablokuj już teraz",
+      "Stopy szeroko zaparte dla stabilności, biodra równo na ławce"
+    ],
+    "execution_cues": [
+      "Hug a giant barrel with one arm — arc, do not press",
+      "Fight rotation — both shoulder blades stay on the bench, hips don't twist",
+      "Stretch only until the hand reaches shoulder level — no deeper",
+      "Squeeze the working pec at the top, hand directly over the sternum",
+      "Eccentric ~3 seconds, concentric controlled — feel the chest, not the shoulder"
+    ],
+    "execution_cues_pl": [
+      "Obejmij wielką beczkę jedną ręką — łuk, nie wyciskanie",
+      "Walcz z rotacją — obie łopatki na ławce, biodra się nie skręcają",
+      "Rozciągaj tylko aż dłoń dojdzie na wysokość barku — nie głębiej",
+      "Spinaj pracującą klatkę w górze, dłoń bezpośrednio nad mostkiem",
+      "Faza ekscentryczna ~3 sekundy, koncentryczna kontrolowana — czuj klatkę, nie bark"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotating toward the working side (losing pinned shoulder blades)",
+        "faultPl": "Rotacja tułowia w stronę pracującej ręki (utrata przyklejonych łopatek)",
+        "cause": "Weak anti-rotation core, load too heavy for unilateral position, no conscious bracing of abs",
+        "causePl": "Słabe antyrotacyjne mięśnie brzucha, zbyt duży ciężar dla pozycji jednostronnej, brak świadomego spięcia brzucha",
+        "cue": "Both shoulder blades stay pinned to the bench. Brace the abs as if expecting a punch. If you rotate, drop the weight by 30%.",
+        "cuePl": "Obie łopatki przyklejone do ławki. Spnij brzuch jakbyś spodziewał się ciosu. Jeśli się obracasz, zmniejsz ciężar o 30%."
+      },
+      {
+        "fault": "Bending and straightening the elbow (turning the fly into a one-arm press)",
+        "faultPl": "Zginanie i prostowanie łokcia (zamiana rozpiętek w jednoręczne wyciskanie)",
+        "cause": "Load too heavy, triceps unconsciously recruited, lack of pec mind-muscle connection on the working side",
+        "causePl": "Zbyt duży ciężar, nieświadome włączanie tricepsa, brak czucia mięśnia piersiowego po pracującej stronie",
+        "cue": "Lock the elbow angle at setup and keep it frozen for the whole set. If you cannot, the weight is too heavy.",
+        "cuePl": "Zablokuj kąt w łokciu przy starcie i utrzymaj zamrożony przez całą serię. Jeśli nie umiesz, ciężar jest za duży."
+      },
+      {
+        "fault": "Going too deep — dumbbell well below shoulder level",
+        "faultPl": "Zbyt głębokie schodzenie — hantel znacznie poniżej linii barku",
+        "cause": "Ego-driven 'maximum stretch' mentality, lack of awareness of anterior capsule limits",
+        "causePl": "Mentalność 'maksymalne rozciągnięcie' napędzana ego, brak świadomości ograniczeń torebki przedniej stawu",
+        "cue": "The hand stops at shoulder height. Below that you stress the anterior shoulder capsule — flys are the #1 cause of pec tears.",
+        "cuePl": "Dłoń zatrzymuje się na wysokości barku. Niżej obciążasz torebkę przednią stawu — rozpiętki to najczęstsza przyczyna zerwań mięśnia piersiowego."
+      },
+      {
+        "fault": "Working shoulder peeling off the bench at the bottom",
+        "faultPl": "Pracujący bark odrywa się od ławki w dole",
+        "cause": "Lack of scapular control, load too heavy, ROM too deep for current mobility",
+        "causePl": "Brak kontroli łopatek, zbyt duży ciężar, ROM za głęboki dla aktualnej mobilności",
+        "cue": "If that shoulder lifts off the bench, you've gone past safe range. Stop the dumbbell higher and keep the blade pinned.",
+        "cuePl": "Jeśli ten bark unosi się z ławki, wyszedłeś za bezpieczny zakres. Zatrzymaj hantel wyżej i utrzymaj łopatkę przyklejoną."
+      },
+      {
+        "fault": "Reps and tempo not matched between sides (creating new asymmetry)",
+        "faultPl": "Powtórzenia i tempo niedopasowane między stronami (tworzenie nowej asymetrii)",
+        "cause": "Doing more on the strong side, rushing through the weak side, not counting honestly",
+        "causePl": "Robienie więcej na silniejszą stronę, pośpiech na słabszej stronie, nieuczciwe liczenie",
+        "cue": "ALWAYS start the unilateral set with the weak side, and never do more reps on the strong side than the weak side could.",
+        "cuePl": "ZAWSZE zaczynaj serię jednostronną od słabszej strony, i nigdy nie rób więcej powtórzeń na silniejszą stronę niż słabsza wytrzymała."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (arm opening to the stretch). Exhale forcefully during the concentric squeeze. Maintain firm intra-abdominal pressure throughout — the unilateral load demands constant core bracing to prevent torso rotation.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (rozkładanie ramienia do rozciągnięcia). Mocny wydech w fazie koncentrycznego ścisku. Utrzymuj mocne napięcie tłoczni brzusznej przez cały ruch — jednostronne obciążenie wymaga stałego spięcia brzucha aby zapobiec rotacji tułowia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_instability_or_capsulitis",
+      "severity": "modify",
+      "modification": "Unilateral flat fly puts the glenohumeral joint in horizontal abduction under load with added rotational stress on the trunk that can transfer to the shoulder. Limit stretch depth (stop hand well above shoulder level), reduce load and increase reps (12-15). Switch to one-arm cable fly with controlled ROM during recovery phases.",
+      "modificationPl": "Jednostronne rozpiętki ustawiają staw ramienny w odwiedzeniu poziomym pod obciążeniem z dodatkowym naprężeniem rotacyjnym tułowia, które może przenosić się na bark. Ogranicz głębokość rozciągania (zatrzymaj dłoń znacznie powyżej linii barku), zmniejsz obciążenie i zwiększ powtórzenia (12-15). W okresach rekonwalescencji przejdź na jednoręczne linki z kontrolowanym ROM.",
+      "alternative": "one-arm-cable-fly"
+    },
+    {
+      "condition": "pectoralis_strain_or_distal_tear_history",
+      "severity": "avoid",
+      "modification": "Dumbbell flys are statistically the #1 mechanism of pectoralis major tears, and unilateral version concentrates 100% of the load on the working side — even higher per-side risk than bilateral version. After any pec strain or tear history, avoid free-weight unilateral flys entirely until cleared by physiotherapist. Use machine or cable fly with limited ROM.",
+      "modificationPl": "Rozpiętki z hantlami są statystycznie najczęstszym mechanizmem zerwania mięśnia piersiowego większego, a wersja jednostronna koncentruje 100% obciążenia na pracującej stronie — jeszcze wyższe ryzyko per strona niż wersja obustronna. Po przebytym naderwaniu lub zerwaniu klatki całkowicie unikaj jednostronnych rozpiętek z wolnymi ciężarami do czasu zgody fizjoterapeuty. Stosuj maszynę lub linki z ograniczonym ROM.",
+      "alternative": "pec-deck"
+    },
+    {
+      "condition": "lumbar_disc_injury_or_chronic_low_back_pain",
+      "severity": "modify",
+      "modification": "The asymmetric load creates rotational torque on the lumbar spine. With disc injury or chronic low back pain this rotational stress can flare symptoms. Reduce load 30-40%, focus on rigid bracing, and consider switching to seated machine versions (pec-deck) which eliminate the anti-rotation demand entirely.",
+      "modificationPl": "Niesymetryczne obciążenie generuje moment rotacyjny na odcinek lędźwiowy kręgosłupa. Przy urazie dysku lub przewlekłym bólu krzyża to naprężenie rotacyjne może zaostrzyć objawy. Zmniejsz obciążenie o 30-40%, skup się na sztywnym spięciu brzucha, a najlepiej przejdź na siedzące wersje maszynowe (butterfly), które eliminują wymóg antyrotacji całkowicie.",
+      "alternative": "pec-deck"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Horizontal abduction in the bottom position can pinch tissue under the acromion, and unilateral loading often pulls the working shoulder forward at the bottom. Reduce stretch depth — stop the dumbbell with hand at chest level (not shoulder level). Switch to one-arm cable fly which lets you keep tension without going to maximum stretch.",
+      "modificationPl": "Odwiedzenie poziome w dolnej pozycji może uciskać tkanki pod wyrostkiem barkowym, a obciążenie jednostronne często ciągnie pracujący bark do przodu w dole. Zmniejsz głębokość rozciągania — zatrzymaj hantel z dłonią na wysokości klatki (nie barku). Przejdź na jednoręczne linki, które pozwalają utrzymać napięcie bez schodzenia do maksymalnego rozciągnięcia.",
+      "alternative": "one-arm-cable-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per side (hypertrophy, default) | 3x12-20 per side (pump/finisher) | 3-4x8-12 per side (mass focus with strict 3-1-2-1 tempo)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-one-arm-bench-fly.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-bench-fly/frame_0_start.png",
+      "frames/dumbbell-one-arm-bench-fly/frame_1_early.png",
+      "frames/dumbbell-one-arm-bench-fly/frame_2_mid.png",
+      "frames/dumbbell-one-arm-bench-fly/frame_3_late.png",
+      "frames/dumbbell-one-arm-bench-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-one-arm-bench-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 (dół/rozciągnięcie): osoba leży na ławce poziomej, JEDNO ramię (lewe) rozłożone szeroko w bok na wysokości barku, hantel przy podłodze obok ławki, łokieć z lekkim zgięciem, druga ręka spoczywa na klatce/brzuchu. Pracująca strona klatki piersiowej (lewa) mocno podświetlona na czerwono — pełne rozciągnięcie w horizontal abduction. Frame 2 (góra/skurcz): hantel w jednej ręce nad klatką, ramię uniesione pionowo, łokieć nadal w stałym lekkim zgięciu (NIE wyprostowany jak w pressie), druga ręka nadal na klatce. Frame 4 (powrót na dół z ghost trail): widać pełen łuk z góry do dołu — klasyczny ruch fly, tylko jednostronnie. Klucze identyfikacji: (1) JEDNA ręka pracuje, druga spoczywa na ciele, (2) brak zmiany kąta w łokciu w trakcie ruchu, (3) ławka pozioma, (4) szeroki łuk a nie pressing, (5) asymetryczne obciążenie tułowia widoczne jako rotacyjne wyzwanie. movement_pattern: isolation_fly, laterality: unilateral, plane: transverse. primary: pectoralis_major P10, secondary: anterior_deltoids S5 + obliques S4 (anti-rotation core challenge unikalny dla wersji jednostronnej) — zgodne z briefem. Difficulty 6 (o 1 wyżej niż bilateralna dumbbell-fly która ma 5: dodaje wymóg antyrotacji + ryzyko asymetrii reps lewo-prawo). PL nazwa zgodna z polskim standardem fitness ('Fly z hantlą jednorącz na ławce'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["bodybuilding", "chest", "pectorals", "isolation", "dumbbell", "flat_bench", "upper_body", "hypertrophy", "fly", "horizontal_adduction", "unilateral", "anti_rotation", "core_stability"]
+}

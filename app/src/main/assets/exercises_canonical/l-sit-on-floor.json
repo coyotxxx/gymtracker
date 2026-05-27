@@ -1,0 +1,201 @@
+{
+  "id": "l-sit-on-floor",
+  "name": "L-Sit on Floor",
+  "namePl": "L-sit na podłodze",
+  "aliases": ["floor l-sit", "l-sit hold", "ground l-sit", "manna progression l-sit"],
+  "aliasesPl": ["l-sit", "el-sit", "siad L na podłodze", "podpor w siadzie L", "trzymanie L na podłodze", "hold w pozycji L"],
+
+  "description": "Advanced bodyweight isometric core and shoulder exercise rooted in gymnastics. From a long sit on the floor, the lifter places the palms flat on the ground beside the hips, depresses the shoulders, and pushes the entire body — hips, glutes, and straight legs — off the floor, holding the body in a rigid 'L' shape. Demands enormous static contraction of the rectus abdominis and hip flexors to keep the legs parallel to the floor, while the triceps and serratus anterior support the bodyweight through locked elbows. A classic skill-strength move and a gateway to higher-level gymnastic holds.",
+  "descriptionPl": "Zaawansowane statyczne (izometryczne) ćwiczenie na brzuch i barki z masą własnego ciała, wywodzące się z gimnastyki. Z siadu prostego ćwiczący kładzie dłonie płasko na podłodze obok bioder, ściąga barki w dół i unosi całe ciało — biodra, pośladki i wyprostowane nogi — nad podłogę, utrzymując sztywną pozycję litery 'L'. Wymaga ogromnego statycznego skurczu mięśnia prostego brzucha oraz zginaczy biodra, by trzymać nogi równolegle do podłogi, a tricepsy i mięsień zębaty przedni dźwigają masę ciała przy zablokowanych łokciach. Klasyczny element siły umiejętnościowej (skill-strength) i brama do wyższych elementów gimnastycznych.",
+
+  "instructions": [
+    "Sit on the floor with your legs fully extended in front of you, feet together, toes pointed. Sit tall — do not slouch.",
+    "Place your palms flat on the floor just outside your hips, fingers pointing forward. Arms are straight, elbows locked.",
+    "Actively press the palms into the floor and depress your shoulders (shrug downward away from the ears). Your scapulae protract slightly as you push the floor away.",
+    "Brace the core hard, contract the hip flexors and quadriceps, point the toes, and push down through the hands to lift your hips, glutes, and straight legs off the floor at the same time.",
+    "Hold the L position: legs parallel to the floor (or as close as your strength allows), torso vertical, arms straight, shoulders depressed. The whole body is suspended on your two locked arms.",
+    "Maintain the hold for the prescribed time (start with 5–10 seconds). Breathe shallowly through the diaphragm — do not hold your breath.",
+    "Lower under control: gently set the heels down first, then the hips, returning to the long-sit starting position. Rest fully before the next rep."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z nogami całkowicie wyprostowanymi przed sobą, stopy razem, palce stóp naciągnięte. Wyprostuj plecy — nie garb się.",
+    "Połóż dłonie płasko na podłodze tuż obok bioder (na zewnątrz), palce skierowane do przodu. Ramiona wyprostowane, łokcie zablokowane.",
+    "Aktywnie wciśnij dłonie w podłogę i ściągnij barki w dół (oddal je od uszu). Łopatki lekko się rozsuwają, gdy odpychasz podłogę.",
+    "Mocno napnij brzuch, ściśnij zginacze biodra i czworogłowe ud, naciągnij palce stóp i wciskając dłonie w podłogę unieś jednocześnie biodra, pośladki i wyprostowane nogi nad podłogę.",
+    "Utrzymaj pozycję L: nogi równolegle do podłogi (lub tak blisko, jak pozwala siła), tułów pionowo, ramiona proste, barki ściągnięte w dół. Całe ciało zawieszone jest na dwóch zablokowanych ramionach.",
+    "Utrzymaj pozycję przez zalecany czas (zacznij od 5–10 sekund). Oddychaj płytko przeponą — nie wstrzymuj oddechu.",
+    "Opuść się kontrolowanie: najpierw delikatnie postaw pięty, potem biodra, wracając do siadu prostego. Odpocznij w pełni przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_isometric",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors", "triceps_brachii"],
+    "secondary": ["serratus_anterior", "lats", "quadriceps"],
+    "stabilizers": ["obliques", "deltoids", "wrist_flexors"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "hip_flexors": "P9",
+    "triceps_brachii": "P8",
+    "serratus_anterior": "S7",
+    "lats": "S6",
+    "quadriceps": "S5",
+    "obliques": "T4",
+    "deltoids": "T4",
+    "wrist_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["parallettes", "mat", "yoga_blocks"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["tuck-l-sit", "hanging-knee-raise", "dip", "compression-sit"],
+    "progression_to": ["v-sit", "manna", "straddle-l-sit"],
+    "alternatives": ["tuck-l-sit", "one-leg-l-sit", "l-sit-on-parallettes", "hanging-l-sit"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Long sit — legs fully straight, toes pointed",
+      "Hands flat beside hips, fingers forward",
+      "Lock the elbows — arms like steel pillars",
+      "Shoulders pulled DOWN, away from the ears",
+      "Inhale, brace abs, contract quads before lifting"
+    ],
+    "setup_cues_pl": [
+      "Siad prosty — nogi w pełni wyprostowane, palce stóp naciągnięte",
+      "Dłonie płasko obok bioder, palce do przodu",
+      "Zablokuj łokcie — ramiona jak stalowe filary",
+      "Barki ściągnięte W DÓŁ, z dala od uszu",
+      "Wdech, napnij brzuch, ściśnij czworogłowe przed uniesieniem"
+    ],
+    "execution_cues": [
+      "Push the floor away — don't 'lift', PRESS down",
+      "Crunch the abs hard — pull the ribs toward the hips",
+      "Toes higher than the knees — actively raise the legs",
+      "Hollow body shape — chest slightly rounded forward",
+      "Breathe shallow through the nose — never hold breath"
+    ],
+    "execution_cues_pl": [
+      "Odpychaj podłogę — nie 'unoś', tylko WCISKAJ w dół",
+      "Mocno napnij brzuch — ściągnij żebra w stronę bioder",
+      "Palce stóp wyżej niż kolana — aktywnie unoś nogi",
+      "Sylwetka 'hollow body' — klatka lekko zaokrąglona do przodu",
+      "Oddychaj płytko nosem — nigdy nie wstrzymuj oddechu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knees bent / piked legs instead of straight",
+        "faultPl": "Ugięte kolana / podkurczone nogi zamiast wyprostowanych",
+        "cause": "Insufficient hip flexor and quadriceps strength to hold full leg extension",
+        "causePl": "Niewystarczająca siła zginaczy biodra i czworogłowych, by utrzymać pełne wyprostowanie nóg",
+        "cue": "Regress to tuck L-sit or one-leg L-sit first. Squeeze the quads HARD — 'break the knees backward'",
+        "cuePl": "Najpierw cofnij się do tuck l-sit lub jednonożnej wersji. Mocno napnij czworogłowe — 'wypchnij kolana do tyłu'"
+      },
+      {
+        "fault": "Shoulders shrugged up to the ears",
+        "faultPl": "Barki podciągnięte do uszu",
+        "cause": "Lack of scapular depression strength; instinct to 'lift' instead of press down",
+        "causePl": "Brak siły depresji łopatek; instynkt 'unoszenia' zamiast wciskania w dół",
+        "cue": "Actively shrug shoulders DOWN — make the neck look long. Train scap dips and active hangs",
+        "cuePl": "Aktywnie ściągaj barki W DÓŁ — niech szyja wygląda długo. Trenuj scap dipy i active hang"
+      },
+      {
+        "fault": "Hips barely leave the floor / legs drop below parallel",
+        "faultPl": "Biodra ledwo odrywają się od podłogi / nogi opadają poniżej równoległej",
+        "cause": "Weak compression strength (combined rectus + hip flexors); short arms requiring blocks/parallettes",
+        "causePl": "Słaba siła kompresji (rectus + zginacze biodra razem); krótkie ramiona wymagające klocków/parallet",
+        "cue": "Use parallettes or yoga blocks under the hands to give yourself room. Train seated compression lifts",
+        "cuePl": "Użyj parallet lub klocków jogi pod dłońmi, żeby zyskać przestrzeń. Trenuj compression lifts w siadzie"
+      },
+      {
+        "fault": "Holding breath during the hold (Valsalva on isometric)",
+        "faultPl": "Wstrzymywanie oddechu podczas trzymania (Valsalva przy izometrii)",
+        "cause": "Tendency to lock the diaphragm with the abs when bracing maximally",
+        "causePl": "Tendencja do blokowania przepony razem z brzuchem przy maksymalnym napięciu",
+        "cue": "Short, shallow nasal breaths. Brace the abs hard but keep the diaphragm moving",
+        "cuePl": "Krótkie, płytkie wdechy nosem. Mocno napięty brzuch, ale przepona wciąż pracuje"
+      },
+      {
+        "fault": "Wrists collapsing / pain in the wrists",
+        "faultPl": "Załamywanie się nadgarstków / ból w nadgarstkach",
+        "cause": "Full extension wrist position under load with weak wrist stabilizers",
+        "causePl": "Pełne wyprostowanie nadgarstków pod obciążeniem przy słabych stabilizatorach nadgarstka",
+        "cue": "Use parallettes (neutral grip) or push-up handles to keep wrists straight. Build wrist conditioning gradually",
+        "cuePl": "Użyj parallet (chwyt neutralny) lub uchwytów do pompek, by trzymać nadgarstki prosto. Stopniowo wzmacniaj nadgarstki"
+      }
+    ],
+    "breathing": "Inhale fully and brace BEFORE lifting off. During the hold breathe shallowly through the nose — short sips of air, keep the abs locked. Exhale on the way down. Never hold breath for longer than 5 seconds.",
+    "breathingPl": "Pełen wdech i napięcie brzucha PRZED uniesieniem. W trakcie trzymania oddychaj płytko nosem — krótkie haust powietrza, brzuch cały czas napięty. Wydech podczas opuszczania. Nigdy nie wstrzymuj oddechu dłużej niż 5 sekund."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_injury",
+      "severity": "avoid",
+      "modification": "Full bodyweight on extended wrists is highly contraindicated for acute wrist sprains, TFCC tears, or carpal tunnel flares. Switch to parallettes (neutral grip) or hanging L-sit on bars (no wrist extension).",
+      "modificationPl": "Pełna masa ciała na wyprostowanych nadgarstkach jest mocno przeciwwskazana przy ostrym skręceniu nadgarstka, urazach TFCC lub zaostrzeniu zespołu cieśni nadgarstka. Przejdź na parallety (chwyt neutralny) lub l-sit zwisem na drążku (brak wyprostu nadgarstka).",
+      "alternative": "hanging-l-sit"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Heavy scapular depression and triceps loading can aggravate impingement if shoulder mobility is poor. Improve scap control first with scap dips and active hangs before attempting full L-sit.",
+      "modificationPl": "Mocna depresja łopatek i obciążenie tricepsu mogą nasilić konflikt podbarkowy przy słabej mobilności barku. Najpierw popraw kontrolę łopatek przez scap dipy i active hangi, zanim spróbujesz pełnego l-sit.",
+      "alternative": "tuck-l-sit"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "L-sit is a strong hip flexor exercise that can pull on the lumbar spine. People with disc issues should master tuck L-sit and dead-bug first, ensuring no pain before progressing to straight legs.",
+      "modificationPl": "L-sit to mocne ćwiczenie zginaczy biodra, które może pociągać kręgosłup lędźwiowy. Osoby z problemami dyskowymi powinny najpierw opanować tuck l-sit i dead-bug, upewniając się że nie ma bólu, zanim przejdą do prostych nóg.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "hamstring_strain",
+      "severity": "caution",
+      "modification": "Active straight-leg compression with pointed toes loads the hamstrings eccentrically while they oppose the hip flexors. Avoid during acute hamstring strain — use tuck variation.",
+      "modificationPl": "Aktywna kompresja z wyprostowanymi nogami i naciągniętymi palcami obciąża dwugłowe uda ekscentrycznie, gdy przeciwstawiają się zginaczom biodra. Unikaj podczas ostrego naciągnięcia dwugłowej — użyj wariantu tuck.",
+      "alternative": "tuck-l-sit"
+    }
+  ],
+
+  "typical_sets_reps": "5x10s hold (beginner) | 4x20s hold (intermediate) | 3x30-45s hold (advanced) | EMOM 10x15s (conditioning)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "l-sit-on-floor.gif",
+    "frames_extracted": [
+      "frames/l-sit-on-floor/frame_0_start.png",
+      "frames/l-sit-on-floor/frame_1_early.png",
+      "frames/l-sit-on-floor/frame_2_mid.png",
+      "frames/l-sit-on-floor/frame_3_late.png",
+      "frames/l-sit-on-floor/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/l-sit-on-floor"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): siad prosty na podłodze, dłonie płasko obok bioder, nogi w pełni wyprostowane do przodu, palce stóp naciągnięte; podświetlone czerwone obszary: rectus abdominis (przód brzucha), tricepsy ramienia, hip flexors. Klatka 2 (mid): pełny lift — biodra, pośladki i nogi uniesione nad podłogą, ciało zawieszone na dwóch zablokowanych ramionach, nogi nadal proste i równolegle (klasyczna pozycja L), tułów lekko pochylony do przodu (hollow). Klatka 4 (end): powrót do siadu prostego z lekkim śladem pozycji uniesionej. Ruch potwierdzony: izometryczny hold, biodra/pośladki/nogi nad podłogą, push przez ramiona. Klasyfikacja: core_isometric + mechanic=isometric + force=static + plane=sagittal + kinetic_chain=closed (dłonie zaparte o podłogę). Mięśnie główne: rectus_abdominis (P9 — utrzymanie zgięcia tułowia + kompresja), hip_flexors (P9 — utrzymanie nóg w poziomie wbrew grawitacji), triceps_brachii (P8 — dźwiganie masy ciała na zablokowanych łokciach). Secondary: serratus_anterior (protrakcja łopatek i depresja), lats (depresja barków), quadriceps (lock kolan). Nazwa PL: 'L-sit na podłodze' — najczęstsza forma używana w środowisku calisthenics/gimnastyki PL, dodałem aliasy 'el-sit' (slang), 'siad L', 'hold w pozycji L'. Difficulty=9, level=advanced (ćwiczenie wymaga zaawansowanej siły kompresji + depresji barków + tricepsu — początkujący nie unoszą bioder). Bilateral (symetryczne, oba ramiona/nogi). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "isometric", "static_hold", "gymnastics", "calisthenics", "advanced", "skill_strength", "no_equipment", "triceps", "compression"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "barbell-standing-front-raise-over-head",
+  "name": "Barbell Standing Front Raise Over Head",
+  "namePl": "Wznosy frontowe sztangi nad głowę w staniu",
+  "aliases": ["barbell front raise overhead", "full ROM barbell front raise", "barbell front raise to overhead", "extended barbell front raise"],
+  "aliasesPl": ["wznosy sztangi w przód do góry", "wznosy frontowe sztangi do pełnego zakresu", "front raise nad głowę ze sztangą", "wznosy sztangi w przód z pełnym ROM"],
+
+  "description": "Hybrid isolation exercise combining a barbell front raise with an overhead reach. The lifter stands tall with a barbell in a pronated grip and raises it forward through the sagittal plane with straight arms — but instead of stopping at shoulder height, continues the arc until the bar is held overhead with arms fully extended above the head. This extended range of motion shifts emphasis through the deltoid (anterior in the lower half, lateral in the mid-range, full deltoid wrap and upper trapezius in the overhead portion) and recruits serratus anterior for upward scapular rotation. Provides longer time-under-tension and a stronger overhead-stability stimulus than a standard front raise.",
+  "descriptionPl": "Hybrydowe ćwiczenie izolowane łączące wznosy frontowe sztangi z sięgnięciem nad głowę. Ćwiczący stoi prosto trzymając sztangę nachwytem górnym i unosi ją w przód po łuku w płaszczyźnie strzałkowej na wyprostowanych ramionach — ale zamiast zatrzymać się na wysokości barków, kontynuuje ruch aż sztanga znajdzie się nad głową z ramionami w pełni wyprostowanymi. Wydłużony zakres ruchu zmienia akcent obciążenia mięśnia naramiennego (przedni akton w dolnej połowie, boczny w połowie zakresu, pełna obręcz naramiennego oraz kaptur górny w pozycji nad głową) i włącza mięsień zębaty przedni do rotacji łopatki w górę. Daje dłuższy czas pod napięciem oraz silniejszy bodziec stabilizacyjny dla pozycji overhead niż klasyczne wznosy frontowe.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, knees soft. Grip the barbell with a pronated (palms down) grip slightly wider than shoulder-width.",
+    "Let the bar hang at arms' length in front of your thighs, arms fully extended with a soft (not locked) elbow.",
+    "Brace your core, lift your chest, pull your shoulders back and down. Squeeze glutes — no swinging, no leg drive.",
+    "With straight arms, begin raising the bar forward in a smooth arc, leading with the back of your hands. Exhale through the lift.",
+    "Continue the arc past shoulder height — allow your shoulders to flex overhead and your scapulae to rotate upward naturally.",
+    "Finish with the bar held directly overhead, arms fully extended, biceps near the ears. Pause for 1 second at the top.",
+    "Reverse the path under control over 2-3 seconds back to the starting position. Inhale on the descent.",
+    "Keep arms straight throughout — do not bend the elbows to convert the movement into a press.",
+    "Stay vertical: ears over hips, no lumbar extension to help the bar overhead. Use a load you can move strictly."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, kolana lekko ugięte. Złap sztangę nachwytem górnym (dłonie w dół) nieco szerzej niż na szerokość barków.",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przed udami, łokcie wyprostowane ale nie zablokowane.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół. Spinaj pośladki — bez bujania, bez wybijania nogami.",
+    "Z wyprostowanymi ramionami zaczynaj unosić sztangę w przód po łuku, prowadząc grzbietami dłoni. Wydychaj podczas unoszenia.",
+    "Kontynuuj łuk powyżej linii barków — pozwól by stawy ramienne zgięły się do pozycji nad głową, a łopatki naturalnie zrotowały w górę.",
+    "Zakończ ruch ze sztangą bezpośrednio nad głową, ramiona w pełni wyprostowane, biceps blisko uszu. Zatrzymaj na 1 sekundę.",
+    "Wracaj tym samym torem w sposób kontrolowany przez 2-3 sekundy do pozycji wyjściowej. Wdech podczas opuszczania.",
+    "Trzymaj ramiona wyprostowane przez cały ruch — nie zginaj łokci, żeby nie zamienić wznosu w wyciskanie.",
+    "Stój pionowo: uszy nad biodrami, żadnego odchylania lędźwiowego do tyłu aby wepchnąć sztangę nad głowę. Używaj ciężaru, którym ruszysz technicznie czysto."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids"],
+    "secondary": ["upper_trapezius", "serratus_anterior", "upper_pectorals"],
+    "stabilizers": ["core", "rotator_cuff", "forearm_flexors", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P8",
+    "upper_trapezius": "S6",
+    "serratus_anterior": "S5",
+    "upper_pectorals": "S3",
+    "core": "T4",
+    "rotator_cuff": "T3",
+    "forearm_flexors": "T2",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-front-raise", "dumbbell-front-raise", "overhead-mobility-baseline"],
+    "progression_to": ["barbell-overhead-press", "barbell-push-press", "plate-front-raise-over-head"],
+    "alternatives": ["dumbbell-front-raise-to-overhead", "plate-front-raise-over-head", "cable-front-raise-to-overhead", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft, glutes squeezed",
+      "Pronated grip slightly wider than shoulders",
+      "Bar resting against thighs, arms straight",
+      "Chest up, shoulders pulled back and down",
+      "Brace core hard — this is a long lever movement"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte, pośladki spięte",
+      "Chwyt nachwytem górnym nieco szerzej niż barki",
+      "Sztanga oparta o uda, ramiona wyprostowane",
+      "Klatka w górze, barki ściągnięte w tył i w dół",
+      "Mocno napnij brzuch — to ruch z długą dźwignią"
+    ],
+    "execution_cues": [
+      "Lead with the back of your hands all the way overhead",
+      "Keep arms locked straight — never bend the elbow",
+      "Let scapulae rotate up naturally past shoulder height",
+      "Bar finishes directly above ears — biceps to ears",
+      "Lower slowly through the same arc — 2-3 seconds eccentric"
+    ],
+    "execution_cues_pl": [
+      "Prowadź grzbietami dłoni aż do pozycji nad głową",
+      "Trzymaj ramiona wyprostowane — nigdy nie zginaj łokcia",
+      "Pozwól łopatkom naturalnie zrotować w górę powyżej linii barków",
+      "Sztanga kończy ruch bezpośrednio nad uszami — biceps przy uszach",
+      "Opuszczaj wolno tym samym łukiem — 2-3 sekundy fazy ekscentrycznej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows to push the bar overhead (turning the lift into a press)",
+        "faultPl": "Zginanie łokci aby wepchnąć sztangę nad głowę (zamiana wznosu w wyciskanie)",
+        "cause": "Load too heavy for strict front raise mechanics — the lifter recruits triceps and pecs to finish the rep",
+        "causePl": "Zbyt duży ciężar dla ścisłej techniki wznosu — ćwiczący włącza triceps i klatkę aby dokończyć powtórzenie",
+        "cue": "Lock the elbow angle at setup. If you have to bend the elbow to finish overhead, the weight is too heavy.",
+        "cuePl": "Zablokuj kąt w łokciu już od początku. Jeśli musisz zginać łokieć aby dokończyć ruch nad głową — ciężar jest za duży."
+      },
+      {
+        "fault": "Hyperextending the lower back to lever the bar overhead",
+        "faultPl": "Przeprostowanie odcinka lędźwiowego aby wydźwignąć sztangę nad głowę",
+        "cause": "Limited shoulder flexion mobility OR weak anterior deltoid — lifter compensates with lumbar extension to reach overhead position",
+        "causePl": "Ograniczona ruchomość zgięcia barku LUB słabość przedniego aktonu naramiennego — ćwiczący kompensuje wyprostem lędźwiowym aby osiągnąć pozycję nad głową",
+        "cue": "Ribs down, glutes squeezed. If you can't reach overhead with vertical torso — your shoulder mobility is the limiter, not the load.",
+        "cuePl": "Żebra w dół, pośladki spięte. Jeśli nie sięgasz nad głowę z pionowym tułowiem — ogranicza Cię ruchomość barku, nie ciężar."
+      },
+      {
+        "fault": "Swinging the bar up with hip drive from the bottom",
+        "faultPl": "Wybijanie sztangi biodrami z dolnej pozycji",
+        "cause": "Trying to use leg/hip momentum to get past the hardest mechanical point (shoulder height)",
+        "causePl": "Próba użycia pędu nóg/bioder aby przejść przez najtrudniejszy punkt mechaniczny (wysokość barków)",
+        "cue": "Start every rep from a dead stop with bar resting on thighs. No knee bend, no hip thrust.",
+        "cuePl": "Każde powtórzenie zaczynaj z zatrzymania, sztanga oparta o uda. Bez zginania kolan, bez wypchania bioder."
+      },
+      {
+        "fault": "Shrugging shoulders up to the ears at the top",
+        "faultPl": "Wzruszanie barkami do uszu w górnej pozycji",
+        "cause": "Upper trapezius dominance because deltoid lacks strength to hold the bar in pure overhead reach without scapular elevation",
+        "causePl": "Dominacja kaptura górnego, bo naramienny nie ma siły utrzymać sztangi nad głową w czystej pozycji bez podnoszenia łopatek",
+        "cue": "Long neck even at the top. Allow scapular upward rotation but do not elevate the shoulders into the ears.",
+        "cuePl": "Długa szyja nawet w górze. Pozwól łopatkom rotować w górę, ale nie podnoś barków do uszu."
+      },
+      {
+        "fault": "Asymmetric path — one arm leads overhead, the other lags behind",
+        "faultPl": "Asymetryczny tor — jedno ramię prowadzi nad głowę, drugie zostaje w tyle",
+        "cause": "Strength or mobility imbalance between shoulders, or grip too narrow allowing wrist roll",
+        "causePl": "Dysproporcja siły lub ruchomości między barkami, lub zbyt wąski chwyt pozwalający na przekręcanie nadgarstków",
+        "cue": "Watch the bar in a mirror. Both ends must rise and finish at the same height. If one lags — train each side unilaterally first.",
+        "cuePl": "Obserwuj sztangę w lustrze. Oba końce muszą unosić się i kończyć na tej samej wysokości. Jeśli jeden zostaje — trenuj każdą stronę jednostronnie."
+      }
+    ],
+    "breathing": "Inhale before initiating the lift. Exhale during the concentric (from thighs to overhead). Inhale during the eccentric (lowering back to thighs). Maintain a firm brace throughout — the overhead position increases lumbar stress.",
+    "breathingPl": "Wdech przed rozpoczęciem ruchu. Wydech podczas fazy koncentrycznej (od ud do pozycji nad głową). Wdech podczas fazy ekscentrycznej (opuszczanie do ud). Utrzymuj mocne napięcie brzucha przez całą serię — pozycja nad głową zwiększa obciążenie odcinka lędźwiowego."
+  },
+
+  "contraindications": [
+    {
+      "condition": "limited_shoulder_flexion_mobility",
+      "severity": "modify",
+      "modification": "Full overhead position requires ~180 degrees of shoulder flexion. If you cannot reach overhead with a vertical torso and ribs down, limit ROM to your achievable end-range (usually 140-160 degrees) and work mobility separately. Forcing the position causes lumbar compensation.",
+      "modificationPl": "Pełna pozycja nad głową wymaga ~180 stopni zgięcia barku. Jeśli nie sięgasz nad głowę z pionowym tułowiem i żebrami w dół, ogranicz zakres do osiągalnego (zwykle 140-160 stopni) i pracuj nad ruchomością osobno. Forsowanie pozycji powoduje kompensację lędźwiową.",
+      "alternative": "barbell-front-raise"
+    },
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "avoid",
+      "modification": "Pronated grip with forward flexion through full ROM is one of the most provocative movements for subacromial impingement. Stop at shoulder height (classic front raise) or use neutral grip with dumbbells. Consider landmine press for a friendlier arc.",
+      "modificationPl": "Chwyt nachwytem ze zgięciem ramienia w pełnym zakresie to jeden z najbardziej prowokacyjnych ruchów przy konflikcie podbarkowym. Zatrzymaj na wysokości barków (klasyczny front raise) lub użyj chwytu neutralnego z hantlami. Rozważ landmine press dla przyjaźniejszego toru.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Holding a barbell overhead with straight arms creates a long-lever load on the spine and demands strong isometric lumbar bracing. Not appropriate during acute episodes. Use seated overhead variations with back support or skip until pain resolves.",
+      "modificationPl": "Trzymanie sztangi nad głową na wyprostowanych ramionach tworzy obciążenie z długą dźwignią na kręgosłup i wymaga mocnej izometrycznej stabilizacji lędźwi. Nie nadaje się przy ostrych epizodach. Użyj wariantów overhead siedząc z oparciem lub pomiń do ustąpienia bólu."
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locks wrists in full pronation under a long lever — especially stressful in the overhead portion. Use EZ-bar for an angled grip, or switch to dumbbells/plate with neutral grip. Wrist wraps may help mild cases.",
+      "modificationPl": "Sztanga prosta blokuje nadgarstki w pełnej pronacji przy długiej dźwigni — szczególnie obciążającej w pozycji nad głową. Użyj sztangi łamanej dla kąta chwytu, lub przejdź na hantle/talerz w chwycie neutralnym. Opaski mogą pomóc w lekkich przypadkach.",
+      "alternative": "ez-bar-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, full ROM) | 3x10-15 (shoulder mobility/development hybrid) | 2-3x12-15 (lighter accessory after pressing work)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-standing-front-raise-over-head.gif",
+    "frames_extracted": [
+      "frames/barbell-standing-front-raise-over-head/frame_0_start.png",
+      "frames/barbell-standing-front-raise-over-head/frame_1_early.png",
+      "frames/barbell-standing-front-raise-over-head/frame_2_mid.png",
+      "frames/barbell-standing-front-raise-over-head/frame_3_late.png",
+      "frames/barbell-standing-front-raise-over-head/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-standing-front-raise-over-head"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel. Frame 0 (start): postawa stojąca pionowa, sztanga w nachwycie górnym przed udami, ramiona wyprostowane, przedni akton naramiennego podświetlony. Frame 1 i 3 ('ghost' z barbell w połowie ruchu w połowie i w pozycji startowej): faza pośrednia ze sztangą na wysokości twarzy/oczu, ramiona prawie pionowe, prawe ramię silnie zaczerwienione (anterior + lateral delt razem). Frame 2 (mid, pełen szczyt): sztanga DOKŁADNIE nad głową, ramiona w pełni wyprostowane, biceps przy uszach — to NIE jest klasyczny front raise, to wznos w pełnym zakresie zgięcia barku do ~180 stopni. W pozycji szczytowej widać silne zaczerwienienie kaptura górnego (upper trap rotates scapula upward) oraz pełnej obręczy naramiennego. Frame 4 (end): powrót do dolnej pozycji z widocznym ghostem pozycji szczytowej powyżej. Tułów stoi pionowo przez cały ruch — brak hyperextension lędźwi (ale ryzyko widoczne dlatego cue 'ribs down'). Łokcie wyprostowane przez cały zakres — to NIE press, to true front raise extended overhead. Mechanic=isolation, plane=sagittal, force=push (concentric anti-gravity), bilateral. Difficulty 6 (intermediate) bo wymaga: (a) overhead shoulder flexion mobility, (b) lumbar bracing pod długą dźwignią, (c) dyscypliny techniki — łatwo zamienić w press przy zmęczeniu. Wszystkie pola PL napisane od zera. Schema i muscle_intensity zgodne z konwencją (P=primary, S=secondary, T=tertiary/stabilizer).",
+
+  "tags": ["bodybuilding", "shoulders", "delts", "anterior_deltoid", "lateral_deltoid", "isolation", "barbell", "overhead", "full_rom", "upper_body"]
+}

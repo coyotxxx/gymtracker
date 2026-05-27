@@ -1,0 +1,208 @@
+{
+  "id": "band-standing-rear-delt-row",
+  "name": "Band Standing Rear Delt Row",
+  "namePl": "Rear delt row z gumą oporową w staniu",
+  "aliases": ["standing band rear delt row", "standing band high row", "band face-level row", "band rear delt high row standing"],
+  "aliasesPl": ["wiosłowanie na tylne aktony z gumą w staniu", "wysokie wiosło na tylne aktony z gumą", "wiosłowanie z gumą do twarzy w staniu", "high row z gumą stojąc"],
+
+  "description": "A standing rear-delt row performed with an elastic resistance band anchored at chest height in front of the athlete. Unlike a classic row where the elbows travel low along the ribs, here the elbows are deliberately flared high and pulled out to the sides — the upper arms approach roughly parallel to the floor at the finish. This high elbow path takes the lats out of the prime-mover role and isolates the posterior deltoids, rhomboids and middle trapezius. It is a low-load, joint-friendly accessory exercise — ideal for warm-ups, pre-exhaust before heavy pressing, posture work, deload weeks and home/travel training without equipment.",
+  "descriptionPl": "Wiosłowanie na tylne aktony w pozycji stojącej z gumą oporową zaczepioną na wysokości klatki przed atletą. W odróżnieniu od klasycznego wiosła, gdzie łokcie sunią nisko wzdłuż żeber, tutaj łokcie są celowo wyprowadzone wysoko i rozciągnięte na boki — ramiona ponad łokciem dochodzą w pozycji końcowej mniej więcej do równoległej do podłogi. Tor wysokich łokci wyłącza najszerszy grzbietu z roli głównego wykonawcy i izoluje tylne aktony barków, równoległoboczne oraz czworoboczny środkowy. Akcesoryjne ćwiczenie o niskim obciążeniu, przyjazne stawom — świetne na rozgrzewkę, pre-exhaust przed ciężkim wyciskaniem, pracę nad postawą, tygodnie deload oraz treningi w domu/podróży bez sprzętu.",
+
+  "instructions": [
+    "Anchor a resistance band securely at chest height (door anchor, rack, pull-up bar, etc.) directly in front of you.",
+    "Grab the band with both hands using a neutral or overhand grip, palms facing each other or down, and step back to remove all slack so the band has light pre-tension with arms extended.",
+    "Stand tall with feet hip-width apart, one foot slightly staggered for balance, knees soft, hips and shoulders square to the anchor.",
+    "Brace the core, tuck the ribcage down, set shoulder blades back and down. Arms are extended in front of you at roughly chest level — this is the start position.",
+    "Initiate the pull by driving the elbows up and out to the sides — think 'lift the elbows to the horizon'. The hands travel back toward the face/upper chest, not toward the belly.",
+    "Continue until the upper arms are roughly parallel to the floor and the elbows are at or slightly above shoulder height. Hands end up near the face/ears, wrists neutral.",
+    "Squeeze the shoulder blades together and feel the contraction in the rear delts and mid-back. Brief pause.",
+    "Return slowly and under control (2-3 sec eccentric), letting the band pull the arms back to full extension without losing scapular setup.",
+    "Maintain an upright torso throughout — no leaning back, no shrugging the band up with the traps."
+  ],
+  "instructionsPl": [
+    "Zaczep gumę oporową pewnie na wysokości klatki (zaczep w drzwiach, klatka treningowa, drążek itp.) bezpośrednio przed sobą.",
+    "Złap gumę oburącz chwytem neutralnym lub nachwytem (dłonie skierowane do siebie lub w dół) i cofnij się tak, aby usunąć cały luz — guma ma lekkie napięcie wstępne przy wyprostowanych ramionach.",
+    "Stań w pozycji wyprostowanej, stopy na szerokość bioder, jedna stopa lekko z przodu dla równowagi, kolana lekko ugięte, biodra i barki frontem do zaczepu.",
+    "Napnij brzuch, ściągnij klatkę (żebra w dół), ustaw łopatki ściągnięte w tył i w dół. Ramiona wyprostowane przed sobą na wysokości klatki — to pozycja wyjściowa.",
+    "Rozpocznij ciąg, wyprowadzając łokcie wysoko i na boki — pomyśl 'unieś łokcie do horyzontu'. Dłonie wędrują w stronę twarzy/górnej części klatki, nie w stronę brzucha.",
+    "Kontynuuj aż ramiona ponad łokciem będą mniej więcej równolegle do podłogi, a łokcie znajdą się na wysokości lub nieco powyżej barków. Dłonie kończą przy twarzy/uszach, nadgarstki neutralne.",
+    "Ściągnij łopatki i poczuj napięcie w tylnych aktonach barków i środku pleców. Krótka pauza.",
+    "Wracaj powoli i pod kontrolą (2-3 sek faza ekscentryczna), pozwalając gumie wyciągnąć ramiona do pełnego wyprostu, nie tracąc ustawienia łopatek.",
+    "Utrzymuj wyprostowany tułów przez całe ćwiczenie — bez odchylania się do tyłu, bez wciągania gumy barkami przez trapezy."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids"],
+    "secondary": ["rhomboids", "trapezius_middle", "infraspinatus", "teres_minor"],
+    "stabilizers": ["latissimus_dorsi", "trapezius_lower", "biceps_brachii", "brachialis", "core", "erector_spinae", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P9",
+    "rhomboids": "S7",
+    "trapezius_middle": "S7",
+    "infraspinatus": "S5",
+    "teres_minor": "S5",
+    "latissimus_dorsi": "T3",
+    "trapezius_lower": "T4",
+    "biceps_brachii": "T4",
+    "brachialis": "T3",
+    "core": "T3",
+    "erector_spinae": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band", "band_anchor"],
+    "optional": ["band_handles", "door_anchor"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["cable-rear-delt-row", "face-pull", "reverse-pec-deck", "bent-over-dumbbell-rear-delt-row"],
+    "alternatives": ["face-pull", "cable-rear-delt-row", "band-pull-apart", "band-face-pull", "bent-over-dumbbell-rear-delt-row", "reverse-pec-deck"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Band anchored at chest height, directly in front",
+      "Step back until the band has light tension at full arm extension",
+      "Staggered stance, hips square to anchor",
+      "Tall posture, ribs down, brace core",
+      "Shoulder blades set back and down before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Guma zaczepiona na wysokości klatki, bezpośrednio przed Tobą",
+      "Cofnij się aż guma ma lekkie napięcie przy pełnym wyproście ramion",
+      "Stopy w lekkim wykroku, biodra frontem do zaczepu",
+      "Wyprostowana sylwetka, żebra w dół, napięty brzuch",
+      "Łopatki ściągnięte w tył i w dół przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Lead with the elbows — 'elbows to the horizon'",
+      "Hands travel toward your face, not your belly",
+      "Elbows finish at or slightly above shoulder height",
+      "Squeeze the shoulder blades together at the top",
+      "Slow eccentric — let the band pull you back, don't release"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami — 'łokcie do horyzontu'",
+      "Dłonie wędrują do twarzy, nie do brzucha",
+      "Łokcie kończą na wysokości barków lub nieco wyżej",
+      "Ściągnij łopatki w górnej pozycji",
+      "Powolna faza ekscentryczna — pozwól gumie cię wyciągnąć, nie puszczaj"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows dropping low (turning it into a standard row)",
+        "faultPl": "Łokcie schodzące nisko (zamiana w zwykłe wiosłowanie)",
+        "cause": "Defaulting to the dominant lat-driven row pattern; lack of awareness of rear-delt path",
+        "causePl": "Domyślny dominujący wzorzec wiosłowania prowadzony przez najszerszy grzbietu; brak świadomości toru tylnych aktonów",
+        "cue": "Reset. Imagine pulling the elbows toward the ceiling and behind you, not toward your hips.",
+        "cuePl": "Zatrzymaj się. Wyobraź sobie ciągnięcie łokci do sufitu i za siebie, nie do bioder."
+      },
+      {
+        "fault": "Shrugging — upper traps drive the band up",
+        "faultPl": "Wciąganie barków — trapezy górne ciągną gumę w górę",
+        "cause": "Band too short/stiff for the lifter, weak rear delts, or loss of scapular depression",
+        "causePl": "Guma za krótka/zbyt sztywna jak na ćwiczącego, słabe tylne aktony lub utrata depresji łopatek",
+        "cue": "Use a lighter band. Press shoulders down away from ears the entire set. Long neck.",
+        "cuePl": "Użyj słabszej gumy. Przez całą serię odsuwaj barki od uszu. Długa szyja."
+      },
+      {
+        "fault": "Leaning back / using the torso to pull",
+        "faultPl": "Odchylanie tułowia do tyłu / ciągnięcie tułowiem",
+        "cause": "Band tension too high, lifter substitutes hip extension for rear-delt work",
+        "causePl": "Zbyt mocne napięcie gumy, ćwiczący zastępuje pracę tylnych aktonów wyprostem bioder",
+        "cue": "Take a step forward to reduce tension. Brace the core and lock the ribcage over the pelvis.",
+        "cuePl": "Zrób krok do przodu, żeby zmniejszyć napięcie. Napnij brzuch i ustaw klatkę nad miednicą."
+      },
+      {
+        "fault": "Wrists breaking / hands cupping under the band",
+        "faultPl": "Załamane nadgarstki / dłonie podwijające się pod gumę",
+        "cause": "Weak grip, band slipping, or pulling with hands instead of elbows",
+        "causePl": "Słaby chwyt, ślizgająca się guma lub ciągnięcie dłońmi zamiast łokciami",
+        "cue": "Knuckles in line with forearm. Pull with the elbow joint, the hands are just hooks on the band.",
+        "cuePl": "Knykcie w linii z przedramieniem. Ciągnij stawem łokciowym, dłonie to tylko haki na gumie."
+      },
+      {
+        "fault": "Releasing the band fast on the eccentric (whip back)",
+        "faultPl": "Szybkie puszczanie gumy w fazie ekscentrycznej (efekt 'fryknięcia')",
+        "cause": "Skipping the negative phase, perceived as 'unnecessary' with light bands",
+        "causePl": "Pomijanie fazy negatywnej, postrzeganej jako 'niepotrzebnej' przy lekkich gumach",
+        "cue": "Eccentric is where the rear delts grow. Count two-three seconds back to start.",
+        "cuePl": "Faza ekscentryczna to miejsce, w którym tylne aktony rosną. Licz dwa-trzy sekundy powrotu do startu."
+      }
+    ],
+    "breathing": "Exhale on the pull (concentric) when the elbows flare back. Inhale on the return (eccentric) as the arms extend forward. Maintain a light bracing pattern — no Valsalva needed with this load.",
+    "breathingPl": "Wydech podczas ciągu (faza koncentryczna), gdy łokcie idą w tył. Wdech przy powrocie (faza ekscentryczna), gdy ramiona prostują się do przodu. Utrzymuj lekkie napięcie brzucha — przy tym ciężarze nie potrzeba manewru Valsalvy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce range of motion — keep elbows slightly below shoulder height instead of at/above. Use a lighter band and avoid full external rotation at the top. Stop short of pain.",
+      "modificationPl": "Zmniejsz zakres ruchu — trzymaj łokcie nieco poniżej wysokości barków zamiast na ich poziomie lub powyżej. Użyj słabszej gumy i unikaj pełnej rotacji zewnętrznej w górnej pozycji. Zatrzymaj zakres przed bólem.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Lower the band anchor to slightly below chest height so the elbows finish lower (at chest level, not face). This pulls the humerus out of the impingement arc while still loading the rear delts.",
+      "modificationPl": "Obniż zaczep gumy lekko poniżej wysokości klatki, żeby łokcie kończyły niżej (na poziomie klatki, nie twarzy). To wyprowadza kość ramienną z łuku konfliktu, jednocześnie obciążając tylne aktony.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "cervical_spine_pain_or_disc_issues",
+      "severity": "caution",
+      "modification": "Avoid forward head posture and shrugging that compresses the cervical spine. Keep a long neck and active scapular depression. Reduce band tension if neck tension is felt.",
+      "modificationPl": "Unikaj wysuwania głowy do przodu i wciągania barków, które kompresuje odcinek szyjny. Utrzymuj długą szyję i aktywną depresję łopatek. Zmniejsz napięcie gumy, jeśli czujesz napięcie w karku.",
+      "alternative": "bent-over-dumbbell-rear-delt-row"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version is generally safe for the lower back, but lifters with acute pain should avoid leaning back and reduce band tension. Consider seated or chest-supported variations.",
+      "modificationPl": "Wersja stojąca jest na ogół bezpieczna dla lędźwiowego odcinka, ale przy ostrym bólu unikaj odchylania się do tyłu i zmniejsz napięcie gumy. Rozważ wersję siedzącą lub z podparciem klatki.",
+      "alternative": "dumbbell-rear-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x15-20 (hypertrophy/standard) | 2-3x20-30 (warm-up/activation/pre-exhaust) | 3-4x12-15 (heavier band, accessory work)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "band-standing-rear-delt-row.gif",
+    "frames_extracted": [
+      "frames/band-standing-rear-delt-row/frame_0_start.png",
+      "frames/band-standing-rear-delt-row/frame_1_early.png",
+      "frames/band-standing-rear-delt-row/frame_2_mid.png",
+      "frames/band-standing-rear-delt-row/frame_3_late.png",
+      "frames/band-standing-rear-delt-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/band-standing-rear-delt-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): atleta stoi wyprostowany w lekkim wykroku, ramiona wyciągnięte w przód na wysokości klatki, dwie taśmy gumy oporowej biegną poziomo od dłoni do zaczepu PRZED ćwiczącym (poza kadrem na wysokości klatki). Tricepsy, tyły barków oraz cały grzbiet (rhomboidy, trapezy środkowe, najszersze) są podświetlone na czerwono — wskazuje to na zaangażowanie w faza ekscentrycznej/pre-aktywacja. Frame 2 (mid/top): łokcie wyprowadzone WYSOKO i NA BOKI — ramiona ponad łokciem mniej więcej równolegle do podłogi, dłonie ciągną gumę w stronę twarzy/górnej klatki (NIE do brzucha jak w klasycznym wiośle). Tylne aktony barków i górny grzbiet mocno napięte (czerwona zaznaczenie skoncentrowane na barkach i trapezach środkowych). Frame 4: powrót do wyprostu ramion w przód — widać 'ghost' fazy szczytowej i końcowej. Tułów pionowy przez cały ruch, brak odchylania, brak rotacji. To klasyczny tor 'rear delt row / high row' z gumą zaczepioną przed ćwiczącym — odróżnia się od face-pull (gdzie linka kończy nad twarzą) tym że tor łokci jest poziomy/horizontal abduction, a nie z dołu do góry. Plane=transverse (horizontal abduction), mechanic=compound (łokieć + bark), force=pull. Stojący wariant — nie ma opadu tułowia. Wszystkie pola PL napisane od zera w polskim standardzie fitness.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "back", "compound", "resistance_band", "home_workout", "travel_friendly", "warm_up", "activation", "posture", "deload_friendly", "joint_friendly", "beginner_friendly", "upper_body", "standing"]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "straight-leg-outer-hip-abductor",
+  "name": "Straight Leg Outer Hip Abductor",
+  "namePl": "Hip abduction z prostą nogą",
+  "aliases": ["standing straight leg hip abduction", "standing side leg raise", "standing hip abduction", "straight leg lateral raise"],
+  "aliasesPl": ["odwodzenie biodra z prostą nogą stojąc", "wymachy nogą w bok stojąc", "boczne wymachy prostej nogi", "abdukcja biodra stojąc"],
+
+  "description": "Bodyweight isolation exercise for the lateral hip muscles performed standing. The lifter raises one fully extended leg out to the side (hip abduction in the frontal plane) while the opposite leg supports body weight. Targets primarily gluteus medius — the key stabilizer of the pelvis during walking, running, and single-leg stance — with strong contribution from gluteus minimus and TFL. A cornerstone exercise in rehab, glute activation warm-ups, and lower-body conditioning. No equipment required, but ankle weights, mini-bands, or low cable column can add resistance.",
+  "descriptionPl": "Izolowane ćwiczenie z masą własnego ciała na boczne mięśnie biodra, wykonywane na stojąco. Ćwiczący unosi w bok jedną całkowicie wyprostowaną nogę (odwodzenie w stawie biodrowym w płaszczyźnie czołowej), podczas gdy druga noga podpiera ciężar ciała. Pracuje przede wszystkim mięsień pośladkowy średni — kluczowy stabilizator miednicy podczas chodu, biegu i stania na jednej nodze — z mocnym udziałem pośladkowego małego i TFL (mięśnia napinacza powięzi szerokiej). Podstawowe ćwiczenie w rehabilitacji, rozgrzewce aktywującej pośladki i przygotowaniu kondycyjnym dolnej części ciała. Nie wymaga sprzętu, ale obciążniki na kostki, mini-bandy lub dolne wyciągi linowe mogą dodać oporu.",
+
+  "instructions": [
+    "Stand tall with feet together or hip-width apart. Place one hand on a wall, chair, or pole for balance if needed.",
+    "Shift weight onto the support leg. Keep that knee soft (not locked) and the foot pressed firmly into the floor.",
+    "Brace your core and pull your shoulders down and back. Square your hips forward — they should stay level throughout.",
+    "Without bending the working knee, lift the working leg straight out to the side. Keep the toes pointing forward (slightly inward if you want more glute med, away from the body).",
+    "Raise the leg until you feel a firm contraction on the outside of the hip — typically 30-45 degrees of abduction. Do not chase height by hiking the hip.",
+    "Pause briefly at the top, then lower the leg under control back to the starting position. Do not let the foot touch down between reps if you want continuous tension.",
+    "Complete all reps on one side before switching legs. Keep the torso perfectly upright — no leaning toward the support leg."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy razem lub na szerokość bioder. Połóż jedną dłoń na ścianie, krześle lub drążku dla równowagi jeśli to potrzebne.",
+    "Przenieś ciężar na nogę podporową. Trzymaj jej kolano lekko ugięte (nie zablokowane), stopa mocno wciśnięta w podłogę.",
+    "Napnij brzuch, ściągnij barki w dół i w tył. Ustaw biodra równo do przodu — mają pozostać na tym samym poziomie przez cały ruch.",
+    "Bez zginania kolana pracującej nogi, unieś ją prosto w bok. Palce stopy skierowane do przodu (lekko do wewnątrz dla większego zaangażowania pośladkowego średniego, na zewnątrz mniej).",
+    "Unoś nogę aż poczujesz mocne napięcie na zewnętrznej stronie biodra — zwykle 30-45 stopni odwiedzenia. Nie pogłębiaj zakresu unosząc miednicę.",
+    "Zatrzymaj na chwilę w górnej pozycji, następnie opuszczaj nogę w sposób kontrolowany do pozycji wyjściowej. Nie dotykaj stopą podłogi między powtórzeniami jeśli chcesz utrzymać ciągłe napięcie.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę przed zmianą nogi. Tułów ma być idealnie pionowy — żadnego pochylania się w stronę nogi podporowej."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_abduction",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gluteus_medius"],
+    "secondary": ["gluteus_minimus", "tensor_fasciae_latae"],
+    "stabilizers": ["gluteus_maximus", "quadratus_lumborum", "obliques", "core", "adductors_contralateral", "calves_support_leg"]
+  },
+
+  "muscle_intensity": {
+    "gluteus_medius": "P10",
+    "gluteus_minimus": "S7",
+    "tensor_fasciae_latae": "S6",
+    "gluteus_maximus": "T3",
+    "quadratus_lumborum": "T3",
+    "obliques": "T3",
+    "core": "T2",
+    "adductors_contralateral": "T2",
+    "calves_support_leg": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["ankle_weights", "resistance_band", "mini_band", "cable_machine", "wall_or_chair_for_balance"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["cable-hip-abduction", "banded-side-lying-hip-abduction", "lying-side-leg-raise", "machine-hip-abduction"],
+    "alternatives": ["lying-side-leg-raise", "cable-hip-abduction", "machine-hip-abduction", "clamshell", "fire-hydrant"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, support foot pressed into the floor",
+      "One hand on wall for balance if needed",
+      "Hips squared forward and level",
+      "Core braced, shoulders down",
+      "Working leg straight, toes forward"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, stopa podporowa mocno wciśnięta w podłogę",
+      "Jedna dłoń na ścianie dla równowagi jeśli trzeba",
+      "Biodra równo do przodu i na jednym poziomie",
+      "Brzuch napięty, barki w dół",
+      "Pracująca noga wyprostowana, palce stopy do przodu"
+    ],
+    "execution_cues": [
+      "Lead with the heel, not the toes",
+      "Lift the leg, do not hike the hip",
+      "Stay tall — no leaning toward the support leg",
+      "Squeeze the outside of the hip at the top",
+      "Slow, controlled descent — 2 seconds down"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch piętą, nie palcami",
+      "Unoś nogę, nie unoś biodra",
+      "Pozostań pionowo — żadnego pochylania w stronę nogi podporowej",
+      "Spinaj zewnętrzną część biodra w górnej pozycji",
+      "Wolne, kontrolowane opuszczanie — 2 sekundy w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hiking the hip to gain range of motion",
+        "faultPl": "Unoszenie miednicy aby zwiększyć zakres ruchu",
+        "cause": "Trying to lift the leg higher than glute medius strength allows, recruiting quadratus lumborum and obliques instead",
+        "causePl": "Próba uniesienia nogi wyżej niż pozwala siła pośladkowego średniego, kompensacja mięśniem czworobocznym lędźwi i skośnymi",
+        "cue": "Stop at 30-45 degrees. Keep both hip bones level — imagine a glass of water on your pelvis.",
+        "cuePl": "Zatrzymaj się na 30-45 stopniach. Trzymaj oba talerze biodrowe na jednym poziomie — wyobraź sobie szklankę wody na miednicy."
+      },
+      {
+        "fault": "Leaning torso toward the support leg",
+        "faultPl": "Pochylanie tułowia w stronę nogi podporowej",
+        "cause": "Compensation to extend the working leg further; weak core/lateral stabilizers of the support side",
+        "causePl": "Kompensacja aby uzyskać większy zakres pracującej nogi; słabe stabilizatory boczne tułowia po stronie podporowej",
+        "cue": "Ears stacked over support hip. Use a wall behind you to keep the spine vertical.",
+        "cuePl": "Uszy nad biodrem podporowym. Użyj ściany za sobą aby utrzymać pionowy kręgosłup."
+      },
+      {
+        "fault": "Rotating the toes upward (external rotation of the hip)",
+        "faultPl": "Obracanie palców stopy do góry (rotacja zewnętrzna biodra)",
+        "cause": "Shifts emphasis to TFL and hip flexors instead of gluteus medius, especially with weak glutes",
+        "causePl": "Przenosi obciążenie na TFL i zginacze biodra zamiast na pośladkowy średni, zwłaszcza przy słabych pośladkach",
+        "cue": "Toes point forward or slightly down. Lead with the heel like you are stepping sideways.",
+        "cuePl": "Palce stopy do przodu lub lekko w dół. Prowadź piętą jakbyś robił krok w bok."
+      },
+      {
+        "fault": "Bending the working knee mid-rep",
+        "faultPl": "Zginanie kolana pracującej nogi w trakcie powtórzenia",
+        "cause": "Reduces the lever arm to make the rep easier, removing tension from the target muscles",
+        "causePl": "Skraca ramię dźwigni i ułatwia powtórzenie, zdejmując napięcie z mięśni docelowych",
+        "cue": "Keep the working leg straight as a board the entire rep. If you cannot, drop the load or do fewer reps.",
+        "cuePl": "Pracująca noga prosta jak deska przez całe powtórzenie. Jeśli nie dajesz rady, zmniejsz obciążenie lub ilość powtórzeń."
+      },
+      {
+        "fault": "Using momentum (swinging the leg)",
+        "faultPl": "Pomaganie się rozpędem (zamachy nogą)",
+        "cause": "Speed compensation when the muscle is weak or fatigued; common in high-rep sets",
+        "causePl": "Kompensacja prędkością gdy mięsień jest słaby lub zmęczony; częste w seriach o dużej liczbie powtórzeń",
+        "cue": "2 seconds up, pause, 2 seconds down. If you have to swing, the set is over.",
+        "cuePl": "2 sekundy w górę, pauza, 2 sekundy w dół. Jeśli musisz się zamachnąć, seria jest skończona."
+      }
+    ],
+    "breathing": "Exhale as you lift the leg out (concentric phase). Inhale as you lower the leg back to the start. Keep a light core brace throughout — do not hold your breath.",
+    "breathingPl": "Wydech podczas unoszenia nogi w bok (faza koncentryczna). Wdech podczas opuszczania do pozycji wyjściowej. Utrzymuj lekkie napięcie brzucha przez cały czas — nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "modify",
+      "modification": "Limit range of motion to pain-free zone (often 20-30 degrees). Avoid combining abduction with external rotation. Try side-lying version which can be easier on the joint.",
+      "modificationPl": "Ogranicz zakres ruchu do strefy bez bólu (często 20-30 stopni). Unikaj łączenia odwodzenia z rotacją zewnętrzną. Spróbuj wariantu leżąc na boku, który jest łagodniejszy dla stawu.",
+      "alternative": "lying-side-leg-raise"
+    },
+    {
+      "condition": "greater_trochanteric_pain_syndrome_bursitis",
+      "severity": "modify",
+      "modification": "Reduce ROM, lower volume, slow tempo. Avoid compression on the affected hip (no side-lying on the painful side). Standing version may actually be the preferred option here.",
+      "modificationPl": "Zmniejsz zakres ruchu, zmniejsz objętość, zwolnij tempo. Unikaj ucisku na chore biodro (nie leżeć na chorej stronie). Wersja stojąca może być w tym przypadku preferowana.",
+      "alternative": "clamshell"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Standing requires lateral pelvic stabilization which can aggravate radicular pain. Use a wall behind the back for support, keep ROM small, or switch to side-lying.",
+      "modificationPl": "Wykonanie stojąc wymaga bocznej stabilizacji miednicy, co może drażnić ból korzeniowy. Oprzyj plecy o ścianę dla wsparcia, ogranicz zakres, lub przejdź na wariant leżąc.",
+      "alternative": "lying-side-leg-raise"
+    },
+    {
+      "condition": "knee_instability_or_recent_acl_surgery",
+      "severity": "caution",
+      "modification": "The support leg bears the entire body weight in a slightly unstable position. Ensure surgeon clearance for single-leg loading. Use a chair/wall for upper-body support to reduce knee demand.",
+      "modificationPl": "Noga podporowa dźwiga cały ciężar ciała w lekko niestabilnej pozycji. Wymagana zgoda chirurga na obciążanie jednej nogi. Użyj krzesła/ściany jako podparcia, aby zmniejszyć obciążenie kolana.",
+      "alternative": "lying-side-leg-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-20 per side (hypertrophy/activation) | 2-3x15-25 per side (endurance/glute med strength) | 3-4x8-12 per side with ankle weights or band (loaded)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "straight-leg-outer-hip-abductor.gif",
+    "frames_extracted": [
+      "frames/straight-leg-outer-hip-abductor/frame_0_start.png",
+      "frames/straight-leg-outer-hip-abductor/frame_1_early.png",
+      "frames/straight-leg-outer-hip-abductor/frame_2_mid.png",
+      "frames/straight-leg-outer-hip-abductor/frame_3_late.png",
+      "frames/straight-leg-outer-hip-abductor/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abductors/straight-leg-outer-hip-abductor"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Wykonanie: STOJĄC (nie leżąc na boku, jak sugerowała pierwotna nazwa). Model stoi prosto z rękami przy biodrach, lewa noga prosta unoszona w bok w płaszczyźnie czołowej (frame 2: noga widocznie odsunięta od linii środkowej, ciężar na prawej nodze podporowej). Frame 4: powrót do pozycji wyjściowej z 'ghost' poprzedniej fazy. Podświetlone na czerwono: boczna część biodra (gluteus medius/minimus + TFL) oraz okolica zewnętrznej części uda. Tułów pozostaje pionowy przez cały ruch, brak hiking hip. Ćwiczenie zidentyfikowane jako STOJĄCY wariant straight-leg hip abduction — klasyczne isolation glute medius (gluteus medius P10, gluteus minimus S7, TFL S6). Mechanic isolation, plane frontal, force push, unilateral, open chain. Bodyweight z opcjonalnym ankle weight/band/cable. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodywight", "lower_body", "glutes", "hip_abduction", "isolation", "rehab", "activation", "warmup", "unilateral", "no_equipment"]
+}

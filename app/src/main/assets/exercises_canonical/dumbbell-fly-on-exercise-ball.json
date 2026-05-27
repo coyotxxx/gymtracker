@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-fly-on-exercise-ball",
+  "name": "Dumbbell Fly on Exercise Ball",
+  "namePl": "Rozpiętki hantlami na piłce gimnastycznej",
+  "aliases": ["dumbbell fly on stability ball", "swiss ball dumbbell fly", "stability ball chest fly", "ball dumbbell flye"],
+  "aliasesPl": ["rozpiętki na piłce szwajcarskiej", "rozpiętki na fitball z hantlami", "rozpiętki na piłce stabilizacyjnej", "rozpiętki hantlami swiss ball"],
+
+  "description": "Isolation chest fly performed lying with the upper back and head supported on an exercise ball, hips lifted to form a tabletop position. The ball replaces a flat bench, transforming a stable bilateral fly into a movement that demands simultaneous chest work and full-body stabilization. Glutes, hamstrings and core fire isometrically to hold the bridge, while shoulder blades must stay packed against the unstable surface. The reduced base of support limits absolute load, which is the point — it shifts emphasis from peak strength toward time under tension, scapular control and core integration. Useful as a mid-session hypertrophy stimulus, a deload-friendly chest movement, or a corrective alternative for trainees rebuilding stability after a layoff.",
+  "descriptionPl": "Izolowane rozpiętki klatki piersiowej wykonywane w leżeniu z górną częścią pleców i głową opartymi o piłkę gimnastyczną, biodra uniesione do pozycji \"stołu\" (mostek poziomy). Piłka zastępuje ławkę i zmienia stabilne dwustronne rozpiętki w ruch wymagający jednoczesnej pracy klatki i stabilizacji całego ciała. Pośladki, dwugłowe ud i core pracują izometrycznie utrzymując mostek, a łopatki muszą pozostawać ściągnięte przy niestabilnym podłożu. Mniejsza baza podparcia ogranicza maksymalny ciężar — i o to chodzi: przesuwa akcent z siły szczytowej na czas pod napięciem, kontrolę łopatek i integrację core. Sprawdza się jako bodziec hipertroficzny w środku sesji, łagodne ćwiczenie klatki na deload albo wariant korekcyjny dla osób odbudowujących stabilizację po przerwie.",
+
+  "instructions": [
+    "Choose a properly inflated exercise ball (knee angle ~90° when sitting on it). Grab two light-to-moderate dumbbells.",
+    "Sit on the ball with dumbbells resting on your thighs. Walk your feet forward and slowly roll down until only the upper back, shoulders and head rest on the ball.",
+    "Lift your hips so torso, hips and knees form one straight line (tabletop). Feet flat on the floor about shoulder-width, knees at ~90°.",
+    "Press both dumbbells up to lockout above the upper chest, palms facing each other (neutral grip). Lock a soft 15-20° bend in the elbows — this angle stays the same for the entire set.",
+    "Brace the core, squeeze the glutes, retract the shoulder blades into the ball. This is your starting position.",
+    "Inhale and lower the dumbbells out to the sides in a wide arc until upper arms reach roughly chest level — feel a deep stretch in the pectorals. Do NOT let elbows drop below shoulder level.",
+    "Without changing the elbow angle, exhale and bring the dumbbells back together in the same arc above the upper chest — \"hug a barrel\". Squeeze the pecs at the top for a one-count.",
+    "Keep the hips locked up the whole time. If the bridge sags, finish the set. To exit: bring the dumbbells to your chest, walk your feet in, sit up on the ball and place the dumbbells on the floor."
+  ],
+  "instructionsPl": [
+    "Wybierz prawidłowo napompowaną piłkę gimnastyczną (kąt w kolanie ~90° gdy na niej siedzisz). Weź dwa lekkie lub średnie hantle.",
+    "Usiądź na piłce z hantlami opartymi o uda. Stopniowo przesuwaj stopy do przodu i zsuwaj się po piłce, aż na piłce zostaną tylko górna część pleców, barki i głowa.",
+    "Unieś biodra tak, by tułów, biodra i kolana tworzyły jedną linię (pozycja \"stołu\"). Stopy płasko na podłodze na szerokość barków, kolana zgięte ~90°.",
+    "Wyciśnij oba hantle nad górną klatką, dłonie zwrócone do siebie (chwyt neutralny). Zegnij lekko łokcie ~15-20° — ten kąt utrzymujesz przez całą serię.",
+    "Napnij brzuch, ściśnij pośladki, ściągnij łopatki w stronę piłki. To pozycja startowa.",
+    "Wdech, opuszczaj hantle szerokim łukiem na boki, aż ramiona ponad łokciem dojdą mniej więcej do wysokości klatki — poczuj mocne rozciągnięcie klatki. NIE opuszczaj łokci poniżej linii barków.",
+    "Bez zmiany kąta w łokciu, wydech, sprowadź hantle z powrotem tym samym łukiem nad górną klatką — \"obejmij beczkę\". Spinaj klatkę na szczycie przez moment.",
+    "Przez cały czas trzymaj biodra w górze. Jeśli mostek opada, kończ serię. Zakończenie: ściągnij hantle do klatki, przesuń stopy bliżej, usiądź na piłce i odłóż hantle na podłogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "core"],
+    "secondary": ["anterior_deltoids", "serratus_anterior"],
+    "stabilizers": ["glutes", "hamstrings", "rotator_cuff", "biceps_brachii", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "core": "P7",
+    "anterior_deltoids": "S6",
+    "serratus_anterior": "S4",
+    "glutes": "T5",
+    "hamstrings": "T4",
+    "rotator_cuff": "T4",
+    "biceps_brachii": "T3",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "exercise_ball"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-fly", "glute-bridge", "dumbbell-bench-press"],
+    "progression_to": ["single-arm-dumbbell-fly-on-exercise-ball", "dumbbell-press-on-exercise-ball", "incline-dumbbell-fly"],
+    "alternatives": ["dumbbell-fly", "cable-chest-fly", "pec-deck-fly", "incline-dumbbell-fly", "machine-chest-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Upper back, shoulders and head on the ball — not lower back",
+      "Hips up — torso, hips and knees in one straight line",
+      "Feet flat, knees at ~90°, shoulder-width stance",
+      "Shoulder blades retracted and pinned against the ball",
+      "Dumbbells stacked above upper chest, soft 15-20° bend in elbows"
+    ],
+    "setup_cues_pl": [
+      "Górne plecy, barki i głowa na piłce — nie odcinek lędźwiowy",
+      "Biodra w górę — tułów, biodra i kolana w jednej linii",
+      "Stopy płasko, kolana ~90°, rozstaw na szerokość barków",
+      "Łopatki ściągnięte i dociśnięte do piłki",
+      "Hantle nad górną klatką, łokcie zgięte miękko ~15-20°"
+    ],
+    "execution_cues": [
+      "Hug a barrel — wide arc, not a press",
+      "Stop the descent when upper arms reach chest level",
+      "Squeeze the glutes the whole set — don't let hips drop",
+      "Lock the elbow angle — only the shoulder joint moves",
+      "Eccentric ~2-3 seconds, controlled tempo over heavy weight"
+    ],
+    "execution_cues_pl": [
+      "Obejmuj beczkę — szeroki łuk, nie wyciskanie",
+      "Zatrzymaj opuszczanie gdy ramię ponad łokciem osiągnie linię klatki",
+      "Spinaj pośladki przez całą serię — nie pozwól opaść biodrom",
+      "Łokieć w stałym kącie — porusza się wyłącznie staw barkowy",
+      "Faza ekscentryczna ~2-3 sekundy, kontrola ważniejsza niż ciężar"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging during the set",
+        "faultPl": "Opadanie bioder w trakcie serii",
+        "cause": "Weak glutes/core, fatigue, weight too heavy for stability demand",
+        "causePl": "Słabe pośladki/core, zmęczenie, zbyt duży ciężar jak na wymagania stabilizacyjne",
+        "cue": "Cue 'glutes on, ribs down' before each rep. If hips drop, end the set — reduce weight next time.",
+        "cuePl": "Komenda 'pośladki napięte, żebra w dół' przed każdym powtórzeniem. Jeśli biodra opadają — kończ serię i zmniejsz ciężar w następnej."
+      },
+      {
+        "fault": "Elbows extending and flexing — turning the fly into a press",
+        "faultPl": "Prostowanie i zginanie łokci — rozpiętki zamieniają się w wyciskanie",
+        "cause": "Load too heavy for an isolation movement, weak motor pattern, instinct to push",
+        "causePl": "Zbyt duży ciężar jak na ćwiczenie izolowane, słaby wzorzec ruchowy, odruch wyciskania",
+        "cue": "Reduce the weight. Freeze the elbow angle — picture casts on your forearms. Only the shoulder joint moves.",
+        "cuePl": "Zmniejsz ciężar. Zamroź kąt w łokciu — wyobraź sobie gips na przedramionach. Porusza się tylko staw barkowy."
+      },
+      {
+        "fault": "Going too deep in the stretch — shoulders rolling forward off the ball",
+        "faultPl": "Za głębokie rozciągnięcie — barki rolują do przodu, odrywają się od piłki",
+        "cause": "Chasing the stretch without respecting shoulder anatomy, weak rotator cuff",
+        "causePl": "Pogoń za wrażeniem rozciągnięcia bez uwzględnienia anatomii barku, słaba stożek rotatorów",
+        "cue": "Stop when upper arms are level with the chest. The ball amplifies shoulder stress — stay conservative on ROM.",
+        "cuePl": "Zatrzymaj się gdy ramiona ponad łokciem dojdą do wysokości klatki. Piłka wzmacnia napięcie na barku — bądź zachowawczy z zakresem."
+      },
+      {
+        "fault": "Ball wobble — rocking side to side during reps",
+        "faultPl": "Bujanie piłki — ciało kołysze się na boki podczas powtórzeń",
+        "cause": "Asymmetric force production between arms, weak transverse abdominis, dumbbells too heavy",
+        "causePl": "Asymetryczna praca rąk, słaby mięsień poprzeczny brzucha, zbyt ciężkie hantle",
+        "cue": "Move both arms in perfect sync. Lighten the load until the ball is dead still under your shoulders.",
+        "cuePl": "Ruszaj oboma ramionami idealnie synchronicznie. Zmniejsz ciężar aż piłka pod barkami przestanie się ruszać."
+      },
+      {
+        "fault": "Dumbbells clanging together at the top",
+        "faultPl": "Stukanie hantli o siebie na szczycie",
+        "cause": "Loss of pec tension at the top, rushing through the rep",
+        "causePl": "Utrata napięcia klatki w pozycji szczytowej, zbyt szybkie tempo",
+        "cue": "Stop the dumbbells just before they touch and hold a 1-second squeeze. Keep tension on the chest, not on the iron.",
+        "cuePl": "Zatrzymaj hantle tuż przed dotknięciem i wytrzymaj sekundę spięcia. Napięcie na klatce, nie na żelazie."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering, stretched position). Exhale forcefully during the concentric (bringing dumbbells together). Maintain low-level core brace throughout to protect the bridge — never fully relax the abdominals.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (opuszczanie, pozycja rozciągnięta). Wydech siłowy w fazie koncentrycznej (zbliżanie hantli). Utrzymuj lekkie stałe napięcie brzucha przez całą serię aby zabezpieczyć mostek — nigdy nie rozluźniaj brzucha do końca."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce range — do not let upper arms drop below chest level. Keep elbows slightly more bent (~25-30°) to shorten the lever, use lighter dumbbells with higher reps (12-15). Stop immediately on any pinch.",
+      "modificationPl": "Ogranicz zakres ruchu — nie opuszczaj ramion poniżej linii klatki. Zegnij łokcie nieco mocniej (~25-30°) aby skrócić dźwignię, używaj lżejszych hantli i większej liczby powtórzeń (12-15). Przerwij natychmiast przy każdym kłuciu.",
+      "alternative": "pec-deck-fly"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "The bridge position loads the lumbar extensors isometrically. If pain appears, switch to dumbbell fly on a flat bench — keep the chest stimulus, remove the spinal load.",
+      "modificationPl": "Pozycja mostka obciąża prostowniki lędźwi izometrycznie. Jeśli pojawi się ból, przejdź na rozpiętki na ławce poziomej — utrzymujesz bodziec na klatkę, znosisz obciążenie kręgosłupa.",
+      "alternative": "dumbbell-fly"
+    },
+    {
+      "condition": "pectoralis_major_strain_recovery",
+      "severity": "avoid",
+      "modification": "Skip until pain-free pressing is tolerated. The stretched bottom position with an unstable base places high mechanical tension on a healing pec — too risky for return-to-training.",
+      "modificationPl": "Pomiń aż wyciskanie będzie bezbolesne. Pozycja rozciągnięta na niestabilnym podłożu nakłada duże napięcie mechaniczne na regenerującą się klatkę — zbyt ryzykowne na powrót do treningu.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "balance_or_vestibular_disorder",
+      "severity": "modify",
+      "modification": "Lying on a ball with closed eyes and shifting load can trigger dizziness. Perform fly on a flat bench instead; reintroduce ball work only with a coach present.",
+      "modificationPl": "Leżenie na piłce z zamkniętymi oczami i przemieszczanym ciężarem może wywołać zawroty. Wykonaj rozpiętki na ławce poziomej; piłkę wprowadź ponownie tylko pod okiem trenera.",
+      "alternative": "dumbbell-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy, default) | 3x12-20 (pump/finisher) | 2-3x15-20 (light tempo-focused / deload)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-fly-on-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-fly-on-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-fly-on-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-fly-on-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-fly-on-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-fly-on-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-fly-on-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 z GIFa jahel. Frame 0 (start/dół, faza rozciągnięta): ćwiczący leży na piłce gimnastycznej — górna część pleców i głowa wsparte o piłkę, biodra uniesione do linii (mostek/tabletop), stopy płasko na podłodze, kolana ~90°. Ramiona szeroko na boki, ręce trzymają hantle, łokcie lekko ugięte (~15-20°), dłonie skierowane do siebie (chwyt neutralny). Włókna klatki piersiowej (oba aktony) podświetlone na czerwono, dodatkowo widoczna podświetlona ściana brzucha — potwierdza pracę core jako stabilizatora. Frame 2 (mid, faza szczytowa): hantle spotykają się nad górną klatką, ramiona prawie wyprostowane ale z zachowanym lekkim kątem w łokciu — klasyczne rozpiętki, nie wyciskanie. Frame 4 (end): powrót w dół z motion blur ghost u góry — kontrolowana faza ekscentryczna. Ćwiczenie jednoznacznie zidentyfikowane: dumbbell fly on exercise ball / rozpiętki hantlami na piłce gimnastycznej. Klasyfikacja jako isolation_fly, plane transverse (przywodzenie poziome). Primary: pectoralis_major P9 + core P7 (zgodnie z briefem — piłka dodaje silny wymóg stabilizacji core, co odróżnia ten wariant od rozpiętek na ławce). Equipment: dumbbells + exercise_ball. Difficulty 6 (intermediate) — wzrost względem płaskich rozpiętek hantlami (difficulty 5) ze względu na niestabilne podłoże, wymaganie mostka i koordynację. 5 common_faults, 4 contraindications, 5 setup + 5 execution cues. Wszystkie pola PL napisane od zera, nie tłumaczone z EN — polska terminologia fitness ('rozpiętki na piłce gimnastycznej', 'mostek/pozycja stołu', 'obejmuj beczkę', 'łopatki ściągnięte').",
+
+  "tags": ["bodybuilding", "chest", "isolation", "dumbbell", "exercise_ball", "stability_ball", "swiss_ball", "fly", "upper_body", "core_stability", "hypertrophy"]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "shoulder-tap",
+  "name": "Shoulder Tap",
+  "namePl": "Shoulder tap (plank z dotknięciem barków)",
+  "aliases": ["plank shoulder tap", "plank with shoulder taps", "shoulder taps", "high plank shoulder tap"],
+  "aliasesPl": ["dotykanie barków w desce", "plank z dotknięciem barków", "deska z dotykaniem ramion", "shoulder tapy", "plank shoulder tap"],
+
+  "description": "Anti-rotation core exercise performed from a high plank position. While maintaining a rigid plank with hips level, the lifter alternately lifts one hand to tap the opposite shoulder, then returns it to the floor and switches sides. The challenge is not the tap itself but resisting the rotational torque the body wants to produce when one hand leaves the ground — forcing the rectus abdominis, obliques and serratus anterior to brace hard against unwanted hip and torso rotation.",
+  "descriptionPl": "Ćwiczenie anty-rotacyjne na brzuch wykonywane z pozycji wysokiej deski (high plank). Utrzymując sztywną deskę z biodrami na jednej linii, ćwiczący naprzemiennie unosi jedną dłoń i dotyka nią przeciwnego barku, po czym wraca dłonią na podłogę i zmienia stronę. Wyzwaniem nie jest samo dotknięcie, lecz opieranie się momentowi rotacji, jaki ciało chce wygenerować, gdy jedna dłoń opuszcza podłoże — to wymusza mocne napięcie mięśnia prostego brzucha, skośnych i mięśnia zębatego przedniego, by zablokować niechcianą rotację bioder i tułowia.",
+
+  "instructions": [
+    "Set up in a high plank: hands directly under the shoulders, arms straight, body in one straight line from ears to heels. Feet shoulder-width apart for stability (you can take a wider stance to make it easier).",
+    "Brace the core hard, squeeze the glutes, and pull the shoulder blades down and slightly apart. Eyes look at a spot on the floor between the hands — neck neutral.",
+    "Without shifting the hips, slowly lift the right hand off the floor and tap the left shoulder. Keep the hips perfectly level — do not let the right hip drop or the left hip rise.",
+    "Return the right hand to the floor in a controlled motion (don't slap it down).",
+    "Repeat on the other side: lift the left hand and tap the right shoulder. That is one full rep (or count taps individually depending on the program).",
+    "Continue alternating for the prescribed reps or time. Breathe steadily — do not hold your breath."
+  ],
+  "instructionsPl": [
+    "Ustaw się w wysokiej desce: dłonie bezpośrednio pod barkami, ramiona wyprostowane, ciało w jednej linii od uszu do pięt. Stopy na szerokość barków dla stabilności (możesz rozstawić szerzej, by było łatwiej).",
+    "Mocno napnij brzuch, ściśnij pośladki i ściągnij łopatki w dół i lekko na boki. Wzrok skierowany na punkt na podłodze między dłońmi — szyja w neutralnej pozycji.",
+    "Bez przesuwania bioder powoli unieś prawą dłoń z podłogi i dotknij lewego barku. Trzymaj biodra idealnie na jednej wysokości — nie pozwól, by prawe biodro opadło ani lewe się uniosło.",
+    "Powróć prawą dłonią na podłogę kontrolowanym ruchem (nie uderzaj nią o podłoże).",
+    "Powtórz po drugiej stronie: unieś lewą dłoń i dotknij prawego barku. To jest jedno pełne powtórzenie (lub licz dotknięcia osobno, w zależności od planu).",
+    "Kontynuuj naprzemiennie przez zadaną liczbę powtórzeń lub czas. Oddychaj równomiernie — nie wstrzymuj powietrza."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_rotation",
+    "force": "isometric",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "obliques"],
+    "secondary": ["shoulders", "serratus_anterior", "transverse_abdominis"],
+    "stabilizers": ["triceps", "chest", "glutes", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P8",
+    "obliques": "P8",
+    "shoulders": "S6",
+    "serratus_anterior": "S6",
+    "transverse_abdominis": "S5",
+    "triceps": "T4",
+    "chest": "T3",
+    "glutes": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["plank", "high-plank", "bird-dog"],
+    "progression_to": ["plank-to-push-up", "renegade-row", "spider-man-plank"],
+    "alternatives": ["plank", "side-plank", "bird-dog", "dead-bug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "High plank — hands directly under shoulders",
+      "Body one straight line from ears to heels",
+      "Feet shoulder-width or wider for stability",
+      "Brace abs, squeeze glutes, neutral neck",
+      "Spread the fingers and grip the floor"
+    ],
+    "setup_cues_pl": [
+      "Wysoka deska — dłonie bezpośrednio pod barkami",
+      "Ciało w jednej linii od uszu do pięt",
+      "Stopy na szerokość barków lub szerzej dla stabilności",
+      "Napnij brzuch, ściśnij pośladki, szyja neutralna",
+      "Rozłóż palce i 'chwyć' podłogę dłońmi"
+    ],
+    "execution_cues": [
+      "Hips stay frozen — imagine a glass of water on your lower back",
+      "Slow taps — 1 second up, 1 second down per side",
+      "Tap with the opposite shoulder, not the same side",
+      "Resist the urge to twist — work is in the anti-rotation",
+      "Breathe through each rep — no holding the breath"
+    ],
+    "execution_cues_pl": [
+      "Biodra zamrożone — wyobraź sobie szklankę wody na dolnych plecach",
+      "Powolne dotknięcia — 1 sekunda w górę, 1 sekunda w dół na stronę",
+      "Dotknij przeciwnego barku, nie tego samego",
+      "Opieraj się chęci skręcenia tułowia — praca jest w anty-rotacji",
+      "Oddychaj przy każdym powtórzeniu — nie wstrzymuj powietrza"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips swaying side to side with each tap",
+        "faultPl": "Biodra kołyszące się na boki przy każdym dotknięciu",
+        "cause": "Weak obliques and anti-rotation core — body offloads the work onto hip shift instead of bracing",
+        "causePl": "Słabe mięśnie skośne i anty-rotacyjny core — ciało zrzuca pracę na ruch bioder zamiast napięcia",
+        "cue": "Widen the stance and slow down. Imagine a broomstick lying across your hips that must stay level.",
+        "cuePl": "Rozstaw szerzej stopy i zwolnij. Wyobraź sobie kij od miotły leżący w poprzek bioder, który musi pozostać poziomy."
+      },
+      {
+        "fault": "Hips sagging or pike (butt up in the air)",
+        "faultPl": "Biodra opadające w dół lub uniesione w górę (pupa w powietrzu)",
+        "cause": "Loss of plank tension — core releases when attention shifts to the tap",
+        "causePl": "Utrata napięcia deski — brzuch puszcza, gdy uwaga przenosi się na dotknięcie",
+        "cue": "Reset the plank before each tap — straight line ears-to-heels, abs and glutes squeezed",
+        "cuePl": "Zresetuj deskę przed każdym dotknięciem — prosta linia od uszu do pięt, brzuch i pośladki napięte"
+      },
+      {
+        "fault": "Slapping the hand back down to the floor",
+        "faultPl": "Uderzanie dłonią o podłogę przy powrocie",
+        "cause": "Rushing through reps, losing control on the descent",
+        "causePl": "Pośpiech między powtórzeniami, utrata kontroli przy opuszczaniu",
+        "cue": "Place the hand back like you're putting it on glass — silent and slow",
+        "cuePl": "Odkładaj dłoń jakbyś kładł ją na szkle — cicho i powoli"
+      },
+      {
+        "fault": "Holding breath throughout the set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Concentration on staying rigid — mistakenly tightens diaphragm too",
+        "causePl": "Koncentracja na utrzymaniu sztywności — błędnie napina również przeponę",
+        "cue": "Exhale on each tap, inhale between taps. Steady rhythm.",
+        "cuePl": "Wydech przy każdym dotknięciu, wdech między dotknięciami. Równy rytm."
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears",
+        "faultPl": "Barki podciągnięte do uszu",
+        "cause": "Weak scapular stabilizers / serratus, body compensates with upper traps",
+        "causePl": "Słabe stabilizatory łopatek / mięsień zębaty, ciało kompensuje pracą czworobocznego górnego",
+        "cue": "Push the floor away — long arms, shoulders away from the ears, chest broad",
+        "cuePl": "Odpychaj się od podłogi — długie ramiona, barki daleko od uszu, klatka szeroka"
+      }
+    ],
+    "breathing": "Exhale on each shoulder tap, inhale as the hand returns to the floor. Keep a steady rhythm — never hold your breath while bracing the plank.",
+    "breathingPl": "Wydech przy każdym dotknięciu barku, wdech podczas powrotu dłoni na podłogę. Utrzymuj równy rytm — nigdy nie wstrzymuj oddechu podczas trzymania deski."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "High plank loads the wrists at 90° extension. Use push-up handles, dumbbell grips or perform on fists / forearms (modified plank tap).",
+      "modificationPl": "Wysoka deska obciąża nadgarstki w 90° wyproście. Użyj uchwytów do pompek, chwytów na hantlach, wykonuj na pięściach lub na przedramionach (modyfikowany plank tap).",
+      "alternative": "plank"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Bearing weight on one arm in plank can aggravate impingement. Lower the tempo, reduce range (light touch to chest instead of opposite shoulder), or switch to forearm plank.",
+      "modificationPl": "Obciążanie jednej ręki w desce może nasilać konflikt podbarkowy. Zwolnij tempo, zmniejsz zakres (lekkie dotknięcie klatki zamiast przeciwnego barku) lub przejdź na deskę na przedramionach.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "If you cannot hold a neutral spine without hips sagging, skip this exercise until core endurance improves. Build with planks and bird-dogs first.",
+      "modificationPl": "Jeśli nie potrafisz utrzymać neutralnego kręgosłupa bez opadania bioder, pomiń to ćwiczenie do czasu poprawy wytrzymałości brzucha. Najpierw buduj zwykłą deską i bird-dogiem.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "pregnancy_late_term",
+      "severity": "modify",
+      "modification": "Prone plank position is uncomfortable / contraindicated in late pregnancy. Perform standing version against a wall (wall plank shoulder taps).",
+      "modificationPl": "Pozycja na brzuchu w desce jest niewygodna / przeciwwskazana w późnej ciąży. Wykonuj wersję stojącą o ścianę (wall plank shoulder taps).",
+      "alternative": "bird-dog"
+    }
+  ],
+
+  "typical_sets_reps": "3x20 taps (10/strona) | 3x30s (czas) | 3xAMRAP w 45s (finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "shoulder-tap.gif",
+    "frames_extracted": [
+      "frames/shoulder-tap/frame_0_start.png",
+      "frames/shoulder-tap/frame_1_early.png",
+      "frames/shoulder-tap/frame_2_mid.png",
+      "frames/shoulder-tap/frame_3_late.png",
+      "frames/shoulder-tap/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/shoulder-tap",
+    "yuhonas_id": "Plank_Shoulder_Taps",
+    "glowupp_id": "shoulder-tap"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Pozycja wyjściowa (klatka 0/4): wysoka deska — dłonie pod barkami, ramiona wyprostowane, ciało w prostej linii. Klatki 1-3: naprzemienne unoszenie jednej dłoni i dotykanie przeciwnego barku — w klatce 1 lewa dłoń idzie do prawego barku, w klatkach 2-3 widać kontynuację ruchu. Anatomia podświetla: rectus abdominis i obliques (mocno — anty-rotacja), barki delty przednie, serratus anterior na żebrach (stabilizacja łopatki w plank), triceps i pectoralis na ręce podpierającej. Klasyfikacja: anti_rotation (kluczowa praca to opieranie się rotacji tułowia), force=isometric (core trzyma sztywno, nie ma fazy koncentryczno-ekscentrycznej dla głównego mięśnia), mechanic=compound (wiele stawów: bark, łopatka, kręgosłup, biodra), plane=transverse (siła rotacyjna w płaszczyźnie poprzecznej, której się opiera), laterality=unilateral (jedna ręka pracuje na zmianę), kinetic_chain=closed (stopy + jedna dłoń stale na podłożu). Mięśnie główne: rectus_abdominis + obliques (oba P8 — anti-rotation wymaga obu równie mocno). Drugorzędne: barki + serratus (utrzymanie scapuli w plank), transverse_abdominis (deep bracing). Stabilizatory: triceps (sztywne wyprostowanie ręki podporowej), chest, glutes, quadriceps. Difficulty=5 (intermediate — wymaga umiejętności trzymania pełnej deski 30+s). Prerequisites: zwykły plank i high-plank. Aliasy PL: 'shoulder tap' jest najczęściej używany w środowisku po angielsku, więc zostawiłem główne z dopiskiem opisowym po polsku. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodyweight", "core", "abs", "anti_rotation", "no_equipment", "home_workout", "plank_variation", "obliques", "shoulders"]
+}

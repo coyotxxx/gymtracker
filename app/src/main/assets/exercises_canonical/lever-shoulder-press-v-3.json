@@ -1,0 +1,207 @@
+{
+  "id": "lever-shoulder-press-v-3",
+  "name": "Lever Shoulder Press v3",
+  "namePl": "Wyciskanie nad głowę na maszynie wersja 3",
+  "aliases": ["plate-loaded shoulder press neutral grip", "hammer strength shoulder press v3", "lever overhead press neutral grip", "plate-loaded OHP neutral", "leverage shoulder press independent arms"],
+  "aliasesPl": ["wyciskanie barków na maszynie dźwigniowej v3", "OHP na maszynie hammer strength v3", "wyciskanie nad głowę z chwytem neutralnym na maszynie", "leverage OHP neutral", "wyciskanie barków na maszynie z niezależnymi ramionami"],
+
+  "description": "Plate-loaded leverage (hammer-strength style) seated shoulder press performed with VERTICAL neutral-grip handles — palms facing each other throughout the entire ROM. Each arm presses independently on its own pivot lever, which slightly converges toward the midline at the top. This variant is the most shoulder-friendly form of machine pressing: the neutral grip externally rotates the humerus less than pronated grip, reducing impingement risk, and the independent arms force each side to work without dominant-side compensation. Plate-loaded mechanism gives a free-weight feel with a fixed safe path. Excellent choice for lifters with cranky shoulders, beginners learning vertical pressing, or as a high-volume hypertrophy tool when the standard pronated grip causes discomfort. The slight inward convergence at the top maximally shortens the anterior deltoid at lockout. Closed kinetic chain (fixed seat/back) compound, bilateral.",
+  "descriptionPl": "Wyciskanie barków na siedząco na maszynie dźwigniowej ładowanej talerzami (typu hammer strength) wykonywane z PIONOWYMI uchwytami neutralnymi — dłonie skierowane do siebie przez cały zakres ruchu. Każde ramię pracuje niezależnie na własnej dźwigni, która lekko zbiega się ku linii środkowej na szczycie. Ten wariant to najbardziej przyjazna dla barków forma wyciskania na maszynie: chwyt neutralny mniej rotuje zewnętrznie kość ramienną niż chwyt pronowany, redukując ryzyko konfliktu (impingement), a niezależne ramiona zmuszają każdą stronę do pracy bez kompensacji silniejszej. Ładowanie talerzami daje wrażenie wolnego ciężaru przy zachowaniu bezpiecznej, stałej ścieżki. Doskonały wybór dla osób z wrażliwymi barkami, początkujących uczących się wyciskania pionowego lub jako narzędzie hipertroficzne o dużej objętości gdy standardowy chwyt pronowany sprawia dyskomfort. Lekkie zbieganie się dźwigni na szczycie maksymalnie skraca przedni akton naramiennego w lock-out. Closed kinetic chain (siedzenie/oparcie ustalone), compound, dwustronne.",
+
+  "instructions": [
+    "Load equal plates on each side of the machine. Adjust the seat so neutral-grip handles sit at shoulder level (slightly below ear) at the bottom position.",
+    "Sit fully against the backrest, feet flat on the footplate, hip- and knee-flexion ~90°. Tighten belt if available.",
+    "Grip both vertical handles with palms facing each other (neutral grip). Wrists straight, stacked over forearms.",
+    "Set elbows directly below or very slightly forward of the wrists. Both arms symmetrical at start.",
+    "Press shoulder blades into the pad, brace core, ribs down. Maintain natural lumbar curve — no extreme arching.",
+    "Inhale, brace, and press both handles simultaneously straight up and slightly inward — the levers will converge naturally at the top.",
+    "At the top: arms nearly locked out (do not hyperextend), handles close to but not touching, biceps near ears.",
+    "Lower with control (2-3 seconds eccentric) back to the starting position — handles at ear level, elbows under wrists.",
+    "Exhale at lockout or on the way down. Do not let plates slam at the bottom — control the full ROM.",
+    "Keep head against the pad — no neck craning forward to peek at the handles."
+  ],
+  "instructionsPl": [
+    "Załaduj równe talerze po obu stronach maszyny. Wyreguluj siedzenie tak, by uchwyty neutralne (pionowe) znajdowały się na wysokości barków (lekko poniżej ucha) w pozycji startowej (dolnej).",
+    "Usiądź w pełni opierając się o oparcie, stopy płasko na podstawce, biodra i kolana zgięte ~90°. Zapnij pas jeśli jest dostępny.",
+    "Chwyć oba pionowe uchwyty dłońmi skierowanymi do siebie (chwyt neutralny). Nadgarstki proste, ustawione nad przedramionami.",
+    "Ustaw łokcie bezpośrednio pod nadgarstkami lub lekko z przodu. Obie ręce symetrycznie na starcie.",
+    "Wciśnij łopatki w oparcie, napnij brzuch, żebra w dół. Zachowaj naturalną krzywą lędźwiową — bez przesadnego wygięcia.",
+    "Wdech, napnij się, wyciśnij oba uchwyty jednocześnie prosto w górę i lekko ku środkowi — dźwignie naturalnie zbiegną się ku sobie na szczycie.",
+    "Na szczycie: ramiona prawie wyprostowane (nie przeprost), uchwyty blisko siebie lecz bez stykania, bicepsy przy uszach.",
+    "Opuszczaj kontrolowanym ruchem (ekscentryk 2-3 s) z powrotem do pozycji startowej — uchwyty na wysokości ucha, łokcie pod nadgarstkami.",
+    "Wydech w lock-out lub w trakcie opuszczania. Nie pozwól talerzom uderzyć na dole — kontroluj pełen ROM.",
+    "Trzymaj głowę przy oparciu — bez wyciągania szyi do przodu by zerknąć na uchwyty."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["lateral_deltoids", "triceps", "upper_chest", "trapezius"],
+    "stabilizers": ["core", "serratus_anterior", "rotator_cuff", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "S8",
+    "triceps": "S7",
+    "upper_chest": "S6",
+    "trapezius": "S5",
+    "serratus_anterior": "S6",
+    "core": "S4",
+    "rotator_cuff": "S5"
+  },
+
+  "equipment": {
+    "required": ["shoulder_press_machine", "weight_plates"],
+    "optional": ["belt", "wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-seated-shoulder-press", "seated-dumbbell-shoulder-press"],
+    "progression_to": ["lever-shoulder-press", "lever-shoulder-press-v-2", "dumbbell-seated-shoulder-press", "barbell-overhead-press"],
+    "alternatives": ["lever-shoulder-press", "lever-shoulder-press-v-2", "machine-shoulder-press", "cable-shoulder-press", "dumbbell-seated-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height — neutral handles at shoulder level (slightly below ear) at the bottom",
+      "Full back contact with pad, head against pad, feet flat on footplate",
+      "Vertical handles — palms FACING EACH OTHER (neutral grip)",
+      "Wrists STRAIGHT and stacked over forearms — no breaking back",
+      "Elbows below or slightly forward of wrists, NOT flared way out to the sides"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedzenia — uchwyty neutralne na wysokości barków (lekko poniżej ucha) na dole",
+      "Pełen kontakt pleców z oparciem, głowa przy oparciu, stopy płasko na podstawce",
+      "Pionowe uchwyty — dłonie SKIEROWANE DO SIEBIE (chwyt neutralny)",
+      "Nadgarstki PROSTE i nad przedramionami — bez łamania w tył",
+      "Łokcie pod nadgarstkami lub lekko z przodu, NIE rozłożone szeroko na boki"
+    ],
+    "execution_cues": [
+      "Press straight up and slightly INWARD — let the levers converge naturally",
+      "Both arms work INDEPENDENTLY — match tempo and ROM, do not let the strong side race ahead",
+      "Squeeze biceps NEAR your ears at the top — almost full lockout, not slammed",
+      "Eccentric 2-3 seconds — control the descent, do not slam the plates",
+      "Head STAYS against the pad — no chin poke or neck strain"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę i lekko KU ŚRODKOWI — pozwól dźwigniom naturalnie się zbiec",
+      "Każde ramię pracuje NIEZALEŻNIE — dopasuj tempo i ROM, nie pozwól silniejszej stronie wyprzedzić",
+      "Ściśnij bicepsy PRZY uszach na szczycie — prawie pełen lock-out, bez szarpania",
+      "Ekscentryk 2-3 sekundy — kontroluj opuszczanie, nie pozwól talerzom rąbnąć",
+      "Głowa POZOSTAJE przy oparciu — bez wystawiania brody ani napinania szyi"
+    ],
+    "common_faults": [
+      {
+        "fault": "Asymmetric pressing — strong side reaches lockout first",
+        "faultPl": "Asymetryczne wyciskanie — silniejsza strona pierwsza dochodzi do lock-out",
+        "cause": "Strength imbalance between sides, dominant-side compensation, fatigue at end of set, focusing only on one handle",
+        "causePl": "Dysproporcja siły między stronami, kompensacja dominującej strony, zmęczenie pod koniec serii, skupianie się tylko na jednym uchwycie",
+        "cue": "Match the WEAKER arm. If imbalance is large (>15%), do single-arm machine sets to bring the weak side up. Slow down the strong side.",
+        "cuePl": "Dopasuj tempo do SŁABSZEJ ręki. Przy dużej dysproporcji (>15%) rób serie jednorącz aby podciągnąć słabszą stronę. Zwolnij silniejsze ramię."
+      },
+      {
+        "fault": "Excessive lower back arching against the pad",
+        "faultPl": "Nadmierne wyginanie dolnych pleców od oparcia",
+        "cause": "Weight too heavy, weak core, no glute engagement, limited overhead mobility compensated by lumbar extension, poor seat-back angle",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, brak napięcia pośladków, ograniczona mobilność overhead kompensowana lordozą, zły kąt oparcia",
+        "cue": "Ribs DOWN. Press lower back INTO the pad — keep contact through the WHOLE rep. Reduce weight if the lumbar lifts off the pad.",
+        "cuePl": "Żebra W DÓŁ. Wciśnij dolny krzyż W oparcie — utrzymuj kontakt przez CAŁY ruch. Zmniejsz ciężar jeśli lędźwie odrywają się od oparcia."
+      },
+      {
+        "fault": "Wrists bending backward under load",
+        "faultPl": "Łamanie nadgarstków do tyłu pod obciążeniem",
+        "cause": "Weak forearm/wrist grip, weight too heavy, grip too loose, fatigue",
+        "causePl": "Słabe przedramiona/chwyt, zbyt duży ciężar, zbyt luźny chwyt, zmęczenie",
+        "cue": "Wrists STRAIGHT — knuckles point STRAIGHT up. Squeeze the handles tightly. Consider wrist wraps for heavy sets.",
+        "cuePl": "Nadgarstki PROSTE — kostki wskazują PROSTO w górę. Ściskaj uchwyty mocno. Rozważ usztywniacze (wrist wraps) na ciężkie serie."
+      },
+      {
+        "fault": "Bouncing the plates at the bottom",
+        "faultPl": "Odbijanie talerzy na dole",
+        "cause": "Using momentum to start the next rep, weight too heavy, no eccentric control, rushing through reps",
+        "causePl": "Wykorzystywanie pędu by zacząć kolejne powtórzenie, zbyt duży ciężar, brak kontroli ekscentryka, pośpiech",
+        "cue": "PAUSE briefly at the bottom — handles at ear level, no bounce off the plate stack. Eccentric must be slow and controlled.",
+        "cuePl": "Krótka PAUZA na dole — uchwyty na wysokości ucha, bez odbijania od stosu talerzy. Ekscentryk wolny i kontrolowany."
+      },
+      {
+        "fault": "Head/neck craning forward to look up at the handles",
+        "faultPl": "Wyciąganie głowy/szyi do przodu by spojrzeć w górę na uchwyty",
+        "cause": "Habit, distraction, checking form by sight, poor head support against pad",
+        "causePl": "Nawyk, rozproszenie, sprawdzanie formy wzrokiem, słabe oparcie głowy",
+        "cue": "Eyes forward, head against the pad. Use a MIRROR or video for form check, not your neck.",
+        "cuePl": "Wzrok do przodu, głowa przy oparciu. Użyj LUSTRA lub nagrania do oceny formy, nie szyi."
+      }
+    ],
+    "breathing": "Inhale at the bottom, brace tight. Hold during the press up. Exhale at the top (lockout) or during the controlled descent. Strong bracing critical — even with back support, the core must hold lumbar position.",
+    "breathingPl": "Wdech na dole, mocne napięcie. Trzymaj podczas wyciskania w górę. Wydech na szczycie (lock-out) lub w trakcie kontrolowanego opuszczania. Mocne napięcie krytyczne — nawet z oparciem brzuch musi utrzymać pozycję lędźwiową."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "This neutral-grip variant is the MOST impingement-friendly machine press. If pain still occurs, reduce ROM (stop just below ear level) and avoid full lockout. Strengthen rotator cuff with band external rotations before pressing.",
+      "modificationPl": "Ten wariant z chwytem neutralnym to NAJBARDZIEJ przyjazna dla impingement maszyna do wyciskania. Jeśli ból nadal występuje, zmniejsz ROM (stop tuż poniżej ucha) i unikaj pełnego lock-out. Wzmacniaj rotatory taśmą (external rotations) przed wyciskaniem.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Neutral grip is gentler on overhead mobility than pronated. Partial reps to comfortable ROM are acceptable. Work on thoracic extension and shoulder flexion mobility drills between sets/sessions.",
+      "modificationPl": "Chwyt neutralny jest łagodniejszy dla mobilności overhead niż pronowany. Częściowe powtórzenia w komfortowym ROM są akceptowalne. Pracuj nad mobilnością wyprostu piersiowego i zgięcia barku między seriami/treningami.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Neutral grip is the safest pressing variant for cuff issues. Start with very light weight, focus on slow eccentrics, and avoid lockout. Combine with dedicated cuff rehab work (Y-T-W raises, band ER).",
+      "modificationPl": "Chwyt neutralny to najbezpieczniejszy wariant wyciskania dla problemów z rotatorami. Zacznij od bardzo lekkiego ciężaru, skup się na wolnym ekscentryku i unikaj lock-out. Łącz z dedykowaną rehabilitacją rotatorów (Y-T-W raises, gumy ER).",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Seated machine with back support is among the safest pressing options for low-back issues. Ensure full back contact with pad, ribs down, no hyperextension. Use lifting belt if needed.",
+      "modificationPl": "Siedząca maszyna z oparciem to jedna z najbezpieczniejszych opcji wyciskania przy problemach z dolnym krzyżem. Zapewnij pełen kontakt pleców z oparciem, żebra w dół, brak przeprostu. Użyj pasa jeśli trzeba.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, sweet spot for this variant) | 3x12-15 (volume/endurance, beginner-friendly) | 4x6-8 (strength-hypertrophy bias, advanced loading)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-shoulder-press-v-3.gif",
+    "frames_extracted": [
+      "frames/lever-shoulder-press-v-3/frame_0_start.png",
+      "frames/lever-shoulder-press-v-3/frame_1_early.png",
+      "frames/lever-shoulder-press-v-3/frame_2_mid.png",
+      "frames/lever-shoulder-press-v-3/frame_3_late.png",
+      "frames/lever-shoulder-press-v-3/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/lever-shoulder-press-v-3",
+    "master_slug": "lever-shoulder-press-v-3"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T20:25:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Frame 0 (start): atleta siedzi w pełni opartym o oparcie maszynie dźwigniowej (hammer strength style), stopy płasko na podstawce u podstawy maszyny, kolana i biodra zgięte ~90°, ręce trzymają DWA PIONOWE UCHWYTY na wysokości barków (lekko poniżej ucha) z chwytem NEUTRALNYM (dłonie skierowane do siebie). Łokcie pod nadgarstkami w pozycji startowej. Podświetlone przednie i lateralne delty (intensywnie pomarańczowy front delt) plus górna część klatki. Widoczne talerze załadowane po prawej stronie maszyny — to wariant plate-loaded leverage. Niezależne ramiona dźwigni po obu stronach. Frame 1/2/3 (mid/szczyt): wyciskanie symetryczne obu uchwytów jednocześnie prosto w górę z lekkim zbieganiem ku linii środkowej — dźwignie naturalnie konwergują, uchwyty na szczycie blisko siebie nad głową, ramiona w prawie pełnym lock-out (bez przeprostu), bicepsy przy uszach. Tricepsy aktywnie podświetlone. Closed kinetic chain — siedzenie i oparcie ustalone, stała ścieżka ruchu. Frame 4 (powrót/end): widoczne motion ghosting wskazujące powrót do pozycji startowej z uchwytami na wysokości barków, faza ekscentryczna kontrolowana. Pasuje 1:1 do specyfikacji: equipment shoulder_press_machine + weight_plates, primary anterior_deltoids P10 (dominują w całym ROM), lateral_deltoids S8 (asystują przy lekkim odwiedzeniu), triceps S7 (lock-out). Różnica względem v1/v2: chwyt NEUTRALNY (pionowe uchwyty, dłonie do siebie) zamiast pronowanego — najbardziej shoulder-friendly wariant maszyny do wyciskania. Difficulty 3 (beginner-friendly dzięki fixed path i back support).",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "machine", "plate_loaded", "compound", "bilateral", "neutral_grip", "shoulder_friendly", "beginner_friendly", "fixed_path", "hammer_strength_style"]
+}

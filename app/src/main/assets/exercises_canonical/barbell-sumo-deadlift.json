@@ -1,0 +1,205 @@
+{
+  "id": "barbell-sumo-deadlift",
+  "name": "Barbell Sumo Deadlift",
+  "namePl": "Martwy ciąg sumo",
+  "aliases": ["sumo deadlift", "barbell sumo deadlift", "sumo dl"],
+  "aliasesPl": ["martwy ciąg sumo", "deadlift sumo", "sumo"],
+
+  "description": "Variant of the deadlift with a very wide stance (toes turned out) and grip taken INSIDE the legs. Compared to the conventional deadlift, the bar travels a shorter distance, the torso stays more upright, lumbar shear is reduced and the load shifts toward the quadriceps, adductors and glutes. Popular in powerlifting and recommended for lifters with long torsos, hip mobility issues with conventional, or anterior hip impingement (FAI).",
+  "descriptionPl": "Wariant martwego ciągu z BARDZO szeroką stójką (palce na zewnątrz) i chwytem WEWNĄTRZ nóg. W porównaniu do klasycznego deadliftu gryf pokonuje krótszą drogę, tułów pozostaje bardziej pionowy, mniej obciążony jest odcinek lędźwiowy, a praca przenosi się bardziej na czworogłowe, przywodziciele i pośladki. Popularny w trójboju siłowym i polecany osobom z długim tułowiem, ograniczoną mobilnością bioder w klasycznym wariancie lub przednim impingementem biodra (FAI).",
+
+  "instructions": [
+    "Load the barbell on the floor. Step up to the bar with feet very wide — significantly wider than shoulder-width (roughly 1.5-2× shoulder-width).",
+    "Point your toes out 30-45 degrees so that knees can track over toes. Bar should be over mid-foot, almost touching shins.",
+    "Hinge at the hips and drop the hips down between the knees. Grip the bar with hands INSIDE the legs, shoulder-width apart (double-overhand or mixed grip).",
+    "Set torso more upright than conventional. Chest up, lats engaged ('break the bar'), shoulders just slightly in front of the bar.",
+    "Push knees out HARD into your elbows — open the hips. Take a big breath, brace the core (Valsalva).",
+    "Initiate the pull by pushing the floor away with both feet and 'spreading the floor apart'. Keep knees tracking over toes.",
+    "As the bar passes the knees, drive hips through to lockout. Squeeze glutes hard at the top — full hip extension, neutral pelvis.",
+    "To lower: push hips back first, knees bend simultaneously, keep bar close to the body. Return to the floor under control."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę na ziemi. Podejdź do gryfu z bardzo szeroką stójką — znacznie szerszą niż szerokość barków (około 1,5-2× szerokość barków).",
+    "Skieruj palce stóp na zewnątrz pod kątem 30-45 stopni — kolana muszą podążać linią palców. Gryf nad środkiem stóp, prawie dotykający goleni.",
+    "Zgnij się w biodrach i opuść biodra w dół, między kolana. Złap sztangę WEWNĄTRZ nóg, na szerokość barków (chwyt podwójny nachwytem lub mieszany).",
+    "Ustaw tułów bardziej pionowo niż w klasycznym wariancie. Klatka w górze, najszersze napięte ('łam gryf'), barki tylko lekko przed sztangą.",
+    "MOCNO wypchnij kolana na zewnątrz, w stronę łokci — otwórz biodra. Nabierz głęboki oddech, napnij brzuch (Valsalva).",
+    "Zacznij ciąg napierając stopami w podłogę i 'rozpychając podłogę na boki'. Kolana cały czas nad linią palców.",
+    "Gdy gryf mija kolana, wepchnij biodra do przodu do lock-out. Mocno ściśnij pośladki na górze — pełen wyprost biodra, neutralna miednica.",
+    "Opuszczanie: najpierw wypchnij biodra do tyłu, kolana zginają się jednocześnie, gryf trzymaj blisko ciała. Wróć na ziemię pod kontrolą."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "adductors", "hamstrings"],
+    "secondary": ["erector_spinae", "trapezius", "latissimus_dorsi", "forearms"],
+    "stabilizers": ["core", "rhomboids", "obliques", "hip_abductors"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "quadriceps": "P9",
+    "adductors": "P8",
+    "hamstrings": "P8",
+    "erector_spinae": "S7",
+    "trapezius": "S6",
+    "latissimus_dorsi": "S6",
+    "forearms": "S8",
+    "core": "S7"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["belt", "lifting_straps", "chalk", "flat_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 8,
+    "prerequisites": ["romanian-deadlift", "kettlebell-deadlift", "goblet-squat", "barbell-deadlift"],
+    "progression_to": ["deficit-sumo-deadlift", "pause-sumo-deadlift", "block-pull-sumo"],
+    "alternatives": ["barbell-deadlift", "trap-bar-deadlift", "kettlebell-sumo-deadlift", "romanian-deadlift"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stance very wide — toes out 30-45°",
+      "Bar over mid-foot, almost touching shins",
+      "Hands shoulder-width INSIDE the legs",
+      "Hips dropped low, torso more upright than conventional",
+      "Knees tracking over toes — push knees OUT into elbows",
+      "Lats engaged, chest up, big brace before pull"
+    ],
+    "setup_cues_pl": [
+      "Stójka bardzo szeroka — palce na zewnątrz 30-45°",
+      "Gryf nad środkiem stóp, prawie dotyka goleni",
+      "Dłonie na szerokość barków WEWNĄTRZ nóg",
+      "Biodra nisko, tułów bardziej pionowy niż w klasycznym",
+      "Kolana nad linią palców — wypchnij kolana W łokcie",
+      "Najszersze napięte, klatka w górze, mocne napięcie przed startem"
+    ],
+    "execution_cues": [
+      "Spread the floor apart — push feet out laterally",
+      "Drive hips through — squeeze glutes at lockout",
+      "Knees out the WHOLE time — never collapse inward",
+      "Bar stays in contact with shins and thighs",
+      "Lockout = glutes only, neutral pelvis (NO hyperextension)"
+    ],
+    "execution_cues_pl": [
+      "Rozpychaj podłogę — napieraj stopami na boki",
+      "Wepchnij biodra do przodu — ściśnij pośladki w lock-out",
+      "Kolana NA ZEWNĄTRZ przez cały ruch — nigdy do środka",
+      "Gryf w kontakcie z goleniami i udami",
+      "Lock-out = same pośladki, neutralna miednica (BEZ odginania)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knees collapsing inward (valgus)",
+        "faultPl": "Kolana zapadające się do środka (valgus)",
+        "cause": "Weak hip abductors/external rotators, stance too wide for mobility, or load too heavy",
+        "causePl": "Słabe odwodziciele/rotatory zewnętrzne biodra, stójka zbyt szeroka jak na mobilność, lub zbyt duży ciężar",
+        "cue": "Push knees OUT into your elbows the entire pull. Reduce stance width if mobility limits you. Strengthen with banded squats and clamshells.",
+        "cuePl": "Wypychaj kolana NA ZEWNĄTRZ w łokcie przez cały ciąg. Zmniejsz szerokość stójki jeśli mobilność jest słabsza. Wzmacniaj przysiadami z gumą i clamshells."
+      },
+      {
+        "fault": "Hips shoot up before bar leaves the floor (squat-then-pull)",
+        "faultPl": "Biodra wystrzeliwują w górę zanim gryf oderwie się od podłogi",
+        "cause": "Insufficient quad/leg drive, starting position too high, lats not engaged",
+        "causePl": "Niedostateczna siła nóg/czworogłowych, pozycja startowa zbyt wysoka, najszersze nie napięte",
+        "cue": "Wedge yourself UNDER the bar before pulling. Push the floor away with the legs, hips and shoulders rise together. Pre-tension the bar ('pull the slack out').",
+        "cuePl": "Zaklinuj się POD sztangą zanim pociągniesz. Wypchnij podłogę nogami, biodra i barki wstają razem. Wstępnie napnij gryf ('wyciągnij luz')."
+      },
+      {
+        "fault": "Bar drifts forward off the body",
+        "faultPl": "Gryf oddala się od ciała do przodu",
+        "cause": "Lats not engaged, hips too far back, weak upper back",
+        "causePl": "Najszersze nie napięte, biodra zbyt z tyłu, słabe górne plecy",
+        "cue": "Engage lats hard — imagine putting the bar IN your shins. Keep shoulders just slightly in front of the bar at setup.",
+        "cuePl": "Mocno napnij najszersze — wyobraź sobie że wkładasz gryf W golenie. Barki tylko lekko przed gryfem w starcie."
+      },
+      {
+        "fault": "Hyperextension at lockout (leaning back)",
+        "faultPl": "Nadmierne odgięcie kręgosłupa w lock-out (odchylanie się do tyłu)",
+        "cause": "Misunderstanding of full hip extension vs lumbar extension, trying to 'show' the lockout",
+        "causePl": "Niezrozumienie pełnego wyprostu biodra vs odgięcia lędźwi, próba 'pokazania' lock-outu",
+        "cue": "Lockout = squeeze glutes, neutral pelvis. Stand TALL, not BACK. Imagine pressing your back pocket forward.",
+        "cuePl": "Lock-out = ściśnij pośladki, neutralna miednica. Stań PROSTO, nie do TYŁU. Wyobraź sobie że wypychasz tylną kieszeń do przodu."
+      },
+      {
+        "fault": "Stance too wide for hip mobility",
+        "faultPl": "Stójka zbyt szeroka jak na mobilność bioder",
+        "cause": "Copying elite lifters without matching anthropometry, insufficient hip ROM",
+        "causePl": "Kopiowanie zaawansowanych zawodników bez podobnej antropometrii, niewystarczający zakres ruchu biodra",
+        "cue": "Find YOUR optimal sumo width. If you can't keep torso upright or knees track properly, narrow the stance. Width is individual.",
+        "cuePl": "Znajdź TWOJĄ optymalną szerokość sumo. Jeśli nie utrzymasz pionowego tułowia lub kolana nie podążają poprawnie — zwęź stójkę. Szerokość jest indywidualna."
+      }
+    ],
+    "breathing": "Big inhale at the top of the setup, brace hard (Valsalva), hold throughout the entire rep. Exhale at the top of the lockout. NEVER exhale during the pull.",
+    "breathingPl": "Głęboki wdech na szczycie setup, mocne napięcie (Valsalva), trzymaj przez całe powtórzenie. Wydech na szczycie lock-out. NIGDY wydech podczas ciągu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Do not load the spine.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nie obciążaj kręgosłupa.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "knee_injury_meniscus_mcl",
+      "severity": "modify",
+      "modification": "Sumo stance puts more lateral stress on knees than conventional. Narrow the stance toward semi-sumo, or switch to RDLs/trap bar.",
+      "modificationPl": "Sumo wywiera większy boczny stres na kolana niż klasyczny wariant. Zwęź stójkę w stronę semi-sumo, lub przejdź na RDLs / trap bar.",
+      "alternative": "trap-bar-deadlift"
+    },
+    {
+      "condition": "adductor_groin_strain",
+      "severity": "avoid",
+      "modification": "Sumo heavily loads adductors. Wait for full recovery and gradual return through bodyweight and unloaded hinge patterns.",
+      "modificationPl": "Sumo mocno obciąża przywodziciele. Poczekaj na pełną regenerację i wracaj stopniowo przez wzorce hip hinge bez obciążenia.",
+      "alternative": "romanian-deadlift"
+    },
+    {
+      "condition": "hip_impingement_fai_posterior",
+      "severity": "caution",
+      "modification": "Sumo can WORSEN posterior FAI (deep flexion + external rotation). Test with light load. If symptomatic, switch to conventional or trap bar.",
+      "modificationPl": "Sumo może POGORSZYĆ tylny FAI (głęboka flexja + rotacja zewnętrzna). Sprawdź na lekkim ciężarze. Jeśli objawowe — przejdź na klasyczny lub trap bar.",
+      "alternative": "trap-bar-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (strength) | 3-5x3-5 (powerlifting) | 3-4x6-10 (hypertrophy) | 1-3x1-3 (max strength)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-sumo-deadlift.gif",
+    "frames_extracted": [
+      "frames/barbell-sumo-deadlift/frame_0_start.png",
+      "frames/barbell-sumo-deadlift/frame_1_early.png",
+      "frames/barbell-sumo-deadlift/frame_2_mid.png",
+      "frames/barbell-sumo-deadlift/frame_3_late.png",
+      "frames/barbell-sumo-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-sumo-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:50:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa — bardzo szeroka stójka, palce na zewnątrz, chwyt WEWNĄTRZ nóg, tułów bardziej pionowy niż klasyczny deadlift; podświetlone głównie pośladki, czworogłowe, przywodziciele, przedramiona. Frame 1/3: faza pośrednia z biodrami otwartymi w stronę kolan. Frame 2: lock-out — pełen wyprost, gryf przy biodrach, dominują czworogłowe i pośladki. Klasyfikacja jako 'hinge' utrzymana (dominujący ruch to wyprost biodra; quady są podporowe choć bardzo zaangażowane). Equipment: tylko barbell. primary muscles uwzględniają specyfikę: glutes P10, quadriceps P9, adductors P8, hamstrings P8 (zgodnie z biomechaniką sumo). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["powerlifting", "compound", "posterior_chain", "strength_fundamental", "barbell", "hip_hinge", "wide_stance", "adductors", "sumo"]
+}

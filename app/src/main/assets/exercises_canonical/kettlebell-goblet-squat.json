@@ -1,0 +1,202 @@
+{
+  "id": "kettlebell-goblet-squat",
+  "name": "Kettlebell Goblet Squat",
+  "namePl": "Goblet squat z kettlebell",
+  "aliases": ["kb goblet squat", "kettlebell front-loaded squat", "kettlebell chest-held squat"],
+  "aliasesPl": ["goblet z kettlebell", "przysiad goblet z kettlem", "przysiad z kettlebell pod brodą", "goblet squat z odważnikiem kulowym"],
+
+  "description": "Fundamental front-loaded squat variant where the kettlebell is held vertically by the horns just under the chin. The kettlebell's natural grip (horns above the bell) places the load close to the center of mass and slightly higher than a dumbbell goblet, which encourages an upright torso and deeper hip flexion. Excellent teaching tool for squat patterning, a quad/glute hypertrophy movement for intermediate lifters, and a metabolic conditioning staple in kettlebell and CrossFit programming.",
+  "descriptionPl": "Podstawowy wariant przysiadu z obciążeniem z przodu, w którym kettlebell trzymany jest pionowo za rogi tuż pod brodą. Naturalny chwyt kettla (rogi nad kulą) ustawia ciężar blisko środka masy i nieco wyżej niż w wersji z hantlą, co wymusza wyprostowany tułów i głębsze zgięcie bioder. Świetne narzędzie do nauki techniki przysiadu, ćwiczenie hipertroficzne na czworogłowe i pośladki dla średniozaawansowanych oraz klasyczna pozycja w kondycji metabolicznej programów kettlebell i CrossFit.",
+
+  "instructions": [
+    "Stand a kettlebell on the floor between your feet. Squat down with a flat back and grip the kettlebell by the horns, one hand on each side just above the bell.",
+    "Stand up, hugging the kettlebell vertically against your chest. The bell hangs below your hands, horns rest just under your chin, elbows point down and slightly in.",
+    "Set your feet shoulder-width or slightly wider, toes pointed out 10-30°. Brace your core, draw shoulders back, keep the chest tall.",
+    "Inhale, hold the breath, and sit straight down — break at the hips and knees simultaneously. Keep the kettlebell pinned against your sternum.",
+    "Descend until your elbows pass between your knees and your hip crease drops below your knee (full goblet depth) or to the deepest position you control with a neutral spine.",
+    "At the bottom, keep an upright torso, elbows tucked inside the knees, and weight distributed across the whole foot.",
+    "Drive through mid-foot, extend the hips and knees simultaneously, and exhale near the top. Squeeze the glutes at lockout and reset your brace for the next rep."
+  ],
+  "instructionsPl": [
+    "Ustaw kettlebell na podłodze między stopami. Wykonaj przysiad z prostymi plecami i złap kettla za rogi — jedna dłoń z każdej strony, tuż nad kulą.",
+    "Wstań trzymając kettlebell pionowo przy klatce piersiowej. Kula zwisa pod dłońmi, rogi spoczywają tuż pod brodą, łokcie skierowane w dół i lekko do środka.",
+    "Ustaw stopy na szerokość barków lub nieco szerzej, palce skierowane na zewnątrz 10-30°. Napnij brzuch, ściągnij barki w tył, klatka wysoko.",
+    "Wdech, wstrzymaj oddech i siadaj prosto w dół — jednocześnie zginaj biodra i kolana. Trzymaj kettla mocno dociśniętego do mostka.",
+    "Schodź aż łokcie miną kolana od wewnątrz, a linia bioder zejdzie poniżej kolan (pełna głębokość goblet) lub do najniższej pozycji którą kontrolujesz z neutralnym kręgosłupem.",
+    "W dolnej pozycji utrzymuj wyprostowany tułów, łokcie schowane do wewnątrz kolan, ciężar rozłożony na całej stopie.",
+    "Wypychaj się przez środek stopy, jednocześnie prostując biodra i kolana, wydech blisko góry. Spnij pośladki w wyproście i ustaw napięcie przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["adductors", "hamstrings", "erector_spinae"],
+    "stabilizers": ["core", "upper_back", "biceps", "forearms", "calves"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "adductors": "S5",
+    "hamstrings": "S4",
+    "erector_spinae": "S6",
+    "core": "S7",
+    "upper_back": "S5",
+    "biceps": "T3",
+    "forearms": "T3",
+    "calves": "T2"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["lifting_shoes", "elevated_heel_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-squat"],
+    "progression_to": ["double-kettlebell-front-squat", "kettlebell-front-squat", "barbell-front-squat", "barbell-back-squat", "kettlebell-pistol-squat"],
+    "alternatives": ["dumbbell-goblet-squat", "barbell-front-squat", "kettlebell-front-squat", "zercher-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hold the kettlebell by the horns, bell pinned to your sternum",
+      "Elbows down and tucked, forearms vertical",
+      "Feet shoulder-width, toes out 10-30°",
+      "Tall chest, ribs stacked over hips, core braced",
+      "Big breath into the belly, hold (Valsalva)"
+    ],
+    "setup_cues_pl": [
+      "Trzymaj kettlebell za rogi, kula dociśnięta do mostka",
+      "Łokcie w dół i schowane, przedramiona pionowo",
+      "Stopy szerokość barków, palce na zewnątrz 10-30°",
+      "Klatka wysoko, żebra nad biodrami, brzuch napięty",
+      "Głęboki wdech w brzuch, przytrzymaj (Valsalva)"
+    ],
+    "execution_cues": [
+      "Sit straight down between your heels",
+      "Drive your elbows inside your knees at the bottom",
+      "Knees track over your toes — push them out",
+      "Keep the chest up — don't let the bell pull you forward",
+      "Push the floor away through whole foot, hips and knees together"
+    ],
+    "execution_cues_pl": [
+      "Siadaj prosto w dół między piętami",
+      "Wprowadź łokcie do wewnątrz kolan w dolnej pozycji",
+      "Kolana podążają za palcami — wypychaj je na zewnątrz",
+      "Trzymaj klatkę w górze — nie pozwól ciężarowi pociągnąć cię do przodu",
+      "Wypchnij podłogę całą stopą, biodra i kolana prostuj jednocześnie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso collapses forward, bell drops away from chest",
+        "faultPl": "Tułów pochyla się do przodu, kettla odchodzi od klatki",
+        "cause": "Weak upper back, fatigue, load too heavy, or losing the brace",
+        "causePl": "Słaba górna część pleców, zmęczenie, zbyt duży ciężar lub utrata napięcia brzucha",
+        "cue": "Pin the bell to your sternum and don't let it leave. If you can't, drop the weight.",
+        "cuePl": "Dociśnij kulę do mostka i nie pozwól jej odejść. Jeśli nie potrafisz — zmniejsz ciężar."
+      },
+      {
+        "fault": "Knees cave inward (valgus)",
+        "faultPl": "Kolana uciekają do środka (koślawienie)",
+        "cause": "Weak glute medius, lack of hip external rotation, narrow stance, or load too heavy",
+        "causePl": "Słabe pośladkowe średnie, brak rotacji zewnętrznej biodra, zbyt wąski rozstaw lub zbyt duży ciężar",
+        "cue": "Push your knees out toward your pinky toes — spread the floor",
+        "cuePl": "Wypchnij kolana na zewnątrz w stronę małych palców — rozsuwaj podłogę"
+      },
+      {
+        "fault": "Heels rise off the floor",
+        "faultPl": "Pięty odrywają się od podłogi",
+        "cause": "Limited ankle dorsiflexion or going below your available depth",
+        "causePl": "Ograniczona dorsiflexja stawu skokowego lub schodzenie poniżej dostępnego zakresu",
+        "cue": "Push through the whole foot. Elevate heels on small plates or limit depth until mobility improves.",
+        "cuePl": "Wypchnij się przez całą stopę. Podnieś pięty na płytkach lub ogranicz głębokość do czasu poprawy mobilności."
+      },
+      {
+        "fault": "Butt wink (lumbar tucks under at the bottom)",
+        "faultPl": "Butt wink (kręgosłup lędźwiowy podwija się w dole)",
+        "cause": "Hip mobility limit, descending past your ROM, or insufficient bracing",
+        "causePl": "Limit mobilności bioder, schodzenie poza swój zakres lub niedostateczne napięcie",
+        "cue": "Stop just above the depth where the pelvis tucks. Train hip mobility separately.",
+        "cuePl": "Zatrzymaj się tuż nad głębokością, gdzie miednica się podwija. Pracuj nad mobilnością bioder osobno."
+      },
+      {
+        "fault": "Elbows flare wide instead of staying tucked",
+        "faultPl": "Łokcie rozchodzą się szeroko zamiast pozostać schowane",
+        "cause": "Weak upper back, kettlebell too heavy, or trying to support the bell with arms instead of trunk",
+        "causePl": "Słaba górna część pleców, zbyt ciężki kettla lub próba trzymania ciężaru rękami zamiast tułowiem",
+        "cue": "Drive elbows down and slightly inward — let the bell rest against the chest, not your arms",
+        "cuePl": "Skieruj łokcie w dół i lekko do środka — niech kula spoczywa na klatce, nie na rękach"
+      }
+    ],
+    "breathing": "Inhale deeply at the top, brace the core, hold the breath through the descent and the hardest part of the ascent (Valsalva). Exhale near lockout. For longer metabolic sets, breathe out at the top and inhale on the way down.",
+    "breathingPl": "Głęboki wdech na górze, napnij brzuch, wstrzymaj oddech przez schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech blisko wyprostu. Przy dłuższych seriach metabolicznych wydychaj na górze i wdychaj w drodze w dół."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid axial loading. Rest and consult a physiotherapist.",
+      "modificationPl": "Unikaj obciążenia osiowego. Odpoczynek i konsultacja z fizjoterapeutą.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range, stop above parallel.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu, zatrzymaj się powyżej parallel.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "wrist_or_grip_injury",
+      "severity": "modify",
+      "modification": "Holding kettlebell by the horns loads the wrists. Switch to a dumbbell goblet held vertically by one end, or to a front-rack variant.",
+      "modificationPl": "Chwyt za rogi obciąża nadgarstki. Przejdź na goblet z hantlą trzymaną pionowo za jeden koniec lub na wariant w pozycji front-rack.",
+      "alternative": "dumbbell-goblet-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Experiment with stance width — wider stance and more toe-out often bypasses impingement. Stop above the pinch.",
+      "modificationPl": "Eksperymentuj z szerokością stóp — szerszy rozstaw i większy rozkład palców często omija impingement. Zatrzymaj się przed momentem przeszczypywania.",
+      "alternative": "sumo-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x15-20 (conditioning) | 5x5 (skill / teaching)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "kettlebell-goblet-squat.gif",
+    "frames_extracted": [
+      "frames/kettlebell-goblet-squat/frame_0_start.png",
+      "frames/kettlebell-goblet-squat/frame_1_early.png",
+      "frames/kettlebell-goblet-squat/frame_2_mid.png",
+      "frames/kettlebell-goblet-squat/frame_3_late.png",
+      "frames/kettlebell-goblet-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/kettlebell-goblet-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0/4: stojąca pozycja z kettlem trzymanym pionowo za rogi tuż pod brodą, łokcie skierowane w dół, kula opiera się o mostek. Frame 2: pełna głębokość goblet — biodra poniżej kolan, łokcie schowane między kolanami, tułów wyprostowany. Mięśnie podświetlone na ilustracji: czworogłowe (główne, mocno czerwone), pośladki (drugie najmocniejsze) — pasuje do anatomii goblet squata, gdzie front-loaded carry dodatkowo angażuje quady względem back squata. Difficulty 3 (beginner-friendly, klasyczne ćwiczenie nauczające wzorca przysiadu). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["kettlebell", "lower_body", "compound", "squat_pattern", "front_loaded", "teaching_movement", "beginner_friendly", "hypertrophy", "conditioning"]
+}

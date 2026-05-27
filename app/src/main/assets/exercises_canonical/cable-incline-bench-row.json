@@ -1,0 +1,202 @@
+{
+  "id": "cable-incline-bench-row",
+  "name": "Cable Incline Bench Row",
+  "namePl": "Wiosłowanie na wyciągu z ławki skośnej dodatniej",
+  "aliases": ["cable chest-supported row on incline bench", "incline bench cable row", "chest-supported cable row", "incline cable row", "prone cable row on incline bench"],
+  "aliasesPl": ["wiosłowanie linką z podparciem klatki", "wiosłowanie z wyciągu na ławce skośnej", "wiosłowanie chest-supported na wyciągu", "wiosłowanie linką z ławki skośnej dodatniej", "wiosłowanie z podparciem klatki na ławce skośnej"],
+
+  "description": "A chest-supported horizontal pulling exercise performed on an incline bench (set up facing the bench, with the chest and belly resting on the angled pad) while rowing a low-pulley cable attachment toward the lower ribs / hips. The bench eliminates the lower back and hip-hinge component, locks the torso angle, and removes any possibility of using momentum from the legs or hips. The cable provides constant tension throughout the entire range — there is no 'dead zone' at the top or bottom as with free weights. The result is one of the cleanest possible stimuli for the lats, rhomboids and mid/lower traps with minimal axial spinal loading and zero cheating. Particularly valuable as a finisher after heavy free-weight rows, as a primary back-mass tool for lifters with lower-back issues, and for hypertrophy phases where strict execution and time-under-tension matter more than maximal load.",
+  "descriptionPl": "Ćwiczenie ciągowe w płaszczyźnie poziomej z podparciem klatki piersiowej, wykonywane na ławce skośnej (ustawiasz się przodem do ławki, klatka i brzuch opierają się o skośne oparcie) z jednoczesnym przyciąganiem rączki dolnego wyciągu do dolnych żeber / bioder. Ławka eliminuje pracę odcinka lędźwiowego i hip hinge'a, blokuje kąt tułowia i uniemożliwia jakiekolwiek wspomaganie się pędem nóg lub bioder. Wyciąg zapewnia stałe napięcie przez cały zakres ruchu — nie ma 'martwej strefy' na górze ani na dole jak przy wolnych ciężarach. Efekt: jeden z najczystszych możliwych bodźców na najszersze grzbietu, równoległoboczne i środkowe/dolne czworoboczne, przy minimalnym obciążeniu osiowym kręgosłupa i zerowej możliwości oszustwa. Szczególnie wartościowe jako finisher po ciężkich wiosłowaniach wolnymi ciężarami, jako podstawowe ćwiczenie masowe na plecy dla osób z problemami lędźwiowymi oraz w fazach hipertroficznych, gdzie ścisła technika i time-under-tension są ważniejsze od maksymalnego obciążenia.",
+
+  "instructions": [
+    "Set an incline bench to about 30-45 degrees, positioned in front of a low cable pulley with a straight bar or wide handle attached.",
+    "Set the cable height at the lowest pin so the line of pull comes from below and the cable can stay tense throughout the rep.",
+    "Straddle / face the bench: place the chest and belly flat against the incline pad, feet planted on the floor (or knees on the seat for very high benches). Hips slightly behind shoulders.",
+    "Reach forward and grab the handle with both hands, neutral or pronated grip, shoulder-width. Arms fully extended, lats stretched, scapulae protracted at the start.",
+    "Brace the core, keep the chest glued to the pad, and pull the handle toward the lower ribs / belly button by driving the elbows back and slightly out.",
+    "At the top of the rep, fully retract the shoulder blades and squeeze them together for a 1-second hold. Elbows finish behind the line of the torso.",
+    "Lower the handle in slow control along the same path until the arms are fully extended and the lats stretch at the bottom. Do not let the chest leave the pad.",
+    "Maintain constant tension on the cable through the entire set — do not let the stack touch down between reps."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną na kąt około 30-45 stopni, przodem do dolnego wyciągu z prostą drążkiem lub szeroką rączką.",
+    "Ustaw wysokość bloku na najniższej pozycji, tak aby linia ciągu szła z dołu, a linka pozostawała napięta przez całe powtórzenie.",
+    "Połóż się brzuchem i klatką na oparciu ławki (twarzą w stronę wyciągu), stopy oparte stabilnie o podłogę (lub kolana na siedzisku przy bardzo wysokiej ławce). Biodra lekko za linią barków.",
+    "Sięgnij po rączkę obiema rękami chwytem neutralnym lub nachwytem na szerokość barków. Ramiona w pełni wyprostowane, najszersze rozciągnięte, łopatki wysunięte do przodu w pozycji startowej.",
+    "Napnij brzuch, dociśnij klatkę do oparcia i przyciągnij rączkę do dolnych żeber / pępka, prowadząc łokcie w tył i lekko na boki.",
+    "Na szczycie powtórzenia w pełni ściągnij łopatki i ściśnij je razem przez 1 sekundę. Łokcie kończą za linią tułowia.",
+    "Opuszczaj rączkę w powolnej kontroli tą samą trajektorią aż do pełnego wyprostu ramion i rozciągnięcia najszerszych na dole. Nie pozwól klatce odkleić się od oparcia.",
+    "Utrzymuj stałe napięcie na lince przez całą serię — nie pozwól, by stos dotknął ramki między powtórzeniami."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoids", "biceps_brachii", "brachialis"],
+    "stabilizers": ["core", "forearms", "glutes", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "forearms": "S6",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "incline_bench"],
+    "optional": ["straight_bar_attachment", "wide_grip_handle", "lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["seated-cable-row", "chest-supported-dumbbell-row", "inverted-row"],
+    "progression_to": ["barbell-bent-over-row", "t-bar-row", "single-arm-cable-row", "pendlay-row"],
+    "alternatives": ["chest-supported-dumbbell-row", "seated-cable-row", "t-bar-row", "machine-row", "dumbbell-incline-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Incline bench at 30-45 degrees, facing the low pulley",
+      "Chest and belly fully glued to the pad — no air gap",
+      "Feet planted hard on the floor (or knees on seat) for stability",
+      "Cable at the lowest pin — line of pull from below",
+      "Arms fully extended at the start, lats stretched, scapulae allowed to protract"
+    ],
+    "setup_cues_pl": [
+      "Ławka skośna ustawiona na 30-45 stopni, przodem do dolnego wyciągu",
+      "Klatka i brzuch całkowicie przyklejone do oparcia — żadnej przerwy",
+      "Stopy mocno oparte o podłogę (lub kolana na siedzisku) dla stabilności",
+      "Linka na najniższym pinie — linia ciągu z dołu",
+      "Ramiona w pełni wyprostowane na starcie, najszersze rozciągnięte, łopatki mogą wysunąć się do przodu"
+    ],
+    "execution_cues": [
+      "Pull with the elbows, not the hands — hands are just hooks on the bar",
+      "Drive elbows back and slightly out, finishing behind the torso line",
+      "Pull the handle to the lower ribs / belly button — NOT to the chest",
+      "Squeeze the shoulder blades together hard for 1 sec at the top of every rep",
+      "Keep the chest glued to the pad — if it lifts off, you are cheating with hip extension"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciami, nie dłońmi — dłonie to tylko haki na drążku",
+      "Prowadź łokcie w tył i lekko na boki, kończąc za linią tułowia",
+      "Ciągnij rączkę do dolnych żeber / pępka — NIE do klatki",
+      "Mocno ściśnij łopatki razem na 1 sek. na szczycie każdego powtórzenia",
+      "Trzymaj klatkę dociśniętą do oparcia — jeśli się unosi, oszukujesz wyprostem bioder"
+    ],
+    "common_faults": [
+      {
+        "fault": "Chest lifting off the pad (turning row into reverse hyper / hip extension cheat)",
+        "faultPl": "Odklejanie klatki od oparcia (zamiana wiosłowania w reverse hyper / oszukiwanie wyprostem bioder)",
+        "cause": "Load too heavy, weak mid-back, or unconsciously seeking more leverage by arching off the pad",
+        "causePl": "Zbyt duży ciężar, słabe mięśnie środka pleców lub nieświadome szukanie dźwigni przez odginanie się od oparcia",
+        "cue": "Reduce weight by 20-30%. Film from the side. The chest must NEVER leave the pad during the rep. If it does, the bench is no longer doing its job.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Nagraj się z boku. Klatka NIGDY nie może odkleić się od oparcia podczas powtórzenia. Jeśli to robi — ławka nie spełnia już swojej roli."
+      },
+      {
+        "fault": "Pulling to the chest instead of to the lower ribs (excessive elbow flare → rear delts dominate)",
+        "faultPl": "Ciąg do klatki zamiast do dolnych żeber (nadmierne odgięcie łokci → przejmują tylne aktony naramienne)",
+        "cause": "Misinterpreting the row as a face-pull / rear-delt drill or copying a high-elbow cue",
+        "causePl": "Mylne zrozumienie ćwiczenia jako face-pull / drilla na tylne aktony lub kopiowanie wskazówki o wysokich łokciach",
+        "cue": "Aim the handle at your belly button, not your chest. Elbows track at about 45 degrees from the torso — not 90.",
+        "cuePl": "Celuj rączką w pępek, nie w klatkę. Łokcie idą pod kątem mniej więcej 45 stopni do tułowia — nie 90."
+      },
+      {
+        "fault": "No scapular movement — pulling with arms only (elbow flexion biceps curl pattern)",
+        "faultPl": "Brak pracy łopatek — ciąg samymi rękami (wzorzec bicepsowy: tylko zginanie łokci)",
+        "cause": "Weak rhomboids/mid-traps, rushing tempo, or arms-dominant lifter pattern",
+        "causePl": "Słabe równoległoboczne / środkowe czworoboczne, zbyt szybkie tempo lub dominacja ramion u danego ćwiczącego",
+        "cue": "At the top of every rep squeeze the shoulder blades together for 1 sec — 'crack a walnut between your scapulae'. Arms finish — back finishes.",
+        "cuePl": "Na szczycie każdego powtórzenia ściśnij łopatki razem na 1 sek. — 'zgnieć orzecha między łopatkami'. Ramiona kończą — plecy kończą."
+      },
+      {
+        "fault": "Partial ROM — stopping short of full arm extension at the bottom (losing the stretch)",
+        "faultPl": "Niepełny zakres ruchu — zatrzymywanie się przed pełnym wyprostem ramion na dole (utrata rozciągnięcia)",
+        "cause": "Wanting to keep tension, fear of fully extending, or wrong cable height creating slack at the bottom",
+        "causePl": "Chęć utrzymania napięcia, strach przed pełnym wyprostem lub złe ustawienie wysokości bloku tworzące luz na dole",
+        "cue": "Let the arms FULLY extend at the bottom and let the scapulae protract. The cable's constant tension means you never lose load — go for the stretch.",
+        "cuePl": "Pozwól ramionom CAŁKOWICIE wyprostować się na dole i pozwól łopatkom wysunąć się do przodu. Stałe napięcie linki sprawia, że nigdy nie tracisz obciążenia — idź po rozciągnięcie."
+      },
+      {
+        "fault": "Cable touching the stack between reps (loss of constant tension)",
+        "faultPl": "Stos wyciągu odbijający się na ramce między powtórzeniami (utrata stałego napięcia)",
+        "cause": "Bench positioned too close to the tower, cable too long, or letting the weight crash down on the eccentric",
+        "causePl": "Ławka ustawiona zbyt blisko ramy wyciągu, zbyt długa linka lub upuszczanie ciężaru w fazie ekscentrycznej",
+        "cue": "Move the bench back 30-50 cm so the stack stays in the air at full arm extension. Control the eccentric — never let the plates click down.",
+        "cuePl": "Odsuń ławkę o 30-50 cm tak, by stos pozostawał w powietrzu przy pełnym wyproście ramion. Kontroluj fazę ekscentryczną — nigdy nie pozwól krążkom stuknąć."
+      }
+    ],
+    "breathing": "Inhale and brace at full arm extension (bottom). Exhale through the pull as the handle approaches the lower ribs. Inhale on the controlled descent back to full stretch.",
+    "breathingPl": "Wdech i napięcie brzucha przy pełnym wyproście ramion (dół). Wydech w trakcie ciągu gdy rączka zbliża się do dolnych żeber. Wdech podczas kontrolowanego opuszczania z powrotem do pełnego rozciągnięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use neutral grip (close-grip handle or rope) and keep elbows closer to the body — less abduction = less anterior impingement. Avoid wide pronated grip.",
+      "modificationPl": "Stosuj chwyt neutralny (wąska rączka lub linka) i trzymaj łokcie bliżej ciała — mniej odwodzenia = mniejszy impingement przedni. Unikaj szerokiego nachwytu.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "acute_lumbar_disc_injury",
+      "severity": "modify",
+      "modification": "This exercise is generally lumbar-friendly because the chest is supported, but acute herniation phases still warrant a deload. Use very light loads with strict control or postpone until cleared.",
+      "modificationPl": "Ćwiczenie jest zasadniczo bezpieczne dla lędźwi dzięki podparciu klatki, ale w fazie ostrej przepukliny wymaga odciążenia. Używaj bardzo lekkich ciężarów ze ścisłą kontrolą lub odłóż do uzyskania zgody.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "rib_or_sternum_injury",
+      "severity": "modify",
+      "modification": "The chest pressure against the incline pad can aggravate rib/sternum injuries. Add extra padding or switch to a non-chest-supported variation until healed.",
+      "modificationPl": "Nacisk klatki na oparcie ławki może podrażniać urazy żeber/mostka. Dodaj dodatkową poduszkę lub przejdź na wersję bez podparcia klatki do wygojenia.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "elbow_tendinopathy_medial",
+      "severity": "caution",
+      "modification": "Use straps to remove forearm/grip overload, lower the load 15-20%, and avoid pronated wide grip. Neutral grip is most elbow-friendly.",
+      "modificationPl": "Użyj pasków by odciążyć przedramię/chwyt, obniż ciężar o 15-20% i unikaj szerokiego nachwytu. Chwyt neutralny jest najprzyjaźniejszy dla łokcia.",
+      "alternative": "machine-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy — main use case) | 4x8-10 (strength-hypertrophy) | 3x12-15 (volume / finisher) | 3x15-20 (endurance / pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-incline-bench-row.gif",
+    "frames_extracted": [
+      "frames/cable-incline-bench-row/frame_0_start.png",
+      "frames/cable-incline-bench-row/frame_1_early.png",
+      "frames/cable-incline-bench-row/frame_2_mid.png",
+      "frames/cable-incline-bench-row/frame_3_late.png",
+      "frames/cable-incline-bench-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cable-incline-bench-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa (frame_0/1/2/3/4). Ćwiczący ustawiony przodem do dolnego wyciągu, klatka i brzuch przyklejone do oparcia ławki skośnej ustawionej na ok. 30-45 stopni (kąt dodatni). Ciągnie rączkę / krótki drążek z dolnego bloku jednocześnie obiema rękami w stronę dolnych żeber / pasa. Najszersze grzbietu i równoległoboczne wyraźnie najmocniej podświetlone (P10/P9), środkowe i dolne czworoboczne oraz tylne aktony naramiennych dodatkowo (S8/S7), bicepsy i brachialis jako secondary. Frame 0 (start, dół ruchu): ramiona w pełni wyprostowane, lats rozciągnięte, łopatki wysunięte do przodu, linka napięta. Frames 1-2 (early/mid pull): łokcie idą w tył i lekko na boki, rączka zbliża się do brzucha, łopatki zaczynają się ściągać. Frame 3 (top): pełne ściągnięcie łopatek, łokcie wyraźnie ZA linią tułowia — wzorcowy finisz wiosłowania horyzontalnego. Frame 4 (eccentric): powrót do pełnego wyprostu pod kontrolą. Klatka przez cały ruch DOCIŚNIĘTA do oparcia — brak hip-extension cheat. Klasyfikacja 'pull_horizontal' potwierdzona (linia ciągu praktycznie pozioma względem tułowia opartego na skośnej ławce). Equipment: wyciąg dolny (cable_machine) + ławka skośna (incline_bench) + prosta krótka rączka. Trudność 5/10 — technicznie łatwiejsze od barbell row (zero hip hinge, zero ryzyka kręgosłupa), ale wymaga świadomości łopatek żeby nie ciągnąć samymi rękami. PL nazwa 'Wiosłowanie na wyciągu z ławki skośnej dodatniej' najściślejsze tłumaczenie; aliasy obejmują też 'chest-supported cable row' jako alternatywę stosowaną w polskim środowisku siłowniowym. Wszystkie pola PL napisane od zera. Specyfika ćwiczenia (stałe napięcie linki + zero kompensacji dzięki ławce) wyeksponowana w opisie, cue 'klatka dociśnięta' i cue 'stos nie dotyka ramki' — najczęstsze błędy techniczne dla tego konkretnego setupu.",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "cable", "chest_supported", "lumbar_friendly", "constant_tension", "lat_developer", "mid_back", "strict_form", "beginner_friendly", "no_cheating"]
+}

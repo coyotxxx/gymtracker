@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-zottman-preacher-curl",
+  "name": "Dumbbell Zottman Preacher Curl",
+  "namePl": "Zottman preacher curl z hantlami",
+  "aliases": ["zottman preacher curl", "preacher zottman curl", "dumbbell zottman curl on preacher bench"],
+  "aliasesPl": ["zottman curl na modlitewniku", "uginanie Zottmana na ławce modlitewnika", "preacher Zottman z hantlami"],
+
+  "description": "A hybrid biceps and forearm isolation that combines the Zottman rotation pattern with the strict mechanics of a preacher bench. The lifter curls the dumbbells up with a supinated (palms-up) grip, rotates the forearms to pronated (palms-down) at the top, and lowers under control. The preacher pad locks the upper arms in slight flexion, removing momentum and putting the biceps under tension in the stretched position, while the pronated eccentric trains brachialis, brachioradialis and the wrist extensors. An excellent finisher for hitting the entire elbow flexor complex plus forearm balance in a single movement.",
+  "descriptionPl": "Hybrydowe ćwiczenie izolowane na biceps i przedramiona, które łączy schemat rotacji Zottmana ze ścisłą mechaniką ławki modlitewnika. Ćwiczący ugina hantle w górę chwytem podchwytem (dłonie do góry), w górnej pozycji obraca przedramiona do nachwytu (dłonie w dół) i opuszcza pod kontrolą. Poduszka modlitewnika blokuje ramiona ponad łokciem w lekkim zgięciu, eliminuje impet i stawia biceps pod napięciem w pozycji rozciągniętej, podczas gdy faza ekscentryczna w pronacji trenuje mięsień ramienny, ramienno-promieniowy oraz prostowniki nadgarstka. Świetny finisher uderzający w cały kompleks zginaczy łokcia i balans przedramienia w jednym ruchu.",
+
+  "instructions": [
+    "Sit on a preacher bench and adjust the seat so the top of the pad sits just below your armpits. Grab two dumbbells with a supinated (palms-up) grip.",
+    "Place the back of your upper arms flat on the pad, both arms shoulder-width on the bench. Keep your chest tall and shoulders back.",
+    "Start with arms extended (but not fully locked) — the biceps should be loaded in the stretched position. This is your start position.",
+    "Curl both dumbbells up in supinated grip by flexing the elbows. Exhale during the curl. Keep upper arms pressed into the pad.",
+    "At the top of the rep — when the biceps are fully contracted — rotate your wrists from supinated to pronated (palms-up to palms-down) without letting the dumbbells drop.",
+    "Lower the dumbbells slowly under control in pronated grip, taking 3-4 seconds. The brachialis and forearm extensors do the work on the eccentric.",
+    "Once arms are fully extended again, rotate wrists back to supinated grip to begin the next rep. Do not bounce out of the bottom — pause briefly and curl up again."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce modlitewnika i wyreguluj siedzisko tak, aby górna krawędź poduszki znajdowała się tuż poniżej pach. Złap dwie hantle chwytem podchwytem (dłonie do góry).",
+    "Połóż tylną stronę ramion ponad łokciem płasko na poduszce, oba ramiona na szerokość barków. Klatka uniesiona, barki ściągnięte.",
+    "Zacznij z ramionami wyprostowanymi (ale nie zablokowanymi) — biceps ma być obciążony w pozycji rozciągniętej. To pozycja startowa.",
+    "Uginaj obie hantle w górę w podchwycie, zginając łokcie. Wydech podczas uginania. Ramiona ponad łokciem dociskaj do poduszki.",
+    "W górnej pozycji — gdy biceps jest w pełnym skurczu — obróć nadgarstki z podchwytu do nachwytu (dłonie w górę → dłonie w dół), nie pozwalając hantlom opaść.",
+    "Opuszczaj hantle wolno i pod kontrolą w nachwycie, przez 3-4 sekundy. W fazie ekscentrycznej pracuje mięsień ramienny i prostowniki przedramienia.",
+    "Gdy ramiona znów są w pełnym wyproście, obróć nadgarstki z powrotem do podchwytu aby rozpocząć kolejne powtórzenie. Nie odbijaj z dołu — krótka pauza i uginaj ponownie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "brachialis", "brachioradialis"],
+    "secondary": ["forearm_extensors"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P9",
+    "brachialis": "P8",
+    "brachioradialis": "P7",
+    "forearm_extensors": "S6",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "preacher_bench"],
+    "optional": ["wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-curl", "dumbbell-preacher-curl", "dumbbell-zottman-curl"],
+    "progression_to": ["dumbbell-spider-curl", "incline-dumbbell-curl", "cable-zottman-curl"],
+    "alternatives": ["dumbbell-zottman-curl", "dumbbell-preacher-curl", "hammer-curl", "reverse-curl", "ez-bar-preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pad sits just below your armpits — adjust the seat",
+      "Upper arms flat on the pad, shoulder-width",
+      "Start in supinated (palms-up) grip",
+      "Chest tall, shoulders back, do not shrug",
+      "Arms extended but elbows not locked at start"
+    ],
+    "setup_cues_pl": [
+      "Poduszka tuż poniżej pach — wyreguluj siedzisko",
+      "Ramiona ponad łokciem płasko na poduszce, na szerokość barków",
+      "Start w podchwycie (dłonie do góry)",
+      "Klatka w górze, barki ściągnięte, nie podciągaj ich",
+      "Ramiona wyprostowane na starcie, ale łokcie niezablokowane"
+    ],
+    "execution_cues": [
+      "Curl up supinated — squeeze biceps hard at the top",
+      "Rotate wrists at the top — palms turn from up to down",
+      "Lower slowly in pronated grip — 3-4 second eccentric",
+      "Keep upper arms glued to the pad the entire rep",
+      "Pause at the bottom, rotate back to supinated, repeat"
+    ],
+    "execution_cues_pl": [
+      "Uginaj w podchwycie — mocno spinaj biceps na górze",
+      "Obróć nadgarstki na górze — dłonie z góry na dół",
+      "Opuszczaj wolno w nachwycie — faza negatywna 3-4 sekundy",
+      "Ramiona ponad łokciem przyklejone do poduszki przez cały ruch",
+      "Pauza na dole, obrót z powrotem do podchwytu, powtórz"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating wrists too early — mid-rep instead of at the top",
+        "faultPl": "Obrót nadgarstków za wcześnie — w połowie ruchu zamiast na górze",
+        "cause": "Lack of grip strength or rushing the tempo, biceps shortcut during the concentric",
+        "causePl": "Brak siły chwytu lub pośpiech, biceps skraca pracę w fazie koncentrycznej",
+        "cue": "Hold supinated grip until the dumbbells reach peak height — then rotate.",
+        "cuePl": "Trzymaj podchwyt aż hantle dotrą na szczyt — dopiero wtedy obracaj."
+      },
+      {
+        "fault": "Bouncing out of the bottom (stretched position)",
+        "faultPl": "Odbijanie z dolnej pozycji (rozciągniętej)",
+        "cause": "Load too heavy, fear of the stretch, or trying to use elastic energy to grind extra reps",
+        "causePl": "Zbyt duży ciężar, strach przed rozciągnięciem, lub wykorzystywanie energii elastycznej dla dodatkowych powtórzeń",
+        "cue": "Pause for one second at full extension. Lighter weight if the bottom feels uncontrollable.",
+        "cuePl": "Pauza sekunda w pełnym wyproście. Lżejszy ciężar jeśli dolna pozycja jest niekontrolowana."
+      },
+      {
+        "fault": "Lifting upper arms off the pad",
+        "faultPl": "Odrywanie ramion ponad łokciem od poduszki",
+        "cause": "Load too heavy or shoulders shrugging up to assist the curl",
+        "causePl": "Zbyt duży ciężar lub barki podciągane w górę aby wspomóc uginanie",
+        "cue": "Drive the back of your arms into the pad as if pushing it through. Reduce weight if you cannot.",
+        "cuePl": "Wciskaj tylną stronę ramion w poduszkę jakbyś chciał ją przebić. Zmniejsz ciężar jeśli nie dajesz rady."
+      },
+      {
+        "fault": "Fast, uncontrolled eccentric (dropping the weight down)",
+        "faultPl": "Szybka, niekontrolowana faza ekscentryczna (rzucanie ciężarem w dół)",
+        "cause": "Skipping the whole point of the exercise — the pronated eccentric is the main forearm stimulus",
+        "causePl": "Pomijanie sedna ćwiczenia — faza negatywna w nachwycie to główny bodziec dla przedramion",
+        "cue": "Lower over 3-4 seconds in pronated grip. Count it out loud if needed.",
+        "cuePl": "Opuszczaj przez 3-4 sekundy w nachwycie. Licz głośno jeśli potrzeba."
+      },
+      {
+        "fault": "Wrist breaking (extension) under load in pronated grip",
+        "faultPl": "Załamywanie nadgarstków (przeprost) pod obciążeniem w nachwycie",
+        "cause": "Weak wrist extensors relative to load, common in lifters new to Zottman variations",
+        "causePl": "Słabe prostowniki nadgarstka w stosunku do obciążenia, częste u osób początkujących z wariantami Zottmana",
+        "cue": "Keep knuckles in line with the back of the forearm. Drop the load by 30-40% versus a regular curl.",
+        "cuePl": "Kostki dłoni w linii z grzbietem przedramienia. Zmniejsz ciężar o 30-40% w stosunku do zwykłego uginania."
+      }
+    ],
+    "breathing": "Inhale at the top during the wrist rotation. Exhale during the curl up. The eccentric is long — breathe normally and stay braced.",
+    "breathingPl": "Wdech na górze podczas obrotu nadgarstków. Wydech podczas uginania w górę. Faza negatywna jest długa — oddychaj naturalnie i utrzymuj napięcie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_or_lateral_epicondylitis",
+      "severity": "modify",
+      "modification": "The pronated eccentric loads both medial and lateral elbow tendons. Reduce volume by half, use 12-15 reps with very light dumbbells, and avoid the heavy slow eccentric. Stop if pain persists past warm-up.",
+      "modificationPl": "Faza ekscentryczna w nachwycie obciąża zarówno przyśrodkowe jak i boczne przyczepy łokcia. Zmniejsz objętość o połowę, używaj 12-15 powtórzeń z bardzo lekkimi hantlami i unikaj ciężkiej wolnej fazy negatywnej. Przerwij jeśli ból utrzymuje się po rozgrzewce.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Preacher position puts the biceps tendon in a stretched, loaded state at the bottom. Limit ROM to upper two-thirds, avoid full extension, and reduce load. Switch to standing variation if pain persists.",
+      "modificationPl": "Pozycja modlitewnika stawia ścięgno bicepsa w rozciągniętym i obciążonym stanie na dole. Ogranicz zakres ruchu do górnych dwóch trzecich, unikaj pełnego wyprostu i zmniejsz ciężar. Przejdź na wariant stojący jeśli ból się utrzymuje.",
+      "alternative": "dumbbell-zottman-curl"
+    },
+    {
+      "condition": "wrist_pain_or_TFCC_injury",
+      "severity": "modify",
+      "modification": "The supination-to-pronation rotation under load stresses the distal radioulnar joint and TFCC. Skip the rotation — perform regular preacher curls or hammer curls instead.",
+      "modificationPl": "Rotacja z supinacji do pronacji pod obciążeniem stresuje staw promieniowo-łokciowy dalszy i kompleks TFCC. Pomiń rotację — wykonuj zwykłe uginanie na modlitewniku lub uginanie młotkowe.",
+      "alternative": "dumbbell-preacher-curl"
+    },
+    {
+      "condition": "shoulder_impingement_anterior",
+      "severity": "caution",
+      "modification": "Reaching forward onto the preacher pad with elevated arms can provoke anterior shoulder. Lower the pad angle (more vertical), use a seated incline alternative, and keep shoulders pulled back.",
+      "modificationPl": "Sięganie do przodu na poduszkę modlitewnika z uniesionymi ramionami może drażnić przedni odcinek barku. Zmniejsz kąt poduszki (bardziej pionowo), użyj wariantu na ławce skośnej i trzymaj barki ściągnięte.",
+      "alternative": "incline-dumbbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy biceps + forearm) | 3x10-15 (forearm endurance focus, slower eccentric) | 2-3x12-15 (finisher / pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-zottman-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-zottman-preacher-curl/frame_0_start.png",
+      "frames/dumbbell-zottman-preacher-curl/frame_1_early.png",
+      "frames/dumbbell-zottman-preacher-curl/frame_2_mid.png",
+      "frames/dumbbell-zottman-preacher-curl/frame_3_late.png",
+      "frames/dumbbell-zottman-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-zottman-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 4 kluczowe klatki GIFa jahel (start/mid/late/end). Frame 0: pozycja startowa siedząc na modlitewniku, oba ramiona oparte o poduszkę, hantle w pełnym wyproście w podchwycie (dłonie do góry) — biceps, brachialis i prostowniki przedramienia podświetlone na czerwono. Frame 2 (mid): górna pozycja, hantle blisko barków, dłonie ciągle w podchwycie, pełny skurcz bicepsa. Frame 3 (late): faza ekscentryczna z hantlami opuszczonymi w nachwycie (dłonie w dół) — kluczowy moment Zottmana, prostowniki przedramienia mocno podświetlone. Frame 4 (end): powrót do dolnej pozycji w nachwycie. Sekwencja jednoznacznie identyfikuje Zottman curl na modlitewniku: curl supinated → rotacja na górze → eccentric pronated. Klasyfikacja: izolowane, bilateral, sagittal, pull. Główne mięśnie: cały kompleks zginaczy łokcia (biceps + brachialis + brachioradialis) + ekstensory przedramienia jako secondary. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "forearms", "isolation", "dumbbells", "preacher_bench", "zottman", "upper_body", "hybrid"]
+}

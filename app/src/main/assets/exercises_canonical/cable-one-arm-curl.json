@@ -1,0 +1,202 @@
+{
+  "id": "cable-one-arm-curl",
+  "name": "Cable One-Arm Curl",
+  "namePl": "Curl bicepsa z wyciągu jednorącz",
+  "aliases": ["standing one-arm cable curl", "single-arm cable curl", "low pulley one-arm curl", "one-arm cable biceps curl"],
+  "aliasesPl": ["uginanie ramienia z wyciągu jednorącz", "curl bicepsa z dolnego wyciągu jednorącz", "jednoręczny curl z linki", "uginanie jednoręczne na wyciągu dolnym"],
+
+  "description": "Standing single-arm biceps curl performed on a low pulley cable with a D-handle attached. The cable provides constant tension across the entire range of motion — unlike free weights, the load does not drop to zero at the bottom — which makes it excellent for biceps mind-muscle connection and end-range squeezes. The unilateral nature lets you address strength asymmetries, focus on a peak contraction, and use the free hand to monitor elbow position.",
+  "descriptionPl": "Jednoręczne uginanie bicepsa wykonywane stojąc przy dolnym wyciągu z doczepionym uchwytem D. Linka daje stałe napięcie w całym zakresie ruchu — w przeciwieństwie do wolnych ciężarów obciążenie nie spada do zera w pozycji dolnej — co czyni to ćwiczenie świetnym do czucia mięśnia (mind-muscle) i napięcia w skurczu szczytowym. Praca jednostronna pozwala wyrównać dysproporcje siły, skupić się na szczytowym skurczu i drugą ręką kontrolować pozycję łokcia.",
+
+  "instructions": [
+    "Attach a single D-handle to the low pulley of a cable station. Set the load appropriately.",
+    "Stand upright facing the machine (or slightly angled so the cable runs cleanly to your working hand). Feet hip-width apart, knees soft.",
+    "Grip the handle with a supinated (palm-up) grip. Let the arm hang at your side with the cable taut and elbow fully extended.",
+    "Pin the working elbow to your side. Brace your core, chest up, shoulders back and down. Place the free hand on your hip or thigh.",
+    "Curl the handle upward by flexing only at the elbow. Exhale on the way up. The upper arm stays vertical and stationary against your ribs.",
+    "Continue until the handle reaches the front of your shoulder and the biceps is fully contracted. Squeeze hard for 1 second.",
+    "Lower the handle under control over 2-3 seconds back to full elbow extension. Inhale during the descent. Maintain cable tension the whole way.",
+    "Complete all reps on one side, then switch arms. Do not swing the torso or rotate the hips to assist."
+  ],
+  "instructionsPl": [
+    "Doczep pojedynczy uchwyt typu D do dolnego bloczka wyciągu. Ustaw odpowiedni ciężar.",
+    "Stań prosto przodem do maszyny (lub lekko bokiem tak, by linka biegła czysto do pracującej ręki). Stopy na szerokość bioder, kolana lekko ugięte.",
+    "Złap uchwyt podchwytem (dłoń skierowana w górę). Ramię niech wisi swobodnie wzdłuż tułowia, linka napięta, łokieć w pełnym wyproście.",
+    "Przyklej pracujący łokieć do boku tułowia. Napnij brzuch, klatka w górze, barki ściągnięte w tył i w dół. Wolną dłoń oprzyj na biodrze lub udzie.",
+    "Uginaj rękę w łokciu — pracuje wyłącznie przedramię. Wydychaj w fazie koncentrycznej. Ramię ponad łokciem ma pozostać pionowe i nieruchome, przyklejone do żeber.",
+    "Kontynuuj ruch aż uchwyt dotrze na wysokość przedniego aktonu barku i biceps będzie w pełnym skurczu. Mocno napnij na 1 sekundę.",
+    "Opuszczaj uchwyt w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu łokcia. Wdech podczas opuszczania. Utrzymuj napięcie linki przez cały zakres.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień rękę. Nie bujaj tułowiem i nie rotuj biodrami aby pomóc sobie w ruchu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "obliques", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S4",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T3",
+    "obliques": "T3",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "low_pulley", "d_handle"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["cable-curl", "cable-preacher-curl", "high-cable-curl", "single-arm-cable-preacher-curl"],
+    "alternatives": ["dumbbell-curl", "cable-curl", "concentration-curl", "hammer-curl", "incline-dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Face the low pulley, feet hip-width, knees soft",
+      "Supinated grip on the D-handle, arm hanging long",
+      "Working elbow pinned to your ribs",
+      "Free hand on hip — anchors the torso",
+      "Chest up, shoulders back, brace your core"
+    ],
+    "setup_cues_pl": [
+      "Stań przodem do dolnego wyciągu, stopy na szerokość bioder, kolana lekko ugięte",
+      "Chwyt podchwytem na uchwycie D, ramię swobodnie wzdłuż tułowia",
+      "Pracujący łokieć przyklejony do żeber",
+      "Wolna dłoń na biodrze — stabilizuje tułów",
+      "Klatka w górze, barki ściągnięte, napnij brzuch"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm glued to ribs",
+      "Drive the pinky toward the shoulder for a hard peak squeeze",
+      "Lower slowly — fight the cable for 2-3 seconds",
+      "Keep wrist straight in line with the forearm",
+      "Maintain cable tension — do not let the stack rest at the bottom"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem przyklejone do żeber",
+      "Prowadź mały palec w stronę barku, by mocno spiąć biceps na szczycie",
+      "Opuszczaj wolno — kontroluj linkę przez 2-3 sekundy",
+      "Nadgarstek prosty, w jednej linii z przedramieniem",
+      "Utrzymuj napięcie linki — nie pozwól, by stos opadł w dolnej pozycji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging the torso or rotating the hips toward the cable",
+        "faultPl": "Bujanie tułowia lub rotowanie biodrami w stronę linki",
+        "cause": "Load too heavy, ego lifting, or trying to grind out extra reps after technical failure",
+        "causePl": "Zbyt duży ciężar, ego, lub forsowanie dodatkowych powtórzeń po technicznym wyczerpaniu",
+        "cue": "Reduce the weight. Plant the free hand firmly on the hip and keep both feet evenly loaded.",
+        "cuePl": "Zmniejsz ciężar. Mocno oprzyj wolną dłoń na biodrze i równomiernie obciążaj obie stopy."
+      },
+      {
+        "fault": "Working elbow drifts behind the body at the bottom",
+        "faultPl": "Pracujący łokieć ucieka za linię tułowia w pozycji dolnej",
+        "cause": "Cable line of pull is too far back relative to body position, or shoulder shrugs up to compensate",
+        "causePl": "Linia ciągu linki jest zbyt z tyłu względem pozycji ciała, lub bark wędruje do góry kompensacyjnie",
+        "cue": "Take a small step forward so the cable pulls slightly down-and-back, not straight back. Elbow stays under shoulder.",
+        "cuePl": "Zrób mały krok do przodu, by linka ciągnęła lekko w dół i lekko do tyłu, a nie czysto do tyłu. Łokieć pozostaje pod barkiem."
+      },
+      {
+        "fault": "Elbow drifts forward and up at the top (shoulder flexion takes over)",
+        "faultPl": "Łokieć wędruje do przodu i w górę w pozycji szczytowej (zgięcie barku przejmuje pracę)",
+        "cause": "Trying to lift the handle higher than full biceps contraction allows, recruiting anterior delt",
+        "causePl": "Próba uniesienia uchwytu wyżej niż pozwala na to pełny skurcz bicepsa, włączanie przedniego aktonu barku",
+        "cue": "Stop when the forearm is vertical and the handle is at shoulder height. Keep the elbow directly under the shoulder.",
+        "cuePl": "Zatrzymaj ruch, gdy przedramię dojdzie do pionu, a uchwyt na wysokość barku. Łokieć dokładnie pod barkiem."
+      },
+      {
+        "fault": "Letting the cable stack slam down at the bottom (loss of tension)",
+        "faultPl": "Puszczanie linki w dolnej pozycji aż stos opada z hukiem (utrata napięcia)",
+        "cause": "Dropping the eccentric phase, treating the cable like a free weight",
+        "causePl": "Pominięcie fazy ekscentrycznej, traktowanie linki jak wolnego ciężaru",
+        "cue": "Control the negative — 2-3 seconds down. The stack should kiss, not crash.",
+        "cuePl": "Kontroluj fazę negatywną — 2-3 sekundy w dół. Stos powinien delikatnie dotknąć, a nie z hukiem uderzyć."
+      },
+      {
+        "fault": "Wrist flexion under load (curling the wrist toward the biceps)",
+        "faultPl": "Zginanie nadgarstka pod obciążeniem (curlowanie nadgarstka w stronę bicepsa)",
+        "cause": "Trying to shorten the lever and squeeze harder, or weak forearm flexors fatiguing first",
+        "causePl": "Próba skrócenia dźwigni i mocniejszego napięcia, lub szybsze zmęczenie zginaczy przedramienia",
+        "cue": "Wrist stays neutral — knuckles in line with the back of the forearm throughout the rep.",
+        "cuePl": "Nadgarstek pozostaje neutralny — kostki w linii z grzbietem przedramienia przez całe powtórzenie."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Light core brace throughout — the cable pulls you laterally and the brace keeps the torso stacked.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Lekkie napięcie brzucha przez całą serię — linka ciągnie cię bocznie, a napięcie utrzymuje tułów w jednej linii."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Cable constant tension can aggravate inflamed tendons. Reduce load by 30-40%, use 12-15 reps with longer rests, avoid heavy eccentrics and full stretch at the bottom.",
+      "modificationPl": "Stałe napięcie linki może drażnić objęte stanem zapalnym ścięgna. Zmniejsz ciężar o 30-40%, używaj 12-15 powtórzeń z dłuższymi przerwami, unikaj ciężkich faz negatywnych i pełnego rozciągnięcia w dolnej pozycji.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Full supination provokes the medial elbow. Use a rope attachment with neutral grip or switch to hammer curl until pain-free.",
+      "modificationPl": "Pełna supinacja drażni przyśrodkowy nadkłykieć. Użyj liny z chwytem neutralnym lub przejdź na curl młotkowy do czasu ustąpienia bólu.",
+      "alternative": "cable-hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Locked supination on a D-handle can stress an unstable wrist. Switch to a rope attachment (free supination) or use a wrist wrap for support.",
+      "modificationPl": "Zablokowana supinacja na uchwycie D może obciążać niestabilny nadgarstek. Przejdź na linę (swobodna supinacja) lub załóż usztywniacz na nadgarstek.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "acute_shoulder_impingement",
+      "severity": "caution",
+      "modification": "Standing version requires scapular stability against the cable's lateral pull. Use a lighter load, stand more in front of the pulley to neutralize line of pull, and stop short of any painful range.",
+      "modificationPl": "Wersja stojąca wymaga stabilizacji łopatki przeciwko bocznemu ciągowi linki. Zmniejsz ciężar, stań bardziej przodem do bloczka by zneutralizować linię ciągu i zatrzymuj ruch przed bolesnym zakresem.",
+      "alternative": "concentration-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy) | 3x12-15 per arm with peak squeeze (mind-muscle) | 2-3x15-20 per arm (pump/finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-one-arm-curl.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-curl/frame_0_start.png",
+      "frames/cable-one-arm-curl/frame_1_early.png",
+      "frames/cable-one-arm-curl/frame_2_mid.png",
+      "frames/cable-one-arm-curl/frame_3_late.png",
+      "frames/cable-one-arm-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-one-arm-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model stoi przodem do dolnego wyciągu, prawa ręka w pełnym wyproście trzyma uchwyt D podchwytem, linka biegnie od bloczka po przekątnej w dół-w bok do dłoni, biceps i przedramię prawej ręki podświetlone na czerwono — bok lewy ciała pasywny. Frame 2: pełny skurcz, uchwyt na wysokości prawego barku, łokieć pozostaje przyklejony do żeber, ramię ponad łokciem pionowo, tułów wciąż prosto. Frame 4: powrót do pełnego wyprostu (widać 'ghosty' faz pośrednich powyżej). Tułów nie buja się, biodra nie rotują — modelowe wykonanie unilateralne. Ćwiczenie jednoznacznie zidentyfikowane jako Cable One-Arm Curl z dolnego wyciągu z uchwytem D. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "cable", "unilateral", "constant_tension", "upper_body", "mind_muscle"]
+}

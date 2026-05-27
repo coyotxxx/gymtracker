@@ -1,0 +1,186 @@
+{
+  "id": "weighted-svend-press",
+  "name": "Svend Press (Plate Squeeze Press)",
+  "namePl": "Svend press (wyciskanie talerza ze ściskaniem)",
+  "aliases": ["plate squeeze press", "plate press", "Svend press"],
+  "aliasesPl": ["wyciskanie talerza", "ściskanie talerza", "plate press", "wyciskanie z talerzem na klatkę wewnętrzną"],
+
+  "description": "An isolation, constant-tension pressing exercise performed standing. A weight plate (or two stacked plates) is held between the palms at chest level and squeezed forcefully throughout the entire set, while the arms press the plate straight forward and pull it back. The hard inward squeeze drives intense activation of the inner pectoral fibers (sternal head, parasternal region) and creates continuous tension that is hard to replicate with dumbbells or barbell. A finisher movement, typically programmed at the end of a chest workout, NOT a primary mass builder. Originated with Swedish strongman Leif 'Svend' Karlsson.",
+  "descriptionPl": "Izolowane wyciskanie typu constant tension wykonywane w pozycji stojącej. Talerz (lub dwa złożone) trzymany jest oburącz między dłońmi na wysokości klatki i przez cały set jest mocno ściskany dłońmi do siebie, a ramiona wyciskają talerz prosto w przód i przyciągają z powrotem. Silne dociskanie dłoni do siebie wymusza intensywne napięcie wewnętrznych włókien klatki (głowa mostkowa, okolice przymostkowe) i tworzy ciągłe napięcie, którego nie da się odtworzyć hantlami ani sztangą. Ćwiczenie typu finisher, wykonywane zwykle na koniec treningu klatki, NIE jest głównym budulcem masy. Pochodzi od szwedzkiego strongmana Leifa 'Svenda' Karlssona.",
+
+  "instructions": [
+    "Stand upright with feet shoulder-width apart, knees soft (slight bend), core braced.",
+    "Hold a weight plate (5-15 kg typical) flat between both palms at sternum/upper chest level. Fingers can wrap slightly around the edges but the squeeze is palm-to-palm.",
+    "Press your palms HARD into the plate from both sides. This isometric squeeze must be maintained for every rep of the set — if the plate would fall, you are not squeezing enough.",
+    "Elbows are pointed out to the sides and slightly down (chicken-wing posture is intentional here to load the inner chest), wrists straight.",
+    "Inhale, then press the plate straight forward by extending the elbows, while squeezing the palms even harder together. Arms finish parallel to the floor in front of the chest, almost (but not quite) locked out.",
+    "Pause 1 second at full extension — feel the inner chest contract. Imagine squeezing your pecs together with the same intensity as your hands.",
+    "Slowly pull the plate back toward your chest (eccentric ~2 seconds), maintaining the inward squeeze the entire time. Do NOT relax the hands.",
+    "Touch the plate to the upper chest/sternum, exhale on the press out. Repeat for 12-20 reps — this is a high-rep, high-tension finisher."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte, brzuch napięty.",
+    "Trzymaj talerz (zwykle 5-15 kg) płasko między dłońmi na wysokości mostka/górnej klatki. Palce mogą lekko owijać krawędzie, ale ściskanie idzie dłoń-w-dłoń.",
+    "Ściskaj MOCNO dłońmi talerz z obu stron. To napięcie izometryczne musi trwać przez cały set — jeśli talerz miałby wypaść, to znaczy że ściskasz za słabo.",
+    "Łokcie skierowane na boki i lekko w dół (pozycja 'kurzych skrzydełek' jest tu celowa, by obciążyć wewnętrzną klatkę), nadgarstki proste.",
+    "Wdech, następnie wyciśnij talerz prosto w przód prostując łokcie, jednocześnie jeszcze mocniej ściskając dłonie do siebie. Ramiona kończą równolegle do podłogi przed klatką, niemal (ale nie całkiem) wyprostowane.",
+    "Pauza 1 sekunda na pełnym wyproście — poczuj skurcz wewnętrznej klatki. Wyobraź sobie, że ściskasz pecsy do siebie z taką samą siłą jak dłonie.",
+    "Powoli przyciągaj talerz z powrotem do klatki (faza ekscentryczna ~2 sekundy), utrzymując ściskanie dłoni przez cały czas. NIE rozluźniaj rąk.",
+    "Dotknij talerzem górnej klatki/mostka, wydech podczas wyciskania w przód. Powtórz 12-20 razy — to jest finisher na wysokie reps i wysokie napięcie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major"],
+    "secondary": ["anterior_deltoids", "triceps"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "core", "forearms", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "anterior_deltoids": "S5",
+    "triceps": "S4",
+    "serratus_anterior": "T3",
+    "forearms": "T4",
+    "rotator_cuff": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["second_plate"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["cable-crossover-high-to-low", "dumbbell-fly-flat", "pec-deck-machine"],
+    "alternatives": ["cable-crossover-high-to-low", "dumbbell-fly-flat", "pec-deck-machine", "close-grip-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, feet shoulder-width, core engaged, slight knee bend",
+      "Plate held between palms at sternum height, palms perfectly flat against the plate",
+      "Squeeze the plate HARD before the first rep — this isometric squeeze never relaxes",
+      "Elbows flared out to sides (this is intentional — loads inner chest)",
+      "Shoulders down and back, no shrugging up to ears"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, stopy na szerokość barków, brzuch napięty, lekkie ugięcie kolan",
+      "Talerz między dłońmi na wysokości mostka, dłonie idealnie płasko na talerzu",
+      "Ściśnij talerz MOCNO przed pierwszym powtórzeniem — to ściskanie izometryczne nie rozluźnia się ani razu",
+      "Łokcie rozwarte na boki (jest to celowe — obciąża wewnętrzną klatkę)",
+      "Barki w dół i do tyłu, bez podciągania ich do uszu"
+    ],
+    "execution_cues": [
+      "Press the plate STRAIGHT forward, not up — this is a horizontal push",
+      "Squeeze the palms HARDER as you press out — feel the inner chest fire",
+      "Pause 1 second at full extension, visualize the pecs touching each other",
+      "Slow eccentric back to chest (2 seconds), squeeze never relaxes",
+      "If the plate feels like it might fall — squeeze harder, that IS the exercise"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj talerz PROSTO w przód, nie w górę — to push horyzontalny",
+      "Ściskaj dłonie MOCNIEJ podczas wyciskania w przód — poczuj napięcie wewnętrznej klatki",
+      "Pauza 1 sekunda na pełnym wyproście, wizualizuj że pecsy stykają się ze sobą",
+      "Powolny powrót do klatki (2 sekundy), ściskanie ani na moment nie słabnie",
+      "Jeśli czujesz że talerz może wypaść — ściskaj mocniej, na TYM polega ćwiczenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Squeeze fades during the rep (plate held but not pressed inward)",
+        "faultPl": "Ściskanie zanika w trakcie powtórzenia (talerz trzymany, ale nie ściskany do środka)",
+        "cause": "Treating it like a regular press; forgetting that the isometric squeeze IS the stimulus",
+        "causePl": "Traktowanie ruchu jak zwykłego wyciskania; zapominanie że napięcie izometryczne dłoni JEST bodźcem",
+        "cue": "The press is secondary. The squeeze is primary. Squeeze harder during the press, not less.",
+        "cuePl": "Wyciskanie jest drugorzędne. Ściskanie jest pierwszorzędne. Ściskaj mocniej PODCZAS wyciskania, nie słabiej."
+      },
+      {
+        "fault": "Pressing upward at an angle instead of horizontally forward",
+        "faultPl": "Wyciskanie pod skosem w górę zamiast horyzontalnie w przód",
+        "cause": "Confusion with overhead press pattern; weak inner chest activation",
+        "causePl": "Pomylenie z wzorcem wyciskania nad głowę; słabe zaangażowanie wewnętrznej klatki",
+        "cue": "Plate path is parallel to the floor. Arms extend straight in front of sternum, not upward toward face.",
+        "cuePl": "Tor talerza równoległy do podłogi. Ramiona prostują się przed mostkiem, nie w górę w stronę twarzy."
+      },
+      {
+        "fault": "Shoulders shrugging up toward ears",
+        "faultPl": "Barki podciągane w górę w stronę uszu",
+        "cause": "Compensating with traps; plate too heavy; lack of scapular control",
+        "causePl": "Kompensacja kapturami; za ciężki talerz; brak kontroli łopatek",
+        "cue": "Shoulders DOWN. If traps fire, lighten the plate — this is a chest finisher, not a shrug.",
+        "cuePl": "Barki W DÓŁ. Jeśli czapraki się włączają, zmniejsz talerz — to finisher na klatkę, nie shrug."
+      },
+      {
+        "fault": "Using a plate too heavy to squeeze properly",
+        "faultPl": "Talerz zbyt ciężki, by go poprawnie ściskać",
+        "cause": "Ego, not understanding that this is a constant-tension finisher",
+        "causePl": "Ego, niezrozumienie że jest to finisher typu constant tension",
+        "cue": "5-15 kg is typical. If you cannot maintain a hard squeeze for 15 reps, the plate is too heavy.",
+        "cuePl": "5-15 kg to standard. Jeśli nie utrzymasz mocnego ściskania przez 15 powtórzeń, talerz jest za ciężki."
+      }
+    ],
+    "breathing": "Inhale at the chest, exhale on the press forward. Keep the core lightly braced throughout — no full Valsalva needed at these loads.",
+    "breathingPl": "Wdech przy klatce, wydech podczas wyciskania w przód. Brzuch lekko napięty przez cały czas — pełna manewra Valsalvy nie jest potrzebna przy tych ciężarach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Pressing palms hard into a plate stresses the wrist extensors. Reduce plate weight, ensure palms are perfectly flat (not bent back), or substitute with cable crossover.",
+      "modificationPl": "Mocne ściskanie dłońmi talerza obciąża prostowniki nadgarstka. Zmniejsz wagę talerza, upewnij się że dłonie są idealnie płasko (nie wygięte do tyłu) lub zastąp ćwiczenie cable crossover.",
+      "alternative": "cable-crossover-high-to-low"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Flared elbows at chest level can pinch the impinged shoulder. Try keeping elbows tucked slightly lower, or switch to neutral-grip cable work.",
+      "modificationPl": "Rozłożone łokcie na wysokości klatki mogą drażnić bark z impingementem. Spróbuj trzymać łokcie nieco niżej lub przejdź na pracę z linkami w chwycie neutralnym.",
+      "alternative": "cable-crossover-high-to-low"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "The hard inward squeeze maximally activates the pectoralis — exactly what a strained pec cannot tolerate. Rest fully, then return via light machine work.",
+      "modificationPl": "Mocne ściskanie do środka maksymalnie aktywuje pectoralis — dokładnie to, czego naderwana klatka nie znosi. Pełen odpoczynek, potem powrót przez lekką pracę na maszynach.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-20 (finisher, default) | 2-3x15-20 (high-rep pump) | 3x10-12 with isometric holds at lockout (advanced tension work)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "weighted-svend-press.gif",
+    "frames_extracted": [
+      "frames/weighted-svend-press/frame_0_start.png",
+      "frames/weighted-svend-press/frame_1_early.png",
+      "frames/weighted-svend-press/frame_2_mid.png",
+      "frames/weighted-svend-press/frame_3_late.png",
+      "frames/weighted-svend-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/weighted-svend-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Klatki GIF: pozycja STOJĄCA (nie ławka), talerz trzymany oburącz na wysokości mostka/górnej klatki, dłonie płasko po obu stronach talerza. Frame 2 (klatka): pozycja startowa — talerz przy klatce, łokcie rozłożone na boki, podświetlone pectoralis_major (zwłaszcza wewnętrzna część) + przednie delty + tricepsy + przedramiona (ściskanie). Frame 0/4 (wyprost w przód): ramiona równoległe do podłogi, talerz wyciśnięty horyzontalnie przed klatką — to push w płaszczyźnie poprzecznej, nie wertykalnej. Frame 1/3 (motion blur): płynny ruch przód-tył. Mechanic=isolation (jeden staw dominuje — bark/przywiedzenie horyzontalne), plane=transverse (talerz porusza się w płaszczyźnie poprzecznej, ramiona zbliżają i oddalają od linii środkowej), force=push, laterality=bilateral, kinetic_chain=closed (dłonie na tym samym obiekcie tworzą zamknięty łańcuch). PL nazwa: 'Svend press' to ustalona nazwa w polskiej kulturze siłowniowej, dopisek '(wyciskanie talerza ze ściskaniem)' jako opisowy. Wszystkie pola PL napisane od zera. Klasyfikacja jako finisher constant-tension, nie primary mass builder — stąd P8 (nie P9) dla klatki i niższe calories_per_kg_per_hour.",
+
+  "tags": ["isolation", "upper_body", "horizontal_push", "inner_chest", "constant_tension", "finisher", "chest", "plate", "no_bench", "standing", "beginner_friendly"]
+}

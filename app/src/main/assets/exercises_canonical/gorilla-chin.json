@@ -1,0 +1,203 @@
+{
+  "id": "gorilla-chin",
+  "name": "Gorilla Chin-Up (Chin-Up with Knee Tuck)",
+  "namePl": "Gorilla chin-up (chin-up gorylowy)",
+  "aliases": ["gorilla chin", "gorilla chin-up", "chin-up crunch", "knee-tuck chin-up", "crunch-up", "gorilla pull-up"],
+  "aliasesPl": ["gorilla chin", "chin-up gorylowy", "podciąganie gorylowe", "chin-up z podciąganiem kolan", "gorilla pull-up", "crunch-up"],
+
+  "description": "Hybrid pull/core exercise combining a supinated-grip chin-up with a simultaneous knee tuck (hip + spinal flexion). You hang from the bar with palms facing you, then pull up while crunching your knees toward your chest into a tight ball at the top. Trains lats and biceps (vertical pull) together with rectus abdominis and hip flexors (compound flexion) in one rep. Excellent for athletes wanting to combine upper-back/biceps strength with explosive core engagement without separate hanging leg raises. Demanding — needs solid baseline chin-up strength.",
+  "descriptionPl": "Hybrydowe ćwiczenie ciągowo-brzuszne łączące chin-up chwytem podchwytem z jednoczesnym podciąganiem kolan do klatki (zgięcie w biodrach + kręgosłupie). Wisisz na drążku dłońmi do siebie, podciągasz się a jednocześnie zwijasz nogi w kolanach do klatki, formując zwartą kulkę w górze ruchu. Trenuje najszersze i bicepsy (ciąg pionowy) razem z prostym brzucha i zginaczami biodra (zgięcie compound) w jednym powtórzeniu. Świetne dla zawodników chcących połączyć siłę pleców/bicepsów z eksplozywną pracą core bez osobnych unoszeń nóg. Wymagające — potrzebujesz solidnej bazy chin-upa.",
+
+  "instructions": [
+    "Grip a pull-up bar with palms facing TOWARD you (supinated/underhand grip), hands at shoulder-width.",
+    "Hang at full arm extension. Engage shoulder blades by pulling them DOWN (depression). Brace your core.",
+    "Knees slightly bent, feet off floor. This is the dead-hang start position.",
+    "Initiate the pull: drive elbows down toward your hips AND simultaneously begin tucking knees toward your chest.",
+    "Pull up while crunching: chin clears the bar AT THE SAME TIME knees come up to the chest. Form a tight 'gorilla' ball at the top.",
+    "At top position: chin over bar, knees high (above hip level, ideally touching chest), torso slightly curled forward.",
+    "Reverse smoothly: lower the body AND extend the legs together in a controlled way back to dead-hang.",
+    "Reach full arm extension AND fully extended legs at the bottom before next rep. No swinging."
+  ],
+  "instructionsPl": [
+    "Złap drążek dłońmi skierowanymi DO siebie (chwyt supinated/podchwytem), ręce na szerokość barków.",
+    "Zwiśnij w pełnym wyproście ramion. Aktywuj łopatki ściągając je W DÓŁ (depresja). Napnij brzuch.",
+    "Kolana lekko zgięte, stopy nad podłogą. To pozycja startowa dead-hang.",
+    "Rozpocznij ciąg: napieraj łokciami w dół do bioder I JEDNOCZEŚNIE zacznij podciągać kolana do klatki.",
+    "Podciągaj się i zwijaj jednocześnie: broda przechodzi nad drążek W TYM SAMYM CZASIE co kolana docierają do klatki. Formuj zwartą 'gorylowy' kulkę w górze.",
+    "Pozycja szczytowa: broda nad drążkiem, kolana wysoko (powyżej linii bioder, idealnie dotykające klatki), tułów lekko zwinięty do przodu.",
+    "Wraz odwracaj ruch: opuszczaj ciało I rozprostowuj nogi razem w kontrolowanym tempie do dead-hang.",
+    "Pełen wyprost ramion ORAZ pełen wyprost nóg na dole przed kolejnym powtórzeniem. Bez bujania."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical_with_core_flexion",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rectus_abdominis"],
+    "secondary": ["biceps_brachii", "hip_flexors", "obliques", "brachialis"],
+    "stabilizers": ["forearms", "trapezius_middle_lower", "rhomboids", "teres_major", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rectus_abdominis": "P9",
+    "biceps_brachii": "S8",
+    "hip_flexors": "S8",
+    "obliques": "S6",
+    "brachialis": "S6",
+    "forearms": "S7",
+    "trapezius_middle_lower": "S6",
+    "teres_major": "S6"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["chin-up", "hanging-knee-raise", "hanging-leg-raise", "pull-up"],
+    "progression_to": ["l-sit-pull-up", "muscle-up", "weighted-chin-up", "front-lever-pull"],
+    "alternatives": ["chin-up", "hanging-leg-raise", "toes-to-bar", "l-sit-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Supinated (underhand) grip, palms toward you",
+      "Hands at shoulder-width",
+      "Full hang — elbows extended, legs straight or slightly bent",
+      "Shoulder blades DOWN (no shrug up)",
+      "Core pre-tensioned before first rep"
+    ],
+    "setup_cues_pl": [
+      "Chwyt supinated (podchwytem), dłonie do siebie",
+      "Ręce na szerokość barków",
+      "Pełny zwis — łokcie wyprostowane, nogi proste lub lekko zgięte",
+      "Łopatki W DÓŁ (bez unoszenia)",
+      "Brzuch wstępnie napięty przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Pull AND tuck SIMULTANEOUSLY — not pull-then-tuck",
+      "Knees TO CHEST at the top, not just lifted",
+      "Form a tight 'ball' at peak — gorilla shape",
+      "Chin clearly OVER the bar AT THE SAME TIME knees are high",
+      "Lower body AND extend legs together — controlled descent"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij I zwijaj JEDNOCZEŚNIE — nie 'najpierw ciąg, potem kolana'",
+      "Kolana DO KLATKI w górze, nie tylko 'uniesione'",
+      "Formuj zwartą 'kulkę' w szczycie — kształt goryla",
+      "Broda wyraźnie NAD drążkiem W TYM SAMYM CZASIE co kolana są wysoko",
+      "Opuszczaj ciało I prostuj nogi razem — kontrolowane schodzenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Tucking knees only (forgetting to fully chin-up) or chin-up only (skipping the tuck)",
+        "faultPl": "Tylko podciąganie kolan (bez pełnego chin-upa) lub tylko chin-up (bez tuck)",
+        "cause": "Trying to do the exercise above current strength — sacrificing one component for the other",
+        "causePl": "Próba wykonania ćwiczenia powyżej obecnej siły — poświęcanie jednego komponentu na rzecz drugiego",
+        "cue": "Both must hit peak together. If you can't, regress to chin-up + hanging-knee-raise separately.",
+        "cuePl": "Oba komponenty muszą osiągnąć szczyt razem. Jeśli nie możesz — wróć do osobnych chin-upów + hanging-knee-raise."
+      },
+      {
+        "fault": "Swinging/kipping to get knees up",
+        "faultPl": "Bujanie/kipping by podciągnąć kolana",
+        "cause": "Weak hip flexors or rectus abdominis, compensating with momentum",
+        "causePl": "Słabe zginacze biodra lub prosty brzucha, kompensacja pędem",
+        "cue": "Brace core HARD before pull. Use strict tuck. If still swinging — train hanging-knee-raise first.",
+        "cuePl": "Mocno napnij brzuch przed ciągiem. Strict tuck. Jeśli wciąż bujasz — najpierw trenuj hanging-knee-raise."
+      },
+      {
+        "fault": "Knees not reaching chest (low tuck)",
+        "faultPl": "Kolana nie sięgają klatki (niski tuck)",
+        "cause": "Limited core flexion, hip flexor weakness, or no awareness of full ROM",
+        "causePl": "Ograniczone zgięcie core, słabe zginacze biodra, lub brak świadomości pełnego zakresu",
+        "cue": "Knees aim for the BAR, not just up. Crunch torso forward at the top — make a ball.",
+        "cuePl": "Kolana CELUJĄ w drążek, nie tylko 'w górę'. Zwiń tułów do przodu w szczycie — zrób kulkę."
+      },
+      {
+        "fault": "Chin not over the bar (half pull-up)",
+        "faultPl": "Broda nie nad drążkiem (połowiczny chin-up)",
+        "cause": "Knee tuck stealing energy from the pull, or fatigue late in set",
+        "causePl": "Tuck kolan zabierający energię z ciągu, lub zmęczenie pod koniec serii",
+        "cue": "Full chin OVER bar each rep. If you can't keep both elements full — lower reps, more rest.",
+        "cuePl": "Pełna broda NAD drążkiem w każdym powtórzeniu. Jeśli nie utrzymujesz obu elementów — mniej powtórzeń, więcej przerwy."
+      },
+      {
+        "fault": "Dropping legs/body fast on descent",
+        "faultPl": "Szybkie opuszczanie nóg/ciała w schodzeniu",
+        "cause": "Underestimating eccentric demand of both pull and leg extension",
+        "causePl": "Niedocenienie ekscentrycznego obciążenia ciągu i prostowania nóg",
+        "cue": "Lower in 2-3 seconds. Legs extend SLOWLY together with body lowering — no plop.",
+        "cuePl": "Opuszczaj w 2-3 sekundy. Nogi się prostują POWOLI razem z ciałem — bez plumpsa."
+      }
+    ],
+    "breathing": "Inhale at dead-hang. Exhale forcefully during the combined pull+tuck (helps brace core and lock the crunch). Inhale on descent. Don't hold breath — high core demand needs intra-abdominal pressure cycling.",
+    "breathingPl": "Wdech na dead-hang. Mocny wydech podczas połączonego ciągu+tuck (pomaga napiąć brzuch i zaryglować crunch). Wdech podczas schodzenia. Nie wstrzymuj — duże obciążenie core wymaga cyklowania ciśnienia śródbrzusznego."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Reduce knee tuck height — don't force full crunch. If pain persists, regress to plain chin-ups.",
+      "modificationPl": "Zmniejsz wysokość tuck kolan — nie wymuszaj pełnego crunch. Jeśli ból trwa — wróć do zwykłych chin-upów.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Switch to neutral grip if available (palms facing each other). Reduce ROM at top if shoulder catches.",
+      "modificationPl": "Przejdź na chwyt neutralny jeśli możliwe (dłonie do siebie). Zmniejsz ROM w górze jeśli bark się zacina.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "avoid",
+      "modification": "The knee tuck loads hip flexors heavily. Skip until healed — use plain chin-ups instead.",
+      "modificationPl": "Tuck kolan mocno obciąża zginacze biodra. Wstrzymaj do wyzdrowienia — w zamian zwykłe chin-upy.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Crunch motion + bracing under load is contraindicated. Switch to anti-flexion core work (dead bug, plank).",
+      "modificationPl": "Ruch crunch + napięcie pod obciążeniem są przeciwwskazane. Przejdź na core anti-flexion (dead bug, plank).",
+      "alternative": "chin-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (technique-focused) | 3xAMRAP (conditioning) | 4x5 (strict strength)",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "gorilla-chin.gif",
+    "frames_extracted": [
+      "frames/gorilla-chin/frame_0_start.png",
+      "frames/gorilla-chin/frame_1_early.png",
+      "frames/gorilla-chin/frame_2_mid.png",
+      "frames/gorilla-chin/frame_3_late.png",
+      "frames/gorilla-chin/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/gorilla-chin"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start, supinated grip (chin-up), ramiona wyprostowane, nogi proste. Frame 2: top position — tight 'gorilla ball', kolana wysoko przy klatce, broda nad drążkiem, tułów zwinięty. Frame 4: powrót do dead-hang, nogi wyprostowane. Podświetlone mięśnie: latissimus dorsi (plecy) + rectus abdominis (prosty brzucha) — potwierdza dual-primary klasyfikację (pull + core flexion). Klasyczny hybrid chin-up/knee-tuck — wymaga bazy zarówno w chin-upie jak i hanging knee raise, dlatego difficulty 9 i level=advanced.",
+
+  "tags": ["calisthenics", "bodyweight", "hybrid", "upper_body", "core", "vertical_pull", "knee_tuck", "back", "abs", "biceps", "advanced", "compound"]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "smith-one-arm-row",
+  "name": "Smith One-Arm Row",
+  "namePl": "Wiosłowanie jednorącz na suwnicy Smitha",
+  "aliases": ["smith machine one-arm row", "smith single-arm row", "smith machine unilateral row", "smith meadows-style row", "one-arm smith row"],
+  "aliasesPl": ["wiosłowanie jednorącz na maszynie Smitha", "wiosłowanie jednorącz smith", "wiosłowanie unilateralne na smithu", "jednoręczne wiosłowanie na suwnicy", "wiosło jednorącz smith"],
+
+  "description": "Unilateral horizontal pulling exercise for the back performed on a Smith machine. You stand beside the bar with feet roughly hip-width apart, hinge the torso forward to about 45 degrees, grip the bar in the middle with one hand and rest the free hand on the thigh / knee or on the upright for self-support. The bar travels along the fixed vertical track of the Smith — this removes the need to stabilize a swinging weight, so virtually all the effort goes into the pull itself. You row the bar up to the lower ribs / side of the hip and squeeze the shoulder blade toward the spine, then control it back down to a full lat stretch. The unilateral setup lets you push deeper into range than a barbell version, train one side at a time to fix asymmetries, and load heavy without lower-back fatigue limiting the set. Often used as a finisher after barbell rows or as the main back movement on a high-volume day.",
+  "descriptionPl": "Jednostronne ćwiczenie ciągowe w płaszczyźnie poziomej na plecy wykonywane na suwnicy Smitha. Stoisz bokiem do gryfu, stopy mniej więcej na szerokość bioder, pochylasz tułów do około 45 stopni w przód, chwytasz gryf jedną ręką w środkowej części, a wolną dłonią opierasz się o udo / kolano lub o słup suwnicy dla stabilizacji. Gryf porusza się po stałym pionowym torze suwnicy — eliminuje to konieczność stabilizowania balansu ciężaru, więc niemal cały wysiłek idzie w sam ciąg. Przyciągasz gryf do dolnych żeber / boku biodra i ściskasz łopatkę w kierunku kręgosłupa, po czym w kontroli opuszczasz do pełnego rozciągnięcia najszerszego. Jednostronny układ pozwala wejść głębiej w zakres ruchu niż wersja sztangowa, trenować każdą stronę osobno dla skorygowania asymetrii i obciążać większym ciężarem bez tego by zmęczenie lędźwi limitowało serię. Często używane jako wykończenie po wiosłowaniu sztangą lub jako główny ruch na plecy w dniu wysokoobjętościowym.",
+
+  "instructions": [
+    "Set the Smith bar at low height (around knee level or a few centimeters above). Load the desired weight on one side or both sides evenly.",
+    "Stand beside the bar, parallel to it, feet roughly hip-width apart, knees slightly bent.",
+    "Hinge at the hips, push the glutes back, lower the torso to about 45 degrees from the floor. Keep the spine neutral, chest proud.",
+    "Grip the bar with one hand in the middle of the bar, pronated or neutral grip. Rest the free hand on the same-side thigh / knee or on the Smith upright for stability.",
+    "Unrack the bar by rotating the hook off the catch. The bar now hangs at arm's length below the working shoulder.",
+    "Brace the core and set the lat by pulling the bar slightly toward the body without bending the elbow.",
+    "Row the bar straight up along the Smith track, driving the elbow back and toward the ceiling, until the bar reaches the lower ribs / side of the hip. Squeeze the shoulder blade toward the spine.",
+    "Lower the bar under control along the same vertical path until the arm is fully extended and the lat stretches at the bottom.",
+    "Keep the torso angle locked the entire set — no rotating the trunk to lift the weight, no rocking. Complete all reps on one side, then rack the bar, switch sides, and repeat."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf suwnicy na niskiej wysokości (mniej więcej na poziomie kolan lub kilka centymetrów wyżej). Załaduj wybrany ciężar na jedną stronę lub równomiernie na obie.",
+    "Stań bokiem do gryfu, równolegle do niego, stopy mniej więcej na szerokość bioder, kolana lekko ugięte.",
+    "Zegnij się w biodrach, wypchnij pośladki w tył, opuść tułów do około 45 stopni względem podłoża. Kręgosłup neutralny, klatka wysunięta.",
+    "Chwyć gryf jedną ręką w jego środkowej części, chwytem nachwytem lub neutralnym. Wolną dłoń oprzyj o udo / kolano po tej samej stronie lub o słup suwnicy dla stabilizacji.",
+    "Odbezpiecz gryf obrotem zaczepu z haka. Gryf zwisa teraz na wyprostowanym ramieniu pod pracującym barkiem.",
+    "Napnij brzuch i aktywuj najszerszy ściągając gryf lekko ku ciału bez zginania łokcia.",
+    "Pociągnij gryf w górę po torze suwnicy, prowadząc łokieć w tył i w stronę sufitu, aż gryf dotrze do dolnych żeber / boku biodra. Ściśnij łopatkę w kierunku kręgosłupa.",
+    "Opuść gryf w pełnej kontroli tą samą pionową trajektorią aż do pełnego wyprostu ramienia i rozciągnięcia najszerszego na dole.",
+    "Trzymaj kąt tułowia stale taki sam przez całą serię — bez rotowania tułowiem w górę by wyciągnąć ciężar, bez bujania. Wykonaj wszystkie powtórzenia na jedną stronę, odbezpiecz gryf, zmień stronę i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower"],
+    "secondary": ["biceps_brachii", "posterior_deltoids", "brachialis", "teres_major"],
+    "stabilizers": ["erector_spinae", "core", "obliques", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P8",
+    "trapezius_middle_lower": "P8",
+    "teres_major": "S7",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "erector_spinae": "S6",
+    "obliques": "S6",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-bent-over-row", "single-arm-dumbbell-row", "romanian-deadlift"],
+    "progression_to": ["barbell-bent-over-row", "barbell-pendlay-row", "t-bar-row", "weighted-dumbbell-row"],
+    "alternatives": ["single-arm-dumbbell-row", "kettlebell-one-arm-row", "barbell-bent-over-row", "t-bar-row", "cable-low-seated-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand beside the bar, parallel to it, feet hip-width",
+      "Set the bar low — around knee height or slightly higher",
+      "Hinge to about 45 degrees, neutral spine, chest proud",
+      "Grip the bar in the middle with one hand, free hand braced on thigh or upright",
+      "Bar hangs at arm's length directly under the working shoulder"
+    ],
+    "setup_cues_pl": [
+      "Stań bokiem do gryfu, równolegle, stopy na szerokość bioder",
+      "Ustaw gryf nisko — mniej więcej na wysokości kolan lub nieco wyżej",
+      "Pochyl się do około 45 stopni, neutralny kręgosłup, klatka wysunięta",
+      "Chwyć gryf jedną ręką w środku, wolna dłoń oparta o udo lub słup",
+      "Gryf zwisa na wyprostowanym ramieniu pod pracującym barkiem"
+    ],
+    "execution_cues": [
+      "Pull with the elbow, not the hand — the hand is just a hook",
+      "Drive the elbow back and up toward the ceiling, not out to the side",
+      "Pull the bar to the lower rib / hip, not to the chest",
+      "Squeeze the shoulder blade toward the spine at the top — pause 1 sec",
+      "Lock the torso — no twisting the trunk to lift heavier"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciem, nie dłonią — dłoń to tylko hak",
+      "Prowadź łokieć w tył i w górę w stronę sufitu, nie w bok",
+      "Ciągnij gryf do dolnego żebra / biodra, nie do klatki",
+      "Ściśnij łopatkę w kierunku kręgosłupa na szczycie — zatrzymaj na 1 sek.",
+      "Zablokuj tułów — bez skręcania korpusu by podnieść więcej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating the torso to lift the bar (cheating with trunk twist)",
+        "faultPl": "Skręcanie tułowiem by wyciągnąć gryf (oszukiwanie rotacją korpusu)",
+        "cause": "Load too heavy, ego lifting, or weak lat / mid-back compensated by obliques",
+        "causePl": "Zbyt duży ciężar, ego lifting lub słaby najszerszy / środek pleców kompensowany skośnymi",
+        "cue": "Drop the weight 15-20%. Keep both shoulders facing the floor through the entire set — if a shoulder rotates up, the rep doesn't count.",
+        "cuePl": "Zmniejsz ciężar o 15-20%. Trzymaj oba barki skierowane w stronę podłogi przez całą serię — jeśli bark obraca się w górę, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Bar set too high — turns the exercise into an upright row / shrug",
+        "faultPl": "Gryf ustawiony za wysoko — zmienia ćwiczenie w wiosło stojąc / szrug",
+        "cause": "Skipping setup detail, copying setup from another lifter without checking own bar-arm relationship",
+        "causePl": "Pominięcie szczegółu konfiguracji, kopiowanie ustawienia od innego ćwiczącego bez sprawdzenia własnej relacji gryf-ramię",
+        "cue": "At the bottom of the rep the arm must be FULLY extended with the lat stretching. If you can't fully extend, the bar is too high — lower it by one notch.",
+        "cuePl": "Na dole powtórzenia ramię musi być W PEŁNI wyprostowane z rozciągniętym najszerszym. Jeśli nie da się wyprostować — gryf jest za wysoko, obniż o jeden otwór."
+      },
+      {
+        "fault": "Pulling with the biceps instead of the back (forearm-dominant pull)",
+        "faultPl": "Ciąg bicepsem zamiast plecami (ciąg zdominowany przez przedramię)",
+        "cause": "No mind-muscle connection with the lat, gripping the bar too tightly, or wrist curling into the rep",
+        "causePl": "Brak połączenia umysł-mięsień z najszerszym, zbyt mocny chwyt gryfu lub zginanie nadgarstka w czasie powtórzenia",
+        "cue": "Think 'elbow to back pocket', not 'hand to ribs.' Loosen the grip slightly. If the biceps pump out before the back, drop the weight.",
+        "cuePl": "Pomyśl 'łokieć do tylnej kieszeni', a nie 'dłoń do żeber'. Lekko poluzuj chwyt. Jeśli biceps się napompuje wcześniej niż plecy — zmniejsz ciężar."
+      },
+      {
+        "fault": "Rounding the lower back at the bottom (lumbar flexion under load)",
+        "faultPl": "Zaokrąglenie odcinka lędźwiowego na dole (zgięcie kręgosłupa lędźwiowego pod obciążeniem)",
+        "cause": "Insufficient core brace, hamstring tightness, or reaching for the bar by rounding instead of hinging deeper",
+        "causePl": "Niewystarczające napięcie brzucha, sztywność dwugłowych ud lub sięganie do gryfu przez zaokrąglenie zamiast głębszego hip hinge",
+        "cue": "Brace the core HARD before each rep, like you're about to be punched in the stomach. Keep a wedge-style neutral spine from tailbone to crown — no exceptions.",
+        "cuePl": "Napnij brzuch MOCNO przed każdym powtórzeniem, jakbyś miał dostać w brzuch. Trzymaj neutralny kręgosłup od kości ogonowej do czubka głowy — bez wyjątków."
+      },
+      {
+        "fault": "Pressing on the thigh / upright too hard for help (de facto two-arm exercise)",
+        "faultPl": "Zbyt mocne podpieranie się o udo / słup (de facto ćwiczenie dwurącz)",
+        "cause": "Load too heavy or psychological need to feel stable when bent over",
+        "causePl": "Zbyt duży ciężar lub psychologiczna potrzeba poczucia stabilności w pozycji pochylonej",
+        "cue": "The free hand only LIGHTLY supports the trunk — don't push down into the thigh. If you're using the free hand to push the torso up, the working side is too heavy.",
+        "cuePl": "Wolna dłoń tylko LEKKO podpiera tułów — nie wciskaj jej w udo. Jeśli używasz wolnej dłoni by wypchnąć tułów w górę, pracująca strona ma za duży ciężar."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of the hinge. Exhale through the pull as the bar approaches the hip. Inhale on the controlled descent. For heavier sets, hold the brace through 2-3 reps then re-breathe at full stretch.",
+    "breathingPl": "Wdech i napięcie brzucha na szczycie pochylenia. Wydech podczas ciągu, gdy gryf zbliża się do biodra. Wdech podczas kontrolowanego opuszczania. Przy cięższych seriach trzymaj napięcie przez 2-3 powtórzenia, potem odetchnij w pełnym rozciągnięciu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared. Even with one-arm setup and free hand support, hip-hinge loading risk is high. Use chest-supported row instead.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody. Nawet w wariancie jednorącz z podparciem wolnej ręki ryzyko obciążenia w hip hinge jest wysokie. Użyj wiosłowania z podparciem klatki.",
+      "alternative": "chest-supported-dumbbell-row"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Switch to chest-supported variant or seated cable row to eliminate spinal loading in flexion.",
+      "modificationPl": "Przejdź na wersję z podparciem klatki lub wiosłowanie siedząc z linki by wyeliminować obciążenie kręgosłupa w zgięciu.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use a neutral or supinated grip and keep the elbow tight to the body — the fixed bar path can aggravate impingement with a wide elbow path.",
+      "modificationPl": "Użyj chwytu neutralnego lub podchwytu i trzymaj łokieć blisko ciała — sztywny tor gryfu może nasilać impingement przy szerokiej trajektorii łokcia.",
+      "alternative": "single-arm-dumbbell-row"
+    },
+    {
+      "condition": "scoliosis_or_significant_spinal_asymmetry",
+      "severity": "caution",
+      "modification": "Unilateral loading bent-over with a fixed bar path can over-stress the convex side. Match reps and load left/right precisely and consult a clinician.",
+      "modificationPl": "Jednostronne obciążenie w opadzie ze sztywnym torem gryfu może nadmiernie obciążać stronę wypukłości skoliozy. Wyrównuj idealnie powtórzenia i ciężar lewa/prawa i skonsultuj z fizjoterapeutą.",
+      "alternative": "chest-supported-dumbbell-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 4x6-8 per side (strength) | 3x10-15 per side (general / volume) | 3x12-15 per side (endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-one-arm-row.gif",
+    "frames_extracted": [
+      "frames/smith-one-arm-row/frame_0_start.png",
+      "frames/smith-one-arm-row/frame_1_early.png",
+      "frames/smith-one-arm-row/frame_2_mid.png",
+      "frames/smith-one-arm-row/frame_3_late.png",
+      "frames/smith-one-arm-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/smith-one-arm-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa (frame_0/1/2/3/4). Setup: ćwiczący stoi BOKIEM do gryfu suwnicy Smitha (równolegle do gryfu, NIE okrakiem nad jego końcem — to nie jest klasyczny Meadows row z landminą, tylko one-arm row z gryfem suwnicy ułożonym poziomo wzdłuż ciała). Stopy na szerokość bioder, kolana lekko ugięte, tułów pochylony w opadzie ~45 stopni. Frame 0 (start, top koncentryczny): jedna ręka trzyma gryf w okolicy środka i przyciągnęła go do dolnych żeber / boku biodra, łokieć wyraźnie za linią tułowia, łopatka ściągnięta — mocno podświetlone najszersze grzbietu po pracującej stronie, równoległoboczne i środkowe/dolne czworoboczne. Wolna ręka oparta o udo dla podparcia. Frames 1-2 (mid descent): gryf opuszczany pionowo po szynach suwnicy, ramię się prostuje, lat się rozciąga, kąt tułowia STABILNY. Frames 3-4 (powrót do top): gryf wraca po identycznym pionowym torze do dolnych żeber. Klasyfikacja 'pull_horizontal' + 'unilateral' potwierdzona. Equipment: TYLKO suwnica Smitha (gryf w prowadnicach + krążki), niczego dodatkowego nie trzeba. Primary mover: latissimus_dorsi P10 (najwyższy poziom — jednostronny ciąg horyzontalny ze stałym torem gryfu pozwala na szczytową aktywację lat, bez konieczności stabilizowania balansu jak przy hantli), rhomboids P8 i mid/lower traps P8 (silnie zaangażowane w retrakcję łopatki). Teres major dodany jako secondary S7 — w jednostronnym ciągu z addukcją ramienia ma istotny udział. Obliques jako stabilizer (antyrotacja tułowia — ważny aspekt versus bilateralne wersje). Trudność 5 (intermediate) — tor gryfu jest sztywny więc technicznie łatwiejszy niż wolny ciężar, ale wymaga kontroli hip hinge i antyrotacji tułowia, stąd nie 'beginner'. Polskie nazwy: 'Wiosłowanie jednorącz na suwnicy Smitha' (poprawna polska konwencja siłowniana, 'suwnica Smitha' jest polskim standardem). 5 common_faults: rotacja tułowia, gryf za wysoko, ciąg bicepsem, zaokrąglone lędźwie, zbyt mocne podpieranie. 4 contraindications: ostra kontuzja lędźwi, przepuklina krążka, impingement barku, skolioza (dodana ze względu na asymetryczne obciążenie + sztywny tor — to istotne dla tej wersji). 5+5 coaching cues (setup + execution), wszystkie pola PL napisane od zera w polskim standardzie fitness.",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "unilateral", "smith_machine", "mid_back", "lat_developer", "asymmetry_corrective", "fixed_path", "intermediate"]
+}

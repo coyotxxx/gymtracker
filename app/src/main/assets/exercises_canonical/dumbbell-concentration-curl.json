@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-concentration-curl",
+  "name": "Dumbbell Concentration Curl",
+  "namePl": "Uginanie ramion hantlem z koncentracją siedząc",
+  "aliases": ["concentration curl", "seated concentration curl", "arnold concentration curl", "db concentration curl"],
+  "aliasesPl": ["uginanie z koncentracją", "concentration curl z hantlem", "uginanie hantlem siedząc z oparciem o udo", "koncentryczne uginanie bicepsa"],
+
+  "description": "Single-arm seated isolation exercise in which the working elbow is braced against the inner thigh, allowing maximum isolation of the biceps brachii by eliminating shoulder and torso compensation. Famously a staple of Arnold Schwarzenegger's arm training, the concentration curl is considered one of the most effective movements for the long head of the biceps and the biceps 'peak'. The braced position forces strict form and provides strong proprioceptive feedback during the contraction.",
+  "descriptionPl": "Jednoramienne ćwiczenie izolowane w pozycji siedzącej, w którym łokieć pracującego ramienia opiera się o wewnętrzną stronę uda. Pozwala to na maksymalną izolację mięśnia dwugłowego ramienia poprzez wyeliminowanie kompensacji barku i tułowia. Słynny element treningu ramion Arnolda Schwarzeneggera — uznawany za jedno z najskuteczniejszych ćwiczeń na głowę długą bicepsa i tzw. 'szczyt' (peak). Oparcie łokcia wymusza ścisłą technikę i daje mocny czuciowy feedback w fazie szczytowego skurczu.",
+
+  "instructions": [
+    "Sit on the end of a flat bench with feet flat on the floor, spread roughly shoulder-width apart or slightly wider.",
+    "Hold a dumbbell in one hand with a supinated (palm up) grip. Lean forward from the hips with a flat back.",
+    "Brace the back of the working upper arm — just above the elbow — firmly against the inside of the same-side thigh.",
+    "Let the dumbbell hang straight down with the arm fully extended. Place the free hand on the opposite thigh or knee for support.",
+    "Curl the dumbbell upward in a slow controlled arc, flexing only at the elbow. The upper arm stays glued to the thigh.",
+    "Bring the dumbbell up toward the front of your shoulder until the biceps is fully contracted. Squeeze hard for 1 second at the top.",
+    "Lower the dumbbell slowly over 2-3 seconds back to full elbow extension. Do not let the weight bounce at the bottom.",
+    "Complete all prescribed reps on one arm, then switch to the other side. Maintain identical form on both sides."
+  ],
+  "instructionsPl": [
+    "Usiądź na końcu płaskiej ławki, stopy płasko na podłodze, rozstawione mniej więcej na szerokość barków lub szerzej.",
+    "Złap hantel w jedną rękę nachwytem dolnym (dłoń skierowana w górę). Pochyl tułów w przód z bioder, plecy proste.",
+    "Oprzyj tylną stronę pracującego ramienia — tuż nad łokciem — mocno o wewnętrzną stronę uda po tej samej stronie.",
+    "Pozwól hantlowi wisieć prosto w dół z w pełni wyprostowanym ramieniem. Wolną rękę połóż na przeciwnym udzie lub kolanie dla podparcia.",
+    "Uginaj hantel w górę po powolnym kontrolowanym łuku, zginając wyłącznie staw łokciowy. Ramię ponad łokciem pozostaje przyklejone do uda.",
+    "Doprowadź hantel do przodu barku aż biceps będzie w pełnym skurczu. Mocno napnij przez 1 sekundę w górnej pozycji.",
+    "Opuszczaj hantel powoli przez 2-3 sekundy aż do pełnego wyprostu w łokciu. Nie pozwól ciężarowi odbić się na dole.",
+    "Wykonaj wszystkie zaplanowane powtórzenia jedną ręką, następnie zmień stronę. Utrzymaj identyczną technikę po obu stronach."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["preacher-curl", "spider-curl", "incline-dumbbell-curl", "cable-concentration-curl"],
+    "alternatives": ["preacher-curl", "spider-curl", "cable-concentration-curl", "incline-dumbbell-curl", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on bench, feet wide and flat",
+      "Lean forward from hips, flat back",
+      "Press back of upper arm into inner thigh",
+      "Free hand braces opposite knee",
+      "Dumbbell hangs straight down, full elbow extension"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na ławce, stopy szeroko i płasko",
+      "Pochyl tułów z bioder, plecy proste",
+      "Wciśnij tylną stronę ramienia w wewnętrzną stronę uda",
+      "Wolna ręka podpiera przeciwne kolano",
+      "Hantel wisi prosto w dół, łokieć w pełnym wyproście"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm glued to thigh",
+      "Squeeze the biceps hard for 1 second at the top",
+      "Lower under control for 2-3 seconds — fight the eccentric",
+      "Keep wrist neutral and in line with forearm",
+      "Full lockout at bottom, no bouncing"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem przyklejone do uda",
+      "Mocno spinaj biceps przez 1 sekundę w górnej pozycji",
+      "Opuszczaj kontrolowanie przez 2-3 sekundy — walcz z fazą negatywną",
+      "Nadgarstek neutralny, w linii z przedramieniem",
+      "Pełny wyprost na dole, bez odbijania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the upper arm off the thigh",
+        "faultPl": "Odrywanie ramienia od uda",
+        "cause": "Load too heavy, attempting to use shoulder flexion to assist the curl",
+        "causePl": "Zbyt duży ciężar, próba pomocy w uginaniu poprzez zginanie barku",
+        "cue": "Lower the weight. The whole point is bracing — if the elbow leaves the thigh, it is not a concentration curl.",
+        "cuePl": "Zmniejsz ciężar. Sensem ćwiczenia jest oparcie — jeśli łokieć odrywa się od uda, to nie jest już concentration curl."
+      },
+      {
+        "fault": "Using torso rotation or rocking to swing the weight up",
+        "faultPl": "Pomaganie rotacją lub bujaniem tułowia w celu zarzucenia ciężaru",
+        "cause": "Ego lifting after technical failure, or load too heavy from the start",
+        "causePl": "Forsowanie powtórzeń po wyczerpaniu technicznym, lub zbyt duży ciężar od początku",
+        "cue": "Keep the torso completely still. If you cannot lift it without swinging, drop the weight by 20-30%.",
+        "cuePl": "Tułów ma być całkowicie nieruchomy. Jeśli nie możesz unieść bez bujania, zmniejsz ciężar o 20-30%."
+      },
+      {
+        "fault": "Cutting off the bottom of the rep (partial extension)",
+        "faultPl": "Skracanie dolnej fazy ruchu (niepełny wyprost łokcia)",
+        "cause": "Avoiding the stretched position, weak lower-range strength, or trying to maintain biceps tension",
+        "causePl": "Unikanie pozycji rozciągniętej, słabość w dolnym zakresie, lub próba utrzymania napięcia bicepsa",
+        "cue": "Fully extend the elbow at the bottom every rep — the stretch is where most growth happens.",
+        "cuePl": "Prostuj łokieć całkowicie na dole każdego powtórzenia — pozycja rozciągnięta to najsilniejszy bodziec do hipertrofii."
+      },
+      {
+        "fault": "Wrist curling at the top",
+        "faultPl": "Zginanie nadgarstka w górnej pozycji",
+        "cause": "Trying to squeeze out extra range when the biceps is already fully contracted",
+        "causePl": "Próba 'dociśnięcia' powtórzenia gdy biceps jest już w pełnym skurczu",
+        "cue": "Keep wrist neutral — the curl ends when the forearm stops moving, not when the dumbbell touches your shoulder.",
+        "cuePl": "Nadgarstek pozostaje neutralny — uginanie kończy się gdy przedramię się zatrzyma, nie gdy hantel dotknie barku."
+      },
+      {
+        "fault": "Slumped back or rounded lumbar spine",
+        "faultPl": "Zgarbiona postawa lub zaokrąglony odcinek lędźwiowy",
+        "cause": "Lack of core engagement, fatigue, or excessive forward lean",
+        "causePl": "Brak napięcia mięśni głębokich, zmęczenie, lub zbyt duże pochylenie do przodu",
+        "cue": "Hinge from the hips with a flat back — chest forward, lower back neutral, abs lightly braced.",
+        "cuePl": "Pochyl się z bioder z prostymi plecami — klatka w przód, lędźwie neutralne, brzuch lekko napięty."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light core brace throughout to support the forward-leaning seated posture.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby ustabilizować pochyloną pozycję siedzącą."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The fully supinated and stretched bottom position loads the distal biceps tendon. Reduce range of motion (do not go to full extension), use lighter weight with higher reps (12-15), avoid heavy slow eccentrics.",
+      "modificationPl": "Pozycja dolna w pełnej supinacji i rozciągnięciu obciąża przyczep dystalny bicepsa. Skróć zakres ruchu (nie schodź do pełnego wyprostu), użyj lżejszego ciężaru z większą liczbą powtórzeń (12-15), unikaj ciężkich powolnych faz negatywnych.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Full supination under load aggravates pronator/flexor attachments. Use neutral grip (hammer concentration curl) and reduce intensity to pain-free range.",
+      "modificationPl": "Pełna supinacja pod obciążeniem drażni przyczepy mięśni nawracających i zginaczy. Użyj chwytu neutralnego (hammer concentration curl) i zmniejsz intensywność do zakresu bez bólu.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "lower_back_pain_or_disc_issues",
+      "severity": "caution",
+      "modification": "The forward-leaning seated posture loads the lumbar spine in flexion. Use preacher bench instead to remove spinal flexion, or perform standing single-arm dumbbell curl with elbow braced against a wall.",
+      "modificationPl": "Pochylona pozycja siedząca obciąża odcinek lędźwiowy w zgięciu. Użyj ławki modlitewnika aby wyeliminować zgięcie kręgosłupa, lub wykonuj uginanie hantlem stojąc z łokciem opartym o ścianę.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "hip_mobility_restriction",
+      "severity": "modify",
+      "modification": "If you cannot comfortably spread the legs and hinge forward to reach the inner thigh, the position will compensate through the spine. Use preacher or spider curl instead.",
+      "modificationPl": "Jeśli nie możesz wygodnie rozstawić nóg i pochylić się aby dosięgnąć wewnętrznej strony uda, pozycja będzie kompensowana kręgosłupem. Użyj zamiast tego curl na modlitewniku lub spider curl.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy) | 3x12-15 (peak/pump finisher) | 2-3x15-20 (high-rep burnout)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-concentration-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-concentration-curl/frame_0_start.png",
+      "frames/dumbbell-concentration-curl/frame_1_early.png",
+      "frames/dumbbell-concentration-curl/frame_2_mid.png",
+      "frames/dumbbell-concentration-curl/frame_3_late.png",
+      "frames/dumbbell-concentration-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-concentration-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:50:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0: pozycja startowa — atleta siedzi na płaskiej ławce, pochylony do przodu, prawy łokieć oparty o wewnętrzną stronę prawego uda, hantel zwisa w pełnym wyproście łokcia, prawy biceps i przedramię podświetlone na czerwono. Frame 1-2: faza koncentryczna — hantel unoszony w łuku w stronę prawego barku, ramię ponad łokciem pozostaje przyklejone do uda, biceps w pełnym skurczu. Frame 2: pozycja szczytowa — hantel na wysokości barku, pełny skurcz bicepsa. Frame 3-4: faza ekscentryczna — kontrolowany powrót do pełnego wyprostu. Tułów stabilny przez cały ruch, łokieć ani razu nie odrywa się od uda. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Concentration Curl. Pełna izolacja bicepsa — modelowy klasyk Arnolda. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbell", "unilateral", "seated", "peak", "classic", "arnold"]
+}

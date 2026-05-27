@@ -1,0 +1,204 @@
+{
+  "id": "cable-standing-fly",
+  "name": "Cable Standing Fly",
+  "namePl": "Rozpiętki na wyciągu stojąc",
+  "aliases": ["standing cable fly", "cable crossover", "high to low cable fly", "standing cable crossover", "cable chest fly standing"],
+  "aliasesPl": ["rozpiętki na bramie stojąc", "krzyżowanie linek stojąc", "cable crossover stojąc", "rozpiętki linkowe stojąc", "rozpiętki z górnych wyciągów", "rozpiętki z góry na dół"],
+
+  "description": "Classic single-joint cable isolation for the pectoralis major performed standing between two cable stacks with handles set at the highest pulley position. With a slight forward lean, soft knees and a small staggered or parallel stance, the lifter pulls both handles in a wide, downward-and-inward arc until they meet in front of the lower abdomen. Elbows remain locked in a slight bend for the entire set — this is not a press. The high-to-low line of pull biases the lower (sternocostal) head of the pec while still loading the whole chest. Because the cables deliver constant tension across the full range — including the strongest possible squeeze at the bottom — this is one of the best finishers for chest hypertrophy and mind-muscle connection.",
+  "descriptionPl": "Klasyczne jednostawowe ćwiczenie izolowane na mięsień piersiowy większy wykonywane stojąc między dwoma kolumnami wyciągu z uchwytami przypiętymi do najwyższych bloków. Z lekkim pochyleniem tułowia do przodu, miękkimi kolanami i niewielkim wykrokiem lub rozstawem stóp na szerokość bioder, ćwiczący ściąga oba uchwyty szerokim łukiem w dół i do środka, aż spotkają się przed dolną częścią brzucha. Łokcie pozostają zablokowane w lekkim zgięciu przez całą serię — to nie jest wyciskanie. Linia ciągu z góry na dół akcentuje dolny (mostkowo-żebrowy) akton klatki, ale obciąża całą klatkę piersiową. Dzięki stałemu napięciu z linki w pełnym zakresie ruchu — łącznie z najmocniejszym możliwym ściskiem na dole — to jedno z najlepszych ćwiczeń wykończeniowych na hipertrofię klatki i połączenie nerwowo-mięśniowe.",
+
+  "instructions": [
+    "Set both cable pulleys to the highest position and attach a single D-handle to each side. Select equal weight on both stacks.",
+    "Stand centered between the two stacks. Grab the handles with a neutral or slightly pronated grip — palms facing forward and slightly down.",
+    "Step forward one or two paces so the cables pull your arms behind your torso under tension. Adopt a split stance (one foot forward) or hip-width parallel stance for balance.",
+    "Lean the torso forward 15-25 degrees from vertical. Brace the core, retract the shoulder blades, and keep a slight bend in the elbows (about 15-20°). Lock that elbow angle.",
+    "Start with arms out wide at roughly shoulder height — chest stretched, palms facing forward.",
+    "Pull both handles in a wide arc downward and inward, leading with the elbows. Imagine hugging a giant tree from above.",
+    "Bring the hands together in front of the lower abdomen / pelvis. Squeeze the pecs hard for a 1-second peak contraction — you can lightly cross the wrists for an extra inner-chest squeeze.",
+    "Reverse the motion slowly (2-3 seconds) until the arms return to shoulder height and a strong stretch is felt across the chest. Do not let the cables yank the shoulders into protraction.",
+    "Exhale on the squeeze, inhale on the stretch. Keep the torso angle and elbow bend constant — only the shoulder joint moves."
+  ],
+  "instructionsPl": [
+    "Ustaw oba wyciągi w najwyższej pozycji i przypnij pojedynczy uchwyt D do każdej strony. Wybierz równy ciężar na obu kolumnach.",
+    "Stań pośrodku między dwiema kolumnami. Chwyć uchwyty chwytem neutralnym lub lekko nawrócony — dłonie skierowane do przodu i lekko w dół.",
+    "Zrób krok lub dwa do przodu, tak aby linki ciągnęły ramiona za tułów pod napięciem. Przyjmij wykrok (jedna stopa z przodu) lub rozstaw stóp na szerokość bioder dla równowagi.",
+    "Pochyl tułów do przodu o 15-25 stopni od pionu. Napnij brzuch, ściągnij łopatki i utrzymuj lekkie ugięcie w łokciach (około 15-20°). Zablokuj ten kąt w łokciu.",
+    "Start z ramionami rozłożonymi szeroko mniej więcej na wysokości barków — klatka rozciągnięta, dłonie skierowane do przodu.",
+    "Ściągaj oba uchwyty szerokim łukiem w dół i do środka, prowadząc łokciami. Wyobraź sobie, że obejmujesz wielkie drzewo od góry.",
+    "Sprowadź dłonie do siebie przed dolną częścią brzucha / miednicą. Mocno spinaj klatkę przez 1 sekundę szczytowego napięcia — możesz lekko skrzyżować nadgarstki dla dodatkowego ścisku środka klatki.",
+    "Odwróć ruch powoli (2-3 sekundy) aż ramiona wrócą na wysokość barków a w klatce pojawi się mocne rozciągnięcie. Nie pozwól by linki wyszarpały barki do protrakcji.",
+    "Wydech przy ścisku, wdech przy rozciąganiu. Utrzymuj stały kąt tułowia i zgięcia łokcia — pracuje wyłącznie staw ramienny."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major"],
+    "secondary": ["lower_pectoralis", "anterior_deltoids"],
+    "stabilizers": ["biceps_brachii", "serratus_anterior", "core", "rotator_cuff", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "lower_pectoralis": "S7",
+    "anterior_deltoids": "S5",
+    "biceps_brachii": "T3",
+    "serratus_anterior": "T4",
+    "rotator_cuff": "T3",
+    "core": "T3",
+    "obliques": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_cross_over"],
+    "optional": ["d_handle_attachments", "lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-fly", "pec-deck", "push-up"],
+    "progression_to": ["one-arm-cable-fly", "cable-fly-superset", "twisting-cable-fly"],
+    "alternatives": ["cable-fly", "cable-decline-fly", "high-cable-fly", "dumbbell-fly", "pec-deck", "low-cable-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both pulleys at the TOP position, equal weight",
+      "Step one to two paces forward — feel the stretch before you start",
+      "Split stance or hip-width — soft knees, braced core",
+      "Lean forward 15-25° from vertical — chest proud",
+      "Lock a 15-20° elbow bend — that angle does not change"
+    ],
+    "setup_cues_pl": [
+      "Oba wyciągi w GÓRNEJ pozycji, równy ciężar",
+      "Zrób jeden-dwa kroki do przodu — poczuj rozciągnięcie zanim zaczniesz",
+      "Wykrok lub rozstaw na szerokość bioder — miękkie kolana, napięty brzuch",
+      "Pochyl tułów do przodu o 15-25° — klatka wypchnięta",
+      "Zablokuj 15-20° zgięcia w łokciu — ten kąt się nie zmienia"
+    ],
+    "execution_cues": [
+      "Hug a giant tree downward — wide arc, not a pull",
+      "Lead with the elbows, hands just follow the arc",
+      "Squeeze hard at the bottom — 1-second hold, wrists almost touching",
+      "Control the negative — 2-3 seconds back up to stretch",
+      "Stop the eccentric at shoulder height — no further back"
+    ],
+    "execution_cues_pl": [
+      "Obejmij wielkie drzewo w dół — szeroki łuk, nie ciągnięcie",
+      "Prowadź łokciami, dłonie tylko podążają po łuku",
+      "Mocno spinaj na dole — 1 sekunda zatrzymania, nadgarstki prawie się stykają",
+      "Kontroluj fazę negatywną — 2-3 sekundy powrotu do rozciągnięcia",
+      "Zatrzymaj ekscentryk na wysokości barków — ani milimetra dalej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending and extending the elbows (turning fly into a triceps pulldown)",
+        "faultPl": "Zginanie i prostowanie łokci (zamiana rozpiętek w prostowanie tricepsów)",
+        "cause": "Load too heavy — body recruits triceps to help finish the rep",
+        "causePl": "Zbyt duży ciężar — ciało włącza tricepsy aby dokończyć powtórzenie",
+        "cue": "Drop the weight by 30%. Lock the elbow at setup and freeze that angle — only shoulders move.",
+        "cuePl": "Zmniejsz ciężar o 30%. Zablokuj łokieć przy starcie i zamroź ten kąt — pracuje tylko staw ramienny."
+      },
+      {
+        "fault": "Standing too upright (no forward lean)",
+        "faultPl": "Stanie zbyt prosto (brak pochylenia tułowia)",
+        "cause": "Habitual posture, fear of losing balance, or not stepping forward enough",
+        "causePl": "Nawyk postawy, obawa przed utratą równowagi lub zbyt mały krok do przodu",
+        "cue": "Step a full pace forward and lean the chest into the movement — torso 15-25° from vertical.",
+        "cuePl": "Zrób pełny krok do przodu i pochyl klatkę w ruch — tułów 15-25° od pionu."
+      },
+      {
+        "fault": "Hands meet too high (chest level instead of hip level)",
+        "faultPl": "Dłonie spotykają się zbyt wysoko (na wysokości klatki zamiast bioder)",
+        "cause": "Cutting the range short, or working a flat fly pattern with the high pulleys",
+        "causePl": "Skracanie zakresu ruchu lub wykonywanie wzorca poziomych rozpiętek z górnymi wyciągami",
+        "cue": "Finish in front of the pelvis / lower abdomen — that high-to-low arc is the whole point.",
+        "cuePl": "Kończ ruch przed miednicą / dolną częścią brzucha — ten łuk z góry w dół to esencja ćwiczenia."
+      },
+      {
+        "fault": "Letting the shoulders roll forward at the bottom (excessive protraction)",
+        "faultPl": "Pozwalanie aby barki rolowały się do przodu na dole (nadmierna protrakcja)",
+        "cause": "Trying to cross the hands too far past midline, losing scapular control",
+        "causePl": "Próba przeciągnięcia dłoni zbyt daleko za linię środkową, utrata kontroli nad łopatkami",
+        "cue": "Light wrist cross is fine, but keep the shoulder blades down and slightly retracted — chest leads, not shoulders.",
+        "cuePl": "Lekkie skrzyżowanie nadgarstków jest OK, ale łopatki w dół i lekko ściągnięte — prowadzi klatka, nie barki."
+      },
+      {
+        "fault": "Cable yanks the arms back too far at the top (loss of tension control)",
+        "faultPl": "Linki wyszarpują ramiona zbyt daleko do tyłu w górze (utrata kontroli nad napięciem)",
+        "cause": "Releasing the eccentric — letting the weight stack pull you instead of resisting",
+        "causePl": "Puszczanie fazy ekscentrycznej — pozwalanie aby stos obciążenia ciągnął cię zamiast stawiania oporu",
+        "cue": "Resist the negative actively. Hands stop at shoulder height — feel the stretch, then immediately reverse.",
+        "cuePl": "Aktywnie stawiaj opór w fazie negatywnej. Dłonie zatrzymują się na wysokości barków — poczuj rozciągnięcie i natychmiast odwróć ruch."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (arms opening upward to the stretch). Exhale forcefully during the concentric squeeze in front of the hips. Keep moderate intra-abdominal pressure to support the forward-leaning torso — do not let the lower back arch when stretched.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (rozkładanie ramion w górę do rozciągnięcia). Mocny wydech w fazie koncentrycznego ścisku przed biodrami. Utrzymuj umiarkowane napięcie tłoczni brzusznej aby wspierać pochylony do przodu tułów — nie pozwól by lędźwie wygięły się w rozciągnięciu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "anterior_shoulder_instability_or_capsulitis",
+      "severity": "modify",
+      "modification": "The stretched top position places the glenohumeral joint in horizontal abduction under load — a high-risk position for an unstable anterior capsule. Limit the eccentric range: stop the hands well in front of the shoulder line. Reduce load and use 12-15 rep ranges with strict tempo. Avoid during acute flare-ups.",
+      "modificationPl": "Pozycja rozciągnięta u góry ustawia staw ramienny w odwiedzeniu poziomym pod obciążeniem — wysokie ryzyko dla niestabilnej torebki przedniej. Ogranicz zakres ekscentryczny: zatrzymaj dłonie znacznie przed linią barków. Zmniejsz obciążenie i pracuj w zakresach 12-15 powtórzeń ze ścisłym tempem. Unikaj w okresach zaostrzenia.",
+      "alternative": "pec-deck"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "modify",
+      "modification": "Crossing the wrists past midline at the bottom can compress the acromioclavicular joint. Stop the hands when they meet — do not cross them. Switch to a parallel-grip variation or pec-deck which keeps the AC joint in a friendlier position.",
+      "modificationPl": "Krzyżowanie nadgarstków za linię środkową na dole może uciskać staw barkowo-obojczykowy. Zatrzymaj dłonie gdy się spotkają — nie krzyżuj ich. Przejdź na wariant z dłońmi równolegle lub maszynę butterfly, która jest łagodniejsza dla stawu AC.",
+      "alternative": "pec-deck"
+    },
+    {
+      "condition": "pectoralis_strain_or_distal_tear_history",
+      "severity": "caution",
+      "modification": "Loaded stretch positions are the highest-risk moment for the pec tendon. Begin with very light loads, perform a thorough warm-up (push-ups + light pec-deck), and limit the depth of the stretch until cleared by a physiotherapist. Avoid heavy eccentrics.",
+      "modificationPl": "Pozycje rozciągnięte pod obciążeniem to najbardziej ryzykowny moment dla przyczepu mięśnia piersiowego. Zacznij od bardzo lekkich ciężarów, wykonaj solidną rozgrzewkę (pompki + lekki butterfly) i ogranicz głębokość rozciągania do czasu zgody fizjoterapeuty. Unikaj ciężkich faz negatywnych.",
+      "alternative": "pec-deck"
+    },
+    {
+      "condition": "lower_back_pain_or_disc_pathology",
+      "severity": "caution",
+      "modification": "The forward-leaning standing stance loads the lumbar spine isometrically. If symptomatic, brace hard, keep the torso closer to vertical (only 10-15° lean), and reduce load. Switch to seated variants (pec-deck) during acute episodes.",
+      "modificationPl": "Pozycja stojąca z pochyleniem do przodu obciąża izometrycznie odcinek lędźwiowy. Przy dolegliwościach mocno napnij brzuch, trzymaj tułów bliżej pionu (tylko 10-15° pochylenia) i zmniejsz ciężar. W okresach zaostrzeń przejdź na warianty siedzące (butterfly).",
+      "alternative": "pec-deck"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, classic chest finisher) | 3x12-20 (pump-focused finisher) | 3x8-12 (strict tempo 3-1-2-1 for mass)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-standing-fly.gif",
+    "frames_extracted": [
+      "frames/cable-standing-fly/frame_0_start.png",
+      "frames/cable-standing-fly/frame_1_early.png",
+      "frames/cable-standing-fly/frame_2_mid.png",
+      "frames/cable-standing-fly/frame_3_late.png",
+      "frames/cable-standing-fly/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-standing-fly"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:05:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start/top): ćwiczący stoi wyprostowany między dwiema kolumnami wyciągu, linki biegną z GÓRY (z najwyższych bloków) ukośnie w dół do dłoni trzymanych na wysokości barków, ramiona rozłożone szeroko na boki z lekkim ugięciem łokci, klatka piersiowa cała podświetlona na czerwono (P10 dla pectoralis_major). Frame 1 (early concentric): ramiona zaczynają zjeżdżać w dół i do środka, dłonie schodzą poniżej linii barków, łuk ruchu wyraźnie idzie z góry na dół. Frame 2 (mid/bottom): dłonie spotkały się przed dolną częścią brzucha / na wysokości bioder, ramiona obejmują tułów po łuku — pełny skurcz w klatce, dolna klatka i mostek najmocniej podświetlone, łokcie utrzymują stały kąt zgięcia. Frame 3 (late eccentric): powrót — ramiona rozchodzą się w górę i na boki, identycznie jak frame 1. Frame 4 (end/top z ghostem): pozycja startowa z widocznym ghostem dolnej fazy. To jednoznacznie standardowy Cable Standing Fly / cable crossover z wysokich bloków: stojąca pozycja, brak ławki, linki z góry, ruch z góry w dół, klasyczny łuk fly (łokcie zablokowane), ręce kończą przed biodrami — wzorzec high-to-low cable crossover. Klasyfikacja: equipment cable_cross_over (zgodnie z poleceniem), primary pectoralis_major P10 (cała klatka aktywna, akcent na dolny akton oznaczony jako S7), difficulty 4 (intermediate, klasyk siłowni). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "chest", "pectorals", "lower_chest", "isolation", "cable", "standing", "crossover", "upper_body", "hypertrophy", "fly", "finisher"]
+}

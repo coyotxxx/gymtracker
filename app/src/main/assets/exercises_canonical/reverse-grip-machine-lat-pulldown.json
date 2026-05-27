@@ -1,0 +1,209 @@
+{
+  "id": "reverse-grip-machine-lat-pulldown",
+  "name": "Reverse Grip Machine Lat Pulldown",
+  "namePl": "Lat pulldown podchwytem na maszynie",
+  "aliases": ["underhand machine lat pulldown", "supinated grip machine lat pulldown", "reverse grip pulldown machine", "underhand lat pulldown plate-loaded", "machine reverse grip pulldown"],
+  "aliasesPl": ["ściąganie drążka podchwytem na maszynie", "lat pulldown podchwytem maszyna", "ściąganie maszynowe nachwytem odwrotnym", "maszynowy pulldown podchwytem", "ściąganie wyciągu pionowego podchwytem na maszynie"],
+
+  "description": "Plate-loaded or selectorized lat pulldown machine variation performed with a SUPINATED (underhand, palms toward you) grip. The supinated grip externally rotates the shoulders, places the elbows tighter to the torso, and shifts emphasis toward the LOWER LATS and BICEPS compared to the standard overhand pulldown. Range of motion is slightly shorter than overhand but contraction at the bottom is stronger. Excellent accessory for back thickness, mid-back, and biceps. Machine variant provides a fixed bar path which is friendlier for beginners than free-cable versions and reduces stabilizer demand — ideal for chasing pure lat hypertrophy.",
+  "descriptionPl": "Wersja ściągania drążka na maszynie (płytowej lub stosowej) wykonywana CHWYTEM PODCHWYTNYM (dłonie skierowane do siebie, kciuki na zewnątrz). Chwyt podchwytny rotuje barki na zewnątrz, prowadzi łokcie blisko tułowia i przesuwa akcent na DOLNE NAJSZERSZE oraz BICEPSY w porównaniu z klasycznym nachwytem. Zakres ruchu jest nieco krótszy niż w nachwycie, ale skurcz na dole jest mocniejszy. Świetne ćwiczenie pomocnicze na grubość grzbietu, środek pleców i bicepsy. Wariant maszynowy z prowadzonym torem drążka — przyjaźniejszy dla początkujących niż wersje na wolnym wyciągu i zmniejsza udział stabilizatorów, co czyni go idealnym do czystej hipertrofii najszerszych.",
+
+  "instructions": [
+    "Adjust the thigh pad on the lat pulldown machine so it firmly secures your legs when seated.",
+    "Stand and grasp the bar/handles with a SUPINATED (underhand) grip, shoulder-width or slightly narrower. Palms face you.",
+    "Sit down, slide thighs under the pad, plant feet flat on the floor, knees at ~90°.",
+    "Start position: arms fully extended overhead, lats stretched, slight forward chest, shoulders depressed (pulled DOWN before initiating).",
+    "Initiate the pull by depressing and retracting the shoulder blades — think 'elbows down to your sides'.",
+    "Pull the bar/handles DOWN toward your upper chest/collarbone in a controlled arc. Elbows track close to the torso (not flared out).",
+    "End position: bar at upper chest or just below collarbone, elbows pointing DOWN and slightly back, lats fully contracted, chest proud.",
+    "Pause briefly at the bottom — squeeze lats and biceps.",
+    "Reverse SLOWLY — control the eccentric back to full overhead extension. Feel the lat stretch at the top.",
+    "Keep torso upright with only minimal backward lean (10-15° max). No swinging, no momentum, no using body weight.",
+    "Repeat for prescribed reps. Maintain consistent tempo — controlled eccentric is where most growth happens."
+  ],
+  "instructionsPl": [
+    "Wyreguluj poduszkę na uda w maszynie do lat pulldownu tak by mocno blokowała nogi w pozycji siedzącej.",
+    "Wstań i złap drążek/uchwyty CHWYTEM PODCHWYTNYM, na szerokość barków lub nieco węższym. Dłonie skierowane do siebie.",
+    "Usiądź, wsuń uda pod poduszkę, stopy płasko na podłodze, kolana zgięte pod ~90°.",
+    "Pozycja startowa: ręce w pełnym wyproście nad głową, najszersze rozciągnięte, lekko wypchnięta klatka, łopatki opuszczone (ściągnięte W DÓŁ przed rozpoczęciem ruchu).",
+    "Rozpocznij ciąg opuszczeniem i ściągnięciem łopatek — myśl 'łokcie w dół do boków'.",
+    "Ściągnij drążek/uchwyty W DÓŁ do górnej klatki / obojczyków po kontrolowanym łuku. Łokcie blisko tułowia (nie rozłożone na boki).",
+    "Pozycja końcowa: drążek przy górnej klatce lub tuż poniżej obojczyków, łokcie skierowane W DÓŁ i lekko do tyłu, najszersze w pełnym skurczu, klatka wypchnięta.",
+    "Krótka pauza na dole — ściśnij najszersze i bicepsy.",
+    "Wracaj POWOLI — kontroluj fazę ekscentryczną aż do pełnego wyprostu nad głową. Poczuj rozciągnięcie najszerszych w górze.",
+    "Utrzymuj tułów wyprostowany z minimalnym odchyleniem do tyłu (max 10-15°). Bez bujania, bez pędu, bez używania ciężaru ciała.",
+    "Powtarzaj zaplanowaną liczbę powtórzeń. Trzymaj jednolite tempo — kontrolowana faza ekscentryczna to miejsce gdzie powstaje największy bodziec do wzrostu."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "rhomboids", "teres_major", "posterior_deltoid", "brachialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P8",
+    "trapezius_middle_lower": "S7",
+    "rhomboids": "S6",
+    "teres_major": "S7",
+    "posterior_deltoid": "S5",
+    "brachialis": "S6",
+    "forearms": "S6",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["lat_pulldown_machine"],
+    "optional": ["wrist_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["lat-pulldown", "seated-cable-row"],
+    "progression_to": ["pull-up", "chin-up", "weighted-chin-up", "neutral-grip-lat-pulldown"],
+    "alternatives": ["lat-pulldown", "chin-up", "neutral-grip-lat-pulldown", "cable-lat-pulldown-full-range-of-motion", "single-arm-lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Underhand grip, shoulder-width or slightly narrower",
+      "Thigh pad locked firmly over quads",
+      "Feet flat, knees ~90°, core braced",
+      "Arms fully overhead, chest proud, slight backward lean (10-15°)",
+      "Depress shoulder blades BEFORE the first rep"
+    ],
+    "setup_cues_pl": [
+      "Chwyt podchwytny, na szerokość barków lub nieco węższy",
+      "Poduszka na uda mocno docisnięta do mięśni czworogłowych",
+      "Stopy płasko, kolana ~90°, brzuch napięty",
+      "Ręce w pełnym wyproście nad głową, klatka wypchnięta, lekkie odchylenie do tyłu (10-15°)",
+      "Opuść łopatki PRZED pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive ELBOWS DOWN to your sides — not 'pull the bar'",
+      "Bar tracks to upper chest / collarbone (not behind neck, not to belly)",
+      "Squeeze lats and chest proud at bottom",
+      "Control the eccentric — fight the weight on the way up",
+      "Keep torso quiet — no swinging or rocking"
+    ],
+    "execution_cues_pl": [
+      "Napieraj ŁOKCIAMI W DÓŁ do boków — nie 'ściągaj drążka'",
+      "Drążek wędruje do górnej klatki / obojczyków (nie za kark, nie do brzucha)",
+      "Ściśnij najszersze, wypchnij klatkę na dole",
+      "Kontroluj fazę ekscentryczną — walcz z ciężarem w drodze do góry",
+      "Tułów spokojny — bez bujania i kołysania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Biceps-dominant pull (arms doing all the work)",
+        "faultPl": "Ciąg z dominacją bicepsa (ręce robią całą robotę)",
+        "cause": "Reverse grip naturally engages biceps more — without scapular initiation lats stay quiet",
+        "causePl": "Podchwyt naturalnie mocniej włącza bicepsy — bez inicjacji łopatkami najszersze pozostają nieaktywne",
+        "cue": "Initiate every rep with shoulder blade depression. Think 'elbows to ribs', not 'hands to chest'.",
+        "cuePl": "Inicjuj każde powtórzenie opuszczeniem łopatek. Myśl 'łokcie do żeber', nie 'dłonie do klatki'."
+      },
+      {
+        "fault": "Leaning back excessively to use body weight",
+        "faultPl": "Nadmierne odchylanie się do tyłu by używać ciężaru ciała",
+        "cause": "Weight too heavy, turns the movement into a row instead of a pulldown",
+        "causePl": "Za duże obciążenie, zamienia ruch w wiosłowanie zamiast ściągania",
+        "cue": "Max 10-15° backward lean — keep it stable. If you need more, reduce weight by 15-20%.",
+        "cuePl": "Maksymalnie 10-15° odchylenia do tyłu — utrzymuj stabilność. Jeśli potrzebujesz więcej — zmniejsz obciążenie o 15-20%."
+      },
+      {
+        "fault": "Cutting ROM at the top (no overhead stretch)",
+        "faultPl": "Skracanie ROM w górze (brak rozciągnięcia nad głową)",
+        "cause": "Avoiding the hardest part of the stretch, weight too heavy",
+        "causePl": "Unikanie najtrudniejszej części w rozciągnięciu, za duże obciążenie",
+        "cue": "Full arm extension at the top every rep. Lat stretch is mandatory for growth.",
+        "cuePl": "Pełen wyprost ramion w górze w każdym powtórzeniu. Rozciągnięcie najszerszych jest obowiązkowe dla wzrostu."
+      },
+      {
+        "fault": "Letting the bar yank arms up (no eccentric control)",
+        "faultPl": "Pozwalanie drążkowi szarpać ramiona w górę (brak kontroli ekscentrycznej)",
+        "cause": "Ego lifting, no scapular control during the return phase",
+        "causePl": "Trening z ego, brak kontroli łopatek w fazie powrotu",
+        "cue": "2-3 second eccentric. The way down builds muscle — don't skip it.",
+        "cuePl": "Faza ekscentryczna 2-3 sekundy. Powrót buduje mięśnie — nie pomijaj go."
+      },
+      {
+        "fault": "Wrist bent backward under load (wrist pain)",
+        "faultPl": "Wygięty do tyłu nadgarstek pod obciążeniem (ból nadgarstka)",
+        "cause": "Underhand grip naturally puts wrist in extended position — heavy weight aggravates this",
+        "causePl": "Podchwyt naturalnie stawia nadgarstek w pozycji wyprostowanej — duży ciężar pogłębia problem",
+        "cue": "Keep wrists NEUTRAL — straight line with forearm. Use straps if grip/wrist limits the set.",
+        "cuePl": "Trzymaj nadgarstki NEUTRALNIE — prosta linia z przedramieniem. Użyj pasków jeśli chwyt/nadgarstek ograniczają serię."
+      }
+    ],
+    "breathing": "Inhale at the top stretch position. Exhale during the pull down. Inhale on the controlled return overhead.",
+    "breathingPl": "Wdech w pozycji rozciągnięcia w górze. Wydech podczas ciągu w dół. Wdech podczas kontrolowanego powrotu nad głowę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce overhead ROM — start the pull from just above shoulder height. Switch to neutral grip if pain persists.",
+      "modificationPl": "Zmniejsz ROM w górze — zaczynaj ciąg od wysokości tuż nad barkami. Przejdź na chwyt neutralny jeśli ból się utrzymuje.",
+      "alternative": "neutral-grip-lat-pulldown"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Supinated grip stresses biceps tendon more than overhand. Reduce weight 30-40% or switch to neutral/overhand grip until symptoms resolve.",
+      "modificationPl": "Chwyt podchwytny obciąża ścięgno bicepsa bardziej niż nachwytny. Zmniejsz obciążenie o 30-40% lub przejdź na chwyt neutralny/nachwytny do ustąpienia objawów.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid underhand pulling — switch entirely to overhand or neutral grip variations until cleared.",
+      "modificationPl": "Unikaj ciągów podchwytem — przejdź całkowicie na wariacje nachwytem lub chwytem neutralnym do wyleczenia.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Underhand grip stresses extended wrist. Use straps to reduce grip load, or switch to neutral grip.",
+      "modificationPl": "Chwyt podchwytny obciąża wyprostowany nadgarstek. Użyj pasków by zmniejszyć obciążenie chwytu, lub przejdź na chwyt neutralny.",
+      "alternative": "neutral-grip-lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4 x 8-12 (hypertrophy) | 4 x 6-10 (strength focus) | 3 x 12-15 (lat detail / biceps emphasis)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "reverse-grip-machine-lat-pulldown.gif",
+    "frames_extracted": [
+      "frames/reverse-grip-machine-lat-pulldown/frame_0_start.png",
+      "frames/reverse-grip-machine-lat-pulldown/frame_1_early.png",
+      "frames/reverse-grip-machine-lat-pulldown/frame_2_mid.png",
+      "frames/reverse-grip-machine-lat-pulldown/frame_3_late.png",
+      "frames/reverse-grip-machine-lat-pulldown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/reverse-grip-machine-lat-pulldown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frames pokazują typową maszynę do lat pulldownu z prowadzonym torem ruchu — siedzący użytkownik z poduszką na uda. Frame 0/4 (start/end): pełen wyprost ramion nad głową, dłonie skierowane do siebie (podchwyt), lats podświetlone w pełnym rozciągnięciu. Frame 2 (mid/bottom): drążek/uchwyty ściągnięte do górnej klatki, łokcie skierowane w dół blisko tułowia, lats mocno skurczone (intensywne podświetlenie). Frames 1/3: pozycje pośrednie — łokcie wędrują w dół blisko tułowia. Chwyt podchwytny (palms toward user) jasno widoczny — przedramiona zrotowane na zewnątrz względem standardowego nachwytu. Equipment: lat_pulldown_machine (prowadzony tor, thigh pad). Muscle intensity: primary lats P10 + biceps P8 (zgodnie ze specyfikacją — podchwyt mocniej angażuje bicepsy niż nachwyt). Plane: sagittal (drążek ściągany w płaszczyźnie strzałkowej do klatki, nie na boki). Difficulty 4 — przystępne dla początkujących, prowadzony tor maszyny redukuje wymagania stabilizatorów, ale chwyt podchwytny wymaga uwagi na nadgarstki i ścięgna bicepsa.",
+
+  "tags": ["machine", "compound", "upper_body", "vertical_pull", "back", "lats", "biceps", "hypertrophy", "underhand", "reverse_grip", "supinated", "lower_lats", "lat_thickness"]
+}

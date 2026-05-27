@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-standing-alternate-overhead-press",
+  "name": "Dumbbell Standing Alternate Overhead Press",
+  "namePl": "Naprzemienne wyciskanie hantli nad głowę stojąc",
+  "aliases": ["alternating dumbbell shoulder press standing", "standing alternating DB OHP", "single-arm alternating overhead press", "standing alt DB press"],
+  "aliasesPl": ["naprzemienne OHP z hantlami stojąc", "wyciskanie naprzemienne hantli stojąc", "alternujące wyciskanie hantli nad głowę", "OHP hantle naprzemiennie"],
+
+  "description": "Standing unilateral-alternating overhead press with dumbbells. One arm presses to full lockout while the other holds the dumbbell at shoulder level, then they swap. The alternating tempo creates a strong anti-lateral-flexion demand on the obliques and core — the body must resist tilting toward the loaded side. Builds shoulder strength and stability while integrating standing balance and core bracing. Excellent for fixing left/right imbalances and for athletes who need rotational/anti-rotational core strength.",
+  "descriptionPl": "Stojące jednostronne-naprzemienne wyciskanie hantli nad głowę. Jedna ręka wyciska do pełnego lock-out, druga trzyma hantel na wysokości barku, potem zamiana. Naprzemienny rytm wymusza silne anty-boczne zgięcie (anti-lateral-flexion) na skośnych i całym core — ciało musi opierać się pochylaniu w stronę obciążonej ręki. Buduje siłę i stabilność barków, integrując balans stojący i napięcie brzucha. Doskonałe do wyrównywania dysproporcji L/P oraz dla sportowców potrzebujących siły rotacyjnej/antyrotacyjnej core.",
+
+  "instructions": [
+    "Stand tall with feet hip-width to shoulder-width apart. Grab two dumbbells and bring them to shoulder level, palms facing forward (pronated) or slightly angled in (neutral-to-pronated).",
+    "Brace your core HARD, squeeze glutes, ribs down. This is your locked column — it must not bend sideways during the press.",
+    "Press ONE dumbbell straight up to a full overhead lockout — arm by the ear, wrist stacked over elbow over shoulder. Keep the other dumbbell parked at the shoulder.",
+    "Lower the pressing arm under control back to the shoulder. As it returns, begin pressing the OTHER arm up.",
+    "Continue alternating in a smooth, controlled rhythm. Do not let your torso tilt toward the loaded side — actively resist with the obliques on the opposite side.",
+    "Keep both feet planted, knees soft (not locked), pelvis neutral throughout. NO leg drive (strict press style).",
+    "Exhale on each press, inhale and re-brace at the bottom.",
+    "Count one repetition per arm OR one repetition per pair (left + right), depending on your programming."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder do barków. Złap dwa hantle i podnieś je na wysokość barków, dłonie w pronacji (do przodu) lub lekko skręcone do wewnątrz (między neutralną a pronacją).",
+    "Napnij brzuch MOCNO, ściśnij pośladki, żebra w dół. To twoja zablokowana kolumna — nie może zgiąć się na bok podczas wyciskania.",
+    "Wyciśnij JEDEN hantel prosto w górę do pełnego lock-out nad głową — ramię przy uchu, nadgarstek nad łokciem nad barkiem. Drugi hantel zostaje na barku.",
+    "Opuść wyciskającą rękę kontrolowanie z powrotem do barku. Gdy wraca, zacznij wyciskać DRUGĄ rękę w górę.",
+    "Kontynuuj naprzemiennie w równym, kontrolowanym rytmie. Nie pozwól tułowiu pochylić się w stronę obciążonej ręki — aktywnie opieraj się skośnymi po przeciwnej stronie.",
+    "Obie stopy wbite w podłogę, kolana miękkie (nie zablokowane), miednica neutralna przez cały czas. ŻADNEGO napędu z nóg (strict press).",
+    "Wydech przy każdym wyciśnięciu, wdech i napięcie ponowne na dole.",
+    "Licz jedno powtórzenie na rękę LUB jedno powtórzenie na parę (lewa + prawa), w zależności od programu."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid", "obliques"],
+    "secondary": ["triceps_brachii", "upper_trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "rectus_abdominis", "erector_spinae", "glutes", "quadriceps", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P9",
+    "lateral_deltoid": "P7",
+    "obliques": "P7",
+    "triceps_brachii": "S6",
+    "upper_trapezius": "S5",
+    "serratus_anterior": "S5",
+    "core": "S8",
+    "rectus_abdominis": "S6",
+    "erector_spinae": "S5",
+    "glutes": "S5",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["seated-dumbbell-shoulder-press", "dumbbell-standing-overhead-press"],
+    "progression_to": ["dumbbell-standing-overhead-press", "single-arm-dumbbell-overhead-press", "barbell-overhead-press", "push-press"],
+    "alternatives": ["seated-dumbbell-alternate-shoulder-press", "dumbbell-standing-overhead-press", "single-arm-dumbbell-overhead-press", "kettlebell-alternating-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip- to shoulder-width, planted firmly",
+      "Dumbbells at shoulder level, elbows under wrists",
+      "Ribs DOWN, glutes squeezed, core braced HARD",
+      "Knees soft, NOT locked",
+      "Eyes forward, neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder do barków, mocno wbite",
+      "Hantle na wysokości barków, łokcie pod nadgarstkami",
+      "Żebra W DÓŁ, pośladki ściśnięte, brzuch napięty MOCNO",
+      "Kolana miękkie, NIE zablokowane",
+      "Wzrok do przodu, szyja neutralna"
+    ],
+    "execution_cues": [
+      "Press ONE arm straight up — biceps by ear at top",
+      "Other arm stays parked at shoulder — DO NOT drop it",
+      "Resist tilting toward the loaded side — push the opposite oblique into the press",
+      "Smooth rhythm — no rushing, no swinging",
+      "NO leg drive — hips and knees stay quiet"
+    ],
+    "execution_cues_pl": [
+      "Wyciśnij JEDNĄ rękę prosto w górę — biceps przy uchu na szczycie",
+      "Druga ręka czeka na barku — NIE opuszczaj jej",
+      "Opieraj się pochylaniu w stronę obciążonej ręki — wpychaj przeciwny skośny w wyciskanie",
+      "Równy rytm — bez pospiechu, bez bujania",
+      "ŻADNEGO napędu nóg — biodra i kolana spokojne"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lateral torso tilt toward the pressing arm",
+        "faultPl": "Pochylenie tułowia w bok w stronę wyciskającej ręki",
+        "cause": "Weak obliques / weak anti-lateral-flexion control, weight too heavy",
+        "causePl": "Słabe skośne / słaba kontrola anti-lateral-flexion, zbyt duży ciężar",
+        "cue": "Imagine a wall on the opposite side — your torso must not touch it. Squeeze the FAR oblique as you press.",
+        "cuePl": "Wyobraź sobie ścianę po przeciwnej stronie — tułów nie może jej dotknąć. Ściśnij DALEKI skośny gdy wyciskasz."
+      },
+      {
+        "fault": "Hyperextending lower back (leaning back)",
+        "faultPl": "Przeprost odcinka lędźwiowego (odchylanie do tyłu)",
+        "cause": "Weak core, no glute engagement, weight too heavy",
+        "causePl": "Słaby brzuch, brak napięcia pośladków, zbyt duży ciężar",
+        "cue": "Ribs DOWN, glutes squeezed. If back keeps arching — lower the weight.",
+        "cuePl": "Żebra W DÓŁ, pośladki ściśnięte. Jeśli plecy ciągle się odginają — zmniejsz ciężar."
+      },
+      {
+        "fault": "Dropping the resting arm (losing tension)",
+        "faultPl": "Opuszczanie ręki spoczywającej (utrata napięcia)",
+        "cause": "Fatigue, lack of focus on the non-pressing side",
+        "causePl": "Zmęczenie, brak skupienia na stronie niewyciskającej",
+        "cue": "Both dumbbells STAY at shoulder height — only one moves at a time. The 'resting' arm is also working isometrically.",
+        "cuePl": "Oba hantle ZOSTAJĄ na wysokości barku — tylko jeden się rusza naraz. Ręka 'spoczywająca' też pracuje izometrycznie."
+      },
+      {
+        "fault": "Using leg drive (bouncing the dumbbells up)",
+        "faultPl": "Używanie napędu z nóg (odbijanie hantli w górę)",
+        "cause": "Trying to lift heavier than strict-press capacity",
+        "causePl": "Próba wyciśnięcia więcej niż pozwala strict press",
+        "cue": "Knees and hips LOCKED quiet. If you need leg drive, that's a push press — lower the weight.",
+        "cuePl": "Kolana i biodra ZABLOKOWANE, spokojne. Jeśli potrzebujesz napędu z nóg — to push press, zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete lockout (elbow not fully extended)",
+        "faultPl": "Niepełen lock-out (łokieć nie do końca wyprostowany)",
+        "cause": "Poor overhead mobility, weak triceps, fatigue",
+        "causePl": "Słaba mobilność overhead, słabe tricepsy, zmęczenie",
+        "cue": "Reach the ceiling — biceps by ear at the top of every rep. If you can't lock out, work on thoracic/shoulder mobility.",
+        "cuePl": "Sięgnij do sufitu — biceps przy uchu na szczycie każdego powtórzenia. Jeśli nie możesz lock-out, popracuj nad mobilnością piersiową/barku."
+      }
+    ],
+    "breathing": "Inhale and brace at the shoulder position. Exhale as you press up. Inhale on the way down and re-brace before the next arm. The brace is critical — without it the torso will tilt.",
+    "breathingPl": "Wdech i napięcie w pozycji barkowej. Wydech gdy wyciskasz w górę. Wdech podczas opuszczania i ponowne napięcie przed następną ręką. Napięcie jest kluczowe — bez niego tułów się przechyli."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) instead of pronated, or switch to landmine press (angled, more shoulder-friendly).",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie do siebie) zamiast pronowanego, lub przejdź na landmine press (kątowo, bardziej przyjazne dla barku).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to seated alternating overhead press (back supported) until pain resolves. Lighter loads only.",
+      "modificationPl": "Przejdź na seated alternating overhead press (oparte plecy) do ustąpienia bólu. Tylko lżejsze obciążenia.",
+      "alternative": "seated-dumbbell-alternate-shoulder-press"
+    },
+    {
+      "condition": "active_oblique_strain",
+      "severity": "avoid",
+      "modification": "The alternating pattern places significant anti-lateral-flexion demand on the obliques. Switch to bilateral standing DB press or seated press until healed.",
+      "modificationPl": "Naprzemienny wzorzec stawia znaczące wymagania anti-lateral-flexion na skośnych. Przejdź na obustronne stojące DB press lub seated press do wyleczenia.",
+      "alternative": "dumbbell-standing-overhead-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Reduce ROM to comfortable range, work mobility separately. Use landmine press until full overhead lockout is possible.",
+      "modificationPl": "Zmniejsz ROM do komfortowego zakresu, pracuj osobno nad mobilnością. Używaj landmine press do uzyskania pełnego lock-out overhead.",
+      "alternative": "landmine-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy) | 3x6-8 per arm (strength) | 2-3x12-15 per arm (endurance/core focus)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-standing-alternate-overhead-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-alternate-overhead-press/frame_0_start.png",
+      "frames/dumbbell-standing-alternate-overhead-press/frame_1_early.png",
+      "frames/dumbbell-standing-alternate-overhead-press/frame_2_mid.png",
+      "frames/dumbbell-standing-alternate-overhead-press/frame_3_late.png",
+      "frames/dumbbell-standing-alternate-overhead-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-standing-alternate-overhead-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF potwierdza naprzemienne wyciskanie hantli nad głowę w pozycji stojącej. Frame 0: oba hantle na wysokości barków, dłonie pronowane. Frame 1: prawa ręka w pełnym lock-out nad głową, lewa parkuje na barku. Frame 2: powrót do pozycji barków (oba hantle parked). Frame 3: lewa ręka w pełnym lock-out, prawa parkuje. Frame 4: powrót do startu. Podświetlone mięśnie: anterior + lateral deltoid (czerwone w barkach), obliques (czerwone skośne) — bo naprzemienny wzorzec wymusza anti-lateral-flexion. Triceps również podświetlony. Postawa stojąca, brak napędu nóg. Klasyfikacja: unilateral_alternating (jeden ruch naraz, naprzemiennie), plane=frontal (anty-boczne zgięcie dominuje nad sagittal pure press z powodu asymmetry). PL nazwa zgodna z konwencją 'Naprzemienne wyciskanie hantli nad głowę stojąc'.",
+
+  "tags": ["dumbbells", "shoulders", "core", "obliques", "vertical_push", "unilateral", "alternating", "anti_lateral_flexion", "standing", "balance", "imbalance_correction"]
+}

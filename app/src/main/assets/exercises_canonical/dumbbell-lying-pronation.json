@@ -1,0 +1,185 @@
+{
+  "id": "dumbbell-lying-pronation",
+  "name": "Dumbbell Lying Pronation",
+  "namePl": "Pronacja przedramienia leżąc z hantlem",
+  "aliases": ["dumbbell pronation", "side-lying dumbbell pronation", "asymmetric dumbbell pronation", "dumbbell forearm pronation"],
+  "aliasesPl": ["pronacja z hantlem leżąc na boku", "obracanie przedramienia hantlem leżąc", "asymetryczny hantel pronacja", "pronacja przedramienia w leżeniu bokiem"],
+
+  "description": "Isolation exercise for the forearm pronators (pronator teres and pronator quadratus) performed lying on the side on a flat bench. One end of the dumbbell is loaded (asymmetric grip) so the lever rotates the forearm. Starting from a supinated position (palm facing up), the lifter rotates the wrist into pronation (palm facing down) by contracting the deep forearm rotators. The lying position eliminates shoulder and elbow assistance and isolates pure forearm rotation. A specialty exercise used by combat athletes, climbers, golfers, tennis players and in rehab of medial elbow pain.",
+  "descriptionPl": "Ćwiczenie izolowane na pronatory przedramienia (pronator obły i pronator czworoboczny) wykonywane w leżeniu bokiem na płaskiej ławce. Tylko jeden koniec hantla jest obciążony (asymetryczny chwyt), tak by dźwignia obracała przedramię. Startując z pozycji supinowanej (wnętrze dłoni do góry), ćwiczący obraca nadgarstek do pronacji (wnętrze dłoni w dół) poprzez napięcie głębokich rotatorów przedramienia. Leżenie bokiem eliminuje wsparcie barku i łokcia, izolując czystą rotację przedramienia. Specjalistyczne ćwiczenie używane przez sporty walki, wspinaczy, golfistów, tenisistów i w rehabilitacji bólu przyśrodkowego łokcia.",
+
+  "instructions": [
+    "Load only ONE side of a dumbbell — leave the opposite side bare. This creates the asymmetric lever needed for the rotation.",
+    "Lie on your side on a flat bench, with the working arm on top (or hanging off the edge if preferred).",
+    "Place your upper arm along your side, elbow bent to 90 degrees and tucked firmly against your ribs.",
+    "Grip the dumbbell handle in the middle with the loaded end pointing upward, hand in a supinated position (palm facing the ceiling). This is the start.",
+    "Keeping the elbow pinned to your side, rotate your forearm to bring the loaded end of the dumbbell DOWN (toward the floor in front of you). The palm finishes facing down — full pronation.",
+    "Pause briefly in the fully pronated position. Feel the contraction deep in the forearm.",
+    "Slowly rotate back to the supinated start position under control over 2-3 seconds.",
+    "The elbow, upper arm and shoulder do NOT move. Only the forearm rotates."
+  ],
+  "instructionsPl": [
+    "Obciąż TYLKO jedną stronę hantla — drugą zostaw pustą. To tworzy asymetryczną dźwignię potrzebną do rotacji.",
+    "Połóż się bokiem na płaskiej ławce, pracująca ręka na górze (lub zwisająca poza krawędź jeśli wolisz).",
+    "Ramię ponad łokciem ułóż wzdłuż tułowia, łokieć zgięty pod kątem 90 stopni i mocno dociśnięty do żeber.",
+    "Złap rączkę hantla na środku z obciążonym końcem skierowanym do góry, dłoń w pozycji supinowanej (wnętrze dłoni do sufitu). To pozycja startowa.",
+    "Utrzymując łokieć przyklejony do boku, obróć przedramię tak by obciążony koniec hantla zjechał w DÓŁ (do podłogi przed tobą). Dłoń kończy ruch wnętrzem w dół — pełna pronacja.",
+    "Zatrzymaj się chwilę w pełnej pronacji. Poczuj skurcz głęboko w przedramieniu.",
+    "Wolno wróć do pozycji supinowanej w sposób kontrolowany przez 2-3 sekundy.",
+    "Łokieć, ramię i bark NIE poruszają się. Obraca się tylko przedramię."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "rotational",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pronator_teres", "pronator_quadratus"],
+    "secondary": ["forearm_flexors"],
+    "stabilizers": ["biceps_brachii", "core", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "pronator_teres": "P10",
+    "pronator_quadratus": "P9",
+    "forearm_flexors": "S4",
+    "biceps_brachii": "T2",
+    "core": "T2",
+    "deltoids": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["wrist_wraps", "towel_for_padding"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-wrist-curl"],
+    "progression_to": ["dumbbell-lying-supination", "cable-pronation", "hammer-pronation"],
+    "alternatives": ["dumbbell-lying-supination", "cable-wrist-curl", "reverse-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Load only ONE side of the dumbbell — asymmetric lever is the whole point",
+      "Lie on your side, elbow at 90 degrees pinned to ribs",
+      "Grip the middle of the handle, loaded end up, palm facing ceiling",
+      "Wrist neutral and straight — no flexion or extension",
+      "Brace the core lightly to stop the torso from rolling"
+    ],
+    "setup_cues_pl": [
+      "Obciąż TYLKO jedną stronę hantla — asymetryczna dźwignia to cała idea",
+      "Połóż się na boku, łokieć w 90 stopniach przyklejony do żeber",
+      "Chwyt na środku rączki, obciążony koniec do góry, dłoń wnętrzem do sufitu",
+      "Nadgarstek neutralny i prosty — bez zginania ani prostowania",
+      "Lekko napnij brzuch by tułów się nie obracał"
+    ],
+    "execution_cues": [
+      "Rotate the forearm — do not flex the wrist",
+      "Keep the elbow glued to the ribs through the whole rep",
+      "Slow eccentric — 2-3 seconds back to supination",
+      "Full range: palm up to palm down, no half reps",
+      "Light weight, high reps — this is a small deep muscle"
+    ],
+    "execution_cues_pl": [
+      "Obracaj przedramię — nie zginaj nadgarstka",
+      "Trzymaj łokieć przyklejony do żeber przez całe powtórzenie",
+      "Wolna faza negatywna — 2-3 sekundy powrotu do supinacji",
+      "Pełen zakres: dłoń do góry / dłoń do dołu, bez połówek",
+      "Lekki ciężar, dużo powtórzeń — to mały, głęboki mięsień"
+    ],
+    "common_faults": [
+      {
+        "fault": "Letting the elbow swing away from the ribs",
+        "faultPl": "Odsuwanie łokcia od żeber",
+        "cause": "Load too heavy, recruiting the shoulder and chest to assist the rotation",
+        "causePl": "Zbyt duży ciężar, włączanie barku i klatki piersiowej do pomocy w rotacji",
+        "cue": "Reduce the weight. Press the upper arm into your side as if pinning it with a strap.",
+        "cuePl": "Zmniejsz ciężar. Dociśnij ramię do boku jakbyś przypinał je pasem."
+      },
+      {
+        "fault": "Flexing the wrist instead of rotating the forearm",
+        "faultPl": "Zginanie nadgarstka zamiast obracania przedramienia",
+        "cause": "Confusing pronation with wrist curl — the movement happens at the elbow joint, not the wrist",
+        "causePl": "Pomylenie pronacji z wrist curl — ruch odbywa się w stawie łokciowym, nie nadgarstkowym",
+        "cue": "Lock the wrist completely straight. The hand and forearm should rotate as one rigid unit.",
+        "cuePl": "Zablokuj nadgarstek całkowicie prosto. Dłoń i przedramię mają się obracać jako jedna sztywna całość."
+      },
+      {
+        "fault": "Rolling the torso to add range of motion",
+        "faultPl": "Obracanie tułowia by zwiększyć zakres ruchu",
+        "cause": "Ego lifting or attempting to lift weight that the small pronators cannot move alone",
+        "causePl": "Ego, lub próba uniesienia ciężaru którego małe pronatory nie udźwigną same",
+        "cue": "Keep both shoulders stacked vertically. Brace the core lightly — torso stays still.",
+        "cuePl": "Trzymaj oba barki ułożone pionowo jeden nad drugim. Lekko napnij brzuch — tułów nieruchomy."
+      },
+      {
+        "fault": "Loading both sides of the dumbbell (symmetric)",
+        "faultPl": "Obciążanie obu stron hantla (symetrycznie)",
+        "cause": "Misunderstanding the exercise — symmetric loading creates zero rotational torque",
+        "causePl": "Niezrozumienie ćwiczenia — symetryczne obciążenie daje zerowy moment obrotowy",
+        "cue": "ONE side loaded, other side bare. The asymmetry IS the resistance.",
+        "cuePl": "JEDNA strona obciążona, druga pusta. Asymetria TO jest opór."
+      }
+    ],
+    "breathing": "Exhale during pronation (palm down rotation). Inhale during the return to supination. Breathing should be quiet and continuous — this is a low-load isolation movement.",
+    "breathingPl": "Wydech podczas pronacji (rotacja dłonią w dół). Wdech podczas powrotu do supinacji. Oddech ma być cichy i ciągły — to ćwiczenie izolowane o niskim obciążeniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "caution",
+      "modification": "The pronator teres originates at the medial epicondyle — pronation can directly aggravate golfer's elbow. Begin with isometric holds (3-5 seconds in mid-range, no weight or empty handle), then add slow eccentrics only. Pain during the set should not exceed 2/10.",
+      "modificationPl": "Pronator obły przyczepia się do nadkłykcia przyśrodkowego — pronacja może bezpośrednio nasilać łokieć golfisty. Zacznij od izometrycznych zatrzymań (3-5 sekund w połowie zakresu, bez ciężaru lub z pustą rączką), potem dodaj tylko wolne fazy negatywne. Ból podczas serii nie powinien przekraczać 2/10.",
+      "alternative": "dumbbell-lying-supination"
+    },
+    {
+      "condition": "pronator_teres_syndrome",
+      "severity": "contraindicated",
+      "modification": "Active pronation under load compresses the median nerve in the pronator teres tunnel. Do not perform until the nerve compression is resolved and cleared by a physician. After clearance, return with isometrics first.",
+      "modificationPl": "Aktywna pronacja pod obciążeniem uciska nerw pośrodkowy w tunelu pronatora obłego. Nie wykonuj dopóki ucisk nerwu się nie cofnie i nie otrzymasz zgody lekarza. Po zgodzie wracaj najpierw przez izometrię.",
+      "alternative": null
+    },
+    {
+      "condition": "distal_radioulnar_joint_pain",
+      "severity": "modify",
+      "modification": "Rotation of the forearm directly loads the distal radioulnar joint (near the wrist). Reduce range of motion (avoid end-range pronation), use very light loads, and limit volume to 2 sets of 15-20 reps. Stop if clicking, catching or sharp pain occurs.",
+      "modificationPl": "Rotacja przedramienia bezpośrednio obciąża dalszy staw promieniowo-łokciowy (przy nadgarstku). Ogranicz zakres ruchu (unikaj końcowej pronacji), używaj bardzo lekkich ciężarów, ogranicz objętość do 2 serii po 15-20 powtórzeń. Przerwij jeśli pojawi się trzask, blokowanie lub ostry ból.",
+      "alternative": "dumbbell-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (hypertrophy/grip) | 2-3x15-20 (endurance/rehab) | 3x10-12 (strength focus, advanced)",
+  "calories_per_kg_per_hour": 3.0,
+
+  "media": {
+    "primary": "dumbbell-lying-pronation.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-pronation/frame_0_start.png",
+      "frames/dumbbell-lying-pronation/frame_1_early.png",
+      "frames/dumbbell-lying-pronation/frame_2_mid.png",
+      "frames/dumbbell-lying-pronation/frame_3_late.png",
+      "frames/dumbbell-lying-pronation/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/dumbbell-lying-pronation"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 i frame 4: pozycja końcowa/startowa — leży bokiem na płaskiej ławce, ramię ponad łokciem wzdłuż tułowia, łokieć w 90 stopniach przyklejony do żeber, hantel z obciążeniem TYLKO po jednej stronie (widoczne talerze po dolnej stronie hantla, druga strona pusta), dłoń w pronacji (obciążony koniec w dół, do podłogi). Frame 2: pozycja przeciwna — hantel obrócony tak, że obciążony koniec jest w górze (supinacja). Przedramię i mięsień pronator obły podświetlone na czerwono. Tułów nieruchomy, ramię nieruchome, łokieć przyklejony — pracuje wyłącznie rotacja przedramienia w stawie łokciowym/przedramienia. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Lying Pronation — izolacja pronatorów (pronator teres + pronator quadratus). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "forearms", "isolation", "dumbbell", "rotation", "grip", "rehab", "specialty", "upper_body", "accessory"]
+}

@@ -1,0 +1,206 @@
+{
+  "id": "barbell-full-squat",
+  "name": "Barbell Full Squat (ATG)",
+  "namePl": "Pełny przysiad ze sztangą (ATG)",
+  "aliases": ["ass to grass squat", "ATG squat", "deep barbell squat", "full depth back squat", "olympic squat"],
+  "aliasesPl": ["ATG", "przysiad ATG", "przysiad pełnozakresowy", "głęboki przysiad ze sztangą", "olimpijski przysiad"],
+
+  "description": "Full range-of-motion variant of the barbell back squat, taken below parallel — hip crease drops clearly below the top of the knee (ATG, 'ass to grass'). Maximizes stretch on the quadriceps and glutes, increases time under tension and demands substantially better ankle, hip and thoracic mobility than a parallel squat. Hallmark movement of olympic weightlifting and a high-stimulus hypertrophy tool for lower body. Loads are typically lower than competition powerlifting squat due to the deeper ROM and stricter mobility demands.",
+  "descriptionPl": "Wariant przysiadu ze sztangą wykonywany w pełnym zakresie ruchu — biodra schodzą wyraźnie poniżej linii kolan (ATG, 'ass to grass'). Maksymalizuje rozciągnięcie czworogłowych i pośladków, wydłuża czas pod napięciem i wymaga znacznie lepszej mobilności stawów skokowych, bioder i kręgosłupa piersiowego niż przysiad do równoległego. Znak rozpoznawczy dwuboju olimpijskiego i bardzo silny bodziec hipertroficzny na dolne partie. Ciężary są zwykle niższe niż w przysiadzie powerliftingowym ze względu na większy zakres i wyższe wymagania mobilnościowe.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load the desired weight and secure both sides with collars.",
+    "Step under the bar and place it across your upper traps in the high-bar position (this position favours an upright torso required for full depth).",
+    "Grip the bar slightly wider than shoulder-width, elbows pointing down, chest tall. Unrack by extending your legs and take two controlled steps back.",
+    "Set your feet shoulder-width or slightly wider, with toes turned out 15-30°. A slightly wider stance and more toe-out generally helps achieve full depth.",
+    "Brace the core hard, inhale deeply and hold (Valsalva). Pull the bar down into your traps to engage the upper back.",
+    "Initiate the descent by breaking at hips and knees simultaneously. Let the knees travel forward over the toes — full depth requires aggressive knee travel and ankle dorsiflexion.",
+    "Descend in a controlled tempo until your hip crease passes well below the top of the knee. Hamstrings should rest on the calves at the bottom (ATG).",
+    "Keep a neutral spine throughout. Do not bounce off the bottom — control the lowest position, then reverse.",
+    "Drive up by extending hips and knees together, pushing the floor away through the whole foot. The bar must travel vertically over mid-foot — no forward drift.",
+    "Lock out at the top by fully extending hips and knees. Exhale and reset breath/brace before the next repetition."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj obciążenie i zabezpiecz zaciskami z obu stron.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów w pozycji high-bar (ta pozycja sprzyja pionowej sylwetce wymaganej do pełnej głębokości).",
+    "Złap gryf nieco szerzej niż na szerokość barków, łokcie w dół, klatka wysoko. Wyciągnij sztangę prostując nogi i cofnij się dwoma kontrolowanymi krokami.",
+    "Ustaw stopy na szerokość barków lub nieco szerzej, palce skierowane na zewnątrz pod kątem 15-30°. Trochę szerszy rozstaw i większe otwarcie palców zwykle ułatwiają pełną głębokość.",
+    "Mocno napnij brzuch, nabierz głębokiego oddechu i przytrzymaj (Valsalva). Ściągnij gryf w dół do trapezów aby aktywować górną część pleców.",
+    "Rozpocznij schodzenie zginając jednocześnie biodra i kolana. Pozwól kolanom wyjść do przodu nad palce stóp — pełna głębokość wymaga aktywnego ruchu kolan do przodu i dobrej dorsiflexji.",
+    "Schodź kontrolowanym tempem aż biodra zejdą wyraźnie poniżej linii kolan. Na dole dwugłowe powinny dotykać łydek (ATG).",
+    "Utrzymuj neutralny kręgosłup przez cały ruch. Nie odbijaj się od dołu — kontroluj najniższą pozycję, dopiero potem wstawaj.",
+    "Wstawaj prostując biodra i kolana razem, wypychając podłogę całą stopą. Gryf musi poruszać się pionowo nad środkiem stopy — bez wędrowania do przodu.",
+    "Zakończ powtórzenie pełnym wyprostem bioder i kolan. Zrób wydech i zresetuj oddech/napięcie przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "erector_spinae", "adductors"],
+    "stabilizers": ["core", "calves", "upper_back", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P10",
+    "hamstrings": "S7",
+    "erector_spinae": "S7",
+    "adductors": "S7",
+    "core": "S6",
+    "calves": "S5",
+    "upper_back": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "barbell-back-squat"],
+    "progression_to": ["pause-full-squat", "tempo-full-squat", "barbell-front-squat", "overhead-squat"],
+    "alternatives": ["barbell-back-squat", "barbell-front-squat", "goblet-squat-deep", "safety-bar-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "High-bar position across upper traps — torso must stay tall at full depth",
+      "Stance slightly wider than shoulders, toes out 15-30°",
+      "Grip tight, elbows down, pull the bar into your traps",
+      "Big breath, brace 360° around the spine",
+      "Pre-set ankle mobility — wiggle into a deep position before unracking"
+    ],
+    "setup_cues_pl": [
+      "Pozycja high-bar na górnych trapezach — tułów musi pozostać wysoki na pełnej głębokości",
+      "Rozstaw nieco szerszy niż barki, palce na zewnątrz 15-30°",
+      "Mocny chwyt, łokcie w dół, ściągnij gryf w trapezy",
+      "Głęboki wdech, napięcie 360° wokół kręgosłupa",
+      "Przygotuj kostki — przed wyjęciem sztangi rozruszaj się w głębokiej pozycji"
+    ],
+    "execution_cues": [
+      "Let the knees travel forward — depth needs it",
+      "Drop straight down between the heels, not back like a powerlifting squat",
+      "Hamstrings touch calves at the bottom",
+      "No bounce — control the bottom, then drive",
+      "Keep the bar stacked vertically over mid-foot all the way up"
+    ],
+    "execution_cues_pl": [
+      "Pozwól kolanom wyjść do przodu — głębokość tego wymaga",
+      "Schodź prosto w dół między piętami, nie do tyłu jak w przysiadzie powerlifterskim",
+      "Dwugłowe dotykają łydek na dole",
+      "Bez odbicia — kontroluj dno, dopiero wstawaj",
+      "Trzymaj gryf pionowo nad środkiem stopy przez całe wstawanie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Butt wink at the bottom (lumbar flexion)",
+        "faultPl": "Butt wink na dole (zgięcie kręgosłupa lędźwiowego)",
+        "cause": "Going below your real mobility limit — pelvis tucks under because hamstrings/hip capsule cannot lengthen further",
+        "causePl": "Schodzenie poniżej realnego limitu mobilności — miednica się podwija bo dwugłowe/torebka stawowa nie rozciągają się dalej",
+        "cue": "Stop 2-3 cm above where the pelvis tucks. Work on hip mobility separately (couch stretch, deep squat hold).",
+        "cuePl": "Zatrzymaj się 2-3 cm nad pozycją w której miednica się podwija. Pracuj nad mobilnością bioder osobno (couch stretch, długie przytrzymanie w głębokim przysiadzie)."
+      },
+      {
+        "fault": "Heels lifting off the floor at depth",
+        "faultPl": "Unoszenie pięt na pełnej głębokości",
+        "cause": "Insufficient ankle dorsiflexion — the most common limiter of ATG depth",
+        "causePl": "Niedostateczna dorsiflexja stawu skokowego — najczęstszy hamulec głębokości ATG",
+        "cue": "Use lifting shoes with an elevated heel, or place small plates under the heels temporarily while you train ankle mobility.",
+        "cuePl": "Załóż buty do podnoszenia z podwyższoną piętą lub tymczasowo podłóż małe talerze pod pięty, równolegle pracując nad mobilnością kostek."
+      },
+      {
+        "fault": "Excessive forward lean (good-morning squat)",
+        "faultPl": "Nadmierne pochylenie do przodu (przysiad-good-morning)",
+        "cause": "Weak quadriceps relative to glutes/back, bar drifting forward, or insufficient ankle/hip mobility forcing a hip-dominant pattern",
+        "causePl": "Słabe czworogłowe w stosunku do pośladków/grzbietu, gryf wędrujący do przodu, lub niewystarczająca mobilność kostek/bioder wymuszająca wzorzec dominacji bioder",
+        "cue": "Stay tall, drive knees forward over toes, push the floor away with the front of your foot. Add front squats and tempo work.",
+        "cuePl": "Pozostań wysoko, wypchnij kolana do przodu nad palce stóp, wypychaj podłogę przodem stopy. Dodaj przysiady przednie i pracę tempową."
+      },
+      {
+        "fault": "Bouncing out of the bottom",
+        "faultPl": "Odbijanie się z dolnej pozycji",
+        "cause": "Using stretch reflex/elasticity instead of muscular control — increases injury risk and masks weakness in the bottom range",
+        "causePl": "Używanie odruchu rozciągania/elastyczności zamiast kontroli mięśniowej — zwiększa ryzyko kontuzji i maskuje słabość w dolnym zakresie",
+        "cue": "Control the eccentric, pause 0.5-1 s at the bottom, then drive. Add pause squats to build true bottom-end strength.",
+        "cuePl": "Kontroluj fazę ekscentryczną, zatrzymaj się 0,5-1 s na dole, dopiero wstawaj. Dodaj przysiady z pauzą aby zbudować rzeczywistą siłę w dolnej fazie."
+      },
+      {
+        "fault": "Knees caving inward (valgus) at the bottom or during the drive",
+        "faultPl": "Koślawienie kolan (do środka) na dole lub w trakcie wstawania",
+        "cause": "Weak gluteus medius, insufficient hip external rotation strength, or load too heavy for current control",
+        "causePl": "Słabe mięśnie pośladkowe średnie, niedostateczna siła rotacji zewnętrznej biodra, lub ciężar za duży na aktualną kontrolę",
+        "cue": "Spread the floor, drive knees out toward your little toes. Reduce load and add band-around-knees squats.",
+        "cuePl": "Rozpychaj podłogę, wypychaj kolana na zewnątrz w kierunku małych palców. Zmniejsz ciężar i dodaj przysiady z gumą wokół kolan."
+      }
+    ],
+    "breathing": "Big breath at the top, brace 360°, hold through the descent and the bottom and through the hardest portion of the ascent (Valsalva). Exhale only near lockout. Do not re-breathe at the bottom of a full squat.",
+    "breathingPl": "Głęboki wdech na górze, napięcie 360°, trzymaj powietrze podczas schodzenia, na dole i przez najtrudniejszą część wstawania (Valsalva). Wydech dopiero blisko wyprostu. Nie nabieraj oddechu w dolnej pozycji pełnego przysiadu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "avoid",
+      "modification": "Deep flexion under load significantly stresses the meniscus. Avoid ATG depth — switch to box squat to parallel or leg press in pain-free ROM.",
+      "modificationPl": "Głębokie zgięcie pod obciążeniem mocno obciąża łąkotkę. Unikaj głębokości ATG — przejdź na box squat do równoległego lub leg press w zakresie bez bólu.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Spinal loading combined with the butt-wink risk at depth is high. Rest and consult a physiotherapist before returning.",
+      "modificationPl": "Obciążenie kręgosłupa w połączeniu z ryzykiem butt-wink na dole jest wysokie. Odpoczynek i konsultacja z fizjoterapeutą przed powrotem.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "modify",
+      "modification": "Full-depth squat is the most common trigger for FAI symptoms. Limit depth above the impingement point or switch to a wider sumo-style stance.",
+      "modificationPl": "Przysiad o pełnej głębokości to najczęstszy bodziec wywołujący objawy FAI. Ogranicz głębokość powyżej punktu zakleszczenia lub przejdź na szerszy rozstaw typu sumo.",
+      "alternative": "sumo-squat"
+    },
+    {
+      "condition": "severe_ankle_mobility_restriction",
+      "severity": "modify",
+      "modification": "Without adequate dorsiflexion the lifter will compensate with heel rise or butt wink. Use lifting shoes, work on ankle mobility daily, or temporarily limit depth.",
+      "modificationPl": "Bez odpowiedniej dorsiflexji ćwiczący kompensuje uniesieniem pięt lub butt-winkiem. Załóż buty do podnoszenia, pracuj codziennie nad mobilnością kostek lub tymczasowo ogranicz głębokość.",
+      "alternative": "barbell-back-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (strength) | 3-4x6-8 (hypertrophy) | 3x2-3 (olympic weightlifting accessory)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-full-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-full-squat/frame_0_start.png",
+      "frames/barbell-full-squat/frame_1_early.png",
+      "frames/barbell-full-squat/frame_2_mid.png",
+      "frames/barbell-full-squat/frame_3_late.png",
+      "frames/barbell-full-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-full-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 2 (mid) jednoznacznie potwierdza ATG — linia bioder wyraźnie poniżej szczytu kolan, dwugłowe blisko łydek, tułów wysoki, sztanga w pozycji high-bar na górnych trapezach. Klatka 1 i 3 (przejściowe) pokazują półprzysiad poniżej parallel z aktywnie wypchniętymi do przodu kolanami — wzorzec pełnozakresowy. Klatki 0 i 4 (start/end) identyczne: pozycja stojąca z gryfem na trapezach. Podświetlone mięśnie na ilustracji: czworogłowe (intensywnie), pośladki, przywodziciele — pasuje do zwiększonej aktywacji w pełnym zakresie vs parallel squat. Mechanic compound, plane sagittal, bilateral, kinetic_chain closed. Difficulty 7/10 (wyższe wymagania mobilnościowe niż zwykły back squat, ale ten sam minimalny poziom intermediate). Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["olympic_weightlifting", "full_rom", "ATG", "mobility_demanding", "lower_body", "hypertrophy", "barbell", "compound_king"]
+}

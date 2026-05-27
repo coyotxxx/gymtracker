@@ -1,0 +1,203 @@
+{
+  "id": "wheel-rollerout",
+  "name": "Ab Wheel Rollout (Kneeling)",
+  "namePl": "Ab wheel rollout (kółko brzuszne)",
+  "aliases": ["ab roller", "ab wheel", "kneeling ab rollout", "wheel rollout", "ab roller rollout"],
+  "aliasesPl": ["kółko brzuszne", "kółko gimnastyczne", "rollout z kółkiem", "ab roller wykrok kolanowy", "rollout w klęku", "wykrok z kółkiem brzusznym"],
+
+  "description": "Kneeling anti-extension core exercise performed with a wheeled ab roller. From a tall kneeling position with hands on the wheel under the shoulders, the lifter rolls the wheel forward as far as possible while keeping the spine neutral and the pelvis tucked, then pulls the wheel back to the start using the abs and lats. The rollout is one of the most demanding bodyweight core exercises — it forces the rectus abdominis and lats to resist spinal extension under a long lever, while the shoulders, serratus anterior and triceps stabilise overhead under load.",
+  "descriptionPl": "Ćwiczenie wzmacniające core w klęku z kółkiem brzusznym (ab roller), oparte na zasadzie anti-extension (przeciwdziałanie wyprostowi kręgosłupa). Z pozycji wysokiego klęku z dłońmi na kółku pod barkami, ćwiczący wytacza kółko do przodu tak daleko, jak tylko jest w stanie utrzymać neutralny kręgosłup i podwinięta miednica, a następnie ściąga kółko z powrotem, używając brzucha i mięśni najszerszych grzbietu. Rollout to jedno z najtrudniejszych ćwiczeń core z masą własnego ciała — zmusza mięsień prosty brzucha i mięśnie najszersze do oporu przed wyprostem kręgosłupa na długiej dźwigni, podczas gdy barki, mięsień zębaty przedni i tricepsy stabilizują obciążenie nad głową.",
+
+  "instructions": [
+    "Kneel on a soft mat with the ab wheel placed on the floor directly under your shoulders. Grip the handles firmly with both hands, arms straight and vertical. Knees roughly hip-width apart.",
+    "Set the pelvis in a posterior tilt (tuck the tailbone) and brace the core hard — squeeze glutes and abs to lock the spine in neutral. This is the starting position.",
+    "Inhale and slowly roll the wheel forward away from your knees. Move from the shoulders and hips simultaneously — do not let the lower back hyperextend or the hips sag.",
+    "Roll out as far as you can while maintaining a neutral spine and braced core. For most lifters this is somewhere between hands ahead of the face and full body extension parallel to the floor.",
+    "Exhale and pull the wheel back toward your knees by contracting the abs and pulling the wheel down with the lats. Keep the arms straight throughout — power comes from the core, not the elbows.",
+    "Return to the starting kneeling position with hands under the shoulders. Reset the brace before the next rep — do not rush.",
+    "If you cannot return without arching the back, you've rolled out too far — shorten the range until you build the strength to extend further."
+  ],
+  "instructionsPl": [
+    "Uklęknij na miękkiej macie z kółkiem ułożonym na podłodze dokładnie pod barkami. Chwyć rączki mocno obiema dłońmi, ramiona wyprostowane i pionowe. Kolana mniej więcej na szerokość bioder.",
+    "Ustaw miednicę w lekkim tyłopochyleniu (podwiń kość ogonową) i mocno napnij brzuch — ściśnij pośladki i brzuch, by zablokować kręgosłup w neutralnej pozycji. To pozycja wyjściowa.",
+    "Wdech i powoli wytocz kółko do przodu, oddalając je od kolan. Ruszaj się jednocześnie w barkach i biodrach — nie pozwól, by dolny odcinek pleców się przegiął, a biodra zwisły.",
+    "Wytocz się tak daleko, jak potrafisz utrzymać neutralny kręgosłup i napięty brzuch. Dla większości osób to gdzieś między dłońmi przed twarzą a pełnym wyciągnięciem ciała równolegle do podłogi.",
+    "Wydech i ściągnij kółko z powrotem do kolan, napinając brzuch i ciągnąc kółko w dół mięśniami najszerszymi grzbietu. Ramiona przez cały ruch wyprostowane — siła pochodzi z core, nie ze zginania łokci.",
+    "Wróć do pozycji wyjściowej w klęku, z dłońmi pod barkami. Zresetuj napięcie przed kolejnym powtórzeniem — nie spiesz się.",
+    "Jeśli nie potrafisz wrócić bez wyginania pleców, wytoczyłeś się za daleko — skróć zakres, dopóki nie zbudujesz siły, by wytoczyć się dalej."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_extension",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "latissimus_dorsi"],
+    "secondary": ["obliques", "transverse_abdominis", "serratus_anterior", "anterior_deltoids"],
+    "stabilizers": ["triceps_brachii", "pectoralis_major", "glutes", "hip_flexors", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "latissimus_dorsi": "P7",
+    "obliques": "S7",
+    "transverse_abdominis": "S7",
+    "serratus_anterior": "S6",
+    "anterior_deltoids": "S5",
+    "triceps_brachii": "T4",
+    "pectoralis_major": "T3",
+    "glutes": "T4",
+    "hip_flexors": "T3",
+    "erector_spinae": "T4"
+  },
+
+  "equipment": {
+    "required": ["ab_wheel"],
+    "optional": ["mat", "knee_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["plank", "dead-bug", "hollow-body-hold"],
+    "progression_to": ["wheel-rollerout-feet", "barbell-rollout", "stir-the-pot"],
+    "alternatives": ["barbell-rollout", "stability-ball-rollout", "tk-fitness-power-wheel-roll-outs-with-knees"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kneel with wheel directly under shoulders — arms vertical",
+      "Grip handles firmly, knuckles forward, wrists neutral",
+      "Tuck tailbone — posterior pelvic tilt",
+      "Squeeze glutes and abs hard before the wheel moves",
+      "Rib cage down — no flared ribs at the start"
+    ],
+    "setup_cues_pl": [
+      "Klęcz z kółkiem dokładnie pod barkami — ramiona pionowe",
+      "Mocny chwyt rączek, knykcie do przodu, nadgarstki neutralne",
+      "Podwiń kość ogonową — miednica w tyłopochyleniu",
+      "Mocno ściśnij pośladki i brzuch, zanim kółko ruszy",
+      "Klatka piersiowa w dół — żadnego wypychania żeber w pozycji wyjściowej"
+    ],
+    "execution_cues": [
+      "Roll out slow — 3-4 seconds outward, no acceleration",
+      "Hips and shoulders move at the same time, like a plank lengthening",
+      "Pull the wheel back with your lats and abs, not your arms",
+      "Keep a straight line from knees to head throughout the entire rep",
+      "Stop at the range where you can still pull back without arching"
+    ],
+    "execution_cues_pl": [
+      "Wytaczaj się powoli — 3-4 sekundy do przodu, bez przyspieszania",
+      "Biodra i barki ruszają się jednocześnie, jak wydłużająca się deska",
+      "Ściągaj kółko mięśniami najszerszymi grzbietu i brzuchem, nie ramionami",
+      "Utrzymuj prostą linię od kolan do głowy przez całe powtórzenie",
+      "Zatrzymaj się w zakresie, z którego potrafisz wrócić bez wyginania pleców"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back hyperextends / hips sag at the bottom of the rollout",
+        "faultPl": "Dolny odcinek pleców przegina się / biodra opadają w dolnej pozycji rolloutu",
+        "cause": "Core fails to resist gravity at long lever — abs not strong enough for current ROM, or brace lost mid-rep",
+        "causePl": "Brzuch nie wytrzymuje grawitacji na długiej dźwigni — mięśnie za słabe na obecny zakres ruchu lub utracone napięcie w trakcie powtórzenia",
+        "cue": "Shorten the range — only roll as far as you can hold a flat plank line. Place a foam roller in front of the wheel to limit ROM.",
+        "cuePl": "Skróć zakres ruchu — wytaczaj się tylko tak daleko, jak utrzymasz prostą linię deski. Połóż wałek piankowy przed kółkiem, by ograniczyć zakres."
+      },
+      {
+        "fault": "Pushing with the hips back toward the heels on the return",
+        "faultPl": "Cofanie bioder do pięt podczas powrotu",
+        "cause": "Compensation — trying to pull the wheel back with hip flexion instead of ab contraction",
+        "causePl": "Kompensacja — próba ściągnięcia kółka zgięciem bioder zamiast skurczem brzucha",
+        "cue": "Lock the hips — knees stay in one spot. Pull the wheel toward the knees, not the knees toward the wheel.",
+        "cuePl": "Zablokuj biodra — kolana zostają w jednym miejscu. Ciągnij kółko do kolan, a nie kolana do kółka."
+      },
+      {
+        "fault": "Rolling out too fast / dropping into the bottom",
+        "faultPl": "Zbyt szybkie wytaczanie / opadanie do dolnej pozycji",
+        "cause": "Using momentum instead of strength — eccentric phase not controlled, high injury risk to lower back",
+        "causePl": "Wykorzystywanie rozpędu zamiast siły — faza ekscentryczna niekontrolowana, wysokie ryzyko kontuzji dolnego odcinka pleców",
+        "cue": "Count 'one-thousand-one, one-thousand-two, one-thousand-three' on the way out. If you can't, reduce the range.",
+        "cuePl": "Licz 'tysiąc-jeden, tysiąc-dwa, tysiąc-trzy' przy wytaczaniu się. Jeśli nie potrafisz — zmniejsz zakres."
+      },
+      {
+        "fault": "Bending the elbows to shorten the lever",
+        "faultPl": "Zginanie łokci w celu skrócenia dźwigni",
+        "cause": "Cheating to make the rep easier — turns rollout into a triceps-assisted move and removes ab stimulus",
+        "causePl": "Oszukiwanie, by ułatwić powtórzenie — zamienia rollout w ruch wspomagany tricepsami i odbiera bodziec dla brzucha",
+        "cue": "Lock the elbows from start to finish. If you need to bend them, the rollout is too long — roll out less.",
+        "cuePl": "Zablokuj łokcie od początku do końca. Jeśli musisz je zginać — rollout jest za długi, wytaczaj się mniej."
+      },
+      {
+        "fault": "Holding breath / valsalva for the entire rep",
+        "faultPl": "Wstrzymywanie oddechu / Valsalva przez całe powtórzenie",
+        "cause": "Trying to maintain intra-abdominal pressure without coordinating breathing rhythm",
+        "causePl": "Próba utrzymania ciśnienia śródbrzusznego bez koordynacji rytmu oddechu",
+        "cue": "Inhale on the way out, exhale forcefully on the pull back. Brace continuously but allow some air movement.",
+        "cuePl": "Wdech przy wytaczaniu się, mocny wydech przy ściąganiu. Napinaj się przez cały czas, ale pozwól na przepływ powietrza."
+      }
+    ],
+    "breathing": "Inhale and brace at the kneeling start position. Maintain the brace as you roll out, allowing a slow controlled exhale through pursed lips. Forceful full exhale as you pull the wheel back to the start, then re-inhale and re-brace before the next rep.",
+    "breathingPl": "Wdech i napięcie brzucha w pozycji wyjściowej w klęku. Utrzymuj napięcie podczas wytaczania, robiąc powolny kontrolowany wydech przez zaciśnięte usta. Mocny pełny wydech podczas ściągania kółka do pozycji wyjściowej, następnie ponowny wdech i napięcie przed kolejnym powtórzeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Rollout creates very high anti-extension demand on the lumbar spine. Acute back pain or instability is a clear contraindication — switch to short-lever anti-extension work (dead bug, plank) until pain-free for 2+ weeks.",
+      "modificationPl": "Rollout generuje bardzo duże wymagania anti-extension wobec odcinka lędźwiowego. Ostry ból pleców lub niestabilność to wyraźne przeciwwskazanie — przejdź na ćwiczenia anti-extension na krótkiej dźwigni (dead bug, deska), aż przez 2+ tygodnie nie będziesz odczuwał bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Long-lever anti-extension under bodyweight load can compress lumbar discs in a vulnerable spine. Avoid until cleared by a physiotherapist; use short-lever isometrics (plank, side plank) first.",
+      "modificationPl": "Anti-extension na długiej dźwigni pod obciążeniem własnego ciała może uciskać krążki lędźwiowe w niestabilnym kręgosłupie. Unikaj do czasu uzyskania zgody fizjoterapeuty; najpierw zastosuj izometrię na krótkiej dźwigni (deska, deska boczna).",
+      "alternative": "plank"
+    },
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "modify",
+      "modification": "Overhead reach at full rollout loads the shoulders heavily. Limit ROM to half-rollout, or perform stability-ball rollout (forearms supported) to reduce overhead stress.",
+      "modificationPl": "Wyciągnięcie ramion nad głowę przy pełnym rollout mocno obciąża barki. Ogranicz zakres do połowy lub wykonuj rollout na piłce stabilizacyjnej (przedramiona na podporze), by zmniejszyć obciążenie nad głową.",
+      "alternative": "stability-ball-rollout"
+    },
+    {
+      "condition": "knee_pain_or_patellar_issues",
+      "severity": "caution",
+      "modification": "Direct kneeling on hard floor can aggravate the patella. Use a thick pad or fold the mat under the knees. If pain persists, perform standing barbell rollout from a high pulley.",
+      "modificationPl": "Bezpośrednie klęczenie na twardej podłodze może drażnić rzepkę. Użyj grubej podkładki lub złóż matę pod kolana. Jeśli ból nie ustępuje, wykonuj rollout ze sztangą stojąc, z wysokiego wyciągu.",
+      "alternative": "barbell-rollout"
+    }
+  ],
+
+  "typical_sets_reps": "3x5-8 (strength, full ROM) | 3x8-12 (hypertrophy, partial ROM) | 3xAMRAP (core finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "wheel-rollerout.gif",
+    "frames_extracted": [
+      "frames/wheel-rollerout/frame_0_start.png",
+      "frames/wheel-rollerout/frame_1_early.png",
+      "frames/wheel-rollerout/frame_2_mid.png",
+      "frames/wheel-rollerout/frame_3_late.png",
+      "frames/wheel-rollerout/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/wheel-rollerout"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): wysoki klęk, kółko brzuszne pod barkami, ramiona pionowe, kręgosłup neutralny — anatomia podświetla mięsień prosty brzucha i część mięśni najszerszych grzbietu. Klatka 2 (mid): pełny rollout — ciało prawie równolegle do podłogi, ramiona wyciągnięte daleko przed siebie, mięsień prosty brzucha mocno podświetlony (peak anti-extension challenge), żywoczerwone najszersze grzbietu. Klatka 4 (end): powrót do klęku z lekkim śladem pozycji końcowej — kółko ściągnięte z powrotem do kolan. Ruch potwierdzony: klasyczny kneeling ab wheel rollout (NIE feet variant) — anti-extension core exercise. Klasyfikacja: movement_pattern=anti_extension (NIE flexion — przeciwdziała wyprostowi), mechanic=compound (barki + biodra + core), force=both (ekscentryczny opór przy wytaczaniu + koncentryczny skurcz przy powrocie), laterality=bilateral, plane=sagittal, kinetic_chain=closed (dłonie zamknięte na kółku, kontakt z podłogą). Mięśnie główne: rectus_abdominis P9 (główny pracownik anti-extension) + latissimus_dorsi P7 (ekstensja barków + ściąganie kółka). Difficulty=7, level=intermediate (advanced zaczyna się przy wariancie ze stóp). Prerekwizyty: plank, dead-bug, hollow-body-hold (muszą być solidne). Progression: rollout ze stóp (wheel-rollerout-feet) lub barbell rollout. Wszystkie pola PL napisane od zera w polskim żargonie fitness ('kółko brzuszne' to przyjęta nazwa, 'rollout' często zostaje w oryginalnej formie). 5 faults pokrywa najczęstsze błędy (hiperekstensja lędźwi, cofanie bioder, momentum, zginanie łokci, valsalva). 4 contraindications: ostry ból pleców (AVOID), przepuklina lędźwiowa (AVOID), barki (MODIFY), kolana (CAUTION).",
+
+  "tags": ["ab_wheel", "core", "anti_extension", "abs", "lats", "compound", "advanced_core", "rollout", "bodyweight"]
+}

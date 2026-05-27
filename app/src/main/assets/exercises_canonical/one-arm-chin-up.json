@@ -1,0 +1,208 @@
+{
+  "id": "one-arm-chin-up",
+  "name": "One-Arm Chin-Up",
+  "namePl": "Podciąganie jednorącz podchwytem (one-arm chin-up)",
+  "aliases": ["one arm chin up", "single arm chin-up", "one-handed chin-up", "1-arm chin-up", "OAC"],
+  "aliasesPl": ["podciąganie jednorącz", "podciąganie na jednej ręce podchwytem", "one-arm chin-up", "OAC", "podciąganie jedną ręką"],
+
+  "description": "Elite-level bodyweight pulling feat. You hang from a pull-up bar gripping with ONE hand (supinated/underhand chin-up grip) and pull your entire bodyweight up until your chin clears the bar. The free arm hangs at your side or holds your wrist for minimal assistance. Requires roughly 2× bodyweight relative pulling strength, ironclad scapular control and anti-rotation core. The benchmark of upper-body relative strength in calisthenics — comparable to or harder than a strict muscle-up.",
+  "descriptionPl": "Elitarny wyczyn siłowy w wadze ciała. Wisisz na drążku trzymając się JEDNĄ ręką (chwyt podchwytem — supinated/chin-up) i podciągasz całe ciało aż broda przejdzie nad drążkiem. Wolna ręka zwisa wzdłuż ciała lub chwyta nadgarstek roboczy dla minimalnej asysty. Wymaga około 2× wagi ciała w relatywnej sile ciągu, żelaznej kontroli łopatek i antyrotacyjnego brzucha. Wskaźnik elitarnej siły relatywnej górnej części ciała w kalisteniku — równie trudny lub trudniejszy od strict muscle-upa.",
+
+  "instructions": [
+    "Stand under a pull-up bar. Reach up with ONE hand and grip with palm facing TOWARD you (supinated/underhand chin-up grip). Free arm hangs at your side or grips your working wrist.",
+    "Lift feet off the ground into a dead-hang on ONE arm. Working arm is fully extended.",
+    "Set the scapula: actively pull the working shoulder blade DOWN and slightly back (depression + slight retraction). Do not let the shoulder shrug up.",
+    "Brace your core HARD. Anti-rotation is the hidden challenge — your body will want to twist toward the working arm. Squeeze obliques and glutes to stay square to the bar.",
+    "Initiate the pull by driving the working elbow DOWN toward your hip while squeezing the lat. Bicep flexes intensely.",
+    "Keep legs together (or one slightly forward for counterbalance). Avoid kipping or generating momentum with the hips.",
+    "Pull until your chin clearly passes ABOVE the bar. The working shoulder will be close to the bar at the top.",
+    "Lower with control to full extension (dead-hang). The eccentric portion is crucial for building this strength — do not drop down.",
+    "Complete reps on one arm, then switch sides. Train both sides equally."
+  ],
+  "instructionsPl": [
+    "Stań pod drążkiem. Sięgnij JEDNĄ ręką w górę i złap drążek dłonią skierowaną DO siebie (chwyt podchwytem — chin-up grip). Wolna ręka wzdłuż ciała lub trzyma nadgarstek roboczy.",
+    "Oderwij stopy od ziemi do pełnego zwisu NA JEDNEJ ręce. Ramię robocze w pełnym wyproście.",
+    "Ustaw łopatkę: aktywnie ściągnij łopatkę roboczą W DÓŁ i lekko do tyłu (depresja + lekka retrakcja). Nie pozwól barkowi unieść się.",
+    "Napnij brzuch MOCNO. Anti-rotacja to ukryte wyzwanie — ciało będzie chciało się obrócić w kierunku ramienia roboczego. Spinaj skośne i pośladki by utrzymać tułów równolegle do drążka.",
+    "Rozpocznij ciąg napierając łokciem roboczym W DÓŁ w kierunku biodra, jednocześnie spinając najszerszy. Biceps intensywnie się napina.",
+    "Trzymaj nogi razem (lub jedną lekko z przodu dla kontrwagi). Unikaj kippingu i pędu z bioder.",
+    "Podciągaj aż broda wyraźnie przejdzie NAD drążkiem. Bark roboczy będzie blisko drążka na szczycie.",
+    "Opuszczaj kontrolowanym ruchem do pełnego wyprostu (dead-hang). Faza ekscentryczna jest kluczowa dla budowania tej siły — nie spadaj.",
+    "Wykonaj powtórzenia na jednej ręce, potem zmień stronę. Trenuj obie strony równo."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii", "brachialis"],
+    "secondary": ["pectoralis_major", "posterior_deltoid", "teres_major", "trapezius_middle_lower", "rhomboids", "brachioradialis"],
+    "stabilizers": ["obliques", "rectus_abdominis", "forearms", "rotator_cuff", "core", "serratus_anterior", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P10",
+    "brachialis": "P9",
+    "teres_major": "S9",
+    "trapezius_middle_lower": "S8",
+    "rhomboids": "S7",
+    "posterior_deltoid": "S7",
+    "pectoralis_major": "S6",
+    "forearms": "S10",
+    "obliques": "S9",
+    "core": "S9",
+    "rotator_cuff": "S8"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps", "resistance_band"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["chin-up", "weighted-chin-up", "archer-chin-up", "negative-one-arm-chin-up", "uneven-chin-up", "typewriter-pull-up"],
+    "progression_to": ["weighted-one-arm-chin-up", "one-arm-pull-up", "one-arm-muscle-up"],
+    "alternatives": ["archer-chin-up", "uneven-chin-up", "weighted-chin-up", "typewriter-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Supinated grip (palm facing you) on ONE hand",
+      "Working arm directly under the bar, body square to bar",
+      "Free arm at side or gripping working wrist",
+      "Full dead-hang — working elbow fully extended",
+      "Scapula DOWN — no shrug into the ear"
+    ],
+    "setup_cues_pl": [
+      "Chwyt podchwytem (dłoń do siebie) na JEDNEJ ręce",
+      "Ramię robocze dokładnie pod drążkiem, ciało równolegle do drążka",
+      "Wolna ręka wzdłuż ciała lub trzymająca nadgarstek roboczy",
+      "Pełny dead-hang — łokieć roboczy w pełnym wyproście",
+      "Łopatka W DÓŁ — bez wciągania w ucho"
+    ],
+    "execution_cues": [
+      "Drive elbow DOWN, NOT 'pull yourself up'",
+      "Squeeze the lat — feel it crush like a clamp",
+      "RESIST rotation — squeeze obliques to stay square",
+      "Chin OVER the bar, no half reps",
+      "Lower for 3+ seconds — eccentric builds the OAC"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciem W DÓŁ, NIE 'podciągaj się'",
+      "Spinaj najszerszy — czuj jak miażdży niczym klamra",
+      "OPIERAJ SIĘ rotacji — spinaj skośne by ciało było równolegle do drążka",
+      "Broda NAD drążkiem, bez połowicznych powtórzeń",
+      "Opuszczaj 3+ sekundy — ekscentryka buduje OAC"
+    ],
+    "common_faults": [
+      {
+        "fault": "Excessive body rotation (twisting toward working arm)",
+        "faultPl": "Nadmierna rotacja ciała (skręt w stronę ramienia roboczego)",
+        "cause": "Weak anti-rotation core, no oblique engagement",
+        "causePl": "Słaby core antyrotacyjny, brak aktywacji skośnych",
+        "cue": "Square hips and shoulders to the bar. Add Pallof presses and side planks to programming. Free hand on working wrist helps control rotation.",
+        "cuePl": "Biodra i barki równolegle do drążka. Dodaj Pallof press i deski boczne do programu. Wolna ręka na nadgarstku roboczym pomaga kontrolować rotację."
+      },
+      {
+        "fault": "Kipping or hip-driven momentum",
+        "faultPl": "Kipping lub pęd z bioder",
+        "cause": "Insufficient strict pulling strength — body compensates with momentum",
+        "causePl": "Niewystarczająca siła strict — ciało kompensuje pędem",
+        "cue": "If you can't do it strict, you're not ready. Regress to archer chin-ups, weighted chin-ups, or 5-sec negative OAC.",
+        "cuePl": "Jeśli nie zrobisz strict — nie jesteś gotowy. Cofnij się do archer chin-ups, weighted chin-ups lub 5-sek negatywów OAC."
+      },
+      {
+        "fault": "Half rep — chin doesn't pass the bar",
+        "faultPl": "Połowiczne powtórzenie — broda nie nad drążkiem",
+        "cause": "Weak top end (peak contraction). Lat and bicep can't finish the rep.",
+        "causePl": "Słaba górna część (peak contraction). Najszerszy i biceps nie kończą ruchu.",
+        "cue": "Train top-end with chin-over-bar holds (3-5 sec isometric) and weighted chin-ups for absolute strength.",
+        "cuePl": "Trenuj górną część przez statyczne wytrzymania nad drążkiem (3-5 sek izometria) + weighted chin-ups dla siły absolutnej."
+      },
+      {
+        "fault": "Shoulder shrugging up (scapular elevation)",
+        "faultPl": "Bark unosi się w górę (elewacja łopatki)",
+        "cause": "Lack of scapular depression strength on single arm — common cause of shoulder impingement here",
+        "causePl": "Brak siły depresji łopatki na jednej ręce — częsta przyczyna konfliktu barkowego tutaj",
+        "cue": "Master scapular pull-ups one-arm first. The shoulder MUST stay DOWN, never up to the ear.",
+        "cuePl": "Najpierw opanuj scapular pull-ups jednorącz. Bark MUSI zostać W DOLE, nigdy do ucha."
+      },
+      {
+        "fault": "Free arm pulling on body (illegal assistance)",
+        "faultPl": "Wolna ręka pomaga ciągnąc ciało (nielegalna asysta)",
+        "cause": "Grabbing the working arm too high (forearm/biceps) and actively pulling",
+        "causePl": "Łapanie ramienia roboczego za wysoko (przedramię/biceps) i aktywne ciągnięcie",
+        "cue": "Free hand stays at side OR lightly touches working wrist (passive contact only). Use band for legitimate assistance instead.",
+        "cuePl": "Wolna ręka wzdłuż ciała LUB lekko dotyka nadgarstka roboczego (tylko pasywny kontakt). Dla legalnej asysty użyj gumy."
+      }
+    ],
+    "breathing": "Inhale at dead-hang. Hold breath through the pull (Valsalva-style bracing for max core stiffness — needed against rotation). Exhale at the top or on descent. Pull-up is too low-rep here to worry about high-rep breathing pattern.",
+    "breathingPl": "Wdech w dead-hang. Wstrzymaj oddech podczas ciągu (Valsalva — maksymalna sztywność core'a, niezbędna przeciw rotacji). Wydech na górze lub w trakcie schodzenia. OAC jest zbyt niskopowtórzeniowy by martwić się rytmem wysokopowtórzeniowym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "The asymmetric load on a single shoulder with full bodyweight is extreme. Wait until full shoulder stability is rebuilt. Train weighted bilateral chin-ups instead.",
+      "modificationPl": "Asymetryczne obciążenie pojedynczego barku pełną wagą ciała jest ekstremalne. Wstrzymaj się do pełnej odbudowy stabilności barku. Trenuj weighted chin-ups oburącz.",
+      "alternative": "weighted-chin-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "The bicep and brachialis are loaded to their absolute limit on one arm. Active tendinopathy will be aggravated. Resolve completely before attempting.",
+      "modificationPl": "Biceps i brachialis są obciążone do limitu na jednej ręce. Aktywna tendinopatia będzie nasilona. Wylecz całkowicie przed próbą.",
+      "alternative": "archer-chin-up"
+    },
+    {
+      "condition": "lat_strain",
+      "severity": "avoid",
+      "modification": "Pause all unilateral pulling until full recovery. Resume bilateral chin-ups first, then archer chin-ups, then OAC progressions.",
+      "modificationPl": "Wstrzymaj wszystkie jednostronne ciągi do pełnego wyzdrowienia. Wróć przez chin-up oburącz, potem archer chin-up, potem progresje OAC.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. If a single wrist cannot support full bodyweight, do not progress to OAC — train wrist strength and use uneven/archer variations.",
+      "modificationPl": "Użyj wraps na nadgarstki. Jeśli pojedynczy nadgarstek nie utrzyma pełnej wagi ciała — nie progresuj do OAC, trenuj siłę nadgarstków i używaj wariantów uneven/archer.",
+      "alternative": "uneven-chin-up"
+    }
+  ],
+
+  "typical_sets_reps": "5x1 (strict singles) | 3x2-3 (intermediate OAC) | 5-sec eccentrics x 3-5 reps (negative OAC) | EMOM singles",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "one-arm-chin-up.gif",
+    "frames_extracted": [
+      "frames/one-arm-chin-up/frame_0_start.png",
+      "frames/one-arm-chin-up/frame_1_early.png",
+      "frames/one-arm-chin-up/frame_2_mid.png",
+      "frames/one-arm-chin-up/frame_3_late.png",
+      "frames/one-arm-chin-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/one-arm-chin-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start na prawej ręce, lewa ręka w górze (luźna, bez chwytu) — pełny wyprost ramienia roboczego, chwyt podchwytem widoczny. Frame 2: top position, broda nad drążkiem, prawy łokieć zgięty, prawy bark blisko drążka, plecy intensywnie podświetlone (cały najszerszy + środkowy trapez + rhomboidy). Frame 4: powrót do dead-hang. GIF pokazuje pełen ROM unilateral chin-up. Primary muscles podświetlone: najszerszy grzbietu (P10), bicepsy (P10 — pełna waga ciała na jednej ręce), brachialis (P9). Forearms S10 (grip endurance pełnej wagi ciała). Obliques S9 (anti-rotation). Difficulty 10/10 — elitarny poziom, wymaga ~2× bodyweight chin-up oraz uneven/archer/typewriter progresji.",
+
+  "tags": ["calisthenics", "bodyweight", "elite", "unilateral", "upper_body", "vertical_pull", "strength_feat", "back", "biceps", "anti_rotation", "relative_strength_benchmark", "advanced_skill"]
+}

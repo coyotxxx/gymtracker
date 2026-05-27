@@ -1,0 +1,206 @@
+{
+  "id": "snatch-pull",
+  "name": "Snatch Pull",
+  "namePl": "Snatch pull (pociąg do rwania)",
+  "aliases": ["snatch pull", "snatch high pull", "snatch grip pull"],
+  "aliasesPl": ["snatch pull", "pociąg do rwania", "ciąg rwaniowy", "wysokie wyciąganie rwaniowe", "pociąg w chwycie rwaniowym"],
+
+  "description": "Olympic weightlifting derivative — the first two pulling phases of the snatch performed without the catch (squat under). Snatch-grip barbell is pulled explosively from the floor to maximum upper-body height (chest/lower neck) through triple extension of ankles, knees and hips. Used to train pull power, posterior chain strength, bar speed and the timing of the second pull. A staple accessory lift for Olympic lifters, CrossFit athletes and strength-and-conditioning programs.",
+  "descriptionPl": "Pochodna podnoszenia ciężarów (rwanie) — pierwsze dwie fazy ciągu w rwaniu wykonane bez podsiadu i chwytania sztangi nad głową. Sztanga w szerokim chwycie rwaniowym jest dynamicznie pociągana z podłogi do maksymalnej wysokości górnej części ciała (klatka / dolna część szyi) poprzez potrójny wyprost stawów skokowych, kolanowych i biodrowych. Stosowane do trenowania mocy ciągu, siły tylnego łańcucha, prędkości sztangi i timingu drugiego ciągu. Standardowe ćwiczenie pomocnicze w podnoszeniu ciężarów, CrossFicie oraz przygotowaniu motorycznym.",
+
+  "instructions": [
+    "Load the barbell on the floor. Stand with mid-foot directly under the bar, bar 2-3 cm from shins.",
+    "Take a WIDE snatch grip — the bar should sit in the hip crease when standing tall (hook grip recommended for heavy loads).",
+    "Drop into the starting position: hips low (but higher than a clean), chest up, back flat, shoulders slightly in front of the bar, arms long and straight.",
+    "FIRST PULL: drive through the floor with the legs. Knees extend, hip angle stays the same. Bar travels in a vertical line close to the body, passing the knees.",
+    "TRANSITION: as the bar passes the knees, the torso starts to come more upright and the bar 'sweeps' into the hips/upper thigh — DO NOT bend the arms yet.",
+    "SECOND PULL (the explosion): violently extend hips, knees and ankles simultaneously (triple extension). Jump the bar UP — finish on the balls of the feet, traps shrug hard at the top.",
+    "Arms bend only AFTER full extension — elbows high and to the sides, bar elevates to chest/lower neck height. There is NO catch/squat under in the snatch pull.",
+    "Control the descent: bar back to thighs, then hinge and lower under control to the floor (or reset for next rep). Reset stance and grip before the next pull."
+  ],
+  "instructionsPl": [
+    "Połóż sztangę na ziemi. Stań tak, by środek stóp był dokładnie pod gryfem, sztanga 2-3 cm od goleni.",
+    "Złap SZEROKIM chwytem rwaniowym — sztanga powinna trafiać w fałd biodra przy pełnym wyproście (przy ciężkich obciążeniach zalecany hook grip).",
+    "Zejdź do pozycji startowej: biodra nisko (ale wyżej niż w clean), klatka w górze, plecy proste, barki lekko przed sztangą, ręce wyprostowane.",
+    "PIERWSZY CIĄG: napieraj stopami w podłogę, prostując kolana. Kąt tułowia bez zmian. Sztanga idzie pionowo blisko ciała, mijając kolana.",
+    "PRZEJŚCIE: gdy gryf mija kolana, tułów zaczyna się prostować, a sztanga 'zamiata' do bioder / górnej części ud — NIE zginaj jeszcze rąk.",
+    "DRUGI CIĄG (eksplozja): wybuchowo wyprostuj biodra, kolana i kostki jednocześnie (potrójny wyprost). Wyrzuć sztangę W GÓRĘ — kończysz na palcach, mocny shrug czworobocznymi na szczycie.",
+    "Ręce zginają się DOPIERO po pełnym wyproście — łokcie wysoko i na boki, sztanga unosi się do wysokości klatki / dolnej części szyi. W snatch pull NIE MA podsiadu i chwytania ciężaru.",
+    "Kontrola opuszczania: sztanga z powrotem na uda, potem hinge i opuszczanie pod kontrolą na ziemię (lub reset do kolejnego powtórzenia). Ustaw stójkę i chwyt przed kolejnym ciągiem."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "trapezius", "erector_spinae"],
+    "secondary": ["quadriceps", "deltoids", "calves", "forearms"],
+    "stabilizers": ["core", "rhomboids", "latissimus_dorsi", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P9",
+    "trapezius": "P9",
+    "erector_spinae": "P8",
+    "quadriceps": "S7",
+    "deltoids": "S6",
+    "calves": "S6",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weightlifting_shoes", "lifting_belt", "chalk", "wrist_straps", "platform"]
+  },
+
+  "category": "olympic",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["romanian-deadlift", "barbell-deadlift", "snatch-grip-deadlift", "hang-snatch-high-pull"],
+    "progression_to": ["power-snatch", "hang-snatch", "snatch", "snatch-from-blocks"],
+    "alternatives": ["clean-pull", "snatch-grip-deadlift", "hang-snatch-high-pull", "rdl-with-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar over mid-foot, 2-3 cm from shins",
+      "Snatch-width grip — bar in hip crease when standing tall",
+      "Hook grip for heavy loads (thumb under fingers)",
+      "Hips higher than a clean, lower than a deadlift",
+      "Chest up, lats engaged, shoulders just in front of the bar",
+      "Brace hard, eyes forward — full-body tension before the pull"
+    ],
+    "setup_cues_pl": [
+      "Gryf nad środkiem stóp, 2-3 cm od goleni",
+      "Szeroki chwyt rwaniowy — sztanga w fałdzie biodra przy wyproście",
+      "Hook grip przy ciężkich obciążeniach (kciuk pod palcami)",
+      "Biodra wyżej niż w clean, niżej niż w martwym ciągu",
+      "Klatka w górze, najszersze napięte, barki lekko przed sztangą",
+      "Mocne napięcie, wzrok przed siebie — pełne napięcie ciała przed startem"
+    ],
+    "execution_cues": [
+      "First pull SLOW and controlled — second pull EXPLOSIVE",
+      "Keep the bar close — sweep it into the hip pocket",
+      "Triple extension: ankles, knees, hips fire together at the top",
+      "Shrug hard — traps finish what the legs started",
+      "Arms are ROPES until full extension — pull with the body, not the arms"
+    ],
+    "execution_cues_pl": [
+      "Pierwszy ciąg POWOLI i kontrolowanie — drugi ciąg WYBUCHOWO",
+      "Trzymaj gryf blisko — 'zamieć' go do kieszeni biodra",
+      "Potrójny wyprost: kostki, kolana, biodra strzelają razem na górze",
+      "Mocny shrug — czworoboczne kończą to, co zaczęły nogi",
+      "Ręce to LINY do pełnego wyprostu — ciągnij ciałem, nie rękami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Early arm bend (pulling with the arms)",
+        "faultPl": "Wczesne zgięcie rąk (ciąg rękami)",
+        "cause": "Lack of patience, weak posterior chain, trying to muscle the bar up",
+        "causePl": "Brak cierpliwości, słaby tylny łańcuch, próba 'wyrwania' sztangi rękami",
+        "cue": "Arms are RIGID HOOKS until your body is fully extended. Pull with legs and hips first.",
+        "cuePl": "Ręce to SZTYWNE HAKI do pełnego wyprostu ciała. Najpierw ciąg nogami i biodrami."
+      },
+      {
+        "fault": "Bar drifts away from the body ('looping')",
+        "faultPl": "Sztanga oddala się od ciała ('looping')",
+        "cause": "Hips shooting up too fast, weak lats, swinging the bar with the arms",
+        "causePl": "Biodra wystrzeliwują za szybko, słabe najszersze, wymachiwanie sztangą rękami",
+        "cue": "Bar travels VERTICALLY along the body. Active lats — keep the bar IN your shins and thighs.",
+        "cuePl": "Sztanga porusza się PIONOWO wzdłuż ciała. Aktywne najszersze — trzymaj gryf W golenie i uda."
+      },
+      {
+        "fault": "Stripper deadlift — hips rise before shoulders",
+        "faultPl": "'Stripper deadlift' — biodra wstają przed barkami",
+        "cause": "Hips set too low at start, weak quads, poor first-pull patience",
+        "causePl": "Biodra ustawione za nisko w starcie, słabe czworogłowe, brak cierpliwości w pierwszym ciągu",
+        "cue": "Hips and shoulders rise TOGETHER in the first pull. Push the floor away — don't yank with the back.",
+        "cuePl": "Biodra i barki wstają RAZEM w pierwszym ciągu. Wypchnij podłogę — nie szarp plecami."
+      },
+      {
+        "fault": "No triple extension at the top (incomplete pull)",
+        "faultPl": "Brak potrójnego wyprostu na górze (niedokończony ciąg)",
+        "cause": "Cutting the pull short, lack of explosive power, fear of jumping the bar",
+        "causePl": "Skracanie ciągu, brak mocy eksplozywnej, obawa przed wyrzuceniem sztangi",
+        "cue": "FINISH the pull — ankles, knees, hips fully extended. Up on the toes, traps shrug, elbows high.",
+        "cuePl": "DOKOŃCZ ciąg — kostki, kolana, biodra w pełnym wyproście. Na palcach, shrug czworobocznymi, łokcie wysoko."
+      },
+      {
+        "fault": "Hyperextension / leaning back at the top",
+        "faultPl": "Nadmierne odgięcie / odchylenie do tyłu na górze",
+        "cause": "Compensation for weak hip extension, trying to get higher pull, poor bracing",
+        "causePl": "Kompensacja słabego wyprostu biodra, próba wyższego ciągu, słabe napięcie",
+        "cue": "Finish TALL with neutral spine — glutes lock the hips. Do not lean back past vertical.",
+        "cuePl": "Kończ WYSOKO z neutralnym kręgosłupem — pośladki blokują biodra. Nie odchylaj się za pion."
+      }
+    ],
+    "breathing": "Inhale and brace deeply at the bottom (Valsalva). Hold the brace through the entire pull. Exhale forcefully at the top after full extension. Reset breath between reps.",
+    "breathingPl": "Wdech i mocne napięcie na dole (Valsalva). Trzymaj napięcie przez cały ciąg. Mocny wydech na górze po pełnym wyproście. Reset oddechu między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Avoid explosive loaded pulls. Use RDLs or rack pulls without the dynamic top-end.",
+      "modificationPl": "Unikaj wybuchowych ciągów z obciążeniem. Zastosuj RDL lub rack pull bez dynamicznej fazy końcowej.",
+      "alternative": "romanian-deadlift"
+    },
+    {
+      "condition": "acute_shoulder_injury_overhead",
+      "severity": "modify",
+      "modification": "Wide snatch grip places stress on the shoulders. Switch to clean-grip pull until cleared.",
+      "modificationPl": "Szeroki chwyt rwaniowy obciąża barki. Zmień na clean pull do czasu wygojenia.",
+      "alternative": "clean-pull"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "caution",
+      "modification": "Hook grip + snatch width loads the wrists heavily. Use straps and reduce volume.",
+      "modificationPl": "Hook grip i szeroki chwyt mocno obciążają nadgarstki. Użyj pasków i zmniejsz objętość.",
+      "alternative": "snatch-grip-deadlift"
+    },
+    {
+      "condition": "ankle_mobility_deficit",
+      "severity": "caution",
+      "modification": "Triple extension requires good dorsiflexion. Use weightlifting shoes with heel and progressively work on mobility.",
+      "modificationPl": "Potrójny wyprost wymaga dobrej dorsiflexji kostki. Stosuj buty ciężarowe z piętą i progresywnie pracuj nad mobilnością.",
+      "alternative": "rdl-with-shrug"
+    }
+  ],
+
+  "typical_sets_reps": "5x3 @ 70-90% snatch 1RM (technique/speed) | 4-6x2-3 @ 90-110% (strength) | 3-5x3-5 (general accessory)",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "snatch-pull.gif",
+    "frames_extracted": [
+      "frames/snatch-pull/frame_0_start.png",
+      "frames/snatch-pull/frame_1_early.png",
+      "frames/snatch-pull/frame_2_mid.png",
+      "frames/snatch-pull/frame_3_late.png",
+      "frames/snatch-pull/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/snatch-pull",
+    "yuhonas_id": "Snatch_Pull"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:05:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa — sztanga na ziemi, szeroki chwyt rwaniowy, biodra nisko, podświetlone pośladki/dwugłowe/prostowniki/czworogłowe/przedramiona. Frame 2: pozycja wyprostowana z gryfem przy biodrach, podświetlone czworoboczne, prostowniki, brzuch, pośladki — moment przejścia do drugiego ciągu / pełnego wyprostu. Frame 4: powrót do pozycji dolnej (reset). Klasyfikacja: olympic_lift (NIE hinge — pełen triple extension i eksplozywne dokończenie). Equipment: tylko barbell (yuhonas potwierdza). Primary muscles zgodne z wymaganiami zadania: glutes P9, hamstrings P9, trapezius P9, erector_spinae P8. Difficulty 8. Wszystkie pola PL napisane od zera, terminologia z polskiego środowiska podnoszenia ciężarów.",
+
+  "tags": ["olympic_lifting", "weightlifting", "power", "explosive", "triple_extension", "posterior_chain", "snatch_assistance", "barbell", "advanced"]
+}

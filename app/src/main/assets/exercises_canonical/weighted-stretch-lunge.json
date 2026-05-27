@@ -1,0 +1,207 @@
+{
+  "id": "weighted-stretch-lunge",
+  "name": "Weighted Stretch Lunge",
+  "namePl": "Wykrok rozciągający z obciążeniem",
+  "aliases": ["deep stretch lunge with weight", "long stride lunge", "loaded hip flexor lunge", "weighted deep lunge"],
+  "aliasesPl": ["głęboki wykrok rozciągający z obciążeniem", "wykrok z długim rozstawem", "obciążony rozciągający wykrok", "głęboki wykrok z talerzem"],
+
+  "description": "Hybrid mobility-strength exercise. The athlete assumes a deep long-stride lunge holding a weight plate (or dumbbell) with both hands between the legs. The back leg is extended with the knee close to the floor — putting the rear hip flexors and adductors into a deep stretch — while the front leg supports much of the bodyweight in a flexed position. Small vertical pulses or static holds load and lengthen the hip flexors, glutes and adductors simultaneously. Functions as loaded mobility work, warm-up for heavy lower-body lifts, or accessory work to improve split-stance range of motion.",
+  "descriptionPl": "Hybrydowe ćwiczenie mobilności i siły. Trenujący przyjmuje pozycję głębokiego wykroku z długim rozstawem, trzymając talerz lub hantel oburącz między nogami. Tylna noga jest wyprostowana, kolano blisko podłogi — co głęboko rozciąga zginacze biodra i przywodziciele tylnej nogi — podczas gdy przednia noga w pozycji zgiętej przyjmuje znaczną część ciężaru ciała. Małe pulsujące zejścia lub statyczne przytrzymanie obciążają i jednocześnie wydłużają zginacze biodra, pośladki i przywodziciele. Pełni rolę obciążonej mobilizacji, rozgrzewki przed ciężkimi ćwiczeniami dolnych partii lub akcesorium poprawiającego zakres ruchu w pozycji rozkroku.",
+
+  "instructions": [
+    "Hold a weight plate (or dumbbell) vertically with both hands. A 10-25 kg plate is a typical starting load.",
+    "Stand tall with feet hip-width apart, weight plate hanging in front of your hips. Brace the core and pull shoulders back.",
+    "Take a long step forward with one leg — about 1.5-2x your normal walking step. The longer the stride, the deeper the hip flexor stretch will be on the back leg.",
+    "Plant the front foot flat on the floor with the toes pointing forward. The rear foot stays on the ball of the foot, heel raised, rear leg extended.",
+    "Lower your hips straight down. Bend the front knee until it forms roughly 90° and the rear knee descends toward the floor (hover 2-5 cm above without touching).",
+    "Let the weight hang between your legs, arms straight, acting as a counterweight that pulls the hips down into the stretch. Keep the torso upright.",
+    "Hold the bottom position for 2-5 seconds, feeling a strong stretch through the front of the rear thigh and hip. The front quad and glute work to support the position.",
+    "Pulse gently up and down 3-5 cm (small ROM) without losing the deep stretch, or hold isometrically — depending on programming.",
+    "Drive through the front heel to return to a standing position. Bring the rear leg forward to meet the front, or step the front leg back.",
+    "Switch sides and repeat. Treat each leg independently for time or reps."
+  ],
+  "instructionsPl": [
+    "Chwyć talerz (lub hantel) oburącz pionowo. Typowe obciążenie startowe to 10-25 kg.",
+    "Stań wyprostowany ze stopami na szerokość bioder, talerz zwisa przed biodrami. Napnij brzuch i ściągnij barki w tył.",
+    "Wykonaj długi krok w przód jedną nogą — około 1,5-2 razy dłuższy niż normalny krok. Im dłuższy rozstaw, tym głębszy stretch zginaczy biodra tylnej nogi.",
+    "Postaw przednią stopę płasko na podłodze, palce skierowane do przodu. Tylna stopa zostaje na palcach, pięta uniesiona, tylna noga wyprostowana.",
+    "Opuść biodra prosto w dół. Ugnij przednie kolano aż osiągnie około 90°, a tylne kolano zejdzie w stronę podłogi (zawiśnij 2-5 cm nad nią bez dotykania).",
+    "Pozwól talerzowi zwisać między nogami, ręce wyprostowane — działa jak ciężarek dociągający biodra w dół do stretchu. Trzymaj tułów pionowo.",
+    "Przytrzymaj dolną pozycję 2-5 sekund, czując mocny stretch z przodu uda i biodra tylnej nogi. Czworogłowy i pośladek przedniej nogi pracują podtrzymując pozycję.",
+    "Delikatnie pulsuj w górę i w dół 3-5 cm (mały zakres ruchu) bez utraty głębokiego stretchu, lub trzymaj izometrycznie — zależnie od programu.",
+    "Wypchnij się przez piętę przedniej nogi do pozycji stojącej. Przysuń tylną nogę do przedniej lub cofnij przednią nogę.",
+    "Zmień stronę i powtórz. Każdą nogę traktuj osobno na czas lub powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hip_flexors", "glutes"],
+    "secondary": ["quadriceps", "hamstrings", "adductors"],
+    "stabilizers": ["core", "erector_spinae", "calves", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "hip_flexors": "P8",
+    "glutes": "P8",
+    "quadriceps": "S7",
+    "hamstrings": "S6",
+    "adductors": "S7",
+    "core": "S5",
+    "erector_spinae": "T4",
+    "calves": "T4",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["dumbbell", "kettlebell", "lifting_shoes", "yoga_mat"]
+  },
+
+  "category": "mobility",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-lunge", "world-greatest-stretch", "kneeling-hip-flexor-stretch"],
+    "progression_to": ["cossack-squat", "deficit-lunge", "bulgarian-split-squat", "barbell-lunge"],
+    "alternatives": ["world-greatest-stretch", "kneeling-hip-flexor-stretch", "goblet-lunge-hold", "couch-stretch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Plate held vertically with both hands, arms straight",
+      "Long step — 1.5-2x your normal walking stride",
+      "Front foot flat, rear heel up (on ball of foot)",
+      "Torso vertical, chest up, shoulders relaxed",
+      "Plate acts as a counterweight — let it pull you down, don't fight it"
+    ],
+    "setup_cues_pl": [
+      "Talerz pionowo w obu dłoniach, ramiona wyprostowane",
+      "Długi krok — 1,5-2 razy dłuższy niż zwykły krok",
+      "Przednia stopa płasko, tylna pięta w górze (na palcach)",
+      "Tułów pionowo, klatka w górze, barki rozluźnione",
+      "Talerz działa jak przeciwwaga — pozwól mu ciągnąć cię w dół, nie walcz z nim"
+    ],
+    "execution_cues": [
+      "Sink your hips straight down — not forward, not back",
+      "Feel the stretch through the front of the rear hip and thigh",
+      "Front shin stays vertical, front knee tracks over the toes",
+      "Breathe slowly and deeply — relax into the stretch on the exhale",
+      "If pulsing: small range only — 3-5 cm — don't lose the stretch position"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj biodra prosto w dół — nie do przodu, nie w tył",
+      "Czuj stretch z przodu biodra i uda tylnej nogi",
+      "Piszczel przedniej nogi pionowo, kolano nad palcami stopy",
+      "Oddychaj powoli i głęboko — rozluźnij się w stretchu na wydechu",
+      "Jeśli pulsujesz: tylko mały zakres — 3-5 cm — nie trać pozycji rozciągnięcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Stride too short — no stretch on rear hip flexor",
+        "faultPl": "Za krótki rozstaw — brak stretchu na zginaczu biodra tylnej nogi",
+        "cause": "Treating it like a normal lunge. Short stride loads the front quad but doesn't lengthen the back hip.",
+        "causePl": "Traktowanie jak zwykłego wykroku. Krótki rozstaw obciąża przedni czworogłowy, ale nie wydłuża biodra tylnej nogi.",
+        "cue": "Step out further — should feel a clear stretch from the front of the back thigh up to the hip",
+        "cuePl": "Wykonaj dłuższy krok — powinieneś czuć wyraźny stretch z przodu tylnego uda aż do biodra"
+      },
+      {
+        "fault": "Front knee collapses inward (valgus)",
+        "faultPl": "Przednie kolano zapada się do środka (koślawość)",
+        "cause": "Weak glute medius or letting the weight pull you off balance",
+        "causePl": "Słaby pośladkowy średni lub pozwolenie ciężarowi wyprowadzić cię z równowagi",
+        "cue": "Knee in line with second toe — push the knee out actively",
+        "cuePl": "Kolano w linii z drugim palcem stopy — aktywnie wypychaj kolano na zewnątrz"
+      },
+      {
+        "fault": "Torso leans forward over the weight",
+        "faultPl": "Tułów pochyla się do przodu nad ciężarem",
+        "cause": "Trying to use back instead of legs, weak core, or too heavy a plate",
+        "causePl": "Próba wykorzystania pleców zamiast nóg, słaby brzuch lub za ciężki talerz",
+        "cue": "Chest tall, plate hangs from straight arms. If you can't stay vertical — go lighter.",
+        "cuePl": "Klatka wysoko, talerz zwisa na wyprostowanych rękach. Jeśli nie utrzymasz pionu — zmniejsz ciężar."
+      },
+      {
+        "fault": "Bouncing aggressively at the bottom",
+        "faultPl": "Agresywne odbijanie w dolnej pozycji",
+        "cause": "Misinterpreting 'pulsing' as ballistic bounce — risk of overstretching adductors or hip flexors",
+        "causePl": "Mylenie 'pulsowania' z balistycznym odbijaniem — ryzyko nadmiernego rozciągnięcia przywodzicieli lub zginaczy biodra",
+        "cue": "Slow controlled pulses — millimeters, not big bounces. Or just hold static.",
+        "cuePl": "Powolne kontrolowane pulsy — milimetry, nie duże odbicia. Albo po prostu trzymaj statycznie."
+      },
+      {
+        "fault": "Rear knee crashes into the floor",
+        "faultPl": "Tylne kolano uderza w podłogę",
+        "cause": "Loss of control on descent or too much load. Bruises the patella and rear knee structures.",
+        "causePl": "Utrata kontroli przy schodzeniu lub za duże obciążenie. Stłucza rzepkę i struktury tylnego kolana.",
+        "cue": "Lower with control — hover the knee 2-5 cm above the floor. Use a mat or pad for safety.",
+        "cuePl": "Schodź pod kontrolą — kolano 2-5 cm nad podłogą. Użyj maty lub poduszki dla bezpieczeństwa."
+      }
+    ],
+    "breathing": "Inhale at the top, exhale slowly while descending into the stretch — the exhale helps the body relax and deepen the position. Continue slow nasal breathing during isometric holds. Exhale on the drive back to standing.",
+    "breathingPl": "Wdech na górze, powolny wydech podczas schodzenia w stretch — wydech pomaga ciału się rozluźnić i pogłębić pozycję. Kontynuuj powolny oddech nosem podczas izometrycznych przytrzymań. Wydech przy powrocie do pozycji stojącej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Deep front knee flexion can stress a damaged meniscus. Reduce depth, switch to half-kneeling hip flexor stretch with the rear knee padded on the floor.",
+      "modificationPl": "Głębokie zgięcie przedniego kolana może obciążać uszkodzoną łąkotkę. Zmniejsz głębokość, przejdź na półklęczący stretch zginacza biodra z tylnym kolanem na poduszce.",
+      "alternative": "kneeling-hip-flexor-stretch"
+    },
+    {
+      "condition": "groin_strain_or_adductor_injury",
+      "severity": "avoid",
+      "modification": "Long-stride loaded lunge places adductors under tension. Avoid until healed; use gentle pain-free range static hip flexor stretches instead.",
+      "modificationPl": "Wykrok z długim rozstawem i obciążeniem napina przywodziciele. Unikaj do wygojenia; stosuj łagodne statyczne rozciąganie zginaczy biodra w zakresie bez bólu.",
+      "alternative": "kneeling-hip-flexor-stretch"
+    },
+    {
+      "condition": "hip_labral_tear",
+      "severity": "caution",
+      "modification": "Deep hip flexion combined with rotational load may aggravate labral pathology. Stay in pain-free range, avoid pulsing, hold static only.",
+      "modificationPl": "Głębokie zgięcie biodra z obciążeniem rotacyjnym może drażnić patologię obrąbka. Pozostań w zakresie bez bólu, unikaj pulsowania, trzymaj tylko statycznie.",
+      "alternative": "world-greatest-stretch"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "modify",
+      "modification": "Holding a weight at arms in flexed-hip position can load the lumbar spine. Use bodyweight only, or place hands on a bench/box for support.",
+      "modificationPl": "Trzymanie ciężaru na wyprostowanych rękach w zgiętych biodrach może obciążać kręgosłup lędźwiowy. Stosuj wariant bez obciążenia lub oprzyj dłonie na ławce/skrzyni.",
+      "alternative": "bodyweight-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x30-60s hold per leg (mobility) | 3x8-12 slow pulses per leg (mobility-strength) | 2x10 reps per leg as warm-up before squats/lunges",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "weighted-stretch-lunge.gif",
+    "frames_extracted": [
+      "frames/weighted-stretch-lunge/frame_0_start.png",
+      "frames/weighted-stretch-lunge/frame_1_early.png",
+      "frames/weighted-stretch-lunge/frame_2_mid.png",
+      "frames/weighted-stretch-lunge/frame_3_late.png",
+      "frames/weighted-stretch-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/weighted-stretch-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T15:30:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa (12 oryginalnych klatek). Ćwiczenie to STATYCZNY GŁĘBOKI WYKROK ROZCIĄGAJĄCY z talerzem 35 lbs trzymanym pionowo oburącz między nogami. Postać przyjmuje pozycję długiego wykroku (krok wyraźnie dłuższy niż w klasycznym wykroku), tylna noga wyprostowana z kolanem blisko podłogi i piętą w górze (na palcach), przednia noga zgięta ~90° z piszczelą pionową. Talerz zwisa między udami działając jako obciążenie ciągnące biodra w dół do głębokiego stretchu. Ruch w GIFie jest minimalny — małe pionowe pulsowanie z utrzymaniem dolnej pozycji (klatki 1 i 3 to ta sama pulsowana pozycja). Mięśnie podświetlone w GIFie: ZGINACZE BIODRA i przywodziciele tylnej nogi (głęboki stretch — czerwone z przodu uda i biodra tylnej nogi), pośladki obu stron, czworogłowe przedniej nogi i hamstring tylnej. Klasyfikacja category='mobility' (nie 'strength') — to przede wszystkim loaded mobility work, nie compound lift do hipertrofii. Primary muscles: hip_flexors (rozciągane pod obciążeniem) + glutes. Force='both' bo jest komponenta ekscentryczna (schodzenie w stretch) i izometryczna/koncentryczna (utrzymanie i pulsowanie). Polski standard: 'wykrok rozciągający z obciążeniem' — opisowy, bo nie ma jednego utartego polskiego terminu na ten konkretny wariant. Master.json: jahel klasyfikuje pod 'glutes', co potwierdzam (glutes są primary obok hip_flexors).",
+
+  "tags": ["unilateral", "lower_body", "lunge", "mobility", "stretch", "hip_flexors", "warm_up", "loaded_mobility", "low_complexity"]
+}

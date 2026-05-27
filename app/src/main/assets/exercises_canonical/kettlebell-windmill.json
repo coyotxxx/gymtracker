@@ -1,0 +1,205 @@
+{
+  "id": "kettlebell-windmill",
+  "name": "Kettlebell Windmill",
+  "namePl": "Windmill z kettlebell",
+  "aliases": ["kettlebell windmill", "kb windmill", "overhead windmill", "single-arm overhead windmill"],
+  "aliasesPl": ["windmill z kettlebell", "wiatrak z kettlebell", "windmill z odważnikiem kulowym", "boczne pochylenie z kettlebell nad głową"],
+
+  "description": "Advanced loaded lateral-flexion drill performed standing with a kettlebell locked out overhead. The lifter tilts the torso sideways, sliding the free hand down the inside of the lead leg toward the floor while keeping eyes fixed on the kettlebell, then returns to vertical. Trains obliques eccentrically under load, shoulder stability in extreme overhead positions, thoracic rotation, and hip-hinge/hamstring mobility simultaneously. A hallmark hardstyle/kettlebell-sport accessory used to bulletproof the overhead shoulder and build a strong, mobile trunk.",
+  "descriptionPl": "Zaawansowane obciążone ćwiczenie zgięcia bocznego wykonywane na stojąco z kettlebellem zablokowanym nad głową. Ćwiczący pochyla tułów na bok, prowadząc wolną dłoń po wewnętrznej stronie nogi prowadzącej w kierunku podłogi, jednocześnie cały czas patrząc na kettlebell, po czym wraca do pionu. Trenuje skośne ekscentrycznie pod obciążeniem, stabilność barku w skrajnej pozycji nad głową, rotację piersiową i mobilność biodra/dwugłowego uda jednocześnie. Klasyczne ćwiczenie dodatkowe z hardstyle/sportu kettlebell, służące do uodpornienia barku w pozycji nad głową i zbudowania mocnego, mobilnego tułowia.",
+
+  "instructions": [
+    "Stand with feet wider than shoulder-width. Turn the toes of the non-loaded leg ~45° outward (away from the loaded side); the loaded-side foot stays roughly forward.",
+    "Clean and press a kettlebell overhead in one hand — arm fully locked out, biceps near the ear, wrist neutral and stacked over the shoulder.",
+    "Shift your hips toward the locked-out side; the free arm hangs along the inside of the opposite (front) leg. Keep eyes locked on the kettlebell.",
+    "Hinge sideways at the hip — push the loaded-side hip out and let the free hand slide down the inside of the lead leg toward the floor.",
+    "Keep the overhead arm vertical (perpendicular to the floor at all times) — the kettlebell should not drift forward, back, or out to the side.",
+    "Continue tilting until your free hand touches the floor (or the lowest point your mobility allows) and the front leg is straight. Knee on loaded side may bend slightly.",
+    "Pause briefly, then reverse the movement: drive the loaded-side hip back under, squeeze the obliques on the up-side, and rise smoothly to full standing.",
+    "Complete all reps on one side before switching arms (this is a unilateral exercise — sets are per side)."
+  ],
+  "instructionsPl": [
+    "Stań w szerokim rozkroku, szerzej niż barki. Ustaw palce stopy po stronie wolnej ręki pod kątem ~45° na zewnątrz (od strony obciążonej); stopa po stronie obciążonej zostaje skierowana mniej więcej prosto.",
+    "Wyrwij kettlebell do góry jedną ręką — ramię w pełnym wyproście, biceps blisko ucha, nadgarstek neutralny i ułożony nad barkiem.",
+    "Przesuń biodra w stronę ręki trzymającej kettlebell; wolna dłoń wisi wzdłuż wewnętrznej strony przeciwnej (przedniej) nogi. Wzrok cały czas utkwiony w kettlebellu.",
+    "Pochyl się w bok zawiasowo w biodrze — wypchnij biodro po stronie obciążonej na zewnątrz i pozwól wolnej dłoni zsuwać się po wewnętrznej stronie nogi prowadzącej w stronę podłogi.",
+    "Trzymaj ramię z kettlebellem pionowo (prostopadle do podłogi cały czas) — kettlebell nie może odejść w przód, w tył ani na bok.",
+    "Pochylaj się aż wolna dłoń dotknie podłogi (lub do najniższego punktu na jaki pozwala mobilność), a noga przednia jest wyprostowana. Kolano po stronie obciążonej może lekko się ugiąć.",
+    "Zatrzymaj się na chwilę, potem odwróć ruch: wsuń biodro po stronie obciążonej z powrotem pod siebie, ściśnij skośne po stronie górnej i płynnie wróć do pełnego wyprostu.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę przed zmianą ręki (to ćwiczenie jednostronne — serie liczy się na stronę)."
+  ],
+
+  "classification": {
+    "movement_pattern": "lateral_flexion",
+    "force": "static",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "shoulder_stabilizers"],
+    "secondary": ["deltoids", "glutes", "hamstrings", "erector_spinae"],
+    "stabilizers": ["transverse_abdominis", "serratus_anterior", "rotator_cuff", "quadratus_lumborum", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "shoulder_stabilizers": "P8",
+    "deltoids": "S7",
+    "glutes": "S6",
+    "hamstrings": "S6",
+    "erector_spinae": "S6",
+    "transverse_abdominis": "T5",
+    "serratus_anterior": "T5",
+    "rotator_cuff": "T5",
+    "quadratus_lumborum": "T5",
+    "adductors": "T4"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["dumbbell"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 7,
+    "prerequisites": ["kettlebell-goblet-squat", "turkish-get-up", "overhead-press", "side-plank"],
+    "progression_to": ["double-kettlebell-windmill", "bent-press"],
+    "alternatives": ["dumbbell-side-bend", "side-plank-with-hip-dip", "turkish-get-up", "pallof-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Foot stance: WIDE — wider than shoulders, front foot turned ~45° away from loaded side",
+      "Lock out the kettlebell HARD overhead before you tilt — elbow straight, shoulder packed",
+      "Eyes glued to the kettlebell — do not look at the floor",
+      "Bracing the core BEFORE you start to tilt, not during",
+      "Start with a light bell (8–12 kg) — windmill punishes ego loading"
+    ],
+    "setup_cues_pl": [
+      "Stopy: SZEROKO — szerzej niż barki, przednia stopa ustawiona ~45° na zewnątrz od strony obciążonej",
+      "Zablokuj kettlebell MOCNO nad głową ZANIM zaczniesz się pochylać — łokieć prosty, bark ułożony",
+      "Wzrok wbity w kettlebell — nie patrz na podłogę",
+      "Napnij brzuch PRZED rozpoczęciem pochylenia, nie w trakcie",
+      "Zacznij od lekkiego kettlebella (8–12 kg) — windmill karze za ambicję ciężarem"
+    ],
+    "execution_cues": [
+      "Push the loaded-side hip OUT, not back — it is a sideways hinge, not a deadlift",
+      "The overhead arm stays vertical — imagine a string pulling the kettlebell straight to the ceiling",
+      "Free hand slides DOWN the inside of the front leg — it is your guide rail",
+      "Front leg stays straight; loaded-side knee can soften slightly",
+      "Drive the kettlebell up, not pull the chest up — let the arm lead the return"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij biodro po stronie obciążonej NA ZEWNĄTRZ, nie do tyłu — to zawias boczny, nie martwy ciąg",
+      "Ramię nad głową zostaje pionowo — wyobraź sobie sznurek ciągnący kettlebell prosto do sufitu",
+      "Wolna dłoń zsuwa się W DÓŁ po wewnętrznej stronie przedniej nogi — to twoja prowadnica",
+      "Przednia noga prosta; kolano po stronie obciążonej może lekko zmięknąć",
+      "Wypychaj kettlebell do góry, nie podciągaj klatkę — niech ramię prowadzi powrót"
+    ],
+    "common_faults": [
+      {
+        "fault": "Overhead arm drifts forward or out of vertical",
+        "faultPl": "Ramię nad głową odchyla się do przodu lub traci pion",
+        "cause": "Weak shoulder stabilizers, kettlebell too heavy, not packing the shoulder before the tilt",
+        "causePl": "Słaba stabilizacja barku, za ciężki kettlebell, brak ułożenia barku przed pochyleniem",
+        "cue": "Film yourself from the front and side. The kettlebell handle should trace a perfectly vertical line. Drop the weight 4 kg if the arm drifts.",
+        "cuePl": "Nagraj się od przodu i z boku. Rączka kettlebella powinna kreślić idealnie pionową linię. Zmniejsz ciężar o 4 kg jeśli ramię ucieka."
+      },
+      {
+        "fault": "Bending forward instead of sideways (flexion + rotation)",
+        "faultPl": "Pochylanie do przodu zamiast w bok (zgięcie + rotacja)",
+        "cause": "Tight hamstrings, narrow foot stance, treating it like a Romanian deadlift",
+        "causePl": "Spięte dwugłowe uda, za wąski rozkrok, traktowanie ruchu jak rumuński martwy ciąg",
+        "cue": "Open your stance wider and turn the front foot out more. Push the loaded hip to the WALL beside you, not to the wall behind you.",
+        "cuePl": "Rozszerz rozkrok i bardziej skręć przednią stopę. Wypchnij obciążone biodro w stronę ŚCIANY OBOK ciebie, nie ściany za tobą."
+      },
+      {
+        "fault": "Looking at the floor instead of the kettlebell",
+        "faultPl": "Patrzenie na podłogę zamiast na kettlebell",
+        "cause": "Instinct to watch the descending hand; lack of cue awareness",
+        "causePl": "Odruch obserwowania opuszczanej ręki; brak świadomości wskazówki",
+        "cue": "Eyes on the kettlebell from set-up to lockout, every single rep. Visual feedback is your only early warning that the arm is drifting.",
+        "cuePl": "Wzrok na kettlebellu od ustawienia do końcowego wyprostu, w każdym powtórzeniu. Wzrokowa informacja zwrotna to twój jedyny sygnał, że ramię ucieka."
+      },
+      {
+        "fault": "Bending the front knee to reach the floor",
+        "faultPl": "Uginanie przedniej nogi żeby dosięgnąć podłogi",
+        "cause": "Chasing ROM beyond current mobility (hamstrings/hips), often combined with a too-narrow stance",
+        "causePl": "Pogoń za zakresem ruchu poza obecną mobilność (dwugłowe/biodra), często przy zbyt wąskim rozkroku",
+        "cue": "Stop where the front leg starts to bend. The floor touch is a goal, not a requirement. Use a yoga block to mark your current depth.",
+        "cuePl": "Zatrzymaj się tam gdzie przednia noga zaczyna się zginać. Dotknięcie podłogi to cel, nie wymóg. Użyj kostki do jogi by oznaczyć swój obecny zakres."
+      },
+      {
+        "fault": "Loading the lumbar spine (rounding low back into the tilt)",
+        "faultPl": "Obciążanie odcinka lędźwiowego (zaokrąglanie dołu pleców w pochyleniu)",
+        "cause": "Tilting through the spine instead of the hip; weak core bracing",
+        "causePl": "Pochylanie przez kręgosłup zamiast biodro; słabe napięcie brzucha",
+        "cue": "It's a HIP windmill, not a SPINE windmill. The hip moves first and most; the spine just follows passively. Brace 360° before you move.",
+        "cuePl": "To windmill BIODROWY, nie KRĘGOSŁUPOWY. Biodro porusza się pierwsze i najbardziej; kręgosłup tylko biernie podąża. Napnij brzuch dookoła zanim ruszysz."
+      }
+    ],
+    "breathing": "Inhale and brace before each rep. Hold tension through the descent (under load), exhale powerfully as you drive back up to vertical. With heavier bells, treat each rep as a single brace-and-breathe cycle (one breath per rep). Never hold breath in a bottom position — exhale slightly to stay braced.",
+    "breathingPl": "Wdech i napięcie przed każdym powtórzeniem. Trzymaj napięcie podczas schodzenia (pod obciążeniem), wydech z mocą gdy wracasz do pionu. Przy cięższych kettlebellach traktuj każde powtórzenie jako jeden cykl napięcia i oddechu (jeden oddech na powtórzenie). Nigdy nie wstrzymuj oddechu w dolnej pozycji — wydychaj lekko, żeby zachować napięcie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Locked-out overhead position under load is high-risk for impingement. Build overhead capacity first with light overhead carries and Turkish get-ups before attempting windmills.",
+      "modificationPl": "Pozycja zablokowana nad głową pod obciążeniem jest wysokiego ryzyka dla impingementu. Najpierw zbuduj wydolność nad głową lekkimi spacerami z obciążeniem nad głową i tureckimi wstawaniami przed próbą windmilla.",
+      "alternative": "side-plank-with-hip-dip"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Lateral flexion + axial loading is a high-risk pattern for disc injury. Avoid until cleared by a physiotherapist. Substitute with anti-flexion drills.",
+      "modificationPl": "Zgięcie boczne + obciążenie osiowe to wzorzec wysokiego ryzyka dla dysku. Unikaj do czasu zezwolenia fizjoterapeuty. Zastąp ćwiczeniami anty-zgięciowymi.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Cuff-compromised shoulders cannot safely stabilize overhead loads in dynamic patterns. Rehab the cuff first.",
+      "modificationPl": "Bark z uszkodzonym stożkiem rotatorów nie ustabilizuje obciążenia nad głową w dynamicznym wzorcu. Najpierw rehabilitacja stożka.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "hamstring_strain",
+      "severity": "modify",
+      "modification": "Reduce range of motion — touch the knee or shin instead of the floor. Avoid maximum stretched positions until healed.",
+      "modificationPl": "Zmniejsz zakres ruchu — dotykaj kolana lub goleni zamiast podłogi. Unikaj maksymalnych pozycji rozciągniętych do wygojenia.",
+      "alternative": "kettlebell-goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4 x 5-8 reps per side (heavier) | 2-3 x 8-12 per side (light, mobility-focused)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "kettlebell-windmill.gif",
+    "frames_extracted": [
+      "frames/kettlebell-windmill/frame_0_start.png",
+      "frames/kettlebell-windmill/frame_1_early.png",
+      "frames/kettlebell-windmill/frame_2_mid.png",
+      "frames/kettlebell-windmill/frame_3_late.png",
+      "frames/kettlebell-windmill/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/kettlebell-windmill"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T10:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek w GIFie). Klatki pokazują pełen cykl windmilla: frame_0 = pozycja startowa stojąca z KB zablokowanym nad głową, lewa ręka opuszczona wzdłuż ciała, podświetlone skośne (P10) i prosty brzucha (S); frame_1/3 = pozycje pośrednie z 'cieniem' końcowej pozycji nakładającym się na startową — KB cały czas pionowo nad barkiem; frame_2 = pełne pochylenie boczne, tułów prawie poziomo, KB nadal pionowo nad barkiem, druga ręka przy podłodze, MOCNO podświetlone skośne prawe + serratus + część dolnego ribcage; frame_4 = powrót do startu. Pozycja zgodna z hardstyle windmill (RKC/StrongFirst). Ćwiczenie jednostronne — postawiłem laterality=unilateral, plane=frontal (główna płaszczyzna ruchu = zgięcie boczne; jest też lekki komponent rotacji piersiowej). Mechanic=compound bo bark + tułów + biodro razem. Primary obliques P10 (wyraźnie podświetlone w klatce 2 — najjaśniejszy czerwony), shoulder_stabilizers P8 (krytyczne dla utrzymania KB pionowo pod obciążeniem). Difficulty 7 bo wymaga jednoczesnej mobilności (ham/hip), stabilności barku i kontroli tułowia — to nie jest ćwiczenie dla początkujących. Prerequisites: goblet squat (uczy mobilności bioder), TGU (uczy lockout barku), OHP (siła barku), side plank (boczna kontrola tułowia). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii (skośne, kettlebell, zawias biodrowy, hardstyle). Nazwa PL = 'Windmill z kettlebell' — termin 'windmill' jest standardowo używany w polskim świecie kettlebelli (StrongFirst PL, RKC PL), polski odpowiednik 'wiatrak' istnieje ale jest mniej rozpoznawalny, dlatego trzymam się angielskiego z prefiksem narzędzia.",
+
+  "tags": ["core", "obliques", "kettlebell", "overhead_stability", "mobility", "lateral_flexion", "unilateral", "advanced", "shoulder_health", "hardstyle"]
+}

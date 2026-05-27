@@ -1,0 +1,200 @@
+{
+  "id": "barbell-pin-presses",
+  "name": "Barbell Pin Press",
+  "namePl": "Pin press ze sztangą",
+  "aliases": ["pin press", "dead bench press", "dead-stop bench press", "rack bench press"],
+  "aliasesPl": ["pin press", "wyciskanie z pinów", "dead-stop bench", "wyciskanie z dead-stopem", "wyciskanie z pinów w klatce"],
+
+  "description": "Bench press variant performed inside a power rack with safety pins set at chest level. The bar rests on the pins between every rep, eliminating the stretch reflex and any bounce off the chest. Pure concentric strength from a dead stop — a classic powerlifting tool to bust off-the-chest sticking points and build raw pressing power.",
+  "descriptionPl": "Wariant wyciskania na ławce wykonywany w klatce z asekuracyjnymi pinami ustawionymi na wysokości klatki piersiowej. Sztanga spoczywa na pinach między każdym powtórzeniem, eliminując odruch rozciągowy i jakiekolwiek odbicie od klatki. Czysta siła koncentryczna ze stopu — klasyczne narzędzie z trójboju do przełamywania martwego punktu od klatki i budowania surowej siły wyciskania.",
+
+  "instructions": [
+    "Set up a flat bench inside a power rack. Position the safety pins so the bar rests just above your chest at the desired sticking-point height (usually touching the sternum/lower chest).",
+    "Lie on the bench. Eyes directly under the bar. Plant feet hard on the floor, knees ~90°.",
+    "Retract and depress shoulder blades aggressively — pin press demands an even tighter back than regular bench because you start from a dead stop.",
+    "Grip the bar with wrists stacked over elbows. Take a big breath, brace the core, and lats engaged.",
+    "Press the bar off the pins with maximum intent — explosive concentric, no momentum available. Drive feet through the floor (leg drive).",
+    "Lock out at the top with the bar over the shoulders. Brief pause.",
+    "Lower the bar in a controlled manner back onto the pins. Let it FULLY rest — release the tension for a full dead stop.",
+    "Reset your setup (re-brace, re-tighten back, re-grip if needed), then press again. Every rep is a fresh start."
+  ],
+  "instructionsPl": [
+    "Ustaw poziomą ławkę wewnątrz klatki (power rack). Ustaw piny asekuracyjne tak, by gryf spoczywał tuż nad klatką piersiową na wysokości twojego martwego punktu (zwykle dotykając mostka / dolnej klatki).",
+    "Połóż się na ławce. Oczy bezpośrednio pod gryfem. Stopy mocno na podłodze, kolana ~90°.",
+    "Ściągnij i opuść łopatki agresywnie — pin press wymaga jeszcze mocniejszego napięcia pleców niż zwykły bench, bo startujesz z martwego stopu.",
+    "Złap gryf z nadgarstkami w linii nad łokciami. Nabierz głęboki oddech, napnij brzuch, najszersze aktywne.",
+    "Wyciśnij gryf z pinów z maksymalną intencją — eksplozywny ruch koncentryczny, brak dostępnego pędu. Napieraj stopami przez podłogę (leg drive).",
+    "Lock-out na górze nad barkami. Krótka pauza.",
+    "Opuszczaj gryf kontrolowanym ruchem z powrotem na piny. Pozwól mu CAŁKOWICIE odpocząć — zwolnij napięcie dla pełnego dead-stopu.",
+    "Zresetuj ustawienie (na nowo napij, napnij plecy, popraw chwyt jeśli trzeba), potem wyciśnij ponownie. Każde powtórzenie to świeży start."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps_brachii", "anterior_deltoid"],
+    "secondary": ["serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "triceps_brachii": "P10",
+    "anterior_deltoid": "P8",
+    "serratus_anterior": "S5",
+    "lats": "T4",
+    "core": "T4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench", "power_rack_with_pins"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["barbell-bench-press", "close-grip-bench-press", "dumbbell-bench-press"],
+    "progression_to": ["pause-bench-press", "board-press", "spoto-press", "competition-bench-press"],
+    "alternatives": ["pause-bench-press", "floor-press", "board-press", "close-grip-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pin height = your sticking point (usually low chest level)",
+      "Eyes under the bar, shoulder blades pinned tight",
+      "Feet planted hard before the lift starts",
+      "Bar rests fully on pins — release ALL tension before next rep",
+      "Re-brace and re-set on EVERY rep"
+    ],
+    "setup_cues_pl": [
+      "Wysokość pinów = twój martwy punkt (zwykle poziom dolnej klatki)",
+      "Oczy pod gryfem, łopatki mocno ściągnięte",
+      "Stopy zaparte mocno przed startem ruchu",
+      "Gryf spoczywa w pełni na pinach — zwolnij CAŁKOWICIE napięcie przed kolejnym powtórzeniem",
+      "Na nowo napnij ciało i ustaw się przed KAŻDYM powtórzeniem"
+    ],
+    "execution_cues": [
+      "Explode off the pins with maximum intent",
+      "Press up and slightly back over the shoulders",
+      "Leg drive — push the floor away",
+      "Lower under control, no crashing onto pins",
+      "Full dead stop on pins between reps — no touch-and-go"
+    ],
+    "execution_cues_pl": [
+      "Wybuchowo wystartuj z pinów z maksymalną intencją",
+      "Wyciskaj w górę i lekko do tyłu nad barkami",
+      "Leg drive — wypchnij podłogę stopami",
+      "Opuszczaj pod kontrolą, bez rzucania na piny",
+      "Pełen dead-stop na pinach między powtórzeniami — nie touch-and-go"
+    ],
+    "common_faults": [
+      {
+        "fault": "Touch-and-go off the pins (using bounce/momentum)",
+        "faultPl": "Touch-and-go z pinów (używanie odbicia / pędu)",
+        "cause": "Letting the bar tap the pins without releasing tension defeats the entire purpose of the lift",
+        "causePl": "Pozwalanie gryfowi na lekkie dotknięcie pinów bez zwolnienia napięcia niszczy cały sens ćwiczenia",
+        "cue": "Bar must FULLY rest on pins. Count '1-Mississippi' before pressing. Release lats briefly.",
+        "cuePl": "Gryf musi w PEŁNI spocząć na pinach. Policz 'jeden-Mississippi' przed wyciśnięciem. Krótko zwolnij napięcie najszerszych."
+      },
+      {
+        "fault": "Loss of upper back tightness on dead stop",
+        "faultPl": "Utrata napięcia górnych pleców na dead-stopie",
+        "cause": "When the bar lands on pins, lifters relax their shoulder blades and lose the arch",
+        "causePl": "Gdy gryf ląduje na pinach, wyciskacze rozluźniają łopatki i tracą łuk",
+        "cue": "Re-set shoulder blades on EVERY rep before pressing. 'Pin shoulders, then press'.",
+        "cuePl": "Na nowo ściągnij łopatki przed KAŻDYM powtórzeniem przed wyciskaniem. 'Najpierw łopatki, potem wyciskanie'."
+      },
+      {
+        "fault": "Pins set too low or too high",
+        "faultPl": "Piny ustawione za nisko lub za wysoko",
+        "cause": "Random pin height instead of targeting actual sticking point",
+        "causePl": "Losowa wysokość pinów zamiast celowania w faktyczny martwy punkt",
+        "cue": "Pin height = where YOUR bench fails. For most lifters: 1-3 inches off chest. Film yourself.",
+        "cuePl": "Wysokość pinów = gdzie TWÓJ bench się załamuje. Dla większości: 2-7 cm nad klatką. Nagraj się."
+      },
+      {
+        "fault": "Crashing the bar onto pins on the way down",
+        "faultPl": "Rzucanie gryfu na piny w dół",
+        "cause": "Loss of eccentric control, dropping weight from lockout",
+        "causePl": "Utrata kontroli ekscentrycznej, upuszczanie ciężaru z lock-outu",
+        "cue": "Lower under tension. The pins are a stop, not a drop zone. Set it down, don't drop it.",
+        "cuePl": "Opuszczaj pod napięciem. Piny to stop, nie strefa zrzutu. Odłóż gryf, nie rzucaj go."
+      },
+      {
+        "fault": "Going too heavy too soon",
+        "faultPl": "Zbyt duży ciężar za szybko",
+        "cause": "Pin press feels weaker than regular bench (no stretch reflex) — tempting to ego-load",
+        "causePl": "Pin press wydaje się słabszy niż zwykły bench (brak odruchu rozciągowego) — kuszące, by ładować z ego",
+        "cue": "Start at ~80-90% of your touch-and-go bench. Pin press IS supposed to feel harder.",
+        "cuePl": "Zacznij od ~80-90% twojego touch-and-go bench. Pin press MA się wydawać trudniejszy."
+      }
+    ],
+    "breathing": "Big breath and brace BEFORE pressing off the pins. Hold through the concentric and lockout. Exhale at the top. Re-breathe before lowering and again before next rep.",
+    "breathingPl": "Głęboki oddech i napięcie PRZED wyciśnięciem z pinów. Trzymaj przez ruch koncentryczny i lock-out. Wydech na górze. Ponowny oddech przed opuszczeniem i ponownie przed kolejnym powtórzeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Set pins higher (closer to lockout) to avoid the deepest impingement angle. Reduce grip width slightly. Skip near-max attempts.",
+      "modificationPl": "Ustaw piny wyżej (bliżej lock-outu) by uniknąć najgłębszego kąta drażniącego. Lekko zwęź chwyt. Pomiń próby blisko maksymalnych.",
+      "alternative": "board-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Pin press at low pins loads the pec at its longest length from dead stop — high re-injury risk. Wait for full recovery.",
+      "modificationPl": "Pin press na niskich pinach obciąża klatkę przy największej długości z dead-stopu — wysokie ryzyko nawrotu. Poczekaj do pełnego wyzdrowienia.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. The dead-stop start spikes wrist load — keep the bar in the palm heel and wrist neutral.",
+      "modificationPl": "Użyj wraps na nadgarstki. Start z dead-stopu zwiększa obciążenie nadgarstków — trzymaj gryf w podstawie dłoni i nadgarstek neutralny.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Dead-stop puts heavy load on triceps tendon. Reduce volume and intensity, avoid close grip variations until pain resolves.",
+      "modificationPl": "Dead-stop daje duże obciążenie ścięgnu tricepsu. Zmniejsz objętość i intensywność, unikaj wariantów close-grip do ustąpienia bólu.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (siła / przełamywanie martwego punktu) | 3-4x5-8 (akcesorium do trójboju) | 4-5x1-3 (pre-meet peak)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-pin-presses.gif",
+    "frames_extracted": [
+      "frames/barbell-pin-presses/frame_0_start.png",
+      "frames/barbell-pin-presses/frame_1_early.png",
+      "frames/barbell-pin-presses/frame_2_mid.png",
+      "frames/barbell-pin-presses/frame_3_late.png",
+      "frames/barbell-pin-presses/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-pin-presses"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: sztanga na pinach asekuracyjnych klatki na wysokości dolnej klatki / mostka (dead-stop start). Frame 2: środek wyciskania, łokcie zgięte ~90°, sztanga około połowy drogi. Frame 4: pełny lock-out nad barkami. Ławka pozioma wewnątrz power racka — klasyczny setup pin press. Podświetlone: klatka piersiowa (pectoralis major), tricepsy (triceps brachii), przednie aktony (anterior deltoid) — zgodne z anatomią dead-stop bench press. Tricepsy oznaczone jako P10 (najwyższa intensywność primary) bo dead-stop eliminuje odruch rozciągowy klatki i przenosi obciążenie ruszania ciężarem na tricepsy w dolnej fazie. PL nazwa 'Pin press ze sztangą' to standardowa polska terminologia trójbojowa. Wszystkie pola PL od zera, bez tłumaczeń maszynowych.",
+
+  "tags": ["powerlifting", "compound", "upper_body", "horizontal_push", "dead_stop", "barbell", "chest", "triceps", "sticking_point", "strength_specialty"]
+}

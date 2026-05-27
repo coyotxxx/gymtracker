@@ -1,0 +1,199 @@
+{
+  "id": "dumbbell-lying-elbow-press",
+  "name": "Dumbbell Lying Elbow Press",
+  "namePl": "Wyciskanie hantli leżąc wąskim chwytem (Elbow Press)",
+  "aliases": ["dumbbell jm press", "dumbbell tate press hybrid", "neutral grip dumbbell press to chest", "dumbbell close press"],
+  "aliasesPl": ["JM press z hantlami leżąc", "elbow press z hantlami", "wyciskanie hantli wąsko na triceps", "wyciskanie hantli chwytem neutralnym do klatki"],
+
+  "description": "Hybrid triceps-focused press performed lying on a flat bench with two dumbbells held in a neutral grip (palms facing each other), pressed together over the lower chest. Unlike a standard dumbbell bench press, the elbows travel down and forward, bringing the dumbbells close to the upper chest/lower face with a deep elbow bend before pressing back up. This shifts the load from the chest onto the long head of the triceps, combining elements of the JM press and close-grip dumbbell press. Useful for triceps mass when standard skullcrushers irritate the elbows.",
+  "descriptionPl": "Hybrydowe ćwiczenie ukierunkowane na triceps, wykonywane leżąc na ławce poziomej z dwiema hantlami trzymanymi chwytem neutralnym (dłonie zwrócone do siebie), ściśniętymi razem nad dolną klatką piersiową. W odróżnieniu od standardowego wyciskania hantli, łokcie schodzą w dół i lekko do przodu, sprowadzając hantle blisko górnej klatki/dolnej żuchwy z głębokim zgięciem w łokciu, po czym następuje wyciskanie z powrotem. Akcent obciążenia przesuwa się z klatki na głowę długą tricepsa, łącząc cechy JM pressu i wyciskania wąskim chwytem. Dobre na masę tricepsa, gdy klasyczne wyciskanie francuskie drażni łokcie.",
+
+  "instructions": [
+    "Sit on a flat bench with a moderate dumbbell in each hand resting on your thighs. Kick the dumbbells up as you lie back, ending with the bells above your lower chest.",
+    "Rotate the wrists to a neutral grip (palms facing each other) and press the two dumbbells together so they touch along their inner heads. Keep them touching for the entire set.",
+    "Plant feet firmly, brace the core, and pin your shoulder blades down and back into the bench. Eyes look up at the ceiling.",
+    "Lower the dumbbells under control by bending the elbows. The dumbbells should track toward your upper chest / chin, with the elbows ending up roughly under or slightly in front of the dumbbells — not flared out 90 degrees.",
+    "At the bottom the dumbbells are close to your chest, elbows deeply bent (well past 90 degrees). Pause briefly without bouncing off the chest.",
+    "Press the dumbbells back up by extending the elbows. Keep the dumbbells squeezed together the whole way. Drive through the triceps, not the chest.",
+    "Finish just short of full lockout to keep continuous tension on the triceps, then immediately start the next rep with controlled descent."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce poziomej z hantlą w każdej dłoni, opartymi o uda. Pomóż sobie nogami i połóż się na plecach, kończąc z hantlami nad dolną klatką piersiową.",
+    "Obróć nadgarstki do chwytu neutralnego (dłonie skierowane do siebie) i ściśnij hantle razem, tak aby stykały się wewnętrznymi główkami. Mają się stykać przez całą serię.",
+    "Stopy pewnie na podłodze, napnij brzuch, łopatki ściągnięte w dół i do tyłu, dociśnięte do ławki. Wzrok kieruj prosto w sufit.",
+    "Opuszczaj hantle w sposób kontrolowany, zginając łokcie. Hantle mają wędrować w stronę górnej klatki / brody, a łokcie powinny kończyć mniej więcej pod hantlami lub lekko z przodu — NIE rozłożone na boki pod kątem 90 stopni.",
+    "W dolnej pozycji hantle są blisko klatki, łokcie głęboko ugięte (znacznie poniżej 90 stopni). Zatrzymaj się krótko bez odbijania od klatki.",
+    "Wyciśnij hantle z powrotem, prostując łokcie. Trzymaj hantle ściśnięte razem przez cały ruch. Napęd ma iść z tricepsa, nie z klatki.",
+    "Zakończ tuż przed pełnym wyprostem, aby utrzymać stałe napięcie na tricepsie, i od razu rozpoczynaj kolejne powtórzenie z kontrolowanym opuszczaniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "horizontal_press_close_grip",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["pectoralis_major", "anterior_deltoid"],
+    "stabilizers": ["forearm_flexors", "core", "serratus_anterior", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P9",
+    "pectoralis_major": "S5",
+    "anterior_deltoid": "S5",
+    "forearm_flexors": "T3",
+    "serratus_anterior": "T2",
+    "core": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "close-grip-bench-press", "skullcrusher"],
+    "progression_to": ["jm-press", "barbell-tate-press", "close-grip-bench-press-heavy"],
+    "alternatives": ["jm-press", "close-grip-bench-press", "skullcrusher", "tate-press", "dumbbell-tricep-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Neutral grip, dumbbells touching at the inner heads",
+      "Shoulder blades pinned down and back into the bench",
+      "Feet planted, glutes and core braced",
+      "Start with dumbbells above lower chest, elbows slightly bent",
+      "Pick a moderate weight — this is a triceps move, not a chest press"
+    ],
+    "setup_cues_pl": [
+      "Chwyt neutralny, hantle stykają się wewnętrznymi główkami",
+      "Łopatki ściągnięte w dół i do tyłu, dociśnięte do ławki",
+      "Stopy pewnie na podłodze, pośladki i brzuch napięte",
+      "Pozycja startowa: hantle nad dolną klatką, łokcie lekko ugięte",
+      "Wybierz umiarkowany ciężar — to ruch na triceps, nie wyciskanie klatki"
+    ],
+    "execution_cues": [
+      "Drop the dumbbells toward your chin, not toward your stomach",
+      "Keep the dumbbells squeezed together — do not let them separate",
+      "Elbows stay tucked, NOT flared out to the sides",
+      "Feel the stretch on the long head of the triceps at the bottom",
+      "Drive up with the triceps — short of full lockout to keep tension"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj hantle w stronę brody, nie w stronę brzucha",
+      "Trzymaj hantle ściśnięte razem — nie pozwól im się rozjechać",
+      "Łokcie przy tułowiu, NIE rozkładane na boki",
+      "Wyczuj rozciągnięcie głowy długiej tricepsa w dolnej pozycji",
+      "Wyciskaj tricepsem — tuż przed pełnym wyprostem aby utrzymać napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring out to 90 degrees (turning it into a chest press)",
+        "faultPl": "Rozkładanie łokci na boki do 90 stopni (zamiana na wyciskanie klatki)",
+        "cause": "Habit from regular dumbbell bench press, load too heavy, weak triceps",
+        "causePl": "Nawyk z klasycznego wyciskania hantli, zbyt duży ciężar, słaby triceps",
+        "cue": "Keep elbows under the dumbbells. If you feel it in your chest, your elbows are too wide.",
+        "cuePl": "Łokcie pod hantlami. Jeśli czujesz pracę w klatce, łokcie są za szeroko."
+      },
+      {
+        "fault": "Dumbbells drift apart during the press",
+        "faultPl": "Hantle rozjeżdżają się w trakcie wyciskania",
+        "cause": "Loss of isometric adductor force in the chest/shoulder, fatigue, or grip width drift",
+        "causePl": "Utrata izometrycznego napięcia przywodzicieli barku, zmęczenie, lub rozjeżdżanie się chwytu",
+        "cue": "Actively squeeze the inner heads of the dumbbells together every rep.",
+        "cuePl": "Aktywnie dociskaj wewnętrzne główki hantli do siebie w każdym powtórzeniu."
+      },
+      {
+        "fault": "Bouncing the dumbbells off the chest",
+        "faultPl": "Odbijanie hantli od klatki piersiowej",
+        "cause": "Trying to use stretch reflex / momentum to grind out reps, especially with heavy load",
+        "causePl": "Wykorzystywanie odruchu rozciągowego / rozpędu do wyciskania kolejnych powtórzeń, szczególnie przy ciężarach",
+        "cue": "Pause for half a second at the bottom. Reps should be clean, not bouncy.",
+        "cuePl": "Zatrzymaj się na pół sekundy w dolnej pozycji. Powtórzenia mają być czyste, bez odbicia."
+      },
+      {
+        "fault": "Wrists collapsing back under the dumbbell weight",
+        "faultPl": "Wyginanie nadgarstków do tyłu pod ciężarem hantli",
+        "cause": "Weak wrist flexors, too heavy a load, dumbbells held too far back in the palm",
+        "causePl": "Słabe zginacze nadgarstka, zbyt duży ciężar, hantle trzymane zbyt głęboko w dłoni",
+        "cue": "Keep knuckles pointing straight up. Hold the dumbbells centered, wrists neutral.",
+        "cuePl": "Knykcie skierowane prosto w górę. Trzymaj hantle centralnie, nadgarstki neutralne."
+      },
+      {
+        "fault": "Lowering toward the stomach instead of the chest/chin",
+        "faultPl": "Opuszczanie hantli w stronę brzucha zamiast klatki/brody",
+        "cause": "Treating the lift like a dumbbell pullover or skullcrusher; lack of triceps stretch awareness",
+        "causePl": "Wykonywanie ruchu jak pullover lub skullcrusher; brak świadomości rozciągnięcia tricepsa",
+        "cue": "Target your chin. The elbows bend deeply but the dumbbells stay over the upper torso.",
+        "cuePl": "Celuj w brodę. Łokcie głęboko zgięte, ale hantle pozostają nad górną częścią tułowia."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering toward the chest). Exhale forcefully during the concentric (pressing up). Maintain a moderate core brace throughout.",
+    "breathingPl": "Wdech podczas opuszczania (faza ekscentryczna, ruch w dół do klatki). Mocny wydech podczas wyciskania (faza koncentryczna). Utrzymuj umiarkowane napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_pain_distal_triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Deep elbow flexion under load aggravates triceps tendinopathy. Limit range of motion to elbows at 90 degrees, reduce load by 30-40%, and use higher rep ranges (12-15) with strict tempo.",
+      "modificationPl": "Głębokie zgięcie łokcia pod obciążeniem drażni tendinopatię tricepsa. Ogranicz zakres ruchu do 90 stopni w łokciu, zmniejsz ciężar o 30-40% i stosuj wyższy zakres powtórzeń (12-15) ze ścisłym tempem.",
+      "alternative": "tricep-rope-pushdown"
+    },
+    {
+      "condition": "anterior_shoulder_pain_impingement",
+      "severity": "caution",
+      "modification": "The supine position with elbows traveling down and forward can pinch anterior shoulder structures. Use a slight incline (15 degrees) to open the shoulder, and avoid pushing the dumbbells over the face — stop them at chin level.",
+      "modificationPl": "Pozycja leżąca z łokciami schodzącymi w dół i do przodu może uciskać przednie struktury barku. Użyj ławki pod lekkim kątem (15 stopni), aby otworzyć bark, i nie sprowadzaj hantli nad twarz — zatrzymuj je na wysokości brody.",
+      "alternative": "tricep-rope-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Neutral grip is usually wrist-friendly, but heavy loads can still strain the wrists. Use wrist wraps and avoid letting the dumbbells tilt backward.",
+      "modificationPl": "Chwyt neutralny zwykle jest przyjazny nadgarstkom, ale duże ciężary nadal mogą je obciążać. Użyj opasek na nadgarstki i nie pozwalaj hantlom przechylać się do tyłu.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "recent_pec_strain_or_surgery",
+      "severity": "avoid",
+      "modification": "Even though triceps-dominant, the bottom stretched position loads the pectoralis major as a secondary muscle. Avoid until cleared by a physiotherapist; use cable triceps work that does not stress the chest.",
+      "modificationPl": "Mimo że ruch dominuje tricepsem, dolna faza rozciągnięta obciąża mięsień piersiowy jako asystę. Unikaj do czasu zgody fizjoterapeuty; wykonuj ćwiczenia tricepsa na wyciągu, które nie obciążają klatki.",
+      "alternative": "tricep-rope-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x6-8 (strength) | 3x12-15 (pump/finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-lying-elbow-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-elbow-press/frame_0_start.png",
+      "frames/dumbbell-lying-elbow-press/frame_1_early.png",
+      "frames/dumbbell-lying-elbow-press/frame_2_mid.png",
+      "frames/dumbbell-lying-elbow-press/frame_3_late.png",
+      "frames/dumbbell-lying-elbow-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-lying-elbow-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0 (bottom): osoba leży na ławce poziomej, dwie hantle ściśnięte razem nad dolną klatką piersiową, chwyt neutralny (dłonie do siebie), łokcie głęboko ugięte i schowane przy tułowiu — nie rozłożone na boki. Triceps i strona długiej głowy mocno podświetlone na czerwono. Frame 2 (top): pełne wyciskanie w pionie, hantle nad klatką, ramiona prawie wyprostowane, hantle wciąż ściśnięte razem. Triceps nadal aktywny (kontynuacja czerwonego oznaczenia). Frame 4 (return): powrót do pozycji startowej z 'ghostem' górnej fazy widocznym powyżej. Ruch to wyraźny hybrydowy JM/close-press style — łokcie schodzą w dół i lekko do przodu, hantle wędrują do górnej klatki/brody, NIE jest to klasyczne skull-crusher (gdzie hantle leciałyby za głowę) ani standardowe wyciskanie hantli (gdzie łokcie byłyby pod 90°). Sklasyfikowane jako compound (push/sagittal/bilateral) ze względu na zaangażowanie przedniego aktonu i klatki w roli pomocniczej, ale primary = triceps (P9), secondary klatka i przedni akton (S5/S5). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "compound", "dumbbells", "upper_body", "intermediate", "horizontal_press"]
+}

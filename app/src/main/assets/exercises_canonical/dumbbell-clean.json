@@ -1,0 +1,209 @@
+{
+  "id": "dumbbell-clean",
+  "name": "Dumbbell Clean",
+  "namePl": "Zarzut hantli",
+  "aliases": ["dumbbell power clean", "db clean", "dumbbell hang clean from floor", "double dumbbell clean"],
+  "aliasesPl": ["zarzut hantli", "clean hantlami", "dumbbell clean", "olimpijski zarzut z hantlami", "podrzut hantli na barki"],
+
+  "description": "An olympic-style explosive total-body movement using a pair of dumbbells. The dumbbells are lifted from the floor to the front rack position at the shoulders in one fluid motion via triple extension of hips, knees and ankles. Unlike the barbell clean, dumbbells allow a more natural wrist/shoulder position and a slightly easier learning curve, but each side must work independently — eliminating the 'strong-side compensation'. Builds explosive power, coordination, posterior chain strength and unilateral stability. Excellent for athletes, conditioning circuits (CrossFit/HIIT) and people who lack a barbell setup.",
+  "descriptionPl": "Eksplozywny ruch olimpijski na całe ciało z parą hantli. Hantle podnosi się z ziemi do pozycji front rack na barkach jednym płynnym ruchem poprzez potrójny wyprost bioder, kolan i kostek. W przeciwieństwie do zarzutu sztangą, hantle pozwalają na bardziej naturalną pozycję nadgarstka i barku oraz są nieco łatwiejsze do nauki — ale każda strona pracuje niezależnie, co eliminuje 'kompensację mocniejszą stroną'. Buduje moc eksplozywną, koordynację, siłę tylnego łańcucha i jednostronną stabilność. Doskonałe dla sportowców, obwodów kondycyjnych (CrossFit/HIIT) i osób bez dostępu do sztangi.",
+
+  "instructions": [
+    "Stań w rozkroku na szerokość bioder, hantle ustaw na podłodze po obu stronach stóp (lub między stopami, równolegle do siebie).",
+    "Wykonaj zawias biodrowy z lekkim zgięciem kolan i chwyć hantle chwytem neutralnym (młotkowym). Plecy proste, klatka w górze, najszersze napięte, wzrok przed siebie.",
+    "Faza 1 (pierwsze pociągnięcie): Napieraj stopami w podłogę i unieś hantle, prowadząc je blisko goleni. Biodra i barki wstają w tym samym tempie aż hantle miną kolana.",
+    "Faza 2 (drugie pociągnięcie/eksplozja): Eksplozywnie wyprostuj biodra, kolana i kostki (potrójny wyprost). Wzrusz barkami i wystrzel hantle w górę wzdłuż tułowia.",
+    "Podciągnij się POD hantle — szybko zegnij łokcie, obróć nadgarstki na zewnątrz i 'wejdź' pod ciężar.",
+    "Złap hantle w pozycji front rack — łokcie wysoko i do przodu, hantle opierają się na przednich aktonach barku, kolana lekko ugięte (ćwierć przysiad lub mini squat catch).",
+    "Wstań w pełni z pozycji catch, biodra i kolana wyprostowane, hantle stabilnie na barkach. Krótka pauza.",
+    "Opuść hantle kontrolowanie: najpierw do zwisu wzdłuż ciała, potem przez zawias biodrowy z powrotem na podłogę. Zresetuj pozycję przed kolejnym powtórzeniem."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku na szerokość bioder, hantle ustaw na podłodze po obu stronach stóp (lub między stopami, równolegle do siebie).",
+    "Wykonaj zawias biodrowy z lekkim zgięciem kolan i chwyć hantle chwytem neutralnym (młotkowym). Plecy proste, klatka w górze, najszersze napięte, wzrok przed siebie.",
+    "Faza 1 (pierwsze pociągnięcie): Napieraj stopami w podłogę i unieś hantle, prowadząc je blisko goleni. Biodra i barki wstają w tym samym tempie aż hantle miną kolana.",
+    "Faza 2 (drugie pociągnięcie/eksplozja): Eksplozywnie wyprostuj biodra, kolana i kostki (potrójny wyprost). Wzrusz barkami i wystrzel hantle w górę wzdłuż tułowia.",
+    "Podciągnij się POD hantle — szybko zegnij łokcie, obróć nadgarstki na zewnątrz i 'wejdź' pod ciężar.",
+    "Złap hantle w pozycji front rack — łokcie wysoko i do przodu, hantle opierają się na przednich aktonach barku, kolana lekko ugięte (ćwierć przysiad lub mini squat catch).",
+    "Wstań w pełni z pozycji catch, biodra i kolana wyprostowane, hantle stabilnie na barkach. Krótka pauza.",
+    "Opuść hantle kontrolowanie: najpierw do zwisu wzdłuż ciała, potem przez zawias biodrowy z powrotem na podłogę. Zresetuj pozycję przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "glutes", "trapezius", "quadriceps"],
+    "secondary": ["erector_spinae", "latissimus_dorsi", "anterior_deltoids", "biceps", "forearms", "calves"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "rotator_cuff", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P8",
+    "glutes": "P9",
+    "trapezius": "P8",
+    "quadriceps": "P7",
+    "erector_spinae": "S8",
+    "latissimus_dorsi": "S7",
+    "anterior_deltoids": "S7",
+    "biceps": "S6",
+    "forearms": "S7",
+    "calves": "S6",
+    "core": "S8",
+    "rectus_abdominis": "S7",
+    "obliques": "S6",
+    "rotator_cuff": "S6",
+    "rhomboids": "S6"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["chalk", "lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "olympic_weightlifting",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dumbbell-deadlift", "dumbbell-romanian-deadlift", "dumbbell-front-squat", "dumbbell-hang-clean"],
+    "progression_to": ["dumbbell-clean-and-press", "dumbbell-clean-and-jerk", "dumbbell-snatch", "barbell-clean"],
+    "alternatives": ["kettlebell-clean", "barbell-hang-clean", "dumbbell-high-pull", "kettlebell-swing"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hantle po obu stronach stóp lub między stopami, równolegle",
+      "Stopy szerokość bioder, palce lekko na zewnątrz",
+      "Zawias biodrowy — pupa w tył, klatka w górze, plecy proste",
+      "Chwyt neutralny (młotkowy), nadgarstki sztywne",
+      "Mocne napięcie brzucha PRZED ruchem — clean jest eksplozywny, nie ma czasu napinać w trakcie"
+    ],
+    "setup_cues_pl": [
+      "Hantle po obu stronach stóp lub między stopami, równolegle",
+      "Stopy szerokość bioder, palce lekko na zewnątrz",
+      "Zawias biodrowy — pupa w tył, klatka w górze, plecy proste",
+      "Chwyt neutralny (młotkowy), nadgarstki sztywne",
+      "Mocne napięcie brzucha PRZED ruchem — clean jest eksplozywny, nie ma czasu napinać w trakcie"
+    ],
+    "execution_cues": [
+      "Potrójny wyprost — biodra, kolana i kostki strzelają do góry jednocześnie",
+      "Hantle blisko ciała przez cały ruch — jak suwakiem wzdłuż tułowia",
+      "Podciągnij się POD hantle — to NIE biceps curl, nie wciskaj rękami",
+      "Obróć nadgarstki w catch — dłonie z neutralnych przechodzą do pozycji front rack",
+      "Łokcie WYSOKO w catch — hantle na barkach, nie na rękach"
+    ],
+    "execution_cues_pl": [
+      "Potrójny wyprost — biodra, kolana i kostki strzelają do góry jednocześnie",
+      "Hantle blisko ciała przez cały ruch — jak suwakiem wzdłuż tułowia",
+      "Podciągnij się POD hantle — to NIE biceps curl, nie wciskaj rękami",
+      "Obróć nadgarstki w catch — dłonie z neutralnych przechodzą do pozycji front rack",
+      "Łokcie WYSOKO w catch — hantle na barkach, nie na rękach"
+    ],
+    "common_faults": [
+      {
+        "fault": "Curling the dumbbells up with arms (reverse curl cheat)",
+        "faultPl": "Podnoszenie hantli rękami (oszukany odwrotny curl)",
+        "cause": "Brak eksplozji z bioder — próba 'wymachiwania' ciężaru rękami zamiast generowania mocy nogami",
+        "causePl": "Brak eksplozji z bioder — próba 'wymachiwania' ciężaru rękami zamiast generowania mocy nogami",
+        "cue": "Ręce to LINY, nie silniki. Nogi i biodra robią pracę — ręce tylko podciągają cię pod hantle.",
+        "cuePl": "Ręce to LINY, nie silniki. Nogi i biodra robią pracę — ręce tylko podciągają cię pod hantle."
+      },
+      {
+        "fault": "Hantle daleko od ciała — łukowa trajektoria",
+        "faultPl": "Hantle daleko od ciała — łukowa trajektoria",
+        "cause": "Brak świadomości pozycji, słabe najszersze, próba podnoszenia 'do przodu' zamiast 'do góry'",
+        "causePl": "Brak świadomości pozycji, słabe najszersze, próba podnoszenia 'do przodu' zamiast 'do góry'",
+        "cue": "Hantle muszą JECHAĆ wzdłuż ciała — od goleni przez uda do barków. Trzymaj najszersze napięte, łokcie 'do tyłu i wysoko'.",
+        "cuePl": "Hantle muszą JECHAĆ wzdłuż ciała — od goleni przez uda do barków. Trzymaj najszersze napięte, łokcie 'do tyłu i wysoko'."
+      },
+      {
+        "fault": "Niskie łokcie w pozycji catch (catch na nadgarstkach)",
+        "faultPl": "Niskie łokcie w pozycji catch (catch na nadgarstkach)",
+        "cause": "Słaba mobilność barków/nadgarstków, brak agresywnego obrotu nadgarstków",
+        "causePl": "Słaba mobilność barków/nadgarstków, brak agresywnego obrotu nadgarstków",
+        "cue": "Wypchnij łokcie W GÓRĘ I DO PRZODU w catch. Hantle opierają się na przednich aktonach, nie wiszą na rękach.",
+        "cuePl": "Wypchnij łokcie W GÓRĘ I DO PRZODU w catch. Hantle opierają się na przednich aktonach, nie wiszą na rękach."
+      },
+      {
+        "fault": "Zaokrąglone plecy w pozycji startowej z ziemi",
+        "faultPl": "Zaokrąglone plecy w pozycji startowej z ziemi",
+        "cause": "Słaba mobilność bioder, brak techniki zawiasu biodrowego, próba 'sięgnięcia' po hantle zamiast 'wejścia' w zawias",
+        "causePl": "Słaba mobilność bioder, brak techniki zawiasu biodrowego, próba 'sięgnięcia' po hantle zamiast 'wejścia' w zawias",
+        "cue": "Klatka w górze, pupa w tył, łopatki ściągnięte. Jeśli nie sięgasz prosto plecami — uniesz hantle na klocki/płytki.",
+        "cuePl": "Klatka w górze, pupa w tył, łopatki ściągnięte. Jeśli nie sięgasz prosto plecami — uniesz hantle na klocki/płytki."
+      },
+      {
+        "fault": "Brak pełnego wstania po catch (catch w głębokim przysiadzie bez stania)",
+        "faultPl": "Brak pełnego wstania po catch (catch w głębokim przysiadzie bez stania)",
+        "cause": "Słabe nogi, za duży ciężar, brak świadomości że ruch kończy się w pozycji stojącej",
+        "causePl": "Słabe nogi, za duży ciężar, brak świadomości że ruch kończy się w pozycji stojącej",
+        "cue": "Catch w lekkim przysiadzie, ALE WSTAŃ w pełni — biodra i kolana CAŁKOWICIE wyprostowane przed kolejnym powtórzeniem.",
+        "cuePl": "Catch w lekkim przysiadzie, ALE WSTAŃ w pełni — biodra i kolana CAŁKOWICIE wyprostowane przed kolejnym powtórzeniem."
+      }
+    ],
+    "breathing": "Głęboki wdech na ziemi przed ruchem, napięcie brzucha i WSTRZYMANIE oddechu przez całe pociągnięcie i catch (Valsalva). Wydech po stabilnym front rack i wyproście bioder. Wdech ponownie przed opuszczeniem hantli. Jeden cykl oddechowy na powtórzenie.",
+    "breathingPl": "Głęboki wdech na ziemi przed ruchem, napięcie brzucha i WSTRZYMANIE oddechu przez całe pociągnięcie i catch (Valsalva). Wydech po stabilnym front rack i wyproście bioder. Wdech ponownie przed opuszczeniem hantli. Jeden cykl oddechowy na powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_pathology",
+      "severity": "avoid",
+      "modification": "Eksplozywne zarzuty generują duże obciążenia kręgosłupa przy wysokiej prędkości — przeciwwskazane przy aktywnych problemach dyskowych. Zamień na ruchy nie-eksplozywne (deadlift, RDL).",
+      "modificationPl": "Eksplozywne zarzuty generują duże obciążenia kręgosłupa przy wysokiej prędkości — przeciwwskazane przy aktywnych problemach dyskowych. Zamień na ruchy nie-eksplozywne (deadlift, RDL).",
+      "alternative": "dumbbell-romanian-deadlift"
+    },
+    {
+      "condition": "shoulder_impingement_or_acute_pain",
+      "severity": "avoid",
+      "modification": "Catch w front rack wymaga zdrowego barku z pełnym zakresem fleksji i rotacji. Unikaj przy aktywnym konflikcie podbarkowym — najpierw mobilność i stabilność barku pod nadzorem fizjoterapeuty.",
+      "modificationPl": "Catch w front rack wymaga zdrowego barku z pełnym zakresem fleksji i rotacji. Unikaj przy aktywnym konflikcie podbarkowym — najpierw mobilność i stabilność barku pod nadzorem fizjoterapeuty.",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "wrist_injury_or_limited_extension",
+      "severity": "modify",
+      "modification": "Hantle wymagają mniej wyprostu nadgarstka niż sztanga, ale jeśli ból jest aktywny — stosuj wrist wraps, redukuj obciążenie, lub zamień na ruchy bez fazy catch (high pull, swing).",
+      "modificationPl": "Hantle wymagają mniej wyprostu nadgarstka niż sztanga, ale jeśli ból jest aktywny — stosuj wrist wraps, redukuj obciążenie, lub zamień na ruchy bez fazy catch (high pull, swing).",
+      "alternative": "dumbbell-high-pull"
+    },
+    {
+      "condition": "hypertension_uncontrolled",
+      "severity": "avoid",
+      "modification": "Ruchy olimpijskie z Valsalvą generują znaczne skoki ciśnienia tętniczego. Uzyskaj zgodę kardiologa przed wykonywaniem przy niekontrolowanym nadciśnieniu.",
+      "modificationPl": "Ruchy olimpijskie z Valsalvą generują znaczne skoki ciśnienia tętniczego. Uzyskaj zgodę kardiologa przed wykonywaniem przy niekontrolowanym nadciśnieniu.",
+      "alternative": "kettlebell-swing"
+    }
+  ],
+
+  "typical_sets_reps": "5x3 (moc) | 4-5x3-5 (siła/technika) | 3-4x6-8 (kondycja/obwody) | 3-5x1-2 (max moc) — nigdy do upadku mięśniowego, technika ma absolutny priorytet",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "dumbbell-clean.gif",
+    "frames_extracted": [
+      "frames/dumbbell-clean/frame_0_start.png",
+      "frames/dumbbell-clean/frame_1_early.png",
+      "frames/dumbbell-clean/frame_2_mid.png",
+      "frames/dumbbell-clean/frame_3_late.png",
+      "frames/dumbbell-clean/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-clean"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa z ziemi — głęboki zawias biodrowy z lekkim przysiadem, hantle przy stopach, podświetlone czworogłowe/pośladki/dwugłowe ud/przedramiona/górne plecy (klasyczny clean setup z hantlami). Frame 1: pełna pozycja stojąca z hantlami w zwisie — pomiędzy fazą pull a catch. Frame 2: catch w front rack w pozycji przysiadu — hantle na barkach, łokcie do przodu, podświetlone czworogłowe/pośladki/barki/górne plecy. Frame 3: powrót w dół (lub composite). Frame 4: powrót do pozycji startowej. Ruch KOŃCZY się w pozycji front rack — NIE ma fazy overhead press. To czysty zarzut (clean), nie clean and press. movement_pattern: olympic_lift. Trudność 7/10 — łatwiejsza niż wariant sztangowy ze względu na neutralny nadgarstek i niezależną pracę stron, ale wymaga dobrej koordynacji i mobilności bioder/barków. Primary muscles zgodne z briefem (hamstrings P8, glutes P9, trapezius P8, quadriceps P7). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["olympic_weightlifting", "compound", "full_body", "power", "explosive", "dumbbells", "triple_extension", "front_rack", "athletic_performance", "intermediate"]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "cable-one-arm-bent-over-row",
+  "name": "Cable One-Arm Bent-Over Row",
+  "namePl": "Wiosło w opadzie z wyciągu jednorącz",
+  "aliases": ["one arm cable row", "single arm cable bent over row", "cable standing one arm row", "unilateral cable row bent over"],
+  "aliasesPl": ["wiosłowanie jednorącz z wyciągu w opadzie", "wiosłowanie jednorącz na wyciągu dolnym", "single arm cable row w opadzie", "wiosło z linki jednorącz", "wiosłowanie w opadzie z linki jednorącz"],
+
+  "description": "Unilateral horizontal pull performed standing in a staggered stance, bent over at the hips, pulling a low-cable D-handle toward the hip with one arm. Combines two big advantages: cable's constant tension across the entire range of motion (no dead zone at top or bottom like with dumbbells), and unilateral loading that demands active anti-rotation work from the core and obliques. Excellent lat builder, naturally allows a longer pulling stroke than a bilateral row (no opposite arm in the way), and lets each side work independently — exposing and fixing left/right imbalances. Considered more demanding on torso stability than the seated cable row or chest-supported variants, because nothing supports the trunk except the lifter's bracing.",
+  "descriptionPl": "Jednostronne ciągnięcie w płaszczyźnie poziomej wykonywane na stojąco w wykroku, z tułowiem pochylonym w biodrach, gdzie jedną ręką przyciągasz uchwyt D z dolnego wyciągu w stronę biodra. Łączy dwie duże zalety: stałe napięcie linki przez cały zakres ruchu (brak martwego punktu jak przy hantlach) oraz pracę jednostronną, która wymusza aktywną stabilizację antyrotacyjną od brzucha i mięśni skośnych. Świetny builder najszerszych grzbietu, naturalnie pozwala na dłuższy zakres ciągu niż w wersji oburącz (drugie ramię nie przeszkadza) i pozwala każdej stronie pracować niezależnie — ujawnia i naprawia różnice prawo-lewo. Bardziej wymagające dla stabilności tułowia niż seated row czy warianty z podparciem klatki, bo nic nie podpiera korpusu poza pracą własnego brzucha i prostowników.",
+
+  "instructions": [
+    "Set the cable to the LOWEST pulley position and attach a D-handle (single grip).",
+    "Stand facing the cable in a staggered stance — opposite leg forward (if pulling with right arm, left leg forward). Front knee soft, back leg slightly bent, weight balanced.",
+    "Bend forward at the hips ~30-45 degrees, neutral spine, chest proud, free hand resting on the front thigh for support (or held in front for balance).",
+    "Grab the handle with one arm fully extended forward, palm facing inward (neutral grip). Lat is pre-stretched, scapula slightly protracted.",
+    "Brace the core hard — anti-rotation is critical, do not let the cable twist your torso.",
+    "Initiate the pull by retracting and depressing the shoulder blade FIRST, then drive the elbow back along the ribs.",
+    "Pull the handle toward the lower ribs / hip on the working side. Elbow finishes behind the line of the back, scapula fully retracted, lat squeezed hard at the top.",
+    "Hold the contraction 1 second. Lower under control to full stretch — let the scapula glide forward at the end of the eccentric for full lat lengthening, but DO NOT rotate the torso to chase the handle.",
+    "Keep hips square to the floor and torso angle stable across all reps. Complete prescribed reps, then switch sides — keep reps even for both arms."
+  ],
+  "instructionsPl": [
+    "Ustaw linkę w NAJNIŻSZEJ pozycji bloku i załóż uchwyt D (pojedynczy chwyt).",
+    "Stań twarzą do wyciągu w wykroku — przeciwna noga z przodu (jeśli ciągniesz prawą ręką, lewa noga z przodu). Przednie kolano lekko ugięte, tylna noga lekko ugięta, ciężar rozłożony.",
+    "Pochyl się w biodrach ~30-45 stopni, neutralny kręgosłup, klatka wysunięta, wolna ręka opiera się o przednie udo dla podparcia (albo trzymana z przodu dla balansu).",
+    "Złap uchwyt jedną ręką w pełnym wyproście do przodu, dłoń skierowana do wewnątrz (chwyt neutralny). Najszerszy rozciągnięty, łopatka lekko w protrakcji.",
+    "Mocno napnij brzuch — anti-rotation jest kluczowy, nie pozwól lince skręcić twojego tułowia.",
+    "Rozpocznij ciąg ŚCIĄGNIĘCIEM i obniżeniem łopatki, dopiero potem prowadź łokieć w tył wzdłuż żeber.",
+    "Pociągnij uchwyt do dolnych żeber / biodra po pracującej stronie. Łokieć kończy za linią pleców, łopatka maksymalnie ściągnięta, najszerszy mocno ściśnięty na szczycie.",
+    "Zatrzymaj napięcie na 1 sekundę. Opuść pod kontrolą do pełnego rozciągnięcia — pozwól łopatce wysunąć się w przód w końcu fazy ekscentrycznej dla pełnego wydłużenia najszerszego, ale NIE skręcaj tułowia za uchwytem.",
+    "Trzymaj biodra ustawione kwadratowo do podłogi i kąt tułowia stabilny przez wszystkie powtórzenia. Wykonaj zaplanowane powtórzenia, potem zmień stronę — wyrównaj liczbę powtórzeń na obie ręce."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower"],
+    "secondary": ["biceps_brachii", "posterior_deltoids", "brachialis", "obliques"],
+    "stabilizers": ["erector_spinae", "core", "forearms", "glutes", "hamstrings"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle_lower": "P8",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "obliques": "S7",
+    "forearms": "S6",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "glutes": "S4",
+    "hamstrings": "S4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "d_handle"],
+    "optional": ["lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["cable-low-seated-row", "single-arm-dumbbell-row"],
+    "progression_to": ["barbell-bent-over-row", "pendlay-row", "meadows-row", "kroc-row"],
+    "alternatives": ["single-arm-dumbbell-row", "cable-low-seated-row", "chest-supported-row", "meadows-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lowest pulley, D-handle, opposite leg forward (staggered stance)",
+      "Hinge 30-45 degrees at the hips, neutral spine, chest proud",
+      "Free hand braces on the front thigh — torso is locked, not floating",
+      "Working arm fully extended forward, palm neutral, lat pre-stretched",
+      "Brace HARD before the first pull — anti-rotation is the whole job of the core here"
+    ],
+    "setup_cues_pl": [
+      "Najniższy blok, uchwyt D, przeciwna noga z przodu (wykrok)",
+      "Pochylenie 30-45 stopni w biodrach, neutralny kręgosłup, klatka wysunięta",
+      "Wolna ręka opiera się o przednie udo — tułów zablokowany, nie wisi w powietrzu",
+      "Pracująca ręka w pełnym wyproście do przodu, dłoń neutralnie, najszerszy rozciągnięty",
+      "Napnij MOCNO brzuch przed pierwszym ciągiem — anti-rotation to główna robota brzucha tutaj"
+    ],
+    "execution_cues": [
+      "Scapula retracts FIRST, then the elbow drives back",
+      "Pull elbow along the ribs to the hip — NOT out wide",
+      "Handle finishes at the lower rib / hip, elbow behind the back line",
+      "Squeeze the lat for 1 second at the top — feel the working side compress",
+      "Lower slow, full stretch at the bottom, but hips stay square — no torso rotation"
+    ],
+    "execution_cues_pl": [
+      "Łopatka ściąga się NAJPIERW, dopiero potem łokieć idzie w tył",
+      "Prowadź łokieć wzdłuż żeber do biodra — NIE na bok",
+      "Uchwyt kończy przy dolnym żebrze / biodrze, łokieć za linią pleców",
+      "Ściśnij najszerszy na 1 sekundę na szczycie — poczuj jak pracująca strona się kompresuje",
+      "Opuszczaj powoli, pełne rozciągnięcie na dole, ale biodra zostają równo — bez rotacji tułowia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward the working arm (twisting to add range)",
+        "faultPl": "Skręcanie tułowia w stronę pracującej ręki (rotacja by zyskać zakres)",
+        "cause": "Weight too heavy, core not braced, or trying to imitate a bigger pull by rotating instead of retracting the scapula",
+        "causePl": "Zbyt duży ciężar, brak napięcia brzucha, lub próba 'oszukania' większego ciągu rotacją zamiast retrakcji łopatki",
+        "cue": "Hips square to the floor, shoulders square to the floor. The cable pulls — your job is to NOT let it rotate you. If you cannot stop the rotation, the weight is too heavy. Drop 20-30% and rebuild form.",
+        "cuePl": "Biodra równo do podłogi, barki równo do podłogi. Linka ciągnie — twoja robota to NIE pozwolić jej cię obrócić. Jeśli nie potrafisz zatrzymać rotacji, ciężar jest za duży. Zrzuć 20-30% i odbuduj technikę."
+      },
+      {
+        "fault": "Pulling with the biceps, no scapular retraction",
+        "faultPl": "Ciągnięcie bicepsem, brak ściągnięcia łopatki",
+        "cause": "Habit of arm-dominant rowing, weak mid-back, or rushed tempo with no end-range squeeze",
+        "causePl": "Nawyk dominacji bicepsa w wiosłowaniu, słabe środkowe plecy lub szybkie tempo bez ściskania na końcu",
+        "cue": "Hand is just a hook. Pull with the ELBOW going back, and pull the elbow with the LAT. Scapula retracts before the elbow bends. Pause at the top, feel the lat — not the bicep — doing the work.",
+        "cuePl": "Dłoń to tylko hak. Ciągnij ŁOKCIEM w tył, a łokieć ciągnij NAJSZERSZYM. Łopatka ściąga się przed zgięciem łokcia. Zatrzymaj się na szczycie, poczuj że pracuje najszerszy — nie biceps."
+      },
+      {
+        "fault": "Rounded lower back at full stretch (loaded lumbar flexion)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy w pełnym rozciągnięciu (obciążone zgięcie lędźwiowe)",
+        "cause": "Reaching forward with the lower spine instead of letting the scapula protract; weak erectors or hinging from the wrong joint",
+        "causePl": "Sięganie w przód odcinkiem lędźwiowym zamiast protrakcji łopatki; słabe prostowniki lub zginanie z błędnego stawu",
+        "cue": "The stretch comes from the SHOULDER BLADE gliding forward — not from the spine flexing. Keep the chest proud and lower back neutral the entire set. If your back rounds, reduce reach distance or reduce weight.",
+        "cuePl": "Rozciągnięcie pochodzi z PRZESUNIĘCIA ŁOPATKI w przód — nie ze zgięcia kręgosłupa. Trzymaj klatkę wysuniętą a odcinek lędźwiowy neutralny przez całą serię. Jeśli plecy się zaokrąglają, zmniejsz zasięg w przód lub ciężar."
+      },
+      {
+        "fault": "Standing too upright (defeats the bent-over angle)",
+        "faultPl": "Zbyt wyprostowana postawa (niweluje pochylenie tułowia)",
+        "cause": "Lazy hip hinge, sore back, or copying the angle of a high-cable row",
+        "causePl": "Zaniedbany hinge w biodrach, ból pleców, lub kopiowanie kąta z górnego wyciągu",
+        "cue": "If you stand too upright, the cable pulls down and turns this into a half-shrug. Hinge 30-45 degrees — the cable line should approximately match your torso angle so the pull is HORIZONTAL relative to the spine.",
+        "cuePl": "Jeśli stoisz za pionowo, linka ciągnie w dół i ćwiczenie zmienia się w pół-shrug. Pochyl się 30-45 stopni — linia linki powinna w przybliżeniu odpowiadać kątowi tułowia żeby ciąg był POZIOMY względem kręgosłupa."
+      },
+      {
+        "fault": "Free hand floating in the air (no torso support, wobble)",
+        "faultPl": "Wolna ręka 'w powietrzu' (brak podparcia tułowia, bujanie)",
+        "cause": "Not setting the bracing hand on the thigh or a bench; treating the move like a row without considering single-leg-style stability",
+        "causePl": "Brak oparcia wolnej ręki na udzie lub ławce; traktowanie ruchu jak zwykłego rowa bez myślenia o stabilności jednonoga",
+        "cue": "Plant the free hand on the front thigh — it gives a 3rd point of contact and locks the torso angle. Wobbling = your stabilizers fail before the lat does, and the working set is wasted.",
+        "cuePl": "Połóż wolną rękę na przednim udzie — daje 3. punkt podparcia i blokuje kąt tułowia. Bujanie = stabilizatory padają zanim padnie najszerszy, a seria robocza idzie w błoto."
+      }
+    ],
+    "breathing": "Inhale at the start (arm extended, lat stretched). Exhale through the pull as the handle approaches the hip. Inhale on the controlled return. For heavier sets, brace and hold breath through the concentric, exhale at the top.",
+    "breathingPl": "Wdech na starcie (ramię wyciągnięte, najszerszy rozciągnięty). Wydech w trakcie ciągu gdy uchwyt zbliża się do biodra. Wdech podczas kontrolowanego powrotu. Przy cięższych seriach napnij brzuch i trzymaj oddech przez fazę koncentryczną, wydech na szczycie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to chest-supported row or seated cable row — both eliminate the loaded hip hinge and remove demand on the erectors. If continuing with bent-over cable, reduce weight significantly and place the free hand firmly on a bench for full torso support.",
+      "modificationPl": "Przerzuć się na wiosło z podparciem klatki lub seated cable row — oba eliminują obciążone pochylenie w biodrach i zdejmują pracę z prostowników. Jeśli kontynuujesz bent-over cable, mocno zmniejsz ciężar i połóż wolną rękę na ławce dla pełnego podparcia tułowia.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Neutral grip with D-handle is already shoulder-friendly. Keep elbow tucked close to the ribs (no flaring). If pain at full lat stretch, reduce the eccentric range slightly.",
+      "modificationPl": "Chwyt neutralny z uchwytem D jest już przyjazny dla barków. Trzymaj łokieć blisko żeber (bez rozchylania). Jeśli ból przy pełnym rozciągnięciu najszerszego, lekko zmniejsz zakres ekscentryczny.",
+      "alternative": "cable-low-seated-row"
+    },
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "avoid",
+      "modification": "Loaded hip hinge with rotational anti-rotation demand is contraindicated in active disc issues. Use chest-supported row or seated cable row instead — both keep the spine neutral under load.",
+      "modificationPl": "Obciążone pochylenie w biodrach z wymaganiem anti-rotation jest przeciwwskazane przy aktywnych problemach z dyskami. Użyj wiosła z podparciem klatki lub seated cable row — oba trzymają kręgosłup neutralnie pod obciążeniem.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "core_instability_or_recent_abdominal_surgery",
+      "severity": "modify",
+      "modification": "Anti-rotation demand is high here. Reduce weight, support free hand on a bench (3-point stance), or substitute a bilateral / supported variant until core strength is rebuilt.",
+      "modificationPl": "Wymaganie anti-rotation jest tu duże. Zmniejsz ciężar, oprzyj wolną rękę o ławkę (3-punktowa pozycja), lub zamień na wariant oburącz / z podparciem dopóki nie odbudujesz brzucha.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 4x6-8 per side (strength) | 3x10-15 per side (general) | 3x12-20 per side (endurance / pump)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-one-arm-bent-over-row.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-bent-over-row/frame_0_start.png",
+      "frames/cable-one-arm-bent-over-row/frame_1_early.png",
+      "frames/cable-one-arm-bent-over-row/frame_2_mid.png",
+      "frames/cable-one-arm-bent-over-row/frame_3_late.png",
+      "frames/cable-one-arm-bent-over-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/cable-one-arm-bent-over-row",
+    "glowupp_slug": "cable-one-arm-bent-over-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): osoba stoi w wykroku przed wyciągiem ustawionym na NAJNIŻSZYM poziomie z uchwytem D-handle, tułów pochylony ~40-45 stopni w biodrach, neutralny kręgosłup, pracująca ręka (prawa) w pełnym wyproście trzyma uchwyt, lewa noga z przodu (przeciwna do pracującej ręki), wolna ręka swobodnie z przodu. Podświetlone: najszerszy grzbietu po pracującej stronie (bardzo wyraźnie po prawej), równoległoboczne, środkowe/dolne czworoboczne, tylne aktony naramiennych — typowy heatmap horizontal pull. Frame 2 (mid): faza koncentryczna w trakcie — łokieć w tył wzdłuż żeber (NIE flared), uchwyt w połowie drogi do biodra, łopatka się ściąga, biceps pracującej ręki podświetlony. Tułów STABILNY, brak rotacji. Frame 4 (end / pełny ciąg): uchwyt blisko biodra po pracującej stronie, łokieć wyraźnie za linią pleców, pełna retrakcja łopatki, najszerszy maksymalnie ściśnięty. Klasyfikacja 'pull_horizontal' + 'unilateral' potwierdzona. Equipment: cable_machine + d_handle. Difficulty 5 (intermediate) — wymaga już opanowanego hinge'a w biodrach i pracy anti-rotation, dlatego prerequisites cable-low-seated-row + single-arm-dumbbell-row. Primary: latissimus_dorsi P10 (klasyczny lat builder z constant tension), rhomboids P9, trapezius_middle_lower P8. Secondary: obliques S7 dodane bo unilateral cable bent-over = wyraźna praca anti-rotation, biceps/rear delts/brachialis standardowo. Wszystkie pola PL napisane od zera w polskim standardzie fitness ('Wiosło w opadzie z wyciągu jednorącz' — przyjęty polski termin, używane też 'wiosłowanie jednorącz z wyciągu w opadzie').",
+
+  "tags": ["compound", "unilateral", "horizontal_pull", "cable", "lat_developer", "back_mass_builder", "anti_rotation", "constant_tension", "intermediate", "bent_over"]
+}

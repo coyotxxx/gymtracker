@@ -1,0 +1,200 @@
+{
+  "id": "cable-side-crunch",
+  "name": "Cable Side Crunch",
+  "namePl": "Side crunch z wyciągu",
+  "aliases": ["standing cable side crunch", "cable lateral flexion", "cable oblique crunch", "standing oblique cable crunch"],
+  "aliasesPl": ["side crunch z wyciągu", "boczne zgięcie tułowia z wyciągu", "spięcie skośnych z wyciągu", "boczny crunch na wyciągu", "lateralne zgięcie z linki"],
+
+  "description": "Unilateral standing isolation exercise for the obliques performed at a high-pulley cable station. The lifter stands sideways to the cable, holds the handle above the shoulder, and laterally flexes the torso away from the column — bending sideways at the waist against the cable's resistance. The obliques and quadratus lumborum contract concentrically through the frontal plane, with no hip movement and minimal involvement of the rectus abdominis. Cable provides constant tension across the full range, unlike dumbbell side bends which lose tension at the top.",
+  "descriptionPl": "Jednostronne, izolowane ćwiczenie na mięśnie skośne brzucha wykonywane stojąc przy wyciągu z górną linką. Ćwiczący staje bokiem do wyciągu, trzyma rączkę nad barkiem i bocznie zgina tułów w kierunku przeciwnym do kolumny — pochyla się w bok w pasie pokonując opór linki. Mięśnie skośne i mięsień czworoboczny lędźwi pracują koncentrycznie w płaszczyźnie czołowej, bez ruchu w biodrach i przy minimalnym udziale mięśnia prostego brzucha. Linka daje stałe napięcie w całym zakresie ruchu, w przeciwieństwie do skłonów bocznych z hantlami, które tracą napięcie w górnej pozycji.",
+
+  "instructions": [
+    "Set a single-handle attachment at the high pulley of a cable station. Select a moderate weight (start light — obliques fatigue fast).",
+    "Stand sideways to the cable column with feet shoulder-width apart, knees soft. The working side (the side you'll crunch toward) is the side AWAY from the column.",
+    "Grasp the handle with the arm closest to the column. Step away from the stack until there is tension on the cable. The arm holding the handle extends overhead at roughly 45-60° abduction.",
+    "Establish neutral posture: pelvis level, ribs stacked over hips, free hand resting on the hip or thigh. This is the starting position.",
+    "Exhale and laterally flex the torso — bend sideways at the waist AWAY from the cable, bringing the elbow of the working arm down toward the hip on the opposite side. The pelvis stays still; only the spine bends.",
+    "Squeeze the contracted oblique hard at the bottom of the crunch for one second. The hand should travel roughly 20-30 cm.",
+    "Inhale and return to the starting position under control — let the cable pull you upright, but resist it (don't let it yank you).",
+    "Complete all reps on one side, then switch sides — the obliques must be trained equally bilaterally."
+  ],
+  "instructionsPl": [
+    "Załóż pojedynczy uchwyt na górną linkę wyciągu. Wybierz umiarkowany ciężar (zacznij lekko — skośne męczą się szybko).",
+    "Stań bokiem do kolumny wyciągu, stopy na szerokość barków, kolana lekko ugięte. Strona pracująca (ta, w którą będziesz się pochylał) to strona ODWRÓCONA od kolumny.",
+    "Złap rączkę ręką bliższą kolumnie. Odejdź od stosu obciążeń tak, by linka była naprężona. Ramię trzymające rączkę wyciągnięte nad głową pod kątem około 45-60° odwiedzenia.",
+    "Ustal neutralną postawę: miednica wypoziomowana, żebra ustawione nad biodrami, wolna ręka na biodrze lub udzie. To pozycja wyjściowa.",
+    "Wydech — bocznie zegnij tułów w pasie W KIERUNKU PRZECIWNYM do linki, prowadząc łokieć ręki pracującej do biodra po drugiej stronie. Miednica nieruchoma; zgina się tylko kręgosłup.",
+    "Mocno ściśnij skurczony mięsień skośny w dolnej pozycji na sekundę. Dłoń powinna pokonać około 20-30 cm.",
+    "Wdech — kontrolowanie wróć do pozycji wyjściowej. Pozwól lince ciągnąć cię do pionu, ale stawiaj jej opór (nie daj się szarpnąć).",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień stronę — skośne muszą być trenowane symetrycznie po obu bokach."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_lateral_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["quadratus_lumborum"],
+    "stabilizers": ["rectus_abdominis", "transverse_abdominis", "glutes", "lats"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "quadratus_lumborum": "S7",
+    "rectus_abdominis": "T4",
+    "transverse_abdominis": "T4",
+    "glutes": "T3",
+    "lats": "T3"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["side-plank", "standing-side-bend-dumbbell", "pallof-press"],
+    "progression_to": ["cable-woodchopper", "landmine-rotation", "hanging-oblique-leg-raise"],
+    "alternatives": ["dumbbell-side-bend", "side-plank-with-reach", "russian-twist", "oblique-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand sideways to cable, working side AWAY from column",
+      "Feet shoulder-width, knees soft, weight evenly distributed",
+      "Grip handle with hand closest to the stack",
+      "Stack ribs over hips — pelvis level, neutral spine",
+      "Step out until cable is taut — feel tension before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Stań bokiem do wyciągu, strona pracująca ODWRÓCONA od kolumny",
+      "Stopy na szerokość barków, kolana lekko ugięte, ciężar równomiernie rozłożony",
+      "Złap rączkę ręką bliższą stosu obciążeń",
+      "Żebra ustawione nad biodrami — miednica wypoziomowana, neutralny kręgosłup",
+      "Odejdź tak, by linka była naprężona — poczuj napięcie przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Bend sideways at the waist — only the spine moves",
+      "Drive the elbow toward the opposite hip pocket",
+      "Hips and knees stay frozen — don't shift weight or rotate",
+      "Exhale hard at the bottom and squeeze the oblique for a beat",
+      "Return slowly — resist the cable for 2 seconds on the way up"
+    ],
+    "execution_cues_pl": [
+      "Zegnij się bocznie w pasie — porusza się tylko kręgosłup",
+      "Prowadź łokieć w kierunku biodra po przeciwnej stronie",
+      "Biodra i kolana zamrożone — nie przesuwaj ciężaru, nie obracaj się",
+      "Mocny wydech w dolnej pozycji, ściśnij mięsień skośny przez chwilę",
+      "Wracaj powoli — stawiaj opór lince przez 2 sekundy w drodze do góry"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating the torso instead of pure lateral flexion",
+        "faultPl": "Skręcanie tułowia zamiast czystego bocznego zgięcia",
+        "cause": "Wanting to 'reach further' the lifter twists toward the cable, turning the movement into an oblique twist instead of a side crunch",
+        "causePl": "W chęci 'sięgnięcia dalej' ćwiczący skręca się w stronę linki, zmieniając ruch w skręt zamiast bocznego crunchu",
+        "cue": "Imagine your body between two panes of glass — both shoulders stay in the same plane, only bend sideways",
+        "cuePl": "Wyobraź sobie ciało między dwiema szybami — oba barki w tej samej płaszczyźnie, zginaj się tylko w bok"
+      },
+      {
+        "fault": "Bending at the hips / pushing the hips out sideways",
+        "faultPl": "Zginanie w biodrach / wypychanie bioder w bok",
+        "cause": "Using glutes and hip abductors to swing the pelvis under the cable instead of contracting the obliques",
+        "causePl": "Wykorzystywanie pośladków i odwodzicieli biodra do przesuwania miednicy pod linką zamiast skurczu skośnych",
+        "cue": "Lock the pelvis level — feet rooted to the floor, hips don't shift. The movement happens ABOVE the belt line.",
+        "cuePl": "Zablokuj miednicę w poziomie — stopy wrośnięte w podłogę, biodra nie przesuwają się. Ruch dzieje się POWYŻEJ linii pasa."
+      },
+      {
+        "fault": "Using arm pull instead of oblique contraction",
+        "faultPl": "Ciągnięcie ramieniem zamiast skurczu mięśnia skośnego",
+        "cause": "Lat and triceps trying to do the work, bending the elbow to bring the handle down",
+        "causePl": "Mięsień najszerszy grzbietu i triceps próbują wykonać pracę, zginając łokieć by ściągnąć rączkę w dół",
+        "cue": "Keep the working arm straight (or fixed bend) — your arm is just a hook. The oblique pulls the ribcage down, the arm follows.",
+        "cuePl": "Trzymaj ramię pracujące proste (lub w stałym zgięciu) — ramię jest tylko hakiem. Mięsień skośny ściąga klatkę w dół, ręka podąża za nim."
+      },
+      {
+        "fault": "Too much weight, partial range of motion",
+        "faultPl": "Za duży ciężar, niepełny zakres ruchu",
+        "cause": "Ego loading — obliques are small muscles that don't tolerate heavy weight well, and excessive load also encourages hip shifting",
+        "causePl": "Ładowanie ego — skośne to małe mięśnie, które nie tolerują dużego ciężaru, a nadmiar obciążenia zachęca do przesuwania bioder",
+        "cue": "Drop the weight 30% and bend as far as your spine allows. Quality crunch with full ROM beats heavy half reps every time.",
+        "cuePl": "Zmniejsz ciężar o 30% i zegnij się tak daleko jak pozwala kręgosłup. Jakościowy crunch w pełnym zakresie pokonuje ciężkie połowiczne powtórzenia."
+      },
+      {
+        "fault": "Leaning sideways with the whole body (like a tree falling)",
+        "faultPl": "Pochylanie się w bok całym ciałem (jak padające drzewo)",
+        "cause": "Substituting hip and ankle motion for lateral spinal flexion — easy to do when the obliques are weak",
+        "causePl": "Zastępowanie ruchu w stawie biodrowym i kostce zamiast bocznego zgięcia kręgosłupa — łatwe gdy skośne są słabe",
+        "cue": "Pelvis stays flat and level — only the section from the belt to the armpit shortens. Watch yourself in a mirror.",
+        "cuePl": "Miednica pozostaje płaska i w poziomie — skraca się tylko odcinek od pasa do pachy. Obserwuj się w lustrze."
+      }
+    ],
+    "breathing": "Inhale at the top in the upright position. Forceful exhale during the lateral crunch — the exhale helps compress the ribcage on the working side and maximises oblique contraction. Inhale on the return to standing.",
+    "breathingPl": "Wdech w górnej pozycji w pionie. Mocny wydech podczas bocznego zwijania — wydech pomaga ścisnąć klatkę piersiową po stronie pracującej i maksymalizuje skurcz mięśnia skośnego. Wdech podczas powrotu do pionu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded lateral flexion under cable resistance places shear forces on the lumbar spine and can aggravate acute pain. Switch to isometric anti-lateral-flexion work (side plank, suitcase carry) until pain-free.",
+      "modificationPl": "Boczne zginanie pod oporem linki generuje siły ścinające w odcinku lędźwiowym i może nasilać ostry ból. Przejdź na izometryczne ćwiczenia anty-bocznego-zgięcia (deska boczna, walizkowy nosek) do czasu ustąpienia bólu.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "lumbar_disc_pathology",
+      "severity": "avoid",
+      "modification": "Combined lateral flexion + loading is contraindicated for disc herniations (McGill recommends avoiding loaded side-bending entirely). Use anti-rotation and anti-lateral-flexion exercises in neutral spine.",
+      "modificationPl": "Połączenie zgięcia bocznego z obciążeniem jest przeciwwskazane przy przepuklinach krążków (McGill zaleca całkowite unikanie skłonów bocznych z obciążeniem). Używaj ćwiczeń anty-rotacyjnych i anty-bocznego-zgięcia w neutralnej pozycji kręgosłupa.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "scoliosis",
+      "severity": "caution",
+      "modification": "Strengthen the convex side only or train both sides under qualified guidance — asymmetric loading can worsen lateral curvature if applied incorrectly. Consult a physiotherapist for side-specific programming.",
+      "modificationPl": "Wzmacniaj tylko stronę wypukłą lub trenuj obie strony pod okiem specjalisty — asymetryczne obciążanie może pogorszyć skrzywienie boczne jeśli zostanie źle zastosowane. Skonsultuj się z fizjoterapeutą w sprawie programowania dla konkretnej strony.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Holding the cable handle overhead may aggravate impingement. Use a low pulley with rope attachment held at hip level and crunch sideways pulling the rope down past the knee instead.",
+      "modificationPl": "Trzymanie rączki linki nad głową może nasilać konflikt podbarkowy. Zamiast tego użyj dolnej linki z linką pętlową trzymaną na wysokości biodra i wykonuj boczny crunch ciągnąc linkę w dół za kolano.",
+      "alternative": "dumbbell-side-bend"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 per side (hypertrophy) | 3x15-20 per side (endurance) | 4x8-12 per side (strength focus)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "cable-side-crunch.gif",
+    "frames_extracted": [
+      "frames/cable-side-crunch/frame_0_start.png",
+      "frames/cable-side-crunch/frame_1_early.png",
+      "frames/cable-side-crunch/frame_2_mid.png",
+      "frames/cable-side-crunch/frame_3_late.png",
+      "frames/cable-side-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/cable-side-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): pozycja stojąca przy wyciągu, prawa ręka wyciągnięta w górę trzyma rączkę linki idącej do wysokiego bloczka, tułów wyprostowany, lewa ręka swobodnie wzdłuż ciała. Wyraźnie podświetlone są lewe mięśnie skośne brzucha (czerwone na ilustracji). Klatka 2 (mid): tułów wyraźnie pochylony w lewo (od linki) — boczne zgięcie kręgosłupa w płaszczyźnie czołowej, prawa ręka nadal w górze (działa jako stały punkt zaczepienia), lewa ręka zsuwa się po udzie. Miednica wciąż wypoziomowana, stopy nie odrywają się od podłogi. Klatka 4 (end): powrót do pozycji wyjściowej. Wniosek: jest to STOJĄCY wariant (nie klęczący jak czasem opisywany cable kneeling oblique crunch), wykonywany BOKIEM do wyciągu z górną linką, ruch to czyste boczne zgięcie kręgosłupa (lateral flexion) z dala od kolumny. Klasyfikacja: core_lateral_flexion (boczne zgięcie kręgosłupa), isolation (tylko jeden staw — kręgosłup w płaszczyźnie czołowej), unilateral (trenuje jedną stronę na raz), plane=frontal, force=pull (skurcz koncentryczny skośnych). Mięsień główny: obliques (P9 — dominujący ruch boczne zgięcie). Mięsień drugorzędny: quadratus_lumborum (S7 — silny stabilizator boczny i lateral flexor), rectus_abdominis tylko jako stabilizator T4. Nazwa PL: 'Side crunch z wyciągu' — najczęstsza forma używana w polskich siłowniach (zachowuje 'side crunch' jako termin techniczny, dodaje 'z wyciągu' jako lokalizację). Aliasy obejmują formy opisowe ('boczne zgięcie tułowia z wyciągu') i potoczne. Difficulty=5/10, level=intermediate (wymaga koordynacji izolacji obliques bez wsparcia rotacji ani biodra). Calories/kg/h=3.5 (ćwiczenie izolowane małej grupy mięśniowej, niskie zaangażowanie systemu). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["cable", "obliques", "core", "isolation", "unilateral", "lateral_flexion", "gym", "frontal_plane"]
+}

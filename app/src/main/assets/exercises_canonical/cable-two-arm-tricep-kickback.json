@@ -1,0 +1,203 @@
+{
+  "id": "cable-two-arm-tricep-kickback",
+  "name": "Cable Two-Arm Tricep Kickback",
+  "namePl": "Cable tricep kickback oburącz",
+  "aliases": ["double cable tricep kickback", "bilateral cable kickback", "two-arm cable triceps extension bent over"],
+  "aliasesPl": ["prostowanie ramion w tył oburącz z wyciągów", "tricep kickback z dwóch wyciągów dolnych", "kickback oburącz cable", "prostowanie obu ramion z wyciągów dolnych w opadzie"],
+
+  "description": "Bilateral isolation exercise for the triceps performed in a bent-over stance between two low cable pulleys. With D-handles in each hand and both elbows pinned high against the ribs, the lifter simultaneously extends both forearms backward against constant cable tension. Unlike the dumbbell version, the cable line of pull stays horizontal throughout the range, keeping the long and lateral heads of the triceps loaded even in the fully shortened, peak-contracted position. A popular finisher movement for arm size and the elusive 'horseshoe' lateral head.",
+  "descriptionPl": "Obustronne ćwiczenie izolowane na triceps wykonywane w opadzie tułowia między dwoma dolnymi wyciągami. Z uchwytami typu D-handle w obu dłoniach i oboma łokciami przyklejonymi wysoko do żeber, ćwiczący jednocześnie prostuje oba przedramiona w tył przeciwko stałemu naciągowi linki. W odróżnieniu od wariantu z hantlami, kierunek naciągu linki pozostaje poziomy przez cały zakres ruchu, dzięki czemu głowa długa i boczna tricepsa są obciążone nawet w pełnym skróceniu w pozycji szczytowego skurczu. Popularne ćwiczenie wykończeniowe na masę ramion i charakterystyczną 'podkowę' głowy bocznej.",
+
+  "instructions": [
+    "Set both cable pulleys to the lowest position and attach a D-handle to each. Stand between the two stacks facing away from neither — you should be roughly centered, an arm's length out so the cables are slightly tensioned at the start.",
+    "Grab the right handle with the right hand and the left handle with the left hand using a neutral (palms-facing) grip.",
+    "Hinge at the hips until your torso is roughly 30-45° above horizontal. Soft knees, neutral spine, chest proud, gaze a foot or two ahead on the floor.",
+    "Bring both upper arms up and back so they are parallel to the torso, elbows pinned tight to your sides at rib-cage level. This is the start position.",
+    "Keeping the upper arms completely still, extend both elbows simultaneously by driving the handles back and slightly out until both arms are fully straight behind you and the triceps are maximally contracted.",
+    "Pause for a one-count and squeeze hard — at this point the cable is still pulling, so you must actively hold lockout, not let momentum carry you.",
+    "Lower under control over 2-3 seconds back to a 90° elbow angle, letting the cables pull your forearms forward. Do not let the upper arms drop from their pinned position.",
+    "Reset, breathe, and repeat. Both arms move in perfect sync — if one finishes before the other, lower the weight."
+  ],
+  "instructionsPl": [
+    "Ustaw oba bloczki wyciągów na najniższej pozycji i przypnij do każdego uchwyt typu D-handle. Stań pomiędzy obydwoma stosami obciążeń, mniej więcej centralnie, w odległości jednej długości ramienia tak, by linki były lekko napięte już na starcie.",
+    "Złap prawy uchwyt prawą ręką, a lewy lewą — chwyt neutralny (dłonie zwrócone do siebie).",
+    "Pochyl się w biodrach aż tułów znajdzie się około 30-45° nad poziomem. Kolana lekko ugięte, kręgosłup neutralny, klatka wypchnięta, wzrok skierowany metr przed siebie na podłogę.",
+    "Unieś obie ramiona ponad łokciem do góry i do tyłu tak, by były równoległe do tułowia — łokcie przyklejone do boków tułowia na wysokości klatki piersiowej. To pozycja startowa.",
+    "Trzymając ramiona ponad łokciem całkowicie nieruchomo, jednocześnie wyprostuj oba łokcie, prowadząc uchwyty w tył i lekko na zewnątrz, aż oba ramiona będą w pełni wyprostowane za plecami a triceps będzie maksymalnie napięty.",
+    "Zatrzymaj się na sekundę i mocno spinaj — w tym punkcie linka nadal ciągnie, więc musisz aktywnie utrzymać wyprost, a nie pozwolić by pęd doniósł ciężar.",
+    "Opuszczaj kontrolowanie przez 2-3 sekundy do kąta 90° w łokciach, pozwalając linkom przyciągnąć przedramiona do przodu. Ramiona ponad łokciem nie mogą opuścić się z zafiksowanej pozycji.",
+    "Zresetuj się, weź oddech, powtórz. Obie ręce poruszają się idealnie zsynchronizowane — jeśli jedna kończy ruch przed drugą, zmniejsz ciężar."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["posterior_deltoid", "rhomboids", "lower_trapezius", "erector_spinae", "core", "hamstrings", "gluteus_maximus"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "posterior_deltoid": "S4",
+    "rhomboids": "T3",
+    "lower_trapezius": "T2",
+    "erector_spinae": "T4",
+    "core": "T3",
+    "hamstrings": "T2",
+    "gluteus_maximus": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "d_handle"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-tricep-kickback", "cable-tricep-pushdown"],
+    "progression_to": ["cable-tricep-overhead-extension", "single-arm-cable-kickback-heavy"],
+    "alternatives": ["dumbbell-tricep-kickback", "cable-tricep-pushdown", "rope-tricep-pushdown", "bench-dip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both pulleys at the bottom, D-handle on each",
+      "Stand centered between the stacks, neutral grip",
+      "Hinge to 30-45°, soft knees, neutral spine",
+      "Upper arms parallel to torso, elbows glued to ribs",
+      "Cables already under slight tension at the start"
+    ],
+    "setup_cues_pl": [
+      "Oba bloczki na dole, D-handle w każdej ręce",
+      "Stań centralnie między stosami, chwyt neutralny",
+      "Pochyl tułów do 30-45°, kolana lekko ugięte, plecy neutralne",
+      "Ramiona ponad łokciem równolegle do tułowia, łokcie przyklejone do żeber",
+      "Linki już lekko napięte w pozycji startowej"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms freeze in place",
+      "Drive both handles straight back, slightly outward, in perfect sync",
+      "Squeeze the triceps hard at full lockout — hold the contraction",
+      "Resist the cable on the way back, 2-3 seconds eccentric",
+      "Torso stays still — no rocking up and down with each rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem zamrożone w miejscu",
+      "Prowadź oba uchwyty prosto w tył, lekko na zewnątrz, idealnie zsynchronizowane",
+      "Mocno spinaj triceps w pełnym wyproście — utrzymaj skurcz",
+      "Stawiaj opór lince w fazie negatywnej, 2-3 sekundy eccentric",
+      "Tułów nieruchomy — żadnego bujania góra-dół przy każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms drop / elbows drift down and forward",
+        "faultPl": "Ramiona ponad łokciem opadają / łokcie wędrują w dół i do przodu",
+        "cause": "Triceps fatigue, weight too heavy, or insufficient upper-back tension to hold the humerus in place",
+        "causePl": "Zmęczenie tricepsa, zbyt duży ciężar, lub niewystarczające napięcie górnego grzbietu by utrzymać kość ramienną w miejscu",
+        "cue": "Lock the upper arms against your ribs and pretend they are bolted there. If they slip, the set is over.",
+        "cuePl": "Zablokuj ramiona ponad łokciem przy żebrach i wyobraź sobie że są tam przyśrubowane. Jeśli ześlizgują się — seria skończona."
+      },
+      {
+        "fault": "One arm finishes before the other (asymmetric lockout)",
+        "faultPl": "Jedna ręka kończy ruch przed drugą (asymetryczny wyprost)",
+        "cause": "Dominant-side strength advantage, uneven cable setup, or improper foot positioning",
+        "causePl": "Przewaga siłowa strony dominującej, nierówne ustawienie linek, lub złe ustawienie stóp",
+        "cue": "Reduce weight until both arms can extend in perfect sync. Use the weaker arm to set the tempo.",
+        "cuePl": "Zmniejsz ciężar aż obie ręce będą w stanie wyprostować się idealnie zsynchronizowane. Tempo dyktuje słabsza ręka."
+      },
+      {
+        "fault": "Using shoulder extension to throw the handles back",
+        "faultPl": "Wyrzucanie uchwytów w tył wyprostem w stawie barkowym",
+        "cause": "Substituting posterior delts and lats for weak triceps, trying to lift too much weight",
+        "causePl": "Zastępowanie tylnych aktonów barków i najszerszych zamiast słabego tricepsa, próba uniesienia zbyt dużego ciężaru",
+        "cue": "If your upper arm swings backward during the lift, you are cheating. Pin the elbows and use triceps only.",
+        "cuePl": "Jeśli ramię ponad łokciem odchyla się w tył podczas ruchu, oszukujesz. Przyklej łokcie i używaj tylko tricepsa."
+      },
+      {
+        "fault": "Torso bouncing or rounding the lower back",
+        "faultPl": "Bujanie tułowia lub okrąglenie odcinka lędźwiowego",
+        "cause": "Weak posterior chain, fatigue from holding the bent-over position, or using hip momentum to assist",
+        "causePl": "Słaby tylny łańcuch mięśniowy, zmęczenie z utrzymywania pozycji w opadzie, lub pomaganie sobie pędem z bioder",
+        "cue": "Brace your core and squeeze your glutes. If the back rounds, stand up between reps to reset.",
+        "cuePl": "Napnij brzuch i zaciśnij pośladki. Jeśli plecy się zaokrąglają, wstawaj między powtórzeniami żeby zresetować postawę."
+      },
+      {
+        "fault": "Incomplete lockout at the back (cutting the rep short)",
+        "faultPl": "Niepełny wyprost w fazie końcowej (skracanie powtórzenia)",
+        "cause": "Avoiding the hardest part of the cable curve at peak contraction, ego lifting with heavier weight",
+        "causePl": "Unikanie najtrudniejszej części krzywej oporu w szczytowym skurczu, ego z większym ciężarem",
+        "cue": "Lock both elbows completely straight every rep. Hold for a one-count at the back.",
+        "cuePl": "W pełni wyprostuj oba łokcie w każdym powtórzeniu. Zatrzymaj na sekundę w tylnej pozycji."
+      }
+    ],
+    "breathing": "Inhale at the start with elbows bent at 90°. Exhale forcefully as you extend both arms back to lockout. Inhale on the controlled return. Maintain a light brace throughout the entire set to protect the lower back in the hinged position.",
+    "breathingPl": "Wdech w pozycji startowej z łokciami ugiętymi do 90°. Wydychaj energicznie podczas prostowania obu ramion do wyprostu. Wdech w fazie kontrolowanego powrotu. Utrzymuj lekkie napięcie brzucha przez całą serię żeby chronić odcinek lędźwiowy w pozycji opadu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy_distal_triceps",
+      "severity": "modify",
+      "modification": "Heavy locked-out position stresses the distal triceps tendon. Stop short of full extension, drop weight by 30-40%, and use 12-15 rep ranges with slow tempo until pain-free.",
+      "modificationPl": "Pozycja pełnego wyprostu obciąża dystalny przyczep tricepsa. Nie wyprostowuj łokci w pełni, zmniejsz ciężar o 30-40% i pracuj w zakresie 12-15 powtórzeń z wolnym tempem do ustąpienia bólu.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "lower_back_pain_or_disc_issues",
+      "severity": "avoid",
+      "modification": "The sustained hip-hinge position under load is high-risk for symptomatic lumbar conditions. Avoid until the spine tolerates loaded hinging. Substitute a non-hinged triceps movement.",
+      "modificationPl": "Utrzymywany opad tułowia pod obciążeniem to wysokie ryzyko przy objawowych dolegliwościach lędźwiowych. Unikaj do czasu, aż kręgosłup zniesie obciążone pochylenie. Zastąp ćwiczeniem na triceps bez opadu.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "shoulder_instability_or_impingement",
+      "severity": "caution",
+      "modification": "Holding the humerus pinned in extension can aggravate posterior cuff issues. Reduce range, keep weight moderate, and prioritize a controlled tempo over loading.",
+      "modificationPl": "Utrzymywanie kości ramiennej w wyproście może drażnić tylną część stożka rotatorów. Zmniejsz zakres ruchu, używaj umiarkowanego ciężaru i postaw na kontrolowane tempo zamiast obciążenia.",
+      "alternative": "dumbbell-tricep-kickback"
+    },
+    {
+      "condition": "hamstring_strain_or_low_back_flexibility_limit",
+      "severity": "modify",
+      "modification": "If you cannot hinge to 30-45° without rounding the lumbar spine, perform the exercise with a higher torso angle (60° above horizontal) or use a supported bench-version with chest pad.",
+      "modificationPl": "Jeśli nie możesz pochylić się do 30-45° bez okrąglenia odcinka lędźwiowego, wykonuj ćwiczenie z wyższym kątem tułowia (60° nad poziomem) lub użyj wersji wspartej o ławkę z poduszką piersiową.",
+      "alternative": "dumbbell-tricep-kickback"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x15-20 (pump/finisher) | 2-3x12-15 (constant tension focus)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-two-arm-tricep-kickback.gif",
+    "frames_extracted": [
+      "frames/cable-two-arm-tricep-kickback/frame_0_start.png",
+      "frames/cable-two-arm-tricep-kickback/frame_1_early.png",
+      "frames/cable-two-arm-tricep-kickback/frame_2_mid.png",
+      "frames/cable-two-arm-tricep-kickback/frame_3_late.png",
+      "frames/cable-two-arm-tricep-kickback/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-two-arm-tricep-kickback"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): ćwiczący w opadzie tułowia ok. 30-45° między dwoma dolnymi wyciągami, oba ramiona ponad łokciem przyklejone do żeber równolegle do tułowia, oba łokcie ugięte do ~90°, D-handles w obu rękach chwytem neutralnym, linki napięte. Triceps obu ramion oraz tylne aktony barków podświetlone na czerwono. Frame 2 (mid): oba przedramiona całkowicie wyprostowane w tył w idealnej synchronizacji, łokcie nadal przy bokach tułowia, pełna pozycja zablokowana — szczytowy skurcz obu tricepsów widoczny. Frame 4 (end): powrót do pozycji startowej z łokciami ugiętymi do 90°, ramiona ponad łokciem nie opuściły się. Tułów stoi stabilnie przez cały ruch — opad pozostaje stały. Ćwiczenie jednoznacznie zidentyfikowane jako Cable Two-Arm Tricep Kickback (kickback oburącz z dwóch dolnych wyciągów cable). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "kickback", "upper_body", "bent_over", "constant_tension", "finisher"]
+}

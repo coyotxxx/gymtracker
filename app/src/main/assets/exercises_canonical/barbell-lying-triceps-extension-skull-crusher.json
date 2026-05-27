@@ -1,0 +1,200 @@
+{
+  "id": "barbell-lying-triceps-extension-skull-crusher",
+  "name": "Barbell Lying Triceps Extension (Skull Crusher)",
+  "namePl": "Skull crusher ze sztangą (lying tricep extension)",
+  "aliases": ["skull crusher", "lying triceps extension", "french press lying", "barbell skull crusher", "nose breaker"],
+  "aliasesPl": ["wyciskanie francuskie leżąc ze sztangą", "skull crushers", "łamacz czaszki", "wyprosty trójgłowego leżąc", "francuzy leżąc"],
+
+  "description": "Classic lying triceps isolation performed flat on a bench with a straight barbell held in a narrow pronated (overhand) grip. The bar is lowered behind or just above the forehead while the upper arms stay angled back slightly past vertical, creating a long stretch on the long head of the triceps. A bodybuilding staple for triceps mass since the golden era, named for the consequences of losing control of the bar.",
+  "descriptionPl": "Klasyczne izolowane ćwiczenie na triceps wykonywane na ławce poziomej ze sztangą prostą trzymaną wąskim chwytem nachwytem (dłonie skierowane w stronę nóg). Sztangę opuszcza się za czoło lub nad czoło, a ramiona ponad łokciem są lekko cofnięte poza pion — to ustawienie mocno rozciąga głowę długą trójgłowego ramienia. Ćwiczenie bazowe na masę tricepsa od czasów złotej ery kulturystyki, którego polska/angielska nazwa nawiązuje do skutków utraty kontroli nad sztangą.",
+
+  "instructions": [
+    "Load the barbell and lie flat on a bench with feet planted firmly on the floor. Head supported on the pad.",
+    "Grip the bar with a pronated (palms facing feet) grip about shoulder-width or slightly narrower. An EZ-bar can be used to reduce wrist strain.",
+    "Press the bar up to lockout above the upper chest, then tilt the upper arms back so they point slightly behind vertical toward the top of your head. This angle keeps tension on the triceps in the stretched position.",
+    "Lock the upper arms in place — only the forearms move. Inhale and lower the bar by bending at the elbows.",
+    "Lower the bar in a controlled arc to just above or behind the forehead. Do not flare the elbows out wide.",
+    "Drive the bar back up by extending at the elbows. Exhale on the way up. Stop short of full lockout to keep tension on the triceps.",
+    "Keep the upper arms in the same fixed position throughout the entire set — they should not swing forward and backward.",
+    "Finish all reps under control. Bring the bar to a safe rack position or hand it off to a spotter rather than dropping it."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę i połóż się płasko na ławce, stopy mocno oparte o podłogę. Głowa wsparta o ławkę.",
+    "Złap sztangę nachwytem (dłonie skierowane w stronę stóp) na szerokość barków lub nieco węziej. Można użyć sztangi łamanej aby zmniejszyć obciążenie nadgarstków.",
+    "Wyciśnij sztangę do pełnego wyprostu nad górną klatką piersiową, a następnie odchyl ramiona ponad łokciem lekko poza pion, w stronę szczytu głowy. Taki kąt utrzymuje napięcie na tricepsie w pozycji rozciągniętej.",
+    "Zablokuj ramiona ponad łokciem w miejscu — pracują tylko przedramiona. Wdech i opuszczaj sztangę zginając łokcie.",
+    "Opuszczaj sztangę po kontrolowanym łuku tuż nad lub za czoło. Nie rozkładaj łokci na boki.",
+    "Wyprostuj łokcie i wciśnij sztangę do góry. Wydech podczas wypychania. Zatrzymaj ruch tuż przed pełnym wyprostem aby zachować napięcie na tricepsie.",
+    "Utrzymuj ramiona ponad łokciem w tej samej, ustalonej pozycji przez całą serię — nie mogą wahać się do przodu i do tyłu.",
+    "Zakończ wszystkie powtórzenia pod kontrolą. Odstaw sztangę do bezpiecznej pozycji lub oddaj asekurującemu — nie upuszczaj jej."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["anterior_deltoid", "forearm_flexors", "core", "latissimus_dorsi"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S4",
+    "anterior_deltoid": "T3",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "latissimus_dorsi": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench"],
+    "optional": ["ez_bar", "weight_plates", "collars", "wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-triceps-extension", "close-grip-bench-press"],
+    "progression_to": ["incline-skull-crusher", "decline-skull-crusher", "jm-press", "overhead-barbell-extension"],
+    "alternatives": ["ez-bar-skull-crusher", "dumbbell-skull-crusher", "cable-overhead-triceps-extension", "close-grip-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat, feet planted, head supported on pad",
+      "Pronated grip about shoulder-width on a straight or EZ-bar",
+      "Press to lockout, then tilt upper arms slightly back of vertical",
+      "Elbows fixed — point them toward the ceiling, not flared out",
+      "Brace core and pin shoulder blades to the bench"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko, stopy oparte, głowa wsparta o ławkę",
+      "Chwyt nachwytem na szerokość barków, sztanga prosta lub łamana",
+      "Wyciśnij do pełnego wyprostu i odchyl ramiona lekko poza pion",
+      "Łokcie ustalone — skieruj je w sufit, nie rozkładaj na boki",
+      "Napnij brzuch i dociśnij łopatki do ławki"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay locked at the same angle",
+      "Lower to just above or behind the forehead under control",
+      "Feel a deep stretch on the long head of the triceps at the bottom",
+      "Drive the bar up with the triceps, not by swinging the shoulders",
+      "Stop short of full lockout to keep constant tension"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome pod tym samym kątem",
+      "Opuszczaj sztangę tuż nad lub za czoło, pod kontrolą",
+      "Poczuj głębokie rozciągnięcie głowy długiej tricepsa w dolnej pozycji",
+      "Wypychaj sztangę tricepsem, nie wahaniem barków",
+      "Zatrzymaj ruch tuż przed pełnym wyprostem aby zachować ciągłe napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flare outward during the descent",
+        "faultPl": "Łokcie rozchodzą się na boki podczas opuszczania",
+        "cause": "Load too heavy, weak triceps, or trying to convert the lift into a close-grip press",
+        "causePl": "Zbyt duży ciężar, słaby triceps, lub próba przekształcenia ćwiczenia w wyciskanie wąskim chwytem",
+        "cue": "Point your elbows at the ceiling and keep them there. Reduce weight if they keep drifting.",
+        "cuePl": "Skieruj łokcie w sufit i utrzymaj je tam. Zmniejsz ciężar jeśli wciąż się rozchodzą."
+      },
+      {
+        "fault": "Upper arms swinging forward and back (turning it into a pullover-press)",
+        "faultPl": "Ramiona ponad łokciem wahają się do przodu i do tyłu (zamiana na pullover-press)",
+        "cause": "Cheating to grind out reps after triceps fatigue, no fixed reference point for the elbows",
+        "causePl": "Oszukiwanie aby wycisnąć kolejne powtórzenia po zmęczeniu tricepsa, brak ustalonego punktu odniesienia dla łokci",
+        "cue": "Lock the upper arms in one angle and keep them there. Imagine your elbows are bolted in place.",
+        "cuePl": "Zablokuj ramiona ponad łokciem pod jednym kątem i tam je utrzymaj. Wyobraź sobie że łokcie są przykręcone."
+      },
+      {
+        "fault": "Bar lowered too far behind the head with loose form",
+        "faultPl": "Sztanga opuszczana zbyt daleko za głowę bez kontroli",
+        "cause": "Lack of control in the stretched position, ego lifting at the bottom range",
+        "causePl": "Brak kontroli w pozycji rozciągniętej, ego w dolnym zakresie ruchu",
+        "cue": "Stop the bar when you feel a strong stretch — don't chase extra range with momentum. Always have a spotter or safety rails.",
+        "cuePl": "Zatrzymaj sztangę gdy poczujesz mocne rozciągnięcie — nie goń dodatkowego zakresu rozpędem. Zawsze miej asekurującego lub kraty bezpieczeństwa."
+      },
+      {
+        "fault": "Wrists hyperextending (collapsing back) under load",
+        "faultPl": "Przeprostowanie nadgarstków (zapadanie się) pod obciążeniem",
+        "cause": "Straight bar at a narrow grip stresses wrists, weak wrist extensors, or wrist position too loose",
+        "causePl": "Sztanga prosta przy wąskim chwycie obciąża nadgarstki, słabe prostowniki nadgarstka lub nadgarstek za luźno trzymany",
+        "cue": "Squeeze the bar hard and keep wrists straight in line with forearms. Switch to EZ-bar if pain persists.",
+        "cuePl": "Mocno ściskaj sztangę i trzymaj nadgarstki w linii z przedramieniem. Przejdź na sztangę łamaną jeśli ból nie ustępuje."
+      },
+      {
+        "fault": "Bouncing the bar off the forehead or skull",
+        "faultPl": "Odbijanie sztangi od czoła lub czaszki",
+        "cause": "Loss of eccentric control, fatigue, dropping the bar instead of lowering it",
+        "causePl": "Utrata kontroli ekscentrycznej, zmęczenie, upuszczanie sztangi zamiast opuszczania",
+        "cue": "Lower the bar in 2-3 seconds with active control. Stop above the forehead — the bar should never touch the head.",
+        "cuePl": "Opuszczaj sztangę przez 2-3 sekundy aktywnie ją kontrolując. Zatrzymaj nad czołem — sztanga nigdy nie powinna dotknąć głowy."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering toward the forehead). Exhale during the concentric (pressing back up). Keep a light brace through the lower back to prevent arching off the bench.",
+    "breathingPl": "Wdech podczas fazy ekscentrycznej (opuszczanie ku czołu). Wydech podczas fazy koncentrycznej (wypychanie do góry). Utrzymuj lekkie napięcie w odcinku lędźwiowym aby zapobiec mostkowi nad ławką."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_pain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Skull crushers are notorious for irritating elbows. Switch to EZ-bar (less wrist/elbow torque), reduce load and slow down the eccentric. Avoid full extension under heavy load.",
+      "modificationPl": "Skull crushery są znane z drażnienia łokci. Przejdź na sztangę łamaną (mniej skręcania nadgarstka i łokcia), zmniejsz ciężar i spowolnij fazę negatywną. Unikaj pełnego wyprostu pod dużym obciążeniem.",
+      "alternative": "ez-bar-skull-crusher"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar at a narrow pronated grip is the most aggressive wrist position. Use EZ-bar (angled grip) or dumbbells. Add wrist wraps if helpful.",
+      "modificationPl": "Sztanga prosta przy wąskim nachwycie to najbardziej agresywne ustawienie nadgarstka. Użyj sztangi łamanej (kątowy chwyt) lub hantli. Dodaj usztywniacze nadgarstka jeśli pomagają.",
+      "alternative": "ez-bar-skull-crusher"
+    },
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "modify",
+      "modification": "Tilting the upper arms back loads the shoulder in flexion. Keep upper arms more vertical (reduces triceps stretch but spares the shoulder) or switch to a press-based triceps variant.",
+      "modificationPl": "Odchylenie ramion ponad łokciem do tyłu obciąża bark w zgięciu. Utrzymuj ramiona bardziej pionowo (zmniejsza rozciągnięcie tricepsa ale oszczędza bark) lub przejdź na wariant tricepsa oparty na wyciskaniu.",
+      "alternative": "close-grip-bench-press"
+    },
+    {
+      "condition": "no_spotter_no_safety_rails",
+      "severity": "caution",
+      "modification": "The bar travels over the face — failure without safety means injury. Use safety rails set just above eye level, a spotter, or lighter dumbbells if training alone.",
+      "modificationPl": "Sztanga przechodzi nad twarzą — awaria bez asekuracji oznacza kontuzję. Ustaw kraty bezpieczeństwa tuż nad poziomem oczu, miej asekurującego lub używaj lżejszych hantli gdy trenujesz sam.",
+      "alternative": "dumbbell-skull-crusher"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3-4x6-8 (strength) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-lying-triceps-extension-skull-crusher.gif",
+    "frames_extracted": [
+      "frames/barbell-lying-triceps-extension-skull-crusher/frame_0_start.png",
+      "frames/barbell-lying-triceps-extension-skull-crusher/frame_1_early.png",
+      "frames/barbell-lying-triceps-extension-skull-crusher/frame_2_mid.png",
+      "frames/barbell-lying-triceps-extension-skull-crusher/frame_3_late.png",
+      "frames/barbell-lying-triceps-extension-skull-crusher/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-lying-triceps-extension-skull-crusher"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start = dolna pozycja): osoba leży płasko na ławce, chwyt nachwytem (pronated) wąski na sztandze prostej, sztanga opuszczona za głowę/za czoło, łokcie zgięte, ramiona ponad łokciem lekko cofnięte poza pion. Triceps (głowa długa) wyraźnie podświetlony na czerwono w obu ramionach. Frame 2 (mid = górna pozycja): sztanga wyciśnięta nad górną klatką piersiową, ramiona prawie wyprostowane, ramiona ponad łokciem cofnięte lekko poza pion (klasyczny kąt skull crushera, nie pionowy jak w close-grip press). Frame 4 (end): powrót do pozycji dolnej z 'ghostem' górnej fazy widocznym powyżej — ćwiczenie cykliczne. Klasyczny skull crusher leżąc, nie wariant pochyły/skośny. Mechanic=isolation (elbow extension), plane=sagittal, force=push, bilateral. Primary: triceps_brachii (głównie głowa długa przez rozciągnięcie z cofniętym ramieniem). Wszystkie pola PL napisane od zera, nie tłumaczenia.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "barbell", "upper_body", "classic", "lying", "skull_crusher"]
+}

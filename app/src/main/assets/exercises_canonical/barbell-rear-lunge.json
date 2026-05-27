@@ -1,0 +1,206 @@
+{
+  "id": "barbell-rear-lunge",
+  "name": "Barbell Rear Lunge",
+  "namePl": "Wykrok w tył ze sztangą (reverse lunge)",
+  "aliases": ["barbell reverse lunge", "barbell back lunge", "back-stepping lunge", "rear-foot lunge"],
+  "aliasesPl": ["wykrok w tył ze sztangą", "reverse lunge ze sztangą", "wykroki wsteczne ze sztangą", "wykrok do tyłu na karku", "wsteczny wykrok barbell"],
+
+  "description": "Unilateral lower-body compound exercise. Athlete stands tall with the barbell racked on the upper traps, steps one leg backward into a split stance, lowers the back knee toward the floor until both knees form roughly 90°, then drives the front heel into the ground to return to standing. The reverse step direction shifts emphasis from quadriceps toward the glutes and reduces anterior knee shear compared with forward lunges — the front knee travels less and the hip travels more. Knee-friendly choice for athletes with patellar issues.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała. Trenujący stoi wyprostowany ze sztangą opartą na górnej części trapezów, wykonuje krok w tył jedną nogą do pozycji wykroku, opuszcza tylne kolano w kierunku podłogi aż oba kolana utworzą około 90°, a następnie wypycha się przez piętę przedniej nogi z powrotem do pozycji stojącej. Kierunek kroku w tył przesuwa nacisk z czworogłowych na pośladki i zmniejsza siły ścinające na przednie kolano w porównaniu z wykrokiem w przód — przednie kolano przemieszcza się mniej, a biodro więcej. Przyjazna dla kolan opcja dla osób z dolegliwościami rzepkowo-udowymi.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load both sides with light to moderate weight and secure with collars.",
+    "Step under the bar and place it across your upper traps. Grip slightly wider than shoulder-width, elbows down, chest up.",
+    "Unrack the bar by extending your legs. Take two controlled steps back into open space. Stand tall with feet hip-width apart.",
+    "Brace your core, draw shoulder blades back, look forward. Take a deep breath and hold (Valsalva).",
+    "Step backward with one leg into a long stride (about one and a half of your normal step). Land softly on the ball of the rear foot — the front foot stays flat where it started.",
+    "Lower your body straight down by bending both knees. The back knee descends toward the floor (hover 2-3 cm above), front knee tracks over the front ankle.",
+    "Descend until the front thigh is parallel to the floor and the back knee almost touches the ground. Front knee should reach approximately 90° of flexion.",
+    "Drive up by pushing through the front heel and squeezing the front glute. Keep your torso upright throughout.",
+    "Bring the back leg forward to meet the front leg, returning to a fully upright stance. Exhale near the top.",
+    "Alternate legs each rep, or complete all reps on one side before switching, depending on programming."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj z obu stron lekkim lub średnim obciążeniem i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów. Chwyt nieco szerszy niż barki, łokcie w dół, klatka w górze.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się dwoma kontrolowanymi krokami na wolną przestrzeń. Wyprostowana sylwetka, stopy na szerokość bioder.",
+    "Napnij brzuch, ściągnij łopatki w tył, wzrok prosto. Weź głęboki wdech i przytrzymaj (Valsalva).",
+    "Wykonaj długi krok w tył jedną nogą (około 1,5 normalnej długości kroku). Wyląduj miękko na śródstopiu tylnej nogi — przednia stopa zostaje płasko tam gdzie była.",
+    "Opuść ciało prosto w dół zginając oba kolana. Tylne kolano schodzi w kierunku podłogi (zatrzymaj 2-3 cm nad), przednie kolano pracuje nad kostką przedniej stopy.",
+    "Schodź aż przednie udo będzie równoległe do podłogi, a tylne kolano prawie dotknie ziemi. Przednie kolano powinno osiągnąć około 90° zgięcia.",
+    "Wypchnij się w górę przez piętę przedniej nogi i ścisnij pośladek przedniej nogi. Utrzymuj tułów pionowo przez cały ruch.",
+    "Przysuń tylną nogę do przedniej, wracając do pełnej pozycji stojącej. Wydech blisko górnej pozycji.",
+    "Zmieniaj nogi co powtórzenie lub wykonaj całą serię na jedną stronę przed zmianą — zależnie od programu treningowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "erector_spinae", "calves"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "quadriceps": "P8",
+    "hamstrings": "S7",
+    "adductors": "S6",
+    "gluteus_medius": "S7",
+    "core": "S6",
+    "erector_spinae": "T4",
+    "calves": "T4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "lifting_shoes", "collars"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-reverse-lunge", "dumbbell-reverse-lunge", "goblet-reverse-lunge", "barbell-back-squat"],
+    "progression_to": ["deficit-reverse-lunge", "bulgarian-split-squat", "barbell-walking-lunge", "barbell-rear-foot-elevated-split-squat"],
+    "alternatives": ["dumbbell-reverse-lunge", "barbell-lunge", "barbell-split-squat", "smith-reverse-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps — same setup as back squat",
+      "Grip slightly wider than shoulders, elbows down",
+      "Feet hip-width apart at the start, weight in the front foot",
+      "Chest up, core braced, shoulder blades retracted",
+      "Eyes forward at a fixed point — head neutral"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na górnej części trapezów — to samo ustawienie co w przysiadzie tylnym",
+      "Chwyt nieco szerszy niż barki, łokcie w dół",
+      "Stopy na szerokość bioder w pozycji startowej, ciężar na przedniej nodze",
+      "Klatka w górze, brzuch napięty, łopatki ściągnięte",
+      "Wzrok prosto w stały punkt — głowa neutralna"
+    ],
+    "execution_cues": [
+      "Step BACK, not forward — the front foot does not move",
+      "Land softly on the ball of the rear foot, heel up",
+      "Drop the back knee straight down toward the floor",
+      "Drive through the front heel and squeeze the front glute up",
+      "Torso stays vertical — no forward lean"
+    ],
+    "execution_cues_pl": [
+      "Krok W TYŁ, nie do przodu — przednia stopa się nie rusza",
+      "Wyląduj miękko na śródstopiu tylnej nogi, pięta w górze",
+      "Opuszczaj tylne kolano prosto w dół do podłogi",
+      "Wypychaj się przez piętę przedniej nogi i ściskaj przedni pośladek w drodze w górę",
+      "Tułów zostaje pionowy — bez pochylania do przodu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Stepping back too short — turns into a quarter-squat",
+        "faultPl": "Za krótki krok w tył — zamienia się w przysiad ćwierć",
+        "cause": "Underestimating stride length; fear of losing balance backward",
+        "causePl": "Niedoszacowanie długości kroku; strach przed utratą równowagi w tył",
+        "cue": "Step back about 1.5x your normal walking step — front shin should stay vertical at the bottom",
+        "cuePl": "Krok w tył około 1,5 razy dłuższy niż normalny — piszczel przedniej nogi pionowo na dole"
+      },
+      {
+        "fault": "Front foot shifts or pivots when stepping back",
+        "faultPl": "Przednia stopa przesuwa się lub obraca przy kroku w tył",
+        "cause": "Lack of control during the back-step; weight shifting before the rear foot lands",
+        "causePl": "Brak kontroli przy kroku w tył; przeniesienie ciężaru przed wylądowaniem tylnej stopy",
+        "cue": "Anchor the front foot — feel the heel and big toe glued to the floor before lowering",
+        "cuePl": "Zakotwicz przednią stopę — czuj piętę i duży palec przyklejone do podłogi zanim zaczniesz schodzić"
+      },
+      {
+        "fault": "Torso tips forward at the bottom",
+        "faultPl": "Tułów pochyla się do przodu w dolnej pozycji",
+        "cause": "Weak core, weak glutes shifting load to quads, or bar position too high on traps",
+        "causePl": "Słaby brzuch, słabe pośladki przerzucające obciążenie na czworogłowe lub gryf za wysoko na trapezach",
+        "cue": "Chest tall, push the back of the head into the bar lightly. Bar stays over the mid-foot of the front leg.",
+        "cuePl": "Klatka wysoko, lekko dociskaj tył głowy do gryfu. Gryf zostaje nad śródstopiem przedniej nogi."
+      },
+      {
+        "fault": "Back knee slams into the floor",
+        "faultPl": "Tylne kolano uderza w podłogę",
+        "cause": "Loss of eccentric control; descending too fast under load",
+        "causePl": "Utrata kontroli ekscentrycznej; zbyt szybkie schodzenie pod obciążeniem",
+        "cue": "Lower in 2-3 seconds. Stop 2-3 cm above the floor — never touch.",
+        "cuePl": "Schodź przez 2-3 sekundy. Zatrzymaj 2-3 cm nad podłogą — nigdy nie dotykaj."
+      },
+      {
+        "fault": "Pushing off the rear leg instead of driving through the front",
+        "faultPl": "Odpychanie tylną nogą zamiast napędu przedniej",
+        "cause": "Habit from forward lunges; weak front glute",
+        "causePl": "Nawyk z wykroków w przód; słaby pośladek przedniej nogi",
+        "cue": "Front heel pushes the floor away. Think 'pull the rear leg home' — not 'push off the rear toes'.",
+        "cuePl": "Pięta przedniej nogi spycha podłogę. Myśl 'przyciągnij tylną nogę do domu' — nie 'odepchnij się palcami tylnej'."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before stepping back. Hold breath through the descent and the hardest part of the drive up (Valsalva). Exhale near the top when both feet are together.",
+    "breathingPl": "Wdech i napięcie na górze przed krokiem w tył. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wychodzenia (Valsalva). Wydech blisko górnej pozycji gdy stopy są razem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "caution",
+      "modification": "Reverse lunge is already a knee-friendlier choice than forward lunge, but if pain persists limit depth and reduce load. Stay above 90° front knee angle if needed.",
+      "modificationPl": "Wykrok w tył jest już opcją bardziej przyjazną dla kolana niż wykrok w przód, ale jeśli ból się utrzymuje ogranicz głębokość i zmniejsz ciężar. W razie potrzeby zostań powyżej 90° zgięcia przedniego kolana.",
+      "alternative": "bulgarian-split-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid spinal loading. Use unloaded reverse lunges or wait for physiotherapist clearance before re-introducing the bar.",
+      "modificationPl": "Unikaj obciążania kręgosłupa. Stosuj wykroki w tył bez obciążenia lub poczekaj na zgodę fizjoterapeuty przed powrotem do sztangi.",
+      "alternative": "bodyweight-reverse-lunge"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "modify",
+      "modification": "Stepping backward blind is destabilizing. Use a rack or wall behind you for fingertip reference, or switch to bilateral squat.",
+      "modificationPl": "Krok w tył bez kontroli wzrokowej destabilizuje. Użyj stojaka lub ściany za sobą jako punktu odniesienia palcem lub przejdź na obustronny przysiad.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "ankle_dorsiflexion_limited",
+      "severity": "modify",
+      "modification": "Reverse lunge is more forgiving than forward lunge here (front shin stays more vertical). Wear lifting shoes with a raised heel if mobility is severely limited.",
+      "modificationPl": "Wykrok w tył jest tu bardziej wybaczający niż wykrok w przód (piszczel przedniej nogi zostaje bardziej pionowa). Załóż buty do podnoszenia z podniesioną piętą jeśli mobilność jest mocno ograniczona.",
+      "alternative": "barbell-split-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6 per leg (strength) | 2-3x12-15 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-rear-lunge.gif",
+    "frames_extracted": [
+      "frames/barbell-rear-lunge/frame_0_start.png",
+      "frames/barbell-rear-lunge/frame_1_early.png",
+      "frames/barbell-rear-lunge/frame_2_mid.png",
+      "frames/barbell-rear-lunge/frame_3_late.png",
+      "frames/barbell-rear-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-rear-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Postać startuje w pozycji stojącej ze sztangą high-bar na trapezach, wykonuje krok W TYŁ jedną nogą (jahel pokazuje przejście start→mid jako wsteczny step — sylwetka 'ghosted' z poprzedniej klatki potwierdza kierunek ruchu), schodzi w wykrok aż tylne kolano blisko podłogi, przednia noga zgięta ~90°, tułów pionowy. Mid-frame (frame_2) jasno pokazuje pełną głębokość: lewa noga z przodu zgięta, prawa noga z tyłu z kolanem nisko, śródstopie tylnej nogi na podłodze. Mięśnie najmocniej podświetlone w GIFie: pośladki + przywodziciele + czworogłowe przedniej nogi — pasuje do anatomii reverse lunge (glute-dominant przez większy hip travel). Klasyfikacja P9 glutes / P8 quadriceps (odwrotnie niż forward lunge gdzie quads są wiodące). Master.json potwierdza slug 'barbell-rear-lunge' (folder glutes — jahel klasyfikuje to ćwiczenie jako glute-primary). Wszystkie pola PL napisane od zera — polski standard fitness 'wykrok w tył' lub 'reverse lunge'.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "reverse_lunge", "barbell", "compound", "glute_dominant", "knee_friendly", "asymmetry_corrector", "stabilizer_heavy"]
+}

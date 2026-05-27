@@ -1,0 +1,201 @@
+{
+  "id": "cable-one-arm-tricep-pushdown",
+  "name": "Cable One-Arm Triceps Pushdown",
+  "namePl": "Prostowanie ramion jednorącz na wyciągu",
+  "aliases": ["single-arm cable tricep pushdown", "one arm cable pushdown", "unilateral triceps pushdown", "cable triceps extension one arm"],
+  "aliasesPl": ["prostowanie ramienia jednorącz na wyciągu", "wyciskanie linki jednorącz na triceps", "prostowanie tricepsa jednorącz na wyciągu górnym", "unilateralne prostowanie ramion na wyciągu"],
+
+  "description": "Unilateral isolation exercise for the triceps performed at a high cable pulley with a single handle. Working one arm at a time eliminates strength asymmetries between sides and increases mind-muscle connection. The constant cable tension loads the triceps through the full range of motion and is gentler on the elbow joint than free-weight extensions. A standard accessory in bodybuilding and rehabilitation arm programs.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na triceps wykonywane na wyciągu górnym z pojedynczym uchwytem. Praca jedną ręką naraz eliminuje dysproporcje siłowe między stronami i zwiększa kontakt umysł-mięsień. Stałe napięcie linki obciąża triceps w pełnym zakresie ruchu i jest łagodniejsze dla stawu łokciowego niż prostowania z wolnym ciężarem. Standardowe ćwiczenie pomocnicze w treningu kulturystycznym i rehabilitacyjnym ramion.",
+
+  "instructions": [
+    "Set the cable pulley to the highest position and attach a single D-handle (or stirrup handle).",
+    "Stand facing the machine, feet hip-width apart, one foot slightly staggered for balance. Grip the handle with a neutral or pronated grip in one hand.",
+    "Pin the working elbow tightly to your side (ribcage). The upper arm must stay fixed there for the entire set.",
+    "Start with the elbow flexed to roughly 90 degrees, forearm parallel or slightly above parallel to the floor. Brace your core and keep your torso upright.",
+    "Press the handle downward by extending only at the elbow until the arm is fully straight and the triceps is maximally contracted. Exhale during the press.",
+    "Squeeze the triceps hard for a 1-second pause at full extension.",
+    "Slowly return the handle upward to the starting 90-degree position over 2-3 seconds, keeping the elbow glued to your side. Inhale on the way up.",
+    "Complete all reps on one side, then switch to the other arm. Use the free hand to brace lightly on the machine if needed."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg w najwyższej pozycji i przypnij pojedynczy uchwyt D (lub strzemiączko).",
+    "Stań twarzą do maszyny, stopy na szerokość bioder, jedna stopa lekko wysunięta dla równowagi. Złap uchwyt jedną ręką chwytem neutralnym lub nachwytem.",
+    "Mocno przyklej łokieć pracujący do boku tułowia (do żeber). Ramię ponad łokciem ma pozostać w tej pozycji przez całą serię.",
+    "Pozycja startowa: łokieć ugięty około 90 stopni, przedramię równolegle lub lekko powyżej poziomu podłogi. Napnij brzuch i utrzymaj tułów pionowo.",
+    "Wyciśnij uchwyt w dół prostując wyłącznie w łokciu, aż ramię będzie w pełni wyprostowane a triceps maksymalnie napięty. Wydech podczas prostowania.",
+    "Mocno spinaj triceps przez 1 sekundę w pozycji pełnego wyprostu.",
+    "Powoli wracaj uchwytem w górę do pozycji wyjściowej 90 stopni przez 2-3 sekundy, trzymając łokieć przyklejony do boku. Wdech podczas powrotu.",
+    "Wykonaj wszystkie powtórzenia jedną ręką, następnie zmień stronę. Wolną ręką możesz lekko podeprzeć się o maszynę dla stabilizacji."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["forearm_extensors", "anterior_deltoid", "core", "latissimus_dorsi", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "forearm_extensors": "T4",
+    "anterior_deltoid": "T3",
+    "latissimus_dorsi": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["cable-tricep-pushdown"],
+    "progression_to": ["cable-one-arm-reverse-tricep-pushdown", "cable-overhead-tricep-extension", "single-arm-cable-kickback"],
+    "alternatives": ["cable-tricep-pushdown", "cable-rope-tricep-pushdown", "tricep-dumbbell-kickback", "dumbbell-overhead-tricep-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pulley at the top, single D-handle attached",
+      "Face the stack, feet hip-width, slight stagger",
+      "Working elbow glued to your ribs",
+      "Start with elbow at 90 degrees, forearm horizontal",
+      "Torso upright, core braced, free hand light on the frame"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg w górnej pozycji, pojedynczy uchwyt D",
+      "Twarzą do stosu, stopy na szerokość bioder, lekki rozkrok",
+      "Łokieć pracujący przyklejony do żeber",
+      "Start: łokieć ugięty 90 stopni, przedramię poziomo",
+      "Tułów pionowo, brzuch napięty, wolna ręka lekko o ramę"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm stays nailed to your side",
+      "Press the handle straight down, not forward",
+      "Lock out the elbow and squeeze the triceps at the bottom",
+      "Return slowly — control the cable, do not let it pull you up",
+      "Keep wrist neutral, do not flex or extend it"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem przyklejone do boku",
+      "Wyciskaj uchwyt prosto w dół, nie do przodu",
+      "Zablokuj łokieć i spinaj triceps na dole",
+      "Wracaj wolno — kontroluj linkę, nie pozwól by ciągnęła cię w górę",
+      "Nadgarstek neutralny — nie zginaj ani nie prostuj go"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbow drifting forward and away from the body",
+        "faultPl": "Łokieć ucieka do przodu i odkleja się od tułowia",
+        "cause": "Load too heavy, shoulder flexors taking over, lack of triceps engagement",
+        "causePl": "Zbyt duży ciężar, włącza się zginacz barku, słaba praca tricepsa",
+        "cue": "Pin the elbow to your ribs. If it drifts, lower the weight by 30%.",
+        "cuePl": "Przyklej łokieć do żeber. Jeśli ucieka, zmniejsz ciężar o 30%."
+      },
+      {
+        "fault": "Leaning the torso forward over the handle",
+        "faultPl": "Pochylanie tułowia do przodu nad uchwytem",
+        "cause": "Using bodyweight to push the cable down, ego lifting, weak triceps",
+        "causePl": "Wykorzystywanie masy ciała do wyciskania linki, ego, słaby triceps",
+        "cue": "Stay vertical — your ears stay over your hips. Reduce the load.",
+        "cuePl": "Pozostań pionowo — uszy nad biodrami. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete lockout at the bottom",
+        "faultPl": "Niepełny wyprost w łokciu na dole",
+        "cause": "Ego lifting, weak short-head triceps, or failing to focus on contraction",
+        "causePl": "Ego, słaba głowa krótka tricepsa, lub brak skupienia na skurczu",
+        "cue": "Fully straighten the arm and squeeze the triceps for 1 second every rep.",
+        "cuePl": "W pełni wyprostuj ramię i spinaj triceps przez 1 sekundę przy każdym powtórzeniu."
+      },
+      {
+        "fault": "Shoulder rolling forward / scapula protraction",
+        "faultPl": "Bark rolujący do przodu / protrakcja łopatki",
+        "cause": "Trying to involve the chest/anterior delt to push more weight",
+        "causePl": "Próba zaangażowania klatki/przedniego aktonu barku by wycisnąć więcej",
+        "cue": "Pull the shoulder back and down before each rep. Keep the chest open.",
+        "cuePl": "Ściągnij bark w tył i w dół przed każdym powtórzeniem. Klatka otwarta."
+      },
+      {
+        "fault": "Rotating the torso to the working side",
+        "faultPl": "Rotacja tułowia w stronę pracującej ręki",
+        "cause": "Compensating for unilateral load, weak core anti-rotation",
+        "causePl": "Kompensacja jednostronnego obciążenia, słaba antyrotacja brzucha",
+        "cue": "Square your hips and shoulders to the machine. Brace the core like for an anti-rotation press.",
+        "cuePl": "Ustaw biodra i barki równolegle do maszyny. Napnij brzuch jak do anty-rotacji."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pressing the handle down). Inhale during the eccentric (returning to 90 degrees). Maintain a light core brace throughout the set.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wyciskanie uchwytu w dół). Wdech w fazie ekscentrycznej (powrót do 90 stopni). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Pronated grip stresses extensor tendons at the lateral epicondyle. Switch to neutral grip with rope or use lighter weight (40-50% of normal) with higher reps (15-20) in pain-free range.",
+      "modificationPl": "Chwyt nachwytem obciąża przyczepy prostowników na nadkłykciu bocznym. Przejdź na chwyt neutralny (linka) lub używaj lżejszego ciężaru (40-50% normalnego) z większą liczbą powtórzeń (15-20) w zakresie bez bólu.",
+      "alternative": "cable-rope-tricep-pushdown"
+    },
+    {
+      "condition": "triceps_tendinopathy_at_olecranon",
+      "severity": "modify",
+      "modification": "Avoid forceful lockout. Stop short of full elbow extension (around 170 degrees) to reduce traction on the triceps tendon. Use higher reps and lighter loads.",
+      "modificationPl": "Unikaj forsownego pełnego wyprostu. Zatrzymaj się przed pełnym wyprostem (około 170 stopni) by zmniejszyć ciągnięcie ścięgna tricepsa. Używaj większej liczby powtórzeń i lżejszych ciężarów.",
+      "alternative": "tricep-dumbbell-kickback"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Keep the shoulder packed (down and back) and do not let it roll forward during the press. Avoid leaning over the handle which closes the subacromial space.",
+      "modificationPl": "Trzymaj bark spakowany (w dół i w tył) i nie pozwól by rolował do przodu podczas prostowania. Unikaj pochylania nad uchwytem, co zamyka przestrzeń podbarkową.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Pronated grip on D-handle can stress the wrist. Switch to a neutral grip handle or wrap the wrist with stiff wraps. Reduce weight until pain-free.",
+      "modificationPl": "Chwyt nachwytem na uchwycie D może drażnić nadgarstek. Przejdź na uchwyt neutralny lub załóż sztywne opaski. Zmniejsz ciężar do zakresu bez bólu.",
+      "alternative": "cable-rope-tricep-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy) | 3x12-20 per arm (pump/burnout) | 2-3x15-20 per arm (rehabilitation)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-one-arm-tricep-pushdown.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-tricep-pushdown/frame_0_start.png",
+      "frames/cable-one-arm-tricep-pushdown/frame_1_early.png",
+      "frames/cable-one-arm-tricep-pushdown/frame_2_mid.png",
+      "frames/cable-one-arm-tricep-pushdown/frame_3_late.png",
+      "frames/cable-one-arm-tricep-pushdown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-one-arm-tricep-pushdown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja startowa — postać stoi twarzą do wyciągu, prawa ręka trzyma pojedynczy uchwyt D na wysokości klatki/barku, łokieć ugięty około 90 stopni i przyklejony do boku tułowia, lewa ręka lekko o ramę dla stabilizacji. Triceps prawej ręki podświetlony na czerwono. Frame 2: faza pełnego wyprostu — ramię w pełni wyprostowane w dół, uchwyt na wysokości biodra, łokieć nadal przy boku, triceps maksymalnie napięty. Frame 4: powrót do pozycji startowej (90 stopni). Tułów pionowo, biodra stabilne. Wyciąg ustawiony w górnej pozycji. Modelowa technika jednostronnego pushdown'a — łokieć nieruchomo przy boku przez cały ruch. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "unilateral", "upper_body", "accessory", "rehab_friendly"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "wide-grip-pull-up",
+  "name": "Wide-Grip Pull-Up",
+  "namePl": "Pull-up chwytem szerokim",
+  "aliases": ["wide pull-up", "wide grip pullup", "wide overhand pull-up", "wide pronated pull-up"],
+  "aliasesPl": ["podciąganie szerokim chwytem", "podciąganie nachwytem szerokim", "wide pull-up", "podciąganie szerokie"],
+
+  "description": "Variation of the classic pull-up performed with a grip significantly wider than shoulder-width. The wider hand placement shortens elbow-flexor leverage and shifts the load onto the lats and teres major, biasing the movement toward back WIDTH (V-taper) rather than back thickness or biceps strength. ROM is slightly reduced compared to standard pull-up, and the movement transitions partly into the frontal plane as elbows flare outward.",
+  "descriptionPl": "Wariant klasycznego podciągania wykonywany chwytem znacznie szerszym niż barki. Szerokie ustawienie dłoni skraca dźwignię zginaczy łokcia i przerzuca obciążenie na najszersze i obły większy, kierując ruch w stronę SZEROKOŚCI pleców (V-taper), a nie grubości czy siły bicepsa. ROM jest nieco mniejsze niż w klasycznym pull-up, a ruch częściowo przechodzi w płaszczyznę czołową, bo łokcie odchodzą na boki.",
+
+  "instructions": [
+    "Grip a pull-up bar with palms facing AWAY from you (pronated grip), hands WELL WIDER than shoulder-width — typically 1.5× shoulder width.",
+    "Hang at full arm extension. Engage shoulder blades by pulling them DOWN (depression) — do not let them shrug up.",
+    "Brace your core. Cross or bend your legs to keep them out of the way. This is the dead-hang start position.",
+    "Initiate the pull by driving elbows DOWN AND OUT toward the sides (not toward hips like in a standard pull-up).",
+    "Keep chest up, slight backward lean. Focus on squeezing the lats and pulling the bar down to upper chest line.",
+    "Pull until your chin is over the bar OR your upper chest meets the bar. Top of the rep: elbows wide, scapulae fully retracted and depressed.",
+    "Lower with control. Do not fully relax — keep slight tension in lats at the bottom to protect the shoulder.",
+    "Each rep emphasises lat squeeze, not biceps pull."
+  ],
+  "instructionsPl": [
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt nachwytem), ręce WYRAŹNIE szerzej niż barki — typowo 1,5× szerokość barków.",
+    "Zwiśnij w pełnym wyproście ramion. Aktywuj łopatki ściągając je W DÓŁ (depresja) — nie pozwól im się unieść.",
+    "Napnij brzuch. Skrzyżuj lub zegnij nogi by nie zawadzały. To pozycja startowa dead-hang.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I NA BOKI (nie w stronę bioder jak w klasycznym pull-up).",
+    "Klatka w górze, lekkie odchylenie do tyłu. Skup się na ściskaniu najszerszych i ciągnięciu drążka w stronę górnej części klatki.",
+    "Podciągaj aż broda będzie nad drążkiem LUB górna część klatki dojdzie do drążka. Szczyt powtórzenia: łokcie szeroko, łopatki w pełnej retrakcji i depresji.",
+    "Opuszczaj kontrolowanym ruchem. Nie rozluźniaj się całkowicie — utrzymaj lekkie napięcie najszerszych na dole by chronić bark.",
+    "Każde powtórzenie kładzie nacisk na ściskanie najszerszych, nie pracę bicepsa."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "teres_major"],
+    "secondary": ["deltoid_posterior", "rhomboids", "trapezius_middle_lower", "biceps_brachii", "brachialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "teres_major": "P9",
+    "deltoid_posterior": "S7",
+    "rhomboids": "S7",
+    "trapezius_middle_lower": "S7",
+    "biceps_brachii": "S5",
+    "brachialis": "S5",
+    "forearms": "S6",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps", "weighted_belt", "resistance_band"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 9,
+    "prerequisites": ["pull-up", "lat-pulldown", "band-assisted-pull-up", "negative-pull-up", "dead-hang"],
+    "progression_to": ["weighted-wide-grip-pull-up", "wide-grip-chest-to-bar-pull-up", "archer-pull-up", "muscle-up"],
+    "alternatives": ["pull-up", "wide-grip-lat-pulldown", "neutral-grip-pull-up", "chin-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands well WIDER than shoulders (~1.5× shoulder width)",
+      "Pronated (overhand) grip, palms away",
+      "Full hang — elbows extended",
+      "Shoulder blades DOWN (no shrug up)",
+      "Core braced, legs together or crossed"
+    ],
+    "setup_cues_pl": [
+      "Ręce WYRAŹNIE szerzej niż barki (~1,5× szerokość barków)",
+      "Chwyt nachwytem (pronated), dłonie od siebie",
+      "Pełny zwis — łokcie wyprostowane",
+      "Łopatki W DÓŁ (bez unoszenia)",
+      "Brzuch napięty, nogi razem lub skrzyżowane"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN and OUT to the sides",
+      "Pull the bar down to UPPER CHEST line",
+      "Squeeze the lats — feel width, not biceps",
+      "Slight backward lean, chest up",
+      "No kipping or swinging — strict only"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ i NA BOKI",
+      "Ciągnij drążek w stronę GÓRNEJ części klatki",
+      "Ściskaj najszersze — czuj szerokość, nie biceps",
+      "Lekkie odchylenie do tyłu, klatka w górze",
+      "Bez kippingu i bujania — tylko strict"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip too wide causing shoulder strain",
+        "faultPl": "Chwyt za szeroki powodujący nacisk na barki",
+        "cause": "Belief that wider = more lats. Beyond ~1.5× shoulder width, leverage worsens and shoulder stress rises sharply.",
+        "causePl": "Przekonanie że szerzej = więcej najszerszych. Powyżej ~1,5× szerokości barków dźwignia się pogarsza, a stres barków gwałtownie rośnie.",
+        "cue": "Cap grip width at ~1.5× shoulder width. If shoulders pinch — narrow the grip.",
+        "cuePl": "Ogranicz szerokość chwytu do ~1,5× szerokości barków. Jeśli barki kłują — zwęź chwyt."
+      },
+      {
+        "fault": "Half reps — chin never reaches bar",
+        "faultPl": "Połowiczne powtórzenia — broda nie dochodzi do drążka",
+        "cause": "Wide grip is mechanically harder; lifters often stop short rather than reduce volume or use assistance.",
+        "causePl": "Szeroki chwyt jest mechanicznie trudniejszy; ćwiczący często zatrzymują się w połowie zamiast zmniejszyć objętość lub użyć asysty.",
+        "cue": "Use band assistance for full ROM. Half reps train half strength.",
+        "cuePl": "Użyj asysty z gumy dla pełnego ROM. Połowiczne powtórzenia uczą połowicznej siły."
+      },
+      {
+        "fault": "Shrugging shoulders up at the bottom (no scapular depression)",
+        "faultPl": "Unoszenie łopatek na dole (brak depresji)",
+        "cause": "Weak lower trap / serratus, or fatigue. With wide grip this loads the shoulder capsule heavily.",
+        "causePl": "Słabe dolne trapezy / serratus lub zmęczenie. Przy szerokim chwycie mocno obciąża torebkę barkową.",
+        "cue": "Start every rep with scapular depression — lats engaged BEFORE the elbow bends.",
+        "cuePl": "Każde powtórzenie zaczynaj od depresji łopatek — najszersze napięte ZANIM zegniesz łokieć."
+      },
+      {
+        "fault": "Swinging or kipping to compensate for difficulty",
+        "faultPl": "Bujanie lub kipping aby skompensować trudność",
+        "cause": "Wide-grip is harder than standard pull-up — temptation to cheat rises.",
+        "causePl": "Wide-grip jest trudniejsze niż klasyczne podciąganie — pokusa oszustwa rośnie.",
+        "cue": "Cross feet, brace core. If strict reps drop below 3 — use band or do negatives.",
+        "cuePl": "Skrzyżuj stopy, napnij brzuch. Jeśli strict reps spadają poniżej 3 — użyj gumy lub rób negatywy."
+      },
+      {
+        "fault": "Pulling with biceps instead of lats",
+        "faultPl": "Ciągnięcie bicepsem zamiast najszerszymi",
+        "cause": "Old motor pattern from chin-ups / curls; not thinking about elbow path.",
+        "causePl": "Stary wzorzec ruchowy z chin-up / uginań; brak skupienia na torze łokci.",
+        "cue": "Think 'elbows down and out', not 'pull body up'. Lat squeeze, not arm bend.",
+        "cuePl": "Myśl 'łokcie w dół i na boki', nie 'podciągnij ciało'. Ściskanie najszerszych, nie zginanie ramion."
+      }
+    ],
+    "breathing": "Inhale at the bottom (dead-hang). Exhale on the pull up. Inhale on the controlled descent. Avoid breath-holding — wide-grip is taxing enough that oxygen matters.",
+    "breathingPl": "Wdech na dole (dead-hang). Wydech podczas ciągu w górę. Wdech podczas kontrolowanego schodzenia. Unikaj wstrzymywania — wide-grip jest na tyle wymagający że tlen ma znaczenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Wide grip places maximum stress on the shoulder joint. Switch to neutral or standard grip pull-up.",
+      "modificationPl": "Szeroki chwyt obciąża staw barkowy maksymalnie. Przejdź na chwyt neutralny lub standardowy.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Flared elbow path stresses rotator cuff. Avoid until full recovery. Use lat pulldown with narrower grip.",
+      "modificationPl": "Tor łokci na bok obciąża stożek rotatorów. Unikaj do pełnego wyzdrowienia. Użyj lat pulldown z węższym chwytem.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume and grip width. Switch to chin-up or neutral grip — less elbow joint strain.",
+      "modificationPl": "Zmniejsz objętość i szerokość chwytu. Przejdź na chin-up lub chwyt neutralny — mniej stresu na łokieć.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "lat_strain",
+      "severity": "avoid",
+      "modification": "Wide grip maximally loads the lats. Stop all pulling until pain-free. Resume with light pulldowns.",
+      "modificationPl": "Szeroki chwyt maksymalnie obciąża najszersze. Wstrzymaj wszystkie ciągi do braku bólu. Wróć przez lekkie pulldowny.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-5×AMRAP (bodyweight) | 4×6-10 (weighted) | 3×AMRAP-2 in back-width block",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "wide-grip-pull-up.gif",
+    "frames_extracted": [
+      "frames/wide-grip-pull-up/frame_0_start.png",
+      "frames/wide-grip-pull-up/frame_1_early.png",
+      "frames/wide-grip-pull-up/frame_2_mid.png",
+      "frames/wide-grip-pull-up/frame_3_late.png",
+      "frames/wide-grip-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/wide-grip-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang, ręce wyraźnie szerzej niż barki (chwyt nachwytem szeroki), aktywacja najszerszych i ramion. Frame 2: top position — broda w okolicy drążka, łokcie SZEROKO na boki (nie do bioder jak w klasycznym pull-up), maksymalne podświetlenie najszerszych i obłych większych po obu stronach, środkowy trapez i romboidalne aktywne. Klasyfikacja jako frontal plane — łokcie poruszają się w bok, ruch barku w abdukcji/przywiedzeniu zamiast wyproście. Mniejszy ROM niż klasyczny pull-up, mniej bicepsa (S5 vs P7), więcej teres major (P9). Idealny dla V-taper / szerokości pleców.",
+
+  "tags": ["calisthenics", "bodyweight", "back_width", "v_taper", "upper_body", "vertical_pull", "lats_focus", "advanced", "compound", "pull-up_variation"]
+}

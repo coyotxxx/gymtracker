@@ -1,0 +1,197 @@
+{
+  "id": "resistance-band-seated-straight-back-row",
+  "name": "Resistance Band Seated Straight Back Row",
+  "namePl": "Wiosło z gumą siedząc z prostym tułowiem",
+  "aliases": ["band seated row", "resistance band row seated", "seated band row strict", "floor band row", "long-sit band row"],
+  "aliasesPl": ["wiosłowanie z gumą siedząc", "seated row z gumą", "wiosłowanie gumą na podłodze", "wiosło z taśmą oporową siedząc", "strict band row siedząc"],
+
+  "description": "Horizontal pulling exercise performed seated on the floor with legs extended straight in front, a resistance band looped around the feet, and the torso held strictly upright throughout the entire set. You row both handles toward the lower abdomen while driving the elbows back close to the ribs and retracting the shoulder blades. The 'straight back' variation explicitly forbids any rocking or torso lean — the only joints that move are the shoulders and elbows. This strict form turns the exercise into a true back-isolation row and a perfect home / travel substitute for cable seated row when you have no machine. The band provides ascending tension (heaviest at full contraction), which actually punishes sloppy elbow paths and rewards a clean scapular squeeze at the end of each rep.",
+  "descriptionPl": "Ćwiczenie ciągowe w płaszczyźnie poziomej wykonywane siedząc na podłodze z nogami wyprostowanymi przed sobą, gumą oporową przewieszoną wokół stóp, i tułowiem trzymanym ŚCIŚLE pionowo przez całą serię. Przyciągasz oba uchwyty do dolnej części brzucha prowadząc łokcie w tył blisko żeber i ściągając łopatki. Wariant 'z prostym tułowiem' ZABRANIA bujania i odchylania tułowia — jedyne stawy które się ruszają to barki i łokcie. Ta strict-form zamienia ćwiczenie w prawdziwą izolację pleców i jest idealnym domowym / podróżnym zamiennikiem dla seated row na wyciągu gdy nie masz dostępu do maszyny. Guma zapewnia rosnące napięcie (najmocniejsze w pełnym skurczu), co dodatkowo karze niechlujny tor łokci i nagradza czyste ściśnięcie łopatek na końcu każdego powtórzenia.",
+
+  "instructions": [
+    "Sit on the floor with legs fully extended in front, feet together or hip-width apart, toes pointing up. Loop the resistance band around the middle of both feet (under the arches).",
+    "Grab one handle in each hand with a neutral grip (palms facing each other). Start with arms fully extended forward, light tension already on the band.",
+    "Sit tall — torso STRICTLY vertical, lumbar spine neutral, chest proud, head stacked over hips. This is the position you hold for the entire set.",
+    "Brace the core. Pre-tension by depressing and slightly retracting the shoulder blades BEFORE bending the elbows.",
+    "Pull both handles toward the lower abdomen / belly button. Elbows travel BACK and CLOSE to the ribs — not flared out to the sides.",
+    "At the end position the handles are at the lower abs, elbows are behind the line of the torso, shoulder blades fully retracted. Pause 1 second and squeeze.",
+    "Reverse the motion smoothly — let the elbows extend, shoulder blades protract slightly at the end — WITHOUT rounding the lower back and WITHOUT letting the torso fall forward.",
+    "Critical: the torso angle does NOT change during the set. No leaning back during the pull, no leaning forward during the return. Repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z nogami w pełni wyprostowanymi przed sobą, stopy razem lub na szerokość bioder, palce stóp w górę. Przewieś gumę wokół środka obu stóp (pod podbiciem).",
+    "Złap jeden uchwyt w każdą rękę chwytem neutralnym (dłonie skierowane do siebie). Zacznij z ramionami w pełni wyprostowanymi przed sobą, lekkie napięcie już na gumie.",
+    "Siedź wyprostowany — tułów ŚCIŚLE pionowy, odcinek lędźwiowy neutralny, klatka wysunięta, głowa nad biodrami. To jest pozycja którą trzymasz przez całą serię.",
+    "Napnij brzuch. Pre-tensja — obniż i lekko ściągnij łopatki ZANIM zaczniesz zginać łokcie.",
+    "Pociągnij oba uchwyty w stronę dolnej części brzucha / pępka. Łokcie idą w TYŁ i BLISKO żeber — nie rozchylaj ich na boki.",
+    "W końcowej pozycji uchwyty są przy dolnym brzuchu, łokcie za linią tułowia, łopatki maksymalnie ściągnięte. Zatrzymaj na 1 sekundę i ściśnij.",
+    "Odwróć ruch płynnie — pozwól łokciom się wyprostować, łopatkom lekko 'odpłynąć' w przód na końcu — BEZ zaokrąglania lędźwi i BEZ pochylania tułowia w przód.",
+    "Kluczowe: kąt tułowia NIE ZMIENIA się podczas serii. Bez odchylania w tył podczas ciągu, bez pochylania w przód podczas powrotu. Powtórz zaplanowaną liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "forearms", "hamstrings"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P9",
+    "biceps_brachii": "P8",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoids": "S7",
+    "brachialis": "S7",
+    "forearms": "S7",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "hamstrings": "S3"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["exercise_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["seated-band-row", "inverted-row"],
+    "progression_to": ["cable-low-seated-row", "chest-supported-row", "barbell-bent-over-row", "single-arm-dumbbell-row"],
+    "alternatives": ["cable-low-seated-row", "seated-machine-row", "chest-supported-row", "inverted-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on the floor, legs straight, toes up — band looped under both feet",
+      "Neutral grip on the handles, palms facing each other",
+      "Torso STRICTLY vertical — chest proud, head stacked over hips",
+      "Light pre-tension on the band, arms fully extended forward",
+      "Brace the core BEFORE the first rep"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na podłodze, nogi proste, palce w górę — guma pod oboma stopami",
+      "Chwyt neutralny na uchwytach, dłonie skierowane do siebie",
+      "Tułów ŚCIŚLE pionowy — klatka wysunięta, głowa nad biodrami",
+      "Lekkie wstępne napięcie na gumie, ramiona w pełni wyprostowane przed sobą",
+      "Napnij brzuch PRZED pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Start with the scapulae — retract before bending the elbows",
+      "Pull with the elbows, hands are just hooks on the handles",
+      "Elbows BACK and CLOSE to the ribs — not flared out",
+      "Handles to the LOW belly — not the chest",
+      "Torso does NOT MOVE — only your shoulders and elbows work"
+    ],
+    "execution_cues_pl": [
+      "Zacznij od łopatek — ściągnij je zanim zaczniesz zginać łokcie",
+      "Ciągnij łokciami, dłonie to tylko haki na uchwytach",
+      "Łokcie w TYŁ i BLISKO żeber — nie rozchylaj na boki",
+      "Uchwyty do DOLNEGO brzucha — nie do klatki",
+      "Tułów się NIE RUSZA — pracują tylko barki i łokcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning the torso back during the pull (rocking)",
+        "faultPl": "Odchylanie tułowia w tył podczas ciągu (bujanie)",
+        "cause": "Band tension too high, ego lifting, or losing the 'strict' cue mid-set",
+        "causePl": "Zbyt mocna guma, ego lifting, lub utrata pilnowania 'strict' w trakcie serii",
+        "cue": "The whole point of this variation is the STRAIGHT back. If you have to lean back, the band is too strong — switch to a lighter one. Imagine your spine is a broomstick bolted to the floor.",
+        "cuePl": "Cały sens tego wariantu to PROSTY tułów. Jeśli musisz się odchylać, guma jest za mocna — weź lżejszą. Wyobraź sobie że kręgosłup to kij od miotły przyśrubowany do podłogi."
+      },
+      {
+        "fault": "Rounded lower back at the end of the eccentric (collapsing forward)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy w końcu fazy ekscentrycznej (zapadanie do przodu)",
+        "cause": "Tight hamstrings pulling the pelvis into posterior tilt + the band yanking the arms forward",
+        "causePl": "Napięte mięśnie tylnej części uda ściągające miednicę w tył + guma pociągająca ramiona do przodu",
+        "cue": "If you cannot sit with a neutral spine because of tight hamstrings, sit on a folded towel or yoga block to raise the hips. Better: bend the knees slightly. Never round to chase more 'stretch.'",
+        "cuePl": "Jeśli nie możesz siedzieć z neutralnym kręgosłupem przez napięte hamstringi, usiądź na złożonym ręczniku albo bloku — by unieść biodra. Lepiej: lekko ugnij kolana. Nigdy się nie zaokrąglaj, by 'sięgnąć dalej'."
+      },
+      {
+        "fault": "Elbows flaring out wide (pulling handles to the chest)",
+        "faultPl": "Łokcie rozchylone szeroko (uchwyty ciągnięte do klatki)",
+        "cause": "Habit of high-elbow rows / face pulls, or no clear cue where the handles should land",
+        "causePl": "Nawyk wiosłowania z wysokimi łokciami / face pulli, lub brak wskazówki gdzie uchwyty mają lądować",
+        "cue": "With neutral grip and lats as the primary target, elbows go CLOSE to the ribs and handles land at the LOW belly. High-elbow row is a different exercise (rear delts), not this one.",
+        "cuePl": "Z chwytem neutralnym i najszerszymi jako celem łokcie idą BLISKO żeber a uchwyty lądują na DOLNYM brzuchu. Wiosłowanie z wysokimi łokciami to inne ćwiczenie (tylne aktony), nie to."
+      },
+      {
+        "fault": "Band slipping off the feet mid-set",
+        "faultPl": "Guma zsuwa się ze stóp w trakcie serii",
+        "cause": "Band placed on the toes instead of the arch, or feet tilted outward",
+        "causePl": "Guma założona na palce zamiast podbicia, albo stopy odchylone na zewnątrz",
+        "cue": "Loop the band across the ARCH of the foot (middle of the sole) and flex the ankles slightly so the toes point UP. The band cannot slip when the foot acts like a hook.",
+        "cuePl": "Załóż gumę na PODBICIE stopy (środek podeszwy) i lekko napnij kostki tak by palce wskazywały W GÓRĘ. Guma nie zsunie się gdy stopa działa jak hak."
+      },
+      {
+        "fault": "Pulling with biceps only (no scapular retraction)",
+        "faultPl": "Ciągnięcie samymi bicepsami (brak ściągnięcia łopatek)",
+        "cause": "Weak rhomboids / mid-traps, or rushed tempo with no pause at the contraction",
+        "causePl": "Słabe równoległoboczne / środkowe czworoboczne, lub zbyt szybkie tempo bez zatrzymania w skurczu",
+        "cue": "Pause 1 second at the end of every rep with shoulder blades squeezed. 'Crack a walnut between your shoulder blades.' If you can do 20 reps without that pause, the band is too light.",
+        "cuePl": "Zatrzymaj się na 1 sekundę na końcu każdego powtórzenia ze ściśniętymi łopatkami. 'Zgnieć orzecha między łopatkami.' Jeśli robisz 20 powtórzeń bez tej pauzy, guma jest za lekka."
+      }
+    ],
+    "breathing": "Inhale at the start (arms extended). Exhale through the pull as the handles approach the abdomen. Inhale on the controlled return. Stay braced throughout — the strict torso position depends on it.",
+    "breathingPl": "Wdech na starcie (ramiona wyprostowane). Wydech w trakcie ciągu gdy uchwyty zbliżają się do brzucha. Wdech podczas kontrolowanego powrotu. Trzymaj napięty brzuch przez cały czas — ścisła pozycja tułowia od tego zależy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "modify",
+      "modification": "Long-sit position can aggravate disc issues if hamstrings pull pelvis into posterior tilt. Sit on a folded towel / block to elevate hips, or slightly bend knees. Keep torso strictly vertical — do NOT collapse forward at the end of eccentric.",
+      "modificationPl": "Pozycja długiego siadu może nasilać problemy z dyskami jeśli hamstringi ściągają miednicę w tył. Usiądź na złożonym ręczniku / bloku by unieść biodra, lub lekko ugnij kolana. Trzymaj tułów ściśle pionowo — NIE zapadaj się w przód na końcu ekscentryku.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "tight_hamstrings",
+      "severity": "modify",
+      "modification": "If you cannot sit upright with straight legs (pelvis tilts back, lumbar rounds), bend the knees slightly or sit on a 5-10 cm elevation (rolled mat, yoga block). Form takes priority over leg position.",
+      "modificationPl": "Jeśli nie możesz siedzieć wyprostowany z prostymi nogami (miednica idzie w tył, lędźwie się zaokrąglają), lekko ugnij kolana lub usiądź na 5-10 cm podwyższeniu (zwinięta mata, blok). Forma ma priorytet nad pozycją nóg.",
+      "alternative": "seated-machine-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Neutral grip is already shoulder-friendly. Keep elbows close to the ribs (no flaring) and reduce range if pain at the end of the pull. Use a lighter band so technique stays clean.",
+      "modificationPl": "Chwyt neutralny jest już przyjazny dla barków. Trzymaj łokcie blisko żeber (bez rozchylania) i zmniejsz zakres jeśli ból na końcu ciągu. Użyj lżejszej gumy by technika została czysta.",
+      "alternative": "single-arm-dumbbell-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy with band) | 3x12-20 (general) | 3x20-30 (endurance / activation) | 4x8-12 with heavy band (strength-endurance)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "resistance-band-seated-straight-back-row.gif",
+    "frames_extracted": [
+      "frames/resistance-band-seated-straight-back-row/frame_0_start.png",
+      "frames/resistance-band-seated-straight-back-row/frame_1_early.png",
+      "frames/resistance-band-seated-straight-back-row/frame_2_mid.png",
+      "frames/resistance-band-seated-straight-back-row/frame_3_late.png",
+      "frames/resistance-band-seated-straight-back-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/resistance-band-seated-straight-back-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): osoba siedzi na ławce/platformie z nogami wyprostowanymi przed sobą, guma oporowa przewieszona wokół stóp (żółta taśma widoczna z prawej strony), uchwyty trzymane chwytem neutralnym, ramiona w pełni wyprostowane przed sobą, tułów PIONOWY (oparty o pionową podpórkę — co dodatkowo wymusza strict-form 'straight back'). Podświetlone: latissimus_dorsi (najszersze, dominujący highlight), rhomboids i mid-trapezius (środkowe plecy), biceps_brachii (przedramiona/biceps z gumą). Frame 2 (mid): łokcie idą w tył blisko żeber (nie flared), uchwyty w połowie drogi do brzucha, łopatki zaczynają się ściągać, tułów NADAL pionowy. Frame 4 (end): pełne ściągnięcie łopatek, uchwyty przy dolnej części brzucha, łokcie wyraźnie za linią tułowia, tułów PIONOWY (kluczowy element wariantu 'straight back' — brak odchylenia w tył które widzimy w cable seated row). Klasyfikacja 'pull_horizontal' potwierdzona. Equipment: tylko resistance_band (uchwyty + guma elastyczna). Difficulty 3 — łatwiejsze niż cable seated row (4), bo guma daje progresywne napięcie i niższy ciężar bezwzględny + ławka pionowa wymusza strict-form. Primary: latissimus_dorsi P9, rhomboids P9, biceps_brachii P8 — zgodnie ze specyfikacją zadania (biceps wyżej niż w wariancie cable bo guma + krótka dźwignia + brak momentum z tułowia => bicepsy muszą więcej dociągnąć). Wszystkie pola PL napisane od zera, polski standard fitness ('Wiosło z gumą siedząc z prostym tułowiem' — strict-form podkreślony w nazwie). 5 faults + 3 contraindications + 5+5 cues + classification + muscle_intensity zgodnie z zasadami zadania.",
+
+  "tags": ["compound", "horizontal_pull", "resistance_band", "home_workout", "no_equipment_gym", "strict_form", "back_isolation", "lat_developer", "beginner_friendly", "travel_friendly"]
+}

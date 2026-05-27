@@ -1,0 +1,206 @@
+{
+  "id": "push-up-medicine-ball",
+  "name": "Push-Up on Medicine Ball (One Hand)",
+  "namePl": "Pompki z jedną dłonią na piłce lekarskiej",
+  "aliases": ["one-hand medicine ball push-up", "medicine ball push-up", "asymmetric push-up on ball", "uneven push-up med ball", "med ball one-arm push-up"],
+  "aliasesPl": ["pompki z jedną ręką na piłce lekarskiej", "pompki asymetryczne na piłce", "pompki na medicine ball", "pompki z dłonią na piłce", "asymetryczne pompki na piłce lekarskiej"],
+
+  "description": "Asymmetric push-up variation where one hand rests on a medicine ball and the other hand is flat on the floor. The uneven hand position creates a unilateral stability challenge — the working side (hand on floor) takes a slightly larger portion of load while the side on the ball must constantly stabilize a rolling, unstable surface. This significantly increases recruitment of stabilizer muscles (rotator cuff, serratus anterior, obliques) and engages the core hard to prevent torso rotation. Switch sides after each set (or alternate by rolling the ball under the chest mid-set in advanced versions).",
+  "descriptionPl": "Asymetryczny wariant pompek, w którym jedna dłoń spoczywa na piłce lekarskiej, a druga jest płasko na podłodze. Nierówne ustawienie rąk tworzy jednostronne wyzwanie stabilizacyjne — strona pracująca (dłoń na podłodze) przejmuje nieco większą część obciążenia, a strona na piłce musi nieprzerwanie stabilizować ruchomą, niestabilną powierzchnię. To znacznie zwiększa angażowanie mięśni stabilizujących (stożek rotatorów, mięsień zębaty przedni, skośne brzucha) oraz mocno aktywuje core, by zapobiec rotacji tułowia. Po każdej serii zmień stronę (lub w zaawansowanych wersjach przetaczaj piłkę pod klatką w trakcie serii).",
+
+  "instructions": [
+    "Choose a medicine ball that is firm and won't squish under bodyweight (5-8 kg standard ball works well; size ~22-30 cm diameter).",
+    "Kneel down and place one hand on top of the medicine ball, fingers spread, palm centered. The other hand goes flat on the floor — slightly wider than your shoulder line.",
+    "Extend your legs back into a push-up plank. Feet hip-width apart for maximum stability, or together for advanced difficulty.",
+    "Brace your core hard and squeeze glutes — the ball wants to roll, your job is to prevent any torso rotation, side-to-side wobble or hip drop.",
+    "Inhale and lower yourself in a controlled manner. Chest descends straight down — not toward the ball side. Elbows track at ~45° from torso on both sides.",
+    "Lower until your chest is roughly level with the top of the ball (or until the floor-side elbow reaches ~90°).",
+    "Brief pause at the bottom — do not bounce, do not let the ball roll forward or sideways.",
+    "Exhale and press equally through both hands. The ball side requires more attention — drive straight down into the ball to prevent it from squirting out.",
+    "Complete planned reps, then switch the ball to the other hand. Do equal reps on both sides to prevent strength imbalance."
+  ],
+  "instructionsPl": [
+    "Wybierz piłkę lekarską, która jest twarda i nie zgniecie się pod ciężarem ciała (5-8 kg klasyczna piłka medyczna, średnica ~22-30 cm).",
+    "Uklęknij i połóż jedną dłoń na piłce lekarskiej — palce rozłożone, środek dłoni centralnie. Druga dłoń ląduje płasko na podłodze, nieco szerzej niż linia barków.",
+    "Wyprostuj nogi do tyłu, do pozycji pompkowej. Stopy na szerokość bioder dla maksymalnej stabilności, lub razem dla wersji zaawansowanej.",
+    "Mocno napnij brzuch i ściśnij pośladki — piłka chce się przetoczyć, twoim zadaniem jest zapobiec rotacji tułowia, kołysaniu na boki i opadaniu bioder.",
+    "Wdech, opuszczaj się kontrolowanym ruchem. Klatka schodzi prosto w dół — nie przechylaj się na stronę piłki. Łokcie po obu stronach idą pod ~45° od tułowia.",
+    "Zejdź aż klatka będzie mniej więcej na wysokości szczytu piłki (lub aż łokieć po stronie podłogi osiągnie ~90°).",
+    "Krótka pauza na dole — nie odbijaj, nie pozwól piłce odjechać do przodu ani na bok.",
+    "Wydech, wyciskaj równo przez obie dłonie. Strona piłki wymaga więcej uwagi — napieraj prosto w dół na piłkę, by nie wyśliznęła się na bok.",
+    "Wykonaj zaplanowane powtórzenia, potem przełóż piłkę pod drugą dłoń. Zrób równą liczbę powtórzeń na obie strony, by uniknąć dysbalansu siłowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "asymmetric",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "core"],
+    "secondary": ["anterior_deltoids", "serratus_anterior", "obliques"],
+    "stabilizers": ["rotator_cuff", "scapular_stabilizers", "glutes", "quadriceps", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "triceps": "P8",
+    "core": "P7",
+    "anterior_deltoids": "S7",
+    "serratus_anterior": "S7",
+    "obliques": "S7",
+    "rotator_cuff": "T6",
+    "scapular_stabilizers": "T5",
+    "glutes": "T4",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "medicine_ball"],
+    "optional": ["yoga_mat", "weighted_vest"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "knee-push-up", "incline-push-up"],
+    "progression_to": ["push-up-on-medicine-ball-both-hands", "alternating-medicine-ball-push-up", "archer-push-up", "single-arm-push-up", "plyometric-push-up"],
+    "alternatives": ["push-up", "decline-push-up", "bosu-push-up", "ring-push-up", "uneven-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Firm medicine ball — won't deform under your weight (5-8 kg, ~22-30 cm)",
+      "Hand on ball: fingers spread, palm centered on top — not the side",
+      "Floor hand slightly wider than shoulder for balance",
+      "Feet hip-width apart — wider base = more stable",
+      "Pre-brace plank position BEFORE starting any reps — ball will want to roll"
+    ],
+    "setup_cues_pl": [
+      "Twarda piłka lekarska — nie odkształca się pod ciężarem ciała (5-8 kg, ~22-30 cm)",
+      "Dłoń na piłce: palce rozłożone, środek dłoni na samym szczycie — nie z boku",
+      "Dłoń na podłodze nieco szerzej niż bark, dla równowagi",
+      "Stopy na szerokość bioder — szersza baza = większa stabilność",
+      "Napnij całe ciało DO planka ZANIM zaczniesz powtórzenia — piłka będzie chciała się przetoczyć"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — slow descent gives time to balance the ball",
+      "Chest descends straight down — do NOT lean toward the ball or away from it",
+      "Both elbows ~45° from torso — even though hands are at different heights",
+      "Push DOWN into the ball, not forward — imagine compressing it into the floor",
+      "Hips stay square to the floor — no rotation, no twisting toward the floor hand"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — wolne schodzenie daje czas na zbalansowanie piłki",
+      "Klatka schodzi prosto w dół — NIE przechylaj się ku piłce ani w drugą stronę",
+      "Oba łokcie po ~45° od tułowia — mimo że dłonie są na różnych wysokościach",
+      "Naciskaj W DÓŁ na piłkę, nie do przodu — wyobraź sobie że dociskasz ją do podłogi",
+      "Biodra ustawione równo do podłogi — bez rotacji, bez skręcania w stronę dłoni na podłodze"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward the floor hand",
+        "faultPl": "Rotacja tułowia w stronę dłoni na podłodze",
+        "cause": "Floor side is more stable, so body 'falls' toward it; weak obliques and core",
+        "causePl": "Strona podłogi jest stabilniejsza, więc ciało 'opada' w jej stronę; słabe skośne brzucha i core",
+        "cue": "Keep hips and shoulders SQUARE to the floor. Imagine a horizontal line through your shoulder blades — it must stay parallel to the floor.",
+        "cuePl": "Utrzymuj biodra i barki RÓWNO do podłogi. Wyobraź sobie poziomą linię przez łopatki — musi pozostać równoległa do podłogi."
+      },
+      {
+        "fault": "Ball rolls forward or sideways during descent",
+        "faultPl": "Piłka przetacza się do przodu lub na bok podczas schodzenia",
+        "cause": "Pushing forward instead of down; hand placement on side of ball, not top",
+        "causePl": "Naciskanie do przodu zamiast w dół; dłoń na boku piłki, nie na szczycie",
+        "cue": "Hand on TOP of ball, fingers spread for grip. Drive straight down — vector of force from shoulder to floor through the ball.",
+        "cuePl": "Dłoń NA SZCZYCIE piłki, palce rozłożone dla chwytu. Napieraj prosto w dół — wektor siły od barku przez piłkę do podłogi."
+      },
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "Weak core, no glute engagement — extra unilateral demand exposes weak plank",
+        "causePl": "Słaby core, brak napięcia pośladków — dodatkowe jednostronne obciążenie odsłania słabą plankę",
+        "cue": "Squeeze glutes HARD before lowering. Ribs down, belly button to spine. 'Plank position first, then push-up'.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. Żebra w dół, pępek do kręgosłupa. 'Najpierw plank, potem pompka'."
+      },
+      {
+        "fault": "Uneven shoulder height at the bottom",
+        "faultPl": "Nierówna wysokość barków na dole",
+        "cause": "Body weight shifts to floor side, ball side stays higher; lack of body awareness",
+        "causePl": "Ciężar ciała przenosi się na stronę podłogi, strona piłki zostaje wyżej; brak świadomości ciała",
+        "cue": "Both shoulders should descend the same vertical distance. Floor hand bends elbow MORE, ball hand bends LESS — but both work.",
+        "cuePl": "Oba barki muszą zejść o tę samą odległość pionową. Łokieć po stronie podłogi zgina się BARDZIEJ, po stronie piłki MNIEJ — ale oba pracują."
+      },
+      {
+        "fault": "Wrist hyperextension on the ball hand",
+        "faultPl": "Przeprost nadgarstka na dłoni piłki",
+        "cause": "Ball surface forces fingers to wrap, but palm gets loaded at extreme angle",
+        "causePl": "Powierzchnia piłki wymusza zgięcie palców, ale dłoń obciąża się pod ekstremalnym kątem",
+        "cue": "Grip the ball with fingers, distribute load across the whole palm. If wrist hurts — switch to push-up handles or fists on the floor side and rest the ball.",
+        "cuePl": "Chwyć piłkę palcami, rozłóż obciążenie na całą dłoń. Jeśli nadgarstek boli — przejdź na uchwyty/pięść po stronie podłogi, a piłkę odstaw."
+      }
+    ],
+    "breathing": "Inhale during descent (preparation phase — when stability demand is highest). Brace through the bottom. Exhale during the press up. For asymmetric work, keep breathing rhythm identical on both sides to maintain symmetric output.",
+    "breathingPl": "Wdech podczas schodzenia (faza przygotowania — gdy zapotrzebowanie na stabilność jest największe). Napięcie na dole. Wydech podczas wyciskania. Przy pracy asymetrycznej zachowaj ten sam rytm oddychania po obu stronach, by output był symetryczny."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Ball-side hand wraps the ball (natural grip), but floor-side hand should use push-up handles or fists to keep wrist neutral. If pain persists — switch to dumbbell push-ups or rings.",
+      "modificationPl": "Dłoń po stronie piłki obejmuje piłkę (naturalny chwyt), ale dłoń na podłodze powinna używać uchwytów lub pięści dla neutralnego nadgarstka. Jeśli ból nie ustępuje — przejdź na pompki na hantlach lub kółkach.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "Unstable surface increases shoulder demand significantly — high risk for unstable shoulders. Strengthen rotator cuff and master standard push-ups first.",
+      "modificationPl": "Niestabilne podłoże znacznie zwiększa wymagania wobec barku — wysokie ryzyko dla niestabilnych barków. Najpierw wzmocnij stożek rotatorów i opanuj klasyczne pompki.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Asymmetric load makes core anti-rotation work harder; sagging hips load lumbar spine. If you can't hold a rigid square plank — regress to incline push-ups until core stronger.",
+      "modificationPl": "Asymetryczne obciążenie zwiększa pracę core przeciw rotacji; opadające biodra obciążają odcinek lędźwiowy. Jeśli nie utrzymasz sztywnej, równej planki — wróć do pompek na podwyższeniu do czasu wzmocnienia core.",
+      "alternative": "incline-push-up"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Unstable surface forces rotator cuff to fire constantly to keep humeral head centered. Wait until cleared by physio and re-introduce with regular push-ups first.",
+      "modificationPl": "Niestabilna powierzchnia zmusza stożek rotatorów do nieprzerwanej pracy nad centrowaniem głowy kości ramiennej. Poczekaj do zezwolenia fizjoterapeuty i wracaj najpierw przez klasyczne pompki.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy + stability) | 3x6-8 per side (strength + control) | 2-3x12-15 per side AMRAP (conditioning)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "push-up-medicine-ball.gif",
+    "frames_extracted": [
+      "frames/push-up-medicine-ball/frame_0_start.png",
+      "frames/push-up-medicine-ball/frame_1_early.png",
+      "frames/push-up-medicine-ball/frame_2_mid.png",
+      "frames/push-up-medicine-ball/frame_3_late.png",
+      "frames/push-up-medicine-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/push-up-medicine-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T16:35:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej — LEWA dłoń na piłce lekarskiej (po lewej stronie kadru), PRAWA dłoń płasko na podłodze (po prawej stronie kadru, niżej), ramiona wyprostowane, stopy z tyłu, ciało w prostej linii. To wyraźnie asymetryczny wariant pompek — jedna dłoń wyżej (na piłce), druga niżej (na podłodze). Frame 2 (mid): pełne opuszczenie — klatka schodzi w dół, łokieć po stronie podłogi zgięty głębiej, łokieć po stronie piłki zgięty mniej (ze względu na wyższą pozycję dłoni), tułów lekko skręcony naturalnie ze względu na asymetryczne ustawienie. Klatka piersiowa i tricepsy wyraźnie podświetlone na anatomii — primary movers. Frame 4 (end): powrót do wyjściowej pozycji (zamknięcie cyklu). Klasyfikacja laterality='asymmetric' poprawna — to nie jest pełna bilateral ani prawdziwa unilateral (single-arm), tylko asymetryczna z dodatkowym wyzwaniem stabilizacji jednej strony. Core jako primary (P7) zamiast tylko stabilizator — ze względu na ogromne anti-rotation demands. Equipment: bodyweight + medicine_ball. Difficulty 6 (między decline 5 a single-arm 8). Wszystkie pola PL napisane od zera w polskim standardzie fitness.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "unilateral_emphasis", "stability", "core", "anti_rotation", "medicine_ball", "unstable_surface"]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "barbell-bench-front-squat",
+  "name": "Barbell Bench Front Squat",
+  "namePl": "Przysiad przedni ze sztangą z dotknięciem ławki",
+  "aliases": ["box front squat", "barbell front box squat", "bench-touch front squat"],
+  "aliasesPl": ["przysiad przedni do ławki", "front squat na ławkę", "front box squat", "przysiad przedni z kontrolą głębokości"],
+
+  "description": "Front squat performed over a bench (or low box) placed behind the lifter — the lifter descends in a controlled manner until the glutes lightly touch the bench, then drives back up. The bench serves as a tactile depth target, not a seat to sit and rest on. This variation teaches consistent squat depth, controlled descent (eccentric tempo), and posterior weight distribution while keeping the quad-dominant front rack position. Excellent for beginners learning the front squat pattern, lifters with mobility limitations who need a depth gauge, athletes returning from injury, and pre-rehab programming. Loaded with submaximal weights (60-75% of regular front squat 1RM).",
+  "descriptionPl": "Przysiad przedni wykonywany nad ławką (lub niskim boxem) ustawioną za ćwiczącym — schodzisz kontrolowanym ruchem aż pośladki lekko dotkną ławki, a następnie wstajesz. Ławka pełni rolę dotykowego punktu odniesienia głębokości, nie miejsca do siadania i odpoczynku. Ten wariant uczy powtarzalnej głębokości przysiadu, kontrolowanego schodzenia (tempa ekscentrycznego) i właściwego rozłożenia ciężaru, zachowując jednocześnie pozycję front rack mocno angażującą czworogłowe. Świetny dla początkujących uczących się wzorca front squat, osób z ograniczeniami mobilności potrzebujących wskaźnika głębokości, sportowców wracających po kontuzji oraz w treningu pre-rehab. Obciążany ciężarami submaksymalnymi (60-75% 1RM klasycznego front squat).",
+
+  "instructions": [
+    "Place a flat bench (or low box, height matching parallel squat depth) behind the rack. Step into the rack and set the bar in the front rack position across the front delts.",
+    "Establish the front rack: hands slightly wider than shoulder-width, elbows driven high and forward so upper arms are parallel to the floor. The bar rests on the shoulder shelf, not in the palms.",
+    "Unrack the bar by extending your legs. Take two controlled steps back until the bench is just behind your heels — you should be able to feel the bench by extending one foot back, but not touch it standing.",
+    "Set your feet shoulder-width apart with toes turned out 10-30°. Brace your core 360°, take a big breath, elbows high.",
+    "Initiate the descent by breaking at the knees AND hips simultaneously. Keep the torso as vertical as possible and control the speed (2-3 seconds down).",
+    "Continue down until your glutes lightly touch the bench. Do NOT sit and relax — maintain tension throughout the entire body, only a brief tactile contact.",
+    "Without losing tension or rocking back, drive up through the whole foot, leading with chest and elbows.",
+    "Lock out at the top with full hip and knee extension. Re-brace and repeat. Keep elbows up the entire set."
+  ],
+  "instructionsPl": [
+    "Ustaw płaską ławkę (lub niski box, wysokość odpowiadająca głębokości równoległej przysiadu) za stojakiem. Wejdź do stojaka i ułóż sztangę w pozycji front rack na przednich aktonach barków.",
+    "Ustaw front rack: dłonie nieco szerzej niż na szerokość barków, łokcie wypchnięte wysoko i do przodu tak, by ramiona były równoległe do podłogi. Gryf spoczywa na półce barków, nie w dłoniach.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się dwoma kontrolowanymi krokami, aż ławka znajdzie się tuż za piętami — powinieneś móc wyczuć ją cofając jedną stopę, ale nie dotykać jej stojąc.",
+    "Ustaw stopy na szerokość barków, palce skierowane na zewnątrz 10-30°. Napnij core 360°, nabierz głębokiego oddechu, łokcie wysoko.",
+    "Rozpocznij schodzenie zginając jednocześnie kolana I biodra. Trzymaj tułów możliwie pionowo i kontroluj prędkość (2-3 sekundy w dół).",
+    "Schodź aż pośladki lekko dotkną ławki. NIE siadaj i nie rozluźniaj się — utrzymuj napięcie całego ciała, kontakt ma być tylko krótki, dotykowy.",
+    "Bez utraty napięcia i bujania się do tyłu wypchnij się w górę napierając całą stopą, prowadząc ruch klatką i łokciami.",
+    "Zakończ w pełnym wyproście bioder i kolan. Ponownie napnij brzuch i powtórz. Trzymaj łokcie wysoko przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["upper_back", "erector_spinae"],
+    "stabilizers": ["core", "upper_traps", "rectus_abdominis", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P7",
+    "upper_back": "S7",
+    "erector_spinae": "S6",
+    "core": "P8",
+    "upper_traps": "S5",
+    "rectus_abdominis": "S6",
+    "adductors": "S5",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack", "bench"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps", "box"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "box-squat"],
+    "progression_to": ["barbell-front-squat", "pause-front-squat", "tempo-front-squat"],
+    "alternatives": ["goblet-box-squat", "barbell-back-box-squat", "safety-bar-box-squat", "barbell-front-squat", "hack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench height = parallel squat depth (hip crease just below knee)",
+      "Stand close enough to touch the bench by extending one foot back",
+      "Bar on front delt shelf — elbows up, upper arms parallel to floor",
+      "Feet shoulder-width, toes out 10-30°",
+      "Big breath, brace 360° before unracking"
+    ],
+    "setup_cues_pl": [
+      "Wysokość ławki = głębokość równoległa przysiadu (biodra tuż pod kolanami)",
+      "Stań na tyle blisko, by dotknąć ławki cofając jedną stopę",
+      "Gryf na półce przednich aktonów — łokcie wysoko, ramiona równolegle do podłogi",
+      "Stopy szerokość barków, palce na zewnątrz 10-30°",
+      "Głęboki wdech, napięcie 360° przed wyciągnięciem ze stojaka"
+    ],
+    "execution_cues": [
+      "Control the descent — 2 to 3 seconds down to the bench",
+      "Touch and go — light tap, never sit and relax",
+      "Elbows UP at the bottom — chase the ceiling",
+      "Torso stays vertical the entire rep",
+      "Drive chest and elbows up first, hips follow"
+    ],
+    "execution_cues_pl": [
+      "Kontroluj schodzenie — 2-3 sekundy w dół do ławki",
+      "Dotknij i wstań — lekkie muśnięcie, nigdy siadanie i rozluźnianie",
+      "Łokcie WYSOKO na dole — kieruj je do sufitu",
+      "Tułów pionowy przez całe powtórzenie",
+      "Najpierw klatka i łokcie w górę, biodra podążają za nimi"
+    ],
+    "common_faults": [
+      {
+        "fault": "Crashing onto the bench / loss of eccentric control",
+        "faultPl": "Opadanie na ławkę / utrata kontroli ekscentrycznej",
+        "cause": "Treating the bench as a seat rather than a depth marker, weak quads, or excessive load",
+        "causePl": "Traktowanie ławki jako miejsca do siedzenia, a nie znacznika głębokości, słabe czworogłowe, lub zbyt duże obciążenie",
+        "cue": "Light tap, instant return. If you crash onto the bench the load is too heavy or you need to retrain the descent tempo.",
+        "cuePl": "Lekkie muśnięcie, natychmiastowy powrót. Jeśli opadasz na ławkę, ciężar jest za duży lub musisz przeuczyć tempo schodzenia."
+      },
+      {
+        "fault": "Sitting and relaxing on the bench",
+        "faultPl": "Siadanie i rozluźnianie na ławce",
+        "cause": "Misunderstanding the exercise — this is a TOUCH variation, not a true sit-and-pause box squat",
+        "causePl": "Niezrozumienie ćwiczenia — to wariant z DOTKNIĘCIEM, nie prawdziwy box squat z siadaniem i pauzą",
+        "cue": "Maintain full body tension. Only the glutes briefly contact the bench. If you want a paused box squat, use a different variation.",
+        "cuePl": "Utrzymuj pełne napięcie ciała. Tylko pośladki krótko dotykają ławki. Jeśli chcesz pauzowanego box squat, użyj innego wariantu."
+      },
+      {
+        "fault": "Elbows drop at depth",
+        "faultPl": "Łokcie opadają na dole",
+        "cause": "Weak upper back, limited wrist/shoulder mobility, or losing focus on the rack at depth",
+        "causePl": "Słaba górna część pleców, ograniczona mobilność nadgarstków/barków, lub utrata koncentracji na pozycji rack na dole",
+        "cue": "Chase elbows to ceiling — strongest at the bottom. If elbows drop the bar rolls forward and the rep is gone.",
+        "cuePl": "Kieruj łokcie do sufitu — najmocniej na dole. Jeśli łokcie opadną, gryf stoczy się do przodu i powtórzenie jest stracone."
+      },
+      {
+        "fault": "Rocking back on the bench before standing",
+        "faultPl": "Bujanie do tyłu na ławce przed wstaniem",
+        "cause": "Trying to use bench for momentum or loss of forward weight distribution",
+        "causePl": "Próba użycia ławki jako rozpędu lub utrata rozłożenia ciężaru do przodu",
+        "cue": "Weight stays in the middle of the foot throughout. No backward shift — just touch and drive straight up.",
+        "cuePl": "Ciężar trzymaj na środku stopy przez cały czas. Żadnego cofania się — dotknij i wypchnij prosto w górę."
+      },
+      {
+        "fault": "Bench too high (above parallel) cutting reps short",
+        "faultPl": "Ławka za wysoko (nad równoległą) ucinająca głębokość powtórzeń",
+        "cause": "Using a standard bench without checking it matches actual squat depth for the lifter",
+        "causePl": "Użycie standardowej ławki bez sprawdzenia czy odpowiada faktycznej głębokości przysiadu osoby",
+        "cue": "Bench height should bring hip crease just below the top of the knee. Use plates under feet or a lower box if needed.",
+        "cuePl": "Wysokość ławki ma sprowadzić biodra tuż poniżej szczytu kolan. Użyj talerzy pod stopami lub niższego boxu jeśli trzeba."
+      }
+    ],
+    "breathing": "Big breath at the top, brace 360°, hold through descent and the touch. Drive up while still bracing, exhale near lockout. Re-breathe between reps.",
+    "breathingPl": "Głęboki wdech na górze, napięcie 360°, wstrzymaj przez schodzenie i dotknięcie. Wstawanie nadal z napięciem, wydech blisko pełnego wyprostu. Ponowny wdech między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_injury_or_limited_extension",
+      "severity": "modify",
+      "modification": "Use a cross-arm rack (bodybuilder grip) with arms crossed over the bar, or lifting straps wrapped around the bar to remove wrist load.",
+      "modificationPl": "Zastosuj chwyt skrzyżowany (bodybuilder grip) z rękami skrzyżowanymi nad gryfem, lub użyj lifting strapsów owiniętych wokół gryfu, by usunąć obciążenie nadgarstków.",
+      "alternative": "goblet-box-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid all axial spinal loading until cleared.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj osiowego obciążania kręgosłupa do czasu zgody specjalisty.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "shoulder_mobility_restriction",
+      "severity": "modify",
+      "modification": "Front rack requires shoulder flexion and external rotation. Use cross-arm grip or switch to goblet variation while building mobility.",
+      "modificationPl": "Front rack wymaga zgięcia barku i rotacji zewnętrznej. Użyj chwytu skrzyżowanego lub przejdź na wariant goblet, jednocześnie pracując nad mobilnością.",
+      "alternative": "goblet-box-squat"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-10 (technique / quad hypertrophy) | 3x5 (controlled strength) | 5x3 (pre-rehab return to squat)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-bench-front-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-bench-front-squat/frame_0_start.png",
+      "frames/barbell-bench-front-squat/frame_1_early.png",
+      "frames/barbell-bench-front-squat/frame_2_mid.png",
+      "frames/barbell-bench-front-squat/frame_3_late.png",
+      "frames/barbell-bench-front-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-bench-front-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start, early, mid, late, end). Klatka 0 i 4 (start/end): pozycja stojąca z gryfem na PRZEDNICH aktonach barków, łokcie wypchnięte wysoko i do przodu (klasyczny front rack, ramiona ~równolegle do podłogi), płaska ławka stoi za ćwiczącym. Klatka 2 (mid/dół): głębokość pełnego przysiadu, biodra na poziomie szczytu ławki / nieco powyżej, pośladki w okolicy kontaktu z ławką — to ławka kontroluje głębokość, nie służy do siedzenia (ćwiczący nie traci napięcia, tułów pozostaje pionowy, łokcie nadal wysoko). Klatki 1 i 3 (early/late): pozycje pośrednie schodzenia/wstawania pokazują tę samą trajektorię (pionowy tułów, kolana wychodzą nad palce — typowe dla front squat). Podświetlenie mięśni: czworogłowe MOCNO (cała przednia strona uda) — quad-dominant. Pośladki podświetlone umiarkowanie. Zgodnie ze specyfikacją zadania: primary quadriceps P10, glutes P7. Klasyfikacja jako pre-rehab + beginner-friendly w pełni uzasadniona — ławka jako tactile depth gauge to klasyczny tool w fizjoterapii i u początkujących uczących się wzorca front squat. Difficulty 6 (vs 8 dla klasycznego front squat) odzwierciedla niższy próg wejścia dzięki kontroli głębokości. Wszystkie pola PL napisane od zera w polskim standardzie fitness ('przysiad przedni', 'front rack', 'czworogłowe', 'dotknięcie ławki').",
+
+  "tags": ["quad_builder", "compound", "lower_body", "core_intensive", "barbell", "front_rack", "pre_rehab", "beginner_friendly", "depth_control", "tempo_work"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "smith-seated-wrist-curl",
+  "name": "Smith Seated Wrist Curl",
+  "namePl": "Uginanie nadgarstków na Smith siedząc",
+  "aliases": ["smith machine wrist curl", "seated wrist curl smith", "smith forearm curl"],
+  "aliasesPl": ["uginanie nadgarstków siedząc na maszynie Smitha", "zginanie nadgarstków na smithcie siedząc", "wrist curl na maszynie smitha"],
+
+  "description": "Isolation exercise targeting the wrist flexors of the forearm performed seated on a bench inside a Smith machine. The forearms rest on the thighs (or a bench pad) with the bar held in a supinated grip and the wrists hanging just past the knees. Only the wrists move — flexing the bar upward and slowly lowering it under stretch. The Smith machine's fixed path locks the bar in a vertical groove which lets the lifter focus entirely on wrist mechanics without balancing a free barbell. A staple finisher for forearm hypertrophy and grip-related strength.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze nadgarstka przedramienia wykonywane w pozycji siedzącej na ławce wewnątrz maszyny Smitha. Przedramiona spoczywają na udach (lub na podkładce ławki), gryf trzymany nachwytem dolnym (podchwyt), a nadgarstki zwisają tuż za kolanami. Ruch odbywa się wyłącznie w nadgarstkach — zginanie gryfu do góry i powolne opuszczanie w fazie rozciągnięcia. Stała trajektoria gryfu Smitha blokuje ruch w pionowej szynie, co pozwala skupić się w pełni na mechanice nadgarstka bez balansowania wolną sztangą. Klasyczny finiszer na hipertrofię przedramion i siłę chwytu.",
+
+  "instructions": [
+    "Place a flat bench inside the Smith machine, parallel to the bar and positioned so the bar will sit just past your knees when you are seated.",
+    "Load the bar with light to moderate weight — forearm flexors fatigue with short range, so leave ego at the door.",
+    "Sit on the bench, feet flat on the floor about hip-width apart. Unrack the Smith bar with a supinated (underhand) grip slightly narrower than shoulder-width.",
+    "Lay your forearms flat along your thighs so your wrists hang off your knees. Palms face up. Forearms must stay pressed into the thighs the entire set — this is your anchor.",
+    "Let the bar roll down toward your fingertips, allowing the wrists to extend fully into a stretched position. Keep the grip relaxed enough to allow this rolling motion.",
+    "Close the fingers and curl the wrists upward as high as possible by flexing only at the wrist joint. Squeeze the forearm flexors hard at the top.",
+    "Lower the bar under control over 2-3 seconds back to the fully stretched position. Do not let it bounce out of the bottom.",
+    "Keep elbows, shoulders and torso completely still. The Smith bar's fixed path will not forgive elbow lift — if your elbows come off your thighs, you have lost the exercise.",
+    "After the set, twist and rack the Smith bar on the safety hooks before standing up."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę poziomą wewnątrz maszyny Smitha, równolegle do gryfu i tak, by gryf znajdował się tuż za kolanami gdy usiądziesz.",
+    "Załaduj gryf lekkim lub umiarkowanym ciężarem — zginacze nadgarstka męczą się szybko przy krótkim zakresie ruchu, zostaw ego za drzwiami.",
+    "Usiądź na ławce, stopy płasko na podłodze na szerokość bioder. Zdejmij gryf Smitha podchwytem (nachwyt dolny) nieco węższym niż szerokość barków.",
+    "Połóż przedramiona płasko na udach tak, by nadgarstki zwisały za kolanami. Dłonie skierowane do góry. Przedramiona muszą być wciśnięte w uda przez całą serię — to twoja kotwica.",
+    "Pozwól, by gryf zrolował się w stronę palców, a nadgarstki w pełni wyprostowały do pozycji rozciągniętej. Trzymaj chwyt na tyle luźno, by umożliwić to rolowanie.",
+    "Zaciśnij palce i ugnij nadgarstki w górę najwyżej jak możesz, zginając wyłącznie w stawie nadgarstkowym. Mocno spinaj zginacze przedramienia w górnej pozycji.",
+    "Opuszczaj gryf w sposób kontrolowany przez 2-3 sekundy z powrotem do pełnego rozciągnięcia. Nie odbijaj go z dolnej pozycji.",
+    "Łokcie, barki i tułów pozostają całkowicie nieruchome. Stała trajektoria gryfu Smitha nie wybacza unoszenia łokci — jeśli oderwiesz przedramiona od ud, straciłeś ćwiczenie.",
+    "Po serii obróć i odłóż gryf Smitha na haki zabezpieczające zanim wstaniesz."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["flexor_carpi_radialis", "flexor_carpi_ulnaris", "palmaris_longus"],
+    "stabilizers": ["biceps_brachii", "brachioradialis", "grip_muscles", "core"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "flexor_carpi_radialis": "P9",
+    "flexor_carpi_ulnaris": "P9",
+    "palmaris_longus": "S6",
+    "grip_muscles": "S5",
+    "biceps_brachii": "T2",
+    "brachioradialis": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "flat_bench"],
+    "optional": ["weight_plates", "collars", "bench_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["barbell-wrist-curl", "behind-back-wrist-curl", "fat-grip-wrist-curl"],
+    "alternatives": ["barbell-wrist-curl", "dumbbell-wrist-curl", "cable-wrist-curl", "ez-bar-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench parallel to Smith bar, bar just past your knees",
+      "Supinated grip slightly narrower than shoulders",
+      "Forearms pressed flat into thighs, wrists hanging over knees",
+      "Feet planted, sit tall, neutral spine",
+      "Light to moderate load — forearms fatigue fast"
+    ],
+    "setup_cues_pl": [
+      "Ławka równolegle do gryfu Smitha, gryf tuż za kolanami",
+      "Chwyt podchwytem nieco węższy niż barki",
+      "Przedramiona wciśnięte płasko w uda, nadgarstki zwisają za kolanami",
+      "Stopy płasko, siedzisz prosto, kręgosłup neutralnie",
+      "Lekki do umiarkowanego ciężar — przedramiona męczą się szybko"
+    ],
+    "execution_cues": [
+      "Only the wrists move — forearms glued to thighs",
+      "Let the bar roll to fingertips at the bottom for full stretch",
+      "Squeeze the flexors hard at the top",
+      "Lower under control for 2-3 seconds — no bounce",
+      "Full range every rep — short ROM equals wasted set"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko nadgarstki — przedramiona przyklejone do ud",
+      "Pozwól gryfowi zrolować się do palców na dole dla pełnego rozciągnięcia",
+      "Mocno spinaj zginacze w górnej pozycji",
+      "Opuszczaj kontrolowanie przez 2-3 sekundy — bez odbijania",
+      "Pełny zakres każde powtórzenie — krótki ROM to zmarnowana seria"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting forearms off the thighs",
+        "faultPl": "Odrywanie przedramion od ud",
+        "cause": "Load too heavy, the lifter recruits biceps and elbow flexion to muscle the bar up",
+        "causePl": "Zbyt duży ciężar, ćwiczący włącza biceps i zginanie w łokciu by wcisnąć gryf w górę",
+        "cue": "Drop the weight by 30-40%. Press forearms firmly into thighs — if they lift, the set is over.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Wciśnij przedramiona mocno w uda — jeśli oderwą się, seria jest skończona."
+      },
+      {
+        "fault": "Cutting the bottom range (no fingertip roll)",
+        "faultPl": "Skracanie dolnej fazy (brak rolowania do palców)",
+        "cause": "Grip too tight, fear of dropping the bar, or trying to keep tension artificially high",
+        "causePl": "Zbyt mocny chwyt, strach przed wypuszczeniem gryfu, lub próba sztucznego utrzymania napięcia",
+        "cue": "Relax the fingers at the bottom and let the bar roll to fingertips. Re-grip and curl up.",
+        "cuePl": "Rozluźnij palce na dole i pozwól gryfowi zrolować się do palców. Zaciśnij ponownie i ugnij w górę."
+      },
+      {
+        "fault": "Bouncing the bar at the bottom",
+        "faultPl": "Odbijanie gryfu w dolnej pozycji",
+        "cause": "Using stretch reflex / elastic recoil to fake reps after the flexors fatigue",
+        "causePl": "Używanie odruchu z rozciągania / odbicia elastycznego by oszukiwać powtórzenia po zmęczeniu zginaczy",
+        "cue": "Pause for 1 second at the bottom in full stretch before curling up.",
+        "cuePl": "Zatrzymaj się na 1 sekundę w dolnej pozycji w pełnym rozciągnięciu, zanim ugniesz w górę."
+      },
+      {
+        "fault": "Curling the elbows or moving the torso",
+        "faultPl": "Uginanie w łokciach lub ruch tułowia",
+        "cause": "Smith bar's fixed path makes the lifter chase the bar with elbow flexion when forearms tire",
+        "causePl": "Stała ścieżka gryfu Smitha sprawia, że ćwiczący zaczyna gonić gryf zginaniem łokci gdy przedramiona się męczą",
+        "cue": "Anchor your elbows on your hips. Imagine your forearms are bolted to your thighs.",
+        "cuePl": "Zakotwicz łokcie na biodrach. Wyobraź sobie, że twoje przedramiona są przykręcone do ud."
+      },
+      {
+        "fault": "Bench positioned too far from the Smith bar",
+        "faultPl": "Ławka ustawiona za daleko od gryfu Smitha",
+        "cause": "User has to lean forward to reach the bar which kills the anchor and loads the lower back",
+        "causePl": "Ćwiczący musi pochylać się do przodu by sięgnąć gryfu, co psuje kotwicę i obciąża dolny grzbiet",
+        "cue": "Reposition the bench so the bar sits just past your knees with arms relaxed.",
+        "cuePl": "Przestaw ławkę tak, by gryf znalazł się tuż za kolanami przy zrelaksowanych ramionach."
+      }
+    ],
+    "breathing": "Exhale during the concentric (wrist flexion up). Inhale during the eccentric (lower into stretch). The set is short and forearms burn — do not hold your breath.",
+    "breathingPl": "Wydech w fazie koncentrycznej (zginanie nadgarstka w górę). Wdech w fazie ekscentrycznej (opuszczanie do rozciągnięcia). Seria jest krótka, a przedramiona pieką — nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Wrist flexion under load directly stresses the medial epicondyle origin. Reduce load by 50%, use 15-20 reps with slow tempo, or pause until pain-free.",
+      "modificationPl": "Zginanie nadgarstka pod obciążeniem bezpośrednio obciąża przyczep nadkłykcia przyśrodkowego. Zmniejsz ciężar o 50%, używaj 15-20 powtórzeń w wolnym tempie, lub przerwij do ustąpienia bólu.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Repetitive wrist flexion can aggravate median nerve compression. Reduce volume, avoid full end-range flexion, use lighter loads with neutral wrist intervals.",
+      "modificationPl": "Powtarzane zginanie nadgarstka może drażnić ucisk nerwu pośrodkowego. Zmniejsz objętość, unikaj pełnego końcowego zakresu zgięcia, używaj lżejszych ciężarów z neutralnymi przerwami nadgarstka.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "wrist_sprain_or_tfcc_injury",
+      "severity": "avoid",
+      "modification": "Loaded wrist flexion is contraindicated until cleared by a physiotherapist. Substitute with isometric grip work or pain-free ROM only.",
+      "modificationPl": "Obciążone zginanie nadgarstka jest przeciwwskazane do czasu zgody fizjoterapeuty. Zastąp izometryczną pracą chwytu lub bezbolesnym zakresem ruchu.",
+      "alternative": "dead-hang"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Supinated grip stresses distal biceps tendon. Use neutral-grip variation (dumbbells) or perform pain-free range only. Avoid heavy eccentrics.",
+      "modificationPl": "Chwyt podchwytem obciąża dystalny przyczep bicepsa. Użyj wariantu z chwytem neutralnym (hantle) lub wykonuj tylko bezbolesny zakres. Unikaj ciężkich faz negatywnych.",
+      "alternative": "dumbbell-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy) | 2-3x15-20 (endurance/pump) | 3x20-25 (high-rep finisher)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "smith-seated-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/smith-seated-wrist-curl/frame_0_start.png",
+      "frames/smith-seated-wrist-curl/frame_1_early.png",
+      "frames/smith-seated-wrist-curl/frame_2_mid.png",
+      "frames/smith-seated-wrist-curl/frame_3_late.png",
+      "frames/smith-seated-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/smith-seated-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:45:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi na ławce wewnątrz ramy Smitha, gryf w podchwycie, przedramiona oparte na udach, nadgarstki zwisają za kolanami w pełnym wyproście, przedramiona podświetlone na czerwono. Frame 2: nadgarstki w pełnym zgięciu, gryf uniesiony pionowo (Smith narzuca pionową trajektorię), przedramiona nadal przyklejone do ud, łokcie nieruchome, tułów pionowo. Frame 4: powrót do pozycji rozciągniętej. Tułów i ramiona nieruchome przez cały ruch — modelowa izolacja zginaczy nadgarstka. Ćwiczenie jednoznacznie zidentyfikowane jako Smith Seated Wrist Curl (supinowany chwyt = zginacze, nie prostowniki). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "forearms", "grip", "isolation", "smith_machine", "upper_body", "finisher", "accessory"]
+}

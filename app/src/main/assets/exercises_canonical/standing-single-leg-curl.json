@@ -1,0 +1,204 @@
+{
+  "id": "standing-single-leg-curl",
+  "name": "Standing Single-Leg Curl (Machine)",
+  "namePl": "Uginanie jednej nogi stojąc na maszynie — unilateralna izolacja dwugłowych ud",
+  "aliases": ["standing leg curl", "standing hamstring curl", "single-leg standing curl", "unilateral standing leg curl", "machine standing leg curl"],
+  "aliasesPl": ["uginanie nogi stojąc", "uginanie jednej nogi na maszynie", "standing leg curl", "unilateralne uginanie ud stojąc", "izolacja dwugłowych ud stojąc"],
+
+  "description": "Standing single-leg curl on a dedicated machine — the unilateral cousin of the prone (lying) leg curl. The lifter stands upright, supports the torso against the machine pad (or holds the handles), and curls one leg at a time by flexing the knee, bringing the heel toward the buttocks. The non-working leg supports the body. Because each leg trains independently, this variation is excellent for: addressing strength asymmetries (one hamstring weaker than the other), increasing time-under-tension per leg, improving mind-muscle connection through single-side focus, and providing a knee-friendly alternative for those who can't comfortably lie prone. The hamstring works in its pure knee-flexor role (similar to lying leg curl) with hips in near-extension — a slightly different position from prone that some lifters find puts less stress on the lower back. Common in commercial gyms and a staple of bodybuilding hamstring routines. Difficulty 3/10 — beginner-friendly with minimal balance demand thanks to the pad support.",
+  "descriptionPl": "Uginanie jednej nogi stojąc na dedykowanej maszynie — unilateralna odmiana uginania leżąc. Ćwiczący stoi pionowo, podpiera tułów o poduszkę maszyny (lub trzyma uchwyty) i ugina jedną nogę naraz zginając kolano i przybliżając piętę do pośladków. Druga noga (postojowa) podpiera ciało. Ponieważ każda noga trenuje niezależnie, ta odmiana świetnie się sprawdza: do wyrównywania asymetrii siły (jedna noga słabsza), zwiększenia czasu pod napięciem na nogę, poprawy połączenia umysł-mięsień przez jednostronną koncentrację, oraz jako przyjazna dla kolan alternatywa dla osób, które nie czują się komfortowo leżąc na brzuchu. Dwugłowe ud pracuje w czystej roli zginacza kolana (jak przy uginaniu leżąc) z biodrem w pozycji bliskiej wyprostu — to nieco inna pozycja niż leżąca, którą niektórzy ćwiczący odbierają jako mniej obciążającą dla lędźwi. Popularne w siłowniach komercyjnych, stały element kulturystycznych rutyn na dwugłowe ud. Trudność 3/10 — przyjazne początkującym, minimalne wymagania balansu dzięki podporze.",
+
+  "instructions": [
+    "Adjust the machine: set the ankle roller/pad to align with your Achilles tendon — just above the heel, NOT mid-calf. Knee joint should sit directly opposite the pivot point.",
+    "Stand on the support leg, place the working leg behind the roller (ankle hooked under it). Lean torso slightly forward against the chest/hip pad for support.",
+    "Grip the handles firmly — locked-in upper body, hips squared and stable. Slight bend in the support knee (don't lock it out).",
+    "Foot position: keep the working foot in a neutral position (toes slightly pointed) for balanced hamstring activation.",
+    "Concentric phase: actively contract the hamstring of the working leg to flex the knee, curling the heel UP toward the buttock in a smooth arc.",
+    "At the top: pause 0.5-1 second and squeeze the hamstring hard — peak contraction is where the magic happens for hypertrophy.",
+    "Eccentric phase: lower the weight under control over 2-3 seconds — resist the pull, do not let the stack drop.",
+    "End position: extend the knee back to the starting position WITHOUT fully locking out — maintain hamstring tension throughout the set.",
+    "Keep hips level and squared: do not rotate the pelvis or hike one side to help. Only the working knee should move.",
+    "Complete all reps on one leg before switching — start with the WEAKER side to balance development."
+  ],
+  "instructionsPl": [
+    "Wyreguluj maszynę: ustaw wałek/poduszkę kostkową w jednej linii ze ścięgnem Achillesa — tuż nad piętą, NIE w połowie łydki. Staw kolanowy powinien znajdować się bezpośrednio naprzeciw punktu obrotu.",
+    "Stań na nodze podporowej, umieść nogę pracującą za wałkiem (kostka zaczepiona pod nim). Pochyl tułów lekko do przodu opierając się o poduszkę piersiowo-biodrową.",
+    "Mocno chwyć uchwyty — zablokowana górna część ciała, biodra ustawione równolegle i stabilne. Lekkie ugięcie w kolanie nogi podporowej (nie blokuj jej).",
+    "Pozycja stopy: trzymaj stopę nogi pracującej w pozycji neutralnej (palce lekko skierowane) dla zbalansowanej aktywacji dwugłowych ud.",
+    "Faza koncentryczna: aktywnie napnij dwugłowe ud nogi pracującej zginając kolano, ciągnąc piętę W GÓRĘ w stronę pośladka po płynnym łuku.",
+    "Na górze: pauza 0.5-1 sekunda i mocne ściśnięcie dwugłowych ud — szczytowy skurcz to miejsce gdzie dzieje się hipertroficzna magia.",
+    "Faza ekscentryczna: opuść ciężar pod kontrolą przez 2-3 sekundy — opieraj się sile, nie pozwól by stos spadł.",
+    "Pozycja końcowa: wyprostuj kolano z powrotem do pozycji startowej BEZ pełnego zablokowania — utrzymuj napięcie dwugłowych ud przez całą serię.",
+    "Trzymaj biodra na jednym poziomie i równolegle: nie obracaj miednicy ani nie podnoś jednej strony do pomocy. Tylko kolano pracujące powinno się ruszać.",
+    "Wykonaj wszystkie powtórzenia na jednej nodze przed zmianą — zacznij od SŁABSZEJ strony by zrównoważyć rozwój."
+  ],
+
+  "classification": {
+    "movement_pattern": "knee_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings"],
+    "secondary": ["gastrocnemius"],
+    "stabilizers": ["core", "glutes", "erector_spinae", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "gastrocnemius": "S5",
+    "core": "S4",
+    "glutes": "S4",
+    "quadriceps": "S3",
+    "erector_spinae": "S2"
+  },
+
+  "equipment": {
+    "required": ["standing_leg_curl_machine"],
+    "optional": ["ankle_strap"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["lever-lying-leg-curl", "seated-leg-curl", "nordic-hamstring-curl", "glute-ham-raise", "cable-pull-through"],
+    "alternatives": ["lever-lying-leg-curl", "seated-leg-curl", "cable-leg-curl", "stability-ball-leg-curl", "nordic-hamstring-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Ankle roller just ABOVE the heel — on Achilles tendon, not on the calf",
+      "Knee aligned with the machine's pivot point",
+      "Torso firmly supported against the pad — hips squared",
+      "Grip handles tight — upper body locked in",
+      "Support knee soft (slight bend) — never locked out"
+    ],
+    "setup_cues_pl": [
+      "Wałek kostkowy tuż NAD piętą — na ścięgnie Achillesa, nie na łydce",
+      "Kolano w jednej linii z punktem obrotu maszyny",
+      "Tułów mocno oparty o poduszkę — biodra ustawione równolegle",
+      "Mocny chwyt uchwytów — zablokowana górna część ciała",
+      "Kolano nogi podporowej miękkie (lekko ugięte) — nigdy nie blokowane"
+    ],
+    "execution_cues": [
+      "Curl your HEEL toward your butt — feel the hamstring shorten",
+      "Squeeze hard at the top — pause 1 second, peak contraction",
+      "Lower SLOWLY — 2-3 seconds eccentric, no dropping the weight",
+      "Hips STAY squared — don't rotate the pelvis to cheat",
+      "Don't fully lock the knee at the bottom — keep tension on the muscle"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij PIĘTĘ w stronę pośladka — poczuj jak dwugłowe ud się skraca",
+      "Mocno ściśnij na górze — pauza 1 sekunda, szczytowy skurcz",
+      "Opuszczaj WOLNO — 2-3 sekundy ekscentryku, bez upuszczania ciężaru",
+      "Biodra POZOSTAJĄ równoległe — nie obracaj miednicy by oszukać",
+      "Nie blokuj w pełni kolana na dole — utrzymuj napięcie na mięśniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating the hips or hiking one side to help complete the curl",
+        "faultPl": "Obracanie bioder lub podnoszenie jednej strony by pomóc dokończyć uginanie",
+        "cause": "Weight too heavy, asymmetric hamstring strength, poor pelvic control",
+        "causePl": "Zbyt duży ciężar, asymetryczna siła dwugłowych ud, słaba kontrola miednicy",
+        "cue": "Reduce the weight by 30-40%. Focus on keeping hips perfectly square — if the pelvis twists, the rep doesn't count. Strengthen unilaterally with PURE form before adding load.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Skup się na utrzymaniu bioder idealnie równolegle — jeśli miednica się obraca, powtórzenie się nie liczy. Wzmacniaj jednostronnie w CZYSTEJ formie zanim dodasz ciężar."
+      },
+      {
+        "fault": "Partial range of motion — only curling halfway up",
+        "faultPl": "Częściowy zakres ruchu — uginanie tylko do połowy",
+        "cause": "Weight too heavy, weak hamstrings at full flexion, ego lifting",
+        "causePl": "Zbyt duży ciężar, słabe dwugłowe ud w pełnym zgięciu, ego lifting",
+        "cue": "Lower the weight. Curl the heel ALL the way to the buttock — full ROM gives full hypertrophy stimulus. Quality reps build muscle, half reps build ego.",
+        "cuePl": "Zmniejsz ciężar. Ciągnij piętę CAŁKOWICIE do pośladka — pełen zakres daje pełen bodziec hipertroficzny. Jakościowe powtórzenia budują mięśnie, połowiczne budują ego."
+      },
+      {
+        "fault": "Letting the weight drop in the eccentric phase",
+        "faultPl": "Pozwalanie ciężarowi spaść w fazie ekscentrycznej",
+        "cause": "Ego lifting, lack of awareness of eccentric importance, rushing the set",
+        "causePl": "Ego lifting, brak świadomości znaczenia ekscentryku, pośpieszanie serii",
+        "cue": "Eccentric phase is where the hamstring grows. Count 2-3 seconds down. The stack should NEVER bang — if it does, you don't control the weight.",
+        "cuePl": "Faza ekscentryczna to gdzie rośnie dwugłowe ud. Licz 2-3 sekundy w dół. Stos NIGDY nie powinien się walnąć — jeśli to robi, nie kontrolujesz ciężaru."
+      },
+      {
+        "fault": "Leaning back / arching the lower back during the curl",
+        "faultPl": "Odchylanie się do tyłu / wyginanie lędźwi podczas uginania",
+        "cause": "Weight too heavy, weak core, recruiting lower back to assist",
+        "causePl": "Zbyt duży ciężar, słaby core, rekrutacja lędźwi do pomocy",
+        "cue": "Engage your core and keep torso anchored against the pad. If you need to lean back to lift the weight, it's too heavy. Lighter weight + perfect form = better hamstring growth.",
+        "cuePl": "Napnij core i trzymaj tułów zakotwiczony przy poduszce. Jeśli musisz odchylać się do tyłu by podnieść ciężar, jest za duży. Lżejszy ciężar + idealna forma = lepszy wzrost dwugłowych ud."
+      },
+      {
+        "fault": "Imbalanced loading — using more weight on the stronger side",
+        "faultPl": "Niezbalansowane obciążenie — używanie większego ciężaru po stronie silniejszej",
+        "cause": "Letting strong side dictate the load instead of matching to weaker side",
+        "causePl": "Pozwalanie silniejszej stronie dyktować ciężar zamiast dopasowywać do słabszej",
+        "cue": "Start the working set with your WEAKER leg. Match the rep count and weight on the stronger side — don't let the weaker leg fall behind. Unilateral work is for fixing asymmetries, not creating them.",
+        "cuePl": "Rozpocznij roboczą serię od SŁABSZEJ nogi. Dopasuj liczbę powtórzeń i ciężar po stronie silniejszej — nie pozwól by słabsza noga została w tyle. Praca unilateralna służy do naprawiania asymetrii, nie ich tworzenia."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering) as the knee extends. Exhale during the concentric (curl) as you squeeze at the top. Maintain steady rhythm — one breath per rep.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (opuszczania) gdy kolano się prostuje. Wydech w fazie koncentrycznej (uginania) gdy ściskasz na górze. Utrzymuj równy rytm — jeden oddech na powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hamstring_strain_or_tear_acute",
+      "severity": "avoid",
+      "modification": "Acute hamstring strain — DO NOT perform until cleared by a physiotherapist. Single-leg loading concentrates force on one hamstring, increasing re-injury risk. Start rehab with isometric holds and bodyweight curls before returning to machine work.",
+      "modificationPl": "Świeże naciągnięcie dwugłowych ud — NIE wykonuj dopóki fizjoterapeuta nie da zielonego światła. Jednostronne obciążenie koncentruje siłę na jednej dwugłowej ud, zwiększając ryzyko ponownego urazu. Rozpocznij rehabilitację od izometrycznych przytrzymań i uginania z masą ciała przed powrotem do pracy na maszynie.",
+      "alternative": "isometric-hamstring-hold"
+    },
+    {
+      "condition": "knee_meniscus_or_posterior_knee_pain",
+      "severity": "caution",
+      "modification": "Deep knee flexion under load can stress the meniscus and posterior knee capsule. Reduce ROM (stop short of full flexion), use lighter weight, slower tempo. If pain persists, switch to seated leg curl (different knee angle) or stability ball curls.",
+      "modificationPl": "Głębokie zginanie kolana pod obciążeniem może obciążać łąkotkę i tylną torebkę stawową. Zmniejsz zakres (zatrzymaj się przed pełnym zgięciem), użyj lżejszego ciężaru, wolniejszego tempa. Jeśli ból się utrzymuje, przejdź na uginanie siedząc (inny kąt kolana) lub uginania na piłce.",
+      "alternative": "seated-leg-curl"
+    },
+    {
+      "condition": "balance_or_vestibular_issues",
+      "severity": "caution",
+      "modification": "Standing position requires single-leg support — challenging for those with balance or vestibular disorders. Hold handles tightly, use lighter weight, or switch to a seated/lying variant where balance isn't a concern.",
+      "modificationPl": "Pozycja stojąca wymaga podparcia na jednej nodze — wyzwanie dla osób z zaburzeniami balansu lub przedsionkowymi. Trzymaj uchwyty mocno, użyj lżejszego ciężaru lub przejdź na wariant siedzący/leżący gdzie balans nie stanowi problemu.",
+      "alternative": "lever-lying-leg-curl"
+    },
+    {
+      "condition": "lower_back_pain_active_flare",
+      "severity": "caution",
+      "modification": "Although standing position is generally back-friendly, leaning forward against the pad combined with one-sided loading can stress the lumbar spine if form breaks. Keep torso firmly supported, hips squared, use lighter weight. If pain persists, switch to seated leg curl with full back support.",
+      "modificationPl": "Choć pozycja stojąca jest generalnie przyjazna dla pleców, pochylenie do przodu przy poduszce w połączeniu z jednostronnym obciążeniem może obciążać kręgosłup lędźwiowy, jeśli forma się załamie. Trzymaj tułów mocno wsparty, biodra równolegle, użyj lżejszego ciężaru. Jeśli ból się utrzymuje, przejdź na uginanie siedząc z pełnym oparciem pleców.",
+      "alternative": "seated-leg-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per leg (hypertrophy — standard) | 4x8-10 per leg (strength focus) | 3x15-20 per leg (high-volume/endurance) | 4x6-8 per leg (heavy isolation, after compounds) | 2-3x/week — common as accessory in leg day, start with weaker leg",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "standing-single-leg-curl.gif",
+    "frames_extracted": [
+      "frames/standing-single-leg-curl/frame_0_start.png",
+      "frames/standing-single-leg-curl/frame_1_early.png",
+      "frames/standing-single-leg-curl/frame_2_mid.png",
+      "frames/standing-single-leg-curl/frame_3_late.png",
+      "frames/standing-single-leg-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "hamstrings/standing-single-leg-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (12 oryginalnych klatek). Widok od tyłu: ćwiczący stoi pionowo, plecami do widza, pracuje jedną nogą (lewą w tym GIFie — widać podświetlone na czerwono dwugłowe ud lewej nogi). Frame 0 (start): pozycja wyjściowa — ćwiczący stoi prosto, obie stopy na podłodze, lewe dwugłowe ud podświetlone (gotowe do skurczu), prawa noga podporowa. Frame 1 (early): początek koncentryku — lewa pięta zaczyna unosić się do tyłu w stronę pośladka, kolano się zgina. Frame 2 (mid): mid-rep — kolano lewej nogi zgięte ~90 stopni, pięta na wysokości pośladka, dwugłowe ud aktywnie skurczone (peak contraction już blisko), widać też lekkie podświetlenie łydki sugerujące pomoc gastrocnemius. Frame 3 (late): podobne do mid, kontynuacja peak contraction. Frame 4 (end): powrót do pozycji wyjściowej, kontrolowana ekscentryka. Cała górna część ciała pozostaje stabilna i pionowa przez cały ruch — to definiuje izolowany charakter ćwiczenia. Biodra równoległe, kręgosłup neutralny. Klasyfikacja: movement_pattern 'knee_flexion' (jedyny ruch w stawie kolanowym), force 'pull' (koncentryczne ciągnięcie pięty do góry/tyłu), mechanic 'isolation' (tylko staw kolanowy pracuje), laterality 'unilateral' (jedna noga naraz), plane 'sagittal' (ruch w płaszczyźnie strzałkowej), kinetic_chain 'open' (stopa pracującej nogi nie kontaktuje podłoża). Primary: hamstrings P10 (główny napęd, najwyższa intensywność — wyraźnie podświetlone w GIFie). Secondary: gastrocnemius S5 (zginacz kolana pomocniczy, lekko podświetlony). Stabilizatory: core S4 (utrzymuje pionową postawę przy jednostronnym obciążeniu — wyższy niż w wersji leżącej), glutes S4 (lekka aktywacja izometryczna nogi podporowej + working leg), quadriceps S3 (stabilizacja kolana nogi podporowej), erector_spinae S2. Equipment: standing_leg_curl_machine (dedykowana maszyna pionowa do stojącej wersji — odróżnia się od pozycji leżącej i siedzącej). Difficulty 3/10 — beginner-friendly, minimalne wymagania techniczne, pad podpiera tułów więc balans nie jest dużym wyzwaniem. Wszystkie pola PL pisane od zera — terminologia polskiej fizjologii i fitness (dwugłowe ud, brzuchaty łydki, jednostronny, unilateralny, ekscentryk, koncentryk, hipertrofia, asymetria). 4 contraindications: świeże naciągnięcie dwugłowych ud (avoid — single-leg loading zwiększa ryzyko re-injury), uraz łąkotki/ból tylnej części kolana (caution — głębokie zginanie pod obciążeniem), zaburzenia balansu/przedsionkowe (caution — wymaga pojedynczego podparcia), ból lędźwi aktywny (caution — jednostronne obciążenie + pochylenie może obciążać). 5 common faults: obracanie bioder (typowa kompensacja przy jednostronnej pracy), częściowy ROM, ciężar spadający, odchylanie tułu / wyginanie lędźwi, niezbalansowane obciążenie między stronami. Progresje: lying leg curl (większa stabilność, więcej masy), seated leg curl (inny kąt biodra), Nordic curl (zaawansowane bez maszyny), GHR (compound). Alternatywy: lying, seated, cable, stability ball, Nordic. Kluczowa cecha: TYPICAL_SETS_REPS zawiera 'per leg' — to ważne dla unilateralnych ćwiczeń (objętość liczona dla każdej nogi osobno).",
+
+  "tags": ["strength", "bodybuilding", "isolation", "unilateral", "hamstring_hypertrophy", "accessory", "beginner_friendly", "leg_day", "asymmetry_correction", "machine_based", "knee_flexion", "posterior_chain", "single_leg"]
+}

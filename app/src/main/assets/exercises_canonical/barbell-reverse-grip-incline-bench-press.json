@@ -1,0 +1,212 @@
+{
+  "id": "barbell-reverse-grip-incline-bench-press",
+  "name": "Barbell Reverse-Grip Incline Bench Press",
+  "namePl": "Wyciskanie sztangi podchwytem na ławce skośnej",
+  "aliases": ["reverse grip incline press", "supinated grip incline bench", "underhand incline bench press", "RG incline bench"],
+  "aliasesPl": ["wyciskanie skośne podchwytem", "wyciskanie sztangi chwytem podchwytnym na skosie", "incline podchwytem", "wyciskanie supinacyjnie skośne", "wyciskanie na górną klatkę podchwytem"],
+
+  "description": "Specialized variation of incline bench press performed with a supinated (underhand) grip. Research (Bret Contreras EMG studies) shows reverse grip activates the clavicular (upper) head of pectoralis major up to ~30% more than standard pronated grip on the same incline, making it arguably the single best barbell exercise for isolated upper chest hypertrophy. The underhand grip naturally tucks elbows close to the body, shifts emphasis off anterior deltoid and onto upper pecs and biceps brachii. Loads are significantly lower than standard incline (~60-70%) due to mechanical disadvantage and grip stability. REQUIRES safety bars or a competent spotter — bar can drop on the face if grip fails.",
+  "descriptionPl": "Specjalistyczna wariacja wyciskania na ławce skośnej wykonywana chwytem podchwytnym (supinacyjnym, dłońmi do góry). Badania (m.in. EMG Breta Contrerasa) pokazują, że chwyt podchwytem aktywuje obojczykową (górną) głowę mięśnia piersiowego większego nawet o ~30% bardziej niż klasyczny nachwyt przy tym samym kącie ławki — to prawdopodobnie najlepsze pojedyncze ćwiczenie ze sztangą do izolowanej hipertrofii górnej klatki. Chwyt podchwytny naturalnie chowa łokcie blisko tułowia, przesuwa nacisk z przedniego aktonu barku na górną klatkę i bicepsy. Ciężary są znacznie mniejsze niż w klasycznym skośnym wyciskaniu (~60-70%) z powodu niekorzystnej mechaniki i mniejszej stabilności chwytu. WYMAGA asekuracji partnera lub bezpieczników w klatce — przy puszczeniu sztangi spadnie na twarz.",
+
+  "instructions": [
+    "Set the incline bench to 30-45° INSIDE a power rack or with safety bars positioned just above chest height. Spotter strongly recommended.",
+    "Load the bar lighter than your standard incline working weight (~60-70% as a starting point).",
+    "Lie back with eyes directly under the bar. Plant feet firmly, knees ~90°.",
+    "Grip the bar with a SUPINATED (underhand, palms-up) grip, slightly wider than shoulder-width. Wrap thumbs firmly — bar must not slip.",
+    "Wrists stacked OVER forearms (don't let them bend backward) — wrist wraps strongly recommended.",
+    "Retract and depress shoulder blades into the pad. Brace core.",
+    "Unrack carefully — the supinated grip is mechanically weaker at lockout than pronated. Stabilize bar over upper chest.",
+    "Lower the bar in a controlled descent to the UPPER chest / lower clavicle area (slightly higher than standard incline due to reverse grip mechanics).",
+    "Keep elbows tucked close to the torso (~30-45° from body) — this happens naturally with the reverse grip and is the key to upper chest activation.",
+    "Touch the chest lightly — do NOT bounce. Pause briefly if doing strength work.",
+    "Press the bar up in a vertical or slightly-back path, finishing with locked-out elbows over the upper chest. Squeeze upper chest at the top.",
+    "Re-rack carefully — supinated lockout is unstable. Use a spotter for the rack."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną pod kątem 30-45° W KLATCE z bezpiecznikami ustawionymi tuż nad linią klatki. Asekuracja partnera zdecydowanie zalecana.",
+    "Załaduj sztangę lżej niż w klasycznym skosie nachwytem (~60-70% jako punkt wyjścia).",
+    "Połóż się oczami bezpośrednio pod gryfem. Stopy mocno zaparte, kolana ~90°.",
+    "Złap gryf chwytem PODCHWYTNYM (supinacyjnym, dłońmi do góry), nieco szerzej niż na szerokość barków. Owinij kciuki mocno — sztanga nie może się ześlizgnąć.",
+    "Nadgarstki ustawione PROSTO nad przedramionami (nie pozwól im się odgiąć do tyłu) — wraps na nadgarstki zdecydowanie zalecane.",
+    "Ściągnij i wciśnij łopatki w oparcie. Napnij brzuch.",
+    "Wyciągnij sztangę ostrożnie — chwyt podchwytny jest mechanicznie słabszy w lock-out niż nachwyt. Ustabilizuj sztangę nad górną klatką.",
+    "Opuszczaj sztangę kontrolowanym ruchem do GÓRNEJ klatki / dolnej linii obojczyków (nieco wyżej niż w klasycznym skosie ze względu na mechanikę podchwytu).",
+    "Trzymaj łokcie blisko tułowia (~30-45° od ciała) — przy chwycie podchwytnym dzieje się to naturalnie i jest kluczem do aktywacji górnej klatki.",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza przy pracy nad siłą.",
+    "Wyciśnij sztangę w górę pionową lub lekko cofniętą ścieżką, kończąc z wyprostowanymi łokciami nad górną klatką. Ściśnij górną klatkę na szczycie.",
+    "Odłóż sztangę ostrożnie — lock-out z podchwytem jest niestabilny. Skorzystaj z pomocy asekuranta przy odkładaniu."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids", "biceps_brachii"],
+    "secondary": ["triceps", "pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P10",
+    "anterior_deltoids": "P8",
+    "biceps_brachii": "P5",
+    "triceps": "S6",
+    "pectoralis_major": "S5",
+    "serratus_anterior": "S4",
+    "upper_back": "T4",
+    "forearm_flexors": "T4",
+    "core": "T3",
+    "rotator_cuff": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "incline_bench", "power_rack_or_safety_bars"],
+    "optional": ["wrist_wraps", "spotter", "belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 7,
+    "prerequisites": ["barbell-incline-bench-press", "barbell-bench-press", "barbell-reverse-grip-bench-press"],
+    "progression_to": ["pause-reverse-grip-incline-bench-press", "close-grip-reverse-grip-incline-bench-press"],
+    "alternatives": ["barbell-incline-bench-press", "dumbbell-incline-bench-press", "smith-incline-reverse-grip-press", "low-incline-dumbbell-press", "incline-reverse-grip-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Power rack or safety bars MANDATORY — bar can drop on face",
+      "Bench angle 30-45° (30° = max upper chest, 45° = adds delt contribution)",
+      "Supinated grip, slightly wider than shoulder-width",
+      "Wrists stacked over forearms — wrist wraps on",
+      "Shoulder blades retracted hard, eyes under the bar"
+    ],
+    "setup_cues_pl": [
+      "Klatka treningowa lub bezpieczniki OBOWIĄZKOWE — sztanga może spaść na twarz",
+      "Kąt ławki 30-45° (30° = max górnej klatki, 45° = dodaje pracy aktonu)",
+      "Chwyt podchwytny (supinacyjny), nieco szerzej niż barki",
+      "Nadgarstki prosto nad przedramionami — wraps założone",
+      "Łopatki mocno ściągnięte, oczy pod gryfem"
+    ],
+    "execution_cues": [
+      "Lower to UPPER chest / lower clavicle (higher than standard incline)",
+      "Elbows tuck NATURALLY with reverse grip — let them, don't fight it",
+      "Press straight up, squeeze upper chest hard at lockout",
+      "Mind-muscle connection on upper pec — feel it stretch and contract",
+      "Slow eccentric (2-3s) — control matters more than load on this variation"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj do GÓRNEJ klatki / dolnej linii obojczyków (wyżej niż klasyczny skos)",
+      "Łokcie chowają się NATURALNIE z podchwytem — pozwól im, nie walcz z tym",
+      "Wyciskaj prosto w górę, mocno ściśnij górną klatkę w lock-out",
+      "Połączenie umysł-mięsień na górnej klatce — czuj rozciągnięcie i skurcz",
+      "Wolna ekscentryka (2-3s) — kontrola ważniejsza niż ciężar w tej wariacji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar slipping out of supinated grip",
+        "faultPl": "Sztanga wyślizguje się z chwytu podchwytnego",
+        "cause": "Loose thumb wrap, sweaty palms, weight too heavy for grip strength on this variation. Catastrophic — bar drops on face.",
+        "causePl": "Luźny chwyt kciukiem, spocone dłonie, ciężar zbyt duży dla siły chwytu w tej wariacji. Katastrofalne — sztanga spada na twarz.",
+        "cue": "ALWAYS thumbs around bar, use chalk, wear wrist wraps, set safety bars BELOW bar bottom position. Reduce weight if grip feels insecure.",
+        "cuePl": "ZAWSZE kciuki wokół gryfu, używaj magnezji, załóż wraps na nadgarstki, ustaw bezpieczniki PONIŻEJ dolnej pozycji gryfu. Zmniejsz ciężar jeśli chwyt jest niepewny."
+      },
+      {
+        "fault": "Wrists bending backward under load",
+        "faultPl": "Nadgarstki odginają się do tyłu pod ciężarem",
+        "cause": "Inherent weakness of supinated wrist position + heavy load. Causes wrist pain and bar instability.",
+        "causePl": "Naturalna słabość pozycji supinacyjnej nadgarstka + ciężki ładunek. Powoduje ból nadgarstków i niestabilność sztangi.",
+        "cue": "Wrist wraps mandatory. Bar rests in palm heel, not fingers. Reduce weight — this lift is NOT about loading heavy.",
+        "cuePl": "Wraps na nadgarstki obowiązkowe. Gryf w podstawie dłoni, nie w palcach. Zmniejsz ciężar — to ćwiczenie NIE jest do ładowania ciężko."
+      },
+      {
+        "fault": "Treating it like standard incline (too much weight)",
+        "faultPl": "Traktowanie jak klasyczny skos (zbyt duży ciężar)",
+        "cause": "Ego — wanting same numbers as pronated incline. Reverse grip is 60-70% of standard for the same person.",
+        "causePl": "Ego — chęć trzymania tych samych liczb co w nachwycie. Podchwyt to 60-70% klasycznego skosu dla tej samej osoby.",
+        "cue": "Start with 50% of your standard incline working weight. Add slowly. This is a hypertrophy/finisher lift, not a max strength lift.",
+        "cuePl": "Zacznij od 50% twojego standardowego ciężaru roboczego z klasycznego skosu. Dodawaj powoli. To ćwiczenie na hipertrofię/finisher, nie maksymalny ciężar."
+      },
+      {
+        "fault": "Bouncing the bar off the chest",
+        "faultPl": "Odbijanie sztangi od klatki",
+        "cause": "Ego lifting, trying to cheat lighter weight to feel heavier. Extremely dangerous with reverse grip — wrists can buckle.",
+        "causePl": "Ego lifting, próba oszukania lżejszego ciężaru by poczuć cięższy. Wyjątkowo niebezpieczne przy podchwycie — nadgarstki mogą się załamać.",
+        "cue": "Strict touch-and-go or paused reps only. Slow eccentric. This variation rewards control, not momentum.",
+        "cuePl": "Tylko strict touch-and-go lub powtórzenia z pauzą. Wolna ekscentryka. Ta wariacja nagradza kontrolę, nie pęd."
+      },
+      {
+        "fault": "No safety bars / no spotter",
+        "faultPl": "Brak bezpieczników / brak asekuranta",
+        "cause": "Underestimating risk of grip failure on this lift. Bar trajectory is over the face — failure = serious injury.",
+        "causePl": "Niedocenianie ryzyka utraty chwytu w tym ćwiczeniu. Trajektoria sztangi przebiega nad twarzą — porażka = poważna kontuzja.",
+        "cue": "NEVER train this without safeties or a spotter. Set pins just below chest-touch height. Lift fails = roll bar onto pins.",
+        "cuePl": "NIGDY nie trenuj tego bez bezpieczników lub asekuranta. Ustaw bolce tuż poniżej wysokości dotknięcia klatki. Przy nieudanym powtórzeniu = sturlaj sztangę na bolce."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent and press. Exhale at the top of the lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "avoid",
+      "modification": "Supinated grip puts huge stress on wrists. If you have any wrist issues — switch to dumbbells with neutral grip, where wrist stays straight.",
+      "modificationPl": "Chwyt podchwytny daje ogromne obciążenie nadgarstków. Przy jakichkolwiek problemach z nadgarstkami — przejdź na hantle z chwytem neutralnym, gdzie nadgarstek pozostaje prosty.",
+      "alternative": "dumbbell-incline-bench-press"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Supinated grip + heavy load + stretched position = high stress on long head of biceps tendon. Avoid until tendinopathy resolves.",
+      "modificationPl": "Chwyt podchwytny + ciężki ładunek + pozycja rozciągnięta = duże obciążenie ścięgna długiej głowy bicepsa. Unikaj do wyleczenia tendinopatii.",
+      "alternative": "barbell-incline-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Paradoxically, reverse grip incline may HELP some impingement cases (elbows tucked → less anterior shoulder stress). Try lower angle (20-30°) and lighter weight first. Stop if pain.",
+      "modificationPl": "Paradoksalnie, skos podchwytem może POMÓC w niektórych przypadkach konfliktu barkowego (schowane łokcie → mniejsze obciążenie przedniej części barku). Spróbuj mniejszego kąta (20-30°) i lżejszego ciężaru najpierw. Przerwij przy bólu.",
+      "alternative": "machine-incline-press"
+    },
+    {
+      "condition": "elbow_pain_distal_biceps",
+      "severity": "modify",
+      "modification": "Supinated grip loads distal biceps tendon and brachialis. If insertion pain — reduce weight and ROM, or switch back to pronated incline.",
+      "modificationPl": "Chwyt podchwytny obciąża dystalne ścięgno bicepsa i ramienny. Przy bólu przyczepu — zmniejsz ciężar i ROM, lub wróć do klasycznego nachwytu na skosie.",
+      "alternative": "barbell-incline-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — primary use case, upper chest builder) | 3x10-15 (volume accessory after main pressing) | NOT recommended for low-rep max strength work",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-reverse-grip-incline-bench-press.gif",
+    "frames_extracted": [
+      "frames/barbell-reverse-grip-incline-bench-press/frame_0_start.png",
+      "frames/barbell-reverse-grip-incline-bench-press/frame_1_early.png",
+      "frames/barbell-reverse-grip-incline-bench-press/frame_2_mid.png",
+      "frames/barbell-reverse-grip-incline-bench-press/frame_3_late.png",
+      "frames/barbell-reverse-grip-incline-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/barbell-reverse-grip-incline-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Ławka skośna dodatnia ~30-35°. Chwyt PODCHWYTEM (supinacyjny) wyraźnie widoczny — dłonie odwrócone, kciuki skierowane na zewnątrz. Frame 0 (start): sztanga na poziomie górnej klatki, łokcie zgięte i naturalnie schowane blisko tułowia. Frame 2 (mid/lock-out): pełny wyprost ramion nad linią górnej klatki, ścieżka pionowa. Frame 4 (end): powrót do dolnej pozycji. W animacji wyraźnie podświetlona obojczykowa głowa mięśnia piersiowego większego (upper chest / pec major clavicular — kolor czerwony) — zgodnie z literaturą EMG (Contreras 2010), reverse grip incline daje wyższą aktywację upper chest niż klasyczny skos. Brak odbicia, kontrolowany ruch. PL nazwa: 'Wyciskanie sztangi podchwytem na ławce skośnej' — standardowa polska terminologia (podchwyt = chwyt supinacyjny). Difficulty 7 (vs 6 dla klasycznego skosu) ze względu na: niestabilność chwytu, ryzyko upadku sztangi na twarz, wymóg bezpieczników/asekuranta, wyższe obciążenie nadgarstków i bicepsów. Wszystkie pola PL od zera, nie tłumaczone z EN.",
+
+  "tags": ["upper_body", "horizontal_push", "incline", "upper_chest", "chest", "barbell", "reverse_grip", "supinated_grip", "hypertrophy_specialist", "advanced", "requires_safety"]
+}

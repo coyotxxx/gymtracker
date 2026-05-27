@@ -1,0 +1,215 @@
+{
+  "id": "barbell-reverse-grip-skullcrusher",
+  "name": "Barbell Reverse-Grip Skullcrusher",
+  "namePl": "Wyciskanie francuskie podchwytem",
+  "aliases": [
+    "reverse-grip lying triceps extension",
+    "supinated grip skullcrusher",
+    "underhand barbell skullcrusher",
+    "reverse grip french press lying",
+    "palms-up skullcrusher"
+  ],
+  "aliasesPl": [
+    "łamańce podchwytem",
+    "skullcrusher podchwytem",
+    "wyciskanie francuskie leżąc podchwytem",
+    "wyprost ramion leżąc podchwytem ze sztangą",
+    "łamańce dłońmi do góry"
+  ],
+
+  "description": "A lying triceps isolation exercise performed with a supinated (palms-up / underhand) grip on a barbell. Reversing the grip rotates the humerus into slight external rotation, which subtly shifts emphasis toward the medial head of the triceps and reduces the shearing stress placed on the medial elbow compared to a standard pronated skullcrusher. The supinated wrist position also lets the bar travel in a more elbow-friendly path — many lifters with cranky elbows tolerate this variation when classic skullcrushers irritate the joint. Loadable weight is typically 70-85% of a standard skullcrusher because forearm and wrist leverage are weaker in supination.",
+  "descriptionPl": "Izolowane ćwiczenie na triceps wykonywane leżąc, chwytem supinowanym (dłońmi do góry / podchwyt) na sztandze. Odwrócenie chwytu obraca kość ramienną w lekką rotację zewnętrzną, co subtelnie przenosi akcent w stronę głowy przyśrodkowej tricepsa i zmniejsza siły ścinające na przyśrodkowej stronie łokcia względem klasycznych łamańców nachwytem. Supinowana pozycja nadgarstka pozwala też sztandze poruszać się po torze bardziej przyjaznym dla łokci — wielu trenujących z drażliwymi łokciami toleruje ten wariant, gdy klasyczne skullcrushery podrażniają staw. Maksymalny ciężar jest zwykle 70-85% standardowych łamańców, bo dźwignia przedramienia i nadgarstka w supinacji jest słabsza.",
+
+  "instructions": [
+    "Lie flat on your back on a flat bench, feet planted firmly on the floor and head supported (not hanging off the bench).",
+    "Take a shoulder-width supinated (underhand, palms facing your face) grip on a straight barbell. Have a spotter or use a rack to hand off if the weight is heavy.",
+    "Press the bar up to a starting position directly over your upper chest, arms fully extended. From here, tilt the arms slightly back so the upper arms point toward the ceiling and very slightly toward your head (~10 degrees off vertical).",
+    "Pin the elbows — they should remain pointed at the ceiling for the entire set. The upper arms do not move; only the forearms rotate around the elbow.",
+    "Inhale, then lower the barbell in a smooth arc toward the forehead or just above by flexing only at the elbows. Keep the wrists straight and rigid — do not let them bend backward under load.",
+    "Lower until the bar is just above the forehead (or to a light touch on the hairline). Feel a clear stretch in the back of the upper arm.",
+    "Drive the bar back along the same arc by extending the elbows, exhaling on the effort. Stop just short of full lockout to keep continuous tension on the triceps.",
+    "Maintain a stable shoulder position throughout — do not let the elbows flare outward and do not press the bar like a close-grip bench."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na ławce poziomej, stopy stabilnie na podłodze, głowa wsparta na ławce (nie zwisa).",
+    "Złap prostą sztangę chwytem supinowanym (podchwyt — dłonie skierowane w stronę twarzy) na szerokość barków. Poproś asekurację lub użyj stojaka do przekazania sztangi, jeśli ciężar jest duży.",
+    "Wypchnij sztangę do pozycji wyjściowej dokładnie nad górną częścią klatki piersiowej, ramiona w pełni wyprostowane. Następnie odchyl ramiona lekko do tyłu, by ramię ponad łokciem wskazywało w sufit i bardzo nieznacznie w stronę głowy (~10 stopni od pionu).",
+    "Zafiksuj łokcie — przez całą serię mają być skierowane w sufit. Ramię ponad łokciem nie porusza się; pracują tylko przedramiona wokół stawu łokciowego.",
+    "Wdech, następnie opuszczaj sztangę płynnym łukiem w stronę czoła (lub trochę ponad) zginając ruch wyłącznie w łokciach. Trzymaj nadgarstki proste i sztywne — nie pozwól im zginać się do tyłu pod obciążeniem.",
+    "Opuszczaj aż sztanga znajdzie się tuż nad czołem (lub lekko dotknie linii włosów). Poczuj wyraźne rozciągnięcie z tyłu ramienia.",
+    "Wypchnij sztangę z powrotem tym samym torem prostując łokcie, wydech w fazie wysiłku. Zatrzymaj się tuż przed pełnym zablokowaniem łokci, by utrzymać ciągłe napięcie na tricepsach.",
+    "Utrzymuj stabilną pozycję barków przez cały ruch — nie pozwól by łokcie rozjeżdżały się na boki i nie wyciskaj sztangi jak przy wąskim wyciskaniu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["triceps_medial_head", "triceps_lateral_head"],
+    "stabilizers": ["anterior_deltoid", "pectoralis_major_clavicular", "forearm_flexors", "core", "wrist_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "triceps_medial_head": "S8",
+    "triceps_lateral_head": "S7",
+    "triceps_long_head": "S5",
+    "anterior_deltoid": "T3",
+    "pectoralis_major_clavicular": "T2",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "wrist_stabilizers": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench"],
+    "optional": ["ez_bar", "weight_plates", "collars", "wrist_wraps", "spotter", "power_rack"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["triceps-pushdown", "barbell-lying-triceps-extension", "dumbbell-lying-triceps-extension"],
+    "progression_to": ["barbell-lying-triceps-extension-heavy", "barbell-seated-overhead-triceps-extension", "close-grip-bench-press"],
+    "alternatives": ["barbell-lying-triceps-extension", "ez-bar-reverse-grip-skullcrusher", "cable-reverse-grip-pushdown", "dumbbell-lying-supinated-triceps-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat — head supported, feet planted, glutes on the bench",
+      "Supinated grip, shoulder-width, wrists locked straight",
+      "Press to lockout over upper chest, then tilt arms ~10 deg toward head",
+      "Elbows point at the ceiling and STAY there",
+      "Brace the core lightly — ribs down, no lumbar arch"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko — głowa na ławce, stopy na podłodze, pośladki na ławce",
+      "Chwyt podchwytem na szerokość barków, nadgarstki proste i sztywne",
+      "Wypchnij sztangę nad górną klatkę, potem odchyl ramiona ~10 stopni w stronę głowy",
+      "Łokcie celują w sufit i TAM zostają",
+      "Lekko napnij brzuch — żebra w dół, brak przeprostu lędźwi"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms locked",
+      "Lower the bar to just above the forehead, not the chest",
+      "Wrists stay straight — do NOT let them bend back under load",
+      "Feel a stretch behind the triceps, then drive up the same arc",
+      "Stop just short of full lockout — keep tension on the muscle"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem zafiksowane",
+      "Opuszczaj sztangę tuż nad czoło, nie na klatkę",
+      "Nadgarstki proste — NIE pozwól im zginać się do tyłu pod ciężarem",
+      "Poczuj rozciągnięcie tricepsa, potem wypchnij tym samym torem",
+      "Zatrzymaj się tuż przed pełnym zablokowaniem — utrzymuj napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrists collapsing/bending backward under load",
+        "faultPl": "Nadgarstki zginają się do tyłu pod ciężarem",
+        "cause": "Supinated grip + heavy load creates a long lever on the wrist; weak wrist flexors or weight too heavy",
+        "causePl": "Chwyt podchwytem + duży ciężar tworzy długą dźwignię na nadgarstku; słabe zginacze nadgarstka lub zbyt duży ciężar",
+        "cue": "Squeeze the bar hard and keep the wrist in line with the forearm — knuckles stay 'up'. Reduce weight by 20% or switch to an EZ-bar.",
+        "cuePl": "Mocno ściśnij sztangę i trzymaj nadgarstek w linii z przedramieniem — kostki 'do góry'. Zmniejsz ciężar o 20% lub przejdź na sztangę łamaną."
+      },
+      {
+        "fault": "Elbows flaring outward during the descent",
+        "faultPl": "Łokcie rozjeżdżają się na boki podczas opuszczania",
+        "cause": "Grip too wide, weight too heavy, or compensating by recruiting the chest like a press",
+        "causePl": "Zbyt szeroki chwyt, zbyt duży ciężar, lub kompensacja przez angażowanie klatki jak przy wyciskaniu",
+        "cue": "Pinch the elbows toward each other as if holding a paper between them. Narrow the grip and reduce load.",
+        "cuePl": "Ściskaj łokcie do siebie, jakbyś trzymał między nimi kartkę. Zwęź chwyt i zmniejsz ciężar."
+      },
+      {
+        "fault": "Upper arms drifting back and forth (turning the lift into a pullover-press)",
+        "faultPl": "Ramiona ponad łokciem wędrują w przód i tył (zamiana ruchu w pullover-press)",
+        "cause": "Loss of control over upper arm position, weight too heavy, or unclear motor pattern",
+        "causePl": "Utrata kontroli nad pozycją ramienia ponad łokciem, zbyt duży ciężar, lub niewykształcony wzorzec ruchowy",
+        "cue": "Lock the upper arms in space — only the forearm rotates around the elbow. Film a set from the side to check.",
+        "cuePl": "Zafiksuj ramię ponad łokciem w przestrzeni — wokół łokcia obraca się tylko przedramię. Nagraj serię z boku, by to sprawdzić."
+      },
+      {
+        "fault": "Lowering the bar onto the chest instead of the forehead",
+        "faultPl": "Opuszczanie sztangi na klatkę zamiast nad czoło",
+        "cause": "Upper arms drifting back toward the hips, treating the move as a close-grip bench press",
+        "causePl": "Ramię ponad łokciem przesuwa się w stronę bioder, ruch wykonywany jak wąskie wyciskanie",
+        "cue": "Aim the bar at your hairline. Keep the upper arms pointing slightly toward your head, NOT toward your hips.",
+        "cuePl": "Celuj sztangą w linię włosów. Trzymaj ramię ponad łokciem lekko w stronę głowy, NIE w stronę bioder."
+      },
+      {
+        "fault": "Partial range of motion — stopping high above the forehead",
+        "faultPl": "Niepełny zakres ruchu — zatrzymywanie wysoko nad czołem",
+        "cause": "Ego lifting, fear of dropping the bar, or undertrained stretch tolerance",
+        "causePl": "Ego, strach przed upuszczeniem sztangi, lub słaba tolerancja rozciągnięcia",
+        "cue": "Lower until the bar is at or just past the hairline and you feel a clear stretch. Use a spotter if afraid.",
+        "cuePl": "Opuszczaj aż sztanga będzie przy linii włosów lub tuż za nią i poczujesz wyraźne rozciągnięcie. Użyj asekuracji, jeśli się boisz."
+      }
+    ],
+    "breathing": "Inhale and lightly brace before lowering the bar. Exhale steadily on the press up. Avoid a maximal Valsalva — the supine position with a loaded bar near the face does not require aggressive intra-thoracic pressure.",
+    "breathingPl": "Wdech i lekkie napięcie przed opuszczeniem sztangi. Równomierny wydech podczas wypychania. Unikaj maksymalnej manewry Valsalvy — pozycja leżąca z obciążoną sztangą blisko twarzy nie wymaga agresywnego ciśnienia wewnątrz klatki."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_supination_intolerance",
+      "severity": "modify",
+      "modification": "A fully supinated grip on a straight bar places the wrist in a vulnerable, locked position. Switch to an EZ-bar (angled grip) or perform a rope variation on a cable for free wrist rotation. Reduce load by 20-30%.",
+      "modificationPl": "Pełna supinacja na prostej sztandze stawia nadgarstek w narażonej, zablokowanej pozycji. Przejdź na sztangę łamaną (kąt chwytu) lub wariant z linką na wyciągu dla swobodnej rotacji nadgarstka. Zmniejsz ciężar o 20-30%.",
+      "alternative": "ez-bar-reverse-grip-skullcrusher"
+    },
+    {
+      "condition": "medial_elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "Although reverse-grip is generally gentler on the medial elbow than pronated skullcrushers, distal triceps tendon load remains high. Work in the 12-15 rep range with controlled tempo and avoid heavy doubles/triples.",
+      "modificationPl": "Choć podchwyt jest zwykle łagodniejszy dla przyśrodkowej strony łokcia niż klasyczne łamańce, obciążenie dystalnego przyczepu tricepsa pozostaje duże. Pracuj w zakresie 12-15 powtórzeń z kontrolowanym tempem i unikaj ciężkich serii po 2-3 powtórzenia.",
+      "alternative": "cable-reverse-grip-pushdown"
+    },
+    {
+      "condition": "shoulder_instability_or_recent_anterior_shoulder_injury",
+      "severity": "modify",
+      "modification": "Holding a loaded barbell directly over the face requires strong anterior shoulder stability. If shoulder control is compromised, use lighter dumbbells with a supinated grip or cables instead — both allow drop-out without crushing risk.",
+      "modificationPl": "Trzymanie obciążonej sztangi bezpośrednio nad twarzą wymaga silnej stabilności przedniej części barku. Przy upośledzonej kontroli barku użyj lżejszych hantli z chwytem supinowanym lub wyciągu — oba pozwalają puścić ciężar bez ryzyka zmiażdżenia.",
+      "alternative": "dumbbell-lying-supinated-triceps-extension"
+    },
+    {
+      "condition": "no_spotter_with_heavy_load",
+      "severity": "caution",
+      "modification": "Reverse grip is harder to bail safely with — releasing a supinated grip drops the bar onto the face/throat. Stay 2-3 reps in reserve, use moderate loads, and ideally train with a spotter or inside a power rack with safety pins set at forehead height.",
+      "modificationPl": "Z chwytu podchwytem trudniej bezpiecznie się 'wypiąć' — puszczenie sztangi upuszcza ją na twarz/szyję. Trzymaj 2-3 powtórzenia w zapasie, używaj umiarkowanych ciężarów, najlepiej trenuj z asekuracją lub w klatce z bolcami ustawionymi na wysokości czoła.",
+      "alternative": "ez-bar-reverse-grip-skullcrusher"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, primary use case) | 3x12-15 (joint-friendly volume, lower load) | 4x6-8 (strength, only with strong wrists and spotter)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "barbell-reverse-grip-skullcrusher.gif",
+    "frames_extracted": [
+      "frames/barbell-reverse-grip-skullcrusher/frame_0_start.png",
+      "frames/barbell-reverse-grip-skullcrusher/frame_1_early.png",
+      "frames/barbell-reverse-grip-skullcrusher/frame_2_mid.png",
+      "frames/barbell-reverse-grip-skullcrusher/frame_3_late.png",
+      "frames/barbell-reverse-grip-skullcrusher/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-reverse-grip-skullcrusher"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel (start/early/mid/late/end). Frame 0: athleta leży na ławce poziomej, sztanga opuszczona tuż nad czoło/linia włosów, łokcie zgięte ostro, ramię ponad łokciem skierowane w sufit lekko w stronę głowy, tricepsy obu rąk podświetlone na czerwono (faza rozciągnięcia). Frame 2: lockout — sztanga wypchnięta wysoko nad klatkę, ramiona prawie pionowe, tricepsy nadal czerwone (skurcz koncentryczny). Frame 4: powrót do dolnej pozycji nad czołem, ghost ruchu sztangi widoczny w tle (potwierdza pełen łuk). Chwyt WYRAŹNIE supinowany — dłonie skierowane w stronę twarzy (kciuki na zewnątrz), na szerokość barków. Tylko przedramiona pracują wokół łokcia, ramię ponad łokciem stabilne. Equipment: barbell + flat_bench (ez_bar opcjonalnie dla łagodniejszego nadgarstka). Difficulty 5 — wymaga kontroli nadgarstka pod supinowaną dźwignią + bezpieczeństwa nad twarzą, dlatego intermediate. Akcent muskularny: triceps_brachii P10 ogólnie, medial_head S8 (akcent reverse grip), lateral_head S7, long_head S5 (mniej zaangażowana niż przy overhead). Wszystkie pola PL napisane od zera, nie tłumaczenie. 5 common_faults pokrywa: nadgarstki, łokcie, ramię ponad łokciem, kąt opuszczania, ROM. 4 contraindications: nadgarstek, medial elbow, ramię, brak asekuracji.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "barbell", "lying", "skullcrusher", "reverse_grip", "supinated", "medial_head_emphasis", "elbow_friendly_alternative"]
+}

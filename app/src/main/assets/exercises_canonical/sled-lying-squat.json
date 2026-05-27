@@ -1,0 +1,205 @@
+{
+  "id": "sled-lying-squat",
+  "name": "Sled Lying Squat (Horizontal Leg Press)",
+  "namePl": "Suwnica pozioma (leg press leżąc)",
+  "aliases": ["horizontal leg press", "lying leg press", "supine leg press", "flat leg press", "0 degree leg press", "lying squat machine"],
+  "aliasesPl": ["leg press leżąc", "prasa pozioma do nóg", "suwnica pozioma", "leg press 0 stopni", "horyzontalna suwnica", "płaska suwnica"],
+
+  "description": "The horizontal sled leg press — a variant in which the lifter lies flat on their back on a low padded bench while the loaded platform travels vertically (or at a very shallow angle) above the body. The feet press against the platform overhead, and the movement is a closed-chain knee and hip extension performed against a sled that has no gravity-assist component, unlike the classic 45° version. This forces the working muscles to push the load through nearly its entire range without the helping vector of an angled slide, often making the same kilo feel heavier. It is a viable, more spine-friendly alternative to the 45° leg press and to the squat, popular in rehab and bodybuilding contexts.",
+  "descriptionPl": "Pozioma suwnica leg press — wariant, w którym ćwiczący leży płasko na plecach na niskiej, wyściełanej ławce, podczas gdy obciążona platforma porusza się pionowo (lub pod bardzo niewielkim kątem) nad ciałem. Stopy wypychają platformę nad głową, a ruch to zamknięty łańcuch kinematyczny wyprostu kolan i bioder przeciwko karetce, w której nie ma komponentu wspomagającego ze strony grawitacji — w odróżnieniu od klasycznej wersji 45°. Wymusza to, by mięśnie pracujące przepychały ciężar przez niemal pełen zakres bez wektora pomocniczego skośnej prowadnicy, przez co ten sam kilogram zwykle wydaje się cięższy. Jest to wartościowa, bardziej przyjazna kręgosłupowi alternatywa dla leg pressu 45° i przysiadu, popularna w rehabilitacji oraz w kulturystyce.",
+
+  "instructions": [
+    "Load plates evenly on both arms of the platform. Use lighter weight than on the 45° leg press the first time — the horizontal sled feels different.",
+    "Lie flat on the padded bench so your whole back, head and hips contact the pad. Slide under the platform until your feet can reach it with hips at roughly 90°.",
+    "Place both feet shoulder-width on the platform, toes slightly turned out (5-15°), full foot in contact with the plate.",
+    "Grip the side handles or the edges of the bench, brace the core, press the lower back into the pad.",
+    "Press the platform up to its full starting position and disengage the safety stops if present. Knees softly extended — this is the starting position.",
+    "Inhale and lower the platform in a controlled tempo (2-3 s) by bending the knees toward the chest. The lower back stays flat against the bench the entire time.",
+    "Stop when the knees reach roughly 90° of flexion — or earlier, at the point where the pelvis would start to lift off the bench.",
+    "Drive the platform back up through the heels and mid-foot to near full extension. Don't slam into a hard knee lockout. Exhale through the press.",
+    "Complete all planned reps with consistent tempo. After the last rep, re-engage the safety stops before relaxing the legs.",
+    "Slide out of the machine carefully — the legs will be temporarily fatigued."
+  ],
+  "instructionsPl": [
+    "Załaduj talerze równomiernie po obu stronach platformy. Za pierwszym razem użyj mniejszego ciężaru niż na suwnicy 45° — pozioma karetka czuje się inaczej.",
+    "Połóż się płasko na wyściełanej ławce tak, by całe plecy, głowa i biodra dotykały oparcia. Wsuń się pod platformę, aż stopy będą jej dotykać przy zgięciu w biodrze około 90°.",
+    "Oprzyj obie stopy na platformie na szerokość barków, palce lekko na zewnątrz (5-15°), cała stopa stykająca się z platformą.",
+    "Złap boczne uchwyty lub krawędzie ławki, napnij brzuch, wciśnij dolny odcinek pleców w oparcie.",
+    "Wypchnij platformę do pełnej pozycji startowej i zwolnij blokady bezpieczeństwa, jeśli są obecne. Kolana delikatnie wyprostowane — to pozycja startowa.",
+    "Nabierz wdech i opuszczaj platformę kontrolowanym tempem (2-3 s), zginając kolana w kierunku klatki piersiowej. Dolny odcinek pleców cały czas płasko przy ławce.",
+    "Zatrzymaj się, gdy kolana są zgięte do około 90° — lub wcześniej, w momencie w którym miednica zaczęłaby się odrywać od ławki.",
+    "Wypchnij platformę z powrotem w górę przez pięty i śródstopie do niemal pełnego wyprostu. Nie wbijaj kolan w twardy lockout. Wydech podczas wypychania.",
+    "Wykonaj wszystkie zaplanowane powtórzenia z równym tempem. Po ostatnim powtórzeniu zablokuj karetkę, zanim rozluźnisz nogi.",
+    "Ostrożnie wysuń się z maszyny — nogi będą chwilowo zmęczone."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "adductors": "S4",
+    "core": "S3",
+    "calves": "T3",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["horizontal_leg_press_machine"],
+    "optional": ["lifting_belt", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-squat", "goblet-squat"],
+    "progression_to": ["sled-45-leg-press", "hack-squat", "barbell-back-squat", "single-leg-leg-press"],
+    "alternatives": ["sled-45-leg-press", "hack-squat", "lever-alternate-leg-press", "smith-machine-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Position so your hips are at ~90° when feet rest on the platform",
+      "Whole foot on the plate, heel pressed in firmly",
+      "Lower back, head and hips flat against the bench",
+      "Brace the core hard before disengaging the safety stops",
+      "Grip side handles / bench edges — locks the torso so power transfers to the legs"
+    ],
+    "setup_cues_pl": [
+      "Ustaw się tak, by w pozycji startowej biodra były zgięte do ~90°",
+      "Cała stopa na platformie, pięta wciśnięta mocno",
+      "Dolny odcinek pleców, głowa i biodra płasko przy ławce",
+      "Napnij brzuch mocno zanim zwolnisz blokady bezpieczeństwa",
+      "Trzymaj boczne uchwyty / krawędzie ławki — blokuje tułów i przenosi siłę na nogi"
+    ],
+    "execution_cues": [
+      "Slow down on the way down (2-3 s), drive up faster",
+      "Push through the heel and mid-foot, not the toes",
+      "Stop short of a hard knee lockout — protect the joint",
+      "End the descent before the pelvis lifts off the bench",
+      "Drive the knees out toward the little toes — don't let them collapse inward"
+    ],
+    "execution_cues_pl": [
+      "Schodź powoli (2-3 s), wypychaj szybciej",
+      "Wypychaj przez piętę i śródstopie, nie przez palce",
+      "Zatrzymaj się tuż przed twardym blokowaniem kolan — chroń staw",
+      "Zakończ schodzenie zanim miednica oderwie się od ławki",
+      "Wypychaj kolana na zewnątrz w kierunku małych palców — nie pozwól, by uciekały do środka"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pelvis lifts off the bench at the bottom ('butt wink')",
+        "faultPl": "Miednica odrywa się od ławki w dolnej pozycji ('butt wink')",
+        "cause": "Going below available hip flexion mobility, or sliding too far under the platform",
+        "causePl": "Schodzenie poniżej dostępnego zakresu zgięcia biodra, lub zbyt głębokie wsunięcie się pod platformę",
+        "cue": "Stop the descent earlier — the lumbar spine must stay neutral. Slide a touch further out from under the platform if needed.",
+        "cuePl": "Zatrzymaj schodzenie wcześniej — lędźwie muszą pozostać neutralne. W razie potrzeby wysuń się minimalnie spod platformy."
+      },
+      {
+        "fault": "Knee valgus (knees collapse inward) under load",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka) pod obciążeniem",
+        "cause": "Weak glute medius, feet rotated inward, or load too heavy for current technique",
+        "causePl": "Słabe pośladkowe średnie, stopy obrócone do wewnątrz, lub zbyt duży ciężar dla obecnej techniki",
+        "cue": "Push the knees out toward the little toes. Reduce load until alignment stays clean for the full set.",
+        "cuePl": "Wypychaj kolana na zewnątrz w kierunku małych palców. Zmniejsz ciężar, aż technika będzie czysta przez całą serię."
+      },
+      {
+        "fault": "Hard knee lockout at the top of each rep",
+        "faultPl": "Twarde blokowanie kolan w wyproście na górze każdego powtórzenia",
+        "cause": "Resting the joint instead of the muscle, or ego loading",
+        "causePl": "Odpoczynek stawu zamiast mięśnia, lub forsowanie ciężaru z ego",
+        "cue": "Stop just shy of full extension — keep tension on the quads and save the knee joint from compressive stress.",
+        "cuePl": "Zatrzymaj się tuż przed pełnym wyprostem — utrzymaj napięcie na czworogłowych i oszczędź staw kolanowy przed obciążeniem ścinającym."
+      },
+      {
+        "fault": "Heel rises off the plate during the descent",
+        "faultPl": "Pięta odrywa się od platformy w fazie opuszczania",
+        "cause": "Foot positioned too high on the plate, limited ankle dorsiflexion, or trying to go too deep",
+        "causePl": "Stopa ustawiona za wysoko na platformie, ograniczona mobilność stawu skokowego, lub próba schodzenia zbyt głęboko",
+        "cue": "Move the foot lower on the plate or limit depth to the range where the heel stays pressed.",
+        "cuePl": "Przesuń stopę niżej na platformie lub ogranicz głębokość do zakresu, w którym pięta pozostaje wciśnięta."
+      },
+      {
+        "fault": "Hands pushing on the knees to help finish the rep",
+        "faultPl": "Ręce popychające kolana, by dokończyć powtórzenie",
+        "cause": "Load too heavy, or unaware that this offloads the quads and increases shear at the knee",
+        "causePl": "Zbyt duży ciężar, lub brak świadomości że odciąża to czworogłowe i zwiększa siły ścinające w stawie kolanowym",
+        "cue": "Keep hands on the side handles or bench edges only. If you need to help with your hands, the weight is too heavy.",
+        "cuePl": "Ręce trzymaj wyłącznie na bocznych uchwytach lub krawędziach ławki. Jeśli musisz pomagać sobie rękami, ciężar jest za duży."
+      }
+    ],
+    "breathing": "Inhale on the descent (2-3 s), exhale on the press. For heavy sets, a brief Valsalva brace through the sticking point of the press, then exhale at the top.",
+    "breathingPl": "Wdech podczas opuszczania (2-3 s), wydech podczas wypychania. Przy ciężkich seriach krótka Valsalva przez najtrudniejszy fragment ruchu, wydech na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_knee_injury",
+      "severity": "avoid",
+      "modification": "Rest until cleared by a physiotherapist. Loaded knee flexion will worsen the injury.",
+      "modificationPl": "Odpoczynek do czasu kwalifikacji przez fizjoterapeutę. Obciążone zginanie kolana pogłębi uraz.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Limit depth to a range where the pelvis stays flat on the bench. Do NOT go below 90° of knee flexion. Avoid entirely if loading triggers nerve symptoms (sciatica).",
+      "modificationPl": "Ogranicz głębokość do zakresu, w którym miednica pozostaje płasko na ławce. NIE schodź poniżej 90° zgięcia kolana. Całkowicie unikaj, jeśli obciążenie wywołuje objawy neurologiczne (rwa kulszowa).",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Limit depth to a pain-free range (typically not below ~90° knee flexion). Place feet higher on the platform to shift load toward the hips and reduce patellofemoral shear.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu (zwykle nie głębiej niż ~90° zgięcia kolana). Ustaw stopy wyżej na platformie, aby przesunąć obciążenie na biodra i zmniejszyć siły ścinające w stawie rzepkowo-udowym.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "hip_replacement",
+      "severity": "modify",
+      "modification": "Avoid deep hip flexion (>90°). Position feet higher on the platform and limit ROM. Consult the surgeon about load parameters and allowed depth.",
+      "modificationPl": "Unikaj głębokiego zgięcia biodra (>90°). Ustaw stopę wyżej na platformie i ogranicz zakres ruchu. Skonsultuj z chirurgiem parametry obciążenia i dozwoloną głębokość.",
+      "alternative": "lying-leg-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x4-6 (strength) | 2-3x15-25 (endurance / metabolic) | 1-2x20-30 (drop sets, burnout)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "sled-lying-squat.gif",
+    "frames_extracted": [
+      "frames/sled-lying-squat/frame_0_start.png",
+      "frames/sled-lying-squat/frame_1_early.png",
+      "frames/sled-lying-squat/frame_2_mid.png",
+      "frames/sled-lying-squat/frame_3_late.png",
+      "frames/sled-lying-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/sled-lying-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:25:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. To wariant poziomy leg pressu (horizontal leg press), nie suwnica 45°: ćwiczący leży płasko na plecach na niskiej ławce, a platforma stoi pionowo nad nim (lekko nachylona) i porusza się w kierunku tułowia w fazie opuszczania. Stopy pracują w niemal pionowej płaszczyźnie nad ciałem — to inny tor niż w wariancie 45°, w którym karetka jedzie skośnie. Klatka 0 — kolana zgięte do około 90°, miednica wciśnięta w ławkę; klatka 2 — wyprost niemal pełny; klatka 4 — powrót do zgięcia. Mięśnie na ilustracji: czworogłowe (główne, intensywnie zaznaczone) + pośladki/przywodziciele jako wsparcie — pasuje do squat-pattern w pozycji leżącej. Klasyfikacja closed-chain, bilateral, squat pattern. equipment: horizontal_leg_press_machine (osobna pozycja słownika od leg_press_machine bo to inna maszyna w komercyjnym sprzęcie). Difficulty 4 — taka sama jak wariant 45°, bo technicznie jest równie prosty, choć wymaga większego ciężaru względnego na kg sprzętu (brak wektora grawitacji wzdłuż prowadnicy). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["leg_press", "horizontal_leg_press", "sled", "machine", "compound", "quad_dominant", "lower_body", "hypertrophy", "strength", "spine_friendly", "squat_alternative", "supine"]
+}

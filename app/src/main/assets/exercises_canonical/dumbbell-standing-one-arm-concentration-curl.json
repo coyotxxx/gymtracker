@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-standing-one-arm-concentration-curl",
+  "name": "Dumbbell Standing One-Arm Concentration Curl",
+  "namePl": "Concentration curl hantlą jednorącz stojąc",
+  "aliases": ["bent-over concentration curl", "standing concentration curl", "hinged dumbbell curl", "standing one-arm dumbbell curl bent over"],
+  "aliasesPl": ["uginanie ramienia hantlą w opadzie tułowia", "concentration curl stojąc w opadzie", "uginanie jednorącz w skłonie", "stojący koncentratowy curl"],
+
+  "description": "Standing variation of the concentration curl performed in a hip-hinged (bent-over) position with the non-working hand braced on the same-side knee. The arm hangs straight down toward the floor, allowing strict elbow flexion against gravity with no torso involvement. The bent-over posture eliminates cheating with the shoulder or back, making it a pure peak-builder for the biceps brachii. Less common than the seated concentration curl but offers identical mechanics without needing a bench.",
+  "descriptionPl": "Wariant uginania koncentratowego wykonywany w pozycji stojącej z tułowiem pochylonym w przód (zawias biodrowy), z ręką niepracującą opartą o kolano po tej samej stronie. Pracujące ramię zwisa swobodnie w dół, dzięki czemu ruch ogranicza się wyłącznie do zgięcia w łokciu przeciwko grawitacji — bez udziału tułowia. Pochylona pozycja eliminuje oszukiwanie barkiem i plecami, co czyni to ćwiczenie czystym budowniczym szczytu bicepsa. Mniej popularne od wersji siedzącej, ale daje identyczną mechanikę bez potrzeby używania ławki.",
+
+  "instructions": [
+    "Stand with feet roughly shoulder-width apart, holding a dumbbell in one hand with a supinated (palm-up) grip.",
+    "Hinge forward at the hips and bend the knees slightly. Brace the non-working hand on the same-side knee or thigh to support the upper body.",
+    "Let the working arm hang straight down toward the floor between or just outside the legs. The dumbbell should be near the floor with the arm fully extended.",
+    "Keep the back flat (neutral spine), chest pointing toward the floor, and core braced. The shoulder of the working arm should hang relaxed.",
+    "Without moving the upper arm, curl the dumbbell upward by flexing only at the elbow. Exhale as you lift.",
+    "Continue until the dumbbell reaches near the front of the shoulder and the biceps is fully contracted. Squeeze hard at the top for a brief moment.",
+    "Lower the dumbbell slowly under control over 2-3 seconds back to full elbow extension. Inhale during the descent.",
+    "Complete all reps on one arm before switching sides. Do not use the torso or shoulder to assist the lift."
+  ],
+  "instructionsPl": [
+    "Stań w niewielkim rozkroku (na szerokość barków), trzymając hantlę w jednej ręce podchwytem (dłoń skierowana w górę).",
+    "Pochyl tułów w przód w zawiasie biodrowym i lekko ugnij kolana. Oprzyj rękę niepracującą o kolano lub udo po tej samej stronie aby ustabilizować górną część ciała.",
+    "Pozwól pracującej ręce zwisnąć swobodnie w dół między nogami lub tuż obok nich. Hantla powinna znaleźć się blisko podłogi, ramię w pełnym wyproście.",
+    "Trzymaj plecy proste (neutralny kręgosłup), klatka piersiowa skierowana ku podłodze, brzuch napięty. Bark pracującej ręki ma pozostać rozluźniony i opuszczony.",
+    "Bez ruchu ramienia ponad łokciem uginaj hantlę do góry, pracując wyłącznie w stawie łokciowym. Wydychaj podczas unoszenia.",
+    "Kontynuuj ruch aż hantla dotrze blisko przedniego aktonu barku, a biceps będzie w pełnym skurczu. Mocno napnij mięsień na chwilę w górze.",
+    "Opuszczaj hantlę powoli i pod kontrolą przez 2-3 sekundy aż do pełnego wyprostu łokcia. Wdech podczas opuszczania.",
+    "Wykonaj wszystkie powtórzenia na jednej ręce, dopiero potem zmień stronę. Nie pomagaj sobie tułowiem ani barkiem."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "core", "erector_spinae", "posterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T4",
+    "core": "T3",
+    "erector_spinae": "T3",
+    "posterior_deltoid": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["dumbbell-seated-concentration-curl", "spider-curl", "preacher-curl"],
+    "alternatives": ["dumbbell-seated-concentration-curl", "spider-curl", "preacher-curl", "cable-concentration-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft",
+      "Hinge from the hips, flat back",
+      "Free hand braced on the same-side knee for support",
+      "Working arm hangs straight down, fully extended",
+      "Supinated grip (palm up), shoulder relaxed"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana lekko ugięte",
+      "Zawias w biodrach, plecy proste",
+      "Wolna ręka oparta o kolano po tej samej stronie",
+      "Pracujące ramię zwisa pionowo w dół, w pełnym wyproście",
+      "Chwyt podchwytem (dłoń w górę), bark rozluźniony"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm stays vertical",
+      "Squeeze the biceps peak hard at the top",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Keep the back flat — don't round or hyperextend the spine",
+      "Full elbow extension at the bottom of every rep"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem pozostaje pionowe",
+      "Mocno spinaj szczyt bicepsa w górnej pozycji",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Trzymaj plecy proste — nie zaokrąglaj ani nie przeprostowuj kręgosłupa",
+      "Pełny wyprost łokcia na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging the dumbbell with shoulder or torso",
+        "faultPl": "Bujanie hantlą barkiem lub tułowiem",
+        "cause": "Load too heavy, ego lifting, or trying to extend the set past technical failure",
+        "causePl": "Zbyt duży ciężar, ego, lub wymuszanie powtórzeń po technicznym wyczerpaniu",
+        "cue": "Lower the weight. Lock the shoulder in place — only the elbow joint moves.",
+        "cuePl": "Zmniejsz ciężar. Zablokuj bark w miejscu — porusza się tylko staw łokciowy."
+      },
+      {
+        "fault": "Rounded back during the hinge",
+        "faultPl": "Zaokrąglone plecy w pozycji pochylonej",
+        "cause": "Tight hamstrings, weak posterior chain, or fatigued lower back",
+        "causePl": "Spięte dwugłowe ud, słaby tylny łańcuch, lub zmęczony odcinek lędźwiowy",
+        "cue": "Push the hips back further and bend the knees more. Keep chest open, eyes ~1 meter ahead on the floor.",
+        "cuePl": "Mocniej cofnij biodra w tył i bardziej ugnij kolana. Otwarta klatka, wzrok ok. metr przed sobą na podłodze."
+      },
+      {
+        "fault": "Upper arm drifts forward or swings backward",
+        "faultPl": "Ramię ponad łokciem wędruje w przód lub w tył",
+        "cause": "Lack of shoulder stabilization, working arm not truly hanging vertically",
+        "causePl": "Brak stabilizacji barku, pracujące ramię nie zwisa naprawdę pionowo",
+        "cue": "Anchor the shoulder. The upper arm should remain perpendicular to the floor throughout the entire rep.",
+        "cuePl": "Zakotwicz bark. Ramię ponad łokciem ma pozostać prostopadle do podłogi przez cały ruch."
+      },
+      {
+        "fault": "Cutting the bottom range (not fully extending the elbow)",
+        "faultPl": "Skracanie dolnego zakresu (brak pełnego wyprostu łokcia)",
+        "cause": "Ego lifting, weak biceps in the stretched position, or fear of joint load",
+        "causePl": "Ego, słaby biceps w pozycji rozciągniętej, lub strach przed obciążeniem stawu",
+        "cue": "Lower until the arm is fully straight every rep. Reduce weight if you can't.",
+        "cuePl": "Opuszczaj aż ramię będzie zupełnie proste przy każdym powtórzeniu. Zmniejsz ciężar jeśli się nie udaje."
+      },
+      {
+        "fault": "Wrist flexion at the top of the curl",
+        "faultPl": "Zginanie nadgarstka w górnej fazie uginania",
+        "cause": "Trying to lift the dumbbell higher than the biceps can pull it, recruiting wrist flexors",
+        "causePl": "Próba uniesienia hantli wyżej niż jest w stanie ją podciągnąć biceps, włączanie zginaczy nadgarstka",
+        "cue": "Keep the wrist neutral, in line with the forearm. Stop the curl when the biceps is fully shortened.",
+        "cuePl": "Trzymaj nadgarstek neutralnie, w linii z przedramieniem. Zakończ ruch gdy biceps jest w pełnym skurczu."
+      }
+    ],
+    "breathing": "Exhale during the concentric phase (curl up). Inhale during the eccentric phase (lower down). Maintain a light brace and steady intra-abdominal pressure to protect the lower back in the hinged position.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uginanie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha i stabilne ciśnienie wewnątrzbrzuszne aby chronić odcinek lędźwiowy w pozycji pochylonej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "The bent-over hinge isometrically loads the erector spinae. Switch to the seated variant to remove spinal loading entirely.",
+      "modificationPl": "Pochylona pozycja izometrycznie obciąża prostowniki grzbietu. Przejdź na wariant siedzący aby całkowicie wyeliminować obciążenie kręgosłupa.",
+      "alternative": "dumbbell-seated-concentration-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume, use lighter loads with higher reps (12-15), avoid heavy eccentrics and full stretched-position contractions.",
+      "modificationPl": "Zmniejsz objętość, używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15), unikaj ciężkich faz negatywnych i pełnego napięcia w pozycji rozciągniętej.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "tight_hamstrings_or_hip_hinge_difficulty",
+      "severity": "modify",
+      "modification": "If the hinge causes back rounding, switch to seated concentration curl on a bench — eliminates need for hinge entirely.",
+      "modificationPl": "Jeśli pochylenie powoduje zaokrąglanie pleców, przejdź na concentration curl siedząc na ławce — całkowicie eliminuje konieczność zawiasu biodrowego.",
+      "alternative": "dumbbell-seated-concentration-curl"
+    },
+    {
+      "condition": "vertigo_or_orthostatic_intolerance",
+      "severity": "caution",
+      "modification": "Bent-over head-down position can trigger dizziness in susceptible individuals. Use seated variant or stand back up between reps.",
+      "modificationPl": "Pozycja głową w dół może wywoływać zawroty u podatnych osób. Użyj wariantu siedzącego lub prostuj się między powtórzeniami.",
+      "alternative": "dumbbell-seated-concentration-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / peak focus) | 3x12-20 (pump finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-standing-one-arm-concentration-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-one-arm-concentration-curl/frame_0_start.png",
+      "frames/dumbbell-standing-one-arm-concentration-curl/frame_1_early.png",
+      "frames/dumbbell-standing-one-arm-concentration-curl/frame_2_mid.png",
+      "frames/dumbbell-standing-one-arm-concentration-curl/frame_3_late.png",
+      "frames/dumbbell-standing-one-arm-concentration-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-standing-one-arm-concentration-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa (start/mid/end). GIF pokazuje wariant STOJĄCY w pozycji pochylonej (hip-hinge): tułów równolegle do podłogi, wolna ręka oparta o kolano po tej samej stronie dla stabilizacji, pracujące ramię zwisa pionowo w dół z hantlą blisko podłogi. UWAGA: w tym wariancie łokieć NIE jest oparty o wewnętrzną stronę kolana (jak w klasycznym seated concentration curl) — ramię zwisa swobodnie, a izolacja powstaje przez samą pozycję pochyloną i grawitację. Frame 0: pełny wyprost łokcia, hantla blisko podłogi, biceps podświetlony na czerwono. Frame 2: pełny skurcz, hantla na wysokości barku, ramię ponad łokciem nadal pionowe. Frame 4: powrót do wyprostu z widocznym 'ghostem' fazy szczytowej. Klasyfikacja: isolation_curl / pull / isolation / unilateral / sagittal / open. Primary biceps_brachii P10, secondary brachialis S6. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbell", "unilateral", "peak_focus", "hinge_position"]
+}

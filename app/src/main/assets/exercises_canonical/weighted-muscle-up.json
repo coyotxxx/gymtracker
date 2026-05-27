@@ -1,0 +1,208 @@
+{
+  "id": "weighted-muscle-up",
+  "name": "Weighted Muscle-Up",
+  "namePl": "Muscle-up z obciążeniem",
+  "aliases": ["weighted muscleup", "loaded muscle-up", "weighted ring muscle-up", "muscle-up with belt"],
+  "aliasesPl": ["muscle-up z ciężarem", "muscle-up z pasem", "obciążony muscle-up", "muscle-up z obciążeniem na pasie", "wejście na drążek z obciążeniem"],
+
+  "description": "Elitarna wersja muscle-upa z dodatkowym obciążeniem doczepionym do pasa treningowego. Łączy podciąganie eksplozywne, przejście (transition) nad drążek/kółka i wyciskanie z podporu (dip) — wszystko w jednym ruchu. Z obciążeniem każda z trzech faz staje się skrajnie wymagająca: pull musi być wyższy (do mostka, nie do brody), transition wymaga ogromnej mobilności i siły rotatorów, a dip startuje z głębokiego ugięcia z dodatkowymi kilogramami. Wykonywany na drążku lub kółkach gimnastycznych. Szczyt gimnastyki siłowej i kalisteniki obciążonej — wymaga ≥3-5 strict muscle-upów bez obciążenia przed rozpoczęciem.",
+  "descriptionPl": "Elitarna wersja muscle-upa z dodatkowym obciążeniem doczepionym do pasa treningowego. Łączy podciąganie eksplozywne, przejście (transition) nad drążek/kółka i wyciskanie z podporu (dip) — wszystko w jednym ruchu. Z obciążeniem każda z trzech faz staje się skrajnie wymagająca: pull musi być wyższy (do mostka, nie do brody), transition wymaga ogromnej mobilności i siły rotatorów, a dip startuje z głębokiego ugięcia z dodatkowymi kilogramami. Wykonywany na drążku lub kółkach gimnastycznych. Szczyt gimnastyki siłowej i kalisteniki obciążonej — wymaga ≥3-5 strict muscle-upów bez obciążenia przed rozpoczęciem.",
+
+  "instructions": [
+    "Załóż pas treningowy z obciążeniem (talerz, kettlebell na łańcuchu). Zacznij od 2.5-5 kg jeśli to pierwsze obciążone muscle-upy.",
+    "Złap drążek lub kółka gimnastyczne fałszywym chwytem (false grip) — nadgarstki przerzucone NAD drążek/kółka. Bez false grip transition jest praktycznie niemożliwe.",
+    "Zwiśnij w pełnym wyproście. Ciężar wisi swobodnie między nogami. Aktywuj łopatki — ściągnięte w dół i tyłu.",
+    "Napnij brzuch i pośladki. Lekkie odchylenie do tyłu — nie pionowo, ale w kącie ~10-15° od pionu (uławia transition).",
+    "FAZA 1 (pull): Pociągnij eksplozywnie ŁOKCIAMI DO TYŁU I W DÓŁ do mostka — pull musi być wyższy niż w zwykłym pull-upie. Klatka idzie do drążka/kółek.",
+    "FAZA 2 (transition): Gdy klatka jest na poziomie drążka/kółek, agresywnie OBRÓĆ NADGARSTKI z dołu na górę i przerzuć łokcie nad linię drążka. To najtrudniejsza i najbardziej kontuzjogenna część.",
+    "FAZA 3 (dip): Z głębokiego ugięcia w pozycji podporu (klatka między rękami) wyprostuj ramiona pełnym dipem. Łokcie zamknięte na górze.",
+    "Opuszczanie kontrolowane: powolny dip w dół → odwrotne transition (przerzucenie z powrotem pod drążek) → kontrolowane opuszczenie do pełnego zwisu.",
+    "Każde powtórzenie od pełnego zwisu (dead-hang) do pełnego wyprostu w podporze (lockout na górze)."
+  ],
+  "instructionsPl": [
+    "Załóż pas treningowy z obciążeniem (talerz, kettlebell na łańcuchu). Zacznij od 2.5-5 kg jeśli to pierwsze obciążone muscle-upy.",
+    "Złap drążek lub kółka gimnastyczne fałszywym chwytem (false grip) — nadgarstki przerzucone NAD drążek/kółka. Bez false grip transition jest praktycznie niemożliwe.",
+    "Zwiśnij w pełnym wyproście. Ciężar wisi swobodnie między nogami. Aktywuj łopatki — ściągnięte w dół i tyłu.",
+    "Napnij brzuch i pośladki. Lekkie odchylenie do tyłu — nie pionowo, ale w kącie ~10-15° od pionu (uławia transition).",
+    "FAZA 1 (pull): Pociągnij eksplozywnie ŁOKCIAMI DO TYŁU I W DÓŁ do mostka — pull musi być wyższy niż w zwykłym pull-upie. Klatka idzie do drążka/kółek.",
+    "FAZA 2 (transition): Gdy klatka jest na poziomie drążka/kółek, agresywnie OBRÓĆ NADGARSTKI z dołu na górę i przerzuć łokcie nad linię drążka. To najtrudniejsza i najbardziej kontuzjogenna część.",
+    "FAZA 3 (dip): Z głębokiego ugięcia w pozycji podporu (klatka między rękami) wyprostuj ramiona pełnym dipem. Łokcie zamknięte na górze.",
+    "Opuszczanie kontrolowane: powolny dip w dół → odwrotne transition (przerzucenie z powrotem pod drążek) → kontrolowane opuszczenie do pełnego zwisu.",
+    "Każde powtórzenie od pełnego zwisu (dead-hang) do pełnego wyprostu w podporze (lockout na górze)."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "triceps_brachii"],
+    "secondary": ["pectoralis_major", "biceps_brachii", "deltoids_anterior", "trapezius_middle_lower", "teres_major", "rhomboids"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis", "obliques", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "triceps_brachii": "P10",
+    "pectoralis_major": "S9",
+    "biceps_brachii": "S8",
+    "deltoids_anterior": "S8",
+    "trapezius_middle_lower": "S8",
+    "teres_major": "S8",
+    "rhomboids": "S7",
+    "core": "S8",
+    "forearms": "S9",
+    "rotator_cuff": "S8",
+    "serratus_anterior": "S7"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar", "weight_belt"],
+    "optional": ["gymnastic_rings", "chalk", "weight_plate", "kettlebell", "dip_belt_chain", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["muscle-up", "weighted-pull-up", "weighted-dip", "false-grip-pull-up", "ring-dip", "chest-to-bar-pull-up", "explosive-pull-up"],
+    "progression_to": ["weighted-ring-muscle-up", "one-arm-muscle-up", "slow-muscle-up", "weighted-bar-muscle-up-with-archer-pull"],
+    "alternatives": ["muscle-up", "high-pull-up-to-chest", "weighted-pull-up", "weighted-dip", "explosive-chest-to-bar-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Weight belt with plate or kettlebell — start light (2.5-5 kg)",
+      "False grip — wrists OVER the bar/rings",
+      "Full dead-hang, scapula depressed",
+      "Slight backward lean (~10-15° from vertical)",
+      "Core and glutes braced — body rigid"
+    ],
+    "setup_cues_pl": [
+      "Pas z talerzem lub kettlebell — zacznij lekko (2.5-5 kg)",
+      "False grip — nadgarstki NAD drążkiem/kółkami",
+      "Pełny zwis dead-hang, łopatki ściągnięte w dół",
+      "Lekkie odchylenie do tyłu (~10-15° od pionu)",
+      "Brzuch i pośladki napięte — ciało sztywne"
+    ],
+    "execution_cues": [
+      "Pull EXPLOSIVELY to sternum (not just chin)",
+      "Elbows BACK and DOWN, chest to bar/rings",
+      "Transition: ROTATE wrists, throw elbows OVER",
+      "Dip from deep support — full lockout at top",
+      "Slow controlled negative — reverse transition"
+    ],
+    "execution_cues_pl": [
+      "Pociągaj EKSPLOZYWNIE do mostka (nie tylko brody)",
+      "Łokcie DO TYŁU i W DÓŁ, klatka do drążka/kółek",
+      "Transition: OBRÓĆ nadgarstki, przerzuć łokcie NAD",
+      "Dip z głębokiego podporu — pełen lockout na górze",
+      "Powolny kontrolowany negatyw — odwrotne transition"
+    ],
+    "common_faults": [
+      {
+        "fault": "Insufficient pull height (chin to bar, not chest)",
+        "faultPl": "Niewystarczająca wysokość ciągu (broda zamiast klatki do drążka)",
+        "cause": "Treating it like a pull-up. Without sternum-to-bar height, transition is impossible with weight.",
+        "causePl": "Traktowanie jak zwykły pull-up. Bez wysokości klatki do drążka transition jest niemożliwe z obciążeniem.",
+        "cue": "Cue: 'Klatka do drążka', nie 'broda nad drążkiem'. Najpierw opanuj chest-to-bar z obciążeniem.",
+        "cuePl": "Cue: 'Klatka do drążka', nie 'broda nad drążkiem'. Najpierw opanuj chest-to-bar z obciążeniem."
+      },
+      {
+        "fault": "No false grip — wrists below the bar",
+        "faultPl": "Brak false grip — nadgarstki pod drążkiem",
+        "cause": "Lack of wrist mobility/strength. With weight, transition without false grip causes shoulder strain.",
+        "causePl": "Brak mobilności/siły nadgarstków. Z obciążeniem transition bez false grip powoduje obciążenie barków.",
+        "cue": "False grip holds (zwisy z false grip 30s+). Przerzuć nadgarstek NAD drążek/kółko przed startem.",
+        "cuePl": "False grip holds (zwisy z false grip 30s+). Przerzuć nadgarstek NAD drążek/kółko przed startem."
+      },
+      {
+        "fault": "Kipping/swinging the weight for momentum",
+        "faultPl": "Kipping/bujanie ciężarem dla pędu",
+        "cause": "Trying to weighted muscle-up before being ready (need 3-5 strict bodyweight first)",
+        "causePl": "Próba muscle-upa z obciążeniem zanim gotowy (potrzebne 3-5 strict bez obciążenia)",
+        "cue": "Skrzyżuj nogi, napnij pośladki. Jeśli kippujesz pod obciążeniem — zmniejsz ciężar lub wróć do strict bodyweight.",
+        "cuePl": "Skrzyżuj nogi, napnij pośladki. Jeśli kippujesz pod obciążeniem — zmniejsz ciężar lub wróć do strict bodyweight."
+      },
+      {
+        "fault": "Chicken-wing transition (one arm goes over before the other)",
+        "faultPl": "Transition jednym łokciem na raz (chicken-wing)",
+        "cause": "Asymetria siły lub mobilności barków. Pod obciążeniem może zerwać rotator cuff.",
+        "causePl": "Asymetria siły lub mobilności barków. Pod obciążeniem może zerwać rotator cuff.",
+        "cue": "Oba łokcie nad jednocześnie. Jeśli zauważysz chicken-wing — natychmiast przerwij serię. Pracuj nad ring transition drills bez obciążenia.",
+        "cuePl": "Oba łokcie nad jednocześnie. Jeśli zauważysz chicken-wing — natychmiast przerwij serię. Pracuj nad ring transition drills bez obciążenia."
+      },
+      {
+        "fault": "Skipping the dip — incomplete top lockout",
+        "faultPl": "Pomijanie dipu — niepełen lockout na górze",
+        "cause": "Wyczerpanie po pull i transition, słabe tricepsy z obciążeniem",
+        "causePl": "Wyczerpanie po pull i transition, słabe tricepsy z obciążeniem",
+        "cue": "Pełen lockout — ramiona wyprostowane na górze. Trenuj weighted dip jako asystę.",
+        "cuePl": "Pełen lockout — ramiona wyprostowane na górze. Trenuj weighted dip jako asystę."
+      }
+    ],
+    "breathing": "Wdech głęboki w dead-hang. Wstrzymaj oddech (Valsalva) przez pull + transition. Wydech na dipie w górę. Wdech w trakcie negatywu. Z obciążeniem Valsalva pomaga generować ciśnienie i sztywność tułowia.",
+    "breathingPl": "Wdech głęboki w dead-hang. Wstrzymaj oddech (Valsalva) przez pull + transition. Wydech na dipie w górę. Wdech w trakcie negatywu. Z obciążeniem Valsalva pomaga generować ciśnienie i sztywność tułowia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Bezwzględnie unikaj — transition pod obciążeniem to skrajnie obciążający ruch dla stożka rotatorów. Wróć dopiero po pełnym wyzdrowieniu i pracy mobility.",
+      "modificationPl": "Bezwzględnie unikaj — transition pod obciążeniem to skrajnie obciążający ruch dla stożka rotatorów. Wróć dopiero po pełnym wyzdrowieniu i pracy mobility.",
+      "alternative": "weighted-pull-up"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "avoid",
+      "modification": "False grip generuje ekstremalne obciążenie nadgarstków. Z bólem nadgarstka — zakaz. Najpierw wzmocnij nadgarstki (wrist push-ups, false grip holds bez obciążenia).",
+      "modificationPl": "False grip generuje ekstremalne obciążenie nadgarstków. Z bólem nadgarstka — zakaz. Najpierw wzmocnij nadgarstki (wrist push-ups, false grip holds bez obciążenia).",
+      "alternative": "weighted-pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Transition pod obciążeniem to maksymalne obciążenie ścięgien w łokciu. Z aktywną tendinopatią — zakaz. Wróć po 4-6 tygodniach od ustąpienia objawów.",
+      "modificationPl": "Transition pod obciążeniem to maksymalne obciążenie ścięgien w łokciu. Z aktywną tendinopatią — zakaz. Wróć po 4-6 tygodniach od ustąpienia objawów.",
+      "alternative": "weighted-dip"
+    },
+    {
+      "condition": "lumbar_disc_issues",
+      "severity": "modify",
+      "modification": "Wiszący ciężar między nogami obciąża kręgosłup w trakcji + ruch transition wymaga sztywności tułowia. Z dyskopatią L4-L5/L5-S1 — najpierw konsultacja, użyj lżejszego pasa.",
+      "modificationPl": "Wiszący ciężar między nogami obciąża kręgosłup w trakcji + ruch transition wymaga sztywności tułowia. Z dyskopatią L4-L5/L5-S1 — najpierw konsultacja, użyj lżejszego pasa.",
+      "alternative": "muscle-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x1-3 (heavy) | 4x3-5 (volume) | EMOM 1 rep (strength endurance)",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "weighted-muscle-up.gif",
+    "frames_extracted": [
+      "frames/weighted-muscle-up/frame_0_start.png",
+      "frames/weighted-muscle-up/frame_1_early.png",
+      "frames/weighted-muscle-up/frame_2_mid.png",
+      "frames/weighted-muscle-up/frame_3_late.png",
+      "frames/weighted-muscle-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/weighted-muscle-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T10:00:00Z",
+  "verification_notes": "Frame 0: start — pełen zwis na kółkach gimnastycznych z pasem i talerzem zwisającym między nogami, false grip widoczny (nadgarstki przerzucone nad kółka). Frame 2: mid — moment transition, klatka przy linii kółek, łokcie obracane do góry, ciężar wisi w dół (najtrudniejszy moment). Frame 4: end — wracający na dół po pełnym powtórzeniu. Najszersze + tricepsy + górne klatki podświetlone. UWAGA: GIF pokazuje wersję na KÓŁKACH gimnastycznych — bardziej technicznie wymagającą (less stable, więcej rotacji nadgarstka). Wersja na drążku jest częstsza. Equipment: required pull_up_bar (najczęściej spotykana), optional gymnastic_rings.",
+
+  "tags": ["calisthenics", "bodyweight_loaded", "compound_king", "upper_body", "vertical_pull_press_combo", "elite", "gymnastics", "back", "triceps", "explosive", "advanced_skill", "weighted_bodyweight"]
+}

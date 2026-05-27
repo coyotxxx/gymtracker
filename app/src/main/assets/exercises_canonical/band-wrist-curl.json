@@ -1,0 +1,191 @@
+{
+  "id": "band-wrist-curl",
+  "name": "Band Wrist Curl",
+  "namePl": "Wrist curl z gumą (zginanie nadgarstków)",
+  "aliases": ["resistance band wrist curl", "seated band wrist curl", "band forearm curl"],
+  "aliasesPl": ["zginanie nadgarstków z gumą", "wrist curl z taśmą oporową", "zginanie nadgarstków siedząc z gumą"],
+
+  "description": "Isolation exercise targeting the wrist flexors using a resistance band anchored under the foot. Performed seated with the forearm braced on the thigh and the hand hanging past the knee in a supinated grip, the lifter flexes the wrist upward against band tension. The band provides ascending resistance — tension increases as the wrist flexes — making the top of the range the hardest point, which is ideal for the short range of motion of wrist flexion. A travel-friendly, low-cost alternative to dumbbell or barbell wrist curls.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze nadgarstka z taśmą oporową zakotwiczoną pod stopą. Wykonywane siedząc, z przedramieniem opartym o udo i dłonią wystającą poza kolano w chwycie podchwytem — zginasz nadgarstek do góry przeciwko oporowi gumy. Guma daje opór rosnący — napięcie zwiększa się w miarę zginania nadgarstka — przez co góra zakresu jest najtrudniejsza, co idealnie pasuje do krótkiego zakresu ruchu zginania nadgarstka. Tania, mobilna alternatywa dla wrist curli z hantlą lub sztangą.",
+
+  "instructions": [
+    "Sit on a bench or sturdy box with feet flat on the floor, shoulder-width apart.",
+    "Loop a resistance band under one foot. Hold the other end with one hand in a supinated grip (palm facing up).",
+    "Place your forearm along your thigh so the wrist and hand hang past the knee. Forearm pressed flat to the thigh.",
+    "Start with the wrist fully extended (knuckles pointing down) and the band loaded with light tension.",
+    "Flex the wrist upward against the band — knuckles travel toward the ceiling. Only the hand moves; the forearm stays glued to the thigh.",
+    "Squeeze the forearm flexors hard at the top for a 1-second hold. Exhale on the way up.",
+    "Lower the hand slowly under control (2-3 seconds) until the wrist is fully extended again. Inhale on the descent.",
+    "Complete reps on one side, then switch hands and repeat. Work both sides bilaterally."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce lub stabilnym pudle, stopy płasko na podłodze na szerokość barków.",
+    "Zaczep taśmę oporową pod jedną stopą. Drugi koniec chwyć jedną dłonią podchwytem (dłoń skierowana w górę).",
+    "Połóż przedramię wzdłuż uda tak, aby nadgarstek i dłoń wystawały poza kolano. Przedramię ściśle przyklejone do uda.",
+    "Zaczynaj z nadgarstkiem w pełnym wyproście (kostki palców w dół) i z gumą napiętą lekkim oporem.",
+    "Zginaj nadgarstek do góry przeciwko gumie — kostki palców jadą w stronę sufitu. Pracuje tylko dłoń; przedramię nieruchome na udzie.",
+    "Mocno spinaj zginacze przedramienia w górnej pozycji i przytrzymaj sekundę. Wydech w fazie unoszenia.",
+    "Opuszczaj dłoń wolno i kontrolowanie (2-3 sekundy) aż nadgarstek wróci do pełnego wyprostu. Wdech podczas opuszczania.",
+    "Skończ powtórzenia na jedną stronę, potem zmień dłoń i powtórz. Trenuj obie strony."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_wrist_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["biceps_brachii", "core"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "brachioradialis": "S4",
+    "biceps_brachii": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["bench", "box", "chair"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-wrist-curl", "barbell-wrist-curl", "behind-the-back-wrist-curl"],
+    "alternatives": ["dumbbell-wrist-curl", "barbell-wrist-curl", "cable-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Forearm pressed flat into the thigh — no daylight under it",
+      "Hand hangs past the knee with the wrist free to move",
+      "Supinated grip — palm faces the ceiling",
+      "Band anchored solidly under the foot, no slack at start",
+      "Start position is full wrist extension with light band tension"
+    ],
+    "setup_cues_pl": [
+      "Przedramię przyklejone płasko do uda — żadnej szpary pod nim",
+      "Dłoń wystaje poza kolano, nadgarstek może się swobodnie zginać",
+      "Chwyt podchwytem — dłoń skierowana w stronę sufitu",
+      "Guma solidnie zaczepiona pod stopą, bez luzu na starcie",
+      "Pozycja startowa to pełne wyprostowanie nadgarstka z lekkim napięciem gumy"
+    ],
+    "execution_cues": [
+      "Only the hand moves — forearm is welded to the thigh",
+      "Squeeze the forearm flexors hard at the top",
+      "Slow eccentric — fight the band down for 2-3 seconds",
+      "Full range — start from full extension every rep",
+      "Keep fingers loosely curled, do not death-grip the band"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko dłoń — przedramię zespawane z udem",
+      "Mocno spinaj zginacze przedramienia w górnej pozycji",
+      "Wolna faza negatywna — kontroluj opadanie pod naciągiem gumy 2-3 sekundy",
+      "Pełny zakres — każde powtórzenie zaczynaj z pełnego wyprostu",
+      "Palce luźno zgięte — nie zaciskaj kurczowo gumy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the forearm off the thigh",
+        "faultPl": "Odrywanie przedramienia od uda",
+        "cause": "Band too strong, fatigue, or trying to extend range with elbow flexion",
+        "causePl": "Zbyt mocna guma, zmęczenie, lub próba wydłużenia zakresu uginaniem łokcia",
+        "cue": "Press the forearm down into the thigh actively. Use the free hand to hold it in place if needed.",
+        "cuePl": "Aktywnie dociskaj przedramię do uda. Możesz przytrzymać je wolną dłonią jeśli trzeba."
+      },
+      {
+        "fault": "Partial range of motion (no full extension at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak pełnego wyprostu na dole)",
+        "cause": "Band too strong, weak stretched-position grip, or fear of letting the wrist extend",
+        "causePl": "Zbyt mocna guma, słaby chwyt w pozycji rozciągniętej, lub strach przed przeprostem nadgarstka",
+        "cue": "Let the hand drop fully — knuckles point toward the floor — before curling up again. Use a lighter band if you cannot reach full extension.",
+        "cuePl": "Pozwól dłoni opaść w pełni — kostki palców w stronę podłogi — zanim znów zegniesz. Użyj lżejszej gumy jeśli nie sięgasz pełnego wyprostu."
+      },
+      {
+        "fault": "Using elbow flexion to assist",
+        "faultPl": "Wspomaganie ruchu uginaniem łokcia",
+        "cause": "Band tension too high for forearm flexors alone, or unconsciously recruiting biceps",
+        "causePl": "Opór gumy za duży dla samych zginaczy przedramienia, lub nieświadome włączanie bicepsa",
+        "cue": "Watch the elbow angle in the mirror — it must not change during the set. Reduce band tension.",
+        "cuePl": "Obserwuj kąt w łokciu w lustrze — nie może się zmieniać podczas serii. Zmniejsz opór gumy."
+      },
+      {
+        "fault": "Death-gripping the band",
+        "faultPl": "Kurczowe ściskanie gumy",
+        "cause": "Tension creep from forearm flexor work into finger flexors, or instinctive grip response",
+        "causePl": "Napięcie z pracy zginaczy przedramienia przenosi się na zginacze palców, lub instynktowna reakcja chwytu",
+        "cue": "Hold the band with fingertips only, palm open. Focus tension in the wrist, not the fingers.",
+        "cuePl": "Trzymaj gumę tylko końcami palców, dłoń otwarta. Skup napięcie w nadgarstku, nie w palcach."
+      },
+      {
+        "fault": "Anchor foot lifting off the floor",
+        "faultPl": "Stopa kotwicząca unosi się od podłogi",
+        "cause": "Band tension pulling foot up, weight not over the band, or poor foot positioning",
+        "causePl": "Naciąg gumy podnosi stopę, ciężar ciała nie nad gumą, lub złe ustawienie stopy",
+        "cue": "Plant the foot firmly, weight loaded over the band. If foot still lifts, move the band to the arch or use a heavier shoe.",
+        "cuePl": "Postaw stopę pewnie, ciężar ciała nad gumą. Jeśli stopa nadal się unosi, przesuń gumę pod podbicie lub załóż cięższy but."
+      }
+    ],
+    "breathing": "Exhale on the curl up. Inhale on the slow lowering. Breathing is gentle — this is a low-load isolation movement.",
+    "breathingPl": "Wydech podczas zginania w górę. Wdech podczas wolnego opuszczania. Oddychanie jest spokojne — to ćwiczenie izolowane z małym obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Repeated wrist flexion under load can aggravate median nerve compression. Use very light band, reduce volume, stop if tingling appears. Consider neutral-grip hammer wrist work instead.",
+      "modificationPl": "Powtarzalne zginanie nadgarstka pod obciążeniem może drażnić ucisk nerwu pośrodkowego. Używaj bardzo lekkiej gumy, zmniejsz objętość, przerwij przy mrowieniu. Rozważ pracę nadgarstka w chwycie młotkowym zamiast tego.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Wrist flexion directly loads the medial flexor tendons. Eliminate exercise during acute phase. Reintroduce with very light band and high reps (15-20) once pain-free.",
+      "modificationPl": "Zginanie nadgarstka bezpośrednio obciąża przyśrodkowe ścięgna zginaczy. Wyklucz ćwiczenie w fazie ostrej. Wprowadzaj ponownie z bardzo lekką gumą i wysokimi powtórzeniami (15-20) gdy ustąpi ból.",
+      "alternative": "band-reverse-wrist-curl"
+    },
+    {
+      "condition": "wrist_sprain_or_recent_fracture",
+      "severity": "avoid",
+      "modification": "Avoid loaded wrist flexion until cleared by a healthcare provider. Substitute with isometric grip work or upper-arm isolation that does not load the wrist.",
+      "modificationPl": "Unikaj obciążonego zginania nadgarstka do czasu zgody lekarza. Zastąp izometryczną pracą chwytu lub izolacją ramienia, która nie obciąża nadgarstka.",
+      "alternative": "barbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy) | 2-3x20-30 (endurance/pump) | 3x15-20 z 1s pauzą na górze (kontrola)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "band-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/band-wrist-curl/frame_0_start.png",
+      "frames/band-wrist-curl/frame_1_early.png",
+      "frames/band-wrist-curl/frame_2_mid.png",
+      "frames/band-wrist-curl/frame_3_late.png",
+      "frames/band-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/band-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi na pudle, lewe przedramię oparte o lewe udo, dłoń wystaje poza kolano w chwycie podchwytem (palms up), nadgarstek w pełnym wyproście (zwieszony w dół), guma zakotwiczona pod lewą stopą — przedramię z zaznaczonymi czerwono zginaczami. Frame 2: nadgarstek zgięty do góry, dłoń uniesiona — guma napięta mocniej (rosnący opór), przedramię nadal przyklejone do uda. Frame 4: powrót do pełnego wyprostu nadgarstka. Tułów stabilny, łokieć nieruchomy, ruch zachodzi wyłącznie w nadgarstku — modelowy wrist curl. Primary: forearm_flexors (zginacze nadgarstka — flexor carpi radialis/ulnaris, palmaris longus). Secondary: brachioradialis (asystuje stabilizacją przedramienia w supinacji). Klasyfikacja: isolation, sagittal, pull, bilateral (wykonywane na obie strony osobno, ale klasyfikowane jako bilateral wzorzec). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["forearms", "isolation", "resistance_band", "wrist", "grip", "rehab_friendly", "home_workout", "travel_friendly", "beginner"]
+}

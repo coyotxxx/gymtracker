@@ -1,0 +1,206 @@
+{
+  "id": "smith-hack-squat",
+  "name": "Smith Machine Hack Squat",
+  "namePl": "Hack squat na Smith Machine",
+  "aliases": ["smith hack squat", "smith machine hack squat", "behind-the-back hack squat smith", "reverse hack squat smith"],
+  "aliasesPl": ["hack squat na Smith", "hack przysiad na Smith Machine", "hack squat ze sztangą za plecami na Smith", "przysiad hack na maszynie Smitha"],
+
+  "description": "Bilateral compound lower-body exercise performed on a Smith Machine with the bar held behind the body at hip/glute level (not on the back like a back squat). The lifter stands inside the rack, grips the bar behind their hips, and squats down while the fixed vertical bar path keeps the load directly under the center of mass. This 'behind-the-back' position keeps the torso upright throughout the rep, dramatically reducing spinal compression compared to back squats while loading the quadriceps and glutes heavily. The Smith Machine's fixed rail removes balance demand, allowing maximum quad isolation and heavier loading than free-weight Steinborn or barbell hack squats.",
+  "descriptionPl": "Obustronne wielostawowe ćwiczenie dolnej części ciała wykonywane na Smith Machine z gryfem trzymanym za plecami na wysokości bioder/pośladków (nie na karku jak w klasycznym przysiadzie). Trenujący stoi wewnątrz ramy, chwyta gryf za biodrami i schodzi w przysiad — pionowy tor maszyny utrzymuje obciążenie dokładnie pod środkiem masy ciała. Pozycja 'za plecami' wymusza pionową sylwetkę przez całe powtórzenie, drastycznie zmniejszając kompresję kręgosłupa w porównaniu do klasycznego przysiadu, jednocześnie mocno obciążając czworogłowe i pośladki. Sztywny tor Smitha eliminuje wymagania równowagi — pozwala na maksymalną izolację czworogłowych i cięższe obciążenia niż w hack squat ze sztangą wolną (Steinborn) lub klasycznym barbell hack squat.",
+
+  "instructions": [
+    "Set the Smith Machine bar at mid-thigh / hip-crease height. Load both sides evenly with light weight to start.",
+    "Step inside the rack with your back facing the bar. Position your feet shoulder-width apart, toes slightly turned out (5-15°), about 10-20 cm in front of the bar's vertical line.",
+    "Squat down slightly and reach behind you to grip the bar with both hands at hip width, palms facing back (overhand/pronated grip behind the body).",
+    "Rotate the bar with your wrists to unrack. Stand tall — chest up, shoulders back, bar resting behind your glutes/hips.",
+    "Brace your core, take a breath, and look forward. Keep the torso fully vertical — the bar's path is fixed, so leaning forward will pull your hips out of position.",
+    "Descend by bending the knees and hips together. The bar slides straight down the rails behind you. Keep the torso vertical throughout.",
+    "Reach a depth where the thighs are parallel to the floor or slightly below. Knees track forward over the toes — quad emphasis allows the knees to travel further than a back squat.",
+    "Drive back up by pushing through the whole foot — mid-foot and heel especially. Maintain the vertical torso position. Do not lean forward to assist.",
+    "Squeeze the glutes at the top. Do not hyperextend the lower back at lockout.",
+    "Complete all reps, then rotate the wrists to rerack the bar at the original position. Step out of the rack carefully."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smith Machine na wysokości środka uda / linii bioder. Załaduj obie strony równomiernie lekkim ciężarem na start.",
+    "Wejdź do środka ramy plecami do gryfu. Ustaw stopy na szerokość barków, palce lekko na zewnątrz (5-15°), około 10-20 cm przed pionową linią gryfu.",
+    "Lekko przykucnij i sięgnij za siebie, chwytając gryf obiema rękami na szerokość bioder, dłonie zwrócone do tyłu (chwyt nachwytem za plecami).",
+    "Obróć gryf nadgarstkami aby odpiąć go z haków. Wyprostuj się — klatka w górze, barki cofnięte, gryf opiera się za pośladkami/biodrami.",
+    "Napnij brzuch, weź wdech i patrz prosto. Trzymaj tułów całkowicie pionowo — tor gryfu jest sztywny, więc pochylenie do przodu wyrzuci biodra z pozycji.",
+    "Schodź zginając kolana i biodra jednocześnie. Gryf zsuwa się prosto w dół po szynach za Tobą. Tułów pionowy przez cały ruch.",
+    "Zejdź na głębokość, gdy uda są równoległe do podłogi lub nieco poniżej. Kolana podążają do przodu nad palcami — akcent na czworogłowe pozwala na większy ruch kolan niż w klasycznym przysiadzie.",
+    "Wypchnij się w górę przez całą stopę — szczególnie środek stopy i piętę. Utrzymaj pionową pozycję tułowia. Nie pochylaj się do przodu by sobie pomóc.",
+    "Ściśnij pośladki na górze. Nie przeprostowuj lędźwi w pozycji wyprostowanej.",
+    "Wykonaj wszystkie powtórzenia, potem obróć nadgarstkami aby wpiąć gryf z powrotem w haki. Ostrożnie wyjdź z ramy."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "erector_spinae", "calves", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P7",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "core": "S4",
+    "erector_spinae": "S3",
+    "calves": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "lifting_shoes", "wrist_straps", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "barbell-back-squat", "smith-machine-squat"],
+    "progression_to": ["barbell-hack-squat", "lever-hack-squat", "barbell-back-squat", "barbell-front-squat"],
+    "alternatives": ["barbell-hack-squat", "lever-hack-squat", "smith-machine-squat", "lever-leg-press", "barbell-front-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at hip-crease / mid-thigh height — too low forces a clumsy unrack, too high prevents full depth",
+      "Feet 10-20 cm in front of the bar's vertical line — too close and the bar scrapes the legs, too far and the knees overload",
+      "Shoulder-width stance, toes slightly out (5-15°) — natural foot angle for hip-knee tracking",
+      "Pronated grip behind the body at hip width — palms face back, thumbs around the bar for security",
+      "Rotate bar hooks open before the first rep — eliminates panic-rerack if you fail at the bottom"
+    ],
+    "setup_cues_pl": [
+      "Gryf na linii bioder / środku uda — za nisko utrudnia odpięcie, za wysoko uniemożliwia pełną głębokość",
+      "Stopy 10-20 cm przed pionową linią gryfu — za blisko gryf ociera o nogi, za daleko przeciąża kolana",
+      "Postawa na szerokość barków, palce lekko na zewnątrz (5-15°) — naturalny kąt dla śledzenia biodro-kolano",
+      "Chwyt nachwytem za plecami na szerokość bioder — dłonie do tyłu, kciuki wokół gryfu dla bezpieczeństwa",
+      "Otwórz haki gryfu przed pierwszym powtórzeniem — eliminuje panikę przy załamaniu się serii na dole"
+    ],
+    "execution_cues": [
+      "Torso stays perfectly vertical — the bar is behind you, leaning forward pulls hips out of line with the rail",
+      "Sit straight down — not back like a back squat. The bar path is fixed, so your hips must match it",
+      "Knees travel forward over the toes — this is a quad-dominant pattern, allow the knee flexion",
+      "Drive through the whole foot — heel and mid-foot push, toes for balance only",
+      "Lock out without hyperextending the lower back — squeeze glutes to finish"
+    ],
+    "execution_cues_pl": [
+      "Tułów całkowicie pionowy — gryf jest za Tobą, pochylenie do przodu wyrzuca biodra z linii szyny",
+      "Siadaj prosto w dół — nie w tył jak w klasycznym przysiadzie. Tor gryfu jest sztywny, biodra muszą za nim podążać",
+      "Kolana wędrują do przodu nad palcami — to wzorzec dominujący czworogłowymi, pozwól na zgięcie kolan",
+      "Wypychaj się przez całą stopę — pięta i środek stopy pchają, palce tylko dla równowagi",
+      "Zakończ ruch bez przeprostu lędźwi — ściśnij pośladki by domknąć powtórzenie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning torso forward during the descent or ascent",
+        "faultPl": "Pochylanie tułowia do przodu podczas schodzenia lub wstawania",
+        "cause": "Habit from back squats or heel-up tendency. With the bar fixed behind you, leaning forward pulls the hips back and creates shearing at the lumbar spine and grip slippage.",
+        "causePl": "Nawyk z klasycznego przysiadu lub tendencja do unoszenia pięt. Przy gryfie sztywno za Tobą, pochylenie do przodu wyciąga biodra w tył i tworzy ścinanie w lędźwiach oraz ślizganie chwytu.",
+        "cue": "Chest up, eyes on a high point. Imagine your back sliding straight down a wall behind you",
+        "cuePl": "Klatka w górze, wzrok na wysoki punkt. Wyobraź sobie, że plecy zsuwają się prosto w dół po ścianie za Tobą"
+      },
+      {
+        "fault": "Feet placed directly under the bar or too far forward",
+        "faultPl": "Stopy ustawione dokładnie pod gryfem lub za daleko w przód",
+        "cause": "Feet under the bar cause the bar to scrape the legs and forces a clumsy back-knee track. Feet too far forward turns this into a leg press lying down — knees over-shear and the glutes disengage.",
+        "causePl": "Stopy pod gryfem powodują tarcie gryfu o nogi i wymuszają niezgrabny ruch kolan w tył. Stopy za daleko w przód zamieniają to w leg press na leżąco — kolana nadmiernie się ścinają i pośladki wyłączają się.",
+        "cue": "Sweet spot: 10-20 cm in front of the bar line. Test with bodyweight rep — bar should clear the calves without contact",
+        "cuePl": "Punkt optymalny: 10-20 cm przed linią gryfu. Sprawdź z pustym gryfem — powinien minąć łydki bez kontaktu"
+      },
+      {
+        "fault": "Heels rising off the floor at the bottom",
+        "faultPl": "Pięty odrywające się od podłogi w dolnej pozycji",
+        "cause": "Limited ankle dorsiflexion or feet placed too far back. Knees push too far forward without ankle range to support — load shifts to the toes, calves cramp.",
+        "causePl": "Ograniczona zgięciowa mobilność kostek lub stopy ustawione za daleko w tył. Kolana wypychają się za daleko w przód bez zakresu kostek do podparcia — ciężar przenosi się na palce, łydki łapią skurcz.",
+        "cue": "Step the feet slightly more forward, or elevate heels on small plates (1-2 cm). Work on ankle mobility outside the lift",
+        "cuePl": "Przesuń stopy lekko bardziej w przód, lub podnieś pięty na małych talerzach (1-2 cm). Pracuj nad mobilnością kostek poza ćwiczeniem"
+      },
+      {
+        "fault": "Partial reps with heavy weight — ego loading",
+        "faultPl": "Częściowe powtórzenia z ciężkim obciążeniem — ładowanie ego",
+        "cause": "The Smith Machine's stability makes heavy weights feel safer than they are. Athletes load weights that prevent reaching parallel — quads do half the work and the lower back compresses on the rebound.",
+        "causePl": "Stabilność Smith Machine sprawia, że ciężkie obciążenia wydają się bezpieczniejsze niż są. Trenujący ładują ciężary uniemożliwiające zejście do równoległości — czworogłowe pracują na pół a lędźwie kompresują się przy odbiciu.",
+        "cue": "Drop weight 20-30% and reach thighs parallel to the floor. Full ROM > ego load",
+        "cuePl": "Zmniejsz ciężar o 20-30% i osiągnij uda równolegle do podłogi. Pełen zakres > ciężar dla ego"
+      },
+      {
+        "fault": "Bar slipping out of hands at the bottom of the rep",
+        "faultPl": "Gryf wyślizgujący się z rąk w dolnej pozycji powtórzenia",
+        "cause": "The pronated behind-the-body grip is mechanically weak. Sweaty hands or no chalk + heavy weight = bar drops at full hip flexion when wrists are extended most.",
+        "causePl": "Chwyt nachwytem za plecami jest mechanicznie słaby. Spocone dłonie lub brak magnezji + ciężki gryf = gryf wypada przy pełnym zgięciu biodra, gdy nadgarstki są najbardziej wyprostowane.",
+        "cue": "Use chalk or wrist straps (loop straps around the bar). Squeeze the bar harder than feels necessary",
+        "cuePl": "Używaj magnezji lub pasków nadgarstkowych (zapętl paski wokół gryfu). Ściskaj gryf mocniej niż się wydaje konieczne"
+      }
+    ],
+    "breathing": "Inhale at the top and brace the core before descending. Hold the breath through the eccentric and the sticking point of the concentric. Exhale near the top of each rep. For very heavy sets, use full Valsalva to protect the lumbar spine.",
+    "breathingPl": "Wdech na górze i napięcie brzucha przed zejściem. Wstrzymaj oddech przez ruch ekscentryczny i punkt krytyczny koncentrycznego. Wydech blisko górnej pozycji każdego powtórzenia. Przy bardzo ciężkich seriach stosuj pełny Valsalva aby chronić odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "This is a knee-dominant pattern with significant forward knee travel — high stress on the patellofemoral joint. Reduce depth to a pain-free range and lower the weight. Consider switching to back squats or leg press until symptoms resolve.",
+      "modificationPl": "To wzorzec dominujący kolanem ze znacznym wysunięciem kolan w przód — wysokie obciążenie stawu rzepkowo-udowego. Zmniejsz głębokość do zakresu bez bólu i obniż ciężar. Rozważ klasyczny przysiad lub leg press do ustąpienia objawów.",
+      "alternative": "lever-leg-press"
+    },
+    {
+      "condition": "shoulder_impingement_or_anterior_capsule_pain",
+      "severity": "caution",
+      "modification": "The behind-the-back grip places shoulders in extension + internal rotation under load — risky for impingement or anterior capsule issues. Use wrist straps to reduce active grip pressure, or switch to a barbell front squat.",
+      "modificationPl": "Chwyt za plecami stawia barki w wyproście + rotacji wewnętrznej pod obciążeniem — ryzykowne przy zespole ciasnoty lub problemach z przednią torebką barkową. Użyj pasków nadgarstkowych aby zmniejszyć aktywny ucisk chwytu, lub przejdź na barbell front squat.",
+      "alternative": "barbell-front-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Spinal compression and the forced vertical torso position can aggravate acute lumbar issues. Use unloaded variants or wait for medical clearance.",
+      "modificationPl": "Kompresja kręgosłupa i wymuszona pionowa pozycja tułowia mogą zaostrzać ostry ból lędźwi. Stosuj warianty bez obciążenia lub poczekaj na zgodę lekarza.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "wrist_pain_or_carpal_tunnel",
+      "severity": "modify",
+      "modification": "The pronated behind-the-back grip forces maximum wrist extension under load — direct stress on the carpal tunnel. Use wrist straps to offload the grip or switch to a machine hack squat with shoulder pads.",
+      "modificationPl": "Chwyt nachwytem za plecami wymusza maksymalny wyprost nadgarstków pod obciążeniem — bezpośredni nacisk na kanał nadgarstka. Użyj pasków nadgarstkowych aby odciążyć chwyt lub przejdź na maszynowy hack squat z poduszkami naramiennymi.",
+      "alternative": "lever-hack-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x5 (strength) | 2-3x12-15 (endurance/burnout finisher) | 3x6-8 heavy (Smith stability advantage for max quad loading)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "smith-hack-squat.gif",
+    "frames_extracted": [
+      "frames/smith-hack-squat/frame_0_start.png",
+      "frames/smith-hack-squat/frame_1_early.png",
+      "frames/smith-hack-squat/frame_2_mid.png",
+      "frames/smith-hack-squat/frame_3_late.png",
+      "frames/smith-hack-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-hack-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek (start/early/mid/late/end) z GIFa jahel. Wariant HACK SQUAT (nie back squat) na Smith Machine — postać stoi WEWNĄTRZ ramy Smitha z gryfem trzymanym ZA PLECAMI na wysokości bioder/pośladków (widoczne na frame_0: ręce za biodrami obejmują gryf opuszczony do dolnej pozycji haków). To kluczowy wyróżnik vs smith-machine-squat (gryf na karku). Frame mid i late pokazują pełną głębokość — uda blisko równoległości, tułów PIONOWY (charakterystyczne dla hack squat, wymuszone przez fakt że gryf jest za plecami a tor pionowy). Klatka end pokazuje pełne wyprostowanie z gryfem za pośladkami. Mięśnie podświetlone w GIFie: quadriceps (najmocniej, ciemnoczerwony obu nóg), pośladki (umiarkowanie), lekko przywodziciele — pasuje do anatomii hack squat. Source jahel: 'glutes/smith-hack-squat' (mimo że jahel klasyfikuje pod glutes, GIF jasno pokazuje quad-dominant — zachowałem P10 quadriceps + P7 glutes zgodnie z biomechaniką, nie z arbitralną kategoryzacją źródła). Specyfika vs barbell-hack-squat (Steinborn z wolnym gryfem): Smith eliminuje równowagę + grip challenge dla balansu = czyste obciążenie quadu. Difficulty 6 (intermediate) — łatwiejsze niż wolny hack squat (5/10) ale wymaga ustawienia stóp i wyczucia toru. Wszystkie pola PL napisane od zera bez tłumaczenia — polski standard 'hack squat na Smith Machine'.",
+
+  "tags": ["bilateral", "lower_body", "hack_squat", "smith_machine", "compound", "quad_dominant", "hypertrophy_specialist", "machine_based", "low_back_friendly"]
+}

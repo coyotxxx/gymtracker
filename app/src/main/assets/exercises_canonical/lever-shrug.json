@@ -1,0 +1,199 @@
+{
+  "id": "lever-shrug",
+  "name": "Lever Shrug",
+  "namePl": "Shrug w maszynie",
+  "aliases": ["machine shrug", "plate-loaded shrug", "lever machine shrug", "standing lever shrug"],
+  "aliasesPl": ["wzruszanie ramion w maszynie", "shrug na maszynie dźwigniowej", "wzruszanie barków w maszynie", "shrug plate-loaded"],
+
+  "description": "Isolation exercise for the upper trapezius performed in a plate-loaded lever (hammer-strength style) shrug machine. The lifter stands inside the frame with handles by the hips and elevates the shoulder girdle straight upward. The fixed lever path eliminates balance demands and locks the load in the vertical plane, which removes the temptation to roll the shoulders and lets the trapezius work through a clean, pure scapular elevation. Popular finisher in bodybuilding back- and shoulder-day routines because it tolerates heavy loading with minimal lower-back stress compared to barbell shrugs.",
+  "descriptionPl": "Ćwiczenie izolowane na górną część czworobocznego, wykonywane w maszynie dźwigniowej z ładowanymi talerzami (typu hammer-strength). Ćwiczący staje wewnątrz ramy maszyny z uchwytami po bokach na wysokości bioder i unosi obręcz barkową prosto w górę. Stała trajektoria dźwigni eliminuje konieczność balansowania i blokuje obciążenie w płaszczyźnie pionowej — usuwa to pokusę rolowania barków i pozwala czworobocznemu pracować przez czystą, prawdziwą elewację łopatek. Popularny finisher w treningu pleców i barków w kulturystyce, bo dobrze toleruje ciężkie obciążenia przy minimalnym obciążeniu odcinka lędźwiowego w porównaniu do shrugów ze sztangą.",
+
+  "instructions": [
+    "Load the machine. Step inside the frame so the handles hang at hip-level on either side of you. Feet should be flat, hip-width apart, directly under the load path.",
+    "Grasp the handles with a neutral grip (palms facing your thighs). Keep your arms fully extended — they act only as cables transmitting force.",
+    "Stand tall: chest up, ribcage down, chin tucked slightly. Brace your core to lock the spine in neutral.",
+    "Take a breath, then elevate your shoulders straight toward your ears as high as possible. Do not bend the elbows or roll the shoulders forward or backward.",
+    "Squeeze the upper traps hard at the top for a one-second pause. The bar should clearly rise vertically.",
+    "Lower the load under control over 2-3 seconds, letting the shoulders depress fully to a slight stretch on the traps at the bottom.",
+    "Exhale on the way up, inhale on the way down. Avoid using the legs or hips to bounce the load — the only joint that should move is the scapulothoracic joint."
+  ],
+  "instructionsPl": [
+    "Załaduj maszynę talerzami. Wejdź do wnętrza ramy tak, aby uchwyty zwisały po obu stronach na wysokości bioder. Stopy płasko, na szerokość bioder, bezpośrednio pod osią obciążenia.",
+    "Złap uchwyty chwytem neutralnym (dłonie skierowane do ud). Ramiona w pełnym wyproście — pełnią rolę wyłącznie 'lin' przekazujących siłę.",
+    "Stań prosto: klatka piersiowa w górze, żebra w dół, lekko podciągnięta broda. Napnij brzuch, aby zablokować kręgosłup w pozycji neutralnej.",
+    "Wykonaj wdech, następnie unieś barki prosto w stronę uszu tak wysoko, jak to możliwe. Nie zginaj łokci, nie rolyj barków w przód ani w tył.",
+    "Mocno napnij górną część czworobocznego w górnej pozycji i zatrzymaj na sekundę. Sztanga maszyny powinna wyraźnie unieść się pionowo w górę.",
+    "Opuszczaj obciążenie w sposób kontrolowany przez 2-3 sekundy, pozwalając łopatkom w pełni opaść do lekkiego rozciągnięcia czworobocznego na dole.",
+    "Wydech w fazie unoszenia, wdech podczas opuszczania. Nie używaj nóg ani bioder do odbijania ciężaru — jedyny staw, który ma się ruszać, to staw łopatkowo-żebrowy."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_elevation",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["upper_trapezius"],
+    "secondary": ["levator_scapulae"],
+    "stabilizers": ["middle_trapezius", "rhomboids", "forearm_flexors", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "upper_trapezius": "P10",
+    "levator_scapulae": "S6",
+    "middle_trapezius": "T3",
+    "rhomboids": "T3",
+    "forearm_flexors": "T4",
+    "core": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["lever_machine"],
+    "optional": ["weight_plates", "lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-shrug"],
+    "progression_to": ["barbell-shrug", "trap-bar-shrug", "behind-the-back-barbell-shrug"],
+    "alternatives": ["dumbbell-shrug", "barbell-shrug", "cable-shrug", "smith-machine-shrug", "trap-bar-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, directly under the handles",
+      "Arms fully extended — they are not levers, just hooks",
+      "Neutral spine, ribcage stacked over pelvis",
+      "Chin slightly tucked — do not crane the neck",
+      "Brace core before lifting the load"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, bezpośrednio pod uchwytami",
+      "Ramiona w pełnym wyproście — nie są dźwigniami, tylko 'hakami'",
+      "Neutralny kręgosłup, klatka piersiowa nad miednicą",
+      "Lekko podciągnięta broda — nie wyciągaj szyi do przodu",
+      "Napnij brzuch przed uniesieniem ciężaru"
+    ],
+    "execution_cues": [
+      "Lift the shoulders straight UP toward the ears",
+      "Do not roll the shoulders — pure vertical elevation only",
+      "Squeeze hard at the top for one full second",
+      "Lower slowly for a 2-3 second eccentric and stretch the traps at the bottom",
+      "Keep elbows locked straight throughout the entire set"
+    ],
+    "execution_cues_pl": [
+      "Unoś barki prosto w GÓRĘ w kierunku uszu",
+      "Nie rolyj barków — wyłącznie czysta pionowa elewacja",
+      "Mocno napnij w górnej pozycji przez pełną sekundę",
+      "Opuszczaj wolno przez 2-3 sekundy fazy negatywnej i rozciągnij czworoboczny na dole",
+      "Łokcie wyprostowane przez całą serię"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the shoulders forward or backward",
+        "faultPl": "Rolowanie barków do przodu lub do tyłu",
+        "cause": "Old-school myth that shoulder rolls 'hit the traps from all angles' — in reality this puts shear stress on the AC joint and rotator cuff",
+        "causePl": "Stary mit, że rolowanie barków 'uderza czworoboczny pod każdym kątem' — w rzeczywistości obciąża to staw barkowo-obojczykowy i stożek rotatorów ścinaniem",
+        "cue": "Move the shoulders straight up and straight down only. Imagine a wall behind and in front of you.",
+        "cuePl": "Ruch barków tylko prosto w górę i prosto w dół. Wyobraź sobie ścianę z przodu i z tyłu."
+      },
+      {
+        "fault": "Bending the elbows (turning it into an upright row)",
+        "faultPl": "Zginanie łokci (zamiana ruchu w upright row)",
+        "cause": "Load too heavy for the traps alone — body recruits biceps and deltoids to help",
+        "causePl": "Zbyt duży ciężar dla samego czworobocznego — ciało rekrutuje biceps i naramienne do pomocy",
+        "cue": "Lock the elbows from the start. If you feel biceps working, reduce the load.",
+        "cuePl": "Zablokuj łokcie od początku ruchu. Jeśli czujesz pracę bicepsa, zmniejsz obciążenie."
+      },
+      {
+        "fault": "Partial range of motion (mini-shrugs)",
+        "faultPl": "Niepełny zakres ruchu (mini-shrugi)",
+        "cause": "Ego loading prevents reaching the ears at the top and the trap stretch at the bottom",
+        "causePl": "Zbyt duży ciężar uniemożliwia dotarcie barkami do uszu w górze i rozciągnięcie czworobocznego na dole",
+        "cue": "Shrug as high as physically possible AND let the load pull the shoulders down fully between reps.",
+        "cuePl": "Wzrusz tak wysoko, jak fizycznie potrafisz, ORAZ pozwól ciężarowi opuścić barki do końca między powtórzeniami."
+      },
+      {
+        "fault": "Cervical extension (poking the chin forward)",
+        "faultPl": "Wyciąganie szyi i wysuwanie brody do przodu",
+        "cause": "Reflex compensation when traps fatigue, or trying to make the rep feel bigger",
+        "causePl": "Odruchowa kompensacja przy zmęczeniu czworobocznego lub próba 'dorzucenia' do ruchu",
+        "cue": "Pack the chin lightly back. Eyes forward and slightly up — neck stays long.",
+        "cuePl": "Lekko cofnij brodę. Wzrok do przodu i lekko w górę — szyja pozostaje długa."
+      },
+      {
+        "fault": "Using legs / bouncing the load",
+        "faultPl": "Pomaganie sobie nogami / odbijanie ciężaru",
+        "cause": "Trying to grind out reps past technical failure, or load far too heavy",
+        "causePl": "Forsowanie powtórzeń po technicznym wyczerpaniu lub zdecydowanie zbyt duży ciężar",
+        "cue": "Lock the knees soft but still. Only the scapulae move. Drop the weight if legs are kicking in.",
+        "cuePl": "Lekko ugięte ale nieruchome kolana. Ruch tylko w łopatkach. Zmniejsz ciężar, jeśli wspomagasz się nogami."
+      }
+    ],
+    "breathing": "Exhale forcefully as you elevate the shoulders (concentric). Inhale slowly during the controlled lowering phase (eccentric). Maintain a light core brace throughout to keep the spine neutral under load.",
+    "breathingPl": "Energiczny wydech podczas unoszenia barków (faza koncentryczna). Powolny wdech w fazie kontrolowanego opuszczania (ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię, aby kręgosłup pozostał w neutralnej pozycji pod obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_spine_pathology",
+      "severity": "caution",
+      "modification": "Aggressive shrugging can compress upper cervical structures. Reduce load, increase reps (15-20), keep range submaximal and pain-free. Avoid any cervical extension during the movement.",
+      "modificationPl": "Agresywne wzruszanie może uciskać struktury górnego odcinka szyjnego. Zmniejsz obciążenie, zwiększ liczbę powtórzeń (15-20), pracuj w submaksymalnym, bezbolesnym zakresie. Unikaj wyprostu szyi podczas ruchu.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "ac_joint_pain_or_arthritis",
+      "severity": "modify",
+      "modification": "Heavy vertical loading compresses the acromioclavicular joint. Use lighter weight with longer holds at the top, or substitute scapular elevation work without overhead-direction compression.",
+      "modificationPl": "Ciężkie obciążenie w pionie kompresuje staw barkowo-obojczykowy. Użyj lżejszego ciężaru z dłuższym utrzymaniem napięcia w górnej pozycji lub zastąp ćwiczeniem elewacji łopatek bez kompresji pionowej.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "avoid",
+      "modification": "Heavy shrugs hypertrophy the upper trapezius and scalenes, which can worsen neurovascular compression at the thoracic outlet. Prioritize lower-trap, serratus, and posture work instead.",
+      "modificationPl": "Ciężkie shrugi rozbudowują górny czworoboczny i mięśnie pochyłe, co może nasilać kompresję nerwowo-naczyniową w otworze górnym klatki piersiowej. Stawiaj raczej na pracę dolnego czworobocznego, zębatego i postury.",
+      "alternative": "prone-y-raise"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Standing version requires isometric spinal bracing under heavy load. Reduce intensity significantly or switch to a seated machine variant which removes axial loading on the spine.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia kręgosłupa pod dużym obciążeniem. Znacząco zmniejsz intensywność lub przejdź na siedzącą wersję maszynową, która eliminuje obciążenie osiowe kręgosłupa.",
+      "alternative": "seated-cable-shrug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4-5x6-8 (strength/mass) | 2-3x15-20 (endurance/finisher with full ROM and 1s top hold)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-shrug.gif",
+    "frames_extracted": [
+      "frames/lever-shrug/frame_0_start.png",
+      "frames/lever-shrug/frame_1_early.png",
+      "frames/lever-shrug/frame_2_mid.png",
+      "frames/lever-shrug/frame_3_late.png",
+      "frames/lever-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/lever-shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): mężczyzna stoi wewnątrz ramy maszyny dźwigniowej z ładowanymi talerzami (plate-loaded), uchwyty po bokach na wysokości bioder, ramiona w pełnym wyproście chwytem neutralnym, talerze widoczne po lewej stronie maszyny, górna część czworobocznego (okolica karku/podstawy szyi) podświetlona na czerwono. Frame 2 (mid): pełna elewacja łopatek — barki widocznie uniesione w stronę uszu, łokcie nadal wyprostowane, tułów pozostaje pionowy i nieruchomy, podświetlenie czworobocznego intensywniejsze. Frame 4 (end): powrót do pozycji wyjściowej z pełnym opuszczeniem łopatek. Tułów statyczny przez cały ruch, brak rolowania barków, brak zginania łokci, brak wspomagania nogami — modelowe wykonanie pure scapular elevation. Ćwiczenie jednoznacznie zidentyfikowane jako Lever Shrug (plate-loaded). Maszyna typu hammer-strength widoczna z bocznym ramieniem dźwigni. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "back", "shoulders", "traps", "isolation", "machine", "upper_body", "finisher"]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "walking-high-knees-lunge",
+  "name": "Walking High Knees Lunge",
+  "namePl": "Wykrok chodzący z wysokimi kolanami",
+  "aliases": ["walking lunge with high knee", "walking lunge knee drive", "walking lunge with knee raise", "high knee walking lunge"],
+  "aliasesPl": ["wykrok chodzący z uniesieniem kolana", "wykrok chodzący z wysokim kolanem", "wykrok kroczący z naprzemiennym kolanem", "wykrok z kolanem do klatki"],
+
+  "description": "Dynamic, low-impact bodyweight conditioning drill that combines a forward walking lunge with a high knee raise between each step. From a standing position the athlete steps forward into a long lunge (front thigh roughly parallel to the floor, back knee hovering above the ground), drives back up and instead of stepping the rear foot down, drives that knee upward to hip height with a single-leg balance pause, then steps that leg forward into the next lunge — alternating legs continuously. Hits quads and glutes on the lunge phase, hip flexors and core on the knee-drive phase, plus balance, coordination and elevated heart rate. Useful as a dynamic warm-up, a metabolic finisher, or a standalone conditioning piece.",
+  "descriptionPl": "Dynamiczne, mało wstrząsowe ćwiczenie kondycyjne z masą własną łączące wykrok chodzący w przód z naprzemiennym wysokim uniesieniem kolana między krokami. Ze stania trenujący wykonuje długi krok w przód do wykroku (przednie udo mniej więcej równolegle do podłogi, tylne kolano tuż nad ziemią), wraca w górę i zamiast postawić tylną stopę, dynamicznie ciągnie to kolano w górę do wysokości bioder z chwilą balansu na jednej nodze, po czym stawia tę nogę w przód do kolejnego wykroku — i tak naprzemiennie. Angażuje czworogłowe i pośladki w fazie wykroku, zginacze biodra i brzuch w fazie unoszenia kolana, plus równowagę, koordynację i pracę krążenia. Świetny element rozgrzewki dynamicznej, metaboliczny finisher lub samodzielny blok kondycyjny.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Hands in front of the chest, elbows close to the body. Core braced, shoulders back, gaze forward.",
+    "Take a long step forward with the right leg (about 1.5x your normal walking step). Plant the foot flat.",
+    "Lower the hips straight down by bending both knees. Front thigh should reach roughly parallel to the floor, back knee hovers 2-3 cm above the ground.",
+    "Drive up through the front (right) heel and mid-foot. Do not step the back (left) foot forward — instead push off it.",
+    "As you stand up, dynamically drive the left knee upward to hip height. Pause for a brief moment standing on the right leg.",
+    "Now step the raised (left) leg forward into the next long lunge. The right leg becomes the new back leg.",
+    "Lower into the lunge, drive up, and drive the right knee up to hip height — pause briefly.",
+    "Continue alternating: lunge — knee drive — lunge — knee drive, walking forward in a straight line.",
+    "Keep the torso upright throughout. The knee drive must be active (hip flexors pulling up), not passive.",
+    "Continue for the planned distance, time or repetitions per leg. Maintain a steady, controlled pace — don't sacrifice depth or balance for speed."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Ręce przed klatką piersiową, łokcie blisko ciała. Brzuch napięty, barki w tył, wzrok prosto przed siebie.",
+    "Wykonaj długi krok w przód prawą nogą (około 1,5 razy dłuższy niż normalny). Postaw stopę płasko na podłodze.",
+    "Opuść biodra prosto w dół zginając oba kolana. Przednie udo powinno dojść mniej więcej do równoległości z podłogą, tylne kolano zatrzymuje się 2-3 cm nad ziemią.",
+    "Wypchnij się w górę przez piętę i środek stopy przedniej (prawej) nogi. Nie stawiaj tylnej (lewej) stopy do przodu — odbij się nią.",
+    "Wstając, dynamicznie wyciągnij lewe kolano w górę do wysokości bioder. Zatrzymaj się na krótką chwilę stojąc na prawej nodze.",
+    "Teraz postaw uniesioną (lewą) nogę w przód do kolejnego długiego wykroku. Prawa noga staje się nową tylną nogą.",
+    "Opuść się do wykroku, wstań i wyciągnij prawe kolano w górę do wysokości bioder — krótka pauza.",
+    "Kontynuuj naprzemiennie: wykrok — kolano w górę — wykrok — kolano w górę, idąc prosto w przód.",
+    "Utrzymuj tułów pionowo przez cały ruch. Uniesienie kolana musi być aktywne (zginacze biodra ciągną w górę), nie bezwładne.",
+    "Kontynuuj przez zaplanowaną odległość, czas lub liczbę powtórzeń na nogę. Trzymaj równe, kontrolowane tempo — nie poświęcaj głębokości ani równowagi na rzecz prędkości."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "hip_flexors"],
+    "secondary": ["hamstrings", "adductors", "calves", "core"],
+    "stabilizers": ["gluteus_medius", "abdominals", "erector_spinae", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "hip_flexors": "P8",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "calves": "S5",
+    "core": "S6",
+    "gluteus_medius": "S6",
+    "abdominals": "S5",
+    "obliques": "S4",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["open_space", "athletic_shoes"]
+  },
+
+  "category": "conditioning",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-lunge", "walking-lunge", "high-knees", "march-in-place"],
+    "progression_to": ["walking-lunge-with-twist", "jumping-lunge", "dumbbell-walking-lunge-with-knee-drive", "walking-lunge-overhead-reach"],
+    "alternatives": ["walking-lunge", "reverse-lunge-with-knee-drive", "stationary-lunge-with-knee-drive", "high-knees"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, feet hip-width apart, weight evenly on both feet",
+      "Hands in front of the chest or by the hips — choose what helps balance",
+      "Brace the core before the first step",
+      "Pick a focal point ahead of you — keeps the head neutral and helps balance",
+      "Clear space in front of you — you'll be walking forward several meters"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, stopy na szerokość bioder, ciężar równo na obie stopy",
+      "Ręce przed klatką lub przy biodrach — wybierz co pomaga w równowadze",
+      "Napnij brzuch przed pierwszym krokiem",
+      "Ustal punkt skupienia wzroku przed sobą — pomaga utrzymać neutralną głowę i równowagę",
+      "Zapewnij wolną przestrzeń przed sobą — będziesz iść w przód kilka metrów"
+    ],
+    "execution_cues": [
+      "Long step forward — front shin vertical at the bottom of the lunge",
+      "Drop straight down, don't push the front knee past the toes",
+      "Push off the back foot — don't drag it",
+      "Drive the knee UP to hip height, not just lift it lazily",
+      "Pause for a beat on one leg before the next step — controls balance and tempo"
+    ],
+    "execution_cues_pl": [
+      "Długi krok w przód — piszczel przedniej nogi pionowo na dole wykroku",
+      "Schodź prosto w dół, nie wypychaj przedniego kolana poza palce",
+      "Odbij się tylną stopą — nie ciągnij jej",
+      "Wyciągnij kolano W GÓRĘ do wysokości bioder, nie unoś go leniwie",
+      "Zatrzymaj się na chwilę na jednej nodze przed kolejnym krokiem — kontroluje równowagę i tempo"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee drive too low (knee barely lifts)",
+        "faultPl": "Za niskie uniesienie kolana (kolano ledwo idzie w górę)",
+        "cause": "Weak hip flexors, lack of focus on the knee-drive phase, fatigue. Reduces the conditioning and core benefit of the exercise.",
+        "causePl": "Słabe zginacze biodra, brak skupienia na fazie uniesienia kolana, zmęczenie. Niweluje efekt kondycyjny i pracę brzucha.",
+        "cue": "Drive the knee up to at least hip height (90° hip flexion). Imagine pulling it toward an imaginary ceiling tile",
+        "cuePl": "Wyciągnij kolano przynajmniej do wysokości bioder (90° zgięcia biodra). Wyobraź sobie, że ciągniesz je do sufitu"
+      },
+      {
+        "fault": "Front knee crosses past the toes / collapses inward",
+        "faultPl": "Przednie kolano przekracza linię palców / wpada do środka",
+        "cause": "Step too short or weak glute medius. Loads the patellar tendon and adds knee stress.",
+        "causePl": "Za krótki krok lub słaby pośladkowy średni. Obciąża rzepkę i zwiększa stres na kolano.",
+        "cue": "Take a longer step. Knee tracks over the second/third toe — push it outward slightly",
+        "cuePl": "Wykonaj dłuższy krok. Kolano w linii z drugim/trzecim palcem — lekko wypychaj na zewnątrz"
+      },
+      {
+        "fault": "Torso lean forward",
+        "faultPl": "Pochylenie tułowia do przodu",
+        "cause": "Weak core, fatigue, or trying to use momentum to drive the knee up",
+        "causePl": "Słaby brzuch, zmęczenie lub próba użycia rozpędu do uniesienia kolana",
+        "cue": "Chest tall and proud, ribs stacked over hips. The knee comes to you, not you to the knee.",
+        "cuePl": "Klatka w górze i dumnie, żebra nad biodrami. To kolano przychodzi do ciebie, nie ty do kolana."
+      },
+      {
+        "fault": "Skipping the balance pause (rushing the knee drive into the next step)",
+        "faultPl": "Pomijanie pauzy balansowej (zbyt szybkie przechodzenie z kolana w kolejny krok)",
+        "cause": "Going too fast, treating it as cardio without the balance component",
+        "causePl": "Za szybkie tempo, traktowanie ćwiczenia czysto cardio bez komponentu równowagi",
+        "cue": "Hold the knee-up position for a count of one second before stepping forward",
+        "cuePl": "Zatrzymaj kolano w górze przez około sekundę przed postawieniem nogi w przód"
+      },
+      {
+        "fault": "Loss of lateral balance / side-to-side wobble",
+        "faultPl": "Utrata bocznej równowagi / chwianie na boki",
+        "cause": "Feet landing on a single line (tightrope), weak hip stabilizers",
+        "causePl": "Stopy lądujące na jednej linii (lina), słabe stabilizatory bioder",
+        "cue": "Place feet on parallel lines (railroad tracks), about hip-width apart. Engage the glute of the standing leg",
+        "cuePl": "Stawiaj stopy na równoległych liniach (jak tory kolejowe), na szerokość bioder. Napnij pośladek nogi podporowej"
+      }
+    ],
+    "breathing": "Inhale as you step forward into the lunge. Exhale on the drive up and through the knee raise. Maintain a steady rhythm — this is a conditioning movement, breath should not stop.",
+    "breathingPl": "Wdech podczas kroku w przód do wykroku. Wydech podczas wstawania i uniesienia kolana. Utrzymuj równy rytm — to ćwiczenie kondycyjne, oddech nie powinien się zatrzymywać."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_injury_acute",
+      "severity": "avoid",
+      "modification": "Unilateral loaded knee flexion under combined balance load is provocative. Wait for recovery and physiotherapist clearance. Substitute with seated or supine knee-friendly work.",
+      "modificationPl": "Jednostronne zginanie kolana pod obciążeniem i z elementem równowagi jest prowokujące. Poczekaj na regenerację i zgodę fizjoterapeuty. Zastąp ćwiczeniami w siadzie/leżeniu bez obciążenia kolana.",
+      "alternative": "seated-knee-extension"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "modify",
+      "modification": "The single-leg balance pause is risky for those with vestibular issues. Use a wall or stable surface for fingertip support, or eliminate the knee-drive phase (regular walking lunge).",
+      "modificationPl": "Pauza na jednej nodze jest ryzykowna przy problemach przedsionkowych. Użyj ściany lub stabilnego oparcia palcem, lub zrezygnuj z fazy uniesienia kolana (zwykły wykrok chodzący).",
+      "alternative": "walking-lunge"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "The active high-knee drive directly loads the hip flexors. Reduce knee height to pain-free range or switch to a movement without active knee drive.",
+      "modificationPl": "Aktywne uniesienie kolana bezpośrednio obciąża zginacze biodra. Ogranicz wysokość kolana do zakresu bez bólu lub przejdź na ruch bez aktywnego unoszenia kolana.",
+      "alternative": "walking-lunge"
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "modify",
+      "modification": "Hip flexor activation can pull on the lumbar spine, especially if core is weak. Reduce knee height, focus on a strong brace, or use a more spine-friendly substitute.",
+      "modificationPl": "Aktywacja zginaczy biodra może ciągnąć za odcinek lędźwiowy, szczególnie przy słabym brzuchu. Zmniejsz wysokość kolana, mocno napinaj brzuch lub zmień na ćwiczenie przyjaźniejsze dla kręgosłupa.",
+      "alternative": "march-in-place"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 per leg (conditioning) | 3x20-30m distance (gym floor circuit) | 2-3x30-45s (HIIT/finisher) | 1-2x10 each leg (dynamic warm-up)",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "walking-high-knees-lunge.gif",
+    "frames_extracted": [
+      "frames/walking-high-knees-lunge/frame_0_start.png",
+      "frames/walking-high-knees-lunge/frame_1_early.png",
+      "frames/walking-high-knees-lunge/frame_2_mid.png",
+      "frames/walking-high-knees-lunge/frame_3_late.png",
+      "frames/walking-high-knees-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/walking-high-knees-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T16:45:00Z",
+  "verification_notes": "Obejrzałem 5 klatek kluczowych z GIFa jahel (cardio/walking-high-knees-lunge). Ruch potwierdzony: klatka 0 — pozycja stania jednonóż z lewym kolanem podciągniętym do wysokości bioder, ręce przed klatką (faza knee-drive); klatka 1 — pełny wykrok w przód lewą nogą (przednie udo równolegle, tylne kolano blisko podłogi); klatka 2 — powrót do pozycji stania z prawym kolanem uniesionym wysoko (drugi knee-drive na przeciwnej nodze); klatka 3 — kolejny wykrok prawą nogą; klatka 4 — transition (poprzedni wykrok obok + nowa pozycja stania jednonóż z prawym kolanem). To naprzemienna sekwencja: lunge L → knee-up R → lunge R → knee-up L. Mięśnie podświetlone w GIFie: czworogłowe obu nóg (P), pośladki (P), zginacze biodra unoszącej nogi (P), łydki, część skośna brzucha. Jahel klasyfikuje pod 'cardio' — my przyznajemy category='conditioning' + difficulty 5 (wymaga koordynacji + balansu, ale bez sprzętu). Wszystkie pola PL napisane od zera, polski standard fitness 'wykrok chodzący z wysokimi kolanami' (popularna nazwa drillu rozgrzewkowego z trenerstwa funkcjonalnego).",
+
+  "tags": ["unilateral_alternating", "lower_body", "lunge", "conditioning", "bodyweight", "dynamic_warmup", "balance", "hip_flexor_dominant", "knee_drive", "metabolic", "coordination", "no_equipment"]
+}

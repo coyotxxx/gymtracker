@@ -1,0 +1,205 @@
+{
+  "id": "cable-forward-raise",
+  "name": "Cable Forward Raise",
+  "namePl": "Wznosy frontowe z wyciągu",
+  "aliases": ["cable front raise", "single-arm cable front raise", "low pulley front raise", "standing cable front raise"],
+  "aliasesPl": ["wznosy przodem z wyciągu", "wznosy w przód z dolnego wyciągu", "front raise na wyciągu jednorącz", "wznos ramienia w przód z linki"],
+
+  "description": "Standing single-arm front raise performed on a low cable pulley with a D-handle. The cable runs between the legs (or just behind the body) and the lifter raises the working arm straight in front of them up to shoulder height. Unlike the dumbbell version, the cable provides constant tension across the full range of motion — including the bottom of the rep where dumbbells essentially unload. Primary target is the anterior deltoid, with assistance from the clavicular pectoralis and short head of the biceps. A staple shoulder isolation movement for hypertrophy of the front delts and for building the 'cap' look of the shoulder.",
+  "descriptionPl": "Stojące wznosy frontowe jednorącz wykonywane na dolnym wyciągu (low pulley) z rączką D-handle. Linka biegnie między nogami (lub tuż za ciałem), a ćwiczący unosi pracujące ramię prosto w przód do wysokości barków. W przeciwieństwie do wersji z hantlami, wyciąg zapewnia stałe napięcie mięśnia w całym zakresie ruchu — także w dole powtórzenia, gdzie hantle praktycznie nie obciążają mięśnia. Głównym celem jest przedni akton barku (anterior deltoid), wspomagany przez górną (obojczykową) część mięśnia piersiowego i krótką głowę bicepsa. Klasyczne izolowane ćwiczenie na barki służące hipertrofii przedniego aktonu i budowie 'kapturka' barku.",
+
+  "instructions": [
+    "Attach a single D-handle to a low cable pulley and stand facing away from the stack (cable between legs) or facing the stack with the handle held in front — the most common setup has the cable behind the body, between the legs.",
+    "Grip the D-handle in one hand with a pronated grip (palm facing down/back). Take 1-2 steps forward so there is constant tension on the cable in the start position.",
+    "Stand tall with feet shoulder-width apart, knees slightly soft, free hand on the hip or holding the frame for balance.",
+    "Brace the core, set the shoulder blades back and down. The working arm hangs straight with a small, fixed bend in the elbow (~10-15°). The cable should already feel loaded at the bottom.",
+    "Raise the arm straight in front of you in the sagittal plane until the hand reaches roughly shoulder height (upper arm parallel to the floor). Exhale on the way up.",
+    "Pause briefly at the top, keeping the wrist neutral and the elbow angle locked. Do not let the shoulder shrug up to the ear.",
+    "Lower the handle along the same path under control over 2-3 seconds, inhaling on the descent. Do not let the weight slam back to the stack — keep tension on the cable.",
+    "Complete all reps on one side, then switch hands and repeat for the other arm. Match reps left and right.",
+    "Throughout the set keep the torso upright — no leaning back, no swinging."
+  ],
+  "instructionsPl": [
+    "Zamocuj pojedynczą rączkę D-handle do dolnego wyciągu i stań plecami do stosu (linka biegnie między nogami) lub przodem do stosu z rączką trzymaną z przodu — najczęstszy układ to linka za ciałem, między nogami.",
+    "Złap rączkę D-handle jedną ręką chwytem pronacyjnym (dłoń skierowana w dół/w tył). Zrób 1-2 kroki do przodu tak, by w pozycji wyjściowej na lince było stałe napięcie.",
+    "Stań prosto, stopy na szerokość barków, kolana lekko miękkie, wolna ręka na biodrze lub trzymająca konstrukcję dla równowagi.",
+    "Napnij brzuch, ściągnij łopatki w tył i w dół. Pracujące ramię zwisa prosto z lekkim, stałym ugięciem w łokciu (~10-15°). Linka już w dole powinna być wyraźnie obciążona.",
+    "Unieś rękę prosto przed siebie w płaszczyźnie strzałkowej, aż dłoń znajdzie się mniej więcej na wysokości barków (ramię ponad łokciem równolegle do podłogi). Wydech podczas unoszenia.",
+    "Zatrzymaj się na chwilę w górnej pozycji, trzymając nadgarstek neutralnie a kąt łokcia zablokowany. Nie pozwól barkowi 'wjechać' do ucha.",
+    "Opuszczaj rączkę tą samą drogą w sposób kontrolowany przez 2-3 sekundy, wdech podczas opuszczania. Nie pozwól ciężarom uderzyć o stos — utrzymuj napięcie na lince.",
+    "Wykonaj wszystkie powtórzenia jedną ręką, następnie zmień rękę i powtórz drugą stroną. Wyrównaj liczbę powtórzeń lewa/prawa.",
+    "Przez całą serię utrzymuj tułów wyprostowany — bez odchylania w tył, bez bujania."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["pectoralis_major_clavicular", "biceps_brachii_short_head"],
+    "stabilizers": ["lateral_deltoids", "trapezius_upper", "core", "serratus_anterior", "forearm_flexors", "gluteus_medius"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "pectoralis_major_clavicular": "S6",
+    "biceps_brachii_short_head": "S4",
+    "lateral_deltoids": "T4",
+    "trapezius_upper": "T4",
+    "core": "T3",
+    "serratus_anterior": "T3",
+    "forearm_flexors": "T2",
+    "gluteus_medius": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "d_handle"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-front-raise"],
+    "progression_to": ["cable-rope-front-raise", "barbell-front-raise", "plate-front-raise"],
+    "alternatives": ["dumbbell-front-raise", "barbell-front-raise", "plate-front-raise", "cable-rope-front-raise", "machine-front-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Cable between the legs, take 1-2 steps forward to pre-load tension",
+      "Stand tall, feet shoulder-width, knees soft",
+      "Pronated grip, small fixed bend in the elbow (~10-15°)",
+      "Shoulder blades back and down before the first rep",
+      "Free hand on hip or frame for balance — no twisting"
+    ],
+    "setup_cues_pl": [
+      "Linka między nogami, zrób 1-2 kroki do przodu by wstępnie naciągnąć cable",
+      "Stań prosto, stopy na szerokość barków, kolana lekko miękkie",
+      "Chwyt pronacyjny, lekkie stałe ugięcie łokcia (~10-15°)",
+      "Łopatki ściągnięte w tył i w dół przed pierwszym powtórzeniem",
+      "Wolna ręka na biodrze lub konstrukcji dla równowagi — bez skręcania tułowia"
+    ],
+    "execution_cues": [
+      "Raise the arm straight in front — thumb leads slightly higher than the pinky",
+      "Stop at shoulder height — no higher",
+      "Keep the elbow angle locked the entire rep",
+      "Press the shoulder down — do not let it shrug up",
+      "Feel constant tension on the cable at the bottom — no rest"
+    ],
+    "execution_cues_pl": [
+      "Unieś rękę prosto w przód — kciuk lekko wyżej niż mały palec",
+      "Zatrzymaj na wysokości barku — nie wyżej",
+      "Trzymaj stały kąt w łokciu przez całe powtórzenie",
+      "Wciskaj bark w dół — nie pozwól mu 'wjechać' do ucha",
+      "Czuj stałe napięcie na lince w dole — bez odpoczynku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning back / using the torso to swing the weight up",
+        "faultPl": "Odchylanie tułowia w tył / bujanie ciężaru",
+        "cause": "Load too heavy, lifter compensates with hip extension and trunk lean",
+        "causePl": "Zbyt duży ciężar, ćwiczący kompensuje wyprostem bioder i odchyleniem tułowia",
+        "cue": "Reduce the weight. Stand tall, brace the core, imagine your back is against a wall.",
+        "cuePl": "Zmniejsz ciężar. Stań prosto, napnij brzuch, wyobraź sobie że plecy są oparte o ścianę."
+      },
+      {
+        "fault": "Shrugging — upper traps take over",
+        "faultPl": "Wciąganie barku — trapezy górne przejmują ruch",
+        "cause": "Load too heavy, weak anterior delt, or losing scapular depression mid-rep",
+        "causePl": "Zbyt duży ciężar, słaby przedni akton barku, lub utrata depresji łopatki w trakcie powtórzenia",
+        "cue": "Lighter weight. Actively press the working shoulder away from the ear the entire rep.",
+        "cuePl": "Lżejszy ciężar. Aktywnie odsuwaj pracujący bark od ucha przez całe powtórzenie."
+      },
+      {
+        "fault": "Lifting too high — past shoulder height",
+        "faultPl": "Unoszenie ręki za wysoko — powyżej linii barku",
+        "cause": "Belief that bigger ROM = more results, but past 90° the front delt unloads and traps take over",
+        "causePl": "Przekonanie że większy zakres = lepsze efekty, ale powyżej 90° przedni akton się rozładowuje a pracę przejmują trapezy",
+        "cue": "Stop when the hand reaches shoulder height — that is the end of the rep.",
+        "cuePl": "Zatrzymaj gdy dłoń osiągnie wysokość barku — tu kończy się powtórzenie."
+      },
+      {
+        "fault": "Bending and straightening the elbow during the rep",
+        "faultPl": "Zginanie i prostowanie łokcia w trakcie powtórzenia",
+        "cause": "Pumping the elbow turns the move into a half-curl + half-raise and shifts work to biceps",
+        "causePl": "'Pompowanie' łokcia zamienia ruch w pół-uginanie + pół-wznos i przenosi pracę na biceps",
+        "cue": "Lock the elbow angle at the start and keep it frozen — only the shoulder moves.",
+        "cuePl": "Zablokuj kąt w łokciu na starcie i zamroź go — porusza się tylko bark."
+      },
+      {
+        "fault": "Letting the weight stack slam at the bottom",
+        "faultPl": "Pozwalanie na uderzanie ciężaru o stos w dolnej fazie",
+        "cause": "Eccentric performed too fast, no control on the way down",
+        "causePl": "Faza ekscentryczna wykonana zbyt szybko, brak kontroli w trakcie opuszczania",
+        "cue": "3-second negative. The weights should never fully rest — keep tension on the cable.",
+        "cuePl": "3-sekundowa faza opuszczania. Ciężary nie powinny w pełni odpocząć — utrzymuj napięcie na lince."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric raise). Inhale on the way down (eccentric lowering). Hold a light brace throughout — do not perform a full Valsalva on an isolation exercise.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię — bez pełnej próby Valsalvy na ćwiczeniu izolowanym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Front raises can compress the subacromial space at the top. Reduce ROM to 60-70° (below shoulder height), use a neutral grip (thumb up) instead of pronated, and drop to 40-50% of normal load.",
+      "modificationPl": "Wznosy frontowe mogą uciskać przestrzeń podbarkową w górnej pozycji. Zmniejsz zakres do 60-70° (poniżej wysokości barku), zastosuj chwyt neutralny (kciuk do góry) zamiast pronacyjnego i zmniejsz ciężar do 40-50% normalnego.",
+      "alternative": "cable-rope-front-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid loaded front raises in the acute phase — flexion under load aggravates supraspinatus impingement. Substitute with scapular plane raises in the 'scaption' plane (~30° in front of body) at low loads.",
+      "modificationPl": "Unikaj obciążonych wznosów frontowych w fazie ostrej — zginanie pod obciążeniem zaostrza konflikt na mięśniu nadgrzebieniowym. Zastąp wznosami w płaszczyźnie łopatkowej ('scaption' — ~30° przed ciałem) z niewielkim obciążeniem.",
+      "alternative": "dumbbell-scaption-raise"
+    },
+    {
+      "condition": "ac_joint_pain_or_arthrosis",
+      "severity": "caution",
+      "modification": "The AC joint compresses at the top of forward flexion. Stop ROM short of shoulder height, stay on the painless side of the arc. Lower the load and slow down the eccentric.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji w górnej pozycji zginania w przód. Zatrzymaj zakres przed osiągnięciem wysokości barku, zostań po stronie łuku wolnej od bólu. Zmniejsz ciężar i spowolnij fazę ekscentryczną.",
+      "alternative": "cable-rope-front-raise"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_disc_issues",
+      "severity": "caution",
+      "modification": "Standing front raises load the lumbar spine when lifters lean back to cheat. With back pain switch to a seated version (on a bench facing the cable) or use much lighter loads with strict form and a braced core.",
+      "modificationPl": "Stojące wznosy frontowe obciążają odcinek lędźwiowy gdy ćwiczący oszukują odchyleniem tułowia. Przy bólu pleców przejdź na wersję siedzącą (na ławce naprzeciw wyciągu) lub używaj znacznie lżejszych ciężarów ze ścisłą techniką i napiętym brzuchem.",
+      "alternative": "seated-cable-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/standard) | 3-4x15-25 (shoulder pump/finisher) | 3x8-12 (slightly heavier, rare for front delt)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-forward-raise.gif",
+    "frames_extracted": [
+      "frames/cable-forward-raise/frame_0_start.png",
+      "frames/cable-forward-raise/frame_1_early.png",
+      "frames/cable-forward-raise/frame_2_mid.png",
+      "frames/cable-forward-raise/frame_3_late.png",
+      "frames/cable-forward-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-forward-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem klatki start/mid/end z GIFa jahel. Frame 0 (start): ćwiczący stoi prosto, lewa ręka pracująca trzyma rączkę D-handle wyciągu, ramię zwisa prosto przy biodrze, linka biegnie w dół-tył (low pulley za atletą lub między nogami), przedni akton lewego barku podświetlony na czerwono + lekko klatka po stronie pracującej. Frame 2 (top): pracująca ręka uniesiona prosto w przód do wysokości barku, ramię ponad łokciem równolegle do podłogi, dłoń pronacyjnie nad rączką, drugą rękę widać luźno przy biodrze — wyraźnie wersja UNILATERALNA. Frame 4 (end): powrót do pozycji wyjściowej, widoczny 'ghost' górnej fazy — ruch w płaszczyźnie strzałkowej (sagittal), klasyczny front raise. Cable zapewnia stałe napięcie na całym zakresie, w odróżnieniu od hantli. Primary mover: anterior deltoid. Mechanic=isolation, force=push (zginanie ramienia w stawie barkowym), plane=sagittal, laterality=unilateral. Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["bodybuilding", "shoulders", "front_delts", "anterior_deltoid", "isolation", "cable", "upper_body", "standing", "unilateral", "hypertrophy", "constant_tension"]
+}

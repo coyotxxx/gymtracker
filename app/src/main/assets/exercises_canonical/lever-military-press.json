@@ -1,0 +1,202 @@
+{
+  "id": "lever-military-press",
+  "name": "Lever Military Press (Machine)",
+  "namePl": "Military press w maszynie",
+  "aliases": ["plate-loaded shoulder press", "lever shoulder press", "machine military press", "iso-lateral shoulder press", "hammer strength shoulder press"],
+  "aliasesPl": ["wyciskanie barków w maszynie", "shoulder press maszyna", "military w maszynie", "barki maszyna dźwigniowa", "hammer strength barki"],
+
+  "description": "Seated bilateral overhead press performed on a plate-loaded lever (dźwigniowa) machine. Fixed arc path eliminates stabilization demands and locks the bar to a safe vertical trajectory, making it ideal for hypertrophy work, beginners, and post-injury return. Back is fully supported by the pad — zero lumbar stress compared to standing OHP. Builds anterior + lateral deltoids with strong triceps assistance.",
+  "descriptionPl": "Dwustronne wyciskanie nad głowę w pozycji siedzącej w maszynie dźwigniowej z obciążeniem na talerzach. Stała ścieżka łukowa eliminuje pracę stabilizatorów i wymusza bezpieczną trajektorię pionową — idealne do hipertrofii, dla początkujących oraz powrotu po kontuzji. Plecy w pełni oparte o oparcie — zero obciążenia lędźwiowego w porównaniu ze stojącym OHP. Buduje przednie i boczne aktony naramienne z mocnym wsparciem tricepsa.",
+
+  "instructions": [
+    "Adjust seat height so that the handles are at upper-chest / clavicle level when you sit down.",
+    "Sit with back firmly against the pad, feet flat on the floor (or footrest), hip-width apart.",
+    "Grip the handles with a neutral or pronated grip (depending on machine). Wrists straight, stacked over elbows.",
+    "Brace core, retract shoulder blades against the pad, take a breath.",
+    "Press the handles straight up along the machine's fixed path until arms are fully extended (without hyperextending elbows).",
+    "Pause briefly at the top — biceps near ears, ribs DOWN, no excessive arch in the lumbar.",
+    "Lower with control back to clavicle level. Do NOT crash the weight onto the stops.",
+    "Keep glutes and back on the pad throughout. No bouncing, no leg drive."
+  ],
+  "instructionsPl": [
+    "Wyreguluj wysokość siedziska tak, by uchwyty znajdowały się na wysokości górnej klatki / obojczyków po siadzie.",
+    "Usiądź z plecami mocno opartymi o oparcie, stopy płasko na podłodze (lub podnóżku), na szerokość bioder.",
+    "Złap uchwyty chwytem neutralnym lub pronowanym (zależnie od maszyny). Nadgarstki proste, ustawione nad łokciami.",
+    "Napnij brzuch, ściągnij łopatki do oparcia, weź wdech.",
+    "Wyciskaj uchwyty prosto w górę po stałej ścieżce maszyny aż do pełnego wyprostu ramion (bez przeprostu łokci).",
+    "Krótka pauza na górze — bicepsy przy uszach, żebra W DÓŁ, brak nadmiernego przeprostu lędźwi.",
+    "Opuszczaj kontrolowanym ruchem do poziomu obojczyków. NIE rzucaj ciężarem na ograniczniki.",
+    "Pośladki i plecy oparte przez cały ruch. Bez odbijania, bez napędu z nóg."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps", "upper_trapezius", "upper_chest"],
+    "stabilizers": ["core", "serratus_anterior", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P10",
+    "lateral_deltoid": "P8",
+    "triceps": "S7",
+    "upper_trapezius": "S5",
+    "upper_chest": "S4",
+    "core": "T3",
+    "serratus_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["lever_shoulder_press_machine", "weight_plates"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-shoulder-press", "seated-barbell-overhead-press", "barbell-overhead-press"],
+    "alternatives": ["smith-machine-shoulder-press", "dumbbell-shoulder-press", "cable-shoulder-press", "seated-barbell-overhead-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Handles at clavicle level when seated",
+      "Back firmly against the pad",
+      "Feet flat on floor, hip-width",
+      "Wrists stacked over elbows",
+      "Shoulders down and back"
+    ],
+    "setup_cues_pl": [
+      "Uchwyty na wysokości obojczyków po siadzie",
+      "Plecy mocno oparte o oparcie",
+      "Stopy płasko na podłodze, szerokość bioder",
+      "Nadgarstki nad łokciami",
+      "Barki opuszczone i ściągnięte"
+    ],
+    "execution_cues": [
+      "Press straight up along the machine's path",
+      "Full extension WITHOUT elbow hyperextension",
+      "Ribs DOWN — no lumbar arching",
+      "Control the descent — no crashing weights",
+      "Glutes and back stay on the pad"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę po ścieżce maszyny",
+      "Pełen wyprost BEZ przeprostu łokci",
+      "Żebra W DÓŁ — brak przeprostu lędźwi",
+      "Kontroluj opuszczanie — bez rzucania ciężarem",
+      "Pośladki i plecy oparte przez cały czas"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lumbar hyperextension (lower back arches off pad)",
+        "faultPl": "Przeprost lędźwiowy (dolne plecy odrywają się od oparcia)",
+        "cause": "Weight too heavy, weak core, trying to mimic standing press leverage",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, próba imitowania dźwigni stojącego OHP",
+        "cue": "Ribs DOWN. Brace abs. Lower back glued to the pad. Reduce weight.",
+        "cuePl": "Żebra W DÓŁ. Napnij brzuch. Lędźwie przyklejone do oparcia. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Partial range of motion (stopping high, not lowering to clavicle)",
+        "faultPl": "Niepełen zakres ruchu (zatrzymywanie wysoko, brak schodzenia do obojczyków)",
+        "cause": "Ego lifting, poor shoulder mobility, ignoring eccentric phase",
+        "causePl": "Ego lifting, słaba mobilność barku, ignorowanie fazy ekscentrycznej",
+        "cue": "Lower until handles are at clavicle height. Full ROM = full stimulus.",
+        "cuePl": "Opuszczaj aż uchwyty będą na wysokości obojczyków. Pełen ROM = pełen bodziec."
+      },
+      {
+        "fault": "Elbow hyperextension (snapping elbows at the top)",
+        "faultPl": "Przeprost łokci (zatrzaskiwanie łokci na górze)",
+        "cause": "Aggressive lockout, joint laxity, lack of awareness",
+        "causePl": "Agresywny lock-out, hipermobilność stawów, brak świadomości ciała",
+        "cue": "Soft lockout — extend, don't snap. Keep micro-bend in elbows.",
+        "cuePl": "Miękki lock-out — wyprost, nie zatrzaskuj. Zachowaj mikro-zgięcie łokci."
+      },
+      {
+        "fault": "Crashing the weight on the descent",
+        "faultPl": "Rzucanie ciężarem przy opuszczaniu",
+        "cause": "Skipping the eccentric, weight too heavy, fatigue",
+        "causePl": "Pomijanie ekscentryku, zbyt duży ciężar, zmęczenie",
+        "cue": "2-3 second descent. The lower half is half the gains. Control it.",
+        "cuePl": "Opuszczaj 2-3 sekundy. Faza opuszczania to połowa efektu. Kontroluj."
+      },
+      {
+        "fault": "Flaring elbows too wide (excessive abduction)",
+        "faultPl": "Zbyt szerokie rozkładanie łokci (nadmierna abdukcja)",
+        "cause": "Trying to bias lateral delts, machine grip too wide",
+        "causePl": "Próba zaakcentowania bocznych aktonów, zbyt szeroki uchwyt maszyny",
+        "cue": "Elbows under wrists. Tracking forward-out at ~45-60°, not 90°.",
+        "cuePl": "Łokcie pod nadgarstkami. Praca pod kątem ~45-60°, nie 90°."
+      }
+    ],
+    "breathing": "Inhale and brace before each rep. Exhale through the press, especially past the sticking point. Inhale on the controlled descent.",
+    "breathingPl": "Wdech i napięcie przed każdym powtórzeniem. Wydech podczas wyciskania, szczególnie po przejściu martwego punktu. Wdech przy kontrolowanym opuszczaniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (stop at forehead height, don't descend to clavicle). Use neutral grip if available.",
+      "modificationPl": "Zmniejsz ROM (zatrzymuj na wysokości czoła, nie schodź do obojczyków). Użyj chwytu neutralnego jeśli dostępny.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lumbar_disc_issue",
+      "severity": "ok_with_caution",
+      "modification": "Excellent option vs standing OHP — back is supported. Just keep ribs down and avoid hyperextension. Use belt if needed.",
+      "modificationPl": "Świetna opcja zamiast stojącego OHP — plecy są oparte. Zachowaj żebra w dół i unikaj przeprostu. Pas jeśli trzeba.",
+      "alternative": null
+    },
+    {
+      "condition": "rotator_cuff_strain",
+      "severity": "modify",
+      "modification": "Use very light weight, focus on controlled tempo, partial ROM. Discontinue if pain on lifting phase.",
+      "modificationPl": "Używaj bardzo lekkiego ciężaru, kontrolowane tempo, częściowy ROM. Przerwij jeśli ból w fazie unoszenia.",
+      "alternative": "cable-shoulder-press"
+    },
+    {
+      "condition": "elbow_hyperextension_tendency",
+      "severity": "modify",
+      "modification": "Stop just short of full lockout. Maintain soft elbows throughout.",
+      "modificationPl": "Zatrzymuj tuż przed pełnym lock-out. Utrzymuj miękkie łokcie przez cały ruch.",
+      "alternative": null
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x6-8 (strength) | 2-3x15-20 (metabolic/burnout)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-military-press.gif",
+    "frames_extracted": [
+      "frames/lever-military-press/frame_0_start.png",
+      "frames/lever-military-press/frame_1_early.png",
+      "frames/lever-military-press/frame_2_mid.png",
+      "frames/lever-military-press/frame_3_late.png",
+      "frames/lever-military-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/lever-military-press",
+    "yuhonas_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja siedząca w maszynie dźwigniowej (lever/plate-loaded), uchwyty na wysokości obojczyków, plecy oparte. Frame 2: pełen wyprost ramion nad głową po stałej ścieżce maszyny, bicepsy przy uszach. Frame 4: powrót do pozycji startowej. Aktywacja: przednie i boczne aktony (główne), tricepsy i czworoboczny górny (drugorzędne), klatka górna lekko. Płaszczyzna FRONTAL — łokcie idą bokiem-w-górę po łukowej ścieżce maszyny (nie strict sagittal jak barbell OHP). Bilateral (oba ramiona razem na zsynchronizowanej dźwigni). Bezpieczna alternatywa dla początkujących i osób z problemami lędźwi.",
+
+  "tags": ["machine", "lever", "plate_loaded", "shoulders", "vertical_push", "hypertrophy", "beginner_friendly", "seated", "back_supported", "isolation_friendly_compound"]
+}

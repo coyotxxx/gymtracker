@@ -1,0 +1,202 @@
+{
+  "id": "barbell-speed-squat",
+  "name": "Barbell Speed Squat",
+  "namePl": "Speed squat ze sztangą",
+  "aliases": ["speed squat", "dynamic effort squat", "DE squat", "explosive back squat", "dynamic squat"],
+  "aliasesPl": ["speed squat", "przysiad eksplozywny", "przysiad dynamiczny", "przysiad szybkościowy", "DE squat"],
+
+  "description": "Explosive variation of the back squat performed with submaximal load (typically 50-65% of 1RM) and maximal intent on the concentric phase. Classic Westside Barbell dynamic effort method used to develop power, rate of force development (RFD) and bar speed. The bar must travel as fast as possible on the way up while maintaining tight squat technique. Staple of powerlifting programming on dynamic-effort days.",
+  "descriptionPl": "Eksplozywna odmiana przysiadu tylnego wykonywana z submaksymalnym obciążeniem (zazwyczaj 50-65% maxa) i maksymalną intencją w fazie koncentrycznej. Klasyczna metoda dynamic effort z Westside Barbell, służąca rozwojowi mocy, szybkości narastania siły (RFD) i prędkości gryfu. Sztanga musi lecieć w górę najszybciej jak to możliwe przy zachowaniu solidnej techniki przysiadu. Klasyk programowania w trójboju w dni dynamiczne.",
+
+  "instructions": [
+    "Load the bar with 50-65% of your back squat 1RM (or use accommodating resistance — bands/chains — at 40-55% bar weight). Set the bar in a rack at upper-chest height.",
+    "Step under the bar, place it across your upper traps (high-bar) or rear delts (low-bar). Grip slightly wider than shoulder-width.",
+    "Unrack with confident leg extension. Take two controlled steps back. Set feet shoulder-width with toes turned out 10-30°.",
+    "Brace your core hard, draw shoulder blades down and back, chest tall. Inhale deeply and hold (Valsalva).",
+    "Descend with controlled tempo (1-2 seconds) — sit back and down simultaneously. Do NOT freefall — controlled eccentric stores elastic energy for the rebound.",
+    "Reach your target depth (at or just below parallel) without bouncing the soft tissue or relaxing tension.",
+    "Reverse direction EXPLOSIVELY — drive the floor away with maximal intent, accelerate the bar through the entire concentric range, no pause.",
+    "Lock out hips and knees aggressively at the top. Reset breath and brace. Perform sets of 2-3 reps with 45-60s rest to preserve bar speed."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę 50-65% maxa w przysiadzie (lub użyj akomodującego oporu — gum/łańcuchów — 40-55% wagi). Ustaw sztangę w stojaku na wysokości górnej klatki.",
+    "Wejdź pod sztangę, ułóż ją na górnej części trapezów (high-bar) lub na tylnych deltach (low-bar). Chwyt nieco szerzej niż barki.",
+    "Zdejmij sztangę pewnym wyprostem nóg. Cofnij się 2 kroki kontrolowanym ruchem. Stopy na szerokość barków, palce na zewnątrz 10-30°.",
+    "Mocno napnij brzuch, ściągnij łopatki w dół i do tyłu, klatka wysoko. Nabierz głęboki oddech i przytrzymaj (Valsalva).",
+    "Schodź kontrolowanym tempem (1-2 sekundy) — siadaj do tyłu i w dół jednocześnie. NIE spadaj swobodnie — kontrolowany ekscentryk gromadzi energię sprężystą do wybicia.",
+    "Osiągnij docelową głębokość (parallel lub tuż poniżej) bez sprężynowania tkankami i bez gubienia napięcia.",
+    "Odwróć kierunek EKSPLOZYWNIE — wypchnij podłogę z maksymalną intencją, przyspieszaj sztangę przez cały zakres koncentryczny, bez pauzy.",
+    "Agresywnie zablokuj biodra i kolana na górze. Zresetuj oddech i napięcie. Wykonuj serie 2-3 powtórzeń z 45-60s przerwy aby utrzymać prędkość gryfu."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "erector_spinae"],
+    "stabilizers": ["core", "adductors", "calves", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "hamstrings": "S6",
+    "erector_spinae": "S7",
+    "adductors": "S5",
+    "core": "S7",
+    "calves": "T4",
+    "upper_back": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "bands", "chains"]
+  },
+
+  "category": "power",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-back-squat", "barbell-front-squat", "box-squat"],
+    "progression_to": ["barbell-jump-squat", "band-resisted-speed-squat", "chain-speed-squat", "speed-box-squat"],
+    "alternatives": ["barbell-jump-squat", "box-squat", "pause-back-squat", "trap-bar-jump"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Submaximal load — 50-65% of your 1RM, not heavier",
+      "Bar tight on upper traps, elbows pulled down",
+      "Feet shoulder-width, toes 10-30° out",
+      "Brace HARD before unracking — every rep is a max-effort attempt",
+      "Big breath, Valsalva, eyes forward"
+    ],
+    "setup_cues_pl": [
+      "Obciążenie submaksymalne — 50-65% maxa, nie więcej",
+      "Sztanga mocno na trapezach, łokcie ściągnięte w dół",
+      "Stopy szerokość barków, palce 10-30° na zewnątrz",
+      "Napnij brzuch MOCNO przed zdjęciem — każde powtórzenie to maksymalna próba",
+      "Głęboki wdech, Valsalva, wzrok do przodu"
+    ],
+    "execution_cues": [
+      "Controlled eccentric — load the spring, don't crash",
+      "No bounce, no pause — reverse the moment you hit depth",
+      "EXPLODE up — accelerate through the full range, every rep",
+      "Push the floor away as if launching yourself",
+      "Bar travels in a vertical line over mid-foot, fast and straight"
+    ],
+    "execution_cues_pl": [
+      "Kontrolowany ekscentryk — napinaj sprężynę, nie spadaj",
+      "Bez sprężynowania, bez pauzy — odwróć kierunek w momencie osiągnięcia głębokości",
+      "EKSPLODUJ w górę — przyspieszaj przez cały zakres, każde powtórzenie",
+      "Wypchnij podłogę jakbyś chciał się wystrzelić",
+      "Gryf leci pionowo nad środkiem stopy, szybko i prosto"
+    ],
+    "common_faults": [
+      {
+        "fault": "Going too heavy — losing bar speed",
+        "faultPl": "Zbyt duże obciążenie — utrata prędkości gryfu",
+        "cause": "Treating speed day as a strength day; loading above 65% defeats the purpose (RFD/power development)",
+        "causePl": "Traktowanie dnia szybkościowego jak siłowego; obciążenie powyżej 65% niszczy cel (rozwój RFD i mocy)",
+        "cue": "If the rep slows down visibly, drop the weight. Bar speed > weight on speed day.",
+        "cuePl": "Jeśli powtórzenie wyraźnie zwalnia, zmniejsz obciążenie. Prędkość gryfu > waga w dniu szybkościowym."
+      },
+      {
+        "fault": "Bouncing out of the bottom",
+        "faultPl": "Sprężynowanie na dole",
+        "cause": "Relying on stretch reflex instead of actively reversing the load; uncontrolled descent",
+        "causePl": "Poleganie na odruchu rozciągania zamiast aktywnego odwracania ruchu; niekontrolowane schodzenie",
+        "cue": "Control the descent, reverse with intent — power comes from your muscles, not from your knees and hips bouncing",
+        "cuePl": "Kontroluj schodzenie, odwracaj z intencją — moc bierze się z mięśni, nie ze sprężynowania kolan i bioder"
+      },
+      {
+        "fault": "Loss of brace during explosive concentric",
+        "faultPl": "Utrata napięcia brzucha podczas eksplozywnego wybicia",
+        "cause": "Exhaling on the drive or never bracing fully; happens when athlete focuses only on bar speed",
+        "causePl": "Wydech podczas wybicia lub brak pełnego napięcia; częste gdy zawodnik skupia się tylko na prędkości",
+        "cue": "Brace HARDER on the speed rep, not softer. Air stays in until the lockout.",
+        "cuePl": "MOCNIEJ napnij brzuch w szybkim powtórzeniu, nie słabiej. Powietrze zostaje do pełnego wyprostu."
+      },
+      {
+        "fault": "High rep count per set kills bar speed",
+        "faultPl": "Zbyt dużo powtórzeń w serii zabija prędkość",
+        "cause": "Doing 5-8 reps — last reps slow down and become a strength set, not a power set",
+        "causePl": "Wykonywanie 5-8 powtórzeń — ostatnie zwalniają i robi się z tego seria siłowa, nie mocowa",
+        "cue": "2-3 reps per set, full rest 45-60s. Every rep must be at peak speed.",
+        "cuePl": "2-3 powtórzenia w serii, pełna przerwa 45-60s. Każde powtórzenie z maksymalną prędkością."
+      },
+      {
+        "fault": "Forward lean / chest collapse on the drive",
+        "faultPl": "Pochylenie do przodu / upadek klatki przy wybiciu",
+        "cause": "Trying to muscle the bar with hips instead of driving with legs; weak upper back; bar too high",
+        "causePl": "Próba szarpnięcia biodrami zamiast napierania nogami; słabe górne plecy; gryf za wysoko",
+        "cue": "Drive hips and chest up together. Knees forward early. Don't let the hips shoot up first.",
+        "cuePl": "Wybij biodra i klatkę razem. Kolana wcześnie do przodu. Nie pozwól by biodra strzeliły jako pierwsze."
+      }
+    ],
+    "breathing": "Inhale deeply at the top and brace (Valsalva). Hold air through the descent AND the entire explosive ascent. Exhale only after lockout. Re-brace between every rep — never run a speed set on residual breath.",
+    "breathingPl": "Głęboki wdech na górze i napięcie (Valsalva). Trzymaj powietrze przez schodzenie ORAZ całe eksplozywne wybicie. Wydech dopiero po wyproście. Napinaj się od nowa przed każdym powtórzeniem — nigdy nie rób serii szybkościowej na resztkach powietrza."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_injury_recent",
+      "severity": "avoid",
+      "modification": "Explosive spinal loading is high-risk for any acute lumbar issue. Heal first, return through tempo squats before speed work.",
+      "modificationPl": "Eksplozywne obciążenie kręgosłupa to wysokie ryzyko przy ostrym problemie lędźwiowym. Najpierw wylecz, wróć przez tempo squat zanim zaczniesz speed work.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "knee_tendinopathy",
+      "severity": "modify",
+      "modification": "Explosive concentric stresses patellar tendon. Use box-squat variant (controlled stop) or reduce load to 40-50% until tendon settles.",
+      "modificationPl": "Eksplozywne wybicie obciąża ścięgno rzepki. Użyj wariantu box squat (kontrolowane zatrzymanie) lub zmniejsz obciążenie do 40-50% do uspokojenia ścięgna.",
+      "alternative": "speed-box-squat"
+    },
+    {
+      "condition": "advanced_training_age_required",
+      "severity": "caution",
+      "modification": "Speed squat requires solid back squat technique and ability to brace under explosive load. Build base with 1-2 years of regular back squatting first.",
+      "modificationPl": "Speed squat wymaga solidnej techniki przysiadu i umiejętności napinania się pod eksplozywnym obciążeniem. Najpierw 1-2 lata regularnego przysiadu zwykłego.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "hypertension_uncontrolled",
+      "severity": "caution",
+      "modification": "Repeated Valsalva under explosive load spikes blood pressure aggressively. Consult physician, consider sub-Valsalva breathing and lower percentages.",
+      "modificationPl": "Powtarzana Valsalva pod eksplozywnym obciążeniem mocno podnosi ciśnienie. Skonsultuj się z lekarzem, rozważ oddychanie bez pełnej Valsalvy i niższe procenty.",
+      "alternative": "leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "8-12x2 @ 50-60% 1RM (Westside DE method) | 6-10x3 @ 55-65% 1RM | 45-60s rest between sets",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-speed-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-speed-squat/frame_0_start.png",
+      "frames/barbell-speed-squat/frame_1_early.png",
+      "frames/barbell-speed-squat/frame_2_mid.png",
+      "frames/barbell-speed-squat/frame_3_late.png",
+      "frames/barbell-speed-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-speed-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0/4 pokazuje pozycję wyjściową (sztanga high-bar na trapezach), klatka 2 potwierdza pełną głębokość (poniżej parallel) z silnie podświetlonymi czworogłowymi i pośladkami. Klatka 4 pokazuje motion blur w okolicy gryfu i biodra — typowy znak eksplozywnego wybicia (speed). Anatomia odpowiada profilowi mięśniowemu speed squat: dominują quady i pośladki, dwugłowe i prostowniki jako secondary. Wszystkie pola PL napisane od zera. Klasyfikacja force=both bo speed squat to świadomy ekscentryk (kontrolowane schodzenie) + eksplozywny koncentryk — obie fazy mają znaczenie treningowe. movement_pattern=squat, mechanic=compound, plane=sagittal, laterality=bilateral. Kategoria 'power' (nie 'strength') bo cel to RFD i prędkość gryfu, nie maksymalna siła.",
+
+  "tags": ["powerlifting", "westside_barbell", "dynamic_effort", "power_development", "rfd", "explosive", "lower_body", "barbell", "speed_work"]
+}

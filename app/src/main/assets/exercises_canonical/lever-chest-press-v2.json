@@ -1,0 +1,207 @@
+{
+  "id": "lever-chest-press-v2",
+  "name": "Lever Chest Press v2",
+  "namePl": "Wyciskanie klatki na maszynie wersja 2",
+  "aliases": ["machine chest press v2", "plate-loaded chest press v2", "lever seated chest press v2", "machine bench press seated v2"],
+  "aliasesPl": ["wyciskanie klatki na maszynie wariant 2", "wyciskanie poziome na maszynie siedząc v2", "siedzące wyciskanie klatki na maszynie wersja 2", "maszynowe wyciskanie klatki v2", "wyciskanie na siedząco na maszynie chest press v2"],
+
+  "description": "Variant 2 of the seated lever (selectorized or plate-loaded) chest press. The athlete sits on a fixed seat with the chest pad / backrest behind the upper back, grasps two VERTICAL (neutral / parallel) grip handles at chest height, and presses both handles horizontally forward along a guided machine path until the elbows reach near-full extension. The defining characteristic of this v2 is the VERTICAL HANDLE ORIENTATION (palms facing each other) instead of the more common horizontal/pronated grip — the neutral grip is significantly more shoulder-friendly because it places the humerus in a less internally-rotated position, reducing subacromial impingement risk and decreasing anterior deltoid dominance. The fixed bilateral lever arm (single locked carriage, not independent arms) provides maximum stability, making this variant excellent for heavy progressive overload and for trainees who cannot stabilize free weights. Compared to barbell bench press, the seated upright posture removes lower-back arch, eliminates spotter requirement, and isolates the pectoralis major (especially the sternal head / mid-chest) more cleanly. Compared to v1 (pronated grip): more biceps long-head involvement, less anterior delt, friendlier on the AC joint and shoulder capsule.",
+  "descriptionPl": "Wariant 2 wyciskania klatki piersiowej na maszynie dźwigniowej w pozycji siedzącej (z selektorem ciężaru lub na pinach). Ćwiczący siedzi na stałym siedzisku z poduszką oparcia za górną częścią pleców, chwyta dwa PIONOWE (neutralne / równoległe) uchwyty na wysokości klatki i wyciska je poziomo do przodu po prowadzonej ścieżce maszyny aż łokcie są niemal w pełni wyprostowane. Cechą definiującą wersji 2 jest PIONOWA ORIENTACJA UCHWYTÓW (dłonie zwrócone do siebie) zamiast bardziej powszechnego chwytu poziomego/pronowanego — chwyt neutralny jest znacznie przyjaźniejszy dla barków, ponieważ ustawia kość ramienną w pozycji mniej zrotowanej do wewnątrz, zmniejszając ryzyko zespołu cieśni podbarkowej i obniżając dominację przedniego aktonu barku. Stałe bilateralne ramię dźwigni (jeden zablokowany suport, nie ramiona niezależne) zapewnia maksymalną stabilność, dzięki czemu ten wariant świetnie nadaje się do ciężkiej progresji obciążenia oraz dla osób, które nie potrafią ustabilizować wolnych ciężarów. W porównaniu z wyciskaniem sztangą na ławce, wyprostowana pozycja siedząca eliminuje wyginanie odcinka lędźwiowego, znosi potrzebę asekuracji i czyściej izoluje mięsień piersiowy większy (zwłaszcza głowę mostkową / środek klatki). W porównaniu z wersją 1 (chwyt pronowany): większy udział długiej głowy bicepsa, mniejszy udział przedniego aktonu barku, przyjaźniejszy dla stawu AC i torebki barkowej.",
+
+  "instructions": [
+    "Adjust the seat height so the vertical handles sit at approximately mid-chest / armpit level when your arms are bent ~90°.",
+    "Sit fully back on the seat — upper back, scapulae and lower back firmly against the backrest. Feet flat on the floor (or on the foot platform if equipped).",
+    "Grasp both vertical handles with a neutral (palms-facing-each-other) grip. Wrists stacked directly over the forearm — neutral, not bent.",
+    "Retract and depress your scapulae — pin them down and back into the backrest. Lift your chest slightly.",
+    "Inhale, brace the core. Keep the head against the head rest (if any) — do NOT crane the neck forward.",
+    "Press both handles HORIZONTALLY forward in one smooth synchronous movement, extending the arms in front of the chest until the elbows are nearly locked (do not slam into hard lockout).",
+    "Optional peak contraction: pause 1 second at full extension and consciously squeeze the chest.",
+    "Return to the start position under control over 2-3 seconds, allowing the elbows to travel back to roughly chest line — do NOT let the weight stack crash or the elbows drift well behind the torso.",
+    "Keep scapulae retracted, torso vertical, hips glued to the seat throughout the entire set. Wrists remain straight — do not let them bend backward under load.",
+    "Exhale during the press (concentric), inhale during the return (eccentric)."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska tak, aby pionowe uchwyty znajdowały się mniej więcej na wysokości środka klatki / pach, gdy ramiona są zgięte pod kątem ~90°.",
+    "Usiądź głęboko na siedzisku — górna część pleców, łopatki i odcinek lędźwiowy ściśle przy oparciu. Stopy płasko na podłodze (lub na podeście, jeśli jest).",
+    "Złap oba pionowe uchwyty chwytem neutralnym (dłonie zwrócone do siebie). Nadgarstki bezpośrednio nad przedramieniem — neutralne, nie wygięte.",
+    "Ściągnij i opuść łopatki — wbij je w oparcie. Lekko unieś klatkę.",
+    "Nabierz wdech, napnij brzuch. Trzymaj głowę przy zagłówku (jeśli jest) — NIE wysuwaj szyi do przodu.",
+    "Wyciśnij oba uchwyty POZIOMO do przodu jednym płynnym synchronicznym ruchem, prostując ramiona przed klatką aż łokcie są niemal zablokowane (nie wbijaj w twardy lock-out).",
+    "Opcjonalny peak contraction: zatrzymaj się na 1 sekundę w pełnym wyproście i świadomie ściśnij klatkę.",
+    "Wróć do pozycji startowej kontrolowanie w tempie 2-3 sekundy, pozwalając łokciom dojść do linii klatki — NIE pozwalaj by stos opadł z hukiem ani by łokcie odjechały dobrze za linię tułowia.",
+    "Łopatki ściągnięte, tułów pionowo, biodra przyklejone do siedziska przez całą serię. Nadgarstki proste — nie pozwól im wyginać się w tył pod obciążeniem.",
+    "Wydech podczas wyciskania (koncentryka), wdech podczas powrotu (ekscentryka)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["pectoralis_major_clavicular", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back", "biceps_long_head"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P7",
+    "triceps": "P7",
+    "pectoralis_major_clavicular": "S5",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "upper_back": "T4",
+    "biceps_long_head": "T3",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["chest_press_machine"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["push-up", "machine-chest-press"],
+    "progression_to": ["barbell-bench-press", "dumbbell-bench-press", "smith-machine-bench-press", "incline-barbell-bench-press"],
+    "alternatives": ["machine-chest-press", "cable-seated-chest-press", "dumbbell-bench-press", "smith-machine-decline-close-grip-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height: vertical handles at mid-chest / armpit level when elbows bent ~90°",
+      "Sit fully back — upper back, scapulae, lower back against the backrest",
+      "Neutral grip — palms facing each other, wrists stacked over forearms",
+      "Scapulae retracted and depressed, chest lifted slightly",
+      "Feet flat on the floor (or foot platform), hips and knees ~90°"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska: pionowe uchwyty na wysokości środka klatki / pach gdy łokcie zgięte ~90°",
+      "Usiądź głęboko — górne plecy, łopatki, lędźwie przy oparciu",
+      "Chwyt neutralny — dłonie zwrócone do siebie, nadgarstki nad przedramieniem",
+      "Łopatki ściągnięte i opuszczone, klatka lekko uniesiona",
+      "Stopy płasko na podłodze (lub podeście), biodra i kolana ~90°"
+    ],
+    "execution_cues": [
+      "Press HORIZONTALLY forward — follow the machine's guided arc, do not fight the path",
+      "Stop short of hard lockout — protect the elbow joint",
+      "Eccentric controlled 2-3 sec — never let the stack crash",
+      "Keep scapulae GLUED to the backrest throughout — do not let them protract at lockout",
+      "Both handles move SYNCHRONOUSLY — same speed, same depth"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj POZIOMO do przodu — podążaj prowadzoną ścieżką maszyny, nie walcz z nią",
+      "Zatrzymaj się przed twardym lock-out — chroń staw łokciowy",
+      "Ekscentryka kontrolowana 2-3 sek — nigdy nie pozwól by stos opadł",
+      "Łopatki PRZYKLEJONE do oparcia przez cały ruch — nie pozwól im się rozsunąć w lock-out",
+      "Oba uchwyty poruszają się SYNCHRONICZNIE — ta sama prędkość, ta sama głębokość"
+    ],
+    "common_faults": [
+      {
+        "fault": "Scapulae protracting at lockout (rounding forward)",
+        "faultPl": "Łopatki rozsuwane w lock-out (zaokrąglanie do przodu)",
+        "cause": "Trying to gain extra range by pushing the shoulders forward at the end of the press. Transfers load from the pec major onto the AC joint and serratus, increases impingement risk and reduces chest activation.",
+        "causePl": "Próba zyskania dodatkowego zakresu poprzez wysuwanie barków do przodu na końcu wyciskania. Przenosi obciążenie z piersiowego większego na staw AC i mięsień zębaty, zwiększa ryzyko impingement i zmniejsza aktywację klatki.",
+        "cue": "Pretend the backrest has glue on it — your scapulae stay STUCK to it from start to lockout. Stop the press a hair before the elbows lock.",
+        "cuePl": "Wyobraź sobie że oparcie ma klej — łopatki zostają WBITE w nie od startu do lock-out. Zatrzymaj wyciskanie tuż przed wyprostem łokci."
+      },
+      {
+        "fault": "Elbows flaring outward (chicken wings) despite the vertical grip",
+        "faultPl": "Łokcie rozsuwane na boki (kurze skrzydełka) mimo pionowego chwytu",
+        "cause": "Habit transferred from wide-grip bench press. Defeats the purpose of the neutral grip and reintroduces the shoulder stress that this variant was designed to avoid.",
+        "causePl": "Nawyk przeniesiony z wyciskania szerokim chwytem. Niweczy sens neutralnego chwytu i przywraca obciążenie barku, którego ten wariant ma unikać.",
+        "cue": "Tuck elbows ~30-45° from torso (closer than in a horizontal-grip press). The neutral grip naturally cues a tighter elbow line — let it.",
+        "cuePl": "Schowaj łokcie ~30-45° od tułowia (bliżej niż przy chwycie poziomym). Neutralny chwyt naturalnie sugeruje węższą linię łokci — nie walcz z tym."
+      },
+      {
+        "fault": "Slamming into hard lockout / locking elbows aggressively",
+        "faultPl": "Wbijanie się w twardy lock-out / agresywne blokowanie łokci",
+        "cause": "Loss of tempo control combined with too-heavy load. Repeated hard lockouts inflame the triceps tendon, irritate the elbow joint and shift load off the chest.",
+        "causePl": "Utrata kontroli tempa w połączeniu ze zbyt dużym ciężarem. Powtarzające się twarde lock-outy zapalają ścięgno tricepsa, drażnią staw łokciowy i ściągają obciążenie z klatki.",
+        "cue": "Stop with a soft elbow — about 5° short of full extension. Keep tension on the chest, not on the joint.",
+        "cuePl": "Zatrzymuj się z miękkim łokciem — około 5° przed pełnym wyprostem. Trzymaj napięcie na klatce, nie na stawie."
+      },
+      {
+        "fault": "Letting the weight stack crash / no eccentric control",
+        "faultPl": "Pozwolenie na opadanie stosu / brak kontroli ekscentryki",
+        "cause": "Treating the negative as a rest phase. Removes the most hypertrophic portion of the rep, wastes ~50% of muscle-building stimulus, and signals the load is too heavy.",
+        "causePl": "Traktowanie negatywu jako fazy odpoczynku. Usuwa najbardziej hipertroficzną część powtórzenia, marnuje ~50% bodźca budującego mięśnie i sygnalizuje że ciężar jest zbyt duży.",
+        "cue": "Eccentric tempo 2-3 sec — listen: the stack should NOT make any clank. Owe yourself the negative.",
+        "cuePl": "Tempo ekscentryki 2-3 sek — słuchaj: stos NIE powinien wydać żadnego stuknięcia. Daj sobie negatyw."
+      },
+      {
+        "fault": "Wrists bending backward under load",
+        "faultPl": "Wyginanie nadgarstków w tył pod obciążeniem",
+        "cause": "Grip too loose or hands placed too high on the handle. Causes wrist pain and reduces force transmission from the forearm into the handle.",
+        "causePl": "Zbyt luźny chwyt lub dłonie umieszczone zbyt wysoko na uchwycie. Powoduje ból nadgarstka i zmniejsza przekazywanie siły z przedramienia na uchwyt.",
+        "cue": "Grip hard — handle in the base of the palm, wrist stacked directly over the forearm. Use wraps if needed.",
+        "cuePl": "Chwyć mocno — uchwyt w podstawie dłoni, nadgarstek bezpośrednio nad przedramieniem. Użyj wraps jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (return), brace the core, exhale during the press (concentric).",
+    "breathingPl": "Wdech podczas ekscentryki (powrót), napięcie brzucha, wydech podczas wyciskania (koncentryka)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "The neutral (vertical) grip is one of the most impingement-friendly press variants — use that to your advantage. Reduce the eccentric range so the handles do not travel behind chest line, keep elbows tucked ~30°, and skip peak contraction. Often well tolerated even when barbell bench press is contraindicated.",
+      "modificationPl": "Neutralny (pionowy) chwyt to jeden z najprzyjaźniejszych dla impingement wariantów wyciskania — wykorzystaj to. Ogranicz zakres ekscentryki tak, by uchwyty nie przechodziły za linię klatki, trzymaj łokcie schowane ~30° i pomiń peak contraction. Często dobrze tolerowane nawet gdy wyciskanie sztangą jest przeciwwskazane.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Skip heavy pressing until cleared. If you must train chest, use very light load with sub-maximal range and the vertical grip (less internal rotation), or switch to push-up progressions on the floor.",
+      "modificationPl": "Pomiń ciężkie wyciskanie do czasu zakończenia rehabilitacji. Jeśli musisz trenować klatkę, użyj bardzo lekkiego ciężaru z ograniczonym zakresem i chwytem pionowym (mniej rotacji wewnętrznej) lub przejdź na progresje pompek z podłogi.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Lower the load, stop short of lockout, avoid bringing the handles together at the top, and reduce the bottom range so the elbows do not travel behind the chest line. The neutral grip alone often resolves AC discomfort versus a pronated grip.",
+      "modificationPl": "Zmniejsz ciężar, nie wbijaj się w lock-out, unikaj zbliżania uchwytów do siebie w szczycie i zmniejsz dolny zakres tak, by łokcie nie schodziły za linię klatki. Sam chwyt neutralny często rozwiązuje dyskomfort w stawie AC w porównaniu z chwytem pronowanym.",
+      "alternative": "cable-seated-chest-press"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid hard lockouts (stop ~5° short of full extension), use lighter loads with higher reps (12-20), and keep the tempo controlled in both phases. The fixed lever path actually helps because there is no need to stabilize a swinging weight.",
+      "modificationPl": "Unikaj twardych lock-outów (zatrzymuj się ~5° przed pełnym wyprostem), używaj lżejszych ciężarów z wyższym zakresem powtórzeń (12-20) i trzymaj tempo kontrolowane w obu fazach. Stała ścieżka dźwigni faktycznie pomaga, bo nie trzeba stabilizować chwiejącego się ciężaru.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — główne zastosowanie, ciężary umiarkowane do dużych) | 4-5x6-8 (siła / progresywne przeciążenie dzięki stałej ścieżce maszyny) | 3x12-20 (volume / pump finisher na koniec dnia klatkowego)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-chest-press-0577.gif",
+    "frames_extracted": [
+      "frames/lever-chest-press-0577/frame_0_start.png",
+      "frames/lever-chest-press-0577/frame_1_early.png",
+      "frames/lever-chest-press-0577/frame_2_mid.png",
+      "frames/lever-chest-press-0577/frame_3_late.png",
+      "frames/lever-chest-press-0577/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/lever-chest-press-0577"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T10:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Ćwiczący siedzi WYPROSTOWANY na maszynie chest press (selectorized lever machine) z oparciem za górną częścią pleców. Cechą charakterystyczną tego wariantu (v2) jest PIONOWA orientacja uchwytów — chwyt neutralny, dłonie zwrócone do siebie. Frame 0/4 (pozycja startowa): pionowe uchwyty na wysokości środka klatki / pach, łokcie zgięte ~90° i schowane bliżej tułowia (efekt naturalnego pozycjonowania przez neutralny chwyt). Frame 2 (lock-out): ramiona wyprostowane POZIOMO przed klatką, ścieżka prowadzona przez maszynę, suport pojedynczy bilateralny (nie ramiona niezależne). Trajektoria horyzontalna. Wyraźnie podświetlony cały mięsień piersiowy większy (głównie głowa mostkowa / środek klatki) + przednie aktony barku + triceps. Tułów pionowy, biodra stabilne, łopatki przyklejone do oparcia. Różnica od cable-seated-chest-press: stała prowadzona ścieżka maszyny (większa stabilność, łatwiejsze ciężkie ciężary), bilateralny suport sprzężony zamiast niezależnych linek, brak constant tension w lock-out. Difficulty 3 (łatwiejsze niż cable: prowadzona ścieżka, brak skill stabilizacji, bardzo bezpieczne). Wszystkie pola PL napisane od zera. Plane = transverse.",
+
+  "tags": ["upper_body", "horizontal_push", "chest", "mid_chest", "machine", "lever", "seated", "neutral_grip", "vertical_handles", "hypertrophy_staple", "shoulder_friendly", "beginner_friendly", "fixed_path", "ac_joint_friendly"]
+}

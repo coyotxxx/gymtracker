@@ -1,0 +1,198 @@
+{
+  "id": "curl-up",
+  "name": "Curl-up (McGill curl-up)",
+  "namePl": "Curl-up (McGill curl-up)",
+  "aliases": ["mcgill curl-up", "mcgill crunch", "modified curl-up", "stabilization curl-up"],
+  "aliasesPl": ["curl-up McGilla", "crunch McGilla", "zmodyfikowany curl-up", "stabilizacyjny curl-up", "krótki crunch stabilizacyjny"],
+
+  "description": "Rehabilitation and core stabilization exercise developed by Dr. Stuart McGill. Performed lying supine with one knee bent (foot flat), the other leg straight, and the hands placed under the natural lumbar arch to preserve neutral spine. The lifter lifts only the head and shoulders a short distance (a few centimetres) off the floor while bracing the entire core — head, neck and upper back move as one rigid unit. Designed to train rectus abdominis isometrically without flexing the lumbar spine, making it one of the safest abdominal exercises for people with low back pain.",
+  "descriptionPl": "Ćwiczenie rehabilitacyjne i stabilizacyjne na brzuch opracowane przez dr. Stuarta McGilla. Wykonywane w leżeniu na plecach z jedną nogą ugiętą (stopa płasko na podłodze), drugą wyprostowaną oraz dłońmi umieszczonymi pod naturalnym łukiem lędźwiowym dla utrzymania neutralnej pozycji kręgosłupa. Ćwiczący unosi tylko głowę i barki na niewielki dystans (kilka centymetrów) nad podłogę, mocno napinając cały korpus — głowa, szyja i górne plecy poruszają się jak jedna sztywna bryła. Trenuje mięsień prosty brzucha izometrycznie, bez zginania odcinka lędźwiowego — to jedno z najbezpieczniejszych ćwiczeń brzucha dla osób z bólem dolnego odcinka pleców.",
+
+  "instructions": [
+    "Lie on your back on a mat. Bend one knee so the foot is flat on the floor; keep the other leg straight on the mat. This asymmetric setup locks the pelvis.",
+    "Slide both hands palms-down under your lower back, directly under the natural lumbar arch. The hands act as a sensor — you should feel constant light pressure throughout the rep.",
+    "Lift the chest slightly so the chin tucks gently — keep a small space under the chin. Eyes look at the ceiling. Brace the abs as if bracing for a light punch.",
+    "Lift only the head and shoulders a very short distance off the floor (about 3-5 cm). The lower back stays pressed against the hands — do NOT flex the lumbar spine. Head, neck and upper torso move together as one rigid block.",
+    "Hold the top position for 7-10 seconds while maintaining the brace and breathing normally (this is the McGill 'big three' protocol). Do not crunch higher — the ROM is intentionally tiny.",
+    "Lower slowly back to the floor with control. Rest briefly, then repeat. After completing reps on one side, switch the bent and straight leg and perform the same number on the other side."
+  ],
+  "instructionsPl": [
+    "Połóż się na plecach na macie. Ugnij jedno kolano tak, by stopa była płasko na podłodze; drugą nogę pozostaw wyprostowaną na macie. Ten asymetryczny układ blokuje miednicę.",
+    "Wsuń obie dłonie spodem do dołu pod dolne plecy, bezpośrednio pod naturalny łuk lędźwiowy. Dłonie działają jak czujnik — przez cały ruch powinieneś czuć stały, lekki nacisk.",
+    "Lekko unieś klatkę, aż broda delikatnie się schowa — zachowaj małą przestrzeń pod brodą. Wzrok skierowany w sufit. Napnij brzuch tak, jakbyś przygotowywał się na lekkie uderzenie.",
+    "Unieś tylko głowę i barki na bardzo krótki dystans nad podłogę (około 3-5 cm). Dolne plecy pozostają dociśnięte do dłoni — NIE zginaj odcinka lędźwiowego. Głowa, szyja i górny tułów poruszają się razem jak jeden sztywny blok.",
+    "Utrzymaj górną pozycję 7-10 sekund, zachowując napięcie i oddychając normalnie (protokół 'wielkiej trójki' McGilla). Nie zwijaj się wyżej — krótki zakres ruchu jest celowy.",
+    "Powoli, kontrolowanym ruchem opuść się z powrotem na podłogę. Krótko odpocznij i powtórz. Po wykonaniu powtórzeń na jednej stronie zamień ugiętą i wyprostowaną nogę i wykonaj tę samą liczbę po drugiej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_anti_extension",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques", "transverse_abdominis"],
+    "stabilizers": ["erector_spinae", "quadriceps", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P8",
+    "obliques": "S5",
+    "transverse_abdominis": "S5",
+    "erector_spinae": "T3",
+    "quadriceps": "T2",
+    "hip_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "rehabilitation",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["crunch", "dead-bug", "plank"],
+    "alternatives": ["dead-bug", "side-plank", "bird-dog", "plank"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "One knee bent, foot flat; the other leg straight on the mat",
+      "Hands palms-down under the lower back, in the lumbar arch",
+      "Feel constant light pressure of the back on the hands",
+      "Chin gently tucked — small space under the chin",
+      "Brace the core as if preparing for a light punch"
+    ],
+    "setup_cues_pl": [
+      "Jedno kolano ugięte, stopa płasko; druga noga wyprostowana na macie",
+      "Dłonie spodem do dołu pod dolnymi plecami, w łuku lędźwiowym",
+      "Czuj stały lekki nacisk pleców na dłonie",
+      "Broda lekko schowana — mała przestrzeń pod brodą",
+      "Napnij brzuch jak na lekkie uderzenie"
+    ],
+    "execution_cues": [
+      "Lift only the head and shoulders 3-5 cm — no higher",
+      "Head, neck and upper back move as one rigid block",
+      "Lumbar arch stays the same — pressure on hands does NOT change",
+      "Hold the top 7-10 seconds, breathe shallow but normally",
+      "Lower slow and controlled — don't drop the head"
+    ],
+    "execution_cues_pl": [
+      "Unoś tylko głowę i barki 3-5 cm — nie wyżej",
+      "Głowa, szyja i górne plecy poruszają się jak jeden sztywny blok",
+      "Łuk lędźwiowy bez zmian — nacisk na dłonie NIE zmienia się",
+      "Utrzymaj górę 7-10 sekund, oddychaj płytko, ale normalnie",
+      "Opuszczaj wolno i kontrolowanie — nie upuszczaj głowy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Flattening the lumbar spine into the floor",
+        "faultPl": "Spłaszczanie odcinka lędźwiowego do podłogi",
+        "cause": "Treating the curl-up like a regular crunch — flexing the lumbar spine instead of keeping it neutral",
+        "causePl": "Wykonywanie curl-up jak zwykły crunch — zginanie odcinka lędźwiowego zamiast utrzymania neutralnej pozycji",
+        "cue": "The hands under your back are a sensor — pressure must stay identical from start to top of the rep",
+        "cuePl": "Dłonie pod plecami to czujnik — nacisk musi pozostać identyczny od startu do szczytu powtórzenia"
+      },
+      {
+        "fault": "Lifting too high (full crunch motion)",
+        "faultPl": "Unoszenie się za wysoko (pełen ruch crunch)",
+        "cause": "Misunderstanding the protocol — assuming more ROM = better core work",
+        "causePl": "Niezrozumienie protokołu — założenie, że większy zakres ruchu = lepsza praca brzucha",
+        "cue": "Only the shoulder blades clear the floor by 3-5 cm. If your back rounds, you're going too high.",
+        "cuePl": "Tylko łopatki odrywają się od podłogi na 3-5 cm. Jeśli plecy się zaokrąglają — unosisz się za wysoko."
+      },
+      {
+        "fault": "Pulling the head/neck with the chin tucked too hard",
+        "faultPl": "Szarpanie głową/szyją z brodą zbyt mocno schowaną",
+        "cause": "Confusing 'gentle chin tuck' with active neck flexion",
+        "causePl": "Mylenie 'delikatnego schowania brody' z aktywnym zgięciem szyi",
+        "cue": "Imagine a small apple between chin and chest — gentle tuck, no force. Eyes to the ceiling.",
+        "cuePl": "Wyobraź sobie małe jabłko między brodą a klatką — delikatne schowanie, bez siły. Wzrok w sufit."
+      },
+      {
+        "fault": "Forgetting to switch legs between sets",
+        "faultPl": "Zapominanie zmiany nogi między seriami",
+        "cause": "Treating curl-up as a symmetric exercise — but the bent/straight leg setup is asymmetric and must be balanced",
+        "causePl": "Traktowanie curl-up jako ćwiczenia symetrycznego — układ ugięta/wyprostowana noga jest asymetryczny i musi być zbalansowany",
+        "cue": "After each set switch the bent and the straight leg. Equal reps both sides — that's part of the protocol.",
+        "cuePl": "Po każdej serii zamień ugiętą i wyprostowaną nogę. Równa liczba powtórzeń po obu stronach — to część protokołu."
+      },
+      {
+        "fault": "Holding breath during the 7-10 second isometric hold",
+        "faultPl": "Wstrzymywanie oddechu podczas 7-10 sekundowego utrzymania izometrycznego",
+        "cause": "Bracing the abs and confusing brace with Valsalva (full breath hold)",
+        "causePl": "Napinanie brzucha i mylenie napięcia z manewrem Valsalvy (całkowitym wstrzymaniem oddechu)",
+        "cue": "Brace stays on, but breathing continues — short, shallow breaths into the chest. Brace is muscular, not respiratory.",
+        "cuePl": "Napięcie pozostaje, ale oddech trwa — krótkie, płytkie oddechy do klatki. Napięcie jest mięśniowe, nie oddechowe."
+      }
+    ],
+    "breathing": "Inhale before lifting. During the 7-10 second hold maintain the abdominal brace while breathing shallow into the chest — do NOT hold your breath. Exhale slowly as you lower back down.",
+    "breathingPl": "Wdech przed uniesieniem. Podczas 7-10 sekundowego utrzymania zachowaj napięcie brzucha, oddychając płytko do klatki — NIE wstrzymuj oddechu. Powolny wydech przy opuszczaniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_cervical_strain",
+      "severity": "modify",
+      "modification": "If active neck pain, place a folded towel under the head to support cervical spine and reduce the lift even further. If pain persists, replace with dead bug.",
+      "modificationPl": "Przy aktywnym bólu szyi podłóż złożony ręcznik pod głowę dla wsparcia odcinka szyjnego i zmniejsz uniesienie jeszcze bardziej. Jeśli ból nie ustępuje — zamień na dead bug.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "acute_lumbar_pain_with_flexion_intolerance",
+      "severity": "caution",
+      "modification": "Curl-up is McGill's recommended exercise even for many low back pain cases — but if any lift triggers pain, reduce ROM to 1-2 cm or switch to anti-extension only (dead bug, bird dog).",
+      "modificationPl": "Curl-up to ćwiczenie zalecane przez McGilla nawet przy wielu przypadkach bólu dolnych pleców — ale jeśli jakiekolwiek uniesienie wywołuje ból, zmniejsz zakres do 1-2 cm lub przejdź wyłącznie na anty-ekstensję (dead bug, bird dog).",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Long isometric holds can spike blood pressure. Reduce hold to 3-5 seconds, breathe freely, monitor BP. Avoid Valsalva.",
+      "modificationPl": "Długie utrzymania izometryczne mogą podnosić ciśnienie krwi. Skróć utrzymanie do 3-5 sekund, oddychaj swobodnie, monitoruj ciśnienie. Unikaj manewru Valsalvy.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "caution",
+      "modification": "Although the lumbar spine stays neutral, rectus abdominis contraction can still increase intra-abdominal pressure on a separated linea alba. Start with transverse-abdominis-focused work first.",
+      "modificationPl": "Choć kręgosłup lędźwiowy pozostaje neutralny, skurcz mięśnia prostego brzucha nadal może zwiększać ciśnienie wewnątrzbrzuszne na rozejście kresy białej. Zacznij od ćwiczeń skupionych na mięśniu poprzecznym brzucha.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3-5 reps x 7-10s hold per side (McGill protocol) | 2x10 reps with 5s hold (general core) | descending pyramid 5/4/3/2/1 holds (advanced)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "curl-up.gif",
+    "frames_extracted": [
+      "frames/curl-up/frame_0_start.png",
+      "frames/curl-up/frame_1_early.png",
+      "frames/curl-up/frame_2_mid.png",
+      "frames/curl-up/frame_3_late.png",
+      "frames/curl-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/curl-up",
+    "yuhonas_id": "Curl-up",
+    "glowupp_id": "curl-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): klasyczna pozycja McGill curl-up — leżenie na plecach, prawe kolano ugięte (stopa płasko), lewa noga wyprostowana, dłonie wsunięte pod dolne plecy (widoczna lokalizacja pod lordosis lędźwiowej). Anatomia podświetla mięsień prosty brzucha na czerwono. Klatka 2 (mid) i 4 (end): bardzo subtelne uniesienie głowy/górnych pleców — różnica w stosunku do startu minimalna, co potwierdza krótki ROM (3-5 cm) charakterystyczny dla protokołu McGilla. Brak zginania odcinka lędźwiowego — kręgosłup pozostaje w neutralnej pozycji. Klasyfikacja: movement_pattern=core_anti_extension (utrzymanie neutralnej lordosis pod izometrycznym skurczem brzucha), mechanic=isolation (tylko rectus abdominis pracuje w sensie ruchowym, reszta stabilizuje), plane=sagittal, force=both (faza koncentryczna przy unoszeniu + izometryka w szczycie). Bilateral mimo asymetrii nóg (asymetria służy stabilizacji miednicy, nie jest jednostronnym wzorcem ruchowym). Mięsień główny: rectus_abdominis P8 (silnie aktywny izometrycznie, ale bez ekstremalnego skracania jak w pełnym crunch — stąd P8, nie P9). Secondary: obliques + transverse abdominis (S5 oba — współpracują w stabilizacji). Stabilizers: erector_spinae, quadriceps (utrzymanie wyprostowanej nogi), hip_flexors. Category=rehabilitation (klasyk McGill 'big three' obok side plank i bird dog — ćwiczenie rehabilitacyjne / posturalne, nie typowo siłowe). Difficulty=3 (proste technicznie, ale wymaga zrozumienia 'czujnika' dłoni i krótkiego ROM). Level=beginner. Nazwa PL: zostawiłem 'Curl-up (McGill curl-up)' w oryginale, bo termin jest globalnie rozpoznawalny w fizjoterapii i wprowadzanie polskiej kalki (np. 'zwijka McGilla') zaciemniłoby identyfikację. Aliasy PL opisują wariant ('zmodyfikowany curl-up', 'stabilizacyjny curl-up'). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "rehabilitation", "no_equipment", "home_workout", "mcgill_big_three", "low_back_safe", "isometric", "stabilization", "posture"]
+}

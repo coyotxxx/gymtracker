@@ -1,0 +1,201 @@
+{
+  "id": "barbell-curl",
+  "name": "Barbell Curl",
+  "namePl": "Uginanie ramion ze sztangą",
+  "aliases": ["standing barbell curl", "straight bar curl", "bb curl"],
+  "aliasesPl": ["uginanie ramion ze sztangą stojąc", "uginanie bicepsów ze sztangą", "curl ze sztangą prostą"],
+
+  "description": "Classic isolation exercise for the elbow flexors performed standing with a barbell held in a supinated (underhand) grip. The bilateral nature allows heavier loading than dumbbells and creates a strong stimulus for biceps brachii mass and strength. A staple in bodybuilding and general arm-training programs since the early 20th century.",
+  "descriptionPl": "Klasyczne ćwiczenie izolowane na zginacze stawu łokciowego wykonywane stojąc, ze sztangą trzymaną nachwytem dolnym (podchwyt). Praca obustronna pozwala na większe obciążenie niż w wariancie z hantlami i daje mocny bodziec do rozbudowy masy i siły mięśnia dwugłowego ramienia. Podstawowe ćwiczenie na ramiona w kulturystyce i ogólnym treningu siłowym od początku XX wieku.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grip the barbell with a supinated (palms up) grip slightly wider than shoulder-width.",
+    "Let the bar hang at arms' length in front of your thighs. Pin your elbows to your sides — they should stay there for the entire set.",
+    "Brace your core, lift your chest, and keep your shoulders pulled back and down.",
+    "Curl the bar upward by flexing at the elbows only. Exhale on the way up. Keep the upper arms vertical and stationary.",
+    "Continue until the bar reaches the front of your shoulders and the biceps are fully contracted. Squeeze hard for a brief pause.",
+    "Lower the bar under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "Avoid swinging the torso or using hip momentum. Each rep starts from a dead stop with arms fully extended."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap sztangę nachwytem dolnym (dłonie skierowane w górę) nieco szerzej niż na szerokość barków.",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przed udami. Przyklej łokcie do boków tułowia — mają tam pozostać przez całą serię.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół.",
+    "Uginaj ramiona w łokciach do góry — pracują wyłącznie przedramiona. Wydychaj w fazie koncentrycznej. Ramiona ponad łokciem mają pozostać pionowe i nieruchome.",
+    "Kontynuuj ruch aż sztanga dotrze na wysokość przednich aktonów barków i biceps będzie w pełnym skurczu. Mocno napnij na chwilę w górnej pozycji.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania.",
+    "Unikaj bujania tułowia i pomagania biodrami. Każde powtórzenie zaczynaj z zatrzymanej pozycji z w pełni wyprostowanymi ramionami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["ez-bar-curl", "preacher-curl", "incline-dumbbell-curl", "spider-curl", "barbell-drag-curl"],
+    "alternatives": ["dumbbell-curl", "ez-bar-curl", "cable-curl", "hammer-curl", "preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Supinated grip slightly wider than shoulders",
+      "Elbows pinned to your sides",
+      "Chest up, shoulders back and down",
+      "Brace core and squeeze glutes — no swinging"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Chwyt nachwytem dolnym nieco szerzej niż barki",
+      "Łokcie przyklejone do boków",
+      "Klatka w górze, barki ściągnięte w tył i w dół",
+      "Napnij brzuch i pośladki — żadnego bujania"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay still",
+      "Squeeze the biceps hard at the top",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Keep wrists neutral, do not curl them",
+      "Full lockout at the bottom of each rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Mocno spinaj biceps w górnej pozycji",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Nadgarstki neutralne — nie zginaj ich",
+      "Pełny wyprost łokci na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging the torso (kipping / cheat reps)",
+        "faultPl": "Bujanie tułowia (oszukiwanie biodrami)",
+        "cause": "Load too heavy, ego lifting, or trying to grind out reps after technical failure",
+        "causePl": "Zbyt duży ciężar, ego, lub forsowanie powtórzeń po technicznym wyczerpaniu",
+        "cue": "Lower the weight. Pin your back against a wall to force strict reps.",
+        "cuePl": "Zmniejsz ciężar. Oprzyj plecy o ścianę aby wymusić ścisłą technikę."
+      },
+      {
+        "fault": "Elbows drift forward at the top",
+        "faultPl": "Łokcie wędrują do przodu w górnej pozycji",
+        "cause": "Attempting to lift the bar higher than full biceps contraction allows, recruiting anterior delts",
+        "causePl": "Próba uniesienia sztangi wyżej niż pozwala na to pełny skurcz bicepsa, włączanie przednich aktonów barków",
+        "cue": "Stop the curl when forearms reach vertical. Keep elbows directly under shoulders.",
+        "cuePl": "Zakończ uginanie gdy przedramiona dojdą do pionu. Łokcie dokładnie pod barkami."
+      },
+      {
+        "fault": "Partial range of motion (cutting off the bottom)",
+        "faultPl": "Niepełny zakres ruchu (skracanie dolnej fazy)",
+        "cause": "Ego lifting, weak stretched-position strength, or fear of joint strain",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub strach przed obciążeniem stawu",
+        "cue": "Lower until elbows are fully extended every rep. Reduce weight if needed.",
+        "cuePl": "Opuszczaj aż łokcie będą w pełni wyprostowane przy każdym powtórzeniu. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Wrist hyperextension under load",
+        "faultPl": "Przeprostowanie nadgarstków pod obciążeniem",
+        "cause": "Weak wrist flexors, grip too wide for individual anatomy, or fatigued forearms",
+        "causePl": "Słabe zginacze nadgarstka, chwyt za szeroki dla indywidualnej anatomii, lub zmęczone przedramiona",
+        "cue": "Keep wrists straight in line with forearms. Try EZ-bar if straight bar bothers your wrists.",
+        "cuePl": "Trzymaj nadgarstki proste w linii z przedramieniem. Spróbuj sztangi łamanej jeśli prosta sztanga drażni nadgarstki."
+      },
+      {
+        "fault": "Leaning back at the top of the rep",
+        "faultPl": "Odchylanie się do tyłu w górnej pozycji",
+        "cause": "Compensating for biceps fatigue using lumbar extension, or load too heavy",
+        "causePl": "Kompensacja zmęczenia bicepsów wyprostem lędźwiowym, lub zbyt duży ciężar",
+        "cue": "Stay vertical — your ears should stay over your hips the entire set.",
+        "cuePl": "Pozostań pionowo — uszy nad biodrami przez całą serię."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light brace throughout to protect the lower back.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby chronić odcinek lędźwiowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Switch to EZ-bar to reduce supination stress. Reduce volume, use lighter loads with higher reps (12-15), avoid heavy eccentrics.",
+      "modificationPl": "Przejdź na sztangę łamaną aby zmniejszyć stres supinacyjny. Zmniejsz objętość, używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15), unikaj ciężkich faz negatywnych.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Straight bar provokes pronator/flexor tendons. Use EZ-bar or hammer-grip variation. Reduce intensity until pain-free.",
+      "modificationPl": "Sztanga prosta drażni przyczepy mięśni nawracającego i zginaczy. Użyj sztangi łamanej lub wariantu młotkowego. Zmniejsz intensywność do zakresu bez bólu.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locks the wrists in full supination which aggravates ulnar-side pain. Use EZ-bar (angled grip) or dumbbells (free supination).",
+      "modificationPl": "Sztanga prosta blokuje nadgarstki w pełnej supinacji, co drażni stronę łokciową. Użyj sztangi łamanej (kąt chwytu) lub hantli (swobodna supinacja).",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing. Perform seated or use preacher bench to remove spinal loading.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia lędźwiowego. Wykonuj siedząc lub używaj ławki modlitewnika aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x6-8 (strength) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-curl/frame_0_start.png",
+      "frames/barbell-curl/frame_1_early.png",
+      "frames/barbell-curl/frame_2_mid.png",
+      "frames/barbell-curl/frame_3_late.png",
+      "frames/barbell-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/barbell-curl",
+    "yuhonas_id": "Barbell_Curl",
+    "glowupp_id": "barbell_curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pełny wyprost ramion, sztanga przed udami, chwyt podchwytem na szerokość barków, biceps i przedramiona podświetlone na czerwono. Frame 2: pełny skurcz, sztanga na wysokości przednich aktonów barków, łokcie pozostają przy bokach tułowia, ramię ponad łokciem pionowo. Frame 4: powrót do pełnego wyprostu (z widocznym 'ghostem' fazy szczytowej powyżej). Tułów stoi nieruchomo przez cały ruch — modelowe wykonanie bez kipping. Ćwiczenie jednoznacznie zidentyfikowane jako Barbell Curl. Yuhonas i glowupp zgodne. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "barbell", "upper_body", "classic"]
+}

@@ -1,0 +1,208 @@
+{
+  "id": "box-jump-down-with-one-leg-stabilization",
+  "name": "Box Jump Down with One-Leg Stabilization",
+  "namePl": "Zeskok ze skrzyni z lądowaniem na jednej nodze",
+  "aliases": ["depth drop to single-leg landing", "box drop one-leg stick", "single-leg depth landing", "box step-off single-leg stabilization", "one-leg drop landing"],
+  "aliasesPl": ["zeskok ze skrzyni na jedną nogę", "depth drop na jednej nodze", "lądowanie jednonóż ze skrzyni", "zeskok unilateralny", "drop landing jednonóż"],
+
+  "description": "Advanced plyometric exercise emphasizing eccentric force absorption and single-leg landing mechanics. Athlete stands on a low plyo box, steps or drops off the edge, and lands on ONE leg with controlled stabilization — knee softly bent, hip absorbing, foot quiet. Unlike a depth jump, there is no rebound — the focus is purely the eccentric/landing phase. Builds reactive strength, single-leg stability, deceleration capacity and knee-control patterns essential for sport (cutting, landing from jumps, change of direction). The unilateral landing creates ~2x bodyweight impact on the working leg, demanding strong quadriceps eccentrically and reflexive glute/core stabilization.",
+  "descriptionPl": "Zaawansowane ćwiczenie plyometryczne kładące nacisk na absorpcję sił ekscentrycznych i mechanikę lądowania na jednej nodze. Trenujący stoi na niskiej skrzyni plyometrycznej, schodzi lub zeskakuje z krawędzi i ląduje na JEDNEJ nodze z kontrolowaną stabilizacją — kolano lekko ugięte, biodro amortyzuje, stopa cicha. W przeciwieństwie do depth jump nie ma odbicia — skupienie jest wyłącznie na fazie ekscentrycznej/lądowaniu. Buduje siłę reaktywną, stabilność jednostronną, zdolność hamowania i wzorce kontroli kolana niezbędne w sporcie (zmiana kierunku, lądowanie ze skoków, cięcia). Lądowanie unilateralne generuje ~2x masy ciała uderzenia na pracującej nodze, wymagając mocnych czworogłowych ekscentrycznie oraz odruchowej stabilizacji pośladków i brzucha.",
+
+  "instructions": [
+    "Set up a low plyo box or stable platform (15-30 cm for beginners, 30-45 cm intermediate, 45-60 cm advanced). Stand on top with feet hip-width apart.",
+    "Position toes near the edge. Choose the landing leg in advance — alternate between sets.",
+    "Set a tall posture: chest up, eyes forward, core braced, arms ready to swing for balance.",
+    "Step OFF the box (do not jump up first) — let one foot leave the edge and fall under gravity. Lead with the non-landing leg lifting back.",
+    "Drop straight down — vertical descent only. Do not push off horizontally.",
+    "Land on the BALL of the foot first of the chosen leg, then roll through to mid-foot. Knee bends to absorb, hip pushes back slightly.",
+    "STICK the landing — hold the single-leg position for 1-2 seconds with knee tracking over toes, opposite leg slightly bent for counterbalance, arms forward or out for balance.",
+    "Verify alignment: ankle-knee-hip stacked, torso vertical, no knee valgus, foot quiet (no slap).",
+    "Stand up calmly, step back onto the box and reset. Do NOT rebound or jump up — this is a pure landing drill.",
+    "Alternate landing leg every rep or perform all reps on one leg then switch."
+  ],
+  "instructionsPl": [
+    "Ustaw niską skrzynię plyometryczną lub stabilną platformę (15-30 cm dla początkujących, 30-45 cm średniozaawansowani, 45-60 cm zaawansowani). Stań na górze ze stopami na szerokość bioder.",
+    "Ustaw palce stóp blisko krawędzi. Wybierz nogę lądującą zawczasu — zmieniaj między seriami.",
+    "Przyjmij wysoką postawę: klatka w górze, wzrok przed siebie, brzuch napięty, ręce gotowe do zamachu dla równowagi.",
+    "Zejdź ze skrzyni (NIE wyskakuj najpierw w górę) — pozwól jednej stopie opuścić krawędź i opaść pod wpływem grawitacji. Druga noga (nielądująca) unosi się do tyłu.",
+    "Opadaj prosto w dół — wyłącznie zejście pionowe. Nie odpychaj się do przodu.",
+    "Ląduj NAJPIERW na śródstopiu wybranej nogi, potem przetocz na całą stopę. Kolano się ugina absorbując, biodro lekko cofa.",
+    "ZATRZYMAJ lądowanie — utrzymaj pozycję jednonóż przez 1-2 sekundy z kolanem w linii z palcami, druga noga lekko zgięta dla balansu, ręce z przodu lub w bok dla równowagi.",
+    "Sprawdź ustawienie: kostka-kolano-biodro w jednej linii, tułów pionowo, brak koślawości kolana, stopa cicha (bez klaśnięcia).",
+    "Wstań spokojnie, wejdź z powrotem na skrzynię i zresetuj. NIE odbijaj się ani nie wyskakuj — to czysty drill lądowania.",
+    "Zmieniaj nogę lądującą co powtórzenie lub wykonaj wszystkie powtórzenia na jednej nodze, potem zmień."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "calves", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "tibialis_anterior", "peroneals", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S7",
+    "calves": "S7",
+    "adductors": "S6",
+    "gluteus_medius": "S8",
+    "core": "S7",
+    "tibialis_anterior": "T5",
+    "peroneals": "T5",
+    "erector_spinae": "T4"
+  },
+
+  "equipment": {
+    "required": ["plyo_box"],
+    "optional": ["athletic_shoes", "soft_landing_mat", "step_platform"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["bodyweight-squat", "single-leg-romanian-deadlift", "split-squat", "box-step-down", "two-leg-depth-drop", "single-leg-balance"],
+    "progression_to": ["single-leg-depth-jump", "single-leg-box-jump", "skater-bound", "drop-jump-to-sprint", "single-leg-broad-jump"],
+    "alternatives": ["two-leg-box-jump-down", "step-down-with-pause", "single-leg-romanian-deadlift", "skater-jump"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Box height matches your level — start LOW (15-30 cm) and only progress when landings are silent and stable",
+      "Toes near the edge, weight evenly on both feet before the drop",
+      "Decide landing leg BEFORE you step — no mid-air decisions",
+      "Tall posture: crown of head reaching up, ribs stacked over hips",
+      "Arms relaxed, ready to swing forward for counterbalance during landing"
+    ],
+    "setup_cues_pl": [
+      "Wysokość skrzyni dopasowana do poziomu — zacznij NISKO (15-30 cm) i podnoś dopiero gdy lądowania są ciche i stabilne",
+      "Palce blisko krawędzi, ciężar równomiernie na obu stopach przed zejściem",
+      "Wybierz nogę lądującą PRZED zejściem — żadnych decyzji w powietrzu",
+      "Wysoka postawa: czubek głowy sięga w górę, żebra ustawione nad biodrami",
+      "Ręce rozluźnione, gotowe do ruchu w przód dla balansu podczas lądowania"
+    ],
+    "execution_cues": [
+      "STEP off, don't jump off — gravity does the work, you control the descent",
+      "Ball of foot lands FIRST — then ankle, knee, hip absorb in sequence",
+      "STICK the landing — freeze for 2 seconds. If you wobble, the height is too high",
+      "Knee tracks OVER the second toe — never lets it cave inward",
+      "Hip pushes BACK as knee bends — this is hip-dominant absorption, not knee-dominant"
+    ],
+    "execution_cues_pl": [
+      "ZEJDŹ ze skrzyni, nie wyskakuj — grawitacja robi robotę, ty kontrolujesz zejście",
+      "Śródstopie ląduje NAJPIERW — potem kostka, kolano, biodro amortyzują sekwencyjnie",
+      "ZATRZYMAJ lądowanie — zamarzaj na 2 sekundy. Jeśli się chwiejesz, skrzynia za wysoka",
+      "Kolano w linii z DRUGIM PALCEM stopy — nigdy nie pozwól mu się zapaść do środka",
+      "Biodro COFA się gdy kolano się ugina — to absorpcja biodro-dominująca, nie kolano-dominująca"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee caves inward on landing (dynamic valgus)",
+        "faultPl": "Kolano zapada się do środka przy lądowaniu (dynamiczna koślawość)",
+        "cause": "Weak gluteus medius, poor frontal-plane control, box too high for current ability — major ACL injury risk pattern.",
+        "causePl": "Słaby pośladkowy średni, słaba kontrola w płaszczyźnie czołowej, skrzynia za wysoka do obecnego poziomu — wzorzec wysokiego ryzyka kontuzji ACL.",
+        "cue": "Knee over second toe on every rep. If it caves once, lower the box. This is non-negotiable — knee health depends on it.",
+        "cuePl": "Kolano w linii z drugim palcem przy każdym powtórzeniu. Jeśli zapadnie się raz, obniż skrzynię. To nie podlega negocjacji — zdrowie kolana od tego zależy."
+      },
+      {
+        "fault": "Loud, flat-footed slap on landing",
+        "faultPl": "Głośne, płaskie klaśnięcie stopą przy lądowaniu",
+        "cause": "No eccentric control through ankle/calf, landing heel-first, lack of reactive strength.",
+        "causePl": "Brak kontroli ekscentrycznej w kostce i łydce, lądowanie najpierw na pięcie, brak siły reaktywnej.",
+        "cue": "Land on the ball of the foot first — like a ninja. If you can hear it from across the gym, you're doing it wrong.",
+        "cuePl": "Ląduj najpierw na śródstopiu — jak ninja. Jeśli słychać cię z drugiego końca siłowni, robisz źle."
+      },
+      {
+        "fault": "Torso pitches forward, hands reaching for the floor",
+        "faultPl": "Tułów pochyla się do przodu, ręce sięgają do podłogi",
+        "cause": "Weak posterior chain absorption, knee-dominant landing instead of hip-dominant, fear/anticipation of impact.",
+        "causePl": "Słaba absorpcja tylnego łańcucha, lądowanie kolano-dominujące zamiast biodro-dominującego, strach/antycypacja uderzenia.",
+        "cue": "Hips back FIRST, then knee bends. Chest stays up — imagine balancing a book on your sternum.",
+        "cuePl": "Biodro NAJPIERW do tyłu, potem zgięcie kolana. Klatka pozostaje w górze — wyobraź sobie książkę balansującą na mostku."
+      },
+      {
+        "fault": "Hopping or shuffling after landing (no stick)",
+        "faultPl": "Podskakiwanie lub szuranie po lądowaniu (brak zatrzymania)",
+        "cause": "Insufficient single-leg strength/stability for the box height, momentum not fully absorbed, weak ankle stabilizers.",
+        "causePl": "Niewystarczająca siła i stabilność jednonóż dla danej wysokości skrzyni, niedostatecznie zaabsorbowany impuls, słabe stabilizatory kostki.",
+        "cue": "Hold the landing for 2 full seconds. If you can't, the box is too high — drop down 10 cm and rebuild.",
+        "cuePl": "Trzymaj lądowanie pełne 2 sekundy. Jeśli nie potrafisz, skrzynia za wysoka — obniż 10 cm i odbuduj."
+      },
+      {
+        "fault": "Jumping UP off the box instead of stepping off",
+        "faultPl": "Wyskakiwanie W GÓRĘ ze skrzyni zamiast zejścia",
+        "cause": "Misunderstanding of the drill — drop landing trains pure eccentric absorption, not concentric power.",
+        "causePl": "Niezrozumienie ćwiczenia — drop landing trenuje czysto absorpcję ekscentryczną, nie moc koncentryczną.",
+        "cue": "Step OFF — let gravity drop you. We are training BRAKES today, not the engine.",
+        "cuePl": "ZEJDŹ — pozwól grawitacji cię opuścić. Dziś trenujemy HAMULCE, nie silnik."
+      }
+    ],
+    "breathing": "Inhale at the top before stepping off, exhale sharply on impact to brace the core and stabilize the spine. Hold the breath through the 2-second stick if needed for bracing, then reset breath before next rep. Never breathe down — strong exhale on landing helps absorb force.",
+    "breathingPl": "Wdech na górze przed zejściem, ostry wydech przy uderzeniu by napiąć brzuch i ustabilizować kręgosłup. Możesz wstrzymać oddech podczas 2-sekundowego zatrzymania jeśli potrzebne dla napięcia, potem zresetuj oddech przed kolejnym powtórzeniem. Nigdy nie oddychaj w trakcie zejścia — mocny wydech przy lądowaniu pomaga absorbować siłę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acl_reconstruction_under_9_months_post_op",
+      "severity": "avoid",
+      "modification": "Single-leg landings produce peak loads >2x bodyweight on the ACL graft. Wait for clearance from surgeon/physio (typically 9-12 months post-op) and quad strength ≥90% of contralateral side.",
+      "modificationPl": "Lądowania jednonóż generują obciążenia >2x masy ciała na przeszczepie ACL. Czekaj na zgodę chirurga/fizjoterapeuty (zwykle 9-12 miesięcy po operacji) i siłę czworogłowych ≥90% nogi przeciwnej.",
+      "alternative": "step-down-with-pause"
+    },
+    {
+      "condition": "patellofemoral_pain_or_patellar_tendinopathy",
+      "severity": "avoid",
+      "modification": "High eccentric loading aggravates patellar tendon and PFJ. Rebuild with isometric quad work, slow eccentric step-downs and low-load tempo squats before reintroducing plyometrics.",
+      "modificationPl": "Wysokie obciążenia ekscentryczne nasilają zapalenie ścięgna rzepki i ból rzepkowo-udowy. Odbuduj izometrycznym treningiem czworogłowych, wolnymi ekscentrycznymi step-down i tempowymi przysiadami z niskim obciążeniem przed powrotem do plyometrii.",
+      "alternative": "split-squat"
+    },
+    {
+      "condition": "ankle_instability_or_recent_sprain",
+      "severity": "avoid",
+      "modification": "Single-leg landings demand intact ankle proprioception. Risk of re-spraining is very high. Complete ankle rehab (balance board, single-leg stance progressions) first.",
+      "modificationPl": "Lądowania jednonóż wymagają zachowanej propriocepcji kostki. Ryzyko ponownego skręcenia jest bardzo wysokie. Najpierw ukończ rehabilitację kostki (deska balansująca, progresje stania jednonóż).",
+      "alternative": "single-leg-balance"
+    },
+    {
+      "condition": "lower_back_disc_pathology_acute",
+      "severity": "avoid",
+      "modification": "Impact transmits axial loads to the spine. Avoid until cleared by physio and pain-free in daily activities. Substitute with controlled step-downs.",
+      "modificationPl": "Uderzenie przenosi obciążenia osiowe do kręgosłupa. Unikaj do czasu zgody fizjoterapeuty i braku bólu w czynnościach dnia codziennego. Zastąp kontrolowanymi step-down.",
+      "alternative": "step-down-with-pause"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x4-6 reps per leg (skill/landing mechanics) | 4-5x3-5 reps per leg with 60-90 sec rest (advanced reactive strength) | 2-3x6-8 reps alternating (warm-up before sport) | Always perform fresh — never under fatigue",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "box-jump-down-with-one-leg-stabilization.gif",
+    "frames_extracted": [
+      "frames/box-jump-down-with-one-leg-stabilization/frame_0_start.png",
+      "frames/box-jump-down-with-one-leg-stabilization/frame_1_early.png",
+      "frames/box-jump-down-with-one-leg-stabilization/frame_2_mid.png",
+      "frames/box-jump-down-with-one-leg-stabilization/frame_3_late.png",
+      "frames/box-jump-down-with-one-leg-stabilization/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/box-jump-down-with-one-leg-stabilization"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzalem 5 klatek kluczowych z GIFa jahel. Atleta stoi na niskiej lawce/skrzyni (klatki 0 i 4 - pozycja startowa/koncowa na skrzyni), zeskakuje na boku skrzyni i laduje na JEDNEJ nodze obok skrzyni (klatka 2 - lqdowanie z wyrazna fleksja kolana lqdujqcej nogi, druga noga zgieta i uniesiona). Klatki 1 i 3 to fazy przejsciowe. Wyraznie podswietlone: czworoglowe lqdujqcej nogi (P10 ekscentryk - absorpcja gigantycznych sil), pos ladki (P8 - stabilizacja biodra), lydki (S7 - kontrola kostki przy zeskoku). Pos ladkowy sredni (S8) krytyczny dla zapobiegania koslawosci kolana przy unilateralnym lqdowaniu. Brak obciazenia zewnetrznego (bodyweight + plyo_box). PL nazwa 'zeskok ze skrzyni z lqdowaniem na jednej nodze' - standard polskiej terminologii sport/PT. Jahel kategoryzuje pod calves ale to mylace - to dominujqco quadriceps-eccentric drill, calves S7 nie P. Trudnosc 8 (advanced) - wymaga ACL-safe mechaniki, prereq single-leg balance i step-down. NIE depth jump - brak odbicia, czysty drop landing dla siiy reaktywnej i hamowania. Wszystkie pola PL pisane od zera.",
+
+  "tags": ["unilateral", "lower_body", "plyometric", "bodyweight", "eccentric", "landing_mechanics", "reactive_strength", "single_leg", "high_impact", "advanced", "compound", "athletic_performance"]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "cable-pull-through-with-rope",
+  "name": "Cable Pull-Through (Rope)",
+  "namePl": "Pull-through na wyciągu z liną",
+  "aliases": ["cable pull through", "rope pull-through", "cable hip hinge", "pull-through"],
+  "aliasesPl": ["pull-through z liną", "pull through na wyciągu", "hip hinge na wyciągu", "przeciąganie liny między nogami"],
+
+  "description": "A hip-hinge exercise performed with a cable machine and a rope attachment. You stand facing AWAY from the low pulley, with the rope passed between your legs, and perform a hinge — letting the cable pull your hips back, then driving them forward to stand tall and finish with a strong glute squeeze. The cable provides constant horizontal tension that the glutes have to fight against, which is exactly the direction of hip extension force. Because the resistance pulls the load between the legs (not loaded on the spine), it is one of the safest hip-hinge variations and a perfect teaching tool for the RDL/deadlift pattern. Excellent for glute development, hinge re-education, and low-back-friendly posterior chain work.",
+  "descriptionPl": "Ćwiczenie hip hinge wykonywane na wyciągu dolnym z liną (rope). Stoisz TYŁEM do wyciągu, lina przeprowadzona między nogami, wykonujesz hinge — pozwalasz aby kabel cofnął ci biodra do tyłu, a następnie wypychasz biodra do przodu, aż staniesz prosto i mocno ściśniesz pośladki na końcu. Kabel daje stały poziomy opór, z którym pośladki muszą walczyć — a to dokładnie kierunek siły wyprostu biodra. Ponieważ obciążenie ciągnie między nogami (a nie spoczywa na kręgosłupie), jest to jedna z najbezpieczniejszych odmian hip hinge i idealne narzędzie do nauki wzorca RDL/deadliftu. Świetne na rozwój pośladków, naukę hingowania i bezpieczną pracę tylnego łańcucha przy problemach z lędźwiami.",
+
+  "instructions": [
+    "Set the cable to the LOWEST pulley setting. Attach a rope (the standard tricep rope works well).",
+    "Stand facing AWAY from the machine with the rope between your legs. Grip the ends of the rope with both hands, palms facing each other.",
+    "Walk forward 2-3 steps until the cable is under tension and your arms hang straight between your legs in front of your crotch. Feet hip-to-shoulder-width apart.",
+    "Set your stance: feet flat, knees only slightly bent (~10-20°), chest up, neutral spine, lats engaged. This is the START — top, standing tall.",
+    "Inhale, brace the core. Begin the descent by pushing your hips BACKWARD against the cable pull — knees stay in the same slight bend.",
+    "Let the cable pull your hands and hips back. Your torso tips forward, the rope slides between your legs, the cable handles move toward (or slightly past) the crotch and between the thighs.",
+    "Lower until you feel a strong stretch in the hamstrings and glutes — typically when the torso is around 30-45° from vertical. DO NOT round the lower back.",
+    "Reverse the movement: drive the hips FORWARD against the cable, stand tall. Squeeze the glutes HARD at the top — finish position is upright, hips fully extended, NO lean-back.",
+    "Exhale at the top. Reset breath and repeat. Keep the arms passive — they only hold the rope, the work is done by the hips and glutes."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg na NAJNIŻSZEJ pozycji bloczka. Przypnij linę (standardowa lina do tricepsów działa świetnie).",
+    "Stań TYŁEM do maszyny, z liną przeprowadzoną między nogami. Chwyć końce liny obiema rękami, dłonie zwrócone do siebie.",
+    "Zrób 2-3 kroki do przodu, aż kabel napnie się a ramiona zwisają prosto między nogami z przodu krocza. Stopy na szerokość bioder do barków.",
+    "Ustaw stójkę: stopy płasko, kolana tylko lekko ugięte (~10-20°), klatka w górze, neutralny kręgosłup, najszersze napięte. To jest START — pozycja stojąca prosto.",
+    "Wdech, napnij brzuch. Zacznij schodzenie wypychając biodra DO TYŁU przeciwko ciągowi kabla — kolana zostają w tej samej, lekko ugiętej pozycji.",
+    "Pozwól aby kabel pociągnął ci ręce i biodra do tyłu. Tułów pochyla się do przodu, lina przesuwa się między nogami, uchwyty liny dochodzą do okolicy krocza (lub lekko poza nim, między udami).",
+    "Schodź aż poczujesz mocny rozciąg w dwugłowych ud i pośladkach — zazwyczaj gdy tułów jest pochylony około 30-45° od pionu. NIE zaokrąglaj lędźwi.",
+    "Wróć ruchem: wepchnij biodra DO PRZODU przeciwko kablowi, stań prosto. MOCNO ściśnij pośladki na górze — pozycja końcowa to wyprost, pełne wyprostowanie bioder, BEZ odchylania się do tyłu.",
+    "Wydech na górze. Zresetuj oddech i powtórz. Ręce trzymaj pasywnie — one tylko trzymają linę, pracę robią biodra i pośladki."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings"],
+    "secondary": ["erector_spinae", "adductors"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "latissimus_dorsi", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "hamstrings": "P8",
+    "erector_spinae": "S5",
+    "adductors": "S5",
+    "core": "S6",
+    "latissimus_dorsi": "S3",
+    "forearms": "S4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope"],
+    "optional": ["flat_shoes", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["hip-hinge-dowel-drill", "glute-bridge", "bodyweight-hip-hinge"],
+    "progression_to": ["barbell-romanian-deadlift", "kettlebell-rdl", "dumbbell-rdl", "single-leg-cable-pull-through", "banded-pull-through"],
+    "alternatives": ["banded-pull-through", "kettlebell-swing", "barbell-hip-thrust", "dumbbell-rdl", "kettlebell-rdl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "LOWEST pulley setting, rope attachment, stand FACING AWAY",
+      "Rope between your legs, walk forward 2-3 steps until tension is on",
+      "Feet hip-to-shoulder-width, knees softly bent (~10-20°)",
+      "Chest up, neutral spine, lats engaged",
+      "Arms passive — just holding the rope, no pulling with arms"
+    ],
+    "setup_cues_pl": [
+      "NAJNIŻSZA pozycja bloczka, lina, stań TYŁEM do maszyny",
+      "Lina między nogami, 2-3 kroki do przodu aż kabel napnie się",
+      "Stopy na szerokość bioder do barków, kolana miękko ugięte (~10-20°)",
+      "Klatka w górze, neutralny kręgosłup, najszersze napięte",
+      "Ręce pasywne — tylko trzymają linę, bez ciągnięcia ramionami"
+    ],
+    "execution_cues": [
+      "Hips BACK against the cable — push your butt to the wall behind you",
+      "Knees stay in the SAME bend — do not bend them more, do not straighten",
+      "Stop the descent when you feel a strong hamstring/glute stretch — do not round the back",
+      "Drive hips FORWARD to stand — squeeze the glutes hard at the top",
+      "Stand TALL at the lockout — no leaning back, no hyperextending the spine"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU przeciwko kablowi — wypchnij pośladki do ściany za tobą",
+      "Kolana zostają w TEJ SAMEJ ugiętej pozycji — nie zginaj bardziej, nie prostuj",
+      "Zatrzymaj schodzenie gdy poczujesz mocny rozciąg dwugłowych/pośladków — nie zaokrąglaj pleców",
+      "Wepchnij biodra DO PRZODU by stanąć — mocno ściśnij pośladki na górze",
+      "Stań WYSOKO na końcu ruchu — bez odchylania się do tyłu, bez przeprostu kręgosłupa"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with the arms instead of hinging at the hips",
+        "faultPl": "Ciągnięcie ramionami zamiast hingowania w biodrach",
+        "cause": "Confusing pull-through with a row, weak hip drive, arms tense",
+        "causePl": "Mylenie pull-through z wiosłowaniem, słaby napęd biodrami, napięte ramiona",
+        "cue": "Arms are HOOKS — they just hold the rope. The hips do the work. Let the cable hang straight, don't curl it up.",
+        "cuePl": "Ręce to HAKI — tylko trzymają linę. Pracę robią biodra. Pozwól lince zwisać prosto, nie podciągaj jej."
+      },
+      {
+        "fault": "Squatting instead of hinging — too much knee bend",
+        "faultPl": "Przysiad zamiast hinge — za duże zgięcie kolan",
+        "cause": "Misunderstanding of hip hinge pattern, weak posterior chain, quad-dominant movement habits",
+        "causePl": "Niezrozumienie wzorca hip hinge, słaby tylny łańcuch, nawyk ruchu zdominowany przez czworogłowe",
+        "cue": "Knees STAY soft and quiet — only the hips move. Hips travel BACKWARD, not down. Imagine closing a car door with your butt.",
+        "cuePl": "Kolana POZOSTAJĄ miękkie i nieruchome — tylko biodra się ruszają. Biodra cofają się DO TYŁU, nie w dół. Wyobraź sobie że zamykasz drzwi auta pośladkami."
+      },
+      {
+        "fault": "Rounded lower back at the bottom",
+        "faultPl": "Zaokrąglone plecy lędźwiowe na dole",
+        "cause": "Going too low for hamstring flexibility, weak bracing, ego load, poor mobility",
+        "causePl": "Schodzenie za nisko jak na mobilność hamstringów, słabe napięcie brzucha, ego, słaba mobilność",
+        "cue": "Stop when you feel the stretch — do not chase depth. Brace harder. Reduce range until form is bulletproof.",
+        "cuePl": "Zatrzymaj się gdy poczujesz rozciąg — nie goń głębokości. Napnij brzuch mocniej. Zmniejsz zakres aż technika będzie idealna."
+      },
+      {
+        "fault": "Hyperextending the lower back at lockout (leaning back)",
+        "faultPl": "Przeprost lędźwi w pozycji końcowej (odchylanie się do tyłu)",
+        "cause": "Trying to finish with the spine instead of the hips, weak glutes, no core control",
+        "causePl": "Próba kończenia ruchu kręgosłupem zamiast biodrami, słabe pośladki, brak kontroli brzucha",
+        "cue": "Finish position is TALL and neutral — glutes squeezed, ribs down, pelvis neutral. Stop at vertical, do not pass it.",
+        "cuePl": "Pozycja końcowa to WYSOKA i neutralna — pośladki ściśnięte, żebra w dół, miednica neutralna. Zatrzymaj się w pionie, nie przekraczaj go."
+      },
+      {
+        "fault": "Stance too narrow — knees can't pass outside the elbows on descent",
+        "faultPl": "Za wąska stójka — kolana nie mogą przejść na zewnątrz łokci podczas schodzenia",
+        "cause": "Default narrow stance, copying barbell RDL stance without accounting for the rope path",
+        "causePl": "Domyślna wąska stójka, kopiowanie stójki z RDL bez uwzględnienia przebiegu liny",
+        "cue": "Take a slightly wider stance than RDL — the rope and your hands need clearance between the thighs.",
+        "cuePl": "Weź nieco szerszą stójkę niż w RDL — lina i ręce potrzebują miejsca między udami."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace, hold during the descent and ascent. Exhale at the top of the lockout, after the glute squeeze. Reset breath between reps if heavy.",
+    "breathingPl": "Głęboki wdech na górze, napięcie, trzymaj podczas schodzenia i wchodzenia. Wydech na szczycie lock-out, po ściśnięciu pośladków. Zresetuj oddech między powtórzeniami przy ciężkiej pracy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "caution",
+      "modification": "Despite low spinal load vs barbell RDL, acute injury still warrants rest. After clearance, use this exercise as RE-EDUCATION of the hinge with very light weight and partial ROM.",
+      "modificationPl": "Mimo niskiego obciążenia kręgosłupa w porównaniu do RDL ze sztangą, ostra kontuzja nadal wymaga odpoczynku. Po dopuszczeniu — używaj tego ćwiczenia do REEDUKACJI hingowania z bardzo lekkim ciężarem i częściowym zakresem.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "modify",
+      "modification": "Use a slightly wider stance and reduce hip flexion depth. Stop well above the hamstring stretch endpoint. Cable resistance line stays comfortable.",
+      "modificationPl": "Użyj nieco szerszej stójki i zmniejsz głębokość zgięcia biodra. Zatrzymaj się znacznie powyżej końcowego rozciągu hamstringów. Linia ciągu kabla pozostaje komfortowa.",
+      "alternative": "barbell-hip-thrust"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop earlier on the descent. The pull-through is actually a GOOD tool to develop hamstring length under load. Work in a comfortable range and progress slowly.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj się wcześniej podczas schodzenia. Pull-through to w zasadzie DOBRE narzędzie do rozwijania długości hamstringów pod obciążeniem. Pracuj w komfortowym zakresie i progresuj powoli.",
+      "alternative": "kettlebell-swing"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/glute focus — preferred range) | 3x15-20 (endurance, glute pump finisher) | 3-4x8-10 (strength learning)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-pull-through-with-rope.gif",
+    "frames_extracted": [
+      "frames/cable-pull-through-with-rope/frame_0_start.png",
+      "frames/cable-pull-through-with-rope/frame_1_early.png",
+      "frames/cable-pull-through-with-rope/frame_2_mid.png",
+      "frames/cable-pull-through-with-rope/frame_3_late.png",
+      "frames/cable-pull-through-with-rope/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/cable-pull-through-with-rope"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T20:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (12 oryginalnych klatek). Frame 0/4: pozycja dolna — głęboki hip hinge, tułów pochylony ~45° od pionu, biodra cofnięte do tyłu, kolana tylko lekko ugięte, ręce trzymają linę między nogami (lina widoczna jako wychodząca w lewo z kadru — w stronę bloczka). Mocno podświetlone: pośladki (cała powierzchnia pośladków na czerwono) i hamstringi (tył uda). Frame 2: pozycja stojąca/lockout — pełne wyprostowanie bioder, sylwetka pionowa, lina trzymana z przodu między udami, podświetlone wzdłuż erector spinae (lekko) i pośladki na końcu ruchu. Frames 1/3: pozycja przejściowa. Kluczowa obserwacja: ruch to czysty hip hinge — kolana praktycznie nieruchome, cały ruch w biodrach. Lina przeprowadzona między nogami (nie z przodu, nie z boku). Klasyfikacja jako 'hinge' (hip hinge), 'pull' (siła wyprostu biodra przeciwko ciągowi kabla), bilateral. Equipment: cable_machine + rope attachment (lina do tricepsów standardowo). Trudność 4 (beginner-friendly) — kabel ciągnie w bezpieczną stronę, zero obciążenia kręgosłupa, idealne narzędzie do nauki hingowania. Główne mięśnie: glutes P10 (pośladki dostają stały opór poziomy w kierunku wyprostu biodra — kierunek pracy = kierunek funkcji, najlepszy stymulus dla pośladków na całym zakresie), hamstrings P8 (asystują, mniej niż w RDL bo nie ma długiego ekscentryku pod ciężarem osi). Erector spinae tylko S5 (znacznie mniej niż RDL ze sztangą — kabel ciąga horyzontalnie, nie obciąża kręgosłupa pionowo). Adductors S5 (stabilizacja przywodzicieli z liną między udami). Główna przewaga nad RDL: bezpieczne dla pleców, idealne dla początkujących/rehabilitacji, learning tool dla wzorca hinge. Wszystkie pola PL napisane od zera w polskiej terminologii fitness (hip hinge, pull-through, wyciąg, lina, lock-out, pośladki, dwugłowe ud).",
+
+  "tags": ["bodybuilding", "glute_focused", "posterior_chain", "hip_hinge", "cable", "rope", "compound", "beginner_friendly", "low_back_safe", "rehab_friendly", "hinge_teaching_tool"]
+}

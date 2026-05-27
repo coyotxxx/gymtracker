@@ -1,0 +1,202 @@
+{
+  "id": "barbell-alternate-biceps-curl",
+  "name": "Barbell Alternate Biceps Curl",
+  "namePl": "Naprzemienne uginanie ramion sztangą",
+  "aliases": ["alternating barbell curl", "see-saw barbell curl", "rocking barbell curl", "one-arm barbell curl alternating"],
+  "aliasesPl": ["uginanie ramion sztangą na zmianę", "uginanie naprzemienne ze sztangą", "huśtawkowe uginanie sztangą", "uginanie ramion sztangą jednorącz na zmianę"],
+
+  "description": "An unusual biceps variation in which a single barbell is held with both hands in a supinated grip but curled with one arm at a time, while the opposite arm remains fully extended and the bar pivots like a see-saw. The non-working hand passively guides the bar and adds proprioceptive feedback, but provides no lifting assistance — each rep is essentially a one-arm barbell curl. Useful as a unilateral isolation tool that lets you train each biceps independently while still loading the bar bilaterally.",
+  "descriptionPl": "Nietypowy wariant uginania bicepsa, w którym sztangę trzyma się oburącz nachwytem dolnym (podchwyt), ale ugina ją się jedną ręką naraz, gdy druga ręka pozostaje w pełnym wyproście, a gryf obraca się jak huśtawka. Ręka nieaktywna jedynie pasywnie prowadzi sztangę i daje informację proprioceptywną, ale nie pomaga w unoszeniu ciężaru — każde powtórzenie to w praktyce uginanie jednorącz ze sztangą. Przydatne jako narzędzie izolacji jednostronnej, pozwalające trenować każdy biceps niezależnie przy jednoczesnym obciążeniu obustronnym gryfem.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grip a barbell with a supinated grip slightly wider than shoulder-width and let it hang at arms' length in front of your thighs.",
+    "Pin both elbows to your sides. They must stay glued to your ribs for the entire set — this is critical because the bar will want to drift forward.",
+    "Brace your core, lift your chest, and keep shoulders pulled back and down. The torso must not rotate during the set.",
+    "Curl the bar upward using only your right arm while the left arm stays fully extended. The bar pivots — the right end rises, the left end stays low.",
+    "Squeeze the right biceps hard at the top. The right hand is at shoulder height, the left hand is still down by the hip.",
+    "Lower the right side under control to full extension. As it reaches the bottom, begin curling the left side up in one continuous flowing motion.",
+    "Alternate side by side: each rep counts as one curl per arm. Keep the non-working arm passive — it must not push or assist.",
+    "Avoid using shoulder shrug or torso lean to help the working arm. Hips and shoulders stay square to the front."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap sztangę nachwytem dolnym (podchwyt) nieco szerzej niż barki i pozwól jej wisieć na wyprostowanych ramionach przed udami.",
+    "Przyklej oba łokcie do boków tułowia. Mają tam pozostać przez całą serię — to kluczowe, ponieważ sztanga będzie chciała wędrować do przodu.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół. Tułów nie może rotować podczas serii.",
+    "Ugnij sztangę do góry pracując tylko prawą ręką, lewa ręka pozostaje w pełnym wyproście. Gryf się obraca — prawy koniec idzie w górę, lewy koniec zostaje na dole.",
+    "Mocno spinaj prawy biceps w górnej pozycji. Prawa dłoń jest na wysokości barku, lewa wciąż przy biodrze.",
+    "Opuszczaj prawą stronę kontrolnie do pełnego wyprostu. Gdy dotrze do dołu, w jednym płynnym ruchu zacznij unosić lewą stronę.",
+    "Naprzemiennie strona po stronie: jedno powtórzenie to jeden curl na każdą rękę. Trzymaj rękę nieaktywną pasywną — nie wolno jej dopychać ani pomagać.",
+    "Unikaj wspierania ruchu wzruszeniem barku lub przechylaniem tułowia w stronę pracującej ręki. Biodra i barki ustawione frontalnie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "obliques", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T5",
+    "anterior_deltoid": "T3",
+    "core": "T3",
+    "obliques": "T3",
+    "upper_trapezius": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["barbell-curl", "dumbbell-curl"],
+    "progression_to": ["dumbbell-alternate-curl", "incline-dumbbell-curl", "preacher-curl"],
+    "alternatives": ["dumbbell-alternate-curl", "barbell-curl", "ez-bar-curl", "cable-curl", "hammer-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Supinated grip slightly wider than shoulders",
+      "Both elbows pinned to your ribs",
+      "Chest up, shoulders square — no rotation",
+      "Brace core hard — bar pivots, torso doesn't"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Chwyt nachwytem dolnym nieco szerzej niż barki",
+      "Oba łokcie przyklejone do żeber",
+      "Klatka w górze, barki frontalnie — bez rotacji",
+      "Mocno napnij brzuch — gryf się obraca, tułów nie"
+    ],
+    "execution_cues": [
+      "Only one biceps works per rep — the other arm is passive",
+      "Bar pivots like a see-saw — let it tilt",
+      "Non-working hand just holds, never pushes",
+      "Keep hips and shoulders square to the front",
+      "Smooth crossover: as one side lowers, the other begins to rise"
+    ],
+    "execution_cues_pl": [
+      "Tylko jeden biceps pracuje na powtórzenie — druga ręka jest pasywna",
+      "Gryf się obraca jak huśtawka — pozwól mu się przechylać",
+      "Ręka nieaktywna tylko trzyma, nigdy nie dopycha",
+      "Biodra i barki utrzymuj frontalnie",
+      "Płynne przejście: gdy jedna strona opada, druga zaczyna unosić"
+    ],
+    "common_faults": [
+      {
+        "fault": "Non-working arm assists (pushing up with the resting hand)",
+        "faultPl": "Ręka nieaktywna pomaga (dopycha sztangę dłonią odpoczywającą)",
+        "cause": "Trying to lift weight that exceeds true one-arm curl capacity",
+        "causePl": "Próba unoszenia ciężaru przekraczającego rzeczywistą siłę uginania jednorącz",
+        "cue": "Pick a weight you can curl strictly with one arm. The other hand is only a guide.",
+        "cuePl": "Wybierz ciężar, który możesz uginać ściśle jednorącz. Druga dłoń tylko prowadzi gryf."
+      },
+      {
+        "fault": "Torso rotation toward the working arm",
+        "faultPl": "Rotacja tułowia w stronę pracującej ręki",
+        "cause": "Load too heavy or weak anti-rotation core control",
+        "causePl": "Zbyt duży ciężar lub słaba kontrola antyrotacyjna tułowia",
+        "cue": "Keep both hips and both shoulders facing dead forward. Imagine a wall behind your shoulder blades.",
+        "cuePl": "Trzymaj oba biodra i oba barki ustawione prosto przed siebie. Wyobraź sobie ścianę za łopatkami."
+      },
+      {
+        "fault": "Working elbow drifts forward as bar comes up",
+        "faultPl": "Łokieć pracującej ręki wędruje do przodu w trakcie unoszenia",
+        "cause": "Trying to gain leverage / shift to anterior deltoid because biceps is fatigued",
+        "causePl": "Próba ułatwienia dźwigni / przerzucenia pracy na przedni akton barku, bo biceps się męczy",
+        "cue": "Lock the elbow against your ribs from start to finish. If it moves, lower the weight.",
+        "cuePl": "Łokieć zablokowany przy żebrach od początku do końca. Jeśli się przesuwa — zmniejsz ciężar."
+      },
+      {
+        "fault": "Both hands rise together (defeating the alternation)",
+        "faultPl": "Obie dłonie unoszą się razem (znosi naprzemienność)",
+        "cause": "Misunderstanding of the movement pattern or rushing the tempo",
+        "causePl": "Niezrozumienie wzorca ruchu lub zbyt szybkie tempo",
+        "cue": "One arm at a time — wait until the working side reaches the top before starting the other.",
+        "cuePl": "Jedna ręka naraz — poczekaj aż strona pracująca dotrze do góry zanim ruszysz drugą."
+      },
+      {
+        "fault": "Wrist hyperextension on the working side",
+        "faultPl": "Przeprostowanie nadgarstka po stronie pracującej",
+        "cause": "Bar pivots and creates uneven wrist load, especially with heavy weight or wide grip",
+        "causePl": "Gryf się obraca i tworzy nierównomierne obciążenie nadgarstka, szczególnie przy ciężkim obciążeniu lub szerokim chwycie",
+        "cue": "Keep both wrists neutral and straight throughout. Try a narrower grip if wrists protest.",
+        "cuePl": "Trzymaj oba nadgarstki neutralne i proste przez cały ruch. Spróbuj węższego chwytu jeśli nadgarstki protestują."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up) of the working arm. Inhale on the descent. Keep a steady brace throughout — do not hold breath across multiple alternating reps.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie) pracującej ręki. Wdech podczas opuszczania. Utrzymuj stałe napięcie brzucha — nie wstrzymuj oddechu na kilka naprzemiennych powtórzeń."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Unilateral loading concentrates stress on one tendon at a time. Use light loads with higher reps, or switch to a fixed-grip alternative.",
+      "modificationPl": "Praca jednostronna koncentruje obciążenie na jednym ścięgnie naraz. Używaj lekkich ciężarów z większą liczbą powtórzeń, lub przejdź na wariant z chwytem stałym.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The pivoting bar creates uneven wrist torque. Use dumbbells which allow each wrist to move independently, or switch to EZ-bar for symmetric loading.",
+      "modificationPl": "Obracający się gryf tworzy nierównomierny moment skrętny w nadgarstku. Użyj hantli, które pozwalają każdemu nadgarstkowi poruszać się niezależnie, lub przejdź na sztangę łamaną dla symetrycznego obciążenia.",
+      "alternative": "dumbbell-alternate-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Unilateral loading creates anti-rotation demands on the spine. Switch to a bilateral seated variation or preacher bench to remove rotational stress.",
+      "modificationPl": "Praca jednostronna nakłada wymagania antyrotacyjne na kręgosłup. Przejdź na wariant obustronny siedząc lub na ławce modlitewnika aby usunąć obciążenie rotacyjne.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "If elbow drifts forward and recruits anterior deltoid, can aggravate impingement. Use strict form with elbow pinned, or switch to neutral-grip hammer curls.",
+      "modificationPl": "Jeśli łokieć wędruje do przodu i włącza przedni akton barku, może drażnić zespół ciasnoty. Wykonuj ściśle z łokciem przyklejonym, lub przejdź na uginanie młotkowe (chwyt neutralny).",
+      "alternative": "hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy) | 3x10-15 per arm (endurance/pump) | 2-3x6-8 per arm (strength focus)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-alternate-biceps-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-alternate-biceps-curl/frame_0_start.png",
+      "frames/barbell-alternate-biceps-curl/frame_1_early.png",
+      "frames/barbell-alternate-biceps-curl/frame_2_mid.png",
+      "frames/barbell-alternate-biceps-curl/frame_3_late.png",
+      "frames/barbell-alternate-biceps-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/barbell-alternate-biceps-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0: pełny wyprost obu ramion, sztanga przed udami, podchwyt na szerokość barków, prawy biceps i prawe przedramię podświetlone na czerwono (strona pracująca). Frame 1: prawa strona unosi się do połowy, gryf przechylony — prawy koniec wyżej, lewy koniec wciąż przy biodrze, lewa ręka w wyproście. Frame 2: prawa strona w pełnym skurczu — prawa dłoń na wysokości barku, lewa wciąż na dole, gryf mocno przechylony jak huśtawka. Frame 3: powrót na dół, ponowne przejście pośrednie (lustro frame 1). Frame 4: prawe ramię wróciło do dołu, widać 'ghost' pozycji szczytowej powyżej — strona prawa właśnie zakończyła powtórzenie. Wyraźny wzorzec see-saw: jeden biceps pracuje, drugi pozostaje pasywny, tułów nieruchomy. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "barbell", "alternating", "unilateral", "upper_body", "unusual_variant"]
+}

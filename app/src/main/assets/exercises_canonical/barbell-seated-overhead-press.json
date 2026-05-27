@@ -1,0 +1,205 @@
+{
+  "id": "barbell-seated-overhead-press",
+  "name": "Barbell Seated Overhead Press (Seated OHP)",
+  "namePl": "Wyciskanie sztangi nad głowę w siadzie (seated OHP)",
+  "aliases": ["seated military press", "seated barbell press", "seated OHP", "seated shoulder press", "seated strict press"],
+  "aliasesPl": ["seated military press", "wyciskanie barków w siadzie", "wyciskanie sztangi w siadzie", "siedzący OHP", "wyciskanie żołnierskie w siadzie"],
+
+  "description": "Seated variant of the barbell overhead press, performed on a flat bench (or bench with upright back support). Eliminates leg drive completely — isolates the shoulders and triceps with no contribution from the hips, quads, or kinetic chain of standing. Bar is pressed from clavicle level (front rack) to full lockout overhead. More isolating than the standing version, allows lifters to push the delts harder without core/lower-back limiting the load.",
+  "descriptionPl": "Wariant wyciskania sztangi nad głowę wykonywany w pozycji siedzącej — na płaskiej ławce (lub ławce z oparciem). Całkowicie eliminuje napęd z nóg (leg drive) — izoluje barki i tricepsy bez udziału bioder, czworogłowych ani łańcucha kinetycznego pozycji stojącej. Sztangę wyciskasz spod brody (front rack) do pełnego lock-out nad głową. Bardziej izolujący niż wariant stojący, pozwala mocniej obciążyć delty bez limitu ze strony brzucha/dolnych pleców.",
+
+  "instructions": [
+    "Set the bar in a rack at upper-chest height when seated. Position a flat bench under the bar (or use a bench with a vertical back support for added stability).",
+    "Grip slightly wider than shoulder-width, palms facing up. Sit down with feet flat on the floor, back straight, chest up.",
+    "Unrack: position bar on front delts (front rack), elbows just below the bar, wrists straight.",
+    "Brace core HARD — without leg drive, the core is the only thing stabilizing your spine.",
+    "Inhale, brace, and press the bar straight up. As the bar passes the forehead, tuck your head slightly back (no 'window' move needed if back support; small head shift if flat bench).",
+    "Lock out arms overhead — biceps near ears, bar directly over the crown of your head.",
+    "Lower with control to the starting position (front rack, just above clavicles). Bar path is vertical.",
+    "DO NOT use any leg push or hip thrust off the bench. Glutes stay planted.",
+    "Exhale at the top of the press."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki w pozycji siedzącej. Postaw płaską ławkę pod sztangą (lub użyj ławki z pionowym oparciem dla większej stabilności).",
+    "Chwyt nieco szerzej niż na szerokość barków, dłonie w supinacji (do góry). Usiądź ze stopami płasko na podłodze, plecy proste, klatka wypchnięta.",
+    "Wyciągnij ze stojaka: ustaw gryf na przednich aktonach (front rack), łokcie tuż pod gryfem, nadgarstki proste.",
+    "Napnij brzuch MOCNO — bez napędu nóg brzuch to jedyne co stabilizuje kręgosłup.",
+    "Wdech, napięcie, wyciśnij gryf prosto w górę. Gdy gryf mija czoło, lekko cofnij głowę (gdy oparcie — bez 'okna'; przy płaskiej ławce lekkie przesunięcie głowy).",
+    "Lock-out ramion nad głową — bicepsy przy uszach, gryf bezpośrednio nad czubkiem głowy.",
+    "Opuszczaj kontrolowanym ruchem do pozycji startowej (front rack, tuż nad obojczykami). Ścieżka gryfu pionowa.",
+    "NIE używaj żadnego napędu z nóg ani odbicia bioder od ławki. Pośladki przyklejone do siedziska.",
+    "Wydech na szczycie wyciskania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open",
+    "position": "seated"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids"],
+    "secondary": ["triceps", "upper_trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "rotator_cuff", "rectus_abdominis", "obliques", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P8",
+    "triceps": "S8",
+    "upper_trapezius": "S5",
+    "serratus_anterior": "S5",
+    "upper_chest": "S4",
+    "core": "S6",
+    "rotator_cuff": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench_or_upright_bench", "power_rack_or_squat_rack"],
+    "optional": ["belt", "wrist_wraps", "bench_with_back_support"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-shoulder-press", "machine-shoulder-press", "dumbbell-seated-shoulder-press"],
+    "progression_to": ["barbell-overhead-press", "push-press", "behind-the-neck-press", "z-press"],
+    "alternatives": ["dumbbell-seated-shoulder-press", "machine-shoulder-press", "barbell-overhead-press", "smith-machine-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on front delts, elbows just below bar",
+      "Wrists straight (not extended)",
+      "Feet flat on floor, planted",
+      "Sit tall, chest up, glutes planted",
+      "Brace core HARD before unracking"
+    ],
+    "setup_cues_pl": [
+      "Gryf na przednich aktonach, łokcie tuż pod gryfem",
+      "Nadgarstki proste (nie wygięte)",
+      "Stopy płasko na podłodze, stabilnie",
+      "Siedź wysoko, klatka wypchnięta, pośladki przyklejone",
+      "Napnij brzuch MOCNO przed wyciągnięciem"
+    ],
+    "execution_cues": [
+      "Press straight up, NOT around the head",
+      "Finish with biceps by ears",
+      "Bar over crown of head at lockout",
+      "Glutes stay on bench — no hip thrust",
+      "Control the descent, don't drop the bar"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę, NIE wokół głowy",
+      "Zakończ bicepsami przy uszach",
+      "Gryf nad czubkiem głowy w lock-out",
+      "Pośladki na ławce — bez odbicia bioder",
+      "Kontroluj opuszczanie, nie rzucaj gryfu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning back excessively (lumbar hyperextension, turning press into incline)",
+        "faultPl": "Nadmierne odchylanie do tyłu (przeprost lędźwiowy, zamienia ruch na incline press)",
+        "cause": "Weight too heavy, weak core bracing, no back support on bench",
+        "causePl": "Zbyt duży ciężar, słabe napięcie brzucha, brak oparcia ławki",
+        "cue": "Ribs DOWN. Brace harder. If you can't stay vertical, reduce weight or use a bench with back support.",
+        "cuePl": "Żebra W DÓŁ. Napnij mocniej. Jeśli nie utrzymujesz pionu — zmniejsz ciężar lub użyj ławki z oparciem."
+      },
+      {
+        "fault": "Hip thrust / push off the bench (smuggled leg drive)",
+        "faultPl": "Wybicie biodrami z ławki (ukryty napęd z nóg)",
+        "cause": "Trying to lift heavier than strict seated capacity",
+        "causePl": "Próba wyciśnięcia więcej niż pozwala czysty seated press",
+        "cue": "Glutes glued to bench. If hips lift, the weight is too heavy — lower it.",
+        "cuePl": "Pośladki przyklejone do ławki. Jeśli biodra się unoszą — ciężar za duży, zmniejsz."
+      },
+      {
+        "fault": "Incomplete lockout (biceps not reaching ears)",
+        "faultPl": "Niepełen lock-out (bicepsy nie sięgają uszu)",
+        "cause": "Poor thoracic/shoulder mobility, weak triceps, weight too heavy",
+        "causePl": "Słaba mobilność piersiowa/barku, słabe tricepsy, zbyt duży ciężar",
+        "cue": "Press all the way up. If you can't lock out, mobilize thoracic spine and overhead position separately.",
+        "cuePl": "Wyciskaj do końca. Jeśli nie ma lock-out — pracuj osobno nad mobilnością piersiową i overhead."
+      },
+      {
+        "fault": "Wrist extended / collapsed (bar in fingers, not palm)",
+        "faultPl": "Wygięty/załamany nadgarstek (gryf w palcach, nie w dłoni)",
+        "cause": "Improper grip, weak wrists, elbow position too low under bar",
+        "causePl": "Niepoprawny chwyt, słabe nadgarstki, łokcie za nisko pod gryfem",
+        "cue": "Bar in palm heel. Wrist NEUTRAL. Use wraps for heavy loads.",
+        "cuePl": "Gryf w podstawie dłoni. Nadgarstek NEUTRALNY. Użyj wraps przy dużym ciężarze."
+      },
+      {
+        "fault": "Bar drifts forward away from body at top",
+        "faultPl": "Gryf odchodzi do przodu od ciała na górze",
+        "cause": "Avoiding clearing the face, anterior delt dominance over balanced press path",
+        "causePl": "Unikanie miniecia twarzy, dominacja przednich aktonów ponad zbalansowaną ścieżką",
+        "cue": "Push bar straight up over crown. Slightly tuck chin to clear the bar, then keep it stacked over your head.",
+        "cuePl": "Wyciskaj gryf prosto nad czubek głowy. Lekko schowaj brodę by ominąć gryf, potem trzymaj go nad głową."
+      }
+    ],
+    "breathing": "Inhale and brace HARD before the press. Hold throughout the concentric. Exhale at lockout. With no leg drive available, the core brace is the entire foundation of the press.",
+    "breathingPl": "Wdech i mocne napięcie przed wyciskaniem. Trzymaj przez całą fazę koncentryczną. Wydech w lock-out. Bez napędu z nóg, napięcie brzucha to cały fundament wyciskania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't go below clavicle), narrow the grip slightly, or switch to landmine press (angled path, more shoulder-friendly).",
+      "modificationPl": "Zmniejsz ROM (nie schodź poniżej obojczyka), lekko zwęź chwyt, lub przejdź na landmine press (kątowa ścieżka, bardziej przyjazna dla barku).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work thoracic/shoulder mobility separately. Use neutral-grip dumbbell press or landmine press until full lockout overhead is possible.",
+      "modificationPl": "Pracuj osobno nad mobilnością piersiową/barku. Użyj wyciskania hantlami chwytem neutralnym lub landmine press do czasu pełnego lock-out overhead.",
+      "alternative": "dumbbell-seated-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid heavy overhead pressing until cleared by PT. Resume with high-rep, light-weight machine work or banded shoulder rehab.",
+      "modificationPl": "Unikaj ciężkiego wyciskania overhead do zgody fizjoterapeuty. Wróć przez wysokopowtórzeniowe lekkie maszyny lub rehab barku z gumami.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "cervical_disc_issues",
+      "severity": "modify",
+      "modification": "Avoid forced head movement under load. Use bench with vertical back support so head can stay neutral against the pad.",
+      "modificationPl": "Unikaj wymuszonych ruchów głową pod obciążeniem. Użyj ławki z pionowym oparciem, by głowa zostawała neutralna przy oparciu.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-8 (hypertrophy) | 5x5 (strength) | 3-4x8-12 (volume/accessory)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-seated-overhead-press.gif",
+    "frames_extracted": [
+      "frames/barbell-seated-overhead-press/frame_0_start.png",
+      "frames/barbell-seated-overhead-press/frame_1_early.png",
+      "frames/barbell-seated-overhead-press/frame_2_mid.png",
+      "frames/barbell-seated-overhead-press/frame_3_late.png",
+      "frames/barbell-seated-overhead-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-seated-overhead-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa siedząca na płaskiej ławce, sztanga na przednich aktonach (front rack), tuż nad obojczykami. Stopy na podłodze, plecy proste. Frame 2: pełen lock-out nad głową, bicepsy przy uszach, gryf nad czubkiem głowy, ramiona całkowicie wyprostowane. Frame 4: powrót do front rack. Pozycja siedząca eliminuje leg drive — bardziej izolujący niż standing OHP. Podświetlone: przednie + boczne delty (P), tricepsy (S). Brak oparcia ławki na GIF (płaska ławka), ale wariant z oparciem też się liczy jako seated OHP. PL nazwa = 'Wyciskanie sztangi nad głowę w siadzie (seated OHP)'.",
+
+  "tags": ["bodybuilding", "compound", "upper_body", "vertical_push", "shoulder_isolation", "barbell", "shoulders", "seated", "hypertrophy", "strict_press"]
+}

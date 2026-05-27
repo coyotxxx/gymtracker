@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-seated-triceps-extension",
+  "name": "Dumbbell Seated Triceps Extension",
+  "namePl": "Tricep extension z hantlą w siadzie (overhead)",
+  "aliases": ["seated overhead dumbbell triceps extension", "seated dumbbell french press", "two-handed dumbbell overhead extension"],
+  "aliasesPl": ["wyciskanie francuskie z hantlą w siadzie", "overhead extension z hantlą siedząc", "francuski wyciskanie z hantlą oburącz w siadzie"],
+
+  "description": "Single-dumbbell overhead triceps extension performed seated on a vertical bench, with the dumbbell held by both hands behind the head. The seated position with back support eliminates lower-back compensation, while the overhead arm position places the long head of the triceps in a deep stretch — making this one of the most effective isolation exercises for triceps hypertrophy, especially the long head.",
+  "descriptionPl": "Wyciskanie francuskie z jedną hantlą trzymaną oburącz nad głową, wykonywane w siadzie na ławce z oparciem. Pozycja siedząca z podparciem pleców eliminuje kompensacje odcinka lędźwiowego, a uniesione ramiona umieszczają głowę długą tricepsa w głębokim rozciągnięciu — czyni to jedno z najskuteczniejszych ćwiczeń izolowanych na hipertrofię tricepsa, szczególnie głowy długiej.",
+
+  "instructions": [
+    "Sit on a vertical bench with the backrest set to 90°. Plant your feet flat on the floor, hip-width apart.",
+    "Grasp a single dumbbell with both hands, cupping the underside of the top plate (palms up, thumbs around the handle for safety).",
+    "Press the dumbbell straight overhead until both arms are fully extended. Upper arms next to your ears, elbows pointing forward.",
+    "Brace your core, set a slight forward lean against the pad, and keep your elbows tucked in — they should not flare outward during the set.",
+    "Lower the dumbbell behind your head by flexing only at the elbows. The upper arms stay vertical and stationary. Inhale during the descent.",
+    "Go down until you feel a strong stretch in the triceps — typically when the forearms touch (or nearly touch) the biceps.",
+    "Reverse the movement by extending the elbows. Exhale on the way up. Stop just short of locking out to maintain tension on the triceps.",
+    "Squeeze the triceps hard at the top, then repeat. Maintain a steady tempo and never let the dumbbell free-fall behind the head."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce z oparciem ustawionym pod kątem 90°. Stopy płasko na podłodze, na szerokość bioder.",
+    "Złap jedną hantlę oburącz, ujmując dłońmi dolną stronę górnego talerza (dłonie do góry, kciuki wokół trzonu dla bezpieczeństwa).",
+    "Wyciśnij hantlę prosto nad głowę aż obie ręce będą w pełnym wyproście. Ramiona ponad łokciem przy uszach, łokcie skierowane do przodu.",
+    "Napnij brzuch, lekko oprzyj plecy o oparcie i utrzymuj łokcie przyciągnięte do siebie — nie powinny rozchodzić się na boki przez całą serię.",
+    "Opuszczaj hantlę za głowę zginając tylko w łokciach. Ramiona ponad łokciem pozostają pionowe i nieruchome. Wdech podczas opuszczania.",
+    "Schodź w dół aż poczujesz mocne rozciągnięcie w tricepsie — zwykle gdy przedramiona dotykają (lub prawie dotykają) bicepsów.",
+    "Wróć do góry prostując łokcie. Wydech w fazie koncentrycznej. Zatrzymaj się tuż przed pełnym wyprostem aby utrzymać napięcie na tricepsie.",
+    "Mocno spinaj triceps w górnej pozycji i powtórz. Utrzymuj równe tempo i nigdy nie pozwól hantli swobodnie opaść za głowę."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["anterior_deltoid", "core", "forearm_flexors", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "anterior_deltoid": "T3",
+    "core": "T3",
+    "forearm_flexors": "T2",
+    "upper_trapezius": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "bench_with_backrest"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-triceps-extension", "triceps-pushdown"],
+    "progression_to": ["barbell-overhead-triceps-extension", "ez-bar-skullcrusher", "one-arm-dumbbell-overhead-extension"],
+    "alternatives": ["dumbbell-lying-triceps-extension", "ez-bar-overhead-triceps-extension", "cable-overhead-triceps-extension", "triceps-pushdown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 90° with full back support",
+      "Both hands cup the top plate of one dumbbell",
+      "Press dumbbell straight overhead, arms by ears",
+      "Elbows pointing forward, not flaring out",
+      "Core braced, feet flat on the floor"
+    ],
+    "setup_cues_pl": [
+      "Ławka pod 90° z pełnym podparciem pleców",
+      "Obie dłonie obejmują górny talerz jednej hantli",
+      "Wyciśnij hantlę prosto nad głowę, ramiona przy uszach",
+      "Łokcie skierowane do przodu, nie rozchodzą się na boki",
+      "Brzuch napięty, stopy płasko na podłodze"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay vertical",
+      "Lower slowly behind the head, feel the stretch",
+      "Keep elbows pointing forward — do not let them flare",
+      "Squeeze the triceps hard at the top of every rep",
+      "Never let the dumbbell drop — control all the way down"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem pionowo",
+      "Opuszczaj wolno za głowę, poczuj rozciągnięcie",
+      "Łokcie skierowane do przodu — nie pozwól im się rozchodzić",
+      "Mocno spinaj triceps w górnej pozycji każdego powtórzenia",
+      "Nigdy nie pozwól hantli opaść — kontroluj na całej drodze w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring outward during the descent",
+        "faultPl": "Łokcie rozchodzą się na boki podczas opuszczania",
+        "cause": "Load too heavy, weak triceps long head, or trying to recruit shoulders/lats",
+        "causePl": "Zbyt duży ciężar, słaba głowa długa tricepsa, lub próba zaangażowania barków/grzbietu",
+        "cue": "Squeeze your elbows toward each other. Imagine holding a ball between them.",
+        "cuePl": "Ściągnij łokcie do siebie. Wyobraź sobie że trzymasz piłkę pomiędzy nimi."
+      },
+      {
+        "fault": "Upper arms drift forward/backward (not vertical)",
+        "faultPl": "Ramiona ponad łokciem przesuwają się do przodu/tyłu (nie są pionowe)",
+        "cause": "Lack of awareness of upper-arm position, or compensating with shoulder flexion to lift heavier weight",
+        "causePl": "Brak kontroli pozycji ramienia, lub kompensacja zgięciem w barku aby unieść większy ciężar",
+        "cue": "Lock the upper arms next to your ears for the entire set — only elbows hinge.",
+        "cuePl": "Zablokuj ramiona ponad łokciem przy uszach przez całą serię — pracuje tylko zawias w łokciu."
+      },
+      {
+        "fault": "Partial range of motion (not lowering deep enough)",
+        "faultPl": "Niepełny zakres ruchu (zbyt płytkie opuszczanie)",
+        "cause": "Ego lifting with too heavy a dumbbell, fear of shoulder discomfort, or tight lats",
+        "causePl": "Zbyt duży ciężar (ego), strach przed dyskomfortem barku, lub spięte mięśnie najszersze grzbietu",
+        "cue": "Lower until forearms touch (or nearly touch) the biceps — chase the stretch.",
+        "cuePl": "Opuszczaj aż przedramiona dotkną (lub prawie dotkną) bicepsów — szukaj rozciągnięcia."
+      },
+      {
+        "fault": "Insecure grip on the dumbbell (risk of dropping behind head)",
+        "faultPl": "Niepewny chwyt hantli (ryzyko upadku za głowę)",
+        "cause": "Cupping only the plate edges, sweaty hands, or thumbs not wrapped around the handle",
+        "causePl": "Chwytanie tylko krawędzi talerza, spocone dłonie, lub kciuki nie owinięte wokół trzonu",
+        "cue": "Form a tight diamond with hands around the top plate. Wrap thumbs around the handle.",
+        "cuePl": "Uformuj ścisły romb dłońmi wokół górnego talerza. Owiń kciuki wokół trzonu hantli."
+      },
+      {
+        "fault": "Hyperextending the lower back / arching off the pad",
+        "faultPl": "Przeprost odcinka lędźwiowego / odrywanie pleców od oparcia",
+        "cause": "Load too heavy forcing lumbar compensation, or weak core unable to stabilize overhead position",
+        "causePl": "Zbyt duży ciężar wymuszający kompensację lędźwiową, lub słaby brzuch niezdolny ustabilizować pozycji nad głową",
+        "cue": "Glue your entire back to the pad. Ribs down, core tight. Reduce weight if needed.",
+        "cuePl": "Przyklej całe plecy do oparcia. Żebra w dół, brzuch napięty. Zmniejsz ciężar jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale on the descent (lowering behind the head). Exhale on the concentric (pressing the dumbbell up). Hold a light core brace overhead — never hold breath under heavy load in this position.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (opuszczanie za głowę). Wydech w fazie koncentrycznej (wyciskanie hantli w górę). Utrzymuj lekkie napięcie brzucha nad głową — nie wstrzymuj oddechu pod ciężkim obciążeniem w tej pozycji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_pathology",
+      "severity": "modify",
+      "modification": "Full overhead position can aggravate impingement. Use a slightly inclined bench (75-80°) instead of vertical, or switch to a cable-rope overhead variant where the arms don't need to lock fully overhead.",
+      "modificationPl": "Pełna pozycja nad głową może drażnić zespół ciasnoty podbarkowej. Użyj lekko skośnej ławki (75-80°) zamiast pionowej, lub przejdź na wariant z linką w wyciągu gdzie ramiona nie muszą być w pełni zablokowane nad głową.",
+      "alternative": "cable-overhead-triceps-extension"
+    },
+    {
+      "condition": "elbow_tendinopathy_distal_triceps",
+      "severity": "modify",
+      "modification": "Deep stretched-position loading can flare up distal triceps tendinopathy. Reduce range of motion, use lighter loads with higher reps (12-15), and avoid heavy eccentrics until pain-free.",
+      "modificationPl": "Obciążenie w głębokim rozciągnięciu może zaostrzyć tendinopatię dystalnego przyczepu tricepsa. Zmniejsz zakres ruchu, używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15), unikaj ciężkich faz negatywnych do ustąpienia bólu.",
+      "alternative": "triceps-pushdown"
+    },
+    {
+      "condition": "limited_thoracic_or_shoulder_overhead_mobility",
+      "severity": "modify",
+      "modification": "Inability to position upper arms vertically next to the ears will force lumbar compensation. Work on overhead mobility first; in the meantime use a lying or pushdown variant.",
+      "modificationPl": "Niezdolność ustawienia ramion ponad łokciem pionowo przy uszach wymusi kompensację lędźwiową. Najpierw popracuj nad mobilnością nad głową; tymczasowo używaj wariantu leżącego lub na wyciągu.",
+      "alternative": "dumbbell-lying-triceps-extension"
+    },
+    {
+      "condition": "elevated_blood_pressure_or_overhead_intolerance",
+      "severity": "caution",
+      "modification": "Loaded overhead positions transiently spike blood pressure. If diagnosed with hypertension, get medical clearance and use moderate loads with controlled breathing — never hold breath.",
+      "modificationPl": "Obciążone pozycje nad głową chwilowo podnoszą ciśnienie krwi. Przy zdiagnozowanym nadciśnieniu uzyskaj zgodę lekarza i używaj umiarkowanych ciężarów z kontrolowanym oddechem — nigdy nie wstrzymuj oddechu.",
+      "alternative": "triceps-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 2-3x12-15 (endurance/pump, recommended for triceps)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-seated-triceps-extension.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-triceps-extension/frame_0_start.png",
+      "frames/dumbbell-seated-triceps-extension/frame_1_early.png",
+      "frames/dumbbell-seated-triceps-extension/frame_2_mid.png",
+      "frames/dumbbell-seated-triceps-extension/frame_3_late.png",
+      "frames/dumbbell-seated-triceps-extension/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/dumbbell-seated-triceps-extension"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja dolna — atleta siedzi na pionowej ławce z oparciem, jedna hantla trzymana oburącz za głową, łokcie zgięte w pełni, przedramiona blisko bicepsów, triceps i przedramiona wyraźnie podświetlone na czerwono. Frame 2: pełny wyprost nad głową — ramiona ponad łokciem pionowo przy uszach, hantla wyciśnięta wysoko. Frame 4: powrót do pozycji dolnej z widocznym ghostem fazy szczytowej. Klasyczny seated overhead triceps extension z jedną hantlą trzymaną oburącz (cupped grip pod górnym talerzem). Tylko jahel jako źródło — yuhonas i glowupp nie mają tego konkretnego wariantu (siedzącego z oburącz hantli). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "dumbbell", "upper_body", "overhead", "seated", "long_head_focus"]
+}

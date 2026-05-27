@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-cross-body-hammer-curl",
+  "name": "Dumbbell Cross-Body Hammer Curl",
+  "namePl": "Uginanie krzyżowe młotkowe hantlami",
+  "aliases": ["cross body hammer curl", "cross-body hammer curl", "crossover hammer curl", "twisted hammer curl"],
+  "aliasesPl": ["młotkowe uginanie krzyżowe", "hammer curl krzyżowy", "uginanie młotkowe w poprzek ciała", "uginanie hantli do przeciwnego barku"],
+
+  "description": "An isolation curl variation performed with a neutral (hammer) grip in which the dumbbell is curled diagonally across the body toward the opposite shoulder rather than straight up. The cross-body line of pull shifts mechanical emphasis from the long head of biceps brachii toward the brachialis and brachioradialis, building the often-neglected muscles that sit beneath and lateral to the biceps and contribute the most to arm thickness when viewed from the front. Typically performed alternating arms while the contralateral arm hangs at the side.",
+  "descriptionPl": "Wariant izolowanego uginania wykonywany neutralnym chwytem młotkowym, w którym hantel unosisz skośnie w poprzek ciała w stronę przeciwnego barku, a nie prosto w górę. Skośna linia pociągnięcia przenosi mechaniczny akcent z głowy długiej mięśnia dwugłowego ramienia na mięsień ramienny (brachialis) i ramienno-promieniowy (brachioradialis) — czyli mięśnie leżące pod i z boku bicepsa, które najbardziej decydują o grubości ramienia widzianej od przodu. Standardowo wykonywany naprzemiennie, podczas gdy druga ręka zwisa swobodnie wzdłuż tułowia.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Hold a dumbbell in each hand with a neutral (hammer) grip — palms facing the thighs, thumbs pointing forward.",
+    "Let both arms hang fully extended at your sides. Pin the elbows to your ribcage — they should stay there for every rep.",
+    "Brace your core, lift your chest, and keep shoulders pulled back and down. The torso must not rotate during the set.",
+    "Curl one dumbbell diagonally upward and across the body toward the opposite shoulder. Keep the wrist neutral (knuckles pointing sideways throughout).",
+    "Finish the rep with the dumbbell near — but not touching — the opposite shoulder. Squeeze the brachialis hard for a brief pause.",
+    "Lower the dumbbell under control along the same diagonal path back to the starting position, taking 2-3 seconds on the eccentric.",
+    "Repeat with the opposite arm, alternating each rep. Do not let the working elbow drift forward or the shoulder hike toward the ear."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. W każdej ręce trzymaj hantel chwytem neutralnym (młotkowym) — wewnętrzne strony dłoni zwrócone do ud, kciuki skierowane do przodu.",
+    "Pozwól obu ramionom zwisać w pełnym wyproście wzdłuż tułowia. Przyklej łokcie do żeber — mają tam pozostać przy każdym powtórzeniu.",
+    "Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół. Tułów nie może rotować przez całą serię.",
+    "Uginaj jeden hantel skośnie w górę, prowadząc go w poprzek ciała w stronę przeciwnego barku. Nadgarstek pozostaje neutralny (kostki dłoni przez cały czas zwrócone w bok).",
+    "Zakończ powtórzenie z hantlem blisko — ale nie dotykając — przeciwnego barku. Mocno spinaj brachialis na chwilę w górnej pozycji.",
+    "Opuszczaj hantel w sposób kontrolowany po tej samej skośnej ścieżce do pozycji wyjściowej, faza ekscentryczna 2-3 sekundy.",
+    "Powtarzaj drugą ręką naprzemiennie po każdym powtórzeniu. Łokieć pracującej ręki nie może wędrować do przodu, a bark nie może wzbijać się do ucha."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "biceps_brachii", "brachioradialis"],
+    "secondary": ["forearm_flexors"],
+    "stabilizers": ["anterior_deltoid", "core", "upper_trapezius", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "biceps_brachii": "P8",
+    "brachioradialis": "P8",
+    "forearm_flexors": "S6",
+    "anterior_deltoid": "T3",
+    "core": "T3",
+    "upper_trapezius": "T2",
+    "rotator_cuff": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["hammer-curl", "dumbbell-curl"],
+    "progression_to": ["weighted-cross-body-hammer-curl", "cable-cross-body-curl", "incline-hammer-curl", "zottman-curl"],
+    "alternatives": ["hammer-curl", "dumbbell-curl", "brachialis-cable-curl", "rope-hammer-curl", "reverse-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft, weight balanced on mid-foot",
+      "Neutral grip — thumbs forward, palms facing thighs",
+      "Elbows glued to ribcage, shoulders packed down",
+      "Chest up, ribcage stacked over pelvis, core braced",
+      "Pick a weight you can control across the whole diagonal"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte, ciężar na śródstopiu",
+      "Chwyt neutralny — kciuki do przodu, dłonie zwrócone do ud",
+      "Łokcie przyklejone do żeber, barki ściągnięte w dół",
+      "Klatka w górze, żebra ułożone nad miednicą, brzuch napięty",
+      "Wybierz ciężar który kontrolujesz przez całą skośną ścieżkę"
+    ],
+    "execution_cues": [
+      "Drive the dumbbell across your chest toward the OPPOSITE shoulder",
+      "Keep the thumb pointing up the entire rep — no wrist rotation",
+      "Squeeze the outside of the upper arm at the top, not just the biceps",
+      "Lower along the same diagonal you came up — do not drop it straight down",
+      "Stop the rib cage from twisting — only the arm moves"
+    ],
+    "execution_cues_pl": [
+      "Prowadź hantel w poprzek klatki w stronę PRZECIWNEGO barku",
+      "Kciuk skierowany do góry przez całe powtórzenie — żadnej rotacji nadgarstka",
+      "Na górze spinaj boczną część ramienia, nie tylko biceps",
+      "Opuszczaj tą samą skośną ścieżką po której uniosłeś — nie pozwól hantli spaść prosto w dół",
+      "Klatka piersiowa nie rotuje — porusza się tylko ramię"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation to assist the curl",
+        "faultPl": "Rotacja tułowia kompensująca ruch ramienia",
+        "cause": "Load too heavy, weak brachialis, or trying to throw the dumbbell up to the shoulder",
+        "causePl": "Zbyt duży ciężar, słaby brachialis, lub próba podrzucania hantla do barku",
+        "cue": "Stand with back against a wall — if your shoulder blade leaves the wall, the weight is too heavy.",
+        "cuePl": "Stań plecami do ściany — jeśli łopatka odrywa się od ściany, ciężar jest za duży."
+      },
+      {
+        "fault": "Working elbow drifts forward toward the chest",
+        "faultPl": "Łokieć pracującej ręki wędruje do przodu w stronę klatki",
+        "cause": "Trying to reach higher than full elbow flexion allows; using anterior deltoid to gain extra range",
+        "causePl": "Próba dotarcia wyżej niż pozwala pełne zgięcie łokcia; włączanie przedniego aktonu barku dla dodatkowego zakresu",
+        "cue": "The elbow stays pinned to the rib cage — only the forearm crosses the body, not the upper arm.",
+        "cuePl": "Łokieć przyklejony do żeber — w poprzek ciała wędruje tylko przedramię, nie ramię ponad łokciem."
+      },
+      {
+        "fault": "Incomplete range of motion at the bottom",
+        "faultPl": "Niepełny zakres ruchu w dolnej fazie",
+        "cause": "Bouncing reps to chain momentum from one arm to the next; ego load",
+        "causePl": "Bujanie i podbijanie powtórzeń energią z jednej ręki na drugą; zbyt duży ciężar",
+        "cue": "Dead-stop every rep at full elbow extension. Pause one second before the next rep.",
+        "cuePl": "Każde powtórzenie zaczynaj z zatrzymanej pozycji przy pełnym wyproście. Pauza sekundy przed kolejnym powtórzeniem."
+      },
+      {
+        "fault": "Wrist rotates into supination at the top",
+        "faultPl": "Nadgarstek rotuje do supinacji na górze ruchu",
+        "cause": "Habit from regular biceps curls; loss of brachialis emphasis",
+        "causePl": "Nawyk ze standardowych uginań na biceps; utrata akcentu na brachialis",
+        "cue": "Thumb stays pointing UP the whole rep. If you supinate, it becomes a regular curl.",
+        "cuePl": "Kciuk skierowany do GÓRY przez całe powtórzenie. Jeśli supinujesz, to już zwykłe uginanie na biceps."
+      },
+      {
+        "fault": "Dumbbell drops straight down instead of along the diagonal",
+        "faultPl": "Hantel opada prosto w dół zamiast po skośnej ścieżce",
+        "cause": "Loss of focus on the eccentric; relying on gravity to reset between reps",
+        "causePl": "Utrata kontroli nad fazą ekscentryczną; poleganie na grawitacji w resecie między powtórzeniami",
+        "cue": "Resist on the way down along the same line you used on the way up — 2-3 seconds eccentric.",
+        "cuePl": "Stawiaj opór w dół tą samą linią po której unosiłeś — faza negatywna 2-3 sekundy."
+      }
+    ],
+    "breathing": "Exhale on the diagonal curl up. Inhale on the slow lower. Brace lightly throughout to keep the torso stable and prevent rotation.",
+    "breathingPl": "Wydech podczas skośnego uginania w górę. Wdech podczas wolnego opuszczania. Lekkie napięcie brzucha przez całą serię, aby tułów był stabilny i nie rotował."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Neutral grip is generally gentler than supinated work, but the diagonal pull still stresses the medial elbow. Use lighter loads with higher reps (12-15) and avoid heavy eccentrics until pain-free.",
+      "modificationPl": "Chwyt neutralny jest łagodniejszy niż chwyt podchwytem, ale skośna linia ciągu nadal obciąża przyśrodkową stronę łokcia. Używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15) i unikaj ciężkich faz negatywnych do zakresu bez bólu.",
+      "alternative": "rope-hammer-curl"
+    },
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "modify",
+      "modification": "Crossing the dumbbell in front of the body can compress the subacromial space. Keep the elbow strictly at the side, shorten the range so the dumbbell does not reach the opposite shoulder, and avoid shrugging.",
+      "modificationPl": "Prowadzenie hantla w poprzek przed ciałem może uciskać przestrzeń podbarkową. Łokieć ściśle przy boku, skróć zakres tak by hantel nie dochodził do przeciwnego barku, i nie wzbijaj barku do góry.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Although neutral grip reduces stress on the distal biceps tendon relative to supinated curls, the diagonal still loads it. Reduce volume, control the eccentric, and stop short of full extension if painful.",
+      "modificationPl": "Chwyt neutralny obciąża dalsze ścięgno bicepsa mniej niż chwyt podchwytem, ale skośna linia ruchu nadal je angażuje. Zmniejsz objętość, kontroluj fazę negatywną, zatrzymuj się przed pełnym wyprostem jeśli to boli.",
+      "alternative": "brachialis-cable-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "Neutral grip is the most wrist-friendly curl variant, but the cross-body line can torque the wrist if it deviates ulnar. Keep the wrist locked straight, consider wrist wraps for heavier sets.",
+      "modificationPl": "Chwyt neutralny jest najbardziej przyjazny nadgarstkom, ale skośna linia ruchu może skręcać nadgarstek przy odchyleniu w stronę łokciową. Trzymaj nadgarstek zablokowany prosto, rozważ opaski na nadgarstki przy cięższych seriach.",
+      "alternative": "rope-hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 per arm (hypertrophy) | 3x12-15 per arm (brachialis emphasis / pump) | 4x8-10 per arm (strength)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "dumbbell-cross-body-hammer-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-cross-body-hammer-curl/frame_0_start.png",
+      "frames/dumbbell-cross-body-hammer-curl/frame_1_early.png",
+      "frames/dumbbell-cross-body-hammer-curl/frame_2_mid.png",
+      "frames/dumbbell-cross-body-hammer-curl/frame_3_late.png",
+      "frames/dumbbell-cross-body-hammer-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-cross-body-hammer-curl",
+    "glowupp_id": "dumbbell_cross_body_hammer_curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Klatka 0: stoi wyprostowany, oba hantle zwisają wzdłuż tułowia chwytem neutralnym (młotkowym), prawe ramię uniesione skośnie z hantlem przy lewym barku — pełen skurcz brachialis (podświetlony na czerwono biceps + brachialis prawej ręki, przedramię prawej, biceps lewej w spoczynku). Klatka 2: pozycja lustrzana — lewa ręka uniesiona z hantlem przy prawym barku (faza koncentryczna lewej, prawa już opuszczona przy biodrze). Klatka 4: cykl wraca do pozycji z prawą ręką w górnym skurczu i lewą zwisającą. Ruch jednoznacznie naprzemienny (alternating), chwyt neutralny utrzymany przez całe powtórzenie, łokieć pracującej ręki przy żebrach, tułów stoi nieruchomo bez rotacji — modelowe wykonanie cross-body hammer curl. Akcent na brachialis i krótką głowę bicepsa potwierdzony skośną linią ciągu. Glowupp opis zgodny. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "isolation", "dumbbell", "hammer_grip", "cross_body", "upper_body", "alternating"]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "barbell-clean-grip-front-squat",
+  "name": "Barbell Clean-Grip Front Squat",
+  "namePl": "Front squat chwytem olimpijskim",
+  "aliases": ["clean-grip front squat", "olympic front squat", "front squat clean grip", "weightlifting front squat"],
+  "aliasesPl": ["front squat chwytem rwaniowym", "przysiad przedni chwyt olimpijski", "przysiad przedni chwyt rwaniowy", "front squat olimpijski", "przysiad olimpijski przedni"],
+
+  "description": "The classical olympic-weightlifting front squat performed with the clean grip — bar resting on the front deltoids while the fingertips hold the bar from below in an open grip, with elbows driven high and wrists hyperextended. This is the position into which a weightlifter racks the bar after a clean, so the lift is identical in technique to the recovery from a clean. Heavier and more 'sport-specific' than the cross-arm bodybuilder variation: it loads the front rack 1:1 with what olympic lifting demands. Mechanics emphasize quadriceps as the prime mover (vertical torso forces knee-dominant pattern), the entire upper back as a postural shelf supporting the bar, and the core/anterior chain as anti-flexion stabilizers. Demands significant wrist extension and lat/triceps flexibility. Typically loaded at ~80-85% of one's back squat 1RM. Bar speed and front rack integrity are the limiting factors, not pure leg strength.",
+  "descriptionPl": "Klasyczny olimpijski front squat wykonywany chwytem rwaniowym (clean grip) — gryf spoczywa na przednich aktonach barków, podtrzymywany od dołu opuszkami palców w chwycie otwartym, z łokciami wypchniętymi wysoko i nadgarstkami w hiperprostowaniu. To jest pozycja, w której sztangista przyjmuje gryf po zarzucie, więc ruch jest technicznie identyczny z wstawaniem z zarzutu. Cięższy i bardziej 'sport-specyficzny' niż wariant skrzyżowany (bodybuilder grip): obciąża front rack 1:1 z tym, czego wymaga dwubój olimpijski. Mechanika podkreśla mięsień czworogłowy jako prime mover (pionowy tułów wymusza wzorzec knee-dominant), całą górną część pleców jako półkę posturalną pod gryf oraz core/przedni łańcuch jako stabilizator antyzgięciowy. Wymaga znaczącej mobilności wyprostu nadgarstków oraz elastyczności mięśnia najszerszego grzbietu i tricepsów. Typowe obciążenie to ~80-85% 1RM back squat. Czynnikiem limitującym jest prędkość gryfu i integralność front rack, nie sama siła nóg.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load the desired weight and secure with collars.",
+    "Approach the bar and grip it slightly wider than shoulder-width with a closed (full-hand) grip first — this is your width reference.",
+    "Step under the bar and open the grip: bar rolls onto the fingertips, palms now facing the ceiling. Wrists must extend back (this is the key clean-grip position vs cross-arm rack).",
+    "Drive your elbows HIGH and FORWARD — upper arms parallel to the floor, triceps pointing forward. Bar sits in the shelf of the front delts, NOT in the hands.",
+    "Unrack the bar by extending your legs. Take 2-3 controlled steps back. Set feet shoulder-width with toes out 10-30°.",
+    "Take a deep breath, brace your core 360°, keep elbows up and chest tall.",
+    "Descend by breaking simultaneously at hips and knees, keeping the torso strictly vertical. Knees travel forward over the toes — this is correct here.",
+    "Continue until hip crease passes below the top of the knee (full depth) or to the limit at which you can hold the front rack without elbows dropping.",
+    "Drive up explosively by pushing the whole foot into the floor, leading with the chest and elbows. Elbows MUST stay up — losing the rack means losing the lift.",
+    "Lock out at the top with full hip and knee extension, re-brace and repeat. Maintain the clean grip throughout — do not let fingers fall off the bar."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej części klatki. Załaduj obciążenie i zabezpiecz zaciskami.",
+    "Podejdź do gryfu i chwyć go nieco szerzej niż na szerokość barków pełnym chwytem (closed grip) — to twój punkt odniesienia szerokości.",
+    "Wejdź pod gryf i otwórz chwyt: gryf rolluje się na opuszki palców, dłonie skierowane teraz do sufitu. Nadgarstki muszą się wygiąć w tył (to kluczowa pozycja clean grip vs chwyt skrzyżowany).",
+    "Wypchnij łokcie WYSOKO i DO PRZODU — ramiona równolegle do podłogi, tricepsy skierowane do przodu. Gryf spoczywa na półce z przednich aktonów barków, NIE w dłoniach.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się 2-3 kontrolowane kroki. Stopy na szerokość barków, palce na zewnątrz 10-30°.",
+    "Weź głęboki oddech, napnij brzuch 360°, łokcie wysoko, klatka do góry.",
+    "Schodź w dół zginając jednocześnie biodra i kolana, utrzymując tułów ściśle pionowo. Kolana wysuwają się do przodu nad palce stóp — tu jest to prawidłowe.",
+    "Kontynuuj aż linia bioder zejdzie poniżej szczytu kolan (pełna głębokość) lub do limitu, w którym potrafisz utrzymać front rack bez opadania łokci.",
+    "Wybij się eksplozywnie w górę napierając całą stopą o podłogę, prowadząc ruch klatką i łokciami. Łokcie MUSZĄ pozostać wysoko — utrata front rack = utrata powtórzenia.",
+    "Zakończ pełnym wyprostem bioder i kolan, ponownie napnij brzuch, powtórz. Utrzymaj clean grip przez całą serię — nie pozwól by palce spadły z gryfu."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "upper_back"],
+    "secondary": ["glutes", "erector_spinae", "core"],
+    "stabilizers": ["upper_traps", "rectus_abdominis", "adductors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "upper_back": "P9",
+    "glutes": "S7",
+    "erector_spinae": "S7",
+    "core": "S8",
+    "upper_traps": "S7",
+    "rectus_abdominis": "S6",
+    "adductors": "S5",
+    "forearms": "S5",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-back-squat", "barbell-front-squat", "goblet-squat", "bodyweight-squat"],
+    "progression_to": ["pause-front-squat", "tempo-front-squat", "barbell-overhead-squat", "barbell-clean", "barbell-thruster"],
+    "alternatives": ["barbell-front-squat", "barbell-back-squat", "safety-bar-squat", "goblet-squat", "hack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Open the hands — bar on fingertips, palms to ceiling",
+      "Wrists hyperextended back, fingers under the bar as a guide only",
+      "Elbows as high as you can drive them — chase the ceiling",
+      "Bar on the shelf of front delts, NEVER in the hands",
+      "Big air, brace 360°, chest tall before unracking"
+    ],
+    "setup_cues_pl": [
+      "Otwórz dłonie — gryf na opuszkach palców, dłonie do sufitu",
+      "Nadgarstki wygięte w tył (hiperprostowanie), palce pod gryfem tylko jako prowadzenie",
+      "Łokcie tak wysoko jak tylko zdołasz wypchnąć — kieruj do sufitu",
+      "Gryf na półce przednich aktonów, NIGDY w dłoniach",
+      "Głęboki wdech, napięcie brzucha 360°, klatka do góry przed wyciągnięciem ze stojaka"
+    ],
+    "execution_cues": [
+      "Sit straight down between your feet, not back",
+      "Knees push forward over the toes — this is correct, not a fault",
+      "Torso bolt-upright the entire rep",
+      "Elbows UP at the bottom — never let them drop",
+      "Drive the chest and elbows up first on the way up, not the hips"
+    ],
+    "execution_cues_pl": [
+      "Siadaj prosto w dół między stopami, nie do tyłu",
+      "Kolana pchaj do przodu nad palce — tu jest to prawidłowe, nie błąd",
+      "Tułów pionowo przez całe powtórzenie",
+      "Łokcie WYSOKO na dole — nigdy nie pozwól im opaść",
+      "Wstając prowadź najpierw klatką i łokciami, nie biodrami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drop / loss of clean grip",
+        "faultPl": "Łokcie opadają / utrata clean grip",
+        "cause": "Weak upper back, insufficient lat/triceps mobility, or chasing weight beyond rack stability",
+        "causePl": "Słaba górna część pleców, niewystarczająca mobilność najszerszego grzbietu/tricepsów, lub pogoń za ciężarem przekraczającym stabilność front rack",
+        "cue": "Drive elbows to the ceiling on every inch of the rep. If they drop the bar rolls forward — abort the lift.",
+        "cuePl": "Kieruj łokcie do sufitu na każdym centymetrze powtórzenia. Jeśli opadną, gryf się stoczy — porzuć powtórzenie."
+      },
+      {
+        "fault": "Forward torso lean / good morning out of the hole",
+        "faultPl": "Pochylenie tułowia do przodu / good morning z dołu przysiadu",
+        "cause": "Quad weakness, limited ankle dorsiflexion, or trying to back-squat the front squat",
+        "causePl": "Słabość czworogłowych, ograniczona mobilność stawu skokowego, lub próba wykonania front squat jak back squat",
+        "cue": "Stay vertical. If the bar moves forward of mid-foot you will lose it. Reduce load and reset.",
+        "cuePl": "Pozostań pionowo. Jeśli gryf przesunie się przed środek stopy, stracisz go. Zmniejsz obciążenie i przeresetuj."
+      },
+      {
+        "fault": "Bar resting on hands instead of shoulders",
+        "faultPl": "Gryf spoczywający na dłoniach zamiast na barkach",
+        "cause": "Closed grip habit from deadlifting/rowing, or fear that bar will fall",
+        "causePl": "Nawyk pełnego chwytu z martwego ciągu/wiosłowania, lub strach że gryf spadnie",
+        "cue": "Open the hand fully. The shelf of your front delts carries the weight. Fingers are seatbelts, not load-bearing.",
+        "cuePl": "Otwórz dłoń całkowicie. Półka przednich aktonów niesie ciężar. Palce to pasy bezpieczeństwa, nie elementy nośne."
+      },
+      {
+        "fault": "Wrist collapse / pain in the front rack",
+        "faultPl": "Załamanie nadgarstków / ból w pozycji front rack",
+        "cause": "Limited wrist extension mobility, trying to squeeze the bar in the palm, or grip too narrow forcing wrists into bad angle",
+        "causePl": "Ograniczona mobilność wyprostu nadgarstków, próba ściskania gryfu w dłoni, lub zbyt wąski chwyt wymuszający zły kąt nadgarstków",
+        "cue": "Widen the grip 5-10 cm. Stretch wrist extensors daily. Relax the hand — only fingertips contact the bar.",
+        "cuePl": "Poszerz chwyt o 5-10 cm. Codziennie rozciągaj prostowniki nadgarstków. Rozluźnij dłoń — tylko opuszki palców dotykają gryfu."
+      },
+      {
+        "fault": "Cutting depth (high reps)",
+        "faultPl": "Ucinanie głębokości (powtórzenia ucinane wysoko)",
+        "cause": "Ego loading, mobility limit, or fear of dumping the bar at depth",
+        "causePl": "Obciążenie ego, limit mobilności, lub strach przed zrzuceniem gryfu na dole",
+        "cue": "Hip crease BELOW knee or it's not a front squat. Drop the load, hit depth, then build back up.",
+        "cuePl": "Linia bioder PONIŻEJ kolan, inaczej to nie jest front squat. Zrzuć obciążenie, trafiaj głębokość, potem buduj z powrotem."
+      }
+    ],
+    "breathing": "Big breath at the top, brace 360°, hold through descent and the sticking point on the way up (Valsalva). Exhale near lockout. For heavy singles re-breathe and re-brace between reps; for hypertrophy sets you can breathe at the top of each rep.",
+    "breathingPl": "Głęboki wdech na górze, napięcie brzucha 360°, wstrzymaj oddech przez schodzenie i punkt krytyczny w drodze powrotnej (Valsalva). Wydech blisko lockoutu. Przy ciężkich pojedynczych powtórzeniach ponowny wdech i napięcie między powtórzeniami; przy seriach hipertroficznych można oddychać na górze każdego powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_injury_or_severely_limited_extension",
+      "severity": "avoid",
+      "modification": "Clean grip REQUIRES significant wrist extension. If injured or severely limited, switch to cross-arm rack or use the bodybuilder front squat variation — do not force the clean grip.",
+      "modificationPl": "Clean grip WYMAGA znaczącej mobilności wyprostu nadgarstków. Przy kontuzji lub silnym ograniczeniu zmień na chwyt skrzyżowany lub użyj wariantu bodybuilder front squat — nie wymuszaj clean grip.",
+      "alternative": "barbell-front-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid axial loading of the spine entirely until cleared.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj osiowego obciążania kręgosłupa do czasu wyleczenia.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "shoulder_external_rotation_deficit",
+      "severity": "modify",
+      "modification": "Clean grip front rack demands significant shoulder external rotation and lat flexibility. If limited, work on mobility (bar-on-floor stretches, lat foam rolling) before loading. Use cross-arm grip as interim.",
+      "modificationPl": "Front rack z clean grip wymaga znaczącej rotacji zewnętrznej barków i elastyczności najszerszego grzbietu. Przy ograniczeniu pracuj nad mobilnością (rozciąganie gryfem na podłodze, rolowanie najszerszego) przed obciążeniem. Tymczasowo używaj chwytu skrzyżowanego.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "patellar_tendinopathy_or_anterior_knee_pain",
+      "severity": "caution",
+      "modification": "Front squat loads the patellar tendon significantly more than back squat due to vertical torso and knee-forward pattern. Limit depth to pain-free range, reduce load, and consider higher rep tempo work over heavy singles.",
+      "modificationPl": "Front squat obciąża więzadło rzepki znacznie mocniej niż back squat ze względu na pionowy tułów i wzorzec kolan-do-przodu. Ogranicz głębokość do zakresu bez bólu, zmniejsz obciążenie, rozważ pracę tempową z wyższymi powtórzeniami zamiast ciężkich pojedynczych."
+    }
+  ],
+
+  "typical_sets_reps": "5x3 @ 80-85% 1RM (olympic prep) | 4x5 (strength) | 4x8-10 (hypertrophy / quad focus) | 3x1-3 (max effort)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-clean-grip-front-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-clean-grip-front-squat/frame_0_start.png",
+      "frames/barbell-clean-grip-front-squat/frame_1_early.png",
+      "frames/barbell-clean-grip-front-squat/frame_2_mid.png",
+      "frames/barbell-clean-grip-front-squat/frame_3_late.png",
+      "frames/barbell-clean-grip-front-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-clean-grip-front-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T20:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatki 0/4 (identyczne, lockout): pozycja stojąca, sztanga na PRZEDNICH aktonach barków, łokcie wypchnięte wysoko do przodu — ramiona prawie równoległe do podłogi (klasyczny clean-grip front rack, NIE bodybuilder cross-arm). Klatki 1/3 (mid-descent/mid-ascent): tułów wciąż pionowy, zaczyna się głęboki przysiad — widoczne podświetlenie czworogłowych i wyraźne MIESNIE GÓRNEJ CZĘŚCI PLECÓW (latissimus + tylne aktony + górne pasma najszerszego) jako półka pod gryf, oraz cała ŚCIANA BRZUCHA podświetlona (anti-flexion bracing). Klatka 2 (bottom): pełna głębokość ATG z biodrami poniżej kolan, tułów ŚCIŚLE PIONOWY (kluczowa różnica vs back squat), łokcie utrzymane wysoko, mocno podświetlone czworogłowe i pośladki. Mięśnie podświetlone w trakcie ruchu potwierdzają primary: quadriceps P10 + upper_back P9, secondary: glutes/erector/core. Klasyfikacja źródła jahel jako 'glutes' jest myląca — to ćwiczenie czworogłowych z bardzo silnym wkładem górnych pleców (postural). Difficulty 8 i level 'advanced' (nie intermediate jak generic front squat) — bo clean grip wymaga konkretnej mobilności nadgarstków/barków/latów, której nie ma większość początkujących. Plik PL napisany od zera z polską terminologią dwuboju olimpijskiego ('clean grip', 'front rack', 'chwyt rwaniowy', 'pozycja olimpijska'). Wszystkie pola wymagane przez schema obecne: 5 common_faults, 4 contraindications, prerequisites/progression/alternatives, 5+5 coaching cues setup+execution, muscle_intensity z P/S/T notation.",
+
+  "tags": ["olympic_weightlifting", "clean_complex", "quad_builder", "compound", "lower_body", "core_intensive", "upper_back_intensive", "barbell", "front_rack", "advanced"]
+}

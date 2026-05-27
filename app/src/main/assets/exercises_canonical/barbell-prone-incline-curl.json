@@ -1,0 +1,205 @@
+{
+  "id": "barbell-prone-incline-curl",
+  "name": "Barbell Prone Incline Curl (Spider Curl)",
+  "namePl": "Spider curl ze sztangą (uginanie sztangi leżąc brzuchem na ławce skośnej)",
+  "aliases": ["barbell spider curl", "prone incline barbell curl", "chest-supported barbell curl", "spider curl with straight bar"],
+  "aliasesPl": ["spider curl sztangą prostą", "uginanie sztangi prostej na ławce skośnej leżąc", "uginanie ramion ze sztangą leżąc na brzuchu", "uginanie sztangi z podparciem klatką piersiową"],
+
+  "description": "A strict, chest-supported biceps isolation performed lying face-down (prone) on an incline bench while curling a straight barbell hanging directly below the shoulders. Compared to the dumbbell version, the bar locks both hands into a fixed supinated grip — increasing inter-arm coordination, allowing heavier loading on the biceps as a unit, and creating a strong peak contraction at the top. Because the torso is locked against the pad, hip drive and body english are eliminated; the only variable is elbow flexion. The hanging-humerus position relatively shortens the long head of the biceps, biasing work toward the short (inner) head — a classic golden-era technique for building the biceps peak. Best used as a finisher or second biceps movement after a heavy compound curl.",
+  "descriptionPl": "Ścisła izolacja bicepsa z podparciem klatką piersiową, wykonywana w leżeniu brzuchem (na wprost) na ławce skośnej z prostą sztangą zwisającą bezpośrednio pod barkami. W przeciwieństwie do wariantu z hantlami, sztanga blokuje obie dłonie w stałym chwycie podchwytem — zwiększa koordynację między ramionami, pozwala załadować biceps jako całość większym ciężarem i wymusza mocny skurcz szczytowy w górze. Ponieważ tułów jest zablokowany o oparcie, pomoc bioder i bujanie ciałem są wyeliminowane; jedyną zmienną pozostaje zginanie w łokciu. Zwisająca pozycja kości ramiennej relatywnie skraca głowę długą bicepsa, kierując pracę na głowę krótką (wewnętrzną) — klasyczna technika Złotej Ery do budowania 'szczytu' bicepsa. Najlepiej stosować jako wykończenie sesji lub drugie ćwiczenie na biceps po ciężkim uginaniu wielostawowym.",
+
+  "instructions": [
+    "Set an adjustable bench to about 30-45 degrees. Lie face-down (prone) on the bench with chest and stomach fully supported, chin clearing the top of the pad.",
+    "Plant your feet on the floor on either side of the bench for stability — do not let them dangle.",
+    "Have a partner hand you the barbell, or set the bar on a low rack/blocks below the bench so you can pick it up without breaking position. Grip the bar with a supinated (underhand) grip, hands slightly wider than shoulder width.",
+    "Let the bar hang straight down from your shoulders with arms fully extended. The humerus should be approximately vertical. This is the starting position.",
+    "Brace your core lightly and lock your upper arms in place — only the forearms will move.",
+    "Curl the bar upward by flexing the elbows. Exhale on the way up. The bar travels in an arc toward your collarbones/upper chest.",
+    "Squeeze the biceps hard at the top — fully shortened position with the bar near your shoulders. Pause 1 second.",
+    "Lower the bar under control over 2-3 seconds back to the fully extended starting position. Inhale on the descent.",
+    "Do not let the chest come off the pad, do not let the upper arms drift, do not swing. Each rep is strict and the entire range of motion is owned.",
+    "Because momentum is impossible in this position, use noticeably lighter weight than a standing barbell curl — typically 40-60% of your standing curl weight."
+  ],
+  "instructionsPl": [
+    "Ustaw regulowaną ławkę na około 30-45 stopni. Połóż się brzuchem (na wprost) na ławce, mając klatkę piersiową i brzuch w pełni podparte, a brodę wystającą poza górną krawędź oparcia.",
+    "Oprzyj stopy mocno na podłodze po obu stronach ławki dla stabilizacji — nie zwisaj nimi w powietrzu.",
+    "Poproś partnera o podanie sztangi lub ustaw sztangę na niskim stojaku/podkładkach pod ławką, aby móc ją podnieść bez utraty pozycji. Chwyć sztangę podchwytem (dłonie w górę), na szerokość nieco większą niż barki.",
+    "Pozwól sztandze zwisać pionowo z barków przy w pełni wyprostowanych ramionach. Kość ramienna powinna być w przybliżeniu pionowa. To jest pozycja startowa.",
+    "Lekko napnij brzuch i zablokuj ramiona ponad łokciem w miejscu — pracują wyłącznie przedramiona.",
+    "Uginaj sztangę do góry, zginając łokcie. Wydech w fazie unoszenia. Sztanga porusza się łukiem w stronę obojczyków/górnej części klatki.",
+    "Mocno spinaj biceps w górnej pozycji — pełne skrócenie, sztanga w okolicy barków. Wytrzymaj 1 sekundę.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy do pozycji pełnego wyprostu. Wdech podczas opuszczania.",
+    "Nie pozwól, aby klatka oderwała się od oparcia, ramiona ponad łokciem przesunęły się czy żeby pojawiło się bujanie. Każde powtórzenie jest ścisłe i przerabiasz cały zakres ruchu.",
+    "Ponieważ w tej pozycji nie da się oszukać impetem, używaj wyraźnie mniejszego ciężaru niż w uginaniu stojąc — zazwyczaj 40-60% twojego ciężaru ze stojącego uginania."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "anterior_deltoid", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T1",
+    "upper_back": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell", "incline_bench"],
+    "optional": ["ez_curl_bar", "wrist_wraps", "lifting_straps", "fat_grips"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-curl", "dumbbell-prone-incline-curl"],
+    "progression_to": ["barbell-preacher-curl", "preacher-curl", "ez-bar-spider-curl", "cable-spider-curl"],
+    "alternatives": ["dumbbell-prone-incline-curl", "barbell-preacher-curl", "preacher-curl", "cable-preacher-curl", "concentration-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45 degrees, chest and stomach fully supported",
+      "Chin clears the top of the pad — neck stays neutral, eyes down",
+      "Feet planted firmly on the floor — no dangling",
+      "Bar hangs straight down from shoulders, supinated grip just outside shoulder width",
+      "Shoulders packed, lats engaged, scapulae stable"
+    ],
+    "setup_cues_pl": [
+      "Ławka na 30-45 stopni, klatka i brzuch w pełni podparte",
+      "Broda wystaje poza oparcie — szyja neutralna, wzrok w dół",
+      "Stopy mocno na podłodze — żadnego zwisania",
+      "Sztanga zwisa pionowo z barków, chwyt podchwytem nieco szerszy niż barki",
+      "Barki ustabilizowane, grzbiet napięty, łopatki nieruchome"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms hang motionless beneath shoulders",
+      "Squeeze hard at the top, 1-second hold with the bar near your collarbones",
+      "Lower the bar for 2-3 seconds — feel the deep stretch at the bottom",
+      "Full elbow extension every single rep — no half-reps",
+      "Chest stays glued to the pad — if you have to rock to lift, the weight is too heavy"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchomo zwisają pod barkami",
+      "Mocno spinaj w górze, 1 sekunda przytrzymania ze sztangą w okolicy obojczyków",
+      "Opuszczaj sztangę przez 2-3 sekundy — czuj głębokie rozciągnięcie na dole",
+      "Pełny wyprost łokci w każdym powtórzeniu — żadnych połówek",
+      "Klatka cały czas przyklejona do oparcia — jeśli musisz się bujać, ciężar jest za duży"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the chest off the pad to swing the bar up",
+        "faultPl": "Odrywanie klatki od oparcia, aby zarzucić sztangę w górę",
+        "cause": "Load too heavy, fatigue past technical failure, or habits carried over from standing barbell curls",
+        "causePl": "Zbyt duży ciężar, zmęczenie poza techniczne wyczerpanie lub nawyki przeniesione z uginania stojąc",
+        "cue": "Reduce the weight by 5-10 kg. The entire purpose of spider curl is removing body english — if you cheat, you've eliminated the benefit.",
+        "cuePl": "Zmniejsz ciężar o 5-10 kg. Cały sens spider curl to eliminacja oszukiwania ciałem — jeśli oszukujesz, zlikwidowałeś korzyść z tego ćwiczenia."
+      },
+      {
+        "fault": "Upper arms drifting forward (rowing the bar) at the top",
+        "faultPl": "Ramiona ponad łokciem wędrują do przodu (wiosłowanie sztangą) w górnej pozycji",
+        "cause": "Trying to add range of motion or hit the chest with the bar; lack of scapular control",
+        "causePl": "Próba dodania zakresu ruchu lub dociągnięcia sztangi do klatki; brak kontroli łopatek",
+        "cue": "Pin your upper arms vertically — only the elbow joint hinges. If the bar can't reach your shoulders without moving the upper arms, that's the natural end of the curl.",
+        "cuePl": "Przyspaw ramiona ponad łokciem pionowo — zgina się tylko staw łokciowy. Jeśli sztanga nie sięga barków bez ruchu ramion ponad łokciem, to jest naturalny koniec uginania."
+      },
+      {
+        "fault": "Partial reps — failing to fully extend the elbows at the bottom",
+        "faultPl": "Powtórzenia częściowe — brak pełnego wyprostu łokci na dole",
+        "cause": "The bottom of the spider curl is the hardest part (peak load on the biceps in a stretched position); lifters cut it short to do more reps",
+        "causePl": "Dół spider curl jest najtrudniejszy (szczyt obciążenia bicepsa w pozycji rozciągniętej); ćwiczący skracają zakres, aby wykonać więcej powtórzeń",
+        "cue": "Full extension every rep — the stretch builds the biceps. If you can't extend fully under control, drop the weight.",
+        "cuePl": "Pełny wyprost w każdym powtórzeniu — rozciągnięcie buduje biceps. Jeśli nie potrafisz wyprostować pod kontrolą, zmniejsz ciężar."
+      },
+      {
+        "fault": "Grip too wide or too narrow on the straight bar",
+        "faultPl": "Chwyt zbyt szeroki lub zbyt wąski na sztandze prostej",
+        "cause": "Copying a 'biceps focus' tip without understanding individual wrist/elbow biomechanics",
+        "causePl": "Kopiowanie porady 'na biceps' bez zrozumienia indywidualnej biomechaniki nadgarstków i łokci",
+        "cue": "Use a grip just outside shoulder width. If wrists hurt on the straight bar, switch to an EZ-curl bar — the angled grips reduce wrist strain dramatically.",
+        "cuePl": "Używaj chwytu nieco szerszego niż barki. Jeśli bolą nadgarstki na sztandze prostej, przejdź na sztangę łamaną (EZ) — kątowe uchwyty radykalnie zmniejszają obciążenie nadgarstków."
+      },
+      {
+        "fault": "Lifting the head/neck to look at the bar",
+        "faultPl": "Unoszenie głowy/szyi, aby spojrzeć na sztangę",
+        "cause": "Discomfort with face-down position, curiosity, or trying to mentally 'guide' the bar",
+        "causePl": "Dyskomfort w pozycji twarzą w dół, ciekawość lub próba 'prowadzenia' sztangi wzrokiem",
+        "cue": "Neck neutral — eyes look at the floor about a meter in front of the bench. Feel the rep, don't watch it.",
+        "cuePl": "Szyja neutralnie — wzrok na podłogę około metr przed ławką. Czuj powtórzenie, nie obserwuj go."
+      }
+    ],
+    "breathing": "Exhale on the concentric (curl up), inhale on the eccentric (lower). Avoid breath-holding — the prone position already compresses the ribcage against the pad.",
+    "breathingPl": "Wydech podczas fazy koncentrycznej (uginanie w górę), wdech podczas fazy ekscentrycznej (opuszczanie). Unikaj wstrzymywania oddechu — pozycja na brzuchu już dociska klatkę piersiową do oparcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The deep stretch at the bottom under load heavily stresses the distal biceps tendon. Reduce ROM (stop 15-20 degrees short of full extension), use 12-15 reps with lighter weight, and avoid slow eccentrics until symptoms resolve.",
+      "modificationPl": "Głębokie rozciągnięcie w dolnej pozycji pod obciążeniem mocno obciąża dystalne ścięgno bicepsa. Zmniejsz zakres (zatrzymaj się 15-20 stopni przed pełnym wyprostem), używaj 12-15 powtórzeń z lżejszym ciężarem i unikaj wolnych faz negatywnych do czasu ustąpienia objawów.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "A straight bar forces full supination of the wrist under hanging load, which is harsh on stiff or painful wrists. Use an EZ-curl (cambered) bar to allow a slightly semi-supinated grip, or switch back to dumbbells where the wrists can find their own rotation.",
+      "modificationPl": "Sztanga prosta wymusza pełną supinację nadgarstka pod ciężarem zwisającym, co jest bolesne dla sztywnych lub uszkodzonych nadgarstków. Użyj sztangi łamanej (EZ), która pozwala na lekko półsupinacyjny chwyt, lub wróć do hantli, gdzie nadgarstki mogą znaleźć własną rotację.",
+      "alternative": "dumbbell-prone-incline-curl"
+    },
+    {
+      "condition": "anterior_shoulder_pain_or_impingement",
+      "severity": "modify",
+      "modification": "The hanging humerus position can provoke anterior shoulder structures in some lifters. Set the bench steeper (50-60 degrees) so arms hang more vertically, or switch to a preacher curl where the humerus is supported on the pad.",
+      "modificationPl": "Pozycja zwisającej kości ramiennej może drażnić przednie struktury barku u niektórych ćwiczących. Ustaw ławkę bardziej stromo (50-60 stopni), aby ramiona zwisały bardziej pionowo, lub przejdź na uginanie modlitewnika, gdzie kość ramienna jest podparta o oparcie.",
+      "alternative": "barbell-preacher-curl"
+    },
+    {
+      "condition": "acute_lower_back_or_cervical_pain",
+      "severity": "caution",
+      "modification": "The prone position with extended neck can aggravate cervical issues, and chest compression on the pad can be uncomfortable with active lumbar disc problems. Use a seated incline barbell curl with back support instead.",
+      "modificationPl": "Pozycja na brzuchu z wyciągniętą szyją może drażnić problemy szyjne, a ucisk klatki na oparciu bywa nieprzyjemny przy aktywnych dolegliwościach lędźwiowych dysków. Zamiast tego użyj uginania sztangi siedząc na ławce skośnej z podparciem pleców.",
+      "alternative": "barbell-preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy — preferred range) | 2-3x12-20 (pump / metabolic finisher) | 3-4x8-12 (strength-hypertrophy with strict form)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "barbell-prone-incline-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-prone-incline-curl/frame_0_start.png",
+      "frames/barbell-prone-incline-curl/frame_1_early.png",
+      "frames/barbell-prone-incline-curl/frame_2_mid.png",
+      "frames/barbell-prone-incline-curl/frame_3_late.png",
+      "frames/barbell-prone-incline-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/barbell-prone-incline-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start): mężczyzna leży brzuchem na ławce skośnej (~30-40 stopni), klatka i brzuch w pełni podparte o oparcie, ramiona zwisają pionowo z barków, sztanga prosta z talerzami w pełnym wyproście łokci, chwyt podchwytem nieco szerszy niż barki, biceps i przedramiona podświetlone na czerwono. Frame 1 (early): sztanga zaczyna unosić się łukiem, ramiona ponad łokciem pozostają nieruchome i pionowe pod barkami. Frame 2 (mid): pełny skurcz w górze, sztanga blisko obojczyków, biceps maksymalnie napięty, klatka cały czas przyklejona do oparcia, łokcie nie wędrują do przodu. Frame 3 (late): ten sam obraz co frame 1 — opuszczanie po łuku. Frame 4 (end): powrót do startu z 'ghostem' fazy szczytowej widocznym powyżej. Modelowe wykonanie spider curl ze sztangą — żadnego oszukiwania, idealna izolacja bicepsa, sztanga porusza się czysto w pionie pod łokciem. Wszystkie pola PL napisane od zera (nie tłumaczone z EN); wariant adaptowany ze wzorca dumbbell-prone-incline-curl z uwzględnieniem specyfiki sztangi prostej (sztywny chwyt, większe obciążenie nadgarstków, brak rotacji, mocniejsze obustronne skupienie na bicepsie).",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "barbell", "incline_bench", "strict_form", "spider_curl", "classic", "golden_era", "short_head_emphasis", "peak_contraction", "chest_supported"]
+}

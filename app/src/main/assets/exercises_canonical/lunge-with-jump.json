@@ -1,0 +1,205 @@
+{
+  "id": "lunge-with-jump",
+  "name": "Lunge with Jump",
+  "namePl": "Wykrok ze skokiem",
+  "aliases": ["jumping lunge", "split jump", "plyometric lunge", "alternating jumping lunge", "scissor jump"],
+  "aliasesPl": ["wykrok ze skokiem", "skoki w wykroku", "wykrok plyometryczny", "wykroki ze skokiem przeplatane", "split jumps"],
+
+  "description": "Plyometric lower-body exercise combining a lunge with an explosive vertical jump and mid-air leg switch. Athlete starts in a lunge position, drives explosively through the front foot to jump straight up, switches legs in the air (scissor motion), and lands softly in a lunge on the opposite side. Trains rate of force development, power, single-leg coordination and aerobic-anaerobic conditioning. The eccentric landing builds reactive strength while the concentric jump develops explosive power in the quads, glutes and calves.",
+  "descriptionPl": "Plyometryczne ćwiczenie dolnej części ciała łączące wykrok z eksplozywnym skokiem w górę i zmianą nóg w powietrzu. Trenujący startuje w pozycji wykroku, eksplozywnie wypycha się przednią stopą do skoku w górę, w powietrzu zamienia nogi (ruch nożycowy) i miękko ląduje w wykroku po przeciwnej stronie. Trenuje szybkość rozwoju siły, moc, koordynację jednostronną i wydolność aerobowo-anaerobową. Faza ekscentryczna lądowania buduje siłę reaktywną, a faza koncentryczna skoku rozwija eksplozywną moc czworogłowych, pośladków i łydek.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Step one foot forward into a long stride and lower into a lunge — front thigh roughly parallel to the floor, back knee hovering 2-3 cm above the ground.",
+    "Both knees should be at approximately 90°. Torso upright, core braced, arms in running position (opposite arm forward to the front leg).",
+    "Drive both feet explosively into the ground — emphasize the front heel — to jump straight up as high as possible.",
+    "In the air, swing the arms for momentum and switch leg positions (scissor motion): the back leg comes forward, the front leg goes back.",
+    "Land softly on the balls of both feet first, then absorb through bent knees into the opposite lunge position. Knees track over toes, torso stays vertical.",
+    "Decelerate smoothly through the eccentric phase — do not collapse. The landing depth should match the start position (front thigh parallel, back knee just above floor).",
+    "Without pause, immediately drive into the next jump. Maintain rhythm.",
+    "Continue alternating legs for the prescribed number of reps or duration. Each landing-jump cycle counts as one rep (or count by leg).",
+    "To finish, complete the last landing in a controlled lunge and stand up — do not stop mid-air or land asymmetrically."
+  ],
+  "instructionsPl": [
+    "Stań prosto ze stopami na szerokość bioder. Zrób długi krok jedną nogą w przód i opuść się w wykrok — przednie udo równolegle do podłogi, tylne kolano 2-3 cm nad ziemią.",
+    "Oba kolana powinny być zgięte około 90°. Tułów pionowo, brzuch napięty, ręce jak przy biegu (ręka przeciwna do przedniej nogi z przodu).",
+    "Eksplozywnie wypchnij obie stopy w podłogę — z naciskiem na piętę przedniej nogi — by wyskoczyć prosto w górę tak wysoko jak się da.",
+    "W powietrzu zamachnij rękami dla dodatkowego napędu i zamień pozycje nóg (ruch nożycowy): tylna noga przechodzi do przodu, przednia do tyłu.",
+    "Ląduj miękko najpierw na śródstopiu obu stóp, potem amortyzuj zgiętymi kolanami do pozycji wykroku po przeciwnej stronie. Kolana w linii z palcami, tułów pionowy.",
+    "Płynnie wyhamuj fazę ekscentryczną — nie 'opadaj' w wykrok. Głębokość lądowania powinna odpowiadać pozycji startowej (przednie udo równolegle, tylne kolano tuż nad podłogą).",
+    "Bez przerwy od razu rozpocznij kolejny skok. Utrzymaj rytm.",
+    "Kontynuuj zmiany nóg przez zaplanowaną liczbę powtórzeń lub czas. Jeden cykl lądowanie-skok to jedno powtórzenie (lub licz na nogę).",
+    "Zakończ kontrolowanym lądowaniem w wykroku i wstań — nie zatrzymuj się w powietrzu ani nie ląduj asymetrycznie."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "calves", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "tibialis_anterior", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "calves": "S8",
+    "hamstrings": "S7",
+    "adductors": "S6",
+    "core": "S6",
+    "gluteus_medius": "S6",
+    "tibialis_anterior": "T5",
+    "erector_spinae": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["athletic_shoes", "soft_surface_mat"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-lunge", "reverse-lunge", "bodyweight-squat", "box-jump", "split-squat"],
+    "progression_to": ["weighted-jumping-lunge", "depth-jump-to-lunge", "bulgarian-split-squat-jump", "single-leg-bound"],
+    "alternatives": ["alternating-reverse-lunge", "split-squat", "squat-jump", "skater-jump"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Long stride — front shin vertical, back knee directly under hip",
+      "Both knees at 90° at the start, weight evenly distributed",
+      "Torso upright, chest up, core braced",
+      "Arms ready in running position (counter to front leg)",
+      "Pick a focal point at eye level — head stays neutral throughout"
+    ],
+    "setup_cues_pl": [
+      "Długi krok — piszczel przedniej nogi pionowo, tylne kolano dokładnie pod biodrem",
+      "Oba kolana zgięte do 90° na starcie, ciężar równomiernie rozłożony",
+      "Tułów pionowo, klatka w górze, brzuch napięty",
+      "Ręce gotowe w pozycji biegowej (przeciwnie do przedniej nogi)",
+      "Ustal punkt skupienia wzroku — głowa neutralnie przez cały czas"
+    ],
+    "execution_cues": [
+      "Drive through the WHOLE front foot — heel and ball both push",
+      "Swing the arms aggressively — they generate 15-20% of jump height",
+      "Switch legs in mid-air at the apex of the jump, not on the way down",
+      "Land BALL-of-foot first, then heel — never flat-foot slap",
+      "Absorb each landing — knees bend, hips sit back. Quiet feet = good landing."
+    ],
+    "execution_cues_pl": [
+      "Wypychaj się CAŁĄ przednią stopą — pięta i śródstopie pracują razem",
+      "Mocno zamachaj rękami — dają 15-20% wysokości skoku",
+      "Zmień nogi w powietrzu w szczycie skoku, nie w drodze w dół",
+      "Ląduj NAJPIERW śródstopiem, potem piętą — nigdy nie 'klap' płaską stopą",
+      "Amortyzuj każde lądowanie — kolana się zginają, biodra cofają. Ciche stopy = dobre lądowanie."
+    ],
+    "common_faults": [
+      {
+        "fault": "Hard, flat-footed landings",
+        "faultPl": "Twarde, płaskie lądowania na całej stopie",
+        "cause": "No ankle/knee absorption, lack of eccentric control, fatigue. Loads the joints heavily and signals poor reactive strength.",
+        "causePl": "Brak amortyzacji w kostce i kolanie, słaba kontrola ekscentryczna, zmęczenie. Mocno obciąża stawy i świadczy o słabej sile reaktywnej.",
+        "cue": "Land toes first, then ball, then heel. Imagine landing on eggshells — silent and soft.",
+        "cuePl": "Ląduj najpierw na palcach, potem śródstopiem, potem piętą. Wyobraź sobie że lądujesz na skorupkach jajek — cicho i miękko."
+      },
+      {
+        "fault": "Front knee caves inward on landing (valgus)",
+        "faultPl": "Przednie kolano zapada się do środka przy lądowaniu (koślawość)",
+        "cause": "Weak gluteus medius, poor single-leg control under fatigue, ankle mobility deficit",
+        "causePl": "Słaby pośladkowy średni, słaba kontrola jednostronna pod zmęczeniem, deficyt mobilności kostki",
+        "cue": "Track the knee over the second toe on every landing. If it caves, stop the set — quality over quantity.",
+        "cuePl": "Kolano w linii z drugim palcem stopy przy każdym lądowaniu. Jeśli się zapada, przerwij serię — jakość ważniejsza niż ilość."
+      },
+      {
+        "fault": "Insufficient depth on each rep (shallow lunge)",
+        "faultPl": "Niewystarczająca głębokość w każdym powtórzeniu (płytki wykrok)",
+        "cause": "Trying to rebound too fast, fear of the landing, weak quads at deep ROM",
+        "causePl": "Próba zbyt szybkiego odbicia, strach przed lądowaniem, słabe czworogłowe w głębokim zakresie",
+        "cue": "Hit the same depth every rep — back knee 2-3 cm from the floor. Better fewer correct reps than many shallow ones.",
+        "cuePl": "Trafiaj w tę samą głębokość w każdym powtórzeniu — tylne kolano 2-3 cm od podłogi. Lepiej mniej poprawnych powtórzeń niż dużo płytkich."
+      },
+      {
+        "fault": "Torso pitches forward in flight or landing",
+        "faultPl": "Tułów pochyla się do przodu w locie lub przy lądowaniu",
+        "cause": "Weak core, head leading the body, attempting to jump forward instead of straight up",
+        "causePl": "Słaby brzuch, głowa prowadzi ciało, próba skakania do przodu zamiast prosto w górę",
+        "cue": "Jump UP, not forward. Imagine a string pulling the crown of your head to the ceiling.",
+        "cuePl": "Skacz W GÓRĘ, nie do przodu. Wyobraź sobie sznurek ciągnący czubek głowy do sufitu."
+      },
+      {
+        "fault": "Asymmetric jump height between legs",
+        "faultPl": "Asymetryczna wysokość skoku między nogami",
+        "cause": "Dominant leg compensates for weaker side, fatigue accumulating on one side",
+        "causePl": "Dominująca noga kompensuje słabszą stronę, zmęczenie kumuluje się po jednej stronie",
+        "cue": "Notice which leg jumps lower — that's your weak side. Slow down and equalize. Add unilateral split squats to your program.",
+        "cuePl": "Zauważ która noga skacze niżej — to słabsza strona. Zwolnij i wyrównaj. Dodaj jednostronne split squat do planu."
+      }
+    ],
+    "breathing": "Rhythmic breathing pattern: short exhale on each jump (concentric), brief inhale during flight or landing. Do not hold breath — sets are typically 8-20 reps and continuous breathing supports aerobic-anaerobic demands.",
+    "breathingPl": "Rytmiczny wzór oddychania: krótki wydech przy każdym skoku (faza koncentryczna), krótki wdech w locie lub przy lądowaniu. Nie wstrzymuj oddechu — serie zwykle 8-20 powtórzeń, ciągłe oddychanie wspiera wymagania aerobowo-anaerobowe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_osteoarthritis_or_meniscus_injury",
+      "severity": "avoid",
+      "modification": "High-impact plyometrics aggravate degenerative knee conditions. Switch to non-impact alternating lunges or step-ups.",
+      "modificationPl": "Wysokoudarowe ćwiczenia plyometryczne nasilają zwyrodnieniowe schorzenia kolan. Przejdź na nieudarowe wykroki przeplatane lub wchodzenie na podest.",
+      "alternative": "alternating-reverse-lunge"
+    },
+    {
+      "condition": "achilles_tendinopathy_or_calf_strain",
+      "severity": "avoid",
+      "modification": "Repetitive landings load the Achilles tendon heavily. Heal fully and rebuild with isometric calf work before returning to plyometrics.",
+      "modificationPl": "Powtarzalne lądowania mocno obciążają ścięgno Achillesa. Wylecz się w pełni i odbuduj izometrycznym treningiem łydek przed powrotem do plyometrii.",
+      "alternative": "split-squat"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Landing impact transfers up the chain to the spine. Avoid until pain-free and cleared by a physiotherapist.",
+      "modificationPl": "Siły lądowania przenoszą się po łańcuchu kinetycznym do kręgosłupa. Unikaj do czasu ustąpienia bólu i zgody fizjoterapeuty.",
+      "alternative": "bodyweight-lunge"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "avoid",
+      "modification": "Plyometric impact and rapid balance shifts are not recommended. Use stationary split squats with light support.",
+      "modificationPl": "Plyometryczne obciążenia uderzeniowe i szybkie zmiany równowagi nie są zalecane. Stosuj stacjonarne split squat z lekkim podparciem.",
+      "alternative": "split-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-20 alternating reps (conditioning) | 4-6x6-8 reps with full recovery (power/RFD) | 3x30-45 sec EMOM (metcon) | 3-4x8 per leg (balanced)",
+  "calories_per_kg_per_hour": 9.8,
+
+  "media": {
+    "primary": "lunge-with-jump.gif",
+    "frames_extracted": [
+      "frames/lunge-with-jump/frame_0_start.png",
+      "frames/lunge-with-jump/frame_1_early.png",
+      "frames/lunge-with-jump/frame_2_mid.png",
+      "frames/lunge-with-jump/frame_3_late.png",
+      "frames/lunge-with-jump/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/lunge-with-jump"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzalem 5 klatek kluczowych z GIFa jahel. Plyometryczny wariant lunge ze zmiana nog w powietrzu. Klatka 0 (start) i 4 (end) pokazuja pozycje wykroku z roznymi nogami z przodu (lewa→prawa) — potwierdza alternujacy charakter. Klatki 1 i 3 pokazuja faze powietrzna z wysoko podniesionym kolanem (przelot scissor). Klatka 2 (mid) to glebokie lqdowanie/odbicie z naladowanymi czworoglowymi (najwyrazniej podswietlone) + posladki. Lydki sa wyraznie podswietlone w klatce 0/4 jako kluczowy stabilizator/silownik plyometryczny — uzasadnia S8 dla calves (wyzsze niz w klasycznym lunge gdzie calves=T4). Quadriceps oznaczone P10 (najwyzsza intensywnosc) bo plyo nakladka zwieksza wymagania RFD/eksplozywne. Brak obciazenia zewnetrznego (bodyweight). Polski standard fitness to 'wykrok ze skokiem' lub 'skoki w wykroku' — uzylem obu w aliases. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["unilateral_alternating", "lower_body", "lunge", "plyometric", "bodyweight", "explosive", "conditioning", "power", "high_impact", "compound"]
+}

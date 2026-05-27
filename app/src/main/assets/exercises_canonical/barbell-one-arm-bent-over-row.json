@@ -1,0 +1,200 @@
+{
+  "id": "barbell-one-arm-bent-over-row",
+  "name": "Barbell One-Arm Bent-Over Row",
+  "namePl": "Wiosło w opadzie ze sztangą jednorącz",
+  "aliases": ["landmine row", "one arm barbell row", "single arm landmine row", "meadows row precursor"],
+  "aliasesPl": ["wiosłowanie sztangą jednorącz", "wiosłowanie landmine", "wiosło landmine jednorącz", "wiosło sztangą w opadzie jednorącz"],
+
+  "description": "Unilateral horizontal pull where one end of the barbell rests on the floor (or in a landmine attachment) and the lifter grips the loaded end with one hand. Hinging at the hips to roughly 45 degrees, with the free hand braced on the knee/thigh for support, the loaded end is pulled toward the hip in a tight elbow-driven arc. The arcing path of the bar makes it a hybrid between a horizontal row and a single-arm pull, biasing the lats and mid-back on one side while the trunk fights to resist rotation. Excellent for fixing strength imbalances between sides, building lat thickness with less lower-back fatigue than a bilateral bent-over row, and developing real-world anti-rotation core strength.",
+  "descriptionPl": "Jednostronne ciągnięcie poziome, w którym jeden koniec sztangi opiera się o podłogę (lub w gnieździe landmine), a ćwiczący chwyta załadowany koniec jedną ręką. Pochylasz tułów w biodrach do około 45 stopni, drugą ręką podpierasz się o kolano/udo, i przyciągasz załadowany koniec do biodra ciasnym, prowadzonym łokciem łukiem. Łukowy tor gryfu sprawia, że ćwiczenie to hybryda między klasycznym wiosłem a ciągiem jednorącz — celuje w najszersze grzbietu i środkowe plecy po jednej stronie, podczas gdy tułów pracuje przeciwko rotacji. Doskonałe do wyrównywania asymetrii siły między stronami, budowania grubości najszerszych przy mniejszym zmęczeniu odcinka lędźwiowego niż w wersji oburącz oraz rozwoju realnej siły anty-rotacyjnej core.",
+
+  "instructions": [
+    "Place one end of the barbell in a corner against the wall, in a landmine attachment, or wedged into a heavy plate so it cannot slide. Load the other end with plates.",
+    "Stand straddling the loaded end, or to the side of it. Position yourself so the loaded end will travel along the side of your body when pulled up.",
+    "Hinge at the hips, push the glutes back, slight knee bend. Torso ~45 degrees to the floor. Back flat, neutral spine.",
+    "Place the non-working hand on the same-side knee or thigh for support — this stabilizes the trunk and reduces lower back stress.",
+    "Grip the end of the barbell (just behind the plates) with the working hand. Arm fully extended, hanging down.",
+    "Brace the core hard — the bar wants to rotate your trunk. Resist it.",
+    "Pull the loaded end up toward the hip in a tight arc. Drive the elbow back and up, close to the body. Squeeze the lat and shoulder blade at the top.",
+    "Lower under control along the same arcing path until the working arm is fully extended.",
+    "Complete all reps on one side, then switch hands and repeat on the other side. Match reps and tempo between sides."
+  ],
+  "instructionsPl": [
+    "Umieść jeden koniec sztangi w rogu pod ścianą, w gnieździe landmine lub zaklinuj go ciężkim talerzem tak by się nie ślizgał. Załaduj drugi koniec talerzami.",
+    "Stań okrakiem nad załadowanym końcem albo z boku. Ustaw się tak, by załadowany koniec poruszał się wzdłuż boku ciała podczas ciągu w górę.",
+    "Zegnij się w biodrach, wypchnij pośladki w tył, lekko ugnij kolana. Kąt tułowia ~45 stopni do podłoża. Plecy płaskie, kręgosłup neutralny.",
+    "Połóż wolną rękę na kolanie/udzie po tej samej stronie dla podparcia — to stabilizuje tułów i zmniejsza obciążenie lędźwi.",
+    "Chwyć koniec gryfu (tuż za talerzami) ręką pracującą. Ramię całkowicie wyprostowane, zwisa w dół.",
+    "Mocno napnij brzuch — gryf będzie próbował rotować twój tułów. Stawiaj opór.",
+    "Pociągnij załadowany koniec w górę do biodra ciasnym łukiem. Prowadź łokieć w tył i w górę, blisko ciała. Ściśnij najszersze i łopatkę na szczycie.",
+    "Opuść w pełnej kontroli tym samym łukowym torem aż do pełnego wyprostu ramienia.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień rękę i powtórz na drugą. Wyrównaj liczbę powtórzeń i tempo między stronami."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids"],
+    "secondary": ["biceps_brachii", "trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["obliques", "erector_spinae", "core", "forearms", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P8",
+    "trapezius_middle_lower": "S7",
+    "biceps_brachii": "S7",
+    "posterior_deltoids": "S6",
+    "brachialis": "S6",
+    "obliques": "S7",
+    "erector_spinae": "S7",
+    "forearms": "S6",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["landmine_attachment", "lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bent-over-row", "single-arm-dumbbell-row", "romanian-deadlift"],
+    "progression_to": ["meadows-row", "t-bar-row", "barbell-bent-over-row"],
+    "alternatives": ["single-arm-dumbbell-row", "meadows-row", "t-bar-row", "chest-supported-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "One end of the bar wedged in a corner or landmine — cannot slide",
+      "Straddle or stand to the side of the loaded end",
+      "Hinge to ~45 degrees torso angle, slight knee bend",
+      "Free hand braces same-side knee for trunk support",
+      "Working arm hangs straight down, grip behind the plates"
+    ],
+    "setup_cues_pl": [
+      "Jeden koniec gryfu zaklinowany w rogu lub w landmine — nie może się ślizgać",
+      "Stań okrakiem lub z boku załadowanego końca",
+      "Pochyl tułów do ~45 stopni, lekko ugnij kolana",
+      "Wolna ręka podpiera kolano po tej samej stronie dla stabilizacji tułowia",
+      "Pracujące ramię zwisa pionowo, chwyt tuż za talerzami"
+    ],
+    "execution_cues": [
+      "Pull with the elbow — drive it back and slightly up along the ribs",
+      "Bar end travels in an ARC, not a straight line — finish at the hip",
+      "Squeeze the lat at the top — feel it crunch on the working side",
+      "Resist trunk rotation — the bar wants to twist you; brace hard",
+      "Match reps and tempo on both sides — no cheating on the weaker side"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciem — prowadź go w tył i lekko w górę wzdłuż żeber",
+      "Koniec gryfu porusza się ŁUKIEM, nie po linii prostej — kończysz przy biodrze",
+      "Ściśnij najszersze na szczycie — poczuj jak się kurczy po stronie pracującej",
+      "Opieraj się rotacji tułowia — gryf chce cię obrócić; napnij brzuch mocno",
+      "Wyrównaj liczbę powtórzeń i tempo po obu stronach — bez oszczędzania słabszej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Trunk rotation (twisting toward the pulling side)",
+        "faultPl": "Rotacja tułowia (skręcanie w stronę ciągnącej ręki)",
+        "cause": "Weak obliques and anti-rotation core, load too heavy, or lack of bracing",
+        "causePl": "Słabe skośne brzucha i słaby core anty-rotacyjny, zbyt duży ciężar lub brak napięcia",
+        "cue": "Lock the shoulders parallel to the floor. Brace the abs hard. The PULL goes back — the trunk stays still. If you cannot stop the twist, the weight is too heavy.",
+        "cuePl": "Zablokuj barki równolegle do podłoża. Mocno napnij brzuch. CIĄG idzie w tył — tułów stoi w miejscu. Jeśli nie potrafisz powstrzymać skręcenia, ciężar jest za duży."
+      },
+      {
+        "fault": "Elbow flaring out (chicken wing)",
+        "faultPl": "Łokieć odchodzący na bok (kurze skrzydło)",
+        "cause": "Trying to pull to the chest instead of the hip, or pulling with the rear delt instead of the lat",
+        "causePl": "Próba ciągnięcia do klatki zamiast do biodra lub ciąg tylnym aktonem naramiennych zamiast najszerszymi",
+        "cue": "Elbow stays CLOSE to the ribs. Track the elbow back along the body — not out to the side. Bar end ends at the hip, not the armpit.",
+        "cuePl": "Łokieć BLISKO żeber. Prowadź łokieć w tył wzdłuż ciała — nie na bok. Koniec gryfu kończy przy biodrze, nie przy pasze."
+      },
+      {
+        "fault": "Free hand not supporting (no brace on the knee)",
+        "faultPl": "Wolna ręka bez podparcia (brak oparcia na kolanie)",
+        "cause": "Trying to make it harder by removing support, or simply forgetting the setup",
+        "causePl": "Próba utrudnienia ćwiczenia przez brak podparcia lub po prostu pominięcie elementu setupu",
+        "cue": "Plant the free hand on the same-side knee. This is NOT cheating — it stabilizes the trunk and lets you focus on the lat. Without it, you load the lower back unnecessarily.",
+        "cuePl": "Połóż wolną rękę na kolanie po tej samej stronie. To NIE jest oszustwo — to stabilizuje tułów i pozwala skupić się na najszerszych. Bez tego obciążasz niepotrzebnie lędźwia."
+      },
+      {
+        "fault": "Asymmetric reps (more or stronger on one side)",
+        "faultPl": "Asymetryczne powtórzenia (więcej lub mocniejsze po jednej stronie)",
+        "cause": "Ego on the dominant side, or not counting/matching reps and tempo between sides",
+        "causePl": "Ego po stronie dominującej lub brak liczenia/dopasowania powtórzeń i tempa między stronami",
+        "cue": "Always start with the WEAKER side first. Then match the stronger side to that rep count — not the other way around. The point of unilateral work is to equalize, not amplify imbalance.",
+        "cuePl": "Zawsze zaczynaj od SŁABSZEJ strony. Potem dopasuj liczbę powtórzeń mocniejszej do tej liczby — nie odwrotnie. Sens pracy jednostronnej to wyrównanie, nie pogłębianie różnic."
+      },
+      {
+        "fault": "Rounded lower back (lumbar flexion)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy (zgięcie lędźwiowe)",
+        "cause": "Hinge too shallow before pulling, weak erectors, or load too heavy",
+        "causePl": "Zbyt płytkie hip hinge przed ciągiem, słabe prostowniki lub zbyt duży ciężar",
+        "cue": "Set the hinge BEFORE you grip the bar. Neutral spine, chest proud. If you lose the back position mid-set, rack it. No back row is worth a herniation.",
+        "cuePl": "Ustaw hip hinge ZANIM złapiesz gryf. Neutralny kręgosłup, klatka wysunięta. Jeśli stracisz pozycję pleców w trakcie serii, odłóż ciężar. Żadne wiosłowanie nie jest warte przepukliny."
+      }
+    ],
+    "breathing": "Inhale and brace at the bottom (arm extended). Exhale through the pull as the bar end approaches the hip. Inhale on the controlled descent. Reset the brace before each rep.",
+    "breathingPl": "Wdech i napięcie brzucha w pozycji dolnej (ramię wyprostowane). Wydech podczas ciągu gdy koniec gryfu zbliża się do biodra. Wdech podczas kontrolowanego opuszczania. Resetuj napięcie przed każdym powtórzeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared. Even with chest supported on knee, the loaded hinge still loads the spine. Use chest-supported row instead.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody. Nawet z podparciem na kolanie, obciążone hip hinge nadal obciąża kręgosłup. Użyj wiosłowania z podparciem klatki.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "shoulder_impingement_working_side",
+      "severity": "caution",
+      "modification": "Keep the elbow tucked close to the ribs (avoid abduction). Shorten the range — do not pull to the armpit. Use moderate loads.",
+      "modificationPl": "Trzymaj łokieć blisko żeber (unikaj odwodzenia). Skróć zakres — nie ciągnij do pachy. Stosuj umiarkowane obciążenia.",
+      "alternative": "single-arm-dumbbell-row"
+    },
+    {
+      "condition": "significant_strength_imbalance_between_sides",
+      "severity": "caution",
+      "modification": "This is actually a key use case — but use a load you can handle on the WEAKER side. Match reps and tempo to the weaker side. Do not chase numbers on the strong side.",
+      "modificationPl": "To akurat kluczowe zastosowanie tego ćwiczenia — ale stosuj ciężar dostępny dla SŁABSZEJ strony. Wyrównaj powtórzenia i tempo do słabszej strony. Nie goń liczb po stronie mocniejszej.",
+      "alternative": "single-arm-dumbbell-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 4x6-8 per side (strength) | 3x10-15 per side (general / volume)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-one-arm-bent-over-row.gif",
+    "frames_extracted": [
+      "frames/barbell-one-arm-bent-over-row/frame_0_start.png",
+      "frames/barbell-one-arm-bent-over-row/frame_1_early.png",
+      "frames/barbell-one-arm-bent-over-row/frame_2_mid.png",
+      "frames/barbell-one-arm-bent-over-row/frame_3_late.png",
+      "frames/barbell-one-arm-bent-over-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/barbell-one-arm-bent-over-row",
+    "glowupp_slug": "barbell-one-arm-bent-over-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): postać w pochyleniu ~45 stopni, jeden koniec sztangi załadowany talerzami trzymany prawą ręką, drugi koniec zwisa po przekątnej do podłoża (klasyczny landmine setup — jeden koniec jest punktem obrotu). Wolna ręka oparta o kolano po tej samej stronie dla podparcia tułowia. Podświetlone wyraźnie: najszersze grzbietu (latissimus dorsi) i okolica łopatki/rhomboids po stronie pracującej. Frame 2 (mid): ruch koncentryczny — łokieć idzie w tył i lekko w górę wzdłuż ciała, gryf łukiem zbliża się do biodra. Frames 3-4 (late/end): łokieć za linią tułowia, koniec gryfu prawie przy biodrze, najszersze i rhomboids w pełnym skurczu. Klasyfikacja: pull_horizontal (tułów horyzontalny → ciąg horyzontalny względem tułowia), mechanic=compound, laterality=unilateral, plane=sagittal (ruch ramienia w płaszczyźnie strzałkowej wzdłuż boku ciała), force=pull. Equipment: barbell + talerze, opcjonalnie landmine_attachment (gniazdo) i straps. Trening unilateralny — primary lats P9 + rhomboids P8 po stronie pracującej, dodatkowo obliques S7 jako anti-rotation (kluczowy element ćwiczenia — tułów opiera się skręcaniu). Trudność 6/10 — niższa niż klasyczne wiosłowanie oburącz (7/10) dzięki podparciu wolnej ręki na kolanie. Wszystkie pola PL napisane od zera. Polski standard: 'Wiosło w opadzie ze sztangą jednorącz' lub 'wiosłowanie landmine jednorącz'.",
+
+  "tags": ["compound", "unilateral", "horizontal_pull", "barbell", "landmine", "lat_developer", "anti_rotation", "imbalance_fix", "back_thickness"]
+}

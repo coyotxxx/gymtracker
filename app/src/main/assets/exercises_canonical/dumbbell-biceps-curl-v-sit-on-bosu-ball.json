@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-biceps-curl-v-sit-on-bosu-ball",
+  "name": "Dumbbell Biceps Curl V-Sit on BOSU Ball",
+  "namePl": "Curl bicepsa z hantlami w pozycji V-sit na BOSU",
+  "aliases": ["v-sit dumbbell curl on bosu", "bosu v-sit biceps curl", "core-integrated biceps curl on bosu"],
+  "aliasesPl": ["uginanie ramion z hantlami w V-sit na BOSU", "curl bicepsów w pozycji V na piłce BOSU", "biceps curl z core w pozycji V na BOSU"],
+
+  "description": "Advanced triple-challenge exercise combining a static V-sit hold (isometric core and hip flexor work) with an unstable BOSU ball base and bilateral dumbbell biceps curls. The lifter sits on the dome side of the BOSU, lifts the legs into a V-shape, and performs strict supinated curls while resisting roll, pitch, and trunk rotation. Used in functional training, anti-rotation core conditioning, and as a finisher to fatigue the core simultaneously with the elbow flexors. Demands significant lumbo-pelvic control and balance — not a hypertrophy-first choice.",
+  "descriptionPl": "Zaawansowane ćwiczenie z potrójnym wyzwaniem: statyczne utrzymanie pozycji V-sit (izometryczna praca brzucha i zginaczy biodra) + niestabilna baza BOSU + obustronne uginanie ramion z hantlami. Ćwiczący siada na wypukłej stronie kopuły BOSU, unosi nogi w kształt V i wykonuje ścisłe uginanie podchwytem, jednocześnie kontrolując kołysanie, pochylanie i rotację tułowia. Stosowane w treningu funkcjonalnym, kondycjonowaniu anty-rotacyjnym brzucha oraz jako finisher zmęczeniowy łączący core i zginacze stawu łokciowego. Wymaga dużej kontroli lędźwiowo-miednicznej i równowagi — nie jest wyborem pierwszego rzutu na rozwój masy bicepsa.",
+
+  "instructions": [
+    "Place a BOSU ball dome-side up on a non-slip floor. Sit on the center of the dome with a dumbbell in each hand, palms supinated.",
+    "Lean the torso back roughly 45 degrees and lift the legs off the floor, knees slightly bent. Form a V-shape between your torso and thighs.",
+    "Find your balance point on the BOSU. Brace the abdominals hard and hold the V-position steady — this is the working position for the entire set.",
+    "Pin your upper arms to the sides of the ribcage. Let the dumbbells hang at arms' length.",
+    "Curl both dumbbells upward by flexing at the elbows only. Keep the upper arms motionless and the V-sit shape unchanged.",
+    "Squeeze the biceps at the top, then lower the dumbbells under control over 2-3 seconds back to full elbow extension.",
+    "Breathe shallowly into the ribcage — never relax the abdominal brace. Resist any swaying, tilting, or trunk rotation caused by the BOSU.",
+    "If you lose the V-shape (feet drop, lower back rounds, or you tip backward), end the set — quality of the position is the limiting factor here, not biceps fatigue."
+  ],
+  "instructionsPl": [
+    "Połóż BOSU kopułą do góry na antypoślizgowej podłodze. Usiądź na środku kopuły z hantlami w obu dłoniach, dłonie skierowane podchwytem (do góry).",
+    "Odchyl tułów do tyłu o około 45 stopni i unieś nogi nad podłogę, kolana lekko ugięte. Utwórz kształt V między tułowiem a udami.",
+    "Znajdź punkt równowagi na BOSU. Mocno napnij brzuch i utrzymaj stabilną pozycję V — to jest pozycja robocza na całą serię.",
+    "Przyklej ramiona ponad łokciem do boków klatki piersiowej. Pozwól hantlom wisieć na wyprostowanych ramionach.",
+    "Uginaj obie hantle w łokciach do góry — pracują wyłącznie przedramiona. Ramiona ponad łokciem nieruchome, kształt V niezmieniony.",
+    "Spinaj biceps w górnej pozycji, następnie opuszczaj hantle pod kontrolą przez 2-3 sekundy aż do pełnego wyprostu w łokciach.",
+    "Oddychaj płytko w klatkę piersiową — nigdy nie rozluźniaj napięcia brzucha. Zwalczaj kołysanie, przechylanie i rotację tułowia wywoływane przez BOSU.",
+    "Jeśli stracisz kształt V (stopy opadają, plecy się zaokrąglają lub przewracasz się do tyłu), zakończ serię — to jakość pozycji jest tu czynnikiem limitującym, nie zmęczenie bicepsa."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "rectus_abdominis", "hip_flexors"],
+    "secondary": ["brachialis", "obliques", "transverse_abdominis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "erector_spinae", "quadriceps", "anterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P8",
+    "rectus_abdominis": "P8",
+    "hip_flexors": "P7",
+    "brachialis": "S5",
+    "obliques": "S5",
+    "transverse_abdominis": "S5",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T4",
+    "erector_spinae": "T3",
+    "quadriceps": "T3",
+    "anterior_deltoid": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bosu_ball"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["dumbbell-curl", "v-sit-hold", "seated-dumbbell-curl"],
+    "progression_to": ["v-sit-dumbbell-curl-with-leg-extension", "alternating-bosu-v-sit-dumbbell-curl"],
+    "alternatives": ["seated-dumbbell-curl", "incline-dumbbell-curl", "preacher-curl", "concentration-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "BOSU dome-up on non-slip floor, sit on the center",
+      "Lean back ~45°, lift feet, knees slightly bent — V-shape",
+      "Find balance point before picking up tempo",
+      "Upper arms pinned to ribcage, palms up",
+      "Brace abdominals hard — this is a core exercise first"
+    ],
+    "setup_cues_pl": [
+      "BOSU kopułą do góry na antypoślizgu, usiądź na środku",
+      "Odchyl tułów ~45°, unieś stopy, kolana lekko ugięte — kształt V",
+      "Znajdź punkt równowagi zanim przyspieszysz tempo",
+      "Ramiona ponad łokciem przyklejone do klatki, dłonie podchwytem",
+      "Mocno napnij brzuch — to przede wszystkim ćwiczenie na core"
+    ],
+    "execution_cues": [
+      "Only the forearms move — V-shape locked",
+      "Match the pace of both arms — no alternating",
+      "Resist any twist of the trunk from the BOSU wobble",
+      "Lower for 2-3 seconds, full elbow extension at the bottom",
+      "End the set the moment your V-position breaks, not when biceps fail"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — kształt V zablokowany",
+      "Tempo obu rąk identyczne — żadnego naprzemiennego ruchu",
+      "Zwalczaj rotację tułowia od kołysania BOSU",
+      "Opuszczaj przez 2-3 sekundy, pełen wyprost łokci na dole",
+      "Zakończ serię w chwili gdy traci się pozycję V, nie kiedy padnie biceps"
+    ],
+    "common_faults": [
+      {
+        "fault": "Losing the V-position (feet drop, torso collapses)",
+        "faultPl": "Utrata pozycji V (stopy opadają, tułów się załamuje)",
+        "cause": "Weak hip flexors or core endurance — biceps load is too high relative to core capacity",
+        "causePl": "Słabe zginacze biodra lub wytrzymałość core — obciążenie bicepsa za duże w stosunku do możliwości brzucha",
+        "cue": "Drop the dumbbell weight by 30-40%. Master a 30-second V-sit hold first, then add the curl.",
+        "cuePl": "Zmniejsz hantle o 30-40%. Najpierw opanuj 30-sekundowe utrzymanie V-sit, potem dodawaj curl."
+      },
+      {
+        "fault": "Swinging the torso forward/back to lift the dumbbells",
+        "faultPl": "Bujanie tułowiem w przód/tył aby unieść hantle",
+        "cause": "Compensation for biceps fatigue, made worse by the unstable BOSU base",
+        "causePl": "Kompensacja zmęczenia bicepsów, dodatkowo nasilona przez niestabilną bazę BOSU",
+        "cue": "If you cannot keep the torso angle fixed, the weight is wrong for this exercise. Reduce load.",
+        "cuePl": "Jeśli nie utrzymujesz stałego kąta tułowia, ciężar jest zły dla tego ćwiczenia. Zmniejsz obciążenie."
+      },
+      {
+        "fault": "Asymmetric curl (one arm leads, BOSU tilts sideways)",
+        "faultPl": "Asymetryczne uginanie (jedna ręka prowadzi, BOSU przechyla się na bok)",
+        "cause": "Side-to-side strength imbalance, or rushed tempo without controlling the rolling base",
+        "causePl": "Asymetria siły między stronami, lub zbyt szybkie tempo bez kontroli toczącej się bazy",
+        "cue": "Curl in unison. If BOSU keeps tilting, switch to alternating arms with the resting arm bracing isometrically.",
+        "cuePl": "Uginaj synchronicznie. Jeśli BOSU dalej się przechyla, przejdź na wersję naprzemienną z izometrycznym napięciem ręki w spoczynku."
+      },
+      {
+        "fault": "Rounding the lower back (lumbar flexion under load)",
+        "faultPl": "Zaokrąglanie odcinka lędźwiowego pod obciążeniem",
+        "cause": "Tight hip flexors pull the pelvis into posterior tilt, or fatigue of deep core stabilizers",
+        "causePl": "Spięte zginacze biodra ciągną miednicę w tył, lub zmęczenie głębokich stabilizatorów core",
+        "cue": "Reset the V-shape between reps. Slight anterior pelvic tilt to keep the lumbar spine neutral.",
+        "cuePl": "Reset kształtu V między powtórzeniami. Lekki przedni przechył miednicy aby zachować neutralny lędźwiowy odcinek."
+      },
+      {
+        "fault": "Holding the breath (Valsalva on every rep)",
+        "faultPl": "Wstrzymywanie oddechu (Valsalva przy każdym powtórzeniu)",
+        "cause": "Defaulting to a deadlift-style brace because the position feels demanding",
+        "causePl": "Domyślne stosowanie napięcia jak przy martwym ciągu, bo pozycja jest wymagająca",
+        "cue": "Light brace + shallow chest breathing. This is endurance work, not a 1RM.",
+        "cuePl": "Lekkie napięcie + płytki oddech w klatkę. To praca wytrzymałościowa, nie 1RM."
+      }
+    ],
+    "breathing": "Maintain a continuous light abdominal brace throughout the set. Take shallow chest breaths: short exhale on the curl up, short inhale on the lowering. Do not perform full Valsalva — it spikes intra-abdominal pressure and can destabilize the V-position on the unstable BOSU base.",
+    "breathingPl": "Utrzymuj ciągłe lekkie napięcie brzucha przez całą serię. Oddychaj płytko w klatkę: krótki wydech przy uginaniu, krótki wdech przy opuszczaniu. Nie stosuj pełnego Valsalva — gwałtownie podnosi ciśnienie wewnątrzbrzuszne i może destabilizować pozycję V na niestabilnej bazie BOSU."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_or_chronic_lower_back_pain",
+      "severity": "avoid",
+      "modification": "V-sit creates high shear and compressive load on the lumbar spine via hip flexor pull. Do not perform during active LBP episodes. Use seated dumbbell curl on a stable bench until pain-free for 4+ weeks.",
+      "modificationPl": "Pozycja V-sit generuje duże siły ścinające i kompresyjne na odcinek lędźwiowy przez napięcie zginaczy biodra. Nie wykonuj podczas aktywnych epizodów bólu krzyża. Stosuj seated dumbbell curl na stabilnej ławce dopóki bóle nie ustąpią na 4+ tygodnie.",
+      "alternative": "seated-dumbbell-curl"
+    },
+    {
+      "condition": "diastasis_recti_or_postpartum_under_3_months",
+      "severity": "avoid",
+      "modification": "V-sit produces strong rectus abdominis recruitment and intra-abdominal pressure spikes — both contraindicated for diastasis or recent C-section/vaginal delivery. Use any stable seated/standing curl variation.",
+      "modificationPl": "V-sit silnie aktywuje mięsień prosty brzucha i podnosi ciśnienie wewnątrzbrzuszne — oba przeciwwskazane przy rozejściu kresy białej oraz w okresie ≤3 miesiące po porodzie (cesarskim lub naturalnym). Stosuj stabilny wariant uginania w siadzie/staniu.",
+      "alternative": "seated-dumbbell-curl"
+    },
+    {
+      "condition": "balance_or_vestibular_disorders",
+      "severity": "avoid",
+      "modification": "The BOSU base combined with leaned-back posture stresses vestibular input. Risk of falling. Perform curls on a flat stable surface instead.",
+      "modificationPl": "Baza BOSU w połączeniu z odchyloną pozycją obciąża układ przedsionkowy. Ryzyko upadku. Wykonuj uginanie na płaskim, stabilnym podłożu.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "hip_flexor_strain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Holding the V-sit isometrically loads the iliopsoas and rectus femoris. Lower the legs (heels on floor, V-sit becomes a seated lean-back) until the strain settles.",
+      "modificationPl": "Izometryczne utrzymywanie V-sit obciąża mięsień biodrowo-lędźwiowy i prosty uda. Opuść nogi (pięty na podłodze, V-sit zamienia się w siad z odchyleniem) do czasu wygojenia naciągnięcia.",
+      "alternative": "seated-dumbbell-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 (hypertrophy + core endurance) | 3x10-15 (functional finisher) | 2-3x20-30s curl-rep cluster (core integration)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "dumbbell-biceps-curl-v-sit-on-bosu-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-biceps-curl-v-sit-on-bosu-ball/frame_0_start.png",
+      "frames/dumbbell-biceps-curl-v-sit-on-bosu-ball/frame_1_early.png",
+      "frames/dumbbell-biceps-curl-v-sit-on-bosu-ball/frame_2_mid.png",
+      "frames/dumbbell-biceps-curl-v-sit-on-bosu-ball/frame_3_late.png",
+      "frames/dumbbell-biceps-curl-v-sit-on-bosu-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-biceps-curl-v-sit-on-bosu-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi na kopule BOSU (kopuła do góry), tułów odchylony ~45°, obie nogi uniesione nad podłogę w kształt V z lekko ugiętymi kolanami, hantle wiszą wzdłuż boków BOSU przy wyprostowanych ramionach. Frame 2: pełny skurcz koncentryczny — obie hantle uniesione na wysokość barków, łokcie pozostają przy bokach tułowia, ramię ponad łokciem nieruchome, kształt V zachowany. Frame 4: powrót do wyprostu z wyraźnym 'ghostem' fazy szczytowej widocznym powyżej — potwierdza pełen zakres ruchu i synchronizm obu rąk. Anatomicznie podświetlone: biceps brachii i przedramiona (czerwone) jako primary movers — zgodne z mechaniką curl. Choć BOSU i V-sit nie są podświetlone na grafice anatomicznej, kinematyka pozycji jednoznacznie wskazuje rectus abdominis i hip flexors jako współ-pracujące primary (V-hold izometryczny). Ćwiczenie jednoznacznie zidentyfikowane. Tylko źródło jahel — brak yuhonas/glowupp. Mechanic=compound (bo trzy osie pracy: core + balance + curl), choć curl sam w sobie jest izolowany. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["functional_training", "core_integration", "biceps", "isolation_curl", "bosu", "unstable_surface", "v_sit", "advanced", "anti_rotation", "upper_body"]
+}

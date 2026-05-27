@@ -1,0 +1,200 @@
+{
+  "id": "band-concentration-curl",
+  "name": "Band Concentration Curl",
+  "namePl": "Concentration curl z gumą oporową",
+  "aliases": ["resistance band concentration curl", "seated band concentration curl", "band single-arm concentration curl"],
+  "aliasesPl": ["uginanie koncentryczne z gumą oporową", "concentration curl z taśmą oporową", "siedzące uginanie koncentryczne z gumą"],
+
+  "description": "Classic single-arm biceps isolation performed seated with the working elbow braced against the inside of the thigh, hand hanging down, holding a resistance band handle whose other end is anchored under the foot. Bracing the elbow on the thigh removes shoulder involvement and forces the biceps to work in pure isolation through a long, controlled range. The resistance band provides ascending resistance — tension peaks at the top, hammering the peak contraction. Popularized by old-school bodybuilding (Arnold Schwarzenegger's favorite biceps exercise) and adapted here as a portable, joint-friendly band variant ideal for home training and finisher work.",
+  "descriptionPl": "Klasyczna izolacja bicepsa jedną ręką wykonywana w siadzie — łokieć pracującej ręki oparty jest o wewnętrzną stronę uda, ręka zwisa swobodnie w dół, w dłoni uchwyt gumy oporowej, której drugi koniec stabilizujesz pod stopą. Oparcie łokcia o udo wyłącza barki z ruchu i zmusza biceps do pracy w czystej izolacji w długim, kontrolowanym zakresie. Guma oporowa daje progresywny opór — napięcie rośnie do maksimum w górnej fazie, co mocno podkreśla skurcz szczytowy (peak contraction). Spopularyzowane przez kulturystykę starej szkoły (ulubione ćwiczenie Arnolda Schwarzeneggera na biceps) i zaadaptowane tutaj jako przenośna, przyjazna dla stawów wersja z gumą — idealna do treningu domowego i jako finisher.",
+
+  "instructions": [
+    "Sit on a bench or sturdy box. Spread your knees wide. Anchor the resistance band securely under the foot on the same side as the working arm.",
+    "Lean your torso slightly forward. Place the elbow of the working arm against the inside of the thigh of the same side, just above the knee.",
+    "Grip the band handle with a supinated (palm-up) grip. Let the arm hang fully extended toward the floor — this is the start position.",
+    "Brace your free hand on the opposite thigh or knee for stability. Keep your back flat and chest open — do not round the lower back.",
+    "Curl the handle upward by flexing the elbow only. The upper arm and elbow stay locked against the thigh throughout the entire rep.",
+    "Continue the curl until the hand reaches the front of the shoulder and the biceps is fully contracted. Squeeze hard for 1-2 seconds at the peak — band tension is highest here.",
+    "Lower the handle under control over 2-3 seconds back to full elbow extension. Resist the band the entire way down.",
+    "Complete all reps on one side before switching arms. Avoid swinging the torso or pushing the elbow off the thigh."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce lub stabilnej skrzyni. Rozstaw kolana szeroko. Stabilnie zakotwicz gumę oporową pod stopą po tej samej stronie co pracująca ręka.",
+    "Pochyl tułów lekko do przodu. Oprzyj łokieć pracującego ramienia o wewnętrzną stronę uda po tej samej stronie, tuż nad kolanem.",
+    "Złap uchwyt gumy podchwytem (dłoń skierowana w górę). Pozwól ręce zwisnąć w pełnym wyproście w dół do podłogi — to pozycja startowa.",
+    "Oprzyj wolną rękę o drugie udo lub kolano dla stabilizacji. Plecy proste, klatka otwarta — nie zaokrąglaj odcinka lędźwiowego.",
+    "Uginaj rękę w łokciu unosząc uchwyt do góry — pracuje wyłącznie staw łokciowy. Ramię ponad łokciem i sam łokieć pozostają zablokowane na udzie przez całe powtórzenie.",
+    "Kontynuuj uginanie aż dłoń dotrze do przedniej strony barku, a biceps będzie w pełnym skurczu. Mocno napnij przez 1-2 sekundy w pozycji szczytowej — tu napięcie gumy jest największe.",
+    "Opuszczaj uchwyt w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciu. Stawiaj opór gumie przez cały ruch w dół.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie zanim zmienisz ramię. Unikaj bujania tułowia i odrywania łokcia od uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "core", "lower_back"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S4",
+    "forearm_flexors": "T4",
+    "core": "T2",
+    "lower_back": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band", "bench"],
+    "optional": ["band_handles", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["band-biceps-curl"],
+    "progression_to": ["dumbbell-concentration-curl", "preacher-curl", "spider-curl", "cable-concentration-curl"],
+    "alternatives": ["dumbbell-concentration-curl", "band-biceps-curl", "preacher-curl", "cable-curl", "spider-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall, knees wide, feet flat",
+      "Anchor band securely under the same-side foot",
+      "Plant elbow firmly on inner thigh just above knee",
+      "Supinated grip, palm facing up the entire set",
+      "Free hand braced on the other knee for stability"
+    ],
+    "setup_cues_pl": [
+      "Usiądź prosto, kolana szeroko, stopy płasko",
+      "Stabilnie zakotwicz gumę pod stopą po tej samej stronie",
+      "Mocno oprzyj łokieć o wewnętrzną stronę uda, tuż nad kolanem",
+      "Chwyt podchwytem, dłoń w górę przez całą serię",
+      "Wolna ręka oparta o drugie kolano dla stabilizacji"
+    ],
+    "execution_cues": [
+      "Elbow glued to the thigh — never lifts off",
+      "Only the forearm moves — upper arm is locked",
+      "Squeeze the peak hard — band tension is highest at the top",
+      "Lower slowly for 2-3 seconds against the band",
+      "Full elbow lockout at the bottom every rep"
+    ],
+    "execution_cues_pl": [
+      "Łokieć przyklejony do uda — nigdy się nie unosi",
+      "Pracuje tylko przedramię — ramię ponad łokciem jest zablokowane",
+      "Mocno napnij w pozycji szczytowej — napięcie gumy jest tam największe",
+      "Opuszczaj wolno przez 2-3 sekundy stawiając opór gumie",
+      "Pełny wyprost łokcia na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbow lifts off the thigh during the curl",
+        "faultPl": "Łokieć odrywa się od uda podczas uginania",
+        "cause": "Band tension too high for the biceps at peak, or recruiting shoulder flexion to finish the rep",
+        "causePl": "Zbyt duże napięcie gumy w pozycji szczytowej, lub włączanie zginania w barku aby dokończyć powtórzenie",
+        "cue": "Use a lighter band or shorten its anchor point. The elbow must remain pinned to the thigh through every rep.",
+        "cuePl": "Użyj słabszej gumy lub skróć punkt zakotwiczenia. Łokieć musi pozostać przyklejony do uda przez każde powtórzenie."
+      },
+      {
+        "fault": "Swinging the torso (rocking forward and back)",
+        "faultPl": "Bujanie tułowiem (kołysanie w przód i tył)",
+        "cause": "Trying to use momentum to overcome peak band tension, often from band too stiff",
+        "causePl": "Próba wykorzystania rozpędu aby pokonać napięcie gumy w fazie szczytowej, najczęściej od zbyt sztywnej gumy",
+        "cue": "Lock your torso in place — only the working forearm moves. Reduce band resistance if needed.",
+        "cuePl": "Zablokuj tułów w jednym miejscu — porusza się tylko pracujące przedramię. Zmniejsz opór gumy jeśli trzeba."
+      },
+      {
+        "fault": "Wrist flexion under load (curling the wrist)",
+        "faultPl": "Zginanie nadgarstka pod obciążeniem (curl nadgarstkiem)",
+        "cause": "Compensating for biceps fatigue by adding wrist flexion to lift the handle higher",
+        "causePl": "Kompensowanie zmęczenia bicepsa zginaniem nadgarstka aby unieść uchwyt wyżej",
+        "cue": "Keep the wrist straight, in line with the forearm. The band path should be a clean arc.",
+        "cuePl": "Trzymaj nadgarstek prosty, w jednej linii z przedramieniem. Tor gumy ma być czystym łukiem."
+      },
+      {
+        "fault": "Cutting the bottom of the range (not extending fully)",
+        "faultPl": "Skracanie dolnej fazy (niepełny wyprost łokcia)",
+        "cause": "Avoiding the lengthened position where stretch on the biceps is highest, or fear of band snap-back",
+        "causePl": "Unikanie pozycji rozciągniętej, gdzie napięcie na bicepsie jest największe, lub strach przed nawrotem gumy",
+        "cue": "Lower until the arm is fully extended toward the floor. The bottom stretch builds the most muscle.",
+        "cuePl": "Opuszczaj aż ramię będzie w pełnym wyproście w dół do podłogi. Dolne rozciągnięcie buduje najwięcej masy."
+      },
+      {
+        "fault": "Letting the band snap back on the eccentric",
+        "faultPl": "Pozwalanie aby guma odbiła się w fazie ekscentrycznej",
+        "cause": "Releasing tension too quickly on the way down — loses the most productive part of the rep",
+        "causePl": "Zbyt szybkie zwolnienie napięcia w dół — traci się najbardziej produktywną fazę powtórzenia",
+        "cue": "Resist the band actively for 2-3 seconds on every descent. Negative phase = growth.",
+        "cuePl": "Aktywnie stawiaj opór gumie przez 2-3 sekundy przy każdym opuszczaniu. Faza negatywna = wzrost."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the controlled eccentric (lower down). Keep a light core brace to stabilize the seated torso position.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w kontrolowanej fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha aby stabilizować pozycję tułowia w siadzie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Bands give the heaviest tension at the contracted position where the biceps is shortest — this can irritate distal tendon insertion. Use a lighter band, reduce range to avoid the very top, perform higher reps (15-20) with deliberate tempo.",
+      "modificationPl": "Guma daje największe napięcie w pozycji skróconej, gdzie biceps jest najkrótszy — może to drażnić dystalny przyczep ścięgna. Użyj słabszej gumy, ogranicz zakres unikając samej góry, wykonuj większą liczbę powtórzeń (15-20) w wolnym tempie.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Supinated grip with band tension can aggravate the medial elbow attachments. Switch to a neutral grip (hammer-style) variant or reduce intensity until pain-free.",
+      "modificationPl": "Podchwyt z napięciem gumy może drażnić przyczepy po przyśrodkowej stronie łokcia. Przejdź na wariant z neutralnym chwytem (młotkowy) lub zmniejsz intensywność do zakresu bez bólu.",
+      "alternative": "band-hammer-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "The forward-leaning seated position loads the lumbar flexion. Sit more upright with a slight forward hinge from the hips (not the spine), or perform on a low chair with back support.",
+      "modificationPl": "Pochylona pozycja siedząca obciąża zgięcie lędźwiowe. Siedź bardziej prosto z lekkim pochyleniem z bioder (nie z kręgosłupa), lub wykonuj na niskim krześle z oparciem.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "hip_or_knee_pain_limiting_seated_position",
+      "severity": "modify",
+      "modification": "The wide-knee seated position with elbow on inner thigh may aggravate hip impingement or knee pain. Use a preacher bench instead which removes the leg-bracing requirement.",
+      "modificationPl": "Pozycja siedząca z szeroko rozstawionymi kolanami i łokciem na wewnętrznej stronie uda może drażnić konflikt biodrowy lub bóle kolana. Zamiast tego użyj ławki modlitewnika, która eliminuje konieczność oparcia na nodze.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy) | 2-3x15-20 per arm (pump/finisher) | 3x12-15 per arm (general)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-concentration-curl.gif",
+    "frames_extracted": [
+      "frames/band-concentration-curl/frame_0_start.png",
+      "frames/band-concentration-curl/frame_1_early.png",
+      "frames/band-concentration-curl/frame_2_mid.png",
+      "frames/band-concentration-curl/frame_3_late.png",
+      "frames/band-concentration-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/band-concentration-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: atleta siedzi na skrzyni/ławce, kolana szeroko, łokieć prawej ręki oparty o wewnętrzną stronę prawego uda tuż nad kolanem, ręka zwisa w dół z uchwytem gumy podchwytem, guma biegnie pionowo w dół pod prawą stopę, biceps i przedramię podświetlone na czerwono — pozycja startowa z pełnym wyprostem łokcia. Frame 2: pełny skurcz, dłoń tuż przy przedniej części barku, łokieć nadal przyklejony do uda, ramię ponad łokciem nieruchome — modelowy peak contraction. Frame 4: powrót do pełnego wyprostu (identyczna pozycja jak frame 0). Tułów lekko pochylony do przodu, wolna ręka oparta o lewe udo/kolano dla stabilizacji. Ćwiczenie jednoznacznie zidentyfikowane jako concentration curl z gumą oporową — klasyczna izolacja bicepsa z peak contraction. Unilateral, isolation, sagittal plane, pull. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "resistance_band", "home_workout", "unilateral", "seated", "peak_contraction", "upper_body", "classic"]
+}

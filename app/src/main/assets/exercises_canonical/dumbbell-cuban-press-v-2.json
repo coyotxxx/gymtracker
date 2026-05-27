@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-cuban-press-v-2",
+  "name": "Dumbbell Cuban Press (Variant 2)",
+  "namePl": "Cuban press z hantlami (wariant 2)",
+  "aliases": ["cuban press v2", "scarecrow press", "L-press cuban variant", "rotator cuff press"],
+  "aliasesPl": ["cuban press wariant 2", "scarecrow press", "wyciskanie cubańskie wariant 2", "press rotator cuff"],
+
+  "description": "Compound multi-phase movement combining external rotation of the shoulder with an overhead press. Variant 2 starts with dumbbells hanging at the sides (instead of in front of the body like the classic Cuban press) — the lifter elevates the elbows to ~90/90 'scarecrow' position (upper arms parallel to floor, forearms vertical, palms forward), then presses overhead. Used by Olympic weightlifters and trainees with shoulder problems to bulletproof the rotator cuff, scapular stabilizers, and overhead position. Light weight, high quality reps — NOT a strength exercise.",
+  "descriptionPl": "Wielofazowy ruch wielostawowy łączący rotację zewnętrzną barku z wyciskaniem nad głowę. Wariant 2 zaczyna się z hantlami zwisającymi przy bokach (zamiast przed ciałem jak w klasycznym cuban press) — ćwiczący unosi łokcie do pozycji ~90/90 'scarecrow' (ramiona równolegle do podłogi, przedramiona pionowo, dłonie do przodu), a następnie wyciska nad głowę. Stosowany przez ciężarowców i osoby z problemami barków do wzmocnienia rotator cuff, stabilizatorów łopatki i pozycji overhead. Lekki ciężar, jakość ruchu — NIE jest to ćwiczenie siłowe.",
+
+  "instructions": [
+    "Stand upright, feet hip-width apart, dumbbells hanging at your sides with arms straight and palms facing the thighs (neutral grip).",
+    "Brace core, set the shoulder blades down and back. Eyes forward.",
+    "PHASE 1 — elbow elevation: Lift the elbows out to the sides until upper arms are parallel to the floor and the forearms hang vertically (elbows at shoulder level, forearms pointing down, palms facing back). This resembles a lateral raise stopped halfway.",
+    "PHASE 2 — external rotation: Keeping elbows pinned at shoulder height, rotate forearms upward by externally rotating the shoulder until forearms point straight up and palms face forward ('scarecrow' / 90/90 position). The dumbbells now sit above the elbows.",
+    "PHASE 3 — overhead press: From the 90/90 position, press the dumbbells straight up until arms are fully extended overhead. Biceps near ears at lockout.",
+    "Reverse the sequence on the way down — controlled descent: press down to 90/90 → internally rotate to forearms down → lower elbows back to sides.",
+    "Use VERY light weight (typically 2-5 kg dumbbells). This is a rotator cuff / mobility exercise, not a strength lift.",
+    "Move slowly and deliberately through each phase — no momentum, no swinging."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, hantle zwisające przy bokach, ramiona wyprostowane, dłonie skierowane ku udom (chwyt neutralny).",
+    "Napnij brzuch, łopatki ściągnięte w dół i do tyłu. Wzrok do przodu.",
+    "FAZA 1 — uniesienie łokci: Unieś łokcie na boki aż ramiona będą równolegle do podłogi a przedramiona zwisną pionowo (łokcie na wysokości barków, przedramiona w dół, dłonie do tyłu). Wygląda jak lateral raise zatrzymany w połowie.",
+    "FAZA 2 — rotacja zewnętrzna: Trzymając łokcie na wysokości barków, obróć przedramiona w górę przez rotację zewnętrzną barku aż przedramiona wskazują pionowo w górę a dłonie patrzą do przodu (pozycja 'scarecrow' / 90/90). Hantle teraz nad łokciami.",
+    "FAZA 3 — wyciskanie nad głowę: Z pozycji 90/90 wyciśnij hantle prosto w górę do pełnego wyprostu ramion. Bicepsy przy uszach w lock-out.",
+    "Odwróć sekwencję schodząc — kontrolowane opuszczanie: opuść z lock-out do 90/90 → rotacja wewnętrzna do przedramion w dół → opuść łokcie z powrotem do boków.",
+    "Używaj BARDZO lekkiego ciężaru (zwykle 2-5 kg hantle). To ćwiczenie rotator cuff / mobilności, nie siłowe.",
+    "Ruszaj się wolno i świadomie przez każdą fazę — bez rozpędu, bez kołysania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "multi",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids", "posterior_deltoids", "rotator_cuff", "upper_trapezius"],
+    "secondary": ["anterior_deltoids", "triceps", "serratus_anterior", "rhomboids"],
+    "stabilizers": ["core", "lower_trapezius", "forearms", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P8",
+    "posterior_deltoids": "P7",
+    "rotator_cuff": "P9",
+    "upper_trapezius": "P7",
+    "anterior_deltoids": "S6",
+    "triceps": "S5",
+    "serratus_anterior": "S5",
+    "rhomboids": "S4",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-shoulder-press", "dumbbell-lateral-raise", "dumbbell-external-rotation", "scarecrow-rotation"],
+    "progression_to": ["dumbbell-cuban-press", "barbell-cuban-press", "snatch-balance"],
+    "alternatives": ["dumbbell-cuban-press", "scarecrow-rotation", "dumbbell-external-rotation", "face-pull"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hantle przy bokach, dłonie do ud (neutralny chwyt)",
+      "Stopy na szerokość bioder, kolana lekko miękkie",
+      "Łopatki w dół i do tyłu",
+      "Brzuch napięty, żebra w dół",
+      "Wzrok do przodu, kark wydłużony"
+    ],
+    "setup_cues_pl": [
+      "Hantle przy bokach, dłonie do ud (neutralny chwyt)",
+      "Stopy na szerokość bioder, kolana lekko miękkie",
+      "Łopatki w dół i do tyłu",
+      "Brzuch napięty, żebra w dół",
+      "Wzrok do przodu, kark wydłużony"
+    ],
+    "execution_cues": [
+      "Łokcie do barków — przedramiona zwisają luźno (faza 1)",
+      "Rotuj przez bark, nie przez ruch łokci (faza 2)",
+      "Łokcie ZAMROŻONE na wysokości barków podczas rotacji",
+      "Wyciśnij prosto w górę — bicepsy do uszu",
+      "Wolno, kontrolowanie, KAŻDA faza osobno"
+    ],
+    "execution_cues_pl": [
+      "Łokcie do barków — przedramiona zwisają luźno (faza 1)",
+      "Rotuj przez bark, nie przez ruch łokci (faza 2)",
+      "Łokcie ZAMROŻONE na wysokości barków podczas rotacji",
+      "Wyciśnij prosto w górę — bicepsy do uszu",
+      "Wolno, kontrolowanie, KAŻDA faza osobno"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using too much weight (loses rotator cuff focus)",
+        "faultPl": "Zbyt duży ciężar (traci się fokus na rotator cuff)",
+        "cause": "Treating it as a strength exercise instead of mobility/prehab work",
+        "causePl": "Traktowanie jako ćwiczenie siłowe zamiast mobilności/prehab",
+        "cue": "Zacznij od 2-3 kg. Jeśli musisz się szarpać — ciężar za duży. Jakość > ilość.",
+        "cuePl": "Zacznij od 2-3 kg. Jeśli musisz się szarpać — ciężar za duży. Jakość > ilość."
+      },
+      {
+        "fault": "Elbows drop during the rotation phase",
+        "faultPl": "Łokcie opadają podczas fazy rotacji",
+        "cause": "Weak lateral deltoids / upper trapezius — fatigue from holding 90/90",
+        "causePl": "Słabe akrony boczne / czworoboczny górny — zmęczenie z trzymania 90/90",
+        "cue": "Łokcie MOCNO na wysokości barków przez cały czas rotacji. Zmniejsz ciężar.",
+        "cuePl": "Łokcie MOCNO na wysokości barków przez cały czas rotacji. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Rushing through phases (blending into one motion)",
+        "faultPl": "Pośpiech między fazami (zlewanie w jeden ruch)",
+        "cause": "Lack of mind-muscle connection, treating it as a regular shoulder press",
+        "causePl": "Brak mind-muscle connection, traktowanie jak zwykły shoulder press",
+        "cue": "Pauza 1 sekunda w każdej fazie. Czujesz każdą fazę osobno.",
+        "cuePl": "Pauza 1 sekunda w każdej fazie. Czujesz każdą fazę osobno."
+      },
+      {
+        "fault": "Hyperextending the lower back during overhead press",
+        "faultPl": "Przeprost lędźwiowy podczas wyciskania nad głowę",
+        "cause": "Limited overhead mobility, weak core, weight too heavy",
+        "causePl": "Ograniczona mobilność overhead, słaby brzuch, zbyt duży ciężar",
+        "cue": "Żebra W DÓŁ, brzuch napięty. Jeśli plecy się odginają — przerwij ruch lub zmniejsz ciężar.",
+        "cuePl": "Żebra W DÓŁ, brzuch napięty. Jeśli plecy się odginają — przerwij ruch lub zmniejsz ciężar."
+      },
+      {
+        "fault": "Internal rotation incomplete in 90/90 (palms not facing forward)",
+        "faultPl": "Niepełna rotacja zewnętrzna w 90/90 (dłonie nie patrzą do przodu)",
+        "cause": "Tight internal rotators, poor shoulder mobility",
+        "causePl": "Napięte rotatory wewnętrzne, słaba mobilność barku",
+        "cue": "Pełna rotacja zewnętrzna — dłonie zwrócone DO PRZODU w 90/90. Pracuj nad mobilnością osobno.",
+        "cuePl": "Pełna rotacja zewnętrzna — dłonie zwrócone DO PRZODU w 90/90. Pracuj nad mobilnością osobno."
+      }
+    ],
+    "breathing": "Inhale during the elbow raise + external rotation phases. Exhale during the overhead press. Re-inhale during the descent.",
+    "breathingPl": "Wdech podczas faz uniesienia łokci + rotacji zewnętrznej. Wydech podczas wyciskania nad głowę. Ponowny wdech podczas opuszczania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Avoid until cleared by physiotherapist. Combined rotation + overhead load is high-risk for an injured cuff.",
+      "modificationPl": "Unikaj do zgody fizjoterapeuty. Połączenie rotacji + obciążenia overhead to wysokie ryzyko dla uszkodzonego rotator cuff.",
+      "alternative": "scapular-wall-slide"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Limit the overhead phase ROM (stop before pain). Focus on phases 1-2. Consider scarecrow rotation alone first.",
+      "modificationPl": "Ogranicz ROM fazy overhead (zatrzymaj przed bólem). Skup się na fazach 1-2. Rozważ tylko scarecrow rotation na początek.",
+      "alternative": "dumbbell-external-rotation"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Drop the overhead press phase initially. Work just phases 1-2 until thoracic + shoulder mobility improves.",
+      "modificationPl": "Pomiń fazę overhead na początku. Pracuj tylko fazy 1-2 do poprawy mobilności piersiowej + barku.",
+      "alternative": "scarecrow-rotation"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Perform seated against a back rest to remove standing brace requirement and prevent lumbar extension.",
+      "modificationPl": "Wykonuj siedząco z oparciem aby zlikwidować wymóg napięcia stojącego i przeprostu lędźwiowego.",
+      "alternative": "seated-dumbbell-cuban-press"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 (mobility/prehab) | 3x8-12 (light shoulder work) | 2x15-20 (warm-up)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-cuban-press-v-2.gif",
+    "frames_extracted": [
+      "frames/dumbbell-cuban-press-v-2/frame_0_start.png",
+      "frames/dumbbell-cuban-press-v-2/frame_1_early.png",
+      "frames/dumbbell-cuban-press-v-2/frame_2_mid.png",
+      "frames/dumbbell-cuban-press-v-2/frame_3_late.png",
+      "frames/dumbbell-cuban-press-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-cuban-press-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: hantle przy bokach, neutralny chwyt — START. Frame 1: 'scarecrow' 90/90 — łokcie na wysokości barków, przedramiona pionowo w górę, dłonie do przodu (faza 2 ukończona, podświetlone akrony boczne + tylne + rotator cuff + czworoboczny). Frame 2: pełen overhead press lock-out, bicepsy przy uszach, podświetlone tricepsy + akrony + czworoboczny. Frame 3: powrót do 90/90. Frame 4: powrót do startu z bokami. Różnica WARIANT 2 vs klasyczny Cuban press: klasyczny zaczyna z hantlami W PRZODZIE (na udach przed ciałem) i robi upright row pionowy → external rotation → press. Wariant 2 zaczyna z BOKÓW (neutralny chwyt) i unosi łokcie LATERALNIE (jak lateral raise) zamiast pionowo. Skutkuje większym zaangażowaniem akronów bocznych + tylnych vs front-loaded klasyk. Multi-plane (frontal w fazie 1, transverse w fazie 2, sagittal w fazie 3). Bilateral. Lekki ciężar — prehab / rotator cuff exercise.",
+
+  "tags": ["rotator_cuff", "prehab", "shoulder_health", "compound", "dumbbell", "shoulders", "mobility", "olympic_lifting_accessory", "overhead", "scarecrow"]
+}

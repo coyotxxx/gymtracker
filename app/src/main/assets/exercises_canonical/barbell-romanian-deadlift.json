@@ -1,0 +1,202 @@
+{
+  "id": "barbell-romanian-deadlift",
+  "name": "Barbell Romanian Deadlift (RDL)",
+  "namePl": "Rumuński martwy ciąg ze sztangą (RDL)",
+  "aliases": ["RDL", "romanian deadlift", "barbell RDL", "stiff-leg deadlift variation"],
+  "aliasesPl": ["RDL", "rumuński martwy ciąg", "martwy ciąg rumuński", "martwy ciąg na prostych nogach"],
+
+  "description": "A hip-hinge movement that targets the posterior chain — especially the hamstrings and glutes — through a deep eccentric stretch. Unlike a conventional deadlift, RDL starts from the TOP (standing, bar in hands), the knees stay only slightly bent (~10-20°) throughout, and the bar lowers only to mid-shin or just below the knees, NOT to the floor. The hips travel back as far as possible — the movement is in the hips, not the knees. Considered one of the best exercises for hamstring hypertrophy because of the long stretched-position load.",
+  "descriptionPl": "Ruch hip hinge celujący w tylny łańcuch mięśniowy — szczególnie dwugłowe ud i pośladki — poprzez głęboki ekscentryczny rozciąg. W przeciwieństwie do klasycznego martwego ciągu, RDL zaczyna się od GÓRY (pozycja stojąca, sztanga w rękach), kolana pozostają tylko lekko ugięte (~10-20°) przez cały ruch, a sztanga schodzi jedynie do połowy goleni lub tuż poniżej kolan, NIE do ziemi. Biodra cofają się tak daleko, jak to możliwe — ruch dzieje się w biodrach, nie w kolanach. Uznawany za jedno z najlepszych ćwiczeń na hipertrofię dwugłowych ud ze względu na długie obciążenie w pozycji rozciągniętej.",
+
+  "instructions": [
+    "Set the bar in a rack at hip height (or deadlift it from the floor into the starting position). Grip just outside the hips, double-overhand or mixed grip.",
+    "Stand tall with the bar at your hips, feet hip-width apart, knees only slightly bent (~10-20°). This is the START — RDL goes top-down.",
+    "Set your back: chest up, shoulder blades pulled down and back, lats engaged ('protect your armpits'), neutral spine.",
+    "Take a big breath, brace your core (Valsalva). Begin the descent by pushing your hips BACKWARD — not by bending the knees.",
+    "Lower the bar slowly along the front of your legs — the bar slides down your thighs. Keep it in contact or very close to the body throughout.",
+    "Knees remain in the SAME slightly-bent position the whole time — do not break them further. The movement is pure hip hinge.",
+    "Lower until you feel a strong stretch in the hamstrings — typically bar reaches mid-shin or just below the knees (depends on hamstring flexibility). DO NOT round the lower back to go lower.",
+    "Reverse the movement: drive the hips forward, pull the bar up the legs. Squeeze the glutes hard at the top — full hip extension. Stand tall (no hyperextension)."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości bioder (lub podnieś ją z ziemi do pozycji startowej). Chwyt tuż na zewnątrz bioder, podwójny nachwyt lub mieszany.",
+    "Stań prosto ze sztangą przy biodrach, stopy na szerokość bioder, kolana tylko lekko ugięte (~10-20°). To jest START — RDL idzie z góry w dół.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, najszersze napięte ('chroń pachy'), neutralny kręgosłup.",
+    "Nabierz głęboki oddech, napnij brzuch (Valsalva). Zacznij schodzenie przez wypchnięcie bioder DO TYŁU — nie przez zginanie kolan.",
+    "Opuszczaj sztangę powoli wzdłuż przedniej części nóg — gryf zsuwa się po udach. Trzymaj go w kontakcie lub bardzo blisko ciała przez cały ruch.",
+    "Kolana pozostają w TEJ SAMEJ lekko ugiętej pozycji przez cały czas — nie zginaj ich bardziej. Ruch to czysty hip hinge.",
+    "Schodź aż poczujesz mocny rozciąg w dwugłowych ud — zazwyczaj gryf dochodzi do połowy goleni lub tuż poniżej kolan (zależnie od mobilności hamstringów). NIE zaokrąglaj lędźwi by zejść niżej.",
+    "Wróć ruchem: wepchnij biodra do przodu, podciągnij sztangę wzdłuż nóg. Mocno ściśnij pośladki na górze — pełen wyprost biodra. Stań prosto (bez nadmiernego odgięcia)."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "glutes"],
+    "secondary": ["erector_spinae", "trapezius", "forearms"],
+    "stabilizers": ["core", "latissimus_dorsi", "rhomboids", "rectus_abdominis", "obliques", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P10",
+    "glutes": "P9",
+    "erector_spinae": "S7",
+    "trapezius": "S5",
+    "forearms": "S7",
+    "latissimus_dorsi": "S5",
+    "core": "S6",
+    "adductors": "S4"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["belt", "lifting_straps", "chalk", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-rdl", "kettlebell-rdl", "hip-hinge-dowel-drill", "good-morning"],
+    "progression_to": ["deficit-rdl", "snatch-grip-rdl", "single-leg-rdl", "banded-rdl", "tempo-rdl"],
+    "alternatives": ["dumbbell-rdl", "kettlebell-rdl", "good-morning", "single-leg-rdl", "cable-pull-through"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar in rack at hip height — start from the TOP, not the floor",
+      "Feet hip-width apart, toes forward",
+      "Grip just outside the hips, double-overhand or mixed",
+      "Knees only SLIGHTLY bent (~10-20°) — soft, not locked, not deep",
+      "Chest up, lats engaged ('protect your armpits')"
+    ],
+    "setup_cues_pl": [
+      "Sztanga w stojaku na wysokości bioder — start z GÓRY, nie z ziemi",
+      "Stopy na szerokość bioder, palce do przodu",
+      "Chwyt tuż na zewnątrz bioder, podwójny nachwyt lub mieszany",
+      "Kolana TYLKO lekko ugięte (~10-20°) — miękkie, nie zablokowane, nie głębokie",
+      "Klatka w górze, najszersze napięte ('chroń pachy')"
+    ],
+    "execution_cues": [
+      "Hips BACK, not down — push your butt to the wall behind you",
+      "Bar slides down the thighs — keep it glued to the body",
+      "Knees stay in the SAME bent position the whole rep — do not bend them more",
+      "Lower until you feel a strong hamstring stretch — bar reaches mid-shin or just below knees",
+      "Drive hips forward to lockout, squeeze glutes — no leaning back at the top"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU, nie w dół — wypchnij pośladki do ściany za tobą",
+      "Gryf zsuwa się po udach — trzymaj go przyklejonego do ciała",
+      "Kolana pozostają w TEJ SAMEJ ugiętej pozycji przez całe powtórzenie — nie zginaj ich bardziej",
+      "Schodź aż poczujesz mocny rozciąg dwugłowych ud — gryf do połowy goleni lub tuż poniżej kolan",
+      "Wepchnij biodra do przodu do lock-out, ściśnij pośladki — bez odchylania się do tyłu na górze"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back (lumbar flexion) at the bottom",
+        "faultPl": "Zaokrąglone plecy lędźwiowe (zgięcie lędźwiowe) na dole",
+        "cause": "Going too low for current hamstring flexibility, weak erectors, poor bracing, or load too heavy",
+        "causePl": "Schodzenie za nisko jak na obecną mobilność hamstringów, słabe prostowniki, słabe napięcie brzucha, lub zbyt duży ciężar",
+        "cue": "Stop the descent when you feel the stretch — do NOT chase the floor. Reduce range of motion, reduce weight, master the hinge first.",
+        "cuePl": "Zatrzymaj schodzenie gdy poczujesz rozciąg — NIE goń podłogi. Zmniejsz zakres, zmniejsz ciężar, opanuj hip hinge."
+      },
+      {
+        "fault": "Excessive knee bend — turning RDL into a conventional deadlift",
+        "faultPl": "Zbyt mocne zginanie kolan — zamienia RDL w klasyczny martwy ciąg",
+        "cause": "Misunderstanding of the movement, weak hamstrings trying to use quads, insufficient hip mobility",
+        "causePl": "Niezrozumienie ruchu, słabe dwugłowe ud próbujące wykorzystać czworogłowe, niewystarczająca mobilność bioder",
+        "cue": "Knees STAY soft and quiet — only the hips move. Imagine your knees are locked at 15°. Film yourself from the side.",
+        "cuePl": "Kolana POZOSTAJĄ miękkie i nieruchome — tylko biodra się ruszają. Wyobraź sobie że kolana są zablokowane na 15°. Nagraj się z boku."
+      },
+      {
+        "fault": "Bar drifts away from the body (forward of the legs)",
+        "faultPl": "Gryf oddala się od ciała (do przodu od nóg)",
+        "cause": "Lats not engaged, hips not going back enough, leaning forward instead of hinging",
+        "causePl": "Najszersze nie napięte, biodra nie cofają się wystarczająco, pochylanie do przodu zamiast hingowania",
+        "cue": "Pull the bar INTO your thighs the whole way. Engage lats hard. Hips back, not torso forward.",
+        "cuePl": "Pociągnij gryf W uda przez cały ruch. Mocno napnij najszersze. Biodra do tyłu, nie tułów do przodu."
+      },
+      {
+        "fault": "No scapular retraction — shoulders rounded forward",
+        "faultPl": "Brak retrakcji łopatek — barki zaokrąglone do przodu",
+        "cause": "Weak upper back, neglected lat engagement, fatigue at end of set",
+        "causePl": "Słabe górne plecy, zaniedbana aktywacja najszerszych, zmęczenie pod koniec serii",
+        "cue": "Shoulder blades down and back BEFORE the descent. Hold the position the whole rep. Stop the set when form breaks.",
+        "cuePl": "Łopatki w dół i do tyłu PRZED schodzeniem. Trzymaj pozycję przez całe powtórzenie. Zakończ serię gdy technika się sypie."
+      },
+      {
+        "fault": "Going too low — chasing the floor instead of stopping at the stretch",
+        "faultPl": "Schodzenie za nisko — gonienie podłogi zamiast zatrzymania na rozciągu",
+        "cause": "Confusing RDL with conventional deadlift, ego, copying powerlifters with elite mobility",
+        "causePl": "Mylenie RDL z klasycznym martwym ciągiem, ego, kopiowanie powerlifterów z elitarną mobilnością",
+        "cue": "RDL stops at mid-shin or just below knees — that's all. Past that, you lose tension and round the back.",
+        "cuePl": "RDL kończy się w połowie goleni lub tuż poniżej kolan — i tyle. Niżej tracisz napięcie i zaokrąglasz plecy."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace (Valsalva), hold during descent and ascent. Exhale at the top of the lockout. NEVER exhale during the eccentric — that's where the spine needs the most bracing.",
+    "breathingPl": "Głęboki wdech na górze, napięcie (Valsalva), trzymaj podczas schodzenia i wchodzenia. Wydech na szczycie lock-out. NIGDY wydech podczas ekscentryku — tam kręgosłup potrzebuje najmocniejszego napięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Do not load the spine — even partial RDL puts shear forces on the lumbar.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nie obciążaj kręgosłupa — nawet częściowy RDL daje siły ścinające na lędźwie.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion is high-risk. Switch to seated leg curl or cable pull-through (less spinal load).",
+      "modificationPl": "Obciążona flexja kręgosłupa to wysokie ryzyko. Przejdź na uginanie nóg siedząc lub cable pull-through (mniejsze obciążenie kręgosłupa).",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop above the knee. Use elevated platform for the bar (rack-pull RDL) to limit ROM. Work flexibility separately.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj się powyżej kolana. Użyj podwyższenia dla sztangi (rack-pull RDL) by ograniczyć zakres. Pracuj nad mobilnością osobno.",
+      "alternative": "kettlebell-rdl"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Reduce hip flexion depth, try slightly wider stance. Stop well above the floor — RDL deep flexion may aggravate impingement.",
+      "modificationPl": "Zmniejsz głębokość zgięcia biodra, spróbuj nieco szerszej stójki. Zatrzymaj się grubo nad podłogą — głębokie zgięcie w RDL może drażnić impingement.",
+      "alternative": "single-leg-rdl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-12 (hypertrophy — preferred range for hamstring growth) | 4-5x4-6 (strength) | 3x12-15 (endurance/glute focus)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-romanian-deadlift.gif",
+    "frames_extracted": [
+      "frames/barbell-romanian-deadlift/frame_0_start.png",
+      "frames/barbell-romanian-deadlift/frame_1_early.png",
+      "frames/barbell-romanian-deadlift/frame_2_mid.png",
+      "frames/barbell-romanian-deadlift/frame_3_late.png",
+      "frames/barbell-romanian-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-romanian-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:40:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (290 KB, 12 oryginalnych klatek). Frame 0 (start cyklu w GIFie): dolna pozycja RDL — sztanga poniżej kolan na wysokości połowy goleni, mocny hip hinge, plecy pochylone ale neutralne, kolana lekko ugięte (~15°). Podświetlone mocno: hamstringi (cały tył uda), pośladki, prostowniki grzbietu, trapezius. Frame 2: lockout/pozycja stojąca z pełnym wyprostem bioder, sztanga przy biodrach — to jest faktyczny START ćwiczenia (RDL idzie top-down, ale GIF zaczyna się w połowie cyklu). Frame 4: powrót w dół do pozycji pochylonej. Kluczowa obserwacja: kolana pozostają minimalnie ugięte przez cały ruch — nie ma głębokiego zginania kolan jak w konwencjonalnym deadlifcie. Sztanga prowadzona blisko nóg. Klasyfikacja jako 'hinge' (czysty hip hinge, prawie zero ruchu kolan). Equipment: tylko barbell. Trudność 6 (intermediate) — wymaga opanowanej techniki hinge i mobilności hamstringów. Główne mięśnie: hamstrings P10 i glutes P9 (RDL jest superior do konwencjonalnego DL dla hipertrofii hamstringów ze względu na długi ekscentryk pod obciążeniem w pozycji rozciągniętej). Erector spinae S7 (znacznie mniej obciążony niż w konwencjonalnym DL ze względu na mniejszy zakres). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używam polskiej terminologii fitness (hip hinge, RDL, ekscentryk, lock-out, hamstringi, pośladki).",
+
+  "tags": ["bodybuilding", "powerlifting", "posterior_chain", "hamstring_hypertrophy", "hip_hinge", "barbell", "compound", "eccentric_focused", "assistance_lift"]
+}

@@ -1,0 +1,199 @@
+{
+  "id": "barbell-pendlay-row",
+  "name": "Barbell Pendlay Row",
+  "namePl": "Wiosłowanie sztangą Pendlay",
+  "aliases": ["pendlay row", "dead-stop barbell row", "dead stop row", "strict barbell row from floor"],
+  "aliasesPl": ["pendlay row", "wiosłowanie Pendlaya", "wiosłowanie sztangą z ziemi", "wiosłowanie z dead stop", "strict row sztangą"],
+
+  "description": "Strict horizontal pulling variant developed and popularized by US weightlifting coach Glenn Pendlay. Unlike the classic bent-over row, every rep starts from a complete dead stop with the barbell resting on the floor, and the torso is held nearly parallel to the ground throughout the entire set. The dead-stop reset eliminates stretch-reflex and elastic energy, forcing each rep to be initiated from a fully relaxed back, which produces cleaner lat and rhomboid recruitment with less low-back fatigue and zero hip kipping. The deeper torso angle places the bar path more horizontal relative to the spine, increasing demand on the lats and mid-back compared to a 45-degree row. Highly favored among strength athletes and powerbuilders as the most honest expression of pulling strength.",
+  "descriptionPl": "Restrykcyjna wersja ciągu poziomego opracowana i spopularyzowana przez amerykańskiego trenera podnoszenia ciężarów Glenna Pendlaya. W przeciwieństwie do klasycznego wiosłowania w opadzie każde powtórzenie zaczyna się z pełnego zatrzymania (dead stop) ze sztangą leżącą na podłodze, a tułów przez całą serię trzymany jest niemal równolegle do podłoża. Reset na ziemi eliminuje odruch rozciągowy i energię sprężystą, zmuszając każde powtórzenie do startu z całkowicie rozluźnionych pleców, co daje czystszą rekrutację najszerszych i równoległobocznych przy mniejszym zmęczeniu odcinka lędźwiowego i całkowitym braku kippingu biodrami. Głębszy kąt tułowia ustawia tor sztangi bardziej poziomo względem kręgosłupa, zwiększając zaangażowanie najszerszych i środkowych pleców względem wiosłowania pod 45 stopni. Bardzo ceniony przez zawodników siłowych i powerbuilderów jako najuczciwszy wyraz siły ciągnącej.",
+
+  "instructions": [
+    "Load the barbell. Stand with feet shoulder-width apart, mid-foot under the bar. Grip slightly wider than shoulders, overhand grip (pronated).",
+    "Hinge deeply at the hips and bend the knees slightly. Torso should be nearly parallel to the floor — around 15-25 degrees above horizontal, NOT 45 degrees like a classic bent-over row.",
+    "Set neutral spine, chest down, lats engaged. Head in line with the spine (look at the floor 1-2 meters ahead, not up).",
+    "Take a deep breath, brace the core hard, and explosively pull the bar from the floor straight up to the lower chest / upper abdomen.",
+    "Elbows drive UP and slightly out toward the ceiling, NOT back along the body. Squeeze the shoulder blades together at the top.",
+    "Lower the bar back to the floor under control along the same vertical path. Allow it to fully rest on the floor — DEAD STOP.",
+    "Reset breath and brace, then initiate the next rep from a fully relaxed back. No stretch reflex, no bouncing the plates.",
+    "Maintain the near-parallel torso angle for the entire set. Any rising of the torso during the pull means the weight is too heavy."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę. Stań stopami na szerokość barków, środek stopy pod gryfem. Chwyt nieco szerzej niż barki, nachwytem (dłonie skierowane w dół).",
+    "Mocno zegnij się w biodrach i lekko ugnij kolana. Tułów powinien być prawie równoległy do podłoża — około 15-25 stopni nad poziomem, NIE 45 stopni jak w klasycznym wiosłowaniu w opadzie.",
+    "Ustaw neutralny kręgosłup, klatka skierowana w dół, najszersze napięte. Głowa w linii z kręgosłupem (patrz na podłogę 1-2 metry przed sobą, nie do góry).",
+    "Weź głęboki wdech, mocno napnij brzuch i eksplozywnie pociągnij sztangę z podłogi prosto w górę do dolnej części klatki / górnej części brzucha.",
+    "Łokcie prowadź W GÓRĘ i lekko na boki w stronę sufitu, NIE w tył wzdłuż ciała. Ściśnij łopatki na szczycie.",
+    "Opuść sztangę z powrotem na podłogę pod kontrolą tą samą pionową trajektorią. Pozwól jej całkowicie spocząć na ziemi — DEAD STOP.",
+    "Zresetuj oddech i napięcie, potem zainicjuj kolejne powtórzenie z całkowicie rozluźnionych pleców. Bez odruchu sprężystego, bez odbijania talerzy.",
+    "Utrzymuj prawie równoległy kąt tułowia przez całą serię. Każde podnoszenie tułowia w trakcie ciągu oznacza, że ciężar jest zbyt duży."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle"],
+    "secondary": ["trapezius_lower", "posterior_deltoids", "biceps_brachii", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "rhomboids": "P9",
+    "trapezius_middle": "P9",
+    "trapezius_lower": "S8",
+    "posterior_deltoids": "S8",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "erector_spinae": "S8",
+    "forearms": "S7",
+    "core": "S7",
+    "hamstrings": "S5",
+    "glutes": "S5"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["lifting_straps", "chalk", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 7,
+    "prerequisites": ["barbell-bent-over-row", "romanian-deadlift", "conventional-deadlift", "single-arm-dumbbell-row"],
+    "progression_to": ["weighted-pull-up", "deficit-pendlay-row", "snatch-grip-pendlay-row"],
+    "alternatives": ["barbell-bent-over-row", "yates-row", "chest-supported-row", "t-bar-row", "seal-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on the floor, mid-foot under the bar",
+      "Overhand grip, slightly wider than shoulders",
+      "Deep hinge — torso nearly parallel to floor, not 45 degrees",
+      "Neutral spine, chest down, head in line with spine",
+      "Big breath, brace hard, lats engaged BEFORE the pull"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na podłodze, środek stopy pod gryfem",
+      "Chwyt nachwytem, nieco szerzej niż barki",
+      "Głęboki hip hinge — tułów prawie równolegle do podłogi, nie 45 stopni",
+      "Neutralny kręgosłup, klatka skierowana w dół, głowa w linii z kręgosłupem",
+      "Duży wdech, mocne napięcie brzucha, najszersze napięte PRZED ciągiem"
+    ],
+    "execution_cues": [
+      "Explode the bar off the floor — make the plates ring",
+      "Pull elbows UP toward the ceiling, not back along your sides",
+      "Bar travels straight up vertically to the lower chest / upper abs",
+      "Squeeze the shoulder blades hard at the top — 1 sec pause",
+      "Return the bar to the floor and DEAD STOP — full reset every rep"
+    ],
+    "execution_cues_pl": [
+      "Eksplozywnie oderwij sztangę od podłogi — niech talerze zadzwonią",
+      "Prowadź łokcie W GÓRĘ w stronę sufitu, nie w tył wzdłuż boków",
+      "Sztanga idzie pionowo w górę do dolnej części klatki / górnego brzucha",
+      "Mocno ściśnij łopatki na szczycie — 1 sekunda pauzy",
+      "Opuść sztangę na podłogę i DEAD STOP — pełen reset przy każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rising during the pull (turning into a bent-over row)",
+        "faultPl": "Tułów unoszący się w trakcie ciągu (zamiana w klasyczne wiosłowanie w opadzie)",
+        "cause": "Load too heavy, weak posterior chain, or unconsciously using hip extension to start the bar",
+        "causePl": "Zbyt duży ciężar, słaby tylny łańcuch lub nieświadome używanie wyprostu bioder do oderwania sztangi",
+        "cue": "Reduce weight 20-30%. Film from the side — if torso angle changes more than 5-10 degrees, it is NOT a Pendlay row. Lock the hinge before the pull and keep it there.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Nagraj się z boku — jeśli kąt tułowia zmienia się o więcej niż 5-10 stopni, to NIE jest Pendlay row. Zablokuj hip hinge przed ciągiem i trzymaj go tam."
+      },
+      {
+        "fault": "Bouncing the plates / using stretch reflex (skipping the dead stop)",
+        "faultPl": "Odbijanie talerzy / używanie odruchu sprężystego (pomijanie dead stop)",
+        "cause": "Rushing the cadence, ego lifting, or not understanding the purpose of the variant",
+        "causePl": "Pośpiech, ego lifting lub niezrozumienie sensu tego wariantu",
+        "cue": "Place the bar gently on the floor. Pause 1 full second on the floor. Re-breathe, re-brace, then pull. If you can't, the weight is wrong for Pendlay row — drop it.",
+        "cuePl": "Delikatnie odkładaj sztangę na podłogę. Pauzuj pełną sekundę na podłodze. Powtórz wdech, powtórz napięcie, dopiero potem ciągnij. Jeśli nie potrafisz, ciężar jest zły do Pendlay row — zmniejsz."
+      },
+      {
+        "fault": "Rounded lower back at dead stop (lumbar flexion at the floor)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy w pozycji dead stop (flexja lędźwiowa przy podłodze)",
+        "cause": "Poor hip hinge mobility, weak erectors, or trying to keep torso too low without the mobility for it",
+        "causePl": "Słaba mobilność hip hinge, słabe prostowniki lub próba trzymania tułowia zbyt nisko bez wystarczającej mobilności",
+        "cue": "Either improve hamstring mobility (RDL work) OR raise torso to 30-35 degrees temporarily until mobility allows lower position. Neutral spine ALWAYS wins over torso angle.",
+        "cuePl": "Albo popraw mobilność dwugłowych ud (praca z RDL) ALBO podnieś tułów tymczasowo do 30-35 stopni dopóki mobilność nie pozwoli na niższą pozycję. Neutralny kręgosłup ZAWSZE wygrywa z kątem tułowia."
+      },
+      {
+        "fault": "Pulling to the abdomen instead of the chest (wrong elbow path)",
+        "faultPl": "Ciąg do brzucha zamiast do klatki (zły tor łokci)",
+        "cause": "Importing the cue from classic bent-over row, where torso is at 45 degrees and bar goes to hips",
+        "causePl": "Przenoszenie cue z klasycznego wiosłowania w opadzie, gdzie tułów jest pod 45 stopni a sztanga idzie do bioder",
+        "cue": "Because torso is more horizontal in Pendlay, the bar must travel further UP. Target = lower chest / sternum / upper abs depending on torso angle. Elbows go UP, not back.",
+        "cuePl": "Ponieważ tułów jest bardziej poziomy w Pendlay row, sztanga musi przebyć dłuższą drogę W GÓRĘ. Cel = dolna klatka / mostek / górny brzuch w zależności od kąta tułowia. Łokcie idą W GÓRĘ, nie w tył."
+      },
+      {
+        "fault": "Hyperextending the neck (looking up/forward)",
+        "faultPl": "Hiperekstensja szyi (patrzenie w górę/przed siebie)",
+        "cause": "Trying to see in a mirror, mimicking videos, or unconscious cervical extension under load",
+        "causePl": "Próba patrzenia w lustro, naśladowanie filmików lub nieświadoma ekstensja szyjna pod obciążeniem",
+        "cue": "Head stays in line with spine — eyes on the floor 1-2 meters in front of you. Cervical hyperextension under load wears out the discs and shifts torso angle.",
+        "cuePl": "Głowa w linii z kręgosłupem — wzrok na podłogę 1-2 metry przed sobą. Hiperekstensja szyjna pod obciążeniem zużywa krążki i zmienia kąt tułowia."
+      }
+    ],
+    "breathing": "Take a big breath and brace BEFORE each rep at the floor. Hold the brace through the entire concentric pull. Exhale at the top after scapular squeeze. Re-breathe and re-brace at the dead stop. Every Pendlay rep is a 'reset rep' — never carry over breath between reps under heavy load.",
+    "breathingPl": "Weź duży wdech i napnij brzuch PRZED każdym powtórzeniem na podłodze. Trzymaj napięcie przez cały ciąg koncentryczny. Wydech na szczycie po ściśnięciu łopatek. Powtórz wdech i napięcie w pozycji dead stop. Każde powtórzenie Pendlay to 'reset rep' — nigdy nie przenoś oddechu między powtórzeniami pod dużym obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely. Pendlay row demands deep hip hinge under load — too high spinal stress for acute injury. Wait for full clearance.",
+      "modificationPl": "Unikaj całkowicie. Pendlay row wymaga głębokiego hip hinge pod obciążeniem — zbyt duże obciążenie kręgosłupa dla świeżej kontuzji. Czekaj na pełną zgodę.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "limited_hamstring_or_hip_mobility",
+      "severity": "modify",
+      "modification": "If you cannot hold a neutral spine with torso near-parallel, raise torso to 30-40 degrees (still lower than classic BOR) or switch to regular bent-over row until mobility improves.",
+      "modificationPl": "Jeśli nie utrzymujesz neutralnego kręgosłupa przy tułowiu prawie równoległym, podnieś tułów do 30-40 stopni (nadal niżej niż klasyczne BOR) lub przejdź na zwykłe wiosłowanie w opadzie dopóki mobilność się nie poprawi.",
+      "alternative": "barbell-bent-over-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "The high elbow path can aggravate impingement. Switch to neutral-grip variant (T-bar with neutral handle) or use chest-supported row with narrower grip.",
+      "modificationPl": "Wysoki tor łokci może nasilać impingement. Przejdź na wersję chwytem neutralnym (T-bar z neutralną rączką) lub wiosłowanie z podparciem klatki z węższym chwytem.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "4-5x3-5 (strength) | 3-4x5-8 (powerbuilding) | 3-4x6-8 (hypertrophy with dead stop) | NOT recommended for sets above 10 reps (form breaks down without stretch reflex)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-pendlay-row.gif",
+    "frames_extracted": [
+      "frames/barbell-pendlay-row/frame_0_start.png",
+      "frames/barbell-pendlay-row/frame_1_early.png",
+      "frames/barbell-pendlay-row/frame_2_mid.png",
+      "frames/barbell-pendlay-row/frame_3_late.png",
+      "frames/barbell-pendlay-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/barbell-pendlay-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): sztanga LEŻY na podłodze (dead stop), tułów bardzo nisko — prawie równolegle do podłoża (~15-20 stopni nad poziomem), zdecydowanie głębiej niż klasyczne wiosłowanie w opadzie pod 45 stopni. Kolana lekko ugięte, biodra wypchnięte w tył, podświetlone są najszersze grzbietu i obszar środkowych pleców (rhomboids + trapezius middle). Frames 1-2 (early/mid): ciąg pionowy w górę, łokcie wędrują W GÓRĘ w stronę sufitu (nie w tył jak w klasyku BOR), sztanga zbliża się do dolnej klatki / górnej części brzucha. Kąt tułowia STABILNY — to kluczowa cecha Pendlay. Frame 3 (late): szczyt powtórzenia — łopatki ściśnięte, łokcie powyżej linii tułowia, podświetlenie pełne na latach i mid-back. Frame 4 (end): sztanga z powrotem na ziemi (dead stop) — gotowość do resetu i kolejnego powtórzenia z rozluźnionych pleców. To CZYSTY Pendlay row — głębszy tułów + dead stop + pionowy tor sztangi. Klasyfikacja jako 'pull_horizontal' poprawna (tułów horyzontalny → ciąg horyzontalny względem kręgosłupa, mimo że w przestrzeni sztanga porusza się pionowo). primary: latissimus_dorsi P10 (głębszy tułów = więcej zaangażowania latów względem klasycznego BOR), rhomboids P9, trapezius_middle P9 — zgodnie z poleceniem. difficulty 7 = ten sam co BOR ale wymagający większej dyscypliny i mobilności. minimum advanced ze względu na wymagania mobilności hip hinge + technicznej dyscypliny (brak kippingu). Equipment: barbell + obciążniki. Wszystkie pola PL napisane od zera, używam polskiej nazwy 'Wiosłowanie sztangą Pendlay' (forma najczęściej spotykana w polskich materiałach treningowych — często zostawia się Pendlay nieprzetłumaczone jako nazwisko).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "barbell", "dead_stop", "strict_form", "lat_developer", "strength_focused", "powerbuilding", "explosive_pull", "pendlay"]
+}

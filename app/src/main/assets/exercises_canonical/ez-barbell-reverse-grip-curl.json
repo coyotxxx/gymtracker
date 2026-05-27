@@ -1,0 +1,202 @@
+{
+  "id": "ez-barbell-reverse-grip-curl",
+  "name": "EZ Barbell Reverse-Grip Curl",
+  "namePl": "Uginanie ramion nachwytem z gryfem EZ",
+  "aliases": ["ez bar reverse curl", "ez curl reverse grip", "pronated ez bar curl", "overhand ez bar curl", "ez bar overhand curl"],
+  "aliasesPl": ["uginanie ramion ze sztangą łamaną nachwytem", "reverse curl ze sztangą łamaną", "uginanie nachwytem na sztandze EZ", "curl pronowany sztangą łamaną", "uginanie ramion gryfem EZ chwyt nachwytem"],
+
+  "description": "Elbow-flexion curl performed on an EZ-curl (W-shaped) barbell with a pronated (overhand) grip. The angled grooves of the EZ-bar place the wrists in a semi-pronated position (roughly 30° off full pronation), which significantly reduces dorsal wrist stress compared to a straight bar reverse curl — while still keeping the brachioradialis and brachialis as primary movers. This makes it the joint-friendly version of the reverse curl: nearly identical training stimulus on the forearm extensors and brachialis, but far easier on the wrists and the lateral elbow tendons. Often the best forearm-thickness builder for lifters who cannot tolerate the straight-bar variation.",
+  "descriptionPl": "Uginanie w stawie łokciowym wykonywane na sztandze łamanej (gryf EZ w kształcie litery W) chwytem pronowanym (nachwyt). Kątowe wcięcia gryfu EZ ustawiają nadgarstki w pozycji półpronowanej (około 30° od pełnej pronacji), co znacznie zmniejsza stres na grzbietową stronę nadgarstka w porównaniu do reverse curla na sztandze prostej — zachowując jednocześnie mięsień ramienno-promieniowy i mięsień ramienny jako główne pracujące. Dzięki temu jest to przyjazna stawom wersja reverse curla: niemal identyczny bodziec treningowy na prostowniki przedramienia i brachialis, ale o wiele łatwiejsza dla nadgarstków i bocznej strony łokcia. Często najlepsze ćwiczenie na grubość przedramion dla osób, które nie tolerują wariantu na sztandze prostej.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Grab an EZ-curl bar on the outer angled grooves with a pronated grip (palms down, knuckles up).",
+    "Let the bar hang at arms' length in front of your thighs. Pin your elbows tight to your sides — they must stay there for the entire set.",
+    "Brace the core, lift the chest, pull the shoulders back and down. Set the wrists straight and rigid in line with the forearms.",
+    "Curl the bar upward by flexing only at the elbows. Exhale on the way up. Drive with the back of the forearm — feel the muscle on top of the forearm working.",
+    "Continue until the bar reaches the upper chest. The wrists must NOT break — they stay locked throughout the entire range.",
+    "Squeeze the brachialis and brachioradialis hard for a half-second pause at the top.",
+    "Lower the bar slowly under full control over 2-3 seconds to full elbow extension. Inhale on the descent.",
+    "Avoid swinging the torso or using hip momentum. Start each rep from a dead stop with arms fully extended."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap sztangę łamaną na zewnętrznych kątowych wcięciach chwytem pronowanym (nachwyt — dłonie w dół, kostki do góry).",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przed udami. Mocno przyklej łokcie do boków tułowia — muszą tam zostać przez całą serię.",
+    "Napnij brzuch, unieś klatkę, ściągnij barki w tył i w dół. Ustaw nadgarstki prosto i sztywno w jednej linii z przedramionami.",
+    "Uginaj ramiona w łokciach do góry — pracują wyłącznie przedramiona. Wydech w fazie unoszenia. Napieraj górną częścią przedramienia — czuj jak pracuje mięsień nad przedramieniem.",
+    "Kontynuuj ruch aż sztanga dotrze na wysokość górnej klatki piersiowej. Nadgarstki NIE MOGĄ się załamywać — pozostają zablokowane przez cały zakres.",
+    "Mocno napnij brachialis i brachioradialis przez pół sekundy w górnej pozycji.",
+    "Opuszczaj sztangę wolno, pod pełną kontrolą, przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech w fazie opuszczania.",
+    "Unikaj bujania tułowia i pomagania biodrami. Każde powtórzenie zaczynaj z zatrzymanej pozycji z w pełni wyprostowanymi ramionami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis"],
+    "secondary": ["biceps_brachii", "forearm_extensors"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "brachioradialis": "P10",
+    "biceps_brachii": "S7",
+    "forearm_extensors": "S6",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["ez_barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["barbell-curl", "ez-bar-curl"],
+    "progression_to": ["barbell-reverse-curl", "reverse-preacher-curl", "cable-reverse-curl", "zottman-curl"],
+    "alternatives": ["barbell-reverse-curl", "dumbbell-reverse-curl", "hammer-curl", "cable-reverse-curl", "zottman-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Grip the outer angled grooves of the EZ-bar — palms down, knuckles up",
+      "Elbows glued to your ribs — they do not move",
+      "Wrists locked straight in line with forearms",
+      "Use 60-70% of your normal EZ-bar curl weight"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Złap zewnętrzne kątowe wcięcia gryfu EZ — dłonie w dół, kostki do góry",
+      "Łokcie przyklejone do żeber — nie ruszają się",
+      "Nadgarstki zablokowane prosto w linii z przedramionami",
+      "Używaj 60-70% ciężaru z klasycznego curla ze sztangą EZ"
+    ],
+    "execution_cues": [
+      "Drive the back of the hand toward the ceiling",
+      "Wrists do NOT curl — they stay rigid like a board",
+      "Feel the muscle on top of the forearm pulling the bar up",
+      "Only forearms move — upper arms stay vertical and still",
+      "Slow eccentric — fight the bar down for 2-3 seconds"
+    ],
+    "execution_cues_pl": [
+      "Prowadź grzbiet dłoni w stronę sufitu",
+      "Nadgarstki NIE zginaj — pozostają sztywne jak deska",
+      "Czuj jak mięsień na wierzchu przedramienia ciągnie sztangę w górę",
+      "Pracują tylko przedramiona — ramiona ponad łokciem pionowe i nieruchome",
+      "Wolna faza ekscentryczna — opieraj się sztandze przez 2-3 sekundy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrists collapse downward at the top (wrist flexion)",
+        "faultPl": "Nadgarstki załamują się w dół w górnej pozycji (zgięcie nadgarstka)",
+        "cause": "Load too heavy for the forearm extensors and brachioradialis; weak grip endurance",
+        "causePl": "Zbyt duży ciężar dla prostowników przedramienia i brachioradialis; słaba wytrzymałość chwytu",
+        "cue": "Drop the weight 20-30%. Imagine pulling the knuckles toward your face, not the bar to your chest.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Wyobrażaj sobie że ciągniesz kostki w stronę twarzy, nie sztangę do klatki."
+      },
+      {
+        "fault": "Gripping the inner straight section of the EZ-bar instead of the outer angles",
+        "faultPl": "Chwyt w środkowej prostej sekcji gryfu EZ zamiast na zewnętrznych kątach",
+        "cause": "Misunderstanding the bar geometry — the angled grooves provide the joint-friendly semi-pronated position",
+        "causePl": "Niezrozumienie geometrii gryfu — to kątowe wcięcia dają przyjazną stawom pozycję półpronowaną",
+        "cue": "Move hands to the outer W-bends. If you grip the middle, you might as well use a straight bar.",
+        "cuePl": "Przenieś ręce na zewnętrzne zgięcia litery W. Jeśli chwytasz pośrodku, równie dobrze możesz użyć sztangi prostej."
+      },
+      {
+        "fault": "Swinging the torso to lift the bar",
+        "faultPl": "Bujanie tułowia żeby unieść sztangę",
+        "cause": "Compensation when brachialis/brachioradialis fatigue out; ego loading",
+        "causePl": "Kompensacja gdy brachialis i brachioradialis zmęczą się; ego",
+        "cue": "Strict reps only — if you have to swing, the set is over. Reduce load.",
+        "cuePl": "Tylko ścisła technika — jeśli musisz bujać, seria jest skończona. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Elbows drifting forward at the top of the rep",
+        "faultPl": "Łokcie wędrują do przodu w górnej pozycji powtórzenia",
+        "cause": "Recruiting anterior deltoid to help when forearm muscles fatigue; trying to shorten the lever",
+        "causePl": "Włączanie aktonu przedniego barku do pomocy gdy mięśnie przedramienia zmęczone; skracanie dźwigni",
+        "cue": "Keep upper arms pointing straight down — elbows stay pinned at the ribs through full ROM.",
+        "cuePl": "Trzymaj ramiona ponad łokciem skierowane prosto w dół — łokcie przyklejone do żeber przez cały zakres."
+      },
+      {
+        "fault": "Partial range — stopping before bar reaches chest",
+        "faultPl": "Niepełny zakres — zatrzymanie zanim sztanga dotrze do klatki",
+        "cause": "Brachialis weakness in the shortened (top) position; too much weight",
+        "causePl": "Słabość brachialis w skróconej (górnej) pozycji; za duży ciężar",
+        "cue": "Curl all the way to the upper chest. If you cannot, drop the weight one notch.",
+        "cuePl": "Uginaj aż do górnej klatki piersiowej. Jeśli nie możesz, zmniejsz ciężar o jeden krok."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light abdominal brace throughout the set.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "caution",
+      "modification": "EZ-bar version is far gentler than a straight bar on the lateral epicondyle, but the wrist extensor tendons still load through their common origin. If pain is acute, suspend the exercise. When returning, use very light weight (5-10 kg) for high reps (15-20).",
+      "modificationPl": "Wersja na sztandze EZ jest znacznie łagodniejsza niż prosta sztanga dla nadkłykcia bocznego, ale przyczepy prostowników nadgarstka nadal są obciążane. Jeśli ból jest ostry, wstrzymaj ćwiczenie. Przy powrocie używaj bardzo lekkiego ciężaru (5-10 kg) z dużą liczbą powtórzeń (15-20).",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_extensor_tendinopathy",
+      "severity": "modify",
+      "modification": "The angled EZ grip already reduces wrist stress vs a straight bar. If discomfort persists, switch to dumbbells (free wrist rotation allows pain-free pronation angle) or reduce load by 30%.",
+      "modificationPl": "Kątowy chwyt EZ już zmniejsza stres na nadgarstek w porównaniu do sztangi prostej. Jeśli dyskomfort się utrzymuje, przejdź na hantle (swobodna rotacja nadgarstka pozwala dobrać kąt pronacji bez bólu) lub zmniejsz ciężar o 30%.",
+      "alternative": "dumbbell-reverse-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Biceps role is reduced in reverse-grip variations compared to supinated curl, but the distal biceps tendon still receives load. Reduce volume, avoid heavy slow eccentrics, switch to hammer-curl variations if pain persists.",
+      "modificationPl": "Rola bicepsa jest mniejsza w wariantach z chwytem nachwytem niż w wersji podchwytem, ale dystalny przyczep ścięgna bicepsa nadal jest obciążany. Zmniejsz objętość, unikaj ciężkich, wolnych faz negatywnych, przejdź na warianty młotkowe jeśli ból się utrzymuje.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing. Perform seated on a bench with back support, or use a preacher pad to eliminate spinal loading.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia lędźwiowego. Wykonuj siedząc na ławce z oparciem lub używaj ławki modlitewnika, aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "reverse-preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy — preferred range) | 3-4x8-12 (strength-hypertrophy) | 2-3x15-20 (forearm endurance)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "ez-barbell-reverse-grip-curl.gif",
+    "frames_extracted": [
+      "frames/ez-barbell-reverse-grip-curl/frame_0_start.png",
+      "frames/ez-barbell-reverse-grip-curl/frame_1_early.png",
+      "frames/ez-barbell-reverse-grip-curl/frame_2_mid.png",
+      "frames/ez-barbell-reverse-grip-curl/frame_3_late.png",
+      "frames/ez-barbell-reverse-grip-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/ez-barbell-reverse-grip-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start): pełny wyprost ramion, sztanga łamana (charakterystyczny kształt litery W widoczny w środkowej części gryfu) przed udami, chwyt pronowany na zewnętrznych kątowych wcięciach, kostki skierowane w górę. Podświetlone na czerwono: brachialis i przedramiona — model anatomiczny jednoznacznie wskazuje brachialis + brachioradialis jako primary (P10/P10). Frame 1-2 (early/mid): unoszenie sztangi, łokcie pozostają przy bokach tułowia, kąty gryfu EZ utrzymują nadgarstki w pozycji półpronowanej (mniej stresu niż sztanga prosta), ramiona ponad łokciem pionowe i nieruchome. Frame 2-3 (szczyt): sztanga w okolicy górnej klatki piersiowej, pełen zakres ruchu. Frame 4 (end): powrót do pełnego wyprostu z 'ghostem' fazy szczytowej powyżej (typowy efekt zapętlonego GIFa jahel). Kluczowa różnica vs barbell-reverse-curl: gryf EZ pozwala na semi-pronowany chwyt (~30° od pełnej pronacji) co znacznie zmniejsza stres na grzbietową stronę nadgarstka i nadkłykieć boczny — dlatego difficulty 4 (o 1 niżej niż wersja na sztandze prostej, która ma 5) i contraindication dla wrist_pain ma severity 'modify' zamiast 'avoid'. Biceps brachii zmapowany jako secondary S7 (vs primary P7 w barbell-reverse-curl) — w półpronowanym chwycie EZ biceps ma jeszcze mniejsze zaangażowanie niż w pełnym nachwycie. Wszystkie pola PL napisane od zera, nie tłumaczone.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "brachioradialis", "forearms", "isolation", "ez_bar", "barbell", "upper_body", "grip_strength", "joint_friendly"]
+}

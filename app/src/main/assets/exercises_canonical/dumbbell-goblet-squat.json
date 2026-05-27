@@ -1,0 +1,197 @@
+{
+  "id": "dumbbell-goblet-squat",
+  "name": "Dumbbell Goblet Squat",
+  "namePl": "Goblet squat z hantlem",
+  "aliases": ["goblet squat", "dumbbell goblet squat", "front-loaded squat", "DB goblet squat"],
+  "aliasesPl": ["goblet squat z hantlem", "goblet squat", "przysiad z hantlem przy klatce", "przysiad pucharowy"],
+
+  "description": "Bilateral compound squat with a single dumbbell held vertically against the chest (gripped like a goblet/chalice under the chin). The front-loaded position forces an upright torso, naturally cues a strong brace and promotes deep range of motion. Considered the gold-standard teaching tool for the squat pattern — used by Dan John and most strength coaches as the first loaded squat variation. Excellent for beginners, mobility work, warm-ups, higher-rep hypertrophy of quads/glutes, and as a regression from barbell squats.",
+  "descriptionPl": "Dwustronny ruch wielostawowy z jednym hantlem trzymanym pionowo przy klatce (chwyt jak za puchar pod brodą). Obciążenie z przodu wymusza pionowy tułów, naturalnie aktywuje mocne napięcie tułowia i sprzyja głębokiemu zakresowi ruchu. Uważany za złoty standard w nauce wzorca przysiadu — używany przez Dana Johna i większość trenerów siły jako pierwsza obciążona wariacja przysiadu. Idealny dla początkujących, do pracy nad mobilnością, rozgrzewki, treningu hipertrofii w wyższych zakresach powtórzeń dla czworogłowych i pośladków, oraz jako regresja po przysiadach ze sztangą.",
+
+  "instructions": [
+    "Stand a dumbbell on end on the floor or grab it off a rack. Cup one end of the dumbbell with both hands underneath (palms up, fingers interlaced under the upper head).",
+    "Bring the dumbbell to chest level, holding it vertically just under your chin. Elbows point down, dumbbell stays tight against your sternum.",
+    "Set your feet shoulder-width apart, toes slightly turned out (10-25°). Brace your core, chest up, shoulders pulled back.",
+    "Inhale, brace your abs as if bracing for a punch. Initiate the descent by simultaneously breaking at the hips and knees.",
+    "Sit down between your heels with an upright torso. Let your elbows track down between your knees as you descend.",
+    "Descend to full depth — ideally below parallel (hip crease below knee). The goblet position usually allows deeper ROM than barbell variants.",
+    "Drive up by pushing through the entire foot, keeping the dumbbell tight against the chest and torso vertical. Exhale near the top.",
+    "Lock out at the top by fully extending hips and knees. Maintain the dumbbell position throughout — do not let it drift away from your chest."
+  ],
+  "instructionsPl": [
+    "Ustaw hantel pionowo na podłodze lub zdejmij ze stojaka. Złap go obiema dłońmi pod jednym z talerzy (dłonie do góry, palce splecione pod górnym talerzem).",
+    "Podnieś hantel do wysokości klatki piersiowej, trzymając pionowo tuż pod brodą. Łokcie skierowane w dół, hantel ściśle przy mostku.",
+    "Ustaw stopy na szerokość barków, palce lekko na zewnątrz (10-25°). Napnij brzuch, klatka do góry, łopatki ściągnięte.",
+    "Wdech, napięcie brzucha jak przed uderzeniem. Rozpocznij schodzenie zginając jednocześnie biodra i kolana.",
+    "Siadaj między piętami z pionowym tułowiem. Pozwól łokciom zsuwać się między kolana w trakcie schodzenia.",
+    "Schodź do pełnej głębokości — najlepiej poniżej parallel (linia bioder poniżej szczytu kolan). Pozycja goblet zwykle pozwala na głębszy zakres niż wariacje ze sztangą.",
+    "Wypchnij się w górę napierając przez całą stopę, hantel cały czas ściśle przy klatce, tułów pionowy. Wydech blisko górnej pozycji.",
+    "Wyprostuj się w pełni na górze, prostując biodra i kolana. Utrzymaj pozycję hantla przez cały ruch — nie pozwól mu odsunąć się od klatki."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "erector_spinae"],
+    "stabilizers": ["core", "upper_back", "biceps", "forearms", "calves"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "adductors": "S5",
+    "erector_spinae": "S6",
+    "core": "S7",
+    "upper_back": "S5",
+    "biceps": "T3",
+    "forearms": "T3",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["lifting_shoes", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-squat"],
+    "progression_to": ["barbell-front-squat", "barbell-back-squat", "double-kettlebell-front-squat", "dumbbell-front-squat"],
+    "alternatives": ["kettlebell-goblet-squat", "dumbbell-front-squat", "bodyweight-squat", "landmine-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbell cupped vertically under your chin, like holding a goblet",
+      "Elbows point straight down, dumbbell tight against the sternum",
+      "Feet shoulder-width, toes turned out 10-25°",
+      "Chest tall, shoulders back, core braced",
+      "Eyes forward, neutral neck — don't tuck chin into dumbbell"
+    ],
+    "setup_cues_pl": [
+      "Hantel trzymany pionowo pod brodą, jak puchar",
+      "Łokcie skierowane prosto w dół, hantel ściśle przy mostku",
+      "Stopy na szerokość barków, palce na zewnątrz 10-25°",
+      "Klatka wysoko, łopatki ściągnięte, brzuch napięty",
+      "Wzrok przed siebie, szyja neutralna — nie wciskaj brody w hantel"
+    ],
+    "execution_cues": [
+      "Sit down BETWEEN your heels, not back over them",
+      "Elbows ride down between the knees — they help push knees out",
+      "Keep the dumbbell glued to your chest the whole time",
+      "Stay tall — let the front load keep your torso vertical",
+      "Push the floor away with whole foot, drive elbows up at top"
+    ],
+    "execution_cues_pl": [
+      "Siadaj MIĘDZY pięty, nie do tyłu nad nimi",
+      "Łokcie zjeżdżają między kolana — pomagają rozepchnąć kolana na zewnątrz",
+      "Trzymaj hantel przyklejony do klatki przez cały czas",
+      "Pozostań pionowo — przednie obciążenie samo trzyma tułów prosto",
+      "Wypchnij podłogę całą stopą, popchnij łokcie do góry na szczycie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dumbbell drifts away from chest",
+        "faultPl": "Hantel odsuwa się od klatki",
+        "cause": "Weak upper back, fatigued biceps, or letting elbows flare forward instead of down",
+        "causePl": "Słaba górna część pleców, zmęczone bicepsy, lub łokcie wystawione do przodu zamiast w dół",
+        "cue": "Pull the dumbbell into your chest, elbows point at the floor",
+        "cuePl": "Przyciągnij hantel do klatki, łokcie skierowane do podłogi"
+      },
+      {
+        "fault": "Forward lean / chest collapse",
+        "faultPl": "Pochylenie do przodu / opadająca klatka",
+        "cause": "Weak core, fatigue, or the dumbbell weight is too heavy for current strength",
+        "causePl": "Słaby gorset mięśniowy, zmęczenie, lub hantel za ciężki na aktualnej sile",
+        "cue": "Front load should keep you upright. Brace harder, chest up, eyes forward.",
+        "cuePl": "Przednie obciążenie ma utrzymać Cię prosto. Napnij mocniej brzuch, klatka do góry, wzrok przed siebie."
+      },
+      {
+        "fault": "Knee valgus (knees collapse inward)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius, narrow stance, or insufficient hip external rotation",
+        "causePl": "Słabe mięśnie pośladkowe średnie, zbyt wąski rozstaw stóp, słaba rotacja zewnętrzna biodra",
+        "cue": "Push the knees out toward your pinky toes, use elbows inside the knees to remind them",
+        "cuePl": "Wypchnij kolana na zewnątrz w kierunku małych palców, użyj łokci wewnątrz kolan jako przypomnienia"
+      },
+      {
+        "fault": "Heel rise at the bottom",
+        "faultPl": "Unoszenie pięt na dole",
+        "cause": "Poor ankle dorsiflexion mobility, going too deep for current ROM, or stance too narrow",
+        "causePl": "Słaba dorsiflexja stawu skokowego, schodzenie za nisko dla aktualnego zakresu, lub za wąski rozstaw stóp",
+        "cue": "Limit depth to where heels stay down. Work on ankle mobility separately. Try slightly wider stance.",
+        "cuePl": "Ogranicz głębokość do miejsca gdzie pięty pozostają na podłodze. Pracuj nad mobilnością kostki osobno. Spróbuj nieco szerszego rozstawu."
+      },
+      {
+        "fault": "Butt wink at depth",
+        "faultPl": "Butt wink (zgięcie kręgosłupa lędźwiowego na dole)",
+        "cause": "Going below individual hip ROM, tight hamstrings, or weak deep core bracing",
+        "causePl": "Schodzenie poniżej indywidualnego zakresu biodra, napięte dwugłowe uda, lub słabe napięcie głębokiego gorsetu",
+        "cue": "Stop 2-3 cm above the depth where your pelvis tucks. Brace as if bracing for a punch.",
+        "cuePl": "Zatrzymaj się 2-3 cm nad głębokością, gdzie miednica się podwija. Napnij brzuch jak przed uderzeniem."
+      }
+    ],
+    "breathing": "Inhale at the top, brace your core hard. Hold the breath through the descent and the hardest part of the ascent. Exhale near the top of the rep. For higher-rep sets (12+), you may breathe between reps at lockout.",
+    "breathingPl": "Wdech na górze, mocno napnij brzuch. Wstrzymaj oddech przez schodzenie i najtrudniejszą część powrotu. Wydech blisko górnej pozycji. Przy wyższych zakresach powtórzeń (12+) możesz oddychać między powtórzeniami w pełnym wyproście."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "modify",
+      "modification": "Use lighter dumbbell or regress to bodyweight squat with light range of motion until cleared.",
+      "modificationPl": "Użyj lżejszego hantla lub cofnij się do przysiadu z masą własnego ciała w lekkim zakresie ruchu do czasu poprawy.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Use box squat with goblet position to control depth.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Użyj przysiadu do skrzyni z pozycją goblet, by kontrolować głębokość.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Goblet grip loads the wrists in extension. Use dumbbell front squat (DBs on shoulders) or landmine squat instead.",
+      "modificationPl": "Chwyt goblet obciąża nadgarstki w wyproście. Użyj dumbbell front squat (hantle na barkach) lub landmine squat.",
+      "alternative": "dumbbell-front-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-15 (hypertrophy / general) | 3x5-8 (strength learning) | 2-3x15-20 (warm-up / conditioning)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-goblet-squat.gif",
+    "frames_extracted": [
+      "frames/dumbbell-goblet-squat/frame_0_start.png",
+      "frames/dumbbell-goblet-squat/frame_1_early.png",
+      "frames/dumbbell-goblet-squat/frame_2_mid.png",
+      "frames/dumbbell-goblet-squat/frame_3_late.png",
+      "frames/dumbbell-goblet-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/dumbbell-goblet-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:46:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (sources/jahel/quads/dumbbell-goblet-squat.gif). Klatki potwierdzają: hantel trzymany pionowo obiema dłońmi pod górnym talerzem na wysokości klatki/brody, łokcie skierowane w dół, pełna głębokość poniżej parallel z pionowym tułowiem, łokcie zsuwają się między kolana (klasyczny coaching cue Dan Johna). Anatomia podświetlona na ilustracji: czworogłowe są dominujące (P10), pośladki secondary (P8), drobno łydki — zgadza się z biomechaniką. Plik źródłowy znajdował się w katalogu quads/ a nie glutes/ wbrew temu co sugerował prompt. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["beginner_friendly", "compound", "lower_body", "squat_pattern_teaching", "dumbbell", "front_loaded", "mobility_friendly", "warm_up"]
+}

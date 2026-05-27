@@ -1,0 +1,198 @@
+{
+  "id": "cocoons",
+  "name": "Cocoons",
+  "namePl": "Kokony",
+  "aliases": ["cocoon crunch", "tuck crunch", "full body crunch", "wide-to-tuck crunch"],
+  "aliasesPl": ["kokony", "cocoony", "kokon crunch", "kompaktowe zwijanie", "zwijanie pełne", "tuck crunch"],
+
+  "description": "Dynamic bodyweight core exercise performed lying supine. From a fully extended starting position (legs straight, arms overhead) the lifter simultaneously curls the knees toward the chest and the torso toward the knees, wrapping the body into a tight 'cocoon' before extending back. Strongly targets the entire rectus abdominis along its full length plus the hip flexors, making it an efficient upper-and-lower-ab exercise without equipment.",
+  "descriptionPl": "Dynamiczne ćwiczenie na brzuch wykonywane z masą własnego ciała w leżeniu na plecach. Z pozycji pełnego wyciągnięcia (nogi proste, ramiona za głową) ćwiczący jednocześnie podciąga kolana do klatki i tułów do kolan, składając ciało w ciasny 'kokon', po czym wraca do wyciągnięcia. Mocno angażuje całą długość mięśnia prostego brzucha oraz zginacze stawu biodrowego — efektywnie pracuje na górnych i dolnych partiach brzucha bez sprzętu.",
+
+  "instructions": [
+    "Lie flat on your back on a mat. Extend your legs straight out and stretch your arms overhead so the body forms one long line. This is the starting position.",
+    "Inhale, brace your core lightly and press your lower back toward the mat to remove the lumbar arch.",
+    "Exhale and simultaneously tuck your knees toward your chest and curl your shoulders and arms forward to meet them. The pelvis tilts up off the floor slightly and the spine flexes.",
+    "Wrap your arms around your shins at the peak position, forming a compact 'cocoon'. Pause for a moment and squeeze the abs.",
+    "Inhale and reverse the movement under control — extend the legs back out, lower the torso, and reach the arms overhead until you return to the fully stretched starting position.",
+    "Keep tension on the abs throughout — do not let the heels or the head crash onto the floor at the bottom."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach na macie. Wyciągnij nogi prosto i wyprostuj ramiona za głową — ciało tworzy jedną długą linię. To pozycja wyjściowa.",
+    "Wdech, lekko napnij brzuch i dociśnij dolne plecy do maty, likwidując łuk w odcinku lędźwiowym.",
+    "Wydech — jednocześnie podciągnij kolana do klatki piersiowej oraz zwiń barki i ramiona do przodu, by je spotkały. Miednica unosi się lekko nad podłogę, kręgosłup zgina się.",
+    "W szczytowej pozycji obejmij dłońmi golenie, tworząc ciasny 'kokon'. Zatrzymaj się na chwilę i mocno ściśnij brzuch.",
+    "Wdech — wróć kontrolowanym ruchem: wyprostuj nogi, opuść tułów i sięgnij ramionami za głowę, aż osiągniesz pełne wyciągnięcie z pozycji wyjściowej.",
+    "Utrzymuj napięcie na brzuchu przez cały czas — nie pozwól by pięty ani głowa uderzały o podłogę w dolnej pozycji."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors"],
+    "secondary": ["obliques", "transverse_abdominis"],
+    "stabilizers": ["serratus_anterior", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "hip_flexors": "P7",
+    "obliques": "S6",
+    "transverse_abdominis": "S5",
+    "serratus_anterior": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["crunch", "lying-leg-raise", "dead-bug"],
+    "progression_to": ["v-up", "hollow-body-rock", "toes-to-bar"],
+    "alternatives": ["v-up", "tuck-crunch", "jackknife-sit-up", "hanging-knee-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat — full body extension head-to-toe",
+      "Arms reach overhead, biceps near the ears",
+      "Lower back lightly pressed to the mat",
+      "Chin neutral — small space under the chin",
+      "Inhale and pre-brace the core"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko — pełne wyciągnięcie ciała od głowy do stóp",
+      "Ramiona za głowę, bicepsy blisko uszu",
+      "Dolne plecy lekko dociśnięte do maty",
+      "Broda w neutralnej pozycji — mała przestrzeń pod brodą",
+      "Wdech i wstępne napięcie brzucha"
+    ],
+    "execution_cues": [
+      "Knees and chest meet in the middle at the same time",
+      "Exhale forcefully as you crunch into the cocoon",
+      "Round the spine — don't yank with the neck",
+      "Lift the hips slightly off the mat at the peak",
+      "Lower with control — 2 seconds eccentric, don't drop"
+    ],
+    "execution_cues_pl": [
+      "Kolana i klatka spotykają się w środku w tym samym momencie",
+      "Mocny wydech podczas zwijania w kokon",
+      "Zaokrąglij kręgosłup — nie szarp szyją",
+      "Lekko oderwij biodra od maty w szczycie",
+      "Wracaj kontrolowanie — 2 sekundy fazy ekscentrycznej, nie opadaj swobodnie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the head with the hands / neck strain",
+        "faultPl": "Szarpanie głowy rękami / nadwyrężanie szyi",
+        "cause": "Weak rectus abdominis recruits the neck flexors as a substitute",
+        "causePl": "Słaby mięsień prosty brzucha kompensuje pracą zginaczy szyi",
+        "cue": "Reach arms forward toward the knees — let the abs do the lifting, keep the chin off the chest",
+        "cuePl": "Wyciągaj ramiona do przodu w kierunku kolan — niech brzuch wykonuje pracę, broda nie dociska do klatki"
+      },
+      {
+        "fault": "Using momentum / swinging through the rep",
+        "faultPl": "Wykorzystywanie rozpędu / kołysanie ciałem",
+        "cause": "Going too fast, attempting too many reps, or weak abs offloading to inertia",
+        "causePl": "Zbyt szybkie tempo, próba wykonania zbyt wielu powtórzeń, lub słaby brzuch zrzucający pracę na bezwładność",
+        "cue": "2 seconds up, 1 second pause in the cocoon, 2 seconds down. If you can't, lower the reps.",
+        "cuePl": "2 sekundy w górę, 1 sekunda pauzy w kokonie, 2 sekundy w dół. Jeśli nie dasz rady — zmniejsz liczbę powtórzeń."
+      },
+      {
+        "fault": "Lower back arching off the mat in the extension phase",
+        "faultPl": "Dolne plecy wyginają się w łuk podczas fazy wyciągnięcia",
+        "cause": "Heels and arms dropping to the floor with relaxed core; tight hip flexors",
+        "causePl": "Pięty i ramiona opadają do podłogi z rozluźnionym brzuchem; napięte zginacze biodra",
+        "cue": "Keep heels and shoulder blades a few cm above the floor at full extension to maintain ab tension",
+        "cuePl": "Trzymaj pięty i łopatki kilka centymetrów nad podłogą w pełnym wyciągnięciu, by zachować napięcie brzucha"
+      },
+      {
+        "fault": "Knees and torso not meeting simultaneously",
+        "faultPl": "Kolana i tułów nie spotykają się jednocześnie",
+        "cause": "Sequencing error — usually torso comes first, knees lag (or vice versa)",
+        "causePl": "Błąd sekwencji — zwykle tułów rusza pierwszy, kolana opóźnione (lub odwrotnie)",
+        "cue": "Imagine a string from your knees to your nose pulling both ends to the center at the same time",
+        "cuePl": "Wyobraź sobie sznurek od kolan do nosa, który ściąga oba końce do środka równocześnie"
+      },
+      {
+        "fault": "Holding breath throughout the set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Tendency to mimic Valsalva from heavy lifts on a bodyweight movement",
+        "causePl": "Tendencja do naśladowania manewru Valsalvy z dużych ciężarów przy ćwiczeniu z masą ciała",
+        "cue": "Forceful exhale during the crunch, inhale on the way out. Rib cage should compress on the exhale.",
+        "cuePl": "Mocny wydech podczas zwijania, wdech podczas powrotu. Klatka piersiowa powinna się ścisnąć przy wydechu."
+      }
+    ],
+    "breathing": "Inhale during the extension (legs out, arms overhead). Forceful exhale during the crunch into the cocoon position — this maximises rectus abdominis contraction.",
+    "breathingPl": "Wdech podczas fazy wyciągnięcia (nogi prosto, ramiona za głowę). Mocny wydech podczas zwijania w pozycję kokonu — maksymalizuje skurcz mięśnia prostego brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Spinal flexion under load can aggravate disc issues and acute lumbar pain. Switch to anti-extension core work (planks, dead bug) until pain-free.",
+      "modificationPl": "Zginanie kręgosłupa pod obciążeniem może nasilać problemy dyskowe i ostry ból lędźwi. Przejdź na ćwiczenia anty-ekstensji (deska, dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated spinal flexion contraindicated in lumbar disc protrusion (McGill protocol). Use neutral-spine core exercises instead.",
+      "modificationPl": "Powtarzane zginanie kręgosłupa przeciwwskazane przy przepuklinie krążka lędźwiowego (protokół McGilla). Zamiast tego ćwicz brzuch w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Rectus abdominis crunching can worsen midline separation (postpartum or otherwise). Use transverse-abdominis-focused exercises first.",
+      "modificationPl": "Zwijanie mięśnia prostego brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Zacznij od ćwiczeń skupionych na mięśniu poprzecznym brzucha.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Don't pull the neck — reach arms forward, look at the ceiling at the top. If neck flares up, switch to a knee-tuck-only variation without torso crunch.",
+      "modificationPl": "Nie szarp szyją — wyciągaj ramiona do przodu, patrz w sufit w szczycie. Jeśli boli kark, przejdź na wariant tylko z podciąganiem kolan, bez zwijania tułowia.",
+      "alternative": "lying-leg-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy) | 3x15-20 (endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cocoons.gif",
+    "frames_extracted": [
+      "frames/cocoons/frame_0_start.png",
+      "frames/cocoons/frame_1_early.png",
+      "frames/cocoons/frame_2_mid.png",
+      "frames/cocoons/frame_3_late.png",
+      "frames/cocoons/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/cocoons",
+    "yuhonas_id": "Cocoons",
+    "glowupp_id": "cocoons"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:35:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): pełne leżenie na plecach, nogi proste wyciągnięte, ramiona za głowę — anatomia podświetla mięsień prosty brzucha na całej długości. Klatka 2 (mid): kompaktowy 'kokon' — kolana dociągnięte do klatki, ramiona obejmują golenie, tułów zwinięty, miednica lekko uniesiona, pośladki w tle. Klatka 4 (end): powrót do wyciągnięcia z lekkim śladem fazy pośredniej. Ruch potwierdzony: jednoczesne podciągnięcie kolan do klatki i crunch tułowia (yuhonas opis dokładnie pasuje). Klasyfikacja: core_flexion (zgięcie kręgosłupa + zgięcie biodra), compound (2 stawy: kręgosłup + biodra), bodyweight. Force=pull (skurcz koncentryczny zginaczy). Mięsień główny: rectus_abdominis + hip_flexors (oba mocno aktywne). Nazwa PL: 'Kokony' to najczęstsza polska forma w środowisku fitness (transliteracja przyjazna), dodałem aliasy 'cocoony' i opisowe 'kompaktowe zwijanie'. Glowupp difficulty=6, level=intermediate (na początkujących za trudne — wymaga koordynacji + siły core). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "no_equipment", "home_workout", "finisher", "hip_flexors"]
+}

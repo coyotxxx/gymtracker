@@ -1,0 +1,196 @@
+{
+  "id": "frog-crunch",
+  "name": "Frog Crunch",
+  "namePl": "Frog crunch (żabka)",
+  "aliases": ["frog crunch", "frog-leg crunch", "butterfly crunch", "frog sit-up"],
+  "aliasesPl": ["żabka", "crunch w pozycji żabki", "crunch żabka", "crunch motylkowy", "spięcia brzucha w pozycji żaby"],
+
+  "description": "Bodyweight abdominal isolation exercise performed lying supine with the soles of the feet pressed together and the knees dropped open to the sides (the 'frog' position). From this setup the lifter performs a standard crunch, lifting the shoulder blades off the mat toward the ceiling. Externally rotating the hips into the frog position takes the hip flexors out of the movement, forcing the rectus abdominis to do almost all the work — producing a very strong, isolated abs contraction without the lower-back load typical of leg-assisted crunches.",
+  "descriptionPl": "Ćwiczenie izolujące mięśnie brzucha z masą własnego ciała, wykonywane w leżeniu na plecach z podeszwami stóp złączonymi i kolanami rozsuniętymi na boki (pozycja 'żabki'). Z tej pozycji wykonujesz klasyczny crunch — odrywasz łopatki od maty kierując je w stronę sufitu. Rotacja zewnętrzna bioder w pozycji żabki wyłącza z ruchu zginacze stawu biodrowego i zmusza mięsień prosty brzucha do wykonania niemal całej pracy — daje to mocny, izolowany skurcz brzucha bez obciążenia dolnych pleców typowego dla crunchów z pomocą nóg.",
+
+  "instructions": [
+    "Lie flat on your back on a mat. Bring the soles of your feet together and let the knees fall open to the sides — your legs form a diamond shape (the 'frog' position). The lower back should be flat against the mat.",
+    "Place your hands lightly behind your head, fingertips supporting the skull. Elbows stay wide in your peripheral vision — do not pull on the neck.",
+    "Inhale and gently brace the core, pressing the lower back into the mat to eliminate any lumbar arch.",
+    "Exhale and curl your shoulder blades off the mat by contracting the abs — chin stays a fist's width from the chest, eyes toward the ceiling or your knees. The lower back stays glued to the mat.",
+    "Pause for a moment at the top and squeeze the rectus abdominis hard. The feet and knees do not move — only the upper body curls forward.",
+    "Inhale and lower the shoulder blades back to the mat under control over 2 seconds. Lightly touch and immediately begin the next rep without resting the abs.",
+    "Maintain the frog leg position throughout the entire set — soles together, knees wide."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach na macie. Złóż podeszwy stóp razem i pozwól kolanom opaść na boki — nogi tworzą kształt rombu (pozycja 'żabki'). Dolne plecy powinny być płasko przy macie.",
+    "Połóż dłonie lekko za głową, opuszki palców podpierają potylicę. Łokcie pozostają szeroko w polu widzenia peryferyjnego — nie ciągnij za szyję.",
+    "Wdech i delikatnie napnij brzuch, dociskając dolne plecy do maty, by zlikwidować łuk w odcinku lędźwiowym.",
+    "Wydech i oderwij łopatki od maty zwijaniem brzucha — broda zostaje na szerokość pięści od klatki, oczy w stronę sufitu lub kolan. Dolne plecy pozostają przyklejone do maty.",
+    "Zatrzymaj się na chwilę w szczycie i mocno ściśnij mięsień prosty brzucha. Stopy i kolana nie ruszają się — tylko górna część ciała zwija się do przodu.",
+    "Wdech i opuść łopatki kontrolowanie z powrotem na matę przez 2 sekundy. Lekko dotknij i od razu zacznij kolejne powtórzenie bez odpoczynku dla brzucha.",
+    "Utrzymuj pozycję żabki przez całą serię — podeszwy razem, kolana szeroko."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques"],
+    "stabilizers": ["transverse_abdominis", "hip_adductors"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "obliques": "S5",
+    "transverse_abdominis": "T4",
+    "hip_adductors": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["crunch"],
+    "progression_to": ["weighted-crunch", "cable-crunch", "v-up"],
+    "alternatives": ["crunch", "reverse-crunch", "cable-crunch", "dead-bug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Soles of feet pressed together, knees wide — diamond shape",
+      "Lower back flat against the mat — no arch",
+      "Hands behind the head, elbows wide in peripheral vision",
+      "Chin a fist's width from the chest — neutral neck",
+      "Inhale and gently brace before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Podeszwy stóp dociśnięte do siebie, kolana szeroko — kształt rombu",
+      "Dolne plecy płasko na macie — bez łuku",
+      "Dłonie za głową, łokcie szeroko w polu widzenia peryferyjnego",
+      "Broda na szerokość pięści od klatki — szyja neutralna",
+      "Wdech i delikatne napięcie przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Curl the rib cage toward the pelvis — short, focused range",
+      "Exhale forcefully through pursed lips as you crunch up",
+      "Keep the lower back pressed to the mat the whole time",
+      "Feet and knees do not move — only the upper body curls",
+      "Lower 2 seconds — controlled eccentric, no flopping down"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj klatkę piersiową w stronę miednicy — krótki, skupiony zakres",
+      "Mocny wydech przez zaciśnięte usta podczas zwijania",
+      "Dolne plecy przez cały czas dociśnięte do maty",
+      "Stopy i kolana nie ruszają się — tylko górna część ciała się zwija",
+      "Opuszczanie 2 sekundy — kontrolowana faza ekscentryczna, bez opadania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the head and neck with the hands",
+        "faultPl": "Szarpanie głowy i szyi rękami",
+        "cause": "Weak rectus abdominis recruits the neck flexors to assist; elbows drift forward",
+        "causePl": "Słaby mięsień prosty brzucha kompensuje pracą zginaczy szyi; łokcie dryfują do przodu",
+        "cue": "Fingertips only touch the skull — pretend you're holding a strawberry under your chin. Keep elbows wide.",
+        "cuePl": "Tylko opuszki palców dotykają głowy — wyobraź sobie, że trzymasz truskawkę pod brodą. Łokcie szeroko."
+      },
+      {
+        "fault": "Knees closing during the crunch (losing frog position)",
+        "faultPl": "Kolana zamykają się podczas crunchu (utrata pozycji żabki)",
+        "cause": "Hip flexors trying to engage to assist the movement — defeats the purpose of the variation",
+        "causePl": "Zginacze biodra próbują się włączyć, by pomóc w ruchu — niwelują sens tego wariantu",
+        "cue": "Actively push the knees toward the floor as you crunch. If they keep closing, place a yoga block between them.",
+        "cuePl": "Aktywnie spychaj kolana w stronę podłogi podczas zwijania. Jeśli ciągle się zamykają, włóż między nie blok jogi."
+      },
+      {
+        "fault": "Crunching too high — sitting up instead of curling",
+        "faultPl": "Za wysokie zwijanie — siadanie zamiast zwijania",
+        "cause": "Belief that bigger range = bigger gains; hip flexor compensation",
+        "causePl": "Przekonanie, że większy zakres = większy efekt; kompensacja zginaczy biodra",
+        "cue": "Only the shoulder blades leave the mat. Lower back stays glued down — that's the whole range.",
+        "cuePl": "Z maty odrywają się tylko łopatki. Dolne plecy zostają przyklejone — to cały zakres ruchu."
+      },
+      {
+        "fault": "Holding breath during the set",
+        "faultPl": "Wstrzymywanie oddechu podczas serii",
+        "cause": "Habit from heavier compound lifts (Valsalva) carried over to a bodyweight movement",
+        "causePl": "Nawyk z cięższych ćwiczeń wielostawowych (manewr Valsalvy) przeniesiony na ćwiczenie z masą ciała",
+        "cue": "Sharp exhale on every crunch — feel the lower abs squeeze as the air leaves the lungs",
+        "cuePl": "Ostry wydech przy każdym zwijaniu — czuj jak dolny brzuch się ściska, gdy powietrze opuszcza płuca"
+      },
+      {
+        "fault": "Bouncing off the mat between reps",
+        "faultPl": "Odbijanie się od maty między powtórzeniami",
+        "cause": "Using momentum instead of muscle contraction to make reps easier",
+        "causePl": "Wykorzystywanie rozpędu zamiast skurczu mięśnia, by ułatwić powtórzenia",
+        "cue": "Lightly touch the mat with the shoulder blades, no slam. Tempo: 1 up, 1 hold, 2 down.",
+        "cuePl": "Lekko dotknij maty łopatkami, bez uderzania. Tempo: 1 sek w górę, 1 sek pauzy, 2 sek w dół."
+      }
+    ],
+    "breathing": "Inhale on the way down (eccentric), forceful exhale through pursed lips during the crunch — the exhale itself helps deepen the rectus abdominis contraction.",
+    "breathingPl": "Wdech podczas opuszczania (faza ekscentryczna), mocny wydech przez zaciśnięte usta podczas zwijania — sam wydech pogłębia skurcz mięśnia prostego brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Even though the frog position reduces hip flexor pull on the lumbar spine, repeated spinal flexion can still aggravate acute pain. Switch to anti-extension work (planks, dead bug) until pain-free.",
+      "modificationPl": "Mimo że pozycja żabki zmniejsza ciągnięcie zginaczy biodra na odcinek lędźwiowy, powtarzane zginanie kręgosłupa może nadal nasilać ostry ból. Przejdź na ćwiczenia anty-ekstensji (deska, dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated lumbar flexion contraindicated in disc protrusion (McGill protocol). Use neutral-spine core exercises instead.",
+      "modificationPl": "Powtarzane zginanie odcinka lędźwiowego przeciwwskazane przy przepuklinie krążka (protokół McGilla). Zamiast tego ćwicz brzuch w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "hip_or_groin_injury",
+      "severity": "caution",
+      "modification": "External rotation in the frog position stretches the groin and adductors. If hip or groin pain occurs, narrow the knee spread or switch to a standard knees-up crunch.",
+      "modificationPl": "Rotacja zewnętrzna w pozycji żabki rozciąga pachwinę i mięśnie przywodziciele. Jeśli pojawi się ból biodra lub pachwiny, zawęź rozstaw kolan lub przejdź na klasyczny crunch z kolanami w górze.",
+      "alternative": "crunch"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Direct rectus abdominis crunching can worsen midline separation (postpartum or otherwise). Start with transverse-abdominis-focused exercises before adding rectus crunches.",
+      "modificationPl": "Bezpośrednie zwijanie mięśnia prostego brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Zacznij od ćwiczeń skupionych na mięśniu poprzecznym brzucha przed dodaniem crunchów.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x15-20 (hypertrophy) | 3x20-25 (endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "frog-crunch.gif",
+    "frames_extracted": [
+      "frames/frog-crunch/frame_0_start.png",
+      "frames/frog-crunch/frame_1_early.png",
+      "frames/frog-crunch/frame_2_mid.png",
+      "frames/frog-crunch/frame_3_late.png",
+      "frames/frog-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/frog-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): leżenie na plecach, podeszwy stóp złączone, kolana rozsunięte szeroko na boki (klasyczna pozycja żabki/motylka), ręce za głową, łokcie szeroko, brzuch podświetlony anatomicznie na czerwono — wyraźnie widoczny mięsień prosty brzucha z kratą. Klatka 2 (mid/peak): łopatki oderwane od maty, tułów zwinięty do przodu w stronę kolan, kolana cały czas szeroko rozsunięte (pozycja żabki utrzymana), miednica stabilna na macie, dolne plecy dociśnięte. Klatka 4 (end): powrót do pozycji wyjściowej z lekkim śladem fazy pośredniej. Klasyfikacja: core_flexion (zgięcie kręgosłupa bez zgięcia biodra — biodra są w rotacji zewnętrznej i przywiedzeniu), isolation (jeden staw: kręgosłup — biodra są zablokowane w pozycji żabki, dlatego to izolacja brzucha), bilateral, sagittal. Force=pull (skurcz koncentryczny rectus abdominis). Mięsień główny: rectus_abdominis P10 (intensywność maksymalna — pozycja żabki wyłącza zginacze biodra, więc 100% pracy idzie na brzuch). Obliques S5 (lekkie zaangażowanie stabilizacyjne). Adductors T2 (utrzymują podeszwy razem). Difficulty=4 (level=beginner — to bezpieczniejszy crunch niż klasyczny dzięki eliminacji hip flexors). Nazwa PL: 'Frog crunch (żabka)' — używana w polskim środowisku fitness, 'żabka' to popularna potoczna forma. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Założyłem niższe kcal/kg/h niż cocoons (4.5 vs 5.0), bo to izolacja statyczna nóg, mniej dynamiki.",
+
+  "tags": ["bodyweight", "core", "abs", "isolation", "no_equipment", "home_workout", "beginner_friendly", "rectus_abdominis"]
+}

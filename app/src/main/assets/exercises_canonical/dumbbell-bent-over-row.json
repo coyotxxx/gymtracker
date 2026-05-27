@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-bent-over-row",
+  "name": "Dumbbell Bent-Over Row",
+  "namePl": "Wiosłowanie hantlami w opadzie",
+  "aliases": ["two-hand dumbbell row", "double dumbbell row", "DB bent-over row", "bent-over dumbbell row", "DB row two-arm"],
+  "aliasesPl": ["wiosłowanie hantlami", "wiosłowanie dwiema hantlami w opadzie", "wiosło hantlami w opadzie", "wiosłowanie hantlami oburącz w opadzie"],
+
+  "description": "Horizontal pulling exercise for back development performed with two dumbbells simultaneously. You hinge the torso forward to roughly 45 degrees, let the dumbbells hang at arm's length with a neutral or slightly pronated grip, and row them up to the lower ribs / sides of the hips while keeping the torso angle stable. Compared to the barbell version it offers a greater range of motion (the dumbbells can travel deeper at the bottom and the scapulae can retract more freely at the top), allows independent arm paths (better for fixing left/right asymmetries), and reduces axial spinal loading at the same training stimulus. Maximum loads are lower than the barbell row but quality of contraction in the lats, rhomboids and mid/lower traps is typically higher. A staple back mass-builder that fits beginners through advanced lifters.",
+  "descriptionPl": "Ćwiczenie ciągowe w płaszczyźnie poziomej do rozwoju pleców wykonywane dwiema hantlami jednocześnie. Pochylasz tułów do około 45 stopni w przód, hantle zwisają z wyprostowanych ramion chwytem neutralnym lub lekko nachwytem, a następnie przyciągasz je do dolnych żeber / boków bioder, utrzymując stały kąt tułowia. W porównaniu do wersji ze sztangą oferuje większy zakres ruchu (hantle mogą zejść głębiej na dole, a łopatki swobodniej ściągnąć się na górze), pozwala na niezależną pracę każdego ramienia (lepsze do korygowania asymetrii lewa/prawa) i mniej obciąża osiowo kręgosłup przy tym samym bodźcu treningowym. Maksymalne obciążenia są niższe niż przy wiosłowaniu sztangą, ale jakość skurczu w najszerszych grzbietu, równoległobocznych i środkowych/dolnych czworobocznych zwykle wyższa. Klasyk masowy na plecy odpowiedni dla początkujących i zaawansowanych.",
+
+  "instructions": [
+    "Take a dumbbell in each hand. Stand with feet hip- to shoulder-width apart, knees slightly bent.",
+    "Hinge at the hips, push the glutes back, let the torso fall to about 45 degrees from the floor (or lower for more lat bias). Keep the spine neutral, chest proud, gaze a meter or two in front of your feet.",
+    "Let the dumbbells hang directly below your shoulders with arms fully extended. Grip is neutral (palms facing each other) or slightly pronated.",
+    "Brace the core, set the lats by pulling the dumbbells slightly toward the body without bending the elbows.",
+    "Row both dumbbells up simultaneously, driving the elbows back and slightly out, until the bells reach the lower ribs / sides of the hips. Squeeze the shoulder blades together at the top.",
+    "Lower the dumbbells under control along the same path until the arms are fully extended and the lats stretch slightly at the bottom. Do not lose the torso angle or round the lower back.",
+    "Keep the torso angle locked throughout the entire set — no rocking, no using the hips to throw the weights up.",
+    "Pause briefly at the top of each rep for full scapular retraction, then control the eccentric back to full stretch."
+  ],
+  "instructionsPl": [
+    "Weź po hantli w każdą rękę. Stań stopami na szerokość bioder / barków, kolana lekko ugięte.",
+    "Zegnij się w biodrach, wypchnij pośladki w tył, opuść tułów do około 45 stopni względem podłoża (lub niżej dla większego akcentu na najszersze grzbietu). Kręgosłup neutralny, klatka wysunięta, wzrok metr-dwa przed stopami.",
+    "Hantle zwisają pionowo pod barkami przy w pełni wyprostowanych ramionach. Chwyt neutralny (dłonie zwrócone do siebie) lub lekko nachwytem.",
+    "Napnij brzuch, aktywuj najszersze ściągając hantle lekko ku ciału bez zginania łokci.",
+    "Pociągnij obie hantle jednocześnie w górę, prowadząc łokcie w tył i lekko na boki, aż główki hantli dotrą do dolnych żeber / boków bioder. Ściśnij łopatki na szczycie.",
+    "Opuść hantle w pełnej kontroli tą samą trajektorią aż do pełnego wyprostu ramion i lekkiego rozciągnięcia najszerszych na dole. Nie trać kąta tułowia, nie zaokrąglaj odcinka lędźwiowego.",
+    "Trzymaj kąt tułowia stale taki sam przez całą serię — bez bujania się, bez używania bioder do wyrzucania ciężaru.",
+    "Zatrzymaj się na chwilę na szczycie każdego powtórzenia dla pełnego ściągnięcia łopatek, potem kontroluj fazę ekscentryczną do pełnego rozciągnięcia."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "trapezius_middle_lower"],
+    "secondary": ["biceps_brachii", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P8",
+    "trapezius_middle_lower": "P8",
+    "posterior_deltoids": "S7",
+    "biceps_brachii": "S7",
+    "brachialis": "S6",
+    "erector_spinae": "S7",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_straps", "chalk", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["inverted-row", "romanian-deadlift", "chest-supported-dumbbell-row"],
+    "progression_to": ["weighted-dumbbell-row", "single-arm-dumbbell-row", "chest-supported-dumbbell-row", "barbell-bent-over-row"],
+    "alternatives": ["barbell-bent-over-row", "t-bar-row", "seated-cable-row", "single-arm-dumbbell-row", "chest-supported-dumbbell-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip- to shoulder-width, knees slightly bent",
+      "Hinge hips back, torso ~45 degrees to the floor",
+      "Neutral spine, chest proud, gaze just in front of your feet",
+      "Dumbbells hanging directly below the shoulders, arms fully extended",
+      "Neutral grip (palms facing each other) — easiest on the shoulders and wrists"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder / barków, kolana lekko ugięte",
+      "Wypchnij biodra w tył, tułów ~45 stopni do podłoża",
+      "Neutralny kręgosłup, klatka wysunięta, wzrok tuż przed stopami",
+      "Hantle zwisają pionowo pod barkami, ramiona w pełni wyprostowane",
+      "Chwyt neutralny (dłonie do siebie) — najłagodniejszy dla barków i nadgarstków"
+    ],
+    "execution_cues": [
+      "Pull with the elbows, not the hands — hands are just hooks",
+      "Drive elbows back and slightly out, toward the ceiling",
+      "Pull the dumbbells to the lower ribs / sides of the hips — NOT to the chest",
+      "Squeeze the shoulder blades together hard at the top of every rep",
+      "Lock the torso angle — no rocking, no using hips for momentum"
+    ],
+    "execution_cues_pl": [
+      "Ciągnij łokciami, nie dłońmi — dłonie to tylko haki",
+      "Prowadź łokcie w tył i lekko na boki, w stronę sufitu",
+      "Ciągnij hantle do dolnych żeber / boków bioder — NIE do klatki",
+      "Mocno ściśnij łopatki na szczycie każdego powtórzenia",
+      "Zablokuj kąt tułowia — bez bujania, bez używania bioder do pędu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso too vertical (turning the row into an upright row / shrug)",
+        "faultPl": "Zbyt pionowy tułów (ćwiczenie zmienia się w wiosło stojąc / szrug)",
+        "cause": "Avoiding fatigue in the lower back or hamstrings, lack of awareness of true hinge depth, or load too heavy",
+        "causePl": "Unikanie zmęczenia w lędźwiach lub dwugłowych ud, brak świadomości głębokości hip hinge lub zbyt duży ciężar",
+        "cue": "Get the torso to about 45 degrees or lower. Film from the side. If your torso is above 60 degrees, you are not rowing — you are shrugging.",
+        "cuePl": "Tułów do około 45 stopni lub niżej. Nagraj się z boku. Jeśli tułów ma więcej niż 60 stopni, to nie jest wiosłowanie, tylko szrug."
+      },
+      {
+        "fault": "Using hip momentum / kipping (heaving the torso up to lift the weight)",
+        "faultPl": "Używanie pędu bioder / kipping (szarpanie tułowiem w górę by podnieść ciężar)",
+        "cause": "Load too heavy, ego lifting, or weak back muscles compensated by hips",
+        "causePl": "Zbyt duży ciężar, ego lifting lub słabe mięśnie pleców kompensowane biodrami",
+        "cue": "Reduce weight by 20-30%. Pause 1 sec at the top of every rep. If you must heave to lift it, you are training hips, not back.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Zatrzymaj się na 1 sek. na szczycie każdego powtórzenia. Jeśli musisz szarpać żeby podnieść — trenujesz biodra, nie plecy."
+      },
+      {
+        "fault": "Partial range of motion at the bottom (short stop instead of full stretch)",
+        "faultPl": "Niepełen zakres ruchu na dole (krótkie zatrzymanie zamiast pełnego rozciągnięcia)",
+        "cause": "Wanting to keep tension or being afraid to fully extend the arms; the main advantage of dumbbells over barbell is lost",
+        "causePl": "Chęć utrzymania napięcia lub strach przed pełnym wyprostem ramion; tracona jest główna przewaga hantli nad sztangą",
+        "cue": "Let the dumbbells go DOWN. Full stretch of the lats at the bottom is exactly why we chose dumbbells — use that extra range.",
+        "cuePl": "Pozwól hantlom ZEJŚĆ. Pełne rozciągnięcie najszerszych na dole to dokładnie powód wyboru hantli — wykorzystaj ten dodatkowy zakres."
+      },
+      {
+        "fault": "No scapular retraction at the top (just elbow flexion)",
+        "faultPl": "Brak ściągnięcia łopatek na szczycie (samo zginanie łokci)",
+        "cause": "Pulling with arms only, weak rhomboids/mid-traps, or rushing the rep tempo",
+        "causePl": "Ciąg samymi rękami, słabe równoległoboczne/środkowe czworoboczne lub zbyt szybkie tempo powtórzeń",
+        "cue": "At the top of every rep squeeze the shoulder blades together for 1 sec. Think 'crack a walnut between your scapulae.' Arms finish — back finishes.",
+        "cuePl": "Na szczycie każdego powtórzenia ściśnij łopatki razem na 1 sek. Pomyśl 'zgnieć orzecha między łopatkami'. Ramiona kończą — plecy kończą."
+      },
+      {
+        "fault": "Elbows flared 90 degrees (turning row into rear-delt work)",
+        "faultPl": "Łokcie odgięte na 90 stopni (zmienia ćwiczenie w pracę tylnych aktonów naramiennych)",
+        "cause": "Pronated grip combined with wide elbow path, or copying a rear-delt-row cue",
+        "causePl": "Chwyt nachwytem w połączeniu z szerokim torem łokci lub kopiowanie wskazówki do face-pulla / rear-delt row",
+        "cue": "Keep elbows at roughly 45 degrees from the torso — not glued to the body, not flared sideways. With neutral grip this happens automatically.",
+        "cuePl": "Łokcie pod kątem mniej więcej 45 stopni do tułowia — nie przyklejone do ciała, nie odgięte na boki. Przy chwycie neutralnym dzieje się to samoczynnie."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of the hinge. Exhale through the pull as the dumbbells approach the body. Inhale on the controlled descent. For heavier sets, hold the brace through 2-3 reps then re-breathe.",
+    "breathingPl": "Wdech i napięcie brzucha na szczycie pochylenia. Wydech w trakcie ciągu gdy hantle zbliżają się do ciała. Wdech podczas kontrolowanego opuszczania. Przy cięższych seriach trzymaj napięcie przez 2-3 powtórzenia, potem odetchnij."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared. Loaded spinal flexion risk too high even with dumbbells. Consult physiotherapist.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody. Ryzyko obciążonej flexji kręgosłupa zbyt duże nawet z hantlami. Konsultacja z fizjoterapeutą.",
+      "alternative": "chest-supported-dumbbell-row"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Switch to chest-supported variant (incline bench) to eliminate spinal loading, or use seated cable row.",
+      "modificationPl": "Przejdź na wersję z podparciem klatki (ławka skośna) by wyeliminować obciążenie kręgosłupa lub użyj wiosłowania siedząc z linki.",
+      "alternative": "chest-supported-dumbbell-row"
+    },
+    {
+      "condition": "hamstring_tightness_or_poor_hip_hinge",
+      "severity": "caution",
+      "modification": "Work on mobility first. Use a shallower hinge angle (60-70 degrees) until you can hold 45 degrees with neutral spine.",
+      "modificationPl": "Najpierw popracuj nad mobilnością. Używaj płytszego kąta hip hinge (60-70 stopni) dopóki nie utrzymasz 45 stopni z neutralnym kręgosłupem.",
+      "alternative": "single-arm-dumbbell-row"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Use a strictly neutral grip and keep elbows closer to the body — less abduction = less impingement. Avoid wide-elbow pronated variations.",
+      "modificationPl": "Stosuj wyłącznie chwyt neutralny i trzymaj łokcie bliżej ciała — mniej odwodzenia = mniej impingement. Unikaj wersji nachwytem z szerokimi łokciami.",
+      "alternative": "single-arm-dumbbell-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 3x10-15 (general / volume) | 3x12-15 (endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-bent-over-row.gif",
+    "frames_extracted": [
+      "frames/dumbbell-bent-over-row/frame_0_start.png",
+      "frames/dumbbell-bent-over-row/frame_1_early.png",
+      "frames/dumbbell-bent-over-row/frame_2_mid.png",
+      "frames/dumbbell-bent-over-row/frame_3_late.png",
+      "frames/dumbbell-bent-over-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/dumbbell-bent-over-row",
+    "glowupp_slug": "dumbbell_bent_over_row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:45:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa (frame_0/1/2/3/4). Frame 0 (start, pełne ściągnięcie): tułów pochylony ~45 stopni, kolana lekko ugięte, dwie hantle uniesione obie jednocześnie do dolnych żeber / boków bioder, łokcie wyraźnie za linią tułowia, łopatki maksymalnie ściągnięte — mocno podświetlone najszersze grzbietu, równoległoboczne, środkowe i dolne czworoboczne, w mniejszym stopniu tylne aktony naramiennych i bicepsy. Frames 1-2 (early/mid eccentric→bottom): ramiona schodzą w dół, hantle zmierzają do pełnego wyprostu pod barkami, lat-y się rozciągają, kąt tułowia STABILNY. Frames 3-4 (late/end koncentryczny): powrót do pełnego top z ponownym ściągnięciem łopatek — kąt tułowia przez cały ruch praktycznie identyczny (brak kippingu), wzorcowa technika. Klasyfikacja 'pull_horizontal' potwierdzona (ciąg horyzontalny względem tułowia). Equipment: dwie hantle krążkowe, nic więcej. Chwyt na GIFie wygląda na neutralny / lekko nachwytny — w opisie zalecam neutralny jako podstawowy (lżejszy dla barków). Wszystkie pola PL napisane od zera w polskim standardzie fitness ('Wiosłowanie hantlami w opadzie' — najbardziej rozpowszechniona nazwa). Primary movery: lats na P9 (główny gracz), rhomboids i mid/lower traps na P8 (versus P9 przy sztandze — przy dwóch hantlach maks. obciążenie niższe niż przy sztandze, więc bezwzględna intensywność mid-back odrobinę niższa, choć ROM większy). Trudność 5 (vs 7 dla wiosłowania sztangą) — łatwiejszy hip-hinge stabilny przy niższym ciężarze, dobre ćwiczenie wprowadzające do barbell row.",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "dumbbells", "mid_back", "lat_developer", "beginner_friendly", "asymmetry_corrective", "full_rom"]
+}

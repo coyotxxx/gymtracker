@@ -1,0 +1,210 @@
+{
+  "id": "kettlebell-bent-press",
+  "name": "Kettlebell Bent Press",
+  "namePl": "Bent press z kettlebellą",
+  "aliases": ["bent press", "old-time bent press", "side bent press", "KB bent press"],
+  "aliasesPl": ["bent press z kettlebellą", "klasyczny bent press", "wyciskanie z pochyleniem w bok", "bent press strongman"],
+
+  "description": "Classic vintage strongman lift (popularized by Eugen Sandow and Arthur Saxon early 1900s). Unilateral kettlebell press where the weight is locked overhead while the torso aggressively leans LATERALLY away from the bell — the arm doesn't press the bell up, the body leans away under it. Brutal demand on shoulder stability, obliques, lats and hip mobility. NOT a strength press in conventional sense — it's a 'get-under' movement closer to a Turkish get-up than a military press.",
+  "descriptionPl": "Klasyczny vintage strongmanowy lift (spopularyzowany przez Eugena Sandowa i Arthura Saxona na początku XX wieku). Jednostronne wyciskanie kettlebella, w którym ciężar jest zablokowany nad głową, a tułów agresywnie pochyla się W BOK od kettlebella — ramię nie wyciska kettlebella w górę, ciało odchyla się pod nim. Brutalne wymagania dla stabilności barku, skośnych brzucha, najszerszych grzbietu i mobilności bioder. NIE jest to klasyczne siłowe wyciskanie — to ruch 'wejścia pod ciężar' bliższy Turkish get-up niż military press.",
+
+  "instructions": [
+    "Clean a kettlebell to the rack position on one side (right hand) — elbow tucked in front of hip, bell resting on forearm/shoulder.",
+    "Stagger your stance slightly: feet shoulder-width or wider, opposite-side foot (left) may turn out ~45 degrees.",
+    "Lock your wrist NEUTRAL, grip the handle firmly. Pack the shoulder DOWN (lat engaged).",
+    "Take a deep breath, brace core HARD (especially the opposite oblique).",
+    "Begin to push your hips out AWAY from the bell (right hip pushes right). Simultaneously, lean your TORSO laterally to the LEFT — bell stays nearly stationary in space.",
+    "As your torso descends sideways under the bell, the arm 'opens' to overhead — but you're moving the body away from the bell, not pressing it up.",
+    "Reach full lockout: arm vertical, elbow extended, bell directly over base of support. Torso is bent maximally sideways, eyes looking UP at the bell.",
+    "PAUSE briefly — verify lockout and shoulder packed.",
+    "Reverse the movement: stand up by pushing through the floor, leveraging hips back under the bell. Bell tracks back down to rack position.",
+    "Complete all reps on one side, then switch."
+  ],
+  "instructionsPl": [
+    "Wyrzuć kettlebella (clean) do pozycji rack po jednej stronie (prawa ręka) — łokieć schowany przed biodrem, ciężar oparty o przedramię/bark.",
+    "Lekko rozkrocz nogi: na szerokość barków lub szerzej, przeciwna stopa (lewa) może być obrócona ~45 stopni na zewnątrz.",
+    "Zablokuj nadgarstek w NEUTRALNEJ pozycji, mocno chwyć rączkę. 'Spakuj' bark W DÓŁ (najszerszy aktywny).",
+    "Wdech, napnij brzuch MOCNO (szczególnie przeciwny skośny).",
+    "Zacznij wypychać biodra OD kettlebella (prawe biodro w prawo). Jednocześnie pochyl TUŁÓW w bok W LEWO — kettlebell pozostaje prawie nieruchomy w przestrzeni.",
+    "Gdy tułów schodzi w bok pod kettlebellem, ramię 'otwiera się' do overhead — ale to ciało odsuwa się od kettlebella, a nie ramię go wyciska.",
+    "Osiągnij pełen lock-out: ramię pionowo, łokieć wyprostowany, kettlebell bezpośrednio nad podstawą podparcia. Tułów maksymalnie pochylony w bok, wzrok skierowany W GÓRĘ na kettlebella.",
+    "Krótka PAUZA — zweryfikuj lock-out i 'spakowany' bark.",
+    "Odwróć ruch: wstań napierając na podłoże, wprowadź biodra z powrotem pod kettlebella. Kettlebell wraca po linii w dół do pozycji rack.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical_with_lateral_flexion",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "multi",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "posterior_deltoids", "obliques", "gluteus_maximus"],
+    "secondary": ["triceps", "lats", "rotator_cuff", "quadratus_lumborum"],
+    "stabilizers": ["core", "transverse_abdominis", "gluteus_medius", "adductors", "spinal_erectors", "serratus_anterior", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P8",
+    "lateral_deltoids": "P8",
+    "posterior_deltoids": "P7",
+    "obliques": "P10",
+    "gluteus_maximus": "P8",
+    "triceps": "S7",
+    "lats": "S7",
+    "rotator_cuff": "S8",
+    "quadratus_lumborum": "S7",
+    "core": "S9",
+    "gluteus_medius": "S6",
+    "serratus_anterior": "S5"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["chalk", "wrist_band"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["kettlebell-turkish-get-up", "kettlebell-single-arm-overhead-press", "kettlebell-windmill", "kettlebell-clean"],
+    "progression_to": ["barbell-bent-press", "two-kettlebell-bent-press"],
+    "alternatives": ["kettlebell-windmill", "kettlebell-single-arm-overhead-press", "kettlebell-side-press", "kettlebell-turkish-get-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kettlebell in rack — elbow IN, packed shoulder",
+      "Wrist neutral, bell on forearm",
+      "Feet shoulder-width, opposite foot ~45° out",
+      "Brace core (especially OPPOSITE oblique)",
+      "Eyes track the bell from start"
+    ],
+    "setup_cues_pl": [
+      "Kettlebell w pozycji rack — łokieć W ŚRODKU, spakowany bark",
+      "Nadgarstek neutralny, kettlebell oparty na przedramieniu",
+      "Stopy na szerokość barków, przeciwna stopa ~45° na zewnątrz",
+      "Napnij brzuch (szczególnie PRZECIWNY skośny)",
+      "Wzrok śledzi kettlebella od początku"
+    ],
+    "execution_cues": [
+      "Hips push AWAY from the bell, torso leans TOWARD opposite side",
+      "Don't 'press' — get UNDER the bell",
+      "Bell stays nearly stationary in space",
+      "Eyes UP on the bell at lockout",
+      "Shoulder PACKED throughout (no shrug, no roll)"
+    ],
+    "execution_cues_pl": [
+      "Biodra wypychają OD kettlebella, tułów pochyla się W PRZECIWNĄ stronę",
+      "Nie 'wyciskaj' — wejdź POD kettlebella",
+      "Kettlebell pozostaje prawie nieruchomy w przestrzeni",
+      "Wzrok W GÓRĘ na kettlebella w lock-out",
+      "Bark SPAKOWANY przez cały czas (bez wzruszenia, bez rotacji)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pressing the bell upward instead of leaning under it",
+        "faultPl": "Wyciskanie kettlebella w górę zamiast pochylania się pod nim",
+        "cause": "Treating it like a military press; lack of understanding of the technique",
+        "causePl": "Traktowanie ruchu jak military press; brak zrozumienia techniki",
+        "cue": "Bell stays still — YOU move. Push your hip AWAY first, lean torso second.",
+        "cuePl": "Kettlebell stoi w miejscu — TY się ruszasz. Wypychaj biodro OD pierwsze, pochyl tułów drugie."
+      },
+      {
+        "fault": "Rounded back / flexed spine instead of lateral lean",
+        "faultPl": "Zgarbione plecy / zgięty kręgosłup zamiast pochylenia w bok",
+        "cause": "Weak obliques, poor hip mobility forcing spine to compensate",
+        "causePl": "Słabe skośne, słaba mobilność bioder zmuszająca kręgosłup do kompensacji",
+        "cue": "Long spine. Lean SIDEWAYS at the waist, not forward. Hips lead — spine follows.",
+        "cuePl": "Długi kręgosłup. Pochyl się W BOK w pasie, nie do przodu. Biodra prowadzą — kręgosłup za nimi."
+      },
+      {
+        "fault": "Eyes off the bell",
+        "faultPl": "Brak wzroku na kettlebellu",
+        "cause": "Untrained habit; doesn't feel necessary",
+        "causePl": "Niewytrenowany nawyk; nie wydaje się konieczne",
+        "cue": "EYES ON THE BELL always — head turns to track, neck stays mobile. Loss of visual = loss of bell.",
+        "cuePl": "WZROK NA KETTLEBELLU zawsze — głowa obraca się by śledzić, szyja zostaje mobilna. Brak wzroku = utrata kettlebella."
+      },
+      {
+        "fault": "Shoulder unpacked / shrugged at lockout",
+        "faultPl": "Niespakowany bark / wzruszony w lock-out",
+        "cause": "Weak lat engagement, fatigue, weight too heavy",
+        "causePl": "Słabe zaangażowanie najszerszego, zmęczenie, zbyt duży ciężar",
+        "cue": "Pull shoulder DOWN into socket. Armpit closed. If you can't pack — too heavy.",
+        "cuePl": "Ściągnij bark W DÓŁ do panewki. Pacha zamknięta. Jeśli nie potrafisz spakować — zbyt ciężki kettlebell."
+      },
+      {
+        "fault": "Going too heavy too soon",
+        "faultPl": "Zbyt duży ciężar zbyt szybko",
+        "cause": "Ego; ignoring prerequisite progression (TGU, windmill)",
+        "causePl": "Ego; ignorowanie poprzedzających ćwiczeń (TGU, windmill)",
+        "cue": "Master TGU and windmill first. Bent press is END of the kettlebell progression, not a starter.",
+        "cuePl": "Najpierw opanuj TGU i windmill. Bent press jest KOŃCEM progresji kettlebellowej, nie początkiem."
+      }
+    ],
+    "breathing": "Inhale and brace BEFORE descending under the bell. Hold the brace through the bend. Exhale slightly at lockout (without releasing core tension). Inhale on the way back up.",
+    "breathingPl": "Wdech i napięcie PRZED zejściem pod kettlebella. Trzymaj napięcie przez pochylenie. Lekki wydech w lock-out (bez utraty napięcia brzucha). Wdech przy powrocie do góry."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_or_disc_issues",
+      "severity": "avoid",
+      "modification": "Bent press places extreme lateral compression on lumbar spine. Avoid entirely. Use windmill (lighter load, no overhead lockout descent) only after cleared.",
+      "modificationPl": "Bent press wywiera ekstremalne boczne ściśnięcie na kręgosłup lędźwiowy. Unikaj całkowicie. Używaj windmill (mniejszy ciężar, bez schodzenia z overhead lockout) tylko po zgodzie.",
+      "alternative": "kettlebell-windmill"
+    },
+    {
+      "condition": "shoulder_instability_or_rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Unilateral overhead load with extreme torso angle = highest shoulder demand of all KB lifts. Don't perform until shoulder fully rehabbed.",
+      "modificationPl": "Jednostronne obciążenie overhead z ekstremalnym kątem tułowia = najwyższe wymagania dla barku ze wszystkich lift'ów KB. Nie wykonuj do pełnej rehabilitacji barku.",
+      "alternative": "kettlebell-half-kneeling-press"
+    },
+    {
+      "condition": "limited_hip_mobility",
+      "severity": "modify",
+      "modification": "Hip hinge into lateral plane is essential. Train hip mobility (cossack squat, lateral lunge) first. Use windmill until adequate mobility.",
+      "modificationPl": "Skłon bioder w płaszczyźnie bocznej jest kluczowy. Najpierw trenuj mobilność bioder (cossack squat, wykrok w bok). Używaj windmill do osiągnięcia odpowiedniej mobilności.",
+      "alternative": "kettlebell-windmill"
+    },
+    {
+      "condition": "high_blood_pressure_or_cardiovascular_issues",
+      "severity": "modify",
+      "modification": "Heavy bracing with extreme torso angle spikes intrathoracic pressure. Use light load, never max effort, with clearance.",
+      "modificationPl": "Mocne napięcie z ekstremalnym kątem tułowia gwałtownie zwiększa ciśnienie wewnątrz klatki. Używaj lekkiego ciężaru, nigdy max effort, za zgodą.",
+      "alternative": "kettlebell-single-arm-overhead-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-5 per side (technique/strength) | 5x1-3 per side (max effort, advanced) | 2-3x5-8 (light teaching weight)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "kettlebell-bent-press.gif",
+    "frames_extracted": [
+      "frames/kettlebell-bent-press/frame_0_start.png",
+      "frames/kettlebell-bent-press/frame_1_early.png",
+      "frames/kettlebell-bent-press/frame_2_mid.png",
+      "frames/kettlebell-bent-press/frame_3_late.png",
+      "frames/kettlebell-bent-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/kettlebell-bent-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0/4: pozycja startowa/końcowa rack — kettlebell oparty na barku/przedramieniu prawej strony, sylwetka prosta, podświetlone prawe akt deltoid + lewe obliques + lewy quadratus lumborum (przeciwna strona stabilizująca). Frame 2: pełen lock-out — prawe ramię pionowo nad głową z kettlebellem, tułów MAKSYMALNIE pochylony w bok w lewo, prawy gluteus maximus + obliques (oba) + lats + posterior deltoid mocno aktywne, biodra wypchnięte w prawo. Klasyczny vintage strongman bent press. Eksklusywnie unilateral. Compound multi-plane (sagittal press + frontal lean + transverse stabilization). PL nazwa = 'Bent press z kettlebellą' (przyjęta nazwa angielska w polskim środowisku kettlebell). Difficulty 9/10 — END of KB progression.",
+
+  "tags": ["kettlebell", "vintage_strongman", "unilateral", "compound_multi_plane", "shoulder_stability", "obliques", "advanced", "old_time_strength", "full_body", "asymmetric_loading"]
+}

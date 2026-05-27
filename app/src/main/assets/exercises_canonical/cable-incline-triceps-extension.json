@@ -1,0 +1,201 @@
+{
+  "id": "cable-incline-triceps-extension",
+  "name": "Cable Incline Triceps Extension",
+  "namePl": "Wyciskanie francuskie na wyciągu leżąc na ławce skośnej",
+  "aliases": ["incline cable overhead triceps extension", "lying cable triceps extension on incline bench", "incline cable french press"],
+  "aliasesPl": ["francuskie na wyciągu na ławce skośnej", "wyciskanie francuskie z linki na skosie", "incline cable french press"],
+
+  "description": "Isolation triceps exercise performed lying on an incline bench with the cable pulley set at the lowest position behind the bench. A straight bar attachment is held overhead at arm's length, then lowered behind the head by flexing only the elbows, and pressed back to lockout. The incline position combined with constant cable tension hammers the long head of the triceps in a deeply stretched position — an excellent finisher when free-weight overhead extensions have been exhausted.",
+  "descriptionPl": "Izolowane ćwiczenie tricepsa wykonywane w pozycji leżącej na ławce skośnej, z bloczkiem wyciągu ustawionym w najniższej pozycji za ławką. Drążek prosty trzymasz nad głową na wyprostowanych ramionach, opuszczasz go za głowę zginając wyłącznie łokcie, a następnie wyciskasz z powrotem do pełnego wyprostu. Pozycja skośna w połączeniu ze stałym napięciem linki bombi przede wszystkim długą głowę tricepsa w głęboko rozciągniętej pozycji — świetne ćwiczenie wykończeniowe gdy wyciskania francuskie z wolnym ciężarem są już zmęczone.",
+
+  "instructions": [
+    "Position an incline bench (30-45°) directly in front of a low cable pulley so that the bench backrest faces away from the machine. Attach a straight bar to the low pulley.",
+    "Sit on the bench, reach overhead and grasp the bar with a pronated (overhand) grip slightly narrower than shoulder-width. Lie back against the pad.",
+    "Press the bar to full elbow extension overhead. The cable should be loaded and pulling slightly back toward the floor. Upper arms point up-and-slightly-back, roughly perpendicular to the torso.",
+    "Brace your core, glue your elbows to a fixed position (do not let them flare outward), and inhale.",
+    "Lower the bar in an arc behind your head by flexing only at the elbows. Continue until you feel a deep stretch in the long head of the triceps. Do not let the upper arms fall forward or the elbows widen.",
+    "Pause briefly in the stretched position, then extend the elbows powerfully to drive the bar back to the overhead lockout. Exhale during the push.",
+    "Squeeze the triceps hard at the top for a 1-second hold, keeping continuous tension on the cable. Do not let the bar travel forward over the chest (the cable would go slack).",
+    "Repeat for prescribed reps with strict control on the eccentric (2-3 seconds down)."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną (30-45°) bezpośrednio przed dolnym bloczkiem wyciągu tak, by oparcie ławki było zwrócone tyłem do maszyny. Przypnij prosty drążek do dolnego bloczka.",
+    "Usiądź na ławce, sięgnij za głowę i złap drążek nachwytem górnym (dłonie skierowane w dół) nieco węziej niż na szerokość barków. Połóż się plecami na oparciu.",
+    "Wyciśnij drążek do pełnego wyprostu w łokciach nad głową. Linka powinna być napięta i ciągnąć lekko w tył w stronę podłogi. Ramiona ponad łokciem skierowane w górę i lekko do tyłu, mniej więcej prostopadle do tułowia.",
+    "Napnij brzuch, zafiksuj pozycję łokci (nie pozwól im rozjeżdżać się na boki) i nabierz powietrza.",
+    "Opuszczaj drążek łukiem za głowę, zginając wyłącznie w łokciach. Kontynuuj aż poczujesz głębokie rozciągnięcie długiej głowy tricepsa. Nie pozwól, by ramiona ponad łokciem opadły do przodu lub łokcie się rozeszły.",
+    "Zatrzymaj się na chwilę w pozycji rozciągniętej, a następnie mocno wyprostuj łokcie, by wypchnąć drążek z powrotem do pełnego wyprostu nad głową. Wydech w fazie wyciskania.",
+    "Mocno spinaj triceps w górnej pozycji przez 1 sekundę, utrzymując ciągłe napięcie na lince. Nie pozwól by drążek wyjechał do przodu nad klatkę (linka by zwiotczała).",
+    "Powtórz przez założoną liczbę powtórzeń ze ścisłą kontrolą fazy negatywnej (2-3 sekundy w dół)."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["latissimus_dorsi", "posterior_deltoid", "core", "forearm_flexors", "pectoralis_major"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "latissimus_dorsi": "T3",
+    "posterior_deltoid": "T2",
+    "core": "T2",
+    "forearm_flexors": "T2",
+    "pectoralis_major": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "incline_bench", "straight_bar_attachment"],
+    "optional": ["rope_attachment", "ez_bar_attachment", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["overhead-cable-triceps-extension", "lying-triceps-extension"],
+    "progression_to": ["heavy-cable-incline-triceps-extension", "single-arm-cable-incline-triceps-extension"],
+    "alternatives": ["incline-dumbbell-triceps-extension", "barbell-overhead-triceps-extension", "overhead-cable-triceps-extension-rope", "ez-bar-skull-crusher"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench incline 30-45°, backrest facing away from low pulley",
+      "Straight bar at low pulley, pronated narrow grip",
+      "Lie back, press bar to lockout overhead before starting reps",
+      "Upper arms point up-and-slightly-back, perpendicular to torso",
+      "Brace core, feet flat — anchor the body against cable pull"
+    ],
+    "setup_cues_pl": [
+      "Ławka skośna 30-45°, oparcie odwrócone tyłem do bloczka",
+      "Drążek prosty na dolnym bloczku, chwyt nachwytem górnym węziej niż barki",
+      "Połóż się, wyciśnij drążek do pełnego wyprostu nad głową przed pierwszym powtórzeniem",
+      "Ramiona ponad łokciem skierowane w górę i lekko w tył, prostopadle do tułowia",
+      "Napnij brzuch, stopy płasko — zakotwicz ciało przeciwko ciągnięciu linki"
+    ],
+    "execution_cues": [
+      "Only the forearms move — elbows stay fixed in space",
+      "Feel a deep stretch on the long head at the bottom",
+      "Drive the bar to lockout, don't let it fall forward over the chest",
+      "Keep elbows narrow — pin them as if holding a piece of paper between upper arm and torso angle",
+      "Constant tension — never let the cable go slack"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — łokcie zafiksowane w jednym punkcie",
+      "Poczuj głębokie rozciągnięcie długiej głowy w dolnej pozycji",
+      "Wypychaj drążek do pełnego wyprostu, nie pozwól mu opaść do przodu nad klatkę",
+      "Łokcie wąsko — trzymaj je tak, jakbyś miał trzymać kartkę papieru między ramieniem a kątem tułowia",
+      "Stałe napięcie — nigdy nie pozwól lince zwiotczeć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar drifts forward over the chest at lockout (cable goes slack)",
+        "faultPl": "Drążek wyjeżdża do przodu nad klatkę w wyproście (linka wiotczeje)",
+        "cause": "Treating the movement like a pullover, or trying to rest at the top — kills constant cable tension",
+        "causePl": "Traktowanie ruchu jak pullovera lub próba odpoczynku w górnej pozycji — zabija stałe napięcie linki",
+        "cue": "Lockout straight up overhead, slightly behind vertical. The cable line must stay loaded through every rep.",
+        "cuePl": "Wyprost prosto nad głową, lekko za pionem. Linia linki musi pozostać napięta przez całe powtórzenie."
+      },
+      {
+        "fault": "Elbows flare outward as the bar descends",
+        "faultPl": "Łokcie rozjeżdżają się na boki podczas opuszczania",
+        "cause": "Weak long head, narrow grip too uncomfortable, or load too heavy — shoulders compensate",
+        "causePl": "Słaba długa głowa, za wąski chwyt nieprzyjemny dla nadgarstków, lub zbyt duży ciężar — barki kompensują",
+        "cue": "Pin upper arms close to your ears. If grip hurts, switch to rope or EZ-bar attachment.",
+        "cuePl": "Trzymaj ramiona ponad łokciem blisko uszu. Jeśli chwyt boli, przejdź na linkę lub gryf łamany."
+      },
+      {
+        "fault": "Movement initiated from hips / lifting the lower back off the bench",
+        "faultPl": "Ruch rozpoczynany od bioder / odrywanie odcinka lędźwiowego od ławki",
+        "cause": "Load too heavy, ego lifting, or weak core — body recruits trunk extensors to help",
+        "causePl": "Zbyt duży ciężar, ego, lub słaby tułów — ciało włącza prostowniki kręgosłupa do pomocy",
+        "cue": "Lower the weight. Press the lower back flat against the pad — only elbows move.",
+        "cuePl": "Zmniejsz ciężar. Wciśnij dolne plecy w oparcie — tylko łokcie się ruszają."
+      },
+      {
+        "fault": "Partial range — stopping the descent too early",
+        "faultPl": "Niepełny zakres — zbyt wczesne zatrzymywanie fazy negatywnej",
+        "cause": "Avoiding stretched-position discomfort, weak long head in elongated state, or chasing heavy loads",
+        "causePl": "Unikanie dyskomfortu w pozycji rozciągniętej, słabość długiej głowy w wydłużeniu, lub ściganie się z ciężarem",
+        "cue": "Lower until you feel a strong stretch behind the head. The bottom is where the long head grows.",
+        "cuePl": "Opuszczaj aż poczujesz mocne rozciągnięcie za głową. To w dolnej pozycji rośnie długa głowa."
+      },
+      {
+        "fault": "Wrists hyperextending under load",
+        "faultPl": "Nadgarstki przeprostowane pod obciążeniem",
+        "cause": "Straight bar with narrow grip stresses the wrists in extension, especially with heavy weight",
+        "causePl": "Prosty drążek z wąskim chwytem obciąża nadgarstki w przeproście, szczególnie przy dużym ciężarze",
+        "cue": "Keep wrists in line with forearms. Try rope attachment for free wrist rotation, or wrist wraps.",
+        "cuePl": "Trzymaj nadgarstki w linii z przedramieniem. Spróbuj linki dla swobodnej rotacji nadgarstka, lub usztywniacze."
+      }
+    ],
+    "breathing": "Inhale at the top of the rep before lowering the bar behind the head. Exhale powerfully during the extension back to lockout. Maintain a light brace throughout to keep the lower back flat against the pad.",
+    "breathingPl": "Wdech w górnej pozycji przed opuszczeniem drążka za głowę. Wydech mocno podczas wyprostu z powrotem do pełnego wyprostu. Utrzymuj lekkie napięcie brzucha przez całą serię, by trzymać dolne plecy płasko przy oparciu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy_triceps_or_distal_biceps",
+      "severity": "modify",
+      "modification": "Overhead extensions stress the distal triceps tendon. Reduce range of motion in the stretched position, use lighter loads with higher reps (12-15), switch to rope attachment for friendlier wrist position.",
+      "modificationPl": "Wyprosty nad głową obciążają dystalny przyczep tricepsa. Zmniejsz zakres ruchu w pozycji rozciągniętej, używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15), zmień na linkę dla przyjaźniejszej pozycji nadgarstka.",
+      "alternative": "triceps-pushdown-rope"
+    },
+    {
+      "condition": "shoulder_impingement_or_anterior_shoulder_pain",
+      "severity": "modify",
+      "modification": "Full overhead position with the cable behind can aggravate impingement. Lower the bench to a flatter angle (15-20°), reduce the range of motion at the top, or switch to a pushdown variation that keeps the elbow low.",
+      "modificationPl": "Pełna pozycja nad głową z linką ciągnącą do tyłu może drażnić impingement. Zmniejsz nachylenie ławki (15-20°), ogranicz zakres ruchu w górnej pozycji, lub przejdź na wyprost na wyciągu z linką w dół (elbow nisko).",
+      "alternative": "cable-triceps-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Narrow pronated grip on a straight bar can aggravate the wrists. Switch to a rope attachment (neutral grip) or EZ-bar with angled handles.",
+      "modificationPl": "Wąski chwyt nachwytem na prostym drążku może drażnić nadgarstki. Zmień na linkę (chwyt neutralny) lub gryf EZ z kątowymi uchwytami.",
+      "alternative": "overhead-cable-triceps-extension-rope"
+    },
+    {
+      "condition": "acute_lumbar_pain",
+      "severity": "caution",
+      "modification": "Cable pull while lying tilted can encourage lumbar hyperextension if the brace fails. Set bench to a higher incline (45-60°), keep lower back actively pressed to the pad, or switch to seated pushdown.",
+      "modificationPl": "Ciągnięcie linki w pozycji półleżącej może prowokować przeprost lędźwiowy, jeśli napięcie brzucha zawodzi. Ustaw ławkę na większy kąt (45-60°), aktywnie dociskaj dolne plecy do oparcia, lub przejdź na wyprost siedząc na wyciągu."
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / finisher) | 3x8-12 (volume work) | 2-3x15-20 (pump/metabolic stress)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-incline-triceps-extension.gif",
+    "frames_extracted": [
+      "frames/cable-incline-triceps-extension/frame_0_start.png",
+      "frames/cable-incline-triceps-extension/frame_1_early.png",
+      "frames/cable-incline-triceps-extension/frame_2_mid.png",
+      "frames/cable-incline-triceps-extension/frame_3_late.png",
+      "frames/cable-incline-triceps-extension/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-incline-triceps-extension",
+    "yuhonas_id": "Cable_Incline_Triceps_Extension"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Atleta leży na ławce skośnej (~30-40°) z oparciem zwróconym TYŁEM do wyciągu — linka biegnie od dolnego bloczka za ławką ku górze nad głowę. Frame 0: ramiona ugięte, drążek za głową, długa głowa tricepsa mocno rozciągnięta (czerwone podświetlenie). Frame 2: pełny wyprost ramion nad głową, drążek wysoko, triceps w pełnym skurczu. Frame 4: powrót do pozycji rozciągniętej (widoczne 'ghosty' górnej pozycji powyżej). Ramiona ponad łokciem przez cały ruch pozostają w stałej, lekko cofniętej orientacji. Klasyczny incline cable overhead triceps extension — long head dominant przez stretch. Słownie: poziom intermediate (5/10) bo wymaga koordynacji ułożenia ławki względem bloczka i utrzymania łokci w stałej pozycji przy aktywnej lince ciągnącej w tył. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "incline_bench", "long_head_emphasis", "stretch_focused", "finisher"]
+}

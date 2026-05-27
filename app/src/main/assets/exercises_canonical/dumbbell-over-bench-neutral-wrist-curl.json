@@ -1,0 +1,189 @@
+{
+  "id": "dumbbell-over-bench-neutral-wrist-curl",
+  "name": "Dumbbell Over Bench Neutral Wrist Curl",
+  "namePl": "Neutralny wrist curl z hantlami na ławce",
+  "aliases": ["neutral grip wrist curl over bench", "dumbbell radial deviation wrist curl", "neutral wrist curl on bench"],
+  "aliasesPl": ["wrist curl neutralnym chwytem na ławce", "uginanie nadgarstków hantlami chwyt neutralny", "wrist curl młotkowy na ławce"],
+
+  "description": "Isolation exercise for the forearm flexors performed with two dumbbells held in a neutral grip (palms facing each other) while kneeling at a flat bench with both forearms resting on the bench. Unlike the classic supinated wrist curl, the neutral hand position emphasizes radial-ulnar deviation and engages the brachioradialis more than the wrist flexors alone. A useful accessory for grip strength, forearm thickness on the lateral (brachioradialis) side, and wrist joint stability.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze przedramienia wykonywane z dwoma hantlami trzymanymi chwytem neutralnym (dłonie skierowane do siebie), klęcząc przy ławce poziomej z oboma przedramionami opartymi o ławkę. W przeciwieństwie do klasycznego wrist curla podchwytem, neutralne ułożenie dłoni akcentuje odwiedzenie i przywiedzenie nadgarstka (dewiacja promieniowo-łokciowa) i mocniej angażuje mięsień ramienno-promieniowy niż same zginacze nadgarstka. Przydatne ćwiczenie pomocnicze na siłę chwytu, grubość przedramienia od strony bocznej (brachioradialis) oraz stabilność stawu nadgarstkowego.",
+
+  "instructions": [
+    "Place two dumbbells on the floor beside a flat bench. Kneel down so your hips are back and your torso is resting on the bench.",
+    "Pick up the dumbbells one at a time and place both forearms flat on the bench, palms facing each other (neutral grip), hands hanging just past the end of the bench.",
+    "Brace your core and keep your shoulders down and back. Forearms stay glued to the bench for the entire set.",
+    "From a fully relaxed hand position (radial deviation — thumbs drop slightly), curl the dumbbells upward by deviating the wrists upward (toward the thumb side).",
+    "Squeeze at the top for a brief pause when the wrists are fully flexed in the neutral plane.",
+    "Lower the dumbbells under control over 2-3 seconds back to the starting stretched position.",
+    "Keep elbows stationary on the bench — the only movement is at the wrist joint. Use light weight; the forearms fatigue quickly."
+  ],
+  "instructionsPl": [
+    "Połóż dwa hantle na podłodze obok ławki poziomej. Uklęknij tak, by biodra były cofnięte, a tułów oparty o ławkę.",
+    "Podnoś hantle pojedynczo i ułóż oba przedramiona płasko na ławce, dłonie skierowane do siebie (chwyt neutralny), nadgarstki wystają lekko poza krawędź ławki.",
+    "Napnij brzuch, barki ściągnięte w dół i tył. Przedramiona pozostają przyklejone do ławki przez całą serię.",
+    "Z pozycji w pełni rozluźnionej dłoni (odwiedzenie promieniowe — kciuki lekko opadają) unieś hantle przez wygięcie nadgarstków w górę (w stronę kciuka).",
+    "Mocno spinaj na chwilę w górnej pozycji, gdy nadgarstki są w pełni zgięte w płaszczyźnie neutralnej.",
+    "Opuszczaj hantle w sposób kontrolowany przez 2-3 sekundy do pozycji wyjściowej z pełnym rozciągnięciem.",
+    "Łokcie pozostają nieruchome na ławce — pracuje wyłącznie staw nadgarstkowy. Używaj lekkich ciężarów; przedramiona szybko się męczą."
+  ],
+
+  "classification": {
+    "movement_pattern": "wrist_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["biceps_brachii", "core", "anterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P9",
+    "brachioradialis": "S7",
+    "biceps_brachii": "T2",
+    "core": "T2",
+    "anterior_deltoid": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-wrist-curl", "barbell-wrist-curl", "reverse-wrist-curl"],
+    "alternatives": ["dumbbell-wrist-curl", "barbell-wrist-curl", "hammer-curl", "reverse-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kneel at the bench, torso resting on the pad",
+      "Both forearms flat on the bench, palms facing each other",
+      "Wrists just past the bench edge, hands free to move",
+      "Elbows pinned to the bench surface",
+      "Light weight — forearms fatigue fast"
+    ],
+    "setup_cues_pl": [
+      "Uklęknij przy ławce, tułów oparty o pad",
+      "Oba przedramiona płasko na ławce, dłonie skierowane do siebie",
+      "Nadgarstki tuż za krawędzią ławki, dłonie swobodnie zwisają",
+      "Łokcie przyklejone do powierzchni ławki",
+      "Lekki ciężar — przedramiona męczą się szybko"
+    ],
+    "execution_cues": [
+      "Only the wrists move — forearms stay glued",
+      "Drive the dumbbells up toward the thumb side",
+      "Squeeze hard at the top for a second",
+      "Lower slowly for 2-3 seconds — feel the stretch",
+      "Full range — let the hands drop fully at the bottom"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko nadgarstki — przedramiona nieruchome",
+      "Prowadź hantle w górę w stronę kciuka",
+      "Mocno spinaj na chwilę w górnej pozycji",
+      "Opuszczaj wolno przez 2-3 sekundy — czuj rozciągnięcie",
+      "Pełny zakres — pozwól dłoniom w pełni opaść na dole"
+    ],
+    "common_faults": [
+      {
+        "fault": "Forearms lifting off the bench",
+        "faultPl": "Przedramiona unoszą się z ławki",
+        "cause": "Weight too heavy or using biceps/elbow flexion to assist the curl",
+        "causePl": "Zbyt duży ciężar lub pomaganie bicepsem/zginaniem w łokciu",
+        "cue": "Lower the weight. Press forearms firmly into the bench through the entire set.",
+        "cuePl": "Zmniejsz ciężar. Mocno dociskaj przedramiona do ławki przez całą serię."
+      },
+      {
+        "fault": "Partial range — not letting the dumbbells stretch down fully",
+        "faultPl": "Niepełny zakres — brak pełnego rozciągnięcia w dolnej fazie",
+        "cause": "Ego lifting, weak forearms in stretched position, or fear of dropping the dumbbells",
+        "causePl": "Ego, słabe przedramiona w pozycji rozciągniętej, lub strach przed upuszczeniem hantli",
+        "cue": "Let the hands drop fully at the bottom. Use lighter dumbbells with a secure grip.",
+        "cuePl": "Pozwól dłoniom w pełni opaść w dolnej pozycji. Używaj lżejszych hantli z pewnym chwytem."
+      },
+      {
+        "fault": "Rotating the grip from neutral toward supinated",
+        "faultPl": "Obracanie chwytu z neutralnego w stronę podchwytu",
+        "cause": "Defaulting to the more familiar supinated wrist curl pattern, weak ulnar deviation",
+        "causePl": "Powrót do bardziej znanego wzorca wrist curla podchwytem, słabe przywiedzenie łokciowe",
+        "cue": "Keep palms strictly facing each other throughout the entire set. Watch yourself in a mirror if needed.",
+        "cuePl": "Trzymaj dłonie ściśle skierowane do siebie przez całą serię. W razie potrzeby kontroluj ułożenie w lustrze."
+      },
+      {
+        "fault": "Using momentum / bouncing at the bottom",
+        "faultPl": "Wykorzystywanie rozpędu / odbijanie w dolnej fazie",
+        "cause": "Trying to lift too much weight or skipping the eccentric control",
+        "causePl": "Próba uniesienia zbyt dużego ciężaru lub pomijanie kontroli fazy ekscentrycznej",
+        "cue": "Pause for a half-second at the bottom. Initiate each rep from a dead stop with the wrists only.",
+        "cuePl": "Zatrzymaj na pół sekundy w dolnej pozycji. Każde powtórzenie zaczynaj z zatrzymanej pozycji, używając wyłącznie nadgarstków."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep breathing relaxed — this is a small isolation movement, no need to brace hard.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Oddychaj spokojnie — to małe ćwiczenie izolowane, nie trzeba mocno spinać brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce range of motion and load. Work pain-free range only. If sharp pain — stop and seek physiotherapy.",
+      "modificationPl": "Zmniejsz zakres ruchu i ciężar. Pracuj wyłącznie w zakresie bez bólu. Jeśli ostry ból — przerwij i skonsultuj się z fizjoterapeutą.",
+      "alternative": "isometric-wrist-hold"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "caution",
+      "modification": "Brachioradialis involvement can aggravate lateral elbow tendinopathy. Use very light weight, high reps (15-20), avoid eccentric overload.",
+      "modificationPl": "Zaangażowanie ramienno-promieniowego może drażnić tendinopatię bocznego nadkłykcia. Używaj bardzo lekkiego ciężaru, dużej liczby powtórzeń (15-20), unikaj przeciążenia fazy negatywnej.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Wrist flexion under load can compress the median nerve. Limit ROM to a neutral-to-slightly-flexed wrist, avoid full flexion squeeze.",
+      "modificationPl": "Zginanie nadgarstka pod obciążeniem może uciskać nerw pośrodkowy. Ogranicz zakres do pozycji neutralnej i lekko zgiętej, unikaj pełnego zgięcia ze spięciem.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "thumb_or_de_quervains_tenosynovitis",
+      "severity": "modify",
+      "modification": "Radial deviation in this movement aggravates De Quervain's. Switch to supinated wrist curl which loads the wrist purely in flexion-extension.",
+      "modificationPl": "Odwiedzenie promieniowe w tym ruchu drażni zespół De Quervaina. Przejdź na wrist curl podchwytem, który obciąża nadgarstek wyłącznie w zgięciu-wyproście.",
+      "alternative": "dumbbell-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/forearm thickness) | 2-3x15-20 (endurance/grip) | 4x8-10 with slow eccentrics (strength)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "dumbbell-over-bench-neutral-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-over-bench-neutral-wrist-curl/frame_0_start.png",
+      "frames/dumbbell-over-bench-neutral-wrist-curl/frame_1_early.png",
+      "frames/dumbbell-over-bench-neutral-wrist-curl/frame_2_mid.png",
+      "frames/dumbbell-over-bench-neutral-wrist-curl/frame_3_late.png",
+      "frames/dumbbell-over-bench-neutral-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-over-bench-neutral-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model klęczy przy ławce poziomej, tułów oparty o pad, oba przedramiona płasko na ławce, dwa hantle trzymane chwytem neutralnym (dłonie skierowane do siebie), dłonie wystają poza krawędź ławki. Podświetlone na czerwono mięśnie przedramienia od strony promieniowej (brachioradialis) oraz zginacze. Frame 2: lekkie uniesienie hantli w stronę kciuka — odwiedzenie promieniowe nadgarstka, przedramiona pozostają na ławce. Frame 4: powrót do pozycji wyjściowej z pełnym rozciągnięciem. Ruch tylko w stawie nadgarstkowym, łokcie i ramiona nieruchome. Klasyfikacja: mechanic=isolation, plane=frontal (radial-ulnar deviation w neutralnym chwycie), laterality=bilateral. Primary: forearm_flexors. Secondary: brachioradialis (mocniej zaangażowany w chwycie neutralnym niż w klasycznym wrist curl podchwytem). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "forearms", "grip", "isolation", "dumbbells", "bench", "accessory", "wrist_strength"]
+}

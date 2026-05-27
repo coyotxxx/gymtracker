@@ -1,0 +1,204 @@
+{
+  "id": "smith-wide-grip-bench-press",
+  "name": "Smith Machine Wide-Grip Bench Press",
+  "namePl": "Wyciskanie sztangi chwytem szerokim w maszynie Smitha",
+  "aliases": ["smith wide grip bench", "smith wide bench press", "wide grip smith bench", "smith machine wide bench"],
+  "aliasesPl": ["wyciskanie szerokim chwytem na smithie", "smith wide grip", "wyciskanie szerokie na maszynie smitha", "szeroki smith bench"],
+
+  "description": "Variant of the flat bench press performed on a Smith machine with a wider-than-shoulder grip (~150% shoulder width — index fingers at or just outside the power rings). The fixed vertical bar path eliminates the need for lateral balance, allowing focus on raw pressing strength. Wide grip shortens the range of motion and strongly stretches the sternal (middle) fibers of the pectoralis major while reducing triceps contribution. The combination of fixed path + wide grip lets you safely overload the chest in solo training, but ALSO concentrates stress on the anterior shoulder / rotator cuff — making correct setup mandatory.",
+  "descriptionPl": "Wariant wyciskania na ławce poziomej wykonywany w maszynie Smitha szerszym niż na barki chwytem (~150% szerokości barków — palce wskazujące na pierścieniach gryfu lub tuż za nimi). Wymuszony pionowy tor gryfu eliminuje potrzebę balansowania ciężaru na boki, pozwalając skupić się na czystej sile wyciskania. Szeroki chwyt skraca zakres ruchu i mocno rozciąga mostkowe (środkowe) włókna mięśnia piersiowego, jednocześnie zmniejszając udział tricepsów. Połączenie wymuszonego toru + szerokiego chwytu pozwala bezpiecznie przeciążać klatkę w treningu solo, ale RÓWNIEŻ koncentruje obciążenie na przednim aktonie barku / stożku rotatorów — dlatego prawidłowe ustawienie jest obowiązkowe.",
+
+  "instructions": [
+    "Position a flat bench centered under the Smith machine rails. Lie down so the bar lands on your UPPER chest / nipple line (wide grip naturally touches higher than medium grip).",
+    "Plant feet firmly on the floor, knees bent ~90°. Set shoulder blades HARD: retract and depress them ('pinch them together, tuck into back pockets'). Slight natural arch in the lower back.",
+    "Grip the bar WIDE — index fingers at the power rings of the Smith bar or just outside (~150% shoulder width). Wrap thumbs around the bar (NOT suicide grip). Bar sits in the heel of the palm.",
+    "Unrack by rotating wrists backward (hooks release). Hold the bar with extended arms directly over the upper chest.",
+    "Take a big breath, brace your core. Begin a controlled descent along the fixed rail toward your upper chest / nipple line.",
+    "Touch the chest lightly — do NOT bounce. Pause briefly (1s for paused style) and feel a strong stretch in the outer/sternal pec fibers.",
+    "Press the bar straight up along the rail to lockout — keep elbows at ~70-75° from torso (not the full 90° T-shape).",
+    "Maintain shoulder blade retraction throughout. Exhale at lockout.",
+    "After the final rep, rotate wrists FORWARD to re-engage the hooks and safely rack the bar.",
+    "WARNING: Wide grip + fixed Smith path significantly stresses the anterior shoulder. Do not max out if you feel any shoulder discomfort, and always set safety stops below chest level."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę poziomą wycentrowaną pod szynami maszyny Smitha. Połóż się tak, by gryf opadał na GÓRNĄ klatkę / linię sutków (szeroki chwyt naturalnie dotyka wyżej niż chwyt medium).",
+    "Stopy mocno na podłodze, kolana zgięte ~90°. Ustaw łopatki MOCNO: ściągnięte i opuszczone ('ściśnij i schowaj do tylnych kieszeni'). Lekki naturalny łuk w dolnych plecach.",
+    "Chwyć gryf SZEROKO — palce wskazujące na pierścieniach gryfu Smitha lub tuż za nimi (~150% szerokości barków). Owinij kciuki wokół gryfu (NIE chwyt samobójczy). Gryf siedzi w podstawie dłoni.",
+    "Odbezpiecz gryf obracając nadgarstki do tyłu (haki się zwalniają). Trzymaj gryf z prostymi ramionami bezpośrednio nad górną klatką.",
+    "Nabierz głęboki oddech, napnij brzuch. Zacznij kontrolowane schodzenie wzdłuż wymuszonego toru do górnej klatki / linii sutków.",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza (1s dla wersji z pauzą) i poczuj mocne rozciągnięcie zewnętrznych / mostkowych włókien klatki.",
+    "Wyciśnij gryf prosto w górę wzdłuż szyny do pełnego wyprostu — utrzymaj łokcie pod kątem ~70-75° od tułowia (nie pełne 90° w kształcie litery T).",
+    "Łopatki ściągnięte przez cały ruch. Wydech w lock-out.",
+    "Po ostatnim powtórzeniu obróć nadgarstki W PRZÓD, by zazębić haki i bezpiecznie odstawić gryf.",
+    "UWAGA: Szeroki chwyt + wymuszony tor Smitha znacznie obciąża przedni akton barku. Nie wyciskaj maksymalnych ciężarów jeśli czujesz dyskomfort w barku i zawsze ustaw zabezpieczenia poniżej poziomu klatki."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids"],
+    "secondary": ["triceps", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back", "lats"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P8",
+    "triceps": "S5",
+    "serratus_anterior": "S4",
+    "rotator_cuff": "T4",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "flat_bench"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["smith-bench-press", "barbell-bench-press", "dumbbell-bench-press", "machine-chest-press"],
+    "progression_to": ["barbell-wide-bench-press", "paused-wide-bench-press", "smith-incline-wide-grip-bench-press"],
+    "alternatives": ["barbell-wide-bench-press", "smith-bench-press", "dumbbell-bench-press", "machine-chest-press", "cable-chest-press-wide"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench centered — bar lands on UPPER chest / nipple line, not throat",
+      "Index fingers at the rings (~150% shoulder width)",
+      "Shoulder blades retracted HARD — wide grip + fixed path demands extra back tightness",
+      "Slight arch, glutes on bench, feet planted flat",
+      "Bar in palm heel — straight line wrist-to-forearm (wide grip + fixed path amplifies wrist stress)"
+    ],
+    "setup_cues_pl": [
+      "Ławka wycentrowana — gryf opada na GÓRNĄ klatkę / linię sutków, nie na szyję",
+      "Palce wskazujące na pierścieniach (~150% szerokości barków)",
+      "Łopatki ściągnięte MOCNO — szeroki chwyt + wymuszony tor wymaga większego napięcia pleców",
+      "Lekki łuk, pośladki na ławce, stopy płasko zaparte",
+      "Gryf w podstawie dłoni — prosta linia nadgarstek-przedramię (szeroki chwyt + wymuszony tor wzmacnia obciążenie nadgarstków)"
+    ],
+    "execution_cues": [
+      "Touch UPPER chest / nipple line — not lower sternum",
+      "Feel the stretch in the outer pec at the bottom",
+      "Press with the chest, not the arms — 'push the bench through the floor'",
+      "Shorter ROM than medium grip — accept it, don't chase extra range with shoulder roll-forward",
+      "After last rep — rotate wrists forward to rack safely"
+    ],
+    "execution_cues_pl": [
+      "Dotknij GÓRNEJ klatki / linii sutków — nie dolnego mostka",
+      "Poczuj rozciągnięcie zewnętrznej części klatki na dole",
+      "Wyciskaj klatką, nie ramionami — 'wepchnij ławkę w podłogę'",
+      "Krótszy zakres niż przy chwycie medium — zaakceptuj go, nie wymuszaj większego zakresu rolując barki do przodu",
+      "Po ostatnim powtórzeniu — obróć nadgarstki w przód, by bezpiecznie odstawić"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bench positioned so bar lands on throat / collarbones",
+        "faultPl": "Ławka ustawiona tak, że gryf opada na szyję / obojczyki",
+        "cause": "Bar path is FIXED — wrong bench position cannot be corrected mid-set, and wide grip needs precise placement (touch is higher than medium grip)",
+        "causePl": "Tor gryfu jest WYMUSZONY — złej pozycji ławki nie poprawisz w trakcie serii, a szeroki chwyt wymaga precyzyjnego ustawienia (dotyk jest wyżej niż przy chwycie medium)",
+        "cue": "Before first rep: dry run with empty bar. Bar MUST touch upper chest / nipple line — nipple line is correct, NOT collarbones. Reposition bench if needed.",
+        "cuePl": "Przed pierwszym powtórzeniem: próbny ruch z pustym gryfem. Gryf MUSI dotykać górnej klatki / linii sutków — linia sutków jest poprawna, NIE obojczyki. Przesuń ławkę jeśli trzeba."
+      },
+      {
+        "fault": "Elbows flared past 90° (full T-shape arms)",
+        "faultPl": "Łokcie rozsunięte ponad 90° (pełna litera T)",
+        "cause": "Wide grip + fixed bar path naturally encourages flaring — combined with loss of retraction, becomes a guaranteed shoulder issue",
+        "causePl": "Szeroki chwyt + wymuszony tor naturalnie sprzyjają rozsuwaniu łokci — w połączeniu z utratą ściągnięcia łopatek staje się gwarantowanym problemem barkowym",
+        "cue": "Even with wide grip, keep elbows at ~70-75° (not full 90°). 'Hide your armpits from the ceiling.' Touch upper chest, not throat.",
+        "cuePl": "Nawet przy szerokim chwycie utrzymaj łokcie pod ~70-75° (nie pełne 90°). 'Schowaj pachy przed sufitem'. Dotknij górnej klatki, nie szyi."
+      },
+      {
+        "fault": "Bouncing the bar off chest (ego lifting)",
+        "faultPl": "Odbijanie gryfu od klatki (ego lifting)",
+        "cause": "Wide grip + Smith fixed path lets you load heavier than free bench — tempting to cheat with bounce, BUT max stretch position is when pec strain happens",
+        "causePl": "Szeroki chwyt + wymuszony tor Smitha pozwala załadować więcej niż na free benchu — kuszące do oszukiwania odbiciem, ALE pozycja maksymalnego rozciągnięcia to moment, w którym dochodzi do naderwań klatki",
+        "cue": "Pause 1s on chest. Wide grip bounce = pec tear or shoulder injury waiting to happen.",
+        "cuePl": "Pauza 1s na klatce. Odbicie przy szerokim chwycie = czekające naderwanie klatki lub kontuzja barku."
+      },
+      {
+        "fault": "Losing shoulder blade retraction at the bottom",
+        "faultPl": "Utrata ściągnięcia łopatek w pozycji dolnej",
+        "cause": "Wide grip maximally stretches the chest; if back is loose, shoulders roll forward into impingement position",
+        "causePl": "Szeroki chwyt maksymalnie rozciąga klatkę; jeśli plecy są luźne, barki rolują do przodu w pozycję impingementu",
+        "cue": "'Bend the bar' — actively spread the bar apart, lats engaged. Shoulder blades GLUED to the bench through the whole rep.",
+        "cuePl": "'Wygnij gryf' — aktywnie rozciągaj gryf na boki, napięte najszersze. Łopatki PRZYKLEJONE do ławki przez całe powtórzenie."
+      },
+      {
+        "fault": "Forgetting to rotate wrists to rack at end of set (bar drops on chest)",
+        "faultPl": "Brak obrotu nadgarstków by odstawić gryf na końcu serii (gryf opada na klatkę)",
+        "cause": "End-of-set fatigue + wide grip's awkward hand angle for the rotation maneuver",
+        "causePl": "Zmęczenie na końcu serii + niewygodny kąt dłoni szerokiego chwytu dla manewru obrotu",
+        "cue": "Practice the wrist rotation with empty bar in wide grip BEFORE loading weight. Always set safety stops just below chest level as backup.",
+        "cuePl": "Przećwicz obrót nadgarstków z pustym gryfem w szerokim chwycie ZANIM załadujesz ciężar. Zawsze ustaw zabezpieczenia tuż poniżej poziomu klatki jako backup."
+      }
+    ],
+    "breathing": "Inhale at the top, brace HARD (wide grip needs extra core tension), hold through the descent and press. Exhale at lockout.",
+    "breathingPl": "Wdech na górze, napięcie MOCNO (szeroki chwyt wymaga dodatkowego napięcia core), trzymaj przez schodzenie i wyciskanie. Wydech w lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Wide grip + fixed Smith path is the WORST combination for impingement — increased external rotation stress and no escape route from a bad angle. Switch to medium-grip Smith or dumbbells.",
+      "modificationPl": "Szeroki chwyt + wymuszony tor Smitha to NAJGORSZE połączenie dla impingementu — zwiększona rotacja zewnętrzna i brak ucieczki z złego kąta. Przejdź na chwyt medium na Smithie lub na hantle.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy wide-grip Smith pressing forces the cuff through one trajectory while maximally stretched — high risk of further damage. Switch to machine chest press or rehab protocol.",
+      "modificationPl": "Ciężkie wyciskanie szerokim chwytem w Smithie zmusza stożek rotatorów do jednej trajektorii w maksymalnym rozciągnięciu — wysokie ryzyko pogłębienia uszkodzenia. Przejdź na maszynę chest press lub protokół rehabilitacyjny.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "avoid",
+      "modification": "Wide grip with elbows flared in fixed path puts the AC joint at the end of its compressive range with no way to adjust. Avoid until pain resolved.",
+      "modificationPl": "Szeroki chwyt z rozsuniętymi łokciami w wymuszonym torze obciąża staw barkowo-obojczykowy w skrajnym zakresie kompresji bez możliwości korekty. Unikaj do ustąpienia bólu.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Wide grip maximally stretches the pec — exactly the position where strain re-tears occur. Smith fixed path prevents pulling out of the bad angle. Wait for full recovery.",
+      "modificationPl": "Szeroki chwyt maksymalnie rozciąga klatkę — dokładnie pozycja, w której dochodzi do nawrotów naderwania. Wymuszony tor Smitha uniemożliwia ucieczkę ze złego kąta. Czekaj na pełne wyzdrowienie.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-10 (hypertrophy) | 4-5x4-6 (strength, solo training) | 3x8-12 (chest accessory after free-weight bench)",
+  "calories_per_kg_per_hour": 5.2,
+
+  "media": {
+    "primary": "smith-wide-grip-bench-press.gif",
+    "frames_extracted": [
+      "frames/smith-wide-grip-bench-press/frame_0_start.png",
+      "frames/smith-wide-grip-bench-press/frame_1_early.png",
+      "frames/smith-wide-grip-bench-press/frame_2_mid.png",
+      "frames/smith-wide-grip-bench-press/frame_3_late.png",
+      "frames/smith-wide-grip-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/smith-wide-grip-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0/4: gryf w dolnej pozycji nad GÓRNĄ klatką (linia sutków), chwyt wyraźnie szerszy niż na barki — palce wskazujące poza pierścieniami gryfu, łokcie rozsunięte w bok (~75-90°), klasyczny układ wide grip. Frame 2: pełny lock-out wzdłuż pionowych szyn Smitha, ramiona wyprostowane nad klatką. Maszyna Smith jasno widoczna (pionowe szyny z ogranicznikami po obu stronach, talerze osadzone na końcach gryfu). Mocno podświetlony pectoralis major (P10, zwłaszcza środkowe/mostkowe włókna) + anterior delts (P8) zgodnie z anatomią szerokiego chwytu. Tricepsy podświetlone słabiej (S5) — krótszy ROM = mniejsza praca tricepsu vs medium/close grip. Anatomia GIFa potwierdza klasyfikację: compound, push, horizontal, bilateral, sagittal. Wszystkie pola PL od zera w polskim standardzie fitness.",
+
+  "tags": ["machine_guided", "upper_body", "horizontal_push", "chest", "chest_focus", "wide_grip", "smith_machine", "solo_friendly", "hypertrophy", "outer_chest", "sternal_pec"]
+}

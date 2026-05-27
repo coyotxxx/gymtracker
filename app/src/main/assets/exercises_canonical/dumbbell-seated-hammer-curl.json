@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-seated-hammer-curl",
+  "name": "Dumbbell Seated Hammer Curl",
+  "namePl": "Hammer curl z hantlami w siadzie",
+  "aliases": ["seated hammer curl", "seated neutral-grip dumbbell curl", "seated db hammer curl"],
+  "aliasesPl": ["uginanie ramion młotkowe siedząc", "młotki z hantlami siedząc", "hammer curl siedząc", "uginanie ramion chwytem neutralnym w siadzie"],
+
+  "description": "Bilateral elbow-flexion exercise performed seated on a bench while holding a dumbbell in each hand with a neutral (thumbs-up, palms facing each other) hammer grip. The seated position eliminates hip-driven swing and forces strict elbow flexion, while the neutral grip shifts emphasis from biceps brachii toward brachialis and brachioradialis — making it one of the best builders of overall arm thickness and forearm size. A staple for hypertrophy work and a smart choice for lifters with wrist discomfort under full supination.",
+  "descriptionPl": "Obustronne ćwiczenie zginania w stawie łokciowym wykonywane w siadzie na ławce, z hantlami trzymanymi chwytem neutralnym (kciuki w górę, dłonie skierowane do siebie). Pozycja siedząca eliminuje pomaganie biodrami i wymusza ścisłe zginanie w łokciu, a chwyt młotkowy przesuwa akcent z mięśnia dwugłowego ramienia na mięsień ramienny i ramienno-promieniowy — co czyni to ćwiczenie jednym z najlepszych budulców ogólnej grubości ramion i wielkości przedramion. Klasyka w treningu hipertroficznym i rozsądny wybór dla osób z dolegliwościami nadgarstków przy pełnej supinacji.",
+
+  "instructions": [
+    "Sit upright on a bench with a backrest. Plant your feet flat on the floor about shoulder-width apart.",
+    "Grab a dumbbell in each hand using a neutral grip — palms facing each other, thumbs pointing forward.",
+    "Let the dumbbells hang at arm's length next to your hips. Pin your elbows to your sides — they stay there for the whole set.",
+    "Brace your core and press your back gently into the backrest. Shoulders down and back.",
+    "Keeping the hammer grip (no supination), curl both dumbbells up simultaneously by flexing only at the elbows. Exhale on the way up.",
+    "Continue until the dumbbells reach the front of your shoulders and the brachialis is fully contracted. Squeeze for a brief pause.",
+    "Lower both dumbbells under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "Keep your back against the backrest the entire set — no leaning or pushing off with the legs."
+  ],
+  "instructionsPl": [
+    "Usiądź wyprostowany na ławce z oparciem. Stopy oprzyj płasko o podłogę, mniej więcej na szerokość barków.",
+    "Złap po jednej hantli w każdą rękę chwytem neutralnym — dłonie skierowane do siebie, kciuki do przodu.",
+    "Pozwól hantlom zwisać na wyprostowanych ramionach po bokach bioder. Przyklej łokcie do boków tułowia — mają tam pozostać przez całą serię.",
+    "Napnij brzuch i lekko oprzyj plecy o oparcie. Barki w dół i w tył.",
+    "Zachowując chwyt młotkowy (bez supinacji), uginaj obie hantle do góry jednocześnie — pracują wyłącznie łokcie. Wydech w fazie koncentrycznej.",
+    "Kontynuuj ruch aż hantle dojdą na wysokość przednich aktonów barków a mięsień ramienny będzie w pełnym skurczu. Napnij na chwilę w górnej pozycji.",
+    "Opuszczaj obie hantle w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania.",
+    "Plecy przez całą serię pozostają na oparciu — żadnego odchylania ani odpychania się nogami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis", "biceps_brachii"],
+    "secondary": ["forearm_flexors"],
+    "stabilizers": ["anterior_deltoid", "core", "upper_trapezius", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P9",
+    "brachioradialis": "P8",
+    "biceps_brachii": "P7",
+    "forearm_flexors": "S5",
+    "anterior_deltoid": "T2",
+    "core": "T1",
+    "upper_trapezius": "T1",
+    "rotator_cuff": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bench_with_backrest"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["dumbbell-incline-hammer-curl", "cable-hammer-curl-with-rope", "zottman-curl", "cross-body-hammer-curl"],
+    "alternatives": ["hammer-curl", "dumbbell-incline-hammer-curl", "cable-hammer-curl-with-rope", "cross-body-hammer-curl", "reverse-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall against the backrest, feet flat on the floor",
+      "Neutral grip — palms facing each other, thumbs forward",
+      "Elbows pinned to your sides, slightly in front of your torso",
+      "Chest up, shoulders down and back",
+      "Brace core lightly — back stays on the pad"
+    ],
+    "setup_cues_pl": [
+      "Siad wyprostowany na oparciu, stopy płasko na podłodze",
+      "Chwyt neutralny — dłonie skierowane do siebie, kciuki do przodu",
+      "Łokcie przyklejone do boków, lekko przed tułowiem",
+      "Klatka w górze, barki w dół i w tył",
+      "Lekkie napięcie brzucha — plecy zostają na oparciu"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay locked in place",
+      "Keep the hammer grip the whole rep — no twisting at the top",
+      "Squeeze the brachialis at the top, don't just touch the shoulder",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Full lockout at the bottom of every rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Utrzymuj chwyt młotkowy przez całe powtórzenie — żadnego skręcania w górze",
+      "Spinaj mięsień ramienny w górnej pozycji — nie tylko dotykaj barku",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Pełny wyprost łokci na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pushing off the backrest / leaning forward to start the rep",
+        "faultPl": "Odpychanie się od oparcia / pochylanie do przodu by zapoczątkować ruch",
+        "cause": "Load too heavy or fatigue at end of set — body recruits trunk to break inertia",
+        "causePl": "Zbyt duży ciężar lub zmęczenie pod koniec serii — ciało włącza tułów aby pokonać bezwładność hantli",
+        "cue": "Reduce weight. Keep both shoulder blades touching the pad from rep 1 to last.",
+        "cuePl": "Zmniejsz ciężar. Trzymaj obie łopatki na oparciu od pierwszego do ostatniego powtórzenia."
+      },
+      {
+        "fault": "Rotating wrists into supination at the top (turning into a regular curl)",
+        "faultPl": "Skręcanie nadgarstków w supinację w górnej pozycji (zamiana w klasyczne uginanie)",
+        "cause": "Habit from biceps curls, attempting to lift more weight by shifting to a stronger biceps line",
+        "causePl": "Nawyk z klasycznych uginań, próba uniesienia większego ciężaru przez przejście na silniejszą linię bicepsa",
+        "cue": "Lock thumbs up the whole rep. Imagine pouring water from the dumbbell — keep it level.",
+        "cuePl": "Kciuki w górę przez całe powtórzenie. Wyobraź sobie, że wylewasz wodę z hantli — trzymaj ją poziomo."
+      },
+      {
+        "fault": "Elbows drifting forward at the top",
+        "faultPl": "Łokcie wędrują do przodu w górnej pozycji",
+        "cause": "Trying to extend range by lifting the dumbbell higher than full brachialis contraction allows — anterior delts take over",
+        "causePl": "Próba poszerzenia zakresu przez uniesienie hantli wyżej niż pozwala pełny skurcz mięśnia ramiennego — przejmują przednie aktony barku",
+        "cue": "Stop when forearms reach near-vertical. Keep elbows directly under shoulders.",
+        "cuePl": "Zatrzymaj się gdy przedramiona dojdą prawie do pionu. Łokcie dokładnie pod barkami."
+      },
+      {
+        "fault": "Partial range of motion at the bottom (cutting the lockout)",
+        "faultPl": "Niepełny zakres ruchu na dole (skracanie wyprostu)",
+        "cause": "Ego lifting, weak stretched-position strength, or trying to maintain constant tension by sacrificing ROM",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub próba utrzymania ciągłego napięcia kosztem zakresu",
+        "cue": "Lower until elbows are fully extended every rep — feel the stretch in the long head.",
+        "cuePl": "Opuszczaj aż łokcie będą w pełni wyprostowane przy każdym powtórzeniu — poczuj rozciągnięcie głowy długiej."
+      },
+      {
+        "fault": "Asymmetric curl — one arm rises faster or higher than the other",
+        "faultPl": "Asymetryczne uginanie — jedna ręka unosi się szybciej lub wyżej niż druga",
+        "cause": "Strength imbalance between sides, or lack of focus when both arms work simultaneously",
+        "causePl": "Dysproporcja siły między stronami lub brak skupienia gdy obie ręce pracują jednocześnie",
+        "cue": "Sync both dumbbells — start, peak and finish at the same instant. If imbalance persists, do this exercise alternating or single-arm.",
+        "cuePl": "Synchronizuj obie hantle — start, szczyt i koniec w tej samej chwili. Jeśli dysproporcja się utrzymuje, wykonuj naprzemiennie lub jednorącz."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curling both dumbbells up). Inhale during the eccentric (lowering them). Maintain a light abdominal brace throughout.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie obu hantli). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Hammer grip already reduces supination stress on the distal biceps tendon, but heavy eccentrics still load it. Use lighter weight with higher reps (12-15) and avoid slow negatives until pain-free.",
+      "modificationPl": "Chwyt młotkowy już ogranicza stres supinacyjny na ścięgno dystalne bicepsa, ale ciężkie negatywy nadal je obciążają. Stosuj lżejszy ciężar z większą liczbą powtórzeń (12-15) i unikaj wolnych faz negatywnych do zaniku bólu.",
+      "alternative": "cable-hammer-curl-with-rope"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "caution",
+      "modification": "Brachioradialis attaches at the lateral epicondyle and is highly active in hammer curls — can aggravate tennis elbow. Reduce load, increase reps, stop short of pain. Switch to cable hammer curl if discomfort persists.",
+      "modificationPl": "Mięsień ramienno-promieniowy przyczepia się do nadkłykcia bocznego i jest mocno aktywny w hammer curl — może drażnić łokieć tenisisty. Zmniejsz ciężar, zwiększ powtórzenia, zatrzymaj przed bólem. Przejdź na uginanie młotkowe na wyciągu jeśli dolegliwości się utrzymują.",
+      "alternative": "cable-hammer-curl-with-rope"
+    },
+    {
+      "condition": "acute_lumbar_disc_pain",
+      "severity": "safe",
+      "modification": "Seated version with backrest is one of the safest curl variants for the lower back — the backrest removes the need for isometric lumbar bracing. Just don't lean forward to cheat reps.",
+      "modificationPl": "Wersja siedząca z oparciem to jeden z najbezpieczniejszych wariantów uginania dla odcinka lędźwiowego — oparcie eliminuje konieczność izometrycznego napięcia lędźwiowego. Nie pochylaj się do przodu by oszukiwać powtórzenia.",
+      "alternative": null
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Keep elbows slightly in front of the torso (not behind) to avoid extending the shoulder into impingement-provoking position. Do not let the dumbbells swing behind the hips at the bottom.",
+      "modificationPl": "Trzymaj łokcie lekko przed tułowiem (nie z tyłu) aby uniknąć wyprostu barku w pozycję drażniącą impingement. Nie pozwalaj hantlom huśtać się za biodra w dolnej pozycji.",
+      "alternative": "dumbbell-incline-hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-seated-hammer-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-hammer-curl/frame_0_start.png",
+      "frames/dumbbell-seated-hammer-curl/frame_1_early.png",
+      "frames/dumbbell-seated-hammer-curl/frame_2_mid.png",
+      "frames/dumbbell-seated-hammer-curl/frame_3_late.png",
+      "frames/dumbbell-seated-hammer-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-seated-hammer-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model siedzi wyprostowany na ławce z oparciem, stopy płasko na podłodze, hantle zwisają po bokach bioder, dłonie skierowane do siebie (chwyt neutralny, kciuki w górę), zaznaczone na czerwono mięśnie ramienne i ramienno-promieniowe obu rąk. Frame 2: pełny skurcz obustronny, hantle na wysokości przednich aktonów barków, chwyt neutralny zachowany (brak supinacji), łokcie pozostają przy bokach tułowia, tułów wyprostowany, plecy oparte. Frame 4: powrót do pełnego wyprostu z widocznym 'ghostem' fazy szczytowej powyżej — ruch obustronny i symetryczny. Tułów stoi nieruchomo przez cały ruch, oparcie eliminuje swing biodrami. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Seated Hammer Curl. Wszystkie pola PL napisane od zera. Primary mięśnie ustawione zgodnie ze specyfiką chwytu młotkowego: brachialis P9, brachioradialis P8, biceps P7 (biceps wciąż pracuje ale w hammer grip jest mniej zaktywizowany niż brachialis/brachioradialis).",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "brachioradialis", "forearms", "isolation", "dumbbell", "seated", "neutral_grip", "upper_body", "wrist_friendly"]
+}

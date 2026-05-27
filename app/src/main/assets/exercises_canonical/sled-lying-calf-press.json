@@ -1,0 +1,205 @@
+{
+  "id": "sled-lying-calf-press",
+  "name": "Sled Lying Calf Press",
+  "namePl": "Wspięcia na palce na suwnicy poziomej",
+  "aliases": ["horizontal leg press calf raise", "lying sled calf press", "flat leg press calf press", "horizontal calf press", "supine calf press"],
+  "aliasesPl": ["wspięcia na łydki na poziomej suwnicy", "calf press leżąc", "wspięcia na palce na suwnicy poziomej", "wyciskanie palcami na suwnicy poziomej", "horyzontalna suwnica calf press", "calf press na suwnicy horyzontalnej"],
+
+  "description": "Heavy-loadable isolation calf exercise performed on a horizontal (lying) leg press sled. The lifter lies flat on their back with the back fully supported by a padded carriage and the legs extended near-straight against a vertical platform mounted on horizontal rails. Only the balls of the feet are placed on the lower edge of the platform, with heels hanging off. With knees held near-locked, the entire movement comes from ankle plantarflexion: pushing the platform away by driving up onto the toes, then lowering under control into a deep dorsiflexion stretch as the heels drop below the platform line. Because the knees stay near-extended throughout, the gastrocnemius (which crosses both the knee and ankle joints) is taut and biomechanically positioned as the primary mover, while the soleus assists. The horizontal sled variant routes the load along a flat plane, which removes spinal compression entirely (compared to standing or 45-degree variants) and lets the lifter focus exclusively on calf contraction with zero balance demand. This makes it an excellent choice for high-volume gastrocnemius hypertrophy work and for lifters with back issues that prevent standing calf training.",
+  "descriptionPl": "Izolowane ćwiczenie na łydki umożliwiające ciężkie obciążanie, wykonywane na poziomej (leżącej) suwnicy. Ćwiczący leży płasko na plecach, mając plecy w pełni podparte tapicerowanym wózkiem, a nogi wyprostowane niemal na prosto i oparte o pionową platformę zamontowaną na poziomych szynach. Wyłącznie śródstopia spoczywają na dolnej krawędzi platformy — pięty zwisają poniżej. Przy kolanach niemal zablokowanych cały ruch pochodzi ze zgięcia podeszwowego w stawie skokowym: wypychanie platformy poprzez wspięcie się na palce, a następnie kontrolowane opuszczanie do głębokiego zgięcia grzbietowego, gdy pięty schodzą poniżej linii platformy. Ponieważ kolana pozostają niemal wyprostowane przez cały ruch, mięsień brzuchaty łydki (przebiegający przez staw kolanowy i skokowy) jest napięty i biomechanicznie ustawiony jako główny mięsień pracujący, a płaszczkowaty pełni rolę pomocniczą. Wariant poziomy prowadzi obciążenie po płaszczyźnie horyzontalnej, dzięki czemu całkowicie eliminuje kompresję kręgosłupa (w porównaniu z wariantami stojącymi lub 45 stopni) i pozwala skupić się wyłącznie na pracy łydek bez wymagań równowagi. Doskonały wybór do treningu objętościowego brzuchatego łydki oraz dla osób z problemami pleców, które uniemożliwiają wspięcia stojące.",
+
+  "instructions": [
+    "Load the horizontal leg press sled with appropriate weight and lie back on the carriage with your head supported on the head pad.",
+    "Position yourself so that with legs extended, the platform sits just at the balls of your feet — adjust the carriage if needed.",
+    "Place only the balls of the feet on the lower edge of the vertical platform, hip-width apart. Heels hang off below toe level.",
+    "Straighten your knees almost fully, leaving a 5-10 degree soft bend so they don't lock under heavy load but the gastrocnemius is taut.",
+    "Grip the side handles, brace your core lightly, and allow the platform to push your feet back through dorsiflexion — heels drop below the platform line, calves stretch deeply. This is the starting stretch position.",
+    "Drive the platform away by pushing through the balls of the feet, plantarflexing maximally. Knees stay frozen — only the ankle joint moves.",
+    "Squeeze the calves hard for 1-2 seconds at full plantarflexion at the top.",
+    "Lower the weight under control over 2-3 seconds back into the deep stretch. Exhale on the way up, inhale on the way down.",
+    "Do not bounce off the bottom or use Achilles rebound. Re-engage the safety stops at the end of the set before sliding off the carriage."
+  ],
+  "instructionsPl": [
+    "Załaduj poziomą suwnicę odpowiednim ciężarem i połóż się na wózku, opierając głowę na zagłówku.",
+    "Ustaw się tak, aby przy wyprostowanych nogach platforma stykała się ze śródstopiem — dostosuj wózek, jeśli to konieczne.",
+    "Ustaw wyłącznie śródstopia na dolnej krawędzi pionowej platformy, na szerokość bioder. Pięty zwisają poniżej poziomu palców.",
+    "Wyprostuj kolana niemal całkowicie, pozostawiając lekkie ugięcie 5-10 stopni, aby nie blokowały się pod dużym obciążeniem, ale mięsień brzuchaty łydki był napięty.",
+    "Chwyć boczne uchwyty, lekko napnij brzuch i pozwól platformie odepchnąć stopy przez zgięcie grzbietowe — pięty schodzą poniżej linii platformy, łydki głęboko się rozciągają. To pozycja wyjściowa (rozciąg).",
+    "Wypchnij platformę pchając śródstopiami, maksymalnie zginając podeszwowo stawy skokowe. Kolana pozostają zablokowane w jednej pozycji — porusza się wyłącznie staw skokowy.",
+    "Mocno spinaj łydki w szczytowym zgięciu podeszwowym przez 1-2 sekundy.",
+    "Opuszczaj ciężar kontrolowanie przez 2-3 sekundy z powrotem w głęboki rozciąg. Wydech przy wypychaniu, wdech przy opuszczaniu.",
+    "Nie odbijaj z dołu i nie wykorzystuj odbicia ścięgna Achillesa. Załóż blokady bezpieczeństwa po zakończeniu serii zanim zsuniesz się z wózka."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gastrocnemius"],
+    "secondary": ["soleus"],
+    "stabilizers": ["tibialis_posterior", "peroneals", "foot_intrinsics", "quadriceps", "core"]
+  },
+
+  "muscle_intensity": {
+    "gastrocnemius": "P10",
+    "soleus": "S5",
+    "tibialis_posterior": "T3",
+    "peroneals": "T3",
+    "foot_intrinsics": "T2",
+    "quadriceps": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["horizontal_leg_press_machine"],
+    "optional": ["weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-standing-calf-raise", "machine-standing-calf-raise"],
+    "progression_to": ["sled-calf-press-on-leg-press", "donkey-calf-raise", "machine-standing-calf-raise"],
+    "alternatives": ["sled-calf-press-on-leg-press", "lever-seated-squat-calf-raise-on-leg-press-machine", "machine-standing-calf-raise", "smith-machine-calf-raise", "hack-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat on the carriage with full back contact, head supported on the pad",
+      "Balls of feet on the lower edge of the platform, hip-width apart, heels hanging off",
+      "Knees extended near-fully with a soft 5-10 degree bend — do not lock out",
+      "Toes pointing straight ahead, feet symmetrical and parallel",
+      "Hands gripping side handles, light core brace"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko na wózku z pełnym kontaktem pleców, głowa oparta na zagłówku",
+      "Śródstopia na dolnej krawędzi platformy, na szerokość bioder, pięty zwisają poniżej",
+      "Kolana niemal wyprostowane z lekkim ugięciem 5-10 stopni — nie blokuj ich",
+      "Palce skierowane prosto do przodu, stopy symetrycznie i równolegle",
+      "Dłonie zaciśnięte na bocznych uchwytach, lekkie napięcie brzucha"
+    ],
+    "execution_cues": [
+      "Push the platform with the balls of the feet only — knees stay frozen",
+      "Drive up onto the toes and squeeze calves hard at the top",
+      "Hold the peak contraction for 1-2 seconds — feel it burn",
+      "Lower slowly and let the heels drop below the platform line into a deep stretch",
+      "Pause briefly at the bottom — no bouncing, no rebound"
+    ],
+    "execution_cues_pl": [
+      "Wypychaj platformę wyłącznie śródstopiami — kolana bez ruchu",
+      "Wspinaj się na palce i mocno spinaj łydki w szczycie",
+      "Utrzymaj szczytowy skurcz 1-2 sekundy — poczuj pieczenie",
+      "Opuszczaj powoli i pozwól piętom zejść poniżej linii platformy w głęboki rozciąg",
+      "Krótka pauza na dole — bez odbijania, bez wykorzystywania sprężystości"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knees during reps (turning the exercise into a partial leg press)",
+        "faultPl": "Uginanie kolan w trakcie powtórzeń (zamiana ćwiczenia w częściowe wyciskanie nogami)",
+        "cause": "Loading too much weight, weak ankles, or misunderstanding that the only joint moving is the ankle",
+        "causePl": "Zbyt duży ciężar, słaby staw skokowy lub niezrozumienie, że jedynym poruszającym się stawem jest staw skokowy",
+        "cue": "Knees stay near-locked throughout the entire set. Only toes push, heels drop. If knees flex, strip a plate.",
+        "cuePl": "Kolana niemal zablokowane przez całą serię. Tylko palce pchają, pięty opadają. Jeśli kolana uginają się, zdejmij krążek."
+      },
+      {
+        "fault": "Partial ROM — no deep dorsiflexion stretch at the bottom",
+        "faultPl": "Niepełny zakres ruchu — brak głębokiego rozciągu w dolnej pozycji",
+        "cause": "Ego lifting with too much weight, fear of stretch under load, or feet placed too high on the platform",
+        "causePl": "Ego-trening ze zbyt dużym ciężarem, obawa przed rozciągiem pod obciążeniem lub stopy ustawione zbyt wysoko na platformie",
+        "cue": "Place balls of feet on the very bottom edge so heels can drop below the platform. Let the calves stretch deeply on every rep.",
+        "cuePl": "Ustaw śródstopia na samej dolnej krawędzi, aby pięty mogły zejść poniżej platformy. Pozwól łydkom głęboko się rozciągnąć w każdym powtórzeniu."
+      },
+      {
+        "fault": "Fast bouncing reps using Achilles tendon rebound",
+        "faultPl": "Szybkie odbijane powtórzenia wykorzystujące odbicie ścięgna Achillesa",
+        "cause": "Chasing rep count with too much weight, mistaking elastic tendon rebound for muscular work",
+        "causePl": "Gonienie za liczbą powtórzeń ze zbyt dużym ciężarem, mylenie elastycznego odbicia ścięgna z pracą mięśniową",
+        "cue": "Pause 1 second in the stretch, then drive up explosively. If you cannot pause, the load is too heavy.",
+        "cuePl": "Zatrzymaj się 1 sekundę w rozciągu, potem dynamicznie wypchnij. Jeśli nie potrafisz wytrzymać pauzy, ciężar jest za duży."
+      },
+      {
+        "fault": "Aggressively locking the knees under heavy load",
+        "faultPl": "Agresywne blokowanie kolan pod dużym obciążeniem",
+        "cause": "Trying to remove the knees from the equation by hyperextending, which stresses joint capsule and cruciate ligaments",
+        "causePl": "Próba wyłączenia kolan z ruchu przez ich pełne przeprostowanie, co obciąża torebkę stawową i więzadła krzyżowe",
+        "cue": "Maintain a 5-10 degree soft bend — extended enough that gastrocnemius is taut, never fully locked. Joints don't take the load, muscles do.",
+        "cuePl": "Utrzymuj 5-10 stopni lekkiego ugięcia — wyprostowane na tyle by brzuchaty łydki był napięty, nigdy całkowicie zablokowane. Obciążenie biorą mięśnie, nie stawy."
+      },
+      {
+        "fault": "Hips and lower back lifting off the carriage during heavy reps",
+        "faultPl": "Unoszenie bioder i dolnego odcinka pleców z wózka podczas ciężkich powtórzeń",
+        "cause": "Trying to generate more force by extending the hips, or carriage positioned too far from the platform causing reach",
+        "causePl": "Próba wygenerowania większej siły przez wyprost bioder lub wózek ustawiony zbyt daleko od platformy wymagający dosięgania",
+        "cue": "Hips and lumbar stay in full contact with the pad throughout. If hips lift, the load is too heavy or the carriage is set too far — reduce weight or reposition.",
+        "cuePl": "Biodra i lędźwie pozostają w pełnym kontakcie z oparciem przez cały ruch. Jeśli biodra się unoszą, ciężar jest za duży lub wózek ustawiony zbyt daleko — zmniejsz obciążenie albo zmień pozycję."
+      }
+    ],
+    "breathing": "Inhale on the eccentric (platform pushes feet back, calves stretch). Exhale on the concentric (pushing the platform away). Keep light core brace and steady back contact with the carriage throughout.",
+    "breathingPl": "Wdech w fazie ekscentrycznej (platforma odpycha stopy, łydki się rozciągają). Wydech w fazie koncentrycznej (wypychanie platformy). Utrzymuj lekkie napięcie brzucha i stały kontakt pleców z wózkiem przez całe ćwiczenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid heavy loads and deep eccentrics during the irritable phase. Limit ROM (do not drop heels below neutral) and use slow controlled tempo with moderate load. Stop if pain exceeds 3/10 during or after the set.",
+      "modificationPl": "Unikaj dużych ciężarów i głębokich faz negatywnych w fazie podrażnienia. Ogranicz zakres ruchu (nie opuszczaj pięt poniżej neutralnego poziomu) i stosuj powolne kontrolowane tempo z umiarkowanym obciążeniem. Przerwij jeśli ból przekracza 3/10 w trakcie lub po serii.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "knee_hyperextension_or_instability",
+      "severity": "modify",
+      "modification": "Hyperextending the knees under heavy load can stress the posterior knee capsule and cruciate ligaments. Maintain a constant 10-15 degree knee bend throughout the set. Reduce load if you cannot keep the bend.",
+      "modificationPl": "Przeprost kolan pod dużym ciężarem może obciążać tylną torebkę stawową i więzadła krzyżowe. Utrzymuj stałe ugięcie 10-15 stopni w kolanie przez całą serię. Zmniejsz ciężar jeśli nie potrafisz utrzymać ugięcia.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not load the muscle during the acute phase. Once cleared by a physiotherapist, return with bodyweight calf raises and progress gradually. Avoid deep stretch positions until pain-free.",
+      "modificationPl": "Nie obciążaj mięśnia w fazie ostrej. Po wygojeniu (potwierdzonym przez fizjoterapeutę) wracaj od wspięć z masą własnego ciała i progresuj stopniowo. Unikaj głębokiego rozciągu do całkowitego ustąpienia bólu.",
+      "alternative": "bodyweight-standing-calf-raise"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Although the horizontal lying position removes axial spinal compression, hips lifting off the carriage under heavy load can transmit shear to the lumbar spine. Use moderate weight, keep hips and lower back fully against the pad, and avoid positions that round or extend the lower back.",
+      "modificationPl": "Choć pozycja pozioma leżąca eliminuje osiową kompresję kręgosłupa, unoszenie bioder z wózka pod dużym ciężarem może przenosić siły ścinające na odcinek lędźwiowy. Stosuj umiarkowane obciążenie, trzymaj biodra i dolny odcinek pleców mocno przy oparciu, unikaj pozycji powodujących zaokrąglenie lub przeprost lędźwi.",
+      "alternative": "machine-seated-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, heavy gastrocnemius) | 4-5x6-10 (heavy strength) | 2-3x15-25 (pump/endurance)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "sled-lying-calf-press.gif",
+    "frames_extracted": [
+      "frames/sled-lying-calf-press/frame_0_start.png",
+      "frames/sled-lying-calf-press/frame_1_early.png",
+      "frames/sled-lying-calf-press/frame_2_mid.png",
+      "frames/sled-lying-calf-press/frame_3_late.png",
+      "frames/sled-lying-calf-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/sled-lying-calf-press",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Frame 0: model leży płasko na plecach na wózku poziomej suwnicy, plecy w pełnym kontakcie z wózkiem, nogi wyprostowane niemal na prosto i oparte o pionową platformę zamontowaną na poziomych szynach, stopy ustawione na dolnej krawędzi platformy wyłącznie śródstopiami, pięty zwisają poniżej, łydki podświetlone na czerwono — pozycja wyjściowa. Frame 2/3: platforma maksymalnie wypchnięta przez zgięcie podeszwowe stawów skokowych, pełne wspięcie na palce, kolana w identycznej pozycji jak na początku (NIE uginają się ani nie prostują dodatkowo), łydki w pełnym skurczu — szczyt ruchu (plantarflexion). Frame 4: powrót do pozycji wyjściowej. Kluczowa biomechanika: jedyny ruchomy staw to staw skokowy, kolana pozostają w stałych 5-10 stopniach lekkiego ugięcia przez cały zakres. Przy kolanach niemal wyprostowanych gastrocnemius (przebiegający przez staw kolanowy i skokowy) jest w optymalnej długości i jest głównym mięśniem pracującym (P10), soleus pełni rolę pomocniczą (S5). To odróżnia leg press calf raise od seated calf raise (zgięte kolano → soleus dominant). Wariant poziomy (lying/horizontal) różni się od sled 45 stopni tym, że całkowicie eliminuje kompresję osiową kręgosłupa — load idzie po poziomej osi przez pionową platformę. Klasyfikacja: isolation_calf / push / isolation / bilateral / sagittal / open. Equipment horizontal_leg_press_machine (osobne od standardowego leg_press_machine który jest 45 stopni). Difficulty 3 — setup prosty, brak wymagań równowagi, ryzyko głównie ego-loading i przeprost kolan. Wszystkie pola PL napisane od zera. Yuhonas i glowupp nie mają tego wariantu. Wzajemne alternatywy z sled-calf-press-on-leg-press (45 stopni) — ten sam wzorzec, inna geometria maszyny.",
+
+  "tags": ["bodybuilding", "calves", "gastrocnemius", "isolation", "machine", "leg_press", "sled", "horizontal", "lying", "lower_body", "lower_legs", "supine"]
+}

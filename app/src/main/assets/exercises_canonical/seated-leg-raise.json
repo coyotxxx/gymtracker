@@ -1,0 +1,197 @@
+{
+  "id": "seated-leg-raise",
+  "name": "Seated Leg Raise",
+  "namePl": "Leg raise w siadzie",
+  "aliases": ["seated knee raise", "bench knee tuck", "seated knee tuck", "bench leg pull-in"],
+  "aliasesPl": ["unoszenie nóg w siadzie", "podciąganie kolan w siadzie", "knee tuck na ławce", "leg pull-in na ławce", "siedzące unoszenie nóg"],
+
+  "description": "Bodyweight core exercise performed seated on a flat bench. The lifter sits on the bench edge, grips the bench beside the hips for support, leans the torso slightly back and extends the legs out almost straight. From there the knees are pulled in toward the chest by hip and spinal flexion, then re-extended under control. Strongly targets the lower portion of the rectus abdominis and the hip flexors, with the obliques stabilising laterally. Great as a low-equipment ab finisher when a pull-up bar or floor space is not available.",
+  "descriptionPl": "Ćwiczenie brzucha z masą własnego ciała wykonywane w siadzie na płaskiej ławce. Ćwiczący siada na krawędzi ławki, łapie ją dłońmi obok bioder dla stabilizacji, lekko odchyla tułów do tyłu i prostuje nogi przed siebie niemal w pełni. Z tej pozycji podciąga kolana w kierunku klatki piersiowej przez zgięcie w biodrach i kręgosłupie, a następnie kontrolowanie wraca do wyprostu. Mocno angażuje dolną część mięśnia prostego brzucha oraz zginacze biodra, mięśnie skośne pracują jako stabilizatory. Świetny finisher na brzuch, gdy nie masz drążka ani miejsca na podłodze.",
+
+  "instructions": [
+    "Sit on the edge of a flat bench. Grip the bench firmly with both hands just behind or beside the hips — knuckles forward, elbows slightly bent.",
+    "Lean the torso back to roughly 45 degrees, brace the core, and extend the legs out in front of you so the knees are almost straight and the heels float a few centimetres above the floor. This is the starting position.",
+    "Exhale and pull the knees toward the chest by simultaneously flexing the hips and rounding the lower back slightly. At the same time draw the chest gently down toward the knees — knees and chest 'meet' in the middle.",
+    "Pause for a moment at the peak, with the shins close to the chest, and consciously squeeze the lower abs.",
+    "Inhale and reverse the motion under control — extend the legs back out and return the torso to the slight backward lean until the knees are nearly straight again. Do not let the heels touch the floor.",
+    "Keep tension on the abs throughout the set — the legs hover, they don't rest on the ground between reps."
+  ],
+  "instructionsPl": [
+    "Usiądź na krawędzi płaskiej ławki. Mocno chwyć ławkę obiema dłońmi tuż za biodrami lub po bokach — knykcie skierowane do przodu, łokcie lekko ugięte.",
+    "Odchyl tułów do tyłu pod kątem około 45 stopni, napnij brzuch i wyprostuj nogi przed siebie tak, aby kolana były niemal proste, a pięty unosiły się kilka centymetrów nad podłogą. To pozycja wyjściowa.",
+    "Wydech — podciągnij kolana w stronę klatki piersiowej, jednocześnie zginając biodra i lekko zaokrąglając dolny odcinek pleców. W tym samym momencie delikatnie skieruj klatkę piersiową w stronę kolan — kolana i klatka 'spotykają się' w środku.",
+    "Zatrzymaj się na chwilę w szczycie, z goleniami blisko klatki, i świadomie ściśnij dolną część brzucha.",
+    "Wdech — kontrolowanie cofnij ruch: wyprostuj nogi i wróć tułowiem do lekkiego odchylenia, aż kolana znowu będą niemal proste. Nie pozwól, by pięty dotknęły podłogi.",
+    "Utrzymuj napięcie na brzuchu przez całą serię — nogi cały czas się unoszą, nie odpoczywają na podłodze między powtórzeniami."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors"],
+    "secondary": ["obliques"],
+    "stabilizers": ["transverse_abdominis", "triceps_brachii", "latissimus_dorsi", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "hip_flexors": "P8",
+    "obliques": "S5",
+    "transverse_abdominis": "T4",
+    "triceps_brachii": "T3",
+    "latissimus_dorsi": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["bench"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["crunch", "dead-bug"],
+    "progression_to": ["hanging-knee-raise", "v-up", "lying-leg-raise"],
+    "alternatives": ["lying-knee-raise", "captains-chair-knee-raise", "hanging-knee-raise", "cocoons"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on the edge of the bench — hips just past the seat edge",
+      "Hands grip the bench beside the hips, knuckles forward",
+      "Lean back to ~45 degrees, chest tall, no slouch",
+      "Legs extended forward, heels hover above the floor",
+      "Inhale and pre-brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na krawędzi ławki — biodra tuż za krawędzią siedziska",
+      "Dłonie chwytają ławkę obok bioder, knykcie do przodu",
+      "Odchyl się do tyłu do ok. 45 stopni, klatka wyciągnięta, bez przygarbienia",
+      "Nogi wyprostowane do przodu, pięty unoszą się nad podłogą",
+      "Wdech i wstępne napięcie brzucha przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Exhale and pull the knees in — drive them toward the sternum, not just up",
+      "Round the lower back slightly at the peak — this hits the lower abs harder",
+      "Knees and chest meet in the middle simultaneously",
+      "Lower the legs slowly — 2 seconds eccentric, no kicking out",
+      "Heels never touch the floor between reps — keep tension"
+    ],
+    "execution_cues_pl": [
+      "Wydech i podciągnij kolana — kieruj je do mostka, nie tylko w górę",
+      "W szczycie lekko zaokrąglij dolne plecy — mocniej zaangażujesz dolną część brzucha",
+      "Kolana i klatka spotykają się w środku jednocześnie",
+      "Opuszczaj nogi powoli — 2 sekundy fazy ekscentrycznej, bez wyrzucania",
+      "Pięty nie dotykają podłogi między powtórzeniami — utrzymuj napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using momentum / swinging the torso back and forth",
+        "faultPl": "Wykorzystywanie rozpędu / kołysanie tułowiem do przodu i tyłu",
+        "cause": "Going too fast or trying to chase reps with weak lower abs",
+        "causePl": "Zbyt szybkie tempo lub próba wymuszenia powtórzeń ze słabymi dolnymi mięśniami brzucha",
+        "cue": "Tempo 2-1-2 (2 s up, 1 s squeeze, 2 s down). If you swing, lower the reps.",
+        "cuePl": "Tempo 2-1-2 (2 s w górę, 1 s ściśnięcie, 2 s w dół). Jeśli się kołyszesz — zmniejsz liczbę powtórzeń."
+      },
+      {
+        "fault": "Pulling knees up but not curling the spine — pure hip flexion only",
+        "faultPl": "Podciąganie kolan bez zwijania kręgosłupa — sama praca biodra",
+        "cause": "Treating the move like a leg lift instead of a knee-to-chest crunch — abs barely fire",
+        "causePl": "Traktowanie ruchu jako uniesienia nóg zamiast podciągania kolan do klatki — brzuch ledwo pracuje",
+        "cue": "Round the lower back at the top — imagine touching the knees with the chest, not the ceiling",
+        "cuePl": "Zaokrąglij dolne plecy w szczycie — wyobraź sobie, że dotykasz kolan klatką, a nie sufitem"
+      },
+      {
+        "fault": "Heels touching the floor between reps",
+        "faultPl": "Pięty dotykają podłogi między powtórzeniami",
+        "cause": "Releasing tension at the bottom — turns one set into many singles",
+        "causePl": "Zrzucanie napięcia w dolnej pozycji — jedna seria zamienia się w pojedyncze powtórzenia",
+        "cue": "Keep the heels floating 2-5 cm above the floor through the whole set",
+        "cuePl": "Trzymaj pięty 2-5 cm nad podłogą przez całą serię"
+      },
+      {
+        "fault": "Shoulders hunched / chest collapsed forward",
+        "faultPl": "Przygarbione barki / klatka opadnięta do przodu",
+        "cause": "Hanging on the arms instead of bracing the core",
+        "causePl": "Zwisanie na rękach zamiast aktywnego napięcia brzucha",
+        "cue": "Chest tall, pull the shoulder blades down and back, brace the core to take the load off the arms",
+        "cuePl": "Klatka wyciągnięta, ściągnij łopatki w dół i do tyłu, napnij brzuch — odciąż ręce"
+      },
+      {
+        "fault": "Holding breath through the whole set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Mimicking Valsalva from heavy compound lifts on a bodyweight movement",
+        "causePl": "Naśladowanie manewru Valsalvy ze złożonych ciężkich ruchów przy ćwiczeniu z masą ciała",
+        "cue": "Forceful exhale as the knees come in, inhale as the legs extend out",
+        "cuePl": "Mocny wydech, gdy kolana wjeżdżają do środka, wdech gdy nogi się prostują"
+      }
+    ],
+    "breathing": "Inhale during the extension (legs out, slight backward lean). Forceful exhale during the knee tuck — the abs contract hardest at the peak when the spine flexes.",
+    "breathingPl": "Wdech podczas wyprostu (nogi w przód, lekkie odchylenie). Mocny wydech podczas podciągania kolan — brzuch kurczy się najmocniej w szczycie, gdy kręgosłup się zgina."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion plus backward lean can aggravate disc-related lumbar pain. Switch to anti-extension core (planks, dead bug) until pain-free.",
+      "modificationPl": "Zginanie kręgosłupa pod obciążeniem w połączeniu z odchyleniem do tyłu może nasilać ból lędźwi pochodzenia dyskowego. Zamień na ćwiczenia anty-ekstensji (deska, dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated lumbar flexion is contraindicated in disc protrusion (McGill protocol). Replace with neutral-spine core work.",
+      "modificationPl": "Powtarzane zginanie odcinka lędźwiowego jest przeciwwskazane przy przepuklinie krążka (protokół McGilla). Zastąp ćwiczeniami brzucha w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "caution",
+      "modification": "Hip flexors take a heavy share of the load. With an active strain, reduce ROM (knees only halfway to chest) or substitute with crunches that don't involve hip flexion.",
+      "modificationPl": "Zginacze biodra dźwigają dużą część obciążenia. Przy aktywnym naciągnięciu skróć zakres ruchu (kolana tylko w połowie drogi do klatki) lub zamień na klasyczne brzuszki bez zgięcia biodra.",
+      "alternative": "crunch"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Gripping the bench with extended wrists can flare up wrist issues. Use parallettes, push-up handles, or pad the grip with a folded towel; alternatively perform a lying knee raise instead.",
+      "modificationPl": "Chwytanie ławki z wyprostowanymi nadgarstkami może pogłębiać dolegliwości nadgarstków. Użyj poręczy, uchwytów do pompek lub podłóż złożony ręcznik; alternatywnie wykonaj wariant z leżenia.",
+      "alternative": "lying-knee-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy) | 3x15-25 (endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "seated-leg-raise.gif",
+    "frames_extracted": [
+      "frames/seated-leg-raise/frame_0_start.png",
+      "frames/seated-leg-raise/frame_1_early.png",
+      "frames/seated-leg-raise/frame_2_mid.png",
+      "frames/seated-leg-raise/frame_3_late.png",
+      "frames/seated-leg-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/seated-leg-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): ćwiczący siedzi na płaskiej ławce, dłonie chwytają ławkę po bokach bioder, tułów lekko odchylony do tyłu, nogi wyprostowane do przodu, pięty unoszą się nad podłogą; anatomia podświetla dolną część mięśnia prostego brzucha (czerwony obszar). Klatka 2 (mid): kolana mocno podciągnięte w stronę klatki piersiowej, tułów lekko pochylony do nich, biodra zgięte ~90°, golenie blisko klatki — pozycja szczytowa skurczu. Klatka 4 (end): powrót do wyprostu nóg z duchem (overlay) poprzedniej klatki — potwierdza ruch wahadłowy: tuck-extend-tuck. Ruch jest jednocześnie zgięciem biodra (hip flexion) i lekkim zgięciem kręgosłupa (spine flexion), co czyni dolny rectus abdominis + hip flexors jednoznacznie głównymi partiami. Klasyfikacja: core_flexion, isolation (efektywnie jeden 'staw funkcjonalny' — biodra z towarzyszącym minimalnym crunchem), bilateral, sagittal plane, force=pull (skurcz koncentryczny zginaczy). Sprzęt: bench (płaska ławka) — wymagana; bodyweight loading. Trudność 4/10, beginner-friendly (mniej wymagające niż hanging knee raise — ławka stabilizuje, hands take part of weight). Triceps i lats jako stabilizatory bo dłonie aktywnie trzymają ławkę i odciążają tułów. Nazwa PL: 'Leg raise w siadzie' zgodnie z preferencją usera (mieszany żargon PL/EN typowy w polskim środowisku fitness), aliasy obejmują 'unoszenie nóg w siadzie' i opisowe 'podciąganie kolan w siadzie'. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodyweight", "core", "abs", "lower_abs", "bench", "minimal_equipment", "finisher", "hip_flexors", "home_workout"]
+}

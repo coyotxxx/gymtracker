@@ -1,0 +1,205 @@
+{
+  "id": "one-arm-slam-with-medicine-ball",
+  "name": "One-Arm Slam with Medicine Ball",
+  "namePl": "Slam piłką lekarską jednorącz",
+  "aliases": ["one arm medicine ball slam", "single arm med ball slam", "one-handed medicine ball slam", "rotational med ball slam", "diagonal medicine ball slam"],
+  "aliasesPl": ["slam piłką lekarską jednorącz", "rzut piłką lekarską jednorącz", "uderzenie piłką lekarską jednorącz", "rotacyjny slam piłką", "diagonalny slam piłką lekarską"],
+
+  "description": "Explosive rotational plyometric where the lifter holds a medicine ball overhead in one hand, then forcefully slams it down diagonally across the body to the floor — combining trunk rotation, lateral flexion and a powerful pulling motion of the lat. Trains rotational power, the obliques and the anti-extension/anti-rotation chain. Used widely in athletic conditioning (combat sports, throwing sports, golf, baseball) as a power developer and as a conditioning finisher.",
+  "descriptionPl": "Wybuchowy rotacyjny element plyometryczny — zawodnik trzyma piłkę lekarską nad głową w jednej ręce, a następnie z mocą rzuca ją po skosie w dół do podłogi po przeciwnej stronie ciała. Łączy rotację tułowia, zgięcie boczne i potężny ruch ciągnący najszerszego grzbietu. Buduje moc rotacyjną, skośne i łańcuch anty-wyprostny/anty-rotacyjny. Powszechnie używany w przygotowaniu sportowym (sporty walki, sporty rzutowe, golf, baseball) jako element rozwijania mocy i jako finisher kondycyjny.",
+
+  "instructions": [
+    "Stand with feet shoulder-width apart, knees soft, holding a medicine ball in one hand (start with 3–6 kg).",
+    "Press the ball overhead on the working side, fully extending the arm — the off-hand reaches out to the opposite side for counterbalance.",
+    "Brace the core hard. Inhale through the nose, ribs down — do not let the lower back overarch.",
+    "Initiate the slam by simultaneously rotating the trunk toward the opposite side, side-bending laterally, and pulling the ball down powerfully with the lat.",
+    "Drive the ball diagonally across the body and slam it into the floor near the outside of the opposite foot — accelerate all the way through impact, do not decelerate.",
+    "Allow the trunk to follow naturally into a slight hinge — knees soften, hips shift back, the chest faces down at the bottom.",
+    "Catch the rebound (if the ball bounces) or pick it up, return to the overhead start position smoothly without overusing the lower back.",
+    "Complete all reps on one side, then switch the ball to the other hand and repeat — keep both sides balanced (same reps, same weight)."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku na szerokość barków, kolana lekko ugięte, trzymaj piłkę lekarską w jednej ręce (zacznij od 3–6 kg).",
+    "Wyciśnij piłkę nad głowę po pracującej stronie, pełen wyprost ręki — druga ręka idzie w bok dla przeciwwagi.",
+    "Mocno napnij brzuch. Wdech nosem, żebra w dół — nie pozwól lędźwiom się nadmiernie wygiąć.",
+    "Zacznij rzut jednocześnie rotując tułów na przeciwną stronę, zginając się bocznie i potężnie ciągnąc piłkę w dół najszerszym grzbietu.",
+    "Posyłaj piłkę po skosie przez ciało i rzuć nią o podłogę po zewnętrznej stronie przeciwnej stopy — przyspieszaj aż do uderzenia, nie hamuj.",
+    "Pozwól tułowiowi naturalnie podążyć w lekki hinge — kolana miękną, biodra cofają się, klatka kieruje się w dół na dole ruchu.",
+    "Złap odbicie (jeśli piłka odbija się) lub podnieś ją i wróć do pozycji startowej nad głową płynnie, bez przeciążania dołu pleców.",
+    "Wykonaj wszystkie powtórzenia po jednej stronie, potem przełóż piłkę do drugiej ręki i powtórz — utrzymaj balans (te same powtórzenia, ten sam ciężar)."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "latissimus_dorsi"],
+    "secondary": ["rectus_abdominis", "shoulders", "triceps", "serratus_anterior"],
+    "stabilizers": ["erector_spinae", "glutes", "quadriceps", "forearms", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "latissimus_dorsi": "P8",
+    "rectus_abdominis": "S7",
+    "shoulders": "S6",
+    "triceps": "S5",
+    "serratus_anterior": "S5",
+    "erector_spinae": "T4",
+    "glutes": "T4",
+    "quadriceps": "T3",
+    "forearms": "T3",
+    "transverse_abdominis": "T4"
+  },
+
+  "equipment": {
+    "required": ["medicine_ball"],
+    "optional": ["slam_ball"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["medicine-ball-overhead-slam", "russian-twist", "cable-woodchopper"],
+    "progression_to": ["rotational-medicine-ball-throw-against-wall", "single-arm-rotational-slam-with-step"],
+    "alternatives": ["medicine-ball-overhead-slam", "cable-woodchopper", "rotational-medicine-ball-throw-against-wall", "landmine-rotation"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft and unlocked — never stiff-legged",
+      "Press the ball fully overhead on the working side, arm long",
+      "Off-hand opens out for counterbalance, not dangling",
+      "Brace 360° before the slam — ribs stay down, glutes squeezed",
+      "Pick a target spot on the floor outside the opposite foot"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana miękkie i odblokowane — nigdy na sztywno",
+      "Wyciśnij piłkę w pełni nad głowę po pracującej stronie, ręka długa",
+      "Druga ręka otwarta w bok dla równowagi, nie zwisa",
+      "Napnij brzuch 360° zanim zaczniesz rzut — żebra w dół, pośladki ściśnięte",
+      "Wybierz punkt na podłodze po zewnętrznej stronie przeciwnej stopy"
+    ],
+    "execution_cues": [
+      "Slam through impact — accelerate, do not decelerate before the floor",
+      "Rotate from the ribcage, drive the lat down — not just the arm",
+      "Hips and knees absorb the follow-through — soften, don't lock",
+      "Exhale forcefully on the slam, like you're punching the ball through the floor",
+      "Eyes track the ball to the target — your trunk follows your eyes"
+    ],
+    "execution_cues_pl": [
+      "Rzucaj przez uderzenie — przyspieszaj, nie hamuj przed podłogą",
+      "Rotuj z klatki piersiowej, ciągnij najszerszym w dół — nie tylko ręką",
+      "Biodra i kolana amortyzują dokończenie — miękną, nie blokuj ich",
+      "Mocny wydech na rzucie, jakbyś chciał przebić piłką podłogę",
+      "Wzrok podąża za piłką do celu — tułów idzie za wzrokiem"
+    ],
+    "common_faults": [
+      {
+        "fault": "All arm, no trunk — slamming with shoulder only",
+        "faultPl": "Sam bark, brak tułowia — rzut samym ramieniem",
+        "cause": "Athlete treats it like an overhead tricep movement instead of a rotational power exercise",
+        "causePl": "Zawodnik traktuje to jak ruch tricepsowy zamiast rotacyjnego ćwiczenia mocy",
+        "cue": "Start the slam by rotating the opposite shoulder DOWN and across — the ball follows the body, not vice versa. Film yourself: if the ribcage doesn't rotate, you're doing it wrong.",
+        "cuePl": "Zacznij rzut od opuszczenia przeciwnego barku w dół i w poprzek — piłka podąża za ciałem, nie odwrotnie. Nagraj się: jeśli klatka się nie obraca, robisz źle."
+      },
+      {
+        "fault": "Hyperextension of the lower back at the top",
+        "faultPl": "Przeprost dołu pleców w górnej pozycji",
+        "cause": "Reaching overhead aggressively without bracing — ribs flare, lumbar arches excessively",
+        "causePl": "Agresywne sięganie nad głowę bez napięcia — żebra wyskakują, lędźwia nadmiernie się wygina",
+        "cue": "Ribs down, brace before you press the ball up. If the lower back arches, the ball is too heavy or shoulder mobility is limiting you — switch to a lighter ball.",
+        "cuePl": "Żebra w dół, napnij brzuch zanim wyciśniesz piłkę. Jeśli lędźwia się wygina, piłka za ciężka lub brakuje mobilności barku — weź lżejszą piłkę."
+      },
+      {
+        "fault": "Decelerating before impact — soft slam",
+        "faultPl": "Hamowanie przed uderzeniem — miękki rzut",
+        "cause": "Fear of the rebound, fatigue, or muscular pattern of \"controlling\" weights from strength training",
+        "causePl": "Strach przed odbiciem, zmęczenie, lub wzorzec \"kontrolowania\" ciężaru z treningu siłowego",
+        "cue": "Use a non-rebounding slam ball if available. Aim to crush the ball INTO the floor — power output drops dramatically if you slow down.",
+        "cuePl": "Użyj nieodbijającej slam ball jeśli masz. Celuj żeby wbić piłkę W podłogę — moc spada drastycznie gdy zwalniasz."
+      },
+      {
+        "fault": "Locked-out knees during the slam",
+        "faultPl": "Zablokowane kolana w trakcie rzutu",
+        "cause": "Athlete stands too rigid; doesn't use the hinge to dissipate force at the bottom",
+        "causePl": "Zawodnik stoi zbyt sztywno; nie używa hinge'u do rozproszenia siły na dole",
+        "cue": "Knees soften and hips push back as the ball comes down — like a half RDL. Stiff knees send shock straight to the lower back.",
+        "cuePl": "Kolana miękną a biodra cofają się gdy piłka leci w dół — jak pół-RDL. Sztywne kolana przenoszą wstrząs prosto na dół pleców."
+      },
+      {
+        "fault": "Uneven side-to-side reps or weight",
+        "faultPl": "Nierówne powtórzenia lub ciężar między stronami",
+        "cause": "Athlete favors the dominant side, runs out of energy on the second side, or unconsciously cheats reps",
+        "causePl": "Zawodnik faworyzuje dominującą stronę, brakuje energii na drugą, lub nieświadomie oszukuje",
+        "cue": "Always start with the WEAKER (non-dominant) side. Match the rep count exactly. If quality drops on the second side, lower the weight, not the reps.",
+        "cuePl": "Zawsze zaczynaj od SŁABSZEJ (niedominującej) strony. Równaj liczbę powtórzeń dokładnie. Jeśli jakość spada na drugą stronę, zmniejsz ciężar, nie powtórzenia."
+      }
+    ],
+    "breathing": "Inhale and brace as you press the ball overhead. Forceful exhale (\"ssh\" or grunt) on the slam — coordinate breath with peak force production. Do not hold breath between reps; reset breathing between each rep, especially if going for power (low reps) rather than conditioning (high reps).",
+    "breathingPl": "Wdech i napięcie podczas wyciskania piłki nad głowę. Mocny wydech (\"ssh\" lub stęknięcie) na rzucie — synchronizuj oddech z maksymalną produkcją siły. Nie wstrzymuj oddechu między powtórzeniami; resetuj oddech przy każdym powtórzeniu, szczególnie przy treningu mocy (mała liczba powtórzeń), nie kondycji (duża liczba)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Overhead reach with one arm can pinch the rotator cuff. Lower the starting position to the shoulder rather than fully overhead, or skip until ROM is restored.",
+      "modificationPl": "Jednoręczne sięganie nad głowę może uciskać stożek rotatorów. Obniż pozycję startową do barku zamiast pełnego nad głowę, lub przerwij do odzyskania zakresu.",
+      "alternative": "cable-woodchopper"
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Combined rotation + side-bending + lat pulldown under explosive load is one of the higher-stress patterns for the lumbar spine. Skip until pain is fully resolved.",
+      "modificationPl": "Połączenie rotacji + zgięcia bocznego + ciągu najszerszym w warunkach wybuchowego obciążenia to jeden z najbardziej obciążających wzorców dla odcinka lędźwiowego. Przerwij do całkowitego ustąpienia bólu.",
+      "alternative": "russian-twist"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded flexion + rotation is contraindicated in disc pathology. Replace with anti-rotation work (pallof press, dead-bug) under physiotherapist supervision.",
+      "modificationPl": "Obciążone zgięcie + rotacja są przeciwwskazane w patologii dysku. Zastąp anty-rotacyjnym treningiem (pallof press, dead-bug) pod kontrolą fizjoterapeuty.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "pregnancy",
+      "severity": "avoid",
+      "modification": "Explosive trunk rotation and intra-abdominal pressure spikes are not appropriate during pregnancy. Switch to controlled, non-impact core work after medical clearance.",
+      "modificationPl": "Wybuchowa rotacja tułowia i skoki ciśnienia śródbrzusznego nie są wskazane w ciąży. Przejdź na kontrolowaną pracę brzucha bez impactu po konsultacji lekarskiej.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "Power: 4-6 sets x 3-5 reps per side (heavier ball, full recovery 60-90s) | Conditioning: 3-4 sets x 8-12 reps per side (lighter ball, shorter rest 30-45s)",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "one-arm-slam-with-medicine-ball.gif",
+    "frames_extracted": [
+      "frames/one-arm-slam-with-medicine-ball/frame_0_start.png",
+      "frames/one-arm-slam-with-medicine-ball/frame_1_early.png",
+      "frames/one-arm-slam-with-medicine-ball/frame_2_mid.png",
+      "frames/one-arm-slam-with-medicine-ball/frame_3_late.png",
+      "frames/one-arm-slam-with-medicine-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/one-arm-slam-with-medicine-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek w GIFie). Pełen cykl: frame_0/frame_4 = pozycja startowa (piłka wyciśnięta nad głowę w lewej ręce, prawa ręka otwarta w bok dla balansu, podświetlone OBA boki skośnych + cały rectus abdominis), frame_1/frame_3 = wczesna i późna faza rzutu (widać superimposed dwie sylwetki — pełna rotacja tułowia w prawo z zgięciem bocznym, podświetlone skośne + latissimus), frame_2 = dolna pozycja (piłka na podłodze przy prawej stopie, tułów zgięty do przodu w pełnym hinge, podświetlone skośne na boku). Ćwiczenie jest WYRAŹNIE unilateralne (jednoręczne) i rotacyjne — combination of overhead slam + woodchop pattern. Klasyfikacja: rotation + plyometric + unilateral. Primary: obliques (P9) i latissimus_dorsi (P8) — oba mocno podświetlone w GIFie. Rectus jako secondary (P7→S7) bo widać podświetlenie ale ruch jest głównie rotacyjny. Difficulty 6 — wymaga koordynacji, kontroli kręgosłupa pod obciążeniem wybuchowym, i bazowej mobilności barku/biodra. Prerequisites: opanowanie bilateralnego medicine-ball-overhead-slam (jeszcze nie ma w bazie, ale jest GIF w mediach) + rotacja kontrolowana (russian-twist, cable-woodchopper). Wszystkie pola PL napisane od zera, polska terminologia fitness (skośne, najszerszy grzbietu, hinge, slam ball nieprzetłumaczone bo to standard branżowy).",
+
+  "tags": ["plyometrics", "rotational_power", "core", "obliques", "unilateral", "explosive", "athletic_conditioning", "combat_sports", "throwing_sports", "finisher", "medicine_ball", "intermediate"]
+}

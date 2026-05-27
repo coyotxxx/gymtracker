@@ -1,0 +1,205 @@
+{
+  "id": "band-one-arm-overhead-biceps-curl",
+  "name": "Band One-Arm Overhead Biceps Curl",
+  "namePl": "Curl bicepsa jednorącz z gumą zaczepioną nad głową",
+  "aliases": ["band high curl", "band peak biceps curl", "one-arm band overhead curl", "band cable-style high curl", "band side biceps peak contraction"],
+  "aliasesPl": ["uginanie bicepsa jednorącz z gumą zaczepioną wysoko", "curl szczytowy z gumą", "wysoki curl bicepsa z gumą", "uginanie bicepsa z gumą z górnego zaczepu jednorącz", "peak curl z gumą"],
+
+  "description": "Single-arm biceps curl performed with an elastic band anchored above shoulder height (to the side, in line with the working arm). The athlete stands sideways to the anchor with the arm extended horizontally at shoulder height; from this stretched position the elbow flexes, curling the hand toward the temple/ear. The line of resistance comes from above-and-out, which mimics a high cable curl — tension stays maximal at the fully shortened position (peak contraction), making this an excellent finisher for the short head of the biceps. Variable band tension means the hardest point is at the top of the rep, the opposite of a free-weight curl.",
+  "descriptionPl": "Uginanie bicepsa jednorącz z gumą zaczepioną powyżej linii barku (z boku, w linii pracującego ramienia). Ćwiczący stoi bokiem do punktu zaczepienia, ramię wyprostowane poziomo na wysokości barku; z tej rozciągniętej pozycji ugina łokieć, prowadząc dłoń w stronę skroni/ucha. Linia oporu biegnie z góry i z boku, co naśladuje wysoki wyciąg linowy (high cable curl) — napięcie pozostaje maksymalne w pełnym skurczu (peak contraction), dzięki czemu ćwiczenie świetnie nadaje się jako wykończenie na krótką głowę bicepsa. Zmienne napięcie gumy oznacza, że najtrudniejszy punkt to góra ruchu — odwrotnie niż w curlu z wolnym ciężarem.",
+
+  "instructions": [
+    "Anchor a resistance band to a sturdy point above your shoulder height (door anchor, pull-up bar, squat rack pin, high railing).",
+    "Stand sideways to the anchor so the working arm is closer to it. Take one step away until the band has light tension in the start position.",
+    "Grip the band handle (or loop) with a supinated grip (palm facing up). Extend the working arm horizontally toward the anchor at shoulder height — this is the stretched start.",
+    "Set the working shoulder: keep the upper arm parallel to the floor and elbow at shoulder level. Place the free hand on your hip for balance.",
+    "Brace your core and keep your torso square — do not rotate toward or away from the anchor.",
+    "Curl by flexing only at the elbow: bring your hand toward your temple/ear. The upper arm stays high and stationary throughout.",
+    "At the top, squeeze the biceps hard for 1-2 seconds in the peak-contraction position (hand near ear, elbow still pointing out to the side).",
+    "Return the hand under control along the same arc until the arm is fully extended again. Take 2-3 seconds on the eccentric.",
+    "Complete all reps on one side before switching arms. Match volume on both sides."
+  ],
+  "instructionsPl": [
+    "Zaczep gumę o stabilny punkt powyżej linii swojego barku (drzwiowy anchor, drążek do podciągania, hak na klatce, wysoka poręcz).",
+    "Stań bokiem do zaczepu tak, by pracujące ramię było bliżej niego. Zrób krok w bok aż guma będzie miała lekkie napięcie w pozycji startowej.",
+    "Złap uchwyt (lub pętlę) gumy podchwytem (dłoń skierowana w górę). Wyprostuj pracujące ramię poziomo w stronę zaczepu na wysokości barku — to pozycja startowa z rozciągnięciem.",
+    "Ustaw pracujący bark: ramię ponad łokciem równolegle do podłogi, łokieć na wysokości barku. Wolną dłoń oprzyj na biodrze dla równowagi.",
+    "Napnij brzuch i utrzymuj tułów ustawiony frontem — nie obracaj się w stronę zaczepu ani od niego.",
+    "Uginaj wyłącznie w łokciu: prowadź dłoń w stronę skroni/ucha. Ramię ponad łokciem ma pozostać wysoko i nieruchome przez cały ruch.",
+    "W górze mocno spinaj biceps przez 1-2 sekundy w pozycji szczytowego skurczu (dłoń przy uchu, łokieć nadal skierowany w bok).",
+    "Wracaj kontrolowanie tym samym łukiem aż ramię będzie znowu w pełnym wyproście. Faza ekscentryczna 2-3 sekundy.",
+    "Zrób wszystkie powtórzenia na jedną stronę, potem zmień ramię. Zachowaj tę samą objętość na obu rękach."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "posterior_deltoid", "rotator_cuff", "core", "obliques", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S5",
+    "brachioradialis": "S4",
+    "forearm_flexors": "T4",
+    "posterior_deltoid": "T3",
+    "rotator_cuff": "T3",
+    "core": "T3",
+    "obliques": "T3",
+    "upper_trapezius": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band", "anchor_point"],
+    "optional": ["band_handle", "door_anchor"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl", "band-biceps-curl"],
+    "progression_to": ["cable-high-curl", "cable-one-arm-curl", "double-biceps-cable-curl"],
+    "alternatives": ["band-biceps-curl", "cable-one-arm-curl", "concentration-curl", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor above shoulder height, slightly out to the side",
+      "Stand sideways, arm extended toward the anchor at shoulder level",
+      "Supinated grip — palm facing the ceiling at the start",
+      "Upper arm parallel to floor — elbow stays at shoulder height",
+      "Tall torso, square hips, core braced — no leaning"
+    ],
+    "setup_cues_pl": [
+      "Zaczep powyżej linii barku, lekko z boku",
+      "Stań bokiem, ramię wyprostowane w stronę zaczepu na wysokości barku",
+      "Chwyt podchwytem — dłoń skierowana w górę w starcie",
+      "Ramię ponad łokciem równolegle do podłogi — łokieć na wysokości barku",
+      "Wyprostowany tułów, biodra frontem, brzuch napięty — żadnego odchylania"
+    ],
+    "execution_cues": [
+      "Bring the hand to the ear, not the shoulder forward",
+      "Squeeze hard at the top — this is a peak-contraction exercise",
+      "Upper arm stays high and locked — only the forearm moves",
+      "Resist the band on the way back — full 2-3 second eccentric",
+      "Reach full elbow extension before the next rep"
+    ],
+    "execution_cues_pl": [
+      "Prowadź dłoń do ucha, nie szarp barku do przodu",
+      "Mocno spinaj w górze — to ćwiczenie na szczytowy skurcz",
+      "Ramię ponad łokciem wysoko i zablokowane — pracuje tylko przedramię",
+      "Opieraj się gumie w drodze powrotnej — pełne 2-3 sekundy fazy negatywnej",
+      "Pełen wyprost łokcia przed kolejnym powtórzeniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbow drops below shoulder line during the curl",
+        "faultPl": "Łokieć opada poniżej linii barku w trakcie uginania",
+        "cause": "Posterior delt and rotator cuff fatigue, or band tension too high — athlete pulls the elbow down to recruit lats",
+        "causePl": "Zmęczenie tylnego aktonu barku i stożka rotatorów, lub zbyt mocna guma — ćwiczący ściąga łokieć w dół, by włączyć najszerszy",
+        "cue": "Imagine your elbow is glued to a horizontal shelf at shoulder height. Reduce band tension if you cannot hold it.",
+        "cuePl": "Wyobraź sobie, że łokieć jest przyklejony do poziomej półki na wysokości barku. Zmniejsz napięcie gumy jeśli nie utrzymujesz pozycji."
+      },
+      {
+        "fault": "Pulling the hand toward the chest instead of the ear",
+        "faultPl": "Prowadzenie dłoni do klatki zamiast do ucha",
+        "cause": "Treating it like a standard biceps curl instead of a peak-contraction high curl — losing the short-head emphasis",
+        "causePl": "Wykonywanie jak zwykłego uginania zamiast wysokiego curlu na szczyt — utrata akcentu na krótką głowę",
+        "cue": "Knuckles to the temple, elbow stays out to the side. Think 'flex like a bodybuilder front double biceps'.",
+        "cuePl": "Pięść do skroni, łokieć pozostaje w bok. Pomyśl 'pozycja kulturystycznej pozy front double biceps'."
+      },
+      {
+        "fault": "Torso rotation toward or away from the anchor",
+        "faultPl": "Rotacja tułowia w stronę zaczepu lub od niego",
+        "cause": "Band tension overcomes core bracing — athlete twists to assist with obliques or to escape the stretch",
+        "causePl": "Napięcie gumy pokonuje stabilizację tułowia — ćwiczący skręca się, by pomóc skośnymi lub uciec od rozciągnięcia",
+        "cue": "Square your hips and chest like a soldier. If you must twist, the band is too strong — switch to a lighter band.",
+        "cuePl": "Ustaw biodra i klatkę jak żołnierz na baczność. Jeśli musisz się skręcać, guma jest za mocna — zmień na słabszą."
+      },
+      {
+        "fault": "Wrist collapses (flexes) at the top to gain extra range",
+        "faultPl": "Załamanie nadgarstka (zginanie) w górze, by zyskać dodatkowy zakres",
+        "cause": "Trying to reach the temple after biceps stops contributing, fatigue, or weak wrist flexors",
+        "causePl": "Próba dotarcia do skroni po wyczerpaniu bicepsa, zmęczenie, lub słabe zginacze nadgarstka",
+        "cue": "Keep the wrist straight and the palm fully open. The hand moves with the forearm as one rigid unit.",
+        "cuePl": "Nadgarstek prosty, dłoń otwarta. Dłoń porusza się razem z przedramieniem jak jedna sztywna jednostka."
+      },
+      {
+        "fault": "Letting the band snap the arm back at the bottom (uncontrolled eccentric)",
+        "faultPl": "Pozwolenie gumie szarpnąć ramię z powrotem na dół (niekontrolowana faza negatywna)",
+        "cause": "Rushing through reps, or band recoil overpowering the relaxed biceps in the stretched end-range",
+        "causePl": "Pośpiech między powtórzeniami, lub odbicie gumy pokonuje rozluźniony biceps w pozycji rozciągnięcia",
+        "cue": "Own the negative for at least 2 seconds. The band should never throw your arm — you stop it.",
+        "cuePl": "Kontroluj fazę negatywną co najmniej 2 sekundy. Guma nigdy nie ma odrzucić twojego ramienia — to ty ją zatrzymujesz."
+      }
+    ],
+    "breathing": "Exhale during the curl (concentric), inhale during the controlled return (eccentric). Maintain a light core brace throughout — band tension wants to pull your shoulder forward.",
+    "breathingPl": "Wydech w trakcie uginania (faza koncentryczna), wdech w trakcie kontrolowanego powrotu (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię — guma będzie próbowała wyciągnąć bark do przodu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "rotator_cuff_pain_or_impingement",
+      "severity": "modify",
+      "modification": "Holding the upper arm at 90° abduction can compress the supraspinatus. Drop the elbow to 45-60° abduction (anchor lower) or switch to a standard biceps curl.",
+      "modificationPl": "Trzymanie ramienia ponad łokciem w odwiedzeniu 90° może uciskać mięsień nadgrzebieniowy. Zmniejsz odwiedzenie do 45-60° (zaczep niżej) lub przejdź na standardowy curl bicepsa.",
+      "alternative": "band-biceps-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Peak-contraction with band loads the short head hardest at full shortening — can irritate inflamed distal tendon. Use lighter band, reduce range (stop short of full peak), or switch to neutral-grip curl.",
+      "modificationPl": "Szczytowy skurcz z gumą obciąża krótką głowę najmocniej w pełnym skróceniu — może drażnić zapalone przyczepy. Użyj słabszej gumy, ogranicz zakres (nie dochodź do pełnego szczytu) lub przejdź na curl z chwytem neutralnym.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "ac_joint_pain_acromioclavicular",
+      "severity": "modify",
+      "modification": "Arm-at-shoulder-height position with horizontal pull stresses the AC joint. Anchor lower (below shoulder height) and convert to a standard band curl, or use the unaffected side only.",
+      "modificationPl": "Pozycja ramienia na wysokości barku z poziomym ciągiem obciąża staw barkowo-obojczykowy. Zaczep niżej (poniżej linii barku) i wykonuj jak standardowy curl z gumą, lub trenuj wyłącznie nieuszkodzoną stronę.",
+      "alternative": "band-biceps-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "caution",
+      "modification": "Full supination at the top with peak load can aggravate the common flexor tendon. Use a lighter band, reduce reps to 8-10, or switch to hammer grip.",
+      "modificationPl": "Pełna supinacja w górze pod szczytowym obciążeniem może drażnić wspólny przyczep zginaczy. Użyj słabszej gumy, ogranicz powtórzenia do 8-10, lub przejdź na chwyt młotkowy.",
+      "alternative": "hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy, peak contraction) | 2-3x15-20 (pump finisher) | 3x8-12 (strength-endurance with heavier band)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-one-arm-overhead-biceps-curl.gif",
+    "frames_extracted": [
+      "frames/band-one-arm-overhead-biceps-curl/frame_0_start.png",
+      "frames/band-one-arm-overhead-biceps-curl/frame_1_early.png",
+      "frames/band-one-arm-overhead-biceps-curl/frame_2_mid.png",
+      "frames/band-one-arm-overhead-biceps-curl/frame_3_late.png",
+      "frames/band-one-arm-overhead-biceps-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/band-one-arm-overhead-biceps-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 (start): ćwiczący stoi bokiem (frontalnie do widza), prawe ramię wyprostowane poziomo w lewo na wysokości barku, dłoń trzyma gumę podchwytem, guma biegnie ukośnie w górę i w lewo do zaczepu (poza kadrem). Biceps i przedramię podświetlone na czerwono. Frame 1 (early): łokieć zaczyna się uginać, dłoń wędruje w stronę głowy, łokieć utrzymuje wysokość barku. Frame 2 (mid/peak): pełen szczytowy skurcz — pięść przy skroni/uchu, łokieć nadal w bok na wysokości barku, klasyczna pozycja peak contraction (jak front double biceps pose). Frame 4 (end): powrót do pełnego wyprostu z widocznym 'ghost' fazy szczytowej. Ruch izolowany, ramię ponad łokciem nieruchome, tułów stabilny przez cały zakres. Jednoznaczna identyfikacja jako wysoki curl z gumą jednorącz (cable-curl high-style z gumą). Wszystkie pola PL napisane od zera. Uwaga semantyczna: nazwa 'overhead' u jahela sugeruje zaczep wysoko (powyżej barku) — GIF potwierdza, że guma idzie ukośnie z góry, choć ramię ćwiczącego jest poziome a nie nad głową. To wariant peak-contraction biceps curl.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "band", "resistance_band", "unilateral", "peak_contraction", "upper_body", "home_gym", "finisher"]
+}

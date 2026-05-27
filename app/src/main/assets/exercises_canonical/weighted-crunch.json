@@ -1,0 +1,197 @@
+{
+  "id": "weighted-crunch",
+  "name": "Weighted Crunch",
+  "namePl": "Brzuszki z obciążeniem",
+  "aliases": ["weighted ab crunch", "plate crunch", "dumbbell crunch", "loaded crunch", "weighted floor crunch"],
+  "aliasesPl": ["brzuszki z talerzem", "crunch z obciążeniem", "brzuszki obciążone", "spinanie brzucha z ciężarem", "crunch z hantlą"],
+
+  "description": "A progression of the bodyweight crunch in which the lifter holds an external load (typically a weight plate, dumbbell or kettlebell) at the chest, over the head or extended above the body. The added resistance increases mechanical tension on the rectus abdominis, making the exercise a true hypertrophy stimulus for the abs rather than a pure endurance drill. The lifter lies supine with knees bent (feet on the floor or knees lifted in a tabletop position), holds the load close to the chest or with arms extended toward the ceiling, then curls the shoulder blades off the mat through short-range spinal flexion (about 30 degrees), pauses at the top to squeeze, and lowers under control. The lumbar spine stays in contact with the floor — this is a crunch, not a sit-up.",
+  "descriptionPl": "Progresja brzuszków z masą własnego ciała, w której ćwiczący trzyma zewnętrzne obciążenie (najczęściej talerz, hantlę lub kettlebell) na klatce, za głową lub wyciągnięte nad ciałem. Dodatkowy opór zwiększa napięcie mechaniczne mięśnia prostego brzucha, dzięki czemu ćwiczenie staje się realnym bodźcem hipertroficznym, a nie tylko pracą wytrzymałościową. Ćwiczący leży na plecach z kolanami zgiętymi (stopy na podłodze lub kolana uniesione w pozycji stołu), trzyma ciężar blisko klatki lub z rękami wyciągniętymi pionowo nad ciało, po czym odrywa łopatki od maty przez krótkozakresowe zgięcie kręgosłupa (około 30 stopni), zatrzymuje się w szczycie na ściśnięcie i opuszcza kontrolowanie. Dolny odcinek kręgosłupa pozostaje w kontakcie z podłogą — to crunch, nie sit-up.",
+
+  "instructions": [
+    "Lie on your back on a mat. Bend the knees to about 90 degrees with feet flat on the floor, or lift the knees into a tabletop position (shins parallel to the floor) for more rectus abdominis demand.",
+    "Hold a weight plate, dumbbell or kettlebell with both hands. Position it close to the chest (easier) or extend the arms toward the ceiling with the load directly above the shoulders (harder — longer lever).",
+    "Press the lower back gently into the mat. Tuck the chin slightly off the chest by about a fist's width. Inhale and brace the core.",
+    "Exhale and curl the shoulder blades off the mat by contracting the rectus abdominis. The load travels with the torso — if arms are extended, keep them locked so the plate moves vertically with the chest.",
+    "Pause for one second at the top, squeezing the abs hard. Only the upper back lifts — the lower back stays planted, the hips do not flex.",
+    "Inhale and lower the shoulder blades back to the mat under control over two to three seconds. Briefly touch the mat and begin the next rep without losing core tension.",
+    "Start light (2.5–5 kg) and progress slowly. The added load magnifies any technique errors — quality before quantity."
+  ],
+  "instructionsPl": [
+    "Połóż się na plecach na macie. Zegnij kolana do około 90 stopni ze stopami płasko na podłodze lub unieś kolana w pozycję stołu (golenie równolegle do podłogi) dla większego zaangażowania mięśnia prostego brzucha.",
+    "Chwyć talerz, hantlę lub kettlebell obiema dłońmi. Ustaw ciężar blisko klatki piersiowej (łatwiej) lub wyciągnij ręce pionowo nad bark z obciążeniem nad ciałem (trudniej — dłuższa dźwignia).",
+    "Delikatnie dociśnij dolne plecy do maty. Odsuń brodę od klatki o około szerokość pięści. Wdech, lekko napnij brzuch.",
+    "Wydech i zwiń łopatki w górę przez skurcz mięśnia prostego brzucha. Ciężar porusza się razem z tułowiem — jeśli ręce są wyciągnięte, utrzymaj je zablokowane, by talerz przemieszczał się pionowo razem z klatką.",
+    "Zatrzymaj się na sekundę w szczycie, mocno ściskając brzuch. Unosi się tylko górny odcinek pleców — dolne plecy zostają na macie, biodra się nie zginają.",
+    "Wdech i opuść łopatki na matę pod kontrolą przez dwie–trzy sekundy. Krótko dotknij maty i rozpocznij kolejne powtórzenie bez utraty napięcia brzucha.",
+    "Zacznij od lekkiego obciążenia (2,5–5 kg) i progresuj powoli. Dodany ciężar wyolbrzymia każdy błąd techniczny — najpierw jakość, potem ilość."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques"],
+    "stabilizers": ["transverse_abdominis", "hip_flexors", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "obliques": "S6",
+    "transverse_abdominis": "T5",
+    "hip_flexors": "T4",
+    "serratus_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["dumbbell", "kettlebell", "mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["crunch-floor"],
+    "progression_to": ["decline-crunch", "cable-crunch", "cable-kneeling-crunch", "dragon-flag"],
+    "alternatives": ["crunch-floor", "cable-crunch", "decline-crunch", "crunch-hands-overhead"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat — knees bent 90 degrees, feet on the mat or knees lifted to tabletop",
+      "Hold the plate/dumbbell firmly with both hands — close to chest or extended overhead",
+      "Lower back glued to the floor — no lumbar arch under the load",
+      "Chin off the chest a fist-width — neck long, eyes toward the ceiling",
+      "Inhale through the nose, brace the abs before the rep starts"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko — kolana zgięte 90 stopni, stopy na macie lub kolana uniesione w pozycję stołu",
+      "Mocno trzymaj talerz/hantlę obiema rękami — blisko klatki lub wyciągnięte nad ciało",
+      "Dolne plecy przyklejone do podłogi — bez prześwitu pod obciążeniem",
+      "Broda odsunięta od klatki o szerokość pięści — szyja długa, wzrok w sufit",
+      "Wdech nosem, napnij brzuch zanim zacznie się powtórzenie"
+    ],
+    "execution_cues": [
+      "Exhale and drive the ribs toward the hips — the plate moves with the chest",
+      "Lift only the shoulder blades — lower back stays on the mat with the load",
+      "Short ROM — about 30 degrees of spinal flexion, not a sit-up",
+      "Squeeze the abs for one full second at the top — feel the rectus contract under load",
+      "Lower under control — 2 to 3 seconds eccentric, no flopping the weight down"
+    ],
+    "execution_cues_pl": [
+      "Wydech i pchaj żebra w stronę bioder — talerz przemieszcza się razem z klatką",
+      "Unoś tylko łopatki — dolne plecy zostają na macie razem z ciężarem",
+      "Krótki zakres — około 30 stopni zgięcia kręgosłupa, to nie sit-up",
+      "Ściśnij brzuch przez pełną sekundę w szczycie — poczuj skurcz mięśnia prostego pod obciążeniem",
+      "Opuszczaj pod kontrolą — 2 do 3 sekund fazy ekscentrycznej, bez upuszczania ciężaru"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using a load too heavy — momentum and hip flexion take over",
+        "faultPl": "Zbyt ciężkie obciążenie — przejmuje pracę rozpęd i zginacze biodra",
+        "cause": "Ego loading: lifters jump from bodyweight crunches to 15–20 kg plates and start swinging the load to complete reps",
+        "causePl": "Ładowanie z ego: ćwiczący przeskakują z brzuszków z masą własnego ciała od razu na talerze 15–20 kg i zaczynają huśtać ciężar, by dokończyć powtórzenia",
+        "cue": "Pick a weight where you can do 10–12 strict reps with a 1-second pause at the top. If you can't pause — drop the weight by 50%.",
+        "cuePl": "Wybierz ciężar, z którym wykonasz 10–12 powtórzeń z 1-sekundową pauzą w szczycie. Jeśli nie dasz rady się zatrzymać — zmniejsz obciążenie o 50%."
+      },
+      {
+        "fault": "Pulling on the neck when plate is held behind the head",
+        "faultPl": "Pociąganie szyi, gdy talerz jest trzymany za głową",
+        "cause": "Holding the plate behind the head creates a long lever and tempts the lifter to push the head forward instead of crunching from the abs",
+        "causePl": "Trzymanie talerza za głową tworzy długą dźwignię i kusi do popychania głowy do przodu zamiast zwijania z brzucha",
+        "cue": "Keep the chin neutral — fist-width gap under the jaw. The plate is luggage, the abs do the work. If neck flares up, move the plate to the chest.",
+        "cuePl": "Trzymaj brodę w neutralnej pozycji — szerokość pięści pod żuchwą. Talerz to bagaż, brzuch wykonuje pracę. Jeśli zaczyna boleć kark, przełóż ciężar na klatkę."
+      },
+      {
+        "fault": "Lifting the hips off the mat / converting to a sit-up",
+        "faultPl": "Unoszenie bioder od maty / przejście w sit-up",
+        "cause": "When the load is too heavy or the lifter chases longer ROM, hip flexors fire to peel the pelvis off the floor — rectus abdominis is offloaded",
+        "causePl": "Gdy ciężar jest zbyt duży lub ćwiczący szuka większego zakresu ruchu, zginacze biodra uruchamiają się, by oderwać miednicę od podłogi — pracę traci mięsień prosty brzucha",
+        "cue": "Lower back glued to the floor for the entire set. Only the shoulder blades clear the mat — the hips never move.",
+        "cuePl": "Dolne plecy przyklejone do podłogi przez cały serię. Tylko łopatki odrywają się od maty — biodra w ogóle się nie ruszają."
+      },
+      {
+        "fault": "Letting the plate drift away from the chest / over the face",
+        "faultPl": "Pozwalanie, by talerz dryfował od klatki / nad twarzą",
+        "cause": "Tired arms drop the load forward, shifting the center of mass and creating a dangerous descent path (over the face)",
+        "causePl": "Zmęczone ramiona opuszczają ciężar w dół, przesuwając środek masy i tworząc niebezpieczny tor opadania (nad twarzą)",
+        "cue": "Lock the elbows if arms are extended, or pin the plate to the upper chest. The load tracks vertically — never let it drift toward the face.",
+        "cuePl": "Zablokuj łokcie, jeśli ręce są wyciągnięte, lub dociśnij talerz do górnej klatki. Ciężar przemieszcza się pionowo — nigdy nie pozwól mu zdryfować nad twarz."
+      },
+      {
+        "fault": "Bouncing the plate off the mat for the next rep",
+        "faultPl": "Odbijanie talerza od maty dla kolejnego powtórzenia",
+        "cause": "Letting the load slam down at the bottom uses elastic recoil and momentum to start the next rep, skipping the rectus abdominis work",
+        "causePl": "Uderzenie ciężarem o matę na dole wykorzystuje sprężystość i rozpęd do startu następnego powtórzenia, omijając pracę mięśnia prostego brzucha",
+        "cue": "2 seconds up, 1-second squeeze, 2 to 3 seconds down, light touch of the mat, immediately start the next rep without losing tension.",
+        "cuePl": "2 sekundy w górę, 1 sekunda ściśnięcia, 2 do 3 sekund w dół, lekkie dotknięcie maty, natychmiastowy start kolejnego powtórzenia bez utraty napięcia."
+      }
+    ],
+    "breathing": "Inhale through the nose during the eccentric descent and at the bottom while resetting tension. Forceful exhale through the mouth during the concentric crunch as the shoulder blades leave the mat — the rib cage compresses, intensifying the rectus abdominis contraction under load.",
+    "breathingPl": "Wdech nosem podczas opuszczania i w pozycji dolnej, gdy resetujesz napięcie. Mocny wydech ustami podczas zwijania w górę, gdy łopatki odrywają się od maty — klatka piersiowa się ściska, intensyfikując skurcz mięśnia prostego brzucha pod obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion magnifies compressive force on the lumbar discs and aggravates acute pain. Switch to anti-extension/anti-rotation isometric work until pain-free for at least two weeks.",
+      "modificationPl": "Obciążone zgięcie kręgosłupa zwielokrotnia siłę kompresyjną na krążki lędźwiowe i nasila ostry ból. Przejdź na izometryczną pracę anty-ekstensji/anty-rotacji do czasu ustąpienia bólu na co najmniej dwa tygodnie.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "McGill's research strongly contraindicates repeated loaded spinal flexion in lumbar disc protrusion — each rep adds shear force. Use neutral-spine bracing exercises instead.",
+      "modificationPl": "Badania McGilla wyraźnie przeciwwskazują powtarzane obciążone zgięcie kręgosłupa przy przepuklinie krążka lędźwiowego — każde powtórzenie dokłada siłę ścinającą. Zastosuj ćwiczenia napięcia w neutralnej pozycji kręgosłupa.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Loaded crunching can significantly widen midline separation (postpartum, advanced pregnancy). Heal the linea alba with transverse abdominis work before adding any external load to rectus abdominis exercises.",
+      "modificationPl": "Obciążone brzuszki mogą znacznie poszerzyć rozejście kresy białej (po porodzie, w zaawansowanej ciąży). Zregeneruj kresę białą pracą na mięsień poprzeczny brzucha, zanim dodasz jakiekolwiek zewnętrzne obciążenie do ćwiczeń na mięsień prosty brzucha.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Avoid holding the plate behind the head. Keep the load on the upper chest or extended over the shoulders with locked elbows. Look at the ceiling, not toward the knees, to keep the cervical spine neutral.",
+      "modificationPl": "Unikaj trzymania talerza za głową. Trzymaj ciężar na górnej klatce lub wyciągnięty nad bark z zablokowanymi łokciami. Patrz w sufit, a nie w stronę kolan, by utrzymać odcinek szyjny w neutralnej pozycji.",
+      "alternative": "cable-crunch"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, primary use) | 3x12-15 (volume) | 4x6-8 (strength focus, heavy load)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "weighted-crunch.gif",
+    "frames_extracted": [
+      "frames/weighted-crunch/frame_0_start.png",
+      "frames/weighted-crunch/frame_1_early.png",
+      "frames/weighted-crunch/frame_2_mid.png",
+      "frames/weighted-crunch/frame_3_late.png",
+      "frames/weighted-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/weighted-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). Klatka 0 (start): leżenie na plecach, kolana zgięte i lekko uniesione (stopy w powietrzu, pozycja zbliżona do tabletop), ręce wyciągnięte pionowo nad klatkę trzymające okrągły talerz oburącz. Łopatki przyklejone do maty, anatomia podświetla mięsień prosty brzucha jako mięsień docelowy. Klatka 1–2 (early/mid): tułów się zwija w górę, łopatki wyraźnie oderwane od podłogi, talerz przemieszcza się pionowo razem z klatką (ręce pozostają wyciągnięte, łokcie zablokowane), dolne plecy nadal w kontakcie z matą, biodra nieruchome — klasyczny crunch pod obciążeniem, NIE sit-up. Klatka 3 (late): faza powrotna, widoczny duch poprzedniej pozycji szczytu (animacja). Klatka 4 (end): powrót do leżenia, talerz w pozycji wyjściowej nad klatką. Ruch potwierdzony: spinanie tylko górnego odcinka pleców pod dodatkowym oporem, krótki ROM (~30 stopni), izolacja rectus abdominis ze zwiększonym napięciem mechanicznym dzięki obciążeniu. Klasyfikacja: core_flexion (zgięcie kręgosłupa), isolation (1 staw: kręgosłup), bilateral (oburącz), sagittal (płaszczyzna strzałkowa), force=pull. Mięsień główny: rectus_abdominis P10 (najwyższa intensywność — to dedykowane ćwiczenie hipertroficzne na brzuch z obciążeniem). Skośne S6 (asystują przy zgięciu), transverse_abdominis T5 (stabilizacja pod obciążeniem — wyższa niż w wersji bw ze względu na ciężar), hip_flexors T4 (stabilizują miednicę gdy nogi w tabletop), serratus_anterior T3 (utrzymanie wyciągniętych rąk z ciężarem). Difficulty=5 (intermediate — wymaga opanowania crunch-floor i progresji obciążenia; łatwo zrobić błąd techniczny). Prerekwizyt crunch-floor. Nazwa PL 'Brzuszki z obciążeniem' — standardowe nazewnictwo polskie (źródła: polskie aplikacje fitness, AWF). Aliasy: 'crunch z obciążeniem', 'brzuszki z talerzem', 'crunch z hantlą' (powszechne w polskich siłowniach). Wszystkie pola PL napisane od zera — terminologia trenerska (mięsień prosty brzucha, łopatki, miednica, faza ekscentryczna/koncentryczna, dźwignia, napięcie mechaniczne).",
+
+  "tags": ["weighted", "core", "abs", "hypertrophy", "isolation", "upper_abs", "intermediate", "plate", "dumbbell"]
+}

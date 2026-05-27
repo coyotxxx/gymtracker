@@ -1,0 +1,206 @@
+{
+  "id": "lever-chest-press",
+  "name": "Lever Chest Press (Machine)",
+  "namePl": "Wyciskanie klatki na maszynie",
+  "aliases": ["machine chest press", "plate-loaded chest press", "lever press chest", "hammer strength chest press"],
+  "aliasesPl": ["wyciskanie klatki piersiowej na maszynie", "wyciskanie poziome na maszynie", "wyciskanie na maszynie dźwigniowej", "chest press maszynowy", "wyciskanie klatki na siłowniku"],
+
+  "description": "Horizontal chest press performed on a plate-loaded lever machine (independent-arm hammer strength style or fixed bar). The lifter sits upright with back pressed against the backrest, grasps the handles positioned at chest height, and presses them horizontally forward until the arms are fully extended in front of the chest, then returns under control. The defining characteristic of the lever machine is a FIXED, GUIDED TRAJECTORY — the path of the handles is mechanically constrained, removing the stabilization demands of free weights and dramatically reducing skill requirements. This makes it one of the most beginner-friendly horizontal pushes available: there is no need to balance a barbell, no spotter is required, and the lifter can train close to failure safely. The seated upright posture minimizes lower-back load and isolates the chest cleanly, with the pectoralis major (sternal head) doing the bulk of the work, assisted by the anterior deltoid and triceps. Excellent tool for hypertrophy at moderate-to-high volume and for teaching the press pattern before progressing to dumbbells or barbell.",
+  "descriptionPl": "Poziome wyciskanie klatki piersiowej wykonywane na maszynie dźwigniowej (ładowanej talerzami, w wariancie hammer strength z niezależnymi ramionami lub ze stałym uchwytem). Ćwiczący siedzi wyprostowany z plecami wciśniętymi w oparcie, łapie uchwyty ustawione na wysokości klatki i wyciska je poziomo do przodu aż do pełnego wyprostu ramion na wysokości klatki, po czym wraca kontrolowanie. Cechą definiującą maszynę dźwigniową jest STAŁA, PROWADZONA TRAJEKTORIA — ścieżka uchwytów jest mechanicznie ograniczona, co eliminuje wymagania stabilizacji jak przy wolnych ciężarach i drastycznie zmniejsza wymagania techniczne. Dzięki temu jest to jedno z najprzyjaźniejszych dla początkujących wyciskań poziomych: nie trzeba balansować sztangą, nie potrzeba asekuracji, można bezpiecznie trenować blisko upadku mięśniowego. Wyprostowana pozycja siedząca minimalizuje obciążenie lędźwiowe i czyściej izoluje klatkę, gdzie mięsień piersiowy większy (głowa mostkowa) wykonuje gros pracy, wspomagany przez przedni akton barku i triceps. Doskonałe narzędzie do hipertrofii przy umiarkowanej i wysokiej objętości oraz do nauki wzorca wyciskania przed przejściem na hantle i sztangę.",
+
+  "instructions": [
+    "Load the machine with appropriate plates on each arm/side (start lighter to learn the path).",
+    "Adjust the seat height so the handles align with the middle/lower chest (NOT the shoulders or neck) at the start position.",
+    "Sit down, plant feet firmly on the floor or footrest, press the back flat against the backrest.",
+    "Retract and depress the scapulae — pin them down and back against the pad. Maintain this position throughout the set.",
+    "Grip the handles with a neutral or pronated grip (depending on machine type). Wrists stacked over forearms.",
+    "Inhale, brace the core. Press both handles HORIZONTALLY forward, extending the arms in front of the chest until elbows are nearly locked.",
+    "At lock-out: optional brief peak contraction — squeeze the chest for ~1 second.",
+    "Return to the start position under control over 2-3 seconds, feeling the chest stretch as the handles come back to chest level.",
+    "Do NOT let the handles travel deeper than the chest line — protect the anterior shoulder capsule.",
+    "Exhale during the press (concentric), inhale during the return (eccentric)."
+  ],
+  "instructionsPl": [
+    "Załaduj maszynę odpowiednimi talerzami na każde ramię/stronę (zacznij lżej by nauczyć się toru).",
+    "Wyreguluj wysokość siedziska tak by uchwyty były w linii środkowej / dolnej części klatki piersiowej (NIE barków ani szyi) w pozycji startowej.",
+    "Usiądź, mocno zaprzyj stopy o podłogę lub podnóżek, dociśnij plecy do oparcia.",
+    "Ściągnij i opuść łopatki — wbij je w oparcie. Utrzymuj tę pozycję przez całą serię.",
+    "Złap uchwyty chwytem neutralnym lub nachwytem (zależnie od typu maszyny). Nadgarstki w jednej linii z przedramionami.",
+    "Nabierz wdech, napnij brzuch. Wyciśnij oba uchwyty POZIOMO do przodu, prostując ramiona na wysokości klatki aż łokcie są prawie zablokowane.",
+    "W lock-out: opcjonalny krótki peak contraction — ściśnij klatkę przez ~1 sekundę.",
+    "Wróć do pozycji startowej kontrolowanie w tempie 2-3 sekundy, czując rozciąganie klatki gdy uchwyty wracają do linii klatki.",
+    "NIE pozwól by uchwyty zeszły głębiej niż linia klatki — chroń przednią torebkę stawową barku.",
+    "Wydech podczas wyciskania (koncentryka), wdech podczas powrotu (ekscentryka)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["pectoralis_major_clavicular", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P7",
+    "triceps": "P7",
+    "pectoralis_major_clavicular": "S5",
+    "serratus_anterior": "S4",
+    "rotator_cuff": "T3",
+    "upper_back": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["chest_press_machine"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["push-up"],
+    "progression_to": ["dumbbell-bench-press", "barbell-bench-press", "cable-seated-chest-press", "incline-bench-press"],
+    "alternatives": ["cable-seated-chest-press", "smith-machine-bench-press", "dumbbell-bench-press", "push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Adjust seat so handles align with mid/lower chest (not shoulders or neck)",
+      "Back flat against the backrest, feet planted firmly",
+      "Scapulae retracted and depressed — pinned to the pad",
+      "Neutral wrists stacked over forearms, full grip on handles",
+      "Brace core before the first rep, exhale on press"
+    ],
+    "setup_cues_pl": [
+      "Wyreguluj siedzisko by uchwyty były na wysokości środkowej / dolnej klatki (nie barków ani szyi)",
+      "Plecy płasko przy oparciu, stopy mocno zaparte",
+      "Łopatki ściągnięte i opuszczone — wbite w oparcie",
+      "Nadgarstki neutralne w jednej linii z przedramieniem, pełen chwyt na uchwytach",
+      "Napnij brzuch przed pierwszym powtórzeniem, wydech podczas wyciskania"
+    ],
+    "execution_cues": [
+      "Press HORIZONTALLY forward — follow the guided path of the machine",
+      "Drive both arms synchronously, do not let one side outpace the other",
+      "Stop the eccentric when handles reach chest level — do NOT go deeper",
+      "Eccentric controlled 2-3 sec, no bouncing off the bottom",
+      "Keep scapulae retracted throughout — do not let them protract at lock-out"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj POZIOMO do przodu — podążaj za prowadzoną ścieżką maszyny",
+      "Napędzaj oba ramiona synchronicznie, nie pozwól by jedna strona wyprzedzała drugą",
+      "Zatrzymaj ekscentrykę gdy uchwyty są na linii klatki — NIE schodź głębiej",
+      "Ekscentryka kontrolowana 2-3 sek, bez odbijania na dole",
+      "Łopatki ściągnięte przez cały ruch — nie pozwól im odejść do przodu w lock-out"
+    ],
+    "common_faults": [
+      {
+        "fault": "Seat height too high — handles align with neck/shoulders",
+        "faultPl": "Siedzisko za wysoko — uchwyty na wysokości szyi / barków",
+        "cause": "Improper setup. Converts the movement into a shoulder press / incline press, shifting load off the chest onto the anterior deltoid and creating impingement risk.",
+        "causePl": "Niewłaściwa konfiguracja. Zamienia ruch w wyciskanie barków / wyciskanie na skosie, przesuwając obciążenie z klatki na przedni akton barku i tworząc ryzyko impingement.",
+        "cue": "Adjust the seat DOWN so handles meet the middle/lower chest (around nipple line). Test pre-set with empty arms.",
+        "cuePl": "Obniż siedzisko tak by uchwyty były na wysokości środkowej / dolnej klatki (linia sutków). Sprawdź ustawienie pustymi ramionami."
+      },
+      {
+        "fault": "Going too deep on the eccentric (handles travel behind chest line)",
+        "faultPl": "Zbyt głęboka ekscentryka (uchwyty schodzą za linię klatki)",
+        "cause": "Trying to maximize stretch — but unlike free weights, a lever machine forces the arms onto a fixed path; going past the chest line overstretches the anterior shoulder capsule and pec insertion.",
+        "causePl": "Próba zmaksymalizowania rozciągnięcia — ale w przeciwieństwie do wolnych ciężarów, maszyna dźwigniowa wymusza ramiona na sztywnej ścieżce; schodzenie za linię klatki nadmiernie rozciąga przednią torebkę stawową barku i przyczep piersiowego.",
+        "cue": "Stop when handles reach chest level. If the machine allows going deeper — set a mental cue or use range-of-motion limiters.",
+        "cuePl": "Zatrzymaj się gdy uchwyty są na linii klatki. Jeśli maszyna pozwala schodzić głębiej — postaw sobie mentalny limit lub użyj ograniczników zakresu ruchu."
+      },
+      {
+        "fault": "Lifting butt off the seat / arching back excessively (cheating)",
+        "faultPl": "Unoszenie pośladków z siedziska / nadmierne wyginanie pleców (oszukiwanie)",
+        "cause": "Weight too heavy — body recruits hip drive and back arch to substitute press strength with momentum, exactly like a sloppy bench press.",
+        "causePl": "Zbyt duży ciężar — ciało rekrutuje napęd biodrami i wygięcie pleców by zastąpić siłę wyciskania momentem pędu, dokładnie jak niechlujne wyciskanie sztangą leżąc.",
+        "cue": "Sit upright, glutes and back glued to the pad. If you cannot keep posture — reduce the load by 10-15%.",
+        "cuePl": "Siedź wyprostowany, pośladki i plecy przyklejone do oparcia. Jeśli nie utrzymujesz postawy — zmniejsz ciężar o 10-15%."
+      },
+      {
+        "fault": "Scapulae protracting at lock-out (shoulders rolling forward)",
+        "faultPl": "Łopatki rozsuwające się w lock-out (barki rolujące do przodu)",
+        "cause": "Trying to extend the range of motion by pushing the shoulders forward — this disengages the chest at peak and dumps load onto the anterior shoulder.",
+        "causePl": "Próba wydłużenia zakresu ruchu przez wypchnięcie barków do przodu — odłącza to klatkę w szczycie i przerzuca obciążenie na przedni akton barku.",
+        "cue": "Keep scapulae pinned to the pad throughout. Lock out with the elbows, NOT by rolling shoulders forward.",
+        "cuePl": "Trzymaj łopatki wbite w oparcie przez cały ruch. Blokuj łokciami, NIE rolowaniem barków do przodu."
+      },
+      {
+        "fault": "Asymmetric press (one arm faster than the other) on independent-arm machines",
+        "faultPl": "Asymetryczny ruch (jedna ręka szybciej niż druga) na maszynach z niezależnymi ramionami",
+        "cause": "On hammer strength / independent-arm machines, the dominant side outpaces the weaker. Visible because each side moves separately — unlike a fixed-bar machine.",
+        "causePl": "Na maszynach hammer strength / z niezależnymi ramionami dominująca strona wyprzedza słabszą. Widoczne bo każda strona porusza się osobno — w przeciwieństwie do maszyny ze stałym drążkiem.",
+        "cue": "Press both handles SYNCHRONOUSLY. If asymmetry persists — add 1-2 unilateral sets on the weaker side, or pause briefly on the dominant arm to let the weaker catch up.",
+        "cuePl": "Wyciskaj oba uchwyty SYNCHRONICZNIE. Jeśli asymetria się utrzymuje — dodaj 1-2 serie jednoręczne na słabszą stronę, lub zatrzymaj na chwilę dominujące ramię by słabsze dogoniło."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (return), brace the core, exhale during the press (concentric).",
+    "breathingPl": "Wdech podczas ekscentryki (powrót), napięcie brzucha, wydech podczas wyciskania (koncentryka)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Verify seat height precisely — handles must align with mid/lower chest, NOT with shoulders. Reduce eccentric range so handles do not pass the chest line. Lever machines are usually BETTER tolerated than free weights because the path is guided and predictable.",
+      "modificationPl": "Dokładnie sprawdź wysokość siedziska — uchwyty muszą być na wysokości środkowej / dolnej klatki, NIE barków. Ogranicz zakres ekscentryki tak by uchwyty nie przechodziły za linię klatki. Maszyny dźwigniowe są zazwyczaj LEPIEJ tolerowane niż wolne ciężary, bo ścieżka jest prowadzona i przewidywalna.",
+      "alternative": "cable-seated-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Even though the path is guided, end-range loading on a fixed trajectory can stress an injured cuff. Complete rehabilitation protocol first; return with very light loads and partial range of motion under supervision.",
+      "modificationPl": "Mimo że ścieżka jest prowadzona, obciążenie w końcowym zakresie na sztywnej trajektorii może obciążać uszkodzony stożek. Najpierw przejdź protokół rehabilitacji; wracaj z bardzo lekkimi ciężarami i częściowym zakresem ruchu pod nadzorem.",
+      "alternative": "cable-seated-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Reduce the load, shorten the lock-out (stop just before full elbow extension), and avoid any peak contraction squeeze. If the machine forces a wide grip — use a narrower-grip machine or switch to dumbbells.",
+      "modificationPl": "Zmniejsz ciężar, skróć lock-out (zatrzymaj się tuż przed pełnym wyprostem łokci) i unikaj peak contraction. Jeśli maszyna wymusza szeroki chwyt — użyj maszyny z węższym chwytem lub przejdź na hantle.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. Verify grip — handle should sit in the base of the palm, not in the fingers. Keep the wrist stacked directly over the forearm throughout the movement. If neutral-grip handles are available, prefer them over pronated.",
+      "modificationPl": "Użyj wraps na nadgarstki. Sprawdź chwyt — uchwyt powinien spoczywać w podstawie dłoni, nie w palcach. Trzymaj nadgarstek bezpośrednio nad przedramieniem przez cały ruch. Jeśli dostępne są uchwyty neutralne, wybierz je zamiast nachwytu.",
+      "alternative": "cable-seated-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hipertrofia — główne zastosowanie) | 3-4x10-15 (volume / pump finisher na koniec dnia klatkowego) | 4-5x6-10 (siła — gdy używany jako główny ruch wyciskający przez początkujących) | 2-3x12-20 z lekkim ciężarem (nauka wzorca / rozgrzewka)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-chest-press.gif",
+    "frames_extracted": [
+      "frames/lever-chest-press/frame_0_start.png",
+      "frames/lever-chest-press/frame_1_early.png",
+      "frames/lever-chest-press/frame_2_mid.png",
+      "frames/lever-chest-press/frame_3_late.png",
+      "frames/lever-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/lever-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T10:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Ćwiczący siedzi WYPROSTOWANY na maszynie dźwigniowej ładowanej talerzami (plate-loaded lever machine), z talerzami widocznymi po obu stronach. Plecy oparte o pionowe oparcie. Frame 0/4 (pozycja startowa): uchwyty na wysokości środkowej / dolnej klatki piersiowej, łokcie zgięte i schowane do tułowia. Frame 2 (lock-out): ramiona całkowicie wyprostowane POZIOMO przed klatką. Trajektoria ruchu = horyzontalna, prowadzona przez maszynę. Wyraźnie podświetlony cały mięsień piersiowy większy (sternal head / mid-chest) jako primary, drugorzędnie przednie aktony barku i triceps. Tułów pionowy i stabilny, bez unoszenia bioder. Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Difficulty 3 (beginner-friendly: prowadzona ścieżka, brak wymagań balansowania, brak asekuracji). primary intensity: pectoralis_major P10, anterior_deltoids P7, triceps P7 zgodnie ze specyfikacją. Plane = transverse (ruch w płaszczyźnie poziomej). Maszyna może być wariantem ze sprzężonymi ramionami lub hammer strength z niezależnymi ramionami — opis obejmuje oba przypadki.",
+
+  "tags": ["upper_body", "horizontal_push", "chest", "mid_chest", "machine", "guided_trajectory", "seated", "hypertrophy_staple", "shoulder_friendly", "beginner_friendly", "no_spotter_needed"]
+}

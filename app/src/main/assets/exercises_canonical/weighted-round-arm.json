@@ -1,0 +1,207 @@
+{
+  "id": "weighted-round-arm",
+  "name": "Weighted Round Arm",
+  "namePl": "Okrążanie ramion z obciążeniem",
+  "aliases": ["plate circles", "weighted arm circles with plate", "plate front circles", "round arm raise with plate", "weighted shoulder circles"],
+  "aliasesPl": ["okrążenia ramion z talerzem", "krążenia ramion z obciążeniem", "krążenia ramion z talerzem", "okrążanie barków z obciążeniem", "krążenia barków z talerzem"],
+
+  "description": "An isolation/mobility exercise for the entire shoulder complex performed with a weight plate held in both hands. From a tall standing position, the lifter holds a plate at chest/shoulder height with arms extended in front of the body, then moves the plate in a continuous circular pattern — driving up, across to one side, down, and back up — drawing wide circles in front of the torso. The movement combines flexion, abduction, adduction and extension of the shoulder into a single fluid loop, hitting all three heads of the deltoid (anterior, lateral, posterior) within a single repetition. Because the arms are extended, the load arm (torque) is long, and even a modest plate (5-15 kg) becomes a serious challenge for the shoulders, upper chest, and core stabilizers. The movement is most often programmed as a shoulder warm-up, a finisher for time-under-tension and burn-out, or in metabolic/conditioning circuits — not as a primary strength lift. It also reinforces scapular control and grip endurance.",
+  "descriptionPl": "Izolowane ćwiczenie mobilizacyjno-wytrzymałościowe na cały kompleks barku, wykonywane z talerzem trzymanym oburącz. Z pozycji stojącej, sylwetka wyprostowana, ćwiczący trzyma talerz na wysokości klatki/barków z wyprostowanymi ramionami przed ciałem, a następnie prowadzi talerz po dużym okręgu — w górę, w bok, w dół i z powrotem — kreśląc szerokie koła przed tułowiem. Ruch łączy zginanie, odwodzenie, przywodzenie i prostowanie w stawie barkowym w jeden płynny obrót, angażując w jednym powtórzeniu wszystkie trzy aktony mięśnia naramiennego (przedni, boczny, tylny). Ponieważ ramiona są wyprostowane, ramię dźwigni (moment obrotowy) jest długie i nawet umiarkowany talerz (5-15 kg) staje się poważnym wyzwaniem dla barków, górnej części klatki piersiowej i stabilizatorów tułowia. Ćwiczenie najczęściej programuje się jako rozgrzewkę barków, finisher na pompę i czas pod napięciem albo element obwodów metabolicznych — nie jako główny ruch siłowy. Dodatkowo wzmacnia kontrolę łopatek i wytrzymałość chwytu.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart, knees soft, ribs down, abs braced, glutes lightly squeezed.",
+    "Hold a weight plate horizontally with both hands gripping the sides (or through the center hole), thumbs up, palms facing each other.",
+    "Extend the arms straight out in front of you at roughly chest/shoulder height, with a very small soft bend in the elbows.",
+    "Set the shoulder blades down and back — do not let the shoulders shrug toward the ears.",
+    "Begin drawing a large circle with the plate: lift it up toward the forehead, then sweep it out to one side and down, then across the front of the body, then back up to start.",
+    "Keep the elbows nearly straight and the plate at arm's length throughout — do not let it drift in toward the chest.",
+    "Move at a controlled tempo (about 2 seconds per circle). Complete the prescribed number of circles in one direction, then reverse.",
+    "Keep the torso perfectly still — only the arms and shoulders move; no swaying, leaning, or hip thrusting.",
+    "Breathe rhythmically — do not hold your breath."
+  ],
+  "instructionsPl": [
+    "Wyprostuj sylwetkę, stopy na szerokość barków, kolana lekko ugięte, żebra w dół, brzuch napięty, pośladki lekko ściśnięte.",
+    "Chwyć talerz oburącz po bokach (lub przez otwór centralny), kciuki w górę, dłonie skierowane do siebie.",
+    "Wyprostuj ramiona przed sobą mniej więcej na wysokości klatki/barków, z bardzo lekkim, miękkim ugięciem łokci.",
+    "Ustaw łopatki w dół i w tył — nie pozwól, by barki wciągnęły się w stronę uszu.",
+    "Zacznij kreślić duży okrąg talerzem: unieś go w stronę czoła, następnie odprowadź w bok i w dół, potem przez front ciała i z powrotem do startu.",
+    "Łokcie pozostają niemal wyprostowane, a talerz na długości ramion przez cały czas — nie pozwól, by zbliżał się do klatki.",
+    "Pracuj w kontrolowanym tempie (około 2 sekundy na pełny okrąg). Wykonaj zadaną liczbę okrążeń w jedną stronę, a potem zmień kierunek.",
+    "Tułów pozostaje idealnie nieruchomy — pracują tylko ramiona i barki; bez bujania, odchylania się ani wybijania bioder.",
+    "Oddychaj rytmicznie — nie wstrzymuj oddechu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_circle",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "posterior_deltoids"],
+    "secondary": ["trapezius_upper", "supraspinatus", "pectoralis_major_clavicular"],
+    "stabilizers": ["rotator_cuff", "core", "serratus_anterior", "trapezius_lower", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P8",
+    "lateral_deltoids": "P8",
+    "posterior_deltoids": "P6",
+    "trapezius_upper": "S5",
+    "supraspinatus": "S4",
+    "pectoralis_major_clavicular": "S4",
+    "rotator_cuff": "T3",
+    "core": "T3",
+    "serratus_anterior": "T3",
+    "trapezius_lower": "T2",
+    "forearm_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["dumbbell", "medicine_ball"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-lateral-raise", "dumbbell-front-raise", "plate-front-raise"],
+    "alternatives": ["arm-circles-bodyweight", "plate-front-raise", "dumbbell-front-raise", "dumbbell-around-the-world"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft, ribs down, brace the core",
+      "Plate held with BOTH hands at the sides — thumbs up, palms facing each other",
+      "Arms extended straight in front, plate at chest/shoulder height",
+      "Shoulder blades down and back — no shrugging",
+      "Start with a LIGHT plate (5-10 kg) — long lever arm makes it harder than it looks"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana miękkie, żebra w dół, napnij brzuch",
+      "Talerz trzymany OBURĄCZ po bokach — kciuki w górę, dłonie do siebie",
+      "Ramiona wyprostowane przed sobą, talerz na wysokości klatki/barków",
+      "Łopatki w dół i w tył — bez wciągniętych barków",
+      "Zacznij od LEKKIEGO talerza (5-10 kg) — długie ramię dźwigni czyni to trudniejszym niż wygląda"
+    ],
+    "execution_cues": [
+      "Draw a big circle in the air — not a small wobble",
+      "Plate stays at arm's length the whole time — do not pull it toward the chest",
+      "Move slow and smooth, 2 seconds per circle — no momentum",
+      "Lock the torso — only the shoulders move",
+      "Reverse direction halfway through the set — both clockwise and counter-clockwise"
+    ],
+    "execution_cues_pl": [
+      "Kreśl duży okrąg w powietrzu — nie małe drganie",
+      "Talerz przez cały czas na długości ramion — nie przyciągaj go do klatki",
+      "Ruch powolny i płynny, 2 sekundy na okrąg — bez rozpędu",
+      "Zablokuj tułów — pracują tylko barki",
+      "W połowie serii zmień kierunek — zarówno zgodnie, jak i przeciwnie do ruchu wskazówek zegara"
+    ],
+    "common_faults": [
+      {
+        "fault": "Plate drifts toward the chest (shortening the lever)",
+        "faultPl": "Talerz zbliża się do klatki piersiowej (skracając ramię dźwigni)",
+        "cause": "Shoulders fatigue and the lifter cheats by bending the elbows to shorten the moment arm",
+        "causePl": "Barki się męczą i ćwiczący oszukuje, zginając łokcie, by skrócić ramię dźwigni",
+        "cue": "Keep the plate as far from your body as you can. If the elbows bend, drop the weight — the long lever IS the exercise.",
+        "cuePl": "Trzymaj talerz tak daleko od ciała, jak potrafisz. Jeśli łokcie się zginają, zmniejsz ciężar — długa dźwignia TO jest sedno ćwiczenia."
+      },
+      {
+        "fault": "Torso swinging / leaning back to help the plate over the top",
+        "faultPl": "Bujanie tułowiem i odchylanie się w tył, by pomóc talerzowi przejść przez górną pozycję",
+        "cause": "Weight too heavy or weak anterior delts at the top of the arc",
+        "causePl": "Zbyt duży ciężar lub słabe przednie aktony naramienne w górnej części łuku",
+        "cue": "Brace abs and glutes — lock the spine. If you still swing, the plate is too heavy.",
+        "cuePl": "Napnij brzuch i pośladki — zablokuj kręgosłup. Jeśli nadal się bujasz, talerz jest zbyt ciężki."
+      },
+      {
+        "fault": "Shrugging the shoulders toward the ears",
+        "faultPl": "Wciąganie barków w kierunku uszu",
+        "cause": "Upper traps compensate when the deltoids and rotator cuff fatigue",
+        "causePl": "Trapezy górne kompensują, gdy zmęczą się aktony naramienne i stożek rotatorów",
+        "cue": "Press the shoulders away from the ears the whole time. If the traps take over, stop the set.",
+        "cuePl": "Odsuwaj barki od uszu przez cały czas. Jeśli trapezy przejmują pracę, zakończ serię."
+      },
+      {
+        "fault": "Drawing tiny circles instead of full wide circles",
+        "faultPl": "Kreślenie małych okręgów zamiast pełnych szerokich",
+        "cause": "Trying to make the exercise easier or load too heavy to control a wide arc",
+        "causePl": "Próba ułatwienia ćwiczenia lub zbyt duży ciężar, by kontrolować szeroki łuk",
+        "cue": "Make the circles as big as your shoulders allow — wide circles hit all three deltoid heads. Drop the weight if needed.",
+        "cuePl": "Kreśl okręgi tak duże, jak pozwalają barki — szerokie koła angażują wszystkie trzy aktony naramienne. Zmniejsz ciężar, jeśli trzeba."
+      },
+      {
+        "fault": "Holding the breath / over-bracing through the whole set",
+        "faultPl": "Wstrzymywanie oddechu i nadmierne napinanie przez całą serię",
+        "cause": "Treating this like a heavy lift instead of a continuous endurance/mobility movement",
+        "causePl": "Traktowanie tego jak ciężkiego boju zamiast ciągłego ruchu wytrzymałościowo-mobilizacyjnego",
+        "cue": "Breathe in rhythm with the circles — one breath cycle per circle. The core stays braced, but you keep breathing.",
+        "cuePl": "Oddychaj w rytm okrążeń — jeden cykl oddechowy na okrąg. Brzuch napięty, ale oddychaj normalnie."
+      }
+    ],
+    "breathing": "Breathe rhythmically and continuously — about one full breath cycle per circle. Do not hold your breath; the set is long and uninterrupted.",
+    "breathingPl": "Oddychaj rytmicznie i ciągle — około jeden pełny cykl oddechowy na każdy okrąg. Nie wstrzymuj oddechu; seria jest długa i nieprzerwana."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce the size of the circles — keep the plate below shoulder height and avoid the very top of the arc, which compresses the subacromial space. Use a much lighter plate (3-5 kg).",
+      "modificationPl": "Zmniejsz rozmiar okręgów — utrzymuj talerz poniżej wysokości barków i unikaj samej góry łuku, która ściska przestrzeń pod wyrostkiem barkowym. Używaj znacznie lżejszego talerza (3-5 kg).",
+      "alternative": "arm-circles-bodyweight"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy",
+      "severity": "caution",
+      "modification": "The rotator cuff works constantly to stabilize during the circular path. Avoid this exercise during acute flare-ups; in recovery phases use only bodyweight or very light plates and small circles.",
+      "modificationPl": "Stożek rotatorów pracuje nieprzerwanie jako stabilizator podczas ruchu okrężnego. Unikaj tego ćwiczenia w fazie zaostrzenia; w fazach rekonwalescencji wykonuj tylko bez obciążenia lub z bardzo lekkim talerzem i małymi kółkami.",
+      "alternative": "arm-circles-bodyweight"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_hernia",
+      "severity": "modify",
+      "modification": "Long-lever shoulder work tempts the lifter to lean back and hyperextend the lumbar spine. Brace hard, or perform seated against an upright back-support to remove the temptation.",
+      "modificationPl": "Praca z długą dźwignią na barkach kusi do odchylania się w tył i hiperekstensji odcinka lędźwiowego. Mocno napnij brzuch lub wykonuj w siadzie z oparciem o pionowe oparcie, by wyeliminować pokusę.",
+      "alternative": "plate-front-raise"
+    },
+    {
+      "condition": "ac_joint_or_post_surgery_shoulder",
+      "severity": "avoid",
+      "modification": "Full circular shoulder loading is too aggressive after AC-joint trauma or recent shoulder surgery. Wait until cleared by a physiotherapist and re-introduce with bodyweight circles before adding any plate.",
+      "modificationPl": "Pełne obciążenie barku ruchem okrężnym jest zbyt agresywne po urazie stawu barkowo-obojczykowego lub niedawnej operacji barku. Poczekaj na zgodę fizjoterapeuty i wracaj najpierw do okrążeń bez obciążenia, zanim dodasz jakikolwiek talerz.",
+      "alternative": "arm-circles-bodyweight"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 circles each direction (warm-up/mobility) | 3x20-30 sec continuous (finisher/burn-out) | 3x30-45 sec (metabolic circuit)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "weighted-round-arm.gif",
+    "frames_extracted": [
+      "frames/weighted-round-arm/frame_0_start.png",
+      "frames/weighted-round-arm/frame_1_early.png",
+      "frames/weighted-round-arm/frame_2_mid.png",
+      "frames/weighted-round-arm/frame_3_late.png",
+      "frames/weighted-round-arm/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/weighted-round-arm"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Postać stoi wyprostowana, trzyma talerz oburącz po bokach (kciuki w górę, dłonie do siebie) z wyprostowanymi ramionami przed ciałem na wysokości klatki/barków. Frame 0 (start): talerz na wysokości barków, podświetlone oba boczne aktony naramienne (delts widoczne na czerwono z obu stron). Frame 1-3 (mid): talerz przesuwa się po łuku — w górnej fazie widoczne wzmocnione podświetlenie przedniego aktonu naramiennego i górnej części klatki piersiowej (włókna obojczykowe); 'ghost' poprzednich pozycji wyraźnie zarysowuje okrąg w powietrzu. Frame 4 (end): powrót do pozycji wyjściowej, talerz wraca na wysokość barków z 'ghostem' szczytowej pozycji widocznym powyżej. Ruch okrężny w płaszczyźnie czołowej angażujący wszystkie trzy aktony naramienne sekwencyjnie. Ramiona pozostają niemal wyprostowane — długie ramię dźwigni czyni to ćwiczenie znacznie trudniejszym, niż wygląda na pierwszy rzut oka. Tułów nieruchomy, łopatki w dół. To bardziej finisher/rozgrzewka/element obwodu niż główny ruch siłowy. Wszystkie pola PL napisane od zera — bez tłumaczenia maszynowego. Mechanic=isolation (jedna płaszczyzna, jedna grupa głównych mięśni), plane=frontal (okrąg odbywa się w płaszczyźnie czołowej przed ciałem), force=both (concentric + eccentric mieszają się w ciągłym ruchu okrężnym), laterality=bilateral (oba ramiona pracują razem na jednym talerzu).",
+
+  "tags": ["bodybuilding", "shoulders", "deltoids", "all_three_heads", "isolation", "mobility", "plate", "free_weight", "upper_body", "finisher", "warm_up", "beginner_friendly", "endurance"]
+}

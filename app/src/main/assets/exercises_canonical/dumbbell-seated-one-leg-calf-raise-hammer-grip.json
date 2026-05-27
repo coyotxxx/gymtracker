@@ -1,0 +1,208 @@
+{
+  "id": "dumbbell-seated-one-leg-calf-raise-hammer-grip",
+  "name": "Dumbbell Seated One-Leg Calf Raise (Hammer Grip)",
+  "namePl": "Calf raise jednonóż w siadzie z hantlą chwytem neutralnym",
+  "aliases": ["single-leg seated dumbbell calf raise neutral grip", "one leg seated calf raise dumbbell hammer", "unilateral seated calf raise dumbbell neutral grip"],
+  "aliasesPl": ["wspięcia na palce jednonóż siedząc z hantlą chwytem młotkowym", "jednostronne wspięcia łydek siedząc z hantlą", "wspięcia siedząc na jednej nodze z hantlą chwytem neutralnym", "soleus raise jednonóż z hantlą hammer grip"],
+
+  "description": "Unilateral seated calf raise where a single dumbbell is held vertically in a neutral (hammer) grip and rested on top of the thigh of the working leg. Because the knee is bent close to 90 degrees, the gastrocnemius (which crosses the knee) is shortened and largely deactivated, shifting the workload almost entirely onto the soleus — the slow-twitch endurance muscle deep beneath it. Performing the movement one leg at a time allows for higher load relative to bodyweight per side, eliminates side-to-side asymmetries, and lets the trainee focus mentally on a single calf at a time. The hammer grip stabilizes the dumbbell vertically and keeps the load centered over the thigh without rolling.",
+  "descriptionPl": "Jednostronne wspięcia na palce w siadzie, gdzie pojedyncza hantla trzymana pionowo chwytem neutralnym (młotkowym) opiera się na udzie pracującej nogi. Ponieważ kolano jest zgięte blisko 90 stopni, mięsień brzuchaty łydki (przechodzący przez kolano) znajduje się w pozycji skróconej i jest w dużej mierze dezaktywowany, co przenosi pracę niemal w całości na mięsień płaszczkowaty (soleus) — wolnokurczliwy mięsień wytrzymałościowy leżący pod nim. Wykonywanie ruchu jednonóż pozwala na większe obciążenie względne na stronę, eliminuje asymetrie lewo-prawo i umożliwia mentalne skupienie się na jednej łydce na raz. Chwyt neutralny stabilizuje hantlę pionowo i utrzymuje obciążenie wycentrowane nad udem bez przetaczania się.",
+
+  "instructions": [
+    "Sit on the edge of a flat bench with your spine tall and feet about hip-width apart.",
+    "Place the ball of the working foot on a small elevated surface (weight plate, block, or low calf block) so the heel can drop below toe level. The other foot rests flat on the floor for balance.",
+    "Pick up a dumbbell and hold it vertically in a neutral (hammer) grip — palm facing your body, dumbbell perpendicular to the floor.",
+    "Place the bottom end of the dumbbell on top of the lower thigh of the working leg, 2-3 cm above the kneecap. Keep your forearm vertical alongside the dumbbell to stabilize it.",
+    "Sit upright with a neutral spine, light core brace, knee of the working leg bent to roughly 90 degrees, shin vertical.",
+    "Allow the heel to drop slowly into a deep stretch under the load of the dumbbell. This is your starting position.",
+    "Drive through the ball of the foot and push the heel up as high as possible, raising the dumbbell with the calf only. Exhale during the lift.",
+    "Squeeze the calf hard at the top for a 1-2 second hold, knee tracking slightly forward.",
+    "Lower the heel under control over 2-3 seconds back into the deep stretch. Inhale on the descent.",
+    "Complete all reps on one side before switching the dumbbell to the other leg. Match reps and tempo on both sides."
+  ],
+  "instructionsPl": [
+    "Usiądź na krawędzi ławki płaskiej z wyprostowanym kręgosłupem, stopy ustawione mniej więcej na szerokość bioder.",
+    "Ustaw śródstopie pracującej nogi na małym podwyższeniu (krążek obciążeniowy, klocek lub niski calf block) tak, aby pięta mogła opaść poniżej poziomu palców. Druga stopa stoi płasko na podłodze dla równowagi.",
+    "Chwyć hantlę i trzymaj ją pionowo chwytem neutralnym (młotkowym) — dłoń skierowana w stronę ciała, hantla prostopadle do podłogi.",
+    "Połóż dolny koniec hantli na dolnej części uda pracującej nogi, 2-3 cm nad rzepką. Utrzymuj przedramię pionowo wzdłuż hantli, aby ją stabilizować.",
+    "Usiądź wyprostowany z neutralnym kręgosłupem, lekkie napięcie brzucha, kolano pracującej nogi zgięte pod kątem około 90 stopni, goleń pionowo.",
+    "Pozwól pięcie powoli opaść w głęboki rozciąg pod obciążeniem hantli. To pozycja wyjściowa.",
+    "Pchnij przez śródstopie i wypchnij piętę w górę tak wysoko, jak to możliwe, unosząc hantlę wyłącznie pracą łydki. Wydech podczas unoszenia.",
+    "Mocno spinaj łydkę w górnej pozycji przez 1-2 sekundy, kolano lekko skierowane do przodu.",
+    "Opuszczaj piętę w sposób kontrolowany przez 2-3 sekundy z powrotem do głębokiego rozciągu. Wdech podczas opuszczania.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, zanim przełożysz hantlę na drugą nogę. Wyrównaj liczbę powtórzeń i tempo po obu stronach."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_calf",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["soleus"],
+    "secondary": ["gastrocnemius"],
+    "stabilizers": ["tibialis_posterior", "peroneals", "foot_intrinsics", "forearm_flexors", "quadriceps", "core"]
+  },
+
+  "muscle_intensity": {
+    "soleus": "P10",
+    "gastrocnemius": "S3",
+    "tibialis_posterior": "T3",
+    "peroneals": "T3",
+    "foot_intrinsics": "T3",
+    "forearm_flexors": "T3",
+    "quadriceps": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["weight_plate", "calf_block", "towel", "elevated_block"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-calf-raise", "dumbbell-seated-calf-raise"],
+    "progression_to": ["machine-seated-calf-raise", "barbell-seated-calf-raise", "single-leg-donkey-calf-raise"],
+    "alternatives": ["dumbbell-seated-calf-raise", "machine-seated-calf-raise", "smith-machine-seated-calf-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall on the bench edge, neutral spine, light core brace",
+      "Ball of working foot on a 5-10 cm block, heel free to drop below",
+      "Knee of the working leg bent to 90 degrees, shin vertical",
+      "Dumbbell held vertically in a hammer grip, palm facing your body",
+      "Bottom end of dumbbell rests on lower thigh 2-3 cm above kneecap"
+    ],
+    "setup_cues_pl": [
+      "Usiądź wyprostowany na krawędzi ławki, neutralny kręgosłup, lekkie napięcie brzucha",
+      "Śródstopie pracującej nogi na klocku 5-10 cm, pięta swobodna do opadania poniżej",
+      "Kolano pracującej nogi zgięte pod 90 stopni, goleń pionowo",
+      "Hantla trzymana pionowo chwytem neutralnym, dłoń skierowana do ciała",
+      "Dolny koniec hantli oparty na udzie 2-3 cm nad rzepką"
+    ],
+    "execution_cues": [
+      "Push through the ball of the foot, not the toes",
+      "Drive the heel as high as possible — full plantarflexion",
+      "Hold the top squeeze for 1-2 seconds — feel the soleus burn",
+      "Lower slowly into a deep stretch — feel the calf lengthen",
+      "Forearm stays vertical to keep the dumbbell from tipping"
+    ],
+    "execution_cues_pl": [
+      "Pchaj przez śródstopie, nie przez same palce",
+      "Wypchnij piętę maksymalnie wysoko — pełne zgięcie podeszwowe",
+      "Utrzymaj szczytowy skurcz 1-2 sekundy — poczuj pracę płaszczkowatego",
+      "Opuszczaj wolno w głęboki rozciąg — poczuj wydłużenie łydki",
+      "Przedramię pionowo, aby hantla się nie przechyliła"
+    ],
+    "common_faults": [
+      {
+        "fault": "Partial range of motion (no deep stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak głębokiego rozciągu na dole)",
+        "cause": "Foot placed flat on the floor instead of on an elevated block, or stopping the descent too early under load",
+        "causePl": "Stopa ustawiona płasko na podłodze zamiast na podwyższeniu, lub zatrzymywanie ruchu zbyt wcześnie pod obciążeniem",
+        "cue": "Use a 5-10 cm block under the ball of the foot and let the heel drop fully below toe level on every rep.",
+        "cuePl": "Użyj klocka 5-10 cm pod śródstopiem i pozwól pięcie w pełni opaść poniżej poziomu palców w każdym powtórzeniu."
+      },
+      {
+        "fault": "Dumbbell tipping or rolling on the thigh",
+        "faultPl": "Hantla przechylająca się lub przetaczająca na udzie",
+        "cause": "Forearm not vertical, passive grip, or dumbbell placed too low/high on the thigh — the hammer grip only works when the wrist actively holds it upright",
+        "causePl": "Przedramię nie ustawione pionowo, bierny chwyt, lub hantla położona zbyt nisko/wysoko na udzie — chwyt neutralny działa tylko gdy nadgarstek aktywnie utrzymuje hantlę w pionie",
+        "cue": "Keep the forearm vertical alongside the dumbbell and grip it actively. Position the bottom plate 2-3 cm above the kneecap.",
+        "cuePl": "Utrzymuj przedramię pionowo wzdłuż hantli i trzymaj ją aktywnie. Ustaw dolny krążek 2-3 cm nad rzepką."
+      },
+      {
+        "fault": "Fast bouncing reps using the Achilles stretch reflex",
+        "faultPl": "Szybkie odbijane powtórzenia wykorzystujące odruch rozciągowy ścięgna Achillesa",
+        "cause": "Going too heavy for a single leg, chasing rep count, mistaking tendon rebound for muscular work",
+        "causePl": "Zbyt duży ciężar na jedną nogę, gonienie za liczbą powtórzeń, mylenie odbicia ścięgnistego z pracą mięśniową",
+        "cue": "Pause 1 second at the bottom stretch. If you cannot pause, the dumbbell is too heavy — reduce it.",
+        "cuePl": "Zatrzymaj się 1 sekundę w dolnym rozciągu. Jeśli nie potrafisz wytrzymać pauzy, hantla jest za ciężka — zmniejsz ją."
+      },
+      {
+        "fault": "Knee angle too open (greater than ~110 degrees)",
+        "faultPl": "Zbyt otwarty kąt w kolanie (powyżej około 110 stopni)",
+        "cause": "Bench too high, foot placed too far forward, or sliding off the bench edge — partially recruits gastrocnemius and reduces soleus isolation",
+        "causePl": "Ławka za wysoka, stopa ustawiona zbyt daleko z przodu, lub zsuwanie się z krawędzi ławki — częściowo aktywuje brzuchaty łydki i zmniejsza izolację płaszczkowatego",
+        "cue": "Sit so the shin is vertical and the knee bent close to 90 degrees. The whole point of seated is to isolate soleus.",
+        "cuePl": "Usiądź tak, aby goleń była pionowo, a kolano zgięte blisko 90 stopni. Cała sens wersji siedzącej polega na izolacji płaszczkowatego."
+      },
+      {
+        "fault": "Side-to-side imbalance — stronger leg gets more reps or load",
+        "faultPl": "Asymetria lewo-prawo — silniejsza noga dostaje więcej powtórzeń lub ciężaru",
+        "cause": "Starting with the dominant leg first and pushing to failure, leaving the weaker leg unable to match the volume",
+        "causePl": "Rozpoczynanie od dominującej nogi do upadku, co uniemożliwia słabszej nodze powtórzenie tej samej objętości",
+        "cue": "Start with the weaker leg and cap the stronger leg at the same reps and tempo. This is the main reason to train calves unilaterally.",
+        "cuePl": "Zacznij od słabszej nogi i ogranicz silniejszą do tej samej liczby powtórzeń i tempa. To główny powód, dla którego trenuje się łydki jednonóż."
+      }
+    ],
+    "breathing": "Exhale during the concentric (driving the heel up). Inhale during the eccentric (lowering into the stretch). Maintain a light core brace and tall sitting posture throughout.",
+    "breathingPl": "Wydech w fazie koncentrycznej (wypychanie pięty w górę). Wdech w fazie ekscentrycznej (opuszczanie w rozciąg). Utrzymuj lekkie napięcie brzucha i wyprostowaną pozycję siedzącą przez cały ruch."
+  },
+
+  "contraindications": [
+    {
+      "condition": "achilles_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid heavy loads and deep eccentrics during the irritable phase. Reduce ROM (do not drop the heel below neutral) and emphasize slow controlled tempo with moderate load. Discontinue if pain exceeds 3/10 during or after sets.",
+      "modificationPl": "Unikaj dużych ciężarów i głębokich faz negatywnych w fazie podrażnienia. Ogranicz zakres ruchu (nie opuszczaj pięty poniżej poziomu neutralnego) i postaw na powolne kontrolowane tempo ze średnim obciążeniem. Przerwij jeśli ból przekracza 3/10 w trakcie lub po seriach.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "knee_pain_patellofemoral",
+      "severity": "modify",
+      "modification": "The dumbbell pressing on the lower thigh near the kneecap can aggravate anterior knee pain. Use a towel pad under the dumbbell, position it higher on the thigh, or switch to a machine version that loads the knees from above with a fixed pad.",
+      "modificationPl": "Hantla uciskająca dolną część uda blisko rzepki może nasilać ból przedniej części kolana. Użyj ręcznika jako podkładki pod hantlą, ustaw ją wyżej na udzie lub przejdź na wersję maszynową obciążającą uda z góry przez stałą podkładkę.",
+      "alternative": "machine-seated-calf-raise"
+    },
+    {
+      "condition": "acute_calf_strain_or_tear",
+      "severity": "avoid",
+      "modification": "Do not perform under load during acute phase. Once cleared, return with bodyweight single-leg calf raises and gradually add dumbbell load over weeks, avoiding deep stretch until pain-free.",
+      "modificationPl": "Nie wykonuj pod obciążeniem w fazie ostrej. Po wygojeniu wracaj od wspięć jednonóż z masą własnego ciała i stopniowo dodawaj obciążenie hantlą przez kilka tygodni, unikając głębokiego rozciągu do całkowitego ustąpienia bólu.",
+      "alternative": "bodyweight-calf-raise"
+    },
+    {
+      "condition": "wrist_or_grip_injury",
+      "severity": "modify",
+      "modification": "Holding a heavy dumbbell vertically in a hammer grip requires sustained wrist stabilization and forearm engagement. With wrist pain or grip limitation, use a barbell across both thighs instead, or switch to a seated calf raise machine that removes grip from the equation.",
+      "modificationPl": "Trzymanie ciężkiej hantli pionowo chwytem neutralnym wymaga utrzymywania stabilności nadgarstka i pracy przedramienia. Przy bólu nadgarstka lub ograniczeniu chwytu użyj sztangi w poprzek obu ud, lub przejdź na maszynę do wspięć siedząc, która eliminuje rolę chwytu.",
+      "alternative": "machine-seated-calf-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 per leg (hypertrophy) | 4x8-12 per leg (heavy soleus emphasis) | 2-3x20-30 per leg (endurance/pump)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "dumbbell-seated-one-leg-calf-raise-hammer-grip.gif",
+    "frames_extracted": [
+      "frames/dumbbell-seated-one-leg-calf-raise-hammer-grip/frame_0_start.png",
+      "frames/dumbbell-seated-one-leg-calf-raise-hammer-grip/frame_1_early.png",
+      "frames/dumbbell-seated-one-leg-calf-raise-hammer-grip/frame_2_mid.png",
+      "frames/dumbbell-seated-one-leg-calf-raise-hammer-grip/frame_3_late.png",
+      "frames/dumbbell-seated-one-leg-calf-raise-hammer-grip/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "calves/dumbbell-seated-one-leg-calf-raise-hammer-grip",
+    "yuhonas_id": null,
+    "glowupp_id": null
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe z GIFa jahel (start/mid/end). Frame 0: model siedzi wyprostowany na ławce płaskiej, prawa noga jest pracująca — śródstopie ustawione na krążku obciążeniowym, pięta poniżej poziomu palców, kolano zgięte ~90 stopni, goleń pionowo. Lewa stopa płasko na podłodze dla równowagi. Hantla trzymana PIONOWO chwytem neutralnym (młotkowym, palm facing body) prawą ręką, dolny koniec hantli oparty na dolnej części prawego uda tuż nad rzepką, lewa dłoń przytrzymuje hantlę od góry dla stabilizacji. Prawa łydka podświetlona na czerwono — primary mover. Frame 2: pięta uniesiona w pełnym zgięciu podeszwowym, hantla i udo uniesione o kilka cm, łydka w szczytowym skurczu. Frame 4: powrót do pozycji wyjściowej z piętą opadającą do rozciągu na krążku. Wszystkie cechy ćwiczenia potwierdzone: SEATED (kolano 90°, soleus dominant, gastrocnemius shortened), UNILATERAL (jedna noga pracuje, druga stoi płasko), HAMMER GRIP (hantla pionowo, chwyt neutralny). Klasyfikacja zgodna z biomechaniką: P10 dla soleus, S3 dla gastrocnemius (mniej niż w seated bilateral wersji, bo brak udziału grawitacji na drugą nogę), T3 dla forearm_flexors (utrzymywanie pionowej hantli w hammer grip). Mechanic=isolation, plane=sagittal, force=push, laterality=unilateral, kinetic_chain=open. Wszystkie pola PL napisane od zera. Yuhonas i glowupp nie mają tego ćwiczenia.",
+
+  "tags": ["bodybuilding", "calves", "soleus", "isolation", "dumbbell", "unilateral", "single_leg", "hammer_grip", "neutral_grip", "lower_body", "lower_legs", "seated"]
+}

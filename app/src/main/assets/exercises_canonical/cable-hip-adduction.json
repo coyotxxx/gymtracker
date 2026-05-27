@@ -1,0 +1,202 @@
+{
+  "id": "cable-hip-adduction",
+  "name": "Cable Hip Adduction",
+  "namePl": "Przywodzenie nogi na wyciągu",
+  "aliases": ["standing cable adduction", "cable inner thigh", "cable hip adductor pull"],
+  "aliasesPl": ["przywodzenie nogi stojąc na wyciągu", "przywodzenie uda na wyciągu", "spinanie ud na bramie", "przywodzenie nogi na bramie"],
+
+  "description": "Standing single-leg isolation exercise for the hip adductors performed at a low cable pulley. With an ankle strap attached to the working leg, the lifter stands sideways to the stack and pulls the leg across the body's midline against the cable's resistance. The open-chain, unilateral nature makes it ideal for targeting the inner-thigh muscles, correcting left-right asymmetries, and rehabilitating groin issues with precisely scalable load.",
+  "descriptionPl": "Jednonóż wykonywane stojąco ćwiczenie izolowane na mięśnie przywodziciele biodra, realizowane przy dolnym wyciągu. Z opaską na kostce pracującej nogi ćwiczący stoi bokiem do stosu i przywodzi nogę przez linię środkową ciała przeciwko oporowi linki. Otwarty łańcuch kinetyczny i praca jednostronna sprawiają, że to ćwiczenie idealnie izoluje mięśnie wewnętrznej strony uda, koryguje asymetrie lewa-prawa i pozwala precyzyjnie dawkować obciążenie w rehabilitacji urazów pachwiny.",
+
+  "instructions": [
+    "Attach an ankle strap to the low pulley of a cable machine and fasten it around the ankle of the leg you want to train.",
+    "Stand sideways to the machine so the working leg is closer to the stack. Step out far enough that the cable is taut with the leg in an abducted (away-from-body) starting position.",
+    "Grab the machine frame or a stable handle with one hand for balance. Stand tall, brace your core, soft bend in the standing knee.",
+    "Keep the working leg straight (slight knee softness is fine) with the foot pointing forward. Hips face forward — do not rotate the pelvis.",
+    "Exhale and pull the working leg across the midline of your body, sweeping it in front of the standing leg. Squeeze the inner thigh hard at the end of the motion.",
+    "Pause for one count in the fully adducted position with the working foot past the standing foot.",
+    "Inhale and slowly return the leg to the starting abducted position under control over 2-3 seconds. Do not let the weight stack slam down.",
+    "Complete all reps on one side, then switch the strap to the other ankle and repeat."
+  ],
+  "instructionsPl": [
+    "Zapnij opaskę na kostkę do dolnego bloczka wyciągu i przyczep ją do kostki nogi, którą chcesz trenować.",
+    "Stań bokiem do maszyny tak, by pracująca noga była bliżej stosu. Odsuń się na tyle, by linka była napięta, a noga znajdowała się w pozycji odwiedzionej (z dala od ciała).",
+    "Złap drugą ręką ramę maszyny lub stabilny uchwyt dla równowagi. Stań prosto, napnij brzuch, kolano nogi stojącej delikatnie ugięte.",
+    "Pracującą nogę utrzymuj wyprostowaną (lekkie ugięcie w kolanie jest dopuszczalne) ze stopą skierowaną do przodu. Biodra ustawione frontalnie — nie obracaj miednicy.",
+    "Z wydechem przyciągnij pracującą nogę przez linię środkową ciała, przeprowadzając ją przed nogą stojącą. Mocno spinaj wewnętrzną stronę uda w końcowej fazie ruchu.",
+    "Zatrzymaj się na chwilę w pozycji pełnego przywiedzenia, ze stopą pracującą za stopą nogi stojącej.",
+    "Z wdechem powoli wróć nogą do pozycji wyjściowej (odwiedzionej) — kontroluj ruch przez 2-3 sekundy. Nie pozwól stosowi opaść z hukiem.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie przepnij opaskę na drugą kostkę i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_adduction",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["adductors"],
+    "secondary": ["gracilis", "pectineus"],
+    "stabilizers": ["gluteus_medius", "core", "quadriceps", "obliques", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "adductors": "P10",
+    "gracilis": "S6",
+    "pectineus": "S5",
+    "gluteus_medius": "T4",
+    "core": "T3",
+    "quadriceps": "T2",
+    "obliques": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "ankle_strap"],
+    "optional": ["low_pulley_handle"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["machine-hip-adduction", "copenhagen-plank", "cossack-squat", "sumo-deadlift"],
+    "alternatives": ["machine-hip-adduction", "copenhagen-plank", "side-lying-adduction", "resistance-band-hip-adduction"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand sideways to the stack — working leg closer to the machine",
+      "Step out until the cable is taut at start",
+      "Grip the frame for balance — do not lean on it",
+      "Hips and shoulders square forward",
+      "Soft bend in the standing knee, foot firmly planted"
+    ],
+    "setup_cues_pl": [
+      "Stań bokiem do stosu — pracująca noga bliżej maszyny",
+      "Odsuń się aż linka będzie napięta na starcie",
+      "Trzymaj ramę dla równowagi — nie opieraj się na niej",
+      "Biodra i barki ustawione frontalnie",
+      "Lekkie ugięcie w kolanie nogi stojącej, stopa mocno wbita w podłoże"
+    ],
+    "execution_cues": [
+      "Pull the leg across — sweep past the standing foot",
+      "Squeeze the inner thigh hard at the finish",
+      "Keep the pelvis still — only the leg moves",
+      "Lower slowly — fight the cable for 2-3 seconds",
+      "Toes forward — do not rotate the hip outward"
+    ],
+    "execution_cues_pl": [
+      "Przeciągnij nogę w poprzek — przeprowadź ją za stopę nogi stojącej",
+      "Mocno spinaj wewnętrzną stronę uda w pozycji końcowej",
+      "Miednica nieruchoma — porusza się tylko noga",
+      "Opuszczaj wolno — walcz z linką przez 2-3 sekundy",
+      "Palce skierowane do przodu — nie rotuj biodra na zewnątrz"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating the pelvis to gain range of motion",
+        "faultPl": "Obracanie miednicą żeby zwiększyć zakres ruchu",
+        "cause": "Working weight is too heavy or the lifter chases artificial ROM with hip rotation instead of pure adduction",
+        "causePl": "Zbyt duży ciężar lub próba sztucznego zwiększenia zakresu rotacją biodra zamiast czystego przywiedzenia",
+        "cue": "Lock your belly button forward through the whole rep. If hips twist — reduce weight.",
+        "cuePl": "Pępek skierowany do przodu przez całe powtórzenie. Jeśli biodra się skręcają — zmniejsz ciężar."
+      },
+      {
+        "fault": "Bending the working knee to shorten the lever",
+        "faultPl": "Uginanie kolana pracującej nogi by skrócić dźwignię",
+        "cause": "Adductors fatigue and lifter unconsciously bends the knee to bring weight closer to the hip",
+        "causePl": "Zmęczenie przywodzicieli i nieświadome zginanie kolana, by przybliżyć ciężar do biodra",
+        "cue": "Working leg long and straight — imagine a stick from hip to ankle.",
+        "cuePl": "Pracująca noga długa i wyprostowana — wyobraź sobie kij od biodra do kostki."
+      },
+      {
+        "fault": "Leaning the torso sideways during the pull",
+        "faultPl": "Boczne pochylanie tułowia podczas przyciągania",
+        "cause": "Using lateral trunk flexion to drag the leg across instead of isolating the adductors",
+        "causePl": "Używanie bocznego zgięcia tułowia do przeciągnięcia nogi zamiast izolacji przywodzicieli",
+        "cue": "Tall spine, ribs over hips — only the leg crosses the midline.",
+        "cuePl": "Tułów wyprostowany, żebra nad biodrami — tylko noga przechodzi przez linię środkową."
+      },
+      {
+        "fault": "Letting the weight stack slam down",
+        "faultPl": "Pozwalanie by stos opadał z hukiem",
+        "cause": "Loss of tension on the eccentric — usually too heavy a load or rushing the tempo",
+        "causePl": "Utrata napięcia w fazie ekscentrycznej — zwykle zbyt duży ciężar lub zbyt szybkie tempo",
+        "cue": "Control all the way back — keep tension on the stack until the last rep ends.",
+        "cuePl": "Kontroluj cały powrót — utrzymuj napięcie na stosie aż do końca ostatniego powtórzenia."
+      },
+      {
+        "fault": "Starting position too close to the machine (no stretch)",
+        "faultPl": "Pozycja startowa zbyt blisko maszyny (brak rozciągnięcia)",
+        "cause": "Lifter stands too close so the cable goes slack at the abducted starting position",
+        "causePl": "Ćwiczący stoi za blisko, więc linka luzuje się w pozycji odwiedzionej startowej",
+        "cue": "Step further out — cable should be taut and you should feel a light adductor stretch at start.",
+        "cuePl": "Odsuń się dalej — linka musi być napięta, a w pozycji startowej powinieneś czuć lekkie rozciągnięcie przywodzicieli."
+      }
+    ],
+    "breathing": "Exhale during the adduction (leg moves across the body). Inhale during the eccentric (controlled return). Maintain a light core brace throughout for pelvic stability.",
+    "breathingPl": "Wydech podczas przywodzenia (noga przechodzi przez ciało). Wdech podczas fazy ekscentrycznej (kontrolowany powrót). Utrzymuj lekkie napięcie brzucha przez całą serię dla stabilizacji miednicy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "groin_strain_adductor_strain",
+      "severity": "avoid",
+      "modification": "Acute strain — avoid loaded adduction completely until pain-free. Once healing progresses, reintroduce with isometric squeezes against a ball, then very light cable resistance with limited ROM.",
+      "modificationPl": "Świeże naderwanie — całkowicie unikaj obciążonego przywodzenia do ustąpienia bólu. W miarę gojenia wprowadzaj izometryczne ściskanie piłki, potem bardzo lekki opór na wyciągu z ograniczonym zakresem.",
+      "alternative": "isometric-adductor-squeeze"
+    },
+    {
+      "condition": "hip_impingement_femoroacetabular",
+      "severity": "modify",
+      "modification": "End-range adduction can pinch the joint. Reduce ROM — stop the working leg at midline rather than crossing past it. Use lighter loads and higher reps.",
+      "modificationPl": "Końcowy zakres przywodzenia może uciskać staw. Zmniejsz zakres ruchu — zatrzymuj nogę na linii środkowej zamiast przeprowadzać ją dalej. Używaj lżejszych ciężarów i większej liczby powtórzeń.",
+      "alternative": "side-lying-adduction"
+    },
+    {
+      "condition": "osteitis_pubis",
+      "severity": "avoid",
+      "modification": "Adductor loading directly aggravates pubic symphysis inflammation. Avoid until cleared by a physio. Substitute with non-loaded glute work first.",
+      "modificationPl": "Obciążanie przywodzicieli bezpośrednio drażni zapalenie spojenia łonowego. Unikaj do zgody fizjoterapeuty. Zastąp najpierw nieobciążoną pracą pośladków.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "lower_back_pain_lumbar",
+      "severity": "caution",
+      "modification": "Standing version requires single-leg pelvic stability. If lumbar pain flares, perform seated machine hip adduction instead — it removes the standing-leg balance demand.",
+      "modificationPl": "Wersja stojąca wymaga stabilizacji miednicy na jednej nodze. Jeśli ból lędźwiowy się nasila, wykonuj siedzące przywodzenie na maszynie — eliminuje wymóg balansu na jednej nodze.",
+      "alternative": "machine-hip-adduction"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 per leg (hypertrophy) | 3-4x15-20 per leg (endurance/rehab) | 2x20-25 per leg (warmup/activation)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-hip-adduction.gif",
+    "frames_extracted": [
+      "frames/cable-hip-adduction/frame_0_start.png",
+      "frames/cable-hip-adduction/frame_1_early.png",
+      "frames/cable-hip-adduction/frame_2_mid.png",
+      "frames/cable-hip-adduction/frame_3_late.png",
+      "frames/cable-hip-adduction/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "adductors/cable-hip-adduction"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:30:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0: ćwiczący stoi bokiem do dolnego bloczka wyciągu, lewa noga ma na kostce opaskę połączoną z linką, noga odwiedziona w lewo (od linii środka ciała), prawa noga stojąca, ręka uniesiona dla równowagi, adduktory lewej nogi mocno podświetlone na czerwono. Frame 2: noga w trakcie ruchu przez linię środkową — opaska na kostce przyciągnięta do przodu, adduktory w trakcie skurczu. Frame 4: noga w pełnym przywiedzeniu, stopa pracującej nogi za stopą nogi stojącej, adduktory w maksymalnym skurczu (najjaśniejszy czerwony). Tułów i miednica nieruchome przez cały ruch — modelowa izolacja. Klasyfikacja: hip_adduction (movement_pattern), unilateral (laterality), frontal plane, open chain. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "lower_body", "adductors", "isolation", "cable", "unilateral", "rehab_friendly", "inner_thigh"]
+}

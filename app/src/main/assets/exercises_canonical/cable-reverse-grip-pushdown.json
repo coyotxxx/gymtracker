@@ -1,0 +1,202 @@
+{
+  "id": "cable-reverse-grip-pushdown",
+  "name": "Cable Reverse-Grip Pushdown",
+  "namePl": "Tricep pushdown z wyciągu chwytem podchwytem",
+  "aliases": ["reverse grip tricep pushdown", "underhand tricep pushdown", "supinated cable pushdown", "reverse grip cable extension"],
+  "aliasesPl": ["prostowanie ramion na wyciągu podchwytem", "tricep pushdown podchwytem", "wyciąg górny na triceps podchwytem", "reverse grip pushdown"],
+
+  "description": "Isolation exercise for the triceps performed standing in front of a high cable pulley with a short straight bar held in a supinated (underhand, palms up) grip. The reverse grip shifts emphasis toward the medial head of the triceps brachii and reduces lateral-head dominance compared to the standard overhand pushdown. The constant cable tension keeps the muscle loaded through both the stretched and contracted positions, making it a high-value finisher for arm-day routines.",
+  "descriptionPl": "Ćwiczenie izolowane na triceps wykonywane stojąc przed wyciągiem górnym z krótkim gryfem prostym trzymanym podchwytem (dłonie skierowane w górę, supinacja). Chwyt odwrotny przesuwa akcent na głowę przyśrodkową mięśnia trójgłowego ramienia i ogranicza dominację głowy bocznej w porównaniu ze standardowym pushdownem nachwytem. Stałe napięcie linki utrzymuje mięsień pod obciążeniem zarówno w pozycji rozciągniętej jak i skurczonej, co czyni je doskonałym ćwiczeniem kończącym trening ramion.",
+
+  "instructions": [
+    "Set a cable pulley to the highest position and attach a short straight bar. Select an appropriate weight on the stack.",
+    "Stand facing the machine with feet hip-width apart, knees slightly bent. Grasp the bar with both hands in a supinated (palms-up) grip, hands shoulder-width apart.",
+    "Step back slightly so the cable has light tension. Tuck your elbows tightly into your sides and keep them there for the entire set.",
+    "Brace your core, lift your chest, and lean forward only a few degrees from the hips. The starting position has elbows fully flexed with the bar near upper chest level.",
+    "Push the bar downward by extending your elbows only — your upper arms must remain motionless against your sides. Exhale on the way down.",
+    "Continue until the elbows are fully extended (or just short of lockout) and the triceps are maximally contracted. Squeeze hard for a one-second pause.",
+    "Return the bar to the start under control over 2-3 seconds, allowing the elbows to flex without letting them drift forward. Inhale on the ascent.",
+    "Avoid using torso lean, hip drive, or shoulder extension to assist the lift — strict elbow extension only."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg górny w najwyższej pozycji i zamontuj krótki gryf prosty. Wybierz odpowiedni ciężar na stosie.",
+    "Stań twarzą do maszyny, stopy na szerokość bioder, kolana lekko ugięte. Złap gryf oburącz podchwytem (dłonie skierowane w górę) na szerokość barków.",
+    "Cofnij się lekko, aby linka miała delikatne napięcie. Mocno przyklej łokcie do boków tułowia — mają tam pozostać przez całą serię.",
+    "Napnij brzuch, unieś klatkę piersiową i pochyl się tylko o kilka stopni w biodrach do przodu. Pozycja startowa: łokcie w pełnym zgięciu, gryf na wysokości górnej części klatki piersiowej.",
+    "Wypchnij gryf w dół prostując łokcie — ramiona ponad łokciem muszą pozostać nieruchome przy bokach. Wydychaj w fazie schodzenia.",
+    "Kontynuuj ruch aż łokcie będą w pełnym wyproście (lub tuż przed zablokowaniem stawu) i triceps będzie maksymalnie napięty. Mocno spinaj na sekundę w dolnej pozycji.",
+    "Wracaj gryfem do pozycji startowej w sposób kontrolowany przez 2-3 sekundy, pozwalając łokciom zgiąć się bez ich przesuwania do przodu. Wdech w fazie powrotu.",
+    "Unikaj pomagania pochylaniem tułowia, biodrami czy wyprostem w barku — pracuje wyłącznie wyprost w łokciu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus", "brachialis"],
+    "stabilizers": ["forearm_flexors", "wrist_flexors", "anterior_deltoid", "latissimus_dorsi", "core"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "brachialis": "S3",
+    "forearm_flexors": "T4",
+    "wrist_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "latissimus_dorsi": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar_attachment"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["cable-tricep-pushdown"],
+    "progression_to": ["cable-rope-pushdown", "single-arm-cable-reverse-pushdown", "overhead-cable-tricep-extension"],
+    "alternatives": ["cable-tricep-pushdown", "cable-rope-pushdown", "ez-bar-reverse-grip-pushdown", "dumbbell-tricep-kickback"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Cable pulley at highest position, short straight bar attached",
+      "Feet hip-width, slight forward lean from hips",
+      "Supinated grip shoulder-width, palms up",
+      "Elbows glued to your ribs",
+      "Wrists straight, knuckles facing the ceiling"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg w najwyższej pozycji, krótki gryf prosty zamontowany",
+      "Stopy na szerokość bioder, lekkie pochylenie tułowia w biodrach",
+      "Chwyt podchwytem na szerokość barków, dłonie w górę",
+      "Łokcie przyklejone do żeber",
+      "Nadgarstki proste, kostki dłoni skierowane do sufitu"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay pinned",
+      "Drive the bar down with the triceps, not the shoulders",
+      "Squeeze hard at full elbow extension",
+      "Return slowly — control the cable for 2-3 seconds",
+      "Keep wrists rigid, do not let them curl backward"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Pchaj gryf w dół tricepsem, nie barkiem",
+      "Mocno spinaj w pełnym wyproście łokcia",
+      "Wracaj powoli — kontroluj linkę przez 2-3 sekundy",
+      "Trzymaj nadgarstki sztywno, nie pozwól im zginać się do tyłu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drift forward during the descent",
+        "faultPl": "Łokcie wędrują do przodu podczas opuszczania",
+        "cause": "Load too heavy, recruiting shoulder extension (lat / posterior delt) to assist the triceps",
+        "causePl": "Zbyt duży ciężar, pomaganie wyprostem w stawie ramiennym (najszerszy / tylne aktony barków) zamiast pracą tricepsa",
+        "cue": "Reduce the weight. Imagine your elbows are nailed to your sides — only forearms move.",
+        "cuePl": "Zmniejsz ciężar. Wyobraź sobie że łokcie są przybite do boków — pracują tylko przedramiona."
+      },
+      {
+        "fault": "Leaning the torso forward to push the bar down",
+        "faultPl": "Pochylanie tułowia do przodu aby wepchnąć gryf w dół",
+        "cause": "Using bodyweight as momentum, load exceeds true triceps strength",
+        "causePl": "Wykorzystywanie masy ciała jako rozpędu, ciężar przekracza rzeczywistą siłę tricepsa",
+        "cue": "Stay vertical. Keep ears over hips — if you have to lean, drop the weight.",
+        "cuePl": "Stój pionowo. Uszy nad biodrami — jeśli musisz się pochylać, zmniejsz obciążenie."
+      },
+      {
+        "fault": "Wrists collapsing backward under load",
+        "faultPl": "Nadgarstki załamują się do tyłu pod obciążeniem",
+        "cause": "Weak wrist extensors in supinated position, grip too wide, or excessive weight",
+        "causePl": "Słabe prostowniki nadgarstka w pozycji supinowanej, zbyt szeroki chwyt, lub nadmierne obciążenie",
+        "cue": "Keep knuckles pointing at the ceiling. Squeeze the bar hard to lock the wrists.",
+        "cuePl": "Trzymaj kostki dłoni skierowane do sufitu. Mocno ściskaj gryf, aby ustabilizować nadgarstki."
+      },
+      {
+        "fault": "Partial range of motion (not reaching full elbow extension)",
+        "faultPl": "Niepełny zakres ruchu (brak pełnego wyprostu w łokciach)",
+        "cause": "Ego lifting, weakness in the contracted position, or fatigue late in the set",
+        "causePl": "Ego, słabość w pozycji skurczonej, lub zmęczenie pod koniec serii",
+        "cue": "Push all the way to full lockout and pause for one second every rep.",
+        "cuePl": "Wyprostuj łokcie do końca i zatrzymaj na sekundę przy każdym powtórzeniu."
+      },
+      {
+        "fault": "Letting the bar rise too high at the top, losing tension on the triceps",
+        "faultPl": "Pozwalanie gryfowi unieść się za wysoko w pozycji startowej, utrata napięcia tricepsa",
+        "cause": "Allowing the elbows to over-flex past 90 degrees, transferring load to the biceps and shoulders",
+        "causePl": "Pozwalanie łokciom zgiąć się powyżej 90 stopni, przenoszenie obciążenia na biceps i barki",
+        "cue": "Stop the return when forearms reach parallel to the floor — keep the triceps loaded.",
+        "cuePl": "Zatrzymaj powrót gdy przedramiona dojdą do równoległej do podłogi — utrzymuj napięcie tricepsa."
+      }
+    ],
+    "breathing": "Exhale forcefully during the concentric (pushing the bar down). Inhale during the eccentric (controlled return). Maintain a light core brace throughout to keep the torso stable.",
+    "breathingPl": "Mocny wydech w fazie koncentrycznej (pchanie gryfu w dół). Wdech w fazie ekscentrycznej (kontrolowany powrót). Utrzymuj lekkie napięcie brzucha przez całą serię, aby ustabilizować tułów."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The supinated grip places the long head of the biceps under stretch tension. Switch to a neutral (rope) grip until pain-free; reduce volume and avoid heavy eccentrics.",
+      "modificationPl": "Chwyt podchwytem ustawia długą głowę bicepsa pod napięciem rozciągającym. Przejdź na chwyt neutralny (lina) do czasu ustąpienia bólu; zmniejsz objętość i unikaj ciężkich faz negatywnych.",
+      "alternative": "cable-rope-pushdown"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Underhand grip can aggravate the medial flexor tendons. Use a neutral grip or overhand grip pushdown until symptoms resolve. Lower the load and increase reps to 12-15.",
+      "modificationPl": "Chwyt podchwytem może drażnić przyśrodkowe przyczepy zginaczy. Użyj chwytu neutralnego lub nachwytu do ustąpienia objawów. Zmniejsz obciążenie i zwiększ powtórzenia do 12-15.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "A straight bar in full supination locks the wrists in a stressed position. Use an EZ-bar (angled grip) or rope attachment to allow natural wrist alignment.",
+      "modificationPl": "Sztanga prosta w pełnej supinacji blokuje nadgarstki w obciążającej pozycji. Użyj sztangi łamanej (kąt chwytu) lub liny, aby umożliwić naturalne ustawienie nadgarstków.",
+      "alternative": "cable-rope-pushdown"
+    },
+    {
+      "condition": "olecranon_bursitis_or_elbow_joint_pain",
+      "severity": "caution",
+      "modification": "Avoid hard lockout that compresses the olecranon. Stop just short of full extension and emphasize the squeeze without locking the joint.",
+      "modificationPl": "Unikaj twardego zablokowania łokcia, które uciska wyrostek łokciowy. Zatrzymuj tuż przed pełnym wyprostem i akcentuj napięcie bez blokowania stawu.",
+      "alternative": "dumbbell-tricep-kickback"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x8-10 (strength) | 2-3x15-20 (pump/finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-reverse-grip-pushdown.gif",
+    "frames_extracted": [
+      "frames/cable-reverse-grip-pushdown/frame_0_start.png",
+      "frames/cable-reverse-grip-pushdown/frame_1_early.png",
+      "frames/cable-reverse-grip-pushdown/frame_2_mid.png",
+      "frames/cable-reverse-grip-pushdown/frame_3_late.png",
+      "frames/cable-reverse-grip-pushdown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-reverse-grip-pushdown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja startowa — atleta stoi twarzą do wyciągu górnego, krótki gryf prosty trzymany podchwytem (dłonie skierowane w górę, palms-up — supinacja jednoznacznie widoczna), łokcie zgięte i przyklejone do boków tułowia, gryf na wysokości górnej części klatki piersiowej. Triceps na prawym ramieniu podświetlony na czerwono. Frame 2: identyczna pozycja startowa (powtórny cykl GIFa). Frame 4: pozycja końcowa fazy koncentrycznej — łokcie w pełnym wyproście, gryf nisko przy udach, triceps w maksymalnym skurczu (intensywne czerwone podświetlenie). Łokcie pozostają przy bokach tułowia przez cały ruch — modelowe wykonanie bez kipping. Tułów minimalnie pochylony do przodu, stabilny. Ćwiczenie jednoznacznie zidentyfikowane jako Cable Reverse-Grip Pushdown (chwyt podchwytem = reverse/underhand grip). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "upper_body", "reverse_grip", "medial_head", "finisher"]
+}

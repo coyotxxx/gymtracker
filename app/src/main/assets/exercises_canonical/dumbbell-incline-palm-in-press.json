@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-incline-palm-in-press",
+  "name": "Dumbbell Incline Palm-In Press",
+  "namePl": "Wyciskanie hantli na ławce skośnej chwytem palms-in",
+  "aliases": ["incline neutral grip dumbbell press", "incline hammer press", "incline DB neutral press", "palms-in incline DB press"],
+  "aliasesPl": ["wyciskanie hantli skos chwytem neutralnym", "incline hammer press z hantlami", "wyciskanie hantli skos dłonie do siebie", "skośne wyciskanie hantli chwytem młotkowym"],
+
+  "description": "Incline pressing variation with palms facing each other (neutral / palm-in grip), targeting the clavicular head of the pectoralis major. The neutral grip externally rotates the humerus less than a pronated grip, tucking the elbows closer to the torso — significantly more shoulder-friendly. Identical movement pattern to the incline hammer press. Excellent option for trainees with shoulder impingement, AC joint issues, or anyone who wants to load the upper chest without the joint stress of barbell incline.",
+  "descriptionPl": "Wariant wyciskania na ławce skośnej z dłońmi zwróconymi do siebie (chwyt neutralny / palms-in), celujący w obojczykową głowę mięśnia piersiowego większego. Chwyt neutralny mniej rotuje kość ramienną na zewnątrz niż chwyt pronowany, naturalnie ściąga łokcie bliżej tułowia — zdecydowanie przyjaźniejszy dla barków. Identyczny wzorzec ruchu jak incline hammer press. Doskonała opcja dla osób z impingement barku, problemami z stawem AC lub wszystkich, którzy chcą obciążyć górną klatkę bez stresu stawowego incline ze sztangą.",
+
+  "instructions": [
+    "Set adjustable bench to 30-45° incline. Sit with a dumbbell resting on each thigh, palms facing each other (neutral grip).",
+    "Lie back, kicking the dumbbells up so they end at shoulder/upper chest level, dumbbells parallel (palms still facing each other).",
+    "Plant feet firmly on the floor, slight arch in lower back, glutes on bench. Retract and depress the shoulder blades.",
+    "Press the dumbbells straight up so they finish over the upper chest, ends of dumbbells nearly touching at the top — arms extended but elbows NOT locked.",
+    "Inhale, brace the core, and lower the dumbbells in a controlled arc back down to upper-chest level. Elbows track at ~30-45° from torso (closer than pronated grip).",
+    "Feel the stretch in the upper chest at the bottom. Do NOT bounce dumbbells off the chest.",
+    "Press the dumbbells back up along the same path, keeping the neutral grip throughout. Exhale on the way up.",
+    "Maintain shoulder blade retraction throughout the set. To finish: bring dumbbells to chest, sit forward and place on thighs."
+  ],
+  "instructionsPl": [
+    "Ustaw regulowaną ławkę pod kątem 30-45°. Usiądź z hantlami opartymi o uda, dłonie zwrócone do siebie (chwyt neutralny).",
+    "Połóż się, wybijając hantle udami do wysokości barków/górnej klatki, hantle równolegle (dłonie nadal do siebie).",
+    "Stopy mocno na podłodze, lekki łuk w dolnych plecach, pośladki na ławce. Ściągnij łopatki w dół i razem.",
+    "Wyciśnij hantle prosto w górę aż znajdą się nad górną klatką, końce hantli prawie się stykają na szczycie — ramiona wyprostowane, ale łokcie BEZ sztywnego lock-out.",
+    "Wdech, napięcie brzucha, opuszczaj hantle kontrolowanym łukiem z powrotem do poziomu górnej klatki. Łokcie pod kątem ~30-45° od tułowia (bliżej niż przy chwycie pronowanym).",
+    "Poczuj rozciągnięcie górnej klatki na dole. NIE odbijaj hantli od klatki.",
+    "Wyciśnij hantle z powrotem tą samą ścieżką, utrzymując chwyt neutralny przez cały ruch. Wydech podczas wyciskania.",
+    "Utrzymuj ściągnięte łopatki przez cały set. Zakończenie: ściągnij hantle do klatki, pochyl się do przodu i odłóż hantle na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "pectoralis_major_sternal"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "pectoralis_major_sternal": "S5",
+    "serratus_anterior": "S4",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-bench-press", "push-up"],
+    "progression_to": ["incline-dumbbell-bench-press", "incline-barbell-bench-press", "single-arm-incline-dumbbell-press"],
+    "alternatives": ["incline-dumbbell-bench-press", "incline-hammer-press", "machine-incline-chest-press", "low-cable-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Adjust bench to 30-45° — steeper angle shifts work to front delts",
+      "Sit on bench, dumbbells on thighs, palms facing each other",
+      "Lie back kicking dumbbells up, end at shoulder/upper-chest height",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Feet planted, slight arch, neutral grip locked in"
+    ],
+    "setup_cues_pl": [
+      "Ustaw ławkę na 30-45° — większy kąt przesuwa pracę na przednie delty",
+      "Usiądź na ławce, hantle na udach, dłonie zwrócone do siebie",
+      "Połóż się wybijając hantle, skończ na wysokości barków/górnej klatki",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Stopy zaparte, lekki łuk, chwyt neutralny ustalony"
+    ],
+    "execution_cues": [
+      "Press straight up over upper chest — dumbbells end close together",
+      "Keep neutral grip the ENTIRE rep — don't rotate to pronated",
+      "Elbows tracked at ~30-45° from torso, not flared",
+      "Eccentric 2-3 seconds — feel the upper chest stretch",
+      "Press up and slightly inward, no clanging at the top"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę nad górną klatkę — hantle kończą blisko siebie",
+      "Utrzymuj chwyt neutralny PRZEZ CAŁY ruch — nie obracaj na pronowany",
+      "Łokcie pod kątem ~30-45° od tułowia, nie rozsunięte",
+      "Faza ekscentryczna 2-3 sekundy — poczuj rozciągnięcie górnej klatki",
+      "Wyciskaj w górę i lekko do środka, bez stukania na szczycie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip rotates from neutral to pronated mid-rep",
+        "faultPl": "Chwyt rotuje z neutralnego do pronowanego w trakcie powtórzenia",
+        "cause": "Habit from regular DB press, weak wrist control, ego load",
+        "causePl": "Nawyk z klasycznego DB press, słaba kontrola nadgarstków, ego load",
+        "cue": "Lock in neutral grip — dumbbell handles stay parallel to torso start to finish. If you can't, lower the weight.",
+        "cuePl": "Utrzymuj chwyt neutralny — rękojeści hantli równolegle do tułowia od początku do końca. Jeśli nie potrafisz — zmniejsz ciężar."
+      },
+      {
+        "fault": "Bench set too steep (60°+) — turns into shoulder press",
+        "faultPl": "Ławka pod zbyt dużym kątem (60°+) — zamienia się w wyciskanie barków",
+        "cause": "Belief that 'steeper = more upper chest', misreading of biomechanics",
+        "causePl": "Przekonanie 'więcej skosu = więcej górnej klatki', błędne zrozumienie biomechaniki",
+        "cue": "30-45° optimal for upper chest. Above 60° anterior deltoid dominates and upper chest tension drops.",
+        "cuePl": "30-45° optymalne dla górnej klatki. Powyżej 60° dominuje przedni delt i napięcie górnej klatki spada."
+      },
+      {
+        "fault": "Elbows still flared to 90° despite neutral grip",
+        "faultPl": "Łokcie nadal rozsunięte na 90° mimo chwytu neutralnego",
+        "cause": "Forcing the dumbbells out instead of letting the grip dictate elbow path",
+        "causePl": "Wymuszanie hantli na zewnątrz zamiast pozwolić chwytowi prowadzić ścieżkę łokci",
+        "cue": "Neutral grip naturally tucks elbows to ~30-45°. Don't fight it — let the grip do its work.",
+        "cuePl": "Chwyt neutralny naturalnie ściąga łokcie do ~30-45°. Nie walcz z tym — pozwól chwytowi zrobić swoje."
+      },
+      {
+        "fault": "Insufficient ROM — stopping above upper chest",
+        "faultPl": "Za mały zakres ruchu — zatrzymanie hantli powyżej górnej klatki",
+        "cause": "Fear of stretch on shoulder, weight too heavy, ego",
+        "causePl": "Strach przed rozciągnięciem na barku, zbyt ciężki ciężar, ego",
+        "cue": "Lower dumbbells until they touch upper chest level. Neutral grip is shoulder-friendly — use the full ROM advantage.",
+        "cuePl": "Opuszczaj hantle aż dotkną poziomu górnej klatki. Chwyt neutralny jest przyjazny dla barku — wykorzystaj pełny ROM."
+      },
+      {
+        "fault": "Lower back arches excessively to convert to flat bench",
+        "faultPl": "Dolne plecy nadmiernie wygięte — zamiana skosu na ławkę poziomą",
+        "cause": "Ego with weight too heavy, lifting hips off bench, recruiting sternal pec",
+        "causePl": "Ego z zbyt ciężkim ciężarem, odrywanie bioder od ławki, rekrutacja dolnej klatki",
+        "cue": "Glutes glued to bench. Slight natural arch, NOT exaggerated. If you need to lift hips, reduce weight.",
+        "cuePl": "Pośladki przyklejone do ławki. Lekki naturalny łuk, NIE przesadzony. Jeśli musisz odrywać biodra — zmniejsz ciężar."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale forcefully on the press up.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Energiczny wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Palm-in grip is ALREADY the modification for impingement vs pronated incline. Reduce ROM if pain at bottom; keep angle at 30° not steeper.",
+      "modificationPl": "Chwyt palm-in JUŻ JEST modyfikacją dla impingement vs incline pronowany. Zmniejsz ROM jeśli ból na dole; trzymaj kąt 30°, nie większy.",
+      "alternative": "machine-incline-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Even neutral grip incline destabilizes a torn cuff. Switch to fixed-path machine until cleared by physio.",
+      "modificationPl": "Nawet incline z chwytem neutralnym destabilizuje naderwany rotator cuff. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-incline-chest-press"
+    },
+    {
+      "condition": "ac_joint_irritation",
+      "severity": "modify",
+      "modification": "Stop the press slightly before lockout — final 10° of extension often irritates the AC joint. Or shorten ROM at the bottom too.",
+      "modificationPl": "Zatrzymaj wyciskanie nieco przed lock-outem — ostatnie 10° wyprostu często drażni staw AC. Lub skróć ROM także na dole.",
+      "alternative": "low-cable-fly"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Incline pressing places the clavicular fibers in a stretched position under load — bad for a strained pec. Resume with light machine work first.",
+      "modificationPl": "Wyciskanie skosu stawia włókna obojczykowe w pozycji rozciągniętej pod obciążeniem — złe dla naderwanej klatki. Wróć przez lekkie maszyny.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-incline-palm-in-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-palm-in-press/frame_0_start.png",
+      "frames/dumbbell-incline-palm-in-press/frame_1_early.png",
+      "frames/dumbbell-incline-palm-in-press/frame_2_mid.png",
+      "frames/dumbbell-incline-palm-in-press/frame_3_late.png",
+      "frames/dumbbell-incline-palm-in-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-incline-palm-in-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): incline bench ~30-45°, hantle na poziomie górnej klatki, chwyt neutralny (dłonie zwrócone do siebie, rękojeści hantli równoległe do tułowia), łokcie zgięte i ściągnięte bliżej tułowia (mniej rozsunięte niż przy chwycie pronowanym). Frame 2 (góra): pełne wyciśnięcie, hantle nad górną klatką, końce hantli blisko siebie, ramiona wyprostowane bez sztywnego lock-out, dłonie nadal zwrócone do siebie. Frame 4 (powrót w dół z motion blur): kontrolowane opuszczanie, chwyt neutralny utrzymany. Anatomia podświetla obojczykową głowę pectoralis major (górna klatka), przednie delty, tricepsy oraz serratus anterior — zgodne z biomechaniką incline palm-in press. Wzorzec identyczny z incline hammer press. PL nazwa zachowuje termin 'palms-in' jako rozpoznawalny w polskiej społeczności fitness, alternatywa 'chwyt neutralny' / 'hammer'. Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "upper_chest", "dumbbell", "chest", "shoulder_friendly", "neutral_grip", "incline", "joint_friendly"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-rear-delt-raise",
+  "name": "Dumbbell Rear Delt Raise",
+  "namePl": "Wznosy tylnego aktonu z hantlami (rear delt raise)",
+  "aliases": ["standing dumbbell rear delt raise", "dumbbell high pull to rear delt", "standing rear delt high pull with dumbbells", "dumbbell rear lateral raise (standing)"],
+  "aliasesPl": ["wznosy na tylne aktony z hantlami stojąc", "high pull na tylne aktony z hantlami", "wznosy tylnych aktonów stojąc", "dumbbell rear delt raise stojąc"],
+
+  "description": "Standing isolation movement for the posterior deltoids performed with dumbbells held at the hips. Instead of a bent-over fly, the lifter stays upright and drives the elbows up and slightly back in a high-elbow pull until the upper arms reach roughly shoulder height. The cue 'lead with the elbows' shifts load from the upper traps and biceps to the rear delts and mid-back. It is a low-fatigue accessory exercise excellent for high-rep rear-delt finishers.",
+  "descriptionPl": "Stojąca izolacja na tylne aktony barków wykonywana z hantlami trzymanymi przy biodrach. Zamiast rozpiętek w opadzie, ćwiczący pozostaje wyprostowany i prowadzi łokciami w górę i lekko w tył w stylu high pull, aż ramiona ponad łokciem dotrą do wysokości barków. Cue 'prowadź łokciami' przenosi pracę z trapezów górnych i bicepsa na tylne aktony i mięśnie środka pleców. Niskoobciążeniowe ćwiczenie pomocnicze, świetne jako finisher na tylne aktony w wysokim zakresie powtórzeń.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, knees slightly soft.",
+    "Hold a dumbbell in each hand with a pronated grip (palms facing the thighs), arms hanging at the sides.",
+    "Brace the core, set the chest tall, and pull the shoulder blades back and down.",
+    "Keeping the torso upright (do not lean back), drive the elbows up and slightly out to the sides — the dumbbells track up close to the body roughly along the front of the ribs.",
+    "Continue lifting until the elbows reach approximately shoulder height; the upper arms should be horizontal and the dumbbells stay below the elbows.",
+    "Pause at the top and feel the squeeze in the rear delts and mid-traps — do not shrug.",
+    "Lower the dumbbells under control over 2-3 seconds back to the hips, maintaining the proud chest and pulled-back shoulders.",
+    "Repeat for the prescribed reps. Keep movement strict — no rocking, no swing."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, kolana lekko ugięte.",
+    "Trzymaj hantle chwytem pronowanym (dłonie zwrócone do ud), ramiona zwisają wzdłuż tułowia.",
+    "Napnij brzuch, wyciągnij klatkę w górę i ściągnij łopatki w tył i w dół.",
+    "Utrzymując tułów w pionie (nie odchylaj się do tyłu), prowadź łokciami w górę i lekko na boki — hantle wędrują blisko ciała mniej więcej wzdłuż przedniej części żeber.",
+    "Unoś dopóki łokcie nie znajdą się na wysokości barków; ramiona ponad łokciem powinny być poziome, a hantle zostają poniżej łokci.",
+    "Zatrzymaj się w górnej pozycji i poczuj spięcie w tylnych aktonach i środkowej części czworobocznych — nie wciągaj barków do uszu.",
+    "Opuszczaj hantle pod kontrolą przez 2-3 sekundy z powrotem do bioder, utrzymując 'dumną klatkę' i ściągnięte łopatki.",
+    "Powtarzaj zalecaną liczbę powtórzeń. Ruch powinien być ścisły — bez bujania i zamachu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoids"],
+    "secondary": ["trapezius_middle", "rhomboids", "infraspinatus", "teres_minor"],
+    "stabilizers": ["trapezius_upper", "trapezius_lower", "forearm_flexors", "erector_spinae", "core"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoids": "P9",
+    "trapezius_middle": "S6",
+    "rhomboids": "S6",
+    "infraspinatus": "S5",
+    "teres_minor": "S4",
+    "trapezius_upper": "T3",
+    "trapezius_lower": "T3",
+    "forearm_flexors": "T3",
+    "erector_spinae": "T2",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-lateral-raise"],
+    "progression_to": ["dumbbell-rear-fly", "bent-over-dumbbell-rear-delt-row", "reverse-pec-deck"],
+    "alternatives": ["dumbbell-rear-fly", "face-pull", "cable-rear-delt-fly", "bent-over-dumbbell-reverse-fly", "reverse-pec-deck"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft, weight balanced on whole foot",
+      "Dumbbells in pronated grip, resting against the thighs",
+      "Chest tall, shoulder blades pulled back and down",
+      "Core braced — ribs stacked over pelvis, no lower-back arch",
+      "Eyes forward, neck neutral — do not crane up or look down"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte, ciężar rozłożony na całej stopie",
+      "Hantle chwytem pronowanym, oparte o uda",
+      "Klatka wyciągnięta w górę, łopatki ściągnięte w tył i w dół",
+      "Brzuch napięty — żebra ustawione nad miednicą, bez nadmiernego wygięcia w lędźwiach",
+      "Wzrok przed siebie, kark w przedłużeniu kręgosłupa — nie zadzieraj brody, nie patrz w dół"
+    ],
+    "execution_cues": [
+      "Lead with the elbows — point them up and out, not back",
+      "Think 'lift the elbows, leave the hands' — hands stay below the elbows",
+      "Dumbbells slide close to the front of the body",
+      "Stop when elbows reach shoulder height, no higher",
+      "Squeeze the shoulder blades together at the top without shrugging"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciami — kieruj je w górę i na boki, nie do tyłu",
+      "Pomyśl: 'unieś łokcie, zostaw dłonie' — dłonie zostają poniżej łokci",
+      "Hantle suną blisko przedniej części ciała",
+      "Zatrzymaj się gdy łokcie dotrą na wysokość barków, nie wyżej",
+      "Ściągnij łopatki w górnej pozycji bez podciągania barków do uszu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Shrugging — upper traps take over the lift",
+        "faultPl": "Wciąganie barków do uszu — trapezy górne przejmują ruch",
+        "cause": "Load too heavy or poor scapular control; the lifter elevates the shoulder blades instead of driving the elbows",
+        "causePl": "Zbyt duży ciężar lub słaba kontrola łopatek; ćwiczący unosi łopatki zamiast prowadzić łokciami",
+        "cue": "Drop the weight by 30%. Actively push shoulders down and away from ears throughout the entire set.",
+        "cuePl": "Zmniejsz ciężar o 30%. Aktywnie odsuwaj barki w dół, od uszu, przez całą serię."
+      },
+      {
+        "fault": "Leaning back to swing the dumbbells up",
+        "faultPl": "Odchylanie się do tyłu żeby zarzucić hantle w górę",
+        "cause": "Load too heavy, lifter uses hip and lumbar extension to throw the weight",
+        "causePl": "Zbyt duży ciężar, ćwiczący używa wyprostu bioder i lędźwi żeby zarzucić ciężar",
+        "cue": "Lighter dumbbells. Imagine your back is glued to a wall — the chest cannot move forward and the hips cannot tip back.",
+        "cuePl": "Lżejsze hantle. Wyobraź sobie, że plecy są przyklejone do ściany — klatka nie może wyjechać do przodu, a biodra do tyłu."
+      },
+      {
+        "fault": "Pulling with the biceps (hands lift higher than elbows)",
+        "faultPl": "Ciągnięcie bicepsem (dłonie wędrują wyżej niż łokcie)",
+        "cause": "Dominant biceps and weaker rear delts naturally take over; lifter curls the dumbbell toward the chest",
+        "causePl": "Dominujący biceps przejmuje ruch nad słabszym tylnym aktonem; ćwiczący 'podciąga' hantel pod brodę",
+        "cue": "Hands stay BELOW the elbows the entire rep. Wrists relaxed — do not curl.",
+        "cuePl": "Dłonie zostają PONIŻEJ łokci przez całe powtórzenie. Rozluźnij nadgarstki — to nie jest uginanie."
+      },
+      {
+        "fault": "Going too high — elbows above shoulder line",
+        "faultPl": "Unoszenie zbyt wysoko — łokcie powyżej linii barków",
+        "cause": "Trying to get more range, but past horizontal the rotator cuff and AC joint compress and rear delt leverage is lost",
+        "causePl": "Próba uzyskania większego zakresu, ale powyżej poziomu stożek rotatorów i staw AC ulegają kompresji, a tylny akton traci dźwignię",
+        "cue": "Stop when the elbow reaches the height of the shoulder. Beyond that you are just stressing the cuff.",
+        "cuePl": "Zatrzymaj gdy łokieć osiągnie wysokość barku. Powyżej obciążasz tylko stożek rotatorów."
+      },
+      {
+        "fault": "Dropping the weight (no eccentric control)",
+        "faultPl": "Upuszczanie ciężaru (brak kontroli ekscentrycznej)",
+        "cause": "Lifter releases tension after the top and lets gravity drop the dumbbells",
+        "causePl": "Ćwiczący traci napięcie po szczycie i pozwala grawitacji opuścić hantle",
+        "cue": "Count 2-3 seconds on the way down. Half the work of this exercise is in the eccentric phase.",
+        "cuePl": "Licz 2-3 sekundy w dół. Połowa pracy w tym ćwiczeniu to faza ekscentryczna."
+      }
+    ],
+    "breathing": "Exhale on the way up as the elbows rise (concentric). Inhale on the way down (eccentric). Maintain a light brace throughout — do not hold the breath.",
+    "breathingPl": "Wydech podczas unoszenia łokci (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez cały ruch — nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "The internally rotated, high-elbow path can compress the subacromial space. Reduce ROM (stop with elbows at 60-70% of shoulder height), use lighter loads, and prefer a wider elbow path (more lateral, less vertical).",
+      "modificationPl": "Tor ruchu z wewnętrzną rotacją i wysokimi łokciami może kompresować przestrzeń podbarkową. Zmniejsz zakres ruchu (zatrzymuj łokcie na 60-70% wysokości barku), używaj lżejszych ciężarów i prowadź łokcie szerzej (bardziej bokiem, mniej pionowo).",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "The combination of internal rotation + elevation aggravates supraspinatus and infraspinatus. Avoid during acute phase. Switch to cable face pulls or band pull-aparts in the scapular plane.",
+      "modificationPl": "Połączenie wewnętrznej rotacji z elewacją obciąża mięsień nadgrzebieniowy i podgrzebieniowy. Unikaj w fazie ostrej. Przejdź na face pull na wyciągu lub odwodzenia z gumą w płaszczyźnie łopatkowej.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "The AC joint compresses as elbows reach the top. Reduce ROM and avoid touching shoulder line. Stop short of any pain.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji gdy łokcie zbliżają się do szczytu. Zmniejsz zakres ruchu i nie sięgaj do linii barków. Zatrzymuj zakres przed bólem.",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "lumbar_spine_pain_or_disc_issues",
+      "severity": "caution",
+      "modification": "Although less demanding than a bent-over fly, the standing version still loads the spine vertically and tempts the lifter to lean back. Use a cable or seated chest-supported variant if back pain is present.",
+      "modificationPl": "Choć mniej obciążająca niż wersja w opadzie, wariant stojący nadal obciąża kręgosłup pionowo i kusi do odchylania się w tył. Przy bólu pleców użyj wersji z wyciągu lub siedzącej z podparciem klatki.",
+      "alternative": "dumbbell-rear-fly"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy/standard) | 3x15-20 (rear delt finisher/pump) | 2-3x20-30 (high-volume burnout)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-rear-delt-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-rear-delt-raise/frame_0_start.png",
+      "frames/dumbbell-rear-delt-raise/frame_1_early.png",
+      "frames/dumbbell-rear-delt-raise/frame_2_mid.png",
+      "frames/dumbbell-rear-delt-raise/frame_3_late.png",
+      "frames/dumbbell-rear-delt-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-rear-delt-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start/early/mid/late/end). UWAGA — GIF NIE pokazuje klasycznej wersji w opadzie (bent-over) jak sugerowała specyfikacja zadania, lecz wariant STOJĄCY (standing). Frame 0: ćwiczący stoi wyprostowany (NIE w opadzie), stopy na szerokość bioder, hantle wiszą przy biodrach chwytem pronowanym; podświetlone na czerwono tylne aktony, górna część trapezów i przedramiona. Frame 2 (top): hantle uniesione do wysokości żeber/dolnej klatki, łokcie wysoko (mniej więcej na wysokości barków), dłonie poniżej łokci, ramiona ponad łokciem mniej więcej poziome — klasyczny 'high-elbow pull' / wznos prowadzony łokciami. Tułów pozostaje pionowy, BEZ pochylenia. Frame 4: powrót do pozycji wyjściowej. Ruch wykonywany jest bilateralnie i symetrycznie. Zaktualizowałem klasyfikację (plane=transverse — kombinacja transwersalnej abdukcji i elewacji łopatki, NIE frontal jak w czystej rozpiętce) oraz instrukcje pod faktyczny ruch w GIFie. Specyfikacja zadania (bent over ~90°) nie zgadza się z materiałem źródłowym — w razie potrzeby do utworzenia OSOBNE ćwiczenie dla wersji w opadzie (jest już dumbbell-rear-fly który ją pokrywa). Wszystkie pola PL napisane od zera, polski standard fitness.",
+
+  "tags": ["bodybuilding", "shoulders", "rear_delts", "isolation", "dumbbells", "upper_body", "standing", "high_pull", "hypertrophy", "accessory", "rear_delt_specialization"]
+}

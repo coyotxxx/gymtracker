@@ -1,0 +1,201 @@
+{
+  "id": "assisted-triceps-dip-kneeling",
+  "name": "Assisted Triceps Dip (Kneeling)",
+  "namePl": "Dipy klęczące z asekuracją",
+  "aliases": ["assisted dip machine kneeling", "kneeling assisted dip", "machine assisted dip", "counterweight dip"],
+  "aliasesPl": ["dipy na maszynie z asystą", "dipy z asekuracją na kolanach", "dipy z przeciwwagą", "asystowane dipy klęczące", "maszynowe dipy z odciążeniem"],
+
+  "description": "Regression of the standard parallel bar dip performed on an assisted dip/pull-up machine. The lifter kneels on a weighted counterweight pad that supports a portion of bodyweight while the upper body executes a true dip pattern through full range of motion. The selected weight on the stack equals the amount of assistance — heavier plate = more help, lighter plate = less help. Ideal entry point for trainees who cannot yet perform a single bodyweight dip, athletes returning from injury, or anyone learning the dip pattern, scapular control and bottom-position stability before progressing to unassisted dips. Unlike bench dips, this variant trains the exact movement pattern of a real dip with vertical torso and hanging-style support.",
+  "descriptionPl": "Regresja klasycznego dipa na poręczach wykonywana na maszynie do dipów/podciągania z asekuracją. Ćwiczący klęka na obciążonej platformie przeciwwagi, która podpiera część masy ciała, podczas gdy górna połowa ciała wykonuje prawdziwy wzorzec dipa w pełnym zakresie ruchu. Wybrany ciężar na stosie odpowiada wielkości asystencji — większa płytka = więcej pomocy, mniejsza płytka = mniej pomocy. Idealne wejście dla osób, które jeszcze nie potrafią zrobić ani jednego dipa z masą własnego ciała, sportowców wracających po kontuzji oraz wszystkich, którzy uczą się wzorca dipa, kontroli łopatki i stabilności w dolnej pozycji przed przejściem do dipów bez asysty. W przeciwieństwie do dipów na ławce ten wariant trenuje dokładnie ten sam wzorzec ruchowy co prawdziwy dip — pionowy tułów i podpór w zawieszeniu.",
+
+  "instructions": [
+    "Set the assistance weight on the stack. Heavier plate = more help. Start with assistance equal to roughly 50-70% of bodyweight if it's your first time.",
+    "Step up onto the platform and kneel down on the assist pad with both knees, ankles crossed behind you or hooked on the kickplate. Knees centered on the pad.",
+    "Grip the dip handles with a neutral grip (palms facing each other), hands directly under the shoulders.",
+    "Press up into the support position: arms fully locked out, elbows extended, shoulders pulled down away from the ears, chest tall, core braced.",
+    "Pick the torso angle: near-vertical for a triceps-dominant version, lean 15-20° forward for a chest-dominant version. Stay consistent across the set.",
+    "Bend the elbows and lower the body under control over 2-3 seconds. Elbows track back along the ribs, not flared 90° outward to the sides.",
+    "Descend until the upper arms are at least parallel to the floor (shoulders below the level of the elbows) — full ROM, the same as a real dip.",
+    "Brief pause at the bottom without bouncing on the assist pad. Don't let the shoulders roll forward into the handles.",
+    "Press back up by extending the elbows hard and squeezing the triceps. Reach full lockout at the top, shoulders packed down.",
+    "Finish every rep with arms straight and shoulders pulled down. As you get stronger, reduce the assistance weight by one plate at a time."
+  ],
+  "instructionsPl": [
+    "Ustaw ciężar asystencji na stosie. Większa płytka = więcej pomocy. Jeśli to pierwszy raz, zacznij od asysty równej około 50-70% masy ciała.",
+    "Wejdź na platformę i uklęknij na poduszce asysty obiema kolanami, kostki skrzyżuj za sobą lub zahacz o stopkę. Kolana wycentrowane na poduszce.",
+    "Chwyć uchwyty do dipów chwytem neutralnym (dłonie zwrócone do siebie), dłonie dokładnie pod barkami.",
+    "Wepchnij się do pozycji podporu: ręce w pełni zablokowane, łokcie wyprostowane, barki ściągnięte w dół z dala od uszu, klatka wysoko, brzuch napięty.",
+    "Wybierz kąt tułowia: blisko pionu dla wariantu tricepsowego, pochyl się 15-20° do przodu dla wariantu klatkowego. Trzymaj wybrany kąt przez całą serię.",
+    "Zegnij łokcie i schodź kontrolowanie przez 2-3 sekundy. Łokcie sunął wzdłuż żeber w tył, nie rozkładaj ich na 90° na boki.",
+    "Schodź aż ramiona będą co najmniej równoległe do podłogi (barki poniżej poziomu łokci) — pełen zakres, taki sam jak w prawdziwym dipie.",
+    "Krótka pauza na dole bez odbijania się na poduszce asysty. Nie pozwól barkom wjechać do przodu na uchwyty.",
+    "Wepchnij się z powrotem mocno prostując łokcie i ściskając tricepsy. Sięgnij do pełnego wyprostu na górze, barki ściągnięte w dół.",
+    "Każde powtórzenie kończ pełnym wyprostem rąk i barkami ściągniętymi w dół. W miarę nabierania siły zmniejszaj asystencję o jedną płytkę naraz."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "lower_pectoralis"],
+    "secondary": ["anterior_deltoids", "pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "rectus_abdominis", "rhomboids", "lats", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P9",
+    "lower_pectoralis": "P6",
+    "anterior_deltoids": "S6",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "S5",
+    "core": "S4",
+    "rectus_abdominis": "S3",
+    "rhomboids": "T3",
+    "lats": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["assisted_dip_machine"],
+    "optional": ["wrist_wraps", "chalk"]
+  },
+
+  "category": "machine",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bench-dip-on-floor"],
+    "progression_to": ["triceps-dip", "weighted-triceps-dip"],
+    "alternatives": ["bench-dip-on-floor", "machine-dip", "negative-dip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pick assistance so that 8-12 clean reps are challenging — not so easy that the pad does all the work",
+      "Knees centered on the pad — not too far back or you'll lose stability at lockout",
+      "Cross the ankles or hook them on the kickplate so the legs are locked, not dangling",
+      "Lock the arms hard at the top — shoulders packed down, chest tall, before the first rep",
+      "Brace the core like for a heavy squat — the body is one rigid unit on the way down"
+    ],
+    "setup_cues_pl": [
+      "Wybierz asystencję tak, żeby 8-12 czystych powtórzeń było wymagających — nie tak łatwych, że poduszka robi całą robotę",
+      "Kolana wycentrowane na poduszce — nie za daleko z tyłu, bo stracisz stabilność w wyproście",
+      "Skrzyżuj kostki lub zahacz je o stopkę, żeby nogi były zablokowane, nie zwisające",
+      "Mocno zablokuj ręce na górze — barki ściągnięte w dół, klatka wysoko, jeszcze przed pierwszym powtórzeniem",
+      "Napnij brzuch jak do ciężkiego przysiadu — ciało jest jedną sztywną bryłą w drodze w dół"
+    ],
+    "execution_cues": [
+      "Lead with the elbows going back — don't just collapse the chest down",
+      "Lower until shoulders pass below the elbows — same full ROM as a real dip",
+      "Drive the handles down to the floor on the way up, not the body up away from them",
+      "Lock the elbows fully at the top of every rep — no half lockouts even with assistance",
+      "Don't bounce on the assist pad at the bottom — pause briefly to kill momentum"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch łokciami w tył — nie pozwalaj klatce po prostu opaść w dół",
+      "Schodź aż barki znajdą się poniżej łokci — taki sam pełen zakres jak w prawdziwym dipie",
+      "Wciskaj uchwyty w dół do podłogi w drodze do góry, nie wypychaj ciała w górę od nich",
+      "Pełen wyprost łokci na górze w każdym powtórzeniu — bez ćwierć-blokad nawet z asystą",
+      "Nie odbijaj się od poduszki asysty na dole — krótka pauza, żeby zabić rozmach"
+    ],
+    "common_faults": [
+      {
+        "fault": "Partial range of motion (shoulders stay above elbows)",
+        "faultPl": "Częściowy zakres ruchu (barki nie schodzą poniżej łokci)",
+        "cause": "Skipping the bottom half because of weakness or because the assistance is too low. Defeats the whole purpose of using an assisted dip — you'd progress faster building strength through full ROM with more help.",
+        "causePl": "Pomijanie dolnej połowy z powodu braku siły lub zbyt małej asystencji. Niweczy cały sens dipa asystowanego — szybciej zrobisz postępy budując siłę w pełnym zakresie z większą pomocą.",
+        "cue": "Add a plate of assistance and go all the way down — full ROM with more help beats half reps with less. Feel the stretch in the chest and triceps before pressing up.",
+        "cuePl": "Dodaj płytkę asystencji i schodź do końca — pełen zakres z większą pomocą bije półpowtórzenia z mniejszą. Poczuj rozciągnięcie w klatce i tricepsie zanim ruszysz w górę."
+      },
+      {
+        "fault": "Swinging on the assist pad / using momentum from the bounce",
+        "faultPl": "Bujanie się na poduszce asysty / używanie odbicia jako rozmachu",
+        "cause": "Trying to grind out extra reps by bouncing off the assist pad at the bottom. The pad gives a free pop that hides the real strength deficit and trains a sloppy bottom position.",
+        "causePl": "Próba wyciśnięcia dodatkowych powtórzeń przez odbicie się od poduszki asysty na dole. Poduszka daje darmowe wybicie, które ukrywa prawdziwy brak siły i utrwala niechlujną pozycję dolną.",
+        "cue": "Pause 1 second at the bottom on every rep. If the pause forces you to fail, that's where your real strength is — add a plate of assistance.",
+        "cuePl": "Pauza 1 sekunda na dole w każdym powtórzeniu. Jeśli pauza powoduje, że nie dajesz rady, to jest twój prawdziwy poziom siły — dodaj płytkę asystencji."
+      },
+      {
+        "fault": "No full lockout at the top",
+        "faultPl": "Brak pełnego wyprostu na górze",
+        "cause": "Cutting reps short to keep tension or simply being tired. Half-lockouts cheat the triceps of their hardest contraction — the very part you're trying to build.",
+        "causePl": "Skracanie powtórzeń żeby utrzymać napięcie lub po prostu zmęczenie. Półwyprosty okradają tricepsy z ich najtrudniejszego skurczu — dokładnie z tego, co próbujesz zbudować.",
+        "cue": "Push until the elbows are fully straight and the shoulders are packed down. If you can't lock out, you've hit your real rep limit — end the set or add assistance.",
+        "cuePl": "Pchaj aż łokcie będą całkowicie wyprostowane, a barki ściągnięte w dół. Jeśli nie możesz się wyprostować, to twój rzeczywisty limit — zakończ serię lub dodaj asystencji."
+      },
+      {
+        "fault": "Torso leaning forward despite intending a triceps-focused dip",
+        "faultPl": "Tułów pochylony do przodu mimo intencji dipa tricepsowego",
+        "cause": "Drifting into a chest-emphasis lean during a triceps-focused session, usually because the back is rounding and the chest is collapsing. Mixes the training stimulus and reduces triceps work.",
+        "causePl": "Wpadanie w pochylenie klatkowe podczas sesji tricepsowej, zwykle przez okrąglone plecy i zapadającą się klatkę. Miesza bodziec treningowy i zmniejsza pracę tricepsa.",
+        "cue": "Pick the angle before the first rep and lock it in. For triceps focus: chest up, eyes forward, torso near-vertical, elbows tracking straight back along the ribs.",
+        "cuePl": "Wybierz kąt jeszcze przed pierwszym powtórzeniem i go zablokuj. Akcent tricepsowy: klatka wysoko, wzrok przed siebie, tułów blisko pionu, łokcie prowadzone prosto w tył wzdłuż żeber."
+      },
+      {
+        "fault": "Shoulders rolling forward / collapsing at the bottom",
+        "faultPl": "Barki wjeżdżają do przodu / zapadnięcie na dole",
+        "cause": "Weak scapular stabilizers, no active shoulder support. The humerus drifts forward in the socket and irritates the anterior capsule — exactly what the assisted dip should be teaching you to avoid before unloaded dips.",
+        "causePl": "Słabe stabilizatory łopatki, brak aktywnego podporu barku. Głowa kości ramiennej wjeżdża do przodu w panewce i drażni przednią torebkę stawową — dokładnie to, czego dip asystowany powinien cię uczyć unikać przed dipami bez obciążenia.",
+        "cue": "Throughout the rep keep the chest up and shoulders pulled actively down away from the ears. If you can't hold it at depth, add assistance until you can.",
+        "cuePl": "Przez cały ruch trzymaj klatkę wysoko, a barki aktywnie ściągnięte w dół, z dala od uszu. Jeśli nie utrzymasz tego na głębokości, dodaj asystencji aż dasz radę."
+      }
+    ],
+    "breathing": "Inhale at the top and brace the core. Hold the breath through the descent and the hardest part of the press (light Valsalva). Exhale at the top lockout. For high-rep technique sets breathe in cycles between reps at the top.",
+    "breathingPl": "Wdech na górze, brzuch napięty. Wstrzymaj oddech podczas schodzenia i w najtrudniejszej części pchnięcia (lekka Valsalva). Wydech przy pełnym wyproście na górze. Przy seriach techniczych na dużą liczbę powtórzeń oddychaj cyklicznie między powtórzeniami na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Deep dip position can pinch the anterior shoulder capsule. Reduce ROM to pain-free range (shoulders just above elbow level), keep more assistance, and emphasize active scapular depression. Stop if pain appears.",
+      "modificationPl": "Głęboka pozycja dipa może zaciskać przednią torebkę stawową barku. Zmniejsz zakres do bezbolesnego (barki tuż nad poziomem łokci), trzymaj większą asystencję i podkreślaj aktywne ściąganie łopatek w dół. Przerwij przy pojawieniu się bólu.",
+      "alternative": "bench-dip-on-floor"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Full lockout loads the distal triceps tendon even with assistance. Stop short of complete extension (95-98%), use more assistance to keep volume manageable, and prioritize slow eccentric over high reps.",
+      "modificationPl": "Pełen wyprost obciąża dystalne ścięgno tricepsa nawet z asystencją. Zatrzymuj się tuż przed całkowitym wyprostem (95-98%), używaj większej asystencji żeby utrzymać objętość w ryzach i postaw na powolny ekscentryk zamiast wysokich powtórzeń.",
+      "alternative": "machine-dip"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Fixed handles lock the wrist in extension. Use wrist wraps, limit ROM, or switch to a machine dip with seated/chest-supported position that takes most of the wrist load off.",
+      "modificationPl": "Sztywne uchwyty blokują nadgarstek w wyproście. Używaj opasek na nadgarstki, ogranicz zakres lub przejdź na maszynowego dipa w pozycji siedzącej z podparciem klatki, który zdejmuje większość obciążenia z nadgarstków.",
+      "alternative": "machine-dip"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (technique + hypertrophy with progressive de-assistance) | 4x6-10 (strength build-up toward unassisted dip) | 3x12-15 (volume / warmup before weighted dips)",
+
+  "media": {
+    "primary": "assisted-triceps-dip-kneeling.gif",
+    "frames_extracted": [
+      "frames/assisted-triceps-dip-kneeling/frame_0_start.png",
+      "frames/assisted-triceps-dip-kneeling/frame_1_early.png",
+      "frames/assisted-triceps-dip-kneeling/frame_2_mid.png",
+      "frames/assisted-triceps-dip-kneeling/frame_3_late.png",
+      "frames/assisted-triceps-dip-kneeling/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/assisted-triceps-dip-kneeling"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (frame 0/1/2/3/4). Stacja to assisted dip/pull-up machine: pionowa rama z dwoma sztywnymi uchwytami do dipów na szerokość barków, weighted counterweight pad (poduszka przeciwwagi) z tyłu, na której ćwiczący klęczy obiema kolanami. Klatka 0 (start): pełen podpór, ręce wyprostowane, barki ściągnięte, kolana na poduszce asysty, stopy zwisają do tyłu poniżej poduszki, tułów blisko pionu z lekkim pochyleniem ~15-20° do przodu — wariant pośredni między tricepsowym a klatkowym (typowy compromise pokazywany na maszynach asystowanych). Klatki 1-3 (descent + bottom): łokcie zginają się i prowadzą do tyłu wzdłuż żeber (nie rozłożone na boki), ramiona schodzą do równoległej z podłogą i poniżej (barki poniżej łokci) — pełen zakres ruchu identyczny jak w prawdziwym dipie. Anatomicznie podświetlone (czerwone) tricepsy bocznie i przyśrodkowo oraz górna część grzbietu w okolicy łopatki — primary triceps zgodnie z user spec (P9), lower_pec dyskretnie zaangażowany (P6, mniej niż w bodyweight dip bo asysta odciąża i mniejsze pochylenie). Klatka 4 (end): powrót do pełnego wyprostu, sylwetka prawie identyczna jak na klatce 0. GIF konsekwentnie pokazuje pełen ROM dipa — to NIE jest częściowy ruch, to klasyczny dip z odciążeniem przez przeciwwagę pod kolanami. Wszystkie pola PL napisane od zera przez Claude, polska terminologia fitness/siłowni (dipy, asystencja, poduszka przeciwwagi, uchwyty, podpor, knykcie, ekscentryk, Valsalva, ściąganie łopatek), bez tłumaczenia maszynowego. Difficulty 3 (beginner-friendly, pierwsza prawdziwa wersja dipa po bench-dip).",
+
+  "tags": ["machine", "assisted", "counterweight", "upper_body", "push", "triceps_builder", "lower_chest", "beginner", "compound", "dip_progression", "rehab_friendly"]
+}

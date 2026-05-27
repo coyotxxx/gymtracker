@@ -1,0 +1,206 @@
+{
+  "id": "barbell-bench-squat",
+  "name": "Barbell Bench Squat (Box Squat)",
+  "namePl": "Przysiad ze sztangą do ławki (box squat)",
+  "aliases": ["box squat", "barbell box squat", "bench squat", "powerlifting box squat"],
+  "aliasesPl": ["box squat", "przysiad do boxa", "przysiad do ławki", "przysiad z pauzą na ławce"],
+
+  "description": "Powerlifting staple. Back squat performed onto a bench or box set at parallel (or slightly above/below) depth. The box controls depth, adds a pause that kills the stretch-reflex, and forces the lifter to re-explode from a dead stop. Trains explosive concentric strength and bulletproofs the squat groove. Popularised by Westside Barbell for raising raw squat strength and teaching consistent depth.",
+  "descriptionPl": "Klasyk powerliftingu. Przysiad ze sztangą wykonywany na ławce lub boxie ustawionym na wysokości parallel (lub nieco powyżej/poniżej). Ławka kontroluje głębokość, dodaje pauzę przerywającą odruch rozciągowy i wymusza ponowną eksplozję z martwego punktu. Trenuje eksplozywną siłę koncentryczną i utrwala tor ruchu. Spopularyzowany przez Westside Barbell jako sposób na podniesienie surowej siły w przysiadzie i nauczenie powtarzalnej głębokości.",
+
+  "instructions": [
+    "Set a flat bench or box behind you in the rack. Choose a height so your hip crease lands at parallel (or slightly above for beginners, below for advanced) when you sit.",
+    "Set the bar in the rack at upper-chest height. Load the weight on each side and secure with collars.",
+    "Step under the bar, place it across your upper traps (high-bar) or rear delts (low-bar). Grip slightly wider than shoulder-width.",
+    "Unrack the bar by extending your legs. Step back until the bench is directly behind your heels.",
+    "Set your feet shoulder-width or slightly wider, toes turned out 15-30°. Brace your core, chest up, take a big breath and hold (Valsalva).",
+    "Initiate by sitting back hard — push your hips backward as if reaching for the bench with your glutes. Keep your shins more vertical than a regular squat.",
+    "Descend under control. Sit down onto the bench softly — do not crash or rock back. Stay tight, do not relax on the box.",
+    "Pause for 1-2 seconds on the bench. Maintain core brace, upper back tightness and bar position. Do not rock.",
+    "Explode upward by simultaneously driving hips forward and pushing the floor away through the whole foot. Lock out hips and knees at the top.",
+    "Re-set your breath at the top before the next rep."
+  ],
+  "instructionsPl": [
+    "Ustaw płaską ławkę lub box za sobą w stojaku. Dobierz wysokość tak, by linia bioder lądowała na parallel (lub nieco wyżej dla początkujących, niżej dla zaawansowanych) gdy usiądziesz.",
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj ciężar po obu stronach i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów (high-bar) lub na tylnych deltach (low-bar). Chwyt nieco szerzej niż barki.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się tak, by ławka znajdowała się dokładnie za piętami.",
+    "Stopy na szerokość barków lub trochę szerzej, palce na zewnątrz 15-30°. Napnij brzuch, klatka w górze, głęboki wdech i przytrzymaj (Valsalva).",
+    "Rozpocznij ruch agresywnym siadaniem do tyłu — wypchnij biodra do tyłu jakbyś sięgał pośladkami w stronę ławki. Trzymaj golenie bardziej pionowo niż w zwykłym przysiadzie.",
+    "Schodź pod kontrolą. Usiądź na ławce miękko — nie wal pełnym ciężarem ani nie odchylaj się do tyłu. Trzymaj napięcie, nie rozluźniaj się na boxie.",
+    "Zatrzymaj się na 1-2 sekundy na ławce. Utrzymaj napięcie brzucha, ściągnięte łopatki i pozycję gryfu. Nie kołysz się.",
+    "Eksploduj w górę jednocześnie wypychając biodra do przodu i napierając przez całą stopę na podłogę. Zablokuj biodra i kolana na górze.",
+    "Zresetuj oddech na górze przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps"],
+    "secondary": ["hamstrings", "erector_spinae", "adductors"],
+    "stabilizers": ["core", "upper_back", "calves", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "quadriceps": "P9",
+    "hamstrings": "S7",
+    "erector_spinae": "S7",
+    "adductors": "S6",
+    "core": "S6",
+    "upper_back": "S5",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack", "bench"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps", "plyo_box"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "barbell-back-squat"],
+    "progression_to": ["low-box-squat", "pause-back-squat", "pin-squat", "anderson-squat"],
+    "alternatives": ["barbell-back-squat", "pause-back-squat", "barbell-front-squat", "safety-bar-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench/box behind you, set at parallel depth",
+      "Bar tight across upper traps, elbows down",
+      "Feet shoulder-width or wider, toes out 15-30°",
+      "Big breath, brace 360° around the spine",
+      "Heels right in front of the bench"
+    ],
+    "setup_cues_pl": [
+      "Ławka/box za tobą, ustawiona na wysokości parallel",
+      "Sztanga mocno na trapezach, łokcie w dół",
+      "Stopy na szerokość barków lub szerzej, palce na zewnątrz 15-30°",
+      "Głęboki wdech, napięcie 360° wokół kręgosłupa",
+      "Pięty tuż przed ławką"
+    ],
+    "execution_cues": [
+      "Sit BACK first, not down — reach for the bench with your hips",
+      "Keep shins more vertical than a normal squat",
+      "Touch the bench softly — do NOT crash or rock back",
+      "Stay tight on the box, no relaxation, no bouncing",
+      "Explode up: hips forward and floor away simultaneously"
+    ],
+    "execution_cues_pl": [
+      "Siadaj najpierw DO TYŁU, nie w dół — sięgnij biodrami w stronę ławki",
+      "Trzymaj golenie bardziej pionowo niż w zwykłym przysiadzie",
+      "Dotknij ławki miękko — NIE wal i nie odchylaj się do tyłu",
+      "Trzymaj napięcie na boxie, bez rozluźnienia, bez odbijania",
+      "Eksploduj w górę: biodra do przodu i wypchnij podłogę jednocześnie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Crashing onto the bench",
+        "faultPl": "Walenie pełnym ciężarem w ławkę",
+        "cause": "Loss of eccentric control, weight too heavy, or relaxing before contact",
+        "causePl": "Utrata kontroli ekscentrycznej, zbyt duży ciężar, lub rozluźnienie przed kontaktem",
+        "cue": "Lower under control like you are sitting on glass. Stay tight all the way down.",
+        "cuePl": "Schodź pod kontrolą, jakbyś siadał na szkle. Trzymaj napięcie do samego końca."
+      },
+      {
+        "fault": "Rocking back on the bench to gain momentum",
+        "faultPl": "Odchylanie się do tyłu na ławce by zyskać rozpęd",
+        "cause": "Trying to bounce off the box, weak starting strength from a dead stop",
+        "causePl": "Próba odbicia się od boxa, słaba siła startowa z martwego punktu",
+        "cue": "Sit still and tight. Push the floor away — do not rock. The pause is the point of the lift.",
+        "cuePl": "Siedź nieruchomo i napięty. Wypchnij podłogę — nie kołysz się. Pauza to sens tego ćwiczenia."
+      },
+      {
+        "fault": "Knees collapsing inward on the drive up",
+        "faultPl": "Kolana uciekają do środka podczas wstawania",
+        "cause": "Weak glutes, especially gluteus medius; load too heavy",
+        "causePl": "Słabe pośladki, zwłaszcza pośladek średni; zbyt duży ciężar",
+        "cue": "Spread the floor with your feet. Drive knees out toward pinky toes.",
+        "cuePl": "Rozepchnij podłogę stopami. Wypchnij kolana na zewnątrz w stronę małych palców."
+      },
+      {
+        "fault": "Excessive forward lean off the box",
+        "faultPl": "Nadmierne pochylenie do przodu przy starcie z boxa",
+        "cause": "Hips fire before chest rises, weak quads, or bar drifting forward",
+        "causePl": "Biodra startują zanim klatka się podniesie, słabe czworogłowe, lub gryf wędruje do przodu",
+        "cue": "Chest and hips rise together. Do not let your chest dive down.",
+        "cuePl": "Klatka i biodra unoszą się razem. Nie pozwól, by klatka opadła w dół."
+      },
+      {
+        "fault": "Losing core brace on the bench",
+        "faultPl": "Utrata napięcia brzucha na ławce",
+        "cause": "Sitting down causes lifter to relax, especially with longer pauses",
+        "causePl": "Siadanie powoduje rozluźnienie, zwłaszcza przy dłuższych pauzach",
+        "cue": "Re-brace as soon as you touch the box. Air in, belly tight, do not exhale until you finish the rep.",
+        "cuePl": "Ponownie napnij brzuch gdy tylko dotkniesz boxa. Powietrze w środku, brzuch napięty, nie wydychaj aż skończysz powtórzenie."
+      }
+    ],
+    "breathing": "Big breath at the top before descent (Valsalva). Hold through the descent, the pause on the box, and the ascent. Exhale near the top of the rep.",
+    "breathingPl": "Głęboki wdech na górze przed schodzeniem (Valsalva). Wstrzymaj oddech przez schodzenie, pauzę na boxie i wstawanie. Wydech blisko górnej części powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Spinal loading with a paused bottom position is high-stress.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Obciążenie kręgosłupa z pauzą na dole jest bardzo stresujące.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "tailbone_coccyx_injury",
+      "severity": "avoid",
+      "modification": "Sitting on a hard surface with a loaded barbell can directly aggravate coccyx pain. Avoid until healed.",
+      "modificationPl": "Siadanie na twardej powierzchni z załadowaną sztangą może bezpośrednio drażnić kość ogonową. Unikaj do wyleczenia.",
+      "alternative": "pause-back-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Use a higher box (above parallel) to limit knee flexion. Avoid deep boxes until cleared.",
+      "modificationPl": "Użyj wyższego boxa (powyżej parallel) by ograniczyć zgięcie kolana. Unikaj niskich boxów do pełnego wyleczenia.",
+      "alternative": "high-box-squat"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Bar position on traps may aggravate shoulder. Switch to safety squat bar or front-rack box squat.",
+      "modificationPl": "Ułożenie gryfu na trapezach może drażnić bark. Przejdź na safety squat bar lub box squat w przedniej pozycji (front-rack).",
+      "alternative": "safety-bar-box-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x3 (max effort) | 8x3 dynamic effort (Westside) | 4x5 (strength) | 3x6-8 (hypertrophy)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-bench-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-bench-squat/frame_0_start.png",
+      "frames/barbell-bench-squat/frame_1_early.png",
+      "frames/barbell-bench-squat/frame_2_mid.png",
+      "frames/barbell-bench-squat/frame_3_late.png",
+      "frames/barbell-bench-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-bench-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatki 0 i 4 pokazują wyprostowaną pozycję ze sztangą na trapezach (high-bar), ławka tuż za piętami. Klatka 2 potwierdza siad na ławce na wysokości parallel (linia bioder na poziomie szczytu kolan) z gryfem nad środkiem stopy. Klatka 3 pokazuje fazę przejścia z pauzy do eksplozji. Podświetlone mięśnie: czworogłowe i pośladki — pasuje do anatomii box squata (eksplozja z pauzy bardziej angażuje pośladki niż zwykły back squat, stąd primary glutes/quadriceps zamiast quadriceps/glutes jak w back squat). Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego. Specyfika box squata (pauza, brak stretch-reflex, sit-back-not-down, no rocking, Westside) odzwierciedlona w cues i common faults.",
+
+  "tags": ["powerlifting", "westside", "compound", "lower_body", "pause_variation", "explosive_strength", "barbell", "box_squat"]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "band-alternating-biceps-curl",
+  "name": "Band Alternating Biceps Curl",
+  "namePl": "Curl bicepsa z gumą naprzemiennie",
+  "aliases": ["resistance band alternating curl", "alternating band biceps curl", "band alternating arm curl"],
+  "aliasesPl": ["uginanie ramion z gumą naprzemiennie", "naprzemienne uginanie bicepsów z gumą oporową", "curl z gumą stojąc naprzemiennie"],
+
+  "description": "Unilateral alternating biceps curl performed standing on a resistance band, with each hand holding one end of the band. One arm curls to full contraction while the other holds at full extension, then they reverse. The alternating pattern doubles the time-under-tension for each arm (one works concentrically while the other isometrically resists the band's stretch), creates a metabolic pump, and lets you focus on technique one arm at a time. Excellent travel/home alternative to dumbbell curls and a good de-load tool when free weights overload the elbow.",
+  "descriptionPl": "Jednostronne, naprzemienne uginanie bicepsów wykonywane stojąc na gumie oporowej — każda dłoń trzyma jeden uchwyt. Jedno ramię ugina się do pełnego skurczu, podczas gdy drugie utrzymuje pełny wyprost, a następnie role się odwracają. Naprzemienność dwukrotnie wydłuża czas pod napięciem dla każdej ręki (jedna pracuje koncentrycznie, druga izometrycznie opierając się rozciągniętej gumie), generuje silną pompę metaboliczną i pozwala skupić się na technice jednej ręki na raz. Świetna alternatywa dla curli z hantlami w warunkach domowych lub w podróży i dobre narzędzie do deloadu gdy wolne ciężary obciążają łokieć.",
+
+  "instructions": [
+    "Stand on the middle of a resistance band with feet shoulder-width apart. Distribute body weight evenly.",
+    "Grab one handle in each hand with a supinated grip (palms facing forward), arms fully extended at your sides.",
+    "Set your posture: chest up, shoulders back and down, core braced, elbows pinned to your sides.",
+    "Curl ONE arm only — flex at the elbow and bring the handle up to shoulder height. The opposite arm stays fully extended and holds the band tension isometrically.",
+    "Squeeze the working biceps hard at the top for a brief pause, keeping the upper arm vertical.",
+    "Lower that arm under control over 2-3 seconds back to full elbow extension. Only when it reaches the bottom does the other arm begin its curl.",
+    "Repeat on the opposite side. One full repetition counts when BOTH arms have completed a curl.",
+    "Keep the band centered under your feet — do not let it slip outward. Maintain steady breathing and a still torso throughout."
+  ],
+  "instructionsPl": [
+    "Stań na środku gumy oporowej, stopy na szerokość barków. Rozłóż ciężar ciała równomiernie.",
+    "Złap jeden uchwyt każdą dłonią chwytem podchwytem (dłonie skierowane do przodu), ramiona w pełni wyprostowane wzdłuż boków tułowia.",
+    "Ustaw postawę: klatka w górze, barki ściągnięte w tył i w dół, brzuch napięty, łokcie przyklejone do boków.",
+    "Uginaj TYLKO JEDNO ramię — zegnij łokieć i unieś uchwyt na wysokość barku. Przeciwne ramię pozostaje w pełnym wyproście i izometrycznie utrzymuje napięcie gumy.",
+    "Mocno spinaj pracujący biceps w górnej pozycji przez chwilę, ramię ponad łokciem pionowo.",
+    "Opuszczaj to ramię w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciu. Dopiero gdy dotrze do dołu, drugie ramię zaczyna swoje uginanie.",
+    "Powtórz po drugiej stronie. Jedno pełne powtórzenie liczy się gdy OBA ramiona wykonały curl.",
+    "Trzymaj gumę wyśrodkowaną pod stopami — nie pozwól żeby się wysuwała na boki. Utrzymuj równomierny oddech i nieruchomy tułów przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis", "forearm_flexors"],
+    "stabilizers": ["anterior_deltoid", "core", "upper_trapezius", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P9",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "forearm_flexors": "S4",
+    "anterior_deltoid": "T2",
+    "core": "T3",
+    "upper_trapezius": "T1",
+    "glutes": "T1"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["band_handles", "door_anchor"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-alternating-biceps-curl", "dumbbell-curl", "barbell-curl"],
+    "alternatives": ["dumbbell-alternating-biceps-curl", "band-biceps-curl", "dumbbell-curl", "cable-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Center of the band under the middle of both feet",
+      "Feet shoulder-width — wider stance = more tension",
+      "Supinated grip, wrists neutral and straight",
+      "Elbows glued to ribs from set one to last rep",
+      "Chest tall, brace core like before a punch"
+    ],
+    "setup_cues_pl": [
+      "Środek gumy pod środkiem obu stóp",
+      "Stopy na szerokość barków — szersza pozycja = większe napięcie",
+      "Chwyt podchwytem, nadgarstki neutralne i proste",
+      "Łokcie przyklejone do żeber od pierwszej do ostatniej powtórki",
+      "Klatka wysoko, napnij brzuch jak przed ciosem"
+    ],
+    "execution_cues": [
+      "One arm at a time — the other holds tension, never relaxes",
+      "Squeeze hard at the top, supinate the working hand fully",
+      "Eccentric is 2-3 seconds — bands snap back if you let them",
+      "Switch only after the working arm reaches full extension",
+      "Torso stays motionless — no rocking side to side"
+    ],
+    "execution_cues_pl": [
+      "Jedno ramię na raz — drugie utrzymuje napięcie, nigdy się nie rozluźnia",
+      "Mocno spinaj na górze, w pełni supinuj pracującą dłoń",
+      "Faza negatywna 2-3 sekundy — guma odskoczy jeśli ją puścisz",
+      "Zmień stronę dopiero gdy pracujące ramię dojdzie do pełnego wyprostu",
+      "Tułów nieruchomy — żadnego kołysania na boki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Band slipping out from under one foot",
+        "faultPl": "Guma wysuwa się spod jednej stopy",
+        "cause": "Uneven foot placement, narrow stance, or asymmetric pull during the curl",
+        "causePl": "Nierówne ustawienie stóp, zbyt wąska pozycja, lub asymetryczne ciągnięcie podczas uginania",
+        "cue": "Stand wider, place the band exactly center-foot, and pull straight up — not outward.",
+        "cuePl": "Stań szerzej, umieść gumę dokładnie pod środkiem stóp i ciągnij prosto w górę — nie na zewnątrz."
+      },
+      {
+        "fault": "Resting arm collapses (drops band tension between reps)",
+        "faultPl": "Spoczywające ramię opada (traci napięcie gumy między powtórzeniami)",
+        "cause": "Misunderstanding the alternating pattern — treating it as two separate sets",
+        "causePl": "Niezrozumienie schematu naprzemiennego — traktowanie jak dwóch osobnych serii",
+        "cue": "The non-working arm MUST hold the band stretched — that is half the benefit of alternating.",
+        "cuePl": "Ramię nieaktywne MUSI utrzymywać gumę rozciągniętą — to połowa zysku z naprzemienności."
+      },
+      {
+        "fault": "Torso rocks side to side with each curl",
+        "faultPl": "Tułów kołysze się na boki przy każdym uginaniu",
+        "cause": "Compensating for fatigue or trying to add momentum to the moving arm",
+        "causePl": "Kompensacja zmęczenia lub próba dodania rozpędu pracującemu ramieniu",
+        "cue": "Squeeze glutes and brace abs — head and hips form a vertical line that does not shift.",
+        "cuePl": "Spinaj pośladki i napnij brzuch — głowa i biodra tworzą pionową linię, która się nie przesuwa."
+      },
+      {
+        "fault": "Elbow drifts forward and up at the top",
+        "faultPl": "Łokieć wędruje w przód i w górę w pozycji szczytowej",
+        "cause": "Recruiting the front delt to chase a higher rep position past full biceps contraction",
+        "causePl": "Włączanie przedniego aktonu barku w pogoni za wyższą pozycją powyżej pełnego skurczu bicepsa",
+        "cue": "Stop when the forearm is vertical. The elbow stays under the shoulder all the way up.",
+        "cuePl": "Zakończ ruch gdy przedramię dojdzie do pionu. Łokieć pozostaje pod barkiem przez cały ruch."
+      },
+      {
+        "fault": "Letting the band snap back on the eccentric",
+        "faultPl": "Pozwalanie gumie odskoczyć w fazie negatywnej",
+        "cause": "Bands have variable resistance — peak tension at the top is easy to relax against on the way down",
+        "causePl": "Guma ma zmienny opór — szczytowe napięcie na górze łatwo rozluźnić podczas opuszczania",
+        "cue": "Fight the band down for 2-3 seconds. The eccentric is where most of the growth happens.",
+        "cuePl": "Walcz z gumą w dół przez 2-3 sekundy. Faza negatywna to gdzie dzieje się większość wzrostu."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up) for the working arm. Inhale during its eccentric. Keep a steady rhythm — the alternating pattern naturally smooths breathing.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uginanie) pracującego ramienia. Wdech w jego fazie ekscentrycznej. Utrzymuj stały rytm — schemat naprzemienny naturalnie wygładza oddech."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Bands are gentler than free weights at the bottom (no peak load at full stretch), making them a good rehab tool. Use light band, 15-20 reps per arm, slow tempo, stop short of full extension if painful.",
+      "modificationPl": "Guma jest łagodniejsza niż wolne ciężary na dole (brak szczytowego obciążenia w pełnym rozciągnięciu), co czyni ją dobrym narzędziem rehabilitacyjnym. Użyj lekkiej gumy, 15-20 powtórzeń na ramię, wolne tempo, zatrzymaj przed pełnym wyprostem jeśli boli.",
+      "alternative": "band-biceps-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Switch to a hammer grip (neutral wrist) to reduce stress on the medial flexor tendons. Lighter band, higher reps, no pause at top.",
+      "modificationPl": "Przejdź na chwyt młotkowy (nadgarstek neutralny) aby zmniejszyć stres na przyśrodkowych ścięgnach zginaczy. Lżejsza guma, więcej powtórzeń, bez pauzy na górze.",
+      "alternative": "band-hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Use neoprene band handles with thick grip or wear wrist wraps to stabilize the joint. Avoid full supination if it provokes pain — use a neutral grip instead.",
+      "modificationPl": "Używaj neoprenowych uchwytów gumy z grubym chwytem lub załóż opaski na nadgarstki dla stabilizacji stawu. Unikaj pełnej supinacji jeśli wywołuje ból — zastosuj chwyt neutralny.",
+      "alternative": "band-hammer-curl"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Standing alternating curls minimally load the shoulder, but avoid letting the elbow drift forward at the top (a common compensation that engages the impinged anterior delt).",
+      "modificationPl": "Naprzemienne uginania stojąc minimalnie obciążają bark, ale unikaj wędrowania łokcia do przodu w górnej pozycji (częsta kompensacja włączająca uciśnięty przedni akton barku).",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy) | 2-3x15-20 per arm (endurance/pump) | 3x8-10 per arm with heaviest band (strength)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-alternating-biceps-curl.gif",
+    "frames_extracted": [
+      "frames/band-alternating-biceps-curl/frame_0_start.png",
+      "frames/band-alternating-biceps-curl/frame_1_early.png",
+      "frames/band-alternating-biceps-curl/frame_2_mid.png",
+      "frames/band-alternating-biceps-curl/frame_3_late.png",
+      "frames/band-alternating-biceps-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/band-alternating-biceps-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 (start): pełen wyprost obu ramion, atleta stoi na środku gumy oporowej, oba uchwyty trzymane podchwytem przy biodrach, oba bicepsy i przedramiona podświetlone na czerwono (start cyklu, równe napięcie). Frame 1 (early): jedno ramię w trakcie uginania (przedramię ~45°), uchwyt drugiej ręki nadal nisko — pokazuje początek naprzemiennej pracy. Frame 2 (mid): jedna ręka w pełnym skurczu na wysokości barku, łokieć przyklejony do boku, ramię ponad łokciem pionowo; druga ręka w pełnym wyproście utrzymuje napięcie gumy. Frame 3 (late): faza negatywna pierwszego ramienia. Frame 4 (end): powrót do pełnego wyprostu obu ramion. Naprzemienność wyraźnie widoczna — nie obie ręce naraz. Tułów nieruchomy. Stopy na gumie szerokość barków. Ćwiczenie jednoznacznie zidentyfikowane jako Band Alternating Biceps Curl. Schemat unilateral_alternating potwierdzony klatka po klatce. Wszystkie pola PL napisane od zera, dostosowane do specyfiki gumy (zmienny opór, izometryczne napięcie ramienia spoczywającego).",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "resistance_band", "upper_body", "home_workout", "unilateral", "alternating", "travel_friendly", "beginner_friendly"]
+}

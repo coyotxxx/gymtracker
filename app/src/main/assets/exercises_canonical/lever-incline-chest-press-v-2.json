@@ -1,0 +1,204 @@
+{
+  "id": "lever-incline-chest-press-v-2",
+  "name": "Lever Incline Chest Press (V2 — Iso-Lateral, Neutral Grip)",
+  "namePl": "Incline chest press w maszynie (wariant 2 — iso-lateral, chwyt neutralny)",
+  "aliases": ["plate-loaded incline press", "iso-lateral incline press", "hammer strength incline press", "neutral grip incline machine press", "lever incline press v2"],
+  "aliasesPl": ["incline press w maszynie dźwigniowej", "wyciskanie skośne w maszynie iso-lateral", "hammer strength wyciskanie skośne", "incline press chwytem neutralnym", "plate-loaded skośne wyciskanie"],
+
+  "description": "Incline pressing variation performed on a plate-loaded iso-lateral lever machine. Unlike V1 (combined-arc handles, pronated grip), V2 uses independent arms with vertical handles (neutral grip — palms facing each other), allowing each side to work autonomously through a converging arc. The fixed path stabilizes the load while still demanding inter-side coordination, hitting the clavicular (upper) head of the pectoralis major with a shoulder-friendly grip. Excellent for hypertrophy of the upper chest, addressing left-right asymmetries, and as a joint-friendly alternative to barbell incline pressing.",
+  "descriptionPl": "Wariant wyciskania skośnego wykonywany w maszynie dźwigniowej iso-lateral (plate-loaded). W odróżnieniu od V1 (połączone uchwyty, chwyt pronowany), V2 ma niezależne ramiona z pionowymi uchwytami (chwyt neutralny — dłonie zwrócone do siebie), co pozwala każdej stronie pracować osobno po zbieżnym łuku. Ustalona ścieżka stabilizuje ciężar, ale wciąż wymaga koordynacji między stronami i mocno atakuje obojczykową (górną) głowę mięśnia piersiowego z chwytem przyjaznym barkowi. Świetne na hipertrofię górnej klatki, korektę asymetrii lewa-prawa i jako alternatywa stawowo-przyjazna dla skośnego wyciskania sztangą.",
+
+  "instructions": [
+    "Set the seat height so that the handles align with the upper chest / sternum line when seated — NOT above the shoulders.",
+    "Load equal plates on both sides. Step onto the foot platform (if present) and sit down with back firmly against the inclined pad.",
+    "Grab both vertical handles with a neutral grip (palms facing each other), wrists stacked over forearms.",
+    "Plant feet flat, retract and depress shoulder blades into the pad, slight natural arch in the lower back, chest up.",
+    "Inhale, brace the core. Press both handles up and slightly inward in a converging arc until arms are extended — DO NOT lock elbows rigid.",
+    "Exhale at the top, squeeze the chest momentarily without losing scapular retraction.",
+    "Lower the handles with control over 2–3 seconds back toward the upper chest. Allow a comfortable stretch but do NOT let shoulders roll forward.",
+    "Keep both arms moving symmetrically — neither side should lead or lag. Repeat for prescribed reps.",
+    "To finish: press one final time, ease the handles down with the safety stops (or step assist if equipped), then exit the machine."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość siedziska tak, by uchwyty znajdowały się na linii górnej klatki / mostka w pozycji siedzącej — NIE wyżej niż barki.",
+    "Załaduj równe obciążenie na obu stronach. Wejdź na podstopnicę (jeśli jest) i usiądź mocno opierając plecy o skośne oparcie.",
+    "Chwyć oba pionowe uchwyty chwytem neutralnym (dłonie zwrócone do siebie), nadgarstki ustawione nad przedramionami.",
+    "Stopy płasko na podłodze/podstopnicy, ściągnij i opuść łopatki w oparcie, lekki naturalny łuk w dolnych plecach, klatka wypchnięta.",
+    "Wdech, napięcie brzucha. Wyciśnij oba uchwyty w górę i lekko do środka po zbieżnym łuku aż ramiona są wyprostowane — NIE blokuj łokci sztywno.",
+    "Wydech na szczycie, krótkie napięcie klatki bez tracenia ściągnięcia łopatek.",
+    "Opuszczaj uchwyty z kontrolą przez 2–3 sekundy do okolicy górnej klatki. Pozwól na komfortowe rozciągnięcie, ale NIE pozwól by barki wyjechały do przodu.",
+    "Oba ramiona poruszają się symetrycznie — żadna strona nie powinna prowadzić ani odstawać. Powtórz zaplanowaną liczbę powtórzeń.",
+    "Zakończenie: ostatnie wyciśnięcie, opuść uchwyty na blokady bezpieczeństwa (lub użyj podstopnicy jeśli jest), wyjdź z maszyny."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal_incline",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "pectoralis_major_sternal"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "pectoralis_major_sternal": "S5",
+    "serratus_anterior": "S4",
+    "rotator_cuff": "T3",
+    "core": "T2",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["plate_loaded_lever_machine", "weight_plates"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["machine-chest-press", "push-up"],
+    "progression_to": ["incline-dumbbell-bench-press", "incline-barbell-bench-press", "single-arm-lever-incline-chest-press"],
+    "alternatives": ["lever-incline-chest-press", "incline-dumbbell-bench-press", "incline-smith-machine-bench-press", "incline-cable-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height: handles at upper chest / sternum, NOT above shoulders",
+      "Back flat against the incline pad, shoulder blades retracted and depressed",
+      "Feet planted, slight natural arch in lower back",
+      "Neutral grip — palms facing each other, wrists stacked",
+      "Equal plates on both sides — never asymmetric loading"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska: uchwyty na linii górnej klatki / mostka, NIE powyżej barków",
+      "Plecy płasko na oparciu, łopatki ściągnięte i opuszczone",
+      "Stopy zaparte, lekki naturalny łuk w dolnych plecach",
+      "Chwyt neutralny — dłonie zwrócone do siebie, nadgarstki proste",
+      "Równe obciążenie na obu stronach — nigdy asymetryczne"
+    ],
+    "execution_cues": [
+      "Press up AND slightly inward — follow the converging arc",
+      "Both arms move in sync — neither side leads or lags",
+      "Eccentric ~2–3 seconds, controlled stretch in upper chest",
+      "Keep shoulder blades retracted on the pad throughout",
+      "Don't lock elbows at top — stop just short of full extension"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę I lekko do środka — podążaj za zbieżnym łukiem",
+      "Oba ramiona poruszają się synchronicznie — żadna strona nie prowadzi ani nie odstaje",
+      "Faza ekscentryczna ~2–3 sekundy, kontrolowane rozciągnięcie górnej klatki",
+      "Łopatki ściągnięte na oparciu przez cały set",
+      "Nie blokuj łokci na górze — zatrzymaj tuż przed pełnym wyprostem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Seat too low — handles start above shoulders, turning the press into a shoulder press",
+        "faultPl": "Siedzisko za nisko — uchwyty startują powyżej barków, ruch zamienia się w wyciskanie barkami",
+        "cause": "Improper seat adjustment; assumption that 'higher = more upper chest'",
+        "causePl": "Złe ustawienie siedziska; założenie, że 'wyżej = bardziej górna klatka'",
+        "cue": "Set seat so handles are at sternum / upper chest. Above shoulders = front delts take over.",
+        "cuePl": "Ustaw siedzisko tak, by uchwyty były na mostku / górnej klatce. Powyżej barków = przednie delty przejmują pracę."
+      },
+      {
+        "fault": "Asymmetry — dominant arm presses faster or further",
+        "faultPl": "Asymetria — silniejsza ręka wyciska szybciej lub dalej",
+        "cause": "Inter-side strength imbalance hidden in combined-arc machines; ego with too heavy weight",
+        "causePl": "Asymetria siły między stronami, zwykle ukryta w maszynach ze sprzężonymi ramionami; ego przy zbyt ciężkim ciężarze",
+        "cue": "V2 exposes asymmetry — slow down to the weaker side's pace. Consider single-arm work to fix.",
+        "cuePl": "V2 ujawnia asymetrię — zwolnij do tempa słabszej strony. Rozważ pracę jednorącz by ją naprawić."
+      },
+      {
+        "fault": "Shoulders roll forward at the bottom (loss of scapular retraction)",
+        "faultPl": "Barki wyjeżdżają do przodu na dole (utrata ściągnięcia łopatek)",
+        "cause": "Excessive ROM, weight too heavy, not actively pinning scapulae to the pad",
+        "causePl": "Za duży zakres, za ciężki ciężar, brak aktywnego dociśnięcia łopatek do oparcia",
+        "cue": "Stop the eccentric when shoulders start to round forward. Keep blades glued to the pad.",
+        "cuePl": "Zakończ fazę ekscentryczną gdy barki zaczynają się obracać do przodu. Łopatki przyklejone do oparcia."
+      },
+      {
+        "fault": "Locking elbows hard at the top",
+        "faultPl": "Sztywne blokowanie łokci na górze",
+        "cause": "Looking for rest at top; muscle imbalance using triceps as a 'shelf'",
+        "causePl": "Szukanie odpoczynku na górze; wykorzystywanie tricepsów jako 'półki'",
+        "cue": "Stop just short of full extension. Keep tension on the chest — no resting at the top.",
+        "cuePl": "Zatrzymaj tuż przed pełnym wyprostem. Trzymaj napięcie na klatce — nie odpoczywaj na górze."
+      },
+      {
+        "fault": "Bouncing the weight off the bottom",
+        "faultPl": "Odbijanie ciężaru od dolnej pozycji",
+        "cause": "Loss of eccentric control, ego, using momentum to grind out extra reps",
+        "causePl": "Utrata kontroli ekscentrycznej, ego, używanie momentum by wycisnąć dodatkowe powtórzenia",
+        "cue": "Pause 1 second at the bottom — controlled stretch, no bounce. Reduce weight if needed.",
+        "cuePl": "Pauza 1 sekunda na dole — kontrolowane rozciągnięcie, bez odbijania. Zmniejsz ciężar jeśli trzeba."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold during descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj w trakcie schodzenia. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Neutral grip on V2 is already shoulder-friendly. Reduce ROM if pain at bottom; stop before scapulae round forward.",
+      "modificationPl": "Chwyt neutralny w V2 jest już przyjazny barkowi. Zmniejsz ROM jeśli ból na dole; zatrzymaj przed wyjechaniem łopatek do przodu.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Even fixed-path inclines stress the cuff. Switch to flat machine press or rehab work until cleared by physio.",
+      "modificationPl": "Nawet wyciskanie z ustaloną ścieżką obciąża stożek rotatorów. Przejdź na poziome wyciskanie w maszynie lub rehabilitację do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Hold off pressing until pain-free. Resume with light cable work before returning to plate-loaded machine.",
+      "modificationPl": "Wstrzymaj wyciskanie do czasu ustąpienia bólu. Wróć przez lekkie ćwiczenia na wyciągu zanim wrócisz do plate-loaded maszyny.",
+      "alternative": "cable-crossover"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Neutral grip helps. Reduce incline if adjustable; partial ROM (top half) keeps the AC joint out of the painful range.",
+      "modificationPl": "Chwyt neutralny pomaga. Zmniejsz kąt nachylenia jeśli regulowany; częściowy ROM (górna połowa) trzyma staw barkowo-obojczykowy poza bolesnym zakresem.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-incline-chest-press-v-2.gif",
+    "frames_extracted": [
+      "frames/lever-incline-chest-press-v-2/frame_0_start.png",
+      "frames/lever-incline-chest-press-v-2/frame_1_early.png",
+      "frames/lever-incline-chest-press-v-2/frame_2_mid.png",
+      "frames/lever-incline-chest-press-v-2/frame_3_late.png",
+      "frames/lever-incline-chest-press-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/lever-incline-chest-press-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF analiza: plate-loaded iso-lateral incline press z niezależnymi ramionami i pionowymi uchwytami (chwyt neutralny — dłonie zwrócone do siebie). Frame 0 (start/dół): uchwyty na poziomie górnej klatki / mostka, łokcie zgięte, ramiona poniżej linii barków, łopatki ściągnięte do oparcia. Frame 2 (góra): ramiona wyprostowane w zbieżnym łuku do środka, uchwyty zbliżone ale nie stykające się, pełne wyciśnięcie nad górną klatką bez sztywnego lock-out. Frame 4 (powrót w dół): widoczny motion blur kontrolowanego opuszczania. Podświetlone mięśnie: górna (obojczykowa) klatka piersiowa, przednie aktony delty, tricepsy — zgodne z anatomią dla incline machine press. Maszyna ma podstopnicę ułatwiającą wejście/wyjście. Różnica od V1: V2 ma niezależne ramiona iso-lateral i chwyt neutralny, podczas gdy V1 typowo ma sprzężone ramiona / chwyt pronowany. PL nazwa zachowuje angielski termin 'incline chest press' (powszechny w polskich siłowniach) + opisowe dookreślenie 'w maszynie (wariant 2 — iso-lateral, chwyt neutralny)'. Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "incline_push", "upper_chest", "machine", "plate_loaded", "iso_lateral", "neutral_grip", "shoulder_friendly", "hypertrophy"]
+}

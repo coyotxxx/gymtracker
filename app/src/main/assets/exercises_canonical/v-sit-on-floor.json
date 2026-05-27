@@ -1,0 +1,197 @@
+{
+  "id": "v-sit-on-floor",
+  "name": "V-Sit on Floor",
+  "namePl": "V-sit na podłodze",
+  "aliases": ["floor v-sit", "seated pike leg raise", "v-sit hold", "floor pike hold"],
+  "aliasesPl": ["V-sit na podłodze", "siad w pozycji V", "podpórka tylna z uniesieniem nóg", "V-hold na podłodze", "pike na podłodze"],
+
+  "description": "Bodyweight core exercise performed seated on the floor with the hands placed behind the hips for support. The lifter leans the torso slightly back and lifts both straight legs together up toward the chest, forming a sharp V (or near-pike) shape between the legs and torso. The position is held isometrically — the rectus abdominis and hip flexors work together to keep the legs elevated while the upper body resists falling backward. A foundational compression and core strength drill used in calisthenics, gymnastics and general core training.",
+  "descriptionPl": "Ćwiczenie brzucha z masą własnego ciała wykonywane w siadzie na podłodze z dłońmi opartymi za biodrami. Ćwiczący lekko odchyla tułów do tyłu i unosi obie wyprostowane nogi razem w kierunku klatki piersiowej, tworząc ostre 'V' (lub niemal pełne złożenie pike) pomiędzy nogami a tułowiem. Pozycja utrzymywana jest izometrycznie — mięsień prosty brzucha i zginacze biodra pracują razem, by utrzymać nogi w górze, podczas gdy górna część ciała opiera się przed opadnięciem do tyłu. Podstawowe ćwiczenie kompresji i siły core'u stosowane w kalistenice, gimnastyce i ogólnym treningu brzucha.",
+
+  "instructions": [
+    "Sit on the floor with legs extended straight in front of you and your hands placed flat on the floor a few centimetres behind your hips, fingers pointing forward or slightly outward.",
+    "Lean the torso back about 30–45 degrees and lightly press through the arms to stabilise the upper body. Engage the abs and lift the chest tall — do not collapse the lower back.",
+    "Keeping both legs locked straight and pressed together, lift them off the floor and continue pulling them up toward your chest in one smooth motion.",
+    "At the top, both legs are nearly vertical (or as high as your flexibility and strength allow) — the legs and torso form a tight 'V' or pike shape. Hold this position with the abs maximally contracted.",
+    "Maintain the hold for the prescribed time (typically 10–30 s), breathing in shallow controlled breaths. Keep the knees straight and the feet pointed.",
+    "To finish, lower the legs back down to the start position with control — do not let them crash to the floor."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z nogami wyciągniętymi prosto przed sobą, a dłonie połóż płasko kilka centymetrów za biodrami, palce skierowane do przodu lub lekko na zewnątrz.",
+    "Odchyl tułów o około 30–45 stopni do tyłu i lekko podeprzyj się rękami, by ustabilizować górną część ciała. Napnij brzuch i wyciągnij klatkę piersiową w górę — nie zaokrąglaj lędźwi.",
+    "Trzymając obie nogi proste i ściśnięte razem, oderwij je od podłogi i kontynuuj unoszenie w kierunku klatki piersiowej jednym płynnym ruchem.",
+    "W szczycie obie nogi są niemal pionowe (lub tak wysoko jak pozwala Twoja gibkość i siła) — nogi i tułów tworzą ciasne 'V' lub pozycję pike. Utrzymaj tę pozycję z maksymalnie napiętym brzuchem.",
+    "Utrzymuj pozycję przez zadany czas (zwykle 10–30 s), oddychając płytko i kontrolowanie. Trzymaj kolana proste, stopy wyciągnięte.",
+    "Aby zakończyć, opuść nogi z powrotem do pozycji wyjściowej pod kontrolą — nie pozwól im opaść swobodnie na podłogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_isometric",
+    "force": "static",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors"],
+    "secondary": ["obliques", "quadriceps"],
+    "stabilizers": ["triceps", "anterior_deltoids", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "hip_flexors": "P9",
+    "obliques": "S6",
+    "quadriceps": "S5",
+    "triceps": "T4",
+    "anterior_deltoids": "T3",
+    "transverse_abdominis": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["lying-leg-raise", "seated-knee-tuck", "hollow-body-hold"],
+    "progression_to": ["v-up", "hanging-l-sit", "hollow-body-rock"],
+    "alternatives": ["v-up", "seated-knee-tuck", "hollow-body-hold", "lying-leg-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall — long spine from tailbone to crown",
+      "Hands flat behind hips, fingers pointing forward",
+      "Torso leans back ~30–45° — chest stays open",
+      "Legs straight and pressed together, knees locked",
+      "Inhale, brace the core before lifting the legs"
+    ],
+    "setup_cues_pl": [
+      "Usiądź wyprostowany — długi kręgosłup od kości ogonowej do szczytu głowy",
+      "Dłonie płasko za biodrami, palce skierowane do przodu",
+      "Tułów odchylony ~30–45° — klatka otwarta",
+      "Nogi proste i ściśnięte razem, kolana zablokowane",
+      "Wdech, napnij brzuch zanim uniesiesz nogi"
+    ],
+    "execution_cues": [
+      "Lift both legs together — squeeze the inner thighs",
+      "Pull the toes toward the chest, not just up",
+      "Knees stay locked — point the toes",
+      "Press the floor away with the hands to lift the chest",
+      "Breathe shallowly — don't hold the breath for the whole set"
+    ],
+    "execution_cues_pl": [
+      "Unieś obie nogi razem — ściśnij wewnętrzne uda",
+      "Ciągnij palce stóp w kierunku klatki, nie tylko w górę",
+      "Kolana zablokowane — wyciągnij palce stóp",
+      "Odepchnij się dłońmi od podłogi, by unieść klatkę",
+      "Oddychaj płytko — nie wstrzymuj oddechu przez całą serię"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the knees to lift the legs higher",
+        "faultPl": "Zginanie kolan, by unieść nogi wyżej",
+        "cause": "Weak hip flexors and quadriceps — cheating to reach a higher position",
+        "causePl": "Słabe zginacze biodra i czworogłowe — oszukiwanie, by sięgnąć wyższej pozycji",
+        "cue": "Keep the knees fully locked — lower the legs slightly rather than bending them. Quad squeeze is a must.",
+        "cuePl": "Trzymaj kolana w pełni zablokowane — opuść nogi nieco niżej zamiast je zginać. Napięcie czworogłowych jest obowiązkowe."
+      },
+      {
+        "fault": "Rounding the lower back / spinal collapse",
+        "faultPl": "Zaokrąglenie dolnych pleców / zapadnięcie kręgosłupa",
+        "cause": "Tight hamstrings pull the pelvis posteriorly; weak core can't hold neutral lean angle",
+        "causePl": "Napięte dwugłowe uda ściągają miednicę do tyłu; słaby brzuch nie utrzymuje neutralnego kąta odchylenia",
+        "cue": "Sit tall first — chest up, long spine. If you can't, reduce the lean angle and bend the knees lightly as a regression.",
+        "cuePl": "Najpierw usiądź wyprostowany — klatka w górę, długi kręgosłup. Jeśli nie dasz rady, zmniejsz kąt odchylenia i lekko ugnij kolana jako regresja."
+      },
+      {
+        "fault": "Holding the breath through the entire hold",
+        "faultPl": "Wstrzymywanie oddechu przez całą fazę utrzymania",
+        "cause": "Reflex bracing under load — common when struggling to maintain position",
+        "causePl": "Odruchowe napięcie pod obciążeniem — częste przy trudności z utrzymaniem pozycji",
+        "cue": "Short shallow breaths through the nose. The core stays braced even while you breathe — like a plank.",
+        "cuePl": "Krótkie płytkie oddechy przez nos. Brzuch pozostaje napięty nawet podczas oddychania — jak przy desce."
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears",
+        "faultPl": "Barki uniesione do uszu",
+        "cause": "Pressing too hard through the arms or weak scapular stabilisation",
+        "causePl": "Zbyt mocne odpychanie się rękami lub słaba stabilizacja łopatek",
+        "cue": "Pull shoulder blades down and back — long neck. Use the arms for stability, not propulsion.",
+        "cuePl": "Ściągnij łopatki w dół i do tyłu — długa szyja. Używaj rąk do stabilizacji, nie do napędu."
+      },
+      {
+        "fault": "Legs drifting apart at the top",
+        "faultPl": "Rozchodzenie się nóg w szczycie",
+        "cause": "Adductors relax under fatigue — common in long holds",
+        "causePl": "Mięśnie przywodziciele rozluźniają się pod wpływem zmęczenia — częste przy długich utrzymaniach",
+        "cue": "Squeeze a small object (or imaginary line) between the ankles the whole set — feet stay glued together.",
+        "cuePl": "Ściskaj mały przedmiot (lub wyobrażoną linię) między kostkami przez całą serię — stopy pozostają sklejone."
+      }
+    ],
+    "breathing": "Inhale and brace before lifting the legs. Once in the hold, take short shallow breaths through the nose while keeping the core braced — do not perform Valsalva for the entire set or you will fail prematurely from oxygen debt.",
+    "breathingPl": "Wdech i napnij brzuch przed uniesieniem nóg. W trakcie utrzymania bierz krótkie płytkie oddechy przez nos, utrzymując napięcie core'u — nie wykonuj manewru Valsalvy przez całą serię, bo zbyt szybko wypadniesz z pozycji przez deficyt tlenu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "The seated lean-back loads the lumbar spine in a flexed, compressed position — risky for lumbar disc protrusion. Use neutral-spine alternatives like dead-bug.",
+      "modificationPl": "Odchylony siad obciąża kręgosłup lędźwiowy w pozycji zgiętej i sprężonej — ryzykowne przy przepuklinie krążka lędźwiowego. Użyj alternatyw z neutralnym kręgosłupem, np. dead bug.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Loading both wrists in extension behind the body can flare wrist pain. Place the hands on fists, on parallettes, or perform a v-up variation that doesn't require hand support.",
+      "modificationPl": "Obciążanie obu nadgarstków w wyproście za ciałem może nasilać ból nadgarstków. Oprzyj się na pięściach, na parallettach lub wykonaj wariant v-up bez podparcia rąk.",
+      "alternative": "hollow-body-hold"
+    },
+    {
+      "condition": "tight_hamstrings",
+      "severity": "caution",
+      "modification": "Very tight hamstrings tilt the pelvis posteriorly and force the lower back into flexion. Bend the knees slightly (tuck variation) until flexibility improves.",
+      "modificationPl": "Bardzo napięte dwugłowe uda ściągają miednicę do tyłu i wymuszają zgięcie lędźwi. Lekko ugnij kolana (wariant tuck), dopóki gibkość się nie poprawi.",
+      "alternative": "seated-knee-tuck"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Strong rectus abdominis bracing under load can worsen midline separation (postpartum or otherwise). Use transverse-abdominis-focused exercises first.",
+      "modificationPl": "Silne napięcie mięśnia prostego brzucha pod obciążeniem może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Najpierw stosuj ćwiczenia skupione na mięśniu poprzecznym brzucha.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x15-30s (hold) | 3x20s (strength) | 4x10s + 4x10s rest (EMOM finisher)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "v-sit-on-floor.gif",
+    "frames_extracted": [
+      "frames/v-sit-on-floor/frame_0_start.png",
+      "frames/v-sit-on-floor/frame_1_early.png",
+      "frames/v-sit-on-floor/frame_2_mid.png",
+      "frames/v-sit-on-floor/frame_3_late.png",
+      "frames/v-sit-on-floor/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/v-sit-on-floor"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): siad na podłodze, nogi proste wyciągnięte przed sobą, dłonie oparte za biodrami, tułów lekko odchylony — czerwone podświetlenie na rectus abdominis, obliques, hip flexors i tricepsach (podpierające ramiona). Klatka 2 (mid/peak): obie nogi proste uniesione niemal pionowo do góry, tułów dalej oparty na rękach z tyłu, całe ciało tworzy ciasne 'V' — wyraźna kompresja brzucha i zginaczy biodra; klatki na barkach i tricepsach świadczą o pracy stabilizującej ramion. Klatka 4 (end): powrót do siadu z lekkim śladem pozycji szczytowej. Ruch potwierdzony: izometryczne uniesienie prostych nóg w pozycję V/pike z podparciem rąk za ciałem. KOREKTA wobec specyfiki w prompcie: GIF pokazuje wariant z PODPARCIEM RĄK Z TYŁU (nie wolnostojące V-sit z ramionami przed) — to klasyczny 'V-sit on floor' kalisteniczno-gimnastyczny, gdzie ręce stabilizują tułów. Force=static (isometric hold), mechanic=isolation (głównie kompresja biodro+kręgosłup), bilateral, plane=sagittal. Primary: rectus_abdominis (P9) + hip_flexors (P9 — równorzędnie z RA, bo bez ich pracy nogi nie utrzymają wyciągnięcia). Secondary: obliques (S6), quadriceps (S5 — aktywnie trzymają kolana wyprostowane). Stabilizers: triceps + anterior deltoids (podparcie rąk z tyłu — widoczne na klatkach) + transverse abdominis. Nazwa PL: 'V-sit na podłodze' to przyjęta forma w polskiej kalistenice (anglicyzm 'V-sit' nieprzetłumaczalny — używany 1:1). Difficulty=6, level=intermediate (wymaga siły core + elastyczności dwugłowych). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "no_equipment", "home_workout", "isometric", "hip_flexors", "calisthenics"]
+}

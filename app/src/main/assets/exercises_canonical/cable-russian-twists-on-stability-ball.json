@@ -1,0 +1,200 @@
+{
+  "id": "cable-russian-twists-on-stability-ball",
+  "name": "Cable Russian Twists on Stability Ball",
+  "namePl": "Russian twist z wyciągu na piłce gimnastycznej",
+  "aliases": ["cable russian twist on swiss ball", "stability ball cable woodchop twist", "supine cable twist on ball"],
+  "aliasesPl": ["russian twist na piłce z linką", "skręty tułowia na piłce z wyciągu", "russian twist na piłce gimnastycznej z cable", "skręty na piłce z linką wyciągu"],
+
+  "description": "Rotational core exercise performed lying supine with the upper back resting on a stability ball, knees bent and feet flat on the floor. The lifter grips a cable handle (attached to a low or mid pulley to the side) with arms extended over the chest and rotates the torso across the body to pull the handle through an arc, then returns under control and repeats to the other side. The unstable ball plus the constant horizontal tension from the cable forces continuous co-contraction of the obliques and deep core, making it one of the most demanding anti-rotation/rotation hybrid abdominal drills.",
+  "descriptionPl": "Rotacyjne ćwiczenie na brzuch wykonywane w leżeniu na plecach z górną częścią pleców opartą o piłkę gimnastyczną, kolanami zgiętymi i stopami płasko na podłodze. Ćwiczący trzyma uchwyt cable (przypięty do niskiego lub środkowego wyciągu z boku) z ramionami wyprostowanymi nad klatką piersiową i rotuje tułów w poprzek ciała, prowadząc uchwyt łukiem na drugą stronę, po czym wraca kontrolowanym ruchem i powtarza na drugą stronę. Niestabilna piłka połączona z ciągłym poziomym oporem wyciągu wymusza nieprzerwane współnapięcie mięśni skośnych i głębokiego stabilizatora — jedno z najbardziej wymagających rotacyjnych ćwiczeń łączących anty-rotację i rotację.",
+
+  "instructions": [
+    "Set a cable pulley to chest height (mid-pulley) and attach a single D-handle or rope. Stand to the side of the stack with a stability ball positioned about an arm's length perpendicular to the cable line.",
+    "Grip the handle with both hands and sit on the ball, then walk your feet forward and roll down until your upper back and shoulder blades rest on the ball. Hips stay lifted, knees bent at ~90 degrees, feet flat and roughly shoulder-width apart.",
+    "Extend both arms straight up over your chest holding the handle, elbows soft but not bent. Brace your core, ribs down, glutes squeezed — your body should form a flat tabletop from knees to shoulders.",
+    "Inhale, then exhale and rotate your torso AWAY from the cable, sweeping the straight arms in a wide arc across your body. The rotation comes from the thoracic spine and obliques, not from the arms or shoulders alone.",
+    "Pause briefly at the end range when the arms point away from the pulley and the cable-side oblique is fully shortened. Keep hips level — don't let the pelvis drop or twist with the torso.",
+    "Inhale and control the return as the cable pulls you back — resist the pull, don't let it whip you. Stop when arms are back over the chest in the neutral start position.",
+    "Repeat for the prescribed reps, then turn around on the ball and perform the same number facing the other direction so both sides are trained equally."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek wyciągu na wysokości klatki piersiowej (środkowy wyciąg) i przypnij pojedynczy uchwyt D lub linkę. Stań bokiem do stosu z piłką gimnastyczną umieszczoną mniej więcej długość ramienia prostopadle do linii cable.",
+    "Chwyć uchwyt oburącz, usiądź na piłce, a następnie przejdź stopami do przodu i zjedź plecami, aż górne plecy i łopatki oprą się o piłkę. Biodra uniesione, kolana zgięte pod ~90 stopni, stopy płasko na szerokość barków.",
+    "Wyprostuj obie ręce w górę nad klatkę piersiową trzymając uchwyt, łokcie miękkie ale nie zgięte. Napnij brzuch, żebra w dół, pośladki ściśnięte — ciało tworzy płaski blat od kolan do barków.",
+    "Wdech, następnie wydech i rotuj tułów W KIERUNKU PRZECIWNYM do wyciągu, prowadząc proste ramiona szerokim łukiem w poprzek ciała. Rotacja wychodzi z odcinka piersiowego kręgosłupa i mięśni skośnych, nie z samych ramion.",
+    "Krótka pauza w końcowym zakresie, gdy ramiona wskazują w przeciwną stronę od bloczka i mięsień skośny od strony wyciągu jest maksymalnie skrócony. Biodra na poziomie — nie pozwól by miednica opadała ani rotowała razem z tułowiem.",
+    "Wdech i kontroluj powrót gdy linka cię ciągnie z powrotem — opieraj się ciągowi, nie pozwól żeby cię szarpnęło. Zatrzymaj się gdy ramiona wrócą nad klatkę do neutralnej pozycji startowej.",
+    "Wykonaj zaplanowaną liczbę powtórzeń, potem odwróć się na piłce i zrób tyle samo w drugą stronę, aby obie strony pracowały równomiernie."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_rotation",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["rectus_abdominis", "transverse_abdominis"],
+    "stabilizers": ["glutes", "hip_adductors", "serratus_anterior", "erector_spinae", "shoulders"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "S7",
+    "transverse_abdominis": "S6",
+    "serratus_anterior": "T4",
+    "glutes": "T4",
+    "hip_adductors": "T3",
+    "erector_spinae": "T3",
+    "shoulders": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "stability_ball"],
+    "optional": ["d_handle", "rope_attachment"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["pallof-press", "russian-twist", "cable-woodchopper", "stability-ball-crunch"],
+    "progression_to": ["cable-rotational-chop-standing", "landmine-rotation"],
+    "alternatives": ["russian-twist", "cable-woodchopper", "pallof-press-rotation", "medicine-ball-russian-twist"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Set cable to chest height — handle should pull horizontally across your body",
+      "Upper back on the ball, hips up, knees ~90°, feet flat shoulder-width",
+      "Arms locked straight over the chest, handle in both hands",
+      "Ribs down, glutes squeezed — body flat like a table",
+      "Position the ball perpendicular to the cable line, an arm's length away from the stack"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg na wysokości klatki — uchwyt powinien ciągnąć poziomo w poprzek ciała",
+      "Górne plecy na piłce, biodra w górze, kolana ~90°, stopy płasko na szerokość barków",
+      "Ramiona wyprostowane prosto nad klatką, uchwyt w obu dłoniach",
+      "Żebra w dół, pośladki ściśnięte — ciało płaskie jak blat stołu",
+      "Ustaw piłkę prostopadle do linii cable, w odległości długości ramienia od stosu"
+    ],
+    "execution_cues": [
+      "Rotate FROM the obliques — chest leads, arms follow",
+      "Keep both arms locked straight, no elbow bend during the twist",
+      "Hips stay level and square to the ceiling — only the torso rotates",
+      "Exhale during the twist away from the cable, inhale on the controlled return",
+      "Resist the cable on the way back — don't let it snap you to start"
+    ],
+    "execution_cues_pl": [
+      "Rotuj OD mięśni skośnych — klatka prowadzi, ramiona podążają",
+      "Trzymaj obie ręce wyprostowane, żadnego zginania łokci w trakcie skrętu",
+      "Biodra trzymaj na poziomie i frontem do sufitu — rotuje tylko tułów",
+      "Wydech podczas skrętu w stronę przeciwną do wyciągu, wdech podczas kontrolowanego powrotu",
+      "Opieraj się lince w drodze powrotnej — nie pozwól żeby cię szarpnęła do startu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows / pulling with the arms instead of rotating the torso",
+        "faultPl": "Zginanie łokci / ciągnięcie ramionami zamiast rotacji tułowia",
+        "cause": "Cable too heavy — body shifts the work to the stronger arms and lats",
+        "causePl": "Zbyt duże obciążenie wyciągu — ciało przerzuca pracę na silniejsze ramiona i grzbiet",
+        "cue": "Lower the weight until you can keep the elbows locked through the entire arc. The hands should feel like passive hooks — the obliques do the work.",
+        "cuePl": "Zmniejsz ciężar dopóki nie utrzymasz łokci wyprostowanych przez cały łuk. Dłonie powinny być pasywnymi haczykami — pracę wykonują mięśnie skośne."
+      },
+      {
+        "fault": "Hips dropping or rotating with the torso",
+        "faultPl": "Biodra opadają lub rotują razem z tułowiem",
+        "cause": "Glutes not engaged, weak deep core, or trying to twist beyond available thoracic mobility",
+        "causePl": "Pośladki nie napięte, słaby głęboki stabilizator, lub próba skrętu poza dostępną mobilność piersiową",
+        "cue": "Squeeze the glutes hard before each rep and keep them squeezed. Imagine balancing a glass of water on your pelvis — it can't tip.",
+        "cuePl": "Mocno ściśnij pośladki przed każdym powtórzeniem i trzymaj napięcie. Wyobraź sobie, że na miednicy stoi szklanka wody — nie może się przewrócić."
+      },
+      {
+        "fault": "Letting the cable yank you back too fast (uncontrolled return)",
+        "faultPl": "Pozwolenie żeby linka szarpnęła w drodze powrotnej (niekontrolowany powrót)",
+        "cause": "Treating the return as rest rather than as eccentric load on the obliques",
+        "causePl": "Traktowanie powrotu jako odpoczynek zamiast jako fazę ekscentryczną dla mięśni skośnych",
+        "cue": "Take 2-3 seconds on the way back. The obliques work both directions — slow the cable down with control.",
+        "cuePl": "Powrót zajmuje 2-3 sekundy. Mięśnie skośne pracują w obu kierunkach — wytraca prędkość linki kontrolowanie."
+      },
+      {
+        "fault": "Losing balance on the ball / sliding off",
+        "faultPl": "Utrata równowagi na piłce / zsuwanie się",
+        "cause": "Feet too narrow, ball under-inflated, or trying to rotate too quickly",
+        "causePl": "Stopy zbyt blisko siebie, piłka słabo napompowana, lub zbyt szybka rotacja",
+        "cue": "Widen the stance, slow the tempo. The ball should feel solid under the shoulder blades the whole rep.",
+        "cuePl": "Rozszerz stopy, zwolnij tempo. Piłka powinna czuć się stabilnie pod łopatkami przez całe powtórzenie."
+      },
+      {
+        "fault": "Rotating from the lumbar spine instead of the thoracic spine",
+        "faultPl": "Rotacja z odcinka lędźwiowego zamiast piersiowego kręgosłupa",
+        "cause": "Limited thoracic mobility forces compensation in the lower back — high injury risk",
+        "causePl": "Ograniczona ruchomość piersiowa wymusza kompensację w dolnym odcinku pleców — wysokie ryzyko kontuzji",
+        "cue": "Reduce the range of motion. Stop when you feel the rotation reach the lower ribs — never push into the low back.",
+        "cuePl": "Zmniejsz zakres ruchu. Zatrzymaj się gdy poczujesz że rotacja dochodzi do dolnych żeber — nigdy nie wciskaj rotacji w dolne plecy."
+      }
+    ],
+    "breathing": "Inhale at the top (arms over chest), exhale forcefully during the rotation away from the cable, inhale again on the controlled return. Never hold your breath through both sides — the constant tension makes Valsalva impractical.",
+    "breathingPl": "Wdech w pozycji szczytowej (ramiona nad klatką), mocny wydech podczas rotacji w stronę przeciwną do wyciągu, ponowny wdech podczas kontrolowanego powrotu. Nigdy nie wstrzymuj oddechu na obie strony — ciągłe napięcie czyni manewr Valsalvy niepraktycznym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_pathology",
+      "severity": "avoid",
+      "modification": "Loaded rotation of the lumbar spine is one of the highest-risk movements for disc injury (McGill). Switch to anti-rotation work (pallof press) until cleared by a physio.",
+      "modificationPl": "Obciążona rotacja kręgosłupa lędźwiowego to jeden z ruchów najwyższego ryzyka dla krążka międzykręgowego (McGill). Przejdź na ćwiczenia anty-rotacji (Pallof press) do czasu zgody fizjoterapeuty.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Acute lumbar pain plus loaded rotation = predictable flare-up. Use neutral-spine anti-rotation exercises while symptomatic.",
+      "modificationPl": "Ostry ból lędźwi + obciążona rotacja = przewidywalne zaostrzenie. Stosuj ćwiczenia anty-rotacji w neutralnej pozycji kręgosłupa w okresie objawowym.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "caution",
+      "modification": "Holding the handle with straight arms under cable tension demands significant scapular and rotator cuff stability. Reduce load and shorten the lever (bend elbows slightly) or switch to a medicine ball variation on the ground.",
+      "modificationPl": "Trzymanie uchwytu z wyprostowanymi ramionami pod napięciem linki wymaga znacznej stabilizacji łopatki i stożka rotatorów. Zmniejsz obciążenie i skróć dźwignię (delikatnie zegnij łokcie) albo przejdź na wariant z piłką lekarską na podłodze.",
+      "alternative": "medicine-ball-russian-twist"
+    },
+    {
+      "condition": "balance_impairment",
+      "severity": "modify",
+      "modification": "The unstable ball plus rotational load is unsuitable for users with vestibular issues or significant balance deficits. Perform the same movement on a flat bench or the floor.",
+      "modificationPl": "Niestabilna piłka połączona z obciążeniem rotacyjnym jest nieodpowiednia dla osób z zaburzeniami błędnika lub znacznymi deficytami równowagi. Wykonuj ten sam ruch na płaskiej ławce lub podłodze.",
+      "alternative": "cable-woodchopper"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per side (hypertrophy) | 3x12-15 per side (endurance) | 4x6-8 per side (strength/control)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-russian-twists-on-stability-ball.gif",
+    "frames_extracted": [
+      "frames/cable-russian-twists-on-stability-ball/frame_0_start.png",
+      "frames/cable-russian-twists-on-stability-ball/frame_1_early.png",
+      "frames/cable-russian-twists-on-stability-ball/frame_2_mid.png",
+      "frames/cable-russian-twists-on-stability-ball/frame_3_late.png",
+      "frames/cable-russian-twists-on-stability-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/cable-russian-twists-on-stability-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): leżenie tyłem na piłce gimnastycznej, górne plecy i łopatki na piłce, biodra uniesione tworzą blat, kolana zgięte ~90°, stopy płasko, oba ramiona wyprostowane nad klatką trzymają uchwyt cable który ciągnie z góry/boku — anatomia podświetla wyraźnie obliques (na bokach tułowia, czerwone). Klatka 2 (mid): pełna rotacja tułowia w stronę przeciwną do wyciągu, ramiona przeniesione szerokim łukiem w poprzek ciała w jedną stronę, tułów wyraźnie zrotowany, mięśnie skośne maksymalnie napięte (jeszcze bardziej czerwone na klatce). Klatka 4 (end): powrót do pozycji startowej. Ruch potwierdzony: rotacja tułowia w płaszczyźnie transverse pod ciągłym oporem cable na niestabilnej piłce. Klasyfikacja: core_rotation (rotacja kręgosłupa piersiowego), compound (kręgosłup + barki + biodra stabilizacja), plane=transverse, force=pull, bilateral (oburącz). Primary: obliques (jedyna główna grupa — to dosłownie esencja ruchu). Secondary: rectus_abdominis (współpracuje przy rotacji) + transverse_abdominis (głęboka stabilizacja). Stabilizatory: glutes/adductors (utrzymanie biodra), serratus_anterior + shoulders (proste ramiona), erector_spinae (kontrola). Equipment: cable_machine + stability_ball (oba required, oddzielnie ćwiczenia by były inne). Level=advanced, difficulty=8 — kombinacja niestabilna piłka + rotacja + cable to wymagający setup wymagający dobrej kontroli core, mobilności piersiowej i stabilizacji barku. Nazwa PL: 'Russian twist z wyciągu na piłce gimnastycznej' — termin 'Russian twist' jest powszechny w polskim fitness, 'piłka gimnastyczna' to ustalone tłumaczenie 'stability ball / swiss ball'. Aliasy obejmują 'skręty tułowia na piłce z wyciągu' (opisowo). Contraindications skupione na lumbar disc (najwyższe ryzyko przy rotacji obciążonej), shoulder instability (proste ramiona pod napięciem) i balance impairment (niestabilna piłka). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["cable", "stability_ball", "core", "obliques", "rotation", "anti_rotation", "advanced", "transverse_plane", "gym"]
+}

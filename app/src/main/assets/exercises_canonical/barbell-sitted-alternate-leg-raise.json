@@ -1,0 +1,207 @@
+{
+  "id": "barbell-sitted-alternate-leg-raise",
+  "name": "Barbell Seated Alternate Leg Raise",
+  "namePl": "Naprzemienne wznosy nóg ze sztangą siedząc",
+  "aliases": ["barbell sitted alternate leg raise", "barbell overhead alternate leg raise", "weighted V-sit alternate leg raise", "barbell hollow hold alternate leg raise"],
+  "aliasesPl": ["naprzemienne wznosy nóg ze sztangą", "wznosy nóg w siadzie z sztangą nad głową", "obciążone wznosy nóg w V-sit", "naprzemienne unoszenie nóg w siadzie ze sztangą"],
+
+  "description": "Advanced core exercise combining a loaded overhead hold with alternating straight-leg raises. The lifter sits on the floor with the torso leaned back at ~45° and arms locked straight overhead holding a barbell. While maintaining this loaded hollow-body posture, one leg is lifted high (knee straight or slightly bent) while the other stays low and extended. The legs alternate continuously. The barbell overhead massively increases the anti-extension demand on the rectus abdominis — the abs must keep the ribcage from flaring up while the hip flexors swing the legs. Highly demanding on the entire anterior core, hip flexors, and shoulder stability.",
+  "descriptionPl": "Zaawansowane ćwiczenie brzucha łączące obciążone trzymanie nad głową z naprzemiennym unoszeniem wyprostowanych nóg. Ćwiczący siedzi na podłodze z tułowiem odchylonym do ~45° i wyprostowanymi ramionami trzymającymi sztangę nad głową. Utrzymując tę obciążoną pozycję hollow-body, jedna noga jest unoszona wysoko (kolano wyprostowane lub lekko ugięte), a druga zostaje nisko i wyprostowana. Nogi pracują naprzemiennie. Sztanga nad głową drastycznie zwiększa wymóg anty-wyprostny rectus abdominis — brzuch musi powstrzymać klatkę przed rozsuwaniem się ku górze, gdy zginacze biodra unoszą nogi. Bardzo wymagające dla całego przedniego brzucha, zginaczy biodra i stabilizacji barków.",
+
+  "instructions": [
+    "Sit on the floor with legs extended forward. Hold a barbell with both hands using a shoulder-width grip.",
+    "Press the barbell straight overhead so the arms lock out — biceps next to ears, wrists stacked over shoulders.",
+    "Lean the torso back to about 45° from the floor. Brace the core hard to lock the ribcage down and prevent lower-back arching.",
+    "Keep the legs straight and extended forward, heels just hovering above the floor — this is the starting hollow-body position.",
+    "Without dropping the barbell from overhead, lift one leg up toward the ceiling, keeping the knee straight or only slightly bent.",
+    "Pause briefly at the top of the lift, feeling the contraction in the lower abs and hip flexor of that leg.",
+    "Lower the leg back down under control (don't let it drop) while simultaneously beginning to lift the opposite leg.",
+    "Continue alternating legs for the prescribed reps — one rep = one leg raise; left+right = 2 reps.",
+    "Keep the barbell completely still overhead the entire time — if it shakes or drifts forward/back, lighten the load.",
+    "Breathe steadily — exhale on each leg lift, inhale on the lower. Do not hold breath for long sets."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z nogami wyprostowanymi do przodu. Złap sztangę oburącz na szerokość barków.",
+    "Wyciśnij sztangę prosto nad głowę aż ramiona się wyprostują — bicepsy obok uszu, nadgarstki nad barkami.",
+    "Odchyl tułów do tyłu do kąta ok. 45° względem podłogi. Mocno napnij brzuch, by zablokować klatkę piersiową i nie pozwolić wygiąć dołu pleców.",
+    "Trzymaj nogi proste i wyprostowane do przodu, pięty tuż nad podłogą — to pozycja startowa hollow-body.",
+    "Nie opuszczając sztangi sznad głowy, unieś jedną nogę w stronę sufitu, trzymając kolano proste lub tylko lekko ugięte.",
+    "Krótko zatrzymaj się na górze ruchu, czując napięcie w dolnym brzuchu i zginaczu biodra tej nogi.",
+    "Opuść nogę z kontrolą (nie rzucaj), jednocześnie zaczynając unosić drugą nogę.",
+    "Kontynuuj naprzemiennie zgodnie z planowaną liczbą powtórzeń — 1 powtórzenie = jedno uniesienie nogi; lewo+prawo = 2 powtórzenia.",
+    "Trzymaj sztangę zupełnie nieruchomo nad głową przez cały czas — jeśli drga lub odjeżdża do przodu/tyłu, zmniejsz ciężar.",
+    "Oddychaj równomiernie — wydech na uniesieniu nogi, wdech na opuszczaniu. Nie wstrzymuj oddechu przez długie serie."
+  ],
+
+  "classification": {
+    "movement_pattern": "core",
+    "force": "static_dynamic",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors"],
+    "secondary": ["obliques", "transverse_abdominis", "quadriceps"],
+    "stabilizers": ["deltoids", "triceps", "serratus_anterior", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "hip_flexors": "P9",
+    "obliques": "S6",
+    "transverse_abdominis": "S6",
+    "quadriceps": "S5",
+    "deltoids": "T4",
+    "triceps": "T3",
+    "serratus_anterior": "T3",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "ab_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 6,
+    "prerequisites": ["hollow-body-hold", "lying-leg-raise", "v-sit", "overhead-press"],
+    "progression_to": ["dragon-flag", "weighted-toes-to-bar", "barbell-l-sit"],
+    "alternatives": ["lying-alternate-leg-raise", "hanging-leg-raise", "v-sit", "hollow-body-hold", "seated-alternate-leg-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Press the bar overhead FIRST, then lean back — don't try both at once",
+      "Biceps glued to the ears, elbows fully locked",
+      "Brace the core like you're about to be punched — ribs down",
+      "Lean to ~45°, no more — too far back rounds the lumbar",
+      "Heels hover 5-10 cm above the floor in the start position"
+    ],
+    "setup_cues_pl": [
+      "NAJPIERW wyciśnij sztangę nad głowę, POTEM odchyl się — nie próbuj obu naraz",
+      "Bicepsy przyklejone do uszu, łokcie zablokowane na sztywno",
+      "Napnij brzuch jakbyś szykował się na cios — żebra w dół",
+      "Odchyl się do ~45°, nie więcej — za mocno do tyłu zaokrągla lędźwie",
+      "Pięty wiszą 5-10 cm nad podłogą w pozycji startowej"
+    ],
+    "execution_cues": [
+      "Barbell stays absolutely still — if it shakes, lower the weight",
+      "Lift the leg with the hip flexor, not by leaning further back",
+      "Keep the working leg straight — bent knee shifts work away from abs",
+      "Lower under control — don't let the leg crash down",
+      "Both legs stay tight — the non-working leg holds 5-10 cm off the floor"
+    ],
+    "execution_cues_pl": [
+      "Sztanga stoi absolutnie nieruchomo — jeśli drga, zmniejsz ciężar",
+      "Unoś nogę zginaczem biodra, nie przez głębsze odchylenie do tyłu",
+      "Trzymaj nogę prostą — ugięte kolano przenosi pracę z brzucha",
+      "Opuszczaj z kontrolą — nie rzucaj nogi w dół",
+      "Obie nogi napięte — noga nieaktywna trzyma się 5-10 cm nad podłogą"
+    ],
+    "common_faults": [
+      {
+        "fault": "Barbell drifts forward or shakes overhead",
+        "faultPl": "Sztanga odjeżdża do przodu lub drga nad głową",
+        "cause": "Weak shoulder stability or weight too heavy; core can't lock ribs down so the bar follows the ribcage forward",
+        "causePl": "Słaba stabilizacja barków lub za duży ciężar; brzuch nie utrzymuje żeber w dole, więc sztanga jedzie za klatką do przodu",
+        "cue": "Drop the load by 50%. Practice the overhead lockout first (no leg work) for 30 sec holds, then add legs.",
+        "cuePl": "Zmniejsz ciężar o połowę. Najpierw poćwicz samo trzymanie nad głową (bez nóg) w hold'ach po 30 sek, potem dodaj nogi."
+      },
+      {
+        "fault": "Lower back arches (lumbar hyperextension)",
+        "faultPl": "Wygięty dół pleców (hiperekstensja lędźwiowa)",
+        "cause": "Hip flexors pull the pelvis into anterior tilt while the abs fail to keep the ribcage down",
+        "causePl": "Zginacze biodra ciągną miednicę w przednie pochylenie, gdy brzuch nie utrzymuje klatki w dole",
+        "cue": "Press the lower back toward the floor before lifting any leg. Posterior pelvic tilt is non-negotiable.",
+        "cuePl": "Przyciśnij dół pleców do podłogi PRZED uniesieniem jakiejkolwiek nogi. Retrowersja miednicy jest obowiązkowa."
+      },
+      {
+        "fault": "Bending the knee of the working leg",
+        "faultPl": "Uginanie kolana pracującej nogi",
+        "cause": "Hip flexors and abs too weak to lift a straight leg, so the knee bends to shorten the lever",
+        "causePl": "Za słabe zginacze biodra i brzuch by unieść prostą nogę, więc kolano się ugina by skrócić dźwignię",
+        "cue": "If you can't keep the knee straight, regress to lying alternate leg raise without the barbell until strength catches up.",
+        "cuePl": "Jeśli nie umiesz utrzymać prostego kolana, cofnij się do naprzemiennych wznosów nóg leżąc bez sztangi, aż siła wzrośnie."
+      },
+      {
+        "fault": "Non-working leg drops to the floor",
+        "faultPl": "Noga nieaktywna opada na podłogę",
+        "cause": "Loss of hollow-body engagement — only one leg is being trained at a time effectively",
+        "causePl": "Utrata napięcia hollow-body — efektywnie trenowana jest tylko jedna noga naraz",
+        "cue": "Both heels float above the floor at all times. Imagine pinching a coin between your heel and the floor.",
+        "cuePl": "Obie pięty unoszą się nad podłogą cały czas. Wyobraź sobie, że trzymasz monetę między piętą a podłogą."
+      },
+      {
+        "fault": "Rocking the torso to swing the leg up",
+        "faultPl": "Bujanie tułowiem by zarzucić nogę w górę",
+        "cause": "Using momentum to compensate for weak hip flexors, often combined with the barbell swinging",
+        "causePl": "Wspomaganie się rozpędem z powodu słabych zginaczy biodra, często powiązane z bujaniem sztangi",
+        "cue": "Slow tempo: 2 sec up, 2 sec down. The barbell is your honesty meter — if it moves, you cheated.",
+        "cuePl": "Wolne tempo: 2 sek w górę, 2 sek w dół. Sztanga to twój wykrywacz oszustwa — jeśli się rusza, oszukałeś."
+      }
+    ],
+    "breathing": "Exhale forcefully as you lift each leg (this helps maintain abdominal bracing under the overhead load). Inhale shallowly through the nose as you lower. Avoid deep belly breaths — they release the brace and let the ribcage flare up.",
+    "breathingPl": "Wydychaj mocno przy unoszeniu każdej nogi (pomaga utrzymać napięcie brzucha pod obciążeniem nad głową). Wdech płytki nosem przy opuszczaniu. Unikaj głębokich wdechów brzusznych — rozluźniają napięcie i pozwalają klatce się rozszerzyć."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Holding a loaded barbell overhead with limited shoulder ROM will pinch the rotator cuff. Do leg raises without overhead load until shoulder mobility is restored.",
+      "modificationPl": "Trzymanie obciążonej sztangi nad głową przy ograniczonym zakresie barku zakleszcza stożek rotatorów. Wykonuj wznosy nóg bez obciążenia nad głową, aż ruchomość barków wróci.",
+      "alternative": "lying-alternate-leg-raise"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "The combination of overhead load + leaned-back trunk + leg raising places extreme compression on lumbar discs. Switch to floor-based anti-extension work.",
+      "modificationPl": "Połączenie obciążenia nad głową + odchylonego tułowia + wznosów nóg powoduje skrajny ucisk na dyski lędźwiowe. Przejdź na ćwiczenia anty-wyprostne leżąc.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "Bend the knee of the working leg (knee-to-chest instead of straight-leg) to reduce hip flexor lever arm, or skip this exercise entirely until pain resolves.",
+      "modificationPl": "Uginaj kolano pracującej nogi (kolano do klatki zamiast prostej nogi) by skrócić dźwignię zginacza biodra, lub całkowicie pomiń to ćwiczenie aż ból ustąpi.",
+      "alternative": "bicycle-crunch"
+    },
+    {
+      "condition": "abdominal_diastasis",
+      "severity": "avoid",
+      "modification": "Loaded anti-extension drills with significant intra-abdominal pressure can worsen diastasis recti. Wait for clearance from a pelvic-floor specialist.",
+      "modificationPl": "Obciążone ćwiczenia anty-wyprostne z dużym ciśnieniem wewnątrzbrzusznym mogą pogłębić rozejście kresy białej. Czekaj na zgodę fizjoterapeuty uroginekologicznego.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per leg (each leg counted separately) | 3x16-24 total alternating reps",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-sitted-alternate-leg-raise.gif",
+    "frames_extracted": [
+      "frames/barbell-sitted-alternate-leg-raise/frame_0_start.png",
+      "frames/barbell-sitted-alternate-leg-raise/frame_1_early.png",
+      "frames/barbell-sitted-alternate-leg-raise/frame_2_mid.png",
+      "frames/barbell-sitted-alternate-leg-raise/frame_3_late.png",
+      "frames/barbell-sitted-alternate-leg-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/barbell-sitted-alternate-leg-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek w GIFie). Klatki pokazują pełen cykl naprzemiennych wznosów nóg w pozycji siedzącej z odchylonym tułowiem (~45°) i sztangą trzymaną na wyciągniętych ramionach nad głową. Frame_0/frame_1/frame_2: prawa noga uniesiona wysoko w górę (kolano lekko ugięte ze względu na zakres ruchu w biodrze), lewa noga wyprostowana w przód tuż nad podłogą. Frame_3/frame_4: prawa noga opuszczana, faza przejściowa. Mięśnie podświetlone na ilustracji: rectus abdominis (cały, P9), zginacze biodra obu nóg (P9), kwadrycepsy (S5). Sztanga z obciążeniem (talerze 35lb widoczne) jest trzymana STATYCZNIE nad głową — to obciążona pozycja hollow-body z aktywną pracą nóg. Bardzo wymagające ćwiczenie: stabilizacja barków + anty-ekstensja + dynamiczna praca zginaczy biodra jednocześnie. Klasyfikacja: movement_pattern=core (anti-extension + hip flexion combo), force=static_dynamic (sztanga statyczna, nogi dynamiczne), mechanic=compound (wiele stawów: bark+łokieć+biodro). Difficulty 6 (zgodnie z instrukcją — wymaga dobrej mobilności bark + silnego brzucha + V-sit holdu). Wszystkie pola PL napisane od zera używając polskiej terminologii (rectus, zginacze biodra, hollow-body, V-sit, retrowersja miednicy).",
+
+  "tags": ["core", "abs", "anti_extension", "hip_flexors", "barbell", "loaded", "alternating", "advanced", "overhead", "hollow_body"]
+}

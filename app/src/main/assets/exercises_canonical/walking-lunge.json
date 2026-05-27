@@ -1,0 +1,206 @@
+{
+  "id": "walking-lunge",
+  "name": "Walking Lunge",
+  "namePl": "Wykrok chodzący",
+  "aliases": ["alternating walking lunge", "bodyweight walking lunge", "forward walking lunge", "traveling lunge"],
+  "aliasesPl": ["wykroki chodzące", "wykrok naprzemienny", "wykroki w przód z chodzeniem", "wykroki kroczące"],
+
+  "description": "Unilateral lower-body compound exercise performed with bodyweight. Athlete steps forward into a long lunge, lowers until the rear knee almost touches the floor and the front thigh is parallel to the ground, then drives up and brings the rear leg forward into the next lunge — continuously traveling forward. Unlike a stationary lunge, each rep ends in motion, demanding dynamic balance, stride control and hip mobility. Targets the quads and glutes of the working (front) leg with strong involvement of hamstrings, calves and the entire stabilizer chain.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała wykonywane z masą własnego ciała. Trenujący wykonuje długi krok w przód do wykroku, schodzi aż tylne kolano prawie dotknie podłogi a przednie udo będzie równoległe do ziemi, po czym wypycha się w górę i przenosi tylną nogę do przodu w kolejny wykrok — stale przemieszczając się do przodu. W odróżnieniu od wykroku stacjonarnego, każde powtórzenie kończy się w ruchu, co wymaga dynamicznej równowagi, kontroli kroku i mobilności bioder. Angażuje czworogłowe i pośladki przedniej nogi z mocnym udziałem dwugłowych ud, łydek i całego łańcucha stabilizacyjnego.",
+
+  "instructions": [
+    "Stand tall in open space with feet hip-width apart. You need 5-10 meters of clear floor in front of you.",
+    "Brace your core, draw shoulder blades back, chest up, hands on hips or relaxed at your sides.",
+    "Inhale and take a long step forward with one leg — about 1.5 times your normal walking step.",
+    "Plant the front foot flat. Lower your body straight down by bending both knees simultaneously.",
+    "Descend until the front thigh is parallel to the floor, front knee roughly stacked over the ankle (~90° bend). The back knee hovers 2-3 cm above the ground.",
+    "Drive up through the front heel and mid-foot. Keep the torso vertical throughout — no forward lean.",
+    "Instead of returning the front leg back, bring the rear leg forward and through, planting it as the new front foot for the next lunge.",
+    "Step continuously forward, alternating legs each rep. Maintain a steady rhythm — one breath cycle per step.",
+    "Exhale on the drive up, inhale at the top before the next step.",
+    "Cover the planned distance or number of steps per leg, then turn around and walk back."
+  ],
+  "instructionsPl": [
+    "Stań prosto na wolnej przestrzeni, stopy na szerokość bioder. Potrzebujesz 5-10 metrów wolnej podłogi przed sobą.",
+    "Napnij brzuch, ściągnij łopatki w tył, klatka w górze, ręce na biodrach lub luźno wzdłuż ciała.",
+    "Wdech i wykonaj długi krok w przód jedną nogą — około 1,5 razy dłuższy niż normalny krok.",
+    "Postaw przednią stopę płasko. Opuść ciało prosto w dół zginając jednocześnie oba kolana.",
+    "Schodź aż przednie udo będzie równoległe do podłogi, przednie kolano mniej więcej nad kostką (~90° zgięcia). Tylne kolano zatrzymaj 2-3 cm nad ziemią.",
+    "Wypchnij się w górę przez piętę i środek stopy przedniej nogi. Utrzymuj tułów pionowo — bez pochylania do przodu.",
+    "Zamiast cofać przednią nogę, przenieś tylną nogę do przodu i postaw ją jako nową przednią stopę do kolejnego wykroku.",
+    "Krocz nieprzerwanie do przodu, zmieniając nogi co krok. Utrzymuj równy rytm — jeden cykl oddechowy na krok.",
+    "Wydech przy wypychaniu w górę, wdech na górze przed kolejnym krokiem.",
+    "Pokonaj zaplanowany dystans lub liczbę kroków na nogę, następnie odwróć się i wróć."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "calves"],
+    "stabilizers": ["core", "gluteus_medius", "adductors", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P8",
+    "glutes": "P8",
+    "hamstrings": "S6",
+    "calves": "S5",
+    "core": "S6",
+    "gluteus_medius": "S6",
+    "adductors": "S5",
+    "hip_flexors": "T4"
+  },
+
+  "equipment": {
+    "required": [],
+    "optional": ["dumbbells", "kettlebells", "weighted_vest", "open_space"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "bodyweight-lunge", "reverse-lunge"],
+    "progression_to": ["dumbbell-walking-lunge", "barbell-walking-lunge", "deficit-walking-lunge", "overhead-walking-lunge"],
+    "alternatives": ["bodyweight-lunge", "reverse-lunge", "bulgarian-split-squat", "step-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Find 5-10 meters of clear floor — you'll be traveling",
+      "Stand tall, feet hip-width, weight evenly distributed",
+      "Core braced, ribs down, chest up",
+      "Hands on hips or relaxed — keep upper body quiet",
+      "Eyes forward at a fixed point on the wall — helps balance"
+    ],
+    "setup_cues_pl": [
+      "Znajdź 5-10 metrów wolnej podłogi — będziesz się przemieszczać",
+      "Stań prosto, stopy na szerokość bioder, ciężar rozłożony równomiernie",
+      "Brzuch napięty, żebra w dół, klatka w górze",
+      "Ręce na biodrach lub luźno — utrzymaj górną część ciała spokojną",
+      "Wzrok do przodu na stały punkt na ścianie — pomaga w równowadze"
+    ],
+    "execution_cues": [
+      "Long step — about 1.5x your normal walking stride",
+      "Lower straight down, not forward — back knee toward the floor",
+      "Front shin stays roughly vertical at the bottom",
+      "Drive up through the front heel, then swing the back leg through",
+      "Walk on parallel lines, not on a tightrope — keeps lateral balance"
+    ],
+    "execution_cues_pl": [
+      "Długi krok — około 1,5 razy dłuższy niż normalny krok",
+      "Opuszczaj się prosto w dół, nie do przodu — tylne kolano w stronę podłogi",
+      "Piszczel przedniej nogi pionowa na dole",
+      "Wypchnij się przez piętę przedniej nogi, potem przenieś tylną nogę do przodu",
+      "Krocz po dwóch równoległych liniach, nie po linii prostej — utrzymuje równowagę boczną"
+    ],
+    "common_faults": [
+      {
+        "fault": "Step too short — descent turns into a knee-dominant squat",
+        "faultPl": "Za krótki krok — schodzenie zamienia się w przysiad dominujący kolanem",
+        "cause": "Underestimating stride length, leading to excessive forward knee travel and reduced glute work.",
+        "causePl": "Niedoszacowanie długości kroku, co powoduje nadmierne wysunięcie kolana do przodu i mniejszą pracę pośladków.",
+        "cue": "Step out 1.5x your normal walking step. The front shin should be vertical at the bottom.",
+        "cuePl": "Krok 1,5 raza dłuższy niż normalny. Piszczel przedniej nogi powinna być pionowa na dole."
+      },
+      {
+        "fault": "Torso lean / pitching forward at the bottom",
+        "faultPl": "Pochylenie tułowia / kładzenie się do przodu w dolnej pozycji",
+        "cause": "Weak core, tight hip flexors of the rear leg, or trying to throw the body forward to generate momentum.",
+        "causePl": "Słaby brzuch, napięte zginacze biodra tylnej nogi lub próba przerzucania ciała do przodu po pęd.",
+        "cue": "Imagine a wall behind your head and stay tall against it. Chest up, hips under shoulders.",
+        "cuePl": "Wyobraź sobie ścianę za głową i trzymaj się jej. Klatka w górze, biodra pod barkami."
+      },
+      {
+        "fault": "Wobbling sideways / loss of lateral balance",
+        "faultPl": "Chwianie na boki / utrata równowagi bocznej",
+        "cause": "Feet placed on a single line (tightrope walking) or weak gluteus medius unable to control the pelvis on one leg.",
+        "causePl": "Stopy ustawione na jednej linii (chodzenie po linie) lub słaby pośladkowy średni nie kontrolujący miednicy na jednej nodze.",
+        "cue": "Plant each foot on a separate parallel rail, about hip-width apart — like train tracks.",
+        "cuePl": "Stawiaj każdą stopę na osobnej równoległej linii, mniej więcej na szerokość bioder — jak tory kolejowe."
+      },
+      {
+        "fault": "Insufficient depth — back knee stays high above the floor",
+        "faultPl": "Niedostateczna głębokość — tylne kolano zostaje wysoko nad podłogą",
+        "cause": "Limited hip mobility, fear of touching the floor, or shortcutting the rep to walk faster.",
+        "causePl": "Ograniczona mobilność bioder, strach przed dotknięciem podłogi lub skracanie powtórzeń żeby chodzić szybciej.",
+        "cue": "Lower until the back knee is 2-3 cm above the floor. Slow down — quality over speed.",
+        "cuePl": "Schodź aż tylne kolano będzie 2-3 cm nad podłogą. Zwolnij — jakość ponad szybkość."
+      },
+      {
+        "fault": "Rushing transition / crashing into the next step",
+        "faultPl": "Pośpiech w przejściu / rzucanie się w kolejny krok",
+        "cause": "Using momentum instead of muscular control. Looks dynamic but reduces stimulus and risks ankle/knee.",
+        "causePl": "Używanie pędu zamiast kontroli mięśniowej. Wygląda dynamicznie ale zmniejsza bodziec i ryzykuje kostkę/kolano.",
+        "cue": "Pause briefly at the top between steps. One controlled breath = one controlled lunge.",
+        "cuePl": "Krótka pauza na górze między krokami. Jeden kontrolowany oddech = jeden kontrolowany wykrok."
+      }
+    ],
+    "breathing": "Inhale at the top before stepping forward. Hold the breath through the descent. Exhale on the drive up as you bring the back leg through. Steady rhythm — one breath cycle per step.",
+    "breathingPl": "Wdech na górze przed krokiem w przód. Wstrzymaj oddech przez schodzenie. Wydech przy wypychaniu w górę, gdy przenosisz tylną nogę. Równy rytm — jeden cykl oddechowy na krok."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "Walking pattern adds dynamic load on the knee. Switch to stationary split squat with controlled tempo and limited ROM.",
+      "modificationPl": "Wzorzec chodzący dodaje dynamiczne obciążenie kolana. Przejdź na stacjonarny split squat z kontrolowanym tempem i ograniczonym zakresem ruchu.",
+      "alternative": "bodyweight-split-squat"
+    },
+    {
+      "condition": "balance_disorder_or_vestibular_issues",
+      "severity": "modify",
+      "modification": "Walking lunges require dynamic balance. Replace with reverse lunge or stationary lunge near a wall/rail for fingertip support.",
+      "modificationPl": "Wykroki chodzące wymagają dynamicznej równowagi. Zastąp wykrokiem w tył lub wykrokiem stacjonarnym przy ścianie/poręczy do podparcia palcem.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_hip_or_groin_strain",
+      "severity": "avoid",
+      "modification": "Long stride stretches adductors and hip flexors. Avoid until pain-free, then return through short-stride reverse lunge.",
+      "modificationPl": "Długi krok rozciąga przywodziciele i zginacze biodra. Unikaj do ustąpienia bólu, potem wracaj przez wykrok w tył z krótkim krokiem.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "caution",
+      "modification": "Dynamic knee loading can flare symptoms. Limit ROM and stride length, or move to glute-dominant alternatives like hip thrust.",
+      "modificationPl": "Dynamiczne obciążenie kolana może nasilić objawy. Ogranicz zakres ruchu i długość kroku lub przejdź na alternatywy dominujące pośladkami jak hip thrust.",
+      "alternative": "hip-thrust"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per leg (hypertrophy) | 3x20 total steps (conditioning) | 2-3x distance based 20-30m (endurance) | Add dumbbells 5-15kg per hand for progression",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "walking-lunge.gif",
+    "frames_extracted": [
+      "frames/walking-lunge/frame_0_start.png",
+      "frames/walking-lunge/frame_1_early.png",
+      "frames/walking-lunge/frame_2_mid.png",
+      "frames/walking-lunge/frame_3_late.png",
+      "frames/walking-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/walking-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel. Sekwencja pokazuje wzorzec chodzenia: frame_0 — pozycja startowa stojąca (podświetlone quadriceps obu nóg i łydki); frame_1 — wykrok prawą nogą w przód, przednie udo równolegle do podłogi, tylne kolano blisko ziemi, tułów pionowy (podświetlone glutes + quadriceps + adductors); frame_2 — postać wraca do stojąca; frame_3 — wykrok lewą nogą w przód (przeciwna noga niż frame_1, potwierdza naprzemienność); frame_4 — duch poprzedniej klatki obok startowej pozycji = chodzenie do przodu (klasyczny artystyczny zapis walking pattern w GIFach jahel). Bodyweight — brak sprzętu. Mięśnie: P8 quadriceps + P8 glutes (lekko niżej niż barbell-lunge ze względu na brak obciążenia zewnętrznego), S6 hamstrings + core + gluteus_medius, T4 hip_flexors. Klasyfikacja: lunge/push/compound/unilateral/sagittal/closed. Wszystkie pola PL napisane od zera — polski standard 'wykrok chodzący' (alternatywne: 'wykroki kroczące', 'wykrok naprzemienny'). 5 faults + 4 contraindications + 5+5 cues zgodnie z wymaganiem.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "bodyweight", "compound", "dynamic_balance", "traveling", "alternating", "home_workout", "no_equipment"]
+}

@@ -1,0 +1,208 @@
+{
+  "id": "weighted-one-hand-pull-up",
+  "name": "Weighted One-Arm Pull-Up",
+  "namePl": "Podciąganie na jednej ręce z obciążeniem",
+  "aliases": ["weighted one-arm pull-up", "weighted single-arm pull-up", "weighted OAP", "one hand pull-up with weight", "loaded one-arm chin"],
+  "aliasesPl": ["podciąganie jednorącz z obciążeniem", "podciąganie na jednym ramieniu z ciężarem", "weighted one-arm pull-up", "OAP z obciążeniem"],
+
+  "description": "Elite-level calisthenics feat: a strict one-arm pull-up performed with ADDITIONAL external load (here held in the free hand as a dumbbell; commonly done with a dip belt). Combines maximum unilateral pulling strength, anti-rotational core control, scapular stability and grip endurance. The pinnacle of bodyweight vertical pulling — for athletes who already own a clean strict OAP at bodyweight.",
+  "descriptionPl": "Elitarny wyczyn kalisteniki: ścisłe podciąganie na jednej ręce wykonywane z DODATKOWYM obciążeniem zewnętrznym (na tym GIF-ie trzymane w wolnej ręce jako hantel; częściej z pasem dip belt). Łączy maksymalną jednostronną siłę ciągu, anty-rotacyjną kontrolę core, stabilizację łopatki i wytrzymałość chwytu. Szczyt ciągu pionowego w wadze ciała — dla osób które mają już czyste strict OAP na samej masie ciała.",
+
+  "instructions": [
+    "Verify prerequisite: you can do at least 1-2 strict, full-ROM one-arm pull-ups at bodyweight before loading.",
+    "Set up load: attach weight via dip belt around hips (preferred) OR hold a dumbbell in the free hand (as shown).",
+    "Grip the bar with ONE hand — overhand or neutral. Hand directly above shoulder, not offset.",
+    "Hang in full extension on the working arm. Free arm hanging down (with dumbbell) or behind back.",
+    "Pre-tension: depress and slightly retract the working scapula. Brace core HARD to resist rotation.",
+    "Initiate pull by driving the working elbow DOWN AND BACK toward the hip. Body will want to rotate — fight it with contralateral oblique tension.",
+    "Pull until chin clears the bar. Keep the bar over the working shoulder, body upright (no excessive lean).",
+    "Lower with full control across 2-3 seconds to full elbow extension. Maintain scapular control on the eccentric.",
+    "1 rep = full dead-hang start to chin over bar to full dead-hang finish. Quality over quantity.",
+    "Sets typically 2-5 with 1-3 reps. Switch arms each set. Rest 3-5 min between sets."
+  ],
+  "instructionsPl": [
+    "Wymóg wstępny: musisz wykonać minimum 1-2 ścisłe one-arm pull-upy na pełnym ROM w samej wadze ciała PRZED dokładaniem obciążenia.",
+    "Załóż obciążenie: pas dip belt na biodra (preferowane) LUB hantel w wolnej ręce (jak na GIF-ie).",
+    "Złap drążek JEDNĄ ręką — chwyt nachwytem lub neutralny. Ręka bezpośrednio nad barkiem, nie odsunięta.",
+    "Zwiśnij w pełnym wyproście na ramieniu pracującym. Wolne ramię swobodnie w dół (z hantlem) lub za plecami.",
+    "Napięcie wstępne: opuść i lekko ściągnij pracującą łopatkę. Napnij brzuch MOCNO by przeciwstawić się rotacji.",
+    "Rozpocznij ciąg napierając łokciem pracującym W DÓŁ I DO TYŁU w stronę biodra. Ciało będzie chciało się obracać — walcz z tym napięciem skośnych po przeciwnej stronie.",
+    "Podciągaj aż broda przejdzie nad drążkiem. Trzymaj drążek nad pracującym barkiem, tułów pionowo (bez nadmiernego odchylania).",
+    "Opuszczaj w pełnej kontroli przez 2-3 sekundy do pełnego wyprostu łokcia. Utrzymuj kontrolę łopatki na ekscentryku.",
+    "1 powtórzenie = pełen dead-hang start → broda nad drążkiem → pełen dead-hang finish. Jakość ponad ilość.",
+    "Serie zwykle 2-5 × 1-3 powtórzeń. Zmień ramię co serię. Przerwy 3-5 min między seriami."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["brachialis", "teres_major", "trapezius_middle_lower", "rhomboids", "brachioradialis"],
+    "stabilizers": ["core", "obliques", "rotator_cuff", "forearms", "serratus_anterior", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P9",
+    "brachialis": "S8",
+    "teres_major": "S8",
+    "trapezius_middle_lower": "S7",
+    "rhomboids": "S7",
+    "forearms": "S9",
+    "obliques": "S8",
+    "core": "S8",
+    "rotator_cuff": "S6"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["dip_belt", "dumbbell", "weight_plate", "chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 10,
+    "prerequisites": ["pull-up", "weighted-pull-up", "archer-pull-up", "one-arm-pull-up", "one-arm-negative-pull-up", "chest-to-bar-pull-up"],
+    "progression_to": ["heavier-loading-progression", "one-arm-muscle-up"],
+    "alternatives": ["one-arm-pull-up", "weighted-pull-up", "archer-pull-up", "one-arm-assisted-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Confirm bodyweight OAP first — never load before mastery",
+      "Hand directly over working shoulder (not offset)",
+      "Dip belt preferred over holding DB (cleaner mechanics)",
+      "Scapula depressed before pull begins",
+      "Core PRE-BRACED to lock against rotation"
+    ],
+    "setup_cues_pl": [
+      "Najpierw potwierdź OAP na BW — nigdy nie dokładaj przed opanowaniem",
+      "Ręka bezpośrednio nad pracującym barkiem (nie odsunięta)",
+      "Pas dip belt lepszy niż trzymanie hantla (czystsza mechanika)",
+      "Łopatka opuszczona zanim ruch ruszy",
+      "Brzuch NAPIĘTY WCZEŚNIEJ — blokuje rotację"
+    ],
+    "execution_cues": [
+      "Drive working elbow DOWN and BACK to your hip",
+      "Stay UPRIGHT — minimal body lean or rotation",
+      "Chin OVER the bar (no half reps with load)",
+      "Slow eccentric (2-3 sec) — that's where strength is built",
+      "Quality > quantity — 1 clean rep beats 3 sloppy"
+    ],
+    "execution_cues_pl": [
+      "Napieraj pracującym łokciem W DÓŁ i DO TYŁU do biodra",
+      "Zostań PIONOWO — minimum odchylenia i rotacji",
+      "Broda NAD drążkiem (z obciążeniem żadnych połówek)",
+      "Powolny ekscentryk (2-3 sek) — tam buduje się siła",
+      "Jakość > ilość — 1 czyste powtórzenie bije 3 niechlujne"
+    ],
+    "common_faults": [
+      {
+        "fault": "Body rotation/spiral during pull (uncontrolled twist)",
+        "faultPl": "Rotacja/skręcanie ciała podczas ciągu (niekontrolowany twist)",
+        "cause": "Insufficient anti-rotation core strength; offset center of mass from added load",
+        "causePl": "Niewystarczająca anty-rotacyjna siła core; przesunięty środek masy z dodanym ciężarem",
+        "cue": "Brace obliques HARD on the side opposite the working arm. Use dip belt instead of holding DB to centralize load.",
+        "cuePl": "Napnij MOCNO skośne po stronie przeciwnej do pracującej ręki. Użyj dip belt zamiast trzymania hantla — centralizuje ciężar."
+      },
+      {
+        "fault": "Loading before bodyweight OAP is mastered",
+        "faultPl": "Dokładanie obciążenia przed opanowaniem OAP na masie ciała",
+        "cause": "Ego progression — wanting the next badge of honor",
+        "causePl": "Postęp z ego — chęć kolejnego odznaczenia",
+        "cue": "Earn 2-3 clean strict bodyweight OAPs on each arm BEFORE adding 2.5kg. This is non-negotiable for elbow/shoulder safety.",
+        "cuePl": "Zarób na 2-3 czyste ścisłe OAP per ramię BW PRZED dodaniem 2.5kg. To nienegocjowalne dla bezpieczeństwa łokcia/barku."
+      },
+      {
+        "fault": "Half rep / chin not above bar with load",
+        "faultPl": "Połowa powtórzenia / broda nie nad drążkiem z obciążeniem",
+        "cause": "Load too heavy, fatigue at top of pull, or weak top-end strength",
+        "causePl": "Obciążenie za ciężkie, zmęczenie w górnej fazie lub słaba siła w punkcie szczytowym",
+        "cue": "If you can't get chin over bar with this load, drop weight. Half reps train half ROM and risk biceps tendon stress.",
+        "cuePl": "Jeśli nie podnosisz brody nad drążek z tym obciążeniem — zdejmij ciężar. Połówki trenują połowę ROM i ryzykują naciągnięcie ścięgna bicepsa."
+      },
+      {
+        "fault": "Free arm flailing / used for momentum",
+        "faultPl": "Wolne ramię macha / pomaga rozpędem",
+        "cause": "Trying to swing body for help, or holding DB lets the arm pump",
+        "causePl": "Próba bujania ciałem dla pomocy lub trzymany hantel pozwala ramieniu pompować",
+        "cue": "Free arm DEAD STILL — either grip dumbbell statically OR tuck behind back. Any swing = rep not counted.",
+        "cuePl": "Wolne ramię NIERUCHOMO — albo statycznie trzymaj hantel ALBO schowaj za plecami. Każde bujanie = nieliczone powtórzenie."
+      },
+      {
+        "fault": "Dropping (bouncing) out of the bottom",
+        "faultPl": "Opadanie (bouncing) z dołu",
+        "cause": "Skipping the eccentric to save energy; ego concentric-only reps",
+        "causePl": "Pomijanie ekscentryka by oszczędzić energię; ego — same koncentryki",
+        "cue": "3-second eccentric every rep — soft landing in dead-hang, then re-engage scapula before next pull. Bouncing risks tendon injury.",
+        "cuePl": "3-sekundowy ekscentryk każdego powtórzenia — miękkie lądowanie w dead-hang, potem ponowna aktywacja łopatki przed kolejnym ciągiem. Bouncing grozi kontuzją ścięgien."
+      }
+    ],
+    "breathing": "Inhale at bottom hang. Hold breath / partial Valsalva on the concentric for spinal stability (1-2 sec max). Exhale at top or on the eccentric. Don't fully hold breath across multiple reps — let pressure cycle.",
+    "breathingPl": "Wdech na dole w zwisie. Wstrzymanie oddechu / częściowa Valsalva na koncentryku dla stabilności kręgosłupa (max 1-2 sek). Wydech na górze lub podczas ekscentryka. Nie wstrzymuj oddechu przez wiele powtórzeń — pozwól ciśnieniu krążyć."
+  },
+
+  "contraindications": [
+    {
+      "condition": "any_elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Single-arm + load = maximum stress on biceps tendon and medial elbow. Heal fully first. Regress to BW OAP or weighted two-arm pull-up.",
+      "modificationPl": "Jedna ręka + obciążenie = maksymalny stres na ścięgno bicepsa i przyśrodkowy łokieć. Wyzdrów najpierw w pełni. Cofnij się do OAP na masie ciała lub weighted dwurącz.",
+      "alternative": "weighted-pull-up"
+    },
+    {
+      "condition": "shoulder_instability_or_labral_pathology",
+      "severity": "avoid",
+      "modification": "Unilateral hang with load places extreme torque on the GH joint. Do NOT perform until cleared by sports physio. Regress to assisted variations.",
+      "modificationPl": "Jednostronny zwis z obciążeniem nakłada ekstremalny moment na staw barkowy. NIE wykonuj do czasu zielonego światła od fizjoterapeuty sportowego. Cofnij się do wariantów wspomaganych.",
+      "alternative": "archer-pull-up"
+    },
+    {
+      "condition": "wrist_or_grip_weakness",
+      "severity": "modify",
+      "modification": "Use chalk + figure-8 straps on the working hand if grip is the limiter (but only if grip is genuinely the weak link, not the lat/biceps). Train grip separately.",
+      "modificationPl": "Użyj magnezji + pasków figure-8 na pracującej ręce jeśli chwyt jest ograniczeniem (ale tylko jeśli faktycznie chwyt jest słabym ogniwem, nie najszerszy/biceps). Trenuj chwyt osobno.",
+      "alternative": "one-arm-pull-up"
+    },
+    {
+      "condition": "lower_back_pain_or_disc_issues",
+      "severity": "modify",
+      "modification": "Holding heavy dip belt creates spinal compression; offset load (DB in hand) creates lateral flexion stress. If LBP — switch to BW OAP only.",
+      "modificationPl": "Trzymanie ciężkiego dip belt powoduje kompresję kręgosłupa; asymetryczne obciążenie (hantel w ręce) powoduje stres bocznego zgięcia. Przy bólu LBP — wróć tylko do OAP w masie ciała.",
+      "alternative": "one-arm-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "2-5 sets x 1-3 reps per arm | rest 3-5 min | start with +2.5kg max, progress 1.25kg/week",
+  "calories_per_kg_per_hour": 9.0,
+
+  "media": {
+    "primary": "weighted-one-hand-pull-up.gif",
+    "frames_extracted": [
+      "frames/weighted-one-hand-pull-up/frame_0_start.png",
+      "frames/weighted-one-hand-pull-up/frame_1_early.png",
+      "frames/weighted-one-hand-pull-up/frame_2_mid.png",
+      "frames/weighted-one-hand-pull-up/frame_3_late.png",
+      "frames/weighted-one-hand-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/weighted-one-hand-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start na prawej ręce, lewa ręka trzyma hantel jako dodatkowe obciążenie. Frame 2: top position — broda nad drążkiem, jedna ręka pracuje, druga z hantlem niżej. Podświetlone: latissimus dorsi (prawy, mocno), trapez środkowy/dolny, romboidy, biceps + przedramię pracującej ręki. Ekstremalnie elitarne ćwiczenie — wymóg: opanowane OAP w samej masie ciała. Unilateral, sagittal, compound, pull. Difficulty 10/10. Level: elite. Primary lat + biceps; sekundarnie brachialis, teres major; mocni stabilizatorzy: skośne + core (anty-rotacja), przedramiona (chwyt). Calories wyższe niż zwykły pull-up (9.0 vs 7.0) ze względu na intensywność. Naming PL: 'Podciąganie na jednej ręce z obciążeniem' — czytelne, branżowe.",
+
+  "tags": ["calisthenics", "elite", "advanced", "bodyweight_plus_load", "unilateral", "vertical_pull", "strength_feat", "anti_rotation", "back", "lats", "biceps", "one_arm", "weighted", "grip_demanding", "low_volume_high_intensity"]
+}

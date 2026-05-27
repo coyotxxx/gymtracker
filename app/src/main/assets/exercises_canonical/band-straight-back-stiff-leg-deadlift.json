@@ -1,0 +1,204 @@
+{
+  "id": "band-straight-back-stiff-leg-deadlift",
+  "name": "Band Straight-Back Stiff-Leg Deadlift (Strict Form)",
+  "namePl": "Stiff-leg deadlift z gumą z prostym tułowiem (strict form)",
+  "aliases": ["banded stiff-leg deadlift strict", "band straight back SLDL", "band SLDL strict", "resistance band stiff leg deadlift"],
+  "aliasesPl": ["stiff-leg deadlift z gumą", "martwy ciąg na prostych nogach z gumą — strict", "SLDL z gumą prosty tułów", "martwy ciąg z gumą prosta plecy"],
+
+  "description": "A hip-hinge variation of the stiff-leg deadlift performed with a resistance band, emphasizing a perfectly STRAIGHT BACK throughout the entire range of motion. 'Strict form' means rigid spinal neutrality — no rounding of the lumbar, no thoracic flexion, no shoulder shrugging forward. The lifter stands on the band (loop under feet) and grips the other end, then hinges at the hips with knees only slightly bent (~10-15°). The straight-back cue distinguishes this from looser SLDL variants where mild rounding is tolerated — here, if the back rounds, the rep is cut short. Excellent beginner-friendly hamstring/glute exercise: the band provides ascending resistance (heaviest at lockout, lightest at the stretched position), reducing spinal load at the bottom where most injuries happen.",
+  "descriptionPl": "Wariant martwego ciągu na prostych nogach (stiff-leg deadlift) wykonywany z gumą oporową, z naciskiem na IDEALNIE PROSTE PLECY przez cały zakres ruchu. 'Strict form' oznacza sztywną neutralność kręgosłupa — bez zaokrąglania lędźwi, bez zgięcia piersiowego, bez wysuwania barków do przodu. Ćwiczący staje na gumie (pętla pod stopami) i chwyta drugi koniec, następnie wykonuje hip hinge z kolanami tylko lekko ugiętymi (~10-15°). Cue prostego tułowia odróżnia ten wariant od luźniejszych SLDL gdzie tolerowane jest lekkie zaokrąglenie — tu jeśli plecy się zaokrąglają, powtórzenie kończy się wyżej. Doskonałe ćwiczenie dla początkujących na dwugłowe ud i pośladki: guma daje opór rosnący (najmocniejszy na górze lock-out, najsłabszy w pozycji rozciągniętej), redukując obciążenie kręgosłupa na dole gdzie zdarza się najwięcej kontuzji.",
+
+  "instructions": [
+    "Stand on a resistance band with feet hip-width apart. The band should be centered under the midfoot of both feet.",
+    "Grip the band with both hands (or use handles if attached) at hip level, arms straight, hands shoulder-width apart. Stand tall.",
+    "Set the back: chest up, shoulder blades pulled down and back, neutral spine — head, mid-back, and tailbone aligned.",
+    "Soft knees — bend them ~10-15° and LOCK that bend. They will NOT move during the rep. This is the 'stiff-leg' part.",
+    "Take a breath, brace your core. Begin the descent by pushing your hips BACKWARD — not by leaning forward, not by bending knees.",
+    "Lower your torso by hinging at the hips. The back stays PERFECTLY STRAIGHT — imagine a broomstick along your spine touching head, mid-back, and tailbone at all times.",
+    "Lower until you feel a strong stretch in the hamstrings — typically when the band is at mid-shin level or torso is roughly parallel to the floor. STOP THE INSTANT YOU FEEL THE BACK WANT TO ROUND — that is your ROM today.",
+    "Reverse the movement: drive hips forward, pulling the band up. Keep back straight on the way up too. Squeeze glutes hard at lockout. Repeat."
+  ],
+  "instructionsPl": [
+    "Stań na gumie oporowej, stopy na szerokość bioder. Guma powinna być wycentrowana pod śródstopiem obu stóp.",
+    "Chwyć gumę obiema rękami (lub użyj uchwytów jeśli są) na wysokości bioder, ręce wyprostowane, dłonie na szerokość barków. Stań prosto.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, neutralny kręgosłup — głowa, środek pleców i kość ogonowa w jednej linii.",
+    "Miękkie kolana — ugnij je ~10-15° i ZABLOKUJ to ugięcie. Nie będą się ruszać w trakcie powtórzenia. To jest 'stiff-leg' — sztywne nogi.",
+    "Nabierz wdech, napnij brzuch. Zacznij schodzenie wypychając biodra DO TYŁU — nie pochylając się do przodu, nie zginając kolan.",
+    "Opuszczaj tułów przez hip hinge w biodrach. Plecy pozostają IDEALNIE PROSTE — wyobraź sobie kij od miotły wzdłuż kręgosłupa dotykający głowy, środka pleców i kości ogonowej przez cały czas.",
+    "Schodź aż poczujesz mocny rozciąg w dwugłowych ud — zazwyczaj gdy guma jest na wysokości połowy goleni lub tułów jest mniej więcej równolegle do podłogi. ZATRZYMAJ SIĘ W MOMENCIE GDY PLECY ZACZNĄ CHCIEĆ SIĘ ZAOKRĄGLAĆ — to jest twój dzisiejszy zakres.",
+    "Wróć ruchem: wepchnij biodra do przodu pociągając gumę w górę. Trzymaj plecy proste także w drodze do góry. Mocno ściśnij pośladki w lock-out. Powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "glutes"],
+    "secondary": ["erector_spinae", "core"],
+    "stabilizers": ["latissimus_dorsi", "rhomboids", "trapezius", "rectus_abdominis", "obliques", "adductors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P9",
+    "glutes": "P8",
+    "erector_spinae": "S8",
+    "core": "S7",
+    "latissimus_dorsi": "S5",
+    "trapezius": "S4",
+    "rectus_abdominis": "S6",
+    "obliques": "S5",
+    "adductors": "S4",
+    "forearms": "S5"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["band_handles", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["hip-hinge-dowel-drill", "bodyweight-good-morning", "glute-bridge"],
+    "progression_to": ["band-stiff-leg-deadlift", "dumbbell-stiff-leg-deadlift", "kettlebell-rdl", "barbell-romanian-deadlift", "band-single-leg-rdl"],
+    "alternatives": ["dumbbell-rdl", "kettlebell-rdl", "good-morning", "cable-pull-through", "lying-leg-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both feet on the band, hip-width apart — band centered under midfoot",
+      "Hands at hip level, arms straight, shoulder-width grip",
+      "Stand tall — chest up, shoulder blades down and back",
+      "Soft knees: 10-15° bend, then LOCK them — they won't move",
+      "Neutral spine: imagine a broomstick touching head, mid-back, tailbone"
+    ],
+    "setup_cues_pl": [
+      "Obie stopy na gumie, na szerokość bioder — guma wycentrowana pod śródstopiem",
+      "Ręce na wysokości bioder, wyprostowane, chwyt na szerokość barków",
+      "Stań prosto — klatka w górze, łopatki w dół i do tyłu",
+      "Miękkie kolana: ugięcie 10-15°, potem ZABLOKUJ je — nie będą się ruszać",
+      "Neutralny kręgosłup: wyobraź sobie kij od miotły dotykający głowy, środka pleców, kości ogonowej"
+    ],
+    "execution_cues": [
+      "Hips BACK first — push your butt to the wall behind you",
+      "Back STAYS straight — if it rounds, you went too low, stop higher next rep",
+      "Knees do NOT move — same bend from start to bottom to top",
+      "Stretch the hamstrings — feel the pull on the back of the thighs",
+      "Drive hips forward, squeeze glutes hard at the top, full lockout"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU najpierw — wypchnij pośladki do ściany za tobą",
+      "Plecy POZOSTAJĄ proste — jeśli się zaokrąglają, zeszedłeś za nisko, następne powtórzenie zatrzymaj wyżej",
+      "Kolana NIE ruszają się — to samo ugięcie od startu, przez dół, do góry",
+      "Rozciągnij dwugłowe ud — poczuj ciągnięcie z tyłu uda",
+      "Wepchnij biodra do przodu, mocno ściśnij pośladki na górze, pełen lock-out"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounding the back to chase more range of motion",
+        "faultPl": "Zaokrąglanie pleców by zwiększyć zakres ruchu",
+        "cause": "Ego, copying advanced lifters, insufficient hamstring flexibility for full hinge, weak erectors",
+        "causePl": "Ego, kopiowanie zaawansowanych, niewystarczająca mobilność hamstringów dla pełnego hingowania, słabe prostowniki",
+        "cue": "STRICT means strict — stop when the back wants to round. Reduce ROM, work flexibility separately. Half-rep with straight back > full-rep with rounded back.",
+        "cuePl": "STRICT znaczy strict — zatrzymaj się gdy plecy chcą się zaokrąglać. Zmniejsz zakres, pracuj nad mobilnością osobno. Pół powtórzenia z prostymi plecami > pełne powtórzenie z zaokrąglonymi."
+      },
+      {
+        "fault": "Bending the knees more during the descent (turning it into RDL or conventional DL)",
+        "faultPl": "Zginanie kolan bardziej podczas schodzenia (zamienia w RDL lub klasyczny martwy ciąg)",
+        "cause": "Stiff-leg variant is harder on hamstrings — body tries to recruit quads by bending knees",
+        "causePl": "Wariant ze sztywnymi nogami jest trudniejszy dla hamstringów — ciało próbuje zaangażować czworogłowe zginając kolana",
+        "cue": "Knees are FROZEN at the starting angle — same bend top to bottom. If you need to bend more, weight is too heavy or hamstrings too tight.",
+        "cuePl": "Kolana są ZAMROŻONE na początkowym kącie — to samo ugięcie od góry do dołu. Jeśli musisz zginać bardziej, opór za duży lub hamstringi za sztywne."
+      },
+      {
+        "fault": "Shoulders shrugging forward / scapulae protracting at the bottom",
+        "faultPl": "Barki wysunięte do przodu / łopatki rozsunięte na dole",
+        "cause": "Lats disengaging, weak upper back, band pulling shoulders forward at peak tension",
+        "causePl": "Najszersze tracą napięcie, słabe górne plecy, guma ciągnie barki do przodu w szczycie napięcia",
+        "cue": "Lock the shoulder blades DOWN and BACK before you start, hold them there. If they pop forward, the rep is over.",
+        "cuePl": "Zablokuj łopatki W DÓŁ i DO TYŁU przed startem, trzymaj je tam. Jeśli wyskoczą do przodu, powtórzenie kończy się."
+      },
+      {
+        "fault": "Hyperextending the lower back at the top (leaning backward)",
+        "faultPl": "Nadmierne odgięcie lędźwi na górze (odchylanie się do tyłu)",
+        "cause": "Confusing 'full lockout' with leaning back, weak glutes not finishing the hip extension properly",
+        "causePl": "Mylenie 'pełnego lock-out' z odchyleniem do tyłu, słabe pośladki nie kończą wyprostu biodra prawidłowo",
+        "cue": "Stand TALL, not bent backward. Squeeze the glutes to finish the rep — that's the lockout, not lumbar extension.",
+        "cuePl": "Stań PROSTO, nie odgięty do tyłu. Ściśnij pośladki by skończyć powtórzenie — to jest lock-out, nie odgięcie lędźwi."
+      },
+      {
+        "fault": "Going down too fast — losing tension and bracing",
+        "faultPl": "Schodzenie za szybko — utrata napięcia i bracingu",
+        "cause": "Treating the band like it's weightless, rushing reps, no respect for the eccentric",
+        "causePl": "Traktowanie gumy jakby była bez oporu, śpieszenie powtórzeń, brak szacunku do ekscentryku",
+        "cue": "Lower in 2-3 seconds, feel the stretch, drive up powerfully. Eccentric builds the hamstring — don't waste it.",
+        "cuePl": "Opuszczaj 2-3 sekundy, poczuj rozciąg, wjeżdżaj dynamicznie. Ekscentryk buduje dwugłowe — nie marnuj go."
+      }
+    ],
+    "breathing": "Inhale at the top, brace lightly (band load is moderate so no full Valsalva needed). Hold breath during descent, exhale through pursed lips on the way up. Re-set breath each rep.",
+    "breathingPl": "Wdech na górze, lekkie napięcie (opór gumy jest umiarkowany więc pełna Valsalva nie jest konieczna). Wstrzymaj oddech podczas schodzenia, wydech przez zaciśnięte usta w drodze do góry. Resetuj oddech co powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Even with light band tension, hip hinge loads the lumbar spine. Rest fully, see a physiotherapist before resuming.",
+      "modificationPl": "Nawet przy lekkim oporze gumy, hip hinge obciąża lędźwiowy kręgosłup. Pełen odpoczynek, konsultacja z fizjoterapeutą przed powrotem.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "Strict-form straight-back version is the SAFEST hinge variant — band offloads the bottom (stretched position). Still: clear with PT first, reduce ROM significantly, no heavy band.",
+      "modificationPl": "Wariant strict-form z prostymi plecami to NAJBEZPIECZNIEJSZA wersja hingowania — guma odciąża dolną pozycję (rozciągniętą). Mimo to: konsultacja z fizjoterapeutą, znacznie zmniejszony zakres, bez mocnej gumy.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Reduce range of motion — only go as low as you can keep the back perfectly straight. Work on hamstring mobility separately (PNF stretching, foam rolling).",
+      "modificationPl": "Zmniejsz zakres ruchu — schodź tylko tak nisko jak możesz utrzymać idealnie proste plecy. Pracuj nad mobilnością hamstringów osobno (stretching PNF, rolowanie).",
+      "alternative": "kettlebell-rdl"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Slightly wider stance and reduced hip flexion depth may help. Stop above parallel if pinching in the hip occurs.",
+      "modificationPl": "Nieco szersza stójka i zmniejszona głębokość zgięcia biodra mogą pomóc. Zatrzymaj się powyżej równoległej do podłogi jeśli pojawia się szczypanie w biodrze.",
+      "alternative": "single-leg-rdl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / hamstring activation — most common) | 3x15-20 (endurance / glute activation warm-up) | 2-3x8-10 strict tempo 3-1-1-1 (technique work for beginners)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "band-straight-back-stiff-leg-deadlift.gif",
+    "frames_extracted": [
+      "frames/band-straight-back-stiff-leg-deadlift/frame_0_start.png",
+      "frames/band-straight-back-stiff-leg-deadlift/frame_1_early.png",
+      "frames/band-straight-back-stiff-leg-deadlift/frame_2_mid.png",
+      "frames/band-straight-back-stiff-leg-deadlift/frame_3_late.png",
+      "frames/band-straight-back-stiff-leg-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/band-straight-back-stiff-leg-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa. Frame 0: pozycja dolna — ćwiczący w głębokim hip hinge, tułów ~równoległy do podłogi, plecy PROSTE (neutralny kręgosłup widoczny — głowa, kark, środek pleców, kość ogonowa w linii), kolana lekko ugięte (~10-15°), guma napięta od stóp do dłoni przy podłodze. Podświetlone: pośladki (czerwony — primary), prostowniki grzbietu (czerwony — pracują izometrycznie utrzymując prosty tułów), dwugłowe ud (jasny czerwony wzdłuż tyłu uda). Frame 2: pozycja stojąca lock-out — ćwiczący wyprostowany, sztywne nogi, guma napięta, pośladki i hamstringi nadal podświetlone (peak contraction). Frame 4: powrót w dół do pozycji pochylonej. KLUCZOWA OBSERWACJA: plecy IDEALNIE PROSTE przez cały ruch — to definiuje 'straight back' wariant. Brak zaokrąglenia lędźwi, brak zgięcia piersiowego. Kolana minimalnie ugięte i nieruchome — 'stiff-leg' charakterystyka. Klasyfikacja jako 'hinge' (czysty hip hinge). Equipment: tylko resistance_band. Trudność 4 (beginner-friendly) — bezpieczniejsza niż wersja ze sztangą bo guma odciąża dolną pozycję (ascending resistance — najmocniej na górze gdy plecy są bezpieczne, najsłabiej na dole gdy kręgosłup w największym ryzyku). Główne mięśnie: hamstrings P9 i glutes P8 (lekko niżej niż w RDL ze sztangą bo opór gumy jest mniejszy i krzywa siły inna). Erector_spinae S8 (ważne stabilizator — strict-form wymaga aktywnej pracy prostowników by utrzymać idealnie proste plecy). Core S7 (anti-flexion). Wszystkie pola PL napisane od zera — używam polskiej terminologii fitness (hip hinge, lock-out, ekscentryk, sztywne nogi, hamstringi, pośladki, bracing).",
+
+  "tags": ["beginner_friendly", "band_training", "home_workout", "posterior_chain", "hamstring_activation", "glute_activation", "hip_hinge", "strict_form", "low_back_safe", "ascending_resistance", "technique_focused", "warmup_drill"]
+}

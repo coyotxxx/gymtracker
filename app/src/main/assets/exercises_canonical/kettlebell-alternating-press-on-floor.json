@@ -1,0 +1,203 @@
+{
+  "id": "kettlebell-alternating-press-on-floor",
+  "name": "Kettlebell Alternating Floor Press",
+  "namePl": "Naprzemienne wyciskanie kettlebellami leżąc na podłodze",
+  "aliases": ["KB alternating floor press", "alternating kettlebell floor press", "two-KB alternating floor press", "kettlebell see-saw floor press"],
+  "aliasesPl": ["naprzemienny floor press z kettlebellami", "wyciskanie KB naprzemiennie z podłogi", "alternating floor press KB", "naprzemienne wyciskanie kettli na podłodze"],
+
+  "description": "Horizontal pressing variation performed lying supine on the floor, holding a kettlebell in each hand and pressing them alternately — one arm presses up while the other holds at chest level. The floor limits the eccentric ROM (elbows hit the floor before reaching full chest stretch), which protects the shoulders and emphasizes lockout strength of the triceps. The unilateral alternating tempo creates a strong anti-rotation demand on the obliques as the load shifts side to side. Excellent for shoulder-friendly chest work, lockout development, and core anti-rotation training when a bench is unavailable.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany leżąc na plecach na podłodze, z kettlebellem w każdej ręce, wyciskanymi naprzemiennie — jedna ręka wyciska w górę, druga trzyma na wysokości klatki. Podłoga ogranicza zakres ekscentryczny (łokcie dotykają podłogi przed pełnym rozciągnięciem klatki), co chroni barki i akcentuje siłę lock-outu tricepsów. Naprzemienne tempo unilateralne tworzy mocny bodziec anty-rotacyjny dla skośnych brzucha, gdy obciążenie przechodzi z boku na bok. Doskonały do przyjaznego barkom treningu klatki, rozwoju lock-outu i pracy anty-rotacyjnej brzucha, gdy nie masz dostępu do ławki.",
+
+  "instructions": [
+    "Sit on the floor with two kettlebells beside your hips. Cradle one in each forearm (bell on the outside of the wrist) and roll back, bringing the kettlebells to your chest as you lie down.",
+    "Lie flat on your back, knees bent ~90° with feet planted firmly on the floor (or legs extended for an easier core demand). Glutes and upper back pressed to the floor.",
+    "Start with both kettlebells racked at chest level: upper arms resting on the floor, elbows tucked at ~45° from torso, wrists straight and stacked over the elbows, knuckles facing the ceiling.",
+    "Brace the core and squeeze the glutes. Shoulder blades pulled down and slightly together.",
+    "Press one kettlebell up vertically until the arm is fully extended (but elbow not locked rigid), while the other kettlebell stays racked at the chest.",
+    "Lower the working arm with control until the upper arm touches the floor (eccentric ~2 sec). Do NOT bounce the elbow off the floor.",
+    "Without pausing, press the OTHER kettlebell up while the first one returns to the racked floor position. Both move simultaneously in opposite directions — like pistons.",
+    "Continue alternating in a steady rhythm. Count one rep per arm (or one rep = both arms — pick one method and stick with it). Keep hips and shoulders square — DO NOT let the torso twist toward the pressing side."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z dwoma kettlebellami obok bioder. Połóż jeden na każdym przedramieniu (bańka na zewnątrz nadgarstka) i przetocz się na plecy, ciągnąc kettle do klatki w trakcie kładzenia.",
+    "Połóż się płasko na plecach, kolana zgięte ~90° ze stopami mocno na podłodze (lub nogi wyprostowane dla łatwiejszego napięcia brzucha). Pośladki i górne plecy dociśnięte do podłogi.",
+    "Start z obydwoma kettlebellami w racku na wysokości klatki: ramiona oparte o podłogę, łokcie ~45° od tułowia, nadgarstki proste i ustawione nad łokciami, knykcie skierowane w sufit.",
+    "Napnij brzuch i ściśnij pośladki. Łopatki opuszczone i lekko ściągnięte.",
+    "Wyciśnij jeden kettlebell pionowo w górę aż ramię będzie wyprostowane (ale łokieć nie zablokowany sztywno), drugi kettlebell trzymaj w racku na klatce.",
+    "Opuszczaj pracującą rękę z kontrolą aż ramię dotknie podłogi (ekscentryk ~2 sek). NIE odbijaj łokcia od podłogi.",
+    "Bez pauzy wyciśnij DRUGI kettlebell w górę, podczas gdy pierwszy wraca do pozycji rack na podłodze. Obie ręce poruszają się jednocześnie w przeciwnych kierunkach — jak tłoki.",
+    "Kontynuuj naprzemiennie w równym tempie. Licz jedną rep na rękę (lub jedna rep = obie ręce — wybierz jedną metodę i się jej trzymaj). Trzymaj biodra i barki kwadratowo — NIE pozwól tułowiowi obracać się w stronę wyciskającej ręki."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids", "obliques"],
+    "secondary": ["serratus_anterior", "rectus_abdominis"],
+    "stabilizers": ["rotator_cuff", "core", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P8",
+    "anterior_deltoids": "P7",
+    "obliques": "P6",
+    "serratus_anterior": "S5",
+    "rectus_abdominis": "S4",
+    "rotator_cuff": "T4",
+    "glutes": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["push-up", "kettlebell-floor-press", "dumbbell-floor-press"],
+    "progression_to": ["kettlebell-single-arm-floor-press", "kettlebell-bench-press", "kettlebell-bottoms-up-press"],
+    "alternatives": ["dumbbell-alternating-floor-press", "kettlebell-floor-press", "dumbbell-floor-press", "alternating-dumbbell-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit-to-supine with kettlebells cradled on forearms — don't try to lower them from standing",
+      "Bell sits OUTSIDE the wrist, knuckles toward ceiling — wrists must stay straight",
+      "Elbows tucked ~45° from torso, NOT flared to 90°",
+      "Core braced, glutes squeezed, hips and shoulders square to floor",
+      "Both feet planted (or extended legs for harder core demand) — pick one and stay consistent"
+    ],
+    "setup_cues_pl": [
+      "Z pozycji siedzącej na podłodze przetocz się na plecy z kettlebellami opartymi o przedramiona — nie próbuj opuszczać ich z pozycji stojącej",
+      "Bańka po ZEWNĘTRZNEJ stronie nadgarstka, knykcie do sufitu — nadgarstki muszą być proste",
+      "Łokcie ~45° od tułowia, NIE rozsunięte na 90°",
+      "Brzuch napięty, pośladki ściśnięte, biodra i barki kwadratowo do podłogi",
+      "Obie stopy zaparte (lub nogi wyprostowane dla mocniejszego napięcia brzucha) — wybierz wariant i się go trzymaj"
+    ],
+    "execution_cues": [
+      "Press one, hold the other — like opposing pistons",
+      "Lower with control until upper arm touches floor (~2 sec) — NO bounce",
+      "Keep wrist straight throughout — knuckles point at ceiling, not back at your face",
+      "Resist torso rotation — hips and shoulders stay flat as the load shifts side to side",
+      "Exhale on the press, inhale on the lower — match breath to the working arm"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj jeden, trzymaj drugi — jak przeciwstawne tłoki",
+      "Opuszczaj z kontrolą aż ramię dotknie podłogi (~2 sek) — BEZ odbijania",
+      "Trzymaj nadgarstek prosto przez cały ruch — knykcie w sufit, nie w stronę twarzy",
+      "Opieraj się rotacji tułowia — biodra i barki płasko gdy obciążenie zmienia stronę",
+      "Wydech na wyciśnięciu, wdech na opuszczeniu — dostosuj oddech do pracującej ręki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso twists toward the pressing side (loss of anti-rotation)",
+        "faultPl": "Tułów obraca się w stronę wyciskającej ręki (utrata anty-rotacji)",
+        "cause": "Weak obliques, ego with too heavy KBs, lack of bracing",
+        "causePl": "Słabe skośne brzucha, ego ze zbyt ciężkimi kettlebellami, brak napięcia brzucha",
+        "cue": "Hips and shoulders SQUARE to ceiling. Brace like someone's about to punch you in the gut. Reduce weight if you can't stay flat.",
+        "cuePl": "Biodra i barki KWADRATOWO do sufitu. Napnij brzuch jakby ktoś miał cię uderzyć. Zmniejsz ciężar jeśli nie utrzymujesz pozycji."
+      },
+      {
+        "fault": "Bouncing the elbow off the floor",
+        "faultPl": "Odbijanie łokcia od podłogi",
+        "cause": "Lack of eccentric control, momentum to assist next press",
+        "causePl": "Brak kontroli ekscentrycznej, używanie pędu do następnego wyciśnięcia",
+        "cue": "Light touch on the floor — feel the elbow contact, then press. The pause is the point.",
+        "cuePl": "Lekkie dotknięcie podłogi — poczuj kontakt łokcia, dopiero potem wyciskaj. Pauza jest istotą ruchu."
+      },
+      {
+        "fault": "Wrist bent backward (knuckles toward face instead of ceiling)",
+        "faultPl": "Nadgarstek wygięty do tyłu (knykcie w stronę twarzy zamiast w sufit)",
+        "cause": "Bell pulling the wrist back, weak grip, poor rack position",
+        "causePl": "Bańka ciągnie nadgarstek do tyłu, słaby chwyt, słaba pozycja rack",
+        "cue": "Crush the handle. Wrist straight — straight line from elbow to knuckle. Bent wrist = wrist injury.",
+        "cuePl": "Ściśnij rączkę. Nadgarstek prosto — linia prosta od łokcia do knykcia. Wygięty nadgarstek = kontuzja."
+      },
+      {
+        "fault": "Elbows flared to 90° instead of ~45°",
+        "faultPl": "Łokcie rozsunięte na 90° zamiast ~45°",
+        "cause": "Treating it like a bench press fly, lack of awareness",
+        "causePl": "Traktowanie ruchu jak rozpiętki, brak świadomości",
+        "cue": "Tuck elbows toward ribs. 'Hide your armpits.' Floor will tell you — if elbow lands far from torso, you flared.",
+        "cuePl": "Schowaj łokcie do żeber. 'Schowaj pachy.' Podłoga ci powie — jeśli łokieć ląduje daleko od tułowia, masz rozsunięte."
+      },
+      {
+        "fault": "Synchronizing both arms (both up, both down) instead of alternating",
+        "faultPl": "Synchronizowanie obu rąk (obie w górę, obie w dół) zamiast naprzemiennie",
+        "cause": "Habit from bilateral bench, loss of focus",
+        "causePl": "Przyzwyczajenie z bilateralnego bench, utrata koncentracji",
+        "cue": "Pistons, not pumps. As one presses up, the OTHER goes down — opposite directions, simultaneously.",
+        "cuePl": "Tłoki, nie pompka. Gdy jedna ręka wyciska w górę, DRUGA opuszcza — przeciwne kierunki, jednocześnie."
+      }
+    ],
+    "breathing": "Exhale on each press (working arm), inhale on each lower. Maintain brace throughout — short, controlled breaths.",
+    "breathingPl": "Wydech na każdym wyciśnięciu (pracująca ręka), wdech na każdym opuszczeniu. Utrzymuj napięcie brzucha — krótkie, kontrolowane oddechy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Floor press is already shoulder-friendly (limited ROM). Keep elbows tucked at ~30-45°, reduce load, avoid extreme lockout if symptomatic.",
+      "modificationPl": "Floor press już jest przyjazny barkom (ograniczony ROM). Trzymaj łokcie schowane ~30-45°, zmniejsz ciężar, unikaj skrajnego lock-outu jeśli boli.",
+      "alternative": "kettlebell-floor-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Bell hanging off wrist can stress the joint. Crush the handle, keep wrist absolutely straight, or switch to dumbbells (no wrist load from offset bell).",
+      "modificationPl": "Bańka zwisająca na nadgarstku obciąża staw. Mocno ściśnij rączkę, trzymaj nadgarstek absolutnie prosto, lub przejdź na hantle (brak obciążenia od przesuniętej bańki).",
+      "alternative": "dumbbell-alternating-floor-press"
+    },
+    {
+      "condition": "abdominal_hernia",
+      "severity": "avoid",
+      "modification": "Heavy bracing + asymmetric load on the abs = high intra-abdominal pressure spikes. Avoid until cleared by physician.",
+      "modificationPl": "Mocne napięcie brzucha + asymetryczne obciążenie na brzuch = wysokie skoki ciśnienia wewnątrzbrzusznego. Unikaj do czasu zgody lekarza.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "low_back_pain",
+      "severity": "modify",
+      "modification": "Most floor press positions are spine-neutral, but asymmetric load may aggravate. Keep both feet planted (knees bent) — anchors the pelvis. Avoid the legs-extended variation.",
+      "modificationPl": "Większość pozycji floor press jest neutralna dla kręgosłupa, ale asymetryczne obciążenie może drażnić. Trzymaj obie stopy zaparte (kolana zgięte) — kotwiczy miednicę. Unikaj wariantu z wyprostowanymi nogami.",
+      "alternative": "kettlebell-floor-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy, default) | 4x5-6 per arm (strength) | 3x15-20 per arm (endurance/core stamina)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "kettlebell-alternating-press-on-floor.gif",
+    "frames_extracted": [
+      "frames/kettlebell-alternating-press-on-floor/frame_0_start.png",
+      "frames/kettlebell-alternating-press-on-floor/frame_1_early.png",
+      "frames/kettlebell-alternating-press-on-floor/frame_2_mid.png",
+      "frames/kettlebell-alternating-press-on-floor/frame_3_late.png",
+      "frames/kettlebell-alternating-press-on-floor/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/kettlebell-alternating-press-on-floor"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frames 0/4 (start/end): obie ręce wyprostowane nad klatką, dwa kettlebelle w górze, knykcie w sufit — pozycja symetryczna 'top'. Frame 2 (mid): jasna ALTERNACJA — jedna ręka opuszczona, kettlebell przy klatce, łokieć dotyka podłogi; druga ręka wyciśnięta w górze. Podświetlone: pectoralis major (klatka), triceps brachii (tylna część ramienia), anterior deltoid (przedni bark), obliques (skośne brzucha bardzo wyraźnie zaznaczone — typowy bodziec anty-rotacyjny przy unilateralnym wyciskaniu). Leżenie na plecach, nogi wyprostowane (w GIF-ie animacja pokazuje wariant z wyprostowanymi nogami, ale w instrukcjach wymieniam obie opcje). Laterality=unilateral_alternating ze względu na naprzemienne tempo (nie czysty bilateral). Floor press ograniczony ROM zgodny z anatomią — łokieć styka się z podłogą przed pełnym rozciągnięciem klatki. PL nazwa zgodna ze standardem fitness ('Naprzemienne wyciskanie kettlebellami leżąc na podłodze'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "kettlebell", "floor_press", "alternating", "unilateral", "anti_rotation", "core", "shoulder_friendly", "limited_rom", "no_bench"]
+}

@@ -55,12 +55,14 @@ enum class MetricType {
 @Entity(
     tableName = "exercises",
     indices = [
-        // v1.20.0 — indices dla wyszukiwań w bibliotece ćwiczeń (Exercises screen, AI filter).
         androidx.room.Index("name"),
         androidx.room.Index("primaryMuscle"),
         androidx.room.Index("isFavorite"),
-        // v1.25.0 — index dla externalId (ExerciseDB lookup po fuzzy match)
-        androidx.room.Index("externalId")
+        androidx.room.Index("externalId"),
+        // v2.0.0 — canonical schema
+        androidx.room.Index(value = ["slug"], unique = true),
+        androidx.room.Index("category"),
+        androidx.room.Index("movementPattern")
     ]
 )
 data class Exercise(
@@ -71,34 +73,69 @@ data class Exercise(
     val isCustom: Boolean = false,
     val notes: String = "",
     val metricType: MetricType = MetricType.WEIGHT_REPS,
-    /** Edukacyjny opis ćwiczenia: czym jest, jak wykonać, na co uważać. */
     val description: String = "",
-    /** Ulubione ćwiczenie usera — AI używa do priorytetyzacji w generowanym planie. */
     val isFavorite: Boolean = false,
-    /** Ćwiczenie do unikania — AI nie wstawi go do nowego planu (np. boli kolano przy wykrokach). */
     val isAvoided: Boolean = false,
-    // v1.25.0 — ExerciseDB integration (MIT licensed, 1500 ćwiczeń z GIFami z CDN)
-    /** ID ćwiczenia w ExerciseDB (np. "trmte8s"). null = custom/legacy bez matchu. */
+    /** v2.0.0 LEGACY (drop w v2.0.1): historyczne ExerciseDB ID. W canonical = slug. */
     val externalId: String? = null,
-    /** URL GIF animacji wykonania ćwiczenia (CDN, lazy-load przez Coil). */
+    /** URL GIF animacji — w v2.0.0 z R2 CDN. */
     val gifUrl: String? = null,
-    /** Instrukcje techniki po angielsku, JSON list ["Step:1 ...", "Step:2 ..."]. */
+    /** Instrukcje EN — JSON list. */
     val instructionsEnJson: String? = null,
-    /** Polskie tłumaczenie AI (cache, generowane on-demand po BYOK key). */
+    /** Instrukcje PL — JSON list. */
     val instructionsPlJson: String? = null,
-    /** Mięśnie docelowe z ExerciseDB (CSV, np. "traps,shoulders"). */
+    /** v2.0.0 LEGACY (drop w v2.0.1): mięśnie primary CSV — derived z muscleIntensityJson. */
     val targetMusclesCsv: String? = null,
-    /** Mięśnie drugorzędne (CSV). */
+    /** v2.0.0 LEGACY (drop w v2.0.1): mięśnie secondary CSV — derived. */
     val secondaryMusclesCsv: String? = null,
-    /** Sprzęt z ExerciseDB (CSV, np. "barbell" — bogatsze niż enum Equipment). */
+    /** v2.0.0 LEGACY (drop w v2.0.1): sprzęt CSV — derived z equipment.required+optional. */
     val equipmentDbCsv: String? = null,
-    /** Partia ciała z ExerciseDB (np. "chest", "neck"). */
+    /** v2.0.0 LEGACY (drop w v2.0.1): body parts CSV — derived. */
     val bodyPartCsv: String? = null,
-    /**
-     * v1.29.25 — dodatkowe terminy wyszukiwania (synonimy, nazwa w drugim
-     * języku, częste literówki). Wyszukiwarka matchuje `name LIKE ? OR
-     * searchAliases LIKE ?` — pozwala znaleźć „Martwy ciąg klasyczny"
-     * wpisując „deadlift".
-     */
-    val searchAliases: String? = null
+    val searchAliases: String? = null,
+
+    // === v2.0.0 CANONICAL FIELDS ===
+    /** Canonical slug ćwiczenia (np. "3-4-sit-up", "barbell-bench-press"). UNIQUE. */
+    val slug: String? = null,
+    /** Polska nazwa ćwiczenia z canonical. */
+    val namePl: String? = null,
+    /** Polski opis edukacyjny (długa wersja). */
+    val descriptionPl: String? = null,
+    /** Aliasy EN — JSON list (synonimy ang.). */
+    val aliasesEnJson: String? = null,
+    /** Aliasy PL — JSON list (synonimy pl., literówki). */
+    val aliasesPlJson: String? = null,
+    /** URL prefix do folderu z klatkami PNG (frame_0_start.png itp.). */
+    val framesDirUrl: String? = null,
+    /** Kategoria ćwiczenia (strength/cardio/mobility/...). */
+    val category: ExerciseCategory? = null,
+    /** Wzorzec ruchowy (squat/push_horizontal/pull_vertical/...). */
+    val movementPattern: MovementPattern? = null,
+    val mechanic: Mechanic? = null,
+    val force: Force? = null,
+    val kineticChain: KineticChain? = null,
+    val plane: Plane? = null,
+    val laterality: Laterality? = null,
+    /** Minimalny poziom: beginner/intermediate/advanced/elite. */
+    val levelMin: Level? = null,
+    /** Trudność 1-10. */
+    val difficulty1To10: Int? = null,
+    /** Intensywność mięśniowa — JSON map {muscle: "P10|S7|T4"}. */
+    val muscleIntensityJson: String? = null,
+    /** Wskazówki coaching — JSON {setup_cues:[], execution_cues:[], breathing:""}. */
+    val coachingCuesJson: String? = null,
+    /** Częste błędy — JSON list [{fault, cause, cue}]. */
+    val commonFaultsJson: String? = null,
+    /** Przeciwwskazania — JSON list ["acute_lower_back_pain", ...]. */
+    val contraindicationsJson: String? = null,
+    /** Prerequisites — JSON list of slugs. */
+    val prerequisitesJson: String? = null,
+    /** Progresje (cięższe wersje) — JSON list of slugs. */
+    val progressionToJson: String? = null,
+    /** Alternatywy — JSON list of slugs. */
+    val alternativesJson: String? = null,
+    /** Tagi — JSON list. */
+    val tagsJson: String? = null,
+    /** Sprzęt opcjonalny CSV (np. "mat,bench"). */
+    val equipmentOptionalCsv: String? = null
 )

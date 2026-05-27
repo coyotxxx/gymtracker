@@ -1,0 +1,205 @@
+{
+  "id": "cable-one-arm-lateral-raise",
+  "name": "Cable One-Arm Lateral Raise",
+  "namePl": "Wznosy bokiem jednorącz na wyciągu",
+  "aliases": ["one-arm cable lateral raise", "single-arm cable side raise", "standing cable lateral raise one arm", "cable side lateral raise unilateral"],
+  "aliasesPl": ["wznosy bokiem na wyciągu jednorącz", "jednoręczne wznosy bokiem na linkę", "jednostronne wznosy bokiem na wyciągu dolnym", "boczne wznosy na wyciągu jedną ręką"],
+
+  "description": "Unilateral isolation exercise for the lateral (middle) deltoid head performed standing with a low cable pulley. The cable comes from the side opposite to the working arm and passes diagonally in front of the body, which keeps tension on the lateral delt across the entire range of motion — unlike dumbbells, where resistance drops near the bottom. Performing it one arm at a time allows complete focus on a single side, fixes shoulder asymmetries, and lets the trainee brace the free hand against the cable column for stability and zero torso swing. One of the most effective high-volume isolation tools for lateral-delt hypertrophy and width specialization.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na boczny akton mięśnia naramiennego, wykonywane stojąc przy dolnym wyciągu. Linka biegnie od strony przeciwnej do pracującej ręki i przechodzi po skosie przed ciałem, dzięki czemu boczny akton pozostaje pod napięciem przez cały zakres ruchu — w odróżnieniu od hantli, gdzie opór znika w dolnej pozycji. Wykonywanie jedną ręką pozwala w pełni skupić się na jednej stronie, wyrównuje asymetrie barków i umożliwia podparcie się wolną ręką o słupek wyciągu dla stabilności i zerowego bujania tułowia. Jedno z najskuteczniejszych narzędzi do wysokoobjętościowej izolacji bocznego aktonu i specjalizacji szerokości barków.",
+
+  "instructions": [
+    "Set the cable pulley at the lowest position and attach a single D-handle. Stand sideways to the cable column so the cable is on the opposite side of your working arm.",
+    "Grab the handle with the hand that is furthest from the pulley. The cable runs diagonally across the front of your body to the working hand at hip level.",
+    "Step away from the column so the cable is under light tension even with your arm hanging. Plant your feet shoulder-width apart, knees soft.",
+    "Brace the free hand against the cable column or place it on your hip — this anchors the torso and eliminates swinging.",
+    "Set a small fixed bend in the working elbow (about 10-15 degrees). This angle stays constant the entire rep.",
+    "Brace your core, keep the working-side shoulder blade slightly depressed (away from the ear), and exhale as you raise the handle out and up in an arc — leading with the elbow.",
+    "Stop when the upper arm is roughly parallel to the floor (handle at shoulder height). Pause for 1 second at the top and squeeze the lateral delt.",
+    "Lower the handle along the same arc in 2-3 seconds, maintaining tension throughout. Do not let the weight stack touch down.",
+    "Complete all reps on one side, then switch sides — turn around so the cable is on the opposite side and repeat with the other arm."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek wyciągu w najniższej pozycji i zamocuj pojedynczy uchwyt typu D. Stań bokiem do słupka wyciągu tak, by linka była po przeciwnej stronie niż pracująca ręka.",
+    "Złap uchwyt ręką, która jest dalej od bloczka. Linka przechodzi po skosie przez przód ciała do pracującej dłoni na wysokości biodra.",
+    "Odejdź od słupka tak, by linka była już pod lekkim napięciem nawet przy zwisającej ręce. Stopy na szerokość barków, kolana lekko ugięte.",
+    "Oprzyj wolną dłoń o słupek wyciągu lub połóż ją na biodrze — to kotwiczy tułów i eliminuje bujanie.",
+    "Ustaw lekkie, stałe ugięcie w pracującym łokciu (około 10-15 stopni). Ten kąt pozostaje niezmienny przez całe powtórzenie.",
+    "Napnij brzuch, utrzymuj lekko opuszczoną łopatkę po stronie pracującej (z dala od ucha) i wykonaj wydech, unosząc uchwyt w bok i w górę po łuku — prowadząc łokciem.",
+    "Zatrzymaj się, gdy ramię ponad łokciem jest równoległe do podłogi (uchwyt na wysokości barku). Zrób 1-sekundową pauzę w górze i mocno spinaj boczny akton.",
+    "Opuszczaj uchwyt tą samą drogą przez 2-3 sekundy, utrzymując napięcie przez cały zakres. Nie pozwól, by stos ciężarków dotknął dołu.",
+    "Wykonaj wszystkie powtórzenia na jednej stronie, potem zmień stronę — obróć się tak, by linka była po drugiej stronie i powtórz drugą ręką."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids"],
+    "secondary": ["anterior_deltoids", "supraspinatus"],
+    "stabilizers": ["trapezius_upper", "trapezius_lower", "serratus_anterior", "core", "obliques", "forearm_flexors", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P10",
+    "anterior_deltoids": "S4",
+    "supraspinatus": "S4",
+    "trapezius_upper": "T3",
+    "trapezius_lower": "T3",
+    "serratus_anterior": "T3",
+    "rotator_cuff": "T3",
+    "core": "T2",
+    "obliques": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "handle"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-lateral-raise", "cable-lateral-raise"],
+    "progression_to": ["leaning-cable-lateral-raise", "behind-the-back-cable-lateral-raise"],
+    "alternatives": ["cable-lateral-raise", "dumbbell-lateral-raise", "dumbbell-incline-one-arm-lateral-raise", "machine-lateral-raise", "leaning-dumbbell-lateral-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulley, single D-handle, working arm on far side",
+      "Cable crosses diagonally in front of the body",
+      "Free hand braced on column or hip — no torso swing",
+      "Working elbow slightly bent (~10-15°) and locked",
+      "Working shoulder pulled away from the ear"
+    ],
+    "setup_cues_pl": [
+      "Bloczek dolny, pojedynczy uchwyt D, pracująca ręka od strony przeciwnej",
+      "Linka przechodzi po skosie przed ciałem",
+      "Wolna ręka oparta o słupek lub biodro — bez bujania tułowiem",
+      "Pracujący łokieć lekko ugięty (~10-15°) i zablokowany",
+      "Pracujący bark opuszczony, z dala od ucha"
+    ],
+    "execution_cues": [
+      "Lead with the elbow, not the hand",
+      "Arc out to the side — handle traces a wide path",
+      "Stop when upper arm is parallel to the floor",
+      "Squeeze lateral delt 1 second at the top",
+      "Resist the cable on the way down — never let it pull you"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokciem, nie dłonią",
+      "Łuk w bok — uchwyt zakreśla szeroką drogę",
+      "Zatrzymaj gdy ramię ponad łokciem jest równoległe do podłogi",
+      "Spinaj boczny akton przez 1 sekundę w górze",
+      "Stawiaj opór lince podczas opuszczania — nigdy nie daj się jej pociągnąć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging the torso to start each rep",
+        "faultPl": "Bujanie tułowiem na starcie każdego powtórzenia",
+        "cause": "Weight too heavy and the lifter generates momentum by leaning away from the cable, which transfers work to traps and obliques",
+        "causePl": "Zbyt duży ciężar i ćwiczący generuje rozpęd odchylając się od wyciągu, co przenosi pracę na czworoboczne i skośne",
+        "cue": "Anchor the free hand on the column. If you cannot keep your torso still, drop the weight by 30-40%.",
+        "cuePl": "Zakotwicz wolną dłoń o słupek. Jeśli nie potrafisz utrzymać tułowia w bezruchu, zmniejsz ciężar o 30-40%."
+      },
+      {
+        "fault": "Shrugging the shoulder up at the top",
+        "faultPl": "Wciąganie barku do góry w górnej pozycji",
+        "cause": "Upper trapezius taking over because the lateral delt is fatigued or weak — common at the end of the range",
+        "causePl": "Czworoboczny górny przejmuje pracę, bo boczny akton jest zmęczony lub słaby — częste pod koniec zakresu",
+        "cue": "Keep the shoulder blade pulled down throughout the entire rep. Imagine pushing the floor away with the working shoulder.",
+        "cuePl": "Utrzymuj łopatkę ściągniętą w dół przez całe powtórzenie. Wyobraź sobie, że pracującym barkiem odpychasz podłogę."
+      },
+      {
+        "fault": "Letting the elbow straighten or collapse under load",
+        "faultPl": "Wyprostowywanie lub załamywanie łokcia pod obciążeniem",
+        "cause": "Lever arm changes mid-rep, lifter unconsciously alters elbow bend to ease the torque — this redistributes tension away from the lateral delt",
+        "causePl": "Dźwignia zmienia się w trakcie ruchu, ćwiczący nieświadomie modyfikuje ugięcie łokcia by zmniejszyć moment siły — to redystrybuuje napięcie z dala od bocznego aktonu",
+        "cue": "Lock the elbow at 10-15° at the start and treat the arm as a single rigid lever from shoulder to handle.",
+        "cuePl": "Zablokuj łokieć na 10-15° na początku i traktuj ramię jako jedną sztywną dźwignię od barku do uchwytu."
+      },
+      {
+        "fault": "Raising too high — past shoulder level",
+        "faultPl": "Unoszenie zbyt wysoko — powyżej linii barku",
+        "cause": "Trying to feel more burn, but the lateral delt is already maximally shortened at horizontal — anything beyond shifts work to supraspinatus and traps",
+        "causePl": "Próba uzyskania większego pieczenia, ale boczny akton jest już maksymalnie skrócony w poziomie — wszystko wyżej przenosi pracę na nadgrzebieniowy i czworoboczne",
+        "cue": "Stop when the upper arm is parallel to the floor. Pause there. Past horizontal you are no longer training lateral delt.",
+        "cuePl": "Zatrzymaj gdy ramię ponad łokciem jest równoległe do podłogi. Zrób tam pauzę. Powyżej poziomu nie trenujesz już bocznego aktonu."
+      },
+      {
+        "fault": "Letting the cable pull the arm back at the bottom",
+        "faultPl": "Pozwalanie lince ściągnąć ramię z powrotem w dolnej pozycji",
+        "cause": "Loss of control on the eccentric phase — main advantage of cables (constant tension) is wasted when the weight stack yanks the arm back",
+        "causePl": "Utrata kontroli w fazie ekscentrycznej — główna zaleta wyciągu (stałe napięcie) jest zmarnowana, gdy stos ciężarków szarpie ramieniem",
+        "cue": "3-second negative on every rep. Stop the handle 5 cm before it touches your thigh — no bottom rest.",
+        "cuePl": "3-sekundowy negatyw przy każdym powtórzeniu. Zatrzymaj uchwyt 5 cm przed udem — bez odpoczynku w dolnej pozycji."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Keep a light core brace so the torso does not rotate toward the cable.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha, by tułów nie skręcał się w stronę wyciągu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion to 70% — stop the handle slightly below shoulder height. Cable is actually friendlier for impingement than dumbbells because tension stays even at low ROM. Use a neutral grip (thumb leading) and keep the upper arm slightly in front of the frontal plane (scaption).",
+      "modificationPl": "Zmniejsz zakres ruchu do 70% — zatrzymuj uchwyt lekko poniżej wysokości barku. Wyciąg jest właściwie łagodniejszy dla zespołu cieśni niż hantle, bo napięcie pozostaje nawet przy małym zakresie. Stosuj chwyt neutralny (kciuk prowadzi) i utrzymuj ramię lekko przed płaszczyzną czołową (scapcja).",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "caution",
+      "modification": "The cable variant is more rehab-friendly than dumbbells because resistance is constant and predictable. Avoid during acute phase. In subacute phase use very light weight, partial ROM (50-60%), and neutral grip. Stop immediately if pain spikes.",
+      "modificationPl": "Wariant na wyciągu jest bardziej przyjazny w rehabilitacji niż hantle, bo opór jest stały i przewidywalny. Unikaj w fazie ostrej. W fazie podostrej stosuj bardzo lekki ciężar, częściowy zakres (50-60%) i chwyt neutralny. Przerwij natychmiast, jeśli ból narasta.",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses near the top of the raise. Cap the range at 80% of shoulder height. Lighter loads, higher reps (15-25). Avoid pause holds at the top.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji blisko górnej pozycji wznosu. Ogranicz zakres do 80% wysokości barku. Lżejsze ciężary, więcej powtórzeń (15-25). Unikaj pauz w górnej pozycji.",
+      "alternative": "machine-lateral-raise"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "caution",
+      "modification": "Sustained grip on the cable handle can aggravate extensor tendons. Use a neutral grip throughout, wear wrist wraps, or attach a loop strap to bypass grip entirely. Reduce sets if pain flares.",
+      "modificationPl": "Długotrwały chwyt uchwytu wyciągu może podrażniać ścięgna prostowników. Stosuj chwyt neutralny przez cały czas, załóż opaski na nadgarstki lub zamocuj pętlę paskową, by całkowicie ominąć chwyt. Zmniejsz liczbę serii, jeśli ból narasta."
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy/standard) | 4-5x15-25 per arm (lateral delt specialization/pump) | 3x20-30 per arm (drop sets/finisher work)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-one-arm-lateral-raise.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-lateral-raise/frame_0_start.png",
+      "frames/cable-one-arm-lateral-raise/frame_1_early.png",
+      "frames/cable-one-arm-lateral-raise/frame_2_mid.png",
+      "frames/cable-one-arm-lateral-raise/frame_3_late.png",
+      "frames/cable-one-arm-lateral-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-one-arm-lateral-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Ćwiczący stoi PRZODEM do widza, bokiem do dolnego bloczka wyciągu (linka widoczna biegnie od dolnej prawej strony, po skosie przed ciałem, do uchwytu trzymanego w prawej dłoni — czyli pracuje prawa ręka, a bloczek jest po LEWEJ stronie ciała). Frame 0 (start): prawa ręka zwisa wzdłuż prawego biodra trzymając uchwyt, lewa ręka oparta o lewe biodro/kolano dla stabilizacji, podświetlony PRAWY boczny akton (czerwony obszar — to nie jest tylny ani przedni, lecz wyraźnie BOCZNY akton naramiennego). Frame 1-2 (mid-top): prawa ręka uniesiona w bok w płaszczyźnie czołowej, ramię ponad łokciem dochodzi do poziomu (równolegle do podłogi), uchwyt na wysokości barku, łokieć z lekkim stałym ugięciem, podświetlony boczny akton. Frame 3-4 (return): kontrolowany powrót tą samą drogą po łuku w dół. Wolna ręka cały czas oparta — eliminuje cheating. To czysta IZOLACJA bocznego aktonu (P10) na wyciągu, wykonywana JEDNORĄCZ — kluczowa różnica vs. cable-lateral-raise (dwurącz/krzyżowane linki). movement_pattern: isolation_raise, laterality: unilateral, plane: frontal. equipment: cable_machine + handle. difficulty: 4. Wszystkie pola PL napisane od zera bez kopiowania z innych ćwiczeń.",
+
+  "tags": ["bodybuilding", "shoulders", "lateral_delts", "side_delts", "isolation", "cable", "unilateral", "upper_body", "hypertrophy", "shoulder_width_specialization", "constant_tension", "high_volume_friendly"]
+}

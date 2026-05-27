@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-one-arm-decline-chest-press",
+  "name": "One-Arm Dumbbell Decline Chest Press",
+  "namePl": "Wyciskanie hantla jednorącz na ławce skośnej ujemnej",
+  "aliases": ["one-arm decline DB press", "single-arm decline dumbbell press", "unilateral decline DB bench", "decline DB press one arm"],
+  "aliasesPl": ["decline DB press jednorącz", "wyciskanie hantla jednorącz na ławce ujemnej", "jednorączkowe decline DB press", "single arm decline DB"],
+
+  "description": "Unilateral decline pressing variation performed on a decline bench (head lower than hips) with a single dumbbell. Combines two emphases: the decline angle shifts load toward the lower (sternal/abdominal) fibers of the pectoralis major, while the one-arm execution forces the torso to fight rotation — turning the obliques and core into hard-working anti-rotation stabilizers. Excellent accessory for lower-chest hypertrophy, addressing left/right asymmetry, and building rotational core control. Lower absolute load than bilateral version but higher unit-side stimulus and a strong stability challenge.",
+  "descriptionPl": "Jednostronny wariant wyciskania na ławce skośnej ujemnej (głowa niżej niż biodra) z jedną hantlą. Łączy dwa akcenty: kąt decline przesuwa obciążenie na dolne włókna (mostkowo-brzuszne) mięśnia piersiowego, a praca jedną ręką wymusza walkę tułowia z rotacją — robiąc ze skośnych brzucha i core ciężko pracujące stabilizatory anty-rotacyjne. Świetne ćwiczenie pomocnicze pod dolną klatkę, korektę asymetrii lewa/prawa i budowanie rotacyjnej kontroli core. Mniejszy ciężar absolutny niż w wersji obustronnej, ale wyższy bodziec per strona i mocne wyzwanie stabilizacyjne.",
+
+  "instructions": [
+    "Set a decline bench to ~15-30° decline. Secure feet under the leg pads.",
+    "Sit on the bench with one dumbbell resting on the thigh of the working side, palm facing inward.",
+    "Lie back on the decline, using your thigh to kick the dumbbell up to chest level. The non-working arm rests on the bench or by your side for balance — do NOT grab the bench to brace (that defeats the anti-rotation training).",
+    "Plant feet, retract and depress the shoulder blades, brace the core HARD — the obliques must lock the torso against the pull of the offset load.",
+    "Press the dumbbell up over the lower chest. Arm extended but elbow not locked rigid. This is the start.",
+    "Inhale, brace, and lower the dumbbell in a controlled arc down to the lower-chest level. Elbow tracks at ~45° from the torso. Do NOT let the dumbbell pull the shoulder forward — keep the shoulder blade pinned to the bench.",
+    "Pause briefly at the bottom — feel the stretch in the lower pec. Do NOT let the torso rotate toward the working side.",
+    "Press the dumbbell back up over the lower chest, controlling the path so the body stays square to the bench.",
+    "Exhale at the top. Complete all reps on one side, then rest briefly and switch sides — match reps left/right."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną na ~15-30° w dół. Zablokuj stopy pod wałkami.",
+    "Usiądź na ławce z jedną hantlą opartą na udzie pracującej strony, dłoń skierowana do wewnątrz.",
+    "Połóż się na ławce ujemnej, wybijając hantlę z uda do wysokości klatki. Wolna ręka leży na ławce lub wzdłuż ciała dla balansu — NIE chwytaj ławki by się usztywnić (to niweczy trening anty-rotacyjny).",
+    "Stopy zaparte, łopatki ściągnięte i opuszczone, MOCNO napnij brzuch — skośne muszą zablokować tułów przeciw ściąganiu przez asymetryczne obciążenie.",
+    "Wyciśnij hantlę nad dolną częścią klatki. Ramię wyprostowane, ale łokieć nie zablokowany na sztywno. To pozycja startowa.",
+    "Wdech, napięcie, opuszczaj hantlę kontrolowanym łukiem do wysokości dolnej klatki. Łokieć pod kątem ~45° od tułowia. NIE pozwól by hantla ściągnęła bark do przodu — łopatka przyciśnięta do ławki.",
+    "Krótka pauza na dole — poczuj rozciągnięcie dolnej klatki. NIE pozwól tułowiowi obrócić się w stronę pracującej strony.",
+    "Wyciśnij hantlę nad dolną klatką, kontrolując tor tak by tułów pozostał równolegle do ławki.",
+    "Wydech na górze. Wykonaj wszystkie powtórzenia na jednej stronie, krótka przerwa, zmień stronę — zrównaj powtórzenia lewa/prawa."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_lower", "triceps"],
+    "secondary": ["anterior_deltoids", "obliques"],
+    "stabilizers": ["rotator_cuff", "core", "serratus_anterior", "quadratus_lumborum", "lats"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_lower": "P9",
+    "triceps": "P7",
+    "anterior_deltoids": "S6",
+    "obliques": "S6",
+    "core": "T5",
+    "rotator_cuff": "T4",
+    "serratus_anterior": "T3",
+    "quadratus_lumborum": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "decline_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "decline-dumbbell-bench-press", "single-arm-dumbbell-bench-press"],
+    "progression_to": ["one-arm-dumbbell-bench-press", "single-arm-landmine-press"],
+    "alternatives": ["decline-dumbbell-bench-press", "decline-barbell-bench-press", "dip", "low-cable-fly"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Decline bench 15-30°, feet locked under pads — your anchor",
+      "Dumbbell starts on thigh of the working side, kick it up as you lie back",
+      "Shoulder blades retracted and pinned to the bench BEFORE the first rep",
+      "Free hand rests passively — do NOT grip the bench to cheat the anti-rotation work",
+      "Brace the core like someone is about to punch your side — obliques on"
+    ],
+    "setup_cues_pl": [
+      "Ławka ujemna 15-30°, stopy zablokowane pod wałkami — to twoja kotwica",
+      "Hantla zaczyna na udzie pracującej strony, wybij ją gdy się kładziesz",
+      "Łopatki ściągnięte i przyciśnięte do ławki PRZED pierwszym powtórzeniem",
+      "Wolna ręka leży biernie — NIE łap się ławki by oszukać anty-rotację",
+      "Napnij brzuch jak ktoś miał uderzyć w bok — skośne włączone"
+    ],
+    "execution_cues": [
+      "Press up over the LOWER chest, not the shoulders — keep the line short",
+      "Elbow tracks at ~45° from torso, never flared to 90°",
+      "Squeeze the lower pec at lockout — visualize bringing the dumbbell toward the opposite hip",
+      "Lower 2-3 seconds, feel the lower-pec stretch at the bottom — no bounce",
+      "Body stays SQUARE to the bench — if your torso rotates toward the dumbbell, weight is too heavy"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj nad DOLNĄ klatką, nie nad barkiem — krótka linia",
+      "Łokieć pod kątem ~45° od tułowia, nigdy rozsunięty na 90°",
+      "Ściśnij dolną klatkę na szczycie — wyobraź sobie że ciągniesz hantlę do przeciwnego biodra",
+      "Opuszczaj 2-3 sekundy, poczuj rozciągnięcie dolnej klatki na dole — bez odbicia",
+      "Tułów PROSTOPADLE do ławki — jeśli obracasz się w stronę hantli, ciężar za duży"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates toward the working side under load",
+        "faultPl": "Tułów rotuje w stronę pracującej ręki pod obciążeniem",
+        "cause": "Weight too heavy, core/obliques not bracing, ignoring the anti-rotation demand",
+        "causePl": "Za ciężki ciężar, brak napięcia brzucha/skośnych, zignorowanie wymagania anty-rotacji",
+        "cue": "Reduce weight 20-30%. Brace obliques BEFORE the dumbbell moves. Keep both shoulder blades flat on the bench.",
+        "cuePl": "Zmniejsz ciężar 20-30%. Napnij skośne ZANIM hantla się ruszy. Obie łopatki płasko na ławce."
+      },
+      {
+        "fault": "Free hand grabs the bench to brace",
+        "faultPl": "Wolna ręka łapie się ławki by się usztywnić",
+        "cause": "Compensating for weak anti-rotation, weight too heavy, habit",
+        "causePl": "Kompensacja słabej anty-rotacji, za ciężki ciężar, nawyk",
+        "cue": "Rest free hand on chest or hip — passively. The core must do the stabilizing work, not the spare arm.",
+        "cuePl": "Połóż wolną rękę na klatce lub biodrze — biernie. To core ma stabilizować, nie wolna ręka."
+      },
+      {
+        "fault": "Pressing toward the shoulder instead of the lower chest",
+        "faultPl": "Wyciskanie w stronę barku zamiast dolnej klatki",
+        "cause": "Misunderstanding decline angle, copying flat bench path, weak lower-pec mind-muscle connection",
+        "causePl": "Niezrozumienie kąta decline, kopiowanie toru z ławki płaskiej, słaba kontrola mentalna nad dolną klatką",
+        "cue": "Path ends OVER the lower chest, not over the face. Visualize the lower pec doing the work.",
+        "cuePl": "Tor kończy się NAD dolną klatką, nie nad twarzą. Wyobraź sobie że dolna klatka pracuje."
+      },
+      {
+        "fault": "Shoulder rolls forward at the bottom (loss of scapular position)",
+        "faultPl": "Bark wytacza się do przodu na dole (utrata pozycji łopatki)",
+        "cause": "Reaching for extra ROM by sacrificing scapular retraction; weight too heavy",
+        "causePl": "Sięganie po większy zakres kosztem ściągnięcia łopatek; za ciężki ciężar",
+        "cue": "Łopatka MUSI zostać przyciśnięta do ławki. Better short ROM with locked scap than deep ROM with rolled shoulder.",
+        "cuePl": "Łopatka MUSI zostać przyciśnięta do ławki. Lepiej krótszy zakres z zablokowaną łopatką niż głęboki z wytoczonym barkiem."
+      },
+      {
+        "fault": "Unequal reps left vs right",
+        "faultPl": "Nierówna liczba powtórzeń lewa vs prawa",
+        "cause": "Pushing dominant side to failure first, then doing fewer on weak side",
+        "causePl": "Doprowadzanie strony dominującej do upadku jako pierwszej, mniej powtórzeń po słabej",
+        "cue": "Start with the WEAKER side, match its reps with the stronger side. That's how you fix asymmetry.",
+        "cuePl": "Zaczynaj od SŁABSZEJ strony, na silniejszej zrób tyle samo. Tak naprawia się asymetrię."
+      }
+    ],
+    "breathing": "Inhale at the top, brace hard, hold through the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, mocne napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "avoid",
+      "modification": "Inverted (head-down) position raises intracranial pressure. Use flat or low-incline DB press instead until BP is controlled.",
+      "modificationPl": "Pozycja głową w dół podnosi ciśnienie wewnątrzczaszkowe. Użyj wyciskania na ławce płaskiej lub lekko skośnej dodatnio do czasu uregulowania ciśnienia.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Decline angle is generally shoulder-friendly, but use neutral grip and reduce ROM if pain. Stop if symptoms worsen.",
+      "modificationPl": "Kąt decline jest zwykle przyjazny dla barków, ale użyj chwytu neutralnego i zmniejsz zakres jeśli ból. Przerwij jeśli objawy się nasilają.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    },
+    {
+      "condition": "lumbar_instability",
+      "severity": "avoid",
+      "modification": "Offset unilateral load + decline position demands serious core stability; skip until core control is solid. Train bilateral first.",
+      "modificationPl": "Asymetryczne obciążenie + decline wymagają solidnej stabilizacji core; pomiń do czasu opanowania kontroli core. Najpierw trenuj obustronnie.",
+      "alternative": "decline-dumbbell-bench-press"
+    },
+    {
+      "condition": "acid_reflux_gerd",
+      "severity": "modify",
+      "modification": "Head-down position can provoke reflux. Train fasted (≥2h after a meal) or use a flat-bench variation.",
+      "modificationPl": "Pozycja głową w dół może wywoływać refluks. Trenuj na czczo (≥2h od posiłku) lub użyj wariantu na ławce płaskiej.",
+      "alternative": "dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy, default) | 3x6-8 per side (strength accent) | 3x12-15 per side (pump/lower-chest finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-one-arm-decline-chest-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-decline-chest-press/frame_0_start.png",
+      "frames/dumbbell-one-arm-decline-chest-press/frame_1_early.png",
+      "frames/dumbbell-one-arm-decline-chest-press/frame_2_mid.png",
+      "frames/dumbbell-one-arm-decline-chest-press/frame_3_late.png",
+      "frames/dumbbell-one-arm-decline-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-one-arm-decline-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (dół): hantla na poziomie dolnej klatki po pracującej stronie, łokieć zgięty ~90° i odsunięty od tułowia ~45-60°, ławka wyraźnie skośna ujemna (głowa znacznie niżej niż biodra, stopy uniesione i zaparte pod wałkami). Frame 2 (góra): pełne wyciśnięcie pojedynczej hantli nad dolną klatką, ramię wyprostowane (bez sztywnego lock-out), wyraźnie podświetlona klatka piersiowa (zwłaszcza dolna część) + przedni delt + triceps. Frame 4 (powrót): widoczny motion blur opuszczania, ciało nadal stabilne na ławce. Pracuje jedna strona — druga ręka leży biernie. Klasyfikacja: compound, push, sagittal plane, unilateral (laterality=unilateral). Mięśnie primary: pectoralis_major_lower (decline kierunkuje na dolne włókna) + triceps. Secondary: anterior_deltoids + obliques (anti-rotation pod asymetrycznym obciążeniem). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Nazwa polska zgodna z konwencją bazy ('Wyciskanie hantla jednorącz na ławce skośnej ujemnej').",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "lower_chest", "dumbbell", "chest", "unilateral", "anti_rotation", "decline", "core_demand"]
+}

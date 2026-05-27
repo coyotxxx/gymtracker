@@ -1,0 +1,209 @@
+{
+  "id": "band-one-arm-single-leg-split-squat",
+  "name": "Band One-Arm Single-Leg Split Squat",
+  "namePl": "Split squat jednonóż z gumą jednorącz",
+  "aliases": ["band bulgarian split squat one-arm", "single-arm band rear-foot-elevated split squat", "one-handed band bulgarian split squat", "band RFESS one-arm"],
+  "aliasesPl": ["bułgarski split squat z gumą jednorącz", "split squat z tylną nogą na podwyższeniu z gumą", "RFESS z gumą jedną ręką", "jednonóż split squat z gumą trzymaną jedną ręką"],
+
+  "description": "Unilateral lower-body compound exercise combining a Bulgarian-style split squat (rear foot elevated on a box or bench) with single-arm resistance band loading. The athlete holds the band in one hand at hip level while the band is anchored low to the side, creating an asymmetric pulling vector that challenges anti-rotation core stability throughout the squat. Targets the front-leg quadriceps and glutes with significant hip and trunk stabilizer demand. The single-arm grip turns a lower-body lift into a full-body integration drill — the obliques and lats fight rotation while the working leg drives the movement.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała łączące bułgarski split squat (tylna stopa uniesiona na skrzyni lub ławce) z oporem gumy trzymanej w jednej ręce. Trenujący trzyma gumę w jednej dłoni na wysokości biodra, podczas gdy guma jest zamocowana nisko z boku, tworząc asymetryczny wektor ciągu, który wymaga antyrotacyjnej stabilizacji tułowia przez cały ruch. Angażuje czworogłowe i pośladki przedniej nogi z dużym zapotrzebowaniem na stabilizatory biodra i tułowia. Jednoręczny chwyt zmienia ćwiczenie nóg w pełne ćwiczenie integracyjne — skośne i najszersze grzbietu walczą z rotacją, podczas gdy pracująca noga napędza ruch.",
+
+  "instructions": [
+    "Anchor a resistance band low to a stable point on one side (rack base, sandbag, or post) at ankle height.",
+    "Set a bench, box, or step about knee height behind you. Step forward about 60-70 cm — long enough so that the front shin can stay vertical at the bottom.",
+    "Place the top of your rear foot (laces down) on the bench. Front foot flat, weight centered through mid-foot and heel.",
+    "Grab the band handle in the hand opposite the working leg (or same side — band tension to the outside of the body works the obliques more). Hold the handle at hip level, elbow tucked.",
+    "Stand tall, brace your core hard against the band's pull. Chest up, shoulders square — do not let the band rotate your torso.",
+    "Inhale, brace, and descend by bending the front knee. Rear leg follows passively — the front leg does the work.",
+    "Lower until the front thigh is roughly parallel to the floor or to the depth your hip mobility allows. Rear knee tracks toward the floor.",
+    "Keep the torso upright and resist the band's pull throughout. Don't let your shoulders rotate toward the band.",
+    "Drive up through the front heel and mid-foot, extending the knee and hip. Exhale near the top.",
+    "Complete all reps on one side, then switch the band to the other hand and work the opposite leg."
+  ],
+  "instructionsPl": [
+    "Zamocuj gumę nisko do stabilnego punktu z jednej strony (podstawa stojaka, worek, słupek) na wysokości kostki.",
+    "Ustaw ławkę, skrzynię lub stopień na wysokości około kolana za sobą. Wykonaj krok w przód około 60-70 cm — wystarczająco długi, aby piszczel przedniej nogi mogła pozostać pionowa na dole.",
+    "Połóż wierzch tylnej stopy (sznurówki w dół) na ławce. Stopa przednia płasko, ciężar na środku stopy i pięcie.",
+    "Złap uchwyt gumy w dłoń przeciwną do pracującej nogi (lub w tę samą stronę — guma ciągnąca na zewnątrz ciała mocniej pracuje skośne). Trzymaj uchwyt na wysokości biodra, łokieć blisko tułowia.",
+    "Wyprostuj się, mocno napnij brzuch przeciwko ciągowi gumy. Klatka w górze, barki kwadratowo — nie pozwól, aby guma obróciła tułów.",
+    "Wdech, napnij, schodź zginając przednie kolano. Tylna noga podąża biernie — przednia noga wykonuje pracę.",
+    "Opuszczaj się aż przednie udo będzie mniej więcej równoległe do podłogi lub do głębokości na jaką pozwala mobilność biodra. Tylne kolano kieruje się w stronę podłogi.",
+    "Trzymaj tułów pionowo i opieraj się ciągowi gumy przez cały ruch. Nie pozwól, aby barki obracały się w stronę gumy.",
+    "Wypychaj się przez piętę i środek stopy przedniej nogi, prostując kolano i biodro. Wydech blisko górnej pozycji.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie przełóż gumę do drugiej ręki i ćwicz przeciwną nogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "obliques", "biceps_brachii"],
+    "stabilizers": ["core", "gluteus_medius", "calves", "adductors", "erector_spinae", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "hamstrings": "S6",
+    "obliques": "S6",
+    "biceps_brachii": "S4",
+    "core": "S7",
+    "gluteus_medius": "S7",
+    "adductors": "S5",
+    "calves": "T4",
+    "erector_spinae": "T4",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["resistance_band", "box_or_bench", "band_anchor"],
+    "optional": ["band_handle", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-split-squat", "bulgarian-split-squat", "band-split-squat", "band-pallof-press"],
+    "progression_to": ["band-bulgarian-split-squat-deficit", "dumbbell-bulgarian-split-squat", "barbell-bulgarian-split-squat"],
+    "alternatives": ["band-bulgarian-split-squat", "single-arm-dumbbell-bulgarian-split-squat", "band-reverse-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor the band low and to the side — ankle height, not overhead",
+      "Bench/box at knee height — too high tilts the pelvis forward",
+      "Step long enough so the front shin stays vertical at the bottom",
+      "Hand at hip, elbow tucked — band is luggage, not a curl",
+      "Stand square to the front before you descend — do not let the band twist you"
+    ],
+    "setup_cues_pl": [
+      "Zamocuj gumę nisko i z boku — na wysokości kostki, nie nad głową",
+      "Ławka/skrzynia na wysokości kolana — za wysoka pochyla miednicę do przodu",
+      "Krok wystarczająco długi, aby piszczel przedniej nogi była pionowa na dole",
+      "Dłoń przy biodrze, łokieć blisko tułowia — guma to bagaż, nie uginanie",
+      "Stań kwadratowo do przodu zanim zaczniesz schodzić — nie daj się skręcić gumie"
+    ],
+    "execution_cues": [
+      "Drop straight down — the front shin should stay vertical at the bottom",
+      "Resist rotation — keep both hip points facing the front wall",
+      "Rear leg is a passenger — front leg does all the lifting",
+      "Drive through the whole front foot, push the floor away",
+      "Don't bend the arm — let the band pull you, just hold the handle"
+    ],
+    "execution_cues_pl": [
+      "Schodź prosto w dół — piszczel przedniej nogi pozostaje pionowa na dole",
+      "Opieraj się rotacji — oba talerze biodrowe skierowane na przednią ścianę",
+      "Tylna noga jest pasażerem — przednia noga wykonuje całą pracę",
+      "Wypychaj przez całą stopę przedniej nogi, odpychaj podłogę",
+      "Nie zginaj ręki — pozwól gumie ciągnąć, tylko trzymaj uchwyt"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation toward the band",
+        "faultPl": "Rotacja tułowia w stronę gumy",
+        "cause": "Weak obliques or band tension too high for the lifter's anti-rotation strength",
+        "causePl": "Słabe mięśnie skośne lub zbyt duży opór gumy w stosunku do siły antyrotacyjnej",
+        "cue": "Hip points square to the front — imagine a laser from your belly button pointing at the wall ahead",
+        "cuePl": "Talerze biodrowe kwadratowo do przodu — wyobraź sobie laser z pępka świecący na ścianę przed tobą"
+      },
+      {
+        "fault": "Curling the band arm (turning the lift into a row)",
+        "faultPl": "Uginanie ręki z gumą (zamienianie ćwiczenia w wiosłowanie)",
+        "cause": "Habit, or unconsciously helping the legs by pulling with the arm",
+        "causePl": "Nawyk lub nieświadome pomaganie nogom przez ciągnięcie ręką",
+        "cue": "Lock the elbow at hip height — the band is a brace, not a pull",
+        "cuePl": "Zablokuj łokieć na wysokości biodra — guma to stabilizacja, nie ciąg"
+      },
+      {
+        "fault": "Front knee collapses inward (valgus)",
+        "faultPl": "Przednie kolano zapada do środka (koślawość)",
+        "cause": "Weak gluteus medius, foot pronation, or load too heavy for unilateral control",
+        "causePl": "Słaby pośladkowy średni, pronacja stopy lub zbyt duży opór dla jednostronnej kontroli",
+        "cue": "Spread the floor — push the big toe and pinky toe equally into the ground, knee tracks over middle toes",
+        "cuePl": "Rozepchaj podłogę — wciskaj równo paluch i mały palec, kolano nad środkowymi palcami"
+      },
+      {
+        "fault": "Front shin tips forward (knee chases toes)",
+        "faultPl": "Piszczel przedniej nogi pochyla się do przodu (kolano goni palce)",
+        "cause": "Step too short — back foot too close to the front foot",
+        "causePl": "Za krótki krok — tylna stopa za blisko przedniej",
+        "cue": "Step further away from the bench so the front shin can stay vertical at the bottom",
+        "cuePl": "Wykonaj dłuższy krok od ławki, aby piszczel przedniej nogi mogła pozostać pionowa na dole"
+      },
+      {
+        "fault": "Loss of balance / wobble on the rear foot",
+        "faultPl": "Utrata równowagi / chwianie się na tylnej stopie",
+        "cause": "Bench too high, ankle stiffness on the rear foot, or insufficient core stability against band pull",
+        "causePl": "Za wysoka ławka, sztywność kostki tylnej stopy lub niewystarczająca stabilność tułowia przeciwko ciągowi gumy",
+        "cue": "Lower the box, reduce band tension, and master split squat without band first",
+        "cuePl": "Obniż skrzynię, zmniejsz opór gumy i opanuj split squat bez gumy najpierw"
+      }
+    ],
+    "breathing": "Inhale and brace at the top before descending. Hold breath through the descent and the first half of the ascent to maintain anti-rotation tension against the band. Exhale near lockout.",
+    "breathingPl": "Wdech i napięcie na górze przed schodzeniem. Wstrzymaj oddech przez schodzenie i pierwszą połowę wychodzenia, aby utrzymać napięcie antyrotacyjne przeciwko gumie. Wydech blisko wyprostu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range and use lower band tension. Switch to a regular reverse lunge or floor-foot split squat (no elevation).",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu i użyj słabszej gumy. Przejdź na zwykły wykrok w tył lub split squat z tylną stopą na podłodze (bez podwyższenia).",
+      "alternative": "band-reverse-lunge"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "caution",
+      "modification": "Rear foot elevation stretches the hip flexor of the back leg. Reduce box height or use a flat-floor split squat until the strain resolves.",
+      "modificationPl": "Uniesienie tylnej stopy rozciąga zginacz biodra tylnej nogi. Obniż skrzynię lub przejdź na split squat z tylną stopą na podłodze do czasu wyzdrowienia.",
+      "alternative": "band-split-squat"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Holding the band one-handed loads the shoulder asymmetrically. Use a belt or band looped around the hip instead of a hand-held handle.",
+      "modificationPl": "Trzymanie gumy jedną ręką obciąża bark asymetrycznie. Użyj paska lub pętli gumy wokół biodra zamiast uchwytu w dłoni.",
+      "alternative": "band-bulgarian-split-squat"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Single-leg unilateral movements with asymmetric load demand high stability. Use a wall or rack for fingertip support, or switch to a bilateral squat.",
+      "modificationPl": "Jednostronne ruchy jednonóż z asymetrycznym obciążeniem wymagają wysokiej stabilności. Użyj ściany lub stojaka do podparcia palcem lub przejdź na obustronny przysiad.",
+      "alternative": "band-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per leg (hypertrophy, anti-rotation focus) | 3-4x6-8 per leg (strength) | 2-3x12-15 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "band-one-arm-single-leg-split-squat.gif",
+    "frames_extracted": [
+      "frames/band-one-arm-single-leg-split-squat/frame_0_start.png",
+      "frames/band-one-arm-single-leg-split-squat/frame_1_early.png",
+      "frames/band-one-arm-single-leg-split-squat/frame_2_mid.png",
+      "frames/band-one-arm-single-leg-split-squat/frame_3_late.png",
+      "frames/band-one-arm-single-leg-split-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/band-one-arm-single-leg-split-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Mimo nazwy 'single-leg-split-squat' w slug, GIF pokazuje wyraźnie wariant BUŁGARSKI: tylna stopa oparta wierzchem (sznurówki w dół) na sześciennej skrzyni o wysokości kolana, przednia noga pracuje w split squat. Postać trzyma uchwyt gumy w PRAWEJ dłoni na wysokości biodra (łokieć blisko tułowia, ręka NIE ugina się — pełni rolę kotwicy bagażu), guma biegnie na zewnątrz/w dół do punktu zaczepienia poza kadrem po prawej. Pracująca noga to prawa noga przednia (zgodnie ze stroną gumy). Klatka 2 (mid) pokazuje pełną głębokość — udo prawe równolegle do podłogi, tylne kolano lewe blisko podłogi, tułów pionowo. Klatki 3-4 pokazują overlay ze schodzeniem (animacja). Mięśnie podświetlone w GIFie: czworogłowe prawej (przedniej) nogi NAJMOCNIEJ + pośladki prawej strony + przywodziciele/biodrowe stabilizatory. Skośne i biceps brachii NIE są podświetlone, ale anatomicznie wymagane (antyrotacja + grip) — dodałem do secondary. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'split squat jednonóż z gumą jednorącz'. Multi-element challenge: split squat geometry + Bulgarian rear-foot elevation + unilateral hand load (anti-rotation) + band ascending strength curve. Dodałem 4 contraindications (kolano, zginacz biodra od RFE, bark od jednoręcznego chwytu, balans). Difficulty 7 — wymaga opanowania zwykłego Bulgarian split squat i band Pallof.",
+
+  "tags": ["unilateral", "lower_body", "split_squat", "bulgarian", "band", "anti_rotation", "core_integration", "asymmetric_load", "stabilizer_heavy", "rear_foot_elevated"]
+}

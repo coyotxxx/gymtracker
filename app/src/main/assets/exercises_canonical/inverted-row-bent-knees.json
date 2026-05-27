@@ -1,0 +1,210 @@
+{
+  "id": "inverted-row-bent-knees",
+  "name": "Inverted Row with Bent Knees (Regression)",
+  "namePl": "Inverted row z ugiętymi kolanami (regresja)",
+  "aliases": ["bent-knee inverted row", "bent knee australian pull-up", "easy inverted row", "beginner inverted row", "bent-knee bodyweight row", "knees bent supine row"],
+  "aliasesPl": ["wiosło odwrócone z ugiętymi kolanami", "łatwiejsze wiosło odwrócone", "wiosło odwrócone dla początkujących", "regresja wiosła odwróconego", "australijskie podciąganie z ugiętymi kolanami", "wiosło ciała z ugiętymi kolanami"],
+
+  "description": "Beginner regression of the classic inverted row. You lie under a low bar with KNEES BENT and feet flat on the floor (instead of legs extended). The bent knees shorten the lever arm — reducing the percentage of bodyweight you have to pull and making the exercise significantly easier. Perfect starting point for those who cannot yet perform a full inverted row with straight legs. Same horizontal pulling pattern, lower load. Foundational for building scapular control, lat thickness and pulling endurance before progressing to harder variants.",
+  "descriptionPl": "Regresja klasycznego inverted row dla początkujących. Leżysz pod niskim drążkiem z UGIĘTYMI KOLANAMI i stopami płasko na podłodze (zamiast prostych nóg). Ugięte kolana skracają dźwignię — zmniejszają procent masy ciała którą musisz pociągnąć i robią ćwiczenie znacznie łatwiejsze. Idealny punkt startowy dla osób które nie zrobią jeszcze pełnego inverted row z prostymi nogami. Ten sam wzorzec ciągu poziomego, mniejsze obciążenie. Fundament dla budowy kontroli łopatek, grubości najszerszych i wytrzymałości w ciągu, zanim przejdziesz do trudniejszych wariantów.",
+
+  "instructions": [
+    "Set a barbell in a rack (or Smith machine bar) at roughly hip-to-waist height. Lower bar = harder, higher bar = easier.",
+    "Slide under the bar so it sits directly over your upper chest/sternum.",
+    "Grip the bar with palms facing AWAY (pronated/overhand), hands slightly wider than shoulder-width.",
+    "BEND your knees ~90° and place feet FLAT on the floor — hip-width apart, close to your butt.",
+    "Walk hips into position so arms are fully extended. Body forms a straight line from KNEES to head (not from heels — that's the harder version).",
+    "Brace your core and squeeze glutes. Pull shoulder blades DOWN AND BACK (depress + retract) to set the scapulae.",
+    "Initiate the pull by driving elbows DOWN AND BACK toward your hips/sides. Lead with the chest, not the chin.",
+    "Pull until your CHEST touches the bar (not just the chin). Elbows close to torso (~30-45° flare).",
+    "Pause briefly at the top with shoulder blades fully squeezed.",
+    "Lower with control to full arm extension. Maintain straight line from knees to head — do not let hips sag.",
+    "Each rep: full extension at the bottom, chest to bar at the top, body locked straight (knees to head) throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojakach (lub gryf maszyny Smitha) na wysokości mniej więcej biodro–pas. Niższy drążek = trudniej, wyższy = łatwiej.",
+    "Wsuń się pod drążek tak by znalazł się dokładnie nad górną klatką/mostkiem.",
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce nieco szerzej niż barki.",
+    "ZEGNIJ kolana ~90° i postaw stopy PŁASKO na podłodze — szerokość bioder, blisko pośladków.",
+    "Ustaw biodra tak by ramiona były całkowicie wyprostowane. Ciało tworzy linię prostą od KOLAN do głowy (nie od pięt — to trudniejsza wersja).",
+    "Napnij brzuch i ściśnij pośladki. Ściągnij łopatki W DÓŁ I DO TYŁU (depresja + retrakcja) by ustawić łopatki.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w stronę bioder/żeber. Prowadź klatką, nie brodą.",
+    "Podciągaj aż KLATKA dotknie drążka (nie sama broda). Łokcie blisko tułowia (~30-45° rozwarcia).",
+    "Zatrzymaj się krótko na górze z maksymalnie ściągniętymi łopatkami.",
+    "Opuszczaj kontrolowanie do pełnego wyprostu ramion. Utrzymuj linię prostą od kolan do głowy — nie pozwól biodrom opaść.",
+    "Każde powtórzenie: pełen wyprost na dole, klatka do drążka na górze, ciało sztywne (od kolan do głowy) przez cały ruch."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoid", "brachialis", "brachioradialis", "teres_major"],
+    "stabilizers": ["core", "gluteus_maximus", "erector_spinae", "rotator_cuff", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P7",
+    "rhomboids": "P7",
+    "biceps_brachii": "P6",
+    "trapezius_middle_lower": "S7",
+    "posterior_deltoid": "S6",
+    "brachialis": "S5",
+    "teres_major": "S6",
+    "core": "S5",
+    "gluteus_maximus": "S4",
+    "forearms": "S5"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack"],
+    "optional": ["smith_machine", "rings", "trx", "low_bar"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["dead-bug", "plank", "scapular-pull-up"],
+    "progression_to": ["inverted-row", "feet-elevated-inverted-row", "weighted-inverted-row", "ring-row", "pull-up"],
+    "alternatives": ["inverted-row-with-straps", "suspended-row", "lat-pulldown", "seated-cable-row", "dumbbell-bent-over-row", "band-pull-apart"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at hip-to-waist height — higher = easier",
+      "Pronated grip, hands slightly wider than shoulders",
+      "Knees BENT ~90°, feet flat on floor close to butt",
+      "Body straight from KNEES to head (not heels)",
+      "Glutes and core braced — like a bent-knee reverse plank"
+    ],
+    "setup_cues_pl": [
+      "Drążek na wysokości biodro–pas — wyżej = łatwiej",
+      "Chwyt nachwytem, ręce nieco szerzej niż barki",
+      "Kolana UGIĘTE ~90°, stopy płasko blisko pośladków",
+      "Ciało proste od KOLAN do głowy (nie od pięt)",
+      "Pośladki i brzuch napięte — jak odwrócona deska z ugiętymi kolanami"
+    ],
+    "execution_cues": [
+      "CHEST to bar (not just chin)",
+      "Drive elbows DOWN and BACK toward your sides",
+      "Squeeze shoulder blades at the top",
+      "Hips UP — line from knees to head, no sagging",
+      "Full extension at the bottom — control the negative"
+    ],
+    "execution_cues_pl": [
+      "KLATKA do drążka (nie sama broda)",
+      "Napieraj łokciami W DÓŁ i DO TYŁU w stronę żeber",
+      "Ściśnij łopatki na górze",
+      "Biodra W GÓRZE — linia od kolan do głowy, bez opadania",
+      "Pełen wyprost na dole — kontroluj negatyw"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging — body breaks into a U-shape",
+        "faultPl": "Biodra opadają — ciało układa się w 'U'",
+        "cause": "Weak glutes and core, fatigue, or focusing only on arms",
+        "causePl": "Słabe pośladki i brzuch, zmęczenie, lub skupienie tylko na ramionach",
+        "cue": "Squeeze glutes HARD. Brace abs. Push hips UP throughout the set.",
+        "cuePl": "Mocno ściśnij pośladki. Napnij brzuch. Pchaj biodra W GÓRĘ przez całą serię."
+      },
+      {
+        "fault": "Using legs to push up off the floor (cheating)",
+        "faultPl": "Wspomaganie się nogami pchając się od podłogi (oszukiwanie)",
+        "cause": "Treating it like a hip thrust — using leg drive instead of back",
+        "causePl": "Traktowanie jak hip thrust — używanie nóg zamiast pleców",
+        "cue": "Legs ONLY hold the bridge — no pushing through heels. The back does ALL the work.",
+        "cuePl": "Nogi TYLKO trzymają mostek — bez napierania piętami. Plecy robią CAŁĄ robotę."
+      },
+      {
+        "fault": "Pulling chin to bar, not chest (partial ROM)",
+        "faultPl": "Podciąganie brody do drążka zamiast klatki (skrócony ROM)",
+        "cause": "Avoiding the hardest part of the pull (final scapular retraction)",
+        "causePl": "Unikanie najtrudniejszej części (końcowa retrakcja łopatek)",
+        "cue": "Touch the bar with your CHEST. If too hard, raise the bar to make it easier and still get full ROM.",
+        "cuePl": "Dotykaj drążka KLATKĄ. Jeśli za trudne — podnieś drążek wyżej i zachowaj pełen ROM."
+      },
+      {
+        "fault": "Shrugging shoulders up toward ears",
+        "faultPl": "Unoszenie barków do uszu",
+        "cause": "Lack of scapular control, upper traps dominating",
+        "causePl": "Brak kontroli łopatek, dominacja górnych trapezów",
+        "cue": "Set scapulae BEFORE the pull — depress (down) and retract (back). Lats lead.",
+        "cuePl": "Ustaw łopatki PRZED ciągiem — w dół i do tyłu. Najszersze prowadzą."
+      },
+      {
+        "fault": "Staying in regression too long — not progressing",
+        "faultPl": "Pozostawanie w regresji za długo — brak progresji",
+        "cause": "Comfort zone, not testing straight-leg variant periodically",
+        "causePl": "Strefa komfortu, brak okresowego testowania wariantu z prostymi nogami",
+        "cue": "Once you can do 12-15 clean reps, test the straight-leg version. Mix variants in same session.",
+        "cuePl": "Gdy zrobisz 12-15 czystych powtórzeń, sprawdź wersję z prostymi nogami. Mieszaj warianty w tej samej sesji."
+      }
+    ],
+    "breathing": "Inhale at the bottom (arms extended). Exhale on the pull up. Inhale on the way down. Keep rhythm steady — sets are usually 10-15 reps so don't hold breath.",
+    "breathingPl": "Wdech na dole (ramiona wyprostowane). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Utrzymuj równy rytm — serie są zwykle 10-15 powtórzeń więc nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (rings or parallel handles) — less stress on shoulder joint. Raise bar to reduce ROM if pain persists.",
+      "modificationPl": "Użyj chwytu neutralnego (kółka lub uchwyty równoległe) — mniejszy stres dla stawu. Podnieś drążek by zmniejszyć ROM jeśli ból trwa.",
+      "alternative": "ring-row"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use straps with neutral grip (TRX) — wrists stay neutral instead of pronated.",
+      "modificationPl": "Użyj pasów z chwytem neutralnym (TRX) — nadgarstki neutralne zamiast pronowanych.",
+      "alternative": "inverted-row-with-straps"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume. Switch to supinated grip or rings — different load distribution.",
+      "modificationPl": "Zmniejsz objętość. Przejdź na chwyt podchwytem lub kółka — inna dystrybucja obciążenia.",
+      "alternative": "ring-row"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "Bent-knee position should be comfortable. If knee pain occurs, place a thin pad under feet or widen stance slightly.",
+      "modificationPl": "Pozycja z ugiętymi kolanami powinna być wygodna. Jeśli pojawi się ból kolana, podłóż cienką matę pod stopy lub nieco szersza pozycja stóp.",
+      "alternative": "inverted-row-with-straps"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (bodyweight regression) | AMRAP finisher | progress to straight-leg variant when 15+ clean reps possible",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "inverted-row-bent-knees.gif",
+    "frames_extracted": [
+      "frames/inverted-row-bent-knees/frame_0_start.png",
+      "frames/inverted-row-bent-knees/frame_1_early.png",
+      "frames/inverted-row-bent-knees/frame_2_mid.png",
+      "frames/inverted-row-bent-knees/frame_3_late.png",
+      "frames/inverted-row-bent-knees/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/inverted-row-bent-knees"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: start, ciało zawieszone pod drążkiem Smitha, ramiona wyprostowane, KOLANA UGIĘTE ~90°, stopy płasko na podłodze blisko pośladków. Frame 2: top, klatka dotyka drążka, łokcie zgięte i blisko tułowia, łopatki ściągnięte, biodra utrzymane w linii z kolanami i głową. Frame 4: powrót w dół do pełnego wyprostu. Podświetlone: środkowe plecy (lats + romboidy + środkowy trapez) + bicepsy. Klasyczna regresja inverted row — krótsza dźwignia przez ugięte kolana = mniejszy procent masy ciała do pociągnięcia. Beginner-friendly punkt startowy przed pełnym inverted row.",
+
+  "tags": ["calisthenics", "bodyweight", "horizontal_pull", "back", "upper_body", "regression", "beginner_friendly", "scapular_control", "compound", "closed_chain", "bent_knees", "lever_reduction"]
+}

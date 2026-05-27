@@ -1,0 +1,197 @@
+{
+  "id": "weighted-russian-twist-legs-up",
+  "name": "Weighted Russian Twist with Legs Up",
+  "namePl": "Weighted russian twist z nogami w górę",
+  "aliases": ["weighted russian twist legs elevated", "weighted seated twist legs raised", "plate russian twist legs up", "v-sit weighted twist"],
+  "aliasesPl": ["rosyjski skręt z obciążeniem z nogami w górze", "skręt rosyjski z talerzem nogi uniesione", "skręt rosyjski w pozycji V z obciążeniem", "skręty z obciążeniem nogi w powietrzu", "russian twist z talerzem nogi w górę"],
+
+  "description": "An advanced rotational core exercise performed in a V-sit position. The lifter sits with the torso leaned back ~45°, legs extended and elevated off the floor (no foot contact at any point), holding a weight plate or medicine ball with both hands. From this static V-sit hold, the torso rotates side-to-side in the transverse plane, alternating left and right reps. The simultaneous demand of isometric hip flexion (keeping the legs aloft) and dynamic rotation under load makes this a significantly harder variation than the classic Russian twist with feet planted — it amplifies obliques and rectus abdominis activation while heavily challenging hip flexors and overall core stability.",
+  "descriptionPl": "Zaawansowane rotacyjne ćwiczenie na brzuch wykonywane w pozycji V-siadu. Ćwiczący siedzi z tułowiem odchylonym ~45° do tyłu, nogi wyprostowane i uniesione nad podłogę (stopy nie dotykają podłoża w żadnym momencie), trzymając obiema dłońmi talerz lub piłkę lekarską. Z tej statycznej pozycji V-siadu obraca tułów na boki w płaszczyźnie poprzecznej, naprzemiennie w lewo i w prawo. Jednoczesne wymaganie izometrycznego zgięcia bioder (utrzymanie nóg w powietrzu) oraz dynamicznej rotacji pod obciążeniem czyni ten wariant znacząco trudniejszym od klasycznego russian twist ze stopami na podłodze — wzmacnia aktywację mięśni skośnych i prostego brzucha, mocno angażując zginacze stawu biodrowego i ogólną stabilność tułowia.",
+
+  "instructions": [
+    "Sit on the floor with knees slightly bent. Hold a weight plate or medicine ball with both hands close to your chest.",
+    "Lean the torso back to roughly 45° and lift both legs off the floor, extending them out in front so the body forms a wide 'V' shape. Knees may stay slightly bent for control.",
+    "Brace the core hard, neutral spine, chest up. This is the starting position — feet stay airborne for the entire set.",
+    "Exhale and rotate the torso to one side, bringing the weight beside the hip. The legs stay still — only the torso rotates.",
+    "Pause briefly at the end range, then rotate to the opposite side under control, bringing the weight to the other hip. That is one repetition (left + right).",
+    "Continue alternating sides at a controlled tempo. Do not let the feet touch the floor between reps and do not round the lower back."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z lekko ugiętymi kolanami. Trzymaj obiema dłońmi talerz lub piłkę lekarską blisko klatki piersiowej.",
+    "Odchyl tułów do tyłu do około 45° i oderwij obie nogi od podłogi, wyciągając je do przodu, tak aby ciało utworzyło szerokie 'V'. Kolana mogą pozostać lekko ugięte dla kontroli.",
+    "Mocno napnij brzuch, neutralny kręgosłup, klatka w górę. To pozycja wyjściowa — stopy pozostają w powietrzu przez całą serię.",
+    "Wydech i obróć tułów w jedną stronę, przenosząc obciążenie obok biodra. Nogi pozostają nieruchome — obraca się tylko tułów.",
+    "Krótka pauza w końcowym zakresie ruchu, następnie obróć się kontrolowanym ruchem na przeciwną stronę, przenosząc obciążenie do drugiego biodra. To jedno powtórzenie (lewo + prawo).",
+    "Kontynuuj naprzemienne skręty w kontrolowanym tempie. Nie pozwól by stopy dotknęły podłogi pomiędzy powtórzeniami i nie zaokrąglaj dolnego odcinka pleców."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_rotation",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis"],
+    "secondary": ["hip_flexors", "transverse_abdominis"],
+    "stabilizers": ["erector_spinae", "quadriceps", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "P8",
+    "hip_flexors": "S7",
+    "transverse_abdominis": "S6",
+    "erector_spinae": "T4",
+    "quadriceps": "T4",
+    "adductors": "T2"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["medicine_ball", "dumbbell", "kettlebell", "mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["russian-twist", "v-sit-hold", "hollow-body-hold", "weighted-sit-up"],
+    "progression_to": ["hanging-windshield-wiper", "dragon-flag-twist", "weighted-v-up-twist"],
+    "alternatives": ["weighted-russian-twist", "cable-woodchop", "decline-russian-twist", "medicine-ball-russian-twist"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit, lean back to ~45° — find the V-sit angle",
+      "Lift legs off the floor — feet stay airborne the whole set",
+      "Hold the plate at chest level with both hands, elbows tucked",
+      "Brace abs hard — ribs down, neutral spine",
+      "Chest up, shoulders back — no upper-back rounding"
+    ],
+    "setup_cues_pl": [
+      "Usiądź, odchyl się do ~45° — znajdź kąt V-siadu",
+      "Unieś nogi nad podłogę — stopy w powietrzu przez całą serię",
+      "Trzymaj talerz na wysokości klatki obiema dłońmi, łokcie blisko ciała",
+      "Mocno napnij brzuch — żebra w dół, neutralny kręgosłup",
+      "Klatka w górę, barki cofnięte — bez zaokrąglenia górnych pleców"
+    ],
+    "execution_cues": [
+      "Rotate from the rib cage, not from the arms",
+      "Legs stay still — only the torso moves",
+      "Exhale on each rotation, brief pause at the end range",
+      "Bring the plate beside the hip, not over the knees",
+      "Control the eccentric — don't fling the weight side to side"
+    ],
+    "execution_cues_pl": [
+      "Obracaj się z klatki piersiowej, nie samymi rękami",
+      "Nogi nieruchomo — porusza się tylko tułów",
+      "Wydech przy każdej rotacji, krótka pauza w końcowym zakresie",
+      "Przenoś talerz obok biodra, nie nad kolana",
+      "Kontroluj fazę ekscentryczną — nie machaj obciążeniem na boki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounding the lower back / lumbar flexion",
+        "faultPl": "Zaokrąglanie dolnego odcinka pleców / zgięcie lędźwiowe",
+        "cause": "Weak core under combined isometric hold + rotation; torso collapses backward",
+        "causePl": "Słaby brzuch w warunkach jednoczesnego utrzymania izometrycznego i rotacji; tułów zapada się do tyłu",
+        "cue": "Chest up, lengthen the spine. If you can't keep neutral, lower the weight or bend the knees more",
+        "cuePl": "Klatka w górę, wydłuż kręgosłup. Jeśli nie możesz utrzymać neutralnej pozycji — zmniejsz ciężar lub ugnij bardziej kolana"
+      },
+      {
+        "fault": "Feet touching the floor between reps",
+        "faultPl": "Stopy dotykają podłogi pomiędzy powtórzeniami",
+        "cause": "Hip flexor fatigue, lack of core endurance for the V-sit hold",
+        "causePl": "Zmęczenie zginaczy biodra, brak wytrzymałości brzucha do utrzymania V-siadu",
+        "cue": "Heels stay 15–20 cm above the floor the entire set. If they drop, end the set",
+        "cuePl": "Pięty pozostają 15–20 cm nad podłogą przez całą serię. Jeśli opadają — zakończ serię"
+      },
+      {
+        "fault": "Swinging the arms instead of rotating the torso",
+        "faultPl": "Machanie ramionami zamiast rotowania tułowia",
+        "cause": "Momentum substitution — arms move but the rib cage stays static",
+        "causePl": "Zastępowanie ruchu rozpędem — ramiona się poruszają, ale klatka piersiowa pozostaje nieruchoma",
+        "cue": "Lock the plate to your sternum, rotate as one unit from the rib cage to the hip",
+        "cuePl": "Zablokuj talerz przy mostku, obracaj się jako jedna jednostka od klatki piersiowej do biodra"
+      },
+      {
+        "fault": "Legs swinging in opposition to the torso",
+        "faultPl": "Nogi kołyszą się w przeciwną stronę niż tułów",
+        "cause": "Counterbalancing with lower body to compensate for weak obliques",
+        "causePl": "Kontrbalans dolną częścią ciała kompensujący słabe mięśnie skośne",
+        "cue": "Squeeze the legs together, point the toes — keep the lower body absolutely still",
+        "cuePl": "Ściśnij nogi razem, wyciągnij palce u stóp — utrzymaj dolną część ciała całkowicie nieruchomo"
+      },
+      {
+        "fault": "Rotating only with the head and neck",
+        "faultPl": "Rotowanie tylko głową i szyją",
+        "cause": "Stiff thoracic spine — user 'looks' to the side instead of actually rotating the torso",
+        "causePl": "Sztywny odcinek piersiowy kręgosłupa — ćwiczący 'patrzy' w bok zamiast faktycznie rotować tułów",
+        "cue": "Lead with the elbow and the rib cage — eyes follow the plate, not the other way around",
+        "cuePl": "Prowadź łokciem i klatką piersiową — wzrok podąża za talerzem, nie odwrotnie"
+      }
+    ],
+    "breathing": "Inhale in the center / starting position. Exhale forcefully as you rotate to each side, then brief inhale through the center on the way to the next side. Avoid breath-holding across multiple reps — it spikes blood pressure and reduces core control.",
+    "breathingPl": "Wdech w pozycji centralnej / wyjściowej. Mocny wydech podczas obrotu w każdą stronę, krótki wdech przez pozycję centralną w drodze do następnej strony. Unikaj wstrzymywania oddechu przez wiele powtórzeń — podnosi ciśnienie krwi i zmniejsza kontrolę nad brzuchem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded spinal rotation combined with an unsupported lumbar load is high-risk for disc and facet structures. Use anti-rotation work (Pallof press) until pain-free.",
+      "modificationPl": "Obciążona rotacja kręgosłupa połączona z niepodpartym obciążeniem lędźwiowym jest wysokim ryzykiem dla krążków i stawów międzykręgowych. Używaj ćwiczeń anty-rotacyjnych (Pallof press) do czasu ustąpienia bólu.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Loaded rotation under flexion is one of the highest-risk mechanisms for disc injury (McGill). Replace with neutral-spine core work.",
+      "modificationPl": "Obciążona rotacja w zgięciu jest jednym z najwyższych czynników ryzyka uszkodzenia krążka (McGill). Zastąp ćwiczeniami brzucha w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "The isometric leg-raise hold loads the hip flexors heavily. Drop to the feet-down Russian twist variation until the strain resolves.",
+      "modificationPl": "Izometryczne utrzymanie uniesionych nóg mocno obciąża zginacze biodra. Przejdź na wariant russian twist ze stopami na podłodze do czasu ustąpienia naciągnięcia.",
+      "alternative": "weighted-russian-twist"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Heavy rectus abdominis and oblique contraction under flexion can widen the midline separation. Use transverse-abdominis-focused work first.",
+      "modificationPl": "Mocne napięcie mięśnia prostego brzucha i mięśni skośnych w zgięciu może poszerzyć rozejście kresy białej. Najpierw wykonuj ćwiczenia skupione na mięśniu poprzecznym brzucha.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15/strona (hypertrophy) | 3x20-30 total reps (endurance) | 3xAMRAP do utraty formy (finisher)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "weighted-russian-twist-legs-up.gif",
+    "frames_extracted": [
+      "frames/weighted-russian-twist-legs-up/frame_0_start.png",
+      "frames/weighted-russian-twist-legs-up/frame_1_early.png",
+      "frames/weighted-russian-twist-legs-up/frame_2_mid.png",
+      "frames/weighted-russian-twist-legs-up/frame_3_late.png",
+      "frames/weighted-russian-twist-legs-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/weighted-russian-twist-legs-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start) i klatka 4 (end): pozycja centralna V-siadu — tułów odchylony ~45° do tyłu, NOGI WYRAŹNIE UNIESIONE NAD PODŁOGĄ (stopy nie dotykają podłoża), kolana lekko ugięte, talerz trzymany obiema dłońmi na wysokości klatki/mostka. Klatki 1-3 (early/mid/late): rotacja tułowia naprzemiennie w lewo i prawo — w klatce 2 lifter jest wyraźnie obrócony w lewo, talerz przeniesiony w stronę lewego biodra, nogi pozostają nieruchome w powietrzu. Anatomia podświetla obliques (mięśnie skośne brzucha — bardzo wyraźne na bokach), rectus_abdominis (prosty brzucha) i quads (mięsień czworogłowy — izometryczna praca trzymania nóg w górze). Klasyfikacja: core_rotation (transverse plane), compound (zaangażowane stawy: kręgosłup + biodra w izometrii), force=both (koncentryczne obracanie + izometryczne trzymanie). Bilateral alternating — ćwiczy obie strony naprzemiennie w jednej serii, więc laterality=bilateral. Primary muscles potwierdzone: obliques P9 (główny napęd rotacji + side flexion), rectus_abdominis P8 (utrzymanie zgięcia tułowia w V-sit). Secondary: hip_flexors S7 (izometryczne trzymanie nóg w powietrzu — kluczowa różnica vs klasyczny russian twist gdzie stopy są na podłodze). Trudność 7/10 (intermediate→advanced) — wymaga równoczesnej kontroli izometrycznej i dynamicznej rotacji. Prerequisites obejmują klasyczny russian twist i v-sit hold. Nazwa PL pozostawiona w formie hybrydowej 'Weighted russian twist z nogami w górę' jak w specyfikacji zadania — w środowisku fitness w Polsce ta nazwa funkcjonuje w oryginalnym brzmieniu. Wszystkie cues, faults i contraindications napisane od zera po polsku, nie tłumaczone maszynowo.",
+
+  "tags": ["weighted", "core", "abs", "obliques", "rotation", "advanced_core", "v_sit", "anti_rotation_challenge", "hip_flexors", "plate", "medicine_ball"]
+}

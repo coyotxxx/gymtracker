@@ -1,0 +1,203 @@
+{
+  "id": "dumbbell-lunge",
+  "name": "Dumbbell Lunge",
+  "namePl": "Wykrok z hantlami",
+  "aliases": ["dumbbell forward lunge", "dumbbell stationary lunge", "db lunge", "dumbbell split lunge"],
+  "aliasesPl": ["wykroki z hantlami", "wykrok w przód z hantlami", "wykrok hantlami", "wykrok DB"],
+
+  "description": "Unilateral lower-body compound exercise. Athlete stands tall holding a dumbbell in each hand at the sides, takes a long step forward into a split stance, descends until the front thigh is roughly parallel to the floor and the back knee hovers near the ground, then drives back to the starting position. The dumbbells at the sides shift the center of mass lower than a barbell version, which reduces spinal load and improves balance, but loads the grip and forearms substantially. Excellent for quad and glute hypertrophy, exposing left-right asymmetries, and as a stepping stone to heavier barbell unilateral work.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała. Trenujący stoi prosto trzymając hantel w każdej dłoni po bokach ciała, wykonuje długi krok w przód do pozycji wykroku, schodzi aż przednie udo będzie mniej więcej równolegle do podłogi, a tylne kolano zawisa blisko ziemi, po czym wraca do pozycji wyjściowej. Hantle po bokach przenoszą środek ciężkości niżej niż wersja ze sztangą, co zmniejsza obciążenie kręgosłupa i poprawia równowagę, ale mocno angażuje chwyt i przedramiona. Świetne do hipertrofii czworogłowych i pośladków, ujawniania asymetrii lewo-prawo oraz jako pomost do cięższej jednostronnej pracy ze sztangą.",
+
+  "instructions": [
+    "Pick up a pair of dumbbells and stand tall with feet hip-width apart. Hold the dumbbells at your sides with a neutral grip, arms fully extended.",
+    "Pull your shoulder blades back and down, lift your chest, and brace your core. Look straight ahead at a fixed point.",
+    "Take a deep breath and hold it. Step forward with one leg into a long stride — about 1.5 times your normal walking step. Plant the front foot flat.",
+    "Lower your body straight down by bending both knees. The back knee descends toward the floor (hover 2-3 cm above), front knee tracks over the front ankle.",
+    "Descend until the front thigh is parallel to the floor and the back knee almost touches the ground. Front knee should reach approximately 90° of flexion.",
+    "Keep the torso vertical and the dumbbells hanging straight down at your sides. Do not let the weights swing forward or backward.",
+    "Drive up by pushing through the front heel and mid-foot. Bring the front leg back to meet the rear leg, returning to a fully upright stance. Exhale near the top.",
+    "Repeat with the other leg, or complete all reps on one side before switching, depending on programming. Use straps if grip becomes the limiting factor."
+  ],
+  "instructionsPl": [
+    "Weź parę hantli i stań prosto, stopy na szerokość bioder. Trzymaj hantle po bokach ciała chwytem neutralnym, ramiona w pełni wyprostowane.",
+    "Ściągnij łopatki w tył i w dół, unieś klatkę i napnij brzuch. Patrz prosto przed siebie na ustalony punkt.",
+    "Weź głęboki wdech i przytrzymaj. Wykonaj długi krok w przód jedną nogą — około 1,5 normalnej długości kroku. Postaw stopę przednią płasko na podłodze.",
+    "Opuść ciało prosto w dół zginając oba kolana. Tylne kolano schodzi w kierunku podłogi (zatrzymaj 2-3 cm nad), przednie kolano nad kostką przedniej nogi.",
+    "Schodź aż przednie udo będzie równoległe do podłogi, a tylne kolano prawie dotknie ziemi. Przednie kolano powinno osiągnąć około 90° zgięcia.",
+    "Utrzymuj tułów pionowo, a hantle zwisające prosto w dół po bokach. Nie pozwól ciężarom kołysać się w przód ani w tył.",
+    "Wypchnij się w górę przez piętę i środek stopy przedniej nogi. Wróć przednią nogą do tylnej, wracając do pełnej pozycji stojącej. Wydech blisko górnej pozycji.",
+    "Powtórz drugą nogą lub wykonaj całą serię na jedną stronę przed zmianą — zależnie od programu. Użyj pasków jeśli chwyt staje się czynnikiem ograniczającym."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "calves", "forearms", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "hamstrings": "S6",
+    "adductors": "S6",
+    "core": "S5",
+    "gluteus_medius": "S6",
+    "calves": "T4",
+    "forearms": "S5",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_straps", "flat_shoes", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-lunge", "goblet-squat"],
+    "progression_to": ["walking-lunge", "barbell-lunge", "bulgarian-split-squat", "deficit-lunge", "reverse-lunge"],
+    "alternatives": ["goblet-lunge", "barbell-lunge", "dumbbell-split-squat", "bodyweight-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells at sides, neutral grip, arms relaxed and straight",
+      "Feet hip-width apart, weight balanced evenly between both feet",
+      "Chest up, shoulder blades retracted, core braced",
+      "Pick a focal point at eye level — keeps the head neutral",
+      "Stand tall — let the dumbbells hang, don't shrug your shoulders"
+    ],
+    "setup_cues_pl": [
+      "Hantle po bokach, chwyt neutralny, ramiona rozluźnione i wyprostowane",
+      "Stopy na szerokość bioder, ciężar rozłożony równomiernie między obie stopy",
+      "Klatka w górze, łopatki ściągnięte, brzuch napięty",
+      "Ustal punkt skupienia wzroku — pomaga utrzymać neutralną pozycję głowy",
+      "Stój prosto — pozwól hantlom zwisać, nie podnoś barków"
+    ],
+    "execution_cues": [
+      "Step out long enough so the front shin can stay vertical at the bottom",
+      "Drop straight down — don't push the front knee forward",
+      "Back knee toward the floor, not back behind you",
+      "Drive through the front heel on the way up",
+      "Dumbbells hang straight down at your sides — don't let them swing"
+    ],
+    "execution_cues_pl": [
+      "Krok wystarczająco długi, aby piszczel przedniej nogi mogła pozostać pionowa na dole",
+      "Schodź prosto w dół — nie wypychaj przedniego kolana do przodu",
+      "Tylne kolano w dół do podłogi, nie w tył",
+      "Wypychaj się przez piętę przedniej nogi w drodze w górę",
+      "Hantle zwisają prosto w dół po bokach — nie pozwól im się kołysać"
+    ],
+    "common_faults": [
+      {
+        "fault": "Front knee crosses past the toes",
+        "faultPl": "Przednie kolano przekracza linię palców",
+        "cause": "Step too short or pushing forward instead of straight down. Loads the patellar tendon and reduces glute involvement.",
+        "causePl": "Za krótki krok lub pchanie do przodu zamiast prosto w dół. Obciąża rzepkę i zmniejsza pracę pośladków.",
+        "cue": "Take a longer step and lower the back knee straight toward the floor",
+        "cuePl": "Wykonaj dłuższy krok i opuszczaj tylne kolano prosto w dół"
+      },
+      {
+        "fault": "Dumbbells swing forward / forward torso lean",
+        "faultPl": "Hantle kołyszą się do przodu / pochylenie tułowia w przód",
+        "cause": "Weak core, dumbbells momentum unchecked, or trying to compensate for weak quads",
+        "causePl": "Słaby brzuch, niekontrolowany pęd hantli lub kompensacja słabych czworogłowych",
+        "cue": "Glue the arms to your sides. Brace core, chest up, hantle hang dead straight.",
+        "cuePl": "Przyklej ramiona do boków ciała. Napnij brzuch, klatka w górze, hantle zwisają martwo prosto."
+      },
+      {
+        "fault": "Insufficient depth (knee bends less than 90°)",
+        "faultPl": "Niedostateczna głębokość (kolano zgięte mniej niż 90°)",
+        "cause": "Fear of the load, weak quads at deep ranges, or limited hip mobility",
+        "causePl": "Strach przed ciężarem, słabe czworogłowe w głębokich zakresach lub ograniczona mobilność bioder",
+        "cue": "Lower the back knee until it almost touches the floor — about 2-3 cm above the ground",
+        "cuePl": "Opuść tylne kolano aż prawie dotknie podłogi — około 2-3 cm nad ziemią"
+      },
+      {
+        "fault": "Loss of lateral balance / wobble",
+        "faultPl": "Utrata bocznej równowagi / chwianie",
+        "cause": "Weak gluteus medius, narrow base (feet on one line), or load too heavy for unilateral control",
+        "causePl": "Słaby pośladkowy średni, za wąska podstawa (stopy na jednej linii) lub zbyt duży ciężar przy jednostronnej kontroli",
+        "cue": "Set feet on parallel lines, not a tightrope. Reduce load and build stability with split squats first.",
+        "cuePl": "Ustaw stopy na równoległych liniach, nie na linii prostej. Zmniejsz ciężar i buduj stabilność na split squat."
+      },
+      {
+        "fault": "Grip fails before legs (dumbbells drop early)",
+        "faultPl": "Chwyt poddaje się przed nogami (hantle wypadają wcześniej)",
+        "cause": "Forearms are the weak link — common with heavy dumbbells on higher-rep sets",
+        "causePl": "Przedramiona są słabym ogniwem — częste przy ciężkich hantlach w seriach o większej liczbie powtórzeń",
+        "cue": "Use lifting straps so the legs can be the limiter, not the grip. Or switch to a goblet lunge.",
+        "cuePl": "Użyj pasków treningowych, aby nogi były ogranicznikiem, nie chwyt. Lub przejdź na goblet lunge."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before stepping forward. Hold breath through the descent and the hardest part of the ascent. Exhale near the top when both feet are together.",
+    "breathingPl": "Wdech i napięcie na górze przed krokiem w przód. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wychodzenia. Wydech blisko górnej pozycji gdy stopy są razem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Avoid deep lunges. Switch to a reverse lunge or shorter-ROM split squat to reduce knee shear.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Unikaj głębokich wykroków. Przejdź na wykrok w tył lub split squat z krótszym zakresem ruchu, aby zmniejszyć siły ścinające na kolano.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Forward lunge is knee-dominant and can aggravate. Use a reverse lunge or Bulgarian split squat with a longer stance to reduce knee load.",
+      "modificationPl": "Wykrok w przód dominuje kolanem i może drażnić. Użyj wykroku w tył lub bułgarskiego split squat z dłuższym rozstawem, aby zmniejszyć obciążenie kolana.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Unilateral loaded movements demand high stability. Hold a wall or rack with a fingertip for support, or switch to a stable split squat / goblet squat.",
+      "modificationPl": "Jednostronne ruchy z obciążeniem wymagają wysokiej stabilności. Trzymaj się ściany lub stojaka palcem dla podparcia, lub przejdź na stabilny split squat / goblet squat.",
+      "alternative": "dumbbell-split-squat"
+    },
+    {
+      "condition": "grip_injury_or_wrist_pain",
+      "severity": "modify",
+      "modification": "Holding heavy dumbbells aggravates the wrist/grip. Switch to a goblet lunge (one DB held at chest) or barbell lunge (no grip).",
+      "modificationPl": "Trzymanie ciężkich hantli drażni nadgarstek/chwyt. Przejdź na goblet lunge (jeden hantel przy klatce) lub wykrok ze sztangą (bez chwytu).",
+      "alternative": "goblet-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6 per leg (strength) | 2-3x12-15 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "dumbbell-lunge.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lunge/frame_0_start.png",
+      "frames/dumbbell-lunge/frame_1_early.png",
+      "frames/dumbbell-lunge/frame_2_mid.png",
+      "frames/dumbbell-lunge/frame_3_late.png",
+      "frames/dumbbell-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Wariant STATIONARY forward lunge (nie walking, nie reverse) — postać startuje stojąc prosto z hantlami zwisającymi po bokach ciała (chwyt neutralny), schodzi w wykrok w przód (prawa noga przed lewą, przednie udo równolegle do podłogi, tylne kolano blisko ziemi, tułów pionowy, hantle nadal zwisają prosto przy biodrach), wraca do stania. Klatka 2 (mid) pokazuje pełną głębokość ~90° przedniego kolana. Mięśnie podświetlone w GIFie: czworogłowe przedniej nogi (najmocniej) + pośladki + przywodziciele tylnej nogi + wyraźnie zaznaczone przedramiona obu rąk (grip pod hantlami) — pasuje do anatomii. Brak walking pattern, brak kroku w tył = klasyczny stationary forward lunge. Master.json potwierdza slug 'dumbbell-lunge' z muscle_primary='glutes' (jahel klasyfikuje pod glutes). Dodałem 5. fault o grip (specyfika DB) i contraindication grip_injury — odróżnia od barbell-lunge. Difficulty 5 (beginner) bo brak ucisku kręgosłupa i niższy CoM. Forearms dodane jako stabilizer S5 (specyfika hantli). Wszystkie pola PL napisane od zera w polskim standardzie fitness 'wykrok z hantlami'.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "dumbbell", "compound", "asymmetry_corrector", "stabilizer_heavy", "grip_demanding", "beginner_friendly"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "cable-curl",
+  "name": "Cable Curl",
+  "namePl": "Uginanie ramion na wyciągu",
+  "aliases": ["standing cable curl", "low pulley curl", "cable biceps curl", "straight bar cable curl"],
+  "aliasesPl": ["uginanie ramion z dolnego bloczka", "uginanie bicepsów na wyciągu dolnym", "curl na wyciągu", "uginanie ramion z linki"],
+
+  "description": "Standing biceps curl performed with a straight bar attached to the low pulley of a cable column. Unlike free weights, the cable maintains constant tension on the biceps throughout the full range of motion — including the top of the curl where a barbell would otherwise unload. The downward angle of the cable also creates a strong stretch at the bottom and a hard peak contraction at the top, making it a favorite hypertrophy tool for biceps detail and pump work.",
+  "descriptionPl": "Uginanie ramion na biceps wykonywane stojąc, ze sztangą prostą podpiętą do dolnego bloczka wyciągu. W odróżnieniu od wolnych ciężarów, linka utrzymuje stałe napięcie na bicepsie przez cały zakres ruchu — również w górnej pozycji, gdzie sztanga normalnie traciłaby obciążenie. Skośny kierunek linki dodatkowo zapewnia mocne rozciągnięcie na dole i ostry skurcz szczytowy na górze, co czyni to ćwiczenie ulubionym narzędziem hipertroficznym do rzeźbienia i pompy bicepsa.",
+
+  "instructions": [
+    "Attach a straight bar to the low pulley of a cable column. Select an appropriate weight on the stack.",
+    "Stand facing the machine with feet hip-width apart, 30-50 cm away from the pulley. Grip the bar with a supinated (palms up) grip slightly narrower than shoulder-width.",
+    "Stand tall, brace your core, lift your chest, and pull your shoulders back and down. Pin your elbows to the sides of your torso.",
+    "Let the bar hang in front of your thighs with arms fully extended. The cable should already feel tension — there is no dead start.",
+    "Curl the bar upward by flexing only at the elbows. Exhale on the way up. Keep the upper arms vertical and stationary.",
+    "Bring the bar to the front of your shoulders, achieving full biceps contraction. Squeeze hard for 1 second at the top.",
+    "Lower the bar under control over 2-3 seconds back to full elbow extension. Inhale on the descent. Resist the cable — do not let it snap your arms down.",
+    "Do not lean back to lift more weight. Keep the torso vertical the entire set."
+  ],
+  "instructionsPl": [
+    "Podepnij sztangę prostą do dolnego bloczka wyciągu. Wybierz odpowiedni ciężar na stosie.",
+    "Stań przodem do maszyny, stopy na szerokość bioder, w odległości 30-50 cm od bloczka. Złap sztangę nachwytem dolnym (dłonie skierowane w górę) nieco węziej niż na szerokość barków.",
+    "Stań prosto, napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół. Przyklej łokcie do boków tułowia.",
+    "Pozwól sztandze wisieć przed udami z w pełni wyprostowanymi ramionami. Linka powinna już być napięta — nie ma martwego startu.",
+    "Uginaj sztangę do góry pracując wyłącznie w łokciach. Wydech w fazie unoszenia. Ramiona ponad łokciem mają pozostać pionowe i nieruchome.",
+    "Doprowadź sztangę na wysokość przednich aktonów barków uzyskując pełny skurcz bicepsa. Mocno napnij na 1 sekundę w górnej pozycji.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania. Stawiaj opór lince — nie pozwól by szarpnęła ramiona w dół.",
+    "Nie odchylaj się do tyłu by unieść większy ciężar. Tułów pionowo przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T3",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar"],
+    "optional": ["ez_bar_attachment", "rope_attachment", "wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["cable-rope-curl", "preacher-curl", "spider-curl", "incline-dumbbell-curl", "cable-drag-curl"],
+    "alternatives": ["barbell-curl", "ez-bar-curl", "dumbbell-curl", "hammer-curl", "preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand 30-50 cm from the pulley — cable should pull at a slight forward angle",
+      "Supinated grip slightly narrower than shoulders",
+      "Elbows pinned to your sides for the entire set",
+      "Chest up, shoulders back and down, core braced",
+      "Light tension already on the cable at the bottom — no slack"
+    ],
+    "setup_cues_pl": [
+      "Stań 30-50 cm od bloczka — linka ma ciągnąć pod lekkim skosem do przodu",
+      "Chwyt nachwytem dolnym nieco węziej niż barki",
+      "Łokcie przyklejone do boków przez całą serię",
+      "Klatka w górze, barki ściągnięte w tył i w dół, brzuch napięty",
+      "Lekkie napięcie na lince już w dolnej pozycji — bez luzu"
+    ],
+    "execution_cues": [
+      "Constant tension — the biceps never get a break",
+      "Squeeze hard at the top, feel the peak contraction",
+      "Fight the cable down — 2-3 second eccentric, no snapping back",
+      "Only forearms move — upper arms stay glued to your sides",
+      "Stay vertical — do not lean back to cheat the weight up"
+    ],
+    "execution_cues_pl": [
+      "Stałe napięcie — biceps nie odpoczywa ani na chwilę",
+      "Mocno spinaj w górnej pozycji, poczuj skurcz szczytowy",
+      "Walcz z linką w dół — 2-3 sekundy fazy negatywnej, bez szarpania",
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyklejone do boków",
+      "Pozostań pionowo — nie odchylaj się by oszukać ciężar w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning backward as the bar approaches the top",
+        "faultPl": "Odchylanie się do tyłu gdy sztanga zbliża się do góry",
+        "cause": "Load too heavy; trying to use torso extension to finish the rep",
+        "causePl": "Zbyt duży ciężar; próba wykorzystania wyprostu tułowia by dokończyć powtórzenie",
+        "cue": "Reduce the weight. Keep ears stacked over hips the whole set.",
+        "cuePl": "Zmniejsz ciężar. Trzymaj uszy nad biodrami przez całą serię."
+      },
+      {
+        "fault": "Elbows drift forward and up at the top",
+        "faultPl": "Łokcie wędrują do przodu i w górę w górnej pozycji",
+        "cause": "Trying to lift the bar higher than full biceps flexion allows, recruiting anterior deltoids",
+        "causePl": "Próba uniesienia sztangi wyżej niż pozwala pełny skurcz bicepsa, włączanie przednich aktonów barków",
+        "cue": "Stop when forearms reach vertical. Imagine your elbows are nailed to your ribs.",
+        "cuePl": "Zatrzymaj się gdy przedramiona dojdą do pionu. Wyobraź sobie że łokcie są przybite do żeber."
+      },
+      {
+        "fault": "Letting the cable snap the arms back down (no eccentric control)",
+        "faultPl": "Pozwalanie lince szarpnąć ramiona w dół (brak kontroli fazy negatywnej)",
+        "cause": "Underestimating the constant tension of the cable, rushing reps for ego",
+        "causePl": "Lekceważenie stałego napięcia linki, przyspieszanie powtórzeń dla ego",
+        "cue": "Resist the cable. Count 1-2-3 on the way down every single rep.",
+        "cuePl": "Stawiaj opór lince. Licz 1-2-3 podczas opuszczania w każdym powtórzeniu."
+      },
+      {
+        "fault": "Standing too close or too far from the pulley",
+        "faultPl": "Stanie zbyt blisko lub zbyt daleko od bloczka",
+        "cause": "Not understanding cable line of pull; copying others without adjustment",
+        "causePl": "Brak zrozumienia kierunku ciągu linki; kopiowanie innych bez własnej regulacji",
+        "cue": "Position yourself so the cable is taut at the bottom and pulls slightly forward — not straight down, not pulling you off balance.",
+        "cuePl": "Ustaw się tak by linka była napięta na dole i ciągnęła lekko do przodu — nie pionowo w dół, nie wytrącała Cię z równowagi."
+      },
+      {
+        "fault": "Wrist hyperextension or grip rolling under the bar",
+        "faultPl": "Przeprostowanie nadgarstków lub przewracanie chwytu pod sztangą",
+        "cause": "Weak wrist flexors, grip too wide for supinated position, fatigue",
+        "causePl": "Słabe zginacze nadgarstka, chwyt za szeroki dla pozycji supinowanej, zmęczenie",
+        "cue": "Keep wrists straight in line with forearms. Switch to EZ-bar or rope attachment if wrists complain.",
+        "cuePl": "Trzymaj nadgarstki proste w linii z przedramieniem. Przejdź na sztangę łamaną lub linkę jeśli nadgarstki protestują."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light core brace the whole set to prevent leaning back.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby zapobiec odchylaniu się do tyłu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Switch to a rope attachment for neutral grip and reduced supination stress. Lower the load, increase reps to 12-15, and lengthen the eccentric only when pain-free.",
+      "modificationPl": "Przejdź na linkę dla chwytu neutralnego i mniejszego stresu supinacyjnego. Zmniejsz ciężar, zwiększ powtórzenia do 12-15, wydłużaj fazę negatywną dopiero gdy jest bez bólu.",
+      "alternative": "cable-rope-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Straight-bar supinated grip stresses the medial epicondyle. Use EZ-bar attachment or rope. Stay light (12-15 reps), avoid forced reps.",
+      "modificationPl": "Chwyt supinowany na sztandze prostej obciąża nadkłykieć przyśrodkowy. Użyj sztangi łamanej lub linki. Pracuj lekko (12-15 powtórzeń), unikaj wymuszanych powtórzeń.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Full supination on a straight bar aggravates ulnar-side wrist pain. Use EZ-bar (angled grip) or rope (free rotation). Wrist wraps can help.",
+      "modificationPl": "Pełna supinacja na sztandze prostej drażni ból po stronie łokciowej nadgarstka. Użyj sztangi łamanej (kąt chwytu) lub linki (swobodna rotacja). Opaski na nadgarstki mogą pomóc.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing requires isometric lumbar bracing against the forward pull of the cable. Perform seated on a bench facing the pulley, or use preacher attachment, to remove spinal load.",
+      "modificationPl": "Pozycja stojąca wymaga izometrycznego napięcia lędźwiowego przeciw ciągowi linki do przodu. Wykonuj siedząc na ławce przodem do bloczka lub używaj modlitewnika aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/pump) | 4-5x8-10 (mass) | 2-3x15-20 (finisher/burnout)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-curl.gif",
+    "frames_extracted": [
+      "frames/cable-curl/frame_0_start.png",
+      "frames/cable-curl/frame_1_early.png",
+      "frames/cable-curl/frame_2_mid.png",
+      "frames/cable-curl/frame_3_late.png",
+      "frames/cable-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-curl",
+    "yuhonas_id": "Cable_Curl",
+    "glowupp_id": "cable_curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja startowa — pełny wyprost ramion, sztanga prosta na wysokości ud, linka idzie do dolnego bloczka (widoczna z prawej strony schodzi w dół), chwyt podchwytem nieco węziej niż barki, biceps i przedramiona podświetlone na czerwono. Frame 2: pełny skurcz — sztanga na wysokości przednich aktonów barków, łokcie pozostają przy bokach tułowia, ramię ponad łokciem pionowo, linka napięta w dół. Frame 4: powrót do wyprostu z widocznym 'ghostem' fazy szczytowej powyżej, tułów pionowy. Sylwetka stoi nieruchomo przez cały ruch — modelowe wykonanie strict. Ćwiczenie jednoznacznie zidentyfikowane jako standing straight-bar cable curl z dolnego bloczka. Filozofia constant tension uwypuklona w opisie i cue. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "cable", "constant_tension", "upper_body", "hypertrophy"]
+}

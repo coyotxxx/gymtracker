@@ -1,0 +1,208 @@
+{
+  "id": "dumbbell-burpee",
+  "name": "Dumbbell Burpee",
+  "namePl": "Burpee z hantlami",
+  "aliases": ["weighted burpee", "db burpee", "dumbbell squat thrust", "loaded burpee"],
+  "aliasesPl": ["burpee z hantelkami", "burpee obciążone", "burpee z ciężarkami", "obciążone burpee", "burpee z hantlami trzymanymi w dłoniach"],
+
+  "description": "Loaded variation of the classic burpee in which the athlete grips a pair of dumbbells throughout the entire cycle — standing, squatting to the floor (placing the dumbbells down or holding them as 'handles'), kicking back into a plank with hands on the dumbbells, jumping the feet forward, and standing tall with the dumbbells back at the sides. By adding external load to a full-body conditioning movement, the exercise sharply raises grip, posterior-chain and shoulder-stabilizer demand on top of the cardiovascular burn of the standard burpee. Acts as a bridge between metcon conditioning and strength work: forearms, traps and rotator-cuff fire from carrying load through transitions, while quads, glutes and chest still drive the squat-plank-stand cycle. Common in CrossFit metcons, hybrid athlete programming and 'devil's press' progressions, where the added weight scales conditioning difficulty without changing the movement pattern.",
+  "descriptionPl": "Obciążona wersja klasycznego burpee, w której ćwiczący przez cały cykl trzyma parę hantli — stojąco, w przysiadzie do podłogi (kładąc hantle lub trzymając je jako 'uchwyty'), wyrzucając nogi do tyłu do planka z dłońmi na hantlach, wyskakując stopami do przodu i wstając z hantlami z powrotem wzdłuż ciała. Dodanie zewnętrznego obciążenia do pełnociałowego ruchu kondycyjnego znacząco zwiększa wymagania chwytu, łańcucha tylnego i stabilizatorów barku — na bazie sercowo-naczyniowej palety standardowego burpee. Pełni rolę mostu między metconem a treningiem siłowym: przedramiona, czworoboczne i rotatory pracują w trakcie przenoszenia obciążenia przez przejścia, podczas gdy czworogłowe, pośladki i klatka nadal napędzają cykl przysiad-plank-wstawanie. Częste w metconach CrossFit, programach atletów hybrydowych i progresjach do 'devil's press', gdzie dodatkowy ciężar skaluje trudność conditioningu bez zmiany wzorca ruchu.",
+
+  "instructions": [
+    "Stand tall with feet hip- to shoulder-width apart, holding a dumbbell in each hand at your sides (neutral grip, palms facing thighs). Pick a weight you can press overhead later if needed.",
+    "Brace your core, hinge at the hips and squat down — place both dumbbells on the floor in front of your feet, just outside the knees. Keep your grip on the handles throughout.",
+    "With hands locked on the dumbbells (now acting as parallettes), kick both feet straight back into a strong plank — wrists stacked over the dumbbell handles, body in one line from heels to head, core tight.",
+    "Optional: perform a push-up on the dumbbells (chest descends between the handles) for added pressing volume.",
+    "Jump (or step) both feet forward toward the dumbbells, landing in a deep squat with feet outside the handles and chest up. Re-grip if needed.",
+    "Drive through your heels, extend hips and knees, and stand back up tall while lifting the dumbbells with you — finishing in the starting position with weights at the sides.",
+    "Optional finish: drive into a hip-snap and press the dumbbells overhead ('devil press' variant) for a full-body extension. In the standard dumbbell burpee shown here — just stand tall.",
+    "Reset breath, brace core and chain into the next rep. Pace by reps (5–15) or time (30–60s AMRAP)."
+  ],
+  "instructionsPl": [
+    "Stań wysoko, stopy na szerokość bioder/barków, hantle w obu dłoniach wzdłuż ciała (chwyt neutralny, dłonie skierowane do ud). Dobierz ciężar, który podniesiesz nad głowę jeśli zajdzie potrzeba.",
+    "Napnij core, zegnij się w biodrach i schodź do przysiadu — kładąc obie hantle na podłodze przed stopami, tuż obok kolan. Przez cały czas trzymaj uchwyty.",
+    "Z dłońmi zaciśniętymi na hantlach (działających jak parallettki) wyrzuć obie stopy do tyłu w mocny plank — nadgarstki nad uchwytami hantli, ciało w jednej linii od pięt do głowy, napięty core.",
+    "Opcjonalnie: wykonaj pompkę na hantlach (klatka schodzi między uchwytami) dla dodatkowej objętości wyciskania.",
+    "Wyskocz (lub przejdź krokiem) obiema stopami do przodu w kierunku hantli, lądując w głębokim przysiadzie ze stopami na zewnątrz uchwytów, klatka wysoko. Przeciśnij chwyt jeśli trzeba.",
+    "Wybij się przez pięty, wyprostuj biodra i kolana, wstań wysoko podnosząc hantle ze sobą — zakończ w pozycji wyjściowej z hantlami wzdłuż ciała.",
+    "Opcjonalne zakończenie: wybij biodra do przodu i wyciśnij hantle nad głową ('devil press') dla pełnego wyprostu ciała. W standardowej wersji pokazanej tutaj — tylko wstajesz wysoko.",
+    "Złap oddech, napnij core i przejdź do kolejnego powtórzenia. Dawkuj powtórzeniami (5–15) lub czasem (30–60s AMRAP)."
+  ],
+
+  "classification": {
+    "movement_pattern": "conditioning",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["cardiovascular", "quadriceps", "glutes", "pectoralis_major", "anterior_deltoids"],
+    "secondary": ["hamstrings", "triceps", "core", "forearms"],
+    "stabilizers": ["serratus_anterior", "scapular_stabilizers", "erector_spinae", "rotator_cuff", "trapezius_upper", "tibialis_anterior"]
+  },
+
+  "muscle_intensity": {
+    "cardiovascular": "P9",
+    "quadriceps": "P8",
+    "glutes": "P7",
+    "pectoralis_major": "P6",
+    "anterior_deltoids": "P6",
+    "hamstrings": "S6",
+    "triceps": "S6",
+    "core": "S7",
+    "forearms": "S7",
+    "serratus_anterior": "T5",
+    "erector_spinae": "T5",
+    "trapezius_upper": "T5"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["exercise_mat", "weighted_vest"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["burpee", "dumbbell-squat", "dumbbell-push-up", "plank", "dumbbell-deadlift"],
+    "progression_to": ["devil-press", "dumbbell-burpee-clean", "dumbbell-burpee-thruster", "single-arm-dumbbell-burpee", "dumbbell-burpee-snatch"],
+    "alternatives": ["burpee", "devil-press", "kettlebell-burpee", "thruster", "dumbbell-thruster", "kettlebell-swing"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pick light-to-moderate dumbbells (5–15 kg/each for most lifters) — you must control them through transitions",
+      "Hex/flat-sided dumbbells preferred — round handles roll on the floor",
+      "Clear 2x2 m of floor with non-slip surface — no rolling weights into shins",
+      "Neutral grip, dumbbells at sides — palms face thighs, knuckles forward",
+      "Brace core + set shoulders down/back before the first rep — load magnifies any sloppy position"
+    ],
+    "setup_cues_pl": [
+      "Wybierz lekkie-średnie hantle (5–15 kg/szt. dla większości) — musisz je kontrolować przez wszystkie przejścia",
+      "Hantle sześciokątne/płaskościenne najlepsze — okrągłe uchwyty się toczą po podłodze",
+      "Wyczyść 2x2 m podłogi z powierzchnią antypoślizgową — żadnych toczących się ciężarów w stronę goleni",
+      "Chwyt neutralny, hantle wzdłuż ciała — dłonie skierowane do ud, kostki do przodu",
+      "Napnij core + ustaw barki ściągnięte w dół i tył przed pierwszym powtórzeniem — obciążenie wyolbrzymia każdą niechlujną pozycję"
+    ],
+    "execution_cues": [
+      "Squat DOWN to place dumbbells — don't bend at the waist and drop them",
+      "Hands grip handles throughout — dumbbells become your 'parallettes' for the plank",
+      "Plank with wrists stacked over dumbbell handles — neutral wrists, not collapsed",
+      "Feet jump OUTSIDE the dumbbells on the return — knees clear the weights",
+      "Stand tall fully — hips through, shoulders back, dumbbells settle at sides before next rep",
+      "Squeeze the handles hard — grip fatigue is the #1 limiter on this movement"
+    ],
+    "execution_cues_pl": [
+      "PRZYSIĄD do położenia hantli — nie zginaj się w pasie i nie upuszczaj ich",
+      "Dłonie trzymają uchwyty przez cały czas — hantle stają się Twoimi 'parallettkami' w planku",
+      "W planku nadgarstki nad uchwytami hantli — neutralne nadgarstki, nie zapadające się",
+      "Stopy wyskakują NA ZEWNĄTRZ hantli przy powrocie — kolana mijają ciężary",
+      "Wstań w pełni — biodra do przodu, barki ściągnięte, hantle osiadają wzdłuż ciała przed kolejnym powtórzeniem",
+      "Mocno ściskaj uchwyty — zmęczenie chwytu to limit numer 1 tego ruchu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dropping dumbbells from standing instead of squatting them down",
+        "faultPl": "Upuszczanie hantli ze stania zamiast schodzenia do nich w przysiadzie",
+        "cause": "Fatigue, lazy hip hinge, treating the bottom as a 'reset' instead of a controlled position",
+        "causePl": "Zmęczenie, leniwy zawias biodrowy, traktowanie dołu jako 'resetu' zamiast kontrolowanej pozycji",
+        "cue": "Hinge and squat the dumbbells to the floor — even on the last rep. Dropping weights = busted floors, busted toes, lost reps.",
+        "cuePl": "Zawias biodrowy i przysiad — odłóż hantle do podłogi nawet w ostatnim powtórzeniu. Upuszczanie = zniszczona podłoga, zniszczone palce u stóp, stracone powtórzenia."
+      },
+      {
+        "fault": "Wrist collapse in the plank/push-up phase",
+        "faultPl": "Zapadające się nadgarstki w fazie planka/pompki",
+        "cause": "Round-handled dumbbells rolling, weak grip, excessive forward lean",
+        "causePl": "Toczące się hantle z okrągłym uchwytem, słaby chwyt, nadmierne pochylenie do przodu",
+        "cue": "Stack wrists directly over the handles. Grip the dumbbell hard — knuckles white. Use hex dumbbells if rolling is an issue.",
+        "cuePl": "Ustaw nadgarstki dokładnie nad uchwytami. Mocno trzymaj hantle — knykcie białe. Użyj hantli sześciokątnych jeśli toczenie jest problemem."
+      },
+      {
+        "fault": "Hips sag in the plank with the added load",
+        "faultPl": "Opadające biodra w planku przy dodanym obciążeniu",
+        "cause": "Load pulls hands down + weak core = anterior pelvic tilt and lumbar overload",
+        "causePl": "Obciążenie ściąga dłonie w dół + słaby core = przodopochylenie miednicy i przeciążenie lędźwi",
+        "cue": "Squeeze glutes + abs in the plank. Body is ONE line from heels to head. Reduce weight if hips sag every rep — quality > load.",
+        "cuePl": "Ściśnij pośladki + brzuch w planku. Ciało to JEDNA linia od pięt do głowy. Zmniejsz ciężar jeśli biodra opadają w każdym powtórzeniu — jakość > obciążenie."
+      },
+      {
+        "fault": "Feet jump INSIDE the dumbbells (knees crash into weights)",
+        "faultPl": "Stopy wyskakują DO ŚRODKA hantli (kolana uderzają w ciężary)",
+        "cause": "Inflexible hips, narrow stance, lack of awareness of dumbbell position",
+        "causePl": "Niska mobilność bioder, wąska postawa, brak świadomości pozycji hantli",
+        "cue": "Place dumbbells slightly wider than shoulder-width. Jump feet to OUTSIDE the handles — practice slow with no weight first.",
+        "cuePl": "Połóż hantle nieco szerzej niż barki. Wyskakuj stopami NA ZEWNĄTRZ uchwytów — najpierw przećwicz powoli bez obciążenia."
+      },
+      {
+        "fault": "Rounded lower back when picking dumbbells back up",
+        "faultPl": "Zaokrąglony dolny odcinek pleców przy podnoszeniu hantli",
+        "cause": "Fatigue, treating it as a 'deadlift snap' instead of standing through a squat",
+        "causePl": "Zmęczenie, traktowanie ćwiczenia jak 'wyrwania martwym ciągiem' zamiast wstawania z przysiadu",
+        "cue": "Chest up, back flat — stand the dumbbells up through your LEGS, not your lumbar. Same posture as a goblet squat exit.",
+        "cuePl": "Klatka wysoko, plecy płaskie — wstawaj z hantlami przez NOGI, nie przez lędźwie. Taka sama postawa jak przy wyjściu z goblet squatu."
+      }
+    ],
+    "breathing": "Exhale on the squat down + kick-back to plank, inhale at the plank/push-up bottom, exhale on the press/jump forward + stand, inhale on the reset. For metcons — breathe rhythmically every rep, avoid breath-holding under load.",
+    "breathingPl": "Wydech podczas przysiadu i wyrzutu do planka, wdech w dolnej fazie planka/pompki, wydech podczas wypchnięcia/wyskoku do przodu i wstawania, wdech przy resecie. Przy metconach — oddychaj rytmicznie w każdym powtórzeniu, unikaj wstrzymywania oddechu pod obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Dumbbells reduce wrist extension compared to palms-flat burpee, but load through wrists is higher. Use hex dumbbells, neutral grip, or regress to bodyweight burpee until pain-free.",
+      "modificationPl": "Hantle redukują wyprost nadgarstków w porównaniu do burpee na płaskich dłoniach, ale obciążenie przez nadgarstki jest większe. Użyj hantli sześciokątnych, chwytu neutralnego, lub cofnij się do burpee bez obciążenia aż do ustąpienia bólu.",
+      "alternative": "burpee"
+    },
+    {
+      "condition": "knee_pain_or_meniscus_issues",
+      "severity": "modify",
+      "modification": "Loaded squat-to-floor and impact landings stress knees. Skip the jump (stand up only), step back instead of kicking, or use lighter dumbbells with strict pace. Replace with kettlebell swings if pain persists.",
+      "modificationPl": "Obciążony przysiad do podłogi i lądowania z impaktem obciążają kolana. Pomiń wyskok (tylko wstań), wchodź krokiem zamiast wyrzucać nogi, lub użyj lżejszych hantli w ścisłym tempie. Zamień na swingi z kettlebellem jeśli ból się utrzymuje.",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "lower_back_pain_or_disc_herniation",
+      "severity": "avoid",
+      "modification": "Repeated loaded flexion-extension of the spine is high-risk for discs. Avoid the dumbbell variant entirely — go to bodyweight burpee with strict form, or substitute kettlebell swings/farmer carries for conditioning.",
+      "modificationPl": "Powtarzalne obciążone zginanie-prostowanie kręgosłupa jest wysokiego ryzyka dla dysków. Całkowicie unikaj wersji z hantlami — przejdź do burpee bez obciążenia w ścisłej formie, lub zastąp swingami kettlebella/spacerami farmera dla conditioningu.",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Loaded plank position with hands on dumbbells stresses shoulder stabilizers more than bodyweight burpee. Reduce load, regress to step-back tempo, or skip the optional push-up/overhead press component.",
+      "modificationPl": "Obciążona pozycja planka z dłońmi na hantlach bardziej obciąża stabilizatory barku niż burpee bez obciążenia. Zmniejsz obciążenie, cofnij się do tempa krokowego lub pomiń opcjonalną pompkę/wyciskanie nad głowę.",
+      "alternative": "burpee"
+    }
+  ],
+
+  "typical_sets_reps": "AMRAP 30-60s (HIIT) | 5x8-12 reps (volume) | 10-1 descending ladder (CrossFit/EMOM) | 50 reps for time (benchmark)",
+  "calories_per_kg_per_hour": 11.0,
+
+  "media": {
+    "primary": "dumbbell-burpee.gif",
+    "frames_extracted": [
+      "frames/dumbbell-burpee/frame_0_start.png",
+      "frames/dumbbell-burpee/frame_1_early.png",
+      "frames/dumbbell-burpee/frame_2_mid.png",
+      "frames/dumbbell-burpee/frame_3_late.png",
+      "frames/dumbbell-burpee/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/dumbbell-burpee"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać stoi wyprostowana z hantlami trzymanymi po bokach (chwyt neutralny, dłonie skierowane do ud) — pozycja wyjściowa. Podświetlone pectorals, abs, quads, forearms i hantle widoczne. Frame 1 (early): postać schodzi do przysiadu z hantlami opuszczanymi w kierunku podłogi — zawias biodrowy + zginanie kolan, klatka pochylona do przodu, hantle ~na wysokości stóp. Podświetlone glutes/hamstrings (faza ekscentryczna). Frame 2 (mid): pełny plank z dłońmi na hantlach (hantle pełnią rolę parallettek) — ciało w prostej linii, łokcie zgięte (faza dolna pompki opcjonalnej). Podświetlone pectorals, anterior deltoids, triceps i core jako primary movers w tej fazie. Frame 3 (late): postać wstaje z hantlami z fazy końcowej przysiadu — pełny wyprost bioder, hantle podnoszone wraz z wyprostowaniem nóg, klatka w górze. Triple extension w trakcie. Frame 4 (end): powrót do pozycji wyjściowej stojącej — hantle wzdłuż ciała, cykl zamknięty. WAŻNE: GIF NIE pokazuje fazy wyciskania hantli nad głowę ('devil press') ani curl — to STANDARDOWY dumbbell burpee z hantlami trzymanymi w dłoniach przez cały cykl, używanymi jako uchwyty w planku. Wariant z press na końcu to osobne ćwiczenie 'devil-press' (lub 'dumbbell-burpee-thruster'). movement_pattern: conditioning — pełnociałowa hybryda push/squat/conditioning, żaden pojedynczy pattern nie definiuje ruchu. force: both — w cyklu występuje zarówno faza pchnięcia (plank/pompka, wstawanie) jak i faza ciągnięcia (zawias biodrowy z hantlami z dołu — element deadlift-pattern). category: plyometrics ze względu na charakter wyrzucania nóg i bilansu mocy całego ciała, choć w wersji standardowej (bez wyskoku na końcu) intensywność plyometryczna jest niższa niż w bodyweight burpee. Primary muscles: cardiovascular (P9) jako wiodące źródło obciążenia metabolicznego, quadriceps (P8) + glutes (P7) z fazy przysiadu i wstawania, pectoralis_major (P6) + anterior_deltoids (P6) z fazy planka/pompki. Secondary: hamstrings, triceps, core (P7 dla utrzymania planka pod obciążeniem), forearms (S7 — chwyt hantli przez cały cykl to dominujący limiter). Tagi podkreślają hybrid_strength i grip_intensive jako odróżnienie od standardowego burpee. Wszystkie pola PL napisane od zera w polskim standardzie fitness/CrossFit (terminologia: 'plank', 'zawias biodrowy', 'pompka', 'wyrzut nóg', 'metcon').",
+
+  "tags": ["dumbbells", "conditioning", "hiit", "plyometrics", "full_body", "hybrid_strength", "crossfit", "metcon", "grip_intensive", "anaerobic", "fat_loss", "home_workout"]
+}

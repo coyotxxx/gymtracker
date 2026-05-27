@@ -1,0 +1,211 @@
+{
+  "id": "inverted-row-on-bench",
+  "name": "Inverted Row with Feet Elevated on Bench",
+  "namePl": "Wiosło odwrócone ze stopami na ławce",
+  "aliases": ["feet elevated inverted row", "feet-elevated inverted row", "elevated inverted row", "bench feet inverted row", "elevated australian pull-up", "feet up inverted row", "smith machine elevated inverted row"],
+  "aliasesPl": ["wiosło odwrócone na ławce", "wiosło odwrócone ze stopami uniesionymi", "australian pull-up ze stopami na ławce", "podciąganie poziome z nogami na ławce", "elevated wiosło bodyweight", "wiosło odwrócone elevated"],
+
+  "description": "Progression of the classic inverted row where the FEET are elevated on a bench (or box) instead of resting on the floor. Elevating the feet raises the hips closer to bar level, shifting more of your bodyweight onto the arms and upper back — increasing the load by roughly 10-20% compared to the standard version. The greater the angle between body and bar (body more horizontal), the harder the exercise. Closed-chain horizontal pull, an essential stepping stone between standard inverted row and full pull-up. Builds lat thickness, scapular control and pulling strength at a steeper, more demanding angle.",
+  "descriptionPl": "Progresja klasycznego wiosła odwróconego, w którym STOPY są uniesione na ławce (lub skrzyni) zamiast leżeć na podłodze. Uniesienie stóp podnosi biodra bliżej wysokości drążka, przesuwa więcej masy ciała na ramiona i górę pleców — zwiększa obciążenie o około 10-20% w stosunku do wersji standardowej. Im większy kąt między ciałem a drążkiem (ciało bardziej poziomo), tym trudniejsze ćwiczenie. Ciąg poziomy w łańcuchu zamkniętym, podstawowy etap między standardowym wiosłem odwróconym a pełnym podciąganiem. Buduje grubość najszerszych, kontrolę łopatek i siłę ciągu pod ostrzejszym, bardziej wymagającym kątem.",
+
+  "instructions": [
+    "Set a barbell in a rack (or Smith machine bar) roughly at the same height as the bench seat — feet and bar should be on a similar level when set up.",
+    "Place a flat bench parallel to the bar, far enough that when you grip the bar your feet can rest on the bench with legs fully straight.",
+    "Lie under the bar so it sits directly over your upper chest/sternum. Place heels on the bench.",
+    "Grip the bar with palms facing AWAY (pronated/overhand), hands slightly wider than shoulder-width.",
+    "Extend arms fully. Legs straight, body in one rigid line from heels (on bench) to head — like an elevated reverse plank parallel to the floor.",
+    "Brace core HARD and squeeze glutes. Pull shoulder blades DOWN AND BACK to set the scapulae.",
+    "Initiate the pull by driving elbows DOWN AND BACK toward your hips/sides. Lead with the chest.",
+    "Pull until your CHEST touches the bar (not just the chin). Elbows close to torso (~30-45° flare).",
+    "Pause briefly at the top with shoulder blades fully squeezed.",
+    "Lower with control to full arm extension. Body must stay locked — no hip sag, no piking on the bench.",
+    "Each rep: full extension at the bottom, chest to bar at the top, body rigid and parallel throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojakach (lub gryf maszyny Smitha) na wysokości mniej więcej siedziska ławki — stopy i drążek powinny być na podobnym poziomie.",
+    "Ustaw płaską ławkę równolegle do drążka, w takiej odległości, żeby trzymając drążek mieć stopy na ławce z nogami w pełnym wyproście.",
+    "Wsuń się pod drążek tak by znalazł się dokładnie nad górną klatką/mostkiem. Połóż pięty na ławce.",
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce nieco szerzej niż barki.",
+    "Wyprostuj ramiona całkowicie. Nogi proste, ciało w jednej sztywnej linii od pięt (na ławce) do głowy — jak uniesiona odwrócona deska równolegle do podłogi.",
+    "Napnij MOCNO brzuch i ściśnij pośladki. Ściągnij łopatki W DÓŁ I DO TYŁU by ustawić łopatki.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w stronę bioder/żeber. Prowadź klatką.",
+    "Podciągaj aż KLATKA dotknie drążka (nie sama broda). Łokcie blisko tułowia (~30-45° rozwarcia).",
+    "Zatrzymaj się krótko na górze z maksymalnie ściągniętymi łopatkami.",
+    "Opuszczaj kontrolowanie do pełnego wyprostu ramion. Ciało musi pozostać sztywne — bez opadania bioder, bez składania się na ławce.",
+    "Każde powtórzenie: pełen wyprost na dole, klatka do drążka na górze, ciało sztywne i równoległe przez cały ruch."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rhomboids", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoid", "brachialis", "brachioradialis", "teres_major"],
+    "stabilizers": ["core", "gluteus_maximus", "hamstrings", "erector_spinae", "rotator_cuff", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rhomboids": "P9",
+    "biceps_brachii": "P8",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoid": "S7",
+    "brachialis": "S7",
+    "brachioradialis": "S6",
+    "teres_major": "S7",
+    "core": "S8",
+    "gluteus_maximus": "S7",
+    "forearms": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack", "bench"],
+    "optional": ["smith_machine", "box", "plyo_box", "low_bar"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["inverted-row", "plank", "scapular-pull-up"],
+    "progression_to": ["weighted-inverted-row", "archer-row", "one-arm-inverted-row", "ring-row", "pull-up", "feet-elevated-ring-row"],
+    "alternatives": ["inverted-row", "weighted-inverted-row", "ring-row", "lat-pulldown", "seated-cable-row", "dumbbell-bent-over-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar at bench-seat height — body must be parallel to floor",
+      "Bench positioned for legs FULLY straight when gripping bar",
+      "Pronated grip, hands slightly wider than shoulders",
+      "Bar directly over upper chest/sternum",
+      "Heels on bench, glutes and core braced — rigid elevated plank"
+    ],
+    "setup_cues_pl": [
+      "Drążek na wysokości siedziska ławki — ciało równolegle do podłogi",
+      "Ławka ustawiona tak by nogi były W PEŁNYM wyproście przy chwycie drążka",
+      "Chwyt nachwytem, ręce nieco szerzej niż barki",
+      "Drążek dokładnie nad górną klatką/mostkiem",
+      "Pięty na ławce, pośladki i brzuch napięte — sztywna uniesiona deska"
+    ],
+    "execution_cues": [
+      "CHEST to bar (not just chin) — full ROM despite harder angle",
+      "Drive elbows DOWN and BACK toward your sides",
+      "Squeeze shoulder blades at the top",
+      "Body STRAIGHT and parallel — no hip sag, no piking on bench",
+      "Full extension at the bottom — control the negative, don't drop"
+    ],
+    "execution_cues_pl": [
+      "KLATKA do drążka (nie sama broda) — pełen ROM mimo trudniejszego kąta",
+      "Napieraj łokciami W DÓŁ i DO TYŁU w stronę żeber",
+      "Ściśnij łopatki na górze",
+      "Ciało PROSTE i równoległe — bez opadania bioder, bez składania na ławce",
+      "Pełen wyprost na dole — kontroluj negatyw, nie spadaj"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hips sagging below the bench line — body breaks into a U",
+        "faultPl": "Biodra opadają poniżej linii ławki — ciało układa się w 'U'",
+        "cause": "Weak glutes and core unable to hold the heavier elevated angle, fatigue",
+        "causePl": "Słabe pośladki i brzuch nie utrzymują cięższego uniesionego kąta, zmęczenie",
+        "cue": "Squeeze glutes HARD and brace abs. If you can't hold the line, regress to floor inverted row.",
+        "cuePl": "Mocno ściśnij pośladki i napnij brzuch. Jeśli nie utrzymujesz linii — wróć do wiosła ze stopami na podłodze."
+      },
+      {
+        "fault": "Piking — hips rise high, bench acts as a pivot",
+        "faultPl": "Składanie się — biodra wjeżdżają wysoko, ławka działa jak punkt obrotu",
+        "cause": "Avoiding load on lats and arms by using hip flexors to shorten the lever",
+        "causePl": "Unikanie obciążenia najszerszych i ramion przez skrócenie dźwigni biodrami",
+        "cue": "Hips DOWN to bench level. Body must be one straight line — no shortcut.",
+        "cuePl": "Biodra W DÓŁ do poziomu ławki. Ciało musi być jedną prostą linią — bez skracania."
+      },
+      {
+        "fault": "Pulling chin to bar instead of chest (partial ROM)",
+        "faultPl": "Podciąganie brody do drążka zamiast klatki (skrócony ROM)",
+        "cause": "Elevated angle is harder — skipping the last 15-20% of pull becomes tempting",
+        "causePl": "Uniesiony kąt jest trudniejszy — pominięcie ostatnich 15-20% ciągu staje się kuszące",
+        "cue": "Touch the bar with your CHEST. If impossible — lower the bench or regress.",
+        "cuePl": "Dotykaj drążka KLATKĄ. Jeśli niemożliwe — obniż ławkę lub wróć do regresji."
+      },
+      {
+        "fault": "Feet sliding off the bench during the pull",
+        "faultPl": "Stopy zsuwają się z ławki w trakcie ciągu",
+        "cause": "Heels not anchored, smooth bench surface, body not rigid enough",
+        "causePl": "Pięty nie zakotwiczone, śliska powierzchnia ławki, ciało zbyt luźne",
+        "cue": "DIG heels into bench. Keep legs tense and toes pointing up. Use a non-slip mat if needed.",
+        "cuePl": "WBIJ pięty w ławkę. Trzymaj nogi napięte, palce stóp do góry. Użyj antypoślizgowej maty jeśli trzeba."
+      },
+      {
+        "fault": "Shrugging shoulders up toward ears",
+        "faultPl": "Unoszenie barków do uszu",
+        "cause": "Heavier load makes upper traps dominate, lats lose engagement",
+        "causePl": "Cięższe obciążenie powoduje dominację górnych trapezów, najszersze tracą aktywację",
+        "cue": "Set scapulae BEFORE the pull — depress (down) and retract (back). Lats lead, never traps.",
+        "cuePl": "Ustaw łopatki PRZED ciągiem — w dół i do tyłu. Najszersze prowadzą, nigdy trapezy."
+      }
+    ],
+    "breathing": "Inhale at the bottom (arms extended). Exhale on the pull. Inhale on the way down. The elevated angle is harder — keep breathing steady, don't hold breath. Sets typically 6-12 reps.",
+    "breathingPl": "Wdech na dole (ramiona wyprostowane). Wydech podczas ciągu. Wdech podczas schodzenia. Uniesiony kąt jest trudniejszy — utrzymuj równy oddech, nie wstrzymuj go. Serie zwykle 6-12 powtórzeń."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Regress to standard inverted row (feet on floor) first. If continuing — use neutral grip (rings or parallel handles) to reduce joint stress.",
+      "modificationPl": "Najpierw wróć do standardowego wiosła (stopy na podłodze). Jeśli kontynuujesz — użyj chwytu neutralnego (kółka lub uchwyty równoległe) by zmniejszyć stres dla stawu.",
+      "alternative": "inverted-row"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "AVOID this variant — elevated feet increase lumbar load and demand stronger core. Master standard inverted row first.",
+      "modificationPl": "UNIKAJ tego wariantu — uniesione stopy zwiększają obciążenie odcinka lędźwiowego i wymagają mocniejszego brzucha. Najpierw opanuj standardowe wiosło odwrócone.",
+      "alternative": "inverted-row"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use straps with neutral grip (TRX) on elevated feet variant, or regress to floor version with straps.",
+      "modificationPl": "Użyj pasów z chwytem neutralnym (TRX) w wersji ze stopami na ławce, lub wróć do wersji z podłogi z pasami.",
+      "alternative": "inverted-row-with-straps"
+    },
+    {
+      "condition": "core_weakness",
+      "severity": "modify",
+      "modification": "Regress to standard inverted row. This variant requires significantly stronger anti-extension core control — build base first with planks and floor rows.",
+      "modificationPl": "Wróć do standardowego wiosła. Ten wariant wymaga znacznie mocniejszej kontroli antyekstensyjnej brzucha — zbuduj podstawę najpierw przez deski i wiosła z podłogi.",
+      "alternative": "inverted-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-12 (bodyweight, feet elevated) | 3x5-8 (weighted, feet elevated) | progression set toward pull-up",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "inverted-row-on-bench.gif",
+    "frames_extracted": [
+      "frames/inverted-row-on-bench/frame_0_start.png",
+      "frames/inverted-row-on-bench/frame_1_early.png",
+      "frames/inverted-row-on-bench/frame_2_mid.png",
+      "frames/inverted-row-on-bench/frame_3_late.png",
+      "frames/inverted-row-on-bench/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/inverted-row-on-bench"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: start, ciało zawieszone pod drążkiem Smitha, stopy uniesione na płaskiej ławce, nogi proste, ciało równolegle do podłogi (uniesiona odwrócona deska), ramiona wyprostowane. Frame 2: top, klatka dotyka drążka, łokcie zgięte i blisko tułowia (~30-45°), łopatki ściągnięte, ciało nadal w linii prostej i równolegle. Frame 4: powrót w dół do pełnego wyprostu, stopy nadal na ławce. Podświetlone: lats + romboidy + bicepsy (klasyczny horizontal pull z większym akcentem na bicepsy ze względu na cięższy kąt). PL nazwa: 'Wiosło odwrócone ze stopami na ławce' — opisowa, jednoznacznie wskazuje na progresję ze stopami uniesionymi. Klasyczna progresja: floor inverted row → feet-elevated inverted row → weighted/archer/one-arm → pull-up.",
+
+  "tags": ["calisthenics", "bodyweight", "horizontal_pull", "back", "upper_body", "feet_elevated", "progression", "intermediate", "scapular_control", "compound", "closed_chain", "pre_pull_up"]
+}

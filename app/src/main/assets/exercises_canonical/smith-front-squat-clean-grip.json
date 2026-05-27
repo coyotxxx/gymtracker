@@ -1,0 +1,205 @@
+{
+  "id": "smith-front-squat-clean-grip",
+  "name": "Smith Front Squat (Clean Grip)",
+  "namePl": "Przysiad przedni na Smith machine chwytem olimpijskim",
+  "aliases": ["smith machine front squat", "smith front squat olympic grip", "guided front squat clean grip"],
+  "aliasesPl": ["front squat na Smith", "przysiad przedni na Smith machine", "przysiad przedni olimpijski na Smith", "front squat chwytem rwaniowym na Smith"],
+
+  "description": "Front squat variant performed on the Smith machine with a clean (olympic) grip — bar racked across the front deltoids, fingers gripping the bar wider than shoulder-width, elbows pushed high to form the classic front rack shelf. The fixed vertical bar path of the Smith machine removes the need to balance the load, which means the lifter can typically handle heavier weight than in a free-bar front squat and can focus purely on the squat pattern without the technical demand of stabilizing the front rack against a wandering bar. Heavy quad bias due to the upright torso forced by the front rack position; minor glute and posterior chain involvement. Excellent option for hypertrophy-focused quad work, for trainees rehabbing balance/coordination issues, or as a teaching tool for the front squat pattern.",
+  "descriptionPl": "Wariant przysiadu przedniego wykonywany na Smith machine z chwytem olimpijskim (clean grip) — gryf na przednich aktonach barków, palce trzymają gryf nieco szerzej niż na szerokość barków, łokcie wysoko wypchnięte do przodu tworząc klasyczną półkę front rack. Sztywny pionowy tor gryfu Smith machine eliminuje potrzebę balansowania obciążenia, dzięki czemu zwykle można pracować z większym ciężarem niż na wolnym gryfie i skupić się czysto na wzorcu przysiadu, bez technicznego obciążenia stabilizacją front racku przeciwko ruchomemu gryfowi. Mocny nacisk na czworogłowe wynikający z pionowego tułowia wymuszonego pozycją front rack; mniejszy udział pośladków i tylnego łańcucha. Świetna opcja do pracy hipertroficznej nad czworogłowymi, dla trenujących z problemami balansu/koordynacji w trakcie powrotu po kontuzji, lub jako narzędzie nauki wzorca front squat.",
+
+  "instructions": [
+    "Set the Smith machine bar at upper-chest height. Load the desired weight and secure with collars.",
+    "Step under the bar and rack it across your front deltoids, just below the collarbones — the bar rests on the shelf formed by your shoulders, not on your hands.",
+    "Establish the clean grip: hands slightly wider than shoulder-width, drive elbows high and forward so the upper arms are parallel to the floor. If wrist mobility is limited, fingers may relax under the bar.",
+    "Rotate the bar to unrack it from the hooks. Set your feet directly under your hips or slightly forward (Smith machine allows a more forward foot stance than free-bar front squat).",
+    "Brace your core hard, keep elbows high, chest tall. Inhale deeply and hold (Valsalva).",
+    "Descend by breaking at the knees AND hips simultaneously. The Smith bar path is fixed vertical, so let your body move around it — torso stays vertical.",
+    "Descend until your hip crease drops below the top of your knee (full depth), or to your individual mobility limit while keeping elbows high.",
+    "Drive up by pushing through the whole foot. Lead the ascent with chest and elbows up — never let the elbows drop.",
+    "Lock out at the top with full hip and knee extension, maintaining the front rack throughout the entire set. To re-rack, rotate the bar back into the hooks at the top of the final rep."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smith machine na wysokości górnej klatki. Załaduj odpowiednie obciążenie i zabezpiecz zaciskami.",
+    "Wejdź pod gryf i ułóż go na przednich aktonach barków, tuż poniżej obojczyków — gryf spoczywa na półce utworzonej przez ramiona, nie na dłoniach.",
+    "Ustaw chwyt olimpijski: dłonie nieco szerzej niż szerokość barków, wypchnij łokcie wysoko i do przodu, tak aby ramiona były równoległe do podłogi. Przy ograniczonej mobilności nadgarstków palce mogą rozluźnić chwyt pod gryfem.",
+    "Obróć gryf żeby wypiąć go z zaczepów. Ustaw stopy bezpośrednio pod biodrami lub lekko z przodu (Smith machine pozwala na bardziej wysunięte stopy niż wolny gryf).",
+    "Mocno napnij brzuch, łokcie wysoko, klatka do góry. Nabierz głęboki oddech i przytrzymaj (Valsalva).",
+    "Schodź zginając jednocześnie kolana I biodra. Tor gryfu Smith jest sztywno pionowy, więc to ciało porusza się wokół niego — tułów pozostaje pionowo.",
+    "Schodź aż linia bioder zejdzie poniżej szczytu kolan (pełna głębokość) lub do indywidualnego limitu mobilności, utrzymując łokcie wysoko.",
+    "Wypchnij się w górę napierając całą stopą. Prowadź wstawanie klatką i łokciami w górę — nigdy nie pozwól by łokcie opadły.",
+    "Zakończ powtórzenie pełnym wyprostem bioder i kolan, utrzymując front rack przez całą serię. Aby zabezpieczyć gryf, obróć go z powrotem w zaczepy na górze ostatniego powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["upper_back", "core"],
+    "stabilizers": ["erector_spinae", "rectus_abdominis", "adductors", "upper_traps"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "S7",
+    "upper_back": "S7",
+    "core": "S8",
+    "erector_spinae": "S5",
+    "rectus_abdominis": "S6",
+    "adductors": "S5",
+    "upper_traps": "S5",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "smith-machine-squat"],
+    "progression_to": ["barbell-front-squat", "pause-front-squat", "tempo-front-squat"],
+    "alternatives": ["barbell-front-squat", "goblet-squat", "smith-machine-squat", "hack-squat", "leg-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on the shelf of front delts, not on the hands",
+      "Elbows high — upper arms parallel to floor",
+      "Fingers can relax if wrist mobility is limited",
+      "Feet under hips or slightly forward — Smith allows it",
+      "Big breath, brace 360° around the spine"
+    ],
+    "setup_cues_pl": [
+      "Gryf na półce przednich aktonów, nie na dłoniach",
+      "Łokcie wysoko — ramiona równolegle do podłogi",
+      "Palce mogą rozluźnić chwyt jeśli mobilność nadgarstków słaba",
+      "Stopy pod biodrami lub lekko z przodu — Smith na to pozwala",
+      "Głęboki wdech, napięcie brzucha 360° wokół kręgosłupa"
+    ],
+    "execution_cues": [
+      "Keep elbows UP — chase them to the ceiling on every rep",
+      "Let the body move around the bar — torso stays vertical",
+      "Knees travel forward over the toes — that's fine here",
+      "Hip crease below knee — don't cut depth",
+      "Lead the ascent with chest and elbows, never the hips"
+    ],
+    "execution_cues_pl": [
+      "Trzymaj łokcie WYSOKO — kieruj je do sufitu w każdym powtórzeniu",
+      "Pozwól ciału poruszać się wokół gryfu — tułów pionowo",
+      "Kolana wysuwają się do przodu nad palce — tu to jest dobre",
+      "Biodra poniżej kolan — nie ucinaj głębokości",
+      "Prowadź wstawanie klatką i łokciami, nigdy biodrami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drop / loss of front rack",
+        "faultPl": "Łokcie opadają / utrata front rack",
+        "cause": "Weak upper back, limited wrist/shoulder mobility, or core fatigue",
+        "causePl": "Słaba górna część pleców, ograniczona mobilność nadgarstków/barków, lub zmęczenie core",
+        "cue": "Chase your elbows to the ceiling on every rep. On Smith machine the bar won't roll forward, but a dropped rack still kills upper-back tension and round the spine.",
+        "cuePl": "Kieruj łokcie do sufitu w każdym powtórzeniu. Na Smith machine gryf się nie stoczy, ale opuszczone łokcie nadal niszczą napięcie górnej części pleców i zaokrąglają kręgosłup."
+      },
+      {
+        "fault": "Feet too far forward — hips do all the work",
+        "faultPl": "Stopy za bardzo z przodu — całą pracę wykonują biodra",
+        "cause": "Trying to lean into the bar 'like a hack squat', losing the front squat character",
+        "causePl": "Próba opierania się o gryf 'jak na hack squat', utrata charakteru front squat",
+        "cue": "Smith allows forward feet but for FRONT squat keep them only slightly forward. If feet are too far out you're doing a hack squat in front rack.",
+        "cuePl": "Smith pozwala na wysunięte stopy ale na FRONT squat trzymaj je tylko lekko z przodu. Jeśli stopy są za daleko, robisz hack squat w front rack."
+      },
+      {
+        "fault": "Cutting depth (rep too high)",
+        "faultPl": "Niedostateczna głębokość (powtórzenia ucinane wysoko)",
+        "cause": "Loading too heavy because Smith feels stable, or fear of losing balance backward",
+        "causePl": "Załadowanie za dużego ciężaru bo Smith wydaje się stabilny, lub strach przed utratą balansu do tyłu",
+        "cue": "Hip crease below knee on every rep. The fixed bar means depth is the only honest variable — don't cheat it.",
+        "cuePl": "Biodra poniżej kolan w każdym powtórzeniu. Sztywny gryf sprawia że głębokość jest jedyną uczciwą zmienną — nie oszukuj jej."
+      },
+      {
+        "fault": "Wrist pain in the rack",
+        "faultPl": "Ból nadgarstków w pozycji front rack",
+        "cause": "Trying to hold the bar IN the palms instead of letting it rest on the shoulders",
+        "causePl": "Próba trzymania gryfu W dłoniach zamiast pozwolenia by spoczął na barkach",
+        "cue": "Open the hands — fingers stay under the bar only as a guide. The shoulders carry the weight, not the wrists.",
+        "cuePl": "Rozluźnij dłonie — palce pod gryfem tylko jako prowadzenie. Ciężar niosą barki, nie nadgarstki."
+      },
+      {
+        "fault": "Locked into Smith's vertical path — joint stress",
+        "faultPl": "Zablokowanie w pionowym torze Smitha — stres na stawach",
+        "cause": "Smith forces a vertical path that doesn't match natural squat mechanics; setting up wrong foot position can stress knees/hips",
+        "causePl": "Smith wymusza pionowy tor który nie pasuje do naturalnej mechaniki przysiadu; zła pozycja stóp może obciążać kolana/biodra",
+        "cue": "Find a foot position where the descent feels balanced — no knee shear, no excessive forward lean. Test light first.",
+        "cuePl": "Znajdź pozycję stóp w której schodzenie jest zrównoważone — bez nacisku ścinającego na kolana, bez nadmiernego pochylenia. Najpierw testuj na lekko."
+      }
+    ],
+    "breathing": "Big breath at the top, brace 360°, hold through the descent and the hardest part of the ascent (Valsalva). Exhale near the top of the rep. Re-brace between heavy reps.",
+    "breathingPl": "Głęboki wdech na górze, napięcie brzucha 360°, wstrzymaj przez schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech blisko górnej części powtórzenia. Ponowne napięcie między ciężkimi powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_injury_or_limited_extension",
+      "severity": "modify",
+      "modification": "Use a cross-arm rack (bodybuilder grip) with arms crossed over the bar to remove wrist demand entirely.",
+      "modificationPl": "Zastosuj chwyt skrzyżowany (bodybuilder grip) z rękami skrzyżowanymi nad gryfem by całkowicie usunąć obciążenie nadgarstków.",
+      "alternative": "smith-machine-squat"
+    },
+    {
+      "condition": "shoulder_mobility_restriction",
+      "severity": "modify",
+      "modification": "Clean grip front rack requires shoulder flexion and external rotation. If limited, use cross-arm grip or work on mobility before loading heavy.",
+      "modificationPl": "Chwyt olimpijski w front rack wymaga zgięcia barku i rotacji zewnętrznej. Przy ograniczeniu użyj chwytu skrzyżowanego lub pracuj nad mobilnością przed cięższymi obciążeniami.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "knee_meniscus_or_patellar_tendinopathy",
+      "severity": "caution",
+      "modification": "Front squat loads the patellar tendon significantly. Limit depth to pain-free range, lower load, and consider a slightly forward foot stance to reduce knee shear on the Smith fixed path.",
+      "modificationPl": "Front squat znacząco obciąża więzadło rzepki. Ogranicz głębokość do zakresu bez bólu, zmniejsz obciążenie, rozważ lekko wysunięte stopy by zmniejszyć nacisk ścinający na kolana w sztywnym torze Smitha.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid axial loading of the spine.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj osiowego obciążania kręgosłupa.",
+      "alternative": "leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-10 (hypertrophy / quad focus) | 5x4-6 (strength) | 3x10-15 (volume / pump)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "smith-front-squat-clean-grip.gif",
+    "frames_extracted": [
+      "frames/smith-front-squat-clean-grip/frame_0_start.png",
+      "frames/smith-front-squat-clean-grip/frame_1_early.png",
+      "frames/smith-front-squat-clean-grip/frame_2_mid.png",
+      "frames/smith-front-squat-clean-grip/frame_3_late.png",
+      "frames/smith-front-squat-clean-grip/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-front-squat-clean-grip"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (start, early, mid, late, end). Klatki 0 i 4 (identyczne, pozycja wyjściowa stojąca): gryf na PRZEDNICH aktonach barków, łokcie wysoko wypchnięte do przodu — klasyczny clean grip front rack z ramionami praktycznie równoległymi do podłogi. Widoczne dłonie chwytają gryf nieco szerzej niż barki (charakterystyka chwytu rwaniowego/olimpijskiego). Klatka 2 (dół): pełny przysiad, biodra wyraźnie poniżej kolan, TUŁÓW PIONOWY (kluczowa cecha front squat vs back squat), gryf utrzymany wysoko na barkach, łokcie nadal wysoko. Stojaki Smith machine wyraźnie widoczne po bokach z pionowymi prowadnicami i hooks. Mięśnie podświetlone na ilustracji: czworogłowe MOCNO (cała przednia strona uda) — potwierdza klasyfikację 'quad hammer'. Pośladki podświetlone słabiej niż w back squat na Smith — zgodne z anatomią pionowego tułowia. Klasyfikacja źródła ('glutes') jest myląca — to przede wszystkim ćwiczenie czworogłowych z drugorzędnym udziałem pośladków. Smith machine pozwala iść cięższy niż wolny gryf bo eliminuje stabilizację. Wszystkie pola PL napisane od zera w polskim standardzie fitness ('przysiad przedni', 'front rack', 'czworogłowe', 'chwyt olimpijski').",
+
+  "tags": ["smith_machine", "quad_builder", "compound", "lower_body", "front_rack", "hypertrophy", "guided_path", "clean_grip"]
+}

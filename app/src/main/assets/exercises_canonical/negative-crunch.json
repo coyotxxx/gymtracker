@@ -1,0 +1,195 @@
+{
+  "id": "negative-crunch",
+  "name": "Negative Crunch",
+  "namePl": "Negative crunch (ekscentryczny crunch)",
+  "aliases": ["eccentric crunch", "negative sit-up", "decline negative crunch", "slow-lowering crunch"],
+  "aliasesPl": ["ekscentryczny crunch", "negatywny crunch", "negatywny sit-up", "powolny opad na ławce skośnej", "crunch w fazie negatywnej"],
+
+  "description": "Eccentric-focused abdominal exercise performed on a decline bench with feet anchored under the foot pads. The lifter starts in the up (sitting) position with hands crossed at the chest or near the temples, then slowly lowers the torso back toward the bench under control — emphasising the negative (eccentric) phase of the rectus abdominis. Because the eccentric phase produces more force and time-under-tension than concentric work, this variation is excellent for beginners building baseline strength and for advanced lifters seeking eccentric overload of the abs without external load.",
+  "descriptionPl": "Ćwiczenie brzucha skoncentrowane na fazie ekscentrycznej, wykonywane na ławce skośnej (decline) z nogami zaczepionymi pod wałkami. Ćwiczący startuje w pozycji górnej (siedzącej) z dłońmi skrzyżowanymi na klatce lub przy skroniach, a następnie powoli opuszcza tułów w kierunku ławki kontrolowanym ruchem — z naciskiem na fazę negatywną (ekscentryczną) mięśnia prostego brzucha. Ponieważ faza ekscentryczna generuje większą siłę i wydłuża czas pod napięciem w porównaniu z fazą koncentryczną, ten wariant świetnie sprawdza się u początkujących budujących bazową siłę oraz u zaawansowanych szukających przeciążenia ekscentrycznego brzucha bez dodatkowego obciążenia.",
+
+  "instructions": [
+    "Set a decline bench at a moderate angle (around 20–35 degrees) and secure your feet under the foot pads. Sit up on the bench so your torso is upright — this is the starting position.",
+    "Cross your arms over your chest or place your fingertips lightly at your temples (do not lace fingers behind the head). Brace your core and tuck your chin slightly.",
+    "Inhale and begin lowering your torso back toward the bench slowly and under full control. Target a 3–5 second descent — feel the abs resisting the descent the entire time.",
+    "Keep the chin tucked and the lower back rounded; do not let your head or shoulder blades crash into the bench at the bottom.",
+    "Stop just before your shoulder blades touch the bench (maintain ab tension), then concentrically crunch or sit back up to the starting position using your abs.",
+    "Exhale on the way up. Reset and repeat — the focus is the slow eccentric, not the speed of return."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną pod umiarkowanym kątem (około 20–35 stopni) i zaczep stopy pod wałkami. Usiądź na ławce tak, by tułów był wyprostowany — to pozycja wyjściowa.",
+    "Skrzyżuj ręce na klatce piersiowej lub przyłóż opuszki palców lekko do skroni (nie splataj palców za głową). Napnij brzuch i lekko ściągnij brodę do klatki.",
+    "Wdech i powoli, w pełni kontrolowanym ruchem, zacznij opuszczać tułów w kierunku ławki. Celuj w 3–5 sekund schodzenia — czuj, jak brzuch przez cały czas opiera się temu ruchowi.",
+    "Trzymaj brodę przyciągniętą do klatki, a dolne plecy lekko zaokrąglone; nie pozwól, by głowa lub łopatki uderzyły o ławkę w dolnej pozycji.",
+    "Zatrzymaj się tuż przed kontaktem łopatek z ławką (zachowaj napięcie brzucha), a następnie wykonaj fazę koncentryczną — wstań / zwiń się z powrotem do pozycji wyjściowej, używając brzucha.",
+    "Wydech podczas powrotu w górę. Zresetuj się i powtórz — najważniejsza jest powolna faza ekscentryczna, nie tempo powrotu."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques", "hip_flexors"],
+    "stabilizers": ["transverse_abdominis", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "obliques": "S6",
+    "hip_flexors": "S5",
+    "transverse_abdominis": "T4",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["decline_bench"],
+    "optional": ["bodyweight"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["crunch", "dead-bug"],
+    "progression_to": ["decline-sit-up", "weighted-decline-sit-up", "decline-crunch"],
+    "alternatives": ["crunch", "decline-crunch", "lying-leg-raise", "dead-bug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Decline bench at 20–35 degrees — not too steep",
+      "Feet locked snug under the foot pads",
+      "Start sitting up — torso vertical",
+      "Arms crossed on chest OR fingertips at temples",
+      "Brace abs and tuck chin before the descent"
+    ],
+    "setup_cues_pl": [
+      "Ławka skośna pod kątem 20–35 stopni — nie za stromo",
+      "Stopy mocno zablokowane pod wałkami",
+      "Start w pozycji siedzącej — tułów pionowo",
+      "Ramiona skrzyżowane na klatce LUB opuszki palców przy skroniach",
+      "Napnij brzuch i przyciągnij brodę przed rozpoczęciem opadania"
+    ],
+    "execution_cues": [
+      "3–5 seconds down — slow and deliberate",
+      "Feel the abs resisting every centimeter of the descent",
+      "Round the back like you're lowering one vertebra at a time",
+      "Stop before the shoulder blades touch — keep tension",
+      "Crunch back up under control, exhale on the concentric"
+    ],
+    "execution_cues_pl": [
+      "3–5 sekund w dół — powoli i świadomie",
+      "Czuj, jak brzuch opiera się każdemu centymetrowi schodzenia",
+      "Zaokrąglaj plecy, jakbyś opuszczał kręg po kręgu",
+      "Zatrzymaj się przed dotknięciem łopatkami — utrzymaj napięcie",
+      "Wstań kontrolowanym ruchem koncentrycznym, wydech podczas wstawania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Free-falling down instead of lowering slowly",
+        "faultPl": "Swobodne opadanie zamiast powolnego schodzenia",
+        "cause": "Defeats the entire purpose of the negative — gravity does the work, not the abs",
+        "causePl": "Niweczy cały sens fazy negatywnej — pracę wykonuje grawitacja, nie brzuch",
+        "cue": "Count 'one-thousand-one, one-thousand-two, one-thousand-three' on the way down. If you can't count to 3, you're going too fast.",
+        "cuePl": "Licz w głowie 'jeden-tysiąc, dwa-tysiąc, trzy-tysiąc' podczas opadania. Jeśli nie zdążysz doliczyć do 3 — opadasz za szybko."
+      },
+      {
+        "fault": "Pulling the head forward with the hands",
+        "faultPl": "Szarpanie głowy do przodu rękami",
+        "cause": "Substituting neck flexors for weak abs, especially in the bottom portion",
+        "causePl": "Zastępowanie słabych mięśni brzucha pracą zginaczy szyi, zwłaszcza w dolnej fazie",
+        "cue": "Fingertips lightly at temples — never lace fingers behind the head. Imagine a tennis ball under your chin.",
+        "cuePl": "Opuszki palców lekko przy skroniach — nigdy nie splataj palców za głową. Wyobraź sobie piłeczkę tenisową pod brodą."
+      },
+      {
+        "fault": "Hyperextending the lower back at the bottom",
+        "faultPl": "Przeprost dolnych pleców w dolnej pozycji",
+        "cause": "Letting the lumbar spine arch off the bench at the bottom — loses ab tension and stresses discs",
+        "causePl": "Odrywanie odcinka lędźwiowego od ławki w dolnej pozycji — utrata napięcia brzucha i obciążenie dysków",
+        "cue": "Stop the descent just before the shoulder blades touch — never let the lower back arch off the bench",
+        "cuePl": "Zatrzymaj opadanie tuż przed dotknięciem łopatkami — nigdy nie pozwól, by dolne plecy odrywały się od ławki"
+      },
+      {
+        "fault": "Bench angle too steep for current level",
+        "faultPl": "Zbyt stromy kąt ławki na obecny poziom",
+        "cause": "More decline = harder eccentric. Beginners on a steep bench drop instead of lowering controlled.",
+        "causePl": "Większy kąt nachylenia = trudniejsza faza ekscentryczna. Początkujący na stromej ławce opadają zamiast schodzić kontrolowanie.",
+        "cue": "Start at 20 degrees, only increase the angle once you can do 10 reps with a clean 4-second negative",
+        "cuePl": "Zaczynaj od 20 stopni, zwiększaj kąt dopiero gdy zrobisz 10 powtórzeń z czystą 4-sekundową fazą negatywną"
+      },
+      {
+        "fault": "Using hip flexors to pull through the lowering",
+        "faultPl": "Wciąganie pracy zginaczy biodra podczas opadania",
+        "cause": "Trying to keep the torso totally straight (like a plank) instead of letting the spine flex naturally",
+        "causePl": "Próba utrzymania tułowia całkowicie prosto (jak w desce) zamiast pozwolenia kręgosłupowi naturalnie się zginać",
+        "cue": "Lower like you're unrolling — spine rounds, hips stay heavy on the bench. It's a crunch eccentric, not a sit-up eccentric.",
+        "cuePl": "Schodź, jakbyś rozwijał kręgosłup — plecy się zaokrąglają, biodra zostają ciężkie na ławce. To ekscentryk crunchu, nie sit-up'a."
+      }
+    ],
+    "breathing": "Inhale during the slow descent (eccentric) — keep the breath under the brace. Exhale forcefully on the way back up (concentric), pushing the rib cage down toward the pelvis to deepen the contraction.",
+    "breathingPl": "Wdech podczas powolnego opadania (faza ekscentryczna) — oddech pozostaje w głębi napięcia brzucha. Mocny wydech podczas wstawania (faza koncentryczna), dociskając klatkę piersiową w kierunku miednicy, by pogłębić skurcz."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Spinal flexion under decline load can aggravate disc issues and acute lumbar pain. Switch to neutral-spine anti-extension work (plank, dead bug) until pain-free.",
+      "modificationPl": "Zginanie kręgosłupa pod obciążeniem na ławce skośnej może nasilać problemy dyskowe i ostry ból lędźwi. Przejdź na ćwiczenia anty-ekstensji w neutralnym kręgosłupie (deska, dead bug) do czasu ustąpienia bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Repeated loaded spinal flexion is contraindicated in lumbar disc herniation (McGill protocol). The decline angle adds compression — choose neutral-spine alternatives.",
+      "modificationPl": "Powtarzane zginanie kręgosłupa pod obciążeniem jest przeciwwskazane przy przepuklinie krążka lędźwiowego (protokół McGilla). Kąt skosu dodatkowo zwiększa kompresję — wybierz alternatywy w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Never lace fingers behind the head on a decline bench — the temptation to pull is too strong. Use cross-arms on the chest or skip entirely if the neck flares up.",
+      "modificationPl": "Nigdy nie splataj palców za głową na ławce skośnej — pokusa szarpania jest zbyt duża. Skrzyżuj ramiona na klatce lub całkiem pomiń ćwiczenie, jeśli boli kark.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Head-below-heart position on a decline bench can spike blood pressure. Avoid if hypertension is uncontrolled; if mild, keep the decline shallow and breathe steadily — no breath-holding.",
+      "modificationPl": "Pozycja głowy poniżej serca na ławce skośnej może podnosić ciśnienie krwi. Unikaj, jeśli nadciśnienie jest niekontrolowane; przy łagodnym — utrzymaj mały kąt skosu i oddychaj miarowo, bez wstrzymywania oddechu.",
+      "alternative": "crunch"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 (slow 4-second eccentric) | 3x6-10 (5-second eccentric, advanced) | 2x10-15 (beginner intro)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "negative-crunch.gif",
+    "frames_extracted": [
+      "frames/negative-crunch/frame_0_start.png",
+      "frames/negative-crunch/frame_1_early.png",
+      "frames/negative-crunch/frame_2_mid.png",
+      "frames/negative-crunch/frame_3_late.png",
+      "frames/negative-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/negative-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. SPRZĘT: ławka skośna (decline bench) z wałkami na stopy — NIE floor-based jak początkowo zakładałem w briefie. Klatka 0 (start, frame_0): ćwiczący leży w pozycji dolnej (płasko na ławce), nogi zaczepione pod wałkami, ramiona skrzyżowane na klatce/przy skroniach — to KOŃCOWA pozycja ruchu negatywnego. Klatka 2 (frame_2_mid): ćwiczący w pozycji w pełni wyprostowanej (sit-up up) — to POZYCJA WYJŚCIOWA. Klatki 1, 3, 4: pokazują ghosted figures (cienie sylwetki) sugerujące trail ruchu — potwierdzenie że to ruch z up→down. Podświetlone mięśnie: rectus_abdominis (intensywnie czerwony przez cały ruch). MOVEMENT: start w górze (sit-up position), powoli opadasz do leżenia (3–5s eccentric), zatrzymujesz przed dotknięciem łopatkami, koncentrycznie wracasz do góry. Mechanic=isolation (jeden staw funkcjonalnie — kręgosłup; biodra ograniczone przez foot pads). Force=pull (skurcz zginaczy kręgosłupa, faza koncentryczna). Plane=sagittal. Bilateral. Difficulty=3 (beginner — ekscentryk łatwiejszy niż koncentryk + foot anchor). Primary=rectus_abdominis (P9). Secondary=obliques (S6) + hip_flexors (S5 — mniej aktywne niż w sit-up bo stopy zablokowane, ale wciąż współpracują). Nazwa PL: 'Negative crunch (ekscentryczny crunch)' — w polskiej terminologii fitness 'negative' to standard, dodałem dopisek w nawiasie dla jasności. Aliasy PL pokrywają warianty: 'negatywny crunch', 'ekscentryczny crunch', 'powolny opad na ławce skośnej'. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Kontrast vs. 'cocoons' (floor-based, compound): negative-crunch jest na ławce, isolation, beginner-friendly, focus na eksentryku.",
+
+  "tags": ["bench", "core", "abs", "eccentric", "beginner_friendly", "decline_bench", "isolation", "time_under_tension"]
+}

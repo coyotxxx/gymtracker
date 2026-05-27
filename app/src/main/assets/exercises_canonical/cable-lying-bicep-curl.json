@@ -1,0 +1,200 @@
+{
+  "id": "cable-lying-bicep-curl",
+  "name": "Cable Lying Bicep Curl",
+  "namePl": "Curl bicepsa z wyciągu w leżeniu",
+  "aliases": ["supine cable curl", "lying cable bicep curl", "floor cable curl", "lying low-pulley curl"],
+  "aliasesPl": ["uginanie bicepsów z wyciągu w leżeniu", "curl bicepsa leżąc z wyciągu", "supinowane uginanie z linki leżąc", "curl z dolnego wyciągu w pozycji leżącej"],
+
+  "description": "Isolation curl for the elbow flexors performed lying supine on a flat bench, head toward a low cable pulley, with a short straight bar attached to the cable. The lying position eliminates body english and locks the upper arms in an overhead-shifted angle, while the cable provides constant tension across the entire range. The unusual line of pull stretches the biceps in the bottom position and biases the long head, making it a strong finishing movement for arm specialization.",
+  "descriptionPl": "Izolowane uginanie zginaczy stawu łokciowego wykonywane w leżeniu tyłem na płaskiej ławce, głową w stronę dolnego wyciągu cable, z krótkim prostym gryfem doczepionym do linki. Pozycja leżąca eliminuje pomaganie tułowiem i ustawia ramiona pod nietypowym, lekko nadgłowowym kątem, a wyciąg zapewnia stałe napięcie w całym zakresie ruchu. Niespotykany kierunek oporu mocno rozciąga biceps w pozycji dolnej i akcentuje głowę długą — to świetne ćwiczenie wykończeniowe na specjalizację ramion.",
+
+  "instructions": [
+    "Set a low pulley on a cable column with a short straight bar attached. Place a flat bench in line with the cable, far enough that the bar can travel freely above your face.",
+    "Lie supine on the bench with your head toward the pulley. Reach back and grab the bar with a supinated (underhand) shoulder-width grip.",
+    "Start with arms extended overhead at roughly a 45-degree angle from the torso, biceps fully stretched and the cable taut.",
+    "Pin your upper arms in place — only the forearms will move. Brace your core and press your lower back gently into the bench.",
+    "Curl the bar by flexing only at the elbows, bringing the bar down toward your forehead. Exhale on the way up (concentric).",
+    "Squeeze the biceps hard at full flexion, holding for a brief moment with the bar near your face.",
+    "Lower the bar under control over 2-3 seconds back to the fully stretched starting position. Inhale on the eccentric.",
+    "Keep the upper arms stationary throughout — do not let the elbows drift toward your hips or flare outward."
+  ],
+  "instructionsPl": [
+    "Ustaw dolny wyciąg cable z krótkim prostym gryfem. Połóż płaską ławkę w jednej linii z wyciągiem, na taką odległość aby gryf mógł swobodnie poruszać się nad twarzą.",
+    "Połóż się tyłem na ławce, głową w stronę wyciągu. Sięgnij ramionami w tył i złap gryf nachwytem dolnym (podchwytem) na szerokość barków.",
+    "Zacznij z ramionami wyprostowanymi nad głową pod kątem około 45 stopni do tułowia, biceps w pełnym rozciągnięciu, linka napięta.",
+    "Unieruchom ramiona ponad łokciem — pracować będą tylko przedramiona. Napnij brzuch i delikatnie dociśnij odcinek lędźwiowy do ławki.",
+    "Uginaj gryf w łokciach, prowadząc go w stronę czoła. Wydychaj w fazie koncentrycznej (unoszenie).",
+    "Mocno spinaj biceps w pełnym skurczu, zatrzymaj na chwilę z gryfem w okolicach twarzy.",
+    "Opuszczaj gryf w sposób kontrolowany przez 2-3 sekundy z powrotem do pozycji pełnego rozciągnięcia. Wdech w fazie ekscentrycznej.",
+    "Trzymaj ramiona ponad łokciem nieruchome przez cały ruch — nie pozwól łokciom wędrować w stronę bioder ani rozjeżdżać się na boki."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "latissimus_dorsi"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P9",
+    "brachialis": "S5",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T3",
+    "core": "T2",
+    "latissimus_dorsi": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "flat_bench", "straight_bar_attachment"],
+    "optional": ["wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-curl", "cable-curl"],
+    "progression_to": ["incline-dumbbell-curl", "spider-curl", "bayesian-cable-curl"],
+    "alternatives": ["incline-dumbbell-curl", "spider-curl", "cable-curl", "preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench in line with the low pulley, head toward the cable",
+      "Short straight bar, supinated shoulder-width grip",
+      "Lie flat, lower back pressed into the bench",
+      "Start with arms overhead at ~45 degrees, biceps stretched",
+      "Cable already under tension before you start the rep"
+    ],
+    "setup_cues_pl": [
+      "Ławka w linii z dolnym wyciągiem, głowa w stronę linki",
+      "Krótki prosty gryf, podchwyt na szerokość barków",
+      "Połóż się płasko, dolny odcinek pleców dociśnięty do ławki",
+      "Start z ramionami nad głową pod kątem ~45 stopni, biceps rozciągnięty",
+      "Linka napięta jeszcze zanim ruszysz pierwsze powtórzenie"
+    ],
+    "execution_cues": [
+      "Curl the bar toward your forehead, not toward your hips",
+      "Upper arms frozen in space — only forearms rotate",
+      "Squeeze hard at the top with bar near your face",
+      "Slow 2-3 second eccentric — fight the cable back to full stretch",
+      "Keep wrists straight and stacked with forearms"
+    ],
+    "execution_cues_pl": [
+      "Prowadź gryf w stronę czoła, nie w stronę bioder",
+      "Ramiona ponad łokciem zamrożone — obracają się tylko przedramiona",
+      "Mocno spinaj biceps w górnej pozycji z gryfem przy twarzy",
+      "Wolna faza negatywna 2-3 sekundy — kontroluj powrót aż do pełnego rozciągnięcia",
+      "Nadgarstki proste, w linii z przedramieniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drift toward the hips (shoulder extension)",
+        "faultPl": "Łokcie wędrują w stronę bioder (wyprost w stawie barkowym)",
+        "cause": "Recruiting the lats and posterior delts to help finish the rep when the biceps fatigue, or weight too heavy",
+        "causePl": "Włączanie najszerszych grzbietu i tylnych aktonów barków do dokończenia powtórzenia gdy biceps się męczy, lub zbyt duży ciężar",
+        "cue": "Lock the upper arms overhead — imagine someone holding your elbows in place. Reduce weight.",
+        "cuePl": "Unieruchom ramiona ponad głową — wyobraź sobie że ktoś trzyma cię za łokcie. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Cutting the stretch (partial reps at the top)",
+        "faultPl": "Skracanie rozciągnięcia (powtórzenia tylko w górnej połowie)",
+        "cause": "Avoiding the difficult stretched position, or stack/weight too heavy to control eccentrically",
+        "causePl": "Unikanie trudnej pozycji rozciągniętej, lub zbyt duży ciężar by go kontrolować w fazie negatywnej",
+        "cue": "Lower until elbows are fully extended and biceps are visibly stretched every rep.",
+        "cuePl": "Opuszczaj aż łokcie będą w pełni wyprostowane a biceps wyraźnie rozciągnięty przy każdym powtórzeniu."
+      },
+      {
+        "fault": "Arching the lower back off the bench",
+        "faultPl": "Wybijanie odcinka lędźwiowego znad ławki",
+        "cause": "Trying to use core/hip momentum to assist the curl, especially under heavy loads",
+        "causePl": "Próba pomagania ruchu napięciem brzucha i bioder, szczególnie przy ciężkich obciążeniach",
+        "cue": "Press the lower back into the bench and keep ribs down. If you can't stop arching, drop the weight.",
+        "cuePl": "Dociśnij lędźwie do ławki i utrzymaj żebra w dole. Jeśli nie możesz przestać się wyginać — zmniejsz ciężar."
+      },
+      {
+        "fault": "Wrist hyperextension on the stretch",
+        "faultPl": "Przeprostowanie nadgarstków w fazie rozciągnięcia",
+        "cause": "Cable pulls the bar back aggressively in the stretched position, breaking the wrist if grip is loose",
+        "causePl": "Wyciąg agresywnie ciągnie gryf w pozycji rozciągniętej, łamiąc nadgarstek przy luźnym chwycie",
+        "cue": "Grip the bar firmly. Keep wrists locked straight — they should never bend backward.",
+        "cuePl": "Trzymaj gryf mocno. Nadgarstki zablokowane prosto — nigdy nie powinny się odginać w tył."
+      },
+      {
+        "fault": "Bench placed too close or too far from the pulley",
+        "faultPl": "Ławka za blisko lub za daleko wyciągu",
+        "cause": "Wrong cable angle removes tension in the stretched position or makes the top of the rep too easy",
+        "causePl": "Zły kąt linki niweluje napięcie w pozycji rozciągniętej lub czyni górną fazę zbyt łatwą",
+        "cue": "Adjust bench distance so cable stays taut at the top AND pulls the biceps into a full stretch at the bottom.",
+        "cuePl": "Dostosuj odległość ławki tak by linka była napięta na górze ORAZ rozciągała biceps w pełni na dole."
+      }
+    ],
+    "breathing": "Exhale during the curl up (concentric), inhale during the lowering phase (eccentric). Maintain a light core brace to keep the lower back flat against the bench.",
+    "breathingPl": "Wydech podczas uginania (faza koncentryczna), wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha aby trzymać lędźwie płasko na ławce."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The deep stretch in the overhead position heavily loads the distal biceps tendon. Reduce range of motion, use lighter loads with 12-15 reps, avoid heavy eccentrics, and stop short of full extension.",
+      "modificationPl": "Głęboka pozycja rozciągnięta nad głową mocno obciąża dystalne ścięgno bicepsa. Zmniejsz zakres ruchu, używaj lżejszych ciężarów z 12-15 powtórzeniami, unikaj ciężkich faz negatywnych i zatrzymuj się przed pełnym wyprostem.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Holding the arms overhead under load may aggravate impingement. Lower the pulley position only slightly or switch to a flat-arm curl variant where shoulders stay neutral.",
+      "modificationPl": "Trzymanie ramion nad głową pod obciążeniem może drażnić zespół ciasnoty podbarkowej. Obniż wyciąg tylko nieznacznie lub przejdź na wariant curl z ramionami przy boku tułowia.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Although lying flat removes spinal compression, bracing under tension may still aggravate acute pain. Use lighter loads, place a small pad under the lumbar curve, and stop if pain increases.",
+      "modificationPl": "Mimo że leżenie eliminuje kompresję kręgosłupa, napinanie się pod obciążeniem może drażnić ostry ból. Używaj lżejszych ciężarów, podłóż mały wałek pod krzywiznę lędźwiową i przerwij jeśli ból się nasila.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The straight bar locks the wrists in full supination, which combined with cable tension can strain the wrist. Swap for an EZ-bar cable attachment for a more forgiving grip angle.",
+      "modificationPl": "Prosty gryf blokuje nadgarstki w pełnej supinacji, co w połączeniu z napięciem wyciągu może obciążać nadgarstek. Zamień na łamany gryf cable dla bardziej przyjaznego kąta chwytu.",
+      "alternative": "cable-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, primary use) | 3x12-20 (pump finisher) | 2-3x15-20 (metabolic stress / drop sets)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-lying-bicep-curl.gif",
+    "frames_extracted": [
+      "frames/cable-lying-bicep-curl/frame_0_start.png",
+      "frames/cable-lying-bicep-curl/frame_1_early.png",
+      "frames/cable-lying-bicep-curl/frame_2_mid.png",
+      "frames/cable-lying-bicep-curl/frame_3_late.png",
+      "frames/cable-lying-bicep-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-lying-bicep-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: model leży tyłem na płaskiej ławce, głową w stronę dolnego wyciągu cable po prawej stronie kadru, ramiona wyprostowane nad głową pod kątem ~45 stopni do tułowia, krótki prosty gryf w podchwycie na szerokość barków, biceps i przedramiona podświetlone na czerwono — pozycja rozciągnięta. Frame 2: pełny skurcz w łokciach, gryf w okolicy czoła/twarzy, ramiona ponad łokciem pozostają w pozycji nadgłowowej, biceps mocno spięty. Frame 4: powrót do pozycji rozciągniętej (z widocznym 'ghostem' fazy szczytowej powyżej). Niespotykany kąt cable — siła ciągnie ramiona w stronę za głowę, co tworzy stałe napięcie i mocne rozciągnięcie w dolnej pozycji. Ćwiczenie jednoznacznie zidentyfikowane jako Cable Lying Bicep Curl (supine cable curl). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "cable", "constant_tension", "stretch_emphasis", "long_head_bias", "finisher", "upper_body"]
+}

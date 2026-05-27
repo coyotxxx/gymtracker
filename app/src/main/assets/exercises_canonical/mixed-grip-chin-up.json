@@ -1,0 +1,203 @@
+{
+  "id": "mixed-grip-chin-up",
+  "name": "Mixed-Grip Chin-Up",
+  "namePl": "Chin-up chwytem mieszanym",
+  "aliases": ["mixed grip pull-up", "alternating grip pull-up", "mixed grip pullup", "switch grip chin-up", "over-under pull-up"],
+  "aliasesPl": ["podciąganie chwytem mieszanym", "podciąganie chwytem alternowanym", "mieszany chwyt", "chin-up mieszany", "podciąganie over-under"],
+
+  "description": "Variant of the chin-up/pull-up where ONE hand grips overhand (pronated, palm away) and the OTHER hand grips underhand (supinated, palm toward you) — the same mixed grip used in heavy deadlifts. Distributes load asymmetrically between lats and biceps and demands strong anti-rotation control through obliques and core. Useful for grip strength carryover to deadlift and for athletes who want to expose and train rotational stability under load. Should be alternated set-to-set (left hand under, then right) to balance both sides.",
+  "descriptionPl": "Wariant chin-up/pull-up gdzie JEDNA ręka trzyma nachwytem (pronated, dłoń od siebie) a DRUGA podchwytem (supinated, dłoń do siebie) — ten sam chwyt mieszany jak w ciężkim martwym ciągu. Asymetrycznie rozkłada obciążenie między najszersze a bicepsy i wymusza silną kontrolę anty-rotacyjną ze skośnych i core. Przydatne do transferu siły chwytu na deadlift oraz dla zawodników którzy chcą wystawić i wytrenować stabilność rotacyjną pod obciążeniem. Należy alternować chwyt seria do serii (lewa pod, potem prawa) by zbalansować obie strony.",
+
+  "instructions": [
+    "Approach the bar. Place ONE hand pronated (palm facing AWAY) and the OTHER hand supinated (palm facing YOU). Hands shoulder-width apart.",
+    "Hang at full arm extension (dead-hang). Engage shoulder blades by pulling them DOWN — no shrug.",
+    "Brace the core HARD. The mixed grip will try to rotate you toward the supinated (underhand) side — resist this rotation actively.",
+    "Cross or bend the legs. Keep the body neutral (shoulders square to the bar), not twisted.",
+    "Pull by driving elbows DOWN AND BACK toward your hips. Keep chest up. Maintain shoulders square — fight the urge to face the underhand side.",
+    "Pull until chin is clearly OVER the bar. At the top: chest near the bar, elbows close to torso.",
+    "Lower with control to a full dead-hang. Maintain scapular depression throughout.",
+    "ALTERNATE the grip between sets (e.g. set 1: left under / right over, set 2: right under / left over). Never do consecutive sessions with the same dominant side."
+  ],
+  "instructionsPl": [
+    "Podejdź do drążka. Złap JEDNĄ rękę nachwytem (dłoń od siebie) a DRUGĄ podchwytem (dłoń do siebie). Ręce na szerokość barków.",
+    "Zwiśnij w pełnym wyproście ramion (dead-hang). Aktywuj łopatki ściągając je W DÓŁ — bez unoszenia.",
+    "MOCNO napnij brzuch. Chwyt mieszany będzie próbował obrócić cię w stronę podchwytową (supinated) — aktywnie opieraj się tej rotacji.",
+    "Skrzyżuj lub zegnij nogi. Trzymaj ciało neutralnie (barki równolegle do drążka), bez skręcenia.",
+    "Podciągnij napierając łokciami W DÓŁ I DO TYŁU w kierunku bioder. Klatka w górze. Trzymaj barki równolegle — opieraj się odruchowi obrócenia się ku stronie podchwytowej.",
+    "Podciągaj aż broda będzie WYRAŹNIE nad drążkiem. Na górze: klatka blisko drążka, łokcie blisko tułowia.",
+    "Opuść kontrolowanym ruchem do pełnego dead-hang. Utrzymuj depresję łopatek przez cały ruch.",
+    "ALTERNUJ chwyt między seriami (np. seria 1: lewa pod / prawa nad, seria 2: prawa pod / lewa nad). Nigdy dwie kolejne sesje z tą samą stroną dominującą."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["rhomboids", "obliques", "trapezius_middle_lower", "teres_major", "brachialis", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms", "rectus_abdominis", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P8",
+    "rhomboids": "S7",
+    "obliques": "S7",
+    "trapezius_middle_lower": "S6",
+    "teres_major": "S7",
+    "brachialis": "S6",
+    "forearms": "S8",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps", "weighted_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 8,
+    "prerequisites": ["pull-up", "chin-up", "dead-hang", "inverted-row"],
+    "progression_to": ["weighted-mixed-grip-chin-up", "archer-pull-up", "one-arm-chin-up-progression", "muscle-up"],
+    "alternatives": ["pull-up", "chin-up", "neutral-grip-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "One hand pronated, one hand supinated",
+      "Hands at shoulder-width",
+      "Full dead-hang, shoulder blades DOWN",
+      "Core braced HARD against rotation",
+      "Shoulders square to the bar (no twist)"
+    ],
+    "setup_cues_pl": [
+      "Jedna ręka nachwytem, druga podchwytem",
+      "Ręce na szerokość barków",
+      "Pełny dead-hang, łopatki W DÓŁ",
+      "Brzuch napięty MOCNO przeciw rotacji",
+      "Barki równolegle do drążka (bez skręcenia)"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN AND BACK",
+      "Resist rotation toward the underhand side",
+      "Chin clearly OVER the bar",
+      "Full extension at the bottom — no half reps",
+      "ALTERNATE grip set-to-set for symmetry"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ I DO TYŁU",
+      "Opieraj się rotacji w stronę podchwytową",
+      "Broda wyraźnie NAD drążkiem",
+      "Pełen wyprost na dole — bez połowy powtórzeń",
+      "ALTERNUJ chwyt seria do serii dla symetrii"
+    ],
+    "common_faults": [
+      {
+        "fault": "Body rotates toward the supinated (underhand) side",
+        "faultPl": "Ciało obraca się w stronę podchwytową (supinated)",
+        "cause": "Lack of anti-rotational core control; biceps on underhand side overpowers the lat on overhand side",
+        "causePl": "Brak kontroli anty-rotacyjnej core; biceps po stronie podchwytowej dominuje nad najszerszym po stronie nachwytowej",
+        "cue": "Brace obliques HARD. Imagine pulling both shoulders square to the bar throughout the entire rep.",
+        "cuePl": "MOCNO napnij skośne. Wyobraź sobie że trzymasz oba barki równolegle do drążka przez całe powtórzenie."
+      },
+      {
+        "fault": "Always using the same hand on top (never alternating)",
+        "faultPl": "Zawsze ta sama ręka na górze (brak alternacji)",
+        "cause": "Habit, comfort, or unawareness of asymmetric loading",
+        "causePl": "Nawyk, komfort lub brak świadomości asymetrycznego obciążenia",
+        "cue": "ALTERNATE grip every set — left under, right under, left under… Track in your log.",
+        "cuePl": "ALTERNUJ chwyt co serię — lewa pod, prawa pod, lewa pod… Notuj w dzienniku."
+      },
+      {
+        "fault": "Half reps (chin not over bar)",
+        "faultPl": "Połowiczne powtórzenia (broda nie nad drążkiem)",
+        "cause": "Mixed grip is more demanding than uniform grip; top range collapses first",
+        "causePl": "Chwyt mieszany jest trudniejszy niż jednolity; górny zakres odpada pierwszy",
+        "cue": "Chin clearly OVER the bar. If you can't make full ROM with mixed grip, regress to pull-up or chin-up.",
+        "cuePl": "Broda wyraźnie NAD drążkiem. Jeśli nie robisz pełnego ROM z chwytem mieszanym — wróć do pull-up lub chin-up."
+      },
+      {
+        "fault": "Biceps strain on supinated side from overload",
+        "faultPl": "Naderwanie bicepsa po stronie podchwytowej z przeciążenia",
+        "cause": "Doing weighted mixed-grip without proper progression; biceps on supinated side takes asymmetric load",
+        "causePl": "Robienie z dociążeniem bez właściwej progresji; biceps po stronie podchwytowej przyjmuje asymetryczne obciążenie",
+        "cue": "Master strict bodyweight mixed-grip BEFORE adding weight. Stop the set at first sign of biceps strain.",
+        "cuePl": "Opanuj strict mieszany BW ZANIM dodasz obciążenie. Przerwij serię przy pierwszych objawach naderwania bicepsa."
+      },
+      {
+        "fault": "Kipping or swinging to compensate for rotation",
+        "faultPl": "Kipping lub bujanie by skompensować rotację",
+        "cause": "Body tries to use momentum to overcome the asymmetric pull",
+        "causePl": "Ciało próbuje użyć pędu by pokonać asymetryczny ciąg",
+        "cue": "Cross feet, brace core. If you swing — regress to pull-up first, return to mixed grip later.",
+        "cuePl": "Skrzyżuj stopy, napnij brzuch. Jeśli bujasz — wróć do pull-up, do mieszanego wrócisz później."
+      }
+    ],
+    "breathing": "Inhale at the bottom (dead-hang). Exhale on the pull up. Inhale on the way down. Brace especially hard against rotation — breathing into a tight midsection helps anti-rotation.",
+    "breathingPl": "Wdech na dole (dead-hang). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Napnij szczególnie mocno przeciw rotacji — wdech w napięty brzuch wspiera kontrolę anty-rotacyjną."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Avoid mixed grip — the supinated side overloads the biceps tendon. Use neutral or pronated grip until pain resolves.",
+      "modificationPl": "Unikaj chwytu mieszanego — strona podchwytowa przeciąża ścięgno bicepsa. Użyj chwytu neutralnego lub nachwytem do ustąpienia bólu.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Switch to neutral grip (palms facing each other) — gentler on the shoulder joint and avoids asymmetric loading.",
+      "modificationPl": "Przejdź na chwyt neutralny (dłonie do siebie) — łagodniejszy dla stawu barkowego i bez asymetrycznego obciążenia.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "oblique_strain",
+      "severity": "avoid",
+      "modification": "Mixed grip demands strong anti-rotation from obliques. Avoid until full recovery; resume with symmetric grip (pull-up or chin-up) first.",
+      "modificationPl": "Chwyt mieszany wymaga silnej anty-rotacji ze skośnych. Unikaj do pełnego wyzdrowienia; wróć przez symetryczny chwyt (pull-up lub chin-up).",
+      "alternative": "pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume. The supinated arm loads biceps and elbow flexors heavily — if pain persists, switch to neutral grip.",
+      "modificationPl": "Zmniejsz objętość. Ręka podchwytowa mocno obciąża biceps i zginacze łokcia — jeśli ból trwa, przejdź na chwyt neutralny.",
+      "alternative": "neutral-grip-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5xAMRAP (bodyweight) | 4x6-8 (weighted) | alternate grip every set",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "mixed-grip-chin-up.gif",
+    "frames_extracted": [
+      "frames/mixed-grip-chin-up/frame_0_start.png",
+      "frames/mixed-grip-chin-up/frame_1_early.png",
+      "frames/mixed-grip-chin-up/frame_2_mid.png",
+      "frames/mixed-grip-chin-up/frame_3_late.png",
+      "frames/mixed-grip-chin-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/mixed-grip-chin-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start, jedna ręka pronated (nachwytem) druga supinated (podchwytem) — klasyczny chwyt mieszany jak w deadliftcie. Frame 2: top position, broda nad drążkiem, łokcie blisko tułowia. Frame 4: zejście blisko dead-hang. Animacja podświetla najszersze (lats), środkowy/dolny trapez, romboidy, bicepsy i przedramiona. Asymetria chwytu wprowadza komponent anty-rotacyjny — stąd obliques w secondary. Klasyfikuję jako bilateral (obie ręce na drążku, jeden ruch wertykalny) mimo asymetrii chwytu — to nie unilateral. PL nazwa 'Chin-up chwytem mieszanym' — zachowuję angielski 'chin-up' w nazwie bo to powszechny termin w polskim środowisku siłowym; alias 'podciąganie chwytem mieszanym' dla wyszukiwania.",
+
+  "tags": ["calisthenics", "bodyweight", "upper_body", "vertical_pull", "back", "biceps", "anti_rotation", "mixed_grip", "deadlift_carryover", "grip_strength", "asymmetric_load"]
+}

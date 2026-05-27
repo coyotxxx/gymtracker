@@ -1,0 +1,209 @@
+{
+  "id": "barbell-full-zercher-squat",
+  "name": "Barbell Full Zercher Squat",
+  "namePl": "Pełny przysiad Zerchera ze sztangą w łokciach",
+  "aliases": ["zercher squat", "zercher", "full zercher squat", "elbow squat"],
+  "aliasesPl": ["zercher squat", "przysiad zerchera", "pełny zercher", "przysiad ze sztangą w łokciach", "przysiad zerchera pełny"],
+
+  "description": "Brutal full-ROM squat variant where the barbell rests in the crooks of the elbows (Zercher hold). Anteriorly loaded squat forcing an upright torso and demanding extreme anti-flexion core stability and biceps isometric strength. Developed by Ed Zercher in the 1930s as a true raw strength builder. Hits quads, glutes, biceps (isometrically), upper back and core simultaneously — one of the most full-body squat variants in existence. Excellent carryover to strongman events (atlas stones, sandbag carries), grappling sports and improving spinal extension under anterior load.",
+  "descriptionPl": "Brutalny wariant pełnego przysiadu, w którym sztanga spoczywa w zgięciach łokci (chwyt Zerchera). Obciążenie z przodu wymusza pionową postawę tułowia i wymaga ekstremalnej stabilizacji core (anti-flexion) oraz izometrycznej siły bicepsów. Opracowany przez Eda Zerchera w latach 30. XX wieku jako prawdziwy budowniczy surowej siły. Angażuje jednocześnie czworogłowe, pośladki, bicepsy (izometrycznie), górną część pleców i core — jeden z najbardziej całościowych wariantów przysiadu. Świetnie przenosi się na strongman (atlas stones, sandbag carries), sporty walki w parterze i poprawia siłę prostowników kręgosłupa pod obciążeniem przednim.",
+
+  "instructions": [
+    "Set the barbell in a squat rack at lower-chest / upper-abdomen height (lower than for a back squat). Load the weight and secure with collars.",
+    "Step up to the bar and place it in the crooks of your elbows, bending your arms 90°. Cross your forearms or interlock your hands in front of your chest (avoid clasping under the bar with thumbs only).",
+    "Pad the bar with a towel, fat-bar pad or sleeve protectors — the bar will press hard into the elbow flexors and brachialis.",
+    "Lift the bar by extending your hips and knees. Take 1-2 controlled steps back. Set your feet shoulder-width apart, toes slightly turned out (10-20°).",
+    "Brace your core hard, chest up, elbows high to keep the bar from sliding down. Inhale deeply and hold (Valsalva).",
+    "Initiate the descent by breaking at the hips and knees simultaneously. Sit straight down, keeping the torso as vertical as possible — the front load punishes any forward lean.",
+    "Descend to full depth (ATG — hip crease well below the knee). Elbows should approach the inside of the thighs or pass between them.",
+    "Drive up by pushing through the whole foot, extending hips and knees together. Keep the elbows up and the bar locked into the elbow crease the entire ascent.",
+    "Exhale near the top, reset the brace, and repeat. Walk the bar back into the rack — never dump a Zercher from height."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości dolnej części klatki / górnej części brzucha (niżej niż do przysiadu tylnego). Załaduj obciążenie i zabezpiecz zaciskami.",
+    "Podejdź do sztangi i ułóż ją w zgięciach łokci, zginając ramiona pod kątem 90°. Skrzyżuj przedramiona lub spleć dłonie przed klatką (unikaj trzymania sztangi pod nią samymi kciukami).",
+    "Zabezpiecz gryf ręcznikiem, grubą podkładką lub osłonami — drążek będzie mocno wbijał się w zginacze łokcia i mięsień ramienny.",
+    "Wyciągnij sztangę prostując biodra i kolana. Cofnij się 1-2 kontrolowane kroki. Ustaw stopy na szerokość barków, palce lekko na zewnątrz (10-20°).",
+    "Mocno napnij brzuch, klatka wysoko, łokcie wysoko aby sztanga nie zsunęła się w dół. Głęboki wdech i przytrzymaj (Valsalva).",
+    "Rozpocznij schodzenie zginając jednocześnie biodra i kolana. Siadaj prosto w dół, trzymając tułów maksymalnie pionowo — przednie obciążenie karze za każde pochylenie do przodu.",
+    "Schodź do pełnej głębokości (ATG — linia bioder znacznie poniżej kolan). Łokcie powinny zbliżyć się do wewnętrznej strony ud lub przejść między nimi.",
+    "Wypchnij się w górę napierając przez całą stopę, prostując biodra i kolana jednocześnie. Trzymaj łokcie wysoko, a sztangę wciśniętą w zgięcia łokci przez całe wyjście.",
+    "Wydychaj blisko góry, odbuduj napięcie i powtórz. Odprowadź sztangę z powrotem do stojaka — nigdy nie zrzucaj Zerchera z wysokości."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "biceps_brachii", "core"],
+    "secondary": ["hamstrings", "erector_spinae", "adductors"],
+    "stabilizers": ["upper_back", "rectus_abdominis", "obliques", "brachialis", "calves", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "biceps_brachii": "P7",
+    "core": "P9",
+    "hamstrings": "S6",
+    "erector_spinae": "S8",
+    "adductors": "S5",
+    "upper_back": "S6",
+    "rectus_abdominis": "S7",
+    "obliques": "S5",
+    "brachialis": "S5",
+    "calves": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["bar_pad", "towel", "long_sleeve_shirt", "belt", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-back-squat", "barbell-front-squat", "goblet-squat"],
+    "progression_to": ["zercher-good-morning", "zercher-carry", "pause-zercher-squat"],
+    "alternatives": ["barbell-front-squat", "safety-bar-squat", "goblet-squat", "barbell-back-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pin height at lower chest / upper abs — lower than back squat",
+      "Bar deep in the elbow crook, not on the forearm",
+      "Pad the bar — Zercher hurts unpadded",
+      "Cross forearms or interlock hands, keep elbows high",
+      "Big breath, brace 360° around the spine"
+    ],
+    "setup_cues_pl": [
+      "Stojak na wysokości dolnej klatki / górnego brzucha — niżej niż back squat",
+      "Sztanga głęboko w zgięciu łokcia, nie na przedramieniu",
+      "Zabezpiecz gryf podkładką — Zercher boli bez ochrony",
+      "Skrzyżuj przedramiona lub spleć dłonie, łokcie wysoko",
+      "Głęboki wdech, napięcie 360° wokół kręgosłupa"
+    ],
+    "execution_cues": [
+      "Torso stays vertical — sit straight DOWN, not back",
+      "Elbows up, do not let the bar roll forward",
+      "Knees travel forward over toes (mobility-permitting)",
+      "Push the floor away through whole foot",
+      "Drive elbows up out of the hole — bar position dictates spine position"
+    ],
+    "execution_cues_pl": [
+      "Tułów pionowy — siadaj prosto W DÓŁ, nie do tyłu",
+      "Łokcie do góry, nie pozwól sztandze stoczyć się do przodu",
+      "Kolana jadą do przodu nad palce stóp (na ile pozwala mobilność)",
+      "Wypchnij podłogę całą stopą",
+      "Wypychaj łokcie w górę z dołu — pozycja sztangi dyktuje pozycję kręgosłupa"
+    ],
+    "common_faults": [
+      {
+        "fault": "Forward torso collapse (bar dumping forward)",
+        "faultPl": "Zapadanie tułowia do przodu (sztanga ciągnie naprzód)",
+        "cause": "Weak upper back/core, elbows dropping, load too heavy for anterior carrying capacity",
+        "causePl": "Słaba górna część pleców/core, łokcie opadają w dół, zbyt duży ciężar dla nośności przedniej",
+        "cue": "Elbows up, chest up, brace harder. Reduce weight — Zercher numbers should be lower than back squat.",
+        "cuePl": "Łokcie w górę, klatka w górę, mocniej napnij. Zmniejsz ciężar — Zercher zawsze niżej niż back squat."
+      },
+      {
+        "fault": "Bar slipping down the forearms",
+        "faultPl": "Sztanga zsuwająca się w dół po przedramionach",
+        "cause": "Bar placed on forearms instead of deep in the elbow crook, elbows too low",
+        "causePl": "Sztanga na przedramionach zamiast głęboko w zgięciu łokcia, łokcie za nisko",
+        "cue": "Reset — pull the bar deeper into the crease of the elbow with full 90° flexion before each rep.",
+        "cuePl": "Reset — wciśnij sztangę głębiej w zgięcie łokcia z pełnym zgięciem 90° przed każdym powtórzeniem."
+      },
+      {
+        "fault": "Knees cave inward (valgus)",
+        "faultPl": "Kolana uciekają do środka (koślawienie)",
+        "cause": "Weak glute medius, deep ATG depth amplifies the demand, narrow stance",
+        "causePl": "Słabe pośladki średnie, głęboka pozycja ATG zwiększa wymóg, za wąski rozstaw",
+        "cue": "Push knees out toward pinky toes the whole rep — Zercher demands more abduction than back squat.",
+        "cuePl": "Wypychaj kolana na zewnątrz w kierunku małych palców przez całe powtórzenie — Zercher wymaga więcej odwiedzenia niż back squat."
+      },
+      {
+        "fault": "Holding breath uncontrolled / lightheadedness",
+        "faultPl": "Niekontrolowane wstrzymanie oddechu / zawroty głowy",
+        "cause": "Anterior load + Valsalva spikes intra-abdominal pressure higher than back squat",
+        "causePl": "Obciążenie z przodu + Valsalva podnoszą ciśnienie wewnątrzbrzuszne wyżej niż w back squat",
+        "cue": "Breathe between reps. Do not chain more than 5-6 reps without resetting breath at the top.",
+        "cuePl": "Oddychaj między powtórzeniami. Nie łącz więcej niż 5-6 powtórzeń bez resetowania oddechu na górze."
+      },
+      {
+        "fault": "Hips rising faster than shoulders out of the hole",
+        "faultPl": "Biodra wstają szybciej niż barki z dołu",
+        "cause": "Quads weaker than posterior chain, fatigue, treating Zercher like a low-bar squat",
+        "causePl": "Czworogłowe słabsze od tylnego łańcucha, zmęczenie, traktowanie Zerchera jak low-bar",
+        "cue": "Drive elbows up first — if elbows lead, torso stays vertical and hips/shoulders rise together.",
+        "cuePl": "Najpierw wypychaj łokcie w górę — jeśli łokcie prowadzą, tułów zostaje pionowo a biodra/barki wstają razem."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and the hardest part of the ascent (Valsalva). Exhale near lockout. Anterior loading creates higher IAP — keep reps short to avoid lightheadedness.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wyjścia (Valsalva). Wydech blisko wyprostu. Obciążenie z przodu generuje wyższe IAP — krótkie serie aby uniknąć zawrotów głowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Zercher loads biceps isometrically under heavy weight — wait for full recovery. Use back squat or front squat.",
+      "modificationPl": "Zercher obciąża bicepsy izometrycznie pod dużym ciężarem — odczekaj do pełnego wyzdrowienia. Użyj back squat lub front squat.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Anterior loading puts heavy demand on erector spinae and core anti-flexion. Avoid until cleared by a physiotherapist.",
+      "modificationPl": "Obciążenie z przodu mocno angażuje prostowniki kręgosłupa i core anti-flexion. Unikaj do czasu zgody fizjoterapeuty.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "elbow_pain_or_bursitis",
+      "severity": "modify",
+      "modification": "Bar pressure on elbow flexors can aggravate olecranon bursitis or biceps insertion pain. Use thick pad or switch variant.",
+      "modificationPl": "Nacisk sztangi na zginacze łokcia może podrażnić zapalenie kaletki łokciowej lub ból przyczepu bicepsa. Użyj grubej podkładki lub zmień wariant.",
+      "alternative": "barbell-front-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Full ATG depth puts maximal shear on the meniscus. Limit depth to above-parallel or switch to box squat.",
+      "modificationPl": "Pełna głębokość ATG generuje maksymalne ścinanie na łąkotce. Ogranicz głębokość do powyżej parallel lub zmień na box squat.",
+      "alternative": "box-squat"
+    }
+  ],
+
+  "typical_sets_reps": "5x3 (strength) | 4x5-8 (hypertrophy) | 3x3 (raw strength carryover)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-full-zercher-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-full-zercher-squat/frame_0_start.png",
+      "frames/barbell-full-zercher-squat/frame_1_early.png",
+      "frames/barbell-full-zercher-squat/frame_2_mid.png",
+      "frames/barbell-full-zercher-squat/frame_3_late.png",
+      "frames/barbell-full-zercher-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-full-zercher-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel/glutes/barbell-full-zercher-squat.gif. Klatka 0 i 4 (start/end): pozycja stojąca, sztanga trzymana w zgięciach łokci (90°), przedramiona splecione przed klatką, tułów pionowy. Klatka 2 (bottom): pełna głębokość ATG, biodra znacznie poniżej kolan, tułów wciąż pionowy (charakterystyczne dla Zerchera vs back squat gdzie tułów się pochyla), łokcie wewnątrz ud, sztanga utrzymana w zgięciach łokci. Mięśnie podświetlone na ilustracji: czworogłowe (najmocniej, czerwone), pośladki, łydki, prostowniki kręgosłupa — anatomia zgodna. Klasyfikacja: compound, bilateral, sagittal plane, closed kinetic chain, force=push. Trudność 8/10 z uwagi na (1) anteriorne obciążenie wymagające dużej siły core anti-flexion, (2) izometryczne obciążenie bicepsów pod dużym ciężarem, (3) ból od ucisku gryfu w łokciach, (4) pełny ROM ATG wymagający dobrej mobilności bioder/kostki. Primary muscles: quadriceps, glutes, biceps_brachii (izometr.), core — to wariant 4-primary (więcej niż klasyczny squat) bo Zercher unikalnie obciąża bicepsy i core w sposób który nie występuje w innych przysiadach. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["zercher", "anterior_loaded", "strongman", "raw_strength", "atg", "core_anti_flexion", "biceps_isometric", "barbell", "advanced", "lower_body", "full_body"]
+}

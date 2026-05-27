@@ -1,0 +1,201 @@
+{
+  "id": "barbell-skier",
+  "name": "Barbell Skier",
+  "namePl": "Skier ze sztangą",
+  "aliases": ["barbell skier extension", "bent-over barbell tricep kickback", "barbell rear delt skier", "skier press"],
+  "aliasesPl": ["skier ze sztangą", "wyprost ramion ze sztangą w opadzie", "wyrzut sztangi w tył", "narciarz ze sztangą"],
+
+  "description": "Bent-over isolation/compound hybrid for posterior deltoids and triceps. Standing in hip-hinge position (similar to Romanian deadlift), holding a barbell behind the body, the lifter extends the arms backward and upward in a ski-pole-like motion. The bar travels from a low position (near the knees/hips) up and back behind the body. Trains posterior shoulder and triceps long head with significant time-under-tension at peak contraction.",
+  "descriptionPl": "Hybryda izolacja/compound dla tylnego aktonu barku i tricepsów wykonywana w opadzie tułowia. W pozycji hip-hinge (podobnie jak w martwym ciągu rumuńskim), trzymając sztangę za ciałem, ćwiczący wyprostowuje ramiona do tyłu i do góry w ruchu przypominającym wbijanie kijków narciarskich. Gryf wędruje z dolnej pozycji (przy kolanach/biodrach) w górę i do tyłu za tułów. Trenuje tylny akton barku i długą głowę tricepsa z dużym czasem pod napięciem w pełnym skurczu.",
+
+  "instructions": [
+    "Stand with feet hip-width apart, knees slightly bent. Hinge at the hips until torso is angled forward roughly 30-45 degrees (chest up, neutral spine).",
+    "Hold a barbell behind the body with a pronated grip (palms facing back/down), shoulder-width or slightly wider.",
+    "Start with the bar near the back of the thighs/knees, arms slightly bent — this is the bottom position.",
+    "Brace core, retract shoulder blades slightly, and keep upper arms in a fixed position behind the torso.",
+    "Extend the elbows AND drive the bar up and back behind the body in one motion — like pushing ski poles backward.",
+    "At the top, arms should be fully extended, bar elevated behind the body, posterior delts and triceps fully contracted. Hold 1 sec.",
+    "Lower the bar with control back to the start position — do NOT let the bar swing.",
+    "Keep the torso angle FIXED throughout — no rocking, no using momentum from the hips/back."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku na szerokość bioder, kolana lekko ugięte. Wykonaj hip-hinge — pochyl tułów do przodu pod kątem ok. 30-45 stopni (klatka do góry, neutralny kręgosłup).",
+    "Chwyć sztangę za ciałem chwytem nachwytem (dłonie skierowane do tyłu/w dół), na szerokość barków lub nieco szerzej.",
+    "Pozycja startowa: gryf przy tylnej części ud/kolan, ramiona lekko ugięte — to dolna pozycja.",
+    "Napnij brzuch, lekko ściągnij łopatki, ramiona (część od barku do łokcia) trzymaj w stałej pozycji za tułowiem.",
+    "Wyprostuj łokcie ORAZ wepchnij gryf w górę i w tył za ciało jednym ruchem — jak wbijanie kijków narciarskich do tyłu.",
+    "W górnej pozycji ramiona pełni wyprostowane, gryf uniesiony za ciałem, tylne aktony i tricepsy w pełnym skurczu. Przytrzymaj 1 sek.",
+    "Opuść gryf kontrolowanym ruchem do pozycji startowej — NIE pozwól sztandze się bujać.",
+    "Trzymaj kąt tułowia STAŁY przez cały ruch — bez kołysania, bez używania pędu z bioder/pleców."
+  ],
+
+  "classification": {
+    "movement_pattern": "shoulder_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["posterior_deltoid", "triceps"],
+    "secondary": ["latissimus_dorsi", "teres_major", "trapezius_lower"],
+    "stabilizers": ["core", "erector_spinae", "rear_delts", "rotator_cuff", "hamstrings", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "posterior_deltoid": "P8",
+    "triceps": "P9",
+    "latissimus_dorsi": "S5",
+    "teres_major": "S4",
+    "trapezius_lower": "S4",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "hamstrings": "T3",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["plates", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-tricep-kickback", "barbell-bent-over-row", "cable-rope-tricep-pushdown"],
+    "progression_to": ["dumbbell-skier", "cable-skier", "single-arm-barbell-skier"],
+    "alternatives": ["dumbbell-tricep-kickback", "cable-tricep-kickback", "bent-over-rear-delt-row", "barbell-bent-over-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hip hinge — torso ~30-45° forward, chest up",
+      "Pronated grip, bar behind body at knee/thigh height",
+      "Knees slightly bent, weight on mid-foot",
+      "Core braced, neutral spine (no rounding)",
+      "Upper arms locked in position behind torso"
+    ],
+    "setup_cues_pl": [
+      "Hip-hinge — tułów pochylony ~30-45° do przodu, klatka do góry",
+      "Chwyt nachwytem, gryf za ciałem na wysokości kolan/ud",
+      "Kolana lekko ugięte, ciężar na środku stóp",
+      "Brzuch napięty, neutralny kręgosłup (bez zaokrąglenia)",
+      "Ramiona zablokowane w pozycji za tułowiem"
+    ],
+    "execution_cues": [
+      "Drive the bar UP and BACK like ski poles",
+      "Fully extend the elbows at the top",
+      "Keep upper arms FIXED — no flapping forward",
+      "Squeeze rear delts and triceps at peak",
+      "Lower SLOWLY — no swinging"
+    ],
+    "execution_cues_pl": [
+      "Pchaj gryf W GÓRĘ i W TYŁ jak kijki narciarskie",
+      "W górze pełen wyprost łokci",
+      "Trzymaj ramiona STAŁE — bez machania do przodu",
+      "Ściśnij tylne aktony i tricepsy w szczycie",
+      "Opuszczaj POWOLI — bez bujania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rocking torso to generate momentum",
+        "faultPl": "Kołysanie tułowiem dla generowania pędu",
+        "cause": "Weight too heavy, weak posterior chain, lack of core bracing",
+        "causePl": "Zbyt duży ciężar, słaby tylny łańcuch, brak napięcia brzucha",
+        "cue": "Reduce weight. Torso FIXED throughout — only arms move. Brace core HARD.",
+        "cuePl": "Zmniejsz ciężar. Tułów NIERUCHOMY — ruszają się tylko ramiona. Mocno napnij brzuch."
+      },
+      {
+        "fault": "Upper arms drift forward (instead of staying fixed)",
+        "faultPl": "Ramiona (część od barku do łokcia) odpływają do przodu zamiast pozostać stałe",
+        "cause": "Trying to lift too heavy, weak rear delts",
+        "causePl": "Próba podniesienia zbyt dużego ciężaru, słabe tylne aktony",
+        "cue": "Pin upper arms BEHIND torso. If they drift forward, lower the weight.",
+        "cuePl": "Przyklej ramiona ZA tułów. Jeśli odpływają do przodu — zmniejsz ciężar."
+      },
+      {
+        "fault": "Rounded lower back",
+        "faultPl": "Zaokrąglone plecy w odcinku lędźwiowym",
+        "cause": "Poor hip-hinge technique, tight hamstrings, weak erector spinae",
+        "causePl": "Słaba technika hip-hinge, napięte dwugłowe uda, słabe prostowniki grzbietu",
+        "cue": "Chest UP, neutral spine. Bend at HIPS, not the lower back. Bend knees more if hamstrings are tight.",
+        "cuePl": "Klatka DO GÓRY, neutralny kręgosłup. Zginaj się w BIODRACH, nie w lędźwiach. Bardziej ugnij kolana jeśli dwugłowe są napięte."
+      },
+      {
+        "fault": "Incomplete elbow extension at top",
+        "faultPl": "Niepełen wyprost łokci w górnej pozycji",
+        "cause": "Weak triceps, weight too heavy, fatigue",
+        "causePl": "Słabe tricepsy, zbyt duży ciężar, zmęczenie",
+        "cue": "FULL lockout at the top. Squeeze triceps. Lower weight if you can't reach full extension.",
+        "cuePl": "PEŁEN lock-out w górze. Ściśnij tricepsy. Zmniejsz ciężar jeśli nie dochodzisz do pełnego wyprostu."
+      },
+      {
+        "fault": "Looking up (cervical hyperextension)",
+        "faultPl": "Patrzenie w górę (przeprost szyi)",
+        "cause": "Habit, instructor advice misunderstood",
+        "causePl": "Nawyk, źle zrozumiana wskazówka trenera",
+        "cue": "Eyes down at floor 1-2m in front. Neck neutral with spine.",
+        "cuePl": "Wzrok na podłogę 1-2m przed sobą. Szyja neutralna z kręgosłupem."
+      }
+    ],
+    "breathing": "Inhale at the bottom (start position). Exhale powerfully as you drive the bar up and back to full extension. Inhale on the way down.",
+    "breathingPl": "Wdech w dolnej pozycji (start). Wydech mocno gdy pchasz gryf w górę i w tył do pełnego wyprostu. Wdech podczas opuszczania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "Bent-over position loads the lumbar spine. Switch to seated dumbbell tricep kickback or chest-supported alternative until cleared.",
+      "modificationPl": "Pozycja w opadzie obciąża lędźwie. Przejdź na siedzący dumbbell tricep kickback lub wariant z podparciem klatki do ustąpienia bólu.",
+      "alternative": "dumbbell-tricep-kickback"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Full elbow extension under load aggravates triceps tendinopathy. Reduce ROM (stop short of full lockout) and use lighter weight + higher reps.",
+      "modificationPl": "Pełen wyprost łokcia pod obciążeniem nasila tendinopatię tricepsa. Zmniejsz ROM (zatrzymaj się przed pełnym lock-out) i użyj lżejszego ciężaru + więcej powtórzeń.",
+      "alternative": "cable-rope-tricep-pushdown"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Posterior delt work is generally safer than overhead pressing, but extreme shoulder extension can still aggravate. Reduce range — don't push the bar maximally behind the body.",
+      "modificationPl": "Praca tylnym aktonem jest zwykle bezpieczniejsza niż wyciskanie overhead, ale skrajna ekstensja barku może nasilić problem. Zmniejsz zakres — nie pchaj gryfu maksymalnie za ciało.",
+      "alternative": "bent-over-rear-delt-row"
+    },
+    {
+      "condition": "hamstring_strain",
+      "severity": "modify",
+      "modification": "Hip-hinge position stretches hamstrings under load. Increase knee bend (more squat-like position) or switch to supported variant.",
+      "modificationPl": "Pozycja hip-hinge rozciąga dwugłowe pod obciążeniem. Zwiększ zgięcie kolan (bardziej jak w przysiadzie) lub przejdź na wariant z podparciem.",
+      "alternative": "dumbbell-tricep-kickback"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/conditioning) | 3x12-20 (endurance/burnout finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "barbell-skier.gif",
+    "frames_extracted": [
+      "frames/barbell-skier/frame_0_start.png",
+      "frames/barbell-skier/frame_1_early.png",
+      "frames/barbell-skier/frame_2_mid.png",
+      "frames/barbell-skier/frame_3_late.png",
+      "frames/barbell-skier/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-skier"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w opadzie tułowia (hip-hinge ~30-45°), trzyma sztangę za ciałem na wysokości kolan, ramiona przy tułowiu. Frame 1-3 (mid/late): sztanga uniesiona w górę i do tyłu za ciało, ramiona w pełnym wyproście, tricepsy i tylny akton podświetlone (czerwone). Frame 4 (end): powrót do startu. Ruch przypomina wbijanie kijków narciarskich do tyłu — stąd nazwa 'skier'. NIE jest to ruch jak narciarz biegowy z naprzemiennym unoszeniem ramion — to ruch bilateralny (obie ręce razem) z opadem tułowia. Podświetlona ANATOMIA: górna część ramienia od barku w dół do łokcia (długa głowa tricepsa) + tylny akton. Źródło jahel klasyfikuje w 'delts/' więc primary = posterior_deltoid + triceps (P8/P9). Bilateralne ćwiczenie izolacyjne dla tylnego aktonu i tricepsa, intermediate level (wymaga technicznego hip-hinge). PL nazwa = 'Skier ze sztangą' (zgodnie z prośbą)."
+}

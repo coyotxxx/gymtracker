@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-incline-bench-press",
+  "name": "Dumbbell Incline Bench Press",
+  "namePl": "Wyciskanie hantli na ławce skośnej dodatniej",
+  "aliases": ["incline DB press", "incline dumbbell press", "DB incline bench", "incline dumbbell bench"],
+  "aliasesPl": ["wyciskanie hantli skos dodatni", "wyciskanie hantli na skosie", "incline DB press", "skos dodatni hantle", "wyciskanie hantli skośnie do góry"],
+
+  "description": "Inclined pressing variation performed on a bench set at 30-45° with a dumbbell in each hand. The upward angle of the torso shifts the line of pull, transferring more load from the mid/lower pec onto the upper portion of the pectoralis major (clavicular head) and the anterior deltoids. Dumbbells unlock a deeper range of motion than the barbell incline press and force each arm to stabilize independently — a key tool for building a fuller, more developed upper chest and correcting side-to-side asymmetries.",
+  "descriptionPl": "Wariant wyciskania na ławce skośnej dodatniej (kąt 30-45°), z hantlem w każdej ręce. Pochylenie tułowia w górę zmienia linię ciągu — przenosi większą część obciążenia ze środkowej/dolnej klatki na górną część mięśnia piersiowego większego (głowa obojczykowa) oraz na przednie aktony naramiennych. Hantle dają głębszy zakres ruchu niż wersja ze sztangą i zmuszają każdą rękę do niezależnej stabilizacji — kluczowe narzędzie do budowania pełnej, dobrze rozwiniętej górnej klatki i wyrównywania asymetrii lewa-prawa.",
+
+  "instructions": [
+    "Set the bench at 30-45°. Too steep (>45°) shifts work onto the front delts; too flat (<25°) becomes a flat bench. 30° is the sweet spot for most lifters.",
+    "Sit on the bench with a dumbbell resting on each thigh, palms facing each other.",
+    "Lie back, using your thighs to kick the dumbbells up to shoulder level as you settle into the bench. End with dumbbells at upper-chest height, palms facing forward (pronated grip).",
+    "Plant feet firmly on the floor, knees bent. Retract and depress the shoulder blades, slight natural arch in the lower back, head/upper back/glutes in contact with the bench.",
+    "Press the dumbbells up so they meet over the upper chest/clavicle line — arms extended but elbows NOT locked rigid. This is the starting position.",
+    "Inhale, brace the core, and lower the dumbbells in a controlled arc down to upper-chest level (or slightly below for full ROM). Elbows tracked at ~45-60° from torso, NOT flared to 90°.",
+    "Pause briefly at the bottom — feel the stretch in the upper chest. Do NOT bounce.",
+    "Press the dumbbells back up and slightly inward over the upper chest. Do not let them collide at the top.",
+    "Exhale at the top. Keep shoulder blades retracted throughout the set. To finish: bring dumbbells to chest, sit up with momentum and place them on thighs."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę pod kątem 30-45°. Za stromo (>45°) przenosi pracę na przednie delty; za płasko (<25°) robi się ławka pozioma. 30° to złoty środek dla większości ćwiczących.",
+    "Usiądź na ławce z hantlami opartymi o uda, dłonie zwrócone do siebie.",
+    "Połóż się, wybijając hantle z ud do wysokości barków w trakcie kładzenia. Skończ z hantlami na wysokości górnej klatki, dłonie zwrócone w stronę stóp (chwyt pronowany).",
+    "Stopy mocno na podłodze, kolana zgięte. Ściągnij łopatki w dół i razem, lekki naturalny łuk w dolnych plecach, głowa/górne plecy/pośladki w kontakcie z ławką.",
+    "Wyciśnij hantle w górę aż spotkają się nad górną klatką / linią obojczyków — ramiona wyprostowane, ale łokcie BEZ sztywnego lock-out. To jest pozycja startowa.",
+    "Wdech, napięcie brzucha, opuszczaj hantle kontrolowanym łukiem do poziomu górnej klatki (lub nieco poniżej dla pełnego ROM). Łokcie ~45-60° od tułowia, NIE rozsunięte na 90°.",
+    "Krótka pauza na dole — poczuj rozciągnięcie górnej klatki. NIE odbijaj.",
+    "Wyciśnij hantle w górę i lekko do środka, nad górną klatkę. Nie pozwól im zderzyć się na szczycie.",
+    "Wydech na górze. Łopatki ściągnięte przez cały set. Zakończenie: ściągnij hantle do klatki, usiądź z impetem i odłóż hantle na uda."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["upper_chest", "anterior_deltoids", "triceps"],
+    "secondary": ["pectoralis_major", "serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "upper_chest": "P10",
+    "anterior_deltoids": "P9",
+    "triceps": "P7",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-bench-press", "push-up", "machine-chest-press"],
+    "progression_to": ["barbell-incline-bench-press", "single-arm-incline-dumbbell-press", "neutral-grip-incline-dumbbell-press", "low-incline-dumbbell-press"],
+    "alternatives": ["barbell-incline-bench-press", "smith-incline-bench-press", "incline-machine-chest-press", "incline-cable-press", "low-incline-dumbbell-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45° — 30° hits upper chest best without overloading delts",
+      "Sit, dumbbells on thighs, kick them up as you lie back",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Feet planted firmly, drive through heels for stability",
+      "Start with dumbbells over upper chest / collarbone line, pronated grip"
+    ],
+    "setup_cues_pl": [
+      "Ławka pod kątem 30-45° — 30° najlepiej trafia w górną klatkę bez przeciążania delt",
+      "Usiądź, hantle na udach, wybij je gdy się kładziesz",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Stopy mocno zaparte, napieraj przez pięty dla stabilności",
+      "Start z hantlami nad górną klatką / linią obojczyków, chwyt pronowany"
+    ],
+    "execution_cues": [
+      "Lower with control to upper-chest level — feel the stretch in clavicular pec",
+      "Keep elbows at ~45-60° from torso, NOT flared to 90°",
+      "Drive through both dumbbells evenly — don't let one lag behind",
+      "Press up and slightly inward over upper chest — don't clang them together",
+      "Eccentric ~2-3 seconds, concentric explosive but controlled"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj z kontrolą do poziomu górnej klatki — poczuj rozciągnięcie głowy obojczykowej",
+      "Łokcie ~45-60° od tułowia, NIE rozsunięte na 90°",
+      "Naciskaj na oba hantle równo — nie pozwól by jeden odstawał",
+      "Wyciskaj w górę i lekko do środka nad górną klatkę — nie waląc hantlami o siebie",
+      "Faza ekscentryczna ~2-3 sekundy, koncentryczna wybuchowa ale kontrolowana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bench angle too steep (60°+) — turns into shoulder press",
+        "faultPl": "Za stromy kąt ławki (60°+) — robi się z tego wyciskanie żołnierskie",
+        "cause": "Misconception that 'more incline = more upper chest'; weak upper chest forcing delts to take over",
+        "causePl": "Błędne przekonanie 'więcej skosu = więcej górnej klatki'; słaba górna klatka i delty przejmują pracę",
+        "cue": "Drop to 30°. Above 45° the anterior delt dominates. EMG studies: 30° = peak upper-chest activation.",
+        "cuePl": "Zmniejsz do 30°. Powyżej 45° dominuje przedni akton delty. Badania EMG: 30° = szczyt aktywacji górnej klatki."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Improper grip orientation; treating press like a fly; lack of awareness — incline angle exaggerates shoulder strain",
+        "causePl": "Niepoprawne ustawienie chwytu; traktowanie wyciskania jak rozpiętek; brak świadomości — kąt skosu dodatkowo obciąża barki",
+        "cue": "Tuck elbows to ~45-60°. Incline already stresses front delt — flared elbows multiply impingement risk.",
+        "cuePl": "Schowaj łokcie do ~45-60°. Skos już obciąża przednią deltę — rozsunięte łokcie wielokrotnie zwiększają ryzyko impingement."
+      },
+      {
+        "fault": "Glutes lifting off bench / excessive arch",
+        "faultPl": "Pośladki odrywające się od ławki / przesadny łuk",
+        "cause": "Trying to turn the incline into a flat bench; ego with too heavy weight",
+        "causePl": "Próba zamiany skosu w ławkę poziomą; ego ze zbyt ciężkim ciężarem",
+        "cue": "Glutes stay on bench. If you arch out of the incline, you're cheating yourself out of upper chest work.",
+        "cuePl": "Pośladki zostają na ławce. Jeśli wyłuczysz się ze skosu, oszukujesz samego siebie — tracisz pracę górnej klatki."
+      },
+      {
+        "fault": "Asymmetry between arms (one side pressing faster/higher)",
+        "faultPl": "Asymetria między rękoma (jedna strona wyciska szybciej/wyżej)",
+        "cause": "Dominant side compensating; weak stabilizers on non-dominant side — incline magnifies imbalances",
+        "causePl": "Strona dominująca kompensuje; słabe stabilizatory po stronie niedominującej — skos uwypukla asymetrie",
+        "cue": "Move both dumbbells in sync. If gap is large, switch to single-arm incline DB press to fix imbalance.",
+        "cuePl": "Ruszaj oba hantle synchronicznie. Jeśli różnica duża, przejdź na single-arm incline DB press by naprawić asymetrię."
+      },
+      {
+        "fault": "Insufficient ROM — stopping dumbbells above upper-chest level",
+        "faultPl": "Za mały zakres ruchu — zatrzymanie hantli powyżej linii górnej klatki",
+        "cause": "Fear of the stretched position; weak bottom position; ego with too heavy weight",
+        "causePl": "Strach przed pozycją rozciągniętą; słaba pozycja na dole; ego ze zbyt ciężkim ciężarem",
+        "cue": "The whole point of DB incline IS the deep stretch — dumbbells reach upper-chest level. Use what the dumbbells give you.",
+        "cuePl": "Cały sens skosu z hantlami to głębokie rozciągnięcie — hantle dochodzą do poziomu górnej klatki. Wykorzystaj to, co dają hantle."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) and lower bench angle to 15-20°. Reduce ROM if pain on bottom — incline overhead position can pinch the supraspinatus.",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie zwrócone do siebie) i obniż kąt ławki do 15-20°. Zmniejsz ROM jeśli ból na dole — pozycja na skosie nad głową może uciskać mięsień nadgrzebieniowy.",
+      "alternative": "neutral-grip-incline-dumbbell-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy incline DB pressing severely destabilizes shoulder in the overhead-ish position. Switch to fixed-path machine until cleared by physio.",
+      "modificationPl": "Ciężki incline DB press silnie destabilizuje bark w pozycji półzawieszonej nad głową. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "incline-machine-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "AC (acromioclavicular) joint is loaded directly on incline. Lower angle to 15-20°, use neutral grip, reduce weight 30-40%. Stop if sharp pain at top.",
+      "modificationPl": "Staw barkowo-obojczykowy (AC) jest obciążony bezpośrednio na skosie. Obniż kąt do 15-20°, chwyt neutralny, zmniejsz ciężar o 30-40%. Przerwij przy ostrym bólu na szczycie.",
+      "alternative": "low-incline-dumbbell-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use neutral grip — much easier on wrists than pronated. Use wrist wraps if needed. Keep wrists stacked over forearms.",
+      "modificationPl": "Użyj chwytu neutralnego — znacznie łagodniejszy dla nadgarstków niż pronowany. Użyj wraps na nadgarstki jeśli trzeba. Nadgarstki ustawione w linii z przedramionami.",
+      "alternative": "neutral-grip-incline-dumbbell-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-incline-bench-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-bench-press/frame_0_start.png",
+      "frames/dumbbell-incline-bench-press/frame_1_early.png",
+      "frames/dumbbell-incline-bench-press/frame_2_mid.png",
+      "frames/dumbbell-incline-bench-press/frame_3_late.png",
+      "frames/dumbbell-incline-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-incline-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Frame 0 (start/góra): hantle wyciśnięte nad górną klatką, ramiona wyprostowane bez sztywnego lock-out, chwyt pronowany (dłonie w stronę stóp), ławka pod kątem dodatnim ~30-40°, tułów pochylony w górę. Frame 1-3 (motion blur opuszczania): hantle schodzą kontrolowanym łukiem do poziomu górnej klatki, łokcie tracked ~45-60° od tułowia. Frame 4 (powrót w górę): kontrolowane wyciskanie, łopatki ściągnięte. Górna część klatki (clavicular head), przednie aktony naramiennych oraz tricepsy podświetlone — zgodne z anatomią dla incline DB bench. Stopy zaparte na podłodze, pośladki na ławce. PL nazwa zgodna z polskim standardem fitness ('Wyciskanie hantli na ławce skośnej dodatniej' = standardowe sformułowanie w polskich siłowniach). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Difficulty 6 (vs 4 dla flat DB bench) ze względu na: większe wymagania stabilizacji barku na skosie, większe ryzyko AC joint i impingement, trudniejsze ustawienie kąta, większa rola formy nad ciężarem.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "upper_chest", "dumbbell", "incline", "chest", "clavicular_head", "unilateral_control", "hypertrophy"]
+}

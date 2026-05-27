@@ -1,0 +1,201 @@
+{
+  "id": "barbell-bench-press",
+  "name": "Barbell Bench Press (Flat)",
+  "namePl": "Wyciskanie sztangi na ławce poziomej",
+  "aliases": ["bench press", "flat bench press", "barbell bench", "BBP"],
+  "aliasesPl": ["wyciskanie sztangi", "wyciskanie na ławce poziomej", "wyciskanie poziome", "bench press"],
+
+  "description": "King of upper-body pressing lifts. Horizontal push performed lying on a flat bench, lowering a loaded barbell to the chest and pressing it back to lockout. Primary builder of chest, anterior delts and triceps mass. One of the three powerlifting competition lifts.",
+  "descriptionPl": "Król ćwiczeń wyciskających dla górnej części ciała. Poziome pchnięcie wykonywane leżąc na poziomej ławce — opuszczasz załadowaną sztangę do klatki i wyciskasz z powrotem do pełnego wyprostu. Główny budulec masy klatki, przednich aktonów i tricepsów. Jedno z trzech ćwiczeń trójboju siłowego.",
+
+  "instructions": [
+    "Lie on a flat bench with the bar at eye level. Feet planted firmly on the floor, knees bent ~90°.",
+    "Set your shoulder blades: retract and depress them ('pinch them together and tuck them into back pocket'). Create a slight natural arch in the lower back.",
+    "Grip the bar with hands slightly wider than shoulder-width (your forearms should be vertical at the bottom). Wrap thumbs around the bar (NOT suicide grip).",
+    "Unrack the bar by extending your arms. Move it directly over your shoulders (not your face).",
+    "Take a big breath, brace your core, and begin the descent. Lower the bar in a controlled manner to your lower chest / sternum.",
+    "Touch the chest lightly — do NOT bounce. Pause briefly (1s for paused bench, immediate for touch-and-go).",
+    "Press the bar up and slightly back, finishing over your shoulders. Lock out elbows but do not hyperextend.",
+    "Keep shoulder blades retracted throughout. Exhale at the top of the press."
+  ],
+  "instructionsPl": [
+    "Połóż się na poziomej ławce ze sztangą na wysokości oczu. Stopy mocno na podłodze, kolana zgięte ~90°.",
+    "Ustaw łopatki: ściągnij je razem i w dół ('zegnij i schowaj do tylnej kieszeni'). Lekko naturalny łuk w dolnych plecach.",
+    "Złap gryf nieco szerzej niż na szerokość barków (przedramiona powinny być pionowe na dole). Owinij kciuki wokół gryfu (NIE chwyt 'samobójczy').",
+    "Wyciągnij sztangę z stojaka prostując ramiona. Przenieś ją bezpośrednio nad barki (nie nad twarz).",
+    "Nabierz głęboki oddech, napnij brzuch, zacznij schodzenie. Opuszczaj gryf kontrolowanym ruchem do dolnej klatki / mostka.",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza (1s dla paused bench, natychmiast dla touch-and-go).",
+    "Wyciśnij gryf w górę i nieco do tyłu, kończąc nad barkami. Lock-out łokci, ale bez przeprostu.",
+    "Łopatki ściągnięte przez cały ruch. Wydech na szczycie wyciskania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P8",
+    "triceps": "P8",
+    "serratus_anterior": "S5",
+    "lats": "T3",
+    "core": "T4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench", "power_rack_or_bench_with_supports"],
+    "optional": ["belt", "wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "dumbbell-bench-press", "machine-chest-press"],
+    "progression_to": ["pause-bench-press", "close-grip-bench-press", "incline-barbell-bench-press", "spoto-press", "board-press"],
+    "alternatives": ["dumbbell-bench-press", "machine-chest-press", "smith-bench-press", "floor-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Eyes directly under the bar",
+      "Shoulder blades retracted and depressed",
+      "Slight arch in lower back, glutes on bench",
+      "Feet planted, drive through heels",
+      "Grip width: forearms vertical at chest touch"
+    ],
+    "setup_cues_pl": [
+      "Oczy bezpośrednio pod gryfem",
+      "Łopatki ściągnięte i opuszczone",
+      "Lekki łuk w dolnych plecach, pośladki na ławce",
+      "Stopy zaparte, napieraj przez pięty",
+      "Szerokość chwytu: przedramiona pionowe przy dotyku klatki"
+    ],
+    "execution_cues": [
+      "Pull the bar toward you (lats engaged)",
+      "Touch lower chest, not throat",
+      "Press up and slightly back to lockout",
+      "Push the floor away with feet (leg drive)",
+      "Keep elbows tucked ~45-60° from torso (not flared 90°)"
+    ],
+    "execution_cues_pl": [
+      "Pociągnij gryf w swoją stronę (najszersze napięte)",
+      "Dotknij dolnej klatki, nie szyi",
+      "Wyciśnij w górę i nieco do tyłu do lock-out",
+      "Wypchnij podłogę stopami (leg drive)",
+      "Łokcie pod kątem ~45-60° od tułowia (nie rozsunięte na 90°)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flared 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Wide grip + lack of awareness, mimicking pec-fly motion",
+        "causePl": "Szeroki chwyt + brak świadomości, kopiowanie ruchu pec-fly",
+        "cue": "Tuck elbows to ~45-60°. 'Hide your armpits from the ceiling'.",
+        "cuePl": "Schowaj łokcie do ~45-60°. 'Schowaj pachy przed sufitem'."
+      },
+      {
+        "fault": "Bar bouncing off the chest",
+        "faultPl": "Odbijanie sztangi od klatki",
+        "cause": "Ego lifting, using momentum to cheat the press",
+        "causePl": "Ego lifting, używanie pędu by oszukać wyciskanie",
+        "cue": "Pause for 1 second on the chest. Reduce weight if needed. Train paused reps.",
+        "cuePl": "Pauza 1 sekundy na klatce. Zmniejsz ciężar jeśli trzeba. Trenuj powtórzenia z pauzą."
+      },
+      {
+        "fault": "Loss of shoulder blade retraction during press",
+        "faultPl": "Utrata ściągnięcia łopatek podczas wyciskania",
+        "cause": "Not setting the back hard enough at setup, or fatigue",
+        "causePl": "Niewystarczające napięcie pleców w setup, lub zmęczenie",
+        "cue": "Reset between reps if needed. 'Pinch a coin between shoulder blades'.",
+        "cuePl": "Resetuj między powtórzeniami jeśli trzeba. 'Trzymaj monetę między łopatkami'."
+      },
+      {
+        "fault": "Butt lifting off the bench",
+        "faultPl": "Pośladki unoszą się z ławki",
+        "cause": "Excessive arching, weak quads forcing hip hyperextension",
+        "causePl": "Nadmierny łuk, słabe czworogłowe wymuszające przeprost biodra",
+        "cue": "Glutes stay on bench. Drive feet INTO the floor, not up. In powerlifting comp, butt MUST stay down.",
+        "cuePl": "Pośladki pozostają na ławce. Napieraj stopami W podłogę, nie do góry. Na zawodach trójboju pośladki MUSZĄ pozostać na ławce."
+      },
+      {
+        "fault": "Bar path uneven (drifts toward face)",
+        "faultPl": "Nierówna ścieżka gryfu (wędruje w stronę twarzy)",
+        "cause": "Weak triceps relative to chest, or improper setup",
+        "causePl": "Słabe tricepsy w stosunku do klatki, lub niepoprawny setup",
+        "cue": "Press up and slightly BACK (over shoulders, not face). Train close-grip variants.",
+        "cuePl": "Wyciskaj w górę i lekko DO TYŁU (nad barkami, nie twarzą). Trenuj close-grip warianty."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent and press. Exhale at the top of the lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce grip width, tuck elbows more (45° max), or use a slight incline. Avoid heavy 1RM attempts.",
+      "modificationPl": "Zwęź chwyt, mocniej schowaj łokcie (max 45°), lub użyj lekkiego skosu. Unikaj ciężkich prób 1RM.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy barbell pressing aggravates. Switch to machine press or rehab protocol.",
+      "modificationPl": "Ciężkie wyciskanie barbell drażni. Przejdź na press maszynowy lub protokół rehabilitacyjny.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Stop barbell bench until full recovery. Resume with high-rep low-weight machine work first.",
+      "modificationPl": "Wstrzymaj barbell bench do pełnego wyzdrowienia. Wróć przez wysokopowtórzeniowe lekkie maszyny.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. Check grip — bar should be in palm heel, not fingers.",
+      "modificationPl": "Użyj wraps na nadgarstki. Sprawdź chwyt — gryf w podstawie dłoni, nie w palcach.",
+      "alternative": "dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (strength) | 3-5x3-5 (powerlifting) | 3-4x6-12 (hypertrophy)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-bench-press.gif",
+    "frames_extracted": [
+      "frames/barbell-bench-press/frame_0_start.png",
+      "frames/barbell-bench-press/frame_1_early.png",
+      "frames/barbell-bench-press/frame_2_mid.png",
+      "frames/barbell-bench-press/frame_3_late.png",
+      "frames/barbell-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/barbell-bench-press",
+    "yuhonas_id": "Barbell_Bench_Press_-_Medium_Grip"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:11:00Z",
+  "verification_notes": "Frame 0: sztanga przy klatce (dolna pozycja), ławka pozioma, łopatki ściągnięte. Frame 2: pełne wyciśnięcie (lock-out). Klasyczny flat barbell bench press z medium grip. Klatka + przednie delty + tricepsy podświetlone — zgodne z anatomią. Powerlifting-friendly setup (lekki arch, stopy zaparte, łopatki ściągnięte). PL nazwa zgodna z polskim standardem fitness. Wszystkie pola PL od zera.",
+
+  "tags": ["powerlifting", "compound_king", "upper_body", "horizontal_push", "strength_fundamental", "barbell", "chest"]
+}

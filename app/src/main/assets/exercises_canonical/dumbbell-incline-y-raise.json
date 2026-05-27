@@ -1,0 +1,206 @@
+{
+  "id": "dumbbell-incline-y-raise",
+  "name": "Dumbbell Incline Y-Raise",
+  "namePl": "Y-raise z hantlami na ławce skośnej prone",
+  "aliases": ["prone incline y-raise", "incline bench prone y-raise", "dumbbell y raise on incline bench", "chest-supported y raise", "prone y raise with dumbbells"],
+  "aliasesPl": ["Y-raise leżąc na ławce skośnej", "wznosy w kształcie Y leżąc twarzą w dół", "Y-raise z podparciem klatki", "prone Y raise z hantlami", "wznosy w Y na ławce skośnej"],
+
+  "description": "Chest-supported posterior chain raise performed prone on an incline bench. The lifter raises two dumbbells forward and out at roughly a 30-45° angle from the body, forming a 'Y' shape with the arms at the top. The incline bench eliminates lower-back involvement and torso swinging, isolating the lower trapezius, rhomboids, and posterior deltoid. A staple prehab and posture exercise widely used to balance heavy pressing work and to correct rounded-shoulder/forward-head postures.",
+  "descriptionPl": "Ćwiczenie tylnej taśmy mięśniowej z podparciem klatki, wykonywane leżąc twarzą w dół na ławce skośnej. Ćwiczący unosi dwie hantle w przód i w bok pod kątem około 30-45° od ciała, tworząc kształt litery 'Y' z rękoma w górnej pozycji. Skośna ławka eliminuje pracę dolnego odcinka pleców i bujanie tułowiem, izolując dolną część czworobocznego, równoległoboczne i tylny akton barku. Klasyczne ćwiczenie prehab i korygujące postawę, powszechnie stosowane do zbalansowania ciężkich treningów wyciskania oraz do korekcji okrągłych barków i wysuniętej do przodu głowy.",
+
+  "instructions": [
+    "Set an incline bench at 30-45°. Grab two light dumbbells (often 2-5 kg is enough — this is not a heavy exercise).",
+    "Lie prone (face down) on the bench with your chest fully supported and feet planted on the floor or footrest for stability.",
+    "Let your arms hang straight down on either side of the bench, holding the dumbbells with a neutral grip (palms facing each other) or palms facing forward (thumbs up).",
+    "Retract and depress your shoulder blades. Imagine sliding them down into your back pockets. Brace the core gently.",
+    "With straight arms (small fixed bend in elbows is fine), raise both dumbbells simultaneously in a forward-diagonal arc until your arms form a 'Y' overhead — roughly 30-45° away from the body line.",
+    "At the top, your thumbs should point up and back, biceps near your ears. Squeeze the lower traps and pinch the shoulder blades down and together.",
+    "Pause for 1-2 seconds at the top in the Y position.",
+    "Lower the dumbbells back to the start under control over 2-3 seconds. Do not rest the dumbbells on the floor between reps — keep tension.",
+    "Maintain forehead off the pad (neutral cervical spine) and chest in contact with the bench the entire set."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną pod kątem 30-45°. Złap dwie lekkie hantle (często 2-5 kg w zupełności wystarczy — to nie jest ciężkie ćwiczenie).",
+    "Połóż się twarzą w dół na ławce z klatką w pełni podpartą, stopy oparte o podłogę lub podest dla stabilizacji.",
+    "Pozwól ramionom swobodnie zwisać prosto w dół po obu stronach ławki, trzymając hantle chwytem neutralnym (dłonie zwrócone do siebie) lub dłońmi do przodu (kciuki w górę).",
+    "Ściągnij łopatki w tył i w dół. Wyobraź sobie, że wsuwasz je do tylnych kieszeni spodni. Lekko napnij brzuch.",
+    "Z prostymi ramionami (lekkie, stałe ugięcie w łokciach jest OK) unieś jednocześnie obie hantle skośnym łukiem w przód, aż ramiona utworzą literę 'Y' nad głową — około 30-45° od linii tułowia.",
+    "W górnej pozycji kciuki powinny być skierowane w górę i w tył, bicepsy blisko uszu. Spinaj dolną część czworobocznego i ściągaj łopatki w dół i razem.",
+    "Zatrzymaj się na 1-2 sekundy w pozycji Y.",
+    "Opuszczaj hantle z powrotem do pozycji wyjściowej w sposób kontrolowany przez 2-3 sekundy. Nie odkładaj hantli na podłodze między powtórzeniami — utrzymuj napięcie.",
+    "Przez całą serię utrzymuj czoło oderwane od oparcia (neutralny odcinek szyjny kręgosłupa), a klatkę w kontakcie z ławką."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_lower", "posterior_deltoids"],
+    "secondary": ["rhomboids", "trapezius_middle"],
+    "stabilizers": ["infraspinatus", "teres_minor", "trapezius_upper", "core", "erector_spinae", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_lower": "P9",
+    "posterior_deltoids": "P8",
+    "rhomboids": "S6",
+    "trapezius_middle": "S6",
+    "infraspinatus": "T4",
+    "teres_minor": "T3",
+    "trapezius_upper": "T3",
+    "core": "T2",
+    "erector_spinae": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-incline-t-raise", "dumbbell-incline-w-raise", "prone-cobra"],
+    "alternatives": ["dumbbell-incline-t-raise", "face-pull", "dumbbell-rear-fly", "band-pull-apart", "prone-cobra"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45° — chest fully supported, feet planted",
+      "Lie prone, forehead off the pad (neutral neck)",
+      "Arms hang straight down, neutral grip or thumbs up",
+      "Pull shoulder blades down and back before lifting",
+      "Light dumbbells — 2-5 kg is plenty for most people"
+    ],
+    "setup_cues_pl": [
+      "Ławka pod kątem 30-45° — klatka w pełni oparta, stopy stabilnie",
+      "Połóż się twarzą w dół, czoło oderwane od oparcia (szyja neutralna)",
+      "Ramiona zwisają prosto w dół, chwyt neutralny lub kciuki w górę",
+      "Ściągnij łopatki w dół i w tył przed uniesieniem",
+      "Lekkie hantle — 2-5 kg w zupełności wystarcza większości osób"
+    ],
+    "execution_cues": [
+      "Make a 'Y' — arms 30-45° away from your body line",
+      "Thumbs point up and back at the top",
+      "Lead with the pinkies on the outside of the arc",
+      "Slide shoulder blades down into back pockets",
+      "Pause 1-2 seconds in the Y, then lower slowly"
+    ],
+    "execution_cues_pl": [
+      "Utwórz literę 'Y' — ramiona 30-45° od linii tułowia",
+      "Kciuki skierowane w górę i w tył w pozycji szczytowej",
+      "Prowadź małymi palcami po zewnętrznej stronie łuku",
+      "Wsuwaj łopatki w dół do tylnych kieszeni",
+      "Zatrzymaj 1-2 sekundy w pozycji Y, potem opuszczaj powoli"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using too much weight — bending elbows and 'rowing' the dumbbells",
+        "faultPl": "Zbyt duży ciężar — uginanie łokci i 'wiosłowanie' hantlami",
+        "cause": "Ego lifting; the Y-raise is a low-load, high-quality movement, not a strength exercise",
+        "causePl": "Ego — Y-raise to ćwiczenie niskoobciążeniowe wymagające jakości, nie siły",
+        "cue": "Drop to 2-3 kg dumbbells. If your arms can't stay straight, it's too heavy.",
+        "cuePl": "Zejdź na hantle 2-3 kg. Jeśli ramiona nie mogą zostać proste, ciężar jest za duży."
+      },
+      {
+        "fault": "Shrugging — upper traps take over",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują pracę",
+        "cause": "Failure to depress scapulae before lifting; lower trap weakness",
+        "causePl": "Brak depresji łopatek przed uniesieniem; słaba dolna część czworobocznego",
+        "cue": "Press the shoulders down and away from your ears. Lower traps pull, upper traps relax.",
+        "cuePl": "Wciskaj barki w dół i odsuwaj od uszu. Dolne trapezy ciągną, górne trapezy się rozluźniają."
+      },
+      {
+        "fault": "Arching the lower back and lifting head off the pad",
+        "faultPl": "Wyginanie odcinka lędźwiowego i odrywanie głowy od oparcia",
+        "cause": "Compensating for weak posterior chain by hyper-extending; loss of cervical neutrality",
+        "causePl": "Kompensacja słabej tylnej taśmy mięśniowej przez przeprost; utrata neutralności szyi",
+        "cue": "Chin tucked, forehead just above the pad. Brace gently. The bench supports you — let it.",
+        "cuePl": "Podbródek lekko cofnięty, czoło tuż nad oparciem. Lekko napnij brzuch. Ławka cię podtrzymuje — pozwól jej."
+      },
+      {
+        "fault": "Arms going overhead at 0° (forming an 'I' instead of a 'Y')",
+        "faultPl": "Ramiona wędrujące prosto nad głowę (układ 'I' zamiast 'Y')",
+        "cause": "Confusing the Y-raise with an overhead raise; impingement risk",
+        "causePl": "Mylenie Y-raise z wznosem nad głowę; ryzyko konfliktu podbarkowego",
+        "cue": "Watch your hands in the mirror — they should travel out at a diagonal, not straight up.",
+        "cuePl": "Obserwuj dłonie w lustrze — powinny wędrować po skosie, nie prosto w górę."
+      },
+      {
+        "fault": "Rushing the rep — no pause at the top, no eccentric control",
+        "faultPl": "Pośpieszne powtórzenie — brak zatrzymania w górze, brak kontroli ekscentrycznej",
+        "cause": "Treating it like a power exercise; trying to do too many reps too fast",
+        "causePl": "Traktowanie ćwiczenia jak ruchu siłowego; próba wykonania zbyt wielu powtórzeń zbyt szybko",
+        "cue": "1-2 second hold at the top, 2-3 second negative. Quality > quantity.",
+        "cuePl": "1-2 sekundy zatrzymania w górze, 2-3 sekundy negatywu. Jakość > ilość."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric) as you form the Y. Inhale on the way down. Maintain a gentle brace — this is a low-intensity exercise; don't over-tense.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna), gdy tworzysz literę Y. Wdech podczas opuszczania. Utrzymuj lekkie napięcie — to ćwiczenie o niskiej intensywności, nie spinaj się zbyt mocno."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — stop short of full overhead Y position. Keep arms in a wider 'V' angle (45-60° from body) instead of narrow Y. Use thumbs-up grip exclusively.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj się przed pełną pozycją Y nad głową. Trzymaj ramiona w szerszym kącie 'V' (45-60° od ciała) zamiast wąskiego Y. Stosuj wyłącznie chwyt kciuki w górę.",
+      "alternative": "dumbbell-incline-t-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "caution",
+      "modification": "Y-raise is often used as rehab once acute pain subsides. In acute phase, replace with band pull-aparts or scapular wall slides. After acute phase, very light load (0.5-1 kg) and partial ROM is acceptable.",
+      "modificationPl": "Y-raise jest często stosowany jako rehabilitacja po ustąpieniu ostrego bólu. W fazie ostrej zastąp odwodzeniami z gumą lub ślizgami łopatkowymi przy ścianie. Po fazie ostrej dopuszczalne jest bardzo lekkie obciążenie (0,5-1 kg) i częściowy zakres ruchu.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "modify",
+      "modification": "AC joint compresses near top of overhead movement. Reduce ROM — stop when arms reach about 120° (not full overhead Y). Lighter load and slower tempo also reduce stress.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji blisko górnej pozycji ruchu nad głową. Zmniejsz zakres ruchu — zatrzymaj się gdy ramiona dotrą do około 120° (nie pełna pozycja Y nad głową). Lżejszy ciężar i wolniejsze tempo również zmniejszają obciążenie.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "cervical_spine_pain_or_disc_issues",
+      "severity": "caution",
+      "modification": "Prone position can stress the neck if forehead is forced onto the pad or hyperextended back. Keep cervical spine neutral with forehead floating just above the pad. If unable, switch to standing band Y-raise.",
+      "modificationPl": "Pozycja na brzuchu może obciążać szyję, jeśli czoło jest dociskane do oparcia lub odgięte do tyłu. Trzymaj odcinek szyjny neutralnie z czołem unoszącym się tuż nad oparciem. Jeśli to niemożliwe, przejdź na Y-raise z gumą stojąc.",
+      "alternative": "band-pull-apart"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x12-15 (prehab/warm-up standard) | 3-4x15-20 (posture/hypertrophy of lower traps) | 2x10 ze zatrzymaniem 3-5s w górze (postural endurance)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "dumbbell-incline-y-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-y-raise/frame_0_start.png",
+      "frames/dumbbell-incline-y-raise/frame_1_early.png",
+      "frames/dumbbell-incline-y-raise/frame_2_mid.png",
+      "frames/dumbbell-incline-y-raise/frame_3_late.png",
+      "frames/dumbbell-incline-y-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/dumbbell-incline-y-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący leży twarzą w dół (prone) na ławce skośnej ustawionej pod kątem ~30-45°, klatka w pełni oparta o ławkę, stopy stabilnie na podłodze za ławką, hantle zwisają prosto w dół po obu stronach ławki z chwytem neutralnym. Podświetlone na czerwono: dolna i środkowa część czworobocznego (trapezius lower + middle) oraz tylne aktony barków — klasyczny wzór Y-raise. Frame 2 (top): ramiona uniesione skośnym łukiem w przód i w bok pod kątem ~30-45° od linii tułowia, tworzą kształt litery 'Y' z głową ćwiczącego w środku. Łokcie praktycznie wyprostowane, kciuki skierowane w górę. Frame 4: powrót do pozycji wyjściowej z widocznym 'ghostem' fazy szczytowej po bokach. Tułów pozostaje przyklejony do ławki przez cały ruch, brak rotacji czy bujania. To NIE jest T-raise (gdzie ramiona idą czysto bokiem 90°) ani I-raise (gdzie ramiona idą prosto nad głowę 0°) — to dokładnie Y-raise z kątem 30-45°. Primary movers: trapezius lower (główny) + posterior deltoid. Płaszczyzna ruchu kombinowana transverse+sagittal, ale dominuje transverse abduction. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["prehab", "posture", "shoulders", "lower_traps", "rear_delts", "isolation", "dumbbells", "upper_body", "prone", "incline_bench", "low_load", "rehab"]
+}

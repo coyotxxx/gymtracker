@@ -1,0 +1,199 @@
+{
+  "id": "cable-reverse-crunch",
+  "name": "Cable Reverse Crunch",
+  "namePl": "Brzuszki odwrotne na wyciągu",
+  "aliases": ["cable reverse crunch", "cable lying reverse crunch", "low pulley reverse crunch", "cable hip lift", "weighted reverse crunch (cable)"],
+  "aliasesPl": ["brzuszki odwrotne na wyciągu", "cable reverse crunch", "odwrócone brzuszki z linką", "reverse crunch z wyciągiem dolnym", "brzuszki dolne na wyciągu", "zwijanie miednicy na wyciągu"],
+
+  "description": "Weighted reverse crunch performed lying supine on the floor with the feet attached to a low cable pulley via ankle straps. The constant cable tension pulls the legs away from the chest, forcing the lower abs to work against external resistance throughout the entire range of motion — not just at the top like in the bodyweight version. The lifter curls the pelvis backward and brings the knees toward the chest while resisting the pull of the cable, then lowers under control. Compared to the classic reverse crunch, the cable version adds progressive overload (you can load it like any other strength exercise), removes the dead spot at the bottom (tension never disappears), and emphasizes the lower portion of the rectus abdominis more strongly because the resistance vector matches the line of action of the lower abs.",
+  "descriptionPl": "Obciążone brzuszki odwrotne wykonywane w leżeniu na plecach z nogami przypiętymi do dolnego wyciągu przez paski na kostki. Stałe napięcie linki ciągnie nogi w kierunku przeciwnym do klatki, zmuszając dolny brzuch do pracy przeciwko zewnętrznemu oporowi w całym zakresie ruchu — nie tylko w szczycie, jak w wersji z masą własnego ciała. Ćwiczący zwija miednicę do tyłu i przyciąga kolana do klatki, opierając się sile ciągnącej linki, a następnie opuszcza pod kontrolą. W porównaniu z klasycznym reverse crunchem wersja na wyciągu dodaje progresję obciążenia (można dokładać kilogramy jak w każdym innym ćwiczeniu siłowym), eliminuje 'martwy punkt' na dole (napięcie nigdy nie znika) i mocniej akcentuje dolną część mięśnia prostego brzucha, ponieważ wektor oporu pokrywa się z linią działania dolnych włókien.",
+
+  "instructions": [
+    "Attach ankle straps to both feet and connect them to the low pulley of a cable machine via a single carabiner or a D-handle.",
+    "Lie flat on your back on the floor or a mat with your head pointing away from the cable column. Your feet should be closest to the pulley, with enough distance that the cable maintains tension in the starting position.",
+    "Press your palms into the floor by your sides for stability. Bend your knees to about 90° so thighs are roughly perpendicular to the floor — the cable should already be pulling the legs toward the pulley.",
+    "Inhale and brace the core. Press the lower back into the mat to remove any lumbar gap. This is the starting position.",
+    "Exhale and contract the lower abs to roll the pelvis off the floor, pulling the knees toward the chest against the cable's resistance. The tailbone lifts clearly off the mat.",
+    "Pause one second at the top with knees stacked above the chest, squeezing the lower abs hard.",
+    "Inhale and lower the hips back under control over 2 seconds, fighting the cable's pull on the eccentric. Do not let the cable yank the legs straight — control the negative.",
+    "Keep palms light on the floor; do not push off with them. The motion is driven by the abs against the cable, not by leg swing or upper-body compensation."
+  ],
+  "instructionsPl": [
+    "Przypnij paski na kostki do obu stóp i połącz je z dolnym wyciągiem przez pojedynczy karabińczyk lub uchwyt typu D.",
+    "Połóż się płasko na plecach na podłodze lub macie z głową skierowaną od kolumny wyciągu. Stopy powinny być najbliżej rolki, w takiej odległości, by linka utrzymywała napięcie już w pozycji wyjściowej.",
+    "Dociśnij dłonie do podłogi wzdłuż tułowia dla stabilizacji. Zegnij kolana do około 90°, tak by uda były prostopadle do podłogi — linka powinna już ciągnąć nogi w kierunku rolki.",
+    "Wdech i napnij brzuch. Wciśnij dolne plecy w matę, by zlikwidować prześwit w lędźwiach. To pozycja wyjściowa.",
+    "Z wydechem napnij dolny brzuch i zwiń miednicę nad podłogę, przyciągając kolana do klatki wbrew oporowi linki. Kość ogonowa wyraźnie odrywa się od maty.",
+    "Zatrzymaj się na sekundę w szczycie, z kolanami nad klatką, mocno spinając dolny brzuch.",
+    "Wdech i opuść biodra pod kontrolą przez 2 sekundy, walcząc z ciągiem linki w fazie ekscentrycznej. Nie pozwól, by linka wyrwała nogi do prostej — kontroluj negatyw.",
+    "Dłonie tylko leżą na podłodze — nie odpychaj się nimi. Ruch napędza brzuch przeciwko lince, nie rozpęd nóg ani kompensacja górną częścią ciała."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["hip_flexors"],
+    "stabilizers": ["obliques", "transverse_abdominis", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "hip_flexors": "S7",
+    "obliques": "T4",
+    "transverse_abdominis": "T4",
+    "serratus_anterior": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "ankle_strap"],
+    "optional": ["mat", "d_handle", "carabiner"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["reverse-crunch", "dead-bug", "lying-leg-raise"],
+    "progression_to": ["hanging-knee-raise", "hanging-leg-raise", "dragon-flag"],
+    "alternatives": ["reverse-crunch", "hanging-knee-raise", "cable-crunch", "lying-leg-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulley, ankle straps on both feet, single carabiner to the cable",
+      "Lie head-away from the pulley with the cable taut in the start position",
+      "Knees bent to 90°, thighs perpendicular, lower back pressed into the mat",
+      "Palms flat on the floor by your sides — stabilizers, not pushers",
+      "Pick a weight that lets you complete sets without losing pelvic curl"
+    ],
+    "setup_cues_pl": [
+      "Dolny wyciąg, paski na obie kostki, jeden karabińczyk do linki",
+      "Połóż się głową od rolki, z linką napiętą już w pozycji startowej",
+      "Kolana zgięte do 90°, uda prostopadle, dolne plecy wciśnięte w matę",
+      "Dłonie płasko na podłodze wzdłuż tułowia — stabilizują, nie odpychają",
+      "Dobierz ciężar tak, by przejść serię bez utraty zwijania miednicy"
+    ],
+    "execution_cues": [
+      "Roll the pelvis — tailbone toward the ceiling against the cable",
+      "Exhale sharply as the hips peel off the mat",
+      "Knees travel toward the chest, not just up toward the cable",
+      "1-second squeeze at the top — dig the lower abs in",
+      "2-second eccentric — the cable wants to rip the legs back, don't let it"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj miednicę — kość ogonowa do sufitu wbrew lince",
+      "Ostry wydech w momencie odrywania bioder od maty",
+      "Kolana wędrują w kierunku klatki, nie tylko w stronę rolki",
+      "Sekunda mocnego spięcia w szczycie — wgnieć dolny brzuch",
+      "2 sekundy ekscentryki — linka chce wyrwać nogi, ty na to nie pozwalasz"
+    ],
+    "common_faults": [
+      {
+        "fault": "Letting the cable yank the legs back — no eccentric control",
+        "faultPl": "Pozwalanie lince wyrywać nogi do tyłu — brak kontroli ekscentryki",
+        "cause": "Too heavy load relative to lower-ab strength; rushing the negative; treating the cable as a 'reset'",
+        "causePl": "Zbyt duży ciężar w stosunku do siły dolnego brzucha; pośpiech w fazie negatywnej; traktowanie linki jak 'resetu'",
+        "cue": "Pick a weight where you can lower for a full 2-count. If the cable wins, you're too heavy.",
+        "cuePl": "Wybierz ciężar, przy którym opuszczasz przez pełne 2 sekundy. Jeśli linka wygrywa — masz za ciężko."
+      },
+      {
+        "fault": "Pulling with the hip flexors — knees go up, hips never lift",
+        "faultPl": "Pociąganie zginaczami biodra — kolana idą w górę, biodra nie odrywają się",
+        "cause": "Cable load encourages hip flexion before pelvic tilt; tight psoas takes over from weak lower abs",
+        "causePl": "Obciążenie z linki prowokuje zginanie biodra przed pochyleniem miednicy; napięty mięsień biodrowo-lędźwiowy przejmuje pracę słabego dolnego brzucha",
+        "cue": "Curl the pelvis FIRST, then the knees follow. If the tailbone stays on the mat, lower the weight.",
+        "cuePl": "NAJPIERW zwijaj miednicę, potem podążają kolana. Jeśli kość ogonowa zostaje na macie — zmniejsz ciężar."
+      },
+      {
+        "fault": "Lower back arching off the mat under cable tension",
+        "faultPl": "Wyginanie dolnych pleców znad maty pod naciągiem linki",
+        "cause": "Cable pulls legs into hyperextension at the bottom; weak posterior pelvic tilt fails to anchor lumbar",
+        "causePl": "Linka ciągnie nogi w nadwyprost na dole; słabe tylne pochylenie miednicy nie utrzymuje odcinka lędźwiowego",
+        "cue": "Maintain posterior pelvic tilt the whole set — lumbar spine glued to the mat even when relaxed.",
+        "cuePl": "Utrzymuj tylne pochylenie miednicy przez całą serię — odcinek lędźwiowy przyklejony do maty nawet w rozluźnieniu."
+      },
+      {
+        "fault": "Bouncing reps using cable elastic recoil",
+        "faultPl": "Sprężynowanie powtórzeń wykorzystując efekt 'odbicia' linki",
+        "cause": "Fast tempo + dropping into the bottom; cable becomes a slingshot back to the top",
+        "causePl": "Szybkie tempo + opadanie do dołu; linka zaczyna działać jak proca odbijająca w górę",
+        "cue": "Pause 1 second at the bottom with pelvis still tilted — break the stretch reflex.",
+        "cuePl": "Pauza 1 sekunda na dole z dalej zwiniętą miednicą — przerwij odruch rozciągowy."
+      },
+      {
+        "fault": "Head and neck tucking up — cervical flexion compensation",
+        "faultPl": "Podciąganie głowy i szyi — kompensacja zgięciem szyi",
+        "cause": "Trying to 'help' the curl with upper body when lower abs fatigue under cable load",
+        "causePl": "Próba 'pomagania' w zwijaniu górą ciała, gdy dolny brzuch nie wyrabia pod obciążeniem z linki",
+        "cue": "Head stays on the mat the whole time. Fist-width gap chin to chest, eyes to the ceiling.",
+        "cuePl": "Głowa cały czas na macie. Pięść odstępu broda-klatka, wzrok w sufit."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (legs lowering away under cable tension). Forceful exhale through the concentric — biggest exhale precisely as the hips lift off the mat. Hold a light brace at the top before inhaling on the way down again.",
+    "breathingPl": "Wdech podczas ekscentryki (nogi opuszczają się pod naciągiem linki). Mocny wydech podczas fazy koncentrycznej — najmocniejszy dokładnie w momencie odrywania bioder od maty. W szczycie utrzymaj lekkie napięcie, dopiero potem wdech przy opuszczaniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded lumbar flexion plus eccentric cable pull on the legs is highly provocative for acute back pain. Switch to anti-extension work (dead bug, plank) until pain-free for 7+ days, then return to bodyweight reverse crunch first.",
+      "modificationPl": "Obciążone zginanie odcinka lędźwiowego oraz ekscentryczne ciągnięcie nóg przez linkę mocno prowokuje ostry ból pleców. Przejdź na ćwiczenia anty-ekstensji (dead bug, deska) do czasu ustąpienia bólu przez 7+ dni, a potem najpierw wróć do reverse crunch z masą własnego ciała.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Repeated loaded spinal flexion is contraindicated for active disc protrusion (McGill protocol). Use neutral-spine, anti-rotation core work instead.",
+      "modificationPl": "Powtarzane obciążone zginanie kręgosłupa jest przeciwwskazane przy aktywnej przepuklinie krążka (protokół McGilla). Zamiast tego ćwicz brzuch w neutralnej pozycji kręgosłupa, z naciskiem na anty-rotację.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "Cable resistance loads the hip flexors heavily as secondary movers and at the most stretched position. With irritated psoas/iliacus, drop the load significantly or return to bodyweight reverse crunch.",
+      "modificationPl": "Opór z linki mocno obciąża zginacze biodra jako mięśnie wspomagające w najbardziej rozciągniętej pozycji. Przy podrażnionym mięśniu biodrowo-lędźwiowym znacząco zmniejsz ciężar lub wróć do reverse crunch z masą własnego ciała.",
+      "alternative": "reverse-crunch"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Loaded pelvic curl with abdominal doming worsens midline separation (postpartum or otherwise). Address with TVA-focused breathing and dead bug progressions first — return only after diastasis closes to <2 finger-width.",
+      "modificationPl": "Obciążone zwijanie miednicy z 'kopułowaniem' brzucha pogłębia rozejście kresy białej (po ciąży lub w innych przypadkach). Najpierw popracuj nad oddychaniem z mięśniem poprzecznym brzucha i progresją dead bug — wróć dopiero, gdy rozejście zmniejszy się do <2 palców.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4x8-12 (strength) | 3x15-20 (endurance/finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-reverse-crunch.gif",
+    "frames_extracted": [
+      "frames/cable-reverse-crunch/frame_0_start.png",
+      "frames/cable-reverse-crunch/frame_1_early.png",
+      "frames/cable-reverse-crunch/frame_2_mid.png",
+      "frames/cable-reverse-crunch/frame_3_late.png",
+      "frames/cable-reverse-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/cable-reverse-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:30:00Z",
+  "verification_notes": "Obejrzałem 3 klatki GIFa jahel (start/mid/end). Klatka 0 (start): leżenie na plecach na macie z linką wyciągu dolnego dochodzącą z lewej strony kadru, doczepioną do stóp (ankle strap), nogi ugięte ~90° w kolanach z udami prostopadle do podłogi, ramiona wzdłuż tułowia, biodra na macie — czerwone podświetlenie całego rectus abdominis (z akcentem dolnym). Klatka 2 (mid): biodra wyraźnie uniesione, miednica zwinięta do tyłu, kolana ściągnięte ku klatce (uda prawie pionowo nad torsem), linka napięta i wyciągnięta — widoczne mocne spięcie dolnego brzucha pracującego przeciwko oporowi linki. Klatka 4 (end): powrót do startu z 'duchem' pozycji szczytowej w tle, linka znów w pozycji wyjściowej. Klasyfikacja: movement_pattern=core_flexion (zwijanie miednicy + zgięcie biodra), force=pull (przyciąganie kolan do klatki + zwijanie miednicy w kierunku do siebie), mechanic=isolation (rectus_abdominis jako jedyny primary, hip_flexors jako secondary; mimo dwóch zaangażowanych stawów ćwiczenie targetuje JEDEN mięsień, dlatego isolation — analogicznie do bodyweight reverse crunch w master oraz zgodnie z klasyfikacją podobnych ćwiczeń kablowych). Mięsień główny: rectus_abdominis P10 (akcent lower abs — wektor kabla pokrywa się z linią dolnych włókien, mocniej niż w wersji z masą własnego ciała). Secondary: hip_flexors S7 (znacznie bardziej zaangażowane niż w bodyweight wersji ze względu na opór w pozycji rozciągniętej). Stabilizery: obliques T4, TVA T4, serratus_anterior T2 (dodatkowa stabilizacja klatki przy 'zwijaniu' do środka). Equipment: cable_machine + ankle_strap (oba required), opcjonalnie mata, D-handle, karabińczyk. Difficulty: 5 (intermediate — wyższe niż 4 dla bodyweight reverse crunch, bo dochodzi koordynacja z oporem linki + ryzyko hiperekstensji lędźwi pod naciągiem). Nazwa PL: 'Brzuszki odwrotne na wyciągu' — najbardziej naturalna i opisowa forma w polskim środowisku fitness; aliasy obejmują anglicyzm 'cable reverse crunch' i wariant 'reverse crunch z wyciągiem dolnym'. 5 common_faults dokładnie pod specyfikę kabla: (1) brak ekscentryki — linka 'wyrywa' nogi, (2) pociąganie zginaczami zamiast zwijania miednicy, (3) hiperekstensja lędźwi pod naciągiem linki na dole, (4) sprężynowanie przez efekt 'procy' linki, (5) kompensacja głową/szyją. 4 contraindications: acute back pain (avoid), lumbar disc herniation (avoid), hip flexor strain (modify — cable mocniej obciąża psoas niż bodyweight), diastasis recti (avoid). Progresje: → hanging knee/leg raise → dragon flag. Alternatywy: bodyweight reverse crunch, hanging knee raise, cable crunch, lying leg raise. Coaching cues: 5 setup + 5 execution po PL i EN, wszystkie pisane od zera (nie tłumaczenie), z konkretami pod cable (rolka, paski, kierunek leżenia, dobór ciężaru). Wszystkie pola PL pisane od zera bez tłumaczenia maszynowego, z polską terminologią siłowni (linka, wyciąg, paski na kostki, zwijanie miednicy).",
+
+  "tags": ["cable", "core", "abs", "lower_abs", "weighted_abs", "isolation", "mat", "ankle_strap", "intermediate"]
+}

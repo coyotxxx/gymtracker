@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-incline-raise",
+  "name": "Dumbbell Incline Raise",
+  "namePl": "Wznosy z hantlami na ławce skośnej",
+  "aliases": ["incline dumbbell front raise", "reclined dumbbell front raise", "seated incline front raise", "incline bench front raise"],
+  "aliasesPl": ["wznosy hantli w przód na ławce skośnej", "front raise na ławce skośnej", "wznosy frontalne na ławce skośnej w siadzie tyłem", "wznosy przodem siedząc na skośnej"],
+
+  "description": "Front raise variant performed while reclined on an incline bench (~30-45°). The backward incline puts the shoulder into deeper extension at the bottom (dumbbells start behind the line of the torso), which dramatically increases the stretch and time under tension on the anterior deltoid compared to a standing front raise. The bench supports the lower back and removes lumbar cheat, making this a purer isolation movement. Both arms work simultaneously in the sagittal plane lifting dumbbells from beside the hips up to roughly shoulder height in front. An excellent hypertrophy exercise for anterior delt specialization.",
+  "descriptionPl": "Wariant wznosów frontalnych wykonywany w siadzie tyłem na ławce skośnej (~30-45°). Odchylenie do tyłu wprowadza staw barkowy w głębsze wyprostowanie w dolnej pozycji (hantle startują za linią tułowia), co znacząco zwiększa rozciągnięcie i czas pod napięciem dla przedniego aktonu barku w porównaniu z wersją stojącą. Oparcie stabilizuje odcinek lędźwiowy i eliminuje oszukiwanie biodrami, dzięki czemu jest to czystsza izolacja. Obie ręce pracują jednocześnie w płaszczyźnie strzałkowej, unosząc hantle z pozycji obok bioder do mniej więcej wysokości barków przed tułowiem. Doskonałe ćwiczenie hipertroficzne na specjalizację przedniego aktonu barku.",
+
+  "instructions": [
+    "Set an adjustable bench to a 30-45° incline. Sit with your back fully supported against the bench pad.",
+    "Hold a dumbbell in each hand at the sides of your hips with a neutral grip (palms facing the body) or slight pronation (palms facing back).",
+    "Plant both feet firmly on the floor. Press the head, upper back and glutes into the bench. Brace the core.",
+    "Let the arms hang relaxed down by your sides — because of the incline, the dumbbells naturally end up slightly behind the line of the torso. This is the start position.",
+    "Keeping a small fixed bend in the elbows (~10-15°), raise both dumbbells forward and upward in an arc until your arms reach roughly shoulder height (parallel to the floor).",
+    "Pause briefly at the top, feeling the squeeze in the front of the shoulder. Do not let the dumbbells touch.",
+    "Lower the dumbbells back along the same arc under control over 2-3 seconds, returning to the deep stretch position.",
+    "Keep the back glued to the bench throughout — do not arch off the pad to lift the weight.",
+    "Exhale on the way up, inhale on the way down. Maintain steady tension on the anterior deltoid without locking the elbows."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę regulowaną pod kątem 30-45°. Usiądź z plecami w pełni opartymi o oparcie ławki.",
+    "Złap hantle, trzymaj je po bokach bioder chwytem neutralnym (dłonie zwrócone do ciała) lub lekko pronowanym (dłonie zwrócone do tyłu).",
+    "Postaw obie stopy pewnie na podłodze. Dociśnij głowę, górę pleców i pośladki do ławki. Napnij brzuch.",
+    "Pozwól ramionom swobodnie zwisać po bokach — ze względu na skos ławki hantle naturalnie znajdą się lekko za linią tułowia. To pozycja wyjściowa.",
+    "Utrzymując lekkie, stałe ugięcie w łokciach (~10-15°), unieś obie hantle przodem do góry łukiem, aż ramiona dotrą mniej więcej do wysokości barków (równolegle do podłogi).",
+    "Zatrzymaj się na chwilę w górnej pozycji, czując spięcie z przodu barku. Nie pozwól by hantle stykały się.",
+    "Opuszczaj hantle tą samą drogą w sposób kontrolowany przez 2-3 sekundy, wracając do pozycji głębokiego rozciągnięcia.",
+    "Trzymaj plecy przyklejone do ławki przez cały ruch — nie wyginaj się żeby unieść ciężar.",
+    "Wydech podczas unoszenia, wdech podczas opuszczania. Utrzymuj stałe napięcie na przednim aktonie barku, nie blokuj łokci."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["lateral_deltoids", "upper_pectoralis_major", "trapezius_upper"],
+    "stabilizers": ["rotator_cuff", "serratus_anterior", "core", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "S5",
+    "upper_pectoralis_major": "S4",
+    "trapezius_upper": "S3",
+    "rotator_cuff": "T3",
+    "serratus_anterior": "T2",
+    "core": "T2",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-front-raise"],
+    "progression_to": ["cable-front-raise", "barbell-front-raise"],
+    "alternatives": ["dumbbell-front-raise", "cable-front-raise", "plate-front-raise", "barbell-front-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45° — back fully supported",
+      "Feet flat on the floor, glutes and upper back pressed into pad",
+      "Dumbbells start by the hips, slightly behind body line",
+      "Small fixed bend in elbows (~10-15°)",
+      "Brace core, no lumbar arch off the bench"
+    ],
+    "setup_cues_pl": [
+      "Ławka 30-45° — plecy w pełni oparte",
+      "Stopy płasko na podłodze, pośladki i góra pleców dociśnięte do oparcia",
+      "Hantle startują przy biodrach, lekko za linią ciała",
+      "Lekkie, stałe ugięcie łokci (~10-15°)",
+      "Napnij brzuch, nie odrywaj lędźwi od oparcia"
+    ],
+    "execution_cues": [
+      "Lift forward and up, not just up",
+      "Stop at shoulder level — no need to go higher",
+      "Feel the stretch at the bottom — that's the point of incline",
+      "Wrists neutral or slightly pronated, never supinated",
+      "Squeeze the front delt at the top for half a second"
+    ],
+    "execution_cues_pl": [
+      "Unoś do przodu i w górę, nie tylko w górę",
+      "Zatrzymaj na wysokości barków — wyżej nie potrzebujesz",
+      "Czuj rozciągnięcie w dole — to esencja wersji na skośnej",
+      "Nadgarstki neutralne lub lekko pronowane, nigdy w supinacji",
+      "Spinaj przedni akton na szczycie przez pół sekundy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Arching the lower back off the bench to lift heavier",
+        "faultPl": "Wyginanie lędźwi i odrywanie pleców od oparcia żeby unieść większy ciężar",
+        "cause": "Load too heavy — the whole point of the incline (lumbar support) is being cheated",
+        "causePl": "Zbyt duży ciężar — cały sens wersji na skośnej (stabilizacja lędźwi) jest oszukiwany",
+        "cue": "Lower the weight. Press the entire back into the bench for the full set.",
+        "cuePl": "Zmniejsz ciężar. Dociśnij całe plecy do oparcia przez całą serię."
+      },
+      {
+        "fault": "Lifting too high (above eye level)",
+        "faultPl": "Unoszenie hantli za wysoko (powyżej oczu)",
+        "cause": "Trying to feel more contraction but actually transferring work to upper traps",
+        "causePl": "Próba wyczucia mocniejszego skurczu, ale w rzeczywistości przeniesienie pracy na trapezy górne",
+        "cue": "Stop at shoulder height. Past that the anterior delt is no longer the prime mover.",
+        "cuePl": "Zatrzymaj na wysokości barków. Wyżej przedni akton barku przestaje być głównym wykonawcą."
+      },
+      {
+        "fault": "Elbow bending and unbending — pumping the dumbbell",
+        "faultPl": "Zginanie i prostowanie łokcia w trakcie ruchu — pompowanie hantlem",
+        "cause": "Weak anterior delts compensating with biceps; lack of elbow lock",
+        "causePl": "Słaby przedni akton kompensowany bicepsem; brak zablokowania kąta łokcia",
+        "cue": "Glue the elbow angle. The dumbbell travels in an arc; the elbow stays at one angle.",
+        "cuePl": "Zablokuj kąt łokcia. Hantla porusza się łukiem; łokieć pozostaje w jednym kącie."
+      },
+      {
+        "fault": "Using momentum — swinging the dumbbells up with hip thrust",
+        "faultPl": "Używanie rozpędu — zarzucanie hantli ruchem bioder",
+        "cause": "Load too heavy, lifter snaps the hips/glutes off the bench to launch the weight",
+        "causePl": "Zbyt duży ciężar, ćwiczący odrywa biodra/pośladki od ławki żeby zarzucić ciężar",
+        "cue": "Pause 1 second at the bottom. If you cannot start cleanly from a dead stop, lower the weight.",
+        "cuePl": "Zatrzymaj się 1 sekundę w dole. Jeśli nie możesz ruszyć z miejsca bez rozpędu, zmniejsz ciężar."
+      },
+      {
+        "fault": "Shrugging the shoulders during the raise",
+        "faultPl": "Wciąganie barków w trakcie unoszenia",
+        "cause": "Upper traps take over when anterior delts fatigue or are weak",
+        "causePl": "Trapezy górne przejmują ruch gdy przednie aktony są zmęczone lub słabe",
+        "cue": "Press shoulders DOWN away from ears actively before and during each rep.",
+        "cuePl": "Aktywnie odsuwaj barki W DÓŁ od uszu przed i w trakcie każdego powtórzenia."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Keep a light brace; the back stays in contact with the pad through the breathing cycle.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha; plecy pozostają w kontakcie z oparciem przez cały cykl oddechowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Front raises compress the subacromial space at the top. Reduce ROM to 70-80° (not full shoulder height). Use a neutral grip strictly and avoid pronation. Light loads (40-50% normal).",
+      "modificationPl": "Wznosy frontalne kompresują przestrzeń podbarkową w górnej pozycji. Zmniejsz zakres ruchu do 70-80° (nie do pełnej wysokości barków). Stosuj wyłącznie chwyt neutralny i unikaj pronacji. Lekkie obciążenia (40-50% normalnego).",
+      "alternative": "cable-front-raise"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid free-weight front raises during acute or symptomatic phases — the deep stretch position on the incline loads the supraspinatus tendon heavily. Substitute scapular-plane raises or cable variations at higher angles.",
+      "modificationPl": "Unikaj wznosów frontalnych z wolnym ciężarem w fazie ostrej lub objawowej — głęboko rozciągnięta pozycja na skośnej mocno obciąża ścięgno mięśnia nadgrzebieniowego. Zastąp wznosami w płaszczyźnie łopatkowej lub na wyciągu pod wyższymi kątami.",
+      "alternative": "cable-front-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "The AC joint compresses when arms cross the shoulder line. Stop the raise short of horizontal (around 70°). Keep arms at a slight angle outward rather than purely forward.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji gdy ramiona przekraczają linię barków. Zatrzymaj wznos przed poziomem (~70°). Trzymaj ramiona lekko skierowane na zewnątrz, nie czysto przodem.",
+      "alternative": "dumbbell-front-raise"
+    },
+    {
+      "condition": "anterior_shoulder_instability",
+      "severity": "modify",
+      "modification": "The deep extension at the bottom of the incline version stresses anterior capsule. Limit the bottom range — do not let the dumbbells drop behind the line of the body. Use a slighter incline (15-20°).",
+      "modificationPl": "Głębokie wyprostowanie na dole wersji na skośnej obciąża torebkę przednią. Ogranicz dolny zakres — nie pozwól hantlom opaść za linię ciała. Zastosuj mniejszy kąt ławki (15-20°).",
+      "alternative": "dumbbell-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/standard) | 3-4x12-20 (anterior delt specialization/pump) | 3x8-10 (strength-focus, rare for isolation)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "dumbbell-incline-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-raise/frame_0_start.png",
+      "frames/dumbbell-incline-raise/frame_1_early.png",
+      "frames/dumbbell-incline-raise/frame_2_mid.png",
+      "frames/dumbbell-incline-raise/frame_3_late.png",
+      "frames/dumbbell-incline-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-incline-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T05:19:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel. To wersja INCLINE FRONT RAISE (wznosy hantli przodem na ławce skośnej), NIE lateral ani rear. Frame 0 (start): ćwiczący siedzi tyłem na ławce skośnej ~30-45°, plecy oparte, hantle wiszą po bokach bioder chwytem neutralnym, podświetlony PRZEDNI akton prawego barku (czerwony). Frame 1 (early): hantle zaczynają iść do przodu i lekko w górę, prawe ramię już niżej niż 45°. Frame 2 (mid/top): obie hantle uniesione przodem do wysokości barków/oczu, ramiona równolegle do podłogi/lekko powyżej, ruch jednoznacznie w płaszczyźnie strzałkowej (przodem, nie bokiem). Frame 3 (late): hantle opuszczają się po tej samej drodze. Frame 4 (end): powrót do pozycji startowej z 'ghost' górnej fazy widoczny po lewej stronie. Plecy przyklejone do oparcia przez cały ruch. Klasyczna izolacja przedniego aktonu — sagittal plane, push force, isolation mechanic, bilateral. Schemat: incline bench + dumbbells. Wszystkie pola PL napisane od zera, nie tłumaczone z angielskiego.",
+
+  "tags": ["bodybuilding", "shoulders", "anterior_delts", "front_delts", "isolation", "dumbbells", "upper_body", "seated", "incline_bench", "hypertrophy", "anterior_delt_specialization"]
+}

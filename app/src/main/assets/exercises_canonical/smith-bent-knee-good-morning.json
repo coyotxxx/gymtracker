@@ -1,0 +1,201 @@
+{
+  "id": "smith-bent-knee-good-morning",
+  "name": "Smith Bent-Knee Good Morning",
+  "namePl": "Good morning na suwnicy Smitha z ugiętymi kolanami",
+  "aliases": ["smith machine bent-knee good morning", "smith good morning knees bent", "bent leg good morning smith"],
+  "aliasesPl": ["good morning na smith z ugiętymi kolanami", "good morning na suwnicy ugięte kolana", "smith good morning na ugiętych nogach"],
+
+  "description": "A hip-hinge movement performed in a Smith machine with the bar on the upper back (like a high-bar squat) and knees noticeably bent (~30-45°) throughout the rep — NOT kept straight as in a classic good morning. Bending the knees shifts the load off the lower back and erector spinae and onto the glutes and hamstrings, turning the lift into more of a 'glute-dominant hinge' than a back-extension exercise. The fixed bar path of the Smith machine adds stability, which is useful for beginners learning the hinge or for trainees with lower-back concerns who still want to load the posterior chain. Range of motion is limited by the locked bar path — the torso pitches forward to roughly parallel with the floor and returns by driving the hips through.",
+  "descriptionPl": "Ruch hip hinge wykonywany na suwnicy Smitha z gryfem na górnej części pleców (jak w przysiadzie high-bar) i wyraźnie ugiętymi kolanami (~30-45°) przez cały ruch — NIE prostymi jak w klasycznym good morningu. Ugięcie kolan przenosi obciążenie z dolnej części pleców i prostowników grzbietu na pośladki i dwugłowe ud, zamieniając ćwiczenie bardziej w 'glute-dominant hinge' niż w pracę prostowników grzbietu. Stała ścieżka gryfu w suwnicy Smitha daje dodatkową stabilność, co bywa pomocne dla początkujących uczących się hingu lub osób z dyskomfortem w dolnym odcinku pleców, które wciąż chcą obciążyć tylny łańcuch. Zakres ruchu jest ograniczony przez wymuszony tor gryfu — tułów pochyla się do około równolegle z podłogą i wraca przez mocne wepchnięcie bioder do przodu.",
+
+  "instructions": [
+    "Set the Smith bar at upper-chest height. Step under it and rack the bar across the upper traps / rear delts (high-bar position), grip slightly outside the shoulders, elbows down.",
+    "Rotate to unrack, stand tall with feet hip-to-shoulder-width apart, toes forward. Brace your core (Valsalva), chest up, neutral spine.",
+    "Bend the knees to about 30-45° and KEEP them in that position throughout the entire rep — this is the defining feature of the bent-knee variation.",
+    "Begin the descent by pushing the hips BACKWARD and pitching the torso forward — the bar travels straight down along the fixed Smith rails.",
+    "Lower until the torso is roughly parallel with the floor, or as far as you can go without losing the neutral spine. You should feel a strong stretch in the glutes and hamstrings.",
+    "Knees do NOT bend more during the descent — only the hips hinge. The shins stay near-vertical.",
+    "Reverse the movement by driving the hips forward and 'pulling' the torso up with the glutes and hamstrings — do NOT raise the chest first. Squeeze the glutes at the top.",
+    "Stand tall at lockout (no hyperextension), reset the brace, and start the next rep. Re-rack by rotating the bar back into the hooks."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf w suwnicy Smitha na wysokości górnej części klatki. Wejdź pod gryf i ułóż go na górnych czworobocznych / tylnych aktonach barku (pozycja high-bar), chwyt nieco na zewnątrz barków, łokcie w dół.",
+    "Przekręć gryf, by zdjąć go z haków, stań prosto, stopy na szerokość bioder do barków, palce do przodu. Napnij brzuch (Valsalva), klatka w górze, neutralny kręgosłup.",
+    "Ugnij kolana do około 30-45° i UTRZYMUJ je w tej pozycji przez całe powtórzenie — to wyróżnik wersji z ugiętymi kolanami.",
+    "Zacznij schodzenie przez wypchnięcie bioder DO TYŁU i pochylenie tułowia do przodu — gryf jedzie prosto w dół po szynach suwnicy.",
+    "Schodź aż tułów znajdzie się mniej więcej równolegle do podłogi lub tak nisko, jak utrzymasz neutralny kręgosłup. Powinieneś czuć mocny rozciąg w pośladkach i dwugłowych ud.",
+    "Kolana NIE uginają się bardziej podczas schodzenia — tylko biodra hingują. Golenie pozostają niemal pionowo.",
+    "Wróć ruchem przez wepchnięcie bioder do przodu i 'pociągnięcie' tułowia w górę pośladkami i dwugłowymi ud — NIE podnoś najpierw klatki. Ściśnij pośladki na górze.",
+    "Stań prosto na lockoucie (bez nadmiernego odgięcia), zresetuj napięcie i zacznij kolejne powtórzenie. Odłóż gryf, przekręcając go z powrotem na haki."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings"],
+    "secondary": ["erector_spinae", "adductors"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "trapezius", "rhomboids", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P8",
+    "erector_spinae": "S6",
+    "adductors": "S5",
+    "core": "S6",
+    "trapezius": "S4",
+    "quadriceps": "S3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "barbell"],
+    "optional": ["belt", "lifting_shoes", "bar_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["hip-hinge-dowel-drill", "glute-bridge", "barbell-romanian-deadlift", "good-morning"],
+    "progression_to": ["barbell-good-morning", "barbell-romanian-deadlift", "barbell-bent-knee-good-morning", "seated-good-morning"],
+    "alternatives": ["barbell-good-morning", "barbell-romanian-deadlift", "cable-pull-through", "kettlebell-rdl", "smith-rdl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps, high-bar position — not on the neck",
+      "Feet hip-to-shoulder-width, toes forward, mid-foot under the bar",
+      "Bend knees to ~30-45° BEFORE you start — and lock them there",
+      "Big breath, brace core hard (Valsalva), neutral spine",
+      "Eyes on a point 2-3 m in front of you on the floor — neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Gryf na górnych czworobocznych, pozycja high-bar — nie na karku",
+      "Stopy na szerokość bioder do barków, palce do przodu, środek stopy pod gryfem",
+      "Ugnij kolana do ~30-45° PRZED startem — i zablokuj je w tej pozycji",
+      "Głęboki wdech, mocno napnij brzuch (Valsalva), neutralny kręgosłup",
+      "Wzrok na punkt 2-3 m przed sobą na podłodze — neutralna szyja"
+    ],
+    "execution_cues": [
+      "Hips BACK, not down — feel the stretch in the glutes and hamstrings",
+      "Knees stay FROZEN at 30-45° the whole rep — only the hips move",
+      "Lower until torso is parallel to the floor or just before lumbar rounds",
+      "Drive the floor away with the heels and PUSH hips through to stand up",
+      "Squeeze glutes hard at the top — no hyperextending the lower back"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU, nie w dół — poczuj rozciąg w pośladkach i dwugłowych ud",
+      "Kolana ZAMROŻONE w 30-45° przez całe powtórzenie — tylko biodra się ruszają",
+      "Schodź aż tułów będzie równolegle do podłogi lub tuż przed zaokrągleniem lędźwi",
+      "Odepchnij się piętami od podłogi i WEPCHNIJ biodra do przodu, by się wyprostować",
+      "Mocno ściśnij pośladki na górze — bez przeprostu w odcinku lędźwiowym"
+    ],
+    "common_faults": [
+      {
+        "fault": "Squatting the movement — knees bend more during the descent",
+        "faultPl": "Wykonywanie ruchu jak przysiadu — kolana uginają się bardziej w trakcie schodzenia",
+        "cause": "Quad dominance, weak hinge pattern, copying squat technique by reflex",
+        "causePl": "Dominacja czworogłowych, słaby wzorzec hingu, odruchowe kopiowanie techniki przysiadu",
+        "cue": "Lock the knees at 30-45° BEFORE the first rep — imagine them welded. Push hips back to start the rep, not down.",
+        "cuePl": "Zablokuj kolana w 30-45° PRZED pierwszym powtórzeniem — wyobraź je sobie spawane. Zacznij ruch wypychając biodra do tyłu, nie w dół."
+      },
+      {
+        "fault": "Lower-back rounding (lumbar flexion) near the bottom",
+        "faultPl": "Zaokrąglanie dolnego odcinka pleców (zgięcie lędźwiowe) blisko dołu",
+        "cause": "Going below personal hinge depth, weak erectors, poor brace, tight hamstrings",
+        "causePl": "Schodzenie poniżej swojego zakresu hingu, słabe prostowniki, słaba stabilizacja, sztywne hamstringi",
+        "cue": "Stop when the lower back starts to round — that is YOUR depth. Reduce load, work hamstring mobility separately.",
+        "cuePl": "Zatrzymaj się, gdy lędźwie zaczynają się zaokrąglać — to jest TWÓJ zakres. Zmniejsz ciężar, pracuj nad mobilnością hamstringów osobno."
+      },
+      {
+        "fault": "Raising the chest first on the way up instead of driving hips forward",
+        "faultPl": "Podnoszenie najpierw klatki w górę zamiast wepchnięcia bioder do przodu",
+        "cause": "Erector-spinae-driven pattern, weak glutes/hamstrings, fatigue at end of set",
+        "causePl": "Wzorzec napędzany prostownikami grzbietu, słabe pośladki/hamstringi, zmęczenie pod koniec serii",
+        "cue": "Hips lead — push the floor away with heels and shoot hips FORWARD. Torso comes up as a result of hip extension.",
+        "cuePl": "Biodra prowadzą — odepchnij się piętami od podłogi i wystrzel biodra DO PRZODU. Tułów podnosi się jako efekt wyprostu biodra."
+      },
+      {
+        "fault": "Hyperextending the lower back at lockout",
+        "faultPl": "Nadmierne odgięcie lędźwi na lockoucie",
+        "cause": "Trying to 'finish' with the lower back instead of the glutes, weak glute contraction at top",
+        "causePl": "Próba 'kończenia' ruchu lędźwiami zamiast pośladkami, słaby skurcz pośladków na górze",
+        "cue": "Stand TALL, not back. Squeeze glutes and ribs down — neutral spine at the top, no leaning back.",
+        "cuePl": "Stań PROSTO, nie do tyłu. Ściśnij pośladki i ściągnij żebra w dół — neutralny kręgosłup na górze, bez odchylania."
+      },
+      {
+        "fault": "Bar set too low on the back (cervical / neck position)",
+        "faultPl": "Gryf położony zbyt nisko na plecach (na karku)",
+        "cause": "Habit from low-bar squat, poor setup, lack of upper-back muscle to create a shelf",
+        "causePl": "Nawyk z low-bar squata, słabe ustawienie, brak rozwiniętych mięśni górnego grzbietu tworzących 'półkę'",
+        "cue": "Bar on upper traps — pinch the shoulder blades, build a shelf. If it sits on the neck, raise it.",
+        "cuePl": "Gryf na górnych czworobocznych — ściśnij łopatki, zbuduj 'półkę'. Jeśli leży na karku, podnieś go wyżej."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace (Valsalva) and hold through the descent and ascent. Exhale at the top of the lockout. Reset the brace between reps for heavier loads.",
+    "breathingPl": "Głęboki wdech na górze, napięcie (Valsalva) i trzymanie przez schodzenie i wchodzenie. Wydech na szczycie lockoutu. Przy cięższych ciężarach resetuj napięcie między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded spinal flexion of any kind. Rest and consult a physiotherapist before reintroducing hip-hinge work.",
+      "modificationPl": "Unikaj jakiejkolwiek obciążonej flexji kręgosłupa. Odpocznij i skonsultuj się z fizjoterapeutą przed powrotem do hip hinge.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Bar on the back creates compression + shear under flexion — high-risk. Use cable pull-through or hip thrust instead.",
+      "modificationPl": "Gryf na plecach generuje kompresję + siły ścinające pod flexją — wysokie ryzyko. Użyj cable pull-through lub hip thrust.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "shoulder_mobility_limitations",
+      "severity": "modify",
+      "modification": "If the high-bar rack position causes shoulder pain, use a safety squat bar in a regular rack, or switch to a hinge variant where the load is in the hands (RDL).",
+      "modificationPl": "Jeśli pozycja gryfu high-bar powoduje ból barku, użyj safety squat bara w klasycznym stojaku lub przejdź na wariant z obciążeniem w rękach (RDL).",
+      "alternative": "barbell-romanian-deadlift"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Reduce the range of motion — stop well above parallel. Slightly more knee bend (closer to 45°) can also reduce hamstring tension while keeping glute load.",
+      "modificationPl": "Zmniejsz zakres ruchu — zatrzymaj się znacznie powyżej równoległej. Nieco większe ugięcie kolan (bliżej 45°) także zmniejszy napięcie hamstringów, zachowując obciążenie pośladków.",
+      "alternative": "smith-rdl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — preferred for glutes/hamstrings) | 4x6-8 (strength) | 3x12-15 (volume / glute focus)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-bent-knee-good-morning.gif",
+    "frames_extracted": [
+      "frames/smith-bent-knee-good-morning/frame_0_start.png",
+      "frames/smith-bent-knee-good-morning/frame_1_early.png",
+      "frames/smith-bent-knee-good-morning/frame_2_mid.png",
+      "frames/smith-bent-knee-good-morning/frame_3_late.png",
+      "frames/smith-bent-knee-good-morning/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-bent-knee-good-morning"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa. Frame 0 i 4: pozycja dolna — tułów pochylony do około równolegle z podłogą, gryf prowadzony pionowo po szynach suwnicy Smitha, kolana wyraźnie ugięte (~30-40°), golenie niemal pionowo. Frame 2: pozycja górna — atleta stoi prosto, gryf na górnych czworobocznych (high-bar), wciąż widoczne lekkie ugięcie kolan utrzymane jako pozycja startowa. Na klatkach mocno podświetlone na czerwono: pośladki (najmocniej — to ćwiczenie glute-dominant) oraz prostowniki grzbietu i czworoboczne; hamstringi podświetlone słabiej (kolana są ugięte, więc mniej rozciągnięcia hamstringów niż w klasycznym good morningu). Charakter ruchu: czysty hip hinge w stałym torze suwnicy Smitha. Klasyfikacja: hinge, compound, bilateral, sagittal, force=both (kombinacja ekscentryku oporowego w dół i koncentrycznego push-pull bioder w górę). Primary: glutes P9 (najmocniej obciążone wg klatki + zgodnie z mechaniką wariantu z ugiętymi kolanami) i hamstrings P8 (mniej niż w wersji z prostymi nogami, ale wciąż primary). Erector spinae S6 (znacznie mniej obciążony niż w klasycznym good morningu — to cel tej wariacji). Equipment: smith_machine + barbell. Trudność 5 (intermediate) — łatwiejsze niż wolny good morning dzięki stałemu torowi Smitha, ale wymaga zrozumienia hingu i utrzymania ugięcia kolan. Wszystkie pola PL pisane od zera, polska terminologia siłowni (hip hinge, high-bar, lockout, hamstringi, prostowniki grzbietu, suwnica Smitha).",
+
+  "tags": ["bodybuilding", "glute_focused", "posterior_chain", "hip_hinge", "smith_machine", "compound", "glute_hypertrophy", "back_friendly", "fixed_path"]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "wide-hand-push-up",
+  "name": "Wide Hand Push-Up",
+  "namePl": "Pompka chwytem szerokim",
+  "aliases": ["wide grip push-up", "wide pushup", "wide-stance push-up", "wide arm push-up"],
+  "aliasesPl": ["pompki szerokie", "pompki szerokim chwytem", "pompki w szerokim rozstawie dłoni", "pompki na szeroko"],
+
+  "description": "Bodyweight push-up variation with hands placed significantly wider than shoulder-width (typically 1.5-2x shoulder width). The wide hand position increases horizontal shoulder adduction, shifting emphasis toward the outer (sternal/lateral) fibers of the pectoralis major while reducing triceps involvement. Range of motion is shorter than in a standard push-up because the arms are already abducted, but mechanical leverage on the chest is greater — giving a strong stretch and contraction in the pecs.",
+  "descriptionPl": "Wariant pompek z masą ciała, w którym dłonie są ustawione znacznie szerzej niż barki (zwykle 1.5-2× szerokość barków). Szeroki chwyt zwiększa horyzontalne przywodzenie ramienia, przenosząc nacisk na zewnętrzne (mostkowe/boczne) włókna pectoralis major przy jednoczesnym zmniejszeniu udziału tricepsów. Zakres ruchu jest krótszy niż w klasycznej pompce, bo ramiona są już odwiedzione w bok, ale dźwignia mechaniczna na klatkę większa — daje mocne rozciągnięcie i skurcz piersiowych.",
+
+  "instructions": [
+    "Start in a high plank position. Place hands flat on the floor approximately 1.5-2x shoulder-width apart (well outside the line of your shoulders).",
+    "Fingers point forward or slightly outward (~15-30°) — choose the orientation that feels best on your wrists.",
+    "Feet together or hip-width — whatever is stable. Brace your core, squeeze glutes, body in a straight line from heels to head.",
+    "Inhale and lower your chest toward the floor in a controlled manner. Elbows will track outward more than in a standard push-up — at roughly 60-75° from torso (not full 90° T-shape).",
+    "Lower until chest is just above the floor. Range of motion will feel shorter than a regular push-up — this is normal for wide grip.",
+    "Brief pause at the bottom. Feel the stretch across the chest.",
+    "Exhale and press through your palms, driving the floor away. Squeeze the pecs at the top — imagine pulling your hands toward each other isometrically.",
+    "Lock out elbows without hyperextending. Maintain plank integrity — no sagging hips, no piked hips."
+  ],
+  "instructionsPl": [
+    "Zacznij w pozycji wysokiego planka. Połóż dłonie płasko na podłodze w rozstawie około 1.5-2× szerokości barków (wyraźnie poza linią barków).",
+    "Palce skierowane do przodu lub lekko na zewnątrz (~15-30°) — wybierz orientację, która jest najwygodniejsza dla nadgarstków.",
+    "Stopy razem lub na szerokość bioder — co stabilniejsze. Napnij brzuch, ściśnij pośladki, ciało w prostej linii od pięt do głowy.",
+    "Wdech, kontrolowanie opuszczaj klatkę w kierunku podłogi. Łokcie będą wychodzić bardziej na zewnątrz niż w klasycznej pompce — pod kątem mniej więcej 60-75° od tułowia (nie pełne 90° w kształcie litery T).",
+    "Schodź aż klatka będzie tuż nad podłogą. Zakres ruchu będzie krótszy niż w zwykłej pompce — to normalne dla szerokiego chwytu.",
+    "Krótka pauza na dole. Poczuj rozciągnięcie na klatce.",
+    "Wydech, napieraj przez wnętrza dłoni i wypchnij podłogę. Ściśnij piersiowe na górze — wyobraź sobie, że izometrycznie ściągasz dłonie do siebie.",
+    "Wyprostuj łokcie bez przeprostu. Utrzymuj integralność planka — biodra nie opadają, tyłek nie idzie do góry."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major"],
+    "secondary": ["anterior_deltoids", "triceps"],
+    "stabilizers": ["core", "glutes", "serratus_anterior", "rotator_cuff", "scapular_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "S7",
+    "triceps": "S5",
+    "serratus_anterior": "T5",
+    "core": "T5",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handles", "resistance_band", "weighted_vest"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up", "knee-push-up", "incline-push-up"],
+    "progression_to": ["weighted-wide-push-up", "decline-wide-push-up", "archer-push-up", "ring-push-up"],
+    "alternatives": ["wide-grip-bench-press", "dumbbell-fly", "cable-fly", "push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands wider than shoulders — about 1.5-2x shoulder width, well outside shoulder line",
+      "Fingers pointing forward or slightly out (~15-30°) — pick what saves your wrists",
+      "Shoulders directly over the line of the elbows, not the hands (because hands are wide)",
+      "Pre-brace plank: glutes squeezed, abs tight, straight line from heels to head",
+      "Look at a spot ~30 cm in front of hands — neutral neck"
+    ],
+    "setup_cues_pl": [
+      "Dłonie szerzej niż barki — około 1.5-2× szerokości barków, wyraźnie poza linią barków",
+      "Palce do przodu lub lekko na zewnątrz (~15-30°) — wybierz to, co oszczędza nadgarstki",
+      "Barki bezpośrednio nad linią łokci, nie dłoni (bo dłonie są szeroko)",
+      "Pre-bracing planka: pośladki ściśnięte, brzuch napięty, prosta linia od pięt do głowy",
+      "Patrz na punkt ~30 cm przed dłońmi — neutralna szyja"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — control the eccentric, feel the stretch in your chest",
+      "Chest leads down — touch floor with chest, not face",
+      "Elbows track at ~60-75° — not full 90° (still protects shoulders)",
+      "At the top: squeeze pecs together as if trying to push your hands toward each other",
+      "Range will feel shorter than normal push-up — that's the geometry, not a fault"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontroluj fazę ekscentryczną, poczuj rozciągnięcie klatki",
+      "Klatka prowadzi w dół — dotykaj podłogi klatką, nie twarzą",
+      "Łokcie pod kątem ~60-75° — nie pełne 90° (nadal chroni barki)",
+      "Na górze: ściśnij piersiowe tak, jakbyś chciał izometrycznie ściągnąć dłonie do siebie",
+      "Zakres będzie krótszy niż w normalnej pompce — to geometria, nie błąd"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flared to full 90° (T-shape)",
+        "faultPl": "Łokcie rozsunięte na pełne 90° (kształt litery T)",
+        "cause": "Treating wide push-up as 'extreme version' — pushing elbows out maximally instead of letting them track naturally",
+        "causePl": "Traktowanie szerokiej pompki jak 'skrajnej wersji' — wypychanie łokci maksymalnie zamiast pozwolenia im układać się naturalnie",
+        "cue": "Even with wide hands, elbows should be ~60-75°, not 90°. 'T-shape' pinches the shoulder capsule — protect the joint.",
+        "cuePl": "Nawet z szerokimi dłońmi łokcie powinny być pod ~60-75°, nie 90°. 'T-shape' zaciska torebkę stawową barku — chroń staw."
+      },
+      {
+        "fault": "Sagging hips (broken plank)",
+        "faultPl": "Opadające biodra (złamany plank)",
+        "cause": "Weak core, no glute engagement — wider stance makes core stability harder",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — szerszy rozstaw utrudnia stabilność tułowia",
+        "cue": "Squeeze glutes HARD before the first rep. Brace abs like getting punched. Body must stay rigid — plank first, push-up second.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed pierwszym powtórzeniem. Napnij brzuch jak na uderzenie. Ciało sztywne — najpierw plank, potem pompka."
+      },
+      {
+        "fault": "Bouncing off the bottom",
+        "faultPl": "Odbijanie się od dołu",
+        "cause": "Using momentum to skip the hardest range of motion (chest near floor) — often when fatigued",
+        "causePl": "Wykorzystywanie rozpędu do ominięcia najtrudniejszego zakresu (klatka tuż nad podłogą) — często ze zmęczenia",
+        "cue": "Pause 1 second at the bottom. If you can't press up without bouncing — stop the set, that's failure.",
+        "cuePl": "Pauza 1 sekunda na dole. Jeśli nie wyciśniesz bez odbicia — to koniec serii, to upadek mięśniowy."
+      },
+      {
+        "fault": "Wrist hyperextension or pain",
+        "faultPl": "Przeprost lub ból nadgarstków",
+        "cause": "Wide grip + flat hands forces wrist extension to ~90° — uncomfortable for many people",
+        "causePl": "Szeroki chwyt + płaskie dłonie wymusza wyprost nadgarstka do ~90° — niewygodne dla wielu osób",
+        "cue": "Rotate hands slightly outward (15-30°), use push-up handles, or close fists (knuckles down) to keep wrist neutral.",
+        "cuePl": "Obróć dłonie lekko na zewnątrz (15-30°), użyj uchwytów do pompek lub zaciśnij pięści (knykcie w dół) aby utrzymać neutralny nadgarstek."
+      },
+      {
+        "fault": "Hands placed too far forward or back",
+        "faultPl": "Dłonie ustawione za daleko do przodu lub do tyłu",
+        "cause": "Setup error — hands should be roughly under the upper chest, not under the head or under the navel",
+        "causePl": "Błąd ustawienia — dłonie powinny być z grubsza pod górą klatki, nie pod głową ani pod pępkiem",
+        "cue": "At the bottom, your chest should land between your hands (slightly behind the line of hands). If chest lands in front of hands — they're too far back.",
+        "cuePl": "Na dole klatka powinna lądować między dłońmi (lekko za linią dłoni). Jeśli klatka ląduje przed dłońmi — są za daleko z tyłu."
+      }
+    ],
+    "breathing": "Inhale during descent, brace through the bottom, exhale on the press up. For high reps, breathing can become 'breath-per-rep' near failure.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech przy wyciskaniu. Przy wysokich powtórzeniach pod koniec serii oddech może przejść w 'jeden oddech na powtórzenie'."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Wide grip stresses wrists more than standard push-ups. Use push-up handles or close fists (knuckles down) to keep wrist neutral. Rotating hands outward 15-30° also helps.",
+      "modificationPl": "Szeroki chwyt obciąża nadgarstki bardziej niż klasyczne pompki. Użyj uchwytów do pompek lub zaciśnij pięści (knykcie w dół) aby utrzymać neutralny nadgarstek. Pomaga też obrócenie dłoni na zewnątrz o 15-30°.",
+      "alternative": "dumbbell-fly"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Wide grip + flared elbows is the highest-risk push-up variation for impingement. If pain in any range — switch to narrower grip or open-chain alternative.",
+      "modificationPl": "Szeroki chwyt + rozsunięte łokcie to najbardziej ryzykowna wersja pompek dla impingementu. Jeśli boli w jakimkolwiek zakresie — przejdź na węższy chwyt lub alternatywę open-chain.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "avoid",
+      "modification": "Horizontal adduction under load aggravates AC joint pathology. Avoid wide grip — switch to neutral grip variations (e.g. floor press with dumbbells).",
+      "modificationPl": "Horyzontalne przywodzenie pod obciążeniem nasila patologię stawu AC. Unikaj szerokiego chwytu — przejdź na warianty z chwytem neutralnym (np. floor press z hantlami).",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Wider stance makes core stability harder; sagging hips load the lumbar. If you can't hold a rigid plank — regress to incline wide push-ups (hands on bench).",
+      "modificationPl": "Szerszy rozstaw utrudnia stabilność tułowia; opadające biodra obciążają odcinek lędźwiowy. Jeśli nie utrzymasz sztywnej planki — wróć do szerokich pompek na podwyższeniu (dłonie na ławce).",
+      "alternative": "incline-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-20 (hypertrophy) | 3x8-12 with weighted vest (strength) | AMRAP for conditioning/endurance",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "wide-hand-push-up.gif",
+    "frames_extracted": [
+      "frames/wide-hand-push-up/frame_0_start.png",
+      "frames/wide-hand-push-up/frame_1_early.png",
+      "frames/wide-hand-push-up/frame_2_mid.png",
+      "frames/wide-hand-push-up/frame_3_late.png",
+      "frames/wide-hand-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/wide-hand-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wysokiego planka, dłonie ustawione bardzo szeroko (wyraźnie poza linią barków, ~1.5-2× szerokości barków), ramiona wyprostowane, ciało w prostej linii. Pectoralis major (cała powierzchnia mostkowa) podświetlony na anatomii. Frame 2 (mid): głębokie opuszczenie — klatka tuż nad podłogą, łokcie ułożone bardziej na zewnątrz niż w klasycznej pompce (~60-75° od tułowia, nie pełne 90°), klatka piersiowa silnie aktywowana (cały pectoralis major podświetlony — zarówno mostkowe jak i zewnętrzne włókna), serratus widoczny w tle. Frame 4 (end): powrót do pozycji wyjściowej (zamknięcie cyklu). Szerokie ustawienie dłoni i mocna aktywacja klatki spójne z biomechaniką wide push-up — większy nacisk na pectoralis major (zewnętrzne włókna), mniejszy udział tricepsa (krótszy ROM, mniejsza ekstensja w łokciu). Wszystkie pola PL napisane od zera w polskim standardzie fitness. Bodyweight ekwiwalent wide-grip bench press.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "outer_chest", "home_workout", "no_equipment", "beginner_friendly", "pec_isolation"]
+}

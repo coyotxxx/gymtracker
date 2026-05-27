@@ -1,0 +1,199 @@
+{
+  "id": "cable-lateral-pulldown-with-rope-attachment",
+  "name": "Cable Lat Pulldown with Rope Attachment (Seated)",
+  "namePl": "Przyciąganie do klatki z liną na wyciągu",
+  "aliases": ["rope lat pulldown", "seated rope pulldown", "cable lat pulldown rope", "rope attachment lat pulldown", "lat pulldown with rope"],
+  "aliasesPl": ["ściąganie liny na wyciągu górnym", "lat pulldown z liną", "ściąganie liny do klatki siedząc", "wyciąg górny z liną", "przyciąganie liny do klatki"],
+
+  "description": "Seated lat pulldown variant performed with a rope attachment instead of a straight bar. The rope allows the hands to separate at the bottom of the pull and the wrists to assume a more natural neutral position, which typically gives a slightly longer range of motion at peak contraction and a more comfortable elbow path. Sit on the bench with thighs secured under the pads, grab the rope with palms facing each other, and pull the rope down toward the upper chest while the rope ends drift outward toward the shoulders. Excellent lat width and mid-back hypertrophy builder for lifters whose wrists/elbows dislike a fixed bar.",
+  "descriptionPl": "Wariant siedzącego lat pulldown wykonywany z liną zamiast prostego drążka. Lina pozwala dłoniom rozdzielić się na dole ruchu, a nadgarstkom przyjąć bardziej naturalną neutralną pozycję, co zwykle daje nieco dłuższy zakres ruchu w skurczu szczytowym i wygodniejszą trajektorię łokci. Usiądź na ławce z udami zablokowanymi pod wałkami, złap linę dłońmi skierowanymi do siebie i przyciągnij linę w dół do górnej części klatki, podczas gdy końce liny rozchodzą się na zewnątrz w kierunku ramion. Doskonały budulec szerokości najszerszych i hipertrofii środka grzbietu dla osób, których nadgarstki/łokcie nie tolerują sztywnego drążka.",
+
+  "instructions": [
+    "Attach a rope to the high pulley of a lat pulldown machine. Set the thigh pad to lock you in firmly.",
+    "Stand up, grab the rope with both hands palms facing each other (neutral grip), then sit down letting the cable pull your arms overhead.",
+    "Secure your thighs under the pads. Feet flat, torso slightly leaned back (~10-15°), chest up, core braced.",
+    "Start position: arms fully extended overhead, hands close together holding the rope, lats stretched, shoulder blades slightly elevated by cable load — actively depress the scapulae to engage lats.",
+    "Initiate the pull by driving elbows DOWN AND BACK toward your ribs. As the rope descends, allow your hands to separate so each end of the rope is pulled toward the corresponding shoulder.",
+    "Pull until the rope ends reach roughly the level of your upper chest / front of shoulders, with hands flared outward (palms now facing your torso). Elbows finish at or slightly behind the plane of the body.",
+    "End position: rope ends near upper chest/shoulders with separation, lats maximally contracted, shoulder blades depressed and retracted, chest up.",
+    "Reverse SLOWLY — let arms travel back overhead with full control, bringing the hands back together at the top, until you feel a deep stretch in the lats.",
+    "Full ROM each rep: deep overhead stretch with hands together → strong contraction at the chest with hands flared apart.",
+    "Maintain upright torso throughout — minimal swinging, no kipping with the hips."
+  ],
+  "instructionsPl": [
+    "Załóż linę na górny wyciąg maszyny lat pulldown. Ustaw wałek udowy tak by mocno cię blokował.",
+    "Wstań, złap linę obiema dłońmi skierowanymi do siebie (chwyt neutralny), następnie usiądź pozwalając linie pociągnąć twoje ręce nad głowę.",
+    "Zablokuj uda pod wałkami. Stopy płasko na podłodze, tułów lekko odchylony do tyłu (~10-15°), klatka wypchnięta, brzuch napięty.",
+    "Pozycja startowa: ręce w pełnym wyproście nad głową, dłonie blisko siebie trzymające linę, najszersze rozciągnięte, łopatki lekko podniesione przez obciążenie — aktywnie opuść łopatki by włączyć najszersze.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w kierunku żeber. Gdy lina opada, pozwól dłoniom rozdzielić się tak by każdy koniec liny ciągnął się do odpowiedniego barku.",
+    "Ciągnij do momentu gdy końce liny dotrą mniej więcej na wysokość górnej części klatki / przodu barków, z dłońmi rozchylonymi na zewnątrz (dłonie teraz skierowane do tułowia). Łokcie kończą na linii ciała lub lekko za nią.",
+    "Pozycja końcowa: końce liny przy górnej klatce/barkach z rozdzieleniem, najszersze maksymalnie skurczone, łopatki opuszczone i ściągnięte, klatka wypchnięta.",
+    "Wracaj POWOLI — pozwól rękom wędrować nad głowę z pełną kontrolą, łącząc dłonie z powrotem na górze, aż poczujesz głębokie rozciągnięcie najszerszych.",
+    "Pełen ROM w każdym powtórzeniu: głębokie rozciągnięcie w górze z dłońmi razem → mocny skurcz przy klatce z dłońmi rozchylonymi.",
+    "Utrzymuj wyprostowany tułów cały czas — minimalne bujanie, bez wspomagania biodrami."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["teres_major", "biceps_brachii", "rhomboids", "trapezius_middle_lower"],
+    "stabilizers": ["posterior_deltoid", "core", "rotator_cuff", "forearms", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "teres_major": "S8",
+    "biceps_brachii": "S7",
+    "rhomboids": "S7",
+    "trapezius_middle_lower": "S7",
+    "posterior_deltoid": "S5",
+    "forearms": "S5",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["lat_pulldown_machine", "rope_attachment", "thigh_pad"],
+    "optional": ["chalk", "wrist_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["seated-cable-row", "straight-arm-pulldown"],
+    "progression_to": ["lat-pulldown", "neutral-grip-lat-pulldown", "pull-up", "weighted-pull-up"],
+    "alternatives": ["lat-pulldown", "neutral-grip-lat-pulldown", "cable-lat-pulldown-full-range-of-motion", "v-bar-lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Rope attached to high pulley, thigh pad locked down",
+      "Neutral grip — palms facing each other on the rope",
+      "Thighs anchored, feet flat, slight torso lean back ~10-15°",
+      "Arms fully overhead, hands close together at the start",
+      "Shoulder blades actively depressed before first rep"
+    ],
+    "setup_cues_pl": [
+      "Lina założona na górny wyciąg, wałek udowy zablokowany",
+      "Chwyt neutralny — dłonie skierowane do siebie na linie",
+      "Uda zablokowane, stopy płasko, lekkie odchylenie tułowia ~10-15°",
+      "Ręce w pełnym wyproście nad głową, dłonie blisko siebie na starcie",
+      "Łopatki aktywnie opuszczone przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN AND BACK — let the rope follow",
+      "Spread the rope as you pull — hands flare to shoulders",
+      "Rope ends finish at upper chest with separation, elbows past the ribs",
+      "Control the eccentric — slow return, hands come back together at the top",
+      "Stay tall — no swinging, lats do the work not the hips"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ I DO TYŁU — lina podąża za łokciami",
+      "Rozciągaj linę podczas ciągu — dłonie rozchodzą się do barków",
+      "Końce liny kończą przy górnej klatce z rozdzieleniem, łokcie za żebrami",
+      "Kontroluj fazę ekscentryczną — powolny powrót, dłonie wracają razem na górze",
+      "Stój wyprostowany — bez bujania, pracują najszersze a nie biodra"
+    ],
+    "common_faults": [
+      {
+        "fault": "Not separating the rope ends at the bottom (using rope like a bar)",
+        "faultPl": "Brak rozdzielania końców liny na dole (używanie liny jak drążka)",
+        "cause": "Habit from straight bar pulldown, no intentional outward flare",
+        "causePl": "Nawyk z lat pulldown na drążku, brak świadomego rozchylenia na zewnątrz",
+        "cue": "Whole point of the rope is the flare. Actively pull rope ends APART as you descend — each hand to its own shoulder.",
+        "cuePl": "Cały sens liny to rozchylenie. Aktywnie rozdzielaj końce liny na zewnątrz podczas opadania — każda dłoń do swojego barku."
+      },
+      {
+        "fault": "Biceps-dominant pull (pulling with arms, not lats)",
+        "faultPl": "Ciąg dominowany przez bicepsy (ciąganie ramionami, nie najszerszymi)",
+        "cause": "No scapular initiation, focus on hands instead of elbows",
+        "causePl": "Brak inicjacji łopatkami, skupienie na dłoniach zamiast łokciach",
+        "cue": "Think 'elbows to the floor', not 'hands to the chest'. Depress shoulder blades FIRST in every rep.",
+        "cuePl": "Myśl 'łokcie do podłogi', nie 'dłonie do klatki'. Opuść łopatki NAJPIERW w każdym powtórzeniu."
+      },
+      {
+        "fault": "Cutting ROM at the top (no full overhead stretch)",
+        "faultPl": "Skracanie ROM w górze (brak pełnego rozciągnięcia nad głową)",
+        "cause": "Avoiding the hardest stretched position, weight too heavy",
+        "causePl": "Unikanie najtrudniejszej pozycji rozciągniętej, za duże obciążenie",
+        "cue": "Hands together, arms fully extended overhead, lats long. If you can't reach it with control — drop the weight.",
+        "cuePl": "Dłonie razem, ręce w pełnym wyproście nad głową, najszersze wydłużone. Jeśli nie osiągasz tego z kontrolą — zmniejsz ciężar."
+      },
+      {
+        "fault": "Excessive torso swing / leaning back to pull more weight",
+        "faultPl": "Nadmierne bujanie tułowia / odchylanie do tyłu by pociągnąć większy ciężar",
+        "cause": "Ego lifting, weak lats, weight too heavy",
+        "causePl": "Ego, słabe najszersze, za duże obciążenie",
+        "cue": "Lock torso angle at ~10-15° lean. If you swing past 30° you turned this into a row. Reduce load by 20%.",
+        "cuePl": "Zablokuj kąt tułowia na ~10-15° odchylenia. Jeśli bujasz powyżej 30° zamieniłeś to w wiosłowanie. Zmniejsz obciążenie o 20%."
+      },
+      {
+        "fault": "Letting cable yank arms up uncontrolled on the way back",
+        "faultPl": "Pozwalanie linie szarpać ramiona w górę bez kontroli w powrocie",
+        "cause": "Skipping the eccentric, losing lat tension",
+        "causePl": "Pomijanie fazy ekscentrycznej, utrata napięcia najszerszych",
+        "cue": "2 seconds up, fight the rope. Keep tension in the lats from contraction to full stretch.",
+        "cuePl": "2 sekundy w górę, walcz z liną. Utrzymuj napięcie w najszerszych od skurczu do pełnego rozciągnięcia."
+      }
+    ],
+    "breathing": "Inhale at the top overhead stretch. Exhale during the pull down. Inhale on the controlled return overhead.",
+    "breathingPl": "Wdech w pozycji rozciągnięcia nad głową. Wydech podczas ciągu w dół. Wdech podczas kontrolowanego powrotu nad głowę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce overhead ROM — start the pull from a position just above the shoulders instead of full overhead. The neutral rope grip is already shoulder-friendly.",
+      "modificationPl": "Zmniejsz ROM w górze — zaczynaj ciąg od pozycji tuż nad barkami zamiast pełnego nad głową. Chwyt neutralny liny jest już przyjazny dla barków.",
+      "alternative": "neutral-grip-lat-pulldown"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded overhead positions until cleared. Switch to seated row patterns or low-pulley work first.",
+      "modificationPl": "Unikaj pozycji nad głową pod obciążeniem do wyleczenia. Przejdź na wzorce wiosłowania siedząc lub pracę na dolnym wyciągu.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Use straps to reduce grip stress. Lower weight 30-40% and focus on driving with elbows, not pulling with hands.",
+      "modificationPl": "Użyj pasków by zmniejszyć napięcie chwytu. Zmniejsz obciążenie o 30-40% i skup się na napieraniu łokciami, nie na ciągu dłońmi.",
+      "alternative": "straight-arm-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4 x 10-15 (hypertrophy) | 4 x 8-12 (general) | 3 x 12-20 (lat focus / pump finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-lateral-pulldown-with-rope-attachment.gif",
+    "frames_extracted": [
+      "frames/cable-lateral-pulldown-with-rope-attachment/frame_0_start.png",
+      "frames/cable-lateral-pulldown-with-rope-attachment/frame_1_early.png",
+      "frames/cable-lateral-pulldown-with-rope-attachment/frame_2_mid.png",
+      "frames/cable-lateral-pulldown-with-rope-attachment/frame_3_late.png",
+      "frames/cable-lateral-pulldown-with-rope-attachment/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-lateral-pulldown-with-rope-attachment"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frames potwierdzają SEATED lat pulldown na klasycznej maszynie lat pulldown z linowym attachementem (rope) zamiast prostego drążka. Frame 0/4 (start/end): osoba siedzi na ławce z udami zablokowanymi pod wałkami, ręce w pełnym wyproście nad głową, dłonie blisko siebie trzymając linę pionowo nad głową. Frames 1/3 (early/late): faza ciągu — łokcie schodzą w dół i lekko na zewnątrz, dłonie zaczynają się rozdzielać. Frame 2 (mid/bottom): końce liny przyciągnięte do górnej klatki / przodu barków, dłonie wyraźnie rozdzielone z chwytem neutralnym skierowanym do tułowia, łopatki ściągnięte. Lats podświetlone mocno + środkowy/dolny trapezius + romboidy. Equipment: lat_pulldown_machine + rope_attachment + thigh_pad (NIE cable_crossover jak full-ROM dual cable). Plane: frontal — końce liny rozchodzą się na boki w płaszczyźnie czołowej podczas skurczu (główna różnica vs straight bar gdzie pull jest sagittal). Difficulty 3 — bardzo dostępne, łatwiejsze niż straight-bar lat pulldown bo neutralny chwyt łagodniejszy dla nadgarstków/łokci. Primary tylko latissimus_dorsi zgodnie z briefem, biceps przeniesione do secondary (biceps zaangażowany ale rope/neutral grip lekko zmniejsza jego dźwignię vs supinated bar grip).",
+
+  "tags": ["cable", "rope", "compound", "upper_body", "vertical_pull", "back", "lats", "hypertrophy", "neutral_grip", "seated", "lat_width", "beginner_friendly"]
+}

@@ -1,0 +1,197 @@
+{
+  "id": "assisted-sit-up",
+  "name": "Assisted Sit-Up",
+  "namePl": "Sit-up asystowany — z przytrzymaniem stóp",
+  "aliases": ["partner-assisted sit-up", "feet-held sit-up", "anchored sit-up", "buddy sit-up", "foot-pinned sit-up"],
+  "aliasesPl": ["sit-up z asystą", "sit-up z partnerem", "sit-up z trzymaniem stóp", "brzuszki z asystą", "brzuszki pełne z partnerem", "sit-up zakotwiczony", "sit-up testowy"],
+
+  "description": "Classic full sit-up performed with the feet anchored — most commonly by a partner kneeling at the lifter's feet and gripping the ankles, but the same effect can be achieved with a foam roller, a loaded barbell, the bottom rung of a wall ladder or a dedicated ab-bench foot pad. Anchoring the feet lets the lifter complete the full range of motion (torso from supine to roughly vertical, ~90° hip flexion) by recruiting the hip flexors heavily — which is exactly the point: it offloads some of the work from a weak rectus abdominis and lets a beginner finish reps they could not finish unassisted. Standard tool for early core training, military / academy fitness tests, and as a way to keep training around the lower back when bracing alone is not yet sufficient.",
+  "descriptionPl": "Klasyczny pełny sit-up wykonywany z zakotwiczonymi stopami — najczęściej z partnerem klęczącym przy stopach ćwiczącego i trzymającym kostki, ale ten sam efekt da się uzyskać przy pomocy rolki piankowej, sztangi z ciężarem, dolnego szczebla drabinki przy ścianie lub specjalnej podpórki w ławce do brzucha. Zakotwiczenie stóp pozwala ćwiczącemu wykonać pełen zakres ruchu (tułów z leżenia do pozycji niemal pionowej, ok. 90° zgięcia w biodrze) dzięki mocnemu zaangażowaniu zginaczy biodra — i to jest jego główny sens: część pracy odbiera słabemu mięśniowi prostemu brzucha i pozwala początkującemu dokończyć powtórzenia, których nie skończyłby bez asysty. Standardowe narzędzie wstępnego treningu brzucha, testów sprawnościowych (wojsko, akademie, służby) oraz sposób, by trenować mięśnie tułowia gdy samo napięcie brzucha jeszcze nie wystarcza.",
+
+  "instructions": [
+    "Lie supine on a mat with the knees bent at roughly 90° and the feet flat on the floor, hip-width apart. A partner kneels at your feet and grips both ankles firmly, pressing them into the floor (alternatively: hook the feet under a heavy object — foam roller against a wall, loaded barbell, or the bottom rung of a wall ladder).",
+    "Place your fingertips lightly at the sides of your head with the elbows pointing out to the sides. Do not lace fingers behind the head.",
+    "Inhale, lightly brace the abs and press the lower back into the mat to remove the lumbar arch.",
+    "Exhale and curl the torso upward — first chin to chest, then peel the shoulder blades, then the mid-back, then the lower back off the floor. Continue lifting until the torso is roughly vertical and the elbows approach the knees (full sit-up position).",
+    "Pause for a moment at the top, squeeze the abs hard, then inhale and lower the torso under control — vertebra by vertebra — until the upper back touches the floor again.",
+    "Begin the next rep without a long rest. The feet remain anchored throughout the entire set — they should not lift off the floor at any point."
+  ],
+  "instructionsPl": [
+    "Połóż się na plecach na macie z kolanami ugiętymi pod kątem ok. 90° i stopami płasko na podłodze, rozstaw na szerokość bioder. Partner klęka przy twoich stopach i mocno chwyta obie kostki, dociskając je do podłogi (alternatywnie: zaczep stopy o ciężki przedmiot — rolka piankowa oparta o ścianę, sztanga z ciężarem albo dolny szczebel drabinki przy ścianie).",
+    "Połóż palce lekko po bokach głowy, łokcie skieruj na zewnątrz. Nie splataj palców za głową.",
+    "Wdech, lekko napnij brzuch i dociśnij dolne plecy do maty, likwidując łuk w odcinku lędźwiowym.",
+    "Wydech — zwiń tułów do góry: najpierw broda do klatki, potem oderwij łopatki, środek pleców, na końcu dolne plecy. Unoś się aż tułów osiągnie pozycję niemal pionową, a łokcie zbliżą się do kolan (pełna pozycja sit-upa).",
+    "Zatrzymaj się na chwilę w szczycie, mocno ściśnij brzuch, następnie wdech i opuść tułów kontrolowanie — kręg po kręgu — aż górna część pleców ponownie dotknie podłogi.",
+    "Rozpocznij kolejne powtórzenie bez długiej przerwy. Stopy pozostają zakotwiczone przez całą serię — w żadnym momencie nie powinny unieść się od podłogi."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["hip_flexors", "obliques"],
+    "stabilizers": ["transverse_abdominis", "quadriceps", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "hip_flexors": "S8",
+    "obliques": "S5",
+    "transverse_abdominis": "T4",
+    "quadriceps": "T3",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat", "partner", "foam_roller", "barbell", "wall_ladder", "ab_bench"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["crunch", "dead-bug"],
+    "progression_to": ["sit-up-with-arms-on-chest", "full-sit-up", "weighted-sit-up", "decline-sit-up"],
+    "alternatives": ["crunch", "3-4-sit-up", "sit-up-with-arms-on-chest", "flexion-leg-sit-up-bent-knee"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Knees bent ~90°, feet flat and hip-width apart",
+      "Partner kneels at the feet, hands cupped firmly around both ankles",
+      "Fingertips lightly at the sides of the head — no lacing behind the head",
+      "Lower back lightly pressed to the mat at the start",
+      "Inhale and pre-brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Kolana ugięte ok. 90°, stopy płasko, rozstawione na szerokość bioder",
+      "Partner klęka przy stopach, dłonie mocno obejmują obie kostki",
+      "Palce lekko po bokach głowy — nie splataj ich za głową",
+      "Dolne plecy lekko dociśnięte do maty na starcie",
+      "Wdech i wstępne napięcie brzucha przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Curl up vertebra by vertebra — chin first, then shoulders, then ribs, then hips",
+      "Exhale forcefully through the concentric to the top",
+      "Drive the elbows toward the knees, not the head toward the knees",
+      "Lower under control — 2 second eccentric, don't drop and bounce",
+      "Anchor energy down through the heels — let the partner hold the feet, not push the body up"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj się kręg po kręgu — najpierw broda, potem barki, żebra, na końcu biodra",
+      "Mocny wydech podczas fazy koncentrycznej (w drodze do góry)",
+      "Prowadź łokcie do kolan, a nie głowę do kolan",
+      "Opuszczaj kontrolowanie — 2 sekundy ekscentryki, nie opadaj swobodnie i nie odbijaj",
+      "Kieruj energię w dół przez pięty — niech partner trzyma stopy, a nie wypycha tobą do góry"
+    ],
+    "common_faults": [
+      {
+        "fault": "Yanking the head forward with the hands / neck strain",
+        "faultPl": "Szarpanie głowy do przodu rękami / nadwyrężanie szyi",
+        "cause": "Hands behind the head used as a lever when the abs fatigue and the hip flexors take over",
+        "causePl": "Ręce za głową używane jako dźwignia, gdy brzuch się męczy, a pracę przejmują zginacze biodra",
+        "cue": "Rest fingertips lightly at the temples — if you can pull on them, you're cheating. Even better: cross arms on the chest.",
+        "cuePl": "Trzymaj palce lekko przy skroniach — jeśli możesz pociągnąć, oszukujesz. Jeszcze lepiej: skrzyżuj ramiona na klatce."
+      },
+      {
+        "fault": "Whole-body swinging / using momentum from the hip flexors",
+        "faultPl": "Kołysanie całym ciałem / wykorzystywanie rozpędu zginaczy biodra",
+        "cause": "Anchored feet make it easy to throw yourself up by snapping at the hip instead of curling the spine — abs barely work",
+        "causePl": "Zakotwiczone stopy ułatwiają wyrzucanie tułowia do góry szarpnięciem w biodrze zamiast zwijaniem kręgosłupa — brzuch ledwie pracuje",
+        "cue": "2 seconds up, 1 second pause at top, 2 seconds down. The first movement should be the chin tucking, not the hip snapping. If you can't, regress to crunch or 3/4 sit-up.",
+        "cuePl": "2 sekundy w górę, 1 sekunda pauzy w szczycie, 2 sekundy w dół. Pierwszy ruch to dociągnięcie brody do klatki, a nie szarpnięcie w biodrze. Jeśli nie dasz rady — wróć do brzuszka lub sit-upa 3/4."
+      },
+      {
+        "fault": "Lumbar spine arching off the floor at the start",
+        "faultPl": "Łuk lędźwiowy odrywa się od podłogi na starcie",
+        "cause": "Tight hip flexors and weak abs — the pelvis tilts forward and the lower back loses contact with the mat",
+        "causePl": "Napięte zginacze biodra i słaby brzuch — miednica przechyla się do przodu, dolne plecy tracą kontakt z matą",
+        "cue": "Before every rep press the navel down to the mat and exhale to flatten the back. If the arch keeps returning, switch to a knees-up variation or a crunch.",
+        "cuePl": "Przed każdym powtórzeniem dociśnij pępek do maty i wykonaj wydech, by spłaszczyć plecy. Jeśli łuk wraca, przejdź na wariant z kolanami w górze albo na brzuszek."
+      },
+      {
+        "fault": "Partner pulling on the ankles / pinning too aggressively",
+        "faultPl": "Partner ciągnie za kostki / dociska zbyt mocno",
+        "cause": "Partner overshoots — pulls the legs toward themselves or sits on the feet — distorting the lifter's pelvic position",
+        "causePl": "Partner przesadza — ciąga nogi w swoją stronę lub siada na stopach — zaburzając pozycję miednicy ćwiczącego",
+        "cue": "Partner just holds — doesn't pull. Hands cup the ankles, body weight presses straight down into the floor, knees stay 90°.",
+        "cuePl": "Partner tylko trzyma — nie ciągnie. Dłonie obejmują kostki, ciężar ciała wciska je prosto w podłogę, kolana zostają zgięte 90°."
+      },
+      {
+        "fault": "Over-relying on the assist — never progressing off it",
+        "faultPl": "Nadmierne poleganie na asyście — brak progresji bez niej",
+        "cause": "Comfortable doing 30 reps with anchored feet but unable to do 5 unassisted — the assist became permanent",
+        "causePl": "Komfortowe 30 powtórzeń z trzymanymi stopami, ale brak siły na 5 bez asysty — asysta stała się stała",
+        "cue": "Assisted is a tool, not a destination. Every few weeks test an unassisted set — when you can do 8–10 clean, retire the assist and switch to sit-up with arms on chest or 3/4 sit-up.",
+        "cuePl": "Asysta to narzędzie, nie cel. Co kilka tygodni przetestuj serię bez asysty — gdy zrobisz czysto 8–10, odstaw asystę i przejdź na sit-up z rękami na klatce lub sit-up 3/4."
+      }
+    ],
+    "breathing": "Inhale at the bottom (relaxed, lower back on the mat). Forceful exhale through the concentric curl to the top — emphasises rectus abdominis contraction and helps compress the rib cage toward the pelvis. Re-inhale on the way down.",
+    "breathingPl": "Wdech w dolnej pozycji (rozluźnienie, dolne plecy na macie). Mocny wydech podczas zwijania w górę — podkreśla skurcz mięśnia prostego brzucha i pomaga ścisnąć klatkę piersiową w stronę miednicy. Ponowny wdech podczas opuszczania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Repeated full spinal flexion with anchored feet loads the lumbar spine and overloads the hip flexors that attach to the lumbar vertebrae — pain can flare. Switch to anti-extension core work (planks, dead bug) until pain-free for 2 weeks.",
+      "modificationPl": "Powtarzane pełne zginanie kręgosłupa z zakotwiczonymi stopami obciąża odcinek lędźwiowy i nadmiernie aktywuje zginacze biodra przyczepione do kręgów lędźwiowych — ból może się nasilić. Przejdź na ćwiczenia anty-ekstensji (deska, dead bug) do 2 tygodni bez bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Anchored sit-ups are one of the more aggravating spinal flexion movements (McGill protocol contraindicates them in disc protrusion). Use neutral-spine alternatives (planks, side planks, bird-dog).",
+      "modificationPl": "Sit-upy z zakotwiczonymi stopami to jeden z bardziej drażniących wariantów zginania kręgosłupa (protokół McGilla wyklucza je przy przepuklinie dysku). Użyj alternatyw w neutralnym kręgosłupie (deska, deska boczna, ptak-pies).",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "modify",
+      "modification": "Anchored feet shift load to the iliopsoas — irritating an already strained hip flexor. Switch to a crunch (shoulder-blade-only lift, no hip involvement) until the strain is fully healed.",
+      "modificationPl": "Zakotwiczone stopy przenoszą obciążenie na mięsień biodrowo-lędźwiowy — drażni już naciągnięty zginacz biodra. Przejdź na brzuszek (uniesienie tylko łopatek, bez zaangażowania bioder) do całkowitego wygojenia naciągnięcia.",
+      "alternative": "crunch"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Rectus abdominis curling can worsen midline separation (postpartum or otherwise). Get cleared by a pelvic-floor physio first; start with transverse-abdominis exercises (dead bug, heel slides) and a heel-slide progression.",
+      "modificationPl": "Zwijanie mięśnia prostego brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Najpierw uzyskaj zgodę fizjoterapeuty dna miednicy; zacznij od ćwiczeń mięśnia poprzecznego brzucha (dead bug, ślizgi pięt).",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy) | 3x15-25 (endurance) | 1xAMRAP in 2 min (fitness test) | 3x8-12 (early-stage core training)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "assisted-sit-up.gif",
+    "frames_extracted": [
+      "frames/assisted-sit-up/frame_0_start.png",
+      "frames/assisted-sit-up/frame_1_early.png",
+      "frames/assisted-sit-up/frame_2_mid.png",
+      "frames/assisted-sit-up/frame_3_late.png",
+      "frames/assisted-sit-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/assisted-sit-up",
+    "yuhonas_id": "Assisted_Sit_Up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T22:59:00Z",
+  "verification_notes": "Obejrzałem 4 klatki (frame_0_start, frame_1_early, frame_2_mid, frame_4_end). Klatka 0 (start/dół): ćwiczący leży na plecach z kolanami ugiętymi ok. 90°, stopy płasko na podłodze, ramiona po bokach głowy; partner klęczy u stóp z obiema dłońmi obejmującymi kostki ćwiczącego — to klasyczny anchor stóp. Anatomia podświetla mięsień prosty brzucha na całej długości. Klatka 1 (early): ćwiczący na początku fazy koncentrycznej, tułów ledwo uniesiony, partner trzyma stopy w tej samej pozycji. Klatka 2 (mid/szczyt): pełen sit-up — tułów niemal pionowy, klatka blisko ud, łokcie skierowane do kolan, partner wciąż utrzymuje kostki dociśnięte do podłogi. Klatka 4 (end): powrót do leżenia (widoczny 'ghost' fazy szczytowej). Ruch potwierdzony: pełen sit-up z zakotwiczonymi stopami przez asystę partnera. Klasyfikacja: core_flexion (zgięcie kręgosłupa + zgięcie w biodrze do ~90°), compound (dwa segmenty: kręgosłup + biodro), bodyweight, beginner difficulty 3 (asysta obniża próg wejścia). Force=both — koncentryczna faza pull (skurcz brzucha + iliopsoas), ale ekscentryczna kontrolowana faza to opór wagi tułowia, więc obie fazy istotne. Mięsień główny rectus_abdominis P9 (głównie zwijanie kręgosłupa) + hip_flexors S8 wyższe niż w 3/4 sit-up (S7) bo asysta i pełny zakres aktywują iliopsoas bardziej (właśnie to charakteryzuje asystowany sit-up — kompensacja słabego core), obliques S5, transverse_abdominis T4. Nazwa PL: 'Sit-up asystowany — z przytrzymaniem stóp' (formuła z myślnikiem oddająca naturę asysty), aliasy: sit-up z partnerem, sit-up testowy (bo standardowy w testach sprawnościowych wojska/akademii). Progresja: po opanowaniu → sit-up-with-arms-on-chest (bez asysty) → full-sit-up → decline-sit-up → weighted-sit-up. Regresja: crunch / dead-bug (bez pełnego sit-upa). Equipment.optional: dodałem partner, foam_roller, barbell, wall_ladder, ab_bench — wszystkie typowe sposoby zakotwiczenia stóp (nie tylko partner). Specyfika asysty: kontrowersyjne ćwiczenie w środowisku ortopedycznym (McGill je odradza, hip_flexor strain częsta przeciwwskazanie), ale standardowe w testach fitness — w common_faults dodałem ostrzeżenie 'over-relying on assist' jako 5. błąd. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "beginner_friendly", "fitness_test", "military_style", "partner_exercise", "regression_friendly", "hip_flexors", "home_workout"]
+}

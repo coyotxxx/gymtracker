@@ -1,0 +1,202 @@
+{
+  "id": "assisted-lying-leg-raise-with-lateral-throw-down",
+  "name": "Assisted Lying Leg Raise with Lateral Throw Down",
+  "namePl": "Asystowany leg raise z lateralnym zrzutem nóg",
+  "aliases": ["partner lateral throw down leg raise", "side throw down leg raise", "lateral leg throw downs", "partner side leg throw down", "oblique throw down"],
+  "aliasesPl": ["asystowany wznos nóg z bocznym zrzutem", "leg throw down z rzutem w bok", "boczne throw downs z partnerem", "wznosy nóg z bocznym rzutem partnera", "lateralny throw down nóg"],
+
+  "description": "Partner-assisted core exercise emphasizing reactive eccentric overload across both sagittal and frontal planes. The lifter lies supine on the floor with the head close to a standing partner's feet, gripping the partner's ankles or calves for anchoring. The lifter drives straight legs vertically up to the partner's hands; the partner then forcefully throws the legs back down — but alternately to the LEFT, RIGHT, or center on an unpredictable cadence. Because the lateral throw introduces a frontal-plane component, the lifter must decelerate the legs with rectus abdominis AND simultaneously resist rotation/lateral collapse with the obliques. The unpredictable direction forces reactive core stabilization — the body cannot pre-program the brace, so motor unit recruitment spikes. The set ends when the lifter can no longer keep the lumbar spine flat or stop the heels above the floor.",
+  "descriptionPl": "Ćwiczenie brzucha z partnerem, które łączy obciążenie ekscentryczne w płaszczyźnie strzałkowej i czołowej. Ćwiczący leży na plecach, głową przy stopach stojącego partnera, chwytając jego kostki lub łydki dla stabilizacji. Wyprowadza wyprostowane nogi pionowo w stronę dłoni partnera, a ten energicznie rzuca je w dół — naprzemiennie w LEWO, w PRAWO lub na środek, w nieprzewidywalnej kolejności. Boczny rzut wprowadza komponent w płaszczyźnie czołowej, więc ćwiczący musi hamować nogi mięśniem prostym brzucha I jednocześnie opierać się rotacji i bocznemu zapadaniu skośnymi. Nieprzewidywalny kierunek wymusza reaktywną stabilizację corsetu — ciało nie może z góry zaprogramować napięcia, przez co rekrutacja jednostek motorycznych gwałtownie wzrasta. Serię kończysz, gdy nie utrzymujesz już płaskich lędźwi lub gdy pięty zaczynają dotykać podłogi.",
+
+  "instructions": [
+    "Lie flat on your back on the floor with your head almost touching the partner's feet. The partner stands at your head, feet shoulder-width apart, knees slightly bent for stability.",
+    "Reach overhead and firmly grip the partner's ankles or lower calves with both hands. This anchors your torso so the lateral throws can't drag your shoulders off the floor.",
+    "Press your lower back into the floor — no lumbar gap. Brace 360° (front, sides, back). Keep the legs together and straight, toes slightly pointed.",
+    "Exhale and drive both straight legs together to vertical — feet pointing toward the partner's hands.",
+    "The partner grabs your ankles at the top and throws them down LATERALLY — alternating left, right, or center on an unpredictable cadence. You do not know which direction is coming.",
+    "Decelerate the legs with the lower abs and obliques: resist the downward AND sideways component. Stop the heels 5-15 cm above the floor without letting them swing past your shoulder line.",
+    "Without pausing, return the legs to vertical on a clean diagonal line (no rotation of the pelvis off the floor) for the next throw."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach na podłodze, tak by głowa znajdowała się prawie przy stopach partnera. Partner stoi przy twojej głowie, stopy na szerokość barków, kolana lekko ugięte dla stabilności.",
+    "Sięgnij rękami nad głową i mocno chwyć kostki lub dolne partie łydek partnera obiema dłońmi. To zakotwicza tułów, by boczne rzuty nie ściągnęły ci barków z podłogi.",
+    "Dociśnij dolne plecy do podłogi — żadnego prześwitu w lędźwiach. Napnij brzuch 360° (przód, boki, tył). Nogi razem, proste, stopy lekko wyciągnięte.",
+    "Z wydechem wyprowadź obie wyprostowane nogi razem do pionu — stopy skierowane w stronę dłoni partnera.",
+    "Partner łapie kostki w szczycie i rzuca je w dół LATERALNIE — naprzemiennie w lewo, w prawo lub na środek, w nieprzewidywalnej kolejności. Nie wiesz, w którą stronę poleci nogi.",
+    "Wyhamuj nogi dolnym brzuchem i skośnymi: opieraj się ruchowi w dół ORAZ komponentowi bocznemu. Zatrzymaj pięty 5-15 cm nad podłogą, nie pozwalając im wyjść poza linię barków.",
+    "Bez pauzy wyprowadź nogi z powrotem do pionu po czystej linii (bez odrywania bioder od podłogi) na kolejny rzut."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "multi",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "obliques"],
+    "secondary": ["hip_flexors", "erector_spinae"],
+    "stabilizers": ["transverse_abdominis", "quadratus_lumborum", "adductors", "quadriceps", "latissimus_dorsi", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "obliques": "P9",
+    "hip_flexors": "S8",
+    "erector_spinae": "S6",
+    "transverse_abdominis": "T7",
+    "quadratus_lumborum": "T6",
+    "adductors": "T5",
+    "quadriceps": "T4",
+    "latissimus_dorsi": "T4",
+    "serratus_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "partner"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["assisted-lying-leg-raise-with-throw-down", "lying-leg-raise", "russian-twist", "side-plank", "dead-bug"],
+    "progression_to": ["dragon-flag", "hanging-windshield-wiper", "toes-to-bar", "weighted-hanging-leg-raise"],
+    "alternatives": ["assisted-lying-leg-raise-with-throw-down", "hanging-windshield-wiper", "lying-windshield-wiper", "russian-twist", "side-plank-with-leg-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Head right at partner's feet — grip the ankles tight, elbows tucked",
+      "Lumbar glued to the floor — your low back should not see daylight at any point",
+      "Legs zipped together, knees locked, toes pointed",
+      "Eyes up and forward — watch the partner's hands, but trust the reaction, don't try to predict",
+      "Partner: stand stable, hips square, ready to redirect force to either side"
+    ],
+    "setup_cues_pl": [
+      "Głowa tuż przy stopach partnera — chwyć kostki mocno, łokcie blisko ciała",
+      "Lędźwie przyklejone do podłogi — nie ma momentu, w którym dolne plecy odstają od ziemi",
+      "Nogi sklejone razem, kolana zablokowane, stopy wyciągnięte",
+      "Oczy w górę i do przodu — obserwuj dłonie partnera, ale ufaj reakcji, nie próbuj zgadywać",
+      "Partner: stój stabilnie, biodra ustawione równo, gotowy by skierować rzut w którąkolwiek stronę"
+    ],
+    "execution_cues": [
+      "Drive the legs up with the abs — not by pulling on the partner",
+      "Hit a clean vertical at the top — square hips, no rotation",
+      "When the throw goes sideways, fight TWO directions: down (abs) and across (obliques)",
+      "Keep both hips on the floor — if one hip lifts, the lateral component just won",
+      "Stop the descent before the heels cross the shoulder line — heels never touch and never swing past"
+    ],
+    "execution_cues_pl": [
+      "Wyprowadzaj nogi w górę brzuchem — nie pociąganiem za partnera",
+      "Wejdź w czysty pion na górze — biodra równo, bez rotacji",
+      "Gdy rzut idzie w bok, walcz w DWÓCH kierunkach: w dół (brzuch) i w bok (skośne)",
+      "Trzymaj oba biodra na podłodze — jeśli jedno biodro się unosi, komponent boczny właśnie wygrał",
+      "Zatrzymaj opadanie zanim pięty przekroczą linię barków — pięty nie dotykają i nie wychodzą za bok"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hip lifts off the floor on the side the legs are thrown to",
+        "faultPl": "Biodro odrywa się od podłogi po stronie, w którą partner rzucił nogi",
+        "cause": "Obliques fail to resist the frontal-plane force, so the pelvis rotates with the legs — load shifts off the abs onto the lumbar spine and QL",
+        "causePl": "Mięśnie skośne nie utrzymują siły bocznej, więc miednica obraca się razem z nogami — obciążenie przechodzi z brzucha na odcinek lędźwiowy i mięsień czworoboczny lędźwi",
+        "cue": "Glue BOTH glutes to the floor. Partner: throw lighter to that side until the lifter can hold the pelvis flat.",
+        "cuePl": "Przyklej OBA pośladki do podłogi. Partner: rzucaj słabiej w tę stronę, aż ćwiczący utrzyma miednicę płasko."
+      },
+      {
+        "fault": "Lumbar spine arches when the legs go low and sideways",
+        "faultPl": "Wygięcie odcinka lędźwiowego, gdy nogi schodzą nisko i w bok",
+        "cause": "Combined low position + lateral pull overloads the lower abs/obliques — the spine extends and shears to compensate, risking disc strain",
+        "causePl": "Połączenie niskiej pozycji i bocznego ciągnięcia przeciąża dolny brzuch i skośne — kręgosłup wygina się i ścina kompensacyjnie, ryzykując przeciążenie krążków",
+        "cue": "Catch the legs earlier — stop the descent at 30-45° instead of going all the way down until the brace holds.",
+        "cuePl": "Łap nogi wyżej — zatrzymuj opadanie na 30-45° zamiast schodzić do końca, dopóki nie utrzymasz napięcia."
+      },
+      {
+        "fault": "Knees bend during the lateral throw down",
+        "faultPl": "Zginanie kolan w trakcie bocznego rzutu w dół",
+        "cause": "Bent knees shorten the lever and turn the exercise into a side knee tuck — much easier, but offloads the obliques and rectus abdominis",
+        "causePl": "Zgięte kolana skracają dźwignię i zmieniają ćwiczenie w boczne przyciąganie kolan — dużo łatwiejsze, ale odciąża skośne i mięsień prosty brzucha",
+        "cue": "Lock the knees straight from rep 1. Heels lead the arc — long lever, full work.",
+        "cuePl": "Trzymaj kolana wyprostowane od pierwszego powtórzenia. Pięty prowadzą łuk — długa dźwignia, pełna praca."
+      },
+      {
+        "fault": "Heels swing past the shoulder line on the lateral catch",
+        "faultPl": "Pięty wychodzą poza linię barków przy bocznym łapaniu",
+        "cause": "Eccentric obliques fail — the legs swing out wider than the torso, putting a torque load on SI joint and lumbar facets",
+        "causePl": "Praca ekscentryczna skośnych zawodzi — nogi wychodzą szerzej niż tułów, generując moment skręcający na stawie krzyżowo-biodrowym i stawach lędźwiowych",
+        "cue": "Define a corridor — heels stay between your two shoulders. If they pass, partner throws lighter and shorter.",
+        "cuePl": "Wyznacz korytarz — pięty zostają między linią twoich barków. Jeśli wychodzą, partner rzuca słabiej i krócej."
+      },
+      {
+        "fault": "Lifter pre-tenses to one side anticipating the throw",
+        "faultPl": "Ćwiczący napina się asymetrycznie w przewidywaniu kierunku rzutu",
+        "cause": "Anticipating the direction defeats the reactive-stability purpose; one-sided bracing causes early oblique fatigue on the favored side and weak response on the other",
+        "causePl": "Przewidywanie kierunku niweczy cel ćwiczenia, którym jest reaktywna stabilizacja — jednostronne napinanie szybko męczy skośne po preferowanej stronie i pozostawia słabą reakcję po drugiej",
+        "cue": "Brace 360° — equal tension all around. Let the partner be unpredictable; you stay symmetric.",
+        "cuePl": "Napnij 360° — równe napięcie ze wszystkich stron. Pozwól partnerowi być nieprzewidywalnym; ty pozostań symetryczny."
+      }
+    ],
+    "breathing": "Forceful exhale as the legs drive up to vertical. Brief inhale at the top before the partner throws. Hold a light brace through the eccentric lateral throw down to maximize intra-abdominal pressure and protect the spine against the lateral shear. Exhale again on the next concentric up.",
+    "breathingPl": "Mocny wydech podczas wyprowadzania nóg do pionu. Krótki wdech w szczycie, zanim partner rzuci. W trakcie bocznego ekscentryku utrzymaj lekkie spięcie, by maksymalizować ciśnienie wewnątrzbrzuszne i chronić kręgosłup przed bocznymi siłami ścinającymi. Kolejny wydech przy następnym ruchu w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "The combined eccentric + lateral load on a straight-leg lever generates high shear and torque on the lumbar spine. Avoid until pain-free for 14+ days; rebuild with anti-extension and anti-rotation work first.",
+      "modificationPl": "Połączenie obciążenia ekscentrycznego i bocznego na długiej dźwigni prostych nóg generuje wysokie siły ścinające i skręcające na lędźwiach. Unikaj do ustąpienia bólu na 14+ dni; odbuduj najpierw przez anty-ekstensję i anty-rotację.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Unpredictable lateral throws can drive flexion + rotation through a vulnerable disc — strictly contraindicated for active herniation. Train with neutral-spine isometrics only.",
+      "modificationPl": "Nieprzewidywalne boczne rzuty mogą generować zgięcie i rotację przez podrażniony krążek — bezwzględne przeciwwskazanie przy aktywnej przepuklinie. Trenuj wyłącznie izometryki z neutralnym kręgosłupem.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "si_joint_dysfunction",
+      "severity": "avoid",
+      "modification": "Lateral throw down asymmetrically loads one SI joint per rep — likely to flare symptoms. Replace with symmetric core work (planks, bird-dog) until stable.",
+      "modificationPl": "Lateralny rzut obciąża asymetrycznie staw krzyżowo-biodrowy w każdym powtórzeniu — najprawdopodobniej zaostrzy objawy. Zastąp symetryczną pracą corsetu (deski, bird-dog) do czasu stabilizacji.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "caution",
+      "modification": "Straight-leg eccentric overload heavily taxes psoas/iliacus, especially in the lateral catch. With irritated hip flexors regress to bent-knee variants or reverse crunch.",
+      "modificationPl": "Ekscentryczne obciążenie prostych nóg mocno angażuje mięsień biodrowo-lędźwiowy, zwłaszcza w bocznym łapaniu. Przy podrażnionych zginaczach biodra cofnij się do wariantów z ugiętymi kolanami lub brzuszków odwrotnych.",
+      "alternative": "reverse-crunch"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per side (reactive core finisher) | 4x6-10 (oblique hypertrophy) | 3x30-45s AMRAP (conditioning)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "assisted-lying-leg-raise-with-lateral-throw-down.gif",
+    "frames_extracted": [
+      "frames/assisted-lying-leg-raise-with-lateral-throw-down/frame_0_start.png",
+      "frames/assisted-lying-leg-raise-with-lateral-throw-down/frame_1_early.png",
+      "frames/assisted-lying-leg-raise-with-lateral-throw-down/frame_2_mid.png",
+      "frames/assisted-lying-leg-raise-with-lateral-throw-down/frame_3_late.png",
+      "frames/assisted-lying-leg-raise-with-lateral-throw-down/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/assisted-lying-leg-raise-with-lateral-throw-down"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem 5 klatek GIFa (start/early/mid/late/end) plus porównałem z wariantem bazowym (assisted-lying-leg-raise-with-throw-down) by uchwycić różnice. Klatka 0 (start): ćwiczący leży płasko na plecach, ramiona wyciągnięte nad głowę chwytają kostki/łydki partnera stojącego nad jego głową; nogi proste w pozycji poziomej; cały rectus abdominis czerwony plus widoczna aktywacja bocznej części tułowia (obliques). Klatka 1 (early): nogi uniesione do pionu, partner pochyla się i łapie kostki, nogi zaczynają wychodzić DIAGONALNIE — widoczny boczny komponent (różnica vs standardowy throw down, gdzie ruch jest czysto pionowy). Centralna dolna część brzucha + boki tułowia podświetlone. Klatka 2 (mid): MOMENT KLUCZOWY — nogi rzucone wyraźnie w bok i w dół, czerwone podświetlenie wyraźnie ZA-środkowe, obejmuje boczną część rectus + obliques (asymetryczne obciążenie). Klatka 3 (late): nogi wracają do osi po bocznym rzucie — widoczna 'rotacja' przez tułów którą core musi opanować. Klatka 4 (end): powrót do startu, z 'duchem' faz pośrednich. Ruch klasyczny: partner-assisted reactive leg throw down z DODATKIEM komponentu bocznego — partner rzuca nogi naprzemiennie lewo/prawo/środek, ćwiczący musi reagować ekscentrycznie zarówno w płaszczyźnie strzałkowej (rectus abdominis hamuje opadanie) jak i czołowej (obliques hamują boczne wahnięcie). Klasyfikacja: core_flexion (z komponentem anty-lateral flexion / anty-rotation), force=both (concentric up + heavy eccentric down/side), mechanic=compound (rectus_abdominis + obliques jako dwa primary), plane=multi (sagittal + frontal), kinetic_chain=open (nogi swobodne). Primary muscles: rectus_abdominis P9 i obliques P9 (wariant z bocznym rzutem promuje obliques z stabilizatora do primary względem standardowego throw-down). Secondary: hip_flexors S8 (długa dźwignia prostych nóg + asymetryczne ekscentryczne hamowanie), erector_spinae S6 (anty-flexion stabilizacja przy bocznym wychylaniu nóg). Stabilizatory: transverse_abdominis T7 (intra-abdominal pressure), quadratus_lumborum T6 (anty-lateral flexion miednicy), adductors T5 (trzymanie nóg razem podczas asymetrycznego rzutu), quadriceps T4 (kolana zablokowane), latissimus_dorsi T4 (kotwiczenie ramion za partnera), serratus_anterior T3 (stabilizacja łopatek). Equipment: bodyweight + partner (wymagany żywy człowiek), mata opcjonalnie. Difficulty: 8 (advanced — wyższe niż wariant podstawowy z difficulty 7, ze względu na dodatkowy reactive frontal-plane challenge i większe ryzyko dla SI joint / lumbar przy nieprzygotowanym corsecie). Wymaga jako prerequisite opanowania standardowego throw-down. Nazwa PL od zera: 'Asystowany leg raise z lateralnym zrzutem nóg' (zachowuje slang 'leg raise' i 'lateralny zrzut' często używane na siłowniach). 5 specyficznych common_faults dla wariantu bocznego: (1) odrywanie biodra po stronie rzutu — kluczowy fault unikalny dla tego ćwiczenia, (2) wygięcie lędźwi przy niskim+bocznym położeniu, (3) zginanie kolan, (4) pięty wychodzą poza linię barków, (5) anticipacyjne asymetryczne napinanie. 4 contraindications: acute back, disc herniation, SI joint dysfunction (DODANE specyficznie dla wariantu lateralnego — nieobecne w standardowym throw-down), hip flexor strain. Progresje: dragon-flag, hanging-windshield-wiper, toes-to-bar, weighted-hanging-leg-raise. Alternatywy: standardowy throw-down (regresja), windshield wipers (podobny pattern), russian-twist, side-plank-with-leg-raise. Cały opis PL napisany od zera bez tłumaczenia maszynowego, z polskim słownictwem fitness ('zrzut nóg', 'sklejone razem', 'walcz w dwóch kierunkach', 'przyklej oba pośladki').",
+
+  "tags": ["bodyweight", "partner", "core", "abs", "obliques", "lower_abs", "compound", "eccentric", "reactive", "anti_rotation", "anti_lateral_flexion", "lateral", "straight_leg", "advanced_core", "plyometric_eccentric"]
+}

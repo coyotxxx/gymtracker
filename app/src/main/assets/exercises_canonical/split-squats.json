@@ -1,0 +1,206 @@
+{
+  "id": "split-squats",
+  "name": "Split Squat",
+  "namePl": "Przysiad rozkroczny",
+  "aliases": ["static lunge", "stationary lunge", "split squat bodyweight", "static split squat"],
+  "aliasesPl": ["split squat", "wykrok statyczny", "wykrok w miejscu", "przysiad rozkroczny w miejscu"],
+
+  "description": "Unilateral lower-body compound exercise performed in a stationary split stance — one leg planted forward, the other behind, feet do not move between reps. The athlete lowers straight down by bending both knees until the front thigh is roughly parallel to the floor and the back knee hovers just above the ground, then drives back up through the front heel. Unlike walking or forward lunges, the body stays in place, which removes the step component and lets the lifter focus purely on knee flexion/extension and stability. Bodyweight variant — foundation for all loaded lunge progressions. Heavily trains the front leg quadriceps and glutes; the rear leg works mostly as a kickstand and stabilizer.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała wykonywane w stacjonarnej pozycji rozkrocznej — jedna noga z przodu, druga z tyłu, stopy nie przemieszczają się między powtórzeniami. Trenujący opuszcza ciało prosto w dół zginając oba kolana aż przednie udo będzie mniej więcej równoległe do podłogi, a tylne kolano zawiśnie tuż nad ziemią, po czym wraca w górę przez piętę przedniej nogi. W przeciwieństwie do wykroków idących czy w przód, ciało zostaje w miejscu, co eliminuje element kroku i pozwala skupić się czysto na zginaniu/prostowaniu kolana oraz stabilności. Wariant z masą własną — fundament dla wszystkich obciążonych progresji wykroków. Mocno angażuje czworogłowe i pośladki przedniej nogi; tylna noga pracuje głównie jako podpórka i stabilizator.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Step one leg back about 60-90 cm (roughly 1.5 normal step lengths). The back heel stays lifted, weight on the ball of the back foot.",
+    "Front foot planted flat, toes pointing forward. The two feet should be on parallel lines (about hip-width apart laterally), not on a tightrope.",
+    "Stack hips and shoulders square to the front. Brace your core, chest up, gaze forward. Hands can rest on hips or hang at sides.",
+    "Inhale and lower straight down by bending both knees simultaneously. The torso stays vertical — do not lean forward.",
+    "Descend until the front thigh is parallel to the floor and the back knee hovers 2-3 cm above the ground. Front knee approaches roughly 90° of flexion.",
+    "Pause briefly at the bottom — no bouncing off the floor with the back knee.",
+    "Drive back up by pushing through the front heel and mid-foot. Exhale through the hardest part of the ascent.",
+    "Return to the start position with both legs extended. The feet do NOT come together — stay in the split stance for all reps on this side.",
+    "Complete all reps on one side, then switch legs and repeat for the other side.",
+    "Keep tempo controlled: 2 seconds down, 1 second pause, 1-2 seconds up."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Cofnij jedną nogę o około 60-90 cm (mniej więcej 1,5 długości normalnego kroku). Tylna pięta uniesiona, ciężar na śródstopiu tylnej nogi.",
+    "Przednia stopa płasko na podłodze, palce skierowane w przód. Obie stopy powinny stać na równoległych liniach (mniej więcej na szerokość bioder w bok), nie na linii prostej.",
+    "Biodra i barki ustawione frontalnie do przodu. Napnij brzuch, klatka w górze, wzrok prosto. Ręce mogą leżeć na biodrach lub zwisać przy bokach.",
+    "Wdech i opuszczanie prosto w dół przez jednoczesne zginanie obu kolan. Tułów zostaje pionowy — nie pochylaj się w przód.",
+    "Schodź aż przednie udo będzie równoległe do podłogi, a tylne kolano zawiśnie 2-3 cm nad ziemią. Przednie kolano zbliża się do około 90° zgięcia.",
+    "Krótka pauza w dolnej pozycji — bez odbijania tylnym kolanem od podłogi.",
+    "Wypchnij się w górę przez piętę i środek stopy przedniej nogi. Wydech w najtrudniejszej części wychodzenia.",
+    "Wróć do pozycji startowej z wyprostowanymi obiema nogami. Stopy NIE łączą się — zostają w rozkroku przez wszystkie powtórzenia na tej stronie.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień nogi i powtórz na drugą stronę.",
+    "Utrzymuj kontrolowane tempo: 2 sekundy w dół, 1 sekunda pauzy, 1-2 sekundy w górę."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "calves", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "core": "S5",
+    "gluteus_medius": "S6",
+    "calves": "T4",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-squat"],
+    "progression_to": ["bulgarian-split-squat", "weighted-split-squat", "barbell-split-squat", "deficit-split-squat"],
+    "alternatives": ["lunge", "bulgarian-split-squat", "reverse-lunge", "bodyweight-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Set the split stance long enough — front shin should be vertical at the bottom",
+      "Feet on two parallel lines (hip-width apart laterally), not on a single line",
+      "Back heel lifted, weight on the ball of the back foot",
+      "Hips and shoulders square to the front — no rotation",
+      "Brace the core, chest tall, gaze forward at eye level"
+    ],
+    "setup_cues_pl": [
+      "Ustaw rozkrok wystarczająco długi — piszczel przedniej nogi pionowa na dole",
+      "Stopy na dwóch równoległych liniach (szerokość bioder w bok), nie na jednej linii",
+      "Tylna pięta uniesiona, ciężar na śródstopiu tylnej nogi",
+      "Biodra i barki frontalnie do przodu — brak rotacji",
+      "Napięty brzuch, klatka w górze, wzrok prosto na wysokości oczu"
+    ],
+    "execution_cues": [
+      "Drop straight down — not forward",
+      "Back knee toward the floor, not back behind you",
+      "Front knee tracks over the second toe, not collapsing inward",
+      "Push the floor away through the front heel on the way up",
+      "Tempo: 2 down, 1 pause, 1-2 up — control the eccentric"
+    ],
+    "execution_cues_pl": [
+      "Schodź prosto w dół — nie w przód",
+      "Tylne kolano w dół do podłogi, nie w tył",
+      "Przednie kolano w linii drugiego palca, nie zapada się do środka",
+      "Odpychaj podłogę piętą przedniej nogi w drodze w górę",
+      "Tempo: 2 w dół, 1 pauza, 1-2 w górę — kontroluj fazę negatywną"
+    ],
+    "common_faults": [
+      {
+        "fault": "Front knee crosses past the toes",
+        "faultPl": "Przednie kolano przekracza linię palców",
+        "cause": "Stride too short or pushing the knee forward instead of dropping straight down. Loads the patellar tendon excessively.",
+        "causePl": "Za krótki rozkrok lub wypychanie kolana do przodu zamiast schodzenia prosto w dół. Nadmiernie obciąża ścięgno rzepki.",
+        "cue": "Step the back foot further back, lower the back knee straight toward the floor",
+        "cuePl": "Cofnij tylną stopę dalej w tył, opuszczaj tylne kolano prosto w dół"
+      },
+      {
+        "fault": "Insufficient depth (knee bends less than 90°)",
+        "faultPl": "Niedostateczna głębokość (kolano zgięte mniej niż 90°)",
+        "cause": "Weak quads at deep ranges, limited hip mobility, or fear of the position",
+        "causePl": "Słabe czworogłowe w głębokich zakresach, ograniczona mobilność bioder lub strach przed pozycją",
+        "cue": "Lower the back knee until it hovers 2-3 cm above the floor — front thigh parallel to ground",
+        "cuePl": "Opuść tylne kolano aż zawiśnie 2-3 cm nad podłogą — przednie udo równolegle do ziemi"
+      },
+      {
+        "fault": "Stride too short — turns into a quarter squat on one leg",
+        "faultPl": "Za krótki krok — zamienia się w ćwierć-przysiad na jednej nodze",
+        "cause": "Underestimating the stride length needed for proper depth",
+        "causePl": "Niedoszacowanie długości rozkroku potrzebnej do prawidłowej głębokości",
+        "cue": "Stride about 1.5x your normal walking step. Front shin vertical at the bottom = correct length.",
+        "cuePl": "Rozkrok około 1,5 razy dłuższy niż normalny krok. Pionowa piszczel przedniej nogi na dole = poprawna długość."
+      },
+      {
+        "fault": "Back knee too far from the floor at bottom",
+        "faultPl": "Tylne kolano za daleko od podłogi na dole",
+        "cause": "Cutting depth short, leaning forward instead of dropping straight down, or weak quads",
+        "causePl": "Skracanie głębokości, pochylanie się w przód zamiast schodzenia prosto w dół lub słabe czworogłowe",
+        "cue": "Aim to touch the floor lightly with the back knee — or use a small pad to mark depth",
+        "cuePl": "Celuj lekko dotknąć podłogi tylnym kolanem — lub użyj małej podkładki jako wyznacznika głębokości"
+      },
+      {
+        "fault": "Torso leans forward",
+        "faultPl": "Tułów pochyla się do przodu",
+        "cause": "Weak core, tight hip flexors of the back leg, or compensation for weak quads",
+        "causePl": "Słaby brzuch, sztywne zginacze biodra tylnej nogi lub kompensacja słabych czworogłowych",
+        "cue": "Chest tall, eyes on a point at eye level. Imagine a string pulling the top of the head up.",
+        "cuePl": "Klatka w górze, wzrok na punkt na wysokości oczu. Wyobraź sobie nitkę ciągnącą czubek głowy w górę."
+      }
+    ],
+    "breathing": "Inhale at the top before descending, brace the core. Hold the breath through the descent and the hardest part of the ascent (a light Valsalva is enough for bodyweight). Exhale near the top of the lockout.",
+    "breathingPl": "Wdech na górze przed schodzeniem, napięcie brzucha. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wychodzenia (lekki Valsalva wystarcza dla masy własnej). Wydech blisko górnej pozycji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to a pain-free range. Avoid the deepest portion. Use a higher box or shorter ROM until cleared by a physiotherapist.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Unikaj najgłębszej części ruchu. Użyj wyższej skrzyni lub krótszego zakresu ruchu do czasu zgody fizjoterapeuty.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Quad-dominant movements can aggravate. Switch to reverse lunge or use a slightly shorter ROM with longer stride to reduce knee shear.",
+      "modificationPl": "Ćwiczenia dominujące czworogłowymi mogą drażnić. Przejdź na wykrok w tył lub użyj nieco krótszego zakresu ruchu z dłuższym rozkrokiem aby zmniejszyć siły ścinające na kolanie.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_knee_pain",
+      "severity": "avoid",
+      "modification": "Avoid unilateral knee loading during acute flare-ups. Switch to bilateral lower body work or upper body until pain settles.",
+      "modificationPl": "Unikaj jednostronnego obciążania kolan w fazie ostrego bólu. Przejdź na obustronne ćwiczenia dolnej części ciała lub górę do ustąpienia bólu.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Unilateral stance demands balance. Use a wall or chair for fingertip support, or perform supported variants until stability improves.",
+      "modificationPl": "Pozycja jednostronna wymaga równowagi. Użyj ściany lub krzesła do podparcia palcem albo wykonuj warianty wspomagane do poprawy stabilności.",
+      "alternative": "bodyweight-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 per leg (bodyweight foundation) | 3-4x8-12 per leg (hypertrophy with light DBs) | 2x15-20 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "split-squats.gif",
+    "frames_extracted": [
+      "frames/split-squats/frame_0_start.png",
+      "frames/split-squats/frame_1_early.png",
+      "frames/split-squats/frame_2_mid.png",
+      "frames/split-squats/frame_3_late.png",
+      "frames/split-squats/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/split-squats"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Pozycja STATIONARY — postać startuje w rozkroku (prawa noga z przodu, lewa z tyłu, tylna pięta uniesiona), schodzi w wykrok (przednie udo równolegle do podłogi, tylne kolano blisko ziemi, tułów pionowy), wraca do rozkroku — stopy NIE łączą się i NIE przemieszczają. To klucz odróżniający od lunge (idącego) i barbell-lunge (który robi krok w przód z pozycji stojącej). Klatka 2 (mid) pokazuje pełną głębokość: przednie kolano ~90°, tylne kolano nad podłogą, tułów wyraźnie pionowy. Mięśnie podświetlone w GIFie: czworogłowe obu nóg (mocniej przedniej), pośladki i przywodziciele — pasuje do anatomii. Bodyweight wariant — brak sprzętu. Bulgarian split squat to wersja z tylną nogą na ławce (osobny slug). Wszystkie pola PL napisane od zera — polski standard fitness 'przysiad rozkroczny' / 'split squat' (anglicyzm w użyciu).",
+
+  "tags": ["unilateral", "lower_body", "lunge", "bodyweight", "compound", "stationary", "foundation", "asymmetry_corrector", "stabilizer_heavy", "beginner_friendly"]
+}

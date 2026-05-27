@@ -1,0 +1,200 @@
+{
+  "id": "lever-gripper-hands",
+  "name": "Lever Gripper Machine (Hand Grip Training)",
+  "namePl": "Gripper w maszynie (trening chwytu)",
+  "aliases": ["machine hand gripper", "lever hand crusher", "plate-loaded gripper", "grip strength machine"],
+  "aliasesPl": ["maszyna do treningu chwytu", "gripper dźwigniowy", "maszyna gripper na talerze", "ściskacz dłoni w maszynie"],
+
+  "description": "Isolation exercise for grip strength and forearm flexors performed on a plate-loaded lever gripper machine. The lifter sits or stands with the forearms supported on a pad and squeezes two handles together against the resistance of the lever arm. Provides much greater loading potential than spring grippers and allows progressive overload through standard weight plates. A staple for strongmen, climbers, grappling athletes, and bodybuilders building forearm mass.",
+  "descriptionPl": "Ćwiczenie izolowane na siłę chwytu i zginacze przedramienia wykonywane w dźwigniowej maszynie gripper na talerze. Ćwiczący siedzi lub stoi z przedramionami opartymi na podkładce i ściska dwie rączki przeciw oporowi ramienia dźwigni. Daje znacznie większe możliwości obciążenia niż gripper sprężynowy oraz pozwala na progresywne obciążanie za pomocą standardowych talerzy. Podstawowe narzędzie dla strongmanów, wspinaczy, sportów walki w parterze oraz kulturystów budujących masę przedramion.",
+
+  "instructions": [
+    "Load the lever arm with an appropriate weight plate. Sit on the bench with feet flat on the floor.",
+    "Rest both forearms flat on the support pad with palms facing inward, gripping the handles in a neutral grip.",
+    "Position your wrists so the handles sit across the middle of your palms — not just on the fingertips.",
+    "Brace your core and keep your shoulders relaxed. Forearms remain pressed to the pad throughout the set.",
+    "Squeeze the handles together by closing your fingers and crushing your hand into a tight fist. Exhale on the squeeze.",
+    "Hold the maximum contraction for 1-2 seconds at the closed position. Feel the forearm flexors fully engaged.",
+    "Open the hands slowly under control over 2-3 seconds back to a full stretched position with fingers extended.",
+    "Keep wrists neutral throughout — do not curl them up or down. Movement comes from the fingers and hand only."
+  ],
+  "instructionsPl": [
+    "Załaduj ramię dźwigni odpowiednim talerzem obciążeniowym. Usiądź na ławce ze stopami płasko na podłodze.",
+    "Oprzyj oba przedramiona płasko na podkładce, dłonie skierowane do wewnątrz, chwyt neutralny na rączkach.",
+    "Ustaw nadgarstki tak, by rączki spoczywały na środku dłoni — nie tylko na opuszkach palców.",
+    "Napnij brzuch, barki rozluźnione. Przedramiona pozostają dociśnięte do podkładki przez całą serię.",
+    "Ściśnij rączki zamykając palce i zaciskając dłoń w mocną pięść. Wydech podczas ściskania.",
+    "Wytrzymaj maksymalny skurcz przez 1-2 sekundy w pozycji zamkniętej. Poczuj pełne zaangażowanie zginaczy przedramienia.",
+    "Otwórz dłonie powoli pod kontrolą przez 2-3 sekundy do pełnego rozciągnięcia z wyprostowanymi palcami.",
+    "Nadgarstki neutralne przez cały czas — nie zginaj ich w górę ani w dół. Ruch generują tylko palce i dłoń."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_grip",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["forearm_pronators"],
+    "stabilizers": ["biceps_brachii", "brachioradialis", "core", "anterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "forearm_pronators": "S5",
+    "brachioradialis": "T4",
+    "biceps_brachii": "T2",
+    "core": "T2",
+    "anterior_deltoid": "T1"
+  },
+
+  "equipment": {
+    "required": ["lever_gripper_machine", "weight_plates"],
+    "optional": ["chalk", "bench"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["plate-pinch", "farmer-walk", "captains-of-crush-gripper"],
+    "alternatives": ["plate-pinch", "farmer-walk", "dead-hang", "wrist-curl", "fat-grip-holds"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Forearms flat on the pad, fully supported",
+      "Handles sit across the middle of the palm, not fingertips",
+      "Neutral grip — palms facing each other",
+      "Wrists straight, in line with forearms",
+      "Shoulders relaxed, core lightly braced"
+    ],
+    "setup_cues_pl": [
+      "Przedramiona płasko na podkładce, pełne podparcie",
+      "Rączki na środku dłoni, nie na opuszkach palców",
+      "Chwyt neutralny — dłonie zwrócone do siebie",
+      "Nadgarstki proste, w linii z przedramieniem",
+      "Barki rozluźnione, brzuch lekko napięty"
+    ],
+    "execution_cues": [
+      "Crush the handles like making a tight fist",
+      "Squeeze hard at the closed position for 1-2 seconds",
+      "Open slowly over 2-3 seconds — fight the eccentric",
+      "Keep wrists neutral — no flexion or extension",
+      "Forearms stay glued to the pad — no shoulder pulling"
+    ],
+    "execution_cues_pl": [
+      "Zgniataj rączki jak zaciskasz mocną pięść",
+      "Mocno ściśnij w pozycji zamkniętej przez 1-2 sekundy",
+      "Otwieraj wolno przez 2-3 sekundy — kontroluj fazę negatywną",
+      "Nadgarstki neutralne — bez zginania w górę i w dół",
+      "Przedramiona przyklejone do podkładki — bez ciągnięcia barkami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrist flexion during the squeeze (curling the wrist instead of crushing with fingers)",
+        "faultPl": "Zginanie nadgarstka podczas ściskania (zginanie nadgarstka zamiast zgniatania palcami)",
+        "cause": "Weak finger flexors trying to compensate, or load too heavy for the grip",
+        "causePl": "Słabe zginacze palców próbujące kompensować, lub zbyt duży ciężar dla siły chwytu",
+        "cue": "Lock wrists in neutral. Reduce weight. The motion comes only from closing the fingers.",
+        "cuePl": "Zablokuj nadgarstki w pozycji neutralnej. Zmniejsz ciężar. Ruch tylko z zamykania palców."
+      },
+      {
+        "fault": "Lifting the forearms off the pad to use shoulder/biceps",
+        "faultPl": "Odrywanie przedramion od podkładki by włączyć barki/biceps",
+        "cause": "Ego loading or trying to grind reps past technical failure",
+        "causePl": "Ego, zbyt duże obciążenie lub próba wymuszenia powtórzeń po wyczerpaniu",
+        "cue": "Press forearms firmly down. If they lift, set is over — strip weight.",
+        "cuePl": "Mocno dociśnij przedramiona w dół. Jeśli się unoszą, kończ serię — zdejmij ciężar."
+      },
+      {
+        "fault": "Partial range of motion (not opening the hand fully)",
+        "faultPl": "Niepełny zakres ruchu (niepełne otwarcie dłoni)",
+        "cause": "Fatigue, cutting reps short to chase numbers, or fear of weight crashing down",
+        "causePl": "Zmęczenie, skracanie powtórzeń dla liczb, lub strach przed upadkiem ciężaru",
+        "cue": "Open fingers fully at the bottom — feel the stretch in the forearm flexors every rep.",
+        "cuePl": "Pełne otwarcie palców na dole — czuj rozciąganie zginaczy przedramienia przy każdym powtórzeniu."
+      },
+      {
+        "fault": "Crushing only with fingertips instead of the whole palm",
+        "faultPl": "Ściskanie tylko opuszkami palców zamiast całej dłoni",
+        "cause": "Handles positioned too far out on the fingers — poor setup",
+        "causePl": "Rączki ustawione zbyt daleko na palcach — błędne ułożenie",
+        "cue": "Reset grip — handles must sit across the middle of the palm at the base of the fingers.",
+        "cuePl": "Popraw chwyt — rączki muszą leżeć na środku dłoni u podstawy palców."
+      },
+      {
+        "fault": "Dropping the negative phase (uncontrolled release)",
+        "faultPl": "Upuszczanie fazy negatywnej (niekontrolowane puszczanie)",
+        "cause": "Lack of eccentric strength awareness or fatigue at the end of set",
+        "causePl": "Brak świadomości pracy ekscentrycznej lub zmęczenie pod koniec serii",
+        "cue": "Resist the opening — count 'one-two-three' as the hand opens. Eccentrics build grip.",
+        "cuePl": "Stawiaj opór przy otwieraniu — odliczaj 'raz-dwa-trzy' gdy dłoń się otwiera. Faza negatywna buduje chwyt."
+      }
+    ],
+    "breathing": "Exhale during the squeeze (concentric). Inhale during the slow opening (eccentric). Avoid Valsalva — grip work does not require heavy bracing.",
+    "breathingPl": "Wydech podczas ściskania (faza koncentryczna). Wdech podczas wolnego otwierania (faza ekscentryczna). Unikaj próby Valsalvy — trening chwytu nie wymaga silnego parcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Forearm flexor work directly loads the medial epicondyle. Reduce volume and weight to pain-free range. Use higher reps (15-20) with sub-maximal loads and longer rest. Stop if sharp pain appears.",
+      "modificationPl": "Praca zginaczy przedramienia bezpośrednio obciąża nadkłykieć przyśrodkowy. Zmniejsz objętość i ciężar do zakresu bez bólu. Używaj wyższych powtórzeń (15-20) z podmaksymalnymi ciężarami i dłuższymi przerwami. Zatrzymaj jeśli pojawi się ostry ból.",
+      "alternative": "wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Heavy repetitive gripping can aggravate carpal tunnel symptoms. Use lighter loads, avoid maximal effort holds, limit to 2 short sessions per week. Stop if numbness or tingling appears.",
+      "modificationPl": "Ciężkie powtarzalne ściskanie może nasilać objawy zespołu cieśni nadgarstka. Używaj lżejszych ciężarów, unikaj maksymalnych przytrzymań, ogranicz do 2 krótkich sesji w tygodniu. Zatrzymaj jeśli pojawi się drętwienie lub mrowienie.",
+      "alternative": "fat-grip-holds"
+    },
+    {
+      "condition": "trigger_finger_stenosing_tenosynovitis",
+      "severity": "modify",
+      "modification": "Repeated maximal finger flexion can flare trigger finger. Avoid heavy crushing grip work during active inflammation. Switch to isometric holds or open-hand pinches without full flexion.",
+      "modificationPl": "Powtarzalne maksymalne zginanie palców może zaostrzyć palec strzelający. Unikaj ciężkich ćwiczeń zgniatających chwyt podczas aktywnego stanu zapalnego. Przejdź na izometryczne przytrzymania lub szczypanie otwartą dłonią bez pełnego zginania.",
+      "alternative": "plate-pinch"
+    },
+    {
+      "condition": "thumb_or_finger_joint_arthritis",
+      "severity": "modify",
+      "modification": "Repeated compressive loading aggravates finger joint arthritis. Reduce intensity to 50% effort, use higher reps, limit frequency to 1× per week. Stop if joint swelling appears next day.",
+      "modificationPl": "Powtarzalne obciążenie kompresyjne nasila zwyrodnienia stawów palców. Zmniejsz intensywność do 50% wysiłku, używaj wyższych powtórzeń, ogranicz do 1× w tygodniu. Zatrzymaj jeśli następnego dnia pojawi się obrzęk stawów.",
+      "alternative": "farmer-walk"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy/general) | 4-5x6-8 (max grip strength) | 2-3x20-30 (endurance/grip stamina)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "lever-gripper-hands.gif",
+    "frames_extracted": [
+      "frames/lever-gripper-hands/frame_0_start.png",
+      "frames/lever-gripper-hands/frame_1_early.png",
+      "frames/lever-gripper-hands/frame_2_mid.png",
+      "frames/lever-gripper-hands/frame_3_late.png",
+      "frames/lever-gripper-hands/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/lever-gripper-hands"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi przy maszynie gripper dźwigniowej, oba przedramiona oparte płasko na podkładce, dłonie chwytają dwie rączki w chwycie neutralnym (dłonie zwrócone do siebie), talerz załadowany na ramieniu dźwigni z prawej strony, palce w pozycji otwartej/rozciągniętej. Frame 2: dłonie częściowo zamknięte, rączki przybliżone do siebie, widoczne napięcie zginaczy przedramienia podświetlonych anatomicznie, łokcie i przedramiona pozostają przyklejone do podkładki. Frame 4: ruch zakończony, dłonie wracają do pozycji otwartej (cykl powtórzenia). Ćwiczenie jednoznacznie zidentyfikowane jako trening chwytu w dźwigniowej maszynie gripper na talerze. Praca izolowana zginaczy palców i dłoni (flexor digitorum superficialis/profundus), z drugorzędnym udziałem pronatorów przedramienia stabilizujących chwyt. Bilateralne, mechanika izolacji, płaszczyzna strzałkowa, siła pull (zamykanie chwytu = ciągnięcie palców w kierunku dłoni). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["forearms", "grip_strength", "isolation", "machine", "upper_body", "strongman", "climbing", "combat_sports"]
+}

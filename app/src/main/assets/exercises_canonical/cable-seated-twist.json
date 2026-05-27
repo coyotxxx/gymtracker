@@ -1,0 +1,204 @@
+{
+  "id": "cable-seated-twist",
+  "name": "Cable Seated Twist (Wood Chop)",
+  "namePl": "Twist na wyciągu siedząc (Wood chop siedząc)",
+  "aliases": ["cable seated twist", "seated cable wood chop", "seated cable rotation", "seated cable trunk rotation", "cable seated oblique twist"],
+  "aliasesPl": ["twist na wyciągu siedząc", "wood chop siedząc na wyciągu", "rotacja tułowia na wyciągu siedząc", "skręty na wyciągu siedząc", "skośne na wyciągu siedząc"],
+
+  "description": "Seated rotational core exercise performed on a cable machine. The athlete sits on a bench perpendicular to a cable column with the cable set at roughly chest/shoulder height, grips a single handle with both hands and rotates the torso away from the stack while the hips stay locked on the bench. Because the cable provides constant horizontal resistance throughout the entire arc, the obliques work under tension from the contracted position all the way back to the stretched position — a major advantage over Russian twists where momentum dominates. Excellent for hypertrophy of the obliques (especially the external oblique on the rotation side) and for teaching dissociation between trunk and pelvis.",
+  "descriptionPl": "Rotacyjne ćwiczenie na brzuch w pozycji siedzącej, wykonywane na wyciągu. Siadasz na ławce prostopadle do kolumny wyciągu z linką ustawioną mniej więcej na wysokości klatki/barku, chwytasz uchwyt oburącz i obracasz tułów w stronę przeciwną do stosu, podczas gdy biodra pozostają nieruchomo na ławce. Ponieważ wyciąg daje stały opór poziomy przez cały zakres ruchu, skośne pracują pod napięciem zarówno w pozycji skurczonej, jak i przy powrocie do rozciągnięcia — to duża przewaga nad skrętami rosyjskimi, gdzie dominuje rozpęd. Świetne na hipertrofię skośnych (zwłaszcza skośnego zewnętrznego po stronie rotacji) i do nauki dysocjacji tułowia od miednicy.",
+
+  "instructions": [
+    "Set the cable pulley at roughly chest or low-shoulder height. Attach a single D-handle or rope.",
+    "Sit on a bench placed perpendicular to the cable column, with the stack to one side of your body. Plant your feet firmly on the floor, slightly wider than hip-width, for a stable base.",
+    "Grip the handle with both hands — bottom hand grabbing the handle, top hand wrapping over it. Arms long but not locked.",
+    "Start with arms extended toward the cable stack, torso already pre-rotated about 30-45° toward the stack. Brace your core hard.",
+    "Rotate your torso AWAY from the stack, pulling the handle in a horizontal arc across your body. Keep arms relatively straight — they are levers, not the prime mover.",
+    "Lead the movement with your ribcage and obliques, not your arms. Hips, knees, and feet stay completely still on the bench.",
+    "End the rotation when your hands pass the midline of your body or slightly beyond — squeeze the obliques for a brief pause.",
+    "Slowly reverse the motion under control, resisting the cable as it pulls you back into rotation. Do NOT let the weight slam back — control the eccentric.",
+    "Complete all reps on one side, then switch the bench to the opposite side and repeat — train both sides equally."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek wyciągu mniej więcej na wysokości klatki lub niskiego barku. Załóż pojedynczy uchwyt D lub linkę.",
+    "Usiądź na ławce ustawionej prostopadle do kolumny wyciągu, ze stosem ciężarów po jednej stronie ciała. Wepchnij stopy mocno w podłogę, nieco szerzej niż biodra, dla stabilnej bazy.",
+    "Chwyć uchwyt oburącz — dolna ręka łapie uchwyt, górna nakrywa od góry. Ramiona wyciągnięte, ale nie blokuj łokci.",
+    "Zacznij z ramionami wyciągniętymi w stronę stosu, tułów już lekko obrócony (~30-45°) w stronę wyciągu. Mocno napnij brzuch.",
+    "Obróć tułów PRZECIWNIE do stosu, ciągnąc uchwyt w poziomym łuku przez ciało. Trzymaj ramiona względnie proste — to dźwignie, nie główny silnik ruchu.",
+    "Prowadź ruch klatką piersiową i skośnymi, nie ramionami. Biodra, kolana i stopy pozostają w bezruchu na ławce.",
+    "Zakończ rotację gdy dłonie miną linię środkową ciała lub przejdą trochę dalej — ściśnij skośne i krótko zatrzymaj.",
+    "Powoli wróć pod kontrolą, opierając się ciężarowi gdy ciągnie cię z powrotem w rotację. NIE pozwól ciężarowi cofnąć cię gwałtownie — kontroluj fazę ekscentryczną.",
+    "Zrób komplet powtórzeń na jednej stronie, potem przestaw ławkę na drugą stronę i powtórz — trenuj obie strony równo."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["rectus_abdominis", "transverse_abdominis", "serratus_anterior"],
+    "stabilizers": ["erector_spinae", "quadratus_lumborum", "deltoids", "lats"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "rectus_abdominis": "S6",
+    "transverse_abdominis": "S5",
+    "serratus_anterior": "S4",
+    "erector_spinae": "T3",
+    "quadratus_lumborum": "T3",
+    "deltoids": "T2",
+    "lats": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "bench"],
+    "optional": ["d_handle", "rope_attachment"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["russian-twist", "dead-bug", "pallof-press"],
+    "progression_to": ["cable-woodchopper", "standing-cable-rotation", "landmine-rotation"],
+    "alternatives": ["russian-twist", "cable-woodchopper", "standing-cable-rotation", "medicine-ball-rotational-throw"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Cable at chest height — too high turns it into a lat pulldown, too low into a hip swing",
+      "Bench perpendicular to the stack, hips squared to the front",
+      "Feet planted wide and firm — your base must not move",
+      "Both hands stacked on the handle, arms long but elbows soft",
+      "Pre-rotate slightly toward the stack to load the obliques before rep one"
+    ],
+    "setup_cues_pl": [
+      "Wyciąg na wysokości klatki — za wysoko zamieni się w ściąganie na barki, za nisko w skręt z bioder",
+      "Ławka prostopadle do stosu, biodra ustawione równo na wprost",
+      "Stopy szeroko i mocno wparte — baza nie może się ruszać",
+      "Obie dłonie nałożone na uchwyt, ramiona wyciągnięte ale łokcie miękkie",
+      "Wstępnie obróć tułów lekko w stronę stosu, żeby obciążyć skośne przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Rotate from the ribcage — the arms only travel because the torso turns",
+      "Hips and knees do not move — if your knee swings, the weight is too heavy",
+      "Keep the arms in the same triangle relative to the chest the whole rep",
+      "Pause 1 second in the contracted position to kill momentum",
+      "Control the eccentric — let the cable stretch you, don't let it yank you"
+    ],
+    "execution_cues_pl": [
+      "Obracaj klatką piersiową — ramiona przemieszczają się tylko dlatego, że obraca się tułów",
+      "Biodra i kolana nie ruszają się — jeśli kolano się kołysze, ciężar za duży",
+      "Trzymaj ramiona w tym samym trójkącie względem klatki przez całe powtórzenie",
+      "Zatrzymaj się na 1 sekundę w pozycji skurczonej, żeby zabić rozpęd",
+      "Kontroluj ekscentryk — pozwól wyciągowi się rozciągnąć, nie daj się szarpnąć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with the arms (turning it into a one-arm cable row)",
+        "faultPl": "Ciągnięcie ramionami (zamiana ćwiczenia w jednoręczne wiosłowanie z wyciągu)",
+        "cause": "Cable weight too heavy, weak obliques, or no cueing to rotate from the trunk",
+        "causePl": "Za duży ciężar na wyciągu, słabe skośne, lub brak świadomości żeby rotować z tułowia",
+        "cue": "Drop the weight by 30%. Lock your elbows in a slight bend and try to rotate without bending them more — the arms must travel with the torso, not before it.",
+        "cuePl": "Zrzuć ciężar o 30%. Zablokuj łokcie w lekkim ugięciu i próbuj rotować bez ich dodatkowego zginania — ramiona mają jechać razem z tułowiem, nie przed nim."
+      },
+      {
+        "fault": "Hips and knees swinging (rotation from the pelvis, not the trunk)",
+        "faultPl": "Kołysanie biodrami i kolanami (rotacja z miednicy, nie z tułowia)",
+        "cause": "Weak deep core, weight too heavy, or feet placed too narrow",
+        "causePl": "Słaby głęboki brzuch, za duży ciężar, lub stopy za blisko siebie",
+        "cue": "Place feet shoulder-width or wider, press them into the floor like you are trying to leave footprints. Watch your knees in a mirror — they should not wobble at all.",
+        "cuePl": "Ustaw stopy na szerokość barków lub szerzej, wciśnij je w podłogę jakbyś chciał zostawić odciski. Patrz na kolana w lustrze — nie powinny w ogóle drgać."
+      },
+      {
+        "fault": "Lumbar flexion or side bend instead of pure rotation",
+        "faultPl": "Zgięcie lędźwiowe lub skłon w bok zamiast czystej rotacji",
+        "cause": "Tight thoracic spine forces compensation through the lumbar region",
+        "causePl": "Sztywny odcinek piersiowy wymusza kompensację w lędźwiowym",
+        "cue": "Sit tall — imagine your head pressing the ceiling. Rotate around a vertical axis, don't crunch sideways. Work on thoracic mobility (open book stretches) separately.",
+        "cuePl": "Siedź wysoko — wyobraź sobie że głowa pcha sufit. Obracaj się wokół osi pionowej, nie zginaj się w bok. Pracuj nad mobilnością piersiowego (open book) osobno."
+      },
+      {
+        "fault": "Cable yanks you back — no eccentric control",
+        "faultPl": "Wyciąg ciągnie cię z powrotem — brak kontroli ekscentryka",
+        "cause": "Too heavy, or treating the rep as one-way (concentric only)",
+        "causePl": "Za duży ciężar, lub traktowanie powtórzenia jako jednokierunkowego (tylko koncentryk)",
+        "cue": "2 seconds out, 1 second pause, 3 seconds back. The return is where most of the oblique hypertrophy happens — fight the cable.",
+        "cuePl": "2 sekundy w dół ruchu, 1 sekunda pauzy, 3 sekundy powrotu. To na powrocie buduje się większość hipertrofii skośnych — walcz z wyciągiem."
+      },
+      {
+        "fault": "Not rotating both sides equally (asymmetric volume)",
+        "faultPl": "Nierówna praca obu stron (asymetryczna objętość)",
+        "cause": "Skipping the second set, or only training the dominant rotation direction",
+        "causePl": "Pomijanie drugiej serii lub trenowanie tylko dominującej strony rotacji",
+        "cue": "Always set up both sides — same weight, same reps, same tempo. Asymmetric oblique work creates rotational hip imbalances that bleed into squat and deadlift.",
+        "cuePl": "Zawsze ustaw obie strony — ten sam ciężar, te same powtórzenia, to samo tempo. Asymetryczna praca skośnych tworzy nierównowagi rotacyjne biodra, które przekładają się na przysiad i martwy ciąg."
+      }
+    ],
+    "breathing": "Exhale forcefully through the concentric (rotation away from the stack) — this engages the obliques and transverse together. Inhale on the controlled eccentric (return toward the stack). Never hold your breath under load with a rotated spine.",
+    "breathingPl": "Wydychaj mocno w fazie koncentrycznej (rotacja od stosu) — to angażuje skośne i poprzeczne razem. Wdech na kontrolowanym ekscentryku (powrót w stronę stosu). Nigdy nie wstrzymuj oddechu pod obciążeniem z rotowanym kręgosłupem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Loaded rotation aggravates most acute lumbar pain patterns. Use anti-rotation work (Pallof press, dead-bug) until pain settles.",
+      "modificationPl": "Obciążona rotacja nasila większość ostrych bólów lędźwiowych. Użyj ćwiczeń anty-rotacyjnych (Pallof press, dead-bug) do czasu ustąpienia bólu.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded rotation through the lumbar spine is one of the highest-risk patterns for disc material. Skip cable rotations entirely until cleared by a clinician.",
+      "modificationPl": "Obciążona rotacja przez kręgosłup lędźwiowy to jeden z najryzykowniejszych wzorców dla krążka. Całkowicie pomiń rotacje na wyciągu do czasu zgody fizjoterapeuty.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "si_joint_dysfunction",
+      "severity": "modify",
+      "modification": "Reduce the range of motion drastically — only rotate to midline, never past. Plant both feet very wide to lock the pelvis.",
+      "modificationPl": "Mocno ogranicz zakres ruchu — obracaj tylko do linii środkowej, nigdy dalej. Postaw stopy bardzo szeroko, żeby zablokować miednicę.",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Keep the cable below chest height and the arms below shoulder height throughout the entire arc. Avoid overhead chop variations.",
+      "modificationPl": "Trzymaj wyciąg poniżej wysokości klatki i ramiona poniżej linii barku przez cały łuk ruchu. Unikaj wariantów z góry (overhead chop).",
+      "alternative": "russian-twist"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 reps per side | tempo 2-1-3 (eccentric emphasis)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-seated-twist.gif",
+    "frames_extracted": [
+      "frames/cable-seated-twist/frame_0_start.png",
+      "frames/cable-seated-twist/frame_1_early.png",
+      "frames/cable-seated-twist/frame_2_mid.png",
+      "frames/cable-seated-twist/frame_3_late.png",
+      "frames/cable-seated-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/cable-seated-twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T16:45:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (12 ramek w GIFie). Atleta siedzi na ławce prostopadle do kolumny wyciągu (stos po lewej, atleta zwrócony do przodu), chwyta linkę oburącz na wysokości klatki/barku. Frame_0/frame_4 = pozycja końcowa rotacji w prawo (dłonie na prawo od ciała, podświetlone skośne PRAWE i dolny rectus). Frame_1/frame_3 = pozycja środkowa/przejściowa (ramiona wyprostowane w bok). Frame_2 = pozycja środkowa rotacji w lewo. Widać że obrót idzie z tułowia (klatka rotuje), biodra stoją na ławce, kolana ugięte ~90°, stopy płasko na podłodze. Główne mięśnie podświetlone: skośne (głównie zewnętrzne po stronie rotacji) + dolny rectus abdominis. To wariant typu 'horizontal wood chop' siedzący — różni się od standardowego cable woodchopper (stojąco, ruch od góry-na-skos do dołu), więc mechanic = isolation (nie compound), laterality = unilateral (trenujesz jedną stronę na raz, potem zmieniasz ławkę). Difficulty 4 — łatwiej technicznie niż stojący woodchopper bo siedzenie eliminuje rotację bioder. muscle_intensity: obliques P10 (zgodnie ze specyfikacją), rectus_abdominis obniżony do S6 (mniejsza aktywacja niż w russian twist z V-sit). Wszystkie pola PL napisane od zera — polska terminologia siłowni (wyciąg, stos, bloczek, skośne, rectus, ławka).",
+
+  "tags": ["core", "obliques", "rotation", "cable", "isolation", "intermediate", "hypertrophy", "constant_tension", "anti_momentum"]
+}

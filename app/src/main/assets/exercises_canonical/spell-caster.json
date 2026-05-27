@@ -1,0 +1,198 @@
+{
+  "id": "spell-caster",
+  "name": "Spell Caster",
+  "namePl": "Spell caster (skręty z hantlami)",
+  "aliases": ["dumbbell spell caster", "standing spell caster", "dumbbell wood chop", "dumbbell torso rotation"],
+  "aliasesPl": ["spell caster z hantlami", "skręty tułowia z hantlami", "rzucanie zaklęcia", "stojące rotacje z hantlami", "drwal z hantlami"],
+
+  "description": "Standing rotational core exercise performed with a pair of dumbbells. The lifter holds both dumbbells together on one side of the body at hip level, then sweeps them diagonally across the torso to the opposite side, finishing at chest or shoulder height — as if a wizard casting a spell. The motion is driven by powerful rotation of the obliques and transverse abdominis through the transverse plane, training rotational core strength, anti-rotation stability of the lumbar spine, and power transfer from hips to upper body. Excellent functional movement for athletes (golfers, throwers, fighters) and a strong oblique builder.",
+  "descriptionPl": "Stojące rotacyjne ćwiczenie core wykonywane z parą hantli. Ćwiczący trzyma oba hantle razem po jednej stronie ciała na wysokości biodra, po czym przerzuca je po skosie przez tułów na przeciwną stronę, kończąc na wysokości klatki lub barku — jak czarodziej rzucający zaklęcie. Ruch napędzany jest mocną rotacją mięśni skośnych i poprzecznego brzucha w płaszczyźnie poprzecznej. Trenuje rotacyjną siłę brzucha, stabilizację antyrotacyjną odcinka lędźwiowego oraz transfer mocy z bioder do górnej części ciała. Świetne ćwiczenie funkcjonalne dla sportowców (golf, rzuty, walka) i mocny budulec mięśni skośnych.",
+
+  "instructions": [
+    "Stand with feet shoulder-width apart, knees slightly soft. Hold one dumbbell in each hand, bringing both dumbbells together at the side of your hip (e.g., outside your right hip). Pivot the back foot slightly so the torso can rotate freely.",
+    "Brace the core and keep the lower back neutral. Inhale before initiating the movement.",
+    "Exhale and rotate the torso explosively to the opposite side, sweeping the dumbbells diagonally across the body to finish at the height of the opposite shoulder (e.g., above the left shoulder). Arms stay nearly straight throughout — the rotation comes from the trunk, not from the arms.",
+    "At the top of the rotation, the hips rotate slightly with the trunk and the back heel pivots — let the chain of motion travel from feet through hips through the obliques.",
+    "Pause briefly, then control the dumbbells back along the same diagonal path to the starting position next to the opposite hip. Inhale on the return.",
+    "Complete all reps on one side, then switch the starting hip and rotate to the opposite shoulder."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku na szerokość barków, kolana lekko ugięte. Trzymaj po jednym hantlu w każdej dłoni, łącząc oba hantle razem po jednej stronie biodra (np. obok prawego biodra). Lekko ustaw stopę zakroczną, by tułów mógł swobodnie rotować.",
+    "Napnij brzuch i utrzymuj dolne plecy w neutralnej pozycji. Wdech przed rozpoczęciem ruchu.",
+    "Wydech — rotuj tułów dynamicznie na przeciwną stronę, przerzucając hantle po skosie przez ciało aż do wysokości przeciwnego barku (np. nad lewym barkiem). Ramiona pozostają prawie wyprostowane — rotacja pochodzi z tułowia, a nie z ramion.",
+    "W szczytowej pozycji biodra lekko obracają się razem z tułowiem, a pięta zakroczna unosi się i obraca — pozwól, by łańcuch ruchu szedł od stóp przez biodra do mięśni skośnych.",
+    "Krótka pauza, następnie kontrolnie sprowadź hantle po tym samym skosie z powrotem do pozycji startowej obok przeciwnego biodra. Wdech podczas powrotu.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień startowe biodro i rotuj na przeciwny bark."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques"],
+    "secondary": ["rectus_abdominis", "transverse_abdominis", "erector_spinae"],
+    "stabilizers": ["hip_abductors", "glutes", "forearms", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "S6",
+    "transverse_abdominis": "S6",
+    "erector_spinae": "S5",
+    "hip_abductors": "T4",
+    "glutes": "T4",
+    "forearms": "T3",
+    "deltoids": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["russian-twist", "standing-pallof-press", "wood-chop"],
+    "progression_to": ["cable-wood-chop", "landmine-rotation", "medicine-ball-rotational-throw"],
+    "alternatives": ["wood-chop", "russian-twist", "cable-wood-chop", "landmine-rotation"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft and ready to pivot",
+      "Both dumbbells held together at one hip — arms nearly straight",
+      "Brace core — feel the obliques pre-loaded on the starting side",
+      "Eyes follow the dumbbells through the arc",
+      "Inhale before the first rotation"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana miękkie i gotowe do obrotu",
+      "Oba hantle razem przy jednym biodrze — ramiona prawie wyprostowane",
+      "Napnij brzuch — poczuj jak skośne są wstępnie napięte po stronie startowej",
+      "Wzrok podąża za hantlami przez cały łuk",
+      "Wdech przed pierwszą rotacją"
+    ],
+    "execution_cues": [
+      "Rotate from the trunk — arms are just levers carrying the weight",
+      "Sweep diagonally hip-to-opposite-shoulder, not horizontally",
+      "Back heel pivots — let the hips follow the trunk",
+      "Exhale forcefully through the rotation",
+      "Control the return — same diagonal path, no swinging through the floor"
+    ],
+    "execution_cues_pl": [
+      "Rotuj z tułowia — ramiona to tylko dźwignie niosące ciężar",
+      "Przerzucaj po skosie biodro-do-przeciwnego-barku, nie poziomo",
+      "Pięta zakroczna obraca się — biodra podążają za tułowiem",
+      "Mocny wydech przez całą rotację",
+      "Kontroluj powrót — ten sam skos, bez rozpędzania w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating only the arms, not the torso",
+        "faultPl": "Rotacja tylko ramionami, bez tułowia",
+        "cause": "Trying to lift the dumbbells with arm strength instead of core rotation; weak obliques",
+        "causePl": "Próba podniesienia hantli siłą ramion zamiast rotacji core; słabe mięśnie skośne",
+        "cue": "Lock the elbows nearly straight and imagine your bellybutton pointing toward the finishing shoulder — rotate the entire trunk",
+        "cuePl": "Zablokuj łokcie prawie prosto i wyobraź sobie, że pępek wskazuje na bark docelowy — rotuj cały tułów"
+      },
+      {
+        "fault": "Lumbar spine hyperextends at the top of the rotation",
+        "faultPl": "Odcinek lędźwiowy nadmiernie się prostuje w szczycie rotacji",
+        "cause": "Loss of core brace when reaching overhead with the dumbbells; tight hip flexors pulling pelvis into anterior tilt",
+        "causePl": "Utrata napięcia brzucha przy wyrzuceniu hantli nad bark; napięte zginacze biodra ciągną miednicę w przód",
+        "cue": "Keep ribs down and finish at shoulder height, not above the head. Brace abs hard throughout the swing.",
+        "cuePl": "Trzymaj żebra w dole i kończ na wysokości barku, nie nad głową. Mocno napięty brzuch przez cały ruch."
+      },
+      {
+        "fault": "Using too much weight — momentum takes over",
+        "faultPl": "Zbyt duży ciężar — przejmuje go bezwładność",
+        "cause": "Ego lifting; dumbbells fly through the arc with no muscle control",
+        "causePl": "Trening ego; hantle lecą przez łuk bez kontroli mięśniowej",
+        "cue": "Choose a weight where you can pause for 1 sec at the top and reverse smoothly. Start with 3-5 kg pair.",
+        "cuePl": "Wybierz ciężar, przy którym możesz zatrzymać się na 1 sekundę w szczycie i płynnie wrócić. Zacznij od pary 3-5 kg."
+      },
+      {
+        "fault": "Knees collapse inward during the rotation",
+        "faultPl": "Kolana zapadają się do środka podczas rotacji",
+        "cause": "Weak hip abductors; failing to pivot the back foot, so the knee rotates instead of the ankle",
+        "causePl": "Słabe odwodziciele biodra; brak obrotu stopy zakrocznej — kolano rotuje zamiast kostki",
+        "cue": "Pivot the back foot — toes follow the rotation. Knees stay tracking over the toes throughout.",
+        "cuePl": "Obracaj stopę zakroczną — palce podążają za rotacją. Kolana cały czas nad palcami stóp."
+      },
+      {
+        "fault": "Holding breath through the entire set",
+        "faultPl": "Wstrzymywanie oddechu przez całą serię",
+        "cause": "Mimicking Valsalva from heavy compound lifts on a dynamic rotational exercise",
+        "causePl": "Naśladowanie manewru Valsalvy z ciężkich ćwiczeń wielostawowych przy dynamicznym ruchu rotacyjnym",
+        "cue": "Forceful exhale on the rotation phase, inhale on the return — sync breathing with movement.",
+        "cuePl": "Mocny wydech w fazie rotacji, wdech podczas powrotu — synchronizuj oddech z ruchem."
+      }
+    ],
+    "breathing": "Inhale before the rotation, forceful exhale during the diagonal sweep (concentric phase), inhale again during the controlled return. Avoid Valsalva — the spine should rotate dynamically, not be locked.",
+    "breathingPl": "Wdech przed rotacją, mocny wydech podczas skosu (faza koncentryczna), ponowny wdech podczas kontrolnego powrotu. Unikaj manewru Valsalvy — kręgosłup ma rotować dynamicznie, a nie być zablokowany."
+  },
+
+  "contraindications": [
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "Loaded rotation of the lumbar spine is high-risk for disc herniations. Use anti-rotation exercises (Pallof press) until cleared by a physiotherapist.",
+      "modificationPl": "Obciążona rotacja kręgosłupa lędźwiowego jest wysokim ryzykiem przy przepuklinach. Stosuj ćwiczenia antyrotacyjne (Pallof press) do czasu pozwolenia fizjoterapeuty.",
+      "alternative": "standing-pallof-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Rotational loading aggravates acute lumbar pain. Switch to isometric anti-rotation work until pain-free.",
+      "modificationPl": "Obciążenia rotacyjne nasilają ostry ból lędźwi. Przejdź na izometryczne ćwiczenia antyrotacyjne do czasu ustąpienia bólu.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Finishing the movement overhead can pinch impinged shoulders. Stop the rotation at chest height instead of shoulder height, and reduce dumbbell weight.",
+      "modificationPl": "Kończenie ruchu nad głową może podszczypywać bark z konfliktem. Zatrzymuj rotację na wysokości klatki zamiast barku i zmniejsz ciężar hantli.",
+      "alternative": "russian-twist"
+    },
+    {
+      "condition": "pregnancy_2nd_3rd_trimester",
+      "severity": "avoid",
+      "modification": "Aggressive trunk rotation is contraindicated as the diastasis develops and balance changes. Switch to gentle anti-rotation core work approved by your obstetrician.",
+      "modificationPl": "Agresywna rotacja tułowia jest przeciwwskazana, gdy rozwija się rozstęp kresy białej i zmienia się równowaga. Przejdź na łagodne ćwiczenia antyrotacyjne zatwierdzone przez ginekologa.",
+      "alternative": "standing-pallof-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per side (hypertrophy) | 3x8 per side with heavier weight (strength/power) | 3x15 per side (endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "spell-caster.gif",
+    "frames_extracted": [
+      "frames/spell-caster/frame_0_start.png",
+      "frames/spell-caster/frame_1_early.png",
+      "frames/spell-caster/frame_2_mid.png",
+      "frames/spell-caster/frame_3_late.png",
+      "frames/spell-caster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/spell-caster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): pozycja stojąca w lekkim pochyleniu, oba hantle razem przy jednym biodrze (niski), anatomia podświetla mięśnie skośne pleców i okolicy lędźwiowej po jednej stronie — wyraźna jednostronna praca core. Klatka 2 (mid): pełna rotacja — tułów wyprostowany, hantle uniesione diagonalnie do wysokości głowy/barku po przeciwnej stronie, ramiona prawie wyprostowane, podświetlony cały rectus abdominis i obliques z drugiej strony. Klatka 4 (end): powrót do pozycji startowej z lekkim śladem fazy pośredniej — wyraźny ruch wahadłowy biodro-do-przeciwnego-barku. Ruch potwierdzony: stojące diagonalne przerzucanie hantli (jak wood chop lub czarodziej rzucający zaklęcie). Klasyfikacja: rotation (płaszczyzna poprzeczna), compound (zaangażowanie kręgosłupa + bioder + barków), plane=transverse, force=both (koncentryk w rotacji + ekscentryk w powrocie). Mięsień główny: obliques (skośne) jednoznacznie — anatomia GIFa podświetla je najmocniej. Secondary: rectus_abdominis + transverse_abdominis (stabilizacja rdzenia) + erector_spinae (utrzymanie wyprostu w rotacji). Stabilizers: hip abductors, glutes, forearms (chwyt hantli), deltoids (utrzymanie ramion w pozycji). Bilateral — obie ręce trzymają jeden ciężar razem. Nazwa PL: 'Spell caster (skręty z hantlami)' bo wprost transliteracja angielskiego nie funkcjonuje w polskim środowisku fitness — dodałem opisowy podtytuł oraz aliasy 'rzucanie zaklęcia', 'drwal z hantlami' (bo ruch przypomina wood chop). Difficulty 6/10, level=intermediate — wymaga koordynacji rotacji biodro-tułów-bark i dobrej kontroli core; początkujący powinni zacząć od russian twist i pallof press. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["dumbbells", "core", "obliques", "rotation", "functional", "athletic", "standing", "anti_rotation"]
+}

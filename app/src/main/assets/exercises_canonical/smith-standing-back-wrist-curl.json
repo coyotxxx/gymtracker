@@ -1,0 +1,201 @@
+{
+  "id": "smith-standing-back-wrist-curl",
+  "name": "Smith Standing Back Wrist Curl",
+  "namePl": "Uginanie nadgarstków za plecami na maszynie Smitha (na prostowniki)",
+  "aliases": ["smith machine behind-the-back wrist extension", "smith standing reverse wrist curl behind back", "smith back wrist extension"],
+  "aliasesPl": ["prostowanie nadgarstków ze sztangą za plecami na Smithie", "wrist curl za plecami na prostowniki przedramion", "uginanie nadgarstków za plecami nachwytem na Smithie"],
+
+  "description": "Standing wrist extension performed on a Smith machine with the bar held behind the back at glute level in a pronated (overhand) grip. Only the wrists move — extending upward against the load to drive the bar away from the body. An isolation exercise specifically targeting the wrist extensors (extensor carpi radialis longus/brevis, extensor digitorum) of the dorsal forearm, with brachioradialis assistance. The fixed bar path of the Smith machine eliminates balance demands and lets the lifter focus purely on the small ROM. Used to build forearm size, grip endurance and balance the more popular front wrist curl which trains only the flexors.",
+  "descriptionPl": "Prostowanie nadgarstków w pozycji stojącej na maszynie Smitha — gryf trzymany za plecami na wysokości pośladków nachwytem górnym. Pracują wyłącznie nadgarstki: prostujesz je do góry pod obciążeniem, odsuwając gryf od ciała. Ćwiczenie izolowane na prostowniki nadgarstka (extensor carpi radialis longus i brevis, extensor digitorum) na grzbietowej stronie przedramienia, z udziałem mięśnia ramienno-promieniowego (brachioradialis). Stała tor ruchu w Smithie eliminuje pracę nad balansem i pozwala skupić się na małym zakresie ruchu. Stosowane do rozbudowy przedramion, poprawy wytrzymałości chwytu i zrównoważenia popularniejszego uginania nadgarstków przed ciałem, które trenuje wyłącznie zginacze.",
+
+  "instructions": [
+    "Set the Smith machine bar at mid-thigh height. Stand directly in front of the bar with your back facing it and unrack by rotating the hooks.",
+    "Grip the bar behind your back with a pronated (overhand) grip, knuckles facing away from your body, hands roughly shoulder-width apart.",
+    "Stand tall with feet hip-width, knees soft, glutes lightly braced. Let the bar rest just behind your glutes with arms fully extended.",
+    "Allow your wrists to drop so the knuckles point toward the floor — this is the stretched starting position.",
+    "Without moving your elbows, shoulders or torso, extend the wrists to lift the bar upward and away from your body. Exhale on the way up.",
+    "Squeeze the back of the forearms (extensors) at the top of the contraction for a brief pause.",
+    "Lower the bar back under control by letting the wrists drop into full flexion. Inhale on the descent.",
+    "Keep elbows locked at the sides through the entire set — only the wrists move."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf maszyny Smitha na wysokości środka uda. Stań tyłem do gryfu, dokładnie przed nim, i odblokuj sztangę obracając hakami.",
+    "Złap gryf za plecami nachwytem górnym (kostki palców skierowane na zewnątrz, od ciała), dłonie mniej więcej na szerokość barków.",
+    "Stań prosto, stopy na szerokość bioder, kolana lekko ugięte, pośladki lekko napięte. Pozwól gryfowi spocząć tuż za pośladkami przy wyprostowanych ramionach.",
+    "Pozwól nadgarstkom opaść w dół tak, by kostki palców kierowały się ku podłodze — to pozycja startowa w rozciągnięciu.",
+    "Bez ruchu w łokciach, barkach ani tułowiu wyprostuj nadgarstki, unosząc gryf w górę i odsuwając go od ciała. Wydech w fazie unoszenia.",
+    "Mocno spinaj tylną stronę przedramion (prostowniki) w górnej pozycji — krótka pauza na szczycie.",
+    "Opuszczaj gryf w kontroli pozwalając nadgarstkom opaść do pełnego zgięcia. Wdech w fazie opuszczania.",
+    "Łokcie pozostają zablokowane przy bokach przez całą serię — pracują wyłącznie nadgarstki."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_wrist_extension",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["wrist_extensors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["forearm_flexors", "biceps_brachii", "core", "upper_trapezius", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "wrist_extensors": "P10",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T3",
+    "biceps_brachii": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1",
+    "glutes": "T1"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "barbell"],
+    "optional": ["weight_plates", "wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-wrist-extension", "barbell-reverse-wrist-curl"],
+    "progression_to": ["barbell-reverse-wrist-curl-heavy", "cable-reverse-wrist-curl"],
+    "alternatives": ["barbell-reverse-wrist-curl", "dumbbell-reverse-wrist-curl", "cable-reverse-wrist-curl", "reverse-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar set at mid-thigh — unrack with your back to it",
+      "Overhand grip, knuckles facing away from your body",
+      "Stand tall, bar just behind your glutes",
+      "Elbows locked at your sides — they will not move",
+      "Wrists fully relaxed and dropped at the start"
+    ],
+    "setup_cues_pl": [
+      "Gryf na wysokości środka uda — odblokowujesz stojąc tyłem do niego",
+      "Chwyt nachwytem górnym, kostki palców kierują się na zewnątrz od ciała",
+      "Stań prosto, gryf tuż za pośladkami",
+      "Łokcie zablokowane przy bokach — nie ruszają się",
+      "Nadgarstki w pełni rozluźnione i opuszczone w pozycji startowej"
+    ],
+    "execution_cues": [
+      "Only the wrists move — feel the back of the forearms working",
+      "Drive the knuckles upward and away from your glutes",
+      "Squeeze the top hard for one second",
+      "Lower slowly — let the bar stretch the extensors at the bottom",
+      "Keep elbows pinned and torso vertical the whole set"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko nadgarstki — czuj pracę tylnej strony przedramion",
+      "Wypychaj kostki palców do góry i od pośladków",
+      "Mocno spinaj prostowniki na szczycie przez sekundę",
+      "Opuszczaj wolno — pozwól, by gryf rozciągnął prostowniki na dole",
+      "Łokcie przyklejone do boków, tułów pionowo przez całą serię"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using elbow flexion to lift the bar (turning it into a partial reverse curl)",
+        "faultPl": "Pomaganie zgięciem łokci (przekształcanie w częściowe odwrócone uginanie ramion)",
+        "cause": "Load too heavy or weak wrist extensors trying to recruit larger muscles",
+        "causePl": "Zbyt duży ciężar lub słabe prostowniki nadgarstka próbujące włączyć większe mięśnie",
+        "cue": "Lower the weight by 30–40%. Lock elbows at the sides — only the knuckles travel.",
+        "cuePl": "Zmniejsz ciężar o 30–40%. Zablokuj łokcie przy bokach — ruszają się tylko kostki palców."
+      },
+      {
+        "fault": "Bouncing the bar off the glutes for momentum",
+        "faultPl": "Odbijanie gryfu od pośladków dla nabrania rozpędu",
+        "cause": "Trying to bypass the weak stretched position of the extensors",
+        "causePl": "Próba ominięcia słabej pozycji rozciągniętej prostowników",
+        "cue": "Pause one second at the bottom — start each rep from a dead stop with relaxed wrists.",
+        "cuePl": "Zatrzymaj się na sekundę na dole — każde powtórzenie startuj z bezruchu z rozluźnionymi nadgarstkami."
+      },
+      {
+        "fault": "Partial range of motion (no real wrist extension)",
+        "faultPl": "Niepełny zakres ruchu (brak realnego prostowania nadgarstka)",
+        "cause": "Load too heavy, poor mind-muscle connection, or stiff wrist extensors",
+        "causePl": "Zbyt duży ciężar, słabe połączenie nerwowo-mięśniowe lub sztywne prostowniki nadgarstka",
+        "cue": "Drop weight. Let the bar fully stretch the back of the forearm before extending knuckles as high as possible.",
+        "cuePl": "Zmniejsz ciężar. Pozwól, by gryf w pełni rozciągnął tylną stronę przedramienia, zanim uniesiesz kostki palców jak najwyżej."
+      },
+      {
+        "fault": "Leaning forward to clear the glutes",
+        "faultPl": "Pochylanie tułowia do przodu, by gryf wyszedł poza pośladki",
+        "cause": "Bar set too low, glutes blocking ROM, or attempting heavier load than form allows",
+        "causePl": "Gryf ustawiony za nisko, pośladki blokujące zakres ruchu lub zbyt duży ciężar",
+        "cue": "Reset bar height to mid-thigh. Stay vertical — torso does not rock forward or back.",
+        "cuePl": "Ustaw gryf na nowo na wysokości środka uda. Pozostań pionowo — tułów nie kołysze się w przód ani w tył."
+      },
+      {
+        "fault": "Wrists pulled into ulnar/radial deviation under load",
+        "faultPl": "Boczne odchylenia nadgarstków pod obciążeniem (deviacja łokciowa lub promieniowa)",
+        "cause": "Grip too wide or too narrow for individual forearm anatomy",
+        "causePl": "Chwyt za szeroki lub za wąski dla indywidualnej anatomii przedramion",
+        "cue": "Adjust grip width until wrists move in a pure up-and-down arc. Use wrist wraps for heavier sets.",
+        "cuePl": "Dostosuj szerokość chwytu, aż nadgarstki będą poruszać się w czystej osi góra–dół. Użyj usztywniaczy przy cięższych seriach."
+      }
+    ],
+    "breathing": "Exhale during the concentric wrist extension. Inhale on the lowering phase. The load is light enough that no heavy Valsalva is needed — keep a quiet, steady breathing rhythm.",
+    "breathingPl": "Wydech podczas koncentrycznego prostowania nadgarstka. Wdech w fazie opuszczania. Obciążenie jest na tyle małe, że nie potrzeba mocnego manewru Valsalvy — utrzymuj cichy, równy rytm oddechowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "avoid",
+      "modification": "This exercise directly loads the extensor tendons at their attachment to the lateral epicondyle and will provoke symptoms. Avoid completely during acute phase. After clearance from physio, return with very light isometrics first.",
+      "modificationPl": "Ćwiczenie obciąża bezpośrednio przyczepy prostowników do nadkłykcia bocznego i będzie nasilać objawy. W fazie ostrej całkowicie unikaj. Po zgodzie fizjoterapeuty wracaj najpierw z bardzo lekkimi izometrycznymi napięciami.",
+      "alternative": "dumbbell-reverse-wrist-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Fixed bar path on the Smith forces a single wrist axis which can aggravate ulnar/radial-side pain. Use dumbbells (free wrist path) or cable with EZ-handle, and keep ROM symptom-free.",
+      "modificationPl": "Stały tor ruchu w Smithie wymusza jedną oś nadgarstka, co może drażnić ból po stronie łokciowej lub promieniowej. Użyj hantli (swobodny tor nadgarstka) lub wyciągu z uchwytem łamanym i utrzymuj zakres ruchu w granicy bez bólu.",
+      "alternative": "dumbbell-reverse-wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Heavy wrist extension can compress the median nerve when combined with prolonged grip. Use lighter loads, higher reps (15–20), and stop short of full flexion at the bottom.",
+      "modificationPl": "Mocne prostowanie nadgarstka w połączeniu z długim utrzymaniem chwytu może uciskać nerw pośrodkowy. Stosuj mniejsze ciężary, wyższy zakres powtórzeń (15–20) i nie schodź do pełnego zgięcia nadgarstka na dole.",
+      "alternative": "cable-reverse-wrist-curl"
+    },
+    {
+      "condition": "recent_wrist_or_distal_radius_fracture",
+      "severity": "avoid",
+      "modification": "Loaded end-range wrist motion is contraindicated during bone-healing and early rehab. Return only after full clearance and progressive rehab loading.",
+      "modificationPl": "Ruch nadgarstka pod obciążeniem do końcowego zakresu jest przeciwwskazany w fazie gojenia kości i wczesnej rehabilitacji. Wracaj dopiero po pełnym zezwoleniu i progresywnym obciążaniu rehabilitacyjnym.",
+      "alternative": null
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy) | 3x15-20 (endurance/pump) | 2-3x10-12 with 2s pause at top (strength)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "smith-standing-back-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/smith-standing-back-wrist-curl/frame_0_start.png",
+      "frames/smith-standing-back-wrist-curl/frame_1_early.png",
+      "frames/smith-standing-back-wrist-curl/frame_2_mid.png",
+      "frames/smith-standing-back-wrist-curl/frame_3_late.png",
+      "frames/smith-standing-back-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/smith-standing-back-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Atleta stoi tyłem do Smith machine, gryf trzymany ZA plecami nachwytem górnym na wysokości pośladków, ramiona w pełni wyprostowane wzdłuż tułowia. Frame 0: pozycja startowa, gryf tuż za udami/pośladkami, nadgarstki w neutralnej/lekko zgiętej pozycji, ramiona ponad łokciem pionowe i przy bokach. Frame 2: nadgarstki wyprostowane, gryf uniesiony nieco do tyłu i w górę od pośladków — widać że ruch generują wyłącznie nadgarstki, łokcie zostają zablokowane. Frame 4: powrót do pozycji startowej. Brak ruchu w łokciach, barkach ani tułowiu. Ćwiczenie zidentyfikowane jako wariant na prostowniki przedramion (wrist extension behind back) — różni się od standardowego behind-the-back wrist curl (na zginacze), bo chwyt jest nachwytem górnym i nadgarstki idą do góry/tyłu (extension), a nie do dołu (flexion). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "forearms", "wrist_extensors", "isolation", "smith_machine", "barbell", "upper_body", "grip_strength"]
+}

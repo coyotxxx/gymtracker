@@ -1,0 +1,199 @@
+{
+  "id": "lever-hip-extension-v-2",
+  "name": "Lever Hip Extension (variant 2)",
+  "namePl": "Hip extension w maszynie (wariant 2)",
+  "aliases": ["machine hip extension", "kneeling hip extension machine", "pendulum kickback machine", "lever glute kickback", "prone hip extension machine"],
+  "aliasesPl": ["wyprost biodra w maszynie", "kickback pośladkowy w maszynie", "klęczący wyprost biodra w maszynie", "pendulum kickback", "maszyna do pośladków klęcząca"],
+
+  "description": "Unilateral hip extension performed on a dedicated lever machine where the lifter kneels on a knee pad with the torso supported on a chest pad. One foot rests on a footplate connected to a weighted lever arm, and the lifter extends the hip by pushing the leg back and up against resistance. The fixed path eliminates balance demands and isolates the gluteus maximus and hamstrings. Considered a beginner-friendly glute isolation machine that allows progressive overload without lower-back load.",
+  "descriptionPl": "Jednostronny wyprost biodra wykonywany na dedykowanej maszynie dźwigniowej, w której ćwiczący klęczy na podkładce kolanowej, opierając tułów o pad piersiowy. Jedna stopa spoczywa na platformie podłączonej do obciążonego ramienia dźwigni — ruch polega na wyproście biodra przez wypchnięcie nogi w tył i w górę przeciwko oporowi. Fixed path eliminuje wymagania balansu i izoluje mięsień pośladkowy wielki i dwugłowe ud. Maszyna przyjazna początkującym do izolacji pośladków z progresją obciążenia bez przeciążania lędźwi.",
+
+  "instructions": [
+    "Adjust the machine: set the chest pad height so your torso lies horizontally with hips at the pivot point. Select the load.",
+    "Step into the machine and place one knee on the knee pad. Rest your chest and abdomen on the chest pad and grip the handles.",
+    "Place the working leg's foot on the footplate of the lever arm. The starting position has the knee bent and the hip flexed (thigh roughly under the torso).",
+    "Brace your core, tuck your chin, and keep a neutral spine. Pre-engage the glute of the working side.",
+    "Drive the foot back and slightly upward, extending the hip until the thigh is in line with the torso (neutral hip extension). Do NOT arch the lower back to gain extra range.",
+    "Squeeze the glute hard at the top for 1-2 seconds.",
+    "Lower under control by reversing the motion, allowing the hip to flex back to the start position without letting the weight stack slam down.",
+    "Complete all reps on one side, then switch legs. Breathe: exhale on extension, inhale on the way back."
+  ],
+  "instructionsPl": [
+    "Wyreguluj maszynę: ustaw wysokość pady piersiowej tak, by tułów leżał poziomo, a biodra znalazły się w osi obrotu. Wybierz obciążenie.",
+    "Wejdź na maszynę i połóż jedno kolano na podkładce kolanowej. Oprzyj klatkę piersiową i brzuch o pad piersiowy, złap uchwyty.",
+    "Postaw stopę nogi pracującej na platformie ramienia dźwigni. W pozycji startowej kolano jest ugięte, a biodro zgięte (udo mniej więcej pod tułowiem).",
+    "Napnij brzuch, schowaj brodę i utrzymaj neutralny kręgosłup. Wstępnie napnij pośladek strony pracującej.",
+    "Wypchnij stopę w tył i lekko do góry, prostując biodro, aż udo znajdzie się w linii z tułowiem (neutralny wyprost biodra). NIE wyginaj odcinka lędźwiowego, by uzyskać większy zakres.",
+    "Mocno ściśnij pośladek na górze przez 1-2 sekundy.",
+    "Opuszczaj kontrolowanie, odwracając ruch, pozwalając biodru zgiąć się z powrotem do pozycji startowej, nie pozwalając stosowi obciążeń uderzyć.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie zmień nogę. Oddech: wydech przy wyproście, wdech w drodze powrotnej."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["glutes"],
+    "secondary": ["hamstrings"],
+    "stabilizers": ["core", "erector_spinae", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "hamstrings": "S7",
+    "erector_spinae": "S3",
+    "adductors": "T3",
+    "core": "T3"
+  },
+
+  "equipment": {
+    "required": ["hip_extension_machine"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-glute-bridge"],
+    "progression_to": ["barbell-hip-thrust", "cable-pull-through", "barbell-glute-bridge"],
+    "alternatives": ["cable-glute-kickback", "quadruped-hip-extension", "donkey-kick", "smith-machine-hip-thrust"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hip joint aligned with the machine's pivot point",
+      "Chest pad supports the torso horizontally — no slipping off",
+      "Working leg's foot flat and centered on the footplate",
+      "Spine neutral, chin tucked, core braced",
+      "Pre-squeeze the working glute before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Staw biodrowy w jednej osi z punktem obrotu maszyny",
+      "Pad piersiowy podtrzymuje tułów poziomo — nie zsuwaj się",
+      "Stopa nogi pracującej płasko i wycentrowana na platformie",
+      "Kręgosłup neutralny, broda schowana, brzuch napięty",
+      "Wstępnie napnij pośladek pracującej strony przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive through the heel, push the leg back and up",
+      "Lead with the glute, not the lower back",
+      "Stop at neutral hip extension — thigh in line with torso",
+      "Squeeze the glute hard at the top, hold 1-2 seconds",
+      "Lower slowly under control, no slamming the stack"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij przez piętę, wypchnij nogę w tył i w górę",
+      "Prowadź ruch pośladkiem, nie odcinkiem lędźwiowym",
+      "Zatrzymaj się na neutralnym wyproście biodra — udo w linii z tułowiem",
+      "Mocno ściśnij pośladek na górze, przytrzymaj 1-2 sekundy",
+      "Opuszczaj powoli, kontrolowanie, nie pozwól stosowi uderzyć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lumbar hyperextension to gain ROM",
+        "faultPl": "Przeprost lędźwiowy dla uzyskania większego zakresu",
+        "cause": "Trying to push the leg too high, weak glutes compensated by spinal extension",
+        "causePl": "Próba podniesienia nogi zbyt wysoko, słabe pośladki kompensowane wyprostem kręgosłupa",
+        "cue": "Stop when the thigh is in line with the torso. Keep the pelvis neutral against the pad.",
+        "cuePl": "Zatrzymaj się, gdy udo jest w linii z tułowiem. Trzymaj miednicę neutralną przy padzie."
+      },
+      {
+        "fault": "Pelvic rotation (hip opens outward)",
+        "faultPl": "Rotacja miednicy (biodro otwiera się na zewnątrz)",
+        "cause": "Asymmetric load, weak deep core, or trying to recruit lateral hip muscles",
+        "causePl": "Asymetryczne obciążenie, słaby głęboki core, lub próba zaangażowania bocznych mięśni biodra",
+        "cue": "Keep both hip points pressed equally into the chest pad throughout the rep",
+        "cuePl": "Trzymaj oba kolce biodrowe równo dociśnięte do pada piersiowego przez całe powtórzenie"
+      },
+      {
+        "fault": "Using momentum (kicking the leg)",
+        "faultPl": "Używanie rozpędu (kopanie nogą)",
+        "cause": "Load too heavy, lack of mind-muscle connection with the glute",
+        "causePl": "Za duży ciężar, brak czucia mięśniowego pośladka",
+        "cue": "Lower the weight. Move slow on the way up (2s) and slower on the way down (3s).",
+        "cuePl": "Zmniejsz ciężar. Ruszaj się wolno w górę (2s) i wolniej w dół (3s)."
+      },
+      {
+        "fault": "Incomplete ROM (short range)",
+        "faultPl": "Niepełny zakres ruchu (skrócony ruch)",
+        "cause": "Load too heavy, tight hip flexors, or fatigue",
+        "causePl": "Za duży ciężar, napięte zginacze biodra, lub zmęczenie",
+        "cue": "Reach full hip extension on every rep. If you cannot, reduce the load.",
+        "cuePl": "Osiągaj pełny wyprost biodra na każdym powtórzeniu. Jeśli nie możesz, zmniejsz ciężar."
+      },
+      {
+        "fault": "Knee locking during extension",
+        "faultPl": "Blokowanie kolana podczas wyprostu",
+        "cause": "Pushing through the toes instead of the heel, quad dominance",
+        "causePl": "Wypychanie przez palce zamiast pięty, dominacja czworogłowych",
+        "cue": "Keep a soft bend in the knee. Push the heel back, not down.",
+        "cuePl": "Trzymaj lekkie ugięcie kolana. Wypchnij piętę w tył, nie w dół."
+      }
+    ],
+    "breathing": "Inhale at the start (hip flexed). Exhale forcefully through hip extension while squeezing the glute. Inhale on the return. Avoid breath-holding for long, since this is a moderate-load isolation exercise.",
+    "breathingPl": "Wdech na starcie (zgięte biodro). Wydech z siłą przy wyproście biodra, ściskając pośladek. Wdech przy powrocie. Unikaj długiego wstrzymywania oddechu — to izolacja z umiarkowanym obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "modify",
+      "modification": "Reduce load, keep ROM short of any spinal extension. Stop if pain appears in the lumbar region.",
+      "modificationPl": "Zmniejsz obciążenie, ogranicz zakres ruchu, by uniknąć wyprostu kręgosłupa. Przerwij przy bólu w odcinku lędźwiowym.",
+      "alternative": "bodyweight-glute-bridge"
+    },
+    {
+      "condition": "hip_replacement_or_recent_hip_surgery",
+      "severity": "avoid",
+      "modification": "Avoid loaded hip extension until cleared by surgeon. The end-range hip extension can stress the surgical site.",
+      "modificationPl": "Unikaj obciążonego wyprostu biodra do czasu zgody chirurga. Końcowy zakres wyprostu biodra może obciążać miejsce operacji.",
+      "alternative": "bodyweight-glute-bridge"
+    },
+    {
+      "condition": "knee_pain_or_patellar_injury",
+      "severity": "modify",
+      "modification": "Use extra padding on the knee pad. If pain persists in the support knee, switch to standing cable kickback.",
+      "modificationPl": "Użyj dodatkowej wyściółki pod kolanem podporowym. Jeśli ból w kolanie utrzymuje się, zmień na stojący kickback na wyciągu.",
+      "alternative": "cable-glute-kickback"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "modify",
+      "modification": "Avoid prone (face-down) positions after the first trimester. Switch to standing or quadruped variations.",
+      "modificationPl": "Unikaj pozycji leżącej na brzuchu po pierwszym trymestrze. Przejdź na warianty stojące lub w klęku podpartym.",
+      "alternative": "cable-glute-kickback"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x12-20 per leg (activation) | 4x8-10 (strength, advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-hip-extension-v-2.gif",
+    "frames_extracted": [
+      "frames/lever-hip-extension-v-2/frame_0_start.png",
+      "frames/lever-hip-extension-v-2/frame_1_early.png",
+      "frames/lever-hip-extension-v-2/frame_2_mid.png",
+      "frames/lever-hip-extension-v-2/frame_3_late.png",
+      "frames/lever-hip-extension-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/lever-hip-extension-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Maszyna to wariant lever hip extension typu kneeling/prone (np. Pendulum Kickback, Nautilus Glute Drive Pro w wariancie klęczącym): ćwiczący KLĘCZY jedną nogą na podkładce kolanowej, tułów oparty poziomo o pad piersiowy, druga noga z stopą na platformie ramienia dźwigni. Frame 0/4 (start/koniec): biodro pracującej nogi zgięte, udo pod tułowiem, podświetlony pośladek wielki (czerwony) i tylna część uda (hamstring) — POTWIERDZA primary=glutes (P10), secondary=hamstrings (S7). Frame 2 (szczyt): pełny wyprost biodra, udo w linii z tułowiem, kolano lekko ugięte. Mechanic=isolation (jednostawowy ruch — tylko wyprost biodra), plane=sagittal, force=push, laterality=unilateral, kinetic_chain=open (stopa pcha pad który NIE jest fixed). Movement pattern=hinge (rotacja w biodrze przy stabilnym tułowiu). Wszystkie pola PL napisane od zera w polskim slangu siłowni (np. 'wyprost biodra', 'pad piersiowy', 'platforma', 'stos obciążeń'), nie tłumaczenie maszynowe. Difficulty=3 — początkujący, bo fixed path i brak balansu; mniej skomplikowane niż barbell hip thrust.",
+
+  "tags": ["glute_focused", "posterior_chain", "hip_dominant", "lower_body", "machine", "isolation", "unilateral", "hip_extension", "fixed_path", "hypertrophy", "beginner_friendly"]
+}

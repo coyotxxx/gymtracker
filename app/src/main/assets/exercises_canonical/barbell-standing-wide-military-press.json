@@ -1,0 +1,204 @@
+{
+  "id": "barbell-standing-wide-military-press",
+  "name": "Barbell Standing Wide-Grip Military Press",
+  "namePl": "Military press chwytem szerokim w staniu",
+  "aliases": ["wide grip military press", "wide grip overhead press", "wide grip OHP", "wide grip strict press", "wide grip standing press"],
+  "aliasesPl": ["military press szerokim chwytem", "wyciskanie sztangi nad głowę szerokim chwytem", "OHP szerokim chwytem", "wyciskanie żołnierskie szerokie"],
+
+  "description": "Strict standing barbell press with a WIDE grip (~150% of shoulder width). Wider hand placement shortens the ROM, shifts the elbows more outward, and biases the LATERAL deltoids significantly more than the standard military press. Triceps involvement is reduced (shorter elbow extension path). Performed military-style — feet together-ish, no leg drive, full-body brace. More demanding on shoulder mobility and external rotators than standard OHP.",
+  "descriptionPl": "Strict (ścisłe) wyciskanie sztangi nad głowę w staniu z SZEROKIM chwytem (~150% szerokości barków). Szerszy rozstaw rąk skraca ROM, rozsuwa łokcie bardziej na boki i znacznie mocniej angażuje BOCZNE aktony (deltoidy boczne) niż klasyczny military press. Mniej tricepsa (krótsza ścieżka prostowania łokcia). Wykonywane military-style — stopy blisko siebie, BEZ napędu z nóg, pełnociałowe napięcie. Bardziej wymagające pod kątem mobilności barków i rotatorów zewnętrznych niż klasyczny OHP.",
+
+  "instructions": [
+    "Set the bar in a rack at upper-chest height. Take a WIDE grip — roughly 1.5× shoulder width (forearms ~vertical at the bottom would mean too narrow; wider = elbows more out to the sides).",
+    "Unrack: bar on the front delts/upper chest, elbows pointing OUTWARD (not under bar like a standard press — more lateral elbow position).",
+    "Step back. Set feet close together (military stance, hip-width or narrower). Brace core, glutes, and quads HARD.",
+    "Big breath, brace, and press the bar straight up. Because of the wide grip, the bar travels a shorter distance.",
+    "As the bar passes the forehead, slightly push the head forward ('through the window'). The bar finishes overhead with arms fully locked.",
+    "Lower with control back to the front rack, keeping elbows wide.",
+    "DO NOT use leg drive — knees and hips locked. This is a STRICT press.",
+    "Exhale at lockout."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Weź SZEROKI chwyt — ok. 1,5× szerokości barków (przedramiona pionowe w dole = za wąsko; szerzej = łokcie bardziej na boki).",
+    "Wyciągnij ze stojaka: gryf na przednich aktonach/górnej klatce, łokcie skierowane NA ZEWNĄTRZ (nie pod gryf jak w klasycznym OHP — bardziej boczna pozycja łokci).",
+    "Cofnij się. Stopy blisko siebie (postawa military, na szerokość bioder lub węziej). Napnij MOCNO brzuch, pośladki, czworogłowe.",
+    "Głęboki wdech, napięcie, wyciskaj gryf prosto w górę. Przez szeroki chwyt gryf pokonuje krótszą drogę.",
+    "Gdy gryf mija czoło, lekko wepchnij głowę do przodu ('przez okno'). Zakończ z ramionami w pełnym lock-out nad głową.",
+    "Opuszczaj kontrolowanym ruchem do front rack, trzymając łokcie szeroko.",
+    "NIE używaj napędu nóg — kolana i biodra zablokowane. To STRICT press.",
+    "Wydech na lock-out."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lateral_deltoids", "anterior_deltoids"],
+    "secondary": ["upper_trapezius", "triceps", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "quadriceps", "rotator_cuff", "rectus_abdominis", "obliques", "upper_chest"]
+  },
+
+  "muscle_intensity": {
+    "lateral_deltoids": "P10",
+    "anterior_deltoids": "P8",
+    "upper_trapezius": "S6",
+    "triceps": "S5",
+    "serratus_anterior": "S5",
+    "core": "S7",
+    "glutes": "S6",
+    "rotator_cuff": "S5",
+    "upper_chest": "T3",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack_or_squat_rack"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-overhead-press", "dumbbell-shoulder-press", "seated-barbell-overhead-press"],
+    "progression_to": ["behind-the-neck-press", "push-press", "split-jerk", "snatch-grip-press"],
+    "alternatives": ["barbell-overhead-press", "dumbbell-standing-overhead-press", "wide-grip-seated-overhead-press", "machine-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Grip ~1.5× shoulder width — wider than standard OHP",
+      "Bar on front delts, elbows OUT to the sides",
+      "Feet together (military stance), hip-width max",
+      "Glutes squeezed, core BRACED",
+      "Wrists stacked over elbows (don't let them bend back)"
+    ],
+    "setup_cues_pl": [
+      "Chwyt ~1,5× szerokości barków — szerzej niż klasyczne OHP",
+      "Gryf na przednich aktonach, łokcie NA ZEWNĄTRZ",
+      "Stopy blisko siebie (postawa military), max szerokość bioder",
+      "Pośladki ściśnięte, brzuch NAPIĘTY",
+      "Nadgarstki nad łokciami (nie pozwól im się odchylać)"
+    ],
+    "execution_cues": [
+      "Press straight up — shorter ROM than standard OHP",
+      "Feel the LATERAL delts loading at the bottom",
+      "Head 'through the window' as bar clears forehead",
+      "Lock out — biceps near ears, elbows fully extended",
+      "NO leg drive, NO hip thrust — strict pressing"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę — krótszy ROM niż klasyczne OHP",
+      "Poczuj BOCZNE aktony pracujące w dole",
+      "Głowa 'przez okno' gdy gryf przechodzi czoło",
+      "Lock-out — bicepsy przy uszach, łokcie pełna ekstensja",
+      "BEZ napędu nóg, BEZ pchnięcia biodrami — strict"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip too wide — elbows below the bar (loss of leverage)",
+        "faultPl": "Za szeroki chwyt — łokcie poniżej gryfu (utrata dźwigni)",
+        "cause": "Trying to mimic competition powerlifting bench grip width on overhead",
+        "causePl": "Próba kopiowania szerokości bench-press z zawodów na wyciskaniu nad głowę",
+        "cue": "Forearms should still be roughly vertical or slightly outward at start — not flared out 45°+. ~1.5× shoulder width MAX.",
+        "cuePl": "Przedramiona w starcie wciąż mniej-więcej pionowe lub lekko na zewnątrz — nie rozstawione 45°+. MAX ~1,5× szerokości barków."
+      },
+      {
+        "fault": "Lumbar hyperextension (excessive back arch to compensate)",
+        "faultPl": "Przeprost lędźwiowy (nadmierne odchylanie pleców)",
+        "cause": "Wide grip reduces leverage — body compensates by leaning back to put bar over base of support",
+        "causePl": "Szeroki chwyt zmniejsza dźwignię — ciało kompensuje odchylając się, by gryf był nad podstawą",
+        "cue": "Glutes ON. Ribs DOWN. If you can't keep neutral spine — lower the weight; the wide-grip variant requires significantly less load than standard OHP.",
+        "cuePl": "Pośladki ON. Żebra W DÓŁ. Jeśli nie utrzymasz neutralnego kręgosłupa — zmniejsz ciężar; wariant szeroki wymaga znacznie mniejszego obciążenia niż klasyczne OHP."
+      },
+      {
+        "fault": "Shoulder impingement signs (pain at top, clicking)",
+        "faultPl": "Objawy impingementu barku (ból w górze, klikanie)",
+        "cause": "Wide grip + lack of external rotation mobility forces internal rotation overhead",
+        "causePl": "Szeroki chwyt + brak mobilności rotacji zewnętrznej wymusza rotację wewnętrzną overhead",
+        "cue": "Stop the set. Work on external rotation + thoracic mobility. Narrow the grip until mobility improves.",
+        "cuePl": "Przerwij serię. Pracuj nad rotacją zewnętrzną + mobilnością piersiową. Zwęź chwyt do poprawy mobilności."
+      },
+      {
+        "fault": "Pressing forward (bar drifts in front of head)",
+        "faultPl": "Wyciskanie do przodu (gryf przed głową)",
+        "cause": "Avoiding the face — failing to move head through the window",
+        "causePl": "Unikanie twarzy — brak przesunięcia głowy 'przez okno'",
+        "cue": "Bar finishes OVER mid-foot, NOT in front. Practice with empty bar.",
+        "cuePl": "Gryf kończy NAD środkiem stopy, NIE z przodu. Trenuj z pustym gryfem."
+      },
+      {
+        "fault": "Bouncing out of the bottom / using momentum",
+        "faultPl": "Odbijanie z dołu / wykorzystywanie momentu",
+        "cause": "Bar too heavy for strict wide-grip press",
+        "causePl": "Za duży ciężar na strict wide-grip press",
+        "cue": "Pause 0.5s at front rack each rep. Strict means STRICT.",
+        "cuePl": "Zatrzymaj się 0,5s w front rack co powtórzenie. Strict znaczy STRICT."
+      }
+    ],
+    "breathing": "Inhale and brace HARD before the rep. Hold through the press. Exhale at lockout. Standing wide-grip = even more bracing needed than standard OHP — the wider lever arm amplifies any spinal load.",
+    "breathingPl": "Wdech i MOCNE napięcie przed powtórzeniem. Trzymaj przez wyciskanie. Wydech w lock-out. Stojące szerokim chwytem = jeszcze większe napięcie niż klasyczne OHP — szersza dźwignia wzmacnia obciążenie kręgosłupa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Wide grip dramatically worsens impingement. Switch to neutral-grip dumbbell press or landmine press.",
+      "modificationPl": "Szeroki chwyt drastycznie pogarsza impingement. Przejdź na dumbbell press chwytem neutralnym lub landmine press.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "avoid",
+      "modification": "Wide grip requires excellent thoracic extension + external rotation. Build mobility first; use standard OHP or seated DB press.",
+      "modificationPl": "Szeroki chwyt wymaga doskonałej ekstensji piersiowej + rotacji zewnętrznej. Zbuduj najpierw mobilność; używaj klasycznego OHP lub siedzącego DB press.",
+      "alternative": "barbell-overhead-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Strict prohibition — wide grip stresses the cuff in vulnerable position. Resume only when cleared by PT, starting with neutral-grip machine.",
+      "modificationPl": "Bezwzględny zakaz — szeroki chwyt obciąża stożek w wrażliwej pozycji. Wróć dopiero po zgodzie fizjoterapeuty, zaczynając od maszyny z chwytem neutralnym.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Standing variant amplifies spinal load. Use seated wide-grip variant or standard OHP with belt.",
+      "modificationPl": "Wariant stojący wzmacnia obciążenie kręgosłupa. Użyj wariantu siedzącego lub klasycznego OHP z pasem.",
+      "alternative": "seated-barbell-overhead-press"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-8 (hypertrophy, lateral-delt focus) | 3-4x4-6 (strength) | 3x10-12 (high rep, light)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-standing-wide-military-press.gif",
+    "frames_extracted": [
+      "frames/barbell-standing-wide-military-press/frame_0_start.png",
+      "frames/barbell-standing-wide-military-press/frame_1_early.png",
+      "frames/barbell-standing-wide-military-press/frame_2_mid.png",
+      "frames/barbell-standing-wide-military-press/frame_3_late.png",
+      "frames/barbell-standing-wide-military-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-standing-wide-military-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa front rack, sztanga na przednich aktonach, chwyt wyraźnie SZERSZY niż w klasycznym OHP (~1,5× szerokości barków), łokcie skierowane na zewnątrz. Frame 2: pełny lock-out nad głową, ramiona wyprostowane. Frame 4: ruch eksplozyjny widoczny jako rozmycie ścieżki. Wide grip widoczny w całym ROM. Podświetlone na czerwono: BOCZNE aktony (lateral deltoids — dominujące w tej wersji), przednie aktony, górne czworoboczne (upper traps), tricepsy w mniejszym stopniu. Stopy zwarte (military stance). Brak napędu z nóg — kolana i biodra zablokowane przez cały ruch (strict press). PL nazwa = 'Military press chwytem szerokim w staniu' zgodnie z konwencją: military press = wariant strict + wąska postawa.",
+
+  "tags": ["bodybuilding", "shoulders", "lateral_delts", "wide_grip", "upper_body", "vertical_push", "compound", "barbell", "strict_press", "advanced", "shoulder_mobility_required"]
+}

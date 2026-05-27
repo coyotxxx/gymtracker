@@ -1,0 +1,201 @@
+{
+  "id": "lever-gripless-shrug-v-2",
+  "name": "Lever Gripless Shrug (Version 2)",
+  "namePl": "Shrug w maszynie bez chwytu (wariant 2)",
+  "aliases": ["machine gripless shrug v2", "front-loaded gripless shrug", "lever shrug no grip front", "hands-free shrug machine front"],
+  "aliasesPl": ["wzruszanie barkami w maszynie bez trzymania (wariant 2)", "shrug w maszynie z podporą na przednich barkach", "wzruszanie barkami bez chwytu z przodu", "lever shrug bez uchwytu wariant 2"],
+
+  "description": "Isolation trapezius exercise performed on a lever shrug machine where the load is supported by padded yokes resting on the front of the shoulders (anterior deltoids) rather than gripped by the hands. The hands hold light front handles only for balance — they do not bear the load. Compared to version 1 (pads under upper traps with arms overhead), version 2 places the pads at the front of the shoulders with arms held forward at chest height. This removes grip and forearm fatigue completely, allowing the upper trapezius to be loaded to true muscular failure. Excellent finisher for trap hypertrophy when grip becomes a limiting factor in conventional shrugs.",
+  "descriptionPl": "Izolowane ćwiczenie na mięsień czworoboczny wykonywane na maszynie dźwigniowej do shrugów, w której obciążenie spoczywa na wyściełanych podporach opartych o przednie aktony barków (przednie głowy mięśni naramiennych), zamiast być trzymane w rękach. Dłonie chwytają jedynie lekkie przednie uchwyty dla zachowania równowagi — nie przenoszą obciążenia. W porównaniu do wariantu 1 (podpory pod górnym czworobocznym, ramiona uniesione nad głowę), wariant 2 umieszcza podpory z przodu barków, a ramiona są ustawione poziomo na wysokości klatki piersiowej. Eliminuje to całkowicie zmęczenie chwytu i przedramion, pozwalając doprowadzić górną część czworobocznego do prawdziwej niewydolności mięśniowej. Doskonałe wykończenie treningu czworobocznego, gdy chwyt staje się czynnikiem ograniczającym w klasycznych shrugach.",
+
+  "instructions": [
+    "Set the machine pad height so that, when standing on the platform, the padded yokes sit comfortably on the front of your shoulders (anterior deltoids), not on your collarbones.",
+    "Step onto the platform, place your feet shoulder-width apart, and slide forward under the pads so they rest evenly on both front shoulders.",
+    "Raise both arms forward to chest height and grip the front handles lightly — these are for balance only, not for lifting the weight.",
+    "Stand tall with a neutral spine. Let your shoulders drop down (depress the scapulae) into the stretched starting position. Keep your neck long and chin tucked.",
+    "Brace your core. Without bending the knees or arms, shrug your shoulders straight up toward your ears as high as possible. Drive through the upper traps.",
+    "Hold the peak contraction for 1-2 seconds. Do not roll the shoulders forward or backward — pure vertical movement only.",
+    "Lower the weight slowly under control over 2-3 seconds back to a full stretch with shoulders depressed below neutral.",
+    "Keep the head still throughout — do not nod or jut the chin forward to chase the weight."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość podpór maszyny tak, aby po wejściu na platformę wyściełane podpory wygodnie spoczywały na przednich aktonach barków (przednich głowach mięśni naramiennych), a nie na obojczykach.",
+    "Wejdź na platformę, ustaw stopy na szerokość barków i wsuń się pod podpory tak, aby równomiernie opierały się na obu przednich barkach.",
+    "Unieś oba ramiona do przodu na wysokość klatki piersiowej i lekko chwyć przednie uchwyty — służą wyłącznie do utrzymania równowagi, nie do unoszenia ciężaru.",
+    "Stań prosto, kręgosłup neutralny. Pozwól barkom opaść w dół (depresja łopatek) do pozycji startowej z rozciągnięciem. Trzymaj długą szyję, broda lekko cofnięta.",
+    "Napnij brzuch. Bez zginania kolan i łokci unieś barki pionowo do góry, w kierunku uszu, tak wysoko jak to możliwe. Praca z górnego czworobocznego.",
+    "Zatrzymaj się w szczytowym skurczu na 1-2 sekundy. Nie obracaj barków w przód ani w tył — wyłącznie ruch pionowy.",
+    "Opuszczaj ciężar powoli i pod kontrolą przez 2-3 sekundy aż do pełnego rozciągnięcia, z barkami opuszczonymi poniżej neutralnej pozycji.",
+    "Głowa nieruchoma przez cały ruch — nie kiwaj nią ani nie wysuwaj brody do przodu w pogoni za ciężarem."
+  ],
+
+  "classification": {
+    "movement_pattern": "shrug",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["upper_trapezius"],
+    "secondary": ["levator_scapulae"],
+    "stabilizers": ["middle_trapezius", "rhomboids", "anterior_deltoid", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "upper_trapezius": "P10",
+    "levator_scapulae": "S6",
+    "middle_trapezius": "T3",
+    "rhomboids": "T3",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["lever_shrug_machine"],
+    "optional": ["lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-shrug", "barbell-shrug"],
+    "progression_to": ["lever-gripless-shrug", "barbell-shrug", "smith-back-shrug"],
+    "alternatives": ["lever-gripless-shrug", "barbell-shrug", "dumbbell-shrug", "cable-shrug", "smith-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pads sit on front of shoulders, not on collarbones",
+      "Feet shoulder-width on the platform",
+      "Hands light on front handles — for balance only",
+      "Tall spine, long neck, chin slightly tucked",
+      "Shoulders dropped all the way down before first rep"
+    ],
+    "setup_cues_pl": [
+      "Podpory na przednich aktonach barków, nie na obojczykach",
+      "Stopy na szerokość barków na platformie",
+      "Dłonie lekko na przednich uchwytach — tylko dla równowagi",
+      "Wysoki kręgosłup, długa szyja, broda lekko cofnięta",
+      "Barki w pełni opuszczone w dół przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive shoulders straight up toward your ears",
+      "Squeeze the upper traps hard at the top for 1-2 seconds",
+      "Lower in 2-3 seconds — fight the eccentric",
+      "Pure vertical movement — no rolling forward or back",
+      "Keep your head and neck still — only the shoulders move"
+    ],
+    "execution_cues_pl": [
+      "Unieś barki pionowo w kierunku uszu",
+      "Mocno spinaj górny czworoboczny na szczycie przez 1-2 sekundy",
+      "Opuszczaj przez 2-3 sekundy — kontroluj fazę negatywną",
+      "Czysty ruch pionowy — bez obrotów w przód i w tył",
+      "Głowa i szyja nieruchome — pracują tylko barki"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the shoulders forward or backward (circular path)",
+        "faultPl": "Obracanie barków do przodu lub do tyłu (ruch po okręgu)",
+        "cause": "Belief that 'shoulder rolls' build traps better, or load too heavy forcing compensation",
+        "causePl": "Przekonanie, że 'obroty barków' lepiej budują czworoboczny, lub zbyt duży ciężar wymuszający kompensację",
+        "cue": "Move the shoulders straight up and straight down — like elevators, not wheels.",
+        "cuePl": "Unoś i opuszczaj barki pionowo — jak winda, nie jak koła."
+      },
+      {
+        "fault": "Bending elbows or pulling on the front handles",
+        "faultPl": "Zginanie łokci lub ciągnięcie za przednie uchwyty",
+        "cause": "Habit from regular shrugs where the hands carry the load; using arms to help lift",
+        "causePl": "Nawyk z klasycznych shrugów, gdzie dłonie trzymają ciężar; pomaganie sobie ramionami",
+        "cue": "Handles are for balance only. Keep your elbows fully extended and arms relaxed.",
+        "cuePl": "Uchwyty służą tylko do równowagi. Trzymaj łokcie w pełni wyprostowane, ramiona rozluźnione."
+      },
+      {
+        "fault": "Partial range of motion at the bottom (no stretch)",
+        "faultPl": "Niepełny zakres ruchu w dolnej fazie (brak rozciągnięcia)",
+        "cause": "Ego lifting with heavy load that prevents full scapular depression",
+        "causePl": "Ego i zbyt duży ciężar uniemożliwiający pełną depresję łopatek",
+        "cue": "Let the shoulders sink fully below neutral at the bottom of every rep.",
+        "cuePl": "Pozwól barkom w pełni opaść poniżej neutralnej pozycji na dole każdego powtórzenia."
+      },
+      {
+        "fault": "Jutting the chin and head forward",
+        "faultPl": "Wysuwanie brody i głowy do przodu",
+        "cause": "Trying to add extra range by leading with the head, or weak deep neck flexors",
+        "causePl": "Próba zwiększenia zakresu ruchu prowadząc głową, lub słabe głębokie zginacze szyi",
+        "cue": "Keep the chin lightly tucked. Imagine balancing a book on your head.",
+        "cuePl": "Trzymaj brodę lekko cofniętą. Wyobraź sobie, że balansujesz książkę na głowie."
+      },
+      {
+        "fault": "Pads slipping onto the collarbones",
+        "faultPl": "Zsuwanie się podpór na obojczyki",
+        "cause": "Pad height set too low, or shoulders not fully positioned under the pads",
+        "causePl": "Podpory ustawione za nisko, lub barki nie są w pełni ustawione pod podporami",
+        "cue": "Reset and raise the pad height. Pads must sit on the muscular front of the shoulders, never on bone.",
+        "cuePl": "Zresetuj i podnieś wysokość podpór. Podpory muszą spoczywać na umięśnionej przedniej części barków, nigdy na kości."
+      }
+    ],
+    "breathing": "Inhale at the bottom in the stretched position. Exhale as you shrug the shoulders up. Maintain a light brace throughout to protect the lower back from the axial load.",
+    "breathingPl": "Wdech na dole w pozycji rozciągniętej. Wydech przy unoszeniu barków. Utrzymuj lekkie napięcie brzucha przez cały ruch, aby chronić odcinek lędźwiowy przed obciążeniem osiowym."
+  },
+
+  "contraindications": [
+    {
+      "condition": "ac_joint_pain_or_dysfunction",
+      "severity": "modify",
+      "modification": "Pads pressing on the front of the shoulders can irritate the acromioclavicular joint. Adjust pad position outward, reduce load, or switch to handheld shrugs.",
+      "modificationPl": "Podpory naciskające na przednią część barków mogą drażnić staw barkowo-obojczykowy. Przesuń podpory na zewnątrz, zmniejsz ciężar lub przejdź na shrugi z trzymanym obciążeniem.",
+      "alternative": "dumbbell-shrug"
+    },
+    {
+      "condition": "cervical_spine_pain_or_disc_pathology",
+      "severity": "modify",
+      "modification": "Heavy axial loading through the shoulders compresses the cervical spine. Keep loads moderate, avoid head movement, and prioritize controlled tempo. Stop if numbness or radiating pain appears.",
+      "modificationPl": "Duże obciążenie osiowe przez barki kompresuje odcinek szyjny kręgosłupa. Stosuj umiarkowane ciężary, unikaj ruchów głowy, priorytet ma kontrolowane tempo. Przerwij, jeśli pojawi się drętwienie lub promieniujący ból.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "anterior_shoulder_impingement",
+      "severity": "modify",
+      "modification": "Holding the arms forward at chest height with pads on the front shoulders can provoke impingement. Use version 1 (pads on upper traps, arms overhead) or switch to free-weight shrugs.",
+      "modificationPl": "Trzymanie ramion z przodu na wysokości klatki piersiowej z podporami na przednich barkach może prowokować konflikt podbarkowy. Użyj wariantu 1 (podpory na górnym czworobocznym, ramiona nad głową) lub przejdź na shrugi z wolnymi ciężarami.",
+      "alternative": "lever-gripless-shrug"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "The standing axial load demands constant lumbar bracing. Use lighter loads, wear a belt if needed, or replace with a supported shrug variant.",
+      "modificationPl": "Stojące obciążenie osiowe wymaga stałego napięcia odcinka lędźwiowego. Stosuj lżejsze ciężary, użyj pasa jeśli trzeba, lub zastąp ćwiczenie wariantem z podporą tułowia.",
+      "alternative": "cable-shrug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4x6-10 (strength) | 2-3x15-20 (pump/finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-gripless-shrug-v-2.gif",
+    "frames_extracted": [
+      "frames/lever-gripless-shrug-v-2/frame_0_start.png",
+      "frames/lever-gripless-shrug-v-2/frame_1_early.png",
+      "frames/lever-gripless-shrug-v-2/frame_2_mid.png",
+      "frames/lever-gripless-shrug-v-2/frame_3_late.png",
+      "frames/lever-gripless-shrug-v-2/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/lever-gripless-shrug-v-2"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end) oraz porównałem z wariantem 1 (lever-gripless-shrug). Frame 0: atlet stoi na platformie maszyny dźwigniowej, wyściełane podpory spoczywają na przednich aktonach barków, ramiona uniesione do przodu na wysokość klatki piersiowej trzymają przednie uchwyty, barki opuszczone w dół (pozycja startowa z rozciągnięciem). Górny czworoboczny i tylna część szyi podświetlone na czerwono. Frame 2: barki uniesione pionowo do góry w kierunku uszu, podpory wędrują razem z barkami (widoczna mniejsza intensywność czerwieni — moment skurczu). Frame 4: powrót do pozycji rozciągniętej. RÓŻNICA OD V1: w wariancie 1 ramiona są uniesione nad głowę, a podpory leżą na górnej części barków/czworobocznym; w wariancie 2 ramiona są w pozycji poziomej z przodu, a podpory na przednich aktonach barków. Mechanika ruchu (shrug pionowy) identyczna, ale wektor obciążenia inny — V2 obciąża bardziej przednie struktury barku. Mechanic=isolation potwierdzony. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "back", "traps", "isolation", "machine", "gripless", "shoulders", "upper_body", "finisher"]
+}

@@ -1,0 +1,206 @@
+{
+  "id": "kettlebell-alternating-press",
+  "name": "Kettlebell Alternating Press (Standing)",
+  "namePl": "Naprzemienne wyciskanie kettlebellami",
+  "aliases": ["alternating kettlebell shoulder press", "standing alternating KB overhead press", "double kettlebell alternating press", "KB alternating military press"],
+  "aliasesPl": ["wyciskanie kettlebellami na zmianę", "naprzemienne wyciskanie KB nad głowę", "wyciskanie żołnierskie kettlebellami naprzemiennie", "alternating press kettlebell", "naprzemienne OHP z KB"],
+
+  "description": "Standing double-kettlebell overhead press performed in a sequential alternating pattern — press one kettlebell to full lockout, lower it back to the rack, THEN press the other. Unlike the seesaw variant (where one goes up while the other comes down simultaneously), the alternating press completes one full rep before switching sides. While one arm works, the other stays loaded in the rack — creating massive asymmetrical load and forcing the obliques and quadratus lumborum to fight lateral flexion. Builds the anterior + lateral deltoids, triceps, and an iron anti-lean core. The single-side load makes this brutal for stabilizers despite using familiar OHP mechanics.",
+  "descriptionPl": "Wyciskanie dwoma kettlebellami nad głowę na stojąco w sekwencyjnym naprzemiennym wzorcu — wyciskasz jedną kettlebell do pełnego lock-out, opuszczasz ją do rack, DOPIERO POTEM wyciskasz drugą. W przeciwieństwie do wariantu seesaw (gdzie jedna leci w górę, a druga jednocześnie opada), w alternating press kończysz pełną powtórkę zanim zmienisz stronę. Gdy jedna ręka pracuje, druga zostaje obciążona w pozycji rack — tworzy to ogromne asymetryczne obciążenie i zmusza mięśnie skośne i czworoboczne lędźwi do walki z bocznym przechyłem. Buduje akton przedni i boczny barku, tricepsy oraz żelazny core odporny na przechył. Jednostronne obciążenie czyni ten ruch brutalnym dla stabilizatorów, mimo że mechanika OHP pozostaje znajoma.",
+
+  "instructions": [
+    "Clean two kettlebells to the rack position: handles diagonal in the palm heel, bells resting on the outer forearm, elbows tucked in front of the ribcage, knuckles facing the ceiling.",
+    "Stand tall, feet hip- to shoulder-width apart. Brace core hard 360 degrees, squeeze glutes, ribs DOWN (no rib flare).",
+    "Inhale and brace. Press the right kettlebell straight up overhead while the left STAYS in the rack — keep that left elbow tucked, bell on the forearm shelf.",
+    "Drive the right bell to full lockout: biceps by ear, wrist stacked over the shoulder, knuckles to ceiling.",
+    "Lower the right kettlebell under control back to the rack position. Pause briefly — fully re-establish the rack BEFORE starting the next rep.",
+    "Now press the left kettlebell up to full lockout while the right stays in rack. Lower under control.",
+    "This is ONE complete alternating cycle (1 rep right + 1 rep left). Continue alternating sides.",
+    "Maintain a perfectly vertical torso throughout. NO leaning sideways AWAY from the working arm — that defeats the anti-lateral-flexion stimulus.",
+    "Exhale at each lockout, inhale on the way down. Keep wrists neutral (not bent back), kettlebells stacked over the shoulder, not in front."
+  ],
+  "instructionsPl": [
+    "Wyrzuć (clean) dwie kettlebelle do pozycji rack: rączki na skos w podstawie dłoni, dzwony oparte na zewnętrznym przedramieniu, łokcie schowane przed klatką, kostki dłoni skierowane do sufitu.",
+    "Stań prosto, stopy na szerokość bioder do barków. Mocno napnij brzuch 360 stopni, ściśnij pośladki, żebra W DÓŁ (bez flarowania).",
+    "Wdech i napięcie. Wyciśnij prawą kettlebell prosto nad głowę, podczas gdy lewa ZOSTAJE w rack — utrzymaj lewy łokieć schowany, dzwon na półce przedramienia.",
+    "Dociśnij prawy dzwon do pełnego lock-out: biceps przy uchu, nadgarstek dokładnie nad barkiem, kostki w sufit.",
+    "Opuść prawą kettlebell kontrolowanie z powrotem do pozycji rack. Krótka pauza — w pełni odzyskaj rack ZANIM zaczniesz kolejną powtórkę.",
+    "Teraz wyciśnij lewą kettlebell w górę do pełnego lock-out, podczas gdy prawa zostaje w rack. Opuść pod kontrolą.",
+    "To jest JEDEN pełny cykl naprzemienny (1 powt. prawa + 1 powt. lewa). Kontynuuj naprzemiennie.",
+    "Utrzymuj idealnie pionowy tułów przez cały ruch. ŻADNYCH przechyłów bocznych W STRONĘ PRZECIWNĄ do pracującej ręki — to niweczy bodziec anti-lateral-flexion.",
+    "Wydech na każdym lock-out, wdech podczas opuszczania. Nadgarstki neutralne (nie wygięte w tył), kettlebelle dokładnie nad barkiem, nie przed nim."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "obliques"],
+    "secondary": ["triceps", "upper_trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "rectus_abdominis", "quadratus_lumborum", "rotator_cuff", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P8",
+    "obliques": "P7",
+    "triceps": "S7",
+    "upper_trapezius": "S6",
+    "serratus_anterior": "S6",
+    "core": "S8",
+    "quadratus_lumborum": "S7",
+    "rotator_cuff": "T5",
+    "forearms": "T5",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["weightlifting_belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["kettlebell-shoulder-press", "single-arm-kettlebell-press", "dumbbell-shoulder-press"],
+    "progression_to": ["kettlebell-seesaw-press", "double-kettlebell-press", "kettlebell-bottoms-up-press"],
+    "alternatives": ["dumbbell-alternating-shoulder-press", "single-arm-kettlebell-press", "kettlebell-seesaw-press", "dumbbell-standing-overhead-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two kettlebells racked: handle diagonal in palm, bell resting on outer forearm",
+      "Elbows tucked in front of ribs, knuckles point to ceiling",
+      "Feet hip- to shoulder-width, weight even on both feet",
+      "Ribs DOWN, glutes squeezed, core braced 360 degrees",
+      "Eyes forward, neck neutral — don't look up at the moving bell"
+    ],
+    "setup_cues_pl": [
+      "Dwie kettlebelle w rack: rączka na skos w dłoni, dzwon na zewnętrznym przedramieniu",
+      "Łokcie schowane przed żebrami, kostki w stronę sufitu",
+      "Stopy na szerokość bioder do barków, ciężar równo na obu stopach",
+      "Żebra W DÓŁ, pośladki ściśnięte, brzuch napięty 360 stopni",
+      "Wzrok do przodu, szyja neutralna — nie odchylaj głowy za poruszającym się dzwonem"
+    ],
+    "execution_cues": [
+      "One full rep, THEN switch — not simultaneously",
+      "Press STRAIGHT up, bell stacks over the shoulder",
+      "Resting side STAYS in rack — don't let that elbow drop",
+      "Torso VERTICAL — no leaning away from the working arm",
+      "Full lockout each rep — biceps by ear, knuckles to ceiling"
+    ],
+    "execution_cues_pl": [
+      "Pełna powtórka, DOPIERO POTEM zmiana — nie jednocześnie",
+      "Wyciskaj PROSTO w górę, dzwon ustawia się nad barkiem",
+      "Strona spoczywająca ZOSTAJE w rack — nie pozwól by łokieć opadł",
+      "Tułów PIONOWY — bez przechyłu w stronę przeciwną do pracującej ręki",
+      "Pełen lock-out każdej powtórki — biceps przy uchu, kostki w sufit"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lateral lean AWAY from the working arm — torso tilts to counter the load going up",
+        "faultPl": "Boczny przechył W STRONĘ PRZECIWNĄ do pracującej ręki — tułów odchyla się żeby zrównoważyć ciężar idący w górę",
+        "cause": "Weak obliques / quadratus lumborum, weight too heavy, no active anti-lean brace",
+        "causePl": "Słabe skośne / czworoboczne lędźwi, zbyt duży ciężar, brak aktywnego napięcia anty-przechył",
+        "cue": "Imagine pressing your free-side hip DOWN into the floor as the bell goes up. Brace as if about to be punched in the gut. Drop the weight if the lean persists.",
+        "cuePl": "Wyobraź sobie że wciskasz biodro po stronie wolnej W DÓŁ do podłogi gdy dzwon idzie w górę. Napnij brzuch jakbyś czekał na cios w żołądek. Zmniejsz ciężar jeśli przechył się utrzymuje."
+      },
+      {
+        "fault": "Losing the rack on the resting side — kettlebell drops below clavicle while the other arm presses",
+        "faultPl": "Utrata rack po stronie spoczywającej — kettlebell opada poniżej obojczyka gdy druga ręka wyciska",
+        "cause": "Tired forearm, elbow drifting outward, mental focus only on the working arm",
+        "causePl": "Zmęczone przedramię, łokieć ucieka na zewnątrz, koncentracja tylko na pracującej ręce",
+        "cue": "Resting side elbow STAYS in front of the ribs. Bell parks on the forearm shelf. If you can't hold rack on one side while pressing the other — your weight is too heavy.",
+        "cuePl": "Łokieć strony spoczywającej ZOSTAJE przed żebrami. Dzwon parkuje na półce przedramienia. Jeśli nie utrzymujesz rack po jednej stronie wyciskając drugą — za duży ciężar."
+      },
+      {
+        "fault": "Rib flare and lumbar hyperextension (back arching to help finish the press)",
+        "faultPl": "Flarowanie żeber i przeprost lędźwiowy (plecy odchylają się żeby pomóc skończyć wyciskanie)",
+        "cause": "Limited overhead mobility, weight too heavy, glutes not engaged",
+        "causePl": "Ograniczona mobilność overhead, zbyt duży ciężar, pośladki nieaktywne",
+        "cue": "Ribs DOWN, glutes ON. If you can't lock out without arching — your shoulder mobility is the limit, not your strength. Train t-spine and lat mobility separately.",
+        "cuePl": "Żebra W DÓŁ, pośladki ZACIŚNIĘTE. Jeśli nie wyciskasz bez wyginania pleców — to mobilność barku jest limitem, nie siła. Trenuj mobilność piersiowego i najszerszych osobno."
+      },
+      {
+        "fault": "Pressing forward — kettlebell drifts in front of the face instead of stacking over the shoulder",
+        "faultPl": "Wyciskanie do przodu — kettlebell ucieka przed twarz zamiast układać się nad barkiem",
+        "cause": "Avoiding head contact with the bell path, tight lats, poor lockout pattern",
+        "causePl": "Unikanie kontaktu głowy z torem dzwonu, spięte najszersze grzbietu, słaby wzorzec lock-out",
+        "cue": "Push your head slightly through as the bell passes the face. Finish with the bell DIRECTLY over the shoulder, viewed from the side — not in front.",
+        "cuePl": "Lekko wepchnij głowę gdy dzwon mija twarz. Zakończ z dzwonem BEZPOŚREDNIO nad barkiem (widok z boku) — nie przed nim."
+      },
+      {
+        "fault": "Wrist hyperextended — kettlebell handle slips into fingers, bending the wrist back at lockout",
+        "faultPl": "Nadmiernie wygięty nadgarstek — rączka kettlebell wpada do palców, nadgarstek zgina się w tył w lock-out",
+        "cause": "Improper grip in palm heel, weak wrist, bell handle too thick for hand size",
+        "causePl": "Niepoprawny chwyt w podstawie dłoni, słaby nadgarstek, za gruba rączka kettlebell dla rozmiaru dłoni",
+        "cue": "Handle DIAGONAL through palm heel from base of pinky to base of index. Knuckles UP at lockout. Use wraps if wrist is weak.",
+        "cuePl": "Rączka SKOSEM przez podstawę dłoni od podstawy małego palca do podstawy wskazującego. Kostki w GÓRĘ w lock-out. Użyj wraps jeśli słaby nadgarstek."
+      }
+    ],
+    "breathing": "Inhale and brace deeply in the double rack. Exhale forcefully through pursed lips at the lockout of each rep, then re-inhale as that arm lowers. Re-brace fully BEFORE pressing the opposite side. Maintain continuous intra-abdominal pressure — never go fully limp between alternating reps.",
+    "breathingPl": "Głęboki wdech i napięcie w podwójnym rack. Mocny wydech przez zaciśnięte usta na lock-out każdej powtórki, potem ponowny wdech gdy ta ręka opada. W pełni odnów napięcie ZANIM zaczniesz wyciskać przeciwną stronę. Utrzymuj ciągłe ciśnienie wewnątrz brzucha — nigdy nie rozluźniaj się całkowicie między naprzemiennymi powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't drop bell below clavicle in rack), or switch to landmine press (angled press is more shoulder-friendly).",
+      "modificationPl": "Zmniejsz ROM (nie opuszczaj dzwonu poniżej obojczyka w rack) lub przejdź na landmine press (kątowy nacisk bardziej przyjazny dla barku).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work thoracic and lat mobility separately. Use single-arm KB press (easier path control) or landmine press until full overhead lockout is possible without lumbar extension.",
+      "modificationPl": "Pracuj osobno nad mobilnością piersiowego i najszerszych. Używaj jednoręcznego wyciskania KB (łatwiej kontrolować tor) lub landmine press do czasu pełnego lock-out overhead bez wyginania lędźwi.",
+      "alternative": "single-arm-kettlebell-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to seated double-kettlebell press (back supported, removes anti-lean component). The alternating standing variant places high demand on the obliques and QL — not suitable during a flare-up.",
+      "modificationPl": "Przejdź na siedzące wyciskanie dwoma kettlebellami (oparte plecy, eliminuje komponent anti-lean). Wariant naprzemienny stojący mocno obciąża mięśnie skośne i czworoboczne lędźwi — nie nadaje się przy zaostrzeniu bólu.",
+      "alternative": "kettlebell-seated-press"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "Ensure handle sits in palm heel (not fingers). Use wrist wraps. If pain persists, switch to dumbbells — they allow neutral wrist positioning without bell impact on forearm.",
+      "modificationPl": "Upewnij się że rączka jest w podstawie dłoni (nie w palcach). Użyj wraps. Jeśli ból nie ustępuje, przejdź na hantle — pozwalają na neutralny nadgarstek bez uderzania dzwonem o przedramię.",
+      "alternative": "dumbbell-alternating-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 per arm (hypertrophy) | 4-5x5-8 per arm (strength) | 3x8-12 per arm (strength-endurance)",
+
+  "media": {
+    "primary": "kettlebell-alternating-press.gif",
+    "frames_extracted": [
+      "frames/kettlebell-alternating-press/frame_0_start.png",
+      "frames/kettlebell-alternating-press/frame_1_early.png",
+      "frames/kettlebell-alternating-press/frame_2_mid.png",
+      "frames/kettlebell-alternating-press/frame_3_late.png",
+      "frames/kettlebell-alternating-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-alternating-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany klatka po klatce. Frame 0: obie kettlebelle w pozycji rack (po obu stronach barków na zewnętrznych przedramionach), postawa stojąca, tułów pionowy. Frame 1-3: PRAWA kettlebell w pełnym lock-out nad głową (biceps przy uchu, dzwon nad barkiem), LEWA cały czas w rack — to KLUCZOWE odróżnienie od seesaw: w alternating jedna ręka kończy pełną powtórkę zanim druga ruszy. Frame 4: lewa kettlebell zaczyna iść w górę (widoczne przejście — początek drugiej powtórki na drugą stronę). Podświetlone partie w GIFie: przednie i boczne aktony deltoid (P), tricepsy (S), trapezius (S), brzuch z mocnym akcentem na mięśnie skośne (P — anti-lateral-flexion jest tu głównym bodźcem core, nie tylko stabilizacyjnym). Tułów w GIFie pionowy — brak przechyłu mimo asymetrycznego obciążenia. Mechanic=compound (multi-joint: bark+łokieć), laterality=alternating (sekwencyjnie, jedna ręka kończy nim druga zacznie — w odróżnieniu od seesaw gdzie ruchy są jednoczesne i przeciw-fazowe), plane=frontal (wyciskanie w płaszczyźnie czołowej, kettlebelle po bokach barków, nie z przodu jak w hantlach z chwytem neutralnym), force=push. Difficulty 6/10 — łatwiejsze od seesaw (7/10) bo tylko jedna ręka pracuje w danym momencie (mniejsze wyzwanie koordynacyjne), ale trudniejsze od double press bo asymetryczne obciążenie wymusza mocną pracę anty-przechyłu bocznego. Obliques zaklasyfikowane jako PRIMARY (P7) — anti-lateral-flexion jest tu głównym bodźcem core, nie incydentalnym. PL nazwa 'Naprzemienne wyciskanie kettlebellami' — termin 'naprzemienne' jest w polskim środowisku jednoznaczny dla sekwencyjnego ruchu (pełna powt. + zmiana strony), podczas gdy 'seesaw' został zarezerwowany dla wariantu jednoczesnego przeciw-fazowego.",
+
+  "tags": ["kettlebell", "shoulders", "vertical_push", "alternating", "anti_lateral_flexion", "core_stability", "obliques", "upper_body", "double_kettlebell", "unilateral_loading", "functional"]
+}

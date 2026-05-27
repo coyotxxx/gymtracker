@@ -1,0 +1,203 @@
+{
+  "id": "barbell-lying-preacher-curl",
+  "name": "Barbell Lying Preacher Curl",
+  "namePl": "Curl na ławce poziomej w pozycji preacher (lying preacher curl)",
+  "aliases": ["lying barbell curl over bench", "prone bench barbell curl", "horizontal preacher curl with barbell", "flat bench preacher curl"],
+  "aliasesPl": ["uginanie ramion ze sztangą leżąc na ławce poziomej", "curl ze sztangą w leżeniu przodem na ławce", "preacher curl poziomy ze sztangą", "lying preacher curl"],
+
+  "description": "Strict biceps isolation exercise performed lying prone (face down) on a flat bench. The athlete grips a barbell with a supinated grip and lets the arms hang straight down over the end of the bench — the back edge of the bench acts as the preacher pad, locking the upper arms in a slightly extended shoulder position. This setup completely eliminates hip swing and body english, forces the biceps long head into a deep stretch at the bottom, and puts the elbow flexors under tension through the full range. A favorite finisher in classic bodybuilding for hammering the long head with strict form.",
+  "descriptionPl": "Bardzo ścisłe ćwiczenie izolacyjne na biceps wykonywane w leżeniu przodem (twarzą w dół) na ławce poziomej. Trzymasz sztangę chwytem dolnym (podchwyt), a ramiona zwisają prosto w dół poza krawędź ławki — tylna krawędź ławki działa jak pulpit modlitewnika i blokuje ramiona ponad łokciem w lekkim wyproście barku. Ten układ całkowicie eliminuje bujanie biodrami i pomaganie ciałem, wymusza głębokie rozciągnięcie długiej głowy bicepsa w dolnym położeniu i utrzymuje zginacze łokcia pod napięciem przez cały zakres ruchu. Klasyk klasycznej kulturystyki — idealny finiszer na długą głowę bicepsa w ścisłej technice.",
+
+  "instructions": [
+    "Set a flat bench in an open area with enough clearance at one end to load and lift a barbell from the floor.",
+    "Place the loaded barbell on the floor at the head end of the bench, lined up parallel to the bench's long edge.",
+    "Lie face down (prone) on the bench so that your chest is supported and your head and shoulders extend just past the end of the bench.",
+    "Reach down and grab the barbell with a supinated grip (palms up) at about shoulder-width. The back of your upper arms should rest lightly against the end of the bench.",
+    "With elbows almost fully extended, allow the bar to hang directly below your shoulders. This is the start position — biceps fully lengthened.",
+    "Curl the barbell upward by flexing only at the elbows. Keep upper arms pinned to the bench and motionless. Exhale on the way up.",
+    "Continue until the bar reaches the front of your shoulders and the biceps are fully contracted. Pause briefly and squeeze hard.",
+    "Lower the bar under control over 2-3 seconds back to a full elbow extension. Inhale during the eccentric.",
+    "Keep your torso flat on the bench, head neutral, and avoid pressing your feet hard against the floor to swing weight up."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę poziomą w otwartej przestrzeni z wolnym miejscem przy jednym końcu na sztangę.",
+    "Połóż obciążoną sztangę na podłodze przy końcu ławki od strony głowy, równolegle do długiej krawędzi ławki.",
+    "Połóż się przodem (twarzą w dół) na ławce tak, aby klatka piersiowa była podparta, a głowa i barki wystawały lekko poza koniec ławki.",
+    "Sięgnij w dół i złap sztangę chwytem dolnym (podchwyt) mniej więcej na szerokość barków. Tylna część ramion ponad łokciem powinna lekko opierać się o koniec ławki.",
+    "Z łokciami prawie całkowicie wyprostowanymi, pozwól sztandze zwisać dokładnie pod barkami. To pozycja startowa — biceps maksymalnie rozciągnięty.",
+    "Uginaj sztangę do góry zginając wyłącznie łokcie. Ramiona ponad łokciem przyklejone do ławki i nieruchome. Wydech w fazie unoszenia.",
+    "Kontynuuj ruch aż sztanga dotrze na wysokość przednich aktonów barków i biceps będzie w pełnym skurczu. Zatrzymaj na chwilę i mocno spinaj.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy do pełnego wyprostu w łokciach. Wdech w fazie ekscentrycznej.",
+    "Trzymaj tułów płasko na ławce, głowę w neutralnej pozycji, nie odpychaj się mocno stopami od podłogi aby nie bujać ciężarem."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["anterior_deltoid", "forearm_flexors", "upper_trapezius", "core"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "anterior_deltoid": "T3",
+    "forearm_flexors": "T4",
+    "upper_trapezius": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench"],
+    "optional": ["weight_plates", "collars", "ez_bar", "wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-curl", "preacher-curl"],
+    "progression_to": ["spider-curl", "incline-dumbbell-curl", "barbell-drag-curl"],
+    "alternatives": ["preacher-curl", "spider-curl", "incline-dumbbell-curl", "ez-bar-preacher-curl", "barbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie chest-flat on the bench, shoulders just past the end",
+      "Supinated grip on the barbell at shoulder-width",
+      "Back of upper arms resting against the bench edge",
+      "Arms hanging straight down, biceps fully stretched",
+      "Head neutral, feet relaxed on the floor — no pushing"
+    ],
+    "setup_cues_pl": [
+      "Połóż się klatką płasko na ławce, barki tuż za jej krawędzią",
+      "Chwyt dolny na sztandze na szerokość barków",
+      "Tylna część ramion oparta o krawędź ławki",
+      "Ramiona zwisają prosto w dół, biceps maksymalnie rozciągnięty",
+      "Głowa w neutralnej pozycji, stopy luźno na podłodze — nie odpychaj się"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms glued to the bench",
+      "Drive the bar up with the biceps, not the shoulders",
+      "Squeeze hard at the top — pause for one count",
+      "Lower slowly over 2-3 seconds to full elbow lockout",
+      "Feel the stretch at the bottom — do not bounce out of it"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyklejone do ławki",
+      "Unieś sztangę bicepsami, nie barkami",
+      "Mocno spinaj na górze — przytrzymaj jeden takt",
+      "Opuszczaj wolno przez 2-3 sekundy do pełnego wyprostu łokci",
+      "Czuj rozciągnięcie na dole — nie odbijaj sztangi z tej pozycji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pushing the floor with feet to swing the bar up",
+        "faultPl": "Odpychanie się stopami od podłogi aby wybić sztangę w górę",
+        "cause": "Load too heavy, attempting to grind reps past technical failure",
+        "causePl": "Zbyt duży ciężar, próba forsowania powtórzeń po technicznym wyczerpaniu",
+        "cue": "Lift your feet off the floor for the last few reps, or reduce the weight.",
+        "cuePl": "Unieś stopy nad podłogę przy ostatnich powtórzeniach lub zmniejsz ciężar."
+      },
+      {
+        "fault": "Elbows flare out wide or lift off the bench edge",
+        "faultPl": "Łokcie odjeżdżają na boki lub odrywają się od krawędzi ławki",
+        "cause": "Grip too wide, weak biceps in the stretched position, or barbell too heavy",
+        "causePl": "Zbyt szeroki chwyt, słabość bicepsa w pozycji rozciągniętej lub zbyt ciężka sztanga",
+        "cue": "Use shoulder-width grip and keep upper arms pinned against the bench end the entire set.",
+        "cuePl": "Trzymaj chwyt na szerokość barków, ramiona ponad łokciem przyciśnięte do krawędzi ławki przez całą serię."
+      },
+      {
+        "fault": "Bouncing out of the bottom stretch",
+        "faultPl": "Odbijanie sztangi z dolnej pozycji rozciągnięcia",
+        "cause": "Using the stretch reflex to start the rep, often when fatigued",
+        "causePl": "Wykorzystywanie odruchu rozciągania do startu powtórzenia, często przy zmęczeniu",
+        "cue": "Stop briefly at the bottom — show me the stretch. Then curl up with the biceps alone.",
+        "cuePl": "Zatrzymaj się na chwilę na dole — pokaż rozciągnięcie. Potem unoś sztangę samym bicepsem."
+      },
+      {
+        "fault": "Lifting head and chest off the bench at the top",
+        "faultPl": "Odrywanie głowy i klatki od ławki w górnej pozycji",
+        "cause": "Compensating for biceps fatigue with thoracic extension and momentum",
+        "causePl": "Kompensowanie zmęczenia bicepsów wyprostem piersiowym i rozpędem",
+        "cue": "Chest stays flat on the bench. If you cannot stay down, the weight is too heavy.",
+        "cuePl": "Klatka cały czas płasko na ławce. Jeśli nie możesz pozostać dociśnięty — ciężar za duży."
+      },
+      {
+        "fault": "Wrist hyperextension under the load",
+        "faultPl": "Przeprostowanie nadgarstków pod obciążeniem",
+        "cause": "Weak wrist flexors, straight bar mismatched with athlete's anatomy",
+        "causePl": "Słabe zginacze nadgarstka, prosta sztanga niedopasowana do anatomii ćwiczącego",
+        "cue": "Keep wrists in line with forearms. Switch to an EZ-bar if it bothers your wrists.",
+        "cuePl": "Trzymaj nadgarstki w linii z przedramieniem. Przejdź na sztangę łamaną jeśli drażni nadgarstki."
+      }
+    ],
+    "breathing": "Inhale before the rep with the bar fully extended below. Exhale powerfully during the curl up. Inhale during the controlled lowering. Keep the chest pressed into the bench throughout.",
+    "breathingPl": "Wdech przed startem powtórzenia ze sztangą w dolnej pozycji. Mocny wydech podczas unoszenia. Wdech podczas kontrolowanego opuszczania. Klatka cały czas dociśnięta do ławki."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "The deep stretched position with shoulder slightly extended puts maximum load on the distal biceps tendon. Avoid entirely during acute phase. Once cleared, return through preacher curl on a standard pad, then progress here with light loads and high reps (12-15) only.",
+      "modificationPl": "Głębokie rozciągnięcie z lekkim wyprostem barku maksymalnie obciąża dystalne przyczepy bicepsa. Unikaj całkowicie w fazie ostrej. Po wyleczeniu wróć przez zwykły preacher curl na standardowym pulpicie, potem stopniowo do tego wariantu wyłącznie z lekkimi ciężarami i wyższą liczbą powtórzeń (12-15).",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "anterior_shoulder_impingement_or_instability",
+      "severity": "modify",
+      "modification": "The prone position with arms hanging below shoulder level puts the gleno-humeral joint in slight extension and internal traction. Use an incline bench preacher curl instead to keep the shoulder in flexion.",
+      "modificationPl": "Pozycja na brzuchu z ramionami zwisającymi poniżej poziomu barków ustawia staw ramienny w lekkim wyproście i trakcji. Użyj preacher curl na ławce skośnej, aby utrzymać bark w zgięciu.",
+      "alternative": "incline-dumbbell-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locks wrists in full supination, which is aggravated by hanging the load below shoulder level. Switch to EZ-bar lying preacher curl or use dumbbells with free supination.",
+      "modificationPl": "Sztanga prosta blokuje nadgarstki w pełnej supinacji, co dodatkowo pogarsza zwieszenie ciężaru pod barkami. Przejdź na sztangę łamaną w tym wariancie lub hantle ze swobodną supinacją.",
+      "alternative": "ez-bar-preacher-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Lying prone with chest on a flat bench creates mild lumbar lordosis. Place a small pad under the hips or pick a slightly inclined preacher bench instead.",
+      "modificationPl": "Leżenie przodem z klatką na płaskiej ławce daje lekkie pogłębienie lordozy lędźwiowej. Podłóż mały wałek pod biodra lub przejdź na nieco skośną ławkę modlitewnika.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x12-15 (long-head focus / finisher) | 2-3x15-20 (metabolic stress)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-lying-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-lying-preacher-curl/frame_0_start.png",
+      "frames/barbell-lying-preacher-curl/frame_1_early.png",
+      "frames/barbell-lying-preacher-curl/frame_2_mid.png",
+      "frames/barbell-lying-preacher-curl/frame_3_late.png",
+      "frames/barbell-lying-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/barbell-lying-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel (start/early/mid/late/end). Frame 0: ćwiczący leży przodem na płaskiej ławce, ramiona zwisają poza krótszą krawędzią ławki, sztanga trzymana podchwytem na szerokość barków, łokcie prawie w pełnym wyproście — biceps maksymalnie rozciągnięty, na lewym ramieniu widoczne czerwone podświetlenie biceps_brachii. Frame 2: sztanga uniesiona do wysokości twarzy, łokcie zgięte około 90-100°, ramiona ponad łokciem nadal przyklejone do krawędzi ławki, klatka pozostaje płasko. Frame 4: powrót do pozycji startowej z widocznym 'ghostem' szczytowej fazy powyżej. Tułów cały czas dociśnięty do ławki — modelowo eliminuje to bujanie biodrami i kompensacje tułowiem. To wariant 'lying preacher' (ławka pełni rolę pulpitu modlitewnika obróconego horyzontalnie), nie zwykły preacher curl. Mechanic=isolation, plane=sagittal, force=pull, bilateral. Primary biceps_brachii z silnym naciskiem na długą głowę (rozciągnięcie w dolnej pozycji), secondary brachialis + brachioradialis. Wszystkie pola PL napisane od zera, nie z translatora.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "barbell", "bench", "preacher", "long_head_focus", "stretch_emphasis", "upper_body"]
+}

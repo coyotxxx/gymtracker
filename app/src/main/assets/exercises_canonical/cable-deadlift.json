@@ -1,0 +1,202 @@
+{
+  "id": "cable-deadlift",
+  "name": "Cable Deadlift",
+  "namePl": "Deadlift z wyciągu",
+  "aliases": ["cable pulley deadlift", "low cable deadlift", "cable hip hinge"],
+  "aliasesPl": ["martwy ciąg z wyciągu", "deadlift na wyciągu dolnym", "deadlift z linki"],
+
+  "description": "Hip hinge / deadlift variation performed at a low cable pulley with a straight bar attachment. The cable provides constant tension throughout the entire range of motion — unlike a barbell where leverage changes drastically. Excellent option for beginners learning the hinge pattern, for joint-friendly hypertrophy work, and for trainees returning from injury who want posterior chain training without floor loading. The pull direction (horizontal-to-up) emphasizes glutes and hamstrings while reducing axial spinal load compared to a barbell version.",
+  "descriptionPl": "Wariant martwego ciągu / hip hinge wykonywany na wyciągu dolnym z krótkim gryfem prostym. Cable zapewnia STAŁE napięcie przez cały zakres ruchu — w przeciwieństwie do sztangi, gdzie dźwignia drastycznie się zmienia. Świetna opcja dla początkujących uczących się wzorca hip hinge, do hipertrofii przyjaznej stawom oraz dla trenujących wracających po kontuzji, którzy chcą trenować tylny łańcuch bez obciążania kręgosłupa pionowo. Kierunek ciągu (poziomo-do-góry) akcentuje pośladki i dwugłowe ud, jednocześnie redukując osiowe obciążenie kręgosłupa w porównaniu do wersji ze sztangą.",
+
+  "instructions": [
+    "Attach a straight short bar to the LOW pulley of a cable station. Set the cable as low as possible (floor level).",
+    "Stand facing the machine, feet shoulder-width apart, toes pointing forward or slightly out. Position yourself ~30-40 cm from the pulley — close enough that the cable runs near vertical at the bottom.",
+    "Hinge at the hips and bend the knees to lower yourself and grip the bar with a double-overhand grip, hands shoulder-width apart.",
+    "Set the back: chest up, shoulder blades pulled down and back, neutral spine, lats engaged. The cable should pull slightly forward and down — resist it.",
+    "Take a breath, brace the core (Valsalva), and stand up by driving the floor with your legs and pushing the hips forward.",
+    "At the top: full hip extension, shoulders neutral, glutes squeezed. The bar ends at hip height with the cable pulling forward.",
+    "Lower under control: push the hips BACK first (hinge), let the knees bend as the bar travels down. Keep the bar path close to the body.",
+    "Maintain tension at the bottom — the cable should never go slack. Reset breath and repeat."
+  ],
+  "instructionsPl": [
+    "Przyczep krótki gryf prosty do DOLNEGO bloczka maszyny cable. Ustaw cable jak najniżej (poziom podłogi).",
+    "Stań twarzą do maszyny, stopy na szerokość barków, palce skierowane do przodu lub lekko na zewnątrz. Ustaw się ~30-40 cm od bloczka — wystarczająco blisko, by linka biegła niemal pionowo na dole.",
+    "Zgnij się w biodrach i ugnij kolana, schodząc do gryfu, złap go podwójnym nachwytem na szerokość barków.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, neutralny kręgosłup, najszersze napięte. Cable ciągnie lekko do przodu i w dół — opieraj się temu napięciu.",
+    "Nabierz powietrza, napnij brzuch (Valsalva), wstań napierając stopami w podłogę i wypychając biodra do przodu.",
+    "Na górze: pełen wyprost biodra, barki neutralne, pośladki ściśnięte. Gryf kończy ruch na wysokości bioder, cable ciągnie do przodu.",
+    "Opuszczaj kontrolnie: najpierw wypchnij biodra DO TYŁU (hinge), pozwól kolanom się zginać w miarę opadania gryfu. Trzymaj tor ruchu gryfu blisko ciała.",
+    "Utrzymuj napięcie na dole — linka nigdy nie może zwisać luźno. Zresetuj oddech i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "erector_spinae"],
+    "secondary": ["quadriceps", "trapezius", "forearms"],
+    "stabilizers": ["core", "latissimus_dorsi", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P8",
+    "erector_spinae": "P8",
+    "quadriceps": "S6",
+    "trapezius": "S5",
+    "forearms": "S6",
+    "core": "S6",
+    "latissimus_dorsi": "S5"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar_attachment"],
+    "optional": ["belt", "lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-hip-hinge", "kettlebell-deadlift"],
+    "progression_to": ["romanian-deadlift", "barbell-deadlift", "trap-bar-deadlift"],
+    "alternatives": ["kettlebell-deadlift", "romanian-deadlift", "trap-bar-deadlift", "dumbbell-deadlift"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Cable on the LOWEST setting, straight short bar attached",
+      "Feet shoulder-width, ~30-40 cm from the pulley",
+      "Double-overhand grip, hands shoulder-width",
+      "Chest up, lats engaged, neutral spine",
+      "Cable line near-vertical at the bottom position"
+    ],
+    "setup_cues_pl": [
+      "Cable na NAJNIŻSZYM ustawieniu, krótki gryf prosty przyczepiony",
+      "Stopy szerokość barków, ~30-40 cm od bloczka",
+      "Chwyt podwójny nachwytem, dłonie szerokość barków",
+      "Klatka w górze, najszersze napięte, neutralny kręgosłup",
+      "Linka biegnie niemal pionowo w pozycji dolnej"
+    ],
+    "execution_cues": [
+      "Drive the floor away with your legs — feel constant tension",
+      "Hips forward at the top — squeeze glutes hard at lockout",
+      "Hips BACK first on the descent, then bend the knees",
+      "Keep the bar path close to your body — bar travels in a straight line",
+      "Never let the cable go slack — control both directions"
+    ],
+    "execution_cues_pl": [
+      "Napieraj stopami w podłogę — czuj stałe napięcie",
+      "Biodra do przodu na górze — mocno ściśnij pośladki w lock-out",
+      "Biodra DO TYŁU najpierw w fazie opuszczania, potem zegnij kolana",
+      "Trzymaj tor gryfu blisko ciała — gryf porusza się w linii prostej",
+      "Nigdy nie pozwól lince zwiotczeć — kontroluj obie fazy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back during the lift",
+        "faultPl": "Zaokrąglone plecy lędźwiowe podczas ciągu",
+        "cause": "Weak core/erectors, poor bracing, or hips too high at setup",
+        "causePl": "Słaby brzuch/prostowniki, słabe napięcie, lub biodra za wysoko w starcie",
+        "cue": "Reset position. Brace HARD before the pull. Drop the weight and re-learn the hinge pattern.",
+        "cuePl": "Wróć do pozycji. Mocno napnij brzuch przed ciągiem. Zmniejsz ciężar i naucz się od nowa wzorca hip hinge."
+      },
+      {
+        "fault": "Squatting instead of hinging",
+        "faultPl": "Przysiad zamiast hinge",
+        "cause": "Knees travel forward, torso stays upright, glutes/hamstrings under-activated",
+        "causePl": "Kolana wychodzą do przodu, tułów pozostaje pionowy, pośladki/dwugłowe ud słabo aktywne",
+        "cue": "Push hips BACK first, not down. Imagine closing a car door with your butt. Knees bend only as needed.",
+        "cuePl": "Wypchnij biodra DO TYŁU najpierw, nie w dół. Wyobraź sobie, że zamykasz drzwi auta tyłkiem. Kolana zginają się tylko tyle, ile potrzeba."
+      },
+      {
+        "fault": "Cable goes slack at the bottom (loss of tension)",
+        "faultPl": "Linka zwiotczeje na dole (utrata napięcia)",
+        "cause": "Standing too close to the pulley, or descending too far/too fast",
+        "causePl": "Stoisz za blisko bloczka lub opuszczasz za nisko/za szybko",
+        "cue": "Step back ~10 cm. Stop the descent before the cable loses tension. Control the eccentric phase.",
+        "cuePl": "Cofnij się ~10 cm. Zatrzymaj opuszczanie zanim linka straci napięcie. Kontroluj fazę ekscentryczną."
+      },
+      {
+        "fault": "Pulling with the arms (biceps tension)",
+        "faultPl": "Ciąganie rękami (napięcie bicepsa)",
+        "cause": "Treating it as a row instead of a hinge — arms should be passive cables",
+        "causePl": "Traktowanie ćwiczenia jak wiosłowanie zamiast hinge — ręce powinny być biernymi 'linami'",
+        "cue": "Arms are hooks, NOT levers. Power comes from hips and legs. Relax the biceps completely.",
+        "cuePl": "Ręce to haki, NIE dźwignie. Moc pochodzi z bioder i nóg. Całkowicie rozluźnij biceps."
+      },
+      {
+        "fault": "Hyperextension at the top (leaning back)",
+        "faultPl": "Nadmierne odgięcie na górze (odchylanie się do tyłu)",
+        "cause": "Mistaking lumbar extension for full hip extension; pulling cable too aggressively",
+        "causePl": "Mylenie odgięcia lędźwi z pełnym wyprostem biodra; zbyt agresywne ciąganie cable",
+        "cue": "Stand TALL, neutral pelvis, glutes squeezed. The lockout is hips-only, not spine.",
+        "cuePl": "Stań PROSTO, neutralna miednica, pośladki ściśnięte. Lock-out to tylko biodra, nie kręgosłup."
+      }
+    ],
+    "breathing": "Inhale at the top, brace before the descent. Hold the breath through the bottom and most of the concentric. Exhale at the lockout. For lighter sets, breathing can be 1:1 per rep.",
+    "breathingPl": "Wdech na górze, napnij brzuch przed opuszczaniem. Trzymaj oddech przez dół i większość fazy koncentrycznej. Wydech w lock-out. Przy lżejszych seriach oddech może być 1:1 na powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Stop training and consult a physiotherapist. Even cable hinges load the spine.",
+      "modificationPl": "Przerwij trening i skonsultuj się z fizjoterapeutą. Nawet cable hinge obciąża kręgosłup.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Reduce range of motion (high-handle / mid-pulley position). Avoid loaded lumbar flexion. Master neutral spine before adding load.",
+      "modificationPl": "Skróć zakres ruchu (wyższe ustawienie / średni bloczek). Unikaj obciążonej flexji lędźwiowej. Opanuj neutralny kręgosłup przed dodaniem obciążenia.",
+      "alternative": "hip-thrust"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Reduce depth — stop at the point of impingement. Widen the stance slightly to bypass the painful angle.",
+      "modificationPl": "Zmniejsz głębokość — zatrzymaj się przed punktem zaklinowania. Rozszerz lekko rozstaw stóp by ominąć bolesny kąt.",
+      "alternative": "romanian-deadlift"
+    },
+    {
+      "condition": "grip_or_wrist_injury",
+      "severity": "modify",
+      "modification": "Use lifting straps to remove grip demand. Alternative: switch to a rope or D-handle for a more wrist-neutral grip.",
+      "modificationPl": "Użyj pasków by zdjąć obciążenie z chwytu. Alternatywa: zamień gryf prosty na linkę lub uchwyt D dla bardziej neutralnej pozycji nadgarstka.",
+      "alternative": "kettlebell-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x8-12 (general strength) | 2-3x15-20 (endurance / warm-up) | rarely used for max strength",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-deadlift.gif",
+    "frames_extracted": [
+      "frames/cable-deadlift/frame_0_start.png",
+      "frames/cable-deadlift/frame_1_early.png",
+      "frames/cable-deadlift/frame_2_mid.png",
+      "frames/cable-deadlift/frame_3_late.png",
+      "frames/cable-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/cable-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T10:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0/4 (dół): mężczyzna w pozycji dolnej przy maszynie cable z krótkim gryfem prostym przyczepionym do dolnego bloczka — podświetlone pośladki, dwugłowe ud, czworogłowe (mniej intensywnie). Pozycja bardziej squat-hinge hybrid niż klasyczny deadlift — kolana wyraźnie zgięte. Frame 2 (góra): pełen wyprost stojący, sztanga przy biodrach, podświetlone czworogłowe (lockout). Klasyfikacja: hinge (dominujący wzór), pull, compound, bilateral, sagittal, closed kinetic chain. Klasyfikacja jako 'beginner' (difficulty 5) bo cable jest bezpieczniejsze niż barbell — stała kontrola toru, mniejsze osiowe obciążenie kręgosłupa. Equipment: cable_machine + straight_bar_attachment. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Cable = constant tension to kluczowy USP tego wariantu.",
+
+  "tags": ["cable", "hinge", "posterior_chain", "beginner_friendly", "joint_friendly", "constant_tension", "hypertrophy", "rehab_friendly"]
+}

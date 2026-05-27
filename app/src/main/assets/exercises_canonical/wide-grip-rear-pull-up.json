@@ -1,0 +1,205 @@
+{
+  "id": "wide-grip-rear-pull-up",
+  "name": "Wide-Grip Rear Pull-Up (Behind the Neck)",
+  "namePl": "Podciąganie szerokim chwytem do karku",
+  "aliases": ["wide grip behind the neck pull-up", "behind neck pull-up", "btn pull-up", "wide rear pull-up", "wide grip pull-up behind neck"],
+  "aliasesPl": ["podciąganie do karku", "podciąganie szerokim chwytem za głowę", "podciąganie za głowę", "podciąganie BTN", "BTN pull-up"],
+
+  "description": "Advanced and controversial pull-up variation with very wide overhand grip and bar pulled BEHIND THE NECK (rear). Maximally biases latissimus width by demanding pure scapular adduction and depression with minimal elbow flexion contribution. The behind-neck path puts shoulders into extreme external rotation + abduction (impingement zone) and significantly limits ROM compared to front pull-ups. Old-school bodybuilding staple for lat width but largely fallen out of favor in modern training due to shoulder injury risk. Reserved for advanced lifters with bulletproof shoulder mobility — many coaches recommend front-of-neck variants instead.",
+  "descriptionPl": "Zaawansowana i kontrowersyjna wariacja podciągania z bardzo szerokim chwytem nachwytem i drążkiem ciągniętym ZA GŁOWĘ (do karku). Maksymalnie akcentuje szerokość najszerszych grzbietu wymagając czystej adukcji i depresji łopatek przy minimalnym udziale zginaczy łokcia. Tor ruchu za głową ustawia barki w skrajnej rotacji zewnętrznej + odwiedzeniu (strefa impingementu) i znacząco ogranicza ROM w porównaniu z podciąganiem do klatki. Klasyk starej szkoły bodybuilderskiej dla szerokości pleców, ale w nowoczesnym treningu w dużej mierze odrzucony ze względu na ryzyko urazu barku. Zarezerwowane dla zaawansowanych z idealną mobilnością barków — wielu trenerów rekomenduje wariant do klatki zamiast tego.",
+
+  "instructions": [
+    "Grip a pull-up bar with palms facing AWAY (pronated/overhand), hands MUCH wider than shoulder-width — about 1.5× shoulder width.",
+    "Hang at full arm extension. Set shoulder blades DOWN (depression). Slight forward head tilt to clear the bar path behind.",
+    "Brace your core. Maintain neutral spine. Legs together or crossed, slight knee bend.",
+    "Initiate the pull by driving elbows DOWN AND OUT toward your hips (not toward chest). Focus on squeezing lats and pulling shoulder blades together + down.",
+    "Lean head FORWARD slightly to make room for the bar to travel behind the neck. Keep cervical spine neutral — do NOT crank head down.",
+    "Pull until the bar touches or approaches the BASE OF YOUR NECK / upper traps. The top is shorter ROM than front pull-up.",
+    "Lower with full control to dead-hang. Do not drop or use momentum.",
+    "Quality over quantity — if you feel ANY shoulder pinching, stop immediately. This is not a 'push through it' movement."
+  ],
+  "instructionsPl": [
+    "Złap drążek dłońmi skierowanymi OD siebie (chwyt pronated/nachwytem), ręce ZNACZNIE szerzej niż barki — około 1.5× szerokości barków.",
+    "Zwiśnij w pełnym wyproście ramion. Ustaw łopatki W DÓŁ (depresja). Lekkie pochylenie głowy do przodu by zrobić miejsce dla drążka z tyłu.",
+    "Napnij brzuch. Utrzymaj neutralny kręgosłup. Nogi razem lub skrzyżowane, lekkie zgięcie kolan.",
+    "Rozpocznij ciąg napierając łokciami W DÓŁ I NA ZEWNĄTRZ w kierunku bioder (nie do klatki). Skup się na ściskaniu najszerszych i ściąganiu łopatek razem + w dół.",
+    "Pochyl głowę lekko DO PRZODU by zrobić miejsce drążkowi za karkiem. Utrzymaj neutralny odcinek szyjny — NIE wciskaj głowy w dół na siłę.",
+    "Podciągaj aż drążek dotknie lub zbliży się do PODSTAWY KARKU / górnych trapezów. Szczyt ma krótszy ROM niż podciąganie do klatki.",
+    "Opuszczaj pełną kontrolą do pełnego zwisu. Bez zrzucania ciężaru ani momentum.",
+    "Jakość ponad ilość — jeśli czujesz JAKIEKOLWIEK szczypanie w barku, natychmiast przerwij. To nie jest ruch który się 'przemęczy'."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "rhomboids", "teres_major", "infraspinatus", "teres_minor", "brachialis"],
+    "stabilizers": ["rotator_cuff", "core", "forearms", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P5",
+    "trapezius_middle_lower": "S8",
+    "rhomboids": "S8",
+    "teres_major": "S9",
+    "infraspinatus": "S7",
+    "teres_minor": "S6",
+    "brachialis": "S5",
+    "rotator_cuff": "S8",
+    "forearms": "S7",
+    "core": "S5"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps", "weighted_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["pull-up", "wide-grip-pull-up", "chest-to-bar-pull-up", "weighted-pull-up"],
+    "progression_to": ["weighted-wide-grip-rear-pull-up", "muscle-up", "l-sit-pull-up"],
+    "alternatives": ["wide-grip-pull-up", "pull-up", "lat-pulldown", "behind-neck-lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Grip ~1.5× shoulder width — wide but not maximally",
+      "Pronated grip, thumbs over the bar (optional false grip)",
+      "Full hang, shoulder blades DOWN",
+      "Head slightly forward to clear bar path",
+      "Core braced, legs crossed/together"
+    ],
+    "setup_cues_pl": [
+      "Chwyt ~1.5× szerokości barków — szeroko ale nie maksymalnie",
+      "Chwyt nachwytem, kciuki nad drążkiem (opcjonalny false grip)",
+      "Pełen zwis, łopatki W DÓŁ",
+      "Głowa lekko do przodu by zrobić miejsce drążkowi",
+      "Brzuch napięty, nogi skrzyżowane/razem"
+    ],
+    "execution_cues": [
+      "Squeeze shoulder blades TOGETHER and DOWN",
+      "Drive elbows OUT and DOWN (not to chest)",
+      "Pull bar to BASE OF NECK, not lower",
+      "Smaller ROM than front pull-up — accept it",
+      "Stop immediately if shoulder pinches"
+    ],
+    "execution_cues_pl": [
+      "Ściskaj łopatki RAZEM i W DÓŁ",
+      "Napieraj łokciami NA ZEWNĄTRZ i W DÓŁ (nie do klatki)",
+      "Ciągnij drążek do PODSTAWY KARKU, nie niżej",
+      "Mniejszy ROM niż podciąganie do klatki — zaakceptuj to",
+      "Natychmiast przerwij jeśli bark szczypie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Shoulder impingement / pinching during pull",
+        "faultPl": "Impingement / szczypanie w barku podczas ciągu",
+        "cause": "Insufficient shoulder mobility for behind-neck path; structural anatomy unsuitable; pulling too low (below upper traps)",
+        "causePl": "Niewystarczająca mobilność barku dla toru za głową; nieodpowiednia anatomia; ciąg za nisko (poniżej górnych trapezów)",
+        "cue": "Stop immediately. Switch to front-of-neck wide pull-up. This exercise is not for everyone.",
+        "cuePl": "Natychmiast przerwij. Przejdź na wide pull-up do klatki. Ten ruch nie jest dla każdego."
+      },
+      {
+        "fault": "Cranking neck forward to clear bar (cervical strain)",
+        "faultPl": "Wciskanie głowy do przodu by zrobić miejsce drążkowi (naciągnięcie szyi)",
+        "cause": "Insufficient thoracic mobility forces compensation at cervical spine",
+        "causePl": "Niewystarczająca mobilność piersiowa wymusza kompensację w odcinku szyjnym",
+        "cue": "Slight forward tilt only — keep cervical neutral. If you need to crank, this variant is wrong for you.",
+        "cuePl": "Tylko lekkie pochylenie — utrzymaj szyję neutralnie. Jeśli musisz wciskać — ten wariant nie jest dla Ciebie."
+      },
+      {
+        "fault": "Trying to match front pull-up ROM (over-pulling)",
+        "faultPl": "Próba dopasowania ROM do podciągania do klatki (przeciąganie)",
+        "cause": "Ego — wanting bar to touch lower than anatomy allows safely",
+        "causePl": "Ego — chęć dociągnięcia drążka niżej niż anatomia bezpiecznie pozwala",
+        "cue": "Behind-neck has shorter ROM by design. Stop when bar reaches upper traps. Trying to go lower = injury.",
+        "cuePl": "Podciąganie do karku ma z definicji mniejszy ROM. Zatrzymaj się gdy drążek dotrze do górnych trapezów. Próba pójścia niżej = uraz."
+      },
+      {
+        "fault": "Kipping/swinging to complete reps",
+        "faultPl": "Kipping/bujanie ciałem by dokończyć powtórzenia",
+        "cause": "Set too long for strict capacity; very wide grip and behind-neck path both reduce mechanical advantage",
+        "causePl": "Seria za długa dla strict capacity; bardzo szeroki chwyt i tor za głową obniżają mechaniczną przewagę",
+        "cue": "Kipping behind-neck = serious injury risk. Lower reps, stop at strict failure. Ego has no place here.",
+        "cuePl": "Kipping z drążkiem za głową = poważne ryzyko urazu. Zmniejsz powtórzenia, kończ na strict failure. Ego nie ma tu miejsca."
+      },
+      {
+        "fault": "Grip too wide (extreme width)",
+        "faultPl": "Chwyt za szeroki (skrajna szerokość)",
+        "cause": "Believing 'wider = more lats' — actually reduces ROM, stresses elbows and AC joint",
+        "causePl": "Przekonanie 'szerzej = więcej lats' — w rzeczywistości zmniejsza ROM, obciąża łokcie i staw AC",
+        "cue": "1.3-1.5× shoulder width is optimal. Beyond that you sacrifice ROM and risk joint stress.",
+        "cuePl": "1.3-1.5× szerokości barków jest optymalne. Powyżej tracisz ROM i ryzykujesz przeciążenia stawów."
+      }
+    ],
+    "breathing": "Inhale at the bottom (hang). Exhale on the pull. Inhale on the descent. Controlled rhythm — never hold breath at end-range behind-neck position.",
+    "breathingPl": "Wdech na dole (zwis). Wydech podczas ciągu. Wdech na schodzeniu. Kontrolowany rytm — nigdy nie wstrzymuj oddechu w skrajnej pozycji za głową."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "DO NOT perform this exercise. Behind-neck path is the worst-case scenario for impingement. Use front-of-neck wide pull-up or neutral-grip variant.",
+      "modificationPl": "NIE wykonuj tego ćwiczenia. Tor za głową to najgorszy możliwy scenariusz dla impingementu. Użyj wide pull-up do klatki lub chwytu neutralnego.",
+      "alternative": "wide-grip-pull-up"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Extreme abduction + external rotation under load is contraindicated. Switch to front variants until full recovery.",
+      "modificationPl": "Skrajne odwiedzenie + rotacja zewnętrzna pod obciążeniem są przeciwwskazane. Przejdź na warianty do klatki do pełnego wyzdrowienia.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "avoid",
+      "modification": "Forward head tilt under load can aggravate cervical conditions. Use front-pull variants.",
+      "modificationPl": "Pochylenie głowy pod obciążeniem może nasilić problemy szyjne. Użyj wariantów do klatki.",
+      "alternative": "pull-up"
+    },
+    {
+      "condition": "limited_shoulder_mobility",
+      "severity": "modify",
+      "modification": "If you cannot achieve behind-neck position WITHOUT load comfortably, do NOT load it. Work mobility first; use front pull-up.",
+      "modificationPl": "Jeśli nie potrafisz BEZ obciążenia komfortowo osiągnąć pozycji za głową — NIE obciążaj jej. Najpierw popracuj nad mobilnością; użyj podciągania do klatki.",
+      "alternative": "wide-grip-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4×6-10 (bodyweight, advanced) | 4×5-8 (weighted, very advanced) | Use sparingly — 1× per week max",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "wide-grip-rear-pull-up.gif",
+    "frames_extracted": [
+      "frames/wide-grip-rear-pull-up/frame_0_start.png",
+      "frames/wide-grip-rear-pull-up/frame_1_early.png",
+      "frames/wide-grip-rear-pull-up/frame_2_mid.png",
+      "frames/wide-grip-rear-pull-up/frame_3_late.png",
+      "frames/wide-grip-rear-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/wide-grip-rear-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): dead-hang z bardzo szerokim chwytem nachwytem, ramiona pełen wyprost, ciało wyprostowane. Frame 2 (top): drążek za głową na poziomie podstawy karku, łokcie mocno zgięte i rozłożone na boki (nie wzdłuż tułowia jak w klasycznym pull-up), głowa lekko pochylona do przodu. Podświetlenie maksymalne na latissimus + teres major + środkowe trapezy + romboidalne — klasyczny obraz lat width focus. Akcent szerokości pleców kosztem zaangażowania bicepsów (P5 vs P7 w pull-up). Plane=frontal bo bardzo szeroki chwyt + ciąg łokci na boki = ruch głównie w płaszczyźnie czołowej, inaczej niż sagittal pull-up. Difficulty 9 — kontrowersyjny dla bezpieczeństwa, wymaga doskonałej mobilności barku. Shoulder impingement = AVOID (nie modify) bo tor za głową to ścisłe przeciwwskazanie.",
+
+  "tags": ["calisthenics", "bodyweight", "upper_body", "vertical_pull", "back", "lat_width", "advanced", "controversial", "behind_neck", "wide_grip", "old_school", "lats_isolation_focus"]
+}

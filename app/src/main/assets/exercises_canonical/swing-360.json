@@ -1,0 +1,208 @@
+{
+  "id": "swing-360",
+  "name": "Swing 360 (Bar Hang 360 Rotation)",
+  "namePl": "Swing 360 (zamach 360° na drążku)",
+  "aliases": ["360 bar swing", "bar swing rotation", "hanging 360 swing", "kipping 360", "full body bar swing", "around-the-world bar swing"],
+  "aliasesPl": ["swing 360 na drążku", "zamach 360 stopni", "obrót 360 w wisie", "kipping 360", "swing wokół drążka", "swing z obrotem ciała"],
+
+  "description": "Cardio/coordination drill performed hanging from a fixed pull-up bar. The athlete builds momentum from a dead hang, swings the body forward (hollow-to-arch kip), extends horizontally (toes leading) and rotates the whole body around the bar through 360°, returning to the start hang. It is a hybrid: dynamic grip endurance + lat conditioning + core control + full-body coordination + cardio output. Often programmed in CrossFit-style WODs and gymnastic warmups as a high-heart-rate finisher. Unlike a kipping pull-up (vertical) or muscle-up (transition over the bar), the 360 swing keeps the body BELOW the bar but rotates around it horizontally — a controlled gymnastic 'giant swing' adapted for fitness athletes.",
+  "descriptionPl": "Cardio/koordynacyjne ćwiczenie wykonywane w wisie na nieruchomym drążku. Ćwiczący buduje pęd z martwego wisu, wyrzuca ciało do przodu (kip z pozycji hollow do arch), wyciąga się poziomo (palce stóp prowadzą), a następnie obraca całe ciało wokół drążka o 360°, wracając do wisu wyjściowego. To hybryda: dynamiczna wytrzymałość chwytu + kondycjonowanie najszerszych + kontrola core + koordynacja całego ciała + bodziec cardio. Często programowany w WOD-ach w stylu CrossFit i w rozgrzewkach gimnastycznych jako finisher podnoszący tętno. W przeciwieństwie do kipping pull-up (wertykalny) czy muscle-up (przejście nad drążek), swing 360 utrzymuje ciało POD drążkiem ale obraca się wokół niego poziomo — kontrolowany gimnastyczny 'giant swing' zaadaptowany dla zwykłych ćwiczących.",
+
+  "instructions": [
+    "Hang from a sturdy pull-up bar with an overhand grip (palms facing away), hands slightly wider than shoulder-width. Bar must be high enough that your feet do not touch the ground during the swing.",
+    "Start in a tight dead hang: shoulders packed (pulled down away from ears), lats engaged, ribs down, glutes squeezed, toes pointed. This is the home position.",
+    "Initiate the kip: alternate between hollow body (knees pulled slightly forward, body curved like a banana) and arch (chest forward, legs trailing back). Build amplitude over 2-3 swings without bending the arms.",
+    "On the forward swing peak, tuck the knees up toward the chest and let momentum continue carrying you forward — the body rotates from vertical to horizontal.",
+    "Extend the legs forward and out (horizontal body position, toes leading), then continue the rotation around the bar — body sweeps in a wide arc 360° around the bar.",
+    "As you rotate, keep arms straight, grip strong, core fully braced — the bar is the pivot, your hands DO NOT release.",
+    "Complete the rotation by returning to a hanging position below the bar. Decelerate the swing with the lats and core — do not let yourself slam against the bar.",
+    "Recover to dead hang, reset breathing, and start the next rep. For cardio sets aim for continuous reps; for technique work pause 2-3 seconds between reps."
+  ],
+  "instructionsPl": [
+    "Zwiśnij na stabilnym drążku do podciągania nachwytem (dłonie odwrócone od siebie), ręce trochę szersze niż barki. Drążek musi być na tyle wysoko, by stopy nie dotykały podłogi podczas zamachu.",
+    "Zacznij w mocnym martwym wisie: barki napięte (ściągnięte w dół od uszu), najszersze pracują, żebra w dół, pośladki ściśnięte, palce stóp wyciągnięte. To pozycja bazowa.",
+    "Rozpocznij kip: na przemian hollow body (kolana lekko do przodu, ciało wygięte jak banan) i arch (klatka do przodu, nogi za sobą). Buduj amplitudę przez 2-3 zamachy bez zginania ramion.",
+    "Na szczycie zamachu do przodu podciągnij kolana do klatki i pozwól pędowi nieść cię dalej — ciało obraca się z pionu do poziomu.",
+    "Wyciągnij nogi do przodu i na zewnątrz (pozycja pozioma, palce stóp prowadzą), a następnie kontynuuj obrót wokół drążka — ciało zatacza szeroki łuk 360° wokół drążka.",
+    "Podczas obrotu trzymaj proste ramiona, mocny chwyt, pełne napięcie core — drążek jest osią obrotu, ręce SIĘ NIE PUSZCZAJĄ.",
+    "Zakończ obrót wracając do pozycji wisu pod drążkiem. Wyhamuj zamach najszerszymi i core — nie pozwól sobie uderzyć w drążek.",
+    "Wróć do martwego wisu, ustaw oddech i zacznij kolejne powtórzenie. Na serie cardio celuj w powtórzenia bez przerwy; na technikę rób pauzę 2-3 s między powtórzeniami."
+  ],
+
+  "classification": {
+    "movement_pattern": "gymnastics_ballistic",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "multi_planar",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "rectus_abdominis", "forearms"],
+    "secondary": ["obliques", "teres_major", "deltoid_posterior", "biceps_brachii", "hip_flexors"],
+    "stabilizers": ["core", "rotator_cuff", "trapezius", "glutes", "serratus_anterior", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "rectus_abdominis": "P9",
+    "forearms": "P9",
+    "obliques": "S8",
+    "teres_major": "S7",
+    "deltoid_posterior": "S7",
+    "biceps_brachii": "S6",
+    "hip_flexors": "S7",
+    "core": "S9",
+    "rotator_cuff": "S6",
+    "trapezius": "S6",
+    "glutes": "S5",
+    "serratus_anterior": "S6",
+    "rhomboids": "S5"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "grips", "wrist_wraps", "tape"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["dead-hang", "kipping-pull-up", "hollow-body-hold", "arch-hold", "hanging-knee-raise", "hanging-leg-raise"],
+    "progression_to": ["kipping-muscle-up", "bar-muscle-up", "giant-swing", "consecutive-360-swings-emom"],
+    "alternatives": ["kipping-pull-up", "hanging-leg-raise", "toes-to-bar", "burpee", "mountain-climber"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Choose a bar HIGH enough — feet must clear the ground through the whole rotation",
+      "Overhand grip slightly wider than shoulders — too wide kills the kip, too narrow stresses the wrist",
+      "Use chalk — grip endurance is the #1 limiter on this drill",
+      "Pack the shoulders BEFORE the first swing — never start from a passive dead-hang on relaxed shoulders",
+      "Set the hollow-body baseline first: ribs down, glutes squeezed, toes pointed — that is your reset between reps"
+    ],
+    "setup_cues_pl": [
+      "Wybierz drążek WYSOKO — stopy muszą minąć podłogę przez całą rotację",
+      "Nachwyt nieco szerszy niż barki — za szeroko zabija kip, za wąsko obciąża nadgarstek",
+      "Użyj magnezji — wytrzymałość chwytu to ograniczenie nr 1 w tym drillu",
+      "Napnij barki PRZED pierwszym zamachem — nigdy nie zaczynaj z pasywnego wisu na rozluźnionych barkach",
+      "Najpierw ustaw bazę hollow body: żebra w dół, pośladki ściśnięte, palce stóp wyciągnięte — to twój reset między powtórzeniami"
+    ],
+    "execution_cues": [
+      "HOLLOW-ARCH — najpierw zbuduj amplitudę zamachu (banan-luk), nie rzucaj się w obrót od zera",
+      "TUCK — w szczycie zamachu do przodu podciągnij kolana, pęd cię obróci, nie 'kopiesz' nogami",
+      "EXTEND — wyciągnij nogi do poziomu gdy ciało jest poziomo, palce prowadzą — to faza horyzontalna",
+      "GRIP IS LIFE — chwyt nigdy nie puszcza, ramiona pozostają proste przez cały obrót",
+      "DECELERATE — wyhamuj najszerszymi i core gdy wracasz pod drążek, nie pozwól by ciało walnęło w drążek"
+    ],
+    "execution_cues_pl": [
+      "HOLLOW-ARCH — najpierw zbuduj amplitudę zamachu (banan-łuk), nie rzucaj się w obrót od zera",
+      "TUCK — w szczycie zamachu do przodu podciągnij kolana, pęd cię obróci, nie 'kopiesz' nogami",
+      "EXTEND — wyciągnij nogi do poziomu gdy ciało jest poziomo, palce prowadzą — to faza horyzontalna",
+      "GRIP IS LIFE — chwyt nigdy nie puszcza, ramiona zostają proste przez cały obrót",
+      "DECELERATE — wyhamuj najszerszymi i core wracając pod drążek, nie pozwól by ciało walnęło w drążek"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the arms during the rotation — turning the swing into a chaotic muscle-up attempt",
+        "faultPl": "Zginanie ramion podczas obrotu — zamach zmienia się w chaotyczną próbę muscle-up",
+        "cause": "Weak grip endurance, panic when body goes horizontal, treating the drill as a pull rather than a swing",
+        "causePl": "Słaba wytrzymałość chwytu, panika gdy ciało idzie do poziomu, traktowanie ćwiczenia jako podciągnięcia zamiast zamachu",
+        "cue": "Arms are LONG STEEL CABLES — no bend, no pull. The body rotates AROUND the bar; the arms are the pivot connection, not movers.",
+        "cuePl": "Ramiona to DŁUGIE STALOWE LINY — żadnego zgięcia, żadnego ciągnięcia. Ciało obraca się WOKÓŁ drążka; ramiona są łącznikiem osi, nie napędem."
+      },
+      {
+        "fault": "Releasing the grip during the rotation",
+        "faultPl": "Puszczenie chwytu podczas obrotu",
+        "cause": "Grip fatigue, sweaty hands, inadequate warmup, attempting too many reps too soon",
+        "causePl": "Zmęczenie chwytu, spocone dłonie, niewystarczająca rozgrzewka, zbyt wiele powtórzeń za wcześnie",
+        "cue": "STOP the set the moment grip starts slipping — falling mid-rotation = head impact. Use chalk, lower the rep count, build grip endurance on dead hangs first.",
+        "cuePl": "PRZERWIJ serię w momencie gdy chwyt zaczyna się ślizgać — upadek w połowie obrotu = uderzenie głową. Używaj magnezji, zmniejsz powtórzenia, najpierw buduj wytrzymałość chwytu na martwych wisach."
+      },
+      {
+        "fault": "Slamming the body into the bar at the end of the rotation",
+        "faultPl": "Walenie ciałem w drążek na końcu obrotu",
+        "cause": "No deceleration plan, passive return, treating the swing as 'fall and survive' rather than controlled motion",
+        "causePl": "Brak planu wyhamowania, pasywny powrót, traktowanie zamachu jako 'spadnij i przeżyj' zamiast kontrolowanego ruchu",
+        "cue": "Active lat engagement on the way back — pull the bar DOWN toward your hips with straight arms. The deceleration phase is as important as the launch.",
+        "cuePl": "Aktywne napięcie najszerszych w drodze powrotnej — ciągnij drążek W DÓŁ ku biodrom prostymi rękoma. Faza wyhamowania jest tak samo ważna jak start."
+      },
+      {
+        "fault": "Hyperextending the lower back in the arch phase",
+        "faultPl": "Hiperekstensja lędźwi w fazie arch (łuk)",
+        "cause": "Weak glutes, undertrained anterior core, exaggerated arch in pursuit of more swing amplitude",
+        "causePl": "Słabe pośladki, słabo trenowane przednie mięśnie core, przesadzony łuk w pogoni za większą amplitudą zamachu",
+        "cue": "Active arch only — squeeze the glutes, brace the abs, RIBS DOWN. The arch is a controlled banana, not a sagging spine.",
+        "cuePl": "Aktywny łuk tylko — ściśnij pośladki, napnij brzuch, ŻEBRA W DÓŁ. Łuk to kontrolowany banan, nie zwiotczały kręgosłup."
+      },
+      {
+        "fault": "Attempting the full 360 before mastering hollow-arch kipping and hanging core control",
+        "faultPl": "Próba pełnego 360 zanim opanowane jest kipping hollow-arch i kontrola core w wisie",
+        "cause": "Skipping prerequisites, copying CrossFit videos, ego, lack of progression plan",
+        "causePl": "Pomijanie warunków wstępnych, kopiowanie filmów z CrossFit, ego, brak planu progresji",
+        "cue": "Master in order: 60-sec dead hang → 10 strict hanging leg raises → 5 kipping pull-ups with clean hollow-arch → 5 toes-to-bar → THEN try 360 with a partner spotting.",
+        "cuePl": "Opanuj kolejno: 60 s martwy wis → 10 ścisłych podciągnięć nóg w wisie → 5 kipping pull-ups z czystym hollow-arch → 5 toes-to-bar → DOPIERO WTEDY próbuj 360 z partnerem asekurującym."
+      }
+    ],
+    "breathing": "Rhythmic breathing: short exhale at the front of each kip swing (when abs compress), inhale on the arch (chest opens). Do NOT hold the breath through the rotation — the demand is too cardio-heavy and held-breath rotation spikes intracranial pressure. For sets longer than 5 reps, settle into a 2-rep breathing cycle (in-2, out-2).",
+    "breathingPl": "Rytmiczne oddychanie: krótki wydech na przedzie każdego zamachu (gdy brzuch się napina), wdech w fazie arch (klatka się otwiera). NIE wstrzymuj oddechu przez całą rotację — to obciążenie cardio jest za duże, a wstrzymany oddech w obrocie podnosi ciśnienie wewnątrzczaszkowe. Przy seriach dłuższych niż 5 powtórzeń ustaw cykl 2-powtórzeniowy (wdech-2, wydech-2)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability_or_dislocation_history",
+      "severity": "avoid",
+      "modification": "Full bodyweight rotation with locked arms places extreme load on the glenohumeral joint in vulnerable positions. Avoid until cleared by an orthopedist. Use static hangs and rotator-cuff prehab instead.",
+      "modificationPl": "Pełna rotacja ciężarem ciała z zablokowanymi ramionami obciąża staw ramienny w niebezpiecznych pozycjach. Unikaj do zgody ortopedy. Zamiast tego używaj statycznych wisów i prehab rotatorów.",
+      "alternative": "dead-hang"
+    },
+    {
+      "condition": "lumbar_disc_herniation_or_acute_back_pain",
+      "severity": "avoid",
+      "modification": "Repeated hollow-arch loading + ballistic rotation = high risk for disc structures. Switch to anti-extension core work (deadbug, plank) and decompressive hangs only.",
+      "modificationPl": "Powtarzane obciążanie w pozycji hollow-arch + balistyczny obrót = duże ryzyko dla krążków międzykręgowych. Przejdź na anty-ekstensyjne ćwiczenia core (deadbug, deska) i tylko wisy dekompresyjne.",
+      "alternative": "dead-hang"
+    },
+    {
+      "condition": "wrist_or_elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Rotation around the bar twists the forearm and wrist under load — aggravates tendinopathy. Wrap the wrists, lower the volume, use thicker bar if available; stop if pain appears.",
+      "modificationPl": "Obrót wokół drążka skręca przedramię i nadgarstek pod obciążeniem — pogarsza tendinopatie. Zabandażuj nadgarstki, zmniejsz objętość, używaj grubszego drążka jeśli dostępny; przerwij jeśli pojawi się ból.",
+      "alternative": "hanging-knee-raise"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiovascular_risk",
+      "severity": "caution",
+      "modification": "High-intensity rotational drill spikes HR and BP. Get clearance from a cardiologist. Use shorter sets (3-5 reps), longer rests, and stop at any chest pressure or dizziness.",
+      "modificationPl": "Wysokointensywny rotacyjny drill mocno podnosi tętno i ciśnienie. Uzyskaj zgodę kardiologa. Stosuj krótsze serie (3-5 powt.), dłuższe przerwy i przerwij przy jakimkolwiek ucisku w klatce lub zawrotach głowy.",
+      "alternative": "mountain-climber"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x5-8 (technique work, 90s rest) | 5x3 EMOM (cardio finisher) | AMRAP 60s (CrossFit-style high-intensity interval) | 10x1 with 30s rest (grip-endurance ladder)",
+  "calories_per_kg_per_hour": 10.0,
+
+  "media": {
+    "primary": "swing-360.gif",
+    "frames_extracted": [
+      "frames/swing-360/frame_0_start.png",
+      "frames/swing-360/frame_1_early.png",
+      "frames/swing-360/frame_2_mid.png",
+      "frames/swing-360/frame_3_late.png",
+      "frames/swing-360/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/swing-360"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (252 KB, 24 oryginalne klatki). Frame 0 (start cyklu): pełny martwy wis na drążku do podciągania, ramiona wyciągnięte nad głową, ciało pionowe — podświetlone najszersze, trapez, prostowniki grzbietu. Frame 1 (early): pozycja podciągniętych kolan w wisie (knees-tuck), kolana przy klatce, ciało zaczyna obrót, mocno podświetlone najszersze + bicepsy + przedramiona. Frame 2 (mid): KLUCZOWA klatka — ciało POZIOME równolegle do podłogi, nogi w pełni wyciągnięte do przodu (palce stóp prowadzą), ramiona wciąż zablokowane proste na drążku — to apex rotacji 360°. Podświetlone: cały tylny łańcuch, najszersze, prostowniki. Frame 3 (late): ciało w transitionie, jedna noga uniesiona poziomo, druga lekko niżej — kontynuacja obrotu, podświetlony skośny brzucha + biodra + core. Frame 4 (end): powrót do dead hang z 'ghost' w tle pokazującym poziomą fazę — potwierdza cykl 360°. Klasyfikacja: gymnastics_ballistic + multi_planar (sagittal dla kipa + transverse dla rotacji) + closed kinetic chain (ręce na drążku). Bilateral (obie ręce na drążku). Equipment: tylko pull_up_bar. Trudność 8 (advanced) — wymaga wcześniejszego opanowania kipping pull-up, toes-to-bar i hollow-arch kontroli. Główne mięśnie: latissimus_dorsi P9 (główny stabilizator ciała w wisie + napęd kipa), rectus_abdominis P9 (kompresja core w hollow + utrzymanie pozycji poziomej), forearms P9 (chwyt to limiter ćwiczenia). Sekundowe: obliques S8 (rotacja w transverse plane), teres_major + deltoid_posterior (utrzymanie ramion), hip_flexors S7 (tuck/extend nóg). Calories/kg/h: 10.0 — wyższe niż kipping pull-up (~9) bo to ćwiczenie ma fazę rotacyjną z większym wydatkiem energetycznym i bardziej obciąża grip endurance. Cardio category bo źródło to /sources/jahel/cardio/ — pomimo wymagań siłowych, ćwiczenie programowane głównie jako finisher kondycyjny/koordynacyjny. Wariant wymaga ASEKURACJI — dlatego prerequisites mocno rozbudowane. Wszystkie pola PL napisane od zera z polską terminologią gimnastyczną/calisteniczną (hollow-arch, kip, martwy wis, swing 360, najszersze, tuck, extend).",
+
+  "tags": ["bar", "calisthenics", "cardio", "ballistic", "gymnastic", "hanging", "compound", "advanced", "coordination", "grip_endurance", "core_intensive", "rotation"]
+}

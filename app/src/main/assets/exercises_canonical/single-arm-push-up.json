@@ -1,0 +1,205 @@
+{
+  "id": "single-arm-push-up",
+  "name": "Single-Arm Push-Up",
+  "namePl": "Pompka jednorącz",
+  "aliases": ["one-arm push-up", "one-armed push-up", "OAPU", "single arm pushup", "1-arm push-up"],
+  "aliasesPl": ["pompka na jednej ręce", "one-arm push-up po polsku", "pompka jednoręka", "pompka jednorączna", "pompka one-arm"],
+
+  "description": "Elite bodyweight push-up variant performed on a single arm — the free arm is tucked behind the back or held at the side. Considered one of the gold-standard tests of relative upper-body strength: requires the working side to press roughly 65-70% of bodyweight from a single shoulder while the torso resists massive rotational and lateral forces. Feet are typically spread wider than the shoulders to create a stable tripod and reduce the lever arm. Beyond chest, triceps and front deltoid, this movement is an extreme anti-rotation core drill — obliques, serratus and lumbar stabilizers fire hard to keep the body square to the floor.",
+  "descriptionPl": "Elitarna odmiana bodyweight pompki wykonywana na jednej ręce — wolne ramię schowane za plecy lub trzymane przy boku. Uważana za jeden z złotych testów względnej siły górnej części ciała: pracująca strona musi wycisnąć około 65-70% masy ciała z jednego barku, podczas gdy tułów opiera się ogromnym siłom rotacyjnym i bocznym. Stopy ustawione szerzej niż barki tworzą stabilny trójkąt podparcia i skracają ramię dźwigni. Poza klatką, tricepsem i przednim aktonem, ten ruch to ekstremalne ćwiczenie anty-rotacyjne — skośne brzucha, mięsień zębaty i stabilizatory lędźwiowe pracują na maksimum, by utrzymać ciało równolegle do podłogi.",
+
+  "instructions": [
+    "Start in a wide-stance push-up position: feet spread roughly 1.5x shoulder width apart for stability.",
+    "Place the working hand directly under the centerline of the chest (not under the shoulder) — this places the lever arm closer to the body's center of mass.",
+    "Tuck the free arm behind the lower back or rest it on the same-side hip. Lock the shoulder of the free arm down.",
+    "Brace the core HARD. Squeeze glutes. Pre-tension the obliques as if someone is about to push you sideways.",
+    "Keep the hips as square to the floor as possible — minimize rotation. The shoulders, hips and feet stay in one horizontal plane.",
+    "Inhale and lower yourself in 3-4 seconds. Elbow of the working arm tracks at ~45° from the torso, not flared 90°.",
+    "Lower until the chest is just above the floor on the working side. Resist the urge to drop the unsupported side.",
+    "Exhale and press explosively through the working hand. Drive the floor away — full lockout without hyperextending the elbow.",
+    "Maintain a rigid plank throughout. Do NOT rotate the free shoulder up toward the ceiling (windmill cheat)."
+  ],
+  "instructionsPl": [
+    "Zacznij w pompkowej pozycji z szerokim rozstawem: stopy rozsunięte około 1.5x szerokości barków dla stabilizacji.",
+    "Ułóż pracującą dłoń dokładnie pod linią środkową klatki (nie pod barkiem) — to przybliża ramię dźwigni do środka masy ciała.",
+    "Wolną rękę schowaj za plecy w okolicy lędźwi lub oprzyj na biodrze po tej samej stronie. Zablokuj bark wolnej ręki w dole.",
+    "MOCNO napnij brzuch. Ściśnij pośladki. Wstępnie napnij skośne, jakby ktoś miał cię zaraz pchnąć w bok.",
+    "Trzymaj biodra tak równo do podłogi jak to możliwe — minimalizuj rotację. Barki, biodra i stopy w jednej płaszczyźnie poziomej.",
+    "Wdech i schodź w 3-4 sekundy. Łokieć pracującej ręki układa się pod ~45° od tułowia, nie rozsunięty na 90°.",
+    "Schodź aż klatka będzie tuż nad podłogą po stronie pracującej. Nie pozwól, by strona bez podparcia opadła.",
+    "Wydech i wybij się eksplozywnie przez pracującą dłoń. Wypchnij podłogę — pełne wyprostowanie bez przeprostu łokcia.",
+    "Utrzymuj sztywną plankę przez cały ruch. NIE obracaj barku wolnej ręki w górę (cheat 'wiatraka')."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["obliques", "serratus_anterior", "core"],
+    "stabilizers": ["glutes", "rotator_cuff", "scapular_stabilizers", "quadratus_lumborum", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "triceps": "P9",
+    "anterior_deltoids": "P8",
+    "obliques": "S8",
+    "serratus_anterior": "S7",
+    "core": "S7",
+    "glutes": "T5",
+    "rotator_cuff": "T5",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["push_up_handle", "weighted_vest", "elevated_surface"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "elite",
+    "difficulty_1_10": 9,
+    "prerequisites": ["push-up", "decline-push-up", "archer-push-up", "weighted-push-up", "self-assisted-one-arm-push-up"],
+    "progression_to": ["one-arm-decline-push-up", "weighted-one-arm-push-up", "one-arm-clap-push-up", "planche-progressions"],
+    "alternatives": ["archer-push-up", "lever-push-up", "single-arm-dumbbell-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet WIDE — at least 1.5x shoulder width for a stable tripod",
+      "Working hand under chest centerline, not under shoulder",
+      "Free arm locked behind the lower back — don't let it dangle",
+      "Pre-brace: obliques on, glutes on, lats engaged BEFORE the first rep",
+      "Hips square to the floor — imagine a laser line from heels to head"
+    ],
+    "setup_cues_pl": [
+      "Stopy SZEROKO — co najmniej 1.5x szerokość barków dla stabilnego trójkąta",
+      "Pracująca dłoń pod linią środkową klatki, nie pod barkiem",
+      "Wolna ręka zablokowana za plecami — nie pozwól jej zwisać",
+      "Pre-napięcie: skośne, pośladki, najszersze WŁĄCZONE przed pierwszym powtórzeniem",
+      "Biodra równe do podłogi — wyobraź sobie linię lasera od pięt do głowy"
+    ],
+    "execution_cues": [
+      "Lower in 3-4 seconds — much slower than a normal push-up",
+      "Twist the floor: imagine screwing the hand into the ground (creates shoulder stability)",
+      "Elbow at 45°, never 90° — flaring kills the shoulder under this load",
+      "Press explosively from the bottom — slow descent, fast ascent",
+      "Eyes forward of hand, neck neutral — no head dropping under fatigue"
+    ],
+    "execution_cues_pl": [
+      "Schodź w 3-4 sekundy — znacznie wolniej niż w zwykłej pompce",
+      "Wkręć dłoń w podłogę: wyobraź sobie wkręcanie dłoni w grunt (tworzy stabilność barku)",
+      "Łokieć pod 45°, nigdy 90° — rozsunięcie zabija bark pod tym obciążeniem",
+      "Wybijaj eksplozywnie z dołu — wolne schodzenie, szybkie wyciskanie",
+      "Wzrok przed dłonią, szyja neutralna — głowa nie opada pod zmęczeniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotation (free shoulder rises like a windmill)",
+        "faultPl": "Rotacja tułowia (wolny bark unosi się jak wiatrak)",
+        "cause": "Weak anti-rotation core, free arm not locked, working hand placed too far to the side",
+        "causePl": "Słabe anty-rotacyjne mięśnie brzucha, wolne ramię nieumocowane, pracująca dłoń za bardzo z boku",
+        "cue": "Squeeze the free arm INTO the lower back. Brace obliques like taking a punch. Working hand moves toward the centerline.",
+        "cuePl": "Wciskaj wolną rękę W lędźwie. Napnij skośne jak przed ciosem. Pracująca dłoń bliżej linii środkowej."
+      },
+      {
+        "fault": "Hips sagging or piked up",
+        "faultPl": "Opadające biodra lub uniesione w pike",
+        "cause": "Core fatigue, glutes not engaged, attempting reps before owning the strength",
+        "causePl": "Zmęczenie brzucha, pośladki niezaangażowane, próba powtórzeń bez gotowej siły",
+        "cue": "Glutes ON before the descent. If hips break — set is OVER. Don't grind out garbage reps that wreck the lower back.",
+        "cuePl": "Pośladki WŁĄCZONE przed zejściem. Jeśli biodra puszczają — seria SKOŃCZONA. Nie wymuszaj śmieciowych powtórzeń, które niszczą lędźwie."
+      },
+      {
+        "fault": "Partial range of motion (1/2 push-up only)",
+        "faultPl": "Częściowy zakres ruchu (tylko pół pompki)",
+        "cause": "Insufficient strength, ego counting partial reps, fear of failure at bottom",
+        "causePl": "Niewystarczająca siła, ego liczące częściowe powtórzenia, strach przed upadkiem na dole",
+        "cue": "Chest must touch within a fist's height from the floor. If you can't full ROM — regress to archer push-up or assisted one-arm.",
+        "cuePl": "Klatka musi dojść na wysokość pięści od podłogi. Jeśli nie dasz pełnego ROM — wróć do archer push-up lub one-arm ze wspomaganiem."
+      },
+      {
+        "fault": "Elbow flaring out to 90°",
+        "faultPl": "Łokieć rozsuwa się na 90°",
+        "cause": "Hand placed too wide, no triceps engagement, mimicking a chest-fly pattern",
+        "causePl": "Dłoń za szeroko, brak zaangażowania tricepsa, naśladowanie ruchu rozpiętek",
+        "cue": "Tuck elbow under the ribs at ~45°. 'Hide the armpit'. This protects the rotator cuff under unilateral load.",
+        "cuePl": "Schowaj łokieć pod żebra pod kątem ~45°. 'Schowaj pachę'. Chroni stożek rotatorów pod obciążeniem unilateralnym."
+      },
+      {
+        "fault": "Feet too narrow (instability)",
+        "faultPl": "Stopy za wąsko (niestabilność)",
+        "cause": "Carrying over a standard push-up stance, not respecting the unilateral demand",
+        "causePl": "Przeniesienie postawy z zwykłej pompki, nieuwzględnienie wymagania unilateralnego",
+        "cue": "Spread feet wider than shoulders — wider stance = more base of support = less rotation. Narrow stance is for advanced practitioners only.",
+        "cuePl": "Rozstaw stopy szerzej niż barki — szerszy rozstaw = większa podstawa podparcia = mniej rotacji. Wąski rozstaw tylko dla zaawansowanych."
+      }
+    ],
+    "breathing": "Inhale during the slow descent, brace at the bottom, exhale forcefully during the press up. Reset breath between every rep — this lift demands full intra-abdominal pressure.",
+    "breathingPl": "Wdech podczas wolnego schodzenia, napięcie na dole, wymuszony wydech podczas wyciskania. Reset oddechu między każdym powtórzeniem — ten ruch wymaga pełnego ciśnienia wewnątrzbrzusznego."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "Single-arm load on an unstable shoulder is a recipe for injury (anterior subluxation, labrum stress). Regress to two-arm variations until full stability is restored.",
+      "modificationPl": "Obciążenie unilateralne na niestabilnym barku to przepis na kontuzję (podwichnięcie przednie, naprężenie obrąbka). Wróć do wariantów dwurącz aż do pełnej stabilności.",
+      "alternative": "archer-push-up"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Single-arm push-up doubles the load on one wrist. Use a push-up handle (neutral grip) or fist (knuckles down) — or skip until pain-free in standard push-ups.",
+      "modificationPl": "Pompka jednorącz podwaja obciążenie jednego nadgarstka. Użyj uchwytu do pompek (neutralny chwyt) lub pięści (knykcie w dół) — albo pomiń aż do braku bólu w zwykłych pompkach.",
+      "alternative": "single-arm-dumbbell-bench-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "The anti-rotation demand loads the lumbar spine asymmetrically. If you have active LBP — do not perform. Build core capacity with planks and side planks first.",
+      "modificationPl": "Wymaganie anty-rotacyjne obciąża odcinek lędźwiowy asymetrycznie. Przy aktywnym bólu pleców — nie wykonuj. Najpierw zbuduj wydolność brzucha przez plank i side plank.",
+      "alternative": "archer-push-up"
+    },
+    {
+      "condition": "insufficient_base_strength",
+      "severity": "avoid",
+      "modification": "If you cannot do 25+ strict full-ROM standard push-ups or 5+ weighted push-ups with 20kg vest, you do not have the base for this exercise. Regress.",
+      "modificationPl": "Jeśli nie robisz 25+ ścisłych pompek pełnego ROM lub 5+ pompek obciążonych z kamizelką 20 kg, nie masz podstaw do tego ćwiczenia. Wróć do progresji.",
+      "alternative": "weighted-push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-6 (skill/strength) | 5x1-3 weighted variant (max strength) | EMOM 8x1 (skill consolidation)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "single-arm-push-up.gif",
+    "frames_extracted": [
+      "frames/single-arm-push-up/frame_0_start.png",
+      "frames/single-arm-push-up/frame_1_early.png",
+      "frames/single-arm-push-up/frame_2_mid.png",
+      "frames/single-arm-push-up/frame_3_late.png",
+      "frames/single-arm-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/single-arm-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej dolnej — klatka tuż nad podłogą, prawe ramię (pracujące) zgięte z łokciem schowanym pod tułowiem ~45°, lewe ramię schowane za plecami (niewidoczne), stopy wyraźnie rozstawione szerzej niż barki, ciało w prostej linii. Wyraźnie podświetlone: pectoralis major po stronie pracującej + skośne brzucha (anti-rotation demand). Frame 2 (mid/top): pełne wyciśnięcie — prawa ręka prostopadle do podłogi, dłoń pod linią środkową klatki (nie pod barkiem), ramię w pełnym wyproście, ciało wciąż w linii, biodra równo (brak rotacji). Frame 4 (end): powrót do dołu (echo frame 0). Lewa ręka schowana za plecami w całym cyklu — klasyczna pozycja one-arm push-up. Stopy szerokie = stabilny trójkąt. Wszystkie pola PL napisane od zera w polskim standardzie kalisteniki. Difficulty 9/10 (elite) zgodne z konsensusem branży — wymaga ~65-70% BW na jednym barku, anti-rotation core na maksimum. Unilateral push compound, sagittal plane (ruch w przód-tył, mimo unilateralności).",
+
+  "tags": ["bodyweight", "calisthenics", "elite", "unilateral", "anti_rotation", "upper_body", "horizontal_push", "chest", "core", "advanced", "no_equipment", "strength_benchmark"]
+}

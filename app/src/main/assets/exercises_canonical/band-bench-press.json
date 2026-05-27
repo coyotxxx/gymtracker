@@ -1,0 +1,203 @@
+{
+  "id": "band-bench-press",
+  "name": "Band Bench Press",
+  "namePl": "Bench press z gumą oporową",
+  "aliases": ["resistance band bench press", "band chest press lying", "supine band press", "band press on bench"],
+  "aliasesPl": ["wyciskanie z gumą na ławce", "bench press na gumie", "wyciskanie poziome z taśmą oporową", "press z taśmą oporową leżąc"],
+
+  "description": "Horizontal pressing variation performed lying supine on a flat bench, with a resistance band looped underneath the bench (or around the upper back), holding handles in each hand. Bands deliver ascending resistance — easiest at the chest, hardest at full lockout — which trains the triceps and lockout strength more than free weights, while still loading the chest in the stretched position. Excellent for home training, accommodating resistance work to supplement barbell pressing, and rehab-friendly pressing for those who cannot load heavy free weights.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany leżąc na płaskiej ławce, z gumą oporową przeprowadzoną pod ławką (lub za górną częścią pleców) i uchwytami w każdej ręce. Guma daje opór narastający — najlżejszy na klatce, najcięższy w pełnym wyproście — co mocniej angażuje tricepsy i siłę lockoutu niż wolne ciężary, jednocześnie obciążając klatkę w pozycji rozciągniętej. Świetne do treningu w domu, jako dodatek accommodating resistance do sztangi oraz dla osób, które nie mogą wyciskać ciężkich wolnych ciężarów (np. powrót po kontuzji).",
+
+  "instructions": [
+    "Loop a resistance band underneath the flat bench (or around your upper back). Grab a handle in each hand.",
+    "Lie supine on the bench with the band running around your upper back/shoulder blades. Feet planted firmly on the floor, knees ~90°.",
+    "Retract and depress the shoulder blades, slight natural arch in the lower back, glutes on the bench.",
+    "Start with hands at chest level, elbows bent ~90°, palms facing forward (pronated grip). Feel light tension in the band.",
+    "Inhale, brace the core. Press the handles upward and slightly inward in a controlled arc until arms are extended over the upper chest — elbows NOT locked rigid.",
+    "At the top the band tension is highest — squeeze the chest and triceps for 1 second.",
+    "Lower the handles with control back to chest level. Elbows tracked at ~45-60° from the torso, NOT flared to 90°.",
+    "Pause briefly at the bottom — feel the stretch in the chest. Do NOT let the band yank the hands down.",
+    "Exhale on the way up. Keep shoulder blades retracted throughout the set."
+  ],
+  "instructionsPl": [
+    "Przeprowadź gumę oporową pod ławką poziomą (lub za górną częścią pleców). Chwyć uchwyt w każdą rękę.",
+    "Połóż się na plecach na ławce z gumą biegnącą za górnymi plecami / łopatkami. Stopy mocno na podłodze, kolana ~90°.",
+    "Ściągnij łopatki w dół i razem, lekki naturalny łuk w dolnych plecach, pośladki na ławce.",
+    "Start z rękoma na wysokości klatki, łokcie zgięte ~90°, dłonie zwrócone w stronę stóp (chwyt pronowany). Poczuj lekkie napięcie gumy.",
+    "Wdech, napięcie brzucha. Wyciśnij uchwyty w górę i lekko do środka kontrolowanym łukiem, aż ramiona wyprostowane nad górną klatką — łokcie BEZ sztywnego lock-out.",
+    "Na szczycie napięcie gumy jest największe — ściśnij klatkę i tricepsy przez 1 sekundę.",
+    "Opuszczaj uchwyty z kontrolą do poziomu klatki. Łokcie pod kątem ~45-60° od tułowia, NIE rozsunięte na 90°.",
+    "Krótka pauza na dole — poczuj rozciągnięcie klatki. NIE pozwól gumie ściągnąć ci rąk w dół.",
+    "Wydech podczas wyciskania w górę. Łopatki ściągnięte przez cały set."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "anterior_deltoids": "P7",
+    "triceps": "P8",
+    "serratus_anterior": "S4",
+    "rotator_cuff": "T4",
+    "core": "T3",
+    "biceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band", "flat_bench"],
+    "optional": ["band_handles", "band_anchor"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["push-up", "band-chest-press-standing"],
+    "progression_to": ["band-incline-bench-press", "single-arm-band-bench-press", "barbell-bench-press-with-bands"],
+    "alternatives": ["dumbbell-bench-press", "machine-chest-press", "push-up", "band-chest-press-standing"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Band looped under the bench (or around upper back) — check both sides have equal length",
+      "Lie supine, band running across the shoulder blades, NOT the neck",
+      "Shoulder blades retracted and depressed BEFORE pressing",
+      "Feet planted, knees ~90°, slight arch in lower back",
+      "Hands at chest level, pronated grip, light pre-tension in the band"
+    ],
+    "setup_cues_pl": [
+      "Guma przeprowadzona pod ławką (lub za górną częścią pleców) — sprawdź czy obie strony mają równą długość",
+      "Połóż się na plecach, guma na łopatkach, NIE na szyi",
+      "Łopatki ściągnięte i opuszczone PRZED wyciskaniem",
+      "Stopy zaparte, kolana ~90°, lekki łuk w dolnych plecach",
+      "Ręce na wysokości klatki, chwyt pronowany, lekkie wstępne napięcie gumy"
+    ],
+    "execution_cues": [
+      "Press up AND slightly inward — band wants to pull hands wide",
+      "Drive through both handles evenly — don't let one side lag",
+      "Hardest at the top — fight through the band's peak tension",
+      "Lower with control 2-3 seconds — band will try to snap you back",
+      "Elbows at ~45-60° from torso, NOT flared to 90°"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę I lekko do środka — guma chce rozciągnąć ręce na boki",
+      "Naciskaj na oba uchwyty równo — nie pozwól by jedna strona odstawała",
+      "Najciężej na szczycie — przebij się przez maksymalne napięcie gumy",
+      "Opuszczaj z kontrolą 2-3 sekundy — guma będzie chciała wciągnąć ręce z powrotem",
+      "Łokcie ~45-60° od tułowia, NIE rozsunięte na 90°"
+    ],
+    "common_faults": [
+      {
+        "fault": "Band slips off the back or shifts mid-set",
+        "faultPl": "Guma zsuwa się z pleców lub przesuwa w trakcie serii",
+        "cause": "Band placed too low/high; uneven loop; non-textured shirt",
+        "causePl": "Guma za nisko/za wysoko; nierówna pętla; gładka koszulka",
+        "cue": "Position band across mid-back / shoulder blades. Check loop symmetry before each set. Wear textured shirt.",
+        "cuePl": "Ustaw gumę na środku pleców / łopatkach. Sprawdź symetrię pętli przed każdą serią. Załóż koszulkę z fakturą."
+      },
+      {
+        "fault": "Hands drift wide at the top (band pulls them apart)",
+        "faultPl": "Ręce rozjeżdżają się na szczycie (guma je rozciąga)",
+        "cause": "Letting the band dictate path; loss of chest engagement at lockout",
+        "causePl": "Pozwolenie by guma dyktowała tor ruchu; utrata napięcia klatki na lockoucie",
+        "cue": "Press up AND inward against the band. Active intent to bring handles together at the top.",
+        "cuePl": "Wyciskaj w górę I do środka przeciw gumie. Aktywnie sprowadzaj uchwyty do siebie na szczycie."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Improper grip orientation; mimicking fly motion; lack of awareness",
+        "causePl": "Niepoprawne ustawienie chwytu; kopiowanie ruchu rozpiętek; brak świadomości",
+        "cue": "Tuck elbows to ~45-60°. 'Hide your armpits from the ceiling'. Protects the shoulders.",
+        "cuePl": "Schowaj łokcie do ~45-60°. 'Schowaj pachy przed sufitem'. Chroni barki."
+      },
+      {
+        "fault": "Band snaps hands back down — no eccentric control",
+        "faultPl": "Guma ściąga ręce w dół — brak kontroli ekscentrycznej",
+        "cause": "Band tension too high for current strength; passive lowering",
+        "causePl": "Za mocna guma jak na obecną siłę; bierne opuszczanie",
+        "cue": "Resist the band on the way down — 2-3 sec eccentric. If you cannot control, use lighter band.",
+        "cuePl": "Stawiaj opór gumie w fazie ekscentrycznej — 2-3 sek opuszczanie. Jeśli nie możesz kontrolować, użyj słabszej gumy."
+      },
+      {
+        "fault": "Insufficient ROM — stopping above chest level",
+        "faultPl": "Za mały zakres ruchu — zatrzymanie powyżej linii klatki",
+        "cause": "Band tension drops near chest, user stops early thinking 'no resistance = no work'",
+        "causePl": "Napięcie gumy spada przy klatce, user przerywa myśląc 'brak oporu = brak pracy'",
+        "cue": "Go to full ROM — bottom stretch builds the chest. Band's job is lockout, ROM is yours.",
+        "cuePl": "Pełny zakres — rozciągnięcie na dole buduje klatkę. Rola gumy to lockout, ROM to twoja praca."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale on the press up — especially through the hardest part near lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Wydech podczas wyciskania w górę — zwłaszcza w najcięższej części przy lockoucie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use a lighter band and reduce ROM to pain-free range. Neutral grip handles (if available) ease shoulder stress.",
+      "modificationPl": "Użyj słabszej gumy i zmniejsz ROM do zakresu bez bólu. Uchwyty z chwytem neutralnym (jeśli masz) odciążają staw barkowy.",
+      "alternative": "neutral-grip-dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Band's unstable tension destabilizes the shoulder. Switch to a fixed-path machine until cleared by physio.",
+      "modificationPl": "Niestabilne napięcie gumy destabilizuje bark. Przejdź na maszynę z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Stretched bottom position aggravates a strained pec. Resume with light machine work first.",
+      "modificationPl": "Pozycja rozciągnięta na dole drażni naderwaną klatkę. Wróć przez lekkie maszyny.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use thicker padded handles or wrist wraps. Keep wrists stacked over forearms — bands often twist the grip.",
+      "modificationPl": "Użyj grubszych uchwytów z wyściółką lub wraps na nadgarstki. Trzymaj nadgarstki w linii z przedramieniem — gumy często skręcają chwyt.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, default) | 3x15-20 (endurance/pump) | 4x8-12 (with heavy band for strength-hypertrophy)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-bench-press.gif",
+    "frames_extracted": [
+      "frames/band-bench-press/frame_0_start.png",
+      "frames/band-bench-press/frame_1_early.png",
+      "frames/band-bench-press/frame_2_mid.png",
+      "frames/band-bench-press/frame_3_late.png",
+      "frames/band-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/band-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Frame 0 (dół/start): osoba leży na plecach na płaskiej ławce, guma przeprowadzona pod ławką wokół górnej części pleców/łopatek, uchwyty na wysokości klatki, łokcie zgięte ~90°, chwyt pronowany (dłonie w stronę stóp), stopy zaparte na podłodze, kolana ~90°. Frame 2 (góra): pełne wyciśnięcie, uchwyty nad górną klatką, ramiona wyprostowane bez sztywnego lock-out, guma maksymalnie napięta (ascending resistance). Frame 4 (powrót z motion blur): widać kontrolowane opuszczanie. Klatka piersiowa + przednie delty + tricepsy podświetlone — zgodne z anatomią dla band bench press. Wariant supine (leżąc na ławce), NIE stojący — guma przechodzi pod ławką jak band-resisted bench press do hipertrofii/lockout strength. Klasyczny pronated grip, lekki arch, stopy na podłodze. Triceps_intensity P8 (a nie P7 jak w DB bench) bo accommodating resistance gumy mocniej obciąża fazę lockout. PL nazwa zgodna z polskim standardem fitness ('Bench press z gumą oporową'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest", "resistance_band", "home_friendly", "accommodating_resistance", "lockout_strength", "rehab_friendly"]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "weighted-front-plank",
+  "name": "Weighted Front Plank",
+  "namePl": "Deska z obciążeniem",
+  "aliases": ["weighted plank", "loaded plank", "plate plank", "weighted forearm plank", "front plank with plate"],
+  "aliasesPl": ["deska przednia z obciążeniem", "plank z talerzem", "plank obciążony", "deska na przedramionach z obciążeniem", "obciążony plank"],
+
+  "description": "An advanced isometric anti-extension core exercise performed in the standard forearm plank position with an external load (most commonly a weight plate, sandbag or a partner) placed across the lower-to-mid back. The added weight dramatically increases the demand on the rectus abdominis, transverse abdominis and the entire trunk-bracing musculature, because the core must resist an even stronger pull of gravity trying to extend the lumbar spine (sag the hips). It is a progression of the bodyweight front plank used to break the plateau that occurs once an athlete can comfortably hold a bodyweight plank for 60+ seconds — instead of chasing endless duration, you add load and keep holds shorter (20-45 seconds) at much higher tension. Strongly targets the entire anterior core as anti-extension stabilisers, with significant work in the glutes (hip extension hold), shoulders and serratus anterior (scapular protraction against load).",
+  "descriptionPl": "Zaawansowane izometryczne ćwiczenie antywyprostne (anti-extension) wykonywane w klasycznej pozycji deski na przedramionach z dodatkowym obciążeniem zewnętrznym (najczęściej talerz, sandbag lub partner) ułożonym na dolnej lub środkowej części pleców. Dodany ciężar drastycznie zwiększa wymagania na mięsień prosty brzucha, mięsień poprzeczny brzucha i całą muskulaturę napinającą tułów, ponieważ core musi opierać się jeszcze silniejszemu ciągowi grawitacji próbującej wyprostować odcinek lędźwiowy (opaść biodrami). To progresja klasycznej deski służąca do przełamania plateau, które pojawia się, gdy zawodnik bez problemu utrzymuje 60+ sekund w wersji bez obciążenia — zamiast wydłużać czas w nieskończoność, dodajesz obciążenie i trzymasz krócej (20-45 sekund) przy znacznie wyższym napięciu. Mocno angażuje cały przedni core jako stabilizator antywyprostny, a także pośladki (utrzymanie wyprostu biodra), barki i mięsień zębaty przedni (protrakcja łopatek pod obciążeniem).",
+
+  "instructions": [
+    "Place a yoga mat on the floor. Have a partner ready to load the weight, or set the plate on the floor within arm's reach where it can be easily slid onto your back once you are in position.",
+    "Set up in a standard forearm plank: elbows directly under the shoulders, forearms flat on the floor pointing straight forward, feet hip-width apart with toes tucked.",
+    "Brace the core hard, squeeze the glutes and lift the hips so the body forms one straight line from heels to head — no sag, no pike, ribs pulled down toward the hips.",
+    "Have your partner gently place the weight plate (start with 5-10 kg) FLAT on your lower-to-mid back, centred over the lumbar/sacral area. The plate should not touch the neck and should not slide off the glutes.",
+    "Once loaded, take a small breath, re-brace and hold the position. Eyes look down at the floor about 30 cm in front of your hands to keep a neutral neck.",
+    "Hold for the prescribed time (20-45 seconds is the working range — quality over duration). Maintain steady, shallow chest breathing. Do NOT hold your breath.",
+    "To end the set, have the partner remove the plate FIRST, then lower the knees to the floor. Never let the plate roll off uncontrolled — it can hit the floor or your ankles."
+  ],
+  "instructionsPl": [
+    "Połóż matę treningową na podłodze. Przygotuj partnera do nałożenia obciążenia lub ustaw talerz na podłodze w zasięgu ręki, tak by można było go wsunąć na plecy, gdy będziesz już w pozycji.",
+    "Ustaw się w klasycznej desce na przedramionach: łokcie dokładnie pod barkami, przedramiona płasko na podłodze skierowane do przodu, stopy na szerokości bioder z palcami opartymi o podłoże.",
+    "Mocno napnij brzuch, ściśnij pośladki i unieś biodra tak, by ciało tworzyło jedną prostą linię od pięt do głowy — bez opadania, bez 'V' w biodrach, żebra ściągnięte w dół do bioder.",
+    "Niech partner delikatnie położy talerz (zacznij od 5-10 kg) PŁASKO na dolnej lub środkowej części pleców, wycentrowany nad odcinkiem lędźwiowo-krzyżowym. Talerz nie może dotykać szyi ani zsuwać się z pośladków.",
+    "Po obciążeniu weź krótki wdech, ponownie napnij brzuch i utrzymaj pozycję. Wzrok skierowany na podłogę około 30 cm przed dłońmi, by zachować neutralny kręgosłup szyjny.",
+    "Wytrzymaj przez zaplanowany czas (20-45 sekund — to robocze okno, jakość ważniejsza od czasu). Utrzymuj spokojny, płytki oddech klatką piersiową. NIE wstrzymuj oddechu.",
+    "Aby zakończyć serię, niech partner NAJPIERW zdejmie talerz, a dopiero potem opuść kolana na podłogę. Nigdy nie pozwól, by talerz zsunął się niekontrolowanie — może uderzyć w podłogę lub w kostki."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_extension",
+    "force": "static",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["glutes", "front_delts", "serratus_anterior"],
+    "stabilizers": ["transverse_abdominis", "obliques", "quadratus_lumborum", "rotator_cuff", "lower_trapezius", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "glutes": "S8",
+    "front_delts": "S7",
+    "serratus_anterior": "S7",
+    "transverse_abdominis": "S8",
+    "obliques": "S6",
+    "quadratus_lumborum": "T5",
+    "rotator_cuff": "T4",
+    "lower_trapezius": "T4",
+    "quadriceps": "T4"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["yoga_mat", "sandbag", "kettlebell", "weight_vest"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["plank", "dead-bug", "hollow-body-hold", "ab-wheel-rollout-from-knees"],
+    "progression_to": ["rkc-plank", "ab-wheel-rollout", "long-lever-plank", "weighted-rkc-plank"],
+    "alternatives": ["plank", "hollow-body-hold", "ab-wheel-rollout-from-knees", "long-lever-plank"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Plate placement: low-to-mid back, centred — NOT on the neck, NOT on the glutes only",
+      "Elbows directly under shoulders — checked BEFORE the plate goes on",
+      "Pre-brace 100% before loading — core, glutes, quads all rock solid",
+      "Start light: 5-10 kg even if you can hold bodyweight plank 2 minutes",
+      "Partner stands at your side and lowers the plate vertically — never tosses or drops it"
+    ],
+    "setup_cues_pl": [
+      "Ułożenie talerza: dolna lub środkowa część pleców, wycentrowany — NIE na karku, NIE tylko na pośladkach",
+      "Łokcie dokładnie pod barkami — sprawdź ZANIM partner nałoży talerz",
+      "Pre-bracing na 100% przed obciążeniem — brzuch, pośladki, czworogłowe twarde jak skała",
+      "Zacznij lekko: 5-10 kg nawet jeśli utrzymujesz klasyczną deskę 2 minuty",
+      "Partner stoi z boku i opuszcza talerz pionowo — nigdy go nie rzuca i nie upuszcza"
+    ],
+    "execution_cues": [
+      "Squeeze the glutes HARDER than you think you need to — they pin the pelvis in neutral",
+      "Pull the elbows back toward your toes (isometric) — activates lats and locks ribs down",
+      "Long line: ear - shoulder - hip - knee - ankle, no sag, no pike",
+      "Push the floor away through the forearms — protract slightly, no scapular collapse",
+      "Look at the floor 30 cm in front of you — neutral neck, do not lift the head"
+    ],
+    "execution_cues_pl": [
+      "Ściśnij pośladki MOCNIEJ, niż myślisz, że trzeba — to one ustawiają miednicę w pozycji neutralnej",
+      "Ściągaj łokcie izometrycznie w kierunku palców stóp — aktywuje to najszerszy grzbietu i blokuje żebra w dole",
+      "Długa linia: ucho - bark - biodro - kolano - kostka, bez opadania, bez 'V'",
+      "Odpychaj podłogę przedramionami — lekka protrakcja, łopatki nie mogą się zapadać",
+      "Patrz w podłogę 30 cm przed sobą — neutralna szyja, nie unoś głowy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back sagging — hips drop, lumbar spine extends under the load",
+        "faultPl": "Opadanie dolnego odcinka pleców — biodra spadają, lędźwie wyginają się pod obciążeniem",
+        "cause": "Insufficient anterior core strength for the added load, or no pre-brace; weight too heavy",
+        "causePl": "Niedostateczna siła przedniego core'u jak na dodane obciążenie lub brak napięcia przed nałożeniem; talerz za ciężki",
+        "cue": "If hips drop — partner removes the plate IMMEDIATELY and you reduce the load by 50%. Quality at 20 sec beats sagging at 45 sec.",
+        "cuePl": "Jeśli biodra opadają — partner NATYCHMIAST zdejmuje talerz, a ty redukujesz ciężar o 50%. Czysta technika przez 20 sek bije zarwany plank przez 45 sek."
+      },
+      {
+        "fault": "Hips piking up — pyramid shape with butt in the air",
+        "faultPl": "Biodra wypchnięte do góry — sylwetka 'piramidki' z pośladkami wysoko",
+        "cause": "Compensating for weak abs by shifting load to the shoulders and hip flexors",
+        "causePl": "Kompensacja słabego brzucha przez przeniesienie obciążenia na barki i zginacze bioder",
+        "cue": "Tuck the tailbone slightly toward the ribs — feel a flat, level line across the hips. Plate on the back should feel HEAVY on the abs, not light.",
+        "cuePl": "Lekko podwiń kość ogonową w stronę żeber — biodra mają być na płaskiej linii. Talerz na plecach powinien CIĄŻYĆ na brzuchu, a nie być lekki."
+      },
+      {
+        "fault": "Plate sliding toward the neck or shoulders",
+        "faultPl": "Talerz zsuwa się w stronę karku lub barków",
+        "cause": "Initial placement too high; pelvis tilting forward during the hold",
+        "causePl": "Talerz początkowo nałożony za wysoko; miednica przechyla się do przodu w trakcie utrzymania",
+        "cue": "Re-rack and place it centred over the lumbar/sacral area. If it still slides — your hips are not level. Re-set with stronger glute squeeze.",
+        "cuePl": "Zdejmij i nałóż wycentrowany nad odcinkiem lędźwiowo-krzyżowym. Jeśli nadal się zsuwa — biodra nie są na linii. Ustaw się ponownie z mocniejszym napięciem pośladków."
+      },
+      {
+        "fault": "Holding the breath (Valsalva for 30+ seconds)",
+        "faultPl": "Wstrzymywanie oddechu (manewr Valsalvy przez 30+ sekund)",
+        "cause": "Confusing maximal brace (used for 1-2 second efforts) with sustained isometric tension",
+        "causePl": "Mylenie maksymalnego napięcia (stosowanego do 1-2 sekundowych wysiłków) z utrzymywanym napięciem izometrycznym",
+        "cue": "Brace at ~50% of max, leaving capacity for short shallow chest breaths. You should be able to say short words during the hold.",
+        "cuePl": "Napnij brzuch na ~50% maksimum, zostawiając zapas na krótkie, płytkie oddechy klatką piersiową. Powinieneś być w stanie wypowiedzieć krótkie słowa w trakcie utrzymywania."
+      },
+      {
+        "fault": "Head dropping or lifting — loss of neutral neck",
+        "faultPl": "Głowa opada lub jest podnoszona — utrata neutralnej szyi",
+        "cause": "Fatigue at end of hold; or trying to peek at the timer",
+        "causePl": "Zmęczenie pod koniec serii lub próba sprawdzania stopera",
+        "cue": "Pick a spot on the floor 30 cm in front of your hands and STARE at it. Top of the head reaches forward, not up or down.",
+        "cuePl": "Wybierz punkt na podłodze 30 cm przed dłońmi i WPATRUJ się w niego. Czubek głowy ciągnie się do przodu, nie w górę ani w dół."
+      }
+    ],
+    "breathing": "Steady shallow chest breathing throughout the entire isometric hold. Brace the core at approximately 50% of maximal effort — high enough to resist the load, low enough to allow breathing. Do NOT use a full Valsalva (closed glottis) for 30+ seconds — this spikes blood pressure dangerously. If you cannot breathe under the current load, the weight is too heavy.",
+    "breathingPl": "Spokojny, płytki oddech klatką piersiową przez cały czas utrzymywania pozycji. Napnij brzuch na około 50% maksymalnego wysiłku — wystarczająco mocno, by oprzeć się obciążeniu, na tyle łagodnie, by oddychać. NIE stosuj pełnej Valsalvy (zamknięta głośnia) przez 30+ sekund — to niebezpiecznie podnosi ciśnienie. Jeśli nie możesz oddychać pod obecnym obciążeniem, talerz jest za ciężki."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain",
+      "severity": "avoid",
+      "modification": "Adding load directly over the lumbar spine in a position that resists extension is HIGH risk if any acute lower back issue is present (disc, facet, sprain). Regress to bodyweight plank or dead bug until completely pain-free for 4+ weeks before re-attempting.",
+      "modificationPl": "Dodawanie obciążenia bezpośrednio nad odcinkiem lędźwiowym w pozycji opierającej się wyprostowi to WYSOKIE ryzyko, jeśli występuje jakikolwiek ostry problem z dolnym odcinkiem pleców (dysk, stawy międzywyrostkowe, naciągnięcie). Wróć do deski bez obciążenia lub dead bug, aż przez 4+ tygodnie nie będziesz odczuwał bólu, zanim spróbujesz ponownie.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_pain",
+      "severity": "modify",
+      "modification": "The shoulders bear additional load through the forearms — irritated AC joints or rotator cuff can flare up. Reduce weight or switch to bodyweight plank. If forearm plank itself is painful — regress to dead bug.",
+      "modificationPl": "Barki dźwigają dodatkowe obciążenie przez przedramiona — podrażnione stawy barkowo-obojczykowe lub stożek rotatorów mogą się zaostrzyć. Zmniejsz ciężar lub przejdź na deskę bez obciążenia. Jeśli sama deska na przedramionach boli — wróć do dead bug.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "pregnancy",
+      "severity": "avoid",
+      "modification": "Loaded anti-extension work with weight directly over the lumbar spine is not recommended during pregnancy due to increased intra-abdominal pressure and risk of diastasis recti. Use side plank from knees or birddog instead.",
+      "modificationPl": "Obciążona praca antywyprostna z ciężarem bezpośrednio nad odcinkiem lędźwiowym nie jest zalecana w ciąży ze względu na zwiększone ciśnienie wewnątrzbrzuszne i ryzyko rozejścia mięśnia prostego brzucha (diastasis recti). Zamiast tego stosuj deskę bokiem z kolan lub birddog.",
+      "alternative": "bird-dog"
+    },
+    {
+      "condition": "hypertension",
+      "severity": "caution",
+      "modification": "Heavy isometric holds with restricted breathing can elevate blood pressure significantly. If you have uncontrolled hypertension, use lighter load (or bodyweight only) and never approach Valsalva. Focus on steady breathing throughout.",
+      "modificationPl": "Ciężkie utrzymania izometryczne z ograniczonym oddychaniem mogą znacznie podnieść ciśnienie. Jeśli masz niekontrolowane nadciśnienie, używaj lżejszego obciążenia (lub samej masy ciała) i nigdy nie zbliżaj się do Valsalvy. Skup się na spokojnym oddychaniu przez cały czas.",
+      "alternative": "plank"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-30 sekund z 10-20 kg | 4x15-20 sekund z cięższym obciążeniem (20-40 kg) | 3x30-45 sekund z lekkim talerzem (5-10 kg) jako progresja od bodyweight planku",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "weighted-front-plank.gif",
+    "frames_extracted": [
+      "frames/weighted-front-plank/frame_0_start.png",
+      "frames/weighted-front-plank/frame_1_early.png",
+      "frames/weighted-front-plank/frame_2_mid.png",
+      "frames/weighted-front-plank/frame_3_late.png",
+      "frames/weighted-front-plank/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/weighted-front-plank"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 z GIFa jahel. Frame 0 (start): postać w klasycznej desce na przedramionach (forearm plank), elbows pod barkami, ciało w prostej linii od pięt do głowy, stopy oparte na palcach. Na środkowej części pleców (okolica lędźwiowo-krzyżowa) ułożony okrągły TALERZ obciążeniowy płasko. Stopy na podłodze, równe ustawienie. Frame 2 (mid): identyczna pozycja izometryczna — z wyraźnie PODŚWIETLONYM na czerwono mięśniem PROSTYM BRZUCHA (rectus abdominis) po całej przedniej części tułowia od mostka po spojenie łonowe. To jednoznacznie potwierdza primary muscle = rectus_abdominis (anti-extension). Frame 4 (end): pozycja końcowa identyczna z startem (typowe dla izometrii). Klasyfikacja: anti_extension (front plank to klasyczne ćwiczenie antywyprostne, talerz tylko wzmacnia ten efekt), force=static (isometric hold), mechanic=compound (zaangażowane całe ciało — brzuch, pośladki, barki, czworogłowe — zgodnie ze specyfikacją Macieja), laterality=bilateral (obie strony równo), plane=sagittal (próba wyprostu lędźwi to ruch w płaszczyźnie strzałkowej, której opieramy się statycznie), kinetic_chain=closed. Primary: rectus_abdominis P10 (jak Maciej zalecił + potwierdza GIF z czerwonym highlightem). Secondary: glutes S8 (mocne zaangażowanie do utrzymania wyprostu biodra pod obciążeniem), front_delts S7 (dźwigają dodatkowy ciężar przez przedramiona), serratus_anterior S7 (protrakcja łopatek pod load). Stabilizers: transverse_abdominis S8 (głęboki bracing), obliques S6, QL T5, rotator cuff T4, lower trap T4, quadriceps T4. Equipment: weight_plate (wymagany — to definiuje wariant 'weighted'). Difficulty 8 — to wyraźna progresja klasycznego planku (difficulty 4-5), wymaga prerekwizytów: dobry bodyweight plank (60+ sek), dead-bug, hollow-body, ab-wheel rollout z kolan. Sets/reps: '3x20-30 sek z 10-20 kg' jako podstawowy schemat — krótsze holdy niż bodyweight bo wyższe napięcie. Calories 4.0/kg/h (wyższe niż zwykły plank 3.5 ze względu na wyższe obciążenie izometryczne). 5 common_faults: sagging hips (najczęstszy i najgroźniejszy bug — bo obciążenie idzie wtedy bezpośrednio w lędźwie), piking hips, plate sliding, breath-holding/Valsalva, head dropping. 4 contraindications: lower_back_pain (AVOID — to najwyższe ryzyko, obciążenie bezpośrednio nad lędźwiami), shoulder_pain (modify), pregnancy (avoid — diastasis recti + intra-abdominal pressure), hypertension (caution — Valsalva risk). Polska nazwa 'Deska z obciążeniem' — najczęstsza i najbardziej naturalna forma w polskim fitnessie. Aliasy zawierają 'plank z talerzem' jako popularny polski hybryd oraz 'plank obciążony'. Wszystkie pola PL napisane od zera w polskim standardzie fitness, nie tłumaczone mechanicznie z angielskiego.",
+
+  "tags": ["weighted", "core", "rectus_abdominis", "anti_extension", "isometric", "plank_variant", "progression", "weight_plate", "advanced", "trunk_stability", "bilateral", "static_hold"]
+}

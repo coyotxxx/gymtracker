@@ -1,0 +1,199 @@
+{
+  "id": "reverse-hyper-on-flat-bench",
+  "name": "Reverse Hyper on Flat Bench",
+  "namePl": "Reverse hyper na płaskiej ławce",
+  "aliases": ["bench reverse hyperextension", "prone hip extension on bench", "bodyweight reverse hyper", "bench reverse hyper", "reverse hyperextension on flat bench"],
+  "aliasesPl": ["reverse hyperextension na ławce płaskiej", "wyprosty bioder w leżeniu na ławce", "odwrócony hiperextension na ławce", "reverse hyper bez maszyny", "wyprost bioder w opadzie na ławce"],
+
+  "description": "Bodyweight reverse hyperextension performed lying prone (face-down) on a flat bench with the hips at the edge and the legs hanging off. The lifter raises straight (or slightly bent) legs from below the bench up to parallel with the torso (or slightly above), driven by hip extension. A Westside Barbell classic introduced by Louie Simmons — strengthens the posterior chain (glutes, hamstrings, erectors) with very low spinal compression, making it a staple for lower-back rehab and posterior chain activation. The flat-bench version is the equipment-free regression of the dedicated reverse hyper machine.",
+  "descriptionPl": "Reverse hyperextension z masą własnego ciała wykonywany w leżeniu na brzuchu (twarzą w dół) na płaskiej ławce, z biodrami na krawędzi i nogami zwisającymi poza ławkę. Ćwiczący unosi proste (lub lekko ugięte) nogi spod ławki do poziomu tułowia (lub lekko powyżej) wyprostem w stawach biodrowych. Klasyk ze szkoły Westside Barbell wprowadzony przez Louie Simmonsa — wzmacnia tylny łańcuch (pośladki, dwugłowe uda, prostowniki grzbietu) przy bardzo niskim obciążeniu kompresyjnym kręgosłupa, dzięki czemu jest standardem w rehabilitacji odcinka lędźwiowego i aktywacji tylnego łańcucha. Wersja na zwykłej ławce to regresja względem dedykowanej maszyny reverse hyper.",
+
+  "instructions": [
+    "Lie face-down (prone) along the length of a flat bench with your hips positioned right at the end of the bench, so your legs can hang straight down off the edge.",
+    "Grip the sides or the front edge of the bench firmly with both hands to anchor your upper body. Keep your chest and head relaxed on the bench.",
+    "Brace the core lightly and pre-squeeze the glutes. Keep the legs straight (or with a very slight bend at the knees) and ankles together or hip-width apart.",
+    "Starting with the legs hanging below the bench, drive the heels back and up by extending the hips. Lift the legs in one piece until they are parallel with the torso or slightly above.",
+    "Squeeze the glutes hard at the top for 1 second. The torso must stay flat on the bench — only the hips move.",
+    "Lower the legs under control back to the starting position. Do NOT let momentum swing them — the descent should be slower than the lift.",
+    "Avoid hyperextending the lower back at the top. Stop the lift when the glutes are fully contracted; do not over-arch.",
+    "Breathe: exhale on the way up (hip extension), inhale on the way down. Keep the neck neutral throughout."
+  ],
+  "instructionsPl": [
+    "Połóż się na brzuchu (prone) wzdłuż płaskiej ławki tak, by biodra znalazły się dokładnie na krawędzi ławki, a nogi mogły swobodnie zwisać w dół poza ławką.",
+    "Złap oburącz boki lub przedni brzeg ławki, by mocno zakotwiczyć górną część ciała. Klatkę i głowę trzymaj rozluźnione na ławce.",
+    "Lekko napnij brzuch i wstępnie ściśnij pośladki. Nogi trzymaj proste (lub z minimalnym ugięciem w kolanach), kostki razem lub na szerokość bioder.",
+    "Z nogami zwisającymi poniżej ławki, wypchnij pięty w tył i w górę przez wyprost w stawach biodrowych. Unieś nogi jednolicie, aż będą równoległe do tułowia lub minimalnie powyżej.",
+    "Mocno ściśnij pośladki na górze przez 1 sekundę. Tułów musi pozostać przyklejony do ławki — porusza się wyłącznie biodro.",
+    "Opuść nogi w pełnej kontroli do pozycji wyjściowej. NIE pozwól, by rozhuśtany impet je opuszczał — opuszczanie ma być wolniejsze niż unoszenie.",
+    "Unikaj przeprostu odcinka lędźwiowego na górze. Zatrzymaj ruch, gdy pośladki są maksymalnie napięte; nie wchodź dalej w lordozę.",
+    "Oddech: wydech w drodze w górę (wyprost biodra), wdech w drodze w dół. Szyję trzymaj neutralnie przez cały ruch."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings"],
+    "secondary": ["erector_spinae"],
+    "stabilizers": ["core", "adductors", "lats"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P8",
+    "erector_spinae": "S6",
+    "adductors": "S3",
+    "core": "T4",
+    "lats": "T3"
+  },
+
+  "equipment": {
+    "required": ["flat_bench"],
+    "optional": ["ankle_weights", "resistance_band", "dumbbell_between_feet"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-glute-bridge", "prone-leg-raise"],
+    "progression_to": ["lever-reverse-hyperextension", "reverse-hyper-extension-on-stability-ball", "weighted-reverse-hyper-on-flat-bench"],
+    "alternatives": ["lever-reverse-hyperextension", "reverse-hyper-extension-on-stability-ball", "cable-pull-through", "back-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hips exactly at the edge of the bench — not on the bench, not past it",
+      "Grip the bench tight to anchor the torso",
+      "Legs straight, ankles together, toes neutral or slightly pointed",
+      "Chest and head flat on the bench, neck neutral",
+      "Pre-squeeze the glutes before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Biodra dokładnie na krawędzi ławki — nie na ławce, nie poza nią",
+      "Złap mocno ławkę, by zakotwiczyć tułów",
+      "Nogi proste, kostki razem, palce stóp neutralne lub minimalnie wyciągnięte",
+      "Klatka i głowa płasko na ławce, szyja neutralna",
+      "Wstępnie napnij pośladki przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive the heels back and up, not just up",
+      "Lift with the glutes — feel the squeeze, not the lower back",
+      "Stop when legs are parallel with the torso, do not over-arch",
+      "Pause and squeeze at the top for 1 second",
+      "Lower slower than you lift — no swinging momentum"
+    ],
+    "execution_cues_pl": [
+      "Wypychaj pięty w tył i w górę, nie tylko do góry",
+      "Unoś pośladkami — czuj napięcie pośladków, nie krzyża",
+      "Zatrzymaj się, gdy nogi są równoległe do tułowia, nie wchodź w przeprost",
+      "Zatrzymaj się i ściśnij na górze przez 1 sekundę",
+      "Opuszczaj wolniej niż unosisz — bez rozhuśtania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lumbar hyperextension at the top",
+        "faultPl": "Przeprost odcinka lędźwiowego na górze",
+        "cause": "Lifting the legs too high beyond neutral hip extension, weak glutes that hand off the work to the lower back, or no end-range control",
+        "causePl": "Unoszenie nóg zbyt wysoko poza neutralny wyprost biodra, słabe pośladki oddające pracę odcinkowi lędźwiowemu lub brak kontroli w końcowej fazie ruchu",
+        "cue": "Stop when legs reach the line of the torso. Squeeze the glutes, do not arch the back to gain extra height.",
+        "cuePl": "Zatrzymaj się, gdy nogi dochodzą do linii tułowia. Ściskaj pośladki, nie wyginaj pleców, by zyskać dodatkową wysokość."
+      },
+      {
+        "fault": "Using momentum (swinging the legs)",
+        "faultPl": "Rozhuśtywanie nóg (praca impetem)",
+        "cause": "Rushing the tempo, dropping the legs too fast, or trying to lift more than the glutes can handle",
+        "causePl": "Zbyt szybkie tempo, zbyt szybkie opadanie nóg lub próba pracy z obciążeniem przekraczającym możliwości pośladków",
+        "cue": "Slow the eccentric to 2-3 seconds. The lift should look smooth, not like a kick.",
+        "cuePl": "Spowolnij fazę opuszczania do 2-3 sekund. Ruch powinien wyglądać płynnie, nie jak kopnięcie."
+      },
+      {
+        "fault": "Quad/hip-flexor dominance (knees bend heavily)",
+        "faultPl": "Dominacja czworogłowych / zginaczy biodra (mocne uginanie kolan)",
+        "cause": "Bending the knees mid-rep recruits the quads and shortens hamstring leverage, shifting load away from glutes",
+        "causePl": "Uginanie kolan w trakcie ruchu włącza czworogłowe i skraca dźwignię dwugłowych uda, zabierając pracę pośladkom",
+        "cue": "Keep the knees almost locked. Imagine the legs as one stiff rod pivoting at the hip.",
+        "cuePl": "Trzymaj kolana niemal wyprostowane. Wyobraź sobie nogi jako jeden sztywny pręt obracający się w stawie biodrowym."
+      },
+      {
+        "fault": "Hips slide off the bench / unstable torso",
+        "faultPl": "Biodra zsuwają się z ławki / niestabilny tułów",
+        "cause": "Hips placed too far forward on the bench, weak grip, or core not braced",
+        "causePl": "Biodra ustawione zbyt daleko w głąb ławki, słaby chwyt lub niespięty brzuch",
+        "cue": "Re-set hips exactly at the edge, grip the bench hard, brace the core like for a deadlift.",
+        "cuePl": "Ustaw biodra dokładnie na krawędzi, mocno chwyć ławkę, napnij brzuch jak do martwego ciągu."
+      },
+      {
+        "fault": "Neck craning upward",
+        "faultPl": "Zadzieranie głowy do góry",
+        "cause": "Looking forward instead of keeping the neck neutral, often paired with lumbar hyperextension",
+        "causePl": "Patrzenie do przodu zamiast neutralnej szyi, często razem z przeprostem lędźwiowym",
+        "cue": "Eyes down toward the bench, chin slightly tucked. Move only at the hips.",
+        "cuePl": "Wzrok w dół na ławkę, broda lekko schowana. Ruch wykonuj tylko w biodrach."
+      }
+    ],
+    "breathing": "Inhale at the bottom while the legs are hanging. Exhale steadily on the way up as the hips extend. Inhale on the controlled descent. For higher reps keep a relaxed rhythm; do not Valsalva — this exercise is meant to be low-compression.",
+    "breathingPl": "Wdech na dole, gdy nogi zwisają. Stabilny wydech w drodze w górę przy wyproście bioder. Wdech podczas kontrolowanego opuszczania. Przy większej liczbie powtórzeń utrzymuj spokojny rytm; nie stosuj manewru Valsalvy — to ćwiczenie z założenia ma być niskokompresyjne."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury_with_extension_intolerance",
+      "severity": "avoid",
+      "modification": "If lumbar extension reproduces pain (e.g. acute disc bulge with extension bias, facet joint irritation), avoid until cleared. Use supine bodyweight glute bridge instead, which keeps the back flat.",
+      "modificationPl": "Jeśli wyprost lędźwiowy wywołuje ból (np. ostra przepuklina krążka z nietolerancją wyprostu, drażnienie stawów międzywyrostkowych) — unikaj do czasu zgody specjalisty. Zastosuj mostek pośladkowy w leżeniu na plecach, który utrzymuje plecy płasko.",
+      "alternative": "bodyweight-glute-bridge"
+    },
+    {
+      "condition": "spondylolisthesis_or_pars_defect",
+      "severity": "avoid",
+      "modification": "End-range hip extension and any tendency to over-arch can shear the lumbar segment. Avoid this lift; use flexion-bias or neutral-spine alternatives.",
+      "modificationPl": "Końcowy zakres wyprostu biodra i tendencja do przeprostu mogą ścinać segment lędźwiowy. Unikaj tego ćwiczenia; stosuj alternatywy w zgięciu lub na neutralnym kręgosłupie.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "avoid",
+      "modification": "Prone position with the abdomen against the bench is contraindicated from the second trimester. Switch to standing cable hip extension or quadruped (bird-dog) leg raises.",
+      "modificationPl": "Pozycja prone z brzuchem dociśniętym do ławki jest przeciwwskazana od drugiego trymestru. Przejdź na stojący wyprost biodra na wyciągu lub uniesienia nóg w klęku podpartym (bird-dog).",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "hamstring_strain_acute",
+      "severity": "modify",
+      "modification": "Acute hamstring strain is loaded eccentrically here. Reduce ROM (lift only to torso line, not beyond), keep knees softly bent to shorten the lever, and lower the rep volume until pain-free.",
+      "modificationPl": "Świeże naciągnięcie dwugłowego uda jest tu ekscentrycznie obciążane. Zmniejsz zakres ruchu (unoś tylko do linii tułowia, nie wyżej), trzymaj kolana minimalnie ugięte, by skrócić dźwignię, i zmniejsz liczbę powtórzeń do czasu braku bólu."
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (activation/rehab) | 3-4x10-12 (hypertrophy) | 2-3x15-20 (endurance) | 3x8-10 with ankle weights (loaded strength)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "reverse-hyper-on-flat-bench.gif",
+    "frames_extracted": [
+      "frames/reverse-hyper-on-flat-bench/frame_0_start.png",
+      "frames/reverse-hyper-on-flat-bench/frame_1_early.png",
+      "frames/reverse-hyper-on-flat-bench/frame_2_mid.png",
+      "frames/reverse-hyper-on-flat-bench/frame_3_late.png",
+      "frames/reverse-hyper-on-flat-bench/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/reverse-hyper-on-flat-bench"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0/4 (start/koniec): osoba leży prone na płaskiej ławce, biodra dokładnie na krawędzi, nogi zwisają w dół poza ławkę — pozycja wyjściowa. Frame 1/3 (early/late): nogi w trakcie podnoszenia/opuszczania, podświetlone na czerwono pośladki maximus + dwugłowe uda. Frame 2 (szczyt): nogi uniesione do poziomu tułowia (lekko powyżej), pełny wyprost w stawie biodrowym, kolana praktycznie wyprostowane, podświetlenie obejmuje pośladki, hamstringi i pasmo prostowników grzbietu. Klasyfikacja: hinge (ruch w stawie biodrowym, kolana statyczne), isolation (jeden staw — biodro), push (siła wytwarzana przez ekstensję biodra przeciw grawitacji), bilateral, sagittal (ruch w płaszczyźnie strzałkowej), open kinetic chain (stopy wolne w przestrzeni — kluczowa różnica względem glute bridge / hip thrust). Muscle intensity: glutes P9 (lider ruchu, klasyczny exercise glute-focused), hamstrings P8 (współliderzy — ekstensja biodra z prostymi nogami obciąża hamstringi przy biodrze), erector_spinae S6 (drugorzędnie, izometrycznie + isotonicznie chroni przed kifozacją w pozycji prone, podświetlone na klatce 2). Difficulty 4/10 — beginner friendly, niska kompresja kręgosłupa, jeden z fundamentów rehabilitacji Westside. Wszystkie pola PL napisane od zera w polskim standardzie fitness (np. 'dwugłowe uda', 'prostowniki grzbietu', 'wyprost w stawie biodrowym', 'tylny łańcuch'), bez kalk z angielskiego.",
+
+  "tags": ["glute_focused", "hamstring_focused", "posterior_chain", "hip_dominant", "lower_body", "bodyweight", "bench", "hip_extension", "low_back_friendly", "rehab", "westside", "activation", "isolation"]
+}

@@ -1,0 +1,205 @@
+{
+  "id": "kettlebell-arnold-press",
+  "name": "Kettlebell Arnold Press (Standing)",
+  "namePl": "Arnold press z kettlebellami (stojąc)",
+  "aliases": ["KB Arnold press", "kettlebell rotating shoulder press", "double kettlebell Arnold press", "Arnold press with kettlebells"],
+  "aliasesPl": ["Arnold press z odważnikami kulowymi", "Arnold press z kettlami", "obrotowe wyciskanie barków z KB", "rotacyjne wyciskanie kettlebellami"],
+
+  "description": "A kettlebell variation of the classic Arnold press (named after Arnold Schwarzenegger). Bilateral compound movement performed standing, pressing two kettlebells from a supinated front-rack position (palms toward face) to a fully locked-out pronated position overhead (palms forward) with a continuous rotation through the press. The rotation engages ALL three deltoid heads (anterior, lateral, posterior) far more than a strict vertical press, while triceps lock out the elbow and serratus stabilizes the scapula. Kettlebell weight distribution (offset center of mass below the handle) adds a stabilization challenge absent from dumbbell versions.",
+  "descriptionPl": "Wariant klasycznego Arnold press (nazwany od Arnolda Schwarzeneggera) wykonywany z kettlebellami. Dwustronny ruch wielostawowy wykonywany stojąc — wyciskasz dwa kettlebelle z pozycji front rack w supinacji (dłonie skierowane w stronę twarzy) do pełnego lock-out nad głową w pronacji (dłonie do przodu), z ciągłą rotacją przez cały ruch wyciskania. Rotacja angażuje WSZYSTKIE trzy aktony naramiennego (przedni, boczny, tylny) znacznie mocniej niż klasyczne pionowe wyciskanie, tricepsy ryglują łokieć, a zębaty stabilizuje łopatkę. Rozkład masy kettlebella (środek ciężkości poniżej uchwytu) dokłada wyzwanie stabilizacyjne, którego nie ma w wersji z hantlami.",
+
+  "instructions": [
+    "Stand with feet hip- to shoulder-width apart. Hold a kettlebell in each hand at chest level, palms facing your face (supinated grip). Kettlebells rest on the back of the forearm/biceps.",
+    "Elbows are in front of the body, close to the ribs. Wrists straight (neutral) — do not let them collapse backward under the kettlebell weight.",
+    "Brace core HARD, squeeze glutes, ribs down. Take a big breath.",
+    "Begin pressing up. As the kettlebells rise past the face, simultaneously rotate the hands outward (external rotation) — supinated → neutral at the middle → pronated at the top.",
+    "At lockout: arms fully extended overhead, palms facing forward (pronated), biceps near ears, kettlebells stacked over mid-foot when viewed from the side.",
+    "Reverse the motion: rotate the hands back inward (pronated → neutral → supinated) as you lower the kettlebells back to the front rack starting position.",
+    "Control the descent — kettlebell mass below the handle wants to pull your wrist backward. Keep wrist neutral throughout.",
+    "Exhale at the top of the press. Re-brace before the next rep."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku na szerokość bioder do barków. Trzymaj kettlebell w każdej dłoni na wysokości klatki, dłonie skierowane do twarzy (chwyt supinowany). Kettlebelle leżą na tyle przedramienia/bicepsa.",
+    "Łokcie z przodu ciała, blisko żeber. Nadgarstki proste (neutralne) — nie pozwól im się złamać do tyłu pod ciężarem kettlebella.",
+    "Napnij MOCNO brzuch, ściśnij pośladki, żebra w dół. Nabierz głęboki oddech.",
+    "Zacznij wyciskać w górę. Gdy kettlebelle mijają twarz, jednocześnie obracaj dłonie na zewnątrz (rotacja zewnętrzna) — supinacja → neutralna w połowie → pronacja na szczycie.",
+    "W lock-out: ramiona w pełni wyprostowane nad głową, dłonie do przodu (pronacja), bicepsy przy uszach, kettlebelle nad środkiem stóp z boku.",
+    "Odwróć ruch: obracaj dłonie z powrotem do wewnątrz (pronacja → neutralna → supinacja) opuszczając kettlebelle do pozycji startowej front rack.",
+    "Kontroluj zejście — masa kettlebella poniżej uchwytu próbuje wygiąć nadgarstek do tyłu. Trzymaj nadgarstek neutralny przez cały ruch.",
+    "Wydech na szczycie wyciskania. Ponownie napnij brzuch przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "multi_planar",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "posterior_deltoids", "upper_trapezius"],
+    "secondary": ["triceps", "serratus_anterior", "upper_chest"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "forearms", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P8",
+    "posterior_deltoids": "P6",
+    "upper_trapezius": "P6",
+    "triceps": "S7",
+    "serratus_anterior": "S6",
+    "upper_chest": "S4",
+    "core": "S7",
+    "rotator_cuff": "S6",
+    "forearms": "S5",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dumbbell-shoulder-press", "kettlebell-shoulder-press", "dumbbell-arnold-press"],
+    "progression_to": ["single-arm-kettlebell-arnold-press", "kettlebell-bottom-up-press", "kettlebell-z-press", "double-kettlebell-push-press"],
+    "alternatives": ["dumbbell-arnold-press", "dumbbell-standing-overhead-press", "kettlebell-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kettlebells at chest level, palms facing face (supinated)",
+      "Bell rests on back of forearm — not dangling off the wrist",
+      "Elbows in front, close to ribs",
+      "Wrist NEUTRAL (do not let it collapse back)",
+      "Glutes squeezed, ribs down, core braced HARD"
+    ],
+    "setup_cues_pl": [
+      "Kettlebelle na wysokości klatki, dłonie w stronę twarzy (supinacja)",
+      "Czasza leży na tyle przedramienia — nie zwisa z nadgarstka",
+      "Łokcie z przodu, blisko żeber",
+      "Nadgarstek NEUTRALNY (nie pozwól mu się złamać do tyłu)",
+      "Pośladki ściśnięte, żebra w dół, brzuch MOCNO napięty"
+    ],
+    "execution_cues": [
+      "Rotate hands outward AS you press up (one smooth motion)",
+      "Supinated → neutral at face → pronated overhead",
+      "Finish with palms forward, biceps by ears",
+      "Bells stacked over mid-foot at lockout",
+      "Control the kettlebell — it pulls the wrist back"
+    ],
+    "execution_cues_pl": [
+      "Obracaj dłonie na zewnątrz W TRAKCIE wyciskania (jeden płynny ruch)",
+      "Supinacja → neutralna na wysokości twarzy → pronacja nad głową",
+      "Zakończ dłońmi do przodu, bicepsami przy uszach",
+      "Czasze nad środkiem stóp w lock-out",
+      "Kontroluj kettlebell — ciągnie nadgarstek do tyłu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrist collapses backward under kettlebell load",
+        "faultPl": "Nadgarstek łamie się do tyłu pod ciężarem kettlebella",
+        "cause": "Weak forearm/wrist stabilizers, kettlebell too heavy, grip placement too far inside the handle",
+        "causePl": "Słabe stabilizatory przedramienia/nadgarstka, zbyt ciężki kettlebell, chwyt zbyt głęboko w uchwycie",
+        "cue": "Wrist NEUTRAL — line forearm with knuckles. Drop the weight if you can't hold neutral. Optionally use wrist wraps.",
+        "cuePl": "Nadgarstek NEUTRALNY — przedramię w linii z kostkami. Zmniejsz ciężar jeśli nie utrzymujesz neutralnej pozycji. Opcjonalnie użyj wraps na nadgarstki."
+      },
+      {
+        "fault": "Rotation happens AFTER the press (two separate phases instead of one fluid motion)",
+        "faultPl": "Rotacja następuje PO wyciśnięciu (dwie osobne fazy zamiast jednego płynnego ruchu)",
+        "cause": "Misunderstanding of the movement — Arnold press is rotational pressing, not press-then-twist",
+        "causePl": "Niezrozumienie ruchu — Arnold press to wyciskanie rotacyjne, nie wyciskanie a potem skręt",
+        "cue": "Rotation and press happen TOGETHER — supinated at chest, neutral at face, pronated overhead. Practice slowly with light KBs.",
+        "cuePl": "Rotacja i wyciskanie ZARAZEM — supinacja na klatce, neutralna na twarzy, pronacja nad głową. Trenuj wolno z lekkimi KB."
+      },
+      {
+        "fault": "Lumbar hyperextension (excessive arching of lower back)",
+        "faultPl": "Przeprost lędźwiowy (nadmierne odginanie dolnego odcinka pleców)",
+        "cause": "Weak core, weight too heavy, insufficient glute engagement, limited overhead mobility",
+        "causePl": "Słaby brzuch, zbyt duży ciężar, niewystarczające napięcie pośladków, ograniczona mobilność overhead",
+        "cue": "Squeeze glutes HARD. Ribs DOWN, not flared. Reduce load if back keeps arching. Consider switching to Z-press to expose the mobility issue.",
+        "cuePl": "MOCNO ściśnij pośladki. Żebra W DÓŁ, nie wyrzucone. Zmniejsz obciążenie jeśli plecy się odginają. Rozważ Z-press, by odsłonić problem mobilności."
+      },
+      {
+        "fault": "Kettlebells drift in front of body instead of going straight up",
+        "faultPl": "Kettlebelle uciekają przed ciało zamiast iść prosto w górę",
+        "cause": "Avoiding the head, weak posterior chain (rear delts/upper back), poor thoracic extension",
+        "causePl": "Unikanie głowy, słaby tylny łańcuch (tylne aktony/górne plecy), słaba ekstensja piersiowa",
+        "cue": "Press up and slightly BACK — bells end over mid-foot, not in front. Push your head 'through the window' as the bells pass.",
+        "cuePl": "Wyciskaj w górę i lekko DO TYŁU — czasze kończą nad środkiem stóp, nie z przodu. Wepchnij głowę 'przez okno' gdy czasze mijają twarz."
+      },
+      {
+        "fault": "Elbows flare out too early (loss of shoulder packing in the supinated phase)",
+        "faultPl": "Łokcie odchodzą za wcześnie na boki (utrata stabilizacji barku w fazie supinowanej)",
+        "cause": "Trying to make the lift easier by skipping the supinated start position",
+        "causePl": "Próba ułatwienia ruchu przez pomijanie supinowanej pozycji startowej",
+        "cue": "Start with elbows IN FRONT, palms toward face. The flare happens NATURALLY during rotation — don't force it early.",
+        "cuePl": "Zaczynaj z łokciami Z PRZODU, dłonie do twarzy. Rozłożenie łokci ZACHODZI NATURALNIE w trakcie rotacji — nie wymuszaj go wcześniej."
+      }
+    ],
+    "breathing": "Inhale and brace HARD before the press. Hold tension throughout the press and rotation. Exhale at full lockout overhead. Re-brace before each rep — bracing is critical because of standing posture + asymmetric stabilization demand of KBs.",
+    "breathingPl": "Wdech i MOCNE napięcie przed wyciskaniem. Trzymaj napięcie przez cały ruch wyciskania i rotacji. Wydech w pełnym lock-out nad głową. Ponownie napnij przed każdym powtórzeniem — napięcie jest krytyczne ze względu na pozycję stojącą + asymetryczne wyzwanie stabilizacyjne KB."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (stop where pain starts, often around eye level). Consider landmine press (angled path, more shoulder-friendly) until impingement resolves.",
+      "modificationPl": "Zmniejsz ROM (zatrzymaj się gdzie zaczyna się ból, często ok. wysokości oczu). Rozważ landmine press (kątowa ścieżka, bardziej przyjazne dla barku) do ustąpienia konfliktu podbarkowego.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid kettlebell Arnold press until cleared by physiotherapist — the combination of rotation + overhead load + offset KB mass is very demanding for the rotator cuff. Use machine shoulder press with high reps/light weight in the meantime.",
+      "modificationPl": "Unikaj kettlebellowego Arnold press do zgody fizjoterapeuty — kombinacja rotacji + obciążenia overhead + przesuniętego środka masy KB jest bardzo wymagająca dla rotatorów. W międzyczasie używaj maszyny do wyciskania barków z wysoką liczbą powtórzeń i lekkim ciężarem.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "wrist_injury_or_weakness",
+      "severity": "avoid",
+      "modification": "Kettlebells pull the wrist backward under load — risky for wrist injury. Switch to dumbbell Arnold press (more wrist-friendly mass distribution) until wrist heals.",
+      "modificationPl": "Kettlebelle ciągną nadgarstek do tyłu pod obciążeniem — ryzykowne przy urazie nadgarstka. Przejdź na Arnold press z hantlami (rozkład masy bardziej przyjazny dla nadgarstka) do wyleczenia.",
+      "alternative": "dumbbell-arnold-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Train overhead mobility separately (thoracic extension + shoulder flexion drills). Use landmine press or partial ROM Arnold press (stop where lockout breaks down) until full overhead position is achievable.",
+      "modificationPl": "Trenuj mobilność overhead osobno (ekstensja piersiowa + zgięcie barku). Używaj landmine press lub Arnold press z częściowym ROM (zatrzymaj się gdy lock-out się załamuje) do osiągnięcia pełnej pozycji overhead.",
+      "alternative": "landmine-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, primary use) | 3x6-8 (strength) | 2-3x12-15 (endurance/burnout finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "kettlebell-arnold-press.gif",
+    "frames_extracted": [
+      "frames/kettlebell-arnold-press/frame_0_start.png",
+      "frames/kettlebell-arnold-press/frame_1_early.png",
+      "frames/kettlebell-arnold-press/frame_2_mid.png",
+      "frames/kettlebell-arnold-press/frame_3_late.png",
+      "frames/kettlebell-arnold-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-arnold-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "GIF pokazuje wariant JEDNORĄCZ (single-arm) z jednym kettlebellem, naprzemiennie ramiona — frame 0: KB lewa ręka przy klatce w semi-supinacji, frame 1-2: prawa ręka w lock-out overhead z pronacją, frame 3-4: powrót i zmiana strony. Jahel oznaczył plik jako 'kettlebell-arnold-press', ale wizualnie to bardziej 'single-arm KB press z lekką rotacją'. Mimo to oficjalne 'kettlebell-arnold-press' to wariant DWURĘCZNY (bilateral, z dwoma KB) — i taki jest opisany w tym JSON jako canonical, ponieważ schemat namingu ('Arnold press') definitywnie odnosi się do ruchu obrotowego od supinacji do pronacji znanego z hantli Arnolda. Frame'y potwierdzają zaangażowanie wszystkich 3 aktonów naramiennego (podświetlone czerwono), aktywację serratus anterior i tricepsów w fazie lock-out. PL standard fitness: 'Arnold press' — termin międzynarodowy używany 1:1 w polskim slangu siłowniowym, nie tłumaczy się dosłownie. Wariant jednorączny zostanie zapisany osobno jako 'single-arm-kettlebell-arnold-press' w progression_to.",
+
+  "tags": ["kettlebell", "shoulders", "compound", "upper_body", "vertical_push", "rotational", "all_three_deltoids", "intermediate", "standing", "bodybuilding", "functional_strength"]
+}

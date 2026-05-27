@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-single-arm-overhead-carry",
+  "name": "Dumbbell Single-Arm Overhead Carry",
+  "namePl": "Carry hantlą jednorącz nad głową",
+  "aliases": ["single arm overhead walk", "one arm waiter walk", "dumbbell waiter carry", "overhead farmer carry one arm", "asymmetrical overhead carry"],
+  "aliasesPl": ["chód kelnera jednorącz", "spacer z hantlą nad głową", "asymetryczny overhead carry", "jednoręczny spacer z hantlą nad głową", "chód z hantlą uniesioną nad głowę"],
+
+  "description": "Functional loaded carry where the lifter walks while holding a single dumbbell locked out directly overhead with one arm. The asymmetrical load forces strong anti-lateral-flexion stability through the core (especially the obliques on the loaded side), demands constant scapular control and shoulder stability from the working delt, and trains gait under load. A staple of functional fitness, strongman-style accessory work and rehab/prehab for the shoulder girdle. Builds raw shoulder stability, oblique strength, and grip endurance simultaneously.",
+  "descriptionPl": "Funkcjonalny chód z obciążeniem, w którym ćwiczący idzie trzymając jedną hantlę zablokowaną prosto nad głową jedną ręką. Niesymetryczne obciążenie wymusza silną stabilizację anty-bocznego zgięcia tułowia (zwłaszcza mięśni skośnych po stronie obciążonej), wymaga ciągłej kontroli łopatki i stabilności barku po stronie pracującej oraz uczy chodu pod obciążeniem. Klasyk treningu funkcjonalnego, akcesoriów strongman oraz pracy rehabilitacyjno-prewencyjnej dla obręczy barkowej. Jednocześnie buduje czystą stabilność barku, siłę skośnych i wytrzymałość chwytu.",
+
+  "instructions": [
+    "Stand a dumbbell on the floor next to your right foot. Hinge down, grip it firmly with a neutral wrist and press or clean it overhead to a fully locked-out position — biceps near the ear, elbow extended, wrist stacked over shoulder over hip.",
+    "Set the free arm down at the side or slightly out for balance. Brace the core hard — ribs down, glutes engaged, pelvis neutral. Eyes forward.",
+    "Begin walking forward with controlled, deliberate steps. Keep the dumbbell directly above the shoulder — do not let it drift forward, back, or to the side.",
+    "Resist the urge to side-bend toward the loaded side. The torso should stay perfectly vertical — that is the work for the obliques on the opposite (un-loaded) side.",
+    "Walk for the prescribed distance or time (typically 20–40 m or 30–60 s per arm). Breathe shallowly into the chest — full belly breaths can break the lockout.",
+    "At the end of the set, lower the dumbbell under control to the shoulder and then to the floor. Switch arms and repeat for the same distance/time."
+  ],
+  "instructionsPl": [
+    "Postaw hantlę na podłodze obok prawej stopy. Zegnij się w biodrach, chwyć ją mocno z nadgarstkiem w neutralnej pozycji i wyciśnij lub zarzuć nad głowę do pełnego wyprostu — biceps blisko ucha, łokieć wyprostowany, nadgarstek nad barkiem nad biodrem.",
+    "Wolne ramię opuść wzdłuż ciała lub odsuń lekko w bok dla balansu. Mocno napnij brzuch — żebra w dół, pośladki napięte, miednica neutralna. Wzrok przed siebie.",
+    "Rusz przed siebie kontrolowanymi, zdecydowanymi krokami. Trzymaj hantlę dokładnie nad barkiem — nie pozwól, by przesunęła się do przodu, do tyłu ani na bok.",
+    "Walcz z odruchem pochylania się w bok w stronę obciążenia. Tułów musi pozostać idealnie pionowy — to właśnie jest praca skośnych po przeciwnej (nieobciążonej) stronie.",
+    "Idź przez zadany dystans lub czas (typowo 20–40 m lub 30–60 s na rękę). Oddychaj płytko do klatki piersiowej — pełne brzuszne wdechy mogą zerwać lockout.",
+    "Na koniec serii opuść hantlę kontrolowanie do barku, a następnie na podłogę. Zmień rękę i powtórz na tym samym dystansie/czasie."
+  ],
+
+  "classification": {
+    "movement_pattern": "carry",
+    "force": "static",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "obliques", "core"],
+    "secondary": ["triceps_brachii", "forearms", "trapezius_upper"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "glutes", "quadratus_lumborum"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P8",
+    "obliques": "P8",
+    "core": "P8",
+    "triceps_brachii": "S6",
+    "forearms": "S7",
+    "trapezius_upper": "S5",
+    "serratus_anterior": "T5",
+    "rotator_cuff": "T5",
+    "glutes": "T4",
+    "quadratus_lumborum": "T6"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["open_floor_space"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-overhead-press", "farmer-walk", "suitcase-carry"],
+    "progression_to": ["barbell-overhead-carry", "kettlebell-bottoms-up-overhead-carry", "single-arm-overhead-lunge-walk"],
+    "alternatives": ["dumbbell-suitcase-carry", "dumbbell-farmer-walk", "kettlebell-overhead-carry"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lock out the dumbbell fully — elbow straight, biceps near the ear",
+      "Stack: wrist over shoulder over hip over ankle",
+      "Ribs down, glutes squeezed, pelvis neutral",
+      "Free arm slightly out for balance, palm down",
+      "Eyes forward — do not stare up at the dumbbell"
+    ],
+    "setup_cues_pl": [
+      "Wyprostuj rękę z hantlą do pełna — łokieć prosty, biceps blisko ucha",
+      "Linia: nadgarstek nad barkiem, bark nad biodrem, biodro nad kostką",
+      "Żebra w dół, pośladki ściśnięte, miednica neutralna",
+      "Wolne ramię lekko odsunięte dla balansu, dłoń skierowana w dół",
+      "Wzrok przed siebie — nie wpatruj się w hantlę nad głową"
+    ],
+    "execution_cues": [
+      "Walk like you're balancing a glass of water on the dumbbell",
+      "Short, controlled steps — heel to toe",
+      "Do not side-bend toward the loaded arm — stay vertical",
+      "Keep the loaded shoulder packed — don't shrug it into the ear",
+      "Shallow breaths into the chest — keep core tension on every step"
+    ],
+    "execution_cues_pl": [
+      "Idź tak, jakbyś balansował szklankę wody postawioną na hantli",
+      "Krótkie, kontrolowane kroki — z pięty na palce",
+      "Nie pochylaj się w stronę obciążonej ręki — pozostań pionowo",
+      "Trzymaj obciążony bark spakowany — nie pozwól mu wskoczyć w ucho",
+      "Płytkie wdechy do klatki — napięcie brzucha utrzymane na każdym kroku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Side-bending toward the loaded arm",
+        "faultPl": "Pochylanie się w bok w stronę obciążonej ręki",
+        "cause": "Weak contralateral obliques and quadratus lumborum failing to resist lateral flexion",
+        "causePl": "Słabe przeciwstronne mięśnie skośne i czworoboczny lędźwi nie radzą sobie z oporowaniem bocznego zgięcia",
+        "cue": "Imagine a wall pressing against the loaded side of your ribcage — keep the chest tall and centered",
+        "cuePl": "Wyobraź sobie ścianę dociskającą żebra od strony obciążonej — trzymaj klatkę wysoko i wycentrowaną"
+      },
+      {
+        "fault": "Dumbbell drifts forward / elbow soft-locked",
+        "faultPl": "Hantla osuwa się do przodu / łokieć nie do końca wyprostowany",
+        "cause": "Insufficient triceps lockout, weak scapular upward rotation, or thoracic spine kyphosis",
+        "causePl": "Niedostateczny lockout tricepsa, słaba rotacja górna łopatki lub kifoza piersiowa",
+        "cue": "Push the dumbbell into the ceiling on every step — elbow pit faces forward, biceps glued to ear",
+        "cuePl": "Wpychaj hantlę w sufit z każdym krokiem — dół łokcia skierowany do przodu, biceps przyklejony do ucha"
+      },
+      {
+        "fault": "Lower back overarching (rib flare)",
+        "faultPl": "Przeprost w dolnym odcinku pleców (wystające żebra)",
+        "cause": "Tight lats, weak anterior core, or trying to compensate for limited overhead mobility",
+        "causePl": "Spięte mięśnie najszersze grzbietu, słaby przedni brzuch lub kompensacja ograniczonej mobilności nad głową",
+        "cue": "Ribs down toward hips — close the gap between bottom ribs and pelvis. Brace abs as if expecting a punch.",
+        "cuePl": "Żebra w dół do bioder — zamknij odstęp między dolnymi żebrami a miednicą. Napnij brzuch jak przed ciosem."
+      },
+      {
+        "fault": "Speed-walking / rushing through the carry",
+        "faultPl": "Szybki chód / pośpiech podczas serii",
+        "cause": "Treating it as cardio instead of a stability drill; weak posture giving out fast",
+        "causePl": "Traktowanie ćwiczenia jako cardio zamiast pracy stabilizacyjnej; słaba postawa szybko ustępuje",
+        "cue": "Slow, deliberate steps — 1 step per second. Quality of stack > distance covered.",
+        "cuePl": "Powolne, zdecydowane kroki — 1 krok na sekundę. Jakość linii ciała > pokonany dystans."
+      },
+      {
+        "fault": "Holding breath / Valsalva for the full walk",
+        "faultPl": "Wstrzymywanie oddechu / Valsalva przez cały chód",
+        "cause": "Bracing strategy from heavy lifts misapplied to a longer-duration carry",
+        "causePl": "Strategia napięcia z dużych ciężarów przeniesiona błędnie na dłuższy chód z obciążeniem",
+        "cue": "Shallow, rhythmic breaths into the upper chest — core stays tight, diaphragm doesn't fully release",
+        "cuePl": "Płytkie, rytmiczne wdechy do górnej części klatki — brzuch pozostaje napięty, przepona nie rozluźnia się w pełni"
+      }
+    ],
+    "breathing": "Shallow, rhythmic chest breaths throughout the carry. Avoid full belly breathing — it can release core bracing and break the overhead lockout. Re-brace hard before initiating each step if the load is heavy.",
+    "breathingPl": "Płytkie, rytmiczne wdechy do klatki przez cały chód. Unikaj pełnego oddechu brzusznego — może rozluźnić napięcie brzucha i zerwać lockout nad głową. Przy ciężkim obciążeniu mocno napinaj brzuch przed każdym krokiem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "End-range overhead position under load can pinch the supraspinatus tendon. Address scapular mechanics and overhead mobility first. Substitute with farmer or suitcase carry until pain-free overhead.",
+      "modificationPl": "Końcowy zakres nad głową pod obciążeniem może uszczypnąć ścięgno mięśnia nadgrzebieniowego. Najpierw popraw mechanikę łopatki i mobilność nad głową. W zastępstwie wykonuj farmer carry lub suitcase carry, aż pozycja nad głową przestanie boleć.",
+      "alternative": "dumbbell-farmer-walk"
+    },
+    {
+      "condition": "limited_thoracic_extension",
+      "severity": "modify",
+      "modification": "Insufficient T-spine extension forces lumbar compensation (rib flare, hyperlordosis). Use lighter loads, shorter sets and add T-spine mobility work (foam roller, wall slides) before progressing.",
+      "modificationPl": "Niewystarczająca ekstensja piersiowa wymusza kompensację lędźwiową (wystające żebra, hiperlordoza). Stosuj lżejsze obciążenia, krótsze serie i dodaj pracę nad mobilnością piersiowej (rolowanie, wall slides) przed progresją.",
+      "alternative": "half-kneeling-overhead-press"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Asymmetric overhead load demands strong anti-lateral-flexion. With acute lumbar pain, drop the weight to a fraction of working load or switch to bilateral carries (farmer walk) until symptoms resolve.",
+      "modificationPl": "Asymetryczne obciążenie nad głową wymaga silnej anty-bocznej stabilizacji. Przy ostrym bólu lędźwi zredukuj ciężar do ułamka roboczego lub przejdź na chody symetryczne (farmer walk) do ustąpienia objawów.",
+      "alternative": "suitcase-carry"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Sustained overhead load with even small wobbles puts repetitive stress on the rotator cuff. Avoid overhead carries during active rehab — use isometric scapular work and band external rotations first.",
+      "modificationPl": "Utrzymywanie obciążenia nad głową z nawet małymi drganiami obciąża cyklicznie stożek rotatorów. Unikaj chodów nad głową podczas aktywnej rehabilitacji — najpierw izometryczna praca łopatki i rotacja zewnętrzna z gumą.",
+      "alternative": "dumbbell-suitcase-carry"
+    }
+  ],
+
+  "typical_sets_reps": "3x30-40m per arm (strength) | 3x45-60s per arm (stability endurance) | 4-5x20m heavy (loaded carry conditioning)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "dumbbell-single-arm-overhead-carry.gif",
+    "frames_extracted": [
+      "frames/dumbbell-single-arm-overhead-carry/frame_0_start.png",
+      "frames/dumbbell-single-arm-overhead-carry/frame_1_early.png",
+      "frames/dumbbell-single-arm-overhead-carry/frame_2_mid.png",
+      "frames/dumbbell-single-arm-overhead-carry/frame_3_late.png",
+      "frames/dumbbell-single-arm-overhead-carry/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-single-arm-overhead-carry"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/2/4 z GIFa jahel. Wszystkie klatki: postać stoi i idzie do przodu trzymając pojedynczą hantlę nad głową W JEDNEJ ręce (lewa ręka uniesiona z hantlą, prawa wolna wzdłuż ciała). Łokieć ręki obciążonej w pełnym wyproście, biceps blisko ucha, nadgarstek nad barkiem. Anatomia podświetla mocno: lewy bark (anterior deltoid), lewy triceps i przedramię (lockout + grip), mięśnie skośne i quadratus lumborum po obu stronach (anty-boczna stabilizacja), kwadricepsy (chód), pośladki (kontrola miednicy). Klatki 0→4 pokazują ruch w przód (chód) — postać przesuwa się w kadrze. Klasyfikacja: movement_pattern=carry (loaded carry, klasyk strongman/functional), force=static (izometryczny lockout + lokomocja, brak ruchu obciążenia w stawie), mechanic=compound (wiele stawów: bark/łokieć/biodro/kolano/kostka), laterality=unilateral (jedna ręka obciążona — asymetria to esencja ćwiczenia), plane=frontal (główny challenge to anty-boczne zgięcie w płaszczyźnie czołowej; chód odbywa się w strzałkowej ale stabilizacja dominuje), kinetic_chain=closed (stopy na podłożu, stabilna baza). Mięśnie pierwotne: anterior_deltoid (statyczne utrzymanie lockoutu — P8), obliques (anty-boczna stabilizacja po stronie przeciwnej do obciążenia — P8), core (globalne napięcie — P8). Wtórne: triceps_brachii (lockout — S6), forearms (grip — S7), trapezius_upper (stabilizacja łopatki w upward rotation — S5). Stabilizatory: serratus_anterior, rotator_cuff, glutes, quadratus_lumborum. Difficulty 6/10, level intermediate — wymaga już dobrej mobilności nad głową, stabilności łopatki i siły rdzenia; prerequisite to standardowy overhead press + farmer walk + suitcase carry. Nazwa PL: 'Carry hantlą jednorącz nad głową' — anglicyzm 'carry' powszechnie używany w środowisku functional fitness w Polsce; aliasy obejmują tłumaczenie opisowe ('spacer z hantlą nad głową') oraz wariant 'chód kelnera' (waiter walk to bliska kuzynka). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["dumbbell", "carry", "loaded_carry", "core", "shoulder_stability", "functional", "unilateral", "anti_lateral_flexion", "grip", "strongman"]
+}

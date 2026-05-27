@@ -1,0 +1,196 @@
+{
+  "id": "dumbbell-over-bench-one-arm-wrist-curl",
+  "name": "Dumbbell Over Bench One-Arm Wrist Curl",
+  "namePl": "Wrist curl hantlą jednorącz na ławce",
+  "aliases": ["one-arm dumbbell wrist curl over bench", "single-arm forearm curl", "bench-supported wrist curl"],
+  "aliasesPl": ["uginanie nadgarstka hantlą jednorącz na ławce", "wrist curl jednorącz na ławce", "uginanie zginaczy przedramienia hantlą"],
+
+  "description": "Classic isolation exercise for the wrist flexors performed with one dumbbell, the forearm resting on a flat bench so the wrist hangs over the edge. The supinated (palms-up) grip targets the deep and superficial flexors of the forearm — flexor carpi radialis, flexor carpi ulnaris, palmaris longus and flexor digitorum. Working unilaterally allows full focus on each side and lets the working arm move through a complete range of motion without the other arm interfering. A staple finisher for grip strength, forearm hypertrophy and elbow joint health.",
+  "descriptionPl": "Klasyczne ćwiczenie izolowane na zginacze nadgarstka wykonywane jedną hantlą, z przedramieniem opartym o płaską ławkę tak, aby nadgarstek wystawał poza krawędź. Chwyt podchwytem (dłoń skierowana w górę) angażuje zginacze powierzchowne i głębokie przedramienia — zginacz promieniowy nadgarstka, zginacz łokciowy nadgarstka, mięsień dłoniowy długi oraz zginacz powierzchowny palców. Praca jednorącz pozwala w pełni skupić się na każdej stronie i daje pracującej ręce pełny zakres ruchu bez przeszkadzania drugiej ręki. Klasyczne ćwiczenie wykańczające na siłę chwytu, hipertrofię przedramion i zdrowie stawu łokciowego.",
+
+  "instructions": [
+    "Set up a flat bench. Kneel beside it or step into a half-lunge stance with one knee on the floor.",
+    "Take a dumbbell in one hand with a supinated grip (palm facing up). Lay the working forearm flat along the bench so the wrist and hand hang off the front edge.",
+    "Brace the non-working hand against your knee or the bench for stability. Keep the torso slightly leaned forward and stable.",
+    "Let the dumbbell roll down the fingers under control to a full passive stretch of the wrist flexors. The bottom position should feel like the dumbbell is about to slide off your fingertips.",
+    "Curl the dumbbell back up by closing the fingers first, then flexing at the wrist. Squeeze hard at the top with the knuckles pointing toward the ceiling.",
+    "Lower the dumbbell slowly over 2-3 seconds, allowing the wrist to extend fully into a deep stretch before the next rep.",
+    "Keep the forearm pressed flat against the bench the entire set — only the wrist and hand move.",
+    "Complete all reps on one side, then switch arms."
+  ],
+  "instructionsPl": [
+    "Przygotuj płaską ławkę. Uklęknij obok niej lub przyjmij pozycję półwypadu z jednym kolanem na podłodze.",
+    "Chwyć hantlę jedną ręką podchwytem (dłoń skierowana w górę). Połóż pracujące przedramię płasko na ławce tak, aby nadgarstek i dłoń wystawały poza przednią krawędź.",
+    "Druga ręka stabilizuje pozycję — oprzyj ją o kolano lub o ławkę. Tułów lekko pochylony do przodu, stabilny.",
+    "Pozwól hantli stoczyć się w sposób kontrolowany w dół po palcach do pełnego biernego rozciągnięcia zginaczy nadgarstka. W dolnej pozycji hantla powinna prawie zsuwać się z opuszków palców.",
+    "Wrócić hantlę do góry — najpierw zaciśnij palce, potem ugnij nadgarstek. Mocno napnij w górnej pozycji, knykcie kierując w sufit.",
+    "Opuszczaj hantlę wolno przez 2-3 sekundy, pozwalając nadgarstkowi w pełni wyprostować się i głęboko rozciągnąć przed kolejnym powtórzeniem.",
+    "Przedramię ma pozostać dociśnięte do ławki przez całą serię — pracują wyłącznie nadgarstek i dłoń.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień rękę."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_wrist_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["biceps_brachii", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "brachioradialis": "S4",
+    "biceps_brachii": "T2",
+    "core": "T1",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "bench"],
+    "optional": ["towel", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["barbell-wrist-curl", "behind-back-barbell-wrist-curl", "cable-wrist-curl"],
+    "alternatives": ["barbell-wrist-curl", "cable-wrist-curl", "dumbbell-reverse-wrist-curl", "wrist-roller"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Forearm flat on bench, wrist past the edge",
+      "Supinated grip — palm faces the ceiling",
+      "Non-working hand braced for stability",
+      "Slight forward lean of the torso",
+      "Knee or shin in contact with the bench for support"
+    ],
+    "setup_cues_pl": [
+      "Przedramię płasko na ławce, nadgarstek poza krawędzią",
+      "Chwyt podchwytem — dłoń skierowana w sufit",
+      "Druga ręka stabilizuje pozycję",
+      "Tułów lekko pochylony do przodu",
+      "Kolano lub goleń w kontakcie z ławką dla podparcia"
+    ],
+    "execution_cues": [
+      "Let the dumbbell roll down your fingers at the bottom",
+      "Close the fingers first, then flex the wrist",
+      "Squeeze hard at the top — knuckles toward the ceiling",
+      "Forearm stays glued to the bench the entire set",
+      "Slow eccentric — 2-3 seconds on the way down"
+    ],
+    "execution_cues_pl": [
+      "Pozwól hantli stoczyć się po palcach w dolnej pozycji",
+      "Najpierw zaciśnij palce, potem ugnij nadgarstek",
+      "Mocno napnij w górnej pozycji — knykcie w sufit",
+      "Przedramię przyklejone do ławki przez całą serię",
+      "Wolna faza ekscentryczna — 2-3 sekundy w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the forearm off the bench",
+        "faultPl": "Odrywanie przedramienia od ławki",
+        "cause": "Load too heavy, trying to use elbow flexion to assist the wrist curl",
+        "causePl": "Zbyt duży ciężar, próba wspomagania zginaniem w łokciu",
+        "cue": "Press the forearm into the bench like you are trying to leave an imprint. Reduce the weight if it lifts.",
+        "cuePl": "Wciskaj przedramię w ławkę jakbyś chciał zostawić odcisk. Zmniejsz ciężar jeśli się unosi."
+      },
+      {
+        "fault": "Partial range of motion (no finger roll-out)",
+        "faultPl": "Niepełny zakres ruchu (brak rolowania po palcach)",
+        "cause": "Ego lifting or fear of dropping the dumbbell",
+        "causePl": "Ego lub strach przed upuszczeniem hantli",
+        "cue": "Open the fingers at the bottom and let the dumbbell roll to the fingertips — that is the full stretch.",
+        "cuePl": "Rozluźnij palce na dole i pozwól hantli stoczyć się na opuszki — to jest pełne rozciągnięcie."
+      },
+      {
+        "fault": "Bouncing the dumbbell at the bottom",
+        "faultPl": "Odbijanie hantli w dolnej pozycji",
+        "cause": "Using stretch reflex / momentum to get the weight moving back up",
+        "causePl": "Korzystanie z odruchu rozciągania / rozpędu do podnoszenia ciężaru",
+        "cue": "Pause for half a second in the stretched position, then drive up with the muscle only.",
+        "cuePl": "Zatrzymaj się na pół sekundy w pozycji rozciągniętej, potem unieś ciężar samym mięśniem."
+      },
+      {
+        "fault": "Rotating the forearm (pronation drift) during the rep",
+        "faultPl": "Rotacja przedramienia (drift pronacyjny) w trakcie ruchu",
+        "cause": "Working forearm not fully supported, weak supinators, or load asymmetry in the dumbbell",
+        "causePl": "Niepełne podparcie przedramienia, słabe supinatory, lub asymetria obciążenia hantli",
+        "cue": "Keep the palm pointing straight at the ceiling from start to finish — no twist.",
+        "cuePl": "Dłoń ma być skierowana prosto w sufit od początku do końca — bez skręcania."
+      },
+      {
+        "fault": "Holding the dumbbell too deep in the palm",
+        "faultPl": "Trzymanie hantli zbyt głęboko w dłoni",
+        "cause": "Habitual grip from pressing/curling movements, never learned to roll the fingers",
+        "causePl": "Nawyk chwytu z wyciskań/uginań, brak nauki rolowania po palcach",
+        "cue": "Start with the dumbbell at the base of the fingers, not against the palm.",
+        "cuePl": "Zaczynaj z hantlą u podstawy palców, nie wciśniętą w dłoń."
+      }
+    ],
+    "breathing": "Exhale on the curl up (concentric). Inhale during the slow lowering phase (eccentric). Breathing pattern is light — no Valsalva needed for an isolation forearm exercise.",
+    "breathingPl": "Wydech podczas uginania (faza koncentryczna). Wdech w trakcie wolnego opuszczania (faza ekscentryczna). Oddech lekki — nie ma potrzeby napinania brzucha jak przy ciężkich ćwiczeniach złożonych."
+  },
+
+  "contraindications": [
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Wrist flexion under load directly stresses the inflamed medial epicondyle attachments. Drop intensity by 50%, use higher reps (15-20), avoid full stretch at the bottom. Discontinue if symptoms flare.",
+      "modificationPl": "Zginanie nadgarstka pod obciążeniem bezpośrednio drażni zapalone przyczepy na nadkłykciu przyśrodkowym. Zmniejsz intensywność o 50%, wykonuj w większym zakresie powtórzeń (15-20), unikaj pełnego rozciągnięcia w dole. Przerwij jeśli objawy się nasilają."
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Repeated wrist flexion compresses the median nerve in the carpal tunnel. Use lighter loads, limit to 10-12 reps, work pain-free range only. Consider reverse wrist curls instead to balance the forearm.",
+      "modificationPl": "Powtarzane zginanie nadgarstka uciska nerw pośrodkowy w kanale nadgarstka. Używaj lżejszych ciężarów, ogranicz do 10-12 powtórzeń, pracuj wyłącznie w zakresie bez bólu. Rozważ uginanie nadgarstka odwrotne (na prostowniki) aby zbalansować przedramię.",
+      "alternative": "dumbbell-reverse-wrist-curl"
+    },
+    {
+      "condition": "wrist_sprain_or_recent_injury",
+      "severity": "avoid",
+      "modification": "Loaded wrist flexion at end-range is contraindicated during acute and subacute healing phases (first 4-6 weeks). Wait for full pain-free passive ROM before reintroducing.",
+      "modificationPl": "Obciążone zginanie nadgarstka w zakresie końcowym jest przeciwwskazane w fazie ostrej i podostrej gojenia (pierwsze 4-6 tygodni). Czekaj na pełny bezbolesny bierny zakres ruchu zanim wrócisz do ćwiczenia."
+    },
+    {
+      "condition": "flexor_tendinopathy",
+      "severity": "modify",
+      "modification": "Substitute with isometric holds at mid-range or slow heavy eccentric-only reps as part of tendinopathy rehab. Avoid bouncing and avoid the deepest stretch position until pain settles.",
+      "modificationPl": "Zastąp izometrycznymi przytrzymaniami w połowie zakresu lub wolnymi ciężkimi powtórzeniami tylko ekscentrycznymi jako element rehabilitacji tendinopatii. Unikaj odbijania i najgłębszej pozycji rozciągnięcia do ustąpienia bólu."
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (hypertrophy/grip) | 2-3x15-20 (endurance/pump) | 3x8-10 (forearm strength)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "dumbbell-over-bench-one-arm-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-over-bench-one-arm-wrist-curl/frame_0_start.png",
+      "frames/dumbbell-over-bench-one-arm-wrist-curl/frame_1_early.png",
+      "frames/dumbbell-over-bench-one-arm-wrist-curl/frame_2_mid.png",
+      "frames/dumbbell-over-bench-one-arm-wrist-curl/frame_3_late.png",
+      "frames/dumbbell-over-bench-one-arm-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/dumbbell-over-bench-one-arm-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pozycja klęcząca przy płaskiej ławce, prawe przedramię oparte płasko na ławce, nadgarstek wystaje poza krawędź, hantla trzymana podchwytem (dłoń w górę), nadgarstek w lekkim wyproście — zginacze przedramienia podświetlone na czerwono. Frame 2: nadgarstek w pełnym zgięciu, hantla podniesiona, knykcie skierowane w górę, przedramię cały czas dociśnięte do ławki, druga ręka oparta o udo dla stabilizacji. Frame 4: powrót do pozycji wyjściowej z pełnym wyprostem nadgarstka. Ćwiczenie jednoznacznie zidentyfikowane jako klasyczny wrist curl hantlą jednorącz na ławce — izolowane zginanie nadgarstka w płaszczyźnie strzałkowej. Mechanic=isolation, force=pull, plane=sagittal, laterality=unilateral. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "forearms", "grip", "isolation", "dumbbell", "bench", "upper_body", "unilateral", "wrist_flexion"]
+}

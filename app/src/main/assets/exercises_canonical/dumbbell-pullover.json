@@ -1,0 +1,206 @@
+{
+  "id": "dumbbell-pullover",
+  "name": "Dumbbell Pullover",
+  "namePl": "Pullover z hantlem",
+  "aliases": ["db pullover", "bent-arm dumbbell pullover", "cross-bench dumbbell pullover", "arnold pullover"],
+  "aliasesPl": ["pullover z hantlem leżąc", "pullover hantlem na ławce płaskiej", "rozpiętki za głowę z hantlem", "krzyżowy pullover"],
+
+  "description": "A classic upper-body pullover performed lying supine on a flat bench. Both hands cup the upper plate of a single dumbbell held vertically over the chest. The dumbbell is lowered in a controlled arc behind and below the head with the elbows kept slightly bent and fixed, then pulled back to the start. The bent-arm version emphasizes the latissimus dorsi together with the sternal pectoralis, serratus anterior and long head of the triceps, producing a deep rib-cage and lat stretch. A staple of Golden-Era bodybuilding popularised by Arnold Schwarzenegger.",
+  "descriptionPl": "Klasyczny pullover na górną część ciała wykonywany w leżeniu tyłem na płaskiej ławce. Obie dłonie obejmują od dołu górny talerz pojedynczego hantla trzymanego pionowo nad klatką piersiową. Hantel opuszcza się w kontrolowanym łuku za i poniżej głowy, utrzymując łokcie lekko ugięte i unieruchomione, a następnie wraca po tym samym łuku do pozycji wyjściowej. Wariant z ugiętymi łokciami akcentuje mięsień najszerszy grzbietu wraz z mostkową częścią piersiowego większego, mięśniem zębatym przednim i głową długą tricepsa, dając głębokie rozciągnięcie klatki piersiowej i grzbietu. Klasyk kulturystyki Złotej Ery spopularyzowany przez Arnolda Schwarzeneggera.",
+
+  "instructions": [
+    "Set a single dumbbell upright on the end of a flat bench. Lie back along the bench (or perpendicular to it, shoulders only on the pad) with feet flat on the floor and a strong arch through mid-back.",
+    "Grasp the dumbbell with both palms cupping the underside of the top plate — thumbs and index fingers form a diamond around the handle. Press it up to arms' length over the upper chest.",
+    "Set your starting position: dumbbell over the chest, elbows bent to roughly 15-20 degrees and locked into that angle, shoulder blades pulled down and back, ribs stacked.",
+    "Inhale and lower the dumbbell in a slow arc back behind the head. Keep the elbow angle fixed — do not let the arms collapse into an extension.",
+    "Continue lowering until you feel a strong stretch across the lats, serratus and lower pecs, with the upper arms roughly in line with the ears (or slightly past parallel if mobility allows pain-free).",
+    "Reverse the arc by pulling the dumbbell back over the chest. Drive with the lats and pecs, not by extending the elbows. Exhale through the strongest part of the pull.",
+    "Stop the concentric when the dumbbell is back over the upper chest (do not overshoot toward the hips — that removes tension). Reset and repeat for the prescribed reps.",
+    "Use moderate loads. Pullover is a stretch-position movement — chasing weight here is the fastest route to a shoulder or elbow injury."
+  ],
+  "instructionsPl": [
+    "Ustaw pojedynczy hantel pionowo na końcu płaskiej ławki. Połóż się wzdłuż ławki (lub w poprzek — tylko barki na ławce) ze stopami płasko na podłodze i mocnym napięciem środkowej części pleców.",
+    "Złap hantel obiema dłońmi obejmując od dołu jego górny talerz — kciuki i palce wskazujące tworzą romb wokół trzonu. Wyciśnij hantel na proste ramiona nad górną częścią klatki.",
+    "Ustaw pozycję wyjściową: hantel nad klatką, łokcie ugięte do około 15-20 stopni i zablokowane w tym kącie, łopatki ściągnięte w dół i w tył, żebra ułożone.",
+    "Wdech i powolne opuszczanie hantla łukiem w tył, za głowę. Utrzymuj stały kąt w łokciu — nie pozwól ramionom przejść w wyprost.",
+    "Opuszczaj aż poczujesz silne rozciągnięcie najszerszych grzbietu, zębatych i dolnej części klatki, z ramionami mniej więcej w linii uszu (lub odrobinę poza pion jeśli mobilność pozwala bez bólu).",
+    "Odwróć łuk i przyciągaj hantel z powrotem nad klatkę. Pracuj najszerszymi i klatką, nie wyprostem łokci. Wydech w najmocniejszej fazie ruchu.",
+    "Zatrzymaj fazę koncentryczną gdy hantel wraca nad górną klatkę (nie ciągnij dalej w kierunku bioder — to zdejmuje napięcie). Ustabilizuj się i powtarzaj.",
+    "Używaj umiarkowanych ciężarów. Pullover to ćwiczenie w pozycji rozciągniętej — pogoń za kilogramami to najszybsza droga do kontuzji barku lub łokcia."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "pectoralis_major", "serratus_anterior"],
+    "secondary": ["teres_major", "triceps_brachii_long_head", "rhomboids"],
+    "stabilizers": ["rotator_cuff", "core", "posterior_deltoid", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "pectoralis_major": "P7",
+    "serratus_anterior": "P7",
+    "teres_major": "S6",
+    "triceps_brachii_long_head": "S5",
+    "rhomboids": "S4",
+    "rotator_cuff": "T3",
+    "core": "T3",
+    "posterior_deltoid": "T2",
+    "forearm_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["wrist_wraps", "lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-bench-press", "lat-pulldown"],
+    "progression_to": ["barbell-pullover", "cable-pullover", "ez-bar-lying-bent-arms-pullover", "barbell-decline-bent-arm-pullover"],
+    "alternatives": ["barbell-pullover", "cable-pullover", "dumbbell-straight-arm-pullover", "lat-pulldown", "straight-arm-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat with shoulder blades anchored to the bench",
+      "Both palms cup the top plate — thumbs around the handle",
+      "Press the dumbbell over your upper chest first",
+      "Lock the elbows at 15-20 degrees — that angle never changes",
+      "Ribs down, brace lightly — no exaggerated lumbar arch"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko z łopatkami zakotwiczonymi na ławce",
+      "Obie dłonie obejmują górny talerz — kciuki wokół trzonu",
+      "Najpierw wyciśnij hantel nad górną część klatki",
+      "Zablokuj łokcie w kącie 15-20 stopni — ten kąt się nie zmienia",
+      "Żebra w dół, lekkie napięcie brzucha — bez przesadnego mostka lędźwiowego"
+    ],
+    "execution_cues": [
+      "Move in a smooth arc — not a straight line down",
+      "Feel the stretch in the lats and ribs at the bottom",
+      "Pull back with the lats, not by straightening the elbows",
+      "Keep wrists straight — do not let the dumbbell roll back",
+      "Stop the pull when the dumbbell is over the upper chest"
+    ],
+    "execution_cues_pl": [
+      "Płynny łuk — nie linia prosta w dół",
+      "Poczuj rozciągnięcie w najszerszych grzbietu i żebrach na dole",
+      "Przyciągaj najszerszymi, nie wyprostem łokci",
+      "Nadgarstki proste — nie pozwól hantlowi się odchylić",
+      "Zatrzymaj ruch gdy hantel wraca nad górną klatkę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Letting the elbows flare out and straighten under load",
+        "faultPl": "Pozwalanie łokciom na rozjeżdżanie się i prostowanie pod obciążeniem",
+        "cause": "Weight too heavy or weak shoulder/scapular control — turns the lift into a partial triceps extension",
+        "causePl": "Zbyt duży ciężar lub słaba kontrola łopatkowo-barkowa — zamienia ćwiczenie w częściowy wyprost na tricepsach",
+        "cue": "Reduce the weight. Hold the fixed elbow angle as if a small ball were jammed in the bend.",
+        "cuePl": "Zmniejsz ciężar. Trzymaj stały kąt łokcia tak, jakby w zgięciu była zaklinowana mała piłka."
+      },
+      {
+        "fault": "Hyperextending the lower back to extend the range",
+        "faultPl": "Hiperextensja odcinka lędźwiowego dla zwiększenia zakresu",
+        "cause": "Trying to reach further behind the head than thoracic mobility allows",
+        "causePl": "Próba sięgnięcia hantlem dalej za głowę niż pozwala mobilność piersiowa",
+        "cue": "Ribs down, light brace. The arc stops where your shoulders stop — not where your back gives way.",
+        "cuePl": "Żebra w dół, lekkie napięcie. Łuk kończy się tam gdzie kończą się barki — nie tam gdzie ustępują plecy."
+      },
+      {
+        "fault": "Lowering too fast and bouncing out of the stretch",
+        "faultPl": "Zbyt szybkie opuszczanie i odbicie z pozycji rozciągniętej",
+        "cause": "Using momentum to get past the weakest part of the range",
+        "causePl": "Wykorzystywanie rozpędu do przejścia przez najsłabszy punkt zakresu",
+        "cue": "Three seconds down. Pause one second in the stretch. Then pull back smoothly.",
+        "cuePl": "Trzy sekundy w dół. Sekunda pauzy w rozciągnięciu. Dopiero potem płynne przyciągnięcie."
+      },
+      {
+        "fault": "Pulling the dumbbell all the way over the hips",
+        "faultPl": "Przyciąganie hantla aż nad biodra",
+        "cause": "Misunderstanding the ROM — overshooting removes tension from the target muscles",
+        "causePl": "Niezrozumienie zakresu ruchu — przeciągnięcie zdejmuje napięcie z mięśni docelowych",
+        "cue": "Stop the concentric when the dumbbell is back over the upper chest, arms perpendicular to the floor.",
+        "cuePl": "Zatrzymaj ruch koncentryczny gdy hantel wraca nad górną klatkę, ramiona prostopadle do podłogi."
+      },
+      {
+        "fault": "Losing grip control — dumbbell tips back toward the face",
+        "faultPl": "Utrata kontroli chwytu — hantel odchyla się w stronę twarzy",
+        "cause": "Sweaty hands, fatigued grip, or insecure plate collars",
+        "causePl": "Spocone dłonie, zmęczony chwyt, lub luźne zaciski talerzy",
+        "cue": "Check collars before every set. Use chalk. If grip fails, end the set — do not grind it out.",
+        "cuePl": "Sprawdzaj zaciski przed każdą serią. Używaj magnezji. Jeśli chwyt zawodzi — zakończ serię, nie forsuj."
+      }
+    ],
+    "breathing": "Inhale deeply as the dumbbell travels back behind the head — the rib cage expands and amplifies the stretch. Exhale during the concentric pull back over the chest. Maintain a light core brace to protect the lower back from over-arching.",
+    "breathingPl": "Głęboki wdech w trakcie opuszczania hantla za głowę — klatka piersiowa rozszerza się i pogłębia rozciągnięcie. Wydech podczas przyciągania nad klatkę. Utrzymuj lekkie napięcie brzucha aby chronić odcinek lędźwiowy przed nadmiernym wygięciem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_labral_pathology",
+      "severity": "modify",
+      "modification": "Overhead-reaching arc compresses the subacromial space and stresses the labrum at full stretch. Limit ROM to a pain-free arc, reduce load, and prefer cable pullover where tension can be adjusted continuously.",
+      "modificationPl": "Łuk nad głową kompresuje przestrzeń podbarkową i obciąża obrąbek w pełnym rozciągnięciu. Ogranicz zakres ruchu do bezbolesnego łuku, zmniejsz ciężar i wybierz pullover z wyciągu, gdzie napięcie można regulować płynnie.",
+      "alternative": "cable-pullover"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_instability",
+      "severity": "caution",
+      "modification": "Stretched overhead position promotes lumbar extension. Keep ribs stacked, brace the core, and shorten the ROM. If pain persists, switch to a seated pulldown variant.",
+      "modificationPl": "Pozycja rozciągnięta nad głową prowokuje wyprost odcinka lędźwiowego. Trzymaj żebra ułożone, napnij brzuch i skróć zakres ruchu. Jeśli ból nie ustępuje — przejdź na siedzący wariant z wyciągu.",
+      "alternative": "straight-arm-pulldown"
+    },
+    {
+      "condition": "elbow_triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Long-head triceps is stretched and loaded at the bottom. Use lighter weight, perform with a more bent-arm angle (more flexion) and avoid heavy eccentrics until pain resolves.",
+      "modificationPl": "Głowa długa tricepsa jest rozciągnięta i obciążona na dole. Używaj lżejszego ciężaru, wykonuj z większym zgięciem łokcia i unikaj ciężkich faz negatywnych aż ból ustąpi.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_glaucoma",
+      "severity": "caution",
+      "modification": "Head positioned below bench level (cross-bench variant) increases intracranial and intraocular pressure. Use the along-bench version with head on the pad, exhale on exertion, and avoid Valsalva.",
+      "modificationPl": "Głowa poniżej poziomu ławki (wariant w poprzek) zwiększa ciśnienie wewnątrzczaszkowe i wewnątrzgałkowe. Używaj wariantu wzdłuż ławki z głową na ławce, wydychaj w wysiłku i unikaj manewru Valsalvy.",
+      "alternative": "cable-pullover"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy) | 3-4x12-15 (stretch-focused/serratus) | 2-3x8-10 (strength, lighter loads only)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-pullover.gif",
+    "frames_extracted": [
+      "frames/dumbbell-pullover/frame_0_start.png",
+      "frames/dumbbell-pullover/frame_1_early.png",
+      "frames/dumbbell-pullover/frame_2_mid.png",
+      "frames/dumbbell-pullover/frame_3_late.png",
+      "frames/dumbbell-pullover/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-pullover",
+    "yuhonas_id": "Bent-Arm_Dumbbell_Pullover",
+    "glowupp_id": "dumbbell_pullover"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:15:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (frame_0_start, frame_2_mid, frame_4_end). Frame 0: ćwiczący leży wzdłuż ławki (głowa na ławce, nie cross-bench), hantel trzymany pionowo obiema dłońmi nad górną klatką piersiową, łokcie lekko ugięte, latissimus i pectoralis podświetlone czerwono jako mięśnie pracujące. Frame 2: pełna pozycja dolna — hantel za i poniżej głowy, ramiona w linii uszu, kąt łokcia zachowany, widoczne mocne rozciągnięcie najszerszych grzbietu i zębatych. Frame 4: powrót do pozycji wyjściowej nad klatką (z 'duchem' fazy dolnej widocznym za głową). Ruch jednoznacznie zidentyfikowany jako Bent-Arm Dumbbell Pullover. Uwaga: jahel pokazuje wariant 'along-bench' (głowa na ławce) — bezpieczniejszy niż klasyczny cross-bench Arnolda, dlatego przyjąłem go za standard w instrukcjach głównych, cross-bench wspomniany jako wariant. Yuhonas (Bent-Arm Dumbbell Pullover) potwierdza: chest primary, lats/shoulders/triceps secondary. Wszystkie pola PL napisane od zera. Plik GIF: sources/jahel/pectorals/dumbbell-pullover.gif (nie lats/ jak w pierwotnym poleceniu — pullover w taksonomii jahel siedzi w pectorals).",
+
+  "tags": ["bodybuilding", "back", "chest", "lats", "serratus", "compound", "dumbbell", "bench", "stretch", "classic", "golden_era", "upper_body"]
+}

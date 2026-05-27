@@ -1,0 +1,199 @@
+{
+  "id": "smith-bench-press",
+  "name": "Smith Machine Bench Press (Flat)",
+  "namePl": "Wyciskanie na ławce poziomej na Smith machine",
+  "aliases": ["smith bench", "smith machine bench press", "smith flat bench", "machine guided bench press"],
+  "aliasesPl": ["wyciskanie na smithie", "smith bench", "wyciskanie poziome na smith machine", "wyciskanie na maszynie smitha"],
+
+  "description": "Horizontal pressing variation performed on a Smith machine — a barbell fixed in vertical (or near-vertical) rails. The fixed bar path removes the need to balance the load laterally, allowing focus on pure pressing force and often heavier loads without a spotter. Built-in safety hooks (rotate wrists to rack) make it solo-friendly. Trade-off: less recruitment of stabilizers, locked path can stress shoulders/wrists if setup is wrong.",
+  "descriptionPl": "Wariant wyciskania poziomego wykonywany na maszynie Smitha — sztandze zamocowanej na pionowych (lub niemal pionowych) szynach. Wymuszony tor gryfu eliminuje konieczność balansowania ciężaru na boki, pozwalając skupić się na czystej sile wyciskania i często użyć większego ciężaru bez asysty. Wbudowane haki bezpieczeństwa (obrót nadgarstków odstawia gryf) sprawiają, że ćwiczenie jest przyjazne do treningu solo. Kompromis: mniejsze zaangażowanie stabilizatorów, a wymuszony tor może obciążać barki/nadgarstki przy złym ustawieniu ławki.",
+
+  "instructions": [
+    "Position a flat bench under the Smith machine rails. Lie down so the bar is over your lower chest / sternum (not over the throat).",
+    "Plant feet firmly on the floor, knees bent ~90°. Set shoulder blades: retract and depress, with a slight natural arch in the lower back.",
+    "Grip the bar slightly wider than shoulder-width. Forearms should be vertical when the bar touches the chest. Thumbs wrapped around the bar.",
+    "Unrack the bar by rotating wrists (the hooks release). Hold the bar with arms extended directly over the lower chest.",
+    "Take a big breath, brace your core, and lower the bar in a controlled manner along the fixed rail to your lower chest.",
+    "Touch the chest lightly — do NOT bounce. Pause briefly if training paused style.",
+    "Press the bar straight up along the rail to lockout. Do not hyperextend elbows.",
+    "After the final rep, rotate wrists FORWARD to re-engage the hooks and safely rack the bar."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę poziomą pod szynami maszyny Smitha. Połóż się tak, by gryf znajdował się nad dolną klatką / mostkiem (nie nad szyją).",
+    "Stopy mocno na podłodze, kolana zgięte ~90°. Ustaw łopatki: ściągnięte i opuszczone, z lekkim naturalnym łukiem w dolnych plecach.",
+    "Złap gryf nieco szerzej niż na szerokość barków. Przedramiona powinny być pionowe, gdy gryf dotyka klatki. Kciuki owinięte wokół gryfu.",
+    "Odbezpiecz gryf obracając nadgarstki (haki się zwalniają). Trzymaj gryf z prostymi ramionami bezpośrednio nad dolną klatką.",
+    "Nabierz głęboki oddech, napnij brzuch i opuszczaj gryf kontrolowanym ruchem wzdłuż wymuszonego toru do dolnej klatki.",
+    "Lekko dotknij klatki — NIE odbijaj. Krótka pauza jeśli trenujesz styl z pauzą.",
+    "Wyciśnij gryf prosto w górę wzdłuż szyny do pełnego wyprostu. Nie przeprostowuj łokci.",
+    "Po ostatnim powtórzeniu obróć nadgarstki W PRZÓD, by zazębić haki i bezpiecznie odstawić gryf."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P10",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "serratus_anterior": "S4",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "flat_bench"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["push-up", "machine-chest-press", "dumbbell-bench-press"],
+    "progression_to": ["barbell-bench-press", "incline-smith-bench-press", "pause-bench-press", "close-grip-bench-press"],
+    "alternatives": ["barbell-bench-press", "dumbbell-bench-press", "machine-chest-press", "incline-smith-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Position bench so bar lands on LOWER chest, not throat",
+      "Shoulder blades retracted and depressed against bench",
+      "Slight arch in lower back, glutes stay on bench",
+      "Feet planted flat — Smith bar path is fixed, so leg drive is limited",
+      "Grip width: forearms vertical at chest touch"
+    ],
+    "setup_cues_pl": [
+      "Ustaw ławkę tak, by gryf opadał na DOLNĄ klatkę, nie na szyję",
+      "Łopatki ściągnięte i wciśnięte w ławkę",
+      "Lekki łuk w dolnych plecach, pośladki pozostają na ławce",
+      "Stopy płasko zaparte — tor gryfu jest wymuszony, więc napęd nóg jest ograniczony",
+      "Szerokość chwytu: przedramiona pionowe przy dotyku klatki"
+    ],
+    "execution_cues": [
+      "Lower under control along the rail — no bounce",
+      "Touch lower chest, then press straight up",
+      "Keep elbows ~45-60° from torso, not flared",
+      "Push the bar AWAY (extend), don't think 'shrug it up'",
+      "After last rep — rotate wrists forward to rack safely"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj kontrolowanie wzdłuż szyny — bez odbicia",
+      "Dotknij dolnej klatki, potem wyciśnij prosto w górę",
+      "Łokcie pod kątem ~45-60° od tułowia, nie rozsunięte",
+      "Wypchnij gryf OD SIEBIE (wyprost), nie myśl 'wzrusz go w górę'",
+      "Po ostatnim powtórzeniu — obróć nadgarstki w przód, by bezpiecznie odstawić"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bench positioned so bar lands on throat/upper chest",
+        "faultPl": "Ławka ustawiona tak, że gryf opada na szyję / górną klatkę",
+        "cause": "Bar path is fixed — wrong bench position cannot be corrected mid-set",
+        "causePl": "Tor gryfu jest wymuszony — złej pozycji ławki nie poprawisz w trakcie serii",
+        "cue": "Before first rep: do a 'dry run' with empty bar. Bar must touch LOWER chest / sternum line. Reposition bench if needed.",
+        "cuePl": "Przed pierwszym powtórzeniem: 'próbny ruch' z pustym gryfem. Gryf musi dotykać DOLNEJ klatki / linii mostka. Przesuń ławkę jeśli trzeba."
+      },
+      {
+        "fault": "Elbows flared 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Too wide a grip combined with fixed bar path stresses shoulders",
+        "causePl": "Za szeroki chwyt w połączeniu z wymuszonym torem obciąża barki",
+        "cue": "Tuck elbows to ~45-60°. 'Hide your armpits from the ceiling'. Narrow grip slightly.",
+        "cuePl": "Schowaj łokcie do ~45-60°. 'Schowaj pachy przed sufitem'. Lekko zwęź chwyt."
+      },
+      {
+        "fault": "Forgetting to rotate wrists to rack (bar drops on chest)",
+        "faultPl": "Brak obrotu nadgarstków by odstawić gryf (gryf opada na klatkę)",
+        "cause": "Inexperience with Smith hook mechanism, fatigue at end of set",
+        "causePl": "Brak doświadczenia z mechanizmem haków Smitha, zmęczenie na końcu serii",
+        "cue": "Practice the rotation with empty bar first. Always set safety stops below your chest level as backup.",
+        "cuePl": "Najpierw przećwicz obrót z pustym gryfem. Zawsze ustaw zabezpieczenia poniżej poziomu klatki jako backup."
+      },
+      {
+        "fault": "Excessive arch / butt lifting off bench",
+        "faultPl": "Nadmierny łuk / pośladki unoszą się z ławki",
+        "cause": "Trying to mimic powerlifting arch on Smith — but fixed path makes huge arch counterproductive",
+        "causePl": "Próba naśladowania łuku jak w trójboju na Smithie — ale wymuszony tor sprawia, że duży łuk jest kontrproduktywny",
+        "cue": "Keep glutes on bench. Smith doesn't reward an aggressive arch — focus on solid contact, not extreme back position.",
+        "cuePl": "Pośladki pozostają na ławce. Smith nie nagradza agresywnego łuku — skup się na solidnym kontakcie, nie na ekstremalnej pozycji pleców."
+      },
+      {
+        "fault": "Wrist hyperextension on the fixed bar",
+        "faultPl": "Przeprost nadgarstków na wymuszonym gryfie",
+        "cause": "Bar in fingers instead of palm heel — fixed path amplifies wrist stress",
+        "causePl": "Gryf w palcach zamiast w podstawie dłoni — wymuszony tor wzmacnia obciążenie nadgarstków",
+        "cue": "Bar sits in heel of palm, straight line from forearm. Wrist wraps help with heavier loads.",
+        "cuePl": "Gryf w podstawie dłoni, prosta linia od przedramienia. Wraps na nadgarstki pomagają przy większych ciężarach."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent and press. Exhale at the top of the lockout.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech na szczycie wyprostu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Fixed bar path can aggravate impingement. Narrow grip, tuck elbows tighter (45° max), or switch to incline angle. If pain persists — use dumbbells (free path).",
+      "modificationPl": "Wymuszony tor może drażnić impingement. Zwęź chwyt, mocniej schowaj łokcie (max 45°) lub przejdź na skos. Jeśli ból utrzymuje się — przejdź na hantle (swobodny tor).",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Smith fixed path forces the joint through one trajectory — bad for cuff pathology. Use machine chest press or rehab protocol.",
+      "modificationPl": "Wymuszony tor Smitha zmusza staw do jednej trajektorii — źle dla patologii cuffa. Użyj maszyny chest press lub protokołu rehabilitacyjnego.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Fixed bar amplifies wrist stress. Use wrist wraps, check grip position (bar in palm heel), or switch to neutral-grip dumbbell variant.",
+      "modificationPl": "Wymuszony gryf wzmacnia obciążenie nadgarstków. Użyj wraps, sprawdź pozycję chwytu (gryf w podstawie dłoni) lub przejdź na hantle chwytem neutralnym.",
+      "alternative": "dumbbell-bench-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Heavy fixed-path pressing aggravates pec injuries. Switch to high-rep low-load machine work first.",
+      "modificationPl": "Ciężkie wyciskanie po wymuszonym torze drażni urazy klatki. Przejdź na wysokopowtórzeniowe lekkie maszyny.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-12 (hypertrophy) | 4-5x4-6 (strength, solo training) | 3x10-15 (accessory after free-weight bench)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "smith-bench-press.gif",
+    "frames_extracted": [
+      "frames/smith-bench-press/frame_0_start.png",
+      "frames/smith-bench-press/frame_1_early.png",
+      "frames/smith-bench-press/frame_2_mid.png",
+      "frames/smith-bench-press/frame_3_late.png",
+      "frames/smith-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/smith-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0: gryf przy dolnej klatce, ławka pozioma pod szynami Smitha, łopatki ściągnięte, stopy zaparte na podłodze. Frame 2: pełne wyciśnięcie wzdłuż wymuszonego toru — gryf nad barkami. Frame 4: powrót do dolnej pozycji. Maszyna Smith jasno widoczna (pionowe szyny z ogranicznikami). Podświetlone pectoralis major (P10) + anterior delts (P8) + triceps (P7) — zgodne z anatomią poziomego pchania. Stabilizatory mniej zaangażowane niż przy free-weight bench (wymuszony tor). PL nazwa zgodna ze standardem fitness w PL ('wyciskanie na ławce poziomej na Smith machine'). Wszystkie pola PL od zera.",
+
+  "tags": ["machine_guided", "upper_body", "horizontal_push", "chest", "solo_friendly", "smith_machine", "beginner_friendly", "hypertrophy"]
+}

@@ -1,0 +1,205 @@
+{
+  "id": "smith-decline-bench-press",
+  "name": "Smith Decline Bench Press",
+  "namePl": "Wyciskanie na ławce skośnej ujemnej na Smith machine",
+  "aliases": ["Smith machine decline press", "Smith decline chest press", "decline Smith press", "guided decline bench press"],
+  "aliasesPl": ["wyciskanie na Smithcie na skosie ujemnym", "wyciskanie głową w dół na Smithcie", "decline na maszynie Smitha", "wyciskanie na suwnicy Smitha na ławce ujemnej"],
+
+  "description": "Horizontal pressing variation performed on a Smith machine with a decline bench positioned underneath. The Smith machine fixes the bar's path on vertical guide rails, removing the need to stabilize the bar horizontally and allowing the trainee to focus on raw pressing force into the lower chest. The decline angle (~15-30° below horizontal) emphasizes the sternocostal head of the pectoralis major and reduces anterior deltoid involvement, while the fixed bar path makes it a safer option for training to high RIR/failure on the decline angle than free-weight barbell decline (no spotter required to rack the bar — the safety hooks lock the bar at any height with a wrist rotation).",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany na maszynie Smitha z ławką skośną ujemną ustawioną pod sztangą. Maszyna Smitha prowadzi sztangę po pionowych prowadnicach, eliminując konieczność stabilizacji poziomej i pozwala skupić się na czystej sile wyciskania w dolną klatkę. Ujemny kąt (~15-30° poniżej poziomu) akcentuje głowę mostkowo-żebrową mięśnia piersiowego większego i ogranicza zaangażowanie przedniego aktona barku, a prowadzona ścieżka sztangi czyni ten ruch bezpieczniejszą opcją do treningu do wysokiego RIR/upadku mięśniowego niż klasyczne decline ze sztangą wolną (asekuracja niepotrzebna — haki bezpieczeństwa blokują sztangę na dowolnej wysokości obrotem nadgarstków).",
+
+  "instructions": [
+    "Position a decline bench inside the Smith machine so the bar travels over your LOWER chest when you lie down — test the bar path empty first.",
+    "Set the decline angle to ~15-30°. Set safety hooks/stops at chest level (just below your loaded ROM) in case you fail.",
+    "Load the bar with appropriate weight. Smith machine allows heavier loads than free weight because no horizontal stabilization needed.",
+    "Sit on the bench, hook feet SECURELY under the foot pads, lie back. Position eyes/upper chest under the bar so it travels to lower chest.",
+    "Grip the bar with a pronated grip slightly wider than shoulder width. Rotate wrists to unhook the bar from the catches.",
+    "Press the bar up to full extension (elbows soft, not locked). Shoulder blades retracted and pressed into the bench.",
+    "Inhale, brace, lower the bar in a controlled descent to the LOWER chest. Elbows tracked at ~45-60° from torso, NOT flared to 90°.",
+    "Touch the lower chest lightly — do NOT bounce. Pause briefly to kill momentum (the Smith won't drift, use this to your advantage).",
+    "Press the bar back up to the top in a straight vertical line. Exhale through the press. Repeat for reps.",
+    "To finish: at the top of the last rep, rotate wrists to lock the bar onto the catches. NEVER try to rack mid-rep failure on decline — let the bar settle on the safety stops you set."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę skośną ujemną w maszynie Smitha tak, by sztanga schodziła nad DOLNĄ klatkę gdy się położysz — przetestuj ścieżkę sztangi pustej najpierw.",
+    "Ustaw kąt decline na ~15-30°. Zabezpieczenia/haki na wysokości klatki (tuż poniżej Twojego ROM-u) na wypadek nieudanej powtórki.",
+    "Załaduj sztangę odpowiednim ciężarem. Smith pozwala na cięższe obciążenia niż wolna sztanga, bo nie trzeba stabilizować poziomu.",
+    "Usiądź na ławce, MOCNO zaczep stopy pod wałkami, połóż się. Ustaw oczy/górną klatkę pod sztangą tak, by schodziła do dolnej klatki.",
+    "Chwyt pronowany, nieco szerszy niż barki. Obróć nadgarstki, by zdjąć sztangę z haków.",
+    "Wyciśnij sztangę do pełnego wyprostu (łokcie miękkie, nie zablokowane). Łopatki ściągnięte i wciśnięte w ławkę.",
+    "Wdech, napięcie brzucha, opuszczaj sztangę pod kontrolą do DOLNEJ klatki. Łokcie pod kątem ~45-60° od tułowia, NIE rozsunięte na 90°.",
+    "Lekko dotknij dolnej klatki — BEZ odbijania. Króciutka pauza, by zabić momentum (Smith nie ucieknie, wykorzystaj to).",
+    "Wyciśnij sztangę z powrotem na górę po pionowej linii. Wydech podczas wyciskania. Powtórz na zaplanowaną liczbę powtórzeń.",
+    "Zakończenie: na górze ostatniej powtórki obróć nadgarstki, by zablokować sztangę na hakach. NIGDY nie próbuj racku w trakcie niepowodzenia na decline — pozwól sztandze opaść na zabezpieczenia, które ustawiłeś."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["lower_pectoralis", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior", "coracobrachialis"],
+    "stabilizers": ["rotator_cuff", "core", "upper_back"]
+  },
+
+  "muscle_intensity": {
+    "lower_pectoralis": "P10",
+    "triceps": "P8",
+    "anterior_deltoids": "P6",
+    "serratus_anterior": "S5",
+    "core": "T3",
+    "upper_back": "T3",
+    "rotator_cuff": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "decline_bench"],
+    "optional": ["wrist_wraps", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["smith-machine-bench-press", "barbell-bench-press"],
+    "progression_to": ["barbell-decline-bench-press", "weighted-decline-bench-press"],
+    "alternatives": ["barbell-decline-bench-press", "dumbbell-decline-bench-press", "machine-decline-chest-press", "dip"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Position decline bench so empty bar travels to LOWER chest, not face — test before loading",
+      "Set safety stops at chest level — Smith won't drop on you, but stops protect at failure",
+      "Hook feet SECURELY under foot pads BEFORE unracking — slipping off decline with bar above you is dangerous",
+      "Shoulder blades retracted and pressed into bench BEFORE unracking",
+      "Pronated grip slightly wider than shoulder width — wider grip = more chest, narrower = more triceps"
+    ],
+    "setup_cues_pl": [
+      "Ustaw ławkę tak, by pusta sztanga schodziła do DOLNEJ klatki, nie nad twarz — sprawdź przed załadowaniem",
+      "Zabezpieczenia na wysokości klatki — Smith nie spadnie, ale stops chronią przy upadku siły",
+      "Stopy MOCNO zaczepione pod wałkami PRZED zdjęciem sztangi — zsunięcie się z decline ze sztangą nad tobą jest niebezpieczne",
+      "Łopatki ściągnięte i wciśnięte w ławkę PRZED zdjęciem sztangi",
+      "Chwyt pronowany nieco szerszy niż barki — szerszy = więcej klatki, węższy = więcej tricepsów"
+    ],
+    "execution_cues": [
+      "Bar travels in a STRAIGHT vertical line — let the Smith do the path work, focus on force production",
+      "Lower to LOWER chest, light touch — bar should kiss the sternum, not bounce or sink",
+      "Elbows at ~45-60° from torso — decline tempts elbow flare, resist it",
+      "Pause briefly at bottom — Smith stays put, exploit this for dead-stop reps with no bounce",
+      "Press straight UP — bar path is fixed, your job is to push it without losing scapular retraction"
+    ],
+    "execution_cues_pl": [
+      "Sztanga idzie PROSTĄ pionową linią — niech Smith robi ścieżkę, ty skup się na sile",
+      "Opuszczaj do DOLNEJ klatki, lekki dotyk — sztanga powinna pocałować mostek, bez odbicia ani zatopienia",
+      "Łokcie pod kątem ~45-60° od tułowia — decline kusi do rozsuwania łokci, opieraj się",
+      "Krótka pauza na dole — Smith nie ucieka, wykorzystaj to do dead-stop reps bez odbicia",
+      "Wyciskaj prosto W GÓRĘ — ścieżka jest sztywna, twoim zadaniem jest popchnięcie bez utraty ściągnięcia łopatek"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar lowered too high on chest (over face/upper chest)",
+        "faultPl": "Sztanga opuszczana za wysoko na klatce (nad twarzą/górną klatką)",
+        "cause": "Bench positioned wrong relative to bar path; head not lined up under the bar correctly; trying to mimic flat bench bar path",
+        "causePl": "Ławka źle ustawiona względem ścieżki sztangi; głowa nie ułożona pod sztangą prawidłowo; próba kopiowania ścieżki z flat bench",
+        "cue": "Smith bar path is FIXED — you must position the bench so the bar lands on LOWER chest. Re-position the bench, not your body.",
+        "cuePl": "Ścieżka sztangi w Smithcie jest STAŁA — musisz ustawić ławkę tak, by sztanga lądowała na DOLNEJ klatce. Przesuń ławkę, nie ciało."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Decline position invites elbow flare; grip too wide; lack of awareness of shoulder position",
+        "causePl": "Pozycja decline zachęca do rozsuwania łokci; chwyt za szeroki; brak świadomości pozycji barków",
+        "cue": "Tuck elbows to ~45-60° from torso. Decline already compromises shoulder position — flaring elbows multiplies the stress.",
+        "cuePl": "Schowaj łokcie do ~45-60° od tułowia. Decline już obciąża barki — rozsuwanie łokci zwielokrotnia stres na stawie."
+      },
+      {
+        "fault": "Bouncing the bar off chest",
+        "faultPl": "Odbijanie sztangi od klatki",
+        "cause": "Ego with too heavy weight; treating Smith as easy because path is fixed; loss of eccentric control",
+        "causePl": "Ego ze zbyt ciężkim ciężarem; traktowanie Smitha jako łatwego, bo ścieżka jest stała; brak kontroli ekscentrycznej",
+        "cue": "Smith allows dead-stop reps — exploit it. Light touch on chest, brief pause, then press. No bounce = more lower-pec tension.",
+        "cuePl": "Smith pozwala na dead-stop reps — wykorzystaj to. Lekki dotyk klatki, króciutka pauza, wyciskaj. Bez odbicia = więcej napięcia dolnej klatki."
+      },
+      {
+        "fault": "Losing scapular retraction during the press",
+        "faultPl": "Utrata ściągnięcia łopatek podczas wyciskania",
+        "cause": "Fatigue; bar drift trying to use shoulders to help; bench too low so shoulders shrug up under load",
+        "causePl": "Zmęczenie; próba pomocy barkami przy ciężkim ruchu; ławka za nisko, więc barki wciągają się przy obciążeniu",
+        "cue": "Squeeze shoulder blades together throughout — imagine pinching a pencil between them. If you lose it, the set is over.",
+        "cuePl": "Ściskaj łopatki razem przez cały set — wyobraź sobie, że trzymasz między nimi ołówek. Jak stracisz ściągnięcie, set kończy się."
+      },
+      {
+        "fault": "Feet slipping out of foot pads mid-set",
+        "faultPl": "Stopy wysuwają się spod wałków w trakcie setu",
+        "cause": "Feet not hooked SECURELY before unracking; foot pad height not adjusted to leg length; using leg drive on decline",
+        "causePl": "Stopy nie zaczepione MOCNO przed zdjęciem sztangi; wysokość wałków nie dopasowana do długości nóg; używanie napędu nogami na decline",
+        "cue": "Slipping off decline with bar above you = bar to face. Adjust foot pads BEFORE setting up. No leg drive on decline — keep feet anchored, not pushing.",
+        "cuePl": "Zsunięcie z decline ze sztangą nad tobą = sztanga w twarz. Wyreguluj wałki PRZED ustawieniem się. Bez napędu nogami na decline — stopy zakotwiczone, nie pchające."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent. Exhale forcefully on the press. Bracing matters more on decline because blood pools toward head and intracranial pressure rises.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie. Mocny wydech przy wyciskaniu. Napięcie ważniejsze na decline, bo krew nabiega do głowy a ciśnienie wewnątrzczaszkowe rośnie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hypertension",
+      "severity": "avoid",
+      "modification": "Head-down position raises intracranial and blood pressure significantly. If you have uncontrolled hypertension or cardiovascular risk, avoid decline entirely — use flat or low-incline Smith press instead.",
+      "modificationPl": "Pozycja głową w dół znacząco podnosi ciśnienie wewnątrzczaszkowe i tętnicze. Jeśli masz niekontrolowane nadciśnienie lub ryzyko sercowo-naczyniowe, unikaj decline całkowicie — użyj Smith press na ławce poziomej lub niskim incline.",
+      "alternative": "smith-machine-bench-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Decline is usually friendlier than flat or incline (less anterior delt involvement), but Smith machine's fixed path may not match your natural shoulder mechanics — stop above chest if pain, or switch to dumbbells.",
+      "modificationPl": "Decline zazwyczaj łagodniejszy niż flat lub incline (mniej zaangażowania przedniego aktona), ale stała ścieżka Smitha może nie pasować do twojej naturalnej mechaniki barku — zatrzymaj się powyżej klatki przy bólu lub przejdź na hantle.",
+      "alternative": "dumbbell-decline-bench-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Smith machine's fixed path forces shoulders into a non-adaptive trajectory under heavy load while inverted. Switch to machine decline press with adjustable arms until cleared by physio.",
+      "modificationPl": "Stała ścieżka Smitha wymusza nieadaptacyjną trajektorię barków pod ciężkim obciążeniem przy odwróconej pozycji. Przejdź na maszynę decline press z regulowanymi ramionami do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-decline-chest-press"
+    },
+    {
+      "condition": "acid_reflux_gerd",
+      "severity": "modify",
+      "modification": "Head-down position aggravates reflux. Train decline on empty stomach (3+ hours after meal), or substitute with dip or low-cable fly for lower-chest emphasis.",
+      "modificationPl": "Pozycja głową w dół drażni refluks. Trenuj decline na czczo (3+ godziny po posiłku) lub zastąp dipami albo świecami z dolnych wyciągów dla nacisku na dolną klatkę.",
+      "alternative": "dip"
+    }
+  ],
+
+  "typical_sets_reps": "4x8-10 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x10-12 (volume) — typically programmed as secondary chest movement after a primary flat/incline press, or as primary on a dedicated lower-chest day",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "smith-decline-bench-press.gif",
+    "frames_extracted": [
+      "frames/smith-decline-bench-press/frame_0_start.png",
+      "frames/smith-decline-bench-press/frame_1_early.png",
+      "frames/smith-decline-bench-press/frame_2_mid.png",
+      "frames/smith-decline-bench-press/frame_3_late.png",
+      "frames/smith-decline-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/smith-decline-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (dół/start): sztanga na poziomie dolnej klatki w prowadnicach Smitha, łokcie zgięte ~90°, chwyt pronowany szerszy niż barki, wyraźna pozycja decline — głowa niżej niż biodra, stopy zaczepione pod wałkami przy górze ławki. Frame 2 (góra): pełne wyciśnięcie, sztanga nad dolną klatką po pionowej linii prowadnic, ramiona wyprostowane. Frame 4 (powrót): kontrolowane opuszczanie, sztanga schodzi prosto w dół. Anatomicznie podświetlone JEST tylko dolny aktor klatki piersiowej (sternocostal head) oraz tricepsy — to potwierdza specyfikę decline + pressing. Klasyczny pronated grip, stopy zaparte pod wałkami. Maszyna Smitha widoczna jako rama z pionowymi prowadnicami. PL nazwa zgodna z polskim standardem fitness ('Wyciskanie na ławce skośnej ujemnej na Smith machine'). Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Difficulty 5 (intermediate) — niższe niż dumbbell decline (6), bo Smith eliminuje stabilizację horyzontalną, ale wyższe niż flat Smith bench, bo pozycja decline + setup z hakami wymaga doświadczenia.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "lower_chest", "smith_machine", "chest", "decline", "intermediate", "fixed_path", "machine"]
+}

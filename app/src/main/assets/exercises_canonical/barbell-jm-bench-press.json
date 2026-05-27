@@ -1,0 +1,203 @@
+{
+  "id": "barbell-jm-bench-press",
+  "name": "Barbell JM Bench Press",
+  "namePl": "JM Bench Press ze sztangą",
+  "aliases": ["JM press", "JM bench", "Jim Blakley press", "JM lift", "barbell JM press"],
+  "aliasesPl": ["JM press", "JM bench", "wyciskanie JM", "JM press ze sztangą", "press JM", "JM Blakley press"],
+
+  "description": "Triceps-focused hybrid of close-grip bench press and skull crusher, popularized by powerlifter JM Blakley. Hands are placed roughly shoulder-width on the bar, but instead of pressing in a vertical groove like a regular bench, you lower the bar toward the base of the neck / upper chest while allowing the elbows to break forward (like a skull crusher) — but stop short, then drive the elbows back under the bar and lock out. Brutal on the triceps (especially the long head) and used as a top accessory for building lockout strength in powerlifting. Sits between a close-grip bench (pure press) and a skull crusher (pure elbow extension).",
+  "descriptionPl": "Hybryda wyciskania wąskim chwytem i wyciskania francuskiego (skull crusher), spopularyzowana przez powerliftera JM Blakleya. Dłonie ustawione mniej więcej na szerokość barków, ale zamiast wyciskać w pionowym torze jak w klasycznym bench pressie, opuszczasz gryf w stronę podstawy szyi / górnej części klatki pozwalając łokciom 'załamać' się do przodu (jak w skull crusherze) — zatrzymujesz w połowie, po czym wciągasz łokcie z powrotem pod gryf i wyciskasz do lock-out. Brutalne dla tricepsa (zwłaszcza głowy długiej), wykorzystywane jako top akcesorium dla budowy lock-outu w trójboju. Plasuje się pomiędzy close-grip benchem (czysty press) a skull crusherem (czysty wyprost łokci).",
+
+  "instructions": [
+    "Lie on a flat bench. Setup like a regular bench press: feet planted, shoulder blades retracted, slight arch in lower back.",
+    "Grip the bar shoulder-width apart (similar to close-grip bench — NOT extremely narrow).",
+    "Unrack the bar; position it directly over your shoulders with arms locked out.",
+    "Inhale, brace, and begin the descent. Bend at the elbows while ALSO letting the elbows travel slightly forward (toward the head) — this is the hybrid 'skull crusher meets bench' motion.",
+    "Lower the bar toward the base of your neck / upper chest (high touch point, NOT lower chest like close-grip bench).",
+    "Stop when your forearms are roughly parallel to the floor or the bar is ~3-5 cm from the neck. Do NOT touch the neck — this is the bottom position of a JM press.",
+    "From this 'shelf' position, press up by simultaneously driving the elbows back under the bar AND extending the elbows. Triceps do almost all the work.",
+    "Finish in full lockout over the shoulders. Exhale at the top.",
+    "Start LIGHT to learn the groove — JM press requires precision and is humbling at first."
+  ],
+  "instructionsPl": [
+    "Połóż się na poziomej ławce. Setup jak w klasycznym bench pressie: stopy stabilnie, łopatki ściągnięte, lekki łuk w dolnych plecach.",
+    "Złap gryf na szerokość barków (podobnie jak w wyciskaniu wąskim chwytem — NIE skrajnie wąsko).",
+    "Wyjmij sztangę ze stojaka; ustaw ją bezpośrednio nad barkami z wyprostowanymi ramionami.",
+    "Wdech, napięcie, rozpocznij schodzenie. Zginaj łokcie, ALE jednocześnie pozwól łokciom przesunąć się lekko do przodu (w stronę głowy) — to ten hybrydowy ruch 'skull crusher spotyka bench press'.",
+    "Opuszczaj gryf w stronę podstawy szyi / górnej części klatki (wysoki punkt dotyku, NIE dolna klatka jak w close-grip).",
+    "Zatrzymaj się gdy przedramiona są mniej więcej równolegle do podłogi lub gryf jest ~3-5 cm od szyi. NIE dotykaj szyi — to dolna pozycja JM press.",
+    "Z tej 'półki' wyciśnij gryf jednocześnie wciągając łokcie z powrotem pod gryf ORAZ prostując łokcie. Tricepsy robią prawie całą robotę.",
+    "Zakończ pełnym lock-outem nad barkami. Wydech na szczycie.",
+    "Zacznij LEKKO by nauczyć się toru ruchu — JM press wymaga precyzji i jest pokorny na starcie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "triceps_long_head"],
+    "secondary": ["pectoralis_major_inner", "anterior_deltoids"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "wrist_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "triceps_long_head": "P10",
+    "pectoralis_major_inner": "S5",
+    "anterior_deltoids": "S5",
+    "lats": "T3",
+    "core": "T3",
+    "forearms": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench", "power_rack_or_bench_with_supports"],
+    "optional": ["wrist_wraps", "spotter", "elbow_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-close-grip-bench-press", "skull-crusher", "barbell-bench-press"],
+    "progression_to": ["board-press", "spoto-press", "floor-press"],
+    "alternatives": ["barbell-close-grip-bench-press", "ez-bar-skull-crusher", "barbell-skull-crusher", "tate-press", "dumbbell-jm-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands shoulder-width on the bar (like close-grip bench)",
+      "Shoulder blades pinned, slight arch in lower back",
+      "Eyes directly under the bar at unrack",
+      "Wrists stacked over elbows, bar in palm heel",
+      "Start with VERY light weight — this is a technique lift"
+    ],
+    "setup_cues_pl": [
+      "Dłonie na szerokość barków na gryfie (jak w wyciskaniu wąskim chwytem)",
+      "Łopatki ściągnięte, lekki łuk w dolnych plecach",
+      "Oczy bezpośrednio pod gryfem przy wyjęciu",
+      "Nadgarstki w linii z łokciami, gryf w podstawie dłoni",
+      "Zacznij od BARDZO lekkiego ciężaru — to ćwiczenie techniczne"
+    ],
+    "execution_cues": [
+      "Elbows break forward AND bend — hybrid of bench and skull crusher",
+      "Bar travels toward base of neck / upper chest (NOT lower chest)",
+      "Stop ~3-5 cm before the neck — never touch the neck",
+      "At the bottom: forearms roughly parallel to floor, bar 'shelved'",
+      "Drive elbows back under the bar AND extend — triceps do everything"
+    ],
+    "execution_cues_pl": [
+      "Łokcie łamią się do przodu I zginają — hybryda bench press i skull crusher",
+      "Gryf wędruje w stronę podstawy szyi / górnej klatki (NIE dolna klatka)",
+      "Zatrzymaj ~3-5 cm przed szyją — nigdy nie dotykaj szyi",
+      "Na dole: przedramiona mniej więcej równolegle do podłogi, gryf 'na półce'",
+      "Wciągnij łokcie z powrotem pod gryf I wyprostuj — tricepsy robią wszystko"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar touching the neck",
+        "faultPl": "Gryf dotyka szyi",
+        "cause": "Going too deep, treating it like a skull crusher; lack of stopping discipline",
+        "causePl": "Zbyt głęboki ruch, traktowanie jak skull crushera; brak dyscypliny zatrzymania",
+        "cue": "Stop 3-5 cm above the neck. This is a 'half rep' by design — do not go full ROM.",
+        "cuePl": "Zatrzymaj 3-5 cm nad szyją. To z założenia 'pół powtórzenie' — nie schodź na pełen zakres."
+      },
+      {
+        "fault": "Pressing like a regular bench (no elbow break)",
+        "faultPl": "Wyciskanie jak klasyczny bench press (brak załamania w łokciach)",
+        "cause": "Defaulting to known close-grip groove; not letting the elbows travel forward",
+        "causePl": "Powrót do znanego toru close-grip; brak pozwolenia by łokcie przesunęły się do przodu",
+        "cue": "Let elbows DRIFT forward as you lower. Combine bench-style press with skull-crusher elbow flexion.",
+        "cuePl": "Pozwól łokciom DRYFOWAĆ do przodu podczas schodzenia. Połącz press jak w benchu z zgięciem łokci jak w skull crusherze."
+      },
+      {
+        "fault": "Going too heavy too soon",
+        "faultPl": "Zbyt duży ciężar na starcie",
+        "cause": "Treating JM press like regular bench; ego loading",
+        "causePl": "Traktowanie JM press jak klasycznego bencha; ładowanie z ego",
+        "cue": "Start with 30-40% of your close-grip bench. JM press is humbling — master the groove first.",
+        "cuePl": "Zacznij od 30-40% close-grip bench. JM press jest pokorny — najpierw opanuj tor ruchu."
+      },
+      {
+        "fault": "Elbows flaring outward",
+        "faultPl": "Łokcie rozsuwają się na boki",
+        "cause": "Habit from regular bench; weak triceps trying to compensate",
+        "causePl": "Nawyk z klasycznego bench press; słabe tricepsy próbujące kompensować",
+        "cue": "Elbows stay tucked AND forward — never outward. Forearms vertical from front view.",
+        "cuePl": "Łokcie blisko tułowia I do przodu — nigdy na boki. Przedramiona pionowo z widoku z przodu."
+      },
+      {
+        "fault": "Wrists collapsing backward",
+        "faultPl": "Nadgarstki załamują się do tyłu",
+        "cause": "Bar held in fingers; high stress on wrist due to hybrid groove",
+        "causePl": "Gryf trzymany w palcach; wysokie obciążenie nadgarstka przez hybrydowy tor ruchu",
+        "cue": "Bar firmly in palm heel. Use wrist wraps — JM press is notoriously hard on wrists.",
+        "cuePl": "Gryf mocno w podstawie dłoni. Użyj wraps — JM press jest znany z obciążania nadgarstków."
+      }
+    ],
+    "breathing": "Inhale and brace at the top, hold throughout descent and press. Exhale at the lockout.",
+    "breathingPl": "Wdech i napięcie na górze, trzymaj przez schodzenie i wyciskanie. Wydech na lock-out."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "JM press places enormous stress on the triceps tendon at the elbow (more than close-grip bench). Avoid until tendon is fully recovered. Use mild tricep work instead.",
+      "modificationPl": "JM press obciąża ścięgno tricepsa przy łokciu ogromnie (bardziej niż close-grip bench). Unikaj do pełnego wyleczenia ścięgna. Stosuj lżejszą pracę tricepsa.",
+      "alternative": "dumbbell-tricep-extension"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "The hybrid groove creates uneven wrist load. Use wrist wraps. Consider switching to a dumbbell or EZ-bar version (Tate press, JM with dumbbells).",
+      "modificationPl": "Hybrydowy tor ruchu tworzy nierówne obciążenie nadgarstka. Użyj wraps. Rozważ przejście na hantle lub gryf łamany (Tate press, JM z hantlami).",
+      "alternative": "tate-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "JM press is generally shoulder-friendly (elbows tucked), but the high touch point near the neck can stress an irritated AC joint. Reduce ROM, keep load moderate.",
+      "modificationPl": "JM press jest zazwyczaj łagodny dla barków (łokcie ściśnięte), ale wysoki punkt dotyku przy szyi może drażnić podrażniony staw AC. Zmniejsz zakres ruchu, trzymaj ciężar umiarkowany.",
+      "alternative": "barbell-close-grip-bench-press"
+    },
+    {
+      "condition": "triceps_strain",
+      "severity": "avoid",
+      "modification": "Heavy JM press loads the triceps under deep elbow flexion — worst case for a strained triceps. Switch to isometric/light isolation work until healed.",
+      "modificationPl": "Ciężki JM press obciąża tricepsy w głębokim zgięciu łokcia — najgorszy scenariusz dla naderwanego tricepsa. Przejdź na pracę izometryczną/lekką izolację do wyleczenia.",
+      "alternative": "cable-tricep-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x5-8 (strength/lockout) | 3-4x8-12 (hypertrophy/triceps mass) | 3x6-10 (powerlifting accessory after main bench)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-jm-bench-press.gif",
+    "frames_extracted": [
+      "frames/barbell-jm-bench-press/frame_0_start.png",
+      "frames/barbell-jm-bench-press/frame_1_early.png",
+      "frames/barbell-jm-bench-press/frame_2_mid.png",
+      "frames/barbell-jm-bench-press/frame_3_late.png",
+      "frames/barbell-jm-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-jm-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frame 0/4 (lock-out): ramiona wyprostowane, sztanga nad barkami, dłonie na szerokość barków, mocno podświetlone tricepsy (P10) — zgodne z anatomią JM press. Frame 1/3: zejście — gryf opuszczany w stronę górnej klatki/podstawy szyi, łokcie zaczynają załamywać się do przodu (hybrydowy ruch). Frame 2: pozycja dolna — gryf blisko górnej klatki/podstawy szyi (NIE dolna klatka jak w CGBP), łokcie w hybrydowej pozycji między bench a skull crusher. Tylko tricepsy podświetlone na czerwono — minimalny udział klatki (S5) i delt (S5), zgodne z reputacją JM press jako 'pure triceps lift'. JM press = wymysł powerliftera JM Blakleya, hybryda CGBP + skull crusher. Difficulty 8 (advanced — wymaga opanowania CGBP i skull crushera, technika niełatwa, ryzyko dla nadgarstków i łokci). PL nazwa pozostawiona jako 'JM Bench Press ze sztangą' (nazwa własna od JM Blakley). Wszystkie pola PL od zera, nie tłumaczenie 1:1. Movement pattern: push_horizontal (pozostaje, choć ze skłonem ku elbow extension).",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "barbell", "triceps_focus", "long_head_triceps", "lockout_strength", "powerlifting_accessory", "hybrid_lift", "advanced", "bench_variation", "skull_crusher_variation"]
+}

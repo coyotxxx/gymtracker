@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-preacher-curl-over-exercise-ball",
+  "name": "Dumbbell Preacher Curl Over Exercise Ball",
+  "namePl": "Curl z hantlami na piłce gimnastycznej (preacher style)",
+  "aliases": ["stability ball preacher curl", "swiss ball preacher curl", "dumbbell preacher curl on ball", "kneeling preacher curl over ball"],
+  "aliasesPl": ["uginanie ramion z hantlami na piłce gimnastycznej", "preacher curl na piłce szwajcarskiej", "uginanie z hantli z oparciem o piłkę", "modlitewnik z hantlami na piłce"],
+
+  "description": "Bilateral biceps isolation exercise performed kneeling behind a stability ball with the triceps and upper arms draped over the ball, mimicking the position of a preacher bench. The ball replaces the angled pad and adds a mild instability challenge that recruits the core as a secondary stabilizer. Like the classic preacher curl, the position eliminates shoulder swing and forces strict elbow flexion against the dumbbells, with strong emphasis on the bottom (stretched) portion of the biceps strength curve.",
+  "descriptionPl": "Obustronne ćwiczenie izolowane na biceps wykonywane w klęku za piłką gimnastyczną, z tricepsami i ramionami ponad łokciem opartymi o piłkę — pozycja imituje ławkę modlitewnika. Piłka zastępuje skośny pad, a dodatkowo wprowadza element niestabilności, który aktywuje mięśnie głębokie tułowia jako stabilizatory wtórne. Tak jak w klasycznym preacher curl, pozycja eliminuje wspomaganie z barków i wymusza ścisłe uginanie w łokciach, ze szczególnym akcentem na dolną (rozciągniętą) część krzywej siły bicepsa.",
+
+  "instructions": [
+    "Set a medium-firm stability ball on the floor. Kneel on the far side of the ball with knees hip-width apart, feet relaxed behind you.",
+    "Pick up two dumbbells with a supinated (palms up) grip and drape your upper arms and triceps over the top of the ball, letting the arms extend down the front side toward the floor.",
+    "Lean your chest gently against the ball. Keep the torso braced — do not collapse into the ball or arch through the lower back.",
+    "From a full hang with elbows fully extended, curl both dumbbells upward by flexing only at the elbows. Exhale on the way up.",
+    "Stop the curl when the forearms reach vertical and the biceps are fully shortened. Squeeze hard for a brief pause at the top.",
+    "Lower the dumbbells under control over 2-3 seconds back to full elbow extension. Inhale on the descent. Do not bounce out of the stretched position.",
+    "Keep the upper arms glued to the ball throughout — no sliding, no shoulder elevation. Each rep starts from a dead stop at the bottom."
+  ],
+  "instructionsPl": [
+    "Połóż średnio-twardą piłkę gimnastyczną na podłodze. Uklęknij po drugiej stronie piłki, kolana na szerokość bioder, stopy luźno z tyłu.",
+    "Złap dwa hantle nachwytem dolnym (dłonie skierowane w górę) i połóż ramiona ponad łokciem oraz tricepsy na szczycie piłki — przedramiona zwisają po przeciwnej stronie w stronę podłogi.",
+    "Lekko oprzyj klatkę o piłkę. Utrzymuj napięty tułów — nie zapadaj się w piłkę i nie wyginaj lędźwi w przeprost.",
+    "Z pełnego zwisu, z łokciami w pełnym wyproście, uginaj oba hantle do góry pracując wyłącznie w stawach łokciowych. Wydychaj w fazie unoszenia.",
+    "Zakończ ruch gdy przedramiona dojdą do pionu i biceps będzie w pełnym skurczu. Mocno napnij na chwilę w górnej pozycji.",
+    "Opuszczaj hantle w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania. Nie odbijaj się z dolnej, rozciągniętej pozycji.",
+    "Ramiona ponad łokciem mają cały czas dotykać piłki — żadnego ślizgania ani unoszenia barków. Każde powtórzenie zaczynaj z zatrzymanej, w pełni wyprostowanej pozycji."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis", "core"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "obliques", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S7",
+    "brachioradialis": "S5",
+    "core": "S4",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "obliques": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "stability_ball"],
+    "optional": ["mat", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["preacher-curl", "spider-curl", "incline-dumbbell-curl", "concentration-curl"],
+    "alternatives": ["preacher-curl", "spider-curl", "incline-dumbbell-curl", "dumbbell-curl", "concentration-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kneel behind the ball, knees hip-width",
+      "Drape triceps over the top of the ball",
+      "Supinated grip, palms facing up",
+      "Chest light on the ball, core braced",
+      "Arms hang fully extended at the start"
+    ],
+    "setup_cues_pl": [
+      "Uklęknij za piłką, kolana na szerokość bioder",
+      "Połóż tricepsy na szczycie piłki",
+      "Chwyt podchwytem, dłonie skierowane w górę",
+      "Klatka lekko o piłkę, brzuch napięty",
+      "Ramiona zwisają w pełnym wyproście na starcie"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay on the ball",
+      "Squeeze the biceps hard at the top",
+      "Lower slowly — control the stretch at the bottom",
+      "Do not roll the ball or slide the arms",
+      "Full elbow lockout at the bottom of every rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem leżą na piłce",
+      "Mocno spinaj biceps w górnej pozycji",
+      "Opuszczaj wolno — kontroluj rozciągnięcie na dole",
+      "Nie tocz piłki ani nie ślizgaj ramion",
+      "Pełny wyprost łokci na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sliding the upper arms forward on the ball at the top",
+        "faultPl": "Ślizganie ramion do przodu po piłce w górnej pozycji",
+        "cause": "Load too heavy, surface too slippery, or trying to extend ROM beyond full biceps contraction",
+        "causePl": "Zbyt duży ciężar, śliska powierzchnia piłki, lub próba wydłużenia zakresu ponad pełny skurcz bicepsa",
+        "cue": "Pin the triceps to the ball. Stop curling once forearms reach vertical.",
+        "cuePl": "Dociskaj tricepsy do piłki. Zakończ uginanie gdy przedramiona dojdą do pionu."
+      },
+      {
+        "fault": "Bouncing out of the bottom (stretched) position",
+        "faultPl": "Odbijanie się z dolnej, rozciągniętej pozycji",
+        "cause": "Avoiding the hardest part of the strength curve, ego lifting, or fatigued biceps",
+        "causePl": "Unikanie najtrudniejszego punktu krzywej siły, ego, lub zmęczone bicepsy",
+        "cue": "Pause for one second at full extension before reversing. Lower the load if you cannot.",
+        "cuePl": "Zatrzymaj się na sekundę w pełnym wyproście przed powrotem. Zmniejsz ciężar jeśli nie potrafisz."
+      },
+      {
+        "fault": "Lifting the shoulders / shrugging during the curl",
+        "faultPl": "Unoszenie barków / wzruszanie nimi podczas uginania",
+        "cause": "Anterior deltoid and upper trapezius trying to help when biceps fatigue, or load too heavy",
+        "causePl": "Włączanie przednich aktonów barków i kapturowego, gdy biceps się męczy, lub zbyt duży ciężar",
+        "cue": "Keep shoulders pulled down. If you cannot, reduce weight.",
+        "cuePl": "Trzymaj barki ściągnięte w dół. Jeśli nie potrafisz — zmniejsz ciężar."
+      },
+      {
+        "fault": "Collapsing the chest into the ball / lumbar hyperextension",
+        "faultPl": "Zapadanie klatki w piłkę / przeprost lędźwiowy",
+        "cause": "Passive resting on the ball instead of active bracing, weak core, or unstable ball position",
+        "causePl": "Bierne opieranie się o piłkę zamiast aktywnego napięcia, słabe mięśnie głębokie, lub niestabilna pozycja piłki",
+        "cue": "Brace the abs and stay long through the spine. Ball supports, it does not hold you up.",
+        "cuePl": "Napnij brzuch i utrzymaj długi kręgosłup. Piłka tylko wspiera — nie podtrzymuje cię."
+      },
+      {
+        "fault": "Wrist flexion at the top (curling the wrist toward the biceps)",
+        "faultPl": "Zginanie nadgarstków w górnej pozycji (ku bicepsowi)",
+        "cause": "Trying to add extra ROM, weak biceps, or habit from light dumbbell training",
+        "causePl": "Próba dodania zakresu, słaby biceps, lub nawyk z treningu lekkimi hantlami",
+        "cue": "Keep wrists straight in line with forearms. Knuckles point up at the top.",
+        "cuePl": "Nadgarstki proste w linii z przedramieniem. W górnej pozycji kostki skierowane w górę."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light brace throughout to keep the torso stable on the unstable ball.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię, aby ustabilizować tułów na niestabilnej piłce."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Preacher position loads the stretched biceps tendon heavily. Reduce range at the bottom (stop short of full extension), use lighter loads with higher reps (12-15), avoid heavy eccentrics.",
+      "modificationPl": "Pozycja modlitewnika mocno obciąża rozciągnięte ścięgno bicepsa. Skróć zakres w dolnej fazie (nie schodź do pełnego wyprostu), używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15), unikaj ciężkich faz negatywnych.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "elbow_hyperextension_or_instability",
+      "severity": "caution",
+      "modification": "Bottom position places the elbow into terminal extension under load. Stop short of full lockout (10-15° flexion), use a controlled tempo, never bounce.",
+      "modificationPl": "Pozycja dolna ustawia łokieć w pełnym wyproście pod obciążeniem. Zatrzymuj się przed pełnym wyprostem (10-15° zgięcia), używaj kontrolowanego tempa, nigdy nie odbijaj.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Kneeling position with chest on the ball can encourage lumbar extension if the core is not braced. Switch to seated preacher curl on a stable bench.",
+      "modificationPl": "Pozycja w klęku z klatką na piłce może prowokować przeprost lędźwiowy gdy brzuch nie jest napięty. Przejdź na siedzący preacher curl na stabilnej ławce.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "knee_pain_or_meniscus_issues",
+      "severity": "modify",
+      "modification": "Prolonged kneeling on a hard floor stresses the patella and meniscus. Use a thick mat or pad under the knees, or switch to a seated/standing variation.",
+      "modificationPl": "Długi klęk na twardej podłodze obciąża rzepkę i łąkotki. Użyj grubej maty lub poduszki pod kolana, albo przejdź na wariant siedzący/stojący.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy) | 4x8-10 (strength accessory) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-preacher-curl-over-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-preacher-curl-over-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-preacher-curl-over-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-preacher-curl-over-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-preacher-curl-over-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-preacher-curl-over-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-preacher-curl-over-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: atleta klęczy za piłką gimnastyczną, oba ramiona oparte tricepsami o szczyt piłki, przedramiona zwisają w pełnym wyproście po przeciwnej stronie piłki w stronę podłogi, hantle trzymane podchwytem (dłonie do góry), biceps i przedramiona podświetlone na czerwono — pozycja startowa preacher curl. Frame 2: pełny skurcz bicepsa, oba hantle uniesione na wysokość barków, przedramiona pionowo, ramiona ponad łokciem nadal leżą na piłce — modelowe wykonanie obustronne. Frame 4: powrót do pełnego wyprostu z widocznym 'ghostem' fazy szczytowej. Ćwiczenie jednoznacznie zidentyfikowane jako bilateralny preacher curl z hantlami z piłką gimnastyczną zastępującą pad modlitewnika. Klęk na podłodze, klatka lekko o piłkę, ruch wyłącznie w stawach łokciowych. Wszystkie pola PL napisane od zera. Dodano core jako secondary muscle (niestabilność piłki) zgodnie ze specyfiką.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbells", "stability_ball", "core", "upper_body", "kneeling"]
+}

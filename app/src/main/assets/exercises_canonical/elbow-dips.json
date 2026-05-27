@@ -1,0 +1,206 @@
+{
+  "id": "elbow-dips",
+  "name": "Elbow Dips (Parallel Bars)",
+  "namePl": "Dipy na łokciach (forearm dips)",
+  "aliases": ["forearm dips", "parallel bar dip variation", "elbow position dip", "low parallel bar dip"],
+  "aliasesPl": ["dipy z przedramionami na poręczach", "dipy w pozycji łokciowej", "dipy forearm", "dipy na niskich poręczach"],
+
+  "description": "Compound bodyweight pushing exercise performed on parallel bars where the athlete supports the body between rigid bars and lowers by bending the elbows. In the jahel reference clip the lifter grips the bars with hands and descends to a bottom position where the upper arms are parallel to the bars and the chest passes between them. The pattern targets the triceps as the prime mover, with strong assistance from the lower pectoralis and anterior deltoid. The forward lean of the torso (~15-20°) gives a balanced triceps/chest emphasis. Mechanically identical to a parallel-bar dip; the 'elbow' name refers to the deep elbow flexion reached at the bottom and the tracking of the elbows alongside the ribs.",
+  "descriptionPl": "Wielostawowe ćwiczenie pchające z masą własnego ciała wykonywane na poręczach równoległych, w którym atleta podpiera ciało pomiędzy sztywnymi drążkami i schodzi w dół przez zgięcie łokci. W referencyjnym klipie jahel atleta chwyta poręcze dłońmi i schodzi do pozycji dolnej, w której ramiona są równoległe do poręczy, a klatka przechodzi pomiędzy nimi. Wzorzec ruchowy obciąża głównie tricepsy jako prime mover, z mocnym wsparciem dolnej klatki i przedniego aktonu naramiennego. Lekkie pochylenie tułowia do przodu (~15-20°) daje zbalansowane obciążenie tricepsów i klatki. Mechanicznie identyczne z dipem na poręczach równoległych; nazwa „elbow / na łokciach” odnosi się do mocnego zgięcia łokci w pozycji dolnej i prowadzenia łokci wzdłuż żeber, nie do oparcia przedramion na poręczach.",
+
+  "instructions": [
+    "Approach the parallel bars and grip them with a neutral grip, hands directly under the shoulders, knuckles pointing outward.",
+    "Press up into a support hold with elbows fully locked, shoulders pulled down and back, chest tall, ribs stacked over hips.",
+    "Bend the knees and cross the ankles behind you, or keep the legs straight and squeezed together. Glutes engaged, toes pointed.",
+    "Establish a slight forward lean of about 15-20° at the torso to balance triceps and chest involvement.",
+    "Begin the descent by bending the elbows under control over 2-3 seconds. Drive the elbows backward along the ribs, not flared sideways.",
+    "Lower until the upper arms are parallel to the floor or slightly below — shoulders should pass below the elbows for full ROM.",
+    "Pause briefly at the bottom without bouncing. Keep the chest up and avoid shrugging or rolling the shoulders forward.",
+    "Drive back up by extending the elbows powerfully and squeezing the triceps. Keep the torso lean consistent through the press.",
+    "Reach full lockout at the top with arms straight and shoulders packed down. Reset breath and repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Podejdź do poręczy równoległych i chwyć je chwytem neutralnym, dłonie dokładnie pod barkami, knykcie skierowane na zewnątrz.",
+    "Wepchnij się do podporu z łokciami w pełni zablokowanymi, barki ściągnięte w dół i w tył, klatka wysoko, żebra nad biodrami.",
+    "Zegnij kolana i skrzyżuj kostki za sobą lub trzymaj nogi proste i sklejone razem. Pośladki napięte, palce stóp wyciągnięte.",
+    "Ustaw lekkie pochylenie tułowia do przodu, około 15-20°, dla zbalansowanej pracy tricepsa i klatki.",
+    "Rozpocznij schodzenie zginając łokcie pod kontrolą przez 2-3 sekundy. Prowadź łokcie w tył wzdłuż żeber, nie rozkładaj ich na boki.",
+    "Schodź aż ramiona będą równoległe do podłogi lub odrobinę poniżej — barki powinny przejść poniżej łokci dla pełnego zakresu.",
+    "Zatrzymaj się krótko na dole bez odbijania. Trzymaj klatkę wysoko, nie wzruszaj barków i nie pozwól im wjechać do przodu.",
+    "Wepchnij się z powrotem mocno prostując łokcie i ściskając tricepsy. Utrzymaj to samo pochylenie tułowia podczas pchnięcia.",
+    "Sięgnij do pełnego wyprostu na górze z prostymi rękoma i barkami ściągniętymi w dół. Złap oddech i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii", "pectoralis_major", "anterior_deltoid"],
+    "secondary": ["serratus_anterior", "lower_pectoralis"],
+    "stabilizers": ["rotator_cuff", "core", "rectus_abdominis", "rhomboids", "lats", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "pectoralis_major": "P8",
+    "anterior_deltoid": "P7",
+    "lower_pectoralis": "S7",
+    "serratus_anterior": "S6",
+    "rotator_cuff": "S5",
+    "core": "S5",
+    "rectus_abdominis": "S4",
+    "rhomboids": "T3",
+    "lats": "T3",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["parallel_bars"],
+    "optional": ["dip_belt", "weight_vest", "wrist_wraps", "chalk"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bench-dip", "assisted-triceps-dip-kneeling", "negative-dip"],
+    "progression_to": ["weighted-triceps-dip", "ring-dips"],
+    "alternatives": ["triceps-dip", "bench-dip", "ring-dips"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bars roughly shoulder-width — too wide overloads the shoulder capsule",
+      "Lock the arms hard at the top — shoulders packed down and back, chest tall",
+      "Set a consistent 15-20° forward lean — keep it identical every rep",
+      "Knees bent and ankles crossed behind you, or legs straight and glued together",
+      "Brace the core like for a heavy squat — ribs stacked over hips, no flaring"
+    ],
+    "setup_cues_pl": [
+      "Poręcze na szerokość barków — zbyt szeroko przeciąża torebkę stawową barku",
+      "Mocno zablokuj ręce na górze — barki ściągnięte w dół i w tył, klatka wysoko",
+      "Ustaw stałe pochylenie tułowia 15-20° do przodu — trzymaj identyczne każde powtórzenie",
+      "Kolana zgięte i kostki skrzyżowane za sobą lub nogi proste i sklejone razem",
+      "Napnij brzuch jak do ciężkiego przysiadu — żebra nad biodrami, bez wypychania"
+    ],
+    "execution_cues": [
+      "Lead with the elbows traveling backward along the ribs, not the chest dropping",
+      "Lower until the shoulders sit below the elbows — that is full ROM",
+      "Drive the bars down into the floor on the press, don't push yourself away",
+      "Lock the elbows completely at the top of every rep — no half lockouts",
+      "Pause 1 second at the bottom to kill momentum and own the deep position"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch łokciami w tył wzdłuż żeber, nie klatką w dół do przodu",
+      "Schodź aż barki znajdą się poniżej łokci — to pełen zakres",
+      "Wciskaj poręcze w dół do podłogi podczas pchania, nie odpychaj się od nich",
+      "Pełen wyprost łokci na górze w każdym powtórzeniu — bez ćwierć-blokad",
+      "Pauza 1 sekunda na dole, żeby zabić rozmach i zapanować nad głęboką pozycją"
+    ],
+    "common_faults": [
+      {
+        "fault": "Partial range of motion — shoulders never pass below elbows",
+        "faultPl": "Częściowy zakres ruchu — barki nie schodzą poniżej łokci",
+        "cause": "Strength deficit at the bottom or fear of the deep stretch position. Half-dips dramatically reduce hypertrophy and triceps development.",
+        "causePl": "Brak siły w pozycji dolnej lub strach przed głębokim rozciągnięciem. Półdipy drastycznie ograniczają hipertrofię i rozwój tricepsa.",
+        "cue": "Lower until upper arms are at least parallel to the floor — feel the chest and triceps stretch. Use negatives or band assistance until full ROM is owned.",
+        "cuePl": "Schodź aż ramiona będą co najmniej równoległe do podłogi — poczuj rozciągnięcie klatki i tricepsa. Używaj negatywów lub asysty gumy aż opanujesz pełen zakres."
+      },
+      {
+        "fault": "Elbows flaring out to 90° from torso",
+        "faultPl": "Łokcie rozchodzą się na boki do 90° od tułowia",
+        "cause": "Bars set too wide or chasing chest stretch carelessly. Excessive flare stresses the anterior shoulder capsule and biceps tendon.",
+        "causePl": "Zbyt szerokie ustawienie poręczy lub niechlujne szukanie rozciągnięcia klatki. Nadmierne rozłożenie obciąża przednią torebkę barku i ścięgno bicepsa.",
+        "cue": "Track the elbows 30-45° from the sides, drawing them back rather than flaring sideways. If bars are too wide, find a narrower station.",
+        "cuePl": "Prowadź łokcie w zakresie 30-45° od boków, ciągnij je w tył, nie rozkładaj na boki. Jeśli poręcze są za szerokie, znajdź węższą stację."
+      },
+      {
+        "fault": "Swinging legs / kipping through reps",
+        "faultPl": "Machanie nogami / kipping w powtórzeniach",
+        "cause": "Lack of core control or using momentum to grind through hard reps. Robs target muscles of tension and trains a sloppy pattern.",
+        "causePl": "Brak kontroli korpusu lub używanie rozmachu, żeby przebrnąć przez trudne powtórzenia. Pozbawia mięśnie docelowe napięcia i utrwala niechlujny wzorzec.",
+        "cue": "Squeeze glutes, cross ankles, point toes and lock the legs in one position. If you need to swing to finish a rep, the rep does not count.",
+        "cuePl": "Ściśnij pośladki, skrzyżuj kostki, wyciągnij palce stóp i zablokuj nogi w jednej pozycji. Jeśli musisz machać żeby skończyć powtórzenie, ono się nie liczy."
+      },
+      {
+        "fault": "Shoulders rolling forward / collapsing at the bottom",
+        "faultPl": "Barki wjeżdżają do przodu / zapadnięcie na dole",
+        "cause": "Weak scapular stabilizers and lack of active shoulder support. The humeral head sits anterior in the socket, irritating the capsule and labrum.",
+        "causePl": "Słabe stabilizatory łopatki i brak aktywnego podporu barku. Głowa kości ramiennej wjeżdża do przodu w panewce, drażniąc torebkę stawową i obrąbek.",
+        "cue": "Throughout the rep keep the chest up and shoulders pulled down. If you can't hold that at depth, shorten the ROM until you can.",
+        "cuePl": "Przez cały ruch trzymaj klatkę wysoko, a barki ściągnięte w dół. Jeśli nie utrzymasz tego na głębokości, skróć zakres aż dasz radę."
+      },
+      {
+        "fault": "No full lockout at the top",
+        "faultPl": "Brak pełnego wyprostu na górze",
+        "cause": "Cutting reps short to keep tension or simply fatigue. Half-lockouts cheat the triceps of their hardest contraction.",
+        "causePl": "Skracanie powtórzeń żeby utrzymać napięcie lub po prostu zmęczenie. Półwyprosty okradają tricepsy z najtrudniejszego skurczu.",
+        "cue": "Push until elbows are fully straight and shoulders packed down. If you cannot lock out, you've hit your real rep limit — end the set.",
+        "cuePl": "Pchaj aż łokcie będą całkowicie wyprostowane, a barki ściągnięte w dół. Jeśli nie możesz się wyprostować, to jest twój rzeczywisty limit — zakończ serię."
+      }
+    ],
+    "breathing": "Inhale at the top and brace the core. Hold the breath through the descent and the hardest portion of the press (light Valsalva). Exhale at the top lockout. For high-rep sets, breathe in cycles between reps at the top.",
+    "breathingPl": "Wdech na górze, brzuch napięty. Wstrzymaj oddech podczas schodzenia i w najtrudniejszej części pchnięcia (lekka Valsalva). Wydech przy pełnym wyproście na górze. Przy seriach na wysokie powtórzenia oddychaj cyklicznie między powtórzeniami na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "The deep dip position pinches the anterior shoulder capsule and rotator cuff. Avoid full ROM until pain-free. Switch to bench dips with limited depth or close-grip pushups.",
+      "modificationPl": "Głęboka pozycja dipa zaciska przednią torebkę stawową barku i stożek rotatorów. Unikaj pełnego zakresu do ustąpienia bólu. Przejdź na bench dips z ograniczoną głębokością lub pompki wąskim chwytem.",
+      "alternative": "bench-dip"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Full lockout heavily loads the distal triceps tendon. Stop short of complete extension (95-98%), reduce volume, and prioritize tempo eccentric over high reps.",
+      "modificationPl": "Pełen wyprost mocno obciąża dystalne ścięgno tricepsa. Zatrzymuj się tuż przed całkowitym wyprostem (95-98%), zmniejsz objętość i postaw na powolny ekscentryk zamiast wysokich powtórzeń.",
+      "alternative": "assisted-triceps-dip-kneeling"
+    },
+    {
+      "condition": "ac_joint_separation",
+      "severity": "avoid",
+      "modification": "The deep dip position stresses the acromioclavicular joint at end range. Avoid until full clinical recovery. Substitute with horizontal pushing variations.",
+      "modificationPl": "Głęboka pozycja dipa obciąża staw barkowo-obojczykowy w skrajnym zakresie. Unikaj do pełnego klinicznego wyzdrowienia. Zastąp horyzontalnym pchaniem.",
+      "alternative": "barbell-bench-press"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Fixed parallel bars lock the wrist in extension under high bodyweight load. Use wrist wraps for support, limit ROM, or switch to parallettes that allow slight grip adjustment.",
+      "modificationPl": "Sztywne poręcze blokują nadgarstek w wyproście pod dużym obciążeniem masy ciała. Używaj opasek na nadgarstki, ogranicz zakres lub przejdź na parallettes, które pozwalają na lekką korektę chwytu.",
+      "alternative": "bench-dip"
+    }
+  ],
+
+  "typical_sets_reps": "4x6-12 (hypertrophy) | 3-5x3-6 (strength with added weight) | 3x AMRAP (bodyweight conditioning)",
+
+  "media": {
+    "primary": "elbow-dips.gif",
+    "frames_extracted": [
+      "frames/elbow-dips/frame_0_start.png",
+      "frames/elbow-dips/frame_1_early.png",
+      "frames/elbow-dips/frame_2_mid.png",
+      "frames/elbow-dips/frame_3_late.png",
+      "frames/elbow-dips/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/elbow-dips"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel (frame 0/1/2/3/4). Klatka 0 (start): postać w pełnym podporze na dwóch sztywnych poręczach stacji do dipów (power tower z dodatkowym oparciem dla knee raise w tle, ten sam set jaki w triceps-dip.gif), ręce w pełni wyprostowane chwytem dłoniowym na poręczach, kolana lekko zgięte z nogami pod ciałem, tułów w lekkim pochyleniu do przodu — klasyczny start parallel-bar dipa. Klatka 1 (early descent): około 50% schodzenia, łokcie zgięte ~45°, klatka i barki wyraźnie zaczynają iść w dół, widoczne 'echo' poprzedniej klatki (efekt GIFa). Klatka 2 (mid/bottom): pozycja dolna, ramiona praktycznie równoległe do poręczy, barki na poziomie lub nieznacznie poniżej łokci, tułów pochylony do przodu ~15-20°, łokcie zgięte ~90° prowadzone w tył wzdłuż boków (nie rozłożone na 90°) — anatomicznie podświetlone tricepsy, klatka piersiowa i przedni akton naramienny. Klatka 3 (late): powrót w górę, ramiona prawie wyprostowane (~80%), atleta wraca do podporu. Klatka 4 (end): pełen wyprost na górze, sylwetka identyczna z klatką 0, pełna blokada łokci. UWAGA INTERPRETACYJNA: nazwa pliku elbow-dips (jahel) + polski hint forearm dips sugerują wariant z oparciem przedramion na poręczach (typu Korean dip / forearm support dip), ale GIF jednoznacznie pokazuje KLASYCZNY DIP NA DŁONIACH — atleta chwyta poręcze dłońmi, przedramiona są pionowe i NIE są oparte na drążkach. Mechanicznie ćwiczenie jest niemal identyczne z triceps-dip.gif (ten sam sprzęt, ta sama trajektoria, podobny kąt tułowia). Nazwa 'elbow-dips' najprawdopodobniej odnosi się u jahela do głębokiego zgięcia łokci w pozycji dolnej i prowadzenia łokci wzdłuż żeber. Spisałem ćwiczenie wiernie do tego co pokazuje GIF, z notatką o nazewnictwie w description i aliases. Wszystkie pola PL napisane od zera, polska terminologia kalisteniki (dipy, poręcze, podpór, knykcie, ekscentryk, Valsalva, ROM jako 'zakres'). Brak tłumaczenia maszynowego.",
+
+  "tags": ["calisthenics", "bodyweight", "parallel_bars", "upper_body", "push", "triceps_builder", "lower_chest", "intermediate", "compound", "weighted_dip_prereq", "vertical_push"]
+}

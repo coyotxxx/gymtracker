@@ -1,0 +1,202 @@
+{
+  "id": "air-bike",
+  "name": "Air Bike (Bicycle Crunch)",
+  "namePl": "Brzuszki rowerek",
+  "aliases": ["air bike", "bicycle crunch", "bicycle kicks", "abdominal bicycle", "elbow-to-knee crunch", "alternating bicycle crunch"],
+  "aliasesPl": ["brzuszki rowerek", "rowerek", "rower brzuszny", "naprzemienne brzuszki łokieć-kolano", "rowerek na brzuch", "skośne rowerek"],
+
+  "description": "A dynamic core exercise combining a crunch with trunk rotation and a cycling leg motion. Lying on the back, the lifter alternately brings the opposite elbow toward the opposite knee while the other leg extends — mimicking pedaling. One of the most effective bodyweight drills for the obliques because every rep loads them under rotation, while the rectus abdominis works isometrically to hold the shoulders off the floor. A staple in beginner ab routines and a benchmark exercise in EMG studies of core activation.",
+  "descriptionPl": "Dynamiczne ćwiczenie na brzuch łączące brzuszek z rotacją tułowia i ruchem nóg jak na rowerze. Leżąc na plecach naprzemiennie przyciągasz łokieć do przeciwnego kolana, a druga noga się prostuje — jakbyś pedałował. Jedno z najskuteczniejszych ćwiczeń na skośne bez sprzętu, bo każde powtórzenie ładuje je pod rotacją, podczas gdy mięsień prosty brzucha pracuje izometrycznie utrzymując barki nad podłogą. Standardowe ćwiczenie w planach dla początkujących i benchmark w badaniach EMG aktywacji core.",
+
+  "instructions": [
+    "Lie flat on your back with your lower back pressed firmly into the floor. Place your fingertips lightly behind your ears (do NOT clasp hands behind the head — that pulls on the neck).",
+    "Bring your knees up so the thighs are roughly perpendicular to the floor and the shins are parallel — '90/90' tabletop position.",
+    "Lift your shoulder blades off the floor — this is the starting crunch position. Hold it throughout the set; do not let them touch back down.",
+    "Slowly extend your right leg out at about 30–45° above the floor while simultaneously rotating your torso to bring your right elbow toward your left knee (which stays drawn in).",
+    "Pause briefly at the contracted position — feel the squeeze in the right oblique.",
+    "Smoothly switch sides: extend the left leg, draw the right knee in, and rotate the left elbow toward the right knee.",
+    "Continue alternating in a controlled, fluid cycling motion. One full cycle (left + right) = 2 reps.",
+    "Breathe rhythmically — exhale into each rotation, inhale on the transition through center. Avoid pulling on the neck at any point."
+  ],
+  "instructionsPl": [
+    "Połóż się płasko na plecach z dolną częścią pleców mocno przyciśniętą do podłogi. Połóż opuszki palców lekko za uszami (NIE splataj rąk za głową — to pociąga szyję).",
+    "Unieś kolana tak żeby uda były mniej więcej prostopadłe do podłogi, a łydki równolegle — pozycja '90/90' (tabletop).",
+    "Oderwij łopatki od podłogi — to pozycja startowa brzuszka. Utrzymuj ją przez cały set; nie kładź barków z powrotem.",
+    "Powoli wyprostuj prawą nogę pod kątem ok. 30–45° nad podłogą, jednocześnie obracając tułów i prowadząc prawy łokieć w stronę lewego kolana (które przyciągasz do siebie).",
+    "Zatrzymaj się na chwilę w pozycji skurczu — poczuj napięcie w prawym skośnym.",
+    "Płynnie zmień stronę: wyprostuj lewą nogę, przyciągnij prawe kolano, obróć lewy łokieć w stronę prawego kolana.",
+    "Kontynuuj naprzemiennie w kontrolowanym, płynnym ruchu pedałowania. Pełny cykl (lewo + prawo) = 2 powtórzenia.",
+    "Oddychaj rytmicznie — wydech na każdą rotację, wdech na powrocie przez środek. Nigdy nie ciągnij za szyję."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis"],
+    "secondary": ["hip_flexors", "transverse_abdominis"],
+    "stabilizers": ["erector_spinae", "quadriceps", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "rectus_abdominis": "P8",
+    "hip_flexors": "S7",
+    "transverse_abdominis": "S5",
+    "erector_spinae": "T3",
+    "quadriceps": "T3",
+    "serratus_anterior": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["yoga_mat", "ab_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dead-bug", "crunch"],
+    "progression_to": ["weighted-bicycle-crunch", "decline-bicycle-crunch", "hanging-knee-raise-twist"],
+    "alternatives": ["russian-twist", "cross-body-crunch", "mountain-climber", "alternate-heel-touchers"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lower back glued to the floor — no arching",
+      "Fingertips behind ears, elbows wide, NOT clasped",
+      "Shoulder blades off the floor before rep #1",
+      "Knees in 90/90 tabletop to start",
+      "Eyes look up at the ceiling, chin off the chest"
+    ],
+    "setup_cues_pl": [
+      "Dolny odcinek pleców przylepiony do podłogi — bez wyginania",
+      "Opuszki za uszami, łokcie szeroko, NIE splatane",
+      "Łopatki oderwane od podłogi PRZED pierwszym powtórzeniem",
+      "Kolana w pozycji 90/90 tabletop",
+      "Wzrok w sufit, broda odsunięta od klatki"
+    ],
+    "execution_cues": [
+      "Elbow goes to the OPPOSITE knee — that's where the obliques work",
+      "Rotate from the ribs, not just the arms",
+      "Extended leg stays low (~30°) — the lower it goes, the harder it is",
+      "Slow and controlled — 1 second per side, not a race",
+      "Lower back stays down through every rep"
+    ],
+    "execution_cues_pl": [
+      "Łokieć do PRZECIWNEGO kolana — tam pracują skośne",
+      "Obracaj od żeber, nie tylko ramionami",
+      "Wyprostowana noga nisko (~30°) — im niżej, tym trudniej",
+      "Wolno i z kontrolą — 1 sekunda na stronę, to nie wyścig",
+      "Dolny odcinek pleców pozostaje na podłodze w każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling on the neck with hands",
+        "faultPl": "Pociąganie głowy rękami",
+        "cause": "Hands clasped behind the head, neck flexors weak, or attempting to gain extra ROM by yanking the head forward",
+        "causePl": "Splecione dłonie za głową, słabe zginacze szyi, lub próba zwiększenia zakresu przez szarpanie głową do przodu",
+        "cue": "Touch fingertips lightly behind your ears with elbows pointed sideways. If your neck hurts, you're pulling — let the abs do the work.",
+        "cuePl": "Dotknij opuszkami lekko za uszami, łokcie szeroko na boki. Jeśli boli szyja — ciągniesz głowę, daj brzuchu pracować."
+      },
+      {
+        "fault": "No torso rotation (only legs cycle)",
+        "faultPl": "Brak rotacji tułowia (tylko nogi pedałują)",
+        "cause": "Weak obliques, or focusing on the leg motion instead of the elbow-to-knee twist; ribcage stays facing the ceiling",
+        "causePl": "Słabe skośne lub skupienie na pracy nóg zamiast na skręcie łokieć-kolano; klatka piersiowa cały czas zwrócona do sufitu",
+        "cue": "Lift the SHOULDER (not just the elbow) off the floor and rotate the whole ribcage. The shoulder moves toward the opposite hip.",
+        "cuePl": "Unieś BARK (nie tylko łokieć) z podłogi i obróć całą klatkę. Bark idzie w stronę przeciwnego biodra."
+      },
+      {
+        "fault": "Going too fast without control",
+        "faultPl": "Zbyt szybkie tempo bez kontroli",
+        "cause": "Momentum-driven reps trying to hit a rep count; legs flailing, torso barely moving",
+        "causePl": "Powtórzenia z rozpędu w pogoni za liczbą; nogi machają, tułów ledwo pracuje",
+        "cue": "1 second per side, brief pause when elbow meets knee. If you can't pause, you're using momentum.",
+        "cuePl": "1 sekunda na stronę, krótka pauza gdy łokieć dotyka kolana. Jeśli nie umiesz się zatrzymać — używasz rozpędu."
+      },
+      {
+        "fault": "Incomplete ROM (elbow doesn't reach knee)",
+        "faultPl": "Niepełny zakres ruchu (łokieć nie dochodzi do kolana)",
+        "cause": "Tight obliques, short trunk, or simply not rotating enough — settling for a half-rep",
+        "causePl": "Spięte skośne, krótki tułów lub po prostu zbyt mała rotacja — kończenie na półpowtórzeniu",
+        "cue": "Touch — or come within an inch of — the opposite knee on every rep. Knee can come slightly toward the elbow too, meet in the middle.",
+        "cuePl": "Dotknij — lub podejdź na 2 cm — do przeciwnego kolana w każdym powtórzeniu. Kolano też może wyjść do łokcia, spotkajcie się w połowie drogi."
+      },
+      {
+        "fault": "Lower back lifting off the floor",
+        "faultPl": "Dolne plecy odrywają się od podłogi",
+        "cause": "Extended leg held too low for the level of core strength — hip flexors overpower the abs and tilt the pelvis forward",
+        "causePl": "Wyprostowana noga zbyt nisko jak na poziom siły brzucha — zginacze biodra przejmują pracę i pochylają miednicę do przodu",
+        "cue": "Raise the extended leg HIGHER (~45–60°) until you can keep the lower back glued down. Lower it as you get stronger.",
+        "cuePl": "Trzymaj wyprostowaną nogę WYŻEJ (~45–60°) aż utrzymasz dolne plecy przyklejone do podłogi. Obniżaj wraz z postępami siły."
+      }
+    ],
+    "breathing": "Exhale forcefully into each rotation as the elbow meets the knee — this helps the obliques contract. Inhale through the nose as you transition through the center. Never hold the breath; this is a continuous, rhythmic exercise.",
+    "breathingPl": "Wydychaj mocno na każdą rotację gdy łokieć spotyka kolano — to pomaga skośnym się napiąć. Wdech nosem przy przejściu przez środek. Nigdy nie wstrzymuj oddechu; to ciągłe, rytmiczne ćwiczenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "neck_pain_acute",
+      "severity": "modify",
+      "modification": "Place a hand under the head for support (one only — the other works the rotation) or rest the head on the floor between reps. If pain persists, switch to dead-bug — no head lift required.",
+      "modificationPl": "Połóż jedną rękę pod głową dla podparcia (tylko jedną — druga pracuje w rotacji) lub odkładaj głowę na podłogę między powtórzeniami. Jeśli ból nie ustępuje — przejdź na dead-bug, bez unoszenia głowy.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lower_back_pain_acute",
+      "severity": "avoid",
+      "modification": "Spinal flexion + rotation under tension is high-risk for an irritated lower back. Switch to anti-rotation drills (pallof press, dead-bug) until acute pain resolves.",
+      "modificationPl": "Zgięcie kręgosłupa + rotacja pod napięciem to ryzykowny wzorzec dla podrażnionego dołu pleców. Przejdź na ćwiczenia anty-rotacyjne (pallof press, dead-bug) do czasu ustąpienia ostrego bólu.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Repeated spinal flexion combined with rotation is among the highest-risk movement patterns for disc injury. Replace with bracing-based core work.",
+      "modificationPl": "Wielokrotne zgięcie kręgosłupa z rotacją to jeden z najryzykowniejszych wzorców dla dysku. Zamień na ćwiczenia napięciowe.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "abdominal_diastasis",
+      "severity": "caution",
+      "modification": "Postpartum or with diastasis recti — repeated crunching with rotation may worsen the gap. Get cleared by a pelvic-floor specialist first; meanwhile use dead-bug or heel-slides.",
+      "modificationPl": "Po porodzie lub przy rozejściu kresy białej — powtarzane brzuszki z rotacją mogą pogłębić rozejście. Najpierw konsultacja z fizjoterapeutą uroginekologicznym; tymczasem dead-bug lub przesuwy pięt.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-40 reps (left+right counted together) | 3x30s timed sets for beginners",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "air-bike.gif",
+    "frames_extracted": [
+      "frames/air-bike/frame_0_start.png",
+      "frames/air-bike/frame_1_early.png",
+      "frames/air-bike/frame_2_mid.png",
+      "frames/air-bike/frame_3_late.png",
+      "frames/air-bike/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/air-bike",
+    "yuhonas_id": "Air_Bike"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (24 ramki). Klatki pokazują pełen cykl rowerka brzusznego: frame_0/frame_2 = pozycja startowa (leżenie na plecach, kolana ugięte do góry w pozycji 90/90, podświetlone na czerwono rectus abdominis i prawe skośne); frame_1 = pełna rotacja w prawo (lewa noga wyprostowana nisko ~30° nad podłogą, prawe kolano przyciągnięte, tułów obrócony — widać podświetlone obliques po lewej i dolny rectus); frame_3 = transition; frame_4 = ghost overlay drugiej strony pokazujący ruch naprzemienny. Klasyczny bicycle crunch z elbow-to-opposite-knee. Mięśnie podświetlone: rectus + obliques + lekko quadriceps wyprostowanej nogi. Yuhonas Air_Bike potwierdza ten sam wzorzec ruchu (cycle pedal motion + elbow-to-opposite-knee crunch). Movement pattern: core_flexion (główny ruch to crunch z rotacją; nie czysta rotation jak Russian Twist gdzie tułów jest już uniesiony — tu kluczowy jest też lift łopatek). Mapowanie intensywności: obliques P9 (główna praca rotacyjna), rectus P8 (izometryczny lift + dynamiczny crunch), hip_flexors S7 (cykliczna praca nóg — dlatego wyższe niż w Russian Twist). Trudność 3/10 — łatwiejsze niż Russian Twist (4/10) bo nie wymaga V-sit, ale wymaga koordynacji nóg-rąk. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — używana polska terminologia fitness (skośne, rectus, brzuszek, pozycja 90/90, tabletop). GIF skopiowany: 445 KB.",
+
+  "tags": ["core", "obliques", "rotation", "ab_isolation", "bodyweight", "high_rep", "warmup_friendly", "beginner_friendly", "no_equipment", "home_workout"]
+}

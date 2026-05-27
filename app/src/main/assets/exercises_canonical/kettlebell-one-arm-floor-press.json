@@ -1,0 +1,204 @@
+{
+  "id": "kettlebell-one-arm-floor-press",
+  "name": "Kettlebell One-Arm Floor Press",
+  "namePl": "Floor press z kettlebellą jednorącz",
+  "aliases": ["KB floor press one-arm", "single-arm kettlebell floor press", "unilateral KB floor press", "one-arm KB ground press"],
+  "aliasesPl": ["wyciskanie kettlebell z podłogi jednorącz", "floor press z kettlem jednorącz", "jednoręczny floor press kettlebell", "wyciskanie z podłogi z odważnikiem kulowym jednorącz"],
+
+  "description": "Unilateral horizontal pressing variation performed lying on the floor with a kettlebell held in one hand. The floor naturally limits range of motion at the bottom (triceps contact the ground before elbow descends below the body), which removes the deep stretch on the pec and shoulder — making this one of the most shoulder-friendly pressing variations available. The offset load of the kettlebell handle plus the single-arm execution forces heavy anti-rotation work from the obliques and contralateral core. Excellent choice for trainees rehabbing shoulder issues, lifters without access to a bench, or anyone wanting to build pressing strength while training rotational stability.",
+  "descriptionPl": "Jednostronny wariant poziomego wyciskania wykonywany leżąc na podłodze z kettlebellą trzymaną w jednej ręce. Podłoga w naturalny sposób ogranicza zakres ruchu na dole (triceps dotyka podłoża zanim łokieć zejdzie poniżej linii ciała), co eliminuje głębokie rozciąganie klatki i barku — sprawia, że jest to jeden z najbardziej przyjaznych dla barków wariantów wyciskania. Asymetryczny ciężar uchwytu kettlebelli plus jednoręczne wykonanie zmusza skośne brzucha i kontralateralny kor do ciężkiej pracy anty-rotacyjnej. Świetny wybór dla osób w rehabilitacji barku, ćwiczących bez dostępu do ławki lub każdego, kto chce budować siłę wyciskania jednocześnie trenując stabilność rotacyjną.",
+
+  "instructions": [
+    "Sit on the floor with the kettlebell beside your hip. Grab the handle with one hand and use the other to help clean it to chest level as you roll back onto your back.",
+    "Lie flat on the floor, legs extended or knees bent (knees bent is more stable and protects the lower back). The non-working hand rests on the floor or on the belly.",
+    "Position the kettlebell at chest level on the working side. The bell rests on the back of the wrist/forearm — grip the handle firmly, wrist straight (NOT bent back).",
+    "Working elbow rests on the floor at roughly 45° from the torso. Retract the shoulder blade, brace the core.",
+    "Press the kettlebell up in a controlled arc, finishing directly over the working-side shoulder. Arm extended but elbow not locked rigid.",
+    "Pause briefly at the top, fighting any rotation pulling you toward the loaded side — squeeze the opposite oblique to stay flat on the floor.",
+    "Lower the kettlebell with control until the triceps touches the floor. This is the bottom — the floor sets the ROM, do NOT try to go lower.",
+    "Brief pause on the floor (the elbow can dead-stop or stay reactive), then press up again. Complete all reps on one side before switching.",
+    "To finish safely: bring the kettlebell down, roll onto the loaded side, sit up, and place the bell on the floor."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze z kettlebellą przy biodrze. Złap uchwyt jedną ręką, a drugą pomóż wynieść ją do wysokości klatki w trakcie kładzenia się na plecy.",
+    "Połóż się płasko na podłodze, nogi wyprostowane lub kolana zgięte (zgięte kolana są stabilniejsze i chronią dolne plecy). Wolna ręka spoczywa na podłodze lub na brzuchu.",
+    "Ustaw kettlebellę na wysokości klatki po stronie pracującej. Kula spoczywa na zewnętrznej stronie nadgarstka/przedramienia — chwyć uchwyt mocno, nadgarstek prosty (NIE odgięty do tyłu).",
+    "Pracujący łokieć leży na podłodze pod kątem ok. 45° od tułowia. Ściągnij łopatkę, napnij brzuch.",
+    "Wyciśnij kettlebellę w górę kontrolowanym łukiem, kończąc bezpośrednio nad barkiem strony pracującej. Ramię wyprostowane, ale łokieć bez sztywnego lock-outu.",
+    "Krótka pauza na górze — opanuj rotację ściągającą Cię w stronę obciążenia: napnij przeciwny skośny brzucha, by pozostać płasko na podłodze.",
+    "Opuszczaj kettlebellę z kontrolą, aż triceps dotknie podłogi. To jest dół — podłoga wyznacza ROM, NIE próbuj schodzić niżej.",
+    "Krótka pauza na podłodze (łokieć może zatrzymać się martwo lub pozostać reaktywny), następnie wyciśnij ponownie. Dokończ wszystkie powtórzenia po jednej stronie zanim zmienisz rękę.",
+    "Bezpieczne zakończenie: opuść kettlebellę, przetocz się na stronę obciążoną, usiądź i odstaw kulę na podłogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["obliques", "rotator_cuff"],
+    "stabilizers": ["core", "serratus_anterior", "lats", "forearm_flexors", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P8",
+    "anterior_deltoids": "P7",
+    "obliques": "S6",
+    "rotator_cuff": "S5",
+    "core": "T4",
+    "serratus_anterior": "T3",
+    "forearm_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["floor_mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["push-up", "dumbbell-floor-press"],
+    "progression_to": ["kettlebell-one-arm-bench-press", "kettlebell-bottoms-up-press", "kettlebell-one-arm-military-press"],
+    "alternatives": ["dumbbell-floor-press", "dumbbell-one-arm-bench-press", "kettlebell-floor-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Use a 'roll-up' to safely lift — never grab a heavy KB from overhead while lying down",
+      "Knees bent for lower-back protection, feet flat on the floor",
+      "Wrist neutral and stacked — bell rests against the back of the forearm",
+      "Working elbow ~45° from torso, NOT flared to 90°",
+      "Brace the contralateral oblique BEFORE the first press — anti-rotation starts at setup"
+    ],
+    "setup_cues_pl": [
+      "Wciągaj kettlebellę 'rolką' — nigdy nie chwytaj ciężkiego KB nad głową leżąc",
+      "Kolana zgięte dla ochrony dolnych pleców, stopy płasko na podłodze",
+      "Nadgarstek prosty i ułożony liniowo — kula opiera się o zewnętrzną stronę przedramienia",
+      "Pracujący łokieć ~45° od tułowia, NIE rozsunięty na 90°",
+      "Napnij przeciwny skośny brzucha PRZED pierwszym wyciśnięciem — anty-rotacja zaczyna się w pozycji wyjściowej"
+    ],
+    "execution_cues": [
+      "Press straight up over the shoulder of the working side — not across the body",
+      "Floor sets your ROM — let the triceps dead-stop, don't shrug the elbow off",
+      "Stay flat on the floor — don't let the loaded side roll up",
+      "Squeeze the off-side oblique like you're doing a side plank in reverse",
+      "Lower 2-3 seconds, press explosively but with control"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę nad barkiem strony pracującej — nie w poprzek ciała",
+      "Podłoga wyznacza ROM — pozwól tricepsowi się zatrzymać, nie unoś łokcia z podłogi",
+      "Pozostań płasko na podłodze — nie pozwól by strona obciążona uniosła się do góry",
+      "Napnij przeciwny skośny brzucha jak gdybyś robił odwrotną deskę bokiem",
+      "Opuszczaj 2-3 sekundy, wyciskaj wybuchowo ale z kontrolą"
+    ],
+    "common_faults": [
+      {
+        "fault": "Body rolls toward the loaded side during the press",
+        "faultPl": "Ciało przewala się w stronę obciążonej ręki podczas wyciskania",
+        "cause": "No anti-rotation bracing; weak obliques; weight too heavy for unilateral control",
+        "causePl": "Brak napięcia anty-rotacyjnego; słabe skośne brzucha; za ciężki ciężar dla kontroli jednoręcznej",
+        "cue": "Glue the opposite shoulder blade and hip to the floor. If you can't, the kettlebell is too heavy — drop weight and rebuild stability.",
+        "cuePl": "Przyklej przeciwną łopatkę i biodro do podłogi. Jeśli nie potrafisz, kettlebella jest za ciężka — zmniejsz ciężar i odbuduj stabilność."
+      },
+      {
+        "fault": "Wrist bent backward — bell crushes the back of the hand",
+        "faultPl": "Nadgarstek odgięty do tyłu — kula miażdży zewnętrzną stronę dłoni",
+        "cause": "Loose grip; bell flopping in the handle; weak forearm muscles",
+        "causePl": "Luźny chwyt; kula chybocząca się w uchwycie; słabe mięśnie przedramienia",
+        "cue": "Crush the handle. Wrist straight in line with the forearm — knuckles pointing at the ceiling, not back at your face.",
+        "cuePl": "Zaciśnij uchwyt do końca. Nadgarstek prosto w linii z przedramieniem — kostki celują w sufit, nie w Twoją twarz."
+      },
+      {
+        "fault": "Trying to extend ROM below the floor (lifting elbow to drop deeper)",
+        "faultPl": "Próba wydłużenia ROM poniżej podłogi (unoszenie łokcia by zejść głębiej)",
+        "cause": "Misunderstanding the purpose of floor press; copying bench press cues",
+        "causePl": "Niezrozumienie celu floor press; kopiowanie wskazówek z wyciskania na ławce",
+        "cue": "The floor IS the point — it limits ROM to protect the shoulder. Triceps touches, brief stop, press up. Don't fight the floor.",
+        "cuePl": "Podłoga JEST sednem ćwiczenia — ogranicza ROM by chronić bark. Triceps dotyka, krótki stop, wyciskasz. Nie walcz z podłogą."
+      },
+      {
+        "fault": "Pressing across the body (kettlebell drifts toward midline)",
+        "faultPl": "Wyciskanie w poprzek ciała (kettlebella dryfuje w stronę środka)",
+        "cause": "Weak shoulder stabilizers; offset load of KB pulling the hand inward",
+        "causePl": "Słabe stabilizatory barku; asymetryczny ciężar KB ciągnący dłoń do środka",
+        "cue": "Press straight up — kettlebell should finish OVER the working shoulder, not over your sternum.",
+        "cuePl": "Wyciskaj prosto w górę — kettlebella powinna kończyć NAD pracującym barkiem, nie nad mostkiem."
+      },
+      {
+        "fault": "Asymmetric reps — strong side significantly outperforms weak side",
+        "faultPl": "Asymetryczne powtórzenia — strona silna znacznie góruje nad słabą",
+        "cause": "Long-term imbalance from bilateral training; ignoring the weaker side",
+        "causePl": "Długoterminowa asymetria z treningu bilateralnego; ignorowanie słabszej strony",
+        "cue": "Start sets with the WEAKER arm. Match the strong arm to the weak one's reps — don't push the strong side further. Over weeks the gap closes.",
+        "cuePl": "Zaczynaj serie SŁABSZĄ ręką. Dopasuj silną do liczby powtórzeń słabszej — nie pchaj strony silnej dalej. W ciągu tygodni różnica się zaciera."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold during the descent. Exhale on the press up. Bracing matters extra here — anti-rotation depends on it.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj podczas opuszczania. Wydech podczas wyciskania w górę. Napięcie ma tu szczególne znaczenie — anty-rotacja od niego zależy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_pain",
+      "severity": "modify",
+      "modification": "Floor press is already shoulder-friendly thanks to limited ROM — but if pain persists, switch to neutral-grip dumbbell or use very light KB. Stop if pain sharp.",
+      "modificationPl": "Floor press jest już przyjazny dla barków dzięki ograniczonemu ROM — ale jeśli ból utrzymuje się, przejdź na hantel z chwytem neutralnym lub użyj bardzo lekkiego KB. Przerwij jeśli ból ostry.",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Kettlebell loads the back of the wrist asymmetrically. If wrists hurt, switch to a dumbbell (handle centered in palm) instead.",
+      "modificationPl": "Kettlebella obciąża zewnętrzną stronę nadgarstka asymetrycznie. Jeśli nadgarstki bolą, zmień na hantel (uchwyt na środku dłoni).",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "core_instability_or_recent_abdominal_surgery",
+      "severity": "avoid",
+      "modification": "Unilateral pressing demands heavy anti-rotation bracing — not safe with weak or healing core. Wait for clearance and rebuild bracing capacity first.",
+      "modificationPl": "Jednostronne wyciskanie wymaga ciężkiego napięcia anty-rotacyjnego — nie jest bezpieczne ze słabym lub gojącym się korem. Poczekaj na zgodę i odbuduj zdolność napinania.",
+      "alternative": "kettlebell-floor-press"
+    },
+    {
+      "condition": "low_back_pain",
+      "severity": "modify",
+      "modification": "Bend the knees and plant feet to flatten the lumbar spine. Avoid pressing with legs extended if it causes hyperextension. Reduce weight.",
+      "modificationPl": "Zegnij kolana i postaw stopy by spłaszczyć odcinek lędźwiowy. Unikaj wyciskania z wyprostowanymi nogami jeśli powoduje hiperekstensję. Zmniejsz ciężar.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy, default) | 4-5x5-6 per side (strength) | 3x12-15 per side (stability/endurance)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "kettlebell-one-arm-floor-press.gif",
+    "frames_extracted": [
+      "frames/kettlebell-one-arm-floor-press/frame_0_start.png",
+      "frames/kettlebell-one-arm-floor-press/frame_1_early.png",
+      "frames/kettlebell-one-arm-floor-press/frame_2_mid.png",
+      "frames/kettlebell-one-arm-floor-press/frame_3_late.png",
+      "frames/kettlebell-one-arm-floor-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/kettlebell-one-arm-floor-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): osoba leży na plecach na podłodze, kettlebella w lewej ręce na poziomie klatki, łokieć wspiera się o podłogę (ograniczony ROM przez podłoże — sedno ćwiczenia). Prawa ręka wolna, leży obok ciała. Frame 2 (góra): pełne wyciśnięcie nad lewym barkiem, ramię wyprostowane, kettlebella bezpośrednio nad barkiem strony pracującej (NIE w poprzek ciała). Frame 4 (powrót w dół, motion blur): kontrolowane opuszczanie z powrotem do dołu. Podświetlone czerwono: pectoralis major (lewa strona, dominujący) + triceps + przedni deltoid. Klasyczny KB floor press jednorącz: limited ROM = shoulder-friendly, unilateral = anti-rotation challenge dla obliques (drugorzędne ale wyraźne). Polskie pola napisane od zera, terminologia zgodna z polskim środowiskiem KB ('floor press', 'kettlebella' jako spolszczenie odmieniane). Mechanic=compound, plane=sagittal, force=push, laterality=unilateral.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "kettlebell", "chest", "triceps", "shoulder_friendly", "unilateral", "anti_rotation", "floor_based", "rehab_friendly", "minimal_equipment"]
+}

@@ -1,0 +1,205 @@
+{
+  "id": "barbell-bent-arm-pullover",
+  "name": "Barbell Bent-Arm Pullover",
+  "namePl": "Pullover ze sztangą z ugiętymi rękami",
+  "aliases": ["barbell pullover bent arm", "close grip barbell pullover", "bent-elbow barbell pullover", "barbell rib-cage pullover"],
+  "aliasesPl": ["pullover ze sztangą zgięte łokcie", "pullover sztangą z ugiętymi łokciami", "pullover na klatkę ze sztangą", "pullover wąskim chwytem sztanga"],
+
+  "description": "A heavier, chest-biased pullover performed supine on a flat bench with a straight barbell held in a narrow overhand grip. The elbows are bent to roughly 90 degrees throughout the entire range — the forearms stay close to vertical relative to the bar and the bar travels in a tight arc from over the upper chest to a position behind and below the crown of the head. Compared with the straight-arm pullover, the bent-arm version shortens the lever, allows greater loading and shifts emphasis toward the sternal pectoralis while still hitting lats, serratus and long head of the triceps. A Golden-Era staple used by Reg Park and later by Schwarzenegger for chest expansion work.",
+  "descriptionPl": "Cięższy, ukierunkowany na klatkę wariant pulloveru wykonywany w leżeniu tyłem na płaskiej ławce ze sztangą prostą trzymaną wąskim chwytem nachwytem. Łokcie pozostają zgięte do około 90 stopni przez cały zakres ruchu — przedramiona są mniej więcej prostopadłe do gryfu, a sztanga przemieszcza się ciasnym łukiem znad górnej części klatki do pozycji za i poniżej czubka głowy. W porównaniu z wariantem na prostych rękach, wersja z ugiętymi łokciami skraca dźwignię, pozwala na większe obciążenie i przesuwa akcent na mostkową część mięśnia piersiowego większego, jednocześnie angażując najszersze grzbietu, zębate przednie i głowę długą tricepsa. Klasyk Złotej Ery używany przez Rega Parka, a później Arnolda Schwarzeneggera do pracy nad rozszerzaniem klatki piersiowej.",
+
+  "instructions": [
+    "Load a straight barbell on a low rack at the head end of a flat bench, or have a partner hand you the bar. Lie supine along the bench with feet planted firmly, glutes and shoulder blades anchored.",
+    "Take a narrow overhand grip — hands roughly shoulder-width or slightly inside, knuckles up. Unrack or lift the bar above the upper chest with arms vertical.",
+    "Set the starting position: bar over the upper chest, elbows bent to approximately 90 degrees, wrists stacked over the elbows, forearms vertical, shoulder blades pulled down and back.",
+    "Inhale deeply and lower the bar in a tight arc behind the head. Maintain the 90-degree elbow angle — the upper arm rotates around the shoulder, the forearm does not extend.",
+    "Continue until the bar passes the crown of the head and you feel a strong stretch through the lats, serratus and lower chest. Upper arms end roughly in line with the ears.",
+    "Reverse the motion by driving the upper arms back over the chest. Lead with the pecs and lats, not by extending the elbows. The bar should track in the same arc it descended.",
+    "Stop the concentric when the bar is back over the upper chest with the forearms vertical again. Do not pull past the chest toward the hips — that releases tension on the target muscles.",
+    "Use moderate loads. The fixed bent-arm angle and overhead-loaded shoulder make this a high-stretch, injury-prone position — strict form trumps weight every time."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę prostą w niskim stojaku przy głowie płaskiej ławki, lub poproś partnera o podanie gryfu. Połóż się tyłem wzdłuż ławki ze stopami pewnie opartymi o podłoże, pośladkami i łopatkami zakotwiczonymi.",
+    "Złap sztangę wąskim chwytem nachwytem — dłonie mniej więcej na szerokość barków lub odrobinę węziej, kostki ku górze. Zdejmij gryf ze stojaka lub unieś go nad górną część klatki na proste ramiona.",
+    "Ustaw pozycję wyjściową: sztanga nad górną klatką, łokcie zgięte do około 90 stopni, nadgarstki w pionie nad łokciami, przedramiona pionowo, łopatki ściągnięte w dół i w tył.",
+    "Głęboki wdech i opuszczanie sztangi ciasnym łukiem za głowę. Utrzymuj stały kąt 90 stopni w łokciu — ramię obraca się w stawie barkowym, przedramię nie prostuje się.",
+    "Opuszczaj aż sztanga przejdzie nad czubkiem głowy i poczujesz silne rozciągnięcie najszerszych grzbietu, zębatych i dolnej części klatki. Ramiona kończą ruch mniej więcej w linii uszu.",
+    "Odwróć ruch wprowadzając ramiona z powrotem nad klatkę. Prowadź klatką i najszerszymi, nie wyprostem łokci. Sztanga powinna wracać tym samym łukiem co opadała.",
+    "Zatrzymaj fazę koncentryczną gdy sztanga wraca nad górną klatkę, a przedramiona są znów pionowo. Nie ciągnij dalej w stronę bioder — to zdejmuje napięcie z mięśni docelowych.",
+    "Stosuj umiarkowane ciężary. Stały kąt 90 stopni w łokciu i przeciążone nad głową barki czynią z tej pozycji ćwiczenie o wysokim ryzyku kontuzji — ścisła technika zawsze przed ciężarem."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_fly",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "latissimus_dorsi", "triceps_brachii_long_head"],
+    "secondary": ["serratus_anterior", "teres_major", "rhomboids"],
+    "stabilizers": ["rotator_cuff", "core", "posterior_deltoid", "forearm_flexors", "wrist_extensors"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "latissimus_dorsi": "P8",
+    "triceps_brachii_long_head": "P7",
+    "serratus_anterior": "S6",
+    "teres_major": "S5",
+    "rhomboids": "S4",
+    "rotator_cuff": "T3",
+    "core": "T3",
+    "posterior_deltoid": "T2",
+    "forearm_flexors": "T3",
+    "wrist_extensors": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "flat_bench"],
+    "optional": ["barbell_rack", "wrist_wraps", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-bench-press", "dumbbell-pullover", "close-grip-barbell-bench-press"],
+    "progression_to": ["barbell-decline-bent-arm-pullover", "barbell-decline-wide-grip-pullover", "ez-bar-lying-bent-arms-pullover"],
+    "alternatives": ["dumbbell-pullover", "ez-bar-lying-bent-arms-pullover", "cable-pullover", "barbell-decline-bent-arm-pullover"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat with shoulder blades pinned to the bench",
+      "Narrow overhand grip — knuckles up, thumbs wrapped",
+      "Press the bar over your upper chest, forearms vertical",
+      "Lock elbows at 90 degrees — that angle never changes",
+      "Ribs stacked, glutes tight — no exaggerated lumbar arch"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko z łopatkami przyciśniętymi do ławki",
+      "Wąski chwyt nachwytem — kostki ku górze, kciuki owinięte",
+      "Wyciśnij sztangę nad górną klatkę, przedramiona pionowo",
+      "Zablokuj łokcie pod kątem 90 stopni — ten kąt się nie zmienia",
+      "Żebra ułożone, pośladki napięte — bez przesadnego mostka lędźwiowego"
+    ],
+    "execution_cues": [
+      "Rotate the upper arm — do not extend the forearm",
+      "Bar travels in an arc, not straight up and down",
+      "Feel the stretch across chest and lats at the bottom",
+      "Pull back with pecs and lats, not by straightening elbows",
+      "Stop when forearms are vertical again over the upper chest"
+    ],
+    "execution_cues_pl": [
+      "Obracaj ramieniem — nie prostuj przedramienia",
+      "Sztanga porusza się łukiem, nie prosto w górę i w dół",
+      "Poczuj rozciągnięcie klatki i najszerszych w dolnej pozycji",
+      "Przyciągaj klatką i najszerszymi, nie wyprostem łokci",
+      "Zatrzymaj ruch gdy przedramiona znów są pionowo nad klatką"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbow angle opens up under load (turns into close-grip press)",
+        "faultPl": "Kąt w łokciu otwiera się pod obciążeniem (ćwiczenie zmienia się w wyciskanie wąskim chwytem)",
+        "cause": "Weight too heavy or weak scapular control — the lats and pecs lose mechanical advantage and the triceps take over",
+        "causePl": "Zbyt duży ciężar lub słaba kontrola łopatkowa — najszersze i klatka tracą dźwignię, a triceps przejmuje pracę",
+        "cue": "Reduce the load. Imagine a brick wedged in the elbow bend — that angle is fixed at 90 degrees for the whole rep.",
+        "cuePl": "Zmniejsz ciężar. Wyobraź sobie cegłę wciśniętą w zgięcie łokcia — ten kąt jest zablokowany na 90 stopni przez cały ruch."
+      },
+      {
+        "fault": "Hyperextending the lower back to chase deeper ROM",
+        "faultPl": "Hiperextensja odcinka lędźwiowego w pogoni za większym zakresem",
+        "cause": "Trying to reach further behind the head than thoracic mobility allows",
+        "causePl": "Próba sięgnięcia dalej za głowę niż pozwala mobilność piersiowa",
+        "cue": "Ribs down, light brace. End the arc where your shoulders end — not where your spine gives way.",
+        "cuePl": "Żebra w dół, lekkie napięcie brzucha. Kończ łuk tam, gdzie kończą się barki — nie tam, gdzie ustępuje kręgosłup."
+      },
+      {
+        "fault": "Bar drifts toward the face during the eccentric",
+        "faultPl": "Sztanga zjeżdża w stronę twarzy w fazie ekscentrycznej",
+        "cause": "Wrist flexion or loss of elbow track — dangerous with a loaded barbell over the head",
+        "causePl": "Zgięcie nadgarstka lub zejście łokci z toru — niebezpieczne z obciążoną sztangą nad głową",
+        "cue": "Wrists locked straight. Track the bar past the crown of the head, not the forehead. Use a spotter for heavy sets.",
+        "cuePl": "Nadgarstki zablokowane prosto. Prowadź sztangę nad czubkiem głowy, nie nad czołem. Przy ciężkich seriach korzystaj z asekuracji."
+      },
+      {
+        "fault": "Pulling the bar all the way over the hips on the concentric",
+        "faultPl": "Przeciąganie sztangi aż nad biodra w fazie koncentrycznej",
+        "cause": "Misunderstanding the ROM — overshooting unloads the chest and lats and turns the rest into a wasted reset",
+        "causePl": "Niezrozumienie zakresu ruchu — przeciągnięcie zdejmuje napięcie z klatki i najszerszych i zamienia resztę w stracony powrót",
+        "cue": "Stop when forearms are vertical over the upper chest. That is the top — reset and repeat.",
+        "cuePl": "Zatrzymaj się gdy przedramiona są pionowo nad górną klatką. To jest góra — ustabilizuj się i powtarzaj."
+      },
+      {
+        "fault": "Bouncing out of the stretched bottom position",
+        "faultPl": "Odbijanie z dolnej pozycji rozciągniętej",
+        "cause": "Using momentum to escape the weakest point — overloads shoulders and elbows in the most vulnerable angle",
+        "causePl": "Wykorzystywanie rozpędu do przejścia przez najsłabszy punkt — przeciąża barki i łokcie w najbardziej narażonym kącie",
+        "cue": "Three seconds down, one second pause behind the head, then pull back smoothly. No bounce.",
+        "cuePl": "Trzy sekundy w dół, sekunda pauzy za głową, dopiero potem płynne przyciągnięcie. Bez odbicia."
+      }
+    ],
+    "breathing": "Inhale deeply as the bar travels back behind the head — let the rib cage expand to amplify the stretch on chest, serratus and lats. Exhale firmly during the concentric pull back over the upper chest. Hold a light core brace throughout to protect the lumbar spine from over-arching under the overhead load.",
+    "breathingPl": "Głęboki wdech podczas opuszczania sztangi za głowę — pozwól klatce piersiowej rozszerzyć się aby pogłębić rozciągnięcie klatki, zębatych i najszerszych. Mocny wydech podczas przyciągania nad górną klatkę. Utrzymuj lekkie napięcie brzucha przez cały czas, aby chronić odcinek lędźwiowy przed nadmiernym wygięciem pod obciążeniem nad głową."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_labral_pathology",
+      "severity": "modify",
+      "modification": "Overhead reaching arc compresses the subacromial space and stresses the labrum at full stretch. Reduce ROM to a pain-free range, drop the load, or switch to a cable pullover where line of resistance can be adjusted.",
+      "modificationPl": "Łuk nad głową kompresuje przestrzeń podbarkową i obciąża obrąbek w pełnym rozciągnięciu. Zmniejsz zakres do bezbolesnego, obniż ciężar lub przejdź na pullover z wyciągu, gdzie linia oporu jest regulowana.",
+      "alternative": "cable-pullover"
+    },
+    {
+      "condition": "elbow_triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Bent-arm position holds the long head of the triceps under sustained load and stretch. Use lighter weight, shorten ROM and avoid heavy eccentrics until tendon symptoms resolve. Dumbbell variant allows more wrist freedom.",
+      "modificationPl": "Pozycja zgiętych ramion utrzymuje głowę długą tricepsa pod stałym obciążeniem i rozciągnięciem. Stosuj lżejszy ciężar, skróć zakres i unikaj ciężkich faz negatywnych aż objawy ścięgna ustąpią. Wariant z hantlem daje większą swobodę nadgarstka.",
+      "alternative": "dumbbell-pullover"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_instability",
+      "severity": "caution",
+      "modification": "Stretched overhead position invites lumbar extension. Keep ribs stacked, brace the core firmly, and shorten the bottom range. If pain persists, switch to a seated machine pulldown variant.",
+      "modificationPl": "Pozycja rozciągnięta nad głową prowokuje wyprost odcinka lędźwiowego. Trzymaj żebra ułożone, mocno napnij brzuch i skróć dolny zakres. Jeśli ból nie ustępuje — przejdź na siedzący wariant ściągania z wyciągu.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "wrist_pain_or_radial_deviation_intolerance",
+      "severity": "modify",
+      "modification": "Straight barbell forces the wrists into a fixed position; narrow grip can aggravate ulnar/radial deviation issues. Use an EZ bar to relax wrist angle, or switch to a dumbbell where the hands can find a neutral grip.",
+      "modificationPl": "Sztanga prosta wymusza ustaloną pozycję nadgarstków; wąski chwyt może nasilać dolegliwości promieniowo-łokciowe. Użyj gryfu łamanego (EZ) aby rozluźnić kąt nadgarstka, lub przejdź na hantel, gdzie dłonie znajdą chwyt neutralny.",
+      "alternative": "ez-bar-lying-bent-arms-pullover"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, chest+lats) | 3-4x10-15 (stretch-focused/serratus) | 2-3x6-8 (strength, conservative loads only)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-bent-arm-pullover.gif",
+    "frames_extracted": [
+      "frames/barbell-bent-arm-pullover/frame_0_start.png",
+      "frames/barbell-bent-arm-pullover/frame_1_early.png",
+      "frames/barbell-bent-arm-pullover/frame_2_mid.png",
+      "frames/barbell-bent-arm-pullover/frame_3_late.png",
+      "frames/barbell-bent-arm-pullover/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/barbell-bent-arm-pullover"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T13:30:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (frame_0_start, frame_1_early, frame_2_mid, frame_3_late, frame_4_end). Frame 0: ćwiczący leży wzdłuż ławki płaskiej, sztanga prosta trzymana wąskim chwytem nachwytem (dłonie ok. szerokość barków), łokcie wyraźnie ugięte do ~90 stopni, sztanga nad górną klatką, klatka piersiowa i najszersze grzbietu podświetlone czerwono jako mięśnie pracujące. Frame 1-2: faza opuszczania — sztanga przemieszcza się łukiem za głowę, łokcie utrzymują kąt ~90 stopni (przedramiona prostopadłe do gryfu), klatka rozciągnięta. Frame 2 (mid): pełne dolne położenie — sztanga za i poniżej głowy, ramiona w linii uszu, mocne podświetlenie najszerszych grzbietu, zębatych i mostkowej części klatki. Frame 3-4: faza koncentryczna — sztanga wraca łukiem nad górną klatkę z 'duchem' fazy dolnej widocznym za głową. Ruch jednoznacznie zidentyfikowany jako Barbell Bent-Arm Pullover — chwyt nachwytem wąski, kąt łokcia ustalony na ~90° (znacząco różne od straight-arm gdzie kąt ~15-20°). W przeciwieństwie do dumbbell-pullover (gdzie primary = lats P9), tutaj klatka piersiowa zajmuje pierwsze miejsce (P9), bo wąski chwyt i pozycja ramion bardziej angażują mostkową część pectoralis. Triceps_brachii_long_head P7 (a nie S5 jak w hantlu) — bent-arm + wąski chwyt + nad głową = znaczące obciążenie głowy długiej tricepsa. Plik źródłowy: sources/jahel/lats/barbell-bent-arm-pullover.gif (jahel klasyfikuje to ćwiczenie pod 'lats', ale rzeczywista intensywność muscle pracy z klatki dominuje — co potwierdza nazwa 'Bent-Arm' z literatury Złotej Ery). Wszystkie pola PL napisane od zera, nie tłumaczone z jahel (jahel ma tylko ogólne instrukcje typu 'perform in controlled manner').",
+
+  "tags": ["bodybuilding", "chest", "back", "lats", "serratus", "compound", "barbell", "bench", "stretch", "classic", "golden_era", "upper_body", "rib_cage_expansion"]
+}

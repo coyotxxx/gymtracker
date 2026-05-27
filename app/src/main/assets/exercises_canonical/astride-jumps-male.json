@@ -1,0 +1,203 @@
+{
+  "id": "astride-jumps-male",
+  "name": "Astride Jumps (Jumping Jacks)",
+  "namePl": "Pajace",
+  "aliases": ["jumping jacks", "star jumps", "side-straddle hop", "stride jumps", "astride hops", "astride jumps male"],
+  "aliasesPl": ["pajacyki", "jumping jacki", "skoki rozkroczne", "skoki gwiazdowe", "pajac", "pajace meskie"],
+
+  "description": "Classic full-body bodyweight cardio drill in which the athlete simultaneously jumps the feet out to a wide stance while sweeping straight arms overhead, then jumps the feet back together as the arms return to the sides. Each rep is a coordinated 'X-shape' open + close. A go-to general warm-up and conditioning staple in PE classes, military fitness, kids' sport and HIIT circuits worldwide — popularized by the U.S. Army as the 'side-straddle hop'. Trains rhythmic plyometric ankle/calf reactivity, shoulder mobility under load, hip abduction power, and aerobic capacity. Low technical barrier, almost no equipment, scalable from gentle warm-up tempo to high-intensity intervals. Excellent first cardio drill for beginners and a reliable filler for tabata/EMOM blocks for advanced trainees.",
+  "descriptionPl": "Klasyczne pełnociałowe cardio bodyweight, w którym ćwiczący jednocześnie wyskakuje, rozkraczając stopy na boki i prowadząc proste ramiona po szerokim łuku nad głowę, a następnie wyskakuje z powrotem, zbierając stopy razem i opuszczając ręce wzdłuż ciała. Każde powtórzenie to skoordynowany 'X' — otwórz i zamknij. Podstawowy element rozgrzewki i conditioningu na lekcjach WF-u, w treningu wojskowym, sportach dziecięcych i obwodach HIIT na całym świecie — spopularyzowane przez armię USA jako 'side-straddle hop'. Trenuje rytmiczną reaktywność łydek i kostek (plyometria), mobilność barków pod obciążeniem własnym, moc odwodzicieli bioder i wydolność tlenową. Niska bariera techniczna, praktycznie zero sprzętu, skalowalne od łagodnej rozgrzewki do interwałów wysokiej intensywności. Idealne pierwsze cardio dla początkujących i sprawdzony wypełniacz tabaty/EMOM dla zaawansowanych.",
+
+  "instructions": [
+    "Stand tall with feet together, arms relaxed at the sides, eyes forward, core lightly braced. Take an easy breath in.",
+    "Drive through the balls of the feet and hop both feet out simultaneously to a wide stance — wider than shoulder-width — landing softly on the balls of the feet then settling to mid-foot.",
+    "At the same moment, sweep both straight arms out to the sides and overhead in a wide arc so the hands meet (or come close) above the head. Body forms an 'X'.",
+    "Without pausing, hop both feet back together and bring the arms back down along the sides in the reverse arc — return to the starting tall stance.",
+    "Maintain a soft knee bend throughout — don't lock out or slam landings. Keep the torso upright, no excessive forward lean.",
+    "Repeat for the prescribed time or reps in a steady rhythm. Breathe rhythmically — typical pace is roughly 1 rep per second for conditioning, slower for warm-up.",
+    "For higher intensity: jump higher, move faster, or extend the duration. For regression: 'step jacks' — step one foot out at a time without leaving the ground."
+  ],
+  "instructionsPl": [
+    "Stań wyprostowany, stopy razem, ramiona luźno wzdłuż ciała, wzrok przed siebie, lekkie napięcie brzucha. Spokojny wdech.",
+    "Odbij się ze śródstopia i wyskocz obiema stopami jednocześnie do szerokiego rozkroku — szerzej niż barki — lądując miękko najpierw na śródstopiu, potem na całej stopie.",
+    "W tym samym momencie poprowadź proste ramiona po szerokim łuku w bok i nad głowę, aż dłonie spotkają się (lub zbliżą) nad głową. Ciało tworzy 'X'.",
+    "Bez pauzy wyskocz stopami z powrotem razem i sprowadź ramiona w dół wzdłuż ciała po odwrotnym łuku — wróć do startowej, wyprostowanej pozycji.",
+    "Utrzymuj lekko ugięte kolana przez cały czas — bez blokowania stawów ani twardych lądowań. Tułów wyprostowany, bez nadmiernego pochylenia do przodu.",
+    "Powtarzaj przez zadany czas lub liczbę powtórzeń w równym rytmie. Oddychaj rytmicznie — typowe tempo to mniej więcej 1 powtórzenie na sekundę dla conditioningu, wolniej dla rozgrzewki.",
+    "Większa intensywność: skacz wyżej, szybciej, lub dłużej. Regresja: 'step jacks' — wystawiaj jedną stopę na raz, bez odrywania się od podłogi."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["calves", "deltoids"],
+    "secondary": ["quadriceps", "glutes", "hip_abductors", "hip_adductors"],
+    "stabilizers": ["core", "tibialis_anterior", "scapular_stabilizers", "rotator_cuff"]
+  },
+
+  "muscle_intensity": {
+    "calves": "P9",
+    "deltoids": "P7",
+    "quadriceps": "S6",
+    "glutes": "S5",
+    "hip_abductors": "S6",
+    "hip_adductors": "S5",
+    "core": "T4",
+    "tibialis_anterior": "T4",
+    "scapular_stabilizers": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "supportive_shoes"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["march-in-place", "bodyweight-squat"],
+    "progression_to": ["seal-jumping-jacks", "plyo-jumping-jacks", "cross-jacks", "squat-jacks", "plank-jacks", "burpee-jack"],
+    "alternatives": ["high-knees", "march-in-place", "mountain-climbers", "skipping-rope", "butt-kicks", "step-jacks"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Clear ~1.5x1.5 m of floor — your arms swing wide overhead",
+      "Wear supportive shoes — repeated landings on the balls of the feet add up",
+      "Start tall: feet together, arms by sides, eyes forward",
+      "Soft knees from rep 1 — never land stiff-legged",
+      "Pick your pace: 60 BPM (warm-up) → 120 BPM (conditioning) → max effort (HIIT)"
+    ],
+    "setup_cues_pl": [
+      "Wyczyść ~1,5x1,5 m podłogi — ramiona zataczają szeroki łuk nad głową",
+      "Załóż wspierające buty — powtarzane lądowania na śródstopiu się kumulują",
+      "Start wysoko: stopy razem, ramiona wzdłuż ciała, wzrok przed siebie",
+      "Lekko ugięte kolana od pierwszego powtórzenia — nigdy nie ląduj na sztywnych nogach",
+      "Wybierz tempo: 60 BPM (rozgrzewka) → 120 BPM (conditioning) → maksymalny wysiłek (HIIT)"
+    ],
+    "execution_cues": [
+      "Sync arms and legs — they leave and return TOGETHER, not staggered",
+      "Land soft: balls of feet first, then mid-foot, knees bent — like a spring",
+      "Arms straight (slight elbow softness OK) — sweep wide, don't fold them in front",
+      "Hands touch (or come close) overhead — full shoulder ROM every rep",
+      "Stay upright — no forward lean, no pike at the hips",
+      "Breathe rhythmically — 2 reps in / 2 reps out is a common pattern"
+    ],
+    "execution_cues_pl": [
+      "Synchronizuj ramiona i nogi — wychodzą i wracają RAZEM, nie naprzemiennie",
+      "Miękkie lądowanie: śródstopie, potem cała stopa, ugięte kolana — jak sprężyna",
+      "Ramiona proste (lekkie ugięcie łokci OK) — szeroki łuk, nie składaj ich przed sobą",
+      "Dłonie spotykają się (lub zbliżają) nad głową — pełny zakres ruchu w barkach co powtórzenie",
+      "Pozostań wyprostowany — bez pochylenia do przodu, bez 'zginania się' w biodrach",
+      "Oddychaj rytmicznie — 2 powtórzenia wdech / 2 powtórzenia wydech to typowy wzorzec"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hard, flat-footed landings ('slamming' the floor)",
+        "faultPl": "Twarde lądowania na całych stopach ('walenie' o podłogę)",
+        "cause": "Stiff ankles/knees, no plyometric absorption, weak calves, fatigue",
+        "causePl": "Sztywne kostki/kolana, brak amortyzacji plyometrycznej, słabe łydki, zmęczenie",
+        "cue": "Land BALLS-of-feet first, then settle. Knees ALWAYS soft. 'Quiet feet' — if you hear a slam, you're doing it wrong. Slow down or stop if calves/knees ache.",
+        "cuePl": "Ląduj najpierw na ŚRÓDSTOPIU, potem osiadaj. Kolana ZAWSZE miękkie. 'Ciche stopy' — jeśli słyszysz uderzenie, robisz to źle. Zwolnij lub przerwij, jeśli boli łydki/kolana."
+      },
+      {
+        "fault": "Arms not reaching overhead (half-swing 'T-position')",
+        "faultPl": "Ramiona nie sięgają nad głowę (połowiczny zamach do pozycji 'T')",
+        "cause": "Tight shoulders/lats, laziness, prioritizing tempo over range, didn't learn the full pattern",
+        "causePl": "Spięte barki/najszersze, lenistwo, priorytet tempa nad zakresem ruchu, brak nauczenia pełnego wzorca",
+        "cue": "Hands MEET overhead each rep — full sweep, like making an 'X' or 'snow angel'. If shoulders are tight — work mobility separately. Don't shortcut the rep.",
+        "cuePl": "Dłonie SPOTYKAJĄ się nad głową w każdym powtórzeniu — pełen zamach, jak rysowanie 'X' lub 'aniołka na śniegu'. Jeśli barki są spięte — pracuj nad mobilnością osobno. Nie skracaj powtórzenia."
+      },
+      {
+        "fault": "Out-of-sync limbs (arms and legs not coordinated)",
+        "faultPl": "Niezsynchronizowane kończyny (ramiona i nogi nieskoordynowane)",
+        "cause": "New to the movement, fatigue, distraction, jumping too fast for current coordination level",
+        "causePl": "Nowość ruchu, zmęczenie, rozproszenie, zbyt szybkie tempo dla aktualnego poziomu koordynacji",
+        "cue": "Slow down. Count out loud: '1 — out, 2 — in'. Arms and feet move as ONE unit. Build tempo only after the pattern is automatic.",
+        "cuePl": "Zwolnij. Licz na głos: '1 — na zewnątrz, 2 — do środka'. Ramiona i stopy ruszają się jako JEDNA jednostka. Buduj tempo dopiero gdy wzorzec jest automatyczny."
+      },
+      {
+        "fault": "Excessive forward lean / piking at the hips",
+        "faultPl": "Nadmierne pochylenie do przodu / 'zginanie się' w biodrach",
+        "cause": "Tight hip flexors, weak core, looking down at feet, fatigue compensation",
+        "causePl": "Spięte zginacze bioder, słaby core, patrzenie w stopy, kompensacja zmęczenia",
+        "cue": "Stand TALL — chest up, eyes forward (not at the floor), abs lightly braced. Imagine a string pulling crown of the head up. If you start collapsing — stop, you're done.",
+        "cuePl": "Stój WYSOKO — klatka w górze, wzrok przed siebie (nie w podłogę), brzuch lekko napięty. Wyobraź sobie sznurek ciągnący szczyt głowy w górę. Jeśli zaczynasz się zwijać — przerwij, koniec serii."
+      },
+      {
+        "fault": "Narrow stance on the open position (feet barely apart)",
+        "faultPl": "Wąski rozkrok w pozycji otwartej (stopy ledwo rozstawione)",
+        "cause": "Laziness, fatigue, weak hip abductors, prioritizing speed over range",
+        "causePl": "Lenistwo, zmęczenie, słabe odwodziciele bioder, priorytet tempa nad zakresem",
+        "cue": "Stopy SZERZEJ niż barki w pozycji otwartej — myśl 'rozjedź się' a nie 'lekko rozstaw'. Pełen rozkrok angażuje odwodziciele i daje rytm 'X'.",
+        "cuePl": "Stopy SZERZEJ niż barki w pozycji otwartej — myśl 'rozjedź się' a nie 'lekko rozstaw'. Pełen rozkrok angażuje odwodziciele i daje rytm 'X'."
+      }
+    ],
+    "breathing": "Breathe rhythmically and never hold your breath. Common patterns: 2 reps inhale / 2 reps exhale at moderate pace, or 1 rep inhale / 1 rep exhale at high intensity. Match the rhythm to the tempo — never let breath fall behind the work.",
+    "breathingPl": "Oddychaj rytmicznie i nigdy nie wstrzymuj oddechu. Typowe wzorce: 2 powtórzenia wdech / 2 powtórzenia wydech w umiarkowanym tempie, lub 1 powtórzenie wdech / 1 powtórzenie wydech przy wysokiej intensywności. Dopasuj rytm do tempa — nigdy nie pozwól, by oddech został w tyle za pracą."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_or_meniscus_issues",
+      "severity": "modify",
+      "modification": "Repeated landings stress the knees, especially with bad form or hard surfaces. Switch to step jacks (one foot at a time, no jump) or replace with marching in place / arm circles until knees are pain-free.",
+      "modificationPl": "Powtarzane lądowania obciążają kolana, zwłaszcza przy złej technice lub twardym podłożu. Przejdź na step jacks (jedna stopa na raz, bez wyskoku) lub zastąp marszem w miejscu / krążeniami ramion aż kolana będą bez bólu.",
+      "alternative": "march-in-place"
+    },
+    {
+      "condition": "ankle_instability_or_plantar_fasciitis",
+      "severity": "modify",
+      "modification": "Plyometric landings can aggravate ankle instability and plantar fascia. Wear supportive shoes, switch to step jacks or low-impact arm circles + marching, or replace entirely with a stationary bike / rowing for warm-up.",
+      "modificationPl": "Plyometryczne lądowania mogą drażnić niestabilność stawu skokowego i rozcięgno podeszwowe. Załóż wspierające buty, przejdź na step jacks lub krążenia ramion + marsz, lub zastąp w pełni rowerem stacjonarnym / wioślarzem na rozgrzewkę.",
+      "alternative": "march-in-place"
+    },
+    {
+      "condition": "shoulder_impingement_or_rotator_cuff_pain",
+      "severity": "modify",
+      "modification": "Full overhead sweep loads the rotator cuff and can pinch impinged shoulders. Modify by stopping arms at shoulder height ('T-position jacks') or doing leg-only jacks until shoulder is pain-free.",
+      "modificationPl": "Pełen zamach nad głowę obciąża pierścień rotatorów i może drażnić bark z impingementem. Zmodyfikuj — zatrzymaj ramiona na wysokości barków ('T-position jacks') lub rób tylko skoki nóg aż bark będzie bez bólu.",
+      "alternative": "march-in-place"
+    },
+    {
+      "condition": "pregnancy_2nd_3rd_trimester_or_pelvic_floor_dysfunction",
+      "severity": "modify",
+      "modification": "High-impact jumping increases intra-abdominal pressure and stresses pelvic floor — risk of urinary leakage and prolapse worsening. Replace with low-impact step jacks (one foot at a time, no jump) or pure arm sweeps + marching in place.",
+      "modificationPl": "Wysokoimpactowe skoki zwiększają ciśnienie wewnątrzbrzuszne i obciążają dno miednicy — ryzyko nietrzymania moczu i pogłębienia obniżenia narządów. Zastąp niskoimpactowymi step jacks (jedna stopa na raz, bez wyskoku) lub samymi krążeniami ramion + marszem w miejscu.",
+      "alternative": "march-in-place"
+    }
+  ],
+
+  "typical_sets_reps": "30-60s as warm-up (steady tempo) | 20s on / 10s off x 8 (Tabata) | 100 reps for time | 3x60s as conditioning filler in HIIT/circuit",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "astride-jumps-male.gif",
+    "frames_extracted": [
+      "frames/astride-jumps-male/frame_0_start.png",
+      "frames/astride-jumps-male/frame_1_early.png",
+      "frames/astride-jumps-male/frame_2_mid.png",
+      "frames/astride-jumps-male/frame_3_late.png",
+      "frames/astride-jumps-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/astride-jumps-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): męska postać stojąca prosto, stopy razem, ramiona luźno wzdłuż ciała — wyjściowa pozycja pajaca. Frame 1 (early): faza otwierania — stopy zaczynają rozjeżdżać się na boki, ramiona unoszą się w bok do pozycji ~T, podświetlone deltoidy (środkowy akton) jako primary mover góry + abdukktory bioder zaczynają pracę. Frame 2 (mid): pełna pozycja 'X' / gwiazda — stopy w szerokim rozkroku, ramiona w pełni nad głową, podświetlone calves (łydki — główny driver plyometrii), deltoidy w pełnej fleksji nad głową, quadriceps stabilizują lądowanie. Frame 3 (late): faza zamykania — stopy zbliżają się ku sobie, ramiona zaczynają opadać po odwrotnym łuku, podświetlone hip_adductors (przywodziciele) i deltoidy ekscentrycznie hamują ruch. Frame 4 (end): powrót do pozycji startowej, zamknięcie pełnego cyklu pajaca, ghosting widoczny — sekwencja zgodna z klasycznym 'side-straddle hop' / jumping jack. movement_pattern: jump_plyometric — każde powtórzenie to drobny wyskok z lądowaniem na śródstopiu. plane: frontal — kończyny poruszają się w bok (nie do przodu/tyłu jak w sagittal). primary muscles: calves P9 (powtarzane wyskoki/lądowania = czysta praca łydek gastrocnemius + soleus jako głównym driverem mocy plyometrycznej) + deltoids P7 (rytmiczne unoszenie ramion z boku ciała nad głowę pod ciężarem własnym to praca głównie środkowego aktonu deltoid + przedniego w fazie nad głową). hip_abductors + hip_adductors jako secondary — pajace to klasyczne ćwiczenie 'open-close' w płaszczyźnie czołowej, abdukktory rozkraczają, addukotry zbierają nogi razem. category: cardio — pajace są podstawowym aerobowo-plyometrycznym filler'em używanym wyłącznie do conditioningu/rozgrzewki/HIIT, nie do hipertrofii — stąd cardio mimo że ruch ma charakter plyometryczny. difficulty 2: bardzo niska bariera techniczna, koordynacja arm/leg sync to jedyna trudność, więc nie 1 (jak march-in-place) ale 2. Wszystkie pola PL napisane od zera w polskim standardzie fitness (terminologia: 'pajac/pajace' jako polska nazwa kanoniczna, 'jumping jacki' jako alias kolokwialny, 'śródstopie', 'rozkrok', 'pierścień rotatorów').",
+
+  "tags": ["bodyweight", "cardio", "hiit", "plyometrics", "full_body", "calisthenics", "no_equipment_friendly", "home_workout", "warm_up", "beginner_friendly", "aerobic", "coordination"]
+}

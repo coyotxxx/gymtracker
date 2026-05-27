@@ -1,0 +1,209 @@
+{
+  "id": "barbell-clean-and-press",
+  "name": "Barbell Clean and Press",
+  "namePl": "Clean and press ze sztangą",
+  "aliases": ["clean and press", "barbell clean & press", "clean to press", "clean and overhead press"],
+  "aliasesPl": ["clean and press ze sztangą", "podrzut ze sztangą", "zarzut i wyciskanie", "clean i wyciskanie nad głowę"],
+
+  "description": "A two-phase olympic-style total-body compound movement. Phase 1 (clean) — explosively pull the barbell from the floor into a front rack position at the shoulders via a triple extension of hips, knees and ankles. Phase 2 (press) — strict overhead press the bar to a locked-out position above the head. Trains the entire body in a single rep: posterior chain, quads, shoulders, triceps and the entire stabilizing core. Excellent for power development, athletic performance and conditioning.",
+  "descriptionPl": "Dwufazowy ruch olimpijski angażujący całe ciało. Faza 1 (zarzut/clean) — eksplozywne podniesienie sztangi z ziemi do pozycji front rack na barkach przez potrójny wyprost bioder, kolan i kostek. Faza 2 (wyciskanie/press) — wyciśnięcie sztangi nad głowę do pełnego wyprostu ramion. Trenuje całe ciało w jednym powtórzeniu: tylny łańcuch, czworogłowe, barki, tricepsy i pełną stabilizację brzucha. Świetne dla rozwoju mocy, sprawności sportowej i kondycji.",
+
+  "instructions": [
+    "Load the barbell on the floor. Stand with mid-foot under the bar, feet shoulder-width apart, toes slightly out.",
+    "Hinge at the hips and bend the knees to grip the bar just outside your knees with a double-overhand grip. Chest up, lats engaged, neutral spine.",
+    "Phase 1 (Clean) — First pull: drive through the floor with your legs, keeping the bar close to your shins. Hips and shoulders rise together until the bar passes the knees.",
+    "Phase 1 (Clean) — Second pull: explosively extend hips, knees and ankles (triple extension). Shrug the shoulders and pull yourself UNDER the bar.",
+    "Catch the bar in the front rack position — elbows high and forward, bar resting on the front delts and at the throat, knees softly bent (quarter squat catch).",
+    "Stand up fully out of the catch. Reset stance, brace the core, eyes forward.",
+    "Phase 2 (Press) — Strict press: push the bar overhead in a vertical line. Move the head SLIGHTLY back to clear the bar, then push the head 'through the window' as the bar passes the forehead.",
+    "Lock out overhead with bar directly above mid-foot, elbows extended, shoulders shrugged up into the bar. Pause briefly.",
+    "Lower the bar in reverse: down to the front rack, then control it to the floor (or hang) for the next rep. Reset before each clean."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę na ziemi. Stań tak, by środek stóp był pod gryfem, stopy na szerokość barków, palce lekko na zewnątrz.",
+    "Zgnij w biodrach i kolanach, by złapać sztangę tuż na zewnątrz kolan chwytem podwójnym nachwytem. Klatka w górze, najszersze napięte, neutralny kręgosłup.",
+    "Faza 1 (zarzut) — pierwsze pociągnięcie: napieraj stopami w ziemię, trzymaj gryf blisko goleni. Biodra i barki wstają w tym samym tempie, aż sztanga minie kolana.",
+    "Faza 1 (zarzut) — drugie pociągnięcie: eksplozywnie wyprostuj biodra, kolana i kostki (potrójny wyprost). Wzrusz barkami i podciągnij się POD gryf.",
+    "Złap sztangę w pozycji front rack — łokcie wysoko i do przodu, gryf opiera się na przednich aktonach barku i przy gardle, kolana lekko ugięte (ćwierć przysiad).",
+    "Wstań w pełni z pozycji catch. Ustaw stopy, napnij brzuch, wzrok przed siebie.",
+    "Faza 2 (wyciskanie) — strict press: wypchnij sztangę nad głowę po linii pionowej. Cofnij głowę LEKKO by zrobić miejsce dla gryfu, potem 'wepchnij głowę przez okno' gdy sztanga mija czoło.",
+    "Pełen lockout nad głową — sztanga dokładnie nad środkiem stóp, łokcie wyprostowane, barki wzruszone w górę 'pod gryf'. Krótka pauza.",
+    "Opuść sztangę odwrotnie: do front racku, potem kontrolowanie na ziemię (lub do zwisu) na kolejne powtórzenie. Zresetuj pozycję przed każdym zarzutem."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "pull_push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["hamstrings", "glutes", "quadriceps", "anterior_deltoids"],
+    "secondary": ["trapezius", "triceps", "erector_spinae", "lateral_deltoids", "latissimus_dorsi", "calves"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "forearms", "rotator_cuff", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "hamstrings": "P8",
+    "glutes": "P9",
+    "quadriceps": "P8",
+    "anterior_deltoids": "P9",
+    "trapezius": "S8",
+    "triceps": "S8",
+    "erector_spinae": "S8",
+    "lateral_deltoids": "S7",
+    "latissimus_dorsi": "S6",
+    "calves": "S6",
+    "core": "S8",
+    "forearms": "S7",
+    "rotator_cuff": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weightlifting_shoes", "chalk", "wrist_wraps", "belt"]
+  },
+
+  "category": "olympic_weightlifting",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["barbell-deadlift", "front-squat", "barbell-overhead-press", "barbell-hang-clean", "barbell-push-press"],
+    "progression_to": ["clean-and-jerk", "power-clean-and-jerk", "squat-clean-and-jerk", "snatch"],
+    "alternatives": ["dumbbell-clean-and-press", "kettlebell-clean-and-press", "barbell-push-press", "barbell-thruster"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar over mid-foot, 2-3 cm from shins",
+      "Feet shoulder-width, toes slightly out",
+      "Grip just outside knees, double-overhand (hook grip optional)",
+      "Chest up, lats engaged, neutral spine",
+      "Brace hard — clean is explosive, no time to brace mid-rep"
+    ],
+    "setup_cues_pl": [
+      "Gryf nad środkiem stóp, 2-3 cm od goleni",
+      "Stopy szerokość barków, palce lekko na zewnątrz",
+      "Chwyt tuż na zewnątrz kolan, podwójny nachwyt (hook grip opcjonalny)",
+      "Klatka w górze, najszersze napięte, neutralny kręgosłup",
+      "Mocne napięcie brzucha — zarzut jest eksplozywny, nie ma czasu by napinać się w trakcie"
+    ],
+    "execution_cues": [
+      "Triple extension — hips, knees, ankles all snap straight at the top of the pull",
+      "Pull yourself UNDER the bar — don't try to muscle it up with arms",
+      "Catch with elbows HIGH and forward — bar on the delts, not on the hands",
+      "Stand fully before pressing — separate the clean from the press",
+      "Press in a straight vertical line — head moves back, then through the window"
+    ],
+    "execution_cues_pl": [
+      "Potrójny wyprost — biodra, kolana i kostki strzelają do góry na szczycie pociągnięcia",
+      "Podciągnij się POD gryf — nie próbuj wciskać go rękami",
+      "Catch z łokciami WYSOKO i do przodu — gryf na barkach, nie na dłoniach",
+      "Wstań w pełni przed wyciskaniem — oddziel zarzut od wyciskania",
+      "Wyciskaj w pionowej linii — głowa do tyłu, potem 'przez okno'"
+    ],
+    "common_faults": [
+      {
+        "fault": "Reverse-curling the bar to the shoulders (no triple extension)",
+        "faultPl": "'Curlowanie' sztangi do barków (brak potrójnego wyprostu)",
+        "cause": "Trying to muscle the clean with arms instead of generating force with legs and hips",
+        "causePl": "Próba 'wymachiwania' rękami zamiast generowania siły z nóg i bioder",
+        "cue": "The arms are CABLES, not engines. Drive with the legs, jump the bar up with hips, THEN pull under with arms.",
+        "cuePl": "Ręce to LINY, nie silniki. Napieraj nogami, podrzuć sztangę biodrami, DOPIERO POTEM podciągnij rękami."
+      },
+      {
+        "fault": "Low elbows in the front rack (catch on the wrists)",
+        "faultPl": "Niskie łokcie w front rack (catch na nadgarstkach)",
+        "cause": "Poor wrist/shoulder/lat mobility, weak upper back",
+        "causePl": "Słaba mobilność nadgarstków/barków/najszerszych, słabe górne plecy",
+        "cue": "Punch elbows up and forward in the catch. Bar rests on delts, fingers can be loose. Work shoulder/lat/wrist mobility daily.",
+        "cuePl": "Wypchnij łokcie w górę i do przodu w catch. Gryf opiera się na barkach, palce mogą być luźne. Pracuj nad mobilnością barków/najszerszych/nadgarstków codziennie."
+      },
+      {
+        "fault": "Pressing without standing first (push-press cheat)",
+        "faultPl": "Wyciskanie bez pełnego wstania (oszukane push-press)",
+        "cause": "Using leg drive to assist the press — not 'clean and PRESS' but 'clean and push-press'",
+        "causePl": "Wspomaganie wyciskania nogami — to nie 'clean and press' tylko 'clean and push-press'",
+        "cue": "Stand FULLY, pause 1 second, then strict press. If you need leg drive — reduce weight.",
+        "cuePl": "Wstań CAŁKOWICIE, pauza 1 sekunda, dopiero potem strict press. Jeśli potrzebujesz nóg — zmniejsz ciężar."
+      },
+      {
+        "fault": "Pressing the bar in front of the body (no head-through)",
+        "faultPl": "Wyciskanie sztangi przed ciałem (brak 'głowy przez okno')",
+        "cause": "Fear of hitting face, weak upper back, poor pattern",
+        "causePl": "Strach przed uderzeniem w twarz, słabe górne plecy, zły wzór ruchu",
+        "cue": "Move head back as bar passes face, then push head FORWARD through the arms at lockout. Bar finishes over mid-foot.",
+        "cuePl": "Cofnij głowę gdy sztanga mija twarz, potem przepchnij głowę DO PRZODU między ramionami w lockout. Sztanga kończy nad środkiem stóp."
+      },
+      {
+        "fault": "Hyperextension at the press lockout (lumbar arch)",
+        "faultPl": "Nadmierne odgięcie lędźwi w lockout wyciskania",
+        "cause": "Weak core/glutes, load too heavy, poor bracing",
+        "causePl": "Słaby brzuch/pośladki, zbyt duży ciężar, słabe napięcie",
+        "cue": "Squeeze glutes and brace abs HARD before press. Ribs DOWN. Lockout is overhead, not arched back.",
+        "cuePl": "Mocno ściśnij pośladki i napnij brzuch przed wyciskaniem. Żebra W DÓŁ. Lockout to NAD głową, nie odgięcie pleców."
+      }
+    ],
+    "breathing": "Big inhale at the floor, brace and HOLD through the entire clean. Exhale briefly at the front rack reset. Big inhale again, brace, press. Exhale at the top of the lockout. Two breathing cycles per rep.",
+    "breathingPl": "Głęboki wdech na ziemi, napięcie i WSTRZYMANIE przez cały zarzut. Krótki wydech w front rack reset. Kolejny głęboki wdech, napięcie, wyciskanie. Wydech na szczycie lockoutu. Dwa cykle oddechowe na powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_instability",
+      "severity": "avoid",
+      "modification": "Avoid both the front rack catch and overhead press if shoulder cannot tolerate full ROM. Restore mobility and stability first under PT supervision.",
+      "modificationPl": "Unikaj zarówno catch w front rack jak i wyciskania nad głowę jeśli bark nie toleruje pełnego zakresu. Najpierw przywróć mobilność i stabilność pod nadzorem fizjoterapeuty.",
+      "alternative": "barbell-deadlift"
+    },
+    {
+      "condition": "lumbar_disc_pathology",
+      "severity": "avoid",
+      "modification": "Olympic lifts generate huge spinal loads with high velocity — contraindicated for active disc issues. Switch to non-explosive variations.",
+      "modificationPl": "Ćwiczenia olimpijskie generują duże obciążenia kręgosłupa przy wysokiej prędkości — przeciwwskazane przy aktywnych problemach dyskowych. Przejdź na warianty bez fazy eksplozywnej.",
+      "alternative": "barbell-overhead-press"
+    },
+    {
+      "condition": "wrist_pain_or_limited_extension",
+      "severity": "modify",
+      "modification": "Front rack catch requires significant wrist extension. Use wrist wraps, work mobility, or switch to dumbbells/kettlebells which allow neutral wrist.",
+      "modificationPl": "Catch w front rack wymaga znacznego wyprostu nadgarstka. Stosuj wrist wraps, pracuj nad mobilnością, lub przejdź na hantle/kettlebells które pozwalają na neutralny nadgarstek.",
+      "alternative": "dumbbell-clean-and-press"
+    },
+    {
+      "condition": "hypertension_uncontrolled",
+      "severity": "avoid",
+      "modification": "Olympic lifts with Valsalva and overhead loading produce significant blood pressure spikes. Get clearance from cardiologist before performing.",
+      "modificationPl": "Ćwiczenia olimpijskie z Valsalvą i obciążeniem nad głową generują znaczne skoki ciśnienia. Uzyskaj zgodę kardiologa przed wykonywaniem.",
+      "alternative": "kettlebell-clean-and-press"
+    }
+  ],
+
+  "typical_sets_reps": "5x3 (power) | 4-5x2-4 (strength) | 3-4x5-6 (conditioning) | 1-3x1-2 (max strength) — never to muscular failure, technique decay is dangerous",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "barbell-clean-and-press.gif",
+    "frames_extracted": [
+      "frames/barbell-clean-and-press/frame_0_start.png",
+      "frames/barbell-clean-and-press/frame_1_early.png",
+      "frames/barbell-clean-and-press/frame_2_mid.png",
+      "frames/barbell-clean-and-press/frame_3_late.png",
+      "frames/barbell-clean-and-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-clean-and-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:05:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa z ziemi — pochylony tułów, sztanga przy goleniach, podświetlone czworogłowe/pośladki/dwugłowe ud/przedramiona/górne plecy/barki (klasyczny clean setup). Frame 1: pełna pozycja stojąca po pierwszym pociągnięciu/przed zarzutem — sztanga w zwisie na biodrach. Frame 2: catch w front rack — sztanga na barkach, łokcie wysoko, podświetlone barki/przednie aktony/brzuch/górne plecy. Frame 3: lockout overhead — pełen wyprost ramion nad głową, sztanga nad środkiem stóp. Frame 4: composite/animation showing range of motion. To pełny clean and press (NIE power clean, NIE push press) — widoczne 3 oddzielne fazy: pull → front rack catch → strict press. movement_pattern: olympic_lift (hybryda hinge+squat+vertical_press). Trudność 9/10 ze względu na techniczność, koordynację i wymagania mobilności (wrist/shoulder/hip/ankle). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["olympic_weightlifting", "compound", "full_body", "power", "explosive", "barbell", "overhead", "athletic_performance", "triple_extension", "advanced"]
+}

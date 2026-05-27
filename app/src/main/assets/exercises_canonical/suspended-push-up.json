@@ -1,0 +1,205 @@
+{
+  "id": "suspended-push-up",
+  "name": "Suspended Push-Up (TRX)",
+  "namePl": "Pompka w zawieszeniu (suspended push-up TRX)",
+  "aliases": ["trx push-up", "suspension push-up", "ring push-up alternative", "strap push-up", "trx chest press", "suspended pushup"],
+  "aliasesPl": ["pompki na TRX", "pompki na taśmach", "pompki w pętlach TRX", "pompki w pasach gimnastycznych", "pompki na zawieszeniu", "pompki zawieszone"],
+
+  "description": "Push-up variation performed with hands placed in TRX suspension trainer handles (or gymnastic straps), while feet stay on the floor. The unstable, freely-hanging handles force every push to be stabilized in three dimensions — the rotator cuff, scapular stabilizers, serratus anterior and the entire core must work overtime just to keep the hands from drifting apart, together or sideways. Significantly more demanding than a standard floor push-up at the same angle, and a direct cousin to the ring push-up.",
+  "descriptionPl": "Wariant pompek wykonywany z dłońmi włożonymi w uchwyty TRX (lub pasy gimnastyczne), przy stopach pozostawionych na podłodze. Niestabilne, swobodnie zwisające uchwyty wymuszają stabilizację każdego wypchnięcia w trzech wymiarach — stożek rotatorów, stabilizatory łopatek, mięsień zębaty przedni i cały core pracują znacznie ciężej, żeby utrzymać dłonie od rozjeżdżania, schodzenia się czy dryfowania na boki. Zdecydowanie trudniejsze niż zwykła pompka na podłodze pod tym samym kątem, najbliższy krewny pompki na kółkach gimnastycznych.",
+
+  "instructions": [
+    "Adjust TRX straps to mid-calf height (approx. 30-50 cm from the floor). Lower straps = harder, higher straps = easier.",
+    "Stand facing away from the anchor point. Grip the handles with a neutral grip (palms facing each other).",
+    "Walk feet back and lean forward into a plank position. Body should form a straight line from heels to head.",
+    "Position: hands directly under shoulders, handles roughly shoulder-width apart, wrists neutral.",
+    "Brace core hard, squeeze glutes, retract and depress scapulae — 'pack the shoulders'.",
+    "Inhale and lower yourself in a controlled manner. Elbows track at ~45° from your torso. The handles will want to drift outward — fight it actively.",
+    "Lower until handles are next to your chest (deeper ROM than a floor push-up is possible — use it, but only as far as your shoulders can stabilize).",
+    "Brief pause at the bottom, then exhale and press straight up. Keep the handles from flaring out by squeezing them inward as you press.",
+    "At the top, fully extend elbows without locking out aggressively. Maintain rigid plank throughout."
+  ],
+  "instructionsPl": [
+    "Ustaw pasy TRX na wysokości połowy łydki (ok. 30-50 cm od podłogi). Niżej = trudniej, wyżej = łatwiej.",
+    "Stań tyłem do punktu zakotwiczenia. Złap uchwyty chwytem neutralnym (dłonie zwrócone do siebie).",
+    "Cofnij stopy i pochyl się do przodu do pozycji deski (planka). Ciało musi tworzyć prostą linię od pięt do głowy.",
+    "Pozycja: dłonie dokładnie pod barkami, uchwyty na szerokości barków, nadgarstki neutralne.",
+    "Mocno napnij brzuch, ściśnij pośladki, ściągnij i opuść łopatki — 'spakuj barki'.",
+    "Wdech, opuszczaj się w kontrolowanym tempie. Łokcie pod kątem ~45° od tułowia. Uchwyty będą chciały rozjechać się na boki — aktywnie temu przeciwdziałaj.",
+    "Schodź aż uchwyty znajdą się przy klatce (większy zakres ruchu niż w pompce z podłogi jest możliwy — korzystaj z niego, ale tylko tyle, ile stabilizują twoje barki).",
+    "Krótka pauza na dole, potem wydech i wypchnij się prosto do góry. Trzymaj uchwyty żeby nie rozjeżdżały się na boki — ściskaj je do siebie podczas wypychania.",
+    "Na górze w pełni wyprostuj łokcie bez agresywnego blokowania. Sztywna planka przez cały czas."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "anterior_deltoids", "triceps"],
+    "secondary": ["serratus_anterior", "rotator_cuff"],
+    "stabilizers": ["core", "rotator_cuff", "scapular_stabilizers", "glutes", "obliques", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "P7",
+    "serratus_anterior": "S8",
+    "rotator_cuff": "S8",
+    "core": "T8",
+    "obliques": "T7",
+    "scapular_stabilizers": "T7",
+    "glutes": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "trx_straps"],
+    "optional": ["gymnastic_rings", "weighted_vest", "resistance_band"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "decline-push-up", "plank"],
+    "progression_to": ["ring-push-up", "trx-atomic-push-up", "single-arm-trx-push-up", "trx-archer-push-up"],
+    "alternatives": ["ring-push-up", "push-up", "decline-push-up", "incline-dumbbell-bench-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Straps at mid-calf height — start higher (easier) and lower the straps as you progress",
+      "Neutral grip — palms facing each other, wrists straight in line with forearms",
+      "Hands directly under shoulders, handles roughly shoulder-width apart",
+      "'Pack' the shoulders — scapulae retracted and depressed before the first rep",
+      "Full body plank — heels, hips, head in one line; squeeze glutes and brace abs"
+    ],
+    "setup_cues_pl": [
+      "Pasy na wysokości połowy łydki — zacznij wyżej (łatwiej) i obniżaj wraz z postępem",
+      "Chwyt neutralny — dłonie zwrócone do siebie, nadgarstki w linii z przedramieniem",
+      "Dłonie dokładnie pod barkami, uchwyty na szerokości barków",
+      "'Spakuj' barki — łopatki ściągnięte i opuszczone przed pierwszym powtórzeniem",
+      "Pełna planka — pięty, biodra, głowa w jednej linii; ściśnięte pośladki, napięte brzuch"
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — slow enough to fight the wobble",
+      "Fight the strap drift — actively squeeze handles together throughout",
+      "Elbows at ~45° from torso — don't let them flare out (straps will try to push you there)",
+      "Go deep — handles can pass below chest height (only as deep as you can stabilize)",
+      "Press straight up — no zig-zag, no asymmetry, both arms move as one"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — wolno, żeby pokonać kołysanie",
+      "Walcz z rozjeżdżaniem pasów — aktywnie ściskaj uchwyty do siebie przez cały ruch",
+      "Łokcie ~45° od tułowia — nie pozwól im rozjechać się (pasy będą chciały cię tam wepchnąć)",
+      "Schodź głęboko — uchwyty mogą zejść poniżej klatki (tyle, ile stabilizujesz)",
+      "Wypychaj prosto do góry — bez zygzaka, bez asymetrii, oba ramiona poruszają się jak jedno"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips / breaking plank",
+        "faultPl": "Opadające biodra / złamana planka",
+        "cause": "Core can't keep up with stabilization demand — body 'hangs' from the lumbar spine",
+        "causePl": "Brzuch nie nadąża z wymaganiami stabilizacji — ciało 'wisi' na odcinku lędźwiowym",
+        "cue": "Squeeze glutes HARD before the first rep. If hips keep sagging — raise the straps (easier angle) until your core catches up. Plank position first, then push-up.",
+        "cuePl": "MOCNO ściśnij pośladki przed pierwszym powtórzeniem. Jeśli biodra dalej opadają — podnieś pasy (łatwiejszy kąt) do czasu aż core dogoni. Najpierw planka, potem pompka."
+      },
+      {
+        "fault": "Straps drifting apart (T-shape elbows)",
+        "faultPl": "Pasy rozjeżdżające się na boki (łokcie w kształcie T)",
+        "cause": "Passive grip — letting the straps dictate the path instead of actively controlling them",
+        "causePl": "Pasywny chwyt — pozwalanie pasom dyktować ścieżkę zamiast ich aktywnej kontroli",
+        "cue": "Squeeze handles toward each other as if crushing something between them. Elbows stay at ~45°. If you can't control drift — straps too low.",
+        "cuePl": "Ściskaj uchwyty do siebie jakbyś chciał coś między nimi zgnieść. Łokcie na ~45°. Jeśli nie kontrolujesz rozjeżdżania — pasy za nisko."
+      },
+      {
+        "fault": "Shoulders shrugging to ears",
+        "faultPl": "Barki uciekające do uszu",
+        "cause": "Weak scapular stabilizers under unstable load — protraction without control",
+        "causePl": "Słabe stabilizatory łopatek przy niestabilnym obciążeniu — protrakcja bez kontroli",
+        "cue": "Keep scapulae depressed — 'long neck, shoulders away from ears' throughout the rep. Don't let the straps pull you into a shrug.",
+        "cuePl": "Trzymaj łopatki opuszczone — 'długa szyja, barki z dala od uszu' przez całe powtórzenie. Nie pozwól pasom wciągnąć cię w wzruszenie ramion."
+      },
+      {
+        "fault": "Asymmetric press (one arm faster/stronger)",
+        "faultPl": "Asymetryczne wypchnięcie (jedno ramię szybsze/silniejsze)",
+        "cause": "Strength/stability imbalance between sides — the unstable surface exposes it instantly",
+        "causePl": "Nierówność siły/stabilności między stronami — niestabilne podłoże momentalnie ją obnaża",
+        "cue": "Slow the rep to a 3-1-3 tempo and watch the handles — they must move as one. Film yourself from the front; fix the side that lags.",
+        "cuePl": "Zwolnij tempo do 3-1-3 i obserwuj uchwyty — muszą poruszać się jak jeden. Nagraj się z przodu; popraw słabszą stronę."
+      },
+      {
+        "fault": "Bouncing out of the bottom",
+        "faultPl": "Odbijanie z pozycji dolnej",
+        "cause": "Using strap stretch + momentum instead of muscle to reverse the rep",
+        "causePl": "Korzystanie z naciągu pasów + bezwładności zamiast pracy mięśniowej do odwrócenia ruchu",
+        "cue": "Brief 1-second pause at the bottom every rep. If you can't pause — the depth is too much for you right now. Reduce ROM until strong.",
+        "cuePl": "Krótka 1-sekundowa pauza na dole w każdym powtórzeniu. Jeśli nie potrafisz pauzować — głębokość przerasta cię teraz. Skróć zakres do czasu wzrostu siły."
+      }
+    ],
+    "breathing": "Inhale during descent, brace at the bottom, exhale during the press up. The instability demands a strong braced core throughout — don't let breath release your abs.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech podczas wypychania. Niestabilność wymaga mocno napiętego brzucha przez cały czas — nie pozwól oddechowi rozluźnić brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_instability",
+      "severity": "avoid",
+      "modification": "Unstable hand position multiplies stress on the rotator cuff and glenohumeral joint. Build base strength on stable push-ups first; return to suspension work only after a stable, pain-free shoulder is established.",
+      "modificationPl": "Niestabilna pozycja dłoni wielokrotnie zwiększa obciążenie stożka rotatorów i stawu ramienno-łopatkowego. Najpierw zbuduj bazę siłową na stabilnych pompkach; wracaj do zawieszenia dopiero gdy bark jest stabilny i bez bólu.",
+      "alternative": "push-up"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Suspended pushes load the rotator cuff aggressively as stabilizers. Skip entirely during acute or sub-acute injury. Return only after cleared by PT and progressive loading on stable surfaces.",
+      "modificationPl": "Pompki w zawieszeniu mocno obciążają stożek rotatorów jako stabilizatory. Pomiń w okresie ostrym i podostrym. Wracaj dopiero po zgodzie fizjoterapeuty i progresji na stabilnych podłożach.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Neutral grip on TRX handles is generally wrist-friendly, but the wobbling load can still aggravate symptoms. Reduce ROM, raise the straps to lower intensity, or switch to rings (slightly more stable).",
+      "modificationPl": "Chwyt neutralny na TRX jest zwykle delikatny dla nadgarstków, ale niestabilne obciążenie może wciąż drażnić objawy. Zmniejsz zakres ruchu, podnieś pasy (mniejsza intensywność) lub przerzuć się na kółka (nieco stabilniejsze).",
+      "alternative": "decline-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Loss of plank position under the high stabilization demand will load the lumbar spine. Raise the straps to a higher angle, shorten the set, or regress to standard floor push-ups until core can hold the position.",
+      "modificationPl": "Utrata pozycji planki pod tak dużymi wymaganiami stabilizacyjnymi obciąża odcinek lędźwiowy. Podnieś pasy do wyższego kąta, skróć serię lub wróć do zwykłych pompek na podłodze do czasu aż core utrzyma pozycję.",
+      "alternative": "push-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-12 (hypertrophy / strength endurance) | 4-5x4-6 weighted (strength) | 3x AMRAP (conditioning)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "suspended-push-up.gif",
+    "frames_extracted": [
+      "frames/suspended-push-up/frame_0_start.png",
+      "frames/suspended-push-up/frame_1_early.png",
+      "frames/suspended-push-up/frame_2_mid.png",
+      "frames/suspended-push-up/frame_3_late.png",
+      "frames/suspended-push-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/suspended-push-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej pompki — obie dłonie w czarnych uchwytach TRX zwisających z góry (chwyt neutralny, dłonie zwrócone do siebie), stopy na podłodze, ramiona wyprostowane pod barkami, ciało w prostej linii od stóp do głowy (planka). Frame 2 (mid): pełne opuszczenie — uchwyty TRX przy klatce, łokcie zgięte i ułożone pod ~45° od tułowia, klatka piersiowa, przednie aktony i tricepsy wyraźnie podświetlone (zaangażowane primary), zębaty przedni również aktywny — typowa biomechanika push horizontal w niestabilnym otoczeniu. Frame 4 (end): widoczne dwa położenia uchwytów (efekt 'duszka' z GIF-a) — góra i dół ruchu, podkreślająca niestabilność i swobodę uchwytów. Anatomia podświetla pectoralis major (główny), anterior deltoid i triceps; serratus i core (transverse + obliques) działają jako masywne stabilizatory ze względu na swobodne, wahliwe pasy. Wszystkie pola PL napisane od zera w polskim standardzie fitness/calisthenics. Suspended push-up jest progresją z decline-push-up i bezpośrednim krewnym ring-push-up — niestabilność uchwytów to kluczowa różnica wobec stabilnej pompki na podłodze.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "trx", "suspension_training", "core_stability", "rotator_cuff", "home_workout_friendly", "unstable_surface"]
+}

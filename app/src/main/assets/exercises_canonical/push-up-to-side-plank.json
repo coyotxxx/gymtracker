@@ -1,0 +1,202 @@
+{
+  "id": "push-up-to-side-plank",
+  "name": "Push-Up to Side Plank",
+  "namePl": "Pompka z deską bokiem",
+  "aliases": ["pushup to side plank", "push-up with side plank rotation", "rotational push-up", "push-up to T", "T push-up to side plank"],
+  "aliasesPl": ["pompka z rotacją do deski bokiem", "pompka z przejściem w bok", "pompka z bocznym plankiem", "pompka rotacyjna", "pompka z obrotem T"],
+
+  "description": "A hybrid compound movement that combines a standard push-up with a rotational side plank at the top. After pressing back up, the lifter rotates the entire body 90° onto one side, lifting the top arm straight toward the ceiling and stacking the feet — forming a 'T'-shaped side plank. The non-stance hand presses into the floor while hips remain lifted and stacked. After a brief hold, the body rotates back to a plank position to perform the next push-up, alternating sides each rep. This blends a horizontal push pattern with anti-rotation/rotation core work, hitting the chest, triceps and anterior deltoids while heavily recruiting the obliques and shoulder-girdle stabilizers.",
+  "descriptionPl": "Hybrydowe ćwiczenie złożone, łączące standardową pompkę z rotacyjną deską bokiem w pozycji szczytowej. Po wypchnięciu się do góry ćwiczący obraca całe ciało o 90° na jeden bok, wyciągając górną rękę prosto w stronę sufitu i układając stopy jedna na drugiej — tworząc deskę bokiem w kształcie litery 'T'. Ręka oporowa wciska się w podłogę, a biodra pozostają uniesione i ułożone w jednej linii. Po krótkim przytrzymaniu ciało wraca do pozycji planku, by wykonać kolejną pompkę, naprzemiennie zmieniając stronę. Łączy poziome wypychanie z pracą antyrotacyjną i rotacyjną core'a, angażując klatkę, tricepsy i przednie aktony, a jednocześnie mocno aktywując skośne brzucha oraz stabilizatory obręczy barkowej.",
+
+  "instructions": [
+    "Set up in a standard high plank: hands slightly wider than shoulders, directly under shoulders, feet hip-width apart. Body in a straight line from heels to head.",
+    "Brace the core, squeeze the glutes. Inhale and lower into a push-up — elbows track at ~45° from the torso, chest just above the floor.",
+    "Exhale and press back up to the top of the push-up. Fully extend the elbows without locking out aggressively.",
+    "At the top, shift weight onto one hand (e.g., the right). Pivot the feet — the top (left) foot stacks on top of the bottom (right) foot, or rests just behind it for more stability.",
+    "Rotate the torso 90° to the side as you lift the left arm straight toward the ceiling. Hips lift and stack — the body forms a long diagonal line in a side plank, with the free arm pointing up.",
+    "Hold the side plank for 1-2 seconds. Keep the hips high, the bottom shoulder packed (away from the ear), and gaze forward or up at the raised hand.",
+    "Reverse the rotation — bring the top arm back down to the floor, return to plank position.",
+    "Perform the next push-up and rotate to the opposite side. Alternate sides each rep."
+  ],
+  "instructionsPl": [
+    "Ustaw się w wysokim planku: dłonie nieco szerzej niż barki, bezpośrednio pod barkami, stopy na szerokość bioder. Ciało w prostej linii od pięt do głowy.",
+    "Napnij brzuch, ściśnij pośladki. Wdech i opuszczaj się do pompki — łokcie pod kątem ~45° od tułowia, klatka tuż nad podłogą.",
+    "Wydech, wypchnij się z powrotem do góry. W pełni wyprostuj łokcie, bez agresywnego przeprostu.",
+    "Na szczycie przenieś ciężar na jedną rękę (np. prawą). Obróć stopy — górna (lewa) stopa układa się na dolnej (prawej) lub tuż za nią dla większej stabilności.",
+    "Obróć tułów o 90° w bok, jednocześnie unosząc lewą rękę prosto w stronę sufitu. Biodra unoszą się i układają w linii — ciało tworzy długą skośną linię w desce bokiem, z wolną ręką wyciągniętą w górę.",
+    "Wytrzymaj deskę bokiem 1-2 sekundy. Trzymaj biodra wysoko, dolny bark spakowany (z dala od ucha), wzrok skierowany przed siebie lub na uniesioną dłoń.",
+    "Cofnij rotację — opuść górną rękę z powrotem na podłogę, wróć do pozycji planku.",
+    "Wykonaj kolejną pompkę i obróć się w przeciwną stronę. Naprzemiennie zmieniaj strony przy każdym powtórzeniu."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "multi_planar",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "obliques", "triceps"],
+    "secondary": ["anterior_deltoids", "glutes_medius", "core"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "scapular_stabilizers", "transverse_abdominis", "quadratus_lumborum"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "obliques": "P9",
+    "triceps": "P7",
+    "anterior_deltoids": "S6",
+    "glutes_medius": "S6",
+    "core": "S7",
+    "serratus_anterior": "T5",
+    "rotator_cuff": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["yoga_mat", "push_up_handles"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["push-up", "side-plank", "plank"],
+    "progression_to": ["deficit-push-up-to-side-plank", "weighted-push-up-to-side-plank", "push-up-to-side-plank-with-leg-raise", "single-arm-push-up"],
+    "alternatives": ["push-up", "side-plank", "t-push-up", "spider-push-up", "renegade-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hands directly under shoulders — wrists, elbows, shoulders stacked",
+      "Feet together or hip-width — together = harder side plank balance",
+      "Pre-brace plank: glutes squeezed, core braced, ribs down",
+      "Decide which side rotates first — alternate every rep",
+      "Pick a yoga mat or non-slip surface — pivoting feet need grip"
+    ],
+    "setup_cues_pl": [
+      "Dłonie dokładnie pod barkami — nadgarstki, łokcie, barki ustawione pionowo",
+      "Stopy razem lub na szerokość bioder — razem = trudniejsza deska bokiem",
+      "Pre-bracing planka: pośladki ściśnięte, brzuch napięty, żebra w dół",
+      "Zdecyduj którą stroną rotujesz najpierw — zmieniaj przy każdym powtórzeniu",
+      "Wybierz matę lub powierzchnię antypoślizgową — stopy muszą mieć przyczepność przy obrocie"
+    ],
+    "execution_cues": [
+      "Full push-up first, side plank second — finish the press before rotating",
+      "Rotate from the hips and core — not just the arm. Whole body turns as one unit",
+      "Reach the top hand straight to the ceiling — long arm, fingers pointing up",
+      "Stack the hips — drive them up, don't let them sag toward the floor",
+      "Pause 1-2 seconds at the top of the side plank — feel the obliques fire"
+    ],
+    "execution_cues_pl": [
+      "Najpierw pełna pompka, potem deska bokiem — dokończ wypchnięcie zanim zaczniesz rotację",
+      "Obracaj od bioder i core'a — nie tylko ramieniem. Całe ciało rotuje jako jedna jednostka",
+      "Wyciągnij górną rękę prosto do sufitu — długie ramię, palce w górę",
+      "Ułóż biodra w linii — wypchnij je do góry, nie pozwól im opaść w stronę podłogi",
+      "Pauza 1-2 sekundy na szczycie deski bokiem — poczuj jak palą skośne"
+    ],
+    "common_faults": [
+      {
+        "fault": "Incomplete rotation (hips don't lift, body stays semi-flat)",
+        "faultPl": "Niepełna rotacja (biodra nie unoszą się, ciało zostaje półpłasko)",
+        "cause": "Weak obliques, fear of falling, rushing through the rep",
+        "causePl": "Słabe skośne brzucha, strach przed upadkiem, pośpiech przy powtórzeniu",
+        "cue": "Drive the hips toward the ceiling — imagine someone pulling them up by a rope. Hold the top position for a full breath before reversing.",
+        "cuePl": "Wypchnij biodra w stronę sufitu — wyobraź sobie, że ktoś unosi je na linie. Wytrzymaj pozycję szczytową przez pełny oddech zanim zaczniesz wracać."
+      },
+      {
+        "fault": "Sagging hips during the push-up phase",
+        "faultPl": "Opadające biodra w fazie pompki",
+        "cause": "No core/glute pre-brace, treating it as 'just a push-up'",
+        "causePl": "Brak napięcia core'a/pośladków, traktowanie jako 'zwykła pompka'",
+        "cue": "Squeeze glutes HARD before lowering. Plank first, push-up second. If hips sag — drop to knees or regress to standard push-up.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. Najpierw plank, potem pompka. Jeśli biodra opadają — zejdź na kolana lub wróć do zwykłej pompki."
+      },
+      {
+        "fault": "Asymmetry — one side rotates higher/lower than the other",
+        "faultPl": "Asymetria — jedna strona rotuje wyżej/niżej niż druga",
+        "cause": "Dominant-side bias, unilateral core weakness, uneven shoulder mobility",
+        "causePl": "Faworyzowanie strony dominującej, jednostronna słabość core'a, nierówna mobilność barków",
+        "cue": "Film yourself or use a mirror. Match the height of the top hand on both sides — pause longer on the weaker side to balance it out.",
+        "cuePl": "Nagraj się lub użyj lustra. Zrównaj wysokość górnej dłoni po obu stronach — przytrzymuj dłużej po słabszej stronie, by ją wyrównać."
+      },
+      {
+        "fault": "No pause at the top of side plank (just touch-and-go)",
+        "faultPl": "Brak pauzy na szczycie deski bokiem (rotacja w stylu 'touch-and-go')",
+        "cause": "Trying to chain reps fast, losing the isometric oblique work",
+        "causePl": "Próba szybkiego łączenia powtórzeń, utrata pracy izometrycznej skośnych",
+        "cue": "Hold 1-2 seconds at the top. The side plank IS the exercise — the push-up is just the transition. Count 'one-thousand-one, one-thousand-two'.",
+        "cuePl": "Wytrzymaj 1-2 sekundy na szczycie. Deska bokiem TO jest to ćwiczenie — pompka to tylko przejście. Licz 'tysiąc-jeden, tysiąc-dwa'."
+      },
+      {
+        "fault": "Bottom shoulder shrugged toward the ear",
+        "faultPl": "Dolny bark podciągnięty do ucha",
+        "cause": "Loose scapula, no shoulder packing, weak rotator cuff",
+        "causePl": "Luźna łopatka, brak spakowania barku, słaby rotator cuff",
+        "cue": "'Long neck' — push the floor away with the bottom hand, drive the shoulder DOWN away from the ear. Pretend you're pushing your ribcage up.",
+        "cuePl": "'Długa szyja' — odepchnij podłogę dolną ręką, ściągnij bark W DÓŁ, z dala od ucha. Wyobraź sobie, że wypychasz klatkę piersiową do góry."
+      }
+    ],
+    "breathing": "Inhale during the push-up descent, exhale on the press up. Inhale calmly while holding the side plank, exhale on the rotation back to plank.",
+    "breathingPl": "Wdech podczas schodzenia w pompce, wydech przy wypychaniu. Spokojny wdech podczas trzymania deski bokiem, wydech przy rotacji z powrotem do planku."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles to keep wrist neutral, or perform from elbows (knee push-up to elbow side plank). The single-arm support phase loads the bottom wrist heavily during rotation.",
+      "modificationPl": "Użyj uchwytów do pompek, by utrzymać neutralny nadgarstek, lub wykonuj z łokci (pompka z kolan i deska bokiem na łokciu). Faza jednoramienna mocno obciąża dolny nadgarstek podczas rotacji.",
+      "alternative": "elbow-side-plank"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "caution",
+      "modification": "The single-arm load at the top of side plank stresses the rotator cuff and shoulder stabilizers. Build prerequisite strength with standard side planks (10+ seconds per side, both sides equal) before adding the rotation.",
+      "modificationPl": "Obciążenie na jednej ręce w desce bokiem stresuje rotator cuff i stabilizatory barku. Najpierw zbuduj siłę w klasycznej desce bokiem (10+ sekund po stronie, obie strony równo), zanim dodasz rotację.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Sagging hips or twisting under load can stress the lumbar spine. If you can't hold a rigid plank or stable side plank — regress to standard push-up + held side plank as separate exercises until core strength catches up.",
+      "modificationPl": "Opadające biodra lub skręt pod obciążeniem mogą obciążać odcinek lędźwiowy. Jeśli nie utrzymujesz sztywnego planku ani stabilnej deski bokiem — wróć do zwykłej pompki i izometrycznej deski bokiem jako osobnych ćwiczeń, aż brzuch się wzmocni.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "recent_oblique_strain",
+      "severity": "avoid",
+      "modification": "Rotational side plank loads the obliques both isometrically and through dynamic rotation. Wait until pain-free in static side planks and rotation-free planks before reintroducing.",
+      "modificationPl": "Rotacyjna deska bokiem obciąża skośne zarówno izometrycznie, jak i przy dynamicznej rotacji. Poczekaj, aż statyczna deska bokiem i planki bez rotacji będą bezbolesne, zanim wrócisz do tego ćwiczenia.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 alternating reps (hypertrophy/core) | 3x6-8 with 2s pause at top (strength/control) | 30-45s AMRAP per side (conditioning)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "push-up-to-side-plank.gif",
+    "frames_extracted": [
+      "frames/push-up-to-side-plank/frame_0_start.png",
+      "frames/push-up-to-side-plank/frame_1_early.png",
+      "frames/push-up-to-side-plank/frame_2_mid.png",
+      "frames/push-up-to-side-plank/frame_3_late.png",
+      "frames/push-up-to-side-plank/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/push-up-to-side-plank"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "Frame 0 (start): postać w wysokim planku (góra pompki) — dłonie pod barkami, łokcie wyprostowane, ciało w prostej linii. Klatka piersiowa i tricepsy podświetlone (faza push-up). Frame 2 (mid): pełna rotacja w deskę bokiem — ciało obrócone o 90° na bok, jedna ręka oporowa w podłogę, druga wyciągnięta prosto w górę, stopy ułożone jedna na drugiej, biodra wysoko uniesione. Skośne brzucha i obręcz barkowa wyraźnie podświetlone — klasyczna pozycja T side plank. Frame 4 (end): powrót przez rotację do pozycji planku — postać znowu czołowo, klatka i tricepsy podświetlone, ramię przeciwne (cel kolejnej rotacji) jeszcze widoczne jako kontur w górze. GIF potwierdza alternating laterality (rotacja w bok, potem powrót — w kolejnym cyklu druga strona). Klasyfikacja multi-planar: push-up w sagittal + rotacja w transverse/frontal. Wszystkie pola PL napisane od zera w polskim standardzie fitness. 5 common_faults (niepełna rotacja, opadające biodra, asymetria, brak pauzy, podciągnięty dolny bark) + 4 contraindications (wrist, shoulder instability, lower back, oblique strain). Difficulty 6 — wymaga prerekwizytów push-up + side-plank.",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "core", "obliques", "horizontal_push", "rotation", "anti_rotation", "compound_hybrid", "home_workout", "no_equipment_friendly", "alternating", "T_push_up"]
+}

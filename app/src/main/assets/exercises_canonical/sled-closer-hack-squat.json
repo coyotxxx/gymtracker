@@ -1,0 +1,195 @@
+{
+  "id": "sled-closer-hack-squat",
+  "name": "Sled Closer Hack Squat",
+  "namePl": "Hack squat maszynowy wąskim rozstawem",
+  "aliases": ["sled closer hack squat", "narrow stance hack squat", "close stance hack squat", "narrow foot hack squat", "close foot hack squat", "vastus lateralis hack squat"],
+  "aliasesPl": ["hack squat maszynowy wąskim rozstawem", "hack squat wąsko", "hack squat ze stopami blisko siebie", "hack squat narrow stance", "hack squat close stance", "wąski hack squat na maszynie", "hack squat na maszynie z wąskim ustawieniem stóp"],
+
+  "description": "Stance variation of the classic machine hack squat (45-degree sled platform) performed with the feet placed CLOSE together (heels nearly touching, toes slightly turned out). The narrow foot position deliberately shifts mechanical load onto the OUTER head of the quadriceps — vastus lateralis — while reducing adductor and inner-thigh involvement. The locked sled rails eliminate balance demand and the shoulder-pad backrest removes spinal compression, allowing focused isolation of the quad sweep with progressive overload. A staple finishing or volume movement in bodybuilding leg sessions when targeting the outer thigh 'sweep' for visual width and symmetry.",
+  "descriptionPl": "Wariant rozstawu stóp klasycznego hack squat maszynowego (saneczki pochylone pod kątem 45°) wykonywany ze stopami ustawionymi BLISKO siebie (pięty prawie się stykają, palce lekko skierowane na zewnątrz). Wąska pozycja stóp celowo przenosi obciążenie na ZEWNĘTRZNĄ głowę mięśnia czworogłowego — vastus lateralis — jednocześnie zmniejszając zaangażowanie przywodzicieli i wewnętrznej części uda. Sztywne szyny saneczek eliminują wymagania równowagi, a oparcie z poduszkami naramiennymi usuwa kompresję kręgosłupa, co pozwala na skupioną izolację 'rozjazdu' czworogłowego z progresywnym obciążeniem. Standardowy ruch końcowy lub objętościowy w kulturystycznych jednostkach na nogi przy pracy nad zewnętrzną częścią uda dla wizualnej szerokości i symetrii sylwetki.",
+
+  "instructions": [
+    "Load the hack squat machine sled with appropriate weight on each side. Start lighter than your standard hack squat stance — the narrow stance is mechanically less stable and less strong.",
+    "Step onto the footplate and place your back firmly against the back pad. Settle your shoulders under the shoulder pads.",
+    "Position your feet CLOSE together — heels nearly touching or 5-10 cm apart maximum. Point toes slightly outward (5-15°) for natural knee tracking. Feet should sit in the lower-middle portion of the footplate.",
+    "Grip the handles. Brace your core hard, take a deep breath, and unlock the safety stops by rotating the handles (typical machine design).",
+    "Lower yourself by bending the knees and hips together. The narrow stance forces the knees to travel forward more than in a wide stance — let them track over the toes.",
+    "Descend in a controlled tempo (2-3 seconds eccentric) until your thighs reach parallel to the footplate or slightly below — pain-free range only. Do not lose lumbar contact with the back pad.",
+    "Drive back up by pushing through the WHOLE foot — emphasize the mid-foot and heel. Keep the knees tracking outward over the toes; do not let them cave inward (valgus collapse).",
+    "Stop just short of full knee lockout at the top to keep constant tension on the quadriceps. Inhale and reset bracing before the next rep.",
+    "After the final rep, return to the top and re-engage the safety stops by rotating the handles before stepping out."
+  ],
+  "instructionsPl": [
+    "Załaduj saneczki maszyny hack squat odpowiednim ciężarem z obu stron. Zacznij lżej niż przy standardowym rozstawie hack squat — wąska postawa jest mechanicznie mniej stabilna i mniej mocna.",
+    "Wejdź na platformę i mocno oprzyj plecy o oparcie. Ułóż barki pod poduszkami naramiennymi.",
+    "Ustaw stopy BLISKO siebie — pięty prawie się stykają lub maksymalnie 5-10 cm odstępu. Skieruj palce lekko na zewnątrz (5-15°) dla naturalnego śledzenia kolan. Stopy powinny być na dolno-środkowej części platformy.",
+    "Chwyć uchwyty. Mocno napnij brzuch, weź głęboki wdech i odblokuj zabezpieczenia obracając uchwyty (typowa konstrukcja maszyny).",
+    "Schodź w dół zginając jednocześnie kolana i biodra. Wąska postawa wymusza większy ruch kolan do przodu niż przy szerokim rozstawie — pozwól im podążać za palcami stóp.",
+    "Schodź w kontrolowanym tempie (2-3 sekundy faza ekscentryczna), aż uda osiągną równoległość do platformy lub zejdą nieznacznie poniżej — tylko zakres bez bólu. Nie odrywaj odcinka lędźwiowego od oparcia.",
+    "Wypchnij się w górę przez CAŁĄ stopę — akcent na środek stopy i piętę. Trzymaj kolana wycelowane na zewnątrz nad palcami stóp; nie pozwól im zapadać się do środka (kolano koślawe).",
+    "Zatrzymaj się tuż przed pełnym wyprostem kolan u góry, aby utrzymać stałe napięcie na czworogłowych. Wdech i resetuj napięcie brzucha przed kolejnym powtórzeniem.",
+    "Po ostatnim powtórzeniu wróć do góry i ponownie załącz zabezpieczenia obracając uchwyty przed zejściem z maszyny."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps"],
+    "secondary": ["glutes", "hamstrings"],
+    "stabilizers": ["core", "calves", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "S6",
+    "hamstrings": "S4",
+    "core": "S3",
+    "calves": "T3",
+    "adductors": "T2"
+  },
+
+  "equipment": {
+    "required": ["hack_squat_machine"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "sled-hack-squat", "lever-leg-press"],
+    "progression_to": ["sled-hack-squat", "barbell-back-squat", "barbell-front-squat"],
+    "alternatives": ["sled-hack-squat", "lever-leg-press", "smith-hack-squat", "narrow-stance-leg-press", "front-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet CLOSE — heels nearly touching, 5-10 cm max apart",
+      "Toes slightly out (5-15°) — natural knee tracking, not parallel",
+      "Feet in the lower-middle of the footplate, not at the top",
+      "Back flat against the pad, shoulders settled under the yoke",
+      "Brace before unlocking the safety — never unrack with a loose core"
+    ],
+    "setup_cues_pl": [
+      "Stopy BLISKO — pięty prawie się stykają, maks 5-10 cm odstępu",
+      "Palce lekko na zewnątrz (5-15°) — naturalne śledzenie kolan, nie równolegle",
+      "Stopy na dolno-środkowej części platformy, nie na samej górze",
+      "Plecy płasko przy oparciu, barki osadzone pod poduszkami",
+      "Napnij brzuch przed odblokowaniem zabezpieczeń — nigdy nie startuj z luźnym tułowiem"
+    ],
+    "execution_cues": [
+      "Knees PUSH OUT over the toes — never let them cave inward",
+      "Knees will travel forward more than in wide stance — that's correct here",
+      "Drive through the whole foot, mid-foot and heel especially",
+      "Stop just before full lockout — constant tension on the quads",
+      "Lumbar contact with the pad never breaks — control the depth"
+    ],
+    "execution_cues_pl": [
+      "Kolana WYPYCHAJ na zewnątrz nad palce — nigdy nie pozwól im zapadać do środka",
+      "Kolana wyjdą bardziej do przodu niż w szerokim rozstawie — tu to prawidłowe",
+      "Wypychaj przez całą stopę, szczególnie środek stopy i piętę",
+      "Zatrzymaj się tuż przed pełnym wyprostem — stałe napięcie na czworogłowych",
+      "Kontakt lędźwi z oparciem nigdy się nie zrywa — kontroluj głębokość"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knee valgus collapse (knees caving inward at the bottom)",
+        "faultPl": "Koślawość kolan (kolana zapadają się do środka w dolnej pozycji)",
+        "cause": "The narrow stance reduces the natural base of support for the knees. Weak hip abductors (glute medius), tight adductors, or load too heavy will pull the knees toward each other during the eccentric or out of the hole.",
+        "causePl": "Wąska postawa zmniejsza naturalną bazę podparcia dla kolan. Słabe odwodziciele biodra (mięsień pośladkowy średni), napięte przywodziciele lub zbyt duży ciężar ściągają kolana ku sobie podczas fazy ekscentrycznej lub przy wyjściu z dołu.",
+        "cue": "Actively push the knees outward over the toes throughout the entire rep. Drop weight if you cannot control the line.",
+        "cuePl": "Aktywnie wypychaj kolana na zewnątrz nad palce stóp przez całe powtórzenie. Zmniejsz ciężar, jeśli nie potrafisz utrzymać linii."
+      },
+      {
+        "fault": "Lumbar spine peeling off the back pad ('butt wink')",
+        "faultPl": "Odrywanie odcinka lędźwiowego od oparcia ('butt wink')",
+        "cause": "Going deeper than hip mobility allows in a narrow stance. The pelvis tucks under and the lower back rounds against the pad, creating shearing forces on the lumbar discs.",
+        "causePl": "Schodzenie głębiej niż pozwala mobilność bioder przy wąskim rozstawie. Miednica podwija się a lędźwie zaokrąglają na oparciu, tworząc siły ścinające na krążkach lędźwiowych.",
+        "cue": "Stop the descent the moment your lumbar starts to leave the pad — depth is whatever you can keep flat. Stretch hip flexors and ankles outside the gym.",
+        "cuePl": "Zatrzymaj zejście w momencie gdy lędźwie zaczynają odchodzić od oparcia — głębokość to tyle, ile możesz zachować płasko. Rozciągaj zginacze biodra i kostki poza treningiem."
+      },
+      {
+        "fault": "Heels rising off the footplate at the bottom",
+        "faultPl": "Odrywanie pięt od platformy w dolnej pozycji",
+        "cause": "Limited ankle dorsiflexion combined with feet placed too low on the footplate. The knees push too far forward without ankle range, shifting load to the toes and forefoot.",
+        "causePl": "Ograniczona zgięciowa mobilność kostek w połączeniu ze stopami ustawionymi za nisko na platformie. Kolana wypychają się za daleko w przód bez zakresu kostek, przenosząc ciężar na palce i przodostopie.",
+        "cue": "Move feet 5-10 cm higher on the footplate, or limit depth to where heels stay glued. Lifting shoes with a raised heel help long-term.",
+        "cuePl": "Przesuń stopy 5-10 cm wyżej na platformie lub ogranicz głębokość do miejsca, gdzie pięty pozostają przyklejone. Buty do podnoszenia z podwyższoną piętą pomagają długofalowo."
+      },
+      {
+        "fault": "Using the standard hack squat weight on the narrow stance",
+        "faultPl": "Używanie tego samego ciężaru co przy standardowym hack squat",
+        "cause": "Athletes assume the narrow variant should use the same load as their normal hack stance. In reality the smaller base reduces mechanical leverage by 15-25% and increases knee-joint stress.",
+        "causePl": "Trenujący zakładają, że wariant wąski powinien używać tego samego ciężaru co normalny rozstaw. W rzeczywistości mniejsza baza zmniejsza mechaniczną dźwignię o 15-25% i zwiększa obciążenie stawu kolanowego.",
+        "cue": "Treat this as a separate exercise. Start 15-25% lighter than your regular hack squat working weight and earn the load.",
+        "cuePl": "Traktuj to jako oddzielne ćwiczenie. Zacznij 15-25% lżej niż przy zwykłym hack squat i zapracuj na ciężar."
+      },
+      {
+        "fault": "Bouncing out of the bottom position",
+        "faultPl": "Odbijanie się z dolnej pozycji",
+        "cause": "Loss of control in the eccentric or trying to use stretch reflex on the back pad to assist the lift. The narrow stance combined with bouncing creates extreme patellofemoral compression.",
+        "causePl": "Utrata kontroli w fazie ekscentrycznej lub próba użycia odruchu rozciągowego przy oparciu do wspomożenia wstawania. Wąska postawa w połączeniu z odbijaniem tworzy ekstremalną kompresję rzepkowo-udową.",
+        "cue": "Lower in 2-3 second tempo. Pause for half a second at the bottom, then drive up smoothly without any bounce.",
+        "cuePl": "Schodź w tempie 2-3 sekund. Zatrzymaj się na pół sekundy w dolnej pozycji, potem wypchnij się płynnie bez żadnego odbicia."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before each rep. Hold the breath through the eccentric and the hardest part of the concentric (sticking point ~ 110-130° knee angle). Exhale near lockout. For heavy sets use full Valsalva to protect the lumbar against the back pad.",
+    "breathingPl": "Wdech i napięcie na górze przed każdym powtórzeniem. Wstrzymaj oddech przez fazę ekscentryczną i najtrudniejszą część koncentrycznej (punkt krytyczny ~ 110-130° kąta kolan). Wydech blisko wyprostu. Przy ciężkich seriach stosuj pełny Valsalva aby chronić odcinek lędźwiowy przy oparciu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "The narrow stance forces greater forward knee travel than standard hack squat — significantly higher patellofemoral joint stress. Reduce depth to pain-free range and lower the weight, or switch to a wider stance variant until symptoms resolve.",
+      "modificationPl": "Wąski rozstaw wymusza większy ruch kolan do przodu niż standardowy hack squat — znacznie wyższe obciążenie stawu rzepkowo-udowego. Zmniejsz głębokość do zakresu bez bólu i obniż ciężar, lub przejdź na szerszy rozstaw do ustąpienia objawów.",
+      "alternative": "sled-hack-squat"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Narrow-stance squatting with deep knee flexion can increase shearing on a damaged meniscus. Limit depth to 90° knee flexion (thighs not below parallel) and stay sub-maximal until cleared by a physiotherapist.",
+      "modificationPl": "Przysiady z wąskim rozstawem i głębokim zgięciem kolan mogą zwiększyć ścinanie uszkodzonej łąkotki. Ogranicz głębokość do 90° zgięcia kolan (uda nie poniżej równoległości) i pozostań poniżej maksymalnych ciężarów do zgody fizjoterapeuty.",
+      "alternative": "lever-leg-extension"
+    },
+    {
+      "condition": "limited_ankle_mobility",
+      "severity": "caution",
+      "modification": "Poor dorsiflexion causes heels to rise — extremely problematic in narrow stance where ankle range demand is highest. Move feet higher on the footplate or use heel wedges/lifting shoes.",
+      "modificationPl": "Słaba dorsifleksja powoduje odrywanie pięt — bardzo problematyczne przy wąskim rozstawie, gdzie wymagania zakresu kostek są najwyższe. Przesuń stopy wyżej na platformie lub użyj klinów pod pięty/butów do podnoszenia.",
+      "alternative": "sled-hack-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, vastus lateralis focus) | 3-4x12-20 (high-rep finisher) | 4x8-10 (controlled overload after main quad lift)",
+  "calories_per_kg_per_hour": 6.2,
+
+  "media": {
+    "primary": "sled-closer-hack-squat.gif",
+    "frames_extracted": [
+      "frames/sled-closer-hack-squat/frame_0_start.png",
+      "frames/sled-closer-hack-squat/frame_1_early.png",
+      "frames/sled-closer-hack-squat/frame_2_mid.png",
+      "frames/sled-closer-hack-squat/frame_3_late.png",
+      "frames/sled-closer-hack-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/sled-closer-hack-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek (start/early/mid/late/end) z GIFa jahel. To klasyczny SLED HACK SQUAT (saneczki pochylone pod 45°, oparcie z poduszkami naramiennymi, platforma stopowa u dołu) — odróżnia się od pendulum/lying hack squat. SPECYFIKA tego wariantu: stopy ustawione WĄSKO (closer = bliżej siebie) — widoczne wyraźnie na frame_0 i frame_4 (pięty stykają się lub niemal stykają, palce lekko na zewnątrz). Anatomia podświetlona w GIFie: czworogłowe obu nóg mocno zaznaczone czerwienią, z wyraźnym akcentem na zewnętrzną głowę (vastus lateralis — 'sweep' uda widoczny na zewnętrznej części). Pośladki minimalnie podświetlone, brak przywodzicieli (wąska postawa wyłącza ich pracę). Frame_2 (mid) pokazuje pełny wyprost — uda i kolana wyciągnięte; frame_0/frame_4 pokazują dolną pozycję ze zgięciem ~90-100°. Klasyfikacja muskularna: P10 quadriceps (akcent vastus lateralis), S6 glutes, S4 hamstrings — vs standardowy sled-hack-squat gdzie adductors są S, tutaj są tylko T (wąska postawa je wyłącza). Difficulty 5 (zgodnie z taskiem) — niższe niż barbell-hack-squat 6 czy smith-hack-squat 6 (sztywne szyny + oparcie eliminują balance i grip challenge, pozostaje tylko wąska postawa jako technical difficulty). Equipment: hack_squat_machine (sled-type 45°), nie 'lever' generic. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polskie standardy 'hack squat maszynowy wąskim rozstawem' / 'vastus lateralis' / 'rozjazd quada'.",
+
+  "tags": ["bilateral", "lower_body", "hack_squat", "machine_based", "compound", "quad_dominant", "vastus_lateralis", "narrow_stance", "outer_quad_sweep", "bodybuilding", "low_back_friendly"]
+}

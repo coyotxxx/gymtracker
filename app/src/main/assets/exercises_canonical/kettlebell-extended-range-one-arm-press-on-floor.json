@@ -1,0 +1,205 @@
+{
+  "id": "kettlebell-extended-range-one-arm-press-on-floor",
+  "name": "Kettlebell Extended Range One-Arm Floor Press",
+  "namePl": "Extended range floor press jednorącz z kettlebellą",
+  "aliases": ["KB extended ROM floor press", "deep one-arm KB floor press", "one-arm kettlebell floor press extended range", "single-arm KB floor press deep"],
+  "aliasesPl": ["wyciskanie kettlebellą jednorącz z podłogi pełen zakres", "floor press jednorącz kettlebellą głęboki", "KB floor press jednorącz extended ROM", "jednoręczne wyciskanie KB z podłogi z głębokim zakresem"],
+
+  "description": "Unilateral horizontal press performed lying supine on the floor with a single kettlebell. The 'extended range' variant takes advantage of the kettlebell's offset center of mass — because the bell hangs below the wrist, the hand can descend below the level of the chest before the elbow contacts the floor, restoring a stretched bottom position that a standard floor press normally removes. Working one arm at a time forces the obliques and core to fight rotation (anti-rotation), making this a hybrid hypertrophy + stability lift. Useful for trainees with shoulder issues who want pec stretch without a bench, and for general athletes who need pressing strength plus rotary core work.",
+  "descriptionPl": "Jednoręczne poziome wyciskanie wykonywane leżąc na plecach na podłodze z jedną kettlebellą. Wariant 'extended range' wykorzystuje przesunięty środek ciężkości kettlebelli — ponieważ kula zwisa poniżej nadgarstka, ręka może opaść poniżej linii klatki zanim łokieć dotknie podłogi, przywracając rozciągniętą pozycję dolną, której klasyczny floor press normalnie nie pozwala osiągnąć. Praca jedną ręką zmusza skośne brzucha i core do walki z rotacją (anty-rotacja), przez co ćwiczenie jest hybrydą hipertroficzno-stabilizacyjną. Przydatne dla osób z problemami barkowymi, które chcą rozciągnięcia klatki bez ławki, oraz dla sportowców potrzebujących siły wyciskania razem z rotacyjną pracą core.",
+
+  "instructions": [
+    "Lie supine on the floor with knees bent ~90°, feet flat. Place one kettlebell next to the working shoulder.",
+    "Use two hands to bring the kettlebell to your chest, then transition to the pressing hand only — bell hangs on the back of the wrist/forearm, handle gripped firmly, knuckles pointed up.",
+    "Extend the non-working arm out to the side at ~90° from the torso, palm down, pressed into the floor for anti-rotation support.",
+    "Retract and depress the working-side shoulder blade. Brace the core hard — the offset load wants to rotate you.",
+    "Press the kettlebell up over the shoulder, arm fully extended (no harsh lock-out). This is the start.",
+    "Inhale, lower in a controlled arc. Elbow tracks at ~45-60° from torso. Allow the hand to descend BELOW the level of the chest — the kettlebell's offset mass lets the wrist drop further before the elbow makes floor contact, giving you the extended range.",
+    "Let the elbow lightly touch the floor (or stop just before contact) at the bottom. Hold for ~1 second — feel the deep pec stretch.",
+    "Press back up, driving the kettlebell straight over the shoulder. Exhale through the press. Keep hips and shoulders level on the floor — do NOT let the working side roll up.",
+    "Complete all reps on one side, then carefully transfer the kettlebell to the other hand and repeat."
+  ],
+  "instructionsPl": [
+    "Połóż się na plecach na podłodze, kolana zgięte ~90°, stopy płasko. Obok pracującego barku ustaw kettlebellę.",
+    "Dwiema rękami przenieś kettlebellę na klatkę, potem przejdź na samą rękę wyciskającą — kula zwisa na tyle nadgarstka/przedramienia, uchwyt mocno trzymany, knykcie skierowane do góry.",
+    "Drugą rękę wyciągnij w bok pod kątem ~90° od tułowia, dłoń płasko, dociśnięta do podłogi dla wsparcia anty-rotacyjnego.",
+    "Ściągnij i opuść łopatkę po stronie pracującej. Mocno spnij core — offsetowe obciążenie chce cię obrócić.",
+    "Wyciśnij kettlebellę nad bark, ramię w pełni wyprostowane (bez sztywnego lock-outu). To pozycja startowa.",
+    "Wdech, opuszczaj kontrolowanym łukiem. Łokieć pod kątem ~45-60° od tułowia. Pozwól dłoni opaść PONIŻEJ poziomu klatki — przesunięty środek ciężkości kettlebelli pozwala nadgarstkowi zejść głębiej zanim łokieć dotknie podłogi, dając ci extended range.",
+    "Pozwól łokciowi lekko musnąć podłogę (lub zatrzymaj tuż przed kontaktem) na dole. Trzymaj ~1 sekundę — poczuj głębokie rozciągnięcie klatki.",
+    "Wyciśnij z powrotem, prowadząc kettlebellę prosto nad bark. Wydech podczas wyciskania. Biodra i barki na podłodze równo — NIE pozwól stronie pracującej się obrócić w górę.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem ostrożnie przełóż kettlebellę do drugiej ręki i powtórz."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["obliques", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "forearms", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P8",
+    "triceps": "P8",
+    "anterior_deltoids": "P7",
+    "obliques": "S6",
+    "serratus_anterior": "S5",
+    "rotator_cuff": "T5",
+    "core": "T5",
+    "forearms": "T4",
+    "lats": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-floor-press", "kettlebell-one-arm-floor-press", "push-up"],
+    "progression_to": ["kettlebell-bottoms-up-press", "single-arm-dumbbell-bench-press", "turkish-get-up"],
+    "alternatives": ["dumbbell-floor-press", "kettlebell-one-arm-floor-press", "single-arm-dumbbell-bench-press", "push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat on the floor, knees bent, feet planted — no arch like bench press",
+      "KB sits on the back of the wrist, knuckles up, grip tight",
+      "Opposite arm extended at 90° to the side as anti-rotation anchor",
+      "Working shoulder blade packed (retracted + depressed) BEFORE pressing",
+      "Brace core hard — offset load will try to rotate you off the floor"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko na podłodze, kolana zgięte, stopy zaparte — bez łuku jak w bench pressie",
+      "KB na tyle nadgarstka, knykcie do góry, uchwyt mocny",
+      "Druga ręka wyciągnięta pod 90° w bok jako kotwica anty-rotacyjna",
+      "Łopatka pracującej strony spakowana (ściągnięta + opuszczona) PRZED wyciskaniem",
+      "Mocno spnij core — offsetowe obciążenie chce cię obrócić z podłogi"
+    ],
+    "execution_cues": [
+      "Lower until elbow lightly kisses the floor — let the wrist go BELOW the chest line",
+      "Elbow tracks ~45-60° from torso, NOT flared 90°",
+      "Pause ~1 second at the bottom — feel the deep pec stretch (that's the whole point)",
+      "Press the KB STRAIGHT up over the shoulder, not toward the midline",
+      "Keep both hips and the non-working shoulder glued to the floor — no rotation"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj aż łokieć lekko muśnie podłogę — nadgarstek schodzi PONIŻEJ linii klatki",
+      "Łokieć pod kątem ~45-60° od tułowia, NIE rozsunięty na 90°",
+      "Pauza ~1 sekundę na dole — poczuj głębokie rozciągnięcie klatki (o to chodzi)",
+      "Wyciskaj KB PROSTO nad bark, nie w stronę linii środkowej ciała",
+      "Oba biodra i nie-pracujący bark przyklejone do podłogi — żadnej rotacji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates toward the working side at the bottom",
+        "faultPl": "Tułów obraca się w stronę pracującą na dole",
+        "cause": "Weak core anti-rotation; offset KB load overpowers stability",
+        "causePl": "Słaba anty-rotacja core; offsetowe obciążenie KB pokonuje stabilność",
+        "cue": "Press the opposite hand HARD into the floor, drive both glutes down. Reduce weight.",
+        "cuePl": "Mocno wciśnij drugą rękę w podłogę, dociśnij oba pośladki. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Bouncing the elbow off the floor",
+        "faultPl": "Odbijanie łokcia od podłogi",
+        "cause": "Lack of eccentric control; using floor as a rest instead of a stretch reference",
+        "causePl": "Brak kontroli ekscentrycznej; używanie podłogi jako odpoczynku zamiast referencji do rozciągnięcia",
+        "cue": "Lower for 2-3 seconds, kiss the floor, pause 1 sec, then drive up. No bounce.",
+        "cuePl": "Opuszczaj 2-3 sekundy, lekko muśnij podłogę, pauza 1 sek, potem wyciskanie. Bez odbicia."
+      },
+      {
+        "fault": "Wrist bent backward under the KB load",
+        "faultPl": "Nadgarstek wygięty do tyłu pod obciążeniem KB",
+        "cause": "Loose grip; KB handle sitting too high on the palm; weak forearm",
+        "causePl": "Luźny uchwyt; uchwyt KB zbyt wysoko na dłoni; słabe przedramię",
+        "cue": "Crush the handle, knuckles point at ceiling, neutral wrist. KB rests on back of forearm.",
+        "cuePl": "Zgnieć uchwyt, knykcie do sufitu, nadgarstek neutralny. KB opiera się na tyle przedramienia."
+      },
+      {
+        "fault": "Pressing the KB across the body toward the centerline",
+        "faultPl": "Wyciskanie KB w poprzek ciała w kierunku linii środkowej",
+        "cause": "Habit from bilateral pressing; offset balance compensating to one side",
+        "causePl": "Nawyk z bilateralnych wyciskań; offsetowa równowaga kompensująca w jedną stronę",
+        "cue": "KB finishes DIRECTLY over the working shoulder, not over the chest center. Press straight up.",
+        "cuePl": "KB kończy DOKŁADNIE nad pracującym barkiem, nie nad środkiem klatki. Wyciskaj prosto w górę."
+      },
+      {
+        "fault": "Not exploiting the extended range — stopping at standard floor press depth",
+        "faultPl": "Niewykorzystanie extended range — zatrzymanie na głębokości standardowego floor pressu",
+        "cause": "Treating it like a regular KB floor press; not letting wrist drop below chest line",
+        "causePl": "Traktowanie ćwiczenia jak zwykły KB floor press; niepozwalanie nadgarstkowi opaść poniżej linii klatki",
+        "cue": "The WHOLE POINT is depth — let the hand sink BELOW the chest until elbow contacts. Otherwise do a regular floor press.",
+        "cuePl": "CAŁY SENS to głębokość — pozwól dłoni zejść PONIŻEJ klatki aż łokieć dotknie podłogi. Inaczej rób zwykły floor press."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold during the descent. Exhale on the press up. Maintain intra-abdominal pressure throughout to resist rotation.",
+    "breathingPl": "Wdech na górze, napnij brzuch, wstrzymaj podczas opuszczania. Wydech podczas wyciskania w górę. Utrzymuj ciśnienie wewnątrzbrzuszne przez cały ruch by przeciwdziałać rotacji."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM — stop the elbow earlier, before maximum stretch. The extended range can aggravate impingement. Consider standard floor press first.",
+      "modificationPl": "Zmniejsz ROM — zatrzymaj łokieć wcześniej, przed maksymalnym rozciągnięciem. Extended range może drażnić impingement. Rozważ najpierw zwykły floor press.",
+      "alternative": "kettlebell-one-arm-floor-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Unilateral KB with deep stretch is highly destabilizing for an injured cuff. Switch to fixed-path machine pressing until cleared.",
+      "modificationPl": "Jednoręczna KB z głębokim rozciągnięciem jest mocno destabilizująca dla uszkodzonego stożka. Przejdź na maszynowe wyciskanie z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "KB load on the back of the wrist can aggravate wrist pain. Use a dumbbell instead (neutral grip) or wear wrist wraps.",
+      "modificationPl": "Obciążenie KB na tyle nadgarstka może drażnić ból nadgarstka. Użyj zamiast tego hantli (chwyt neutralny) lub załóż wraps na nadgarstki.",
+      "alternative": "dumbbell-floor-press"
+    },
+    {
+      "condition": "lumbar_instability",
+      "severity": "modify",
+      "modification": "The anti-rotation demand can stress an unstable lower back. Brace very hard, reduce weight, or use bilateral floor press until core is stronger.",
+      "modificationPl": "Wymóg anty-rotacji może obciążać niestabilny dolny odcinek. Bardzo mocno spnij brzuch, zmniejsz ciężar lub użyj bilateralnego floor pressu do czasu wzmocnienia core.",
+      "alternative": "dumbbell-floor-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy, default) | 4-5x5-6 per side (strength + stability) | 3x12-15 per side (endurance/core endurance)",
+  "calories_per_kg_per_hour": 5.2,
+
+  "media": {
+    "primary": "kettlebell-extended-range-one-arm-press-on-floor.gif",
+    "frames_extracted": [
+      "frames/kettlebell-extended-range-one-arm-press-on-floor/frame_0_start.png",
+      "frames/kettlebell-extended-range-one-arm-press-on-floor/frame_1_early.png",
+      "frames/kettlebell-extended-range-one-arm-press-on-floor/frame_2_mid.png",
+      "frames/kettlebell-extended-range-one-arm-press-on-floor/frame_3_late.png",
+      "frames/kettlebell-extended-range-one-arm-press-on-floor/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/kettlebell-extended-range-one-arm-press-on-floor"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): osoba leży na plecach na podłodze, lewa ręka trzyma KB poniżej linii klatki (extended range — KB poniżej barku, łokieć blisko podłogi/dotyka), prawa ręka wyciągnięta w bok jako anty-rotacyjna kotwica, obie nogi rozsunięte. Frame 1-2 (mid): KB wyciskana w górę, ramię prostuje się nad barkiem. Frame 2 (góra): pełne wyciśnięcie, KB bezpośrednio nad pracującym barkiem, ramię wyprostowane bez sztywnego lock-outu. Frame 3-4 (powrót): motion blur opuszczania KB. Podświetlone (czerwone) struktury: górna klatka piersiowa pracującej strony (pectoralis_major), tricepsy pracującego ramienia, plecy/obliques po stronie pracującej (anti-rotation). Jednoręczne wyciskanie z extended range — KB schodzi GŁĘBIEJ niż w klasycznym floor pressie dzięki offsetowemu COM kettlebelli zwisającemu poniżej nadgarstka. Wszystkie pola PL napisane od zera, nie tłumaczone z EN. Mechanic=compound, plane=sagittal, force=push, laterality=unilateral zgodnie z anatomią.",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "unilateral", "kettlebell", "chest", "core_stability", "anti_rotation", "floor_press", "extended_range", "shoulder_friendly", "no_bench"]
+}

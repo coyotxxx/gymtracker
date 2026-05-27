@@ -1,0 +1,194 @@
+{
+  "id": "band-twisting-overhead-press",
+  "name": "Band Twisting Overhead Press",
+  "namePl": "Wyciskanie nad głowę z gumą ze skrętem tułowia",
+  "aliases": ["band rotational overhead press", "band twist press", "rotational band shoulder press", "twisting OHP with band"],
+  "aliasesPl": ["wyciskanie z gumą ze skrętem", "rotacyjne wyciskanie z gumą nad głowę", "OHP z gumą i rotacją", "wyciskanie barki z gumą i skrętem tułowia"],
+
+  "description": "Single-arm overhead press with resistance band combined with active torso rotation. You stand on the band (or anchor it low), grip one handle, and press it overhead while simultaneously rotating the torso away from the pressing arm. The diagonal line of pull from low-opposite-side to high-overhead loads the anterior/lateral deltoid AND the obliques/serratus through the transverse plane. Bridges a vertical push with rotational core work — excellent for athletic carryover (throwing, striking, anti-rotation strength).",
+  "descriptionPl": "Jednorazowe wyciskanie nad głowę z gumą oporową połączone z aktywną rotacją tułowia. Stoisz na gumie (lub kotwiczysz ją nisko), chwytasz jedną rączkę i wyciskasz ją nad głowę z jednoczesnym skrętem tułowia w stronę przeciwną do ręki wyciskającej. Linia naciągu z dołu-strony-przeciwnej do góry-nad-głową obciąża przedni/boczny akton ORAZ skośne brzucha/zębaty w płaszczyźnie poprzecznej. Łączy pchnięcie pionowe z rotacyjną pracą core — świetne dla atletycznego transferu (rzut, uderzenie, siła antyrotacyjna).",
+
+  "instructions": [
+    "Anchor the band low (stand on it with the OPPOSITE foot, or attach to a low anchor on the side opposite the pressing arm).",
+    "Hold one handle in the working hand at shoulder level, elbow bent ~90°, palm facing forward or neutral.",
+    "Stand in a staggered or shoulder-width stance, feet planted, knees soft. Brace core HARD.",
+    "Begin pressing the handle straight up overhead. As the arm extends, ACTIVELY rotate the torso AWAY from the pressing arm (e.g., right arm pressing → torso rotates to the left).",
+    "Finish with the arm fully locked out overhead, biceps near ear, torso rotated. The line from the low anchor to the high hand should be diagonal and taut.",
+    "Reverse the motion under control: lower the handle as you rotate the torso back to neutral.",
+    "Complete all reps on one side, then switch.",
+    "Keep hips relatively stable — rotation comes from the thoracic spine and obliques, not the lower back."
+  ],
+  "instructionsPl": [
+    "Zakotwicz gumę nisko (stań na niej PRZECIWNĄ stopą lub przypnij do niskiego punktu po stronie przeciwnej do ramienia wyciskającego).",
+    "Chwyć jedną rączkę w pracującą rękę na wysokości barku, łokieć zgięty ~90°, dłoń skierowana do przodu lub neutralnie.",
+    "Stań w postawie skośnej lub na szerokość barków, stopy ustabilizowane, kolana lekko ugięte. Napnij MOCNO brzuch.",
+    "Zacznij wyciskać rączkę prosto w górę nad głowę. W trakcie prostowania ramienia AKTYWNIE skręcaj tułów W STRONĘ PRZECIWNĄ do ręki wyciskającej (np. prawa ręka wyciska → tułów skręca w lewo).",
+    "Zakończ z ramieniem w pełnym lock-out nad głową, biceps przy uchu, tułów skręcony. Linia od dolnej kotwicy do wysokiej dłoni ma być skośna i naprężona.",
+    "Cofnij ruch pod kontrolą: opuszczaj rączkę z jednoczesnym powrotem tułowia do neutralnej pozycji.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień.",
+    "Trzymaj biodra względnie stabilne — rotacja idzie z odcinka piersiowego i skośnych, nie z lędźwi."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal_transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "obliques"],
+    "secondary": ["triceps", "serratus_anterior", "trapezius"],
+    "stabilizers": ["core", "rectus_abdominis", "glutes", "quadriceps", "rotator_cuff", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P8",
+    "lateral_deltoids": "P7",
+    "obliques": "P8",
+    "triceps": "S6",
+    "serratus_anterior": "S6",
+    "trapezius": "S5",
+    "core": "S7",
+    "rectus_abdominis": "S5",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["band_anchor", "handle"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["band-overhead-press", "dumbbell-shoulder-press", "wood-chop"],
+    "progression_to": ["landmine-rotational-press", "single-arm-cable-overhead-press-with-rotation", "kettlebell-bottoms-up-rotational-press"],
+    "alternatives": ["landmine-press", "band-overhead-press", "single-arm-dumbbell-overhead-press", "cable-twisting-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor low on the OPPOSITE side from the pressing arm",
+      "Feet stable, shoulder-width or staggered",
+      "Brace core BEFORE starting the press",
+      "Elbow at ~90°, handle at shoulder level",
+      "Shoulder packed down — not shrugged"
+    ],
+    "setup_cues_pl": [
+      "Kotwica nisko, PO STRONIE PRZECIWNEJ do ramienia wyciskającego",
+      "Stopy stabilne, na szerokość barków lub w postawie skośnej",
+      "Napnij brzuch ZANIM zaczniesz wyciskać",
+      "Łokieć ~90°, rączka na wysokości barku",
+      "Bark spakowany w dół — nie wzruszony"
+    ],
+    "execution_cues": [
+      "Press UP and rotate AWAY in one fluid motion",
+      "Finish with biceps by the ear",
+      "Rotation comes from the rib cage, NOT the hips",
+      "Keep hips facing forward as much as possible",
+      "Slow eccentric — control the band on the way down"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj W GÓRĘ i skręcaj W STRONĘ PRZECIWNĄ jednym płynnym ruchem",
+      "Zakończ z bicepsem przy uchu",
+      "Rotacja idzie z klatki piersiowej, NIE z bioder",
+      "Trzymaj biodra zwrócone do przodu na ile możesz",
+      "Powolna ekscentryka — kontroluj gumę w drodze powrotnej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating from the hips instead of the thoracic spine",
+        "faultPl": "Rotacja z bioder zamiast z odcinka piersiowego",
+        "cause": "Sztywna mobilność piersiowa lub brak świadomości ciała",
+        "causePl": "Sztywna mobilność piersiowa lub brak świadomości ciała",
+        "cue": "Plant feet, point hips forward, twist ONLY the rib cage and shoulders.",
+        "cuePl": "Ustaw stopy, biodra do przodu, skręcaj TYLKO klatkę piersiową i barki."
+      },
+      {
+        "fault": "Pressing forward (bar drifts away from the head)",
+        "faultPl": "Wyciskanie do przodu (rączka oddala się od głowy)",
+        "cause": "Band tension pulling forward, weak posterior chain at lockout",
+        "causePl": "Naciąg gumy ciągnie do przodu, słaby tylny łańcuch w lock-out",
+        "cue": "Drive the handle straight up the side of your head, not in front of you.",
+        "cuePl": "Wpychaj rączkę prosto w górę przy boku głowy, nie przed sobą."
+      },
+      {
+        "fault": "Lumbar hyperextension (overarching lower back)",
+        "faultPl": "Przeprost lędźwiowy (zbyt mocne odgięcie lędźwi)",
+        "cause": "Brak napięcia brzucha lub zbyt mocna guma",
+        "causePl": "Brak napięcia brzucha lub zbyt mocna guma",
+        "cue": "Ribs DOWN. Glutes ON. Reduce band tension if you can't keep ribs neutral.",
+        "cuePl": "Żebra W DÓŁ. Pośladki AKTYWNE. Zmniejsz opór gumy jeśli nie utrzymasz neutralnych żeber."
+      },
+      {
+        "fault": "Shrugging the shoulder during the press",
+        "faultPl": "Wzruszenie barku w trakcie wyciskania",
+        "cause": "Słaba serrata, kompensacja czworobocznym górnym",
+        "causePl": "Słaby zębaty, kompensacja czworobocznym górnym",
+        "cue": "Keep the shoulder packed DOWN, press from the lat — don't shrug to the ear.",
+        "cuePl": "Trzymaj bark spakowany W DÓŁ, wyciskaj z najszerszego — nie wzruszaj do ucha."
+      },
+      {
+        "fault": "Losing band tension at the bottom (jerky reps)",
+        "faultPl": "Utrata napięcia gumy na dole (szarpane powtórzenia)",
+        "cause": "Zbyt długa guma lub odpuszczanie w fazie ekscentrycznej",
+        "causePl": "Zbyt długa guma lub odpuszczanie w fazie ekscentrycznej",
+        "cue": "Stand further from the anchor or shorten band. Keep tension on the way down.",
+        "cuePl": "Stań dalej od kotwicy lub skróć gumę. Utrzymuj napięcie również w drodze powrotnej."
+      }
+    ],
+    "breathing": "Inhale and brace at the bottom (handle at shoulder). Exhale through the press and rotation. Inhale during the controlled lowering. The brace stays — don't fully release the core between reps.",
+    "breathingPl": "Wdech i napięcie na dole (rączka przy barku). Wydech przez wyciskanie i rotację. Wdech podczas kontrolowanego opuszczania. Napięcie zostaje — nie odpuszczaj brzucha między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce overhead ROM (press to a lower endpoint), or switch to landmine press (angled, more shoulder-friendly).",
+      "modificationPl": "Zmniejsz zakres overhead (kończ wyciskanie niżej) lub przejdź na landmine press (kątowo, przyjaźniejsze dla barku).",
+      "alternative": "landmine-rotational-press"
+    },
+    {
+      "condition": "lumbar_disc_issue",
+      "severity": "modify",
+      "modification": "Reduce rotation range, brace harder, or perform half-kneeling to lock out the hips and isolate thoracic rotation.",
+      "modificationPl": "Zmniejsz zakres rotacji, napnij mocniej, lub wykonuj z półklęku by zablokować biodra i odizolować rotację piersiową.",
+      "alternative": "half-kneeling-band-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid combined overhead + rotation work until cleared by PT. Rotation under overhead load stresses the cuff significantly.",
+      "modificationPl": "Unikaj łączenia overhead + rotacji do zgody fizjoterapeuty. Rotacja pod obciążeniem overhead mocno obciąża stożek rotatorów.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-12 per side (hypertrophy/control) | 3x6-8 per side (strength-endurance) | 2-3x12-15 per side (athletic conditioning)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "band-twisting-overhead-press.gif",
+    "frames_extracted": [
+      "frames/band-twisting-overhead-press/frame_0_start.png",
+      "frames/band-twisting-overhead-press/frame_1_early.png",
+      "frames/band-twisting-overhead-press/frame_2_mid.png",
+      "frames/band-twisting-overhead-press/frame_3_late.png",
+      "frames/band-twisting-overhead-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/band-twisting-overhead-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Klatki potwierdzają unilateralne wyciskanie z gumą ze skrętem tułowia. Frame 0: postawa wykrocznia, jedna ręka chwyta rączkę na wysokości barku, druga przy biodrze, guma biegnie skośnie z dołu z przeciwnej strony. Frame 2-3: pełne wyciskanie nad głowę z aktywną rotacją tułowia (widoczny skręt korpusu), bicepsy przy uchu, druga ręka stabilizuje. Frame 4: powrót do pozycji startowej. Podświetlenia: przedni i boczny akton (najmocniej), skośne brzucha, zębaty przedni, tricepsy, jakieś podświetlenie czworogłowych jako stabilizator postawy. Klasyfikacja: compound, push, unilateral, frontal+transverse (sagittal press + transverse rotation). Łączy wertykalny push z anti-rotation/rotational core."
+}

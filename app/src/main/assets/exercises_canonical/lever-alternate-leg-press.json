@@ -1,0 +1,203 @@
+{
+  "id": "lever-alternate-leg-press",
+  "name": "Lever Alternate Leg Press",
+  "namePl": "Naprzemienna suwnica (leg press)",
+  "aliases": ["alternating leg press", "single-leg lever press", "unilateral leg press machine", "alternate leg press"],
+  "aliasesPl": ["leg press naprzemiennie", "suwnica jednonóż naprzemiennie", "naprzemienna prasa do nóg", "leg press unilateralny"],
+
+  "description": "Unilateral variant of the seated leg press performed on a machine with independent footplates (most often a Hammer Strength plate-loaded model). The lifter alternates pressing one leg at a time while the opposite leg stays in the flexed position, producing greater single-leg recruitment and exposing left/right strength imbalances. Closed-chain knee/hip extension without spinal loading — a safer alternative to barbell squats for hypertrophy of the quads and glutes.",
+  "descriptionPl": "Jednonóż wariant suwnicy (leg press) wykonywany na maszynie z niezależnymi platformami na każdą stopę (najczęściej Hammer Strength ładowana talerzami). Ćwiczący wypycha naprzemiennie jedną nogą, podczas gdy druga pozostaje zgięta — daje to większe zaangażowanie pojedynczej nogi i ujawnia dysproporcje siły między lewą a prawą stroną. Zamknięty łańcuch kinematyczny w wyproście kolana i biodra bez obciążenia kręgosłupa — bezpieczniejsza alternatywa dla przysiadu ze sztangą w hipertrofii czworogłowych i pośladków.",
+
+  "instructions": [
+    "Load the desired weight evenly on both arms of the machine (plates secured). Adjust the seat so that at the bottom your knees reach about 90° and your lower back stays flat against the pad.",
+    "Sit down, place both feet shoulder-width on the platforms with toes slightly turned out (5-15°). Heels and whole foot in contact with the plate.",
+    "Grip the side handles, press your back and head firmly into the pad, brace your core.",
+    "Disengage the safety stops (if present) by extending both legs and rotating the handles. Both knees softly extended — this is the starting position.",
+    "Inhale and lower the first leg in a controlled tempo (2-3 s), letting that knee come toward your chest. The opposite leg stays extended (or near-extended) holding the load.",
+    "Reach a depth where your knee is bent ~90° or until you feel your pelvis is about to lift off the pad — whichever comes first. Don't let your lower back round.",
+    "Press the working foot through the heel and mid-foot back to near full extension (don't lock the knee hard). Exhale on the press.",
+    "Without resting, switch sides: now lower the opposite leg while the first one supports the weight in the extended position. Continue alternating for the planned reps per leg.",
+    "After the last rep, extend both legs together and re-engage the safety stops before releasing the handles."
+  ],
+  "instructionsPl": [
+    "Załaduj równomiernie ciężar po obu stronach maszyny (talerze zabezpieczone). Wyreguluj siedzisko tak, by w dolnej pozycji kolana były zgięte do około 90°, a dolny odcinek pleców pozostawał płasko na oparciu.",
+    "Usiądź, oprzyj obie stopy na platformach na szerokość barków, palce lekko na zewnątrz (5-15°). Pięta i cała stopa stykają się z platformą.",
+    "Złap boczne uchwyty, mocno wciśnij plecy i głowę w oparcie, napnij brzuch.",
+    "Zwolnij blokady bezpieczeństwa (jeśli są) prostując obie nogi i przekręcając uchwyty. Obie nogi delikatnie wyprostowane — to pozycja startowa.",
+    "Nabierz wdech i zacznij opuszczać pierwszą nogę kontrolowanym tempem (2-3 s), kolano kieruje się ku klatce piersiowej. Druga noga pozostaje wyprostowana (lub prawie) i trzyma ciężar.",
+    "Schodź do momentu, gdy kolano jest zgięte do około 90° lub do chwili, w której miednica zaczyna odrywać się od oparcia — co zdarzy się wcześniej. Nie pozwól, aby dolny odcinek pleców się zaokrąglił.",
+    "Wypchnij pracującą stopę przez piętę i śródstopie z powrotem do niemal pełnego wyprostu (nie blokuj kolana z impetem). Wydech podczas wypychania.",
+    "Bez odpoczynku zmień stronę: teraz opuszczasz drugą nogę, a pierwsza utrzymuje ciężar w wyproście. Kontynuuj naprzemiennie aż osiągniesz zaplanowaną liczbę powtórzeń na nogę.",
+    "Po ostatnim powtórzeniu wyprostuj obie nogi jednocześnie i ponownie aktywuj blokady bezpieczeństwa, zanim puścisz uchwyty."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P8",
+    "hamstrings": "S5",
+    "adductors": "S5",
+    "core": "S4",
+    "calves": "T3",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["leg_press_machine"],
+    "optional": ["lifting_belt", "knee_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["leg-press", "bodyweight-squat"],
+    "progression_to": ["single-leg-leg-press", "barbell-bulgarian-split-squat", "barbell-back-squat"],
+    "alternatives": ["leg-press", "hack-squat", "smith-machine-squat", "single-leg-leg-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat depth so knees reach ~90° at the bottom",
+      "Whole foot on the plate, heel pressed in",
+      "Lower back flat against the pad",
+      "Brace core before unracking the load",
+      "Grip side handles — they help stabilize the torso"
+    ],
+    "setup_cues_pl": [
+      "Siedzisko ustaw tak, by w dole kolano zgięte do ~90°",
+      "Cała stopa na platformie, pięta wciśnięta",
+      "Dolny odcinek pleców płasko przy oparciu",
+      "Napnij brzuch zanim zwolnisz blokady",
+      "Trzymaj boczne uchwyty — pomagają stabilizować tułów"
+    ],
+    "execution_cues": [
+      "Lower the leg slowly (2-3 s), press faster",
+      "Drive through the heel and mid-foot, not the toes",
+      "Don't lock the knee hard at the top",
+      "Stop the descent before your pelvis lifts off the pad",
+      "Keep tension on the holding leg — don't let it relax"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj nogę powoli (2-3 s), wypchnij szybciej",
+      "Wypchnij przez piętę i śródstopie, nie przez palce",
+      "Nie blokuj kolana z impetem na górze",
+      "Zatrzymaj schodzenie zanim miednica oderwie się od oparcia",
+      "Trzymaj napięcie na nodze podpierającej — nie pozwól jej się rozluźnić"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back rounds / pelvis lifts off the pad",
+        "faultPl": "Zaokrąglenie dolnego odcinka pleców / oderwanie miednicy od oparcia",
+        "cause": "Going too deep for hip mobility, seat too far back, or load too heavy",
+        "causePl": "Zbyt głębokie schodzenie poza zakres mobilności bioder, siedzisko za daleko, lub zbyt duży ciężar",
+        "cue": "Stop the descent earlier. Adjust the seat closer or work on hip mobility separately.",
+        "cuePl": "Zatrzymaj schodzenie wcześniej. Przysuń siedzisko bliżej lub popraw mobilność bioder osobno."
+      },
+      {
+        "fault": "Knee valgus (knee collapses inward) on the working leg",
+        "faultPl": "Koślawienie kolana (kolano ucieka do środka) na pracującej nodze",
+        "cause": "Weak glute medius, foot rotated inward, or load too heavy for unilateral work",
+        "causePl": "Słabe pośladkowe średnie, stopa obrócona do wewnątrz, lub ciężar za duży na pracę jednonóż",
+        "cue": "Push the knee out toward your little toe. Reduce load until alignment is clean.",
+        "cuePl": "Wypchnij kolano na zewnątrz w kierunku małego palca. Zmniejsz ciężar aż technika będzie czysta."
+      },
+      {
+        "fault": "Locking out the knee hard at the top",
+        "faultPl": "Twarde blokowanie kolana w wyproście",
+        "cause": "Ego / habit of rushing reps, no awareness of joint stress",
+        "causePl": "Pośpiech / nawyk forsowania powtórzeń, brak świadomości obciążenia stawu",
+        "cue": "Stop just shy of full extension — keep tension on the quad, save the joint.",
+        "cuePl": "Zatrzymaj się tuż przed pełnym wyprostem — utrzymaj napięcie na czworogłowym, oszczędź staw."
+      },
+      {
+        "fault": "Heel rises off the plate",
+        "faultPl": "Pięta odrywa się od platformy",
+        "cause": "Foot too high on the plate, poor ankle mobility, or going below your effective ROM",
+        "causePl": "Stopa za wysoko na platformie, słaba mobilność stawu skokowego, lub zakres ruchu za duży",
+        "cue": "Move the foot lower on the plate or limit depth. Press through the heel.",
+        "cuePl": "Przesuń stopę niżej na platformie lub ogranicz głębokość. Wypchnij przez piętę."
+      },
+      {
+        "fault": "Rushing the alternation — no control on the descent",
+        "faultPl": "Pośpiech w naprzemiennej pracy — brak kontroli w fazie opuszczania",
+        "cause": "Treating the exercise as conditioning, not hypertrophy/strength",
+        "causePl": "Traktowanie ćwiczenia jako kondycyjnego, nie hipertroficznego/siłowego",
+        "cue": "2-3 s eccentric on each leg. Quality reps per leg, not total time under load.",
+        "cuePl": "2-3 s w fazie opuszczania na każdą nogę. Liczy się jakość powtórzeń na nogę, nie suma czasu pod obciążeniem."
+      }
+    ],
+    "breathing": "Inhale on the descent of each leg, exhale on the press. Maintain abdominal brace throughout the set — heavier loads warrant a Valsalva on the hardest portion of each rep.",
+    "breathingPl": "Wdech w trakcie opuszczania każdej nogi, wydech podczas wypychania. Utrzymuj napięcie brzucha przez cały serię — przy ciężkich obciążeniach zastosuj Valsalvę na najtrudniejszej części każdego powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_knee_injury",
+      "severity": "avoid",
+      "modification": "Rest until cleared by a physiotherapist. Unilateral loading on injured knee will worsen the issue.",
+      "modificationPl": "Odpoczynek do czasu kwalifikacji przez fizjoterapeutę. Obciążenie jednonóż na uszkodzonym kolanie pogłębi problem.",
+      "alternative": "lying-leg-curl"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range (above 90° knee flexion). Keep the foot slightly higher on the plate to reduce knee shear.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu (kolano powyżej 90° zgięcia). Ustaw stopę wyżej na platformie, by zmniejszyć obciążenie ścinające kolana.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "Don't let the pelvis lift from the pad. Stop the descent earlier than normal. Avoid loading if the position causes any nerve symptoms.",
+      "modificationPl": "Nie pozwól by miednica odrywała się od oparcia. Zatrzymaj schodzenie wcześniej niż zwykle. Unikaj obciążenia jeśli pozycja wywołuje objawy neurologiczne.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "hip_replacement",
+      "severity": "modify",
+      "modification": "Avoid deep hip flexion (>90°). Use a high foot position on the plate and limit ROM. Consult the surgeon about loading parameters.",
+      "modificationPl": "Unikaj głębokiego zgięcia biodra (>90°). Ustaw stopę wysoko na platformie i ogranicz zakres ruchu. Skonsultuj parametry obciążenia z chirurgiem.",
+      "alternative": "lying-leg-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6-8 per leg (strength) | 2-3x15-20 per leg (endurance/burnout)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-alternate-leg-press.gif",
+    "frames_extracted": [
+      "frames/lever-alternate-leg-press/frame_0_start.png",
+      "frames/lever-alternate-leg-press/frame_1_early.png",
+      "frames/lever-alternate-leg-press/frame_2_mid.png",
+      "frames/lever-alternate-leg-press/frame_3_late.png",
+      "frames/lever-alternate-leg-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/lever-alternate-leg-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:46:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Maszyna typu Hammer Strength z niezależnymi platformami na każdą nogę — klatki 1 i 3 pokazują naprzemienne wypchnięcie jednej nogi przy drugiej zgiętej (lewa wyprostowana / prawa zgięta, potem odwrotnie). Pozycja siedząca z plecami opartymi o pad — to leg press, nie hack squat. Mięśnie podświetlone na ilustracji: czworogłowe (główne) i pośladki/przywodziciele — pasuje do anatomii squat-pattern w pozycji siedzącej. Laterality alternating (nie unilateral i nie bilateral) — obie nogi pracują w obrębie tego samego setu, ale niesymetrycznie w czasie. Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego.",
+
+  "tags": ["leg_press", "alternating", "unilateral_focus", "machine", "quad_dominant", "lower_body", "hypertrophy", "imbalance_correction"]
+}

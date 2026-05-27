@@ -1,0 +1,201 @@
+{
+  "id": "band-pull-through",
+  "name": "Band Pull-Through",
+  "namePl": "Pull-through z gumą (przeciąganie gumy między nogami)",
+  "aliases": ["resistance band pull-through", "band hip hinge", "band glute pull-through", "banded pull-through"],
+  "aliasesPl": ["pull-through z gumą oporową", "przeciąganie gumy między nogami", "hip hinge z gumą", "pull through z taśmą"],
+
+  "description": "A hip-hinge accessory movement using an elastic resistance band anchored low behind the lifter. The band passes between the legs and is held in front of the hips. The lifter performs a Romanian-deadlift-style hinge — hips travel backward against the band's tension, then drive forward to lockout, finishing with a hard glute squeeze. The band loads the movement maximally at the TOP (full hip extension), which makes it superior to free-weight hinges for teaching glute contraction and lockout. Classic exercise for teaching the hip-hinge pattern to beginners, for glute activation as a warm-up, and as a low-back-friendly alternative to deadlifts/RDLs when spinal loading must be minimized.",
+  "descriptionPl": "Pomocniczy ruch hip hinge wykorzystujący gumę oporową zaczepioną nisko za ćwiczącym. Guma przechodzi między nogami i jest trzymana z przodu bioder. Ćwiczący wykonuje hinge w stylu rumuńskiego martwego ciągu — biodra cofają się przeciw napięciu gumy, następnie napędzają do przodu do pełnego wyprostu, kończąc mocnym ściśnięciem pośladków. Guma maksymalnie obciąża ruch na GÓRZE (pełen wyprost biodra), co czyni ten ruch lepszym niż hinge z wolnymi ciężarami do nauki skurczu pośladków i lockoutu. Klasyczne ćwiczenie do nauki wzorca hip hinge dla początkujących, do aktywacji pośladków na rozgrzewce, oraz jako alternatywa dla martwego ciągu/RDL przyjazna dla dolnego odcinka kręgosłupa, gdy obciążenie kręgosłupa musi być zminimalizowane.",
+
+  "instructions": [
+    "Anchor a resistance band low to a sturdy post, rack base, or door anchor — at ankle height or just above the floor.",
+    "Stand facing AWAY from the anchor. Step over the band so it runs between your legs. Grab the band (or its handles) with both hands, palms facing back/down.",
+    "Walk forward a few steps to create tension on the band. Stand tall with hands holding the band in front of your hips, feet hip-width apart, knees slightly bent (~15°).",
+    "Set your back: chest up, lats engaged, neutral spine, shoulder blades down and back. Brace your core.",
+    "Begin the descent by pushing your hips BACKWARD against the band's pull — not by bending the knees. Hands stay relaxed, arms straight, the band slides between your legs.",
+    "Hinge until you feel a strong stretch in the hamstrings — torso ends up at roughly 45° or slightly more, hands somewhere between knees and mid-thigh. Do NOT round the lower back.",
+    "Reverse the movement: drive the hips forward against the band, pulling it through your legs. Arms remain straight throughout — this is NOT a row.",
+    "Finish standing tall with a hard glute squeeze at lockout — full hip extension. The band is maximally tensioned at the top. Pause briefly, then hinge back into the next rep."
+  ],
+  "instructionsPl": [
+    "Zaczep gumę oporową nisko do stabilnego słupka, podstawy klatki lub kotwicy drzwiowej — na wysokości kostek lub tuż nad podłogą.",
+    "Stań TYŁEM do zaczepu. Przekrocz gumę tak, by przechodziła między twoimi nogami. Chwyć gumę (lub jej uchwyty) obiema rękami, dłońmi skierowanymi do tyłu/w dół.",
+    "Zrób kilka kroków do przodu, by uzyskać napięcie na gumie. Stań prosto z rękami trzymającymi gumę z przodu bioder, stopy na szerokość bioder, kolana lekko ugięte (~15°).",
+    "Ustaw plecy: klatka w górze, najszersze napięte, neutralny kręgosłup, łopatki w dół i do tyłu. Napnij brzuch.",
+    "Zacznij schodzenie wypychając biodra DO TYŁU przeciw ciągowi gumy — nie poprzez zginanie kolan. Ręce są rozluźnione, ramiona wyprostowane, guma przesuwa się między nogami.",
+    "Hinguj aż poczujesz mocny rozciąg w dwugłowych ud — tułów kończy w okolicy 45° lub nieco więcej, ręce gdzieś między kolanami a połową uda. NIE zaokrąglaj lędźwi.",
+    "Wróć ruchem: wepchnij biodra do przodu przeciw gumie, przeciągając ją między nogami. Ramiona pozostają wyprostowane przez cały ruch — to NIE jest wiosłowanie.",
+    "Zakończ pozycją stojącą z mocnym ściśnięciem pośladków w lockout — pełen wyprost biodra. Guma jest maksymalnie napięta na górze. Krótka pauza i schodzisz w kolejne powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings"],
+    "secondary": ["erector_spinae", "core"],
+    "stabilizers": ["adductors", "latissimus_dorsi", "forearms", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P7",
+    "erector_spinae": "S6",
+    "core": "S6",
+    "adductors": "S4",
+    "latissimus_dorsi": "S3",
+    "forearms": "S4"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["anchor_point", "band_handles"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["hip-hinge-dowel-drill", "glute-bridge", "bodyweight-good-morning"],
+    "progression_to": ["cable-pull-through", "kettlebell-rdl", "dumbbell-rdl", "barbell-romanian-deadlift", "kettlebell-swing"],
+    "alternatives": ["cable-pull-through", "kettlebell-rdl", "glute-bridge", "hip-thrust", "kettlebell-swing"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Anchor the band LOW — ankle height, behind you",
+      "Face away from the anchor, band runs between legs",
+      "Walk forward until you feel tension at the start position",
+      "Feet hip-width apart, knees slightly bent (~15°)",
+      "Arms straight, hands relaxed in front of hips — this is a hinge, not a row"
+    ],
+    "setup_cues_pl": [
+      "Zaczep gumę NISKO — wysokość kostek, za tobą",
+      "Stań tyłem do zaczepu, guma przechodzi między nogami",
+      "Idź do przodu aż poczujesz napięcie w pozycji startowej",
+      "Stopy na szerokość bioder, kolana lekko ugięte (~15°)",
+      "Ramiona wyprostowane, dłonie rozluźnione przed biodrami — to hinge, nie wiosłowanie"
+    ],
+    "execution_cues": [
+      "Hips BACK to the wall behind you — not down, not knees forward",
+      "Arms stay STRAIGHT and relaxed — no pulling with the upper body",
+      "Lower until hamstrings stretch — torso around 45°, no lumbar rounding",
+      "Drive hips FORWARD aggressively — squeeze glutes hard at the top",
+      "Lockout = standing tall with full hip extension, NOT leaning back"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU do ściany za tobą — nie w dół, nie kolana do przodu",
+      "Ramiona pozostają WYPROSTOWANE i rozluźnione — bez ciągnięcia górą",
+      "Schodź aż poczujesz rozciąg dwugłowych — tułów w okolicy 45°, bez zaokrąglania lędźwi",
+      "Wepchnij biodra DO PRZODU agresywnie — mocno ściśnij pośladki na górze",
+      "Lockout = pozycja stojąca z pełnym wyprostem biodra, NIE odchylanie się do tyłu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the band with the arms (rowing) instead of hinging with the hips",
+        "faultPl": "Ciągnięcie gumy rękami (wiosłowanie) zamiast hingowania biodrami",
+        "cause": "Misunderstanding the movement — treating it like a row; weak posterior chain trying to use arms",
+        "causePl": "Niezrozumienie ruchu — traktowanie go jak wiosłowanie; słaby tylny łańcuch próbujący wykorzystać ramiona",
+        "cue": "Arms are PASSIVE ropes — they only transfer force. The work comes from hips driving forward, not biceps pulling back. Try with elbows locked.",
+        "cuePl": "Ramiona to PASYWNE liny — przekazują tylko siłę. Praca pochodzi z bioder pchających do przodu, nie bicepsów ciągnących. Spróbuj z zablokowanymi łokciami."
+      },
+      {
+        "fault": "Squatting instead of hinging — knees travel forward, hips go down",
+        "faultPl": "Przysiad zamiast hinge — kolana jadą do przodu, biodra opadają",
+        "cause": "Beginner pattern confusion, weak glutes/hamstrings, dominant quads taking over",
+        "causePl": "Pomylenie wzorca u początkujących, słabe pośladki/dwugłowe, dominujące czworogłowe przejmują pracę",
+        "cue": "Hips BACK first, knees barely move. Imagine closing a car door with your butt. Feet flat — if heels rise, it's a squat.",
+        "cuePl": "Najpierw biodra DO TYŁU, kolana ledwo się ruszają. Wyobraź sobie zamykanie drzwi auta pośladkami. Stopy płasko — jeśli pięty się unoszą, to przysiad."
+      },
+      {
+        "fault": "Rounded lower back at the bottom (lumbar flexion)",
+        "faultPl": "Zaokrąglone lędźwie na dole (flexja lędźwiowa)",
+        "cause": "Going too low for current hamstring flexibility, weak erectors, poor bracing",
+        "causePl": "Schodzenie za nisko jak na obecną mobilność hamstringów, słabe prostowniki, słabe napięcie brzucha",
+        "cue": "Stop the hinge BEFORE the back rounds — find your safe range. Brace abs hard. Lats locked, chest proud.",
+        "cuePl": "Zatrzymaj hinge ZANIM plecy się zaokrąglą — znajdź swój bezpieczny zakres. Mocno napnij brzuch. Najszersze zablokowane, klatka dumna."
+      },
+      {
+        "fault": "Hyperextending the lower back at lockout instead of squeezing glutes",
+        "faultPl": "Nadmierne wygięcie lędźwi w lockout zamiast ściskania pośladków",
+        "cause": "Compensating weak glutes with lumbar extension, finishing 'past vertical' to feel something",
+        "causePl": "Kompensacja słabych pośladków wyprostem lędźwi, kończenie 'za pionem' by coś poczuć",
+        "cue": "Finish STRAIGHT, not leaned back. Squeeze glutes — if you feel it in your low back instead, you're hyperextending.",
+        "cuePl": "Zakończ PROSTO, nie odchylając się. Ściśnij pośladki — jeśli czujesz to w lędźwiach zamiast w pośladkach, to nadmierny wyprost."
+      },
+      {
+        "fault": "Band too light — no tension at lockout, movement loses purpose",
+        "faultPl": "Guma zbyt słaba — brak napięcia w lockout, ruch traci sens",
+        "cause": "Wrong band selected, or stood too close to anchor (no pretension)",
+        "causePl": "Wybrana zła guma, lub stanięcie zbyt blisko zaczepu (brak wstępnego napięcia)",
+        "cue": "At the top, the band should be PULLING hard — that's where glutes work most. Step further from the anchor or use thicker band.",
+        "cuePl": "Na górze guma powinna mocno CIĄGNĄĆ — tam pośladki pracują najmocniej. Odejdź dalej od zaczepu lub użyj grubszej gumy."
+      }
+    ],
+    "breathing": "Inhale at the top, brace the core. Hold the breath through the descent (eccentric). Exhale forcefully as you drive the hips forward through lockout. Reset breath before the next rep on heavier bands.",
+    "breathingPl": "Wdech na górze, napnij brzuch. Trzymaj oddech podczas schodzenia (ekscentryk). Wydech z siłą wypchnięcia bioder do przodu przez lockout. Resetuj oddech przed kolejnym powtórzeniem przy grubszych gumach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "caution",
+      "modification": "Band pull-through is much spine-friendlier than barbell RDL (no axial loading), but still loads the hip hinge. Use a very light band, reduce ROM (partial hinge), or wait until acute pain resolves.",
+      "modificationPl": "Pull-through z gumą jest znacznie bardziej przyjazny dla kręgosłupa niż RDL ze sztangą (brak obciążenia osiowego), ale nadal obciąża hip hinge. Użyj bardzo lekkiej gumy, zmniejsz zakres (częściowy hinge), lub zaczekaj aż ostry ból ustąpi.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Reduce the depth of the hinge — go only as low as you can without lumbar rounding. Wider stance helps. Work mobility (90/90 hip stretch, jefferson curl) separately.",
+      "modificationPl": "Zmniejsz głębokość hinge — schodź tylko tak nisko, jak możesz bez zaokrąglania lędźwi. Szersza stójka pomaga. Pracuj nad mobilnością (90/90 stretch, jefferson curl) osobno.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Try slightly wider stance and slight toe-out. Reduce hinge depth. Stop where impingement starts — deeper is not better here.",
+      "modificationPl": "Spróbuj nieco szerszej stójki i lekko rozstaw palce. Zmniejsz głębokość hinge. Zatrzymaj się tam, gdzie zaczyna się impingement — głębiej nie znaczy lepiej.",
+      "alternative": "hip-thrust"
+    },
+    {
+      "condition": "pregnancy_2nd_3rd_trimester",
+      "severity": "modify",
+      "modification": "Hinge depth limited by growing belly. Reduce ROM, use light band. After mid-pregnancy switch to standing/supported glute work. Consult an OB-GYN/physiotherapist.",
+      "modificationPl": "Głębokość hinge ograniczona rosnącym brzuchem. Zmniejsz zakres, użyj lekkiej gumy. Po połowie ciąży przejdź na stojące/wspierane ćwiczenia pośladków. Konsultacja z ginekologiem/fizjoterapeutą.",
+      "alternative": "glute-bridge"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-20 (glute activation, warm-up, hypertrophy — high-rep range works best with bands) | 3-4x15-25 (endurance/burnout finisher) | 2-3x10-15 (technique sets for beginners learning hip hinge)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-pull-through.gif",
+    "frames_extracted": [
+      "frames/band-pull-through/frame_0_start.png",
+      "frames/band-pull-through/frame_1_early.png",
+      "frames/band-pull-through/frame_2_mid.png",
+      "frames/band-pull-through/frame_3_late.png",
+      "frames/band-pull-through/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/band-pull-through"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:15:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (253 KB, 12 oryginalnych klatek). Frame 0: dolna pozycja hinge — tułów pochylony ~45-60°, biodra cofnięte, kolana lekko ugięte, ręce w okolicy między kolanami a połową uda, guma przechodzi między nogami i wychodzi w lewo (do zaczepu nisko za ćwiczącym). Mocno podświetlone: pośladki maximus (cała powierzchnia w czerwieni), dwugłowe ud (top hamstring tuż pod pośladkami). Frame 2: pełen lockout — pozycja stojąca, biodra w pełnym wyprost, guma maksymalnie napięta, ręce przy biodrach. Podświetlone pośladki (skurcz) + prostowniki grzbietu (stabilizacja). Widać że to czysty hip hinge: ramiona pozostają wyprostowane przez cały ruch, kolana minimalnie zmieniają kąt — cała praca w biodrach. Klasyfikacja: hinge / pull / compound / bilateral / sagittal. Kinetic chain OPEN (stopy płasko ale obciążenie nie jest ściśle closed-chain — to ruch hip-dominant z zewnętrznym oporem działającym z tyłu). Primary glutes P9 (band loads MOST at top = peak glute contraction, dlatego glutes wyżej niż hamstrings tu — w przeciwieństwie do RDL ze sztangą gdzie obciążenie jest największe w pozycji rozciągniętej i hamstrings P10). Hamstrings P7 (zaangażowane w ekscentryk, ale band nie obciąża długiego stretch tak jak free weight). Difficulty 3 (beginner) — to ćwiczenie do NAUKI hip hinge, niskie ryzyko, łatwe do skalowania. Prerequisites: dowel hip hinge drill, glute bridge, bodyweight good morning. Progression: cable pull-through (większy stały opór) → kettlebell RDL → barbell RDL. Equipment: resistance band + niski zaczep. Faulty: rowing zamiast hingowania (klasyczna pomyłka początkujących), squat zamiast hinge, rounded back, hyperextension w lockout, zbyt słaba guma. Calories ~4.5 kcal/kg/h (lekkie ćwiczenie pomocnicze). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polska terminologia (hip hinge, pull-through, ekscentryk, lockout, dwugłowe ud, pośladki, prostowniki grzbietu, najszersze).",
+
+  "tags": ["bodybuilding", "rehab_friendly", "posterior_chain", "glute_activation", "hip_hinge", "resistance_band", "beginner_friendly", "warm_up", "compound", "low_back_friendly"]
+}

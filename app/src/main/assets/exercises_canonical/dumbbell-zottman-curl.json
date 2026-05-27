@@ -1,0 +1,201 @@
+{
+  "id": "dumbbell-zottman-curl",
+  "name": "Dumbbell Zottman Curl",
+  "namePl": "Zottman curl z hantlami",
+  "aliases": ["zottman curl", "zottman dumbbell curl", "standing zottman curl"],
+  "aliasesPl": ["uginanie ramion z hantlami sposobem Zottmana", "zottman z hantlami", "uginanie Zottmana"],
+
+  "description": "Hybrid biceps and forearm exercise invented by 19th-century strongman George Zottman. The lifter curls dumbbells up in a supinated grip (palms up, classic curl), rotates the wrists to pronation at the top, then lowers in a pronated grip (palms down, like a reverse curl). Combines a heavy biceps concentric with a forearm-dominant eccentric in a single rep — uniquely efficient for trainees who want arm and grip development without splitting volume across two exercises.",
+  "descriptionPl": "Hybrydowe ćwiczenie na bicepsy i przedramiona wymyślone przez XIX-wiecznego siłacza George'a Zottmana. Ćwiczący ugina hantle do góry w supinacji (dłonie w górę, klasyczny curl), na szczycie obraca nadgarstki do pronacji, po czym opuszcza hantle w pronacji (dłonie w dół, jak reverse curl). Łączy ciężką fazę koncentryczną bicepsa z fazą ekscentryczną dominowaną przez przedramiona w jednym powtórzeniu — wyjątkowo wydajne dla osób które chcą rozwinąć ramiona i chwyt bez dzielenia objętości na dwa osobne ćwiczenia.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Hold a dumbbell in each hand at arms' length with a supinated (palms-up) grip, arms hanging at your sides.",
+    "Pin your elbows to your sides — they stay there for the entire rep. Brace your core and pull your shoulders back and down.",
+    "Curl both dumbbells up by flexing the elbows. Keep the palms facing up throughout the entire concentric phase, like a standard dumbbell curl. Exhale on the way up.",
+    "At the top of the rep, with biceps fully contracted near the front of your shoulders, slowly rotate your wrists 180° so your palms now face down (pronation). The dumbbells stay at the top during this rotation.",
+    "Lower the dumbbells under control over 2-3 seconds in the pronated (palms-down) grip — this is the reverse-curl portion that loads brachialis, brachioradialis and wrist extensors. Inhale on the descent.",
+    "At full elbow extension at the bottom, rotate the wrists back to supinated grip (palms up) to set up for the next rep.",
+    "Avoid swinging the torso. Each rep is one full cycle: curl up supinated → rotate at top → lower pronated → rotate at bottom."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Trzymaj hantle w obu dłoniach na wyprostowanych ramionach chwytem podchwytem (dłonie skierowane w górę), ręce zwisają wzdłuż tułowia.",
+    "Przyklej łokcie do boków — mają tam pozostać przez całe powtórzenie. Napnij brzuch, ściągnij barki w tył i w dół.",
+    "Uginaj oba hantle w łokciach do góry. Utrzymuj dłonie skierowane w górę przez całą fazę koncentryczną, jak w standardowym curlu z hantlami. Wydech podczas unoszenia.",
+    "W górnej pozycji, z bicepsami w pełnym skurczu na wysokości przednich aktonów barków, powoli obróć nadgarstki o 180° tak by dłonie były teraz skierowane w dół (pronacja). Hantle pozostają w górze podczas obrotu.",
+    "Opuszczaj hantle w sposób kontrolowany przez 2-3 sekundy w chwycie nachwytem (dłonie w dół) — to faza reverse curl angażująca mięsień ramienny, ramienno-promieniowy i prostowniki nadgarstka. Wdech podczas opuszczania.",
+    "Przy pełnym wyproście łokci na dole obróć nadgarstki z powrotem do podchwytu (dłonie w górę) aby przygotować się do kolejnego powtórzenia.",
+    "Unikaj bujania tułowia. Każde powtórzenie to pełen cykl: ugięcie w supinacji w górę → obrót na szczycie → opuszczanie w pronacji → obrót na dole."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "brachialis", "brachioradialis"],
+    "secondary": ["forearm_flexors", "forearm_extensors"],
+    "stabilizers": ["anterior_deltoid", "core", "upper_trapezius", "wrist_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P9",
+    "brachialis": "P9",
+    "brachioradialis": "P9",
+    "forearm_flexors": "S6",
+    "forearm_extensors": "S6",
+    "anterior_deltoid": "T3",
+    "wrist_stabilizers": "T4",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["bench", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-curl", "dumbbell-reverse-curl"],
+    "progression_to": ["seated-zottman-curl", "incline-zottman-curl", "preacher-zottman-curl"],
+    "alternatives": ["dumbbell-curl", "hammer-curl", "dumbbell-reverse-curl", "ez-bar-reverse-curl", "cable-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft",
+      "Dumbbells at arms' length, palms forward (supinated)",
+      "Elbows pinned to your sides",
+      "Chest up, shoulders back and down",
+      "Brace core and squeeze glutes — no swinging"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte",
+      "Hantle na wyprostowanych ramionach, dłonie skierowane do przodu (podchwyt)",
+      "Łokcie przyklejone do boków",
+      "Klatka w górze, barki ściągnięte w tył i w dół",
+      "Napnij brzuch i pośladki — żadnego bujania"
+    ],
+    "execution_cues": [
+      "Curl up palms-up — like a normal dumbbell curl",
+      "Rotate wrists 180° at the top — palms now face down",
+      "Lower slowly in pronation — fight the eccentric 2-3 seconds",
+      "Rotate back to palms-up at the bottom before the next rep",
+      "Only forearms move — upper arms stay still"
+    ],
+    "execution_cues_pl": [
+      "Uginaj dłońmi do góry — jak w normalnym curlu z hantlami",
+      "Obróć nadgarstki o 180° na szczycie — dłonie skierowane teraz w dół",
+      "Opuszczaj wolno w pronacji — kontroluj fazę negatywną 2-3 sekundy",
+      "Obróć z powrotem do dłoni w górę na dole przed kolejnym powtórzeniem",
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating the wrists too early (mid-curl instead of at the top)",
+        "faultPl": "Obracanie nadgarstków za wcześnie (w środku ruchu zamiast na szczycie)",
+        "cause": "Habit from standard curls, or load too heavy so the biceps can't finish the concentric in supination",
+        "causePl": "Nawyk ze standardowych curli, lub zbyt duży ciężar przez co biceps nie kończy fazy koncentrycznej w supinacji",
+        "cue": "Pause at the top in full supination for 1 second, then rotate. The rotation happens at peak contraction, not earlier.",
+        "cuePl": "Zatrzymaj się na szczycie w pełnej supinacji na 1 sekundę, potem obróć. Obrót następuje w pełnym skurczu, nie wcześniej."
+      },
+      {
+        "fault": "Dropping the dumbbells in pronation (uncontrolled eccentric)",
+        "faultPl": "Spuszczanie hantli w pronacji (niekontrolowana faza ekscentryczna)",
+        "cause": "Pronated grip feels weaker so the lifter rushes through it, wasting the main benefit of the exercise",
+        "causePl": "Chwyt nachwytem wydaje się słabszy więc ćwiczący skraca tę fazę, marnując główny benefit ćwiczenia",
+        "cue": "The pronated descent IS the exercise. Count to 3 on the way down. Reduce weight if you can't control it.",
+        "cuePl": "Faza opuszczania w pronacji TO JEST to ćwiczenie. Licz do 3 podczas opuszczania. Zmniejsz ciężar jeśli nie umiesz tego kontrolować."
+      },
+      {
+        "fault": "Swinging the torso (kipping)",
+        "faultPl": "Bujanie tułowia (oszukiwanie biodrami)",
+        "cause": "Load too heavy, ego lifting, or forcing reps after technical failure",
+        "causePl": "Zbyt duży ciężar, ego, lub forsowanie powtórzeń po technicznym wyczerpaniu",
+        "cue": "Lower the weight. Sit on a bench or pin your back against a wall to force strict reps.",
+        "cuePl": "Zmniejsz ciężar. Usiądź na ławce lub oprzyj plecy o ścianę aby wymusić ścisłą technikę."
+      },
+      {
+        "fault": "Elbows drift forward at the top",
+        "faultPl": "Łokcie wędrują do przodu w górnej pozycji",
+        "cause": "Trying to lift higher than full elbow flexion allows, recruiting front delts",
+        "causePl": "Próba uniesienia hantli wyżej niż pozwala pełne zgięcie w łokciu, włączanie przednich aktonów barków",
+        "cue": "Stop when forearms reach vertical. Elbows stay directly under shoulders the whole rep.",
+        "cuePl": "Zakończ uginanie gdy przedramiona dojdą do pionu. Łokcie dokładnie pod barkami przez całe powtórzenie."
+      },
+      {
+        "fault": "Wrists hyperextend during the pronated descent",
+        "faultPl": "Przeprostowanie nadgarstków podczas opuszczania w pronacji",
+        "cause": "Weak wrist extensors fatiguing before biceps, or grip too loose on the dumbbell",
+        "causePl": "Słabe prostowniki nadgarstka męczą się przed bicepsem, lub zbyt luźny chwyt hantla",
+        "cue": "Keep wrists straight in line with forearms. Squeeze the handle hard the entire descent.",
+        "cuePl": "Trzymaj nadgarstki proste w linii z przedramieniem. Mocno ściskaj rączkę przez całą fazę opuszczania."
+      }
+    ],
+    "breathing": "Exhale during the supinated curl up. Brief hold at the top during the wrist rotation. Inhale slowly during the pronated descent. Maintain light core brace throughout.",
+    "breathingPl": "Wydech podczas uginania w supinacji. Krótkie zatrzymanie oddechu na szczycie podczas obrotu nadgarstków. Wdech wolno podczas opuszczania w pronacji. Utrzymuj lekkie napięcie brzucha przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "The pronated descent loads wrist extensor tendons at the lateral epicondyle — exactly the inflamed site. Replace eccentric with light isometric holds or switch to standard dumbbell curls until pain-free.",
+      "modificationPl": "Faza opuszczania w pronacji obciąża przyczepy prostowników nadgarstka przy nadkłykciu bocznym — dokładnie miejsce zapalenia. Zamień fazę negatywną na lekkie izometryczne podtrzymania lub przejdź na standardowy curl z hantlami do ustąpienia bólu.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Repeated supination-to-pronation cycling stresses the distal biceps tendon at the radius. Reduce volume, use lighter loads (12-15 reps), avoid heavy eccentrics, or substitute hammer curl.",
+      "modificationPl": "Powtarzane cykle supinacja-pronacja obciążają dystalne przyczepy bicepsa na kości promieniowej. Zmniejsz objętość, używaj lżejszych ciężarów (12-15 powtórzeń), unikaj ciężkich faz negatywnych, lub zamień na hammer curl.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The rotation under load aggravates ulnar and radial wrist injuries. Use wrist wraps and lighter loads, or substitute hammer curl which keeps wrists in neutral position throughout.",
+      "modificationPl": "Obrót pod obciążeniem drażni urazy nadgarstków po stronie łokciowej i promieniowej. Użyj usztywniaczy nadgarstków i lżejszych ciężarów, lub zamień na hammer curl który utrzymuje nadgarstki w neutralnej pozycji przez cały ruch.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing. Perform seated on a bench (back supported) to eliminate spinal loading.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia lędźwiowego. Wykonuj siedząc na ławce z oparciem aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "seated-zottman-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy, classic protocol) | 3x8-10 (combined arm strength) | 2-3x12-15 (forearm endurance focus)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-zottman-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-zottman-curl/frame_0_start.png",
+      "frames/dumbbell-zottman-curl/frame_1_early.png",
+      "frames/dumbbell-zottman-curl/frame_2_mid.png",
+      "frames/dumbbell-zottman-curl/frame_3_late.png",
+      "frames/dumbbell-zottman-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-zottman-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:50:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel. Frame 0 (start): pełny wyprost ramion przy bokach, hantle w chwycie podchwytem (dłonie do siebie/do przodu), bicepsy i przedramiona podświetlone na czerwono — to ZUPEŁNIE inny etap niż klasyczny dumbbell curl bo na końcu cyklu hantle wracają do pozycji palms-up. Frame 1 (early): hantle ok. 30° w górę, dłonie wyraźnie w supinacji. Frame 2 (mid/szczyt): hantle na wysokości barków w pełnym skurczu, w trakcie obrotu nadgarstków — DOBRZE WIDOCZNE że tu następuje rotacja, dłonie skierowane w dół (pronacja). Frame 3 (late): opuszczanie w pronacji, dłonie wyraźnie zwrócone do dołu, znów bicepsy+przedramiona podświetlone — to typowy obraz Zottman descent. Frame 4 (end): powrót do pełnego wyprostu z dłońmi z powrotem do siebie (supinacja). Ćwiczenie jednoznacznie zidentyfikowane jako Zottman Curl — pełen cykl supinacja-curl-rotation-pronated-descent-rotation widoczny w klatkach. Difficulty 5/intermediate bo wymaga koordynacji obrotu pod obciążeniem i kontroli ekscentryka w słabszym chwycie pronowanym; prerequisites to standardowy dumbbell curl + reverse curl. Wszystkie 3 primary movers (biceps, brachialis, brachioradialis) na P9 zgodnie z naturą ćwiczenia: biceps domuje koncentryk w supinacji, brachialis pracuje w obu fazach, brachioradialis dominuje pronowany ekscentryk. Wszystkie pola PL napisane od zera, nie przez tłumaczenie EN.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "forearms", "isolation", "dumbbells", "upper_body", "classic", "hybrid"]
+}

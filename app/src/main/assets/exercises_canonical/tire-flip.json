@@ -1,0 +1,205 @@
+{
+  "id": "tire-flip",
+  "name": "Tire Flip",
+  "namePl": "Przewracanie opony",
+  "aliases": ["tire flip", "strongman tire flip", "heavy tire flip"],
+  "aliasesPl": ["przewracanie opony", "flip opony", "strongman tire flip", "opona strongman"],
+
+  "description": "Classic strongman event. You squat down to grip the bottom edge of a large heavy tire, drive explosively through the legs and hips to lift it, then transition the hands to push the tire over the top until it tips and crashes to the ground. Full-body, conditioning-heavy movement combining a deadlift-style pull, a knee drive, and an explosive push. Trains posterior chain power, hip explosiveness, grip and conditioning under one umbrella.",
+  "descriptionPl": "Klasyczna konkurencja strongman. Schodzisz do przysiadu, łapiesz dolną krawędź dużej ciężkiej opony, eksplozywnie napierasz nogami i biodrami by ją podnieść, potem przekładasz dłonie i wypychasz oponę do przodu, aż przewraca się na drugą stronę. Pełnociałowy, kondycyjny ruch łączący pociąg w stylu martwego ciągu, wbicie kolana i eksplozywny push. Trenuje moc tylnego łańcucha, eksplozywność biodra, chwyt i kondycję w jednym pakiecie.",
+
+  "instructions": [
+    "Stand facing a large heavy tire lying flat on the ground. Feet should be about shoulder-width apart, toes pointing slightly outward.",
+    "Hinge down into a squat-deadlift hybrid: knees bent, hips back, chest up. Slide your hands under the bottom edge of the tire, palms facing up.",
+    "Get tight: chest against the tire, lats engaged, neutral spine, brace the core hard. Shins should almost touch the tire.",
+    "Drive explosively through the legs as if doing a deadlift. Extend the hips and knees together to roll the tire up onto its edge.",
+    "As the tire reaches roughly hip height, quickly drive the knee of your dominant leg into the tire to stabilize it momentarily.",
+    "Instantly switch the hands: rotate the palms forward and push the tire away with the chest and triceps, like a heavy incline push.",
+    "Drive the hips through and fully extend the body, pushing the tire past its tipping point so it falls onto the other side.",
+    "Reset behind the tire and either flip it again (for distance/reps) or stop and recover. Breathe through every transition — do not hold breath for the whole set."
+  ],
+  "instructionsPl": [
+    "Stań przodem do dużej ciężkiej opony leżącej płasko na ziemi. Stopy na szerokość barków, palce lekko na zewnątrz.",
+    "Zejdź do hybrydy przysiadu i martwego ciągu: zegnij kolana, biodra do tyłu, klatka w górze. Wsuń dłonie pod dolną krawędź opony, dłonie skierowane w górę.",
+    "Spnij się: klatka oparta o oponę, najszersze napięte, neutralny kręgosłup, mocne napięcie brzucha. Golenie prawie dotykają opony.",
+    "Eksplozywnie napieraj nogami jak w martwym ciągu. Wyprostuj biodra i kolana razem, by podtoczyć oponę na jej krawędź.",
+    "Gdy opona dochodzi mniej więcej do wysokości biodra, szybko wepchnij kolano dominującej nogi w oponę, by ją stabilizować przez moment.",
+    "Natychmiast zmień ułożenie dłoni: obróć je do przodu i wypchnij oponę klatką i trójgłowymi ramienia, jak ciężkie wyciskanie na skos.",
+    "Wepchnij biodra do przodu i wyprostuj się w pełni, popychając oponę poza punkt równowagi, aż przewróci się na drugą stronę.",
+    "Wróć za oponę i albo przewracaj ją dalej (na dystans/powtórzenia), albo zatrzymaj się i regeneruj. Oddychaj przy każdej fazie — nie wstrzymuj oddechu na całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "hamstrings", "latissimus_dorsi", "anterior_deltoids"],
+    "secondary": ["erector_spinae", "trapezius", "triceps", "pectoralis_major", "forearms"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "calves", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "quadriceps": "P9",
+    "hamstrings": "P8",
+    "latissimus_dorsi": "P7",
+    "anterior_deltoids": "P7",
+    "erector_spinae": "S8",
+    "trapezius": "S7",
+    "triceps": "S7",
+    "pectoralis_major": "S6",
+    "forearms": "S8",
+    "core": "S8"
+  },
+
+  "equipment": {
+    "required": ["large_tire"],
+    "optional": ["gloves", "chalk", "knee_sleeves"]
+  },
+
+  "category": "strongman",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-deadlift", "barbell-back-squat", "atlas-stone-lift", "farmer-walk"],
+    "progression_to": ["heavier-tire-flip", "tire-flip-for-time", "tire-flip-medley"],
+    "alternatives": ["atlas-stone-lift", "sandbag-clean", "barbell-deadlift", "hex-bar-jump"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, shins almost touching the tire",
+      "Hinge into squat-deadlift hybrid — hips back, chest up",
+      "Hands under the bottom edge, palms up, fingers gripping deep",
+      "Chest pressed against the tire — body forms a 'shelf' on the rubber",
+      "Lats engaged, neutral spine, brace HARD before drive"
+    ],
+    "setup_cues_pl": [
+      "Stopy szerokość barków, golenie prawie dotykają opony",
+      "Zejdź w hybrydę przysiadu i martwego ciągu — biodra do tyłu, klatka w górze",
+      "Dłonie pod dolną krawędzią, palce w górę, chwytaj głęboko",
+      "Klatka dociśnięta do opony — ciało tworzy 'półkę' na gumie",
+      "Najszersze napięte, neutralny kręgosłup, mocno spnij brzuch przed startem"
+    ],
+    "execution_cues": [
+      "Drive through the legs like a deadlift — explode upward",
+      "Hips and chest rise TOGETHER — no hip shoot",
+      "Knee drive into the tire when it reaches hip height",
+      "Switch hands fast — rotate palms, push with chest and triceps",
+      "Finish by extending hips through and tipping the tire over"
+    ],
+    "execution_cues_pl": [
+      "Napieraj nogami jak w martwym ciągu — eksplozja w górę",
+      "Biodra i klatka wstają RAZEM — bez strzelania bioder w górę",
+      "Wbij kolano w oponę, gdy dojdzie do wysokości biodra",
+      "Szybka zmiana dłoni — obrót i wypchnij klatką i trójgłowymi",
+      "Zakończ wypchnięciem bioder i przewróceniem opony"
+    ],
+    "common_faults": [
+      {
+        "fault": "Trying to deadlift the tire vertically instead of rolling it",
+        "faultPl": "Próba pionowego podnoszenia opony zamiast podtaczania",
+        "cause": "Treating the lift as a deadlift end-to-end, not understanding the rotational arc",
+        "causePl": "Traktowanie ruchu jako martwy ciąg do końca, brak zrozumienia łuku rotacyjnego",
+        "cue": "The tire ROLLS up onto its edge. Drive forward and up, not straight up. Imagine flipping a heavy book end-over-end.",
+        "cuePl": "Opona PODTACZA się na krawędź. Napieraj do przodu i w górę, nie pionowo. Wyobraź sobie przewracanie ciężkiej książki bok-po-boku."
+      },
+      {
+        "fault": "Rounded lower back at the pickup",
+        "faultPl": "Zaokrąglone plecy lędźwiowe w fazie startowej",
+        "cause": "Hips too high, lats not engaged, or load too heavy for current strength",
+        "causePl": "Biodra za wysoko, najszersze nie napięte, lub zbyt duży ciężar dla obecnej siły",
+        "cue": "Reset. Hips lower, chest against tire, lats tight. Drop the size of the tire if you cannot maintain neutral spine.",
+        "cuePl": "Reset. Niższe biodra, klatka oparta o oponę, najszersze napięte. Zmniejsz rozmiar opony, jeśli nie utrzymujesz neutralnego kręgosłupa."
+      },
+      {
+        "fault": "Failed hand switch — stuck halfway",
+        "faultPl": "Nieudana zmiana dłoni — utknięcie w połowie",
+        "cause": "Timing too slow, no knee drive, or insufficient explosive hip extension to give the tire 'free time' in the air",
+        "causePl": "Za wolny timing, brak wbicia kolana, lub niewystarczająca eksplozja biodra by dać oponie 'wolny czas' w powietrzu",
+        "cue": "Knee drive creates the moment to switch. Drive the hips through HARD — explosive lockout buys you time.",
+        "cuePl": "Wbicie kolana stwarza moment na zmianę. Wepchnij biodra MOCNO — eksplozywny lock-out daje ci czas."
+      },
+      {
+        "fault": "Bicep tear — pulling with bent arms",
+        "faultPl": "Zerwanie bicepsa — ciąg ze zgiętymi ramionami",
+        "cause": "Curling the tire instead of driving with the legs. Classic strongman injury — typical in heavy tire and atlas stone work.",
+        "causePl": "Curlowanie opony zamiast napierania nogami. Klasyczna kontuzja strongman — typowa w pracy z ciężką oponą i atlas stones.",
+        "cue": "ARMS ARE HOOKS, NOT LEVERS. Keep elbows soft but DO NOT actively bend the arms. All power from the legs and hips.",
+        "cuePl": "RAMIONA TO HAKI, NIE DŹWIGNIE. Trzymaj łokcie miękko, ale NIE zginaj ich aktywnie. Cała moc z nóg i bioder."
+      },
+      {
+        "fault": "Holding breath through the entire flip",
+        "faultPl": "Wstrzymywanie oddechu przez całe powtórzenie",
+        "cause": "Treating it like a 1RM deadlift instead of a conditioning event",
+        "causePl": "Traktowanie jak 1RM martwy ciąg zamiast jako wydolnościowe zadanie",
+        "cue": "Brace for the pull, exhale forcefully on the push-over, inhale on the reset. Multiple flips need oxygen.",
+        "cuePl": "Spnij się na ciąg, mocny wydech przy wypchnięciu, wdech przy resecie. Wiele flipów potrzebuje tlenu."
+      }
+    ],
+    "breathing": "Big inhale and brace at the setup. Hold through the initial pull off the floor. Exhale forcefully as you push the tire over the top. Inhale on the reset between flips.",
+    "breathingPl": "Głęboki wdech i napięcie w pozycji startowej. Wstrzymaj oddech przez początkowy ciąg z ziemi. Mocny wydech przy wypchnięciu opony do przewrotu. Wdech podczas resetu między flipami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_injury",
+      "severity": "avoid",
+      "modification": "Do not attempt. Loaded explosive hinge with awkward leverage is high-risk for the spine.",
+      "modificationPl": "Nie wykonuj. Obciążony eksplozywny hinge z niewygodną dźwignią to wysokie ryzyko dla kręgosłupa.",
+      "alternative": "barbell-deadlift"
+    },
+    {
+      "condition": "bicep_tendinopathy",
+      "severity": "avoid",
+      "modification": "Bicep tears are one of the most common tire flip injuries. With any biceps tendon issue, do NOT load this movement.",
+      "modificationPl": "Zerwania bicepsa to jedna z najczęstszych kontuzji przy tire flip. Przy jakimkolwiek problemie ze ścięgnem bicepsa NIE obciążaj tego ruchu.",
+      "alternative": "barbell-deadlift"
+    },
+    {
+      "condition": "shoulder_instability",
+      "severity": "modify",
+      "modification": "The hand switch and overhead-like push phase load the shoulder under awkward angles. Use a lighter tire or substitute with sandbag work.",
+      "modificationPl": "Zmiana dłoni i faza wypchnięcia obciążają bark pod niewygodnymi kątami. Użyj lżejszej opony lub zastąp pracą z sandbagiem.",
+      "alternative": "sandbag-clean"
+    },
+    {
+      "condition": "knee_injury_meniscus",
+      "severity": "caution",
+      "modification": "Knee drive into the tire produces a sharp compressive load on the patella and meniscus. Use lighter tire and minimize knee contact, or substitute.",
+      "modificationPl": "Wbicie kolana w oponę daje ostre obciążenie kompresyjne na rzepkę i łąkotkę. Użyj lżejszej opony i minimalizuj kontakt kolana, lub zastąp.",
+      "alternative": "atlas-stone-lift"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-5 flips (strength/power) | 4-6x1 max tire (event prep) | 3-4 rounds of 20-30s for time (conditioning)",
+  "calories_per_kg_per_hour": 9.0,
+
+  "media": {
+    "primary": "tire-flip.gif",
+    "frames_extracted": [
+      "frames/tire-flip/frame_0_start.png",
+      "frames/tire-flip/frame_1_early.png",
+      "frames/tire-flip/frame_2_mid.png",
+      "frames/tire-flip/frame_3_late.png",
+      "frames/tire-flip/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/tire-flip"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pełen przysiad-deadlift hybrid, dłonie pod oponą, podświetlone pośladki/czworogłowe/dwugłowe ud/lewy lat. Frame 1: pociąg w górę, plecy nadal pochylone, pracują najszersze i prostowniki. Frame 2: opona na krawędzi, wbicie kolana — podświetlone czworogłowe i przednie naramienne. Frame 3: faza pushu — podświetlone klatka piersiowa i trójgłowe ramienia. Frame 4: koniec — opona przewrócona, gość wraca do pozycji startowej (mocniej widać znów pośladki). Pełnociałowy ruch hinge + push, klasyfikacja jako 'hinge' (dominujący wzorzec) + force 'push' (finałowa faza decydująca o sukcesie). Klasyfikuję jako 'strongman' (nie strength) zgodnie ze specyfikacją. Equipment: large_tire. Difficulty 8/10 ze względu na koordynację 3 faz i ryzyko kontuzji bicepsa/kręgosłupa. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["strongman", "compound", "full_body", "explosive", "conditioning", "posterior_chain", "tire", "power", "event_lift"]
+}

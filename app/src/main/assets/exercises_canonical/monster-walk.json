@@ -1,0 +1,200 @@
+{
+  "id": "monster-walk",
+  "name": "Monster Walk",
+  "namePl": "Monster walk (chód monster z gumą)",
+  "aliases": ["monster band walk", "banded monster walk", "resistance band monster walk", "frankenstein walk"],
+  "aliasesPl": ["monster walk", "chód monster", "chód monstera z gumą", "monster walk z gumą oporową", "marsz monstera", "spacer monstera"],
+
+  "description": "A glute and hip-abductor activation drill performed with a loop resistance band around the ankles or just below the knees. The lifter adopts a quarter-squat athletic stance and walks with wide diagonal steps — typically forward-and-out, alternating legs — keeping constant tension on the band. The width of the stance and the band tension force the gluteus medius and minimus to fire continuously to maintain hip stability and pelvic alignment. Commonly programmed as warm-up for lower-body sessions, as rehab/prehab for knee valgus, and as a finisher for glute volume.",
+  "descriptionPl": "Ćwiczenie aktywacyjne na pośladki i odwodziciele biodra, wykonywane z gumą oporową (taśmą pętlową) założoną na kostki lub tuż pod kolana. Ćwiczący przyjmuje atletyczną pozycję ćwierć-przysiadu i chodzi szerokimi krokami po skosie — zazwyczaj do przodu i na zewnątrz, na zmianę nogami — utrzymując stały opór gumy. Szeroki rozstaw stóp i napięcie gumy wymuszają ciągłą pracę pośladka średniego i małego, które stabilizują biodro i miednicę. Klasyczna aktywacja przed treningiem nóg, ćwiczenie reha/prehab przy koślawieniu kolan oraz finisher na objętość pośladków.",
+
+  "instructions": [
+    "Loop a mini-band around your ankles (harder) or just below the knees (easier). Stand with feet hip-width apart so the band has light starting tension.",
+    "Drop into a quarter-squat: hips back, knees bent slightly, chest tall, hands on hips or clasped in front of the chest. Brace the core.",
+    "Step one foot forward and diagonally outward (about 30-45 degrees), maintaining the wide stance and the squat depth. Keep the band stretched the entire time.",
+    "Bring the other foot forward and diagonally outward in the same way — do NOT let the feet come close together (that would slack the band).",
+    "Continue alternating diagonal forward steps for the prescribed distance or reps. Typical pattern: 4-8 steps forward, then 4-8 steps backward (reversing the pattern) to return to start.",
+    "Stay in the quarter-squat the whole set — no standing up between steps. Keep the toes pointing forward, do not let the knees cave inward (valgus).",
+    "Move slowly and deliberately — this is an activation drill, not a race. Focus on feeling the outer hip / glute medius working with every step."
+  ],
+  "instructionsPl": [
+    "Załóż mini-gumę pętlową na kostki (trudniej) lub tuż pod kolana (łatwiej). Stań ze stopami na szerokość bioder, tak aby guma miała lekkie początkowe napięcie.",
+    "Wejdź w ćwierć-przysiad: biodra w tył, kolana lekko ugięte, klatka piersiowa wysoko, ręce na biodrach lub złożone przed klatką. Napnij brzuch.",
+    "Wykonaj krok jedną nogą do przodu i na ukos na zewnątrz (około 30-45 stopni), utrzymując szeroką pozycję i głębokość przysiadu. Guma napięta przez cały czas.",
+    "Dostaw drugą nogę do przodu i na ukos na zewnątrz w ten sam sposób — NIE pozwól by stopy zbliżyły się do siebie (guma straciłaby napięcie).",
+    "Kontynuuj naprzemienne kroki po skosie do przodu na zadanym dystansie lub liczbie kroków. Typowy schemat: 4-8 kroków w przód, następnie 4-8 kroków w tył (odwrotny wzorzec) w celu powrotu do startu.",
+    "Pozostań w ćwierć-przysiadzie przez całą serię — nie prostuj się między krokami. Trzymaj palce stóp skierowane do przodu, nie pozwól by kolana zapadały się do środka (koślawość).",
+    "Ruszaj się powoli i świadomie — to ćwiczenie aktywacyjne, nie wyścig. Skup się na czuciu pracy bocznej części biodra / pośladka średniego przy każdym kroku."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_abduction",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["gluteus_medius", "gluteus_maximus"],
+    "secondary": ["tensor_fasciae_latae", "gluteus_minimus", "quadriceps"],
+    "stabilizers": ["core", "adductors", "calves"]
+  },
+
+  "muscle_intensity": {
+    "gluteus_medius": "P9",
+    "gluteus_maximus": "P7",
+    "tensor_fasciae_latae": "S7",
+    "gluteus_minimus": "S6",
+    "quadriceps": "S4",
+    "core": "T3",
+    "adductors": "T3",
+    "calves": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["bodyweight-squat", "glute-bridge"],
+    "progression_to": ["lateral-band-walk", "banded-clamshell", "single-leg-glute-bridge"],
+    "alternatives": ["lateral-band-walk", "banded-clamshell", "fire-hydrant", "side-lying-hip-abduction"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Band around the ankles (harder) or below the knees (easier)",
+      "Feet hip-width — band has light tension at start",
+      "Quarter-squat: hips back, knees soft, chest tall",
+      "Hands on hips or clasped at chest — core braced",
+      "Toes pointing forward, weight on the mid-foot"
+    ],
+    "setup_cues_pl": [
+      "Guma na kostkach (trudniej) lub tuż pod kolanami (łatwiej)",
+      "Stopy na szerokość bioder — guma już lekko napięta na starcie",
+      "Ćwierć-przysiad: biodra w tył, kolana miękkie, klatka wysoko",
+      "Ręce na biodrach lub złożone przed klatką — brzuch napięty",
+      "Palce stóp skierowane do przodu, ciężar na śródstopiu"
+    ],
+    "execution_cues": [
+      "Step forward AND diagonally out — band stretches with every step",
+      "Stay low — no popping up between steps",
+      "Keep tension on the band — feet never come closer than hip-width",
+      "Drive the knees out, fight against valgus collapse",
+      "Slow and controlled — feel the outer hip burn"
+    ],
+    "execution_cues_pl": [
+      "Krok do przodu I na ukos na zewnątrz — guma napina się z każdym krokiem",
+      "Pozostań nisko — nie prostuj się między krokami",
+      "Utrzymuj napięcie gumy — stopy nigdy bliżej niż szerokość bioder",
+      "Wypychaj kolana na zewnątrz, walcz z koślawieniem kolan",
+      "Powoli i kontrolowanie — czuj pieczenie w bocznej części biodra"
+    ],
+    "common_faults": [
+      {
+        "fault": "Knees caving inward (valgus collapse)",
+        "faultPl": "Kolana zapadają się do środka (koślawość)",
+        "cause": "Weak gluteus medius, dominant adductors, or band too light",
+        "causePl": "Słaby pośladek średni, dominacja przywodzicieli lub za słaba guma",
+        "cue": "Actively push the knees out into the band on every step — track knees over toes",
+        "cuePl": "Aktywnie wypychaj kolana na zewnątrz w gumę przy każdym kroku — kolana podążają za palcami stóp"
+      },
+      {
+        "fault": "Standing up tall between steps (losing the squat position)",
+        "faultPl": "Prostowanie się między krokami (utrata pozycji przysiadu)",
+        "cause": "Quad fatigue or inability to maintain hip flexion under tension",
+        "causePl": "Zmęczenie czworogłowych lub niemożność utrzymania zgięcia bioder pod napięciem",
+        "cue": "Stay in the quarter-squat the entire set — hips low, no up-and-down bobbing",
+        "cuePl": "Pozostań w ćwierć-przysiadzie przez całą serię — biodra nisko, bez podskakiwania w górę-dół"
+      },
+      {
+        "fault": "Feet coming too close together (band goes slack)",
+        "faultPl": "Stopy zbliżają się do siebie (guma traci napięcie)",
+        "cause": "Taking small steps with the trailing foot or letting it follow naturally instead of placing it wide",
+        "causePl": "Małe kroki nogą zakroczną lub pozwalanie jej naturalnie podążać zamiast stawiania szeroko",
+        "cue": "Both feet land WIDE — never narrower than hip-width. Band stays stretched.",
+        "cuePl": "Obie stopy lądują SZEROKO — nigdy węziej niż szerokość bioder. Guma cały czas napięta."
+      },
+      {
+        "fault": "Trunk leaning forward / hips shooting back excessively",
+        "faultPl": "Pochylanie tułowia do przodu / nadmierne odsunięcie bioder w tył",
+        "cause": "Compensation for tight hip flexors or weak posterior chain; misinterpreting 'hips back'",
+        "causePl": "Kompensacja napiętych zginaczy bioder lub słabego tylnego łańcucha; błędna interpretacja 'biodra w tył'",
+        "cue": "Chest tall, eyes forward — torso stays vertical, only the hips sit back slightly",
+        "cuePl": "Klatka wysoko, wzrok do przodu — tułów pozostaje pionowy, tylko biodra lekko siadają w tył"
+      },
+      {
+        "fault": "Going too fast / rushing the steps",
+        "faultPl": "Zbyt szybkie tempo / pośpiech w krokach",
+        "cause": "Treating activation drill as cardio; losing the mind-muscle connection",
+        "causePl": "Traktowanie ćwiczenia aktywacyjnego jako cardio; utrata kontroli mózg-mięsień",
+        "cue": "1 step per second — pause, feel the glute, then next step. Quality over quantity.",
+        "cuePl": "1 krok na sekundę — pauza, poczuj pośladek, dopiero następny krok. Jakość ponad ilość."
+      }
+    ],
+    "breathing": "Breathe naturally and continuously — inhale for 2 steps, exhale for 2 steps. Do not hold breath; this is low-intensity activation work.",
+    "breathingPl": "Oddychaj naturalnie i ciągle — wdech na 2 kroki, wydech na 2 kroki. Nie wstrzymuj oddechu; to praca aktywacyjna o niskiej intensywności."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_hip_pain",
+      "severity": "modify",
+      "modification": "If lateral hip pain (e.g. greater trochanteric bursitis) is present, reduce band tension or remove the band and perform bodyweight side-steps only. Stop if pain increases.",
+      "modificationPl": "Jeśli występuje boczny ból biodra (np. zapalenie kaletki krętarza większego), zmniejsz napięcie gumy lub zdejmij gumę i wykonuj kroki bokiem bez obciążenia. Przerwij jeśli ból narasta.",
+      "alternative": "glute-bridge"
+    },
+    {
+      "condition": "acute_knee_injury",
+      "severity": "caution",
+      "modification": "The quarter-squat position loads the knees mildly. With acute meniscal or ligament issues, reduce squat depth to a shallow hip-hinge position or perform side-lying hip abduction instead.",
+      "modificationPl": "Pozycja ćwierć-przysiadu lekko obciąża kolana. Przy ostrych urazach łąkotki lub więzadeł zmniejsz głębokość przysiadu do płytkiego zawiasu biodrowego lub wykonaj odwodzenie biodra w leżeniu na boku.",
+      "alternative": "side-lying-hip-abduction"
+    },
+    {
+      "condition": "IT_band_syndrome",
+      "severity": "caution",
+      "modification": "Tensor fasciae latae over-recruitment can aggravate IT band issues. Place the band ABOVE the knees (not at ankles), reduce band tension, and emphasize gluteus medius engagement with conscious knees-out cue.",
+      "modificationPl": "Nadmierna praca naprężacza powięzi szerokiej może nasilać dolegliwości pasma biodrowo-piszczelowego. Załóż gumę POWYŻEJ kolan (nie na kostki), zmniejsz napięcie gumy i świadomie aktywuj pośladek średni cue 'kolana na zewnątrz'.",
+      "alternative": "banded-clamshell"
+    },
+    {
+      "condition": "balance_disorders",
+      "severity": "caution",
+      "modification": "Single-leg support phase during walking may challenge balance. Perform near a wall or stable surface for fingertip support, or substitute with seated/lying hip abduction work.",
+      "modificationPl": "Faza podporu na jednej nodze podczas chodzenia może wyzywać równowagę. Wykonuj blisko ściany lub stabilnej powierzchni dla podparcia palcami, lub zamień na pracę nad odwodzeniem biodra w siadzie/leżeniu.",
+      "alternative": "side-lying-hip-abduction"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x10-15 steps each direction (activation warm-up) | 3x20-30 steps (glute volume finisher) | 2x distance walk 10-15m forward + 10-15m backward (athletic conditioning)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "monster-walk.gif",
+    "frames_extracted": [
+      "frames/monster-walk/frame_0_start.png",
+      "frames/monster-walk/frame_1_early.png",
+      "frames/monster-walk/frame_2_mid.png",
+      "frames/monster-walk/frame_3_late.png",
+      "frames/monster-walk/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/monster-walk"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Klatka 0 (start): postać w ćwierć-przysiadzie z rękami na biodrach, jedna noga z tyłu na ukos zewnątrz, druga z przodu — wyraźny szeroki rozkrok, anatomia podświetla pośladek średni/maksimum i boczną część uda. Klatka 2 (mid): pozycja przejściowa — stopy bliżej siebie, ale wciąż utrzymana niska pozycja, podświetlenie głównie pośladka średniego po prawej stronie biodra. Klatka 4 (end): druga noga teraz na ukos do przodu (zamiana symetryczna) — potwierdza naprzemienny krok do przodu i na zewnątrz, glute medius i piszczel mocno podświetlone. Ruch potwierdzony: chód po skosie z gumą oporową, kroki szerokie naprzemienne. Klasyfikacja: hip_abduction (płaszczyzna czołowa — odwodzenie biodra to dominujący ruch), compound (biodro + kolano + kostka), force=push (koncentryczna praca abduktorów odpychająca nogę od linii środkowej), closed kinetic chain (stopa w kontakcie z podłożem). Bilateral (naprzemienne kroki — obie nogi pracują równocześnie). Primary: gluteus_medius P9 (główny abduktor + stabilizator miednicy w fazie podporu jednonóż), gluteus_maximus P7 (ekstensja biodra w ćwierć-przysiadzie + lateralna rotacja). Secondary: TFL S7 (synergista abdukcji), gluteus_minimus S6, quadriceps S4 (utrzymanie ćwierć-przysiadu). Difficulty 3/10 — bardzo dostępne dla początkujących, sprzęt minimalny (jedna mini-guma). Typowe użycie: warm-up na nogi/glutes, prehab dla biegaczy i sportów wymagających stabilizacji bocznej (piłka nożna, koszykówka, tenis). Nazwa PL: zachowuję 'Monster walk' jako termin międzynarodowy (jak w środowisku fitness), dodaję podtytuł 'chód monster z gumą' dla jasności. Aliasy obejmują typowe formy zapisu. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["resistance_band", "glutes", "hip_abduction", "activation", "warm_up", "prehab", "knee_valgus_fix", "lower_body", "home_workout", "beginner_friendly"]
+}

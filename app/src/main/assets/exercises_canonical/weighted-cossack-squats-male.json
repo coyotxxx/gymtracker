@@ -1,0 +1,207 @@
+{
+  "id": "weighted-cossack-squats-male",
+  "name": "Weighted Cossack Squat",
+  "namePl": "Przysiad kozacki z ciężarkiem",
+  "aliases": ["weighted cossack squats", "loaded cossack squat", "plate cossack squat", "lateral cossack squat with weight"],
+  "aliasesPl": ["przysiad kozacki z obciążeniem", "kozak z ciężarem", "przysiad kozacki z talerzem", "boczny przysiad kozacki z ciężarkiem"],
+
+  "description": "Unilateral lower-body compound exercise performed in a wide stance. Athlete holds a weight (plate, kettlebell or dumbbell) at chest level and shifts body weight to one side, bending one knee deeply while the opposite leg stays fully extended with toes pointing up and heel on the floor. The working leg performs a deep side squat while the straight leg receives a strong adductor and hamstring stretch. Combines unilateral strength, hip mobility and groin/adductor flexibility in a single pattern. Returns through center or directly to the other side for alternating reps.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała wykonywane w szerokim rozkroku. Trenujący trzyma obciążenie (talerz, kettlebell lub hantel) na wysokości klatki piersiowej i przenosi ciężar ciała na jedną stronę, głęboko zginając jedno kolano, podczas gdy druga noga pozostaje całkowicie wyprostowana z palcami skierowanymi w górę i piętą na podłodze. Pracująca noga wykonuje głęboki boczny przysiad, a prosta noga otrzymuje silne rozciągnięcie przywodzicieli i dwugłowego uda. Łączy jednostronną siłę, mobilność bioder i elastyczność pachwiny/przywodzicieli w jednym ruchu. Powrót przez środek lub bezpośrednio na drugą stronę dla powtórzeń naprzemiennych.",
+
+  "instructions": [
+    "Stand in a very wide stance — about twice your shoulder width. Toes point slightly outward (10-30°).",
+    "Hold a weight plate, kettlebell or dumbbell at chest height with both hands. Elbows down, shoulder blades retracted.",
+    "Brace your core, chest up, neutral spine, eyes forward.",
+    "Shift your bodyweight to one side by bending that knee. Sit the hip back and down on the working side.",
+    "Simultaneously straighten the opposite leg fully. Rotate the foot of the straight leg so toes point up — heel stays planted on the floor.",
+    "Descend on the working leg until the hip is below or level with the knee. The working foot stays flat — full sole contact with the floor.",
+    "At the bottom, the working knee tracks over the toes, torso stays as upright as possible, the straight leg feels a strong adductor/groin stretch.",
+    "Drive back up through the heel and mid-foot of the working leg. Push hips up and away from the floor.",
+    "Return through center to the standing wide stance, or transition directly into a Cossack squat on the opposite side for alternating reps.",
+    "Keep the weight close to the chest throughout — do not let it drift forward as you descend."
+  ],
+  "instructionsPl": [
+    "Stań w bardzo szerokim rozkroku — około dwukrotnie szerszym niż barki. Palce skierowane lekko na zewnątrz (10-30°).",
+    "Trzymaj talerz, kettlebell lub hantel na wysokości klatki piersiowej oburącz. Łokcie w dół, łopatki ściągnięte.",
+    "Napnij brzuch, klatka w górze, kręgosłup neutralny, wzrok prosto.",
+    "Przenieś ciężar ciała na jedną stronę zginając to kolano. Wyrzuć biodro w tył i w dół po stronie pracującej.",
+    "Jednocześnie wyprostuj całkowicie drugą nogę. Obróć stopę prostej nogi tak by palce wskazywały w górę — pięta zostaje na podłodze.",
+    "Schodź na pracującej nodze aż biodro znajdzie się poniżej lub na poziomie kolana. Stopa pracująca pozostaje płasko — pełny kontakt podeszwy z podłogą.",
+    "W dolnej pozycji kolano pracujące podąża nad palcami, tułów pozostaje możliwie pionowy, prosta noga czuje mocne rozciągnięcie przywodzicieli/pachwiny.",
+    "Wypchnij się w górę przez piętę i środek stopy pracującej nogi. Wypchnij biodra w górę i od podłogi.",
+    "Wróć przez środek do szerokiego rozkroku w staniu lub przejdź bezpośrednio w przysiad kozacki na drugą stronę dla powtórzeń naprzemiennych.",
+    "Trzymaj obciążenie blisko klatki przez cały ruch — nie pozwól mu odpłynąć do przodu podczas schodzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "adductors"],
+    "secondary": ["hamstrings", "calves"],
+    "stabilizers": ["core", "gluteus_medius", "erector_spinae", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "adductors": "P8",
+    "hamstrings": "S6",
+    "calves": "S5",
+    "core": "S6",
+    "gluteus_medius": "S6",
+    "erector_spinae": "T4",
+    "hip_flexors": "T4"
+  },
+
+  "equipment": {
+    "required": ["weight_plate"],
+    "optional": ["kettlebell", "dumbbell", "lifting_shoes", "flat_surface"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-cossack-squat", "goblet-squat", "lateral-lunge", "bodyweight-squat"],
+    "progression_to": ["barbell-cossack-squat", "kettlebell-cossack-squat-heavy", "pistol-squat"],
+    "alternatives": ["lateral-lunge", "goblet-squat", "bulgarian-split-squat", "skater-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Wide stance — about 2x shoulder width, feet on parallel lines",
+      "Toes slightly out (10-30°) so the knee tracks naturally",
+      "Plate/KB hugged to chest, elbows down, shoulders packed",
+      "Core braced, ribs down, neutral spine before the first rep",
+      "Pick a focal point at eye level — keeps the head neutral"
+    ],
+    "setup_cues_pl": [
+      "Szeroki rozkrok — około 2x szerokość barków, stopy na równoległych liniach",
+      "Palce lekko na zewnątrz (10-30°) by kolano naturalnie podążało",
+      "Talerz/kettlebell przyciśnięty do klatki, łokcie w dół, barki ściągnięte",
+      "Brzuch napięty, żebra w dół, neutralny kręgosłup przed pierwszym powtórzeniem",
+      "Ustal punkt skupienia wzroku — pomaga utrzymać neutralną pozycję głowy"
+    ],
+    "execution_cues": [
+      "Sit hip back and down on the working side — don't drop knee forward",
+      "Opposite heel stays glued to the floor, toes point UP",
+      "Chest stays up, weight stays close — counterbalance not anchor",
+      "Working knee tracks over the second toe, not collapsing inward",
+      "Drive through the whole foot — heel AND mid-foot, never just the toes"
+    ],
+    "execution_cues_pl": [
+      "Wyrzuć biodro w tył i w dół po stronie pracującej — nie wpychaj kolana do przodu",
+      "Pięta drugiej nogi przyklejona do podłogi, palce skierowane W GÓRĘ",
+      "Klatka uniesiona, ciężar blisko ciała — przeciwwaga, nie kotwica",
+      "Pracujące kolano podąża nad drugim palcem, nie pada do środka",
+      "Wypychaj się całą stopą — pięta I środek stopy, nigdy same palce"
+    ],
+    "common_faults": [
+      {
+        "fault": "Heel of the straight leg lifts off the floor",
+        "faultPl": "Pięta prostej nogi unosi się z podłogi",
+        "cause": "Tight adductors/hamstrings or stance too wide for current mobility. Loses the stretch and shifts load forward.",
+        "causePl": "Spięte przywodziciele/dwugłowe uda lub rozkrok za szeroki dla aktualnej mobilności. Traci się rozciągnięcie i ciężar przesuwa się w przód.",
+        "cue": "Narrow your stance slightly until you can keep the opposite heel down. Build mobility before width.",
+        "cuePl": "Zwęź lekko rozkrok aż utrzymasz piętę drugiej nogi na podłodze. Najpierw buduj mobilność, potem szerokość."
+      },
+      {
+        "fault": "Working knee caves inward (valgus)",
+        "faultPl": "Pracujące kolano pada do środka (koślawość)",
+        "cause": "Weak gluteus medius, weight too heavy, or feet positioned with toes too straight forward",
+        "causePl": "Słaby pośladkowy średni, za duży ciężar lub stopy z palcami zbyt prosto w przód",
+        "cue": "Knee tracks over the second toe — actively push knee out as you descend",
+        "cuePl": "Kolano podąża nad drugim palcem — aktywnie wypychaj kolano na zewnątrz schodząc w dół"
+      },
+      {
+        "fault": "Torso collapses forward (chest drops)",
+        "faultPl": "Tułów wali się do przodu (klatka opada)",
+        "cause": "Weak core, tight hips, or letting the weight drift away from chest",
+        "causePl": "Słaby brzuch, spięte biodra lub pozwolenie by ciężar odpłynął od klatki",
+        "cue": "Squeeze the plate into your chest. Imagine showing your logo to the ceiling as you sit down.",
+        "cuePl": "Wciśnij talerz w klatkę. Wyobraź sobie że pokazujesz logo do sufitu schodząc w dół."
+      },
+      {
+        "fault": "Insufficient depth — only quarter squat",
+        "faultPl": "Niedostateczna głębokość — tylko ćwierć przysiad",
+        "cause": "Limited hip/groin mobility, fear of getting stuck at the bottom, or load too heavy",
+        "causePl": "Ograniczona mobilność bioder/pachwiny, strach przed utknięciem na dole lub za duży ciężar",
+        "cue": "Aim hip below knee. If you can't, drop the weight and work bodyweight Cossack squats first.",
+        "cuePl": "Celuj by biodro było poniżej kolana. Jeśli nie możesz, odłóż ciężar i pracuj nad przysiadami kozackimi bez obciążenia."
+      },
+      {
+        "fault": "Bouncing out of the bottom position",
+        "faultPl": "Odbijanie się z dolnej pozycji",
+        "cause": "Using passive tissue rebound from the stretched adductors instead of muscular drive",
+        "causePl": "Wykorzystywanie biernego odbicia napiętych przywodzicieli zamiast napędu mięśniowego",
+        "cue": "Pause 1 second at the bottom. Then drive up with control — feel the working leg, not the stretch.",
+        "cuePl": "Zatrzymaj się na 1 sekundę w dolnej pozycji. Potem wstań z kontrolą — czuj pracującą nogę, nie rozciąganie."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of the wide stance. Hold breath through descent and the toughest part of the ascent. Exhale near the top before transitioning to the other side.",
+    "breathingPl": "Wdech i napięcie na górze w szerokim rozkroku. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wstawania. Wydech blisko górnej pozycji przed przejściem na drugą stronę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "groin_strain_or_adductor_injury",
+      "severity": "avoid",
+      "modification": "The deep adductor stretch on the straight leg directly stresses an injured groin. Avoid until pain-free and cleared. Use shallow lateral lunges as a rehab progression.",
+      "modificationPl": "Głębokie rozciągnięcie przywodzicieli prostej nogi bezpośrednio obciąża uszkodzoną pachwinę. Unikaj do czasu ustąpienia bólu i zgody. Stosuj płytkie wykroki boczne jako progresję rehabilitacyjną.",
+      "alternative": "lateral-lunge"
+    },
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "Deep flexion with rotational load stresses meniscus and collaterals. Reduce depth to pain-free range, narrow stance, drop weight. Switch to goblet squat if symptomatic.",
+      "modificationPl": "Głębokie zgięcie z obciążeniem rotacyjnym obciąża łąkotkę i więzadła poboczne. Zmniejsz głębokość do zakresu bez bólu, zwęź rozkrok, obniż ciężar. Przejdź na goblet squat jeśli pojawia się ból.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "hip_impingement_FAI",
+      "severity": "modify",
+      "modification": "Deep flexion combined with hip abduction can pinch the labrum. Limit depth, narrow stance, work mobility separately. Consider physiotherapy assessment.",
+      "modificationPl": "Głębokie zgięcie połączone z odwodzeniem biodra może uciskać obrąbek. Ogranicz głębokość, zwęź rozkrok, pracuj mobilnością osobno. Rozważ konsultację fizjoterapeutyczną.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "caution",
+      "modification": "Holding load at chest with deep asymmetric squat loads the spine. Drop weight or use bodyweight version until cleared.",
+      "modificationPl": "Trzymanie ciężaru przy klatce w głębokim asymetrycznym przysiadzie obciąża kręgosłup. Zrezygnuj z obciążenia lub stosuj wariant bez obciążenia do czasu zgody specjalisty.",
+      "alternative": "bodyweight-cossack-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-10 per side (hypertrophy) | 3x6 per side (strength/mobility) | 2-3x10-12 per side (mobility/endurance focus)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "weighted-cossack-squats-male.gif",
+    "frames_extracted": [
+      "frames/weighted-cossack-squats-male/frame_0_start.png",
+      "frames/weighted-cossack-squats-male/frame_1_early.png",
+      "frames/weighted-cossack-squats-male/frame_2_mid.png",
+      "frames/weighted-cossack-squats-male/frame_3_late.png",
+      "frames/weighted-cossack-squats-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/weighted-cossack-squats-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Wariant z talerzem 35lb trzymanym oburącz przy klatce. Postać startuje w bardzo szerokim rozkroku, schodzi w głęboki boczny przysiad — jedna noga zgięta z pełną stopą na podłodze (biodro poniżej kolana), druga noga całkowicie wyprostowana z palcami w górę i piętą na podłodze. Klatka mid pokazuje fazę dolną z biodrem niżej niż kolano pracującej nogi. Klatka end pokazuje przejście do drugiej strony (ghosting). Mięśnie podświetlone w GIFie: pełna noga pracująca (czworogłowe + pośladki) + przywodziciele/dwugłowe prostej nogi (silne rozciągnięcie). Płaszczyzna ruchu = frontal (boczna), w przeciwieństwie do barbell-lunge (sagittal). Mechanic=compound, laterality=unilateral (alternating). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'przysiad kozacki'. P9 quadriceps, P8 glutes, P8 adductors (3 primary muscles ze względu na unikalny stretch przywodzicieli prostej nogi).",
+
+  "tags": ["unilateral", "lower_body", "mobility", "cossack_squat", "plate", "compound", "frontal_plane", "groin_stretch", "asymmetry_corrector", "hip_mobility"]
+}

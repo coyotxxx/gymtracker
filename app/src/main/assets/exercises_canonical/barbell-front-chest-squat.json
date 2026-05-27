@@ -1,0 +1,208 @@
+{
+  "id": "barbell-front-chest-squat",
+  "name": "Barbell Front Chest Squat",
+  "namePl": "Przysiad ze sztangą na klatce piersiowej",
+  "aliases": ["front chest squat", "chest-supported front squat", "hugged barbell squat", "hands-clasped front squat"],
+  "aliasesPl": ["front chest squat", "przysiad ze sztangą na klatce", "przysiad z gryfem na klatce", "przysiad z gryfem przytrzymywanym dłońmi na klatce"],
+
+  "description": "Squat variant with the barbell held horizontally across the upper chest / anterior deltoids, supported by the hands clasped together under the bar (palms facing in, fingers interlocked or hands flat against the bar). The bar rests on the sternum/clavicles rather than in a clean-grip front rack or in the elbow crook (Zercher). The position requires no wrist extension and no shoulder external rotation, making it accessible for lifters with limited mobility, while still forcing a vertical torso and heavy quadriceps emphasis like a standard front squat. The trade-off is significantly reduced maximal loading vs. a true front rack — the bar is less stable so this variant works best in moderate-rep hypertrophy ranges.",
+  "descriptionPl": "Wariant przysiadu z gryfem trzymanym poziomo na górnej klatce piersiowej / przednich aktonach barków, podtrzymywanym dłońmi splecionymi pod gryfem (dłonie zwrócone do wewnątrz, palce zaplecione lub dłonie płasko pod sztangą). Gryf opiera się na mostku/obojczykach, a nie w klasycznym front rack (chwyt rwaniowy) ani w zgięciu łokci (Zercher). Pozycja nie wymaga wyprostu nadgarstków ani rotacji zewnętrznej barków, więc jest dostępna dla osób z ograniczoną mobilnością, a jednocześnie wymusza pionowy tułów i mocne zaangażowanie czworogłowych jak w klasycznym front squat. Kosztem jest znacznie mniejsze maksymalne obciążenie niż w prawdziwym front rack — gryf jest mniej stabilny, więc wariant ten najlepiej sprawdza się w średnich zakresach powtórzeń hipertroficznych.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load a moderate weight — this is not a max-effort variant.",
+    "Step under the bar. Place it horizontally across your upper chest, just below the collarbones, against the sternum and anterior deltoids.",
+    "Bring both hands UNDER the bar, palms facing your chest, fingers interlocked or hands cupped flat. Squeeze the bar against your body — the hands and chest pin the bar in place.",
+    "Unrack by extending your legs. Take two controlled steps back. Feet shoulder-width, toes slightly out (10-30°).",
+    "Pull your elbows down and in toward your ribs (the opposite of front rack — elbows DOWN, not up). Chest tall, shoulders pulled back.",
+    "Inhale, brace the core 360°, lock the bar against your chest with steady hand pressure.",
+    "Descend by breaking simultaneously at the knees and hips. Keep the torso as vertical as possible — even more upright than a back squat.",
+    "Knees travel forward over the toes. Go to a depth where your hip crease passes below the top of the knee, or to the point where you can still keep the bar firmly against your chest.",
+    "Drive up by pushing through the whole foot. Lead with the chest — never let it cave. Exhale near the top.",
+    "Maintain hand pressure on the bar throughout the entire set. If the bar starts to slip, end the set and re-rack."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj umiarkowane obciążenie — to nie jest wariant na maksy.",
+    "Wejdź pod sztangę. Ułóż ją poziomo na górnej klatce piersiowej, tuż poniżej obojczyków, na mostku i przednich aktonach barków.",
+    "Wsuń obie dłonie POD gryf, dłonie zwrócone do klatki, palce zaplecione lub dłonie płaskie. Dociśnij gryf do ciała — dłonie i klatka unieruchamiają sztangę.",
+    "Wyciągnij sztangę prostując nogi. Cofnij się 2 kroki kontrolowanym ruchem. Stopy na szerokość barków, palce lekko na zewnątrz (10-30°).",
+    "Ściągnij łokcie W DÓŁ i do żeber (odwrotnie niż w front rack — łokcie W DÓŁ, nie w górę). Klatka wysoko, łopatki ściągnięte.",
+    "Wdech, napięcie brzucha 360°, dociśnij gryf do klatki stabilnym naciskiem dłoni.",
+    "Schodź zginając jednocześnie kolana i biodra. Trzymaj tułów możliwie pionowo — jeszcze bardziej niż w klasycznym przysiadzie.",
+    "Kolana wysuwają się do przodu nad palce stóp. Schodź do głębokości, gdzie linia bioder zejdzie poniżej szczytu kolana, lub do punktu, w którym wciąż utrzymasz gryf mocno dociśnięty do klatki.",
+    "Wstawaj napierając całą stopą. Prowadź ruch klatką — nigdy nie pozwól, by się zapadła. Wydech blisko góry.",
+    "Utrzymuj nacisk dłoni na gryf przez całą serię. Jeśli sztanga zaczyna się ślizgać, zakończ serię i odłóż na stojak."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["upper_back", "erector_spinae", "core"],
+    "stabilizers": ["rectus_abdominis", "adductors", "biceps", "anterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P7",
+    "upper_back": "S7",
+    "erector_spinae": "S6",
+    "core": "P8",
+    "rectus_abdominis": "S6",
+    "adductors": "S5",
+    "biceps": "S4",
+    "anterior_deltoid": "S4",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["squat_rack", "belt", "knee_sleeves", "lifting_shoes", "towel_for_chest_padding"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "barbell-back-squat"],
+    "progression_to": ["barbell-front-squat", "zercher-squat", "barbell-back-squat"],
+    "alternatives": ["goblet-squat", "barbell-front-squat", "zercher-squat", "safety-bar-squat", "hack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar horizontal on the upper chest, just below collarbones",
+      "Hands UNDER the bar, palms in, fingers locked or cupped",
+      "Squeeze the bar into your chest — pin it there",
+      "Elbows DOWN and in (opposite of front rack)",
+      "Feet shoulder-width, toes slightly out, big breath, brace"
+    ],
+    "setup_cues_pl": [
+      "Gryf poziomo na górnej klatce, tuż poniżej obojczyków",
+      "Dłonie POD gryfem, dłonie do wewnątrz, palce zaplecione lub złożone w miseczki",
+      "Dociśnij gryf do klatki — unieruchom go tam",
+      "Łokcie W DÓŁ i do żeber (odwrotnie niż w front rack)",
+      "Stopy na szerokość barków, palce lekko na zewnątrz, głęboki wdech, napięcie"
+    ],
+    "execution_cues": [
+      "Stay vertical — torso even more upright than a back squat",
+      "Sit straight down between your feet, knees forward over toes",
+      "Keep the bar GLUED to your chest the entire rep",
+      "Lead the ascent with the chest, not the hips",
+      "If the bar slips even a centimeter — end the set"
+    ],
+    "execution_cues_pl": [
+      "Pozostań pionowo — tułów jeszcze bardziej pionowy niż w back squat",
+      "Siadaj prosto w dół między stopami, kolana do przodu nad palce",
+      "Trzymaj gryf PRZYKLEJONY do klatki przez całe powtórzenie",
+      "Prowadź wstawanie klatką, a nie biodrami",
+      "Jeśli gryf się przesunie choćby o centymetr — zakończ serię"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bar slipping forward off the chest",
+        "faultPl": "Gryf wysuwa się z klatki do przodu",
+        "cause": "Loss of upright torso, insufficient hand pressure, or load too heavy for this hold style",
+        "causePl": "Utrata pionowego tułowia, za słaby nacisk dłoni, lub obciążenie za duże na ten styl trzymania",
+        "cue": "Pin the bar with both hands and lean back slightly into the rack. If it still slips, drop the load 10-15%.",
+        "cuePl": "Dociśnij gryf obiema dłońmi i lekko odchyl się w stronę gryfu. Jeśli wciąż się ślizga, zmniejsz obciążenie o 10-15%."
+      },
+      {
+        "fault": "Forward lean / chest collapses",
+        "faultPl": "Pochylenie do przodu / klatka się zapada",
+        "cause": "Weak quads, weak upper back, or poor ankle mobility forcing the hips back",
+        "causePl": "Słabe czworogłowe, słaba górna część pleców, lub słaba mobilność stawu skokowego wymuszająca cofanie bioder",
+        "cue": "Chest up like you're carrying a tray of drinks. Knees forward, sit STRAIGHT down. Lean = dropped bar.",
+        "cuePl": "Klatka wysoko jakbyś niósł tacę z napojami. Kolana do przodu, siadaj PROSTO w dół. Pochylenie = zrzucony gryf."
+      },
+      {
+        "fault": "Bar pain on collarbones / sternum",
+        "faultPl": "Ból gryfu na obojczykach / mostku",
+        "cause": "Bar rolling onto bony landmarks, lack of muscle padding, or thin lifters with sharp collarbones",
+        "causePl": "Gryf opiera się na kostnych punktach, brak osłony mięśniowej, lub szczupła sylwetka z wystającymi obojczykami",
+        "cue": "Wear a thick t-shirt or wrap a small towel around the bar. Place the bar on the meaty part of upper chest, not on the bone.",
+        "cuePl": "Załóż grubą koszulkę lub owiń ręcznik wokół gryfu. Ułóż gryf na mięsistej części górnej klatki, nie na kości."
+      },
+      {
+        "fault": "Going too deep and losing the bar",
+        "faultPl": "Zbyt głębokie schodzenie i utrata gryfu",
+        "cause": "Trying to hit ATG depth with a less stable hold style",
+        "causePl": "Próba schodzenia ATG przy mniej stabilnym stylu trzymania",
+        "cue": "Squat to parallel or slightly below — that's enough. ATG depth is for the true front rack version.",
+        "cuePl": "Schodź do równoległej lub lekko poniżej — to wystarczy. ATG zostawia się klasycznemu front squat z front rack."
+      },
+      {
+        "fault": "Loose grip on the bar",
+        "faultPl": "Luźny chwyt na gryfie",
+        "cause": "Treating the hands as decoration rather than active stabilizers",
+        "causePl": "Traktowanie dłoni jako dekoracji zamiast aktywnych stabilizatorów",
+        "cue": "Hands ACTIVELY squeeze the bar into the chest — they are the second support, the chest is the first.",
+        "cuePl": "Dłonie AKTYWNIE dociskają gryf do klatki — to drugi punkt podparcia, klatka to pierwszy."
+      }
+    ],
+    "breathing": "Big breath at the top, brace 360°, hold through the descent and ascent (Valsalva). Exhale at the top. Re-brace between every rep — the bar position requires constant tension.",
+    "breathingPl": "Głęboki wdech na górze, napięcie brzucha 360°, wstrzymaj przez schodzenie i wstawanie (Valsalva). Wydech na górze. Ponawiaj napięcie między każdym powtórzeniem — pozycja gryfu wymaga ciągłego napięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid axial loading entirely.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj osiowego obciążania kręgosłupa.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "rib_or_sternum_injury",
+      "severity": "avoid",
+      "modification": "The bar rests directly on the sternum and ribs — any acute injury here makes this exercise unsafe. Switch to back squat or goblet squat until fully healed.",
+      "modificationPl": "Gryf opiera się bezpośrednio na mostku i żebrach — przy świeżej kontuzji w tym obszarze ćwiczenie jest niebezpieczne. Zmień na back squat lub goblet squat do pełnego wyzdrowienia.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "knee_meniscus_or_patellar_tendinopathy",
+      "severity": "caution",
+      "modification": "Vertical-torso squats load the patellar tendon heavily. Limit depth to pain-free range and reduce load. Knee sleeves help.",
+      "modificationPl": "Przysiady z pionowym tułowiem mocno obciążają więzadło rzepki. Ogranicz głębokość do zakresu bez bólu i zmniejsz obciążenie. Pomogą rękawy na kolana.",
+      "alternative": "box-squat"
+    },
+    {
+      "condition": "shoulder_or_wrist_mobility_restriction",
+      "severity": "modify",
+      "modification": "This variant was actually CREATED for restricted wrist/shoulder mobility, but if even the cupped-hand hold causes pain, switch to goblet squat with a dumbbell.",
+      "modificationPl": "Ten wariant został właśnie STWORZONY pod ograniczoną mobilność nadgarstków/barków, ale jeśli nawet chwyt z dłońmi pod gryfem boli, zmień na goblet squat z hantlą.",
+      "alternative": "goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "4x8-12 (hypertrophy / mobility-friendly) | 3x6-8 (strength) | 3x12-15 (high-rep quad pump)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-front-chest-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-front-chest-squat/frame_0_start.png",
+      "frames/barbell-front-chest-squat/frame_1_early.png",
+      "frames/barbell-front-chest-squat/frame_2_mid.png",
+      "frames/barbell-front-chest-squat/frame_3_late.png",
+      "frames/barbell-front-chest-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-front-chest-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki z GIFa jahel (start, mid, end). Pozycja sztangi: gryf trzymany POZIOMO na górnej klatce piersiowej / przednich aktonach barków, dłonie wsunięte POD gryf z palcami zaplecionymi/złożonymi w miseczki przed mostkiem (palms in, cross-hugged). To NIE jest Zercher (gryf nie jest w zgięciu łokci) ani klasyczny front rack (brak pozycji rwaniowej z łokciami wypchniętymi wysoko w górę). Klatka 2 (dół przysiadu): tułów wyraźnie pionowy, biodra schodzą poniżej kolan, gryf wciąż wysoko na klatce — czworogłowe podświetlone bardzo mocno na ilustracji (kolory czerwone całe quads). Klasyfikacja w master.json ('glutes') jest myląca — to dominantnie ćwiczenie czworogłowych, dlatego primary muscles to quadriceps P10 + glutes P7 jak w klasycznym front squat. difficulty 7 (niżej niż 8 dla klasycznego front squat — bo nie wymaga mobilności nadgarstków/barków, ale mniej stabilna pozycja gryfu obniża max load). movement_pattern: squat. Wszystkie pola PL napisane od zera (nie tłumaczenie maszynowe).",
+
+  "tags": ["quad_builder", "compound", "lower_body", "core_intensive", "barbell", "mobility_friendly", "alternative_front_squat", "no_wrist_demand"]
+}

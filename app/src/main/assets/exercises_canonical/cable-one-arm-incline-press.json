@@ -1,0 +1,204 @@
+{
+  "id": "cable-one-arm-incline-press",
+  "name": "Cable One-Arm Incline Press",
+  "namePl": "Incline press z wyciągu jednorącz",
+  "aliases": ["one-arm cable incline press", "single-arm cable incline press", "cable incline chest press one-arm", "unilateral cable incline press"],
+  "aliasesPl": ["wyciskanie skośne jednorącz z wyciągu", "wyciskanie skośne na linkach jednorącz", "single-arm wyciskanie skośne cable", "wyciskanie z wyciągu na ławce skośnej jednorącz"],
+
+  "description": "Unilateral upper-chest pressing variation performed seated on an incline bench (≈30-45°) positioned in front of a low pulley with a D-handle. Cable resistance is angled from behind-and-below toward the upper chest, which combines two strong stimuli: incline angle (favoring the clavicular/upper fibers of pectoralis major) and constant cable tension throughout the entire range of motion (no dead-zone at the bottom or top, unlike free weights). Because only one arm works at a time, the contralateral obliques and serratus must brace heavily against rotation — making it an excellent fix for chest asymmetry and a sneaky core challenge. The free hand can hold the bench or rest on the thigh.",
+  "descriptionPl": "Jednostronny wariant wyciskania na górną klatkę wykonywany w siadzie na ławce skośnej (≈30-45°) ustawionej przed dolnym wyciągiem, z uchwytem D-handle w jednej ręce. Opór z linki idzie pod skosem od tyłu-z dołu w stronę górnej klatki, co łączy dwa mocne bodźce: kąt skosu (akcentuje górne, obojczykowe włókna piersiowego większego) i stałe napięcie linki na całym zakresie ruchu (brak martwego punktu na dole ani na górze, w odróżnieniu od ciężarów wolnych). Ponieważ pracuje tylko jedna ręka, skośne brzucha i mięsień zębaty po stronie przeciwnej muszą mocno stabilizować przeciwko skręcaniu — to doskonałe ćwiczenie na asymetrię klatki i podstępne wyzwanie dla core. Wolna ręka może trzymać ławkę lub leżeć na udzie.",
+
+  "instructions": [
+    "Set an adjustable bench to a moderate incline (30-45°) and position it about half a meter in front of a low pulley, backrest facing away from the cable column.",
+    "Attach a single D-handle to the low pulley. Select a moderate weight — cable pressing requires more control than dumbbells.",
+    "Sit on the bench, reach back and grab the handle with one hand, pronated grip (palm forward/toward feet). Free hand rests on the bench or thigh.",
+    "Press the handle to chest level beside the upper pectoral, elbow tucked at ~45-60° from torso, NOT flared to 90°. Shoulder blade pulled down and back, slight natural arch in lower back, feet planted.",
+    "Inhale and brace the core — anticipate the cable trying to rotate your torso toward the working side.",
+    "Press the handle forward and slightly across the body, finishing with the arm extended diagonally upward over the midline of the upper chest — elbow soft, NOT locked rigid.",
+    "Pause briefly at the top, squeezing the upper pec. Resist the rotation: shoulders stay square to the bench.",
+    "Exhale, then lower the handle in a controlled arc back to the start position next to the upper chest, feeling a deep stretch in the clavicular pec. Eccentric 2-3 seconds.",
+    "Complete all reps on one side before switching arms. Set the same weight, do not 'cheat down' on the weaker side."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę regulowaną na umiarkowany skos (30-45°) i postaw ją około pół metra przed dolnym wyciągiem, oparciem odwróconym od kolumny linki.",
+    "Zaczep pojedynczy uchwyt D-handle do dolnego wyciągu. Wybierz umiarkowany ciężar — wyciskanie z wyciągu wymaga więcej kontroli niż hantle.",
+    "Usiądź na ławce, sięgnij ręką do tyłu i chwyć uchwyt jedną ręką, chwyt pronowany (dłoń skierowana do przodu/w stronę stóp). Wolna ręka spoczywa na ławce lub udzie.",
+    "Sprowadź uchwyt do wysokości klatki obok górnego piersiowego, łokieć przyciągnięty pod kątem ~45-60° od tułowia, NIE rozsunięty na 90°. Łopatka opuszczona i ściągnięta, lekki naturalny łuk w dolnych plecach, stopy zaparte.",
+    "Wdech i napięcie brzucha — przygotuj się, bo linka będzie próbowała obrócić tułów w stronę pracującej ręki.",
+    "Wyciśnij uchwyt do przodu i lekko w stronę środka ciała, kończąc z ramieniem wyprostowanym po skosie w górę nad środkiem górnej klatki — łokieć miękki, NIE zablokowany sztywno.",
+    "Krótka pauza na szczycie, ściśnij górną klatkę. Walcz z obrotem: barki pozostają równolegle do ławki.",
+    "Wydech, następnie opuść uchwyt kontrolowanym łukiem z powrotem do pozycji startowej obok górnej klatki, czując głębokie rozciągnięcie obojczykowej części piersiowego. Faza ekscentryczna 2-3 sekundy.",
+    "Wykonaj wszystkie powtórzenia po jednej stronie, dopiero potem zmień rękę. Ustaw ten sam ciężar, nie 'oszczędzaj' na słabszej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal_incline",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids"],
+    "secondary": ["triceps", "obliques"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "core", "lats", "biceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "S6",
+    "obliques": "S5",
+    "serratus_anterior": "T4",
+    "rotator_cuff": "T4",
+    "core": "T4",
+    "lats": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "low_pulley", "d_handle", "incline_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["incline-dumbbell-bench-press", "cable-chest-press", "single-arm-dumbbell-bench-press"],
+    "progression_to": ["cable-one-arm-incline-fly", "landmine-one-arm-press", "single-arm-dumbbell-incline-press"],
+    "alternatives": ["incline-dumbbell-bench-press", "machine-incline-press", "single-arm-dumbbell-incline-press", "cable-incline-chest-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45° incline, positioned ~0.5m in front of low pulley, backrest away from cable",
+      "D-handle on low pulley, pronated grip (palm toward feet)",
+      "Shoulder blade pulled down and back BEFORE first rep",
+      "Free hand on bench/thigh for support — don't let torso twist",
+      "Feet planted, slight arch in lower back, brace the core hard"
+    ],
+    "setup_cues_pl": [
+      "Ławka pod kątem 30-45°, ustawiona ~0.5m przed dolnym wyciągiem, oparcie odwrócone od linki",
+      "D-handle na dolnym wyciągu, chwyt pronowany (dłoń w stronę stóp)",
+      "Łopatka opuszczona i ściągnięta PRZED pierwszym powtórzeniem",
+      "Wolna ręka na ławce/udzie dla stabilizacji — nie pozwól by tułów się skręcał",
+      "Stopy zaparte, lekki łuk w dolnych plecach, mocno napięty brzuch"
+    ],
+    "execution_cues": [
+      "Press diagonally up and across — finish over midline of upper chest",
+      "Elbow tracks at ~45-60°, NOT flared to 90° — protects shoulder",
+      "Resist the rotation — keep shoulders square to the bench",
+      "Eccentric 2-3 seconds, feel the stretch in the upper pec",
+      "Constant tension — don't let the cable slack at top or bottom"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj po skosie w górę i w poprzek — kończ nad środkiem górnej klatki",
+      "Łokieć ~45-60°, NIE rozsunięty na 90° — chroni bark",
+      "Walcz z obrotem — barki równolegle do ławki",
+      "Faza ekscentryczna 2-3 sekundy, poczuj rozciągnięcie górnej klatki",
+      "Stałe napięcie — nie pozwól by linka się rozluźniła na górze ani na dole"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso twists toward the working side (cable wins)",
+        "faultPl": "Tułów skręca się w stronę pracującej ręki (linka wygrywa)",
+        "cause": "Weak anti-rotation core, free hand not anchoring, ego with too heavy weight",
+        "causePl": "Słaby core w anty-rotacji, wolna ręka nie stabilizuje, ego ze zbyt ciężkim ciężarem",
+        "cue": "Brace obliques on the OPPOSITE side. Free hand grips bench firmly. Drop weight if you can't stay square.",
+        "cuePl": "Napnij skośne brzucha po PRZECIWNEJ stronie. Wolną ręką mocno trzymaj ławkę. Zmniejsz ciężar jeśli nie utrzymujesz prostej linii barków."
+      },
+      {
+        "fault": "Pressing straight forward instead of up-and-across (incline angle wasted)",
+        "faultPl": "Wyciskanie prosto w przód zamiast po skosie w górę-w poprzek (zmarnowany kąt skosu)",
+        "cause": "Treating it like flat press, not visualizing the upper-chest arc",
+        "causePl": "Traktowanie jak wyciskania poziomego, brak wizualizacji łuku w stronę górnej klatki",
+        "cue": "Finish position is OVER the upper chest midline, not straight in front. Press 'up to a high target'.",
+        "cuePl": "Pozycja końcowa to NAD środkiem górnej klatki, nie prosto przed sobą. Wyciskaj 'do wysokiego celu'."
+      },
+      {
+        "fault": "Elbow flared to 90° (chicken wing)",
+        "faultPl": "Łokieć rozsunięty na 90° (kurze skrzydełko)",
+        "cause": "Pronated grip pulling elbow out, lack of awareness, weak rotator cuff",
+        "causePl": "Chwyt pronowany ciągnie łokieć na zewnątrz, brak świadomości, słaby rotator cuff",
+        "cue": "Tuck elbow to ~45-60° from torso. Hide your armpit. If grip forces flare, try neutral grip (hammer D-handle).",
+        "cuePl": "Przyciągnij łokieć do ~45-60° od tułowia. Schowaj pachę. Jeśli chwyt wymusza rozsunięcie, spróbuj chwytu neutralnego (D-handle hammer)."
+      },
+      {
+        "fault": "No eccentric control — cable yanks the arm back",
+        "faultPl": "Brak kontroli ekscentrycznej — linka szarpie ramię z powrotem",
+        "cause": "Letting cable do the work, weight too heavy, no constant tension",
+        "causePl": "Pozwalanie lince robić robotę, za ciężki ciężar, brak stałego napięcia",
+        "cue": "Resist the return for 2-3 seconds. The whole point of cable is constant tension — don't waste it.",
+        "cuePl": "Stawiaj opór przy powrocie przez 2-3 sekundy. Sensem wyciągu jest stałe napięcie — nie marnuj tego."
+      },
+      {
+        "fault": "Different ROM/weight on each arm",
+        "faultPl": "Inny zakres/ciężar dla każdej ręki",
+        "cause": "Dominant side dictating weight, fatigue on weaker side, not setting up identically",
+        "causePl": "Strona dominująca dyktuje ciężar, zmęczenie strony słabszej, brak identycznego ustawienia",
+        "cue": "Start with the WEAKER side. Match reps and ROM on the strong side — don't add reps to the dominant arm.",
+        "cuePl": "Zaczynaj od SŁABSZEJ strony. Dopasuj powtórzenia i zakres po stronie mocnej — nie dorzucaj powtórzeń dominującej ręce."
+      }
+    ],
+    "breathing": "Inhale at the bottom (stretched position), brace, exhale on the press up.",
+    "breathingPl": "Wdech na dole (pozycja rozciągnięta), napięcie, wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip D-handle (hammer) instead of pronated — much friendlier to shoulder joint. Reduce ROM if pain at the bottom (stretched) position.",
+      "modificationPl": "Użyj uchwytu neutralnego D-handle (hammer) zamiast pronowanego — znacznie łagodniejsze dla stawu barkowego. Zmniejsz zakres jeśli ból w pozycji dolnej (rozciągniętej).",
+      "alternative": "machine-incline-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Unilateral cable pressing demands shoulder stability the cuff can't provide while healing. Switch to fixed-path incline machine until cleared by physio.",
+      "modificationPl": "Jednostronne wyciskanie z wyciągu wymaga stabilności barku, której uszkodzony rotator cuff nie zapewni. Przejdź na maszynę skośną z ustaloną ścieżką do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-incline-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Anti-rotation demand can aggravate lumbar issues. Reduce weight significantly, brace harder, or switch to bilateral incline press (no rotation challenge).",
+      "modificationPl": "Wymaganie anty-rotacji może drażnić dolny odcinek lędźwiowy. Zmniejsz ciężar znacznie, napnij brzuch mocniej lub przejdź na obustronne wyciskanie skośne (bez wyzwania rotacyjnego).",
+      "alternative": "incline-dumbbell-bench-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Lockout overhead may compress AC joint. Stop just before full extension (keep elbow slightly bent) and reduce ROM at top.",
+      "modificationPl": "Pełne wyprostowanie nad głową może uciskać staw barkowo-obojczykowy. Zatrzymaj się tuż przed pełnym wyprostem (łokieć lekko zgięty) i zmniejsz zakres na górze.",
+      "alternative": "machine-incline-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 per arm (hypertrophy, default) | 3x12-15 (pump/upper chest emphasis) | 4x8-10 (strength-hypertrophy)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-one-arm-incline-press.gif",
+    "frames_extracted": [
+      "frames/cable-one-arm-incline-press/frame_0_start.png",
+      "frames/cable-one-arm-incline-press/frame_1_early.png",
+      "frames/cable-one-arm-incline-press/frame_2_mid.png",
+      "frames/cable-one-arm-incline-press/frame_3_late.png",
+      "frames/cable-one-arm-incline-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/cable-one-arm-incline-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Klatki potwierdzają specyfikę ćwiczenia. Frame 0 (start/dół): ławka pod skosem ~40°, atleta siedzi z linką idącą od dolnego wyciągu za ławką, jedna ręka trzyma D-handle na wysokości górnej klatki, łokieć zgięty pod ~90° od tułowia, drugie ramię swobodne. Frame 2 (góra/pełne wyciśnięcie): ramię wyprostowane po skosie w górę, ręka nad linią głowy, lekko w stronę środka ciała — kąt potwierdza zaangażowanie clavicular pec (górna klatka) i przedniego deltoidu. Frame 4 (powrót w dół): kontrolowane opuszczanie, dłoń wraca w okolice klatki. Podświetlone w wizualizacji: górna część pectoralis major (clavicular head) + anterior deltoid + triceps po stronie pracującej — zgadza się z anatomią dla incline press z low pulley. Charakter unilateral wymaga anty-rotacji (obliques), stąd dodane jako secondary mover. Brak wzmianki o squeeze nóg/biodra (sedentary seated position, low-load core demand spoza anty-rotacji). PL nazwa 'Incline press z wyciągu jednorącz' zgodna z polskim slangiem siłowniowym (Polacy mówią 'incline press' i 'wyciąg' wymiennie). Wszystkie pola PL napisane od zera, nie tłumaczone z EN.",
+
+  "tags": ["compound", "upper_body", "incline_push", "upper_chest", "cable", "unilateral", "anti_rotation", "constant_tension", "asymmetry_fix", "shoulder_friendly_option"]
+}

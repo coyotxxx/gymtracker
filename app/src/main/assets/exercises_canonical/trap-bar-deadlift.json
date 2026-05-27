@@ -1,0 +1,206 @@
+{
+  "id": "trap-bar-deadlift",
+  "name": "Trap Bar Deadlift (Hex Bar Deadlift)",
+  "namePl": "Martwy ciąg z trap bar (gryf heksagonalny)",
+  "aliases": ["hex bar deadlift", "trap bar deadlift", "hexagonal bar deadlift"],
+  "aliasesPl": ["martwy ciąg z trap bar", "martwy ciąg z gryfem heksagonalnym", "martwy ciąg z hex bar", "deadlift trap bar"],
+
+  "description": "Deadlift variant performed inside a hexagonal (trap) bar with handles on the sides. Because the load is centered around your body (not in front of you), the torso stays more upright and the lift becomes a hybrid between a deadlift and a squat. Significantly safer for the lower back than the conventional deadlift, with greater quadriceps involvement and reduced shear stress on the lumbar spine. Excellent choice for athletes, beginners learning to deadlift, and lifters with back issues.",
+  "descriptionPl": "Wariant martwego ciągu wykonywany WEWNĄTRZ heksagonalnego gryfu (trap bar) z uchwytami po bokach. Ponieważ obciążenie znajduje się wokół ciała (a nie przed tobą), tułów pozostaje bardziej pionowy a ruch staje się hybrydą między martwym ciągiem a przysiadem. Znacznie bezpieczniejszy dla dolnego odcinka pleców niż klasyczny martwy ciąg, z większym udziałem mięśni czworogłowych i mniejszymi siłami ścinającymi na kręgosłup lędźwiowy. Doskonały wybór dla sportowców, początkujących uczących się martwego ciągu oraz osób z problemami z plecami.",
+
+  "instructions": [
+    "Załaduj trap bar i wejdź DO ŚRODKA gryfu — staniesz pomiędzy uchwytami, obciążenie jest po bokach.",
+    "Stopy na szerokość bioder, palce skierowane do przodu. Uchwyty trap bar powinny być w jednej linii ze środkiem stóp.",
+    "Zgnij się w biodrach i kolanach jednocześnie — schodzisz NIŻEJ niż w klasycznym deadliftcie, ze znacznie bardziej pionowym tułowiem.",
+    "Chwyć uchwyty po obu stronach — neutralny chwyt (dłonie zwrócone do siebie). Większość trap barów ma wysokie i niskie uchwyty.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte, neutralny kręgosłup. Barki nad uchwytami lub nieco przed.",
+    "Głęboki wdech, napięcie brzucha (Valsalva), spojrzenie neutralne — w punkt na podłodze 2-3 m przed tobą.",
+    "Zacznij ciąg napierając stopami w podłogę — pomyśl 'wstaję z pozycji siadu' bardziej niż 'podnoszę z ziemi'.",
+    "Biodra i barki wstają razem. Gdy gryf mija kolana, dokończ ruch wypchnięciem bioder do przodu — pełen wyprost na górze.",
+    "Lock-out: stoisz prosto, pośladki ściśnięte, neutralna miednica. Nie odchylaj się do tyłu.",
+    "Opuszczanie kontrolowane: najpierw biodra do tyłu, potem kolana się zginają. Wróć na ziemię między powtórzeniami."
+  ],
+  "instructionsPl": [
+    "Załaduj trap bar i wejdź DO ŚRODKA gryfu — staniesz pomiędzy uchwytami, obciążenie jest po bokach.",
+    "Stopy na szerokość bioder, palce skierowane do przodu. Uchwyty trap bar powinny być w jednej linii ze środkiem stóp.",
+    "Zgnij się w biodrach i kolanach jednocześnie — schodzisz NIŻEJ niż w klasycznym deadliftcie, ze znacznie bardziej pionowym tułowiem.",
+    "Chwyć uchwyty po obu stronach — neutralny chwyt (dłonie zwrócone do siebie). Większość trap barów ma wysokie i niskie uchwyty.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte, neutralny kręgosłup. Barki nad uchwytami lub nieco przed.",
+    "Głęboki wdech, napięcie brzucha (Valsalva), spojrzenie neutralne — w punkt na podłodze 2-3 m przed tobą.",
+    "Zacznij ciąg napierając stopami w podłogę — pomyśl 'wstaję z pozycji siadu' bardziej niż 'podnoszę z ziemi'.",
+    "Biodra i barki wstają razem. Gdy gryf mija kolana, dokończ ruch wypchnięciem bioder do przodu — pełen wyprost na górze.",
+    "Lock-out: stoisz prosto, pośladki ściśnięte, neutralna miednica. Nie odchylaj się do tyłu.",
+    "Opuszczanie kontrolowane: najpierw biodra do tyłu, potem kolana się zginają. Wróć na ziemię między powtórzeniami."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "hamstrings"],
+    "secondary": ["erector_spinae", "trapezius", "forearms", "latissimus_dorsi"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "quadriceps": "P9",
+    "hamstrings": "P8",
+    "erector_spinae": "S7",
+    "trapezius": "S6",
+    "forearms": "S8",
+    "latissimus_dorsi": "S5",
+    "core": "S7"
+  },
+
+  "equipment": {
+    "required": ["trap_bar"],
+    "optional": ["belt", "lifting_straps", "chalk", "deadlift_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 6,
+    "prerequisites": ["kettlebell-deadlift", "goblet-squat", "romanian-deadlift"],
+    "progression_to": ["barbell-deadlift", "deficit-trap-bar-deadlift", "trap-bar-jump"],
+    "alternatives": ["barbell-deadlift", "sumo-deadlift", "romanian-deadlift", "rack-pull"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stań DO ŚRODKA trap bara — obciążenie po bokach ciała",
+      "Stopy na szerokość bioder, palce do przodu",
+      "Uchwyty w linii ze środkiem stóp",
+      "Neutralny chwyt — dłonie zwrócone do siebie",
+      "Klatka w górze, łopatki ściągnięte, tułów BARDZIEJ PIONOWY niż w klasycznym DL"
+    ],
+    "setup_cues_pl": [
+      "Stań DO ŚRODKA trap bara — obciążenie po bokach ciała",
+      "Stopy na szerokość bioder, palce do przodu",
+      "Uchwyty w linii ze środkiem stóp",
+      "Neutralny chwyt — dłonie zwrócone do siebie",
+      "Klatka w górze, łopatki ściągnięte, tułów BARDZIEJ PIONOWY niż w klasycznym DL"
+    ],
+    "execution_cues": [
+      "Pomyśl 'wstaję z przysiadu' a nie 'podnoszę z ziemi'",
+      "Napieraj stopami w podłogę — quadsy startują ruch",
+      "Biodra i barki wstają w tym samym tempie",
+      "Pełen wyprost biodra na górze — ściśnij pośladki",
+      "Opuszczanie: najpierw biodra do tyłu, potem kolana"
+    ],
+    "execution_cues_pl": [
+      "Pomyśl 'wstaję z przysiadu' a nie 'podnoszę z ziemi'",
+      "Napieraj stopami w podłogę — quadsy startują ruch",
+      "Biodra i barki wstają w tym samym tempie",
+      "Pełen wyprost biodra na górze — ściśnij pośladki",
+      "Opuszczanie: najpierw biodra do tyłu, potem kolana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Treating it as a squat only — too vertical, knees collapse forward",
+        "faultPl": "Traktowanie jako wyłącznie przysiad — zbyt pionowy tułów, kolana wchodzą za daleko do przodu",
+        "cause": "Brak zrozumienia że to hybryda — wciąż jest to ruch zawiasowy (hinge) z elementem przysiadu",
+        "causePl": "Brak zrozumienia że to hybryda — wciąż jest to ruch zawiasowy (hinge) z elementem przysiadu",
+        "cue": "Lekko wypchnij biodra do tyłu w starcie. Tułów pochylony ok. 30-45° (NIE pionowy jak w squacie).",
+        "cuePl": "Lekko wypchnij biodra do tyłu w starcie. Tułów pochylony ok. 30-45° (NIE pionowy jak w squacie)."
+      },
+      {
+        "fault": "Asymmetric pull — one side rises faster than the other",
+        "faultPl": "Asymetryczny ciąg — jedna strona wstaje szybciej niż druga",
+        "cause": "Słabość jednostronna, nierówny chwyt, lub stopy nie na środku gryfu",
+        "causePl": "Słabość jednostronna, nierówny chwyt, lub stopy nie na środku gryfu",
+        "cue": "Sprawdź ustawienie w lustrze. Upewnij się że uchwyty są równo w linii ze stopami. Naciskaj równomiernie obiema stopami.",
+        "cuePl": "Sprawdź ustawienie w lustrze. Upewnij się że uchwyty są równo w linii ze stopami. Naciskaj równomiernie obiema stopami."
+      },
+      {
+        "fault": "Rounded upper back (thoracic flexion)",
+        "faultPl": "Zaokrąglony górny odcinek pleców (thoracic flexion)",
+        "cause": "Słabe górne plecy, brak aktywacji łopatek, lub zbyt duży ciężar",
+        "causePl": "Słabe górne plecy, brak aktywacji łopatek, lub zbyt duży ciężar",
+        "cue": "Klatka w górze, łopatki ściągnięte do tyłu i w dół. Wyobraź sobie że trzymasz piłkę między łopatkami.",
+        "cuePl": "Klatka w górze, łopatki ściągnięte do tyłu i w dół. Wyobraź sobie że trzymasz piłkę między łopatkami."
+      },
+      {
+        "fault": "Using high handles when low handles are appropriate (or vice versa)",
+        "faultPl": "Używanie wysokich uchwytów gdy odpowiednie są niskie (lub odwrotnie)",
+        "cause": "Brak świadomości że trap bar ma 2 wysokości uchwytów — wysokie skracają ROM, niskie wymagają większej mobilności",
+        "causePl": "Brak świadomości że trap bar ma 2 wysokości uchwytów — wysokie skracają ROM, niskie wymagają większej mobilności",
+        "cue": "Niskie uchwyty = pełen ROM (jak klasyczny DL). Wysokie uchwyty = krótszy ROM, dobry dla początkujących lub osób z ograniczeniami mobilności.",
+        "cuePl": "Niskie uchwyty = pełen ROM (jak klasyczny DL). Wysokie uchwyty = krótszy ROM, dobry dla początkujących lub osób z ograniczeniami mobilności."
+      },
+      {
+        "fault": "Hyperextension at lockout",
+        "faultPl": "Nadmierne odgięcie kręgosłupa w lock-out",
+        "cause": "Próba 'wyglądać wyżej', mylenie wyprostu biodra z odgięciem lędźwi",
+        "causePl": "Próba 'wyglądać wyżej', mylenie wyprostu biodra z odgięciem lędźwi",
+        "cue": "Lock-out to TYLKO pośladki. Neutralna miednica, brzuch napięty. Bez odchylania się do tyłu.",
+        "cuePl": "Lock-out to TYLKO pośladki. Neutralna miednica, brzuch napięty. Bez odchylania się do tyłu."
+      }
+    ],
+    "breathing": "Głęboki wdech w pozycji startowej (przed ciągiem), napięcie Valsalva, trzymaj oddech przez fazę koncentryczną. Wydech na szczycie lock-out lub w drodze powrotnej.",
+    "breathingPl": "Głęboki wdech w pozycji startowej (przed ciągiem), napięcie Valsalva, trzymaj oddech przez fazę koncentryczną. Wydech na szczycie lock-out lub w drodze powrotnej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nawet trap bar (bezpieczniejszy) nie powinien być wykonywany przy ostrej kontuzji.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nawet trap bar (bezpieczniejszy) nie powinien być wykonywany przy ostrej kontuzji.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "knee_injury_meniscus_acl",
+      "severity": "caution",
+      "modification": "Trap bar angażuje quadsy mocniej niż klasyczny DL — przy kontuzji kolana użyj wysokich uchwytów (krótszy ROM, mniejsza fleksja kolan) lub przejdź na RDL.",
+      "modificationPl": "Trap bar angażuje quadsy mocniej niż klasyczny DL — przy kontuzji kolana użyj wysokich uchwytów (krótszy ROM, mniejsza fleksja kolan) lub przejdź na RDL.",
+      "alternative": "romanian-deadlift"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Trap bar pozwala na bardziej pionową pozycję tułowia co zmniejsza zgięcie w biodrze — często lepszy niż klasyczny DL przy FAI. Skróć ROM jeśli potrzeba.",
+      "modificationPl": "Trap bar pozwala na bardziej pionową pozycję tułowia co zmniejsza zgięcie w biodrze — często lepszy niż klasyczny DL przy FAI. Skróć ROM jeśli potrzeba.",
+      "alternative": "rack-pull"
+    },
+    {
+      "condition": "shoulder_injury_blocking_neutral_grip",
+      "severity": "modify",
+      "modification": "Neutralny chwyt trap bara jest zazwyczaj przyjazny dla barków. Przy poważnej kontuzji barku użyj pasków lub przejdź na hip thrust.",
+      "modificationPl": "Neutralny chwyt trap bara jest zazwyczaj przyjazny dla barków. Przy poważnej kontuzji barku użyj pasków lub przejdź na hip thrust.",
+      "alternative": "hip-thrust"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (siła) | 3-5x3-5 (powerlifting/strongman) | 3-4x6-10 (hipertrofia) | 4-6x1-3 (max siła) | 3x5 sprint reps (sportowcy — power/explosive)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "trap-bar-deadlift.gif",
+    "frames_extracted": [
+      "frames/trap-bar-deadlift/frame_0_start.png",
+      "frames/trap-bar-deadlift/frame_1_early.png",
+      "frames/trap-bar-deadlift/frame_2_mid.png",
+      "frames/trap-bar-deadlift/frame_3_late.png",
+      "frames/trap-bar-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/trap-bar-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0/4: pozycja startowa — atleta STOI WEWNĄTRZ heksagonalnego gryfu, uchwyty po bokach ciała, tułów pochylony ale BARDZIEJ PIONOWO niż w klasycznym DL. Podświetlone głównie czworogłowe i pośladki (większy udział quadsów niż w conventional). Frame 1/3: środkowa faza — semi-transparentny model pokazuje przejście. Frame 2: lock-out — pełen wyprost, gryf przy biodrach. Klasyfikacja jako 'hinge' (wciąż dominuje wyprost biodra) ale z większym udziałem przysiadu niż conventional DL. primary muscles: glutes/quadriceps/hamstrings (quadsy podniesione do P9 vs conventional gdzie były S6). Difficulty 6 (vs 8 dla conventional) — łatwiejsze technicznie i bezpieczniejsze dla pleców. Minimum: beginner (vs intermediate dla conventional). Equipment: trap_bar (NIE barbell). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["compound", "posterior_chain", "lower_body_power", "athletic_performance", "back_friendly", "trap_bar", "hip_hinge", "beginner_friendly", "quad_dominant_deadlift"]
+}

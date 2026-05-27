@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-standing-alternate-raise",
+  "name": "Dumbbell Standing Alternate Raise",
+  "namePl": "Naprzemienne wznosy hantli przodem stojąc",
+  "aliases": ["dumbbell alternating front raise standing", "standing alternating dumbbell front raise", "single-arm alternating dumbbell front raise"],
+  "aliasesPl": ["naprzemienne wznosy hantli w przód stojąc", "front raise hantlami na zmianę stojąc", "wznosy hantli przodem jedną ręką naprzemiennie"],
+
+  "description": "Standing alternating dumbbell front raise — a classic unilateral isolation exercise for the anterior deltoids (front shoulders), with secondary work for the lateral deltoids and clavicular pectoralis. Holding a dumbbell in each hand with a pronated (overhand) grip, the lifter raises one arm at a time straight forward to roughly shoulder height, then lowers it as the opposite arm rises. The alternating pattern allows each side to be loaded for slightly longer time-under-tension at the top while the opposite side starts the next rep, and it lets the lifter focus on each shoulder independently — useful for evening out side-to-side imbalances. Standing upright (no bent-over position) means the front delt is the prime mover and the torso must resist any swinging or hip drive.",
+  "descriptionPl": "Naprzemienne wznosy hantli przodem w pozycji stojącej — klasyczne jednostronne ćwiczenie izolowane na przednie aktony barków (przedni odcinek mięśnia naramiennego), z dodatkową pracą bocznych aktonów i obojczykowej części mięśnia piersiowego większego. Trzymając hantle w obu rękach chwytem nachwytnym (pronowanym), ćwiczący unosi po kolei jedno ramię w przód, prosto do mniej więcej wysokości barków, a następnie opuszcza je, gdy przeciwne ramię zaczyna się unosić. Naprzemienny wzór pozwala każdej stronie pracować nieco dłużej w fazie szczytowej, podczas gdy druga strona zaczyna następne powtórzenie, oraz umożliwia skupienie się na każdym barku osobno — przydatne do wyrównywania asymetrii lewa-prawa. Pozycja wyprostowana (bez opadu) oznacza, że przedni akton jest głównym wykonawcą ruchu, a tułów musi przeciwstawiać się bujaniu i naporowi z bioder.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart, knees soft, core braced.",
+    "Hold a dumbbell in each hand at the front of your thighs, arms straight, palms facing your thighs (pronated grip).",
+    "Set a small, fixed bend in the elbows (~10-15°). Pull shoulder blades down and back. Chin tucked, ribs over hips.",
+    "Raise the right dumbbell forward in a controlled arc, keeping the elbow angle locked, until the arm is roughly parallel to the floor (shoulder height).",
+    "Pause briefly at the top — wrist in line with shoulder, palm facing the floor.",
+    "Begin lowering the right dumbbell under control while simultaneously starting to raise the left dumbbell forward in the same way.",
+    "As the right hand passes the thigh, the left arm reaches the top position. This is the rhythmic alternating cadence: one arm down, one arm up.",
+    "Continue alternating arms for the prescribed number of reps PER SIDE (e.g. 10 each side = 20 total raises).",
+    "Keep the torso completely still — no swinging, no leaning back, no hip thrust. If you have to swing, the load is too heavy."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte, brzuch napięty.",
+    "Trzymaj hantle w obu rękach przy przedniej części ud, ręce wyprostowane, dłonie zwrócone do ud (chwyt nachwytny, pronowany).",
+    "Ustaw lekkie, stałe ugięcie w łokciach (~10-15°). Ściągnij łopatki w dół i w tył. Broda przyciągnięta, żebra nad biodrami.",
+    "Unieś prawą hantlę w przód kontrolowanym łukiem, utrzymując zablokowany kąt łokcia, aż ramię będzie mniej więcej równolegle do podłogi (wysokość barku).",
+    "Zatrzymaj się na chwilę w górze — nadgarstek w linii z barkiem, dłoń skierowana do podłogi.",
+    "Zacznij opuszczać prawą hantlę kontrolowanym ruchem, jednocześnie zaczynając unosić lewą hantlę w przód w ten sam sposób.",
+    "Gdy prawa ręka mija udo, lewe ramię osiąga pozycję szczytową. To rytmiczny naprzemienny rytm: jedna ręka w dół, druga w górę.",
+    "Kontynuuj naprzemiennie przez zaplanowaną liczbę powtórzeń NA STRONĘ (np. 10 na stronę = 20 wznosów łącznie).",
+    "Trzymaj tułów całkowicie nieruchomo — bez bujania, odchylania się w tył, wypychania bioder. Jeśli musisz bujać, ciężar jest za duży."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["lateral_deltoids", "pectoralis_major_clavicular", "serratus_anterior"],
+    "stabilizers": ["trapezius_upper", "trapezius_middle", "core", "erector_spinae", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "S5",
+    "pectoralis_major_clavicular": "S4",
+    "serratus_anterior": "S3",
+    "trapezius_upper": "T3",
+    "trapezius_middle": "T2",
+    "core": "T4",
+    "erector_spinae": "T3",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-front-raise", "barbell-front-raise", "cable-front-raise", "plate-front-raise"],
+    "alternatives": ["dumbbell-front-raise", "cable-alternating-front-raise", "landmine-press", "barbell-front-raise", "plate-front-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Tall stance — feet shoulder-width, knees soft",
+      "Pronated grip, dumbbells touching the front of thighs",
+      "Small fixed elbow bend (~10-15°) before lift starts",
+      "Shoulder blades pulled down and back, ribs stacked over hips",
+      "Brace the core hard — this kills body swing"
+    ],
+    "setup_cues_pl": [
+      "Wyprostowana postawa — stopy na szerokość barków, kolana miękkie",
+      "Chwyt nachwytny, hantle dotykają przedniej części ud",
+      "Lekkie, stałe ugięcie łokcia (~10-15°) przed startem ruchu",
+      "Łopatki ściągnięte w dół i w tył, żebra ułożone nad biodrami",
+      "Mocno napnij brzuch — to wyłącza bujanie tułowiem"
+    ],
+    "execution_cues": [
+      "Raise to shoulder height — no higher",
+      "One arm down, one arm up — opposite rhythm",
+      "Wrist in line with shoulder at the top",
+      "Lower in 2 seconds — never drop the weight",
+      "Keep the torso frozen — chest does not move forward or back"
+    ],
+    "execution_cues_pl": [
+      "Unoś do wysokości barku — nie wyżej",
+      "Jedna ręka w dół, druga w górę — przeciwstawny rytm",
+      "Nadgarstek w linii z barkiem w pozycji szczytowej",
+      "Opuszczaj przez 2 sekundy — nigdy nie rzucaj ciężaru",
+      "Trzymaj tułów zamrożony — klatka nie idzie w przód ani w tył"
+    ],
+    "common_faults": [
+      {
+        "fault": "Swinging the torso / using hip drive to throw weight up",
+        "faultPl": "Bujanie tułowia / używanie bioder do zarzucania ciężaru w górę",
+        "cause": "Load too heavy; lifter compensates with hip extension and lower back arch",
+        "causePl": "Zbyt duży ciężar; ćwiczący kompensuje wyprostem bioder i wygięciem lędźwi",
+        "cue": "Drop the dumbbells. Stand against a wall — back, head and glutes touching it — and repeat. If you bang the wall, the weight is too heavy.",
+        "cuePl": "Zmniejsz ciężar. Stań plecami do ściany — plecy, głowa i pośladki dotykają — i powtórz. Jeśli uderzasz w ścianę, ciężar jest za duży."
+      },
+      {
+        "fault": "Raising the dumbbell above shoulder height",
+        "faultPl": "Unoszenie hantli powyżej wysokości barku",
+        "cause": "Trying to get more 'feel' but actually shifting load to upper traps",
+        "causePl": "Próba zwiększenia 'czucia' mięśnia, ale w rzeczywistości przeniesienie pracy na trapezy górne",
+        "cue": "Wrist stops level with shoulder. Past that point the front delt stops working — the traps and biceps take over.",
+        "cuePl": "Nadgarstek zatrzymuje się na wysokości barku. Powyżej tego przedni akton przestaje pracować — przejmują trapezy i bicepsy."
+      },
+      {
+        "fault": "Bending and straightening the elbow during the rep (turning it into a curl-press)",
+        "faultPl": "Zginanie i prostowanie łokcia w trakcie powtórzenia (zamiana ruchu w uginanie-wyciskanie)",
+        "cause": "Load too heavy — lifter unconsciously uses biceps and front delt as one combined press",
+        "causePl": "Zbyt duży ciężar — ćwiczący nieświadomie używa bicepsu i przedniego aktonu jako jednego połączonego wyciskania",
+        "cue": "Lock the elbow angle and forget it. Hand and shoulder rise as one unit, like a lever.",
+        "cuePl": "Zablokuj kąt łokcia i zapomnij o nim. Dłoń i bark unoszą się jako jedna jednostka, jak dźwignia."
+      },
+      {
+        "fault": "Shrugging — upper traps elevate the shoulder during the lift",
+        "faultPl": "Wciąganie barków — trapezy górne unoszą bark w trakcie ruchu",
+        "cause": "Loss of scapular depression under load, or load simply too heavy",
+        "causePl": "Utrata depresji łopatek pod ciężarem lub po prostu zbyt duży ciężar",
+        "cue": "'Long neck'. Actively press the working shoulder DOWN as the dumbbell rises UP.",
+        "cuePl": "'Długa szyja'. Aktywnie pchaj pracujący bark W DÓŁ, gdy hantla idzie W GÓRĘ."
+      },
+      {
+        "fault": "Both arms moving in sync (parallel) instead of true alternation",
+        "faultPl": "Obie ręce poruszają się równolegle zamiast prawdziwego naprzemiennego rytmu",
+        "cause": "Lack of focus / cadence — defeats the purpose of unilateral alternating raise",
+        "causePl": "Brak koncentracji / rytmu — niweczy sens jednostronnego naprzemiennego ćwiczenia",
+        "cue": "When right reaches the top, left should be passing the thigh. Hands cross at mid-thigh level.",
+        "cuePl": "Gdy prawa dotrze na górę, lewa powinna mijać udo. Ręce krzyżują się na wysokości połowy uda."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down. Because arms alternate continuously, breathing also becomes rhythmic — typically one full breath cycle per arm-pair (one up + one down).",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania. Ponieważ ramiona naprzemiennie pracują w sposób ciągły, oddychanie również staje się rytmiczne — typowo jeden pełny cykl oddechu na parę ruchów (jedna ręka w górę + jedna w dół)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — do not raise above 75-80% of shoulder height. Switch to a neutral (hammer) grip with thumbs up, which opens the subacromial space. Use lighter loads (40-50% of normal).",
+      "modificationPl": "Zmniejsz zakres ruchu — nie unoś powyżej 75-80% wysokości barku. Przejdź na chwyt neutralny (młotkowy) z kciukami w górę, który otwiera przestrzeń podbarkową. Używaj lżejszych ciężarów (40-50% normalnego).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "anterior_deltoid_strain_or_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid front raises during acute phase (loaded shoulder flexion is the directly aggravated motion). Substitute with isometric front delt holds at 45° or rest until pain-free in flexion.",
+      "modificationPl": "Unikaj wznosów przodem w fazie ostrej (obciążone zgięcie w stawie ramiennym to dokładnie ten ruch, który drażni). Zastąp izometrycznymi utrzymaniami przedniego aktonu pod kątem 45° lub odpocznij do momentu braku bólu przy zgięciu.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_instability",
+      "severity": "modify",
+      "modification": "Standing front raises load the lower back isometrically (the long lever creates extension torque). Perform the exercise seated against a vertical bench back support, or substitute with cable alternating front raise where stance is more stable.",
+      "modificationPl": "Wznosy przodem w pozycji stojącej obciążają izometrycznie odcinek lędźwiowy (długa dźwignia generuje moment wyprostny). Wykonuj ćwiczenie siedząc opartym o pionowe oparcie ławki lub zastąp naprzemiennymi wznosami w przód na wyciągu, gdzie pozycja jest stabilniejsza.",
+      "alternative": "cable-alternating-front-raise"
+    },
+    {
+      "condition": "acromioclavicular_ac_joint_pain",
+      "severity": "caution",
+      "modification": "AC joint compresses near the top of front flexion. Reduce ROM to 60-70°, switch to neutral grip, and stop the instant pain appears at the top of the joint.",
+      "modificationPl": "Staw barkowo-obojczykowy ulega kompresji blisko szczytu zgięcia w przód. Zmniejsz zakres ruchu do 60-70°, przejdź na chwyt neutralny i zatrzymaj się natychmiast, gdy pojawi się ból na szczycie stawu.",
+      "alternative": "landmine-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per side (hypertrophy/standard) | 3x12-20 per side (volume/pump) | 3x8-10 per side (strength-focus, rare)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-standing-alternate-raise.gif",
+    "frames_extracted": [
+      "frames/dumbbell-standing-alternate-raise/frame_0_start.png",
+      "frames/dumbbell-standing-alternate-raise/frame_1_early.png",
+      "frames/dumbbell-standing-alternate-raise/frame_2_mid.png",
+      "frames/dumbbell-standing-alternate-raise/frame_3_late.png",
+      "frames/dumbbell-standing-alternate-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-standing-alternate-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T06:05:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Frame 0: ćwiczący stoi wyprostowany, lewa ręka uniesiona w przód do wysokości barku z hantlą (chwyt nachwytny, dłoń w dół), prawa ręka opuszczona przy udzie z hantlą. Przedni akton lewego barku jest podświetlony na czerwono — typowy obszar pracy dla front raise (NIE lateral, NIE rear). Frame 1-2 (mid): obie ręce krzyżują się w pobliżu wysokości pasa/dolnej części klatki — lewa opada, prawa zaczyna się unosić. Frame 3: pozycja odwrócona względem frame 0/1 — prawa ręka uniesiona w przód do wysokości barku (przedni akton prawego barku podświetlony), lewa ręka opuszczona. Frame 4: powrót do pozycji początkowej z 'ghost' dolnego ruchu. To jednoznacznie NAPRZEMIENNY FRONT RAISE (nie lateral raise) — ruch w płaszczyźnie strzałkowej (sagittal), nie czołowej. Pozycja stojąca, chwyt nachwytny pronowany (dłoń w dół na szczycie). Klasyczna izolacja przedniego aktonu z naprzemienną kadencją lewa-prawa. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "shoulders", "front_delts", "anterior_deltoids", "isolation", "dumbbells", "upper_body", "standing", "unilateral", "alternating", "hypertrophy"]
+}

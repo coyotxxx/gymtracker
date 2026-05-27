@@ -1,0 +1,203 @@
+{
+  "id": "cable-alternate-shoulder-press",
+  "name": "Cable Alternating Shoulder Press",
+  "namePl": "Wyciskanie barków na wyciągu naprzemiennie",
+  "aliases": ["cable alternate OHP", "cable alternating overhead press", "dual cable alternating press", "cable shoulder press alternating"],
+  "aliasesPl": ["OHP z wyciągu naprzemiennie", "wyciskanie naprzemienne na wyciągu", "wyciskanie barków na wyciągach dwustronnych", "cable OHP alternujące"],
+
+  "description": "Unilateral alternating overhead press performed standing between two low-cable pulleys with D-handles. While one arm presses up to full lockout, the other resets at shoulder level — this asymmetric load creates a strong anti-lateral-flexion core demand (obliques fire HARD to prevent torso tilt). Cable provides constant tension throughout the range of motion, unlike dumbbells which lose tension at lockout. Excellent for shoulder hypertrophy with bonus core integration.",
+  "descriptionPl": "Jednoręczne naprzemienne wyciskanie nad głowę wykonywane stojąc między dwoma wyciągami dolnymi z uchwytami D-handle. Gdy jedna ręka wyciska do pełnego lock-out, druga resetuje na poziomie barku — to asymetryczne obciążenie tworzy silne wyzwanie anti-lateral-flexion dla core (skośne pracują MOCNO by zapobiec przechyłowi tułowia). Wyciąg zapewnia stałe napięcie przez cały zakres ruchu, w przeciwieństwie do hantli, które tracą napięcie w lock-out. Świetne na hipertrofię barków z bonusowym zaangażowaniem core.",
+
+  "instructions": [
+    "Set both cable pulleys to the LOWEST position. Attach a D-handle to each side.",
+    "Stand centered between the two pulleys, feet hip-width apart. Grip a handle in each hand, palms facing forward (pronated grip).",
+    "Bring both handles to shoulder level — elbows bent ~90°, hands just outside the shoulders, wrists straight.",
+    "Brace the core HARD (this is critical — alternating creates a strong anti-tilt demand). Squeeze glutes, ribs down.",
+    "Press ONE arm straight up to full lockout overhead — bicep near ear, palm forward. The other arm STAYS at shoulder level.",
+    "Lower the pressed arm with control back to shoulder level — and simultaneously begin pressing the OTHER arm up.",
+    "Alternate continuously. Keep the torso perfectly upright — DO NOT lean toward the unloaded side.",
+    "Exhale at each lockout. Inhale on the eccentric (lowering)."
+  ],
+  "instructionsPl": [
+    "Ustaw oba wyciągi na NAJNIŻSZEJ pozycji. Przypnij D-handle do każdej strony.",
+    "Stań na środku między dwoma wyciągami, stopy na szerokość bioder. Złap uchwyt w każdą rękę, dłonie skierowane do przodu (chwyt pronacyjny).",
+    "Podnieś oba uchwyty na wysokość barków — łokcie zgięte ~90°, dłonie tuż na zewnątrz barków, nadgarstki proste.",
+    "Mocno napnij core (to KLUCZOWE — naprzemienne wyciskanie tworzy silne wyzwanie anti-tilt). Ściśnij pośladki, żebra w dół.",
+    "Wyciśnij JEDNĄ ręką prosto w górę do pełnego lock-out — biceps przy uchu, dłoń do przodu. Druga ręka POZOSTAJE na poziomie barku.",
+    "Opuść wyciśniętą rękę kontrolowanym ruchem z powrotem na poziom barku — i jednocześnie zacznij wyciskać DRUGĄ rękę w górę.",
+    "Alternuj nieprzerwanie. Tułów idealnie pionowy — NIE odchylaj się w stronę nieobciążoną.",
+    "Wydech w każdym lock-out. Wdech na ekscentryku (opuszczanie)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid", "obliques"],
+    "secondary": ["triceps_brachii", "upper_trapezius"],
+    "stabilizers": ["core", "rectus_abdominis", "glutes", "serratus_anterior", "rotator_cuff", "quadratus_lumborum"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P9",
+    "lateral_deltoid": "P8",
+    "obliques": "P7",
+    "triceps_brachii": "S6",
+    "upper_trapezius": "S5",
+    "core": "S8",
+    "rectus_abdominis": "S6",
+    "glutes": "S5",
+    "serratus_anterior": "T4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine_dual", "d_handle_x2"],
+    "optional": ["belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-shoulder-press", "cable-shoulder-press", "single-arm-cable-shoulder-press"],
+    "progression_to": ["single-arm-cable-shoulder-press", "z-press", "kettlebell-bottoms-up-press"],
+    "alternatives": ["dumbbell-alternating-shoulder-press", "cable-shoulder-press", "single-arm-cable-shoulder-press", "machine-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Both pulleys LOWEST position, D-handles attached",
+      "Stand centered, feet hip-width",
+      "Handles at shoulder level, palms forward",
+      "Core braced HARD, ribs down, glutes squeezed",
+      "Eyes forward, neutral spine"
+    ],
+    "setup_cues_pl": [
+      "Oba wyciągi NAJNIŻEJ, D-handle przypięte",
+      "Stań na środku, stopy na szerokość bioder",
+      "Uchwyty na wysokości barków, dłonie do przodu",
+      "Core napięty MOCNO, żebra w dół, pośladki ściśnięte",
+      "Wzrok do przodu, neutralny kręgosłup"
+    ],
+    "execution_cues": [
+      "Press straight UP, not forward",
+      "Other arm STAYS at shoulder — don't drop it",
+      "Torso STAYS vertical — no tilt to unloaded side",
+      "Full lockout at top, bicep by ear",
+      "Smooth alternation, never let either arm rest down"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto W GÓRĘ, nie do przodu",
+      "Druga ręka POZOSTAJE na barku — nie opuszczaj jej",
+      "Tułów STAJE pionowy — bez przechyłu w stronę nieobciążoną",
+      "Pełen lock-out na szczycie, biceps przy uchu",
+      "Płynne naprzemienne, nigdy nie pozwól ręce odpocząć w dole"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lateral tilt (torso leaning toward unloaded side)",
+        "faultPl": "Boczny przechył (tułów odchyla się w stronę nieobciążoną)",
+        "cause": "Weak obliques/core, weight too heavy, lack of bracing awareness",
+        "causePl": "Słabe skośne/core, zbyt duży ciężar, brak świadomości napięcia",
+        "cue": "Imagine a rod through your spine — STAYS vertical. Brace BOTH obliques. Reduce weight.",
+        "cuePl": "Wyobraź sobie pręt w kręgosłupie — PIONOWY. Napnij OBA skośne. Zmniejsz ciężar."
+      },
+      {
+        "fault": "Pressing forward instead of straight up (cable angle compensation)",
+        "faultPl": "Wyciskanie do przodu zamiast prosto w górę (kompensacja kąta linki)",
+        "cause": "Cables pull slightly behind from low pulleys — lifter compensates by pressing forward",
+        "causePl": "Linki ciągną nieco do tyłu od wyciągów dolnych — ćwiczący kompensuje przesuwając ruch do przodu",
+        "cue": "Press straight up against the resistance. Bar path = vertical above shoulder.",
+        "cuePl": "Wyciskaj prosto w górę pod opór. Ścieżka ręki = pionowa nad barkiem."
+      },
+      {
+        "fault": "Dropping the non-pressing arm below shoulder level",
+        "faultPl": "Opuszczanie nieaktywnej ręki poniżej poziomu barku",
+        "cause": "Loss of tension on resting side, fatigue",
+        "causePl": "Utrata napięcia po stronie odpoczynkowej, zmęczenie",
+        "cue": "Both arms ALWAYS at or above shoulder level. Resting arm = isometric hold.",
+        "cuePl": "Obie ręce ZAWSZE na lub powyżej barku. Odpoczynkowa ręka = trzymanie izometryczne."
+      },
+      {
+        "fault": "Hyperextending lower back at lockout",
+        "faultPl": "Przeprost lędźwiowy w lock-out",
+        "cause": "Compensating for limited overhead mobility, weak core, weight too heavy",
+        "causePl": "Kompensacja ograniczonej mobilności overhead, słaby core, zbyt duży ciężar",
+        "cue": "Ribs DOWN throughout. Squeeze glutes harder. Reduce weight if back keeps arching.",
+        "cuePl": "Żebra W DÓŁ przez cały ruch. Mocniej ściśnij pośladki. Zmniejsz ciężar jeśli plecy się odginają."
+      },
+      {
+        "fault": "Rushing the tempo (using momentum)",
+        "faultPl": "Pośpiech (używanie pędu)",
+        "cause": "Trying to lift too much, not feeling the muscle",
+        "causePl": "Próba uniesienia zbyt dużego ciężaru, brak czucia mięśnia",
+        "cue": "1-2 sec up, 2-3 sec down. Cable demands control — that's the point.",
+        "cuePl": "1-2 sek w górę, 2-3 sek w dół. Wyciąg wymaga kontroli — to o to chodzi."
+      }
+    ],
+    "breathing": "Exhale on the press (concentric). Inhale on the lowering (eccentric). Maintain core brace throughout the set — alternating creates constant anti-tilt demand.",
+    "breathingPl": "Wydech na wyciskaniu (koncentryczna). Wdech na opuszczaniu (ekscentryczna). Utrzymuj napięcie core przez całą serię — naprzemienne tworzy stałe wymaganie anti-tilt."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't go to full lockout) or switch to neutral-grip press. Use lighter weight.",
+      "modificationPl": "Zmniejsz ROM (bez pełnego lock-out) lub przejdź na chwyt neutralny. Użyj lżejszego ciężaru.",
+      "alternative": "single-arm-cable-shoulder-press"
+    },
+    {
+      "condition": "lumbar_instability",
+      "severity": "modify",
+      "modification": "The alternating asymmetric load demands strong core stability. Reduce weight significantly or switch to bilateral cable press first.",
+      "modificationPl": "Naprzemienne asymetryczne obciążenie wymaga silnej stabilności core. Znacznie zmniejsz ciężar lub przejdź najpierw na bilateralny cable press.",
+      "alternative": "cable-shoulder-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid overhead pressing until cleared by physiotherapist. Resume with light machine work first.",
+      "modificationPl": "Unikaj wyciskania overhead do zgody fizjoterapeuty. Wróć przez lekką pracę na maszynach.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work thoracic/shoulder mobility first. Use partial ROM or switch to landmine press for angled trajectory.",
+      "modificationPl": "Najpierw popracuj nad mobilnością piersiową/barku. Używaj częściowego ROM lub przejdź na landmine press (tor kątowy).",
+      "alternative": "landmine-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy) | 3x12-15 per arm (endurance) | 4x6-8 per arm (strength-focused)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-alternate-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/cable-alternate-shoulder-press/frame_0_start.png",
+      "frames/cable-alternate-shoulder-press/frame_1_early.png",
+      "frames/cable-alternate-shoulder-press/frame_2_mid.png",
+      "frames/cable-alternate-shoulder-press/frame_3_late.png",
+      "frames/cable-alternate-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-alternate-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0/4: pozycja startowa/end — stoi między dwoma wyciągami dolnymi z D-handle, oba uchwyty na poziomie barków, dłonie do przodu, przednie + lateralne delty podświetlone. Frame 2: jedna ręka w pełnym lock-out overhead (biceps przy uchu), druga ręka pozostaje na barku — klasyczny wzorzec alternujący. Tricepsy aktywne na ręce wyciskającej. Cable z dolnych pulleys (linki ciągną od dołu z boku). Postawa pionowa — anti-lateral-flexion challenge widoczny w aktywacji obliques. Mechanic=compound (multi-joint: bark+łokieć), plane=frontal (linki w boczno-pionowym torze), force=push, laterality=unilateral_alternating. Primary anterior+lateral deltoid + obliques (anti-tilt). PL nazwa = 'Wyciskanie barków na wyciągu naprzemiennie'.",
+
+  "tags": ["cable", "shoulders", "delts", "unilateral", "alternating", "core_integration", "anti_lateral_flexion", "hypertrophy", "vertical_push", "constant_tension"]
+}

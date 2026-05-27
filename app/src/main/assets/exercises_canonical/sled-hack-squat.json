@@ -1,0 +1,207 @@
+{
+  "id": "sled-hack-squat",
+  "name": "Sled Hack Squat (Machine)",
+  "namePl": "Hack squat maszynowy",
+  "aliases": ["hack squat machine", "45 degree hack squat", "plate-loaded hack squat", "sled hack squat", "lever hack squat"],
+  "aliasesPl": ["hack squat na maszynie", "hack squat 45 stopni", "hack przysiad maszynowy", "maszyna hack squat", "hack squat dźwigniowy"],
+
+  "description": "Bilateral compound lower-body exercise performed on a dedicated 45-degree hack squat machine (sled-loaded). The lifter stands on the angled platform with their back pressed against an inclined back pad, shoulders wedged under padded supports, and hands gripping handles near the head. The platform travels along fixed rails at roughly 45 degrees, removing balance demand and locking the torso into a fully supported position. The angled back pad shifts the loading vector relative to gravity — the result is intense quadriceps loading with significantly reduced spinal compression compared to a back squat. This is the classic 'hammer' for quad hypertrophy: a fixed sled path lets the lifter focus entirely on driving through the legs, push hard into the platform, and reach depths that free-weight squats often don't allow safely. The 45-degree machine variant is the most common gym fixture for hack squats and is generally easier to set up than Smith Machine or barbell hack squat variants.",
+  "descriptionPl": "Obustronne wielostawowe ćwiczenie dolnej części ciała wykonywane na dedykowanej maszynie hack squat pod kątem 45 stopni (z platformą obciążaną talerzami). Trenujący staje na nachylonej platformie, plecy oparte o pochylony pad, barki wsunięte pod miękkie poduszki naramienne, ręce trzymają uchwyty przy głowie. Platforma porusza się po sztywnych szynach pod kątem około 45° — eliminuje to wymagania równowagi i blokuje tułów w pełnym podparciu. Pochylony pad zmienia wektor obciążenia względem grawitacji — efektem jest intensywne obciążenie czworogłowych przy znacząco mniejszej kompresji kręgosłupa niż w klasycznym przysiadzie. To klasyczny 'młotek' do hipertrofii czworogłowych: sztywny tor sledów pozwala trenującemu skupić się wyłącznie na wypychaniu nogami, mocno naciskać na platformę i osiągać głębokości, których przysiad ze sztangą wolną często nie pozwala bezpiecznie uzyskać. Wariant maszynowy 45° jest najpopularniejszą realizacją hack squatu w siłowniach i zwykle łatwiejszy w ustawieniu niż wersja na Smithie czy ze sztangą wolną.",
+
+  "instructions": [
+    "Load both sides of the sled with appropriate weight plates. Start light to learn the foot positioning.",
+    "Disengage the safety hooks/stops at the side of the machine so the sled can travel freely.",
+    "Step onto the platform and place your back flat against the inclined back pad, shoulders firmly under the shoulder pads.",
+    "Position your feet shoulder-width apart in the middle of the platform, toes turned out slightly (5-15°). Lower foot placement emphasizes quads, higher placement emphasizes glutes.",
+    "Grip the handles near your head with both hands. These are for stability and for releasing the safety stops, not for pulling.",
+    "Brace your core, take a deep breath, push the platform up slightly and rotate the safety stops outward to release the sled.",
+    "Lower the sled in a controlled manner by bending the knees and hips together. The platform moves toward you along the 45° rails.",
+    "Descend until the thighs are parallel to the platform or slightly below — knees track over the toes, glutes stay in contact with the lower pad (do not let the lower back round and lift off the pad — 'butt wink' is the limit of safe depth).",
+    "Drive the sled back up by pushing through the whole foot, especially the heel and mid-foot. Keep the back pressed against the pad throughout.",
+    "Do not fully lock the knees at the top — stop just short to keep tension on the quads and protect the joints.",
+    "Complete all reps, then re-engage the safety stops by rotating them inward before stepping off the machine."
+  ],
+  "instructionsPl": [
+    "Załaduj obie strony platformy odpowiednim ciężarem. Zacznij lekko, aby nauczyć się ustawienia stóp.",
+    "Odepnij blokady bezpieczeństwa po bokach maszyny, aby platforma mogła swobodnie się poruszać.",
+    "Wejdź na platformę i oprzyj plecy płasko o pochylony pad, barki mocno wsunięte pod poduszki naramienne.",
+    "Ustaw stopy na szerokość barków na środku platformy, palce lekko skierowane na zewnątrz (5-15°). Niższe ustawienie stóp akcentuje czworogłowe, wyższe pośladki.",
+    "Chwyć uchwyty przy głowie obiema rękami. Służą one do stabilizacji i zwolnienia blokad, nie do podciągania się.",
+    "Napnij brzuch, weź głęboki wdech, lekko wypchnij platformę i obróć blokady na zewnątrz, aby zwolnić sledy.",
+    "Opuszczaj platformę w kontrolowany sposób, jednocześnie zginając kolana i biodra. Platforma przesuwa się ku Tobie po szynach pod kątem 45°.",
+    "Schodź aż uda będą równoległe do platformy lub nieco poniżej — kolana podążają nad palcami, pośladki pozostają na dolnej części pad'a (nie pozwól by lędźwie się zaokrągliły i oderwały — 'butt wink' to granica bezpiecznej głębokości).",
+    "Wypchnij platformę z powrotem do góry, naciskając całą stopą, szczególnie piętą i środkiem stopy. Plecy przyciśnięte do pad'a przez cały ruch.",
+    "Nie blokuj całkowicie kolan na górze — zatrzymaj się tuż przed pełnym wyprostem, aby utrzymać napięcie czworogłowych i chronić stawy.",
+    "Wykonaj wszystkie powtórzenia, potem obróć blokady bezpieczeństwa do wewnątrz, zanim zejdziesz z maszyny."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "calves", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P7",
+    "hamstrings": "S5",
+    "adductors": "S5",
+    "core": "S3",
+    "calves": "T3",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["hack_squat_machine"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-squat", "lever-leg-press", "goblet-squat"],
+    "progression_to": ["barbell-back-squat", "smith-hack-squat", "barbell-hack-squat", "barbell-front-squat"],
+    "alternatives": ["lever-leg-press", "smith-hack-squat", "lever-pendulum-squat", "smith-machine-squat", "weighted-sissy-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Back FLAT against the pad — no gap between lumbar spine and the back pad before unracking",
+      "Shoulders firmly wedged under the shoulder pads — they should carry the load, not your hands",
+      "Feet shoulder-width on the middle of the platform — lower for quads, higher for glutes, never on the edges",
+      "Toes slightly out (5-15°) matching natural hip rotation — knees will track this angle",
+      "Rotate safety stops OUT before the first rep — confirm both sides released or the sled will jerk"
+    ],
+    "setup_cues_pl": [
+      "Plecy PŁASKO przy pad'zie — żadnej przerwy między lędźwiami a pad'em przed zwolnieniem blokad",
+      "Barki mocno wsunięte pod poduszki naramienne — to one mają nieść obciążenie, nie ręce",
+      "Stopy na szerokość barków na środku platformy — niżej dla czworogłowych, wyżej dla pośladków, nigdy na krawędziach",
+      "Palce lekko na zewnątrz (5-15°) zgodnie z naturalną rotacją bioder — kolana podążą tym kątem",
+      "Obróć blokady NA ZEWNĄTRZ przed pierwszym powtórzeniem — sprawdź obie strony lub platforma szarpnie"
+    ],
+    "execution_cues": [
+      "Sit down slowly — eccentric is where the quads grow. Aim for 2-3 seconds going down",
+      "Knees travel forward over the toes — this IS a quad-dominant exercise, allow knee flexion",
+      "Stop the descent when the lower back is about to peel off the pad — that is your safe ROM",
+      "Push the platform through the whole foot, with emphasis on the mid-foot and heel — never on the toes alone",
+      "Do not fully lock the knees at the top — stop a few degrees short to keep quads loaded and joints safe"
+    ],
+    "execution_cues_pl": [
+      "Schodź wolno — faza ekscentryczna to gdzie rosną czworogłowe. Celuj w 2-3 sekundy w dół",
+      "Kolana wędrują nad palcami — to JEST ćwiczenie dominujące czworogłowymi, pozwól na zgięcie kolan",
+      "Zatrzymaj schodzenie, gdy lędźwie zaraz odkleją się od pad'a — to twoja bezpieczna głębokość",
+      "Wypychaj platformę całą stopą, z naciskiem na środek stopy i piętę — nigdy tylko palcami",
+      "Nie blokuj całkowicie kolan na górze — zatrzymaj się kilka stopni wcześniej, by utrzymać napięcie czworogłowych i chronić stawy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back rounding off the pad at the bottom ('butt wink')",
+        "faultPl": "Zaokrąglanie lędźwi i odklejanie ich od pad'a w dolnej pozycji ('butt wink')",
+        "cause": "Going too deep for one's hip mobility, or weak core. The pelvis tucks under, the lumbar spine rounds against load — high risk of disc injury when this happens with heavy weight on the back pad.",
+        "causePl": "Zbyt głębokie zejście dla mobilności bioder lub słaby gorset. Miednica się podwija, lędźwie zaokrąglają pod obciążeniem — wysokie ryzyko urazu krążka, gdy dzieje się to z ciężkim sledem opartym o plecy.",
+        "cue": "Stop where the lower back just leaves contact with the pad. Train hip mobility separately, not under load",
+        "cuePl": "Zatrzymaj się tam, gdzie lędźwie dopiero co tracą kontakt z pad'em. Pracuj nad mobilnością bioder osobno, nie pod obciążeniem"
+      },
+      {
+        "fault": "Feet too low on the platform with heavy weight",
+        "faultPl": "Stopy za nisko na platformie przy ciężkim obciążeniu",
+        "cause": "Lower foot placement maximizes quad recruitment but puts huge shearing force on the knees — particularly bad with heavy loads. Knees travel far past the toes, patellar tendon and meniscus take the hit.",
+        "causePl": "Niskie ustawienie stóp maksymalizuje pracę czworogłowych ale generuje ogromną siłę ścinającą na kolana — szczególnie złe przy ciężkich ciężarach. Kolana wędrują daleko za palce, więzadło rzepki i łąkotki dostają obciążenie.",
+        "cue": "For heavy sets, place feet in the middle of the platform. Save low-foot placement for lighter quad-focused work",
+        "cuePl": "Przy ciężkich seriach ustaw stopy pośrodku platformy. Niskie ustawienie zostaw na lżejszą pracę celującą w czworogłowe"
+      },
+      {
+        "fault": "Locking knees fully at the top of every rep",
+        "faultPl": "Całkowite blokowanie kolan na górze każdego powtórzenia",
+        "cause": "Habit from leg press or desire to 'rest' at the top. Hyperextending the knee under load shifts force from muscles to passive structures (ligaments, joint capsule) — repeated reps cause joint irritation and even hyperextension injuries.",
+        "causePl": "Nawyk z leg press lub chęć 'odpoczynku' na górze. Przeprost kolana pod obciążeniem przenosi siłę z mięśni na bierne struktury (więzadła, torebkę stawową) — powtarzane powtórzenia powodują podrażnienie stawu, a nawet kontuzje hiperekstensji.",
+        "cue": "Stop the lockout 5-10° short of full extension. Tension stays on the quads — that's the goal",
+        "cuePl": "Zatrzymaj wyprost 5-10° przed pełnym wyprostowaniem. Napięcie zostaje na czworogłowych — o to chodzi"
+      },
+      {
+        "fault": "Bouncing out of the bottom",
+        "faultPl": "Odbijanie się od dołu powtórzenia",
+        "cause": "Using the elasticity of the back pad and rebound from extreme depth to power back up. Skips the most productive part of the rep and increases injury risk to knees and lumbar spine.",
+        "causePl": "Wykorzystanie sprężystości pad'a i odbicia z głębokości do wypchnięcia ciężaru. Pomija najbardziej produktywną część ruchu i zwiększa ryzyko kontuzji kolan i lędźwi.",
+        "cue": "Pause 1 second at the bottom of every rep — dead-stop technique. Quad growth comes from controlled tension, not momentum",
+        "cuePl": "Zatrzymaj 1 sekundę na dole każdego powtórzenia — technika dead-stop. Wzrost czworogłowych pochodzi z kontrolowanego napięcia, nie z momentu pędu"
+      },
+      {
+        "fault": "Hands pulling on the handles to assist the lift",
+        "faultPl": "Pociąganie za uchwyty przy głowie w celu wspomożenia ruchu",
+        "cause": "Reflexive attempt to help on the concentric. Pulling on the handles unloads the legs and disrupts the back-pad contact — defeats the purpose of the machine.",
+        "causePl": "Odruchowa próba pomocy w fazie koncentrycznej. Pociąganie za uchwyty odciąża nogi i zaburza kontakt pleców z pad'em — psuje cel maszyny.",
+        "cue": "Hands rest on the handles for stability only. If you need to pull to finish a rep, the weight is too heavy",
+        "cuePl": "Ręce na uchwytach tylko dla stabilizacji. Jeśli musisz pociągnąć by skończyć powtórzenie, ciężar jest za duży"
+      }
+    ],
+    "breathing": "Inhale at the top and brace the core hard before descending. Hold the breath through the eccentric and the sticking point of the concentric (this protects the lumbar spine against the loaded back pad). Exhale near the top. For heavy sets use the full Valsalva maneuver.",
+    "breathingPl": "Wdech na górze i mocne napięcie brzucha przed zejściem. Wstrzymaj oddech przez fazę ekscentryczną i punkt krytyczny koncentrycznej (to chroni lędźwie przed obciążonym pad'em pleców). Wydech blisko górnej pozycji. Przy ciężkich seriach stosuj pełny manewr Valsalva."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Hack squat is quad-dominant with significant forward knee travel — high stress on the patellofemoral joint. Use a higher foot placement on the platform to reduce knee flexion, reduce depth to a pain-free range, and lower the weight. Consider switching to leg press until symptoms resolve.",
+      "modificationPl": "Hack squat to ćwiczenie dominujące czworogłowymi ze znacznym wysunięciem kolan w przód — wysokie obciążenie stawu rzepkowo-udowego. Ustaw stopy wyżej na platformie, aby zmniejszyć zgięcie kolan, ogranicz głębokość do zakresu bez bólu i obniż ciężar. Rozważ leg press do ustąpienia objawów.",
+      "alternative": "lever-leg-press"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "The loaded back pad compresses the lumbar spine, and uncontrolled depth can cause pelvic tilt against load. Avoid until acute symptoms resolve — use bodyweight squats or supported variants instead.",
+      "modificationPl": "Obciążony pad pleców kompresuje odcinek lędźwiowy, a niekontrolowana głębokość może powodować podwijanie miednicy pod obciążeniem. Unikaj do ustąpienia ostrych objawów — stosuj przysiady z masą ciała lub warianty z podparciem.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "knee_meniscus_injury_or_recent_surgery",
+      "severity": "avoid",
+      "modification": "Deep knee flexion under heavy load is exactly the position that stresses meniscal tissue and ACL/PCL grafts. Wait for medical clearance and start with leg extension and partial-range leg press for rehab.",
+      "modificationPl": "Głębokie zgięcie kolan pod ciężkim obciążeniem to dokładnie pozycja obciążająca łąkotki i przeszczepy ACL/PCL. Poczekaj na zgodę lekarza i zacznij od prostowania nóg oraz częściowego leg press w rehabilitacji.",
+      "alternative": "lever-leg-press"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Heavy hack squats with Valsalva maneuver dramatically spike blood pressure. Use lighter weights with controlled breathing (no breath holding), or switch to higher-rep moderate-load sets.",
+      "modificationPl": "Ciężki hack squat z manewrem Valsalva drastycznie podnosi ciśnienie krwi. Stosuj lżejsze ciężary z kontrolowanym oddechem (bez wstrzymywania), lub przejdź na serie wyższej liczby powtórzeń z umiarkowanym obciążeniem.",
+      "alternative": "lever-leg-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy — most common application) | 4-5x5-6 (strength with moderate-heavy load) | 2-3x15-20 (high-rep quad burnout finisher) | 3x6-8 + drop sets (advanced hypertrophy intensifier)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "sled-hack-squat.gif",
+    "frames_extracted": [
+      "frames/sled-hack-squat/frame_0_start.png",
+      "frames/sled-hack-squat/frame_1_early.png",
+      "frames/sled-hack-squat/frame_2_mid.png",
+      "frames/sled-hack-squat/frame_3_late.png",
+      "frames/sled-hack-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/sled-hack-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek (start/early/mid/late/end) z GIFa jahel. Dedykowana 45° maszyna hack squat (plate-loaded sled): widoczna pochylona platforma na lewo, talerze na wystających trzpieniach, pochylony pad pleców pośrodku, naramienne poduszki nad ramionami sylwetki, uchwyty przy głowie. Klasyczny 'hammer' hack squat — postać stoi NA platformie (nie pod nią jak w leg press), plecami opartymi o nachylony pad. Frame_0 i frame_4 pokazują top position (kolana niemal wyprostowane), frame_2 środek ruchu (uda blisko równoległości do platformy, kolana ZNACZNIE wysunięte w przód nad palce — typowe dla quad-dominant), frame_1 i 3 to fazy pośrednie. Podświetlone mięśnie w GIFie: quadriceps obu nóg (najmocniej, intensywny czerwony — VL i VM bardzo wyraźnie), pośladki (umiarkowanie). Mniejsze zaangażowanie hamstringsów i przywodzicieli typowe dla maszyny hack squat. Source jahel klasyfikuje pod 'glutes' ale GIF jasno pokazuje quad-dominant (zachowałem P10 quadriceps + P7 glutes zgodnie z biomechaniką). RÓŻNICA vs smith-hack-squat: tutaj jest dedykowana maszyna 45° z pad'em pleców i naramiennymi poduszkami — łatwiejsza, bezpieczniejsza, dostępna dla beginnerów (difficulty 4/10). Smith hack squat to gryf trzymany za plecami nachwytem (mechanicznie słaby grip, wymaga doświadczenia, difficulty 6/10). Equipment: 'hack_squat_machine' (nie 'lever' jak w jahel — bardziej precyzyjne). Difficulty 4 (beginner): brak wymagań równowagi, brak ryzyka chwytu, pad chroni plecy. Wszystkie pola PL napisane od zera bez tłumaczenia — polski standard 'hack squat maszynowy' / 'hack squat na maszynie'.",
+
+  "tags": ["bilateral", "lower_body", "hack_squat", "machine_based", "compound", "quad_dominant", "hypertrophy_specialist", "beginner_friendly", "low_back_supported", "plate_loaded"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "kettlebell-swing",
+  "name": "Kettlebell Swing (Russian)",
+  "namePl": "Swing kettlebell (rosyjski)",
+  "aliases": ["KB swing", "russian swing", "two-hand kettlebell swing", "hardstyle swing"],
+  "aliasesPl": ["swing", "swing kettlebellem", "rosyjski swing", "swing obiema rękami", "hardstyle swing"],
+
+  "description": "A ballistic hip-hinge exercise where a kettlebell is swung between the legs and projected forward to chest/shoulder height through an explosive hip drive. The 'Russian' (hardstyle) version stops the kettlebell at shoulder level with arms parallel to the ground — the kettlebell 'floats' at the top thanks to hip momentum, not arm lifting. The arms are passive ropes. The swing is a hybrid: heavy posterior chain hypertrophy stimulus (glutes, hamstrings, erectors) + conditioning + power development. It is NOT a front raise — every rep is initiated by an aggressive hip snap, not by the shoulders. The American variant (kettlebell goes overhead) exists but is controversial — it loads the shoulder in a vulnerable position and is rarely programmed for general fitness.",
+  "descriptionPl": "Balistyczny ruch hip hinge, w którym kettlebell jest huśtany między nogami i wyrzucany do przodu na wysokość klatki/barków poprzez eksplozywne wypchnięcie bioder. Wariant 'rosyjski' (hardstyle) zatrzymuje kettlebell na wysokości barków z ramionami równoległymi do podłoża — kettlebell 'unosi się' u góry dzięki pędowi z bioder, nie dzięki uniesieniu rękoma. Ramiona są pasywne, jak liny. Swing to hybryda: mocny bodziec hipertroficzny dla tylnego łańcucha (pośladki, dwugłowe ud, prostowniki) + kondycja + rozwój mocy. To NIE jest unoszenie sztangielek przodem — każde powtórzenie inicjuje agresywne wypchnięcie bioder, nie barki. Wariant amerykański (kettlebell idzie nad głowę) istnieje ale jest kontrowersyjny — obciąża bark w niebezpiecznej pozycji i rzadko trafia do programów ogólnorozwojowych.",
+
+  "instructions": [
+    "Place the kettlebell on the floor about 30 cm in front of your feet. Stand with feet slightly wider than hip-width, toes slightly turned out.",
+    "Hinge at the hips, reach forward and grab the kettlebell with both hands, palms facing you. Pull your shoulders down and back — engage the lats ('protect your armpits').",
+    "Hike the kettlebell back between your legs like a football snap — the bell passes ABOVE your knees, not below. Forearms touch the inner thighs. This is the loaded position.",
+    "Explosively drive the hips forward, squeeze the glutes hard, stand tall. The kettlebell is NOT lifted by the arms — it floats up because of the hip snap.",
+    "At the top, the kettlebell reaches shoulder/chest height, arms parallel to the ground. Full hip and knee extension, glutes locked, abs braced, no lean back.",
+    "Let gravity pull the kettlebell down. Wait until the arms reach about belly button height — THEN hinge the hips back to receive the bell between the legs.",
+    "Catch the kettlebell deep between the legs (forearms on inner thighs) and immediately rebound into the next rep — no pause, the bottom is a transition not a rest.",
+    "End the set safely: on the last rep, redirect the kettlebell to the floor in front of you (park it with a hinge), do not just drop it."
+  ],
+  "instructionsPl": [
+    "Postaw kettlebell na podłodze około 30 cm przed stopami. Stań w rozkroku trochę szerszym niż biodra, palce lekko na zewnątrz.",
+    "Zegnij się w biodrach, sięgnij do przodu i chwyć kettlebell obiema rękami, dłonie skierowane do siebie. Ściągnij barki w dół i do tyłu — napnij najszersze ('chroń pachy').",
+    "Wyrzuć kettlebell do tyłu między nogi jak piłkę w futbolu amerykańskim — kula przechodzi NAD kolanami, nie pod. Przedramiona dotykają wewnętrznej strony ud. To pozycja naładowana.",
+    "Eksplozywnie wypchnij biodra do przodu, mocno ściśnij pośladki, wyprostuj się. Kettlebella NIE unosisz rękoma — sam wzlatuje dzięki wypchnięciu bioder.",
+    "U góry kettlebell sięga wysokości barków/klatki, ramiona równoległe do podłoża. Pełen wyprost biodra i kolana, pośladki zaciśnięte, brzuch napięty, bez odchylania się.",
+    "Pozwól grawitacji opuścić kettlebell. Poczekaj aż ramiona dojdą do wysokości pępka — DOPIERO WTEDY cofnij biodra do tyłu by odebrać kulę między nogami.",
+    "Złap kettlebell głęboko między nogami (przedramiona na wewnętrznej stronie ud) i natychmiast odbij się do kolejnego powtórzenia — bez pauzy, dół to faza przejściowa nie odpoczynek.",
+    "Zakończ serię bezpiecznie: na ostatnim powtórzeniu przekieruj kettlebell na podłogę przed sobą (odłóż go hingem), nie upuszczaj."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings"],
+    "secondary": ["erector_spinae", "latissimus_dorsi", "deltoids", "forearms"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "quadriceps", "adductors", "trapezius"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "hamstrings": "P9",
+    "erector_spinae": "P8",
+    "latissimus_dorsi": "S7",
+    "deltoids": "S5",
+    "forearms": "S7",
+    "core": "S8",
+    "quadriceps": "S4",
+    "adductors": "S4",
+    "trapezius": "S5"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["chalk", "flat_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["kettlebell-deadlift", "kettlebell-rdl", "hip-hinge-dowel-drill", "kettlebell-hike-pass-through"],
+    "progression_to": ["one-hand-kettlebell-swing", "kettlebell-snatch", "american-kettlebell-swing", "double-kettlebell-swing", "heavy-swing"],
+    "alternatives": ["dumbbell-swing", "cable-pull-through", "kettlebell-deadlift", "barbell-hip-thrust", "one-hand-kettlebell-swing"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kettlebell ~30 cm in front of your feet — you hike it back, you don't pick it up at your toes",
+      "Feet slightly wider than hip-width, toes turned out 10-15°",
+      "Hinge to grab the bell — flat back, lats packed, chest proud",
+      "Tilt the bell handle slightly toward you so the bottom points up — easier hike",
+      "Take a breath BEFORE the first hike — brace the core like you're about to be punched"
+    ],
+    "setup_cues_pl": [
+      "Kettlebell ~30 cm przed stopami — wyrzucasz go do tyłu, nie podnosisz spod palców stóp",
+      "Stopy trochę szersze niż biodra, palce na zewnątrz 10-15°",
+      "Hinguj się żeby chwycić kulę — płaskie plecy, najszersze napięte, klatka do góry",
+      "Pochyl uchwyt kettlebella lekko do siebie, tak żeby dno było skierowane w górę — łatwiejszy hike",
+      "Nabierz powietrza PRZED pierwszym hike — napnij brzuch jak przed uderzeniem"
+    ],
+    "execution_cues": [
+      "HIKE — wyrzuć kulę między nogi nad kolanami, nie pod nimi",
+      "SNAP — eksplozywne wypchnięcie bioder, ściśnij pośladki mocno jak nigdy",
+      "FLOAT — kettlebell wzlatuje sam, ramiona są wiotkie jak liny",
+      "STAND TALL — u góry pełen wyprost, zero odchylenia w tył, zero podnoszenia barków",
+      "TIMING — biodra hingują się DOPIERO gdy ramiona są przy pępku w drodze w dół"
+    ],
+    "execution_cues_pl": [
+      "HIKE — wyrzuć kulę między nogi, NAD kolanami, nie pod nimi",
+      "SNAP — eksplozywne wypchnięcie bioder, ściśnij pośladki mocniej niż kiedykolwiek",
+      "FLOAT — kettlebell unosi się sam, ramiona są wiotkie jak liny",
+      "STAND TALL — u góry pełen wyprost, zero odchylenia w tył, zero unoszenia barków",
+      "TIMING — biodra hingują się DOPIERO gdy ramiona są przy pępku w drodze w dół"
+    ],
+    "common_faults": [
+      {
+        "fault": "Squatting the swing — bending the knees deeply instead of hinging the hips",
+        "faultPl": "Przysiadanie zamiast hingowania — głębokie zginanie kolan zamiast cofania bioder",
+        "cause": "Quad-dominant pattern, confusing swing with goblet squat, weak posterior chain awareness",
+        "causePl": "Wzorzec czworogłowych, mylenie swingu z przysiadem z kettlebellem, słaba świadomość tylnego łańcucha",
+        "cue": "Hips BACK, not down — knees barely move. Imagine touching the wall behind you with your butt. Bell goes ABOVE the knees, not below.",
+        "cuePl": "Biodra DO TYŁU, nie w dół — kolana ledwo się ruszają. Wyobraź sobie że dotykasz tyłkiem ściany za sobą. Kula idzie NAD kolanami, nie pod nimi."
+      },
+      {
+        "fault": "Lifting the kettlebell with the arms (front raise pattern)",
+        "faultPl": "Unoszenie kettlebella ramionami (wzorzec uniesień przodem)",
+        "cause": "Weak hip drive, lack of trust in the hip snap, treating the swing as a shoulder exercise",
+        "causePl": "Słabe wypchnięcie bioder, brak zaufania do snap'a bioder, traktowanie swingu jako ćwiczenia na barki",
+        "cue": "Arms are ropes — bell floats up on hip momentum alone. If your delts are sore the next day, you did it wrong. Glutes should be on fire.",
+        "cuePl": "Ramiona to liny — kula sama wzlatuje pędem z bioder. Jeśli boli cię nazajutrz przedni akton barków, robiłeś źle. Powinny piec pośladki."
+      },
+      {
+        "fault": "Hyperextending the lower back at the top (lean back)",
+        "faultPl": "Hiperekstensja lędźwi u góry (odchylanie się w tył)",
+        "cause": "Weak abs, not bracing the core at lockout, overcompensating for incomplete hip extension",
+        "causePl": "Słabe mięśnie brzucha, brak napięcia core w lockout, kompensacja niepełnego wyprostu biodra",
+        "cue": "At the top: glutes squeezed, abs HARD, ribs DOWN, pelvis NEUTRAL. The 'plank' position — fully vertical, not arched.",
+        "cuePl": "U góry: pośladki ściśnięte, brzuch MOCNO, żebra W DÓŁ, miednica NEUTRALNA. Pozycja 'deski' — pełna pionowa, nie wygięta."
+      },
+      {
+        "fault": "Hinging too early on the descent — arms-down + hips-back happen at the same time",
+        "faultPl": "Hingowanie za wcześnie w drodze w dół — opadanie ramion i cofanie bioder dzieją się jednocześnie",
+        "cause": "Rushing the rep, no eccentric timing, treating the swing as a continuous loop without phases",
+        "causePl": "Pośpiech, brak timing'u ekscentryku, traktowanie swingu jako ciągłej pętli bez faz",
+        "cue": "Stay TALL until the kettlebell passes your belly button — THEN hinge. Otherwise you'll get shoulder/lumbar strain.",
+        "cuePl": "Pozostań WYPROSTOWANY aż kettlebell minie pępek — DOPIERO WTEDY hinguj. Inaczej obciążasz bark i lędźwie."
+      },
+      {
+        "fault": "Bell drops below the knees in the backswing (deep squat-swing)",
+        "faultPl": "Kula opada poniżej kolan w backswingu (głęboki przysiad-swing)",
+        "cause": "Insufficient hike strength, hinge depth confused with squat depth, no hip-loading awareness",
+        "causePl": "Niedostateczna siła hike'u, mylenie głębokości hingu z głębokością przysiadu, brak świadomości ładowania bioder",
+        "cue": "Forearms HIT the inner thighs at the bottom — high attack angle. Bell stays high, hips load deep. If the bell goes near the floor, you're squatting.",
+        "cuePl": "Przedramiona UDERZAJĄ w wewnętrzną stronę ud na dole — wysoki kąt ataku. Kula pozostaje wysoko, biodra ładują się głęboko. Jeśli kula idzie blisko podłogi, robisz przysiad."
+      }
+    ],
+    "breathing": "Power breathing (hardstyle): SHARP exhale 'TS!' through clenched teeth at the top of every rep (hip snap = exhale = abs lock), quick inhale through the nose during the descent. Builds intra-abdominal pressure and protects the spine. NEVER hold the breath through multiple reps — swings are high-output and need fresh oxygen.",
+    "breathingPl": "Power breathing (hardstyle): OSTRY wydech 'TS!' przez zaciśnięte zęby na górze każdego powtórzenia (snap bioder = wydech = zaciśnięcie brzucha), szybki wdech nosem podczas opadania. Buduje ciśnienie wewnątrzbrzuszne i chroni kręgosłup. NIGDY nie wstrzymuj oddechu przez kilka powtórzeń — swingi są wysokoenergetyczne i potrzebują świeżego tlenu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest — ballistic spinal loading is high-risk. Switch to static hinge work (cable pull-through, isometric RDL) only when cleared by physio.",
+      "modificationPl": "Pełen odpoczynek — balistyczne obciążenie kręgosłupa to wysokie ryzyko. Przejdź na statyczne hinge'y (cable pull-through, izometryczny RDL) dopiero po zgodzie fizjoterapeuty.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Repeated loaded flexion-extension in swing is contraindicated. Use anti-extension/anti-flexion core work and static hinges instead.",
+      "modificationPl": "Powtarzana obciążona flexja-ekstensja w swingu jest przeciwwskazana. Stosuj zamiast tego anty-ekstensyjne/anty-flexyjne ćwiczenia core i statyczne hinge'y.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Russian swing (chest height) is usually OK if scapula stays packed. AVOID American swing (overhead) — high impingement risk. Reduce reps if shoulder pain appears.",
+      "modificationPl": "Rosyjski swing (do klatki) zazwyczaj OK jeśli łopatka pozostaje napięta. UNIKAJ amerykańskiego swingu (nad głowę) — wysokie ryzyko impingementu. Zmniejsz powtórzenia jeśli pojawi się ból barku.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "uncontrolled_hypertension",
+      "severity": "caution",
+      "modification": "Heavy ballistic swings spike blood pressure (Valsalva + power output). Get clearance from a cardiologist. Use lighter weight, longer rests, shorter sets.",
+      "modificationPl": "Ciężkie balistyczne swingi mocno podnoszą ciśnienie (Valsalva + power output). Uzyskaj zgodę kardiologa. Stosuj mniejszy ciężar, dłuższe przerwy, krótsze serie.",
+      "alternative": "kettlebell-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "5-10x10-20 (hardstyle conditioning — short rest 30-60s) | 10x10 every minute on the minute (EMOM standard) | 3-5x5-8 (heavy power, longer rest 2-3 min) | 1x100 in as few sets as possible (KB challenge)",
+  "calories_per_kg_per_hour": 9.0,
+
+  "media": {
+    "primary": "kettlebell-swing.gif",
+    "frames_extracted": [
+      "frames/kettlebell-swing/frame_0_start.png",
+      "frames/kettlebell-swing/frame_1_early.png",
+      "frames/kettlebell-swing/frame_2_mid.png",
+      "frames/kettlebell-swing/frame_3_late.png",
+      "frames/kettlebell-swing/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/kettlebell-swing"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:50:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (208 KB, 12 oryginalnych klatek). Frame 0 (start cyklu w GIFie): pozycja backswing/hike — kettlebell między nogami, mocny hip hinge, plecy pochylone ale neutralne, kolana lekko ugięte. Mocno podświetlone: pośladki, dwugłowe ud, prostowniki grzbietu, brzuch. Frame 1 (transition w górę): pozycja stojąca + ghost kettlebella na poziomie barków — to potwierdza wariant RUSSIAN (swing do barków, NIE nad głowę). Frame 2 (lockout): pełne wyprostowanie, kettlebell na wysokości klatki/barków, ramiona równoległe do podłoża, podświetlone barki + przedramiona + core. Frame 3-4: opadanie i powrót do backswingu. Klasyfikacja: 'hinge' + ballistic (compound, bilateral, sagittal). Equipment: tylko kettlebell. Trudność 6 (intermediate) — wymaga opanowanej techniki hingu, koordynacji hip snap'a i pacingu oddechu (hardstyle). Główne mięśnie: glutes P10 (główny driver hip extension), hamstrings P9 (mocno zaangażowane w hingu + ekscentryku), erector_spinae P8 (izometryczna kontrola pozycji), lats S7 + forearms S7 (utrzymanie kettlebella w łuku). Quads tylko stabilizator (S4) — to NIE jest ćwiczenie na czworogłowe. Calories/kg/h: 9.0 — wyższe niż RDL (6.0) bo to ćwiczenie balistyczne kondycyjne, MET 8-12 zależnie od tempa. Wariant rosyjski (hardstyle) preferowany w fitness — amerykański (overhead) tylko dla CrossFit i tylko z lekkim obciążeniem, daje ryzyko impingementu. Wszystkie pola PL napisane od zera z polską terminologią fitness (hip hinge, hip snap, hike, backswing, lockout, hardstyle, power breathing).",
+
+  "tags": ["kettlebell", "hardstyle", "ballistic", "posterior_chain", "hip_hinge", "compound", "conditioning", "power_development", "glute_dominant", "metabolic"]
+}

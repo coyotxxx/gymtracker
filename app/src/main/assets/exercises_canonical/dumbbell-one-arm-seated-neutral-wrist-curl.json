@@ -1,0 +1,190 @@
+{
+  "id": "dumbbell-one-arm-seated-neutral-wrist-curl",
+  "name": "Dumbbell One-Arm Seated Neutral Wrist Curl",
+  "namePl": "Neutralny wrist curl hantlą jednorącz siedząc",
+  "aliases": ["dumbbell radial deviation curl", "neutral grip wrist curl", "thumb-up wrist curl", "one arm seated forearm deviation", "hammer wrist curl"],
+  "aliasesPl": ["wrist curl chwytem neutralnym jednorącz", "uginanie nadgarstka hantlą chwytem młotkowym", "deviacja promieniowa nadgarstka z hantlą siedząc", "trening odwodzicieli i przywodzicieli nadgarstka"],
+
+  "description": "Isolation exercise for the radial and ulnar deviators of the wrist, performed seated with a single dumbbell held in a neutral (hammer / thumb-up) grip. The working forearm rests on the thigh so only the wrist articulates in the frontal plane — the dumbbell tilts up (radial deviation) and down (ulnar deviation). This grip targets the forearm muscles differently than classic palms-up wrist curls (which work flexion/extension in the sagittal plane) and is especially useful for grip athletes, climbers, racket sports, and rehab of wrist sprains.",
+  "descriptionPl": "Ćwiczenie izolowane na odwodziciele i przywodziciele nadgarstka (deviatory promieniowe i łokciowe), wykonywane siedząc z jedną hantlą trzymaną chwytem neutralnym (młotkowym, kciuk w górę). Pracujące przedramię spoczywa na udzie, więc ruch odbywa się tylko w nadgarstku w płaszczyźnie czołowej — hantla wychyla się w górę (deviacja promieniowa) i w dół (deviacja łokciowa). Ten chwyt obciąża mięśnie przedramienia inaczej niż klasyczny wrist curl podchwytem (który pracuje zginanie/prostowanie w płaszczyźnie strzałkowej) i jest szczególnie przydatny dla osób trenujących chwyt, wspinaczy, w sportach rakietowych oraz w rehabilitacji skręceń nadgarstka.",
+
+  "instructions": [
+    "Sit on a flat bench with feet flat on the floor, slightly wider than hip-width. Hold a dumbbell in one hand with a neutral grip (palm facing inward, thumb pointing up).",
+    "Lean forward and rest the working forearm along your thigh so the wrist hangs just past the kneecap. The dumbbell should be free to tilt up and down without touching the leg.",
+    "Use the non-working hand to brace the same thigh or hold the bench for stability. Keep the back long, not rounded.",
+    "Lower the dumbbell by letting the wrist drop toward the floor under control — the thumb side angles down (ulnar deviation). Feel the stretch along the outer forearm.",
+    "Reverse the motion by tilting the dumbbell upward as high as possible without moving the forearm (radial deviation). The thumb side now points up to the ceiling.",
+    "Squeeze the top position briefly, then lower under control over 2 seconds. Only the hand moves — the forearm stays glued to the thigh.",
+    "Complete all reps on one side before switching arms. Match volume on both sides."
+  ],
+  "instructionsPl": [
+    "Usiądź na płaskiej ławce, stopy płasko na podłodze, nieco szerzej niż biodra. Złap hantlę jedną ręką chwytem neutralnym (dłoń skierowana do wewnątrz, kciuk w górę).",
+    "Pochyl tułów do przodu i oprzyj pracujące przedramię wzdłuż uda tak, aby nadgarstek znalazł się tuż za kolanem. Hantla musi mieć możliwość swobodnego wychylania się w górę i w dół, bez kontaktu z nogą.",
+    "Drugą ręką zabezpiecz to samo udo lub złap się ławki dla stabilizacji. Plecy długie, nie zaokrąglone.",
+    "Opuść hantlę pozwalając nadgarstkowi opaść kontrolowanie w stronę podłogi — strona z kciukiem opada w dół (deviacja łokciowa). Poczuj rozciąganie wzdłuż zewnętrznej strony przedramienia.",
+    "Odwróć ruch wychylając hantlę maksymalnie do góry, bez ruszania przedramieniem (deviacja promieniowa). Strona z kciukiem celuje teraz w sufit.",
+    "Krótko napnij w górnej pozycji, następnie opuść kontrolowanie przez 2 sekundy. Pracuje wyłącznie dłoń — przedramię pozostaje przyklejone do uda.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie zmień rękę. Wyrównaj objętość na obu stronach."
+  ],
+
+  "classification": {
+    "movement_pattern": "wrist_deviation",
+    "force": "both",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis", "forearm_extensors"],
+    "stabilizers": ["biceps_brachii", "core", "anterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P9",
+    "brachioradialis": "S6",
+    "forearm_extensors": "S5",
+    "biceps_brachii": "T2",
+    "core": "T2",
+    "anterior_deltoid": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-wrist-curl", "barbell-wrist-curl", "dumbbell-reverse-wrist-curl", "dumbbell-hammer-curl"],
+    "alternatives": ["dumbbell-wrist-curl", "dumbbell-reverse-wrist-curl", "dumbbell-hammer-curl", "wrist-roller"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on flat bench, feet planted wider than hips",
+      "Neutral grip — thumb up, palm facing in",
+      "Forearm flat on thigh, wrist hangs past the knee",
+      "Free hand braces the same thigh",
+      "Back long, not rounded — hinge from the hip"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na płaskiej ławce, stopy szerzej niż biodra",
+      "Chwyt neutralny — kciuk w górę, dłoń skierowana do wewnątrz",
+      "Przedramię płasko na udzie, nadgarstek wystaje poza kolano",
+      "Wolna ręka stabilizuje to samo udo",
+      "Plecy długie, nie zaokrąglone — ruch ze stawu biodrowego"
+    ],
+    "execution_cues": [
+      "Only the wrist moves — forearm stays glued to the thigh",
+      "Tilt the dumbbell up like you're hammering — thumb to the ceiling",
+      "Lower under control, feel the stretch on the outer forearm",
+      "Pause briefly at the top, then 2-second eccentric",
+      "No swinging or pumping the shoulder — pure wrist action"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko nadgarstek — przedramię przyklejone do uda",
+      "Wychylaj hantlę w górę jak młotkiem — kciuk celuje w sufit",
+      "Opuszczaj kontrolowanie, czuj rozciąganie po zewnętrznej stronie przedramienia",
+      "Krótka pauza na górze, następnie 2-sekundowa faza negatywna",
+      "Bez bujania i pompowania barkiem — czysta praca nadgarstka"
+    ],
+    "common_faults": [
+      {
+        "fault": "Forearm lifts off the thigh during the rep",
+        "faultPl": "Przedramię odrywa się od uda podczas powtórzenia",
+        "cause": "Load too heavy, or compensating with biceps/shoulder to assist the wrist",
+        "causePl": "Zbyt duży ciężar, lub wspomaganie bicepsem/barkiem ruchu nadgarstka",
+        "cue": "Lower the weight. Press your free hand on top of the working forearm to pin it down.",
+        "cuePl": "Zmniejsz ciężar. Naciśnij wolną ręką na pracujące przedramię, aby je unieruchomić."
+      },
+      {
+        "fault": "Rotating the grip toward supination (palm-up) mid-rep",
+        "faultPl": "Obracanie chwytu w stronę supinacji (dłonią w górę) w trakcie ruchu",
+        "cause": "Loss of grip discipline as fatigue sets in, turning the exercise into a standard wrist curl",
+        "causePl": "Utrata kontroli nad chwytem wraz ze zmęczeniem — ćwiczenie zamienia się w klasyczny wrist curl",
+        "cue": "Keep the thumb pointing up the whole set. Watch the dumbbell head — it should stay vertical.",
+        "cuePl": "Utrzymuj kciuk skierowany w górę przez całą serię. Obserwuj główkę hantli — ma pozostać pionowa."
+      },
+      {
+        "fault": "Partial range of motion — dumbbell barely tilts",
+        "faultPl": "Niepełny zakres ruchu — hantla ledwo się wychyla",
+        "cause": "Ego loading, weak deviators, or short forearm position (wrist not past the knee)",
+        "causePl": "Zbyt duży ciężar, słabe deviatory nadgarstka, lub złe ustawienie (nadgarstek nie wystaje poza kolano)",
+        "cue": "Reset position so the wrist is fully past the knee. Lighter weight, full ROM both directions.",
+        "cuePl": "Popraw pozycję — nadgarstek ma w pełni wystawać za kolano. Lżejszy ciężar, pełny zakres w obie strony."
+      },
+      {
+        "fault": "Rounded upper back, shoulders collapsed forward",
+        "faultPl": "Zaokrąglone plecy w odcinku piersiowym, barki zapadnięte do przodu",
+        "cause": "Hinging from the spine instead of the hip when leaning over the thigh",
+        "causePl": "Skłon z odcinka piersiowego zamiast z biodra przy pochyleniu nad udo",
+        "cue": "Hinge from the hip, chest proud, eyes forward. The bench should not look short to you.",
+        "cuePl": "Skłon ze stawu biodrowego, klatka wypchnięta, wzrok przed siebie. Ławka nie powinna wydawać się nisko."
+      }
+    ],
+    "breathing": "Exhale during the upward tilt (radial deviation). Inhale during the controlled lowering (ulnar deviation). Keep a light brace.",
+    "breathingPl": "Wydech w fazie unoszenia hantli (deviacja promieniowa). Wdech w fazie kontrolowanego opuszczania (deviacja łokciowa). Utrzymuj lekkie napięcie brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "de_quervain_tenosynovitis",
+      "severity": "avoid",
+      "modification": "Repeated radial deviation under load is the exact mechanism that aggravates De Quervain's. Stop the exercise until symptoms fully resolve.",
+      "modificationPl": "Powtarzana deviacja promieniowa pod obciążeniem to dokładnie ten mechanizm, który drażni zespół De Quervaina. Przerwij ćwiczenie aż objawy całkowicie ustąpią.",
+      "alternative": "dumbbell-wrist-curl"
+    },
+    {
+      "condition": "acute_wrist_sprain_or_instability",
+      "severity": "avoid",
+      "modification": "Acute injury needs rest. After healing, start unloaded with no dumbbell and progress to very light weight (1-2 kg) before resuming full loading.",
+      "modificationPl": "Świeży uraz wymaga odpoczynku. Po wygojeniu zacznij bez obciążenia, dłonią pustą, i stopniowo dochodź do bardzo lekkich ciężarów (1-2 kg) przed powrotem do pełnego obciążenia.",
+      "alternative": null
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Neutral grip is gentler than reverse wrist curl but still recruits wrist extensors. Use very light load, high reps (15-20), and stop before pain at the lateral elbow.",
+      "modificationPl": "Chwyt neutralny jest łagodniejszy niż reverse wrist curl, ale nadal angażuje prostowniki nadgarstka. Użyj bardzo lekkiego ciężaru, dużej liczby powtórzeń (15-20) i zatrzymaj się przed bólem w okolicy bocznej łokcia.",
+      "alternative": "dumbbell-wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Avoid extreme end-range deviation which compresses the carpal tunnel. Work in middle 60% of ROM, lighter load, and stop if numbness/tingling appears.",
+      "modificationPl": "Unikaj skrajnych zakresów deviacji, które uciskają cieśń nadgarstka. Pracuj w środkowych 60% zakresu, lżejszy ciężar, przerwij ćwiczenie jeśli pojawi się drętwienie/mrowienie.",
+      "alternative": "wrist-roller"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy / grip work) | 2-3x15-20 (endurance, rehab) | 3x20-25 (sport-specific endurance for climbers / racket sports)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "dumbbell-one-arm-seated-neutral-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-seated-neutral-wrist-curl/frame_0_start.png",
+      "frames/dumbbell-one-arm-seated-neutral-wrist-curl/frame_1_early.png",
+      "frames/dumbbell-one-arm-seated-neutral-wrist-curl/frame_2_mid.png",
+      "frames/dumbbell-one-arm-seated-neutral-wrist-curl/frame_3_late.png",
+      "frames/dumbbell-one-arm-seated-neutral-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/dumbbell-one-arm-seated-neutral-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Athleta siedzi na płaskiej ławce, pochylony do przodu, prawe przedramię oparte wzdłuż prawego uda, lewa ręka stabilizuje to samo udo. Hantla trzymana chwytem NEUTRALNYM (kciuk w górę, dłoń skierowana do wewnątrz) — w żadnej klatce nie widać supinacji ani pronacji. Frame 0 (start): hantla wychylona w dół (deviacja łokciowa, kciuk lekko opadnięty). Frame 2 (mid): pozycja pośrednia. Frame 4 (end): hantla wychylona w górę (deviacja promieniowa) z widocznym 'ghostem' fazy szczytowej. Podświetlony obszar to zewnętrzna strona przedramienia (radial side / brachioradialis + radial wrist deviators). Ruch zachodzi wyłącznie w stawie nadgarstkowym w płaszczyźnie czołowej. Mechanic=isolation, plane=frontal, force=both (radial deviation koncentryczna + ulnar deviation ekscentryczna), unilateral. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["forearms", "grip", "isolation", "dumbbell", "unilateral", "seated", "rehab", "wrist", "deviation", "neutral_grip"]
+}

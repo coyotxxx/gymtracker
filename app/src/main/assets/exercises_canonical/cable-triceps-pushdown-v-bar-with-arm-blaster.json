@@ -1,0 +1,202 @@
+{
+  "id": "cable-triceps-pushdown-v-bar-with-arm-blaster",
+  "name": "Cable Triceps Pushdown V-Bar with Arm Blaster",
+  "namePl": "Tricep pushdown z wyciągu z V-bar i arm blaster",
+  "aliases": ["v-bar pushdown with arm blaster", "cable tricep pushdown arm blaster", "strict v-bar pushdown"],
+  "aliasesPl": ["prostowanie ramion na wyciągu z V-bar i arm blasterem", "pushdown z V-bar w arm blasterze", "ścisły pushdown z V-bar"],
+
+  "description": "Strict-form cable triceps pushdown performed standing with a V-bar (angled bar) attachment and an arm blaster strapped around the upper arms and torso. The arm blaster pad locks the elbows against the body and eliminates any forward drift or shoulder assistance, isolating the triceps almost perfectly. The V-bar handle places the wrists in a neutral-leaning-pronated grip that loads all three heads of the triceps brachii evenly. A classic bodybuilding tool used to force pure elbow extension under tension.",
+  "descriptionPl": "Ścisła wersja prostowania ramion na wyciągu z V-bar (drążek łamany w kształcie V) wykonywana stojąc, z arm blasterem (sztywnym padem) zapiętym wokół ramion ponad łokciem i tułowia. Pad blokuje łokcie przy bokach i eliminuje wszelkie wędrowanie do przodu czy wspomaganie barkami, izolując triceps niemal idealnie. Drążek V wymusza chwyt półneutralny pochodzący w pronację, który równomiernie obciąża wszystkie trzy głowy mięśnia trójgłowego ramienia. Klasyczne narzędzie kulturystyczne używane do wymuszenia czystego prostowania w stawie łokciowym pod napięciem.",
+
+  "instructions": [
+    "Set the cable pulley to the highest position and attach a V-bar handle.",
+    "Strap the arm blaster around your torso so the pad sits across the front of your abdomen and the upper-arm cups support the back of your triceps. Tighten the neck strap.",
+    "Stand close to the stack, feet hip-width apart, knees slightly bent. Grip the V-bar with palms angled inward and down.",
+    "Set your starting position with elbows pinned into the arm blaster pad, forearms angled up at roughly 45 degrees, and the cable under tension.",
+    "Brace your core, keep your chest tall and a slight forward lean from the hips — your shoulders stay still throughout.",
+    "Extend at the elbows only, pressing the V-bar down until your arms are fully locked out at the bottom. Exhale on the way down.",
+    "Squeeze the triceps hard for a brief pause in the lockout position with the bar near your thighs.",
+    "Return the bar under control over 2-3 seconds back to the start position. Inhale on the way up. Do not let the weight stack rest.",
+    "Repeat. The upper arms must stay glued to the pad — if they lift off, reduce the load."
+  ],
+  "instructionsPl": [
+    "Ustaw bloczek wyciągu w najwyższej pozycji i zamocuj drążek V-bar.",
+    "Załóż arm blaster wokół tułowia tak aby pad opierał się na przedniej ścianie brzucha, a wycięcia na ramiona podtrzymywały tylną stronę tricepsów. Dociągnij pasek na karku.",
+    "Stań blisko stosu, stopy na szerokość bioder, kolana lekko ugięte. Złap drążek V-bar dłońmi skierowanymi do siebie i w dół.",
+    "Ustaw pozycję wyjściową z łokciami wciśniętymi w pad arm blastera, przedramiona uniesione pod kątem około 45 stopni, linka pod napięciem.",
+    "Napnij brzuch, klatka wysoko, lekkie pochylenie do przodu z bioder — barki pozostają nieruchome przez cały ruch.",
+    "Prostuj wyłącznie w stawach łokciowych, ciśnij drążek V-bar w dół aż ramiona będą w pełnym wyproście na dole. Wydech podczas opuszczania.",
+    "Mocno spinaj tricepsy na chwilę w dolnej pozycji z drążkiem przy udach.",
+    "Wracaj drążek kontrolowanie przez 2-3 sekundy do pozycji wyjściowej. Wdech podczas powrotu. Nie pozwól by stos opadł na resztę.",
+    "Powtarzaj. Ramiona ponad łokciem muszą pozostać przyklejone do padu — jeśli odrywają się, zmniejsz obciążenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_elbow_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus"],
+    "stabilizers": ["forearm_flexors", "core", "latissimus_dorsi", "posterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "forearm_flexors": "T3",
+    "core": "T3",
+    "latissimus_dorsi": "T2",
+    "posterior_deltoid": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "v_bar_handle", "arm_blaster"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["cable-triceps-pushdown-v-bar", "cable-triceps-pushdown"],
+    "progression_to": ["weighted-dips", "close-grip-bench-press", "lying-triceps-extension"],
+    "alternatives": ["cable-triceps-pushdown-v-bar", "cable-triceps-pushdown-rope", "cable-triceps-pushdown", "lying-triceps-extension", "overhead-dumbbell-triceps-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Highest pulley, V-bar attached",
+      "Arm blaster pad tight against torso, elbows in the cups",
+      "Feet hip-width, slight forward lean",
+      "Forearms start at 45 degrees, cable under tension",
+      "Chest up, shoulders pulled back and down"
+    ],
+    "setup_cues_pl": [
+      "Najwyższy bloczek, zamocowany V-bar",
+      "Pad arm blastera ciasno przy tułowiu, łokcie w wycięciach",
+      "Stopy na szerokość bioder, lekkie pochylenie do przodu",
+      "Przedramiona startują pod kątem 45 stopni, linka pod napięciem",
+      "Klatka w górze, barki ściągnięte w tył i w dół"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay glued to the pad",
+      "Drive the bar straight down to full lockout",
+      "Squeeze triceps hard at the bottom for a one-count",
+      "Resist on the way back up over 2-3 seconds",
+      "Keep wrists neutral — do not flex them under the bar"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyklejone do padu",
+      "Ciśnij drążek prosto w dół do pełnego wyprostu",
+      "Mocno spinaj triceps w dolnej pozycji na jedną sekundę",
+      "Hamuj w fazie powrotnej przez 2-3 sekundy",
+      "Nadgarstki neutralne — nie zginaj ich pod drążkiem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arms lift off the arm blaster pad",
+        "faultPl": "Ramiona ponad łokciem odrywają się od padu arm blastera",
+        "cause": "Load too heavy or pad strapped too loosely, allowing shoulders to assist by extending",
+        "causePl": "Zbyt duży ciężar lub pad zapięty za luźno, co pozwala barkom pomagać przez prostowanie",
+        "cue": "Lower the weight and re-tighten the arm blaster straps. The whole point of the pad is to keep elbows locked.",
+        "cuePl": "Zmniejsz ciężar i dociągnij paski arm blastera. Sens padu to utrzymanie łokci w jednym miejscu."
+      },
+      {
+        "fault": "Partial range of motion — not locking out at the bottom",
+        "faultPl": "Niepełny zakres ruchu — brak pełnego wyprostu na dole",
+        "cause": "Ego lifting, or weak triceps in the fully shortened position",
+        "causePl": "Ego lub słabe tricepsy w pozycji maksymalnie skróconej",
+        "cue": "Drive the bar all the way down until your elbows are fully straight. Lower the weight if you can't.",
+        "cuePl": "Dociśnij drążek do końca, aż łokcie będą w pełnym wyproście. Zmniejsz ciężar jeśli nie dajesz rady."
+      },
+      {
+        "fault": "Wrists collapsing into flexion under the V-bar",
+        "faultPl": "Nadgarstki łamią się w zgięciu pod drążkiem V-bar",
+        "cause": "Weak wrists, grip too aggressive, or trying to add range by curling the bar down with wrists",
+        "causePl": "Słabe nadgarstki, zbyt agresywny chwyt lub próba dodania zakresu poprzez 'dociśnięcie' drążka nadgarstkami",
+        "cue": "Lock wrists in line with forearms — force comes from elbow extension, not from the hands.",
+        "cuePl": "Zablokuj nadgarstki w linii z przedramionami — siła pochodzi z prostowania w łokciu, nie z dłoni."
+      },
+      {
+        "fault": "Leaning too far forward and using bodyweight to push",
+        "faultPl": "Zbyt mocne pochylenie do przodu i pomaganie ciężarem ciała",
+        "cause": "Load too heavy, or trying to recruit lats and chest to drive the bar down",
+        "causePl": "Zbyt duży ciężar lub próba włączenia mięśnia najszerszego grzbietu i klatki do popychania drążka w dół",
+        "cue": "Stay nearly upright — only a slight forward tilt. Your torso should not move during the rep.",
+        "cuePl": "Stój prawie pionowo — tylko lekkie pochylenie do przodu. Tułów ma być nieruchomy w trakcie powtórzenia."
+      },
+      {
+        "fault": "Bouncing the weight stack at the top",
+        "faultPl": "Pozwalanie stosowi opaść i odbić w górnej pozycji",
+        "cause": "Loss of control during eccentric, rushing reps",
+        "causePl": "Utrata kontroli w fazie negatywnej, szybkie tempo powtórzeń",
+        "cue": "Resist the cable for 2-3 seconds on the way up. Stop just before the stack touches.",
+        "cuePl": "Hamuj linkę przez 2-3 sekundy w fazie powrotnej. Zatrzymaj się tuż przed dotknięciem stosu."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pressing the bar down). Inhale during the eccentric (returning up). Keep a light core brace throughout to anchor the arm blaster pad against your body.",
+    "breathingPl": "Wydech w fazie koncentrycznej (ciśnięcie drążka w dół). Wdech w fazie ekscentrycznej (powrót do góry). Utrzymuj lekkie napięcie brzucha przez całą serię, aby zakotwiczyć pad arm blastera przy ciele."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy_distal_triceps",
+      "severity": "modify",
+      "modification": "Strict isolation with arm blaster maximizes triceps tendon tension. Reduce load, increase reps to 12-15, eliminate hard lockout pause until pain-free.",
+      "modificationPl": "Ścisła izolacja z arm blasterem maksymalizuje napięcie ścięgna tricepsa. Zmniejsz ciężar, zwiększ powtórzenia do 12-15, wyeliminuj mocne napinanie w dolnej pozycji do zakresu bez bólu.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Pronated V-bar grip and locked-elbow position can aggravate lateral elbow tendons. Switch to rope attachment (neutral grip with rotation) and reduce intensity.",
+      "modificationPl": "Chwyt pronowany na V-bar i zablokowana pozycja łokci mogą drażnić przyczepy boczne łokcia. Przejdź na linkę (chwyt neutralny z rotacją) i zmniejsz intensywność.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "V-bar holds wrists in a fixed pronated angle. Use rope or single-handle cable variant for free wrist rotation.",
+      "modificationPl": "Drążek V-bar trzyma nadgarstki w stałym kącie pronowanym. Użyj linki lub uchwytu jednorącz dla swobodnej rotacji nadgarstka.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version with arm blaster requires isometric lumbar bracing under cable tension. Perform without arm blaster from a half-kneeling or seated position.",
+      "modificationPl": "Wersja stojąca z arm blasterem wymaga izometrycznego napięcia lędźwiowego pod napięciem linki. Wykonuj bez arm blastera z półklęku lub w siadzie.",
+      "alternative": "cable-triceps-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-12 (hypertrophy) | 4x8-10 (strength-hypertrophy) | 2-3x12-15 (pump/finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-triceps-pushdown-v-bar-with-arm-blaster.gif",
+    "frames_extracted": [
+      "frames/cable-triceps-pushdown-v-bar-with-arm-blaster/frame_0_start.png",
+      "frames/cable-triceps-pushdown-v-bar-with-arm-blaster/frame_1_early.png",
+      "frames/cable-triceps-pushdown-v-bar-with-arm-blaster/frame_2_mid.png",
+      "frames/cable-triceps-pushdown-v-bar-with-arm-blaster/frame_3_late.png",
+      "frames/cable-triceps-pushdown-v-bar-with-arm-blaster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-triceps-pushdown-v-bar-with-arm-blaster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Frame 0 i 4: pozycja wyjściowa — stojąc bokiem do wyciągu wysokiego, V-bar w rękach przy klatce/górnej części tułowia, przedramiona pod kątem ~45 stopni w górę, łokcie wciśnięte w pad arm blastera (widoczny czarny pas wokół tułowia/ramion), tricepsy podświetlone na czerwono. Frame 2: dolna pozycja — pełny wyprost w łokciach, V-bar przy udach, ramiona ponad łokciem pozostają przyklejone do padu, tułów nieruchomy z lekkim pochyleniem do przodu. Frame 1 i 3: identyczne z 0 i 4 — fazy przejściowe pokazują czysty ruch w stawie łokciowym bez ruchu ramion ponad łokciem. Modelowe wykonanie izolacji tricepsa z eliminacją swing'u łokci dzięki arm blasterowi. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "cable", "v_bar", "arm_blaster", "strict_form", "upper_body"]
+}

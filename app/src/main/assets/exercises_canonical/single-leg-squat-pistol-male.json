@@ -1,0 +1,207 @@
+{
+  "id": "single-leg-squat-pistol-male",
+  "name": "Pistol Squat (Single-Leg Squat)",
+  "namePl": "Pistol squat (przysiad pistoletowy)",
+  "aliases": ["pistol squat", "single-leg squat", "one-leg squat", "full pistol", "pistol"],
+  "aliasesPl": ["przysiad pistoletowy", "przysiad na jednej nodze", "pistolet", "jednonóż przysiad", "pełny pistol squat"],
+
+  "description": "Advanced bodyweight unilateral lower-body exercise. Athlete stands on one leg with the other leg extended straight in front parallel to the floor, arms reach forward as a counterbalance, then descends into a full deep squat on the supporting leg until the hamstring meets the calf, and stands back up under control. Demands exceptional single-leg strength, ankle dorsiflexion, hip mobility and balance. Considered a benchmark of lower-body strength and control in calisthenics.",
+  "descriptionPl": "Zaawansowane jednostronne ćwiczenie dolnej części ciała z masą własną. Trenujący stoi na jednej nodze, drugą wyciąga prosto przed siebie równolegle do podłogi, ramiona wyciąga przed sobą jako przeciwwagę, następnie schodzi w pełny głęboki przysiad na nodze podporowej aż dwugłowe uda zetknie się z łydką i wraca do pozycji stojącej pod kontrolą. Wymaga wyjątkowej siły jednonóż, ruchomości grzbietowego zgięcia stopy, mobilności bioder i równowagi. Uważany za wzorzec siły i kontroli dolnej części ciała w kalistenice.",
+
+  "instructions": [
+    "Stand on one leg with feet hip-width neutral. Pick the supporting leg and shift weight fully onto it.",
+    "Lift the non-working leg straight off the ground in front of you. Knee stays as straight as possible, toes pointed slightly up.",
+    "Extend both arms forward at shoulder height as a counterbalance. Brace the core and lock the rib cage down.",
+    "Initiate the descent by simultaneously breaking at the hip, knee and ankle. Push the hips back as if sitting into a deep chair while keeping the chest up.",
+    "Continue lowering under control. The free leg stays elevated and roughly parallel to the floor — do not let it drop or touch down.",
+    "Descend until the back of the supporting thigh rests against the calf (full depth). The supporting heel must stay flat on the floor throughout.",
+    "Pause briefly at the bottom without losing tension. Knee tracks over the toes, the trunk leans naturally forward to balance the load.",
+    "Stand back up by driving through the mid-foot and heel of the supporting leg. Extend the hip and knee together while keeping the free leg lifted.",
+    "Finish fully tall on one leg before lowering the free leg or repeating. Reset breathing and stability before the next rep.",
+    "Complete all prescribed reps on one side before switching to the other leg."
+  ],
+  "instructionsPl": [
+    "Stań na jednej nodze, stopy w neutralnej szerokości bioder. Wybierz nogę podporową i przenieś na nią cały ciężar.",
+    "Unieś nogę roboczą prosto w przód. Kolano pozostaje wyprostowane jak najlepiej, palce stopy lekko w górę.",
+    "Wyciągnij obie ręce do przodu na wysokość barków jako przeciwwagę. Napnij brzuch i zablokuj żebra w dół.",
+    "Rozpocznij schodzenie zginając jednocześnie biodro, kolano i staw skokowy. Wypchnij biodra w tył jakbyś siadał w głęboki fotel, trzymając klatkę w górze.",
+    "Schodź pod kontrolą. Wolna noga pozostaje uniesiona mniej więcej równolegle do podłogi — nie pozwól jej opaść ani dotknąć ziemi.",
+    "Schodź aż tylna część uda nogi podporowej zetknie się z łydką (pełna głębokość). Pięta nogi podporowej musi pozostać płasko na podłodze przez cały ruch.",
+    "Krótka pauza na dole bez utraty napięcia. Kolano podąża nad palcami stopy, tułów naturalnie pochyla się w przód dla równowagi.",
+    "Wstań wypychając się przez środek stopy i piętę nogi podporowej. Prostuj biodro i kolano jednocześnie, wolna noga zostaje uniesiona.",
+    "Zakończ w pełni wyprostowany na jednej nodze zanim opuścisz wolną nogę lub powtórzysz. Ustaw oddech i stabilność przed kolejnym powtórzeniem.",
+    "Wykonaj całą zaplanowaną liczbę powtórzeń na jedną stronę przed zmianą nogi."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "calves", "core"],
+    "stabilizers": ["gluteus_medius", "adductors", "erector_spinae", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "hamstrings": "S7",
+    "core": "S7",
+    "calves": "S6",
+    "gluteus_medius": "S7",
+    "adductors": "T4",
+    "hip_flexors": "T5",
+    "erector_spinae": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["counterweight_plate", "support_pole", "elevated_surface", "shoes_with_flat_sole"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["bodyweight-squat", "bulgarian-split-squat", "step-up", "assisted-pistol-squat", "box-pistol-squat"],
+    "progression_to": ["weighted-pistol-squat", "shrimp-squat", "deficit-pistol-squat", "jumping-pistol-squat"],
+    "alternatives": ["bulgarian-split-squat", "assisted-pistol-squat", "box-pistol-squat", "skater-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Find a flat, non-slip surface — flat shoes or barefoot work best",
+      "Lock onto the supporting foot — three points of contact (big toe, little toe, heel)",
+      "Free leg extended, toes flexed up — keeps the hamstring loaded",
+      "Arms forward at shoulder height as counterweight — like holding a tray",
+      "Brace the core hard before any movement — no soft middle"
+    ],
+    "setup_cues_pl": [
+      "Znajdź płaską, antypoślizgową powierzchnię — najlepiej płaskie buty lub boso",
+      "Zablokuj nogę podporową — trzy punkty kontaktu (paluch, mały palec, pięta)",
+      "Wolna noga wyprostowana, palce stopy w górę — utrzymuje napięcie dwugłowego uda",
+      "Ręce do przodu na wysokości barków jako przeciwwaga — jak trzymanie tacy",
+      "Mocno napnij brzuch przed jakimkolwiek ruchem — żadnej miękkiej środkowej części"
+    ],
+    "execution_cues": [
+      "Sit back AND down at the same time — hips and ankle bend together",
+      "Heel stays glued to the floor — if it lifts, your ankle mobility is the limiter",
+      "Lean the chest forward to balance — pistol is NOT a vertical-torso squat",
+      "Free leg stays high — actively pull it up with the hip flexor",
+      "Drive the floor away with the whole foot to stand — knee and hip extend together"
+    ],
+    "execution_cues_pl": [
+      "Siadaj w tył I w dół jednocześnie — biodra i staw skokowy zginają się razem",
+      "Pięta przyklejona do podłogi — jeśli się unosi, ogranicza cię ruchomość stawu skokowego",
+      "Pochyl klatkę w przód dla równowagi — pistol to NIE jest przysiad z pionowym tułowiem",
+      "Wolna noga zostaje wysoko — aktywnie podciągaj ją zginaczem biodra",
+      "Wypychaj podłogę całą stopą żeby wstać — kolano i biodro prostują się razem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Supporting heel lifts off the floor",
+        "faultPl": "Pięta nogi podporowej odrywa się od podłogi",
+        "cause": "Limited ankle dorsiflexion — most common limiter of the pistol squat. Forces the lifter onto the forefoot and destroys balance.",
+        "causePl": "Ograniczona ruchomość grzbietowego zgięcia stopy — najczęstsze ograniczenie pistol squat. Wymusza przeniesienie ciężaru na przednią część stopy i niszczy równowagę.",
+        "cue": "Place a thin plate or wedge under the heel to compensate while you build ankle mobility. Calf stretches and ankle drills daily.",
+        "cuePl": "Podłóż cienki talerz lub klin pod piętę jako kompensację gdy budujesz mobilność stawu skokowego. Codzienne rozciąganie łydki i ćwiczenia na staw skokowy."
+      },
+      {
+        "fault": "Free leg drops to the floor or touches down",
+        "faultPl": "Wolna noga opada na podłogę lub dotyka ziemi",
+        "cause": "Weak hip flexors of the free leg, or shifting weight too late. The free leg has to be actively held parallel to the ground.",
+        "causePl": "Słabe zginacze biodra wolnej nogi lub zbyt późne przenoszenie ciężaru. Wolna noga musi być aktywnie utrzymywana równolegle do podłogi.",
+        "cue": "Train hanging leg raises and L-sit holds. During the rep, think 'reach the toes away from you' to keep the leg up.",
+        "cuePl": "Trenuj unoszenie nóg w zwisie i L-sit. W trakcie ruchu myśl 'sięgnij palcami od siebie' żeby utrzymać nogę w górze."
+      },
+      {
+        "fault": "Falling backward at the bottom",
+        "faultPl": "Padanie w tył w dolnej pozycji",
+        "cause": "Insufficient forward lean of the torso, free leg too low, or arms not reaching far enough to counterbalance the center of mass.",
+        "causePl": "Niewystarczające pochylenie tułowia w przód, wolna noga za nisko lub ramiona nie wyciągnięte wystarczająco daleko by zrównoważyć środek ciężkości.",
+        "cue": "Reach the arms and free leg further forward. Hold a small plate (2-5 kg) in front for extra counterweight while learning.",
+        "cuePl": "Wyciągnij ramiona i wolną nogę dalej w przód. Trzymaj mały talerz (2-5 kg) przed sobą jako dodatkową przeciwwagę podczas nauki."
+      },
+      {
+        "fault": "Knee caves inward (valgus collapse)",
+        "faultPl": "Kolano zapada się do wewnątrz (zapadnięcie walgusowe)",
+        "cause": "Weak gluteus medius and external hip rotators. Common when load on single leg exceeds available strength.",
+        "causePl": "Słaby pośladkowy średni i rotatory zewnętrzne biodra. Częste gdy obciążenie na jednej nodze przekracza dostępną siłę.",
+        "cue": "Spread the floor with the supporting foot — knee tracks over the second toe. Regress to box pistol or split squat to build strength.",
+        "cuePl": "'Rozsuwaj podłogę' stopą podporową — kolano nad drugim palcem stopy. Cofnij się do box pistol lub split squat żeby zbudować siłę."
+      },
+      {
+        "fault": "Bouncing out of the bottom (loss of control)",
+        "faultPl": "Odbicie z dolnej pozycji (utrata kontroli)",
+        "cause": "Using stretch reflex / momentum instead of controlled strength. Risk of knee or hip injury at end range.",
+        "causePl": "Wykorzystywanie odruchu rozciągania / momentum zamiast kontrolowanej siły. Ryzyko urazu kolana lub biodra w skrajnym zakresie.",
+        "cue": "Pause 1-2 seconds at the bottom in every rep. Tempo 3-1-2 (3 sec down, 1 sec pause, 2 sec up) builds the strength to control the bottom.",
+        "cuePl": "Pauza 1-2 sekundy na dole w każdym powtórzeniu. Tempo 3-1-2 (3 s w dół, 1 s pauza, 2 s w górę) buduje siłę do kontrolowania dolnej pozycji."
+      }
+    ],
+    "breathing": "Inhale and brace at the top before descent. Hold breath through the descent and the hardest part of the ascent (Valsalva). Exhale near the top once the knee and hip are extended.",
+    "breathingPl": "Wdech i napięcie na górze przed schodzeniem. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wychodzenia (Valsalva). Wydech blisko górnej pozycji gdy kolano i biodro są wyprostowane."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "avoid",
+      "modification": "Deep single-leg loading places very high force on the knee. Avoid until cleared by physiotherapist. Use box pistol with partial ROM or bilateral squat alternatives.",
+      "modificationPl": "Głębokie obciążenie na jednej nodze generuje bardzo wysokie siły na kolanie. Unikaj do czasu zgody fizjoterapeuty. Stosuj box pistol z częściowym zakresem lub obustronne alternatywy.",
+      "alternative": "bulgarian-split-squat"
+    },
+    {
+      "condition": "limited_ankle_dorsiflexion",
+      "severity": "modify",
+      "modification": "Without ~30° dorsiflexion the heel will lift. Elevate the heel on a 1-2 cm wedge or weightlifting shoes, or regress to box pistol until mobility improves.",
+      "modificationPl": "Bez ~30° grzbietowego zgięcia pięta będzie się unosić. Unieś piętę na 1-2 cm klinie lub butach do podnoszenia ciężarów, albo cofnij się do box pistol do czasu poprawy mobilności.",
+      "alternative": "box-pistol-squat"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "avoid",
+      "modification": "Single-leg deep squat demands high vestibular and proprioceptive control. Switch to assisted variants (TRX, doorframe) or bilateral squats.",
+      "modificationPl": "Głęboki przysiad na jednej nodze wymaga wysokiej kontroli przedsionkowej i propriocepcji. Przejdź na warianty asystowane (TRX, framuga) lub przysiady obustronne.",
+      "alternative": "assisted-pistol-squat"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "Forward torso lean at full depth loads the lumbar spine. Reduce depth to box pistol or switch to upright bilateral variants with neutral spine.",
+      "modificationPl": "Pochylenie tułowia w przód na pełnej głębokości obciąża odcinek lędźwiowy. Zmniejsz głębokość do box pistol lub przejdź na pionowe obustronne warianty z neutralnym kręgosłupem.",
+      "alternative": "goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-8 per leg (strength/skill) | 3x6-10 per leg (hypertrophy when proficient) | 2-3xAMRAP per leg (endurance/test)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "single-leg-squat-pistol-male.gif",
+    "frames_extracted": [
+      "frames/single-leg-squat-pistol-male/frame_0_start.png",
+      "frames/single-leg-squat-pistol-male/frame_1_early.png",
+      "frames/single-leg-squat-pistol-male/frame_2_mid.png",
+      "frames/single-leg-squat-pistol-male/frame_3_late.png",
+      "frames/single-leg-squat-pistol-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/single-leg-squat-pistol-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Klasyczny pistol squat: postać stoi na jednej nodze (klatka 0 — prawa noga podporowa, lewa lekko uniesiona, ramiona w dół), schodzi w pełen jednonóż przysiad (klatka 2 — głęboki dolny punkt, wolna noga wyciągnięta prosto przed sobą równolegle do podłogi, ramiona wyciągnięte do przodu jako przeciwwaga, pięta podporowa na podłodze, kolano nad stopą, tułów pochylony w przód), wraca do stania (klatka 4 — wyprost). Mięśnie podświetlone: czworogłowe (klatka 0/4 — pozycja stojąca) ORAZ pośladki (klatka 2 — głęboki dół, kompresja biodra). To pasuje do biomechaniki: glutes dominują w dolnej fazie pod kątem ostrym biodra, quads dominują przez cały zakres jako prostownik kolana. Klasyfikacja jahel pod 'glutes' się zgadza, choć dodajemy też quadriceps jako primary (P10) bo dla pistol squat to pierwszy limiter. Force=both bo to ekscentryczne (down) + koncentryczne (up) z istotnym komponentem ekscentrycznym (kontrola schodzenia jest często trudniejsza niż wstanie). Kategoria=calisthenics, level=advanced (difficulty 9/10), bo to benchmark kalisteniki. Wymagania pre-req: bodyweight-squat, bulgarian-split-squat, assisted/box pistol. Wszystkie pola PL napisane od zera w polskim standardzie kalisteniki ('pistol squat', 'przysiad pistoletowy', 'jednonóż').",
+
+  "tags": ["unilateral", "lower_body", "calisthenics", "bodyweight", "advanced", "compound", "balance", "mobility_demanding", "ankle_dorsiflexion", "skill_lift", "benchmark"]
+}

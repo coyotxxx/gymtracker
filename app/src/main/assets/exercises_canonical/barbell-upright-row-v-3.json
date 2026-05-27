@@ -1,0 +1,210 @@
+{
+  "id": "barbell-upright-row-v-3",
+  "name": "Barbell Upright Row (Variant 3 — Close Grip, Back View)",
+  "namePl": "Wiosłowanie stojące ze sztangą (wariant 3 — wąski chwyt, ujęcie od tyłu)",
+  "aliases": ["narrow grip upright row", "close grip upright row", "barbell upright row close grip", "trap-focused upright row", "barbell upright row back view"],
+  "aliasesPl": ["wiosłowanie pionowe sztangą wąskim chwytem", "podciąganie sztangi wzdłuż tułowia wąskim chwytem", "upright row na czworoboczny", "upright row na trapezy"],
+
+  "description": "A standing vertical pull performed by drawing a barbell up the front of the body with a narrow (close) overhand grip — hands set inside shoulder-width, often only a fist or two apart. This is the classic trap-dominant version of the upright row: the closer the hands, the higher the elbows must travel and the more the upper trapezius takes over from the lateral deltoid at the top. The V3 reference clip is animated from a posterior view, which makes the working musculature unambiguous — upper trapezius, posterior deltoid, latissimus dorsi (as a stabilizer/depressor) and the rhomboids all light up across the back. Because the close grip drives the elbows above the shoulders at the finish, this variant carries a higher subacromial impingement risk than the wide-grip version and should be reserved for healthy intermediate-to-advanced lifters with good shoulder mobility and external rotation strength.",
+  "descriptionPl": "Pionowe pociąganie wykonywane stojąc — sztangę prowadzimy w górę wzdłuż przedniej części tułowia nachwytem wąskim, dłonie ustawione węższej niż barki, często zaledwie pięść–dwie od siebie. To klasyczna, zdominowana przez czworoboczny wersja upright row: im węższy chwyt, tym wyżej muszą iść łokcie i tym mocniej górna część czworobocznego przejmuje pracę od bocznego aktonu mięśnia naramiennego w końcowym zakresie. Wariant V3 z referencyjnego GIFa pokazany jest od tyłu, co jednoznacznie ujawnia pracujące mięśnie — górny czworoboczny, tylny akton naramiennego, najszerszy grzbietu (jako stabilizator/depresor łopatki) oraz romboidy wyraźnie 'rozświetlają się' na plecach. Ponieważ wąski chwyt wymusza pozycję łokci powyżej barków w punkcie szczytowym, wariant ten niesie wyższe ryzyko konfliktu podbarkowego niż wersja szerokim chwytem i powinien być zarezerwowany dla zdrowych, średnio- lub mocno zaawansowanych ćwiczących z dobrą ruchomością barków i siłą rotacji zewnętrznej.",
+
+  "instructions": [
+    "Load the barbell and stand tall with feet shoulder-width apart, knees soft.",
+    "Grip the bar with a pronated (overhand) grip noticeably narrower than shoulder-width — typically 15-25 cm between hands (a fist or two apart).",
+    "Let the bar hang at arms' length against the front of your thighs. Set the shoulders back and down, chest tall, core braced.",
+    "Initiate the pull by driving your elbows up and slightly out to the sides. Lead with the elbows, NEVER with the hands.",
+    "Pull the bar straight up the front of your body, keeping it close to the torso — it should almost brush your shirt.",
+    "At the top the bar finishes around chin / lower-collarbone height and the elbows sit above shoulder height — this is what shifts emphasis onto the upper traps.",
+    "Hold the top position for a brief squeeze, feeling the upper trapezius contract hard between the shoulder blades and at the base of the neck.",
+    "Lower the bar under control over 2-3 seconds back to the fully extended starting position against the thighs.",
+    "Keep the torso vertical and the head neutral throughout — no leaning forward and no looking down at the bar.",
+    "Exhale on the way up, inhale on the way down. No hip swing, no kipping."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę i stań prosto, stopy na szerokość barków, kolana lekko ugięte.",
+    "Złap sztangę nachwytem zauważalnie węższym niż szerokość barków — zwykle 15-25 cm między dłońmi (pięść–dwie odstępu).",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przy przedniej części ud. Ściągnij barki w tył i w dół, klatka w górze, brzuch napięty.",
+    "Zainicjuj ruch wypychając łokcie w górę i lekko na boki. Prowadź ruch łokciami, NIGDY dłońmi.",
+    "Podciągnij sztangę pionowo wzdłuż przedniej części tułowia, blisko ciała — powinna prawie ocierać się o koszulkę.",
+    "W szczycie sztanga dochodzi mniej więcej do wysokości brody / dolnej krawędzi obojczyków, a łokcie znajdują się powyżej barków — to właśnie przerzuca akcent na górną część czworobocznego.",
+    "Zatrzymaj na chwilę w górnej pozycji aby poczuć mocny skurcz górnej części czworobocznego — między łopatkami i u nasady karku.",
+    "Opuszczaj sztangę kontrolowanie przez 2-3 sekundy aż do pełnego wyprostu ramion w pozycji wyjściowej przy udach.",
+    "Tułów pozostaje pionowy, głowa w neutralnej pozycji przez cały ruch — bez pochylania się do przodu i bez spoglądania w dół na sztangę.",
+    "Wydech podczas unoszenia, wdech podczas opuszczania. Bez bujania biodrami, bez zamachu."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_upper", "lateral_deltoids"],
+    "secondary": ["posterior_deltoid", "trapezius_middle", "biceps_brachii", "rhomboids", "brachialis"],
+    "stabilizers": ["rotator_cuff", "latissimus_dorsi", "forearm_flexors", "core", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_upper": "P10",
+    "lateral_deltoids": "P8",
+    "posterior_deltoid": "S6",
+    "trapezius_middle": "S6",
+    "biceps_brachii": "S6",
+    "rhomboids": "S5",
+    "brachialis": "S4",
+    "rotator_cuff": "T3",
+    "latissimus_dorsi": "T3",
+    "forearm_flexors": "T3",
+    "core": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "lifting_straps", "weightlifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-shrug", "dumbbell-lateral-raise", "barbell-wide-grip-upright-row"],
+    "progression_to": ["barbell-high-pull", "barbell-power-clean", "barbell-clean-and-press"],
+    "alternatives": ["barbell-wide-grip-upright-row", "barbell-shrug", "dumbbell-upright-row", "ez-bar-upright-row", "cable-upright-row", "kettlebell-upright-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft — stable base",
+      "Narrow overhand grip — fist-and-a-half apart, hands inside the shoulders",
+      "Bar resting against the front of the thighs, arms fully extended",
+      "Chest up, shoulders packed back and down, ribs stacked over hips",
+      "Core braced, head neutral — no looking down at the bar"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana lekko ugięte — stabilna baza",
+      "Wąski nachwyt — półtorej pięści odstępu, dłonie węższej niż barki",
+      "Sztanga oparta o przednią część ud, ramiona w pełnym wyproście",
+      "Klatka w górze, barki ściągnięte w tył i w dół, żebra nad biodrami",
+      "Brzuch napięty, głowa w neutralnej pozycji — bez spoglądania w dół na sztangę"
+    ],
+    "execution_cues": [
+      "Lead with the elbows — drive them up and slightly out, not the hands",
+      "Bar travels straight up close to the torso — almost brushing your shirt",
+      "Finish with the elbows above the shoulders and bar at chin / collarbone — that's where the traps fire hardest",
+      "Squeeze the traps at the top for half a second — you should feel the muscle bunch at the base of the neck",
+      "Lower slowly — 2-3 seconds eccentric back to full extension at the thighs"
+    ],
+    "execution_cues_pl": [
+      "Prowadź ruch łokciami — wypychaj je w górę i lekko na boki, nie dłońmi",
+      "Sztanga porusza się pionowo, blisko tułowia — prawie ociera się o koszulkę",
+      "Kończ ruch z łokciami powyżej barków, sztangą na wysokości brody / obojczyków — tam czworoboczny pracuje najmocniej",
+      "Ściśnij czworoboczny w górnej pozycji przez pół sekundy — powinieneś czuć jak mięsień napina się u nasady karku",
+      "Opuszczaj wolno — 2-3 sekundy fazy negatywnej aż do pełnego wyprostu ramion przy udach"
+    ],
+    "common_faults": [
+      {
+        "fault": "Grip too narrow (hands touching or knuckles together)",
+        "faultPl": "Zbyt wąski chwyt (dłonie stykające się lub pięści przy sobie)",
+        "cause": "Misunderstanding that 'narrower = more traps', copying old-school bodybuilding cues without nuance, no awareness of impingement risk",
+        "causePl": "Błędne przekonanie 'im węższy chwyt tym więcej trapezu', kopiowanie starych szkół kulturystycznych bez korekt, brak świadomości ryzyka konfliktu podbarkowego",
+        "cue": "Hands should be 15-25 cm apart (fist-and-a-half), never closer. Below that distance the wrists hyperflex and the impingement window opens dramatically — for very little extra trap activation.",
+        "cuePl": "Dłonie powinny być odległe o 15-25 cm (pięść–dwie), nigdy bliżej. Poniżej tej odległości nadgarstki załamują się, a okno konfliktu podbarkowego otwiera się dramatycznie — przy bardzo małym dodatkowym bodźcu na czworoboczny."
+      },
+      {
+        "fault": "Pulling elbows excessively above the head",
+        "faultPl": "Unoszenie łokci znacznie powyżej głowy",
+        "cause": "Chasing maximal range of motion, not understanding that above shoulder level the humerus internally rotates and pinches the supraspinatus tendon",
+        "causePl": "Pogoń za maksymalnym zakresem ruchu, brak świadomości że powyżej linii barków kość ramienna obraca się do wewnątrz i ściska ścięgno mięśnia nadgrzebieniowego",
+        "cue": "Stop when the bar reaches your chin / lower collarbone — that is the safe ceiling. Above that point you stop training traps and start grinding cartilage.",
+        "cuePl": "Zatrzymaj gdy sztanga dojdzie do brody / dolnej krawędzi obojczyków — to bezpieczna granica. Powyżej tego punktu przestajesz trenować czworoboczny, a zaczynasz ścierać chrząstkę barku."
+      },
+      {
+        "fault": "Wrists collapsing into hyperflexion at the top",
+        "faultPl": "Załamywanie nadgarstków (silne zgięcie dłoniowe) w górnej pozycji",
+        "cause": "Combination of narrow grip + high finish position forces extreme wrist flexion; weak forearm flexors; trying to lift the bar even higher with the hands",
+        "causePl": "Połączenie wąskiego chwytu i wysokiej pozycji końcowej wymusza skrajne zgięcie nadgarstka; słabe zginacze przedramienia; próba dodatkowego 'dorzucenia' sztangi dłońmi",
+        "cue": "Keep the wrists in a straight line with the forearms throughout. If they collapse — the load is too heavy or your grip is too narrow. Widen by 2-3 cm or drop weight.",
+        "cuePl": "Nadgarstki w linii z przedramionami przez cały ruch. Jeśli się załamują — ciężar jest za duży lub chwyt za wąski. Poszerz chwyt o 2-3 cm albo zmniejsz ciężar."
+      },
+      {
+        "fault": "Leaning the torso back to swing the bar up (hip kip)",
+        "faultPl": "Odchylanie tułowia w tył aby zarzucić sztangę (zamach biodrami)",
+        "cause": "Load too heavy for the upper traps to handle strictly, ego lifting, fatigue near the end of a set",
+        "causePl": "Zbyt duży ciężar by czworoboczny mógł pracować rygorystycznie, ego lifting, zmęczenie pod koniec serii",
+        "cue": "Hips, knees and lower back frozen — only the shoulder girdle and arms move. If you need a hip kip the set is over — rack the bar.",
+        "cuePl": "Biodra, kolana i dolny odcinek pleców nieruchome — pracują tylko obręcz barkowa i ramiona. Jeśli musisz zarzucić biodrami, seria jest skończona — odstaw sztangę."
+      },
+      {
+        "fault": "Shrugging the shoulders up to the ears instead of leading with elbows",
+        "faultPl": "Wzruszanie barkami w stronę uszu zamiast prowadzenia łokciami",
+        "cause": "Cross-talk with the shrug pattern — the upper trap fires as a pure elevator instead of pulling the elbow up; cervical-spine compensation",
+        "causePl": "Mieszanie wzorca z 'wzruszaniem barków' (shrug) — czworoboczny pracuje jako podnośnik zamiast podciągacza łokci; kompensacja z odcinka szyjnego",
+        "cue": "Think 'elbow to ceiling', NOT 'shoulder to ear'. The shoulder line should stay level — only the elbow rises. If you see your traps bunch at the neck before the elbow moves, you're shrugging.",
+        "cuePl": "Myśl 'łokieć w sufit', NIE 'bark do ucha'. Linia barków pozostaje pozioma — unosi się tylko łokieć. Jeśli widzisz że czworoboczny napina się u karku zanim ruszy łokieć — wzruszasz barkami zamiast wiosłować."
+      }
+    ],
+    "breathing": "Exhale during the concentric (pull up). Inhale during the eccentric (lower down). Maintain a light to moderate brace throughout — heavy close-grip upright row spikes intrathoracic pressure briefly at the top.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie do umiarkowanego napięcie brzucha przez całą serię — ciężki upright row wąskim chwytem chwilowo podnosi ciśnienie wewnątrzklatkowe w szczycie ruchu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_subacromial_syndrome",
+      "severity": "avoid",
+      "modification": "Close-grip upright row is the highest-impingement variant of the family because the elbows must finish above the shoulders. With any active impingement switch to wide-grip upright row (stopping at shoulder level) or to lateral raises in the scapular plane.",
+      "modificationPl": "Upright row wąskim chwytem to najbardziej drażniący wariant z całej rodziny — łokcie muszą skończyć powyżej linii barków. Przy jakimkolwiek aktywnym konflikcie podbarkowym przejdź na wariant szerokim chwytem (zatrzymując się na wysokości barków) albo na odwodzenia w płaszczyźnie łopatkowej.",
+      "alternative": "barbell-wide-grip-upright-row"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy_or_tear",
+      "severity": "avoid",
+      "modification": "Vertical pulling with elbows above shoulders forces strong internal humeral rotation under load — contraindicated for active rotator cuff pathology. Replace with face pulls or scaption raises (thumbs up).",
+      "modificationPl": "Pionowe pociąganie z łokciami powyżej barków wymusza silną rotację wewnętrzną kości ramiennej pod obciążeniem — przeciwwskazane przy aktywnej patologii stożka rotatorów. Zastąp face pull lub odwodzeniem z kciukami w górę (scaption).",
+      "alternative": "cable-face-pull"
+    },
+    {
+      "condition": "ac_joint_pathology",
+      "severity": "avoid",
+      "modification": "End-range close-grip upright row maximally compresses the acromioclavicular joint of both shoulders. Avoid entirely during active AC inflammation. Use barbell shrug (no elbow flexion = no AC compression) or lateral raise stopping at 80 degrees abduction.",
+      "modificationPl": "Końcowy zakres upright row wąskim chwytem maksymalnie ściska staw barkowo-obojczykowy po obu stronach. Unikaj zupełnie przy aktywnym zapaleniu stawu AC. Stosuj wzruszanie barkami sztangą (brak zgięcia łokcia = brak ucisku AC) albo odwodzenia z zatrzymaniem na 80 stopniach.",
+      "alternative": "barbell-shrug"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Narrow grip on a straight bar locks the wrists in deep pronation and forces hyperflexion at the top — aggressively aggravating ulnar-side wrist pain. Use EZ-bar (angled grip relieves wrist stress) or dumbbells (free rotation).",
+      "modificationPl": "Wąski chwyt na sztandze prostej blokuje nadgarstki w głębokiej pronacji i wymusza ich załamanie w górnej pozycji — bardzo drażniąco dla bólu po stronie łokciowej. Użyj sztangi łamanej (kąt chwytu redukuje stres) albo hantli (swobodna rotacja).",
+      "alternative": "ez-bar-upright-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, trap focus) | 4x6-8 (strength) | 3x12-15 (high-volume / shoulder & trap pump)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-upright-row-v-3.gif",
+    "frames_extracted": [
+      "frames/barbell-upright-row-v-3/frame_0_start.png",
+      "frames/barbell-upright-row-v-3/frame_1_early.png",
+      "frames/barbell-upright-row-v-3/frame_2_mid.png",
+      "frames/barbell-upright-row-v-3/frame_3_late.png",
+      "frames/barbell-upright-row-v-3/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-upright-row-v-3"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel (start/early/mid/late/end). Animacja jest pokazana z TYŁU postaci — to kluczowa różnica względem V1 (klasyczny upright row, ujęcie z przodu) i V2 (overhead position, prawdopodobnie wariant z większym zakresem ruchu). Frame 0: postawa stojąca, sztanga przed udami, dłonie złapane nachwytem WĄSKIM (kilkanaście centymetrów odstępu — wyraźnie węższym niż barki), ramiona w pełnym wyproście. Już w starcie podświetlone są na czerwono: górna część czworobocznego, tylny akton naramiennego oraz fragmenty najszerszego grzbietu — co potwierdza że wariant kładzie nacisk na trapezy. Frame 2 (mid/peak): łokcie wypchnięte w górę i nieco na boki, znajdują się WYRAŹNIE POWYŻEJ linii barków, sztanga dotarła do wysokości brody / obojczyków. Górny trapez jest najmocniej rozświetloną grupą — to charakterystyka chwytu wąskiego (im węższy chwyt, tym wyższe łokcie, tym więcej pracy trapezu względem bocznego aktonu naramiennego). Tułów pozostaje pionowy, brak bujania biodrami. Frame 4: powrót do pozycji wyjściowej z widocznym 'ghostem' pozycji szczytowej. Klasyfikacja muscle_intensity ustawiona zgodnie z mechaniką wąskiego chwytu: trapezius_upper P10 (główny akcent), lateral_deltoids P8 (nadal duża praca, ale niższa niż w wariancie szerokim gdzie boczny akton dominuje), posterior_deltoid S6 (widoczna aktywacja od tyłu). Difficulty 6 (wyżej niż wide-grip 5) z powodu większego ryzyka konfliktu podbarkowego — wariant zarezerwowany dla intermediate+ z dobrą ruchomością. Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["bodybuilding", "shoulders", "delts", "traps", "trapezius_upper", "lateral_deltoids", "compound", "barbell", "upper_body", "vertical_pull", "narrow_grip", "trap_focus"]
+}

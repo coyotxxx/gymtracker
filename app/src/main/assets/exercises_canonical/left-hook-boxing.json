@@ -1,0 +1,200 @@
+{
+  "id": "left-hook-boxing",
+  "name": "Left Hook (Boxing)",
+  "namePl": "Lewy sierpowy (boks)",
+  "aliases": ["left hook", "lead hook", "boxing left hook", "shadowboxing left hook", "lewy hak"],
+  "aliasesPl": ["lewy sierpowy", "lewy hak", "sierpowy z lewej", "hak z lewej ręki", "shadowboxing — lewy sierpowy"],
+
+  "description": "Classic boxing punch thrown with the lead (left) hand on a horizontal arc from the side, with the elbow bent roughly 90 degrees. Power is generated from the ground up: rear-foot push, hip and trunk rotation through the transverse plane, and the obliques whipping the shoulder around. Used in shadowboxing for cardio, conditioning and skill work — trains rotational power, anterior deltoid and pectoralis major on the punching side, and hardens timing of hip-shoulder sequencing.",
+  "descriptionPl": "Klasyczny cios bokserski wyprowadzany przednią (lewą) ręką po poziomym łuku z boku, z łokciem ugiętym pod kątem ok. 90°. Siła idzie od podłoża w górę: napęd z tylnej stopy, rotacja bioder i tułowia w płaszczyźnie poprzecznej, a mięśnie skośne brzucha wyrzucają bark do przodu. Wykonywany w shadowboxingu jako trening cardio, kondycyjny i techniczny — kształtuje moc rotacyjną, mięsień naramienny przedni i piersiowy większy po stronie ciosu oraz uczy poprawnej sekwencji biodra–bark.",
+
+  "instructions": [
+    "Start in an orthodox boxing stance: left foot slightly forward, right foot back at ~45°, knees soft, weight 50/50, both hands up at cheek level with elbows tucked to the ribs. Chin down.",
+    "Shift weight slightly to the front (lead) leg and pivot the lead foot inward as the left hip rotates. The motion starts from the floor — feet first, hips second.",
+    "As the hips rotate, drive the left shoulder around. The left elbow comes up to ~90° (forearm parallel to the floor) — the arm is loaded as one rigid lever, not extended.",
+    "Whip the fist across in a horizontal arc from the lead side toward an imaginary target at chin height. The fist lands palm-down (or vertical), knuckles up. Don't reach — let rotation deliver the punch.",
+    "Exhale sharply at impact (short 'tsst' sound). The right hand stays up at the cheek to protect the chin — never drop the rear hand.",
+    "Immediately reverse the rotation: hips back, shoulder back, hand back to the guard. Return to the orthodox stance and reset — ready for the next punch or combination."
+  ],
+  "instructionsPl": [
+    "Stań w klasycznej postawie bokserskiej (orthodox): lewa stopa lekko z przodu, prawa z tyłu pod kątem ~45°, kolana miękkie, ciężar 50/50, obie ręce w gardzie przy policzkach z łokciami przy żebrach. Broda schowana.",
+    "Przenieś lekko ciężar na nogę przednią i wkręć przednią stopę do środka, gdy lewe biodro rotuje. Ruch zaczyna się od podłoża — najpierw stopy, potem biodra.",
+    "Gdy biodra się obracają, popchnij lewy bark do przodu. Lewy łokieć unosi się do ~90° (przedramię równolegle do podłogi) — ramię jest załadowane jako jedna sztywna dźwignia, nie wyprostowane.",
+    "Wyrzuć pięść po poziomym łuku z przedniej strony w kierunku wyobrażonego celu na wysokości brody. Pięść ląduje wnętrzem dłoni w dół (lub pionowo), kostkami do góry. Nie sięgaj — niech to rotacja niesie cios.",
+    "Mocny wydech w momencie 'trafienia' (krótkie 'tss'). Prawa ręka pozostaje przy policzku, by chronić brodę — nigdy nie opuszczaj tylnej ręki.",
+    "Natychmiast odwróć rotację: biodra z powrotem, bark z powrotem, ręka wraca do gardy. Wróć do postawy orthodox i resetuj — gotowy do kolejnego ciosu lub kombinacji."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotational_push",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "anterior_deltoid", "pectoralis_major"],
+    "secondary": ["triceps_brachii", "gluteus_maximus", "rectus_abdominis"],
+    "stabilizers": ["calves", "quadriceps", "serratus_anterior", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P9",
+    "anterior_deltoid": "P8",
+    "pectoralis_major": "P7",
+    "triceps_brachii": "S5",
+    "gluteus_maximus": "S5",
+    "rectus_abdominis": "S4",
+    "calves": "T4",
+    "quadriceps": "T3",
+    "serratus_anterior": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["hand_wraps", "mirror", "heavy_bag", "focus_mitts"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["jab-boxing", "boxing-stance"],
+    "progression_to": ["left-hook-heavy-bag", "double-left-hook", "1-2-3-combo"],
+    "alternatives": ["right-hook-boxing", "jab-cross", "uppercut-boxing", "cable-woodchopper"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Orthodox stance — left foot forward, right foot back ~45°",
+      "Both hands up at the cheekbones, elbows tucked to ribs",
+      "Chin down, shoulders relaxed — don't hunch",
+      "Weight 50/50, knees soft and bouncy",
+      "Eyes on the target (mirror or imaginary opponent's chin)"
+    ],
+    "setup_cues_pl": [
+      "Postawa orthodox — lewa stopa z przodu, prawa z tyłu pod kątem ~45°",
+      "Obie ręce w gardzie przy kościach policzkowych, łokcie przy żebrach",
+      "Broda schowana, barki rozluźnione — nie kul się",
+      "Ciężar 50/50, kolana miękkie i sprężyste",
+      "Wzrok na cel (lustro lub wyobrażona broda przeciwnika)"
+    ],
+    "execution_cues": [
+      "Pivot the lead foot — punch starts from the ground, not the arm",
+      "Rotate hips first, shoulder follows — like a whip",
+      "Elbow stays at 90° — the arm is a lever, not a reach",
+      "Right hand glued to the right cheek — never drop the rear guard",
+      "Sharp exhale 'tss' at impact, then snap straight back to guard"
+    ],
+    "execution_cues_pl": [
+      "Wkręć przednią stopę — cios zaczyna się od podłoża, nie z ramienia",
+      "Najpierw biodra, potem bark — jak bicz",
+      "Łokieć trzymany pod kątem 90° — ręka to dźwignia, nie sięganie",
+      "Prawa ręka przyklejona do prawego policzka — nigdy nie opuszczaj tylnej gardy",
+      "Mocny wydech 'tss' w momencie ciosu, potem szybki powrót do gardy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Arm punching — using only the shoulder and arm without hip rotation",
+        "faultPl": "Cios samą ręką — używanie tylko barku i ramienia bez rotacji biodra",
+        "cause": "Lack of awareness that power comes from the kinetic chain (floor → hips → shoulder → fist)",
+        "causePl": "Brak świadomości, że moc pochodzi z łańcucha kinetycznego (podłoga → biodra → bark → pięść)",
+        "cue": "Pretend the punch is a baseball swing — feet pivot first, hips next, then the fist arrives last",
+        "cuePl": "Wyobraź sobie, że cios to zamach kijem baseballowym — najpierw stopy, potem biodra, a pięść dociera na końcu"
+      },
+      {
+        "fault": "Dropping the rear (right) hand when throwing the hook",
+        "faultPl": "Opuszczanie tylnej (prawej) ręki podczas wyprowadzania sierpowego",
+        "cause": "Counter-balance instinct — body wants to drop one hand when the other swings",
+        "causePl": "Instynkt równoważenia ciała — gdy jedna ręka się porusza, druga chce opaść",
+        "cue": "Glue the right glove to your right cheek for the entire punch. Film yourself — the rear hand must not move.",
+        "cuePl": "Przyklej prawą rękawicę do prawego policzka na cały cios. Nagraj się — tylna ręka nie może się ruszać."
+      },
+      {
+        "fault": "Over-rotating / spinning out of stance",
+        "faultPl": "Nadmierna rotacja / wykręcenie się z postawy",
+        "cause": "Trying to generate maximum power by spinning the whole body 180°, exposing the back to the opponent",
+        "causePl": "Próba wygenerowania maksymalnej mocy przez obrót całego ciała o 180°, odsłaniając plecy na przeciwnika",
+        "cue": "Rotate ~45° max and snap back immediately. You should still be facing the target after the punch.",
+        "cuePl": "Rotuj maksymalnie ~45° i natychmiast wracaj. Po ciosie nadal stoisz przodem do celu."
+      },
+      {
+        "fault": "Telegraphing — winding up the elbow before the punch",
+        "faultPl": "Sygnalizowanie ciosu — zamach łokciem przed wyprowadzeniem",
+        "cause": "Trying to build momentum from a 'cocked' position rather than firing from the guard",
+        "causePl": "Próba zbudowania rozpędu z 'załadowanej' pozycji zamiast wyprowadzenia z gardy",
+        "cue": "Punch must launch directly from the guard at the cheek — no wind-up. Speed > pre-load.",
+        "cuePl": "Cios musi startować bezpośrednio z gardy przy policzku — żadnego zamachu. Szybkość > naładowanie."
+      },
+      {
+        "fault": "Straight arm / extended elbow at the moment of impact",
+        "faultPl": "Wyprostowane ramię / wyciągnięty łokieć w momencie ciosu",
+        "cause": "Confusing the hook with a wide swing or jab; reaching for the target",
+        "causePl": "Mylenie sierpowego z szerokim zamachem lub jabem; sięganie do celu",
+        "cue": "Elbow stays at 90°. Imagine you're hitting a wall 30 cm in front of you — there's no need to reach.",
+        "cuePl": "Łokieć cały czas pod kątem 90°. Wyobraź sobie, że uderzasz ścianę 30 cm przed sobą — nie ma po co sięgać."
+      }
+    ],
+    "breathing": "Sharp, short exhale at the moment of impact ('tsst' sound). Inhale through the nose between punches or during the reset to guard. In long shadowboxing rounds keep a steady rhythm — never hold the breath.",
+    "breathingPl": "Ostry, krótki wydech w momencie ciosu (dźwięk 'tss'). Wdech nosem między ciosami lub podczas powrotu do gardy. W dłuższych rundach shadowboxingu utrzymuj równy rytm — nigdy nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Repeated horizontal arc with the arm at shoulder height can pinch the supraspinatus. Reduce reps, lower the punch height (aim for ribs instead of chin), and stop if pain appears in the front of the shoulder.",
+      "modificationPl": "Powtarzany poziomy ruch ramienia na wysokości barku może uciskać mięsień nadgrzebieniowy. Zmniejsz liczbę powtórzeń, obniż wysokość ciosu (celuj w żebra zamiast w brodę) i przerwij, jeśli pojawi się ból z przodu barku.",
+      "alternative": "jab-boxing"
+    },
+    {
+      "condition": "wrist_instability",
+      "severity": "modify",
+      "modification": "Hook is the most common cause of wrist injuries in boxing — fist alignment must be perfect. Wear hand wraps, train on focus mitts under supervision, and do not throw at full power until wrist is stable.",
+      "modificationPl": "Sierpowy to najczęstsza przyczyna kontuzji nadgarstków w boksie — ułożenie pięści musi być idealne. Bandażuj nadgarstki, trenuj na łapach pod nadzorem trenera, nie wyprowadzaj pełną mocą dopóki nadgarstek nie jest stabilny.",
+      "alternative": "shadowboxing-jab"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "caution",
+      "modification": "The rotational force at the lumbar spine can flare disc problems. Limit rotation range, keep the core braced, and avoid throwing hooks from a deeply rotated position.",
+      "modificationPl": "Siła rotacyjna w odcinku lędźwiowym może nasilić problemy z dyskiem. Ogranicz zakres rotacji, utrzymuj napięty brzuch i unikaj wyprowadzania sierpowego z głęboko skręconej pozycji.",
+      "alternative": "jab-cross"
+    },
+    {
+      "condition": "knee_meniscus_injury",
+      "severity": "caution",
+      "modification": "The lead-foot pivot loads the meniscus under rotation. If pain appears, reduce the pivot, train on a slick surface (sock on smooth floor) or step out of the pivot mechanic temporarily.",
+      "modificationPl": "Wkręcanie przedniej stopy obciąża łąkotkę pod rotacją. Jeśli pojawia się ból, zmniejsz zakres pivota, trenuj na śliskiej powierzchni (skarpeta na gładkiej podłodze) lub czasowo zrezygnuj z mechaniki pivota.",
+      "alternative": "shadowboxing-jab"
+    }
+  ],
+
+  "typical_sets_reps": "3-5 rund x 2-3 min (shadowboxing cardio) | 3x30 powtórzeń (technika) | 4x15s sprint + 45s rest (HIIT)",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "left-hook-boxing.gif",
+    "frames_extracted": [
+      "frames/left-hook-boxing/frame_0_start.png",
+      "frames/left-hook-boxing/frame_1_early.png",
+      "frames/left-hook-boxing/frame_2_mid.png",
+      "frames/left-hook-boxing/frame_3_late.png",
+      "frames/left-hook-boxing/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/left-hook-boxing"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel/delts/left-hook-boxing.gif. Klatka 0 (start): postawa orthodox bokserska — lewa stopa z przodu, ręce w gardzie przy policzkach, podświetlone obie ręce/przedramiona (forearms/biceps) jako 'załadowane' do ciosu + łydka tylnej nogi (drive z podłoża). Klatka 1 (early): załadowanie — silnie podświetlony lewy mięsień piersiowy większy + lewy naramienny przedni (przygotowanie do wyprowadzenia ciosu lewą ręką). Klatka 2 (mid): apex ciosu — lewa ręka wyrzucona po poziomym łuku, podświetlone pectoralis_major (lewy, MAX) + obliques (oba boki, silna rotacja tułowia) + anterior_deltoid lewy. Klatka 3 (late): faza powrotu — wciąż widoczna aktywacja obliques i pectoralis, podświetlone tricepsy obu rąk i łydka. Klatka 4 (end): powrót do gardy, podobnie do start. Klasyfikacja: rotational_push (poziomy łuk w płaszczyźnie transverse, force=push przez wypchnięcie pięści), compound (biodra + tułów + bark + łokieć), unilateral (jedna ręka punktuje), open kinetic chain. Mięsień główny: obliques P9 (rotacja jest źródłem mocy), anterior_deltoid P8 i pectoralis_major P7 (ramię prowadzi cios). Secondary: triceps_brachii (stabilizacja łokcia ~90°), gluteus_maximus (drive biodra), rectus_abdominis. Stabilizatory: calves + quadriceps (pivot przedniej stopy), serratus_anterior (protrakcja łopatki), forearms (zaciśnięcie pięści). Nazwa PL: 'Lewy sierpowy (boks)' — standardowa polska terminologia bokserska, aliasy 'lewy hak' (powszechne potoczne), 'sierpowy z lewej'. Difficulty=4 (technika niska bariera wejścia, ale opanowanie pełnej kinematycznej sekwencji wymaga praktyki). Kategoria=cardio (shadowboxing to typowo cardio/conditioning). 4 przeciwwskazania: shoulder_impingement (caution), wrist_instability (modify — sierpowy to NAJCZĘSTSZA kontuzja nadgarstka w boksie), lumbar_disc (caution — rotacja lędźwiowa), knee_meniscus (caution — pivot stopy). 5 setup + 5 execution cues, 5 common_faults (najważniejsze: arm punching, dropping rear hand, over-rotating, telegraphing, straight arm). Kalorie 8.5/kg/h (cardio średnio-intensywne, MET ~8 dla boksu rekreacyjnego). Wszystkie pola PL napisane od zera bez translatora — używam slangu bokserskiego: orthodox, garda, sierpowy, jab, kombinacja.",
+
+  "tags": ["bodyweight", "cardio", "boxing", "shadowboxing", "no_equipment", "home_workout", "rotational", "unilateral", "conditioning", "delts", "obliques", "skill"]
+}

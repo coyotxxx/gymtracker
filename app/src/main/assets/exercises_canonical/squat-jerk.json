@@ -1,0 +1,216 @@
+{
+  "id": "squat-jerk",
+  "name": "Squat Jerk",
+  "namePl": "Squat jerk",
+  "aliases": ["barbell squat jerk", "full squat jerk", "olympic squat jerk"],
+  "aliasesPl": ["squat jerk ze sztangą", "podrzut w przysiad", "jerk w pełnym przysiadzie", "podrzut z catch w przysiadzie"],
+
+  "description": "An advanced olympic-style jerk variation where the lifter receives the barbell overhead in a full deep squat instead of the traditional split stance. From the front rack, a short dip-drive launches the bar overhead while the lifter drops UNDER it into a full overhead squat catch position with arms locked out. Then recovers by standing up out of the squat with the bar locked overhead. Demands elite mobility (wrist, shoulder, thoracic, hip, ankle), bar speed and overhead stability — the position is identical to the catch of a snatch. Used by elite olympic weightlifters who lack split-jerk efficiency or who want maximum bar drop distance.",
+  "descriptionPl": "Zaawansowany wariant podrzutu olimpijskiego, w którym sztangę łapie się nad głową w pełnym głębokim przysiadzie zamiast tradycyjnego rozkroku (split). Z pozycji front rack krótki dip-drive wystrzeliwuje sztangę nad głowę, a sztangista wskakuje POD nią do pozycji catch w pełnym overhead squat z wyprostowanymi ramionami. Następnie wstaje z przysiadu trzymając sztangę zablokowaną nad głową. Wymaga elitarnej mobilności (nadgarstki, barki, kręgosłup piersiowy, biodra, kostki), prędkości gryfu i stabilności overhead — pozycja jest identyczna jak catch w rwaniu (snatch). Używany przez elitarnych podnośników, którzy nie są efektywni w split jerku lub chcą maksymalnego dystansu zejścia pod sztangę.",
+
+  "instructions": [
+    "Start with the barbell cleaned to the front rack: bar resting on the front delts and at the throat, elbows high and forward, feet hip- to shoulder-width apart.",
+    "Brace the core hard, big breath held. Eyes forward, knees over toes, neutral spine.",
+    "Dip — bend the knees straight down (not forward or back), keeping the torso vertical. Heels stay planted, hips stay over the heels. Dip is short and controlled — about 10-15% of leg length.",
+    "Drive — reverse direction explosively, drive through the floor with the legs. The bar accelerates straight up off the shoulders.",
+    "At the top of the drive, push the bar overhead with the arms and simultaneously DROP the body under the bar by quickly squatting down.",
+    "Catch the bar in a full overhead squat position: bar locked out directly over mid-foot, arms straight, knees flexed deeply (hips below knees), torso upright, elbows pressed up actively.",
+    "Stabilize in the bottom — bar over mid-foot, active shoulders, knees tracking toes, core braced. Pause briefly to demonstrate control.",
+    "Recover — stand up out of the squat keeping the bar locked out overhead. Drive the chest up, do NOT let the bar drift forward.",
+    "Stand fully erect with the bar overhead, feet level. Hold for the down signal (in competition) or for stability (in training).",
+    "Lower the bar back to the front rack with control, reset, and repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Zacznij ze sztangą zarzuconą do front rack: gryf opiera się na przednich aktonach barku i przy gardle, łokcie wysoko i do przodu, stopy na szerokość bioder lub barków.",
+    "Mocno napnij brzuch i wstrzymaj wdech. Wzrok przed siebie, kolana nad palcami, neutralny kręgosłup.",
+    "Dip — ugnij kolana prosto w dół (nie do przodu ani do tyłu), trzymając tułów pionowo. Pięty zostają na podłodze, biodra nad piętami. Dip jest krótki i kontrolowany — około 10-15% długości nogi.",
+    "Drive — eksplozywnie zmień kierunek, napieraj nogami w podłogę. Sztanga przyspiesza prosto w górę z barków.",
+    "Na szczycie drive'u wypchnij sztangę nad głowę ramionami i równocześnie WSKOCZ pod sztangę szybko schodząc w przysiad.",
+    "Złap sztangę w pozycji pełnego overhead squat: gryf zablokowany nad środkiem stóp, ramiona wyprostowane, kolana głęboko ugięte (biodra poniżej kolan), tułów pionowo, łokcie aktywnie wypychane w górę.",
+    "Ustabilizuj się w dole — sztanga nad środkiem stóp, aktywne barki, kolana podążają za palcami, brzuch napięty. Krótka pauza demonstrująca kontrolę.",
+    "Recover — wstań z przysiadu trzymając sztangę zablokowaną nad głową. Wypchnij klatkę w górę, NIE pozwól by sztanga dryfowała do przodu.",
+    "Wyprostuj się w pełni ze sztangą nad głową, stopy na równym poziomie. Trzymaj do sygnału w dół (na zawodach) lub do stabilizacji (na treningu).",
+    "Opuść sztangę do front rack pod kontrolą, zresetuj pozycję i powtórz przewidzianą liczbę powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "olympic_lift",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "quadriceps", "glutes", "triceps"],
+    "secondary": ["trapezius", "lateral_deltoids", "posterior_deltoids", "hamstrings", "calves", "erector_spinae"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "rotator_cuff", "serratus_anterior", "forearms", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "triceps": "P8",
+    "trapezius": "S8",
+    "lateral_deltoids": "S8",
+    "posterior_deltoids": "S7",
+    "hamstrings": "S7",
+    "calves": "S7",
+    "erector_spinae": "S8",
+    "core": "S9",
+    "rectus_abdominis": "S8",
+    "obliques": "S7",
+    "rotator_cuff": "S8",
+    "serratus_anterior": "S7",
+    "forearms": "S7",
+    "adductors": "S7"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weightlifting_shoes", "chalk", "wrist_wraps", "belt", "lifting_platform"]
+  },
+
+  "category": "olympic_weightlifting",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 10,
+    "prerequisites": ["barbell-overhead-squat", "barbell-front-squat", "barbell-push-jerk", "barbell-split-jerk", "barbell-clean", "barbell-snatch"],
+    "progression_to": ["clean-and-squat-jerk", "snatch", "competition-clean-and-jerk-with-squat-catch"],
+    "alternatives": ["barbell-split-jerk", "barbell-push-jerk", "barbell-power-jerk", "barbell-push-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar locked tight in front rack — elbows high, bar at the throat on the delts",
+      "Feet hip- to shoulder-width, weight balanced on the whole foot",
+      "Torso VERTICAL — no forward lean, ribs stacked over hips",
+      "Big brace before the dip — Valsalva, abs tight",
+      "Eyes on a fixed point in front, head neutral"
+    ],
+    "setup_cues_pl": [
+      "Sztanga zablokowana w front rack — łokcie wysoko, gryf przy gardle na barkach",
+      "Stopy szerokość bioder lub barków, ciężar rozłożony na całej stopie",
+      "Tułów PIONOWO — żadnego pochylenia, żebra ułożone nad biodrami",
+      "Mocne napięcie przed dipem — Valsalva, brzuch tight",
+      "Wzrok na stały punkt z przodu, głowa neutralna"
+    ],
+    "execution_cues": [
+      "Dip is SHORT and VERTICAL — knees go straight down, NOT forward",
+      "Drive explosively — heels glued to floor until the moment of bar separation",
+      "PUNCH the bar UP and pull yourself DOWN simultaneously — the bar barely moves up, you move down",
+      "Catch in full overhead squat — arms locked, bar over mid-foot, butt below knees",
+      "Stand up with the chest UP — bar stays directly over mid-foot the entire ascent"
+    ],
+    "execution_cues_pl": [
+      "Dip jest KRÓTKI i PIONOWY — kolana lecą prosto w dół, NIE do przodu",
+      "Drive eksplozywnie — pięty przyklejone do podłogi do momentu separacji gryfu",
+      "WYPCHNIJ sztangę W GÓRĘ i podciągnij się W DÓŁ jednocześnie — sztanga ledwo idzie do góry, ty zjeżdżasz w dół",
+      "Catch w pełnym overhead squat — ramiona zablokowane, sztanga nad środkiem stóp, pośladek poniżej kolan",
+      "Wstań z klatką W GÓRZE — sztanga zostaje dokładnie nad środkiem stóp przez cały ruch wstawania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Forward dip (knees travel forward, torso pitches forward)",
+        "faultPl": "Dip do przodu (kolana lecą do przodu, tułów pochyla się)",
+        "cause": "Weight shifts to the toes, poor ankle/hip mobility, weak quads",
+        "causePl": "Ciężar przenosi się na palce, słaba mobilność kostek/bioder, słabe czworogłowe",
+        "cue": "Heels GLUED to floor. Imagine sitting straight down into a chair behind you. Torso stays vertical the entire dip-drive.",
+        "cuePl": "Pięty PRZYKLEJONE do podłogi. Wyobraź sobie że siadasz prosto na krzesło za tobą. Tułów pionowo przez cały dip-drive."
+      },
+      {
+        "fault": "Pressing the bar out instead of dropping under it",
+        "faultPl": "Wyciskanie sztangi zamiast wskoczenia pod nią",
+        "cause": "Slow under the bar — treats the jerk like a push press",
+        "causePl": "Wolne wejście pod sztangę — traktowanie podrzutu jak push press",
+        "cue": "The bar should barely rise above your forehead. Punch yourself DOWN under it — speed under is everything.",
+        "cuePl": "Sztanga powinna ledwo wznieść się nad czoło. Wskocz POD nią — prędkość wejścia pod gryf to wszystko."
+      },
+      {
+        "fault": "Catch with bar in front of the body (no full lockout overhead)",
+        "faultPl": "Catch ze sztangą przed ciałem (brak pełnego lockout nad głową)",
+        "cause": "Limited shoulder/thoracic mobility, fear of overhead squat, weak overhead stability",
+        "causePl": "Ograniczona mobilność barków/kręgosłupa piersiowego, strach przed overhead squat, słaba stabilność nad głową",
+        "cue": "Bar must be DIRECTLY over mid-foot at catch — armpits forward, ears between biceps. Work overhead mobility daily before attempting squat jerks.",
+        "cuePl": "Sztanga musi być DOKŁADNIE nad środkiem stóp w catch — pachy do przodu, uszy między bicepsami. Pracuj nad mobilnością overhead codziennie zanim spróbujesz squat jerk."
+      },
+      {
+        "fault": "Losing the bar forward during the stand-up out of the squat",
+        "faultPl": "Utrata sztangi do przodu podczas wstawania z przysiadu",
+        "cause": "Weak overhead squat strength, hips rise before chest, bar drifts forward",
+        "causePl": "Słaba siła w overhead squat, biodra wstają przed klatką, sztanga dryfuje do przodu",
+        "cue": "Chest UP first, hips and chest rise TOGETHER. Active shoulders pushing the bar UP the entire ascent. Train heavy overhead squats.",
+        "cuePl": "Klatka W GÓRĘ najpierw, biodra i klatka wstają RAZEM. Aktywne barki wypychające sztangę W GÓRĘ przez cały wstawania. Trenuj ciężkie overhead squats."
+      },
+      {
+        "fault": "Soft elbows / bent arms at catch and stand-up",
+        "faultPl": "Miękkie łokcie / zgięte ramiona w catch i wstawaniu",
+        "cause": "Weak triceps and overhead stability, fatigue, sketchy pattern",
+        "causePl": "Słabe tricepsy i stabilność overhead, zmęczenie, nieczysty wzór ruchu",
+        "cue": "PUNCH elbows STRAIGHT and HARD at catch. Lock them out aggressively. If you can't lock out, weight is too heavy — drop it.",
+        "cuePl": "WYPCHNIJ łokcie PROSTO i MOCNO w catch. Zablokuj je agresywnie. Jeśli nie możesz wyprostować — ciężar za duży, odrzuć go."
+      }
+    ],
+    "breathing": "Big inhale at the front rack and HOLD through the entire lift (Valsalva). Brace during dip, hold through drive and catch. Exhale ONLY after recovery from the squat with the bar locked overhead. One breath cycle per rep — squat jerk is too explosive for breathing mid-rep.",
+    "breathingPl": "Głęboki wdech w front rack i WSTRZYMANIE przez cały ruch (Valsalva). Napięcie w dipie, trzymaj przez drive i catch. Wydech DOPIERO po wstaniu z przysiadu ze sztangą nad głową. Jeden cykl oddechowy na powtórzenie — squat jerk jest zbyt eksplozywny by oddychać w trakcie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_overhead_instability",
+      "severity": "avoid",
+      "modification": "Squat jerk requires perfect overhead lockout in a deep squat — the most demanding overhead position in lifting. Contraindicated for any active shoulder pathology. Restore mobility and stability under PT supervision first.",
+      "modificationPl": "Squat jerk wymaga perfekcyjnego lockoutu nad głową w głębokim przysiadzie — najtrudniejszej pozycji overhead w sztuce ciężarów. Przeciwwskazany przy aktywnej patologii barku. Najpierw przywróć mobilność i stabilność pod nadzorem fizjoterapeuty.",
+      "alternative": "barbell-split-jerk"
+    },
+    {
+      "condition": "lumbar_disc_pathology_or_acute_back_pain",
+      "severity": "avoid",
+      "modification": "Olympic lifts generate huge spinal loads at high velocity, and recovery from overhead squat with load can stress the lower back. Switch to non-explosive overhead variations or strict pressing.",
+      "modificationPl": "Ćwiczenia olimpijskie generują ogromne obciążenia kręgosłupa przy wysokiej prędkości, a wstawanie z overhead squat z ciężarem obciąża dolne plecy. Przejdź na nieeksplozywne warianty overhead lub strict press.",
+      "alternative": "barbell-overhead-press"
+    },
+    {
+      "condition": "wrist_or_thoracic_mobility_limitation",
+      "severity": "avoid",
+      "modification": "Without full wrist extension and thoracic extension, the overhead squat catch position is impossible — attempting it leads to dropped bars, shoulder injury or lumbar compensation. Build mobility for 6-12 months before attempting.",
+      "modificationPl": "Bez pełnego wyprostu nadgarstków i wyprostu kręgosłupa piersiowego, pozycja catch w overhead squat jest niemożliwa — próba kończy się upuszczeniem sztangi, kontuzją barku lub kompensacją lędźwiową. Pracuj nad mobilnością 6-12 miesięcy przed próbą.",
+      "alternative": "barbell-push-jerk"
+    },
+    {
+      "condition": "knee_meniscus_or_cartilage_injury",
+      "severity": "modify",
+      "modification": "Receiving heavy load in a deep squat catches the knees in maximum flexion under high velocity. Switch to split jerk (catches in lunge, no deep knee flexion) or push press.",
+      "modificationPl": "Przyjęcie ciężaru w głębokim przysiadzie obciąża kolana w maksymalnym zgięciu przy wysokiej prędkości. Przejdź na split jerk (catch w wykroku, bez głębokiego zgięcia kolana) lub push press.",
+      "alternative": "barbell-split-jerk"
+    }
+  ],
+
+  "typical_sets_reps": "5x1 (max strength/competition) | 4-5x2 (technique) | 3-4x2-3 (power) — NEVER to failure, never with technique decay, never as a conditioning tool. Single attempts only when fresh.",
+  "calories_per_kg_per_hour": 8.0,
+
+  "media": {
+    "primary": "squat-jerk.gif",
+    "frames_extracted": [
+      "frames/squat-jerk/frame_0_start.png",
+      "frames/squat-jerk/frame_1_early.png",
+      "frames/squat-jerk/frame_2_mid.png",
+      "frames/squat-jerk/frame_3_late.png",
+      "frames/squat-jerk/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/squat-jerk",
+    "yuhonas_id": "Squat_Jerk"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:05:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa w front rack — sztanga przed barkami na wysokości obojczyków, łokcie do przodu, podświetlone barki/klatka/czworogłowe (klasyczny jerk start). Frame 1: dip — krótkie ugięcie kolan, tułów pionowo, kolana ugięte (15-20% długości nogi). Frame 2: drive/sztanga oddziela się od barków — sztanga między obojczykami a brodą w drodze w górę, eksplozywny wyprost nóg. Frame 3: catch w pełnym overhead squat — sztanga zablokowana wysoko nad głową, ramiona proste, biodra głęboko poniżej kolan, tułów pionowo, klasyczna pozycja overhead squat catch (KLUCZOWY moment odróżniający squat jerk od split jerku). Frame 4: composite/end pozycja. To squat jerk, NIE split jerk (brak rozkroku, catch w przysiadzie) i NIE push press (jest wyraźna faza pod sztangą). movement_pattern: olympic_lift. force: push (główna praca to wypchnięcie overhead z dip-drive). Trudność 10/10 — squat jerk to najtrudniejszy wariant podrzutu, wymaga perfekcyjnej overhead mobility + deep squat mobility jednocześnie, rzadko widywany nawet wśród elity (większość używa split jerk). Equipment poprawione z 'bodyweight' (błąd źródła Jahel) na 'barbell' — bez sztangi to ćwiczenie nie istnieje. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["olympic_weightlifting", "compound", "full_body", "power", "explosive", "barbell", "overhead", "overhead_squat", "elite", "advanced", "competition_lift", "triple_extension"]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "dumbbell-incline-shrug",
+  "name": "Dumbbell Incline Shrug",
+  "namePl": "Wzruszanie barkami z hantlami na ławce skośnej",
+  "aliases": ["seated incline dumbbell shrug", "incline bench shrug", "back-supported dumbbell shrug"],
+  "aliasesPl": ["szrugi z hantlami na ławce skośnej", "wzruszanie ramion na ławce skośnej z hantlami", "szrugi siedząc na ławce skośnej"],
+
+  "description": "Isolation exercise for the trapezius performed seated on an incline bench with the back supported against the backrest. Dumbbells hang at the sides and are lifted by elevating the scapulae straight upward toward the ears. Compared to standing shrugs, the back support eliminates lower-back loading, removes momentum from the legs, and the slight backward lean angle (around 60-70 degrees) shifts a portion of the work from pure upper traps toward the middle trapezius fibers. Excellent variant for strict, controlled trap hypertrophy.",
+  "descriptionPl": "Ćwiczenie izolowane na czworoboczny grzbietu wykonywane w pozycji siedzącej na ławce skośnej z plecami opartymi o oparcie. Hantle wiszą po bokach i są unoszone przez uniesienie łopatek prosto w górę w kierunku uszu. W porównaniu do wzruszania w pozycji stojącej, oparcie pleców eliminuje obciążenie odcinka lędźwiowego, usuwa pomoc z nóg i lekkie odchylenie tułowia (około 60-70 stopni) przenosi część pracy z czystego górnego kapturowego na włókna środkowe. Świetny wariant na ścisłą, kontrolowaną hipertrofię kapturowego.",
+
+  "instructions": [
+    "Set an adjustable bench to roughly a 60-70 degree incline. Sit firmly with your back, shoulders and head against the backrest.",
+    "Grab a dumbbell in each hand using a neutral grip (palms facing your thighs). Let your arms hang straight down at your sides — keep them relaxed throughout.",
+    "Brace your core gently, keep the chin slightly tucked and look forward. Feet flat on the floor for stability.",
+    "Without bending the elbows, lift both shoulders straight up toward your ears. Drive the scapulae up and slightly back so the upper traps fully contract.",
+    "At the top, pause for 1-2 seconds and squeeze the traps hard. The arms remain straight and inactive — they are just hooks holding the load.",
+    "Lower the shoulders under control all the way down until you feel a stretch in the traps at the bottom. Do not let the weights crash down.",
+    "Repeat for the prescribed number of reps. Do not rotate the shoulders forward or back — the motion is purely vertical elevation and depression of the scapulae."
+  ],
+  "instructionsPl": [
+    "Ustaw regulowaną ławkę pod kątem około 60-70 stopni. Usiądź pewnie z plecami, barkami i głową opartymi o oparcie.",
+    "Chwyć hantel w każdą dłoń chwytem neutralnym (dłonie skierowane do ud). Pozwól ramionom wisieć prosto wzdłuż boków tułowia — przez cały ruch mają pozostać rozluźnione.",
+    "Lekko napnij brzuch, broda lekko cofnięta, wzrok skierowany przed siebie. Stopy płasko na podłodze dla stabilności.",
+    "Bez zginania łokci unieś oba barki prosto w górę w kierunku uszu. Wciągnij łopatki w górę i lekko do tyłu tak, aby górny aktor kapturowego w pełni się skurczył.",
+    "Na szczycie zatrzymaj się na 1-2 sekundy i mocno spinaj kapturowy. Ramiona pozostają proste i bierne — są tylko hakami trzymającymi obciążenie.",
+    "Opuszczaj barki w sposób kontrolowany aż do dołu, gdzie poczujesz rozciągnięcie kapturowego. Nie pozwól by hantle spadły gwałtownie.",
+    "Powtórz zaplanowaną liczbę powtórzeń. Nie krąż barkami do przodu ani do tyłu — ruch jest czysto pionowy: uniesienie i opuszczenie łopatek."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_elevation",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_upper", "trapezius_middle"],
+    "secondary": ["levator_scapulae", "rhomboids"],
+    "stabilizers": ["forearm_flexors", "core", "rotator_cuff", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_upper": "P10",
+    "trapezius_middle": "P7",
+    "levator_scapulae": "S6",
+    "rhomboids": "S5",
+    "forearm_flexors": "T4",
+    "core": "T2",
+    "rotator_cuff": "T2",
+    "erector_spinae": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "incline_bench"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-shrug"],
+    "progression_to": ["barbell-shrug", "trap-bar-shrug", "behind-the-back-barbell-shrug", "snatch-grip-shrug"],
+    "alternatives": ["dumbbell-shrug", "barbell-shrug", "cable-shrug", "smith-machine-shrug", "trap-bar-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 60-70 degrees, back fully supported",
+      "Neutral grip, dumbbells hanging at sides",
+      "Arms long and relaxed — they are just hooks",
+      "Chin slightly tucked, eyes forward",
+      "Feet flat on floor for a stable base"
+    ],
+    "setup_cues_pl": [
+      "Ławka ustawiona na 60-70 stopni, plecy w pełni oparte",
+      "Chwyt neutralny, hantle wiszą wzdłuż boków",
+      "Ramiona długie i rozluźnione — tylko jak haki",
+      "Broda lekko cofnięta, wzrok przed siebie",
+      "Stopy płasko na podłodze dla stabilności"
+    ],
+    "execution_cues": [
+      "Lift the shoulders straight up to the ears",
+      "Keep elbows fully extended — do not pull with the arms",
+      "Squeeze the traps hard at the top for 1-2 seconds",
+      "Lower under control and feel the stretch at the bottom",
+      "Purely vertical motion — no shoulder rolling"
+    ],
+    "execution_cues_pl": [
+      "Unoś barki prosto w górę w stronę uszu",
+      "Łokcie wyprostowane — nie ciągnij ramionami",
+      "Mocno spinaj kapturowy na szczycie przez 1-2 sekundy",
+      "Opuszczaj kontrolowanie i czuj rozciągnięcie na dole",
+      "Ruch czysto pionowy — żadnego krążenia barkami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the shoulders forward or backward instead of straight up",
+        "faultPl": "Krążenie barkami do przodu lub do tyłu zamiast prosto w górę",
+        "cause": "Old-school myth that shoulder circles 'hit more fibres' — in fact it adds shear stress to the AC joint and reduces trap tension",
+        "causePl": "Stary mit że krążenie barkami 'lepiej angażuje włókna' — w rzeczywistości dodaje napięcia ścinającego w stawie AC i zmniejsza napięcie kapturowego",
+        "cue": "Move the scapulae straight up and straight down like an elevator, not in a circle.",
+        "cuePl": "Ruszaj łopatkami prosto w górę i prosto w dół jak windą, nie po kole."
+      },
+      {
+        "fault": "Bending the elbows and turning the lift into a partial upright row",
+        "faultPl": "Zginanie łokci i zmiana ruchu w częściowe podciąganie sztangi do brody",
+        "cause": "Load too heavy, biceps and deltoids taking over for the traps",
+        "causePl": "Zbyt duży ciężar, biceps i naramienne przejmują pracę kapturowego",
+        "cue": "Lock the elbows out. If the elbows bend, drop the weight by 20 percent.",
+        "cuePl": "Zablokuj łokcie w wyproście. Jeśli się uginają, zmniejsz ciężar o 20 procent."
+      },
+      {
+        "fault": "Insufficient range of motion at the bottom (no stretch)",
+        "faultPl": "Niepełny zakres ruchu w dolnej pozycji (brak rozciągnięcia)",
+        "cause": "Holding tension in the traps even at the bottom — never fully depressing the scapulae",
+        "causePl": "Utrzymywanie napięcia w kapturowym nawet na dole — łopatki nigdy nie zostają w pełni opuszczone",
+        "cue": "At the bottom, let the shoulders sink fully toward the floor. Feel the upper traps lengthen before the next rep.",
+        "cuePl": "Na dole pozwól barkom w pełni opaść w kierunku podłogi. Poczuj wydłużenie górnego kapturowego przed kolejnym powtórzeniem."
+      },
+      {
+        "fault": "Head jutting forward to help raise the shoulders",
+        "faultPl": "Wysuwanie głowy do przodu by pomóc unieść barki",
+        "cause": "Trying to shorten the distance between ear and shoulder using the neck instead of the trap",
+        "causePl": "Próba skrócenia odległości między uchem a barkiem ruchem szyi zamiast pracą kapturowego",
+        "cue": "Keep the head pinned to the backrest. Move the shoulders to the ears — not the ears to the shoulders.",
+        "cuePl": "Trzymaj głowę przyklejoną do oparcia. To barki mają dojść do uszu, a nie uszy do barków."
+      },
+      {
+        "fault": "Dropping the weights instead of controlling the eccentric",
+        "faultPl": "Opuszczanie hantli bez kontroli fazy negatywnej",
+        "cause": "Fatigue, ego loading, or simply not knowing that the eccentric is where most growth happens",
+        "causePl": "Zmęczenie, ego, lub niewiedza że faza negatywna jest źródłem największej hipertrofii",
+        "cue": "Lower for a 2-3 second count every rep. The traps grow on the way down too.",
+        "cuePl": "Opuszczaj przez 2-3 sekundy w każdym powtórzeniu. Kapturowy rośnie też w fazie negatywnej."
+      }
+    ],
+    "breathing": "Exhale on the way up as the shoulders rise to the ears. Inhale slowly during the eccentric as the shoulders return down. Maintain a light core brace throughout.",
+    "breathingPl": "Wydech w trakcie unoszenia barków do uszu. Powolny wdech w fazie negatywnej gdy barki wracają w dół. Utrzymuj lekkie napięcie brzucha przez cały czas."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_neck_pain_or_cervical_radiculopathy",
+      "severity": "avoid",
+      "modification": "Heavy shrugs compress the cervical spine and can aggravate nerve impingement. Avoid shrugs during acute flare-ups; clear pain and full ROM first under physiotherapy guidance before reintroducing with very light loads.",
+      "modificationPl": "Ciężkie wzruszanie barków obciąża odcinek szyjny i może nasilać uciski na korzenie nerwowe. Unikaj szrugów w fazie ostrego bólu; najpierw uzyskaj brak dolegliwości i pełen zakres ruchu pod kontrolą fizjoterapeuty, dopiero potem wracaj z bardzo małymi ciężarami.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "ac_joint_pain_or_acromioclavicular_sprain",
+      "severity": "modify",
+      "modification": "Reduce load and shorten the top range — do not jam the shoulders maximally up. Focus on slow tempo with sub-maximal contraction. Stop the lift just before AC discomfort appears.",
+      "modificationPl": "Zmniejsz obciążenie i skróć szczytowy zakres ruchu — nie wpychaj barków maksymalnie do uszu. Skup się na wolnym tempie i submaksymalnym napięciu. Zatrzymaj ruch tuż przed pojawieniem się dyskomfortu w stawie AC.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Heavy shrugs can hypertrophy the upper traps and scalenes, worsening neurovascular compression. Train with light loads and high reps, prioritise lower-trap and serratus work first.",
+      "modificationPl": "Ciężkie wzruszanie barków rozbudowuje górny kapturowy i mięśnie pochyłe, co może nasilać kompresję pęczka naczyniowo-nerwowego. Trenuj z małymi ciężarami i większą liczbą powtórzeń, a w pierwszej kolejności wzmacniaj dolny kapturowy i zębaty przedni.",
+      "alternative": "prone-y-raise"
+    },
+    {
+      "condition": "grip_or_forearm_overuse_injury",
+      "severity": "modify",
+      "modification": "Holding heavy dumbbells fatigues the grip before the traps. Use lifting straps so the traps are the limiting factor, not the forearms.",
+      "modificationPl": "Trzymanie ciężkich hantli męczy chwyt zanim zmęczy się kapturowy. Użyj pasków ściągających aby to kapturowy był ogniwem limitującym, a nie przedramiona.",
+      "alternative": "trap-bar-shrug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4-5x6-8 (strength, heavy DBs with straps) | 2-3x15-20 (endurance/pump finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-incline-shrug.gif",
+    "frames_extracted": [
+      "frames/dumbbell-incline-shrug/frame_0_start.png",
+      "frames/dumbbell-incline-shrug/frame_1_early.png",
+      "frames/dumbbell-incline-shrug/frame_2_mid.png",
+      "frames/dumbbell-incline-shrug/frame_3_late.png",
+      "frames/dumbbell-incline-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/dumbbell-incline-shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. UWAGA: zadanie opisywało wariant prone (leżąc brzuchem), ale GIF jednoznacznie pokazuje wariant SEATED na ławce skośnej (plecy oparte o oparcie pod kątem ~60-70 stopni). Trzymam się GIFa jako źródła prawdy zgodnie z zasadami projektu. Frame 0: pozycja startowa — siedzenie z oparciem, hantle wiszą po bokach na wyprostowanych ramionach, chwyt neutralny, barki opuszczone, czerwone podświetlenie na okolicy szyi/górnego kapturowego. Frame 1-2: faza koncentryczna — barki uniesione w stronę uszu, łopatki w pełnej elewacji, ramiona pozostają wyprostowane i bierne, podświetlenie kapturowego jaśniejsze (szczyt napięcia). Frame 3-4: faza ekscentryczna powrót do pozycji startowej z widocznym 'ghostem' szczytu. Łokcie wyprostowane przez cały ruch — nie ma rotacji ani podciągania jak w upright row. Klasyfikacja: izolowane, pull, bilateral, frontal plane (czysta elewacja łopatki), open kinetic chain. Primary: górny kapturowy (najmocniej, P10) + środkowy kapturowy (P7, ze względu na lekki tilt tułowia do tyłu, który zmienia wektor obciążenia w stronę włókien środkowych). Secondary: dźwigacz łopatki + równoległoboczne. Wszystkie pola PL napisane od zera, naturalna polszczyzna kulturystyczna ('kapturowy', 'szrugi', 'łopatki', 'fazy koncentryczna/ekscentryczna').",
+
+  "tags": ["bodybuilding", "back", "traps", "trapezius", "isolation", "dumbbells", "incline_bench", "upper_body", "back_supported"]
+}

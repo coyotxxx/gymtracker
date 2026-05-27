@@ -1,0 +1,207 @@
+{
+  "id": "wind-sprints",
+  "name": "Wind Sprints",
+  "namePl": "Sprinty interwałowe",
+  "aliases": ["wind sprint intervals", "short sprints", "shuttle sprints", "running sprints", "athletic sprints"],
+  "aliasesPl": ["sprinty wiatrowe", "sprinty krótkie", "biegi sprinterskie", "sprinty wahadłowe", "interwały sprinterskie", "wind sprinty"],
+
+  "description": "Wind sprints are short, all-out maximum-intensity runs covering 20-50 meters, followed by a brief active or passive recovery period, then repeated for multiple sets. A classic conditioning drill borrowed from track athletics, football, basketball and combat sports — they develop anaerobic alactic and lactic capacity, top-end speed, acceleration, sprint mechanics and mental toughness. Unlike steady-state cardio, wind sprints train the body to produce maximal force per ground contact and to recover quickly between bursts. The work:rest ratio (typically 1:2 to 1:5) determines whether the session emphasizes pure speed (long rest) or repeat sprint ability/conditioning (short rest). A staple of off-season athletic prep, fat-loss conditioning blocks and field-based HIIT sessions where no equipment is needed beyond a clear straight line.",
+  "descriptionPl": "Sprinty interwałowe (wind sprints) to krótkie biegi z maksymalną intensywnością na dystansie 20-50 metrów, po których następuje krótka przerwa aktywna lub pasywna, a następnie kolejne powtórzenia w kilku seriach. Klasyczny drill conditioningu zapożyczony z lekkoatletyki, piłki nożnej, koszykówki i sportów walki — rozwija wydolność beztlenową alaktyczną i mleczanową, prędkość szczytową, przyspieszenie, mechanikę sprintu i odporność psychiczną. W przeciwieństwie do steady-state cardio, sprinty uczą ciało generowania maksymalnej siły na każdy kontakt z podłożem i szybkiego restytuowania się między zrywami. Stosunek pracy do odpoczynku (zwykle 1:2 do 1:5) decyduje, czy sesja podkreśla czystą prędkość (długi odpoczynek) czy zdolność do powtarzanych sprintów / conditioning (krótki odpoczynek). Podstawa off-seasonu atletów, bloków redukcyjnych i terenowego HIIT tam, gdzie wystarczy prosta linia bez sprzętu.",
+
+  "instructions": [
+    "Choose a flat, non-slippery surface (track, grass, turf, asphalt) with a clear straight line of 20-50 meters. Mark start and finish.",
+    "Warm up thoroughly: 5-10 min easy jog + dynamic mobility (leg swings, A-skips, B-skips, high knees) + 2-3 build-up runs at 60/75/90% before going max effort. Cold-sprinting is a hamstring tear waiting to happen.",
+    "Start in an athletic stance (one foot back, knees soft, hips loaded, arms ready) or from a 3-point start. Brace core and exhale sharply on first push.",
+    "Drive out powerfully — first 5-10 m emphasize forward lean, low arms, long ground contact (acceleration phase). Push the floor BACK, don't pull it.",
+    "Transition to upright sprint mechanics — tall posture, knees up, arms drive front-to-back (not across body), heels recover under glutes, ball-of-foot strike directly under hips.",
+    "Run AT 100% effort through the finish line — don't decelerate before. Sprint THROUGH the line, then walk-down 5-10 m more to slow gradually.",
+    "Recover actively: walk back to start (rest:work ratio 2:1 for speed work, 3-5:1 for repeat-sprint ability). Breathe through the nose, drop heart rate.",
+    "Repeat for prescribed reps (e.g. 6-10 sprints) or sets (e.g. 4x4 with longer rest between sets). Stop if mechanics break down — bad sprints train bad patterns and injure hamstrings."
+  ],
+  "instructionsPl": [
+    "Wybierz płaską, antypoślizgową powierzchnię (bieżnia, trawa, sztuczna nawierzchnia, asfalt) z czystą prostą linią 20-50 metrów. Zaznacz start i metę.",
+    "Rozgrzej się dokładnie: 5-10 min spokojnego truchtu + mobilność dynamiczna (krążenia nóg, A-skips, B-skips, wysokie kolana) + 2-3 biegi narastające na 60/75/90% przed maksymalnym wysiłkiem. Sprint na zimno = naciągnięta dwugłowa.",
+    "Start w pozycji atletycznej (jedna stopa z tyłu, kolana miękkie, biodra załadowane, ramiona gotowe) lub ze startu 3-punktowego. Napnij brzuch i ostry wydech przy pierwszym wybiciu.",
+    "Wybij się mocno — pierwsze 5-10 m podkreślaj pochylenie do przodu, niskie ramiona, długi kontakt z podłożem (faza akceleracji). Wypychaj podłogę DO TYŁU, nie ciągnij jej.",
+    "Przejdź do mechaniki wyprostowanego sprintu — wysoka sylwetka, kolana wysoko, ramiona pracują przód-tył (nie w poprzek ciała), pięty wracają pod pośladki, lądowanie śródstopiem dokładnie pod biodrami.",
+    "Biegnij na 100% wysiłku PRZEZ linię mety — nie zwalniaj przed nią. Wbiegnij DO i ZA linię, potem dohamuj na 5-10 m, by stopniowo zwolnić.",
+    "Aktywna restytucja: marsz powrotny do startu (stosunek odpoczynek:praca 2:1 dla pracy nad prędkością, 3-5:1 dla powtarzanych sprintów). Oddychaj nosem, schodź z tętnem.",
+    "Powtarzaj zadane powtórzenia (np. 6-10 sprintów) lub serie (np. 4x4 z dłuższą przerwą między seriami). Przerwij jeśli mechanika się psuje — złe sprinty utrwalają złe wzorce i kontuzjują dwugłowe."
+  ],
+
+  "classification": {
+    "movement_pattern": "locomotion",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "hamstrings", "calves"],
+    "secondary": ["hip_flexors", "core", "anterior_tibialis", "adductors"],
+    "stabilizers": ["erector_spinae", "obliques", "gluteus_medius", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "hamstrings": "P8",
+    "calves": "P9",
+    "hip_flexors": "S7",
+    "core": "S7",
+    "anterior_tibialis": "S6",
+    "adductors": "S6",
+    "erector_spinae": "T6",
+    "obliques": "T5",
+    "gluteus_medius": "T6"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["running_shoes", "cones", "stopwatch", "resistance_parachute", "weighted_vest_light"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["jogging", "high-knees", "a-skip", "bodyweight-squat", "single-leg-balance"],
+    "progression_to": ["hill-sprints", "resisted-sprints-sled", "flying-sprints", "tempo-runs", "shuttle-sprints", "300-yard-shuttle"],
+    "alternatives": ["bike-sprints", "rowing-sprints", "high-knees-in-place", "shuttle-runs", "burpees", "battle-ropes-intervals"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Find 30-50 m of clear, flat, predictable surface — no holes, no wet patches, no curbs in the deceleration zone",
+      "Wear running shoes with grip — not trainers, not sandals; gym sneakers slip on grass",
+      "Mark start AND finish — eyeballing distance kills consistency between reps",
+      "Warm up minimum 10 min before first max sprint — cold hamstrings tear at full effort",
+      "Set the timer or use a partner to track work:rest — don't 'feel it', sprint quality dies fast"
+    ],
+    "setup_cues_pl": [
+      "Znajdź 30-50 m czystej, równej, przewidywalnej powierzchni — żadnych dziur, mokrych plam, krawężników w strefie hamowania",
+      "Załóż buty biegowe z grypem — nie sneakery, nie sandały; buty siłowe ślizgają się na trawie",
+      "Zaznacz start I metę — szacowanie dystansu na oko zabija powtarzalność serii",
+      "Rozgrzewka minimum 10 min przed pierwszym maksymalnym sprintem — zimne dwugłowe pękają na pełnym wysiłku",
+      "Ustaw stoper lub poproś partnera o kontrolę pracy:odpoczynku — nie 'na czuja', jakość sprintów ginie szybko"
+    ],
+    "execution_cues": [
+      "First 5 steps: 45° forward lean, long pushes, low arms — accelerate, don't pop up vertical",
+      "Push the floor BACK with the ball of the foot — don't reach forward with the heel",
+      "Arms drive front-to-back like pistons — hand to chin / hip-pocket, NOT crossing the midline",
+      "Knees up at top speed — thigh parallel to ground at peak knee drive",
+      "Sprint THROUGH the finish line — decelerate AFTER, never before",
+      "Breathe sharply and rhythmically — short inhale + sharp exhale per stride, no breath-holding"
+    ],
+    "execution_cues_pl": [
+      "Pierwsze 5 kroków: pochylenie 45° do przodu, długie wypchnięcia, niskie ramiona — przyspieszaj, nie prostuj się od razu",
+      "Wypychaj podłogę DO TYŁU śródstopiem — nie wyciągaj pięty do przodu",
+      "Ramiona pracują przód-tył jak tłoki — dłoń do brody / kieszeni biodra, NIE krzyżują linii środkowej",
+      "Wysokie kolana przy prędkości szczytowej — udo równolegle do podłogi w punkcie maksymalnego uniesienia",
+      "Sprintuj PRZEZ linię mety — hamuj PO, nigdy przed",
+      "Oddychaj ostro i rytmicznie — krótki wdech + ostry wydech na każdy krok, bez wstrzymywania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Standing upright immediately at the start (no acceleration lean)",
+        "faultPl": "Natychmiastowe wyprostowanie się na starcie (brak pochylenia w fazie akceleracji)",
+        "cause": "Treating sprint like a jog, weak hip extension, no understanding of acceleration mechanics",
+        "causePl": "Traktowanie sprintu jak truchtu, słabe wyprostowanie biodra, brak zrozumienia mechaniki akceleracji",
+        "cue": "First 10 m — body at 45° forward lean, like pushing a stalled car. Stand upright ONLY after 15-20 m. If you pop up immediately, you'll never hit top speed.",
+        "cuePl": "Pierwsze 10 m — ciało pod 45° pochylone do przodu, jakbyś pchał stojący samochód. Wyprostuj się DOPIERO po 15-20 m. Jeśli prostujesz się od razu, nigdy nie osiągniesz prędkości szczytowej."
+      },
+      {
+        "fault": "Arms crossing the midline of the body",
+        "faultPl": "Ramiona krzyżują linię środkową ciała",
+        "cause": "Tight chest/shoulders, no arm-drive coaching, mimicking jogging arm pattern",
+        "causePl": "Spięta klatka/barki, brak treningu pracy ramion, kopiowanie wzorca truchtu",
+        "cue": "Arms work front-to-back like pistons in a straight line — hand to chin in front, hand to hip-pocket behind. Crossing arms creates torso rotation = wasted energy.",
+        "cuePl": "Ramiona pracują przód-tył jak tłoki w linii prostej — dłoń do brody z przodu, dłoń do kieszeni biodra z tyłu. Krzyżowanie ramion tworzy rotację tułowia = strata energii."
+      },
+      {
+        "fault": "Heel striking / overstriding (foot lands ahead of hips)",
+        "faultPl": "Lądowanie na pięcie / nadmierne wykraczanie (stopa ląduje przed biodrami)",
+        "cause": "Reaching with the leg for more distance, mimicking distance-running, weak hip extensors",
+        "causePl": "Wyciąganie nogi po więcej dystansu, kopiowanie biegu długodystansowego, słabe prostowniki biodra",
+        "cue": "Foot lands DIRECTLY UNDER hips on the ball of the foot — not in front. 'Run like the ground is hot' — short, snappy contacts under your center of mass.",
+        "cuePl": "Stopa ląduje DOKŁADNIE POD biodrami na śródstopiu — nie z przodu. 'Biegnij jakby podłoga była gorąca' — krótkie, ostre kontakty pod środkiem ciężkości."
+      },
+      {
+        "fault": "Decelerating before the finish line",
+        "faultPl": "Zwalnianie przed linią mety",
+        "cause": "Mental — anticipating the end of the rep, lack of focus, fatigue from poor rest interval",
+        "causePl": "Mentalne — antycypowanie końca powtórzenia, brak skupienia, zmęczenie ze zbyt krótkiej przerwy",
+        "cue": "Pick a target 5-10 m PAST the finish line and run to THAT. Decelerate AFTER you cross the line, never before. If you have to slow early — rest longer next rep.",
+        "cuePl": "Wybierz cel 5-10 m ZA linią mety i biegnij do TAMTEGO. Hamuj PO przekroczeniu linii, nigdy przed. Jeśli musisz zwolnić wcześniej — wydłuż przerwę przed kolejnym powtórzeniem."
+      },
+      {
+        "fault": "Sprinting with broken mechanics when fatigued (form collapse)",
+        "faultPl": "Sprintowanie ze złamaną mechaniką przy zmęczeniu (rozpad formy)",
+        "cause": "Ego, pushing past quality threshold, training conditioning at expense of speed",
+        "causePl": "Ego, przekraczanie progu jakości, trenowanie conditioningu kosztem prędkości",
+        "cue": "Sprint quality > sprint quantity. When form breaks (knees collapse, posture rounds, arms flail) — STOP the set. Bad sprints train bad patterns and tear hamstrings.",
+        "cuePl": "Jakość sprintu > ilość sprintów. Gdy forma się rozpada (kolana zapadają, sylwetka zaokrąglona, ramiona machają chaotycznie) — ZAKOŃCZ serię. Złe sprinty utrwalają złe wzorce i rwą dwugłowe."
+      }
+    ],
+    "breathing": "Sharp, rhythmic breathing — short inhale + forceful exhale per stride at max intensity. NEVER hold breath during the sprint. Between reps: nasal breathing on the walk-back to lower heart rate and CO2 tolerance.",
+    "breathingPl": "Ostry, rytmiczny oddech — krótki wdech + mocny wydech na każdy krok przy maksymalnej intensywności. NIGDY nie wstrzymuj oddechu podczas sprintu. Między powtórzeniami: oddech nosem w trakcie marszu powrotnego, by obniżyć tętno i tolerancję CO2."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hamstring_strain_history_or_acute_pain",
+      "severity": "modify",
+      "modification": "Hamstrings are the #1 sprinting injury — eccentric load at top speed is extreme. Skip max sprints, work at 70-80% effort, do Nordic curls + RDLs for 4-6 weeks first. Return to full sprints only when pain-free + strong eccentric capacity restored.",
+      "modificationPl": "Dwugłowe to kontuzja #1 sprinterów — obciążenie ekscentryczne przy prędkości szczytowej jest ekstremalne. Pomiń maksymalne sprinty, pracuj na 70-80% intensywności, zrób Nordic curls + RDL przez 4-6 tygodni najpierw. Wróć do pełnych sprintów dopiero gdy bezbólowo + odbudowana zdolność ekscentryczna.",
+      "alternative": "bike-sprints"
+    },
+    {
+      "condition": "knee_pain_meniscus_or_acl_issues",
+      "severity": "modify",
+      "modification": "Acceleration and deceleration forces are huge on the knee. Skip sprints entirely until cleared. Use low-impact alternatives — bike, rowing, ski-erg sprints — that train the same energy system without joint shock.",
+      "modificationPl": "Siły akceleracji i hamowania są ogromne dla kolana. Pomiń sprinty całkowicie do uzyskania zielonego światła. Użyj alternatyw o niskim impakcie — rower, wioślarz, ski-erg sprinty — które trenują ten sam system energetyczny bez wstrząsu stawu.",
+      "alternative": "bike-sprints"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiac_disease",
+      "severity": "avoid",
+      "modification": "Max-effort sprints spike blood pressure and heart rate to peak values within seconds. Get medical clearance. Start with low-intensity steady-state cardio and graduated tempo work first.",
+      "modificationPl": "Maksymalne sprinty podbijają ciśnienie i tętno do wartości szczytowych w kilka sekund. Najpierw zielone światło od lekarza. Zacznij od niskointensywnego steady-state cardio i progresywnej pracy tempowej.",
+      "alternative": "walking-incline"
+    },
+    {
+      "condition": "achilles_tendinopathy_or_plantar_fasciitis",
+      "severity": "modify",
+      "modification": "Ball-of-foot strike at high speed massively loads the Achilles and plantar fascia. Skip sprints until pain-free. Use elliptical sprints, rowing sprints, or pool-running as alternatives during rehab.",
+      "modificationPl": "Lądowanie na śródstopiu z dużą prędkością masywnie obciąża ścięgno Achillesa i powięź podeszwową. Pomiń sprinty do ustąpienia bólu. W trakcie rehabilitacji użyj sprintów na orbitreku, wioślarzu lub w basenie.",
+      "alternative": "rowing-sprints"
+    }
+  ],
+
+  "typical_sets_reps": "6-10 x 30m at 100% effort (speed) | 8-12 x 40m with 1:3 work:rest (alactic conditioning) | 4-6 x 50m with 1:5 rest (max speed) | 10-15 x 20m repeat sprints (lactic conditioning)",
+  "calories_per_kg_per_hour": 12.0,
+
+  "media": {
+    "primary": "wind-sprints.gif",
+    "frames_extracted": [
+      "frames/wind-sprints/frame_0_start.png",
+      "frames/wind-sprints/frame_1_early.png",
+      "frames/wind-sprints/frame_2_mid.png",
+      "frames/wind-sprints/frame_3_late.png",
+      "frames/wind-sprints/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/wind-sprints"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "UWAGA: Źródłowy GIF z Jahel (sources/jahel/abs/wind-sprints.gif) przedstawia hanging knee raises na drążku (mięśnie podświetlone: abs + quadriceps + hip flexors), co jest oczywistą błędną etykietą w bazie źródłowej — 'Wind Sprints' to powszechnie znane sprinty interwałowe biegowe (track athletics). Plik został potraktowany zgodnie ze specyfikacją zadania użytkownika: ćwiczenie sklasyfikowane jako sprinty 20-50m z movement_pattern: locomotion, primary quadriceps/glutes/hamstrings/calves P8-P9, category: cardio. Frame'y zachowane w canonical/media/frames/wind-sprints/ ale NIE przedstawiają faktycznego sprintu — przy renderowaniu w aplikacji rozważyć podmianę GIF na właściwy materiał sprinterski (np. clipart bieżący biegacz). classification.movement_pattern: locomotion (bieg z miejsca na miejsce po linii prostej). force: push (każdy krok = wypchnięcie podłoża do tyłu śródstopiem). plane: sagittal (ruch wyłącznie w płaszczyźnie strzałkowej, bez rotacji). kinetic_chain: closed (stopy w cyklicznym kontakcie z podłożem). primary muscles według biomechaniki sprintu: quadriceps P9 (faza ekscentryczna lądowania + wyprost kolana w fazie wypchnięcia), glutes P9 (główny prostownik biodra, generator mocy w sprincie), calves P9 (ball-of-foot strike i triple extension stawu skokowego), hamstrings P8 (ekscentryczne hamowanie nogi wychylnej + propulsja w fazie wypchnięcia — to dlatego pękają najczęściej). difficulty: 6 (wymaga rozgrzewki, mechaniki sprintu i bazowej sprawności — początkujący ryzykują kontuzję). Wszystkie pola PL napisane od zera w polskim standardzie lekkoatletyki/conditioningu (terminologia: 'pochylenie akceleracyjne', 'A-skip', 'B-skip', 'śródstopie', 'pięta', 'pochylenie 45°', 'triple extension' — bez polonizacji nazwy własnej 'wind sprints' jako 'sprinty interwałowe' według PZLA).",
+
+  "tags": ["bodyweight", "cardio", "conditioning", "hiit", "sprint", "running", "anaerobic", "fat_loss", "athletic_performance", "no_equipment_friendly", "outdoor", "speed_training", "alactic"]
+}

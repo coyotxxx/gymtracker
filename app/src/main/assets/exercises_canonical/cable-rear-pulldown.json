@@ -1,0 +1,209 @@
+{
+  "id": "cable-rear-pulldown",
+  "name": "Cable Rear Pulldown (Behind-the-Neck Lat Pulldown)",
+  "namePl": "Przyciąganie drążka za głowę na wyciągu",
+  "aliases": ["behind the neck lat pulldown", "behind-the-neck pulldown", "BTN pulldown", "rear lat pulldown", "neck pulldown"],
+  "aliasesPl": ["ściąganie drążka za kark", "lat pulldown za głowę", "BTN pulldown", "wyciąg górny za głowę", "ściąganie wyciągu za szyję"],
+
+  "description": "Behind-the-neck variant of the cable lat pulldown performed seated on a lat pulldown machine. Instead of pulling the bar to the upper chest, you pull it DOWN BEHIND your head to the base of the neck / upper traps. This variant places greater emphasis on the upper lats, teres major, posterior deltoid, rhomboids, and mid-trapezius, but is CONTROVERSIAL due to high shoulder impingement risk. Requires excellent shoulder external rotation and overhead mobility. Use LIGHTER loads than a standard lat pulldown and avoid if any shoulder pathology is present. Many modern coaches consider it obsolete — the front lat pulldown gives 95% of the lat benefit with a fraction of the joint risk.",
+  "descriptionPl": "Wariant ściągania drążka wyciągu górnego ZA GŁOWĘ, wykonywany siedząc na maszynie do lat pulldown. Zamiast ściągać drążek do górnej części klatki — ściągasz go W DÓŁ ZA GŁOWĄ, do podstawy karku / górnych części czworobocznych. Ten wariant mocniej angażuje górne najszersze, mięsień obły większy, tylny akton naramiennego, równoległoboczne i środkowe partie czworobocznego, ale jest KONTROWERSYJNY ze względu na wysokie ryzyko konfliktu podbarkowego (impingement). Wymaga doskonałej rotacji zewnętrznej barku i mobilności nad głową. Używaj LŻEJSZYCH ciężarów niż w klasycznym lat pulldown i unikaj jeśli masz jakąkolwiek patologię barku. Wielu współczesnych trenerów uważa to ćwiczenie za przestarzałe — klasyczny lat pulldown do przodu daje 95% efektu na najszersze przy ułamku ryzyka stawowego.",
+
+  "instructions": [
+    "Sit at a lat pulldown machine with thighs locked under the pad, feet flat on the floor.",
+    "Grab the long lat bar with a WIDE OVERHAND grip (wider than shoulder-width by ~1.5x).",
+    "MOBILITY CHECK: with the bar at the top, can you comfortably bring it behind your head with arms straight? If not — DO NOT do this exercise. Switch to front pulldown.",
+    "Lean slightly forward at the hips to create clearance for the bar to pass behind the head. Keep neck neutral — do NOT crane the head forward excessively.",
+    "Start position: arms fully extended overhead, slight forward lean, lats stretched, shoulder blades pulled DOWN to engage lats.",
+    "Initiate by depressing the shoulder blades and driving elbows DOWN AND BACK behind the body.",
+    "Pull the bar DOWN BEHIND the head until it touches (or comes close to) the BASE OF THE NECK / upper trap line.",
+    "Do NOT bang the bar on cervical vertebrae — control the descent and stop just above the base of the neck.",
+    "Squeeze the upper lats, rhomboids, and mid-traps at the bottom for a brief pause.",
+    "Reverse SLOWLY — return the bar overhead with full control until full lat stretch is felt.",
+    "Use 60-70% of the weight you'd use for a standard front lat pulldown. This is NOT an ego exercise."
+  ],
+  "instructionsPl": [
+    "Usiądź na maszynie do lat pulldown z udami zablokowanymi pod podkładką, stopy płasko na podłodze.",
+    "Złap długi drążek SZEROKIM CHWYTEM NACHWYTEM (szerzej niż barki o ~1,5x).",
+    "TEST MOBILNOŚCI: z drążkiem na górze, czy możesz komfortowo przeprowadzić go za głowę z wyprostowanymi ramionami? Jeśli nie — NIE rób tego ćwiczenia. Przejdź na klasyczny pulldown do przodu.",
+    "Pochyl się lekko do przodu w biodrach by stworzyć przestrzeń dla drążka za głową. Szyja neutralna — NIE wyciągaj głowy mocno do przodu.",
+    "Pozycja startowa: ręce w pełnym wyproście nad głową, lekkie pochylenie do przodu, najszersze rozciągnięte, łopatki ściągnięte W DÓŁ.",
+    "Zacznij ruch opuszczając łopatki i napierając łokciami W DÓŁ I DO TYŁU za linię ciała.",
+    "Ściągnij drążek W DÓŁ ZA GŁOWĄ aż dotknie (lub zbliży się do) PODSTAWY KARKU / górnej linii czworobocznych.",
+    "NIE uderzaj drążkiem w kręgi szyjne — kontroluj opuszczanie i zatrzymaj tuż nad podstawą karku.",
+    "Ściśnij górne najszersze, równoległoboczne i środkowe czworoboczne na dole z krótką pauzą.",
+    "Wracaj POWOLI — pozwól drążkowi wędrować nad głowę z pełną kontrolą aż poczujesz pełne rozciągnięcie najszerszych.",
+    "Używaj 60-70% ciężaru jaki używasz w klasycznym lat pulldown do przodu. To NIE jest ćwiczenie pod ego."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "teres_major"],
+    "secondary": ["posterior_deltoid", "rhomboids", "trapezius_middle_lower", "biceps_brachii"],
+    "stabilizers": ["rotator_cuff", "core", "forearms", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "teres_major": "P8",
+    "posterior_deltoid": "S7",
+    "rhomboids": "S7",
+    "trapezius_middle_lower": "S7",
+    "biceps_brachii": "S6",
+    "rotator_cuff": "S6",
+    "forearms": "S5",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "lat_pulldown_bar", "thigh_pad"],
+    "optional": ["wrist_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["lat-pulldown", "cable-lat-pulldown-full-range-of-motion", "face-pull"],
+    "progression_to": ["wide-grip-pull-up", "behind-the-neck-pull-up"],
+    "alternatives": ["lat-pulldown", "wide-grip-lat-pulldown", "neutral-grip-lat-pulldown", "face-pull"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Wide overhand grip — 1.5x shoulder width",
+      "Thighs locked under pad, feet flat",
+      "Slight forward lean to clear head",
+      "Neck neutral, chin slightly tucked",
+      "Shoulder blades pulled DOWN before first rep"
+    ],
+    "setup_cues_pl": [
+      "Szeroki chwyt nachwytem — 1,5x szerokość barków",
+      "Uda zablokowane pod podkładką, stopy płasko",
+      "Lekkie pochylenie do przodu by zrobić miejsce dla głowy",
+      "Szyja neutralna, broda lekko schowana",
+      "Łopatki ściągnięte W DÓŁ przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN AND BACK — not 'pull the bar'",
+      "Bar to base of neck — NOT cervical spine",
+      "Light weight, strict tempo, no momentum",
+      "Slow eccentric — fight the cable on the way up",
+      "STOP if you feel ANY shoulder pinch or click"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ I DO TYŁU — nie 'ciągnij drążka'",
+      "Drążek do podstawy karku — NIE na kręgi szyjne",
+      "Lekki ciężar, ścisłe tempo, bez pędu",
+      "Powolna faza ekscentryczna — walcz z linką w górze",
+      "STOP jeśli czujesz JAKIEKOLWIEK kłucie lub trzask w barku"
+    ],
+    "common_faults": [
+      {
+        "fault": "Banging the bar on cervical spine / upper neck",
+        "faultPl": "Uderzanie drążkiem w kręgi szyjne / górną szyję",
+        "cause": "No control of descent, going too low, weight too heavy",
+        "causePl": "Brak kontroli opuszczania, ściąganie za nisko, za duży ciężar",
+        "cue": "Stop the bar at the BASE of the neck (C7/T1 level — base of skull is too high, mid-back is too low). Imagine pressing into a soft pillow.",
+        "cuePl": "Zatrzymaj drążek u PODSTAWY karku (poziom C7/T1 — podstawa czaszki to za wysoko, środek pleców to za nisko). Wyobraź sobie że dociskasz miękką poduszkę."
+      },
+      {
+        "fault": "Excessive forward head/neck flexion ('chicken neck')",
+        "faultPl": "Nadmierne pochylenie głowy/szyi do przodu (efekt 'kurzej szyi')",
+        "cause": "Trying to make space for the bar by craning the head forward",
+        "causePl": "Próba zrobienia miejsca dla drążka przez wyciągnięcie głowy do przodu",
+        "cue": "Lean from the HIPS, not the neck. Keep cervical spine neutral. If you need to crane your neck — your shoulder mobility is insufficient.",
+        "cuePl": "Pochyl się w BIODRACH, nie w szyi. Kręgosłup szyjny neutralny. Jeśli musisz wyciągać szyję — twoja mobilność barków jest niewystarczająca."
+      },
+      {
+        "fault": "Using too much weight (ego lifting)",
+        "faultPl": "Używanie za dużego ciężaru (ego)",
+        "cause": "Treating BTN like a regular lat pulldown despite higher joint stress",
+        "causePl": "Traktowanie BTN jak klasycznego lat pulldown mimo większego obciążenia stawów",
+        "cue": "Use 60-70% of your front pulldown weight. This is a controlled, strict exercise — not a max-load movement.",
+        "cuePl": "Używaj 60-70% ciężaru z klasycznego pulldown do przodu. To kontrolowane, ścisłe ćwiczenie — nie ruch pod maksymalny ciężar."
+      },
+      {
+        "fault": "Internally rotated shoulders during the pull (impingement position)",
+        "faultPl": "Wewnętrzna rotacja barków podczas ciągu (pozycja konfliktowa)",
+        "cause": "Letting elbows flare forward, poor scapular control",
+        "causePl": "Pozwalanie by łokcie wędrowały do przodu, słaba kontrola łopatek",
+        "cue": "Keep elbows pointed STRAIGHT DOWN (in the frontal plane). Externally rotate the shoulders — 'show your armpits' mentality.",
+        "cuePl": "Łokcie skierowane PROSTO W DÓŁ (w płaszczyźnie czołowej). Rotuj barki zewnętrznie — myśl 'pokaż pachy'."
+      },
+      {
+        "fault": "Bouncing out of the bottom position",
+        "faultPl": "Odbijanie z dolnej pozycji",
+        "cause": "Using momentum to break out of the deepest (most stressful) position",
+        "causePl": "Wykorzystywanie pędu do wyjścia z najgłębszej (najbardziej obciążającej) pozycji",
+        "cue": "Pause for 1 second at the base of the neck. Then concentric. No bouncing — the deep position is where injuries happen.",
+        "cuePl": "Pauza 1 sekunda u podstawy karku. Potem koncentryczna. Bez odbijania — najgłębsza pozycja to miejsce gdzie zdarzają się kontuzje."
+      }
+    ],
+    "breathing": "Inhale at the top stretch. Exhale during the pull down behind the head. Inhale on the controlled return overhead.",
+    "breathingPl": "Wdech w pozycji rozciągnięcia w górze. Wydech podczas ciągu w dół za głową. Wdech podczas kontrolowanego powrotu nad głowę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Do NOT perform this exercise. Behind-the-neck position maximally compresses the subacromial space and exacerbates impingement.",
+      "modificationPl": "NIE wykonuj tego ćwiczenia. Pozycja za głową maksymalnie ściska przestrzeń podbarkową i nasila konflikt.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Do NOT perform. The behind-the-neck position with external rotation under load is among the highest-risk positions for rotator cuff pathology.",
+      "modificationPl": "NIE wykonuj. Pozycja za głową z rotacją zewnętrzną pod obciążeniem jest jedną z najbardziej ryzykownych dla patologii stożka rotatorów.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "limited_shoulder_mobility",
+      "severity": "avoid",
+      "modification": "Insufficient shoulder external rotation and overhead mobility makes this exercise dangerous. Improve mobility first (sleeper stretch, wall slides, doorway stretches).",
+      "modificationPl": "Niewystarczająca rotacja zewnętrzna barku i mobilność nad głową czyni to ćwiczenie niebezpiecznym. Najpierw popraw mobilność (sleeper stretch, wall slides, rozciąganie w drzwiach).",
+      "alternative": "neutral-grip-lat-pulldown"
+    },
+    {
+      "condition": "cervical_spine_pathology",
+      "severity": "avoid",
+      "modification": "Disc issues, stenosis, or any cervical pathology contraindicates this exercise — risk of direct contact + forced neck flexion.",
+      "modificationPl": "Problemy z dyskami, stenoza lub jakakolwiek patologia szyjna są przeciwwskazaniem — ryzyko bezpośredniego kontaktu + wymuszone zgięcie szyi.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3 x 10-12 (light, controlled) | 3-4 x 12-15 (upper lat focus) | 2-3 x 15 (warm-up / activation pattern)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "cable-rear-pulldown.gif",
+    "frames_extracted": [
+      "frames/cable-rear-pulldown/frame_0_start.png",
+      "frames/cable-rear-pulldown/frame_1_early.png",
+      "frames/cable-rear-pulldown/frame_2_mid.png",
+      "frames/cable-rear-pulldown/frame_3_late.png",
+      "frames/cable-rear-pulldown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-rear-pulldown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Klatki potwierdzają klasyczny seated behind-the-neck lat pulldown: siedząca pozycja na ławeczce maszyny lat pulldown, uda pod podkładką, szeroki chwyt nachwytem na długim drążku. Frame 0/4 (start/end): ręce w pełnym wyproście nad głową, drążek na samej górze. Frame 2 (mid/bottom): drążek ściągnięty W DÓŁ ZA GŁOWĄ do podstawy karku, łokcie wyprowadzone na boki i lekko w dół, mocno podświetlone najszersze, tylne aktony naramiennych, równoległoboczne i środkowe czworoboczne. Frames 1/3: pozycje pośrednie. Ćwiczenie KONTROWERSYJNE — mocno omówione w contraindications (4 sztuki, w tym shoulder_impingement: avoid jak wymagano). Plane: frontal (drążek schodzi w płaszczyźnie czołowej, ręce na boki w przeciwieństwie do front pulldown gdzie jest sagital/lekko frontal). Difficulty 6 (intermediate) — wyższe niż standard lat pulldown (4) ze względu na wymóg mobilności i ryzyko kontuzji. Primary: latissimus_dorsi (P9) + teres_major (P8) — mniejsza intensywność P niż w klasycznym lat pulldown bo BTN przenosi część obciążenia na górne najszersze i tylny akton. Secondary obejmuje posterior_deltoid (charakterystyczne dla BTN), rhomboids, mid-traps, biceps. Kinetic_chain: open. Bilateral. Mechanic: compound.",
+
+  "tags": ["cable", "compound", "upper_body", "vertical_pull", "back", "lats", "teres_major", "posterior_deltoid", "behind_the_neck", "controversial", "advanced_mobility", "lat_width", "seated"]
+}

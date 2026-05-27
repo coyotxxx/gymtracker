@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-reverse-preacher-curl",
+  "name": "Dumbbell Reverse Preacher Curl",
+  "namePl": "Reverse curl z hantlami na modlitewniku",
+  "aliases": ["pronated dumbbell preacher curl", "overhand dumbbell preacher curl", "reverse-grip dumbbell preacher curl", "two-dumbbell reverse preacher curl"],
+  "aliasesPl": ["uginanie nachwytem z hantlami na modlitewniku", "reverse curl preacher z hantlami", "uginanie ramion nachwytem hantlami na ławce modlitewnika", "brachialis curl na modlitewniku z hantlami", "uginanie nadgarstkami w dół z hantlami na modlitewniku"],
+
+  "description": "Isolation exercise for the brachialis, brachioradialis and wrist extensors performed at a preacher bench with two dumbbells held in a pronated (overhand) grip. Both arms work simultaneously and bilaterally. Compared to the barbell version, dumbbells allow the wrists to find their own natural angle and let each arm work through its own range — useful when the lifter has wrist asymmetries or lateral elbow sensitivity. The preacher pad locks the upper arms in front of the torso, eliminating shoulder swing and forcing every rep to start from a deep stretch under load. The pronated grip removes the biceps brachii from its strong supinated leverage and dumps mechanical demand onto the brachialis (sitting underneath the biceps) and the brachioradialis. A specialist movement for upper-arm thickness and forearm strength.",
+  "descriptionPl": "Ćwiczenie izolowane na mięsień ramienny (brachialis), ramienno-promieniowy (brachioradialis) i prostowniki nadgarstka, wykonywane na ławce modlitewnika z dwoma hantlami trzymanymi nachwytem (chwyt pronowany — kostki w górze). Oba ramiona pracują równocześnie. W porównaniu do wariantu ze sztangą, hantle pozwalają nadgarstkom znaleźć naturalny kąt, a każde ramię pracuje w swoim własnym zakresie — przydatne, gdy ćwiczący ma asymetrię nadgarstków albo wrażliwe boczne nadkłykcie. Pad modlitewnika unieruchamia ramiona z przodu tułowia, eliminuje bujanie barków i wymusza start każdego powtórzenia z głębokiego rozciągnięcia pod obciążeniem. Chwyt nachwytem wyłącza biceps z jego silnej dźwigni supinacyjnej i przerzuca pracę na mięsień ramienny (leży pod bicepsem) oraz ramienno-promieniowy. Specjalistyczny ruch budujący grubość ramienia i siłę przedramion.",
+
+  "instructions": [
+    "Set up the preacher bench so the top of the pad sits in your armpits and your chest is firmly against the front of the pad.",
+    "Grab a dumbbell in each hand using a pronated (overhand, knuckles up) grip. Have a partner hand them to you if heavy.",
+    "Sit down and lay both upper arms flat on the pad, shoulders pulled down and away from your ears. Keep wrists locked straight.",
+    "Start from the bottom: arms almost fully extended (stop 5-10° short of full lockout to keep tension on the tissues).",
+    "Curl both dumbbells up simultaneously by bending the elbows. Drive the knuckles toward the ceiling, not the dumbbells toward your face.",
+    "Stop when forearms reach near-vertical and the brachialis is fully shortened. Pause and squeeze for one count at the top.",
+    "Lower both dumbbells over 2-3 seconds back to the stretched position. Upper arms stay glued to the pad the entire time.",
+    "Do not bounce out of the bottom and do not let either dumbbell yank your elbow into hyperextension. Each rep is a controlled curl, not a swing."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę modlitewnika tak, by górna krawędź padu mieściła się pod pachami, a klatka piersiowa dotykała przedniej części padu.",
+    "Złap po hantlu w każdą rękę chwytem nachwytem (kostki w górze). Poproś partnera o podanie, jeśli ciężkie.",
+    "Usiądź i połóż oba ramiona płasko na padzie, barki ściągnięte w dół (z dala od uszu). Nadgarstki zablokowane prosto.",
+    "Zacznij z dołu: łokcie prawie w pełnym wyproście (zatrzymaj się 5-10° przed pełnym wyprostem, by utrzymać napięcie w mięśniach).",
+    "Uginaj oba hantle równocześnie poprzez zginanie łokci. Prowadź kostki w stronę sufitu, a nie hantle w stronę twarzy.",
+    "Zakończ ruch, gdy przedramiona dotrą do pionu, a brachialis będzie w pełnym skurczu. Zatrzymaj się i mocno spinaj w górze.",
+    "Opuszczaj oba hantle przez 2-3 sekundy z powrotem do pozycji rozciągniętej. Ramiona ponad łokciem cały czas przyklejone do padu.",
+    "Nie odbijaj hantli z dolnej pozycji i nie pozwól, by którykolwiek hantel wyrwał łokieć w przeprost. Każde powtórzenie to kontrolowany curl, nie zamach."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis"],
+    "secondary": ["biceps_brachii", "forearm_extensors"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "upper_trapezius", "core"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "brachioradialis": "P9",
+    "biceps_brachii": "S4",
+    "forearm_extensors": "S7",
+    "forearm_flexors": "T3",
+    "anterior_deltoid": "T2",
+    "upper_trapezius": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "preacher_bench"],
+    "optional": ["wrist_wraps", "fat_grips", "spotter"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-curl", "dumbbell-reverse-curl", "dumbbell-preacher-curl"],
+    "progression_to": ["barbell-reverse-preacher-curl", "ez-bar-reverse-preacher-curl", "zottman-preacher-curl", "cable-reverse-preacher-curl"],
+    "alternatives": ["barbell-reverse-preacher-curl", "ez-bar-reverse-preacher-curl", "cable-reverse-preacher-curl", "dumbbell-reverse-curl", "hammer-preacher-curl", "cable-one-arm-reverse-preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Armpits on top of the pad, chest flat against the front",
+      "Both upper arms fully on the pad — no air gap under the triceps",
+      "Pronated (knuckles up) grip, dumbbells aligned with shoulders",
+      "Shoulders pulled down, neck long",
+      "Wrists locked straight before you take the load"
+    ],
+    "setup_cues_pl": [
+      "Pachy na szczycie padu, klatka piersiowa płasko z przodu",
+      "Oba ramiona ponad łokciem na padzie — żadnej przerwy powietrznej pod tricepsem",
+      "Chwyt nachwytem (kostki w górze), hantle w linii barków",
+      "Barki ściągnięte w dół, szyja długa",
+      "Nadgarstki zablokowane prosto zanim weźmiesz ciężar"
+    ],
+    "execution_cues": [
+      "Both arms move together — same speed, same range",
+      "Drive the knuckles up toward the ceiling, not the dumbbells toward your chin",
+      "Keep wrists rigid — no curl-under at the top",
+      "Feel the squeeze deep in the upper forearm and outer arm",
+      "Lower slowly and stop just short of full lockout — never let the dumbbell drop"
+    ],
+    "execution_cues_pl": [
+      "Oba ramiona pracują razem — ta sama prędkość, ten sam zakres",
+      "Prowadź kostki w górę do sufitu, a nie hantle do brody",
+      "Nadgarstki sztywne — nie zaginaj ich w górnej pozycji",
+      "Czuj skurcz głęboko w górnej części przedramienia i bocznej części ramienia",
+      "Opuszczaj wolno i zatrzymaj się tuż przed pełnym wyprostem — nigdy nie pozwól hantlowi spaść"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrists collapse (knuckles drop) under load",
+        "faultPl": "Opadanie nadgarstków pod ciężarem (kostki spadają w dół)",
+        "cause": "Weak wrist extensors and too heavy a dumbbell — the head of the dumbbell rolls the wrist into flexion",
+        "causePl": "Słabe prostowniki nadgarstka i zbyt ciężki hantel — łeb hantla rolluje nadgarstek w zgięcie",
+        "cue": "Cut the weight by 30-40%. Cue 'knuckles to ceiling' on every rep. Add direct wrist-extensor work.",
+        "cuePl": "Zmniejsz ciężar o 30-40%. Powtarzaj sobie 'kostki do sufitu' przy każdym powtórzeniu. Dodaj bezpośrednią pracę prostowników nadgarstka."
+      },
+      {
+        "fault": "Hyperextending the elbows at the bottom",
+        "faultPl": "Przeprost łokci w pozycji dolnej",
+        "cause": "Letting the dumbbells free-fall to lockout — the pad acts as a fulcrum that yanks the elbow joint",
+        "causePl": "Pozwolenie na swobodny opad hantli do pełnego wyprostu — pad działa jak punkt podparcia, który szarpie staw łokciowy",
+        "cue": "Stop 5-10° short of full extension. Treat the eccentric like the lowering phase of a squat — controlled all the way.",
+        "cuePl": "Zatrzymaj się 5-10° przed pełnym wyprostem. Traktuj fazę negatywną jak opuszczanie w przysiadzie — kontrolowana do końca."
+      },
+      {
+        "fault": "Asymmetric reps — one arm finishes higher or faster than the other",
+        "faultPl": "Asymetryczne powtórzenia — jedna ręka kończy wyżej lub szybciej niż druga",
+        "cause": "Strength imbalance between arms, or one elbow lifts off the pad to compensate when brachialis fatigues",
+        "causePl": "Asymetria siły między ramionami, lub jeden łokieć unosi się z padu, by skompensować zmęczenie brachialis",
+        "cue": "Match the slower arm. If the difference is large, do unilateral reverse preacher curls first to even out.",
+        "cuePl": "Dopasuj się do wolniejszej ręki. Jeśli różnica jest duża, najpierw rób jednorącz reverse preacher curls, by wyrównać."
+      },
+      {
+        "fault": "Upper arms lift off the pad on the concentric",
+        "faultPl": "Ramiona ponad łokciem unoszą się z padu w fazie koncentrycznej",
+        "cause": "Cheating with shoulder flexion when brachialis fails — typically last 2-3 reps of a heavy set",
+        "causePl": "Oszukiwanie zgięciem barków, gdy brachialis odmawia — zwykle ostatnie 2-3 powtórzenia ciężkiej serii",
+        "cue": "Drop the weight to a load you can finish strict. Have a partner press lightly on top of your elbows.",
+        "cuePl": "Zmniejsz ciężar do takiego, który dokończysz ściśle. Partner niech lekko dociska wierzch twoich łokci."
+      },
+      {
+        "fault": "Cutting the bottom range to dodge the stretch",
+        "faultPl": "Skracanie dolnej fazy ruchu, by uniknąć rozciągnięcia",
+        "cause": "Brachialis is weak in the lengthened position; lifter starts each rep from a half-bent elbow",
+        "causePl": "Brachialis jest słaby w pozycji rozciągniętej; ćwiczący zaczyna każde powtórzenie ze zgiętego łokcia",
+        "cue": "Lower until the elbow is almost straight every rep. Full ROM beats heavy partials for brachialis hypertrophy.",
+        "cuePl": "Opuszczaj aż łokieć będzie prawie wyprostowany przy każdym powtórzeniu. Pełny zakres ruchu bije ciężkie partials w budowie brachialis."
+      }
+    ],
+    "breathing": "Inhale before the eccentric, hold a light brace during the lower. Exhale on the curl up. Do not Valsalva — the seated position with chest against the pad already restricts breathing.",
+    "breathingPl": "Wdech przed fazą ekscentryczną, lekkie napięcie brzucha podczas opuszczania. Wydech w fazie koncentrycznej (unoszenie). Nie używaj manewru Valsalvy — pozycja siedząca z klatką dociśniętą do padu i tak ogranicza oddychanie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "avoid",
+      "modification": "Reverse curls are the most provocative movement for lateral epicondyle tendinopathy. Stop completely until pain-free, then return with light wrist-extensor isometrics first. Dumbbells are slightly more forgiving than barbell (free wrist angle), but still highly provocative.",
+      "modificationPl": "Reverse curls to najbardziej prowokujący ruch dla zapalenia nadkłykcia bocznego (łokieć tenisisty). Całkowicie odstaw aż do ustąpienia bólu, potem wróć najpierw z lekkimi izometriami prostowników nadgarstka. Hantle są nieco mniej wymagające niż sztanga (swobodny kąt nadgarstka), ale nadal mocno prowokują.",
+      "alternative": "dumbbell-hammer-curl"
+    },
+    {
+      "condition": "wrist_extensor_tendinopathy",
+      "severity": "modify",
+      "modification": "Dumbbells let the wrist find a natural angle, which is friendlier than a straight bar — keep using dumbbells but cut load by 40% and bump reps to 15-20. Add wrist-extensor isometric holds before the working set.",
+      "modificationPl": "Hantle pozwalają nadgarstkowi znaleźć naturalny kąt, co jest łagodniejsze niż prosta sztanga — pozostań przy hantlach, ale zmniejsz ciężar o 40% i zwiększ liczbę powtórzeń do 15-20. Dodaj izometryczne trzymania prostowników nadgarstka przed serią roboczą.",
+      "alternative": "cable-reverse-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "caution",
+      "modification": "Stretched bottom position with pronated grip loads the distal biceps tendon eccentrically. Start with reduced ROM (avoid full elbow extension), light loads, and progress gradually over weeks.",
+      "modificationPl": "Pozycja rozciągnięta na dole z chwytem nachwytem obciąża ścięgno dystalne bicepsa ekscentrycznie. Zacznij od ograniczonego zakresu (unikaj pełnego wyprostu łokcia), z lekkimi ciężarami, i progresuj stopniowo przez wiele tygodni.",
+      "alternative": "hammer-preacher-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Dumbbells already allow natural wrist alignment (advantage over barbell). If pain persists at full pronation, switch to hammer-grip (neutral) or use wrist wraps for support.",
+      "modificationPl": "Hantle już pozwalają na naturalne ustawienie nadgarstka (przewaga nad sztangą). Jeśli ból się utrzymuje przy pełnej pronacji, przejdź na chwyt młotkowy (neutralny) lub użyj usztywniaczy dla wsparcia.",
+      "alternative": "hammer-preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy — best for brachialis) | 3x8-10 (strength) | 2-3x15-20 (endurance / forearm pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-reverse-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-reverse-preacher-curl/frame_0_start.png",
+      "frames/dumbbell-reverse-preacher-curl/frame_1_early.png",
+      "frames/dumbbell-reverse-preacher-curl/frame_2_mid.png",
+      "frames/dumbbell-reverse-preacher-curl/frame_3_late.png",
+      "frames/dumbbell-reverse-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-reverse-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24",
+  "verification_notes": "Obejrzałem wszystkie 5 wyciągniętych klatek z GIFa jahel. Frame 0 (start): ćwiczący siedzi na ławce modlitewnika z klasycznym pionowym padem, oba ramiona ponad łokciem leżą na padzie, oba hantle wiszą w pełnym wyproście łokci tuż nad podłogą, chwyt nachwytem (pronated — kostki w górze) na obu rękach, dłonie zwrócone w dół. Frame 1 (early): hantle w połowie drogi w górę, łokcie ugięte ~90°, ramiona nieruchome na padzie. Frame 2 (mid): pełna pozycja szczytowa, oba hantle na wysokości barków, ich łby przy klatce piersiowej, łokcie maksymalnie ugięte, nadgarstki proste (kostki w górze). Frame 3 (late) i Frame 4 (end): powrót do pełnego wyprostu, widoczny 'ghost' fazy szczytowej powyżej. Bilateral — oba ramiona pracują równocześnie, ten sam zakres, ta sama prędkość. Tułów i nogi nieruchome przez cały ruch. Czerwonym kolorem podświetlone: brachialis (środek górnej części ramienia, pod bicepsem, widoczny od strony bocznej blisko łokcia), brachioradialis (góra przedramienia od strony promieniowej), oraz prostowniki przedramienia (carpi radialis — pasmo wzdłuż grzbietu przedramienia). Biceps brachii NIE jest mocno zaznaczony — pełna zgodność z biomechaniką reverse curl (pronacja wyłącza bicepsa z optymalnej dźwigni). Identyfikacja jednoznaczna: Dumbbell Reverse Preacher Curl, bilateralny, klasyczny modlitewnik. Wszystkie pola PL napisane od zera w standardzie polskiego fitnessu (reverse curl, modlitewnik, nachwyt, brachialis, brachioradialis bez tłumaczenia — to standardowe terminy w polskiej kulturystyce).",
+
+  "tags": ["bodybuilding", "arms", "brachialis", "brachioradialis", "forearms", "isolation", "dumbbells", "preacher_bench", "reverse_grip", "upper_body", "specialist", "bilateral"]
+}

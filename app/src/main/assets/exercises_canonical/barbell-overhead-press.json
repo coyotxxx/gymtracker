@@ -1,0 +1,203 @@
+{
+  "id": "barbell-overhead-press",
+  "name": "Barbell Overhead Press (Standing)",
+  "namePl": "Wyciskanie sztangi nad głowę (stojąc)",
+  "aliases": ["military press", "standing press", "barbell OHP", "strict press", "shoulder press"],
+  "aliasesPl": ["military press", "wyciskanie nad głowę", "wyciskanie żołnierskie", "OHP", "barki ze sztangą"],
+
+  "description": "Vertical pressing king. Bilateral compound movement performed standing, pressing a barbell from the front rack (clavicle level) to a fully locked-out overhead position. Builds deltoid mass, triceps, and demands full-body bracing (core + glutes). Distinct from push press — no leg drive allowed (strict press).",
+  "descriptionPl": "Król pionowego wyciskania. Dwustronny ruch wielostawowy wykonywany stojąc — wyciskanie sztangi z pozycji front rack (na klatce, blisko obojczyków) do pełnego lock-out nad głową. Buduje masę aktonów, tricepsów i wymaga pełnociałowego napięcia (brzuch + pośladki). Różny od push press — bez napędu z nóg (strict press).",
+
+  "instructions": [
+    "Set the bar in a rack at upper-chest height. Grip slightly wider than shoulder-width, palms facing up.",
+    "Unrack: position bar on front delts (front rack), elbows just below the bar, wrists straight.",
+    "Step back, feet hip-width to shoulder-width apart. Brace core, glutes, and quads HARD (full-body tension).",
+    "Take a big breath, brace, and press the bar straight up. As the bar passes the forehead, push your head 'through the window' (slight forward shift).",
+    "Lock out arms overhead — biceps near ears, bar directly over mid-foot when viewed from the side.",
+    "Lower with control to the starting position (front rack). Bar path is straight up and down.",
+    "DO NOT use leg drive (that's a push press, not a strict press). Stay locked through hips and knees.",
+    "Exhale at the top of the press."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Chwyt nieco szerzej niż na szerokość barków, dłonie w supinacji (do góry).",
+    "Wyciągnij ze stojaka: ustaw gryf na przednich aktonach (front rack), łokcie tuż pod gryfem, nadgarstki proste.",
+    "Cofnij się, stopy na szerokość bioder do barków. Napnij brzuch, pośladki i czworogłowe MOCNO (napięcie całego ciała).",
+    "Nabierz głęboki oddech, napięcie, wyciśnij gryf prosto w górę. Gdy gryf mija czoło, wepchnij głowę 'przez okno' (lekkie przesunięcie do przodu).",
+    "Lock-out ramion nad głową — bicepsy przy uszach, gryf bezpośrednio nad środkiem stóp z boku.",
+    "Opuszczaj kontrolowanym ruchem do pozycji startowej (front rack). Ścieżka gryfu prosto w górę i w dół.",
+    "NIE używaj napędu z nóg (to push press, nie strict press). Biodra i kolana zablokowane.",
+    "Wydech na szczycie wyciskania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "triceps"],
+    "secondary": ["upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "quadriceps", "rotator_cuff", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P8",
+    "triceps": "P8",
+    "upper_chest": "S5",
+    "trapezius": "S5",
+    "core": "S8",
+    "glutes": "S6",
+    "quadriceps": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack_or_squat_rack"],
+    "optional": ["belt", "wrist_wraps", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["dumbbell-shoulder-press", "seated-barbell-overhead-press", "landmine-press"],
+    "progression_to": ["push-press", "split-jerk", "z-press", "behind-the-neck-press", "single-arm-overhead-press"],
+    "alternatives": ["dumbbell-standing-overhead-press", "seated-barbell-overhead-press", "machine-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on front delts, elbows just below bar",
+      "Wrists straight (not extended)",
+      "Feet hip- to shoulder-width",
+      "Squeeze glutes, brace core HARD",
+      "Eyes forward, not down"
+    ],
+    "setup_cues_pl": [
+      "Gryf na przednich aktonach, łokcie tuż pod gryfem",
+      "Nadgarstki proste (nie wygięte)",
+      "Stopy na szerokość bioder do barków",
+      "Ściśnij pośladki, napnij brzuch MOCNO",
+      "Wzrok do przodu, nie w dół"
+    ],
+    "execution_cues": [
+      "Press straight up, NOT around the head",
+      "Head 'through the window' as the bar passes",
+      "Finish with biceps by ears",
+      "Bar over mid-foot at lockout (side view)",
+      "Glutes and quads locked — NO leg drive"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę, NIE wokół głowy",
+      "Głowa 'przez okno' gdy gryf przechodzi",
+      "Zakończ bicepsami przy uszach",
+      "Gryf nad środkiem stóp w lock-out (widok boczny)",
+      "Pośladki i czworogłowe zablokowane — BEZ napędu nóg"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning back excessively (lumbar hyperextension)",
+        "faultPl": "Nadmierne odchylanie do tyłu (przeprost lędźwiowy)",
+        "cause": "Weak core, weight too heavy, lack of glute engagement",
+        "causePl": "Słaby brzuch, zbyt duży ciężar, brak napięcia pośladków",
+        "cue": "Squeeze glutes harder. Ribs DOWN. Reduce weight if back keeps arching.",
+        "cuePl": "Mocniej ściśnij pośladki. Żebra W DÓŁ. Zmniejsz ciężar jeśli plecy ciągle się odginają."
+      },
+      {
+        "fault": "Pressing forward (bar drifts away from face)",
+        "faultPl": "Wyciskanie do przodu (gryf oddala się od twarzy)",
+        "cause": "Avoiding hitting the face — never properly moved head through the window",
+        "causePl": "Unikanie uderzenia w twarz — nigdy poprawnie nie przesunięto głowy 'przez okno'",
+        "cue": "PUSH the head forward as the bar passes nose. Practice with empty bar first.",
+        "cuePl": "Wepchnij głowę do przodu gdy gryf mija nos. Trenuj najpierw z pustym gryfem."
+      },
+      {
+        "fault": "Using leg drive (push press style)",
+        "faultPl": "Używanie napędu z nóg (styl push press)",
+        "cause": "Trying to lift heavier than strict-press capacity",
+        "causePl": "Próba wyciśnięcia więcej niż pozwala strict press",
+        "cue": "Glutes and quads LOCKED. If you can't lift it without leg drive, lower the weight.",
+        "cuePl": "Pośladki i czworogłowe ZABLOKOWANE. Jeśli nie wyciskasz bez napędu nóg — zmniejsz ciężar."
+      },
+      {
+        "fault": "Wrist extended (bar in fingers, not palm)",
+        "faultPl": "Wygięty nadgarstek (gryf w palcach, nie w dłoni)",
+        "cause": "Improper grip, weak wrists, or elbow position too low",
+        "causePl": "Niepoprawny chwyt, słabe nadgarstki, lub łokcie za nisko",
+        "cue": "Bar in palm heel. Wrist NEUTRAL. Use wraps if necessary.",
+        "cuePl": "Gryf w podstawie dłoni. Nadgarstek NEUTRALNY. Użyj wraps jeśli trzeba."
+      },
+      {
+        "fault": "Incomplete lockout (biceps not by ears)",
+        "faultPl": "Niepełen lock-out (bicepsy nie przy uszach)",
+        "cause": "Poor overhead mobility (thoracic/shoulder), weak triceps",
+        "causePl": "Słaba mobilność overhead (piersiowa/bark), słabe tricepsy",
+        "cue": "Work on thoracic extension drills + overhead mobility. Practice with light weight to full lockout.",
+        "cuePl": "Pracuj nad ekstensją piersiową + mobilnością overhead. Trenuj z lekkim ciężarem do pełnego lock-out."
+      }
+    ],
+    "breathing": "Inhale and brace HARD before unracking. Hold throughout the press. Exhale at lockout. The brace is more important than in bench press because of standing posture.",
+    "breathingPl": "Wdech i mocne napięcie przed wyciągnięciem ze stojaka. Trzymaj przez wyciskanie. Wydech w lock-out. Napięcie jest ważniejsze niż w bench press z powodu pozycji stojącej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't go below clavicle), or switch to landmine press (angled, more shoulder-friendly).",
+      "modificationPl": "Zmniejsz ROM (nie schodź poniżej obojczyka), lub przejdź na landmine press (kątowo, bardziej przyjazne dla barku).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work thoracic/shoulder mobility separately. Use landmine press until you can fully lock out overhead.",
+      "modificationPl": "Pracuj osobno nad mobilnością piersiową/barku. Używaj landmine press do czasu pełnego lock-out overhead.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to seated overhead press (back supported) until pain resolves.",
+      "modificationPl": "Przejdź na seated overhead press (oparte plecy) do ustąpienia bólu.",
+      "alternative": "seated-barbell-overhead-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid heavy overhead pressing until cleared by PT. Resume with high-rep, light-weight machine work.",
+      "modificationPl": "Unikaj ciężkiego wyciskania overhead do zgody fizjoterapeuty. Wróć przez wysokopowtórzeniowe lekkie maszyny.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "5x5 (strength) | 3-5x3-5 (max strength) | 3-4x6-10 (hypertrophy)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-overhead-press.gif",
+    "frames_extracted": [
+      "frames/barbell-overhead-press/frame_0_start.png",
+      "frames/barbell-overhead-press/frame_1_early.png",
+      "frames/barbell-overhead-press/frame_2_mid.png",
+      "frames/barbell-overhead-press/frame_3_late.png",
+      "frames/barbell-overhead-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/barbell-standing-close-grip-military-press",
+    "yuhonas_id": "Standing_Military_Press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:12:00Z",
+  "verification_notes": "Frame 0: pozycja startowa front rack, sztanga na przednich aktonach, postawa stojąca z napięciem. Frame 2: pełen lock-out nad głową, bicepsy przy uszach. Klasyczny standing barbell military press / OHP. Close grip (jahel slug 'close-grip-military-press') — ale to standard grip dla OHP (slightly wider than shoulders). Przednie delty + tricepsy + lateralne delty podświetlone. Nie ma napędu z nóg (strict press). PL nazwa = 'Wyciskanie sztangi nad głowę (stojąc)' — standard PL.",
+
+  "tags": ["powerlifting", "olympic_weightlifting", "compound_king", "upper_body", "vertical_push", "strength_fundamental", "barbell", "shoulders"]
+}

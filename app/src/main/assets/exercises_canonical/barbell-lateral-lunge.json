@@ -1,0 +1,207 @@
+{
+  "id": "barbell-lateral-lunge",
+  "name": "Barbell Lateral Lunge",
+  "namePl": "Wykrok boczny ze sztangą",
+  "aliases": ["barbell side lunge", "barbell lateral squat", "side-to-side barbell lunge", "back-loaded lateral lunge"],
+  "aliasesPl": ["wykrok boczny ze sztangą na karku", "boczny wykrok barbell", "wykrok w bok ze sztangą", "side lunge ze sztangą"],
+
+  "description": "Unilateral lower-body compound exercise in the frontal plane. From a wide stance with the barbell racked on the upper traps (as in a back squat), the lifter shifts bodyweight onto one leg by bending that knee to roughly 90° while keeping the opposite leg straight, hip hinged back so the chest stays up. Strongly trains the adductors (inner thigh) of the bent leg in a lengthened position, alongside glutes (medius/maximus) and quadriceps. Loading is frontal — different demands than sagittal lunges — which exposes hip mobility gaps, ankle restrictions and lateral-chain weakness. Excellent transfer to sports requiring side cuts and change of direction.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała w płaszczyźnie czołowej. Z szerokiej pozycji wyjściowej, ze sztangą opartą na górnej części trapezów (jak w przysiadzie tylnym), trenujący przenosi ciężar ciała na jedną nogę zginając jej kolano do około 90°, druga noga pozostaje wyprostowana, a biodra cofają się w hinge'u, dzięki czemu klatka pozostaje wysoko. Mocno angażuje przywodziciele (wewnętrzną stronę uda) zginanej nogi w pozycji wydłużonej, a także pośladki (średni i wielki) oraz czworogłowe. Obciążenie w płaszczyźnie czołowej — inne wymagania niż przy klasycznych wykrokach strzałkowych — ujawnia braki mobilności bioder, ograniczenia kostek i słabość taśmy bocznej. Świetnie przekłada się na sporty wymagające zmian kierunku i pracy bocznej.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load with light to moderate weight (start lighter than for sagittal lunges) and secure with collars.",
+    "Step under the bar and place it across your upper traps. Grip slightly wider than shoulder-width, elbows down, chest up.",
+    "Unrack the bar by extending your legs. Take two controlled steps back into open space.",
+    "Set your feet in a wide stance — roughly 1.5 to 2 times shoulder-width. Toes pointed straight forward or slightly outward (10-20°), both feet identical.",
+    "Brace your core, draw shoulder blades back, look forward. Take a deep breath and hold (Valsalva).",
+    "Shift your bodyweight to one side by pushing your hips back and bending that knee. Keep the opposite leg straight and the foot flat — both heels stay glued to the floor.",
+    "Descend until the working thigh is approximately parallel to the floor (knee around 90°). The chest hinges forward over the bent thigh; the back stays flat and the bar tracks roughly over the bent foot.",
+    "The straight leg is extended sideways with the inner thigh stretched — you should feel the adductor lengthen.",
+    "Drive back up by pushing through the heel and mid-foot of the bent leg. Squeeze the glute and bring the hips back to center, returning to the wide stance.",
+    "Complete all reps on one side, then switch — or alternate side-to-side each rep, depending on programming."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj lekkim lub średnim obciążeniem (zacznij lżej niż w klasycznych wykrokach strzałkowych) i zabezpiecz zaciskami.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów. Chwyt nieco szerszy niż barki, łokcie w dół, klatka w górze.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się dwoma kontrolowanymi krokami na wolną przestrzeń.",
+    "Ustaw stopy szeroko — około 1,5 do 2 szerokości barków. Palce skierowane prosto przed siebie lub lekko na zewnątrz (10-20°), obie stopy identycznie.",
+    "Napnij brzuch, ściągnij łopatki w tył, wzrok prosto. Weź głęboki wdech i przytrzymaj (Valsalva).",
+    "Przenieś ciężar ciała na jedną stronę, cofając biodra w tył i zginając kolano tej nogi. Druga noga pozostaje wyprostowana, stopa płasko na podłodze — obie pięty cały czas przylegają do ziemi.",
+    "Schodź aż udo pracującej nogi będzie mniej więcej równoległe do podłogi (kolano około 90°). Klatka pochyla się w przód nad zgiętym udem, plecy pozostają płaskie, gryf śledzi mniej więcej linię nad stopą pracującej nogi.",
+    "Wyprostowana noga jest wyciągnięta w bok, a jej wewnętrzna strona uda jest rozciągnięta — powinieneś czuć pracę przywodziciela.",
+    "Wypchnij się w górę przez piętę i środek stopy pracującej nogi. Ściśnij pośladek i sprowadź biodra z powrotem na środek, wracając do szerokiej pozycji wyjściowej.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę i zmień — lub naprzemiennie strona-strona w każdym powtórzeniu, zależnie od programu treningowego."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "quadriceps", "adductors"],
+    "secondary": ["hamstrings", "gluteus_medius"],
+    "stabilizers": ["core", "calves", "erector_spinae", "hip_stabilizers"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "quadriceps": "P8",
+    "adductors": "P9",
+    "hamstrings": "S6",
+    "gluteus_medius": "S7",
+    "core": "S6",
+    "erector_spinae": "S5",
+    "calves": "T4",
+    "hip_stabilizers": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["belt", "lifting_shoes", "collars"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-lateral-lunge", "goblet-lateral-lunge", "dumbbell-lateral-lunge", "barbell-back-squat"],
+    "progression_to": ["cossack-squat", "barbell-cossack-squat", "skater-squat"],
+    "alternatives": ["dumbbell-lateral-lunge", "goblet-lateral-lunge", "cossack-squat", "barbell-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps — same setup as back squat",
+      "Feet wide — 1.5 to 2 shoulder widths apart, toes straight or slightly out",
+      "Both heels glued to the floor throughout the rep",
+      "Chest up, core braced, shoulder blades retracted",
+      "Pick a focal point at eye level — keeps the head neutral"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na górnej części trapezów — to samo ustawienie co w przysiadzie tylnym",
+      "Stopy szeroko — 1,5 do 2 szerokości barków, palce prosto lub lekko na zewnątrz",
+      "Obie pięty przylegają do podłogi przez cały ruch",
+      "Klatka w górze, brzuch napięty, łopatki ściągnięte",
+      "Ustal punkt skupienia wzroku — pomaga utrzymać neutralną pozycję głowy"
+    ],
+    "execution_cues": [
+      "Hips back first — sit into the working hip like a single-leg squat",
+      "Knee tracks over the foot, not collapsing inward",
+      "Straight leg stays straight — toes up if needed to lock the knee",
+      "Feel the stretch on the inner thigh of the straight leg at the bottom",
+      "Drive up by pushing the floor away through the working heel"
+    ],
+    "execution_cues_pl": [
+      "Najpierw biodra w tył — usiądź w pracujące biodro jak w przysiadzie na jednej nodze",
+      "Kolano podąża nad stopą, nie zapada do środka",
+      "Wyprostowana noga zostaje wyprostowana — palce do góry jeśli trzeba, by zablokować kolano",
+      "Poczuj rozciągnięcie po wewnętrznej stronie uda wyprostowanej nogi w dolnej pozycji",
+      "Wypychaj się w górę odpychając podłogę przez piętę pracującej nogi"
+    ],
+    "common_faults": [
+      {
+        "fault": "Heel of the working leg lifts off the floor",
+        "faultPl": "Pięta pracującej nogi odrywa się od podłogi",
+        "cause": "Limited ankle dorsiflexion or weight shifted onto the toes instead of the heel. Reduces glute activation and stresses the knee.",
+        "causePl": "Ograniczona mobilność kostki (dorsiflekcja) lub ciężar przeniesiony na palce zamiast na piętę. Zmniejsza pracę pośladków i obciąża kolano.",
+        "cue": "Sit hips back, drive the working heel into the floor. Work on ankle mobility separately if it limits depth.",
+        "cuePl": "Cofnij biodra, wbijaj piętę pracującej nogi w podłogę. Pracuj nad mobilnością kostki osobno, jeśli ogranicza głębokość."
+      },
+      {
+        "fault": "Working knee caves inward (valgus)",
+        "faultPl": "Pracujące kolano zapada do środka (koślawość)",
+        "cause": "Weak gluteus medius or load too heavy for unilateral control. Increases medial knee stress.",
+        "causePl": "Słaby pośladkowy średni lub zbyt duży ciężar przy jednostronnej kontroli. Zwiększa obciążenie przyśrodkowej części kolana.",
+        "cue": "Push the knee outward over the second/third toe. Build glute medius with banded lateral walks.",
+        "cuePl": "Wypychaj kolano na zewnątrz, nad drugi/trzeci palec stopy. Wzmacniaj pośladkowy średni chodami bocznymi z gumą."
+      },
+      {
+        "fault": "Excessive forward lean / rounded lower back",
+        "faultPl": "Nadmierne pochylenie tułowia / okrągłe plecy",
+        "cause": "Weak core, weak posterior chain or trying to compensate for poor hip mobility. Bar drifts forward, lower back loads up.",
+        "causePl": "Słaby brzuch, słabe taśmy tylne lub kompensacja słabej mobilności bioder. Gryf przesuwa się w przód, lędźwie zostają obciążone.",
+        "cue": "Hinge — don't fold. Chest stays proud, hips back. Bar should track over the working foot, not in front of it.",
+        "cuePl": "Hinge — nie składaj się. Klatka dumnie, biodra w tył. Gryf powinien iść po linii nad pracującą stopą, nie przed nią."
+      },
+      {
+        "fault": "Straight leg bends or rotates",
+        "faultPl": "Wyprostowana noga zgina się lub obraca",
+        "cause": "Lack of adductor flexibility or shifting too aggressively. The 'straight' leg should stay long and locked — that's where the adductor stretch comes from.",
+        "causePl": "Brak elastyczności przywodzicieli lub zbyt agresywne przenoszenie ciężaru. 'Wyprostowana' noga powinna pozostać długa i zablokowana — stąd bierze się rozciągnięcie przywodziciela.",
+        "cue": "Lock the knee of the straight leg, point the toes up slightly. If you can't go deep without bending it — limit ROM and work mobility.",
+        "cuePl": "Zablokuj kolano wyprostowanej nogi, lekko skieruj palce do góry. Jeśli nie możesz zejść głęboko bez jej zgięcia — ogranicz zakres ruchu i pracuj nad mobilnością."
+      },
+      {
+        "fault": "Stance too narrow — turns into a normal squat",
+        "faultPl": "Za wąski rozstaw — wygląda jak zwykły przysiad",
+        "cause": "Underestimating how wide the lateral lunge needs to be. Without a wide base, the adductor doesn't load.",
+        "causePl": "Niedoszacowanie potrzebnej szerokości rozstawu. Bez szerokiej podstawy przywodziciele nie pracują pod obciążeniem.",
+        "cue": "Set feet at least 1.5 shoulder widths apart. You should feel the inner thigh stretch even at half depth.",
+        "cuePl": "Ustaw stopy minimum 1,5 szerokości barków. Powinieneś czuć rozciągnięcie wewnętrznej strony uda nawet w połowie głębokości."
+      }
+    ],
+    "breathing": "Inhale and brace at the top in the wide stance. Hold breath through the descent and the hardest part of the ascent (Valsalva). Exhale near the top before shifting to the next rep.",
+    "breathingPl": "Wdech i napięcie na górze w szerokiej pozycji. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wychodzenia (Valsalva). Wydech blisko górnej pozycji przed przejściem do kolejnego powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "groin_strain_or_adductor_injury",
+      "severity": "avoid",
+      "modification": "Adductor is loaded in a lengthened position — high risk of re-injury. Wait for full recovery and physiotherapist clearance. Substitute with sagittal lunge or back squat.",
+      "modificationPl": "Przywodziciel jest obciążony w pozycji wydłużonej — wysokie ryzyko nawrotu kontuzji. Poczekaj na pełne wyzdrowienie i zgodę fizjoterapeuty. Zastąp wykrokiem strzałkowym lub przysiadem tylnym.",
+      "alternative": "barbell-lunge"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Avoid deep lateral lunges (high frontal-plane shear on the knee). Use shorter ROM or switch to bilateral squats.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Unikaj głębokich wykroków bocznych (duże siły ścinające w płaszczyźnie czołowej na kolano). Zmniejsz zakres ruchu lub przejdź na przysiady obustronne.",
+      "alternative": "barbell-back-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "modify",
+      "modification": "Deep frontal-plane hip flexion may provoke impingement. Limit depth to comfortable range. Adjust foot angle (more turn-out) to find a pain-free path.",
+      "modificationPl": "Głębokie zgięcie biodra w płaszczyźnie czołowej może drażnić konflikt udowo-panewkowy. Ogranicz głębokość do wygodnego zakresu. Zmień kąt stopy (większe rozstawienie palców) by znaleźć ścieżkę bez bólu.",
+      "alternative": "goblet-lateral-lunge"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid spinal loading combined with hip hinge. Use unloaded variants or wait for full recovery and physiotherapist clearance.",
+      "modificationPl": "Unikaj obciążania kręgosłupa w połączeniu z hinge'em bioder. Stosuj warianty bez obciążenia lub poczekaj na pełne wyzdrowienie i zgodę fizjoterapeuty.",
+      "alternative": "bodyweight-lateral-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6 per leg (strength) | 2-3x12-15 per leg (mobility/conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-lateral-lunge.gif",
+    "frames_extracted": [
+      "frames/barbell-lateral-lunge/frame_0_start.png",
+      "frames/barbell-lateral-lunge/frame_1_early.png",
+      "frames/barbell-lateral-lunge/frame_2_mid.png",
+      "frames/barbell-lateral-lunge/frame_3_late.png",
+      "frames/barbell-lateral-lunge/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-lateral-lunge"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. WARIANT LATERAL (boczny) — postać startuje w szerokiej stancji ze sztangą high-bar na trapezach (klatka 0), schodzi w bok zginając jedno kolano do ~90° z udem równoległym do podłogi, druga noga pozostaje wyprostowana z wyraźnym rozciągnięciem przywodziciela, tułów hinge'uje w przód nad zgiętą nogą zachowując płaskie plecy (klatka 2, mid). Klatka 4 (end) pokazuje powrót do szerokiej pozycji wyjściowej oraz duchowy obraz fazy dolnej obok. Mięśnie podświetlone w GIFie: pośladki + czworogłowe pracującej nogi + przywodziciele obu nóg (najbardziej widoczne na klatce mid) — pasuje do anatomii lateral lunge i uzasadnia primary=glutes/quadriceps/adductors. Plane=frontal (nie sagittal jak w klasycznym wykroku). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'wykrok boczny ze sztangą'. Difficulty 7/10 jak klasyczny barbell lunge — mobility hip/ankle dochodzi, ale stabilność lepsza niż w split stance. Dodano dedykowane przeciwwskazanie groin_strain (kluczowe dla lateral) i hip_impingement.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "lateral", "barbell", "compound", "frontal_plane", "adductor_focus", "mobility", "asymmetry_corrector"]
+}

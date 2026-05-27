@@ -1,0 +1,206 @@
+{
+  "id": "dumbbell-one-arm-shoulder-press",
+  "name": "Dumbbell One-Arm Shoulder Press",
+  "namePl": "Wyciskanie hantla nad głowę jednorącz",
+  "aliases": ["single-arm dumbbell overhead press", "one-arm DB OHP", "unilateral dumbbell shoulder press", "single-arm DB press"],
+  "aliasesPl": ["wyciskanie hantla nad głowę jednorącz", "jednorącz OHP z hantlą", "wyciskanie barków hantlą jedną ręką", "unilateralne wyciskanie hantla nad głowę"],
+
+  "description": "Unilateral vertical pressing with a single dumbbell performed standing — only one arm presses overhead at a time. The unilateral nature creates a strong anti-lateral flexion challenge for the core: the load on one side tries to pull the trunk sideways, and the obliques + QL must resist it. Demands more shoulder stabilization (rotator cuff, scapular control) than bilateral version, exposes strength imbalances between sides, and trains real-world asymmetric pressing patterns. Lower absolute load than bilateral DB press but higher per-side stabilization demand.",
+  "descriptionPl": "Unilateralne (jednostronne) wyciskanie pionowe z jedną hantlą wykonywane stojąc — tylko jedna ręka wyciska nad głowę w danym momencie. Unilateralność tworzy mocne wyzwanie anty-fleksyjne (anty-lateral flexion) dla brzucha: obciążenie po jednej stronie próbuje ściągnąć tułów na bok, a skośne brzucha + mięsień czworoboczny lędźwi (QL) muszą się temu opierać. Wymaga większej stabilizacji barku (rotatory, kontrola łopatki) niż wersja dwustronna, ujawnia dysproporcje siłowe między stronami i trenuje realne asymetryczne wzorce wyciskania. Niższe maksymalne obciążenie niż bilateralna wersja, ale wyższa stabilizacyjna praca per strona.",
+
+  "instructions": [
+    "Take a dumbbell in one hand. Stand with feet shoulder-width apart (or slightly wider) for a stable base. Optionally hold a light dumbbell at the shoulder in the non-pressing hand for symmetry (or let it hang/rest on hip).",
+    "Bring the pressing dumbbell to shoulder level — elbow bent ~90°, palm facing forward (pronated) or slightly inward (semi-neutral).",
+    "Brace core HARD — especially the side opposite to the pressing arm (anti-lateral flexion). Squeeze glutes, ribs DOWN.",
+    "Inhale, lock the brace, and press the dumbbell straight up overhead — bar path vertical, NOT diagonally toward the centerline.",
+    "At the top: arm fully locked out, dumbbell directly over the shoulder of the working side, bicep near ear. Do NOT lean to the opposite side.",
+    "Lower with control — full ROM, dumbbell back to shoulder level (slightly below ear).",
+    "Complete all reps on one side, then switch arms. Keep trunk upright the entire set — no sideways lean.",
+    "Exhale at the top of each press."
+  ],
+  "instructionsPl": [
+    "Chwyć hantel w jedną rękę. Stań ze stopami na szerokość barków (lub lekko szerzej) dla stabilnej podstawy. Opcjonalnie trzymaj lekki hantel na barku w drugiej ręce dla symetrii (lub niech zwiśnie / opiera się o biodro).",
+    "Podnieś wyciskaną hantlę na wysokość barku — łokieć zgięty ~90°, dłoń skierowana do przodu (pronacja) lub lekko do wewnątrz (półneutralnie).",
+    "Napnij MOCNO brzuch — zwłaszcza stronę przeciwną do wyciskającej ręki (anty-fleksja lateralna). Ściśnij pośladki, żebra W DÓŁ.",
+    "Wdech, zablokuj napięcie i wyciśnij hantlę prosto w górę nad głowę — ścieżka pionowa, NIE po skosie do linii środkowej.",
+    "Na szczycie: ramię w pełnym lock-out, hantel bezpośrednio nad barkiem pracującej strony, biceps blisko ucha. NIE odchylaj się w przeciwną stronę.",
+    "Opuszczaj kontrolowanym ruchem — pełen ROM, hantel wraca na wysokość barku (lekko poniżej ucha).",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, potem zmień rękę. Tułów wyprostowany przez cały set — bez odchylania na bok.",
+    "Wydech na szczycie każdego wyciskania."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "core"],
+    "secondary": ["triceps", "upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["obliques", "quadratus_lumborum", "glutes", "rotator_cuff", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "P8",
+    "core": "P8",
+    "triceps": "S7",
+    "upper_chest": "S5",
+    "trapezius": "S5",
+    "serratus_anterior": "S6",
+    "obliques": "S8",
+    "quadratus_lumborum": "S7",
+    "glutes": "S6",
+    "rotator_cuff": "S7"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-standing-overhead-press", "seated-dumbbell-shoulder-press", "machine-shoulder-press"],
+    "progression_to": ["half-kneeling-single-arm-dumbbell-press", "single-arm-landmine-press", "single-arm-push-press", "bottoms-up-kettlebell-press"],
+    "alternatives": ["dumbbell-standing-overhead-press", "single-arm-landmine-press", "half-kneeling-single-arm-dumbbell-press", "kettlebell-single-arm-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbell at shoulder, elbow under wrist",
+      "Feet shoulder-width — wider base for unilateral stability",
+      "Squeeze glutes, brace core HARD — anti-lean",
+      "Ribs DOWN, eyes forward, neutral neck",
+      "Imagine a vertical line above the working shoulder — that's the target"
+    ],
+    "setup_cues_pl": [
+      "Hantel na wysokości barku, łokieć pod nadgarstkiem",
+      "Stopy na szerokość barków — szersza podstawa dla unilateralnej stabilności",
+      "Ściśnij pośladki, napnij brzuch MOCNO — anty-odchylenie",
+      "Żebra W DÓŁ, wzrok do przodu, szyja neutralna",
+      "Wyobraź sobie pionową linię nad pracującym barkiem — to cel"
+    ],
+    "execution_cues": [
+      "Press STRAIGHT up — not across to the midline",
+      "Resist the urge to lean to the opposite side — obliques work HARD",
+      "Wrist stacked over elbow, elbow over shoulder at lockout",
+      "Bicep by ear at the top — full lockout above the working shoulder",
+      "Lower with control — don't let the dumbbell yank you sideways"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj PROSTO w górę — nie po skosie do linii środkowej",
+      "Walcz z chęcią odchylenia w przeciwną stronę — skośne brzucha pracują MOCNO",
+      "Nadgarstek nad łokciem, łokieć nad barkiem w lock-out",
+      "Biceps przy uchu na szczycie — pełen lock-out nad pracującym barkiem",
+      "Opuszczaj kontrolowanie — nie pozwól by hantel ściągnął cię na bok"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lateral lean to the opposite side (trunk shifts away from working arm)",
+        "faultPl": "Odchylenie boczne w przeciwną stronę (tułów ucieka od pracującej ręki)",
+        "cause": "Weak obliques/QL on the working side, weight too heavy, no core brace",
+        "causePl": "Słabe skośne brzucha / QL po stronie pracującej, zbyt duży ciężar, brak napięcia brzucha",
+        "cue": "Brace HARD on the side opposite the dumbbell. Reduce weight until you can stand vertical. Film yourself from the front.",
+        "cuePl": "Napnij MOCNO stronę przeciwną do hantli. Zmniejsz ciężar aż utrzymasz pion. Nagraj się od przodu."
+      },
+      {
+        "fault": "Pressing across the midline (dumbbell drifts toward centerline overhead)",
+        "faultPl": "Wyciskanie przez linię środkową (hantel ucieka do środka nad głową)",
+        "cause": "Trying to balance over the centerline instead of over the working shoulder, weak scapular control",
+        "causePl": "Próba wyważenia nad linią środkową zamiast nad pracującym barkiem, słaba kontrola łopatki",
+        "cue": "Finish with the dumbbell DIRECTLY over the working shoulder, not above your nose. Vertical path only.",
+        "cuePl": "Zakończ z hantlą BEZPOŚREDNIO nad pracującym barkiem, nie nad nosem. Tylko pionowa ścieżka."
+      },
+      {
+        "fault": "Lower back arching (lumbar hyperextension) to lift heavy dumbbell",
+        "faultPl": "Nadmierne wygięcie dolnych pleców (przeprost lędźwiowy) dla podniesienia ciężkiej hantli",
+        "cause": "Weight too heavy, weak core, limited overhead mobility compensated by lumbar extension",
+        "causePl": "Zbyt duży ciężar, słaby brzuch, ograniczona mobilność overhead kompensowana lordozą lędźwiową",
+        "cue": "Squeeze glutes HARD. Ribs DOWN. Reduce weight. Try half-kneeling version to remove the lumbar compensation.",
+        "cuePl": "Ściśnij MOCNO pośladki. Żebra W DÓŁ. Zmniejsz ciężar. Spróbuj wersji w półklęku by usunąć kompensację lędźwiową."
+      },
+      {
+        "fault": "Trunk rotation (working shoulder rotates forward during press)",
+        "faultPl": "Rotacja tułowia (pracujący bark wyrotowuje do przodu podczas wyciskania)",
+        "cause": "Weak anti-rotation core control, asymmetric scapular setup",
+        "causePl": "Słaba kontrola anty-rotacyjna brzucha, asymetryczne ustawienie łopatek",
+        "cue": "Keep both shoulders squared forward. Imagine your sternum stays pointed straight ahead the entire rep.",
+        "cuePl": "Trzymaj oba barki ustawione równo do przodu. Wyobraź sobie że mostek przez cały ruch wskazuje prosto przed siebie."
+      },
+      {
+        "fault": "Incomplete lockout or short eccentric ROM",
+        "faultPl": "Niepełen lock-out lub krótki ekscentryk",
+        "cause": "Weight too heavy, weak triceps, ego lifting, fatigue from stabilization demand",
+        "causePl": "Zbyt duży ciężar, słabe tricepsy, ego lifting, zmęczenie od wymagań stabilizacji",
+        "cue": "Full lockout — bicep by ear. Lower until dumbbell reaches shoulder height. Full ROM > heavy partials.",
+        "cuePl": "Pełen lock-out — biceps przy uchu. Opuszczaj aż hantel osiągnie poziom barku. Pełen ROM > ciężkie częściowe."
+      }
+    ],
+    "breathing": "Inhale and brace before each rep. Hold during the press. Exhale at the top or on the way down. Bracing is CRITICAL — the asymmetric load demands constant intra-abdominal pressure.",
+    "breathingPl": "Wdech i napięcie przed każdym powtórzeniem. Trzymaj podczas wyciskania. Wydech na szczycie lub w dół. Napięcie jest KRYTYCZNE — asymetryczne obciążenie wymaga ciągłego ciśnienia w jamie brzusznej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palm facing inward) — more shoulder-friendly. Reduce ROM if pain persists, or switch to single-arm landmine press for an angled path.",
+      "modificationPl": "Użyj chwytu neutralnego (dłoń skierowana do wewnątrz) — bardziej przyjazne dla barku. Zmniejsz ROM jeśli ból nie ustępuje, lub przejdź na jednorącz landmine press dla skośnej ścieżki.",
+      "alternative": "single-arm-landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Switch to half-kneeling single-arm DB press — removes standing lumbar load and locks the pelvis, eliminating most anti-lateral flexion demand.",
+      "modificationPl": "Przejdź na half-kneeling jednorącz DB press — usuwa stojące obciążenie lędźwiowe i blokuje miednicę, eliminując większość wymagań anty-fleksji lateralnej.",
+      "alternative": "half-kneeling-single-arm-dumbbell-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid all overhead pressing until cleared by a physiotherapist. Resume with machine shoulder press (controlled path) and low-weight high-rep cuff rehab.",
+      "modificationPl": "Unikaj wszelkich wyciskań overhead do zgody fizjoterapeuty. Wróć przez machine shoulder press (kontrolowana ścieżka) i niskoobciążeniową wysokopowtórzeniową rehabilitację rotatorów.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "core_weakness_or_diastasis_recti",
+      "severity": "modify",
+      "modification": "Skip unilateral standing version until core is strong enough to resist lateral flexion. Start with seated supported DB press or half-kneeling variant.",
+      "modificationPl": "Pomiń unilateralną wersję stojącą do czasu gdy brzuch będzie wystarczająco silny by oprzeć się fleksji lateralnej. Zacznij od siedzącej wersji DB press lub wariantu w półklęku.",
+      "alternative": "seated-dumbbell-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy) | 4x6-8 per side (strength) | 3x10-12 per side (core+shoulder stabilization focus)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-one-arm-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-shoulder-press/frame_0_start.png",
+      "frames/dumbbell-one-arm-shoulder-press/frame_1_early.png",
+      "frames/dumbbell-one-arm-shoulder-press/frame_2_mid.png",
+      "frames/dumbbell-one-arm-shoulder-press/frame_3_late.png",
+      "frames/dumbbell-one-arm-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/dumbbell-one-arm-shoulder-press",
+    "master_slug": "dumbbell-one-arm-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "GIF zweryfikowany przez 5 klatek. Frame 0 (start): postawa stojąca, stopy ~na szerokość barków, lewa ręka trzyma hantel na wysokości barku w pozycji wyjściowej (łokieć ~90°, dłoń pronowana/do przodu), prawa ręka również trzyma hantel na barku jako counter-balance / referencja, tułów wyprostowany pionowo, podświetlone przednie i lateralne delty po stronie pracującej oraz klatka piersiowa. Frame 2 (mid/szczyt): lewa ręka w pełnym lock-out nad głową — hantel bezpośrednio nad lewym barkiem, ramię wyprostowane, biceps blisko ucha, triceps aktywnie podświetlony, prawa ręka wciąż na barku (statyczna). Tułów pozostaje pionowy — bez odchylenia lateralnego, co potwierdza pracę anty-fleksji bocznej core. Frame 4 (powrót): hantel wraca na wysokość barku, faza ekscentryczna, ścieżka ruchu prosta pionowa nad lewym barkiem (nie po skosie do linii środkowej). Klasyczny unilateral standing DB press — anti-lateral flexion challenge wyraźnie widoczny: load po jednej stronie + utrzymanie pionu = praca skośnych i QL. Pasuje 1:1 do specyfikacji.",
+
+  "tags": ["upper_body", "vertical_push", "shoulders", "dumbbell", "compound", "unilateral", "free_weights", "core_anti_lateral_flexion", "stabilization_demand", "imbalance_correction"]
+}

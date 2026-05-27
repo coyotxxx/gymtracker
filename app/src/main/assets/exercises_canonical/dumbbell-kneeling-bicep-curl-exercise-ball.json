@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-kneeling-bicep-curl-exercise-ball",
+  "name": "Dumbbell Bicep Curl with Rear Foot on Exercise Ball",
+  "namePl": "Uginanie ramion z hantlami w klęku na piłce",
+  "aliases": ["dumbbell kneeling bicep curl exercise ball", "stability ball single-leg dumbbell curl", "split-stance dumbbell curl with rear foot on ball"],
+  "aliasesPl": ["uginanie bicepsów z hantlami na piłce", "curl z hantlami w rozkroku z tylną nogą na piłce", "uginanie bicepsów ze stabilizacją na piłce"],
+
+  "description": "Bilateral dumbbell biceps curl performed in a single-leg split stance with the rear leg supported on a stability ball. The unstable rear-foot support forces the core, glutes, and front-leg stabilizers to work isometrically while the elbow flexors do the curling. The ball replaces a static rear foot — it does not pad the elbows. Net effect: a standard biceps curl with a much higher demand for postural control, making it useful for time-efficient combined arm + balance work, but reducing the absolute load you can use.",
+  "descriptionPl": "Obustronne uginanie ramion z hantlami wykonywane w rozkroku jednonóż z tylną nogą opartą o piłkę gimnastyczną. Niestabilne podparcie tylnej stopy zmusza brzuch, pośladki i stabilizatory przedniej nogi do izometrycznej pracy, podczas gdy zginacze stawu łokciowego wykonują ruch uginania. Piłka zastępuje statyczne podparcie tylnej stopy — nie jest podkładką pod łokcie. Efekt: standardowy curl bicepsa z mocno zwiększonym wymaganiem kontroli posturalnej, użyteczny do oszczędzającego czas łączenia pracy ramion z balansem, ale ograniczający maksymalny ciężar.",
+
+  "instructions": [
+    "Set a stability ball roughly one stride behind you. Hold a dumbbell in each hand at your sides, palms facing in.",
+    "Step into a long split stance: front foot planted, rear leg extended back with the top of the foot or shin resting on the ball.",
+    "Square your hips forward, stack your shoulders over the front hip, and brace your core. The standing leg's glute should be active.",
+    "Rotate your wrists to a supinated (palms-up) grip. Pin your elbows to your sides — they stay there for the entire set.",
+    "Curl both dumbbells upward simultaneously by flexing at the elbows. Exhale. Keep the torso vertical and the rear foot quiet on the ball.",
+    "Squeeze the biceps hard at the top with forearms vertical. Avoid letting the elbows drift forward.",
+    "Lower the dumbbells under control over 2-3 seconds back to full elbow extension. Inhale.",
+    "Complete all reps on this stance, then switch front leg to balance the demand on each standing side."
+  ],
+  "instructionsPl": [
+    "Ustaw piłkę gimnastyczną mniej więcej krok za sobą. Złap hantle, dłonie skierowane do ud.",
+    "Wejdź w długi rozkrok: przednia stopa płasko na podłodze, tylna noga wyciągnięta do tyłu, podbiciem stopy lub goleniem oparta o piłkę.",
+    "Ustaw biodra równo do przodu, barki nad biodrem przedniej nogi, napnij brzuch. Pośladek stojącej nogi ma być aktywny.",
+    "Obróć nadgarstki podchwytem (dłonie do góry). Przyklej łokcie do boków — pozostają tam przez całą serię.",
+    "Uginaj obie hantle jednocześnie w łokciach. Wydech. Trzymaj tułów pionowo, a tylna stopa pozostaje spokojna na piłce.",
+    "Mocno spinaj biceps w górnej pozycji, przedramiona w pionie. Nie pozwól łokciom wędrować do przodu.",
+    "Opuszczaj hantle w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu łokci. Wdech.",
+    "Wykonaj wszystkie powtórzenia w tym rozkroku, potem zmień przednią nogę aby wyrównać obciążenie po obu stronach."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis", "core"],
+    "stabilizers": ["forearm_flexors", "gluteus_medius", "gluteus_maximus", "quadriceps", "erector_spinae", "anterior_deltoid"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P9",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "core": "S4",
+    "forearm_flexors": "T4",
+    "gluteus_medius": "T4",
+    "gluteus_maximus": "T3",
+    "quadriceps": "T3",
+    "erector_spinae": "T3",
+    "anterior_deltoid": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "stability_ball"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-curl", "split-squat"],
+    "progression_to": ["preacher-curl", "incline-dumbbell-curl", "spider-curl", "concentration-curl"],
+    "alternatives": ["dumbbell-curl", "preacher-curl", "spider-curl", "incline-dumbbell-curl", "hammer-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Ball one stride behind, rear shin or top of foot rests on it",
+      "Front foot fully planted, glute active",
+      "Hips square forward, ribs down, core braced",
+      "Supinated grip, elbows pinned to sides",
+      "Lighter dumbbells than your standard curl — balance first"
+    ],
+    "setup_cues_pl": [
+      "Piłka krok za tobą, tylne goleń lub podbicie stopy oparte na niej",
+      "Przednia stopa płasko na podłodze, pośladek aktywny",
+      "Biodra równo do przodu, żebra ściągnięte, brzuch napięty",
+      "Chwyt podchwytem, łokcie przyklejone do boków",
+      "Lżejsze hantle niż w standardowym curlu — najpierw stabilność"
+    ],
+    "execution_cues": [
+      "Both arms curl together — symmetric tempo",
+      "Only forearms move, upper arms stay vertical",
+      "Quiet rear foot — no rocking the ball",
+      "Torso vertical, no leaning back to help",
+      "Lower for 2-3 seconds, full elbow extension at the bottom"
+    ],
+    "execution_cues_pl": [
+      "Oba ramiona uginają się razem — symetryczne tempo",
+      "Ruszają tylko przedramiona, ramiona ponad łokciem pionowo",
+      "Spokojna tylna stopa — nie bujaj piłką",
+      "Tułów pionowo, żadnego odchylania do tyłu",
+      "Opuszczaj 2-3 sekundy, pełny wyprost łokcia na dole"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rocking the ball with the rear leg to drive the curl",
+        "faultPl": "Bujanie piłką tylną nogą aby napędzić uginanie",
+        "cause": "Load too heavy for the balance demand, or trying to chase reps after the front-side core fatigues",
+        "causePl": "Zbyt duży ciężar w stosunku do wymagań balansu, lub próba forsowania powtórzeń po zmęczeniu stabilizatorów",
+        "cue": "Drop the dumbbell weight. Imagine the ball is glass — the foot must rest, not push.",
+        "cuePl": "Zmniejsz ciężar hantli. Wyobraź sobie że piłka jest szklana — stopa ma tylko leżeć, nie naciskać."
+      },
+      {
+        "fault": "Torso leaning back at the top to muscle the weight up",
+        "faultPl": "Odchylanie tułowia do tyłu w górnej pozycji aby wycisnąć ciężar",
+        "cause": "Compensation for biceps fatigue with lumbar extension, very common on unstable stances",
+        "causePl": "Kompensacja zmęczenia bicepsa wyprostem lędźwiowym, bardzo częste w niestabilnych pozycjach",
+        "cue": "Keep ears stacked over the front hip the whole set. Reduce weight if you can't.",
+        "cuePl": "Trzymaj uszy nad biodrem przedniej nogi przez całą serię. Zmniejsz ciężar jeśli nie potrafisz."
+      },
+      {
+        "fault": "Hips opening to the rear-leg side (loss of square pelvis)",
+        "faultPl": "Otwieranie bioder w stronę tylnej nogi (utrata kwadratowej pozycji miednicy)",
+        "cause": "Weak gluteus medius on the standing side, ball positioned too far to the side",
+        "causePl": "Słaby pośladek średni po stronie stojącej, piłka ustawiona za bardzo z boku",
+        "cue": "Drive the rear-side hip bone forward. Place the ball directly behind your front foot's line.",
+        "cuePl": "Wypchnij biodro tylnej nogi do przodu. Ustaw piłkę dokładnie za linią przedniej stopy."
+      },
+      {
+        "fault": "Elbows drifting forward at the top of the curl",
+        "faultPl": "Łokcie wędrują do przodu w górnej pozycji",
+        "cause": "Trying to lift the dumbbells higher than full biceps contraction allows; anterior delts take over",
+        "causePl": "Próba uniesienia hantli wyżej niż pozwala pełny skurcz bicepsa; pracę przejmują przednie aktony barków",
+        "cue": "Stop when forearms reach vertical. Elbows stay glued to your sides.",
+        "cuePl": "Zatrzymaj się gdy przedramiona dojdą do pionu. Łokcie przyklejone do boków."
+      },
+      {
+        "fault": "Asymmetric arms — one dumbbell rises faster",
+        "faultPl": "Asymetryczne ramiona — jedna hantla unosi się szybciej",
+        "cause": "Strength imbalance amplified by the asymmetric stance, or attention drifting to the balance task",
+        "causePl": "Nierównowaga siły wzmocniona przez asymetryczny rozkrok, lub uwaga przeniesiona na balans",
+        "cue": "Pick a tempo (e.g. 2 sec up, 3 sec down) and match both hands to it.",
+        "cuePl": "Wybierz tempo (np. 2 sek do góry, 3 sek w dół) i dopasuj obie ręce."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower). Keep a light abdominal brace throughout to support the unstable stance.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby wspierać niestabilny rozkrok."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_or_meniscus_issues_front_leg",
+      "severity": "modify",
+      "modification": "Single-leg loading stresses the standing knee. Shorten the stance, perform without the ball (regular standing curl), or sit down.",
+      "modificationPl": "Obciążenie jednonóż obciąża stojące kolano. Skróć rozkrok, wykonuj bez piłki (zwykły curl stojąc), lub siedząc.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "balance_disorders_or_vestibular_issues",
+      "severity": "avoid",
+      "modification": "Unstable rear-foot support is unsafe with dizziness or balance impairment. Use a stable bilateral or seated curl variation.",
+      "modificationPl": "Niestabilne podparcie tylnej stopy jest niebezpieczne przy zawrotach głowy lub zaburzeniach równowagi. Wykonuj stabilny obustronny curl lub siedząc.",
+      "alternative": "seated-dumbbell-curl"
+    },
+    {
+      "condition": "distal_biceps_or_elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Reduce volume and load, use higher reps (12-15) without heavy eccentrics. Hammer grip reduces supination stress on the tendon.",
+      "modificationPl": "Zmniejsz objętość i ciężar, wykonuj więcej powtórzeń (12-15) bez ciężkich faz negatywnych. Chwyt młotkowy zmniejsza obciążenie supinacyjne ścięgna.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Split stance with rear-foot instability demands isometric trunk control. Switch to seated or preacher version to remove the spinal stability demand.",
+      "modificationPl": "Rozkrok z niestabilną tylną stopą wymaga izometrycznej kontroli tułowia. Przejdź na wersję siedzącą lub modlitewnik aby wyeliminować wymóg stabilizacji kręgosłupa.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-12 per stance (hypertrophy/balance) | 2x12-15 per stance (endurance) | not recommended for strength loading",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-kneeling-bicep-curl-exercise-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-kneeling-bicep-curl-exercise-ball/frame_0_start.png",
+      "frames/dumbbell-kneeling-bicep-curl-exercise-ball/frame_1_early.png",
+      "frames/dumbbell-kneeling-bicep-curl-exercise-ball/frame_2_mid.png",
+      "frames/dumbbell-kneeling-bicep-curl-exercise-ball/frame_3_late.png",
+      "frames/dumbbell-kneeling-bicep-curl-exercise-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-kneeling-bicep-curl-exercise-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. UWAGA: slug zawiera 'kneeling' ale w GIFie model NIE klęczy — stoi w długim rozkroku jednonóż, prawa noga wyciągnięta do tyłu z podbiciem stopy/goleniem opartym o piłkę gimnastyczną. Curl jest obustronny (oba hantle uginają się razem), supinowany. Frame 0/4: pełny wyprost ramion, hantle przy biodrach, biceps i przedramiona podświetlone na czerwono. Frame 2: pełny skurcz, hantle przy barkach, łokcie przy bokach tułowia, przedramiona pionowo. Frame 1/3: 'ghost' frames pokazujące pełną trajektorię. Tułów pionowy, brak swingu. Klasyfikacja: isolation_curl, bilateral, intermediate (5/10) ze względu na element balansowy. Stability ball pełni rolę niestabilnego podparcia tylnej stopy, NIE pada pod łokcie — to NIE jest wariant typu preacher curl. Primary: biceps_brachii P9 (lżejszy ciężar niż w stabilnym curlu). Sec: brachialis S6, brachioradialis S5, core S4. Sources: tylko jahel — brak yuhonas/glowupp. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbell", "stability_ball", "balance", "single_leg", "upper_body"]
+}

@@ -1,0 +1,226 @@
+{
+  "id": "cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster",
+  "name": "Cable Reverse-Grip Triceps Pushdown with EZ-Bar and Arm Blaster",
+  "namePl": "Reverse grip tricep pushdown z gryfem EZ i arm blaster",
+  "aliases": [
+    "supinated grip tricep pushdown ez-bar arm blaster",
+    "underhand cable pushdown ez-bar with blaster",
+    "reverse grip cable tricep extension arm blaster"
+  ],
+  "aliasesPl": [
+    "prostowanie ramion z linki podchwytem ze sztangą łamaną i arm blasterem",
+    "tricep pushdown podchwytem z gryfem EZ i blokadą ramion",
+    "prostowanie tricepsów na wyciągu podchwytem ze sztangą łamaną i arm blaster"
+  ],
+
+  "description": "Strict-form isolation variant of the cable triceps pushdown. The EZ-bar (SZ-bar) is attached to a high pulley and gripped with palms facing up (reverse / supinated grip), which biases load toward the medial head of the triceps and the lateral head close to the elbow. An arm blaster strapped across the front of the torso pins both upper arms against the pad — completely eliminating elbow drift, shoulder swing and torso lean. The result is a very clean elbow-extension stimulus with minimal cheating, ideal for late-workout pump sets and for lifters who struggle to feel the triceps on a standard pushdown.",
+  "descriptionPl": "Ściśle wykonywany izolowany wariant prostowania tricepsów na wyciągu. Sztanga łamana (gryf EZ / SZ-bar) podpięta jest do górnej linki i trzymana podchwytem (dłonie skierowane w górę), co przesuwa obciążenie na głowę przyśrodkową tricepsa oraz dolną część głowy bocznej, blisko stawu łokciowego. Arm blaster przypięty pasem z przodu tułowia dociska ramiona do podkładki — całkowicie eliminuje wędrowanie łokci do przodu, bujanie barkami i pochylanie tułowia. Efekt to bardzo czysty bodziec dla wyprostu w łokciu z minimalnym oszukiwaniem, idealny do końcowych serii pompujących i dla osób które nie czują tricepsa w klasycznym pushdownie.",
+
+  "instructions": [
+    "Attach an EZ-bar (SZ-bar) to the cable of a high pulley. Buckle an arm blaster around your torso so the pad sits across your upper abdomen and elbows rest against it.",
+    "Stand facing the stack, feet hip- to shoulder-width apart, knees soft. Brace your core and keep a tall, neutral spine.",
+    "Reach up and grip the angled inner bends of the EZ-bar with a supinated (palms-up / underhand) grip, thumbs around the bar, wrists straight.",
+    "Pull your elbows back and dig them into the arm blaster pad so the upper arms are locked vertically against the body. Forearms start near horizontal — this is the top position.",
+    "Exhale and extend at the elbows only, driving the bar down toward your thighs in an arc. Keep the upper arms completely still against the blaster.",
+    "Finish with arms fully extended (but not hyper-locked), wrists neutral, palms still facing up. Squeeze the triceps for a 1-second peak contraction.",
+    "Inhale and slowly raise the bar back to the start over 2-3 seconds, letting the forearms travel up while elbows stay glued to the pad.",
+    "Stop when the forearms are roughly horizontal or just before the stack 'clinks'. Keep tension on the triceps throughout the set."
+  ],
+  "instructionsPl": [
+    "Podepnij gryf EZ (sztangę łamaną) do linki wyciągu górnego. Załóż arm blaster na tułów tak aby podkładka znalazła się na wysokości górnej części brzucha, a łokcie opierały się o nią.",
+    "Stań przodem do stosu, stopy na szerokość bioder lub barków, kolana lekko ugięte. Napnij brzuch i utrzymaj wyprostowany, neutralny kręgosłup.",
+    "Sięgnij w górę i złap zagięcia gryfu EZ podchwytem (dłonie skierowane w górę), kciuki dookoła gryfu, nadgarstki proste.",
+    "Cofnij łokcie i wbij je w podkładkę arm blastera tak, aby ramiona ponad łokciem były pionowo zablokowane przy tułowiu. Przedramiona w pozycji startowej są bliskie poziomu — to góra ruchu.",
+    "Wydech: prostuj ramiona wyłącznie w łokciach, prowadząc sztangę łukiem w dół w stronę ud. Ramiona ponad łokciem mają być całkowicie nieruchome i dociśnięte do blastera.",
+    "Zakończ z ramionami w pełnym wyproście (ale bez przeprostu), nadgarstki neutralne, dłonie nadal skierowane w górę. Spinaj triceps przez sekundę w pozycji szczytowej.",
+    "Wdech: powoli wracaj sztangą do pozycji startowej przez 2-3 sekundy, przedramiona idą w górę, łokcie pozostają wbite w podkładkę.",
+    "Zatrzymaj ruch gdy przedramiona są mniej więcej w poziomie lub tuż przed 'stuknięciem' stosu. Utrzymuj napięcie w tricepsie przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": ["anconeus", "brachialis"],
+    "stabilizers": ["forearm_extensors", "forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anconeus": "S5",
+    "brachialis": "S3",
+    "forearm_extensors": "T4",
+    "forearm_flexors": "T3",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "ez_bar_attachment", "arm_blaster"],
+    "optional": ["wrist_wraps", "lifting_strap"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["cable-triceps-pushdown", "cable-reverse-grip-triceps-pushdown"],
+    "progression_to": ["cable-triceps-pushdown-single-arm", "ez-bar-skull-crusher", "weighted-dips"],
+    "alternatives": [
+      "cable-reverse-grip-triceps-pushdown",
+      "cable-triceps-pushdown-ez-bar",
+      "cable-triceps-pushdown-rope",
+      "ez-bar-skull-crusher"
+    ]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "EZ-bar on high pulley, arm blaster strapped tight across the torso",
+      "Elbows pinned into the blaster pad — upper arms vertical",
+      "Supinated grip on the inner bends of the EZ-bar, wrists straight",
+      "Feet hip-width, slight knee bend, ribcage stacked over hips",
+      "Brace core — torso is a stationary platform, only forearms move"
+    ],
+    "setup_cues_pl": [
+      "Gryf EZ podpięty do wyciągu górnego, arm blaster ciasno zapięty na tułowiu",
+      "Łokcie wbite w podkładkę blastera — ramiona ponad łokciem pionowo",
+      "Chwyt podchwytem na wewnętrznych zagięciach gryfu EZ, nadgarstki proste",
+      "Stopy na szerokość bioder, kolana lekko ugięte, klatka nad biodrami",
+      "Napnij brzuch — tułów to nieruchoma platforma, pracują tylko przedramiona"
+    ],
+    "execution_cues": [
+      "Push the bar down with the back of your hands, not the palms",
+      "Drive the elbows into the blaster the whole set — they must not leave the pad",
+      "Full extension at the bottom, hard 1-second squeeze on the triceps",
+      "Control the way up — 2-3 seconds eccentric, no banging the stack",
+      "Keep wrists locked straight — do not let the bar tip up at the bottom"
+    ],
+    "execution_cues_pl": [
+      "Pcháj sztangę w dół grzbietami dłoni, nie wnętrzem",
+      "Przez całą serię dociskaj łokcie do blastera — nie mogą się od niego oderwać",
+      "Pełny wyprost na dole, mocne sekundowe spięcie tricepsa",
+      "Kontroluj fazę powrotną — 2-3 sekundy ekscentryku, bez stukania stosem",
+      "Trzymaj nadgarstki proste — sztanga nie może zadzierać się w górę na dole ruchu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows lift off the arm blaster pad",
+        "faultPl": "Łokcie odrywają się od podkładki arm blastera",
+        "cause": "Load too heavy, fatigue, or trying to extend range by recruiting the shoulders",
+        "causePl": "Zbyt duży ciężar, zmęczenie lub próba zwiększenia zakresu przez włączenie barków",
+        "cue": "Lower the weight. The whole point of the blaster is locked elbows — if they leave the pad, the rep does not count.",
+        "cuePl": "Zmniejsz ciężar. Cały sens blastera to zablokowane łokcie — jeśli odrywają się od podkładki, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Wrists collapse backward (extension) at the bottom",
+        "faultPl": "Nadgarstki załamują się w tył (przeprost) na dole ruchu",
+        "cause": "Reverse grip puts the wrist extensors in a mechanically weak position, especially under heavy load",
+        "causePl": "Podchwyt ustawia prostowniki nadgarstka w mechanicznie słabej pozycji, szczególnie pod dużym obciążeniem",
+        "cue": "Keep the knuckles pointing down and the wrists in line with the forearms. Drop the weight — reverse-grip pushdowns are not a strength lift.",
+        "cuePl": "Trzymaj kostki dłoni skierowane w dół, a nadgarstki w jednej linii z przedramieniem. Zmniejsz ciężar — pushdown podchwytem to nie jest ćwiczenie siłowe."
+      },
+      {
+        "fault": "Leaning forward over the bar to push it down",
+        "faultPl": "Pochylanie się do przodu nad sztangą żeby pomóc ją zepchnąć",
+        "cause": "Using body weight as a third lever when the triceps alone cannot finish the rep",
+        "causePl": "Wykorzystywanie ciężaru ciała jako trzeciej dźwigni gdy sam triceps nie domyka ruchu",
+        "cue": "Stand tall — ears, shoulders and hips stacked. Reduce load until you can finish strict.",
+        "cuePl": "Stój prosto — uszy, barki i biodra w jednej linii. Zmniejsz ciężar do takiego z którym domkniesz powtórzenie ściśle."
+      },
+      {
+        "fault": "Cutting the bottom — not reaching full elbow extension",
+        "faultPl": "Skracanie dolnej fazy — brak pełnego wyprostu w łokciu",
+        "cause": "Lower position is mechanically the hardest; lifters stop short to keep the bar moving",
+        "causePl": "Pozycja dolna jest mechanicznie najtrudniejsza; ćwiczący zatrzymują ruch zanim domkną aby utrzymać tempo",
+        "cue": "Touch the thighs or get the elbows to full lockout every single rep. Squeeze the triceps hard at the bottom.",
+        "cuePl": "Każde powtórzenie kończ dotknięciem ud lub pełnym wyprostem łokci. Mocno spinaj triceps na dole."
+      },
+      {
+        "fault": "Letting the stack pull the arms up too fast (no eccentric control)",
+        "faultPl": "Pozwalanie aby stos ciągnął ramiona w górę za szybko (brak kontroli ekscentryku)",
+        "cause": "Rushing reps, treating the negative as 'free time' — wastes the main hypertrophy stimulus",
+        "causePl": "Pośpiech, traktowanie fazy negatywnej jak 'wolnej' — marnuje główny bodziec hipertroficzny",
+        "cue": "2-3 seconds back to the top. The negative is where the triceps grow on a pushdown.",
+        "cuePl": "2-3 sekundy powrotu do góry. To na fazie negatywnej rośnie triceps przy pushdownach."
+      }
+    ],
+    "breathing": "Exhale during the push-down (concentric). Inhale during the controlled return (eccentric). Maintain a light brace throughout so the torso remains a stable anchor for the arm blaster.",
+    "breathingPl": "Wydech podczas pchania w dół (faza koncentryczna). Wdech podczas kontrolowanego powrotu (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha przez całą serię, aby tułów pozostał stabilnym oparciem dla arm blastera."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Full lockout in supinated grip loads the distal triceps tendon hard. Stop 5-10° short of full extension, reduce load, and use higher reps (12-20) in a pain-free range. Avoid heavy slow eccentrics.",
+      "modificationPl": "Pełny wyprost w podchwycie mocno obciąża dalszą ścięgno tricepsa. Zatrzymaj ruch 5-10° przed pełnym wyprostem, zmniejsz ciężar i pracuj w wyższym zakresie powtórzeń (12-20) w przedziale bez bólu. Unikaj ciężkich, wolnych ekscentryków.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "caution",
+      "modification": "Reverse grip pulls hard on the common extensor tendon at the lateral epicondyle. Switch to a neutral/rope grip or hammer-style triceps work until pain-free; if used at all, drop intensity to RPE 6-7 and avoid forced reps.",
+      "modificationPl": "Podchwyt mocno obciąża wspólne ścięgno prostowników na nadkłykciu bocznym. Przejdź na chwyt neutralny/linkę lub pracę typu młotkowego do ustąpienia bólu; jeśli używasz tego ćwiczenia, ogranicz intensywność do RPE 6-7 i unikaj wymuszonych powtórzeń.",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Supinated grip on a rigid bar can stress the ulnar wrist. Use wrist wraps, lighter loads, or switch to a rope (neutral grip) variation.",
+      "modificationPl": "Podchwyt na sztywnym gryfie może obciążać łokciową stronę nadgarstka. Użyj usztywniaczy nadgarstka, lżejszych ciężarów lub przejdź na wariant z linką (chwyt neutralny).",
+      "alternative": "cable-triceps-pushdown-rope"
+    },
+    {
+      "condition": "shoulder_impingement_or_anterior_shoulder_pain",
+      "severity": "caution",
+      "modification": "Arm blaster pins the upper arms into a slightly extended (behind-the-body) position which some impingement patterns tolerate poorly. Loosen the blaster straps or skip the blaster and let upper arms hang vertically.",
+      "modificationPl": "Arm blaster ustawia ramiona w lekkim wyproście (lekko za tułowiem), co bywa źle tolerowane przy niektórych wzorcach konfliktu podbarkowego. Poluzuj pasy blastera lub zrezygnuj z niego i pozwól ramionom zwisać pionowo.",
+      "alternative": "cable-reverse-grip-triceps-pushdown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / pump) | 3x12-20 (metabolic finisher) | not recommended for strength work below 8 reps",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster.gif",
+    "frames_extracted": [
+      "frames/cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster/frame_0_start.png",
+      "frames/cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster/frame_1_early.png",
+      "frames/cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster/frame_2_mid.png",
+      "frames/cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster/frame_3_late.png",
+      "frames/cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/cable-reverse-grip-triceps-pushdown-sz-bar-with-arm-blaster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki GIFa jahel (start/mid/end). Frame 0 (start): atleta stoi przodem do wyciągu, arm blaster zapięty na tułowiu (czarna podkładka z czerwonym pasem widoczna na wysokości górnej części brzucha), oba ramiona dociśnięte do podkładki, łokcie zgięte ~90°, gryf EZ (SZ-bar) trzymany podchwytem na wewnętrznych zagięciach, dłonie skierowane w górę, triceps prawego ramienia podświetlony na czerwono. Frame 2 (mid/bottom): ramiona w pełnym wyproście, gryf na wysokości ud, łokcie nadal wbite w blaster, ramiona ponad łokciem nie zmieniły położenia. Frame 4 (end): powrót do pozycji startowej z lekkim 'ghostem' fazy dolnej widocznym poniżej — potwierdza pełen zakres ruchu w jednej płaszczyźnie strzałkowej. Tułów statyczny przez cały cykl — modelowy przykład izolacji wymuszonej przez blaster. Ćwiczenie jednoznacznie: reverse-grip cable pushdown z gryfem EZ + arm blaster. Wszystkie pola PL napisane od zera, nie kalka angielskiego.",
+
+  "tags": [
+    "bodybuilding",
+    "arms",
+    "triceps",
+    "isolation",
+    "cable",
+    "ez_bar",
+    "arm_blaster",
+    "reverse_grip",
+    "upper_body",
+    "pump"
+  ]
+}

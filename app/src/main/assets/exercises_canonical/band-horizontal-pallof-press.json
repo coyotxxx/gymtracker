@@ -1,0 +1,200 @@
+{
+  "id": "band-horizontal-pallof-press",
+  "name": "Band Horizontal Pallof Press",
+  "namePl": "Pallof press z gumą poziomo",
+  "aliases": ["band pallof press", "horizontal pallof press", "resistance band pallof press", "standing pallof press", "anti-rotation press with band"],
+  "aliasesPl": ["pallof press z gumą", "pallof press poziomy", "wyciskanie pallof z gumą oporową", "wyciskanie anty-rotacyjne z gumą", "pallof press na stojąco z gumą"],
+
+  "description": "Standing anti-rotation core exercise performed with a resistance band anchored at chest height to the side. The lifter stands sideways to the anchor, grips the band handle with both hands at the chest, and presses the handle straight out in front of the body. The band tries to pull the hands back toward the anchor (i.e. rotate the torso toward the anchor side); the core must resist that rotation and keep the torso square and the arms aligned with the sternum. This is the gold-standard anti-rotation exercise — it trains the obliques, transverse abdominis, and the entire core to stabilize the spine against rotational forces. Used in rehab (especially low-back), athletic performance (rotational sports, contact sports), and as a foundational core builder for lifters. Far more functional than crunches for protecting the spine and transferring force.",
+  "descriptionPl": "Ćwiczenie anty-rotacyjne core'a wykonywane na stojąco z gumą oporową zakotwiczoną na wysokości klatki piersiowej z boku. Ćwiczący staje bokiem do punktu zakotwiczenia, chwyta uchwyt gumy oburącz przy klatce piersiowej i wyciska uchwyt prosto przed siebie. Guma próbuje ściągnąć dłonie z powrotem w stronę zakotwiczenia (czyli zrotować tułów w stronę zakotwiczenia); core musi opierać się tej rotacji i utrzymać tułów ustawiony prosto, a ramiona w linii ze środkiem klatki piersiowej. To wzorcowe ćwiczenie anty-rotacyjne — trenuje skośne, mięsień poprzeczny brzucha i cały core do stabilizacji kręgosłupa przeciw siłom rotacyjnym. Stosowane w rehabilitacji (zwłaszcza dolnych pleców), w sporcie (sporty rotacyjne, sporty kontaktowe) i jako fundamentalny budulec core dla osób trenujących z ciężarami. Znacznie bardziej funkcjonalne niż brzuszki w kontekście ochrony kręgosłupa i przekazywania siły.",
+
+  "instructions": [
+    "Anchor a resistance band at chest height to a stable point (door anchor, squat rack upright, pole). Test the anchor before loading.",
+    "Stand sideways to the anchor with feet shoulder-width apart, knees slightly bent, weight balanced 50/50. The anchor is to your left or right at about chest height.",
+    "Step away from the anchor until the band has firm tension with your hands at the chest. The further you step, the harder it gets.",
+    "Grab the handle with both hands, fingers interlocked, and pull it to the center of your sternum. Elbows bent and tucked against the ribs.",
+    "Brace the core (about 50% — not maximum). Squeeze the glutes lightly. Keep shoulders down and back, chin neutral.",
+    "Exhale and press both hands straight out in front of the chest until the elbows are fully extended. The hands stay in line with the sternum — do NOT let the band pull them toward the anchor.",
+    "Hold the fully extended position for 2-3 seconds. This is where the anti-rotation challenge is highest — the band is at maximum leverage trying to twist you.",
+    "Slowly return the hands to the chest over 2 seconds, maintaining the same posture. Do not let the torso rotate during the return.",
+    "Complete all reps on one side, then turn around and face the opposite direction to train the other side. Both sides must be trained equally."
+  ],
+  "instructionsPl": [
+    "Zakotwicz gumę oporową na wysokości klatki piersiowej w stabilnym punkcie (kotwica drzwiowa, słupek klatki/stojaka, pal). Sprawdź zakotwiczenie przed obciążeniem.",
+    "Stań bokiem do zakotwiczenia, stopy na szerokość barków, kolana lekko ugięte, ciężar rozłożony 50/50. Zakotwiczenie jest po Twojej lewej lub prawej stronie na wysokości klatki piersiowej.",
+    "Odejdź od zakotwiczenia, aż guma uzyska solidne napięcie przy dłoniach trzymanych przy klatce piersiowej. Im dalej odejdziesz, tym trudniej.",
+    "Chwyć uchwyt oburącz, palce zaplecione, ściągnij go do środka mostka. Łokcie zgięte i przyciśnięte do żeber.",
+    "Napnij brzuch (ok. 50% — nie maksymalnie). Lekko zaciśnij pośladki. Barki w dół i lekko ściągnięte, broda neutralna.",
+    "Wydech i wyciśnij obie dłonie prosto przed klatkę piersiową, aż łokcie się w pełni wyprostują. Dłonie pozostają w linii z mostkiem — NIE pozwól gumie ściągnąć ich w stronę zakotwiczenia.",
+    "Zatrzymaj w pełnym wyproście na 2-3 sekundy. To moment, w którym wyzwanie anty-rotacyjne jest największe — guma ma maksymalną dźwignię i próbuje Cię skręcić.",
+    "Powoli wróć dłońmi do klatki piersiowej w 2 sekundy, utrzymując tę samą postawę. Nie pozwól tułowiowi obrócić się podczas powrotu.",
+    "Wykonaj wszystkie powtórzenia po jednej stronie, potem obróć się i stań w przeciwną stronę, by przetrenować drugą stronę. Obie strony muszą być przetrenowane równo."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_rotation",
+    "force": "push",
+    "mechanic": "isometric",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "rectus_abdominis", "core"],
+    "secondary": ["transverse_abdominis", "erector_spinae", "shoulders", "triceps"],
+    "stabilizers": ["glutes", "quadratus_lumborum", "multifidus", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P10",
+    "rectus_abdominis": "P7",
+    "core": "P10",
+    "transverse_abdominis": "S8",
+    "erector_spinae": "S6",
+    "shoulders": "S4",
+    "triceps": "S4",
+    "glutes": "T5",
+    "quadratus_lumborum": "T6",
+    "multifidus": "T5",
+    "serratus_anterior": "T4"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": ["band_anchor", "door_anchor"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dead-bug", "plank"],
+    "progression_to": ["cable-pallof-press", "band-vertical-pallof-press", "kneeling-pallof-press", "single-arm-pallof-press"],
+    "alternatives": ["cable-pallof-press", "band-vertical-pallof-press", "side-plank", "bird-dog"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand sideways to anchor, feet shoulder-width, knees soft",
+      "Band at chest height — anchor at sternum level",
+      "Step away until band has firm tension at the chest",
+      "Hands locked together at the center of the sternum",
+      "Brace at 50%, squeeze glutes lightly, ribs down"
+    ],
+    "setup_cues_pl": [
+      "Stań bokiem do zakotwiczenia, stopy na szerokość barków, kolana lekko ugięte",
+      "Guma na wysokości klatki piersiowej — zakotwiczenie na poziomie mostka",
+      "Odejdź od zakotwiczenia, aż guma będzie solidnie napięta przy klatce",
+      "Dłonie zaplecione razem na środku mostka",
+      "Napnij brzuch na 50%, lekko zaciśnij pośladki, żebra w dół"
+    ],
+    "execution_cues": [
+      "Press straight out — hands stay in line with the sternum",
+      "Do NOT let the band rotate your torso toward the anchor",
+      "Hold the full extension for 2-3 seconds — this is the hardest part",
+      "Slow tempo: 1 sec out, 2-3 sec hold, 2 sec back",
+      "Exhale on the press, inhale on the return"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto przed siebie — dłonie w linii z mostkiem",
+      "NIE pozwól gumie obrócić Twojego tułowia w stronę zakotwiczenia",
+      "Utrzymaj pełen wyprost przez 2-3 sekundy — to najtrudniejszy moment",
+      "Wolne tempo: 1 sek wyciśnięcie, 2-3 sek wytrzymanie, 2 sek powrót",
+      "Wydech podczas wyciskania, wdech podczas powrotu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotating toward the anchor during the press",
+        "faultPl": "Tułów rotuje się w stronę zakotwiczenia podczas wyciskania",
+        "cause": "Band tension too high for current core strength — the core cannot resist the rotational pull",
+        "causePl": "Zbyt duże napięcie gumy w stosunku do aktualnej siły core — core nie daje rady oprzeć się sile rotacyjnej",
+        "cue": "Step closer to the anchor to reduce tension. Better to do 12 clean reps with light band than 4 reps with rotation. Quality before load.",
+        "cuePl": "Podejdź bliżej zakotwiczenia, by zmniejszyć napięcie. Lepiej zrobić 12 czystych powtórzeń z lekką gumą niż 4 z rotacją. Jakość przed obciążeniem."
+      },
+      {
+        "fault": "Hips swinging away from the anchor (compensating with hip shift instead of bracing core)",
+        "faultPl": "Biodra odchylają się od zakotwiczenia (kompensacja przesunięciem bioder zamiast napięciem core'a)",
+        "cause": "Trying to use bodyweight as counterweight instead of training the core to resist rotation",
+        "causePl": "Próba użycia ciężaru ciała jako przeciwwagi zamiast trenowania core'a do oporu rotacji",
+        "cue": "Pin the hips squarely between the feet — they don't move. Imagine a vertical line from the head through the hips to the floor — keep it vertical.",
+        "cuePl": "Ustaw biodra równo między stopami — nie ruszają się. Wyobraź sobie pionową linię od głowy przez biodra do podłogi — utrzymaj ją pionowo."
+      },
+      {
+        "fault": "Pressing too fast / no hold at the end",
+        "faultPl": "Zbyt szybkie wyciskanie / brak zatrzymania na końcu",
+        "cause": "Treating it like a chest press; missing that the goal is the isometric hold at full extension",
+        "causePl": "Traktowanie jako wyciskanie klatki; brak zrozumienia, że celem jest izometryczne zatrzymanie w pełnym wyproście",
+        "cue": "Press out in 1 second — then HOLD for 2-3 seconds with everything locked. The hold is where the work happens, not the press.",
+        "cuePl": "Wyciśnij w 1 sekundę — potem TRZYMAJ przez 2-3 sekundy ze wszystkim usztywnionym. Praca dzieje się w zatrzymaniu, nie w wyciskaniu."
+      },
+      {
+        "fault": "Shoulders shrugging up to the ears during the press",
+        "faultPl": "Barki uciekają w górę do uszu podczas wyciskania",
+        "cause": "Using the upper traps to assist the press instead of keeping the press in the chest/triceps",
+        "causePl": "Wspomaganie ruchu górnymi czworobocznymi zamiast trzymania pracy w klatce i tricepsach",
+        "cue": "Shoulders stay down and back the entire rep. Long neck. If traps fire up, you're using too much band — reduce tension.",
+        "cuePl": "Barki w dół i lekko ściągnięte przez całe powtórzenie. Długa szyja. Jeśli czworoboczne się uruchamiają, używasz za dużej gumy — zmniejsz napięcie."
+      },
+      {
+        "fault": "Uneven sides — only training the strong side or doing more reps on one side",
+        "faultPl": "Nierówne strony — trening tylko mocniejszej strony lub więcej powtórzeń po jednej stronie",
+        "cause": "Forgetting to flip, or instinctively favoring the dominant side",
+        "causePl": "Zapominanie o zmianie strony lub instynktowne faworyzowanie strony dominującej",
+        "cue": "Always do the SAME number of reps per side. If the weak side fails first, that's your true working number for BOTH sides next time.",
+        "cuePl": "Zawsze tyle samo powtórzeń na stronę. Jeśli słabsza strona pada pierwsza, to jest Twoja prawdziwa liczba robocza dla OBU stron następnym razem."
+      }
+    ],
+    "breathing": "Inhale at the chest with hands at the sternum. Exhale slowly through pursed lips during the 1-second press out (helps engage the deep core). Maintain a steady controlled breath during the 2-3 second isometric hold — do NOT hold breath. Inhale on the return.",
+    "breathingPl": "Wdech przy klatce piersiowej z dłońmi przy mostku. Wydech powolny przez zaciśnięte usta podczas 1-sekundowego wyciskania (pomaga zaangażować głęboki core). Utrzymaj kontrolowany oddech podczas 2-3-sekundowego zatrzymania izometrycznego — NIE wstrzymuj oddechu. Wdech podczas powrotu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain_with_rotation",
+      "severity": "modify",
+      "modification": "If active rotation provokes pain, start in a half-kneeling or tall-kneeling position which reduces the rotational demand on the lower back. Light band only. Stop if any pain.",
+      "modificationPl": "Jeśli aktywna rotacja wywołuje ból, zacznij w pozycji półklęku lub klęku wysokiego, co zmniejsza obciążenie rotacyjne dolnych pleców. Tylko lekka guma. Przerwij przy jakimkolwiek bólu.",
+      "alternative": "kneeling-pallof-press"
+    },
+    {
+      "condition": "acute_shoulder_injury",
+      "severity": "modify",
+      "modification": "Pressing the band away may load the shoulder. Limit range to a half-press (hands stop at half extension) or switch to a static hold (bring hands to sternum and just hold against the band pull, no press).",
+      "modificationPl": "Wyciskanie gumy może obciążyć bark. Ogranicz zakres do połowy wyciskania (dłonie zatrzymują się w połowie) lub przejdź na zatrzymanie statyczne (przyciągnij dłonie do mostka i tylko trzymaj przeciwko ciągowi gumy, bez wyciskania).",
+      "alternative": "pallof-hold"
+    },
+    {
+      "condition": "advanced_pregnancy_third_trimester",
+      "severity": "modify",
+      "modification": "Standing rotation work is generally safe in pregnancy, but reduce band tension significantly, stand with a wider stance for stability, and avoid any breath-holding. Stop immediately if dizziness or pelvic discomfort.",
+      "modificationPl": "Praca rotacyjna na stojąco jest na ogół bezpieczna w ciąży, ale zmniejsz znacznie napięcie gumy, stań w szerszym rozkroku dla stabilności i unikaj wstrzymywania oddechu. Przerwij natychmiast przy zawrotach głowy lub dyskomforcie w okolicy miednicy.",
+      "alternative": "bird-dog"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-10 per side with 2-sec hold (beginner) | 3x10-12 per side with 3-sec hold (standard) | 4x12-15 per side or 3x6 per side with 5-sec hold (advanced)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "band-horizontal-pallof-press.gif",
+    "frames_extracted": [
+      "frames/band-horizontal-pallof-press/frame_0_start.png",
+      "frames/band-horizontal-pallof-press/frame_1_early.png",
+      "frames/band-horizontal-pallof-press/frame_2_mid.png",
+      "frames/band-horizontal-pallof-press/frame_3_late.png",
+      "frames/band-horizontal-pallof-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/band-horizontal-pallof-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): mężczyzna stoi bokiem (lewy bok do zakotwiczenia po lewej stronie kadru), guma napięta poziomo na wysokości klatki piersiowej, uchwyt trzymany oburącz przy mostku, łokcie zgięte i przyciśnięte do żeber. Anatomia podświetla obliques (skośne) bardzo mocno na czerwono + rectus abdominis. Klatki 1-3 (early/mid/late): dłonie wyciskają uchwyt prosto przed siebie, ramiona prostują się, łokcie wyprostowane w pełni; dłonie pozostają w linii z mostkiem (NIE są ściągane w stronę zakotwiczenia mimo ciągu gumy). Klatka 4 (end): powrót do pozycji wyjściowej z uchwytem przy klatce. Ruch potwierdzony: anti-rotation core stability z wyciskaniem poziomym przed siebie. Klasyfikacja: anti_rotation (przeciwdziałanie rotacji wokół osi pionowej), isometric (core pracuje izometrycznie utrzymując pozycję tułowia mimo siły rotacyjnej; mechanika ruchu kończyn to push), unilateral (jednostronnie — trzeba zrobić obie strony osobno; choć dłonie trzymają uchwyt razem, obciążenie skośnych jest jednostronne — pracują głównie skośne strony przeciwnej do zakotwiczenia), plane=transverse (siła rotacyjna działa w płaszczyźnie poprzecznej). Mięsień główny: obliques P10 (najsilniej aktywne — bezpośrednio opierają się rotacji), rectus_abdominis P7 (współpracuje, ale nie jest głównym targetem), core P10 (cały kompleks). Transverse_abdominis S8 (głęboka stabilizacja). Erector_spinae S6 (opór rotacji od tyłu). Shoulders S4 + triceps S4 (wyciskanie samej gumy jest lekkie, to nie ćwiczenie barków). Glutes T5 + QL T6 + multifidus T5 (głębokie stabilizatory). Equipment: resistance_band (wymagana) + band_anchor/door_anchor (opcjonalne, ale w praktyce potrzebne). Difficulty=4 (beginner+ — trudniejsze niż dead-bug bo na stojąco i wymaga zrozumienia anty-rotacji, ale wciąż dostępne dla początkujących). Prerequisites: dead-bug, plank (podstawowe core). Nazwa PL: 'Pallof press z gumą poziomo' — 'Pallof press' to przyjęty międzynarodowy termin (od John Pallof, fizjoterapeuta), 'poziomo' dla rozróżnienia od wariantu pionowego. Bezpieczeństwo: GENERALNIE bardzo bezpieczne, polecane w rehabilitacji dolnych pleców (anti-rotation chroni kręgosłup). Główne ostrzeżenia: ostry ból pleców z rotacją (zmień na klęk), ostry uraz barku (ogranicz zakres lub static hold), zaawansowana ciąża (zmniejsz napięcie, szerszy rozkrok). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["band", "resistance_band", "core", "abs", "obliques", "anti_rotation", "stability", "home_workout", "rehab", "functional", "back_safe", "athletic_performance"]
+}

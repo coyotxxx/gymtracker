@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-one-arm-concentration-curl-on-stability-ball",
+  "name": "Dumbbell One-Arm Concentration Curl on Stability Ball",
+  "namePl": "Concentration curl z hantlą jednorącz na piłce",
+  "aliases": ["one-arm concentration curl on swiss ball", "seated concentration curl on stability ball", "ball concentration curl"],
+  "aliasesPl": ["concentration curl jednorącz siedząc na piłce", "uginanie ramienia z hantlą siedząc na piłce", "izolowane uginanie bicepsa na piłce"],
+
+  "description": "Single-arm biceps isolation exercise performed while seated on a stability ball, with the working elbow braced against the inner thigh. The thigh-pad eliminates upper-arm motion and forces strict elbow flexion through a full ROM with peak supination, producing a strong contraction-focused stimulus. Replacing the bench with a stability ball adds a low-load core and hip stabilization demand without compromising the isolation effect on biceps brachii.",
+  "descriptionPl": "Izolowane ćwiczenie na biceps wykonywane jednorącz w pozycji siedzącej na piłce gimnastycznej, z łokciem pracującej ręki opartym o wewnętrzną stronę uda. Oparcie ramienia o udo eliminuje ruch ramienia ponad łokciem i wymusza ścisłe zginanie w łokciu w pełnym zakresie ruchu z pełną supinacją, dając silny bodziec skupiony na skurczu mięśnia. Zastąpienie ławki piłką gimnastyczną dodaje niewielkie zaangażowanie mięśni głębokich tułowia i bioder, nie naruszając efektu izolacji bicepsa.",
+
+  "instructions": [
+    "Sit on a stability ball with feet flat on the floor wider than shoulder-width for a stable base. Hold one dumbbell in your working hand with a supinated (palm-up) grip.",
+    "Lean forward from the hips, rest the back of the working upper arm (just above the elbow) against the inner thigh on the same side. The dumbbell should hang straight down between your legs.",
+    "Place your non-working hand on the opposite thigh or knee for support. Keep your back flat — bend at the hips, not the spine.",
+    "Brace your core to stay balanced on the ball. Both feet stay rooted to the floor throughout the set.",
+    "Curl the dumbbell upward toward the shoulder by flexing only at the elbow. Exhale on the way up. Keep the upper arm pinned against the thigh — do not let it drift away.",
+    "At the top, squeeze the biceps hard with the palm fully turned upward (peak supination). Pause for a brief second.",
+    "Lower the dumbbell under control over 2-3 seconds back to full elbow extension. Inhale on the descent. Do not let the weight crash down or bounce out of the bottom.",
+    "Complete all reps on one side, then switch arms. Avoid rocking on the ball — the only movement should be at the elbow."
+  ],
+  "instructionsPl": [
+    "Usiądź na piłce gimnastycznej, stopy płasko na podłodze rozstawione szerzej niż barki dla stabilnej podstawy. Trzymaj jedną hantlę w pracującej ręce chwytem podchwytem (dłoń skierowana w górę).",
+    "Pochyl tułów do przodu zginając się w biodrach i oprzyj tylną część ramienia pracującej ręki (tuż nad łokciem) o wewnętrzną stronę uda po tej samej stronie. Hantla powinna zwisać prosto w dół między nogami.",
+    "Połóż wolną rękę na drugim udzie lub kolanie dla podparcia. Trzymaj plecy proste — zginaj się w biodrach, nie w kręgosłupie.",
+    "Napnij mięśnie głębokie tułowia aby utrzymać równowagę na piłce. Obie stopy pozostają zakorzenione w podłożu przez całą serię.",
+    "Uginaj hantlę w kierunku barku, zginając wyłącznie w stawie łokciowym. Wydech w fazie koncentrycznej. Ramię ponad łokciem ma pozostać przyciśnięte do uda — nie pozwalaj mu się odsunąć.",
+    "W górnej pozycji mocno spinaj biceps z dłonią w pełnej supinacji (skierowaną w górę). Zatrzymaj się na chwilę.",
+    "Opuszczaj hantlę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciu. Wdech podczas opuszczania. Nie pozwól by hantla spadała ciężarem lub odbijała się w dolnej pozycji.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie zmień rękę. Unikaj bujania się na piłce — jedyny ruch ma odbywać się w łokciu."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "core", "obliques", "glutes", "hip_adductors"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T4",
+    "core": "T3",
+    "obliques": "T2",
+    "glutes": "T2",
+    "hip_adductors": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "stability_ball"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-curl", "dumbbell-concentration-curl"],
+    "progression_to": ["dumbbell-spider-curl", "cable-concentration-curl", "preacher-curl"],
+    "alternatives": ["dumbbell-concentration-curl", "dumbbell-curl", "preacher-curl", "spider-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit on the ball with feet wide for a stable base",
+      "Lean forward from the hips, back flat",
+      "Brace the back of the working upper arm against the inner thigh",
+      "Dumbbell hangs straight down — palm forward (supinated)",
+      "Free hand on the opposite thigh for support"
+    ],
+    "setup_cues_pl": [
+      "Usiądź na piłce, stopy szeroko dla stabilnej podstawy",
+      "Pochyl się w biodrach do przodu, plecy proste",
+      "Oprzyj tylną część ramienia o wewnętrzną stronę uda",
+      "Hantla zwisa prosto w dół — dłoń skierowana w górę (podchwyt)",
+      "Wolna ręka na drugim udzie dla podparcia"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm stays glued to the thigh",
+      "Drive the pinky up at the top for peak supination",
+      "Squeeze the biceps hard at the top for a 1-second pause",
+      "Lower slowly — fight the eccentric for 2-3 seconds",
+      "Stay balanced — do not rock on the ball"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem przyklejone do uda",
+      "Skieruj mały palec do góry na szczycie ruchu (pełna supinacja)",
+      "Mocno spinaj biceps na górze przez 1 sekundę",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Utrzymuj równowagę — nie buj się na piłce"
+    ],
+    "common_faults": [
+      {
+        "fault": "Upper arm lifts off the thigh",
+        "faultPl": "Ramię odrywa się od uda",
+        "cause": "Load too heavy, recruiting shoulder flexion to complete the rep",
+        "causePl": "Zbyt duży ciężar, wspomaganie się zginaniem barku aby zakończyć powtórzenie",
+        "cue": "Press the upper arm firmly into the thigh from rep one. If it lifts, the weight is too heavy.",
+        "cuePl": "Mocno wciskaj ramię w udo od pierwszego powtórzenia. Jeśli odrywa się, ciężar jest za duży."
+      },
+      {
+        "fault": "Rocking the torso or bouncing on the ball",
+        "faultPl": "Bujanie tułowia lub odbijanie się na piłce",
+        "cause": "Using body momentum to cheat the rep, poor core engagement, weight too heavy",
+        "causePl": "Wspomaganie się rozpędem tułowia, słabe napięcie mięśni głębokich, za duży ciężar",
+        "cue": "Plant both feet wide. Brace your core hard. If the ball moves, lighten the load.",
+        "cuePl": "Postaw obie stopy szeroko. Mocno napnij brzuch. Jeśli piłka się rusza, zmniejsz ciężar."
+      },
+      {
+        "fault": "Incomplete range of motion at the bottom",
+        "faultPl": "Niepełny zakres ruchu w dolnej pozycji",
+        "cause": "Stopping short of full elbow extension to keep tension and avoid the hardest stretched position",
+        "causePl": "Niedociąganie do pełnego wyprostu łokcia aby utrzymać napięcie i uniknąć trudnej pozycji rozciągniętej",
+        "cue": "Let the elbow fully straighten between reps. Do not bounce out of the bottom — controlled pause.",
+        "cuePl": "Pozwól łokciowi w pełni wyprostować się między powtórzeniami. Nie odbijaj — kontrolowana pauza."
+      },
+      {
+        "fault": "Wrist collapses or grip rolls during the lift",
+        "faultPl": "Załamywanie nadgarstka lub przekręcanie chwytu podczas unoszenia",
+        "cause": "Weak grip/forearms, dumbbell too heavy, or trying to add wrist curl at the top",
+        "causePl": "Słaby chwyt i przedramiona, zbyt ciężka hantla, lub próba dodania zgięcia nadgarstka na szczycie",
+        "cue": "Keep the wrist straight in line with the forearm. Drive the pinky up — not the wrist.",
+        "cuePl": "Trzymaj nadgarstek prosto w linii z przedramieniem. Unoś mały palec — nie nadgarstek."
+      },
+      {
+        "fault": "Rounding the lower back when leaning forward",
+        "faultPl": "Zaokrąglanie odcinka lędźwiowego podczas pochylenia",
+        "cause": "Tight hamstrings, poor hip hinge mechanics, or sitting too low/high on the ball",
+        "causePl": "Spięte mięśnie dwugłowe uda, słaba mechanika zawiasu biodrowego, lub zła wysokość piłki",
+        "cue": "Hinge at the hips, keep chest open and spine neutral. Adjust ball size if knees aren't ~90 degrees.",
+        "cuePl": "Zginaj się w biodrach, klatka otwarta, kręgosłup w neutralnej pozycji. Dobierz rozmiar piłki tak, by kolana były pod kątem ~90 stopni."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light core brace throughout to keep the ball stable.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię, aby piłka pozostała stabilna."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Concentration curl maximally stresses the distal biceps tendon in full supination. Reduce load, increase reps (12-15), eliminate heavy eccentrics, or switch to a hammer-grip variant.",
+      "modificationPl": "Concentration curl maksymalnie obciąża dystalne przyczepy bicepsa w pełnej supinacji. Zmniejsz ciężar, zwiększ liczbę powtórzeń (12-15), wyeliminuj ciężkie fazy negatywne lub przejdź na wariant młotkowy.",
+      "alternative": "dumbbell-hammer-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Strict supination loads the medial elbow tendons. Reduce weight and avoid forced peak supination, or use a neutral (hammer) grip until pain-free.",
+      "modificationPl": "Ścisła supinacja obciąża przyczepy po stronie przyśrodkowej łokcia. Zmniejsz ciężar i unikaj wymuszonej pełnej supinacji, lub używaj chwytu neutralnego (młotkowego) do czasu ustąpienia bólu.",
+      "alternative": "dumbbell-hammer-curl"
+    },
+    {
+      "condition": "balance_impairment_or_vestibular_disorder",
+      "severity": "modify",
+      "modification": "Stability ball seat is contraindicated when sitting balance is impaired. Perform the same exercise on a standard bench to remove the stability demand.",
+      "modificationPl": "Siedzenie na piłce gimnastycznej jest przeciwwskazane przy zaburzeniach równowagi w siedzeniu. Wykonuj to samo ćwiczenie na klasycznej ławce, aby wyeliminować wymóg stabilizacji.",
+      "alternative": "dumbbell-concentration-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Forward-leaning seated position loads the lumbar spine. Use a preacher bench, perform standing curls, or work in a pain-free ROM with very light loads.",
+      "modificationPl": "Pozycja siedząca z pochyleniem do przodu obciąża odcinek lędźwiowy. Użyj ławki modlitewnika, wykonuj uginanie stojąc lub pracuj w zakresie ruchu bez bólu z bardzo lekkim ciężarem.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 per arm (hypertrophy) | 3x12-15 per arm (pump/finisher) | 2-3x15-20 per arm (endurance)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-one-arm-concentration-curl-on-stability-ball.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-concentration-curl-on-stability-ball/frame_0_start.png",
+      "frames/dumbbell-one-arm-concentration-curl-on-stability-ball/frame_1_early.png",
+      "frames/dumbbell-one-arm-concentration-curl-on-stability-ball/frame_2_mid.png",
+      "frames/dumbbell-one-arm-concentration-curl-on-stability-ball/frame_3_late.png",
+      "frames/dumbbell-one-arm-concentration-curl-on-stability-ball/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-one-arm-concentration-curl-on-stability-ball"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: atlet siedzi na piłce gimnastycznej, stopy szeroko na podłodze, tułów pochylony w biodrach do przodu, prawa ręka z hantlą zwisa prosto w dół między nogami, ramię ponad łokciem oparte o wewnętrzną stronę prawego uda, lewa ręka oparta o lewe udo — biceps i przedramię prawej ręki podświetlone na czerwono. Frame 2: pełny skurcz, hantla na wysokości prawego barku, dłoń w pełnej supinacji, ramię ponad łokciem dalej przyciśnięte do uda — pełne podświetlenie bicepsa. Frame 4: powrót do pełnego wyprostu, identyczna pozycja jak frame 0. Piłka stabilnie pod miednicą, brak bujania. Ćwiczenie jednoznacznie zidentyfikowane jako jednoramienne concentration curl w pozycji siedzącej na piłce gimnastycznej (zamiast klasycznej ławki). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbell", "stability_ball", "unilateral", "core", "upper_body"]
+}

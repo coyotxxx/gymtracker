@@ -1,0 +1,208 @@
+{
+  "id": "band-y-raise",
+  "name": "Band Y-Raise",
+  "namePl": "Y-raise z gumą oporową",
+  "aliases": ["resistance band Y raise", "band overhead Y raise", "standing band Y raise", "band Y press"],
+  "aliasesPl": ["wznosy w kształcie Y z gumą", "Y-raise z taśmą oporową", "wznosy Y stojąc z gumą", "Y-raises z resistance band"],
+
+  "description": "Standing band Y-raise — a bilateral, isolation prehab and posture exercise in which the lifter steps on a resistance band and raises both arms diagonally overhead in a 'Y' shape (~30-45° abduction from the midline). The band creates ascending tension that peaks at the top, biasing the lower trapezius and posterior deltoid while recruiting rhomboids, mid-trapezius and the rotator cuff as stabilisers. A staple of shoulder prehab, upper-cross syndrome correction and warm-up programming for pressers, swimmers and overhead athletes.",
+  "descriptionPl": "Y-raise z gumą oporową w pozycji stojącej — obustronne, izolowane ćwiczenie prehabilitacyjne i posturalne, w którym ćwiczący staje na taśmie oporowej i unosi obie ręce po skosie nad głowę w kształcie litery 'Y' (~30-45° odwiedzenia od linii środkowej ciała). Guma generuje narastające napięcie z maksimum w górnej pozycji, akcentując pracę trapezów dolnych i tylnych aktonów barków, przy współudziale rombów, trapezów środkowych i stożka rotatorów jako stabilizatorów. Klasyczny element prehabu barku, korekcji syndromu skrzyżowania górnego oraz rozgrzewki dla osób trenujących wyciskania, pływaków i sportowców pracujących nad głową.",
+
+  "instructions": [
+    "Step on the middle of a light resistance band with both feet at hip-width. The band passes under the arch of each foot.",
+    "Grip one end of the band in each hand with a neutral grip (palms facing each other or facing the thighs).",
+    "Stand tall: ribs down, glutes lightly braced, chest open, chin tucked. Soften the knees ~5°.",
+    "Start with arms hanging in front of the thighs, band crossed in an X in front of the body or running straight from the feet — both setups are valid.",
+    "Set the shoulder blades back and down (depress + retract). This is the start position.",
+    "Keeping a small (~5-10°) bend in the elbows fixed, raise both arms diagonally upward and outward in a 'Y' shape — about 30-45° away from the midline.",
+    "Drive through the top until the hands finish overhead, wider than the shoulders, forming a clear 'Y' with the torso. Thumbs lead the way up.",
+    "Pause for 1 second at the top, actively pulling the shoulder blades down and back (think 'tuck them into your back pockets').",
+    "Lower the arms along the same diagonal path under control over 2-3 seconds. Do not let the band snap back.",
+    "Reset the scapulae each rep — no shrugging, no rib flaring, no leaning back."
+  ],
+  "instructionsPl": [
+    "Stań na środku lekkiej gumy oporowej obiema stopami na szerokość bioder. Taśma przechodzi pod łukami stóp.",
+    "Złap po jednym końcu gumy w każdą rękę chwytem neutralnym (dłonie zwrócone do siebie lub w stronę ud).",
+    "Wyprostuj sylwetkę: żebra w dół, lekkie napięcie pośladków, otwarta klatka, broda lekko schowana. Lekko ugnij kolana (~5°).",
+    "Pozycja wyjściowa: ręce zwisają przed udami, guma skrzyżowana na 'X' przed ciałem albo biegnąca prosto od stóp — obie wersje są poprawne.",
+    "Ściągnij łopatki w tył i w dół (depresja + retrakcja). To pozycja startowa.",
+    "Utrzymując lekkie, stałe ugięcie w łokciach (~5-10°), unieś obie ręce po skosie w górę i na zewnątrz w kształcie litery 'Y' — pod kątem około 30-45° od linii środkowej ciała.",
+    "Doprowadź ruch do końca: dłonie kończą nad głową, szerzej niż barki, tworząc wyraźną literę 'Y' z tułowiem. Ruch prowadzą kciuki.",
+    "Zatrzymaj się na 1 sekundę w górnej pozycji, aktywnie ściągając łopatki w dół i w tył (pomyśl: 'schowaj je do tylnych kieszeni spodni').",
+    "Opuszczaj ręce tą samą skośną drogą w sposób kontrolowany przez 2-3 sekundy. Nie pozwól gumie 'wystrzelić' z powrotem.",
+    "Resetuj ustawienie łopatek przy każdym powtórzeniu — bez wciągania barków, bez wystawiania żeber, bez odchylania się w tył."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["trapezius_lower", "posterior_deltoids"],
+    "secondary": ["rhomboids", "trapezius_middle", "rotator_cuff"],
+    "stabilizers": ["serratus_anterior", "core", "erector_spinae", "forearm_flexors", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "trapezius_lower": "P9",
+    "posterior_deltoids": "P8",
+    "rhomboids": "S6",
+    "trapezius_middle": "S6",
+    "rotator_cuff": "S5",
+    "serratus_anterior": "T3",
+    "core": "T3",
+    "erector_spinae": "T2",
+    "forearm_flexors": "T2",
+    "glutes": "T2"
+  },
+
+  "equipment": {
+    "required": ["resistance_band"],
+    "optional": []
+  },
+
+  "category": "prehab",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["band-w-raise", "prone-y-raise-on-bench", "cable-y-raise"],
+    "alternatives": ["band-pull-apart", "band-t-raise", "face-pull", "prone-y-raise-on-bench"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Step on the band at hip-width, band under the arches",
+      "Neutral grip, palms facing each other or the thighs",
+      "Tall posture: ribs down, chin tucked, soft knees",
+      "Shoulder blades back and DOWN before the first rep",
+      "Small fixed bend in elbows (~5-10°) — locked all set"
+    ],
+    "setup_cues_pl": [
+      "Stań na gumie na szerokość bioder, taśma pod łukami stóp",
+      "Chwyt neutralny, dłonie do siebie lub w stronę ud",
+      "Wyprostowana sylwetka: żebra w dół, broda schowana, miękkie kolana",
+      "Łopatki w tył i W DÓŁ przed pierwszym powtórzeniem",
+      "Stałe lekkie ugięcie łokci (~5-10°) — zablokowane przez całą serię"
+    ],
+    "execution_cues": [
+      "Thumbs lead — point them up to the ceiling at the top",
+      "Make a clean 'Y' with your arms and torso",
+      "Arms travel ~30-45° from midline — not straight overhead, not straight to the sides",
+      "Pull shoulder blades DOWN as the arms go UP",
+      "Slow eccentric — 2-3 seconds back to start, do not let the band snap"
+    ],
+    "execution_cues_pl": [
+      "Prowadź kciukami — wskazuj nimi sufit w górnej pozycji",
+      "Twórz wyraźną literę 'Y' rękoma i tułowiem",
+      "Ręce idą pod kątem ~30-45° od linii środkowej — nie prosto nad głowę, nie czysto bokiem",
+      "Ściągaj łopatki W DÓŁ podczas gdy ręce idą W GÓRĘ",
+      "Powolna ekscentryka — 2-3 sekundy z powrotem do startu, nie pozwól gumie wystrzelić"
+    ],
+    "common_faults": [
+      {
+        "fault": "Shrugging — upper traps take over",
+        "faultPl": "Wciąganie barków — trapezy górne przejmują ruch",
+        "cause": "Band too heavy, weak lower traps, or losing scapular depression at the top",
+        "causePl": "Zbyt mocna guma, słabe trapezy dolne lub utrata depresji łopatek w górnej pozycji",
+        "cue": "Use a lighter band. Actively press shoulders DOWN, away from the ears, especially as arms reach the top.",
+        "cuePl": "Użyj lżejszej gumy. Aktywnie tłocz barki W DÓŁ, daleko od uszu, zwłaszcza gdy ręce zbliżają się do górnej pozycji."
+      },
+      {
+        "fault": "Lower back arch / rib flare at the top",
+        "faultPl": "Wygięcie lędźwi / wystawianie żeber w górnej pozycji",
+        "cause": "Limited overhead mobility (lats, thoracic spine), so the lifter compensates by hyperextending the lumbar spine",
+        "causePl": "Ograniczona mobilność nad głową (najszersze grzbietu, kręgosłup piersiowy), więc ćwiczący kompensuje przeprostem w lędźwiach",
+        "cue": "Ribs down, glutes braced. Stop the arms at the height where you can keep a neutral spine — even if that is below 'full Y'.",
+        "cuePl": "Żebra w dół, napięte pośladki. Zatrzymaj ręce na wysokości na której utrzymasz neutralny kręgosłup — nawet jeśli nie dojdziesz do pełnego 'Y'."
+      },
+      {
+        "fault": "Arms go straight overhead (I-raise) instead of diagonal Y",
+        "faultPl": "Ręce idą prosto nad głowę (I-raise) zamiast po skosie w 'Y'",
+        "cause": "Lack of awareness of the 30-45° angle, or trying to maximise stretch",
+        "causePl": "Brak świadomości kąta 30-45° lub próba maksymalizacji rozciągnięcia",
+        "cue": "Hands finish WIDER than the shoulders. Look up: you should see your hands in your peripheral vision, not directly above your head.",
+        "cuePl": "Dłonie kończą SZERZEJ niż barki. Spójrz w górę: powinieneś widzieć dłonie w peryferyjnym polu widzenia, nie bezpośrednio nad głową."
+      },
+      {
+        "fault": "Using momentum / bouncing the band at the bottom",
+        "faultPl": "Używanie zamachu / odbijanie gumy w dolnej pozycji",
+        "cause": "Band too heavy or trying to push high reps too fast",
+        "causePl": "Zbyt mocna guma lub próba forsowania wysokich powtórzeń za szybko",
+        "cue": "Pause 1s at the bottom with arms still slightly under tension. Then start the next rep from a dead stop.",
+        "cuePl": "Zatrzymaj się na 1s w dole z rękoma wciąż lekko pod napięciem gumy. Dopiero wtedy zaczynaj kolejne powtórzenie z miejsca."
+      },
+      {
+        "fault": "Elbows bending / collapsing during the raise",
+        "faultPl": "Łokcie uginające się / 'składające się' podczas wznosu",
+        "cause": "Band tension too high — biceps and forearms take over to shorten the lever",
+        "causePl": "Zbyt duże napięcie gumy — biceps i przedramię przejmują pracę żeby skrócić dźwignię",
+        "cue": "Lock the elbow angle from rep 1. If you cannot keep it locked, the band is too strong — switch down.",
+        "cuePl": "Zablokuj kąt łokcia od pierwszego powtórzenia. Jeśli nie potrafisz go utrzymać, guma jest zbyt mocna — zmień na lżejszą."
+      }
+    ],
+    "breathing": "Exhale on the way up (concentric). Inhale on the way down (eccentric). Maintain a light brace — do not hold the breath at the top, where the band tension is highest.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna). Wdech podczas opuszczania (faza ekscentryczna). Utrzymuj lekkie napięcie brzucha — nie wstrzymuj oddechu w górnej pozycji, gdzie napięcie gumy jest największe."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Reduce range of motion — finish at forehead height rather than fully overhead. Stay in the pain-free arc. Use a very light band and focus on scapular depression.",
+      "modificationPl": "Zmniejsz zakres ruchu — kończ na wysokości czoła, nie pełnym Y nad głową. Pozostań w zakresie wolnym od bólu. Używaj bardzo lekkiej gumy i skup się na depresji łopatek.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "rotator_cuff_tear_or_tendinopathy",
+      "severity": "caution",
+      "modification": "Use the lightest band available. Avoid the overhead end-range during acute phase. Keep ROM below shoulder height until cleared by a therapist.",
+      "modificationPl": "Używaj najlżejszej dostępnej gumy. Unikaj końcowego zakresu nad głową w fazie ostrej. Trzymaj zakres ruchu poniżej wysokości barków do czasu zgody fizjoterapeuty.",
+      "alternative": "band-pull-apart"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_extension_intolerance",
+      "severity": "modify",
+      "modification": "The overhead position tempts lumbar hyperextension. Perform the prone version on an incline bench instead — it removes the standing balance demand and the lumbar load.",
+      "modificationPl": "Pozycja nad głową kusi do przeprostu w lędźwiach. Wykonuj wersję leżąc na ławce skośnej (prone Y-raise) — eliminuje to wymóg balansu w staniu i obciążenie odcinka lędźwiowego.",
+      "alternative": "prone-y-raise-on-bench"
+    },
+    {
+      "condition": "ac_joint_pain_or_post_op_shoulder",
+      "severity": "caution",
+      "modification": "Acromioclavicular compression peaks overhead. Limit ROM to ~120° flexion (hands at head height max), keep the band light and stop short of any pinching sensation.",
+      "modificationPl": "Kompresja stawu barkowo-obojczykowego jest największa nad głową. Ogranicz zakres do ~120° zgięcia (dłonie maks na wysokości głowy), używaj lekkiej gumy i zatrzymuj zakres przed jakimkolwiek uczuciem 'kłucia'.",
+      "alternative": "face-pull"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (prehab/warm-up standard) | 2-3x15-20 (posture/endurance) | 3-4x10-12 with 1s top hold (lower trap specialisation)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "band-y-raise.gif",
+    "frames_extracted": [
+      "frames/band-y-raise/frame_0_start.png",
+      "frames/band-y-raise/frame_1_early.png",
+      "frames/band-y-raise/frame_2_mid.png",
+      "frames/band-y-raise/frame_3_late.png",
+      "frames/band-y-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/band-y-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): ćwiczący stoi wyprostowany, stopy na środku gumy oporowej na szerokość bioder, ręce zwisają przed udami z chwytem neutralnym, guma biegnie od stóp pionowo w górę do dłoni; na anatomicznej sylwetce podświetlone tylne aktony barków, trapezy oraz lekko górna część pleców. Frame 2 (top): ręce uniesione skośnie nad głowę w kształcie litery 'Y' — dłonie wyraźnie szerzej niż barki, ramiona pod kątem ~30-45° od linii środkowej ciała, łokcie prawie wyprostowane (lekkie ugięcie utrzymane), kciuki skierowane do góry. Widoczna aktywacja trapezów dolnych i tylnych aktonów w peak position. Frame 4 (end): ręce wróciły do pozycji wyjściowej przed udami z 'ghostem' fazy szczytowej widocznym po bokach. Sylwetka pozostaje wyprostowana przez cały ruch, brak buja, brak odchylania się w tył. To klasyczny prehab/posture exercise — ruch w płaszczyźnie skośnej (między czołową a strzałkową), izolowany, obustronny, stojąc na gumie. Wszystkie pola PL napisane od zera, terminologia trenerska sprawdzona.",
+
+  "tags": ["prehab", "shoulders", "rear_delts", "lower_traps", "posture", "isolation", "resistance_band", "upper_body", "warm_up", "rehab", "standing", "bilateral", "rotator_cuff", "upper_cross_syndrome"]
+}

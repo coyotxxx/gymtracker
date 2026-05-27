@@ -1,0 +1,204 @@
+{
+  "id": "ring-dips",
+  "name": "Ring Dips",
+  "namePl": "Dipy na kółkach gimnastycznych",
+  "aliases": ["gymnastic ring dips", "rings dip", "straight body ring dips"],
+  "aliasesPl": ["dipy na kółkach", "pompki na kółkach", "dipy gimnastyczne", "dipy na obręczach"],
+
+  "description": "Advanced bodyweight pushing exercise performed on suspended gymnastic rings. Significantly harder than parallel-bar dips because the rings are unstable — they want to swing apart and rotate, forcing massive recruitment of stabilizers (rotator cuff, serratus anterior, core). Builds dense triceps, lower chest and front delts, and is the gateway movement to ring muscle-up. Considered a benchmark of upper-body bodyweight strength in gymnastics and calisthenics.",
+  "descriptionPl": "Zaawansowane ćwiczenie z masą własnego ciała wykonywane na zawieszonych kółkach gimnastycznych. Znacznie trudniejsze od dipów na poręczach, ponieważ kółka są niestabilne — chcą się rozjeżdżać i obracać, co wymusza ogromną pracę stabilizatorów (stożek rotatorów, mięsień zębaty przedni, brzuch). Buduje gęste tricepsy, dolną klatkę i przednie delty, jest naturalną drogą do ring muscle-up. W gimnastyce i kalistenice uznawane za sprawdzian górnej części ciała na masie własnego ciała.",
+
+  "instructions": [
+    "Set the rings at a height where you can support yourself with arms locked out and feet hanging freely off the floor (or knees bent if hung lower).",
+    "Jump up or press up into a support hold: arms straight, rings turned slightly outward (ring turnout), shoulders pulled away from ears, hollow body, glutes squeezed.",
+    "Lock the position for 1-2 seconds to neutralize ring swing. The rings should stay close to your body, not flared out.",
+    "Initiate the descent by bending the elbows and leaning the torso slightly forward. Keep the rings pressed in against your sides — do not let them drift outward.",
+    "Lower under control until your shoulders descend to the level of the rings (or slightly below for full ROM). Elbows track close to the ribs (15-45° flare max).",
+    "Pause briefly at the bottom while maintaining ring stability — no swinging, no shoulder shrug.",
+    "Press back up by extending the elbows and squeezing the chest. As you near the top, rotate the rings back into turnout (palms slightly facing forward).",
+    "Lock out at the top with full elbow extension and active shoulder support. Reset for the next rep."
+  ],
+  "instructionsPl": [
+    "Ustaw kółka na wysokości, na której możesz utrzymać się z prostymi rękami i stopami nad podłogą (lub z ugiętymi kolanami przy niższym zawieszeniu).",
+    "Wskocz lub wepchnij się do podporu: ręce wyprostowane, kółka lekko obrócone na zewnątrz (ring turnout), barki ściągnięte od uszu, brzuch napięty, pośladki ściśnięte.",
+    "Ustabilizuj pozycję przez 1-2 sekundy, żeby zatrzymać kołysanie kółek. Kółka powinny być blisko ciała, nie odchylać się na boki.",
+    "Rozpocznij schodzenie zginając łokcie i lekko pochylając tułów do przodu. Trzymaj kółka dociśnięte do boków — nie pozwól im odchylać się na zewnątrz.",
+    "Schodź kontrolowanie aż barki znajdą się na poziomie kółek (lub trochę niżej dla pełnego zakresu). Łokcie idą blisko żeber (rozejście maks. 15-45°).",
+    "Zatrzymaj się krótko na dole zachowując stabilność kółek — bez kołysania, bez zgarbienia barków.",
+    "Wepchnij się z powrotem do góry prostując łokcie i ściskając klatkę. Przy szczycie obróć kółka z powrotem do turnout (dłonie lekko skierowane do przodu).",
+    "Zablokuj górę z pełnym wyprostem łokci i aktywnym podporem barkowym. Ustaw się do kolejnego powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "lower_pectoralis", "anterior_deltoids"],
+    "secondary": ["pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["rotator_cuff", "core", "rectus_abdominis", "rhomboids", "lats", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "lower_pectoralis": "P9",
+    "anterior_deltoids": "P7",
+    "pectoralis_major": "S7",
+    "serratus_anterior": "S7",
+    "rotator_cuff": "S6",
+    "core": "S6",
+    "rectus_abdominis": "S5",
+    "rhomboids": "T3",
+    "lats": "T3",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["gymnastic_rings"],
+    "optional": ["dip_belt", "wrist_wraps", "chalk"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["parallel-bar-dips", "bench-dips", "band-assisted-ring-dips", "ring-support-hold"],
+    "progression_to": ["weighted-ring-dips", "ring-muscle-up", "bulgarian-ring-dip"],
+    "alternatives": ["parallel-bar-dips"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Rings shoulder-width, hanging at a height where feet clear the floor",
+      "False grip not needed — neutral grip, thumbs around",
+      "Active support: shoulders down and away from ears, scapulae protracted",
+      "Turn the rings outward (turnout) — palms slightly forward",
+      "Hollow body: ribs down, glutes squeezed, toes pointed"
+    ],
+    "setup_cues_pl": [
+      "Kółka na szerokość barków, zawieszone tak by stopy nie dotykały podłogi",
+      "False grip niepotrzebny — neutralny chwyt, kciuk od dołu",
+      "Aktywny podpór: barki ściągnięte w dół, z dala od uszu, łopatki rozsunięte",
+      "Obróć kółka na zewnątrz (turnout) — dłonie lekko skierowane do przodu",
+      "Hollow body: żebra w dół, pośladki ściśnięte, palce stóp wyciągnięte"
+    ],
+    "execution_cues": [
+      "Squeeze the rings together — fight the urge for them to drift apart",
+      "Lower under control, do not collapse — 2-3 second eccentric",
+      "Elbows track close to the ribs, not flared 90°",
+      "Shoulders descend to ring level, then drive up hard",
+      "Lock out the top fully — re-engage turnout each rep"
+    ],
+    "execution_cues_pl": [
+      "Ściskaj kółka do siebie — walcz z tendencją do ich rozjeżdżania się",
+      "Schodź kontrolowanie, nie opadaj — ekscentryk 2-3 sekundy",
+      "Łokcie blisko żeber, nie rozłożone na 90°",
+      "Barki schodzą do poziomu kółek, potem mocne pchnięcie w górę",
+      "Wykończ górę pełnym wyprostem — odbuduj turnout w każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rings drift apart / lose lateral stability",
+        "faultPl": "Kółka rozjeżdżają się na boki / utrata kontroli bocznej",
+        "cause": "Insufficient stabilizer strength (pecs, rotator cuff, serratus). Common when transitioning from parallel bars too early.",
+        "causePl": "Za słabe stabilizatory (klatka, stożek rotatorów, zębaty przedni). Częste przy zbyt wczesnym przejściu z poręczy na kółka.",
+        "cue": "Imagine squeezing an orange between the rings and your ribs. If it's too unstable, regress to parallel-bar dips + ring support holds.",
+        "cuePl": "Wyobraź sobie że ściskasz pomarańczę między kółkami a żebrami. Jeśli zbyt niestabilne, cofnij się do dipów na poręczach + statycznych podporów na kółkach."
+      },
+      {
+        "fault": "Elbows flaring out (90° from torso)",
+        "faultPl": "Łokcie rozchodzą się na boki (90° od tułowia)",
+        "cause": "Trying to hit chest at the expense of shoulders. Excessive elbow flare puts the anterior capsule and biceps tendon at risk.",
+        "causePl": "Próba uderzenia w klatkę kosztem barków. Nadmierne rozłożenie łokci obciąża przednią torebkę stawową i ścięgno bicepsa.",
+        "cue": "Keep elbows at 30-45° from your sides. The rings stay close to your body throughout.",
+        "cuePl": "Trzymaj łokcie w zakresie 30-45° od boków. Kółka pozostają blisko ciała przez cały ruch."
+      },
+      {
+        "fault": "Partial range of motion (shoulders stay above rings)",
+        "faultPl": "Częściowy zakres ruchu (barki nie schodzą do poziomu kółek)",
+        "cause": "Strength deficit at the bottom — the hardest position. Skipping deep dips robs you of chest/triceps development.",
+        "causePl": "Brak siły w dolnej pozycji — najtrudniejszym punkcie. Pomijanie głębokich dipów ogranicza rozwój klatki i tricepsa.",
+        "cue": "Lower until the rings touch your shoulders or armpits. Use bands or feet on floor (negatives) until full ROM is owned.",
+        "cuePl": "Schodź aż kółka dotkną barków lub pach. Używaj gum lub stóp na podłodze (negatywy) aż opanujesz pełen zakres."
+      },
+      {
+        "fault": "No ring turnout at the top",
+        "faultPl": "Brak ring turnout na górze (kółka skierowane do siebie)",
+        "cause": "Lack of external rotation strength and shoulder awareness. Critical for healthy shoulders and muscle-up progression.",
+        "causePl": "Brak siły rotacji zewnętrznej i świadomości barków. Kluczowe dla zdrowia stawów i progresji do muscle-up.",
+        "cue": "At lockout, actively rotate the rings so palms face forward (or slightly outward). Hold the turnout for 1 second each rep.",
+        "cuePl": "Na górze aktywnie obróć kółka tak by dłonie były skierowane do przodu (lub lekko na zewnątrz). Przytrzymaj turnout przez 1 sekundę w każdym powtórzeniu."
+      },
+      {
+        "fault": "Body swinging / kipping",
+        "faultPl": "Kołysanie ciała / kipping",
+        "cause": "Lack of hollow body control or rushing reps. Robs the muscles of tension and converts the lift into a momentum exercise.",
+        "causePl": "Brak kontroli hollow body lub pośpiech. Pozbawia mięśnie napięcia i zamienia ćwiczenie w pracę z rozmachem.",
+        "cue": "Squeeze glutes, point toes, lock the legs together. Pause 1 second at top and bottom to kill momentum.",
+        "cuePl": "Ściśnij pośladki, wyciągnij palce stóp, sklej nogi razem. Pauza 1 sekunda na górze i na dole, żeby zabić rozmach."
+      }
+    ],
+    "breathing": "Inhale at the top during the support hold. Hold breath through the descent and the hardest part of the press (Valsalva, light). Exhale at lockout. For high-rep sets, breathe at the top between reps.",
+    "breathingPl": "Wdech na górze podczas podporu. Wstrzymaj oddech przez schodzenie i najtrudniejszą część wypychania (lekka Valsalva). Wydech przy wyproście. Przy seriach na wysoką liczbę powtórzeń oddychaj między powtórzeniami na górze."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Deep dip position aggravates anterior capsule. Avoid full ROM. Switch to parallel-bar dips with limited depth or pushup variants until cleared by physio.",
+      "modificationPl": "Głęboka pozycja drażni przednią torebkę stawową. Unikaj pełnego zakresu. Przejdź na dipy na poręczach z ograniczoną głębokością lub warianty pompki do czasu zgody fizjoterapeuty.",
+      "alternative": "parallel-bar-dips"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Lockout at the top loads the triceps tendon heavily. Stop short of full extension (95-98%) and reduce volume. Build elbow tolerance with isometric ring support holds first.",
+      "modificationPl": "Wyprost na górze mocno obciąża ścięgno tricepsa. Zatrzymuj się tuż przed pełnym wyprostem (95-98%) i zmniejsz objętość. Najpierw zbuduj tolerancję łokcia statycznymi podporami na kółkach.",
+      "alternative": "band-assisted-ring-dips"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Rings naturally rotate so wrists can find a comfortable angle, but at the bottom the load on the wrist is high. Use wrist wraps and limit ROM if pain present.",
+      "modificationPl": "Kółka naturalnie się obracają, więc nadgarstki znajdą wygodny kąt, ale na dole obciążenie nadgarstka jest duże. Używaj opasek na nadgarstki i ogranicz zakres jeśli ból.",
+      "alternative": "parallel-bar-dips"
+    },
+    {
+      "condition": "ac_joint_separation",
+      "severity": "avoid",
+      "modification": "The deep dip stresses the AC joint significantly. Avoid until full recovery. Focus on horizontal pushing instead.",
+      "modificationPl": "Głęboki dip mocno obciąża staw barkowo-obojczykowy. Unikaj do pełnego wyzdrowienia. Zamiast tego skup się na horyzontalnym pchaniu.",
+      "alternative": "barbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-8 (strength) | 4x6-12 (hypertrophy) | 3x AMRAP (skill volume)",
+
+  "media": {
+    "primary": "ring-dips.gif",
+    "frames_extracted": [
+      "frames/ring-dips/frame_0_start.png",
+      "frames/ring-dips/frame_1_early.png",
+      "frames/ring-dips/frame_2_mid.png",
+      "frames/ring-dips/frame_3_late.png",
+      "frames/ring-dips/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/ring-dips"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:40:00Z",
+  "verification_notes": "Obejrzałem 3 klatki z GIFa jahel (frame 0/2/4). Klatka 0 (start): postać w pełnym podporze na kółkach, ręce wyprostowane, stopy w powietrzu, kółka zawieszone na linach — klasyczny ring support hold. Klatka 2 (mid/bottom): głęboka pozycja dolna, barki na poziomie kółek lub poniżej, łokcie zgięte ~90°, tułów lekko pochylony do przodu (charakterystyczne dla dipów akcentujących klatkę). Tricepsy + dolna klatka + przednie delty podświetlone na ilustracji — pasuje do anatomii ring dips. Klatka 4: powrót do podporu, pełen wyprost łokci, kółka stabilne. GIF nie pokazuje wyraźnie ring turnout (kółka zostają obrócone neutralnie w klatce końcowej) — dodałem ring turnout jako coaching cue i common fault. Wszystkie pola PL napisane od zera przez Claude, bez tłumaczenia maszynowego, z użyciem standardowej polskiej terminologii fitness/kalisteniki (dipy, podpór, turnout w angielskim brzmieniu jako jargon, hollow body, false grip).",
+
+  "tags": ["calisthenics", "bodyweight", "gymnastic_rings", "upper_body", "push", "triceps_builder", "lower_chest", "advanced", "ring_muscle_up_prereq"]
+}

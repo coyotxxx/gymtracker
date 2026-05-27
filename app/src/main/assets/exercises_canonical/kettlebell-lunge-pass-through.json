@@ -1,0 +1,210 @@
+{
+  "id": "kettlebell-lunge-pass-through",
+  "name": "Kettlebell Lunge Pass Through",
+  "namePl": "Wykrok z przekładaniem kettlebelli między nogami",
+  "aliases": ["kettlebell figure-8 lunge", "kettlebell lunge hand-off", "kettlebell pass under lunge", "kettlebell lunge with kb pass"],
+  "aliasesPl": ["wykrok z przełożeniem kettlebelli", "wykrok figure-8 z kettlebellem", "wykrok z przekładanką kettlebellem", "wykrok z kb pod nogą"],
+
+  "description": "Unilateral compound lower-body and rotational core exercise. Athlete steps forward into a lunge while passing a kettlebell from one hand to the other underneath the front (lunging) thigh at the bottom position. Combines the strength demand of a forward lunge (quads, glutes, hamstrings) with rotational/anti-rotation work for the obliques and deep core, plus grip endurance from the dynamic kettlebell hand-off. The cross-body load shift adds an asymmetric stability challenge — each rep the kettlebell is on a different side of the body, forcing the trunk to resist tilt and rotation. Alternates legs and hands rep to rep.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała z rotacyjną pracą core. Trenujący wykonuje krok w przód do wykroku, jednocześnie przekładając kettlebell z jednej ręki do drugiej pod udem przedniej (wykrocznej) nogi w dolnej pozycji. Łączy wymagania siłowe wykroku w przód (czworogłowe, pośladki, dwugłowe ud) z rotacyjną i antyrotacyjną pracą skośnych brzucha i głębokiego core, plus wytrzymałość chwytu z dynamicznego przełożenia kettlebelli. Przeniesienie obciążenia w poprzek ciała wprowadza asymetryczne wyzwanie stabilizacyjne — w każdym powtórzeniu kettlebell jest po innej stronie ciała, zmuszając tułów do oporu przed pochyleniem i rotacją. Naprzemienne zmiany nóg i rąk co powtórzenie.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Hold a kettlebell in one hand (e.g., right) by the handle, arm hanging relaxed at your side.",
+    "Brace your core, draw shoulder blades back, chest up, look forward. Free hand hangs ready to receive the kettlebell.",
+    "Take a deep breath and step forward with the opposite leg of the kettlebell hand (if KB is in right hand, step forward with the right leg — this puts the front leg on the loaded side first).",
+    "Lower your body straight down by bending both knees. The back knee descends toward the floor, the front knee stays roughly stacked over the front ankle. Front thigh becomes parallel to the floor.",
+    "At the bottom of the lunge, reach the kettlebell under the front thigh and pass it to the opposite hand (now passing from right to left under the right thigh). Keep the back flat and chest up — only the arms move.",
+    "With the kettlebell now in the opposite hand, drive up through the front heel back to standing.",
+    "Bring the legs together at the top, kettlebell now on the new side, ready for the next rep.",
+    "Step forward with the OTHER leg this time, and pass the kettlebell back under that thigh to the other hand.",
+    "Continue alternating legs and hands every rep — the kettlebell weaves a figure-8 pattern under the lunging leg.",
+    "Maintain a vertical torso throughout. Don't let the kettlebell pull you to one side or rotate your hips while passing."
+  ],
+  "instructionsPl": [
+    "Stań prosto ze stopami na szerokość bioder. Trzymaj kettlebell w jednej ręce (np. prawej) za uchwyt, ramię luźno opuszczone przy boku.",
+    "Napnij brzuch, ściągnij łopatki w tył, klatka w górze, wzrok prosto. Wolna ręka czeka gotowa odebrać kettlebell.",
+    "Weź głęboki wdech i wykonaj krok w przód nogą po stronie ręki trzymającej kettlebell (jeśli KB w prawej ręce, krok w przód prawą nogą — to umieszcza przednią nogę po stronie obciążonej jako pierwszą).",
+    "Opuść ciało prosto w dół zginając oba kolana. Tylne kolano schodzi w kierunku podłogi, przednie kolano zostaje mniej więcej nad kostką. Przednie udo równolegle do podłogi.",
+    "W dolnej pozycji wykroku przełóż kettlebell pod udem przedniej nogi i przekaż go do przeciwnej ręki (przekładanie z prawej do lewej pod prawym udem). Plecy proste, klatka w górze — ruszają się tylko ramiona.",
+    "Z kettlebellem już w przeciwnej ręce, wypchnij się w górę przez piętę przedniej nogi do pozycji stojącej.",
+    "Połącz nogi w górze, kettlebell teraz po przeciwnej stronie, gotowy do następnego powtórzenia.",
+    "Wykonaj krok w przód TĄ DRUGĄ nogą, i przełóż kettlebell pod tym udem do przeciwnej ręki.",
+    "Kontynuuj naprzemiennie nogami i rękami w każdym powtórzeniu — kettlebell rysuje wzór ósemki pod wykroczną nogą.",
+    "Utrzymuj pionowy tułów przez cały ruch. Nie pozwól kettlebellowi pociągnąć cię na bok ani obrócić bioder podczas przekładania."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral_alternating",
+    "plane": "sagittal_transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "obliques"],
+    "secondary": ["hamstrings", "hip_stabilizers", "core", "forearms"],
+    "stabilizers": ["gluteus_medius", "transverse_abdominis", "erector_spinae", "shoulders", "calves"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P8",
+    "glutes": "P8",
+    "obliques": "P7",
+    "hamstrings": "S6",
+    "hip_stabilizers": "S6",
+    "core": "S7",
+    "forearms": "S6",
+    "gluteus_medius": "S5",
+    "transverse_abdominis": "S5",
+    "erector_spinae": "T4",
+    "shoulders": "T3",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["mat", "flat_shoes"]
+  },
+
+  "category": "strength_conditioning",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-lunge", "goblet-lunge", "kettlebell-suitcase-carry", "pallof-press"],
+    "progression_to": ["walking-lunge-pass-through", "deficit-kettlebell-lunge", "double-kettlebell-lunge", "kettlebell-lunge-with-rotation"],
+    "alternatives": ["dumbbell-lunge", "goblet-lunge", "kettlebell-lunge", "kettlebell-figure-8"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Kettlebell in one hand, arm relaxed at the side",
+      "Feet hip-width apart, weight evenly distributed",
+      "Chest up, shoulders back, core braced before the step",
+      "Pick a focal point at eye level — keeps head and spine neutral",
+      "Plan the rhythm: step → bottom → pass → up → switch"
+    ],
+    "setup_cues_pl": [
+      "Kettlebell w jednej ręce, ramię luźno przy boku",
+      "Stopy na szerokość bioder, ciężar rozłożony równomiernie",
+      "Klatka w górze, barki w tył, brzuch napięty przed krokiem",
+      "Ustal punkt skupienia wzroku — utrzymuje głowę i kręgosłup w neutrum",
+      "Zaplanuj rytm: krok → dół → przełożenie → góra → zmiana"
+    ],
+    "execution_cues": [
+      "Long step — front shin vertical at the bottom of the lunge",
+      "Pass the kettlebell ONLY at the bottom, when you're stable — never during the descent or ascent",
+      "Keep the torso vertical during the pass — bend at the hips and knees, not the spine",
+      "Hips square forward through the entire pass — no rotation, just pass with the hands",
+      "Drive through the front heel coming up, kettlebell now on the new side"
+    ],
+    "execution_cues_pl": [
+      "Długi krok — piszczel przedniej nogi pionowo na dnie wykroku",
+      "Przekładaj kettlebell TYLKO na dole, gdy jesteś stabilny — nigdy w czasie schodzenia lub wychodzenia",
+      "Trzymaj tułów pionowo podczas przekładania — zginaj się w biodrach i kolanach, nie w kręgosłupie",
+      "Biodra równolegle do przodu przez całe przełożenie — bez rotacji tułowia, tylko ruch rąk",
+      "Wypchnij się przez piętę przedniej nogi do góry, kettlebell teraz po nowej stronie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounding the back to reach the kettlebell under the thigh",
+        "faultPl": "Zaokrąglanie pleców by sięgnąć kettlebellem pod udo",
+        "cause": "Insufficient depth in the lunge — when the front thigh isn't parallel to the floor there's not enough space under the leg, so the trainee compensates with spinal flexion",
+        "causePl": "Niedostateczna głębokość wykroku — gdy przednie udo nie jest równoległe do podłogi, brakuje miejsca pod nogą, więc trenujący kompensuje zgięciem kręgosłupa",
+        "cue": "Drop deeper in the lunge first — front thigh parallel to the floor creates the tunnel for the kettlebell. Then pass without bending the back.",
+        "cuePl": "Najpierw schodź głębiej w wykrok — przednie udo równolegle do podłogi tworzy tunel dla kettlebelli. Potem przekładaj bez zginania pleców."
+      },
+      {
+        "fault": "Hips rotating to the side during the pass",
+        "faultPl": "Rotacja bioder na bok podczas przekładania",
+        "cause": "Weak anti-rotation core or trying to make the pass easier by twisting the trunk instead of just moving the arms",
+        "causePl": "Słabe antyrotacyjne core lub ułatwianie sobie przełożenia skrętem tułowia zamiast tylko ruchem ramion",
+        "cue": "Hips face straight forward — pretend you have headlights on your hip bones, both pointing in the same direction. Only the arms cross under the leg.",
+        "cuePl": "Biodra zwrócone prosto w przód — wyobraź sobie reflektory na kościach biodrowych, oba świecą w tym samym kierunku. Tylko ramiona przekraczają linię nogi."
+      },
+      {
+        "fault": "Front knee tracking inward during descent",
+        "faultPl": "Przednie kolano zapadające się do środka podczas schodzenia",
+        "cause": "Weak gluteus medius, lazy hip external rotation, or kettlebell weight pulling the body off balance",
+        "causePl": "Słaby pośladkowy średni, brak zewnętrznej rotacji biodra lub ciężar kettlebelli wytrącający z równowagi",
+        "cue": "Push the front knee outward in line with the second toe. Squeeze the front glute as you descend.",
+        "cuePl": "Wypychaj przednie kolano na zewnątrz w linii z drugim palcem stopy. Ściskaj pośladek przedniej nogi schodząc w dół."
+      },
+      {
+        "fault": "Dropping the kettlebell or jerky hand-off",
+        "faultPl": "Upuszczanie kettlebelli lub szarpane przełożenie",
+        "cause": "Tired grip, weight too heavy, or trying to rush the pass before establishing the bottom position",
+        "causePl": "Zmęczony chwyt, zbyt ciężki kettlebell lub próba szybkiego przełożenia przed ustabilizowaniem dolnej pozycji",
+        "cue": "Pause at the bottom for one count. Stable lunge first, then smooth pass. Squeeze the handle through the entire transfer.",
+        "cuePl": "Zatrzymaj się na dnie na jeden takt. Najpierw stabilny wykrok, potem płynne przełożenie. Ściskaj uchwyt przez całe przekazanie."
+      },
+      {
+        "fault": "Shortening the stride and turning into a half-squat",
+        "faultPl": "Skracanie kroku i przejście w półprzysiad",
+        "cause": "Underestimating the stride length, especially when fatigued",
+        "causePl": "Niedoszacowanie długości kroku, zwłaszcza w stanie zmęczenia",
+        "cue": "Step about 1.5x your normal walking step. If the back knee can't reach the floor, the step is too short.",
+        "cuePl": "Krok około 1,5 razy dłuższy niż normalny. Jeśli tylne kolano nie dochodzi do podłogi, krok jest za krótki."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the step down and the kettlebell pass (the most challenging stability moment). Exhale as you drive up to the top.",
+    "breathingPl": "Wdech i napięcie w górze. Wstrzymaj oddech podczas schodzenia i przekładania kettlebelli (najtrudniejszy moment stabilizacyjny). Wydech wypychając się w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear_or_acute_knee_pain",
+      "severity": "modify",
+      "modification": "Deep lunge loads the front knee significantly. Limit depth to pain-free range or switch to a reverse lunge variant (less shear), or perform without the kettlebell pass first.",
+      "modificationPl": "Głęboki wykrok znacząco obciąża przednie kolano. Ogranicz głębokość do zakresu bez bólu lub przejdź na wariant wykroku w tył (mniej sił ścinających), albo wykonuj najpierw bez przekładania kettlebelli.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "The combination of deep lunge, asymmetric load, and rotational pass demands a healthy spine. Switch to symmetric loaded variants (goblet lunge) or unloaded bodyweight lunges until cleared.",
+      "modificationPl": "Połączenie głębokiego wykroku, asymetrycznego obciążenia i rotacyjnego przełożenia wymaga zdrowego kręgosłupa. Przejdź na warianty z symetrycznym obciążeniem (goblet lunge) lub wykroki bez obciążenia do czasu wyzdrowienia.",
+      "alternative": "goblet-lunge"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Cross-body load swap during a unilateral lunge is highly destabilizing. Practice stationary kettlebell lunges first (no pass), use a wall for fingertip support, or switch to bilateral squats.",
+      "modificationPl": "Przekładanie obciążenia w poprzek ciała podczas jednostronnego wykroku silnie destabilizuje. Najpierw ćwicz stacjonarne wykroki z kettlebellem (bez przekładania), użyj ściany do podparcia palcem, lub przejdź na obustronne przysiady.",
+      "alternative": "kettlebell-lunge"
+    },
+    {
+      "condition": "wrist_or_grip_pathology",
+      "severity": "modify",
+      "modification": "The dynamic hand-off and one-handed kettlebell hold stresses the wrist and grip. Use a lighter weight, switch to dumbbell variant with neutral grip, or remove the pass and perform a static kettlebell lunge.",
+      "modificationPl": "Dynamiczne przekazanie i jednoręczny chwyt kettlebelli obciąża nadgarstek i chwyt. Użyj lżejszego ciężaru, przejdź na wariant z hantlem z neutralnym chwytem lub usuń przekładanie wykonując statyczny wykrok z kettlebellem.",
+      "alternative": "dumbbell-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-10 per side (12-16 alternating reps total, hypertrophy/conditioning) | 3x6 per side (strength + stability focus) | 2-3x20-30s AMRAP (metcon/conditioning circuit)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "kettlebell-lunge-pass-through.gif",
+    "frames_extracted": [
+      "frames/kettlebell-lunge-pass-through/frame_0_start.png",
+      "frames/kettlebell-lunge-pass-through/frame_1_early.png",
+      "frames/kettlebell-lunge-pass-through/frame_2_mid.png",
+      "frames/kettlebell-lunge-pass-through/frame_3_late.png",
+      "frames/kettlebell-lunge-pass-through/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/kettlebell-lunge-pass-through"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T11:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): postać stoi w pozycji wyprostowanej z kettlebellem w prawej ręce przy boku, podświetlone czworogłowe i pośladki (gotowość) oraz skośne brzucha. Klatka 2 (mid): głęboki wykrok z prawą nogą w przód, przednie udo równolegle do podłogi, tylne kolano blisko podłogi, kettlebell PRZEKŁADANY pod prawym udem (widoczny w lewej ręce pod udem) — wyraźny obrót/przekładanie cross-body. Intensywnie podświetlone: czworogłowe obu nóg (najmocniej przedniej), pośladki, SKOŚNE BRZUCHA (kluczowe — to różnica vs. zwykły lunge), przedramiona. Klatki 1/3 (early/late) pokazują overlap pozycji startowej i dolnej — animacja naprzemienna. Klasyfikacja: compound + unilateral_alternating + sagittal+transverse plane (dodanie rotacyjnej składowej core odróżnia od zwykłego kettlebell-lunge). Master.json jahel kategoryzuje pod 'glutes' ale anatomicznie quadriceps + glutes + obliques to primary (P8/P8/P7). Hands swap co rep (figure-8 pattern pod nogą). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'wykrok z przekładaniem kettlebelli'.",
+
+  "tags": ["unilateral", "lower_body", "lunge", "kettlebell", "compound", "rotational_core", "anti_rotation", "grip", "asymmetric_load", "coordination", "conditioning"]
+}

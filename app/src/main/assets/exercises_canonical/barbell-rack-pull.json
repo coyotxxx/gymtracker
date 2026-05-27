@@ -1,0 +1,203 @@
+{
+  "id": "barbell-rack-pull",
+  "name": "Barbell Rack Pull",
+  "namePl": "Rack pull ze sztangą (ciąg z stojaków)",
+  "aliases": ["rack pull", "partial deadlift", "rack deadlift", "block pull (rack variant)"],
+  "aliasesPl": ["rack pull", "ciąg z stojaków", "ciąg z pinów", "martwy ciąg częściowy", "rack pull ze sztangą"],
+
+  "description": "Partial-range deadlift performed in a power rack with the barbell resting on safety pins set at or above knee height. Eliminates the floor pull and focuses the work on the upper portion of the deadlift — hip lockout, glute extension, traps and erector engagement. Allows loading well beyond 1RM deadlift, making it a top accessory for posterior-chain strength, grip and lockout weakness.",
+  "descriptionPl": "Częściowy martwy ciąg wykonywany w klatce siłowej (power rack) ze sztangą opartą na zabezpieczeniach (pinach) ustawionych na wysokości kolan lub nieco powyżej. Eliminuje fazę startową z ziemi i koncentruje pracę na górnej części martwego ciągu — wyproście bioder w lock-out, pośladkach, czworobocznych i prostownikach grzbietu. Pozwala załadować ciężar znacznie większy niż pełen martwy ciąg, dlatego to czołowe ćwiczenie pomocnicze na siłę tylnego łańcucha, chwyt oraz słaby lock-out.",
+
+  "instructions": [
+    "Set the safety pins in a power rack at the height of your knees or slightly above (1-3 cm above the knee cap). Load the barbell on the pins.",
+    "Stand with your mid-foot directly under the bar, feet shoulder-width apart, toes pointing forward or slightly out.",
+    "Hinge at the hips and bend the knees just enough to reach the bar. Grip the bar just outside your knees (double-overhand, mixed grip, or use straps for heavy loads).",
+    "Set the back: chest up, shoulder blades pulled down and back, neutral spine. Engage the lats by pulling the bar toward your body ('break the bar').",
+    "Take a big breath, brace your core (Valsalva), then drive your hips forward and stand tall — lift the bar off the pins to full lockout.",
+    "At the top: full hip extension, glutes squeezed hard, neutral spine, shoulders stacked over hips. DO NOT lean back or hyperextend the lumbar.",
+    "Lower under control: push hips back first (hip hinge), keep the bar close to the body, return the bar to the pins with a brief dead-stop.",
+    "Reset bracing, lats and back position between each rep. Each pull starts from a dead-stop on the pins — no bouncing."
+  ],
+  "instructionsPl": [
+    "Ustaw zabezpieczenia (piny) w klatce siłowej na wysokości kolan lub nieco powyżej (1-3 cm powyżej rzepki). Połóż załadowaną sztangę na pinach.",
+    "Stań tak, by środek stóp był dokładnie pod gryfem. Stopy na szerokość barków, palce skierowane do przodu lub lekko na zewnątrz.",
+    "Zgnij biodra i ugnij kolana tylko tyle, by sięgnąć gryfu. Złap sztangę na zewnątrz kolan (chwyt podwójny nachwytem, mieszany lub paski przy dużych ciężarach).",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, neutralny kręgosłup. Napnij najszersze ciągnąc gryf w stronę ciała ('łam gryf').",
+    "Nabierz głęboki oddech, napnij brzuch (Valsalva), wepchnij biodra do przodu i stań prosto — zerwij sztangę z pinów do pełnego lock-out.",
+    "Na górze: pełen wyprost bioder, mocno ściśnięte pośladki, neutralny kręgosłup, barki nad biodrami. NIE odchylaj się do tyłu, nie odginaj lędźwi.",
+    "Opuszczaj kontrolowanie: najpierw wypchnij biodra do tyłu (hip hinge), trzymaj gryf blisko ciała, odłóż sztangę na piny z krótkim dead-stop.",
+    "Resetuj napięcie brzucha, najszersze i ustawienie pleców między powtórzeniami. Każdy ciąg startuje od dead-stop z pinów — bez odbijania."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "erector_spinae", "trapezius"],
+    "secondary": ["hamstrings", "latissimus_dorsi", "forearms", "rhomboids"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "erector_spinae": "P9",
+    "trapezius": "P8",
+    "hamstrings": "S7",
+    "latissimus_dorsi": "S7",
+    "rhomboids": "S6",
+    "forearms": "S8",
+    "core": "S7",
+    "quadriceps": "S4"
+  },
+
+  "equipment": {
+    "required": ["barbell", "power_rack"],
+    "optional": ["belt", "lifting_straps", "chalk", "deadlift_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["romanian-deadlift", "kettlebell-deadlift", "barbell-hip-thrust"],
+    "progression_to": ["barbell-deadlift", "deficit-deadlift", "block-pull", "snatch-grip-deadlift"],
+    "alternatives": ["barbell-deadlift", "block-pull", "trap-bar-deadlift", "romanian-deadlift"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Set pins at knee height (or 1-3 cm above) — confirm height before loading",
+      "Mid-foot under the bar, feet shoulder-width, toes slightly out",
+      "Grip just outside the knees — straps OK for heavy loads (this is an overload lift)",
+      "Chest up, lats engaged, shoulders pulled back BEFORE the pull",
+      "Big brace before lifting off the pins — treat each rep like a 1RM setup"
+    ],
+    "setup_cues_pl": [
+      "Ustaw piny na wysokości kolan (lub 1-3 cm powyżej) — sprawdź wysokość przed załadowaniem",
+      "Środek stopy pod gryfem, stopy szerokość barków, palce lekko na zewnątrz",
+      "Chwyt tuż na zewnątrz kolan — paski OK przy dużym ciężarze (to ćwiczenie overload)",
+      "Klatka w górze, najszersze napięte, barki ściągnięte PRZED ciągiem",
+      "Mocne napięcie brzucha przed zerwaniem sztangi z pinów — traktuj każde powtórzenie jak setup do 1RM"
+    ],
+    "execution_cues": [
+      "Drive hips forward HARD — this lift is all hip extension",
+      "Squeeze the glutes at the top — own the lockout for a second",
+      "Keep the bar in contact with thighs the entire way up",
+      "Pull shoulders DOWN and back at lockout, not UP toward ears",
+      "Dead-stop on the pins between reps — reset brace, no bounce or 'pin bounce' momentum"
+    ],
+    "execution_cues_pl": [
+      "Mocno wepchnij biodra do przodu — całe ćwiczenie to wyprost biodra",
+      "Ściśnij pośladki na górze — utrzymaj lock-out przez sekundę",
+      "Trzymaj gryf w kontakcie z udami przez cały ruch",
+      "Na lock-out barki W DÓŁ i do tyłu, nie W GÓRĘ do uszu",
+      "Dead-stop na pinach między powtórzeniami — zresetuj napięcie, bez odbijania ani momentum 'pin bounce'"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using the pin bounce — bouncing the bar off the safeties",
+        "faultPl": "Odbijanie sztangi od pinów ('pin bounce')",
+        "cause": "Ego loading, trying to use elastic energy from the pins to lift more weight",
+        "causePl": "Ego — próba wykorzystania energii sprężystej z pinów by podnieść większy ciężar",
+        "cue": "Full dead-stop on the pins every rep. Reset brace before each pull. If you need to bounce, the weight is too heavy.",
+        "cuePl": "Pełen dead-stop na pinach przy każdym powtórzeniu. Resetuj napięcie przed każdym ciągiem. Jeśli musisz odbijać, ciężar jest zbyt duży."
+      },
+      {
+        "fault": "Hyperextension at lockout (leaning back)",
+        "faultPl": "Nadmierne odgięcie w lock-out (odchylanie się do tyłu)",
+        "cause": "Misunderstanding of full hip extension vs lumbar extension, ego load, or weak glutes substituted by lower back",
+        "causePl": "Niezrozumienie pełnego wyprostu biodra vs odgięcia lędźwi, ego ciężar lub słabe pośladki kompensowane lędźwiami",
+        "cue": "Stand tall, neutral pelvis, glutes squeezed. Imagine a wall behind you — no leaning back.",
+        "cuePl": "Stań prosto, neutralna miednica, ściśnięte pośladki. Wyobraź sobie ścianę za sobą — bez odchylania."
+      },
+      {
+        "fault": "Rounded upper back (thoracic flexion)",
+        "faultPl": "Zaokrąglone górne plecy (zgięcie piersiowe)",
+        "cause": "Weak traps/rhomboids relative to load, lats not engaged, or overloading the bar",
+        "causePl": "Słabe czworoboczne/równoległoboczne w stosunku do ciężaru, niewłączone najszersze lub zbyt duży ciężar",
+        "cue": "Chest up, shoulder blades down and back BEFORE the lift. If back rounds at lockout, drop the weight 10-20%.",
+        "cuePl": "Klatka w górze, łopatki w dół i do tyłu PRZED ciągiem. Jeśli plecy się zaokrąglają w lock-out, zmniejsz ciężar 10-20%."
+      },
+      {
+        "fault": "Bar drifts away from the body",
+        "faultPl": "Gryf oddala się od ciała",
+        "cause": "Lats not engaged, hips set too far back at start, weak upper back",
+        "causePl": "Niewłączone najszersze, biodra za daleko do tyłu na starcie, słabe górne plecy",
+        "cue": "Pull the bar INTO the thighs. Engage lats hard — 'protect your armpits'.",
+        "cuePl": "Pociągnij gryf W uda. Mocno napnij najszersze — 'chroń pachy'."
+      },
+      {
+        "fault": "Pins set too low (mimicking full deadlift) or too high (no ROM)",
+        "faultPl": "Piny za nisko (imitujące pełny ciąg) lub za wysoko (brak ROM)",
+        "cause": "No clear training intent — rack pull should target lockout/upper ROM, not replace deadlift",
+        "causePl": "Brak jasnego celu treningowego — rack pull ma trenować lock-out/górny ROM, nie zastępować martwego ciągu",
+        "cue": "Standard setup: pins at or just above knee. Below-knee = block pull (different stimulus). Above mid-thigh = lockout-only work.",
+        "cuePl": "Standardowo: piny na wysokości kolana lub tuż powyżej. Poniżej kolana = block pull (inny bodziec). Powyżej środka uda = praca tylko na lock-out."
+      }
+    ],
+    "breathing": "Big inhale before lifting off the pins, brace (Valsalva), hold throughout the rep. Exhale at the top of the lockout or after returning to the pins. NEVER exhale during the pull.",
+    "breathingPl": "Głęboki wdech przed zerwaniem sztangi z pinów, napięcie (Valsalva), trzymaj przez całe powtórzenie. Wydech na szczycie lock-out lub po odłożeniu na piny. NIGDY wydech podczas ciągu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Do not load the spine. Consult physiotherapist.",
+      "modificationPl": "Pełen odpoczynek. Nie obciążaj kręgosłupa. Konsultacja z fizjoterapeutą.",
+      "alternative": "barbell-hip-thrust"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Set pins HIGHER (mid-thigh) to reduce range and spinal load. Avoid maximal loads. Maintain rigorous neutral spine — stop the set at first sign of lumbar flexion.",
+      "modificationPl": "Ustaw piny WYŻEJ (środek uda) by zmniejszyć ROM i obciążenie kręgosłupa. Unikaj maksymalnych ciężarów. Bezwzględnie utrzymuj neutralny kręgosłup — przerwij serię przy pierwszym objawie zgięcia lędźwiowego.",
+      "alternative": "barbell-hip-thrust"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Rack pull is actually well-tolerated by FAI because pin height limits hip flexion. Set pins above knee to keep hips less flexed.",
+      "modificationPl": "Rack pull jest dobrze tolerowany przy FAI, bo wysokość pinów ogranicza zgięcie biodra. Ustaw piny powyżej kolana by mniej zginać biodro.",
+      "alternative": "romanian-deadlift"
+    },
+    {
+      "condition": "shoulder_injury_blocking_overhead_pull",
+      "severity": "modify",
+      "modification": "Use lifting straps to bypass grip stress on the affected shoulder. Avoid mixed grip if it aggravates the shoulder.",
+      "modificationPl": "Użyj pasków by ominąć obciążenie chwytu na uszkodzonym barku. Unikaj chwytu mieszanego jeśli drażni bark.",
+      "alternative": "trap-bar-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "5x3-5 (strength/overload) | 3-4x5-8 (hypertrophy) | 4-6x3 (lockout-specific work) | 1-3x1-3 (max overload)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-rack-pull.gif",
+    "frames_extracted": [
+      "frames/barbell-rack-pull/frame_0_start.png",
+      "frames/barbell-rack-pull/frame_1_early.png",
+      "frames/barbell-rack-pull/frame_2_mid.png",
+      "frames/barbell-rack-pull/frame_3_late.png",
+      "frames/barbell-rack-pull/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-rack-pull"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z gif. Frame 0: pozycja startowa — sztanga oparta na zabezpieczeniach klatki siłowej na wysokości kolan, lifter pochylony, podświetlone: pośladki, prostowniki grzbietu, czworogłowe, najszersze, dwugłowe ud, przedramiona — klasyczna deadlift posture, ale BEZ ziemi, sztanga na pinach. Frame 2: lock-out — pełne stanie, sztanga przy biodrach, neutralny kręgosłup. Frame 3/4: powrót na piny. Ćwiczenie wyraźnie wykonywane w power rack (widoczna metalowa konstrukcja klatki) — partial ROM od kolan do lock-out. Klasyfikacja: hinge (NIE squat) — dominacja wyprostu biodra przy ograniczonym zgięciu kolana. Equipment: barbell + power_rack (oba required — bez power racka nie ma 'rack pull'). Primary: glutes P10, erector_spinae P9, trapezius P8 (zgodnie ze specyfikacją: górna część ROM mocno angażuje traps). Hamstrings spadły do S7 (mniej rozciągnięte przy starcie z kolan niż w pełnym deadlift). Quadriceps spadły do S4 (minimalna praca — niewiele zgięcia kolana). Difficulty: 6 (intermediate, łatwiejsze niż pełny deadlift bo bez fazy startowej z ziemi, ale wymaga power racka i obciążenie często overload >1RM deadlift co podnosi ryzyko). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["powerlifting", "accessory", "lockout_specialty", "overload_lift", "posterior_chain", "barbell", "power_rack", "hip_hinge", "partial_rom"]
+}

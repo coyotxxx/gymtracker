@@ -1,0 +1,205 @@
+{
+  "id": "barbell-reverse-grip-bent-over-row",
+  "name": "Barbell Reverse-Grip Bent-Over Row (Yates Row)",
+  "namePl": "Wiosłowanie sztangą podchwytem w opadzie (Yates row)",
+  "aliases": ["yates row", "reverse grip barbell row", "underhand barbell row", "supinated barbell row", "reverse-grip bent-over row"],
+  "aliasesPl": ["yates row", "wiosłowanie podchwytem", "wiosłowanie sztangą podchwytem", "wiosłowanie sztangą chwytem dolnym", "wiosło podchwytem"],
+
+  "description": "Bent-over barbell row performed with a supinated (underhand, palms-up) grip and a slightly more upright torso angle (~30-45 degrees). Popularized by 6× Mr. Olympia Dorian Yates. The reverse grip rotates the shoulder externally, which keeps the elbows closer to the body and drives them further back behind the torso. This shifts emphasis toward the lower lats and increases biceps involvement compared to the standard pronated row, while the more vertical torso lets you handle slightly heavier loads with less lumbar fatigue. A go-to mass builder for lat thickness and lower-lat development in bodybuilding-style back programs.",
+  "descriptionPl": "Wiosłowanie sztangą w opadzie wykonywane chwytem podchwytem (dłonie skierowane do góry) z lekko bardziej pionowym tułowiem (~30-45 stopni). Spopularyzowane przez 6-krotnego Mr. Olympia Doriana Yatesa. Podchwyt rotuje bark na zewnątrz, dzięki czemu łokcie pracują bliżej ciała i przejeżdżają dalej za linię tułowia. Akcent przenosi się na dolne partie najszerszych grzbietu i zwiększa zaangażowanie dwugłowych ramion w porównaniu ze standardowym nachwytem, a bardziej pionowy tułów pozwala obsłużyć nieco większe ciężary mniej obciążając odcinek lędźwiowy. Klasyczne ćwiczenie masowe na grubość najszerszych i dolne lats w treningu kulturystycznym.",
+
+  "instructions": [
+    "Load the barbell and stand with feet shoulder-width apart, mid-foot under the bar.",
+    "Grip the bar with a supinated (underhand) grip, hands roughly shoulder-width apart. Palms face up.",
+    "Unrack from the floor to standing using a stiff-leg deadlift.",
+    "Hinge at the hips, push the glutes back, slight knee bend. Torso angle ~30-45 degrees (slightly more upright than pronated row). Neutral spine, chest proud, lats engaged.",
+    "Bar hangs below the hips with arms fully extended. Wrists straight (not flexed back).",
+    "Brace the core. Pull the bar to the lower abdomen / belly button by driving the elbows back, keeping them close to the torso (the underhand grip naturally tucks them).",
+    "Squeeze the shoulder blades at the top and feel the lats contract hard. Pause briefly.",
+    "Lower the bar under control along the same path until arms are fully extended.",
+    "Maintain the torso angle for the entire set. Bicep involvement is high — keep tension on the back, not just the arms."
+  ],
+  "instructionsPl": [
+    "Załaduj sztangę i stań stopami na szerokość barków, środek stopy pod gryfem.",
+    "Złap sztangę podchwytem (dłonie skierowane do góry), ręce mniej więcej na szerokość barków.",
+    "Podnieś gryf z ziemi martwym ciągiem na sztywnych nogach do pozycji stojącej.",
+    "Zegnij się w biodrach, wypchnij pośladki w tył, lekko ugnij kolana. Kąt tułowia ~30-45 stopni (nieco bardziej pionowo niż w nachwycie). Neutralny kręgosłup, klatka wysunięta, najszersze napięte.",
+    "Sztanga zwisa poniżej bioder z wyprostowanymi ramionami. Nadgarstki proste (nie zgięte do tyłu).",
+    "Napnij brzuch. Pociągnij gryf do dolnej części brzucha / pępka, prowadząc łokcie w tył blisko tułowia (podchwyt naturalnie je dociąga).",
+    "Ściśnij łopatki na szczycie i poczuj mocne napięcie najszerszych. Krótka pauza.",
+    "Opuść gryf w pełnej kontroli tą samą trajektorią aż do pełnego wyprostu ramion.",
+    "Utrzymuj stały kąt tułowia przez całą serię. Zaangażowanie bicepsów jest duże — trzymaj napięcie w plecach, nie tylko w ramionach."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_horizontal",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii", "rhomboids"],
+    "secondary": ["trapezius_middle_lower", "posterior_deltoids", "brachialis"],
+    "stabilizers": ["erector_spinae", "core", "hamstrings", "glutes", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P8",
+    "rhomboids": "P8",
+    "trapezius_middle_lower": "S8",
+    "posterior_deltoids": "S6",
+    "brachialis": "S7",
+    "erector_spinae": "S8",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["lifting_straps", "chalk", "lifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-bent-over-row", "dumbbell-bent-over-row", "single-arm-dumbbell-row", "romanian-deadlift"],
+    "progression_to": ["pendlay-row", "t-bar-row", "weighted-pull-up", "deadlift"],
+    "alternatives": ["barbell-bent-over-row", "ez-bar-reverse-grip-bent-over-row", "smith-reverse-grip-bent-over-row", "t-bar-row", "chest-supported-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, mid-foot under the bar",
+      "Supinated (underhand) grip, hands roughly shoulder-width",
+      "Hinge back, slight knee bend, torso 30-45 degrees — slightly more upright than pronated row",
+      "Neutral spine, chest proud, lats pre-set",
+      "Wrists straight, bar hanging below the hips with straight arms"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, środek stopy pod gryfem",
+      "Chwyt podchwytem (dłonie do góry), ręce mniej więcej na szerokość barków",
+      "Wypchnij biodra w tył, lekko ugnij kolana, tułów 30-45 stopni — bardziej pionowo niż w nachwycie",
+      "Neutralny kręgosłup, klatka wysunięta, najszersze wstępnie napięte",
+      "Nadgarstki proste, sztanga zwisa poniżej bioder przy wyprostowanych ramionach"
+    ],
+    "execution_cues": [
+      "Drive the elbows STRAIGHT BACK along the ribs — underhand grip tucks them naturally",
+      "Pull the bar to the lower abdomen / belly button — NOT to the sternum",
+      "Think 'elbows past the hips' — that is the Yates lat finish",
+      "Squeeze the lats hard at the top, do not just bend the biceps",
+      "Lock the torso angle — biceps fatigue is no excuse to cheat with the back"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokcie PROSTO W TYŁ wzdłuż żeber — podchwyt naturalnie je dociąga",
+      "Ciągnij gryf do dolnej części brzucha / pępka — NIE do mostka",
+      "Pomyśl 'łokcie za biodrami' — to wykończenie najszerszych w stylu Yatesa",
+      "Mocno ściśnij najszersze na szczycie, nie zginaj tylko bicepsów",
+      "Zablokuj kąt tułowia — zmęczenie bicepsów nie jest wymówką dla oszukiwania plecami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrist hyperextension (bar rolls back into bent wrists under load)",
+        "faultPl": "Przeprost nadgarstków (gryf zsuwa się i wygina nadgarstki w tył pod obciążeniem)",
+        "cause": "Heavy load with weak grip, bar held in fingers rather than palm, or supinated grip mechanics putting stress on the wrist",
+        "causePl": "Duży ciężar przy słabym chwycie, sztanga trzymana w palcach zamiast w dłoni, lub mechanika podchwytu obciążająca nadgarstek",
+        "cue": "Grip the bar deep in the palm, knuckles up. Keep wrists STRAIGHT — neutral line from forearm to bar. If you cannot keep wrists straight, the weight is too heavy. Wrist wraps help; lifting straps eliminate the issue entirely. Common Yates row injury — bicep tendon and wrist.",
+        "cuePl": "Trzymaj gryf głęboko w dłoni, knykcie do góry. Trzymaj nadgarstki PROSTE — neutralna linia od przedramienia do gryfu. Jeśli nie utrzymasz prostych nadgarstków, ciężar jest za duży. Bandaże na nadgarstki pomagają; paski całkowicie eliminują problem. Klasyczna kontuzja Yates row — ścięgno bicepsa i nadgarstek."
+      },
+      {
+        "fault": "Rounded lower back (lumbar flexion under load)",
+        "faultPl": "Zaokrąglony odcinek lędźwiowy (zgięcie pod obciążeniem)",
+        "cause": "Weak erectors, weak hip hinge pattern, load too heavy, or poor bracing",
+        "causePl": "Słabe prostowniki, słaby wzorzec hip hinge, zbyt duży ciężar lub słabe napięcie brzucha",
+        "cue": "Reset. Lighter weight. Brace before every rep, chest proud, lats engaged. The more upright Yates angle masks lumbar rounding — film yourself from the side. DANGER — biggest injury risk in this exercise.",
+        "cuePl": "Reset. Mniejszy ciężar. Napnij brzuch przed każdym powtórzeniem, klatka wysunięta, najszersze napięte. Bardziej pionowy kąt Yatesa maskuje zaokrąglenie lędźwi — nagraj się z boku. UWAGA — największe ryzyko kontuzji w tym ćwiczeniu."
+      },
+      {
+        "fault": "Pulling with biceps (arm curl instead of back row)",
+        "faultPl": "Ciąg bicepsami (uginanie zamiast wiosłowania plecami)",
+        "cause": "Underhand grip naturally favors biceps; pulling with hands instead of elbows; weak mind-muscle connection with lats",
+        "causePl": "Podchwyt naturalnie sprzyja bicepsom; ciąg dłońmi zamiast łokciami; słabe połączenie umysł-mięsień z najszerszymi",
+        "cue": "Hands are HOOKS, not levers. Lead with the elbows driving back past the hips. Think 'elbow to back pocket'. If your biceps cramp before your lats burn, you are curling the bar.",
+        "cuePl": "Dłonie to HAKI, nie dźwignie. Prowadź łokciami w tył poza linię bioder. Pomyśl 'łokieć do tylnej kieszeni'. Jeśli bicepsy palą szybciej niż najszersze, to uginasz sztangę zamiast wiosłować."
+      },
+      {
+        "fault": "Torso too upright (turning into a standing curl/shrug)",
+        "faultPl": "Zbyt pionowy tułów (zmienia się w stojące uginanie/szrug)",
+        "cause": "Yates style allows more upright angle than pronated row, but lifter goes too vertical to handle heavier weight",
+        "causePl": "Styl Yatesa pozwala na bardziej pionowy kąt niż nachwyt, ale ćwiczący staje za prosto by udźwignąć większy ciężar",
+        "cue": "Yates angle is 30-45 degrees — NOT 60+. If the bar travels in front of the body at the top, you are too vertical. Hinge more, push hips further back.",
+        "cuePl": "Kąt Yatesa to 30-45 stopni — NIE 60+. Jeśli sztanga ląduje przed ciałem na szczycie, jesteś za prosto. Bardziej pochylenie, wypchnij biodra dalej w tył."
+      },
+      {
+        "fault": "No scapular retraction at top (just elbow flexion)",
+        "faultPl": "Brak ściągnięcia łopatek na szczycie (samo zginanie łokci)",
+        "cause": "Pulling with arms only, rushing the tempo, or fixating on biceps pump rather than back contraction",
+        "causePl": "Ciąg samymi rękami, zbyt szybkie tempo, lub fokus na pompę bicepsów zamiast skurcz pleców",
+        "cue": "At the top, squeeze the shoulder blades together for 1 sec. Feel the lats SHORTEN. Yates row only works if the back finishes the rep — biceps are just along for the ride.",
+        "cuePl": "Na szczycie ściśnij łopatki razem na 1 sek. Poczuj jak najszersze SKRACAJĄ SIĘ. Yates row działa tylko gdy plecy kończą powtórzenie — bicepsy są tylko dodatkiem."
+      }
+    ],
+    "breathing": "Inhale and brace at the top of the hinge. Exhale through the pull as the bar approaches the abdomen. Inhale on the controlled descent. For heavier sets, hold the brace for 2-3 reps then re-breathe.",
+    "breathingPl": "Wdech i napięcie brzucha na szczycie pochylenia. Wydech w trakcie ciągu gdy sztanga zbliża się do brzucha. Wdech podczas kontrolowanego opuszczania. Przy cięższych seriach trzymaj napięcie przez 2-3 powtórzenia, potem odetchnij."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid completely until cleared. Loaded spinal flexion risk too high. Consult physiotherapist.",
+      "modificationPl": "Unikaj całkowicie do uzyskania zgody. Ryzyko obciążonej flexji kręgosłupa zbyt duże. Konsultacja z fizjoterapeutą.",
+      "alternative": "chest-supported-row"
+    },
+    {
+      "condition": "biceps_tendinopathy_or_distal_biceps_strain",
+      "severity": "avoid",
+      "modification": "Supinated grip puts maximum stress on the distal biceps tendon — historically the most common Yates row injury. Switch to pronated or neutral grip until fully healed.",
+      "modificationPl": "Podchwyt obciąża maksymalnie dystalne ścięgno bicepsa — historycznie najczęstsza kontuzja przy Yates row. Przejdź na nachwyt lub chwyt neutralny do pełnego wyleczenia.",
+      "alternative": "barbell-bent-over-row"
+    },
+    {
+      "condition": "wrist_pain_or_carpal_tunnel",
+      "severity": "modify",
+      "modification": "Supinated grip stresses the wrist more than pronated. Use an EZ-bar (angled grip) or switch to neutral-grip dumbbell row. Lifting straps reduce grip-related wrist tension.",
+      "modificationPl": "Podchwyt obciąża nadgarstek bardziej niż nachwyt. Użyj sztangi łamanej (EZ-bar z kątowym chwytem) lub przejdź na wiosłowanie hantlami chwytem neutralnym. Paski redukują napięcie nadgarstka związane z chwytem.",
+      "alternative": "ez-bar-reverse-grip-bent-over-row"
+    },
+    {
+      "condition": "hamstring_tightness_or_poor_hip_hinge",
+      "severity": "caution",
+      "modification": "Work on mobility first. Use shallower hinge angle (50-60 degrees) until you can hold 30-45 degrees with neutral spine.",
+      "modificationPl": "Najpierw popracuj nad mobilnością. Używaj płytszego kąta hip hinge (50-60 stopni) dopóki nie utrzymasz 30-45 stopni z neutralnym kręgosłupem.",
+      "alternative": "chest-supported-row"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy, Yates classic) | 4x4-6 (strength) | 3x8-12 (general) | 3x10-15 (volume / lat finisher)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-reverse-grip-bent-over-row.gif",
+    "frames_extracted": [
+      "frames/barbell-reverse-grip-bent-over-row/frame_0_start.png",
+      "frames/barbell-reverse-grip-bent-over-row/frame_1_early.png",
+      "frames/barbell-reverse-grip-bent-over-row/frame_2_mid.png",
+      "frames/barbell-reverse-grip-bent-over-row/frame_3_late.png",
+      "frames/barbell-reverse-grip-bent-over-row/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "upper-back/barbell-reverse-grip-bent-over-row"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa. Frame 0 (start): tułów pochylony ~30-45 stopni (bardziej pionowo niż klasyczny BOR), kolana lekko ugięte, sztanga z dużymi obciążnikami zwisa pod biodrami przy wyprostowanych ramionach, dłonie SUPINOWANE (podchwyt — palce skierowane do przodu / dłonie do góry, charakterystyczna dla Yates row). Podświetlony cały kompleks górnych pleców — najszersze, środkowe i dolne czworoboczne, równoległoboczne. Frames 1-2 (early/mid): ruch koncentryczny — łokcie idą prosto w tył wzdłuż żeber, BLISKO ciała (efekt podchwytu — rotacja zewnętrzna barku tuckuje łokcie), sztanga zbliża się do dolnej części brzucha / pępka. Frames 3-4 (late/end): pełne ściągnięcie łopatek, łokcie ZA linią tułowia, sztanga przy dolnym brzuchu (nie przy klatce). Kąt tułowia stabilny przez cały ruch — wzorcowa technika Yatesa. Klasyfikacja jako 'pull_horizontal' potwierdzona. Equipment: barbell + obciążniki, nic więcej. Wszystkie pola PL napisane od zera, polski standard fitness ('Wiosłowanie sztangą podchwytem w opadzie' jako główna nazwa + 'Yates row' jako alias — w polskim fitness znane pod oboma nazwami). primary: latissimus_dorsi P10 (cięższy akcent na lats niż klasyczny BOR przez supinated grip + łokcie blisko ciała), biceps_brachii P8 (znacznie większe niż nachwyt — podchwyt zwiększa zaangażowanie bicepsa), rhomboids P8. Difficulty 6 (niżej niż BOR=7 bo bardziej pionowy tułów zmniejsza obciążenie lędźwi, ale technika wymaga ostrożności ze ścięgnem bicepsa). Dodano kontuzję biceps_tendinopathy jako AVOID (historycznie najczęstsza kontuzja Dorian Yates miał problemy z bicepsem) i wrist_pain jako MODIFY (supinated grip obciąża nadgarstek).",
+
+  "tags": ["compound", "back_mass_builder", "horizontal_pull", "barbell", "lat_developer", "lower_lats", "biceps_assist", "bodybuilding_classic", "yates_style", "powerbuilding"]
+}

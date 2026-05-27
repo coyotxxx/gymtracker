@@ -1,0 +1,205 @@
+{
+  "id": "kettlebell-sumo-high-pull",
+  "name": "Kettlebell Sumo High Pull",
+  "namePl": "Sumo high pull z kettlebell",
+  "aliases": ["kettlebell sumo high pull", "sumo deadlift high pull", "KB sumo high pull"],
+  "aliasesPl": ["sumo high pull z kettlebell", "kettlebell sumo high pull", "podciąganie kettlebell w sumo do brody"],
+
+  "description": "Explosive full-body conditioning movement combining a sumo deadlift with an upright row to chin height. From a wide stance, you grip a kettlebell between your legs on the floor, drive through the legs in a hinge pattern, and as the hips extend you pull the bell vertically up to chin level with high elbows. Trains the entire posterior chain plus shoulder girdle in a single explosive rep — used heavily in kettlebell sport, CrossFit and metabolic conditioning circuits.",
+  "descriptionPl": "Eksplozywne ćwiczenie kondycyjne łączące martwy ciąg w stójce sumo z podciąganiem do brody. Z szerokiej stójki chwytasz kettlebell między nogami na podłodze, napierasz nogami w hinge'u, a w momencie wyprostu bioder pociągasz kettlebell pionowo w górę do wysokości brody, prowadząc łokcie wysoko nad dłońmi. Trenuje cały tylny łańcuch mięśniowy plus obręcz barkową w jednym eksplozywnym powtórzeniu — bardzo często stosowane w sporcie kettlebell, CrossFitcie i obwodach metabolicznych.",
+
+  "instructions": [
+    "Place the kettlebell on the floor centered between your feet. Adopt a wide sumo stance — feet ~1.5x shoulder width, toes turned out 30-45°.",
+    "Hinge at the hips and bend the knees to drop into the squat-hinge position. Both hands grip the kettlebell handle from above (overhand grip).",
+    "Set the back: chest up, shoulders pulled down, neutral spine, weight on mid-foot. Knees track over toes.",
+    "Inhale and brace the core. Drive forcefully through the floor with your legs — extend the hips and knees explosively.",
+    "As the kettlebell rises and your hips approach lockout, transition into the pull: drive the elbows high and outward, pulling the bell up the body toward your chin.",
+    "Finish with the kettlebell at chin/upper-chest height, elbows higher than the handle, wrists relaxed (do not flick the bell).",
+    "Reverse the movement: let the elbows drop, control the bell down between your legs as you hinge back into the start position. Touch the floor lightly between reps or absorb the load for unbroken sets.",
+    "Maintain a smooth, explosive cadence. This is a conditioning lift — submaximal load, high quality reps."
+  ],
+  "instructionsPl": [
+    "Ustaw kettlebell na podłodze pomiędzy stopami. Przyjmij szeroką stójkę sumo — stopy ~1,5× szerokość barków, palce wykręcone na zewnątrz 30-45°.",
+    "Zegnij się w biodrach i kolanach do pozycji półprzysiadu-zawiasu. Obiema rękami chwyć rączkę kettlebella od góry (chwyt nachwytem).",
+    "Ustaw plecy: klatka w górze, barki ściągnięte w dół, neutralny kręgosłup, ciężar na środku stóp. Kolana idą w linii palców.",
+    "Wdech, napnij brzuch. Mocno wepchnij stopami w podłogę — eksplozywnie wyprostuj biodra i kolana.",
+    "Gdy kettlebell startuje w górę a biodra zbliżają się do wyprostu, przechodzisz w fazę pociągu: prowadź łokcie wysoko i na zewnątrz, podciągając kettlebell przy ciele do wysokości brody.",
+    "Zakończ z kettlebellem na wysokości brody/górnej klatki, łokcie wyżej niż dłonie, nadgarstki rozluźnione (nie odginaj kettlebella nadgarstkami).",
+    "Odwróć ruch: opuść łokcie, kontroluj kettlebell w dół między nogami wchodząc z powrotem w zawias biodrowy. Lekko muśnij podłogę między powtórzeniami lub zaabsorbuj obciążenie dla serii ciągłych.",
+    "Utrzymuj płynną, eksplozywną kadencję. To ćwiczenie kondycyjne — submaksymalne obciążenie, jakościowe powtórzenia."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "lateral_deltoids", "trapezius", "hamstrings"],
+    "secondary": ["quadriceps", "adductors", "erector_spinae", "biceps_brachii", "forearms"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "lateral_deltoids": "P8",
+    "trapezius": "P8",
+    "hamstrings": "P7",
+    "quadriceps": "S7",
+    "adductors": "S7",
+    "erector_spinae": "S7",
+    "biceps_brachii": "S6",
+    "forearms": "S7",
+    "core": "S7"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["chalk", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["kettlebell-deadlift", "kettlebell-sumo-deadlift", "barbell-wide-grip-upright-row", "kettlebell-swing"],
+    "progression_to": ["kettlebell-snatch", "kettlebell-clean", "dumbbell-snatch", "barbell-high-pull"],
+    "alternatives": ["kettlebell-swing", "barbell-wide-grip-upright-row", "dumbbell-sumo-high-pull", "kettlebell-clean"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Wide sumo stance, toes turned out 30-45°",
+      "Kettlebell centered between feet",
+      "Overhand grip on the handle, hands close together",
+      "Chest up, shoulders pulled down, neutral spine",
+      "Knees track over toes, weight on mid-foot"
+    ],
+    "setup_cues_pl": [
+      "Szeroka stójka sumo, palce na zewnątrz 30-45°",
+      "Kettlebell wycentrowany pomiędzy stopami",
+      "Chwyt nachwytem na rączce, dłonie blisko siebie",
+      "Klatka w górze, barki ściągnięte, neutralny kręgosłup",
+      "Kolana w linii palców, ciężar na środku stóp"
+    ],
+    "execution_cues": [
+      "Drive through the floor with the legs FIRST — hips lead",
+      "Elbows high and out — let elbows lead the pull, not the hands",
+      "Keep the bell close to the body, vertical path",
+      "Finish at chin level, no higher — do not pull behind the neck",
+      "Control the descent — hinge back into the start, no free-fall"
+    ],
+    "execution_cues_pl": [
+      "Najpierw napieraj nogami w podłogę — biodra prowadzą ruch",
+      "Łokcie wysoko i na zewnątrz — prowadzisz łokciami, nie dłońmi",
+      "Trzymaj kettlebell blisko ciała, pionowa trajektoria",
+      "Zatrzymaj na wysokości brody, nie wyżej — nie ciągnij za głowę",
+      "Kontroluj fazę negatywną — wróć w zawias, bez swobodnego opadania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Squatting the rep instead of hinging",
+        "faultPl": "Wykonywanie ruchu jak przysiad zamiast zawiasu",
+        "cause": "Knees forward, vertical torso, quad-dominant pattern — loses posterior chain involvement",
+        "causePl": "Kolana wysunięte do przodu, pionowy tułów, dominacja czworogłowych — traci się pracę tylnego łańcucha",
+        "cue": "Push hips back FIRST, then bend knees. Feel the hamstrings stretch in the bottom position.",
+        "cuePl": "NAJPIERW wypchnij biodra do tyłu, dopiero potem zegnij kolana. Poczuj rozciąganie dwugłowych w dolnej pozycji."
+      },
+      {
+        "fault": "Pulling with the arms instead of the hips",
+        "faultPl": "Pociąganie ramionami zamiast biodrami",
+        "cause": "Starting the pull from the floor with the arms — loses the hip drive and overloads the shoulders",
+        "causePl": "Inicjowanie ciągu ramionami od ziemi — gubi się napęd biodrowy i przeciąża barki",
+        "cue": "Legs first, arms last. The kettlebell should already be rising before the elbows bend.",
+        "cuePl": "Najpierw nogi, ramiona na końcu. Kettlebell ma już lecieć w górę zanim łokcie zaczną się zginać."
+      },
+      {
+        "fault": "Elbows below the hands at the top",
+        "faultPl": "Łokcie poniżej dłoni w górnej pozycji",
+        "cause": "Weak rear delts / traps, or pulling like a curl instead of a high pull",
+        "causePl": "Słabe tylne aktony naramiennych / czworoboczne, lub ciąg jak uginanie zamiast high pull",
+        "cue": "Drive elbows UP and OUT — they must finish higher than the handle. Think 'wide elbows'.",
+        "cuePl": "Prowadź łokcie W GÓRĘ i NA ZEWNĄTRZ — muszą skończyć wyżej niż uchwyt. Myśl 'szerokie łokcie'."
+      },
+      {
+        "fault": "Rounded lower back at the bottom",
+        "faultPl": "Zaokrąglone plecy lędźwiowe w dolnej pozycji",
+        "cause": "Hips too low, weak bracing, kettlebell too heavy, poor mobility",
+        "causePl": "Biodra za nisko, słabe napięcie, kettlebell za ciężki, słaba mobilność",
+        "cue": "Reset position. Brace the core hard. Reduce weight and master the hinge pattern.",
+        "cuePl": "Zresetuj pozycję. Mocno napnij brzuch. Zmniejsz ciężar i opanuj wzór zawiasu biodrowego."
+      },
+      {
+        "fault": "Shrugging at the top without elbow lift",
+        "faultPl": "Wzruszanie barków na górze bez wysokich łokci",
+        "cause": "Compensation when the load is too heavy — traps take over from the deltoids",
+        "causePl": "Kompensacja gdy obciążenie zbyt duże — czworoboczne przejmują pracę naramiennych",
+        "cue": "Drop the weight. Reinforce the high-elbow finish — elbows above the bell, then control down.",
+        "cuePl": "Zmniejsz ciężar. Wzmocnij finisz z wysokimi łokciami — łokcie nad kettlebellem, potem kontrolowane opuszczenie."
+      }
+    ],
+    "breathing": "Inhale at the bottom while bracing. Exhale forcefully through the explosive pull. Re-inhale on the descent. For unbroken metabolic sets keep a steady cadence — one breath per rep.",
+    "breathingPl": "Wdech na dole podczas napinania. Energiczny wydech w trakcie eksplozywnego ciągu. Kolejny wdech podczas opuszczania. Dla serii ciągłych (metabolicznych) trzymaj stałą kadencję — jeden oddech na powtórzenie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded hinging entirely until cleared by a physiotherapist. Replace with isometric core work.",
+      "modificationPl": "Unikaj obciążonego zawiasu biodrowego do czasu zgody fizjoterapeuty. Zastąp izometryczną pracą brzucha.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Pulling above mid-chest can pinch the supraspinatus tendon. Stop the pull at sternum height or switch to a swing instead.",
+      "modificationPl": "Ciąg powyżej środka klatki może uciskać ścięgno nadgrzebieniowego. Skróć ruch do wysokości mostka lub zastąp swingiem.",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Sumo stance may aggravate FAI in some lifters. Narrow the stance slightly or reduce depth to avoid the pinch point.",
+      "modificationPl": "Stójka sumo może drażnić FAI u niektórych. Lekko zwęź stójkę lub zmniejsz głębokość by ominąć punkt konfliktu.",
+      "alternative": "kettlebell-swing"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Keep wrists neutral throughout — do not let the kettlebell flop at the top. Reduce load or switch to a dumbbell.",
+      "modificationPl": "Trzymaj nadgarstki w neutralnej pozycji — nie dopuszczaj do odgięcia kettlebella na górze. Zmniejsz obciążenie lub przejdź na hantel.",
+      "alternative": "dumbbell-sumo-high-pull"
+    }
+  ],
+
+  "typical_sets_reps": "4-5x8-12 (hypertrophy/conditioning) | 5-10x5 EMOM (power) | AMRAP 30-60s (metabolic) | 3-5x15-20 (endurance)",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "kettlebell-sumo-high-pull.gif",
+    "frames_extracted": [
+      "frames/kettlebell-sumo-high-pull/frame_0_start.png",
+      "frames/kettlebell-sumo-high-pull/frame_1_early.png",
+      "frames/kettlebell-sumo-high-pull/frame_2_mid.png",
+      "frames/kettlebell-sumo-high-pull/frame_3_late.png",
+      "frames/kettlebell-sumo-high-pull/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/kettlebell-sumo-high-pull",
+    "yuhonas_id": "Kettlebell_Sumo_High_Pull"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:42:00Z",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: szeroka stójka sumo (palce na zewnątrz), kettlebell na podłodze między nogami, oburęczny chwyt nachwytem, biodra zgięte (półprzysiad-zawias) — podświetlone pośladki/dwugłowe ud/czworogłowe/przedramiona. Frame 1-2: faza pociągu — wyprost bioder + podciągnięcie do brody z wysokimi łokciami, podświetlone naramienne boczne i czworoboczne grzbietu, łokcie wyraźnie wyżej niż dłonie. Frame 3-4: opuszczanie i powrót do startu. Klasyfikacja jako 'hinge' (dominujący wzór ruchu to ekstensja biodra) + 'pull' (drugi komponent — vertical pull do brody). Primary: glutes P9 (dominacja w fazie wyprostu), lateral_deltoids P8 + trapezius P8 (faza pociągu z wysokimi łokciami), hamstrings P7. Equipment: kettlebell (yuhonas zgadza się). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Difficulty 7 — wymaga koordynacji hinge→pull pod obciążeniem.",
+
+  "tags": ["kettlebell", "conditioning", "compound", "explosive", "posterior_chain", "metabolic", "crossfit", "kettlebell_sport", "power", "hip_hinge", "vertical_pull"]
+}

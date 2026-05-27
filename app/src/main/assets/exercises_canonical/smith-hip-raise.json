@@ -1,0 +1,199 @@
+{
+  "id": "smith-hip-raise",
+  "name": "Smith Machine Hip Raise",
+  "namePl": "Wznosy bioder leżąc pod Smith machine",
+  "aliases": ["smith hip raise", "smith machine reverse crunch", "smith machine lying hip raise", "smith bar anchored hip raise", "supine hip raise under smith"],
+  "aliasesPl": ["wznosy bioder w Smith machine", "brzuszki odwrotne w Smith machine", "wznosy bioder leżąc pod gryfem", "hip raise ze stabilizacją gryfu Smitha", "reverse crunch z trzymaniem gryfu Smitha"],
+
+  "description": "Bodyweight lower-ab exercise performed lying supine on the floor inside a Smith machine, with the locked bar set just above face level to serve as a grip anchor. The lifter reaches overhead, grips the fixed bar with both hands, and curls the knees up and over the chest while lifting the hips off the floor (posterior pelvic tilt). The Smith bar replaces the bench edge used in classic lying hip raise — because the bar is rigidly locked into the rails, the upper body anchor is rock-solid, the lats and grip can pull against it for stability, and the lower abs can curl the pelvis without the torso sliding on the floor. The movement targets the rectus abdominis (with lower-ab emphasis) and demands hip flexors and obliques as synergists.",
+  "descriptionPl": "Ćwiczenie dolnego brzucha z masą własnego ciała wykonywane w leżeniu na plecach na podłodze wewnątrz Smith machine, z zablokowanym gryfem ustawionym tuż nad twarzą jako zakotwiczenie chwytu. Ćwiczący sięga rękami nad głowę, chwyta nieruchomy gryf obiema dłońmi i zwija kolana w górę nad klatkę, jednocześnie unosząc biodra z podłogi (tylne pochylenie miednicy). Gryf Smitha zastępuje krawędź ławki używaną w klasycznym wznosie bioder leżąc — ponieważ gryf jest sztywno zablokowany w prowadnicach, zakotwiczenie górnej części ciała jest absolutnie stabilne, najszersi i chwyt mogą się o niego rozpierać, a dolny brzuch może zwijać miednicę bez ślizgania się tułowia po podłodze. Ruch celuje w mięsień prosty brzucha (z akcentem na dolną część) i wymaga zginaczy biodra oraz skośnych jako synergistów.",
+
+  "instructions": [
+    "Set the Smith machine bar at a low height — roughly 50-70 cm above the floor (high enough to lie under but low enough to grip with arms extended overhead). Lock the safety stops at the chosen height so the bar cannot drop.",
+    "Lie flat on your back on the floor directly under the bar. Position yourself so the bar sits just above your forehead when your arms are reached overhead.",
+    "Grip the bar with both hands (overhand, shoulder-width or slightly wider). Pull lightly into the bar so the shoulder blades anchor against the floor and the lats engage.",
+    "Start with the legs extended at roughly 45 degrees above the floor (or knees bent at 90 degrees if you are weaker). Press the lower back flat to the floor. This is the start position.",
+    "Brace the core and exhale as you curl the knees up toward the chest AND lift the hips off the floor in one motion. The tailbone should leave the floor — this is the 'hip raise' part, not just a knee tuck.",
+    "At the top, knees are above the chest, hips are off the floor, and the lats are pulling the bar gently to keep the torso pinned. Hold one count and squeeze the lower abs hard.",
+    "Inhale and lower the hips back to the floor under control, then extend the legs back to the starting angle. Eccentric should take roughly 2 seconds.",
+    "Repeat for the prescribed reps. The grip on the bar stays firm throughout — the bar is the anchor that lets the abs curl the pelvis without the torso shifting."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smith machine na niskiej wysokości — około 50-70 cm nad podłogą (wystarczająco wysoko, by się pod nim położyć, ale na tyle nisko, by go chwycić z rękami wyciągniętymi nad głowę). Zablokuj zabezpieczenia na wybranej wysokości, żeby gryf nie mógł spaść.",
+    "Połóż się płasko na plecach na podłodze bezpośrednio pod gryfem. Ustaw się tak, by gryf znalazł się tuż nad czołem, gdy ręce są wyciągnięte nad głowę.",
+    "Chwyć gryf obiema dłońmi (nachwytem, na szerokość barków lub nieco szerzej). Lekko pociągnij za gryf, by łopatki dociskały się do podłogi, a najszersi się napięli.",
+    "Zacznij z nogami wyprostowanymi pod kątem około 45 stopni nad podłogą (lub z kolanami zgiętymi pod kątem 90 stopni, jeśli jesteś słabszy). Dociśnij dolne plecy do podłogi. To pozycja startowa.",
+    "Napnij brzuch i z wydechem zwiń kolana do klatki ORAZ oderwij biodra od podłogi w jednym ruchu. Kość ogonowa powinna oderwać się od podłogi — to jest część 'wznosu bioder', nie tylko podciągnięcie kolan.",
+    "W szczycie kolana są nad klatką, biodra oderwane od podłogi, a najszersi delikatnie ciągną za gryf, by przygwoździć tułów. Zatrzymaj się na sekundę i mocno spnij dolny brzuch.",
+    "Wdech i pod kontrolą opuść biodra na podłogę, a następnie wyprostuj nogi do kąta wyjściowego. Faza ekscentryczna powinna trwać około 2 sekund.",
+    "Powtórz przez zadaną liczbę powtórzeń. Chwyt na gryfie pozostaje mocny przez cały czas — gryf to zakotwiczenie, które pozwala brzuchowi zwijać miednicę bez przesuwania się tułowia."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["hip_flexors", "obliques"],
+    "stabilizers": ["transverse_abdominis", "lats"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "hip_flexors": "S7",
+    "obliques": "S5",
+    "transverse_abdominis": "T4",
+    "lats": "T4"
+  },
+
+  "equipment": {
+    "required": ["smith-machine"],
+    "optional": ["exercise-mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dead-bug", "lying-leg-raise"],
+    "progression_to": ["lying-leg-hip-raise", "hanging-knee-raise", "hanging-leg-raise"],
+    "alternatives": ["reverse-crunch", "lying-leg-hip-raise", "cable-reverse-crunch", "suspended-reverse-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lock the Smith bar at 50-70 cm — high enough to lie under, low enough to grip overhead",
+      "Lie directly under the bar — forehead just below it when arms reach up",
+      "Overhand grip on the bar, shoulder-width — lats pulled lightly into the bar",
+      "Lower back pressed flat to the floor, knees bent or legs at 45 degrees",
+      "Inhale and pre-brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Zablokuj gryf Smitha na 50-70 cm — wystarczająco wysoko by się położyć, na tyle nisko by chwycić nad głową",
+      "Połóż się bezpośrednio pod gryfem — czoło tuż pod nim, gdy ręce sięgają w górę",
+      "Nachwyt na gryfie na szerokość barków — najszersi lekko ciągną gryf",
+      "Dolne plecy dociśnięte płasko do podłogi, kolana zgięte lub nogi pod kątem 45 stopni",
+      "Wdech i wstępne napięcie brzucha przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Knees up AND hips off the floor — one combined curl, not two separate moves",
+      "Pull the bar lightly — lats anchor the torso so the pelvis can curl",
+      "Exhale hard as the tailbone leaves the floor",
+      "Pause one second at the top — knees toward your face, tailbone up",
+      "Lower under control — 2 seconds down, full reset before the next rep"
+    ],
+    "execution_cues_pl": [
+      "Kolana w górę I biodra od podłogi — jedno połączone zwinięcie, nie dwa osobne ruchy",
+      "Lekko ciągnij gryf — najszersi kotwiczą tułów, by miednica mogła się zwinąć",
+      "Mocny wydech, gdy kość ogonowa odrywa się od podłogi",
+      "Sekunda pauzy w szczycie — kolana do twarzy, kość ogonowa do góry",
+      "Opuszczaj pod kontrolą — 2 sekundy w dół, pełen reset przed kolejnym powtórzeniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling the body up to the bar instead of curling the pelvis",
+        "faultPl": "Podciąganie ciała do gryfu zamiast zwijania miednicy",
+        "cause": "The fixed Smith bar invites the lifter to use the lats and biceps to row the torso toward the bar, transferring work away from the abs",
+        "causePl": "Nieruchomy gryf Smitha kusi, by używać najszerszych i bicepsów do podciągania tułowia w stronę gryfu, przerzucając pracę z brzucha na ramiona",
+        "cue": "Imagine the bar is fragile — only a light pull. If your biceps burn, you're rowing. Hands anchor, abs lift.",
+        "cuePl": "Wyobraź sobie, że gryf jest kruchy — tylko delikatne pociągnięcie. Jeśli pieką cię bicepsy, ciągniesz. Dłonie kotwiczą, brzuch unosi."
+      },
+      {
+        "fault": "Hips never leave the floor — pure knee tuck",
+        "faultPl": "Biodra nie odrywają się od podłogi — czysty knee tuck",
+        "cause": "Treating the exercise as a knee raise rather than a hip raise; legs come up but the pelvis stays glued to the floor, missing the lower-ab curl",
+        "causePl": "Wykonywanie ćwiczenia jak unoszenie kolan zamiast unoszenia bioder; nogi się unoszą, ale miednica pozostaje przyklejona do podłogi, bez zwinięcia dolnego brzucha",
+        "cue": "The rep does not count until the tailbone clears the floor. Aim to point your knees at your face.",
+        "cuePl": "Powtórzenie się nie liczy, dopóki kość ogonowa nie oderwie się od podłogi. Cel: skieruj kolana w stronę twarzy."
+      },
+      {
+        "fault": "Using momentum — swinging the legs to throw the hips up",
+        "faultPl": "Wykorzystywanie rozpędu — rzucanie nogami, by wybić biodra w górę",
+        "cause": "Weak lower abs hand the work over to inertia; legs whip up and the hips follow passively",
+        "causePl": "Słaby dolny brzuch przerzuca pracę na bezwładność; nogi wybijają się rozpędem, a biodra biernie podążają",
+        "cue": "Pause one second at the bottom with the legs reset. 2 seconds up, 1 hold, 2 seconds down — no swinging.",
+        "cuePl": "Sekunda pauzy na dole z nogami zresetowanymi. 2 sekundy w górę, 1 pauzy, 2 w dół — bez wymachów."
+      },
+      {
+        "fault": "Lower back arches off the floor at the bottom",
+        "faultPl": "Dolne plecy wyginają się od podłogi w pozycji dolnej",
+        "cause": "Tight hip flexors pull the pelvis into anterior tilt when the legs lower; the lumbar hyperextends and loses contact with the floor",
+        "causePl": "Napięte zginacze biodra ciągną miednicę w przednie pochylenie, gdy nogi opadają; odcinek lędźwiowy nadmiernie się prostuje i traci kontakt z podłogą",
+        "cue": "Stop the eccentric where the lower back wants to lift. Reduce range — keep legs higher (knees over hips minimum).",
+        "cuePl": "Zatrzymaj ekscentrykę tam, gdzie dolne plecy chcą się unieść. Zmniejsz zakres — trzymaj nogi wyżej (kolana minimum nad biodrami)."
+      },
+      {
+        "fault": "Bar set too high — arms straining instead of anchoring",
+        "faultPl": "Gryf ustawiony za wysoko — ręce się napinają zamiast kotwiczyć",
+        "cause": "If the bar is far above the head, the lifter has to actively reach and tense the shoulders to grip it, which disconnects the lats from the torso and recruits arm flexors",
+        "causePl": "Jeśli gryf jest daleko nad głową, ćwiczący musi aktywnie sięgać i napinać barki, by go chwycić, co odłącza najszersi od tułowia i włącza zginacze ramion",
+        "cue": "Set the bar so you can grip it with the arms relaxed overhead — bar at forehead level when lying flat.",
+        "cuePl": "Ustaw gryf tak, byś chwytał go z rękami rozluźnionymi nad głową — gryf na wysokości czoła w leżeniu."
+      }
+    ],
+    "breathing": "Inhale as the legs lower back to the starting angle. Forceful exhale during the curl as the knees rise and the hips lift off the floor — the abdominal wall should crunch hard at the top of every rep.",
+    "breathingPl": "Wdech, gdy nogi wracają do kąta wyjściowego. Mocny wydech podczas zwijania, gdy kolana się unoszą, a biodra odrywają się od podłogi — ściana brzucha powinna mocno spinać się w szczycie każdego powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Repeated lumbar flexion under bar anchor can aggravate disc-sensitive or facet-irritated lower backs. Switch to anti-extension exercises (dead bug, plank) until pain-free for 7+ days.",
+      "modificationPl": "Powtarzane zginanie odcinka lędźwiowego pod zakotwiczeniem gryfu może podrażniać dolne plecy wrażliwe na krążki lub stawy. Przejdź na ćwiczenia anty-ekstensji (dead bug, deska) do czasu ustąpienia bólu na co najmniej 7 dni.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Spinal flexion combined with hip flexor activation is contraindicated for active disc protrusion (McGill protocol). Use neutral-spine core work instead.",
+      "modificationPl": "Zginanie kręgosłupa w połączeniu z aktywacją zginaczy biodra jest przeciwwskazane przy aktywnej przepuklinie krążka (protokół McGilla). Zamiast tego ćwicz brzuch w neutralnej pozycji kręgosłupa.",
+      "alternative": "side-plank"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Overhead bar grip with the arms in flexed/extended position can pinch a sore shoulder. Lower the bar height so the elbows are bent more, or switch to a hip raise without an overhead anchor.",
+      "modificationPl": "Chwyt gryfu nad głową z rękami w pozycji zgiętej/wyciągniętej może podrażnić obolałe ramię. Obniż wysokość gryfu, by łokcie były bardziej zgięte, lub przejdź na wznosy bioder bez zakotwiczenia nad głową.",
+      "alternative": "reverse-crunch"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "modify",
+      "modification": "Pelvic curl with abdominal doming can worsen midline separation (postpartum or otherwise). Start with TVA breathing and floor dead-bug variations before attempting this version.",
+      "modificationPl": "Zwijanie miednicy z kopułowaniem brzucha może pogłębić rozejście kresy białej (po ciąży lub w innych przypadkach). Zacznij od ćwiczeń oddechowych z mięśniem poprzecznym brzucha i wariantów dead-bug z podłogi przed próbą tej wersji.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy) | 3x12-20 (endurance) | 3xAMRAP (finisher)",
+  "calories_per_kg_per_hour": 4.0,
+
+  "media": {
+    "primary": "smith-hip-raise.gif",
+    "frames_extracted": [
+      "frames/smith-hip-raise/frame_0_start.png",
+      "frames/smith-hip-raise/frame_1_early.png",
+      "frames/smith-hip-raise/frame_2_mid.png",
+      "frames/smith-hip-raise/frame_3_late.png",
+      "frames/smith-hip-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/smith-hip-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. To NIE jest hip thrust z gryfem na biodrach — to reverse crunch / hip raise z zakotwiczeniem rąk o gryf Smith machine. Klatka 0 (start): osoba leży na plecach na podłodze WEWNĄTRZ Smith machine, gryf zablokowany nisko (~50-70 cm nad podłogą), tuż nad twarzą. Obie dłonie chwytają gryf nad głową w pozycji wyciągniętej. Nogi uniesione pod kątem ~45 stopni nad podłogą, kolana lekko zgięte. Czerwono podświetlony cały rectus abdominis z akcentem na dolną część (charakterystyczne 'serce' w środku brzucha). Klatki 1+3 (early/late, identyczne — pozycja przejściowa): kolana zgięte do ~90°, uda wciąż nieco za pionem, miednica zaczyna się zwijać. Klatka 2 (mid, top): pełne zwinięcie — kolana ściągnięte nad klatkę, biodra wyraźnie oderwane od podłogi, kość ogonowa skierowana w sufit, miednica w pełnym tylnym pochyleniu. Klatka 4 (end): powrót do pozycji startowej. Najszersi nieco zaznaczone na czerwono w klatkach 2-4 (rola stabilizatora przez chwyt gryfu). KLUCZOWE odróżnienie od lying-leg-hip-raise: na podłodze (nie ławce), gryf Smitha zastępuje krawędź ławki jako zakotwiczenie — krótszy lewar nóg (start z 45° zamiast horizontalnego zwisu poza ławką) więc obciążenie zginaczy biodra mniejsze (S7 vs S8) i całość łatwiejsza (difficulty 4 vs 5). Lats T4 (nieco wyższe niż T3 z lying-leg-hip-raise, bo gryf Smitha to twardszy uchwyt niż krawędź ławki — można się o niego mocniej rozpierać). Klasyfikacja: core_flexion (zgięcie lędźwi + zgięcie biodra), force=pull (zwijanie miednicy w kierunku tułowia), mechanic=isolation (rectus jako primary, brak compound joint action), bilateral, sagittal, open. Mięśnie: rectus_abdominis P10 (lower emphasis przez tylne pochylenie miednicy), hip_flexors S7 (krótszy lewar niż ławkowy wariant), obliques S5 (stabilizacja antyrotacyjna), TVA T4, lats T4 (zakotwiczenie chwytu). Equipment: smith-machine REQUIRED (bez gryfu Smith to inne ćwiczenie — zwykły reverse crunch), exercise-mat OPTIONAL. Level: beginner, difficulty=4 — łatwiejsze niż lying-leg-hip-raise (krótszy lewar, więcej stabilizacji od gryfu i podłogi), porównywalne z zwykłym reverse-crunch ale z dodatkową stabilizacją górnego ciała. Prerequisites: dead-bug, lying-leg-raise. Progresje: lying-leg-hip-raise (bench, dłuższy lewar), hanging-knee-raise, hanging-leg-raise. Alternatywy: reverse-crunch (regresja bez stabilizacji gryfu), lying-leg-hip-raise (analogiczne na ławce), cable-reverse-crunch, suspended-reverse-crunch. Nazwa PL: 'Wznosy bioder leżąc pod Smith machine' — najpełniejszy opis ruchu i sprzętu w polskim. 5 common_faults specyficznych dla tego setupu (pociąganie tułowia do gryfu, niepełen ROM, rozpęd, hiperekstensja lędźwiowa, źle ustawiona wysokość gryfu). 4 contraindications (acute back pain, disc herniation, shoulder impingement specyficzne dla chwytu nad głową, diastasis recti). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "core", "abs", "lower_abs", "smith_machine", "isolation", "beginner", "anchored"]
+}

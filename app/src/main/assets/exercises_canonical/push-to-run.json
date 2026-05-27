@@ -1,0 +1,207 @@
+{
+  "id": "push-to-run",
+  "name": "Push-to-run (sprint drill)",
+  "namePl": "Push-to-run (sprint drill)",
+  "aliases": ["push to run", "sprint start drill", "stationary high-knee sprint", "in-place sprint drill", "running on the spot high knees"],
+  "aliasesPl": ["sprint drill w miejscu", "trening startu sprinterskiego", "wysokie kolana w stylu sprintera", "bieg w miejscu z wysokimi kolanami", "drill sprinterski na sucho"],
+
+  "description": "Sport-specific athletic conditioning drill that mimics the mechanics of sprint running in place. The athlete drives one knee up to ~90° hip flexion while the support leg fully extends at hip, knee and ankle ('triple extension') — exactly the position of a sprinter at toe-off. Arms swing in opposition like real sprint mechanics (forward arm at ~90° elbow, opposite arm cycling backward). The drill alternates legs rapidly in a piston-like fashion, building the cardiovascular and neuromuscular qualities needed for sprinting: hip flexor speed, glute drive, calf reactivity, core anti-rotation and high-frequency arm-leg coordination. Used by sprinters, football/soccer/rugby players, combat athletes and general fitness clients as a warm-up primer, intra-session activator or stand-alone HIIT conditioning piece. Higher knee drive + faster cadence + tighter arm action = harder. Lower impact and joint-friendlier than overground sprinting because there's no horizontal deceleration, making it ideal for small spaces, hotel rooms and rehab progressions back to sprinting.",
+  "descriptionPl": "Sport-specyficzny drill kondycyjny imitujący mechanikę biegu sprinterskiego w miejscu. Zawodnik wbija jedno kolano w górę do ~90° zgięcia w biodrze, podczas gdy noga podporowa w pełni prostuje się w biodrze, kolanie i stawie skokowym ('triple extension') — dokładnie pozycja sprintera w momencie odbicia palucha od bieżni. Ramiona pracują w opozycji jak w prawdziwym sprincie (przednie ramię ~90° w łokciu, drugie cyklicznie w tył). Drill polega na szybkim, tłokowym zmienianiu nóg, budując cechy kardio i nerwowo-mięśniowe potrzebne do sprintu: szybkość zginaczy biodra, napęd pośladków, reaktywność łydek, antyrotacyjną stabilizację corem i koordynację ramion z nogami przy wysokiej częstotliwości. Stosowany przez sprinterów, piłkarzy nożnych/rugbistów, zawodników sportów walki i amatorów fitnessu jako rozgrzewka, aktywator między seriami lub samodzielny element HIIT. Wyższe kolano + szybszy rytm + ciaśniejsza praca ramion = trudniej. Mniejszy impakt i przyjaźniejszy dla stawów niż sprint po podłożu — brak hamowania horyzontalnego — idealny do małych przestrzeni, pokoi hotelowych i progresji rehabilitacyjnych powrotu do sprintu.",
+
+  "instructions": [
+    "Stand tall: feet hip-width, weight on the balls of the feet, slight forward lean from the ankles (NOT from the waist). Eyes ahead.",
+    "Set the arms in sprint position: elbows at ~90°, hands open and relaxed at face/shoulder height in front, opposite hand by the hip behind. Shoulders down, jaw relaxed.",
+    "Drive ONE knee up sharply toward your chest until thigh is parallel to floor (~90° hip flexion). Toe of the lifted leg pulled up (dorsiflexed) — 'toes to shin'.",
+    "Simultaneously fully extend the support leg — hip, knee and ankle in line — pressing the ball of the foot hard into the floor ('punch the ground').",
+    "Aggressively switch legs in mid-air: the up-knee snaps down (foot strikes ball-of-foot under the hip) while the support leg explodes up into the next knee drive.",
+    "Arms cycle in opposition: as right knee comes up, LEFT hand drives up to face level and RIGHT hand drives down past the hip. Keep elbows at 90°, hands relaxed.",
+    "Maintain a tall posture — slight forward lean from ankles, ribs stacked over hips, NO bend at the waist, NO sitting back into the hips.",
+    "Pump at sprint cadence — fast (3-5 strikes per second). Sustain for prescribed work interval (typically 10-30s), then rest. Stop the set when form breaks."
+  ],
+  "instructionsPl": [
+    "Stań wysoko: stopy na szerokość bioder, ciężar na śródstopiu, lekkie pochylenie do przodu od kostek (NIE od pasa). Wzrok przed siebie.",
+    "Ustaw ramiona w pozycji sprinterskiej: łokcie ~90°, dłonie otwarte i rozluźnione na wysokości twarzy/barków z przodu, druga dłoń przy biodrze z tyłu. Barki w dół, szczęka rozluźniona.",
+    "Wbij JEDNO kolano ostro w górę do klatki, aż udo będzie równolegle do podłogi (~90° zgięcia w biodrze). Palec uniesionej stopy podciągnięty (zgięcie grzbietowe) — 'palce do goleni'.",
+    "Jednocześnie w pełni wyprostuj nogę podporową — biodro, kolano i staw skokowy w jednej linii — wciskając śródstopie mocno w podłogę ('uderz w ziemię').",
+    "Agresywnie zmień nogi w powietrzu: uniesione kolano zjeżdża w dół (stopa ląduje na śródstopiu pod biodrem), a noga podporowa eksploduje w górę do kolejnego wbicia kolana.",
+    "Ramiona pracują w opozycji: gdy prawe kolano idzie w górę, LEWA ręka wjeżdża na wysokość twarzy, a PRAWA zjeżdża w dół obok biodra. Łokcie w 90°, dłonie rozluźnione.",
+    "Utrzymaj wysoką sylwetkę — lekkie pochylenie od kostek, żebra nad biodrami, BEZ zginania w pasie, BEZ siadania w biodra.",
+    "Pompuj rytmem sprinterskim — szybko (3-5 lądowań na sekundę). Wytrzymaj zaplanowany interwał pracy (typowo 10-30s), potem przerwa. Zakończ serię, gdy technika się sypie."
+  ],
+
+  "classification": {
+    "movement_pattern": "locomotion",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "calves"],
+    "secondary": ["hip_flexors", "core", "hamstrings"],
+    "stabilizers": ["tibialis_anterior", "obliques", "erector_spinae", "gluteus_medius", "shoulders"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P8",
+    "glutes": "P7",
+    "calves": "P8",
+    "hip_flexors": "S8",
+    "core": "S6",
+    "hamstrings": "S6",
+    "tibialis_anterior": "T6",
+    "obliques": "T5",
+    "erector_spinae": "T5",
+    "gluteus_medius": "T5",
+    "shoulders": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "running_shoes", "interval_timer"]
+  },
+
+  "category": "cardio",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["march-in-place", "jogging-in-place"],
+    "progression_to": ["sprint-in-place", "a-skip", "b-skip", "butt-kicks-run", "sprint", "treadmill-sprint-intervals"],
+    "alternatives": ["high-knees", "butt-kicks", "mountain-climbers", "jumping-jacks", "skater-jumps", "march-in-place"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Clear ~1x1 m of floor — no obstacles overhead either (knees come up high)",
+      "Non-slip surface or athletic shoes — ball of the foot must grip",
+      "Tall posture: feet hip-width, weight on balls of feet, slight ankle lean forward",
+      "Set arms first: elbows 90°, one hand at face level, opposite by the hip",
+      "Pick a cadence target (e.g. 'fast as you can hold form for 20s') BEFORE you start — pace, don't sprint into death"
+    ],
+    "setup_cues_pl": [
+      "Wyczyść ~1x1 m podłogi — bez przeszkód także nad głową (kolana wbijają się wysoko)",
+      "Antypoślizgowa powierzchnia lub buty sportowe — śródstopie musi trzymać",
+      "Wysoka sylwetka: stopy na szerokość bioder, ciężar na śródstopiu, lekkie pochylenie od kostek",
+      "Najpierw ustaw ramiona: łokcie 90°, jedna dłoń na wysokości twarzy, druga przy biodrze",
+      "Wybierz target rytmu (np. 'szybko jak utrzymasz technikę przez 20s') ZANIM ruszysz — dawkuj, nie wystrzel się w niepamięć"
+    ],
+    "execution_cues": [
+      "Drive the knee UP, not the foot OUT — thigh parallel to floor every rep",
+      "Toes to shin (dorsiflex) — never let the toe dangle, you'll trip and lose drive",
+      "Punch the ground — full triple extension on the support leg every strike",
+      "Land ball-of-foot UNDER the hip — NOT in front of you (that's braking, not sprinting)",
+      "Arms cycle hard — opposite arm to opposite leg, elbows locked at 90°",
+      "Tall ribs, slight ankle lean — DO NOT bend at the waist or stick the butt back"
+    ],
+    "execution_cues_pl": [
+      "Wbijaj kolano W GÓRĘ, nie stopę DO PRZODU — udo równolegle do podłogi w każdym powtórzeniu",
+      "Palce do goleni (zgięcie grzbietowe) — nigdy nie pozwól palcom zwisać, potkniesz się i stracisz napęd",
+      "Uderz w ziemię — pełne potrójne wyprostowanie nogi podporowej przy każdym lądowaniu",
+      "Ląduj śródstopiem POD biodrem — NIE przed sobą (to hamowanie, nie sprint)",
+      "Ramiona pracują mocno — przeciwna ręka do przeciwnej nogi, łokcie zablokowane w 90°",
+      "Wysokie żebra, lekkie pochylenie od kostek — NIE zginaj się w pasie i nie wypychaj tyłka w tył"
+    ],
+    "common_faults": [
+      {
+        "fault": "Low knee drive (thigh never reaches parallel)",
+        "faultPl": "Niski wbicie kolana (udo nie sięga równoległej do podłogi)",
+        "cause": "Treating it as 'jog in place', weak/inhibited hip flexors, fatigue, no visual target",
+        "causePl": "Traktowanie jako 'truchtu w miejscu', słabe/zahamowane zginacze biodra, zmęczenie, brak punktu odniesienia wzrokowego",
+        "cue": "Aim the knee at your OPPOSITE elbow on every rep. If you can't hit parallel — slow the cadence down until you can. Better 10 high-quality knees than 30 sloppy ones.",
+        "cuePl": "Celuj kolanem w PRZECIWNY łokieć w każdym powtórzeniu. Jeśli nie sięgniesz równoległej — zwolnij rytm aż sięgniesz. Lepiej 10 wysokich kolan dobrej jakości niż 30 niechlujnych."
+      },
+      {
+        "fault": "Bending forward at the waist ('hunched runner')",
+        "faultPl": "Zginanie się do przodu w pasie ('zgarbiony biegacz')",
+        "cause": "Trying to compensate for low knee drive by leaning torso forward, weak core, no posture cue",
+        "causePl": "Próba kompensacji niskiego wbicia kolan przez nachylenie tułowia, słaby core, brak świadomości postawy",
+        "cue": "Lean comes from the ANKLES, not the waist. Stack ribs over hips, eyes straight ahead. If you need to bend to keep going — you're done with the set.",
+        "cuePl": "Pochylenie idzie od KOSTEK, nie od pasa. Żebra nad biodrami, wzrok przed siebie. Jeśli musisz się zginać żeby kontynuować — kończysz serię."
+      },
+      {
+        "fault": "Heel striking instead of ball-of-foot landing",
+        "faultPl": "Lądowanie na pięcie zamiast na śródstopiu",
+        "cause": "Default jogging pattern, lack of sprint mechanic awareness, worn-out shoes",
+        "causePl": "Domyślny wzorzec joggingu, brak świadomości mechaniki sprintu, zużyte buty",
+        "cue": "Land BALL of foot under the hip — heel barely kisses the floor. Sprinters don't heel strike. If you can't — practice march-in-place first to groove the foot position.",
+        "cuePl": "Ląduj ŚRÓDSTOPIEM pod biodrem — pięta ledwie muska podłogę. Sprinterzy nie lądują na piętach. Jeśli nie umiesz — przećwicz najpierw marsz w miejscu, by wyrobić pozycję stopy."
+      },
+      {
+        "fault": "Arms crossing the body midline (chicken-wing arms)",
+        "faultPl": "Ramiona krzyżujące linię ciała (skrzydła kurczaka)",
+        "cause": "Mirror-neuron habit from non-sprint cardio, no cue, energy leak to rotation",
+        "causePl": "Nawyk z innych form cardio, brak świadomości, wyciek energii na rotację",
+        "cue": "Arms move STRAIGHT forward and back like pistons — never cross midline. Imagine punching a target in front and one behind you. Crossing arms = lost forward power.",
+        "cuePl": "Ramiona poruszają się PROSTO do przodu i do tyłu jak tłoki — nigdy nie krzyżują linii środkowej. Wyobraź sobie, że uderzasz w cel przed sobą i za sobą. Krzyżujące ramiona = utracona moc do przodu."
+      },
+      {
+        "fault": "Holding breath / shallow chest breathing",
+        "faultPl": "Wstrzymywanie oddechu / płytkie oddychanie klatką",
+        "cause": "High intensity + tension + no rhythm — natural anaerobic reflex",
+        "causePl": "Wysoka intensywność + napięcie + brak rytmu — naturalny odruch beztlenowy",
+        "cue": "Rhythmic nose-in / mouth-out or mouth-in / mouth-out. NEVER hold breath in a cardio drill — blood pressure spikes and lightheadedness follows. Match breath to a 2-2 or 3-3 rhythm.",
+        "cuePl": "Rytmiczny wdech nosem / wydech ustami lub usta-usta. NIGDY nie wstrzymuj oddechu w drillu cardio — ciśnienie strzela, zawroty głowy gwarantowane. Dopasuj oddech do rytmu 2-2 lub 3-3."
+      }
+    ],
+    "breathing": "Rhythmic — typically '2 strikes in, 2 strikes out' (2-2 rhythm) at moderate intensity, or '3-3' at lower intensity. At max effort short bursts (<15s) breathing pattern is irrelevant; recover with deep belly breaths between intervals. NEVER hold breath.",
+    "breathingPl": "Rytmiczny — typowo '2 lądowania wdech, 2 lądowania wydech' (rytm 2-2) przy umiarkowanej intensywności, lub '3-3' przy niższej intensywności. Przy maksymalnym wysiłku w krótkich bryłach (<15s) wzorzec oddechu jest drugorzędny; regeneruj się głębokimi oddechami brzusznymi między interwałami. NIGDY nie wstrzymuj oddechu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_or_patellar_tendinopathy",
+      "severity": "modify",
+      "modification": "Repeated high knee drive + ball-of-foot impact loads the knee extensors and patellar tendon hard. Regress to march-in-place (no impact), reduce cadence to 50%, or replace with stationary bike sprints until pain-free.",
+      "modificationPl": "Powtarzalne wbijanie kolan + lądowanie na śródstopiu mocno obciąża prostowniki kolana i ścięgno rzepkowe. Cofnij się do marszu w miejscu (bez impaktu), zmniejsz rytm o 50% lub zastąp sprintami na rowerku stacjonarnym aż do ustąpienia bólu.",
+      "alternative": "march-in-place"
+    },
+    {
+      "condition": "ankle_or_calf_injury",
+      "severity": "modify",
+      "modification": "Ball-of-foot landings demand healthy calf-Achilles complex and ankle dorsiflexion. With acute calf strain, plantar fasciitis or Achilles tendinopathy — skip this drill, use a stationary bike or rower instead. With chronic mild symptoms — reduce cadence and ground contact time.",
+      "modificationPl": "Lądowania na śródstopiu wymagają zdrowego kompleksu łydka-ścięgno Achillesa i zgięcia grzbietowego w kostce. Przy ostrym naciągnięciu łydki, zapaleniu rozcięgna podeszwowego lub tendinopatii Achillesa — pomiń ten drill, użyj rowerka lub wioślarza. Przy przewlekłych łagodnych objawach — zmniejsz rytm i czas kontaktu z podłożem.",
+      "alternative": "stationary-bike-sprint"
+    },
+    {
+      "condition": "uncontrolled_hypertension_or_cardiac_disease",
+      "severity": "avoid",
+      "modification": "Sprint drills push heart rate to 90%+ HRmax within seconds and provoke systolic blood pressure spikes. Get medical clearance, start with low-impact zone-2 walking/cycling and progress under supervision.",
+      "modificationPl": "Drille sprinterskie wbijają tętno do 90%+ HRmax w sekundy i prowokują skoki ciśnienia skurczowego. Najpierw zielone światło od lekarza, zacznij od chodu/jazdy w strefie 2 niskiego impaktu i postępuj pod nadzorem.",
+      "alternative": "march-in-place"
+    },
+    {
+      "condition": "pregnancy_2nd_3rd_trimester",
+      "severity": "modify",
+      "modification": "High-impact ballistic drill with rapid jolts and pelvic floor pressure — not recommended in mid-late pregnancy. Replace with low-impact cardio (walking, stationary bike, swimming) and pelvic floor work. Always cleared with OB-GYN.",
+      "modificationPl": "Ćwiczenie balistyczne wysokiego impaktu z gwałtownymi wstrząsami i naciskiem na dno miednicy — niezalecane w środkowej/późnej ciąży. Zastąp cardio niskiego impaktu (chód, rowerek stacjonarny, pływanie) i pracą nad dnem miednicy. Zawsze za zgodą lekarza prowadzącego.",
+      "alternative": "march-in-place"
+    }
+  ],
+
+  "typical_sets_reps": "10-20s ON / 20-40s OFF x 6-10 rounds (sprint-prep HIIT) | 30s x 4-6 (warm-up activator) | Tabata 20s/10s x 8 (conditioning finisher) | 3x 15s max cadence (neuromuscular speed)",
+  "calories_per_kg_per_hour": 9.5,
+
+  "media": {
+    "primary": "push-to-run.gif",
+    "frames_extracted": [
+      "frames/push-to-run/frame_0_start.png",
+      "frames/push-to-run/frame_1_early.png",
+      "frames/push-to-run/frame_2_mid.png",
+      "frames/push-to-run/frame_3_late.png",
+      "frames/push-to-run/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "cardio/push-to-run"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać stojąca z prawym kolanem wbijanym wysoko w górę (~90° hip flexion), lewa noga w pełnym wyproście (triple extension hip/knee/ankle), lewa ręka w przedniej pozycji sprinterskiej (~90° w łokciu na wysokości twarzy), prawa ręka cofnięta przy biodrze — klasyczna mechanika sprintera w fazie odbicia. Frame 1 (early): podobna faza, kolano w górze, postać aktywnie w 'piston' position. Frame 2 (mid): faza wymiany — oba kolana zbliżają się do siebie w przejściu, prawe kolano wciąż wyżej, ramiona przed klatką w fazie zmiany kierunku. Frame 3 (late): powtórka wbicia kolana z drugiej strony, lustrzane odbicie frame 0. Frame 4 (end): zamknięcie cyklu, powrót do pozycji startowej z kolanem wbijanym w górę. Podświetlone mięśnie (na rysunku Jahela): quadriceps (mocno na obu nogach), glutes (silnie), calves (gastrocnemius + soleus podświetlone), hip flexors (rectus femoris/iliopsoas w nodze unoszonej), core/obliques (boczne ściany brzucha jako antyrotacyjna stabilizacja), tibialis anterior (przedni kompartment goleni dla dorsiflexion). To NIE jest 'wall push + sprint forward' jak sugeruje nazwa — gif pokazuje stationary high-knee sprint drill (sprint w miejscu z wysokimi kolanami i pełnym triple extension nogi podporowej, sprinterskim ustawieniem ramion). Klasyfikacja: movement_pattern=locomotion (mechanika biegu), force=push (każde wybicie z nogi podporowej to push przez podłogę), mechanic=compound (wiele stawów: biodro, kolano, staw skokowy, bark, łokieć), plane=sagittal (cały ruch w płaszczyźnie strzałkowej), laterality=bilateral (obie nogi pracują naprzemiennie z równą rolą), kinetic_chain=closed (stopa kontaktuje z podłogą podczas fazy napędu). category=cardio (główny cel: kondycja sercowo-naczyniowa + neuromuskularna szybkość, nie hipertrofia/siła). Primary muscles: quadriceps + glutes + calves (główne motory propulsji w sprintingu, zgodnie z podświetleniem GIFa). Secondary: hip_flexors (kluczowe dla wysokiego kolana — Maciej powiedział wprost w specyfice), core (antyrotacja przy tłokowym ruchu), hamstrings (zginacz kolana w fazie pull-through). Difficulty 4/10: technicznie prosty, intensywność łatwo skalowalna, beginner-friendly jako rozgrzewka, advanced-tested przez wysokie kadencje. Wszystkie pola PL napisane od zera w polskim standardzie biegowo-sprinterskim ('triple extension', 'wbijanie kolana', 'rytm 2-2', 'śródstopie', 'zgięcie grzbietowe', 'drill' — branżowe zapożyczenia bez polonizacji).",
+
+  "tags": ["bodyweight", "cardio", "hiit", "sprint", "running", "athletic_conditioning", "warm_up", "sport_specific", "no_equipment_friendly", "home_workout", "anaerobic", "speed_work", "neuromuscular", "calisthenics"]
+}

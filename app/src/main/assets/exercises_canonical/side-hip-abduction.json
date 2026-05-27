@@ -1,0 +1,202 @@
+{
+  "id": "side-hip-abduction",
+  "name": "Side Hip Abduction (Lying)",
+  "namePl": "Odwodzenie biodra leżąc bokiem",
+  "aliases": ["side lying hip abduction", "side lying leg raise", "lateral leg raise lying", "lying side leg lift", "side leg lift"],
+  "aliasesPl": ["odwodzenie nogi leżąc bokiem", "wznosy nogi w leżeniu bokiem", "boczne unoszenie nogi leżąc", "leżące odwodzenie biodra", "side leg raises"],
+
+  "description": "Classic floor-based isolation exercise for the lateral hip — the gluteus medius and gluteus minimus. The lifter lies on their side with the bottom arm supporting the head and the legs stacked, then lifts the top, fully extended leg straight up toward the ceiling against gravity. The unilateral, open-chain, low-load nature makes this exercise a staple in glute activation warm-ups, rehab programs (hip stability, IT-band issues, runner's knee) and high-volume booty-shaping circuits. No equipment is required, making it a go-to for home training and physiotherapy clinics worldwide.",
+  "descriptionPl": "Klasyczne, podłogowe ćwiczenie izolowane na boczną część biodra — mięsień pośladkowy średni i mały. Ćwiczący leży bokiem z dolnym ramieniem podpierającym głowę, nogi ułożone jedna na drugiej, następnie unosi górną, wyprostowaną nogę pionowo w górę, przeciwko grawitacji. Jednostronny, otwarty łańcuch kinetyczny i niewielkie obciążenie sprawiają, że ćwiczenie jest standardem w rozgrzewce aktywującej pośladki, programach rehabilitacyjnych (stabilność biodra, dolegliwości pasma biodrowo-piszczelowego, kolano biegacza) i wysokoobjętościowych obwodach kształtujących pośladki. Nie wymaga sprzętu — to wybór numer jeden do treningu w domu i w gabinetach fizjoterapii na całym świecie.",
+
+  "instructions": [
+    "Lie on your side on a mat with your legs straight and stacked one on top of the other. Hips, knees and ankles all in line.",
+    "Support your head with your bottom arm — either resting your ear on your biceps or propping up on the forearm/elbow. Place the top hand flat on the floor in front of your chest for balance.",
+    "Stack your hips vertically — top hip directly above bottom hip. Do not roll forward or backward. Keep the torso long and the core engaged.",
+    "Keep the top leg straight with the foot dorsiflexed (toes pulled toward shin) and pointing slightly forward — toes neutral, not turned up to the ceiling.",
+    "Exhale and lift the top leg directly up toward the ceiling, leading with the heel. Stop at about 30-45 degrees of abduction — going higher recruits the hip flexors instead of glute medius.",
+    "Pause briefly at the top, squeezing the side of the glute hard.",
+    "Inhale and lower the leg slowly back to the start under control. Do not let it crash down or rest on the bottom leg between reps.",
+    "Complete all reps on one side, then roll over and repeat on the other side."
+  ],
+  "instructionsPl": [
+    "Połóż się bokiem na macie z wyprostowanymi nogami ułożonymi jedna na drugiej. Biodra, kolana i kostki w jednej linii.",
+    "Podeprzyj głowę dolnym ramieniem — albo opierając ucho o biceps, albo podpierając się na przedramieniu/łokciu. Górną dłoń połóż płasko na podłodze przed klatką piersiową dla równowagi.",
+    "Ustaw biodra pionowo — górne biodro dokładnie nad dolnym. Nie obracaj się ani do przodu, ani do tyłu. Utrzymuj tułów wydłużony i brzuch napięty.",
+    "Trzymaj górną nogę wyprostowaną z palcami stopy podciągniętymi do siebie (dorsifleksja) i skierowanymi delikatnie do przodu — palce neutralnie, nie obracaj ich do sufitu.",
+    "Z wydechem unieś górną nogę pionowo w górę, prowadząc piętą. Zatrzymaj się na około 30-45 stopniach odwiedzenia — wyżej angażujesz zginacze biodra zamiast pośladka średniego.",
+    "Zatrzymaj się krótko w górnej pozycji, mocno spinając boczną część pośladka.",
+    "Z wdechem powoli opuść nogę z powrotem pod kontrolą. Nie pozwól, by spadła z hukiem lub zatrzymywała się na dolnej nodze między powtórzeniami.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, następnie przewróć się i powtórz po drugiej stronie."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["gluteus_medius"],
+    "secondary": ["gluteus_minimus", "tensor_fasciae_latae"],
+    "stabilizers": ["gluteus_maximus", "core", "obliques", "quadratus_lumborum", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "gluteus_medius": "P10",
+    "gluteus_minimus": "S7",
+    "tensor_fasciae_latae": "S6",
+    "gluteus_maximus": "T3",
+    "core": "T3",
+    "obliques": "T3",
+    "quadratus_lumborum": "T2",
+    "erector_spinae": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["exercise_mat", "ankle_weights", "resistance_band"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["side-bridge-hip-abduction", "resistance-band-hip-abduction", "cable-hip-abduction", "lever-seated-hip-abduction", "side-plank-leg-raise"],
+    "alternatives": ["clamshell", "fire-hydrant", "standing-hip-abduction", "side-bridge-hip-abduction", "resistance-band-seated-hip-abduction"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie on your side — hips, knees, ankles stacked in a straight line",
+      "Bottom arm supports the head, top hand on the floor for balance",
+      "Top hip directly above bottom hip — do not roll backward",
+      "Top leg straight and long, toes pulled toward the shin",
+      "Brace the core lightly — torso long, ribs over hips"
+    ],
+    "setup_cues_pl": [
+      "Połóż się bokiem — biodra, kolana, kostki ułożone w jednej linii",
+      "Dolne ramię podpiera głowę, górna dłoń na podłodze dla równowagi",
+      "Górne biodro dokładnie nad dolnym — nie obracaj się do tyłu",
+      "Górna noga prosta i wydłużona, palce stopy podciągnięte do siebie",
+      "Lekko napnij brzuch — tułów wydłużony, żebra nad biodrami"
+    ],
+    "execution_cues": [
+      "Lead with the heel — push it up to the ceiling",
+      "Stop at 30-45 degrees — do not lift higher",
+      "Squeeze the side of the glute at the top",
+      "Lower slowly — 2-3 seconds down, no crash",
+      "Keep toes pointing forward — do not turn the foot up"
+    ],
+    "execution_cues_pl": [
+      "Prowadź piętą — wypchnij ją w stronę sufitu",
+      "Zatrzymaj się na 30-45 stopniach — nie unoś wyżej",
+      "Spinaj boczną część pośladka w górnej pozycji",
+      "Opuszczaj wolno — 2-3 sekundy w dół, bez upadku",
+      "Palce stopy skierowane do przodu — nie obracaj stopy do góry"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the top hip backward to gain range of motion",
+        "faultPl": "Obracanie górnego biodra do tyłu by zwiększyć zakres ruchu",
+        "cause": "Hip flexors and TFL take over when glute medius fatigues; lifter rolls backward to recruit them",
+        "causePl": "Zginacze biodra i TFL przejmują pracę, gdy pośladek średni się męczy; ćwiczący obraca się do tyłu, by je włączyć",
+        "cue": "Imagine your back is pinned against a wall — top hip stacked over bottom hip the whole time.",
+        "cuePl": "Wyobraź sobie, że plecy są przyklejone do ściany — górne biodro pionowo nad dolnym przez cały czas."
+      },
+      {
+        "fault": "Lifting the leg too high (above 45 degrees)",
+        "faultPl": "Unoszenie nogi zbyt wysoko (powyżej 45 stopni)",
+        "cause": "Misconception that 'higher = better'; above 45° the pelvis tilts and TFL/quadratus lumborum take over from glute medius",
+        "causePl": "Mylne przekonanie, że 'wyżej = lepiej'; powyżej 45° miednica się przechyla, a TFL i czworoboczny lędźwi przejmują pracę od pośladka średniego",
+        "cue": "Stop at heel-shoulder height — small ROM, big squeeze.",
+        "cuePl": "Zatrzymaj się na wysokości piety na poziomie barku — mały zakres, duży skurcz."
+      },
+      {
+        "fault": "Turning the toes up toward the ceiling (external rotation)",
+        "faultPl": "Obracanie palców stopy do sufitu (rotacja zewnętrzna)",
+        "cause": "External rotation of the hip shifts emphasis from glute medius to TFL and gluteus maximus",
+        "causePl": "Rotacja zewnętrzna biodra przenosi nacisk z pośladka średniego na TFL i pośladek wielki",
+        "cue": "Toes slightly forward or down, like you're kicking a ball with the side of the foot.",
+        "cuePl": "Palce delikatnie do przodu lub w dół, jakbyś kopał piłkę bokiem stopy."
+      },
+      {
+        "fault": "Bending the top knee during the lift",
+        "faultPl": "Uginanie kolana górnej nogi podczas unoszenia",
+        "cause": "Glute medius fatigue causes unconscious shortening of the lever by bending the knee",
+        "causePl": "Zmęczenie pośladka średniego powoduje nieświadome skracanie dźwigni przez ugięcie kolana",
+        "cue": "Top leg long and straight — push the heel away from the hip.",
+        "cuePl": "Górna noga długa i wyprostowana — wypychaj piętę od biodra."
+      },
+      {
+        "fault": "Letting the leg drop fast between reps",
+        "faultPl": "Pozwalanie by noga opadała szybko między powtórzeniami",
+        "cause": "Loss of tension on the eccentric — bouncing the leg off the bottom leg to make the next rep easier",
+        "causePl": "Utrata napięcia w fazie ekscentrycznej — odbijanie nogi od dolnej nogi, by ułatwić następne powtórzenie",
+        "cue": "Lower slowly to 1 cm above the bottom leg — never let it rest.",
+        "cuePl": "Opuszczaj powoli do 1 cm nad dolną nogą — nigdy jej nie odkładaj."
+      }
+    ],
+    "breathing": "Exhale during the lift (concentric — leg rises). Inhale during the controlled descent (eccentric). Light core brace throughout to prevent pelvic rocking.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna — noga idzie w górę). Wdech podczas kontrolowanego opuszczania (faza ekscentryczna). Lekkie napięcie brzucha przez całą serię, by zapobiec kołysaniu miednicy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "hip_bursitis_trochanteric",
+      "severity": "modify",
+      "modification": "Lying on the painful side compresses the trochanteric bursa. Train only the unaffected side, or perform standing hip abduction instead. Place a pillow between the knees for comfort if both sides must be worked.",
+      "modificationPl": "Leżenie na bolącej stronie uciska kaletkę krętarza większego. Trenuj tylko zdrową stronę lub wykonuj odwodzenie biodra stojąc. Włóż poduszkę między kolana dla komfortu, jeśli trzeba pracować obie strony.",
+      "alternative": "standing-hip-abduction"
+    },
+    {
+      "condition": "lower_back_pain_lumbar",
+      "severity": "caution",
+      "modification": "Avoid lifting too high — pelvic tilt above 45° loads the quadratus lumborum and may aggravate lumbar pain. Keep ROM small and engage the core firmly. If pain persists, switch to clamshell.",
+      "modificationPl": "Unikaj unoszenia za wysoko — przechył miednicy powyżej 45° obciąża czworoboczny lędźwi i może nasilić ból lędźwiowy. Utrzymuj mały zakres ruchu i mocno napnij brzuch. Jeśli ból się utrzymuje, przejdź na clamshell.",
+      "alternative": "clamshell"
+    },
+    {
+      "condition": "hip_impingement_femoroacetabular",
+      "severity": "caution",
+      "modification": "Hip abduction at high angles may pinch the labrum in some FAI variants. Limit ROM to 30°, keep toes neutral, avoid external rotation. Stop immediately if a sharp groin/anterior hip pain occurs.",
+      "modificationPl": "Odwodzenie biodra przy dużych kątach może uciskać obrąbek przy niektórych odmianach FAI. Ogranicz zakres do 30°, palce neutralnie, unikaj rotacji zewnętrznej. Przerwij natychmiast przy ostrym bólu w pachwinie lub przedniej części biodra.",
+      "alternative": "clamshell"
+    },
+    {
+      "condition": "shoulder_pain_supporting_arm",
+      "severity": "modify",
+      "modification": "Propping up on the bottom elbow can irritate a sore shoulder. Lie flat on the side with the head resting on the bottom arm extended along the floor instead of being propped up.",
+      "modificationPl": "Podpieranie się na dolnym łokciu może drażnić bolący bark. Połóż się płasko na boku, opierając głowę na dolnym ramieniu wyciągniętym wzdłuż podłogi zamiast podpierania się.",
+      "alternative": "clamshell"
+    }
+  ],
+
+  "typical_sets_reps": "3x15-20 per side (hypertrophy/activation) | 2-3x20-30 per side (endurance/rehab) | 2x10-15 per side with ankle weights (strength)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "side-hip-abduction.gif",
+    "frames_extracted": [
+      "frames/side-hip-abduction/frame_0_start.png",
+      "frames/side-hip-abduction/frame_1_early.png",
+      "frames/side-hip-abduction/frame_2_mid.png",
+      "frames/side-hip-abduction/frame_3_late.png",
+      "frames/side-hip-abduction/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abductors/side-hip-abduction"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel (start/early/mid/late/end). UWAGA: GIF pokazuje wariant z lekkim podporem na przedramieniu (półboczny plank), ale klasyfikacja pozostaje 'lying side hip abduction' — to standardowa nazwa Jahel/ExRx i większości baz, a kluczowy ruch (abduction w płaszczyźnie frontalnej, leżąc/leżącobokiem z górną nogą wyprostowaną) jest identyczny. Frame 0: ćwiczący leży na lewym boku z lekkim podporem na lewym przedramieniu, nogi wyprostowane i ułożone jedna na drugiej, prawa (górna) noga w pozycji startowej (na dolnej nodze), pośladek średni prawej strony podświetlony na czerwono. Frame 2: prawa noga uniesiona do około 45° abduction, pośladek średni w trakcie skurczu (najjaśniejszy czerwony). Frame 4: noga wraca w dół z śladem ruchu widocznym w cieniu — kontrolowana faza ekscentryczna. Klasyfikacja: isolation_raise (movement_pattern, schema enum dla hip abduction), unilateral (laterality), frontal plane, open chain. Primary mover: gluteus_medius P10 (zgodnie z biomechaniką i podświetleniem mięśnia w GIFie). Wszystkie pola PL napisane od zera, bez tłumaczenia maszynowego.",
+
+  "tags": ["bodybuilding", "lower_body", "glutes", "isolation", "bodyweight", "unilateral", "rehab_friendly", "home_workout", "activation", "no_equipment", "floor_exercise"]
+}

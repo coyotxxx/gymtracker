@@ -1,0 +1,201 @@
+{
+  "id": "cable-preacher-curl",
+  "name": "Cable Preacher Curl",
+  "namePl": "Uginanie ramion na wyciągu na modlitewniku",
+  "aliases": ["cable preacher bicep curl", "low pulley preacher curl", "preacher curl on cable"],
+  "aliasesPl": ["uginanie bicepsów na modlitewniku na wyciągu", "preacher curl z linką", "uginanie ramion na ławce modlitewnika z dolnego wyciągu", "cable preacher na ławce skośnej"],
+
+  "description": "Isolation exercise for the elbow flexors performed seated at a preacher bench with the upper arms locked on the pad, pulling a straight or EZ bar attached to a low cable pulley. The cable provides constant tension throughout the entire range of motion — unlike a barbell, the resistance does not drop off at the top of the curl, which makes this variation outstanding for biceps hypertrophy and the lengthened position emphasised by the preacher pad eliminates cheating with the back or shoulders.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze stawu łokciowego wykonywane siedząc na ławce modlitewnika z ramionami zablokowanymi na poduszce. Ćwiczący ciągnie sztangę prostą lub łamaną przypiętą do dolnego wyciągu. Linka daje stałe napięcie przez cały zakres ruchu — w przeciwieństwie do sztangi opór nie spada w górnej fazie ruchu, co czyni ten wariant wybitnym narzędziem do hipertrofii bicepsa. Pozycja rozciągnięta wymuszona przez poduszkę modlitewnika eliminuje pomaganie plecami i barkami.",
+
+  "instructions": [
+    "Place a preacher bench about 60-80 cm in front of a low cable pulley. Attach a straight bar or EZ-bar to the cable.",
+    "Sit on the bench, drape the back of your upper arms over the pad with armpits pressed into the top of the pad.",
+    "Grab the bar with a supinated grip (palms up) at shoulder width. Have a partner hand it to you or fetch it carefully.",
+    "Starting position: arms almost fully extended along the pad (do NOT hyperextend the elbows under cable tension), cable pulling forward and slightly down.",
+    "Curl the bar upward toward your shoulders by flexing only at the elbows. Exhale on the way up. The pad keeps the upper arms locked.",
+    "At the top, the bar should be near the front of your shoulders. Squeeze the biceps hard for a 1-second peak contraction — the cable keeps the load on, do not relax.",
+    "Lower the bar slowly over 2-3 seconds back toward arm extension, fighting the constant cable tension during the eccentric. Inhale on the descent.",
+    "Stop just short of fully locking out the elbows to keep the biceps under tension. Do not let the weight stack slam down between reps."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę modlitewnika około 60-80 cm przed dolnym wyciągiem. Przypnij do linki drążek prosty lub łamany.",
+    "Usiądź na ławce, oprzyj tylną stronę ramion na poduszce — pachy mocno dociśnięte do górnej krawędzi poduszki.",
+    "Złap drążek nachwytem dolnym (dłonie skierowane w górę) na szerokość barków. Niech partner poda Ci sprzęt lub podejmij go ostrożnie.",
+    "Pozycja startowa: ramiona niemal w pełni wyprostowane wzdłuż poduszki (NIE przeprostowuj łokci pod napięciem linki), linka ciągnie do przodu i lekko w dół.",
+    "Uginaj drążek w kierunku barków zginając jedynie w łokciach. Wydech w fazie koncentrycznej. Poduszka utrzymuje ramiona ponad łokciem w bezruchu.",
+    "W górnej pozycji drążek powinien być blisko przednich aktonów barków. Mocno napnij biceps przez 1 sekundę — linka utrzymuje obciążenie, nie rozluźniaj się.",
+    "Opuszczaj drążek powoli przez 2-3 sekundy w kierunku wyprostu ramion, walcząc ze stałym napięciem linki w fazie ekscentrycznej. Wdech podczas opuszczania.",
+    "Zatrzymaj się tuż przed pełnym zablokowaniem łokci aby utrzymać biceps pod napięciem. Nie pozwól aby stos ciężarów uderzył o podłoże między powtórzeniami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "anterior_deltoid", "core"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S7",
+    "brachioradialis": "S4",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "preacher_bench", "straight_bar_attachment"],
+    "optional": ["ez_bar_attachment", "wrist_wraps", "rotating_handle"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dumbbell-curl", "cable-curl"],
+    "progression_to": ["heavy-cable-preacher-curl", "single-arm-cable-preacher-curl", "spider-curl"],
+    "alternatives": ["barbell-preacher-curl", "dumbbell-preacher-curl", "machine-preacher-curl", "ez-bar-preacher-curl", "spider-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Position the bench so the cable pulls horizontally or slightly downward at the bottom of the rep",
+      "Armpits jammed into the top of the pad — no gap between arm and pad",
+      "Supinated grip, shoulder-width, wrists in line with forearms",
+      "Sit tall — chest up, do not round the back over the pad",
+      "Feet planted flat for stability"
+    ],
+    "setup_cues_pl": [
+      "Ustaw ławkę tak by linka ciągnęła poziomo lub lekko w dół na dole powtórzenia",
+      "Pachy wciśnięte w górną krawędź poduszki — brak prześwitu między ramieniem a poduszką",
+      "Chwyt nachwytem dolnym, na szerokość barków, nadgarstki w linii z przedramieniem",
+      "Siedź wyprostowany — klatka w górze, nie zaokrąglaj pleców nad poduszką",
+      "Stopy płasko na podłodze dla stabilizacji"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms welded to the pad",
+      "Squeeze hard at the top for 1 second — the cable will not let you cheat",
+      "Fight the eccentric for 2-3 seconds — do NOT let the cable pull you down fast",
+      "Stop just short of full elbow lockout — keep continuous tension on the biceps",
+      "Drive the bar toward your chin, not your forehead — keep elbow angle correct"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem przyspawane do poduszki",
+      "Mocno spinaj biceps w górnej pozycji przez 1 sekundę — linka nie pozwoli Ci oszukiwać",
+      "Walcz w fazie negatywnej przez 2-3 sekundy — NIE pozwól by linka pociągnęła Cię w dół szybko",
+      "Zatrzymaj się tuż przed pełnym wyprostem łokci — utrzymuj ciągłe napięcie bicepsa",
+      "Prowadź drążek w kierunku brody, nie czoła — utrzymuj prawidłowy kąt łokcia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Skipping the full eccentric — letting the stack pull arms down quickly",
+        "faultPl": "Pomijanie pełnej fazy negatywnej — pozwalanie aby stos ściągnął ramiona szybko w dół",
+        "cause": "Lack of patience, ego lifting with too much weight, treating cable like a barbell where the bottom is 'free'",
+        "causePl": "Brak cierpliwości, ego z za dużym ciężarem, traktowanie linki jak sztangi gdzie dół jest 'za darmo'",
+        "cue": "Count 1-2-3 on every descent. The constant tension is the whole point of using a cable.",
+        "cuePl": "Licz 1-2-3 przy każdym opuszczaniu. Stałe napięcie to cały sens używania linki."
+      },
+      {
+        "fault": "Insufficient peak contraction / no pause at the top",
+        "faultPl": "Niewystarczająca pauza i napięcie w pozycji szczytowej",
+        "cause": "Rushing reps, not understanding that constant tension demands an active squeeze",
+        "causePl": "Pośpiech, brak zrozumienia że stałe napięcie wymaga aktywnego napinania",
+        "cue": "Hold and flex the biceps hard for a full second at the top of every rep.",
+        "cuePl": "Zatrzymaj i mocno napnij biceps przez pełną sekundę w górnej pozycji każdego powtórzenia."
+      },
+      {
+        "fault": "Using the back / shoulders to yank the weight (leaning back, lifting elbows off pad)",
+        "faultPl": "Pomaganie plecami i barkami — odchylanie się w tył, odrywanie łokci od poduszki",
+        "cause": "Load too heavy, fatigued biceps, or trying to grind extra reps after technical failure",
+        "causePl": "Zbyt duży ciężar, zmęczone bicepsy, lub próba wyciśnięcia dodatkowych powtórzeń po technicznej niewydolności",
+        "cue": "Reduce the weight. Press armpits HARD into the pad — if elbows lift, the set is over.",
+        "cuePl": "Zmniejsz ciężar. Wciśnij pachy MOCNO w poduszkę — jeśli łokcie się odrywają, seria jest skończona."
+      },
+      {
+        "fault": "Partial range of motion (cutting the bottom — fearful of stretched position)",
+        "faultPl": "Niepełny zakres ruchu — skracanie dolnej fazy ze strachu przed pozycją rozciągniętą",
+        "cause": "Cable's strong pull at the bottom is intimidating; weak stretched-position strength",
+        "causePl": "Mocne ciągnięcie linki na dole jest onieśmielające; słabość w pozycji rozciągniętej",
+        "cue": "Lower to almost full elbow extension — keep a tiny bend to protect the tendon, but do not stop high.",
+        "cuePl": "Opuszczaj do niemal pełnego wyprostu — zostaw minimalny ugięcie aby chronić ścięgno, ale nie zatrzymuj się wysoko."
+      },
+      {
+        "fault": "Wrong cable angle — pulley too high makes the bottom too easy",
+        "faultPl": "Zły kąt linki — wyciąg zbyt wysoko sprawia że dolna faza jest zbyt łatwa",
+        "cause": "Bench positioned too far from pulley or pulley not at the lowest setting",
+        "causePl": "Ławka ustawiona za daleko od wyciągu lub wyciąg nieustawiony na najniższej pozycji",
+        "cue": "Use the LOW pulley and place the bench so the cable pulls roughly along the pad's slope.",
+        "cuePl": "Używaj DOLNEGO wyciągu i ustaw ławkę tak by linka ciągnęła mniej więcej wzdłuż nachylenia poduszki."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curling up). Inhale during the slow eccentric (lowering). Maintain a light core brace to keep the torso stable on the bench.",
+    "breathingPl": "Wydech w fazie koncentrycznej (uginanie do góry). Wdech w powolnej fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha aby tułów był stabilny na ławce."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The constant tension at end-range stretch can aggravate the distal tendon. Use an EZ-bar attachment to reduce supination stress, keep a slight bend at the bottom, work in 10-15 rep range with light load.",
+      "modificationPl": "Stałe napięcie w pełnym rozciągnięciu może drażnić dystalne ścięgno bicepsa. Użyj drążka łamanego aby zmniejszyć stres supinacyjny, zostaw lekkie ugięcie na dole, pracuj w zakresie 10-15 powtórzeń z lekkim obciążeniem.",
+      "alternative": "ez-bar-preacher-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Straight bar in full supination provokes pronator/flexor origin. Switch to EZ-bar attachment or rotating handle. Reduce volume and intensity until pain-free.",
+      "modificationPl": "Drążek prosty w pełnej supinacji drażni przyczepy mięśni nawracających i zginaczy. Przejdź na drążek łamany lub rotującą rączkę. Zmniejsz objętość i intensywność do zakresu bez bólu.",
+      "alternative": "ez-bar-preacher-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locks wrists in maximum supination. Use EZ-bar (angled grip) or a single-arm rotating D-handle to allow natural wrist position.",
+      "modificationPl": "Drążek prosty blokuje nadgarstki w maksymalnej supinacji. Użyj drążka łamanego (kąt chwytu) lub pojedynczej rotującej rączki D aby pozwolić nadgarstkom przyjąć naturalną pozycję.",
+      "alternative": "single-arm-cable-preacher-curl"
+    },
+    {
+      "condition": "elbow_hyperextension",
+      "severity": "caution",
+      "modification": "Under constant cable tension the elbow can be pulled into hyperextension at the bottom — this is a known mechanism of biceps tendon injury. Never fully lock out, always stop the eccentric with a small bend in the elbow.",
+      "modificationPl": "Pod stałym napięciem linki łokieć może zostać wciągnięty w przeprost na dole — to znany mechanizm uszkodzenia ścięgna bicepsa. Nigdy nie blokuj łokcia w pełni, zawsze zatrzymuj fazę negatywną z minimalnym ugięciem łokcia.",
+      "alternative": "barbell-preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, primary use) | 3x12-15 (pump/finisher) | 4x6-10 (mass with eccentric emphasis)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/cable-preacher-curl/frame_0_start.png",
+      "frames/cable-preacher-curl/frame_1_early.png",
+      "frames/cable-preacher-curl/frame_2_mid.png",
+      "frames/cable-preacher-curl/frame_3_late.png",
+      "frames/cable-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-preacher-curl",
+    "yuhonas_id": "Cable_Preacher_Curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:30:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący siedzi na ławce modlitewnika ustawionej przed dolnym wyciągiem, ramiona oparte na poduszce, łokcie w pełni wyprostowane wzdłuż pada, linka biegnie od dolnego krążka do drążka prostego, chwyt podchwytem na szerokość barków. Biceps i przedramiona zaznaczone na czerwono. Frame 2: pełny skurcz, drążek na wysokości barków/brody, łokcie pozostają zablokowane na poduszce — modelowa pełna kontrakcja przy maksymalnym napięciu linki. Frame 4: powrót do wyprostu z 'ghostem' fazy szczytowej widocznym powyżej. Linka pozostaje napięta przez cały ruch — kluczowa różnica względem barbell-preacher-curl. Ćwiczenie jednoznacznie zidentyfikowane jako Cable Preacher Curl z dolnego wyciągu (low pulley), nie z górnego. Yuhonas instrukcje zgodne (low pulley + straight bar + preacher bench). Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "cable", "preacher", "constant_tension", "hypertrophy", "upper_body"]
+}

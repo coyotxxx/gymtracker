@@ -1,0 +1,202 @@
+{
+  "id": "resistance-band-seated-shoulder-press",
+  "name": "Resistance Band Seated Shoulder Press",
+  "namePl": "OHP z gumą w siadzie",
+  "aliases": ["band seated OHP", "seated band overhead press", "resistance band shoulder press seated"],
+  "aliasesPl": ["wyciskanie nad głowę z gumą w siadzie", "OHP z gumą siedząc", "seated band press", "barki z gumą w siadzie"],
+
+  "description": "Vertical pressing variant using a resistance band anchored under the seat or under the feet, performed seated on a bench. Hands grip both ends of the band at shoulder height, then press straight up to full overhead lockout. The band provides ascending resistance — easiest at the bottom, hardest at the top — which matches the natural strength curve of the press and protects the shoulder joint. Excellent for home training, deload weeks, rehab, beginners, or travel. Compound bilateral movement targeting deltoids and triceps.",
+  "descriptionPl": "Pionowe wyciskanie z gumą oporową zakotwiczoną pod siedziskiem lub pod stopami, wykonywane siedząc na ławce. Dłonie trzymają oba końce gumy na wysokości barków, następnie wyciskają prosto w górę do pełnego lock-out nad głową. Guma daje opór rosnący — najlżejszy na dole, najcięższy na górze — co pasuje do naturalnej krzywej siły wyciskania i chroni staw barkowy. Świetne do treningu domowego, deload week, rehabilitacji, początkujących lub w podróży. Dwustronny ruch wielostawowy na delty i tricepsy.",
+
+  "instructions": [
+    "Sit on a bench or sturdy chair. Place the band under the seat (or step on the middle with both feet) so it is firmly anchored.",
+    "Grab one handle/end in each hand. Bring hands to shoulder height, elbows under wrists, palms facing forward (pronated grip).",
+    "Sit tall: chest up, shoulders back and down, core braced, feet flat on the floor.",
+    "Inhale, brace, and press both handles straight up overhead in a smooth controlled arc.",
+    "Lock out arms overhead — biceps near ears, wrists straight, slight inward angle of handles is OK.",
+    "Pause briefly at the top, then lower the handles back to shoulder height with control (resist the band — don't let it snap you down).",
+    "Keep the back against the bench (if backrest), do NOT lean back or arch the lumbar spine.",
+    "Exhale on the way up or at lockout. Maintain steady tempo (2 sec up, 2 sec down)."
+  ],
+  "instructionsPl": [
+    "Usiądź na ławce lub stabilnym krześle. Umieść gumę pod siedziskiem (lub stań na środku gumy obiema stopami) tak by była mocno zakotwiczona.",
+    "Złap po jednym uchwycie/końcu gumy w każdą dłoń. Podnieś dłonie na wysokość barków, łokcie pod nadgarstkami, dłonie w pronacji (do przodu).",
+    "Siedź wysoko: klatka do góry, barki cofnięte i w dół, brzuch napięty, stopy płasko na podłodze.",
+    "Wdech, napięcie, wyciśnij oba uchwyty prosto w górę nad głowę w płynnym kontrolowanym łuku.",
+    "Lock-out ramion nad głową — bicepsy przy uszach, nadgarstki proste, lekkie skierowanie uchwytów do środka jest OK.",
+    "Krótka pauza na szczycie, następnie opuść uchwyty z powrotem do wysokości barków kontrolowanym ruchem (opieraj się gumie — nie pozwól by szarpnęła w dół).",
+    "Trzymaj plecy przy oparciu (jeśli jest), NIE odchylaj się do tyłu i nie wyginaj lędźwi.",
+    "Wydech w górze lub w lock-out. Utrzymuj stałe tempo (2 sek w górę, 2 sek w dół)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps", "upper_chest", "trapezius", "serratus_anterior"],
+    "stabilizers": ["core", "rotator_cuff", "rectus_abdominis", "obliques", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P9",
+    "lateral_deltoid": "P8",
+    "triceps": "S6",
+    "upper_chest": "S4",
+    "trapezius": "S5",
+    "serratus_anterior": "S5",
+    "core": "S5",
+    "rotator_cuff": "S5"
+  },
+
+  "equipment": {
+    "required": ["resistance_band", "bench_or_chair"],
+    "optional": ["band_handles"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["dumbbell-shoulder-press", "seated-barbell-overhead-press", "machine-shoulder-press", "barbell-overhead-press"],
+    "alternatives": ["resistance-band-standing-shoulder-press", "dumbbell-seated-shoulder-press", "machine-shoulder-press", "landmine-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Band anchored firmly under seat or feet (won't slip)",
+      "Sit tall — chest up, shoulders back",
+      "Hands at shoulder height, palms forward",
+      "Elbows under wrists at the start",
+      "Feet flat, core braced"
+    ],
+    "setup_cues_pl": [
+      "Guma mocno zakotwiczona pod siedziskiem lub stopami (nie ślizga się)",
+      "Siedź wysoko — klatka do góry, barki cofnięte",
+      "Dłonie na wysokości barków, dłonie do przodu",
+      "Łokcie pod nadgarstkami na starcie",
+      "Stopy płasko, brzuch napięty"
+    ],
+    "execution_cues": [
+      "Press straight up, biceps end near ears",
+      "Wrists STRAIGHT — don't let the band bend them back",
+      "Control the eccentric — resist the band, don't get snapped down",
+      "Keep ribs DOWN, no lumbar arching",
+      "Full lockout at top, controlled descent to shoulders"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę, bicepsy kończą przy uszach",
+      "Nadgarstki PROSTE — nie pozwól gumie wygiąć ich do tyłu",
+      "Kontroluj fazę ekscentryczną — opieraj się gumie, nie daj się szarpnąć w dół",
+      "Żebra W DÓŁ, bez wyginania lędźwi",
+      "Pełen lock-out na górze, kontrolowane opuszczanie do barków"
+    ],
+    "common_faults": [
+      {
+        "fault": "Band slipping out from under the seat/feet",
+        "faultPl": "Guma wyślizguje się spod siedziska/stóp",
+        "cause": "Band not centered, too short, or feet shifted during set",
+        "causePl": "Guma niewycentrowana, za krótka, lub stopy przesunęły się podczas serii",
+        "cue": "Center the band BEFORE you grip the handles. Plant feet wide and DON'T move them. Loop the band twice if too long.",
+        "cuePl": "Wycentruj gumę PRZED chwytem za uchwyty. Postaw stopy szeroko i NIE ruszaj nimi. Zapętl gumę dwa razy jeśli za długa."
+      },
+      {
+        "fault": "Leaning back / lumbar arching (no backrest)",
+        "faultPl": "Odchylanie się do tyłu / wyginanie lędźwi (bez oparcia)",
+        "cause": "Band tension too high at top, weak core, no backrest support",
+        "causePl": "Za duże naprężenie gumy w górze, słaby brzuch, brak oparcia",
+        "cue": "Brace core. Ribs DOWN. Use a band with lower tension or sit on a bench with backrest.",
+        "cuePl": "Napnij brzuch. Żebra W DÓŁ. Użyj gumy o słabszym oporze lub usiądź na ławce z oparciem."
+      },
+      {
+        "fault": "Wrists bending backward under band tension",
+        "faultPl": "Nadgarstki wyginają się do tyłu pod naprężeniem gumy",
+        "cause": "Grip too loose, band handle ergonomics, weak wrist stabilizers",
+        "causePl": "Za luźny chwyt, ergonomia uchwytu gumy, słabe stabilizatory nadgarstka",
+        "cue": "Grip the handle HARD. Keep wrist neutral — knuckles up, not back. Use wraps if needed.",
+        "cuePl": "Trzymaj uchwyt MOCNO. Nadgarstek neutralny — knykcie w górę, nie do tyłu. Użyj wraps jeśli trzeba."
+      },
+      {
+        "fault": "Letting the band snap you down on the eccentric",
+        "faultPl": "Pozwalanie by guma szarpnęła cię w dół w fazie ekscentrycznej",
+        "cause": "Loss of tension, fatigue, rushing the rep",
+        "causePl": "Utrata napięcia, zmęczenie, pośpiech",
+        "cue": "Lower in 2-3 seconds. RESIST the band — eccentric matters as much as concentric.",
+        "cuePl": "Opuszczaj w 2-3 sekundy. OPIERAJ się gumie — ekscentryk liczy się tak samo jak koncentryk."
+      },
+      {
+        "fault": "Pressing forward instead of straight up",
+        "faultPl": "Wyciskanie do przodu zamiast prosto w górę",
+        "cause": "Avoiding the face, weak overhead mobility, poor band path",
+        "causePl": "Unikanie twarzy, słaba mobilność overhead, zła ścieżka gumy",
+        "cue": "Bar/band path STRAIGHT UP. Finish biceps by ears, not in front of them.",
+        "cuePl": "Ścieżka gumy PROSTO W GÓRĘ. Zakończ bicepsami przy uszach, nie przed nimi."
+      }
+    ],
+    "breathing": "Inhale and brace before the press. Exhale at lockout or on the way up. Reset breath between reps if needed.",
+    "breathingPl": "Wdech i napięcie przed wyciskaniem. Wydech w lock-out lub w drodze do góry. Zresetuj oddech między powtórzeniami jeśli trzeba."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (don't press to full lockout), use lighter band, or switch to landmine press (angled path is more shoulder-friendly).",
+      "modificationPl": "Zmniejsz ROM (nie wyciskaj do pełnego lock-out), użyj słabszej gumy, lub przejdź na landmine press (kątowa ścieżka bardziej przyjazna dla barku).",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "modify",
+      "modification": "Very light band, partial ROM, focus on scapular control. Confirm clearance with PT before progressing.",
+      "modificationPl": "Bardzo lekka guma, częściowy ROM, skup się na kontroli łopatek. Potwierdź zgodę fizjoterapeuty przed progresją.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Work shoulder/thoracic mobility separately. Press only to the point where wrists, elbows and shoulders stay aligned — don't force full overhead.",
+      "modificationPl": "Pracuj osobno nad mobilnością barku/piersiowej. Wyciskaj tylko do punktu gdzie nadgarstki, łokcie i barki są wyrównane — nie wymuszaj pełnego overhead.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Use a bench WITH a backrest. Keep back firmly against it throughout the set. Reduce band tension if you need to arch to finish.",
+      "modificationPl": "Użyj ławki Z OPARCIEM. Trzymaj plecy mocno przy oparciu przez całą serię. Zmniejsz opór gumy jeśli musisz wyginać plecy by zakończyć ruch.",
+      "alternative": "machine-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy / endurance) | 2-3x15-20 (warm-up / rehab) | 3x8-12 (general strength with strong band)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "resistance-band-seated-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/resistance-band-seated-shoulder-press/frame_0_start.png",
+      "frames/resistance-band-seated-shoulder-press/frame_1_early.png",
+      "frames/resistance-band-seated-shoulder-press/frame_2_mid.png",
+      "frames/resistance-band-seated-shoulder-press/frame_3_late.png",
+      "frames/resistance-band-seated-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/resistance-band-seated-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — osoba siedzi na ławce, guma przechodzi pod siedziskiem, dłonie z uchwytami na wysokości barków, łokcie pod nadgarstkami, dłonie w pronacji. Frame 2: pełen lock-out — ramiona wyciągnięte prosto w górę, bicepsy przy uszach, guma napięta. Frame 4: powrót do startu. Podświetlone: przednie i boczne aktony delt (P9/P8), tricepsy (S6), górna część trapezów. Klasyczny seated band shoulder press. Mechanic=compound, plane=frontal (uchwyty po bokach głowy, ruch w płaszczyźnie czołowej), force=push, bilateral. Difficulty 3/10 — beginner friendly, świetne na home/deload/rehab. Brak progressji do barbell OHP bez zbudowania bazy.",
+
+  "tags": ["resistance_band", "home_workout", "beginner_friendly", "shoulders", "vertical_push", "upper_body", "deload", "rehab", "travel_friendly", "seated", "compound"]
+}

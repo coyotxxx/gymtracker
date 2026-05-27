@@ -1,0 +1,193 @@
+{
+  "id": "ez-barbell-reverse-grip-preacher-curl",
+  "name": "EZ Barbell Reverse-Grip Preacher Curl",
+  "namePl": "Uginanie ramion nachwytem na modlitewniku ze sztangą łamaną",
+  "aliases": ["reverse grip preacher curl ez bar", "ez bar pronated preacher curl", "overhand preacher curl", "reverse scott curl"],
+  "aliasesPl": ["preacher curl nachwytem z EZ", "uginanie nachwytem na modlitewniku", "scott curl nachwytem", "modlitewnik nachwytem", "reverse curl na modlitewniku"],
+
+  "description": "Strict elbow flexor isolation performed on a preacher (Scott) bench using an EZ-bar held with a pronated (overhand, palms-down) grip. The reverse grip puts the biceps brachii in a mechanically disadvantaged position (the long head of biceps cannot supinate, so it loses leverage) and shifts the workload onto the brachialis and brachioradialis — two muscles that build arm thickness and width when viewed from the side. The preacher pad eliminates body english and forces the elbow flexors to do all the work through a deep stretch. Combined with the angled EZ-bar (which reduces wrist strain compared to a straight bar), this variant is the gold-standard exercise for isolating the brachialis with minimum joint stress.",
+  "descriptionPl": "Ścisłe ćwiczenie izolowane na zginacze stawu łokciowego wykonywane na ławce modlitewnika (Scotta) ze sztangą łamaną (EZ) trzymaną chwytem nachwytem (dłonie skierowane w dół, kostki w górę). Nachwyt ustawia biceps w niekorzystnej pozycji mechanicznej (długa głowa bicepsa nie może supinować, więc traci dźwignię) i przenosi obciążenie na mięsień ramienny (brachialis) oraz ramienno-promieniowy (brachioradialis) — dwa mięśnie odpowiadające za grubość i szerokość ramienia w widoku z boku. Podstawka modlitewnika eliminuje pomoc tułowia i zmusza zginacze stawu łokciowego do pełnej pracy w głębokim rozciągnięciu. W połączeniu z kątem sztangi EZ (mniejszy stres na nadgarstkach niż przy prostej sztandze) ten wariant jest złotym standardem do izolacji brachialisa przy minimalnym obciążeniu stawów.",
+
+  "instructions": [
+    "Set the preacher bench height so that the top of the pad sits in your armpit when leaning forward. Load the EZ-bar with an appropriate weight — start LIGHT (60-70% of your supinated preacher curl weight) because reverse grip is much weaker.",
+    "Sit on the bench, drape both upper arms flat against the angled pad with elbows shoulder-width apart. Grip the inner (wider) angle of the EZ-bar with a PRONATED grip (palms facing down, knuckles up), hands slightly inside shoulder-width.",
+    "Have a spotter hand you the bar, or lift it from the rack with a controlled rep. Start position: elbows NOT fully locked — keep ~10° of flexion to protect the distal biceps tendon.",
+    "Curl the bar upward by flexing only at the elbow. Exhale on the way up. Keep the back of your upper arms glued to the pad and the wrists straight (do not let the bar drop into wrist flexion).",
+    "Continue until the bar is just below chin level and forearms are roughly vertical. The brachialis should be fully shortened. Squeeze hard for 1 second at the top — focus on the lateral (outer) part of the upper arm.",
+    "Lower the bar under control over 2-3 seconds toward the start position. Inhale during the eccentric. The wrist extensors will burn intensely — this is normal and a sign of correct execution.",
+    "Stop just before full elbow extension to keep tension on the brachialis. Do not bounce out of the bottom. After the last rep, do not drop the bar — hand it to a spotter or rack it carefully (reverse-grip control of a heavy bar is fatiguing)."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość ławki modlitewnika tak, aby górna krawędź podstawki opierała się w pasze gdy pochylisz się do przodu. Załaduj sztangę EZ — zacznij LEKKO (60-70% ciężaru klasycznego preacher curl podchwytem), bo nachwyt jest dużo słabszy.",
+    "Usiądź na ławce, oprzyj obie tylne strony ramion ponad łokciem płasko o skośną podstawkę, łokcie na szerokość barków. Złap sztangę EZ za wewnętrzny (szerszy) kąt łamania chwytem NACHWYTEM (dłonie skierowane w dół, kostki w górę), dłonie nieco węższe niż szerokość barków.",
+    "Poproś asekuranta o podanie sztangi, albo zdejmij ją ze stojaka w kontrolowanym powtórzeniu. Pozycja startowa: łokcie NIE w pełnym wyproście — zostaw ~10° zgięcia by chronić dystalne ścięgno bicepsa.",
+    "Uginaj ramiona zginając WYŁĄCZNIE w łokciach. Wydychaj w fazie koncentrycznej. Tylna strona ramion ma pozostać przyklejona do podstawki, a nadgarstki proste (nie pozwól sztandze opaść w zgięcie nadgarstka).",
+    "Kontynuuj aż sztanga znajdzie się tuż pod brodą i przedramiona będą w przybliżeniu pionowe. Brachialis powinien być w pełnym skróceniu. Mocno spinaj przez 1 sekundę w szczycie — skup się na zewnętrznej (bocznej) części ramienia.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy w stronę pozycji startowej. Wdech w fazie ekscentrycznej. Prostowniki nadgarstka będą intensywnie pieczyć — to normalne i jest oznaką poprawnej techniki.",
+    "Zatrzymaj się tuż przed pełnym wyprostem łokci aby utrzymać napięcie na brachialisie. Nie odbijaj sztangi w dole. Po ostatnim powtórzeniu nie rzucaj sztangą — podaj asekurantowi lub odłóż na stojak ostrożnie (kontrola ciężkiej sztangi nachwytem jest męcząca)."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis"],
+    "secondary": ["brachioradialis", "biceps_brachii"],
+    "stabilizers": ["forearm_extensors", "forearm_flexors", "anterior_deltoid", "upper_trapezius", "core"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P10",
+    "brachioradialis": "S8",
+    "biceps_brachii": "S6",
+    "forearm_extensors": "T5",
+    "forearm_flexors": "T3",
+    "anterior_deltoid": "T1",
+    "upper_trapezius": "T1",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["preacher_bench", "ez_barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps", "spotter", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["barbell-reverse-curl", "ez-bar-preacher-curl", "barbell-preacher-curl"],
+    "progression_to": ["dumbbell-reverse-preacher-curl", "cable-reverse-preacher-curl", "single-arm-reverse-preacher-curl"],
+    "alternatives": ["barbell-reverse-curl", "ez-bar-reverse-curl", "cable-reverse-curl", "hammer-preacher-curl", "dumbbell-reverse-preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pad sits high — into the armpit, not on the chest",
+      "Upper arms flat against the pad, elbows shoulder-width",
+      "Pronated grip on inner EZ angle, knuckles facing the ceiling",
+      "Slight bend at elbows in start position — never fully locked",
+      "Wrists straight and rigid — they will want to fold under load"
+    ],
+    "setup_cues_pl": [
+      "Podstawka wysoko — w pachę, nie na klatkę",
+      "Ramiona ponad łokciem płasko na podstawce, łokcie na szerokość barków",
+      "Chwyt nachwytem na wewnętrznym kącie EZ, kostki w stronę sufitu",
+      "Lekkie zgięcie łokci w pozycji startowej — nigdy pełen wyprost",
+      "Nadgarstki proste i sztywne — pod obciążeniem będą chciały się zginać"
+    ],
+    "execution_cues": [
+      "Drive through the elbow — feel the brachialis (outer arm) doing the lifting",
+      "Squeeze hard at the top for 1 second — focus on the side of the upper arm, not the front",
+      "Lower for 3 full seconds — the eccentric trains brachialis the most",
+      "Keep the bar path tight — no swinging, no momentum",
+      "Wrists stay neutral — the forearm should not collapse into flexion"
+    ],
+    "execution_cues_pl": [
+      "Pracuj przez łokieć — czuj jak brachialis (bok ramienia) wykonuje pracę",
+      "Mocno spinaj w szczycie przez 1 sekundę — skup się na boku ramienia, nie na froncie",
+      "Opuszczaj przez pełne 3 sekundy — faza negatywna najbardziej rozwija brachialisa",
+      "Tor ruchu sztangi krótki — bez bujania, bez momentu",
+      "Nadgarstki neutralne — przedramię nie może zapadać się w zgięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Wrists drop into flexion at the bottom (bar tilts down)",
+        "faultPl": "Nadgarstki opadają w zgięcie w dolnej pozycji (sztanga przechyla się w dół)",
+        "cause": "Weak wrist extensors cannot hold the bar against gravity in the lengthened position",
+        "causePl": "Słabe prostowniki nadgarstka nie utrzymują sztangi przeciw grawitacji w pozycji wydłużonej",
+        "cue": "Reduce the weight by 20-30%. Reverse-grip work is wrist-extensor limited, not biceps limited. Build wrist strength with wrist roller or reverse wrist curls before adding load here.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Praca nachwytem jest limitowana siłą prostowników nadgarstka, nie bicepsem. Zbuduj siłę nadgarstków rolką do nadgarstków lub uginaniami nachwytem przed dokładaniem ciężaru tutaj."
+      },
+      {
+        "fault": "Locking out the elbows at the bottom",
+        "faultPl": "Pełen wyprost łokci w dolnej pozycji",
+        "cause": "Letting gravity dump the load onto the distal biceps tendon at the deepest stretch",
+        "causePl": "Pozwalanie grawitacji obciążać dystalne ścięgno bicepsa w najgłębszym rozciągnięciu",
+        "cue": "Stop the descent with elbows slightly bent (~10°). The preacher pad multiplies stretch — full lockout is the #1 cause of biceps tendon injury in this position, even though the brachialis is the prime mover.",
+        "cuePl": "Zatrzymaj opuszczanie przy lekko zgiętych łokciach (~10°). Kąt podstawki potęguje rozciąganie — pełny wyprost jest tu główną przyczyną kontuzji ścięgna bicepsa, choć główną pracę wykonuje brachialis."
+      },
+      {
+        "fault": "Going too heavy and reverting to supinated grip mid-set",
+        "faultPl": "Zbyt duży ciężar i 'kradnięcie' przez przejście w pół-supinację w trakcie serii",
+        "cause": "Underestimating how much weaker reverse grip is vs supinated (about 30-40%)",
+        "causePl": "Niedoszacowanie o ile słabszy jest nachwyt vs podchwyt (około 30-40%)",
+        "cue": "Start at ~60% of your supinated preacher curl weight. The grip is the point — if you cannot keep knuckles facing up the whole set, the load is too heavy.",
+        "cuePl": "Zacznij od ~60% ciężaru klasycznego preacher curl podchwytem. Chwyt jest sensem ćwiczenia — jeśli nie utrzymasz kostek skierowanych w górę przez całą serię, ciężar jest za duży."
+      },
+      {
+        "fault": "Elbows flare wide and lift off the pad",
+        "faultPl": "Łokcie rozchodzą się na boki i unoszą z podstawki",
+        "cause": "Trying to use the front delts to assist when brachialis fails",
+        "causePl": "Próba wsparcia przednimi aktonami barków gdy brachialis zaczyna zawodzić",
+        "cue": "Set elbows shoulder-width and visualise them glued to the pad like magnets. If they drift, end the set.",
+        "cuePl": "Ustaw łokcie na szerokość barków i wyobraź sobie że są przyklejone do podstawki jak magnesy. Jeśli się ruszają — zakończ serię."
+      },
+      {
+        "fault": "Curling the wrist at the top (trying to add ROM)",
+        "faultPl": "Zginanie nadgarstka w szczycie (próba dodania zakresu)",
+        "cause": "Confusion between elbow flexion and wrist flexion — wanting to lift the bar higher",
+        "causePl": "Mylenie zgięcia łokcia ze zgięciem nadgarstka — chęć podniesienia sztangi wyżej",
+        "cue": "The rep ends when forearms hit vertical. Wrist flexion adds nothing to the brachialis and stresses the carpal tunnel — keep wrists neutral.",
+        "cuePl": "Powtórzenie kończy się gdy przedramiona dojdą do pionu. Zgięcie nadgarstka nic nie dodaje brachialisowi a obciąża kanał nadgarstka — utrzymuj neutralne nadgarstki."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light core brace to stabilise the torso against the pad.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha aby ustabilizować tułów na podstawce."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "avoid",
+      "modification": "Even though the brachialis is the prime mover, the preacher pad still puts the distal biceps tendon in deep stretch. Switch to standing reverse curls with shorter ROM until pain-free.",
+      "modificationPl": "Choć głównym mięśniem jest brachialis, podstawka modlitewnika nadal rozciąga dystalne ścięgno bicepsa. Przejdź na uginania nachwytem stojąc z krótszym zakresem do czasu ustąpienia bólu.",
+      "alternative": "barbell-reverse-curl"
+    },
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "avoid",
+      "modification": "Reverse grip loads the wrist extensors (the exact tendons inflamed in tennis elbow) at extreme leverage. Stop all reverse-grip pulling until the tendon is asymptomatic for 4+ weeks.",
+      "modificationPl": "Nachwyt obciąża prostowniki nadgarstka (dokładnie te ścięgna zapalone w łokciu tenisisty) na maksymalnej dźwigni. Przerwij wszystkie ćwiczenia nachwytem aż ścięgno będzie bez objawów przez 4+ tygodnie.",
+      "alternative": "hammer-preacher-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "The pronated grip stresses the wrist in extension under load. Reduce load by 40%, wear wrist wraps, and use the steepest EZ angle available. If pain persists, switch to neutral (hammer) grip.",
+      "modificationPl": "Chwyt nachwytem obciąża nadgarstek w prostowaniu pod ciężarem. Zmniejsz ciężar o 40%, użyj usztywniaczy nadgarstków i wybierz najbardziej skośny kąt EZ. Jeśli ból się utrzymuje, przejdź na chwyt neutralny (młotkowy).",
+      "alternative": "hammer-preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hipertrofia brachialisa, główne zastosowanie) | 3x12-20 (pump / wykończenie ramion na końcu sesji) | 4x8-10 (siła, rzadko — nachwyt limituje ciężar)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "ez-barbell-reverse-grip-preacher-curl.gif",
+    "frames_extracted": [
+      "frames/ez-barbell-reverse-grip-preacher-curl/frame_0_start.png",
+      "frames/ez-barbell-reverse-grip-preacher-curl/frame_1_early.png",
+      "frames/ez-barbell-reverse-grip-preacher-curl/frame_2_mid.png",
+      "frames/ez-barbell-reverse-grip-preacher-curl/frame_3_late.png",
+      "frames/ez-barbell-reverse-grip-preacher-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/ez-barbell-reverse-grip-preacher-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0 (start): atleta na preacher bench, sztanga EZ w pełnym wyproście w dole, chwyt jednoznacznie NACHWYTEM (kostki w górę, dłonie w dół), na podświetleniu czerwono widać przede wszystkim przedramiona (brachialis i brachioradialis), biceps tylko sygnalizowany. Frame 1-3 (early/mid/late): faza koncentryczna i szczyt — sztanga zbliża się do twarzy, nadgarstki PROSTE (nie zginają się), łokcie pozostają na podstawce, kostki cały czas widoczne od góry potwierdzając pronated grip. Frame 4 (end): powrót do startu. Sztanga jednoznacznie łamana (zigzag EZ), nie prosta. Ćwiczenie zidentyfikowane jako EZ Barbell Reverse-Grip Preacher Curl — wariant brachialis-dominant. Wszystkie pola PL napisane od zera w polskim standardzie fitness (modlitewnik, nachwyt, EZ łamana, brachialis = mięsień ramienny). Uwaga: w prompcie użytkownika było 'podchwytem' ale slug oraz GIF jednoznacznie pokazują nachwyt (reverse grip = pronated = palms down) — poszedłem za GIFem.",
+
+  "tags": ["bodybuilding", "arms", "brachialis", "forearms", "isolation", "ez_bar", "preacher_bench", "reverse_grip", "upper_body", "arm_thickness"]
+}

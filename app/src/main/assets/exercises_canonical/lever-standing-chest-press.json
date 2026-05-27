@@ -1,0 +1,202 @@
+{
+  "id": "lever-standing-chest-press",
+  "name": "Lever Standing Chest Press",
+  "namePl": "Chest press w maszynie stojąc",
+  "aliases": ["standing chest press machine", "standing lever chest press", "vertical chest press standing", "plate-loaded standing chest press"],
+  "aliasesPl": ["wyciskanie poziome w maszynie stojąc", "chest press stojący", "maszyna do wyciskania poziomego na stojąco", "lever chest press stojąco"],
+
+  "description": "Horizontal pressing variation performed in a plate-loaded/lever chest press machine while standing upright, with a vertical pad supporting the upper back. The fixed movement path locks the press into a clean horizontal pattern, removing the need for shoulder-blade stabilization on a bench. Standing recruits more leg/core bracing than a seated variant and is a great option in gyms where the seat is too tall for shorter lifters or for circuit work where you don't want to sit/stand between sets. Solid hypertrophy tool for chest, anterior delts and triceps, especially when the lifter wants a controlled press without bar/dumbbell balance demands.",
+  "descriptionPl": "Wariant poziomego wyciskania wykonywany w maszynie typu lever (ładowanej talerzami) na stojąco, z plecami opartymi o pionowy pad. Ustalona ścieżka ruchu wymusza czysty wzorzec wyciskania poziomego i eliminuje potrzebę stabilizacji łopatek na ławce. Pozycja stojąca angażuje nogi i core do utrzymania postawy mocniej niż wariant siedzący — to dobra opcja, gdy siedzisko maszyny jest za wysokie dla niższych osób albo w obwodach treningowych, gdzie nie chcesz siadać i wstawać między seriami. Solidne narzędzie hipertroficzne na klatkę, przednie aktony naramiennego i tricepsy, szczególnie gdy zależy ci na kontrolowanym wyciskaniu bez wymogu balansowania sztangi czy hantli.",
+
+  "instructions": [
+    "Set the machine handles to roughly mid-chest height (nipple line). Load the appropriate weight on each side.",
+    "Stand facing AWAY from the handles, with your upper back / shoulder blades pressed firmly against the vertical back pad.",
+    "Feet roughly hip-width apart, one foot can be slightly staggered for stability. Knees soft (not locked). Brace the core.",
+    "Reach back and grip the handles with a neutral or slightly pronated grip. Elbows should sit at chest level, roughly at ~45-70° from the torso (NOT flared to 90°).",
+    "Retract shoulder blades against the pad, slight chest-up posture. This is the starting position.",
+    "Inhale, brace, and press the handles forward in a controlled arc until elbows are nearly extended — but DO NOT lock the elbows rigid.",
+    "Pause briefly at full extension, then return the handles back along the same path under control (~2-3 seconds eccentric) until the elbows reach starting position next to the chest.",
+    "Exhale on the press. Keep the upper back glued to the pad, do NOT let the torso lean forward off the pad. Repeat for prescribed reps."
+  ],
+  "instructionsPl": [
+    "Ustaw uchwyty maszyny mniej więcej na wysokości środka klatki (linia sutków). Załaduj odpowiedni ciężar po obu stronach.",
+    "Stań tyłem do uchwytów, z górną częścią pleców / łopatkami mocno opartymi o pionowy pad.",
+    "Stopy mniej więcej na szerokość bioder, jedna stopa może być lekko z przodu dla stabilności. Kolana miękkie (nieblokowane). Napnij core.",
+    "Sięgnij do tyłu i chwyć rączki chwytem neutralnym lub lekko pronowanym. Łokcie powinny być na wysokości klatki, w kącie ~45-70° od tułowia (NIE rozsunięte na 90°).",
+    "Ściągnij łopatki o pad, lekko wypchnij klatkę. To jest pozycja startowa.",
+    "Wdech, napięcie brzucha, wyciśnij rączki do przodu kontrolowanym łukiem aż łokcie będą prawie wyprostowane — ale NIE blokuj sztywno łokci.",
+    "Krótka pauza w pełnym wyproście, następnie wróć rączki tą samą drogą pod kontrolą (~2-3 sekundy fazy ekscentrycznej) aż łokcie wrócą do pozycji startowej obok klatki.",
+    "Wydech podczas wyciskania. Trzymaj górną część pleców przyklejoną do padu, NIE pozwól tułowiowi pochylić się do przodu odrywając się od oparcia. Powtórz dla zadanej liczby powtórzeń."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major", "triceps", "anterior_deltoids"],
+    "secondary": ["serratus_anterior"],
+    "stabilizers": ["core", "rotator_cuff", "upper_back", "glutes", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major": "P9",
+    "triceps": "P7",
+    "anterior_deltoids": "P7",
+    "serratus_anterior": "S5",
+    "core": "T4",
+    "rotator_cuff": "T3",
+    "glutes": "T2",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["lever_chest_press_machine"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["push-up", "machine-chest-press"],
+    "progression_to": ["machine-chest-press", "dumbbell-bench-press", "barbell-bench-press"],
+    "alternatives": ["machine-chest-press", "cable-chest-press", "smith-bench-press", "push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Handles at mid-chest height (nipple line)",
+      "Upper back / shoulder blades GLUED to the back pad",
+      "Feet hip-width, knees soft, core braced",
+      "Neutral or slightly pronated grip on the handles",
+      "Elbows at chest level, ~45-70° from torso — NOT 90° flared"
+    ],
+    "setup_cues_pl": [
+      "Rączki na wysokości środka klatki (linia sutków)",
+      "Górna część pleców / łopatki PRZYKLEJONE do padu",
+      "Stopy na szerokość bioder, kolana miękkie, napięty core",
+      "Chwyt neutralny lub lekko pronowany na rączkach",
+      "Łokcie na wysokości klatki, ~45-70° od tułowia — NIE rozsunięte na 90°"
+    ],
+    "execution_cues": [
+      "Press forward in a clean horizontal arc — let the machine guide the path",
+      "Extend elbows almost fully but do NOT lock them rigid at the end",
+      "Eccentric ~2-3s, concentric explosive but controlled",
+      "Keep upper back pinned to the pad — do NOT lean forward off the pad",
+      "Press EVENLY with both arms — don't let one side lag"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj do przodu czystym poziomym łukiem — pozwól maszynie prowadzić ścieżkę",
+      "Wyprostuj łokcie prawie do końca, ale NIE blokuj ich sztywno na końcu",
+      "Faza ekscentryczna ~2-3s, koncentryczna wybuchowa ale kontrolowana",
+      "Trzymaj górne plecy przyklejone do padu — NIE pochylaj się do przodu odrywając plecy",
+      "Wyciskaj RÓWNO obiema rękoma — nie pozwól by jedna strona odstawała"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning forward off the back pad to push more weight",
+        "faultPl": "Pochylanie się do przodu, odrywanie pleców od padu by wycisnąć więcej",
+        "cause": "Weight too heavy, ego lifting, lack of trunk control while standing",
+        "causePl": "Za ciężki ciężar, ego lifting, brak kontroli tułowia w pozycji stojącej",
+        "cue": "Glue your upper back to the pad. If you have to peel off, the weight is too heavy — drop it.",
+        "cuePl": "Przyklej górne plecy do padu. Jeśli musisz się odrywać, ciężar jest za duży — zmniejsz go."
+      },
+      {
+        "fault": "Elbows flared to 90° (chicken wings)",
+        "faultPl": "Łokcie rozsunięte na 90° (kurze skrzydełka)",
+        "cause": "Wrong handle height (too high), poor grip orientation, lack of awareness",
+        "causePl": "Złe ustawienie rączek (za wysoko), zły chwyt, brak świadomości pozycji",
+        "cue": "Tuck elbows to ~45-70° from torso. Lower the seat/handles if they sit too high.",
+        "cuePl": "Schowaj łokcie do ~45-70° od tułowia. Obniż siedzisko/rączki jeśli są za wysoko."
+      },
+      {
+        "fault": "Locking elbows hard at full extension",
+        "faultPl": "Sztywne blokowanie łokci w pełnym wyproście",
+        "cause": "Resting between reps on bony lockout instead of muscle, joint hyperextension habit",
+        "causePl": "Odpoczynek między powtórzeniami na zablokowanym stawie zamiast na mięśniu, nawyk hiperextensji",
+        "cue": "Stop ~95% extension — keep tension on the chest, never give the joint a hard end-stop.",
+        "cuePl": "Zatrzymaj się w ~95% wyprostu — trzymaj napięcie na klatce, nigdy nie waluj w twardy stop stawu."
+      },
+      {
+        "fault": "Insufficient ROM — short, choppy reps",
+        "faultPl": "Za mały zakres ruchu — krótkie, urywane powtórzenia",
+        "cause": "Weight too heavy, fear of stretch, machine handles set too far forward",
+        "causePl": "Za ciężki ciężar, strach przed rozciągnięciem, rączki ustawione za daleko z przodu",
+        "cue": "Bring elbows fully back next to the chest each rep. If you can't, lower the weight.",
+        "cuePl": "Cofaj łokcie w pełni do klatki w każdym powtórzeniu. Jeśli nie możesz, zmniejsz ciężar."
+      },
+      {
+        "fault": "Knees locked straight, no body bracing",
+        "faultPl": "Zablokowane proste kolana, brak napięcia ciała",
+        "cause": "Treating standing position as passive, no awareness of full-body brace",
+        "causePl": "Traktowanie pozycji stojącej jako pasywnej, brak świadomości napięcia całego ciała",
+        "cue": "Knees SOFT (slight bend), squeeze glutes, brace abs. The body is a platform — make it stable.",
+        "cuePl": "Kolana MIĘKKIE (lekko ugięte), napnij pośladki, brzuch. Ciało to platforma — zrób z niego stabilną podstawę."
+      }
+    ],
+    "breathing": "Inhale at the starting position (elbows back), brace, exhale on the press forward.",
+    "breathingPl": "Wdech w pozycji startowej (łokcie cofnięte), napięcie, wydech podczas wyciskania w przód."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip (palms facing each other) and reduce ROM so elbows don't go behind the torso line. Lower the handle height if adjustable.",
+      "modificationPl": "Użyj chwytu neutralnego (dłonie zwrócone do siebie) i zmniejsz ROM tak, by łokcie nie wychodziły za linię tułowia. Obniż rączki jeśli się da regulować.",
+      "alternative": "cable-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Heavy pressing while standing increases shoulder demand. Switch to seated machine or light cable work until cleared by physio.",
+      "modificationPl": "Ciężkie wyciskanie na stojąco zwiększa obciążenie barku. Przejdź na siedzącą maszynę lub lekkie wymiany na wyciągu do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Standing variant requires constant core/lumbar bracing. Stagger feet, keep knees soft, brace abs. If pain persists switch to seated machine.",
+      "modificationPl": "Wariant stojący wymaga stałego napięcia core/odcinka lędźwiowego. Ustaw stopy w lekkim wykroku, kolana miękkie, napnij brzuch. Jeśli ból się utrzymuje, przejdź na siedzącą maszynę.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "pec_strain",
+      "severity": "avoid",
+      "modification": "Stop pressing variants during acute strain. Return through light, partial-ROM machine work first.",
+      "modificationPl": "Wstrzymaj wyciskanie przy ostrym naderwaniu. Wracaj przez lekkie ćwiczenia w maszynie z ograniczonym ROM.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, default) | 4x6-8 (strength-hypertrophy) | 3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "lever-standing-chest-press.gif",
+    "frames_extracted": [
+      "frames/lever-standing-chest-press/frame_0_start.png",
+      "frames/lever-standing-chest-press/frame_1_early.png",
+      "frames/lever-standing-chest-press/frame_2_mid.png",
+      "frames/lever-standing-chest-press/frame_3_late.png",
+      "frames/lever-standing-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/lever-standing-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): trenujący stoi przodem do maszyny lever (talerze widoczne po lewej stronie konstrukcji), górne plecy oparte o pionowy pad z prawej strony, rączki maszyny na wysokości środka klatki, łokcie zgięte i cofnięte, podświetlone pectoralis_major, anterior_deltoid i triceps. Frame 2 (mid/lockout): pełne wyciśnięcie do przodu, ramiona prawie wyprostowane (bez sztywnego lock-out), pectoralis_major silnie podświetlony jako primary mover, tricepsy aktywne, postawa stojąca utrzymana. Frame 4 (powrót, ghost overlay z tyłu): widać że plecy zostają oparte o pad, ruch wraca po tej samej ścieżce. Chwyt neutralny rączek (rączki pionowe), stopa lekko z przodu dla stabilności, kolana miękkie. Klasyfikacja: push_horizontal/push/compound/bilateral/sagittal/open. Wszystkie pola PL napisane od zera, nie tłumaczone z EN — uwzględniono polski standard nazewnictwa fitness ('chest press w maszynie stojąc').",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "chest_mass", "machine", "lever", "standing", "chest", "shoulder_friendly", "beginner_friendly"]
+}

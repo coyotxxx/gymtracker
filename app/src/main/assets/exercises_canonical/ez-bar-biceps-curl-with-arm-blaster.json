@@ -1,0 +1,201 @@
+{
+  "id": "ez-bar-biceps-curl-with-arm-blaster",
+  "name": "EZ-Bar Biceps Curl with Arm Blaster",
+  "namePl": "Curl bicepsa EZ-barem z arm blaster",
+  "aliases": ["arm blaster ez-bar curl", "ez-bar curl with arm blaster", "blaster curl", "isolator curl"],
+  "aliasesPl": ["uginanie ramion ze sztangą łamaną w arm blasterze", "curl ze sztangą łamaną z izolatorem ramion", "uginanie bicepsów EZ z izolatorem", "blaster curl ze sztangą łamaną"],
+
+  "description": "Strict biceps isolation performed with an EZ-bar (cambered/zig-zag bar) while wearing an arm blaster — a contoured aluminium or plastic pad strapped around the neck that braces the elbows against the torso. The blaster mechanically eliminates elbow drift and torso swing, forcing pure elbow flexion and a longer time-under-tension on the biceps. The EZ-bar's angled grip places the wrists in a semi-supinated (slightly pronated) position which is wrist-friendly compared to a straight bar while still strongly recruiting the biceps brachii. Popularised by Arnold Schwarzenegger and other golden-era bodybuilders, the arm blaster is one of the most effective tools for hammering strict-form curls and breaking cheating habits.",
+  "descriptionPl": "Ścisłe ćwiczenie izolowane na bicepsy wykonywane sztangą łamaną (EZ-bar — wygięty gryf w kształt zygzaka) z założonym arm blasterem — wyprofilowaną aluminiową lub plastikową płytą zapinaną pasem wokół karku, która unieruchamia łokcie przy tułowiu. Blaster mechanicznie eliminuje odjeżdżanie łokci do przodu i bujanie tułowia, wymuszając czyste zgięcie w łokciu i dłuższy czas pod napięciem dla bicepsów. Kąt chwytu na EZ-barze ustawia nadgarstki w pozycji półsupinowanej (lekko spronowanej), która jest delikatniejsza dla nadgarstków niż prosta sztanga, jednocześnie mocno angażując mięsień dwugłowy ramienia. Spopularyzowany przez Arnolda Schwarzeneggera i innych kulturystów ery złotej, arm blaster należy do najskuteczniejszych narzędzi do wymuszania ścisłej techniki uginania i łamania nawyku oszukiwania.",
+
+  "instructions": [
+    "Strap the arm blaster around your neck with the contoured pad resting on the front of your torso. Adjust the strap so the bottom edge of the pad sits just above the hip crease — your elbows should rest naturally against the pad surface.",
+    "Stand tall with feet hip-width apart, knees soft. Pick up the EZ-bar with a semi-supinated grip on the inner angled bends (palms tilted slightly inward toward each other).",
+    "Set your elbows firmly against the blaster pad. They must stay in contact with the pad for every rep of the entire set — this is the whole point of the device.",
+    "Let the bar hang at arms' length in front of your hips. Brace your core, lift your chest, pull your shoulders back and down.",
+    "Curl the bar upward by flexing only at the elbows. Exhale on the way up. The pad will physically prevent your elbows from drifting forward — feel the biceps doing all the work.",
+    "Continue until the bar reaches roughly chest/upper-chest height and the biceps are fully contracted. Squeeze hard for a 1-second pause at the top.",
+    "Lower the bar under control over 2-3 seconds back to full elbow extension. Inhale on the descent. Keep elbows pressed against the pad the entire way down.",
+    "Do not swing the torso, do not arch the lower back, do not let the pad lift off your stomach. Each rep starts from a dead stop with arms fully extended."
+  ],
+  "instructionsPl": [
+    "Załóż arm blaster na kark tak, by wyprofilowana płyta opierała się o przedni tułów. Wyreguluj pas tak, aby dolna krawędź płyty znajdowała się tuż nad biodrami — łokcie mają naturalnie spoczywać na powierzchni płyty.",
+    "Stań prosto, stopy na szerokość bioder, kolana lekko ugięte. Złap EZ-bar półsupinowanym chwytem na wewnętrznych zgięciach gryfu (dłonie odchylone lekko do siebie).",
+    "Ustaw łokcie mocno przy płycie blastera. Mają pozostać w kontakcie z płytą przez każde powtórzenie całej serii — to jest sens tego sprzętu.",
+    "Pozwól sztandze wisieć na wyprostowanych ramionach przed biodrami. Napnij brzuch, unieś klatkę piersiową, ściągnij barki w tył i w dół.",
+    "Uginaj sztangę do góry — pracują wyłącznie łokcie. Wydychaj w fazie unoszenia. Płyta fizycznie nie pozwoli łokciom uciec do przodu — czuj, że całą robotę wykonują bicepsy.",
+    "Kontynuuj ruch aż sztanga dotrze mniej więcej na wysokość klatki/górnej klatki, a biceps będzie w pełnym skurczu. Mocno napnij na 1 sekundę w górnej pozycji.",
+    "Opuszczaj sztangę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania. Trzymaj łokcie dociśnięte do płyty przez całą drogę w dół.",
+    "Nie bujaj tułowiem, nie wyginaj lędźwi, nie pozwól by płyta oderwała się od brzucha. Każde powtórzenie zaczynaj z zatrzymanej pozycji z w pełni wyprostowanymi ramionami."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S7",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T1",
+    "core": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["ez_bar", "arm_blaster"],
+    "optional": ["weight_plates", "collars", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["ez-bar-curl", "barbell-curl"],
+    "progression_to": ["preacher-curl", "spider-curl", "incline-dumbbell-curl"],
+    "alternatives": ["ez-bar-curl", "preacher-curl", "barbell-curl", "spider-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pad sits flat against your abdomen, strap snug on neck",
+      "Elbows glued to the pad — do not let them lift off",
+      "Semi-supinated grip on the inner bends of the EZ-bar",
+      "Chest up, shoulders back and down, core braced",
+      "Feet hip-width — stand tall, no leaning back"
+    ],
+    "setup_cues_pl": [
+      "Płyta przylega płasko do brzucha, pas dociągnięty na karku",
+      "Łokcie przyklejone do płyty — nie pozwól im się oderwać",
+      "Półsupinowany chwyt na wewnętrznych zgięciach EZ-bara",
+      "Klatka w górze, barki ściągnięte w tył i w dół, brzuch napięty",
+      "Stopy na szerokość bioder — stój prosto, bez odchylania się w tył"
+    ],
+    "execution_cues": [
+      "Only forearms move — elbows stay pinned to the pad",
+      "Squeeze the biceps hard at the top for 1 second",
+      "Lower for 2-3 seconds — own the eccentric",
+      "Do not lift the pad off your stomach at any point",
+      "Full lockout at the bottom — arms straight every rep"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — łokcie przylepione do płyty",
+      "Mocno spinaj biceps w górnej pozycji przez 1 sekundę",
+      "Opuszczaj przez 2-3 sekundy — kontroluj fazę negatywną",
+      "Nie pozwól, by płyta oderwała się od brzucha w żadnym momencie",
+      "Pełny wyprost na dole — proste ramiona w każdym powtórzeniu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the arm blaster pad off the abdomen during the curl",
+        "faultPl": "Odrywanie płyty arm blastera od brzucha podczas uginania",
+        "cause": "Load too heavy, recruiting shoulder flexion to lift the bar higher than the biceps can on their own",
+        "causePl": "Zbyt duży ciężar, włączanie zgięcia w barku aby unieść sztangę wyżej niż pozwalają same bicepsy",
+        "cue": "Reduce weight. The pad must stay flush against your stomach for the entire set — if it lifts, the rep doesn't count.",
+        "cuePl": "Zmniejsz ciężar. Płyta musi pozostać dociśnięta do brzucha przez całą serię — jeśli się odrywa, powtórzenie się nie liczy."
+      },
+      {
+        "fault": "Leaning torso back at the top to finish the rep",
+        "faultPl": "Odchylanie tułowia w tył w górnej pozycji aby dokończyć powtórzenie",
+        "cause": "Biceps fatigue, ego lifting, or using lumbar extension as cheat momentum",
+        "causePl": "Zmęczenie bicepsów, ego, lub używanie wyprostu lędźwiowego jako oszukańczego impulsu",
+        "cue": "Stay vertical — ears over hips. Squeeze glutes and brace abs to lock the torso in place.",
+        "cuePl": "Pozostań pionowo — uszy nad biodrami. Napnij pośladki i brzuch, by zablokować tułów w miejscu."
+      },
+      {
+        "fault": "Wrist hyperextension (wrists bending back under load)",
+        "faultPl": "Przeprostowanie nadgarstków (zginanie nadgarstków do tyłu pod obciążeniem)",
+        "cause": "Weak wrist flexors, gripping too far out on the bar, or fatigued forearms at end of set",
+        "causePl": "Słabe zginacze nadgarstka, chwyt zbyt szeroki na gryfie, lub zmęczone przedramiona pod koniec serii",
+        "cue": "Keep wrists straight in line with forearms. Move grip slightly inward on the EZ-bar's inner bend if wrists strain.",
+        "cuePl": "Trzymaj nadgarstki proste w linii z przedramionami. Przesuń chwyt nieco do środka na wewnętrznym zgięciu EZ-bara jeśli nadgarstki się męczą."
+      },
+      {
+        "fault": "Partial range of motion (not extending fully at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak pełnego wyprostu na dole)",
+        "cause": "Ego lifting, weak stretched-position strength, or fear of losing tension",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub strach przed utratą napięcia",
+        "cue": "Fully extend the elbows at the bottom of every rep. The biceps grow most in the stretched position.",
+        "cuePl": "Pełny wyprost łokci na dole każdego powtórzenia. Biceps najbardziej rośnie w pozycji rozciągniętej."
+      },
+      {
+        "fault": "Wearing the blaster too low (pad on the belt instead of upper abdomen)",
+        "faultPl": "Założenie blastera zbyt nisko (płyta na pasku zamiast na górnym brzuchu)",
+        "cause": "Strap too loose, or misunderstanding of how the device should sit",
+        "causePl": "Pas zbyt luźny, lub niezrozumienie, jak ten sprzęt powinien być założony",
+        "cue": "Tighten the neck strap so the pad sits on your upper abdomen — elbows should naturally rest in contact with it.",
+        "cuePl": "Dociągnij pas na karku tak, by płyta spoczywała na górnym brzuchu — łokcie mają naturalnie się o nią opierać."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light abdominal brace throughout — the blaster relies on a stable torso to work properly.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię — blaster wymaga stabilnego tułowia, by działał poprawnie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The strict form of arm blaster curls puts heavy tension on the distal biceps tendon. Reduce volume, use lighter loads with higher reps (12-15), avoid heavy eccentrics until pain resolves.",
+      "modificationPl": "Ścisła forma curlów w arm blasterze mocno obciąża dystalny przyczep ścięgna bicepsa. Zmniejsz objętość, używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15), unikaj ciężkich faz negatywnych aż ból ustąpi.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "cervical_spine_issues_neck_pain",
+      "severity": "modify",
+      "modification": "The arm blaster strap loads the cervical spine — pulls the neck forward and adds compressive stress, especially with heavy loads. Use a preacher bench instead to eliminate neck loading.",
+      "modificationPl": "Pas arm blastera obciąża odcinek szyjny kręgosłupa — ciągnie szyję do przodu i dokłada stres kompresyjny, szczególnie przy ciężkich obciążeniach. Użyj ławki modlitewnika zamiast tego, by wyeliminować obciążenie szyi.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Although the EZ-bar is wrist-friendlier than a straight bar, the strict isolation forbids wrist micro-adjustments. If pain persists, switch to dumbbells with free wrist rotation.",
+      "modificationPl": "Choć EZ-bar jest delikatniejszy dla nadgarstków niż prosta sztanga, ścisła izolacja uniemożliwia mikro-korekty nadgarstków. Jeśli ból się utrzymuje, przejdź na hantle z swobodną rotacją nadgarstka.",
+      "alternative": "dumbbell-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing throughout. Perform seated on a bench with back support, or use a preacher bench to remove spinal loading entirely.",
+      "modificationPl": "Wersja stojąca wymaga ciągłego izometrycznego napięcia lędźwiowego. Wykonuj siedząc na ławce z oparciem, lub używaj ławki modlitewnika by całkowicie wyeliminować obciążenie kręgosłupa.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x10-15 (strict bodybuilding pump) | 2-3x12-15 (endurance/finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "ez-bar-biceps-curl-with-arm-blaster.gif",
+    "frames_extracted": [
+      "frames/ez-bar-biceps-curl-with-arm-blaster/frame_0_start.png",
+      "frames/ez-bar-biceps-curl-with-arm-blaster/frame_1_early.png",
+      "frames/ez-bar-biceps-curl-with-arm-blaster/frame_2_mid.png",
+      "frames/ez-bar-biceps-curl-with-arm-blaster/frame_3_late.png",
+      "frames/ez-bar-biceps-curl-with-arm-blaster/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/ez-bar-biceps-curl-with-arm-blaster"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pełny wyprost ramion, EZ-bar (wyraźnie wygięty zygzakowaty gryf) przed biodrami, półsupinowany chwyt na wewnętrznych zgięciach, czarna płyta arm blastera zapięta wokół karku i dociśnięta do górnego brzucha, biceps i przedramiona podświetlone na czerwono. Frame 2: pełny skurcz, sztanga na wysokości górnej klatki, łokcie wyraźnie dociśnięte do płyty blastera (nie wędrują do przodu — co jest mechanicznym celem tego sprzętu), tułów pionowo. Frame 4: powrót do pełnego wyprostu (z widocznym 'ghostem' fazy szczytowej powyżej). Pad blastera widoczny przez cały ruch dociśnięty do brzucha. Modelowe wykonanie strict-form. Ćwiczenie jednoznacznie zidentyfikowane: EZ-bar curl z arm blasterem. Wszystkie pola PL napisane od zera, terminologia kulturystyczna (sztanga łamana, izolator ramion, arm blaster — funkcjonujące zamiennie w polskim slangu siłowni).",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "ez_bar", "arm_blaster", "strict_form", "upper_body", "golden_era"]
+}

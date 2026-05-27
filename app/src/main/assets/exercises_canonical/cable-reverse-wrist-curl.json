@@ -1,0 +1,199 @@
+{
+  "id": "cable-reverse-wrist-curl",
+  "name": "Cable Reverse Wrist Curl",
+  "namePl": "Reverse wrist curl z wyciągu",
+  "aliases": ["cable wrist extension", "seated cable reverse wrist curl", "low pulley reverse wrist curl"],
+  "aliasesPl": ["wyprost nadgarstków z wyciągu", "reverse wrist curl na wyciągu dolnym", "prostowanie nadgarstków z linki", "ekstensja nadgarstków z wyciągu"],
+
+  "description": "Isolation exercise for the wrist and finger extensors performed seated with the forearm rested on the thigh and a short straight bar attached to a low cable pulley held with a pronated (overhand) grip. The cable provides constant tension across the full range of motion — unlike free weights, where load drops off at the top. A foundational rehabilitation and prehabilitation tool for lateral epicondylitis (tennis elbow), and an underrated builder for forearm balance and grip endurance.",
+  "descriptionPl": "Izolowane ćwiczenie na prostowniki nadgarstka i palców wykonywane siedząc, z przedramieniem opartym na udzie, trzymając krótki prosty drążek przypięty do dolnego wyciągu nachwytem górnym (dłonie skierowane w dół). Lina zapewnia stałe napięcie w całym zakresie ruchu — w przeciwieństwie do wolnych ciężarów, gdzie obciążenie spada w górnej pozycji. Fundamentalne narzędzie rehabilitacyjne i prehabilitacyjne dla łokcia tenisisty (zapalenie nadkłykcia bocznego) oraz niedoceniany budulec równowagi w przedramionach i wytrzymałości chwytu.",
+
+  "instructions": [
+    "Set a flat bench close to a low pulley. Attach a short straight bar (or D-handle for unilateral work) to the cable.",
+    "Sit on the bench facing the pulley. Grip the bar with a pronated (palms down, knuckles up) grip, hands about shoulder-width apart.",
+    "Rest both forearms flat on top of your thighs with the wrists hanging just past the kneecaps. Lean your torso slightly forward over your knees.",
+    "Lower your knuckles down toward the floor under control, letting the bar pull your wrists into full flexion. Open the fingers slightly to feel the stretch in the extensors.",
+    "Curl the bar upward by extending the wrists — knuckles rise toward the ceiling. Move only at the wrist joint, the forearms stay glued to the thighs.",
+    "Squeeze the top position for a 1-second pause when the wrists are fully extended.",
+    "Lower the bar slowly over 2-3 seconds back to the stretched starting position. Maintain cable tension throughout — do not let the stack rest between reps.",
+    "Keep elbows pinned and shoulders relaxed. Breathe out on the way up, in on the way down."
+  ],
+  "instructionsPl": [
+    "Ustaw płaską ławkę blisko dolnego wyciągu. Przypnij krótki prosty drążek (lub uchwyt D-handle do pracy jednorącz) do linki.",
+    "Usiądź na ławce twarzą do wyciągu. Złap drążek nachwytem górnym (dłonie skierowane w dół, kostki do góry), ręce na szerokość barków.",
+    "Oprzyj oba przedramiona płasko na udach tak, aby nadgarstki wystawały tuż za kolana. Lekko pochyl tułów nad kolana.",
+    "Opuszczaj kostki w dół w kierunku podłogi w sposób kontrolowany, pozwalając aby lina ściągnęła nadgarstki w pełne zgięcie. Lekko otwórz palce aby poczuć rozciąganie prostowników.",
+    "Unoś drążek do góry prostując nadgarstki — kostki wędrują w stronę sufitu. Ruch zachodzi wyłącznie w stawie nadgarstkowym, przedramiona pozostają przyklejone do ud.",
+    "W górnej pozycji, gdy nadgarstki są w pełni wyprostowane, napnij i przytrzymaj 1 sekundę.",
+    "Opuszczaj drążek wolno przez 2-3 sekundy z powrotem do pozycji rozciągniętej. Utrzymuj napięcie liny przez cały czas — nie pozwól stosowi opaść między powtórzeniami.",
+    "Łokcie przyklejone, barki rozluźnione. Wydech podczas unoszenia, wdech podczas opuszczania."
+  ],
+
+  "classification": {
+    "movement_pattern": "wrist_extension",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_extensors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["forearm_flexors", "biceps_brachii", "core"]
+  },
+
+  "muscle_intensity": {
+    "forearm_extensors": "P10",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T3",
+    "biceps_brachii": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "low_pulley", "straight_bar_attachment"],
+    "optional": ["d_handle", "flat_bench", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["barbell-reverse-wrist-curl", "reverse-wrist-curl-with-dumbbell", "behind-the-back-wrist-curl"],
+    "alternatives": ["barbell-reverse-wrist-curl", "reverse-wrist-curl-with-dumbbell", "dumbbell-reverse-wrist-curl-over-bench", "reverse-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench close to the low pulley, short straight bar attached",
+      "Pronated grip — knuckles up, palms down",
+      "Forearms flat on thighs, wrists just past the knees",
+      "Lean slightly forward over your knees",
+      "Cable tension established before the first rep — no slack"
+    ],
+    "setup_cues_pl": [
+      "Ławka blisko dolnego wyciągu, krótki prosty drążek przypięty do linki",
+      "Chwyt nachwytem górnym — kostki do góry, dłonie w dół",
+      "Przedramiona płasko na udach, nadgarstki tuż za kolanami",
+      "Lekko pochyl tułów nad kolana",
+      "Napięcie liny ustawione jeszcze przed pierwszym powtórzeniem — żadnego luzu"
+    ],
+    "execution_cues": [
+      "Only the wrists move — forearms welded to the thighs",
+      "Knuckles to the ceiling at the top, hold one second",
+      "Open the fingers slightly at the bottom to deepen the stretch",
+      "Lower for 2-3 seconds — fight the cable",
+      "Never let the stack touch down between reps"
+    ],
+    "execution_cues_pl": [
+      "Pracują wyłącznie nadgarstki — przedramiona przyklejone do ud",
+      "Kostki do sufitu na szczycie, przytrzymaj sekundę",
+      "Lekko otwórz palce na dole aby pogłębić rozciąganie",
+      "Opuszczaj przez 2-3 sekundy — kontroluj linę",
+      "Nigdy nie odkładaj stosu między powtórzeniami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lifting the forearms off the thighs",
+        "faultPl": "Odrywanie przedramion od ud",
+        "cause": "Load too heavy, recruiting the elbow flexors and shoulder to assist",
+        "causePl": "Zbyt duży ciężar, angażowanie zginaczy łokcia i barku do pomocy",
+        "cue": "Drop the weight. Press your forearms down into your thighs the entire set.",
+        "cuePl": "Zmniejsz ciężar. Dociskaj przedramiona do ud przez całą serię."
+      },
+      {
+        "fault": "Partial range of motion (no stretch at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak rozciągnięcia na dole)",
+        "cause": "Fear of joint strain or weak end-range strength",
+        "causePl": "Strach przed obciążeniem stawu lub słabość w pełnym zakresie",
+        "cue": "Let the cable pull your knuckles toward the floor. Open the hand slightly to feel the extensors lengthen.",
+        "cuePl": "Pozwól lince ściągnąć kostki w dół. Lekko rozluźnij palce aby poczuć wydłużenie prostowników."
+      },
+      {
+        "fault": "Bar too far past the knees (long lever)",
+        "faultPl": "Drążek zbyt daleko za kolanami (długa dźwignia)",
+        "cause": "Incorrect setup leaves the wrist unsupported and uses elbow flexion to move the bar",
+        "causePl": "Nieprawidłowe ustawienie zostawia nadgarstek bez podparcia i wymusza zginanie łokcia",
+        "cue": "Wrists hang just past the kneecap — close enough that the forearm fully supports the joint.",
+        "cuePl": "Nadgarstki tuż za rzepką — na tyle blisko, by przedramię w pełni podparło staw."
+      },
+      {
+        "fault": "Rounding the upper back and craning the neck forward",
+        "faultPl": "Garbienie pleców i wystawianie szyi do przodu",
+        "cause": "Looking down at the hands too intensely or weak postural muscles",
+        "causePl": "Zbyt intensywne patrzenie w dłonie lub słabe mięśnie posturalne",
+        "cue": "Eyes look at the floor 2 meters in front, neck long, chest open.",
+        "cuePl": "Wzrok na podłogę 2 metry przed sobą, szyja długa, klatka otwarta."
+      },
+      {
+        "fault": "Letting the stack rest between reps",
+        "faultPl": "Odkładanie stosu między powtórzeniami",
+        "cause": "Habit from free-weight training where bottom is a natural pause",
+        "causePl": "Nawyk z treningu z wolnymi ciężarami, gdzie dolna pozycja jest naturalną pauzą",
+        "cue": "The whole point of the cable is constant tension — stay loaded throughout the set.",
+        "cuePl": "Cały sens wyciągu to stałe napięcie — zostań pod obciążeniem przez całą serię."
+      }
+    ],
+    "breathing": "Exhale on the wrist extension (concentric, knuckles up). Inhale on the descent (eccentric, knuckles down). Breathing is light — this is a small-muscle isolation, no heavy bracing required.",
+    "breathingPl": "Wydech przy wyproście nadgarstka (faza koncentryczna, kostki do góry). Wdech przy opuszczaniu (faza ekscentryczna, kostki w dół). Oddech lekki — to izolacja małej grupy mięśniowej, ciężkie napinanie tułowia nie jest potrzebne."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "This exercise is THE classic rehab tool for tennis elbow — but only at the right dose. Start with no weight (just the bar), focus on slow 5-second eccentrics, 3x15 reps. Progress load gradually over weeks. Stop if pain exceeds 3/10.",
+      "modificationPl": "To ćwiczenie jest KLASYCZNYM narzędziem rehabilitacji łokcia tenisisty — ale tylko przy odpowiednim dawkowaniu. Zacznij bez obciążenia (sam drążek), skup się na powolnej 5-sekundowej fazie ekscentrycznej, 3x15 powtórzeń. Stopniowo zwiększaj ciężar przez tygodnie. Przerwij jeśli ból przekroczy 3/10.",
+      "alternative": "wrist-extension-stretch"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Wrist extension under load can compress the median nerve in some presentations. Keep ROM partial (avoid deep flexion at the bottom), use light loads, monitor for tingling in the fingers.",
+      "modificationPl": "Wyprost nadgarstka pod obciążeniem może uciskać nerw pośrodkowy w niektórych przypadkach. Ogranicz zakres ruchu (unikaj głębokiego zgięcia na dole), używaj lekkich ciężarów, obserwuj mrowienie w palcach.",
+      "alternative": "isometric-wrist-extension"
+    },
+    {
+      "condition": "wrist_fracture_recovery",
+      "severity": "avoid",
+      "modification": "Avoid until cleared by a physiotherapist. Begin reconditioning with isometric holds before loaded movement.",
+      "modificationPl": "Unikaj do czasu zgody fizjoterapeuty. Rozpocznij rekondycję od napięć izometrycznych przed obciążonym ruchem.",
+      "alternative": "isometric-wrist-extension"
+    },
+    {
+      "condition": "acute_wrist_sprain",
+      "severity": "avoid",
+      "modification": "Rest and immobilize during the acute phase (first 5-7 days). Return only with pain-free passive range of motion.",
+      "modificationPl": "Odpocznij i unieruchom staw w fazie ostrej (pierwsze 5-7 dni). Wracaj dopiero przy bezbolesnym biernym zakresie ruchu.",
+      "alternative": null
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy / forearm balance) | 3x15-20 (endurance / pump) | 3x15 with 5s eccentric (rehabilitation for lateral epicondylitis)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "cable-reverse-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/cable-reverse-wrist-curl/frame_0_start.png",
+      "frames/cable-reverse-wrist-curl/frame_1_early.png",
+      "frames/cable-reverse-wrist-curl/frame_2_mid.png",
+      "frames/cable-reverse-wrist-curl/frame_3_late.png",
+      "frames/cable-reverse-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/cable-reverse-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Atleta siedzi na płaskiej ławce twarzą do dolnego wyciągu, oba przedramiona oparte na udach, nadgarstki wystają za kolana. Chwyta krótki prosty drążek nachwytem górnym (pronated, dłonie w dół, kostki do góry) obiema dłońmi — wariant BILATERAL. Frame 0: pozycja startowa, nadgarstki w lekkim zgięciu, drążek nieco poniżej linii kolan, prostowniki przedramienia podświetlone na czerwono. Frame 2: pełny wyprost nadgarstków, kostki w górę, drążek na wysokości kolan — pełen skurcz prostowników. Frame 4: powrót do pozycji zgiętej. Tułów lekko pochylony do przodu, plecy stabilne, łokcie przyklejone w okolicy kolan. Łokcie i ramiona ponad łokciem pozostają nieruchome — ruch wyłącznie w stawie nadgarstkowym. Ćwiczenie jednoznacznie zidentyfikowane jako Cable Reverse Wrist Curl seated bilateral. Wszystkie pola PL napisane od zera, opis rehab dawki dla tennis elbow oparty na standardach protokołów Stanish/Alfredson dla tendinopatii prostowników.",
+
+  "tags": ["forearms", "extensors", "isolation", "cable", "rehab", "prehab", "tennis_elbow_prevention", "grip", "upper_body", "low_intensity"]
+}

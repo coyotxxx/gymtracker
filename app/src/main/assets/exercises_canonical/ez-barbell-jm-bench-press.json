@@ -1,0 +1,207 @@
+{
+  "id": "ez-barbell-jm-bench-press",
+  "name": "EZ Barbell JM Bench Press",
+  "namePl": "JM press z gryfem EZ na ławce poziomej",
+  "aliases": ["JM press", "JM bench press", "Jon Macklem press", "EZ bar JM press", "JM press with EZ bar"],
+  "aliasesPl": ["JM press z gryfem EZ", "JM press łamanym gryfem", "wyciskanie JM", "JM press EZ", "JM press Macklema"],
+
+  "description": "Hybrid lift combining close-grip bench press and skull crusher (lying tricep extension), invented by powerlifter Jon Macklem (the 'JM' in JM press). Performed on a flat bench with an EZ (cambered) bar. The bar descends in an arc toward the upper chest/throat with elbows kept relatively high (~45° from torso), partially mimicking a skull crusher path but with shorter ROM and a press-back finish. Bottom position is close to the neck/clavicle with forearms near vertical and bar almost touching the chest. Considered one of the most effective barbell exercises for triceps mass — especially the long head — and direct carryover to bench press lockout. Popular accessory among powerlifters and strength athletes. The EZ bar version is much more wrist-friendly than the original straight-bar version.",
+  "descriptionPl": "Hybrydowe ćwiczenie łączące wyciskanie wąskim chwytem ze skull crusherem (francuskie wyciskanie leżąc), wymyślone przez powerliftera Jona Macklema (JM w nazwie JM press). Wykonywane na ławce poziomej z gryfem łamanym (EZ). Gryf opuszczany jest łukiem w stronę górnej klatki/szyi z łokciami trzymanymi stosunkowo wysoko (~45° od tułowia), częściowo naśladując tor skull crushera, ale z krótszym zakresem ruchu i wypchnięciem do góry. W dolnej pozycji gryf znajduje się blisko szyi/obojczyków, przedramiona prawie pionowe, gryf niemal dotyka klatki. Uznawane za jedno z najskuteczniejszych ćwiczeń sztangowych na masę tricepsów — szczególnie głowy długiej — z bezpośrednim przełożeniem na lock-out w bench pressie. Popularne ćwiczenie pomocnicze wśród powerlifterów i siłowych. Wersja z gryfem EZ jest znacznie bardziej przyjazna dla nadgarstków niż oryginalna wersja z prostym gryfem.",
+
+  "instructions": [
+    "Lie on a flat bench. Eyes directly under the EZ bar in the rack. Feet planted firmly, knees bent ~90°.",
+    "Set shoulder blades: retract and depress. Slight natural arch in the lower back.",
+    "Grip the EZ bar narrow — hands on the inner angled grooves (~shoulder-width or slightly narrower). Wrap thumbs around.",
+    "Unrack the bar with arms extended directly over the upper chest / lower neck (NOT over the shoulders as in bench press). The starting position is HIGHER on the torso than a standard bench.",
+    "Take a big breath, brace your core, and begin the descent.",
+    "Lower the bar in an ARC toward the upper chest / throat area. Elbows stay HIGH (~45° from torso), drifting slightly forward — NOT tucked tight to the ribs.",
+    "Bottom position: forearms nearly vertical, bar almost touching the upper chest / clavicle. Elbows positioned slightly forward of the bar. The wrist, elbow, and shoulder form a Z-shape.",
+    "Pause briefly at the bottom — do NOT bounce. The bar should NOT rest on the chest.",
+    "Press the bar up by aggressively extending the elbows. The bar travels backward in a slight arc, finishing over the upper chest. Triceps drive the entire movement.",
+    "Lock out fully. Exhale at the top, re-brace, and begin the next rep.",
+    "Use light to moderate weight — this is NOT a max-strength lift. Quality of triceps stretch and contraction matter more than load."
+  ],
+  "instructionsPl": [
+    "Połóż się na ławce poziomej. Oczy bezpośrednio pod gryfem EZ w stojaku. Stopy mocno na podłodze, kolana zgięte ~90°.",
+    "Ustaw łopatki: ściągnij je razem i w dół. Lekki naturalny łuk w dolnych plecach.",
+    "Złap gryf EZ wąsko — dłonie na wewnętrznych wygięciach (~szerokość barków lub nieco węziej). Owinij kciuki wokół gryfu.",
+    "Wyciągnij sztangę z prostymi ramionami bezpośrednio nad górną klatką / dolną szyją (NIE nad barkami jak w bench pressie). Pozycja startowa jest WYŻEJ na tułowiu niż w klasycznym bench.",
+    "Nabierz głęboki oddech, napnij brzuch, zacznij schodzenie.",
+    "Opuszczaj gryf ŁUKIEM w stronę górnej klatki / szyi. Łokcie trzymaj WYSOKO (~45° od tułowia), lekko sunące do przodu — NIE ściśle ścięte do żeber.",
+    "Pozycja dolna: przedramiona niemal pionowe, gryf prawie dotyka górnej klatki / obojczyków. Łokcie nieco przed gryfem. Nadgarstek, łokieć i bark tworzą literę Z.",
+    "Krótka pauza na dole — NIE odbijaj. Gryf NIE powinien spoczywać na klatce.",
+    "Wyciśnij gryf agresywnym wyprostem łokci. Sztanga porusza się lekkim łukiem do tyłu, kończąc nad górną klatką. Tricepsy napędzają cały ruch.",
+    "Pełny lock-out. Wydech na górze, ponowne napięcie i kolejne powtórzenie.",
+    "Używaj lekkiego do umiarkowanego ciężaru — to NIE jest ćwiczenie na maksymalną siłę. Jakość rozciągnięcia i skurczu tricepsa ważniejsza niż obciążenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "elbow_extension",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps", "triceps_long_head"],
+    "secondary": ["pectoralis_major_inner", "anterior_deltoids"],
+    "stabilizers": ["rotator_cuff", "core", "lats", "upper_back", "wrist_flexors", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "triceps": "P10",
+    "triceps_long_head": "P10",
+    "pectoralis_major_inner": "S5",
+    "anterior_deltoids": "S5",
+    "lats": "T3",
+    "core": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["ez_barbell", "flat_bench", "power_rack_or_bench_with_supports"],
+    "optional": ["wrist_wraps", "spotter", "elbow_sleeves"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["barbell-close-grip-bench-press", "ez-bar-skull-crusher", "ez-bar-close-grip-bench-press"],
+    "progression_to": ["barbell-jm-bench-press", "board-jm-press", "weighted-dip"],
+    "alternatives": ["barbell-jm-bench-press", "ez-bar-skull-crusher", "barbell-close-grip-bench-press", "ez-bar-close-grip-bench-press", "dumbbell-jm-press", "tate-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Eyes directly under the EZ bar, shoulder blades pinned to bench",
+      "Hands narrow on the inner angled grooves (~shoulder-width or narrower)",
+      "Wrists neutral on the EZ camber — bar in palm heel",
+      "Unrack HIGH — over upper chest / throat, NOT over shoulders",
+      "Elbows pre-positioned at ~45° from torso before first rep"
+    ],
+    "setup_cues_pl": [
+      "Oczy bezpośrednio pod gryfem EZ, łopatki przyklejone do ławki",
+      "Dłonie wąsko na wewnętrznych wygięciach (~szerokość barków lub węziej)",
+      "Nadgarstki neutralne na łamaniu EZ — gryf w podstawie dłoni",
+      "Wyjmij sztangę WYSOKO — nad górną klatką / szyją, NIE nad barkami",
+      "Łokcie ustawione ~45° od tułowia przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Lower the bar in an ARC to the upper chest / throat — like a half skull crusher",
+      "Elbows stay HIGH and drift slightly forward as bar descends",
+      "Bottom: forearms vertical, bar almost touching upper chest (NOT resting)",
+      "Press by extending elbows aggressively — the bar arcs back over upper chest",
+      "Stretch the long head at the bottom — feel the triceps loading"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj gryf ŁUKIEM do górnej klatki / szyi — jak pół skull crushera",
+      "Łokcie zostają WYSOKO i sumą lekko do przodu podczas opuszczania",
+      "Dół: przedramiona pionowe, gryf prawie dotyka górnej klatki (NIE spoczywa)",
+      "Wyciskaj agresywnym wyprostem łokci — gryf zatacza łuk nad górną klatkę",
+      "Rozciągnij głowę długą w dole — czuj jak triceps się naciąga"
+    ],
+    "common_faults": [
+      {
+        "fault": "Treating it like a close-grip bench press (elbows tucked tight, bar to lower chest)",
+        "faultPl": "Wykonywanie jak wyciskania wąskim chwytem (łokcie ściśle ścięte, gryf do dolnej klatki)",
+        "cause": "Misunderstanding the lift — JM press is a hybrid with HIGHER elbows and HIGHER touchpoint than CGBP",
+        "causePl": "Niezrozumienie ćwiczenia — JM press to hybryda z WYŻEJ trzymanymi łokciami i WYŻSZYM punktem dotyku niż CGBP",
+        "cue": "Elbows at 45° (not 20°). Bar to upper chest / throat (not lower chest). Think 'half skull crusher into press'.",
+        "cuePl": "Łokcie pod 45° (nie 20°). Gryf do górnej klatki / szyi (nie dolnej klatki). Pomyśl 'pół skull crushera plus wyciskanie'."
+      },
+      {
+        "fault": "Treating it like a full skull crusher (elbows fully flexed, bar to forehead)",
+        "faultPl": "Wykonywanie jak pełnego skull crushera (łokcie maksymalnie zgięte, gryf do czoła)",
+        "cause": "Mistaking JM press for French press / skull crusher",
+        "causePl": "Mylenie JM press ze skull crusherem / wyciskaniem francuskim",
+        "cue": "JM press is SHORTER ROM. Bar stops at upper chest, NOT past the head. Elbows do NOT travel behind the head.",
+        "cuePl": "JM press ma KRÓTSZY zakres. Gryf zatrzymuje się przy górnej klatce, NIE za głową. Łokcie NIE idą za głowę."
+      },
+      {
+        "fault": "Bar resting/bouncing on the chest at the bottom",
+        "faultPl": "Gryf spoczywa lub odbija od klatki na dole",
+        "cause": "Going too heavy, using bench press groove, losing tension",
+        "causePl": "Zbyt duży ciężar, używanie toru z klasycznego bench, utrata napięcia",
+        "cue": "Bar NEVER touches the chest. Brief pause ~1 cm above the chest, then drive up. Triceps under tension throughout.",
+        "cuePl": "Gryf NIGDY nie dotyka klatki. Krótka pauza ~1 cm nad klatką, potem wypychanie. Triceps pod napięciem przez cały ruch."
+      },
+      {
+        "fault": "Going too heavy — using ego weight kills technique and triceps stimulus",
+        "faultPl": "Zbyt duży ciężar — ego weight rujnuje technikę i bodziec dla tricepsów",
+        "cause": "Treating JM press as a max-strength lift instead of an accessory hypertrophy lift",
+        "causePl": "Traktowanie JM press jako ćwiczenia na maksymalną siłę zamiast jako akcesoryjnego ćwiczenia hipertroficznego",
+        "cue": "Start at ~50-60% of your close-grip bench. Focus on the stretch and squeeze, not the load. 8-15 reps sweet spot.",
+        "cuePl": "Zacznij od ~50-60% wagi CGBP. Skup się na rozciągnięciu i skurczu, nie na ciężarze. 8-15 powtórzeń to optimum."
+      },
+      {
+        "fault": "Wrists bending back / pain in wrists",
+        "faultPl": "Nadgarstki wyginają się do tyłu / ból w nadgarstkach",
+        "cause": "Using a straight bar instead of EZ; grip too narrow forcing wrist break; bar in fingers not palm heel",
+        "causePl": "Użycie prostego gryfu zamiast EZ; chwyt zbyt wąski wymuszający łamanie nadgarstków; gryf w palcach zamiast w podstawie dłoni",
+        "cue": "EZ bar is non-negotiable for most lifters. Bar in palm heel. Use wrist wraps for support.",
+        "cuePl": "Gryf EZ to konieczność dla większości ćwiczących. Gryf w podstawie dłoni. Użyj wraps dla wsparcia."
+      }
+    ],
+    "breathing": "Inhale at the top, brace, hold throughout the descent and press. Exhale at the lockout. Re-brace between reps.",
+    "breathingPl": "Wdech na górze, napięcie, trzymaj przez schodzenie i wyciskanie. Wydech na lock-out. Ponowne napięcie między powtórzeniami."
+  },
+
+  "contraindications": [
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "JM press places EXTREME stress on the triceps tendon at the elbow (combines stretch loading + heavy press). With active tendinopathy this almost always flares symptoms. Switch to lower-stress triceps work (cable pushdown, dumbbell extension).",
+      "modificationPl": "JM press wywiera EKSTREMALNY stres na ścięgno tricepsa przy łokciu (łączy obciążenie z rozciągnięciem + ciężkie wyciskanie). Przy aktywnej tendinopatii praktycznie zawsze zaostrza objawy. Przejdź na łagodniejsze ćwiczenia (pushdown linki, wyciskanie hantli).",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Always use EZ bar (never straight bar). Use wrist wraps. Check grip placement — bar in palm heel, not fingers. Avoid extreme narrow grip.",
+      "modificationPl": "Zawsze używaj gryfu EZ (nigdy prostego). Użyj wraps. Sprawdź pozycję chwytu — gryf w podstawie dłoni, nie palcach. Unikaj skrajnie wąskiego chwytu.",
+      "alternative": "dumbbell-jm-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "High elbow position and bar path near the throat can stress the front of the shoulder. Reduce ROM, keep elbows slightly lower, stop above any pain.",
+      "modificationPl": "Wysokie ustawienie łokci i tor gryfu przy szyi może obciążać przód barku. Zredukuj zakres, trzymaj łokcie nieco niżej, przerwij ponad granicą bólu.",
+      "alternative": "cable-tricep-pushdown"
+    },
+    {
+      "condition": "untrained_beginner",
+      "severity": "avoid",
+      "modification": "JM press is an intermediate/advanced accessory. Build base triceps strength with CGBP, skull crushers, and pushdowns first. Master close-grip bench before attempting JM.",
+      "modificationPl": "JM press to ćwiczenie akcesoryjne dla średniozaawansowanych/zaawansowanych. Najpierw zbuduj bazę siłową tricepsów z CGBP, skull crusherami i pushdownami. Opanuj wyciskanie wąskim chwytem przed próbą JM.",
+      "alternative": "barbell-close-grip-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (triceps hypertrophy — primary use) | 4x6-10 (bench lockout strength accessory) | 2-3x10-15 (high-volume tricep mass)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "ez-barbell-jm-bench-press.gif",
+    "frames_extracted": [
+      "frames/ez-barbell-jm-bench-press/frame_0_start.png",
+      "frames/ez-barbell-jm-bench-press/frame_1_early.png",
+      "frames/ez-barbell-jm-bench-press/frame_2_mid.png",
+      "frames/ez-barbell-jm-bench-press/frame_3_late.png",
+      "frames/ez-barbell-jm-bench-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/ez-barbell-jm-bench-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Frame 0/4 (lock-out): gryf EZ wyprostowanymi ramionami nad górną klatką / szyją, podświetlone tricepsy (P10 long head akcent). Frame 1/3: gryf w połowie schodzenia, łokcie wysoko ~45°, rozsuwają się lekko do przodu. Frame 2 (dół): gryf niemal dotyka górnej klatki / obojczyków, przedramiona pionowe, wyraźna pozycja JM press (hybryda CGBP + skull crusher). Anatomia podświetla wyłącznie tricepsy — zgodne z izolującym charakterem ćwiczenia na tę grupę pomimo compound mechanic. Gryf EZ wyraźny w GIF (łamany kształt). Movement pattern: elbow_extension (nie horizontal_push — bar nie idzie nad barki tylko nad górną klatkę). Primary: triceps + triceps_long_head P10. Pec/delt jako wsparcie (S5/S5) — w JM press ich wkład jest znacznie mniejszy niż w CGBP (gdzie pec ma P8). Difficulty 7 — wymaga opanowania zarówno CGBP jak i skull crushera, technika hybrydowa łatwa do zepsucia. PL: 'JM press z gryfem EZ' — anglicyzm utrwalony w polskim środowisku, próba tłumaczenia nazwy własnej (Jon Macklem) nie ma sensu. Wszystkie pola PL od zera.",
+
+  "tags": ["compound", "isolation_hybrid", "upper_body", "elbow_extension", "ez_barbell", "triceps_focus", "long_head_focus", "powerlifting_accessory", "lockout_strength", "hypertrophy", "jm_press", "skull_crusher_hybrid"]
+}

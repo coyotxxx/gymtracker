@@ -1,0 +1,208 @@
+{
+  "id": "barbell-side-split-squat",
+  "name": "Barbell Side Split Squat",
+  "namePl": "Przysiad boczny ze sztangą",
+  "aliases": ["cossack squat with barbell", "barbell cossack squat", "lateral squat with barbell", "side lunge with barbell"],
+  "aliasesPl": ["cossack squat ze sztangą", "kozacki przysiad ze sztangą", "przysiad kozacki ze sztangą", "wykrok boczny ze sztangą", "przysiad lateralny ze sztangą"],
+
+  "description": "Unilateral lower-body compound exercise performed in the frontal plane. Athlete stands with a very wide stance — feet roughly twice shoulder-width apart — with the barbell racked on the upper traps as in a high-bar back squat. The lifter sits down to ONE side, bending one knee deeply into hip flexion while keeping the opposite leg straight with the foot turned slightly out and the heel planted. The trail leg's adductors are loaded into a deep stretch. After reaching maximal pain-free depth on the working side, the lifter drives back to the centered start position and alternates sides or completes all reps on one leg before switching. The movement is heavily mobility-dependent (hip adduction, ankle dorsiflexion) and is one of the few compound lifts that loads the adductors directly under heavy resistance.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała wykonywane w płaszczyźnie czołowej. Trenujący przyjmuje bardzo szeroką stójkę — stopy ustawione mniej więcej dwa razy szerzej niż barki — ze sztangą opartą na górnej części trapezów jak w przysiadzie tylnym high-bar. Schodzi NA JEDNĄ stronę, głęboko zginając jedno kolano i biodro, podczas gdy druga noga pozostaje wyprostowana, ze stopą lekko odwróconą na zewnątrz i piętą przylegającą do podłogi. Przywodziciele nogi prostej obciążone są w głębokim rozciągnięciu. Po osiągnięciu maksymalnej głębokości po pracującej stronie trenujący wypycha się z powrotem do wyśrodkowanej pozycji wyjściowej i zmienia stronę albo wykonuje pełną serię na jedną nogę przed zmianą. Ruch silnie zależny od mobilności (przywodzenie biodra, zgięcie grzbietowe stawu skokowego) i jeden z nielicznych ruchów wielostawowych, który bezpośrednio obciąża przywodziciele pod znacznym oporem.",
+
+  "instructions": [
+    "Set the bar in a squat rack at upper-chest height. Load both sides with light to moderate weight and secure with collars — mobility, not maximal load, is the goal here.",
+    "Step under the bar and place it across your upper traps (high-bar position). Grip slightly wider than shoulder-width, elbows down, chest up.",
+    "Unrack the bar by extending your legs. Take two controlled steps back into open space. Adopt a very wide stance — about twice shoulder-width — with both feet pointed slightly outward (10-30°).",
+    "Brace your core, draw shoulder blades back, look forward. Take a deep breath and hold (Valsalva).",
+    "Shift your weight to one side by bending the hip and knee of the working leg. Push your hips back as you descend, as if sitting into a chair placed to your side.",
+    "Keep the trail (straight) leg fully extended with the heel pressed into the floor. The toes of the straight leg may rotate up and outward as the adductors stretch.",
+    "Descend as deeply as your mobility allows — ideally until the working thigh is below parallel. The working knee tracks over (or slightly past) the working foot in the direction of the toes.",
+    "Keep the torso as upright as possible. Some forward lean is normal at the deepest point, but the bar should stay over the midfoot of the working leg.",
+    "Drive back up by pushing through the heel and full foot of the working leg. Extend the hip and knee simultaneously to return to the wide-stance starting position.",
+    "Exhale near the top. Alternate sides each rep, or complete all reps on one side before switching to the other leg."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej klatki. Załaduj z obu stron lekkim lub średnim obciążeniem i zabezpiecz zaciskami — celem jest mobilność, nie maksymalny ciężar.",
+    "Wejdź pod sztangę i ułóż ją na górnej części trapezów (pozycja high-bar). Chwyt nieco szerszy niż barki, łokcie w dół, klatka w górze.",
+    "Wyciągnij sztangę ze stojaka prostując nogi. Cofnij się dwoma kontrolowanymi krokami na wolną przestrzeń. Przyjmij bardzo szeroką stójkę — około dwa razy szerszą niż barki — ze stopami lekko skierowanymi na zewnątrz (10-30°).",
+    "Napnij brzuch, ściągnij łopatki w tył, wzrok prosto. Weź głęboki wdech i przytrzymaj (Valsalva).",
+    "Przenieś ciężar na jedną stronę zginając biodro i kolano pracującej nogi. Wypchnij biodra w tył podczas schodzenia, jakbyś siadał na krzesło ustawione obok.",
+    "Trzymaj drugą (prostą) nogę w pełnym wyproście z piętą dociśniętą do podłogi. Palce nogi prostej mogą obrócić się ku górze i na zewnątrz w miarę rozciągania przywodzicieli.",
+    "Schodź tak głęboko, na ile pozwala mobilność — w ideale aż udo pracującej nogi będzie poniżej linii równoległej do podłogi. Kolano pracującej nogi prowadzi nad stopą (lub lekko za nią) w kierunku palców.",
+    "Trzymaj tułów jak najbardziej pionowo. Pewne pochylenie do przodu w najgłębszym punkcie jest naturalne, ale gryf powinien zostawać nad środkiem stopy pracującej nogi.",
+    "Wypchnij się w górę przez piętę i całą stopę pracującej nogi. Wyprostuj jednocześnie biodro i kolano, wracając do szerokiej stójki wyjściowej.",
+    "Wydech blisko górnej pozycji. Zmieniaj strony co powtórzenie lub wykonaj pełną serię na jedną stronę przed przejściem na drugą nogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "adductors"],
+    "secondary": ["hamstrings", "gluteus_medius"],
+    "stabilizers": ["core", "calves", "erector_spinae", "tibialis_anterior"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "adductors": "P9",
+    "glutes": "P8",
+    "hamstrings": "S7",
+    "gluteus_medius": "S7",
+    "core": "S6",
+    "calves": "S5",
+    "erector_spinae": "T4",
+    "tibialis_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["weightlifting_shoes", "knee_sleeves", "collars", "belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 8,
+    "prerequisites": ["bodyweight-cossack-squat", "lateral-lunge", "goblet-cossack-squat", "barbell-back-squat"],
+    "progression_to": ["weighted-cossack-squat", "deep-cossack-squat-with-rotation"],
+    "alternatives": ["lateral-lunge", "bulgarian-split-squat", "dumbbell-cossack-squat", "goblet-cossack-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar on upper traps (high-bar) — same setup as a back squat",
+      "Stance about twice shoulder-width — wider than a standard squat",
+      "Feet slightly turned out (10-30°), weight on full foot",
+      "Chest tall, brace the core hard before unracking",
+      "Choose a focal point at eye level to keep the head neutral"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na górnej części trapezów (high-bar) — ustawienie jak w przysiadzie tylnym",
+      "Stójka około dwa razy szersza niż barki — szerzej niż standardowy przysiad",
+      "Stopy lekko odwrócone na zewnątrz (10-30°), ciężar na całej stopie",
+      "Klatka wysoko, mocno napnij brzuch przed wyjęciem ze stojaka",
+      "Wybierz punkt skupienia wzroku na wysokości oczu, aby utrzymać neutralną głowę"
+    ],
+    "execution_cues": [
+      "Sit DOWN and OUT to the side — push hips back, not knee forward",
+      "Working heel glued to the floor — never let it rise",
+      "Straight leg stays straight and the heel stays planted — that's the adductor stretch",
+      "Knee tracks over the toes of the working foot — same direction",
+      "Drive up through the full foot of the bent leg, not the straight leg"
+    ],
+    "execution_cues_pl": [
+      "Siadaj W DÓŁ i NA BOK — wypychaj biodra w tył, nie kolano do przodu",
+      "Pięta pracującej nogi przyklejona do podłogi — nigdy nie pozwól jej się unieść",
+      "Prosta noga zostaje prosta, a pięta przylega do podłogi — to właśnie rozciągnięcie przywodzicieli",
+      "Kolano prowadzi nad palcami pracującej stopy — w tym samym kierunku",
+      "Wypychaj się przez całą stopę zgiętej nogi, nie przez nogę prostą"
+    ],
+    "common_faults": [
+      {
+        "fault": "Insufficient depth — stops above parallel",
+        "faultPl": "Niedostateczna głębokość — zatrzymanie powyżej linii równoległej",
+        "cause": "Limited hip adduction/abduction mobility, weak quads at deep ranges, or fear of the bottom position under load.",
+        "causePl": "Ograniczona mobilność przywodzenia/odwodzenia biodra, słabe czworogłowe w głębokich zakresach lub strach przed dolną pozycją pod obciążeniem.",
+        "cue": "Drop the load. Practice bodyweight cossack squats to full depth first, then add weight when ROM is full.",
+        "cuePl": "Zmniejsz obciążenie. Najpierw ćwicz cossack squat z masą ciała na pełnej głębokości, potem dodawaj ciężar gdy zakres ruchu jest pełny."
+      },
+      {
+        "fault": "Working heel rises off the floor",
+        "faultPl": "Pięta pracującej nogi unosi się nad podłogę",
+        "cause": "Limited ankle dorsiflexion, weight shifted onto the toes, or stance too narrow forcing the knee forward.",
+        "causePl": "Ograniczone zgięcie grzbietowe stawu skokowego, ciężar przeniesiony na palce lub za wąska stójka wymuszająca pchanie kolana w przód.",
+        "cue": "Widen the stance, push hips back further, keep the heel of the working leg glued to the floor.",
+        "cuePl": "Poszerz stójkę, mocniej wypchnij biodra w tył, trzymaj piętę pracującej nogi przyklejoną do podłogi."
+      },
+      {
+        "fault": "Working knee caves inward or crosses past the working foot",
+        "faultPl": "Kolano pracującej nogi zapada się do środka lub przekracza linię stopy",
+        "cause": "Weak gluteus medius and external rotators, weight too heavy for unilateral control.",
+        "causePl": "Słaby pośladkowy średni i rotatory zewnętrzne, ciężar za duży dla jednostronnej kontroli.",
+        "cue": "Push the knee out to track over the toes. Reduce load until you can hold knee alignment for all reps.",
+        "cuePl": "Wypychaj kolano na zewnątrz, aby prowadziło nad palcami. Zmniejsz ciężar do momentu, gdy utrzymasz prawidłowe ustawienie kolana przez wszystkie powtórzenia."
+      },
+      {
+        "fault": "Straight leg doesn't stay fully extended (bends at the knee)",
+        "faultPl": "Druga noga nie pozostaje w pełnym wyproście (zgina się w kolanie)",
+        "cause": "Tight adductors and hamstrings limit the stretch position, so the lifter cheats by bending the trail leg.",
+        "causePl": "Napięte przywodziciele i dwugłowe uda ograniczają pozycję rozciągnięcia, więc trenujący oszukuje zginając tylną nogę.",
+        "cue": "Lock out the straight leg actively. If you cannot, your mobility limits the load — work bodyweight first.",
+        "cuePl": "Aktywnie blokuj prostą nogę w wyproście. Jeśli nie potrafisz, mobilność ogranicza obciążenie — najpierw pracuj z masą ciała."
+      },
+      {
+        "fault": "Excessive forward lean / torso falls forward",
+        "faultPl": "Nadmierne pochylenie tułowia w przód",
+        "cause": "Weak core, poor ankle mobility forcing the chest down, or trying to balance against forward-shifting weight.",
+        "causePl": "Słaby brzuch, słaba mobilność stawu skokowego wymuszająca pochylenie klatki lub kompensacja przesuwającego się do przodu ciężaru.",
+        "cue": "Bar over midfoot of the working leg. Brace harder, hips deeper back. If still tilting — drop the load.",
+        "cuePl": "Gryf nad środkiem stopy pracującej nogi. Mocniej napnij brzuch, biodra głębiej w tył. Jeśli nadal pochylasz się — zmniejsz ciężar."
+      }
+    ],
+    "breathing": "Inhale and brace hard at the top before shifting sideways. Hold breath through the descent and the sticking point of the ascent (Valsalva). Exhale near the centered top position. Each rep is a separate breath cycle.",
+    "breathingPl": "Wdech i mocne napięcie na górze przed przeniesieniem ciężaru na bok. Wstrzymaj oddech przez schodzenie i punkt krytyczny wychodzenia (Valsalva). Wydech blisko górnej, wyśrodkowanej pozycji. Każde powtórzenie to oddzielny cykl oddechowy."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "The deep flexed-knee position with rotational stress can aggravate meniscus and collateral ligament issues. Limit depth to a pain-free range or substitute with a shallow lateral lunge.",
+      "modificationPl": "Głęboka pozycja zgiętego kolana z rotacyjnym obciążeniem może drażnić problemy z łąkotkami i więzadłami pobocznymi. Ogranicz głębokość do zakresu bez bólu lub zastąp płytkim wykrokiem bocznym.",
+      "alternative": "lateral-lunge"
+    },
+    {
+      "condition": "adductor_strain_or_groin_pull",
+      "severity": "avoid",
+      "modification": "The deep adductor stretch under load is exactly the position that strains the groin. Wait for full healing and physiotherapist clearance, then return via bodyweight cossack squats with progressive range.",
+      "modificationPl": "Głębokie rozciągnięcie przywodzicieli pod obciążeniem to dokładnie pozycja, która naciąga pachwinę. Poczekaj na pełne wyleczenie i zgodę fizjoterapeuty, następnie wracaj przez cossack squat z masą ciała z progresywnym zakresem.",
+      "alternative": "bodyweight-cossack-squat"
+    },
+    {
+      "condition": "limited_hip_or_ankle_mobility",
+      "severity": "modify",
+      "modification": "Without sufficient hip adduction and ankle dorsiflexion the lifter cannot reach proper depth or keep the heel down. Train mobility first with goblet cossack squats or use a heel wedge.",
+      "modificationPl": "Bez wystarczającej mobilności przywodzenia biodra i zgięcia grzbietowego stawu skokowego trenujący nie osiągnie odpowiedniej głębokości ani nie utrzyma pięty na podłodze. Najpierw trenuj mobilność gobletem cossack squat lub użyj klina pod piętę.",
+      "alternative": "goblet-cossack-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Spinal loading combined with frontal-plane shifting stresses the lumbar spine. Avoid until cleared. Use unloaded mobility work in the meantime.",
+      "modificationPl": "Obciążenie kręgosłupa w połączeniu z przesuwaniem w płaszczyźnie czołowej obciąża odcinek lędźwiowy. Unikaj do czasu uzyskania zgody. W międzyczasie pracuj nad mobilnością bez obciążenia.",
+      "alternative": "bodyweight-cossack-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3x6-10 per side (strength/hypertrophy) | 2-3x10-12 per side (mobility focus) | 4x4-6 per side (heavier work for advanced)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "barbell-side-split-squat.gif",
+    "frames_extracted": [
+      "frames/barbell-side-split-squat/frame_0_start.png",
+      "frames/barbell-side-split-squat/frame_1_early.png",
+      "frames/barbell-side-split-squat/frame_2_mid.png",
+      "frames/barbell-side-split-squat/frame_3_late.png",
+      "frames/barbell-side-split-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-side-split-squat",
+    "yuhonas_id": "Barbell_Side_Split_Squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Klatka 0 (start): bardzo szeroka stójka, sztanga na trapezach high-bar, postać już w trakcie schodzenia na prawą stronę — prawe kolano zgięte ~90°, lewa noga prosta z piętą na podłodze. Klatka 2 (mid): pełna głębokość po prawej stronie — udo poniżej linii równoległej, tułów lekko pochylony do przodu, lewa noga w pełnym wyproście. Klatka 4 (end): widoczna ścieżka ruchu (powrót do startu) z silnym podświetleniem mięśni przywodzicieli OBIE NOGI plus czworogłowych pracującej nogi — pasuje do mojej klasyfikacji P9 adductors + P9 quadriceps + P8 glutes. Brak pracy walking — to ruch w miejscu z jedną stroną pracującą na raz. Master.json potwierdza muscle_primary='quads' (jahel) i 'quadriceps' (yuhonas). Dodaję adductors do P9 ponieważ specyfika ruchu (głębokie rozciągnięcie pod obciążeniem) to czyni przywodziciele równorzędnym primary, co potwierdza wizualne podświetlenie w GIFie. Płaszczyzna frontal (boczna), jednostronność unilateral. Trudność 8 ze względu na mobility-demand i ryzyko techniki (heel rise, knee cave) pod obciążeniem barbell. Polskie nazewnictwo: 'Przysiad boczny ze sztangą' jako oficjalna nazwa, 'cossack squat' jako alias żargonowy (powszechny w polskich siłowniach).",
+
+  "tags": ["unilateral", "lower_body", "lateral", "frontal_plane", "barbell", "compound", "mobility_demand", "adductor_focus", "cossack"]
+}

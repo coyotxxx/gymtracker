@@ -1,0 +1,204 @@
+{
+  "id": "kettlebell-pistol-squat",
+  "name": "Kettlebell Pistol Squat",
+  "namePl": "Pistolet z kettlebell",
+  "aliases": ["kettlebell pistol", "weighted pistol squat", "counterbalanced pistol squat", "kettlebell single-leg squat", "kb pistol"],
+  "aliasesPl": ["pistol squat z kettlebell", "przysiad pistolet z kettlebell", "jednonóż z kettlebellem", "pistol z odważnikiem", "pistolet z hantlą"],
+
+  "description": "Single-leg full squat performed while holding a kettlebell in front of the chest as a counterweight. The bell shifts the center of mass forward, allowing the lifter to keep balance and sit deeper than in a true bodyweight pistol — making this a key learning progression toward the unweighted version. Despite the added load, it is paradoxically easier than the bodyweight pistol for most beginners because the counterbalance unlocks ankle and hip mobility. Excellent for unilateral quad/glute strength, single-leg stability and hip mobility.",
+  "descriptionPl": "Pełny przysiad jednonóż wykonywany z kettlebellem trzymanym przed klatką piersiową jako przeciwwaga. Odważnik przesuwa środek ciężkości do przodu, co pomaga utrzymać równowagę i schodzić głębiej niż w klasycznym pistolecie bez obciążenia — to kluczowa progresja prowadząca do wersji nieobciążonej. Pomimo dodanego ciężaru jest paradoksalnie łatwiejszy od pistola bez obciążenia, bo przeciwwaga rozwiązuje problem mobilności kostki i biodra. Świetne na jednostronną siłę czworogłowych i pośladków, stabilność i mobilność biodra.",
+
+  "instructions": [
+    "Stand tall holding a kettlebell by the horns (sides of the handle) at chest height. Elbows tucked, bell close to the body.",
+    "Shift your weight onto one leg. Extend the other leg forward, slightly off the ground, with the knee straight and toes pulled up (dorsiflexed).",
+    "Brace your core and pull the kettlebell slightly forward to set a counterbalance. Keep your chest up.",
+    "Initiate the descent by simultaneously breaking at the hip and knee of the working leg. Sit back AND down, letting the non-working leg extend further out in front to clear the floor.",
+    "Descend slowly under control. Keep the heel of the working leg planted at all times — never let it rise.",
+    "Go as low as you can while keeping a neutral spine and the heel down — ideally hamstring resting on the calf (full depth).",
+    "Drive up by pushing through the whole foot of the working leg, extending the hip and knee simultaneously. Keep the bell in front of the chest.",
+    "Stand tall on the working leg, controlling the non-working leg back to start. Complete all reps on one side before switching legs."
+  ],
+  "instructionsPl": [
+    "Stań prosto trzymając kettlebell za rogi (boki uchwytu) na wysokości klatki piersiowej. Łokcie blisko ciała, odważnik przy klatce.",
+    "Przenieś ciężar ciała na jedną nogę. Drugą nogę wyprostuj przed siebie, lekko nad podłożem, kolano wyprostowane, palce stopy podciągnięte do góry.",
+    "Napnij brzuch i przesuń kettlebell lekko do przodu jako przeciwwagę. Klatka wysoko.",
+    "Rozpocznij schodzenie zginając jednocześnie biodro i kolano nogi pracującej. Siadaj do tyłu I w dół, pozwalając drugiej nodze wysunąć się dalej do przodu nad podłożem.",
+    "Schodź powoli i kontrolowanie. Pięta nogi pracującej cały czas na podłożu — nigdy się nie odrywa.",
+    "Zejdź tak nisko jak możesz utrzymując neutralny kręgosłup i piętę na ziemi — idealnie udo dotyka łydki (pełna głębokość).",
+    "Wstań napierając całą stopą nogi pracującej, prostując biodro i kolano jednocześnie. Kettlebell cały czas przed klatką.",
+    "Stań prosto na jednej nodze, kontrolując powrót drugiej nogi do pozycji wyjściowej. Wykonaj wszystkie powtórzenia na jednej stronie zanim zmienisz nogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "calves"],
+    "stabilizers": ["core", "hip_abductors", "erector_spinae", "tibialis_anterior", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "calves": "S5",
+    "core": "S7",
+    "hip_abductors": "S6",
+    "erector_spinae": "S5",
+    "tibialis_anterior": "T4",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["lifting_shoes", "elevated_surface_for_heel"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "bulgarian-split-squat", "single-leg-box-squat", "assisted-pistol-squat"],
+    "progression_to": ["bodyweight-pistol-squat", "weighted-pistol-squat-dumbbell", "deficit-pistol-squat", "shrimp-squat"],
+    "alternatives": ["bulgarian-split-squat", "step-up", "single-leg-box-squat", "skater-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hold the bell by the horns at chest height",
+      "Elbows in, bell close to your body",
+      "Stand tall on the working leg, brace your core",
+      "Non-working leg straight out, toes pulled up",
+      "Eyes forward, chest up"
+    ],
+    "setup_cues_pl": [
+      "Trzymaj odważnik za rogi na wysokości klatki",
+      "Łokcie przy ciele, kettlebell blisko klatki",
+      "Stań prosto na nodze pracującej, napnij brzuch",
+      "Druga noga wyprostowana, palce stopy podciągnięte",
+      "Wzrok przed siebie, klatka wysoko"
+    ],
+    "execution_cues": [
+      "Use the bell as a counterweight — push it forward as you descend",
+      "Sit BACK AND DOWN, not just down",
+      "Heel stays glued to the floor — never let it rise",
+      "Knee tracks over the middle of the foot",
+      "Drive through the whole foot to stand"
+    ],
+    "execution_cues_pl": [
+      "Wykorzystaj odważnik jako przeciwwagę — wysuwaj go do przodu schodząc w dół",
+      "Siadaj DO TYŁU I W DÓŁ, nie tylko w dół",
+      "Pięta przyklejona do podłogi — nigdy nie odrywaj",
+      "Kolano podąża nad środkiem stopy",
+      "Wypchnij się napierając całą stopą"
+    ],
+    "common_faults": [
+      {
+        "fault": "Heel rises off the floor",
+        "faultPl": "Pięta odrywa się od podłogi",
+        "cause": "Limited ankle dorsiflexion, descending faster than mobility allows, or kettlebell held too close to the chest (insufficient counterbalance)",
+        "causePl": "Słaba dorsiflexja stawu skokowego, schodzenie szybciej niż pozwala mobilność, lub kettlebell trzymany za blisko klatki (za mała przeciwwaga)",
+        "cue": "Push the bell further forward as a counterbalance, or elevate the heel 1-2 cm on a plate. Work on ankle mobility outside the session.",
+        "cuePl": "Wysuń odważnik bardziej do przodu jako przeciwwagę, lub podnieś piętę o 1-2 cm na talerz. Pracuj nad mobilnością kostki osobno."
+      },
+      {
+        "fault": "Loss of balance — falling backward",
+        "faultPl": "Utrata równowagi — przewracanie się do tyłu",
+        "cause": "Insufficient counterbalance from the bell, weak core, or not extending the non-working leg far enough forward",
+        "causePl": "Niewystarczająca przeciwwaga odważnika, słaby brzuch, lub niewystarczające wysunięcie drugiej nogi do przodu",
+        "cue": "Push the bell and the free leg further forward at the same time as the hips go back. Treat it as a 3-counterweight system.",
+        "cuePl": "Wysuwaj odważnik i wolną nogę bardziej do przodu jednocześnie z cofaniem bioder. Traktuj to jak system 3 przeciwwag."
+      },
+      {
+        "fault": "Knee valgus (knee caves inward) on the working leg",
+        "faultPl": "Koślawienie kolana (kolano ucieka do środka) na nodze pracującej",
+        "cause": "Weak hip abductors and external rotators, or weight transferred to the inside of the foot",
+        "causePl": "Słabe odwodziciele i rotatory zewnętrzne biodra, lub przeniesienie ciężaru na wewnętrzną stronę stopy",
+        "cue": "Drive the knee out toward your pinky toe. Spread the floor with your foot.",
+        "cuePl": "Wypychaj kolano na zewnątrz w kierunku małego palca. Rozłóż siłę po całej stopie."
+      },
+      {
+        "fault": "Free leg touches the floor during descent",
+        "faultPl": "Wolna noga dotyka podłogi podczas schodzenia",
+        "cause": "Weak hip flexors of the free leg, or not extending it far enough forward",
+        "causePl": "Słabe zginacze biodra wolnej nogi, lub niewystarczające wysunięcie jej do przodu",
+        "cue": "Actively pull the free leg up and forward — its hip flexors must work throughout the rep. Train hip flexor strength separately.",
+        "cuePl": "Aktywnie podciągaj wolną nogę do góry i do przodu — jej zginacze biodra muszą pracować przez całe powtórzenie. Trenuj siłę zginaczy biodra osobno."
+      },
+      {
+        "fault": "Excessive forward lean and rounded lower back at the bottom",
+        "faultPl": "Nadmierne pochylenie do przodu i zaokrąglone plecy w dolnej pozycji",
+        "cause": "Going below your individual ROM, weak core, or trying to compensate for poor ankle mobility with hip flexion",
+        "causePl": "Schodzenie poniżej indywidualnego zakresu ruchu, słaby brzuch, lub kompensacja słabej mobilności kostki zginaniem biodra",
+        "cue": "Stop one inch above the depth where your back rounds. Brace harder. Improve ankle mobility before chasing more depth.",
+        "cuePl": "Zatrzymaj się 2-3 cm nad głębokością gdzie plecy się zaokrąglają. Mocniej napnij brzuch. Popraw mobilność kostki przed pogłębianiem."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and the hardest part of the ascent (Valsalva). Exhale near the top of the rep.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech podczas schodzenia i najtrudniejszej części powrotu (Valsalva). Wydech blisko górnej części powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "avoid",
+      "modification": "Avoid deep single-leg loading. Switch to a pain-free bilateral squat variant until cleared by a physiotherapist.",
+      "modificationPl": "Unikaj głębokiego obciążenia jednonóż. Przejdź na dwustronny przysiad w zakresie bez bólu do czasu konsultacji z fizjoterapeutą.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "ankle_mobility_deficit",
+      "severity": "modify",
+      "modification": "Elevate the heel 1-2 cm (small plate) and limit depth to a pain-free, balanced range. Work on ankle dorsiflexion daily.",
+      "modificationPl": "Podnieś piętę o 1-2 cm (mały talerz) i ogranicz głębokość do zakresu bez bólu i z zachowaniem równowagi. Pracuj nad dorsiflexją kostki codziennie.",
+      "alternative": "bulgarian-split-squat"
+    },
+    {
+      "condition": "lower_back_pain_with_loaded_flexion",
+      "severity": "caution",
+      "modification": "Maintain a strict neutral spine, stop above the depth where the lumbar tucks. Reduce ROM and load before progressing.",
+      "modificationPl": "Trzymaj kręgosłup ściśle neutralny, zatrzymaj się nad głębokością gdzie lędźwia się podwija. Zmniejsz zakres ruchu i obciążenie przed progresją.",
+      "alternative": "single-leg-box-squat"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Single-leg deep squats can provoke FAI. Test ROM gently. If pinching occurs, reduce depth or switch to a hip-friendly variant.",
+      "modificationPl": "Głębokie przysiady jednonóż mogą wywoływać FAI. Sprawdź zakres ruchu delikatnie. Jeśli pojawia się szczypanie w pachwinie, zmniejsz głębokość lub przejdź na wariant bardziej przyjazny biodrom.",
+      "alternative": "step-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x5-8 per leg (strength) | 3x8-12 per leg (hypertrophy) | 2-3x3-5 per leg (technique/progression)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "kettlebell-pistol-squat.gif",
+    "frames_extracted": [
+      "frames/kettlebell-pistol-squat/frame_0_start.png",
+      "frames/kettlebell-pistol-squat/frame_1_early.png",
+      "frames/kettlebell-pistol-squat/frame_2_mid.png",
+      "frames/kettlebell-pistol-squat/frame_3_late.png",
+      "frames/kettlebell-pistol-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/kettlebell-pistol-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:42:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0: pozycja startowa stojąca, kettlebell trzymany przed klatką piersiową (za rogi), obie stopy na podłożu. Klatka 2: pełny pistol — pełny przysiad na lewej nodze, prawa noga wyciągnięta do przodu w powietrzu, kettlebell trzymany przed klatką jako counterweight (pomaga utrzymać równowagę). Klatka 4: powrót do pozycji stojącej z widocznym śladem ruchu (cień drugiej nogi). Mięśnie podświetlone na ilustracji: czworogłowe i pośladek nogi pracującej (lewej) — pasuje do unilateral squat pattern. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Difficulty 8 (advanced) zgodne z faktem że pistol squat to zaawansowane unilateral movement; counterweight z KB ułatwia balans ale nadal wymaga znacznej siły jednonóż, mobilności kostki i kontroli motorycznej. Primary muscles: quadriceps P10 (główny driver pełnego przysiadu jednonóż), glutes P9 (ekstensja biodra z pełnej głębokości jednostronnie).",
+
+  "tags": ["unilateral", "single_leg", "kettlebell", "pistol_squat", "counterbalanced", "mobility_challenge", "advanced_bodyweight", "lower_body", "balance"]
+}

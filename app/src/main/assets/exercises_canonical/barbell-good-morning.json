@@ -1,0 +1,205 @@
+{
+  "id": "barbell-good-morning",
+  "name": "Barbell Good Morning",
+  "namePl": "Dzień dobry ze sztangą",
+  "aliases": ["good morning", "barbell good morning", "GM"],
+  "aliasesPl": ["dzień dobry ze sztangą", "good morning", "ukłon ze sztangą", "GM"],
+
+  "description": "A heavy hip-hinge movement with the barbell loaded HIGH on the upper back (like a back squat, not in the hands). From a standing position the lifter hinges the torso forward — pushing the hips back, keeping the knees only slightly bent — until the torso is close to parallel with the floor, then returns to standing by driving the hips forward. The high bar position dramatically increases the moment arm acting on the spine, making the erector spinae work isometrically as a hammer while the hamstrings and glutes produce the actual hip extension. Considered one of the strongest builders of the posterior chain and a classic powerlifter's accessory for squat and deadlift — but technically demanding and unforgiving of bad form.",
+  "descriptionPl": "Ciężki ruch hip hinge ze sztangą umieszczoną WYSOKO na karku/górnych plecach (jak przy przysiadzie z gryfem na barkach, nie w rękach). Z pozycji stojącej ćwiczący wykonuje zgięcie w biodrach — wypychając biodra do tyłu, z kolanami tylko lekko ugiętymi — aż tułów dochodzi prawie do poziomu równoległego z podłogą, po czym wraca do stania przez wepchnięcie bioder do przodu. Wysokie położenie sztangi drastycznie wydłuża ramię działania na kręgosłup, przez co prostowniki grzbietu pracują izometrycznie jak młot, podczas gdy dwugłowe ud i pośladki wytwarzają faktyczny wyprost bioder. Uznawany za jedno z najmocniejszych ćwiczeń budujących tylny łańcuch i klasyczny akcesoryjny ruch powerliftera pod przysiad i martwy ciąg — ale wymagający technicznie i bezlitosny dla błędów technicznych.",
+
+  "instructions": [
+    "Set the barbell in a rack at upper-chest height. Approach as if you were going to back-squat: get under the bar with the bar resting on your upper traps (high-bar) or just below the spine of the scapula (low-bar variation). Grip is wider than shoulder-width, hands locking the bar to the back.",
+    "Step out of the rack with 2-3 controlled steps. Set your feet hip- to shoulder-width apart, toes pointing slightly out.",
+    "Set the back: chest up, shoulder blades pulled together and down, upper back tight under the bar, neutral cervical spine. The bar should feel locked on the traps.",
+    "Take a big breath, brace the core hard (Valsalva) — bracing is more critical than in any squat because the bar is acting at the end of a long lever as you bend over.",
+    "Soften the knees to ~10-20°. Begin the descent by pushing the HIPS BACKWARD — not by bending the knees and not by simply leaning forward. Imagine reaching your butt to a wall behind you.",
+    "Hinge the torso forward slowly while keeping the back perfectly neutral. The knees stay in the SAME slightly-bent position the entire rep — they do not flex further and they do not lock out.",
+    "Lower until the torso is close to parallel with the floor OR until you feel a strong stretch in the hamstrings and you cannot go further without rounding the lower back. STOP there — never round the lumbar to chase more depth.",
+    "Reverse the movement by driving the hips forward and squeezing the glutes hard. Push the floor away with your legs as the torso rises. Stand tall at the top — fully extended hips, no hyperextension of the lower back. Exhale at the top, reset the brace, repeat."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w stojaku na wysokości górnej części klatki. Podejdź jak do przysiadu ze sztangą na barkach: wejdź pod gryf z gryfem opartym na górnym czworobocznym (high-bar) lub tuż poniżej grzebienia łopatki (wariant low-bar). Chwyt szerszy niż barki, dłonie blokują gryf do pleców.",
+    "Wyjdź ze stojaka 2-3 kontrolowanymi krokami. Ustaw stopy na szerokość bioder do barków, palce lekko na zewnątrz.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte i w dół, górne plecy mocno napięte pod gryfem, neutralna pozycja szyi. Gryf powinien czuć się zablokowany na czworobocznych.",
+    "Nabierz głęboki oddech, mocno napnij brzuch (Valsalva) — napięcie brzucha jest tu krytyczniejsze niż w jakimkolwiek przysiadzie, bo gryf działa na końcu długiej dźwigni gdy pochylasz tułów.",
+    "Lekko ugnij kolana do ~10-20°. Zacznij schodzenie przez wypchnięcie BIODER DO TYŁU — nie przez zginanie kolan i nie przez samo pochylenie do przodu. Wyobraź sobie że sięgasz pośladkami do ściany za tobą.",
+    "Pochylaj tułów do przodu powoli, z idealnie neutralnymi plecami. Kolana pozostają w TEJ SAMEJ lekko ugiętej pozycji przez całe powtórzenie — nie zginają się bardziej i nie blokują w pełnym wyproście.",
+    "Schodź aż tułów będzie blisko poziomu równoległego z podłogą LUB aż poczujesz mocny rozciąg dwugłowych ud i nie możesz zejść niżej bez zaokrąglania lędźwi. ZATRZYMAJ SIĘ tam — nigdy nie zaokrąglaj lędźwi by gonić większą głębokość.",
+    "Wróć ruchem przez wepchnięcie bioder do przodu i mocne ściśnięcie pośladków. Wypchnij podłogę nogami w trakcie podnoszenia tułowia. Stań prosto na górze — pełen wyprost bioder, bez przegięcia lędźwi. Wydech na górze, ponowne napięcie brzucha, kolejne powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["erector_spinae", "hamstrings", "glutes"],
+    "secondary": ["adductors", "trapezius", "rhomboids"],
+    "stabilizers": ["core", "rectus_abdominis", "obliques", "latissimus_dorsi", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "erector_spinae": "P10",
+    "hamstrings": "P9",
+    "glutes": "P8",
+    "adductors": "S6",
+    "trapezius": "S7",
+    "rhomboids": "S6",
+    "core": "S8",
+    "rectus_abdominis": "S7",
+    "obliques": "S6",
+    "latissimus_dorsi": "S5",
+    "quadriceps": "S4"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["rack", "belt", "bar_pad", "platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["barbell-romanian-deadlift", "hip-hinge-dowel-drill", "back-squat", "bodyweight-good-morning"],
+    "progression_to": ["seated-good-morning", "safety-bar-good-morning", "pause-good-morning", "deficit-good-morning"],
+    "alternatives": ["barbell-romanian-deadlift", "cable-pull-through", "45-degree-back-extension", "reverse-hyperextension", "kettlebell-rdl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar HIGH on the traps like a high-bar squat — not in the hands, not on the rear delts",
+      "Feet hip- to shoulder-width, toes slightly out",
+      "Upper back EXTREMELY tight — pull the bar down into the traps, lock it in",
+      "Knees soft (~10-20°), not locked, not deep — pick a position and KEEP it",
+      "Huge breath, brace the core HARDER than for a squat — the bar is on a long lever"
+    ],
+    "setup_cues_pl": [
+      "Sztanga WYSOKO na czworobocznym jak w high-bar squat — nie w rękach, nie na tylnych aktonach barków",
+      "Stopy na szerokość bioder do barków, palce lekko na zewnątrz",
+      "Górne plecy EKSTREMALNIE napięte — ściągnij gryf do czworobocznego, zablokuj go tam",
+      "Kolana miękkie (~10-20°), nie zablokowane, nie głębokie — wybierz pozycję i ZACHOWAJ ją",
+      "Wielki wdech, napnij brzuch MOCNIEJ niż do przysiadu — sztanga jest na długiej dźwigni"
+    ],
+    "execution_cues": [
+      "Hips BACK first — push your butt to the wall behind you, then let the torso fold over",
+      "Knees stay quiet — they do NOT bend more, they do NOT extend, they live in one position",
+      "Back PERFECTLY neutral — chest open, no rounding, no exaggerated arching either",
+      "Stop when you feel a hamstring stretch — never round the lumbar to chase parallel",
+      "Drive hips forward and SQUEEZE the glutes hard at the top — stand tall, no leaning back"
+    ],
+    "execution_cues_pl": [
+      "Biodra DO TYŁU jako pierwsze — wypchnij pośladki do ściany za tobą, dopiero potem tułów się składa",
+      "Kolana nieruchome — NIE zginają się bardziej, NIE wyprostują, żyją w jednej pozycji",
+      "Plecy IDEALNIE neutralne — klatka otwarta, bez zaokrąglania, ale też bez przesadnego prostowania",
+      "Zatrzymaj się gdy poczujesz rozciąg dwugłowych ud — nigdy nie zaokrąglaj lędźwi by gonić poziom",
+      "Wepchnij biodra do przodu i MOCNO ŚCIŚNIJ pośladki na górze — stań prosto, bez odchylania do tyłu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounding the lower back (lumbar flexion) under load",
+        "faultPl": "Zaokrąglanie lędźwi (zgięcie lędźwiowe) pod obciążeniem",
+        "cause": "Going too deep for current hamstring flexibility, weak erectors, poor bracing, ego loading",
+        "causePl": "Schodzenie za nisko jak na obecną mobilność hamstringów, słabe prostowniki, słabe napięcie brzucha, ego w ciężarach",
+        "cue": "Stop the descent at the FIRST sign the back wants to round. Reduce weight by 20-30%, reduce ROM. Good morning unforgivingly punishes rounded backs — this is the #1 way people hurt themselves with this lift.",
+        "cuePl": "Zatrzymaj schodzenie przy PIERWSZEJ oznace że plecy chcą się zaokrąglić. Zmniejsz ciężar o 20-30%, zmniejsz zakres ruchu. Good morning bezlitośnie karze zaokrąglone plecy — to numer 1 sposób w jaki ludzie się tu kontuzjują."
+      },
+      {
+        "fault": "Turning the movement into a quarter-squat — knees bend, hips don't go back",
+        "faultPl": "Zamienianie ruchu w ćwierć-przysiad — kolana się zginają, biodra nie cofają",
+        "cause": "Avoiding the hamstring stretch (uncomfortable), copying squat pattern, weak posterior chain",
+        "causePl": "Unikanie rozciągu hamstringów (niewygodne), kopiowanie wzorca przysiadu, słaby tylny łańcuch",
+        "cue": "HIPS BACK first, knees frozen. Film from the side — your knees should not travel forward. If they do, you're squatting, not hinging.",
+        "cuePl": "BIODRA DO TYŁU jako pierwsze, kolana zamrożone. Nagraj z boku — kolana nie powinny iść do przodu. Jeśli idą, robisz przysiad, nie hinge."
+      },
+      {
+        "fault": "Bar slides up onto the neck or rolls down toward the rear delts",
+        "faultPl": "Sztanga zsuwa się na kark lub stacza w stronę tylnych aktonów barków",
+        "cause": "Loose upper back, bar placed too high, not gripping the bar firmly enough, descent too fast",
+        "causePl": "Luźne górne plecy, sztanga zbyt wysoko, niewystarczająco mocny chwyt gryfu, zbyt szybkie schodzenie",
+        "cue": "Pull the bar DOWN into the traps with the hands. Keep the upper back rock-solid. If the bar slides forward you're losing back tightness — stop the set.",
+        "cuePl": "Ściągnij gryf W DÓŁ do czworobocznego rękami. Trzymaj górne plecy jak skała. Jeśli sztanga się zsuwa do przodu tracisz napięcie pleców — zakończ serię."
+      },
+      {
+        "fault": "Going for ego weight — loading the bar like a squat",
+        "faultPl": "Pakowanie ego-ciężaru — ładowanie sztangi jak na przysiad",
+        "cause": "Underestimating how unforgiving the long lever is, social-media comparisons, peer pressure",
+        "causePl": "Niedocenianie jak bezlitosna jest długa dźwignia, porównywanie się w social media, presja otoczenia",
+        "cue": "Good morning is an ACCESSORY — typical working weights are 30-50% of your back squat, not anything close to it. Stay light, stay strict, build the posterior chain slowly.",
+        "cuePl": "Good morning to ĆWICZENIE AKCESORYJNE — typowe ciężary robocze to 30-50% twojego przysiadu, nie nic blisko niego. Zostań przy małym ciężarze, ścisła technika, buduj tylny łańcuch powoli."
+      },
+      {
+        "fault": "Hyperextending the lower back at the top (leaning back at lockout)",
+        "faultPl": "Przegięcie lędźwi na górze (odchylanie do tyłu w lock-out)",
+        "cause": "Confusing hip extension with lumbar extension, trying to 'show off' the top, weak glutes finishing the rep",
+        "causePl": "Mylenie wyprostu bioder z wyprostem lędźwi, próba 'pokazania' szczytu, słabe pośladki kończące powtórzenie",
+        "cue": "Stand TALL, not BACK. Squeeze the glutes for hip extension, but the spine stays neutral. The top position is upright, not arched.",
+        "cuePl": "Stań PROSTO, nie ODCHYLONY. Ściśnij pośladki dla wyprostu bioder, ale kręgosłup pozostaje neutralny. Pozycja końcowa jest pionowa, nie wygięta do tyłu."
+      }
+    ],
+    "breathing": "Big inhale at the top, brace Valsalva HARD, hold through the entire eccentric AND concentric. Exhale at the top of the rep, reset the brace before the next rep. Do not exhale during the descent or ascent — the spine needs maximum intra-abdominal pressure throughout, more than in any other lift.",
+    "breathingPl": "Głęboki wdech na górze, NAPRAWDĘ MOCNY Valsalva, trzymaj przez cały ekscentryk I koncentryk. Wydech dopiero na szczycie powtórzenia, ponowne napięcie brzucha przed kolejnym powtórzeniem. Nie wydychaj podczas schodzenia ani wchodzenia — kręgosłup potrzebuje maksymalnego ciśnienia śródbrzusznego przez cały ruch, bardziej niż w jakimkolwiek innym ćwiczeniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete contraindication. Good morning places the highest shear stress of any common lift on the lumbar spine due to the long lever — even light weight is risky during acute injury.",
+      "modificationPl": "Pełne przeciwwskazanie. Good morning daje najwyższe siły ścinające na lędźwie ze wszystkich popularnych ćwiczeń ze względu na długą dźwignię — nawet lekki ciężar jest ryzykowny w fazie ostrej kontuzji.",
+      "alternative": "cable-pull-through"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion with a long lever is high-risk for disc pathology. Use machine-supported alternatives that allow hip extension without spinal load.",
+      "modificationPl": "Obciążona flexja kręgosłupa z długą dźwignią to wysokie ryzyko dla patologii dysku. Użyj alternatyw wspartych maszynowo które pozwalają na wyprost bioder bez obciążenia kręgosłupa.",
+      "alternative": "45-degree-back-extension"
+    },
+    {
+      "condition": "weak_or_untrained_erector_spinae",
+      "severity": "avoid",
+      "modification": "Beginners must build erector strength first with lower-risk hinges (RDL, hyperextensions) and bodyweight good morning before adding a loaded bar. Skipping this stage is the most common cause of injury.",
+      "modificationPl": "Początkujący muszą najpierw zbudować siłę prostowników niskoryzykownymi hinge'ami (RDL, hiperekstensje) i good morningiem z masą własną przed dodaniem obciążonego gryfu. Pominięcie tego etapu to najczęstsza przyczyna kontuzji.",
+      "alternative": "bodyweight-good-morning"
+    },
+    {
+      "condition": "limited_hamstring_flexibility",
+      "severity": "modify",
+      "modification": "Restrict ROM to the point where the back stays neutral. Use a box or pins to limit depth. Work on hamstring mobility separately. Better: switch to seated good morning which removes hamstring as a limiter.",
+      "modificationPl": "Ogranicz zakres ruchu do punktu w którym plecy pozostają neutralne. Użyj skrzyni lub bolców by ograniczyć głębokość. Pracuj nad mobilnością hamstringów osobno. Lepiej: przejdź na seated good morning który usuwa hamstringi jako ogranicznik.",
+      "alternative": "seated-good-morning"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (hypertrophy — main use case as posterior chain builder) | 4-5x3-5 (strength accessory for powerlifters) | 3x10-15 (with light weight for muscular endurance and back conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "barbell-good-morning.gif",
+    "frames_extracted": [
+      "frames/barbell-good-morning/frame_0_start.png",
+      "frames/barbell-good-morning/frame_1_early.png",
+      "frames/barbell-good-morning/frame_2_mid.png",
+      "frames/barbell-good-morning/frame_3_late.png",
+      "frames/barbell-good-morning/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "hamstrings/barbell-good-morning"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa (12 oryginalnych klatek). Frame 0: dolna pozycja — tułów pochylony prawie do poziomu równoległego z podłogą, sztanga na karku/górnych czworobocznych (HIGH-bar position, jak w przysiadzie ze sztangą na barkach), kolana lekko ugięte (~15°), biodra wyraźnie cofnięte. Podświetlone mocno: hamstringi (cały tył uda), pośladki, prostowniki grzbietu wzdłuż całego kręgosłupa. Frame 2: pozycja stojąca, pełen wyprost bioder, sztanga na karku, nogi prawie proste — to lock-out. Frame 4: powrót w dół do pozycji pochylonej. Kluczowa różnica vs RDL: sztanga NA KARKU (nie w rękach), co diametralnie zmienia biomechanikę — prostowniki grzbietu pracują DUŻO mocniej jako hammer izometryczny, dłuższe ramię dźwigni działa na kręgosłup. Klasyfikacja: hinge / pull / compound / bilateral / sagittal / closed (closed-chain — stopy na podłodze). Equipment: barbell (+ stojak opcjonalny). Trudność 8 (advanced) — wymaga doskonałej techniki hinge, mocnych prostowników i świadomości neutralnego kręgosłupa pod obciążeniem; jeden z najmniej wybaczających ruchów. Główne mięśnie: erector_spinae P10 (izometryczna praca przeciw długiej dźwigni), hamstrings P9, glutes P8. Sekundarnie: trapezius S7 (utrzymanie gryfu), core S8 (Valsalva krytyczne), adductors S6. Wszystkie pola PL napisane od zera używając polskiej terminologii fitness/powerlifting (hip hinge, lock-out, ekscentryk, Valsalva, dźwignia, prostowniki grzbietu, dwugłowe ud, czworoboczny). 5 common faults pokrywają najczęstsze błędy: zaokrąglenie lędźwi, ćwierć-przysiad zamiast hinge, sztanga się zsuwa, ego-ciężar, hiperekstensja na górze. 4 contraindications: ostra kontuzja lędźwi (avoid), dyskopatia (avoid), słabe nietrenowane prostowniki (avoid — wymaga progresji), ograniczona mobilność hamstringów (modify). Progresje: seated-good-morning, safety-bar-good-morning, pause-good-morning. Alternatywy: RDL (główny zamiennik), cable pull-through, 45-degree back extension.",
+
+  "tags": ["bodybuilding", "powerlifting", "posterior_chain", "hip_hinge", "erector_spinae", "hamstring_hypertrophy", "barbell", "compound", "accessory_lift", "advanced", "high_risk_high_reward"]
+}

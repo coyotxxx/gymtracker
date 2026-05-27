@@ -1,0 +1,200 @@
+{
+  "id": "one-leg-squat",
+  "name": "One-Leg Squat (Bulgarian / Rear-Foot-Elevated Split Squat)",
+  "namePl": "Przysiad jednonóż (Bułgarski / z tylną nogą uniesioną)",
+  "aliases": ["one-leg squat", "single-leg squat (rear-foot-elevated)", "bulgarian split squat bodyweight", "rear foot elevated split squat", "RFESS", "rear leg elevated squat"],
+  "aliasesPl": ["przysiad jednonóż", "bułgarski split squat", "RFESS", "przysiad z tylną nogą na podwyższeniu", "split squat bułgarski", "single-leg squat na boxie"],
+
+  "description": "Unilateral lower-body compound exercise in which the rear foot rests on a box (or bench) while the front leg performs the squat. Body descends straight down — front knee bends to roughly 90°, the rear leg trails behind acting as a kickstand and balance reference. Despite the name 'one-leg squat', it is not a true pistol — the rear foot provides light contact for balance, which dramatically lowers the mobility demand compared to a free-air pistol squat. The exercise heavily loads the front leg quadriceps and glutes, brutally exposes side-to-side strength asymmetries, and is one of the most effective bodyweight (or lightly loaded) lower-body builders. Common in athletic preparation, hypertrophy programming for legs, and rehabilitation of single-leg strength deficits.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała, w którym tylna stopa spoczywa na skrzyni (lub ławce), a przednia noga wykonuje przysiad. Ciało schodzi prosto w dół — przednie kolano zgina się do około 90°, tylna noga zostaje z tyłu pełniąc funkcję podpórki i punktu odniesienia dla równowagi. Mimo nazwy 'przysiad jednonóż' nie jest to klasyczny pistol — tylna stopa zapewnia lekki kontakt dla balansu, co drastycznie obniża wymagania mobilnościowe w porównaniu z pistolem w powietrzu. Ćwiczenie mocno obciąża czworogłowe i pośladki przedniej nogi, brutalnie ujawnia asymetrie siły między stronami i jest jednym z najskuteczniejszych budulców dolnej części ciała z masą własną (lub z niewielkim obciążeniem). Stosowane w przygotowaniu sportowym, programach hipertroficznych na nogi i rehabilitacji deficytów siły jednostronnej.",
+
+  "instructions": [
+    "Set up a stable box or bench roughly knee-height behind you. Stand about 60-80 cm in front of it.",
+    "Place the top of the rear foot (laces down) or the ball of the rear foot on the box. The rear foot provides balance only — no significant weight rests on it.",
+    "Front foot planted flat, toes pointing forward. The front foot should be far enough forward that, at the bottom, the front shin stays roughly vertical.",
+    "Stand tall — chest up, shoulders stacked over hips, ribs down. Brace your core. Hands rest on hips or held in front for counterbalance.",
+    "Inhale and lower straight down by bending the front knee and hip simultaneously. The torso may incline slightly forward (about 10-20°) to keep balance over the front foot.",
+    "Descend until the front thigh is approximately parallel to the floor and the rear knee approaches (but does not slam into) the ground.",
+    "Front knee tracks over the second and third toes — do not let it collapse inward. The rear leg stays relaxed, mostly a kickstand.",
+    "Brief pause in the bottom position with tension maintained — no bouncing.",
+    "Drive back up by pushing the floor away through the front heel and mid-foot. Hip and knee extend together.",
+    "Return to full standing on the front leg with the rear foot still on the box. Complete all reps on one side before switching."
+  ],
+  "instructionsPl": [
+    "Ustaw stabilną skrzynię lub ławkę mniej więcej na wysokość kolana za sobą. Stań około 60-80 cm przed nią.",
+    "Połóż grzbiet tylnej stopy (sznurówkami w dół) lub śródstopie tylnej stopy na skrzyni. Tylna stopa służy tylko do równowagi — nie spoczywa na niej znaczący ciężar.",
+    "Przednia stopa płasko na podłodze, palce skierowane w przód. Przednia stopa powinna być na tyle daleko, żeby na dole piszczel pozostawała w przybliżeniu pionowa.",
+    "Stań wysoko — klatka w górze, barki nad biodrami, żebra w dół. Napnij brzuch. Ręce na biodrach lub trzymane przed sobą dla kontrbalansu.",
+    "Wdech i opuszczanie prosto w dół przez jednoczesne zginanie kolana i biodra przedniej nogi. Tułów może pochylić się lekko w przód (około 10-20°) by zachować równowagę nad przednią stopą.",
+    "Schodź aż przednie udo będzie mniej więcej równoległe do podłogi, a tylne kolano zbliży się (ale nie uderzy) do ziemi.",
+    "Przednie kolano podąża nad drugim i trzecim palcem — nie pozwól, by uciekło do środka. Tylna noga zostaje rozluźniona, głównie jako podpórka.",
+    "Krótka pauza w dolnej pozycji z utrzymanym napięciem — bez odbijania.",
+    "Wypchnij się w górę odpychając podłogę piętą i środkiem stopy przedniej nogi. Biodro i kolano prostują się razem.",
+    "Wróć do pełnego stania na przedniej nodze, tylna stopa wciąż na skrzyni. Wykonaj wszystkie powtórzenia na jedną stronę przed zmianą."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "calves", "erector_spinae", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "hamstrings": "S6",
+    "adductors": "S6",
+    "core": "S6",
+    "gluteus_medius": "S7",
+    "calves": "S4",
+    "erector_spinae": "T3",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "box_or_bench"],
+    "optional": ["dumbbells", "kettlebell", "weight_vest", "barbell", "mat_under_rear_knee"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "split-squats", "reverse-lunge"],
+    "progression_to": ["dumbbell-single-leg-split-squat", "barbell-single-leg-split-squat", "deficit-bulgarian-split-squat", "single-leg-squat-pistol"],
+    "alternatives": ["split-squats", "reverse-lunge", "step-up", "single-leg-squat-pistol"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Box about knee-height behind you, stable surface",
+      "Front foot 60-80 cm in front — front shin vertical at the bottom",
+      "Top of the rear foot on the box, laces down (or ball of foot for less ankle stress)",
+      "Stand tall, ribs down, core braced",
+      "Hands on hips or in front for balance — eyes forward"
+    ],
+    "setup_cues_pl": [
+      "Skrzynia mniej więcej na wysokość kolana za tobą, stabilna powierzchnia",
+      "Przednia stopa 60-80 cm w przód — pionowa piszczel na dole",
+      "Grzbiet tylnej stopy na skrzyni, sznurówkami w dół (lub śródstopie dla mniejszego obciążenia stawu skokowego)",
+      "Stań wysoko, żebra w dół, napięty brzuch",
+      "Ręce na biodrach lub przed sobą dla równowagi — wzrok prosto"
+    ],
+    "execution_cues": [
+      "Drop straight down — rear knee toward the floor, not back",
+      "Front knee tracks the second and third toe — fight valgus",
+      "Torso slight forward lean (10-20°), no rounding of the lower back",
+      "Front heel glued to the floor — push the floor away on the way up",
+      "Rear leg is a kickstand — don't push off it"
+    ],
+    "execution_cues_pl": [
+      "Schodź prosto w dół — tylne kolano w stronę podłogi, nie w tył",
+      "Przednie kolano w linii drugiego i trzeciego palca — walcz z koślawieniem",
+      "Tułów lekko pochylony w przód (10-20°), bez zaokrąglania lędźwi",
+      "Pięta przedniej nogi przyklejona do podłogi — odpychaj podłogę w drodze w górę",
+      "Tylna noga jest tylko podpórką — nie wybijaj się z niej"
+    ],
+    "common_faults": [
+      {
+        "fault": "Front foot positioned too close to the box (short stance)",
+        "faultPl": "Przednia stopa za blisko skrzyni (za krótki rozkrok)",
+        "cause": "Underestimating stance length — causes the front knee to travel well past the toes and overloads the patellar tendon",
+        "causePl": "Niedoszacowanie długości rozkroku — powoduje że przednie kolano przekracza linię palców i nadmiernie obciąża ścięgno rzepki",
+        "cue": "Step forward until the front shin stays vertical at the bottom. If the knee shoots past the toes, the foot is too close.",
+        "cuePl": "Wykrocz do przodu aż piszczel przedniej nogi pozostaje pionowa na dole. Jeśli kolano wybiega przed palce, stopa jest za blisko."
+      },
+      {
+        "fault": "Pushing off the rear leg instead of loading the front leg",
+        "faultPl": "Odbicie się tylną nogą zamiast obciążania przedniej",
+        "cause": "Misunderstanding the movement — the box is for balance, not for power. Rear-leg drive turns the exercise into a half-lunge.",
+        "causePl": "Niezrozumienie ruchu — skrzynia służy do równowagi, nie do generowania siły. Wybicie tylną nogą zmienia ćwiczenie w pół-wykrok.",
+        "cue": "85-90% of the weight on the front foot. The rear leg should feel light, almost passive.",
+        "cuePl": "85-90% ciężaru na przedniej stopie. Tylna noga powinna być lekka, niemal pasywna."
+      },
+      {
+        "fault": "Front knee collapses inward (valgus)",
+        "faultPl": "Przednie kolano ucieka do środka (koślawienie)",
+        "cause": "Weak glute medius, narrow front stance, or pushing the knee instead of the heel",
+        "causePl": "Słaby mięsień pośladkowy średni, zbyt wąska pozycja przedniej stopy lub wypychanie kolanem zamiast piętą",
+        "cue": "Drive the knee out toward the pinky-toe side. Strengthen the glute medius with clamshells and side-lying abductions.",
+        "cuePl": "Wypychaj kolano na zewnątrz w stronę małego palca. Wzmacniaj mięsień pośladkowy średni przez clamshells i odwodzenie w leżeniu bokiem."
+      },
+      {
+        "fault": "Insufficient depth — front thigh well above parallel",
+        "faultPl": "Niedostateczna głębokość — przednie udo wysoko nad parallelem",
+        "cause": "Weak quads in deep range, balance fear, or hip mobility limits",
+        "causePl": "Słabe czworogłowe w głębokim zakresie, strach o równowagę lub ograniczenia mobilności biodra",
+        "cue": "Lower until the front thigh is parallel or the rear knee lightly kisses the floor. Use a pad to mark depth.",
+        "cuePl": "Schodź aż przednie udo jest równoległe lub tylne kolano lekko muska podłogę. Użyj poduszki jako wyznacznika głębokości."
+      },
+      {
+        "fault": "Torso pitches excessively forward (good-morning-like)",
+        "faultPl": "Tułów nadmiernie pochyla się w przód (jak w good-morningu)",
+        "cause": "Tight hip flexors of the rear leg, weak quads compensating with hip-dominant drive, or stance too short",
+        "causePl": "Sztywne zginacze biodra tylnej nogi, słabe czworogłowe kompensujące napędem z biodra, lub za krótki rozkrok",
+        "cue": "Lengthen the stance, stretch hip flexors before training, brace harder to keep the torso more upright.",
+        "cuePl": "Wydłuż rozkrok, rozciągnij zginacze biodra przed treningiem, mocniej napnij brzuch by utrzymać bardziej pionowy tułów."
+      }
+    ],
+    "breathing": "Inhale at the top and brace the core. Hold the breath through the descent and the hardest part of the ascent. Exhale near the top of the rep. For loaded variants, a controlled Valsalva is appropriate.",
+    "breathingPl": "Wdech na górze i napięcie brzucha. Wstrzymaj oddech podczas schodzenia i przez najtrudniejszą część wstawania. Wydech blisko górnej części powtórzenia. W wariantach obciążonych odpowiedni jest kontrolowany Valsalva."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Quad-dominant pattern can aggravate anterior knee pain. Reduce ROM (stop before parallel), shorten stance slightly, or switch to reverse lunge until pain settles.",
+      "modificationPl": "Wzorzec dominujący czworogłowymi może drażnić ból przedniej części kolana. Zmniejsz zakres ruchu (zatrzymaj się przed parallelem), nieco skróć rozkrok lub przejdź na wykrok w tył do ustąpienia bólu.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "acute_knee_injury",
+      "severity": "avoid",
+      "modification": "Avoid unilateral knee loading in acute phase. Bilateral lower body or non-knee-dominant work until cleared by a physiotherapist.",
+      "modificationPl": "Unikaj jednostronnego obciążania kolana w fazie ostrej. Obustronne ćwiczenia dolnej części ciała lub niezwiązane z kolanem do zgody fizjoterapeuty.",
+      "alternative": "split-squats"
+    },
+    {
+      "condition": "balance_disorders_vestibular",
+      "severity": "modify",
+      "modification": "Unilateral stance on a raised rear foot is balance-demanding. Hold a TRX strap, doorframe, or pole with one hand for fingertip support. Lower the box height.",
+      "modificationPl": "Pozycja jednostronna z tylną nogą uniesioną wymaga równowagi. Trzymaj się jedną ręką taśmy TRX, framugi drzwi lub drążka dla podparcia palcem. Obniż wysokość skrzyni.",
+      "alternative": "split-squats"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy, bodyweight or light DBs) | 4-5x5-8 per leg (strength, loaded) | 2-3x15-20 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "one-leg-squat.gif",
+    "frames_extracted": [
+      "frames/one-leg-squat/frame_0_start.png",
+      "frames/one-leg-squat/frame_1_early.png",
+      "frames/one-leg-squat/frame_2_mid.png",
+      "frames/one-leg-squat/frame_3_late.png",
+      "frames/one-leg-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/one-leg-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/1/2/3/4 z GIFa jahel (glutes/one-leg-squat.gif). GIF NIE pokazuje klasycznego pistola (noga wyprostowana w powietrzu), tylko Bułgarski split squat / rear-foot-elevated split squat: tylna stopa spoczywa na białej skrzyni, przednia noga wykonuje przysiad, tułów lekko pochylony w przód, ręce na biodrach (postać widziana z boku). Klatka 0/4: pozycja stojąca z tylną nogą na boxie, podświetlone czworogłowe przedniej nogi i pośladek. Klatka 2 (mid): pełna pozycja dolna — przednie udo równolegle do podłogi, przednie kolano około 90°, tylne kolano blisko ziemi, podświetlone czworogłowe, pośladki, przywodziciele. Mimo użytkowej nazwy 'one-leg-squat / przysiad jednonóż (pistol style)' z zadania, anatomicznie ruch w GIFie to Bulgarian split squat — opisuję taki jakim jest w GIFie, dodając aliasy 'pistol' nie używam (oddzielny slug single-leg-squat-pistol.json istnieje). Klasyfikacja: squat/push/compound/unilateral/sagittal/closed-chain. Primary quads+glutes P9, hamstrings+adductors S6, gluteus_medius S7 (ważny dla anti-valgus w jednostronnym ruchu). Difficulty 6 (intermediate) — znacznie łatwiejsze niż pełen pistol (9), bo skrzynia zdejmuje wymóg mobilności i równowagi. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["unilateral", "lower_body", "compound", "bulgarian_split_squat", "rear_foot_elevated", "bodyweight", "intermediate", "asymmetry_corrector", "stabilizer_heavy", "knee_dominant", "glute_builder"]
+}

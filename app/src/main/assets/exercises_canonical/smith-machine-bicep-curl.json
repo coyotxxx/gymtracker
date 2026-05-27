@@ -1,0 +1,201 @@
+{
+  "id": "smith-machine-bicep-curl",
+  "name": "Smith Machine Bicep Curl",
+  "namePl": "Uginanie ramion na Smith machine",
+  "aliases": ["smith machine curl", "smith bar curl", "smith machine standing curl"],
+  "aliasesPl": ["uginanie ramion na maszynie Smitha", "curl na Smith machine", "uginanie bicepsów na suwnicy Smitha"],
+
+  "description": "Standing bicep curl performed on a Smith machine where the bar is guided on vertical rails. The fixed bar path eliminates horizontal drift and forces a perfectly vertical curl, which reduces the ability to cheat using hips or torso swing. Useful for strict elbow-flexor isolation, drop-sets, and lifters who want a barbell-like stimulus without needing a spotter or balancing the bar.",
+  "descriptionPl": "Uginanie ramion stojąc wykonywane na maszynie Smitha, gdzie gryf porusza się po prowadnicach pionowych. Stały tor ruchu eliminuje boczne odchylenia i wymusza idealnie pionową ścieżkę gryfu, co utrudnia oszukiwanie biodrami i tułowiem. Przydatne do ścisłej izolacji zginaczy łokcia, drop-setów oraz dla osób które chcą bodźca podobnego do sztangi bez konieczności balansowania ciężarem i bez asekuracji.",
+
+  "instructions": [
+    "Set the Smith machine bar at thigh height. Load the desired weight and lock collars in place.",
+    "Stand directly under the bar with feet hip-width apart. Grip the bar with a supinated (palms up) grip slightly wider than shoulder-width.",
+    "Unrack the bar by rotating your wrists to release the hooks. Step back slightly so the bar hangs cleanly in front of your thighs without contacting the supports.",
+    "Pin your elbows to your sides, chest up, shoulders back and down. Brace your core.",
+    "Curl the bar straight up along the rails by flexing only at the elbows. Exhale on the way up. Keep upper arms vertical and stationary.",
+    "Continue until the bar reaches the front of your shoulders and the biceps are fully contracted. Squeeze hard for a brief pause at the top.",
+    "Lower the bar under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "After the final rep, rotate the wrists to re-engage the hooks and rack the bar safely."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf maszyny Smitha na wysokości ud. Załaduj wybrany ciężar i zabezpiecz zaciski.",
+    "Stań bezpośrednio pod gryfem, stopy na szerokość bioder. Złap gryf nachwytem dolnym (dłonie skierowane w górę) nieco szerzej niż na szerokość barków.",
+    "Zdejmij gryf z haków rotując nadgarstki. Cofnij się lekko aby gryf wisiał swobodnie przed udami i nie ocierał o prowadnice ani podpórki.",
+    "Przyklej łokcie do boków tułowia, klatka w górze, barki ściągnięte w tył i w dół. Napnij brzuch.",
+    "Uginaj ramiona w łokciach prowadząc gryf prosto w górę po prowadnicach — pracują wyłącznie przedramiona. Wydychaj w fazie koncentrycznej. Ramiona ponad łokciem mają pozostać pionowe i nieruchome.",
+    "Kontynuuj ruch aż gryf dotrze na wysokość przednich aktonów barków i biceps będzie w pełnym skurczu. Mocno napnij na chwilę w górnej pozycji.",
+    "Opuszczaj gryf w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciach. Wdech podczas opuszczania.",
+    "Po ostatnim powtórzeniu zarotuj nadgarstki aby zazębić haki i bezpiecznie odłóż gryf."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis", "brachioradialis"],
+    "stabilizers": ["forearm_flexors", "anterior_deltoid", "core", "upper_trapezius"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "S5",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T1",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["weight_plates", "collars", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["barbell-curl", "ez-bar-curl", "preacher-curl", "spider-curl"],
+    "alternatives": ["barbell-curl", "ez-bar-curl", "cable-curl", "dumbbell-curl", "preacher-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar set at thigh height, collars locked",
+      "Stand directly under the bar, feet hip-width",
+      "Supinated grip slightly wider than shoulders",
+      "Rotate wrists to unrack — confirm bar is free",
+      "Step back just enough to clear the supports — no further"
+    ],
+    "setup_cues_pl": [
+      "Gryf na wysokości ud, zaciski zabezpieczone",
+      "Stań dokładnie pod gryfem, stopy na szerokość bioder",
+      "Chwyt nachwytem dolnym nieco szerzej niż barki",
+      "Zrotuj nadgarstki aby zdjąć z haków — sprawdź czy gryf jest swobodny",
+      "Cofnij się tylko tyle aby gryf nie ocierał o podpórki — nie dalej"
+    ],
+    "execution_cues": [
+      "Let the rails do the steering — only your elbows move",
+      "Stay directly under the bar — do not drift forward or back",
+      "Squeeze the biceps hard at the top",
+      "Lower slowly — the rails make eccentric control easier, use it",
+      "Full lockout at the bottom of each rep — do not rest on the hooks"
+    ],
+    "execution_cues_pl": [
+      "Niech prowadnice prowadzą gryf — ruch tylko w łokciach",
+      "Stój dokładnie pod gryfem — nie przesuwaj się w przód ani w tył",
+      "Mocno spinaj biceps w górnej pozycji",
+      "Opuszczaj wolno — prowadnice ułatwiają kontrolę negatywu, wykorzystaj to",
+      "Pełny wyprost łokci na dole — nie odkładaj gryfu na haki między powtórzeniami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Standing too far forward or backward of the bar path",
+        "faultPl": "Stanie zbyt daleko z przodu lub z tyłu względem toru gryfu",
+        "cause": "Bad setup position — body not aligned with the rails forces the elbows out of optimal mechanics",
+        "causePl": "Złe ustawienie startowe — ciało nieosiowo z prowadnicami zmusza łokcie do nieoptymalnej mechaniki",
+        "cue": "At the top of the rep the bar should naturally land at your collarbones. If it hits your face or stops short of your chest, reposition your feet.",
+        "cuePl": "W górnej pozycji gryf powinien naturalnie trafiać na wysokość obojczyków. Jeśli wjeżdża w twarz lub zatrzymuje się przed klatką — przestaw stopy."
+      },
+      {
+        "fault": "Wrist hyperextension under the locked bar path",
+        "faultPl": "Przeprostowanie nadgarstków na sztywnym torze gryfu",
+        "cause": "Smith machine does not allow the bar to drift naturally, so any wrist misalignment is amplified. Common with heavy loads or fatigued forearms.",
+        "causePl": "Maszyna Smitha nie pozwala gryfowi naturalnie zmieniać toru, więc każde odchylenie nadgarstka jest spotęgowane. Częste przy dużych ciężarach lub zmęczonych przedramionach.",
+        "cue": "Keep wrists straight in line with forearms. Reduce weight if grip cannot hold neutral position.",
+        "cuePl": "Trzymaj nadgarstki proste w linii z przedramieniem. Zmniejsz ciężar jeśli chwyt nie utrzymuje neutralnej pozycji."
+      },
+      {
+        "fault": "Resting on the hooks between reps",
+        "faultPl": "Odkładanie gryfu na haki między powtórzeniami",
+        "cause": "Smith machine allows partial racking at any height — tempting to rest at the bottom which kills tension on the biceps",
+        "causePl": "Maszyna Smitha pozwala częściowo odłożyć gryf na dowolnej wysokości — kusi by odpocząć na dole, co rozluźnia napięcie w bicepsie",
+        "cue": "Rotate wrists forward so hooks cannot catch. Keep continuous tension on the muscle throughout the set.",
+        "cuePl": "Obróć nadgarstki do przodu aby haki nie mogły zaczepić. Utrzymuj ciągłe napięcie w mięśniu przez całą serię."
+      },
+      {
+        "fault": "Pushing the hips forward to help the bar up",
+        "faultPl": "Wypychanie bioder do przodu aby pomóc gryfowi w górę",
+        "cause": "Even though the bar path is fixed, the lifter can still cheat by thrusting hips into the bar — Smith machine reduces but does not eliminate cheating",
+        "causePl": "Pomimo stałego toru gryfu osoba może oszukiwać wypychając biodra w gryf — Smith machine redukuje, ale nie eliminuje oszukiwania",
+        "cue": "Stay vertical, glutes light but feet planted. If you need momentum to finish reps the load is too heavy.",
+        "cuePl": "Pozostań pionowo, pośladki luźno ale stopy mocno na ziemi. Jeśli potrzebujesz rozpędu do dokończenia powtórzeń — ciężar jest za duży."
+      },
+      {
+        "fault": "Partial range of motion (not fully extending at the bottom)",
+        "faultPl": "Niepełny zakres ruchu (brak pełnego wyprostu na dole)",
+        "cause": "Lifter stops short of lockout to keep tension high or because forearms fatigue under stretched position",
+        "causePl": "Osoba zatrzymuje ruch przed wyprostem aby utrzymać napięcie lub z powodu zmęczenia przedramion w pozycji rozciągniętej",
+        "cue": "Lower until elbows are fully extended every rep — the stretched position builds the most muscle.",
+        "cuePl": "Opuszczaj aż łokcie będą w pełni wyprostowane przy każdym powtórzeniu — pozycja rozciągnięta najbardziej buduje mięsień."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Keep a light brace throughout to support the spine and stabilize the rib cage.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby stabilizować kręgosłup i klatkę piersiową."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Fixed bar path on Smith stresses the distal biceps tendon especially at full supination. Reduce volume and load, use 12-15 reps with controlled tempo, avoid heavy eccentrics.",
+      "modificationPl": "Stały tor gryfu na maszynie Smitha mocno obciąża dystalne przyczepy bicepsa szczególnie przy pełnej supinacji. Zmniejsz objętość i ciężar, używaj 12-15 powtórzeń z kontrolowanym tempem, unikaj ciężkich faz negatywnych.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar locked into a fixed vertical path forces full supination with no escape — aggravates ulnar-side wrist pain. Switch to a free-moving bar variation.",
+      "modificationPl": "Prosta sztanga zablokowana w pionowym torze wymusza pełną supinację bez możliwości kompensacji — drażni ból po stronie łokciowej nadgarstka. Przejdź na wariant z swobodnie poruszającym się gryfem.",
+      "alternative": "ez-bar-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "The locked supinated grip irritates the medial epicondyle attachment. Use hammer grip or EZ-bar with neutral angle, reduce intensity until symptom-free.",
+      "modificationPl": "Zablokowany chwyt podchwytem drażni przyczep przyśrodkowego nadkłykcia. Użyj chwytu młotkowego lub sztangi łamanej z neutralnym kątem, zmniejsz intensywność do zakresu bez objawów.",
+      "alternative": "hammer-curl"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing version requires isometric lumbar bracing. Switch to seated curl or preacher curl to remove axial loading on the spine.",
+      "modificationPl": "Wersja stojąca wymaga izometrycznego napięcia lędźwiowego. Przejdź na curl siedząc lub na ławce modlitewnika aby wyeliminować obciążenie osiowe kręgosłupa.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3-4x10-15 (drop-sets / metabolic) | 2-3x12-15 (endurance/pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "smith-machine-bicep-curl.gif",
+    "frames_extracted": [
+      "frames/smith-machine-bicep-curl/frame_0_start.png",
+      "frames/smith-machine-bicep-curl/frame_1_early.png",
+      "frames/smith-machine-bicep-curl/frame_2_mid.png",
+      "frames/smith-machine-bicep-curl/frame_3_late.png",
+      "frames/smith-machine-bicep-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/smith-machine-bicep-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:45:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Frame 0: pełny wyprost ramion, gryf przed udami w obrębie rama maszyny Smitha (widoczne pionowe prowadnice po obu stronach + okrągłe podpórki na talerze po lewej i prawej stronie), chwyt podchwytem na szerokość barków, biceps i przedramiona podświetlone na czerwono. Frame 1-2: faza wznoszenia z gryfem prowadzonym pionowo po prowadnicach, łokcie pozostają przy bokach. Frame 2-3: pełny skurcz, gryf na wysokości przednich aktonów barków, ramię ponad łokciem pionowo. Frame 4: powrót do pełnego wyprostu. Tułów stoi nieruchomo przez cały ruch — modelowe wykonanie. Pionowe prowadnice po obu stronach jednoznacznie identyfikują maszynę Smitha. Specyfika ćwiczenia (fixed bar path, brak balansowania, brak cheatingu z bioder, eliminacja drift) uwzględniona w opisie i common_faults. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "smith_machine", "machine", "upper_body", "fixed_path"]
+}

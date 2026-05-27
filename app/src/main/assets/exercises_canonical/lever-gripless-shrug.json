@@ -1,0 +1,199 @@
+{
+  "id": "lever-gripless-shrug",
+  "name": "Lever Gripless Shrug",
+  "namePl": "Shrug w maszynie bez chwytu (gripless)",
+  "aliases": ["machine gripless shrug", "shoulder pad shrug machine", "no-grip shrug machine", "gripless trap machine"],
+  "aliasesPl": ["shrug na maszynie z padami barkowymi", "wzruszanie ramion w maszynie bez chwytu", "trap machine shrug gripless", "shrug maszynowy z padami na barkach"],
+
+  "description": "Standing shrug performed in a dedicated lever machine where the resistance pads rest directly on top of the shoulders instead of being held in the hands. By eliminating the grip-strength bottleneck inherent to barbell, dumbbell or cable shrugs, the gripless design lets the upper trapezius work as the true limiting factor — enabling much heavier loading and more productive volume for trap hypertrophy. The trainee usually grasps overhead handles only for postural stability, not for load transfer.",
+  "descriptionPl": "Wzruszanie ramion (shrug) wykonywane stojąc w specjalnej maszynie dźwigniowej, w której pady oporowe spoczywają bezpośrednio na barkach, zamiast być trzymane w dłoniach. Eliminacja ograniczenia siłą chwytu — typowego dla shrugów ze sztangą, hantlami czy z wyciągu — sprawia, że prawdziwym czynnikiem limitującym staje się sam czworoboczny górny, co pozwala na znacznie większe obciążenia i produktywną objętość treningową dla rozbudowy kapturów. Ćwiczący trzyma uchwyty nad głową wyłącznie dla stabilizacji postawy, nie dla przenoszenia obciążenia.",
+
+  "instructions": [
+    "Set the machine pad height so that, when standing tall, the pads sit just above your shoulders — you should be able to slide into them without scrunching your neck.",
+    "Step under the pads with feet hip- to shoulder-width apart and grip the overhead handles lightly for balance only — the load travels through the pads, not your hands.",
+    "Stand tall: chest up, ribs stacked over pelvis, slight knee bend, core braced. Let the pads pull your shoulders down into a full stretched starting position.",
+    "Shrug straight up by elevating both scapulae toward your ears — pure vertical motion of the shoulder girdle. Exhale on the way up.",
+    "Hold the top position for a 1-second squeeze, feeling the upper trapezius fully contracted.",
+    "Lower under control over 2-3 seconds, allowing the shoulders to drop fully and the traps to lengthen. Inhale on the descent.",
+    "Avoid bouncing, rolling the shoulders, or generating motion from the hips or knees. Each rep should be a clean elevation-depression of the shoulder girdle only."
+  ],
+  "instructionsPl": [
+    "Ustaw wysokość padów maszyny tak, by stojąc prosto pady spoczywały tuż nad twoimi barkami — masz wsunąć się pod nie bez kurczenia szyi.",
+    "Wejdź pod pady, stopy na szerokość bioder lub barków, chwyć uchwyty nad głową lekko — tylko dla równowagi, obciążenie idzie przez pady, a nie przez dłonie.",
+    "Stań prosto: klatka w górze, żebra nad miednicą, kolana lekko ugięte, brzuch napięty. Pozwól padom pociągnąć twoje barki w dół do pełnej rozciągniętej pozycji startowej.",
+    "Wzrusz ramionami prosto w górę, podnosząc obie łopatki w stronę uszu — czysty ruch pionowy obręczy barkowej. Wydech w fazie unoszenia.",
+    "Zatrzymaj się w górnej pozycji na 1 sekundę i mocno spinaj — czuj pełny skurcz czworobocznego górnego.",
+    "Opuszczaj kontrolowanie przez 2-3 sekundy, pozwalając barkom opaść w pełni i kapturom rozciągnąć się. Wdech w fazie opuszczania.",
+    "Unikaj odbijania, krążenia ramion oraz wspomagania ruchem bioder czy kolan. Każde powtórzenie to czyste uniesienie i opuszczenie obręczy barkowej."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_elevation",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["upper_trapezius"],
+    "secondary": ["levator_scapulae"],
+    "stabilizers": ["middle_trapezius", "rhomboids", "core", "erector_spinae", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "upper_trapezius": "P10",
+    "levator_scapulae": "S7",
+    "middle_trapezius": "T4",
+    "rhomboids": "T3",
+    "core": "T3",
+    "erector_spinae": "T2",
+    "deltoids": "T2"
+  },
+
+  "equipment": {
+    "required": ["lever_shrug_machine"],
+    "optional": ["lifting_belt", "neck_pad", "weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-shrug"],
+    "progression_to": ["barbell-shrug", "deadlift-shrug", "trap-bar-shrug"],
+    "alternatives": ["barbell-shrug", "dumbbell-shrug", "trap-bar-shrug", "cable-shrug", "machine-shrug"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pads just above your shoulders — no neck crunch",
+      "Feet hip- to shoulder-width, knees soft",
+      "Handles for balance only, load through the pads",
+      "Ribs stacked over pelvis, core braced",
+      "Let the pads pull shoulders down into a full stretch"
+    ],
+    "setup_cues_pl": [
+      "Pady tuż nad barkami — żadnego kurczenia szyi",
+      "Stopy na szerokość bioder lub barków, kolana lekko ugięte",
+      "Uchwyty tylko dla równowagi, obciążenie przez pady",
+      "Żebra nad miednicą, brzuch napięty",
+      "Pozwól padom pociągnąć barki w dół do pełnego rozciągnięcia"
+    ],
+    "execution_cues": [
+      "Drive shoulders straight up to your ears",
+      "Pure vertical motion — no shoulder rolling",
+      "1-second squeeze at the top",
+      "Lower for 2-3 seconds to full stretch",
+      "Hips and knees stay still — only the shoulder girdle moves"
+    ],
+    "execution_cues_pl": [
+      "Pchaj barki prosto w górę do uszu",
+      "Czysty ruch pionowy — żadnego krążenia barkami",
+      "1 sekunda spięcia w górnej pozycji",
+      "Opuszczaj 2-3 sekundy do pełnego rozciągnięcia",
+      "Biodra i kolana nieruchome — pracuje tylko obręcz barkowa"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rolling the shoulders forward or backward",
+        "faultPl": "Krążenie barkami w przód lub w tył",
+        "cause": "Old-school myth that 'circular shrugs hit traps better' — actually shears the AC joint without adding trap stimulus",
+        "causePl": "Stary mit, że 'shrug po okręgu lepiej angażuje kaptury' — w rzeczywistości naciąga staw barkowo-obojczykowy bez dodatkowej stymulacji trapezu",
+        "cue": "Move shoulders straight up and straight down only — like an elevator, not a wheel.",
+        "cuePl": "Ruch barków wyłącznie prosto w górę i w dół — jak winda, nie jak koło."
+      },
+      {
+        "fault": "Using legs / hips to bounce the load up",
+        "faultPl": "Pomaganie nogami i biodrami (odbijanie ciężaru)",
+        "cause": "Load too heavy, or the gripless setup invites ego loading because the grip is no longer the limit",
+        "causePl": "Zbyt duży ciężar — gripless kusi ego, bo chwyt nie jest już ograniczeniem",
+        "cue": "Lock knees and hips. If you have to bounce, drop the weight 10-20%.",
+        "cuePl": "Zablokuj kolana i biodra. Jeśli musisz odbijać, zmniejsz ciężar o 10-20%."
+      },
+      {
+        "fault": "Partial range — never reaching full bottom stretch",
+        "faultPl": "Niepełny zakres — brak pełnego rozciągnięcia w dolnej pozycji",
+        "cause": "Ego lifting, fear of the stretched position, or pads set too low",
+        "causePl": "Ego, strach przed rozciągniętą pozycją, lub pady ustawione za nisko",
+        "cue": "Let shoulders fall fully on every rep — feel a stretch in the upper traps before pulling.",
+        "cuePl": "Pozwól barkom opaść w pełni w każdym powtórzeniu — poczuj rozciągnięcie kapturów zanim zaczniesz ciągnąć."
+      },
+      {
+        "fault": "Tilting head forward (chin poke) to chase shoulder height",
+        "faultPl": "Wysuwanie głowy w przód (chin poke) w pogoni za wysokością ruchu",
+        "cause": "Trying to reduce distance between shoulder and ear cervically instead of lifting the scapula",
+        "causePl": "Próba skrócenia dystansu bark-ucho przez szyję zamiast uniesienia łopatki",
+        "cue": "Pack the chin, keep ears stacked over shoulders. Move the shoulder TO the ear, not the ear DOWN to the shoulder.",
+        "cuePl": "Podciągnij brodę, uszy nad barkami. Ruszaj barkiem DO ucha, nie uchem DO barku."
+      },
+      {
+        "fault": "Pulling on the overhead handles to assist the lift",
+        "faultPl": "Pomaganie sobie pociąganiem za uchwyty nad głową",
+        "cause": "Misunderstanding the gripless design — assuming handles are part of the lift like a barbell",
+        "causePl": "Niezrozumienie idei gripless — traktowanie uchwytów jak gryfu sztangi",
+        "cue": "Open your hands and only rest fingertips on handles. The pads must do 100% of the load transfer.",
+        "cuePl": "Rozluźnij dłonie i opieraj na uchwytach tylko opuszki. Pady mają przenosić 100% obciążenia."
+      }
+    ],
+    "breathing": "Inhale before initiating the shrug. Exhale forcefully as you elevate the shoulders. Inhale on the controlled descent. Keep a light brace throughout to protect the cervical and lumbar spine.",
+    "breathingPl": "Wdech przed rozpoczęciem ruchu. Mocny wydech w fazie unoszenia barków. Wdech w kontrolowanej fazie opuszczania. Utrzymuj lekkie napięcie brzucha przez cały ruch aby chronić odcinek szyjny i lędźwiowy kręgosłupa."
+  },
+
+  "contraindications": [
+    {
+      "condition": "cervical_radiculopathy_or_disc_pathology",
+      "severity": "avoid",
+      "modification": "Direct axial loading on the shoulder girdle transmits through the cervical spine. Avoid until cleared by a physician/physio. Substitute with prone Y-T-W raises or face pulls for trap development.",
+      "modificationPl": "Bezpośrednie obciążenie osiowe obręczy barkowej przenosi się przez odcinek szyjny. Unikaj do czasu zgody lekarza/fizjoterapeuty. Zastąp wznosami Y-T-W w leżeniu lub face pulls dla pracy nad kapturami.",
+      "alternative": "face-pull"
+    },
+    {
+      "condition": "ac_joint_pain_or_separation",
+      "severity": "modify",
+      "modification": "Use lighter loads and shorter range — stop before the bottom stretch which compresses the AC joint. Pad position must be slightly lateral to bony AC tip.",
+      "modificationPl": "Używaj lżejszych ciężarów i krótszego zakresu — zatrzymaj się przed pełnym opadnięciem barków, które obciąża staw barkowo-obojczykowy. Pad ustaw nieco bocznie od kostnego szczytu obojczyka.",
+      "alternative": "cable-shrug"
+    },
+    {
+      "condition": "thoracic_outlet_syndrome",
+      "severity": "modify",
+      "modification": "Heavy shrugs hypertrophy and tighten the upper trap / scalene region, potentially worsening neurovascular compression. Use light loads, full reset between reps, prioritize lower trap work instead.",
+      "modificationPl": "Ciężkie shrugi przerastają i napinają obszar kapturów / mięśni pochyłych, co może nasilać kompresję pęczka nerwowo-naczyniowego. Używaj lekkich ciężarów, pełnego resetu między powtórzeniami, priorytetuj pracę dolnym trapezem.",
+      "alternative": "prone-y-raise"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing axial loading requires lumbar bracing. Use a belt, reduce weight, or substitute with seated cable shrug to remove spinal compression.",
+      "modificationPl": "Stojące obciążenie osiowe wymaga napięcia lędźwiowego. Załóż pas, zmniejsz ciężar, lub zastąp shrugiem na wyciągu w siadzie aby wyeliminować kompresję kręgosłupa.",
+      "alternative": "cable-shrug"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 4-5x6-8 (strength) | 2-3x15-20 (pump/endurance)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-gripless-shrug.gif",
+    "frames_extracted": [
+      "frames/lever-gripless-shrug/frame_0_start.png",
+      "frames/lever-gripless-shrug/frame_1_early.png",
+      "frames/lever-gripless-shrug/frame_2_mid.png",
+      "frames/lever-gripless-shrug/frame_3_late.png",
+      "frames/lever-gripless-shrug/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/lever-gripless-shrug"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: sylwetka stoi wyprostowana, dłonie chwytają uchwyty nad głową, pady spoczywają na barkach, kaptury w pozycji rozciągniętej (barki opadnięte), kapturów widać podświetlenie na czerwono. Frame 2: pełen skurcz — barki uniesione do uszu, pady wyraźnie wyżej niż w pozycji startowej, obciążenie (stos płyt z lewej) widocznie podniesione, czworoboczny górny mocno zaznaczony. Frame 4: powrót do pełnego rozciągnięcia, sylwetka identyczna jak frame 0. Ruch wyłącznie pionowy obręczą barkową, tułów, biodra i nogi nieruchome — modelowe wykonanie. Maszyna ma charakterystyczne pady na barkach + uchwyty nad głową tylko dla stabilizacji, co jednoznacznie identyfikuje wariant 'gripless'. Mechanic=isolation (jedna oś, jeden staw — scapulothoracic). Plane=frontal (uniesienie/depresja łopatki). Force=pull. Bilateral. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "back", "traps", "shoulders", "isolation", "machine", "gripless", "upper_body", "scapular"]
+}

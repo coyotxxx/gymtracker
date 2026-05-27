@@ -1,0 +1,202 @@
+{
+  "id": "barbell-rollerout",
+  "name": "Barbell Rollout",
+  "namePl": "Rollout ze sztangą (barbell ab rollout)",
+  "aliases": ["barbell ab rollout", "barbell roll-out", "kneeling barbell rollout", "barbell wheel rollout"],
+  "aliasesPl": ["barbell rollout", "ab rollout ze sztangą", "wykrok barbell", "klęczący rollout ze sztangą", "rolowanie sztangi", "rollout na sztandze"],
+
+  "description": "Anti-extension core exercise performed kneeling in front of a loaded barbell. The lifter grips the bar shoulder-width and slowly rolls the bar forward — the plates act as wheels — until the torso is nearly parallel to the floor with arms fully extended overhead. The rectus abdominis works isometrically to prevent the lumbar spine from collapsing into hyperextension. The lifter then pulls the bar back toward the knees using the abs and lats. A demanding compound core movement that builds true anti-extension strength and bulletproofs the lower back.",
+  "descriptionPl": "Ćwiczenie anty-ekstensji brzucha wykonywane w klęku przed obciążoną sztangą. Ćwiczący chwyta gryf na szerokość barków i powoli toczy sztangę w przód — talerze pełnią rolę kół — aż tułów jest niemal równoległy do podłogi, a ramiona w pełni wyciągnięte nad głową. Mięsień prosty brzucha pracuje izometrycznie, by zapobiec zapadnięciu odcinka lędźwiowego w przeprost. Następnie ćwiczący przyciąga sztangę do kolan, używając brzucha i mięśni najszerszych grzbietu. Wymagające ćwiczenie compound budujące prawdziwą siłę anty-ekstensji i wzmacniające dolny odcinek pleców.",
+
+  "instructions": [
+    "Load a barbell with two equally sized plates (45 cm / 17.5 inch diameter works best — Olympic plates). Kneel on a padded mat behind the bar with knees hip-width apart.",
+    "Grip the bar with a pronated (overhand) grip, hands shoulder-width apart. Arms straight, shoulders stacked directly above the bar. Brace the abs and pull the ribs down toward the pelvis (posterior pelvic tilt).",
+    "Inhale, then slowly roll the bar forward by extending the shoulders and hips simultaneously. The body lowers toward the floor as the bar travels away from the knees. Maintain a flat 'plank' line from knees to head — no sagging hips.",
+    "Continue rolling out as far as you can while keeping the lower back neutral. End range is when the chest is close to the floor and arms are fully overhead. Hold for a half-second.",
+    "Exhale and pull the bar back toward the knees by contracting the abs and pulling with the lats. Keep arms straight throughout — this is not a triceps movement.",
+    "Return to the starting kneeling position with the bar just in front of the knees. Reset the brace and repeat. Stop the set immediately if the lower back starts to arch."
+  ],
+  "instructionsPl": [
+    "Obciąż sztangę dwoma równymi talerzami (najlepiej o średnicy 45 cm / 17,5 cala — talerze olimpijskie). Uklęknij na podłożonej macie za sztangą, kolana na szerokość bioder.",
+    "Chwyć gryf nachwytem (pronacja), dłonie na szerokość barków. Ramiona wyprostowane, barki ustawione bezpośrednio nad sztangą. Napnij brzuch i ściągnij żebra w kierunku miednicy (tylny tilt miednicy).",
+    "Wdech, a następnie powoli rozpocznij toczenie sztangi w przód, jednocześnie prostując ramiona w stawach barkowych i biodrach. Ciało opada w kierunku podłogi, gdy sztanga oddala się od kolan. Utrzymuj prostą linię 'deski' od kolan do głowy — biodra nie mogą opadać.",
+    "Kontynuuj roll-out tak daleko, jak możesz, zachowując neutralny odcinek lędźwiowy. Zakres końcowy to moment, gdy klatka piersiowa jest blisko podłogi, a ramiona w pełni wyciągnięte nad głową. Zatrzymaj się na pół sekundy.",
+    "Wydech i przyciągnij sztangę do kolan, kurcząc brzuch i ciągnąc mięśniami najszerszymi grzbietu. Ramiona pozostają wyprostowane przez cały ruch — to nie jest ćwiczenie na triceps.",
+    "Wróć do pozycji wyjściowej w klęku, sztanga tuż przed kolanami. Zresetuj napięcie i powtórz. Przerwij serię natychmiast, jeśli dolne plecy zaczynają się wyginać w łuk."
+  ],
+
+  "classification": {
+    "movement_pattern": "anti_extension",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "serratus_anterior"],
+    "secondary": ["latissimus_dorsi", "erector_spinae", "obliques"],
+    "stabilizers": ["transverse_abdominis", "deltoids", "triceps", "gluteus_maximus", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P9",
+    "serratus_anterior": "P7",
+    "latissimus_dorsi": "S6",
+    "erector_spinae": "S5",
+    "obliques": "S5",
+    "transverse_abdominis": "T4",
+    "deltoids": "T4",
+    "triceps": "T3",
+    "gluteus_maximus": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["mat", "weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["plank", "ab-wheel-rollout-kneeling", "dead-bug", "hanging-knee-raise"],
+    "progression_to": ["barbell-rollout-from-toes", "ab-wheel-standing-rollout"],
+    "alternatives": ["ab-wheel-rollout-kneeling", "stability-ball-rollout", "trx-fallout", "plank"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Use Olympic plates only — small plates won't roll smoothly",
+      "Kneel on a pad — bar starts just under shoulders",
+      "Grip pronated, shoulder-width, arms locked straight",
+      "Ribs down, posterior pelvic tilt, abs braced 360 degrees",
+      "Eyes on the bar — neck stays neutral"
+    ],
+    "setup_cues_pl": [
+      "Używaj wyłącznie talerzy olimpijskich — małe talerze nie potoczą się płynnie",
+      "Klęcz na macie — sztanga startuje tuż pod barkami",
+      "Chwyt nachwytem, na szerokość barków, ramiona zablokowane prosto",
+      "Żebra w dół, tylny tilt miednicy, brzuch napięty 360 stopni",
+      "Wzrok na sztangę — szyja neutralna"
+    ],
+    "execution_cues": [
+      "Roll out slowly — 3-4 seconds to reach end range",
+      "Imagine a wire pulling your hips up toward the ceiling the whole time",
+      "Squeeze glutes hard — they protect the lower back",
+      "Pull the bar back with the abs, not the arms",
+      "Stop short if the back starts to arch — partial reps now, full ROM later"
+    ],
+    "execution_cues_pl": [
+      "Tocz sztangę powoli — 3-4 sekundy do osiągnięcia zakresu końcowego",
+      "Wyobraź sobie linkę ciągnącą biodra do góry przez cały czas",
+      "Mocno ściśnij pośladki — chronią dolny odcinek pleców",
+      "Przyciągaj sztangę brzuchem, nie ramionami",
+      "Zatrzymaj się wcześniej, jeśli plecy zaczynają się wyginać — teraz częściowe powtórzenia, pełen zakres później"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lower back sags into hyperextension at end range",
+        "faultPl": "Dolne plecy zapadają się w przeprost w fazie końcowej",
+        "cause": "Going too far out — abs lose isometric tension and lumbar spine compensates",
+        "causePl": "Zbyt głęboki roll-out — brzuch traci napięcie izometryczne, a kręgosłup lędźwiowy kompensuje",
+        "cue": "Reduce range by 20-30%. Pause where you can still hold a perfect plank line. Build up over weeks.",
+        "cuePl": "Zmniejsz zakres o 20-30%. Zatrzymaj się tam, gdzie wciąż utrzymujesz idealną linię deski. Buduj zakres przez tygodnie."
+      },
+      {
+        "fault": "Bending the arms / triceps doing the work",
+        "faultPl": "Zginanie ramion / praca tricepsa",
+        "cause": "Treating it like a pullover instead of a core exercise; weak abs offload to elbows",
+        "causePl": "Traktowanie ruchu jak pullovera zamiast ćwiczenia core; słaby brzuch zrzuca pracę na łokcie",
+        "cue": "Lock the elbows out at setup and don't let them break. The bar moves only because your shoulders and hips extend.",
+        "cuePl": "Zablokuj łokcie w pozycji wyjściowej i nie pozwól im się ugiąć. Sztanga porusza się tylko dlatego, że prostujesz barki i biodra."
+      },
+      {
+        "fault": "Hips piking up toward ceiling",
+        "faultPl": "Biodra wypychane w górę",
+        "cause": "Compensation when abs are too weak — turns the movement into a hip flexor stretch",
+        "causePl": "Kompensacja przy zbyt słabym brzuchu — zamienia ruch w rozciąganie zginaczy biodra",
+        "cue": "Drive hips forward as you roll out, like pushing hip bones toward the bar. Glutes ON.",
+        "cuePl": "Wypychaj biodra w przód podczas roll-outu, jakbyś dosuwał kości biodrowe do sztangi. Pośladki napięte."
+      },
+      {
+        "fault": "Asymmetric roll — one plate moves faster than the other",
+        "faultPl": "Asymetryczny ruch — jeden talerz porusza się szybciej niż drugi",
+        "cause": "Uneven loading or one-sided weakness; can be aggravated by uneven floor",
+        "causePl": "Nierównomierne obciążenie lub jednostronna słabość; pogłębione przez nierówną podłogę",
+        "cue": "Check plates are equal weight and same diameter. Film yourself from the front to spot the lag.",
+        "cuePl": "Sprawdź, czy talerze są równe wagą i tej samej średnicy. Nagraj się z przodu, żeby zauważyć opóźnienie."
+      },
+      {
+        "fault": "Head dropping or neck craning up",
+        "faultPl": "Głowa opada lub szyja wygina się w górę",
+        "cause": "Lack of neck-pack cueing; visual fixation on far wall",
+        "causePl": "Brak instrukcji ustawienia szyi; wzrok skupiony na odległej ścianie",
+        "cue": "Tuck the chin slightly — eyes track the bar throughout the roll. Neck stays in line with the spine.",
+        "cuePl": "Lekko podciągnij brodę — wzrok śledzi sztangę przez cały ruch. Szyja w linii z kręgosłupem."
+      }
+    ],
+    "breathing": "Inhale at the kneeling start position and brace 360°. Hold breath through the rollout (eccentric) to maintain intra-abdominal pressure protecting the spine. Exhale forcefully as you pull the bar back toward the knees (concentric).",
+    "breathingPl": "Wdech w pozycji wyjściowej w klęku i napięcie 360°. Wstrzymaj oddech podczas roll-outu (faza ekscentryczna), by utrzymać ciśnienie wewnątrz-brzuszne chroniące kręgosłup. Mocny wydech przy przyciąganiu sztangi do kolan (faza koncentryczna)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lower_back_pain_chronic",
+      "severity": "avoid",
+      "modification": "Loaded anti-extension at end range is very demanding on the lumbar spine. Build base with planks, dead bugs and ab-wheel kneeling rollouts first. Return only when pain-free for 4+ weeks.",
+      "modificationPl": "Anty-ekstensja pod obciążeniem w pełnym zakresie jest bardzo wymagająca dla odcinka lędźwiowego. Najpierw buduj bazę z deską, dead bugiem i klęczącym ab wheel rollout. Wracaj dopiero po 4+ tygodniach bez bólu.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "disc_herniation_lumbar",
+      "severity": "avoid",
+      "modification": "End-range anti-extension with load can stress lumbar discs. Stick to neutral-spine static holds (plank, side plank, dead bug) until cleared.",
+      "modificationPl": "Anty-ekstensja w pełnym zakresie z obciążeniem może obciążać krążki lędźwiowe. Trzymaj się statycznych ćwiczeń w neutralnym kręgosłupie (deska, deska boczna, dead bug) do uzyskania zgody lekarza.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Full-overhead end position can aggravate impingement. Reduce range so arms don't pass 150° flexion, or substitute with TRX fallout at a higher angle.",
+      "modificationPl": "Pełne wyciągnięcie ramion nad głową może nasilać konflikt podbarkowy. Zmniejsz zakres tak, by ramiona nie przekraczały 150° zgięcia, lub zamień na TRX fallout pod większym kątem.",
+      "alternative": "trx-fallout"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "caution",
+      "modification": "Bodyweight + gravity loads the wrists in extension. Use wrist wraps for support, or use an ab wheel with vertical handles to keep wrists neutral.",
+      "modificationPl": "Masa ciała plus grawitacja obciążają nadgarstki w wyproście. Użyj bandaży na nadgarstki lub kółka do brzucha z pionowymi uchwytami, by utrzymać neutralną pozycję nadgarstków.",
+      "alternative": "ab-wheel-rollout-kneeling"
+    }
+  ],
+
+  "typical_sets_reps": "3x5-8 (strength) | 3x8-12 (hypertrophy) | 2-3 sets to technical failure (skill/control)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "barbell-rollerout.gif",
+    "frames_extracted": [
+      "frames/barbell-rollerout/frame_0_start.png",
+      "frames/barbell-rollerout/frame_1_early.png",
+      "frames/barbell-rollerout/frame_2_mid.png",
+      "frames/barbell-rollerout/frame_3_late.png",
+      "frames/barbell-rollerout/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/barbell-rollerout",
+    "yuhonas_id": "Barbell_Rollerout",
+    "glowupp_id": "barbell-rollerout"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 (start): klęk za sztangą, dłonie na gryfie szerokość barków, ramiona prosto, tułów wyprostowany — anatomia podświetla mocno rectus_abdominis i serratus_anterior, dodatkowo latissimus i quadriceps stabilizująco. Klatka 2 (mid): pełen roll-out — ciało wyciągnięte niemal poziomo, ramiona nad głową, sztanga daleko w przód, talerze toczą się jak koła ab wheel. Tułów w linii deski, plecy neutralne, brzuch w maksymalnym napięciu izometrycznym (anti-extension). Klatka 4 (end): powrót do klęku z subtelnym ghost-frame fazy pośredniej. Ruch potwierdzony: kneeling barbell rollout — zastępnik ab wheel używający dwóch równych talerzy olimpijskich jako kół. Klasyfikacja: anti_extension (NIE core_flexion!) — kręgosłup pozostaje neutralny, brzuch pracuje izometrycznie zapobiegając hiperekstensji lędźwi. Compound (2 stawy: barki + biodra ekstensja), bilateral, plane=sagittal. Force=both (ekscentryczne wydłużenie + koncentryczny powrót). Mechanic=compound. Kinetic chain=closed (dłonie na sztandze opartej o podłogę). Primary: rectus_abdominis (anti-extension, P9) + serratus_anterior (P7, mocno zaangażowany przy pełnym wyciągu barków). Secondary: latissimus_dorsi (pull-back), erector_spinae (izometryczna stabilizacja), obliques. Level=advanced (8/10) — wymaga mocnego core (prereq plank, ab-wheel kneeling) i opanowanej techniki, inaczej ryzyko hiperekstensji lędźwi. Nazwa PL: 'Rollout ze sztangą (barbell ab rollout)' zgodnie z poleceniem — termin angielski w polskim środowisku siłowym jest powszechny, dodałem aliasy 'ab rollout ze sztangą', 'klęczący rollout ze sztangą'. Wszystkie pola PL napisane od zera, terminologia anatomiczna polska (mięsień prosty brzucha, najszerszy grzbietu, prostownik grzbietu, zębaty przedni — wszędzie w opisach).",
+
+  "tags": ["barbell", "core", "abs", "anti_extension", "compound", "advanced", "serratus", "lats", "lower_back_friendly_with_caveats"]
+}

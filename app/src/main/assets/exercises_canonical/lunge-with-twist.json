@@ -1,0 +1,210 @@
+{
+  "id": "lunge-with-twist",
+  "name": "Lunge with Twist",
+  "namePl": "Wykrok ze skrętem",
+  "aliases": ["forward lunge with rotation", "lunge with rotation", "rotational lunge", "twisting lunge", "lunge with torso twist"],
+  "aliasesPl": ["wykrok z rotacją", "wykrok ze skrętem tułowia", "wykrok z rotacją tułowia", "wykrok rotacyjny", "wykrok w przód ze skrętem"],
+
+  "description": "Bodyweight unilateral lower-body and rotational core exercise. Athlete steps forward into a lunge while simultaneously rotating the torso toward the side of the front leg, with arms extended forward to amplify the rotational lever. Combines the lower-body demands of a standard forward lunge (quadriceps, glutes) with active recruitment of the obliques and deep core rotators. Used in warm-ups, mobility flows, functional training, and as a low-load conditioning movement that trains the body to produce and resist rotation under a split-stance — a pattern that mirrors many sport and daily-life actions.",
+  "descriptionPl": "Jednostronne ćwiczenie z masą własną łączące pracę dolnej części ciała i rotacyjnego rdzenia. Ćwiczący wykonuje krok w przód do pozycji wykroku jednocześnie rotując tułów w stronę przedniej nogi, z ramionami wyciągniętymi przed siebie aby wzmocnić dźwignię rotacyjną. Łączy obciążenie dolnej części ciała typowe dla zwykłego wykroku w przód (czworogłowe, pośladki) z aktywną pracą mięśni skośnych brzucha i głębokich rotatorów tułowia. Stosowany w rozgrzewce, sekwencjach mobilizacyjnych, treningu funkcjonalnym oraz jako ćwiczenie kondycyjne o niskim obciążeniu, które uczy ciało generowania i kontrolowania rotacji w pozycji wykroku — wzorzec występujący w wielu czynnościach sportowych i codziennych.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, arms relaxed by your sides. Look forward and brace your core lightly.",
+    "Extend both arms straight in front of you at shoulder height — palms together or fingers interlocked. Keep elbows soft, not locked.",
+    "Take a long controlled step forward with one leg (about 1.5 times your normal walking step). Plant the front foot flat.",
+    "Lower your body straight down by bending both knees. Front thigh moves toward parallel with the floor, back knee descends to within 2-3 cm of the ground.",
+    "At the bottom position — both knees roughly at 90° — rotate your torso toward the side of the front leg. Keep arms extended; let the hands travel in an arc across the body.",
+    "Rotate from the upper back and obliques, not from the hips or knees. Hips stay square forward; the rotation is thoracic.",
+    "Pause for a brief moment at the end of the twist, feeling the stretch through the trunk and the hip flexor of the back leg.",
+    "Rotate the torso back to center, then push through the front heel to drive yourself back to a standing position.",
+    "Lower the arms briefly or keep them extended, then step forward with the opposite leg and twist toward the new front-leg side.",
+    "Alternate sides for the prescribed reps. Move with control — this is a quality movement, not a race."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, ramiona luźno wzdłuż ciała. Wzrok prosto, lekkie napięcie brzucha.",
+    "Wyprostuj oba ramiona przed siebie na wysokości barków — dłonie złączone lub palce splecione. Łokcie miękkie, nie blokuj ich.",
+    "Wykonaj długi kontrolowany krok w przód jedną nogą (około 1,5 razy normalnej długości kroku). Postaw przednią stopę płasko na podłodze.",
+    "Opuść ciało prosto w dół zginając oba kolana. Przednie udo schodzi do pozycji równoległej z podłogą, tylne kolano opada na 2-3 cm nad ziemią.",
+    "W dolnej pozycji — oba kolana około 90° — wykonaj skręt tułowia w stronę przedniej nogi. Ramiona wyprostowane; dłonie wędrują łukiem przez ciało.",
+    "Rotuj z górnej części pleców i mięśni skośnych, nie z bioder czy kolan. Biodra pozostają skierowane prosto; skręt jest piersiowy.",
+    "Zatrzymaj się na chwilę w końcowej pozycji skrętu, czując rozciągnięcie tułowia i zginaczy biodra tylnej nogi.",
+    "Wykonaj rotację tułowia z powrotem na środek, następnie wypchnij się przez piętę przedniej nogi do pozycji stojącej.",
+    "Opuść ramiona na chwilę lub trzymaj je wyprostowane, następnie wykonaj krok w przód drugą nogą i skręć w stronę nowej przedniej nogi.",
+    "Zmieniaj nogi naprzemiennie przez zaplanowaną liczbę powtórzeń. Ruch ma być kontrolowany — to ćwiczenie jakościowe, nie wyścig."
+  ],
+
+  "classification": {
+    "movement_pattern": "lunge",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal_transverse",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "obliques"],
+    "secondary": ["hamstrings", "hip_flexors", "rectus_abdominis"],
+    "stabilizers": ["core", "erector_spinae", "gluteus_medius", "adductors", "calves", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P7",
+    "glutes": "P7",
+    "obliques": "P8",
+    "hamstrings": "S5",
+    "hip_flexors": "S5",
+    "rectus_abdominis": "S5",
+    "core": "S6",
+    "erector_spinae": "S5",
+    "gluteus_medius": "S5",
+    "adductors": "S4",
+    "calves": "T3",
+    "deltoids": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["medicine_ball", "light_dumbbell", "weight_plate", "exercise_mat"]
+  },
+
+  "category": "functional",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-lunge", "standing-torso-rotation"],
+    "progression_to": ["walking-lunge-with-twist", "medicine-ball-lunge-with-rotation", "reverse-lunge-with-twist", "overhead-lunge-with-rotation"],
+    "alternatives": ["reverse-lunge-with-twist", "split-stance-cable-rotation", "world-greatest-stretch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, arms extended forward at shoulder height",
+      "Stand tall — pelvis neutral, ribs down, core lightly braced",
+      "Pick a focal point at eye level before the step",
+      "Shoulders relaxed and away from the ears",
+      "Soft elbows — arms long but not locked"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, ramiona wyprostowane przed sobą na wysokości barków",
+      "Stań prosto — miednica neutralna, żebra w dół, lekko napięty brzuch",
+      "Wybierz punkt skupienia wzroku na poziomie oczu przed krokiem",
+      "Barki rozluźnione i z dala od uszu",
+      "Łokcie miękkie — ramiona długie ale nie zablokowane"
+    ],
+    "execution_cues": [
+      "Long step forward — front shin vertical at the bottom",
+      "Drop straight down — back knee toward the floor, not behind you",
+      "Twist toward the front leg side — rotate the ribs, not the hips",
+      "Lead the twist with the chest and arms — let the eyes follow",
+      "Reverse the twist before standing up — return to center first, then push up"
+    ],
+    "execution_cues_pl": [
+      "Długi krok w przód — piszczel przedniej nogi pionowo na dole",
+      "Schodź prosto w dół — tylne kolano w stronę podłogi, nie w tył",
+      "Skręt w stronę przedniej nogi — rotuj żebra, nie biodra",
+      "Prowadź skręt klatką i ramionami — oczy podążają za rękami",
+      "Cofnij skręt przed wstaniem — najpierw wróć na środek, potem wypchnij się w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rotating from the hips instead of the thoracic spine",
+        "faultPl": "Rotacja z bioder zamiast z odcinka piersiowego kręgosłupa",
+        "cause": "Lack of thoracic mobility or weak obliques — the body cheats by swinging the pelvis",
+        "causePl": "Brak mobilności piersiowej lub słabe mięśnie skośne — ciało oszukuje wahając miednicą",
+        "cue": "Lock the hips facing forward — twist only with the ribs and chest. Imagine a belt buckle pointing straight ahead.",
+        "cuePl": "Zablokuj biodra skierowane prosto — skręcaj tylko żebrami i klatką. Wyobraź sobie klamrę paska skierowaną do przodu."
+      },
+      {
+        "fault": "Front knee collapses inward (valgus) during the twist",
+        "faultPl": "Przednie kolano zapada się do środka (koślawość) podczas skrętu",
+        "cause": "Weak glute medius and lack of attention to knee tracking when adding rotation",
+        "causePl": "Słaby pośladkowy średni i brak kontroli ustawienia kolana podczas dodawania rotacji",
+        "cue": "Push the front knee out toward the little toe — keep it stacked over the ankle during the twist",
+        "cuePl": "Wypchnij przednie kolano na zewnątrz w stronę małego palca — utrzymuj je nad kostką podczas skrętu"
+      },
+      {
+        "fault": "Torso leaning forward instead of vertical",
+        "faultPl": "Pochylenie tułowia w przód zamiast pionu",
+        "cause": "Stride too short, weak quads, or rushed tempo — the chest drops to compensate",
+        "causePl": "Za krótki krok, słabe czworogłowe lub zbyt szybki tempo — klatka opada żeby skompensować",
+        "cue": "Step long, chest up. The twist requires a tall spine — you can't rotate well if you're folded forward.",
+        "cuePl": "Wykonaj długi krok, klatka w górze. Skręt wymaga długiego kręgosłupa — nie da się dobrze rotować będąc zgiętym w przód."
+      },
+      {
+        "fault": "Insufficient depth in the lunge",
+        "faultPl": "Niedostateczna głębokość wykroku",
+        "cause": "Focus on the twist distracts from leg work, or hip mobility limits the descent",
+        "causePl": "Skupienie na skręcie odciąga uwagę od pracy nóg lub mobilność bioder ogranicza schodzenie",
+        "cue": "Get to the bottom first, then twist. Back knee within 2-3 cm of the floor before rotation starts.",
+        "cuePl": "Najpierw zejdź na dół, dopiero potem skręcaj. Tylne kolano 2-3 cm nad podłogą zanim zaczniesz rotację."
+      },
+      {
+        "fault": "Loss of balance during the rotation",
+        "faultPl": "Utrata równowagi podczas rotacji",
+        "cause": "Stance too narrow (feet on a tightrope line), or rotating too fast for current stability",
+        "causePl": "Za wąska podstawa (stopy na linii prostej) lub zbyt szybka rotacja w stosunku do obecnej stabilności",
+        "cue": "Set the feet on parallel train tracks, not a balance beam. Slow the twist down — quality over speed.",
+        "cuePl": "Ustaw stopy na równoległych szynach, nie na desce do balansowania. Zwolnij skręt — jakość zamiast szybkości."
+      }
+    ],
+    "breathing": "Inhale before stepping forward. Exhale during the descent and the twist — the exhale helps engage the obliques. Brief pause at the end of the rotation, then inhale as you return to center and stand back up.",
+    "breathingPl": "Wdech przed krokiem w przód. Wydech podczas schodzenia i skrętu — wydech pomaga zaangażować mięśnie skośne. Krótka pauza w końcowej fazie rotacji, następnie wdech podczas powrotu na środek i wstawania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Loaded rotation under a split stance is high-risk for irritated lumbar tissue. Avoid until cleared by a physiotherapist; use isometric anti-rotation work (Pallof press) as a substitute.",
+      "modificationPl": "Rotacja w pozycji wykroku jest wysokiego ryzyka dla podrażnionych tkanek lędźwiowych. Unikaj do zgody fizjoterapeuty; jako zamiennik stosuj izometryczną pracę anty-rotacyjną (Pallof press).",
+      "alternative": "pallof-press"
+    },
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "Rotation through a loaded knee adds shear forces. Reduce ROM to pain-free range or switch to reverse lunge with twist (less shear on the front knee).",
+      "modificationPl": "Rotacja przez obciążone kolano dodaje sił ścinających. Zmniejsz zakres ruchu do bez bólu lub przejdź na wykrok w tył ze skrętem (mniej sił ścinających na przednim kolanie).",
+      "alternative": "reverse-lunge-with-twist"
+    },
+    {
+      "condition": "pregnancy_2nd_3rd_trimester",
+      "severity": "modify",
+      "modification": "Avoid deep rotational movements that compress the abdomen and avoid balance challenges. Use a shallow split squat without rotation or hold a support.",
+      "modificationPl": "Unikaj głębokich ruchów rotacyjnych ściskających brzuch i unikaj wyzwań równoważnych. Stosuj płytki split squat bez rotacji lub trzymaj się podparcia.",
+      "alternative": "bodyweight-split-squat"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "The twist component amplifies the balance challenge. Perform near a wall or rack for fingertip support, or remove the rotation entirely.",
+      "modificationPl": "Element skrętu zwiększa wyzwanie równoważne. Wykonuj blisko ściany lub stojaka do podparcia palcem lub usuń rotację całkowicie.",
+      "alternative": "bodyweight-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x8-12 per leg (general conditioning) | 1-2x5-6 per leg (warm-up / mobility) | 3x10-15 per leg (functional endurance)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "lunge-with-twist.gif",
+    "frames_extracted": [
+      "frames/lunge-with-twist/frame_0_start.png",
+      "frames/lunge-with-twist/frame_1_early.png",
+      "frames/lunge-with-twist/frame_2_mid.png",
+      "frames/lunge-with-twist/frame_3_late.png",
+      "frames/lunge-with-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/lunge-with-twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki (start/mid/end) z GIFa jahel. Klatka 0 (start): postać stoi prosto, twarzą do widza, podświetlone mięśnie skośne brzucha (silnie) + czworogłowe + pośladki + zginacze biodra — paleta mięśni przed ruchem. Klatka 2 (mid): pełen wykrok w przód (prawa noga z przodu, lewa w tył, oba kolana ~90°, tylne prawie dotyka podłogi), tułów wyraźnie zrotowany w stronę przedniej nogi, ramiona wyciągnięte przed siebie z dłońmi złączonymi — obie ręce wyznaczają oś rotacji. Podświetlone silnie: skośne brzucha (zwłaszcza po stronie skrętu) + czworogłowe przedniej nogi + pośladki — pasuje do anatomii ruchu rotacyjnego pod wykrokiem. Klatka 4 (end): powrót do stania, ten sam zestaw mięśni nadal podświetlony (residual highlight). Brak walking pattern (postać wraca do startu na środek). Klasyfikacja: jahel umieszcza pod 'abs' bo dominuje praca skośnych — w master.json muscle_primary='obliques', my dodajemy quadriceps+glutes jako równorzędne primary (P7/P7/P8) bo ruch jest hybrydowy: lower-body strength + core rotation. Plane='sagittal_transverse' (krok w płaszczyźnie strzałkowej, rotacja w poprzecznej). Force='both' bo wykrok ma fazę ekscentryczną (schodzenie) i koncentryczną (powrót w górę). Mechanic='compound' — wiele stawów (biodra, kolana, kostki, kręgosłup piersiowy). Laterality='unilateral' z naprzemienną zmianą stron. Difficulty 4/10 — łatwiejsze niż barbell-lunge (bodyweight) ale dodaje wyzwanie rotacyjne i równoważne ponad zwykły wykrok. Kategoria 'functional' (nie 'strength') — typowe zastosowanie to warm-up, mobility flow i trening funkcjonalny, nie hipertrofia. Wszystkie pola PL napisane od zera, polski standard fitness ('wykrok ze skrętem' to ustalona nazwa).",
+
+  "tags": ["unilateral", "lower_body", "core", "rotation", "lunge", "bodyweight", "compound", "functional", "warm_up", "mobility", "anti_rotation_progression", "obliques_dominant"]
+}

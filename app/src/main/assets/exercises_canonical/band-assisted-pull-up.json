@@ -1,0 +1,195 @@
+{
+  "id": "band-assisted-pull-up",
+  "name": "Band-Assisted Pull-Up",
+  "namePl": "Podciąganie z asystą gumy",
+  "aliases": ["assisted pull-up", "resistance band pull-up", "banded pull-up", "band assisted pullup"],
+  "aliasesPl": ["podciąganie z gumą", "podciąganie asystowane gumą", "podciąganie z asystą", "asystowane podciąganie"],
+
+  "description": "Regression of the classic pull-up using a resistance band looped around the bar and supporting the foot/knee. The band assists most where you are weakest (bottom of the pull, near full hang) by storing energy in the stretched position and releasing it as you rise. Ideal bridge between negative pull-ups and the first strict bodyweight rep — lets you train full ROM with proper technique and accumulate volume.",
+  "descriptionPl": "Regresja klasycznego podciągania z gumą oporową założoną na drążek i podtrzymującą stopę lub kolano. Guma asystuje najmocniej tam gdzie jesteś najsłabszy (na dole, blisko pełnego zwisu) — magazynuje energię w rozciągniętej pozycji i oddaje ją gdy unosisz się w górę. Idealny most między negatywnymi podciąganiami a pierwszym strict powtórzeniem w wadze własnego ciała — pozwala trenować pełny ROM w prawidłowej technice i akumulować objętość.",
+
+  "instructions": [
+    "Loop a resistance band around the pull-up bar with a girth hitch (cow hitch) — feed one end through the other and pull tight against the bar.",
+    "Reach up and grip the bar with palms facing AWAY (pronated/overhand), hands slightly wider than shoulder-width.",
+    "Place one foot or one knee into the bottom loop of the band. Tested foot is more aggressive assist; knee is moderate. Cross the other leg behind for stability.",
+    "Hang at full arm extension. Engage shoulder blades DOWN (depression) — do not let them shrug up.",
+    "Brace your core. Initiate the pull by driving elbows DOWN AND BACK toward your hips.",
+    "Pull until your chin is clearly ABOVE the bar. Keep chest up, slight backward lean.",
+    "Lower with control, fully extending arms at the bottom (dead-hang) — band still loaded.",
+    "Each rep starts from full hang to full chin-over-bar. As you get stronger, switch to a THINNER band."
+  ],
+  "instructionsPl": [
+    "Załóż gumę oporową na drążek przez 'girth hitch' (krawat krowy) — przewlecz jeden koniec przez drugi i ściągnij mocno do drążka.",
+    "Sięgnij w górę i złap drążek dłońmi skierowanymi OD siebie (chwyt nachwytem/pronated), ręce nieco szerzej niż na szerokość barków.",
+    "Włóż jedną stopę lub jedno kolano w dolną pętlę gumy. Stopa daje mocniejszą asystę; kolano średnią. Skrzyżuj drugą nogę z tyłu dla stabilności.",
+    "Zwiśnij w pełnym wyproście ramion. Aktywuj łopatki ściągając je W DÓŁ (depresja) — nie pozwól im się unieść.",
+    "Napnij brzuch. Rozpocznij ciąg napierając łokciami W DÓŁ I DO TYŁU w kierunku bioder.",
+    "Podciągaj aż broda będzie WYRAŹNIE nad drążkiem. Klatka w górze, lekkie odchylenie do tyłu.",
+    "Opuszczaj kontrolowanym ruchem, pełen wyprost ramion na dole (dead-hang) — guma nadal naciągnięta.",
+    "Każde powtórzenie od pełnego zwisu do pełnej brody nad drążkiem. Gdy rośnie siła — przejdź na CIEŃSZĄ gumę."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "rhomboids", "teres_major", "brachialis", "brachioradialis"],
+    "stabilizers": ["core", "rotator_cuff", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "biceps_brachii": "P6",
+    "trapezius_middle_lower": "S6",
+    "rhomboids": "S6",
+    "teres_major": "S7",
+    "brachialis": "S5",
+    "forearms": "S5",
+    "core": "S4"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar", "resistance_band"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["dead-hang", "inverted-row", "lat-pulldown", "scapular-pull-up"],
+    "progression_to": ["negative-pull-up", "pull-up", "chin-up", "neutral-grip-pull-up"],
+    "alternatives": ["lat-pulldown", "assisted-pull-up-machine", "negative-pull-up", "inverted-row"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Girth hitch the band — pull tight against bar",
+      "Pronated grip, hands slightly wider than shoulders",
+      "Foot in loop for more assist, knee for less",
+      "Full hang, elbows extended, band loaded",
+      "Shoulder blades DOWN, core braced"
+    ],
+    "setup_cues_pl": [
+      "Załóż gumę girth hitch — ściągnij mocno do drążka",
+      "Chwyt nachwytem, ręce nieco szerzej niż barki",
+      "Stopa w pętli dla większej asysty, kolano dla mniejszej",
+      "Pełny zwis, łokcie wyprostowane, guma naciągnięta",
+      "Łopatki W DÓŁ, brzuch napięty"
+    ],
+    "execution_cues": [
+      "Drive elbows DOWN — let band help, don't rely on it",
+      "Chin OVER the bar — full ROM",
+      "Lower SLOWLY (3-4 sec) to build strength",
+      "Reach full hang at bottom — band still stretched",
+      "When 8+ reps easy — switch to thinner band"
+    ],
+    "execution_cues_pl": [
+      "Napieraj łokciami W DÓŁ — pozwól gumie pomóc, nie polegaj wyłącznie",
+      "Broda NAD drążkiem — pełny ROM",
+      "Opuszczaj POWOLI (3-4 sek) by budować siłę",
+      "Osiągnij pełny zwis na dole — guma nadal rozciągnięta",
+      "Gdy 8+ powtórzeń łatwo — przejdź na cieńszą gumę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using too thick a band (band does the work)",
+        "faultPl": "Za gruba guma (guma robi pracę za ciebie)",
+        "cause": "Choosing band that allows 15+ easy reps — no strength stimulus",
+        "causePl": "Wybór gumy która pozwala na 15+ łatwych powtórzeń — zerowy bodziec siłowy",
+        "cue": "Pick band where you fail at 6-10 reps with strict form. If 12+ feels easy, go thinner.",
+        "cuePl": "Wybierz gumę przy której padasz na 6-10 powtórzeniach w strict formie. Jeśli 12+ idzie łatwo — bierz cieńszą."
+      },
+      {
+        "fault": "Bouncing off the bottom (using band rebound)",
+        "faultPl": "Odbijanie się od dołu (wykorzystanie sprężynowania gumy)",
+        "cause": "Letting band 'shoot' you up instead of pulling — bypasses lat work",
+        "causePl": "Pozwalanie gumie 'wystrzelić' cię w górę zamiast ciągnąć — pomija pracę najszerszych",
+        "cue": "Pause 1 sec at dead-hang. Initiate from a static position, not from rebound.",
+        "cuePl": "Pauza 1 sek w dead-hang. Startuj ze statycznej pozycji, nie z odbicia."
+      },
+      {
+        "fault": "Foot slipping out of band mid-rep",
+        "faultPl": "Stopa wyślizguje się z gumy w trakcie powtórzenia",
+        "cause": "Band poorly placed, ankle not flexed, or loop too loose",
+        "causePl": "Źle umieszczona guma, kostka bez napięcia, lub zbyt luźna pętla",
+        "cue": "Place band under midfoot (not toes), flex ankle to lock it. Or use knee instead.",
+        "cuePl": "Załóż gumę pod śródstopie (nie pod palce), napnij kostkę by ją zablokować. Lub użyj kolana."
+      },
+      {
+        "fault": "Half reps (chin not over bar) despite band assist",
+        "faultPl": "Połowiczne powtórzenia (broda nie nad drążkiem) mimo asysty gumy",
+        "cause": "Band assists bottom but top is still hard — giving up early",
+        "causePl": "Guma pomaga na dole ale góra wciąż trudna — poddawanie się za wcześnie",
+        "cue": "Use thicker band if needed, but ALWAYS chin over bar. Stop set when ROM breaks.",
+        "cuePl": "Użyj grubszej gumy jeśli trzeba, ale ZAWSZE broda nad drążkiem. Przerwij serię gdy ROM się załamuje."
+      },
+      {
+        "fault": "Shrugging shoulders, no scapular depression",
+        "faultPl": "Unoszenie barków, brak depresji łopatek",
+        "cause": "Pulling with arms only, lats not engaged before pull starts",
+        "causePl": "Ciąg ramionami, najszersze nieaktywowane przed startem ciągu",
+        "cue": "Before bending elbows: pull shoulders DOWN (scap pull-up). Lats first, biceps second.",
+        "cuePl": "Przed zgięciem łokci: ściągnij barki W DÓŁ (scap pull-up). Najpierw najszersze, potem bicepsy."
+      }
+    ],
+    "breathing": "Inhale at the bottom (dead-hang). Exhale on the pull up. Inhale on the way down. The band reduces effort so breathing pattern is easier to maintain than strict pull-ups.",
+    "breathingPl": "Wdech na dole (dead-hang). Wydech podczas ciągu w górę. Wdech podczas schodzenia. Guma redukuje wysiłek więc rytm oddechu łatwiej utrzymać niż w strict podciąganiu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use neutral grip if available (palms facing each other). Reduce ROM at top if pinch.",
+      "modificationPl": "Użyj chwytu neutralnego jeśli możliwe (dłonie do siebie). Zmniejsz ROM na górze jeśli czujesz uciskanie.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "modify",
+      "modification": "Switch to supinated grip (chin-up assisted) for different elbow loading. Reduce volume.",
+      "modificationPl": "Przejdź na chwyt podchwytem (chin-up asystowany) dla innej dystrybucji obciążenia łokcia. Zmniejsz objętość.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps or thicker grip. If pain persists, switch to lat pulldown.",
+      "modificationPl": "Użyj wraps na nadgarstki lub grubszego chwytu. Jeśli ból trwa — przejdź na lat pulldown.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x6-10 (strict, controlled) | 4x8 (volume/hypertrophy) | 5x5 (strength bridge to bodyweight)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "band-assisted-pull-up.gif",
+    "frames_extracted": [
+      "frames/band-assisted-pull-up/frame_0_start.png",
+      "frames/band-assisted-pull-up/frame_1_early.png",
+      "frames/band-assisted-pull-up/frame_2_mid.png",
+      "frames/band-assisted-pull-up/frame_3_late.png",
+      "frames/band-assisted-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/band-assisted-pull-up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Frame 0: dead-hang start z gumą naciągniętą, ręce wyprostowane, chwyt nachwytem (overhand grip — pronated), guma zaczepiona o drążek i podtrzymująca kolano/stopę. Frame 2: top position, broda nad drążkiem, łokcie zgięte i blisko tułowia. Najszersze + środkowy trapez + bicepsy + przedramiona podświetlone (taka sama mapa jak pull-up, ale niższa intensywność bo asysta gumy). Klasyczny pull-up nachwytem z asystą — beginner regression. Difficulty 5/10 vs 8/10 dla strict pull-up. PL nazwa 'Podciąganie z asystą gumy' — standard PL fitness.",
+
+  "tags": ["calisthenics", "bodyweight", "assisted", "beginner_friendly", "upper_body", "vertical_pull", "regression", "back", "biceps", "band"]
+}

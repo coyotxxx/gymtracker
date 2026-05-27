@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-one-arm-standing-hammer-curl",
+  "name": "One-Arm Standing Dumbbell Hammer Curl",
+  "namePl": "Hammer curl z hantlą jednorącz w staniu",
+  "aliases": ["single-arm hammer curl", "one-arm neutral grip dumbbell curl", "standing hammer curl one arm"],
+  "aliasesPl": ["uginanie ramion młotkowe jednorącz", "hammer curl jedną ręką stojąc", "uginanie hantlą chwytem neutralnym jednorącz"],
+
+  "description": "Unilateral isolation exercise for the elbow flexors performed standing, with a dumbbell held in a neutral (thumb-up) grip. The neutral grip emphasizes brachialis and brachioradialis more than supinated curls, while still loading the long head of the biceps. Training one arm at a time removes side-to-side strength asymmetries, improves mind-muscle connection, and forces the core to resist trunk rotation, making it an excellent accessory for arm size and elbow stability.",
+  "descriptionPl": "Jednostronne ćwiczenie izolowane na zginacze stawu łokciowego wykonywane stojąc, z hantlą trzymaną chwytem neutralnym (kciuk w górę). Chwyt neutralny mocniej angażuje mięsień ramienny i ramienno-promieniowy niż wariant z podchwytem, jednocześnie obciążając długą głowę bicepsa. Trening jedną ręką na raz wyrównuje asymetrie siłowe między stronami, poprawia połączenie umysł–mięsień i zmusza mięśnie głębokie do walki z rotacją tułowia. Świetne ćwiczenie pomocnicze na masę ramion i stabilność łokcia.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart. Hold a dumbbell in one hand with a neutral grip (palm facing your thigh, thumb pointing forward).",
+    "Let the dumbbell hang at arm's length alongside your hip. The free hand can rest on your hip or hang relaxed at your side.",
+    "Pin the working elbow against your ribcage — it must stay there for the entire set. Brace your core hard to prevent the torso from rotating toward the load.",
+    "Lift your chest, pull the shoulders back and down, and keep a neutral spine.",
+    "Curl the dumbbell upward by flexing only at the elbow. Keep the wrist locked in a neutral position throughout — thumb stays pointing up. Exhale during the lift.",
+    "Continue until the dumbbell reaches the front of your shoulder and the elbow flexors are fully contracted. Pause and squeeze for one second.",
+    "Lower the dumbbell under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "Complete all prescribed reps on one side before switching hands. Do not let the trunk lean or twist to help the lift."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder. Złap hantlę jedną ręką chwytem neutralnym (dłoń skierowana do uda, kciuk do przodu).",
+    "Pozwól hantli zwisać na wyprostowanej ręce przy biodrze. Wolna ręka spoczywa na biodrze albo wisi swobodnie wzdłuż tułowia.",
+    "Przyklej pracujący łokieć do żeber — ma tam pozostać przez całą serię. Mocno napnij brzuch, aby tułów nie obracał się w stronę obciążenia.",
+    "Unieś klatkę piersiową, ściągnij barki w tył i w dół, utrzymaj neutralny kręgosłup.",
+    "Uginaj hantlę w łokciu do góry — pracuje tylko przedramię. Nadgarstek zablokowany w pozycji neutralnej przez cały ruch — kciuk stale skierowany w górę. Wydech podczas unoszenia.",
+    "Kontynuuj ruch aż hantla dotrze na wysokość barku, a zginacze łokcia będą w pełnym skurczu. Zatrzymaj się i napnij na sekundę.",
+    "Opuszczaj hantlę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu w łokciu. Wdech podczas opuszczania.",
+    "Wykonaj wszystkie powtórzenia na jedną stronę, dopiero potem zmień rękę. Nie pomagaj sobie odchyleniem ani skrętem tułowia."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["brachialis", "brachioradialis", "biceps_brachii"],
+    "secondary": ["forearm_flexors"],
+    "stabilizers": ["core", "anterior_deltoid", "upper_trapezius", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P9",
+    "brachioradialis": "P8",
+    "biceps_brachii": "P7",
+    "forearm_flexors": "S5",
+    "core": "S4",
+    "obliques": "S4",
+    "anterior_deltoid": "T2",
+    "upper_trapezius": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["hammer-curl", "cross-body-hammer-curl", "incline-dumbbell-hammer-curl", "cable-hammer-curl-rope"],
+    "alternatives": ["hammer-curl", "cross-body-hammer-curl", "cable-hammer-curl-rope", "dumbbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet hip-width, knees soft, stand tall",
+      "Neutral grip — thumb points forward and stays up",
+      "Working elbow glued to your ribcage",
+      "Free hand on hip or relaxed at side",
+      "Brace core hard — no rotation toward the weight"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość bioder, kolana lekko ugięte, stań prosto",
+      "Chwyt neutralny — kciuk skierowany do przodu i pozostaje w górze",
+      "Pracujący łokieć przyklejony do żeber",
+      "Wolna ręka na biodrze albo swobodnie wzdłuż tułowia",
+      "Mocno napnij brzuch — żadnej rotacji w stronę ciężaru"
+    ],
+    "execution_cues": [
+      "Only the forearm moves — upper arm stays vertical and still",
+      "Keep the thumb up the whole time — never let the wrist roll",
+      "Squeeze brachialis and biceps hard at the top",
+      "Lower for 2-3 seconds under full control",
+      "Full elbow extension at the bottom of every rep"
+    ],
+    "execution_cues_pl": [
+      "Pracuje tylko przedramię — ramię ponad łokciem pionowo i nieruchomo",
+      "Kciuk cały czas w górze — nadgarstek nigdy się nie skręca",
+      "Mocno spinaj mięsień ramienny i biceps w górnej pozycji",
+      "Opuszczaj przez 2-3 sekundy pod pełną kontrolą",
+      "Pełny wyprost łokcia na dole każdego powtórzenia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso leans or rotates toward the working arm",
+        "faultPl": "Tułów odchyla się lub obraca w stronę pracującej ręki",
+        "cause": "Weak core anti-rotation, load too heavy, or trying to swing the dumbbell up",
+        "causePl": "Słaba odporność brzucha na rotację, zbyt duży ciężar lub bujanie hantlą do góry",
+        "cue": "Stand with your free shoulder against a wall to force a vertical trunk, and lower the weight.",
+        "cuePl": "Oprzyj wolne ramię o ścianę aby wymusić pionowy tułów, i zmniejsz ciężar."
+      },
+      {
+        "fault": "Elbow drifts forward at the top of the curl",
+        "faultPl": "Łokieć wędruje do przodu w górnej fazie ruchu",
+        "cause": "Trying to lift higher than full elbow flexion allows, recruiting the front deltoid",
+        "causePl": "Próba uniesienia hantli wyżej niż pozwala pełne zgięcie łokcia, włączanie przedniego aktonu barku",
+        "cue": "Stop the curl when the forearm reaches vertical. Keep the elbow directly under the shoulder.",
+        "cuePl": "Zakończ uginanie gdy przedramię dojdzie do pionu. Łokieć dokładnie pod barkiem."
+      },
+      {
+        "fault": "Wrist rolls into supination or flexes under the load",
+        "faultPl": "Nadgarstek skręca się w supinację albo zgina pod obciążeniem",
+        "cause": "Weak grip, fatigued forearms, or unconsciously trying to turn the lift into a regular curl",
+        "causePl": "Słaby chwyt, zmęczone przedramiona, lub nieświadoma próba zamiany ruchu w klasyczne uginanie",
+        "cue": "Lock the thumb pointing up — pretend you are shaking someone's hand and freeze the wrist there.",
+        "cuePl": "Zablokuj kciuk skierowany w górę — wyobraź sobie że ściskasz komuś dłoń i zamroź nadgarstek w tej pozycji."
+      },
+      {
+        "fault": "Partial range — not extending the elbow at the bottom",
+        "faultPl": "Skrócony zakres — brak pełnego wyprostu łokcia na dole",
+        "cause": "Ego lifting, weak strength in the stretched position, or rushing the tempo",
+        "causePl": "Ego, słabość w pozycji rozciągniętej lub zbyt szybkie tempo",
+        "cue": "Touch the dumbbell's plate against your thigh at the bottom of each rep.",
+        "cuePl": "Dotykaj talerzem hantli uda na dole każdego powtórzenia."
+      },
+      {
+        "fault": "Shoulder shrugs up during the lift",
+        "faultPl": "Bark wędruje do góry podczas unoszenia",
+        "cause": "Compensating for biceps fatigue by recruiting the upper trapezius and rhomboids",
+        "causePl": "Kompensacja zmęczenia bicepsa pracą czworobocznego górnego i mięśni równoległobocznych",
+        "cue": "Keep the shoulder pulled down and back — chase length between ear and shoulder.",
+        "cuePl": "Trzymaj bark ściągnięty w dół i w tył — szukaj dystansu między uchem a barkiem."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower). Maintain a light core brace throughout the set, especially because unilateral loading creates a rotational pull on the trunk.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię, zwłaszcza dlatego że obciążenie jednostronne ciągnie tułów w rotację."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Hammer grip generally tolerates lateral epicondylitis better than supinated curls, but if pain on the outside of the elbow persists, reduce load, slow the eccentric, and stay in a pain-free range.",
+      "modificationPl": "Chwyt młotkowy jest zwykle lepiej tolerowany przy łokciu tenisisty niż podchwyt, ale jeśli ból po zewnętrznej stronie łokcia utrzymuje się — zmniejsz ciężar, zwolnij fazę negatywną i pozostań w zakresie bez bólu.",
+      "alternative": "cable-hammer-curl-rope"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Neutral grip is gentler on the wrist than full supination, but heavy loads can still aggravate ulnar-side pain. Use wrist wraps and reduce weight if discomfort appears.",
+      "modificationPl": "Chwyt neutralny jest łagodniejszy dla nadgarstka niż pełna supinacja, ale duże ciężary nadal mogą drażnić stronę łokciową. Używaj usztywniaczy i zmniejsz ciężar jeśli pojawi się dyskomfort.",
+      "alternative": "cable-hammer-curl-rope"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "caution",
+      "modification": "Standing unilateral loading creates rotational stress on the lumbar spine. Perform the exercise seated on an upright bench to remove anti-rotation demand on the lower back.",
+      "modificationPl": "Stojące obciążenie jednostronne wprowadza obciążenie rotacyjne na odcinek lędźwiowy. Wykonuj ćwiczenie siedząc na pionowej ławce, aby zdjąć obciążenie antyrotacyjne z dolnych pleców.",
+      "alternative": "seated-dumbbell-hammer-curl"
+    },
+    {
+      "condition": "biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Neutral grip reduces strain on the distal biceps tendon compared to supinated curls. Use moderate loads with higher reps (12-15) and avoid heavy eccentrics until symptoms resolve.",
+      "modificationPl": "Chwyt neutralny zmniejsza obciążenie ścięgna dystalnego bicepsa w porównaniu do podchwytu. Używaj umiarkowanych ciężarów z większą liczbą powtórzeń (12-15) i unikaj ciężkich faz negatywnych aż objawy ustąpią.",
+      "alternative": "cable-hammer-curl-rope"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per arm (hypertrophy) | 3x6-8 per arm (strength) | 2-3x12-15 per arm (endurance/pump)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-one-arm-standing-hammer-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-standing-hammer-curl/frame_0_start.png",
+      "frames/dumbbell-one-arm-standing-hammer-curl/frame_1_early.png",
+      "frames/dumbbell-one-arm-standing-hammer-curl/frame_2_mid.png",
+      "frames/dumbbell-one-arm-standing-hammer-curl/frame_3_late.png",
+      "frames/dumbbell-one-arm-standing-hammer-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-one-arm-standing-hammer-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pełny wyprost prawej ręki, hantla w neutralnym chwycie (kciuk do przodu) przy biodrze, lewa ręka swobodnie zwisa wzdłuż tułowia, podświetlony brachialis i biceps po prawej stronie. Frame 2: pełny skurcz, hantla na wysokości prawego barku, kciuk nadal skierowany w górę (chwyt neutralny zachowany), łokieć prawy pozostaje przy boku tułowia, ramię ponad łokciem pionowo, tułów stoi nieruchomo bez rotacji. Frame 4: powrót do pełnego wyprostu (z widocznym 'ghostem' fazy szczytowej). Ćwiczenie jednoznacznie zidentyfikowane jako jednostronny hammer curl w pozycji stojącej. Pełna izolacja — pracuje tylko przedramię, wolna ręka pasywna. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "forearms", "isolation", "dumbbell", "unilateral", "standing", "upper_body"]
+}

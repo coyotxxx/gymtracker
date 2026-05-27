@@ -1,0 +1,199 @@
+{
+  "id": "cable-standing-crunch",
+  "name": "Cable Standing Crunch",
+  "namePl": "Brzuszki na wyciągu stojąc",
+  "aliases": ["standing cable crunch", "cable crunch standing", "high pulley standing crunch", "rope standing crunch"],
+  "aliasesPl": ["brzuszki na wyciągu stojące", "spinanie brzucha na wyciągu stojąc", "cable crunch stojący", "brzuszki na linie stojąc"],
+
+  "description": "A loaded standing isolation for the rectus abdominis performed in front of a high cable pulley. A rope attachment is held with both hands at the sides of the head — the rope passes behind the neck, the rope ends rest near the temples. The lifter stands upright with feet planted, then crunches the torso downward by flexing the thoracic and upper lumbar spine, driving the rib cage toward the pelvis against the constant pull of the cable. Unlike the kneeling variant, the standing version is performed on the gym floor with no bench or pad required, making it accessible at any cable stack — but the standing posture also gives less stabilization than kneeling, so the lifter must actively brace the hips and legs to prevent swaying or hip flexion substitution. Constant cable tension across the full ROM (stretched top, contracted bottom) makes this an effective hypertrophy tool for the rectus abdominis, with the added benefit of training core control under standing-stance balance demands.",
+  "descriptionPl": "Obciążone ćwiczenie izolowane mięśnia prostego brzucha w pozycji stojącej, wykonywane przed górną wyciągarką. Linka jest trzymana oburącz po bokach głowy — linka biegnie za karkiem, a końcówki spoczywają blisko skroni. Ćwiczący stoi wyprostowany, stopy płasko na podłodze, a następnie zwija tułów w dół przez zgięcie odcinka piersiowego i górnego lędźwiowego kręgosłupa, pchając klatkę piersiową w kierunku miednicy wbrew stałemu napięciu wyciągu. W odróżnieniu od wersji klęczącej, wariant stojący wykonuje się na podłodze siłowni bez ławki ani podkładki, co czyni go dostępnym przy każdym wyciągu — ale postawa stojąca daje też mniejszą stabilizację niż klęcząca, więc ćwiczący musi aktywnie napiąć biodra i nogi, by zapobiec kołysaniu się lub zastępowaniu ruchu zgięciem bioder. Stałe napięcie wyciągu w pełnym zakresie ruchu (rozciągnięcie u góry, skurcz u dołu) czyni z tego ćwiczenia skuteczne narzędzie hipertroficzne mięśnia prostego brzucha, z dodatkową korzyścią treningu kontroli centralnej stabilizacji w pozycji stojącej.",
+
+  "instructions": [
+    "Set the cable pulley to the highest position and attach a rope. Choose a moderate weight — the cable should pull you upward, but you must control it without losing footing.",
+    "Stand facing the cable stack, about half a step back from the tower. Grab the rope with both hands and bring it behind your neck so the rope ends rest at the sides of your head, near the temples or top of the shoulders.",
+    "Set your stance: feet hip-width apart or slightly wider, knees soft (slightly bent), hips slightly hinged so the torso angles forward 10-20 degrees. This is your starting position — feel the cable already pulling the torso upward and stretching the abs.",
+    "Brace the core, tuck the chin slightly, and exhale as you crunch the torso downward by contracting the rectus abdominis. Drive the rib cage toward the pelvis through spinal flexion — round the upper back, do NOT bend deeper at the hips.",
+    "Pause at the bottom of the rep for one second, squeezing the abs hard. Elbows travel toward the thighs, but knees, hips and feet stay locked in their starting position.",
+    "Inhale and let the cable pull the torso back up under control over two seconds, returning to the stretched starting position without losing tension on the abs.",
+    "Keep the feet planted throughout — do not let the cable pull you upward onto your toes or shift your weight. If you sway, drop the weight."
+  ],
+  "instructionsPl": [
+    "Ustaw wyciąg w najwyższej pozycji i załóż linkę. Wybierz umiarkowany ciężar — wyciąg powinien ciągnąć cię w górę, ale musisz nad nim panować bez utraty stabilności stóp.",
+    "Stań przodem do stosu wyciągu, około pół kroku od wieży. Chwyć linkę oburącz i przełóż ją za kark tak, by końcówki spoczywały po bokach głowy, w okolicy skroni lub szczytu barków.",
+    "Ustaw stopy: na szerokość bioder lub nieco szerzej, kolana lekko ugięte, biodra lekko zawiasowane tak, by tułów był pochylony do przodu o 10-20 stopni. To twoja pozycja startowa — poczuj, jak wyciąg już teraz ciągnie tułów w górę i rozciąga mięśnie brzucha.",
+    "Napnij brzuch, lekko schowaj brodę i wydychaj powietrze, zwijając tułów w dół przez skurcz mięśnia prostego brzucha. Pchaj klatkę piersiową w kierunku miednicy przez zgięcie kręgosłupa — zaokrąglij górne plecy, NIE zginaj się głębiej w biodrach.",
+    "Zatrzymaj się w dolnej pozycji powtórzenia na sekundę, mocno ściskając brzuch. Łokcie zbliżają się do ud, ale kolana, biodra i stopy pozostają zablokowane w pozycji startowej.",
+    "Wdech — pozwól wyciągowi kontrolowanie pociągnąć tułów w górę w ciągu dwóch sekund, wracając do rozciągniętej pozycji startowej bez utraty napięcia w brzuchu.",
+    "Stopy płasko przez cały ruch — nie pozwól, by wyciąg uniósł cię na palce ani przeniósł ciężar ciała. Jeśli się kołyszesz, zmniejsz obciążenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis"],
+    "secondary": ["obliques"],
+    "stabilizers": ["transverse_abdominis", "hip_flexors", "lats", "glutes", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "obliques": "S7",
+    "transverse_abdominis": "T6",
+    "hip_flexors": "T4",
+    "lats": "T3",
+    "glutes": "T3",
+    "quadriceps": "T2"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope_attachment"],
+    "optional": []
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["crunch-floor"],
+    "progression_to": ["cable-crunch-kneeling", "weighted-decline-crunch", "dragon-flag"],
+    "alternatives": ["cable-crunch-kneeling", "cable-seated-crunch", "crunch-floor", "weighted-crunch", "machine-crunch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand half a step from the cable tower, feet hip-width, knees soft",
+      "Rope behind the neck — hands at the sides of the head, firm grip at temples",
+      "Hinge slightly at the hips — torso angled forward 10-20 degrees from vertical",
+      "Feel the cable load the abs in the top position — stretch before contraction",
+      "Brace the core lightly and set the rib cage — chin tucked, eyes down toward floor"
+    ],
+    "setup_cues_pl": [
+      "Stań pół kroku od wieży wyciągu, stopy na szerokość bioder, kolana lekko ugięte",
+      "Linka za karkiem — ręce po bokach głowy, mocny chwyt przy skroniach",
+      "Lekko zawiasuj w biodrach — tułów pochylony do przodu o 10-20 stopni od pionu",
+      "Poczuj, jak wyciąg obciąża brzuch w pozycji górnej — rozciągnięcie przed skurczem",
+      "Lekko napnij brzuch i ustaw klatkę piersiową — broda lekko schowana, wzrok w dół ku podłodze"
+    ],
+    "execution_cues": [
+      "Crunch — drive ribs toward the pelvis, not chest toward thighs",
+      "Round the upper back — spinal flexion is the goal, not hip flexion",
+      "Hips stay over the heels — if hips shoot back or sway, weight is too heavy",
+      "1-second squeeze at the bottom — feel the rectus abdominis contract hard",
+      "2 seconds back up — let abs control the negative, don't get yanked up onto toes"
+    ],
+    "execution_cues_pl": [
+      "Zwijaj — pchaj żebra w kierunku miednicy, nie klatkę w stronę ud",
+      "Zaokrąglaj górne plecy — celem jest zgięcie kręgosłupa, nie zgięcie bioder",
+      "Biodra nad piętami — jeśli biodra cofają się lub kołyszą, ciężar jest za duży",
+      "Sekunda ściśnięcia w dolnej pozycji — poczuj mocny skurcz mięśnia prostego brzucha",
+      "2 sekundy powrotu w górę — niech brzuch kontroluje fazę negatywną, nie daj się szarpnąć na palce"
+    ],
+    "common_faults": [
+      {
+        "fault": "Folding at the hips instead of flexing the spine",
+        "faultPl": "Zginanie w biodrach zamiast zginania kręgosłupa",
+        "cause": "Heavy weight pulls the lifter to substitute hip flexion (which is stronger) for spinal flexion, turning the rep into a standing 'good morning' in reverse with no real ab work",
+        "causePl": "Ciężki ciężar skłania ćwiczącego do zastąpienia zginania kręgosłupa silniejszym zginaniem bioder, zamieniając powtórzenie w odwrócony 'good morning' stojący bez prawdziwej pracy brzucha",
+        "cue": "Imagine someone pushing your forehead toward your belly button. Round the spine, don't pivot at the hips. If you can't isolate the crunch — drop 20-30% off the stack.",
+        "cuePl": "Wyobraź sobie, że ktoś popycha twoje czoło w stronę pępka. Zaokrąglij kręgosłup, nie obracaj się w biodrach. Jeśli nie potrafisz wyizolować zwijania — zdejmij 20-30% obciążenia."
+      },
+      {
+        "fault": "Swaying or shifting weight onto the toes",
+        "faultPl": "Kołysanie się lub przenoszenie ciężaru na palce",
+        "cause": "Standing posture gives less anchoring than kneeling/seated — heavy cable load pulls the lifter forward or onto the toes, breaking the stable base and leaking force through the legs instead of loading the abs",
+        "causePl": "Postawa stojąca daje mniejsze zakotwiczenie niż klęcząca lub siedząca — ciężkie obciążenie wyciągu ciąga ćwiczącego do przodu lub na palce, łamiąc stabilną podstawę i tracąc siłę przez nogi zamiast obciążać brzuch",
+        "cue": "Plant the whole foot — heel, ball, toes — pressed into the floor. Glutes lightly engaged, quads tight. If your heels lift, the weight is too heavy or you need to widen your stance.",
+        "cuePl": "Wciśnij całą stopę w podłogę — piętę, śródstopie i palce. Pośladki lekko napięte, czworogłowe spięte. Jeśli pięty się unoszą, ciężar jest za duży lub musisz rozstawić stopy szerzej."
+      },
+      {
+        "fault": "Pulling with the arms / using lats and shoulders",
+        "faultPl": "Pociąganie rękami / praca mięśniami najszerszymi grzbietu i barków",
+        "cause": "Hands become a lever — the lifter pulls the rope down with the arms instead of letting the abs do the work, ab tension is offloaded onto the upper body",
+        "causePl": "Dłonie stają się dźwignią — ćwiczący ciągnie linkę w dół rękami zamiast pozwolić brzuchowi pracować, napięcie brzucha zostaje zdjęte i przeniesione na górną część ciała",
+        "cue": "Lock the hands to the sides of the head — they are anchors, not levers. The abs alone curl the rib cage down. If you feel lats burning — your arms are cheating.",
+        "cuePl": "Zablokuj ręce po bokach głowy — to kotwice, nie dźwignie. Sam brzuch zwija klatkę piersiową w dół. Jeśli pieką cię najszersze grzbietu — ręce oszukują."
+      },
+      {
+        "fault": "Insufficient range of motion / micro-reps",
+        "faultPl": "Niewystarczający zakres ruchu / mikro-powtórzenia",
+        "cause": "Weight too heavy or fear of losing balance in standing stance — lifter only travels through 20-30% of the available ROM, missing both stretch and full contraction",
+        "causePl": "Zbyt duży ciężar lub obawa przed utratą równowagi w pozycji stojącej — ćwiczący porusza się tylko w 20-30% dostępnego zakresu ruchu, tracąc zarówno rozciągnięcie, jak i pełen skurcz",
+        "cue": "Top: torso tall, arms by the head, abs stretched. Bottom: rib cage curled down toward pelvis, forehead aiming between thighs. Hit both ends or reduce the weight.",
+        "cuePl": "Góra: tułów wyprostowany, ręce przy głowie, brzuch rozciągnięty. Dół: klatka piersiowa zwinięta w kierunku miednicy, czoło wycelowane między uda. Trafiaj w oba krańce lub zmniejsz ciężar."
+      },
+      {
+        "fault": "Neck overextension or active neck pull from rope behind head",
+        "faultPl": "Nadmierne wyprostowanie szyi lub aktywne pociąganie szyi z linki za głową",
+        "cause": "Allowing the rope behind the neck to pull the head backward, or actively extending the neck and looking up — strains the cervical spine under load, particularly risky standing where the rope sits behind the upper neck",
+        "causePl": "Pozwolenie, by linka za karkiem ciągnęła głowę do tyłu, lub aktywne wyprostowanie szyi i patrzenie w górę — obciąża odcinek szyjny kręgosłupa pod obciążeniem, szczególnie ryzykowne w pozycji stojącej, gdzie linka spoczywa za górną częścią karku",
+        "cue": "Chin slightly tucked throughout — eyes track the floor a meter in front of your feet. Neck moves with the spine, never against it.",
+        "cuePl": "Broda lekko schowana przez cały ruch — wzrok podąża za podłogą metr przed stopami. Szyja porusza się z kręgosłupem, nigdy przeciw niemu."
+      }
+    ],
+    "breathing": "Inhale on the way up as the cable returns the torso to the stretched starting position. Forceful exhale through the mouth during the crunch downward — the rib cage compresses, amplifying the rectus abdominis contraction. Hold the breath briefly at peak contraction for the one-second squeeze.",
+    "breathingPl": "Wdech podczas powrotu w górę, gdy wyciąg sprowadza tułów do rozciągniętej pozycji startowej. Mocny wydech ustami podczas zwijania w dół — klatka piersiowa się ściska, wzmacniając skurcz mięśnia prostego brzucha. Krótko wstrzymaj oddech w szczycie skurczu na sekundę ściśnięcia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Heavy loaded spinal flexion is contraindicated in lumbar disc protrusion (Stuart McGill research) — compressive shear under load worsens the herniation. Use anti-flexion isometric core work instead until cleared by a physiotherapist.",
+      "modificationPl": "Ciężkie obciążone zginanie kręgosłupa jest przeciwwskazane przy przepuklinie krążka lędźwiowego (badania Stuarta McGilla) — siła ścinająca pod obciążeniem pogarsza przepuklinę. Zastosuj izometryczną pracę brzucha w neutralnej pozycji do czasu zgody fizjoterapeuty.",
+      "alternative": "plank"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "avoid",
+      "modification": "Loaded spinal flexion can flare acute lumbar pain, especially in standing posture where the lumbar spine carries axial load. Drop to bodyweight crunches or transverse-abdominis work until pain-free for at least two weeks.",
+      "modificationPl": "Obciążone zginanie kręgosłupa może nasilić ostry ból lędźwi, szczególnie w pozycji stojącej, gdzie odcinek lędźwiowy niesie obciążenie osiowe. Zmień na brzuszki z masą ciała lub pracę mięśnia poprzecznego brzucha do czasu ustąpienia bólu na co najmniej dwa tygodnie.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "cervical_spine_issues",
+      "severity": "caution",
+      "modification": "Rope behind the neck can aggravate cervical disc issues or whiplash-history necks, especially standing where head position is unsupported. Switch to kneeling cable crunch where the rope sits beside the head, not behind the neck, or use an X-grip across the chest.",
+      "modificationPl": "Linka za karkiem może nasilić problemy z dyskami szyjnymi lub karku po urazach typu whiplash, szczególnie w pozycji stojącej, gdzie głowa nie ma podparcia. Przejdź na brzuszki na wyciągu klęcząc, gdzie linka jest po bokach głowy, a nie za karkiem, lub użyj chwytu skrzyżowanego na klatce piersiowej.",
+      "alternative": "cable-crunch-kneeling"
+    },
+    {
+      "condition": "diastasis_recti",
+      "severity": "avoid",
+      "modification": "Heavy loaded crunches can widen midline separation (postpartum or pregnancy). Heal the linea alba with transverse-abdominis-focused breathing work first before any loaded rectus abdominis training.",
+      "modificationPl": "Ciężkie obciążone brzuszki mogą poszerzyć rozejście kresy białej (po porodzie lub w ciąży). Najpierw zregeneruj kresę białą oddechową pracą mięśnia poprzecznego brzucha, zanim wprowadzisz jakikolwiek obciążony trening mięśnia prostego brzucha.",
+      "alternative": "dead-bug"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (hypertrophy, heavy) | 3x12-20 (moderate volume) | 4x8-12 (heavy progressive overload)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "cable-standing-crunch.gif",
+    "frames_extracted": [
+      "frames/cable-standing-crunch/frame_0_start.png",
+      "frames/cable-standing-crunch/frame_1_early.png",
+      "frames/cable-standing-crunch/frame_2_mid.png",
+      "frames/cable-standing-crunch/frame_3_late.png",
+      "frames/cable-standing-crunch/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/cable-standing-crunch"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel. Klatka 0 (start): ćwiczący stoi wyprostowany przed wyciągiem, nogi proste z lekko ugiętymi kolanami, stopy na szerokość bioder, linka biegnie z górnej wyciągarki za kark i przy uszach, dłonie trzymają końcówki linki po bokach głowy na wysokości skroni. Łokcie wskazują w przód i lekko w górę. Klatka piersiowa otwarta, podświetlenie anatomiczne na pełnym mięśniu prostym brzucha (rectus abdominis widoczny w 6-pack) — pozycja rozciągnięta pod napięciem wyciągu. Klatki 1-3 (early/mid/late): wyraźne zwijanie tułowia w dół — kręgosłup zgina się w odcinku piersiowym i lędźwiowym, klatka piersiowa zbliża się do miednicy, plecy zaokrąglają się, łokcie schodzą w stronę ud (widoczna sylwetka cienia/ducha pokazująca pełen zakres ruchu). Biodra pozostają nad piętami — stopy nieruchome, nogi stabilizują postawę. To jest zgięcie kręgosłupa, NIE zgięcie w biodrach. Podświetlenie intensywne na CAŁYM rectus abdominis w fazie skurczu, z wyraźnie zaangażowanymi obliques po bokach. Klatka 4 (end): powrót do pozycji rozciągniętej stojąc. Klasyfikacja: core_flexion (zgięcie kręgosłupa pod obciążeniem zewnętrznym), isolation (jeden staw funkcjonalny: kręgosłup; biodra zablokowane), force=pull (mięśnie brzucha ciągną tułów w dół przeciw oporowi wyciągu), bilateral, sagittal plane, open kinetic chain. Mięsień główny: rectus_abdominis P10 (dedykowane ćwiczenie izolowane, klasyk hipertrofii). Obliques S7 (silniejsze zaangażowanie niż w siedzącej wersji ze względu na większe wymagania stabilizacji w stojącej postawie). Transverse abdominis T6 (więcej niż w wersji siedzącej — stabilizacja kręgosłupa pod obciążeniem stojąc). Hip flexors T4 (lekko więcej — stabilizacja biodra przy braku oparcia). Lats T3, glutes T3, quadriceps T2 (stabilizatory pozycji stojącej, glutes blokują biodra, quads trzymają nogi stabilne). Equipment: cable_machine + rope_attachment (bench NIE jest wymagana — to główna różnica od cable-seated-crunch i cable-crunch-kneeling, gdzie potrzeba ławki/podkładki). Difficulty=4 (intermediate, ale niższa niż siedząca [5] bo NIE wymaga ławki — dostępne wszędzie; ale wymaga większej kontroli postawy by nie kołysać się/nie unieść na palce). Prerequisite: crunch-floor. Nazwa PL 'Brzuszki na wyciągu stojąc' — konwencja zgodna z 'na wyciągu klęcząc', 'na wyciągu siedząc'. Aliasy: 'cable crunch stojący', 'na linie stojąc'. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — terminologia trenerska (mięsień prosty brzucha, zawiasowanie biodrami, kresa biała, faza ekscentryczna, najszerszy grzbietu, odcinek szyjny). Klucze różnicujące od siedzącej wersji: brak bench w equipment, dodane glutes+quadriceps jako stabilizatory, więcej hip_flexors/transverse_abdominis, niższa difficulty (4 vs 5) bo bez ławki, nowy common_fault 'Swaying / shifting weight onto toes' charakterystyczny dla wersji stojącej, instrukcje uwzględniają stance (feet hip-width, knees soft, lekkie zawiasowanie biodrami 10-20°).",
+
+  "tags": ["cable", "core", "abs", "gym_required", "isolation", "hypertrophy", "weighted", "standing", "progressive_overload", "no_bench_required"]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "kick-out-sit",
+  "name": "Kick-out Sit",
+  "namePl": "Kick-out sit (siad z wyrzutem nóg)",
+  "aliases": ["squat with knee raise", "sumo squat with knee lift", "standing knee raise from squat", "horse stance knee lift", "kick out from squat hold"],
+  "aliasesPl": ["siad z wyrzutem nóg", "półprzysiad z uniesieniem kolana", "przysiad sumo z naprzemiennym kolanem", "kick-out z półprzysiadu", "stanie w półprzysiadzie z wyrzucaniem kolana"],
+
+  "description": "Bodyweight lower-body endurance exercise performed in a held half-squat (horse) stance. The lifter sinks into a wide squat with thighs roughly parallel to the floor and arms extended out to the sides at shoulder height. While maintaining the squat depth, the lifter alternately drives one knee up to roughly hip height in a 'kick-out' motion, then lowers the foot back to the floor — without standing up between reps. The isometric squat hold loads quads, glutes and adductors, while the dynamic knee drive recruits hip flexors and forces strong core anti-rotation work to keep the torso upright.",
+  "descriptionPl": "Wytrzymałościowe ćwiczenie z masy własnego ciała na dolne partie, wykonywane w utrzymanej pozycji półprzysiadu (stójka jeździecka). Ćwiczący schodzi w szeroki przysiad, tak że uda są mniej więcej równolegle do podłogi, a ramiona wyciągnięte na boki na wysokości barków. Trzymając stałą głębokość przysiadu, naprzemiennie unosi jedno kolano do około wysokości biodra w ruchu 'wyrzutu', po czym opuszcza stopę z powrotem na podłogę — bez prostowania nóg między powtórzeniami. Izometryczne utrzymanie przysiadu obciąża czworogłowe, pośladki i przywodziciele, a dynamiczne unoszenie kolana angażuje zginacze biodra oraz mocno włącza mięśnie głębokie do utrzymania pionowego tułowia (praca anty-rotacyjna).",
+
+  "instructions": [
+    "Stand with your feet wider than shoulder-width, toes slightly turned out. Extend both arms straight out to the sides at shoulder height (T-position).",
+    "Sink down into a half-squat — thighs roughly parallel to the floor, knees tracking over the toes. Chest stays tall, back straight. This is your starting position.",
+    "Without standing up, brace your core and drive your right knee up toward your right elbow (or to about hip height) in a controlled but explosive motion.",
+    "Lower your right foot back to the floor under control and immediately return to the squat depth on both legs — do not stand up.",
+    "Repeat on the left side. That is one full repetition. Alternate sides continuously while holding the squat throughout the set.",
+    "Maintain the squat depth and torso position for the entire set — the only thing moving should be the legs and hip flexors."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku szerszym niż barki, palce stóp lekko skierowane na zewnątrz. Wyciągnij oba ramiona prosto na boki na wysokości barków (pozycja T).",
+    "Zejdź w półprzysiad — uda mniej więcej równolegle do podłogi, kolana w linii palców stóp. Klatka piersiowa wysoko, plecy proste. To pozycja wyjściowa.",
+    "Nie prostując nóg, napnij brzuch i dynamicznie unieś prawe kolano w stronę prawego łokcia (lub do wysokości biodra) kontrolowanym ale energicznym ruchem.",
+    "Kontrolowanie opuść prawą stopę z powrotem na podłogę i natychmiast wróć do pełnej głębokości przysiadu na obu nogach — nie prostuj się.",
+    "Powtórz na lewą stronę. To jedno pełne powtórzenie. Naprzemiennie zmieniaj strony, utrzymując przysiad przez cały czas trwania serii.",
+    "Utrzymaj głębokość przysiadu i pozycję tułowia przez całą serię — jedyne co powinno się ruszać to nogi i zginacze biodra."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat_isometric_with_hip_flexion",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "hip_flexors"],
+    "secondary": ["glutes", "adductors", "core"],
+    "stabilizers": ["calves", "obliques", "erector_spinae", "deltoids"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P8",
+    "hip_flexors": "P8",
+    "glutes": "S7",
+    "adductors": "S6",
+    "core": "S6",
+    "calves": "T4",
+    "obliques": "T4",
+    "erector_spinae": "T3",
+    "deltoids": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "high-knees", "wall-sit"],
+    "progression_to": ["jump-squat", "squat-thrust", "burpee"],
+    "alternatives": ["high-knees", "marching-squat", "sumo-squat-hold", "squat-to-knee-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet wider than shoulders, toes slightly out",
+      "Sink to thighs parallel — half-squat depth",
+      "Arms out to the sides at shoulder height (T-pose)",
+      "Chest tall, back straight, gaze forward",
+      "Brace the core before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Stopy szerzej niż barki, palce lekko na zewnątrz",
+      "Zejdź do równoległej uda — głębokość półprzysiadu",
+      "Ramiona w bok na wysokości barków (pozycja T)",
+      "Klatka wysoko, plecy proste, wzrok przed siebie",
+      "Napnij brzuch przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Knee drives up to hip height in one explosive motion",
+      "Do NOT stand up between reps — stay in the squat",
+      "Plant the foot and immediately reload the squat depth",
+      "Keep torso vertical — no leaning back when the knee comes up",
+      "Exhale on the knee drive, inhale on the return"
+    ],
+    "execution_cues_pl": [
+      "Kolano dynamicznie do wysokości biodra w jednym energicznym ruchu",
+      "NIE prostuj nóg między powtórzeniami — zostań w przysiadzie",
+      "Postaw stopę i natychmiast wróć do pełnej głębokości przysiadu",
+      "Tułów pionowo — nie odchylaj się do tyłu przy unoszeniu kolana",
+      "Wydech przy uniesieniu kolana, wdech przy powrocie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Standing up between reps (losing squat depth)",
+        "faultPl": "Prostowanie nóg między powtórzeniami (utrata głębokości przysiadu)",
+        "cause": "Quad fatigue — body cheats by reducing isometric load on the support leg",
+        "causePl": "Zmęczenie czworogłowego — ciało oszukuje zmniejszając obciążenie izometryczne nogi podporowej",
+        "cue": "Picture a ceiling 2 cm above your head — if you rise, you hit it. Stay low the whole set.",
+        "cuePl": "Wyobraź sobie sufit 2 cm nad głową — jeśli się wyprostujesz, uderzysz w niego. Zostań nisko przez całą serię."
+      },
+      {
+        "fault": "Leaning torso back when the knee rises",
+        "faultPl": "Odchylanie tułowia do tyłu gdy unosi się kolano",
+        "cause": "Weak core / hip flexor compensation — torso swings to help lift the leg",
+        "causePl": "Słabe mięśnie głębokie / kompensacja zginaczy biodra — tułów odchyla się, by pomóc unieść nogę",
+        "cue": "Hands stay at shoulder height level the whole time — if a hand drops on the lifting side, you're leaning",
+        "cuePl": "Dłonie pozostają na wysokości barków przez cały czas — jeśli dłoń po stronie unoszącej nogi opada, to znaczy że się odchylasz"
+      },
+      {
+        "fault": "Knee caving inward on the support leg",
+        "faultPl": "Kolano nogi podporowej zapada się do środka",
+        "cause": "Weak gluteus medius / adductor dominance when single leg becomes load-bearing",
+        "causePl": "Słaby pośladek średni / dominacja przywodzicieli gdy jedna noga przejmuje ciężar",
+        "cue": "Push the support knee outward — track it over the middle toe of the support foot",
+        "cuePl": "Wypchnij kolano nogi podporowej na zewnątrz — kieruj je w linii środkowego palca stopy podporowej"
+      },
+      {
+        "fault": "Bouncing / using momentum to fling the knee up",
+        "faultPl": "Sprężynowanie / wykorzystywanie rozpędu do podrzucania kolana",
+        "cause": "Trying to skip the work — uses kinetic energy instead of hip flexor strength",
+        "causePl": "Próba oszukania pracy — wykorzystuje energię kinetyczną zamiast siły zginaczy biodra",
+        "cue": "Pause for a half-second at the top of each knee drive. If you can't, slow down the tempo.",
+        "cuePl": "Zatrzymaj na pół sekundy w szczycie każdego uniesienia kolana. Jeśli nie dasz rady — zwolnij tempo."
+      },
+      {
+        "fault": "Knees collapsing during the squat hold",
+        "faultPl": "Kolana zapadające się podczas utrzymania przysiadu",
+        "cause": "Insufficient glute activation or weak external rotators of the hip",
+        "causePl": "Niewystarczająca aktywacja pośladków lub słabe rotatory zewnętrzne biodra",
+        "cue": "Spread the floor — feel like you're tearing the mat outward with both feet",
+        "cuePl": "Rozsuwaj podłoże — wyobraź sobie, że rozdzierasz matę na zewnątrz obiema stopami"
+      }
+    ],
+    "breathing": "Steady rhythm — exhale on each knee drive (the dynamic phase), inhale on the return to two-leg squat. Do not hold the breath; this is a high-rep endurance exercise.",
+    "breathingPl": "Stały rytm — wydech przy każdym uniesieniu kolana (faza dynamiczna), wdech przy powrocie do przysiadu na dwóch nogach. Nie wstrzymuj oddechu; to ćwiczenie wytrzymałościowe na wiele powtórzeń."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_injury_acute",
+      "severity": "avoid",
+      "modification": "Prolonged half-squat hold places sustained load on the patellofemoral joint. Avoid during acute knee pain, meniscus injury or post-surgical phases. Use seated knee raises or marching in place instead.",
+      "modificationPl": "Długie utrzymanie półprzysiadu obciąża staw rzepkowo-udowy. Unikaj przy ostrym bólu kolana, urazie łąkotki lub po operacji. Zamiast tego użyj uniesień kolan w siadzie lub marszu w miejscu.",
+      "alternative": "high-knees"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "modify",
+      "modification": "High knee drive in a deep squat position can pinch the hip joint (FAI). Reduce knee height to mid-thigh and shallow the squat to about 45° knee bend.",
+      "modificationPl": "Wysokie uniesienie kolana w głębokim przysiadzie może powodować konflikt w stawie biodrowym (FAI). Zmniejsz wysokość kolana do połowy uda i spłyć przysiad do około 45° zgięcia w kolanie.",
+      "alternative": "marching-squat"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "Holding squat depth can fatigue the erectors and pull the lumbar spine into flexion. Shorten sets to 20-30 seconds and rest the squat hold between rounds.",
+      "modificationPl": "Utrzymywanie głębokości przysiadu może zmęczyć prostowniki grzbietu i wciągnąć odcinek lędźwiowy w zgięcie. Skróć serie do 20-30 sekund i odpoczywaj od trzymania przysiadu między rundami.",
+      "alternative": "standing-knee-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3x20-30 (10-15 per side) | 3x30-45s timed | 4x40s (HIIT/circuit)",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "kick-out-sit.gif",
+    "frames_extracted": [
+      "frames/kick-out-sit/frame_0_start.png",
+      "frames/kick-out-sit/frame_1_early.png",
+      "frames/kick-out-sit/frame_2_mid.png",
+      "frames/kick-out-sit/frame_3_late.png",
+      "frames/kick-out-sit/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "hamstrings/kick-out-sit"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel — ćwiczenie wyraźnie NIE pasuje do kategorii 'hamstrings' źródła. To ćwiczenie stojące w szerokim półprzysiadzie (stójka jeździecka / sumo squat hold) z naprzemiennym unoszeniem kolan: klatka 0 — start, jedno kolano (prawe) wysoko uniesione w bok do wysokości biodra przy zgięciu ~90°, ramiona w pozycji T; klatki 1-3 — ruch przejściowy: kolano opada, ciało schodzi pełniej w półprzysiad na obu nogach (uda równolegle do podłogi, mocno podświetlone czworogłowe i pośladki); klatka 4 — drugie kolano (lewe) zaczyna unosić się w lustrzanym ruchu. Anatomia podświetla głównie quadriceps obu nóg (utrzymanie przysiadu), glutes i hip flexors (unoszenie kolana). Hamstringi NIE są primary — pracują tylko izometrycznie jako antagonista czworogłowego. Klasyfikacja: compound (2 zadania: izometryczny przysiad + dynamiczne zgięcie biodra), sagittal (głównie ruch w płaszczyźnie strzałkowej dla unoszenia kolana, mimo szerokiej postawy), closed kinetic chain (stopa podporowa na podłodze), force=push (czworogłowe pchają w przysiadzie), laterality=alternating (naprzemiennie L/P). Nazwa angielska 'kick-out sit' — 'sit' odnosi się do pozycji półprzysiadu ('sit into squat'), 'kick-out' do uniesienia kolana w bok. Wybrałem nazwę PL 'Kick-out sit (siad z wyrzutem nóg)' zgodnie z prośbą usera, dodałem opisowe aliasy PL takie jak 'półprzysiad z uniesieniem kolana' i 'przysiad sumo z naprzemiennym kolanem'. Difficulty 6 (intermediate) — wymaga wytrzymałości izometrycznej quad + koordynacji + siły core. Brak yuhonas/glowupp ID — tylko jahel.",
+
+  "tags": ["bodyweight", "lower_body", "quads", "hip_flexors", "no_equipment", "home_workout", "endurance", "isometric", "hiit"]
+}

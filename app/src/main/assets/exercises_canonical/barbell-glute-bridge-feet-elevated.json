@@ -1,0 +1,203 @@
+{
+  "id": "barbell-glute-bridge-feet-elevated",
+  "name": "Barbell Glute Bridge (Feet Elevated on Bench)",
+  "namePl": "Mostek pośladkowy ze sztangą ze stopami na ławce",
+  "aliases": ["barbell glute bridge feet on bench", "elevated feet glute bridge", "barbell glute bridge two legs on bench", "feet elevated barbell bridge"],
+  "aliasesPl": ["mostek ze sztangą stopy na ławce", "mostek pośladkowy z uniesionymi stopami", "barbell glute bridge z nogami na ławce", "obciążony mostek ze stopami na ławce"],
+
+  "description": "Hip extension exercise performed lying flat on the floor with feet elevated on a bench and a loaded barbell across the hips. Elevating the feet drops the hips lower at the bottom, significantly increasing the range of motion compared to the standard floor variant. This deeper hip flexion at the bottom shifts more demand onto the hamstrings while still maximally targeting the glutes. A more advanced variation of the barbell glute bridge.",
+  "descriptionPl": "Ćwiczenie wyprostu w stawie biodrowym wykonywane w leżeniu na plecach na podłodze, ze stopami uniesionymi na ławce i obciążoną sztangą na biodrach. Uniesienie stóp pozwala biodrom opaść niżej w pozycji dolnej, znacząco zwiększając zakres ruchu w porównaniu do wersji podstawowej z podłogi. Głębsze zgięcie biodra na dole przesuwa więcej pracy na dwugłowe ud, wciąż maksymalnie angażując pośladki. Bardziej zaawansowany wariant mostka ze sztangą.",
+
+  "instructions": [
+    "Place a flat bench in front of you and sit on the floor with your back to the bench, knees bent.",
+    "Roll a padded loaded barbell over your thighs until it sits directly over your hip crease.",
+    "Lie back so your shoulder blades and head rest on the floor. Place both feet flat on the bench, knees bent at roughly 90°, feet hip-width apart.",
+    "Grip the barbell with both hands just outside your hips to lock it in place. Tuck your chin and brace your core.",
+    "Pre-engage the glutes, then drive through your heels pressing into the bench, lifting your hips up.",
+    "Extend the hips fully until your body forms a straight line from your shoulders (on the floor) through the hips to the knees.",
+    "Squeeze the glutes hard at the top for 1-2 seconds. Do NOT hyperextend the lower back — stop at neutral hip extension.",
+    "Lower under control by reversing the motion. Allow the hips to drop deeper than a floor bridge would (the bench creates extra ROM), but do not bounce.",
+    "Breathe: inhale at the bottom, exhale forcefully on the way up while squeezing the glutes."
+  ],
+  "instructionsPl": [
+    "Ustaw płaską ławkę przed sobą i usiądź na podłodze plecami do ławki, kolana ugięte.",
+    "Przetocz obciążoną sztangę (z padą) po udach, aż znajdzie się dokładnie nad zgięciem biodra.",
+    "Połóż się tak, by łopatki i głowa spoczywały na podłodze. Postaw obie stopy płasko na ławce, kolana ugięte do około 90°, stopy na szerokość bioder.",
+    "Złap sztangę oburącz tuż obok bioder, by ją ustabilizować. Schowaj brodę i napnij brzuch.",
+    "Wstępnie napnij pośladki, a następnie wypchnij się przez pięty wciskając je w ławkę i unieś biodra w górę.",
+    "Wyprostuj biodra w pełni, aż ciało utworzy prostą linię od barków (na podłodze) przez biodra do kolan.",
+    "Mocno ściśnij pośladki na górze przez 1-2 sekundy. NIE przeprostowuj odcinka lędźwiowego — zatrzymaj się na neutralnym wyproście biodra.",
+    "Opuszczaj kontrolowanie, odwracając ruch. Pozwól biodrom opaść głębiej niż w mostku z podłogi (ławka daje dodatkowy zakres), ale nie odbijaj.",
+    "Oddech: wdech na dole, wydech z siłą w drodze w górę przy jednoczesnym ściśnięciu pośladków."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings"],
+    "secondary": ["adductors", "erector_spinae"],
+    "stabilizers": ["core", "quadriceps", "calves"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P10",
+    "hamstrings": "P9",
+    "adductors": "S5",
+    "erector_spinae": "S4",
+    "quadriceps": "T3",
+    "core": "T4",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell", "bench"],
+    "optional": ["barbell_pad", "mat", "weight_plates", "non_slip_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-glute-bridge", "bodyweight-glute-bridge-feet-elevated", "dumbbell-glute-bridge"],
+    "progression_to": ["barbell-hip-thrust", "single-leg-hip-thrust", "b-stance-hip-thrust", "pause-hip-thrust"],
+    "alternatives": ["barbell-hip-thrust", "barbell-glute-bridge", "hip-thrust-machine", "cable-pull-through"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar directly over the hip crease, never on the abdomen",
+      "Bench positioned so knees sit at roughly 90° at the top",
+      "Feet flat on the bench, hip-width apart, pressing firmly down",
+      "Shoulder blades and head on the floor, chin tucked",
+      "Pre-squeeze glutes before lifting the bar off the floor"
+    ],
+    "setup_cues_pl": [
+      "Sztanga dokładnie nad zgięciem biodra, nigdy na brzuchu",
+      "Ławka ustawiona tak, by kolana były pod kątem około 90° na górze",
+      "Stopy płasko na ławce, na szerokość bioder, mocno wciskane w ławkę",
+      "Łopatki i głowa na podłodze, broda schowana",
+      "Wstępnie napnij pośladki przed oderwaniem sztangi od podłogi"
+    ],
+    "execution_cues": [
+      "Drive through the heels into the bench — push the bench away",
+      "Push hips straight up using glutes and hamstrings, not the lower back",
+      "Squeeze the glutes hard at the top, hold for 1-2 seconds",
+      "Stop at neutral — straight line from shoulders to knees",
+      "Use the extra ROM — let hips drop low, but stay in control"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij przez pięty w ławkę — odpychaj ławkę od siebie",
+      "Wypychaj biodra prosto w górę pośladkami i dwugłowymi, nie odcinkiem lędźwiowym",
+      "Mocno ściśnij pośladki na górze, przytrzymaj 1-2 sekundy",
+      "Zatrzymaj się na neutralnym wyproście — prosta linia barki-kolana",
+      "Wykorzystaj większy zakres — pozwól biodrom opaść nisko, ale pozostań pod kontrolą"
+    ],
+    "common_faults": [
+      {
+        "fault": "Lumbar hyperextension at the top",
+        "faultPl": "Przeprost lędźwiowy na górze",
+        "cause": "Compensating weak glutes with the lower back, lack of posterior pelvic tilt, or trying to gain extra height through the spine",
+        "causePl": "Kompensowanie słabych pośladków odcinkiem lędźwiowym, brak retrowersji miednicy, lub próba 'dorobienia' wysokości kręgosłupem",
+        "cue": "Tuck the pelvis at the top, stop at a straight line. Squeeze the glutes, not the back.",
+        "cuePl": "Podwiń miednicę na górze, zatrzymaj się na prostej linii. Ściskaj pośladki, nie plecy."
+      },
+      {
+        "fault": "Feet slipping or bench sliding away",
+        "faultPl": "Stopy ślizgają się lub ławka odjeżdża",
+        "cause": "Smooth bench surface, no non-slip mat, or feet placed too close to the edge of the bench",
+        "causePl": "Śliska powierzchnia ławki, brak antypoślizgowej maty, lub stopy zbyt blisko krawędzi ławki",
+        "cue": "Use a rubber mat or grippy bench cover. Place feet fully on the bench, not near the edge.",
+        "cuePl": "Użyj gumowej maty lub antypoślizgowego pokrowca. Postaw stopy w pełni na ławce, nie przy krawędzi."
+      },
+      {
+        "fault": "Bouncing off the floor at the bottom",
+        "faultPl": "Odbijanie od podłogi w pozycji dolnej",
+        "cause": "Using momentum to start each rep, load too heavy, or fatigue",
+        "causePl": "Używanie momentu pędu do startu każdego powtórzenia, zbyt duży ciężar lub zmęczenie",
+        "cue": "Lower with control, pause briefly at the bottom, then drive up from a dead stop",
+        "cuePl": "Opuszczaj z kontrolą, zatrzymaj się na chwilę na dole, potem wypchnij w górę z miejsca"
+      },
+      {
+        "fault": "Knees flaring out or caving in",
+        "faultPl": "Kolana rozjeżdżające się lub uciekające do środka",
+        "cause": "Weak glute medius/adductors, asymmetric foot placement on the bench, or load too heavy",
+        "causePl": "Słabe pośladki średnie/przywodziciele, asymetryczne ustawienie stóp na ławce, lub zbyt duży ciężar",
+        "cue": "Track the knees in line with the toes, push them slightly outward throughout the rep",
+        "cuePl": "Prowadź kolana w linii palców stóp, lekko je wypychaj na zewnątrz przez cały ruch"
+      },
+      {
+        "fault": "Bar rolling forward off the hips",
+        "faultPl": "Sztanga toczy się do przodu z bioder",
+        "cause": "Bar not centered over the hip crease, no pad, or weak grip on the bar",
+        "causePl": "Gryf nie nad zgięciem biodra, brak pady, lub słaby chwyt sztangi",
+        "cue": "Set the bar precisely over the hip crease and grip it tight just outside the hips to lock it in place",
+        "cuePl": "Ustaw gryf dokładnie nad zgięciem biodra i trzymaj mocno tuż obok bioder, by go ustabilizować"
+      }
+    ],
+    "breathing": "Inhale and brace at the bottom. Exhale forcefully on the way up while squeezing the glutes. Inhale at the top or on the way down. For heavy loads, hold breath (Valsalva) through the hardest part of the lockout.",
+    "breathingPl": "Wdech i napięcie na dole. Wydech z siłą w drodze w górę przy jednoczesnym ściśnięciu pośladków. Wdech na górze lub w drodze w dół. Przy ciężkich obciążeniach wstrzymaj oddech (Valsalva) przez najtrudniejszą część zaryglowania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded hip extension with large ROM. Rest and consult a physiotherapist before returning to bridges.",
+      "modificationPl": "Unikaj obciążonego wyprostu biodra z dużym zakresem ruchu. Odpoczynek i konsultacja z fizjoterapeutą przed powrotem do mostków.",
+      "alternative": "bodyweight-glute-bridge"
+    },
+    {
+      "condition": "hamstring_strain",
+      "severity": "modify",
+      "modification": "The feet-elevated position increases hamstring demand significantly. Switch to floor variant or reduce load until healed.",
+      "modificationPl": "Pozycja ze stopami na ławce znacząco zwiększa pracę dwugłowych. Przejdź na wersję z podłogi lub zmniejsz ciężar do czasu wyleczenia.",
+      "alternative": "barbell-glute-bridge"
+    },
+    {
+      "condition": "hip_replacement_or_recent_hip_surgery",
+      "severity": "avoid",
+      "modification": "Avoid heavy hip-loaded movements with deep hip flexion until cleared by surgeon. The increased ROM stresses the joint capsule.",
+      "modificationPl": "Unikaj obciążonych ruchów biodra z głębokim zgięciem do czasu zgody chirurga. Zwiększony zakres ruchu obciąża torebkę stawową.",
+      "alternative": "bodyweight-glute-bridge"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "avoid",
+      "modification": "Avoid supine positions after the first trimester. Switch to standing hip extension or cable pull-through.",
+      "modificationPl": "Unikaj pozycji leżącej na plecach po pierwszym trymestrze. Przejdź na stojący wyprost biodra lub cable pull-through.",
+      "alternative": "cable-pull-through"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x5-6 (strength) | 3x15-20 (endurance/activation)",
+  "calories_per_kg_per_hour": 5.2,
+
+  "media": {
+    "primary": "barbell-glute-bridge-feet-elevated.gif",
+    "frames_extracted": [
+      "frames/barbell-glute-bridge-two-legs-on-bench-male/frame_0_start.png",
+      "frames/barbell-glute-bridge-two-legs-on-bench-male/frame_1_early.png",
+      "frames/barbell-glute-bridge-two-legs-on-bench-male/frame_2_mid.png",
+      "frames/barbell-glute-bridge-two-legs-on-bench-male/frame_3_late.png",
+      "frames/barbell-glute-bridge-two-legs-on-bench-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/barbell-glute-bridge-two-legs-on-bench-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki (start/mid/end) z GIFa jahel. Frame 0 i 4 (pozycja dolna): osoba leży płasko na PODŁODZE — barki, głowa i plecy na ziemi. Stopy są uniesione na płaskiej ławce, kolana zgięte ~90°. Sztanga z talerzami spoczywa na biodrach (nad zgięciem). Pośladki podświetlone na czerwono, ALE również tylna część uda (hamstrings) ma wyraźny czerwony akcent — co potwierdza większą rolę hamstringów w tej wersji (P9, nie S8 jak w wersji z podłogi). Frame 2 (szczyt): pełny wyprost biodra, prosta linia barki-biodra-kolana, biodra wyraźnie wyżej niż w wersji z podłogi (większy ROM, bo na dole biodra opadają niżej). Movement pattern = hinge (biodro w wyproście, kolana statyczne ~90°). Klasyfikacja primary: glutes P10 + hamstrings P9 (oba primary, nie tylko glutes jak w wariancie podstawowym). Equipment: barbell + bench (ławka jest niezbędna). Difficulty 6/10 — taki sam jak wersja podstawowa, bo dodatkowy ROM jest balansowany przez większą stabilność (stopy na stabilnej ławce). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego, polski standard fitness (np. 'dwugłowe ud' / 'dwugłowych', 'retrowersja miednicy', 'pady na gryf').",
+
+  "tags": ["glute_focused", "posterior_chain", "hip_dominant", "lower_body", "barbell", "bench_required", "hip_extension", "hypertrophy", "increased_rom"]
+}

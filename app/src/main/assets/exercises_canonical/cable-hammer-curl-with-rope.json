@@ -1,0 +1,195 @@
+{
+  "id": "cable-hammer-curl-with-rope",
+  "name": "Cable Hammer Curl with Rope",
+  "namePl": "Hammer curl z liną na wyciągu",
+  "aliases": ["rope hammer curl", "cable rope hammer curl", "neutral grip cable curl with rope", "low pulley rope hammer curl"],
+  "aliasesPl": ["uginanie ramion młotkowe z liną na wyciągu", "hammer curl na wyciągu dolnym", "uginanie neutralnym chwytem z liną", "młotki na wyciągu z liną"],
+
+  "description": "An isolation curl for the elbow flexors performed standing at a low cable pulley with a rope attachment held in a neutral (hammer) grip — palms facing each other. The cable provides constant tension across the entire range of motion, unlike free weights where resistance drops at the top and bottom. The neutral grip shifts emphasis from biceps brachii peak to the deeper brachialis and the brachioradialis of the forearm, building thicker upper-arm volume and stronger grip. The rope allows the wrists to rotate freely and pull slightly outward at the top, which enhances peak contraction.",
+  "descriptionPl": "Izolowane uginanie ramion dla zginaczy stawu łokciowego wykonywane stojąc przy dolnej rolce wyciągu, z liną trzymaną chwytem neutralnym (młotkowym) — dłonie skierowane do siebie. Linka kabla zapewnia stałe napięcie przez cały zakres ruchu, w przeciwieństwie do wolnych ciężarów, gdzie opór maleje na końcach. Neutralny chwyt przesuwa akcent ze szczytu mięśnia dwugłowego ramienia na głębszy mięsień ramienny (brachialis) i mięsień ramienno-promieniowy (brachioradialis) przedramienia, budując grubsze ramię i silniejszy chwyt. Lina pozwala nadgarstkom swobodnie obracać się i lekko rozsuwać na zewnątrz na szczycie ruchu, co wzmacnia szczytowy skurcz.",
+
+  "instructions": [
+    "Attach a rope handle to a low pulley. Set the weight on the stack. Grip both ends of the rope so the thumbs point upward and palms face each other (neutral grip).",
+    "Stand facing the machine, feet hip-width apart, about half a step back from the pulley so the cable stays under tension at full elbow extension.",
+    "Pin your elbows to your sides — they will stay there for the entire set. Lift your chest, retract your shoulders, and brace your core.",
+    "Start with the arms fully extended, rope hanging in front of your thighs, biceps stretched.",
+    "Curl the rope upward by flexing only at the elbows. Keep wrists neutral and thumbs pointing up the entire way. Exhale on the way up.",
+    "At the top, the rope ends should reach roughly chest height. Squeeze the biceps and brachialis hard for a brief pause; you can let your hands flare slightly apart for stronger peak contraction.",
+    "Lower the rope under control over 2-3 seconds back to full elbow extension. Inhale on the descent.",
+    "Do not let the weight stack touch down between reps — keep constant tension on the cable throughout the set."
+  ],
+  "instructionsPl": [
+    "Załóż linę na uchwyt dolnej rolki wyciągu. Ustaw ciężar na stosie. Złap oba końce liny tak aby kciuki skierowane były w górę, a dłonie do siebie (chwyt neutralny).",
+    "Stań twarzą do maszyny, stopy na szerokość bioder, około pół kroku od rolki — tak aby kabel pozostawał pod napięciem przy pełnym wyproście łokci.",
+    "Przyklej łokcie do boków tułowia — pozostają tam przez całą serię. Unieś klatkę piersiową, ściągnij barki w tył i napnij brzuch.",
+    "Zacznij z ramionami w pełnym wyproście, lina zwisa przed udami, biceps rozciągnięty.",
+    "Uginaj linę do góry, zginając wyłącznie w łokciach. Trzymaj nadgarstki w pozycji neutralnej, kciuki skierowane w górę przez cały ruch. Wydech w fazie unoszenia.",
+    "W górnej pozycji końce liny powinny dojść mniej więcej na wysokość klatki piersiowej. Mocno spinaj biceps i mięsień ramienny przez chwilę; możesz lekko rozsunąć dłonie na zewnątrz dla mocniejszego skurczu szczytowego.",
+    "Opuszczaj linę w sposób kontrolowany przez 2-3 sekundy aż do pełnego wyprostu łokci. Wdech podczas opuszczania.",
+    "Nie pozwól, by stos ciężarków dotknął bazy między powtórzeniami — utrzymuj stałe napięcie na kablu przez całą serię."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii", "brachialis", "brachioradialis"],
+    "secondary": ["forearm_flexors"],
+    "stabilizers": ["anterior_deltoid", "core", "upper_trapezius", "forearm_extensors"]
+  },
+
+  "muscle_intensity": {
+    "brachialis": "P9",
+    "brachioradialis": "P8",
+    "biceps_brachii": "P7",
+    "forearm_flexors": "S5",
+    "anterior_deltoid": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1",
+    "forearm_extensors": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "rope_attachment"],
+    "optional": ["lifting_straps", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-hammer-curl"],
+    "progression_to": ["cable-curl", "cable-bayesian-curl", "preacher-hammer-curl", "incline-dumbbell-hammer-curl"],
+    "alternatives": ["dumbbell-hammer-curl", "cross-body-hammer-curl", "ez-bar-reverse-curl", "cable-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulley, rope attachment, neutral grip — thumbs up",
+      "Half a step back from the stack — keep cable under tension",
+      "Elbows pinned to your sides, ribcage tall",
+      "Shoulders pulled back and down, core braced",
+      "Start every rep from a dead-hang full elbow extension"
+    ],
+    "setup_cues_pl": [
+      "Dolna rolka, lina, chwyt neutralny — kciuki w górze",
+      "Pół kroku od stosu — kabel ma być stale napięty",
+      "Łokcie przyklejone do boków, klatka w górze",
+      "Barki ściągnięte w tył i w dół, brzuch napięty",
+      "Każde powtórzenie zaczynaj z pełnego wyprostu w łokciach"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay still",
+      "Keep wrists neutral, thumbs up the whole way",
+      "Squeeze brachialis and biceps hard at the top",
+      "Flare the rope ends slightly apart at peak for extra contraction",
+      "Lower slow — 2-3 seconds, never let the stack rest"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem nieruchome",
+      "Nadgarstki neutralne, kciuki skierowane w górę przez cały ruch",
+      "Mocno spinaj brachialis i biceps w górnej pozycji",
+      "Lekko rozsuń końce liny na zewnątrz w szczycie ruchu dla dodatkowego skurczu",
+      "Opuszczaj wolno — 2-3 sekundy, nigdy nie pozwól stosowi odpocząć"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drift forward and shoulders flex to lift higher",
+        "faultPl": "Łokcie wędrują do przodu i barki włączają się do unoszenia",
+        "cause": "Load too heavy or trying to bring rope higher than full elbow flexion allows",
+        "causePl": "Zbyt duży ciężar lub próba doprowadzenia liny wyżej niż pozwala na to pełne zgięcie łokcia",
+        "cue": "Stop when forearms hit vertical. Elbows stay directly under your shoulders.",
+        "cuePl": "Zakończ ruch gdy przedramiona dojdą do pionu. Łokcie dokładnie pod barkami."
+      },
+      {
+        "fault": "Stack slammed down between reps (lost tension)",
+        "faultPl": "Stos uderza w bazę między powtórzeniami (utrata napięcia)",
+        "cause": "Standing too close to the pulley or fully releasing the rope at the bottom",
+        "causePl": "Stanie zbyt blisko rolki lub całkowite zwalnianie liny w dolnej pozycji",
+        "cue": "Stand half a step back. Lower slowly and stop just before stack touches.",
+        "cuePl": "Stań pół kroku dalej. Opuszczaj wolno i zatrzymuj tuż przed dotknięciem stosu."
+      },
+      {
+        "fault": "Body sway and torso lean to assist the lift",
+        "faultPl": "Bujanie tułowiem i odchylanie się do tyłu przy uginaniu",
+        "cause": "Excessive weight, ego lifting, or unbraced core",
+        "causePl": "Zbyt duży ciężar, ego, lub brak napięcia mięśni głębokich",
+        "cue": "Pin a foot back like a sprinter start, brace abs, ears over hips.",
+        "cuePl": "Wystaw jedną stopę w tył jak sprinter na starcie, napnij brzuch, uszy nad biodrami."
+      },
+      {
+        "fault": "Pronating the wrists (palms turning toward floor) during the curl",
+        "faultPl": "Nawracanie nadgarstków (dłonie obracane w stronę podłogi) w trakcie uginania",
+        "cause": "Weak grip on the rope, ends slip in the hands, or no thumb wrap",
+        "causePl": "Słaby chwyt liny, końce liny ślizgają się w dłoni, lub brak kciuka wokół liny",
+        "cue": "Wrap the thumb around the rope. Squeeze the ends like you are trying to bend them upward.",
+        "cuePl": "Owiń kciuk wokół liny. Ściskaj końce liny jakbyś próbował je wygiąć do góry."
+      },
+      {
+        "fault": "Cutting the bottom of the range (not extending elbows fully)",
+        "faultPl": "Skracanie dolnej fazy ruchu (brak pełnego wyprostu łokci)",
+        "cause": "Wanting to keep tension on biceps but skipping the stretch",
+        "causePl": "Chęć utrzymania napięcia na bicepsach kosztem fazy rozciągniętej",
+        "cue": "Let arms straighten fully each rep — the stretch is where brachialis grows.",
+        "cuePl": "Pozwól ramionom w pełni wyprostować się przy każdym powtórzeniu — brachialis rośnie w pozycji rozciągniętej."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light core brace throughout to prevent torso swing.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię aby zapobiec bujaniu tułowiem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "modify",
+      "modification": "Brachioradialis attaches near lateral epicondyle and a hammer grip loads it heavily. Reduce weight, increase reps to 12-15, avoid heavy eccentrics until pain-free.",
+      "modificationPl": "Mięsień ramienno-promieniowy przyczepia się blisko nadkłykcia bocznego, a chwyt młotkowy mocno go obciąża. Zmniejsz ciężar, zwiększ liczbę powtórzeń do 12-15, unikaj ciężkich faz negatywnych do ustąpienia bólu.",
+      "alternative": "cable-curl"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Neutral grip already reduces supination stress compared to a supinated curl. Keep loads moderate, use slow tempo, avoid forced reps and partials at peak.",
+      "modificationPl": "Neutralny chwyt już zmniejsza stres supinacyjny w porównaniu z podchwytem. Utrzymuj umiarkowane ciężary, używaj wolnego tempa, unikaj wymuszonych powtórzeń i ruchów częściowych w szczycie.",
+      "alternative": "cross-body-hammer-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "Hammer grip is the most wrist-friendly curl variation. If pain persists, ensure the rope is thick enough to avoid crushing grip; use lifting straps if needed.",
+      "modificationPl": "Chwyt młotkowy jest najbardziej przyjazny dla nadgarstków spośród wariantów uginania. Jeśli ból się utrzymuje, sprawdź czy lina jest dostatecznie gruba aby uniknąć miażdżącego chwytu; w razie potrzeby użyj pasków pomocniczych.",
+      "alternative": "dumbbell-hammer-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy) | 3x8-10 (strength) | 2-3x15-20 (pump/finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-hammer-curl-with-rope.gif",
+    "frames_extracted": [
+      "frames/cable-hammer-curl-with-rope/frame_0_start.png",
+      "frames/cable-hammer-curl-with-rope/frame_1_early.png",
+      "frames/cable-hammer-curl-with-rope/frame_2_mid.png",
+      "frames/cable-hammer-curl-with-rope/frame_3_late.png",
+      "frames/cable-hammer-curl-with-rope/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/cable-hammer-curl-with-rope"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: pełny wyprost ramion, lina zwisa przed udami trzymana chwytem neutralnym (kciuki w górze, dłonie do siebie), kabel napięty w dół-tył do dolnej rolki za atletą, biceps + przedramiona (brachialis/brachioradialis) podświetlone na czerwono. Frame 2: pełny skurcz, lina podciągnięta do wysokości górnej części klatki piersiowej, chwyt nadal neutralny — kciuki w górze, łokcie pozostają przy bokach tułowia. Frame 4: powrót do pełnego wyprostu, kabel napięty, postawa pionowa, tułów nieruchomy przez cały ruch. Ćwiczenie jednoznacznie zidentyfikowane jako Cable Hammer Curl with Rope (neutralny chwyt, dolna rolka). Brak yuhonas_id i glowupp_id — tylko źródło jahel. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "brachialis", "brachioradialis", "isolation", "cable", "rope", "neutral_grip", "upper_body", "constant_tension"]
+}

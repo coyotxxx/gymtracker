@@ -1,0 +1,200 @@
+{
+  "id": "weighted-sissy-squat",
+  "name": "Weighted Sissy Squat",
+  "namePl": "Sissy squat z obciążeniem",
+  "aliases": ["weighted sissy squat", "loaded sissy squat", "plate sissy squat"],
+  "aliasesPl": ["sissy squat z obciążeniem", "sissy squat z talerzem", "obciążony sissy squat", "przysiad sissy z talerzem"],
+
+  "description": "Brutal isolation exercise for the quadriceps, especially the rectus femoris. Performed by leaning the torso backward while the knees travel forward and the heels rise off the floor — moving the whole knee joint through extreme flexion. The lifter holds a weight plate against the chest to add resistance. A bench, post or support is typically held with one hand for balance. Often programmed as a finisher for quad hypertrophy or in pre-exhaust supersets before compound leg work.",
+  "descriptionPl": "Brutalne ćwiczenie izolowane na mięśnie czworogłowe, ze szczególnym akcentem na mięsień prosty uda (rectus femoris). Wykonywane przez odchylenie tułowia do tyłu przy jednoczesnym wędrowaniu kolan do przodu i uniesieniu pięt — staw kolanowy przechodzi przez ekstremalne zgięcie. Ćwiczący trzyma talerz obciążeniowy przy klatce piersiowej dla dodatkowego oporu. Jedną ręką zazwyczaj trzyma się ławki, słupka lub innej podpórki dla równowagi. Często programowany jako finisher na hipertrofię czworogłowych lub w superseriach pre-exhaust przed ćwiczeniami złożonymi na nogi.",
+
+  "instructions": [
+    "Stand next to a stable support (incline bench, squat rack upright, sturdy post). Hold a weight plate against your upper chest with one arm crossed over it.",
+    "Grip the support with your free hand at roughly hip-to-chest height. Set your feet hip-width apart, parallel.",
+    "Brace your core and squeeze your glutes. Keep a straight line from knees through hips to shoulders — no hip flexion.",
+    "Initiate the descent by driving your knees forward and allowing your heels to lift. Simultaneously lean your torso backward to stay in line with the thighs.",
+    "Descend slowly (2-3 seconds) under control. Keep the body rigid — only the knee joint moves. Maintain glute and core tension throughout.",
+    "Go as low as your knee health allows — advanced lifters reach near-parallel between calves and hamstrings.",
+    "Reverse the motion by driving your knees backward and pulling your torso back upright simultaneously. Squeeze the quads hard at the top.",
+    "Use the support hand only for balance — do not pull yourself up with the arm. Keep the working load on the quads."
+  ],
+  "instructionsPl": [
+    "Stań obok stabilnej podpórki (ławka skośna, słupek stojaka, mocny pal). Trzymaj talerz obciążeniowy przy górnej części klatki, jedną ręką trzymając go skrzyżowaną na piersi.",
+    "Drugą ręką chwyć podpórkę mniej więcej na wysokości biodra lub klatki. Ustaw stopy na szerokość bioder, równolegle.",
+    "Napnij brzuch i ściśnij pośladki. Utrzymaj prostą linię od kolan przez biodra do barków — bez zgięcia w biodrach.",
+    "Rozpocznij schodzenie wypychając kolana do przodu i pozwalając piętom unieść się. Jednocześnie odchyl tułów do tyłu, aby pozostał w jednej linii z udami.",
+    "Schodź powoli (2-3 sekundy) z pełną kontrolą. Trzymaj ciało sztywne — porusza się tylko staw kolanowy. Utrzymaj napięcie pośladków i brzucha przez cały czas.",
+    "Schodź tak nisko, jak pozwala zdrowie twoich kolan — zaawansowani osiągają niemal kontakt łydek z dwugłowymi.",
+    "Wróć do pozycji startowej cofając kolana i jednocześnie podnosząc tułów do pionu. Mocno ściśnij czworogłowe na górze.",
+    "Wolnej ręki używaj wyłącznie dla równowagi — nie podciągaj się ramieniem. Cały wysiłek ma spoczywać na czworogłowych."
+  ],
+
+  "classification": {
+    "movement_pattern": "knee_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps"],
+    "secondary": ["hip_flexors"],
+    "stabilizers": ["core", "glutes", "calves", "tibialis_anterior"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "hip_flexors": "S5",
+    "core": "S5",
+    "glutes": "S4",
+    "calves": "S4",
+    "tibialis_anterior": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "weight_plate"],
+    "optional": ["bench", "squat_rack_upright", "knee_sleeves", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["bodyweight-sissy-squat", "barbell-back-squat", "leg-extension"],
+    "progression_to": ["weighted-sissy-squat-deficit", "sissy-squat-bench", "deficit-sissy-squat"],
+    "alternatives": ["leg-extension", "hack-squat", "front-squat-bodyweight", "bodyweight-sissy-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Hold plate tight against the upper chest",
+      "Free hand on the support only for balance",
+      "Feet hip-width, parallel",
+      "Glutes squeezed, core braced",
+      "Straight line from knees to shoulders before moving"
+    ],
+    "setup_cues_pl": [
+      "Trzymaj talerz mocno przy górnej części klatki",
+      "Wolna ręka na podpórce tylko dla równowagi",
+      "Stopy na szerokość bioder, równolegle",
+      "Pośladki ściśnięte, brzuch napięty",
+      "Prosta linia od kolan do barków przed startem"
+    ],
+    "execution_cues": [
+      "Drive knees forward and lean back simultaneously",
+      "Heels rise naturally — let them",
+      "Move only at the knee joint — hips stay extended",
+      "Slow on the descent (2-3 sec), controlled on the way up",
+      "Squeeze quads hard at the top, no resting"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij kolana do przodu i odchyl się do tyłu jednocześnie",
+      "Pięty unoszą się naturalnie — nie blokuj tego",
+      "Ruch tylko w stawie kolanowym — biodra pozostają wyprostowane",
+      "Wolno schodź (2-3 sek), kontrolowanie wracaj",
+      "Mocno ściśnij czworogłowe na górze, bez odpoczywania"
+    ],
+    "common_faults": [
+      {
+        "fault": "Hip flexion (bending at the hips)",
+        "faultPl": "Zgięcie w biodrach (siadanie do tyłu)",
+        "cause": "Loss of glute tension, instinct to squat back instead of dropping knees forward",
+        "causePl": "Utrata napięcia pośladków, instynkt siadania do tyłu zamiast wypychania kolan do przodu",
+        "cue": "Squeeze glutes hard and keep hips fully open — knees go forward, not hips back",
+        "cuePl": "Mocno ściśnij pośladki i utrzymaj otwarte biodra — kolana do przodu, nie biodra do tyłu"
+      },
+      {
+        "fault": "Pulling up with the support arm",
+        "faultPl": "Podciąganie się ręką trzymającą podpórkę",
+        "cause": "Load too heavy or quads fatiguing, lifter compensates with the upper body",
+        "causePl": "Zbyt duży ciężar lub zmęczone czworogłowe, ćwiczący kompensuje ramieniem",
+        "cue": "Light fingertip grip only — if you need to pull, drop the plate weight",
+        "cuePl": "Tylko delikatny chwyt opuszkami palców — jeśli musisz ciągnąć, zmniejsz ciężar"
+      },
+      {
+        "fault": "Going too deep too soon (knee pain)",
+        "faultPl": "Schodzenie za nisko za szybko (ból kolan)",
+        "cause": "Insufficient quad strength and tendon conditioning for extreme knee flexion under load",
+        "causePl": "Niewystarczająca siła czworogłowych i przygotowanie ścięgien do ekstremalnego zgięcia kolan pod obciążeniem",
+        "cue": "Build ROM gradually over weeks. Stop above any sharp pain — start with 1/3 range, add depth slowly.",
+        "cuePl": "Zwiększaj zakres stopniowo przez tygodnie. Zatrzymaj się przed każdym ostrym bólem — zacznij od 1/3 zakresu i dodawaj głębokość powoli."
+      },
+      {
+        "fault": "Heels staying flat",
+        "faultPl": "Pięty pozostają płasko",
+        "cause": "Wrong understanding of the movement — sissy squat REQUIRES heel rise to allow knees to travel forward",
+        "causePl": "Błędne rozumienie ruchu — sissy squat WYMAGA uniesienia pięt aby kolana mogły wędrować do przodu",
+        "cue": "Let the heels lift — that's the point. Drive knees as far forward as possible.",
+        "cuePl": "Pozwól piętom się unieść — o to chodzi. Wypchnij kolana maksymalnie do przodu."
+      },
+      {
+        "fault": "Bouncing out of the bottom",
+        "faultPl": "Odbijanie się z dolnej pozycji",
+        "cause": "Using momentum to bypass weak point — high risk for patellar tendon and ligaments",
+        "causePl": "Wykorzystanie pędu do ominięcia słabego punktu — wysokie ryzyko dla więzadła rzepki i więzadeł kolana",
+        "cue": "Pause briefly at the bottom and drive up smoothly under control. No bounce.",
+        "cuePl": "Krótka pauza na dole i równomierny powrót pod kontrolą. Bez odbijania."
+      }
+    ],
+    "breathing": "Inhale at the top before initiating descent. Hold or exhale slowly through pursed lips during the descent. Exhale through the hardest part of the ascent. Avoid full Valsalva at heavy loads — it's an isolation move, not a max lift.",
+    "breathingPl": "Wdech na górze przed rozpoczęciem schodzenia. Wstrzymaj oddech lub wydychaj powoli przez zaciśnięte usta podczas schodzenia. Wydech podczas najtrudniejszej części powrotu. Unikaj pełnego Valsalvy przy dużych ciężarach — to izolacja, nie maksymalny ciężar."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellar_tendinopathy",
+      "severity": "avoid",
+      "modification": "Sissy squats place extreme load on the patellar tendon at deep knee flexion. Avoid entirely during active jumper's knee. Rehab tendon first with isometrics and slow leg extensions.",
+      "modificationPl": "Sissy squat obciąża ekstremalnie więzadło rzepki w głębokim zgięciu kolana. Całkowicie unikać przy aktywnym kolanie skoczka. Najpierw rehabilituj ścięgno izometriami i powolnymi prostowaniami nóg.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "avoid",
+      "modification": "Extreme knee flexion under load contraindicated. Choose a knee-friendly quad alternative.",
+      "modificationPl": "Ekstremalne zgięcie kolan pod obciążeniem przeciwwskazane. Wybierz alternatywę przyjazną dla kolan.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "chondromalacia_patella",
+      "severity": "avoid",
+      "modification": "Knees-over-toes loaded movement aggravates patellofemoral pain. Switch to limited ROM quad work.",
+      "modificationPl": "Ruch z kolanami nad palcami pod obciążeniem nasila ból rzepkowo-udowy. Przejdź na pracę na czworogłowe z ograniczonym zakresem.",
+      "alternative": "leg-extension"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "caution",
+      "modification": "Holding a plate against the chest while leaning backward loads the lumbar spine. Reduce or remove the plate, perform bodyweight version only.",
+      "modificationPl": "Trzymanie talerza przy klatce przy odchyleniu do tyłu obciąża kręgosłup lędźwiowy. Zmniejsz lub zdejmij talerz, wykonuj tylko wersję bez obciążenia.",
+      "alternative": "bodyweight-sissy-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x12-15 (finisher) | 2-3x6-10 with slow eccentric",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "weighted-sissy-squat.gif",
+    "frames_extracted": [
+      "frames/weighted-sissy-squat/frame_0_start.png",
+      "frames/weighted-sissy-squat/frame_1_early.png",
+      "frames/weighted-sissy-squat/frame_2_mid.png",
+      "frames/weighted-sissy-squat/frame_3_late.png",
+      "frames/weighted-sissy-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/weighted-sissy-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0 i 4 pokazują pozycję wyjściową — stojąca, talerz przy klatce, jedna ręka na ławce skośnej. Klatka 2 (środek) potwierdza charakterystyczną pozycję sissy squat: tułów odchylony do tyłu, kolana mocno wysunięte do przodu, pięty oderwane od podłogi, ciało w prostej linii od kolan do barków. Mięśnie podświetlone na ilustracji: czworogłowe obu nóg (główne, mocno czerwone) — pasuje do anatomii ćwiczenia, które jest brutalną izolacją rectus femoris i całych czworogłowych. Brak podświetlenia pośladków/hamstrings — potwierdza że to ćwiczenie izolacyjne, nie compound. Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego. Klasyfikacja: knee_extension (nie squat — biodra nie zginają się), isolation (nie compound), bilateral. Equipment: bodyweight + weight_plate (talerz). Difficulty 8 — wysokie ryzyko dla kolan + wymaga zaawansowanej kontroli motorycznej.",
+
+  "tags": ["quadriceps_isolation", "rectus_femoris_focus", "knees_over_toes", "advanced_quad", "hypertrophy", "finisher", "high_knee_stress"]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "dumbbell-one-arm-incline-chest-press",
+  "name": "Dumbbell One-Arm Incline Chest Press",
+  "namePl": "Wyciskanie hantla jednorącz na ławce skośnej",
+  "aliases": ["one-arm incline DB press", "single arm incline dumbbell press", "unilateral incline DB bench", "incline DB press one arm"],
+  "aliasesPl": ["incline DB press jednorącz", "wyciskanie hantla na skosie jednorącz", "jednostronne wyciskanie hantla skośnie", "incline jednorącz", "wyciskanie hantla skośne unilateralnie"],
+
+  "description": "Unilateral incline pressing variation performed lying on a bench set at ~30-45° with a single dumbbell. The incline angle shifts emphasis toward the clavicular (upper) head of the pectoralis major and the anterior deltoid. Pressing on one side at a time forces strong anti-rotation work from the obliques and deep core to resist the contralateral torque created by the loaded side. Excellent tool for correcting left/right asymmetry, building unilateral pressing strength, training the upper chest in isolation, and adding a serious core stability component to a chest day.",
+  "descriptionPl": "Jednostronny wariant wyciskania skośnego wykonywany na ławce ustawionej pod kątem ~30-45° z jednym hantlem. Skos przenosi nacisk na obojczykową (górną) część mięśnia piersiowego większego i przedni mięsień naramienny. Wyciskanie jedną stroną na raz wymusza silną pracę antyrotacyjną mięśni skośnych brzucha i głębokiego corem, by przeciwstawić się momentowi obrotowemu generowanemu przez obciążoną stronę. Świetne narzędzie do korekty asymetrii lewa/prawa, budowania siły wyciskania unilateralnie, izolowania górnej klatki oraz dodania mocnego komponentu stabilizacji corem do dnia klatki.",
+
+  "instructions": [
+    "Set an adjustable bench to ~30-45° incline. Lower angles (~30°) hit upper chest more; higher angles (~45-60°) shift further into the front delt.",
+    "Sit on the bench with a single dumbbell resting on the working-side thigh, palm facing inward.",
+    "Lie back, using your thigh to kick the dumbbell up to shoulder level. Free hand can be placed on the abdomen, on the hip, or extended out for counter-balance.",
+    "Plant both feet firmly on the floor. Brace the core HARD — the load on one side will try to rotate your torso; resist it.",
+    "Retract and depress the working-side shoulder blade. Press the dumbbell up so the arm finishes extended over the upper chest, slightly inward, with elbow soft (not locked).",
+    "Inhale, maintain anti-rotation brace, and lower the dumbbell under control to upper-chest level. Elbow tracks at ~45-60° from torso, NOT flared to 90°.",
+    "Feel the stretch in the upper chest at the bottom. Do NOT let the torso rotate or the free shoulder lift off the bench.",
+    "Press the dumbbell back up along the same path, exhaling through the press. Keep hips and shoulders square to the bench throughout.",
+    "Complete all reps on one side, then switch hands and repeat on the other side. Match reps and tempo on both sides."
+  ],
+  "instructionsPl": [
+    "Ustaw regulowaną ławkę na skos ~30-45°. Mniejsze kąty (~30°) mocniej akcentują górną klatkę; większe (~45-60°) przesuwają nacisk w stronę przedniego delta.",
+    "Usiądź na ławce z jednym hantlem opartym o udo po stronie pracującej, dłoń skierowana do wewnątrz.",
+    "Połóż się, wybijając hantel z uda do wysokości barku. Wolna ręka może spocząć na brzuchu, biodrze lub być wyprostowana dla kontrbalansu.",
+    "Obie stopy mocno na podłodze. Napnij core MOCNO — obciążenie po jednej stronie będzie chciało skręcić tułów; przeciwstaw się temu.",
+    "Ściągnij łopatkę po stronie pracującej w dół i razem. Wyciśnij hantel w górę aż ramię będzie wyprostowane nad górną klatką, lekko do środka, łokieć miękki (bez sztywnego lock-out).",
+    "Wdech, utrzymaj napięcie antyrotacyjne, opuszczaj hantel kontrolowanie do poziomu górnej klatki. Łokieć pod kątem ~45-60° od tułowia, NIE rozsunięty na 90°.",
+    "Poczuj rozciągnięcie górnej klatki na dole. NIE pozwól tułowiowi się obrócić ani wolnemu barkowi oderwać od ławki.",
+    "Wyciśnij hantel z powrotem w górę po tej samej ścieżce, wydech podczas wyciskania. Biodra i barki trzymaj prostopadle do ławki przez cały ruch.",
+    "Wykonaj wszystkie powtórzenia po jednej stronie, potem zmień rękę i powtórz po drugiej. Dopasuj liczbę powtórzeń i tempo po obu stronach."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_clavicular", "anterior_deltoids"],
+    "secondary": ["triceps", "obliques"],
+    "stabilizers": ["rotator_cuff", "core", "serratus_anterior", "lats", "transverse_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_clavicular": "P9",
+    "anterior_deltoids": "P8",
+    "triceps": "S6",
+    "obliques": "S6",
+    "core": "S5",
+    "rotator_cuff": "T4",
+    "serratus_anterior": "T3",
+    "transverse_abdominis": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "incline_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["incline-dumbbell-bench-press", "dumbbell-bench-press"],
+    "progression_to": ["single-arm-landmine-press", "single-arm-dumbbell-floor-press", "alternating-incline-dumbbell-press"],
+    "alternatives": ["incline-dumbbell-bench-press", "single-arm-dumbbell-bench-press", "incline-cable-chest-press", "landmine-incline-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench at 30-45° — lower angle = more upper chest, steeper = more delt",
+      "Plant the working-side shoulder blade firmly into the bench BEFORE pressing",
+      "Core braced HARD — anticipate the rotational pull from the loaded side",
+      "Free hand on belly or hip for proprioception, or extended for counter-balance",
+      "Hips and shoulders square to bench, both feet flat on the floor"
+    ],
+    "setup_cues_pl": [
+      "Ławka pod kątem 30-45° — mniejszy kąt = więcej górnej klatki, większy = więcej delta",
+      "Łopatkę po stronie pracującej wbij mocno w ławkę PRZED wyciskaniem",
+      "Core napięty MOCNO — wyprzedź siłę rotującą generowaną przez obciążoną stronę",
+      "Wolna ręka na brzuchu lub biodrze dla propriocepcji, albo wyprostowana dla kontrbalansu",
+      "Biodra i barki prostopadle do ławki, obie stopy płasko na podłodze"
+    ],
+    "execution_cues": [
+      "Press up AND slightly inward — finish over the upper chest, not the shoulder",
+      "Resist torso rotation — hips and shoulders stay square the entire set",
+      "Elbow at ~45-60° from torso, never flared to 90°",
+      "Lower 2-3 seconds, feel the upper-chest stretch, press up explosively but controlled",
+      "Match reps and tempo on both sides — start with the weaker side"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj w górę I lekko do środka — kończ nad górną klatką, nie nad barkiem",
+      "Przeciwstaw się rotacji tułowia — biodra i barki prostopadle przez cały set",
+      "Łokieć ~45-60° od tułowia, nigdy rozsunięty na 90°",
+      "Opuszczaj 2-3 sekundy, poczuj rozciągnięcie górnej klatki, wyciskaj wybuchowo ale kontrolowanie",
+      "Dopasuj liczbę powtórzeń i tempo po obu stronach — zacznij od słabszej strony"
+    ],
+    "common_faults": [
+      {
+        "fault": "Torso rotates toward the loaded side",
+        "faultPl": "Tułów obraca się w stronę obciążoną",
+        "cause": "Insufficient core/oblique brace; weight too heavy; treating it like a bilateral press",
+        "causePl": "Niewystarczające napięcie corem/skośnych; za ciężki ciężar; traktowanie ruchu jak bilateralnego",
+        "cue": "Brace abs as if expecting a punch on the loaded side. Hips and free shoulder STAY on the bench. Reduce weight if needed.",
+        "cuePl": "Napnij brzuch jakbyś spodziewał się ciosu po stronie obciążonej. Biodra i wolny bark ZOSTAJĄ na ławce. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Elbow flared to 90° (chicken wing)",
+        "faultPl": "Łokieć rozsunięty na 90° (kurze skrzydełko)",
+        "cause": "Improper grip orientation; lack of awareness; mimicking a fly motion",
+        "causePl": "Niepoprawne ustawienie chwytu; brak świadomości; kopiowanie ruchu rozpiętek",
+        "cue": "Tuck elbow to ~45-60°. On incline this matters double — flared elbow plus incline angle massively stresses the front shoulder.",
+        "cuePl": "Schowaj łokieć do ~45-60°. Na skosie ma to podwójne znaczenie — rozsunięty łokieć plus kąt skosu mocno obciąża przedni bark."
+      },
+      {
+        "fault": "Pressing toward the shoulder, not the upper chest",
+        "faultPl": "Wyciskanie w stronę barku zamiast górnej klatki",
+        "cause": "Bench angle too steep (>60°); poor pressing path; front delt taking over",
+        "causePl": "Za stromy kąt ławki (>60°); zła ścieżka wyciskania; przedni delt przejmuje pracę",
+        "cue": "Bench at 30-45° max for chest focus. Press path ends over the COLLARBONE area, not over the deltoid.",
+        "cuePl": "Ławka maksymalnie 30-45° dla pracy na klatce. Ścieżka wyciskania kończy się nad OBOJCZYKIEM, nie nad deltoidem."
+      },
+      {
+        "fault": "Free shoulder lifts off the bench at the top",
+        "faultPl": "Wolny bark odrywa się od ławki na szczycie",
+        "cause": "Trying to use body english for extra range; loss of bilateral scapular control",
+        "causePl": "Próba użycia ruchu ciała by dorobić zakres; utrata bilateralnej kontroli łopatek",
+        "cue": "Both shoulder blades pinned to bench throughout. The lift comes from the arm, not the torso.",
+        "cuePl": "Obie łopatki przyklejone do ławki przez cały czas. Wyciskanie ma pochodzić z ramienia, nie z tułowia."
+      },
+      {
+        "fault": "Unequal work on both sides (skipping or shortening the weaker side)",
+        "faultPl": "Nierówna praca po obu stronach (pomijanie lub skracanie słabszej strony)",
+        "cause": "Fatigue accumulation; the entire point of unilateral work missed",
+        "causePl": "Akumulacja zmęczenia; cały sens treningu unilateralnego pominięty",
+        "cue": "Start with the WEAKER side. Match its reps on the strong side, never exceed. That is how you fix imbalance.",
+        "cuePl": "Zacznij od SŁABSZEJ strony. Dopasuj jej liczbę powtórzeń po stronie silniejszej, nigdy nie przekraczaj. Tak naprawia się asymetrię."
+      }
+    ],
+    "breathing": "Inhale at the top, brace hard against rotation, hold through the descent. Exhale on the press up.",
+    "breathingPl": "Wdech na górze, mocno napnij się przeciw rotacji, trzymaj przez schodzenie. Wydech podczas wyciskania w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Use a neutral grip (palm facing inward) and reduce incline angle to 30° max. Stop ROM above any pinch point.",
+      "modificationPl": "Użyj chwytu neutralnego (dłoń skierowana do wewnątrz) i zmniejsz kąt skosu do maksymalnie 30°. Zatrzymaj ROM powyżej punktu bólowego.",
+      "alternative": "incline-cable-chest-press"
+    },
+    {
+      "condition": "rotator_cuff_tear",
+      "severity": "avoid",
+      "modification": "Unilateral incline pressing demands high rotator cuff stabilization on the loaded side. Use a guided machine until cleared by physio.",
+      "modificationPl": "Wyciskanie skośne jednorącz wymaga wysokiej stabilizacji rotatora po stronie obciążonej. Przejdź na maszynę z prowadzonym torem do czasu zgody fizjoterapeuty.",
+      "alternative": "machine-incline-chest-press"
+    },
+    {
+      "condition": "lower_back_pain_lumbar",
+      "severity": "modify",
+      "modification": "Unilateral load creates rotational stress on the lumbar spine. Brace HARD, reduce weight, or use a fixed-path machine.",
+      "modificationPl": "Obciążenie unilateralne generuje stres rotacyjny na odcinek lędźwiowy. Napnij MOCNO core, zmniejsz ciężar lub przejdź na maszynę z ustaloną ścieżką.",
+      "alternative": "machine-incline-chest-press"
+    },
+    {
+      "condition": "core_instability_or_postpartum",
+      "severity": "modify",
+      "modification": "The anti-rotation demand exceeds the user's current core capacity. Start with bilateral incline DB press; return to unilateral when brace is solid.",
+      "modificationPl": "Wymaganie antyrotacyjne przekracza aktualne możliwości corem usera. Zacznij od bilateralnego incline DB press; wróć do unilateralnego gdy napięcie corem będzie solidne.",
+      "alternative": "incline-dumbbell-bench-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per side (hypertrophy, default) | 4x6-8 per side (strength-hypertrophy) | 3x12-15 per side (endurance/stability)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "dumbbell-one-arm-incline-chest-press.gif",
+    "frames_extracted": [
+      "frames/dumbbell-one-arm-incline-chest-press/frame_0_start.png",
+      "frames/dumbbell-one-arm-incline-chest-press/frame_1_early.png",
+      "frames/dumbbell-one-arm-incline-chest-press/frame_2_mid.png",
+      "frames/dumbbell-one-arm-incline-chest-press/frame_3_late.png",
+      "frames/dumbbell-one-arm-incline-chest-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/dumbbell-one-arm-incline-chest-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start/dół): ławka skośna ~45°, hantel w prawej ręce na poziomie górnej klatki, łokieć zgięty ~90° i lekko od tułowia (nie flared), wolna lewa ręka opuszczona swobodnie, chwyt pronowany/lekko-neutralny. Frame 2 (góra): pełne wyciśnięcie po prawej stronie, ramię wyprostowane nad górną klatką, lekko do środka — pectoralis major (część obojczykowa/górna) + przedni delt + triceps wyraźnie podświetlone po stronie pracującej. Frame 4: powrót w dół z motion blur (kontrolowane opuszczanie). Tułów stabilny, brak rotacji widocznej w klatkach — modelowa pozycja anti-rotation. Klasyczny unilateral incline DB press, ławka ~30-45°. PL nazwa zgodna z polskim slangiem siłowniowym ('jednorącz'). Wszystkie pola PL pisane od zera, nie tłumaczone z EN. Specyfika: unilateralny → anti-rotation core (obliques jako secondary), incline → pectoralis_major_clavicular jako primary (zamiast całego pectoralis_major).",
+
+  "tags": ["compound", "upper_body", "horizontal_push", "upper_chest", "unilateral", "anti_rotation", "core_demanding", "dumbbell", "incline", "asymmetry_fix"]
+}

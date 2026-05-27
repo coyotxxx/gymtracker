@@ -1,0 +1,205 @@
+{
+  "id": "kettlebell-one-arm-jerk",
+  "name": "Kettlebell One-Arm Jerk",
+  "namePl": "Jerk z kettlebellą jednorącz",
+  "aliases": ["KB jerk", "one-arm kettlebell jerk", "single-arm KB jerk", "girevoy jerk", "GS jerk", "long cycle jerk (variant)"],
+  "aliasesPl": ["jerk z kettlebellą", "kettlebell jerk jednorącz", "jednoraczny jerk KB", "girevoy jerk", "GS jerk"],
+
+  "description": "Classic girevoy sport (GS) lift. Explosive overhead push from front rack to full lockout using a coordinated 2-dip drive: first dip generates upward leg drive, then a second dip (catch) drops the body UNDER the kettlebell while arm locks out overhead. Unlike a strict press, the jerk uses lower-body explosiveness to move loads far heavier than pressing capacity. Builds shoulder power, anaerobic endurance, leg drive, and full-body coordination. Foundational lift in kettlebell sport (alongside snatch and long cycle).",
+  "descriptionPl": "Klasyk girevoy sportu (GS). Eksplosive wyciskanie nad głowę z pozycji front rack do pełnego lock-out z wykorzystaniem skoordynowanego podwójnego dipu (ugięcia): pierwszy dip generuje napęd nóg w górę, drugi dip (catch) wbija ciało POD kettlebellę gdy ramię się prostuje overhead. W przeciwieństwie do strict press, jerk używa eksplozji dolnej części ciała by podnieść ciężary znacznie większe niż pozwala wyciskanie. Buduje moc barków, wytrzymałość beztlenową, napęd nóg i koordynację całego ciała. Fundamentalne ćwiczenie kettlebell sportu (obok rwania i long cycle).",
+
+  "instructions": [
+    "Clean the kettlebell to the front rack: bell rests on the outside of the forearm, elbow tucked into the iliac crest (hip), wrist neutral, free arm relaxed at the side or out for balance.",
+    "Stand tall, feet hip- to shoulder-width, brace core. Inhale.",
+    "FIRST DIP: bend the knees quickly (NOT a squat — short, sharp dip ~10–15 cm). Keep torso vertical, weight on full foot. Hips stay back slightly.",
+    "DRIVE: explosively extend the knees and hips upward — vertical jump WITHOUT leaving the ground. The bell launches upward off the rack using leg drive (NOT arm press).",
+    "SECOND DIP (catch): as the bell travels up, drop your body BACK DOWN under it by rebending the knees. Simultaneously punch the arm to full lockout overhead.",
+    "LOCKOUT: arm fully extended, bicep by ear, bell directly over the shoulder/mid-foot. Knees re-extend to stand tall under the locked-out bell. Pause.",
+    "Lower the bell back to the front rack by bending the elbow and absorbing with a slight knee bend. Re-rack tightly.",
+    "Breathe: inhale on the dip, sharp exhale at the catch/lockout. Switch arms after target reps (usually equal reps each side, set switch in GS rules)."
+  ],
+  "instructionsPl": [
+    "Wyrzuć kettlebellę do front rack (cleanem): kula spoczywa na zewnętrznej stronie przedramienia, łokieć wciśnięty w grzebień biodrowy (na biodrze), nadgarstek neutralny, wolne ramię luźno przy boku lub w bok dla balansu.",
+    "Stań wyprostowany, stopy na szerokość bioder do barków, napnij brzuch. Wdech.",
+    "PIERWSZY DIP: szybkie ugięcie kolan (NIE przysiad — krótki, ostry dip ~10–15 cm). Tułów pionowo, ciężar na całych stopach. Biodra delikatnie cofnięte.",
+    "DRIVE: eksplosivnie wyprostuj kolana i biodra w górę — pionowy skok BEZ odrywania stóp. Kula wystrzeli w górę z racka napędem nóg (NIE wyciskaniem ramienia).",
+    "DRUGI DIP (catch): gdy kula leci w górę, opuść ciało Z POWROTEM POD nią ponownie uginając kolana. Jednocześnie wybij ramię do pełnego lock-out overhead.",
+    "LOCK-OUT: ramię w pełni wyprostowane, biceps przy uchu, kula bezpośrednio nad barkiem/środkiem stopy. Wyprostuj kolana stając wyprostowany pod zablokowaną kulą. Pauza.",
+    "Opuść kulę z powrotem do front rack zginając łokieć i amortyzując lekkim ugięciem kolan. Wpasuj ciasno w rack.",
+    "Oddech: wdech na dip, ostry wydech na catch/lock-out. Zmień ramię po docelowej liczbie powtórzeń (zwykle równo na każdą stronę, jeden set switch w regułach GS)."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids", "lateral_deltoids", "triceps", "quadriceps"],
+    "secondary": ["glutes", "trapezius", "obliques", "calves"],
+    "stabilizers": ["core", "rectus_abdominis", "erector_spinae", "rotator_cuff", "forearms", "hamstrings"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P9",
+    "lateral_deltoids": "P8",
+    "triceps": "P8",
+    "quadriceps": "P8",
+    "glutes": "S6",
+    "trapezius": "S6",
+    "obliques": "S7",
+    "calves": "S5",
+    "core": "S8",
+    "erector_spinae": "S6",
+    "forearms": "T4"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["chalk", "wrist_wraps", "flat_shoes", "gs_singlet"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["kettlebell-clean", "kettlebell-one-arm-press", "kettlebell-push-press", "front-squat"],
+    "progression_to": ["kettlebell-long-cycle", "kettlebell-snatch", "kettlebell-double-jerk", "barbell-split-jerk"],
+    "alternatives": ["kettlebell-push-press", "kettlebell-one-arm-press", "dumbbell-push-jerk", "kettlebell-long-cycle"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bell on forearm, elbow on hip (iliac crest)",
+      "Wrist neutral, knuckles up",
+      "Feet hip- to shoulder-width, weight on full foot",
+      "Free arm relaxed for balance",
+      "Stand TALL, brace before the dip"
+    ],
+    "setup_cues_pl": [
+      "Kula na przedramieniu, łokieć na biodrze (grzebień biodrowy)",
+      "Nadgarstek neutralny, knykcie do góry",
+      "Stopy na szerokość bioder do barków, ciężar na całych stopach",
+      "Wolne ramię luźno dla balansu",
+      "Stań WYSOKO, napięcie przed dipem"
+    ],
+    "execution_cues": [
+      "Short SHARP dip — not a squat",
+      "DRIVE with legs, bell flies up off the rack",
+      "Drop UNDER the bell — second dip is the catch",
+      "Lockout: bicep by ear, bell over shoulder",
+      "Stand TALL under the lockout, pause, then re-rack"
+    ],
+    "execution_cues_pl": [
+      "Krótki OSTRY dip — nie przysiad",
+      "NAPĘD nogami, kula wystrzeli z racka",
+      "Wskocz POD kulę — drugi dip to catch",
+      "Lock-out: biceps przy uchu, kula nad barkiem",
+      "Stań WYSOKO pod lock-out, pauza, potem rerack"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pressing instead of jerking (no leg drive)",
+        "faultPl": "Wyciskanie zamiast jerk (brak napędu nóg)",
+        "cause": "Treating the lift as a press; trying to grind the bell up with the shoulder",
+        "causePl": "Traktowanie ruchu jak wyciskanie; próba 'wymęczania' kuli barkiem",
+        "cue": "It's a LEG lift, not a shoulder lift. Bell leaves rack BEFORE arm extends. Practice the dip-drive empty-handed first.",
+        "cuePl": "To ruch NOGAMI, nie barkiem. Kula opuszcza rack ZANIM ramię się wyprostuje. Trenuj dip-drive najpierw bez kuli."
+      },
+      {
+        "fault": "No second dip (missing the catch)",
+        "faultPl": "Brak drugiego dipu (brak catchu)",
+        "cause": "Lack of coordination; user tries to muscle-press the bell at the top instead of dropping under it",
+        "causePl": "Brak koordynacji; user próbuje 'dopchnąć' barkiem zamiast wskoczyć pod kulę",
+        "cue": "Two dips — drive UP, then drop DOWN. Lockout happens at the BOTTOM of the second dip, not the top of the drive.",
+        "cuePl": "Dwa dipy — napęd W GÓRĘ, potem upadek W DÓŁ. Lock-out następuje NA DOLE drugiego dipu, nie na górze napędu."
+      },
+      {
+        "fault": "Bar/bell drifts forward at lockout (loose lockout)",
+        "faultPl": "Kula odpływa do przodu w lock-out (luźny lock-out)",
+        "cause": "Weak rotator cuff/scapular stability, poor overhead mobility, or not finishing the catch fully",
+        "causePl": "Słaba stożek rotatorów/stabilność łopatki, słaba mobilność overhead, lub nie dokończony catch",
+        "cue": "Bell over shoulder, NOT in front. Pack the shoulder, squeeze triceps, biceps to ear. Hold lockout 1 sec.",
+        "cuePl": "Kula nad barkiem, NIE z przodu. 'Zapakuj' bark, ściśnij triceps, biceps do ucha. Trzymaj lock-out 1 sek."
+      },
+      {
+        "fault": "Excessive lateral lean (compensating for unilateral load)",
+        "faultPl": "Nadmierne pochylenie boczne (kompensacja jednostronnego obciążenia)",
+        "cause": "Weak obliques/QL, bell too heavy for unilateral control",
+        "causePl": "Słabe skośne/QL, kula za ciężka jak na kontrolę jednostronną",
+        "cue": "Squeeze the FREE-side oblique HARD. Stay vertical. If you can't stay vertical, lower the weight.",
+        "cuePl": "Mocno ściśnij skośny po WOLNEJ stronie. Pozostań pionowo. Jeśli nie utrzymasz pionu — zmniejsz ciężar."
+      },
+      {
+        "fault": "Elbow off the hip in rack position",
+        "faultPl": "Łokieć poza biodrem w pozycji rack",
+        "cause": "Failure to find the GS rack 'shelf' — user holds bell with shoulder muscle effort",
+        "causePl": "Brak ułożenia GS racka na 'półce' — user trzyma kulę napięciem barku",
+        "cue": "Elbow PINNED to iliac crest. Bell rests on the SKELETAL shelf — let the bones hold the weight between reps.",
+        "cuePl": "Łokieć WCIŚNIĘTY w grzebień biodrowy. Kula spoczywa na 'półce' KOSTNEJ — niech kości trzymają ciężar między powtórzeniami."
+      }
+    ],
+    "breathing": "GS-style anatomical breathing: inhale on the dip (chest fills as you drop), sharp exhale on the catch/lockout. Some athletes use a second small exhale on the descent back to rack. The breath pattern enables high-rep sets (10+ minute sets in competition).",
+    "breathingPl": "Oddech anatomiczny w stylu GS: wdech na dip (klatka napełnia się gdy schodzisz), ostry wydech na catch/lock-out. Niektórzy zawodnicy używają drugiego małego wydechu przy opuszczaniu kuli do racka. Wzorzec oddechowy umożliwia długie sety (10+ minutowe sety w zawodach)."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Skip the jerk until impingement resolves. Substitute with kettlebell push press at lower volume, or landmine press.",
+      "modificationPl": "Pomiń jerk do ustąpienia impingementu. Zastąp kettlebell push press na niższej objętości, lub landmine press.",
+      "alternative": "kettlebell-push-press"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "The dip-drive places repeated load on the spine. Substitute with seated kettlebell press until pain resolves.",
+      "modificationPl": "Dip-drive obciąża kręgosłup powtarzalnie. Zastąp seated kettlebell press do ustąpienia bólu.",
+      "alternative": "kettlebell-one-arm-press"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Bell rests on forearm at lockout — repeated impact can aggravate wrist. Use wrist wraps and lighter bell, or skip lift.",
+      "modificationPl": "Kula spoczywa na przedramieniu w lock-out — powtarzalny impakt może podrażniać nadgarstek. Użyj wraps i lżejszej kuli, lub pomiń ćwiczenie.",
+      "alternative": "dumbbell-push-jerk"
+    },
+    {
+      "condition": "knee_pain",
+      "severity": "modify",
+      "modification": "The repeated dip-drive loads the knees explosively. Reduce dip depth or substitute push press (less knee involvement).",
+      "modificationPl": "Powtarzalny dip-drive obciąża eksplosivnie kolana. Zmniejsz głębokość dipu lub zastąp push press (mniej kolan).",
+      "alternative": "kettlebell-push-press"
+    }
+  ],
+
+  "typical_sets_reps": "GS competition: 6–10 min set @ moderate weight (16–32kg) | Strength: 5x3-5 per side | Conditioning: 10 min ladder or EMOM 1-3 per side",
+  "calories_per_kg_per_hour": 7.5,
+
+  "media": {
+    "primary": "kettlebell-one-arm-jerk.gif",
+    "frames_extracted": [
+      "frames/kettlebell-one-arm-jerk/frame_0_start.png",
+      "frames/kettlebell-one-arm-jerk/frame_1_early.png",
+      "frames/kettlebell-one-arm-jerk/frame_2_mid.png",
+      "frames/kettlebell-one-arm-jerk/frame_3_late.png",
+      "frames/kettlebell-one-arm-jerk/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/kettlebell-one-arm-jerk"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 i 4: pozycja lock-out overhead (ramię w pełni wyprostowane, kula nad głową, podświetlone delty + tricepsy + czworogłowe + skośne — typowy KB jerk). Frame 1 i 3: drugi dip / catch — atleta opuszcza się POD kulę, kolana zgięte, kula już w górze. Frame 2: bottom of catch — głęboki dip pozycja overhead squat-like, kula zablokowana. Klasyczny one-arm GS jerk. Unilateral (kula tylko w jednej ręce). Plane=frontal bo widok z przodu, ruch w pionie ale z drive nóg i lateral stabilization. Mechanic=compound (multi-joint olympic-style). Force=push (vertical). Muscle highlight z GIFa: delty (P9/P8), tricepsy (P8), quady (P8 — drive nóg), skośne (S7 — unilateral stabilization), trapezy (S6). PL nazwa = 'Jerk z kettlebellą jednorącz' — termin angielski 'jerk' jest standardem nawet w polskiej terminologii GS.",
+
+  "tags": ["kettlebell", "olympic_weightlifting", "girevoy_sport", "GS", "unilateral", "vertical_push", "explosive", "conditioning", "shoulders", "anaerobic_endurance", "full_body"]
+}

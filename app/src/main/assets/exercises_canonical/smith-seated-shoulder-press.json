@@ -1,0 +1,201 @@
+{
+  "id": "smith-seated-shoulder-press",
+  "name": "Smith Machine Seated Shoulder Press",
+  "namePl": "Wyciskanie nad głowę w Smith machine (siedząc)",
+  "aliases": ["smith seated OHP", "smith machine military press seated", "smith shoulder press", "smith seated press"],
+  "aliasesPl": ["seated OHP w Smith machine", "wyciskanie barków w Smith (siedząc)", "OHP w Smith machine", "wyciskanie żołnierskie w Smith"],
+
+  "description": "Seated bilateral vertical pressing variation performed in a Smith machine with a bench (backrest set ~85-90°). The fixed bar path of the Smith eliminates stabilization demand and the upright bench removes core/lower-back loading, leaving the deltoids — especially anterior and lateral heads — heavily isolated. Excellent for hypertrophy work, drop sets, AMRAPs, beginners learning the press pattern, and lifters wanting to push deltoid fatigue with minimal systemic cost. Pure shoulder isolation in a compound movement.",
+  "descriptionPl": "Dwustronne pionowe wyciskanie wykonywane w Smith machine z ławką (oparcie ~85-90°). Stała tor ruchu Smitha eliminuje stabilizację, a oparcie zdejmuje pracę z brzucha i lędźwi — zostają delty, szczególnie aktony przednie i boczne, mocno wyizolowane. Świetne na hipertrofię, drop sety, AMRAP-y, dla początkujących uczących się wzorca wyciskania, oraz dla zawodowców chcących domęczyć delty bez zmęczenia systemowego. Czysta izolacja barków w ruchu wielostawowym.",
+
+  "instructions": [
+    "Position an adjustable bench inside the Smith machine. Set the backrest to roughly 85-90° (almost vertical, slight lean acceptable).",
+    "Center the bench so the bar travels just above the front of your face/forehead at the bottom position.",
+    "Sit down with your upper back firmly against the pad. Feet flat on the floor, shoulder-width.",
+    "Grip the bar slightly wider than shoulder-width, palms facing forward (pronated). Wrists stacked over elbows.",
+    "Unrack by twisting wrists to release the safety hooks. Bar starts at chin/upper-chest level.",
+    "Inhale, brace, press the bar straight up along the fixed Smith track until elbows lock out overhead. Bar finishes over the shoulders/ears.",
+    "Lower under control to the start position — bar to chin level (avoid bouncing off chest).",
+    "Re-rack only at the end of the set by twisting wrists back to engage the hooks."
+  ],
+  "instructionsPl": [
+    "Ustaw ławkę regulowaną w Smith machine. Oparcie ustaw na około 85-90° (prawie pionowo, lekkie odchylenie dopuszczalne).",
+    "Wycentruj ławkę tak, by gryf w dolnej pozycji szedł tuż przed twarzą/czołem.",
+    "Usiądź — górne plecy mocno do oparcia. Stopy płasko na podłodze, na szerokość barków.",
+    "Chwyć gryf nieco szerzej niż barki, dłonie w pronacji (do przodu). Nadgarstki nad łokciami.",
+    "Wyciągnij gryf przekręcając nadgarstki (zwolnij haki zabezpieczające). Pozycja startowa: gryf na wysokości brody/górnej klatki.",
+    "Wdech, napięcie, wyciśnij gryf prosto w górę po stałym torze Smitha, aż łokcie zablokują się nad głową. Gryf kończy nad barkami/uszami.",
+    "Opuszczaj kontrolowanym ruchem do pozycji startowej — gryf na wysokości brody (nie odbijaj od klatki).",
+    "Re-rack dopiero na końcu serii — przekręć nadgarstki, by zazębić haki."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_vertical",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "frontal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoid", "lateral_deltoid"],
+    "secondary": ["triceps", "upper_chest", "trapezius"],
+    "stabilizers": ["serratus_anterior", "rotator_cuff", "core"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoid": "P10",
+    "lateral_deltoid": "P8",
+    "triceps": "S7",
+    "upper_chest": "S5",
+    "trapezius": "S4",
+    "serratus_anterior": "T3",
+    "core": "T2"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "adjustable_bench"],
+    "optional": ["wrist_wraps", "belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["machine-shoulder-press", "dumbbell-shoulder-press"],
+    "progression_to": ["seated-barbell-overhead-press", "barbell-overhead-press", "dumbbell-standing-overhead-press"],
+    "alternatives": ["machine-shoulder-press", "seated-barbell-overhead-press", "dumbbell-shoulder-press", "smith-standing-shoulder-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Backrest near vertical (~85-90°)",
+      "Upper back glued to the pad",
+      "Bar centered over forehead at bottom",
+      "Grip slightly wider than shoulders, wrists stacked",
+      "Feet flat, shoulder-width"
+    ],
+    "setup_cues_pl": [
+      "Oparcie prawie pionowo (~85-90°)",
+      "Górne plecy MOCNO do oparcia",
+      "Gryf wycentrowany nad czołem w dole",
+      "Chwyt nieco szerszy niż barki, nadgarstki nad łokciami",
+      "Stopy płasko, na szerokość barków"
+    ],
+    "execution_cues": [
+      "Press straight up along the fixed track",
+      "Bar to chin at bottom — no bouncing",
+      "Lock out fully — biceps by ears",
+      "Keep upper back against the pad the whole time",
+      "Control the eccentric (2-3 seconds down)"
+    ],
+    "execution_cues_pl": [
+      "Wyciskaj prosto w górę po stałym torze",
+      "Gryf do brody w dole — bez odbijania",
+      "Pełen lock-out — bicepsy przy uszach",
+      "Górne plecy CAŁY CZAS przy oparciu",
+      "Kontroluj fazę negatywną (2-3 sekundy w dół)"
+    ],
+    "common_faults": [
+      {
+        "fault": "Setting backrest too reclined (turns it into incline bench press)",
+        "faultPl": "Zbyt mocne odchylenie oparcia (zamiana w wyciskanie skosem)",
+        "cause": "Copying incline bench setup, lack of mobility for upright press",
+        "causePl": "Kopiowanie ustawienia incline bench, brak mobilności do pionowego wyciskania",
+        "cue": "Backrest at 85-90°. If under 80°, you're working chest, not delts.",
+        "cuePl": "Oparcie 85-90°. Jeśli poniżej 80° — pracują piersi, nie delty."
+      },
+      {
+        "fault": "Bench positioned too far forward or back (bar hits face or shoulders feel pulled)",
+        "faultPl": "Ławka za daleko z przodu lub z tyłu (gryf uderza w twarz lub barki czują pociąg)",
+        "cause": "Smith bar path is fixed — your body must align to it, not vice versa",
+        "causePl": "Tor gryfu Smitha jest stały — to ciało musi się dopasować, nie odwrotnie",
+        "cue": "Test 1-2 reps with empty bar. Bar should travel just past forehead at bottom. Adjust bench, NOT body lean.",
+        "cuePl": "Przetestuj 1-2 powtórzenia z pustym gryfem. Gryf powinien iść tuż przed czołem w dole. Reguluj ławkę, NIE pochylenie ciała."
+      },
+      {
+        "fault": "Incomplete lockout (stopping short of full extension)",
+        "faultPl": "Niepełen lock-out (zatrzymywanie przed pełnym wyprostem)",
+        "cause": "Weak triceps, fear of joint pop, ego-loaded weight",
+        "causePl": "Słabe tricepsy, strach przed strzeleniem stawu, zbyt duży ciężar (ego)",
+        "cue": "Finish each rep with arms fully locked, biceps by ears. Lower the weight if you can't.",
+        "cuePl": "Zakończ każde powtórzenie z w pełni wyprostowanymi ramionami, bicepsy przy uszach. Zmniejsz ciężar, jeśli nie potrafisz."
+      },
+      {
+        "fault": "Bouncing the bar off the chest/clavicle at the bottom",
+        "faultPl": "Odbijanie gryfu od klatki/obojczyka w dole",
+        "cause": "Using momentum to lift more weight, poor eccentric control",
+        "causePl": "Wykorzystywanie inercji do większego ciężaru, słaba kontrola fazy negatywnej",
+        "cue": "Stop the bar 1-2 cm above chin. Pause briefly, then press. Eliminate the bounce.",
+        "cuePl": "Zatrzymaj gryf 1-2 cm nad brodą. Krótka pauza, potem wyciskaj. Wyeliminuj odbicie."
+      },
+      {
+        "fault": "Lower back arching off the pad (loss of contact)",
+        "faultPl": "Odrywanie lędźwi od oparcia (utrata kontaktu)",
+        "cause": "Weight too heavy, no core brace, mimicking standing press lean",
+        "causePl": "Zbyt duży ciężar, brak napięcia brzucha, kopiowanie pochylenia ze stojącego OHP",
+        "cue": "Glue ENTIRE back to the pad — lumbar too. If you have to arch, drop the weight 10-15%.",
+        "cuePl": "Przyklej CAŁE plecy do oparcia — łącznie z lędźwiami. Jeśli musisz się odginać, zmniejsz ciężar o 10-15%."
+      }
+    ],
+    "breathing": "Inhale at the bottom while bracing into the pad. Hold throughout the press. Exhale at lockout or just past the sticking point.",
+    "breathingPl": "Wdech w dole, napięcie przy oparciu. Trzymaj przez wyciskanie. Wydech w lock-out lub tuż za sticking pointem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce ROM (stop 5-10 cm above chin instead of touching). Consider neutral-grip machine press instead.",
+      "modificationPl": "Zmniejsz ROM (zatrzymaj 5-10 cm nad brodą zamiast schodzić do końca). Rozważ neutral-grip machine press.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Smith fixed path can force shoulder into bad positions. Lower bench slightly (75-80°) or switch to landmine press until mobility improves.",
+      "modificationPl": "Stała ścieżka Smitha może wymuszać złe pozycje barku. Obniż lekko oparcie (75-80°) lub przejdź na landmine press do poprawy mobilności.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid until cleared by PT. The fixed track removes natural scapulohumeral rhythm — bad for irritated cuff. Use machine press with neutral grip.",
+      "modificationPl": "Unikaj do zgody fizjoterapeuty. Stały tor eliminuje naturalny rytm łopatkowo-ramienny — źle dla podrażnionego pierścienia rotatorów. Używaj maszyny z chwytem neutralnym.",
+      "alternative": "machine-shoulder-press"
+    },
+    {
+      "condition": "ac_joint_pain",
+      "severity": "modify",
+      "modification": "Stop ROM short of full lockout (10-15° before lockout) — top range stresses the AC joint. Use neutral grip if possible.",
+      "modificationPl": "Zatrzymaj ROM przed pełnym lock-outem (10-15° przed) — górny zakres obciąża staw AC. Użyj chwytu neutralnego jeśli możesz.",
+      "alternative": "dumbbell-shoulder-press"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3x10-15 (volume / drop sets) | 4-5x6-8 (strength-hypertrophy)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "smith-seated-shoulder-press.gif",
+    "frames_extracted": [
+      "frames/smith-seated-shoulder-press/frame_0_start.png",
+      "frames/smith-seated-shoulder-press/frame_1_early.png",
+      "frames/smith-seated-shoulder-press/frame_2_mid.png",
+      "frames/smith-seated-shoulder-press/frame_3_late.png",
+      "frames/smith-seated-shoulder-press/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/smith-seated-shoulder-press"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0: pozycja startowa — atleta siedzi w Smith machine z prawie pionowym oparciem, gryf na wysokości brody/górnej klatki, chwyt pronowany nieco szerszy niż barki, stopy płasko. Frame 2: lock-out overhead — ramiona w pełni wyprostowane, gryf nad barkami, podświetlone aktony przednie + boczne + górna klatka. Frame 4: faza ekscentryczna powrotu. Klasyczny seated Smith shoulder press. Plane=frontal (gryf nie przesuwa się do przodu/tyłu, lateralne delty mocno zaangażowane przez pronated grip). Mechanic=compound (bark + łokieć), Bilateral, Seated/Supported. Stabilizacja minimalna dzięki Smith + bench — stąd P10 anterior delt, niskie T dla core.",
+
+  "tags": ["machine", "smith_machine", "seated", "supported", "upper_body", "vertical_push", "shoulders", "hypertrophy", "isolation_compound", "beginner_friendly", "deltoids"]
+}

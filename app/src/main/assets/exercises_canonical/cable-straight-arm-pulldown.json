@@ -1,0 +1,206 @@
+{
+  "id": "cable-straight-arm-pulldown",
+  "name": "Cable Straight-Arm Pulldown",
+  "namePl": "Wyprosty ramion na wyciągu górnym (straight-arm pulldown)",
+  "aliases": ["cable straight arm pulldown", "straight-arm lat pulldown", "stiff-arm pulldown", "lat pushdown", "straight-arm pushdown"],
+  "aliasesPl": ["straight-arm pulldown na wyciągu", "ściąganie z prostymi ramionami", "wyprosty na wyciągu górnym", "lat pushdown na bramie", "izolacja najszerszych na wyciągu"],
+
+  "description": "Single-joint isolation exercise for the latissimus dorsi performed at a high pulley with a short straight bar. Standing in front of the cable column, you grab the bar overhead with arms extended forward and sweep them DOWN to your thighs in a wide arc — elbows stay LOCKED STRAIGHT throughout the entire range of motion. Movement happens purely at the shoulder joint (shoulder extension) with zero elbow flexion. Classic lat isolation that removes biceps from the equation completely and trains the lats through their primary function: pulling the humerus down and back. Excellent mind-muscle connection builder and a staple back finisher.",
+  "descriptionPl": "Jednostawowe ćwiczenie izolacyjne na mięśnie najszersze grzbietu wykonywane na wyciągu górnym z krótkim prostym gryfem. Stojąc przed kolumną wyciągu chwytasz gryf nad głową z ramionami wyciągniętymi do przodu i sprowadzasz je W DÓŁ do ud po szerokim łuku — łokcie pozostają ZABLOKOWANE WYPROSTOWANE przez cały zakres ruchu. Ruch zachodzi wyłącznie w stawie barkowym (wyprost ramienia) bez zginania łokcia. Klasyczna izolacja najszerszych, która całkowicie wyklucza biceps z równania i trenuje najszersze przez ich główną funkcję: ściąganie kości ramiennej w dół i do tyłu. Doskonałe narzędzie do budowania połączenia umysł-mięsień i klasyczny finisher dla pleców.",
+
+  "instructions": [
+    "Attach a SHORT STRAIGHT BAR to the highest pulley of a cable machine.",
+    "Stand facing the machine, feet shoulder-width apart, slight hip hinge forward (5-15°), knees soft, core braced.",
+    "Grip the bar with palms DOWN (pronated), hands roughly shoulder-width apart, arms fully extended overhead toward the pulley.",
+    "Start position: arms extended forward/up at roughly eye-to-shoulder height, slight forward lean, lats stretched, elbows LOCKED STRAIGHT.",
+    "Initiate the pull from the LATS — drive the bar DOWN in a wide arc toward your thighs. Think 'push the bar down with straight arms'.",
+    "Keep elbows LOCKED in slight extension throughout — do NOT bend them at any point. The movement happens at the shoulders only.",
+    "End position: bar at thigh level or lightly touching the thighs, arms fully alongside the torso, lats maximally contracted, shoulder blades depressed.",
+    "Squeeze the lats hard for a brief beat at the bottom — feel the contraction in the side of your back.",
+    "Reverse the movement SLOWLY — let the bar travel back up overhead with full control, arms still straight, until you feel a deep stretch in the lats.",
+    "Maintain consistent forward lean and braced core throughout — torso should not rock back and forth."
+  ],
+  "instructionsPl": [
+    "Załóż KRÓTKI PROSTY GRYF do najwyższego wyciągu maszyny.",
+    "Stań twarzą do maszyny, stopy na szerokość barków, lekki skłon w biodrach do przodu (5-15°), kolana lekko ugięte, brzuch napięty.",
+    "Złap gryf nachwytem (dłonie w dół), ręce na szerokość barków, ramiona w pełnym wyproście nad głową w kierunku wyciągu.",
+    "Pozycja startowa: ramiona wyciągnięte do przodu/w górę na wysokości od oczu do barków, lekkie pochylenie do przodu, najszersze rozciągnięte, łokcie ZABLOKOWANE WYPROSTOWANE.",
+    "Inicjuj ciąg z NAJSZERSZYCH — sprowadź gryf W DÓŁ szerokim łukiem w kierunku ud. Myśl 'pchnij gryf w dół prostymi ramionami'.",
+    "Łokcie ZABLOKOWANE w lekkim wyproście przez cały czas — NIE zginaj ich w żadnym momencie. Ruch zachodzi wyłącznie w barkach.",
+    "Pozycja końcowa: gryf na wysokości ud lub lekko stykający się z udami, ramiona w pełni przy tułowiu, najszersze maksymalnie skurczone, łopatki opuszczone.",
+    "Mocno ściśnij najszersze przez krótką chwilę na dole — poczuj skurcz po bokach pleców.",
+    "Wracaj POWOLI — pozwól gryfowi wędrować z powrotem nad głowę z pełną kontrolą, ramiona wciąż proste, aż poczujesz głębokie rozciągnięcie najszerszych.",
+    "Utrzymuj stały skłon do przodu i napięty brzuch przez cały czas — tułów nie powinien bujać się w przód i w tył."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["teres_major", "posterior_deltoid", "triceps_brachii"],
+    "stabilizers": ["core", "rectus_abdominis", "erector_spinae", "rotator_cuff", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "teres_major": "S8",
+    "posterior_deltoid": "S6",
+    "triceps_brachii": "S5",
+    "core": "S5",
+    "forearms": "S5",
+    "rectus_abdominis": "S4",
+    "erector_spinae": "S4"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "straight_bar"],
+    "optional": ["chalk", "wrist_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["seated-cable-row", "lat-pulldown"],
+    "progression_to": ["cable-lat-pulldown-full-range-of-motion", "lat-pulldown", "pull-up"],
+    "alternatives": ["band-straight-arm-pulldown", "dumbbell-pullover", "single-arm-cable-straight-arm-pulldown", "rope-straight-arm-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Short straight bar at TOP pulley",
+      "Stand 1-2 feet back, feet shoulder-width, slight forward hip hinge",
+      "Pronated grip, hands shoulder-width, arms overhead and forward",
+      "Elbows LOCKED straight from rep one to last",
+      "Core braced, neutral spine, eyes forward"
+    ],
+    "setup_cues_pl": [
+      "Krótki prosty gryf na GÓRNYM wyciągu",
+      "Stań 30-60 cm od maszyny, stopy na szerokość barków, lekki skłon w biodrach",
+      "Nachwyt, dłonie na szerokość barków, ramiona nad głową i do przodu",
+      "Łokcie ZABLOKOWANE wyprostowane od pierwszego do ostatniego powtórzenia",
+      "Brzuch napięty, neutralny kręgosłup, wzrok przed siebie"
+    ],
+    "execution_cues": [
+      "Push the bar DOWN with straight arms — not 'pull it down'",
+      "Drive lats from stretch to squeeze in one smooth arc",
+      "Bar touches thighs at the bottom, hands beside hips",
+      "Slow eccentric back overhead — feel the lat stretch",
+      "Zero elbow bend — if elbows bend, it becomes a pulldown"
+    ],
+    "execution_cues_pl": [
+      "Pchnij gryf W DÓŁ prostymi ramionami — nie 'ściągaj go'",
+      "Prowadź najszersze od rozciągnięcia do skurczu jednym płynnym łukiem",
+      "Gryf dotyka ud na dole, dłonie obok bioder",
+      "Powolna faza ekscentryczna w górę — poczuj rozciągnięcie najszerszych",
+      "Zero zginania łokci — jeśli zginasz, to staje się klasycznym pulldown"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows (turning it into a lat pulldown)",
+        "faultPl": "Zginanie łokci (zmiana ćwiczenia w klasyczny lat pulldown)",
+        "cause": "Weight too heavy, lats fatigue, biceps takeover for momentum",
+        "causePl": "Za duże obciążenie, zmęczenie najszerszych, biceps przejmuje pracę dla pędu",
+        "cue": "Lock elbows in slight extension and 'glue' them straight. Reduce weight 20-30% — this is isolation, not a power move.",
+        "cuePl": "Zablokuj łokcie w lekkim wyproście i 'przyklej' je w prostej pozycji. Zmniejsz obciążenie o 20-30% — to izolacja, nie ćwiczenie siłowe."
+      },
+      {
+        "fault": "Excessive forward bend / torso swing for momentum",
+        "faultPl": "Nadmierny skłon do przodu / bujanie tułowiem dla pędu",
+        "cause": "Weight too heavy, lats not strong enough to handle load alone",
+        "causePl": "Za duże obciążenie, najszersze za słabe by udźwignąć ciężar samodzielnie",
+        "cue": "Fix the torso angle at 5-15° forward and HOLD it. If you need to swing, weight is too heavy.",
+        "cuePl": "Ustaw kąt tułowia na 5-15° do przodu i UTRZYMAJ. Jeśli musisz bujać — waga za duża."
+      },
+      {
+        "fault": "Cutting ROM at the bottom (stopping before thighs)",
+        "faultPl": "Skracanie ROM na dole (zatrzymywanie przed udami)",
+        "cause": "Not finishing the rep, weak end-range lat contraction",
+        "causePl": "Niedokończone powtórzenie, słaby skurcz najszerszych w końcowej fazie",
+        "cue": "Bar must touch your thighs every rep. The strongest lat contraction happens at the bottom — don't skip it.",
+        "cuePl": "Gryf musi dotknąć ud w każdym powtórzeniu. Najmocniejszy skurcz najszerszych jest na dole — nie pomijaj go."
+      },
+      {
+        "fault": "Letting the cable yank arms up too fast on the eccentric",
+        "faultPl": "Pozwalanie linki szarpnąć ramiona w górę zbyt szybko w fazie ekscentrycznej",
+        "cause": "No control on the return, focusing only on the pull-down",
+        "causePl": "Brak kontroli powrotu, skupienie wyłącznie na ciągu w dół",
+        "cue": "Eccentric is 2-3 seconds. Fight the cable up — keep lat tension all the way to the overhead stretch.",
+        "cuePl": "Faza ekscentryczna trwa 2-3 sekundy. Stawiaj opór linkce w górę — utrzymuj napięcie najszerszych aż do rozciągnięcia nad głową."
+      },
+      {
+        "fault": "Hyperextending lower back at the bottom",
+        "faultPl": "Nadmierne wygięcie odcinka lędźwiowego na dole",
+        "cause": "Lack of core bracing, compensating to push the bar further down",
+        "causePl": "Brak napięcia brzucha, kompensacja by pchnąć gryf niżej",
+        "cue": "Ribs DOWN, glutes braced. Bar to thighs is the end — no pushing into hyperextension.",
+        "cuePl": "Żebra W DÓŁ, pośladki napięte. Gryf do ud to koniec — bez pchania w hiperekstensję."
+      }
+    ],
+    "breathing": "Inhale at the top stretch position. Exhale during the pull down to the thighs. Inhale on the controlled return overhead.",
+    "breathingPl": "Wdech w pozycji rozciągnięcia w górze. Wydech podczas sprowadzania gryfu w dół do ud. Wdech podczas kontrolowanego powrotu nad głowę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Reduce overhead ROM — start the rep from forehead height rather than full overhead. Keep neutral or slightly internal humerus rotation.",
+      "modificationPl": "Zmniejsz ROM w górze — zaczynaj powtórzenie od wysokości czoła zamiast pełnego nad głową. Utrzymuj neutralną lub lekko wewnętrzną rotację ramienia.",
+      "alternative": "single-arm-cable-straight-arm-pulldown"
+    },
+    {
+      "condition": "rotator_cuff_injury",
+      "severity": "avoid",
+      "modification": "Avoid loaded straight-arm overhead positions until cleared. Switch to seated row patterns with bent arms and controlled scapular work.",
+      "modificationPl": "Unikaj pozycji nad głową z prostymi ramionami pod obciążeniem do wyleczenia. Przejdź na wzorce wiosłowania siedząc z ugiętymi ramionami i kontrolowaną pracę łopatek.",
+      "alternative": "seated-cable-row"
+    },
+    {
+      "condition": "lat_strain",
+      "severity": "avoid",
+      "modification": "Stop straight-arm work until full recovery — long lever puts maximum stress on the lat. Resume with light scapular isometrics first.",
+      "modificationPl": "Wstrzymaj pracę z prostymi ramionami do pełnego wyzdrowienia — długa dźwignia maksymalnie obciąża najszerszy. Wróć przez lekkie izometryczne ćwiczenia łopatek.",
+      "alternative": "scapular-pull-up"
+    },
+    {
+      "condition": "elbow_hyperextension_history",
+      "severity": "modify",
+      "modification": "Keep elbows in 5-10° micro-bend rather than fully locked. Avoid 'snapping' the elbow into full extension under load.",
+      "modificationPl": "Utrzymuj łokcie w 5-10° mikro-zgięciu zamiast pełnego zablokowania. Unikaj 'strzelania' łokciem w pełen wyprost pod obciążeniem.",
+      "alternative": "rope-straight-arm-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4 x 12-15 (hypertrophy / lat focus) | 3 x 15-20 (pump finisher) | 4 x 10-12 (heavier loading with strict form)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-straight-arm-pulldown.gif",
+    "frames_extracted": [
+      "frames/cable-straight-arm-pulldown/frame_0_start.png",
+      "frames/cable-straight-arm-pulldown/frame_1_early.png",
+      "frames/cable-straight-arm-pulldown/frame_2_mid.png",
+      "frames/cable-straight-arm-pulldown/frame_3_late.png",
+      "frames/cable-straight-arm-pulldown/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/cable-straight-arm-pulldown"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Frames potwierdzają klasyczny straight-arm pulldown stojąc z wyciągu górnego z krótkim prostym gryfem. Frame 0 (start): ramiona wyciągnięte do przodu na wysokości barków, łokcie wyprostowane, gryf w rękach przed twarzą. Frame 1-3: ramiona schodzą po łuku w dół przy zachowaniu prostych łokci. Frame 2 (mid): gryf na wysokości brzucha/bioder, najszersze podświetlone — kluczowa faza skurczu. Frame 4 (end powrót do startu): jak frame 0. Cała sekwencja: pure shoulder extension bez zginania łokci. Klasyfikacja: mechanic=ISOLATION (jeden staw — bark), plane=SAGITTAL (ręce przesuwają się w płaszczyźnie strzałkowej, w przód-do-tyłu/góra-w-dół względem ciała, NIE frontal jak rozpiętki), force=pull, kinetic_chain=open. Primary: latissimus_dorsi P10 (główny wykonawca shoulder extension). Secondary: teres_major S8 (synergista lats), posterior_deltoid S6 (wspomaga shoulder extension), triceps_brachii S5 (long head krzyżuje bark, izometryczna stabilizacja prostego łokcia). Difficulty 3 — łatwiejsze niż klasyczny pulldown (mniejsze obciążenia, prostszy wzorzec ruchowy), ale wymaga dyscypliny by nie zginać łokci. NIE używać do bicepsa — to czysta izolacja najszerszych.",
+
+  "tags": ["cable", "isolation", "upper_body", "vertical_pull", "back", "lats", "shoulder_extension", "hypertrophy", "standing", "single_joint", "lat_width", "mind_muscle_connection", "finisher"]
+}

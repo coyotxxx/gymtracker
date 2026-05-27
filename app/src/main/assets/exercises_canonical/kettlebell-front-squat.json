@@ -1,0 +1,204 @@
+{
+  "id": "kettlebell-front-squat",
+  "name": "Kettlebell Front Squat (Double KB Rack Squat)",
+  "namePl": "Front squat z kettlebellami",
+  "aliases": ["double kettlebell front squat", "double kb squat", "kb rack squat", "two-kettlebell squat", "girevoy sport squat"],
+  "aliasesPl": ["przysiad z dwoma kettlebellami", "double kettlebell squat", "przysiad w rack position", "kb front squat", "przysiad z kettlebellami w pozycji rack"],
+
+  "description": "Bilateral compound squat performed with two kettlebells held in the rack position (KBs resting against the front of the shoulders, elbows tucked in, wrists neutral). The front-loaded position forces an upright torso and demands strong anterior core, upper back and wrist control. A staple of kettlebell sport (girevoy sport / GS), strongman conditioning and athletic lower-body training. Excellent quad and glute developer with much lower spinal compression than a barbell back squat.",
+  "descriptionPl": "Dwustronny przysiad wielostawowy wykonywany z dwoma kettlebellami trzymanymi w pozycji rack (KB oparte o przód barków, łokcie schowane przy żebrach, nadgarstki proste). Obciążenie z przodu wymusza pionowy tułów i wymaga silnego brzucha, górnej części pleców i kontroli nadgarstków. Klasyka kettlebell sport (girevoy sport / GS), kondycji strongmanowej i treningu sportowego dolnej części ciała. Świetnie buduje czworogłowe i pośladki przy znacznie mniejszym obciążeniu kręgosłupa niż back squat ze sztangą.",
+
+  "instructions": [
+    "Place two kettlebells of equal weight in front of your feet, slightly closer than shoulder-width.",
+    "Clean both kettlebells to the rack position: KB bells rest against the front of the shoulders, handles diagonal across the palm, wrists straight, elbows tucked down into the ribs.",
+    "Set your feet shoulder-width or slightly wider, toes turned out 10-30°. Squeeze the kettlebells against your torso to keep them stable.",
+    "Brace your core, draw shoulder blades down and back, keep chest up and elbows down. Inhale and hold (Valsalva) for heavy sets.",
+    "Initiate the descent by breaking at the hips and knees simultaneously. Sit down between your heels with the torso staying as upright as possible — the front load makes this natural.",
+    "Descend until your hip crease passes below the top of your knee (full depth), or to your individual mobility limit while maintaining a neutral spine and rack contact.",
+    "Drive up by pushing through the whole foot, extending hips and knees together. Keep elbows tucked — do not let them drop or flare out.",
+    "Exhale near the top, reset the rack, brace again, repeat. To finish: lower the KBs by hinging at the hips and placing them down with control, or perform a controlled negative swing back to the floor."
+  ],
+  "instructionsPl": [
+    "Postaw dwa kettlebelle o równej wadze przed stopami, nieco węziej niż na szerokość barków.",
+    "Wczyść oba kettlebelle do pozycji rack: kule KB oparte o przód barków, rączki ułożone ukośnie w dłoni, nadgarstki proste, łokcie schowane przy żebrach.",
+    "Ustaw stopy na szerokość barków lub nieco szerzej, palce na zewnątrz 10-30°. Dociśnij kettlebelle do tułowia, żeby się nie ruszały.",
+    "Napnij brzuch, ściągnij łopatki w dół i do tyłu, klatka do góry, łokcie w dół. Wdech i wstrzymaj (Valsalva) przy cięższych seriach.",
+    "Rozpocznij schodzenie zginając jednocześnie biodra i kolana. Siadaj między piętami trzymając tułów maksymalnie pionowo — przednie obciążenie wymusza to naturalnie.",
+    "Schodź aż linia bioder zejdzie poniżej szczytu kolan (pełna głębokość) lub do indywidualnego limitu mobilności, zachowując neutralny kręgosłup i kontakt KB z barkami.",
+    "Wypchnij się w górę napierając przez całą stopę, prostując biodra i kolana razem. Trzymaj łokcie schowane — nie pozwól im opaść ani odchylić się na boki.",
+    "Wydech blisko góry, odzyskaj pozycję rack, znowu napnij brzuch, powtórz. Zakończenie: opuść KB zginając się w biodrach i odstaw je kontrolowanie, albo wykonaj kontrolowany negatywny swing z powrotem na podłogę."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["core", "upper_back", "hamstrings"],
+    "stabilizers": ["rectus_abdominis", "erector_spinae", "calves", "forearms", "shoulders"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P8",
+    "core": "S7",
+    "upper_back": "S6",
+    "hamstrings": "S5",
+    "rectus_abdominis": "S6",
+    "erector_spinae": "S5",
+    "calves": "T3",
+    "forearms": "T3",
+    "shoulders": "T3"
+  },
+
+  "equipment": {
+    "required": ["kettlebell"],
+    "optional": ["belt", "lifting_shoes", "wrist_wraps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "kettlebell-clean"],
+    "progression_to": ["barbell-front-squat", "kettlebell-thruster", "double-kettlebell-clean-and-press", "kettlebell-jerk", "overhead-squat"],
+    "alternatives": ["goblet-squat", "barbell-front-squat", "dumbbell-front-squat", "zercher-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Clean the bells, bells rest on shoulders not on biceps",
+      "Elbows tucked down into the ribs, not flared",
+      "Wrists straight — do not let them bend back",
+      "Feet shoulder-width, toes out 10-30°",
+      "Chest up, core braced, big breath in"
+    ],
+    "setup_cues_pl": [
+      "Wczyść kettlebelle, kule opierają się na barkach a nie na bicepsach",
+      "Łokcie schowane w dół przy żebrach, nie odchylone na boki",
+      "Nadgarstki proste — nie pozwól im się zgiąć do tyłu",
+      "Stopy szerokość barków, palce na zewnątrz 10-30°",
+      "Klatka do góry, brzuch napięty, głęboki wdech"
+    ],
+    "execution_cues": [
+      "Sit straight down between your heels",
+      "Keep the torso vertical — the front load wants you upright",
+      "Knees track over toes, do not let them cave in",
+      "Push the floor away on the way up",
+      "Squeeze the bells into your chest the whole time"
+    ],
+    "execution_cues_pl": [
+      "Siadaj prosto w dół między piętami",
+      "Trzymaj tułów pionowo — przednie obciążenie samo wymusza wyprostowaną pozycję",
+      "Kolana podążają za palcami stóp, nie pozwól im uciekać do środka",
+      "Wypchnij podłogę w drodze w górę",
+      "Ściskaj kettlebelle do klatki przez cały czas"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drop / chest collapses forward",
+        "faultPl": "Łokcie opadają / klatka opada do przodu",
+        "cause": "Weak upper back and anterior core, fatigue, or kettlebells too heavy for the rack position",
+        "causePl": "Słaba górna część pleców i przedni brzuch, zmęczenie, lub zbyt ciężkie kettlebelle na rack position",
+        "cue": "Elbows up and tucked, ribs down, brace the core harder. Reduce weight if it keeps collapsing.",
+        "cuePl": "Łokcie do góry i schowane, żebra w dół, mocniej napnij brzuch. Zmniejsz ciężar jeśli pozycja się dalej zapada."
+      },
+      {
+        "fault": "Wrists bent backward (KB hanging off the wrist)",
+        "faultPl": "Nadgarstki zgięte do tyłu (KB zwisa z nadgarstka)",
+        "cause": "Wrong rack grip — handle held in the fingers instead of diagonally through the palm",
+        "causePl": "Zły chwyt rack — rączka trzymana palcami zamiast po przekątnej przez dłoń",
+        "cue": "Re-grip so the handle runs diagonally from the base of the index finger to the heel of the palm. Wrist stays flat in line with the forearm.",
+        "cuePl": "Popraw chwyt: rączka biegnie po przekątnej od podstawy palca wskazującego do nasady dłoni. Nadgarstek pozostaje płaski w linii z przedramieniem."
+      },
+      {
+        "fault": "Knee valgus (knees cave in)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius, lack of hip external rotation, or load too heavy",
+        "causePl": "Słabe pośladkowe średnie, brak rotacji zewnętrznej biodra, lub zbyt duży ciężar",
+        "cue": "Push your knees out toward your pinky toes through the whole movement",
+        "cuePl": "Wypchnij kolana na zewnątrz w kierunku małych palców przez cały ruch"
+      },
+      {
+        "fault": "Heel rise at the bottom",
+        "faultPl": "Unoszenie pięt w dolnej pozycji",
+        "cause": "Poor ankle dorsiflexion, narrow stance, or descending below your mobility limit",
+        "causePl": "Słaba dorsiflexja stawu skokowego, zbyt wąski rozstaw stóp, lub schodzenie poniżej limitu mobilności",
+        "cue": "Spread your stance slightly, push knees forward over toes, or limit depth. Lifting shoes with a heel help.",
+        "cuePl": "Rozszerz lekko rozstaw stóp, wypchnij kolana do przodu nad palce, lub ogranicz głębokość. Buty do podnoszenia z piętą pomagają."
+      },
+      {
+        "fault": "Holding breath the whole set / hyperventilating",
+        "faultPl": "Wstrzymywanie oddechu na całą serię / hiperwentylacja",
+        "cause": "Inexperience with bracing, or treating every rep as 1RM",
+        "causePl": "Brak doświadczenia z napięciem, lub traktowanie każdego powtórzenia jak 1RM",
+        "cue": "Brace and inhale at the top, hold through the bottom, exhale near lockout. Reset breath between reps.",
+        "cuePl": "Napnij brzuch i wdech na górze, wstrzymaj przez dolną pozycję, wydech blisko wyprostu. Resetuj oddech między powtórzeniami."
+      }
+    ],
+    "breathing": "Inhale and brace at the top, hold through descent and the hardest part of the ascent (Valsalva). Exhale near lockout. For lighter conditioning sets (GS-style), use rhythmic breathing — short exhale on the way down, inhale on the way up.",
+    "breathingPl": "Wdech i napięcie na górze, wstrzymaj przez schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech blisko wyprostu. Przy lżejszych seriach kondycyjnych (styl GS) używaj oddechu rytmicznego — krótki wydech w drodze w dół, wdech w drodze w górę."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "The rack position loads the wrist. Use wrist wraps, switch to goblet squat (single KB), or use a front squat harness.",
+      "modificationPl": "Pozycja rack obciąża nadgarstek. Użyj opasek na nadgarstki, przejdź na goblet squat (jedno KB), lub użyj uprzęży do front squat.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Holding KBs against the shoulder may aggravate symptoms. Switch to barbell front squat (clean grip) or goblet squat.",
+      "modificationPl": "Trzymanie KB przy barku może drażnić objawy. Przejdź na barbell front squat (chwyt clean) lub goblet squat.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Avoid all axial loading until cleared.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Unikaj obciążenia osiowego do uzyskania zgody.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "caution",
+      "modification": "Limit depth to pain-free range. Use box squat to a parallel box for controlled depth.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Użyj box squat na skrzynię równoległą do podłogi dla kontrolowanej głębokości.",
+      "alternative": "box-squat"
+    }
+  ],
+
+  "typical_sets_reps": "4-5x6-10 (hypertrophy) | 3-5x3-5 (strength) | EMOM 10-20 reps (conditioning / GS) | 5x5 (general strength)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "kettlebell-front-squat.gif",
+    "frames_extracted": [
+      "frames/kettlebell-front-squat/frame_0_start.png",
+      "frames/kettlebell-front-squat/frame_1_early.png",
+      "frames/kettlebell-front-squat/frame_2_mid.png",
+      "frames/kettlebell-front-squat/frame_3_late.png",
+      "frames/kettlebell-front-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/kettlebell-front-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatki 0 i 4 pokazują pozycję stojącą z dwoma kettlebellami w rack position (KB oparte o przód barków, łokcie schowane). Klatki 1-3 potwierdzają pełny przysiad poniżej parallel z zachowanym pionowym tułowem — dokładnie tak jak wymusza front-loaded squat. Podświetlone na ilustracji mięśnie: czworogłowe (główne), pośladki, przywodziciele — pasuje do anatomii bilateral front squat. Brak twardego matchu z yuhonas (yuhonas nie ma double KB front squat osobno), ale ćwiczenie jest standardową techniką GS / strength kettlebell training. Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego, z uwzględnieniem specyfiki rack position (wrist mechanics, elbow tuck) których nie ma w barbell back squat.",
+
+  "tags": ["kettlebell", "girevoy_sport", "compound", "lower_body", "front_loaded", "athletic_conditioning", "anterior_core", "rack_position"]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "dumbbell-lying-supine-curl",
+  "name": "Dumbbell Lying Supine Curl",
+  "namePl": "Curl bicepsa z hantlami leżąc supine (klasyczny)",
+  "aliases": ["lying dumbbell curl", "flat bench dumbbell curl", "supine dumbbell biceps curl", "lying supinated curl"],
+  "aliasesPl": ["uginanie bicepsów z hantlami leżąc", "curl hantli na ławce płaskiej leżąc", "uginanie ramion z hantlami supine", "lying curl z hantlami"],
+
+  "description": "Biceps isolation curl performed lying supine (face-up) on a flat bench with a dumbbell in each hand. The supine position fixes the torso, eliminates cheating with hips/back, and creates a deep stretch on the biceps in the bottom position because the arms hang straight down from the shoulders. Excellent strict variation for hypertrophy and for athletes who tend to swing during standing curls.",
+  "descriptionPl": "Izolowane uginanie bicepsów wykonywane leżąc na plecach (supine) na płaskiej ławce z hantlami w dłoniach. Pozycja leżąca unieruchamia tułów, eliminuje oszukiwanie biodrami/plecami i tworzy głębokie rozciągnięcie bicepsów w dolnej pozycji, ponieważ ramiona zwisają pionowo w dół od barków. Świetna ścisła wersja na hipertrofię oraz dla zawodników, którzy mają tendencję do bujania podczas curli w staniu.",
+
+  "instructions": [
+    "Lie face-up (supine) on a flat bench with a dumbbell in each hand. Plant your feet firmly on the floor on either side of the bench.",
+    "Let the arms hang straight down from the shoulders so the dumbbells dangle toward the floor. Hands in a supinated grip (palms facing forward / toward your feet).",
+    "Pin your upper arms vertically — they should stay perpendicular to the floor for the entire set. Your elbows are the only joints that move.",
+    "Curl both dumbbells upward by flexing at the elbows. Exhale during the lift. Keep the upper arms stationary against your sides of the torso.",
+    "Bring the dumbbells up until your forearms reach the limit of biceps contraction (do not let elbows drift forward). Squeeze hard for a brief pause.",
+    "Lower the dumbbells under control over 2-3 seconds back to a full stretch with elbows completely extended. Inhale during the descent.",
+    "Do not let the dumbbells rest at the bottom — keep tension on the biceps and immediately begin the next rep from the stretched position."
+  ],
+  "instructionsPl": [
+    "Połóż się twarzą do góry (supine) na płaskiej ławce z hantlami w dłoniach. Postaw stopy stabilnie na podłodze po obu stronach ławki.",
+    "Pozwól ramionom zwisać pionowo w dół od barków, tak aby hantle dyndały w stronę podłogi. Dłonie w chwycie podchwytem (wewnętrzną stroną do przodu / w stronę stóp).",
+    "Ustaw ramiona ponad łokciem pionowo — mają pozostać prostopadłe do podłogi przez całą serię. Pracują wyłącznie stawy łokciowe.",
+    "Uginaj oba hantle do góry w łokciach. Wydech w fazie koncentrycznej. Ramiona ponad łokciem nieruchome, przyklejone do boków tułowia.",
+    "Unoś hantle do granicy skurczu bicepsa (nie pozwól by łokcie wędrowały do przodu). Mocno napnij na chwilę w górnej pozycji.",
+    "Opuszczaj hantle w sposób kontrolowany przez 2-3 sekundy aż do pełnego rozciągnięcia z całkowicie wyprostowanymi łokciami. Wdech w fazie ekscentrycznej.",
+    "Nie odpoczywaj z hantlami w dolnej pozycji — utrzymuj napięcie na bicepsie i od razu zaczynaj kolejne powtórzenie z pozycji rozciągniętej."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["biceps_brachii"],
+    "secondary": ["brachialis"],
+    "stabilizers": ["brachioradialis", "forearm_flexors", "anterior_deltoid", "core"]
+  },
+
+  "muscle_intensity": {
+    "biceps_brachii": "P10",
+    "brachialis": "S6",
+    "brachioradialis": "T4",
+    "forearm_flexors": "T4",
+    "anterior_deltoid": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "flat_bench"],
+    "optional": ["wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-curl"],
+    "progression_to": ["incline-dumbbell-curl", "spider-curl", "preacher-curl"],
+    "alternatives": ["dumbbell-curl", "incline-dumbbell-curl", "spider-curl", "preacher-curl", "barbell-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lie flat on your back on a stable bench",
+      "Feet planted firmly on both sides of the bench",
+      "Dumbbells hang straight down from the shoulders",
+      "Supinated grip — palms toward your feet",
+      "Upper arms vertical, elbows directly under shoulders"
+    ],
+    "setup_cues_pl": [
+      "Połóż się płasko na plecach na stabilnej ławce",
+      "Stopy stabilnie wparte po obu stronach ławki",
+      "Hantle zwisają pionowo w dół od barków",
+      "Chwyt podchwytem — wewnętrzna strona dłoni w stronę stóp",
+      "Ramiona ponad łokciem pionowo, łokcie dokładnie pod barkami"
+    ],
+    "execution_cues": [
+      "Only the forearms move — upper arms stay perpendicular to the floor",
+      "Squeeze the biceps hard at the top",
+      "Lower slowly with a 2-3 second eccentric",
+      "Achieve full stretch at the bottom — elbows completely straight",
+      "Keep tension — do not bounce out of the bottom"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko przedramiona — ramiona ponad łokciem prostopadłe do podłogi",
+      "Mocno spinaj biceps w górnej pozycji",
+      "Opuszczaj wolno — kontroluj fazę negatywną przez 2-3 sekundy",
+      "Pełne rozciągnięcie na dole — łokcie całkowicie wyprostowane",
+      "Utrzymuj napięcie — nie odbijaj się z dołu"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows drifting forward (upper arms moving toward chest)",
+        "faultPl": "Łokcie wędrują do przodu (ramiona ponad łokciem ruszają się ku klatce)",
+        "cause": "Trying to lift the dumbbell higher than full biceps contraction allows, recruiting anterior deltoids",
+        "causePl": "Próba uniesienia hantla wyżej niż pozwala na to pełny skurcz bicepsa, włączanie przednich aktonów barków",
+        "cue": "Lock upper arms perpendicular to the floor. Stop the curl when elbows want to move forward.",
+        "cuePl": "Zablokuj ramiona ponad łokciem prostopadle do podłogi. Zakończ uginanie zanim łokcie zechcą ruszyć do przodu."
+      },
+      {
+        "fault": "Cutting off the bottom (partial range of motion)",
+        "faultPl": "Skracanie dolnej fazy (niepełny zakres ruchu)",
+        "cause": "Weakness in the stretched position, ego lifting, or fear of biceps tendon strain",
+        "causePl": "Słabość w pozycji rozciągniętej, ego, lub strach o przyczep bicepsa",
+        "cue": "Lower until elbows are fully extended every rep. The deep stretch is the main benefit of this variation.",
+        "cuePl": "Opuszczaj aż łokcie będą w pełni wyprostowane przy każdym powtórzeniu. Głębokie rozciągnięcie to główna zaleta tej wersji."
+      },
+      {
+        "fault": "Lifting head off the bench / arching back",
+        "faultPl": "Unoszenie głowy z ławki / wyginanie pleców",
+        "cause": "Compensating for fatigue by recruiting cervical flexors and lumbar extensors",
+        "causePl": "Kompensacja zmęczenia przez włączanie zginaczy szyi i prostowników odcinka lędźwiowego",
+        "cue": "Keep head, shoulders and glutes flat on the bench. If you have to crane your neck, drop the weight.",
+        "cuePl": "Trzymaj głowę, barki i pośladki płasko na ławce. Jeśli musisz wyciągać szyję — zmniejsz ciężar."
+      },
+      {
+        "fault": "Swinging the dumbbells (using momentum at the bottom)",
+        "faultPl": "Bujanie hantlami (wykorzystywanie pędu w dolnej fazie)",
+        "cause": "Load too heavy, or rushing the eccentric and bouncing out of the stretch",
+        "causePl": "Zbyt duży ciężar, lub przyspieszanie fazy negatywnej i odbijanie z rozciągnięcia",
+        "cue": "Pause for half a second at the bottom. Lift the dumbbells with the biceps, not with shoulder momentum.",
+        "cuePl": "Zatrzymaj się na pół sekundy w dolnej pozycji. Unoś hantle bicepsami, nie pędem barków."
+      },
+      {
+        "fault": "Wrists bending under load",
+        "faultPl": "Zginanie nadgarstków pod obciążeniem",
+        "cause": "Weak forearm flexors or grip too loose",
+        "causePl": "Słabe zginacze nadgarstka lub zbyt luźny chwyt",
+        "cue": "Keep wrists straight in line with forearms. Grip the dumbbell firmly throughout the set.",
+        "cuePl": "Trzymaj nadgarstki proste w linii z przedramieniem. Mocno trzymaj hantel przez całą serię."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curl up). Inhale during the eccentric (lower down). Maintain a light core brace throughout — the bench supports the spine but breathing should remain controlled.",
+    "breathingPl": "Wydech w fazie koncentrycznej (unoszenie). Wdech w fazie ekscentrycznej (opuszczanie). Utrzymuj lekkie napięcie brzucha przez całą serię — ławka wspiera kręgosłup, ale oddech powinien pozostać kontrolowany."
+  },
+
+  "contraindications": [
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "modify",
+      "modification": "Deep stretch at the bottom strongly loads the distal biceps tendon. Limit ROM in the lower third, use lighter loads with higher reps (12-15), avoid heavy eccentrics.",
+      "modificationPl": "Głębokie rozciągnięcie w dolnej pozycji mocno obciąża dystalny przyczep bicepsa. Ogranicz zakres ruchu w dolnej jednej trzeciej, używaj lżejszych ciężarów z większą liczbą powtórzeń (12-15), unikaj ciężkich faz negatywnych.",
+      "alternative": "preacher-curl"
+    },
+    {
+      "condition": "anterior_shoulder_pain_or_impingement",
+      "severity": "modify",
+      "modification": "Hanging the arms straight down from the shoulders puts the glenohumeral joint in a passive distraction position which can aggravate anterior shoulder pain. Switch to a seated incline variation with back support.",
+      "modificationPl": "Zwisające ramiona pionowo w dół od barków ustawiają staw ramienny w pozycji pasywnej dystrakcji, co może drażnić ból przedniej części barku. Przejdź na wariant siedzący na ławce skośnej z oparciem.",
+      "alternative": "incline-dumbbell-curl"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "caution",
+      "modification": "Holding heavy dumbbells in full supination under the bench loads the wrists in an unsupported position. Use wrist wraps or move to a preacher curl where the bench supports the upper arm.",
+      "modificationPl": "Trzymanie ciężkich hantli w pełnej supinacji pod ławką obciąża nadgarstki w niewspartej pozycji. Użyj opasek na nadgarstki lub przejdź na curl na modlitewniku, gdzie ławka wspiera ramię.",
+      "alternative": "preacher-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3-4x10-15 (stretch-focused pump) | 2-3x12-15 (high-rep finisher)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "dumbbell-lying-supine-curl.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-supine-curl/frame_0_start.png",
+      "frames/dumbbell-lying-supine-curl/frame_1_early.png",
+      "frames/dumbbell-lying-supine-curl/frame_2_mid.png",
+      "frames/dumbbell-lying-supine-curl/frame_3_late.png",
+      "frames/dumbbell-lying-supine-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "biceps/dumbbell-lying-supine-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: ćwiczący leży na plecach (supine) na płaskiej ławce, stopy oparte po obu stronach, ramiona zwisają pionowo w dół od barków z hantlami trzymanymi podchwytem, biceps i przedramiona podświetlone na czerwono — pozycja startowa rozciągnięta. Frame 2: pełny skurcz bicepsa, hantle uniesione do wysokości przednich aktonów barków, łokcie pozostają pod barkami (ramiona ponad łokciem pionowe), klatka piersiowa i biceps mocno aktywne. Frame 4: powrót do pełnego wyprostu z 'ghost trail' fazy szczytowej powyżej pokazującym pełną drogę ruchu. Tułów stoi nieruchomo przez cały ruch dzięki kontaktowi z ławką — modelowe wykonanie bez kipping. Klasyczny lying supine dumbbell curl jednoznacznie potwierdzony. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "biceps", "isolation", "dumbbells", "lying", "supine", "stretch_focused", "strict_form"]
+}

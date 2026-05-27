@@ -1,0 +1,186 @@
+{
+  "id": "dumbbell-lying-supination",
+  "name": "Dumbbell Lying Supination",
+  "namePl": "Supinacja przedramienia leżąc z hantlem",
+  "aliases": ["dumbbell supination", "side-lying dumbbell supination", "asymmetric dumbbell supination", "dumbbell forearm supination"],
+  "aliasesPl": ["supinacja z hantlem leżąc na boku", "obracanie przedramienia hantlem na supinację", "asymetryczny hantel supinacja", "supinacja przedramienia w leżeniu bokiem"],
+
+  "description": "Isolation exercise for the forearm supinators (supinator muscle and biceps brachii acting as a supinator) performed lying on the side on a flat bench. One end of the dumbbell is loaded (asymmetric grip) so the lever creates rotational torque. Starting from a pronated position (palm facing down), the lifter rotates the wrist into supination (palm facing up) by contracting the supinator and biceps. The lying position with the elbow pinned to the ribs eliminates shoulder and elbow assistance and isolates pure forearm rotation. A specialty exercise used by combat athletes, climbers, tennis players, BJJ practitioners (gi grips) and in rehab of lateral elbow pain or radial nerve issues.",
+  "descriptionPl": "Ćwiczenie izolowane na supinatory przedramienia (mięsień odwracacz oraz biceps działający jako supinator) wykonywane w leżeniu bokiem na płaskiej ławce. Tylko jeden koniec hantla jest obciążony (asymetryczny chwyt), tak by dźwignia tworzyła moment obrotowy. Startując z pozycji pronowanej (wnętrze dłoni do dołu), ćwiczący obraca nadgarstek do supinacji (wnętrze dłoni do góry) poprzez napięcie odwracacza i bicepsa. Leżenie bokiem z łokciem przyklejonym do żeber eliminuje wsparcie barku i łokcia, izolując czystą rotację przedramienia. Specjalistyczne ćwiczenie używane przez sporty walki, wspinaczy, tenisistów, zawodników BJJ (chwyty na kimono) oraz w rehabilitacji bólu bocznego łokcia lub problemów z nerwem promieniowym.",
+
+  "instructions": [
+    "Load only ONE side of a dumbbell — leave the opposite side bare. This creates the asymmetric lever needed for the rotation.",
+    "Lie on your side on a flat bench, with the working arm on top (or hanging off the edge if preferred).",
+    "Place your upper arm along your side, elbow bent to 90 degrees and tucked firmly against your ribs.",
+    "Grip the dumbbell handle in the middle with the loaded end pointing DOWN (toward the floor), hand in a pronated position (palm facing down). This is the start.",
+    "Keeping the elbow pinned to your side, rotate your forearm to bring the loaded end of the dumbbell UP (toward the ceiling). The palm finishes facing up — full supination.",
+    "Pause briefly in the fully supinated position. Feel the contraction in the supinator and outer forearm.",
+    "Slowly rotate back to the pronated start position under control over 2-3 seconds.",
+    "The elbow, upper arm and shoulder do NOT move. Only the forearm rotates."
+  ],
+  "instructionsPl": [
+    "Obciąż TYLKO jedną stronę hantla — drugą zostaw pustą. To tworzy asymetryczną dźwignię potrzebną do rotacji.",
+    "Połóż się bokiem na płaskiej ławce, pracująca ręka na górze (lub zwisająca poza krawędź jeśli wolisz).",
+    "Ramię ponad łokciem ułóż wzdłuż tułowia, łokieć zgięty pod kątem 90 stopni i mocno dociśnięty do żeber.",
+    "Złap rączkę hantla na środku z obciążonym końcem skierowanym W DÓŁ (do podłogi), dłoń w pozycji pronowanej (wnętrze dłoni do dołu). To pozycja startowa.",
+    "Utrzymując łokieć przyklejony do boku, obróć przedramię tak by obciążony koniec hantla pojechał w GÓRĘ (do sufitu). Dłoń kończy ruch wnętrzem w górę — pełna supinacja.",
+    "Zatrzymaj się chwilę w pełnej supinacji. Poczuj skurcz w odwracaczu i bocznej części przedramienia.",
+    "Wolno wróć do pozycji pronowanej w sposób kontrolowany przez 2-3 sekundy.",
+    "Łokieć, ramię i bark NIE poruszają się. Obraca się tylko przedramię."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "rotational",
+    "mechanic": "isolation",
+    "laterality": "unilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["supinator", "biceps_brachii"],
+    "secondary": ["forearm_extensors", "brachioradialis"],
+    "stabilizers": ["core", "deltoids", "forearm_flexors"]
+  },
+
+  "muscle_intensity": {
+    "supinator": "P10",
+    "biceps_brachii": "P8",
+    "forearm_extensors": "S4",
+    "brachioradialis": "S3",
+    "core": "T2",
+    "deltoids": "T1",
+    "forearm_flexors": "T2"
+  },
+
+  "equipment": {
+    "required": ["dumbbell", "flat_bench"],
+    "optional": ["wrist_wraps", "towel_for_padding"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 3,
+    "prerequisites": ["dumbbell-wrist-curl"],
+    "progression_to": ["cable-supination", "hammer-supination", "barbell-supination-twist"],
+    "alternatives": ["dumbbell-lying-pronation", "cable-wrist-curl", "reverse-wrist-curl", "zottman-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Load only ONE side of the dumbbell — asymmetric lever is the whole point",
+      "Lie on your side, elbow at 90 degrees pinned to ribs",
+      "Grip the middle of the handle, loaded end DOWN, palm facing the floor",
+      "Wrist neutral and straight — no flexion or extension",
+      "Brace the core lightly to stop the torso from rolling"
+    ],
+    "setup_cues_pl": [
+      "Obciąż TYLKO jedną stronę hantla — asymetryczna dźwignia to cała idea",
+      "Połóż się na boku, łokieć w 90 stopniach przyklejony do żeber",
+      "Chwyt na środku rączki, obciążony koniec W DÓŁ, dłoń wnętrzem do podłogi",
+      "Nadgarstek neutralny i prosty — bez zginania ani prostowania",
+      "Lekko napnij brzuch by tułów się nie obracał"
+    ],
+    "execution_cues": [
+      "Rotate the forearm — do not flex the wrist or curl the biceps",
+      "Keep the elbow glued to the ribs through the whole rep",
+      "Slow eccentric — 2-3 seconds back to pronation",
+      "Full range: palm down to palm up, no half reps",
+      "Light weight, high reps — the supinator is a small deep muscle"
+    ],
+    "execution_cues_pl": [
+      "Obracaj przedramię — nie zginaj nadgarstka ani nie rób uginania bicepsem",
+      "Trzymaj łokieć przyklejony do żeber przez całe powtórzenie",
+      "Wolna faza negatywna — 2-3 sekundy powrotu do pronacji",
+      "Pełen zakres: dłoń do dołu / dłoń do góry, bez połówek",
+      "Lekki ciężar, dużo powtórzeń — odwracacz to mały, głęboki mięsień"
+    ],
+    "common_faults": [
+      {
+        "fault": "Letting the elbow swing away from the ribs",
+        "faultPl": "Odsuwanie łokcia od żeber",
+        "cause": "Load too heavy, recruiting the shoulder and chest to assist the rotation",
+        "causePl": "Zbyt duży ciężar, włączanie barku i klatki piersiowej do pomocy w rotacji",
+        "cue": "Reduce the weight. Press the upper arm into your side as if pinning it with a strap.",
+        "cuePl": "Zmniejsz ciężar. Dociśnij ramię do boku jakbyś przypinał je pasem."
+      },
+      {
+        "fault": "Flexing the elbow (turning it into a biceps curl)",
+        "faultPl": "Zginanie łokcia (zamiana w uginanie bicepsa)",
+        "cause": "Biceps is a strong supinator and naturally wants to flex the elbow at the same time — uncontrolled, this hides the work from the deep supinator",
+        "causePl": "Biceps jest silnym supinatorem i naturalnie chce jednocześnie zgiąć łokieć — niekontrolowane przenosi pracę z głębokiego odwracacza na biceps",
+        "cue": "Lock the elbow angle at 90 degrees. The forearm should rotate in place, not lift toward the shoulder.",
+        "cuePl": "Zablokuj kąt łokcia na 90 stopniach. Przedramię ma się obracać w miejscu, nie unosić do barku."
+      },
+      {
+        "fault": "Rolling the torso to add range of motion",
+        "faultPl": "Obracanie tułowia by zwiększyć zakres ruchu",
+        "cause": "Ego lifting or attempting to lift weight that the small supinator cannot move alone",
+        "causePl": "Ego, lub próba uniesienia ciężaru którego mały odwracacz nie udźwignie sam",
+        "cue": "Keep both shoulders stacked vertically. Brace the core lightly — torso stays still.",
+        "cuePl": "Trzymaj oba barki ułożone pionowo jeden nad drugim. Lekko napnij brzuch — tułów nieruchomy."
+      },
+      {
+        "fault": "Loading both sides of the dumbbell (symmetric)",
+        "faultPl": "Obciążanie obu stron hantla (symetrycznie)",
+        "cause": "Misunderstanding the exercise — symmetric loading creates zero rotational torque",
+        "causePl": "Niezrozumienie ćwiczenia — symetryczne obciążenie daje zerowy moment obrotowy",
+        "cue": "ONE side loaded, other side bare. The asymmetry IS the resistance.",
+        "cuePl": "JEDNA strona obciążona, druga pusta. Asymetria TO jest opór."
+      }
+    ],
+    "breathing": "Exhale during supination (palm up rotation). Inhale during the return to pronation. Breathing should be quiet and continuous — this is a low-load isolation movement.",
+    "breathingPl": "Wydech podczas supinacji (rotacja dłonią w górę). Wdech podczas powrotu do pronacji. Oddech ma być cichy i ciągły — to ćwiczenie izolowane o niskim obciążeniu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lateral_epicondylitis_tennis_elbow",
+      "severity": "caution",
+      "modification": "The supinator wraps around the proximal radius near the lateral epicondyle — forced supination can aggravate tennis elbow. Begin with isometric holds (3-5 seconds in mid-range, no weight or empty handle), then add slow eccentrics only. Pain during the set should not exceed 2/10.",
+      "modificationPl": "Odwracacz opasuje bliższą część kości promieniowej w okolicy nadkłykcia bocznego — wymuszona supinacja może nasilać łokieć tenisisty. Zacznij od izometrycznych zatrzymań (3-5 sekund w połowie zakresu, bez ciężaru lub z pustą rączką), potem dodaj tylko wolne fazy negatywne. Ból podczas serii nie powinien przekraczać 2/10.",
+      "alternative": "dumbbell-lying-pronation"
+    },
+    {
+      "condition": "distal_biceps_tendinopathy",
+      "severity": "contraindicated",
+      "modification": "The biceps brachii is a powerful supinator and inserts on the radial tuberosity via the distal biceps tendon. Resisted supination is one of the primary aggravators of distal biceps tendinopathy. Do not perform until the tendon is asymptomatic and cleared by a physician. Return through isometrics and very light eccentrics only.",
+      "modificationPl": "Biceps jest silnym supinatorem i przyczepia się do guzowatości kości promieniowej przez ścięgno dalsze bicepsa. Supinacja z oporem to jeden z głównych czynników nasilających tendinopatię ścięgna dalszego bicepsa. Nie wykonuj dopóki ścięgno nie jest bezbolesne i nie otrzymasz zgody lekarza. Wracaj tylko przez izometrię i bardzo lekkie fazy negatywne.",
+      "alternative": null
+    },
+    {
+      "condition": "distal_radioulnar_joint_pain",
+      "severity": "modify",
+      "modification": "Rotation of the forearm directly loads the distal radioulnar joint (near the wrist). Reduce range of motion (avoid end-range supination), use very light loads, and limit volume to 2 sets of 15-20 reps. Stop if clicking, catching or sharp pain occurs.",
+      "modificationPl": "Rotacja przedramienia bezpośrednio obciąża dalszy staw promieniowo-łokciowy (przy nadgarstku). Ogranicz zakres ruchu (unikaj końcowej supinacji), używaj bardzo lekkich ciężarów, ogranicz objętość do 2 serii po 15-20 powtórzeń. Przerwij jeśli pojawi się trzask, blokowanie lub ostry ból.",
+      "alternative": "dumbbell-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3x12-15 (hypertrophy/grip) | 2-3x15-20 (endurance/rehab) | 3x10-12 (strength focus, advanced)",
+  "calories_per_kg_per_hour": 3.0,
+
+  "media": {
+    "primary": "dumbbell-lying-supination.gif",
+    "frames_extracted": [
+      "frames/dumbbell-lying-supination/frame_0_start.png",
+      "frames/dumbbell-lying-supination/frame_1_early.png",
+      "frames/dumbbell-lying-supination/frame_2_mid.png",
+      "frames/dumbbell-lying-supination/frame_3_late.png",
+      "frames/dumbbell-lying-supination/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/dumbbell-lying-supination"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek z GIFa jahel (start/early/mid/late/end). Postać leży bokiem na płaskiej ławce, ramię ponad łokciem wzdłuż tułowia, łokieć w 90 stopniach przyklejony do żeber. Hantel ma obciążenie TYLKO po jednej stronie (widoczne talerze po dolnej stronie hantla, druga strona pusta). Pracujące przedramię (na górze stosu) jest podświetlone — widoczna izolacja mięśnia odwracacza i bicepsa w roli supinatora. Łokieć, ramię i tułów nieruchome — pracuje wyłącznie rotacja przedramienia w stawie promieniowo-łokciowym. Ćwiczenie jednoznacznie zidentyfikowane jako Dumbbell Lying Supination (lustrzane do Dumbbell Lying Pronation): start w pronacji (dłoń w dół, obciążony koniec hantla w dół), ruch obrotowy do supinacji (dłoń w górę, obciążony koniec hantla w górę), opór tworzy asymetryczna dźwignia hantla pod wpływem grawitacji. Primary movers: supinator (głęboki) + biceps brachii (jako supinator przy zgiętym łokciu 90°, szczególnie silny przy supinacji z pronacji). Wszystkie pola PL napisane od zera, nie kopiowane z pronacji — uwzględniono lustrzane różnice (start/end odwrotne, biceps jako primary mover, tennis elbow zamiast golfer's elbow, distal biceps tendinopathy zamiast pronator teres syndrome).",
+
+  "tags": ["bodybuilding", "arms", "forearms", "biceps", "isolation", "dumbbell", "rotation", "grip", "rehab", "specialty", "upper_body", "accessory"]
+}

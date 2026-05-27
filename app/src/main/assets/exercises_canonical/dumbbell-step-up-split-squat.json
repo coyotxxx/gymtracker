@@ -1,0 +1,207 @@
+{
+  "id": "dumbbell-step-up-split-squat",
+  "name": "Dumbbell Step-Up Split Squat",
+  "namePl": "Step-up + split squat z hantlami",
+  "aliases": ["dumbbell elevated split squat", "deficit split squat with dumbbells", "between-benches dumbbell split squat", "dumbbell split squat on bench"],
+  "aliasesPl": ["bułgarski split squat z deficytem", "split squat z hantlami na ławce", "wykrok na ławce z hantlami", "deficit split squat z hantlami"],
+
+  "description": "Hybrid unilateral lower-body exercise combining the step-up setup (front foot elevated on a bench) with the split-squat pattern (rear leg trailing behind). The athlete stands between two benches holding dumbbells at the sides, with the front foot planted on one bench and the rear leg extended back toward a second bench. Descends until the rear knee approaches or touches the rear bench, then drives back up through the front heel. The elevated front foot creates a deeper range of motion (deficit), increasing quad and glute stretch under load. Demands significant unilateral stability and exposes left-right strength asymmetries.",
+  "descriptionPl": "Hybrydowe jednostronne ćwiczenie dolnej części ciała łączące ustawienie step-upu (przednia noga uniesiona na ławce) ze schematem split squat (tylna noga z tyłu). Trenujący staje pomiędzy dwiema ławkami z hantlami u boków, z przednią stopą opartą na jednej ławce i tylną nogą wyciągniętą do tyłu w stronę drugiej ławki. Schodzi aż tylne kolano zbliży się lub dotknie tylnej ławki, po czym wraca w górę napierając przez piętę przedniej nogi. Uniesiona przednia stopa tworzy głębszy zakres ruchu (deficyt), zwiększając rozciągnięcie czworogłowych i pośladków pod obciążeniem. Wymaga dużej stabilności jednostronnej i ujawnia różnice siłowe między stronami.",
+
+  "instructions": [
+    "Set two flat benches roughly one stride length apart. Pick up a pair of dumbbells and hold them at your sides with a neutral grip.",
+    "Step up so your front foot is planted flat in the middle of the front bench. Extend the rear leg back and rest the rear shin/instep lightly on the second bench (or hover above it).",
+    "Stand tall with the working leg fully extended. Square the hips forward, chest up, core braced, gaze straight ahead.",
+    "Inhale and brace. Begin descending by bending the front knee and hip simultaneously, letting the rear knee travel down toward the rear bench.",
+    "Lower under control until the rear knee approaches the rear bench surface (or lightly touches it) and the front thigh reaches roughly parallel to the bench top. Front shin stays near vertical.",
+    "Pause briefly at the bottom — no bounce, no momentum from the rear leg.",
+    "Drive up through the heel and mid-foot of the front leg. Keep the torso vertical — do not pitch forward.",
+    "Extend the front knee and hip until you reach the starting position. Exhale near the top.",
+    "Complete all prescribed reps on one side, then carefully step down and switch legs. Match reps on both sides.",
+    "Choose a dumbbell weight that allows clean, controlled descent — the rear leg should not push you back up."
+  ],
+  "instructionsPl": [
+    "Ustaw dwie płaskie ławki w odległości około jednej długości kroku. Weź parę hantli i trzymaj je swobodnie u boków neutralnym chwytem.",
+    "Wejdź tak, aby przednia stopa była postawiona płasko na środku przedniej ławki. Wyciągnij tylną nogę do tyłu i oprzyj piszczel/podbicie tylnej stopy lekko na drugiej ławce (lub trzymaj nad nią).",
+    "Stań wyprostowany z pracującą nogą w pełnym wyproście. Biodra ustawione równo w przód, klatka w górze, brzuch napięty, wzrok przed siebie.",
+    "Wdech i napięcie. Zacznij schodzić zginając równocześnie przednie kolano i biodro, pozwalając tylnemu kolanu schodzić w kierunku tylnej ławki.",
+    "Opuszczaj się pod kontrolą aż tylne kolano zbliży się do powierzchni tylnej ławki (lub lekko jej dotknie), a przednie udo osiągnie w przybliżeniu równoległą do blatu ławki. Piszczel przedniej nogi pozostaje blisko pionu.",
+    "Zatrzymaj się chwilę w dolnej pozycji — bez odbicia, bez wykorzystywania tylnej nogi do pomocy.",
+    "Wypchnij się w górę przez piętę i środek stopy przedniej nogi. Utrzymuj tułów pionowo — nie pochylaj się do przodu.",
+    "Wyprostuj przednie kolano i biodro aż wrócisz do pozycji wyjściowej. Wydech blisko góry.",
+    "Wykonaj wszystkie zaplanowane powtórzenia na jedną stronę, następnie ostrożnie zejdź i zmień nogę. Wyrównaj liczbę powtórzeń po obu stronach.",
+    "Wybierz ciężar hantli pozwalający na czyste, kontrolowane schodzenie — tylna noga nie powinna pomagać w wypychaniu w górę."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "calves", "erector_spinae", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "hamstrings": "S7",
+    "adductors": "S6",
+    "gluteus_medius": "S7",
+    "core": "S6",
+    "calves": "T4",
+    "erector_spinae": "T3",
+    "hip_flexors": "T4"
+  },
+
+  "equipment": {
+    "required": ["dumbbells", "bench"],
+    "optional": ["second_bench", "box", "lifting_shoes"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-split-squat", "dumbbell-split-squat", "dumbbell-step-up", "dumbbell-lunge"],
+    "progression_to": ["bulgarian-split-squat", "barbell-bulgarian-split-squat", "deficit-bulgarian-split-squat", "rear-foot-elevated-split-squat-barbell"],
+    "alternatives": ["bulgarian-split-squat", "dumbbell-split-squat", "dumbbell-step-up", "dumbbell-lunge"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Two benches one stride apart — measure with a relaxed split stance first",
+      "Front foot flat and centered on the front bench, full sole contact",
+      "Rear leg long, rear shin/instep just touching the rear bench",
+      "Dumbbells hanging straight down at the sides, neutral grip",
+      "Hips square, ribs down, eyes forward — vertical torso from the start"
+    ],
+    "setup_cues_pl": [
+      "Dwie ławki w odległości jednego kroku — najpierw zmierz to luźnym wykrokiem bez hantli",
+      "Przednia stopa płasko i wycentrowana na przedniej ławce, pełne przyleganie podeszwy",
+      "Tylna noga wyciągnięta, piszczel/podbicie lekko styka się z tylną ławką",
+      "Hantle zwisają pionowo u boków, chwyt neutralny",
+      "Biodra równo, żebra ściągnięte, wzrok przed siebie — tułów pionowo od samego startu"
+    ],
+    "execution_cues": [
+      "Drop straight down — imagine sliding between two walls",
+      "Rear knee toward the rear bench, not back behind you",
+      "Front shin stays nearly vertical — let the hip do the work",
+      "Don't push off the rear foot — the front leg owns the lift",
+      "Exhale at the top, reset breath before each rep"
+    ],
+    "execution_cues_pl": [
+      "Schodź prosto w dół — wyobraź sobie że suwasz się między dwoma ścianami",
+      "Tylne kolano w stronę tylnej ławki, nie w tył za siebie",
+      "Piszczel przedniej nogi prawie pionowa — pracę robi biodro",
+      "Nie odpychaj się tylną stopą — przednia noga wykonuje cały podnoszenie",
+      "Wydech na górze, oddech reset przed każdym powtórzeniem"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pushing off the rear leg to assist the ascent",
+        "faultPl": "Odpychanie się tylną nogą przy wstawaniu",
+        "cause": "Load too heavy or rear bench too low, turning the move into a near-bilateral squat and stealing tension from the front leg.",
+        "causePl": "Zbyt duży ciężar lub za niska tylna ławka — ruch staje się quasi-obustronnym przysiadem i odbiera napięcie przedniej nodze.",
+        "cue": "Place rear foot lightly — feel a feather, not a pillar. Reduce load if needed.",
+        "cuePl": "Stawiaj tylną stopę lekko — jak piórko, nie filar. Zmniejsz ciężar jeśli trzeba."
+      },
+      {
+        "fault": "Forward torso lean / chest dive",
+        "faultPl": "Pochylanie tułowia do przodu / kładzenie klatki",
+        "cause": "Weak quads at deep ranges, tight hip flexors of the rear leg, or trying to cheat depth",
+        "causePl": "Słabe czworogłowe w głębokim zakresie, napięte zginacze biodra tylnej nogi lub próba oszukania głębokości",
+        "cue": "Stack ribs over hips, knuckles point straight down. Picture a string from the crown of your head pulling up.",
+        "cuePl": "Żebra nad biodrami, kostki dłoni skierowane prosto w dół. Wyobraź sobie nitkę z czubka głowy ciągnącą w górę."
+      },
+      {
+        "fault": "Front knee caves inward (valgus)",
+        "faultPl": "Przednie kolano zapada do środka (koślawość)",
+        "cause": "Weak gluteus medius, ankle mobility deficit, or unstable foot position on the bench",
+        "causePl": "Słaby pośladkowy średni, ograniczona mobilność stawu skokowego lub niestabilna pozycja stopy na ławce",
+        "cue": "Spread the floor through the front foot — push the bench apart with the big toe and outer heel",
+        "cuePl": "Rozpychaj ławkę przednią stopą — naciskaj wewnętrzną stronę palucha i zewnętrzną krawędź pięty"
+      },
+      {
+        "fault": "Insufficient depth — rear knee stays high",
+        "faultPl": "Niedostateczna głębokość — tylne kolano zostaje wysoko",
+        "cause": "Stride too short, fear of the load, or limited hip flexor flexibility on the rear leg",
+        "causePl": "Za krótki krok, strach przed ciężarem lub ograniczona elastyczność zginaczy biodra tylnej nogi",
+        "cue": "Lengthen the stance — rear knee should travel down past the level of the front bench top",
+        "cuePl": "Wydłuż rozstaw — tylne kolano powinno schodzić poniżej poziomu blatu przedniej ławki"
+      },
+      {
+        "fault": "Loss of lateral balance / wobbling between benches",
+        "faultPl": "Utrata równowagi bocznej / chwianie się między ławkami",
+        "cause": "Feet positioned on a single line (tightrope), weak hip stabilizers, or load too heavy for the current control level",
+        "causePl": "Stopy ustawione na jednej linii (lina), słabe stabilizatory biodra lub ciężar za duży dla obecnego poziomu kontroli",
+        "cue": "Set the front foot on its own line, rear foot on a parallel line — about hip-width apart side to side",
+        "cuePl": "Ustaw przednią stopę na swojej linii, tylną na linii równoległej — około szerokości bioder pomiędzy nimi"
+      }
+    ],
+    "breathing": "Inhale and brace at the top before each rep. Hold the breath through the descent and the hardest part of the ascent (Valsalva). Exhale near lockout, then reset before the next rep.",
+    "breathingPl": "Wdech i napięcie na górze przed każdym powtórzeniem. Wstrzymaj oddech przez schodzenie i najtrudniejszy moment wychodzenia (Valsalva). Wydech blisko góry, następnie reset oddechu przed kolejnym powtórzeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_or_ligament_injury",
+      "severity": "modify",
+      "modification": "Deficit position increases knee flexion under load. Limit depth to a pain-free range, lower the front bench, or switch to flat-ground split squat first.",
+      "modificationPl": "Pozycja deficytu zwiększa zgięcie kolana pod obciążeniem. Ogranicz głębokość do zakresu bez bólu, obniż przednią ławkę lub przejdź najpierw na split squat z podłogi.",
+      "alternative": "dumbbell-split-squat"
+    },
+    {
+      "condition": "balance_disorder_or_vertigo",
+      "severity": "caution",
+      "modification": "Standing between two raised surfaces with unilateral load demands high stability. Use a wall or rack pin for fingertip support, or use a single low box only.",
+      "modificationPl": "Stanie pomiędzy dwiema podwyższonymi powierzchniami z jednostronnym obciążeniem wymaga wysokiej stabilności. Użyj ściany lub stojaka do podparcia palcem albo zostań przy pojedynczej niskiej skrzyni.",
+      "alternative": "dumbbell-split-squat"
+    },
+    {
+      "condition": "hip_flexor_strain_rear_leg",
+      "severity": "modify",
+      "modification": "Long rear-leg stride aggravates an irritated hip flexor. Shorten the stance or use a non-elevated split squat until healed.",
+      "modificationPl": "Długi rozstaw tylnej nogi drażni podrażniony zginacz biodra. Skróć rozstaw lub przejdź na split squat bez uniesienia do czasu wygojenia.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Knee-dominant deficit work loads the patellofemoral joint heavily. Use shorter ROM, lighter load, or switch to a hip-dominant variant.",
+      "modificationPl": "Praca z deficytem dominowana kolanem mocno obciąża staw rzepkowo-udowy. Skróć zakres ruchu, użyj mniejszego ciężaru lub przejdź na wariant dominujący biodrem.",
+      "alternative": "dumbbell-romanian-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6-8 per leg (strength) | 2-3x12-15 per leg (endurance/conditioning)",
+  "calories_per_kg_per_hour": 6.5,
+
+  "media": {
+    "primary": "dumbbell-step-up-split-squat.gif",
+    "frames_extracted": [
+      "frames/dumbbell-step-up-split-squat/frame_0_start.png",
+      "frames/dumbbell-step-up-split-squat/frame_1_early.png",
+      "frames/dumbbell-step-up-split-squat/frame_2_mid.png",
+      "frames/dumbbell-step-up-split-squat/frame_3_late.png",
+      "frames/dumbbell-step-up-split-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/dumbbell-step-up-split-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Postać stoi pomiędzy dwiema ławkami z hantlami u boków (chwyt neutralny). Przednia noga (prawa w GIFie) płasko na przedniej ławce, tylna noga wyciągnięta do tyłu z piszczelą/podbiciem opartym na drugiej ławce. Klatka start/end (frame_0, frame_4) — pełen wyprost przedniej nogi, pozycja stojąca. Klatka mid (frame_2) — pełna głębokość, tylne kolano blisko/na tylnej ławce, przednie udo poniżej równoległej (deficyt), tułów pionowy, hantle nadal u boków. To NIE jest klasyczny step-up (brak wchodzenia/schodzenia z ławki) ani klasyczny lunge — to hybryda elevated/deficit split squat z obiema stopami podpartymi na podwyższeniu. Mięśnie podświetlone w GIFie: czworogłowe przedniej nogi (najmocniej, P9), pośladki przedniej nogi (P9), przywodziciele tylnej nogi i tylne pasmo (S6-S7). Klasyfikacja: compound, unilateral, sagittal, push, closed-chain — zgodne z barbell-lunge wzorcem. Polski standard nazewnictwa fitness: 'split squat z deficytem' / 'step-up + split squat' (jahel nazwa 'step-up-split-squat'). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["unilateral", "lower_body", "split_squat", "deficit", "dumbbell", "compound", "asymmetry_corrector", "stabilizer_heavy", "elevated"]
+}

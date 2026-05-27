@@ -1,0 +1,204 @@
+{
+  "id": "lever-deadlift",
+  "name": "Lever Deadlift (Plate-Loaded Machine)",
+  "namePl": "Deadlift w maszynie",
+  "aliases": ["machine deadlift", "lever deadlift", "plate-loaded deadlift machine", "hammer strength deadlift"],
+  "aliasesPl": ["martwy ciąg w maszynie", "deadlift na maszynie", "deadlift dźwigniowy", "martwy ciąg dźwigniowy"],
+
+  "description": "Posterior chain compound exercise performed on a lever (plate-loaded) deadlift machine. Handles are attached to a pivoting arm, producing a fixed bar path that reduces the technical demand and shear stress on the lumbar spine compared to a barbell deadlift. Excellent option for trainees with lower-back limitations, beginners learning the hinge pattern, or as a safer accessory pull for hypertrophy of glutes, hamstrings and erectors.",
+  "descriptionPl": "Wielostawowe ćwiczenie tylnego łańcucha wykonywane na maszynie dźwigniowej (plate-loaded). Uchwyty zamocowane są na obrotowym ramieniu, co wymusza stałą ścieżkę ruchu i zmniejsza wymagania techniczne oraz siły ścinające na kręgosłup lędźwiowy w porównaniu z martwym ciągiem ze sztangą. Bezpieczna alternatywa dla osób z ograniczeniami lędźwiowymi, dla początkujących uczących się hip hinge, lub jako pomocnicze ćwiczenie hipertroficzne na pośladki, dwugłowe ud i prostowniki grzbietu.",
+
+  "instructions": [
+    "Load plates evenly on both sides of the lever arm. Step inside the machine and stand between the handles with feet shoulder-width apart, mid-foot under the handles.",
+    "Hinge at the hips and bend the knees to grip the handles with a neutral grip. Torso angled forward, shins close to vertical.",
+    "Set your back: chest up, shoulder blades pulled down and back, neutral spine. Engage the lats by pulling the handles slightly toward your sides.",
+    "Take a big breath, brace your core (Valsalva).",
+    "Drive through the floor with your legs and stand up. As the handles pass knee level, push hips forward to lock out — full hip extension, glutes squeezed.",
+    "Stand tall with neutral pelvis. DO NOT lean back or hyperextend the lower back.",
+    "To lower: push hips back FIRST (hip hinge), then bend knees. Control the eccentric — the lever arm wants to drop fast.",
+    "Touch the stop plates lightly (or pause at full deadweight) and reset before the next rep."
+  ],
+  "instructionsPl": [
+    "Równomiernie załaduj talerze po obu stronach ramienia dźwigni. Wejdź do maszyny i stań między uchwytami, stopy na szerokość barków, środek stóp pod uchwytami.",
+    "Zgnij w biodrach i zegnij kolana, by chwycić uchwyty chwytem neutralnym. Tułów pochylony do przodu, golenie blisko pionu.",
+    "Ustaw plecy: klatka w górze, łopatki ściągnięte w dół i do tyłu, neutralny kręgosłup. Aktywuj najszersze grzbietu, pociągając uchwyty lekko w stronę boków.",
+    "Nabierz głęboki oddech, napnij brzuch (Valsalva).",
+    "Napieraj stopami w podłoże i wstań. Gdy uchwyty mijają linię kolan, wepchnij biodra do przodu do lock-out — pełen wyprost biodra, pośladki ściśnięte.",
+    "Stań prosto z neutralną miednicą. NIE odchylaj się do tyłu i nie odginaj lędźwi.",
+    "Opuszczanie: NAJPIERW wypchnij biodra do tyłu (hip hinge), potem zegnij kolana. Kontroluj fazę ekscentryczną — ramię dźwigni chce opaść szybko.",
+    "Lekko dotknij ograniczników (lub zatrzymaj się na pełnym ciężarze) i ustaw się ponownie przed kolejnym powtórzeniem."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "erector_spinae"],
+    "secondary": ["quadriceps", "trapezius", "latissimus_dorsi", "forearms"],
+    "stabilizers": ["core", "rhomboids", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P8",
+    "erector_spinae": "P8",
+    "quadriceps": "S7",
+    "trapezius": "S6",
+    "latissimus_dorsi": "S5",
+    "forearms": "S7",
+    "core": "S6"
+  },
+
+  "equipment": {
+    "required": ["lever_deadlift_machine"],
+    "optional": ["belt", "lifting_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["romanian-deadlift", "kettlebell-deadlift"],
+    "progression_to": ["barbell-deadlift", "trap-bar-deadlift", "sumo-deadlift"],
+    "alternatives": ["trap-bar-deadlift", "barbell-deadlift", "romanian-deadlift", "rack-pull"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, mid-foot under handles",
+      "Hinge first, then bend knees to reach handles",
+      "Chest up, neutral spine, lats engaged",
+      "Shins close to vertical, knees behind handles",
+      "Arms long and relaxed — they are hooks, not levers",
+      "Brace hard before initiating the pull"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, środek stóp pod uchwytami",
+      "Najpierw hip hinge, potem zegnij kolana, by sięgnąć uchwytów",
+      "Klatka w górze, neutralny kręgosłup, najszersze napięte",
+      "Golenie blisko pionu, kolana za uchwytami",
+      "Ramiona długie i rozluźnione — to haki, nie dźwignie",
+      "Mocne napięcie brzucha przed startem ciągu"
+    ],
+    "execution_cues": [
+      "Push the floor away — drive with the legs",
+      "Hips and shoulders rise at the same rate",
+      "Lock out by squeezing glutes — DO NOT lean back",
+      "Eccentric: hips back FIRST, then knees bend",
+      "Control the descent — the machine wants to drop"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij podłogę — napieraj nogami",
+      "Biodra i barki wstają w tym samym tempie",
+      "Lock-out ściśnięciem pośladków — NIE odchylaj się do tyłu",
+      "Ekscentryk: NAJPIERW biodra do tyłu, potem kolana się zginają",
+      "Kontroluj opuszczanie — maszyna chce opaść"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back",
+        "faultPl": "Zaokrąglone plecy lędźwiowe",
+        "cause": "Weak erectors, poor bracing, or load too heavy",
+        "causePl": "Słabe prostowniki, słabe napięcie brzucha, lub zbyt duży ciężar",
+        "cue": "Reset position. Chest up, lats engaged. Reduce weight and master the hinge pattern first.",
+        "cuePl": "Wróć do pozycji. Klatka w górze, najszersze napięte. Zmniejsz ciężar i opanuj wzór hip hinge."
+      },
+      {
+        "fault": "Lockout by leaning back (lumbar hyperextension)",
+        "faultPl": "Lock-out przez odchylenie do tyłu (nadmierne odgięcie lędźwi)",
+        "cause": "Misunderstanding of full hip extension vs lumbar extension, trying to 'finish' the rep visually",
+        "causePl": "Niezrozumienie pełnego wyprostu biodra vs odgięcia lędźwi, próba 'dokończenia' powtórzenia wizualnie",
+        "cue": "Lock out is glutes-only. Stand tall, neutral pelvis. No leaning back at the top.",
+        "cuePl": "Lock-out to TYLKO pośladki. Stań prosto, neutralna miednica. Bez odchylania się w górze."
+      },
+      {
+        "fault": "Stripper deadlift (hips shoot up first)",
+        "faultPl": "'Stripper deadlift' (biodra strzelają w górę pierwsze)",
+        "cause": "Weak quads relative to back/glutes, or starting with hips too low",
+        "causePl": "Słabe czworogłowe w stosunku do pleców/pośladków, lub zbyt nisko biodra w starcie",
+        "cue": "Push through the legs more. Hips and shoulders rise together. Find the right setup height.",
+        "cuePl": "Mocniej napieraj nogami. Biodra i barki wstają razem. Znajdź właściwą wysokość startu."
+      },
+      {
+        "fault": "Uncontrolled drop on the eccentric",
+        "faultPl": "Niekontrolowane opuszczanie w fazie ekscentrycznej",
+        "cause": "Treating the machine as 'easy', releasing tension at the top, or ego-loading",
+        "causePl": "Traktowanie maszyny jako 'łatwej', utrata napięcia w górze, lub zbyt duży ciężar (ego-loading)",
+        "cue": "Maintain tension. 2-3 seconds down. Hips back first, then knees. The eccentric builds muscle too.",
+        "cuePl": "Utrzymuj napięcie. 2-3 sekundy w dół. Najpierw biodra do tyłu, potem kolana. Ekscentryk też buduje mięśnie."
+      },
+      {
+        "fault": "Standing too far from the handles",
+        "faultPl": "Stanie zbyt daleko od uchwytów",
+        "cause": "Not knowing the proper foot position for this machine",
+        "causePl": "Nieznajomość prawidłowego ustawienia stóp przy tej maszynie",
+        "cue": "Mid-foot directly under the handle pivot point. If you feel pulled forward, step in closer.",
+        "cuePl": "Środek stopy dokładnie pod punktem obrotu uchwytu. Jeśli ciągnie cię do przodu, podejdź bliżej."
+      }
+    ],
+    "breathing": "Big inhale at the top of the setup, brace (Valsalva), hold throughout the entire rep. Exhale at the top of the lockout. NEVER exhale during the pull.",
+    "breathingPl": "Głęboki wdech na szczycie setup, napięcie (Valsalva), trzymaj przez całe powtórzenie. Wydech na szczycie lock-out. NIGDY wydech podczas ciągu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Do not load the spine even with a fixed bar path.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nie obciążaj kręgosłupa nawet przy stałej ścieżce ruchu.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Lever deadlift may be tolerated better than barbell due to reduced shear, but only with light loads and pristine technique. Confirm with physiotherapist first.",
+      "modificationPl": "Deadlift dźwigniowy może być tolerowany lepiej niż wersja ze sztangą dzięki mniejszym siłom ścinającym, ale tylko z lekkimi ciężarami i idealną techniką. Najpierw konsultacja z fizjoterapeutą.",
+      "alternative": "romanian-deadlift"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Limit depth — stop the descent above the point of impingement. Adjust foot position outward to clear hip socket.",
+      "modificationPl": "Ogranicz zakres ruchu — zatrzymaj fazę ekscentryczną powyżej punktu impingement. Ustaw stopy szerzej, by uniknąć konfliktu w panewce.",
+      "alternative": "trap-bar-deadlift"
+    },
+    {
+      "condition": "knee_pain_meniscus",
+      "severity": "caution",
+      "modification": "Keep shins close to vertical (more hip-dominant). Avoid letting knees drift forward over the handles.",
+      "modificationPl": "Trzymaj golenie blisko pionu (bardziej biodrowo-dominujący ruch). Nie pozwól, by kolana wysunęły się przed uchwyty.",
+      "alternative": "romanian-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4-5x5-8 (strength accessory) | 2-3x12-15 (endurance/rehab)",
+  "calories_per_kg_per_hour": 5.8,
+
+  "media": {
+    "primary": "lever-deadlift.gif",
+    "frames_extracted": [
+      "frames/lever-deadlift/frame_0_start.png",
+      "frames/lever-deadlift/frame_1_early.png",
+      "frames/lever-deadlift/frame_2_mid.png",
+      "frames/lever-deadlift/frame_3_late.png",
+      "frames/lever-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/lever-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem 5 klatek. Frame 0: pozycja startowa — kucnięcie z pochylonym tułowiem, uchwyty maszyny dźwigniowej (plate-loaded) po bokach, podświetlone pośladki/czworogłowe/przedramiona. Frame 2: lock-out — stojąca sylwetka, pełen wyprost biodra, uchwyty przy udach, podświetlone czworogłowe/dwugłowe ud/przedramiona. Frame 4: powrót do dołu. Maszyna z ramieniem obrotowym (lever, NIE smith machine) — fixed bar path. Klasyfikacja jako 'hinge' (NIE squat) — dominuje ekstensja biodra. Bezpieczniejsza alternatywa dla barbell deadlift: mniejsze obciążenie techniczne, mniejsze siły ścinające na L-spine, dlatego minimum=beginner (vs intermediate dla barbell). Equipment: dedykowana maszyna lever_deadlift_machine. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["machine", "plate_loaded", "lever", "posterior_chain", "hip_hinge", "beginner_friendly", "back_safe", "hypertrophy", "accessory"]
+}

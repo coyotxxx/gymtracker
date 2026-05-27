@@ -1,0 +1,199 @@
+{
+  "id": "barbell-standing-overhead-triceps-extension",
+  "name": "Barbell Standing Overhead Triceps Extension",
+  "namePl": "Wyciskanie francuskie sztangą nad głową stojąc",
+  "aliases": ["standing overhead barbell triceps extension", "standing barbell french press", "standing overhead skull crusher with barbell", "barbell overhead extension standing"],
+  "aliasesPl": ["francuskie sztangą stojąc", "wyciskanie francuskie nad głowę ze sztangą stojąc", "barbell french press stojąc", "overhead triceps extension ze sztangą stojąc"],
+
+  "description": "An isolation exercise targeting the triceps brachii performed standing, with a barbell held overhead. The lifter lowers the bar behind the head by flexing only at the elbows while keeping the upper arms vertical and stationary. The overhead position places the long head of the triceps under deep stretch, making this one of the most effective movements for hypertrophy of the long head. The standing version requires significant core and lumbar bracing for stability.",
+  "descriptionPl": "Izolowane ćwiczenie ukierunkowane na mięsień trójgłowy ramienia wykonywane stojąc, ze sztangą trzymaną nad głową. Ćwiczący opuszcza sztangę za głowę zginając wyłącznie łokcie, utrzymując ramiona ponad łokciem pionowo i nieruchomo. Pozycja nad głową stawia długą głowę tricepsa w głębokim rozciągnięciu, co czyni to ćwiczenie jednym z najskuteczniejszych dla hipertrofii głowy długiej. Wersja stojąca wymaga silnego napięcia mięśni głębokich i lędźwiowych dla stabilizacji.",
+
+  "instructions": [
+    "Stand tall with feet shoulder-width apart, knees soft, core braced. Grip a barbell with a narrow to shoulder-width pronated grip (palms forward).",
+    "Press the bar overhead to full elbow lockout. The bar should sit directly above the crown of your head with upper arms vertical.",
+    "Keep the upper arms fixed in this vertical position throughout the entire set — only the forearms will move.",
+    "Inhale and lower the bar behind your head by flexing at the elbows. Descend in 2-3 seconds.",
+    "Continue lowering until your forearms touch your biceps and the long head of the triceps is fully stretched. Avoid letting the elbows flare outward.",
+    "Exhale and extend the elbows powerfully, driving the bar back to the starting overhead position. Do not push with the shoulders or hips.",
+    "Lock out the elbows briefly at the top, squeezing the triceps. Maintain a neutral wrist position throughout."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte, brzuch napięty. Złap sztangę nachwytem (dłonie do przodu) wąsko lub na szerokość barków.",
+    "Wyciśnij sztangę nad głowę do pełnego wyprostu w łokciach. Sztanga powinna znaleźć się dokładnie nad czubkiem głowy, ramiona ponad łokciem ustawione pionowo.",
+    "Utrzymuj ramiona w tej pionowej pozycji przez całą serię — ruch wykonują wyłącznie przedramiona.",
+    "Zrób wdech i opuść sztangę za głowę zginając łokcie. Faza opuszczania ma trwać 2-3 sekundy.",
+    "Kontynuuj opuszczanie aż przedramiona dotkną bicepsów, a głowa długa tricepsa będzie w pełnym rozciągnięciu. Nie pozwól łokciom uciekać na boki.",
+    "Wydech i mocny wyprost w łokciach — prowadź sztangę z powrotem do pozycji nad głową. Nie wspomagaj się barkami ani biodrami.",
+    "W górnej pozycji zablokuj łokcie na chwilę i mocno spinaj triceps. Nadgarstki neutralne przez cały ruch."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_extension",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["triceps_brachii"],
+    "secondary": [],
+    "stabilizers": ["anterior_deltoid", "core", "upper_trapezius", "forearm_flexors", "lats", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "triceps_brachii": "P10",
+    "anterior_deltoid": "S3",
+    "core": "S4",
+    "upper_trapezius": "T3",
+    "forearm_flexors": "T3",
+    "lats": "T3",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "wrist_wraps", "weightlifting_belt"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["dumbbell-overhead-triceps-extension", "ez-bar-overhead-extension", "barbell-overhead-press"],
+    "progression_to": ["heavy-barbell-overhead-triceps-extension", "ez-bar-overhead-extension", "behind-the-neck-overhead-extension"],
+    "alternatives": ["dumbbell-overhead-triceps-extension", "cable-overhead-triceps-extension", "ez-bar-overhead-extension", "seated-barbell-overhead-triceps-extension", "rope-overhead-triceps-extension"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, knees soft, glutes squeezed",
+      "Pronated grip — narrow to shoulder-width on the bar",
+      "Press the bar overhead to full lockout above the crown",
+      "Upper arms vertical, biceps close to the ears",
+      "Brace the core hard — ribs down, no lower-back arch"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, kolana lekko ugięte, pośladki spięte",
+      "Chwyt nachwytem — wąsko lub na szerokość barków",
+      "Wyciśnij sztangę nad głowę do pełnego wyprostu nad czubkiem głowy",
+      "Ramiona ponad łokciem pionowo, bicepsy blisko uszu",
+      "Mocno napnij brzuch — żebra w dół, brak wygięcia lędźwiowego"
+    ],
+    "execution_cues": [
+      "Only the forearms move — elbows stay in one spot",
+      "Lower behind the head, do not flare the elbows outward",
+      "Feel a deep stretch in the long head at the bottom",
+      "Drive up by extending the elbows, not the shoulders",
+      "Lock out fully and squeeze the triceps hard at the top"
+    ],
+    "execution_cues_pl": [
+      "Ruch wykonują tylko przedramiona — łokcie zostają w jednym miejscu",
+      "Opuszczaj za głowę — nie pozwól łokciom uciekać na boki",
+      "Poczuj głębokie rozciągnięcie głowy długiej w dolnej pozycji",
+      "Wracaj w górę wyprostem łokci, a nie pracą barków",
+      "Pełny wyprost w łokciach i mocne spięcie tricepsa w górnej pozycji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows flaring outward during descent",
+        "faultPl": "Łokcie uciekają na boki w fazie opuszczania",
+        "cause": "Weak triceps stability, grip too wide, or load too heavy forcing compensation",
+        "causePl": "Słaba stabilizacja tricepsa, zbyt szeroki chwyt lub zbyt duży ciężar wymuszający kompensację",
+        "cue": "Keep elbows pointing forward — imagine pinching a pencil between your biceps and forearms. Narrow the grip.",
+        "cuePl": "Łokcie skierowane do przodu — wyobraź sobie że trzymasz ołówek między bicepsem a przedramieniem. Zwęź chwyt."
+      },
+      {
+        "fault": "Hip thrust / using the lower body to push the bar up",
+        "faultPl": "Wybicie biodrami / pomaganie dolną częścią ciała przy wyciskaniu",
+        "cause": "Ego lifting, load too heavy, or attempting to grind out reps past failure",
+        "causePl": "Ego, zbyt duży ciężar, lub forsowanie powtórzeń po wyczerpaniu technicznym",
+        "cue": "Squeeze glutes and abs, lock the hips. If you have to push-press it, the weight is too heavy.",
+        "cuePl": "Spinaj pośladki i brzuch, zablokuj biodra. Jeśli musisz wybijać biodrami — ciężar jest za duży."
+      },
+      {
+        "fault": "Partial range of motion — not lowering deep enough",
+        "faultPl": "Niepełny zakres ruchu — zbyt płytkie opuszczanie",
+        "cause": "Ego lifting, weakness in the stretched position, or fear of the bar near the head",
+        "causePl": "Ego, słabość w pozycji rozciągniętej, lub strach przed sztangą blisko głowy",
+        "cue": "Lower until the forearms touch the biceps. Reduce the load if the bottom feels unstable.",
+        "cuePl": "Opuszczaj aż przedramiona dotkną bicepsów. Zmniejsz ciężar jeśli dolna pozycja jest niestabilna."
+      },
+      {
+        "fault": "Wrist hyperextension under load",
+        "faultPl": "Nadmierne wygięcie nadgarstków pod obciążeniem",
+        "cause": "Straight bar forces full pronation which strains the wrists in the overhead position",
+        "causePl": "Sztanga prosta wymusza pełną pronację, co przeciąża nadgarstki w pozycji nad głową",
+        "cue": "Keep wrists neutral, in line with forearms. Switch to EZ-bar if wrist pain persists.",
+        "cuePl": "Nadgarstki neutralne, w linii z przedramionami. Przejdź na sztangę łamaną jeśli ból nadgarstków się utrzymuje."
+      },
+      {
+        "fault": "Excessive lumbar extension (lower back arch) at lockout",
+        "faultPl": "Nadmierne wyginanie lędźwi (łuk w dolnym odcinku pleców) przy wyproście",
+        "cause": "Limited shoulder mobility forcing compensation, weak core bracing, or load too heavy",
+        "causePl": "Ograniczona mobilność barków wymuszająca kompensację, słabe napięcie tułowia, lub zbyt duży ciężar",
+        "cue": "Ribs down, brace abs, squeeze glutes. If you cannot reach overhead without arching, do this seated against a backrest.",
+        "cuePl": "Żebra w dół, napnij brzuch, spinaj pośladki. Jeśli nie potrafisz unieść sztangi nad głowę bez wyginania pleców — wykonuj siedząc z oparciem."
+      }
+    ],
+    "breathing": "Inhale during the eccentric (lowering behind the head). Exhale forcefully on the concentric (pressing back up). Maintain a strong abdominal brace throughout to protect the lower back, especially under heavier loads.",
+    "breathingPl": "Wdech podczas opuszczania sztangi za głowę. Mocny wydech podczas wyprostu w górę. Utrzymuj silne napięcie brzucha przez cały ruch dla ochrony odcinka lędźwiowego, szczególnie przy większych ciężarach."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_limited_overhead_mobility",
+      "severity": "modify",
+      "modification": "Holding the bar overhead can pinch the supraspinatus tendon. Switch to a seated version with backrest, lying skull crusher, or cable overhead with a rope (allows free elbow path).",
+      "modificationPl": "Trzymanie sztangi nad głową może uciskać ścięgno nadgrzebieniowe. Przejdź na wersję siedzącą z oparciem, skull crusher leżąc, lub overhead na wyciągu z liną (wolny tor łokci).",
+      "alternative": "cable-overhead-triceps-extension"
+    },
+    {
+      "condition": "lower_back_pain_or_lumbar_disc_issues",
+      "severity": "modify",
+      "modification": "Standing overhead pressing loads the lumbar spine in extension. Use the seated version with a vertical backrest or lying triceps extension to remove spinal loading.",
+      "modificationPl": "Wyciskanie nad głową stojąc obciąża lędźwie w wyproście. Użyj wersji siedzącej z pionowym oparciem lub francuskiego leżąc aby wyeliminować obciążenie kręgosłupa.",
+      "alternative": "seated-barbell-overhead-triceps-extension"
+    },
+    {
+      "condition": "elbow_tendinopathy_triceps_tendinitis",
+      "severity": "modify",
+      "modification": "Deep stretch under load aggravates triceps tendon attachments. Reduce range of motion, use lighter loads (12-15 reps), or switch to higher-elbow variants like rope pushdowns.",
+      "modificationPl": "Głębokie rozciągnięcie pod obciążeniem drażni przyczepy ścięgna tricepsa. Zmniejsz zakres ruchu, użyj lżejszych ciężarów (12-15 powtórzeń) lub przejdź na warianty z łokciami niżej (np. wyprosty na wyciągu z liną).",
+      "alternative": "rope-triceps-pushdown"
+    },
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "modify",
+      "modification": "Straight bar in pronated grip overhead stresses the ulnar side of the wrist. Use EZ-bar (angled grip reduces strain) or perform with dumbbells/rope.",
+      "modificationPl": "Sztanga prosta w nachwycie nad głową obciąża stronę łokciową nadgarstka. Użyj sztangi łamanej (kąt chwytu zmniejsza nacisk) lub wykonuj z hantlami albo na linie.",
+      "alternative": "ez-bar-overhead-extension"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, focus on long head) | 4x6-8 (strength) | 2-3x12-15 (pump/finisher)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-standing-overhead-triceps-extension.gif",
+    "frames_extracted": [
+      "frames/barbell-standing-overhead-triceps-extension/frame_0_start.png",
+      "frames/barbell-standing-overhead-triceps-extension/frame_1_early.png",
+      "frames/barbell-standing-overhead-triceps-extension/frame_2_mid.png",
+      "frames/barbell-standing-overhead-triceps-extension/frame_3_late.png",
+      "frames/barbell-standing-overhead-triceps-extension/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "triceps/barbell-standing-overhead-triceps-extension"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T18:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0 (start): sztanga nad głową, ramiona w pełnym wyproście, dłonie w nachwycie na szerokość barków, ramiona ponad łokciem pionowo blisko uszu, cały triceps obu rąk podświetlony na czerwono. Frame 2 (mid): sztanga opuszczona za głowę do pozycji za karkiem, łokcie zgięte ~90 stopni i nadal skierowane do góry/przodu (nie flarujące), tułów stabilnie pionowy, triceps w głębokim rozciągnięciu. Frame 4 (end): powrót do pełnego wyciśnięcia nad głową, sztanga ponownie nad czubkiem głowy z widocznym 'ghostem' dolnej pozycji za karkiem dla pokazania toru ruchu. Klasyczne overhead triceps extension stojąc — łokcie pracują w izolacji, ruch wyłącznie w stawie łokciowym, brak ruchu w barku ani biodrach. Akcent na głowę długą tricepsa przez pozycję nadnamiejszą (overhead). Movement_pattern: isolation_extension. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "arms", "triceps", "isolation", "barbell", "overhead", "long_head_focus", "upper_body"]
+}

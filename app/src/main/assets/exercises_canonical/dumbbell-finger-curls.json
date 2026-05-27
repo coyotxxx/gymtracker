@@ -1,0 +1,205 @@
+{
+  "id": "dumbbell-finger-curls",
+  "name": "Dumbbell Finger Curls",
+  "namePl": "Finger curls z hantlami (uginanie palców)",
+  "aliases": ["dumbbell finger roll", "seated dumbbell finger curls", "two-dumbbell finger curls"],
+  "aliasesPl": ["uginanie palców z hantlami", "zwijanie palców z hantlami", "finger curls hantle siedząc", "trening zginaczy palców z hantlami"],
+
+  "description": "Isolation exercise for the finger flexors (flexor digitorum profundus and superficialis) performed with two dumbbells (or one) instead of a barbell. Seated with forearms resting on the thighs and dumbbells held in a supinated grip, the lifter intentionally lets each dumbbell roll out across the palm to the fingertips, then curls the fingers back to a full closed grip. The dumbbell variant allows independent left/right work, fixes side-to-side imbalances, and provides a slightly longer range than a barbell because the bell can roll freely without contacting the other hand. A staple grip-builder for forearm hypertrophy, climbers, strongmen and anyone targeting crushing grip strength.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze palców (mięsień zginacz głęboki i powierzchowny palców) wykonywane z dwoma hantlami (lub jedną) zamiast sztangi. Siedząc, z przedramionami opartymi o uda i hantlami trzymanymi podchwytem, celowo pozwalasz każdej hantli stoczyć się po dłoni aż do końców palców, a następnie zwijasz palce z powrotem do pełnego, zamkniętego chwytu. Wariant z hantlami pozwala na niezależną pracę lewej i prawej strony, koryguje dysproporcje boczne i daje nieco większy zakres ruchu niż sztanga, ponieważ ciężar może swobodnie się toczyć bez kontaktu z drugą ręką. Podstawowe ćwiczenie do budowania siły miażdżącego uścisku — używane przez kulturystów rozbudowujących przedramiona, wspinaczy, zawodników strongman.",
+
+  "instructions": [
+    "Sit on a flat bench with feet planted slightly wider than hip-width. Place a dumbbell on the floor next to each foot.",
+    "Pick up both dumbbells with a supinated (palms up) grip and rest your forearms along your thighs so the wrists hang just past the knees.",
+    "Lean your torso slightly forward and pin the elbows down — only the hands should move during the set.",
+    "Start with both dumbbells held in a tight, full palm grip with wrists in neutral or slightly flexed position.",
+    "Slowly release the grip and allow each dumbbell to roll out across your palms toward your fingertips. Let them descend as far as possible without dropping — fingers reach near full extension.",
+    "From the fingertips, actively curl the fingers closed one segment at a time (pinky → ring → middle → index), rolling the dumbbells back into a full palm grip.",
+    "Once fully gripped, finish the rep with a small wrist flexion to maximally shorten the finger flexors. Squeeze hard for 1 second.",
+    "Reverse the motion under control — open the hand slowly and let the dumbbells roll out again. Repeat for reps.",
+    "Keep both forearms in contact with the thighs throughout. Do not let wrists lift off the knees or elbows flare outward.",
+    "If working one arm at a time, support the non-working forearm passively and complete all reps on one side before switching."
+  ],
+  "instructionsPl": [
+    "Usiądź na płaskiej ławce, stopy płasko na podłodze, nieco szerzej niż biodra. Połóż po jednej hantli obok każdej stopy.",
+    "Podnieś obie hantle chwytem podchwytem (dłonie w górę) i oprzyj przedramiona o uda tak, aby nadgarstki wystawały tuż za kolana.",
+    "Lekko pochyl tułów do przodu i dociśnij łokcie — w trakcie serii ruszają się wyłącznie dłonie.",
+    "Zacznij z obiema hantlami trzymanymi w mocnym, pełnym chwycie środkiem dłoni, z nadgarstkami w neutralnej lub lekko zgiętej pozycji.",
+    "Powoli rozluźnij chwyt i pozwól każdej hantli stoczyć się po wewnętrznej stronie dłoni aż do końców palców. Niech zjadą jak najdalej bez upuszczania — palce powinny dojść niemal do pełnego wyprostu.",
+    "Z pozycji na końcach palców aktywnie zwijaj palce po kolei (mały → serdeczny → środkowy → wskazujący), przetaczając hantle z powrotem do pełnego chwytu w środku dłoni.",
+    "Gdy chwyt jest pełny, zakończ powtórzenie lekkim zgięciem nadgarstka aby maksymalnie skrócić zginacze palców. Mocno napnij na 1 sekundę.",
+    "Odwróć ruch w sposób kontrolowany — powoli otwórz dłoń i pozwól hantlom ponownie się stoczyć. Powtórz.",
+    "Przez cały ruch trzymaj oba przedramiona przyklejone do ud. Nie odrywaj nadgarstków od kolan ani nie rozchylaj łokci na boki.",
+    "Jeśli ćwiczysz jednorącz, biernie podpieraj nieaktywne przedramię i wykonaj wszystkie powtórzenia na jednej stronie przed zmianą."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["flexor_digitorum_profundus", "flexor_digitorum_superficialis"],
+    "secondary": ["forearm_flexors", "flexor_pollicis_longus"],
+    "stabilizers": ["biceps_brachii", "brachioradialis", "core"]
+  },
+
+  "muscle_intensity": {
+    "flexor_digitorum_profundus": "P10",
+    "flexor_digitorum_superficialis": "P10",
+    "forearm_flexors": "S7",
+    "flexor_pollicis_longus": "S5",
+    "biceps_brachii": "T2",
+    "brachioradialis": "T2",
+    "core": "T1"
+  },
+
+  "equipment": {
+    "required": ["dumbbell"],
+    "optional": ["flat_bench", "chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["wrist-curl"],
+    "progression_to": ["barbell-wrist-roller", "plate-pinch", "farmers-walk", "captains-of-crush"],
+    "alternatives": ["finger-curls", "wrist-curl", "reverse-wrist-curl", "barbell-wrist-roller", "dead-hang"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit, forearms flat on thighs, wrists past the knees",
+      "Supinated grip on both dumbbells, palms up",
+      "Elbows pinned down, torso slightly forward",
+      "Dumbbells start in a full palm grip",
+      "Feet planted, no torso movement during set"
+    ],
+    "setup_cues_pl": [
+      "Usiądź, przedramiona płasko na udach, nadgarstki za kolanami",
+      "Podchwyt na obu hantlach, dłonie skierowane do góry",
+      "Łokcie dociśnięte, tułów lekko pochylony do przodu",
+      "Hantle startują w pełnym chwycie środkiem dłoni",
+      "Stopy stabilne, brak ruchu tułowia w serii"
+    ],
+    "execution_cues": [
+      "Let each dumbbell roll all the way to the fingertips — full extension",
+      "Curl fingers one by one back into a crushing grip",
+      "Finish with a small wrist flex at the top — squeeze 1 second",
+      "Move slowly — 2 seconds down, 2 seconds up",
+      "Only fingers and wrist move — forearms glued to thighs"
+    ],
+    "execution_cues_pl": [
+      "Pozwól każdej hantli stoczyć się aż do końców palców — pełny wyprost",
+      "Zwijaj palce po kolei z powrotem do miażdżącego chwytu",
+      "Zakończ lekkim zgięciem nadgarstka na górze — napnij 1 sekundę",
+      "Ruch powolny — 2 sekundy w dół, 2 sekundy w górę",
+      "Pracują tylko palce i nadgarstek — przedramiona przyklejone do ud"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dumbbell slips because the lifter rushes the eccentric",
+        "faultPl": "Hantla wymyka się z dłoni bo ćwiczący zbyt szybko opuszcza",
+        "cause": "Letting gravity drop the dumbbell instead of actively controlling finger extension",
+        "causePl": "Pozwalanie grawitacji upuszczać hantlę zamiast aktywnej kontroli wyprostu palców",
+        "cue": "Slow eccentric — 2-3 seconds to roll out. Pause at the fingertips for 1 second before curling back.",
+        "cuePl": "Powolna faza negatywna — 2-3 sekundy na stoczenie. Zatrzymaj hantlę na końcach palców na 1 sekundę przed zwinięciem."
+      },
+      {
+        "fault": "Confusing finger curl with wrist curl (no finger extension)",
+        "faultPl": "Mylenie finger curl ze zwykłym wrist curl (brak wyprostu palców)",
+        "cause": "Keeping the dumbbell in the palm and only flexing the wrist — misses the finger flexors entirely",
+        "causePl": "Trzymanie hantli środkiem dłoni i tylko zginanie nadgarstka — całkowicie pomija zginacze palców",
+        "cue": "The dumbbell MUST roll out to the fingertips. If your fingers stay closed, you're doing wrist curls, not finger curls.",
+        "cuePl": "Hantla MUSI stoczyć się na końce palców. Jeśli palce zostają zamknięte, robisz wrist curl, nie finger curl."
+      },
+      {
+        "fault": "Side-to-side imbalance — one hand moves more or faster than the other",
+        "faultPl": "Dysproporcja boczna — jedna ręka pracuje bardziej lub szybciej niż druga",
+        "cause": "Dominant side compensates and rushes the rep, weaker side lags behind",
+        "causePl": "Strona dominująca kompensuje i przyspiesza powtórzenie, słabsza zostaje w tyle",
+        "cue": "Match tempo on both sides. If one is weaker, do the set one arm at a time to equalize over weeks.",
+        "cuePl": "Dopasuj tempo po obu stronach. Jeśli jedna jest słabsza, wykonuj serię jednorącz aby wyrównać w ciągu tygodni."
+      },
+      {
+        "fault": "Forearms lift off the thighs",
+        "faultPl": "Przedramiona odrywają się od ud",
+        "cause": "Recruiting biceps and shoulder to assist, or load too heavy for the fingers alone",
+        "causePl": "Włączanie bicepsa i barku do pomocy, lub zbyt duży ciężar dla samych palców",
+        "cue": "Press forearms into thighs throughout. If they lift, drop the weight by 30%.",
+        "cuePl": "Dociskaj przedramiona do ud przez cały ruch. Jeśli się odrywają, zmniejsz ciężar o 30%."
+      },
+      {
+        "fault": "Gripping with the thumb wrapped, blocking finger extension",
+        "faultPl": "Chwyt z kciukiem zaciśniętym, blokujący wyprost palców",
+        "cause": "Habit from heavy lifts (deadlift grip) — the thumb prevents the dumbbell from rolling out",
+        "causePl": "Nawyk z ciężkich bojów (chwyt do martwego ciągu) — kciuk uniemożliwia stoczenie się hantli",
+        "cue": "Use a thumbless (false) grip with thumb on the same side as fingers. Dumbbell rolls freely to fingertips.",
+        "cuePl": "Użyj chwytu otwartego (bez kciuka) — kciuk po tej samej stronie co palce. Hantla toczy się swobodnie do końców palców."
+      }
+    ],
+    "breathing": "Light, continuous breathing. Exhale on the curl-up (finger flexion), inhale on the roll-out (eccentric). No Valsalva — loads are too small to require intra-abdominal pressure.",
+    "breathingPl": "Lekki, ciągły oddech. Wydech podczas zwijania palców (faza koncentryczna), wdech podczas stoczenia hantli (faza ekscentryczna). Bez manewru Valsalvy — ciężary są zbyt małe by wymagać tłoczni brzusznej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "trigger_finger_stenosing_tenosynovitis",
+      "severity": "modify",
+      "modification": "Repeated finger flexion under load aggravates trigger finger. Reduce weight by 50%, perform pain-free range only, and avoid the deep fingertip position. Stop if clicking or locking occurs.",
+      "modificationPl": "Powtarzane zginanie palców pod obciążeniem nasila palec strzelający. Zmniejsz ciężar o 50%, wykonuj tylko w zakresie bezbólowym i unikaj głębokiej pozycji na końcach palców. Przerwij jeśli pojawia się klikanie lub blokowanie.",
+      "alternative": "dead-hang"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "modify",
+      "modification": "Repetitive finger and wrist flexion can compress the median nerve. Use lighter loads with strict neutral wrist position (no wrist flexion at the top), or substitute with isometric grip work.",
+      "modificationPl": "Powtarzane zginanie palców i nadgarstka może uciskać nerw pośrodkowy. Używaj lżejszych ciężarów ze ścisłą neutralną pozycją nadgarstka (bez zginania nadgarstka na górze) lub zastąp izometryczną pracą gripową.",
+      "alternative": "plate-pinch"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Heavy finger and wrist flexion strains the flexor tendons at the medial epicondyle. Drop intensity to 50%, use reverse pyramid (drop sets) at lighter weights, and avoid forced reps.",
+      "modificationPl": "Ciężkie zginanie palców i nadgarstka obciąża przyczepy zginaczy na nadkłykciu przyśrodkowym. Zmniejsz intensywność do 50%, używaj odwróconej piramidy (drop sets) z lżejszymi ciężarami, unikaj powtórzeń wymuszonych.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "acute_finger_or_hand_injury",
+      "severity": "avoid",
+      "modification": "Acute fractures, sprains, tendon ruptures or post-surgical hand conditions require complete avoidance until cleared by a hand therapist. Substitute with isometric grip work on the uninjured hand only.",
+      "modificationPl": "Świeże złamania, skręcenia, zerwania ścięgien lub stany po operacji ręki wymagają całkowitego unikania do czasu zgody terapeuty ręki. Zastąp izometryczną pracą gripową wyłącznie na zdrowej ręce.",
+      "alternative": null
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy / grip endurance) | 4-5x8-12 (grip strength) | 2-3x20-30 (forearm pump / blood flow)",
+  "calories_per_kg_per_hour": 3.5,
+
+  "media": {
+    "primary": "dumbbell-finger-curls.gif",
+    "frames_extracted": [
+      "frames/dumbbell-finger-curls/frame_0_start.png",
+      "frames/dumbbell-finger-curls/frame_1_early.png",
+      "frames/dumbbell-finger-curls/frame_2_mid.png",
+      "frames/dumbbell-finger-curls/frame_3_late.png",
+      "frames/dumbbell-finger-curls/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/dumbbell-finger-curls"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Pozycja: siedząc na ławce, tułów lekko pochylony do przodu, przedramiona oparte o uda, dwie hantle trzymane podchwytem (dłonie do góry). Wyróżnione mięśnie: przednia strona przedramienia (zginacze palców) podświetlona na czerwono. Ruch krótki, izolowany — hantle toczą się po palcach do końców i z powrotem do pełnego chwytu. Tułów nieruchomy, przedramiona przyklejone do ud. Jednoznacznie zidentyfikowane jako dumbbell finger curls (dwie hantle zamiast sztangi — kluczowa różnica vs finger-curls.json). Brak yuhonas/glowupp — tylko jahel jako źródło. Wszystkie pola PL napisane od zera, nie kopiowane z angielskiego.",
+
+  "tags": ["bodybuilding", "forearms", "grip", "fingers", "isolation", "dumbbell", "grip_strength", "lower_arms", "climbing", "strongman"]
+}

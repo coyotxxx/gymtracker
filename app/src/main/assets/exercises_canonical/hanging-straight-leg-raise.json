@@ -1,0 +1,201 @@
+{
+  "id": "hanging-straight-leg-raise",
+  "name": "Hanging Straight Leg Raise",
+  "namePl": "Wznosy nóg na drążku na prostych nogach",
+  "aliases": ["hanging leg raise straight legs", "straight leg hanging raise", "hanging straight leg lift", "pull-up bar straight leg raise"],
+  "aliasesPl": ["wznosy prostych nóg na drążku", "unoszenie prostych nóg w zwisie", "podnoszenie prostych nóg na drążku", "wznosy nóg w zwisie na drążku z prostymi nogami", "straight leg raise w zwisie"],
+
+  "description": "Advanced bodyweight core exercise performed hanging from a pull-up bar with arms fully extended overhead. The lifter keeps the legs perfectly straight and raises them from a dead hang (legs vertical, pointing down) up to at least horizontal (L-sit position) or higher, with the hips rolling under at the top for full lower-ab engagement. The straight-leg lever dramatically increases torque demands on both the rectus abdominis and the iliopsoas/hip flexors compared to the bent-knee version. Maintaining a hollow body position and resisting swing/kip is the main technical challenge — momentum is the most common form breakdown. Grip endurance, scapular control, and trunk anti-rotation are required just to stay in position.",
+  "descriptionPl": "Zaawansowane ćwiczenie brzucha z masą własnego ciała wykonywane w zwisie na drążku z ramionami całkowicie wyprostowanymi nad głową. Ćwiczący trzyma nogi idealnie proste i unosi je z pozycji martwego zwisu (nogi pionowo, skierowane w dół) co najmniej do poziomu (pozycja L-sit) lub wyżej, lekko zwijając miednicę pod siebie w szczycie ruchu dla pełnego zaangażowania dolnej części mięśnia prostego brzucha. Dźwignia prostych nóg drastycznie zwiększa wymagania momentu siły zarówno dla mięśnia prostego brzucha, jak i biodrowo-lędźwiowego/zginaczy biodra w porównaniu z wersją z ugiętymi kolanami. Utrzymanie pozycji 'hollow body' i niedopuszczanie do bujania/kipowania to główne wyzwanie techniczne — bezwładność jest najczęstszym błędem. Wytrzymałość chwytu, kontrola łopatek i antyrotacja tułowia są wymagane już do samego utrzymania pozycji.",
+
+  "instructions": [
+    "Grip a pull-up bar with both hands shoulder-width apart, overhand (pronated) grip. Hang fully — arms straight, shoulders packed down and back (active hang, not pure dead hang), legs together, toes pointed.",
+    "Engage the lats and pull the shoulder blades slightly down and back to prevent shrugging. Brace the core and posteriorly tilt the pelvis slightly to enter a hollow body position.",
+    "Inhale and pre-tension the abs. From the still hang, exhale and raise both straight legs together in a controlled arc. Lead with the heels, keep knees fully extended (or with the smallest soft bend).",
+    "Lift to at least horizontal (legs parallel to the floor — L-sit position). For full ROM, continue past horizontal until the toes approach or pass the height of the hips, rolling the pelvis under for a deep lower-ab squeeze.",
+    "Pause at the top for one second. Do not let the body swing — if you feel rotation or swing, stop and reset.",
+    "Inhale and lower the legs under control over 2-3 seconds back to the vertical hanging position. Resist the urge to drop — the eccentric is where most of the strength is built.",
+    "Pause briefly between reps to kill any swing before the next lift. Do not use kip or momentum."
+  ],
+  "instructionsPl": [
+    "Chwyć drążek obiema dłońmi na szerokość barków, chwytem nachwytem (pronowanym). Zawiśnij swobodnie — ramiona wyprostowane, łopatki ściągnięte lekko w dół i do tyłu (zwis aktywny, nie czysty martwy zwis), nogi złączone, stopy wyciągnięte.",
+    "Aktywuj najszerszy grzbietu i ściągnij łopatki delikatnie w dół i do tyłu, by uniknąć wzruszania barków. Napnij brzuch i lekko zwiń miednicę do tyłu, wchodząc w pozycję 'hollow body'.",
+    "Wdech i wstępnie napnij brzuch. Z nieruchomego zwisu, z wydechem unieś obie proste nogi razem kontrolowanym łukiem. Prowadź ruch piętami, trzymaj kolana w pełnym wyproście (lub z minimalnym, miękkim zgięciem).",
+    "Unieś nogi co najmniej do poziomu (nogi równoległe do podłogi — pozycja L-sit). Dla pełnego zakresu kontynuuj poza poziom, aż stopy zbliżą się lub przekroczą wysokość bioder, zwijając miednicę pod siebie dla głębokiego spięcia dolnego brzucha.",
+    "Zatrzymaj na sekundę w szczycie. Nie pozwól ciału się bujać — jeśli czujesz rotację lub kołysanie, zatrzymaj i zresetuj.",
+    "Wdech i opuść nogi pod kontrolą przez 2-3 sekundy do pionowej pozycji zwisu. Powstrzymaj odruch puszczania — to faza ekscentryczna buduje większość siły.",
+    "Zrób krótką pauzę między powtórzeniami, by wyhamować bujanie przed kolejnym uniesieniem. Nie używaj kipowania ani rozpędu."
+  ],
+
+  "classification": {
+    "movement_pattern": "core_flexion",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "hip_flexors"],
+    "secondary": ["obliques", "quadriceps"],
+    "stabilizers": ["lats", "forearms", "transverse_abdominis", "adductors", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P10",
+    "hip_flexors": "P10",
+    "obliques": "S7",
+    "quadriceps": "S6",
+    "lats": "T6",
+    "forearms": "T7",
+    "transverse_abdominis": "T6",
+    "adductors": "T5",
+    "serratus_anterior": "T5"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["wrist_straps", "chalk"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["hanging-knee-raise", "hanging-leg-raise", "lying-leg-raise-flat-bench", "dead-hang", "l-sit"],
+    "progression_to": ["toes-to-bar", "windshield-wipers", "front-lever-raise", "v-up-hanging"],
+    "alternatives": ["hanging-leg-raise", "toes-to-bar", "captain-chair-leg-raise", "lying-leg-raise-flat-bench"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Pronated grip, shoulder-width — pack the shoulders down (active hang)",
+      "Legs together, toes pointed, knees locked",
+      "Lats engaged — feel like you're 'pulling' the bar down slightly",
+      "Slight posterior pelvic tilt — enter hollow body",
+      "Inhale and brace before the first rep — no swinging at the start"
+    ],
+    "setup_cues_pl": [
+      "Chwyt nachwytem na szerokość barków — łopatki ściągnięte w dół (zwis aktywny)",
+      "Nogi złączone, stopy wyciągnięte, kolana zablokowane",
+      "Najszerszy grzbietu aktywny — czuj jakbyś delikatnie 'ciągnął' drążek w dół",
+      "Lekkie tylne pochylenie miednicy — wejście w pozycję hollow body",
+      "Wdech i napięcie brzucha przed pierwszym powtórzeniem — żadnego bujania na starcie"
+    ],
+    "execution_cues": [
+      "Lift with the abs — heels lead, knees stay locked",
+      "Exhale forcefully as the legs cross 45° upward",
+      "Drive past horizontal — at the top tilt pelvis under for the lower-ab finish",
+      "Pause one second at the top — body stays still, no swing",
+      "Lower 2-3 seconds eccentric — control the descent, kill swing between reps"
+    ],
+    "execution_cues_pl": [
+      "Unoś nogi brzuchem — pięty prowadzą, kolana zablokowane",
+      "Mocny wydech, gdy nogi mijają linię 45° w górę",
+      "Przejdź ponad poziom — w szczycie zwiń miednicę pod siebie, by wykończyć dolny brzuch",
+      "Sekunda pauzy w szczycie — ciało nieruchome, bez bujania",
+      "Opuszczaj 2-3 sekundy ekscentrycznie — kontroluj zejście, wyhamuj bujanie między powtórzeniami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Using kip / swing / momentum",
+        "faultPl": "Używanie kipowania / bujania / rozpędu",
+        "cause": "Lower abs and hip flexors are weakest in the bottom 30° of the lift; the body 'cheats' by initiating with a hip-pop swing that throws the legs up via inertia",
+        "causePl": "Dolny brzuch i zginacze biodra są najsłabsze w dolnych 30° ruchu; ciało 'oszukuje' poprzez wybicie biodrami, które dzięki bezwładności wyrzuca nogi w górę",
+        "cue": "Start from a dead-still hang. If you swing, regress to hanging knee raise or do strict tempo (3 sec up / 2 sec hold / 3 sec down).",
+        "cuePl": "Start z całkowicie nieruchomego zwisu. Jeśli się bujasz, cofnij się do wznosów kolan w zwisie albo wykonuj ścisłe tempo (3 sek w górę / 2 sek pauza / 3 sek w dół)."
+      },
+      {
+        "fault": "Bending the knees significantly to cheat the lever",
+        "faultPl": "Mocne zginanie kolan dla skrócenia dźwigni",
+        "cause": "Bent knees shorten the resistance arm — this turns the exercise into a hanging knee raise, dramatically reducing demand on the abs and hip flexors",
+        "causePl": "Ugięte kolana skracają ramię oporu — zmienia to ruch w wznosy kolan w zwisie, drastycznie zmniejszając wymagania wobec brzucha i zginaczy biodra",
+        "cue": "Knees fully locked. If you can't keep them straight, regress to hanging knee raise and add 2-3 weeks of strict tempo work first.",
+        "cuePl": "Kolana całkowicie zablokowane. Jeśli nie utrzymasz prostych, cofnij się do wznosów kolan w zwisie i dodaj 2-3 tygodnie ścisłej pracy w tempie."
+      },
+      {
+        "fault": "Stopping short of horizontal (45-60° only)",
+        "faultPl": "Zatrzymywanie ruchu przed poziomem (tylko 45-60°)",
+        "cause": "Insufficient lower-ab strength or tight hamstrings/hip flexors limit hip flexion ROM; lifter believes any lift counts but misses the strongest contraction zone above horizontal",
+        "causePl": "Niewystarczająca siła dolnego brzucha lub napięte mięśnie kulszowo-goleniowe/zginacze biodra ograniczają zakres zgięcia biodra; ćwiczący wierzy, że każde uniesienie się liczy, ale traci najmocniejszą strefę skurczu powyżej poziomu",
+        "cue": "Minimum target = legs parallel to floor (L-sit). Better = past horizontal with pelvic tuck. Below horizontal counts as half rep.",
+        "cuePl": "Cel minimalny = nogi równoległe do podłogi (L-sit). Lepiej = powyżej poziomu ze zwinięciem miednicy. Poniżej poziomu liczy się jako pół powtórzenia."
+      },
+      {
+        "fault": "Excessive lumbar extension / arched lower back at the bottom",
+        "faultPl": "Nadmierne wygięcie lędźwi / wygięty dolny odcinek pleców w dolnej pozycji",
+        "cause": "Passive hang lets the pelvis tilt anteriorly and the lumbar spine extend, loading the lower back and disengaging the abs before the lift even starts",
+        "causePl": "Bierny zwis pozwala miednicy pochylić się do przodu, a odcinkowi lędźwiowemu wygiąć się, obciążając dolne plecy i wyłączając brzuch jeszcze przed startem ruchu",
+        "cue": "Maintain a slight posterior pelvic tilt throughout — hollow body, ribs down. Engage abs even in the bottom hang position.",
+        "cuePl": "Utrzymuj lekkie tylne pochylenie miednicy przez cały ruch — hollow body, żebra w dół. Trzymaj brzuch napięty nawet w dolnej pozycji zwisu."
+      },
+      {
+        "fault": "Shoulder shrug / passive hang in the upper body",
+        "faultPl": "Wzruszanie barków / bierny zwis górnej części ciała",
+        "cause": "Lifter dead-hangs from the joint capsule rather than actively engaging lats and scapular depressors; this stresses the shoulders, reduces core tension, and makes maintaining hollow body impossible",
+        "causePl": "Ćwiczący zwisa na torebce stawowej zamiast aktywnie angażować najszerszy grzbietu i depresory łopatek; przeciąża to barki, zmniejsza napięcie korpusu i uniemożliwia utrzymanie hollow body",
+        "cue": "Pull shoulders away from ears — active hang. You should feel the lats working even though you're not pulling up.",
+        "cuePl": "Odciągnij barki od uszu — zwis aktywny. Powinieneś czuć pracę najszerszego grzbietu mimo że nie podciągasz się do góry."
+      }
+    ],
+    "breathing": "Inhale at the bottom dead-hang position and brace the core. Forceful exhale through the lift, especially through the 45-90° range where the hip flexors and lower abs are working hardest. Brief breath-hold at the top during the pelvic tilt squeeze. Inhale on the eccentric descent.",
+    "breathingPl": "Wdech w dolnej pozycji martwego zwisu i napięcie brzucha. Mocny wydech podczas unoszenia, szczególnie w zakresie 45-90°, gdzie zginacze biodra i dolny brzuch pracują najmocniej. Krótkie wstrzymanie oddechu w szczycie podczas spięcia ze zwiniętą miednicą. Wdech podczas opuszczania ekscentrycznego."
+  },
+
+  "contraindications": [
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "avoid",
+      "modification": "Combined spinal flexion + heavy iliopsoas pull on a straight-leg lever generates very high lumbar shear and compression. Active disc protrusion is a hard contraindication. Use neutral-spine work (dead bug, side plank) until cleared by a physio.",
+      "modificationPl": "Połączenie zgięcia kręgosłupa z mocnym ciągiem mięśnia biodrowo-lędźwiowego na dźwigni prostych nóg generuje bardzo wysokie siły ścinające i kompresyjne na odcinek lędźwiowy. Aktywna przepuklina krążka to bezwzględne przeciwwskazanie. Stosuj ćwiczenia w neutralnej pozycji kręgosłupa (dead bug, deska boczna) do czasu uzyskania zgody fizjoterapeuty.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "hip_flexor_strain",
+      "severity": "avoid",
+      "modification": "The straight-leg lever maximally loads psoas and iliacus. With any active hip flexor pain regress to bent-knee version (hanging knee raise) or anti-extension work. Resume only when pain-free through full ROM for 7+ days.",
+      "modificationPl": "Dźwignia prostych nóg maksymalnie obciąża mięsień biodrowo-lędźwiowy i biodrowy. Przy jakimkolwiek aktywnym bólu zginaczy biodra cofnij się do wersji z ugiętymi kolanami (wznosy kolan w zwisie) lub ćwiczeń anty-ekstensji. Wracaj dopiero gdy nie ma bólu w pełnym zakresie ruchu przez minimum 7 dni.",
+      "alternative": "hanging-knee-raise"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Overhead dead hang plus the dynamic load on the shoulder girdle can aggravate subacromial impingement. Use rings or neutral-grip variation, or switch to captain's chair (no overhead position) until shoulder is asymptomatic.",
+      "modificationPl": "Zwis nad głową plus dynamiczne obciążenie obręczy barkowej mogą zaostrzyć zespół ciasnoty podbarkowej. Użyj kółek gimnastycznych lub chwytu neutralnego, albo przejdź na krzesełko kapitańskie (bez pozycji nad głową) do czasu ustąpienia objawów barku.",
+      "alternative": "captain-chair-leg-raise"
+    },
+    {
+      "condition": "wrist_or_grip_injury",
+      "severity": "modify",
+      "modification": "Grip endurance is often the limiting factor in hanging variations. With wrist or finger flexor injury use wrist straps to offload grip, or regress to captain's chair / lying variants which require no grip.",
+      "modificationPl": "Wytrzymałość chwytu często ogranicza wykonanie wersji w zwisie. Przy kontuzji nadgarstka lub zginaczy palców użyj pasków na nadgarstki, by odciążyć chwyt, albo cofnij się do krzesełka kapitańskiego / wariantów leżących, które nie wymagają chwytu.",
+      "alternative": "captain-chair-leg-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3x5-8 (strength) | 3x8-12 (hypertrophy) | 3xAMRAP (endurance finisher)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "hanging-straight-leg-raise.gif",
+    "frames_extracted": [
+      "frames/hanging-straight-leg-raise/frame_0_start.png",
+      "frames/hanging-straight-leg-raise/frame_1_early.png",
+      "frames/hanging-straight-leg-raise/frame_2_mid.png",
+      "frames/hanging-straight-leg-raise/frame_3_late.png",
+      "frames/hanging-straight-leg-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/hanging-straight-leg-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:45:00Z",
+  "verification_notes": "Obejrzałem wszystkie 5 klatek GIFa jahel. Klatka 0 (start): pełny zwis na drążku obunącz, ramiona wyciągnięte nad głową, chwyt nachwytem na szerokość barków, nogi całkowicie proste i pionowe, stopy razem. Cały rectus abdominis aktywny (czerwone podświetlenie kolumny brzucha) + quads delikatnie zaznaczone (utrzymanie wyprostu kolan). Klatka 1 (early, ~45°): nogi proste uniesione do około 45°, hip flexors mocno czerwone (psoas/iliacus pełna aktywacja na dźwigni prostych nóg), dolny brzuch silnie zaangażowany. Klatka 2 (mid/peak, L-sit): nogi proste uniesione do poziomu / lekko powyżej, prostopadle do tułowia — klasyczna pozycja L-sit, hip flexors maksymalnie aktywne, rectus abdominis pełny skurcz. Klatka 3 (late, ~poziom): podobna do klatki 1 ale po stronie opuszczania — kontrolowana ekscentryka. Klatka 4 (end): powrót do pełnego zwisu, 'duch' nóg w pozycji poziomej w tle wskazuje pełny ROM. RUCH: klasyczny hanging straight leg raise — najcięższa wersja przed toes-to-bar/front lever raise. Klasyfikacja: core_flexion (zgięcie biodra + finalne zgięcie lędźwi w szczycie ze zwiniętą miednicą), force=pull, mechanic=isolation (rectus_abdominis + hip_flexors jako PRIMARY oba P10 — straight-leg lever wymusza dosłownie maksymalny moment siły na obu grupach; w wersji z ugiętymi kolanami hip_flexors byłyby secondary, ale tutaj są primary). Equipment: pull_up_bar (wymagany). Difficulty: 9 (advanced — wymaga prerequisitów: hanging knee raise, hanging leg raise z ugiętymi kolanami, L-sit, lying leg raise z ławki, dead hang min 30 sek). Prerequisites: hanging-knee-raise, hanging-leg-raise, lying-leg-raise-flat-bench, dead-hang, l-sit. Progression: toes-to-bar (pełne zgięcie aż palce stóp dotykają drążka), windshield-wipers (dodaje rotację), front-lever-raise (gimnastyczna progresja). Alternatywy: captain-chair (bez wymagań chwytu/hangu), hanging-leg-raise (mniej ścisła wersja). 5 common_faults: kipowanie/bujanie (najczęstszy), zginanie kolan (cheat lever), niedostateczny ROM, wygięcie lędźwi w dolnej pozycji, wzruszanie barków/bierny zwis. 4 contraindications: lumbar_disc_herniation (avoid — wysokie shear forces), hip_flexor_strain (avoid — straight-leg lever maksymalnie obciąża psoas), shoulder_impingement (caution — overhead dead hang), wrist/grip_injury (modify — straps). Muscle intensity: rectus_abdominis P10 + hip_flexors P10 (ZGODNIE z briefem), obliques S7 (anti-rotation kontrola), quads S6 (knee lockout), lats T6 (active hang), forearms T7 (grip endurance) — grip jest często limiting factor. Nazwa PL: 'Wznosy nóg na drążku na prostych nogach' (główna), aliasy: wznosy prostych nóg na drążku, unoszenie prostych nóg w zwisie, straight leg raise w zwisie. Wszystkie pola PL napisane od zera, nie tłumaczone.",
+
+  "tags": ["bodyweight", "core", "abs", "lower_abs", "advanced", "pull_up_bar", "isolation", "hip_flexors", "straight_leg", "hanging", "calisthenics"]
+}

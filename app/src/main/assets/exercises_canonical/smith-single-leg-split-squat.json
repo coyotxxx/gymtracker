@@ -1,0 +1,208 @@
+{
+  "id": "smith-single-leg-split-squat",
+  "name": "Smith Machine Bulgarian Split Squat",
+  "namePl": "Bułgarski przysiad rozkroczny na Smith Machine",
+  "aliases": ["smith machine bulgarian split squat", "smith single-leg split squat", "smith rear-foot-elevated split squat", "smith RFE split squat", "smith machine bulgarian"],
+  "aliasesPl": ["bułgarski przysiad na Smith", "bułgar na Smith Machine", "split squat z tylną nogą na ławce na Smith", "rozkroczny przysiad jednonóż na Smith"],
+
+  "description": "Unilateral lower-body compound exercise performed on a Smith Machine with the rear foot elevated on a bench behind the athlete. The fixed vertical bar path stabilizes the lift, allowing significantly heavier loads than the free-weight variant and shifting the demand from stabilizers (gluteus medius, core) to pure strength of the working leg's quadriceps and glutes. The front foot is placed forward of the bar's vertical line so that knee tracking and torso angle remain optimal. A premium quadriceps + glute hypertrophy tool with reduced spinal load compared to bilateral squats.",
+  "descriptionPl": "Jednostronne wielostawowe ćwiczenie dolnej części ciała wykonywane na Smith Machine z tylną nogą uniesioną na ławce za trenującym. Sztywny pionowy tor gryfu stabilizuje ruch, pozwalając użyć znacznie cięższych obciążeń niż w wariancie z wolnym ciężarem i przenosi nacisk ze stabilizatorów (pośladkowy średni, core) na czystą siłę czworogłowych i pośladków pracującej nogi. Przednia stopa ustawiona przed pionową linią gryfu — tak aby tor kolana i kąt tułowia były optymalne. Premium narzędzie do hipertrofii czworogłowych i pośladków z mniejszym obciążeniem kręgosłupa niż obustronny przysiad.",
+
+  "instructions": [
+    "Set the Smith Machine bar at upper-trap height. Position a flat bench about 60-80 cm behind the bar (roughly your stride length).",
+    "Load both sides evenly with light weight to start. Rotate the bar hooks open before the first rep.",
+    "Step under the bar and place it across your upper traps (high-bar squat position). Grip slightly wider than shoulders, elbows down.",
+    "Place the top of your rear foot (laces down) on the bench. Hop the front foot forward so the front shin can stay roughly vertical at the bottom.",
+    "Unrack by extending the front leg and rotating the bar with your wrists. Stand tall. Front foot is your only base of support.",
+    "Brace your core, take a breath. Look forward. Find your balance on the front foot — weight in mid-foot and heel, not toes.",
+    "Descend by bending the front knee and hip. Lower the rear knee straight down toward the floor. Keep the torso vertical to slightly forward (about 10-15°).",
+    "Reach a depth where the front thigh is parallel to the floor or slightly below. Front knee tracks over the middle of the foot, may pass the toes naturally.",
+    "Drive back up by pushing through the whole front foot — heel and mid-foot. Squeeze the front glute at the top.",
+    "Complete all reps on one leg before switching. Rotate the bar to rerack at the end of the set.",
+    "Re-set the bench position and rear foot before starting the other side — keep stride length consistent."
+  ],
+  "instructionsPl": [
+    "Ustaw gryf Smith Machine na wysokości górnych trapezów. Ustaw poziomą ławkę około 60-80 cm za gryfem (mniej więcej długość Twojego kroku).",
+    "Załaduj obie strony równomiernie lekkim ciężarem na start. Otwórz haki gryfu zanim rozpoczniesz pierwsze powtórzenie.",
+    "Wejdź pod gryf i ułóż go na górnej części trapezów (pozycja high-bar). Chwyt nieco szerszy niż barki, łokcie w dół.",
+    "Postaw grzbiet tylnej stopy (palce w dół) na ławce. Wyrzuć przednią stopę do przodu tak, aby piszczel przedniej nogi mogła pozostać pionowa w dolnej pozycji.",
+    "Wyciągnij gryf prostując przednią nogę i obracając gryf nadgarstkami. Wyprostuj sylwetkę. Przednia stopa to teraz Twoja jedyna podstawa podparcia.",
+    "Napnij brzuch, weź wdech. Wzrok prosto. Znajdź równowagę na przedniej stopie — ciężar na środku stopy i pięcie, nie na palcach.",
+    "Schodź zginając przednie kolano i biodro. Opuszczaj tylne kolano prosto w dół do podłogi. Tułów pionowo do lekko pochylonego (około 10-15°).",
+    "Zejdź na głębokość, gdy przednie udo jest równoległe do podłogi lub trochę niżej. Przednie kolano podąża nad środkiem stopy — może naturalnie przejść za palce.",
+    "Wypchnij się w górę całą przednią stopą — pięta i środek stopy. Ściśnij pośladek przedniej nogi na górze.",
+    "Wykonaj wszystkie powtórzenia na jedną nogę przed zmianą. Obróć gryf, aby wpiąć go w haki na końcu serii.",
+    "Ustaw ponownie pozycję ławki i tylnej stopy przed rozpoczęciem drugiej strony — zachowaj tę samą długość kroku."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "calves", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "hamstrings": "S7",
+    "adductors": "S6",
+    "core": "S5",
+    "gluteus_medius": "S4",
+    "calves": "T4",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine", "bench"],
+    "optional": ["belt", "lifting_shoes", "knee_sleeves", "bar_pad"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 7,
+    "prerequisites": ["bodyweight-bulgarian-split-squat", "goblet-bulgarian-split-squat", "dumbbell-bulgarian-split-squat", "smith-machine-squat"],
+    "progression_to": ["barbell-bulgarian-split-squat", "deficit-bulgarian-split-squat", "single-leg-squat", "pistol-squat"],
+    "alternatives": ["dumbbell-bulgarian-split-squat", "barbell-bulgarian-split-squat", "smith-lunge", "smith-split-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bench about one stride length behind the bar — too close and the knee compresses, too far and the hip strains",
+      "Top of the rear foot on the bench (laces down) — not the ball of the foot, less ankle stress",
+      "Front foot far enough forward that the shin can stay vertical at the bottom",
+      "Bar centered on upper traps, hands slightly wider than shoulders, elbows down",
+      "Rotate bar hooks open before the first rep — eliminates the panic-rerack at failure"
+    ],
+    "setup_cues_pl": [
+      "Ławka około jednej długości kroku za gryfem — za blisko ściska kolano, za daleko obciąża biodro",
+      "Grzbiet tylnej stopy na ławce (palce w dół) — nie podbicie, mniejsze obciążenie kostki",
+      "Przednia stopa wystarczająco w przód, aby piszczel mogła pozostać pionowa w dolnej pozycji",
+      "Gryf wycentrowany na górnych trapezach, dłonie nieco szerzej niż barki, łokcie w dół",
+      "Otwórz haki gryfu przed pierwszym powtórzeniem — eliminuje panikę przy załamaniu się serii"
+    ],
+    "execution_cues": [
+      "Lower the rear knee straight down toward the floor — not back behind you",
+      "Front knee tracks over the second/third toe — natural pass over the toes is OK",
+      "Torso stays vertical or leans slightly forward — heavy forward lean shifts work to glutes",
+      "Drive through the whole front foot, especially heel and mid-foot — toes are just for balance",
+      "Pause briefly at the bottom (no bounce) — Smith bar makes it easy to dump tension"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj tylne kolano prosto w dół do podłogi — nie w tył za siebie",
+      "Przednie kolano podąża nad drugim/trzecim palcem — naturalne przejście za palce jest OK",
+      "Tułów pionowo lub lekko pochylony do przodu — mocne pochylenie przenosi pracę na pośladki",
+      "Wypychaj się całą przednią stopą, szczególnie piętą i środkiem — palce tylko dla równowagi",
+      "Krótka pauza na dole (bez sprężyny) — gryf Smitha łatwo gubi napięcie"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rear foot positioned too low or on a flat floor instead of a proper bench",
+        "faultPl": "Tylna noga ustawiona za nisko lub na podłodze zamiast na właściwej ławce",
+        "cause": "Insufficient hip flexion of the rear leg places strain on the front knee. The exercise loses the 'split' geometry and becomes a deep single-leg squat with excessive knee shear.",
+        "causePl": "Niedostateczne zgięcie biodra tylnej nogi obciąża przednie kolano. Ćwiczenie traci geometrię 'split' i staje się głębokim przysiadem na jednej nodze z nadmiernym ścinaniem kolana.",
+        "cue": "Use a standard flat bench (~45 cm) — high enough to unload the back leg, low enough not to over-rotate the pelvis",
+        "cuePl": "Używaj standardowej płaskiej ławki (~45 cm) — wystarczająco wysoko aby odciążyć tylną nogę, ale nie tak wysoko by przekręcać miednicę"
+      },
+      {
+        "fault": "Front knee caves inward or crosses the foot line laterally",
+        "faultPl": "Przednie kolano zapada do środka lub krzyżuje linię stopy w bok",
+        "cause": "Weak gluteus medius or insufficient activation. Especially likely under heavy Smith loading because the machine masks the instability.",
+        "causePl": "Słaby pośladkowy średni lub niedostateczna aktywacja. Szczególnie częste pod ciężkim obciążeniem na Smith, bo maszyna maskuje brak stabilności.",
+        "cue": "Spread the floor with the front foot — actively push the knee outward over the second toe",
+        "cuePl": "Rozdziel podłogę przednią stopą — aktywnie wypychaj kolano na zewnątrz nad drugi palec"
+      },
+      {
+        "fault": "Excessive forward torso lean — chest drops toward the floor",
+        "faultPl": "Nadmierne pochylenie tułowia do przodu — klatka opada w stronę podłogi",
+        "cause": "Front foot placed too far back (too close to the bar), weak quads, or compensating with hips. Loads the lower back and reduces quad emphasis.",
+        "causePl": "Przednia stopa ustawiona za blisko gryfu, słabe czworogłowe lub kompensacja biodrami. Obciąża dolny odcinek pleców i zmniejsza akcent na czworogłowe.",
+        "cue": "Step the front foot further forward. Chest tall, eyes forward — for quad emphasis, keep torso vertical",
+        "cuePl": "Przesuń przednią stopę dalej w przód. Klatka w górze, wzrok prosto — dla akcentu na czworogłowe trzymaj tułów pionowo"
+      },
+      {
+        "fault": "Insufficient depth — partial reps under heavy load",
+        "faultPl": "Niedostateczna głębokość — częściowe powtórzenia pod ciężkim obciążeniem",
+        "cause": "Smith Machine stability invites ego-loading. Athletes load weights that prevent reaching parallel.",
+        "causePl": "Stabilność Smith Machine kusi do ładowania ego. Trenujący ładują ciężary, które uniemożliwiają zejście do równoległości.",
+        "cue": "Drop weight 20-30% and reach full depth — front thigh at least parallel to the floor. Quality over quantity.",
+        "cuePl": "Zmniejsz ciężar o 20-30% i osiągnij pełną głębokość — przednie udo przynajmniej równolegle do podłogi. Jakość nad ilość."
+      },
+      {
+        "fault": "Pushing through the toes instead of the whole foot",
+        "faultPl": "Wypychanie z palców zamiast z całej stopy",
+        "cause": "Front foot too far forward or weight shifted forward in compensation for balance.",
+        "causePl": "Przednia stopa za daleko w przód lub przeniesienie ciężaru do przodu jako kompensacja równowagi.",
+        "cue": "Curl toes up at the bottom to feel the heel — drive through mid-foot and heel on the way up",
+        "cuePl": "Podnieś palce w górę na dole, żeby poczuć piętę — wypychaj się przez środek stopy i piętę w drodze w górę"
+      }
+    ],
+    "breathing": "Inhale at the top and brace before descending. Hold the breath through the eccentric and the hardest portion of the concentric. Exhale near the top of each rep. For very heavy sets, use full Valsalva.",
+    "breathingPl": "Wdech na górze i napięcie przed zejściem. Wstrzymaj oddech przez ruch ekscentryczny i najtrudniejszą część koncentrycznego. Wydech blisko górnej pozycji każdego powtórzenia. Przy bardzo ciężkich seriach stosuj pełny Valsalva."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_meniscus_tear_or_acl_injury",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Reduce knee shear by keeping the torso more vertical and shortening the stride initially. Consider switching to reverse lunge or leg press until cleared.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Zmniejsz siły ścinające w kolanie trzymając tułów bardziej pionowo i skracając krok na początku. Rozważ wykrok w tył lub leg press do czasu zgody fizjoterapeuty.",
+      "alternative": "reverse-lunge"
+    },
+    {
+      "condition": "patellofemoral_pain_syndrome",
+      "severity": "modify",
+      "modification": "Knee-dominant exercise with the front knee passing the toes can aggravate. Lean torso slightly more forward to shift load toward the glutes, and reduce weight.",
+      "modificationPl": "Ćwiczenie dominujące kolanem z przednim kolanem za palcami może drażnić. Pochyl tułów lekko bardziej do przodu aby przenieść obciążenie na pośladki i zmniejsz ciężar.",
+      "alternative": "barbell-romanian-deadlift"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Spinal loading and balance demand make this unsafe in acute LBP. Use unloaded variants or wait for clearance.",
+      "modificationPl": "Obciążenie kręgosłupa i wymagania równowagi czynią to niebezpiecznym w ostrym bólu pleców. Stosuj warianty bez obciążenia lub poczekaj na zgodę lekarza.",
+      "alternative": "bodyweight-bulgarian-split-squat"
+    },
+    {
+      "condition": "ankle_mobility_limitation",
+      "severity": "caution",
+      "modification": "Limited ankle dorsiflexion of the front leg forces the heel up or excessive forward lean. Elevate the front heel on a small plate (1-2 cm) or work on ankle mobility first.",
+      "modificationPl": "Ograniczona zgięciowa mobilność kostki przedniej nogi wymusza unoszenie pięty lub nadmierne pochylenie. Podnieś piętę przedniej nogi na talerz (1-2 cm) lub popracuj najpierw nad mobilnością kostki.",
+      "alternative": "smith-lunge"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 per leg (hypertrophy) | 4x6 per leg (strength) | 2-3x12-15 per leg (endurance) | 4x5 heavy (Smith advantage for max loading)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "smith-single-leg-split-squat.gif",
+    "frames_extracted": [
+      "frames/smith-single-leg-split-squat/frame_0_start.png",
+      "frames/smith-single-leg-split-squat/frame_1_early.png",
+      "frames/smith-single-leg-split-squat/frame_2_mid.png",
+      "frames/smith-single-leg-split-squat/frame_3_late.png",
+      "frames/smith-single-leg-split-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/smith-single-leg-split-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T17:00:00Z",
+  "verification_notes": "Obejrzałem 3 klatki kluczowe (start/mid/end) z GIFa jahel. Wariant BULGARIAN split squat na Smith Machine — postać stoi przed gryfem na trapezach, tylna noga uniesiona na poziomej ławce z tyłu (laces down), schodzi w split squat z głębokim zgięciem przedniej nogi (~90°) i opuszczonym tylnym kolanem blisko podłogi. Tor gryfu pionowy (charakterystyczne dla Smitha). Klatka mid pokazuje pełną głębokość. Mięśnie podświetlone w GIFie: quadriceps przedniej nogi (najmocniej, ciemnoczerwony), pośladki, lekko przywodziciele tylnej nogi — pasuje do anatomii Bulgarian split squat. Source jahel: 'quads/smith-single-leg-split-squat' z muscle='quads', equipment='smith', secondary glutes+hamstrings+calves. Specyfika Smith Machine vs free-weight: pionowy tor = mniej stabilizatorów (gluteus_medius S4 zamiast S6 jak w barbell-lunge), ale możliwość cięższego załadowania = P10 quadriceps (vs P9 w lunge). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego — polski standard fitness 'bułgarski przysiad rozkroczny'.",
+
+  "tags": ["unilateral", "lower_body", "bulgarian_split_squat", "smith_machine", "compound", "quad_dominant", "hypertrophy_specialist", "machine_based"]
+}

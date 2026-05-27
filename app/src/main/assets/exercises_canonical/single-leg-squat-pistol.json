@@ -1,0 +1,203 @@
+{
+  "id": "single-leg-squat-pistol",
+  "name": "Pistol Squat (Single-Leg Squat)",
+  "namePl": "Pistolet (przysiad na jednej nodze)",
+  "aliases": ["pistol squat", "single-leg squat", "one-leg squat", "full pistol"],
+  "aliasesPl": ["pistolet", "przysiad na jednej nodze", "single-leg squat", "przysiad pistoletowy"],
+
+  "description": "An advanced unilateral bodyweight squat performed on one leg while the non-working leg is extended straight in front. Requires exceptional single-leg strength, balance, hip and ankle mobility, and core control. A benchmark calisthenics movement that exposes any side-to-side strength imbalances. Common in bodyweight strength training, gymnastics conditioning, and functional fitness programming.",
+  "descriptionPl": "Zaawansowany jednostronny przysiad z masą własnego ciała wykonywany na jednej nodze, podczas gdy druga noga jest wyprostowana przed sobą. Wymaga wyjątkowej siły jednostronnej, równowagi, mobilności biodra i stawu skokowego oraz kontroli core. Punkt odniesienia w treningu kalistenicznym ujawniający każdą asymetrię siły między stronami ciała. Stosowany w treningu z masą własnego ciała, przygotowaniu gimnastycznym i treningu funkcjonalnym.",
+
+  "instructions": [
+    "Stand on one leg with feet at hip width. Shift your weight fully onto the working leg.",
+    "Extend the non-working leg straight in front of you, parallel to the ground or as high as your hamstring flexibility allows.",
+    "Raise both arms straight in front of you at shoulder height for counterbalance. Brace your core.",
+    "Slowly descend by sitting back and down on the working leg. Keep the heel firmly planted on the floor.",
+    "Track the working knee over the toes — do not let it collapse inward. The non-working leg stays straight and elevated throughout.",
+    "Descend until your hamstring touches your calf (full depth). Pause briefly in the bottom position without losing tension.",
+    "Drive up by pushing through the entire foot (especially the heel), extending the hip and knee simultaneously.",
+    "Return to the starting position with the non-working leg still extended. Maintain balance, then switch sides after completing the set."
+  ],
+  "instructionsPl": [
+    "Stań na jednej nodze, stopy na szerokość bioder. Przenieś cały ciężar na nogę pracującą.",
+    "Wyprostuj nogę nie pracującą prosto przed siebie, równolegle do podłogi lub tak wysoko, jak pozwala na to elastyczność dwugłowych ud.",
+    "Unieś obydwa ramiona prosto przed siebie na wysokość barków dla kontrbalansu. Napnij mięśnie brzucha.",
+    "Powoli zejdź siadając do tyłu i w dół na nodze pracującej. Pięta trzymaj mocno wbitą w podłogę.",
+    "Kolano pracujące podąża nad palcami stopy — nie pozwól by uciekło do środka. Noga nie pracująca pozostaje wyprostowana i uniesiona przez cały ruch.",
+    "Schodź aż dwugłowy uda dotknie łydki (pełna głębokość). Krótka pauza w pozycji dolnej bez utraty napięcia.",
+    "Wypchnij się w górę napierając przez całą stopę (szczególnie piętę), prostując biodro i kolano jednocześnie.",
+    "Wróć do pozycji wyjściowej z nogą nie pracującą wciąż wyprostowaną. Zachowaj równowagę, potem zmień stronę po zakończeniu serii."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "unilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["adductors", "hamstrings", "calves"],
+    "stabilizers": ["core", "tibialis_anterior", "hip_abductors", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "adductors": "S6",
+    "hamstrings": "S5",
+    "calves": "S5",
+    "core": "S7",
+    "tibialis_anterior": "S6",
+    "hip_abductors": "S6",
+    "erector_spinae": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["counterweight_plate", "heel_wedge", "trx_strap", "pole_for_balance"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["bodyweight-squat", "bulgarian-split-squat", "step-up", "shrimp-squat-progressions"],
+    "progression_to": ["weighted-pistol-squat", "shrimp-squat", "deficit-pistol-squat", "pistol-squat-jump"],
+    "alternatives": ["bulgarian-split-squat", "reverse-lunge", "step-up", "skater-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, weight fully on the working leg",
+      "Extend the free leg straight forward, foot dorsiflexed (toes pulled up)",
+      "Arms forward at shoulder height for counterbalance",
+      "Brace your core, ribs down",
+      "Eyes forward — fix a point on the wall for balance"
+    ],
+    "setup_cues_pl": [
+      "Stań wyprostowany, ciężar całkowicie na nodze pracującej",
+      "Wyprostuj wolną nogę prosto do przodu, stopa w dorsiflexji (palce ściągnięte do góry)",
+      "Ramiona do przodu na wysokość barków dla kontrbalansu",
+      "Napnij brzuch, żebra w dół",
+      "Wzrok przed siebie — wybierz punkt na ścianie dla równowagi"
+    ],
+    "execution_cues": [
+      "Sit back and down — don't just bend the knee forward",
+      "Keep the working heel glued to the floor",
+      "Knee tracks over the middle toes — fight valgus collapse",
+      "Free leg stays straight and elevated — don't let the heel touch the floor",
+      "Drive through the whole foot to stand up, lead with the chest"
+    ],
+    "execution_cues_pl": [
+      "Siadaj do tyłu i w dół — nie tylko zginaj kolano do przodu",
+      "Pięta pracująca przyklejona do podłogi",
+      "Kolano podąża nad środkowymi palcami — walcz z koślawieniem",
+      "Wolna noga prosta i uniesiona — nie pozwól by pięta dotknęła podłogi",
+      "Wypchnij się przez całą stopę by wstać, prowadź klatką piersiową"
+    ],
+    "common_faults": [
+      {
+        "fault": "Working heel rises off the floor",
+        "faultPl": "Pięta pracująca odrywa się od podłogi",
+        "cause": "Insufficient ankle dorsiflexion mobility, weight shifting forward instead of sitting back",
+        "causePl": "Niedostateczna mobilność stawu skokowego (dorsiflexja), ciężar przesuwa się do przodu zamiast siadać do tyłu",
+        "cue": "Place a small wedge or weight plate under the heel until mobility improves. Sit back as if into a low chair behind you.",
+        "cuePl": "Podłóż klinik lub talerz pod piętę do czasu poprawy mobilności. Siadaj do tyłu jak na niskie krzesło za tobą."
+      },
+      {
+        "fault": "Knee valgus (knee caves inward)",
+        "faultPl": "Koślawienie kolana (kolano ucieka do środka)",
+        "cause": "Weak glute medius, lack of single-leg hip stability, going too deep too soon",
+        "causePl": "Słaby mięsień pośladkowy średni, brak stabilności jednonożnej biodra, zbyt szybkie schodzenie głęboko",
+        "cue": "Drive the knee out toward the pinky toe. Practice clamshells and single-leg glute work as accessory.",
+        "cuePl": "Wypychaj kolano na zewnątrz w kierunku małego palca. Ćwicz clamshells i pracę jednonożną na pośladki jako uzupełnienie."
+      },
+      {
+        "fault": "Free leg drops or heel touches the floor",
+        "faultPl": "Wolna noga opada lub pięta dotyka podłogi",
+        "cause": "Weak hip flexors, tight hamstrings, or fatigue at deep ranges",
+        "causePl": "Słabe zginacze biodra, napięte dwugłowe ud, lub zmęczenie w głębokich zakresach",
+        "cue": "Actively pull the toes of the free leg toward your face. Strengthen hip flexors with leg raises.",
+        "cuePl": "Aktywnie ściągaj palce wolnej nogi w stronę twarzy. Wzmacniaj zginacze biodra przez unoszenie nóg."
+      },
+      {
+        "fault": "Falling backwards at the bottom (loss of balance)",
+        "faultPl": "Upadanie do tyłu w pozycji dolnej (utrata równowagi)",
+        "cause": "Insufficient forward counterbalance, ankles too stiff, weak quads at deep depth",
+        "causePl": "Niewystarczający kontrbalans do przodu, sztywny staw skokowy, słabe czworogłowe w głębokim zakresie",
+        "cue": "Reach the arms further forward, hold a 2-5 kg plate at chest height as counterweight, work mobility.",
+        "cuePl": "Wyciągnij ramiona dalej do przodu, trzymaj talerz 2-5 kg na wysokości klatki jako kontrciężar, pracuj nad mobilnością."
+      },
+      {
+        "fault": "Lumbar rounding (tucked pelvis) at the bottom",
+        "faultPl": "Zaokrąglanie lędźwiów (podwijanie miednicy) na dole",
+        "cause": "Limited hip flexion mobility, weak core, going below your individual ROM",
+        "causePl": "Ograniczona mobilność zgięcia biodra, słaby brzuch, schodzenie poniżej indywidualnego zakresu",
+        "cue": "Stop one inch above the point where your pelvis tucks. Brace harder. Work on deep squat mobility separately.",
+        "cuePl": "Zatrzymaj się 2-3 cm nad punktem gdzie miednica się podwija. Mocniej napnij brzuch. Pracuj nad mobilnością głębokiego siadu osobno."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and through the hardest part of the ascent. Exhale near the top of the rep.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech podczas schodzenia i przez najtrudniejszą część wstawania. Wydech blisko górnej części powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_patellofemoral",
+      "severity": "modify",
+      "modification": "Limit depth above parallel and use box pistol squats. Consider regression to bulgarian split squats with shallower range.",
+      "modificationPl": "Ogranicz głębokość powyżej parallel i używaj pistola na box. Rozważ regresję do bułgarskiego split squata z mniejszym zakresem.",
+      "alternative": "bulgarian-split-squat"
+    },
+    {
+      "condition": "limited_ankle_dorsiflexion",
+      "severity": "modify",
+      "modification": "Use a heel wedge (5-15° lift) or weight plate under the heel. Work daily on ankle mobility drills before attempting full pistol.",
+      "modificationPl": "Użyj klinika pod piętę (5-15° uniesienia) lub talerza. Codziennie pracuj nad mobilnością stawu skokowego przed próbą pełnego pistola.",
+      "alternative": "elevated-pistol-squat"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "modify",
+      "modification": "Brace core hard, avoid lumbar tuck at depth, limit ROM to where neutral spine is maintained.",
+      "modificationPl": "Mocno napnij brzuch, unikaj podwinięcia lędźwi na dole, ogranicz zakres ruchu do punktu gdzie utrzymujesz neutralny kręgosłup.",
+      "alternative": "step-up"
+    },
+    {
+      "condition": "balance_disorders_vestibular",
+      "severity": "modify",
+      "modification": "Use TRX strap, pole, or doorframe for hand support. Build single-leg strength without the balance demand first.",
+      "modificationPl": "Użyj taśmy TRX, drążka lub framugi drzwi jako wsparcia dla rąk. Najpierw buduj siłę jednonożną bez wymagania równowagi.",
+      "alternative": "trx-assisted-pistol-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-8 per leg (strength) | 3-4x6-10 per leg (hypertrophy) | 2-3x AMRAP (endurance benchmark)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "single-leg-squat-pistol.gif",
+    "frames_extracted": [
+      "frames/single-leg-squat-pistol-male/frame_0_start.png",
+      "frames/single-leg-squat-pistol-male/frame_1_early.png",
+      "frames/single-leg-squat-pistol-male/frame_2_mid.png",
+      "frames/single-leg-squat-pistol-male/frame_3_late.png",
+      "frames/single-leg-squat-pistol-male/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/single-leg-squat-pistol-male"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:45:00Z",
+  "verification_notes": "Obejrzałem 3 z 5 klatek GIFa jahel (start, mid, end). Klatka 0 i 4: pozycja stojąca z podświetlonym czworogłowym nogi pracującej. Klatka 2 (mid): pełna pozycja dolna pistola — głęboki przysiad na lewej nodze, prawa noga wyprostowana przed sobą równolegle do podłogi, oba ramiona wyciągnięte przed sobą dla kontrbalansu, podświetlone czworogłowe i pośladki. Klasyfikacja: squat / push / compound / unilateral / sagittal / closed-chain — zgodne ze specyfikacją zadania. Primary quads P10, glutes P9, adductors S6 jak w specyfikacji. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. Difficulty 9 i level advanced odzwierciedlają wymagania siłowo-mobilnościowe.",
+
+  "tags": ["calisthenics", "bodyweight", "unilateral", "single_leg", "advanced_bodyweight", "mobility_demanding", "balance", "lower_body"]
+}

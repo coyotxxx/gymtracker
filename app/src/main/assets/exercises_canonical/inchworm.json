@@ -1,0 +1,205 @@
+{
+  "id": "inchworm",
+  "name": "Inchworm",
+  "namePl": "Inchworm (gąsienica)",
+  "aliases": ["worm walk", "walkout", "hand walkout", "inchworm walkout", "inchworm push-up"],
+  "aliasesPl": ["gąsienica", "robaczek", "chodzenie rękami", "walkout", "inchworm z pompką", "chód gąsienicy"],
+
+  "description": "Full-body dynamic warm-up and mobility drill. From standing, the lifter hinges forward, places the hands on the floor and 'walks' them out (one hand at a time) into a high plank position while the feet stay planted. An optional push-up may be performed in the plank. Then the hands stay planted and the feet shuffle back toward the hands, before standing tall again. Combines hamstring stretch, core anti-extension, shoulder stability and a push-pattern primer — popular in CrossFit, calisthenics warm-ups and athletic conditioning.",
+  "descriptionPl": "Dynamiczne ćwiczenie rozgrzewkowo-mobilizacyjne na całe ciało. Z pozycji stojącej ćwiczący skłania się w przód, opiera dłonie na podłodze i 'wędruje' nimi do przodu (po jednej ręce) aż osiągnie pozycję wysokiej deski, podczas gdy stopy zostają w miejscu. Opcjonalnie w pozycji plank można wykonać pompkę. Następnie dłonie zostają na ziemi, a stopy podchodzą do dłoni — ćwiczący prostuje się do pozycji stojącej. Łączy rozciąganie dwugłowych ud, pracę anty-ekstensji brzucha, stabilizację barków i schemat ruchu pchającego — popularne w rozgrzewkach CrossFit, calisteniki i przygotowania sportowego.",
+
+  "instructions": [
+    "Stand tall with feet hip-width apart, arms relaxed at the sides. This is the starting position.",
+    "Hinge at the hips and bend forward, reaching the hands toward the floor in front of your feet. Allow the knees to bend slightly if your hamstrings are tight.",
+    "Place both palms flat on the floor and begin 'walking' the hands forward one at a time — small steps — while the feet stay planted. Keep the legs as straight as comfortable.",
+    "Continue walking the hands out until you reach a high plank position: body in a straight line from head to heels, hands directly under shoulders, core braced.",
+    "Optional: perform one strict push-up here — chest to floor, elbows tracking ~45° from torso, then press back up.",
+    "Hold the plank momentarily, then walk the feet forward toward the hands in small steps until hips are stacked over the hands.",
+    "Stand up by extending the hips and roll the spine up vertebra by vertebra to return to the starting position. That is one repetition."
+  ],
+  "instructionsPl": [
+    "Stań prosto, stopy na szerokość bioder, ramiona luźno wzdłuż ciała. To pozycja wyjściowa.",
+    "Wykonaj skłon w biodrach, sięgając dłońmi do podłogi przed stopami. Lekkie ugięcie kolan jest dozwolone, jeśli dwugłowe uda są napięte.",
+    "Postaw obie dłonie płasko na podłodze i zacznij 'iść' dłońmi do przodu po jednej naraz, małymi krokami, podczas gdy stopy zostają w miejscu. Trzymaj nogi możliwie proste.",
+    "Kontynuuj chodzenie rękami, aż osiągniesz pozycję wysokiej deski: ciało w linii prostej od głowy do pięt, dłonie pod barkami, brzuch napięty.",
+    "Opcjonalnie: wykonaj jedną pełną pompkę — klatka do podłogi, łokcie pod kątem ~45° względem tułowia, następnie wypchnij się w górę.",
+    "Przytrzymaj deskę przez chwilę, a następnie przejdź stopami do dłoni, małymi krokami, aż biodra znajdą się nad dłońmi.",
+    "Wstań, prostując biodra i rozwijając kręgosłup krąg po kręgu, aż wrócisz do pozycji wyjściowej. To jest jedno powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "full_body_locomotion",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["rectus_abdominis", "pectoralis_major", "hamstrings"],
+    "secondary": ["deltoids", "triceps", "hip_flexors"],
+    "stabilizers": ["serratus_anterior", "obliques", "transverse_abdominis", "erector_spinae", "glutes"]
+  },
+
+  "muscle_intensity": {
+    "rectus_abdominis": "P7",
+    "pectoralis_major": "P6",
+    "hamstrings": "P5",
+    "deltoids": "S5",
+    "triceps": "S5",
+    "hip_flexors": "S4",
+    "serratus_anterior": "T4",
+    "obliques": "T3",
+    "transverse_abdominis": "T3",
+    "erector_spinae": "T3",
+    "glutes": "T2"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "warm_up",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["plank", "good-morning-bodyweight"],
+    "progression_to": ["inchworm-push-up", "burpee", "handstand-walk"],
+    "alternatives": ["world-greatest-stretch", "downward-dog-to-plank", "bear-crawl", "spider-walk"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stand tall, feet hip-width apart",
+      "Arms relaxed at sides, shoulders back and down",
+      "Brace core lightly — ribs over hips",
+      "Pick a spot on the floor 30-50 cm in front of toes",
+      "Inhale before the hinge"
+    ],
+    "setup_cues_pl": [
+      "Stań prosto, stopy na szerokość bioder",
+      "Ramiona luźno wzdłuż ciała, barki ściągnięte w dół i do tyłu",
+      "Lekko napnij brzuch — żebra nad biodrami",
+      "Wybierz punkt na podłodze 30-50 cm przed palcami stóp",
+      "Wdech przed skłonem"
+    ],
+    "execution_cues": [
+      "Hinge at the hips first, then reach hands down",
+      "Walk hands forward in small steps — one hand at a time",
+      "Keep feet planted while hands walk out",
+      "Lock the plank at the end — straight line head to heels, glutes squeezed",
+      "Walk feet back in with small steps — don't jump"
+    ],
+    "execution_cues_pl": [
+      "Najpierw skłon w biodrach, potem sięgaj dłońmi w dół",
+      "Idź dłońmi do przodu małymi krokami — po jednej ręce naraz",
+      "Stopy zostają w miejscu, gdy dłonie wędrują do przodu",
+      "Zablokuj pozycję deski na końcu — prosta linia od głowy do pięt, pośladki ściśnięte",
+      "Idź stopami z powrotem małymi krokami — nie skacz"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips in the plank position",
+        "faultPl": "Opadające biodra w pozycji deski",
+        "cause": "Weak anterior core (rectus abdominis, transverse abdominis) and lack of glute engagement",
+        "causePl": "Słaby przedni core (mięsień prosty i poprzeczny brzucha) oraz brak napięcia pośladków",
+        "cue": "Squeeze glutes and brace abs as hard as you can at the top of the walkout — body must be a rigid line",
+        "cuePl": "Mocno ściśnij pośladki i napnij brzuch na końcu walkoutu — ciało musi być sztywną linią"
+      },
+      {
+        "fault": "Rounding the upper back / shrugged shoulders in plank",
+        "faultPl": "Zaokrąglone górne plecy / podciągnięte barki w desce",
+        "cause": "Lack of scapular protraction strength (serratus anterior); shoulders not packed",
+        "causePl": "Brak siły protrakcji łopatek (mięsień zębaty przedni); barki nie 'spakowane'",
+        "cue": "Push the floor away — long arms, shoulder blades wide, ears away from shoulders",
+        "cuePl": "Odpychaj podłogę — długie ramiona, łopatki szeroko, uszy daleko od barków"
+      },
+      {
+        "fault": "Rushing through the walkout / using momentum",
+        "faultPl": "Pośpieszny walkout / wykorzystywanie rozpędu",
+        "cause": "Treating it as a cardio movement rather than a controlled mobility drill",
+        "causePl": "Traktowanie ćwiczenia jako kardio zamiast kontrolowanego ruchu mobilizacyjnego",
+        "cue": "Small hand steps — 4-6 walks out, 4-6 walks back. Feel the hamstrings stretch and the core brace.",
+        "cuePl": "Małe kroki dłońmi — 4-6 kroków do przodu, 4-6 do tyłu. Czuj rozciąganie dwugłowych i napięcie brzucha."
+      },
+      {
+        "fault": "Bending knees too much during hand walkout",
+        "faultPl": "Zbyt mocne uginanie kolan podczas wychodzenia dłońmi",
+        "cause": "Tight hamstrings, but compensating too much defeats the mobility purpose",
+        "causePl": "Napięte dwugłowe uda, ale nadmierna kompensacja niweczy cel mobilizacyjny ćwiczenia",
+        "cue": "Allow a small knee bend if needed, but actively try to push the heels down and straighten the legs in the plank",
+        "cuePl": "Pozwól na niewielkie ugięcie kolan jeśli potrzeba, ale aktywnie staraj się dociskać pięty i prostować nogi w desce"
+      },
+      {
+        "fault": "Letting the lower back arch when walking feet back to hands",
+        "faultPl": "Wyginanie dolnych pleców w łuk podczas powrotu stopami do dłoni",
+        "cause": "Loss of core brace; hips drop and lumbar spine hyperextends",
+        "causePl": "Utrata napięcia core; biodra opadają, a kręgosłup lędźwiowy się przeprostowuje",
+        "cue": "Keep ribs pulled down toward the pelvis the whole time — neutral spine even as you shuffle the feet in",
+        "cuePl": "Trzymaj żebra ściągnięte w kierunku miednicy przez cały czas — neutralny kręgosłup nawet gdy podchodzisz stopami"
+      }
+    ],
+    "breathing": "Inhale during the standing hinge and hand walkout. Exhale into the plank lockout (and during the optional push-up). Inhale as you walk the feet back in, exhale as you stand tall.",
+    "breathingPl": "Wdech podczas skłonu i wędrowania dłońmi do przodu. Wydech w momencie zablokowania deski (i podczas opcjonalnej pompki). Wdech gdy podchodzisz stopami, wydech podczas wstawania."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "The forward hinge can aggravate acute lumbar pain. Reduce range — bend knees more during the hinge and skip the push-up. Stop if symptoms worsen.",
+      "modificationPl": "Skłon w przód może nasilać ostry ból lędźwi. Zmniejsz zakres — uginaj kolana mocniej podczas skłonu i pomiń pompkę. Przerwij, jeśli objawy się nasilają.",
+      "alternative": "dead-bug"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "caution",
+      "modification": "Plank position loads the shoulders. If impingement flares up, shorten the walkout distance, externally rotate hands slightly outward, or use elevated hands on a bench.",
+      "modificationPl": "Pozycja deski obciąża barki. Jeśli impingement się nasila, skróć dystans walkoutu, lekko obróć dłonie na zewnątrz, lub oprzyj dłonie na ławce.",
+      "alternative": "world-greatest-stretch"
+    },
+    {
+      "condition": "wrist_pain_or_injury",
+      "severity": "modify",
+      "modification": "Bearing weight on flat palms can aggravate wrists. Use push-up handles, fists, or perform on forearms (skip the standing portion).",
+      "modificationPl": "Obciążanie nadgarstków na płaskich dłoniach może nasilać ból. Użyj uchwytów do pompek, pięści, lub wykonaj na przedramionach (z pominięciem fazy stojącej).",
+      "alternative": "bear-crawl"
+    },
+    {
+      "condition": "pregnancy_late_term",
+      "severity": "avoid",
+      "modification": "Plank-position pressure on abdominal wall and the forward hinge are not recommended in 3rd trimester. Substitute with standing-only mobility work.",
+      "modificationPl": "Obciążenie ścian brzucha w pozycji deski oraz skłon w przód nie są zalecane w 3. trymestrze. Zastąp ćwiczeniami mobilizacyjnymi tylko w pozycji stojącej.",
+      "alternative": "world-greatest-stretch"
+    }
+  ],
+
+  "typical_sets_reps": "2x5-8 (warm-up) | 3x8-10 (conditioning) | EMOM x 5min (finisher)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "inchworm.gif",
+    "frames_extracted": [
+      "frames/inchworm/frame_0_start.png",
+      "frames/inchworm/frame_1_early.png",
+      "frames/inchworm/frame_2_mid.png",
+      "frames/inchworm/frame_3_late.png",
+      "frames/inchworm/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/inchworm",
+    "yuhonas_id": "Inchworm",
+    "glowupp_id": "inchworm"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 3 (late): pozycja stojąca prosto — pełna sylwetka boczna, podświetlona klatka piersiowa, brzuch i przednia strona uda. Klatka 2 (mid): pozycja pochylenia w przód, dłonie na podłodze tuż przed stopami, plecy zaokrąglone, dwugłowe uda mocno rozciągnięte. Klatka 1 (early): wysoka deska — ciało w linii prostej, dłonie pod barkami, podświetlone barki/triceps/przedramiona/brzuch/dwugłowe. Klatka 0 (start) i klatka 4 (end): dolna faza pompki — ciało nisko nad podłogą, łokcie ugięte ~90°, podświetlone klatka piersiowa, triceps, deltoid przedni i brzuch (anti-extension). Potwierdza pełen ruch: stojąco → skłon → walkout → plank → opcjonalna pompka → walk feet → stojąco. Klasyfikacja: full_body_locomotion (chodzenie dłońmi to lokomocja), compound (wiele stawów: biodra, ramiona, łokcie, kręgosłup), force=both (push w pompce + pull w hinge), plane=sagittal, kinetic_chain=closed (dłonie i stopy w kontakcie z podłogą). Mięśnie główne: rectus_abdominis (anti-extension w desce), pectoralis_major (pompka), hamstrings (rozciąganie w skłonie). Bodyweight, category=warm_up. Difficulty=4, level=beginner — łatwo dostępne dla początkujących, ale wymaga koordynacji. Nazwa PL: 'Inchworm (gąsienica)' — termin angielski powszechnie używany w polskim środowisku fitness/CrossFit, polski opisowy aliasem ('gąsienica', 'robaczek', 'chodzenie rękami'). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["bodyweight", "warm_up", "mobility", "core", "full_body", "no_equipment", "home_workout", "crossfit", "calisthenics", "dynamic_stretch"]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "incline-push-up-on-box",
+  "name": "Incline Push-Up on Box",
+  "namePl": "Pompka skośna na boxie",
+  "aliases": ["box incline push-up", "incline pushup on box", "hands-on-box push-up", "plyo box incline push-up", "elevated push-up on box"],
+  "aliasesPl": ["pompki na boxie", "pompki na skrzyni", "pompki z rękami na boxie", "incline pompki na boxie", "pompki z dłońmi na skrzyni plyo", "pompki na podwyższeniu (box)"],
+
+  "description": "Bodyweight push-up variation with hands elevated on a plyo box (or similar sturdy cube-shaped platform) instead of a flat bench — hands HIGHER than feet. A classic beginner regression of the standard push-up: the elevation reduces the percentage of bodyweight loaded on the arms (~40-55% depending on box height vs ~64% in a floor push-up), making the movement substantially easier while still loading the chest, triceps and anterior deltoids through a full range of motion. The box variant is especially convenient in CrossFit boxes, home gyms and outdoor parks where a plyo box / step box is more common than a flat bench. Geometrically equivalent to a decline barbell bench press (chest angled head-up), with primary stress on the lower (sternal/costal) head of the pec major and triceps.",
+  "descriptionPl": "Wariant pompek z masą własnego ciała, w którym dłonie są uniesione na boxie plyo (lub innym solidnym podwyższeniu w kształcie sześcianu) zamiast płaskiej ławki — DŁONIE WYŻEJ NIŻ STOPY. Klasyczna regresja standardowej pompki dla początkujących: kąt incline zmniejsza procent masy ciała spoczywający na rękach (~40-55% w zależności od wysokości boxa, vs ~64% w pompce z podłogi), znacząco ułatwiając ruch przy zachowaniu pełnego zakresu pracy klatki, tricepsów i przednich aktonów barku. Wariant na boxie jest szczególnie wygodny w boxach crossfitowych, domowych siłowniach i parkach kalistenicznych, gdzie box plyometryczny / step box jest częściej dostępny niż płaska ławka. Geometrycznie odpowiednik wyciskania sztangi na skosie ujemnym (klatka pod kątem 'głową w górę') — główne obciążenie spada na dolną (mostkową/żebrową) część pec major i tricepsy.",
+
+  "instructions": [
+    "Place a stable plyo box (or sturdy cube — step platform, low aerobic step stacked, wooden box) on a non-slip floor. For beginners pick a knee-to-mid-thigh height box; lower box = harder.",
+    "Plant both palms on the TOP edge of the box, slightly wider than shoulders, fingers pointing forward, gripping the front lip so hands won't slip.",
+    "Walk feet back until your body forms a straight diagonal line from heels through hips to head. Hands clearly higher than feet — this is incline, not flat.",
+    "Brace your core, squeeze glutes and quads, pre-set a rigid plank position before the first rep.",
+    "Inhale and lower your chest toward the top of the box in 2-3 controlled seconds. Elbows track at ~45° from torso (not flared to 90°).",
+    "Descend until your chest is just above the top surface of the box (within a fist's height) — full range, no half reps.",
+    "Brief pause at the bottom — no bouncing the chest off the box.",
+    "Exhale and press the box away by driving through your palms. Fully extend the elbows without aggressively locking out.",
+    "Maintain the rigid plank shape throughout — head neutral, chin slightly tucked, eyes looking at the front face of the box just ahead of your hands."
+  ],
+  "instructionsPl": [
+    "Ustaw stabilny box plyo (lub solidny sześcian — step, niska skrzynia, drewniany box) na antypoślizgowej podłodze. Dla początkujących wybierz box wysokości kolana do połowy uda; niższy box = trudniej.",
+    "Połóż obie dłonie na GÓRNEJ krawędzi boxa, nieco szerzej niż barki, palce skierowane do przodu, chwyć przednią krawędź żeby ręce się nie ślizgały.",
+    "Cofnij stopy aż ciało utworzy prostą skośną linię od pięt przez biodra do głowy. Dłonie wyraźnie wyżej niż stopy — to incline, nie pozycja płaska.",
+    "Napnij brzuch, ściśnij pośladki i czworogłowe, ustaw sztywną planka przed pierwszym powtórzeniem.",
+    "Wdech, opuszczaj klatkę w stronę górnej powierzchni boxa w 2-3 kontrolowane sekundy. Łokcie pod kątem ~45° od tułowia (nie rozsunięte na 90°).",
+    "Schodź aż klatka znajdzie się tuż nad górną powierzchnią boxa (na wysokość pięści) — pełen zakres, bez połowicznych powtórzeń.",
+    "Krótka pauza na dole — bez odbijania klatki od boxa.",
+    "Wydech, odepchnij box napierając przez wnętrza dłoni. W pełni wyprostuj łokcie, ale bez agresywnego blokowania stawu.",
+    "Utrzymuj sztywną planka przez cały ruch — głowa neutralna, broda lekko schowana, wzrok na przednią ścianę boxa tuż przed dłońmi."
+  ],
+
+  "classification": {
+    "movement_pattern": "push_horizontal",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["pectoralis_major_sternal", "triceps", "anterior_deltoids"],
+    "secondary": ["pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["core", "glutes", "rotator_cuff", "scapular_stabilizers", "quadriceps"]
+  },
+
+  "muscle_intensity": {
+    "pectoralis_major_sternal": "P8",
+    "triceps": "P7",
+    "anterior_deltoids": "P6",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S5",
+    "core": "T4",
+    "glutes": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight", "plyo_box"],
+    "optional": ["push_up_handles", "non_slip_mat", "wall"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": ["wall-push-up", "knee-push-up"],
+    "progression_to": ["push-up", "decline-push-up", "diamond-push-up", "archer-push-up"],
+    "alternatives": ["incline-push-up", "wall-push-up", "knee-push-up", "machine-chest-press"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Stable plyo box on non-slip floor — box must NOT slide back when you press into it",
+      "Hands on the TOP edge of the box, fingers gripping the front lip for security",
+      "Hands slightly wider than shoulders, fingers pointing forward",
+      "Body in a straight diagonal — heels through hips through head — pre-set the plank BEFORE the first rep",
+      "Higher box = easier; lower box = harder. Pick a height where you can do 8-12 clean reps with the last 2 tough."
+    ],
+    "setup_cues_pl": [
+      "Stabilny box plyo na antypoślizgowej podłodze — box NIE może się odsuwać gdy się od niego odpychasz",
+      "Dłonie na GÓRNEJ krawędzi boxa, palce chwytają przednią krawędź dla pewności chwytu",
+      "Dłonie nieco szerzej niż barki, palce skierowane do przodu",
+      "Ciało w prostej skośnej linii — pięty przez biodra przez głowę — napnij planka PRZED pierwszym powtórzeniem",
+      "Wyższy box = łatwiej; niższy = trudniej. Wybierz wysokość, na której robisz 8-12 czystych powtórzeń, z ostatnimi 2 trudnymi."
+    ],
+    "execution_cues": [
+      "Lower in 2-3 seconds — controlled, no free-fall onto the box",
+      "Chest touches just above the top of the box (within a fist's height) — full ROM",
+      "Elbows at ~45° from torso — 'pin them to your ribs', not flared",
+      "Squeeze the lower chest at the top — feel the sternal pec contract",
+      "Brace abs and glutes the whole set — hips don't sag and don't pike up"
+    ],
+    "execution_cues_pl": [
+      "Opuszczaj w 2-3 sekundy — kontrolowanie, bez 'free-fall' na box",
+      "Klatka dotyka tuż nad górną powierzchnią boxa (na wysokość pięści) — pełen ROM",
+      "Łokcie pod ~45° od tułowia — 'przyklej je do żeber', nie rozsuwaj",
+      "Ściśnij dolną klatkę na szczycie — poczuj jak mostkowy pec się napina",
+      "Napięte brzuch i pośladki przez całą serię — biodra nie opadają i nie idą w górę"
+    ],
+    "common_faults": [
+      {
+        "fault": "Sagging hips (hammock position)",
+        "faultPl": "Opadające biodra (pozycja 'hamak')",
+        "cause": "Weak core, no glute engagement — body 'hangs' on the lower back instead of holding a rigid plank",
+        "causePl": "Słaby brzuch, brak napięcia pośladków — ciało 'wisi' na odcinku lędźwiowym zamiast trzymać sztywną planka",
+        "cue": "Squeeze glutes HARD before lowering. 'Plank first, then push-up'. Imagine a string lifting your hips toward the ceiling.",
+        "cuePl": "Mocno ŚCIŚNIJ pośladki przed schodzeniem. 'Najpierw plank, potem pompka'. Wyobraź sobie sznurek unoszący biodra do sufitu."
+      },
+      {
+        "fault": "Box sliding back during the press",
+        "faultPl": "Box odsuwa się podczas wyciskania",
+        "cause": "Lightweight box on slick floor, no front-lip grip, pressing forward instead of straight down",
+        "causePl": "Lekki box na śliskiej podłodze, brak chwytu przedniej krawędzi, napieranie do przodu zamiast prosto w dół",
+        "cue": "Push the box against a wall, weight it down (plate on top inside), or place a non-slip mat under it. Grip the front lip with your fingers. Drive STRAIGHT DOWN into the box, not forward.",
+        "cuePl": "Dosuń box do ściany, dociąż go (talerz na/wewnątrz boxa) lub podłóż matę antypoślizgową. Chwyć przednią krawędź palcami. Napieraj PROSTO W DÓŁ na box, nie do przodu."
+      },
+      {
+        "fault": "Elbows flared 90° (T-shape)",
+        "faultPl": "Łokcie rozsunięte na 90° (kształt litery T)",
+        "cause": "Hands placed too wide, no awareness of elbow path, copying old-school 'wide push-up' style",
+        "causePl": "Dłonie za szeroko, brak świadomości toru łokci, kopiowanie starej szkoły 'szerokich pompek'",
+        "cue": "Tuck elbows to ~45° from torso. 'Hide your armpits'. Protects shoulders, recruits triceps and lower chest more efficiently.",
+        "cuePl": "Schowaj łokcie do ~45° od tułowia. 'Schowaj pachy'. Chroni barki, lepiej angażuje tricepsy i dolną klatkę."
+      },
+      {
+        "fault": "Partial range of motion (half push-up on the box)",
+        "faultPl": "Częściowy zakres ruchu (połowiczne pompki na boxie)",
+        "cause": "Lack of strength at full ROM, ego — counting reps that don't bring chest near the top of the box",
+        "causePl": "Brak siły w pełnym ROM, ego — liczenie powtórzeń, które nie dochodzą klatką blisko górnej powierzchni boxa",
+        "cue": "Chest must reach within a fist's height of the box top. If you can't — pick a HIGHER box, don't shorten the reps.",
+        "cuePl": "Klatka musi dojść na wysokość pięści od górnej powierzchni boxa. Jeśli nie dasz rady — wybierz WYŻSZY box, nie skracaj powtórzeń."
+      },
+      {
+        "fault": "Head poking forward / chin leading the descent",
+        "faultPl": "Głowa wysunięta do przodu / broda prowadzi schodzenie",
+        "cause": "Compensating for weak chest by stretching the neck forward, no chin tuck",
+        "causePl": "Kompensowanie słabej klatki przez wyciąganie szyi do przodu, brak schowanej brody",
+        "cue": "Eyes look at the front face of the box just ahead of hands. Chin slightly tucked. CHEST leads the rep, not the head.",
+        "cuePl": "Wzrok na przednią ścianę boxa tuż przed dłońmi. Broda lekko schowana. KLATKA prowadzi ruch, nie głowa."
+      }
+    ],
+    "breathing": "Inhale during descent, brace through the bottom, exhale during the press up. For higher-rep sets you can chain 2-3 reps on a single brace before re-breathing.",
+    "breathingPl": "Wdech podczas schodzenia, napięcie na dole, wydech podczas wyciskania. Przy seriach z większą liczbą powtórzeń możesz spiąć 2-3 powtórzenia na jednym napięciu przed kolejnym oddechem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use push-up handles on top of the box, dumbbells held vertically, or grip the front lip of the box (knuckles on top) to keep the wrist more neutral. Box incline already reduces wrist load vs floor push-ups but can still aggravate.",
+      "modificationPl": "Użyj uchwytów do pompek postawionych na boxie, hantli trzymanych pionowo lub złap przednią krawędź boxa (knykcie na górze), aby utrzymać bardziej neutralny nadgarstek. Incline na boxie i tak mniej obciąża nadgarstki niż pompki z podłogi, ale wciąż może drażnić.",
+      "alternative": "machine-chest-press"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Choose a TALLER box (less ROM, less load) and tuck elbows tighter (~30-45°). Avoid if pain in any position — switch to scapular push-ups or band press first.",
+      "modificationPl": "Wybierz WYŻSZY box (mniejszy ROM, mniejsze obciążenie) i mocniej schowaj łokcie (~30-45°). Unikaj, jeśli boli w jakiejkolwiek pozycji — zacznij od scapular push-ups lub band press.",
+      "alternative": "wall-push-up"
+    },
+    {
+      "condition": "lower_back_pain",
+      "severity": "caution",
+      "modification": "If you cannot hold a rigid plank diagonal — drop to knees on the floor with hands on the box (knee-incline-push-up on box) until core is stronger. Sagging hips = lumbar load.",
+      "modificationPl": "Jeśli nie utrzymujesz sztywnej skośnej planki — zejdź na kolana na podłodze z dłońmi na boxie (knee-incline-push-up na boxie) do czasu wzmocnienia brzucha. Opadające biodra = obciążenie lędźwi.",
+      "alternative": "wall-push-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "caution",
+      "modification": "Avoid aggressive lockout — stop just before full elbow extension. Reduce reps and use a higher box to lower load. Discontinue if sharp pain in the elbow.",
+      "modificationPl": "Unikaj agresywnego blokowania łokcia — zatrzymaj się tuż przed pełnym wyprostem. Zmniejsz powtórzenia i użyj wyższego boxa, by obniżyć obciążenie. Przerwij jeśli pojawia się ostry ból w łokciu.",
+      "alternative": "machine-chest-press"
+    }
+  ],
+
+  "typical_sets_reps": "3x10-15 (beginner hypertrophy/conditioning) | 3-4x8-12 ramping the box lower over weeks (progression) | AMRAP for endurance / CrossFit metcons",
+  "calories_per_kg_per_hour": 3.8,
+
+  "media": {
+    "primary": "incline-push-up-on-box.gif",
+    "frames_extracted": [
+      "frames/incline-push-up-on-box/frame_0_start.png",
+      "frames/incline-push-up-on-box/frame_1_early.png",
+      "frames/incline-push-up-on-box/frame_2_mid.png",
+      "frames/incline-push-up-on-box/frame_3_late.png",
+      "frames/incline-push-up-on-box/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "pectorals/incline-push-up-on-box"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Frame 0 (start): postać w pozycji wyjściowej — dłonie na górnej krawędzi sześciennego boxa (po prawej, wyżej), stopy na podłodze (po lewej, niżej), ramiona wyprostowane, ciało w prostej skośnej linii od stóp przez biodra do głowy. DŁONIE WYRAŹNIE WYŻEJ NIŻ STOPY — klasyczny incline na boxie plyo. Frame 2 (mid): pełne opuszczenie — klatka tuż nad górną powierzchnią boxa, łokcie zgięte i ułożone pod ~45° od tułowia, ciało utrzymane w skośnej linii prostej, bez opadania bioder. Frame 4 (end): powrót do pozycji wyjściowej (ghost-frame pokazuje fazę opadania nakładającą się na pozycję końcową, charakterystyczny artefakt animacji jahel). Anatomia: wyraźnie podświetlone dolna/mostkowa część pectoralis major, tricepsy i anterior delt — zgodne z biomechaniką incline push-up (mniejsze obciążenie barków, większy nacisk na dolną klatkę i tricepsy, bodyweight'owy odpowiednik decline bench press). Cube-shaped box (a nie ławka) różnicuje wariant od standardowego incline-push-up: typowo dostępny w boxach CrossFit, parkach kalistenicznych i home gymach. Wszystkie pola PL napisane od zera w polskim standardzie fitness. Klasyczna regresja pompki dla beginnerów — wyższy box = łatwiej, progresja przez stopniowe obniżanie wysokości aż do podłogi (push-up).",
+
+  "tags": ["bodyweight", "calisthenics", "upper_body", "horizontal_push", "chest", "lower_chest", "triceps", "home_workout", "plyo_box", "beginner_friendly", "push_up_regression", "crossfit_friendly"]
+}

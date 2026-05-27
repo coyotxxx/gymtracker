@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-deadlift",
+  "name": "Dumbbell Deadlift",
+  "namePl": "Martwy ciąg z hantlami",
+  "aliases": ["dumbbell deadlift", "db deadlift", "dumbbell conventional deadlift"],
+  "aliasesPl": ["martwy ciąg z hantlami", "deadlift z hantlami", "DB deadlift", "martwy ciąg hantlami"],
+
+  "description": "Hip hinge compound movement performed with a pair of dumbbells held at the sides of the body. The dumbbells travel along a vertical path next to the legs, allowing a slightly greater range of motion from the floor than a barbell (no plates to stop the descent — dumbbells can go below the level of the toes). Easier setup than a barbell deadlift: no bar path management, more freedom for the torso, accessible for beginners learning the hinge pattern. Excellent posterior-chain builder when barbells are unavailable or as accessory work to the main lift.",
+  "descriptionPl": "Ruch wielostawowy oparty o wzorzec hip hinge, wykonywany z parą hantli trzymanych po bokach ciała. Hantle poruszają się po torze pionowym obok nóg, co pozwala na nieco większy zakres ruchu od ziemi niż przy sztandze (brak talerzy zatrzymujących opuszczanie — hantle mogą zejść poniżej poziomu palców stóp). Łatwiejszy setup niż martwy ciąg ze sztangą: brak zarządzania torem gryfu, większa swoboda tułowia, przyjazne dla początkujących uczących się wzorca hinge. Doskonałe ćwiczenie budujące tylny łańcuch mięśniowy, gdy nie ma sztangi, lub jako akcesoryjne do głównego ciągu.",
+
+  "instructions": [
+    "Stand with feet shoulder-width apart, toes pointing forward or slightly out. Place two dumbbells on the floor next to the outside of each foot.",
+    "Hinge at the hips, pushing them back, then bend the knees to lower yourself toward the dumbbells. Keep the back flat — neutral spine.",
+    "Grip the dumbbells with a neutral grip (palms facing the body). Shoulders should be slightly in front of or directly over the dumbbell handles.",
+    "Set your position: chest up, shoulder blades pulled down and back, lats engaged. Take a big breath and brace your core.",
+    "Drive through the floor with your legs. As the dumbbells pass the knees, push the hips forward to lock out — full hip extension.",
+    "Stand tall with neutral spine and shoulders. Squeeze the glutes at the top. DO NOT lean back or hyperextend the lower back.",
+    "To lower: push the hips back first (hip hinge), then bend the knees. Keep the dumbbells close to the body, sliding next to the legs.",
+    "Touch the floor (or stop just short for continuous tension), then drive up for the next rep."
+  ],
+  "instructionsPl": [
+    "Stań w rozkroku na szerokość barków, palce stóp skierowane do przodu lub lekko na zewnątrz. Ustaw dwa hantle na ziemi po zewnętrznej stronie każdej stopy.",
+    "Zgnij w biodrach, wypychając je do tyłu, potem zegnij kolana, schodząc do hantli. Plecy płaskie — neutralny kręgosłup.",
+    "Chwyć hantle chwytem neutralnym (dłonie zwrócone do ciała). Barki powinny być nieco przed rączkami hantli lub bezpośrednio nad nimi.",
+    "Ustaw pozycję: klatka w górze, łopatki ściągnięte w dół i do tyłu, najszersze grzbietu napięte. Nabierz głęboki oddech i napnij brzuch.",
+    "Napieraj stopami w podłogę. Gdy hantle mijają kolana, wepchnij biodra do przodu do lock-out — pełen wyprost bioder.",
+    "Stań prosto z neutralnym kręgosłupem i barkami. Ściśnij pośladki na górze. NIE odchylaj się do tyłu, nie odginaj lędźwi.",
+    "Opuszczanie: najpierw wypchnij biodra do tyłu (hip hinge), potem zegnij kolana. Trzymaj hantle blisko ciała, sunąc obok nóg.",
+    "Dotknij podłogi (lub zatrzymaj się tuż nad nią dla ciągłego napięcia), potem napieraj w górę na kolejne powtórzenie."
+  ],
+
+  "classification": {
+    "movement_pattern": "hinge",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["glutes", "hamstrings", "erector_spinae"],
+    "secondary": ["quadriceps", "latissimus_dorsi", "trapezius", "forearms"],
+    "stabilizers": ["core", "rhomboids", "rectus_abdominis", "obliques"]
+  },
+
+  "muscle_intensity": {
+    "glutes": "P9",
+    "hamstrings": "P9",
+    "erector_spinae": "P9",
+    "quadriceps": "S7",
+    "latissimus_dorsi": "S6",
+    "trapezius": "S6",
+    "forearms": "S8",
+    "core": "S7"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["belt", "lifting_straps", "chalk", "lifting_platform"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-good-morning", "kettlebell-deadlift", "dumbbell-romanian-deadlift"],
+    "progression_to": ["barbell-deadlift", "trap-bar-deadlift", "deficit-dumbbell-deadlift", "single-leg-dumbbell-deadlift"],
+    "alternatives": ["kettlebell-deadlift", "trap-bar-deadlift", "barbell-deadlift", "dumbbell-romanian-deadlift"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Dumbbells next to the outside of the feet, handles aligned with mid-foot",
+      "Feet shoulder-width, toes forward or slightly out",
+      "Neutral grip — palms facing the body",
+      "Chest up, lats engaged, shoulders slightly in front of the handles",
+      "Brace hard — big breath into the belly before initiating the pull"
+    ],
+    "setup_cues_pl": [
+      "Hantle po zewnętrznej stronie stóp, rączki na linii środka stopy",
+      "Stopy na szerokość barków, palce do przodu lub lekko na zewnątrz",
+      "Chwyt neutralny — dłonie zwrócone do ciała",
+      "Klatka w górze, najszersze napięte, barki nieco przed rączkami",
+      "Mocne napięcie brzucha — głęboki wdech w brzuch przed startem ciągu"
+    ],
+    "execution_cues": [
+      "Push the floor away with your legs first",
+      "Keep dumbbells close to the body — slide them next to your shins and thighs",
+      "Hips and shoulders rise at the same rate (no early hip lift)",
+      "Lock out by squeezing glutes — DO NOT hyperextend the back",
+      "On descent: hips back FIRST, then knees bend"
+    ],
+    "execution_cues_pl": [
+      "Najpierw napieraj nogami w podłogę",
+      "Trzymaj hantle blisko ciała — sunie obok goleni i ud",
+      "Biodra i barki wstają w tym samym tempie (bez wcześniejszego unoszenia bioder)",
+      "Lock-out ściśnięciem pośladków — NIE odginaj pleców do tyłu",
+      "Opuszczanie: NAJPIERW biodra do tyłu, potem zginają się kolana"
+    ],
+    "common_faults": [
+      {
+        "fault": "Rounded lower back (lumbar flexion)",
+        "faultPl": "Zaokrąglone plecy lędźwiowe (zgięcie lędźwiowe)",
+        "cause": "Weak erectors, poor bracing, load too heavy, or trying to reach the floor with stiff hamstrings",
+        "causePl": "Słabe prostowniki, słabe napięcie brzucha, zbyt duży ciężar lub próba dosięgnięcia podłogi przy sztywnych dwugłowych ud",
+        "cue": "Reset position. Lats engaged, chest up. Reduce range of motion (deadlift from a low box) or reduce weight.",
+        "cuePl": "Wróć do pozycji. Najszersze napięte, klatka w górze. Skróć zakres ruchu (deadlift z niskiego boksu) lub zmniejsz ciężar."
+      },
+      {
+        "fault": "Dumbbells drift forward, away from the body",
+        "faultPl": "Hantle uciekają do przodu, oddalają się od ciała",
+        "cause": "Lats not engaged, weak upper back, or letting the shoulders roll forward",
+        "causePl": "Najszersze nie napięte, słabe górne plecy lub barki zwijają się do przodu",
+        "cue": "Engage lats — pull the dumbbells toward your body. Keep them sliding next to your legs the whole way.",
+        "cuePl": "Napnij najszersze — przyciągaj hantle do ciała. Niech sunie obok nóg przez cały ruch."
+      },
+      {
+        "fault": "Hips rise faster than shoulders ('stripper deadlift')",
+        "faultPl": "Biodra wstają szybciej niż barki ('stripper deadlift')",
+        "cause": "Weak quads relative to posterior chain, or starting with hips too low",
+        "causePl": "Słabe czworogłowe w stosunku do tylnego łańcucha, lub zbyt nisko biodra w starcie",
+        "cue": "Push through the legs more. Hips and shoulders rise together. Reset start position with hips slightly higher.",
+        "cuePl": "Mocniej napieraj nogami. Biodra i barki wstają razem. Zresetuj start z biodrami nieco wyżej."
+      },
+      {
+        "fault": "Hyperextension at lockout (leaning back)",
+        "faultPl": "Nadmierne odgięcie kręgosłupa w lock-out (odchylanie do tyłu)",
+        "cause": "Trying to 'finish strong', confusing hip extension with lumbar extension",
+        "causePl": "Próba 'mocnego dokończenia', mylenie wyprostu biodra z odgięciem lędźwi",
+        "cue": "Lock out is glutes-only. Stand tall, neutral pelvis. Ribs down, no leaning back.",
+        "cuePl": "Lock-out to TYLKO pośladki. Stań prosto, neutralna miednica. Żebra w dół, bez odchylania się."
+      },
+      {
+        "fault": "Asymmetric pull (one side higher than the other)",
+        "faultPl": "Asymetryczny ciąg (jedna strona wyżej niż druga)",
+        "cause": "Strength imbalance between sides — specific to dumbbells since each side moves independently",
+        "causePl": "Asymetria siły między stronami — specyficzne dla hantli, bo każda strona porusza się niezależnie",
+        "cue": "Slow down the rep. Watch in a mirror. Strengthen the weak side with unilateral work (single-arm DB RDL, lunges).",
+        "cuePl": "Zwolnij powtórzenie. Patrz w lustro. Wzmocnij słabszą stronę pracą jednostronną (DB RDL jednorącz, wykroki)."
+      }
+    ],
+    "breathing": "Big inhale at the top of the setup, brace (Valsalva), hold throughout the pull. Exhale at the top of the lockout. Re-brace before lowering. NEVER exhale during the concentric.",
+    "breathingPl": "Głęboki wdech na szczycie setup, napięcie (Valsalva), trzymaj przez cały ciąg. Wydech na szczycie lock-out. Ponownie napnij brzuch przed opuszczeniem. NIGDY wydech podczas fazy koncentrycznej."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Complete rest. Consult physiotherapist. Do not load the spine.",
+      "modificationPl": "Pełen odpoczynek. Konsultacja z fizjoterapeutą. Nie obciążaj kręgosłupa.",
+      "alternative": "kettlebell-deadlift"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Avoid loaded spinal flexion. Reduce range of motion — deadlift from a low box/blocks above the injury-provoking depth. Or switch to a trap bar (more upright torso).",
+      "modificationPl": "Unikaj obciążonej flexji kręgosłupa. Skróć zakres — deadlift z niskiego boksu/podstawek powyżej głębokości prowokującej kontuzję. Lub przejdź na trap bar (bardziej pionowy tułów).",
+      "alternative": "trap-bar-deadlift"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Reduce depth — stop at the point where impingement begins. Or switch to Romanian deadlift (shallower hip flexion).",
+      "modificationPl": "Skróć głębokość — zatrzymaj się w momencie gdy zaczyna się impingement. Lub przejdź na Romanian deadlift (mniejsze zgięcie biodra).",
+      "alternative": "dumbbell-romanian-deadlift"
+    },
+    {
+      "condition": "wrist_or_grip_injury",
+      "severity": "modify",
+      "modification": "Use lifting straps to bypass grip-dependent loading. Or reduce weight significantly until grip can handle the load pain-free.",
+      "modificationPl": "Użyj pasków by ominąć obciążenie zależne od chwytu. Lub mocno zmniejsz ciężar, aż chwyt udźwignie obciążenie bezboleśnie.",
+      "alternative": "trap-bar-deadlift"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 3-5x5-8 (strength) | 2-3x12-15 (endurance/conditioning)",
+  "calories_per_kg_per_hour": 6.0,
+
+  "media": {
+    "primary": "dumbbell-deadlift.gif",
+    "frames_extracted": [
+      "frames/dumbbell-deadlift/frame_0_start.png",
+      "frames/dumbbell-deadlift/frame_1_early.png",
+      "frames/dumbbell-deadlift/frame_2_mid.png",
+      "frames/dumbbell-deadlift/frame_3_late.png",
+      "frames/dumbbell-deadlift/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-deadlift"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek animacji. Frame 0/4: dolna pozycja — głęboki przysiad bioder, hantle po bokach stóp na ziemi, podświetlone pośladki/lower back/dwugłowe ud/czworogłowe — większy zakres ruchu od ziemi niż przy sztandze (hantle schodzą poniżej linii kolan/stóp, brak talerzy ograniczających głębokość). Frame 2: lockout — pełen wyprost stojąco, hantle przy bokach ud, podświetlone czworogłowe. Klasyfikacja: hinge (dominujący ruch ekstensji bioder), choć w dolnej pozycji jest więcej zgięcia kolan niż przy barbell deadlift z powodu większej głębokości. Equipment: dumbbells. Trudność 5 — łatwiejszy setup niż sztanga, ale wymaga koordynacji obu stron. Brak yuhonas_id — źródło tylko jahel. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["compound", "posterior_chain", "hip_hinge", "dumbbell", "home_gym", "beginner_friendly", "accessory", "strength_fundamental"]
+}

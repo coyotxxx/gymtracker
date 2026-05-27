@@ -1,0 +1,199 @@
+{
+  "id": "scapula-dips",
+  "name": "Scapula Dips",
+  "namePl": "Scapula dips (dipy łopatkowe)",
+  "aliases": ["scapular dips", "scap dips", "scapular depression dips", "scap depression on parallel bars", "scapular pull-downs in support"],
+  "aliasesPl": ["dipy łopatkowe", "depresja łopatek w podporze", "scapula depresje na poręczach", "dipy łopatkowe na poręczach", "drill łopatkowy do dipów"],
+
+  "description": "Isolation drill for scapular control performed in a straight-arm support hold on parallel bars (or on a bench/box with the hands beside the hips). The elbows stay locked throughout — the only movement comes from the shoulder girdle: the body sinks down as the scapulae elevate toward the ears, then is driven up as the scapulae depress and retract away from the ears. This trains the scapular depressors (lower and middle trapezius, serratus anterior) that build a stable shoulder shelf for full-range dips, push-ups and ring work. A foundational prerequisite before adding any elbow-bending dip volume, and a cornerstone movement in gymnastics-strength and calisthenics programs.",
+  "descriptionPl": "Izolowany drill kontroli łopatki wykonywany w podporze z prostymi ramionami na poręczach równoległych (lub na ławce/skrzyni z dłońmi obok bioder). Łokcie pozostają zablokowane przez cały ruch — pracuje wyłącznie obręcz barkowa: ciało opada w dół, gdy łopatki unoszą się w stronę uszu, po czym jest wypychane do góry, gdy łopatki schodzą i ściągają się od uszu. Ćwiczenie aktywuje depresory łopatki (dolny i środkowy czworoboczny, mięsień zębaty przedni), które budują stabilną podstawę barkową pod pełnozakresowe dipy, pompki i pracę na kółkach. Fundamentalny krok przed dodaniem objętości dipów z gięciem łokci oraz podstawowe ćwiczenie w programach gimnastycznej siły i kalisteniki.",
+
+  "instructions": [
+    "Grip the parallel bars with a neutral grip, hands directly under the shoulders, knuckles facing outward. (Alternative setup: sit on a flat bench, place the hands beside the hips with fingers pointing forward, lift the hips slightly off the bench.)",
+    "Press up into a straight-arm support: elbows fully locked, chest tall, ribs stacked over hips, glutes squeezed, ankles crossed (or legs straight and pressed together).",
+    "From this start the shoulders are pulled DOWN, away from the ears — that is the top position of the scapula dip (scapular depression).",
+    "Without bending the elbows even slightly, let the shoulders rise up toward the ears. The body sinks 5-10 cm — this is scapular elevation. Take 1-2 seconds.",
+    "Pause for a beat at the bottom (ears between the shoulders) without losing tightness in the bars.",
+    "Drive the scapulae back down: push the bars away from you and pull the shoulders away from the ears. The body rises 5-10 cm back up. Arms stay locked the entire time.",
+    "Hold the top position for 1 full second — actively squeezing the lower traps and feeling the chest stay open.",
+    "Repeat for 8-15 controlled reps. Stop the set the moment elbows start to bend or rhythm breaks down.",
+    "On the last rep, hold the depressed top position for 5-10 seconds as an isometric finisher (optional, very effective)."
+  ],
+  "instructionsPl": [
+    "Chwyć poręcze chwytem neutralnym, dłonie dokładnie pod barkami, knykcie na zewnątrz. (Wariant alternatywny: usiądź na ławce płaskiej, połóż dłonie obok bioder palcami do przodu, unieś biodra delikatnie nad ławkę.)",
+    "Wepchnij się do podporu z prostymi ramionami: łokcie w pełni zablokowane, klatka wysoko, żebra nad biodrami, pośladki napięte, kostki skrzyżowane (lub nogi proste i sklejone razem).",
+    "Z tej pozycji barki są ŚCIĄGNIĘTE w dół, z dala od uszu — to jest górna pozycja scapula dip (depresja łopatki).",
+    "Bez najmniejszego zgięcia łokci pozwól barkom unieść się w stronę uszu. Ciało opada 5-10 cm — to elewacja łopatki. Wykonaj w 1-2 sekundy.",
+    "Zatrzymaj się na moment na dole (uszy między barkami) bez utraty napięcia na poręczach.",
+    "Wepchnij łopatki z powrotem w dół: odepchnij poręcze od siebie i odciągnij barki od uszu. Ciało wraca 5-10 cm do góry. Ramiona pozostają zablokowane przez cały czas.",
+    "Zatrzymaj górną pozycję na pełną sekundę — aktywnie ściskając dolny trapez i czując otwartą klatkę.",
+    "Powtórz 8-15 kontrolowanych powtórzeń. Zakończ serię w momencie, gdy łokcie zaczynają się zginać lub rytm się załamuje.",
+    "Na ostatnim powtórzeniu utrzymaj górną zdepresjonowaną pozycję przez 5-10 sekund jako izometryczny finisher (opcjonalnie, bardzo skuteczne)."
+  ],
+
+  "classification": {
+    "movement_pattern": "scapular_depression",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["lower_trapezius", "serratus_anterior"],
+    "secondary": ["lower_pectoralis", "middle_trapezius", "rhomboids"],
+    "stabilizers": ["triceps", "rotator_cuff", "core", "rectus_abdominis", "lats", "forearms"]
+  },
+
+  "muscle_intensity": {
+    "lower_trapezius": "P10",
+    "serratus_anterior": "P9",
+    "lower_pectoralis": "S6",
+    "middle_trapezius": "S6",
+    "rhomboids": "S5",
+    "triceps": "S5",
+    "rotator_cuff": "S5",
+    "core": "S4",
+    "rectus_abdominis": "S3",
+    "lats": "T3",
+    "forearms": "T3"
+  },
+
+  "equipment": {
+    "required": ["parallel_bars"],
+    "optional": ["dip_belt", "bench", "parallettes", "wrist_wraps"]
+  },
+
+  "category": "calisthenics",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": [],
+    "progression_to": ["negative-dip", "assisted-triceps-dip-kneeling", "triceps-dip"],
+    "alternatives": ["scapular-pull-up", "serratus-push-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Lock the elbows — pretend the upper arms are glued to your ribs in one piece",
+      "Stack the ribs over the hips — no flared rib cage and no rounded mid-back",
+      "Glue the legs together, ankles crossed, glutes squeezed — no leg swing",
+      "Eyes look forward at the horizon, neck long, ears between the shoulders",
+      "Tighten the grip and screw the hands into the bars — wakes up the lats and rotator cuff"
+    ],
+    "setup_cues_pl": [
+      "Zablokuj łokcie — udawaj, że ramiona są jednym kawałkiem przyklejonym do żeber",
+      "Żebra nad biodrami — bez wyprysku żeber i bez zaokrąglonego górnego grzbietu",
+      "Sklej nogi razem, kostki skrzyżowane, pośladki napięte — żadnego machania nogami",
+      "Wzrok prosto na horyzont, szyja długa, uszy między barkami",
+      "Mocno zaciśnij chwyt i wkręć dłonie w poręcze — budzi to mięsień najszerszy i stożek rotatorów"
+    ],
+    "execution_cues": [
+      "Move from the shoulder blades, not the arms — elbows stay 100% locked",
+      "On the way down: let the shoulders ride up to the ears like a slow shrug",
+      "On the way up: push the floor away through the bars — shoulders DOWN, chest UP",
+      "At the top: feel the lower traps fire — try to put the shoulder blades into your back pockets",
+      "Range is 5-10 cm of vertical body travel — small, precise, controlled"
+    ],
+    "execution_cues_pl": [
+      "Ruch wychodzi z łopatek, nie z ramion — łokcie pozostają w 100% zablokowane",
+      "W drodze w dół: pozwól barkom unieść się do uszu jak powolny shrug",
+      "W drodze w górę: wciskaj podłogę przez poręcze — barki W DÓŁ, klatka W GÓRĘ",
+      "Na górze: poczuj jak włącza się dolny trapez — spróbuj schować łopatki do tylnych kieszeni spodni",
+      "Zakres to 5-10 cm pionowej wędrówki ciała — mały, precyzyjny, kontrolowany"
+    ],
+    "common_faults": [
+      {
+        "fault": "Elbows bending during the rep (turning it into a partial dip)",
+        "faultPl": "Zginanie łokci w trakcie powtórzenia (przekształcenie w częściowy dip)",
+        "cause": "Treating the exercise like a small dip rather than a pure scapular drill. The triceps take over and the lower traps never learn to fire.",
+        "causePl": "Traktowanie ćwiczenia jak małego dipa zamiast czystego drillu łopatkowego. Tricepsy przejmują pracę i dolny trapez nigdy nie uczy się aktywować.",
+        "cue": "Lock the elbows hard and pretend the arms are wooden — only the shoulder blades move. If you can't isolate, do it on a bench with hips slightly lifted.",
+        "cuePl": "Mocno zablokuj łokcie i udawaj, że ramiona są z drewna — ruszają się tylko łopatki. Jeśli nie potrafisz wyizolować, rób na ławce z lekko uniesionymi biodrami."
+      },
+      {
+        "fault": "No real range of motion (just holding the support)",
+        "faultPl": "Brak realnego zakresu ruchu (samo trzymanie się w podporze)",
+        "cause": "Tight or weak scapular stabilizers, plus no awareness of what scapular elevation vs depression feels like. The body barely moves.",
+        "causePl": "Napięte lub słabe stabilizatory łopatki oraz brak świadomości, jak czuje się elewacja vs depresja łopatek. Ciało prawie się nie rusza.",
+        "cue": "Exaggerate it: at the bottom let the shoulders FULLY shrug up toward the ears, at the top FULLY pull them away. You should see clear 5-10 cm of body travel.",
+        "cuePl": "Przesadź z ruchem: na dole pozwól barkom CAŁKOWICIE wjechać w stronę uszu, na górze CAŁKOWICIE odciągnij je. Powinna być widoczna 5-10 cm wędrówka ciała."
+      },
+      {
+        "fault": "Rib flare and lumbar hyperextension at the top",
+        "faultPl": "Wyprysk żeber i nadmierne wygięcie lędźwi na górze",
+        "cause": "Compensating by arching the lower back to push the chest up instead of using the scapular depressors. Loads the spine instead of the traps.",
+        "causePl": "Kompensacja przez wygięcie dolnego odcinka pleców, żeby wypchnąć klatkę zamiast użyć depresorów łopatki. Obciąża kręgosłup zamiast trapezów.",
+        "cue": "Ribs down, glutes on, exhale slightly at the top. The chest rises because the shoulders are dropping, not because the lower back is bending.",
+        "cuePl": "Żebra w dół, pośladki napięte, lekki wydech na górze. Klatka unosi się dlatego, że barki schodzą, a nie dlatego, że gnie się lędźwie."
+      },
+      {
+        "fault": "Shoulders rolling forward at the bottom",
+        "faultPl": "Barki wjeżdżające do przodu na dole",
+        "cause": "Letting the chest cave and the humeral head slide anteriorly when the scapulae elevate. Loads the front of the shoulder joint instead of stretching the lower traps.",
+        "causePl": "Pozwalanie, by klatka zapadała się, a głowa kości ramiennej wjeżdżała do przodu, gdy łopatki się unoszą. Obciąża przód barku zamiast rozciągać dolny trapez.",
+        "cue": "Even at the bottom keep the chest open and proud — let the shoulders go UP, never FORWARD. If they roll forward, shorten the range.",
+        "cuePl": "Nawet na dole trzymaj klatkę otwartą i dumnie wyprężoną — pozwól barkom iść W GÓRĘ, nigdy DO PRZODU. Jeśli wjeżdżają do przodu, skróć zakres."
+      },
+      {
+        "fault": "Rushing the reps / no top hold",
+        "faultPl": "Pośpieszne powtórzenia / brak przytrzymania na górze",
+        "cause": "Bouncing between elevation and depression without a true contraction. The lower traps need time under tension to learn — a fast rep teaches nothing.",
+        "causePl": "Odbijanie między elewacją a depresją bez prawdziwego skurczu. Dolny trapez potrzebuje czasu pod napięciem, żeby się uczyć — szybkie powtórzenie nic nie wnosi.",
+        "cue": "Tempo: 2 seconds down, 1 second pause at the bottom, 2 seconds up, 1 second squeeze at the top. The pauses are the whole exercise.",
+        "cuePl": "Tempo: 2 sekundy w dół, 1 sekunda pauzy na dole, 2 sekundy w górę, 1 sekunda ściśnięcia na górze. Pauzy to całe ćwiczenie."
+      }
+    ],
+    "breathing": "Inhale as the body sinks (scapulae elevate). Exhale through the push as the scapulae depress and the body rises. Keep the breath light and continuous — no Valsalva needed, the load is low.",
+    "breathingPl": "Wdech, gdy ciało schodzi w dół (łopatki się unoszą). Wydech przez wypchnięcie, gdy łopatki schodzą w dół i ciało się unosi. Oddech lekki i ciągły — Valsalva niepotrzebna, obciążenie jest niewielkie."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_shoulder_pain",
+      "severity": "modify",
+      "modification": "Acute pain in the bottom (elevated) position usually signals impingement or labral irritation. Reduce range to the pain-free zone only, or perform on a bench instead of full hang on bars.",
+      "modificationPl": "Ostry ból w pozycji dolnej (elewacja) zwykle sygnalizuje konflikt podbarkowy lub podrażnienie obrąbka. Ogranicz zakres tylko do strefy bezbólowej lub wykonuj na ławce zamiast pełnego zwisu na poręczach.",
+      "alternative": "scapular-pull-up"
+    },
+    {
+      "condition": "ac_joint_separation",
+      "severity": "modify",
+      "modification": "End-range scapular elevation and depression can stress the AC joint. Work in the middle 50% of the range only and avoid the deep shrugged bottom position.",
+      "modificationPl": "Skrajna elewacja i depresja łopatki mogą obciążać staw barkowo-obojczykowy. Pracuj tylko w środkowych 50% zakresu i unikaj głębokiej, wyszrukowanej pozycji dolnej.",
+      "alternative": "serratus-push-up"
+    },
+    {
+      "condition": "wrist_injury",
+      "severity": "modify",
+      "modification": "Straight-arm support on fixed bars locks the wrist in extension. Use wrist wraps or switch to parallettes/bench setup that lets the wrist sit in neutral.",
+      "modificationPl": "Podpór z prostymi ramionami na sztywnych poręczach blokuje nadgarstek w wyproście. Użyj opasek nadgarstkowych lub przejdź na parallettes/ławkę, gdzie nadgarstek pozostaje w pozycji neutralnej.",
+      "alternative": "scapular-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3x8-15 (skill/activation work) | 2-3x15-20 (endurance) | 3x 5-10s top isometric hold (lower-trap recruitment) | 2 minuty AMRAP jako warm-up przed dipami",
+
+  "media": {
+    "primary": "scapula-dips.gif",
+    "frames_extracted": [
+      "frames/scapula-dips/frame_0_start.png",
+      "frames/scapula-dips/frame_1_early.png",
+      "frames/scapula-dips/frame_2_mid.png",
+      "frames/scapula-dips/frame_3_late.png",
+      "frames/scapula-dips/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "traps/scapula-dips"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel (frame 0/1/2/3/4). UWAGA: GIF jahel pokazuje wariant na ŁAWCE (nie na poręczach) — postać siedzi na płaskiej ławce z dłońmi obok bioder na ławce, biodra lekko uniesione, nogi zgięte z stopami na podłodze. Klatka 0 i 4 (start/end): pozycja górna z barkami ściągniętymi w dół, dolny trapez i okolica łopatek wyraźnie zaktywowana (anatomicznie podświetlone na czerwono: górny trapez/szyja oraz dolny trapez/rhomboids w okolicy łopatek). Klatka 1, 2, 3 (mid): subtelna depresja barków — głowa nieznacznie wyższa względem barków, łokcie POZOSTAJĄ proste przez cały ruch (potwierdzone w każdej klatce). Ruch jest mały (5-10 cm wędrówki ciała), wyizolowany do obręczy barkowej. Mimo że źródło pokazuje wariant ławkowy, kanoniczny opis pokrywa OBIE wersje: parallel bars (klasyczny calisthenics drill — wisisz w podporze, ciało zwisa swobodnie, większe rozciągnięcie) ORAZ bench (alternatywa beginner-friendly, mniejszy zakres, mniejsze obciążenie — to właśnie pokazuje GIF). Oba treningowe akcenty są identyczne: lower trapezius + serratus anterior, scapular depression, izolacja, łokcie zablokowane. Klasyfikacja: mechanic=isolation (jeden staw — łopatka), plane=sagittal (depresja w płaszczyźnie strzałkowej), force=push (wypycha ciało od podłoża/poręczy), bilateral, closed kinetic chain, beginner level (3/10 difficulty — prerekwizyt do dipów, nie wymaga dużej siły). Wszystkie pola PL pisane od zera przez Claude — standardowa polska terminologia kalisteniki/gimnastyki (łopatka, depresja, elewacja, podpór, poręcze, knykcie, izometryczny, finisher, drill łopatkowy). Brak tłumaczeń maszynowych.",
+
+  "tags": ["calisthenics", "bodyweight", "parallel_bars", "bench", "scapular_control", "lower_trapezius", "serratus_anterior", "shoulder_health", "prehab", "dip_prerequisite", "beginner", "isolation", "skill_work", "activation"]
+}

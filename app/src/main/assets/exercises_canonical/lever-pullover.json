@@ -1,0 +1,195 @@
+{
+  "id": "lever-pullover",
+  "name": "Lever Pullover",
+  "namePl": "Pullover w maszynie",
+  "aliases": ["machine pullover", "nautilus pullover", "plate-loaded pullover machine", "seated pullover machine"],
+  "aliasesPl": ["pullover na maszynie", "pullover Nautilus", "pullover w maszynie dźwigniowej", "pullover siedząc w maszynie"],
+
+  "description": "A seated, machine-based isolation for the latissimus dorsi performed on a dedicated lever (plate-loaded or selectorised) pullover machine such as the classic Nautilus design. The lifter sits upright with the torso pressed against a back pad, fastens a lap restraint, and places the upper arms or elbows against padded levers positioned overhead. From that overhead-stretched position the arms drive the lever downward and forward in a smooth sagittal arc until the elbows finish near the ribs, then return overhead under control. Because the machine fixes the elbow angle and removes the need for grip strength, the line of pull stays on the lats from a deep stretch all the way through full shortening — making it one of the cleanest direct-lat isolation exercises available.",
+  "descriptionPl": "Siedząca, maszynowa izolacja mięśnia najszerszego grzbietu wykonywana w dedykowanej dźwigniowej maszynie do pulloveru (talerzowej lub stosowej), takiej jak klasyczna konstrukcja Nautilus. Ćwiczący siedzi prosto z tułowiem opartym o oparcie, zapina pas biodrowy i opiera ramiona lub łokcie o wyściełane dźwignie ustawione nad głową. Z tej rozciągniętej pozycji nad głową ramiona popychają dźwignię w dół i do przodu płynnym łukiem w płaszczyźnie strzałkowej, aż łokcie kończą ruch w okolicy żeber, po czym wracają nad głowę w pełnej kontroli. Ponieważ maszyna ustala kąt łokcia i eliminuje konieczność trzymania ciężaru w dłoni, linia oporu pozostaje na najszerszych od pełnego rozciągnięcia aż do pełnego skrócenia — co czyni to ćwiczenie jedną z najczystszych dostępnych bezpośrednich izolacji na lats.",
+
+  "instructions": [
+    "Adjust the seat so that when you sit upright with your back flat against the pad, the lever pads sit just above your elbows when your arms are raised overhead. The axis of the machine should align with your shoulder joints.",
+    "Fasten the lap belt or knee restraint snugly so your hips stay anchored — without it, you will lift the seat instead of moving the lever.",
+    "Place your upper arms or elbows against the padded levers. Most machines also have light handles in front — grip them softly with relaxed wrists; do not pull with the hands.",
+    "Set the start position: arms overhead, elbows bent to whatever angle the pads dictate (usually 90-100 degrees), shoulder blades depressed, ribs stacked, chest tall.",
+    "Take a breath and drive the elbows down and forward in a smooth arc. Think 'elbows toward the front pockets', not 'hands pull the handle'.",
+    "Finish the concentric when the elbows are roughly alongside the ribs. Squeeze the lats for a half-count.",
+    "Reverse the arc slowly back overhead. Control the return — do not let the weight stack throw your arms back into the stretched position.",
+    "Repeat for the prescribed reps. Keep the torso fully against the pad throughout; if you find yourself leaning into the rep, lower the load."
+  ],
+  "instructionsPl": [
+    "Wyreguluj siedzisko tak, aby gdy siedzisz prosto z plecami opartymi o oparcie, padki dźwigni znajdowały się tuż nad twoimi łokciami przy ramionach uniesionych nad głową. Oś maszyny powinna pokrywać się ze stawem barkowym.",
+    "Zapnij pas biodrowy lub blokadę kolan tak, aby biodra były unieruchomione — bez tego będziesz unosił siedzenie zamiast ruszać dźwignią.",
+    "Połóż ramiona lub łokcie na wyściełanych dźwigniach. Większość maszyn ma też lekkie uchwyty z przodu — trzymaj je luźno, z rozluźnionymi nadgarstkami, nie ciągnij dłońmi.",
+    "Ustaw pozycję wyjściową: ramiona nad głową, łokcie ugięte pod kątem narzuconym przez padki (zwykle 90-100 stopni), łopatki ściągnięte w dół, żebra ułożone, klatka wypchnięta.",
+    "Wdech i prowadź łokcie w dół i do przodu płynnym łukiem. Myśl 'łokcie w kierunku przednich kieszeni', nie 'dłonie ciągną uchwyt'.",
+    "Zakończ fazę koncentryczną gdy łokcie są mniej więcej przy żebrach. Spnij najszersze grzbietu na pół sekundy.",
+    "Odwróć łuk powoli z powrotem nad głowę. Kontroluj powrót — nie pozwól, by stos rzucił twoje ramiona w pozycję rozciągniętą.",
+    "Powtarzaj zgodnie z założeniami. Tułów musi pozostać całkowicie oparty o oparcie; jeśli zaczynasz pochylać się w powtórzenie — zmniejsz ciężar."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_pull",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi"],
+    "secondary": ["pectoralis_major", "serratus_anterior", "teres_major"],
+    "stabilizers": ["triceps_brachii_long_head", "posterior_deltoid", "core", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P9",
+    "pectoralis_major": "S6",
+    "serratus_anterior": "S6",
+    "teres_major": "S6",
+    "triceps_brachii_long_head": "T3",
+    "posterior_deltoid": "T3",
+    "core": "T3",
+    "rhomboids": "T3"
+  },
+
+  "equipment": {
+    "required": ["pullover_machine"],
+    "optional": ["lifting_straps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 3,
+    "prerequisites": ["lat-pulldown"],
+    "progression_to": ["dumbbell-pullover", "barbell-pullover", "cable-pullover"],
+    "alternatives": ["cable-pullover", "straight-arm-pulldown", "dumbbell-pullover", "lat-pulldown"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Seat height so the machine axis matches your shoulder joint",
+      "Hips strapped down — back flat against the pad the whole set",
+      "Elbows on the pads, hands relaxed on the front handles",
+      "Ribs stacked, light brace, chest tall",
+      "Start with arms overhead in the deepest comfortable stretch"
+    ],
+    "setup_cues_pl": [
+      "Wysokość siedziska taka, by oś maszyny pokrywała się ze stawem barkowym",
+      "Biodra zapięte pasem — plecy płasko na oparciu przez całą serię",
+      "Łokcie na padkach, dłonie luźno na przednich uchwytach",
+      "Żebra ułożone, lekkie napięcie brzucha, klatka wypchnięta",
+      "Start z ramionami nad głową w najgłębszym komfortowym rozciągnięciu"
+    ],
+    "execution_cues": [
+      "Drive the elbows down and forward, not the hands",
+      "Smooth arc — no jerking out of the stretch",
+      "Finish with elbows by the ribs and a hard lat squeeze",
+      "Resist the eccentric — three seconds back overhead",
+      "Keep the back glued to the pad — no torso lean"
+    ],
+    "execution_cues_pl": [
+      "Prowadź łokcie w dół i do przodu, nie dłonie",
+      "Płynny łuk — bez szarpnięcia z pozycji rozciągniętej",
+      "Zakończ z łokciami przy żebrach i mocnym spięciem najszerszych",
+      "Hamuj fazę negatywną — trzy sekundy w drodze nad głowę",
+      "Plecy przyklejone do oparcia — bez pochylania tułowia"
+    ],
+    "common_faults": [
+      {
+        "fault": "Pulling with the hands instead of driving with the elbows",
+        "faultPl": "Ciągnięcie dłońmi zamiast prowadzenia łokciami",
+        "cause": "Habit from cable and dumbbell work — turns the lift into a partial triceps extension and removes load from the lats",
+        "causePl": "Nawyk z wyciągów i hantli — zamienia ruch w częściowy wyprost tricepsa i zdejmuje obciążenie z najszerszych",
+        "cue": "Open the hands halfway through a set as a test. If you can't keep moving the lever — the lats weren't doing the work.",
+        "cuePl": "W połowie serii spróbuj rozluźnić dłonie. Jeśli dźwignia przestaje się ruszać — najszersze nie pracowały."
+      },
+      {
+        "fault": "Leaning the torso forward to muscle the lever down",
+        "faultPl": "Pochylanie tułowia do przodu, by 'dociągnąć' dźwignię w dół",
+        "cause": "Weight too heavy or hips not strapped in — the back leaves the pad and the lats lose mechanical advantage",
+        "causePl": "Zbyt duży ciężar lub niezapięte biodra — plecy odrywają się od oparcia i najszersze tracą mechaniczną przewagę",
+        "cue": "Tighten the lap belt. Lower the weight. The back of your head should stay in contact with the pad the entire set.",
+        "cuePl": "Dociśnij pas biodrowy. Zmniejsz ciężar. Tył głowy ma pozostać w kontakcie z oparciem przez całą serię."
+      },
+      {
+        "fault": "Cutting the range short at the top — no overhead stretch",
+        "faultPl": "Skracanie zakresu na górze — brak rozciągnięcia nad głową",
+        "cause": "Avoiding the stretched position because it feels weakest — sacrifices the main benefit of the machine",
+        "causePl": "Unikanie pozycji rozciągniętej jako 'najsłabszej' — niweczy główną zaletę maszyny",
+        "cue": "Let the lever take your arms all the way back overhead under control. The stretch is the point.",
+        "cuePl": "Pozwól dźwigni odprowadzić ramiona w pełni nad głowę pod kontrolą. Rozciągnięcie to sedno ćwiczenia."
+      },
+      {
+        "fault": "Bouncing out of the stretched position",
+        "faultPl": "Odbijanie z pozycji rozciągniętej",
+        "cause": "Using the elastic recoil of the chest and shoulder tissues to start the concentric — high injury risk for the shoulder capsule",
+        "causePl": "Wykorzystanie elastycznego odbicia tkanek klatki i barków do startu fazy koncentrycznej — wysokie ryzyko urazu torebki stawu barkowego",
+        "cue": "Pause one second at the top of the stretch. Start the pull from a dead, controlled position.",
+        "cuePl": "Sekunda pauzy w pełnym rozciągnięciu. Startuj fazę koncentryczną z martwej, kontrolowanej pozycji."
+      },
+      {
+        "fault": "Shrugging the shoulders up toward the ears during the pull",
+        "faultPl": "Wzruszanie barków w kierunku uszu podczas przyciągania",
+        "cause": "Upper traps and elevators take over when the lats are weak or the load is too heavy",
+        "causePl": "Górne czworoboczne i mięśnie unoszące przejmują pracę gdy najszersze są słabe lub ciężar zbyt duży",
+        "cue": "Pull the shoulder blades down toward the back pockets before every rep and keep them there.",
+        "cuePl": "Ściągaj łopatki w dół, w kierunku tylnych kieszeni, przed każdym powtórzeniem i utrzymuj tę pozycję."
+      }
+    ],
+    "breathing": "Inhale at the top as the lever travels back overhead and the rib cage expands — the deep stretch is the moment to fill the lungs. Exhale through the concentric pull as the elbows drive down to the ribs. Keep a light core brace throughout, but do not Valsalva; the upright, fully supported position makes this one of the lowest-risk pullover variants for blood pressure.",
+    "breathingPl": "Wdech na górze, gdy dźwignia odprowadza ramiona nad głowę a klatka piersiowa rozszerza się — głębokie rozciągnięcie to moment, by napełnić płuca. Wydech podczas przyciągania koncentrycznego, gdy łokcie schodzą do żeber. Utrzymuj lekkie napięcie brzucha przez cały ruch, ale unikaj manewru Valsalvy; pozycja siedząca z pełnym podparciem czyni ten wariant pulloveru jednym z najbezpieczniejszych pod kątem ciśnienia krwi."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_or_labral_pathology",
+      "severity": "modify",
+      "modification": "The overhead-stretched start compresses the subacromial space and stresses the labrum. Limit the top range to a pain-free arc, lower the load, and prefer a cable pullover where the start position can be set lower.",
+      "modificationPl": "Pozycja startowa z ramionami nad głową kompresuje przestrzeń podbarkową i obciąża obrąbek. Ogranicz górny zakres do bezbolesnego łuku, zmniejsz ciężar i wybierz pullover z wyciągu, gdzie pozycję wyjściową można ustawić niżej.",
+      "alternative": "cable-pullover"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_lumbar_instability",
+      "severity": "caution",
+      "modification": "Although the seat supports the back, the overhead stretch still pulls the rib cage and can drag the lumbar spine into extension. Tighten the lap belt, brace the core, and shorten the top ROM if symptomatic.",
+      "modificationPl": "Mimo że siedzisko podpiera plecy, rozciągnięcie nad głową ciągnie klatkę piersiową i może przeciągnąć odcinek lędźwiowy w wyprost. Dociśnij pas biodrowy, napnij brzuch i skróć górny zakres ruchu w razie objawów.",
+      "alternative": "straight-arm-pulldown"
+    },
+    {
+      "condition": "elbow_triceps_tendinopathy",
+      "severity": "modify",
+      "modification": "The long head of the triceps is loaded in the stretched overhead position. Reduce the weight, shorten the top range, and avoid heavy eccentrics until symptoms resolve.",
+      "modificationPl": "Głowa długa tricepsa jest obciążona w rozciągniętej pozycji nad głową. Zmniejsz ciężar, skróć górny zakres ruchu i unikaj ciężkich faz negatywnych aż objawy ustąpią.",
+      "alternative": "lat-pulldown"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x10-15 (hypertrophy, primary use) | 3x12-20 (metabolic/finisher) | 3x8-10 (strength, controlled tempo)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "lever-pullover.gif",
+    "frames_extracted": [
+      "frames/lever-pullover/frame_0_start.png",
+      "frames/lever-pullover/frame_1_early.png",
+      "frames/lever-pullover/frame_2_mid.png",
+      "frames/lever-pullover/frame_3_late.png",
+      "frames/lever-pullover/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/lever-pullover"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25",
+  "verification_notes": "Obejrzałem klatki 0, 2 i 4 z GIFa jahel. Frame 0 (start): ćwiczący siedzi prosto w maszynie dźwigniowej z pełnym oparciem pleców i blokadą kolan/bioder, ramiona uniesione nad głową, łokcie oparte o padki, dłonie luźno na przednich uchwytach — widoczna pełna pozycja rozciągnięta z mięśniem najszerszym grzbietu (lat) wyraźnie zaznaczonym na czerwono jako pracujący. Frame 2 (mid/dolna pozycja koncentryczna): łokcie zjechały w dół i do przodu po łuku, ramiona są przy klatce, padki znajdują się na wysokości żeber, mięsień piersiowy (sternal) podświetlony jako współpracujący w fazie skróconej. Frame 4: powrót do pozycji wyjściowej nad głową — symetryczny do frame 0. Maszyna to klasyczna konstrukcja Nautilus/dźwigniowa pullover machine: oś przy barku, dwa padki nad łokciami, lekkie uchwyty z przodu, talerze na bocznych ramionach. Mechanic=isolation (jedna oś — bark, łokieć zablokowany kątem padki), plane=sagittal, force=pull (skrócenie wektora barku, addukcja/wyprost w stawie barkowym), bilateral, seated. Primary mover jednoznacznie latissimus_dorsi (P9). Pectoralis_major (sternal) i serratus_anterior dodane jako secondary — widoczne pracujące na frame 2, biomechanika potwierdza (addukcja+protrakcja). Teres_major jako synergista lat. Triceps long head tylko stabilizator (kąt łokcia stały). Wszystkie pola PL napisane od zera (description, instructions, cues, faults, contraindications). Klasyfikacja zmieniona vs dumbbell-pullover: tam mechanic=compound (zaangażowanie pecs równe lats), tu mechanic=isolation (czysty wektor lats z fiksacją łokcia). Plik GIF skopiowany do canonical/media/lever-pullover.gif.",
+
+  "tags": ["bodybuilding", "back", "lats", "isolation", "machine", "lever", "nautilus", "seated", "stretch", "upper_body", "beginner_friendly"]
+}

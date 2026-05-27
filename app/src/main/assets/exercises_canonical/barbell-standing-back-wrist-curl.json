@@ -1,0 +1,201 @@
+{
+  "id": "barbell-standing-back-wrist-curl",
+  "name": "Barbell Standing Back Wrist Curl",
+  "namePl": "Wrist curl ze sztangą za plecami w staniu",
+  "aliases": ["behind the back barbell wrist curl", "barbell behind back wrist curl", "standing barbell wrist curl behind back", "hammer strength wrist curl"],
+  "aliasesPl": ["uginanie nadgarstków ze sztangą za plecami", "wrist curl za plecami stojąc", "uginanie nadgarstków za plecami sztangą", "curl nadgarstkowy zza pleców"],
+
+  "description": "Forearm-flexor isolation exercise performed standing with a barbell held behind the hips in a pronated grip (knuckles facing rearward). The lifter flexes the wrists to roll the bar up toward the forearms while the elbows stay locked in full extension. Classic Hammer Strength / old-school bodybuilding finisher prized for hitting the wrist flexors at a unique angle that frontal wrist curls cannot reach.",
+  "descriptionPl": "Ćwiczenie izolowane na zginacze nadgarstka wykonywane stojąc, ze sztangą trzymaną za biodrami nachwytem górnym (knykcie skierowane do tyłu). Trenujący ugina nadgarstki, rolując sztangę w stronę przedramion, podczas gdy łokcie pozostają zablokowane w pełnym wyproście. Klasyczne finisherowe ćwiczenie ze starej szkoły kulturystyki (Hammer Strength), cenione za to, że atakuje zginacze nadgarstka pod unikalnym kątem, którego nie da się uzyskać klasycznym wrist curlem z przodu.",
+
+  "instructions": [
+    "Stand tall in front of a barbell set at hip height on a rack, or pick the bar up from the floor and step forward into position.",
+    "Take a shoulder-width pronated (overhand) grip on the bar with the bar resting behind your glutes and the backs of your hands facing rearward.",
+    "Let the bar hang at full arm extension behind your hips. Elbows stay locked straight and pinned next to your sides — they do NOT move during the set.",
+    "Brace your core, keep your chest up, shoulders set back and down. Look straight ahead.",
+    "Open your fingers slightly to let the bar roll down to the base of your fingers — this is the stretched start position.",
+    "Curl the bar upward and rearward by flexing only at the wrists. The bar should roll from fingertips into the palm and then up toward the forearms.",
+    "Squeeze the wrist flexors hard at the top of the contraction. Pause for one second.",
+    "Lower the bar slowly under control over 2-3 seconds back to the stretched bottom position. Inhale on the descent.",
+    "Avoid bending the elbows, leaning forward, or letting the shoulders roll. The only joint that moves is the wrist."
+  ],
+  "instructionsPl": [
+    "Stań prosto przed sztangą ustawioną na wysokości bioder na stojakach, lub podnieś sztangę z podłogi i ustaw się we właściwej pozycji.",
+    "Złap sztangę nachwytem górnym na szerokość barków — sztanga ma spoczywać za pośladkami, a grzbiety dłoni są skierowane do tyłu.",
+    "Pozwól sztandze wisieć na w pełni wyprostowanych ramionach za biodrami. Łokcie pozostają wyprostowane i przyklejone do boków tułowia — przez cały ruch NIE poruszają się.",
+    "Napnij brzuch, klatka w górze, barki ściągnięte w tył i w dół. Patrz prosto przed siebie.",
+    "Rozluźnij lekko palce i pozwól sztandze stoczyć się do podstawy palców — to wydłużona pozycja startowa.",
+    "Uginaj sztangę do góry i lekko do tyłu, pracując wyłącznie nadgarstkami. Sztanga ma się przetoczyć od opuszków palców do wnętrza dłoni, a potem do góry w stronę przedramion.",
+    "Mocno spinaj zginacze nadgarstka w górnej pozycji. Zatrzymaj się na sekundę.",
+    "Opuszczaj sztangę wolno i kontrolowanie przez 2-3 sekundy do dolnej, wydłużonej pozycji. Wdech podczas opuszczania.",
+    "Unikaj zginania łokci, pochylania się do przodu i rotowania barków. Jedynym ruchomym stawem jest nadgarstek."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_curl",
+    "force": "pull",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["forearm_flexors"],
+    "secondary": ["brachioradialis"],
+    "stabilizers": ["biceps_brachii", "core", "upper_trapezius", "rhomboids"]
+  },
+
+  "muscle_intensity": {
+    "forearm_flexors": "P10",
+    "brachioradialis": "S5",
+    "biceps_brachii": "T2",
+    "core": "T2",
+    "upper_trapezius": "T1",
+    "rhomboids": "T1"
+  },
+
+  "equipment": {
+    "required": ["barbell"],
+    "optional": ["weight_plates", "collars", "power_rack"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["barbell-wrist-curl", "dumbbell-wrist-curl"],
+    "progression_to": [],
+    "alternatives": ["barbell-wrist-curl", "dumbbell-wrist-curl", "cable-wrist-curl", "reverse-wrist-curl"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar behind your hips, pronated shoulder-width grip",
+      "Elbows locked straight, pinned to your sides",
+      "Chest up, shoulders back and down",
+      "Brace core, look straight ahead",
+      "Let the bar roll to your fingertips at the bottom"
+    ],
+    "setup_cues_pl": [
+      "Sztanga za biodrami, chwyt nachwytem na szerokość barków",
+      "Łokcie zablokowane w wyproście, przyklejone do boków",
+      "Klatka w górze, barki ściągnięte w tył i w dół",
+      "Napięty brzuch, wzrok prosto przed siebie",
+      "Pozwól sztandze stoczyć się do opuszków palców na dole"
+    ],
+    "execution_cues": [
+      "Only the wrists move — elbows stay completely still",
+      "Roll the bar from fingertips into palms, then up",
+      "Squeeze the wrist flexors hard at the top",
+      "Lower slowly over 2-3 seconds, feel the stretch",
+      "Stand tall — do not lean forward or shrug"
+    ],
+    "execution_cues_pl": [
+      "Pracują tylko nadgarstki — łokcie zupełnie nieruchome",
+      "Przetaczaj sztangę z opuszków palców do dłoni, a potem do góry",
+      "Mocno spinaj zginacze nadgarstka w górnej pozycji",
+      "Opuszczaj wolno przez 2-3 sekundy, czuj rozciąganie",
+      "Stój prosto — nie pochylaj się ani nie unoś barków"
+    ],
+    "common_faults": [
+      {
+        "fault": "Bending the elbows to assist the curl",
+        "faultPl": "Zginanie łokci, by pomóc w uginaniu",
+        "cause": "Load too heavy or fatigued forearms recruiting biceps",
+        "causePl": "Zbyt duży ciężar lub zmęczone przedramiona, które rekrutują biceps",
+        "cue": "Lock your elbows straight. If you cannot keep them extended, reduce the weight.",
+        "cuePl": "Trzymaj łokcie wyprostowane. Jeśli nie potrafisz, zmniejsz ciężar."
+      },
+      {
+        "fault": "Leaning forward to gain leverage",
+        "faultPl": "Pochylanie się do przodu, aby uzyskać dźwignię",
+        "cause": "Trying to roll the bar higher using hip flexion instead of wrist flexion",
+        "causePl": "Próba uniesienia sztangi wyżej poprzez zginanie bioder zamiast nadgarstków",
+        "cue": "Keep your torso vertical, ears over hips. Reduce weight if you cannot stay upright.",
+        "cuePl": "Trzymaj tułów pionowo, uszy nad biodrami. Zmniejsz ciężar, jeśli nie możesz stać prosto."
+      },
+      {
+        "fault": "Not using full range of motion (no fingertip roll)",
+        "faultPl": "Niepełny zakres ruchu (brak rolowania z opuszków palców)",
+        "cause": "Tight grip throughout, missing the stretch on the wrist flexors at the bottom",
+        "causePl": "Mocny chwyt przez cały ruch, brak rozciągnięcia zginaczy nadgarstka na dole",
+        "cue": "Open your fingers slightly at the bottom and let the bar roll to your fingertips, then curl up.",
+        "cuePl": "Lekko rozluźnij palce na dole, pozwól sztandze stoczyć się do opuszków, potem uginaj."
+      },
+      {
+        "fault": "Shrugging or rolling shoulders forward",
+        "faultPl": "Unoszenie barków lub rolowanie ich do przodu",
+        "cause": "Compensation when the wrist flexors fatigue, or grip too narrow forcing arms inward",
+        "causePl": "Kompensacja przy zmęczeniu zginaczy nadgarstka lub zbyt wąski chwyt wymuszający zwężenie ramion",
+        "cue": "Keep shoulders pulled back and down throughout the set. Drop weight before form breaks.",
+        "cuePl": "Trzymaj barki ściągnięte w tył i w dół przez całą serię. Zmniejsz ciężar, zanim popsuje się technika."
+      },
+      {
+        "fault": "Hyperextending the wrists at the top",
+        "faultPl": "Przeprostowanie nadgarstków w górnej pozycji",
+        "cause": "Trying to maximize range past natural wrist flexion, or weak forearms unable to control end range",
+        "causePl": "Próba wymuszenia większego zakresu niż naturalne zgięcie nadgarstka lub słabe przedramiona, które nie kontrolują końca zakresu",
+        "cue": "Stop at peak natural wrist flexion. If wrists ache, reduce load and increase reps for endurance work.",
+        "cuePl": "Zatrzymaj się w naturalnym szczycie zgięcia nadgarstka. Jeśli nadgarstki bolą, zmniejsz ciężar i zwiększ powtórzenia."
+      }
+    ],
+    "breathing": "Exhale during the concentric (curling the wrists up). Inhale during the eccentric (lowering). Keep a light core brace to prevent leaning forward.",
+    "breathingPl": "Wydech podczas fazy koncentrycznej (uginanie nadgarstków). Wdech podczas fazy ekscentrycznej (opuszczanie). Lekkie napięcie brzucha, by nie pochylać się do przodu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "wrist_pain_or_instability",
+      "severity": "avoid",
+      "modification": "Behind-the-back position locks the wrist in a vulnerable angle. Switch to a seated forearms-on-bench wrist curl which allows controlled ROM, or use lighter dumbbells.",
+      "modificationPl": "Pozycja za plecami blokuje nadgarstek w newralgicznym kącie. Przejdź na siedzące uginanie nadgarstków z przedramionami opartymi na ławce (kontrolowany zakres) lub użyj lżejszych hantli.",
+      "alternative": "barbell-wrist-curl"
+    },
+    {
+      "condition": "medial_epicondylitis_golfers_elbow",
+      "severity": "modify",
+      "modification": "Wrist flexion directly loads the medial epicondyle tendons. Reduce volume drastically, use very light loads (12-20 reps), or skip the exercise during acute phases.",
+      "modificationPl": "Zgięcie nadgarstka bezpośrednio obciąża przyczepy przy nadkłykciu przyśrodkowym. Mocno zmniejsz objętość, użyj bardzo lekkich ciężarów (12-20 powtórzeń) lub pomiń ćwiczenie w ostrej fazie.",
+      "alternative": "reverse-wrist-curl"
+    },
+    {
+      "condition": "shoulder_impingement_or_anterior_capsule_pain",
+      "severity": "modify",
+      "modification": "Holding a bar behind the hips with elbows extended places the shoulder in internal rotation + extension, which can pinch the anterior capsule. Use dumbbells or perform a seated wrist curl with forearms supported.",
+      "modificationPl": "Trzymanie sztangi za biodrami z wyprostowanymi łokciami ustawia bark w rotacji wewnętrznej i wyproście, co może zwierać przednią torebkę stawu. Użyj hantli lub wykonaj siedzące uginanie nadgarstków z przedramionami opartymi.",
+      "alternative": "dumbbell-wrist-curl"
+    },
+    {
+      "condition": "carpal_tunnel_syndrome",
+      "severity": "caution",
+      "modification": "Repetitive wrist flexion can aggravate carpal tunnel symptoms. Use higher reps with very light loads, limit volume, and stop if tingling appears.",
+      "modificationPl": "Powtarzalne zgięcie nadgarstka może nasilać objawy zespołu cieśni nadgarstka. Używaj większej liczby powtórzeń z bardzo lekkim ciężarem, ogranicz objętość i przerwij, jeśli pojawi się mrowienie.",
+      "alternative": "reverse-wrist-curl"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-20 (hypertrophy / endurance) | 2-3x15-25 (forearm pump finisher)",
+
+  "media": {
+    "primary": "barbell-standing-back-wrist-curl.gif",
+    "frames_extracted": [
+      "frames/barbell-standing-back-wrist-curl/frame_0_start.png",
+      "frames/barbell-standing-back-wrist-curl/frame_1_early.png",
+      "frames/barbell-standing-back-wrist-curl/frame_2_mid.png",
+      "frames/barbell-standing-back-wrist-curl/frame_3_late.png",
+      "frames/barbell-standing-back-wrist-curl/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "forearms/barbell-standing-back-wrist-curl"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 3 kluczowe klatki z GIFa jahel (start/mid/end). Frame 0: trenujący stoi pionowo, sztanga trzymana za biodrami chwytem nachwytem (knykcie skierowane na zewnątrz/do tyłu), ramiona wyprostowane wzdłuż tułowia, sztanga wisi za udami od strony pośladków. Przedramię od strony zginaczy podświetlone na czerwono — sygnalizuje target forearm flexors. Frame 2: nadgarstki zgięte (palmar flexion), sztanga delikatnie uniesiona w stronę pośladków, łokcie pozostają wyprostowane i przyklejone do boków, tułów nieruchomy. Frame 4: powrót do wydłużonej pozycji startowej. Łokcie ZERO ruchu — czysta izolacja nadgarstków. Ćwiczenie jednoznacznie zidentyfikowane jako Barbell Standing Behind-Back Wrist Curl (klasyczny Hammer Strength wariant). Primary: forearm_flexors (zginacze nadgarstka). Mechanic=isolation, plane=sagittal, force=pull, bilateral, standing. Wszystkie pola PL napisane od zera.",
+
+  "tags": ["bodybuilding", "forearms", "wrist_flexors", "isolation", "barbell", "upper_body", "hammer_strength", "old_school", "grip_strength", "finisher"]
+}

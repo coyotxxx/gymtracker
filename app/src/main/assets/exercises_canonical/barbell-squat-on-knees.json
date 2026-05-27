@@ -1,0 +1,206 @@
+{
+  "id": "barbell-squat-on-knees",
+  "name": "Barbell Squat on Knees (Kneeling Squat)",
+  "namePl": "Przysiad ze sztangą na kolanach (kneeling squat)",
+  "aliases": ["kneeling squat", "kneeling barbell squat", "barbell kneeling squat", "glute kneeling squat", "Bret Contreras kneeling squat"],
+  "aliasesPl": ["kneeling squat", "klęczący przysiad ze sztangą", "przysiad klęczący", "przysiad na kolanach", "przysiad pośladkowy na kolanach"],
+
+  "description": "Glute-dominant bilateral movement performed from a kneeling position with the barbell across the upper traps. By removing the foot and ankle from the kinetic chain, the quadriceps contribution is largely eliminated and the load shifts almost entirely onto the gluteus maximus and hamstrings through full hip extension. Popularized by glute-research specialist Bret Contreras for its high glute activation with relatively low spinal load compared to a standing squat at equivalent intensity.",
+  "descriptionPl": "Dwustronny ruch dominujący pośladkowo wykonywany z pozycji klęczącej, ze sztangą na górnej części trapezów. Przez wyłączenie stopy i stawu skokowego z łańcucha kinematycznego udział czworogłowych jest niemal całkowicie wyeliminowany, a obciążenie przenosi się na pośladek wielki i dwugłowe uda poprzez pełen wyprost biodra. Spopularyzowany przez badacza pośladków Breta Contrerasa za wysoką aktywację pośladków przy relatywnie niskim obciążeniu kręgosłupa w porównaniu ze stojącym przysiadem przy tej samej intensywności.",
+
+  "instructions": [
+    "Set the barbell in a power rack at a height roughly equal to your shoulder when kneeling. Load plates and secure with collars.",
+    "Place a thick pad or folded mat on the floor in front of the rack to protect your knees and shins.",
+    "Kneel down on the pad with knees about hip-width apart, hips and torso fully upright. Position your shoulders directly under the bar.",
+    "Set the bar across your upper traps (high-bar position). Grip slightly wider than shoulder-width, elbows down, chest up.",
+    "Unrack the bar by extending your hips and pushing the torso up. Take one short shuffle backwards on your knees if needed to clear the J-hooks.",
+    "Brace your core, draw shoulder blades down and back, take a big breath and hold (Valsalva). This is the starting position: hips and torso upright, vertical line from shoulders to knees.",
+    "Initiate the descent by breaking at the hips. Sit back and down with control, lowering your glutes toward your heels while keeping the torso as upright as possible.",
+    "Descend until your glutes touch (or almost touch) your heels, maintaining a neutral spine throughout. Do not allow the lumbar spine to round.",
+    "Drive up by powerfully extending the hips, squeezing the glutes hard at the top. Finish each rep with a fully vertical torso, hips fully extended, glutes maximally contracted.",
+    "Exhale near the top of the rep. Re-brace and repeat. After the final rep, shuffle forward and re-rack the bar carefully."
+  ],
+  "instructionsPl": [
+    "Ustaw sztangę w klatce na wysokości mniej więcej Twojego barku w pozycji klęczącej. Załaduj obciążenie i zabezpiecz zaciskami.",
+    "Połóż grubą matę lub złożony ręcznik na podłodze przed stojakiem aby chronić kolana i piszczele.",
+    "Uklęknij na macie z kolanami na szerokość bioder, biodra i tułów w pełni wyprostowane. Ustaw barki dokładnie pod gryfem.",
+    "Ułóż sztangę na górnej części trapezów (pozycja high-bar). Chwyt nieco szerszy niż barki, łokcie w dół, klatka do góry.",
+    "Wyciągnij sztangę ze stojaka prostując biodra i napierając tułowiem w górę. Cofnij się jeden krótki ruch kolanami jeśli trzeba uwolnić haki.",
+    "Napnij brzuch, ściągnij łopatki w dół i do tyłu, głęboki wdech i przytrzymaj (Valsalva). To jest pozycja startowa: biodra i tułów wyprostowane, pionowa linia od barków do kolan.",
+    "Rozpocznij schodzenie zginając biodra. Siadaj do tyłu i w dół z kontrolą, opuszczając pośladki w kierunku pięt, utrzymując tułów możliwie najbardziej pionowy.",
+    "Schodź aż pośladki dotkną (lub prawie dotkną) pięt, przez cały czas zachowując neutralny kręgosłup. Nie pozwól by odcinek lędźwiowy się zaokrąglił.",
+    "Wypchnij się w górę poprzez energiczny wyprost bioder, mocno ściskając pośladki na samej górze. Zakończ każde powtórzenie w pełni pionowym tułowiem, biodra w pełnym wyproście, pośladki maksymalnie napięte.",
+    "Wydychaj blisko górnej części powtórzenia. Ponownie napnij i powtórz. Po ostatnim powtórzeniu przesuń się do przodu i ostrożnie odłóż sztangę na stojak."
+  ],
+
+  "classification": {
+    "movement_pattern": "hip_hinge",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["gluteus_maximus", "hamstrings"],
+    "secondary": ["erector_spinae", "core", "adductors"],
+    "stabilizers": ["upper_back", "rectus_abdominis", "obliques", "rear_deltoids"]
+  },
+
+  "muscle_intensity": {
+    "gluteus_maximus": "P10",
+    "hamstrings": "P7",
+    "erector_spinae": "S7",
+    "core": "S6",
+    "adductors": "S5",
+    "upper_back": "T3",
+    "rectus_abdominis": "T3",
+    "obliques": "T2"
+  },
+
+  "equipment": {
+    "required": ["barbell", "squat_rack"],
+    "optional": ["knee_pad", "yoga_mat", "belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 6,
+    "prerequisites": ["barbell-hip-thrust", "barbell-glute-bridge", "barbell-back-squat"],
+    "progression_to": ["pause-kneeling-squat", "banded-kneeling-squat", "tempo-kneeling-squat"],
+    "alternatives": ["barbell-hip-thrust", "barbell-glute-bridge", "cable-pull-through", "barbell-back-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Knee pad in place — protect joints and shins",
+      "Bar height: shoulder level when kneeling",
+      "Knees hip-width apart, hips stacked over knees",
+      "Bar on upper traps (not on neck), elbows down",
+      "Brace hard before unracking — no slack"
+    ],
+    "setup_cues_pl": [
+      "Mata pod kolanami — chroni stawy i piszczele",
+      "Wysokość gryfu: poziom barku w klęku",
+      "Kolana na szerokość bioder, biodra pionowo nad kolanami",
+      "Sztanga na trapezach (nie na karku), łokcie w dół",
+      "Mocno napnij brzuch przed wyciągnięciem — żadnej luźności"
+    ],
+    "execution_cues": [
+      "Hinge at the hips — sit back toward your heels",
+      "Keep the torso as upright as possible — minimal forward lean",
+      "Squeeze the glutes hard at the top — that is the rep",
+      "Lock hips out fully — vertical line shoulders-to-knees",
+      "Neutral spine throughout — no rounding at the bottom"
+    ],
+    "execution_cues_pl": [
+      "Zginaj się w biodrach — siadaj do tyłu w kierunku pięt",
+      "Tułów jak najbardziej pionowy — minimalne pochylenie do przodu",
+      "Mocno ściśnij pośladki na górze — to jest powtórzenie",
+      "Pełen wyprost bioder — pionowa linia barki-kolana",
+      "Neutralny kręgosłup przez cały ruch — żadnego zaokrąglania na dole"
+    ],
+    "common_faults": [
+      {
+        "fault": "Incomplete hip lockout at the top",
+        "faultPl": "Niepełny wyprost bioder na górze",
+        "cause": "Treating it like a squat (knee-dominant) instead of a hip hinge — finishing the rep before full hip extension",
+        "causePl": "Traktowanie ruchu jak przysiad (dominacja kolan) zamiast hinge biodrowego — kończenie powtórzenia przed pełnym wyprostem bioder",
+        "cue": "Squeeze your glutes as hard as you can at the top. The rep ends with maximal glute contraction, not when you 'feel up'.",
+        "cuePl": "Ściśnij pośladki najmocniej jak potrafisz na górze. Powtórzenie kończy się maksymalnym napięciem pośladków, nie wtedy gdy 'czujesz że stoisz'."
+      },
+      {
+        "fault": "Lumbar rounding at the bottom (butt wink on heels)",
+        "faultPl": "Zaokrąglenie lędźwi na dole (butt wink na piętach)",
+        "cause": "Going below your individual hip flexion ROM, weak core bracing, or poor hip mobility",
+        "causePl": "Schodzenie poniżej indywidualnego zakresu zgięcia biodra, słabe napięcie brzucha lub słaba mobilność bioder",
+        "cue": "Stop just before your pelvis tucks under. Brace harder. You do not need to touch heels — full glute contraction at top matters more than depth.",
+        "cuePl": "Zatrzymaj się tuż przed momentem gdy miednica się podwija. Mocniej napnij brzuch. Nie musisz dotykać pięt — pełne napięcie pośladków na górze jest ważniejsze niż głębokość."
+      },
+      {
+        "fault": "Excessive forward lean (turning it into a good morning)",
+        "faultPl": "Nadmierne pochylenie do przodu (zamiana w good morning)",
+        "cause": "Loading too heavy, weak glutes/core, or losing upper back tightness",
+        "causePl": "Zbyt duże obciążenie, słabe pośladki/brzuch lub utrata napięcia górnej części pleców",
+        "cue": "Chest up, ribs over hips. If you cannot stay upright, drop the weight — this is not a back exercise.",
+        "cuePl": "Klatka do góry, żebra nad biodrami. Jeśli nie potrafisz utrzymać pionu, zmniejsz ciężar — to nie jest ćwiczenie na plecy."
+      },
+      {
+        "fault": "Hyperextending the lumbar spine at the top",
+        "faultPl": "Nadmierny przeprost odcinka lędźwiowego na górze",
+        "cause": "Trying to feel 'taller' at the top by arching the lower back instead of contracting the glutes",
+        "causePl": "Próba odczucia 'wyższej' pozycji na górze poprzez wygięcie dolnych pleców zamiast napięcia pośladków",
+        "cue": "Glutes do the work, not the lower back. Ribs down, posterior pelvic tilt at the top — squeeze the glutes, do not crank the spine.",
+        "cuePl": "Pośladki pracują, nie odcinek lędźwiowy. Żebra w dół, lekkie tylne podwinięcie miednicy na górze — ściśnij pośladki, nie wyginaj kręgosłupa."
+      },
+      {
+        "fault": "Knees splaying outward excessively",
+        "faultPl": "Nadmierne rozchodzenie się kolan na zewnątrz",
+        "cause": "Trying to compensate for limited hip mobility or simply poor knee positioning on the pad",
+        "causePl": "Próba kompensacji ograniczonej mobilności bioder lub po prostu zła pozycja kolan na macie",
+        "cue": "Knees stay roughly hip-width apart. The shins stay parallel — this is a pure sagittal-plane hip movement.",
+        "cuePl": "Kolana pozostają mniej więcej na szerokość bioder. Piszczele równolegle — to jest czysty ruch biodrowy w płaszczyźnie strzałkowej."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and the hardest part of the drive up (Valsalva). Exhale at lockout. Re-brace between reps — never lose intra-abdominal pressure under the load.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech przez schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech w pełnym wyproście. Napnij ponownie między powtórzeniami — nigdy nie trać ciśnienia śródbrzusznego pod obciążeniem."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_pain_or_patellofemoral_syndrome",
+      "severity": "modify",
+      "modification": "Kneeling directly loads the patella against the floor. Use a very thick knee pad, double mat, or skip this exercise in favour of a hip thrust or glute bridge.",
+      "modificationPl": "Klęczenie bezpośrednio obciąża rzepkę o podłoże. Użyj bardzo grubej maty, dwóch mat lub zrezygnuj z tego ćwiczenia na rzecz hip thrust lub glute bridge.",
+      "alternative": "barbell-hip-thrust"
+    },
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Even with reduced compression vs back squat, the bar is still loaded on the spine. Avoid until cleared by a physiotherapist.",
+      "modificationPl": "Mimo mniejszej kompresji niż w back squat, sztanga nadal obciąża kręgosłup. Unikaj do czasu wyleczenia, konsultacja z fizjoterapeutą.",
+      "alternative": "barbell-hip-thrust"
+    },
+    {
+      "condition": "patellar_tendinopathy",
+      "severity": "caution",
+      "modification": "Direct pressure on the patellar tendon during kneeling can flare symptoms. Test pain-free position; if any discomfort, switch alternatives.",
+      "modificationPl": "Bezpośredni nacisk na ścięgno rzepki podczas klękania może nasilić objawy. Sprawdź pozycję bezbólową; przy jakimkolwiek dyskomforcie zmień alternatywę.",
+      "alternative": "barbell-glute-bridge"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Bar position across the upper traps requires shoulder external rotation. If painful, use safety squat bar or switch to a hip thrust which removes bar-on-back loading.",
+      "modificationPl": "Ułożenie sztangi na trapezach wymaga rotacji zewnętrznej barku. Jeśli boli, użyj safety squat bar lub przejdź na hip thrust który eliminuje obciążenie sztangą na plecach.",
+      "alternative": "barbell-hip-thrust"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy, primary use) | 4x6-8 (strength-glute focus) | 3x15-20 (metabolic glute pump)",
+  "calories_per_kg_per_hour": 5.0,
+
+  "media": {
+    "primary": "barbell-squat-on-knees.gif",
+    "frames_extracted": [
+      "frames/barbell-squat-on-knees/frame_0_start.png",
+      "frames/barbell-squat-on-knees/frame_1_early.png",
+      "frames/barbell-squat-on-knees/frame_2_mid.png",
+      "frames/barbell-squat-on-knees/frame_3_late.png",
+      "frames/barbell-squat-on-knees/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/barbell-squat-on-knees"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatki potwierdzają mechanikę kneeling squat: atleta klęczy na kolanach z sztangą high-bar na trapezach (frame_0 — pozycja siedząca na piętach), wstaje do pełnego pionowego klęku z pełnym wyprostem biodra (frame_2, frame_4). Brak pracy stawu skokowego (stopy spoczywają oparte palcami o podłoże, bez obciążenia). Jahel oznaczył w katalogu /quads/ i podświetlił mięśnie czworogłowe na ilustracji, ale to błąd anatomiczny katalogu jahel — mechanicznie kneeling squat eliminuje quady (brak ruchu w kolanie pod obciążeniem osiowym przez stopę) i izoluje pośladek wielki. Klasyfikacja primary=gluteus_maximus/hamstrings zgodna z biomechaniką i badaniami Breta Contrerasa (popularyzatora tego ćwiczenia). movement_pattern=hip_hinge bo dominuje wyprost biodra, nie ruch kolanowy. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["glute_isolation", "hip_dominant", "bret_contreras", "kneeling", "lower_body", "barbell", "hypertrophy", "powerbuilding"]
+}

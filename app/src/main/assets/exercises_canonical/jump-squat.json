@@ -1,0 +1,205 @@
+{
+  "id": "jump-squat",
+  "name": "Jump Squat",
+  "namePl": "Skok z przysiadu",
+  "aliases": ["squat jump", "bodyweight squat jump", "full squat jump", "plyometric squat", "explosive squat"],
+  "aliasesPl": ["skok z przysiadu", "przysiad ze skokiem", "wyskok z przysiadu", "skoki z przysiadu", "plyometryczny przysiad", "eksplozywny przysiad"],
+
+  "description": "Bilateral bodyweight plyometric exercise combining a full-depth squat with an explosive vertical jump. The athlete lowers into a deep squat (thighs parallel to the floor or slightly below), then drives both feet aggressively through the ground to launch straight up, achieving triple extension of hips, knees and ankles at peak. After a brief float phase, lands softly on the balls of the feet, absorbs through ankles/knees/hips, and descends back into the full squat to begin the next rep. The full depth versus a semi-squat jump increases eccentric loading on the quadriceps and glutes, develops greater starting strength out of the hole, and demands superior hip/ankle mobility. A staple plyometric for building lower-body power, vertical jump height, rate of force development (RFD) and reactive strength. Higher intensity than semi-squat jump — fewer reps, longer ground contact, more total force per jump.",
+  "descriptionPl": "Obustronne plyometryczne ćwiczenie z masą własnego ciała łączące pełny przysiad z eksplozywnym skokiem w pionie. Trenujący opuszcza się do głębokiego przysiadu (uda równolegle do podłogi lub nieco poniżej), następnie agresywnie wypycha obie stopy w podłogę by wystrzelić prosto w górę, osiągając potrójne wyprostowanie biodra-kolana-kostki w szczycie skoku. Po krótkiej fazie lotu ląduje miękko na śródstopiu, amortyzuje w kostkach, kolanach i biodrach, po czym schodzi z powrotem do pełnego przysiadu by zacząć kolejne powtórzenie. Pełna głębokość w odróżnieniu od półprzysiadu ze skokiem zwiększa obciążenie ekscentryczne czworogłowych i pośladków, rozwija większą siłę startową z dołu i wymaga lepszej mobilności bioder oraz kostek. Fundamentalne ćwiczenie plyometryczne do budowania mocy dolnej części ciała, wysokości wyskoku pionowego, szybkości rozwoju siły (RFD) i siły reaktywnej. Wyższa intensywność niż półprzysiad ze skokiem — mniej powtórzeń, dłuższy kontakt z podłogą, większa siła na każdy skok.",
+
+  "instructions": [
+    "Stand with feet shoulder-width apart, toes pointing slightly outward (5-15°). Arms relaxed at sides, ready to swing.",
+    "Initiate the descent by pushing hips back and bending knees simultaneously. Keep chest up, core braced.",
+    "Lower into a FULL squat — thighs reach parallel to the floor or slightly below. Knees track in line with toes, weight evenly distributed across the whole foot.",
+    "At the bottom, swing arms back and quickly load the eccentric — no long pause, the squat is the 'spring' that powers the jump.",
+    "Drive both feet explosively through the floor and jump straight up. Swing arms forward and up to add 15-20% extra height.",
+    "Achieve full triple extension in the air — hips, knees and ankles fully straight, body forming a vertical line.",
+    "Land softly on the balls of the feet first, then roll through to the heel. Immediately bend knees and hips to absorb impact.",
+    "Continue the descent without stopping — the landing flows directly back into the full squat for the next rep.",
+    "Repeat for prescribed reps, maintaining depth and softness on every landing. Stop the set if depth or landing quality breaks down."
+  ],
+  "instructionsPl": [
+    "Stań ze stopami na szerokość barków, palce stóp lekko na zewnątrz (5-15°). Ręce luźno wzdłuż ciała, gotowe do zamachu.",
+    "Rozpocznij schodzenie wypychając biodra do tyłu i zginając kolana jednocześnie. Klatka w górze, brzuch napięty.",
+    "Opuść się do PEŁNEGO przysiadu — uda dochodzą do równoległej do podłogi lub nieco poniżej. Kolana w linii z palcami stóp, ciężar równomiernie na całej stopie.",
+    "Na dole zamachnij rękami do tyłu i szybko załaduj fazę ekscentryczną — bez długiej pauzy, przysiad jest 'sprężyną' napędzającą skok.",
+    "Eksplozywnie wypchnij obie stopy w podłogę i wyskocz prosto w górę. Zamachnij rękami w przód i do góry, dodadzą 15-20% wysokości.",
+    "W powietrzu osiągnij pełne potrójne wyprostowanie — biodra, kolana i kostki w pełni wyprostowane, ciało w pionowej linii.",
+    "Ląduj miękko najpierw na śródstopiu, potem przeniesie ciężaru na piętę. Od razu zginaj kolana i biodra by zamortyzować uderzenie.",
+    "Kontynuuj schodzenie bez zatrzymywania — lądowanie płynnie przechodzi z powrotem w pełny przysiad na kolejne powtórzenie.",
+    "Powtarzaj przez zaplanowaną liczbę powtórzeń, zachowując głębokość i miękkość przy każdym lądowaniu. Przerwij serię jeśli głębokość lub jakość lądowania się psuje."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["calves", "hamstrings", "adductors"],
+    "stabilizers": ["core", "gluteus_medius", "tibialis_anterior", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "calves": "S8",
+    "hamstrings": "S6",
+    "adductors": "S5",
+    "core": "S6",
+    "gluteus_medius": "S5",
+    "tibialis_anterior": "T5",
+    "erector_spinae": "T4"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["athletic_shoes", "soft_surface_mat"]
+  },
+
+  "category": "plyometrics",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "semi-squat-jump", "calf-raise", "squat-to-stand"],
+    "progression_to": ["tuck-jump", "box-jump", "depth-jump", "weighted-squat-jump", "single-leg-jump"],
+    "alternatives": ["semi-squat-jump", "jumping-jack", "skater-jump", "lunge-with-jump", "broad-jump"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Feet shoulder-width, toes 5-15° out",
+      "Weight balanced across the whole foot — tripod contact (big toe, pinky toe, heel)",
+      "Chest tall, core lightly braced, neutral spine",
+      "Arms hanging relaxed and ready to swing — they are part of the engine",
+      "Eyes forward at a fixed point — head neutral, never look down"
+    ],
+    "setup_cues_pl": [
+      "Stopy na szerokość barków, palce 5-15° na zewnątrz",
+      "Ciężar równomiernie na całej stopie — trzy punkty (paluch, mały palec, pięta)",
+      "Klatka wysoko, brzuch lekko napięty, kręgosłup neutralny",
+      "Ręce luźno wzdłuż ciała i gotowe do zamachu — są częścią silnika",
+      "Wzrok w przód na stały punkt — głowa neutralnie, nigdy w dół"
+    ],
+    "execution_cues": [
+      "FULL depth — thighs at least parallel. This is not a half squat.",
+      "Quick eccentric, instant rebound — 'load and explode', no long pause at the bottom",
+      "Swing arms aggressively upward — they add height for free",
+      "Jump STRAIGHT UP, not forward — land in the same spot",
+      "Land soft on the balls of the feet, absorb through the entire kinetic chain — silent landings = elite plyometrics"
+    ],
+    "execution_cues_pl": [
+      "PEŁNA głębokość — uda przynajmniej do równoległej. To nie półprzysiad.",
+      "Szybka faza ekscentryczna, natychmiastowe odbicie — 'załaduj i wybuchnij', bez długiej pauzy na dole",
+      "Mocno zamachuj rękami w górę — dodają wysokości za darmo",
+      "Skacz PROSTO W GÓRĘ, nie do przodu — ląduj w tym samym miejscu",
+      "Ląduj miękko na śródstopiu, amortyzuj przez cały łańcuch kinetyczny — ciche lądowania = elitarna plyometria"
+    ],
+    "common_faults": [
+      {
+        "fault": "Insufficient squat depth (cutting the squat short)",
+        "faultPl": "Niewystarczająca głębokość przysiadu (skracanie zakresu)",
+        "cause": "Fatigue, lack of hip/ankle mobility, fear of the bottom, or confusion with semi-squat jump. Reduces the stretch-shortening cycle benefit and changes the exercise.",
+        "causePl": "Zmęczenie, brak mobilności bioder/kostek, obawa przed dołem lub mylenie z półprzysiadem ze skokiem. Zmniejsza korzyść z cyklu rozciągnięcie-skrócenie i zmienia ćwiczenie.",
+        "cue": "Hit parallel every rep — if you cannot, stop the set. Quality of depth beats quantity of reps.",
+        "cuePl": "W każdym powtórzeniu osiągaj równoległą — jeśli nie potrafisz, przerwij serię. Jakość głębokości ważniejsza niż liczba powtórzeń."
+      },
+      {
+        "fault": "Hard, flat-footed landings (loud slap)",
+        "faultPl": "Twarde, płaskie lądowania na całej stopie ('plask')",
+        "cause": "No ankle/knee absorption, lack of eccentric control, weak calves, or fatigue. Loads knees and lower back heavily and indicates poor reactive strength.",
+        "causePl": "Brak amortyzacji w kostce i kolanie, słaba kontrola ekscentryczna, słabe łydki lub zmęczenie. Mocno obciąża kolana i krzyż, świadczy o słabej sile reaktywnej.",
+        "cue": "Toes touch first, then ball, then heel. Imagine landing on a cloud — completely silent.",
+        "cuePl": "Najpierw palce, potem śródstopie, potem pięta. Wyobraź sobie lądowanie na chmurze — całkowicie bezgłośne."
+      },
+      {
+        "fault": "Knees collapse inward (valgus) at takeoff or landing",
+        "faultPl": "Kolana zapadają się do środka (koślawość) przy odbiciu lub lądowaniu",
+        "cause": "Weak gluteus medius, poor knee tracking under load/fatigue, ankle mobility restriction. Major ACL/meniscus injury risk in plyometrics.",
+        "causePl": "Słaby pośladkowy średni, słaba kontrola kolan pod obciążeniem/zmęczeniem, ograniczenie mobilności kostki. Główne ryzyko urazu ACL/łąkotki w plyometrii.",
+        "cue": "Drive knees OUT in line with the second and third toes — actively spread the floor with the feet.",
+        "cuePl": "Wypychaj kolana NA ZEWNĄTRZ w linii z drugim i trzecim palcem stopy — aktywnie 'rozsuwaj' podłogę stopami."
+      },
+      {
+        "fault": "Excessive forward torso lean / falling forward on landing",
+        "faultPl": "Nadmierne pochylenie tułowia / opadanie do przodu przy lądowaniu",
+        "cause": "Weak core, weight shifted onto toes, trying to jump forward instead of vertically. Compromises spine and shifts load away from working muscles.",
+        "causePl": "Słaby brzuch, ciężar przeniesiony na palce, próba skakania do przodu zamiast w pion. Obciąża kręgosłup i odciąża pracujące mięśnie.",
+        "cue": "Chest up, jump UP not OUT. Imagine your spine is a steel rod that must stay nearly vertical.",
+        "cuePl": "Klatka wysoko, skacz W GÓRĘ a nie DO PRZODU. Wyobraź sobie że kręgosłup to stalowy pręt który ma pozostać prawie pionowy."
+      },
+      {
+        "fault": "Incomplete triple extension in the air (lazy jump)",
+        "faultPl": "Niepełne potrójne wyprostowanie w powietrzu (leniwy skok)",
+        "cause": "Insufficient effort, fatigue, or treating reps as cardio instead of power output. Reduces training stimulus dramatically.",
+        "causePl": "Niewystarczający wysiłek, zmęczenie lub traktowanie powtórzeń jako cardio zamiast wyjścia mocy. Drastycznie zmniejsza bodziec treningowy.",
+        "cue": "Reach for the ceiling. Hips, knees and ankles fully straight at peak — jump like every rep is for a vertical test.",
+        "cuePl": "Sięgaj do sufitu. Biodra, kolana i kostki w pełni wyprostowane w szczycie — skacz jak gdyby każde powtórzenie było testem wyskoku pionowego."
+      }
+    ],
+    "breathing": "Continuous rhythmic breathing. Short exhale on the explosive jump (concentric drive), brief inhale during the descent into the squat. Do not hold breath across reps — plyometric sets demand uninterrupted oxygen supply.",
+    "breathingPl": "Ciągły rytmiczny oddech. Krótki wydech podczas eksplozywnego skoku (faza koncentryczna), krótki wdech podczas schodzenia do przysiadu. Nie wstrzymuj oddechu między powtórzeniami — serie plyometryczne wymagają nieprzerwanej dostawy tlenu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "knee_osteoarthritis_meniscus_or_acl_injury",
+      "severity": "avoid",
+      "modification": "High-impact plyometrics with full squat depth severely load the knee joint and ligaments. Replace with non-impact bodyweight squats or sled push.",
+      "modificationPl": "Wysokoudarowe ćwiczenia plyometryczne z pełną głębokością mocno obciążają staw kolanowy i więzadła. Zastąp nieudarowymi przysiadami własnymi lub pchaniem sani.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "achilles_tendinopathy_or_plantar_fasciitis",
+      "severity": "avoid",
+      "modification": "Repeated soft-tissue loading from landings aggravates tendinopathies. Heal fully and rebuild with isometric calf work and slow eccentrics before returning.",
+      "modificationPl": "Powtarzalne obciążanie tkanek miękkich przy lądowaniach nasila tendinopatie. Wylecz się w pełni i odbuduj izometrycznym treningiem łydek oraz powolnymi ekscentrykami przed powrotem.",
+      "alternative": "semi-squat-jump"
+    },
+    {
+      "condition": "acute_lower_back_pain_or_disc_herniation",
+      "severity": "avoid",
+      "modification": "Landing forces transmit up the spine and can aggravate disc and facet joint conditions. Avoid until pain-free and cleared by a physiotherapist.",
+      "modificationPl": "Siły lądowania przenoszą się przez kręgosłup i mogą nasilać schorzenia dysków i stawów międzywyrostkowych. Unikaj do czasu ustąpienia bólu i zgody fizjoterapeuty.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "pregnancy_or_recent_postpartum",
+      "severity": "avoid",
+      "modification": "Plyometric impact, rapid balance changes and intra-abdominal pressure spikes are contraindicated during pregnancy and the first months postpartum. Use slow controlled squats.",
+      "modificationPl": "Plyometryczne obciążenia uderzeniowe, szybkie zmiany równowagi i skoki ciśnienia wewnątrzbrzusznego są przeciwwskazane w ciąży i pierwszych miesiącach po porodzie. Stosuj powolne, kontrolowane przysiady.",
+      "alternative": "bodyweight-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x8-15 reps (power/RFD with full recovery 2-3 min) | 4x10-20 reps (athletic conditioning) | 3-4x30-45 sec (metcon) | Tabata 8x20s/10s (HIIT)",
+  "calories_per_kg_per_hour": 9.8,
+
+  "media": {
+    "primary": "jump-squat.gif",
+    "frames_extracted": [
+      "frames/jump-squat/frame_0_start.png",
+      "frames/jump-squat/frame_1_early.png",
+      "frames/jump-squat/frame_2_mid.png",
+      "frames/jump-squat/frame_3_late.png",
+      "frames/jump-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/jump-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T17:00:00Z",
+  "verification_notes": "Obejrzalem 5 klatek kluczowych z GIFa jahel/glutes/jump-squat. Klatki 0 i 4 (start/end) pokazuja PELNY przysiad — uda widocznie na rownoleglej lub nieco ponizej, biodra glebko cofniete, dlonie blisko klatki (jak w gobletowej osloncie), wyraznie podswietlone czworoglowe i posladki + lydki jako kluczowy silnik plyometryczny. Klatki 1 i 3 pokazuja faze powietrzna z pelnym wyprostem ciala — triple extension biodra-kolana-kostki, stopy oderwane od podloza. Klatka 2 (mid) to gornta pozycja stoiqca z neutralna sylwetka — uzasadnia mocne podswietlenie czworoglowych w cyklu plyometrycznym. Brak obciazenia zewnetrznego (bodyweight). Polski standard fitness: 'skok z przysiadu', 'przysiad ze skokiem', 'wyskok z przysiadu' — wszystkie w aliases. Difficulty 5 (vs semi-squat-jump=4) bo pelna glebokosc wymaga wiekszej mobilnosci kostki/biodra i sily ekscentrycznej oraz dluzszy ground contact time. Wlasciwa progresja: bodyweight-squat → semi-squat-jump → jump-squat → tuck-jump → box-jump → depth-jump. P10 quads + P9 glutes + S8 calves zgodne z anatomicznym podswietleniem w GIFie. Bilateral, jump_plyometric, kinetic_chain closed (stopy kontaktuja sie z podlogem przed/po fazie powietrznej). Wszystkie pola PL napisane od zera, nie tlumaczone maszynowo.",
+
+  "tags": ["bilateral", "lower_body", "squat", "plyometric", "bodyweight", "explosive", "power", "conditioning", "high_impact", "compound", "vertical_jump", "RFD"]
+}

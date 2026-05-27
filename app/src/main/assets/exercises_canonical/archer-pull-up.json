@@ -1,0 +1,206 @@
+{
+  "id": "archer-pull-up",
+  "name": "Archer Pull-Up",
+  "namePl": "Podciąganie łukiem",
+  "aliases": ["archer pullup", "archer pull up", "bow pull-up"],
+  "aliasesPl": ["archer pull-up", "podciąganie łucznika", "podciąganie asymetryczne", "podciąganie z przesunięciem", "podciąganie jednorącz wspomagane"],
+
+  "description": "Advanced unilateral pull-up variation that simulates drawing a bow. Starting from a very wide grip dead-hang, you pull your body up and toward ONE hand — the working arm bends fully (chest near hand) while the assisting arm stays almost straight, supporting only a fraction of the load. Each rep loads one side at a time. The key bridge between strict pull-up and one-arm pull-up — builds unilateral pulling strength, scapular control under load and lat hypertrophy on the working side.",
+  "descriptionPl": "Zaawansowany jednostronny wariant podciągania symulujący naciąganie łuku. Startując z bardzo szerokiego chwytu w zwisie, podciągasz ciało w górę i W STRONĘ JEDNEJ RĘKI — ręka pracująca zgina się w pełni (klatka blisko dłoni), druga ręka pozostaje prawie wyprostowana i tylko nieznacznie wspomaga. Każde powtórzenie obciąża jedną stronę. Kluczowy pomost między strict pull-upem a one-arm pull-upem — buduje jednostronną siłę ciągu, kontrolę łopatek pod obciążeniem i hipertrofię najszerszego po stronie pracującej.",
+
+  "instructions": [
+    "Grip the bar pronated (overhand), MUCH wider than shoulder-width — about 1.5-2× your normal pull-up width.",
+    "Hang at full extension. Engage shoulder blades by depressing them. Brace core. Cross or bend legs.",
+    "Decide which side leads first (e.g. right). The right arm is the WORKING arm, the left arm is the ASSISTING arm.",
+    "Pull yourself UP AND TO THE RIGHT — drive the right elbow down and back toward your right hip.",
+    "The right arm bends fully — chest comes near the right hand. The LEFT arm stays nearly STRAIGHT, acting as a stabilizing post (slight bend OK).",
+    "At the top: head near the working hand, working elbow tight to torso, assisting arm extended out wide like a bow string.",
+    "Lower with control to full dead-hang. This counts as ONE rep on the right side.",
+    "Next rep: pull to the LEFT side — left arm works, right arm stays straight. Alternate sides each rep.",
+    "Maintain symmetry across sessions — same number of reps per side, controlled tempo, no kipping."
+  ],
+  "instructionsPl": [
+    "Złap drążek nachwytem (pronated), DUŻO szerzej niż barki — około 1,5–2× normalnej szerokości chwytu do pull-upa.",
+    "Zwiśnij w pełnym wyproście ramion. Aktywuj łopatki ściągając je w dół. Napnij brzuch. Skrzyżuj lub zegnij nogi.",
+    "Zdecyduj którą stroną zaczynasz (np. prawą). Prawa ręka to ręka PRACUJĄCA, lewa to WSPOMAGAJĄCA.",
+    "Podciągnij się W GÓRĘ I W PRAWO — napieraj prawym łokciem w dół i do tyłu w stronę prawego biodra.",
+    "Prawa ręka zgina się w pełni — klatka dochodzi blisko prawej dłoni. LEWA ręka pozostaje prawie WYPROSTOWANA, działa jak stabilizująca podpora (lekki zgięcie OK).",
+    "W górze: głowa blisko ręki pracującej, łokieć pracujący przy tułowiu, ręka wspomagająca wyciągnięta szeroko jak cięciwa łuku.",
+    "Opuszczaj kontrolowanie do pełnego dead-hang. To JEDNO powtórzenie na prawą stronę.",
+    "Kolejne powtórzenie: podciągnij się W LEWO — pracuje lewa ręka, prawa zostaje wyprostowana. Naprzemiennie strony każde powtórzenie.",
+    "Utrzymuj symetrię w sesjach — tyle samo powtórzeń na stronę, kontrolowane tempo, bez kipping."
+  ],
+
+  "classification": {
+    "movement_pattern": "pull_vertical",
+    "force": "pull",
+    "mechanic": "compound",
+    "laterality": "alternating",
+    "plane": "frontal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["latissimus_dorsi", "biceps_brachii"],
+    "secondary": ["trapezius_middle_lower", "rhomboids", "teres_major", "brachialis", "core", "obliques"],
+    "stabilizers": ["rotator_cuff", "forearms", "rectus_abdominis", "serratus_anterior"]
+  },
+
+  "muscle_intensity": {
+    "latissimus_dorsi": "P10",
+    "biceps_brachii": "P9",
+    "trapezius_middle_lower": "S8",
+    "rhomboids": "S7",
+    "teres_major": "S8",
+    "brachialis": "S7",
+    "core": "S7",
+    "obliques": "S6",
+    "forearms": "S8"
+  },
+
+  "equipment": {
+    "required": ["pull_up_bar"],
+    "optional": ["chalk", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 9,
+    "prerequisites": ["pull-up", "weighted-pull-up", "chest-to-bar-pull-up", "wide-grip-pull-up"],
+    "progression_to": ["one-arm-assisted-pull-up", "typewriter-pull-up", "one-arm-pull-up"],
+    "alternatives": ["typewriter-pull-up", "one-arm-row", "chest-to-bar-pull-up", "weighted-pull-up"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Grip MUCH wider than normal — 1.5-2× shoulder width",
+      "Pronated grip, palms away",
+      "Full hang, shoulder blades DOWN",
+      "Core braced, legs together or crossed",
+      "Decide leading side BEFORE the first rep"
+    ],
+    "setup_cues_pl": [
+      "Chwyt DUŻO szerszy niż normalnie — 1,5–2× szerokości barków",
+      "Chwyt pronated (nachwytem), dłonie od siebie",
+      "Pełny zwis, łopatki W DÓŁ",
+      "Brzuch napięty, nogi razem lub skrzyżowane",
+      "Zdecyduj którą stroną zaczynasz PRZED pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Pull UP AND TO THE SIDE — diagonal, not straight up",
+      "Working elbow drives DOWN, chest to working hand",
+      "Assisting arm stays STRAIGHT — like a bow string",
+      "Head near the working hand at the top, NOT centered",
+      "Alternate sides each rep — keep total reps symmetric"
+    ],
+    "execution_cues_pl": [
+      "Podciągaj W GÓRĘ I W BOK — po skosie, nie prosto",
+      "Łokieć pracujący napiera W DÓŁ, klatka do ręki pracującej",
+      "Ręka wspomagająca POZOSTAJE WYPROSTOWANA — jak cięciwa łuku",
+      "Głowa blisko ręki pracującej na górze, NIE na środku",
+      "Naprzemienne strony co powtórzenie — łączna liczba symetryczna"
+    ],
+    "common_faults": [
+      {
+        "fault": "Assisting arm bends too much (becomes a regular pull-up)",
+        "faultPl": "Ręka wspomagająca zgina się za bardzo (staje się zwykłym pull-upem)",
+        "cause": "Insufficient unilateral strength — body cheats by recruiting both arms equally",
+        "causePl": "Zbyt mała siła jednostronna — ciało oszukuje rekrutując obie ręce po równo",
+        "cue": "Keep assisting arm visibly STRAIGHT throughout. If you can't — drop volume and do typewriter pull-ups instead.",
+        "cuePl": "Trzymaj rękę wspomagającą widocznie WYPROSTOWANĄ przez cały ruch. Jeśli nie potrafisz — zmniejsz objętość i rób typewriter pull-ups."
+      },
+      {
+        "fault": "Asymmetry — always leading with the dominant side",
+        "faultPl": "Asymetria — zawsze zaczynanie dominującą stroną",
+        "cause": "Habit, neglect of weaker side, ego-driven rep count",
+        "causePl": "Nawyk, zaniedbanie słabszej strony, ego w liczeniu powtórzeń",
+        "cue": "Strict equal reps per side. Start sets with WEAKER side. Track L/R separately.",
+        "cuePl": "Sztywno równa liczba powtórzeń na stronę. Zaczynaj serie SŁABSZĄ stroną. Zapisuj L/P osobno."
+      },
+      {
+        "fault": "Partial ROM — 'scapular pull only', chest not reaching working hand",
+        "faultPl": "Niepełny ROM — 'tylko ściągnięcie łopatek', klatka nie dochodzi do ręki pracującej",
+        "cause": "Top end of unilateral pull is the hardest — easy to short-cut",
+        "causePl": "Szczyt jednostronnego ciągu jest najtrudniejszy — łatwo go skracać",
+        "cue": "Chest to working hand each rep. If you can't — drop to typewriter pull-ups or assisted version.",
+        "cuePl": "Klatka do ręki pracującej w każdym powtórzeniu. Jeśli nie potrafisz — zejdź do typewriter pull-ups lub wersji asystowanej."
+      },
+      {
+        "fault": "Kipping / swinging body to gain momentum",
+        "faultPl": "Kipping / bujanie ciałem dla pędu",
+        "cause": "Strength deficit relative to current variation difficulty",
+        "causePl": "Deficyt siły względem trudności obecnego wariantu",
+        "cue": "Cross feet, brace core HARD. If you can't strict — regress to wide-grip or weighted pull-up.",
+        "cuePl": "Skrzyżuj stopy, napnij brzuch MOCNO. Jeśli nie strict — cofnij się do wide-grip lub weighted pull-up."
+      },
+      {
+        "fault": "Elbow pain from very wide grip + load shifting",
+        "faultPl": "Ból łokcia z bardzo szerokiego chwytu + przenoszenia obciążenia",
+        "cause": "Wide grip + asymmetric load stresses elbow ligaments and medial epicondyle",
+        "causePl": "Szeroki chwyt + asymetryczne obciążenie obciążają więzadła łokcia i nadkłykieć przyśrodkowy",
+        "cue": "Slightly narrow the grip. Warm up elbows. If pain persists, switch to typewriter pull-up with slightly narrower grip.",
+        "cuePl": "Lekko zwęź chwyt. Rozgrzej łokcie. Jeśli ból trwa — przejdź na typewriter pull-up z lekko węższym chwytem."
+      }
+    ],
+    "breathing": "Inhale at the dead-hang. Exhale through the pull to one side. Inhale on the way down. Don't hold breath — the unilateral load demands continuous core bracing.",
+    "breathingPl": "Wdech w dead-hang. Wydech podczas ciągu w jedną stronę. Wdech podczas schodzenia. Nie wstrzymuj oddechu — jednostronne obciążenie wymaga ciągłej stabilizacji brzucha."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement",
+      "severity": "avoid",
+      "modification": "Avoid — very wide grip + unilateral load aggravates impingement. Use neutral-grip pull-up or lat pulldown instead.",
+      "modificationPl": "Unikaj — bardzo szeroki chwyt + jednostronne obciążenie pogłębiają impingement. Użyj chwytu neutralnego lub lat pulldown.",
+      "alternative": "neutral-grip-pull-up"
+    },
+    {
+      "condition": "elbow_tendinopathy",
+      "severity": "avoid",
+      "modification": "Avoid until full recovery — asymmetric load + wide grip is high-risk for medial/lateral epicondylitis. Use chin-up with normal grip.",
+      "modificationPl": "Unikaj do pełnego wyzdrowienia — asymetryczne obciążenie + szeroki chwyt to wysokie ryzyko zapalenia nadkłykci. Użyj chin-up z normalnym chwytem.",
+      "alternative": "chin-up"
+    },
+    {
+      "condition": "lat_strain",
+      "severity": "avoid",
+      "modification": "Stop unilateral pulling. Return progressively through inverted rows → bilateral pull-up → wide-grip → archer.",
+      "modificationPl": "Wstrzymaj jednostronne ciągi. Wracaj progresywnie przez inverted row → pull-up → wide-grip → archer.",
+      "alternative": "lat-pulldown"
+    },
+    {
+      "condition": "wrist_pain",
+      "severity": "modify",
+      "modification": "Use wrist wraps. Slightly narrow grip. If pain persists — switch to typewriter pull-up.",
+      "modificationPl": "Użyj wraps na nadgarstki. Lekko zwęź chwyt. Jeśli ból trwa — przejdź na typewriter pull-up.",
+      "alternative": "typewriter-pull-up"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x4-8 per side (alternating) | 3x3-5 per side (strict, advanced)",
+  "calories_per_kg_per_hour": 7.0,
+
+  "media": {
+    "primary": "archer-pull-up.gif",
+    "frames_extracted": [
+      "frames/archer-pull-up/frame_0_start.png",
+      "frames/archer-pull-up/frame_1_early.png",
+      "frames/archer-pull-up/frame_2_mid.png",
+      "frames/archer-pull-up/frame_3_late.png",
+      "frames/archer-pull-up/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "lats/archer-pull-up",
+    "glowupp_id": "archer_pull_up"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T16:50:00Z",
+  "verification_notes": "Frame 0: dead-hang start — chwyt nachwytem BARDZO szeroki (znacznie szerzej niż barki), ręce pełnie wyprostowane. Frame 2: top position — głowa zbliżona do JEDNEJ ręki (asymetria widoczna), klatka skierowana w stronę ręki pracującej, druga ręka pozostaje prawie wyprostowana jak cięciwa łuku. Najszersze (latissimus) + środkowy/dolny trapez + romboidy + bicepsy + przedramiona podświetlone obustronnie (źródło Jahel pokazuje pełne zaangażowanie, ale w realnym wykonaniu strona pracująca dominuje). Frame 4: powrót do dead-hang. Klasyczny Archer Pull-Up — krok przed one-arm pull-up. Polska nazwa 'Podciąganie łukiem' — calisthenics community PL (analogia do Archer Push-Up = pompka łucznika). Difficulty 9 zgadza się z poziomem zaawansowanym.",
+
+  "tags": ["calisthenics", "bodyweight", "advanced", "upper_body", "vertical_pull", "unilateral", "back", "biceps", "one_arm_progression", "asymmetric_load", "wide_grip", "core_stability"]
+}

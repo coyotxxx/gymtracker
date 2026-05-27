@@ -1,0 +1,198 @@
+{
+  "id": "spine-twist",
+  "name": "Spine Twist",
+  "namePl": "Skręt kręgosłupa",
+  "aliases": ["seated spine twist", "seated spinal twist", "seated torso rotation", "pilates spine twist", "russian twist no-load"],
+  "aliasesPl": ["siedzący skręt kręgosłupa", "skręt tułowia w siadzie", "rotacja tułowia siedząc", "spine twist pilates", "skręcanie kręgosłupa w siadzie prostym"],
+
+  "description": "A seated mobility and stretch movement targeting the obliques, deep spinal rotators and the erector spinae musculature along the lower back. The practitioner sits tall with legs extended forward, arms crossed in front of the chest, and slowly rotates the torso left and right while keeping the hips and legs anchored to the floor. The motion encourages thoracic rotation, lengthens the obliques on the contralateral side and decompresses the lumbar spine via gentle rotational stretch. Ideal as a warm-up before rotational sports, an active cooldown after core training, or a mobility break for those who sit for long hours.",
+  "descriptionPl": "Mobilizacyjno-rozciągający ruch w siadzie prostym, ukierunkowany na mięśnie skośne brzucha, głębokie rotatory kręgosłupa oraz prostownik grzbietu w odcinku lędźwiowym. Ćwiczący siedzi wyprostowany z nogami wyciągniętymi do przodu, ręce skrzyżowane na klatce piersiowej, i powoli skręca tułów w lewo i w prawo, utrzymując biodra i nogi unieruchomione na podłożu. Ruch zachęca do rotacji w odcinku piersiowym, wydłuża mięśnie skośne po stronie przeciwnej do skrętu i delikatnie dekompresuje odcinek lędźwiowy poprzez rotacyjne rozciąganie. Doskonałe rozgrzewające ćwiczenie przed sportami rotacyjnymi, aktywne wyciszenie po treningu brzucha lub przerwa mobilizacyjna dla osób siedzących długo przy biurku.",
+
+  "instructions": [
+    "Sit on the floor with your legs extended straight in front of you, feet flexed (toes pointing up). Press the back of the thighs firmly into the floor.",
+    "Lengthen the spine — imagine a string pulling the crown of the head toward the ceiling. The pelvis stays neutral, sit bones planted evenly on the floor.",
+    "Cross your forearms in front of the chest, hands resting on opposite shoulders (or fingertips lightly touching the collarbones).",
+    "Inhale to grow taller through the spine. As you exhale, rotate the torso slowly to one side — lead the movement from the rib cage, not from the arms.",
+    "Reach the end of comfortable rotation; pause for a breath while keeping the hips and knees pointing straight ahead.",
+    "Inhale to return to center, then exhale and rotate to the opposite side with the same control.",
+    "Continue alternating for 6-10 rotations per side, moving with the breath. Keep the legs active, the chest lifted and the neck a natural extension of the spine."
+  ],
+  "instructionsPl": [
+    "Usiądź na podłodze, nogi wyprostowane przed sobą, stopy w zgięciu grzbietowym (palce w stronę sufitu). Tylna część ud mocno wciśnięta w podłogę.",
+    "Wydłuż kręgosłup — wyobraź sobie nitkę ciągnącą czubek głowy w stronę sufitu. Miednica w pozycji neutralnej, guzy kulszowe równomiernie oparte na podłodze.",
+    "Skrzyżuj przedramiona przed klatką piersiową, dłonie spoczywają na przeciwnych barkach (lub palce delikatnie dotykają obojczyków).",
+    "Wdech — wydłuż się jeszcze bardziej w pionie. Z wydechem powoli skręć tułów w jedną stronę — ruch prowadź z klatki piersiowej, nie z ramion.",
+    "Sięgnij końca komfortowego zakresu rotacji; zatrzymaj się na jeden oddech, utrzymując biodra i kolana skierowane prosto do przodu.",
+    "Wdech — wróć do środka, wydech — skręć w stronę przeciwną z taką samą kontrolą.",
+    "Kontynuuj na przemian przez 6-10 rotacji na stronę, oddychając w rytm ruchu. Nogi aktywne, klatka uniesiona, szyja w naturalnym przedłużeniu kręgosłupa."
+  ],
+
+  "classification": {
+    "movement_pattern": "rotation",
+    "force": "static",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "transverse",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["obliques", "erector_spinae"],
+    "secondary": ["glutes", "transverse_abdominis"],
+    "stabilizers": ["core", "hip_flexors"]
+  },
+
+  "muscle_intensity": {
+    "obliques": "P8",
+    "erector_spinae": "P7",
+    "glutes": "S4",
+    "transverse_abdominis": "S5",
+    "core": "T4",
+    "hip_flexors": "T3"
+  },
+
+  "equipment": {
+    "required": ["bodyweight"],
+    "optional": ["mat"]
+  },
+
+  "category": "mobility",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 2,
+    "prerequisites": [],
+    "progression_to": ["russian-twist", "seated-russian-twist"],
+    "alternatives": ["supine-spinal-twist", "thread-the-needle", "cat-cow-stretch"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Sit tall with legs extended, feet flexed and active",
+      "Press sit bones evenly into the floor — neutral pelvis",
+      "Cross forearms at the chest, hands on opposite shoulders",
+      "Lengthen the crown of the head toward the ceiling",
+      "Anchor hips and thighs to the ground before twisting"
+    ],
+    "setup_cues_pl": [
+      "Usiądź wyprostowany, nogi wyciągnięte, stopy w zgięciu i aktywne",
+      "Równo dociśnij guzy kulszowe do podłogi — miednica neutralna",
+      "Skrzyżuj przedramiona na klatce, dłonie na przeciwnych barkach",
+      "Wyciągnij czubek głowy w kierunku sufitu",
+      "Najpierw zakotwicz biodra i uda na ziemi, dopiero potem skręcaj"
+    ],
+    "execution_cues": [
+      "Lead the rotation from the rib cage, not from the arms or shoulders",
+      "Keep the hips and knees pointing straight forward at all times",
+      "Exhale into the twist, inhale to return to center",
+      "Grow taller with each inhale before rotating further",
+      "Stop at the end of comfortable range — no forced rotation"
+    ],
+    "execution_cues_pl": [
+      "Prowadź rotację z klatki piersiowej, nie z ramion czy barków",
+      "Utrzymuj biodra i kolana stale skierowane prosto do przodu",
+      "Wydech — skręt, wdech — powrót do środka",
+      "Z każdym wdechem wydłużaj się w pionie zanim skręcisz głębiej",
+      "Zatrzymaj się w komfortowym zakresie — żadnego wymuszania rotacji"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leading the rotation with the arms (yanking the elbows)",
+        "faultPl": "Prowadzenie rotacji ramionami (szarpanie łokciami)",
+        "cause": "Trying to reach further than the spine can actually rotate; using arms to create false range of motion",
+        "causePl": "Próba sięgnięcia dalej niż faktycznie pozwala kręgosłup; używanie ramion do wymuszenia fałszywego zakresu ruchu",
+        "cue": "Imagine your arms are 'glued' to your chest — they only move because the rib cage moves",
+        "cuePl": "Wyobraź sobie, że ramiona są 'przyklejone' do klatki — ruszają się tylko dlatego, że klatka się obraca"
+      },
+      {
+        "fault": "Hips and knees rotating with the torso",
+        "faultPl": "Biodra i kolana obracają się razem z tułowiem",
+        "cause": "Insufficient anchoring of the lower body; the rotation 'leaks' into the hips instead of staying in the spine",
+        "causePl": "Niewystarczające zakotwiczenie dolnej części ciała; rotacja 'ucieka' w biodra zamiast pozostać w kręgosłupie",
+        "cue": "Glue the thighs to the floor and the kneecaps to the ceiling — the legs are anchors",
+        "cuePl": "Przyklej uda do podłogi, a rzepki do sufitu — nogi są kotwicami"
+      },
+      {
+        "fault": "Slouching or collapsing the chest during rotation",
+        "faultPl": "Zaokrąglanie pleców lub zapadanie klatki podczas rotacji",
+        "cause": "Loss of spinal length under the demand of rotation; weak postural endurance",
+        "causePl": "Utrata wydłużenia kręgosłupa pod wymogiem rotacji; słaba wytrzymałość posturalna",
+        "cue": "Grow taller as you twist — every degree of rotation must come with an inch of length",
+        "cuePl": "Wydłużaj się w pionie podczas skrętu — każdy stopień rotacji musi nieść za sobą kolejny centymetr wysokości"
+      },
+      {
+        "fault": "Holding the breath during the twist",
+        "faultPl": "Wstrzymywanie oddechu podczas skrętu",
+        "cause": "Tension and over-effort; mistaking force for depth of rotation",
+        "causePl": "Napięcie i nadmierny wysiłek; mylenie siły z głębokością rotacji",
+        "cue": "Match each rotation to a slow exhale — the breath drives the depth, not the muscles",
+        "cuePl": "Połącz każdą rotację z powolnym wydechem — to oddech wyznacza głębokość, nie mięśnie"
+      },
+      {
+        "fault": "Letting the head spin faster than the spine",
+        "faultPl": "Kręcenie głową szybciej niż obraca się kręgosłup",
+        "cause": "Looking sideways with the eyes/neck instead of letting the head follow the thoracic rotation",
+        "causePl": "Patrzenie w bok oczami/szyją zamiast pozwolić, by głowa podążała za rotacją odcinka piersiowego",
+        "cue": "Move the head AS the chest moves — the gaze travels with the sternum, not ahead of it",
+        "cuePl": "Ruszaj głową WRAZ z klatką — wzrok wędruje z mostkiem, a nie przed nim"
+      }
+    ],
+    "breathing": "Inhale to lengthen the spine, exhale to rotate; inhale to return to center, exhale to rotate the other side. Keep the breath slow and continuous — never hold it.",
+    "breathingPl": "Wdech — wydłuż kręgosłup, wydech — skręć; wdech — wróć do środka, wydech — skręć w drugą stronę. Oddech wolny i nieprzerwany — nigdy nie wstrzymuj."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Skip rotational movements until cleared by a physiotherapist — active twisting can aggravate acute lumbar symptoms (disc, facet joint or muscle strain).",
+      "modificationPl": "Pomiń ruchy rotacyjne do czasu zgody fizjoterapeuty — aktywne skręcanie może nasilić ostre objawy lędźwiowe (dysk, stawy międzywyrostkowe, naciągnięcia mięśni).",
+      "alternative": "cat-cow-stretch"
+    },
+    {
+      "condition": "lumbar_disc_herniation",
+      "severity": "modify",
+      "modification": "Reduce range of rotation to 30-50% of maximum; perform very slowly, never push into discomfort. Avoid combining rotation with forward flexion.",
+      "modificationPl": "Ogranicz zakres rotacji do 30-50% maksymalnego; wykonuj bardzo wolno, nigdy nie wchodź w dyskomfort. Unikaj łączenia rotacji ze zgięciem do przodu.",
+      "alternative": "supine-spinal-twist"
+    },
+    {
+      "condition": "pregnancy_second_third_trimester",
+      "severity": "modify",
+      "modification": "Use only 'open' twists that move the torso away from the belly; reduce range significantly. Avoid deep closed rotations that compress the abdomen.",
+      "modificationPl": "Stosuj wyłącznie 'otwarte' skręty, w których tułów odchodzi od brzucha; znacząco zmniejsz zakres. Unikaj głębokich zamkniętych rotacji uciskających brzuch.",
+      "alternative": "cat-cow-stretch"
+    },
+    {
+      "condition": "recent_abdominal_or_spinal_surgery",
+      "severity": "avoid",
+      "modification": "Avoid all spinal rotation until cleared by your surgeon and rehab specialist; tissue healing must be complete before adding rotational load.",
+      "modificationPl": "Unikaj wszelkiej rotacji kręgosłupa do czasu zgody chirurga i rehabilitanta; gojenie tkanek musi być zakończone przed wprowadzeniem obciążenia rotacyjnego.",
+      "alternative": "child-pose"
+    }
+  ],
+
+  "typical_sets_reps": "2-3x6-10 powtórzeń na stronę",
+  "calories_per_kg_per_hour": 2.5,
+
+  "media": {
+    "primary": "spine-twist.gif",
+    "frames_extracted": [
+      "frames/spine-twist/frame_0_start.png",
+      "frames/spine-twist/frame_1_early.png",
+      "frames/spine-twist/frame_2_mid.png",
+      "frames/spine-twist/frame_3_late.png",
+      "frames/spine-twist/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "abs/spine-twist"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T12:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Model siedzi na podłodze z nogami wyprostowanymi do przodu (siad prosty), stopy w zgięciu grzbietowym, ręce skrzyżowane na klatce piersiowej (dłonie na przeciwnych barkach). Tułów rotuje na boki — widoczna lekka rotacja w klatkach 1-3 (przezroczysty 'duch' poprzedniej pozycji potwierdza ruch oscylacyjny lewo-prawo). Mięśnie podświetlone na czerwono: mięśnie skośne brzucha (obliques) wzdłuż boku tułowia oraz prostownik grzbietu (erector_spinae) w odcinku lędźwiowym — klasyczny wzorzec mobilizacji rotacyjnej kręgosłupa piersiowo-lędźwiowego. Jest to wariant SEATED (siedzący), nie supine — różnica względem 'supine spinal twist' istotna: w siadzie nogi i biodra są zakotwiczone, rotacja izolowana w kręgosłupie. Klasyfikacja: category=mobility (główny cel — zakres ruchu w płaszczyźnie poprzecznej), mechanic=isometric (statyczny hold na końcu rotacji), plane=transverse, force=static, laterality=bilateral (obie strony wykonywane na przemian), kinetic_chain=open (kończyny wolne, brak obciążenia zewnętrznego). Primary muscles: obliques + erector_spinae zgodnie z czerwoną aktywacją na GIFie. Secondary: glutes (lekko angażują biodra do utrzymania kotwicy) i transverse_abdominis (głęboka stabilizacja podczas rotacji). Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego. 5 cues PL/EN setup, 5 execution, 5 common faults (lead with arms / hips rotate / slouching / breath holding / head spinning), 4 contraindications (acute LBP / disc herniation / pregnancy / post-surgery). Difficulty 2/10 — wzorzec ruchowy bardzo dostępny dla początkujących, ale wymaga świadomości postawy i oddechu.",
+
+  "tags": ["mobility", "warmup", "cooldown", "core_mobility", "thoracic_rotation", "desk_worker_friendly", "no_equipment", "beginner_friendly", "pilates_inspired", "lower_back_friendly"]
+}

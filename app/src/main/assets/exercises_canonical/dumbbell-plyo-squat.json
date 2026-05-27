@@ -1,0 +1,202 @@
+{
+  "id": "dumbbell-plyo-squat",
+  "name": "Dumbbell Plyo Squat",
+  "namePl": "Plyo squat z hantlami",
+  "aliases": ["dumbbell jump squat", "loaded jump squat", "dumbbell plyometric squat", "weighted plyo squat"],
+  "aliasesPl": ["wyskoki z przysiadu z hantlami", "loaded jump squat", "plyometryczny przysiad z hantlami", "obciążony jump squat"],
+
+  "description": "Plyometric squat variation with dumbbells held at the sides. Bilateral compound movement combining an explosive concentric phase with a triple-extension jump and a controlled landing. Develops lower-body power, rate of force development (RFD) and reactive strength. Used in athletic preparation, sport-specific power programming and CrossFit-style metabolic conditioning. Load is intentionally moderate — power output, not absolute strength, is the training target.",
+  "descriptionPl": "Plyometryczna odmiana przysiadu z hantlami trzymanymi po bokach. Dwustronny ruch wielostawowy łączący eksplozywną fazę koncentryczną z wyskokiem w pełnym wyproście i kontrolowanym lądowaniem. Rozwija moc dolnej części ciała, szybkość narastania siły (RFD) i siłę reaktywną. Używany w przygotowaniu sportowym, programowaniu mocy specyficznej dla dyscypliny oraz w kondycjonowaniu metabolicznym typu CrossFit. Obciążenie celowo umiarkowane — celem treningowym jest moc, a nie siła maksymalna.",
+
+  "instructions": [
+    "Grab a pair of moderate-weight dumbbells (typically 20-40% of your goblet squat max). Stand upright with feet shoulder-width apart, toes slightly turned out.",
+    "Hold dumbbells at your sides with a neutral grip, arms relaxed and long. Engage your core and pull shoulder blades down and back.",
+    "Inhale, brace your trunk. Descend into a controlled squat by breaking at the hips and knees simultaneously. Keep the dumbbells close to your thighs.",
+    "Lower until your thighs are roughly parallel to the floor (or slightly below) while maintaining a neutral spine and heels flat.",
+    "Without pausing at the bottom, reverse the motion explosively. Drive aggressively through your whole foot, extending hips, knees and ankles (triple extension) into a jump.",
+    "Leave the floor with the dumbbells trailing behind your hips — do not swing them forward. Stay tall in the air with neutral spine.",
+    "Land softly on the balls of the feet first, then heels, with knees tracking over toes. Absorb impact by bending hips and knees into the next rep's bottom position.",
+    "Reset breath and posture between reps if needed. Quality over quantity — stop the set when bar speed drops or landing mechanics break down."
+  ],
+  "instructionsPl": [
+    "Złap parę hantli o umiarkowanym ciężarze (typowo 20-40% twojego maksymalnego goblet squat). Stań prosto, stopy na szerokość barków, palce lekko skierowane na zewnątrz.",
+    "Trzymaj hantle po bokach neutralnym chwytem, ręce rozluźnione i długie. Napnij brzuch i ściągnij łopatki w dół i do tyłu.",
+    "Wdech, napięcie tułowia. Schodź kontrolowanym ruchem w przysiad, zginając jednocześnie biodra i kolana. Trzymaj hantle blisko ud.",
+    "Schodź aż uda będą mniej więcej równoległe do podłogi (lub nieco poniżej) zachowując neutralny kręgosłup i pięty na ziemi.",
+    "Bez pauzy w dolnej pozycji odwróć kierunek eksplozywnie. Napieraj agresywnie całą stopą prostując biodra, kolana i kostki (potrójny wyprost) w wyskoku.",
+    "Oderwij się od podłoża z hantlami pozostającymi za biodrami — nie zamachuj nimi do przodu. Trzymaj sylwetkę wysoko w powietrzu, kręgosłup neutralny.",
+    "Ląduj miękko najpierw na śródstopiu, potem pięty, kolana podążają za palcami. Wytłum uderzenie zginając biodra i kolana w pozycję startową kolejnego powtórzenia.",
+    "Między powtórzeniami zresetuj oddech i postawę jeśli trzeba. Jakość ponad ilość — przerwij serię gdy spada prędkość wyskoku lub psuje się technika lądowania."
+  ],
+
+  "classification": {
+    "movement_pattern": "jump_plyometric",
+    "force": "both",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes", "calves"],
+    "secondary": ["hamstrings", "core"],
+    "stabilizers": ["erector_spinae", "forearms", "adductors"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P9",
+    "glutes": "P9",
+    "calves": "P8",
+    "hamstrings": "S6",
+    "core": "S6",
+    "erector_spinae": "T4",
+    "forearms": "T3",
+    "adductors": "T3"
+  },
+
+  "equipment": {
+    "required": ["dumbbells"],
+    "optional": ["athletic_shoes", "flat_surface"]
+  },
+
+  "category": "plyometric",
+
+  "level": {
+    "minimum": "advanced",
+    "difficulty_1_10": 8,
+    "prerequisites": ["bodyweight-squat", "goblet-squat", "bodyweight-jump-squat", "dumbbell-goblet-squat"],
+    "progression_to": ["barbell-jump-squat", "depth-jump", "trap-bar-jump", "kettlebell-jump-squat"],
+    "alternatives": ["bodyweight-jump-squat", "kettlebell-goblet-squat-jump", "barbell-jump-squat", "broad-jump"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Moderate dumbbells — power, not max weight",
+      "Feet shoulder-width, toes out 10-20°",
+      "Dumbbells hang at sides, neutral grip",
+      "Tall posture, shoulders down and back",
+      "Brace core before every rep"
+    ],
+    "setup_cues_pl": [
+      "Umiarkowane hantle — chodzi o moc, nie maksymalny ciężar",
+      "Stopy szerokość barków, palce na zewnątrz 10-20°",
+      "Hantle wiszą po bokach, chwyt neutralny",
+      "Wyprostowana sylwetka, barki w dół i do tyłu",
+      "Napnij brzuch przed każdym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Drive the floor away — explode up, don't grind",
+      "Triple extension at the top: hips, knees, ankles",
+      "Dumbbells stay behind the hips — no arm swing",
+      "Land toes-to-heels, knees track over toes",
+      "Absorb the landing into the next squat — silent feet"
+    ],
+    "execution_cues_pl": [
+      "Wypchnij podłogę — wybuchowo w górę, bez grindowania",
+      "Potrójny wyprost na górze: biodra, kolana, kostki",
+      "Hantle pozostają za biodrami — bez zamachu ramion",
+      "Ląduj od palców do pięt, kolana podążają za palcami",
+      "Wytłum lądowanie wchodząc w kolejny przysiad — ciche stopy"
+    ],
+    "common_faults": [
+      {
+        "fault": "Dumbbells swinging forward on takeoff",
+        "faultPl": "Hantle zamachujące się do przodu w momencie wyskoku",
+        "cause": "Trying to add momentum with the arms, weak grip, or load too heavy",
+        "causePl": "Próba dodania impetu ramionami, słaby chwyt, lub zbyt duży ciężar",
+        "cue": "Keep arms long and dead — power comes from the legs. Dumbbells trail behind the hips at takeoff.",
+        "cuePl": "Trzymaj ręce długie i martwe — moc pochodzi z nóg. Hantle ciągną się za biodrami w momencie wyskoku."
+      },
+      {
+        "fault": "Hard, stiff landing (audible slap)",
+        "faultPl": "Twarde, sztywne lądowanie (słyszalny klask)",
+        "cause": "Not bending hips and knees on impact, landing flat-footed, or accumulated fatigue",
+        "causePl": "Brak zginania bioder i kolan przy uderzeniu, lądowanie na całej stopie naraz, lub kumulacja zmęczenia",
+        "cue": "Land toes first, then heels. Imagine landing on eggshells — silent and soft. Stop the set when landings get loud.",
+        "cuePl": "Ląduj najpierw na palcach, potem na piętach. Wyobraź sobie że lądujesz na skorupkach jaj — cicho i miękko. Zakończ serię gdy lądowania robią się głośne."
+      },
+      {
+        "fault": "Knee valgus on landing (knees cave in)",
+        "faultPl": "Koślawienie kolan przy lądowaniu (kolana uciekają do środka)",
+        "cause": "Weak glute medius, asymmetric force distribution, or load too heavy for reactive control",
+        "causePl": "Słabe mięśnie pośladkowe średnie, asymetryczny rozkład siły, lub zbyt duży ciężar dla kontroli reaktywnej",
+        "cue": "Push knees out toward the pinky toes on the way down AND on landing. Reduce load until you can land clean.",
+        "cuePl": "Wypchnij kolana na zewnątrz w kierunku małych palców w drodze w dół I przy lądowaniu. Zmniejsz ciężar do czasu czystego lądowania."
+      },
+      {
+        "fault": "Insufficient squat depth before jumping",
+        "faultPl": "Niewystarczająca głębokość przysiadu przed wyskokiem",
+        "cause": "Loading the dumbbells stops at quarter squat — limits power output and trains incorrect ROM",
+        "causePl": "Obciążone wyskoki kończą się na ćwierć-przysiadzie — ogranicza moc i utrwala niewłaściwy zakres",
+        "cue": "Hit at least parallel before exploding up. If you can't, drop the weight.",
+        "cuePl": "Schodź co najmniej do równoległej z podłogą przed wybuchem w górę. Jeśli nie potrafisz — zmniejsz ciężar."
+      },
+      {
+        "fault": "Pausing too long at the bottom",
+        "faultPl": "Zbyt długa pauza w dolnej pozycji",
+        "cause": "Loss of stretch-shortening cycle (SSC) — turns the lift into a slow squat with a hop",
+        "causePl": "Utrata cyklu rozciągnięcie-skrócenie (SSC) — ćwiczenie zamienia się w wolny przysiad z podskokiem",
+        "cue": "Touch and go — minimal contact time at the bottom. The reversal should feel like a bounce, not a pause.",
+        "cuePl": "Dotknij i wracaj — minimalny czas kontaktu w dolnej pozycji. Odbicie ma być sprężynowe, nie z pauzą."
+      }
+    ],
+    "breathing": "Inhale and brace on the descent. Forceful exhale through pursed lips during the explosive ascent and jump. Quick re-inhale during landing/reset. Do not hold breath across multiple reps in a row.",
+    "breathingPl": "Wdech i napięcie podczas schodzenia. Mocny wydech przez zaciśnięte usta podczas eksplozywnego wstawania i wyskoku. Szybki ponowny wdech podczas lądowania/resetu. Nie wstrzymuj oddechu przez kilka powtórzeń z rzędu."
+  },
+
+  "contraindications": [
+    {
+      "condition": "patellar_tendinopathy",
+      "severity": "avoid",
+      "modification": "Plyometrics overload the patellar tendon. Eliminate jumping until pain-free. Rehab with isometric and heavy slow resistance work first.",
+      "modificationPl": "Plyometria mocno obciąża ścięgno rzepki. Wyklucz wyskoki do czasu ustąpienia bólu. Najpierw rehabilitacja izometrami i ciężką wolną pracą.",
+      "alternative": "dumbbell-goblet-squat"
+    },
+    {
+      "condition": "acute_ankle_sprain",
+      "severity": "avoid",
+      "modification": "Landing requires full ankle stability and dorsiflexion. Avoid all plyometrics until graded return-to-jump protocol completed.",
+      "modificationPl": "Lądowanie wymaga pełnej stabilności i dorsiflexji stawu skokowego. Wyklucz całą plyometrię do zakończenia stopniowego protokołu powrotu do wyskoków.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "lower_back_disc_herniation",
+      "severity": "avoid",
+      "modification": "Loaded jump impact compresses the spine repeatedly. Use unloaded or non-impact alternatives until cleared by physio.",
+      "modificationPl": "Uderzenie z obciążeniem lądując kompresuje kręgosłup wielokrotnie. Używaj alternatyw bez obciążenia lub bez uderzeń do zakończenia leczenia u fizjoterapeuty.",
+      "alternative": "bodyweight-squat"
+    },
+    {
+      "condition": "knee_osteoarthritis",
+      "severity": "modify",
+      "modification": "Repeated landing impact stresses arthritic joint surfaces. Reduce volume, shorten ROM, or switch to low-impact power work (e.g. trap-bar deadlift speed reps).",
+      "modificationPl": "Powtarzane uderzenia lądując obciążają zniszczone powierzchnie stawu. Zmniejsz objętość, skróć zakres ruchu, lub przejdź na pracę nad mocą bez uderzeń (np. szybkie powtórzenia martwego ciągu z trap-bar).",
+      "alternative": "trap-bar-jump"
+    }
+  ],
+
+  "typical_sets_reps": "3-5x3-5 (power, full rest 2-3 min) | 4x6-8 (athletic conditioning) | EMOM 5-10 min x 3-5 reps (metabolic power)",
+  "calories_per_kg_per_hour": 8.5,
+
+  "media": {
+    "primary": "dumbbell-plyo-squat.gif",
+    "frames_extracted": [
+      "frames/dumbbell-plyo-squat/frame_0_start.png",
+      "frames/dumbbell-plyo-squat/frame_1_early.png",
+      "frames/dumbbell-plyo-squat/frame_2_mid.png",
+      "frames/dumbbell-plyo-squat/frame_3_late.png",
+      "frames/dumbbell-plyo-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/dumbbell-plyo-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-25T00:00:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0/4 (start/end) pokazuje pozycję stojącą z hantlami po bokach, neutralny chwyt, ręce opuszczone. Klatka 2 (mid) pokazuje pełny przysiad parallel z hantlami trzymanymi blisko ud, kolana wypchnięte na zewnątrz, plecy neutralne. Klatka 3/4 (late/end) pokazuje motion blur sylwetki cofniętej w czasie — wyraźny ślad wyskoku. Podświetlone na ilustracji mięśnie: czworogłowe (główne), pośladki, łydki — pasuje do plyometrycznego squata gdzie potrójny wyprost angażuje calves bardziej niż w klasycznym przysiadzie (stąd P8 dla calves). Movement_pattern=jump_plyometric, force=both (koncentryczna eksplozja w górę + ekscentryczne wytłumienie lądowania), category=plyometric. Level=advanced bo wymaga zarówno techniki przysiadu jak i kontroli lądowania pod obciążeniem. Wszystkie pola PL napisane od zera bez tłumaczenia maszynowego.",
+
+  "tags": ["plyometric", "power", "explosive", "athletic_performance", "lower_body", "dumbbell", "jump_training", "rfd", "stretch_shortening_cycle"]
+}

@@ -1,0 +1,206 @@
+{
+  "id": "cable-front-raise",
+  "name": "Cable Front Raise",
+  "namePl": "Wznosy w przód na wyciągu",
+  "aliases": ["cable anterior raise", "low pulley front raise", "two-handed cable front raise", "cable shoulder flexion raise", "crossover cable front raise"],
+  "aliasesPl": ["wznosy ramion w przód na wyciągu", "wznosy na wyciągu dolnym przed siebie", "front raise na linkach", "unoszenie ramion przed siebie na wyciągu", "wznosy oburącz na wyciągu dolnym"],
+
+  "description": "Single-joint isolation exercise targeting the anterior (front) head of the deltoid using a cable column with a single handle in each hand. The lifter stands with the low pulleys positioned behind (or to the sides slightly behind) the body, cables run forward under the arms, and the handles are raised forward and up to roughly forehead level. The key advantage over dumbbells is constant tension throughout the entire range — there is no 'easy' bottom position. Because the cable pulls down-and-back, the anterior delt is loaded even at the very start of the lift, when dumbbells contribute almost nothing. Two-handed simultaneous execution is the most common variant (as in the animation), giving a strong bilateral contraction.",
+  "descriptionPl": "Jednostawowe ćwiczenie izolowane na przedni akton mięśnia naramiennego, wykonywane na maszynie z wyciągiem — w każdej dłoni pojedynczy uchwyt. Ćwiczący staje tak, by dolne bloczki znajdowały się za nim (lub lekko po bokach z tyłu), linki przechodzą do przodu pod ramionami, a uchwyty unosi przed siebie i w górę mniej więcej do wysokości czoła. Główną przewagą nad hantlami jest stałe napięcie w całym zakresie ruchu — nie ma 'łatwej' pozycji dolnej. Ponieważ linka ciągnie w dół i do tyłu, przedni akton jest obciążony już od samego początku, gdy hantle praktycznie nic nie dają. Najczęstszym wariantem jest wykonanie oburącz jednocześnie (jak na animacji), co daje silny obustronny skurcz.",
+
+  "instructions": [
+    "Set two low pulleys on a cable cross machine to the lowest position. Attach a single D-handle to each cable. Stand between the pulleys with your back to them (cables run forward past your hips).",
+    "Grasp the right handle with your left hand and the left handle with your right hand (cables crossed behind your back), or alternatively grab each handle with the same-side hand if your stance allows. Take a step forward to create tension on the cables.",
+    "Stand tall with feet shoulder-width apart, knees soft, ribs down, core braced. The handles should hang at the front of your thighs with the cables under light tension.",
+    "Lock a slight bend into your elbows (15-20 degrees) and maintain that exact angle for every rep — the arms act as one rigid lever.",
+    "Exhale and raise both handles forward and upward in a controlled arc. Lead with the wrist/knuckles, not with the elbow.",
+    "Continue lifting until the handles are at approximately forehead height (slightly above shoulder level — the cable angle allows safe overhead motion that dumbbells do not).",
+    "Hold the top position for a moment, feeling a hard squeeze in the front of both shoulders. Keep shoulders pulled DOWN — do not let them shrug toward the ears.",
+    "Inhale and lower the handles under control over 2-3 seconds back to the starting position at your thighs. Do not let the cables yank your arms down — fight the eccentric.",
+    "Maintain a still, upright torso throughout the entire set. No leaning back, no hip drive, no swinging."
+  ],
+  "instructionsPl": [
+    "Ustaw dwa dolne bloczki bramy wyciągowej w najniższej pozycji. Do każdej linki podłącz pojedynczy uchwyt typu D. Stań między bloczkami plecami do nich (linki biegną do przodu obok bioder).",
+    "Złap prawy uchwyt lewą ręką, a lewy uchwyt prawą ręką (linki skrzyżowane za plecami) — lub alternatywnie chwyć każdy uchwyt ręką po tej samej stronie, jeśli pozwala na to ustawienie. Zrób krok do przodu, aby naciągnąć linki.",
+    "Stań prosto, stopy na szerokość barków, kolana lekko ugięte, żebra ściągnięte w dół, brzuch napięty. Uchwyty powinny zwisać przy udach z lekko naprężonymi linkami.",
+    "Zablokuj lekkie ugięcie w łokciach (15-20 stopni) i utrzymuj dokładnie ten sam kąt w każdym powtórzeniu — ramiona pracują jako jedna sztywna dźwignia.",
+    "Wydech, unieś oba uchwyty przed siebie i w górę kontrolowanym łukiem. Prowadź ruch nadgarstkiem/kostkami, a nie łokciem.",
+    "Kontynuuj unoszenie aż uchwyty znajdą się mniej więcej na wysokości czoła (lekko powyżej linii barków — kąt linki pozwala na bezpieczny ruch ponad bark, czego nie dają hantle).",
+    "Zatrzymaj się na chwilę w górnej pozycji, czując mocny skurcz w przedniej części obu barków. Trzymaj barki ŚCIĄGNIĘTE W DÓŁ — nie pozwól im unosić się ku uszom.",
+    "Wdech, opuszczaj uchwyty w kontrolowany sposób przez 2-3 sekundy do pozycji startowej przy udach. Nie pozwól, by linki szarpnęły ramiona w dół — walcz z fazą ekscentryczną.",
+    "Utrzymuj nieruchomy, pionowy tułów przez całą serię. Bez odchylania się, bez pomagania biodrami, bez bujania."
+  ],
+
+  "classification": {
+    "movement_pattern": "isolation_raise",
+    "force": "push",
+    "mechanic": "isolation",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "open"
+  },
+
+  "muscles": {
+    "primary": ["anterior_deltoids"],
+    "secondary": ["lateral_deltoids", "clavicular_pectoralis_major", "serratus_anterior"],
+    "stabilizers": ["upper_trapezius", "rotator_cuff", "core", "forearm_flexors", "biceps_brachii", "erector_spinae"]
+  },
+
+  "muscle_intensity": {
+    "anterior_deltoids": "P10",
+    "lateral_deltoids": "S5",
+    "clavicular_pectoralis_major": "S5",
+    "serratus_anterior": "S4",
+    "upper_trapezius": "T3",
+    "rotator_cuff": "T3",
+    "core": "T3",
+    "erector_spinae": "T3",
+    "forearm_flexors": "T2",
+    "biceps_brachii": "T1"
+  },
+
+  "equipment": {
+    "required": ["cable_machine", "single_handle"],
+    "optional": ["lifting_belt", "wrist_wraps"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "intermediate",
+    "difficulty_1_10": 4,
+    "prerequisites": ["dumbbell-front-raise"],
+    "progression_to": ["incline-cable-front-raise", "single-arm-cable-front-raise-heavy"],
+    "alternatives": ["dumbbell-front-raise", "barbell-front-raise", "plate-front-raise", "landmine-press", "incline-dumbbell-front-raise"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Low pulleys, single handles in each hand, back to the machine",
+      "Cables crossed behind, light tension at thigh level",
+      "Feet shoulder-width, ribs down, core braced",
+      "Soft 15-20 degree bend in the elbows — lock it",
+      "Shoulders packed back and down before the first rep"
+    ],
+    "setup_cues_pl": [
+      "Dolne bloczki, pojedyncze uchwyty w każdej dłoni, plecy do maszyny",
+      "Linki skrzyżowane za plecami, lekkie naprężenie przy udach",
+      "Stopy na szerokość barków, żebra ściągnięte w dół, brzuch napięty",
+      "Lekkie 15-20 stopni ugięcia w łokciach — zablokuj kąt",
+      "Barki ściągnięte w tył i w dół przed pierwszym powtórzeniem"
+    ],
+    "execution_cues": [
+      "Lead with the knuckles, push the handles forward then up",
+      "Feel constant tension — the bottom is NOT a rest position",
+      "Top of the rep at forehead height — squeeze the front delts hard",
+      "Lower for 3 seconds, fight the cable — do not let it pull you down",
+      "Torso like a statue: no leaning, no swinging, no shrugging"
+    ],
+    "execution_cues_pl": [
+      "Prowadź kostkami dłoni, pchaj uchwyty przed siebie a potem w górę",
+      "Czuj stałe napięcie — pozycja dolna NIE jest pozycją odpoczynku",
+      "Górna pozycja na wysokości czoła — mocno ściśnij przednie aktony",
+      "Opuszczaj przez 3 sekundy, walcz z linką — nie pozwól jej ciągnąć cię w dół",
+      "Tułów jak posąg: żadnego odchylania, bujania ani wzruszania ramionami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Leaning forward as cables pull backward",
+        "faultPl": "Pochylanie się do przodu, gdy linki ciągną w tył",
+        "cause": "Cable tension pulls the lifter backward; weak posterior chain and core fail to hold the torso upright, so the body bends forward to compensate",
+        "causePl": "Napięcie linek ciągnie ćwiczącego w tył; słaby tylny łańcuch i brzuch nie utrzymują tułowia pionowo, więc ciało pochyla się do przodu jako kompensacja",
+        "cue": "Take a slightly bigger stagger stance (one foot in front), brace abs and glutes hard, keep ears stacked over hips for every rep.",
+        "cuePl": "Stań w lekkim wykroku (jedna stopa z przodu), mocno napnij brzuch i pośladki, utrzymuj uszy nad biodrami w każdym powtórzeniu."
+      },
+      {
+        "fault": "Shrugging the shoulders at the top of the rep",
+        "faultPl": "Unoszenie barków (wzruszanie ramionami) w górnej pozycji",
+        "cause": "Anterior delt fatigues and upper trapezius takes over; load is too heavy or fatigue is high late in the set",
+        "causePl": "Przedni akton się męczy i pracę przejmuje czworoboczny; ciężar jest za duży lub zmęczenie pod koniec serii",
+        "cue": "Drop the weight by 20-30%. Think 'long neck' at the top — actively press shoulders down even as the handles go up.",
+        "cuePl": "Zmniejsz ciężar o 20-30%. Myśl 'długa szyja' w górnej pozycji — aktywnie ściągaj barki w dół, nawet gdy uchwyty idą w górę."
+      },
+      {
+        "fault": "Bending the elbows progressively into a curl",
+        "faultPl": "Postępujące uginanie łokci, zmieniające ruch w uginanie bicepsów",
+        "cause": "Lifter tries to use heavier weight by shortening the lever arm, or biceps engage to assist the failing anterior delt",
+        "causePl": "Ćwiczący próbuje użyć większego ciężaru skracając dźwignię, lub biceps włącza się aby pomóc słabnącemu przedniemu aktonowi",
+        "cue": "Lock elbows at 15-20 degrees from the first rep. If the angle changes — the set ends. The arm is one rigid lever.",
+        "cuePl": "Zablokuj łokcie w 15-20 stopniach od pierwszego powtórzenia. Jeśli kąt się zmienia — seria jest skończona. Ramię to jedna sztywna dźwignia."
+      },
+      {
+        "fault": "Letting the cable yank the arms back down (no eccentric control)",
+        "faultPl": "Pozwalanie linkom szarpnąć ramiona w dół (brak kontroli ekscentryku)",
+        "cause": "Lifter focuses only on the lifting phase and 'drops' the negative; the cable tension accelerates the fall",
+        "causePl": "Ćwiczący skupia się tylko na fazie unoszenia i 'puszcza' negatyw; napięcie linki przyspiesza opadanie",
+        "cue": "Count '1-2-3' on the way down. The eccentric is where most growth happens in cable raises.",
+        "cuePl": "Licz '1-2-3' podczas opuszczania. Faza ekscentryczna to miejsce, gdzie powstaje większość bodźca wzrostowego w wznosach na wyciągu."
+      },
+      {
+        "fault": "Standing too close to the pulleys (cables go slack at the bottom)",
+        "faultPl": "Stanie zbyt blisko bloczków (linki luzują się w pozycji dolnej)",
+        "cause": "Position not adjusted for cable angle; lifter loses the main benefit of cables (constant tension)",
+        "causePl": "Pozycja nie dostosowana do kąta linki; ćwiczący traci główną zaletę wyciągu (stałe napięcie)",
+        "cue": "Step forward until you feel resistance at the very bottom. If the cable goes slack — step further out.",
+        "cuePl": "Zrób krok do przodu aż poczujesz opór w samej dolnej pozycji. Jeśli linka jest luźna — odejdź dalej."
+      }
+    ],
+    "breathing": "Exhale during the lift (concentric), inhale during the lowering (eccentric). Keep a continuous moderate abdominal brace — the cable creates a back-extension torque that requires the core to stay engaged the entire set.",
+    "breathingPl": "Wydech podczas unoszenia (faza koncentryczna), wdech podczas opuszczania (faza ekscentryczna). Utrzymuj ciągłe umiarkowane napięcie brzucha — linka generuje moment wyprostny dla kręgosłupa, więc brzuch musi pozostać napięty przez całą serię."
+  },
+
+  "contraindications": [
+    {
+      "condition": "shoulder_impingement_syndrome",
+      "severity": "modify",
+      "modification": "Forward raises compress the subacromial space at higher angles. Limit the top of the rep to shoulder height (not forehead height), use a neutral grip, and use lighter loads with higher reps. The cable variant is generally gentler than dumbbells because of the smooth resistance curve.",
+      "modificationPl": "Wznosy przed siebie uciskają przestrzeń podbarkową w wyższych kątach. Ogranicz górną pozycję do wysokości barku (nie czoła), używaj chwytu neutralnego oraz lżejszych ciężarów z większą liczbą powtórzeń. Wariant na wyciągu jest zazwyczaj łagodniejszy od hantli ze względu na płynną krzywą oporu.",
+      "alternative": "landmine-press"
+    },
+    {
+      "condition": "rotator_cuff_tendinopathy",
+      "severity": "avoid",
+      "modification": "Repeated loaded shoulder flexion aggravates supraspinatus and biceps tendon. Avoid until pain-free. When returning, start with very light single-arm cable variant and stop short of shoulder height. Combine with rotator cuff rehab work.",
+      "modificationPl": "Powtarzane zgięcie barku pod obciążeniem drażni mięsień nadgrzebieniowy i ścięgno bicepsa. Unikaj do ustąpienia bólu. Wracając, zacznij od bardzo lekkiego wariantu jednorącz na wyciągu i zatrzymuj się poniżej linii barku. Łącz z pracą rehabilitacyjną stożka rotatorów.",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "ac_joint_pain_or_separation",
+      "severity": "avoid",
+      "modification": "The AC joint is heavily loaded at the top of forward raises, especially above shoulder height. Skip cable front raises during flare-ups. Train rear and lateral delts instead. Return only when fully pain-free, starting with sub-shoulder ROM.",
+      "modificationPl": "Staw barkowo-obojczykowy jest mocno obciążony w górnej pozycji wznosów, szczególnie powyżej linii barku. Pomiń wznosy na wyciągu w czasie zaostrzenia. Trenuj zamiast tego tylne i boczne aktony. Wróć dopiero gdy całkowicie bezboleśnie, zaczynając od zakresu poniżej linii barku.",
+      "alternative": "cable-rear-delt-fly"
+    },
+    {
+      "condition": "acute_lower_back_pain",
+      "severity": "modify",
+      "modification": "The cable pulls the body backward, which forces the lumbar spine to brace against an extension torque. During an LBP episode, this is uncomfortable and risky. Switch to a seated cable variant (face the column, sit on a low bench) or use dumbbells seated against a backrest until pain resolves.",
+      "modificationPl": "Linka ciągnie ciało w tył, co zmusza odcinek lędźwiowy do walki z momentem wyprostnym. W czasie epizodu bólu dolnego odcinka pleców jest to niewygodne i ryzykowne. Przełącz się na wariant siedzący na wyciągu (przodem do kolumny, na niskiej ławce) lub używaj hantli siedząc na ławce z oparciem do ustąpienia bólu.",
+      "alternative": "seated-dumbbell-front-raise"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x12-15 (hypertrophy, standard) | 3x15-20 (pump finisher, lighter load) | 3-4x10-12 (strength focus on isolation)",
+  "calories_per_kg_per_hour": 4.5,
+
+  "media": {
+    "primary": "cable-front-raise.gif",
+    "frames_extracted": [
+      "frames/cable-front-raise/frame_0_start.png",
+      "frames/cable-front-raise/frame_1_early.png",
+      "frames/cable-front-raise/frame_2_mid.png",
+      "frames/cable-front-raise/frame_3_late.png",
+      "frames/cable-front-raise/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "delts/cable-front-raise"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-23T20:40:00Z",
+  "verification_notes": "Obejrzałem 5 klatek GIFa jahel. Frame 0: pozycja startowa — model stoi przodem (plecami do dolnych bloczków), w każdej dłoni pojedynczy uchwyt typu D, linki schodzą w dół-do-tyłu po obu stronach ciała (cable cross stance), ręce wzdłuż ud, podświetlony lewy przedni akton + górna klatka piersiowa. Frame 1-2: oba uchwyty unoszone JEDNOCZEŚNIE (wariant bilateralny, nie naprzemienny) przed siebie i w górę po łuku — uchwyty stykają się ze sobą przy twarzy na wysokości CZOŁA (powyżej linii barków, co jest możliwe tylko dzięki kątowi linki). Frame 3-4: kontrolowany powrót do pozycji wyjściowej, podświetlone oba przednie aktony. Tułów pionowy przez cały ruch. Stałe napięcie widoczne — linki zawsze naciągnięte. Ćwiczenie zidentyfikowane jako klasyczny Cable Front Raise oburącz z dolnych bloczków, wariant 'crossover' (linki skrzyżowane). Klasyfikacja: bilateral (oba ramiona razem), sagittal plane (zgięcie barku), isolation, push. Difficulty 4 — wyższy niż wersja z hantlami (3) ze względu na konieczność walki z tylnym ciągiem linek i utrzymanie pozycji ciała. Wszystkie pola PL napisane od zera, nie tłumaczone z angielskiego.",
+
+  "tags": ["bodybuilding", "shoulders", "delts", "anterior_deltoid", "isolation", "cable", "constant_tension", "upper_body", "intermediate"]
+}

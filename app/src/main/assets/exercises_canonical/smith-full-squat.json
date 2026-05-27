@@ -1,0 +1,203 @@
+{
+  "id": "smith-full-squat",
+  "name": "Smith Machine Full Squat",
+  "namePl": "Przysiad pełny na Smith machine",
+  "aliases": ["smith squat", "smith machine squat", "smith back squat", "smith full back squat", "guided squat"],
+  "aliasesPl": ["przysiad na maszynie Smitha", "przysiad na Smith machine", "smith squat", "przysiad pełny smith", "przysiad prowadzony"],
+
+  "description": "Bilateral compound squat performed on a Smith machine, where the bar travels along a fixed vertical (or near-vertical) track. The guided path removes most balance and stabilization demands, allowing the lifter to focus on quad and glute loading. Useful for beginners learning the squat pattern, for high-intensity isolation work close to failure, and as a safe option to train alone without a spotter. Trade-off: the fixed path is unnatural compared to a free-weight squat — it can stress knees, lower back or hips if foot placement is wrong.",
+  "descriptionPl": "Dwustronny ruch wielostawowy wykonywany na maszynie Smitha, w której gryf porusza się po stałym pionowym (lub niemal pionowym) torze. Prowadzony tor eliminuje większość wymagań stabilizacyjnych i balansowych, dzięki czemu można skupić się na obciążeniu czworogłowych i pośladków. Przydatny dla początkujących uczących się wzorca przysiadu, do izolacyjnej pracy na wysokiej intensywności blisko upadku mięśniowego i jako bezpieczna opcja treningu solo bez asekuracji. Wada: stały tor jest mniej naturalny niż wolny ciężar — może obciążać kolana, dolny odcinek pleców lub biodra przy złym ustawieniu stóp.",
+
+  "instructions": [
+    "Set the safety stops on the Smith machine just below your bottom squat position. Adjust bar height so the bar sits about 2-3 cm below the top of your shoulders when standing upright.",
+    "Load the desired weight on each side and secure with collars. Step under the bar and place it across your upper traps (not on the neck).",
+    "Grip the bar with both hands slightly wider than shoulder-width. Twist the bar to unhook it from the rack.",
+    "Position your feet shoulder-width apart, slightly forward of the bar (about 10-15 cm) so the bar sits over your mid-foot at depth. Toes turned out 10-20°.",
+    "Brace your core, draw shoulder blades down and back, chest up. Inhale deeply and hold (Valsalva).",
+    "Initiate the descent by bending at the hips and knees simultaneously. Because the bar path is fixed, you cannot lean forward — the torso stays more upright than in a free squat.",
+    "Descend until your hip crease passes below the top of your knee (full depth) while maintaining a neutral spine.",
+    "Drive up through the entire foot, extending hips and knees together. Exhale near the top.",
+    "At the end of the last rep, rotate the bar to re-hook it onto the rack pegs before letting go."
+  ],
+  "instructionsPl": [
+    "Ustaw blokady bezpieczeństwa Smith machine tuż poniżej najniższej pozycji przysiadu. Wyreguluj wysokość gryfu tak, by w pozycji stojącej znajdował się 2-3 cm poniżej szczytu barków.",
+    "Załaduj obciążenie po obu stronach i zabezpiecz zaciskami. Wejdź pod gryf i ułóż go na górnej części trapezów (nie na karku).",
+    "Złap drążek nieco szerzej niż na szerokość barków. Obróć gryf, by odpiąć go z haków stojaka.",
+    "Ustaw stopy na szerokość barków, lekko wysunięte przed linię gryfu (10-15 cm), tak by gryf znalazł się nad środkiem stopy w dolnej pozycji. Palce na zewnątrz 10-20°.",
+    "Napnij brzuch, ściągnij łopatki w dół i do tyłu, klatka w górze. Nabierz głęboki oddech i przytrzymaj (Valsalva).",
+    "Rozpocznij schodzenie zginając jednocześnie biodra i kolana. Ze względu na stały tor gryfu, nie możesz pochylić tułowia do przodu — tułów pozostaje bardziej pionowy niż w wolnym przysiadzie.",
+    "Schodź aż linia bioder zejdzie poniżej szczytu kolan (pełna głębokość) przy zachowaniu neutralnego kręgosłupa.",
+    "Wypchnij się w górę napierając przez całą stopę, prostując biodra i kolana razem. Wydychaj blisko góry.",
+    "Na koniec ostatniego powtórzenia obróć gryf, by zaczepić go o haki stojaka, zanim go puścisz."
+  ],
+
+  "classification": {
+    "movement_pattern": "squat",
+    "force": "push",
+    "mechanic": "compound",
+    "laterality": "bilateral",
+    "plane": "sagittal",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["quadriceps", "glutes"],
+    "secondary": ["hamstrings", "adductors", "erector_spinae"],
+    "stabilizers": ["core", "calves", "rectus_abdominis"]
+  },
+
+  "muscle_intensity": {
+    "quadriceps": "P10",
+    "glutes": "P9",
+    "hamstrings": "S5",
+    "adductors": "S5",
+    "erector_spinae": "S5",
+    "core": "S4",
+    "calves": "T3"
+  },
+
+  "equipment": {
+    "required": ["smith_machine"],
+    "optional": ["belt", "knee_sleeves", "lifting_shoes", "weight_plates"]
+  },
+
+  "category": "strength",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 5,
+    "prerequisites": ["bodyweight-squat", "goblet-squat"],
+    "progression_to": ["barbell-back-squat", "barbell-front-squat", "pause-back-squat", "low-bar-back-squat"],
+    "alternatives": ["barbell-back-squat", "hack-squat", "leg-press", "goblet-squat"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Bar across upper traps, not on the neck",
+      "Feet slightly forward of the bar, not directly under",
+      "Feet shoulder-width, toes out 10-20°",
+      "Set safeties just below bottom position",
+      "Big breath, brace core, chest up"
+    ],
+    "setup_cues_pl": [
+      "Sztanga na trapezach, nie na karku",
+      "Stopy lekko przed linią gryfu, nie bezpośrednio pod nim",
+      "Stopy szerokość barków, palce na zewnątrz 10-20°",
+      "Blokady ustawione tuż poniżej dolnej pozycji",
+      "Głęboki wdech, napnij brzuch, klatka w górze"
+    ],
+    "execution_cues": [
+      "Sit straight down — the bar path is fixed",
+      "Torso stays more upright than in free squat",
+      "Knees track over toes",
+      "Push through the whole foot, not just heels",
+      "Don't lock knees explosively at the top"
+    ],
+    "execution_cues_pl": [
+      "Schodź prosto w dół — tor gryfu jest stały",
+      "Tułów bardziej pionowy niż w wolnym przysiadzie",
+      "Kolana podążają za palcami stóp",
+      "Wypchnij przez całą stopę, nie tylko pięty",
+      "Nie blokuj kolan eksplozywnie na górze"
+    ],
+    "common_faults": [
+      {
+        "fault": "Feet placed directly under the bar (vertical shin/knee path)",
+        "faultPl": "Stopy ustawione bezpośrednio pod gryfem (pionowa ścieżka kolan)",
+        "cause": "Default setup as in free squat — but Smith bar moves on rails, not over mid-foot of free squat stance",
+        "causePl": "Standardowe ustawienie jak w wolnym przysiadzie — ale gryf Smitha porusza się po szynach, nie nad środkiem stopy stojki wolnej",
+        "cue": "Step your feet 10-15 cm forward of the bar so they end up under the bar at the bottom",
+        "cuePl": "Wysuń stopy 10-15 cm przed linię gryfu, by w dolnej pozycji znalazły się pod gryfem"
+      },
+      {
+        "fault": "Lower back arching off the bar / hyperextension",
+        "faultPl": "Wyginanie odcinka lędźwiowego od gryfu / hiperekstensja",
+        "cause": "Fixed bar path forces upright torso — combined with weak core, the lumbar compensates by arching",
+        "causePl": "Stały tor gryfu wymusza pionowy tułów — w połączeniu ze słabym brzuchem, lędźwie kompensują wygięciem",
+        "cue": "Ribs down, brace abs hard. If pain persists, drop the load and address core bracing.",
+        "cuePl": "Żebra w dół, mocno napnij brzuch. Jeśli ból nie ustępuje, zmniejsz ciężar i popraw napięcie brzucha."
+      },
+      {
+        "fault": "Knee valgus (knees cave in)",
+        "faultPl": "Koślawienie kolan (kolana uciekają do środka)",
+        "cause": "Weak glute medius, narrow stance, or load too heavy",
+        "causePl": "Słabe mięśnie pośladkowe średnie, zbyt wąski rozstaw stóp, lub zbyt duży ciężar",
+        "cue": "Push your knees out toward your pinky toes. Widen stance if needed.",
+        "cuePl": "Wypchnij kolana na zewnątrz w kierunku małych palców. Poszerz rozstaw jeśli trzeba."
+      },
+      {
+        "fault": "Heel rise at depth",
+        "faultPl": "Unoszenie pięt w dolnej fazie",
+        "cause": "Feet too far forward, poor ankle mobility, or going too deep for current mobility",
+        "causePl": "Stopy za bardzo z przodu, słaba mobilność stawu skokowego, lub schodzenie za nisko dla aktualnej mobilności",
+        "cue": "Adjust foot position slightly back. Drive through whole foot, not just toes.",
+        "cuePl": "Cofnij stopy nieco do tyłu. Napieraj przez całą stopę, nie tylko palce."
+      },
+      {
+        "fault": "Locking out knees hard / hyperextending at top",
+        "faultPl": "Twarde blokowanie kolan / hiperekstensja na górze",
+        "cause": "Treating the lockout as a rest position, momentum-driven reps",
+        "causePl": "Traktowanie wyprostu jako pozycji odpoczynkowej, powtórzenia z rozpędu",
+        "cue": "Stop just short of full lockout. Maintain knee tension between reps.",
+        "cuePl": "Zatrzymaj się tuż przed pełnym wyprostem. Utrzymuj napięcie w kolanach między powtórzeniami."
+      }
+    ],
+    "breathing": "Inhale and brace at the top. Hold breath through the descent and the hardest part of the ascent (Valsalva). Exhale near the top of the rep.",
+    "breathingPl": "Wdech i napięcie na górze. Wstrzymaj oddech przez schodzenie i najtrudniejszą część powrotu (Valsalva). Wydech blisko góry powtórzenia."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_lower_back_injury",
+      "severity": "avoid",
+      "modification": "Rest and consult a physiotherapist. Smith machine forces upright torso which can stress lumbar spine.",
+      "modificationPl": "Odpoczynek i konsultacja z fizjoterapeutą. Smith machine wymusza pionowy tułów, co może obciążać kręgosłup lędźwiowy.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "knee_meniscus_tear",
+      "severity": "modify",
+      "modification": "Limit depth to pain-free range. Fixed path can amplify shear forces — consider a free or angled-track variant.",
+      "modificationPl": "Ogranicz głębokość do zakresu bez bólu. Stały tor może zwiększać siły ścinające — rozważ wolny ciężar lub Smith z torem skośnym.",
+      "alternative": "leg-press"
+    },
+    {
+      "condition": "hip_impingement_fai",
+      "severity": "caution",
+      "modification": "Fixed bar path may worsen impingement at depth. Test stance width and depth carefully.",
+      "modificationPl": "Stały tor gryfu może nasilać impingement w dolnej pozycji. Ostrożnie sprawdzaj szerokość rozstawu i głębokość.",
+      "alternative": "goblet-squat"
+    },
+    {
+      "condition": "shoulder_impingement",
+      "severity": "modify",
+      "modification": "Bar on upper traps can aggravate shoulder. Switch to a non-back-loaded squat variant.",
+      "modificationPl": "Gryf na trapezach może drażnić bark. Zmień na wariant przysiadu bez obciążenia pleców.",
+      "alternative": "goblet-squat"
+    }
+  ],
+
+  "typical_sets_reps": "3-4x8-12 (hypertrophy) | 4x6-8 (strength accessory) | 3x12-15 (high-rep finisher)",
+  "calories_per_kg_per_hour": 5.5,
+
+  "media": {
+    "primary": "smith-full-squat.gif",
+    "frames_extracted": [
+      "frames/smith-full-squat/frame_0_start.png",
+      "frames/smith-full-squat/frame_1_early.png",
+      "frames/smith-full-squat/frame_2_mid.png",
+      "frames/smith-full-squat/frame_3_late.png",
+      "frames/smith-full-squat/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "glutes/smith-full-squat"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T20:20:00Z",
+  "verification_notes": "Obejrzałem 5 klatek z GIFa jahel. Klatka 0/4 (start/end) pokazują pełen wyprost z gryfem na trapezach na maszynie Smitha. Klatka 2 (mid) potwierdza pełen przysiad poniżej parallel z bardziej pionowym tułowiem niż w wolnym przysiadzie — co jest charakterystyczne dla Smith machine ze względu na stały tor gryfu. Mięśnie podświetlone na ilustracji: czworogłowe (główne, mocno czerwone), pośladki (czerwone w klatce mid), brzuch (drugorzędnie). Tułów wyraźnie pionowy w dolnej fazie — wymusza to konstrukcja Smitha. Difficulty 5 (łatwiejszy niż wolny squat 7 dzięki prowadzonemu torowi). Wszystkie pola PL napisane od zera przez Claude bez tłumaczenia maszynowego.",
+
+  "tags": ["machine", "smith_machine", "lower_body", "quad_dominant", "beginner_friendly", "guided_movement", "hypertrophy"]
+}

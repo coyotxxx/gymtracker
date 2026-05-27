@@ -1,0 +1,189 @@
+{
+  "id": "balance-board",
+  "name": "Balance Board",
+  "namePl": "Deska balansowa",
+  "aliases": ["wobble board", "balance board stand", "balance board hold", "wobble board balance", "balance disc stand"],
+  "aliasesPl": ["deska równoważna", "stanie na desce balansowej", "balans na desce", "wobble board", "deska do balansu"],
+
+  "description": "An isometric balance and stabilisation exercise performed by standing upright on a balance board (a rocker board with a curved underside or a wobble board with a hemispheric base). The unstable surface forces continuous micro-adjustments through the entire kinetic chain — the foot intrinsics, ankle stabilisers (peroneals, tibialis posterior, calves), knee stabilisers (quads, hamstrings co-contraction) and the deep trunk musculature work reflexively to keep the board level. Although the legs look 'active' in the muscle diagram, the dominant adaptation is NEUROMUSCULAR: improved proprioception, reaction time and postural reflexes. Widely used in ankle-sprain rehabilitation, ACL prehab/rehab, fall-prevention programmes for seniors, and as a warm-up tool for sports involving cutting, jumping and unstable footing (skiing, surfing, basketball, football).",
+  "descriptionPl": "Izometryczne ćwiczenie równowagi i stabilizacji wykonywane w postawie stojącej na desce balansowej (deska kołyskowa z wypukłym spodem lub deska wahadłowa z półkulistą podstawą). Niestabilna powierzchnia wymusza nieustanne mikro-korekty przez cały łańcuch kinetyczny — krótkie mięśnie stopy, stabilizatory stawu skokowego (mięśnie strzałkowe, piszczelowy tylny, łydki), stabilizatory kolana (współskurcz czworogłowego i dwugłowego uda) oraz głęboka muskulatura tułowia pracują odruchowo, by utrzymać deskę w poziomie. Choć na diagramie mięśniowym nogi wyglądają na 'aktywne', dominująca adaptacja jest NEUROMIĘŚNIOWA: lepsza propriocepcja, czas reakcji i odruchy posturalne. Powszechnie stosowane w rehabilitacji skręceń kostki, prehabilitacji i rehabilitacji ACL, programach zapobiegania upadkom u seniorów oraz jako rozgrzewka w sportach wymagających zmian kierunku, skoków i niestabilnego podłoża (narciarstwo, surfing, koszykówka, piłka nożna).",
+
+  "instructions": [
+    "Place the balance board on a flat, non-slip surface with enough clear space around you (1.5 m radius) — ideally near a wall or stable object you can grab if you lose balance.",
+    "Step onto the board with one foot at a time, placing the feet shoulder-width apart, parallel, with the centre of the board between your arches. The board will tip — that's expected.",
+    "Find the neutral 'level' position. Knees soft and slightly bent (NOT locked), hips stacked over ankles, ribs over hips, head over shoulders. Arms relaxed at the sides or extended forward for counterbalance.",
+    "Engage the core lightly (30-40% brace), pull the kneecaps up by activating the quads, and grip the board with your toes — the foot is your steering wheel.",
+    "Hold the position as still as possible — the goal is MINIMUM board movement, not constant rocking. Look at a fixed point ahead at eye level (not at the floor).",
+    "Breathe normally throughout. Hold for the prescribed time (typically 30-60 seconds for beginners, up to 2-3 minutes for advanced). Step off carefully under control.",
+    "PROGRESSION: once you can hold a steady balance for 60 seconds, increase difficulty: close your eyes, lift one arm, lift one knee, or add gentle perturbations (catch a ball, head turns)."
+  ],
+  "instructionsPl": [
+    "Ustaw deskę balansową na płaskim, antypoślizgowym podłożu z wolną przestrzenią dookoła (promień 1,5 m) — najlepiej w pobliżu ściany lub stabilnego obiektu, którego możesz się złapać przy utracie równowagi.",
+    "Wejdź na deskę po jednej stopie, ustawiając stopy na szerokość barków, równolegle, ze środkiem deski pod łukami stóp. Deska się przechyli — to normalne.",
+    "Znajdź pozycję neutralną 'poziomu'. Kolana miękkie, lekko ugięte (NIE blokuj ich), biodra nad kostkami, klatka nad biodrami, głowa nad barkami. Ramiona luźno wzdłuż ciała lub wyciągnięte do przodu dla kontrbalansu.",
+    "Lekko napnij brzuch (30-40% napięcia), 'wciągnij' rzepki przez aktywację czworogłowego i 'wchwytaj' deskę palcami stóp — stopa jest twoją kierownicą.",
+    "Utrzymuj pozycję jak najbardziej nieruchomo — celem jest MINIMUM ruchu deski, nie ciągłe bujanie. Patrz w stały punkt przed sobą na wysokości oczu (nie na podłogę).",
+    "Oddychaj normalnie przez cały czas. Wytrzymaj zaplanowany czas (typowo 30-60 sekund dla początkujących, do 2-3 minut dla zaawansowanych). Zejdź z deski ostrożnie i pod kontrolą.",
+    "PROGRESJA: gdy utrzymasz stabilną równowagę przez 60 sekund, zwiększ trudność: zamknij oczy, podnieś jedno ramię, podnieś jedno kolano, lub dodaj delikatne zakłócenia (łap piłkę, obracaj głową)."
+  ],
+
+  "classification": {
+    "movement_pattern": "stretch",
+    "force": "isometric",
+    "mechanic": "isometric",
+    "laterality": "bilateral",
+    "plane": "multi_planar",
+    "kinetic_chain": "closed"
+  },
+
+  "muscles": {
+    "primary": ["core", "ankle_stabilizers"],
+    "secondary": ["quadriceps", "calves", "glutes_medius"],
+    "stabilizers": ["transverse_abdominis", "obliques", "tibialis_posterior", "peroneals", "foot_intrinsics", "hamstrings", "glutes_maximus"]
+  },
+
+  "muscle_intensity": {
+    "core": "P8",
+    "ankle_stabilizers": "P9",
+    "quadriceps": "S6",
+    "calves": "S6",
+    "glutes_medius": "S5",
+    "transverse_abdominis": "T4",
+    "obliques": "T3",
+    "tibialis_posterior": "T4",
+    "peroneals": "T4",
+    "foot_intrinsics": "T3",
+    "hamstrings": "T3"
+  },
+
+  "equipment": {
+    "required": ["balance_board"],
+    "optional": ["wall_support", "non_slip_mat"]
+  },
+
+  "category": "stretching",
+
+  "level": {
+    "minimum": "beginner",
+    "difficulty_1_10": 4,
+    "prerequisites": ["bodyweight-squat", "single-leg-stand"],
+    "progression_to": ["single-leg-balance-board", "balance-board-squat", "bosu-ball-stand", "balance-board-eyes-closed"],
+    "alternatives": ["single-leg-stand", "bosu-ball-stand", "stability-disc-stand", "tandem-stance-balance"]
+  },
+
+  "coaching": {
+    "setup_cues": [
+      "Clear 1.5 m radius around the board — nothing to trip over if you step off",
+      "Feet shoulder-width apart, parallel, arches over the centre of the board",
+      "Knees soft and slightly bent — locked knees kill your balance reflexes",
+      "Eyes on a fixed point at eye level — NOT on the floor, NOT on the board",
+      "Light core brace (30-40%) — you need air, not a Valsalva manoeuvre"
+    ],
+    "setup_cues_pl": [
+      "Wolne 1,5 m wokół deski — nic, o co możesz się potknąć przy zejściu",
+      "Stopy na szerokość barków, równolegle, łuki stóp nad środkiem deski",
+      "Kolana miękkie i lekko ugięte — zablokowane kolana zabijają odruchy równowagi",
+      "Wzrok na stały punkt na wysokości oczu — NIE na podłogę, NIE na deskę",
+      "Lekkie napięcie brzucha (30-40%) — potrzebujesz powietrza, nie manewru Valsalvy"
+    ],
+    "execution_cues": [
+      "Grip the board with your toes — the foot is your steering wheel",
+      "Quiet board, quiet body — aim for MINIMUM movement, not constant rocking",
+      "Stack ankle - hip - shoulder - ear in one vertical line",
+      "Breathe slow and even through the nose — holding breath spikes wobble",
+      "When you feel a tip coming, react with the ANKLES first, not the hips"
+    ],
+    "execution_cues_pl": [
+      "'Chwytaj' deskę palcami stóp — stopa jest twoją kierownicą",
+      "Cicha deska, ciche ciało — celuj w MINIMUM ruchu, nie w ciągłe bujanie",
+      "Ustaw kostkę - biodro - bark - ucho w jednej pionowej linii",
+      "Oddychaj spokojnie i równomiernie przez nos — wstrzymanie oddechu zwiększa kołysanie",
+      "Gdy czujesz przechył, reaguj najpierw KOSTKAMI, nie biodrami"
+    ],
+    "common_faults": [
+      {
+        "fault": "Locked knees (knee hyperextension)",
+        "faultPl": "Zablokowane kolana (przeprost stawu kolanowego)",
+        "cause": "Trying to create stiffness instead of dynamic stability — beginners often think 'stiff = stable'",
+        "causePl": "Próba uzyskania sztywności zamiast dynamicznej stabilności — początkujący często myślą 'sztywno = stabilnie'",
+        "cue": "Soft knees, 5-10° bend. The ankle, knee and hip should all act like shock absorbers — locked joints can't react.",
+        "cuePl": "Miękkie kolana, ugięcie 5-10°. Kostka, kolano i biodro mają działać jak amortyzatory — zablokowane stawy nie mogą reagować."
+      },
+      {
+        "fault": "Looking down at the board or feet",
+        "faultPl": "Patrzenie w dół na deskę lub stopy",
+        "cause": "Instinct to 'see' the imbalance — but visual focus on a moving object actually INCREASES sway",
+        "causePl": "Instynkt 'zobaczenia' braku równowagi — ale wzrokowe skupienie na ruchomym obiekcie ZWIĘKSZA kołysanie",
+        "cue": "Fix your eyes on a point on the wall at eye level. The vestibular and proprioceptive systems do the work — vision provides the reference.",
+        "cuePl": "Skup wzrok na punkcie na ścianie na wysokości oczu. System przedsionkowy i proprioceptywny robią robotę — wzrok dostarcza odniesienia."
+      },
+      {
+        "fault": "Excessive hip-strategy (bending at the waist to balance)",
+        "faultPl": "Nadmierna strategia biodrowa (zginanie w pasie dla balansu)",
+        "cause": "Weak ankle stabilisers force the body to compensate with bigger joints upstream",
+        "causePl": "Słabe stabilizatory kostki zmuszają ciało do kompensacji większymi stawami wyżej",
+        "cue": "ANKLE strategy first — let the feet do the corrections. Stay tall through the spine. If you can't, regress to a single-leg stand on the floor.",
+        "cuePl": "Najpierw strategia KOSTKI — pozwól stopom robić korekty. Pozostań wysoki w kręgosłupie. Jeśli nie możesz, wróć do stania na jednej nodze na podłodze."
+      },
+      {
+        "fault": "Holding breath",
+        "faultPl": "Wstrzymywanie oddechu",
+        "cause": "Tension and concentration override the breathing reflex",
+        "causePl": "Napięcie i koncentracja przesłaniają odruch oddychania",
+        "cue": "Count out loud or hum a tune. If you can talk, you're breathing. Holding breath stiffens the trunk and makes balance worse.",
+        "cuePl": "Licz na głos lub nuć melodię. Jeśli możesz mówić, oddychasz. Wstrzymanie oddechu usztywnia tułów i pogarsza równowagę."
+      },
+      {
+        "fault": "Toes curled and gripping desperately",
+        "faultPl": "Skurczone palce stóp i rozpaczliwe trzymanie się",
+        "cause": "Over-recruitment of foot intrinsics from anxiety; cramping ensues",
+        "causePl": "Nadmierne napięcie krótkich mięśni stopy z nerwowości; kończy się skurczem",
+        "cue": "Light contact with the toes — like 'short foot' position, not a death grip. Spread the toes wide, then settle them lightly on the board.",
+        "cuePl": "Lekki kontakt palcami — jak pozycja 'krótkiej stopy', nie kurczowy uchwyt. Rozłóż palce szeroko, potem osadź je lekko na desce."
+      }
+    ],
+    "breathing": "Slow, even nasal breathing throughout the hold — about 6-8 breaths per minute. Do NOT hold your breath; breath-holding stiffens the trunk, blunts the postural reflexes and makes balance markedly worse. If you find yourself holding breath, count out loud or hum quietly — both force exhalation.",
+    "breathingPl": "Spokojne, równomierne oddychanie nosem przez cały czas utrzymywania pozycji — około 6-8 oddechów na minutę. NIE wstrzymuj oddechu; wstrzymywanie usztywnia tułów, tłumi odruchy posturalne i znacząco pogarsza równowagę. Jeśli łapiesz się na wstrzymywaniu oddechu, licz na głos lub nuć cicho — oba wymuszają wydech."
+  },
+
+  "contraindications": [
+    {
+      "condition": "acute_ankle_injury",
+      "severity": "avoid",
+      "modification": "Standing on an unstable surface during the acute phase (first 48-72h) of an ankle sprain or fracture can worsen the injury and is contraindicated. Wait until you can walk pain-free and perform a static single-leg stand on the floor for 30 seconds. Then reintroduce with two-foot board work and short holds (10-15s), progressing as tolerance allows.",
+      "modificationPl": "Stanie na niestabilnej powierzchni w fazie ostrej (pierwsze 48-72h) skręcenia lub złamania kostki może pogorszyć kontuzję i jest przeciwwskazane. Poczekaj, aż będziesz chodzić bezboleśnie i wykonasz statyczne stanie na jednej nodze na podłodze przez 30 sekund. Następnie wprowadź ponownie pracę na desce obunóż z krótkimi utrzymaniami (10-15s), progresując w miarę tolerancji.",
+      "alternative": "single-leg-stand"
+    },
+    {
+      "condition": "vestibular_dysfunction",
+      "severity": "caution",
+      "modification": "People with inner-ear disorders (BPPV, Meniere's, post-concussion syndrome) or severe vertigo can experience dizziness, nausea and falls on a balance board. Always train near a wall or with a spotter. Start with eyes OPEN, short holds (15-20s), and consult a physiotherapist or vestibular specialist before progressing.",
+      "modificationPl": "Osoby z zaburzeniami ucha wewnętrznego (BPPV, choroba Meniere'a, zespół po-wstrząsowy) lub silnymi zawrotami głowy mogą doświadczać zawrotów, nudności i upadków na desce balansowej. Zawsze trenuj w pobliżu ściany lub z asekuracją. Zacznij z OTWARTYMI oczami, krótkimi utrzymaniami (15-20s), i skonsultuj się z fizjoterapeutą lub specjalistą od zaburzeń przedsionkowych przed progresją.",
+      "alternative": "tandem-stance-balance"
+    }
+  ],
+
+  "typical_sets_reps": "3x30-60 sekund (statyczne utrzymanie) | 3x60-120 sekund dla średniozaawansowanych | 2-3x 20-30 sekund na jednej nodze (progresja) | 5-10 minut łącznie jako część rozgrzewki neuromięśniowej",
+  "calories_per_kg_per_hour": 2.5,
+
+  "media": {
+    "primary": "balance-board.gif",
+    "frames_extracted": [
+      "frames/balance-board/frame_0_start.png",
+      "frames/balance-board/frame_1_early.png",
+      "frames/balance-board/frame_2_mid.png",
+      "frames/balance-board/frame_3_late.png",
+      "frames/balance-board/frame_4_end.png"
+    ]
+  },
+
+  "sources": {
+    "jahel_slug": "quads/balance-board"
+  },
+
+  "verified_by_claude": true,
+  "verified_at": "2026-05-24T12:00:00Z",
+  "verification_notes": "Obejrzałem klatki 0/1/2/3/4 z GIFa jahel/quads/balance-board.gif (12 klatek źródłowych, 5 wyekstrahowanych). Wszystkie klatki pokazują DOKŁADNIE TĘ SAMĄ pozycję: postać stoi obunóż na desce balansowej (rocker board / wobble board z półkulistą podstawą widoczną na dole), nogi prawie wyprostowane, ciężar równomierny, ciało w pionie. Brak fazy ekscentrycznej/koncentrycznej — to izometryczne utrzymanie równowagi. Na diagramie mięśniowym jahel podświetlone są na czerwono mięśnie nóg (czworogłowe ud, łydki, częściowo przywodziciele) — co reprezentuje współskurcz utrzymujący stawy kolanowe i skokowe stabilne na niestabilnej powierzchni. ZGODNIE Z INSTRUKCJĄ MACIEJA: primary muscles to core P8 + ankle_stabilizers P9 (a nie quads), co jest poprawne z punktu widzenia funkcji ćwiczenia — dominującą adaptacją jest neuromotoryczna kontrola stabilności kostka-tułów, nie hipertrofia quadów. Quads i calves są secondary (S6) bo pracują współskurczowo. Klasyfikacja: movement_pattern=stretch (zgodnie ze spec — ćwiczenia balansowe/proprioceptywne nie pasują do żadnego ze standardowych wzorców pull/push/squat/hinge, więc 'stretch' jako kategoria 'mobility-adjacent'), force=isometric, mechanic=isometric, laterality=bilateral (obie stopy), plane=multi_planar (deska kołysze się w wielu kierunkach), kinetic_chain=closed. Equipment: balance_board (wymagana). Difficulty 4 — łatwe dla osób zdrowych, ale wymaga sprzętu i znanej propriocepcji. Category: stretching (zgodnie ze spec — w GymTrackerze 'stretching' grupuje też mobility/balance/rehab). 4 common_faults pierwotnie zaplanowane → rozszerzyłem do 5 (locked knees, looking down, hip-strategy, breath-holding, toe-curling) bo każdy z nich jest realnym częstym błędem na desce balansowej. 2 contraindications: acute_ankle_injury (avoid — niestabilna powierzchnia na świeżej kontuzji to zła decyzja) i vestibular_dysfunction (caution — propriocepcja silnie zależna od układu przedsionkowego). Sets/reps zgodne z standardami fizjoterapii ankle-prehab/ACL-prehab. Wszystkie pola PL napisane od zera w polskim standardzie fitness/fizjoterapii. Polska nazwa 'Deska balansowa' najczęstsza forma w polskich klubach i salach rehabilitacji. Aliasy zawierają 'wobble board' (popularna nazwa angielska również w PL) i 'deska równoważna' (synonim).",
+
+  "tags": ["bodyweight", "balance", "proprioception", "ankle_stability", "core_stability", "neuromuscular", "rehabilitation", "ankle_prehab", "isometric", "balance_board", "fall_prevention", "warm_up", "bilateral", "low_impact"]
+}
