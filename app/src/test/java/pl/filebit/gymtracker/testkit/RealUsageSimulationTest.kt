@@ -32,8 +32,31 @@ class RealUsageSimulationTest : TestHarness() {
     private val day = 86_400_000L
 
     private suspend fun seedExercises(): List<Long> {
-        ExerciseSeeder(context, db.exerciseDao()).seedIfEmpty()
-        return db.exerciseDao().getAll().take(3).map { it.id }
+        // v2.2.0: po wymianie na canonical exercise-db, ExerciseSeeder.seedIfEmpty() nie
+        // wstawia juz exercises (CanonicalExerciseBootstrap robi to w runtime z assets/).
+        // W unit testach nie mamy dostepu do assets canonical, wiec wstawiamy minimalne
+        // mock-i: 3 ćwiczenia siłowe (bench, squat, deadlift) z slug-ami.
+        val dao = db.exerciseDao()
+        if (dao.count() == 0) {
+            dao.insertAll(listOf(
+                pl.filebit.gymtracker.data.entity.Exercise(
+                    name = "Wyciskanie sztangi leżąc", slug = "barbell-bench-press",
+                    primaryMuscle = pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST,
+                    equipment = pl.filebit.gymtracker.data.entity.Equipment.BARBELL
+                ),
+                pl.filebit.gymtracker.data.entity.Exercise(
+                    name = "Przysiad ze sztangą", slug = "barbell-back-squat",
+                    primaryMuscle = pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS,
+                    equipment = pl.filebit.gymtracker.data.entity.Equipment.BARBELL
+                ),
+                pl.filebit.gymtracker.data.entity.Exercise(
+                    name = "Martwy ciąg klasyczny", slug = "barbell-deadlift",
+                    primaryMuscle = pl.filebit.gymtracker.data.entity.MuscleGroup.BACK,
+                    equipment = pl.filebit.gymtracker.data.entity.Equipment.BARBELL
+                )
+            ))
+        }
+        return dao.getAll().take(3).map { it.id }
     }
 
     /**

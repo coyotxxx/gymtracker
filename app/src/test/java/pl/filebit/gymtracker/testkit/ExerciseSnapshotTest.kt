@@ -34,7 +34,8 @@ class ExerciseSnapshotTest : TestHarness() {
             .kv("przykłady", exercises.take(3).joinToString { it.name })
             .emit()
 
-        assertTrue("biblioteka ma ćwiczenia (seed)", exercises.size > 50)
+        // v2.2.0: smoke scenario ma 5 mock-ów; canonical 1317 ładuje się dopiero w runtime APK
+        assertTrue("biblioteka ma ćwiczenia (seed z smoke.json)", exercises.size >= 5)
     }
 
     @Test
