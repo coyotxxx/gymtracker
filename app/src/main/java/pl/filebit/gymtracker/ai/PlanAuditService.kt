@@ -174,10 +174,14 @@ class PlanAuditService @Inject constructor(
             }
 
             append("# BIBLIOTEKA ĆWICZEŃ DOSTĘPNA (cytuj nazwy 1:1, ${library.size} pozycji)\n")
+            // v2.5.0: dodany wzorzec ruchowy z canonical — przy wymianie ćwiczenia
+            // AI dobiera zamiennik o tym samym wzorcu (push↔push, hinge↔hinge).
             library.take(220).forEach { ex ->
-                append("- ${ex.name} (${ex.primaryMuscle.name})\n")
+                val mp = ex.movementPattern?.let { " | ${it.name}" } ?: ""
+                append("- ${ex.name} (${ex.primaryMuscle.name})$mp\n")
             }
-            append("\n")
+            append("→ Przy wymianie ćwiczenia wybieraj zamiennik o TYM SAMYM wzorcu ruchowym ")
+            append("i partii (np. PUSH_HORIZONTAL→PUSH_HORIZONTAL), by zachować bodziec.\n\n")
 
             append("# WYMAGANY FORMAT ODPOWIEDZI\n")
             append("Odpowiedz blokiem ```json zawierającym TYLKO obiekt o strukturze:\n")

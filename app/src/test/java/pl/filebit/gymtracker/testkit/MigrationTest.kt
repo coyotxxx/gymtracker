@@ -87,12 +87,12 @@ class MigrationTest {
                 AppModule.MIGRATION_58_59, AppModule.MIGRATION_59_60,
                 AppModule.MIGRATION_60_61, AppModule.MIGRATION_61_62,
                 AppModule.MIGRATION_62_63, AppModule.MIGRATION_63_64,
-                AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66
+                AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66, AppModule.MIGRATION_66_67
             )
             .build()
 
     @Test
-    fun `migracja 56 do 66 wykonuje sie i waliduje schemat`() = runBlocking {
+    fun `migracja 56 do 67 wykonuje sie i waliduje schemat`() = runBlocking {
         buildV56Database()
         val db = openWithMigrations()
         // pierwsze zapytanie wymusza otwarcie + migrację + walidację schematu.
@@ -111,7 +111,7 @@ class MigrationTest {
     }
 
     @Test
-    fun `dane wstawione w v56 przezywaja migracje do v66`() = runBlocking {
+    fun `dane wstawione w v56 przezywaja migracje do v67`() = runBlocking {
         buildV56Database()
         // wstaw ćwiczenie do bazy v56 (surowy SQL — kolumny schematu v56)
         val raw = SQLiteDatabase.openDatabase(dbFile.path, null, SQLiteDatabase.OPEN_READWRITE)
@@ -148,7 +148,7 @@ class MigrationTest {
     }
 
     @Test
-    fun `lancuch migracji 49 do 66 jest ciagly`() {
+    fun `lancuch migracji 49 do 67 jest ciagly`() {
         // Room znajduje ścieżkę migracji tylko gdy łańcuch jest ciągły.
         // Brak którejkolwiek migracji = przerwa = destructive fallback/crash.
         val migrations = listOf(
@@ -159,7 +159,7 @@ class MigrationTest {
             AppModule.MIGRATION_57_58, AppModule.MIGRATION_58_59,
             AppModule.MIGRATION_59_60, AppModule.MIGRATION_60_61,
             AppModule.MIGRATION_61_62, AppModule.MIGRATION_62_63,
-            AppModule.MIGRATION_63_64, AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66
+            AppModule.MIGRATION_63_64, AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66, AppModule.MIGRATION_66_67
         )
         var version = 49
         for (m in migrations) {
@@ -169,7 +169,7 @@ class MigrationTest {
                 version + 1, m.endVersion)
             version = m.endVersion
         }
-        assertEquals("łańcuch kończy się na wersji bazy danych", 66, version)
-        assertTrue("17 migracji 49→66", migrations.size == 17)
+        assertEquals("łańcuch kończy się na wersji bazy danych", 67, version)
+        assertTrue("18 migracji 49→67", migrations.size == 18)
     }
 }

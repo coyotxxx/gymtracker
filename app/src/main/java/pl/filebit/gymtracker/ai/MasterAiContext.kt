@@ -285,7 +285,15 @@ object MasterAiContextPromptHelper {
     fun toExercisePreferencesSection(ctx: MasterAiContext): String = buildString {
         if (ctx.favoriteExercises.isNotEmpty()) {
             append("\n=== ULUBIONE ĆWICZENIA (preferuj w nowym planie) ===\n")
-            append(ctx.favoriteExercises.take(20).joinToString(", ") { it.name })
+            // v2.5.0: z wzorcem ruchowym i poziomem (canonical) — AI rozumie JAKIE
+            // wzorce/trudność user preferuje, nie tylko konkretne nazwy.
+            append(ctx.favoriteExercises.take(20).joinToString(", ") { ex ->
+                val meta = listOfNotNull(
+                    ex.movementPattern?.name,
+                    ex.levelMin?.name
+                ).joinToString("/")
+                if (meta.isNotEmpty()) "${ex.name} [$meta]" else ex.name
+            })
             append("\n")
         }
         if (ctx.avoidedExercises.isNotEmpty()) {

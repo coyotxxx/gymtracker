@@ -1,5 +1,7 @@
 package pl.filebit.gymtracker.ai
 
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonObject
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
@@ -87,7 +89,11 @@ class RpeOpinionService @Inject constructor(
             append("na następną serię. Twoja rola — zweryfikować czy sugestia ma sens ")
             append("biorąc pod uwagę pełniejszy kontekst (ostatnie sesje, trend RPE).\n\n")
 
-            append("# ĆWICZENIE: ${exercise.name} (${exercise.primaryMuscle.name})\n\n")
+            append("# ĆWICZENIE: ${exercise.name} (${exercise.primaryMuscle.name})\n")
+            // v2.5.0: wskazówki techniczne + częste błędy z canonical — pomagają AI
+            // ocenić czy bezpiecznie iść ciężej (np. błąd techniczny przy zmęczeniu).
+            canonicalTechniqueHint(exercise)?.let { append(it) }
+            append("\n")
 
             append("# SUGESTIA ALGORYTMU\n")
             append("- Waga: ${formatKg(suggestion.suggestedWeightKg)} kg\n")
@@ -156,4 +162,41 @@ class RpeOpinionService @Inject constructor(
             return kg to reps
         }
     }
+}
+
+/**
+ * v2.5.0 — wyciąga zwięzłą wskazówkę techniczną z canonical (execution cues + 1-2
+ * częste błędy) do promptu RpeOpinion. Null jeśli ćwiczenie nie ma danych canonical.
+ * Krótko — max ~3 cues + 2 faults, żeby nie przeładować tokenów.
+ */
+private fun canonicalTechniqueHint(exercise: pl.filebit.gymtracker.data.entity.Exercise): String? {
+    val sb = StringBuilder()
+    runCatching {
+        val coaching = exercise.coachingCuesJson
+        if (!coaching.isNullOrBlank() && coaching != "{}") {
+            val obj = kotlinx.serialization.json.Json.parseToJsonElement(coaching).jsonObject
+            val cues = (obj["execution_cues_pl"] ?: obj["execution_cues"])
+                ?.let { it as? kotlinx.serialization.json.JsonArray }
+                ?.mapNotNull { (it as? kotlinx.serialization.json.JsonPrimitive)?.content }
+                ?.take(3) ?: emptyList()
+            if (cues.isNotEmpty()) {
+                sb.append("- Technika: ").append(cues.joinToString("; ")).append("\n")
+            }
+        }
+    }
+    runCatching {
+        val faults = exercise.commonFaultsJson
+        if (!faults.isNullOrBlank() && faults != "[]") {
+            val arr = kotlinx.serialization.json.Json.parseToJsonElement(faults).jsonArray
+            val items = arr.mapNotNull { el ->
+                val o = el as? kotlinx.serialization.json.JsonObject ?: return@mapNotNull null
+                val f = (o["faultPl"] ?: o["fault"])?.let { (it as? kotlinx.serialization.json.JsonPrimitive)?.content }
+                f
+            }.take(2)
+            if (items.isNotEmpty()) {
+                sb.append("- Częste błędy (uważaj przy zmęczeniu): ").append(items.joinToString("; ")).append("\n")
+            }
+        }
+    }
+    return sb.toString().takeIf { it.isNotBlank() }
 }

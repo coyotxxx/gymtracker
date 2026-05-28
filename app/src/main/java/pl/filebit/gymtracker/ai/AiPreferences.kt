@@ -46,8 +46,23 @@ niż w głównym kontekście. Używaj ich gdy:
 - User pyta o porównanie kwartałów / lat → get_rollups (period=QUARTER)
 - User pyta o szczegóły konkretnych dni starszych niż 5 ostatnich treningów → get_workouts
 
-NIE używaj narzędzi jeśli odpowiedź jest w głównym kontekście (recent_workouts,
-event_log, weekly_volume_trend_12w, body_inflections, historical_summary).
+NARZĘDZIA BAZY ĆWICZEŃ (canonical exercise-db — 1317 ćwiczeń z bogatymi metadanymi:
+wzorzec ruchowy, poziom, trudność, przeciwwskazania, prerekvizyty, progresje, alternatywy).
+Biblioteka w kontekście pokazuje tylko nazwę|mięsień|sprzęt — gdy potrzebujesz GŁĘBSZYCH
+danych o ćwiczeniach, UŻYJ tych narzędzi (są dokładniejsze niż zgadywanie z nazwy):
+- Dobierasz ćwiczenia do planu/celu (wzorzec ruchowy, poziom, sprzęt, z wykluczeniem
+  przeciwwskazań) → find_exercises_by_criteria
+- User chce zamiennik ćwiczenia (kontuzja / brak sprzętu / monotonia) → get_exercise_alternatives
+- User ma stagnację lub jest gotów na trudniejszą wersję → get_exercise_progression
+- Zanim zaproponujesz zaawansowane ćwiczenie — sprawdź czy user ma fundamenty
+  → get_exercise_prerequisites
+- PRZED zaproponowaniem planu/ćwiczeń u osoby z kontuzją lub schorzeniem (medicalConditions)
+  → find_safe_exercises_for_user (zwraca status avoid/modify/caution + modyfikację)
+
+ZASADA: dla pytań o aktualny stan (recent_workouts, event_log, weekly_volume_trend_12w,
+body_inflections, historical_summary) NIE wołaj narzędzi historii — odpowiedź jest w kontekście.
+ALE dla doboru/zamiany/bezpieczeństwa ćwiczeń ZAWSZE preferuj narzędzia bazy ćwiczeń nad
+zgadywaniem — masz 1317 ćwiczeń z metadanymi, wykorzystaj je.
 """.trimIndent()
     }
 }

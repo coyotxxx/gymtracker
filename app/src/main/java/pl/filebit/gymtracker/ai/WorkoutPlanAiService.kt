@@ -70,7 +70,7 @@ class WorkoutPlanAiService @Inject constructor(
         val all = exerciseRepo.observeAll().first()
         val profile = profileRepo.get()
         val available = filterByEquipment(all, profile.equipmentCategoriesCsv)
-        val pool = if (favoritesOnly) {
+        val rawPool = if (favoritesOnly) {
             val favs = available.filter { it.isFavorite }
             if (favs.size < 12) {
                 (favs + available.filter { !it.isFavorite }).distinctBy { it.id }
@@ -81,7 +81,21 @@ class WorkoutPlanAiService @Inject constructor(
             smartFilterPool(available, profile.preferredMuscleGroupsCsv)
         }
 
-        Log.d("WorkoutPlanAi", "generate(): pool=${pool.size} favs=${pool.count { it.isFavorite }} cfg.isConnected=${cfg.isConnected} provider=${cfg.provider}")
+        // v2.5.0: filtr bezpieczeństwa — usuń z puli ćwiczenia z przeciwwskazaniami
+        // (contraindicationsJson) pasującymi do schorzeń usera (medicalConditions).
+        // AI nie zaproponuje ćwiczenia którego user nie powinien robić. Tylko severity
+        // "avoid" usuwamy z puli; modify/caution zostają (AI dostanie je w bibliotece).
+        val conditions = profile.medicalConditions
+            .split(",").map { it.trim().lowercase() }.filter { it.isNotBlank() }
+        val pool = if (conditions.isEmpty()) rawPool else rawPool.filter { ex ->
+            val contra = ex.contraindicationsJson?.lowercase() ?: return@filter true
+            val matched = conditions.any { contra.contains(it) }
+            // wyklucz tylko gdy match + severity avoid
+            !(matched && contra.contains("\"severity\":\"avoid\""))
+        }
+        val excludedForSafety = rawPool.size - pool.size
+
+        Log.d("WorkoutPlanAi", "generate(): pool=${pool.size} (excludedForSafety=$excludedForSafety) favs=${pool.count { it.isFavorite }} cfg.isConnected=${cfg.isConnected} provider=${cfg.provider}")
 
         if (pool.size < 12) {
             return@runCatching GeneratedPlanResult(
@@ -156,6 +170,9 @@ class WorkoutPlanAiService @Inject constructor(
         // === POOL DOSTĘPNYCH ĆWICZEŃ ===
         // v1.29.9: separator " | " zamiast nawiasu — wiele nazw ćwiczeń samo
         // zawiera (...), przez co AI wklejało dopisek partia/sprzęt do nazwy.
+        // v2.5.0: wzbogacona pula — dodatkowo wzorzec ruchowy + poziom + trudność z canonical.
+        // Pozwala AI balansować push/pull/hinge i dobierać trudność do poziomu usera
+        // bez wołania tools (efektywniej tokenowo — plan w jednym calle).
         val poolListing = pool.joinToString("\n") { ex ->
             val fav = if (ex.isFavorite) " ⭐" else ""
             val metricTag = when (ex.metricType) {
@@ -163,7 +180,12 @@ class WorkoutPlanAiService @Inject constructor(
                 MetricType.DURATION -> " | ⏱CZAS(izometria)"
                 else -> ""
             }
-            "- ${ex.name}$fav | ${ex.primaryMuscle.name} | ${ex.equipment.name}$metricTag"
+            val mp = ex.movementPattern?.let { " | ${it.name}" } ?: ""
+            val lvl = ex.levelMin?.let { lv ->
+                val diff = ex.difficulty1To10?.let { "$it/10" } ?: ""
+                " | ${lv.name}${if (diff.isNotEmpty()) " $diff" else ""}"
+            } ?: ""
+            "- ${ex.name}$fav | ${ex.primaryMuscle.name} | ${ex.equipment.name}$mp$lvl$metricTag"
         }
 
         val (defaultSets, defaultReps, defaultRest) = setsConfigFor(profile.goal)

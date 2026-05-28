@@ -280,7 +280,8 @@ class WeeklyReportService @Inject constructor(
                     sessions = sessions,
                     setCount = sets.size,
                     topSet = "${topSet.reps}×${formatKg(topSet.weightKg)}kg",
-                    rpeTrend = rpeTrend
+                    rpeTrend = rpeTrend,
+                    movementPattern = ex.movementPattern?.name
                 )
             }
 
@@ -350,6 +351,23 @@ class WeeklyReportService @Inject constructor(
                 append("top ${e.topSet}, ${e.rpeTrend}\n")
             }
 
+            // v2.5.0: balans wzorców ruchowych (push/pull/hinge/squat...) z canonical.
+            // Pozwala AI wykryć dysbalans niewidoczny w podziale per partia
+            // (np. dużo push poziomego, mało pull pionowego → ryzyko barków).
+            val byPattern = byExercise
+                .filter { it.movementPattern != null }
+                .groupBy { it.movementPattern!! }
+                .mapValues { (_, list) -> list.sumOf { it.setCount } }
+                .toList().sortedByDescending { it.second }
+            if (byPattern.isNotEmpty()) {
+                append("\n## Balans wzorców ruchowych (serie/wzorzec)\n")
+                byPattern.forEach { (pattern, setCount) ->
+                    append("- $pattern: $setCount serii\n")
+                }
+                append("→ Sprawdź balans: push vs pull (antagoniści), poziom vs pion, ")
+                append("kolana (squat) vs biodra (hinge). Wskaż dysproporcje.\n")
+            }
+
             if (stagnations.isNotEmpty()) {
                 append("\n## STAGNACJE wykryte\n")
                 stagnations.forEach { s ->
@@ -417,5 +435,6 @@ private data class AiExerciseSummary(
     val sessions: Int,
     val setCount: Int,
     val topSet: String,
-    val rpeTrend: String
+    val rpeTrend: String,
+    val movementPattern: String? = null  // v2.5.0: do analizy balansu wzorców
 )

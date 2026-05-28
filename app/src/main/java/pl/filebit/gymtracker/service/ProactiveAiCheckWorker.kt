@@ -43,7 +43,9 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     private val aiPrefs: pl.filebit.gymtracker.ai.AiPreferences,
     private val aiToolHandler: pl.filebit.gymtracker.ai.AiToolHandler,
     // v1.18.0 — auto-cleanup AiLog (>30 dni)
-    private val aiLogRepository: pl.filebit.gymtracker.data.repository.AiLogRepository
+    private val aiLogRepository: pl.filebit.gymtracker.data.repository.AiLogRepository,
+    // v2.5.0 — sprawdzanie przeciwwskazań canonical przy regule bólu
+    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -79,11 +81,19 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
             .maxByOrNull { it.daysAgo }
 
         val (title, body, prompt) = when {
-            recurringPain != null -> Triple(
-                "⚠ Ostrzeżenie od AI",
-                "Zgłaszałeś ból ($recurringPain) w ≥2 z ostatnich 3 treningów. Sprawdźmy co zmienić.",
-                "PAIN_RECOVERY"
-            )
+            recurringPain != null -> {
+                // v2.5.0: sprawdź canonical contraindications — które ćwiczenia mogą
+                // obciążać okolicę bólu. Konkretne ostrzeżenie zamiast ogólnego.
+                val risky = riskyExercisesForPain(recurringPain)
+                val extra = if (risky.isNotEmpty()) {
+                    " Uwaga na: ${risky.joinToString(", ")} (mogą obciążać tę okolicę)."
+                } else ""
+                Triple(
+                    "⚠ Ostrzeżenie od AI",
+                    "Zgłaszałeś ból ($recurringPain) w ≥2 z ostatnich 3 treningów.$extra Sprawdźmy co zmienić.",
+                    "PAIN_RECOVERY"
+                )
+            }
             stagnation != null -> Triple(
                 "📊 Stagnacja w ${stagnation.exerciseName}",
                 "Już ${stagnation.workoutsAtSameWeight} treningów na tej samej wadze. Czas na deload?",
@@ -186,6 +196,41 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
+    }
+
+    /**
+     * v2.5.0 — znajduje ulubione ćwiczenia usera których canonical contraindications
+     * pasują do zgłaszanej okolicy bólu (painArea). Mapuje polski painArea na angielskie
+     * tokeny przeciwwskazań. Zwraca max 3 nazwy. Pusta lista = brak dopasowania.
+     */
+    private suspend fun riskyExercisesForPain(painArea: String): List<String> {
+        val pa = painArea.lowercase()
+        // mapowanie potocznego painArea (PL/EN) na tokeny w contraindicationsJson
+        val tokens = buildList {
+            if (pa.contains("plec") || pa.contains("krzyż") || pa.contains("lędźw") || pa.contains("back") || pa.contains("lumbar")) {
+                add("lower_back"); add("lumbar"); add("back_pain"); add("disc")
+            }
+            if (pa.contains("bark") || pa.contains("ramię") || pa.contains("ramie") || pa.contains("shoulder")) {
+                add("shoulder"); add("rotator")
+            }
+            if (pa.contains("kolan") || pa.contains("knee")) { add("knee"); add("patell") }
+            if (pa.contains("łok") || pa.contains("lok") || pa.contains("elbow")) { add("elbow"); add("epicond") }
+            if (pa.contains("nadgarst") || pa.contains("wrist")) { add("wrist") }
+            if (pa.contains("biodr") || pa.contains("hip")) { add("hip") }
+            if (pa.contains("szyj") || pa.contains("kark") || pa.contains("neck") || pa.contains("cervical")) {
+                add("neck"); add("cervical")
+            }
+        }
+        if (tokens.isEmpty()) return emptyList()
+        return runCatching {
+            exerciseDao.getFavorites()
+                .filter { ex ->
+                    val c = ex.contraindicationsJson?.lowercase() ?: return@filter false
+                    tokens.any { c.contains(it) }
+                }
+                .map { it.name }
+                .take(3)
+        }.getOrDefault(emptyList())
     }
 
     companion object {
