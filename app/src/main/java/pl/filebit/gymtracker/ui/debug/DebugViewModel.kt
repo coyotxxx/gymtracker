@@ -59,16 +59,60 @@ class DebugViewModel @Inject constructor(
     private val _status = MutableStateFlow("")
     val status: StateFlow<String> = _status.asStateFlow()
 
+    // v2.7.1: stan bazy w DIALOGU (nie w StatusBox na dole listy — był niewidoczny
+    // bez scrollowania). Popup widoczny od razu, niezależnie od pozycji scrolla.
+    private val _dbStateDialog = MutableStateFlow<String?>(null)
+    val dbStateDialog: StateFlow<String?> = _dbStateDialog.asStateFlow()
+    fun dismissDbStateDialog() { _dbStateDialog.value = null }
+
     private val json = Json { prettyPrint = true; encodeDefaults = true }
 
     /**
      * v2.7.0 — czytelny odczyt stanu bazy apki: ile treningów/setów realnie jest
      * i od kiedy. Pozwala zweryfikować "zaczynamy od nowa" zamiast zgadywać.
+     * v2.7.1 — wynik w dialogu (widoczny natychmiast, niezależnie od scrolla).
      */
     fun showDbState() = viewModelScope.launch {
         runCatching { withContext(Dispatchers.IO) { dbStateReadable() } }
-            .onSuccess { _status.value = it }
-            .onFailure { _status.value = "✗ Błąd odczytu: ${it.message}" }
+            .onSuccess { _dbStateDialog.value = it }
+            .onFailure { _dbStateDialog.value = "✗ Błąd odczytu: ${it.message}" }
+    }
+
+    /**
+     * v2.7.1 — czyści TYLKO historię treningów: workouts (CASCADE usuwa
+     * workout_sets) + eventy/mezocykle/day-summaries pochodne od treningów.
+     * ZOSTAWIA: ćwiczenia, plany, profil, pomiary, cele, dietę, AI.
+     */
+    fun wipeWorkoutHistory() = viewModelScope.launch {
+        runCatching { withContext(Dispatchers.IO) { wipeWorkoutHistoryBlocking() } }
+            .onSuccess { _dbStateDialog.value = it }
+            .onFailure { _dbStateDialog.value = "✗ Błąd czyszczenia: ${it.message}" }
+    }
+
+    private fun wipeWorkoutHistoryBlocking(): String {
+        val helper = db.openHelper.writableDatabase
+        fun count(t: String): Long = runCatching {
+            helper.query("SELECT COUNT(*) FROM `$t`").use { c -> if (c.moveToFirst()) c.getLong(0) else 0L }
+        }.getOrElse { 0L }
+        val before = count("workouts")
+        val setsBefore = count("workout_sets")
+        // Kolejność: najpierw tabele zależne/pochodne, potem workouts (CASCADE → sety).
+        // pending_periodization_decisions może mieć FK do mezocykli → usuwamy je pierwsze.
+        listOf(
+            "pending_periodization_decisions",
+            "training_mesocycles",
+            "training_events",
+            "training_day_summary",
+            "workouts" // CASCADE usuwa workout_sets
+        ).forEach { t -> runCatching { helper.execSQL("DELETE FROM `$t`") } }
+        val after = count("workouts")
+        val setsAfter = count("workout_sets")
+        return buildString {
+            appendLine("WYCZYSZCZONO HISTORIĘ TRENINGÓW")
+            appendLine("Treningi: $before → $after")
+            appendLine("Serie: $setsBefore → $setsAfter")
+            append("Ćwiczenia, plany, profil i dieta — zachowane.")
+        }
     }
 
     private fun dbStateReadable(): String {

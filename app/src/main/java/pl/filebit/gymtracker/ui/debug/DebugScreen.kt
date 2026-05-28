@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -23,10 +24,14 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -47,6 +52,49 @@ fun DebugScreen(
     vm: DebugViewModel = hiltViewModel()
 ) {
     val status by vm.status.collectAsStateWithLifecycle()
+    val dbStateDialog by vm.dbStateDialog.collectAsStateWithLifecycle()
+    var showWipeConfirm by remember { mutableStateOf(false) }
+
+    // v2.7.1: wynik "Stan bazy" / "Wyczyść" w popupie — widoczny od razu.
+    if (dbStateDialog != null) {
+        AlertDialog(
+            onDismissRequest = { vm.dismissDbStateDialog() },
+            confirmButton = {
+                TextButton(onClick = { vm.dismissDbStateDialog() }) { Text("Zamknij") }
+            },
+            title = { Text("Baza danych") },
+            text = { Text(dbStateDialog ?: "") },
+            containerColor = DarkSurface,
+            titleContentColor = DarkOnSurface,
+            textContentColor = DarkOnSurface
+        )
+    }
+
+    if (showWipeConfirm) {
+        AlertDialog(
+            onDismissRequest = { showWipeConfirm = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    showWipeConfirm = false
+                    vm.wipeWorkoutHistory()
+                }) { Text("Wyczyść", color = ErrorRed) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showWipeConfirm = false }) { Text("Anuluj") }
+            },
+            title = { Text("Wyczyścić historię treningów?") },
+            text = {
+                Text(
+                    "Usunie WSZYSTKIE treningi i serie (oraz pochodne eventy/mezocykle). " +
+                        "Ćwiczenia, plany, profil i dieta zostaną. Operacja nieodwracalna."
+                )
+            },
+            containerColor = DarkSurface,
+            titleContentColor = DarkOnSurface,
+            textContentColor = DarkOnSurface
+        )
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -75,6 +123,13 @@ fun DebugScreen(
                     title = "Stan bazy aplikacji",
                     subtitle = "Ile treningów/serii realnie jest w bazie + od kiedy. Sprawdź czy 'zaczynamy od nowa'.",
                     onClick = vm::showDbState
+                )
+            }
+            item {
+                DebugAction(
+                    title = "Wyczyść historię treningów",
+                    subtitle = "Usuwa wszystkie treningi i serie (od nowa). Ćwiczenia, plany, profil i dieta zostają.",
+                    onClick = { showWipeConfirm = true }
                 )
             }
             // v1.24.41: Importuj na samej górze — emulator ma broken scrolling przy LazyColumn,

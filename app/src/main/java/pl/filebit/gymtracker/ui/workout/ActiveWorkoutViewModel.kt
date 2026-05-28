@@ -243,35 +243,36 @@ class ActiveWorkoutViewModel @Inject constructor(
         _isFinishing.value = true
         pendingOnDoneCallback = onDone
         viewModelScope.launch {
-            // 1) NAJPIERW zapis treningu + most do diety
-            workoutRepo.finish(id)
-            runCatching { trainingDietBridge.recomputeFromWorkout(id) }
+            // 1) SZYBKO: tylko zapis finishedAt. Feedback NATYCHMIAST.
+            val saved = workoutRepo.markFinished(id)
             _isFinishing.value = false
-            // 2) Feedback NATYCHMIAST — nie czekamy na ciężkie analizy historii
-            val stillExists = workoutRepo.getWorkout(id)?.finishedAt != null
-            if (stillExists) _pendingFeedbackId.value = id
-            // 3) AI summary w tle
+            if (saved) _pendingFeedbackId.value = id
+            // 2) AI summary w tle
             launch {
                 aiSummaryService.generate(id).onSuccess { text ->
                     workoutRepo.setAiSummary(id, text)
                 }
             }
-            // 4) Analiza po treningu (PR/tipsy/stagnacja) — jednoprzebiegowo, w tle.
-            //    Pokaże się dopiero PO zamknięciu feedbacku (gating w ekranie).
+            // 3) WSZYSTKO ciężkie w tle: event detection + rollup, most do diety,
+            //    analiza PR/tipsy/stagnacja. Nie blokuje arkusza feedbacku.
             _analysisInFlight.value = true
             launch {
-                val analysis = runCatching { statsRepo.analyzePostWorkout(id) }.getOrNull()
-                if (analysis != null) {
-                    _pendingPRs.value = analysis.prs.map { p ->
-                        NewPrWithName(p, exerciseRepo.get(p.exerciseId)?.name ?: "?")
+                runCatching { workoutRepo.runPostFinishProcessing(id) }
+                runCatching { trainingDietBridge.recomputeFromWorkout(id) }
+                if (saved) {
+                    val analysis = runCatching { statsRepo.analyzePostWorkout(id) }.getOrNull()
+                    if (analysis != null) {
+                        _pendingPRs.value = analysis.prs.map { p ->
+                            NewPrWithName(p, exerciseRepo.get(p.exerciseId)?.name ?: "?")
+                        }
+                        _pendingTips.value = analysis.tips
+                        _pendingStagnation.value = analysis.stagnations
                     }
-                    _pendingTips.value = analysis.tips
-                    _pendingStagnation.value = analysis.stagnations
                 }
                 _analysisInFlight.value = false
                 tryFinishCallback()
             }
-            if (!stillExists) tryFinishCallback()
+            if (!saved) tryFinishCallback()
         }
     }
 

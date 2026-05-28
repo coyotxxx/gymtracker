@@ -43,20 +43,36 @@ class WorkoutRepository @Inject constructor(
         return newWorkout.copy(id = id)
     }
 
-    suspend fun finish(workoutId: Long) {
-        val w = workoutDao.getById(workoutId) ?: return
-        if (w.finishedAt != null) return
-        // Jeśli trening jest pusty (brak setów) -> usuń zamiast zapisywać
+    /**
+     * v2.7.1 — SZYBKIE domknięcie treningu: tylko zapis finishedAt (lub usunięcie
+     * pustego). Zwraca true gdy trening zapisany (miał sety), false gdy pusty.
+     * Ciężkie przetwarzanie (event detection, rollup) wydzielone do
+     * [runPostFinishProcessing] — żeby arkusz feedbacku pokazał się NATYCHMIAST.
+     */
+    suspend fun markFinished(workoutId: Long): Boolean {
+        val w = workoutDao.getById(workoutId) ?: return false
+        if (w.finishedAt != null) return true
         val sets = setDao.getForWorkout(workoutId)
         if (sets.isEmpty()) {
             workoutDao.deleteById(workoutId)
-            return
+            return false
         }
         workoutDao.update(w.copy(finishedAt = System.currentTimeMillis()))
-        // v1.11.59: detekcja eventów (PR-y, gap_resumed) po finalizacji treningu
+        return true
+    }
+
+    /**
+     * v2.7.1 — CIĘŻKIE przetwarzanie po treningu (skanuje całą historię):
+     * detekcja eventów (PR/gap/deload) + zamknięcie zaległych okresów.
+     * Wołać W TLE po [markFinished], nigdy na ścieżce blokującej UI.
+     */
+    suspend fun runPostFinishProcessing(workoutId: Long) {
         runCatching { eventDetectorService.onWorkoutFinished(workoutId) }
-        // v1.11.66: zamknij zaległe okresy (week/month/quarter) jeśli są
         runCatching { periodRollupService.closeAllPeriodsIfNeeded() }
+    }
+
+    suspend fun finish(workoutId: Long) {
+        if (markFinished(workoutId)) runPostFinishProcessing(workoutId)
     }
 
     suspend fun discardActive() {
