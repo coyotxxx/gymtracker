@@ -441,6 +441,14 @@ class WorkoutPlanAiService @Inject constructor(
                     .trim()
                 val match = byNameLower[cleanName.lowercase()]
                     ?: byNameLower.entries.firstOrNull { (k, _) -> k.contains(cleanName.lowercase()) || cleanName.lowercase().contains(k) }?.value
+                    // v2.5.1: fallback do PEŁNEJ bazy. AI może użyć ulubionego ćwiczenia
+                    // które prompt pokazuje w sekcji ULUBIONE, ale filterByEquipment
+                    // wyrzucił je z `pool` (np. cardio bieżnia gdy user nie ma "cardio"
+                    // w equipmentCategoriesCsv). Bez tego AI dawał poprawny plan,
+                    // a parser pomijał wszystko → fallback offline. Szukamy po nazwie
+                    // (Exercise.name = namePl) i po slug.
+                    ?: exerciseRepo.findByName(cleanName)
+                    ?: exerciseRepo.findBySlug(cleanName.lowercase().replace(" ", "-"))
                 if (match == null) {
                     skipped++
                     warnings += "Pominięto '${aiEx.name}' — brak w bazie"
