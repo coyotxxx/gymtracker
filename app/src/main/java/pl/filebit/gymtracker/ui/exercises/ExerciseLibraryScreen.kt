@@ -4,9 +4,12 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,11 +21,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FitnessCenter
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -33,7 +37,9 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -55,6 +61,7 @@ import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.SelectableChip
 import pl.filebit.gymtracker.util.formatWeight
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ExerciseLibraryScreen(
     onOpenDetail: (Long) -> Unit,
@@ -120,74 +127,76 @@ fun ExerciseLibraryScreen(
         val searching = query.isNotBlank()
 
         if (!searching) {
-            // Filtr "❤ tylko ulubione"
-            Box(
+            // v2.8.0: kompaktowe filtry — chip pokazuje wybór, tap rozwija okno
+            // z opcjami pod spodem (zamiast dwóch długich rzędów chipów na stałe).
+            var expanded by remember { mutableStateOf<FilterKind?>(null) }
+
+            FlowRow(
                 modifier = Modifier
-                    .padding(horizontal = 16.dp)
-                    .background(
-                        if (favoritesOnly) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
-                        RoundedCornerShape(50)
-                    )
-                    .border(
-                        1.dp,
-                        if (favoritesOnly) AccentOrange else DarkOutlineSoft,
-                        RoundedCornerShape(50)
-                    )
-                    .clickable { vm.setFavoritesOnly(!favoritesOnly) }
-                    .padding(horizontal = 14.dp, vertical = 8.dp)
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                Text(
-                    if (favoritesOnly) "❤ Tylko ulubione (${exercises.size})" else "🤍 Wszystkie / pokaż ulubione",
-                    style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
-                    color = if (favoritesOnly) AccentOrange else DarkOnSurface
+                DropdownFilterChip(
+                    text = muscleFilter?.displayName() ?: "Partia",
+                    selected = muscleFilter != null,
+                    expanded = expanded == FilterKind.MUSCLE,
+                    onClick = { expanded = if (expanded == FilterKind.MUSCLE) null else FilterKind.MUSCLE }
+                )
+                DropdownFilterChip(
+                    text = equipmentFilter?.displayName() ?: "Sprzęt",
+                    selected = equipmentFilter != null,
+                    expanded = expanded == FilterKind.EQUIPMENT,
+                    onClick = { expanded = if (expanded == FilterKind.EQUIPMENT) null else FilterKind.EQUIPMENT }
+                )
+                FilterPillChip(
+                    text = if (favoritesOnly) "❤ Ulubione" else "🤍 Ulubione",
+                    selected = favoritesOnly,
+                    onClick = { vm.setFavoritesOnly(!favoritesOnly) }
                 )
             }
 
-            Spacer(Modifier.height(10.dp))
-
-            // Filtr po partii mięśniowej
-            FilterSectionLabel("Partia")
-            LazyRow(
-                contentPadding = PaddingValues(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                item {
-                    SelectableChip(
-                        text = "Wszystkie",
-                        selected = muscleFilter == null,
-                        onClick = { vm.setMuscleFilter(null) }
-                    )
-                }
-                items(MuscleGroup.entries.filter { it != MuscleGroup.OTHER }) { m ->
-                    SelectableChip(
-                        text = m.displayName(),
-                        selected = muscleFilter == m,
-                        onClick = { vm.setMuscleFilter(m) }
-                    )
-                }
-            }
-
-            Spacer(Modifier.height(10.dp))
-
-            // Filtr po sprzęcie
-            FilterSectionLabel("Sprzęt")
-            LazyRow(
-                contentPadding = PaddingValues(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                item {
-                    SelectableChip(
-                        text = "Wszystkie",
-                        selected = equipmentFilter == null,
-                        onClick = { vm.setEquipmentFilter(null) }
-                    )
-                }
-                items(Equipment.entries.filter { it != Equipment.OTHER }) { eq ->
-                    SelectableChip(
-                        text = eq.displayName(),
-                        selected = equipmentFilter == eq,
-                        onClick = { vm.setEquipmentFilter(eq) }
-                    )
+            // Rozwijane okno wyboru pod paskiem chipów
+            AnimatedVisibility(visible = expanded != null) {
+                FlowRow(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 16.dp, end = 16.dp, top = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    when (expanded) {
+                        FilterKind.MUSCLE -> {
+                            SelectableChip(
+                                text = "Wszystkie",
+                                selected = muscleFilter == null,
+                                onClick = { vm.setMuscleFilter(null); expanded = null }
+                            )
+                            MuscleGroup.entries.filter { it != MuscleGroup.OTHER }.forEach { m ->
+                                SelectableChip(
+                                    text = m.displayName(),
+                                    selected = muscleFilter == m,
+                                    onClick = { vm.setMuscleFilter(m); expanded = null }
+                                )
+                            }
+                        }
+                        FilterKind.EQUIPMENT -> {
+                            SelectableChip(
+                                text = "Wszystkie",
+                                selected = equipmentFilter == null,
+                                onClick = { vm.setEquipmentFilter(null); expanded = null }
+                            )
+                            Equipment.entries.filter { it != Equipment.OTHER }.forEach { eq ->
+                                SelectableChip(
+                                    text = eq.displayName(),
+                                    selected = equipmentFilter == eq,
+                                    onClick = { vm.setEquipmentFilter(eq); expanded = null }
+                                )
+                            }
+                        }
+                        null -> {}
+                    }
                 }
             }
 
@@ -233,18 +242,75 @@ fun ExerciseLibraryScreen(
     }
 }
 
+private enum class FilterKind { MUSCLE, EQUIPMENT }
+
+/**
+ * v2.8.0 — kompaktowy chip filtra z rozwijaną strzałką. Pokazuje aktualny wybór
+ * (np. "Klatka") lub etykietę kategorii ("Partia"). Tap rozwija okno opcji pod spodem.
+ */
 @Composable
-private fun FilterSectionLabel(text: String) {
-    Text(
-        text.uppercase(),
-        style = MaterialTheme.typography.labelSmall.copy(
-            fontSize = 10.sp,
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 1.4.sp
-        ),
-        color = DarkOnSurfaceVariant,
-        modifier = Modifier.padding(start = 20.dp, bottom = 6.dp, top = 0.dp)
-    )
+private fun DropdownFilterChip(
+    text: String,
+    selected: Boolean,
+    expanded: Boolean,
+    onClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .background(
+                if (selected) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                RoundedCornerShape(50)
+            )
+            .border(
+                1.dp,
+                if (selected) AccentOrange else DarkOutlineSoft,
+                RoundedCornerShape(50)
+            )
+            .clickable { onClick() }
+            .padding(start = 14.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text,
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = if (selected) AccentOrange else DarkOnSurface
+        )
+        Icon(
+            if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+            contentDescription = null,
+            tint = if (selected) AccentOrange else DarkOnSurfaceVariant,
+            modifier = Modifier.size(18.dp)
+        )
+    }
+}
+
+/** Prosty chip-przełącznik (bez strzałki) — np. ulubione. */
+@Composable
+private fun FilterPillChip(
+    text: String,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    Box(
+        modifier = Modifier
+            .background(
+                if (selected) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                RoundedCornerShape(50)
+            )
+            .border(
+                1.dp,
+                if (selected) AccentOrange else DarkOutlineSoft,
+                RoundedCornerShape(50)
+            )
+            .clickable { onClick() }
+            .padding(horizontal = 14.dp, vertical = 8.dp)
+    ) {
+        Text(
+            text,
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = if (selected) AccentOrange else DarkOnSurface
+        )
+    }
 }
 
 /**
