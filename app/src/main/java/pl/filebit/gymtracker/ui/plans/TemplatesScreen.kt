@@ -1,6 +1,9 @@
 package pl.filebit.gymtracker.ui.plans
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,12 +16,17 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,8 +44,12 @@ import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.template.PlanGoalCategory
 import pl.filebit.gymtracker.data.template.PlanTemplate
 import pl.filebit.gymtracker.data.template.PlanTemplates
+import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.ui.theme.SelectableChip
 import androidx.compose.ui.unit.sp
@@ -65,55 +77,72 @@ fun TemplatesScreen(
                 title = stringResource(R.string.templates_title),
                 onBack = onBack
             )
-            // Filtr po celu — v1.24.17: FlowRow zamiast LazyRow,
-            // żeby wszystkie chipsy były widoczne bez scroll horyzontalnego
-            // (test ujawnił że 'Hipertrofia' chip był poza ekranem).
-            FilterSectionLabel("Cel")
+            // v2.8.1: kompaktowe filtry — chip pokazuje aktualny wybór, tap rozwija
+            // okno opcji pod spodem. Wcześniej dwa pełne bloki chipów (Cel ~4 rzędy,
+            // Częstotliwość ~2 rzędy) zajmowały ~połowę ekranu przed listą.
+            var expanded by remember { mutableStateOf<TplFilter?>(null) }
             @OptIn(ExperimentalLayoutApi::class)
             FlowRow(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
+                    .padding(horizontal = 16.dp, vertical = 4.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalArrangement = Arrangement.spacedBy(6.dp)
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                SelectableChip(
-                    text = "Wszystkie",
-                    selected = goalFilter == null,
-                    onClick = { goalFilter = null }
+                DropdownFilterChip(
+                    text = goalFilter?.let { "${it.emoji} ${it.labelPl}" } ?: "Cel",
+                    selected = goalFilter != null,
+                    expanded = expanded == TplFilter.GOAL,
+                    onClick = { expanded = if (expanded == TplFilter.GOAL) null else TplFilter.GOAL }
                 )
-                PlanGoalCategory.entries.forEach { cat ->
-                    SelectableChip(
-                        text = "${cat.emoji} ${cat.labelPl}",
-                        selected = goalFilter == cat,
-                        onClick = { goalFilter = cat }
-                    )
-                }
+                DropdownFilterChip(
+                    text = freqFilter?.let { "$it× / tydz" } ?: "Częstotliwość",
+                    selected = freqFilter != null,
+                    expanded = expanded == TplFilter.FREQ,
+                    onClick = { expanded = if (expanded == TplFilter.FREQ) null else TplFilter.FREQ }
+                )
             }
 
-            Spacer(Modifier.height(10.dp))
-
-            // Filtr częstotliwości — v1.24.17: FlowRow (spójność z filtrem celu)
-            FilterSectionLabel("Częstotliwość")
-            @OptIn(ExperimentalLayoutApi::class)
-            FlowRow(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalArrangement = Arrangement.spacedBy(6.dp)
-            ) {
-                SelectableChip(
-                    text = "Wszystkie",
-                    selected = freqFilter == null,
-                    onClick = { freqFilter = null }
-                )
-                listOf(2, 3, 4, 5, 6).forEach { days ->
-                    SelectableChip(
-                        text = "${days}× / tydz",
-                        selected = freqFilter == days,
-                        onClick = { freqFilter = days }
-                    )
+            AnimatedVisibility(visible = expanded != null) {
+                @OptIn(ExperimentalLayoutApi::class)
+                FlowRow(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 16.dp, end = 16.dp, top = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    when (expanded) {
+                        TplFilter.GOAL -> {
+                            SelectableChip(
+                                text = "Wszystkie",
+                                selected = goalFilter == null,
+                                onClick = { goalFilter = null; expanded = null }
+                            )
+                            PlanGoalCategory.entries.forEach { cat ->
+                                SelectableChip(
+                                    text = "${cat.emoji} ${cat.labelPl}",
+                                    selected = goalFilter == cat,
+                                    onClick = { goalFilter = cat; expanded = null }
+                                )
+                            }
+                        }
+                        TplFilter.FREQ -> {
+                            SelectableChip(
+                                text = "Wszystkie",
+                                selected = freqFilter == null,
+                                onClick = { freqFilter = null; expanded = null }
+                            )
+                            listOf(2, 3, 4, 5, 6).forEach { days ->
+                                SelectableChip(
+                                    text = "$days× / tydz",
+                                    selected = freqFilter == days,
+                                    onClick = { freqFilter = days; expanded = null }
+                                )
+                            }
+                        }
+                        null -> {}
+                    }
                 }
             }
 
@@ -160,18 +189,43 @@ fun TemplatesScreen(
     }
 }
 
+private enum class TplFilter { GOAL, FREQ }
+
+/** v2.8.1 — kompaktowy chip filtra z rozwijaną strzałką; pokazuje aktualny wybór. */
 @Composable
-private fun FilterSectionLabel(text: String) {
-    Text(
-        text.uppercase(),
-        style = MaterialTheme.typography.labelSmall.copy(
-            fontSize = 10.sp,
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 1.4.sp
-        ),
-        color = DarkOnSurfaceVariant,
-        modifier = Modifier.padding(start = 20.dp, top = 4.dp, bottom = 6.dp)
-    )
+private fun DropdownFilterChip(
+    text: String,
+    selected: Boolean,
+    expanded: Boolean,
+    onClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .background(
+                if (selected) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                RoundedCornerShape(50)
+            )
+            .border(
+                1.dp,
+                if (selected) AccentOrange else DarkOutlineSoft,
+                RoundedCornerShape(50)
+            )
+            .clickable { onClick() }
+            .padding(start = 14.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text,
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = if (selected) AccentOrange else DarkOnSurface
+        )
+        Icon(
+            if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+            contentDescription = null,
+            tint = if (selected) AccentOrange else DarkOnSurfaceVariant,
+            modifier = Modifier.size(18.dp)
+        )
+    }
 }
 
 @Composable
