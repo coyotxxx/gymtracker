@@ -209,8 +209,8 @@ fun ExerciseLibraryScreen(
 
         LazyColumn(
             modifier = Modifier
-                .fillMaxSize()
-                .imePadding(),  // v2.4.0: lista scrolluje nad klawiaturą, nie pod nią
+                .fillMaxWidth()
+                .weight(1f),  // v2.4.1: weight zamiast fillMaxSize+imePadding (czarny pas)
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {

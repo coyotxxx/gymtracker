@@ -159,8 +159,19 @@ class CoachWorkoutViewModel @Inject constructor(
 
     fun askAiOpinion(followUpMessage: String? = null) {
         val st = state.value
-        val sug = st.suggestionForCurrent ?: return
         val ex = st.currentExercise ?: return
+        // v2.4.1: gdy brak sugestii AI (ćwiczenie bez historii) — buduj sugestię
+        // z bieżącego zaplanowanego setu, żeby ikona AI ZAWSZE coś robiła
+        // (wcześniej cichy return = klik bez reakcji).
+        val sug = st.suggestionForCurrent ?: st.currentSet?.let { cur ->
+            pl.filebit.gymtracker.data.repository.NextSetSuggestion(
+                suggestedWeightKg = cur.weightKg,
+                suggestedReps = cur.reps,
+                rationale = "Brak wcześniejszej historii tego ćwiczenia — ocena bieżącego planu",
+                previousWeightKg = cur.weightKg,
+                previousReps = cur.reps
+            )
+        } ?: return
         val workoutId = st.workout?.id
         _aiOpinion.value = AiOpinionState.Loading
         viewModelScope.launch {
