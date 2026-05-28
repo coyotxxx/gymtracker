@@ -190,6 +190,30 @@ class CoachWorkoutViewModel @Inject constructor(
         }
     }
 
+    /**
+     * v2.4.0 — ręczna edycja wartości bieżącej serii (tap na wielki blok).
+     * Aktualizuje tylko podane (non-null) pola. Pozwala poprawić ciężar/powt./czas/
+     * prędkość przed oznaczeniem serii jako wykonanej, bez wchodzenia w osobny ekran.
+     */
+    fun updateCurrentSetValues(
+        weightKg: Double? = null,
+        reps: Int? = null,
+        durationSec: Int? = null,
+        distanceM: Double? = null
+    ) {
+        val current = state.value.currentSet ?: return
+        viewModelScope.launch {
+            workoutRepo.updateSet(
+                current.copy(
+                    weightKg = weightKg ?: current.weightKg,
+                    reps = reps ?: current.reps,
+                    durationSec = durationSec ?: current.durationSec,
+                    distanceM = distanceM ?: current.distanceM
+                )
+            )
+        }
+    }
+
     @OptIn(ExperimentalCoroutinesApi::class)
     val state: StateFlow<CoachUiState> = workoutRepo.observeActive()
         .flatMapLatest { workout ->

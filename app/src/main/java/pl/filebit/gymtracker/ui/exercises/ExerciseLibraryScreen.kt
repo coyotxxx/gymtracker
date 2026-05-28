@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -113,81 +114,88 @@ fun ExerciseLibraryScreen(
 
         Spacer(Modifier.height(12.dp))
 
-        // Filtr "❤ tylko ulubione"
-        Box(
-            modifier = Modifier
-                .padding(horizontal = 16.dp)
-                .background(
-                    if (favoritesOnly) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
-                    RoundedCornerShape(50)
+        // v2.4.0: podczas wpisywania (query nieblank) chowamy filtry — klawiatura
+        // zabiera dół, filtry zabierały górę, wyniki ściskały się do wąskiego paska.
+        // Teraz w trybie wyszukiwania wyniki dostają całą dostępną wysokość.
+        val searching = query.isNotBlank()
+
+        if (!searching) {
+            // Filtr "❤ tylko ulubione"
+            Box(
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .background(
+                        if (favoritesOnly) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                        RoundedCornerShape(50)
+                    )
+                    .border(
+                        1.dp,
+                        if (favoritesOnly) AccentOrange else DarkOutlineSoft,
+                        RoundedCornerShape(50)
+                    )
+                    .clickable { vm.setFavoritesOnly(!favoritesOnly) }
+                    .padding(horizontal = 14.dp, vertical = 8.dp)
+            ) {
+                Text(
+                    if (favoritesOnly) "❤ Tylko ulubione (${exercises.size})" else "🤍 Wszystkie / pokaż ulubione",
+                    style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+                    color = if (favoritesOnly) AccentOrange else DarkOnSurface
                 )
-                .border(
-                    1.dp,
-                    if (favoritesOnly) AccentOrange else DarkOutlineSoft,
-                    RoundedCornerShape(50)
-                )
-                .clickable { vm.setFavoritesOnly(!favoritesOnly) }
-                .padding(horizontal = 14.dp, vertical = 8.dp)
-        ) {
-            Text(
-                if (favoritesOnly) "❤ Tylko ulubione (${exercises.size})" else "🤍 Wszystkie / pokaż ulubione",
-                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
-                color = if (favoritesOnly) AccentOrange else DarkOnSurface
-            )
+            }
+
+            Spacer(Modifier.height(10.dp))
+
+            // Filtr po partii mięśniowej
+            FilterSectionLabel("Partia")
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                item {
+                    SelectableChip(
+                        text = "Wszystkie",
+                        selected = muscleFilter == null,
+                        onClick = { vm.setMuscleFilter(null) }
+                    )
+                }
+                items(MuscleGroup.entries.filter { it != MuscleGroup.OTHER }) { m ->
+                    SelectableChip(
+                        text = m.displayName(),
+                        selected = muscleFilter == m,
+                        onClick = { vm.setMuscleFilter(m) }
+                    )
+                }
+            }
+
+            Spacer(Modifier.height(10.dp))
+
+            // Filtr po sprzęcie
+            FilterSectionLabel("Sprzęt")
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                item {
+                    SelectableChip(
+                        text = "Wszystkie",
+                        selected = equipmentFilter == null,
+                        onClick = { vm.setEquipmentFilter(null) }
+                    )
+                }
+                items(Equipment.entries.filter { it != Equipment.OTHER }) { eq ->
+                    SelectableChip(
+                        text = eq.displayName(),
+                        selected = equipmentFilter == eq,
+                        onClick = { vm.setEquipmentFilter(eq) }
+                    )
+                }
+            }
+
+            Spacer(Modifier.height(12.dp))
         }
-
-        Spacer(Modifier.height(10.dp))
-
-        // Filtr po partii mięśniowej
-        FilterSectionLabel("Partia")
-        LazyRow(
-            contentPadding = PaddingValues(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            item {
-                SelectableChip(
-                    text = "Wszystkie",
-                    selected = muscleFilter == null,
-                    onClick = { vm.setMuscleFilter(null) }
-                )
-            }
-            items(MuscleGroup.entries.filter { it != MuscleGroup.OTHER }) { m ->
-                SelectableChip(
-                    text = m.displayName(),
-                    selected = muscleFilter == m,
-                    onClick = { vm.setMuscleFilter(m) }
-                )
-            }
-        }
-
-        Spacer(Modifier.height(10.dp))
-
-        // Filtr po sprzęcie
-        FilterSectionLabel("Sprzęt")
-        LazyRow(
-            contentPadding = PaddingValues(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            item {
-                SelectableChip(
-                    text = "Wszystkie",
-                    selected = equipmentFilter == null,
-                    onClick = { vm.setEquipmentFilter(null) }
-                )
-            }
-            items(Equipment.entries.filter { it != Equipment.OTHER }) { eq ->
-                SelectableChip(
-                    text = eq.displayName(),
-                    selected = equipmentFilter == eq,
-                    onClick = { vm.setEquipmentFilter(eq) }
-                )
-            }
-        }
-
-        Spacer(Modifier.height(12.dp))
 
         Text(
-            "${exercises.size} ĆWICZEŃ",
+            if (searching) "${exercises.size} WYNIKÓW DLA „$query”" else "${exercises.size} ĆWICZEŃ",
             style = MaterialTheme.typography.labelSmall.copy(
                 fontSize = 11.sp,
                 fontWeight = FontWeight.Bold,
@@ -200,8 +208,10 @@ fun ExerciseLibraryScreen(
         Spacer(Modifier.height(8.dp))
 
         LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .imePadding(),  // v2.4.0: lista scrolluje nad klawiaturą, nie pod nią
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(exercises, key = { it.id }) { ex ->

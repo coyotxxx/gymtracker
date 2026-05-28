@@ -9,6 +9,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.AutoAwesome
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -169,7 +170,8 @@ fun CoachWorkoutScreen(
                     state = state,
                     onConfirmTap = { showConfirmDialog = true },
                     onSkip = { vm.skipCurrentSet() },
-                    onAskAiOpinion = { vm.askAiOpinion() }
+                    onAskAiOpinion = { vm.askAiOpinion() },
+                    onUpdateValues = { w, r, dur, dist -> vm.updateCurrentSetValues(w, r, dur, dist) }
                 )
             }
 
@@ -610,11 +612,29 @@ private fun CoachActiveContent(
     state: CoachUiState,
     onConfirmTap: () -> Unit,
     onSkip: () -> Unit,
-    onAskAiOpinion: () -> Unit
+    onAskAiOpinion: () -> Unit,
+    onUpdateValues: (weightKg: Double?, reps: Int?, durationSec: Int?, distanceM: Double?) -> Unit = { _, _, _, _ -> }
 ) {
     val current = state.currentSet ?: return
     val exercise = state.currentExercise ?: return
     val progress = if (state.totalSets > 0) state.completedSets.toFloat() / state.totalSets else 0f
+
+    // v2.4.0: dialog edycji wartości serii (tap na wielki blok)
+    var showEditValueDialog by remember(current.id) { mutableStateOf(false) }
+    if (showEditValueDialog) {
+        EditSetValueDialog(
+            metricType = exercise.metricType,
+            currentWeightKg = current.weightKg,
+            currentReps = current.reps,
+            currentDurationSec = current.durationSec,
+            currentDistanceM = current.distanceM,
+            onDismiss = { showEditValueDialog = false },
+            onSave = { w, r, dur, dist ->
+                onUpdateValues(w, r, dur, dist)
+                showEditValueDialog = false
+            }
+        )
+    }
 
     // v1.25.4: bottom sheet "Jak wykonać" — GIF + technika + mięśnie + sprzęt
     var showExerciseInfo by remember(exercise.id) { mutableStateOf(false) }
@@ -701,7 +721,7 @@ private fun CoachActiveContent(
 
         Spacer(Modifier.weight(1f))
 
-        // ──── Wielki blok: waga × powt. ────
+        // ──── Wielki blok: waga × powt. (tap = edycja, v2.4.0) ────
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -709,6 +729,7 @@ private fun CoachActiveContent(
                     pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f),
                     RoundedCornerShape(20.dp)
                 )
+                .clickable { showEditValueDialog = true }
                 .padding(vertical = 28.dp),
             contentAlignment = Alignment.Center
         ) {
@@ -730,6 +751,21 @@ private fun CoachActiveContent(
                     contentDescription = "Zapytaj AI",
                     tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
                     modifier = Modifier.size(20.dp)
+                )
+            }
+            // v2.4.0: ikonka ołówka (lewy górny) — sygnał że blok jest edytowalny
+            Box(
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .padding(10.dp)
+                    .size(36.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    Icons.Default.Edit,
+                    contentDescription = "Edytuj wartość",
+                    tint = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.55f),
+                    modifier = Modifier.size(18.dp)
                 )
             }
 
@@ -1240,4 +1276,119 @@ private fun rpeHint(rpe: Int): String = when (rpe) {
     9 -> "Prawie max — 1 powt. w zapasie"
     10 -> "Padłem — bez zapasu, do upadku"
     else -> ""
+}
+
+/**
+ * v2.4.0 — dialog edycji wartości bieżącej serii w trybie trenera.
+ * Pola zależne od metricType:
+ *  - WEIGHT_REPS / DURATION_WEIGHT → ciężar (kg) + powtórzenia
+ *  - REPS_ONLY → powtórzenia
+ *  - DURATION → czas (minuty)
+ *  - DISTANCE_DURATION → czas (minuty) + prędkość (km/h, dystans liczony sam)
+ */
+@Composable
+private fun EditSetValueDialog(
+    metricType: pl.filebit.gymtracker.data.entity.MetricType,
+    currentWeightKg: Double,
+    currentReps: Int,
+    currentDurationSec: Int?,
+    currentDistanceM: Double?,
+    onDismiss: () -> Unit,
+    onSave: (weightKg: Double?, reps: Int?, durationSec: Int?, distanceM: Double?) -> Unit
+) {
+        val isCardioDist = metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION
+    val isDuration = metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION || isCardioDist
+    val isRepsOnly = metricType == pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY
+    val showWeight = metricType == pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS || metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT
+    val showReps = showWeight || isRepsOnly
+
+    var weightText by remember {
+        mutableStateOf(if (currentWeightKg > 0) formatWeight(currentWeightKg) else "")
+    }
+    var repsText by remember { mutableStateOf(currentReps.takeIf { it > 0 }?.toString() ?: "") }
+    var minutesText by remember {
+        mutableStateOf(currentDurationSec?.let { (it / 60).toString() } ?: "")
+    }
+    var speedText by remember {
+        mutableStateOf(
+            pl.filebit.gymtracker.util.cardioSpeedKmh(currentDurationSec, currentDistanceM)
+                ?.let { pl.filebit.gymtracker.util.formatCardioNumber(it) } ?: ""
+        )
+    }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                when {
+                    isDuration -> "Edytuj czas"
+                    isRepsOnly -> "Edytuj powtórzenia"
+                    else -> "Edytuj ciężar i powtórzenia"
+                },
+                fontWeight = FontWeight.Bold
+            )
+        },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                if (showWeight) {
+                    OutlinedTextField(
+                        value = weightText,
+                        onValueChange = { weightText = it.replace(',', '.') },
+                        label = { Text("Ciężar (kg)") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                if (showReps) {
+                    OutlinedTextField(
+                        value = repsText,
+                        onValueChange = { repsText = it.filter { c -> c.isDigit() } },
+                        label = { Text("Powtórzenia") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                if (isDuration) {
+                    OutlinedTextField(
+                        value = minutesText,
+                        onValueChange = { minutesText = it.filter { c -> c.isDigit() } },
+                        label = { Text("Czas (minuty)") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                if (isCardioDist) {
+                    OutlinedTextField(
+                        value = speedText,
+                        onValueChange = { speedText = it.replace(',', '.') },
+                        label = { Text("Prędkość (km/h)") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = {
+                val w = if (showWeight) weightText.toDoubleOrNull() else null
+                val r = if (showReps) repsText.toIntOrNull() else null
+                val durSec = if (isDuration) minutesText.toIntOrNull()?.let { it * 60 } else null
+                // dystans = prędkość(km/h) × czas(h) → metry
+                val distM = if (isCardioDist) {
+                    val spd = speedText.toDoubleOrNull()
+                    if (spd != null && durSec != null) spd * 1000.0 * (durSec / 3600.0) else null
+                } else null
+                onSave(w, r, durSec, distM)
+            }) {
+                Text("Zapisz", fontWeight = FontWeight.Bold)
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) { Text("Anuluj") }
+        }
+    )
 }
