@@ -252,8 +252,14 @@ interface ExerciseDao {
     @Query("SELECT * FROM exercises WHERE LOWER(namePl) = LOWER(:namePl) LIMIT 1")
     suspend fun findByNamePl(namePl: String): Exercise?
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateBySlug(exercise: Exercise): Long
+    /**
+     * v2.3.1 — UPDATE WHERE id (przez @Update Room).
+     * KRYTYCZNE: NIE używać @Insert(REPLACE) bo SQLite REPLACE robi DELETE+INSERT,
+     * a workout_sets.exerciseId ma FK z ON DELETE RESTRICT → constraint failure
+     * gdy user ma historię treningów wskazującą na te exercises (crash bootstrap).
+     */
+    @androidx.room.Update
+    suspend fun updateBySlug(exercise: Exercise)
 
     @Query("SELECT COUNT(*) FROM exercises WHERE slug IS NOT NULL")
     suspend fun countCanonical(): Int
