@@ -84,11 +84,6 @@ class CoachWorkoutViewModel @Inject constructor(
     private val _pendingFeedbackId = MutableStateFlow<Long?>(null)
     val pendingFeedbackId: StateFlow<Long?> = _pendingFeedbackId.asStateFlow()
 
-    // v2.7.0: analiza po treningu (PR/tipsy/stagnacja) leci w tle PO pokazaniu
-    // feedbacku. Flaga blokuje wcześniejsze wyjście z ekranu (tryFinishCallback),
-    // żeby dialogi PR/celebracji nie zniknęły zanim się policzą.
-    private val _analysisInFlight = MutableStateFlow(false)
-
     private var pendingOnDoneCallback: (() -> Unit)? = null
 
     fun consumePendingPRs() { _pendingPRs.value = emptyList(); tryFinishCallback() }
@@ -155,8 +150,7 @@ class CoachWorkoutViewModel @Inject constructor(
         if (_pendingPRs.value.isEmpty() &&
             _pendingTips.value.isEmpty() &&
             _pendingStagnation.value.isEmpty() &&
-            _pendingFeedbackId.value == null &&
-            !_analysisInFlight.value
+            _pendingFeedbackId.value == null
         ) {
             pendingOnDoneCallback?.invoke()
             pendingOnDoneCallback = null
@@ -386,9 +380,9 @@ class CoachWorkoutViewModel @Inject constructor(
             // 2) AI summary w tle
             generateAiSummaryInBackground(id)
             // 3) WSZYSTKO ciężkie w tle: event detection + rollup (skan całej historii),
-            //    most do diety, analiza PR/tipsy/stagnacja. Nic z tego nie blokuje
-            //    pokazania arkusza feedbacku.
-            _analysisInFlight.value = true
+            //    most do diety, analiza PR/tipsy/stagnacja. NIE blokuje ani feedbacku,
+            //    ani wyjścia do Home — celebracja PR pokaże się tylko jeśli analiza
+            //    zdąży przed zamknięciem feedbacku (best-effort, bez czekania).
             launch {
                 runCatching { workoutRepo.runPostFinishProcessing(id) }
                 runCatching { trainingDietBridge.recomputeFromWorkout(id) }
@@ -402,10 +396,8 @@ class CoachWorkoutViewModel @Inject constructor(
                         _pendingStagnation.value = analysis.stagnations
                     }
                 }
-                _analysisInFlight.value = false
-                tryFinishCallback()
             }
-            // Pusty trening (usunięty) → od razu spróbuj domknąć flow
+            // Pusty trening (usunięty) → od razu do Home, bez czekania na tło.
             if (!saved) tryFinishCallback()
         }
     }

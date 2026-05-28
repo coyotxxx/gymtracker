@@ -70,10 +70,6 @@ class ActiveWorkoutViewModel @Inject constructor(
     private val _pendingFeedbackId = MutableStateFlow<Long?>(null)
     val pendingFeedbackId: StateFlow<Long?> = _pendingFeedbackId.asStateFlow()
 
-    // v2.7.0: analiza po treningu leci w tle PO feedbacku; flaga blokuje
-    // przedwczesne wyjście z ekranu.
-    private val _analysisInFlight = MutableStateFlow(false)
-
     private var pendingOnDoneCallback: (() -> Unit)? = null
 
     fun consumePendingPRs() { _pendingPRs.value = emptyList(); tryFinishCallback() }
@@ -100,8 +96,7 @@ class ActiveWorkoutViewModel @Inject constructor(
         if (_pendingPRs.value.isEmpty() &&
             _pendingTips.value.isEmpty() &&
             _pendingStagnation.value.isEmpty() &&
-            _pendingFeedbackId.value == null &&
-            !_analysisInFlight.value
+            _pendingFeedbackId.value == null
         ) {
             pendingOnDoneCallback?.invoke()
             pendingOnDoneCallback = null
@@ -254,8 +249,8 @@ class ActiveWorkoutViewModel @Inject constructor(
                 }
             }
             // 3) WSZYSTKO ciężkie w tle: event detection + rollup, most do diety,
-            //    analiza PR/tipsy/stagnacja. Nie blokuje arkusza feedbacku.
-            _analysisInFlight.value = true
+            //    analiza PR/tipsy/stagnacja. NIE blokuje ani feedbacku, ani wyjścia
+            //    do Home. Celebracja PR — best-effort (tylko jeśli zdąży).
             launch {
                 runCatching { workoutRepo.runPostFinishProcessing(id) }
                 runCatching { trainingDietBridge.recomputeFromWorkout(id) }
@@ -269,8 +264,6 @@ class ActiveWorkoutViewModel @Inject constructor(
                         _pendingStagnation.value = analysis.stagnations
                     }
                 }
-                _analysisInFlight.value = false
-                tryFinishCallback()
             }
             if (!saved) tryFinishCallback()
         }
