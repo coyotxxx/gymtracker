@@ -51,6 +51,7 @@ data class HomeUiState(
     val activePlanName: String = "",
     val todaysPlan: TrainingPlan? = null,
     val todaysPlanExerciseCount: Int = 0,
+    val todaysPlanEstimatedMinutes: Int = 0,  // v2.6.0: realny czas sesji
     val recentWorkouts: List<RecentWorkoutItem> = emptyList(),
     val streakWeeks: Int = 0,
     val streakBest: Int = 0,
@@ -84,7 +85,8 @@ data class NextPlannedDay(
     val planName: String,
     val dayOfWeek: Int,         // 1=Pn..7=Nd
     val daysFromToday: Int,     // 1=jutro, 7=za tydzień
-    val exerciseCount: Int
+    val exerciseCount: Int,
+    val estimatedMinutes: Int = 0  // v2.6.0: realny czas sesji (cardio+rest), nie count×10
 )
 
 data class RecentWorkoutItem(
@@ -180,6 +182,7 @@ class HomeViewModel @Inject constructor(
         var todaysPlan: pl.filebit.gymtracker.data.entity.TrainingPlan? = null
         var todaysCount = 0
         var todaysSourceDay = isoDay
+        var todaysEstMin = 0
         pickSlot(schedule[isoDay])?.let { slot ->
             val plan = plans.firstOrNull { it.id == slot.planId }
             if (plan != null) {
@@ -188,6 +191,7 @@ class HomeViewModel @Inject constructor(
                     todaysPlan = plan
                     todaysCount = exes.size
                     todaysSourceDay = slot.sourceDayOfWeek
+                    todaysEstMin = planRepo.estimateSessionMinutes(plan.id, slot.sourceDayOfWeek)
                 }
             }
         }
@@ -296,7 +300,8 @@ class HomeViewModel @Inject constructor(
                                 planName = plan.name,
                                 dayOfWeek = targetDay,
                                 daysFromToday = offset,
-                                exerciseCount = exes.size
+                                exerciseCount = exes.size,
+                                estimatedMinutes = planRepo.estimateSessionMinutes(plan.id, slot.sourceDayOfWeek)
                             )
                             break
                         }
@@ -373,6 +378,7 @@ class HomeViewModel @Inject constructor(
             activePlanName = activePlanName,
             todaysPlan = todaysPlan,
             todaysPlanExerciseCount = todaysCount,
+            todaysPlanEstimatedMinutes = todaysEstMin,
             recentWorkouts = items,
             streakWeeks = streak?.current ?: 0,
             streakBest = streak?.best ?: 0,

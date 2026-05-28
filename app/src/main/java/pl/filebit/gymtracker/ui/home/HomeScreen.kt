@@ -261,6 +261,7 @@ fun HomeScreen(
                         planName = state.todaysPlan!!.name,
                         exerciseCount = state.todaysPlanExerciseCount,
                         daysPerWeek = state.todaysPlan!!.daysOfWeek.size,
+                        estimatedMinutes = state.todaysPlanEstimatedMinutes,
                         onStart = {
                             val isoDay = Clock.System
                                 .todayIn(TimeZone.currentSystemDefault())
@@ -717,6 +718,7 @@ private fun TodaysPlanHeroCard(
     planName: String,
     exerciseCount: Int,
     daysPerWeek: Int,
+    estimatedMinutes: Int = 0,  // v2.6.0: realny czas sesji
     onStart: () -> Unit,
     onPostpone: () -> Unit
 ) {
@@ -762,7 +764,7 @@ private fun TodaysPlanHeroCard(
             )
             Spacer(Modifier.height(4.dp))
             Text(
-                "${exerciseCount} ćwiczeń · ~${exerciseCount * 10} min",
+                "${exerciseCount} ćwiczeń · ~${if (estimatedMinutes > 0) estimatedMinutes else exerciseCount * 10} min",
                 style = MaterialTheme.typography.bodyMedium,
                 color = DarkOnSurfaceVariant
             )
@@ -1890,7 +1892,7 @@ private fun DayOffHeroCard(
             )
             Spacer(Modifier.height(4.dp))
             Text(
-                "${next.planName} · ${next.exerciseCount} ćwiczeń · ~${next.exerciseCount * 10} min",
+                "${next.planName} · ${next.exerciseCount} ćwiczeń · ~${if (next.estimatedMinutes > 0) next.estimatedMinutes else next.exerciseCount * 10} min",
                 style = MaterialTheme.typography.bodyMedium,
                 color = DarkOnSurfaceVariant
             )

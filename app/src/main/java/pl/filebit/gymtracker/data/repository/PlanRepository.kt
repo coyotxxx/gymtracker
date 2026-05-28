@@ -156,6 +156,34 @@ class PlanRepository @Inject constructor(
     suspend fun getSetsForPlanExercise(planExerciseId: Long): List<PlanExerciseSet> =
         planExerciseSetDao.getForPlanExercise(planExerciseId)
 
+    /**
+     * v2.6.0 — realny szacowany czas sesji w minutach (zamiast prymitywnego
+     * exerciseCount×10, które dla planu cardio 1×60min dawało "10 min").
+     * Cardio/izometria (durationSec): faktyczny czas. Siłowe: ~4s/powtórzenie + rest.
+     * @param dayOfWeek gdy podany — liczy tylko ten dzień (konkretna sesja);
+     *   gdy null — typowa sesja = cały plan / liczba dni z ćwiczeniami.
+     */
+    suspend fun estimateSessionMinutes(planId: Long, dayOfWeek: Int? = null): Int {
+        val exes = if (dayOfWeek != null) getPlanExercisesForDay(planId, dayOfWeek)
+        else getPlanExercises(planId)
+        if (exes.isEmpty()) return 0
+        var totalSec = 0
+        for (pe in exes) {
+            for (s in getSetsForPlanExercise(pe.id)) {
+                totalSec += if ((s.durationSec ?: 0) > 0) s.durationSec!!
+                else s.reps * 4 + (s.restSeconds ?: 60)
+            }
+        }
+        val minutes = totalSec / 60
+        return if (dayOfWeek != null) {
+            minutes.coerceAtLeast(1)
+        } else {
+            // typowa sesja = całość / liczba dni z ćwiczeniami
+            val days = exes.map { it.dayOfWeek }.distinct().size.coerceAtLeast(1)
+            (minutes / days).coerceAtLeast(1)
+        }
+    }
+
     suspend fun upsertPlanSet(set: PlanExerciseSet): Long = planExerciseSetDao.upsert(set)
 
     suspend fun updatePlanSet(set: PlanExerciseSet) = planExerciseSetDao.update(set)

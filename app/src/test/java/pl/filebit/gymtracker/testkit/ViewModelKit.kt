@@ -166,7 +166,7 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     val aiPlanApplier = AiPlanApplier(planRepo, db.exerciseDao())
     val workoutPlanAi = WorkoutPlanAiService(
         aiClient, aiPrefs, exerciseRepo, userProfileRepo, dietProfileRepo,
-        planRepo, masterAiContext
+        planRepo, masterAiContext, db
     )
     val planAuditService = PlanAuditService(
         aiClient, aiPrefs, db.trainingPlanDao(), db.planExerciseDao(),

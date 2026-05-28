@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.ai
 
 import android.util.Log
+import androidx.room.withTransaction
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -43,7 +44,10 @@ class WorkoutPlanAiService @Inject constructor(
     private val profileRepo: UserProfileRepository,
     private val dietProfileRepo: UserDietProfileRepository,
     private val planRepo: PlanRepository,
-    private val contextBuilder: MasterAiContextBuilder
+    private val contextBuilder: MasterAiContextBuilder,
+    // v2.6.0: atomowy zapis planu (withTransaction) — plan+ćwiczenia+sety razem,
+    // żeby UI nie widziało przejściowego "0 ćwiczeń / bez harmonogramu".
+    private val db: pl.filebit.gymtracker.data.db.AppDatabase
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -422,12 +426,18 @@ class WorkoutPlanAiService @Inject constructor(
                 "${if (favoritesOnly) "Z ulubionych" else "Z bazy"}. ${if (profile.weightGoalType != WeightGoalType.NONE) "Faza: ${weightGoalLabel(profile.weightGoalType)}." else ""}",
             createdByAi = true
         )
-        val planId = planRepo.upsertPlan(tplan)
-
         var orderIdx = 0
         val exercisesByDay = mutableMapOf<Int, List<String>>()
         var totalAdded = 0
         var skipped = 0
+
+        // v2.6.0: cały zapis (plan + ćwiczenia + sety) w JEDNEJ transakcji.
+        // Bez tego upsertPlan commitował od razu → lista planów (obserwuje
+        // training_plans) pokazywała plan z 0 ćwiczeń; plan_exercises dodawane
+        // później NIE triggerowały re-emisji → "0 ćwiczeń / bez harmonogramu" aż
+        // do odświeżenia. Teraz Room emituje raz, po commicie kompletnego planu.
+        val planId = db.withTransaction {
+        val pid = planRepo.upsertPlan(tplan)
 
         for (day in parsed.days.take(daysPerWeek)) {
             val names = mutableListOf<String>()
@@ -455,7 +465,7 @@ class WorkoutPlanAiService @Inject constructor(
                     continue
                 }
                 val pe = PlanExercise(
-                    planId = planId,
+                    planId = pid,
                     exerciseId = match.id,
                     dayOfWeek = day.dayOfWeek.coerceIn(1, 7),
                     orderIndex = orderIdx++
@@ -490,6 +500,8 @@ class WorkoutPlanAiService @Inject constructor(
                 totalAdded++
             }
             exercisesByDay[day.dayOfWeek] = names
+        }
+        pid  // wartość zwracana z transakcji = ID utworzonego planu
         }
 
         Log.d("WorkoutPlanAi", "AI parsed: ${parsed.days.size} dni, $totalAdded ćwiczeń dodanych, $skipped pominiętych")
