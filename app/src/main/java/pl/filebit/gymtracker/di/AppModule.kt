@@ -629,8 +629,13 @@ object AppModule {
      */
     internal val MIGRATION_66_67 = object : Migration(66, 67) {
         override fun migrate(db: SupportSQLiteDatabase) {
+            // v2.3.2 FIX: TYLKO ADD COLUMN. NIE tworzyć indeksu na searchIndex —
+            // entity Exercise NIE deklaruje @Index(searchIndex), więc Room schema
+            // validation odrzuciłby extra index ("Migration didn't properly handle")
+            // → crash przy starcie po update. Index i tak bezużyteczny dla LIKE '%q%'.
+            // DROP IF EXISTS sprząta po nieudanej migracji z v2.3.0/v2.3.1.
+            db.execSQL("DROP INDEX IF EXISTS index_exercises_searchIndex")
             db.execSQL("ALTER TABLE exercises ADD COLUMN searchIndex TEXT")
-            db.execSQL("CREATE INDEX IF NOT EXISTS index_exercises_searchIndex ON exercises(searchIndex)")
         }
     }
 
