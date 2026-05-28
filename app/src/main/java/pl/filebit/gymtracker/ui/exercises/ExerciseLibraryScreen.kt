@@ -267,19 +267,19 @@ private fun DropdownFilterChip(
                 RoundedCornerShape(50)
             )
             .clickable { onClick() }
-            .padding(start = 14.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
+            .padding(start = 16.dp, end = 10.dp, top = 10.dp, bottom = 10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             text,
-            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
             color = if (selected) AccentOrange else DarkOnSurface
         )
         Icon(
             if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
             contentDescription = null,
             tint = if (selected) AccentOrange else DarkOnSurfaceVariant,
-            modifier = Modifier.size(18.dp)
+            modifier = Modifier.size(22.dp)
         )
     }
 }
@@ -303,11 +303,11 @@ private fun FilterPillChip(
                 RoundedCornerShape(50)
             )
             .clickable { onClick() }
-            .padding(horizontal = 14.dp, vertical = 8.dp)
+            .padding(horizontal = 16.dp, vertical = 10.dp)
     ) {
         Text(
             text,
-            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
             color = if (selected) AccentOrange else DarkOnSurface
         )
     }
