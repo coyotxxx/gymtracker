@@ -61,6 +61,48 @@ class DebugViewModel @Inject constructor(
 
     private val json = Json { prettyPrint = true; encodeDefaults = true }
 
+    /**
+     * v2.7.0 — czytelny odczyt stanu bazy apki: ile treningów/setów realnie jest
+     * i od kiedy. Pozwala zweryfikować "zaczynamy od nowa" zamiast zgadywać.
+     */
+    fun showDbState() = viewModelScope.launch {
+        runCatching { withContext(Dispatchers.IO) { dbStateReadable() } }
+            .onSuccess { _status.value = it }
+            .onFailure { _status.value = "✗ Błąd odczytu: ${it.message}" }
+    }
+
+    private fun dbStateReadable(): String {
+        val helper = db.openHelper.readableDatabase
+        fun count(table: String): Long = runCatching {
+            helper.query("SELECT COUNT(*) FROM `$table`").use { c -> if (c.moveToFirst()) c.getLong(0) else -1L }
+        }.getOrElse { -1L }
+        fun firstLong(sql: String): Long? = runCatching {
+            helper.query(sql).use { c -> if (c.moveToFirst() && !c.isNull(0)) c.getLong(0) else null }
+        }.getOrNull()
+
+        val workouts = count("workouts")
+        val finished = firstLong("SELECT COUNT(*) FROM workouts WHERE finishedAt IS NOT NULL") ?: 0L
+        val sets = count("workout_sets")
+        val oldest = firstLong("SELECT MIN(startedAt) FROM workouts")
+        val newest = firstLong("SELECT MAX(startedAt) FROM workouts")
+        val exercises = count("exercises")
+
+        val fmt = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+        val oldestStr = oldest?.let { fmt.format(java.util.Date(it)) } ?: "—"
+        val newestStr = newest?.let { fmt.format(java.util.Date(it)) } ?: "—"
+        val spanDays = if (oldest != null && newest != null) ((newest - oldest) / 86_400_000L) else 0L
+
+        return buildString {
+            appendLine("STAN BAZY APLIKACJI")
+            appendLine("Treningi: $workouts (zakończone: $finished)")
+            appendLine("Serie (workout_sets): $sets")
+            appendLine("Ćwiczenia w bazie: $exercises")
+            appendLine("Najstarszy trening: $oldestStr")
+            appendLine("Najnowszy trening: $newestStr")
+            append("Rozpiętość historii: $spanDays dni")
+        }
+    }
+
     fun exportJsonToDownloads() = viewModelScope.launch {
         runCatching { withContext(Dispatchers.IO) { writeJsonToDownloads() } }
             .onSuccess { _status.value = "✓ Zapisano: $it" }

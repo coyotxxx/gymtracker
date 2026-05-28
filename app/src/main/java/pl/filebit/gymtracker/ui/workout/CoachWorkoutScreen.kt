@@ -94,6 +94,7 @@ fun CoachWorkoutScreen(
     val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
     val pendingTips by vm.pendingTips.collectAsStateWithLifecycle()
     val pendingStagnation by vm.pendingStagnation.collectAsStateWithLifecycle()
+    val pendingFeedbackId by vm.pendingFeedbackId.collectAsStateWithLifecycle()
     val aiOpinion by vm.aiOpinion.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
@@ -247,7 +248,11 @@ fun CoachWorkoutScreen(
         }
     }
 
-    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty() || pendingStagnation.isNotEmpty()) {
+    // v2.7.0: PR/tipsy/stagnacja pokazują się DOPIERO po zamknięciu feedbacku
+    // (feedback pojawia się natychmiast po finish, analiza leci w tle).
+    if (pendingFeedbackId == null &&
+        (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty() || pendingStagnation.isNotEmpty())
+    ) {
         val title = when {
             pendingPRs.isNotEmpty() -> stringResource(R.string.pr_dialog_title)
             pendingTips.isNotEmpty() -> stringResource(R.string.tip_dialog_title)
@@ -398,11 +403,8 @@ fun CoachWorkoutScreen(
         )
     }
 
-    // Post-workout feedback sheet — pojawia się po PR/Tips/Stagnation dialogach
-    val pendingFeedbackId by vm.pendingFeedbackId.collectAsStateWithLifecycle()
-    val showFeedback = pendingFeedbackId != null &&
-        pendingPRs.isEmpty() && pendingTips.isEmpty() && pendingStagnation.isEmpty()
-    if (showFeedback) {
+    // v2.7.0: Post-workout feedback NATYCHMIAST po finish — przed PR/Tips/Stagnation.
+    if (pendingFeedbackId != null) {
         PostWorkoutFeedbackSheet(
             onSkip = { vm.consumePendingFeedback(save = false) },
             onSave = { rating, area, notes ->

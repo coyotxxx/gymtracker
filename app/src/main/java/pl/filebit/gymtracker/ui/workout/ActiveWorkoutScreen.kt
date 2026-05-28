@@ -96,6 +96,7 @@ fun ActiveWorkoutScreen(
     val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
     val pendingTips by vm.pendingTips.collectAsStateWithLifecycle()
     val pendingStagnation by vm.pendingStagnation.collectAsStateWithLifecycle()
+    val pendingFeedbackId by vm.pendingFeedbackId.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showFinishDialog by remember { mutableStateOf(false) }
@@ -246,7 +247,10 @@ fun ActiveWorkoutScreen(
         }
     }
 
-    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty() || pendingStagnation.isNotEmpty()) {
+    // v2.7.0: PR/tipsy/stagnacja DOPIERO po zamknięciu feedbacku (analiza w tle).
+    if (pendingFeedbackId == null &&
+        (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty() || pendingStagnation.isNotEmpty())
+    ) {
         FinishSummaryDialog(
             prs = pendingPRs,
             tips = pendingTips,
@@ -259,11 +263,8 @@ fun ActiveWorkoutScreen(
         )
     }
 
-    // Post-workout feedback sheet (po PR/Tips/Stagnation lub od razu jeśli ich nie było)
-    val pendingFeedbackId by vm.pendingFeedbackId.collectAsStateWithLifecycle()
-    val showFeedback = pendingFeedbackId != null &&
-        pendingPRs.isEmpty() && pendingTips.isEmpty() && pendingStagnation.isEmpty()
-    if (showFeedback) {
+    // v2.7.0: feedback NATYCHMIAST po finish — przed PR/Tips/Stagnation.
+    if (pendingFeedbackId != null) {
         PostWorkoutFeedbackSheet(
             onSkip = { vm.consumePendingFeedback(save = false) },
             onSave = { rating, area, notes ->

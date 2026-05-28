@@ -935,6 +935,181 @@ class StatsRepository @Inject constructor(
      * Czy któryś set z bieżącego treningu pobił max wagę × powt dla swojego ćwiczenia
      * w porównaniu do innych zakończonych treningów (excl. obecnego).
      */
+    /**
+     * v2.7.0 — jednoprzebiegowa analiza po treningu: PR-y + tipsy progresji +
+     * stagnacja w JEDNYM przebiegu. Wcześniej finishWorkout wołał osobno
+     * detectNewPRs + progressionTipsForWorkout + detectStagnation, a każda z nich
+     * ładowała `getAllForExercise(exId)` per ćwiczenie → 3× redundantne ładowanie
+     * całej historii. Tu ładujemy historię każdego ćwiczenia RAZ.
+     *
+     * Logika identyczna z trzema metodami źródłowymi (zachowane filtry curSets:
+     * PR/stagnacja = completed+non-warmup, tipsy = non-warmup z incomplete).
+     */
+    suspend fun analyzePostWorkout(
+        currentWorkoutId: Long,
+        stagnationThreshold: Int = 3
+    ): PostWorkoutAnalysis {
+        val curNonWarmup = setDao.getForWorkout(currentWorkoutId)
+            .filter { it.setType != SetType.WARMUP }
+        if (curNonWarmup.isEmpty()) return PostWorkoutAnalysis()
+
+        // Współdzielone: zakończone treningi (do stagnacji) — ładowane RAZ
+        val finishedById = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+            .associateBy { it.id }
+        val stagnationPossible = finishedById.size >= stagnationThreshold
+
+        val exIds = curNonWarmup.map { it.exerciseId }.distinct()
+        val prs = mutableListOf<NewPr>()
+        val tips = mutableListOf<ProgressionTip>()
+        val stagnations = mutableListOf<StagnationAlert>()
+
+        for (exId in exIds) {
+            // JEDEN load historii + JEDEN load ćwiczenia per exId
+            val allForEx = setDao.getAllForExercise(exId)
+            val ex = exerciseDao.getById(exId)
+            val name = ex?.name ?: "?"
+            val curForEx = curNonWarmup.filter { it.exerciseId == exId }
+            val curCompleted = curForEx.filter { it.isCompleted }
+
+            // ── PR (== detectNewPRs) ──────────────────────────────────────
+            if (curCompleted.isNotEmpty()) {
+                val previousMax1RM = allForEx
+                    .filter {
+                        it.workoutId != currentWorkoutId &&
+                            it.isCompleted && it.setType != SetType.WARMUP
+                    }
+                    .maxOfOrNull { epley1RM(it.weightKg, it.reps) } ?: 0.0
+                val curMax = curCompleted.maxOfOrNull { epley1RM(it.weightKg, it.reps) } ?: 0.0
+                if (curMax > previousMax1RM && curMax > 0.0) {
+                    val bestSet = curCompleted.maxByOrNull { epley1RM(it.weightKg, it.reps) }!!
+                    prs.add(
+                        NewPr(
+                            exerciseId = exId,
+                            weightKg = bestSet.weightKg,
+                            reps = bestSet.reps,
+                            previousBest1RM = previousMax1RM,
+                            new1RM = curMax
+                        )
+                    )
+                }
+            }
+
+            // ── TIP (== progressionTipsForWorkout) ────────────────────────
+            run tip@{
+                if (ex?.metricType != pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS) return@tip
+                val list = curForEx
+                val workingSets = list.filter { it.isCompleted }
+                if (workingSets.isEmpty()) return@tip
+
+                val curMaxWeight = workingSets.maxOf { it.weightKg }
+                val setsAtMax = workingSets.filter { it.weightKg == curMaxWeight }
+                val curMinRepsAtMax = setsAtMax.minOf { it.reps }
+                val plannedReps = setsAtMax.maxOf { it.reps }
+                val avgRpe = setsAtMax.mapNotNull { it.rpe?.takeIf { r -> r > 0 } }
+                    .takeIf { it.isNotEmpty() }
+                    ?.average()
+
+                val previousAll = allForEx
+                    .filter { it.workoutId != currentWorkoutId && it.isCompleted && it.setType != SetType.WARMUP }
+                val previousByWorkout = previousAll.groupBy { it.workoutId }
+                val sortedWorkoutIds = previousByWorkout.keys.sortedByDescending { wid ->
+                    previousByWorkout[wid]!!.maxOf { it.createdAt }
+                }
+
+                val curAllDone = list.all { it.isCompleted }
+                if (!curAllDone && sortedWorkoutIds.isNotEmpty()) {
+                    val prevSets = previousByWorkout[sortedWorkoutIds[0]]!!
+                    val prevAllDone = prevSets.all { it.isCompleted }
+                    if (!prevAllDone) {
+                        val suggested = (curMaxWeight - 2.5).coerceAtLeast(0.0)
+                        tips += ProgressionTip(
+                            exerciseId = exId, exerciseName = name,
+                            currentWeightKg = curMaxWeight, suggestedWeightKg = suggested,
+                            reason = "2 sesje pod rząd niedokończone — deload",
+                            kind = ProgressionKind.DELOAD,
+                            currentReps = plannedReps, suggestedReps = plannedReps
+                        )
+                        return@tip
+                    }
+                }
+                if (!curAllDone) return@tip
+
+                if (avgRpe != null) {
+                    when {
+                        avgRpe <= 7.0 -> tips += ProgressionTip(
+                            exerciseId = exId, exerciseName = name,
+                            currentWeightKg = curMaxWeight, suggestedWeightKg = curMaxWeight + 2.5,
+                            reason = "RPE ${"%.1f".format(avgRpe)} (lekko) — czas na +2.5 kg",
+                            kind = ProgressionKind.INCREASE_WEIGHT,
+                            currentReps = plannedReps, suggestedReps = plannedReps
+                        )
+                        avgRpe <= 8.5 -> tips += ProgressionTip(
+                            exerciseId = exId, exerciseName = name,
+                            currentWeightKg = curMaxWeight, suggestedWeightKg = curMaxWeight,
+                            reason = "RPE ${"%.1f".format(avgRpe)} (dobrze) — dorzuć 1 powt.",
+                            kind = ProgressionKind.INCREASE_REPS,
+                            currentReps = plannedReps, suggestedReps = plannedReps + 1
+                        )
+                        else -> tips += ProgressionTip(
+                            exerciseId = exId, exerciseName = name,
+                            currentWeightKg = curMaxWeight, suggestedWeightKg = curMaxWeight,
+                            reason = "RPE ${"%.1f".format(avgRpe)} (max) — utrzymaj plan",
+                            kind = ProgressionKind.NO_CHANGE,
+                            currentReps = plannedReps, suggestedReps = plannedReps
+                        )
+                    }
+                    return@tip
+                }
+
+                if (sortedWorkoutIds.isEmpty()) return@tip
+                val prevSets = previousByWorkout[sortedWorkoutIds[0]]!!
+                val prevMaxWeight = prevSets.maxOf { it.weightKg }
+                val prevMinRepsAtMax = prevSets.filter { it.weightKg == prevMaxWeight }.minOf { it.reps }
+                if (curMaxWeight >= prevMaxWeight && curMinRepsAtMax >= prevMinRepsAtMax && curMinRepsAtMax >= 8) {
+                    tips += ProgressionTip(
+                        exerciseId = exId, exerciseName = name,
+                        currentWeightKg = curMaxWeight, suggestedWeightKg = curMaxWeight + 2.5,
+                        reason = "wszystkie serie ✓ — +2.5 kg",
+                        kind = ProgressionKind.INCREASE_WEIGHT,
+                        currentReps = plannedReps, suggestedReps = plannedReps
+                    )
+                }
+            }
+
+            // ── STAGNATION (== detectStagnation) ──────────────────────────
+            if (stagnationPossible && curCompleted.isNotEmpty()) {
+                val allSets = allForEx
+                    .filter { it.isCompleted && it.setType != SetType.WARMUP && it.workoutId in finishedById.keys }
+                if (allSets.isNotEmpty()) {
+                    val perWorkoutMaxWeight = allSets.groupBy { it.workoutId }
+                        .map { (wid, l) -> finishedById[wid]!!.startedAt to l.maxOf { it.weightKg } }
+                        .sortedByDescending { it.first }
+                        .map { it.second }
+                        .take(stagnationThreshold + 3)
+                    if (perWorkoutMaxWeight.size >= stagnationThreshold) {
+                        val lastN = perWorkoutMaxWeight.take(stagnationThreshold)
+                        val firstWeight = lastN.first()
+                        val allEqual = lastN.all { it == firstWeight }
+                        val priorWeights = perWorkoutMaxWeight.drop(stagnationThreshold)
+                        val recentlyAdvanced = priorWeights.any { it in 0.001..(firstWeight - 0.001) }
+                        if (firstWeight > 0 && allEqual && !recentlyAdvanced) {
+                            stagnations.add(
+                                StagnationAlert(
+                                    exerciseId = exId,
+                                    exerciseName = name,
+                                    stuckAtKg = firstWeight,
+                                    workoutsAtSameWeight = stagnationThreshold
+                                )
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        return PostWorkoutAnalysis(prs = prs, tips = tips, stagnations = stagnations)
+    }
+
     suspend fun detectNewPRs(currentWorkoutId: Long): List<NewPr> {
         val curSets = setDao.getForWorkout(currentWorkoutId)
             .filter { it.isCompleted && it.setType != SetType.WARMUP }
@@ -1052,6 +1227,13 @@ data class NewPr(
     val reps: Int,
     val previousBest1RM: Double,
     val new1RM: Double
+)
+
+/** v2.7.0 — wynik jednoprzebiegowej analizy po treningu (analyzePostWorkout). */
+data class PostWorkoutAnalysis(
+    val prs: List<NewPr> = emptyList(),
+    val tips: List<ProgressionTip> = emptyList(),
+    val stagnations: List<StagnationAlert> = emptyList()
 )
 
 /**

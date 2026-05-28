@@ -70,6 +70,10 @@ class ActiveWorkoutViewModel @Inject constructor(
     private val _pendingFeedbackId = MutableStateFlow<Long?>(null)
     val pendingFeedbackId: StateFlow<Long?> = _pendingFeedbackId.asStateFlow()
 
+    // v2.7.0: analiza po treningu leci w tle PO feedbacku; flaga blokuje
+    // przedwczesne wyjście z ekranu.
+    private val _analysisInFlight = MutableStateFlow(false)
+
     private var pendingOnDoneCallback: (() -> Unit)? = null
 
     fun consumePendingPRs() { _pendingPRs.value = emptyList(); tryFinishCallback() }
@@ -96,7 +100,8 @@ class ActiveWorkoutViewModel @Inject constructor(
         if (_pendingPRs.value.isEmpty() &&
             _pendingTips.value.isEmpty() &&
             _pendingStagnation.value.isEmpty() &&
-            _pendingFeedbackId.value == null
+            _pendingFeedbackId.value == null &&
+            !_analysisInFlight.value
         ) {
             pendingOnDoneCallback?.invoke()
             pendingOnDoneCallback = null
@@ -238,30 +243,35 @@ class ActiveWorkoutViewModel @Inject constructor(
         _isFinishing.value = true
         pendingOnDoneCallback = onDone
         viewModelScope.launch {
-            val prs = statsRepo.detectNewPRs(id)
-            val withNames = prs.map { p ->
-                NewPrWithName(p, exerciseRepo.get(p.exerciseId)?.name ?: "?")
-            }
-            val tips = statsRepo.progressionTipsForWorkout(id)
-            val stagnation = statsRepo.detectStagnation(id)
+            // 1) NAJPIERW zapis treningu + most do diety
             workoutRepo.finish(id)
             runCatching { trainingDietBridge.recomputeFromWorkout(id) }
-            // AI summary w tle
+            _isFinishing.value = false
+            // 2) Feedback NATYCHMIAST — nie czekamy na ciężkie analizy historii
+            val stillExists = workoutRepo.getWorkout(id)?.finishedAt != null
+            if (stillExists) _pendingFeedbackId.value = id
+            // 3) AI summary w tle
             launch {
                 aiSummaryService.generate(id).onSuccess { text ->
                     workoutRepo.setAiSummary(id, text)
                 }
             }
-            _isFinishing.value = false
-            // Workout istnieje (miał sety) → pokaż feedback sheet
-            val stillExists = workoutRepo.getWorkout(id)?.finishedAt != null
-            if (stillExists) {
-                _pendingFeedbackId.value = id
+            // 4) Analiza po treningu (PR/tipsy/stagnacja) — jednoprzebiegowo, w tle.
+            //    Pokaże się dopiero PO zamknięciu feedbacku (gating w ekranie).
+            _analysisInFlight.value = true
+            launch {
+                val analysis = runCatching { statsRepo.analyzePostWorkout(id) }.getOrNull()
+                if (analysis != null) {
+                    _pendingPRs.value = analysis.prs.map { p ->
+                        NewPrWithName(p, exerciseRepo.get(p.exerciseId)?.name ?: "?")
+                    }
+                    _pendingTips.value = analysis.tips
+                    _pendingStagnation.value = analysis.stagnations
+                }
+                _analysisInFlight.value = false
+                tryFinishCallback()
             }
-            _pendingPRs.value = withNames
-            _pendingTips.value = tips
-            _pendingStagnation.value = stagnation
-            tryFinishCallback()
+            if (!stillExists) tryFinishCallback()
         }
     }
 

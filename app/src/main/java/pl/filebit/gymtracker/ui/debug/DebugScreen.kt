@@ -70,6 +70,13 @@ fun DebugScreen(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             item { InfoCard() }
+            item {
+                DebugAction(
+                    title = "Stan bazy aplikacji",
+                    subtitle = "Ile treningów/serii realnie jest w bazie + od kiedy. Sprawdź czy 'zaczynamy od nowa'.",
+                    onClick = vm::showDbState
+                )
+            }
             // v1.24.41: Importuj na samej górze — emulator ma broken scrolling przy LazyColumn,
             // a Import to najczęstsza akcja przy debugowaniu scenariuszy E2E.
             item {
