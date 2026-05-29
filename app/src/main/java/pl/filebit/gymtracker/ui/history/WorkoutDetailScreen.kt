@@ -2,9 +2,12 @@ package pl.filebit.gymtracker.ui.history
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,8 +20,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Replay
@@ -32,6 +37,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -46,8 +52,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import pl.filebit.gymtracker.data.entity.WorkoutSet
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
@@ -78,6 +86,7 @@ fun WorkoutDetailScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     var showDelete by remember { mutableStateOf(false) }
     var menuOpen by remember { mutableStateOf(false) }
+    var editingSet by remember { mutableStateOf<WorkoutSet?>(null) }
 
     Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         val workout = state.workout
@@ -306,10 +315,27 @@ fun WorkoutDetailScreen(
                         name = group.exercise.name,
                         metricType = group.exercise.metricType,
                         sets = group.sets,
-                        previousSession = state.previousByExercise[group.exercise.id]
+                        previousSession = state.previousByExercise[group.exercise.id],
+                        onEditSet = { editingSet = it }
                     )
                 }
             }
+        }
+
+        editingSet?.let { s ->
+            val metricType = state.groups
+                .firstOrNull { g -> g.sets.any { it.id == s.id } }
+                ?.exercise?.metricType
+                ?: pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS
+            EditLoggedSetDialog(
+                set = s,
+                metricType = metricType,
+                onDismiss = { editingSet = null },
+                onSave = { updated ->
+                    vm.updateSet(updated)
+                    editingSet = null
+                }
+            )
         }
 
         if (showDelete) {
@@ -338,7 +364,8 @@ private fun ExerciseDetailCard(
     name: String,
     metricType: pl.filebit.gymtracker.data.entity.MetricType,
     sets: List<pl.filebit.gymtracker.data.entity.WorkoutSet>,
-    previousSession: pl.filebit.gymtracker.data.repository.PreviousSession?
+    previousSession: pl.filebit.gymtracker.data.repository.PreviousSession?,
+    onEditSet: (WorkoutSet) -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -394,7 +421,8 @@ private fun ExerciseDetailCard(
                     durationSec = s.durationSec,
                     distanceM = s.distanceM,
                     rpe = s.rpe,
-                    previousSet = previousForRow
+                    previousSet = previousForRow,
+                    onClick = { onEditSet(s) }
                 )
                 if (idx < sets.size - 1) {
                     Spacer(Modifier.height(2.dp))
@@ -415,7 +443,8 @@ private fun SetRow(
     durationSec: Int?,
     distanceM: Double?,
     rpe: Int?,
-    previousSet: pl.filebit.gymtracker.data.entity.WorkoutSet?
+    previousSet: pl.filebit.gymtracker.data.entity.WorkoutSet?,
+    onClick: () -> Unit = {}
 ) {
     val isCardioDist = metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION
     val isDuration = metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
@@ -433,6 +462,7 @@ private fun SetRow(
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .clickable { onClick() }
             .padding(vertical = 6.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -496,6 +526,14 @@ private fun SetRow(
                 color = rpeColor(rpe)
             )
         }
+        // v2.9.0 — sygnał że serię można edytować (poprawa RPE/wagi/powt. po treningu)
+        Spacer(Modifier.width(10.dp))
+        Icon(
+            Icons.Default.Edit,
+            contentDescription = "Edytuj serię",
+            tint = DarkOnSurfaceVariant,
+            modifier = Modifier.size(16.dp)
+        )
     }
 }
 
@@ -514,6 +552,152 @@ private fun rpeColor(rpe: Int): Color = when (rpe) {
     9 -> Color(0xFFFF8C42)
     10 -> ErrorRed
     else -> DarkOnSurfaceVariant
+}
+
+/**
+ * v2.9.0 — edycja wprowadzonej serii z poziomu historii. Najczęstszy przypadek:
+ * źle wpisane RPE; też waga/powt./czas/prędkość. Oparte na EditSetValueDialog
+ * z ekranu treningu, rozszerzone o selektor RPE (włącznie z opcją "brak").
+ */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun EditLoggedSetDialog(
+    set: WorkoutSet,
+    metricType: pl.filebit.gymtracker.data.entity.MetricType,
+    onDismiss: () -> Unit,
+    onSave: (WorkoutSet) -> Unit
+) {
+    val isCardioDist = metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION
+    val isDuration = metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION || isCardioDist
+    val isRepsOnly = metricType == pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY
+    val showWeight = metricType == pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS ||
+        metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT
+    val showReps = showWeight || isRepsOnly
+
+    var weightText by remember { mutableStateOf(if (set.weightKg > 0) formatWeight(set.weightKg) else "") }
+    var repsText by remember { mutableStateOf(set.reps.takeIf { it > 0 }?.toString() ?: "") }
+    var minutesText by remember { mutableStateOf(set.durationSec?.let { (it / 60).toString() } ?: "") }
+    var speedText by remember {
+        mutableStateOf(
+            pl.filebit.gymtracker.util.cardioSpeedKmh(set.durationSec, set.distanceM)
+                ?.let { pl.filebit.gymtracker.util.formatCardioNumber(it) } ?: ""
+        )
+    }
+    var rpe by remember { mutableStateOf(set.rpe) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Edytuj serię ${set.setNumber}", fontWeight = FontWeight.Bold) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                if (showWeight) {
+                    OutlinedTextField(
+                        value = weightText,
+                        onValueChange = { weightText = it.replace(',', '.') },
+                        label = { Text("Ciężar (kg)") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                if (showReps) {
+                    OutlinedTextField(
+                        value = repsText,
+                        onValueChange = { repsText = it.filter { c -> c.isDigit() } },
+                        label = { Text("Powtórzenia") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                if (isDuration) {
+                    OutlinedTextField(
+                        value = minutesText,
+                        onValueChange = { minutesText = it.filter { c -> c.isDigit() } },
+                        label = { Text("Czas (minuty)") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                if (isCardioDist) {
+                    OutlinedTextField(
+                        value = speedText,
+                        onValueChange = { speedText = it.replace(',', '.') },
+                        label = { Text("Prędkość (km/h)") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+
+                Text(
+                    "RPE (jak ciężko?)",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.0.sp
+                    ),
+                    color = DarkOnSurfaceVariant
+                )
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    RpeChip(label = "–", selected = rpe == null, onClick = { rpe = null })
+                    (1..10).forEach { v ->
+                        RpeChip(label = "$v", selected = rpe == v, onClick = { rpe = v })
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = {
+                val w = if (showWeight) weightText.toDoubleOrNull() else null
+                val r = if (showReps) repsText.toIntOrNull() else null
+                val durSec = if (isDuration) minutesText.toIntOrNull()?.let { it * 60 } else null
+                val distM = if (isCardioDist) {
+                    val spd = speedText.toDoubleOrNull()
+                    if (spd != null && durSec != null) spd * 1000.0 * (durSec / 3600.0) else null
+                } else null
+                onSave(
+                    set.copy(
+                        weightKg = w ?: set.weightKg,
+                        reps = r ?: set.reps,
+                        durationSec = if (isDuration) durSec else set.durationSec,
+                        distanceM = if (isCardioDist) distM else set.distanceM,
+                        rpe = rpe
+                    )
+                )
+            }) { Text("Zapisz", fontWeight = FontWeight.Bold) }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) { Text("Anuluj") }
+        }
+    )
+}
+
+@Composable
+private fun RpeChip(label: String, selected: Boolean, onClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .size(width = 40.dp, height = 36.dp)
+            .background(
+                if (selected) AccentOrange.copy(alpha = 0.18f) else DarkSurfaceVariant,
+                RoundedCornerShape(10.dp)
+            )
+            .clickable { onClick() },
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = if (selected) FontWeight.ExtraBold else FontWeight.SemiBold,
+                fontFamily = FontFamily.Monospace
+            ),
+            color = if (selected) AccentOrange else DarkOnSurface
+        )
+    }
 }
 
 @Composable

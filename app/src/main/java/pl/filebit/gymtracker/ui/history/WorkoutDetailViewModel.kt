@@ -100,6 +100,19 @@ class WorkoutDetailViewModel @Inject constructor(
         }
     }
 
+    /**
+     * v2.9.0 — poprawa wprowadzonych danych serii PO treningu (z historii).
+     * Najczęstszy przypadek: źle wpisane RPE; też waga/powt./czas. Zapisuje
+     * zmianę i przeładowuje detal (odświeża porównanie z poprzednią sesją).
+     */
+    fun updateSet(updated: WorkoutSet) {
+        val id = _state.value.workout?.id ?: return
+        viewModelScope.launch {
+            repo.updateSet(updated)
+            load(id)
+        }
+    }
+
     fun deleteWorkout(onDone: () -> Unit) {
         val id = _state.value.workout?.id ?: return
         viewModelScope.launch {
