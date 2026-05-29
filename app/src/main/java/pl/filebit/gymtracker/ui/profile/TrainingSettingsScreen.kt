@@ -1,5 +1,10 @@
 package pl.filebit.gymtracker.ui.profile
 
+import android.content.Intent
+import android.media.AudioAttributes
+import android.media.RingtoneManager
+import android.net.Uri
+import android.os.Build
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -28,6 +33,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -36,6 +43,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -50,11 +58,13 @@ import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.TrainingGoal
 import pl.filebit.gymtracker.data.entity.WeightUnit
+import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 /**
@@ -294,6 +304,14 @@ fun TrainingSettingsScreen(
                 )
             }
 
+            // v2.10.0 — własny dźwięk końca przerwy
+            item {
+                RestSoundSection(
+                    currentUri = draft.restSoundUri,
+                    onPick = { draft = draft.copy(restSoundUri = it) }
+                )
+            }
+
             // v1.19.0 — Periodyzacja (v1.20.1: flat layout zamiast nested cards)
             item {
                 TsSectionCard(
@@ -484,6 +502,132 @@ fun TrainingSettingsScreen(
                 }
             }
 
+        }
+    }
+}
+
+/**
+ * v2.10.0 — wybór dźwięku końca przerwy: domyślne beepy / dźwięk systemowy
+ * (picker dzwonków) / własny plik audio (SAF). Gra na wyjściu MEDIA.
+ */
+@Composable
+private fun RestSoundSection(
+    currentUri: String?,
+    onPick: (String?) -> Unit
+) {
+    val context = LocalContext.current
+
+    val ringtoneLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == android.app.Activity.RESULT_OK) {
+            val data = result.data
+            val uri: Uri? = if (Build.VERSION.SDK_INT >= 33) {
+                data?.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI, Uri::class.java)
+            } else {
+                @Suppress("DEPRECATION")
+                data?.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI)
+            }
+            onPick(uri?.toString())
+        }
+    }
+
+    val fileLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.OpenDocument()
+    ) { uri ->
+        if (uri != null) {
+            runCatching {
+                context.contentResolver.takePersistableUriPermission(
+                    uri, Intent.FLAG_GRANT_READ_URI_PERMISSION
+                )
+            }
+            onPick(uri.toString())
+        }
+    }
+
+    val label = remember(currentUri) { soundLabel(context, currentUri) }
+
+    TsSectionCard(
+        title = "Dźwięk końca przerwy",
+        subtitle = "Gra na wyjściu multimediów — w słuchawkach Bluetooth gdy podłączone, inaczej w głośniku."
+    ) {
+        Text(
+            "Wybrany: $label",
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = DarkOnSurface
+        )
+        Spacer(Modifier.height(12.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            SoundActionChip("Systemowy", Modifier.weight(1f)) {
+                val intent = Intent(RingtoneManager.ACTION_RINGTONE_PICKER).apply {
+                    putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_ALL)
+                    putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "Wybierz dźwięk")
+                    putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true)
+                    putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false)
+                    currentUri?.let {
+                        putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, Uri.parse(it))
+                    }
+                }
+                runCatching { ringtoneLauncher.launch(intent) }
+            }
+            SoundActionChip("Własny plik", Modifier.weight(1f)) {
+                runCatching { fileLauncher.launch(arrayOf("audio/*")) }
+            }
+        }
+        Spacer(Modifier.height(8.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            SoundActionChip("Domyślny (beepy)", Modifier.weight(1f)) { onPick(null) }
+            SoundActionChip(
+                "Posłuchaj",
+                Modifier.weight(1f),
+                enabled = currentUri != null
+            ) { previewSound(context, currentUri) }
+        }
+    }
+}
+
+@Composable
+private fun SoundActionChip(
+    text: String,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    onClick: () -> Unit
+) {
+    Box(
+        modifier = modifier
+            .background(
+                if (enabled) DarkSurfaceVariant else DarkSurfaceVariant.copy(alpha = 0.4f),
+                RoundedCornerShape(12.dp)
+            )
+            .border(1.dp, DarkOutlineSoft, RoundedCornerShape(12.dp))
+            .clickable(enabled = enabled) { onClick() }
+            .padding(vertical = 12.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text,
+            style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold),
+            color = if (enabled) AccentOrange else DarkOnSurfaceVariant
+        )
+    }
+}
+
+private fun soundLabel(context: android.content.Context, uri: String?): String {
+    if (uri.isNullOrBlank()) return "Domyślny (3 beepy)"
+    return runCatching {
+        RingtoneManager.getRingtone(context, Uri.parse(uri))?.getTitle(context)
+    }.getOrNull()?.takeIf { it.isNotBlank() } ?: "Własny dźwięk"
+}
+
+private fun previewSound(context: android.content.Context, uri: String?) {
+    if (uri.isNullOrBlank()) return
+    runCatching {
+        RingtoneManager.getRingtone(context, Uri.parse(uri))?.apply {
+            audioAttributes = AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_MEDIA)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build()
+            play()
         }
     }
 }

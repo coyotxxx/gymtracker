@@ -219,7 +219,7 @@ fun CoachWorkoutScreen(
                     vm.confirmCurrentSetCardio(durSec, distM, actualRpe) {
                         if (!isLastSetOfWorkout) {
                             safeCoachTimer {
-                                RestTimerService.start(context, restSec, flash)
+                                RestTimerService.start(context, restSec, flash, state.restSoundUri)
                             }
                         }
                     }
@@ -238,7 +238,7 @@ fun CoachWorkoutScreen(
                     vm.confirmCurrentSet(actualReps, actualRpe) {
                         if (!isLastSetOfWorkout) {
                             safeCoachTimer {
-                                RestTimerService.start(context, restSec, flash)
+                                RestTimerService.start(context, restSec, flash, state.restSoundUri)
                             }
                         }
                     }

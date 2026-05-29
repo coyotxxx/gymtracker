@@ -45,6 +45,10 @@ data class UserProfile(
     val gender: Gender = Gender.MALE,
     val bodyweightKg: Double? = null,   // jeśli null → fallback na ostatni BodyMeasurement.weightKg
     val flashOnTimerEnd: Boolean = false,
+    // v2.10.0: własny dźwięk końca przerwy. null = domyślne beepy. Inaczej URI
+    // (systemowy dzwonek lub własny plik audio). Odtwarzane na strumieniu MEDIA,
+    // więc idzie tam gdzie muzyka (słuchawki BT gdy podłączone, inaczej głośnik).
+    val restSoundUri: String? = null,
     val aiOverlayEnabled: Boolean = false,  // pływający FAB Asystenta AI dostępny z każdego ekranu
     val onboardingCompleted: Boolean = false,  // true po przejściu wizard'a pierwszego uruchomienia (v0.86)
     val aiProactiveChecksEnabled: Boolean = false,  // codzienna notyfikacja od AI o regeneracji/stagnacji/bólu (v0.87)

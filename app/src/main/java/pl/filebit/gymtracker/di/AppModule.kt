@@ -639,6 +639,13 @@ object AppModule {
         }
     }
 
+    // v2.10.0: własny dźwięk końca przerwy. Kolumna nullable (null = domyślne beepy).
+    internal val MIGRATION_67_68 = object : Migration(67, 68) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `restSoundUri` TEXT")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -661,7 +668,8 @@ object AppModule {
                 MIGRATION_63_64,
                 MIGRATION_64_65,
                 MIGRATION_65_66,
-                MIGRATION_66_67
+                MIGRATION_66_67,
+                MIGRATION_67_68
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

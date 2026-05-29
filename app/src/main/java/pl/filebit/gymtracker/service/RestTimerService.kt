@@ -50,6 +50,7 @@ class RestTimerService : Service() {
     private var mp: MediaPlayer? = null
     private var ringtone: Ringtone? = null
     private var flashEnabled: Boolean = false
+    private var soundUri: String? = null
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -58,6 +59,7 @@ class RestTimerService : Service() {
             ACTION_START -> {
                 val seconds = intent.getIntExtra(EXTRA_SECONDS, 120)
                 flashEnabled = intent.getBooleanExtra(EXTRA_FLASH, false)
+                soundUri = intent.getStringExtra(EXTRA_SOUND_URI)
                 startTimer(seconds)
             }
             ACTION_ADD -> adjustTimer(15)
@@ -177,10 +179,21 @@ class RestTimerService : Service() {
     }
 
     private fun playDoneSound() {
-        // Sekwencja 3 wysokich tonów na strumieniu ALARM — głośna, dynamiczna,
-        // niezależna od systemowego dźwięku powiadomień.
+        // v2.10.0: jeśli user wybrał własny dźwięk (URI) — odtwórz go. Inaczej
+        // domyślna sekwencja beepów. Wszystko na wyjściu MEDIA (USAGE_MEDIA /
+        // STREAM_MUSIC), żeby dźwięk szedł tam gdzie muzyka — słuchawki BT gdy
+        // podłączone, inaczej głośnik (a NIE duplikowany na głośnik jak alarm).
+        val customUri = soundUri
+        if (!customUri.isNullOrBlank()) {
+            playCustomSound(customUri)
+            return
+        }
+        playDefaultBeeps()
+    }
+
+    private fun playDefaultBeeps() {
         try {
-            val tg = ToneGenerator(AudioManager.STREAM_ALARM, ToneGenerator.MAX_VOLUME)
+            val tg = ToneGenerator(AudioManager.STREAM_MUSIC, ToneGenerator.MAX_VOLUME)
             scope.launch {
                 try {
                     tg.startTone(ToneGenerator.TONE_CDMA_HIGH_L, 200)
@@ -199,15 +212,38 @@ class RestTimerService : Service() {
         }
     }
 
+    private fun playCustomSound(uriStr: String) {
+        try {
+            mp?.runCatching { stop() }
+            mp?.release()
+            mp = MediaPlayer().apply {
+                setAudioAttributes(
+                    AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build()
+                )
+                setDataSource(this@RestTimerService, android.net.Uri.parse(uriStr))
+                setOnCompletionListener { it.release(); if (mp === it) mp = null }
+                setOnErrorListener { p, _, _ -> p.release(); if (mp === p) mp = null; playDefaultBeeps(); true }
+                prepare()
+                start()
+            }
+        } catch (e: Throwable) {
+            Log.e("RestTimerService", "Custom sound failed ($uriStr), default beeps", e)
+            playDefaultBeeps()
+        }
+    }
+
     private fun playRingtoneFallback() {
         try {
-            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
                 ?: return
             ringtone?.stop()
             ringtone = RingtoneManager.getRingtone(this, uri)?.also { rt ->
                 rt.audioAttributes = AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_ALARM)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build()
                 rt.play()
@@ -277,15 +313,17 @@ class RestTimerService : Service() {
         const val ACTION_RESUME = "pl.filebit.gymtracker.timer.RESUME"
         const val EXTRA_SECONDS = "extra_seconds"
         const val EXTRA_FLASH = "extra_flash"
+        const val EXTRA_SOUND_URI = "extra_sound_uri"
 
         private val _state = MutableStateFlow(TimerState())
         val state: StateFlow<TimerState> = _state.asStateFlow()
 
-        fun start(context: Context, seconds: Int, flash: Boolean = false) {
+        fun start(context: Context, seconds: Int, flash: Boolean = false, soundUri: String? = null) {
             val i = Intent(context, RestTimerService::class.java)
                 .setAction(ACTION_START)
                 .putExtra(EXTRA_SECONDS, seconds)
                 .putExtra(EXTRA_FLASH, flash)
+                .putExtra(EXTRA_SOUND_URI, soundUri)
             context.startForegroundService(i)
         }
 

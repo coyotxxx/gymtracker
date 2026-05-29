@@ -53,7 +53,8 @@ data class CoachUiState(
     val previousSessionSummaryForCurrent: String? = null,
     val suggestionForCurrent: pl.filebit.gymtracker.data.repository.NextSetSuggestion? = null,
     val defaultRestSeconds: Int = 90,
-    val flashOnTimerEnd: Boolean = false
+    val flashOnTimerEnd: Boolean = false,
+    val restSoundUri: String? = null
 )
 
 @HiltViewModel
@@ -280,6 +281,7 @@ class CoachWorkoutViewModel @Inject constructor(
                 isComplete = isComplete,
                 defaultRestSeconds = rest,
                 flashOnTimerEnd = profile.flashOnTimerEnd,
+                restSoundUri = profile.restSoundUri,
                 totalExercises = groups.size
             )
         }
@@ -322,7 +324,8 @@ class CoachWorkoutViewModel @Inject constructor(
             previousSessionSummaryForCurrent = prevSummary,
             suggestionForCurrent = suggestion,
             defaultRestSeconds = rest,
-            flashOnTimerEnd = profile.flashOnTimerEnd
+            flashOnTimerEnd = profile.flashOnTimerEnd,
+            restSoundUri = profile.restSoundUri
         )
     }
 

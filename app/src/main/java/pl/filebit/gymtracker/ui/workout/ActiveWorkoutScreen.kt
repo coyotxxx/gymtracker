@@ -204,7 +204,7 @@ fun ActiveWorkoutScreen(
                                 defaultRestSec = state.profile.defaultRestSeconds,
                                 onAddSet = { reps, weight ->
                                     vm.addSet(group.exercise.id, reps, weight)
-                                    safeTimer { RestTimerService.start(context, state.profile.defaultRestSeconds, state.profile.flashOnTimerEnd) }
+                                    safeTimer { RestTimerService.start(context, state.profile.defaultRestSeconds, state.profile.flashOnTimerEnd, state.profile.restSoundUri) }
                                 },
                                 onUpdateSet = vm::updateSet,
                                 onDeleteSet = vm::deleteSet,
