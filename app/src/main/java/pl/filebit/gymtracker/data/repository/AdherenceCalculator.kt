@@ -46,14 +46,15 @@ class AdherenceCalculator @Inject constructor(
 
         // Faktyczne spożycie z MealEntries
         // v1.24.14: respektuj MealConsumptionStatus.SKIPPED — posiłek pominięty
-        // świadomie przez usera NIE liczy się jako spożyty. Filozofia: jeśli user
-        // mówi "nie zjadłem", system wierzy i pokazuje to w adherence.
+        // świadomie przez usera NIE liczy się jako spożyty.
+        // v2.11.0: adherence = REALNE spożycie, nie plan. Posiłek liczy się jako zjedzony gdy:
+        //   - slot oznaczony CONSUMED, LUB
+        //   - wpis RĘCZNY (isPlanned=false) i slot NIE jest SKIPPED.
+        // Plan AI (isPlanned=true) bez jawnego CONSUMED = NIEzjedzony (0 kcal). Dzięki temu
+        // wygenerowany plan, którego user nie zjadł, nie zawyża adherence do fałszywego 100%.
         val meals = dietRepo.getMealsForDate(start)
         val consumptions = runCatching { consumptionRepo.getForDate(start) }.getOrDefault(emptyList())
-        val skippedTypes = consumptions
-            .filter { it.status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED }
-            .map { it.mealType }
-            .toSet()
+        val statusByType = consumptions.associate { it.mealType to it.status }
         val products = dietRepo.observeAllProducts().first().associateBy { it.id }
         var actualKcal = 0.0
         var actualProtein = 0.0
@@ -63,7 +64,13 @@ class AdherenceCalculator @Inject constructor(
         // jeden produkt — dzień z 17 produktami w 3 posiłkach dawał wcześniej "17/3 posiłków".
         val loggedMealTypes = mutableSetOf<pl.filebit.gymtracker.data.entity.MealType>()
         for (m in meals) {
-            if (m.mealType in skippedTypes) continue   // pomijaj SKIPPED
+            val eaten = when (statusByType[m.mealType]) {
+                pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> true
+                pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> false
+                // null (brak statusu) lub PLANNED: ręczny wpis liczymy, plan AI dopiero po potwierdzeniu
+                else -> !m.isPlanned
+            }
+            if (!eaten) continue
             val p = products[m.productId] ?: continue
             val factor = m.grams / 100.0
             actualKcal += p.kcalPer100g * factor

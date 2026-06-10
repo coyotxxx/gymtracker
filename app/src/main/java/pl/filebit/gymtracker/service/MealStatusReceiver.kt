@@ -11,6 +11,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
 import pl.filebit.gymtracker.data.entity.MealType
+import pl.filebit.gymtracker.data.repository.AdherenceCalculator
 import pl.filebit.gymtracker.data.repository.MealConsumptionRepository
 import javax.inject.Inject
 
@@ -22,6 +23,7 @@ import javax.inject.Inject
 class MealStatusReceiver : BroadcastReceiver() {
 
     @Inject lateinit var consumptionRepo: MealConsumptionRepository
+    @Inject lateinit var adherenceCalc: AdherenceCalculator
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -44,6 +46,8 @@ class MealStatusReceiver : BroadcastReceiver() {
 
         scope.launch {
             consumptionRepo.setStatus(dateMs, mealType, status)
+            // v2.11.0: akcja z notyfikacji ("Zjedzone/Pominięte") też przelicza adherence.
+            runCatching { adherenceCalc.computeForDate(dateMs) }
         }
 
         // Cancel notyfikację

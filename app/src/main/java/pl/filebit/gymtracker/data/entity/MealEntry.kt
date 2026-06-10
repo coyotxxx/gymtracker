@@ -44,5 +44,11 @@ data class MealEntry(
     val notes: String = "",
     /** Kontekst treningowy posiłku (PRE/POST/NORMAL). Default NORMAL. */
     val workoutContext: WorkoutContext = WorkoutContext.NORMAL,
+    /**
+     * v2.11.0: czy wpis pochodzi z PLANU AI (true) czy z ręcznego dziennika (false).
+     * Plan AI liczy się do adherence dopiero po jawnym potwierdzeniu (MealConsumption=CONSUMED).
+     * Wpis ręczny (dodany produkt, zdjęcie, przepis) liczy się jako zjedzony, chyba że SKIPPED.
+     */
+    val isPlanned: Boolean = false,
     val createdAt: Long = System.currentTimeMillis()
 )

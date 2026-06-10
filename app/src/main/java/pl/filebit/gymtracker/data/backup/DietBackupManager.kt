@@ -71,7 +71,8 @@ data class MealEntryDto(
     val dateMs: Long, val mealType: String,
     val productName: String,  // używamy nazwy, nie ID — przenośność
     val grams: Double, val notes: String = "",
-    val createdAt: Long
+    val createdAt: Long,
+    val isPlanned: Boolean = false   // v2.11.0: plan AI vs ręczny wpis (default false = stare backupy)
 )
 
 @Serializable
@@ -202,7 +203,8 @@ class DietBackupManager @Inject constructor(
                 MealEntryDto(
                     dateMs = e.dateMs, mealType = e.mealType.name,
                     productName = p.name, grams = e.grams,
-                    notes = e.notes, createdAt = e.createdAt
+                    notes = e.notes, createdAt = e.createdAt,
+                    isPlanned = e.isPlanned
                 )
             },
             fastingWindows = fastingDao.getRecent(10000).map { it.toDto() },
@@ -312,7 +314,8 @@ class DietBackupManager @Inject constructor(
                 dateMs = dto.dateMs,
                 mealType = runCatching { MealType.valueOf(dto.mealType) }.getOrDefault(MealType.LUNCH),
                 productId = product.id, grams = dto.grams,
-                notes = dto.notes, createdAt = dto.createdAt
+                notes = dto.notes, createdAt = dto.createdAt,
+                isPlanned = dto.isPlanned
             ))
             mealsImported++
         }

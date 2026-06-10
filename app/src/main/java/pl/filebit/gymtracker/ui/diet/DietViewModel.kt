@@ -148,6 +148,9 @@ class DietViewModel @Inject constructor(
         viewModelScope.launch {
             consumptionRepo.cycleStatus(_selectedDateMs.value, mealType)
             refreshConsumptions()
+            // v2.11.0: zmiana statusu (zjedzone/pominięte) MUSI przeliczyć adherence,
+            // inaczej oznaczenie posiłku nie wpływa na wynik.
+            runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
         }
     }
 
@@ -155,6 +158,8 @@ class DietViewModel @Inject constructor(
         viewModelScope.launch {
             consumptionRepo.setStatus(_selectedDateMs.value, mealType, status)
             refreshConsumptions()
+            // v2.11.0: jak wyżej — recompute po jawnym ustawieniu statusu.
+            runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
         }
     }
 
@@ -725,7 +730,8 @@ class DietViewModel @Inject constructor(
                     mealType = cur.entry.mealType,
                     productId = newProduct.id,
                     grams = newGrams,
-                    notes = cur.entry.notes
+                    notes = cur.entry.notes,
+                    isPlanned = cur.entry.isPlanned   // v2.11.0: zamiana zachowuje pochodzenie (plan/ręczne)
                 )
             )
             runCatching { adherenceCalc.computeForDate(cur.entry.dateMs) }
@@ -832,7 +838,8 @@ class DietViewModel @Inject constructor(
                             mealType = mealType,
                             productId = product.id,
                             grams = ing.grams.toDouble(),
-                            notes = alternative.name
+                            notes = alternative.name,
+                            isPlanned = true   // v2.11.0: alternatywa planu AI — też wymaga potwierdzenia
                         )
                     )
                 }
@@ -1214,7 +1221,8 @@ class DietViewModel @Inject constructor(
                                         mealType = mealType,
                                         productId = product.id,
                                         grams = ing.grams.toDouble(),
-                                        notes = recipe.name
+                                        notes = recipe.name,
+                                        isPlanned = true   // v2.11.0: plan AI — liczy się po potwierdzeniu
                                     )
                                 )
                                 anyAdded = true

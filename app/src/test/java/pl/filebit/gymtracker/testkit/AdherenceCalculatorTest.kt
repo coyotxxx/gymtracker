@@ -9,6 +9,7 @@ import pl.filebit.gymtracker.data.entity.DietGoalType
 import pl.filebit.gymtracker.data.entity.FoodCategory
 import pl.filebit.gymtracker.data.entity.FoodProduct
 import pl.filebit.gymtracker.data.entity.Gender
+import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
 import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.entity.UserDietProfile
@@ -106,5 +107,79 @@ class AdherenceCalculatorTest : TestHarness() {
         assertEquals("brak posiłków → 0 kcal", 0, log.actualKcal)
         assertEquals("brak posiłków → 0% adherence", 0, log.kcalAdherencePct)
         assertEquals("0 zalogowanych posiłków", 0, log.mealsLoggedCount)
+    }
+
+    // === v2.11.0: adherence = realne spożycie (plan AI vs ręczny dziennik) ===
+
+    private suspend fun chicken(): Long = db.foodProductDao().upsert(FoodProduct(
+        name = "Kurczak", category = FoodCategory.PROTEIN,
+        kcalPer100g = 165.0, proteinPer100g = 31.0, carbsPer100g = 0.0, fatPer100g = 3.6))
+
+    @Test
+    fun `plan AI bez potwierdzenia NIE liczy sie do adherence`() = runBlocking {
+        seedProfile()
+        val now = System.currentTimeMillis()
+        val c = chicken()
+        // wpis Z PLANU AI (isPlanned=true), brak statusu konsumpcji → niezjedzony
+        db.mealEntryDao().upsert(MealEntry(
+            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0, isPlanned = true))
+
+        calc().computeForDate(now)
+        val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
+
+        assertEquals("plan AI niepotwierdzony → 0 kcal", 0, log.actualKcal)
+        assertEquals("plan AI niepotwierdzony → 0% adherence", 0, log.kcalAdherencePct)
+        assertEquals("plan AI niepotwierdzony → 0 zalogowanych posiłków", 0, log.mealsLoggedCount)
+    }
+
+    @Test
+    fun `plan AI po potwierdzeniu CONSUMED liczy sie`() = runBlocking {
+        seedProfile()
+        val now = System.currentTimeMillis()
+        val c = chicken()
+        db.mealEntryDao().upsert(MealEntry(
+            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0, isPlanned = true))
+        MealConsumptionRepository(db.mealConsumptionDao())
+            .setStatus(now, MealType.LUNCH, MealConsumptionStatus.CONSUMED)
+
+        calc().computeForDate(now)
+        val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
+
+        assertTrue("kurczak 300g = ~495 kcal (480..510)", log.actualKcal in 480..510)
+        assertEquals("1 potwierdzony posiłek", 1, log.mealsLoggedCount)
+    }
+
+    @Test
+    fun `reczny wpis oznaczony SKIPPED nie liczy sie`() = runBlocking {
+        seedProfile()
+        val now = System.currentTimeMillis()
+        val c = chicken()
+        // wpis RĘCZNY (isPlanned=false default) ale jawnie pominięty
+        db.mealEntryDao().upsert(MealEntry(
+            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0))
+        MealConsumptionRepository(db.mealConsumptionDao())
+            .setStatus(now, MealType.LUNCH, MealConsumptionStatus.SKIPPED)
+
+        calc().computeForDate(now)
+        val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
+
+        assertEquals("SKIPPED → 0 kcal", 0, log.actualKcal)
+        assertEquals("SKIPPED → 0 posiłków", 0, log.mealsLoggedCount)
+    }
+
+    @Test
+    fun `reczny wpis bez statusu liczy sie jako zjedzony`() = runBlocking {
+        seedProfile()
+        val now = System.currentTimeMillis()
+        val c = chicken()
+        // wpis RĘCZNY bez statusu → domyślnie zjedzony (nie psujemy dziennika)
+        db.mealEntryDao().upsert(MealEntry(
+            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0))
+
+        calc().computeForDate(now)
+        val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
+
+        assertTrue("ręczny wpis liczy się (~495 kcal)", log.actualKcal in 480..510)
+        assertEquals("1 zalogowany posiłek", 1, log.mealsLoggedCount)
     }
 }

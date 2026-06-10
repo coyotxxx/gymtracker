@@ -646,6 +646,15 @@ object AppModule {
         }
     }
 
+    // v2.11.0: rozróżnienie wpisu z planu AI (isPlanned=1) vs ręcznego dziennika (0).
+    // Adherence liczy plan dopiero po potwierdzeniu konsumpcji. Istniejące wpisy = 0
+    // (ręczne/historyczne) — nie zmieniamy retroaktywnie adherence Macieja.
+    internal val MIGRATION_68_69 = object : Migration(68, 69) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `meal_entries` ADD COLUMN `isPlanned` INTEGER NOT NULL DEFAULT 0")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -669,7 +678,8 @@ object AppModule {
                 MIGRATION_64_65,
                 MIGRATION_65_66,
                 MIGRATION_66_67,
-                MIGRATION_67_68
+                MIGRATION_67_68,
+                MIGRATION_68_69
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
