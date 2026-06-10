@@ -88,6 +88,15 @@ class HomeAlertNotifier @Inject constructor(
                 hash = "DLD:${r.severity}:${r.reason.hashCode()}"
             )
         }
+        is DeloadCardState.MissedWorkout -> {
+            val r = cardState.recommendation
+            NotificationContent(
+                type = AlertType.MISSED_WORKOUT,
+                title = "GymTracker — opuszczony trening",
+                body = r.reason.take(200),
+                hash = "MIS:${r.severity}:${r.missedCount}:${r.plannedCount}"
+            )
+        }
         is DeloadCardState.Active,
         is DeloadCardState.None -> null  // Active = już zastosowany, None = brak alertu
     }

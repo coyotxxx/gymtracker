@@ -45,7 +45,9 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     // v1.18.0 — auto-cleanup AiLog (>30 dni)
     private val aiLogRepository: pl.filebit.gymtracker.data.repository.AiLogRepository,
     // v2.5.0 — sprawdzanie przeciwwskazań canonical przy regule bólu
-    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao
+    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao,
+    // v2.12.0 — reguła opuszczonego zaplanowanego treningu
+    private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -74,7 +76,10 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
             statsRepo.detectStagnation(lastWorkoutId, threshold = 3).firstOrNull()
         } else null
 
-        // 3. Partia >7 dni bez treningu
+        // 3. Opuszczony zaplanowany trening (v2.12.0)
+        val missed = runCatching { deloadService.missedWorkoutSignal() }.getOrNull()
+
+        // 4. Partia >7 dni bez treningu
         val recovery = statsRepo.recoveryByMuscleFast(statsCacheService.snapshot())
         val staleMuscle = recovery
             .filter { it.daysAgo >= 7 }
@@ -98,6 +103,12 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
                 "📊 Stagnacja w ${stagnation.exerciseName}",
                 "Już ${stagnation.workoutsAtSameWeight} treningów na tej samej wadze. Czas na deload?",
                 "DELOAD"
+            )
+            missed != null -> Triple(
+                if (missed.severity == pl.filebit.gymtracker.util.MissedWorkoutSeverity.FIRM)
+                    "🏋 Wracamy do rytmu" else "🏋 Przegapiony trening",
+                missed.reason.take(180),
+                "TODAY"
             )
             staleMuscle != null -> Triple(
                 "💪 ${staleMuscle.muscle.displayName()} bez treningu ${staleMuscle.daysAgo} dni",

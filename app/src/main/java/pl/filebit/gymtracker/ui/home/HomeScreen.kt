@@ -237,6 +237,15 @@ fun HomeScreen(
                         )
                     }
                 }
+                is pl.filebit.gymtracker.data.repository.DeloadCardState.MissedWorkout -> {
+                    item {
+                        MissedWorkoutCard(
+                            recommendation = card.recommendation,
+                            onStart = { vm.startNextPlannedToday(onStartCoachWorkout) },
+                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.MISSED_WORKOUT) }
+                        )
+                    }
+                }
                 pl.filebit.gymtracker.data.repository.DeloadCardState.None -> Unit
             }
 
@@ -1427,6 +1436,68 @@ private fun ReturnAfterBreakCard(
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
                 color = DarkOnSurface,
                 modifier = Modifier.padding(end = 8.dp)
+            )
+        }
+    }
+}
+
+@Composable
+private fun MissedWorkoutCard(
+    recommendation: pl.filebit.gymtracker.util.MissedWorkoutRecommendation,
+    onStart: () -> Unit,
+    onDismiss: () -> Unit
+) {
+    // Bursztynowy "nudge" — nie kara, przypomnienie powrotu do rytmu.
+    val color = androidx.compose.ui.graphics.Color(0xFFE0A030)
+    val severityLabel = when (recommendation.severity) {
+        pl.filebit.gymtracker.util.MissedWorkoutSeverity.FIRM -> "WRACAMY DO RYTMU"
+        pl.filebit.gymtracker.util.MissedWorkoutSeverity.SOFT -> "PRZEGAPIONY TRENING"
+    }
+    androidx.compose.foundation.layout.Box(
+        modifier = androidx.compose.ui.Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = 0.12f), RoundedCornerShape(16.dp))
+            .border(1.dp, color.copy(alpha = 0.35f), RoundedCornerShape(16.dp))
+            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
+    ) {
+        Column {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text("⏍", color = color, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    severityLabel,
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = color
+                )
+                IconButton(onClick = onDismiss, modifier = Modifier.size(28.dp)) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = "Zamknij",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
+            }
+            Spacer(Modifier.height(4.dp))
+            Text(
+                recommendation.reason,
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface,
+                modifier = Modifier.padding(end = 8.dp)
+            )
+            Spacer(Modifier.height(12.dp))
+            HeroPrimaryButton(
+                text = "Zacznij trening",
+                icon = Icons.Default.PlayArrow,
+                onClick = onStart
             )
         }
     }

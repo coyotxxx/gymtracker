@@ -269,6 +269,64 @@ enum class InjurySeverity {
 }
 
 /**
+ * Detekcja opuszczonych zaplanowanych treningów (v2.12.0).
+ *
+ * Trener personalny reaguje na opuszczone sesje — apka wcześniej miała dane
+ * (TrainingDaySummary.SKIPPED) ale nikt ich nie czytał do alertu. Liczymy w
+ * oknie ostatnich 7 PEŁNYCH dni (bez dziś): ile dni AKTYWNY plan przewidywał
+ * trening i ile z nich zostało bez treningu.
+ *
+ * Pure function — DeloadService dostarcza policzone dni (z getActivePlan()).
+ *
+ * Ton (decyzja właściciela): 1 opuszczony = miękko (SOFT), 2+ = mocniej (FIRM).
+ *
+ * @param plannedDays liczba dni w oknie, które aktywny plan przewidywał jako treningowe
+ * @param missedDays liczba tych dni bez ukończonego treningu
+ * @param daysSinceLastWorkout ile dni temu był ostatni trening (do tekstu)
+ * @return rekomendacja lub null gdy nic nie opuszczono / brak planu
+ */
+fun detectMissedWorkouts(
+    plannedDays: Int,
+    missedDays: Int,
+    daysSinceLastWorkout: Int? = null
+): MissedWorkoutRecommendation? {
+    if (plannedDays <= 0 || missedDays <= 0) return null
+    val severity = if (missedDays >= 2) MissedWorkoutSeverity.FIRM else MissedWorkoutSeverity.SOFT
+    val sinceTxt = daysSinceLastWorkout?.let { " Ostatni trening: $it dni temu." } ?: ""
+    val reason = when (severity) {
+        MissedWorkoutSeverity.SOFT ->
+            "Przegapiłeś 1 zaplanowany trening w tym tygodniu.$sinceTxt " +
+                "Jeden raz to nic — ale wróćmy do rytmu, zanim zrobi się z tego przerwa. " +
+                "Możesz zacząć następny trening teraz."
+        MissedWorkoutSeverity.FIRM ->
+            "Opuściłeś $missedDays z $plannedDays zaplanowanych treningów w tym tygodniu.$sinceTxt " +
+                "Tracisz rozpęd — wróćmy do planu, zanim przerwa się utrwali. Zacznijmy dziś."
+    }
+    return MissedWorkoutRecommendation(
+        missedCount = missedDays,
+        plannedCount = plannedDays,
+        daysSinceLast = daysSinceLastWorkout,
+        severity = severity,
+        reason = reason
+    )
+}
+
+data class MissedWorkoutRecommendation(
+    val missedCount: Int,
+    val plannedCount: Int,
+    val daysSinceLast: Int?,
+    val severity: MissedWorkoutSeverity,
+    val reason: String
+)
+
+enum class MissedWorkoutSeverity {
+    /** 1 opuszczony trening — łagodny przypominacz. */
+    SOFT,
+    /** 2+ opuszczonych — mocniejszy sygnał powrotu do rytmu. */
+    FIRM
+}
+
+/**
  * Snapshot tygodnia treningowego do auto-detekcji deload week.
  *
  * @param weekStartMs początek tygodnia (timestamp)

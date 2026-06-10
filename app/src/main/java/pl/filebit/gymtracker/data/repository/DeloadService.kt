@@ -7,11 +7,14 @@ import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.util.ActiveInjuryRecommendation
 import pl.filebit.gymtracker.util.DeloadRecommendation
 import pl.filebit.gymtracker.util.DeloadSeverity
+import pl.filebit.gymtracker.util.MissedWorkoutRecommendation
 import pl.filebit.gymtracker.util.ReturnAfterBreakRecommendation
 import pl.filebit.gymtracker.util.WorkoutPainSnapshot
 import pl.filebit.gymtracker.util.detectActiveInjury
 import pl.filebit.gymtracker.util.detectDeloadNeed
+import pl.filebit.gymtracker.util.detectMissedWorkouts
 import pl.filebit.gymtracker.util.detectReturnAfterBreak
+import java.util.Calendar
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -42,6 +45,13 @@ sealed class DeloadCardState {
      * Priorytet wyższy niż deload — ból to inny sygnał niż przetrenowanie.
      */
     data class ActiveInjury(val recommendation: ActiveInjuryRecommendation) : DeloadCardState()
+
+    /**
+     * v2.12.0: opuszczony(e) zaplanowany(e) trening(i) w ostatnim tygodniu.
+     * Priorytet niższy niż ReturnAfterBreak (długa przerwa ma własny komunikat),
+     * wyższy niż Suggestion (nie sugerujemy deloadu komuś kto i tak nie trenuje).
+     */
+    data class MissedWorkout(val recommendation: MissedWorkoutRecommendation) : DeloadCardState()
 
     /** Brak alertu — kafel ukryty. */
     object None : DeloadCardState()
@@ -91,6 +101,11 @@ class DeloadService @Inject constructor(
             val d = prefs.dismissedAtMs(AlertType.RETURN_AFTER_BREAK)
             if (d == 0L || now - d >= graceMs) return DeloadCardState.ReturnAfterBreak(it)
         }
+        // v2.12.0: opuszczony zaplanowany trening — między powrotem-po-przerwie a deloadem.
+        checkMissedWorkouts()?.let {
+            val d = prefs.dismissedAtMs(AlertType.MISSED_WORKOUT)
+            if (d == 0L || now - d >= graceMs) return DeloadCardState.MissedWorkout(it)
+        }
 
         val rec = checkRecommendation()
         if (rec != null) {
@@ -137,6 +152,55 @@ class DeloadService @Inject constructor(
                 )
             }
         return detectActiveInjury(workouts14d)
+    }
+
+    /** Publiczny sygnał dla workera w tle (ProactiveAiCheckWorker). */
+    suspend fun missedWorkoutSignal(): MissedWorkoutRecommendation? = checkMissedWorkouts()
+
+    /**
+     * v2.12.0: liczy opuszczone zaplanowane treningi w ostatnich 7 PEŁNYCH dniach
+     * (bez dziś — dziś jeszcze możesz zatrenować). Źródło planu: AKTYWNY plan
+     * (getActivePlan), nie getPlansForDay — inaczej liczylibyśmy dni z nieaktywnych planów.
+     */
+    private suspend fun checkMissedWorkouts(): MissedWorkoutRecommendation? {
+        val activePlan = runCatching { planRepo.getActivePlan() }.getOrNull() ?: return null
+        if (activePlan.daysOfWeek.isEmpty()) return null
+        // plan bez ćwiczeń nie jest realnym treningiem — nie strasz
+        val planExercises = runCatching { planRepo.getPlanExercises(activePlan.id) }.getOrNull().orEmpty()
+        if (planExercises.isEmpty()) return null
+
+        val now = System.currentTimeMillis()
+        val finished = workoutDao.observeAllOnce().filter { it.finishedAt != null }
+        val trainedDayStarts = finished.map { dayStartOf(it.startedAt) }.toSet()
+
+        var planned = 0
+        var missed = 0
+        val cal = Calendar.getInstance()
+        for (offset in 1..7) {                       // wczoraj..7 dni temu (bez dziś)
+            cal.timeInMillis = now
+            cal.add(Calendar.DAY_OF_YEAR, -offset)
+            if (!activePlan.daysOfWeek.contains(isoDayOfWeek(cal))) continue
+            planned++
+            if (!trainedDayStarts.contains(dayStartOf(cal.timeInMillis))) missed++
+        }
+        val daysSinceLast = finished.maxByOrNull { it.startedAt }?.let {
+            ((now - it.startedAt) / (24L * 3600 * 1000)).toInt()
+        }
+        return detectMissedWorkouts(planned, missed, daysSinceLast)
+    }
+
+    private fun dayStartOf(ms: Long): Long {
+        val cal = Calendar.getInstance().apply {
+            timeInMillis = ms
+            set(Calendar.HOUR_OF_DAY, 0); set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0)
+        }
+        return cal.timeInMillis
+    }
+
+    private fun isoDayOfWeek(cal: Calendar): Int {
+        val cd = cal.get(Calendar.DAY_OF_WEEK)
+        return if (cd == Calendar.SUNDAY) 7 else cd - 1   // ISO: 1=Pn..7=Nd
     }
 
     private data class DetectionContext(

@@ -38,6 +38,9 @@ class DeloadServiceTest : TestHarness() {
             is DeloadCardState.ActiveInjury -> tr
                 .kv("painArea", card.recommendation.painArea)
                 .kv("severity", card.recommendation.severity.name)
+            is DeloadCardState.MissedWorkout -> tr
+                .kv("missedCount", card.recommendation.missedCount.toString())
+                .kv("severity", card.recommendation.severity.name)
             is DeloadCardState.Active -> tr
                 .kv("isFinished", card.isFinished.toString())
             DeloadCardState.None -> tr.line("brak alertu")

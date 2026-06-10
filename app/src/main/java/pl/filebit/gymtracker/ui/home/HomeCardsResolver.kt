@@ -66,6 +66,8 @@ object HomeCardsResolver {
                 visible += HomeCard("RETURN_AFTER_BREAK", "POWRÓT PO PRZERWIE")
             is DeloadCardState.ActiveInjury ->
                 visible += HomeCard("ACTIVE_INJURY", "WYKRYTO BÓL")
+            is DeloadCardState.MissedWorkout ->
+                visible += HomeCard("MISSED_WORKOUT", "OPUSZCZONY TRENING")
             DeloadCardState.None -> {}
         }
 

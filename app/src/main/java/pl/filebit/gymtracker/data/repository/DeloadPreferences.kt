@@ -73,7 +73,8 @@ class DeloadPreferences @Inject constructor(
 enum class AlertType {
     DELOAD_SUGGESTION,
     RETURN_AFTER_BREAK,
-    ACTIVE_INJURY
+    ACTIVE_INJURY,
+    MISSED_WORKOUT   // v2.12.0 — opuszczony zaplanowany trening (append: stabilne ordinale)
 }
 
 @Serializable

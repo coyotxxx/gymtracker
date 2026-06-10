@@ -59,6 +59,10 @@ class HomeFullE2ETest : TestHarness() {
             is DeloadCardState.ActiveInjury -> tr.verdict(
                 "DeloadService", "ActiveInjury", "obszar=${d.recommendation.painArea}"
             )
+            is DeloadCardState.MissedWorkout -> tr.verdict(
+                "DeloadService", "MissedWorkout",
+                "opuszczone=${d.recommendation.missedCount}/${d.recommendation.plannedCount}"
+            )
             DeloadCardState.None -> tr.verdict("DeloadService", "None", "brak alertu")
         }
         // TrainingPhase

@@ -166,4 +166,42 @@ class DeloadDetectorTest {
         )
         assertNull(r)
     }
+
+    // === v2.12.0: detectMissedWorkouts ===
+
+    @Test
+    fun `brak opuszczonych zwraca null`() {
+        assertNull(detectMissedWorkouts(plannedDays = 3, missedDays = 0))
+    }
+
+    @Test
+    fun `brak planu (0 zaplanowanych) zwraca null`() {
+        assertNull(detectMissedWorkouts(plannedDays = 0, missedDays = 0))
+    }
+
+    @Test
+    fun `jeden opuszczony to SOFT`() {
+        val r = detectMissedWorkouts(plannedDays = 3, missedDays = 1, daysSinceLastWorkout = 2)
+        assertNotNull(r)
+        assertEquals(MissedWorkoutSeverity.SOFT, r!!.severity)
+        assertEquals(1, r.missedCount)
+        assertEquals(3, r.plannedCount)
+    }
+
+    @Test
+    fun `dwa lub wiecej opuszczonych to FIRM`() {
+        val r = detectMissedWorkouts(plannedDays = 3, missedDays = 2)
+        assertNotNull(r)
+        assertEquals(MissedWorkoutSeverity.FIRM, r!!.severity)
+    }
+
+    @Test
+    fun `wszystkie opuszczone to FIRM z pelnym licznikiem`() {
+        val r = detectMissedWorkouts(plannedDays = 3, missedDays = 3, daysSinceLastWorkout = 9)
+        assertNotNull(r)
+        assertEquals(MissedWorkoutSeverity.FIRM, r!!.severity)
+        assertEquals(3, r.missedCount)
+        assertEquals(3, r.plannedCount)
+        assertEquals(9, r.daysSinceLast)
+    }
 }
