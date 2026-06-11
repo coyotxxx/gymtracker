@@ -52,6 +52,7 @@ data class UserProfile(
     val aiOverlayEnabled: Boolean = false,  // pływający FAB Asystenta AI dostępny z każdego ekranu
     val onboardingCompleted: Boolean = false,  // true po przejściu wizard'a pierwszego uruchomienia (v0.86)
     val aiProactiveChecksEnabled: Boolean = false,  // codzienna notyfikacja od AI o regeneracji/stagnacji/bólu (v0.87)
+    val aiAutoGenerateWeeklyReports: Boolean = true,  // v2.13.0: auto-raport tygodniowy w poniedziałek (domyślnie ON)
     /**
      * Dostępny sprzęt (CSV nazw Equipment enum).
      * Pusty = brak ograniczeń (pełna siłownia).

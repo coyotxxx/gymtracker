@@ -293,6 +293,18 @@ fun TrainingSettingsScreen(
                 )
             }
 
+            // Auto-raport tygodniowy (v2.13.0)
+            item {
+                TsToggleSection(
+                    title = "Raport tygodniowy",
+                    label = "Generuj automatycznie",
+                    explain = "W poniedziałek rano AI tworzy podsumowanie minionego tygodnia treningowego " +
+                        "z rekomendacjami i wysyła powiadomienie. Wymaga skonfigurowanego klucza AI.",
+                    checked = draft.aiAutoGenerateWeeklyReports,
+                    onChange = { draft = draft.copy(aiAutoGenerateWeeklyReports = it) }
+                )
+            }
+
             // Flash przy końcu timera
             item {
                 TsToggleSection(

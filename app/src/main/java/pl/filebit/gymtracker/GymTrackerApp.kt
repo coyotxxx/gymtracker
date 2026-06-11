@@ -226,6 +226,17 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
                     setShowBadge(true)
                 }
             )
+            // v2.13.0 — auto-raport tygodniowy (poniedziałek rano)
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    pl.filebit.gymtracker.service.WeeklyReportWorker.CHANNEL_ID,
+                    "Raport tygodniowy",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "Cotygodniowe podsumowanie treningu z rekomendacjami (poniedziałek rano)."
+                    setShowBadge(true)
+                }
+            )
         }
     }
 }

@@ -31,7 +31,8 @@ import javax.inject.Singleton
 @Singleton
 class WorkerRescheduler @Inject constructor(
     private val proactiveAiScheduler: ProactiveAiCheckScheduler,
-    private val dietAdjustmentScheduler: DietAutoAdjustmentScheduler
+    private val dietAdjustmentScheduler: DietAutoAdjustmentScheduler,
+    private val weeklyReportScheduler: WeeklyReportScheduler
 ) {
     /**
      * Reschedule wszystkie periodic workery zgodnie z user preferences.
@@ -47,6 +48,12 @@ class WorkerRescheduler @Inject constructor(
             dietAdjustmentScheduler.schedulePeriodic()
         } else {
             dietAdjustmentScheduler.cancel()
+        }
+        // v2.13.0 — auto-raport tygodniowy (domyślnie ON)
+        if (profile.aiAutoGenerateWeeklyReports) {
+            weeklyReportScheduler.schedulePeriodic()
+        } else {
+            weeklyReportScheduler.cancel()
         }
     }
 }

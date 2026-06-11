@@ -25,6 +25,7 @@ data class PeriodizationUiPrefs(
 class ProfileViewModel @Inject constructor(
     private val repo: UserProfileRepository,
     private val proactiveScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler,
+    private val weeklyReportScheduler: pl.filebit.gymtracker.service.WeeklyReportScheduler,
     private val periodizationPrefs: PeriodizationPreferences
 ) : ViewModel() {
 
@@ -65,6 +66,11 @@ class ProfileViewModel @Inject constructor(
             if (before.aiProactiveChecksEnabled != profile.aiProactiveChecksEnabled) {
                 if (profile.aiProactiveChecksEnabled) proactiveScheduler.schedulePeriodic()
                 else proactiveScheduler.cancel()
+            }
+            // v2.13.0 — sync auto-raport tygodniowy
+            if (before.aiAutoGenerateWeeklyReports != profile.aiAutoGenerateWeeklyReports) {
+                if (profile.aiAutoGenerateWeeklyReports) weeklyReportScheduler.schedulePeriodic()
+                else weeklyReportScheduler.cancel()
             }
             onDone()
         }

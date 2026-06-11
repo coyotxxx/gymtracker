@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import pl.filebit.gymtracker.service.DietAutoAdjustmentWorker
 import pl.filebit.gymtracker.service.ProactiveAiCheckWorker
+import pl.filebit.gymtracker.service.WeeklyReportWorker
 
 /**
  * v1.14.1 — luka K4 z audytu (2026-05-10): MainActivity ignorowała intent.extras
@@ -16,6 +17,7 @@ import pl.filebit.gymtracker.service.ProactiveAiCheckWorker
  * Mapowanie:
  *  - EXTRA_OPEN_AI_TRAINER=true + EXTRA_QUICK_ACTION=X → "ai/trainer/0?auto=X"
  *  - EXTRA_OPEN_DIET=true → "diet"
+ *  - EXTRA_OPEN_WEEKLY_REPORT=true → "ai/weekly-report" (v2.13.0)
  *  - null lub nieznane → null (pozostaje na Home — default)
  */
 object IntentNavigationParser {
@@ -31,7 +33,8 @@ object IntentNavigationParser {
     fun parseInitialNavigation(
         openAiTrainer: Boolean,
         quickAction: String?,
-        openDiet: Boolean
+        openDiet: Boolean,
+        openWeeklyReport: Boolean = false
     ): String? {
         // ProactiveAiCheckWorker — otworzyć AI Trener z auto-action
         if (openAiTrainer) {
@@ -48,6 +51,11 @@ object IntentNavigationParser {
             return "diet"
         }
 
+        // WeeklyReportWorker — otworzyć ekran raportu tygodniowego (Screen.AiWeeklyReport)
+        if (openWeeklyReport) {
+            return "ai/weekly-report"
+        }
+
         return null
     }
 
@@ -57,7 +65,8 @@ object IntentNavigationParser {
         return parseInitialNavigation(
             openAiTrainer = extras.getBoolean(ProactiveAiCheckWorker.EXTRA_OPEN_AI_TRAINER, false),
             quickAction = extras.getString(ProactiveAiCheckWorker.EXTRA_QUICK_ACTION),
-            openDiet = extras.getBoolean(DietAutoAdjustmentWorker.EXTRA_OPEN_DIET, false)
+            openDiet = extras.getBoolean(DietAutoAdjustmentWorker.EXTRA_OPEN_DIET, false),
+            openWeeklyReport = extras.getBoolean(WeeklyReportWorker.EXTRA_OPEN_WEEKLY_REPORT, false)
         )
     }
 

@@ -655,6 +655,14 @@ object AppModule {
         }
     }
 
+    // v2.13.0: auto-raport tygodniowy. Flaga domyślnie ON (DEFAULT 1) — istniejący
+    // userzy też dostają raporty bez ręcznego włączania.
+    internal val MIGRATION_69_70 = object : Migration(69, 70) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `aiAutoGenerateWeeklyReports` INTEGER NOT NULL DEFAULT 1")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -679,7 +687,8 @@ object AppModule {
                 MIGRATION_65_66,
                 MIGRATION_66_67,
                 MIGRATION_67_68,
-                MIGRATION_68_69
+                MIGRATION_68_69,
+                MIGRATION_69_70
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

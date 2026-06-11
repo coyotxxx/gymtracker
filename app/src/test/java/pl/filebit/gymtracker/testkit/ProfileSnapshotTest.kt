@@ -40,6 +40,7 @@ class ProfileSnapshotTest : TestHarness() {
         val kit = ViewModelKit(db, context)
         val vm = ProfileViewModel(
             kit.userProfileRepo, ProactiveAiCheckScheduler(context),
+            pl.filebit.gymtracker.service.WeeklyReportScheduler(context),
             PeriodizationPreferences(context))
         val profile = withTimeout(5_000) { vm.profile.first { it.displayName.isNotBlank() } }
 

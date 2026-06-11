@@ -217,19 +217,35 @@ class WeeklyReportService @Inject constructor(
         5 -> "Piątek"; 6 -> "Sobota"; 7 -> "Niedziela"
         else -> "Dzień $day"
     }
-    suspend fun generate(): Result<String> {
+    /** Raport bieżącego tygodnia (przycisk ręczny — bez zmian zachowania). */
+    suspend fun generate(): Result<String> = generateForWeek(currentWeekStartMillis())
+
+    /** Poniedziałek 00:00 bieżącego tygodnia (lokalny czas). */
+    fun currentWeekStartMillis(): Long {
+        val tz = TimeZone.currentSystemDefault()
+        val today = Clock.System.now().toLocalDateTime(tz).date
+        val daysFromMonday = (today.dayOfWeek.isoDayNumber - DayOfWeek.MONDAY.isoDayNumber)
+        val mondayDate = today.minus(daysFromMonday, DateTimeUnit.DAY)
+        return mondayDate.atStartOfDayIn(tz).toEpochMilliseconds()
+    }
+
+    /** Poniedziałek 00:00 ostatniego ZAKOŃCZONEGO tygodnia (bieżący − 7 dni). */
+    fun lastCompletedWeekStartMillis(): Long =
+        currentWeekStartMillis() - 7.days.inWholeMilliseconds
+
+    /**
+     * Generuje raport dla tygodnia rozpoczynającego się w [weekStartMillis] (poniedziałek 00:00).
+     * Worker auto podaje ostatni zakończony tydzień; przycisk ręczny — bieżący.
+     */
+    suspend fun generateForWeek(weekStartMillis: Long): Result<String> {
         val cfg = prefs.load()
         if (!cfg.isConnected) {
             return Result.failure(IllegalStateException("AI nie skonfigurowane — wpisz klucz API w Profilu"))
         }
 
         val tz = TimeZone.currentSystemDefault()
-        val now = Clock.System.now()
-        val today = now.toLocalDateTime(tz).date
-        // Poniedziałek tego tygodnia
-        val daysFromMonday = (today.dayOfWeek.isoDayNumber - DayOfWeek.MONDAY.isoDayNumber)
-        val mondayDate = today.minus(daysFromMonday, DateTimeUnit.DAY)
-        val weekStartMillis = mondayDate.atStartOfDayIn(tz).toEpochMilliseconds()
+        val mondayDate = kotlinx.datetime.Instant.fromEpochMilliseconds(weekStartMillis)
+            .toLocalDateTime(tz).date
         val weekEndMillis = weekStartMillis + 7.days.inWholeMilliseconds
 
         val workouts = workoutDao.observeAllOnce()
