@@ -36,7 +36,10 @@ data class AiQuickAskUiState(
 class AiQuickAskViewModel @Inject constructor(
     private val client: AiClient,
     private val prefs: AiPreferences,
-    private val contextBuilder: AiContextBuilder
+    private val contextBuilder: AiContextBuilder,
+    // v2.21.0 — kontekst diety (faza, adherence, ulubione produkty) + log diagnostyczny
+    private val masterContextBuilder: pl.filebit.gymtracker.ai.MasterAiContextBuilder,
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(AiQuickAskUiState())
@@ -66,11 +69,33 @@ class AiQuickAskViewModel @Inject constructor(
             // targetPlanId NIE ustawiany (default null), recentWorkoutsLimit z default (5).
             val ctx = runCatching { contextBuilder.buildContextJson() }
                 .getOrElse { "{}" }
+            // v2.21.0: kontekst DIETY (faza, adherence, profil diety, ulubione produkty) —
+            // żeby asystent mógł odpowiadać konkretnie i o posiłkach, nie tylko treningu.
+            val dietSection = runCatching {
+                val m = masterContextBuilder.build()
+                val h = pl.filebit.gymtracker.ai.MasterAiContextPromptHelper
+                buildString {
+                    append(h.toDietProfileSection(m))
+                    append(h.toAdherenceSection(m))
+                    append(h.toCurrentStateSection(m))
+                    append(h.toFavoritesFoodSection(m))
+                }
+            }.getOrDefault("")
             val combined = buildString {
+                // v2.21.0: zunifikowana persona — trener I dietetyk. Bez odsyłania do
+                // "dietetyka", bo apka NIM jest (split-brain naprawiony).
+                append("Jesteś moim trenerem ORAZ dietetykiem personalnym w tej aplikacji. ")
+                append("Odpowiadasz konkretnie i o treningu, i o diecie/posiłkach. NIGDY nie odsyłaj ")
+                append("do zewnętrznego dietetyka ani trenera — to TY nim jesteś. Gdy pytam o dietę, ")
+                append("posiłek czy zamiennik — doradź konkretnie (produkty, makro, szybkie opcje), ")
+                append("korzystając z kontekstu diety poniżej.\n\n")
                 append("Aktualnie jestem na ekranie aplikacji: **${_state.value.screenLabel}**.\n\n")
-                append("Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\n")
+                append("=== KONTEKST TRENINGOWY ===\n```json\n$ctx\n```\n\n")
+                if (dietSection.isNotBlank()) {
+                    append("=== KONTEKST DIETY ===\n$dietSection\n")
+                }
                 append("Pytanie: $question\n\n")
-                append("Odpowiedz krótko (max 4-5 zdań), konkretnie i po polsku. Cytuj liczby z kontekstu jeśli pasują.")
+                append("Odpowiedz krótko (max 5-6 zdań), konkretnie i po polsku. Cytuj liczby z kontekstu jeśli pasują.")
             }
             val apiMessages = _state.value.messages.dropLast(1).map {
                 AiMessage(it.role, it.text)
@@ -78,6 +103,17 @@ class AiQuickAskViewModel @Inject constructor(
 
             client.chat(cfg, apiMessages, source = "AiQuickAsk").fold(
                 onSuccess = { response ->
+                    // v2.21.0: heurystyka deflekcji — sygnał jakości, jeśli AI odsyła "do dietetyka/trenera"
+                    val deflected = Regex("(zwróć się|skonsultuj|udaj się|warto.*zwróć).{0,30}(dietetyk|trener)", RegexOption.IGNORE_CASE)
+                        .containsMatchIn(response)
+                    val diagCat = pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI
+                    if (deflected) {
+                        diag.warn(diagCat, "AiQuickAsk", "ai_deflected",
+                            "AI odesłał do zewnętrznego specjalisty (ekran: ${_state.value.screenLabel})")
+                    } else {
+                        diag.info(diagCat, "AiQuickAsk", "answered",
+                            "Odpowiedź na pytanie o ekran: ${_state.value.screenLabel}", success = true)
+                    }
                     _state.value = _state.value.copy(
                         isLoading = false,
                         messages = _state.value.messages + QuickAskMessage(AiRole.ASSISTANT, response)
@@ -85,6 +121,8 @@ class AiQuickAskViewModel @Inject constructor(
                 },
                 onFailure = { err ->
                     Log.e("AiQuickAsk", "ask failed", err)
+                    diag.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiQuickAsk",
+                        "ask_failed", "Błąd zapytania o ekran: ${err.message}")
                     _state.value = _state.value.copy(
                         isLoading = false,
                         error = err.message ?: "Błąd komunikacji z AI"
