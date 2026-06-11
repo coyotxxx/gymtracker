@@ -155,7 +155,12 @@ fun computeDailyGoal(
     }
     // v1.24.18: customDeficit user-override; jeśli null, używamy auto-deficytu
     // wyliczonego z paceKgPerWeek (lub fallback default).
-    val effectiveDeficit = customDeficit ?: defaultDeficit
+    // v2.15.0 (P1-1): twardy CAP tempa redukcji — dietetyk nie pozwala na deficyt
+    // implikujący >1.5 kg/tydz (ochrona mięśni + metabolizmu). 1.5 kg/tydz × 1100 = 1650 kcal.
+    val effectiveDeficitRaw = customDeficit ?: defaultDeficit
+    val maxSafeDeficit = -(SafetyGuard.MAX_LOSS_KG_PER_WEEK * 1100).toInt()  // -1650
+    val deficitCapped = effectiveDeficitRaw < maxSafeDeficit
+    val effectiveDeficit = if (deficitCapped) maxSafeDeficit else effectiveDeficitRaw
     val deficitLabel = when {
         effectiveDeficit == 0 -> "Brak (utrzymanie wagi)"
         effectiveDeficit <= -750 -> "Agresywny deficyt %d kcal (~%s kg/tydz, ryzyko utraty masy mięśniowej)".format(
@@ -211,6 +216,14 @@ fun computeDailyGoal(
     // === SAFETYGUARD: hard-limity ===
     val warnings = mutableListOf<String>()
     var wasCapped = false
+
+    // v2.15.0 (P1-1): tempo redukcji ograniczone do bezpiecznych 1.5 kg/tydz.
+    if (deficitCapped) {
+        wasCapped = true
+        warnings += "Tempo redukcji ograniczone do bezpiecznych 1.5 kg/tydz (deficyt %d → %d kcal). "
+            .format(effectiveDeficitRaw, effectiveDeficit) +
+            "Szybsza utrata to ryzyko mięśni i spowolnienia metabolizmu."
+    }
 
     val kcalResult = SafetyGuard.validateKcal(finalKcal, profile, weight, bmrEstimate)
     val safeKcal = if (kcalResult is SafetyResult.Block) {

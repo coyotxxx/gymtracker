@@ -1,6 +1,8 @@
 package pl.filebit.gymtracker.util
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import pl.filebit.gymtracker.data.entity.ActivityLevel
 import pl.filebit.gymtracker.data.entity.DietGoalType
@@ -41,5 +43,30 @@ class DietGoalsTest {
         assertEquals("TDEE identyczne dla 2 i 6 treningów/tydz",
             goalFor(daysPerWeek = 2).breakdown.tdeeKcal,
             goalFor(daysPerWeek = 6).breakdown.tdeeKcal)
+    }
+
+    // === v2.15.0 (P1-1): twardy cap tempa redukcji do 1.5 kg/tydz ===
+
+    private fun cutGoal(customDeficit: Int) = computeDailyGoal(
+        profile = UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4),
+        dietProfile = UserDietProfile(
+            ageYears = 30, heightCm = 180,
+            activityLevel = ActivityLevel.MODERATE, goalType = DietGoalType.FAT_LOSS),
+        customDeficit = customDeficit,
+        latestMeasuredWeightKg = 80.0
+    )
+
+    @Test
+    fun `agresywny deficyt jest ograniczony do 1_5 kg na tydzien`() {
+        val g = cutGoal(-2000)  // -2000/1100 ≈ -1.8 kg/tydz → cap do -1650 (-1.5)
+        assertTrue("warning o ograniczeniu tempa redukcji",
+            g.safetyWarnings.any { it.contains("ograniczone do bezpiecznych 1.5") })
+    }
+
+    @Test
+    fun `umiarkowany deficyt bez ograniczenia tempa`() {
+        val g = cutGoal(-500)  // -0.45 kg/tydz — bezpieczne
+        assertFalse("brak warningu o tempie przy łagodnym deficycie",
+            g.safetyWarnings.any { it.contains("ograniczone do bezpiecznych 1.5") })
     }
 }

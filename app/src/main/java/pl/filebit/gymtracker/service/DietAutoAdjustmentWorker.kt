@@ -30,12 +30,25 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
     @Assisted appContext: Context,
     @Assisted params: WorkerParameters,
     private val autoAdjust: AutoAdjustmentService,
-    private val dietPrefs: DietPreferences
+    private val dietPrefs: DietPreferences,
+    // v2.15.0 (P1-3) — monit ważenia gdy dietetyk jest ślepy (brak pomiarów)
+    private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
         val config = dietPrefs.load()
         if (!config.autoCheckAdjustments) return Result.success()
+
+        // v2.15.0 (P1-3): bez ważenia silnik jest ślepy (NEEDS_MORE_DATA → cisza).
+        // Jeśli ostatni pomiar ≥7 dni temu (lub nigdy) — przypomnij. Worker leci co 7 dni,
+        // więc max 1 monit/tydz (bez spamu).
+        val latestWeighIn = runCatching { bodyDao.getLatest() }.getOrNull()
+        val daysSinceWeighIn = latestWeighIn?.let {
+            (System.currentTimeMillis() - it.date) / (24L * 3600 * 1000)
+        }
+        if (latestWeighIn == null || (daysSinceWeighIn ?: Long.MAX_VALUE) >= 7) {
+            notifyWeighIn(applicationContext)
+        }
 
         val decision = runCatching { autoAdjust.analyzeNow() }.getOrNull()
             ?: return Result.success()
@@ -90,9 +103,36 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
         nm.notify(NOTIFICATION_ID, notification)
     }
 
+    /** v2.15.0 (P1-3) — przypomnienie o ważeniu (osobne ID, ten sam kanał). */
+    private fun notifyWeighIn(ctx: Context) {
+        val openIntent = Intent(ctx, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            putExtra(EXTRA_OPEN_DIET, true)
+        }
+        val pi = PendingIntent.getActivity(
+            ctx, NOTIFICATION_ID_WEIGH_IN, openIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0
+        )
+        val body = "Nie widzę pomiaru wagi od tygodnia. Bez ważenia nie ocenię, czy redukcja działa — " +
+            "zważ się rano (po toalecie, przed jedzeniem) i loguj co 2-3 dni."
+        val notification = NotificationCompat.Builder(ctx, CHANNEL_ID)
+            .setSmallIcon(android.R.drawable.ic_dialog_info)
+            .setContentTitle("⚖ Czas się zważyć")
+            .setContentText(body)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(body))
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pi)
+            .setAutoCancel(true)
+            .build()
+        val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        nm.notify(NOTIFICATION_ID_WEIGH_IN, notification)
+    }
+
     companion object {
         const val CHANNEL_ID = "diet_adjustments"
         const val NOTIFICATION_ID = 5601
+        const val NOTIFICATION_ID_WEIGH_IN = 5602
         const val UNIQUE_WORK_NAME = "diet_auto_adjustment"
         const val EXTRA_OPEN_DIET = "open_diet"
         const val EXTRA_ADJUSTMENT_ID = "adjustment_id"
