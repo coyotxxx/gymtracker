@@ -145,6 +145,17 @@ class TrainingDietBridge @Inject constructor(
 
     suspend fun getRecent(days: Int = 14): List<TrainingDaySummary> = dao.getRecent(days)
 
+    /**
+     * v2.18.0 (P1-6): czy AKTYWNY plan przewiduje trening w ten dzień (ISO).
+     * Jedno źródło prawdy dla carb cycling — używane i przez wyświetlany cel diety,
+     * i przez AdherenceCalculator (cel pokazany = cel oceniany). Forward (planowane,
+     * nie "czy już wykonane").
+     */
+    suspend fun isPlannedTrainingDay(dateMs: Long): Boolean {
+        val active = runCatching { planRepo.getActivePlan() }.getOrNull() ?: return false
+        return active.daysOfWeek.contains(isoDayOfWeek(dateMs))
+    }
+
     // === HELPERS ===
 
     private fun computeIntensity(rpe: Double?, sets: Int, volumeKg: Double): IntensityScore {

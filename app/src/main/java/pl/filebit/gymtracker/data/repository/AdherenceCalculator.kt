@@ -36,12 +36,15 @@ class AdherenceCalculator @Inject constructor(
         val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
         val config = dietPrefs.load()
         val latestWeight = runCatching { bodyDao.getLatest()?.weightKg }.getOrNull()
+        // v2.18.0 (P1-6): cel carbs/fat zależy od dnia (carb cycling) — spójny z wyświetlanym.
+        val isTrainingDay = runCatching { trainingDietBridge.isPlannedTrainingDay(start) }.getOrDefault(false)
         val goal = computeDailyGoal(
             profile = profile,
             manualKcalOverride = config.manualKcal,
             customDeficit = config.customDeficit,
             dietProfile = dietProfile,
-            latestMeasuredWeightKg = latestWeight
+            latestMeasuredWeightKg = latestWeight,
+            isTrainingDay = isTrainingDay
         )
 
         // Faktyczne spożycie z MealEntries

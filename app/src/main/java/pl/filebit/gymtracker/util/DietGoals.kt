@@ -58,7 +58,13 @@ fun computeDailyGoal(
      * profile.bodyweightKg które bywa stare (wprowadzone raz przy onboardingu).
      * Naprawa bug'a v1.0.17 — TDEE liczony dla aktualnej wagi.
      */
-    latestMeasuredWeightKg: Double? = null
+    latestMeasuredWeightKg: Double? = null,
+    /**
+     * v2.18.0 (P1-6) carb cycling: true = dzień treningowy (więcej węgli, mniej tłuszczu),
+     * false = dzień wolny (odwrotnie), null = bez cyklowania (płaskie makro, kompatybilność).
+     * Kcal i białko zawsze stałe — modulujemy tylko tłuszcz, węgle = reszta.
+     */
+    isTrainingDay: Boolean? = null
 ): DailyMacroGoal {
     val weight = latestMeasuredWeightKg ?: profile.bodyweightKg ?: fallbackWeightKg ?: 75.0
 
@@ -265,6 +271,13 @@ fun computeDailyGoal(
     val isEndurance = dietProfile?.goalType ==
         pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE
     val proteinKcal = safeProteinG * 4
+    // v2.18.0 (P1-6): carb cycling — modulacja tłuszczu wg dnia (węgle = reszta przesuwają się
+    // odwrotnie). Stałe kcal + białko. Respektuje podłogę (0.6 g/kg) i sufit (2.5 g/kg) tłuszczu.
+    val cycledFatG = when (isTrainingDay) {
+        true -> maxOf((weight * 0.6).toInt(), (safeFatG * 0.8).toInt())   // trening: mniej tłuszczu → więcej węgli
+        false -> minOf((weight * 2.5).toInt(), (safeFatG * 1.2).toInt())  // wolne: więcej tłuszczu → mniej węgli
+        null -> safeFatG
+    }
     val (finalFatG, carbsG, carbsCalc) = if (isEndurance) {
         val minCarbsG = (weight * 5.0).toInt()  // 5 g/kg węgli minimum
         val minCarbsKcal = minCarbsG * 4
@@ -284,10 +297,10 @@ fun computeDailyGoal(
                 "ENDURANCE (carbs ≥5g/kg=${minCarbsG}g, tłuszcz=reszta): ${maxFatGFromKcal}g tłuszcz")
         }
     } else {
-        val fatKcal = safeFatG * 9
+        val fatKcal = cycledFatG * 9
         val carbsKcal = (safeKcal - proteinKcal - fatKcal).coerceAtLeast(0)
         val c = carbsKcal / 4
-        Triple(safeFatG, c, "($safeKcal - $proteinKcal - $fatKcal) / 4 = ${c}g")
+        Triple(cycledFatG, c, "($safeKcal - $proteinKcal - $fatKcal) / 4 = ${c}g")
     }
 
     // Medical flags

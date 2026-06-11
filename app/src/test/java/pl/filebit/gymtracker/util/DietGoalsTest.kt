@@ -69,4 +69,33 @@ class DietGoalsTest {
         assertFalse("brak warningu o tempie przy łagodnym deficycie",
             g.safetyWarnings.any { it.contains("ograniczone do bezpiecznych 1.5") })
     }
+
+    // === v2.18.0 (P1-6): carb cycling ===
+
+    private fun maintainGoal(isTrainingDay: Boolean?) = computeDailyGoal(
+        profile = UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4),
+        dietProfile = UserDietProfile(
+            ageYears = 30, heightCm = 180,
+            activityLevel = ActivityLevel.MODERATE, goalType = DietGoalType.MAINTAIN),
+        latestMeasuredWeightKg = 80.0,
+        isTrainingDay = isTrainingDay
+    )
+
+    @Test
+    fun `carb cycling - dzien treningowy ma wiecej wegli i mniej tluszczu`() {
+        val train = maintainGoal(true)
+        val rest = maintainGoal(false)
+        assertTrue("trening: więcej węgli niż w dzień wolny", train.carbsG > rest.carbsG)
+        assertTrue("trening: mniej tłuszczu niż w dzień wolny", train.fatG < rest.fatG)
+        assertEquals("kcal identyczne (cyklujemy tylko rozkład)", train.kcal, rest.kcal)
+        assertEquals("białko identyczne", train.proteinG, rest.proteinG)
+    }
+
+    @Test
+    fun `carb cycling - null nie cykluje (plaskie makro = baza)`() {
+        val flat = maintainGoal(null)
+        val train = maintainGoal(true)
+        // null = baza (tłuszcz niemodulowany), więc tłuszcz wyższy niż w dzień treningowy
+        assertTrue("null = baza, tłuszcz > niż w dzień treningowy", flat.fatG > train.fatG)
+    }
 }

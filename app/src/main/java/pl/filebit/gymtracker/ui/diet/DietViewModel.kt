@@ -1077,13 +1077,16 @@ class DietViewModel @Inject constructor(
                     val effectiveKcal = cfg.kcalForDate(dateMs) ?: cfg.manualKcal
                     val cardioBonus = runCatching { cardioKcalEstimator.avgDailyKcalLast7Days() }.getOrDefault(0)
                     val latestMeasuredWeight = runCatching { bodyMeasurementDao.getLatest()?.weightKg }.getOrNull()
+                    // v2.18.0 (P1-6): carb cycling — cel dnia zależy od tego, czy plan przewiduje trening.
+                    val isTrainingDay = runCatching { trainingDietBridge.isPlannedTrainingDay(dateMs) }.getOrDefault(false)
                     val goal = if (profile != null) computeDailyGoal(
                         profile,
                         manualKcalOverride = effectiveKcal,
                         customDeficit = cfg.customDeficit,
                         dietProfile = dietProfile,
                         avgDailyCardioKcal = cardioBonus,
-                        latestMeasuredWeightKg = latestMeasuredWeight
+                        latestMeasuredWeightKg = latestMeasuredWeight,
+                        isTrainingDay = isTrainingDay
                     ) else DailyMacroGoal(
                         2200, 150, 250, 70,
                         pl.filebit.gymtracker.util.GoalBreakdown(
