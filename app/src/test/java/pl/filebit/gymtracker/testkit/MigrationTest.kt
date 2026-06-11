@@ -89,7 +89,7 @@ class MigrationTest {
                 AppModule.MIGRATION_62_63, AppModule.MIGRATION_63_64,
                 AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66, AppModule.MIGRATION_66_67,
                 AppModule.MIGRATION_67_68, AppModule.MIGRATION_68_69, AppModule.MIGRATION_69_70,
-                AppModule.MIGRATION_70_71
+                AppModule.MIGRATION_70_71, AppModule.MIGRATION_71_72
             )
             .build()
 
@@ -163,7 +163,7 @@ class MigrationTest {
             AppModule.MIGRATION_61_62, AppModule.MIGRATION_62_63,
             AppModule.MIGRATION_63_64, AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66, AppModule.MIGRATION_66_67,
             AppModule.MIGRATION_67_68, AppModule.MIGRATION_68_69, AppModule.MIGRATION_69_70,
-            AppModule.MIGRATION_70_71
+            AppModule.MIGRATION_70_71, AppModule.MIGRATION_71_72
         )
         var version = 49
         for (m in migrations) {
@@ -173,7 +173,7 @@ class MigrationTest {
                 version + 1, m.endVersion)
             version = m.endVersion
         }
-        assertEquals("łańcuch kończy się na wersji bazy danych", 71, version)
-        assertTrue("22 migracji 49→71", migrations.size == 22)
+        assertEquals("łańcuch kończy się na wersji bazy danych", 72, version)
+        assertTrue("23 migracji 49→72", migrations.size == 23)
     }
 }

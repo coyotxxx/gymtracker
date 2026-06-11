@@ -380,7 +380,9 @@ class DebugViewModel @Inject constructor(
             "user_profile", "body_measurements", "goals",
             "training_mesocycles", "pending_periodization_decisions",
             "ai_conversations", "ai_chat_messages", "ai_weekly_reports",
-            "meal_entries", "meal_consumptions", "user_diet_profile"
+            // v2.17.0 (P2-2): usunięto martwą "user_diet_profile" (scalona w user_profile w v1.28).
+            // Dodano istniejące tabele diety dla pełniejszego debugu.
+            "meal_entries", "meal_consumptions", "diet_phases", "adherence_log"
         )
         names.forEach { name ->
             val count = runCatching {

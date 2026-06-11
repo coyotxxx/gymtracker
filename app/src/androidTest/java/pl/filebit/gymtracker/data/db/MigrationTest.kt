@@ -165,4 +165,30 @@ class MigrationTest {
         }
         db.close()
     }
+
+    /**
+     * v2.17.0 (P2-1) — migracja 71→72 sprząta osierocone plan_exercise_sets
+     * (sety wskazujące na nieistniejące plan_exercises — artefakt migracji 65→66).
+     */
+    @Test
+    @Throws(IOException::class)
+    fun migrate71To72_removesOrphanedPlanExerciseSets() {
+        helper.createDatabase(TEST_DB, 71).use { db ->
+            // sierota: planExerciseId wskazuje na nieistniejący plan_exercise
+            db.execSQL(
+                "INSERT INTO plan_exercise_sets (planExerciseId, setNumber, reps, setType) " +
+                    "VALUES (999999, 1, 8, 'NORMAL')"
+            )
+        }
+
+        val db = helper.runMigrationsAndValidate(
+            TEST_DB, 72, false, pl.filebit.gymtracker.di.AppModule.MIGRATION_71_72
+        )
+
+        db.query("SELECT COUNT(*) FROM plan_exercise_sets WHERE planExerciseId = 999999").use { c ->
+            assertEquals(true, c.moveToFirst())
+            assertEquals("sierota usunięta przez migrację", 0, c.getInt(0))
+        }
+        db.close()
+    }
 }

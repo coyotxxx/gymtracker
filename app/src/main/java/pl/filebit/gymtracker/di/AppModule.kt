@@ -671,6 +671,18 @@ object AppModule {
         }
     }
 
+    // v2.17.0 (P2-1): sprzątanie osieroconych plan_exercise_sets. Sieroty to artefakt
+    // historyczny z migracji 65→66 (DELETE plan_exercises przez SQL przy foreign_keys=OFF).
+    // Runtime CASCADE działa, więc nowe nie powstają — to jednorazowy cleanup.
+    internal val MIGRATION_71_72 = object : Migration(71, 72) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "DELETE FROM `plan_exercise_sets` " +
+                    "WHERE `planExerciseId` NOT IN (SELECT `id` FROM `plan_exercises`)"
+            )
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -697,7 +709,8 @@ object AppModule {
                 MIGRATION_67_68,
                 MIGRATION_68_69,
                 MIGRATION_69_70,
-                MIGRATION_70_71
+                MIGRATION_70_71,
+                MIGRATION_71_72
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
