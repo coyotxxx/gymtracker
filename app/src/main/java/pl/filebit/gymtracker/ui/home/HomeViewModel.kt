@@ -67,6 +67,7 @@ data class HomeUiState(
     val plansById: Map<Long, pl.filebit.gymtracker.data.entity.TrainingPlan> = emptyMap(),
     val completedDaysThisWeek: Set<Int> = emptySet(),  // dni Pn-Nd z ukończonym treningiem
     val trainingPhase: TrainingPhaseStatus? = null,    // null = jeszcze nie obliczone
+    val phaseDietConflict: Boolean = false,            // v2.16.0 (P1-4) — INTENSYFIKACJA na deficycie (CUT)
     val healthInsight: HealthInsight? = null,           // null = jeszcze nie obliczone (Health Connect)
     val recoveryScore: RecoveryScore? = null,           // v1.7.4 — WHOOP-like 0-100
     val trainingLoad: TrainingLoad? = null,             // v1.7.4 — ACWR
@@ -252,6 +253,10 @@ class HomeViewModel @Inject constructor(
         }
         val heuristicPhase = runCatching { phaseAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
         val trainingPhase = mesoBasedPhase ?: heuristicPhase
+        // v2.16.0 (P1-4): konflikt trener↔dietetyk — intensyfikacja (peaking siły) na
+        // deficycie kalorycznym. Intensywny trening + CUT = ryzyko utraty mięśni i braku progresu.
+        val phaseDietConflict = trainingPhase?.phase == TrainingPhase.INTENSIFICATION &&
+            profile?.weightGoalType == pl.filebit.gymtracker.data.entity.WeightGoalType.CUT
         // v1.11.68: faza cyklu jest passthrough do innych analyzerów - żeby ich
         // konkluzje były spójne (np. ACWR <0.8 podczas deloadu = OK, nie "dodaj").
         val currentPhase = trainingPhase?.phase ?: TrainingPhase.NO_DATA
@@ -393,6 +398,7 @@ class HomeViewModel @Inject constructor(
             plansById = plans.associateBy { it.id },
             completedDaysThisWeek = completedDays,
             trainingPhase = trainingPhase,
+            phaseDietConflict = phaseDietConflict,
             healthInsight = healthInsight,
             recoveryScore = recoveryScore,
             trainingLoad = trainingLoad,

@@ -360,6 +360,7 @@ fun HomeScreen(
                     item {
                         TrainingPhaseCard(
                             status = phase,
+                            dietConflict = state.phaseDietConflict,  // v2.16.0 (P1-4)
                             canApplyDeload = vm.canApplyDeloadNow(),  // v1.14.0: unified check
                             onApplyDeload = {
                                 vm.applyDeload(pl.filebit.gymtracker.util.DeloadSeverity.HIGH) { result ->
@@ -2015,7 +2016,9 @@ private fun TrainingPhaseCard(
     periodizationState: pl.filebit.gymtracker.data.repository.PeriodizationState =
         pl.filebit.gymtracker.data.repository.PeriodizationState.NoData,
     onEndDeloadEarly: () -> Unit = {},
-    onExtendPhase: () -> Unit = {}
+    onExtendPhase: () -> Unit = {},
+    // v2.16.0 (P1-4): intensyfikacja na deficycie (CUT) — konflikt trener↔dietetyk
+    dietConflict: Boolean = false
 ) {
     val (accent, emoji) = when (status.phase) {
         TrainingPhase.ACCUMULATION -> SuccessGreen to "📈"
@@ -2060,6 +2063,25 @@ private fun TrainingPhaseCard(
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
+            // v2.16.0 (P1-4): ostrzeżenie o konflikcie intensyfikacja + deficyt (CUT).
+            if (dietConflict) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(ErrorRed.copy(alpha = 0.12f), RoundedCornerShape(10.dp))
+                        .border(1.dp, ErrorRed.copy(alpha = 0.35f), RoundedCornerShape(10.dp))
+                        .padding(10.dp)
+                ) {
+                    androidx.compose.material3.Text(
+                        "⚠ Intensyfikacja na deficycie (redukcja). Peaking siły w deficycie to ryzyko " +
+                            "utraty mięśni i braku progresu. Trzymaj białko ≥2,2 g/kg, rozważ refeed/diet break, " +
+                            "nie goń rekordów — wróć do nich po zakończeniu redukcji.",
+                        style = androidx.compose.material3.MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                        color = DarkOnSurface
+                    )
+                }
+                Spacer(Modifier.height(10.dp))
+            }
             Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
                 androidx.compose.material3.Text(
                     emoji,
