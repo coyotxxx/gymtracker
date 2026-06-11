@@ -35,25 +35,36 @@ class WeeklyReportWorker @AssistedInject constructor(
     private val profileRepo: UserProfileRepository,
     private val aiPrefs: AiPreferences,
     private val service: WeeklyReportService,
-    private val reportDao: AiWeeklyReportDao
+    private val reportDao: AiWeeklyReportDao,
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
 ) : CoroutineWorker(appContext, params) {
+
+    private val cat = pl.filebit.gymtracker.data.entity.DiagnosticCategory.REPORT
+    private val src = "WeeklyReportWorker"
 
     override suspend fun doWork(): Result {
         val profile = runCatching { profileRepo.get() }.getOrNull() ?: return Result.success()
         if (!profile.aiAutoGenerateWeeklyReports) return Result.success()
-        if (!aiPrefs.load().isConnected) return Result.success()
+        if (!aiPrefs.load().isConnected) {
+            diag.info(cat, src, "report_skipped", "Pominięto auto-raport: AI nieskonfigurowane", success = false)
+            return Result.success()
+        }
 
         val weekStart = service.lastCompletedWeekStartMillis()
         // Dedup — raport tego tygodnia już jest
         if (runCatching { reportDao.getForWeek(weekStart) }.getOrNull() != null) {
+            diag.info(cat, src, "report_skipped", "Pominięto: raport tego tygodnia już istnieje (dedup)")
             return Result.success()
         }
 
         val result = runCatching { service.generateForWeek(weekStart) }.getOrNull()
         if (result?.isSuccess == true) {
+            diag.info(cat, src, "report_generated", "Auto-raport tygodniowy wygenerowany", success = true)
             notifyReportReady()
+        } else {
+            val reason = result?.exceptionOrNull()?.message ?: "nieznany"
+            diag.warn(cat, src, "report_failed", "Auto-raport nie powstał: $reason")
         }
-        // failure (brak treningów / brak klucza) → cicho, bez notyfikacji
         return Result.success()
     }
 

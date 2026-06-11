@@ -49,8 +49,12 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     // v2.12.0 — reguła opuszczonego zaplanowanego treningu
     private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService,
     // v2.14.0 — kanoniczne alerty trenera (te same co na Home) w tle
-    private val homeAlertNotifier: HomeAlertNotifier
+    private val homeAlertNotifier: HomeAlertNotifier,
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
 ) : CoroutineWorker(appContext, params) {
+
+    private val diagCat = pl.filebit.gymtracker.data.entity.DiagnosticCategory.DETECTOR
+    private val diagSrc = "ProactiveAiCheckWorker"
 
     override suspend fun doWork(): Result {
         val profile = profileRepo.get()
@@ -68,6 +72,7 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
             card !is pl.filebit.gymtracker.data.repository.DeloadCardState.None &&
             card !is pl.filebit.gymtracker.data.repository.DeloadCardState.Active
         ) {
+            diag.info(diagCat, diagSrc, "alert_fired", "Alert trenera w tle: ${card::class.simpleName}", success = true)
             runCatching { homeAlertNotifier.maybeNotify(card) }
             return Result.success()
         }
@@ -140,11 +145,13 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
                         "PERIODIZATION"
                     )
                 } else {
+                    diag.info(diagCat, diagSrc, "no_signal", "Codzienny check: brak sygnału (cisza)")
                     return Result.success()  // brak sygnału — milczymy
                 }
             }
         }
 
+        diag.info(diagCat, diagSrc, "signal_fired", "Codzienny check — sygnał: $prompt", success = true)
         notify(title, body, prompt)
         return Result.success()
     }

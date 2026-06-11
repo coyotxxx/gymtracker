@@ -32,8 +32,12 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
     private val autoAdjust: AutoAdjustmentService,
     private val dietPrefs: DietPreferences,
     // v2.15.0 (P1-3) — monit ważenia gdy dietetyk jest ślepy (brak pomiarów)
-    private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
+    private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
 ) : CoroutineWorker(appContext, params) {
+
+    private val cat = pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET
+    private val src = "DietAutoAdjustmentWorker"
 
     override suspend fun doWork(): Result {
         val config = dietPrefs.load()
@@ -47,6 +51,7 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
             (System.currentTimeMillis() - it.date) / (24L * 3600 * 1000)
         }
         if (latestWeighIn == null || (daysSinceWeighIn ?: Long.MAX_VALUE) >= 7) {
+            diag.info(cat, src, "weigh_in_nudge", "Wysłano monit ważenia (ostatni pomiar: ${daysSinceWeighIn ?: "nigdy"} dni temu)")
             notifyWeighIn(applicationContext)
         }
 
@@ -56,7 +61,11 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
         // Milczymy gdy nie ma sygnału
         if (decision.action == AdjustmentAction.HOLD ||
             decision.action == AdjustmentAction.NEEDS_MORE_DATA
-        ) return Result.success()
+        ) {
+            diag.info(cat, src, "adjustment_hold", "Brak korekty kcal: ${decision.action.name} (${decision.reason})")
+            return Result.success()
+        }
+        diag.info(cat, src, "adjustment_proposed", "Zaproponowano korektę: ${decision.action.name} → ${decision.newKcal} kcal", success = true)
 
         // Zapisz preview do bazy (z AI explanation jeśli klucz dostępny)
         val adjId = runCatching { autoAdjust.savePreview(decision) }.getOrNull()

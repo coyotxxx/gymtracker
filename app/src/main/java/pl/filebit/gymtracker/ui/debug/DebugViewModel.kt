@@ -302,6 +302,7 @@ class DebugViewModel @Inject constructor(
         val plans = allPlansBlock()
         val recentWorkouts = recentWorkoutsBlock()
         val activeMeso = activeMesoBlock()
+        val diagnostics = diagnosticEventsBlock()
 
         val payload = buildJsonObject {
             put("schema", "gymtracker-debug-v1")
@@ -313,9 +314,28 @@ class DebugViewModel @Inject constructor(
             put("activeMesocycle", activeMeso)
             put("plans", plans)
             put("recentWorkouts", recentWorkouts)
+            put("diagnosticEvents", diagnostics)
         }
         return json.encodeToString(JsonObject.serializer(), payload)
     }
+
+    /** v2.20.0: ostatnie zdarzenia diagnostyczne — co apka robiła/decydowała. */
+    private suspend fun diagnosticEventsBlock(): kotlinx.serialization.json.JsonArray =
+        kotlinx.serialization.json.buildJsonArray {
+            runCatching { db.diagnosticEventDao().getRecent(300) }.getOrDefault(emptyList())
+                .forEach { e ->
+                    add(buildJsonObject {
+                        put("ts", e.timestampMs)
+                        put("category", e.category)
+                        put("level", e.level)
+                        put("source", e.source)
+                        put("event", e.event)
+                        put("message", e.message)
+                        e.dataJson?.let { put("data", it) }
+                        e.success?.let { put("success", it) }
+                    })
+                }
+        }
 
     private fun appInfoBlock(): JsonObject {
         val info = runCatching {
@@ -382,7 +402,8 @@ class DebugViewModel @Inject constructor(
             "ai_conversations", "ai_chat_messages", "ai_weekly_reports",
             // v2.17.0 (P2-2): usunięto martwą "user_diet_profile" (scalona w user_profile w v1.28).
             // Dodano istniejące tabele diety dla pełniejszego debugu.
-            "meal_entries", "meal_consumptions", "diet_phases", "adherence_log"
+            "meal_entries", "meal_consumptions", "diet_phases", "adherence_log",
+            "diagnostic_events"
         )
         names.forEach { name ->
             val count = runCatching {

@@ -683,6 +683,27 @@ object AppModule {
         }
     }
 
+    // v2.20.0: nowa tabela diagnostic_events (log diagnostyczny). Tylko CREATE TABLE
+    // + indeksy (zgodne z @Index w encji). Nic istniejącego nie ruszamy.
+    internal val MIGRATION_72_73 = object : Migration(72, 73) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `diagnostic_events` (" +
+                    "`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                    "`timestampMs` INTEGER NOT NULL, " +
+                    "`category` TEXT NOT NULL, " +
+                    "`level` TEXT NOT NULL, " +
+                    "`source` TEXT NOT NULL, " +
+                    "`event` TEXT NOT NULL, " +
+                    "`message` TEXT NOT NULL, " +
+                    "`dataJson` TEXT, " +
+                    "`success` INTEGER)"
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_diagnostic_events_timestampMs` ON `diagnostic_events` (`timestampMs`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_diagnostic_events_category` ON `diagnostic_events` (`category`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -710,7 +731,8 @@ object AppModule {
                 MIGRATION_68_69,
                 MIGRATION_69_70,
                 MIGRATION_70_71,
-                MIGRATION_71_72
+                MIGRATION_71_72,
+                MIGRATION_72_73
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
@@ -753,6 +775,7 @@ object AppModule {
     @Provides fun provideRecoveryLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.RecoveryLogDao = db.recoveryLogDao()
     @Provides fun provideDailyActivityLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DailyActivityLogDao = db.dailyActivityLogDao()
     @Provides fun provideDietPhaseDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DietPhaseDao = db.dietPhaseDao()
+    @Provides fun provideDiagnosticEventDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DiagnosticEventDao = db.diagnosticEventDao()
     @Provides fun provideMealPrepPlanDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.MealPrepPlanDao = db.mealPrepPlanDao()
     @Provides fun provideMealConsumptionDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.MealConsumptionDao = db.mealConsumptionDao()
     @Provides fun provideAiLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.AiLogDao = db.aiLogDao()

@@ -61,6 +61,8 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
     @Inject lateinit var deloadService: pl.filebit.gymtracker.data.repository.DeloadService
     // v2.0.0: canonical exercise-db — 1317 ćwiczeń własnych z GIFami z R2 CDN
     @Inject lateinit var canonicalExerciseBootstrap: pl.filebit.gymtracker.data.repository.CanonicalExerciseBootstrap
+    // v2.20.0: log diagnostyczny — cleanup starych wpisów przy starcie
+    @Inject lateinit var diagnosticLogger: pl.filebit.gymtracker.data.repository.DiagnosticLogger
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -73,6 +75,7 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
         installCrashLogger()
         super.onCreate()
         createNotificationChannels()
+        runCatching { diagnosticLogger.cleanup(30) }  // v2.20.0: sprzątanie logów >30 dni
         appScope.launch {
             // v2.0.0: canonical bootstrap MUSI iść PRZED exerciseSeeder
             // (seeder.markMacjiejFavorites używa slugów które dopiero canonical wstawia).

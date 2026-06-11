@@ -29,7 +29,9 @@ import javax.inject.Singleton
 @Singleton
 class HomeAlertNotifier @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val prefs: DeloadPreferences
+    private val prefs: DeloadPreferences,
+    // nullable-default: Hilt wstrzykuje realny, testy konstruujące ręcznie biorą null
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) {
     /**
      * Wywoływane przez HomeViewModel po obliczeniu cardState.
@@ -122,6 +124,10 @@ class HomeAlertNotifier @Inject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(notificationId(type), notification)
+        diag?.info(
+            pl.filebit.gymtracker.data.entity.DiagnosticCategory.NOTIFICATION,
+            "HomeAlertNotifier", "notification_sent", "Wysłano notyfikację alertu: $type", success = true
+        )
     }
 
     private data class NotificationContent(
