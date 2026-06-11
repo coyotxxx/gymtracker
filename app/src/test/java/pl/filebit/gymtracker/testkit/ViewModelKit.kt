@@ -227,7 +227,13 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
         statsCacheService, db.bodyMeasurementDao(), db.trainingEventDao(),
         db.weeklyRollupDao(), db.monthlyRollupDao(), db.quarterlyRollupDao(),
         db.trainingMesocycleDao(), db.pendingPeriodizationDecisionDao(),
-        db.exerciseDao(), db.userProfileDao()
+        db.exerciseDao(), db.userProfileDao(),
+        // v2.22.0 — narzędzia zapisu
+        pl.filebit.gymtracker.data.repository.DietRepository(
+            db.foodProductDao(), db.mealEntryDao(), db.fastingWindowDao(), db.recipeDao()),
+        userProfileRepo,
+        pl.filebit.gymtracker.data.repository.DietPreferences(context),
+        pl.filebit.gymtracker.data.repository.DiagnosticLogger(db.diagnosticEventDao())
     )
     val weeklyReportService = WeeklyReportService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),

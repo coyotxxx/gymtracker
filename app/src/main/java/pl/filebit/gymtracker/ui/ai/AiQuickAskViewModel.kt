@@ -39,7 +39,9 @@ class AiQuickAskViewModel @Inject constructor(
     private val contextBuilder: AiContextBuilder,
     // v2.21.0 — kontekst diety (faza, adherence, ulubione produkty) + log diagnostyczny
     private val masterContextBuilder: pl.filebit.gymtracker.ai.MasterAiContextBuilder,
-    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger,
+    // v2.22.0 — narzędzia (w tym ZAPIS danych na prośbę usera)
+    private val toolHandler: pl.filebit.gymtracker.ai.AiToolHandler
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(AiQuickAskUiState())
@@ -88,7 +90,9 @@ class AiQuickAskViewModel @Inject constructor(
                 append("Odpowiadasz konkretnie i o treningu, i o diecie/posiłkach. NIGDY nie odsyłaj ")
                 append("do zewnętrznego dietetyka ani trenera — to TY nim jesteś. Gdy pytam o dietę, ")
                 append("posiłek czy zamiennik — doradź konkretnie (produkty, makro, szybkie opcje), ")
-                append("korzystając z kontekstu diety poniżej.\n\n")
+                append("korzystając z kontekstu diety poniżej. ")
+                append("Możesz też ZMIENIAĆ moje dane gdy o to wprost proszę (zapis wagi, dodanie posiłku, ")
+                append("ustawienie celu kcal lub kierunku diety) — użyj do tego dostępnych narzędzi.\n\n")
                 append("Aktualnie jestem na ekranie aplikacji: **${_state.value.screenLabel}**.\n\n")
                 append("=== KONTEKST TRENINGOWY ===\n```json\n$ctx\n```\n\n")
                 if (dietSection.isNotBlank()) {
@@ -101,7 +105,7 @@ class AiQuickAskViewModel @Inject constructor(
                 AiMessage(it.role, it.text)
             } + AiMessage(AiRole.USER, combined)
 
-            client.chat(cfg, apiMessages, source = "AiQuickAsk").fold(
+            client.chatWithTools(cfg, apiMessages, toolHandler, source = "AiQuickAsk").fold(
                 onSuccess = { response ->
                     // v2.21.0: heurystyka deflekcji — sygnał jakości, jeśli AI odsyła "do dietetyka/trenera"
                     val deflected = Regex("(zwróć się|skonsultuj|udaj się|warto.*zwróć).{0,30}(dietetyk|trener)", RegexOption.IGNORE_CASE)

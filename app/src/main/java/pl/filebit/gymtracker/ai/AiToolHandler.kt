@@ -8,6 +8,10 @@ import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.contentOrNull
+import kotlinx.serialization.json.doubleOrNull
+import kotlinx.serialization.json.intOrNull
+import kotlinx.coroutines.flow.first
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonArray
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
@@ -60,7 +64,12 @@ class AiToolHandler @Inject constructor(
     private val pendingDecisionDao: pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao,
     // v2.0.0: canonical exercise-db tools
     private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao,
-    private val userProfileDao: pl.filebit.gymtracker.data.db.dao.UserProfileDao
+    private val userProfileDao: pl.filebit.gymtracker.data.db.dao.UserProfileDao,
+    // v2.22.0: narzędzia ZAPISU danych (na prośbę usera)
+    private val dietRepo: pl.filebit.gymtracker.data.repository.DietRepository,
+    private val userProfileRepo: pl.filebit.gymtracker.data.repository.UserProfileRepository,
+    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences,
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
 ) {
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
@@ -113,6 +122,11 @@ class AiToolHandler @Inject constructor(
             "get_exercise_progression" -> execGetExerciseProgression(input)
             "get_exercise_prerequisites" -> execGetExercisePrerequisites(input)
             "find_safe_exercises_for_user" -> execFindSafeExercisesForUser(input)
+            // v2.22.0 — ZAPIS danych
+            "log_weight" -> execLogWeight(input)
+            "add_meal" -> execAddMeal(input)
+            "set_calorie_target" -> execSetCalorieTarget(input)
+            "set_diet_goal" -> execSetDietGoal(input)
             else -> "{\"error\":\"Unknown tool: $toolName\"}"
         }
 
@@ -121,6 +135,78 @@ class AiToolHandler @Inject constructor(
             return """{"error":"result_too_large","size_kb":${result.length / 1024},"max_kb":${limits.maxResultSizeBytes / 1024},"hint":"Zwęź zapytanie — mniejszy zakres dat lub mniej rekordów."}"""
         }
         return result
+    }
+
+    // === v2.22.0: WYKONAWCY narzędzi ZAPISU (na prośbę usera) ===
+    // Tylko dane, nigdy kod. Walidacja zakresów + audyt w logu diagnostycznym. Bez kasowania.
+
+    private val diagCat = pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION
+
+    private fun toolOk(msg: String): String =
+        buildJsonObject { put("status", "ok"); put("message", msg) }.toString()
+
+    private fun toolErr(msg: String): String =
+        buildJsonObject { put("status", "error"); put("error", msg) }.toString()
+
+    private fun parseDateOrNow(input: JsonObject): Long {
+        val s = input["date"]?.jsonPrimitive?.contentOrNull
+        return s?.let { runCatching { df.parse(it)?.time }.getOrNull() } ?: System.currentTimeMillis()
+    }
+
+    private suspend fun execLogWeight(input: JsonObject): String {
+        val kg = input["kg"]?.jsonPrimitive?.doubleOrNull ?: return toolErr("Brak lub niepoprawne 'kg'")
+        if (kg < 30 || kg > 300) return toolErr("Waga poza bezpiecznym zakresem 30-300 kg: $kg")
+        val dateMs = parseDateOrNow(input)
+        bodyMeasurementDao.upsert(
+            pl.filebit.gymtracker.data.entity.BodyMeasurement(date = dateMs, weightKg = kg)
+        )
+        diag.info(diagCat, "AiToolHandler", "ai_log_weight", "AI zapisał wagę: $kg kg", success = true)
+        return toolOk("Zapisałem wagę: $kg kg.")
+    }
+
+    private suspend fun execAddMeal(input: JsonObject): String {
+        val name = input["product"]?.jsonPrimitive?.contentOrNull?.trim()
+            ?: return toolErr("Brak 'product'")
+        val grams = input["grams"]?.jsonPrimitive?.doubleOrNull ?: return toolErr("Brak lub niepoprawne 'grams'")
+        if (grams < 1 || grams > 2000) return toolErr("Gramatura poza zakresem 1-2000 g: $grams")
+        val mealTypeStr = (input["mealType"]?.jsonPrimitive?.contentOrNull ?: "LUNCH").uppercase()
+        val mealType = runCatching { pl.filebit.gymtracker.data.entity.MealType.valueOf(mealTypeStr) }.getOrNull()
+            ?: return toolErr("Niepoprawny posiłek '$mealTypeStr' (BREAKFAST/LUNCH/DINNER/SNACK)")
+        val products = runCatching { dietRepo.observeAllProducts().first() }.getOrDefault(emptyList())
+        val product = products.firstOrNull { it.name.equals(name, ignoreCase = true) }
+            ?: products.firstOrNull { it.name.contains(name, ignoreCase = true) }
+            ?: return toolErr("Nie znaleziono produktu '$name' w bazie produktów")
+        dietRepo.addMeal(
+            pl.filebit.gymtracker.data.entity.MealEntry(
+                dateMs = parseDateOrNow(input), mealType = mealType,
+                productId = product.id, grams = grams
+            )
+        )
+        diag.info(diagCat, "AiToolHandler", "ai_add_meal",
+            "AI dodał ${grams.toInt()}g ${product.name} do ${mealType.name}", success = true)
+        return toolOk("Dodałem ${grams.toInt()} g ${product.name} do posiłku ${mealType.name}.")
+    }
+
+    private suspend fun execSetCalorieTarget(input: JsonObject): String {
+        val kcal = input["kcal"]?.jsonPrimitive?.intOrNull ?: return toolErr("Brak lub niepoprawne 'kcal'")
+        if (kcal < 800 || kcal > 6000) return toolErr("Cel kcal poza zakresem 800-6000: $kcal")
+        dietPrefs.save(dietPrefs.load().copy(manualKcal = kcal))
+        diag.info(diagCat, "AiToolHandler", "ai_set_kcal", "AI ustawił cel kcal: $kcal", success = true)
+        return toolOk("Ustawiłem dzienny cel kaloryczny: $kcal kcal.")
+    }
+
+    private suspend fun execSetDietGoal(input: JsonObject): String {
+        val goal = input["goal"]?.jsonPrimitive?.contentOrNull?.uppercase() ?: return toolErr("Brak 'goal'")
+        val goalType = when (goal) {
+            "CUT", "FAT_LOSS" -> pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS
+            "BULK", "MUSCLE_GAIN" -> pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN
+            "MAINTAIN" -> pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN
+            else -> return toolErr("Cel: CUT / BULK / MAINTAIN (otrzymano '$goal')")
+        }
+        val p = userProfileRepo.get()
+        userProfileRepo.save(p.copy(goalType = goalType))
+        diag.info(diagCat, "AiToolHandler", "ai_set_goal", "AI zmienił cel diety na $goal", success = true)
+        return toolOk("Zmieniłem cel diety na: $goal.")
     }
 
     /**

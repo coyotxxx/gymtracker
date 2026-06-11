@@ -42,6 +42,12 @@ object AiTools {
         add(toolGetExerciseProgression())
         add(toolGetExercisePrerequisites())
         add(toolFindSafeExercisesForUser())
+        // v2.22.0 — narzędzia ZAPISU (AI zmienia dane na prośbę usera). Tylko dane,
+        // nigdy kod/zachowanie. Bez kasowania. Walidacja + audyt w handlerze.
+        add(toolLogWeight())
+        add(toolAddMeal())
+        add(toolSetCalorieTarget())
+        add(toolSetDietGoal())
     }
 
     /** Lista nazw narzędzi (do walidacji w handlerze). */
@@ -62,8 +68,67 @@ object AiTools {
         "get_exercise_alternatives",
         "get_exercise_progression",
         "get_exercise_prerequisites",
-        "find_safe_exercises_for_user"
+        "find_safe_exercises_for_user",
+        // v2.22.0 — zapis danych
+        "log_weight",
+        "add_meal",
+        "set_calorie_target",
+        "set_diet_goal"
     )
+
+    // === v2.22.0: narzędzia ZAPISU danych (na prośbę usera) ===
+
+    private fun toolLogWeight(): JsonObject = buildJsonObject {
+        put("name", "log_weight")
+        put("description", "Zapisuje pomiar wagi użytkownika. Użyj gdy user prosi np. 'zapisz wagę 85', 'dziś ważę 84.5 kg'.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("kg") { put("type", "number"); put("description", "Waga w kg (30-300)") }
+                putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
+            }
+            putJsonArray("required") { add("kg") }
+        }
+    }
+
+    private fun toolAddMeal(): JsonObject = buildJsonObject {
+        put("name", "add_meal")
+        put("description", "Dodaje produkt do dziennika posiłków. Użyj gdy user prosi np. 'dodaj 200g kurczaka do obiadu'. Produkt musi istnieć w bazie produktów.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("product") { put("type", "string"); put("description", "Nazwa produktu (musi pasować do bazy produktów)") }
+                putJsonObject("grams") { put("type", "number"); put("description", "Gramatura (1-2000)") }
+                putJsonObject("mealType") { put("type", "string"); put("description", "BREAKFAST/LUNCH/DINNER/SNACK (domyślnie LUNCH)") }
+                putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
+            }
+            putJsonArray("required") { add("product"); add("grams") }
+        }
+    }
+
+    private fun toolSetCalorieTarget(): JsonObject = buildJsonObject {
+        put("name", "set_calorie_target")
+        put("description", "Ustawia ręczny dzienny cel kaloryczny. Użyj gdy user prosi np. 'ustaw cel 2000 kcal'.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("kcal") { put("type", "integer"); put("description", "Cel kcal/dzień (800-6000)") }
+            }
+            putJsonArray("required") { add("kcal") }
+        }
+    }
+
+    private fun toolSetDietGoal(): JsonObject = buildJsonObject {
+        put("name", "set_diet_goal")
+        put("description", "Zmienia kierunek celu diety. Użyj gdy user prosi np. 'przejdź na masę', 'chcę robić redukcję'.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("goal") { put("type", "string"); put("description", "CUT (redukcja) / BULK (masa) / MAINTAIN (utrzymanie)") }
+            }
+            putJsonArray("required") { add("goal") }
+        }
+    }
 
     /**
      * v1.15.0 — AI proponuje konkretną akcję periodyzacyjną.
