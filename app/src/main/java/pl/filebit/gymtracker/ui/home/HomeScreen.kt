@@ -225,6 +225,7 @@ fun HomeScreen(
                     item {
                         ReturnAfterBreakCard(
                             recommendation = card.recommendation,
+                            onStart = { vm.startNextPlannedToday(onStartCoachWorkout) },  // v2.19.0 (P2-3)
                             onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.RETURN_AFTER_BREAK) }
                         )
                     }
@@ -1382,6 +1383,7 @@ private fun ActiveInjuryCard(
 @Composable
 private fun ReturnAfterBreakCard(
     recommendation: pl.filebit.gymtracker.util.ReturnAfterBreakRecommendation,
+    onStart: () -> Unit,
     onDismiss: () -> Unit
 ) {
     // Niebieski "refresh" — to NIE deload (warning), to ostrożny restart (informacja).
@@ -1437,6 +1439,13 @@ private fun ReturnAfterBreakCard(
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
                 color = DarkOnSurface,
                 modifier = Modifier.padding(end = 8.dp)
+            )
+            // v2.19.0 (P2-3): akcjonowalny — start lekkiego treningu powrotnego.
+            Spacer(Modifier.height(12.dp))
+            HeroPrimaryButton(
+                text = "Zacznij lekki trening",
+                icon = Icons.Default.PlayArrow,
+                onClick = onStart
             )
         }
     }

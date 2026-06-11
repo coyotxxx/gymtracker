@@ -260,7 +260,11 @@ object MasterAiContextPromptHelper {
         append("\n=== STAN AKTUALNY ===\n")
         append("- Aktualna faza: ${ctx.currentDietPhase} (dzień ${ctx.daysInCurrentPhase})\n")
         if (ctx.isTodayTrainingDay) {
-            append("- DZIŚ: TRENING (${ctx.todayTrainingTypeLabel ?: "?"})\n")
+            // v2.19.0 (P2-4): nie pokazuj sprzecznego "TRENING (REST)" — etykietę typu
+            // dodajemy tylko gdy jest sensowna (np. STRENGTH/HYPERTROPHY), nie REST/puste.
+            val typeLabel = ctx.todayTrainingTypeLabel
+                ?.takeIf { it.isNotBlank() && !it.equals("REST", ignoreCase = true) }
+            append("- DZIŚ: dzień treningowy${typeLabel?.let { " ($it)" } ?: ""}\n")
             if (ctx.todayMuscleGroups.isNotEmpty()) {
                 append("- Trenowane partie dziś: ${ctx.todayMuscleGroups.joinToString(", ")}\n")
             }
