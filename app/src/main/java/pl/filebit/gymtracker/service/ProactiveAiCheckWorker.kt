@@ -47,7 +47,9 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     // v2.5.0 — sprawdzanie przeciwwskazań canonical przy regule bólu
     private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao,
     // v2.12.0 — reguła opuszczonego zaplanowanego treningu
-    private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService
+    private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService,
+    // v2.14.0 — kanoniczne alerty trenera (te same co na Home) w tle
+    private val homeAlertNotifier: HomeAlertNotifier
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -56,6 +58,19 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
 
         // v1.18.0 — auto-cleanup starszych niż 30 dni logów AI (chroni rozmiar DB).
         runCatching { aiLogRepository.deleteOlderThanDays(30) }
+
+        // v2.14.0 — kanoniczne alerty trenera (DeloadService.cardState: ból/powrót/
+        // opuszczony trening/deload) w tle. HomeAlertNotifier dedupuje po wspólnym hashu,
+        // więc to NIE zdubluje notyfikacji z renderu Home. Leci PIERWSZE; jeśli jest
+        // realny alert — wysyłamy i kończymy (reguły ad-hoc poniżej to fallback).
+        val card = runCatching { deloadService.cardState() }.getOrNull()
+        if (card != null &&
+            card !is pl.filebit.gymtracker.data.repository.DeloadCardState.None &&
+            card !is pl.filebit.gymtracker.data.repository.DeloadCardState.Active
+        ) {
+            runCatching { homeAlertNotifier.maybeNotify(card) }
+            return Result.success()
+        }
 
         // 1. Sprawdź ostatnie treningi pod kątem powtarzającego się bólu
         val recent = workoutDao.observeAllOnce()

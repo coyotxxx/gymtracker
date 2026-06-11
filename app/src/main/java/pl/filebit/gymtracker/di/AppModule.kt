@@ -663,6 +663,14 @@ object AppModule {
         }
     }
 
+    // v2.14.0: warstwa proaktywna domyślnie ON. Data-only UPDATE — włącza istniejących
+    // userów (decyzja Macieja). Bez zmiany schematu (71.json == 70 strukturalnie).
+    internal val MIGRATION_70_71 = object : Migration(70, 71) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("UPDATE `user_profile` SET `aiProactiveChecksEnabled` = 1")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -688,7 +696,8 @@ object AppModule {
                 MIGRATION_66_67,
                 MIGRATION_67_68,
                 MIGRATION_68_69,
-                MIGRATION_69_70
+                MIGRATION_69_70,
+                MIGRATION_70_71
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
