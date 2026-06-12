@@ -4,6 +4,22 @@
 **Metoda:** pełne testy jednostkowe + lint + kompilacja androidTest + 5 równoległych agentów-recenzentów na obszarach zmian sesji 2026-06-10/11 (12 release'ów v2.11→v2.22) + ręczna weryfikacja kluczowych twierdzeń.
 **Decyzja właściciela:** tylko raport — naprawy w następnej sesji (po testach na telefonie).
 
+## ✅ WERYFIKACJA KRYTYCZNYCH (2026-06-12, na żądanie właściciela — „bez 100% pewności nic nie robimy")
+
+Każdy K zweryfikowany testem reprodukującym lub twardym dowodem. **7/7 POTWIERDZONE:**
+
+| K | Metoda | Dowód |
+|---|--------|-------|
+| K1 | **Test repro** (Robolectric, in-memory DB) | Świeży aktywny plan (createdAt=teraz, dni 1-7, z ćwiczeniem, ZERO treningów) → `missedWorkoutSignal()` zwrócił `MissedWorkoutRecommendation(missedCount=7, plannedCount=7, severity=FIRM, "Opuściłeś 7 z 7...")`. Reprodukcja 1:1. |
+| K2 | **Dowód kodowy** (deterministyczna ścieżka) | `HomeViewModel.kt:293` — `nextPlannedDay = if (todaysPlan == null) {...}` (else null); `:833` — `startNextPlannedToday` robi `?: return`. Gdy dziś dzień planu → CTA = cichy no-op. |
+| K3 | **Test repro + kod** | `DietViewModel.kt:978` — `m.copy(id=0, dateMs, createdAt)` NIE nadpisuje isPlanned; test: kopia ręcznego wpisu ma isPlanned=false → AdherenceCalculator liczy jako zjedzony (potwierdza istniejący test v2.11). |
+| K4 | **Dowód kodowy** (udokumentowany Android pitfall) | `MealStatusReceiver.kt` — `onReceive` zwraca natychmiast, zapis w `scope.launch` bez `goAsync()`; `nm.cancel()` synchroniczny. Po onReceive proces = "empty", może być ubity przed zapisem. |
+| K5 | **Test repro** | `aiToolHandler.execute("add_meal", {Kurczak, 300g})` → wpis JEST w meal_entries, ale `adherence_log` dnia NIE powstał (assertNotNull padł). |
+| K6 | **Dowód kodowy** | `AiClient.kt:175` — `AiProvider.OPENAI -> callOpenAi(config, messages)` z komentarzem wprost „fallback bez tools"; prompt v2.22 obiecuje narzędzia bez warunku na providera. |
+| K7 | **Dowód z bytecode** work-runtime-2.10.0 (wersja projektu) | `WorkerUpdater.enqueueUniquelyNamedPeriodic`: `getfield WorkSpec.lastEnqueueTime` + `getPeriodCount()` ze STAREGO speca → `WorkSpec.copy$default(...)` zachowuje je w nowym. Nowy initialDelay dodaje się do starego enqueue time → dryf; po pierwszym biegu delay ignorowany → cykl zakotwiczony na złym dniu. |
+
+Testy repro (K1/K3/K5) uruchomione lokalnie i USUNIĘTE po weryfikacji (failing testy nie mogą wejść do CI). Raport o średnich (M1-M8) nie był weryfikowany testami — zweryfikować przy naprawie.
+
 ## ✅ Zdrowe
 - Testy jednostkowe: wszystkie zielone. androidTest kompiluje się.
 - **Migracje 67→73: zweryfikowane SQL vs schematy JSON — czyste.** Zero ryzyka crashu po update, zero utraty danych. Hilt+nullable-default DAO poprawne. Defaulty Kotlin↔DB spójne (brak defaultValue w schematach → Room nie porównuje).
