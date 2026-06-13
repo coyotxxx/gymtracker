@@ -212,5 +212,27 @@ sekwencja — sen spada tylko w noce po nogach → „to DOMS nie bezsenność; 
 Wspólny mianownik: zamiast kilku kart które się nie znają i przeczą — JEDEN głos coacha (zna cel, łączy domeny,
 priorytetyzuje). Algorytm = poprawnie i bezpiecznie zawsze; AI = niuans + ludzkie wyjaśnienie.
 
-## 12. Status
+## 12. Tryby użycia — MODUŁOWOŚĆ (żelazna zasada)
+
+Coach reaguje TYLKO na domeny, które user faktycznie używa. Dieta, trening, zdrowie (sen/HRV),
+kroki, nawodnienie = **niezależne, opcjonalne moduły**. Brak modułu = brak jego sygnałów = arbiter
+nie produkuje jego reakcji. **Żadnego sztywnego sklejania diety z treningiem.**
+
+| Tryb | Działa | Milczy (brak danych) |
+|------|--------|----------------------|
+| **Tylko trening** | deload, powrót, kontuzje, opuszczone treningi, stagnacja, periodyzacja, gotowość, PRy, Bilans (tylko trening), regeneracja gdy jest HC | korekty kcal, posiłki, refeed, nawodnienie |
+| **Tylko dieta** | korekty kcal/makro, posiłki, refeed/diet break, nawodnienie, trend wagi vs cel | deload, kontuzje, periodyzacja, gotowość |
+| **Oba** | pełny coach, integracja krzyżowa (dieta patrzy na trening i odwrotnie) | — |
+
+**Reguły:**
+1. Detekcja „moduł nieużywany": brak DietConfig/onboardingu diety/meal entries → dieta OFF;
+   brak planu/treningów → trening OFF. Silniki już zwracają „brak danych" (np.
+   `CalorieAdjustmentEngine`→`NEEDS_MORE_DATA`) — arbiter to honoruje (milczy, nie marudzi).
+2. **Cel bez modułu:** cel „schudnięcie" + brak diety → JEDNORAZOWA, zamykalna na zawsze sugestia
+   „dieta = główna dźwignia"; potem nigdy więcej. Trening pozostaje goal-aware.
+3. Cel = NONE → coach pilnuje systematyczności, progresji, bezpieczeństwa (bez optymalizacji pod cel).
+4. Modułowość jest WBUDOWANA w zasadę „sygnał→reakcja" — nie jest dodatkową warstwą. Przy budowie
+   `CoachOrchestrator` NIGDY nie zakłada obecności diety ani treningu; każdy sygnał jest nullable.
+
+## 13. Status
 Projekt gotowy do realizacji — czeka na akceptację Macieja. Po „OK" startujemy U1.
