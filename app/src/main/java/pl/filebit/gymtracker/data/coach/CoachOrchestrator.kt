@@ -31,6 +31,10 @@ import javax.inject.Singleton
 class CoachOrchestrator @Inject constructor(
     private val deloadService: DeloadService,
     private val autoAdjustmentService: AutoAdjustmentService,
+    // v2.34.0 (U4b krok 1): NotificationCenter jako DORADCA — wnosi sygnały recovery/ACWR/faza/
+    // brak treningu/brak wagi. Dzięki temu orchestrator jest nadzbiorem dzwonka in-app i można
+    // go bezpiecznie usunąć (U4b krok 3) bez utraty funkcji.
+    private val notificationCenter: pl.filebit.gymtracker.ai.NotificationCenter,
     private val diag: DiagnosticLogger? = null
 ) {
 
@@ -48,9 +52,43 @@ class CoachOrchestrator @Inject constructor(
             dietReaction(decision)?.let { candidates += it }
         }
 
+        // === SYGNAŁY DZWONKA (recovery score/ACWR/faza/brak treningu/brak wagi) ===
+        runCatching { notificationCenter.computeNotifications() }.getOrNull()?.forEach { n ->
+            candidates += notificationReaction(n)
+        }
+
         val verdict = arbitrateCoach(candidates)
         logVerdict(verdict, candidates.size)
         return verdict
+    }
+
+    private fun notificationReaction(n: pl.filebit.gymtracker.ai.AppNotification): CoachReaction {
+        val crit = n.severity == pl.filebit.gymtracker.ai.NotificationSeverity.CRITICAL
+        val (domain, priority, action) = when (n.actionType) {
+            pl.filebit.gymtracker.ai.NotificationAction.APPLY_DELOAD ->
+                Triple(CoachDomain.RECOVERY, CoachPriority.RECOVERY, CoachActionType.APPLY_DELOAD)
+            pl.filebit.gymtracker.ai.NotificationAction.START_WORKOUT ->
+                Triple(CoachDomain.CONSISTENCY, CoachPriority.CONSISTENCY, CoachActionType.START_WORKOUT)
+            pl.filebit.gymtracker.ai.NotificationAction.AUDIT_PLAN ->
+                Triple(CoachDomain.TRAINING, CoachPriority.OPTIMIZATION, CoachActionType.OPEN_TRAINING)
+            pl.filebit.gymtracker.ai.NotificationAction.OPEN_PERIODIZATION_PLAN ->
+                Triple(CoachDomain.TRAINING, CoachPriority.OPTIMIZATION, CoachActionType.OPEN_PERIODIZATION)
+            pl.filebit.gymtracker.ai.NotificationAction.ADD_WEIGHT ->
+                Triple(CoachDomain.CONSISTENCY, CoachPriority.CONSISTENCY, CoachActionType.OPEN_DIET)
+            pl.filebit.gymtracker.ai.NotificationAction.SEND_HEALTH_SCREEN ->
+                Triple(CoachDomain.CONSISTENCY, CoachPriority.CONSISTENCY, CoachActionType.NONE)
+            pl.filebit.gymtracker.ai.NotificationAction.NONE ->
+                Triple(if (crit) CoachDomain.RECOVERY else CoachDomain.GOAL,
+                    if (crit) CoachPriority.RECOVERY else CoachPriority.OPTIMIZATION, CoachActionType.NONE)
+        }
+        val actions = buildList {
+            if (action != CoachActionType.NONE) add(CoachAction(action, n.title.take(24)))
+            add(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI"))
+        }
+        return CoachReaction(
+            id = "nc_${n.id}", domain = domain, priority = priority,
+            title = n.title, message = n.message, actions = actions, source = "NotificationCenter"
+        )
     }
 
     // === MAPOWANIA doradca → CoachReaction ===
