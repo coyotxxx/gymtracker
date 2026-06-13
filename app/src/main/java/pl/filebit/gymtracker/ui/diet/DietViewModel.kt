@@ -137,7 +137,9 @@ class DietViewModel @Inject constructor(
     val quickComposeService: pl.filebit.gymtracker.data.repository.QuickComposeService,
     private val cardioKcalEstimator: pl.filebit.gymtracker.data.repository.CardioKcalEstimator,
     private val bodyMeasurementDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
-    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
+    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao,
+    // v2.28.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) : ViewModel() {
 
     // === MEAL CONSUMPTION STATUS ===
@@ -1144,6 +1146,9 @@ class DietViewModel @Inject constructor(
                     grams = grams
                 )
             )
+            diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET, "DietViewModel",
+                "meal_added_manual", "Ręcznie dodano produkt do ${mealType.name} (${grams.toInt()}g)",
+                dataJson = """{"productId":$productId,"grams":${grams.toInt()},"mealType":"${mealType.name}"}""", success = true)
             // Update adherence po każdej zmianie posiłków
             runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
         }
@@ -1152,6 +1157,8 @@ class DietViewModel @Inject constructor(
     fun deleteMeal(id: Long) {
         viewModelScope.launch {
             repo.deleteMeal(id)
+            diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET, "DietViewModel",
+                "meal_deleted", "Usunięto wpis posiłku #$id", dataJson = """{"mealEntryId":$id}""")
             runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
         }
     }

@@ -216,7 +216,9 @@ class BackupViewModel @Inject constructor(
     private val db: AppDatabase,
     private val exerciseSeeder: pl.filebit.gymtracker.data.seed.ExerciseSeeder,
     private val dietBackupManager: pl.filebit.gymtracker.data.backup.DietBackupManager,
-    private val backupImporter: pl.filebit.gymtracker.data.backup.BackupImporter
+    private val backupImporter: pl.filebit.gymtracker.data.backup.BackupImporter,
+    // v2.28.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) : ViewModel() {
 
     private val json = Json { prettyPrint = true; ignoreUnknownKeys = true }
@@ -365,6 +367,10 @@ class BackupViewModel @Inject constructor(
                 _status.value = "Eksport: ${allWorkouts.size} treningów, " +
                     "${allPlans.size} planów, ${allConversations.size} rozmów AI, " +
                     "${photoFiles.size} zdjęć"
+                diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "BackupViewModel",
+                    "backup_exported", "Wyeksportowano backup: ${allWorkouts.size} treningów, ${allPlans.size} planów",
+                    dataJson = """{"workouts":${allWorkouts.size},"plans":${allPlans.size},"photos":${photoFiles.size}}""",
+                    success = true)
             }
         }
     }
@@ -462,6 +468,8 @@ class BackupViewModel @Inject constructor(
                 // pusta — bez tego import po wipe pada na FK constraint.
                 exerciseSeeder.seedIfEmpty()
                 _status.value = "Wyczyszczono wszystkie dane"
+                diag?.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "BackupViewModel",
+                    "data_wiped", "User wyczyścił WSZYSTKIE dane aplikacji (wipe + reseed)")
             }
             onDone()
         }

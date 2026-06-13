@@ -67,7 +67,9 @@ class BackupImporter @Inject constructor(
     private val dietBackupManager: DietBackupManager,
     // v1.24.7: po imporcie odpal backfill mesocykli (zalecenie aplikacji
     // "utworzy się gdy ≥4 treningi" w realu nie działa bez tego wywołania)
-    private val mesocycleBackfillService: pl.filebit.gymtracker.data.repository.MesocycleBackfillService
+    private val mesocycleBackfillService: pl.filebit.gymtracker.data.repository.MesocycleBackfillService,
+    // v2.28.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) {
     private val json = Json { ignoreUnknownKeys = true; prettyPrint = true }
 
@@ -77,7 +79,7 @@ class BackupImporter @Inject constructor(
     suspend fun importFromUri(uri: Uri): BackupImportResult {
         val rawBytes = context.contentResolver.openInputStream(uri)?.use { it.readBytes() }
             ?: error("Nie można odczytać pliku")
-        return importBytes(rawBytes)
+        return loggedImport(rawBytes, "uri")
     }
 
     /**
@@ -86,8 +88,21 @@ class BackupImporter @Inject constructor(
     suspend fun importFromFile(file: File): BackupImportResult {
         if (!file.exists()) error("Plik nie istnieje: ${file.absolutePath}")
         val rawBytes = file.readBytes()
-        return importBytes(rawBytes)
+        return loggedImport(rawBytes, "file")
     }
+
+    /** v2.28.0: jeden punkt logujący wynik importu (sukces/błąd) dla obu wejść. */
+    private suspend fun loggedImport(rawBytes: ByteArray, sourceKind: String): BackupImportResult =
+        runCatching { importBytes(rawBytes) }
+            .onSuccess {
+                diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "BackupImporter",
+                    "backup_imported", "Zaimportowano backup ($sourceKind): ${it.toUserMessage()}", success = true)
+            }
+            .onFailure {
+                diag?.error(pl.filebit.gymtracker.data.entity.DiagnosticCategory.ERROR, "BackupImporter",
+                    "backup_import_failed", "Błąd importu backupu ($sourceKind)", it)
+            }
+            .getOrThrow()
 
     private suspend fun importBytes(rawBytes: ByteArray): BackupImportResult {
         // FIX v0.89.9: wymusza wykonanie ExerciseSeeder przed importem.

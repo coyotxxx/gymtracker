@@ -26,7 +26,9 @@ class ProfileViewModel @Inject constructor(
     private val repo: UserProfileRepository,
     private val proactiveScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler,
     private val weeklyReportScheduler: pl.filebit.gymtracker.service.WeeklyReportScheduler,
-    private val periodizationPrefs: PeriodizationPreferences
+    private val periodizationPrefs: PeriodizationPreferences,
+    // v2.28.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) : ViewModel() {
 
     val profile: StateFlow<UserProfile> = repo.observe()
@@ -66,6 +68,9 @@ class ProfileViewModel @Inject constructor(
             if (before.aiProactiveChecksEnabled != profile.aiProactiveChecksEnabled) {
                 if (profile.aiProactiveChecksEnabled) proactiveScheduler.schedulePeriodic()
                 else proactiveScheduler.cancel()
+                diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "ProfileViewModel",
+                    "toggle_proactive_ai", "Proaktywne checki AI: ${if (profile.aiProactiveChecksEnabled) "WŁ" else "WYŁ"}",
+                    dataJson = """{"enabled":${profile.aiProactiveChecksEnabled}}""")
             }
             // v2.13.0 — sync auto-raport tygodniowy
             if (before.aiAutoGenerateWeeklyReports != profile.aiAutoGenerateWeeklyReports) {
@@ -75,7 +80,12 @@ class ProfileViewModel @Inject constructor(
                     weeklyReportScheduler.cancel()
                     weeklyReportScheduler.schedulePeriodic()
                 } else weeklyReportScheduler.cancel()
+                diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "ProfileViewModel",
+                    "toggle_weekly_report", "Auto-raport tygodniowy: ${if (profile.aiAutoGenerateWeeklyReports) "WŁ" else "WYŁ"}",
+                    dataJson = """{"enabled":${profile.aiAutoGenerateWeeklyReports}}""")
             }
+            diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "ProfileViewModel",
+                "profile_saved", "Zapisano profil użytkownika", success = true)
             onDone()
         }
     }

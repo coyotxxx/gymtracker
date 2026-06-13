@@ -65,14 +65,16 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | Generowanie diety: parse-fail/HARD-violations/fail/sukces | `DietAiService` | ✅ v2.27.0 |
 | AiTrainerViewModel (błąd UI) | `AiTrainerViewModel` | ⏭️ batch E (call i tak loguje AiClient) |
 
-## OBSZAR E — AKCJE USERA / CICHE BŁĘDY ⬜
+## OBSZAR E — AKCJE USERA / CICHE BŁĘDY ✅
 | Punkt | Plik | Status |
 |-------|------|--------|
-| Start/koniec treningu | `HomeViewModel` | ⬜ |
-| Akcje diety | `DietViewModel` | ⬜ |
-| Pomiary | `MeasurementsViewModel` | ⬜ |
-| Backup eksport/import | `BackupViewModel/BackupImporter` | ⬜ |
-| Ciche `runCatching` (MasterAiContextBuilder, Home, Diet, BackupImporter) | różne | ⬜ |
+| Start/koniec/porzucenie/usunięcie treningu + feedback | `WorkoutRepository` | ✅ v2.28.0 |
+| Zapis/usunięcie pomiaru (waga) | `BodyRepository` | ✅ v2.28.0 |
+| Backup import (sukces/błąd, oba wejścia) | `BackupImporter` | ✅ v2.28.0 |
+| Backup eksport + WIPE wszystkich danych | `BackupViewModel` | ✅ v2.28.0 |
+| Przełączniki proaktywne AI / auto-raport + zapis profilu | `ProfileViewModel` | ✅ v2.28.0 |
+| Ręczne dodanie/usunięcie posiłku | `DietViewModel` | ✅ v2.28.0 |
+| Ciche `runCatching` (MasterAiContextBuilder, Home) | różne | ⬜ (follow-up) |
 
 ## EKSPORT (Debug)
 | Sekcja | Status |
@@ -83,4 +85,6 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | mealConsumptions (statusy posiłków) | ✅ v2.24.0 |
 
 ---
-**Postęp:** A: 2/11 · B: 4/7 · C: 10/10 (3 świadomie pominięte) · D: 5/5 · E: 0/5. Aktualizować po każdym batchu.
+**Postęp:** A: 2/11 · B: 4/7 · C: 10/10 (3 świadomie pominięte) · D: 5/5 · E: 6/7. Aktualizować po każdym batchu.
+
+**Pozostało (po v2.28.0):** A-reszta diety (DietGoals cap/carb-cycling, CalorieAdjustmentEngine ~25 gałęzi, SafetyGuard, PhaseManager, hydration) + B-reszta (HomeCardsResolver, analyzery werdykty) + ciche runCatching (MasterAiContextBuilder/Home). ⭐ Osobno: **reakcja dietetyka AI na pominięte posiłki = FUNKCJA, nie log**.

@@ -4,6 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
@@ -16,7 +17,9 @@ class WorkoutRepository @Inject constructor(
     private val setDao: WorkoutSetDao,
     private val exerciseDao: ExerciseDao,
     private val eventDetectorService: pl.filebit.gymtracker.ai.EventDetectorService,
-    private val periodRollupService: pl.filebit.gymtracker.ai.PeriodRollupService
+    private val periodRollupService: pl.filebit.gymtracker.ai.PeriodRollupService,
+    // v2.28.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: DiagnosticLogger? = null
 ) {
     fun observeActive(): Flow<Workout?> = workoutDao.observeActive()
     fun observeAll(): Flow<List<Workout>> = workoutDao.observeAll()
@@ -40,6 +43,10 @@ class WorkoutRepository @Inject constructor(
             fromDayOfWeek = fromDayOfWeek
         )
         val id = workoutDao.insert(newWorkout)
+        diag?.info(DiagnosticCategory.USER_ACTION, "WorkoutRepository", "workout_started",
+            "Rozpoczęto trening #$id" + (fromPlanId?.let { " (plan $it, dzień $fromDayOfWeek)" } ?: " (bez planu)"),
+            dataJson = """{"workoutId":$id,"fromPlanId":${fromPlanId ?: "null"},"fromDayOfWeek":${fromDayOfWeek ?: "null"}}""",
+            success = true)
         return newWorkout.copy(id = id)
     }
 
@@ -55,9 +62,15 @@ class WorkoutRepository @Inject constructor(
         val sets = setDao.getForWorkout(workoutId)
         if (sets.isEmpty()) {
             workoutDao.deleteById(workoutId)
+            diag?.info(DiagnosticCategory.USER_ACTION, "WorkoutRepository", "workout_discarded_empty",
+                "Trening #$workoutId zakończony bez serii — usunięto", success = true)
             return false
         }
         workoutDao.update(w.copy(finishedAt = System.currentTimeMillis()))
+        val durationMin = ((System.currentTimeMillis() - w.startedAt) / 60000).toInt()
+        diag?.info(DiagnosticCategory.USER_ACTION, "WorkoutRepository", "workout_finished",
+            "Zakończono trening #$workoutId — ${sets.size} serii, $durationMin min",
+            dataJson = """{"workoutId":$workoutId,"sets":${sets.size},"durationMin":$durationMin}""", success = true)
         return true
     }
 
@@ -78,9 +91,15 @@ class WorkoutRepository @Inject constructor(
     suspend fun discardActive() {
         val active = workoutDao.getActive() ?: return
         workoutDao.deleteById(active.id)
+        diag?.info(DiagnosticCategory.USER_ACTION, "WorkoutRepository", "workout_discarded",
+            "Porzucono aktywny trening #${active.id}", dataJson = """{"workoutId":${active.id}}""")
     }
 
-    suspend fun deleteWorkout(id: Long) = workoutDao.deleteById(id)
+    suspend fun deleteWorkout(id: Long) {
+        workoutDao.deleteById(id)
+        diag?.info(DiagnosticCategory.USER_ACTION, "WorkoutRepository", "workout_deleted",
+            "Usunięto trening #$id z historii", dataJson = """{"workoutId":$id}""")
+    }
 
     suspend fun setAiSummary(workoutId: Long, summary: String) {
         val w = workoutDao.getById(workoutId) ?: return
@@ -110,6 +129,11 @@ class WorkoutRepository @Inject constructor(
                 painNotes = painNotes
             )
         )
+        diag?.info(DiagnosticCategory.USER_ACTION, "WorkoutRepository", "post_workout_feedback",
+            "Feedback po treningu #$workoutId: samopoczucie=${wellbeingRating ?: "—"}" +
+                (painArea?.let { ", ból: $it" } ?: ""),
+            dataJson = """{"workoutId":$workoutId,"wellbeing":${wellbeingRating ?: "null"},"painArea":${painArea?.let { "\"$it\"" } ?: "null"}}""",
+            success = true)
         // v1.11.59: detekcja eventu INJURY (gdy painArea wypełniony)
         runCatching { eventDetectorService.onPostWorkoutFeedback(workoutId) }
     }
