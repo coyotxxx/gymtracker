@@ -101,6 +101,7 @@ fun HomeScreen(
     onOpenHistory: () -> Unit = {},
     onOpenHealthScreenshot: () -> Unit = {},
     onOpenDiet: () -> Unit = {},   // v1.24.41: CTA refeed dla CUT prowadzi do zakładki Dieta
+    onAskCoach: (String) -> Unit = {},  // v2.35.1: „Zapytaj AI" z Karty coacha → czat z kontekstem
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -134,7 +135,7 @@ fun HomeScreen(
                     CoachCard(
                         verdict = verdict,
                         onDismiss = { reaction -> vm.dismissCoach(reaction.id) }
-                    ) { _, actionType ->
+                    ) { reaction, actionType ->
                         when (actionType) {
                             pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_DELOAD -> {
                                 // Siła deloadu z realnej rekomendacji (jak stara karta), fallback MED.
@@ -153,7 +154,11 @@ fun HomeScreen(
                             pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_DIET -> onOpenDiet()
                             pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_TRAINING,
                             pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_PERIODIZATION -> onSelectPlanTab()
-                            else -> scope.launch { snackbar.showSnackbar("Otwórz AI Trener, by porozmawiać o tym") }
+                            // ASK_AI (i inne) → otwórz czat z AI z KONTEKSTEM tej reakcji.
+                            else -> onAskCoach(
+                                "Trener pokazał mi: \"${reaction.title}\" — ${reaction.message}\n\n" +
+                                    "Porozmawiajmy o tym: co dokładnie zrobić i jak dostosować to do mnie?"
+                            )
                         }
                     }
                 }

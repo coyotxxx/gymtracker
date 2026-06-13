@@ -313,7 +313,12 @@ fun AppNavigation(
                     },
                     onOpenHealthScreenshot = { navController.navigate(Screen.HealthScreenshot.route) },
                     // v1.24.41: CTA "Zaplanuj refeed" w karcie REFEED ZALECANY (CUT user)
-                    onOpenDiet = { navController.navigate(Screen.Diet.route) }
+                    onOpenDiet = { navController.navigate(Screen.Diet.route) },
+                    // v2.35.1: „Zapytaj AI" z Karty coacha → bottom sheet czatu z kontekstem reakcji.
+                    onAskCoach = { prompt ->
+                        aiQuickAskInitialPrompt = prompt
+                        aiQuickAskVisible = true
+                    }
                 )
             }
             composable(Screen.History.route) {
