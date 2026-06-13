@@ -975,7 +975,9 @@ class DietViewModel @Inject constructor(
             if (prevMeals.isNotEmpty()) {
                 val now = System.currentTimeMillis()
                 prevMeals.forEach { m ->
-                    repo.addMeal(m.copy(id = 0, dateMs = dateMs, createdAt = now))
+                    // v2.23.0 (K3 fix): przeniesiony posiłek = ZAPLANOWANY (do potwierdzenia),
+                    // inaczej ręczne wpisy z wczoraj liczyłyby się jako zjedzone dziś rano (fałszywe 100%).
+                    repo.addMeal(m.copy(id = 0, dateMs = dateMs, createdAt = now, isPlanned = true))
                 }
                 runCatching { adherenceCalc.computeForDate(dateMs) }
                 return

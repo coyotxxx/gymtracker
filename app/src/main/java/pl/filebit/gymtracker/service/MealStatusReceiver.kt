@@ -44,16 +44,22 @@ class MealStatusReceiver : BroadcastReceiver() {
         }
         val dateMs = cal.timeInMillis
 
-        scope.launch {
-            consumptionRepo.setStatus(dateMs, mealType, status)
-            // v2.11.0: akcja z notyfikacji ("Zjedzone/Pominięte") też przelicza adherence.
-            runCatching { adherenceCalc.computeForDate(dateMs) }
-        }
-
-        // Cancel notyfikację
+        // Cancel notyfikację (synchronicznie — i tak natychmiastowe)
         if (notificationId > 0) {
             val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             nm.cancel(notificationId)
+        }
+
+        // v2.23.0 (K4 fix): goAsync() trzyma proces żywy do końca zapisu. Bez tego system
+        // mógł ubić proces po onReceive PRZED zapisem statusu/adherence → utrata kliku.
+        val pending = goAsync()
+        scope.launch {
+            try {
+                consumptionRepo.setStatus(dateMs, mealType, status)
+                runCatching { adherenceCalc.computeForDate(dateMs) }
+            } finally {
+                pending.finish()
+            }
         }
     }
 

@@ -172,6 +172,9 @@ class DeloadService @Inject constructor(
         val now = System.currentTimeMillis()
         val finished = workoutDao.observeAllOnce().filter { it.finishedAt != null }
         val trainedDayStarts = finished.map { dayStartOf(it.startedAt) }.toSet()
+        // v2.23.0 (K1 fix): nie licz dni sprzed utworzenia aktywnego planu — świeży plan
+        // nie miał szansy być wykonany, inaczej alarmuje "opuściłeś N/N" od razu po utworzeniu.
+        val planStart = dayStartOf(activePlan.createdAt)
 
         var planned = 0
         var missed = 0
@@ -180,6 +183,7 @@ class DeloadService @Inject constructor(
             cal.timeInMillis = now
             cal.add(Calendar.DAY_OF_YEAR, -offset)
             if (!activePlan.daysOfWeek.contains(isoDayOfWeek(cal))) continue
+            if (dayStartOf(cal.timeInMillis) < planStart) continue   // dzień sprzed planu
             planned++
             if (!trainedDayStarts.contains(dayStartOf(cal.timeInMillis))) missed++
         }

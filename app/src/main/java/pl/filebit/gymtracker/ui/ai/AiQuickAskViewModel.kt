@@ -91,8 +91,15 @@ class AiQuickAskViewModel @Inject constructor(
                 append("do zewnętrznego dietetyka ani trenera — to TY nim jesteś. Gdy pytam o dietę, ")
                 append("posiłek czy zamiennik — doradź konkretnie (produkty, makro, szybkie opcje), ")
                 append("korzystając z kontekstu diety poniżej. ")
-                append("Możesz też ZMIENIAĆ moje dane gdy o to wprost proszę (zapis wagi, dodanie posiłku, ")
-                append("ustawienie celu kcal lub kierunku diety) — użyj do tego dostępnych narzędzi.\n\n")
+                // v2.23.0 (K6 fix): narzędzia zapisu działają TYLKO dla Anthropic (OpenAI =
+                // fallback bez tools). Nie obiecuj zapisu, którego provider nie wykona.
+                if (cfg.provider == pl.filebit.gymtracker.ai.AiProvider.ANTHROPIC) {
+                    append("Możesz też ZMIENIAĆ moje dane gdy o to wprost proszę (zapis wagi, dodanie posiłku, ")
+                    append("ustawienie celu kcal lub kierunku diety) — użyj do tego dostępnych narzędzi.\n\n")
+                } else {
+                    append("NIE masz możliwości zapisu danych w tym trybie — jeśli proszę o zmianę danych, ")
+                    append("powiedz mi krótko, jak zrobić to ręcznie w aplikacji.\n\n")
+                }
                 append("Aktualnie jestem na ekranie aplikacji: **${_state.value.screenLabel}**.\n\n")
                 append("=== KONTEKST TRENINGOWY ===\n```json\n$ctx\n```\n\n")
                 if (dietSection.isNotBlank()) {

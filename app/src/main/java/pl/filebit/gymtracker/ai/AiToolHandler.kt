@@ -69,7 +69,9 @@ class AiToolHandler @Inject constructor(
     private val dietRepo: pl.filebit.gymtracker.data.repository.DietRepository,
     private val userProfileRepo: pl.filebit.gymtracker.data.repository.UserProfileRepository,
     private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences,
-    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger,
+    // v2.23.0 (K5 fix): recompute adherence po add_meal (jak każda ścieżka UI)
+    private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator
 ) {
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
@@ -176,12 +178,15 @@ class AiToolHandler @Inject constructor(
         val product = products.firstOrNull { it.name.equals(name, ignoreCase = true) }
             ?: products.firstOrNull { it.name.contains(name, ignoreCase = true) }
             ?: return toolErr("Nie znaleziono produktu '$name' w bazie produktów")
+        val dateMs = parseDateOrNow(input)
         dietRepo.addMeal(
             pl.filebit.gymtracker.data.entity.MealEntry(
-                dateMs = parseDateOrNow(input), mealType = mealType,
+                dateMs = dateMs, mealType = mealType,
                 productId = product.id, grams = grams
             )
         )
+        // v2.23.0 (K5 fix): przelicz adherence dnia — inaczej dziennik się zmienia, a wynik nie.
+        runCatching { adherenceCalc.computeForDate(dateMs) }
         diag.info(diagCat, "AiToolHandler", "ai_add_meal",
             "AI dodał ${grams.toInt()}g ${product.name} do ${mealType.name}", success = true)
         return toolOk("Dodałem ${grams.toInt()} g ${product.name} do posiłku ${mealType.name}.")

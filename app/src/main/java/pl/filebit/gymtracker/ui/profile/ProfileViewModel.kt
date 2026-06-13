@@ -69,8 +69,12 @@ class ProfileViewModel @Inject constructor(
             }
             // v2.13.0 — sync auto-raport tygodniowy
             if (before.aiAutoGenerateWeeklyReports != profile.aiAutoGenerateWeeklyReports) {
-                if (profile.aiAutoGenerateWeeklyReports) weeklyReportScheduler.schedulePeriodic()
-                else weeklyReportScheduler.cancel()
+                if (profile.aiAutoGenerateWeeklyReports) {
+                    // v2.23.0 (K7): cancel→schedule = świeży enqueue, harmonogram wyrównany
+                    // do najbliższego poniedziałku (KEEP w schedulerze nie ruszyłby starego).
+                    weeklyReportScheduler.cancel()
+                    weeklyReportScheduler.schedulePeriodic()
+                } else weeklyReportScheduler.cancel()
             }
             onDone()
         }

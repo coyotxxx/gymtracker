@@ -830,7 +830,18 @@ class HomeViewModel @Inject constructor(
      * — robisz dziś to co miało być jutro/za 2 dni.
      */
     fun startNextPlannedToday(onCoach: () -> Unit) {
-        val next = state.value.nextPlannedDay ?: return
+        val s = state.value
+        // v2.23.0 (K2 fix): jest aktywny niedokończony trening → wznów, NIE dokładaj setów
+        // (startOrResume zwróciłby istniejący, a pętla zdublowałaby serie).
+        if (s.activeWorkout != null) { onCoach(); return }
+        // v2.23.0 (K2 fix): gdy DZIŚ jest dniem planu, nextPlannedDay==null (liczone tylko
+        // gdy todaysPlan==null) → wcześniej CTA był cichym no-op. Startuj dzisiejszy plan.
+        s.todaysPlan?.let { plan ->
+            val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
+            startWorkoutFromPlanForDay(plan.id, isoDay, onCoach)
+            return
+        }
+        val next = s.nextPlannedDay ?: return
         viewModelScope.launch {
             val active = workoutRepo.startOrResume(fromPlanId = next.planId, fromDayOfWeek = next.dayOfWeek)
             val planExercises = planRepo.getPlanExercisesForDay(next.planId, next.dayOfWeek)

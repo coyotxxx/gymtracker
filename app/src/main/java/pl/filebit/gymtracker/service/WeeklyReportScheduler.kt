@@ -1,7 +1,9 @@
 package pl.filebit.gymtracker.service
 
 import android.content.Context
+import androidx.work.Constraints
 import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -24,10 +26,19 @@ class WeeklyReportScheduler @Inject constructor(
     fun schedulePeriodic() {
         val request = PeriodicWorkRequestBuilder<WeeklyReportWorker>(7, TimeUnit.DAYS)
             .setInitialDelay(millisUntilNextMondayMorning(), TimeUnit.MILLISECONDS)
+            // v2.23.0 (K7): wymagaj sieci — raport potrzebuje AI; bez tego poniedziałkowy
+            // brak internetu = Result.success() bez raportu i tydzień przepada.
+            .setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
             .build()
+        // v2.23.0 (K7 fix): KEEP, NIE UPDATE. WorkerUpdater (work-runtime 2.10) przy UPDATE
+        // zachowuje lastEnqueueTime+periodCount starego speca i dolicza NOWY initialDelay →
+        // przy wołaniu rescheduleAll() na każdym starcie apki harmonogram dryfował z poniedziałku
+        // i po pierwszym biegu kotwiczył się na złym dniu. KEEP nie rusza już zaplanowanego workera.
+        // Świeży delay (ponowne wyrównanie do poniedziałku) dajemy przez cancel→schedule w
+        // ProfileViewModel przy włączeniu flagi.
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(
             WeeklyReportWorker.UNIQUE_WORK_NAME,
-            ExistingPeriodicWorkPolicy.UPDATE,
+            ExistingPeriodicWorkPolicy.KEEP,
             request
         )
     }
