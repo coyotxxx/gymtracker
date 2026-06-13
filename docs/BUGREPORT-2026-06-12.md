@@ -25,7 +25,10 @@ Testy repro (K1/K3/K5) uruchomione lokalnie i USUNIĘTE po weryfikacji (failing 
 - **Migracje 67→73: zweryfikowane SQL vs schematy JSON — czyste.** Zero ryzyka crashu po update, zero utraty danych. Hilt+nullable-default DAO poprawne. Defaulty Kotlin↔DB spójne (brak defaultValue w schematach → Room nie porównuje).
 - Lint: 1 błąd pre-existing (`BarcodeScannerScreen.kt:277` UnsafeOptInUsageError, sprzed sesji).
 
-## 🔴 KRYTYCZNE (do v2.23.0)
+## ✅ NAPRAWIONE w v2.23.0 (2026-06-13) — wszystkie K1-K7
+Każdy fix poprzedzony weryfikacją (test repro/dowód) i pokryty testem regresji (`BugfixRegressionTest` K1/K3/K5 — były czerwone przed fixem, zielone po). Szczegóły fixów w commicie v2.23.0 / releases/tag/v2.23.0. **M1-M8 (średnie) → v2.24.0.**
+
+## 🔴 KRYTYCZNE (NAPRAWIONE v2.23.0)
 
 ### K1. MissedWorkout: false-positive dla świeżego planu
 `DeloadService.kt:165-190` (`checkMissedWorkouts`) — okno 7 dni nie jest przycięte do `TrainingPlan.createdAt` (pole istnieje, nieużywane) ani do daty aktywacji. Świeży plan Pn/Śr/Pt utworzony w sobotę → natychmiast FIRM „Opuściłeś 3 z 3" + notyfikacja. Dodatkowo ignoruje `WeeklyPlanOverride` (przesunięcia i świadome „Pomiń" liczą się jako missed — apka karze za użycie własnej funkcji; Home używa `getEffectiveScheduleForCurrentWeek()`).
