@@ -104,6 +104,8 @@ fun HomeScreen(
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
+    // v2.34.0 (U4b): zunifikowany werdykt coacha (na razie ADDITYWNIE — nad starymi kartami).
+    val coachVerdict by vm.coachVerdict.collectAsStateWithLifecycle()
     var showPostponeDialog by remember { mutableStateOf(false) }
     var showWeekPlanDialog by remember { mutableStateOf(false) }
     var showDeloadExplain by remember {
@@ -126,6 +128,30 @@ fun HomeScreen(
                     isActive = state.activeWorkout != null,
                     activePlanName = state.activePlanName.ifBlank { "Aktywny trening" }
                 )
+            }
+
+            // v2.34.0 (U4b krok 2): JEDNA karta coacha (zunifikowany werdykt trening+dieta).
+            // Na razie ADDITYWNIE nad starymi kartami — po weryfikacji wizualnej usuniemy stare (krok 3).
+            coachVerdict?.takeIf { !it.isEmpty }?.let { verdict ->
+                item {
+                    CoachCard(verdict = verdict) { _, actionType ->
+                        when (actionType) {
+                            pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_DELOAD ->
+                                vm.applyDeload(pl.filebit.gymtracker.util.DeloadSeverity.MED) { r ->
+                                    scope.launch { snackbar.showSnackbar("Deload: ${r.updatedSets} setów × ${(r.factor * 100).toInt()}%") }
+                                }
+                            pl.filebit.gymtracker.data.coach.CoachActionType.START_WORKOUT,
+                            pl.filebit.gymtracker.data.coach.CoachActionType.RETURN_LIGHT -> onStartCoachWorkout()
+                            pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_REFEED,
+                            pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_KCAL_ADJUST,
+                            pl.filebit.gymtracker.data.coach.CoachActionType.SIMPLIFY_PLAN,
+                            pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_DIET -> onOpenDiet()
+                            pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_TRAINING,
+                            pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_PERIODIZATION -> onSelectPlanTab()
+                            else -> scope.launch { snackbar.showSnackbar("Otwórz AI Trener, by porozmawiać o tym") }
+                        }
+                    }
+                }
             }
 
             // v1.15.0: karta "AI TRENER PROPONUJE" — gdy są pending decisions.

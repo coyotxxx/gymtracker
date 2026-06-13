@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
@@ -122,7 +123,10 @@ class HomeViewModel @Inject constructor(
     private val homeAlertNotifier: pl.filebit.gymtracker.service.HomeAlertNotifier,  // v1.24.0
     private val goalAchievementService: pl.filebit.gymtracker.data.repository.GoalAchievementService,  // v1.24.26
     private val goalRepo: pl.filebit.gymtracker.data.repository.GoalRepository,  // v1.24.26
-    private val dietProfileRepo: pl.filebit.gymtracker.data.repository.UserDietProfileRepository  // v1.24.26
+    private val dietProfileRepo: pl.filebit.gymtracker.data.repository.UserDietProfileRepository,  // v1.24.26
+    // v2.34.0 (U4b): zunifikowany werdykt coacha. nullable-default — Hilt wstrzykuje realny,
+    // ViewModelKit (testy) konstruuje bez niego.
+    private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator? = null
 ) : ViewModel() {
 
     init {
@@ -138,6 +142,21 @@ class HomeViewModel @Inject constructor(
     // Trigger do wymuszania rebuild state po akcjach deload (Apply/Dismiss/Restore/Cancel).
     // Bez tego SharedPrefs się zmienia ale combine() nie wie o tym — kafel zostaje na ekranie.
     private val deloadRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
+
+    // v2.34.0 (U4b krok 2): zunifikowany werdykt coacha (trening+dieta+recovery+ACWR...).
+    // Przeliczany przy każdym odświeżeniu (te same triggery co deload). Deklarowany PO
+    // `deloadRefresh` (kolejność inicjalizacji — collector odwołuje się do niego).
+    private val _coachVerdict =
+        kotlinx.coroutines.flow.MutableStateFlow<pl.filebit.gymtracker.data.coach.CoachVerdict?>(null)
+    val coachVerdict: StateFlow<pl.filebit.gymtracker.data.coach.CoachVerdict?> = _coachVerdict.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            deloadRefresh.collect {
+                _coachVerdict.value = coachOrchestrator?.let { o -> runCatching { o.evaluate() }.getOrNull() }
+            }
+        }
+    }
 
     // v1.14.0/v1.15.0: combine has typed overloads up to arity 5. Wrapping 4 flows w jedno żeby
     // zostać w typowanym combine (zamiast vararg z Flow<*> i castów).
