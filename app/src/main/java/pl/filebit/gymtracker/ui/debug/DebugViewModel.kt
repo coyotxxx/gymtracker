@@ -303,6 +303,8 @@ class DebugViewModel @Inject constructor(
         val recentWorkouts = recentWorkoutsBlock()
         val activeMeso = activeMesoBlock()
         val diagnostics = diagnosticEventsBlock()
+        val adherence = adherenceLogBlock()
+        val mealConsumptions = mealConsumptionsBlock()
 
         val payload = buildJsonObject {
             put("schema", "gymtracker-debug-v1")
@@ -314,9 +316,80 @@ class DebugViewModel @Inject constructor(
             put("activeMesocycle", activeMeso)
             put("plans", plans)
             put("recentWorkouts", recentWorkouts)
+            // v2.24.0: surowe wiersze diety — żeby widać było realne kcal%/posiłki/SKIPPED,
+            // nie tylko liczbę rekordów. Rozwiązuje „w piątek nie zjadłem kolacji, raport milczy".
+            put("adherenceLog", adherence)
+            put("mealConsumptions", mealConsumptions)
             put("diagnosticEvents", diagnostics)
         }
         return json.encodeToString(JsonObject.serializer(), payload)
+    }
+
+    /**
+     * v2.24.0: ostatnie 30 dni zgodności (adherence_log) — cele vs faktyczne kcal/makro
+     * + czy trening planowany/wykonany. Surowe wiersze, nie tylko licznik.
+     */
+    private suspend fun adherenceLogBlock(): kotlinx.serialization.json.JsonArray {
+        val helper = db.openHelper.readableDatabase
+        return buildJsonArray {
+            runCatching {
+                helper.query(
+                    """
+                    SELECT dateMs, targetKcal, actualKcal, kcalAdherencePct,
+                           targetProteinG, actualProteinG, proteinAdherencePct,
+                           targetCarbsG, actualCarbsG, targetFatG, actualFatG,
+                           mealsLoggedCount, mealsPlannedCount, wasTrainingPlanned, wasTrainingDone
+                    FROM adherence_log ORDER BY dateMs DESC LIMIT 30
+                    """.trimIndent()
+                ).use { c ->
+                    while (c.moveToNext()) {
+                        add(buildJsonObject {
+                            put("dateMs", c.getLong(0))
+                            put("date", java.text.SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date(c.getLong(0))))
+                            put("targetKcal", c.getInt(1))
+                            put("actualKcal", c.getInt(2))
+                            put("kcalPct", c.getInt(3))
+                            put("targetProteinG", c.getInt(4))
+                            put("actualProteinG", c.getInt(5))
+                            put("proteinPct", c.getInt(6))
+                            put("targetCarbsG", c.getInt(7))
+                            put("actualCarbsG", c.getInt(8))
+                            put("targetFatG", c.getInt(9))
+                            put("actualFatG", c.getInt(10))
+                            put("mealsLogged", c.getInt(11))
+                            put("mealsPlanned", c.getInt(12))
+                            put("trainingPlanned", c.getInt(13) != 0)
+                            put("trainingDone", c.getInt(14) != 0)
+                        })
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * v2.24.0: statusy konsumpcji posiłków (meal_consumptions) — KTÓRE posiłki
+     * user oznaczył CONSUMED/SKIPPED/PLANNED i kiedy. Tu widać pominiętą kolację.
+     */
+    private suspend fun mealConsumptionsBlock(): kotlinx.serialization.json.JsonArray {
+        val helper = db.openHelper.readableDatabase
+        return buildJsonArray {
+            runCatching {
+                helper.query(
+                    "SELECT dateMs, mealType, status, notedAt FROM meal_consumptions ORDER BY dateMs DESC, mealType LIMIT 200"
+                ).use { c ->
+                    while (c.moveToNext()) {
+                        add(buildJsonObject {
+                            put("dateMs", c.getLong(0))
+                            put("date", java.text.SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date(c.getLong(0))))
+                            put("mealType", c.getString(1) ?: "?")
+                            put("status", c.getString(2) ?: "?")
+                            put("notedAt", c.getLong(3))
+                        })
+                    }
+                }
+            }
+        }
     }
 
     /** v2.20.0: ostatnie zdarzenia diagnostyczne — co apka robiła/decydowała. */

@@ -3,6 +3,8 @@ package pl.filebit.gymtracker.data.repository
 import kotlinx.coroutines.flow.first
 import pl.filebit.gymtracker.data.db.dao.AdherenceLogDao
 import pl.filebit.gymtracker.data.entity.AdherenceLog
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
+import pl.filebit.gymtracker.data.entity.DiagnosticLevel
 import pl.filebit.gymtracker.util.computeDailyGoal
 import java.util.Calendar
 import javax.inject.Inject
@@ -26,7 +28,9 @@ class AdherenceCalculator @Inject constructor(
     private val trainingDietBridge: TrainingDietBridge,
     private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
     private val dao: AdherenceLogDao,
-    private val consumptionRepo: MealConsumptionRepository
+    private val consumptionRepo: MealConsumptionRepository,
+    // v2.24.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: DiagnosticLogger? = null
 ) {
 
     /** Policz adherence dla podanego dnia + zapisz do AdherenceLog. */
@@ -83,6 +87,11 @@ class AdherenceCalculator @Inject constructor(
             loggedMealTypes.add(m.mealType)
         }
 
+        // v2.24.0: posiłki świadomie pominięte przez usera — to one „znikały" z raportu.
+        val skippedTypes = consumptions
+            .filter { it.status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED }
+            .map { it.mealType.name }
+
         // Trening — z TrainingDaySummary
         val training = trainingDietBridge.getForDate(start)
         val wasTrainingPlanned = (training?.workoutId != null) ||
@@ -111,6 +120,31 @@ class AdherenceCalculator @Inject constructor(
                 wasTrainingPlanned = wasTrainingPlanned,
                 wasTrainingDone = wasTrainingDone
             )
+        )
+
+        // v2.24.0: log wyliczenia — kcal%, posiłki zjedzone/zaplanowane + KTÓRE pominięte.
+        // To jest brakujący ślad dla problemu „w piątek nie zjadłem kolacji a raport milczy".
+        val kcalPct = pct(actualKcal, goal.kcal.toDouble())
+        val skippedNote = if (skippedTypes.isEmpty()) "" else " · pominięte: ${skippedTypes.joinToString(",")}"
+        diag?.event(
+            category = DiagnosticCategory.ADHERENCE,
+            level = if (skippedTypes.isNotEmpty() || kcalPct < 70) DiagnosticLevel.WARN else DiagnosticLevel.INFO,
+            source = "AdherenceCalculator",
+            event = "adherence_computed",
+            message = "Zgodność dnia: kcal $kcalPct% (${actualKcal.roundToInt()}/${goal.kcal}), " +
+                "posiłki ${loggedMealTypes.size}/${config.mealsPerDay}$skippedNote",
+            dataJson = buildString {
+                append("{")
+                append("\"dayStartMs\":$start,")
+                append("\"kcalPct\":$kcalPct,")
+                append("\"actualKcal\":${actualKcal.roundToInt()},\"targetKcal\":${goal.kcal},")
+                append("\"proteinPct\":${pct(actualProtein, goal.proteinG.toDouble())},")
+                append("\"mealsLogged\":${loggedMealTypes.size},\"mealsPlanned\":${config.mealsPerDay},")
+                append("\"skipped\":[${skippedTypes.joinToString(",") { "\"$it\"" }}],")
+                append("\"isTrainingDay\":$isTrainingDay,\"trainingDone\":$wasTrainingDone")
+                append("}")
+            },
+            success = true
         )
     }
 

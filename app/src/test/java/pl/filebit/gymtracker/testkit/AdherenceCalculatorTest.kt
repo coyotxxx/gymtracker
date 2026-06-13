@@ -167,6 +167,54 @@ class AdherenceCalculatorTest : TestHarness() {
         assertEquals("SKIPPED → 0 posiłków", 0, log.mealsLoggedCount)
     }
 
+    // === v2.24.0: instrumentacja — pominięty posiłek MUSI trafić do logu diagnostycznego ===
+
+    @Test
+    fun `pominieta kolacja trafia do diagnostic log (adherence_computed + meal_status)`() = runBlocking {
+        seedProfile()
+        val now = System.currentTimeMillis()
+        val c = chicken()
+        db.mealEntryDao().upsert(MealEntry(
+            dateMs = now, mealType = MealType.DINNER, productId = c, grams = 300.0))
+
+        val diag = pl.filebit.gymtracker.data.repository.DiagnosticLogger(db.diagnosticEventDao())
+        // 1) zmiana statusu na SKIPPED przez repo z loggerem
+        MealConsumptionRepository(db.mealConsumptionDao(), diag)
+            .setStatus(now, MealType.DINNER, MealConsumptionStatus.SKIPPED)
+        // 2) wyliczenie adherence z loggerem
+        val kit = HomeDetectors(db, context)
+        AdherenceCalculator(
+            dietRepo = DietRepository(db.foodProductDao(), db.mealEntryDao(), db.fastingWindowDao(), db.recipeDao()),
+            dietPrefs = DietPreferences(context),
+            profileRepo = UserProfileRepository(db.userProfileDao()),
+            dietProfileRepo = UserDietProfileRepository(UserProfileRepository(db.userProfileDao())),
+            trainingDietBridge = kit.trainingDietBridge,
+            bodyDao = db.bodyMeasurementDao(),
+            dao = db.adherenceLogDao(),
+            consumptionRepo = MealConsumptionRepository(db.mealConsumptionDao()),
+            diag = diag
+        ).computeForDate(now)
+
+        // logger pisze async (Dispatchers.IO) — odpytuj z timeoutem
+        var events = emptyList<pl.filebit.gymtracker.data.entity.DiagnosticEvent>()
+        var waited = 0
+        while (waited < 3000) {
+            events = db.diagnosticEventDao().getRecent(50)
+            if (events.any { it.event == "adherence_computed" } &&
+                events.any { it.event == "meal_status_set" }) break
+            Thread.sleep(50); waited += 50
+        }
+
+        val statusEvent = events.firstOrNull { it.event == "meal_status_set" }
+        val adherenceEvent = events.firstOrNull { it.event == "adherence_computed" }
+        assertTrue("log zmiany statusu posiłku istnieje", statusEvent != null)
+        assertTrue("status DINNER→SKIPPED w logu", statusEvent!!.message.contains("DINNER") && statusEvent.message.contains("SKIPPED"))
+        assertTrue("log wyliczenia adherence istnieje", adherenceEvent != null)
+        assertTrue("adherence_computed zawiera pominiętą kolację (DINNER)",
+            adherenceEvent!!.dataJson?.contains("DINNER") == true)
+        assertEquals("pominięty posiłek = WARN", "WARN", adherenceEvent.level)
+    }
+
     @Test
     fun `reczny wpis bez statusu liczy sie jako zjedzony`() = runBlocking {
         seedProfile()
