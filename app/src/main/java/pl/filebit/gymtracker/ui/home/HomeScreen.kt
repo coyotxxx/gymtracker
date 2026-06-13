@@ -134,7 +134,10 @@ fun HomeScreen(
             // Na razie ADDITYWNIE nad starymi kartami — po weryfikacji wizualnej usuniemy stare (krok 3).
             coachVerdict?.takeIf { !it.isEmpty }?.let { verdict ->
                 item {
-                    CoachCard(verdict = verdict) { _, actionType ->
+                    CoachCard(
+                        verdict = verdict,
+                        onDismiss = { reaction -> vm.dismissCoach(reaction.id) }
+                    ) { _, actionType ->
                         when (actionType) {
                             pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_DELOAD ->
                                 vm.applyDeload(pl.filebit.gymtracker.util.DeloadSeverity.MED) { r ->

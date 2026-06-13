@@ -38,8 +38,11 @@ class CoachOrchestrator @Inject constructor(
     private val diag: DiagnosticLogger? = null
 ) {
 
-    /** Zbiera werdykty domenowe i zwraca JEDNĄ dominującą reakcję + resztę zwiniętą. */
-    suspend fun evaluate(): CoachVerdict {
+    /**
+     * Zbiera werdykty domenowe i zwraca JEDNĄ dominującą reakcję + resztę zwiniętą.
+     * @param dismissedIds reakcje odrzucone przez usera (Karta coacha „X") — pomijane.
+     */
+    suspend fun evaluate(dismissedIds: Set<String> = emptySet()): CoachVerdict {
         val candidates = mutableListOf<CoachReaction>()
 
         // === TRENING (DeloadService.cardState — już zarbitrażowany wewnątrz domeny) ===
@@ -57,8 +60,10 @@ class CoachOrchestrator @Inject constructor(
             candidates += notificationReaction(n)
         }
 
-        val verdict = arbitrateCoach(candidates)
-        logVerdict(verdict, candidates.size)
+        val visible = if (dismissedIds.isEmpty()) candidates
+            else candidates.filterNot { it.id in dismissedIds }
+        val verdict = arbitrateCoach(visible)
+        logVerdict(verdict, visible.size)
         return verdict
     }
 

@@ -126,7 +126,9 @@ class HomeViewModel @Inject constructor(
     private val dietProfileRepo: pl.filebit.gymtracker.data.repository.UserDietProfileRepository,  // v1.24.26
     // v2.34.0 (U4b): zunifikowany werdykt coacha. nullable-default — Hilt wstrzykuje realny,
     // ViewModelKit (testy) konstruuje bez niego.
-    private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator? = null
+    private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator? = null,
+    // v2.34.1: zamknięcie Karty coacha (odrzucone na dziś).
+    private val coachDismissPrefs: pl.filebit.gymtracker.data.coach.CoachDismissPrefs? = null
 ) : ViewModel() {
 
     init {
@@ -153,9 +155,18 @@ class HomeViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             deloadRefresh.collect {
-                _coachVerdict.value = coachOrchestrator?.let { o -> runCatching { o.evaluate() }.getOrNull() }
+                _coachVerdict.value = coachOrchestrator?.let { o ->
+                    val dismissed = coachDismissPrefs?.activeDismissed() ?: emptySet()
+                    runCatching { o.evaluate(dismissed) }.getOrNull()
+                }
             }
         }
+    }
+
+    /** Zamknięcie Karty coacha — ukrywa daną reakcję do końca dnia. */
+    fun dismissCoach(reactionId: String) {
+        coachDismissPrefs?.dismiss(reactionId)
+        deloadRefresh.value = System.currentTimeMillis()  // przelicz werdykt bez odrzuconej
     }
 
     // v1.14.0/v1.15.0: combine has typed overloads up to arity 5. Wrapping 4 flows w jedno żeby
