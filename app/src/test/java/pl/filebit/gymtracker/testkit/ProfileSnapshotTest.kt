@@ -7,19 +7,16 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import pl.filebit.gymtracker.ai.AiPreferences
-import pl.filebit.gymtracker.ai.NotificationCenter
 import pl.filebit.gymtracker.data.backup.DietBackupManager
 import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.repository.DietPreferences
 import pl.filebit.gymtracker.data.repository.PeriodizationPreferences
-import pl.filebit.gymtracker.data.repository.ReadNotificationsPrefs
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.seed.ExerciseSeeder
 import pl.filebit.gymtracker.service.ProactiveAiCheckScheduler
 import pl.filebit.gymtracker.ui.backup.BackupViewModel
 import pl.filebit.gymtracker.ui.goals.GoalsViewModel
-import pl.filebit.gymtracker.ui.notifications.NotificationsViewModel
 import pl.filebit.gymtracker.ui.profile.ProfileViewModel
 
 /**
@@ -74,22 +71,5 @@ class ProfileSnapshotTest : TestHarness() {
         val status = vm.status.first()
         assertTrue("brak komunikatu statusu na starcie (bezczynny)", status == null)
     }
-
-    @Test
-    fun `Notifications empty state - brak powiadomien`() = runBlocking {
-        val kit = ViewModelKit(db, context)
-        val center = NotificationCenter(
-            kit.recoveryScoreCalculator, kit.trainingLoadAnalyzer, kit.phaseAnalyzer,
-            db.workoutDao(), db.bodyMeasurementDao(), db.trainingMesocycleDao())
-        val vm = NotificationsViewModel(center, ReadNotificationsPrefs(context))
-        val items = withTimeout(5_000) { vm.items.first() }
-
-        TraceReport("notifications")
-            .section("CO WIDZI USER")
-            .kv("powiadomienia", items.size.toString())
-            .kv("nieprzeczytane", vm.unreadCount.value.toString())
-            .emit()
-
-        assertTrue("nowy user — brak powiadomień trenera", items.isEmpty())
-    }
+    // v2.36.0 (U4b 3b): test ekranu Powiadomień usunięty wraz z dzwonkiem in-app.
 }

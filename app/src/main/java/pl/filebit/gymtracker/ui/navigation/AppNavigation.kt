@@ -156,9 +156,7 @@ fun AppNavigation(
     val onboardingNavState by workoutShellVm.onboardingState.collectAsStateWithLifecycle()
     val showActiveBar = workoutShellState.hasActive && currentRoute !in workoutRoutes
 
-    // Powiadomienia — counter na dzwonku (v1.8.0, v1.10.2 unread tracking)
-    val notificationsVm: pl.filebit.gymtracker.ui.notifications.NotificationsViewModel = hiltViewModel()
-    val unreadNotificationsCount by notificationsVm.unreadCount.collectAsStateWithLifecycle()
+    // v2.36.0 (U4b 3b): dzwonek in-app usunięty — sygnały pokazuje Karta coacha.
 
     // v1.11.0 Achievement modal — po zakończeniu treningu wyzwala check
     val achievementVm: pl.filebit.gymtracker.ui.achievement.AchievementViewModel = hiltViewModel()
@@ -180,12 +178,7 @@ fun AppNavigation(
                 // Globalny TopBar zawsze 'GymTracker' + dzwonek + AI (jak na 5 tabs).
                 // Każda podstrona zachowuje własny ScreenHeader z back+tytułem PONIŻEJ.
                 AppTopBar(
-                    onOpenAiAssistant = { aiChoiceVisible = true },
-                    onOpenNotifications = {
-                        notificationsVm.reload()
-                        navController.navigate(Screen.Notifications.route)
-                    },
-                    notificationsCount = unreadNotificationsCount
+                    onOpenAiAssistant = { aiChoiceVisible = true }
                 )
             }
         },
@@ -542,39 +535,7 @@ fun AppNavigation(
             composable(Screen.HealthHistory.route) {
                 pl.filebit.gymtracker.ui.health.HealthHistoryScreen(onBack = { navController.popBackStack() })
             }
-            composable(Screen.Notifications.route) {
-                pl.filebit.gymtracker.ui.notifications.NotificationsScreen(
-                    onBack = { navController.popBackStack() },
-                    onAction = { action ->
-                        when (action) {
-                            pl.filebit.gymtracker.ai.NotificationAction.APPLY_DELOAD -> {
-                                navController.popBackStack()
-                                // Po powrocie do HomeScreen — RecoveryCard ma przycisk Zastosuj deload
-                            }
-                            pl.filebit.gymtracker.ai.NotificationAction.AUDIT_PLAN -> {
-                                navController.popBackStack()
-                                navController.navigate(Screen.Plans.route)
-                            }
-                            pl.filebit.gymtracker.ai.NotificationAction.ADD_WEIGHT -> {
-                                navController.popBackStack()
-                                navController.navigate(Screen.Measurements.route)
-                            }
-                            pl.filebit.gymtracker.ai.NotificationAction.SEND_HEALTH_SCREEN -> {
-                                navController.popBackStack()
-                                navController.navigate(Screen.HealthScreenshot.route)
-                            }
-                            pl.filebit.gymtracker.ai.NotificationAction.START_WORKOUT -> {
-                                navController.popBackStack()
-                            }
-                            pl.filebit.gymtracker.ai.NotificationAction.OPEN_PERIODIZATION_PLAN -> {
-                                navController.popBackStack()
-                                navController.navigate(Screen.PeriodizationPlan.route)
-                            }
-                            pl.filebit.gymtracker.ai.NotificationAction.NONE -> { /* no-op */ }
-                        }
-                    }
-                )
-            }
+            // v2.36.0 (U4b 3b): ekran Powiadomień (dzwonek) USUNIĘTY — sygnały pokazuje Karta coacha.
             composable(Screen.Goals.route) {
                 GoalsScreen(onBack = { navController.popBackStack() })
             }
@@ -802,9 +763,7 @@ private fun AppTopBar(
     showBack: Boolean = false,
     onBack: () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
-    onOpenAiAssistant: () -> Unit,
-    onOpenNotifications: () -> Unit = {},
-    notificationsCount: Int = 0
+    onOpenAiAssistant: () -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -843,44 +802,10 @@ private fun AppTopBar(
             maxLines = 1
         )
         Spacer(Modifier.weight(1f))
-        // Custom actions slot (np. delete, share) — przed dzwonkiem
+        // Custom actions slot (np. delete, share)
         actions()
-        // Dzwonek — centrum powiadomień (v1.8.0)
-        Box(
-            modifier = Modifier
-                .size(40.dp)
-                .clip(CircleShape)
-                .clickable(onClick = onOpenNotifications),
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                Icons.Default.Notifications,
-                contentDescription = "Powiadomienia",
-                tint = if (notificationsCount > 0) AccentOrange else DarkOnSurfaceVariant,
-                modifier = Modifier.size(22.dp)
-            )
-            if (notificationsCount > 0) {
-                Box(
-                    modifier = Modifier
-                        .align(Alignment.TopEnd)
-                        .padding(top = 4.dp, end = 4.dp)
-                        .size(if (notificationsCount > 9) 18.dp else 16.dp)
-                        .background(ErrorRed, CircleShape),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = if (notificationsCount > 9) "9+" else "$notificationsCount",
-                        color = Color.White,
-                        fontSize = 10.sp,
-                        lineHeight = 10.sp,
-                        fontWeight = FontWeight.Bold,
-                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                }
-            }
-        }
-        Spacer(Modifier.width(4.dp))
+        // v2.36.0 (U4b krok 3b): dzwonek in-app USUNIĘTY — jego sygnały (recovery/ACWR/faza/
+        // brak wagi) wchłonął CoachOrchestrator i pokazuje Karta coacha (rozwijana). Jeden kanał.
         // AI button — żółte kółko
         Box(
             modifier = Modifier
