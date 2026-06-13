@@ -234,5 +234,40 @@ nie produkuje jego reakcji. **Żadnego sztywnego sklejania diety z treningiem.**
 4. Modułowość jest WBUDOWANA w zasadę „sygnał→reakcja" — nie jest dodatkową warstwą. Przy budowie
    `CoachOrchestrator` NIGDY nie zakłada obecności diety ani treningu; każdy sygnał jest nullable.
 
-## 13. Status
+## 13. Reakcja = ROZMOWA (dialog z coachem, AI działa i pamięta)
+
+Każdy komunikat coacha jest **wejściem do rozmowy**, nie jednokierunkowym alertem. User może
+ODPISAĆ w naturalnym języku; AI rozumie powód, DZIAŁA (zmienia dane) i ZAPAMIĘTUJE wzorzec.
+
+**Przepływ:**
+```
+Reakcja coacha → [Odpowiedz] → czat seedowany KONTEKSTEM reakcji (co/dlaczego/sygnały)
+   → user pisze powód
+   → AI klasyfikuje: STAŁA PREFERENCJA vs JEDNORAZOWA SYTUACJA
+   → AI działa (narzędzie) → wynik WALIDOWANY przez Tier A → [Zastosuj?] → zmiana danych
+   → AI zapisuje naukę (preferencja / log sytuacyjny) → wpływa na przyszłe decyzje
+```
+
+**Przykład (pominięta kolacja, CUT):**
+- „za skomplikowana / za długo" → STAŁA → AI podmienia przepis na prostszy (≤10-15 min) z TYM SAMYM
+  makro (~590 kcal/35g B); `AiMealJsonValidator` (Tier A) pilnuje że makro się zgadza; zapis
+  preferencji „kolacje proste/szybkie" → generator uwzględnia na stałe.
+- „nie było mnie w domu" → JEDNORAZOWA → NIE zmienia planu; zapamiętuje „bywają dni poza domem";
+  następnym razem proponuje szybkie opcje na wynos trafiające w makro.
+
+**Zasady:**
+1. AI zmienia DANE (przepis/plan/preferencja), nigdy kod/zachowanie.
+2. Każdą zmianę makro/kcal/planu od AI WALIDUJE Tier A (walidator/SafetyGuard) — algorytm gwarantuje
+   poprawność, AI dokłada propozycję. Zmiana wchodzi po potwierdzeniu usera ([Zastosuj]).
+3. AI rozróżnia STAŁĄ PREFERENCJĘ (→ zapis do profilu/preferencji, wpływa na przyszłość) od
+   JEDNORAZOWEJ SYTUACJI (→ log sytuacyjny, bez zmiany planu, pamięta że bywa).
+4. Bez klucza AI: reakcja ma akcje przyciskowe (Zastosuj/Odpuść) — dialog jest BONUSEM Tier B,
+   nie warunkiem działania.
+
+**Co jest / co dodać:** JEST czat AI + narzędzia zapisu (add_meal/set_calorie_target/set_diet_goal/
+log_weight) + generowanie przepisów + walidator makro + pamięć preferencji (lubię/nielubię, czas
+gotowania). DODAĆ: (a) seedowanie czatu kontekstem reakcji; (b) narzędzie „podmień przepis posiłku"
+z celem makro (walidowane); (c) zapis rozróżnienia preferencja↔sytuacja. (Część U5 + nowe narzędzie AI.)
+
+## 14. Status
 Projekt gotowy do realizacji — czeka na akceptację Macieja. Po „OK" startujemy U1.
