@@ -248,12 +248,24 @@ Reakcja coacha → [Odpowiedz] → czat seedowany KONTEKSTEM reakcji (co/dlaczeg
    → AI zapisuje naukę (preferencja / log sytuacyjny) → wpływa na przyszłe decyzje
 ```
 
-**Przykład (pominięta kolacja, CUT):**
+**ZASADA OGÓLNA (nie drzewko gotowców):** user pisze DOWOLNY powód naturalnym językiem; AI rozumuje
+nad pełnym kontekstem i wybiera właściwą reakcję dla TEJ sytuacji. „Możliwość reakcji" = szerokość
+walidowanego zestawu narzędzi. Poniższe przykłady są ILUSTRACJĄ, nie listą obsługiwanych przypadków.
+
+**Przykłady (pominięta kolacja, CUT):**
 - „za skomplikowana / za długo" → STAŁA → AI podmienia przepis na prostszy (≤10-15 min) z TYM SAMYM
   makro (~590 kcal/35g B); `AiMealJsonValidator` (Tier A) pilnuje że makro się zgadza; zapis
   preferencji „kolacje proste/szybkie" → generator uwzględnia na stałe.
 - „nie było mnie w domu" → JEDNORAZOWA → NIE zmienia planu; zapamiętuje „bywają dni poza domem";
   następnym razem proponuje szybkie opcje na wynos trafiające w makro.
+
+**Docelowa SPRAWCZA MOC AI (zestaw narzędzi — co AI ma umieć ZROBIĆ, każde walidowane Tier A):**
+- Dieta: podmień/wygeneruj przepis posiłku (cel makro), zmień porę/okno posiłku, zmień kcal/cel diety,
+  dodaj/usuń posiłek, uprość plan, dorzuć szybką opcję/na wynos, oznacz posiłek/dzień sytuacyjnie.
+- Trening: podmień ćwiczenie (kontuzja/sprzęt), przełóż trening, zastosuj/odpuść deload, zmień dzień planu.
+- Meta/pamięć: zaktualizuj preferencję (czas, złożoność, nielubiane), zaloguj ograniczenie (podróże,
+  choroba, zapracowanie), wyjaśnij/edukuj.
+- Gdy żadna zmiana danych nie pasuje → potwierdź + zapamiętaj + doradź (bez udawania że coś zrobił).
 
 **Zasady:**
 1. AI zmienia DANE (przepis/plan/preferencja), nigdy kod/zachowanie.
