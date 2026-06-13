@@ -41,6 +41,8 @@ class DailyReviewWorker @AssistedInject constructor(
     private val consumptionRepo: MealConsumptionRepository,
     private val trainingDietBridge: TrainingDietBridge,
     private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao,
+    // v2.33.0 (U4a): zunifikowany werdykt coacha (trening+dieta) w jednym punkcie.
+    private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator,
     private val diag: DiagnosticLogger
 ) : CoroutineWorker(appContext, params) {
 
@@ -68,26 +70,33 @@ class DailyReviewWorker @AssistedInject constructor(
         }.getOrDefault(false)
         val trainingGap = trainingPlanned && !didWorkoutToday
 
-        // Zbuduj listę braków.
+        // === ZUNIFIKOWANY WERDYKT COACHA (U4a) — jeden głos: trening + dieta razem ===
+        // Orchestrator spina istniejących doradców (deload/dieta) w JEDNĄ priorytetyzowaną
+        // reakcję. Bilans = pełny obraz dnia: werdykt coacha NA GÓRZE + braki systematyczności.
+        val verdict = runCatching { coachOrchestrator.evaluate() }.getOrNull()
+        val coachLine = verdict?.primary?.let { "💪 ${it.title}: ${it.message}" }
+
+        // Zbuduj listę braków (systematyczność).
         val parts = mutableListOf<String>()
         if (trainingGap) parts.add("🏋 Zaplanowany trening — jeszcze nie zrobiony.")
         if (mealsPerDay > 0 && unmarkedMeals > 0) {
             parts.add("🍽 $unmarkedMeals z $mealsPerDay posiłków nieoznaczonych — daj znać, czy jadłeś.")
         }
 
-        if (parts.isEmpty()) {
-            // Czysty dzień — nie zawracamy głowy, ale zostawiamy ślad że check się odbył.
+        if (parts.isEmpty() && coachLine == null) {
+            // Czysty dzień, coach nie ma uwag — nie zawracamy głowy, zostawiamy ślad.
             diag.info(DiagnosticCategory.REPORT, "DailyReviewWorker", "daily_review_clean",
-                "Bilans dnia: brak luk (posiłki $markedMeals/$mealsPerDay, trening ${if (trainingPlanned) "zrobiony" else "niezaplanowany"})",
+                "Bilans dnia: brak luk i brak werdyktu coacha (posiłki $markedMeals/$mealsPerDay, trening ${if (trainingPlanned) "zrobiony" else "niezaplanowany"})",
                 success = true)
             return Result.success()
         }
 
-        val body = parts.joinToString("\n")
+        // Werdykt coacha na górze (jeśli jest), potem braki.
+        val body = listOfNotNull(coachLine).plus(parts).joinToString("\n")
         sendNotification(applicationContext, body)
         diag.info(DiagnosticCategory.REPORT, "DailyReviewWorker", "daily_review_fired",
-            "Bilans dnia — wykryto braki: ${parts.size}",
-            dataJson = """{"trainingGap":$trainingGap,"unmarkedMeals":$unmarkedMeals,"mealsPerDay":$mealsPerDay,"markedMeals":$markedMeals}""",
+            "Bilans dnia — werdykt coacha: ${verdict?.primary?.id ?: "brak"}, braki: ${parts.size}",
+            dataJson = """{"coachPrimary":${verdict?.primary?.let { "\"${it.id}\"" } ?: "null"},"trainingGap":$trainingGap,"unmarkedMeals":$unmarkedMeals,"mealsPerDay":$mealsPerDay,"markedMeals":$markedMeals}""",
             success = true)
         return Result.success()
     }
