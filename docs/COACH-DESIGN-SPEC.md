@@ -188,5 +188,29 @@ optymalizowały DOKŁADNIE ten sam cel.
 
 ---
 
-## 11. Status
+## 11. Realne przykłady (jak to działa w życiu) — kontekst CUT, ~1986 kcal, 187g B, 3× bieżnia
+
+**1. Waga stoi tydzień, dieta trzymana, ale kroki spadły 9000→6000.**
+Bez AI: arbiter (CUT+stagnacja+dobra dieta+NEAT drop) → HOLD kcal, „to kroki, nie metabolizm — wróć do 9000".
+Z AI: „spadek = deszczowy tydzień? dorzuć spacer, sprawdzimy za 5 dni". Dziś: ryzyko osobnego „utnij 150 kcal".
+
+**2. Pominięta kolacja, dzień 1400/1986 kcal, białko 120/187.**
+Bez AI: CUT→priorytet białko, „brakuje 67g B — skyr+szejk albo odpuść świadomie". Z AI: widzi 3. raz w tygodniu →
+„przesuńmy kolację wcześniej/mniejszą". Dziś: karta nie zna celu/białka/wzorca.
+
+**3. Konflikt: RPE 9.0 + waga stoi.** Dziś: „DELOAD" obok „utnij kcal" (sprzeczne). Bez AI: CUT+wysokie RPE=deficyt
+→ JEDNA reakcja „refeed 1-2 dni, nie tnij, nie zmieniaj wag"; korekta kcal wstrzymana. Z AI: „+ jedna noc dłużej śpij".
+
+**4. Ból kolana 2× + stagnacja 3 ćwiczeń.** Bez AI: drabina ZDROWIE>optymalizacja → „odpuść nogi 5-7 dni/fizjo",
+deload/stagnacja zawieszone. Z AI: konkretne zamienniki bez obciążania kolana.
+
+**5. Sen spada 5 dni + waga stoi (różnica bez AI / z AI).** Bez AI: zła regeneracja → HOLD, „popraw sen". Z AI:
+sekwencja — sen spada tylko w noce po nogach → „to DOMS nie bezsenność; przesuń nogi, dieta może iść, −100".
+
+**Cel = utrzymanie:** waga +0.5kg/tydz → „−100 kcal" (korytarz w obie strony). Cel steruje funkcją celu coacha.
+
+Wspólny mianownik: zamiast kilku kart które się nie znają i przeczą — JEDEN głos coacha (zna cel, łączy domeny,
+priorytetyzuje). Algorytm = poprawnie i bezpiecznie zawsze; AI = niuans + ludzkie wyjaśnienie.
+
+## 12. Status
 Projekt gotowy do realizacji — czeka na akceptację Macieja. Po „OK" startujemy U1.
