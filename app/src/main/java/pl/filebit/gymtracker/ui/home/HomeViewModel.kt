@@ -456,7 +456,9 @@ class HomeViewModel @Inject constructor(
             val currentWeight = profile.bodyweightKg ?: 75.0
             profileRepo.save(
                 profile.copy(
-                    weightGoalType = pl.filebit.gymtracker.data.entity.WeightGoalType.MAINTAIN,
+                    // v2.32.0 (U1): cel kanoniczny = goalType; weightGoalType znormalizuje repo.
+                    // Koniec martwego `weightGoalType = ...` (był nadpisywany normalizacją).
+                    goalType = pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN,
                     targetWeightKg = currentWeight
                 )
             )
@@ -480,7 +482,8 @@ class HomeViewModel @Inject constructor(
             val profile = profileRepo.get()
             profileRepo.save(
                 profile.copy(
-                    weightGoalType = pl.filebit.gymtracker.data.entity.WeightGoalType.BULK,
+                    // v2.32.0 (U1): cel kanoniczny = goalType; weightGoalType znormalizuje repo.
+                    goalType = pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN,
                     targetWeightKg = newTargetKg
                 )
             )

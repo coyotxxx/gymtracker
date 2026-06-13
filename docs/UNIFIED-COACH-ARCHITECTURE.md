@@ -158,7 +158,7 @@ Cel/efekty: `GoalAchievementService`, `TrendAnalyzer`.
 
 | Etap | Cel | Co robimy | Ryzyko |
 |------|-----|-----------|--------|
-| **U1** | Jeden CEL | Zunifikować WeightGoalType↔DietGoalType (jedno źródło + mapowanie), audyt ~15 gałęzi | niskie (refaktor) |
+| **U1** ✅ v2.32.0 | Jeden CEL | **Unifikacja danych BYŁA ZROBIONA już w v1.28.1** (`goalType` kanoniczny, `weightGoalType` auto-normalizowany w `UserProfileRepository.save`, mapy `toDietGoal/toWeightGoal`, `GoalUnificationTest`). U1 = **usunięcie martwego kodu + duplikacji**: martwe `weightGoalType = ...` w Onboarding/HomeViewModel (nadpisywane normalizacją) → zamienione na kanoniczny `goalType`; zduplikowany inline `when(weightGoalType){...}` → istniejąca `toDietGoal()`; usunięty martwy import. Zachowanie identyczne, testy zielone. **FOLLOW-UP (osobny krok):** backup TRENINGOWY trzyma tylko 4-wart. `weightGoalType` → przy restore cel 8-wart. (RECOMP/STRENGTH) degraduje do MAINTAIN; backup DIETETYCZNY trzyma pełny `goalType`. Do naprawy w kroku backupu (zmiana formatu + wersja). | wykonane |
 | **U2** | Jedno źródło sygnałów | `CoachSignals` = MasterAiContext + brakujące (volatility, braki dnia, ACWR pełne) | niskie |
 | **U3** | Orchestrator szkielet | `CoachOrchestrator` zbiera sygnały, NA RAZIE tylko deduplikuje + priorytetyzuje istniejące reakcje (deload×4 → 1) | średnie |
 | **U4** | Jeden kanał reakcji | `CoachReaction` model; NotificationCenter + HomeCards + workery emitują przez niego; jeden renderer + jeden notifier | średnie |

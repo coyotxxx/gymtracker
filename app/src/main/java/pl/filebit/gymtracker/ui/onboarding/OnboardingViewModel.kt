@@ -11,7 +11,6 @@ import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.ai.AiPreferences
 import pl.filebit.gymtracker.data.entity.ActivityLevel
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
-import pl.filebit.gymtracker.data.entity.DietGoalType
 import pl.filebit.gymtracker.data.entity.DietPreference
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.Gender
@@ -19,6 +18,7 @@ import pl.filebit.gymtracker.data.entity.Goal
 import pl.filebit.gymtracker.data.entity.GoalType
 import pl.filebit.gymtracker.data.entity.GoalUnit
 import pl.filebit.gymtracker.data.entity.TrainingGoal
+import pl.filebit.gymtracker.data.entity.toDietGoal
 import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.repository.BodyRepository
@@ -180,7 +180,10 @@ class OnboardingViewModel @Inject constructor(
                     daysPerWeek = s.daysPerWeek,
                     sessionMinutes = s.sessionMinutes,
                     bodyweightKg = s.bodyweightKg,
-                    weightGoalType = s.weightGoalType,
+                    // v2.32.0 (U1): cel = `goalType` (kanoniczny). `weightGoalType` znormalizuje
+                    // repo.save(). Ustawiamy tu, by cel był pewny nawet gdy zapis diety padnie
+                    // (poniżej w runCatching). Koniec martwego `weightGoalType = ...`.
+                    goalType = s.weightGoalType.toDietGoal(),
                     targetWeightKg = s.targetWeightKg,
                     availableEquipmentCsv = s.availableEquipmentCsv,
                     // v1.26.5: mapuj ogólny Equipment (5 typów onboardingu) na
@@ -210,12 +213,8 @@ class OnboardingViewModel @Inject constructor(
             // UserDietProfile — zapisuj tylko jeśli user wypełnił sekcję dietetyczną
             // Wiek/wzrost ZAWSZE zapisujemy (są niezbędne do TDEE)
             val existingDiet = runCatching { dietProfileRepo.get() }.getOrNull()
-            val dietGoalType = when (s.weightGoalType) {
-                WeightGoalType.CUT -> DietGoalType.FAT_LOSS
-                WeightGoalType.BULK -> DietGoalType.MUSCLE_GAIN
-                WeightGoalType.MAINTAIN -> DietGoalType.MAINTAIN
-                WeightGoalType.NONE -> DietGoalType.MAINTAIN
-            }
+            // v2.32.0 (U1): używamy istniejącej funkcji mapującej zamiast duplikować when.
+            val dietGoalType = s.weightGoalType.toDietGoal()
             val newDietProfile = (existingDiet ?: UserDietProfile()).copy(
                 ageYears = s.ageYears?.coerceIn(13, 90) ?: 30,
                 heightCm = s.heightCm?.coerceIn(140, 220) ?: 175,
