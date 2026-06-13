@@ -240,6 +240,17 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
                     setShowBadge(true)
                 }
             )
+            // v2.31.0 — Bilans dnia (wieczorny check braków: posiłki/trening)
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    pl.filebit.gymtracker.service.DailyReviewWorker.CHANNEL_ID,
+                    "Bilans dnia",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "Wieczorne podsumowanie: nieoznaczone posiłki, niezrobiony zaplanowany trening."
+                    setShowBadge(true)
+                }
+            )
         }
     }
 }

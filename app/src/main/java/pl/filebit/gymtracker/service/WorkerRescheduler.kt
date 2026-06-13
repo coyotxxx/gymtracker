@@ -35,6 +35,7 @@ class WorkerRescheduler @Inject constructor(
     private val proactiveAiScheduler: ProactiveAiCheckScheduler,
     private val dietAdjustmentScheduler: DietAutoAdjustmentScheduler,
     private val weeklyReportScheduler: WeeklyReportScheduler,
+    private val dailyReviewScheduler: DailyReviewScheduler,
     // v2.26.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
     private val diag: DiagnosticLogger? = null
 ) {
@@ -58,6 +59,12 @@ class WorkerRescheduler @Inject constructor(
             weeklyReportScheduler.schedulePeriodic()
         } else {
             weeklyReportScheduler.cancel()
+        }
+        // v2.31.0 — Bilans dnia (pod tym samym przełącznikiem co proaktywne checki)
+        if (profile.aiProactiveChecksEnabled) {
+            dailyReviewScheduler.schedulePeriodic()
+        } else {
+            dailyReviewScheduler.cancel()
         }
         diag?.info(DiagnosticCategory.WORKER, "WorkerRescheduler", "reschedule_all",
             "Przeplanowano workery (proactiveAI=${profile.aiProactiveChecksEnabled}, " +
