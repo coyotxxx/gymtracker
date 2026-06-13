@@ -27,16 +27,16 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | Hydration log | `HydrationLog*` | ⬜ |
 | Reakcja dietetyka AI na pominięte posiłki | (do zaprojektowania) | ⬜ |
 
-## OBSZAR B — TRENING / DETEKTORY / PERIODYZACJA ⬜
+## OBSZAR B — TRENING / DETEKTORY / PERIODYZACJA 🔶
 | Punkt | Plik | Status |
 |-------|------|--------|
-| Wykrycie deload | `DeloadDetector` | ⬜ |
-| Apply / restore deload | `DeloadService.apply/restore` | ⬜ |
-| Missed workouts | `DeloadService.checkMissedWorkouts` | ⬜ |
-| Orchestrator periodyzacji | `PeriodizationOrchestrator` | ⬜ |
+| Apply / blocked / restore / repair / cancel / dismiss deload | `DeloadService` | ✅ v2.25.0 |
+| Apply / blocked / restore / cancel / dismiss zwiększenia obciążenia | `LoadIncreaseService` | ✅ v2.25.0 |
+| Orchestrator: utworzenie mezo, week_advanced, transition, end-early, extend | `PeriodizationOrchestrator` | ✅ v2.25.0 |
+| EventDetector: PR / gap / deload / injury / plan start-end (+ błąd) | `EventDetectorService` | ✅ v2.25.0 |
 | Stagnation / ReturnAfterBreak / ActiveInjury | analyzery | 🔶 (część przez ProactiveAiCheckWorker) |
 | Widoczność kart Home | `HomeCardsResolver` | ⬜ |
-| EventDetectorService (używa Log.d, nie DiagnosticLogger) | `EventDetectorService` | ⬜ |
+| Analyzery (TrainingLoad/Readiness/MuscleRecovery/RecoveryScore) werdykty | ai/*Analyzer | ⬜ |
 
 ## OBSZAR C — WORKERY / NOTYFIKACJE / SCHEDULERY 🔶
 | Punkt | Plik | Status |
@@ -77,4 +77,4 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | mealConsumptions (statusy posiłków) | ✅ v2.24.0 |
 
 ---
-**Postęp:** A: 2/11 · B: 0/7 · C: 2/8 · D: 1.5/5 · E: 0/5. Aktualizować po każdym batchu.
+**Postęp:** A: 2/11 · B: 4/7 · C: 2/8 · D: 1.5/5 · E: 0/5. Aktualizować po każdym batchu.

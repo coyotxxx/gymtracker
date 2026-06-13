@@ -28,8 +28,13 @@ class EventDetectorService @Inject constructor(
     private val exerciseDao: ExerciseDao,
     private val eventDao: TrainingEventDao,
     private val statsRepository: pl.filebit.gymtracker.data.repository.StatsRepository,
-    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService,
+    // v2.25.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) {
+    private fun diagEvent(code: String, msg: String, data: String? = null) =
+        diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DETECTOR,
+            "EventDetectorService", code, msg, dataJson = data, success = true)
 
     /**
      * Wywołane po finalizacji treningu (finish). Wykrywa PR-y + powrót po przerwie.
@@ -71,6 +76,8 @@ class EventDetectorService @Inject constructor(
         if (newPrs.isNotEmpty()) {
             eventDao.insertAll(newPrs)
             Log.d("EventDetector", "Wykryto ${newPrs.size} nowych PR-ów dla workoutu $workoutId")
+            diagEvent("pr_detected", "Wykryto ${newPrs.size} nowych PR-ów (trening #$workoutId)",
+                """{"workoutId":$workoutId,"count":${newPrs.size}}""")
         }
 
         // Gap_resumed
@@ -78,6 +85,8 @@ class EventDetectorService @Inject constructor(
         if (gapEvents.isNotEmpty()) {
             eventDao.insertAll(gapEvents)
             Log.d("EventDetector", "Wykryto GAP_RESUMED dla workoutu $workoutId")
+            diagEvent("gap_resumed", "Wykryto powrót po przerwie (trening #$workoutId)",
+                """{"workoutId":$workoutId}""")
         }
 
         // v1.11.65: DELOAD detection - ocenia OSTATNI ZAKOŃCZONY tydzień
@@ -101,7 +110,12 @@ class EventDetectorService @Inject constructor(
             if (deloadEvents.isNotEmpty() && !alreadyHasLastWeek) {
                 eventDao.insertAll(deloadEvents)
                 Log.d("EventDetector", "Wykryto DELOAD_DETECTED dla ostatniego zakończonego tygodnia")
+                diagEvent("deload_detected", "Wykryto naturalny deload w ostatnim zakończonym tygodniu",
+                    """{"weekStartMs":$lastWeekStart}""")
             }
+        }.onFailure {
+            diag?.error(pl.filebit.gymtracker.data.entity.DiagnosticCategory.ERROR,
+                "EventDetectorService", "deload_detect_failed", "Błąd wykrywania deloadu z wolumenu", it)
         }
     }
 
@@ -132,6 +146,7 @@ class EventDetectorService @Inject constructor(
             )
         )
         Log.d("EventDetector", "PLAN_START event dla planId=$planId ($planName)")
+        diagEvent("plan_start", "Aktywowano plan: $planName", """{"planId":$planId}""")
     }
 
     /**
@@ -148,6 +163,7 @@ class EventDetectorService @Inject constructor(
             )
         )
         Log.d("EventDetector", "PLAN_END event dla planId=$planId ($planName)")
+        diagEvent("plan_end", "Zakończono plan: $planName", """{"planId":$planId}""")
     }
 
     /**
@@ -165,6 +181,10 @@ class EventDetectorService @Inject constructor(
         if (events.isNotEmpty()) {
             eventDao.insertAll(events)
             Log.d("EventDetector", "Wykryto INJURY dla workoutu $workoutId (${w.painArea})")
+            diag?.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DETECTOR,
+                "EventDetectorService", "injury_detected",
+                "Wykryto kontuzję po treningu #$workoutId (${w.painArea})",
+                dataJson = """{"workoutId":$workoutId,"painArea":"${w.painArea}"}""")
         }
     }
 }

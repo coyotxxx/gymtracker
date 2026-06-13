@@ -5,6 +5,7 @@ import pl.filebit.gymtracker.ai.StagnationAnalyzer
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseAnalyzer
 import pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
 import pl.filebit.gymtracker.data.entity.MesocyclePhase
 import pl.filebit.gymtracker.data.entity.MesocycleStatus
 import pl.filebit.gymtracker.data.entity.TrainingMesocycle
@@ -35,7 +36,9 @@ import javax.inject.Singleton
 class PeriodizationOrchestrator @Inject constructor(
     private val mesoDao: TrainingMesocycleDao,
     private val phaseAnalyzer: TrainingPhaseAnalyzer,
-    private val stagnationAnalyzer: StagnationAnalyzer
+    private val stagnationAnalyzer: StagnationAnalyzer,
+    // v2.25.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: DiagnosticLogger? = null
 ) {
     /**
      * Główne entry point.
@@ -52,6 +55,9 @@ class PeriodizationOrchestrator @Inject constructor(
         val updated = if (active.weekInPhase != newWeekInPhase) {
             val u = active.copy(weekInPhase = newWeekInPhase)
             mesoDao.update(u)
+            diag?.info(DiagnosticCategory.DETECTOR, "PeriodizationOrchestrator", "week_advanced",
+                "Mesocykl ${active.phase.name}: tydzień ${active.weekInPhase} → $newWeekInPhase",
+                dataJson = """{"mesoId":${active.id},"phase":"${active.phase.name}","weekInPhase":$newWeekInPhase}""")
             u
         } else active
 
@@ -112,6 +118,10 @@ class PeriodizationOrchestrator @Inject constructor(
         )
         val id = mesoDao.upsert(meso)
         val saved = meso.copy(id = id)
+        diag?.info(DiagnosticCategory.DETECTOR, "PeriodizationOrchestrator", "mesocycle_created",
+            "Utworzono pierwszy mesocykl: ${mesoPhase.name}, $durationWeeks tyg (faza wykryta: ${phaseStatus.phase})",
+            dataJson = """{"mesoId":$id,"phase":"${mesoPhase.name}","durationWeeks":$durationWeeks,"detectedPhase":"${phaseStatus.phase}"}""",
+            success = true)
         return PeriodizationState.Active(
             meso = saved,
             daysElapsed = saved.daysSinceStart(nowMs),
@@ -160,7 +170,12 @@ class PeriodizationOrchestrator @Inject constructor(
             status = MesocycleStatus.ACTIVE,
             notes = "v1.14.0 — transition: ${proposal.reasoning}"
         )
-        return mesoDao.upsert(newMeso)
+        val newId = mesoDao.upsert(newMeso)
+        diag?.info(DiagnosticCategory.DETECTOR, "PeriodizationOrchestrator", "transition_applied",
+            "Przejście fazy: ${proposal.fromPhase.name} → ${proposal.recommendedNext.name} (${proposal.plannedDurationWeeks} tyg)",
+            dataJson = """{"fromPhase":"${proposal.fromPhase.name}","toPhase":"${proposal.recommendedNext.name}","newMesoId":$newId,"aiDecision":${aiDecision.isNotBlank()}}""",
+            success = true)
+        return newId
     }
 
     /**
@@ -185,7 +200,11 @@ class PeriodizationOrchestrator @Inject constructor(
             status = MesocycleStatus.ACTIVE,
             notes = "v1.14.0 — user zakończył deload wcześniej, start akumulacji"
         )
-        return mesoDao.upsert(newMeso)
+        val newId = mesoDao.upsert(newMeso)
+        diag?.info(DiagnosticCategory.USER_ACTION, "PeriodizationOrchestrator", "deload_ended_early",
+            "User zakończył deload wcześniej — start akumulacji",
+            dataJson = """{"closedMesoId":$currentMesoId,"newMesoId":$newId}""", success = true)
+        return newId
     }
 
     /**
@@ -202,6 +221,9 @@ class PeriodizationOrchestrator @Inject constructor(
                 notes = current.notes + "\n[${java.text.SimpleDateFormat("yyyy-MM-dd").format(java.util.Date())}] przedłużono o $addWeeks tydz."
             )
         )
+        diag?.info(DiagnosticCategory.USER_ACTION, "PeriodizationOrchestrator", "phase_extended",
+            "Przedłużono fazę ${current.phase.name} o $addWeeks tydz.",
+            dataJson = """{"mesoId":${current.id},"phase":"${current.phase.name}","addWeeks":$addWeeks}""")
     }
 }
 

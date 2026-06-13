@@ -2,6 +2,8 @@ package pl.filebit.gymtracker.data.repository
 
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
+import pl.filebit.gymtracker.data.entity.DiagnosticLevel
 import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.util.ActiveInjuryRecommendation
@@ -68,7 +70,9 @@ class DeloadService @Inject constructor(
     private val statsRepo: StatsRepository,
     private val planRepo: PlanRepository,
     private val prefs: DeloadPreferences,
-    private val profileRepo: UserProfileRepository
+    private val profileRepo: UserProfileRepository,
+    // v2.25.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: DiagnosticLogger? = null
 ) {
     /**
      * Aktualny stan kafla na Home — Active > Suggestion > None.
@@ -269,6 +273,9 @@ class DeloadService @Inject constructor(
         // GUARD: nie pozwól na podwójne zastosowanie
         prefs.activeDeload()?.let { existing ->
             val planName = planRepo.getPlan(existing.planId)?.name ?: ""
+            diag?.warn(DiagnosticCategory.DETECTOR, "DeloadService", "deload_apply_blocked",
+                "Deload już aktywny (factor ${existing.factor}) — pominięto ponowne zastosowanie",
+                dataJson = """{"planId":$planId,"existingFactor":${existing.factor}}""")
             return ApplyResult(0, existing.factor, planName, alreadyActive = true)
         }
 
@@ -304,6 +311,10 @@ class DeloadService @Inject constructor(
                 originalWeights = originalWeights
             )
         )
+        diag?.event(DiagnosticCategory.DETECTOR, DiagnosticLevel.INFO, "DeloadService", "deload_applied",
+            "Zastosowano deload ${severity.name} (factor $factor) do '${plan.name}' — $updatedCount serii",
+            dataJson = """{"planId":$planId,"severity":"${severity.name}","factor":$factor,"updatedSets":$updatedCount}""",
+            success = true)
         return ApplyResult(updatedCount, factor, plan.name)
     }
 
@@ -333,6 +344,10 @@ class DeloadService @Inject constructor(
             }
         }
         prefs.clearActiveDeload()
+        diag?.event(DiagnosticCategory.DETECTOR, DiagnosticLevel.INFO, "DeloadService", "deload_restored",
+            "Przywrócono wagi po deloadzie '${state.planName}' — $restoredCount serii",
+            dataJson = """{"planId":${state.planId},"restoredSets":$restoredCount}""",
+            success = true)
         return RestoreResult(restoredCount, state.planName)
     }
 
@@ -374,6 +389,9 @@ class DeloadService @Inject constructor(
                 planRepo.updatePlanSet(set.copy(weightKg = newWeight))
             }
         }
+        diag?.warn(DiagnosticCategory.DETECTOR, "DeloadService", "deload_weights_repaired",
+            "Naprawiono uszkodzone wagi deloadu (cumulative apply) dla '${state.planName}'",
+            dataJson = """{"planId":${state.planId},"factor":${state.factor}}""")
         return true
     }
 
@@ -385,11 +403,15 @@ class DeloadService @Inject constructor(
     /** v1.24.0: per-type dismiss — zamknięcie jednego alertu nie blokuje innych. */
     fun dismiss(type: AlertType) {
         prefs.setDismissedNow(type)
+        diag?.info(DiagnosticCategory.USER_ACTION, "DeloadService", "alert_dismissed",
+            "User zamknął alert ${type.name}", dataJson = """{"alertType":"${type.name}"}""")
     }
 
     /** Anuluj aktywny deload bez restore (np. user zmienił plan). */
     fun cancelWithoutRestore() {
         prefs.clearActiveDeload()
+        diag?.info(DiagnosticCategory.DETECTOR, "DeloadService", "deload_cancelled",
+            "Anulowano aktywny deload bez przywracania wag")
     }
 
     data class ApplyResult(

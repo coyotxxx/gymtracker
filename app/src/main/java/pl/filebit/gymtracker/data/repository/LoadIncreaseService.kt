@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.data.repository
 
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -16,7 +17,9 @@ import javax.inject.Singleton
 class LoadIncreaseService @Inject constructor(
     private val planRepo: PlanRepository,
     private val prefs: LoadIncreasePreferences,
-    private val deloadPrefs: DeloadPreferences
+    private val deloadPrefs: DeloadPreferences,
+    // v2.25.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: DiagnosticLogger? = null
 ) {
     /**
      * Zastosuj zwiększenie obciążenia: wagi × factor (1.05 = +5%).
@@ -26,7 +29,11 @@ class LoadIncreaseService @Inject constructor(
      */
     suspend fun apply(planId: Long, factor: Double = 1.05): ApplyResult? {
         // Konflikt: nie aplikuj increase gdy aktywny deload
-        if (deloadPrefs.activeDeload() != null) return null
+        if (deloadPrefs.activeDeload() != null) {
+            diag?.warn(DiagnosticCategory.DETECTOR, "LoadIncreaseService", "increase_blocked_deload",
+                "Nie zwiększono obciążenia — aktywny deload (konflikt)", dataJson = """{"planId":$planId}""")
+            return null
+        }
 
         val plan = planRepo.getPlan(planId) ?: return ApplyResult(0, factor, "")
         val planExercises = planRepo.getPlanExercises(planId)
@@ -55,6 +62,9 @@ class LoadIncreaseService @Inject constructor(
                 originalWeights = originalWeights
             )
         )
+        diag?.info(DiagnosticCategory.DETECTOR, "LoadIncreaseService", "increase_applied",
+            "Zwiększono obciążenie (factor $factor) w '${plan.name}' — $updatedCount serii",
+            dataJson = """{"planId":$planId,"factor":$factor,"updatedSets":$updatedCount}""", success = true)
         return ApplyResult(updatedCount, factor, plan.name)
     }
 
@@ -75,15 +85,22 @@ class LoadIncreaseService @Inject constructor(
             }
         }
         prefs.clearActiveIncrease()
+        diag?.info(DiagnosticCategory.DETECTOR, "LoadIncreaseService", "increase_restored",
+            "Przywrócono wagi po zwiększeniu obciążenia '${state.planName}' — $restoredCount serii",
+            dataJson = """{"planId":${state.planId},"restoredSets":$restoredCount}""", success = true)
         return RestoreResult(restoredCount, state.planName)
     }
 
     fun dismiss() {
         prefs.setDismissedNow()
+        diag?.info(DiagnosticCategory.USER_ACTION, "LoadIncreaseService", "increase_dismissed",
+            "User zamknął sugestię zwiększenia obciążenia")
     }
 
     fun cancelWithoutRestore() {
         prefs.clearActiveIncrease()
+        diag?.info(DiagnosticCategory.DETECTOR, "LoadIncreaseService", "increase_cancelled",
+            "Anulowano zwiększenie obciążenia bez przywracania wag")
     }
 
     fun isActive(): Boolean = prefs.activeIncrease() != null
