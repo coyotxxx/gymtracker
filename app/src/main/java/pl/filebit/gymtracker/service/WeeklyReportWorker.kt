@@ -93,6 +93,8 @@ class WeeklyReportWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
+        diag.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.NOTIFICATION, "WeeklyReportWorker",
+            "notification_sent", "Wysłano notyfikację o gotowym raporcie tygodniowym", success = true)
     }
 
     companion object {

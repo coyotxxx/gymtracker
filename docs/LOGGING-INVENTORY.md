@@ -38,17 +38,22 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | Widoczność kart Home | `HomeCardsResolver` | ⬜ |
 | Analyzery (TrainingLoad/Readiness/MuscleRecovery/RecoveryScore) werdykty | ai/*Analyzer | ⬜ |
 
-## OBSZAR C — WORKERY / NOTYFIKACJE / SCHEDULERY 🔶
+## OBSZAR C — WORKERY / NOTYFIKACJE / SCHEDULERY ✅
 | Punkt | Plik | Status |
 |-------|------|--------|
-| ProactiveAiCheckWorker wynik | `ProactiveAiCheckWorker` | 🔶 (signal/alert_fired) |
-| WeeklyReportWorker wynik + skip | `WeeklyReportWorker` | 🔶 |
-| DietAutoAdjustmentWorker wynik | `DietAutoAdjustmentWorker` | 🔶 |
+| ProactiveAiCheckWorker wynik + notification_sent | `ProactiveAiCheckWorker` | ✅ v2.26.0 |
+| WeeklyReportWorker wynik + notification_sent | `WeeklyReportWorker` | ✅ v2.26.0 |
+| DietAutoAdjustmentWorker wynik + notification_sent + weigh-in | `DietAutoAdjustmentWorker` | ✅ v2.26.0 |
+| MealReminderWorker wysyłka | `MealReminderWorker` | ✅ v2.26.0 |
+| UnfinishedWorkoutWorker wysyłka | `UnfinishedWorkoutWorker` | ✅ v2.26.0 |
+| HealthConnectSyncWorker (skip/no-perm/done/błąd) | `HealthConnectSyncWorker` | ✅ v2.26.0 |
 | HomeAlertNotifier wysyłka | `HomeAlertNotifier` | ✅ (notification_sent) |
-| Każde `nm.notify(...)` (wszystkie kanały) | różne | ⬜ |
-| Schedulery (enqueue/cancel) | `WeeklyReportScheduler` itd. | ⬜ |
-| BootCompletedReceiver | `BootCompletedReceiver` | ⬜ |
-| MealStatusReceiver (akcja z notyfikacji) | `MealStatusReceiver` | ⬜ |
+| BootCompletedReceiver (reschedule + błąd) | `BootCompletedReceiver` | ✅ v2.26.0 |
+| MealStatusReceiver (akcja z notyfikacji + błąd) | `MealStatusReceiver` | ✅ v2.26.0 |
+| WorkerRescheduler (reschedule_all) | `WorkerRescheduler` | ✅ v2.26.0 |
+| Schedulery enqueue/cancel | 5× Scheduler | ⏭️ pominięte (reschedule_all pokrywa decyzję; per-scheduler = szum co start) |
+| RestTimerService start/stop | `RestTimerService` | ⏭️ pominięte (czysty Service, nie-Hilt, niska wartość) |
+| NotificationCenter (in-app bell) | `NotificationCenter` | ⏭️ pominięte (liczony co render Home) |
 
 ## OBSZAR D — AI 🔶
 | Punkt | Plik | Status |
@@ -77,4 +82,4 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | mealConsumptions (statusy posiłków) | ✅ v2.24.0 |
 
 ---
-**Postęp:** A: 2/11 · B: 4/7 · C: 2/8 · D: 1.5/5 · E: 0/5. Aktualizować po każdym batchu.
+**Postęp:** A: 2/11 · B: 4/7 · C: 10/10 (3 świadomie pominięte) · D: 1.5/5 · E: 0/5. Aktualizować po każdym batchu.

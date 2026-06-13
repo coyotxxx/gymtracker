@@ -229,6 +229,8 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
+        diag.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.NOTIFICATION, diagSrc,
+            "notification_sent", "Wysłano notyfikację trenera w tle: $title", success = true)
     }
 
     /**

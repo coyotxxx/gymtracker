@@ -1,7 +1,9 @@
 package pl.filebit.gymtracker.service
 
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.repository.DietConfig
+import pl.filebit.gymtracker.data.repository.DiagnosticLogger
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -32,7 +34,9 @@ import javax.inject.Singleton
 class WorkerRescheduler @Inject constructor(
     private val proactiveAiScheduler: ProactiveAiCheckScheduler,
     private val dietAdjustmentScheduler: DietAutoAdjustmentScheduler,
-    private val weeklyReportScheduler: WeeklyReportScheduler
+    private val weeklyReportScheduler: WeeklyReportScheduler,
+    // v2.26.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: DiagnosticLogger? = null
 ) {
     /**
      * Reschedule wszystkie periodic workery zgodnie z user preferences.
@@ -55,5 +59,10 @@ class WorkerRescheduler @Inject constructor(
         } else {
             weeklyReportScheduler.cancel()
         }
+        diag?.info(DiagnosticCategory.WORKER, "WorkerRescheduler", "reschedule_all",
+            "Przeplanowano workery (proactiveAI=${profile.aiProactiveChecksEnabled}, " +
+                "dietAdjust=${dietConfig.autoCheckAdjustments}, weeklyReport=${profile.aiAutoGenerateWeeklyReports})",
+            dataJson = """{"proactiveAi":${profile.aiProactiveChecksEnabled},"dietAdjust":${dietConfig.autoCheckAdjustments},"weeklyReport":${profile.aiAutoGenerateWeeklyReports}}""",
+            success = true)
     }
 }

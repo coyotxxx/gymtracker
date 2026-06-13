@@ -110,6 +110,8 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
+        diag.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.NOTIFICATION, "DietAutoAdjustmentWorker",
+            "notification_sent", "Wysłano notyfikację korekty diety", success = true)
     }
 
     /** v2.15.0 (P1-3) — przypomnienie o ważeniu (osobne ID, ten sam kanał). */
@@ -136,6 +138,8 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID_WEIGH_IN, notification)
+        diag.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.NOTIFICATION, "DietAutoAdjustmentWorker",
+            "weigh_in_reminder_sent", "Wysłano przypomnienie o ważeniu", success = true)
     }
 
     companion object {

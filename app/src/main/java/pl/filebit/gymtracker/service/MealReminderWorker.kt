@@ -13,6 +13,8 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import pl.filebit.gymtracker.MainActivity
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
+import pl.filebit.gymtracker.data.repository.DiagnosticLogger
 
 /**
  * Wysyła powiadomienie "Pora na posiłek!" o wybranej godzinie.
@@ -25,7 +27,8 @@ import pl.filebit.gymtracker.R
 @HiltWorker
 class MealReminderWorker @AssistedInject constructor(
     @Assisted appContext: Context,
-    @Assisted params: WorkerParameters
+    @Assisted params: WorkerParameters,
+    private val diag: DiagnosticLogger
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -83,6 +86,9 @@ class MealReminderWorker @AssistedInject constructor(
 
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(notificationId, notification)
+        diag.info(DiagnosticCategory.NOTIFICATION, "MealReminderWorker", "meal_reminder_sent",
+            "Przypomnienie o posiłku: $slotLabel",
+            dataJson = """{"slotIndex":$slotIndex,"mealType":"$mealTypeName"}""", success = true)
         return Result.success()
     }
 

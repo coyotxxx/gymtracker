@@ -14,12 +14,15 @@ import dagger.assisted.AssistedInject
 import pl.filebit.gymtracker.MainActivity
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
+import pl.filebit.gymtracker.data.repository.DiagnosticLogger
 
 @HiltWorker
 class UnfinishedWorkoutWorker @AssistedInject constructor(
     @Assisted appContext: Context,
     @Assisted params: WorkerParameters,
-    private val workoutDao: WorkoutDao
+    private val workoutDao: WorkoutDao,
+    private val diag: DiagnosticLogger
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -46,6 +49,9 @@ class UnfinishedWorkoutWorker @AssistedInject constructor(
 
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
+        diag.info(DiagnosticCategory.NOTIFICATION, "UnfinishedWorkoutWorker", "unfinished_workout_notif",
+            "Przypomnienie o niedokończonym treningu (#${active.id})",
+            dataJson = """{"workoutId":${active.id}}""", success = true)
         return Result.success()
     }
 

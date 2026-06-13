@@ -8,7 +8,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
 import pl.filebit.gymtracker.data.repository.DietPreferences
+import pl.filebit.gymtracker.data.repository.DiagnosticLogger
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import javax.inject.Inject
 
@@ -31,6 +33,7 @@ class BootCompletedReceiver : BroadcastReceiver() {
     @Inject lateinit var workerRescheduler: WorkerRescheduler
     @Inject lateinit var profileRepo: UserProfileRepository
     @Inject lateinit var dietPrefs: DietPreferences
+    @Inject lateinit var diag: DiagnosticLogger
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -48,6 +51,11 @@ class BootCompletedReceiver : BroadcastReceiver() {
                 val profile = profileRepo.get()
                 val dietConfig = dietPrefs.load()
                 workerRescheduler.rescheduleAll(profile, dietConfig)
+                diag.info(DiagnosticCategory.WORKER, "BootCompletedReceiver", "boot_reschedule",
+                    "Restart urządzenia — przeplanowano workery", success = true)
+            } catch (t: Throwable) {
+                diag.error(DiagnosticCategory.ERROR, "BootCompletedReceiver", "boot_reschedule_failed",
+                    "Błąd przeplanowania workerów po restarcie", t)
             } finally {
                 pending.finish()
             }

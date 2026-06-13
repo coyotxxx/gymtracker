@@ -9,9 +9,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import pl.filebit.gymtracker.data.entity.DiagnosticCategory
 import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
 import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.repository.AdherenceCalculator
+import pl.filebit.gymtracker.data.repository.DiagnosticLogger
 import pl.filebit.gymtracker.data.repository.MealConsumptionRepository
 import javax.inject.Inject
 
@@ -24,6 +26,7 @@ class MealStatusReceiver : BroadcastReceiver() {
 
     @Inject lateinit var consumptionRepo: MealConsumptionRepository
     @Inject lateinit var adherenceCalc: AdherenceCalculator
+    @Inject lateinit var diag: DiagnosticLogger
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -55,8 +58,14 @@ class MealStatusReceiver : BroadcastReceiver() {
         val pending = goAsync()
         scope.launch {
             try {
+                diag.info(DiagnosticCategory.USER_ACTION, "MealStatusReceiver", "meal_action_from_notification",
+                    "Akcja z notyfikacji: ${mealType.name} → ${status.name}",
+                    dataJson = """{"mealType":"${mealType.name}","status":"${status.name}"}""", success = true)
                 consumptionRepo.setStatus(dateMs, mealType, status)
                 runCatching { adherenceCalc.computeForDate(dateMs) }
+            } catch (t: Throwable) {
+                diag.error(DiagnosticCategory.ERROR, "MealStatusReceiver", "meal_action_failed",
+                    "Błąd zapisu statusu posiłku z notyfikacji", t)
             } finally {
                 pending.finish()
             }
