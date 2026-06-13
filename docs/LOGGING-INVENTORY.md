@@ -25,7 +25,7 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | CalorieAdjustmentEngine ~25 gałęzi / SafetyGuard / PhaseManager | pure-functions | ⏭️ logowane przez wynik AutoAdjustmentService (liczone co render → nie zalewamy) |
 | Hydration log (user pije wodę) | `HydrationRepository.add` | ✅ v2.29.0 |
 | DietGoals.computeDailyGoal (cap/carb-cycling) | `util/DietGoals` | ⏭️ liczone co render — wartość widać w adherence_computed |
-| Reakcja dietetyka AI na pominięte posiłki | (do zaprojektowania) | ⬜ |
+| Reakcja dietetyka AI na pominięte posiłki (FUNKCJA, nie log) | `DietViewModel.skippedMealAlert` + `DietScreen.SkippedMealCard` | ✅ v2.30.0 (karta + próg 1 posiłek + akcje) |
 
 ## OBSZAR B — TRENING / DETEKTORY / PERIODYZACJA 🔶
 | Punkt | Plik | Status |

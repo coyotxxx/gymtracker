@@ -105,6 +105,17 @@ sealed class AiPlanState {
     data class Error(val message: String) : AiPlanState()
 }
 
+/**
+ * v2.30.0: reakcja dietetyka AI na pominięte posiłki (karta na ekranie diety).
+ * Próg: już po 1 pominiętym posiłku dziś. Liczy deficyt kcal/białka i komentuje.
+ */
+data class SkippedMealAlert(
+    val skippedTypes: List<MealType>,
+    val missingKcal: Int,
+    val missingProteinG: Int,
+    val message: String
+)
+
 @HiltViewModel
 class DietViewModel @Inject constructor(
     private val repo: DietRepository,
@@ -168,6 +179,46 @@ class DietViewModel @Inject constructor(
     private suspend fun refreshConsumptions() {
         val list = consumptionRepo.getForDate(_selectedDateMs.value)
         _consumptions.value = list.associate { it.mealType to it.status }
+    }
+
+    // === v2.30.0: REAKCJA DIETETYKA NA POMINIĘTE POSIŁKI ===
+    // Wybór Macieja: karta na ekranie diety, próg = już po 1 pominiętym posiłku.
+    // Dietetyk widzi pominięcie, liczy deficyt (kcal/białko) i proponuje korektę.
+    private val _skippedDismissed = MutableStateFlow<Set<MealType>>(emptySet())
+    // UWAGA: `val skippedMealAlert` zadeklarowany PO `state` (combine wymaga zainicjalizowanego
+    // `state` — kolejność inicjalizacji properties top-down). Patrz niżej, przy deklaracji `state`.
+
+    private fun isTodaySelected(dateMs: Long): Boolean {
+        val cal = java.util.Calendar.getInstance().apply {
+            set(java.util.Calendar.HOUR_OF_DAY, 0); set(java.util.Calendar.MINUTE, 0)
+            set(java.util.Calendar.SECOND, 0); set(java.util.Calendar.MILLISECOND, 0)
+        }
+        return dateMs == cal.timeInMillis
+    }
+
+    private fun buildSkippedMealMessage(skipped: Collection<MealType>, missKcal: Int, missProtein: Int): String {
+        val names = skipped.joinToString(", ") { mealTypePolish(it) }
+        val plural = skipped.size > 1
+        val head = if (plural) "Widzę, że pominąłeś dziś: $names." else "Widzę, że pominąłeś dziś $names."
+        return "$head Brakuje około $missKcal kcal i $missProtein g białka do dziennego celu. " +
+            "Dodaj lekką przekąskę z białkiem (jajka, twaróg, shake, jogurt skyr) albo świadomie nadrób jutro — " +
+            "pilnuj tygodniowego bilansu, jeden pominięty posiłek to nie problem, ale powtarzalność spowalnia efekty."
+    }
+
+    private fun mealTypePolish(t: MealType): String = when (t) {
+        MealType.BREAKFAST -> "śniadanie"
+        MealType.LUNCH -> "obiad"
+        MealType.DINNER -> "kolację"
+        MealType.SNACK -> "przekąskę"
+    }
+
+    /** User akceptuje/zamyka alert pominiętego posiłku. */
+    fun dismissSkippedMealAlert() {
+        val current = skippedMealAlert.value ?: return
+        _skippedDismissed.value = _skippedDismissed.value + current.skippedTypes
+        diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "DietViewModel",
+            "skipped_alert_dismissed", "User zamknął alert pominiętych posiłków (${current.skippedTypes.joinToString { it.name }})",
+            dataJson = """{"types":[${current.skippedTypes.joinToString(",") { "\"${it.name}\"" }}],"missingKcal":${current.missingKcal}}""")
     }
 
     // === HEALTH CONNECT ===
@@ -1131,6 +1182,25 @@ class DietViewModel @Inject constructor(
             }
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), DietUiState())
+
+    // v2.30.0: alert dietetyka — zadeklarowany PO `state` (init order: combine wymaga gotowego `state`).
+    val skippedMealAlert: StateFlow<SkippedMealAlert?> = combine(
+        state, _consumptions, _skippedDismissed
+    ) { s, cons, dismissed ->
+        if (!isTodaySelected(s.dateMs) || s.config.mealsPerDay <= 0) return@combine null
+        val skipped = cons.filterValues {
+            it == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED
+        }.keys.filter { it !in dismissed }
+        if (skipped.isEmpty()) return@combine null
+        val perMealKcal = if (s.perMealKcal > 0) s.perMealKcal else (s.goal.kcal / s.config.mealsPerDay)
+        val perMealProtein = if (s.config.mealsPerDay > 0) s.goal.proteinG / s.config.mealsPerDay else 0
+        SkippedMealAlert(
+            skippedTypes = skipped.toList(),
+            missingKcal = perMealKcal * skipped.size,
+            missingProteinG = perMealProtein * skipped.size,
+            message = buildSkippedMealMessage(skipped, perMealKcal * skipped.size, perMealProtein * skipped.size)
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     fun setSearchQuery(q: String) { _searchQuery.value = q }
     fun setCategoryFilter(c: FoodCategory?) { _categoryFilter.value = c }

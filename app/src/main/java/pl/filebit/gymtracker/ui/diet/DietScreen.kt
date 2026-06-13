@@ -104,6 +104,8 @@ fun DietScreen(
     val phaseCheckMessage by vm.phaseCheckMessage.collectAsStateWithLifecycle()
     val volatilityReport by vm.volatilityReport.collectAsStateWithLifecycle()
     val volatilityDismissed by vm.volatilityDismissed.collectAsStateWithLifecycle()
+    // v2.30.0: reakcja dietetyka na pominięte posiłki
+    val skippedMealAlert by vm.skippedMealAlert.collectAsStateWithLifecycle()
     val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
     val showDamageControlDialog by vm.showDamageControlDialog.collectAsStateWithLifecycle()
     val damageControlResult by vm.damageControlResult.collectAsStateWithLifecycle()
@@ -233,6 +235,17 @@ fun DietScreen(
                                 onDismiss = { vm.dismissVolatility() }
                             )
                         }
+                    }
+                }
+
+                // v2.30.0: reakcja dietetyka na pominięty posiłek (próg = 1 pominięty dziś).
+                skippedMealAlert?.let { alert ->
+                    item {
+                        SkippedMealCard(
+                            alert = alert,
+                            onAddSnack = { addMealForType = MealType.SNACK },
+                            onDismiss = { vm.dismissSkippedMealAlert() }
+                        )
                     }
                 }
 
@@ -1755,6 +1768,83 @@ private fun DietVolatilityCard(
                 color = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
                 modifier = Modifier.padding(end = 8.dp)
             )
+        }
+    }
+}
+
+/**
+ * v2.30.0: karta dietetyka — reakcja na pominięty posiłek (wybór Macieja: karta na
+ * ekranie diety, próg = 1 pominięty posiłek dziś). Komentarz + deficyt + akcje.
+ */
+@Composable
+private fun SkippedMealCard(
+    alert: SkippedMealAlert,
+    onAddSnack: () -> Unit,
+    onDismiss: () -> Unit
+) {
+    val color = pl.filebit.gymtracker.ui.theme.AccentOrange
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = 0.13f), RoundedCornerShape(16.dp))
+            .border(BorderStroke(1.dp, color.copy(alpha = 0.4f)), RoundedCornerShape(16.dp))
+            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 12.dp)
+    ) {
+        Column {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    Icons.Default.Warning,
+                    contentDescription = null,
+                    tint = color,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    "DIETETYK ZAUWAŻYŁ",
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = color
+                )
+                IconButton(onClick = onDismiss, modifier = Modifier.size(28.dp)) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = "Zamknij",
+                        tint = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
+            }
+            Spacer(Modifier.height(4.dp))
+            Text(
+                alert.message,
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                modifier = Modifier.padding(end = 8.dp)
+            )
+            Spacer(Modifier.height(10.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                androidx.compose.material3.Button(
+                    onClick = onAddSnack,
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = color,
+                        contentColor = androidx.compose.ui.graphics.Color.Black
+                    )
+                ) { Text("Dodaj przekąskę") }
+                androidx.compose.material3.TextButton(onClick = onDismiss) {
+                    Text("Nadrobię jutro", color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant)
+                }
+            }
         }
     }
 }
