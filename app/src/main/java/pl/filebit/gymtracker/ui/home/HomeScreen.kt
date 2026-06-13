@@ -108,9 +108,6 @@ fun HomeScreen(
     val coachVerdict by vm.coachVerdict.collectAsStateWithLifecycle()
     var showPostponeDialog by remember { mutableStateOf(false) }
     var showWeekPlanDialog by remember { mutableStateOf(false) }
-    var showDeloadExplain by remember {
-        mutableStateOf<pl.filebit.gymtracker.util.DeloadRecommendation?>(null)
-    }
     val snackbar = remember { androidx.compose.material3.SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
@@ -139,12 +136,17 @@ fun HomeScreen(
                         onDismiss = { reaction -> vm.dismissCoach(reaction.id) }
                     ) { _, actionType ->
                         when (actionType) {
-                            pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_DELOAD ->
-                                vm.applyDeload(pl.filebit.gymtracker.util.DeloadSeverity.MED) { r ->
+                            pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_DELOAD -> {
+                                // Siła deloadu z realnej rekomendacji (jak stara karta), fallback MED.
+                                val sev = (state.deloadCard as? pl.filebit.gymtracker.data.repository.DeloadCardState.Suggestion)
+                                    ?.recommendation?.severity ?: pl.filebit.gymtracker.util.DeloadSeverity.MED
+                                vm.applyDeload(sev) { r ->
                                     scope.launch { snackbar.showSnackbar("Deload: ${r.updatedSets} setów × ${(r.factor * 100).toInt()}%") }
                                 }
+                            }
                             pl.filebit.gymtracker.data.coach.CoachActionType.START_WORKOUT,
-                            pl.filebit.gymtracker.data.coach.CoachActionType.RETURN_LIGHT -> onStartCoachWorkout()
+                            pl.filebit.gymtracker.data.coach.CoachActionType.RETURN_LIGHT ->
+                                vm.startNextPlannedToday(onStartCoachWorkout)
                             pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_REFEED,
                             pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_KCAL_ADJUST,
                             pl.filebit.gymtracker.data.coach.CoachActionType.SIMPLIFY_PLAN,
@@ -190,31 +192,10 @@ fun HomeScreen(
                 }
             }
 
-            // Deload card — 3 stany: Suggestion (Zastosuj/Wyjaśnij/Anuluj),
-            // Active (trwa X dni), Active+isFinished (czas wrócić do oryginalnych wag).
+            // v2.35.0 (U4b krok 3): karty Suggestion/ReturnAfterBreak/ActiveInjury/MissedWorkout
+            // USUNIĘTE — zastąpione jedną Kartą coacha (wyżej). Tu zostaje TYLKO Active (status
+            // trwającego deloadu — to nie reakcja, orchestrator go pomija). Brak duplikacji.
             when (val card = state.deloadCard) {
-                is pl.filebit.gymtracker.data.repository.DeloadCardState.Suggestion -> {
-                    item {
-                        DeloadSuggestionCard(
-                            recommendation = card.recommendation,
-                            canApply = vm.activePlanIdForDeload() != null,
-                            onApply = {
-                                vm.applyDeload(card.recommendation.severity) { result ->
-                                    scope.launch {
-                                        snackbar.showSnackbar(
-                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
-                                        )
-                                    }
-                                }
-                            },
-                            onExplain = { showDeloadExplain = card.recommendation },
-                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.DELOAD_SUGGESTION) },
-                            onPickPlan = onSelectPlanTab,
-                            // v1.24.41: dla CUT → CTA prowadzi do zakładki Dieta (refeed) zamiast obniżki wag
-                            onPlanRefeed = onOpenDiet
-                        )
-                    }
-                }
                 is pl.filebit.gymtracker.data.repository.DeloadCardState.Active -> {
                     item {
                         // v1.24.15: w toku → kompaktowy banner (status, nie alert).
@@ -250,33 +231,8 @@ fun HomeScreen(
                         }
                     }
                 }
-                is pl.filebit.gymtracker.data.repository.DeloadCardState.ReturnAfterBreak -> {
-                    item {
-                        ReturnAfterBreakCard(
-                            recommendation = card.recommendation,
-                            onStart = { vm.startNextPlannedToday(onStartCoachWorkout) },  // v2.19.0 (P2-3)
-                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.RETURN_AFTER_BREAK) }
-                        )
-                    }
-                }
-                is pl.filebit.gymtracker.data.repository.DeloadCardState.ActiveInjury -> {
-                    item {
-                        ActiveInjuryCard(
-                            recommendation = card.recommendation,
-                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.ACTIVE_INJURY) }
-                        )
-                    }
-                }
-                is pl.filebit.gymtracker.data.repository.DeloadCardState.MissedWorkout -> {
-                    item {
-                        MissedWorkoutCard(
-                            recommendation = card.recommendation,
-                            onStart = { vm.startNextPlannedToday(onStartCoachWorkout) },
-                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.MISSED_WORKOUT) }
-                        )
-                    }
-                }
-                pl.filebit.gymtracker.data.repository.DeloadCardState.None -> Unit
+                // Suggestion/ReturnAfterBreak/ActiveInjury/MissedWorkout → Karta coacha; None → nic.
+                else -> Unit
             }
 
             // Hero card — 4 stany (A/B/C/D)
@@ -559,111 +515,9 @@ fun HomeScreen(
         )
     }
 
-    showDeloadExplain?.let { rec ->
-        DeloadExplainDialog(
-            recommendation = rec,
-            onDismiss = { showDeloadExplain = null }
-        )
-    }
-
     androidx.compose.material3.SnackbarHost(
         hostState = snackbar,
         modifier = Modifier
-    )
-}
-
-@Composable
-private fun DeloadExplainDialog(
-    recommendation: pl.filebit.gymtracker.util.DeloadRecommendation,
-    onDismiss: () -> Unit
-) {
-    val isRefeed = recommendation.recommendsDietBreak
-    val pctOff = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 20
-        else -> 10
-    }
-    androidx.compose.material3.AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            // v1.24.44 fix Bug E2E: dla CUT user'a tytuł i treść były skopiowane
-            // z deloadu klasycznego — sprzeczne z kartą "REFEED ZALECANY" gdzie
-            // trening zostaje BEZ zmian. Teraz osobne treści dla obu wariantów.
-            Text(
-                // v1.24.50: PL terminologia w tytule, anglicyzm w nawiasie
-                if (isRefeed) "Co to jest doładowanie węglami (refeed)?"
-                else "Co to jest lżejszy tydzień (deload)?",
-                fontWeight = FontWeight.Bold
-            )
-        },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                Text(
-                    if (isRefeed) {
-                        "Refeed to 1-2 dni z kaloriami na maintenance (zamiast deficytu) i większą ilością " +
-                            "węglowodanów. Uzupełnia glikogen w mięśniach, daje psychologiczną przerwę " +
-                            "od restrykcji, ale NIE niweczy redukcji. Trening zostaje bez zmian — " +
-                            "obniżamy tylko kuchnię, nie wagi w planie."
-                    } else {
-                        "Deload to lżejszy tydzień regeneracyjny — zmniejszasz wagi o $pctOff% " +
-                            "ale zachowujesz ten sam plan. Pozwala mięśniom i CNS odpocząć po cyklu " +
-                            "intensywnego treningu, żeby wrócić silniejszym."
-                    },
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                Text(
-                    "Dlaczego to sugeruję teraz",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
-                )
-                Text(
-                    recommendation.reason,
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                Text(
-                    if (isRefeed) "Co się stanie po 'Zaplanuj refeed'" else "Co zrobi 'Zastosuj'",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
-                )
-                Text(
-                    if (isRefeed) {
-                        "Przejdziesz do zakładki Dieta, gdzie zaplanujesz 1-2 dni " +
-                            "z kaloriami na poziomie maintenance (≈+400-500 kcal vs target) " +
-                            "i większą porcją węgli. Trening w planie nie zmienia się — " +
-                            "wagi i sety zostają jak są. Po refeedzie wracasz do deficytu."
-                    } else {
-                        "Wszystkie wagi w aktywnym planie zmniejszą się o $pctOff% (np. 75 kg → " +
-                            "${"%.1f".format(75.0 * (1 - pctOff / 100.0))} kg). " +
-                            "Po 7 dniach apka przypomni żeby wrócić do oryginalnych wag — " +
-                            "snapshot zachowa je dokładnie."
-                    },
-                    style = MaterialTheme.typography.bodyMedium
-                )
-                Text(
-                    "Alternatywa",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
-                )
-                Text(
-                    if (isRefeed) {
-                        "Możesz przejść na tydzień maintenance (diet break) — dłuższe odpoczęcie " +
-                            "od deficytu, bardziej zauważalny efekt. Albo zignorować — wrócę z " +
-                            "sugestią za tydzień jeśli warunki nadal aktualne."
-                    } else {
-                        "Możesz też zrobić tydzień całkowitej przerwy bez treningu — efekt podobny. " +
-                            "Albo zignorować — wrócę z sugestią za tydzień jeśli warunki nadal aktualne."
-                    },
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-        },
-        confirmButton = {
-            androidx.compose.material3.TextButton(onClick = onDismiss) {
-                Text("Rozumiem")
-            }
-        }
     )
 }
 
@@ -1181,368 +1035,6 @@ private fun MiniStat(
 }
 
 @Composable
-private fun DeloadSuggestionCard(
-    recommendation: pl.filebit.gymtracker.util.DeloadRecommendation,
-    canApply: Boolean,
-    onApply: () -> Unit,
-    onExplain: () -> Unit,
-    onDismiss: () -> Unit,
-    onPickPlan: () -> Unit = {},
-    /** v1.24.41: CTA dla CUT — prowadzi do zakładki Dieta na zaplanowanie refeedu. */
-    onPlanRefeed: () -> Unit = {}
-) {
-    val isRefeed = recommendation.recommendsDietBreak
-    val color = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> pl.filebit.gymtracker.ui.theme.ErrorRed
-        pl.filebit.gymtracker.util.DeloadSeverity.MED -> pl.filebit.gymtracker.ui.theme.AccentOrange
-        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> pl.filebit.gymtracker.ui.theme.AccentOrange
-    }
-    val bgAlpha = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 0.18f
-        pl.filebit.gymtracker.util.DeloadSeverity.MED -> 0.14f
-        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> 0.10f
-    }
-    val borderAlpha = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 0.55f
-        pl.filebit.gymtracker.util.DeloadSeverity.MED -> 0.40f
-        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> 0.30f
-    }
-    val severityLabel = when {
-        // v1.24.41: dla CUT alert mówi o refeedzie, nie o deloadzie wag
-        // v1.24.50: anglicyzmy → polskie terminy (Glossary zachowuje wyjaśnienia EN)
-        isRefeed -> "DOŁADOWANIE WĘGLAMI"
-        recommendation.severity == pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> "MOCNY SYGNAŁ"
-        recommendation.severity == pl.filebit.gymtracker.util.DeloadSeverity.MED -> "LŻEJSZY TYDZIEŃ ZALECANY"
-        else -> "ROZWAŻ LŻEJSZY TYDZIEŃ"
-    }
-    androidx.compose.foundation.layout.Box(
-        modifier = androidx.compose.ui.Modifier
-            .fillMaxWidth()
-            .background(color.copy(alpha = bgAlpha), RoundedCornerShape(16.dp))
-            .border(1.dp, color.copy(alpha = borderAlpha), RoundedCornerShape(16.dp))
-            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
-    ) {
-        Column {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    Icons.Default.Warning,
-                    contentDescription = null,
-                    tint = color,
-                    modifier = Modifier.size(20.dp)
-                )
-                Spacer(Modifier.width(8.dp))
-                Text(
-                    severityLabel,
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 11.sp,
-                        letterSpacing = 1.4.sp
-                    ),
-                    color = color
-                )
-                IconButton(
-                    onClick = onDismiss,
-                    modifier = Modifier.size(28.dp)
-                ) {
-                    Icon(
-                        Icons.Default.Close,
-                        contentDescription = "Zamknij",
-                        tint = DarkOnSurfaceVariant,
-                        modifier = Modifier.size(18.dp)
-                    )
-                }
-            }
-            Spacer(Modifier.height(4.dp))
-            Text(
-                recommendation.reason,
-                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
-                color = DarkOnSurface
-            )
-            Spacer(Modifier.height(12.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                // v1.24.41 refeed branch: dla CUT klasyczny deload (-10% wag) nie
-                // pomoże — zmęczenie wynika z deficytu kcal. CTA prowadzi do Diety.
-                // Wagi w planie zostawiamy nietknięte.
-                // v1.24.34 fix Bug #3 (raport SYM 3tyg): gdy brak planu, zamiast
-                // wyszarzonego "Zastosuj" pokaż enabled "Wybierz plan" — CTA prowadzi
-                // usera do działania zamiast zostawiać alert bez wyjścia.
-                if (isRefeed) {
-                    androidx.compose.material3.Button(
-                        onClick = onPlanRefeed,
-                        modifier = Modifier.weight(1f),
-                        colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                            containerColor = color,
-                            contentColor = Color.Black
-                        ),
-                        shape = RoundedCornerShape(10.dp)
-                    ) {
-                        Text("🍽 Zaplanuj refeed", fontWeight = FontWeight.Bold, fontSize = 13.sp)
-                    }
-                } else if (canApply) {
-                    androidx.compose.material3.Button(
-                        onClick = onApply,
-                        modifier = Modifier.weight(1f),
-                        colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                            containerColor = color,
-                            contentColor = Color.Black
-                        ),
-                        shape = RoundedCornerShape(10.dp)
-                    ) {
-                        Text("✓ Zastosuj", fontWeight = FontWeight.Bold, fontSize = 13.sp)
-                    }
-                } else {
-                    androidx.compose.material3.Button(
-                        onClick = onPickPlan,
-                        modifier = Modifier.weight(1f),
-                        colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                            containerColor = color,
-                            contentColor = Color.Black
-                        ),
-                        shape = RoundedCornerShape(10.dp)
-                    ) {
-                        Text("📋 Wybierz plan", fontWeight = FontWeight.Bold, fontSize = 13.sp)
-                    }
-                }
-                androidx.compose.material3.OutlinedButton(
-                    onClick = onExplain,
-                    modifier = Modifier.weight(1f),
-                    colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
-                        contentColor = color
-                    ),
-                    border = BorderStroke(1.dp, color.copy(alpha = 0.5f)),
-                    shape = RoundedCornerShape(10.dp)
-                ) {
-                    Text("Wyjaśnij", fontSize = 13.sp)
-                }
-                androidx.compose.material3.TextButton(
-                    onClick = onDismiss,
-                    colors = androidx.compose.material3.ButtonDefaults.textButtonColors(
-                        contentColor = DarkOnSurfaceVariant
-                    )
-                ) {
-                    Text("Anuluj", fontSize = 13.sp)
-                }
-            }
-            if (!canApply && !isRefeed) {
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    "Brak aktywnego planu — wybierz plan, a system automatycznie obniży obciążenia.",
-                    style = MaterialTheme.typography.labelSmall,
-                    color = DarkOnSurfaceVariant
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun ActiveInjuryCard(
-    recommendation: pl.filebit.gymtracker.util.ActiveInjuryRecommendation,
-    onDismiss: () -> Unit
-) {
-    // Czerwony — ból to ostry sygnał (większy niż przetrenowanie).
-    val color = pl.filebit.gymtracker.ui.theme.ErrorRed
-    val bgAlpha = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.InjurySeverity.PERSISTENT -> 0.18f
-        pl.filebit.gymtracker.util.InjurySeverity.FLAG -> 0.12f
-    }
-    val severityLabel = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.InjurySeverity.PERSISTENT -> "WYKRYTO BÓL — ODPUŚĆ"
-        pl.filebit.gymtracker.util.InjurySeverity.FLAG -> "WYKRYTO BÓL — OBSERWUJ"
-    }
-    androidx.compose.foundation.layout.Box(
-        modifier = androidx.compose.ui.Modifier
-            .fillMaxWidth()
-            .background(color.copy(alpha = bgAlpha), RoundedCornerShape(16.dp))
-            .border(1.dp, color.copy(alpha = 0.45f), RoundedCornerShape(16.dp))
-            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
-    ) {
-        Column {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    Icons.Default.Warning,
-                    contentDescription = null,
-                    tint = color,
-                    modifier = Modifier.size(20.dp)
-                )
-                Spacer(Modifier.width(8.dp))
-                Text(
-                    severityLabel,
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 11.sp,
-                        letterSpacing = 1.4.sp
-                    ),
-                    color = color
-                )
-                IconButton(
-                    onClick = onDismiss,
-                    modifier = Modifier.size(28.dp)
-                ) {
-                    Icon(
-                        Icons.Default.Close,
-                        contentDescription = "Zamknij",
-                        tint = DarkOnSurfaceVariant,
-                        modifier = Modifier.size(18.dp)
-                    )
-                }
-            }
-            Spacer(Modifier.height(4.dp))
-            Text(
-                recommendation.reason,
-                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
-                color = DarkOnSurface,
-                modifier = Modifier.padding(end = 8.dp)
-            )
-        }
-    }
-}
-
-@Composable
-private fun ReturnAfterBreakCard(
-    recommendation: pl.filebit.gymtracker.util.ReturnAfterBreakRecommendation,
-    onStart: () -> Unit,
-    onDismiss: () -> Unit
-) {
-    // Niebieski "refresh" — to NIE deload (warning), to ostrożny restart (informacja).
-    val color = androidx.compose.ui.graphics.Color(0xFF4A90E2)
-    val severityLabel = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.ReturnSeverity.LONG_BREAK -> "POWRÓT PO DŁUŻSZEJ PRZERWIE"
-        pl.filebit.gymtracker.util.ReturnSeverity.SHORT_BREAK -> "POWRÓT PO PRZERWIE"
-    }
-    androidx.compose.foundation.layout.Box(
-        modifier = androidx.compose.ui.Modifier
-            .fillMaxWidth()
-            .background(color.copy(alpha = 0.12f), RoundedCornerShape(16.dp))
-            .border(1.dp, color.copy(alpha = 0.35f), RoundedCornerShape(16.dp))
-            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
-    ) {
-        Column {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    "↻",
-                    color = color,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                Spacer(Modifier.width(8.dp))
-                Text(
-                    severityLabel,
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 11.sp,
-                        letterSpacing = 1.4.sp
-                    ),
-                    color = color
-                )
-                IconButton(
-                    onClick = onDismiss,
-                    modifier = Modifier.size(28.dp)
-                ) {
-                    Icon(
-                        Icons.Default.Close,
-                        contentDescription = "Zamknij",
-                        tint = DarkOnSurfaceVariant,
-                        modifier = Modifier.size(18.dp)
-                    )
-                }
-            }
-            Spacer(Modifier.height(4.dp))
-            Text(
-                recommendation.reason,
-                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
-                color = DarkOnSurface,
-                modifier = Modifier.padding(end = 8.dp)
-            )
-            // v2.19.0 (P2-3): akcjonowalny — start lekkiego treningu powrotnego.
-            Spacer(Modifier.height(12.dp))
-            HeroPrimaryButton(
-                text = "Zacznij lekki trening",
-                icon = Icons.Default.PlayArrow,
-                onClick = onStart
-            )
-        }
-    }
-}
-
-@Composable
-private fun MissedWorkoutCard(
-    recommendation: pl.filebit.gymtracker.util.MissedWorkoutRecommendation,
-    onStart: () -> Unit,
-    onDismiss: () -> Unit
-) {
-    // Bursztynowy "nudge" — nie kara, przypomnienie powrotu do rytmu.
-    val color = androidx.compose.ui.graphics.Color(0xFFE0A030)
-    val severityLabel = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.MissedWorkoutSeverity.FIRM -> "WRACAMY DO RYTMU"
-        pl.filebit.gymtracker.util.MissedWorkoutSeverity.SOFT -> "PRZEGAPIONY TRENING"
-    }
-    androidx.compose.foundation.layout.Box(
-        modifier = androidx.compose.ui.Modifier
-            .fillMaxWidth()
-            .background(color.copy(alpha = 0.12f), RoundedCornerShape(16.dp))
-            .border(1.dp, color.copy(alpha = 0.35f), RoundedCornerShape(16.dp))
-            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
-    ) {
-        Column {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text("⏍", color = color, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                Spacer(Modifier.width(8.dp))
-                Text(
-                    severityLabel,
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 11.sp,
-                        letterSpacing = 1.4.sp
-                    ),
-                    color = color
-                )
-                IconButton(onClick = onDismiss, modifier = Modifier.size(28.dp)) {
-                    Icon(
-                        Icons.Default.Close,
-                        contentDescription = "Zamknij",
-                        tint = DarkOnSurfaceVariant,
-                        modifier = Modifier.size(18.dp)
-                    )
-                }
-            }
-            Spacer(Modifier.height(4.dp))
-            Text(
-                recommendation.reason,
-                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
-                color = DarkOnSurface,
-                modifier = Modifier.padding(end = 8.dp)
-            )
-            Spacer(Modifier.height(12.dp))
-            HeroPrimaryButton(
-                text = "Zacznij trening",
-                icon = Icons.Default.PlayArrow,
-                onClick = onStart
-            )
-        }
-    }
-}
-
-@Composable
 private fun DeloadActiveCard(
     active: pl.filebit.gymtracker.data.repository.DeloadCardState.Active,
     onRestore: () -> Unit,
@@ -2043,7 +1535,6 @@ private fun DayOffHeroCard(
 // (Dialogi PostponeDialogContent + WeekPlanDialogContent z v0.75.0 zastąpione
 //  pełnym WeekPlanSheet w v0.76.0 — patrz ui/home/WeekPlanSheet.kt)
 
-
 @androidx.compose.runtime.Composable
 private fun TrainingPhaseCard(
     status: TrainingPhaseStatus,
@@ -2326,8 +1817,6 @@ private fun MesocycleCountdownBlock(
     }
 }
 
-
-
 @androidx.compose.runtime.Composable
 private fun RecoveryCard(
     insight: HealthInsight,
@@ -2477,8 +1966,6 @@ private fun MetricMini(label: String, value: String) {
     }
 }
 
-
-
 @androidx.compose.runtime.Composable
 private fun ScreenshotImportCard(onClick: () -> Unit) {
     androidx.compose.material3.Card(
@@ -2522,8 +2009,6 @@ private fun ScreenshotImportCard(onClick: () -> Unit) {
         }
     }
 }
-
-
 
 @androidx.compose.runtime.Composable
 private fun WhoopRecoveryCard(
@@ -2885,8 +2370,6 @@ private fun TrainingLoadCard(
         }
     }
 }
-
-
 
 @androidx.compose.runtime.Composable
 private fun TrainingReadinessCard(
