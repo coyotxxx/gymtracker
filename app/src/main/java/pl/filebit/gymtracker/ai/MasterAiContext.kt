@@ -74,6 +74,15 @@ data class MasterAiContext(
     val workoutsPlanned14d: Int,
     val workoutsDone14d: Int,
 
+    // === CELE MAKRO (dzienne, ABSOLUTNE) — v2.38.0: AI ma znać LICZBY, nie tylko % ===
+    val targetKcal: Int = 0,
+    val targetProteinG: Int = 0,
+    val targetCarbsG: Int = 0,
+    val targetFatG: Int = 0,
+    val mealsPerDay: Int = 0,
+    val perMealKcal: Int = 0,                // cel kcal podzielony przez liczbę posiłków
+    val perMealProteinG: Int = 0,
+
     // === RECOVERY (7 dni) ===
     val avgSleepHours: Double?,
     val avgSleepQuality: Double?,           // 1-5
@@ -199,6 +208,24 @@ object MasterAiContextPromptHelper {
             append("- Tempo: %.2f kg/tydz $direction\n".format(slope))
         }
         append("- Pomiary w 14d: ${ctx.weightSampleCount}\n")
+    }
+
+    /**
+     * v2.38.0: ABSOLUTNE cele makro — żeby AI znało LICZBY (ile kcal/białka ma mieć dzień i
+     * każdy posiłek), nie tylko procenty. Klucz: AI nie może doradzać/zmieniać posiłków bez
+     * znajomości docelowego makro. „Pełna wiedza o userze".
+     */
+    fun toDailyTargetsSection(ctx: MasterAiContext): String = buildString {
+        if (ctx.targetKcal <= 0) return@buildString
+        append("\n=== CELE MAKRO (dzienne, ABSOLUTNE) ===\n")
+        append("- Cel dnia: ${ctx.targetKcal} kcal · ${ctx.targetProteinG} g białka · ")
+        append("${ctx.targetCarbsG} g węgli · ${ctx.targetFatG} g tłuszczu\n")
+        if (ctx.mealsPerDay > 0) {
+            append("- Liczba posiłków: ${ctx.mealsPerDay} → na 1 posiłek ≈ ")
+            append("${ctx.perMealKcal} kcal i ${ctx.perMealProteinG} g białka\n")
+        }
+        append("- UŻYWAJ TYCH LICZB gdy doradzasz/zmieniasz posiłek (np. ile ma mieć kolacja). ")
+        append("Białko priorytet na redukcji. Aktualne posiłki sprawdź narzędziem get_meals.\n")
     }
 
     /** Adherence diety + frekwencja treningów. */

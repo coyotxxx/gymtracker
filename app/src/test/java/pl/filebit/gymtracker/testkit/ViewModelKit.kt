@@ -162,7 +162,7 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
         userProfileRepo, dietProfileRepo, db.bodyMeasurementDao(), dietRepo,
         mealFeedbackRepo, exerciseRepo, adherenceCalc, recoveryRepo, recoveryAnalyzer,
         activityRepo, hydrationRepo, hydrationCalc, dietPhaseRepo, trainingDietBridge,
-        muscleRecoveryAnalyzer, readinessAnalyzer, statsRepo
+        muscleRecoveryAnalyzer, readinessAnalyzer, statsRepo, dietPrefs
     )
     val aiPlanApplier = AiPlanApplier(planRepo, db.exerciseDao())
     val workoutPlanAi = WorkoutPlanAiService(

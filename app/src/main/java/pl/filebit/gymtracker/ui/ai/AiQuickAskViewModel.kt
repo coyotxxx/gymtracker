@@ -78,6 +78,7 @@ class AiQuickAskViewModel @Inject constructor(
                 val h = pl.filebit.gymtracker.ai.MasterAiContextPromptHelper
                 buildString {
                     append(h.toDietProfileSection(m))
+                    append(h.toDailyTargetsSection(m))   // v2.38.0: absolutne cele makro (kcal/B per dzień i posiłek)
                     append(h.toAdherenceSection(m))
                     append(h.toCurrentStateSection(m))
                     append(h.toFavoritesFoodSection(m))

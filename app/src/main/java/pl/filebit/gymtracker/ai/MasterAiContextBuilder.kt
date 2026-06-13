@@ -54,7 +54,9 @@ class MasterAiContextBuilder @Inject constructor(
     private val trainingBridge: TrainingDietBridge,
     private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer,
     private val readinessAnalyzer: TrainingReadinessAnalyzer,
-    private val statsRepo: StatsRepository
+    private val statsRepo: StatsRepository,
+    // v2.38.0: cele makro absolutne — AI ma znać liczby, nie tylko %.
+    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
 ) {
 
     suspend fun build(): MasterAiContext {
@@ -140,6 +142,21 @@ class MasterAiContextBuilder @Inject constructor(
         val muscleReport = runCatching { muscleRecoveryAnalyzer.analyze() }.getOrNull()
         val readiness = runCatching { readinessAnalyzer.analyze() }.getOrNull()
 
+        // v2.38.0: ABSOLUTNE cele makro (kcal/B/W/T) + per-posiłek — AI musi znać liczby.
+        val dietConfig = runCatching { dietPrefs.load() }.getOrNull()
+        val isTrainingToday = runCatching { trainingBridge.isPlannedTrainingDay(System.currentTimeMillis()) }.getOrDefault(false)
+        val dailyGoal = runCatching {
+            pl.filebit.gymtracker.util.computeDailyGoal(
+                profile = profile,
+                manualKcalOverride = dietConfig?.manualKcal,
+                customDeficit = dietConfig?.customDeficit,
+                dietProfile = dietProfile,
+                latestMeasuredWeightKg = latestMeasurement?.weightKg,
+                isTrainingDay = isTrainingToday
+            )
+        }.getOrNull()
+        val mealsPerDayCfg = dietConfig?.mealsPerDay ?: 0
+
         Log.d("MasterAiContext", "Built: weight=$weight phase=$phaseLabel adherence=${adherence14.avgKcalPct}% recovery=${recoveryLogs.size}d steps7=$avgSteps7d PRs=${topPRs.size} readiness=${readiness?.score}")
 
         return MasterAiContext(
@@ -198,6 +215,15 @@ class MasterAiContextBuilder @Inject constructor(
             mealsLoggedDays = adherence14.sampleDays,
             workoutsPlanned14d = adherence14.workoutsPlanned,
             workoutsDone14d = adherence14.workoutsDone,
+
+            // v2.38.0: absolutne cele makro
+            targetKcal = dailyGoal?.kcal ?: 0,
+            targetProteinG = dailyGoal?.proteinG ?: 0,
+            targetCarbsG = dailyGoal?.carbsG ?: 0,
+            targetFatG = dailyGoal?.fatG ?: 0,
+            mealsPerDay = mealsPerDayCfg,
+            perMealKcal = if (mealsPerDayCfg > 0) (dailyGoal?.kcal ?: 0) / mealsPerDayCfg else 0,
+            perMealProteinG = if (mealsPerDayCfg > 0) (dailyGoal?.proteinG ?: 0) / mealsPerDayCfg else 0,
 
             // Recovery
             avgSleepHours = recovery.avgSleepHours,
