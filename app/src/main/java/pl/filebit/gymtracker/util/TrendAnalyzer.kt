@@ -73,15 +73,30 @@ object TrendAnalyzer {
         val avg14 = avgWindow(ms14d)
         val avg28 = avgWindow(ms28d)
 
-        // Slope: porównaj ostatnie 7 dni vs poprzednie 7 dni z 14
+        // v2.39.0 FIX: slope przez REGRESJĘ LINIOWĄ (kg/tydz), nie 'recent.avg - previous.avg'.
+        // Stara metoda przy rzadkich pomiarach zawyżała tempo: 1 pomiar w ostatnim tygodniu
+        // (84.25) vs średnia poprzednich (85.8) dawała −1.575 → fałszywy "fast loss 1.6 kg/tydz",
+        // gdy realnie ~−0.99 kg/tydz. Regresja używa WSZYSTKICH punktów w oknie i jest odporna
+        // na nierówne odstępy.
+        fun slopePerWeek(windowMs: Long): Double? {
+            val pts = withWeight.filter { it.date >= nowMs - windowMs }
+            if (pts.size < 2) return null
+            val x0 = pts.first().date
+            val xs = pts.map { (it.date - x0) / (24.0 * 3600 * 1000) }  // dni
+            val ys = pts.mapNotNull { it.weightKg }
+            if (ys.size != xs.size) return null
+            val mx = xs.average(); val my = ys.average()
+            var cov = 0.0; var varx = 0.0
+            for (i in xs.indices) { val dx = xs[i] - mx; cov += dx * (ys[i] - my); varx += dx * dx }
+            if (varx == 0.0) return null
+            return (cov / varx) * 7.0  // kg/dzień → kg/tydz
+        }
+        // Okno 14 dni (recency); fallback 28 dni gdy w 14d <2 pomiary.
+        val slope = slopePerWeek(ms14d) ?: slopePerWeek(ms28d)
+
+        // recentWeek nadal potrzebne do isEarlyPlateau (poniżej).
         val recentWeek = withWeight.filter { it.date >= nowMs - ms7d }
             .mapNotNull { it.weightKg }
-        val previousWeek = withWeight.filter { it.date in (nowMs - ms14d)..(nowMs - ms7d) }
-            .mapNotNull { it.weightKg }
-
-        val slope = if (recentWeek.isNotEmpty() && previousWeek.isNotEmpty()) {
-            recentWeek.average() - previousWeek.average()  // kg/tydz
-        } else null
 
         val direction = when {
             slope == null -> TrendDirection.INSUFFICIENT_DATA

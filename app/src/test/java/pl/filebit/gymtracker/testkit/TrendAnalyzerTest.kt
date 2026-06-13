@@ -69,4 +69,23 @@ class TrendAnalyzerTest {
         assertEquals("slope +0.7 kg/tydz → RISING", TrendDirection.RISING, t.direction)
         assertTrue("+0.7 kg/tydz > 0.5 → szybki wzrost", t.isFastGain)
     }
+
+    /**
+     * v2.39.0 REGRESJA (bug zgłoszony przez Macieja): RZADKIE pomiary (1 w ostatnim tygodniu)
+     * NIE mogą dawać fałszywego "fast loss". Stara metoda 'recent.avg − prev.avg' dawała −1.575
+     * (→ błędny INCREASE_KCAL), regresja liniowa daje ~−1.0 (realne). Dane = realny przypadek.
+     */
+    @Test
+    fun `rzadkie pomiary nie daja falszywego fast loss`() {
+        val data = listOf(
+            m(31, 87.0), m(29, 87.0), m(23, 86.6), m(20, 86.45),
+            m(14, 86.35), m(10, 85.3), m(0, 84.25)  // tylko 1 pomiar w ostatnim tygodniu
+        )
+        val t = TrendAnalyzer.analyze(data, nowMs = now)
+        report("sparse-no-false-fastloss", t)
+        assertFalse("regresja ~−1.0 kg/tydz NIE jest fast loss (<−1.5)", t.isFastLoss)
+        assertEquals("kierunek FALLING (waga realnie spada)", TrendDirection.FALLING, t.direction)
+        assertTrue("slope w realnym przedziale (−1.3..−0.7)",
+            t.slopeKgPerWeek!! in -1.3..-0.7)
+    }
 }
