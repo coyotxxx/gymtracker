@@ -11,6 +11,8 @@ import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.doubleOrNull
 import kotlinx.serialization.json.intOrNull
+import kotlinx.serialization.json.longOrNull
+import kotlin.math.roundToInt
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonArray
@@ -132,7 +134,9 @@ class AiToolHandler @Inject constructor(
             "find_safe_exercises_for_user" -> execFindSafeExercisesForUser(input)
             // v2.22.0 — ZAPIS danych
             "log_weight" -> execLogWeight(input)
+            "get_meals" -> execGetMeals(input)        // v2.37.0: AI widzi posiłki dnia (id do podmiany)
             "add_meal" -> execAddMeal(input)
+            "delete_meal" -> execDeleteMeal(input)    // v2.37.0: AI usuwa/podmienia posiłek
             "set_calorie_target" -> execSetCalorieTarget(input)
             "set_diet_goal" -> execSetDietGoal(input)
             else -> {
@@ -176,6 +180,39 @@ class AiToolHandler @Inject constructor(
         )
         diag.info(diagCat, "AiToolHandler", "ai_log_weight", "AI zapisał wagę: $kg kg", success = true)
         return toolOk("Zapisałem wagę: $kg kg.")
+    }
+
+    /** v2.37.0: zwraca posiłki dnia (id + produkt + gramy + makro) — AI widzi co PODMIENIĆ. */
+    private suspend fun execGetMeals(input: JsonObject): String {
+        val dateMs = parseDateOrNow(input)
+        val meals = runCatching { dietRepo.getMealsForDate(dateMs) }.getOrDefault(emptyList())
+        val products = runCatching { dietRepo.observeAllProducts().first() }.getOrDefault(emptyList()).associateBy { it.id }
+        val arr = buildJsonArray {
+            meals.forEach { m ->
+                val p = products[m.productId]
+                val f = m.grams / 100.0
+                add(buildJsonObject {
+                    put("meal_entry_id", m.id)
+                    put("mealType", m.mealType.name)
+                    put("product", p?.name ?: "?")
+                    put("grams", m.grams)
+                    put("kcal", ((p?.kcalPer100g ?: 0.0) * f).roundToInt())
+                    put("proteinG", ((p?.proteinPer100g ?: 0.0) * f).roundToInt())
+                })
+            }
+        }
+        return buildJsonObject { put("date", df.format(java.util.Date(dateMs))); put("meals", arr) }.toString()
+    }
+
+    /** v2.37.0: usuwa wpis posiłku (do podmiany: delete + add_meal). */
+    private suspend fun execDeleteMeal(input: JsonObject): String {
+        val id = input["meal_entry_id"]?.jsonPrimitive?.longOrNull
+            ?: return toolErr("Brak lub niepoprawne 'meal_entry_id' (użyj get_meals by je poznać)")
+        val dateMs = parseDateOrNow(input)
+        dietRepo.deleteMeal(id)
+        runCatching { adherenceCalc.computeForDate(dateMs) }
+        diag.info(diagCat, "AiToolHandler", "ai_delete_meal", "AI usunął wpis posiłku #$id", success = true)
+        return toolOk("Usunąłem wpis posiłku #$id.")
     }
 
     private suspend fun execAddMeal(input: JsonObject): String {

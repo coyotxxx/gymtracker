@@ -45,7 +45,9 @@ object AiTools {
         // v2.22.0 — narzędzia ZAPISU (AI zmienia dane na prośbę usera). Tylko dane,
         // nigdy kod/zachowanie. Bez kasowania. Walidacja + audyt w handlerze.
         add(toolLogWeight())
+        add(toolGetMeals())       // v2.37.0 — AI widzi posiłki dnia
         add(toolAddMeal())
+        add(toolDeleteMeal())     // v2.37.0 — AI podmienia/usuwa posiłek
         add(toolSetCalorieTarget())
         add(toolSetDietGoal())
     }
@@ -73,7 +75,10 @@ object AiTools {
         "log_weight",
         "add_meal",
         "set_calorie_target",
-        "set_diet_goal"
+        "set_diet_goal",
+        // v2.37.0 — odczyt + podmiana posiłków (AI widzi i zmienia kolację)
+        "get_meals",
+        "delete_meal"
     )
 
     // === v2.22.0: narzędzia ZAPISU danych (na prośbę usera) ===
@@ -88,6 +93,31 @@ object AiTools {
                 putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
             }
             putJsonArray("required") { add("kg") }
+        }
+    }
+
+    private fun toolGetMeals(): JsonObject = buildJsonObject {
+        put("name", "get_meals")
+        put("description", "Zwraca posiłki dnia (id wpisu, posiłek, produkt, gramy, kcal, białko). UŻYJ ZAWSZE zanim podmienisz/usuniesz posiłek — żeby poznać 'meal_entry_id' aktualnej np. kolacji.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
+            }
+            putJsonArray("required") {}
+        }
+    }
+
+    private fun toolDeleteMeal(): JsonObject = buildJsonObject {
+        put("name", "delete_meal")
+        put("description", "Usuwa wpis posiłku po 'meal_entry_id' (poznaj go z get_meals). PODMIANA = delete_meal starego + add_meal nowego. Użyj gdy user prosi 'zmień/podmień kolację'.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("meal_entry_id") { put("type", "integer"); put("description", "ID wpisu z get_meals") }
+                putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
+            }
+            putJsonArray("required") { add("meal_entry_id") }
         }
     }
 
