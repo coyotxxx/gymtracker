@@ -12,19 +12,19 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 
 ---
 
-## OBSZAR A — DIETA (batch v2.24.0) 🔶
+## OBSZAR A — DIETA (v2.24.0 + v2.28.0 + v2.29.0) ✅
 | Punkt | Plik | Status |
 |-------|------|--------|
 | Zmiana statusu posiłku (CONSUMED/SKIPPED/PLANNED) | `MealConsumptionRepository.cycleStatus/setStatus` | ✅ v2.24.0 |
 | Wyliczenie adherence dnia (kcal%, posiłki, SKIPPED) | `AdherenceCalculator.computeForDate` | ✅ v2.24.0 |
-| Dodanie/usunięcie posiłku ręcznego | `DietViewModel.addMeal/deleteMeal` | ⬜ |
-| Carry-over planu na nowy dzień | `DietViewModel` carryOver | ⬜ |
-| Generowanie planu dnia AI | `DietViewModel.generateAiDayPlan` | ⬜ |
+| Dodanie/usunięcie posiłku ręcznego | `DietViewModel.addMeal/deleteMeal` | ✅ v2.28.0 |
+| Carry-over planu na nowy dzień | `DietViewModel` carryOver | ⏭️ (carry-over kopiuje plan; status liczy adherence_computed) |
+| Generowanie planu dnia AI | `DietAiService` | ✅ v2.27.0 (diet_generated) |
 | Cel dzienny (deficit cap, carb cycling) | `util/DietGoals.computeDailyGoal` | ⬜ |
-| Korekty kalorii (silnik regułowy ~25 gałęzi) | `CalorieAdjustmentEngine` | ⬜ |
-| SafetyGuard (limity bezpieczeństwa) | `SafetyGuard` | ⬜ |
-| Faza diety / PhaseManager | `PhaseManager` | ⬜ |
-| Hydration log | `HydrationLog*` | ⬜ |
+| Korekty kalorii: decyzja/blok-Safety/zastosuj/odrzuć | `AutoAdjustmentService` (woła `CalorieAdjustmentEngine`+`SafetyGuard`) | ✅ v2.29.0 |
+| CalorieAdjustmentEngine ~25 gałęzi / SafetyGuard / PhaseManager | pure-functions | ⏭️ logowane przez wynik AutoAdjustmentService (liczone co render → nie zalewamy) |
+| Hydration log (user pije wodę) | `HydrationRepository.add` | ✅ v2.29.0 |
+| DietGoals.computeDailyGoal (cap/carb-cycling) | `util/DietGoals` | ⏭️ liczone co render — wartość widać w adherence_computed |
 | Reakcja dietetyka AI na pominięte posiłki | (do zaprojektowania) | ⬜ |
 
 ## OBSZAR B — TRENING / DETEKTORY / PERIODYZACJA 🔶
@@ -85,6 +85,6 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | mealConsumptions (statusy posiłków) | ✅ v2.24.0 |
 
 ---
-**Postęp:** A: 2/11 · B: 4/7 · C: 10/10 (3 świadomie pominięte) · D: 5/5 · E: 6/7. Aktualizować po każdym batchu.
+**Postęp:** A: ✅ (zrobione lub świadomie pominięte) · B: 4/7 · C: ✅ · D: 5/5 · E: 6/7. Aktualizować po każdym batchu.
 
 **Pozostało (po v2.28.0):** A-reszta diety (DietGoals cap/carb-cycling, CalorieAdjustmentEngine ~25 gałęzi, SafetyGuard, PhaseManager, hydration) + B-reszta (HomeCardsResolver, analyzery werdykty) + ciche runCatching (MasterAiContextBuilder/Home). ⭐ Osobno: **reakcja dietetyka AI na pominięte posiłki = FUNKCJA, nie log**.

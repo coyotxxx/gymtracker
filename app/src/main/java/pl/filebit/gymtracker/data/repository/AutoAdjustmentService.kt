@@ -34,7 +34,9 @@ class AutoAdjustmentService @Inject constructor(
     private val hydrationRepo: HydrationRepository,
     private val hydrationCalc: HydrationCalculator,
     private val activityRepo: ActivityRepository,
-    private val neatAnalyzer: NeatAnalyzer
+    private val neatAnalyzer: NeatAnalyzer,
+    // v2.29.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: DiagnosticLogger? = null
 ) {
     suspend fun analyzeNow(): AdjustmentDecision {
         val profile = profileRepo.get()
@@ -111,6 +113,9 @@ class AutoAdjustmentService @Inject constructor(
         if (raw.action == AdjustmentAction.DECREASE_KCAL || raw.action == AdjustmentAction.INCREASE_KCAL) {
             val safetyResult = SafetyGuard.validateKcal(raw.newKcal, profile, weight, bmrForGuard)
             if (safetyResult is SafetyResult.Block) {
+                diag?.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET, "AutoAdjustmentService",
+                    "kcal_adjust_safety_blocked",
+                    "Korekta kalorii ${raw.action.name} (${raw.newKcal} kcal) zablokowana przez SafetyGuard: ${safetyResult.message}")
                 return raw.copy(
                     action = AdjustmentAction.HOLD,
                     kcalDeltaProposed = 0,
@@ -122,6 +127,11 @@ class AutoAdjustmentService @Inject constructor(
             }
         }
 
+        diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET, "AutoAdjustmentService",
+            "kcal_adjust_analyzed",
+            "Analiza korekty kalorii: ${raw.action.name} (Δ${raw.kcalDeltaProposed} → ${raw.newKcal} kcal)",
+            dataJson = """{"action":"${raw.action.name}","kcalDelta":${raw.kcalDeltaProposed},"newKcal":${raw.newKcal},"confidence":"${raw.confidence.name}"}""",
+            success = true)
         return raw
     }
 
@@ -184,11 +194,17 @@ class AutoAdjustmentService @Inject constructor(
         val newDeficit = adj.newKcal - baseline.breakdown.tdeeKcal
         dietPrefs.save(config.copy(customDeficit = newDeficit, manualKcal = null))
         adjustmentDao.update(adj.copy(applied = true, appliedAt = System.currentTimeMillis()))
+        diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "AutoAdjustmentService",
+            "kcal_adjust_applied", "Zastosowano korektę kalorii: ${adj.actionCode} → ${adj.newKcal} kcal",
+            dataJson = """{"adjustmentId":$adjustmentId,"action":"${adj.actionCode}","newKcal":${adj.newKcal}}""", success = true)
     }
 
     suspend fun dismissAdjustment(adjustmentId: Long) {
         val adj = adjustmentDao.getById(adjustmentId) ?: return
         adjustmentDao.update(adj.copy(dismissed = true))
+        diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "AutoAdjustmentService",
+            "kcal_adjust_dismissed", "Odrzucono korektę kalorii #$adjustmentId (${adj.actionCode})",
+            dataJson = """{"adjustmentId":$adjustmentId,"action":"${adj.actionCode}"}""")
     }
 
     suspend fun getRecent(limit: Int = 50) = adjustmentDao.getRecent(limit)
