@@ -118,6 +118,16 @@ fun DebugScreen(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             item { InfoCard() }
+            // v2.23.1: jednoznaczny przycisk „wyślij log do analizy" na samej górze.
+            item {
+                DebugAction(
+                    title = "📤 WYŚLIJ TEN LOG DO ANALIZY",
+                    subtitle = "TO jest log całego działania aplikacji (dla Claude). " +
+                        "Zapisuje plik w Pobrane/GymTracker/gymtracker-debug-*.json — potem go udostępnij/wyślij. " +
+                        "Ten przycisk, jeśli masz zgłosić problem.",
+                    onClick = vm::exportJsonToDownloads
+                )
+            }
             item {
                 DebugAction(
                     title = "Stan bazy aplikacji",
@@ -143,15 +153,8 @@ fun DebugScreen(
             }
             item {
                 DebugAction(
-                    title = "Eksportuj JSON → Downloads",
-                    subtitle = "Tworzy /Downloads/GymTracker/gymtracker-debug-*.json z wszystkimi diagnostykami",
-                    onClick = vm::exportJsonToDownloads
-                )
-            }
-            item {
-                DebugAction(
-                    title = "Kopiuj JSON do schowka",
-                    subtitle = "Wklej w Telegramie/mailu do dewelopera",
+                    title = "…lub skopiuj log do schowka",
+                    subtitle = "Ten sam log co wyżej — wklej w czacie/mailu zamiast wysyłać plik.",
                     onClick = vm::copyJsonToClipboard
                 )
             }
