@@ -100,11 +100,17 @@ class AiToolHandler @Inject constructor(
             callTimestamps.removeFirst()
         }
         if (callTimestamps.size >= limits.maxCallsPerMinute) {
+            diag.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiToolHandler",
+                "tool_rate_limited", "Przekroczono limit wywołań narzędzi AI ($toolName) — ${limits.maxCallsPerMinute}/min")
             return """{"error":"rate_limit_exceeded","limit_per_minute":${limits.maxCallsPerMinute},"retry_after_seconds":${
                 ((callTimestamps.first() + 60_000L - now) / 1000).coerceAtLeast(1)
             }}"""
         }
         callTimestamps.addLast(now)
+
+        // v2.27.0: log każdego wywołania narzędzia AI (read/propose/write) w jednym punkcie.
+        diag.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiToolHandler",
+            "tool_called", "AI wywołał narzędzie: $toolName", dataJson = """{"tool":"$toolName"}""", success = true)
 
         val result = when (toolName) {
             "get_workouts" -> execGetWorkouts(input)
@@ -129,11 +135,17 @@ class AiToolHandler @Inject constructor(
             "add_meal" -> execAddMeal(input)
             "set_calorie_target" -> execSetCalorieTarget(input)
             "set_diet_goal" -> execSetDietGoal(input)
-            else -> "{\"error\":\"Unknown tool: $toolName\"}"
+            else -> {
+                diag.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiToolHandler",
+                    "tool_unknown", "AI wywołał nieznane narzędzie: $toolName")
+                "{\"error\":\"Unknown tool: $toolName\"}"
+            }
         }
 
         // === SIZE CAP (v1.18.0) — 500KB JSON ===
         if (result.toByteArray(Charsets.UTF_8).size > limits.maxResultSizeBytes) {
+            diag.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiToolHandler",
+                "tool_result_too_large", "Wynik narzędzia $toolName przekroczył limit ${limits.maxResultSizeBytes / 1024}KB")
             return """{"error":"result_too_large","size_kb":${result.length / 1024},"max_kb":${limits.maxResultSizeBytes / 1024},"hint":"Zwęź zapytanie — mniejszy zakres dat lub mniej rekordów."}"""
         }
         return result

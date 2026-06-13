@@ -80,7 +80,8 @@ interface AiClient {
 @Singleton
 class AiClientImpl @Inject constructor(
     private val aiLogRepo: pl.filebit.gymtracker.data.repository.AiLogRepository,
-    private val aiPrefs: AiPreferences
+    private val aiPrefs: AiPreferences,
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
 ) : AiClient {
 
     private val http = OkHttpClient.Builder()
@@ -109,6 +110,16 @@ class AiClientImpl @Inject constructor(
         errorMsg: String?,
         durationMs: Long
     ) {
+        // v2.27.0: lekki sygnał diagnostyczny niezależny od pref AiLog (pełne transkrypty
+        // mają swój przełącznik, ale strumień zdarzeń AI ma być zawsze widoczny).
+        if (success) {
+            diag.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiClient", "ai_call_ok",
+                "Wywołanie AI OK ($source, ${config.model}, ${durationMs}ms)",
+                dataJson = """{"source":"$source","model":"${config.model}","durationMs":$durationMs}""", success = true)
+        } else {
+            diag.error(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiClient", "ai_call_failed",
+                "Wywołanie AI nieudane ($source): ${errorMsg?.take(200)}")
+        }
         if (!aiPrefs.isLoggingEnabled()) return
         runCatching {
             aiLogRepo.log(

@@ -55,14 +55,15 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | RestTimerService start/stop | `RestTimerService` | ⏭️ pominięte (czysty Service, nie-Hilt, niska wartość) |
 | NotificationCenter (in-app bell) | `NotificationCenter` | ⏭️ pominięte (liczony co render Home) |
 
-## OBSZAR D — AI 🔶
+## OBSZAR D — AI ✅
 | Punkt | Plik | Status |
 |-------|------|--------|
 | AiQuickAsk odpowiedź/deflect/fail | `AiQuickAskViewModel` | ✅ |
-| Write-tools (logWeight/addMeal/setTarget/setGoal) | `AiToolHandler` | 🔶 (tylko write) |
-| Read-tools + propose_* | `AiToolHandler` | ⬜ |
-| Parse-fail planu/diety | `WorkoutPlanAiService/DietAiService` | ⬜ |
-| AiTrainerViewModel | `AiTrainerViewModel` | ⬜ |
+| KAŻDE narzędzie (read/propose/write) + rate-limit + unknown + too-large | `AiToolHandler.execute` | ✅ v2.27.0 |
+| Każde wywołanie AI: ok/błąd + czas + źródło | `AiClient.logCall` | ✅ v2.27.0 |
+| Generowanie planu: parse-fail/empty/fail/sukces | `WorkoutPlanAiService` | ✅ v2.27.0 |
+| Generowanie diety: parse-fail/HARD-violations/fail/sukces | `DietAiService` | ✅ v2.27.0 |
+| AiTrainerViewModel (błąd UI) | `AiTrainerViewModel` | ⏭️ batch E (call i tak loguje AiClient) |
 
 ## OBSZAR E — AKCJE USERA / CICHE BŁĘDY ⬜
 | Punkt | Plik | Status |
@@ -82,4 +83,4 @@ Legenda: ✅ zrobione · 🔶 częściowe · ⬜ do zrobienia
 | mealConsumptions (statusy posiłków) | ✅ v2.24.0 |
 
 ---
-**Postęp:** A: 2/11 · B: 4/7 · C: 10/10 (3 świadomie pominięte) · D: 1.5/5 · E: 0/5. Aktualizować po każdym batchu.
+**Postęp:** A: 2/11 · B: 4/7 · C: 10/10 (3 świadomie pominięte) · D: 5/5 · E: 0/5. Aktualizować po każdym batchu.

@@ -144,7 +144,9 @@ class DietAiService @Inject constructor(
     private val validator: AiMealJsonValidator,
     private val workoutTimeAnalyzer: pl.filebit.gymtracker.data.repository.WorkoutTimeAnalyzer,
     private val knowledgeRepo: pl.filebit.gymtracker.data.repository.DietaryKnowledgeRepository,
-    private val masterContextBuilder: MasterAiContextBuilder
+    private val masterContextBuilder: MasterAiContextBuilder,
+    // v2.27.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -822,6 +824,8 @@ class DietAiService @Inject constructor(
             val cleaned = stripJsonFences(lastRaw!!)
             parsed = runCatching { json.decodeFromString<AiDayPlan>(cleaned) }.getOrNull()
             if (parsed == null || parsed.meals.isEmpty()) {
+                diag?.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "DietAiService",
+                    "diet_parse_failed", "AI zwróciło niepoprawny/pusty plan diety (próba $attempt)")
                 return Result.failure(IllegalStateException("AI zwróciło niepoprawny lub pusty JSON (attempt=$attempt)"))
             }
 
@@ -840,12 +844,21 @@ class DietAiService @Inject constructor(
             attempt++
         }
 
-        if (parsed == null) return Result.failure(IllegalStateException("AI nie zwróciło planu"))
+        if (parsed == null) {
+            diag?.error(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "DietAiService",
+                "diet_generation_failed", "AI nie zwróciło planu diety po 3 próbach")
+            return Result.failure(IllegalStateException("AI nie zwróciło planu"))
+        }
         if (validation != null && !validation.isValid) {
             // Po 3 próbach nadal HARD violations — zwróć błąd informujący
             val errorMsgs = validation.errors.joinToString("\n") { "• ${it.message}" }
+            diag?.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "DietAiService",
+                "diet_hard_violations", "Plan diety po 3 próbach nadal narusza HARD constraints (${validation.errors.size} błędów)")
             return Result.failure(IllegalStateException("Po 3 próbach AI nadal generuje plan z naruszeniami HARD constraints:\n$errorMsgs"))
         }
+        diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "DietAiService",
+            "diet_generated", "AI wygenerowało plan diety: ${parsed.meals.size} posiłków (próby: $attempt)",
+            dataJson = """{"meals":${parsed.meals.size},"attempts":$attempt}""", success = true)
 
         // Mapowanie sloty → MealType
         val typesForSlots: List<MealType> = when (mealsCount) {

@@ -150,7 +150,8 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
 
     // ── AI ────────────────────────────────────────────────────────────────
     val aiPrefs = AiPreferences(context)
-    val aiClient = AiClientImpl(AiLogRepository(db.aiLogDao()), aiPrefs)
+    val aiClient = AiClientImpl(AiLogRepository(db.aiLogDao()), aiPrefs,
+        pl.filebit.gymtracker.data.repository.DiagnosticLogger(db.diagnosticEventDao()))
     val workoutAiSummary = WorkoutAiSummaryService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao()
     )

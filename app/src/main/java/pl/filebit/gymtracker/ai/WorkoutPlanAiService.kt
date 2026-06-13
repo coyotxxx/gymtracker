@@ -47,7 +47,9 @@ class WorkoutPlanAiService @Inject constructor(
     private val contextBuilder: MasterAiContextBuilder,
     // v2.6.0: atomowy zapis planu (withTransaction) — plan+ćwiczenia+sety razem,
     // żeby UI nie widziało przejściowego "0 ćwiczeń / bez harmonogramu".
-    private val db: pl.filebit.gymtracker.data.db.AppDatabase
+    private val db: pl.filebit.gymtracker.data.db.AppDatabase,
+    // v2.27.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -392,6 +394,8 @@ class WorkoutPlanAiService @Inject constructor(
             } catch (e: Exception) {
                 lastError = e.message?.take(200) ?: "parse error"
                 Log.w("WorkoutPlanAi", "Attempt $attempt parse failed: $lastError")
+                diag?.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "WorkoutPlanAiService",
+                    "plan_parse_failed", "Parsowanie planu AI nieudane (próba $attempt): $lastError")
                 if (attempt < 2) {
                     // Retry z explicit korektą
                     currentMessages = listOf(
@@ -409,10 +413,14 @@ class WorkoutPlanAiService @Inject constructor(
         }
 
         if (parsed == null) {
+            diag?.error(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "WorkoutPlanAiService",
+                "plan_generation_failed", "AI nie zwróciło poprawnego JSON planu po 2 próbach: $lastError")
             throw IllegalStateException("Po 2 próbach AI nadal nie zwróciło poprawnego JSON: $lastError")
         }
 
         if (parsed.days.isEmpty()) {
+            diag?.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "WorkoutPlanAiService",
+                "plan_empty", "AI zwróciło plan z 0 dniami treningowymi")
             throw IllegalStateException("AI zwróciło 0 dni treningowych w JSON")
         }
 
@@ -505,6 +513,9 @@ class WorkoutPlanAiService @Inject constructor(
         }
 
         Log.d("WorkoutPlanAi", "AI parsed: ${parsed.days.size} dni, $totalAdded ćwiczeń dodanych, $skipped pominiętych")
+        diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "WorkoutPlanAiService",
+            "plan_generated", "AI wygenerowało plan: ${parsed.days.size} dni, $totalAdded ćwiczeń ($skipped pominiętych)",
+            dataJson = """{"days":${parsed.days.size},"added":$totalAdded,"skipped":$skipped}""", success = true)
 
         if (totalAdded < 3) {
             // AI zwróciło prawie nic użytecznego — fallback
