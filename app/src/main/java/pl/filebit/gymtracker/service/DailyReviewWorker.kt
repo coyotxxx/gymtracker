@@ -164,8 +164,9 @@ class DailyReviewWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
+        // v2.45.0: message=tytuł, dataJson=treść — dla historii dzwonka.
         diag.info(DiagnosticCategory.NOTIFICATION, "DailyReviewWorker", "notification_sent",
-            "Wysłano notyfikację Bilans dnia", success = true)
+            "📋 Bilans dnia", dataJson = body, success = true)
     }
 
     private fun todayBounds(nowMs: Long): Pair<Long, Long> {

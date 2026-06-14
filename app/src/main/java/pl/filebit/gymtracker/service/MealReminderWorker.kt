@@ -86,9 +86,10 @@ class MealReminderWorker @AssistedInject constructor(
 
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(notificationId, notification)
+        // v2.45.0: message=tytuł, dataJson=treść — dla historii dzwonka.
         diag.info(DiagnosticCategory.NOTIFICATION, "MealReminderWorker", "meal_reminder_sent",
-            "Przypomnienie o posiłku: $slotLabel",
-            dataJson = """{"slotIndex":$slotIndex,"mealType":"$mealTypeName"}""", success = true)
+            "🍽️ Pora na $slotLabel",
+            dataJson = "Oznacz status — Zjedzone lub Pominięte.", success = true)
         return Result.success()
     }
 

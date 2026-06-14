@@ -26,7 +26,9 @@ sealed class Screen(val route: String) {
     object AiLog : Screen("ai/log")
     object HealthScreenshot : Screen("health/screenshot")
     object HealthHistory : Screen("health/history")
-    // v2.36.0 (U4b 3b): Screen.Notifications (dzwonek in-app) usunięty — Karta coacha zastępuje.
+    // v2.45.0: dzwonek wrócił — ale jako HISTORIA wysłanych powiadomień (diagnostic_events),
+    // nie live-lista (tę pokazuje Karta coacha). Inna rzecz, zero duplikatu.
+    object Notifications : Screen("notifications")
     object AiTrainer : Screen("ai/trainer/{conversationId}?auto={auto}") {
         fun create(conversationId: Long, autoAction: String? = null): String {
             // Zawsze dołączamy ?auto=… żeby Compose Navigation rejestrował query
