@@ -12,9 +12,6 @@ import javax.inject.Singleton
  *
  * Każda karta ma własny `cardKey` (np. "recovery", "phase", "readiness", "load").
  * Dismiss obowiązuje do końca dnia — nowy dzień karty wracają.
- *
- * Zastępuje stary `RecoveryCardPrefs` (zachowany dla kompatybilności wstecznej —
- * nowe karty używają tej generycznej klasy).
  */
 @Singleton
 class DismissedCardsPrefs @Inject constructor(
@@ -48,7 +45,6 @@ class DismissedCardsPrefs @Inject constructor(
     }
 
     object CardKeys {
-        const val RECOVERY = "recovery"
         const val PHASE = "phase"
         const val READINESS = "readiness"
         const val LOAD = "load"

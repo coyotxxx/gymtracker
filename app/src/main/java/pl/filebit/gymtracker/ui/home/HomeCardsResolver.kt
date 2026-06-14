@@ -130,14 +130,8 @@ object HomeCardsResolver {
             }
         }
 
-        // 7. Recovery Score (WHOOP-like)
-        if (state.recoveryScore != null) {
-            if (state.recoveryCardDismissed) {
-                hidden += HiddenCard("RECOVERY_SCORE", "user zamknął na dziś")
-            } else {
-                visible += HomeCard("RECOVERY_SCORE", "RECOVERY SCORE")
-            }
-        }
+        // 7. Regeneracja — v2.44.0: scalona w Kartę Coacha (NotificationCenter →
+        // CoachOrchestrator). Nie jest już osobną kartą Home, więc resolver jej nie modeluje.
 
         // 8. Obciążenie treningowe (ACWR)
         state.trainingLoad?.let { l ->

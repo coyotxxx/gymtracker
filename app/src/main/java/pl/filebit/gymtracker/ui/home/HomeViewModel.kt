@@ -70,9 +70,8 @@ data class HomeUiState(
     val trainingPhase: TrainingPhaseStatus? = null,    // null = jeszcze nie obliczone
     val phaseDietConflict: Boolean = false,            // v2.16.0 (P1-4) — INTENSYFIKACJA na deficycie (CUT)
     val healthInsight: HealthInsight? = null,           // null = jeszcze nie obliczone (Health Connect)
-    val recoveryScore: RecoveryScore? = null,           // v1.7.4 — WHOOP-like 0-100
+    val recoveryScore: RecoveryScore? = null,           // v1.7.4 — sygnał regeneracji (Coach/consistency)
     val trainingLoad: TrainingLoad? = null,             // v1.7.4 — ACWR
-    val recoveryCardDismissed: Boolean = false,          // v1.7.5 — user zamknął kartę na dziś
     val trainingReadiness: TrainingReadiness? = null,   // v1.9.0 — kompozyt
     val muscleRecovery: MuscleRecoveryReport? = null,   // v1.9.0 — per partia
     val dismissedCards: Set<String> = emptySet(),        // v1.10 — generyczny dismiss per cardKey
@@ -112,7 +111,6 @@ class HomeViewModel @Inject constructor(
     private val healthAnalyzer: HealthInsightAnalyzer,
     private val recoveryScoreCalculator: RecoveryScoreCalculator,
     private val trainingLoadAnalyzer: TrainingLoadAnalyzer,
-    private val recoveryCardPrefs: pl.filebit.gymtracker.data.repository.RecoveryCardPrefs,
     private val dismissedCardsPrefs: pl.filebit.gymtracker.data.repository.DismissedCardsPrefs,
     private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer,
     private val readinessAnalyzer: TrainingReadinessAnalyzer,
@@ -139,7 +137,8 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private val recoveryCardRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
+    // Generyczny trigger rebuildu state po dismiss kart alertowych (Phase/Readiness/Load).
+    private val cardRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
 
     // Trigger do wymuszania rebuild state po akcjach deload (Apply/Dismiss/Restore/Cancel).
     // Bez tego SharedPrefs się zmienia ale combine() nie wie o tym — kafel zostaje na ekranie.
@@ -173,14 +172,14 @@ class HomeViewModel @Inject constructor(
     // zostać w typowanym combine (zamiast vararg z Flow<*> i castów).
     private data class SecondaryFlows(
         val deloadTrigger: Long,
-        val recoveryTrigger: Long,
+        val cardTrigger: Long,
         val activeMeso: TrainingMesocycle?,
         val pendingDecisions: List<PendingPeriodizationDecision>
     )
 
     private val secondaryFlows = combine(
         deloadRefresh,
-        recoveryCardRefresh,
+        cardRefresh,
         mesoDao.observeActive(),
         pendingDecisionDao.observePending()
     ) { d, rc, m, pd -> SecondaryFlows(d, rc, m, pd) }
@@ -432,11 +431,9 @@ class HomeViewModel @Inject constructor(
             healthInsight = healthInsight,
             recoveryScore = recoveryScore,
             trainingLoad = trainingLoad,
-            recoveryCardDismissed = recoveryCardPrefs.isDismissedForToday(),
             trainingReadiness = trainingReadiness,
             muscleRecovery = muscleRecovery,
             dismissedCards = setOf(
-                pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.RECOVERY,
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.PHASE,
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS,
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.LOAD
@@ -651,16 +648,10 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    /** v1.7.5 — user zamyka kartę REGENERACJA na bieżący dzień. Następny dzień wraca. */
-    fun dismissRecoveryCard() {
-        recoveryCardPrefs.dismissForToday()
-        recoveryCardRefresh.value = System.currentTimeMillis()
-    }
-
     /** v1.10 — generyczny dismiss dla dowolnej karty alertowej (Phase/Readiness/Load). */
     fun dismissCard(cardKey: String) {
         dismissedCardsPrefs.dismissToday(cardKey)
-        recoveryCardRefresh.value = System.currentTimeMillis()
+        cardRefresh.value = System.currentTimeMillis()
     }
 
     /**
@@ -752,8 +743,8 @@ class HomeViewModel @Inject constructor(
 
     /**
      * v1.14.0 — unified check czy mogę aplikować deload TERAZ.
-     * Naprawia inkonsystencję: TrainingReadinessCard (z `phaseIsDeload`),
-     * WhoopRecoveryCard i TrainingLoadCard miały różne checki. Teraz jedno źródło prawdy.
+     * Jedno źródło prawdy dla kart treningowych (Readiness/Phase/Load) — wcześniej
+     * każda miała własny check, co dawało inkonsystencje.
      */
     fun canApplyDeloadNow(): Boolean {
         val phase = state.value.trainingPhase?.phase
@@ -763,30 +754,6 @@ class HomeViewModel @Inject constructor(
                 phase != TrainingPhase.DELOAD &&
                 phase != TrainingPhase.NEEDS_DELOAD &&
                 mesoPhase != MesocyclePhase.DELOAD
-    }
-
-    /**
-     * v1.7.4 — deload na bazie Recovery Score (jeśli trwale niskie).
-     * Severity bazuje na zone (RED/ORANGE/YELLOW).
-     */
-    fun applyScoreBasedDeload(
-        score: RecoveryScore,
-        onApplied: (pl.filebit.gymtracker.data.repository.DeloadService.ApplyResult) -> Unit
-    ) {
-        val planId = state.value.todaysPlan?.id
-            ?: state.value.nextPlannedDay?.planId
-            ?: return
-        val severity = when (score.zone) {
-            pl.filebit.gymtracker.ai.RecoveryZone.RED -> DeloadSeverity.HIGH
-            pl.filebit.gymtracker.ai.RecoveryZone.ORANGE -> DeloadSeverity.MED
-            pl.filebit.gymtracker.ai.RecoveryZone.YELLOW -> DeloadSeverity.LOW
-            pl.filebit.gymtracker.ai.RecoveryZone.GREEN -> return
-        }
-        viewModelScope.launch {
-            val result = deloadService.apply(planId, severity)
-            deloadRefresh.value = System.currentTimeMillis()
-            onApplied(result)
-        }
     }
 
     /** Plan id do podglądu wag w dialogu confirm Apply. */

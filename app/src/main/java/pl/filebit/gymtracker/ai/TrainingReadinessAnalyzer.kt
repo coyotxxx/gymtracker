@@ -51,7 +51,12 @@ class TrainingReadinessAnalyzer @Inject constructor(
         val load = runCatching { trainingLoadAnalyzer.analyze() }.getOrNull()
         val muscle = runCatching { muscleRecoveryAnalyzer.analyze() }.getOrNull()
 
-        val recoveryScore = recovery?.score ?: 75   // neutral default
+        // v2.44.0: brak ŚWIEŻYCH danych regeneracji = UNKNOWN, nie fałszywe „75".
+        // Inaczej kompozyt „myśli" że user jest wyregenerowany, choć nic nie wie —
+        // i zawyża gotowość. Gdy nieznana → przeważamy load+mięśnie.
+        val recoveryKnown = recovery != null && recovery.isFresh &&
+            recovery.maturity != DataMaturity.LEARNING
+        val recoveryScore = recovery?.score ?: 75   // tylko do wyświetlenia komponentu
         val muscleAvg = muscle?.avgRecoveryPct ?: 80
 
         // LoadFactor: ACWR optimum 0.8-1.3 → 100; im dalej tym mniej
@@ -68,7 +73,12 @@ class TrainingReadinessAnalyzer @Inject constructor(
             }
         } else 80   // brak danych = neutral
 
-        val score = (recoveryScore * 0.5 + loadFactor * 0.3 + muscleAvg * 0.2).toInt().coerceIn(0, 100)
+        val score = if (recoveryKnown) {
+            recoveryScore * 0.5 + loadFactor * 0.3 + muscleAvg * 0.2
+        } else {
+            // Regeneracja nieznana → wagi przeliczone z load(30)+mięśni(20) = 60/40.
+            loadFactor * 0.6 + muscleAvg * 0.4
+        }.toInt().coerceIn(0, 100)
 
         val zone = when {
             score >= 90 -> ReadinessZone.PEAK

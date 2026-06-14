@@ -4,10 +4,13 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import pl.filebit.gymtracker.ai.NotificationCenter
+import pl.filebit.gymtracker.data.coach.CoachActionType
 import pl.filebit.gymtracker.data.coach.CoachOrchestrator
 import pl.filebit.gymtracker.data.entity.DietGoalType
 import pl.filebit.gymtracker.data.entity.Gender
+import pl.filebit.gymtracker.data.entity.RecoveryLog
 import pl.filebit.gymtracker.data.entity.UserProfile
+import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.repository.DeloadPreferences
 import pl.filebit.gymtracker.data.repository.DeloadService
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
@@ -51,6 +54,33 @@ class CoachOrchestratorE2ETest : TestHarness() {
         assertTrue("brak danych → brak dominującej reakcji (zero fałszywych alarmów)",
             verdict.isEmpty)
         assertTrue("brak jakichkolwiek reakcji", verdict.all.isEmpty())
+    }
+
+    @Test
+    fun `zaangazowany user ze stara regeneracja - coach prosi o log`() = runBlocking {
+        // v2.44.0: regeneracja scalona w Coacha. User ZAANGAŻOWANY (ma trening), ale
+        // ostatni log regeneracji sprzed miesiąca → proaktywny sygnał „zaloguj regenerację"
+        // z akcją OPEN_RECOVERY. Świeżego instala (brak treningów) NIE nagabujemy — to
+        // chroni strażnik „pusta baza".
+        val now = System.currentTimeMillis()
+        val day = 24L * 3600 * 1000
+        UserProfileRepository(db.userProfileDao()).save(
+            UserProfile(bodyweightKg = 84.0, gender = Gender.MALE, goalType = DietGoalType.MAINTAIN))
+        // Trening sprzed 1 dnia → user zaangażowany, a zarazem brak alertu „brak treningów" (<5 dni).
+        db.workoutDao().insert(Workout(startedAt = now - day, finishedAt = now - day))
+        // Log regeneracji sprzed 30 dni → stary, niesvieży.
+        db.recoveryLogDao().insert(RecoveryLog(dateMs = now - 30 * day, sleepHours = 7.0))
+
+        val verdict = orchestrator().evaluate()
+
+        TraceReport("coach-e2e-recovery-gap")
+            .section("WERDYKT — STARA REGENERACJA")
+            .verdict("primary", verdict.primary?.id ?: "BRAK", "oczekiwane: nc_recovery_log_gap")
+            .kv("akcje", verdict.all.flatMap { it.actions }.joinToString { it.type.name })
+            .emit()
+
+        assertTrue("Coach proponuje akcję OPEN_RECOVERY (zaloguj regenerację)",
+            verdict.all.any { r -> r.actions.any { it.type == CoachActionType.OPEN_RECOVERY } })
     }
 
     @Test

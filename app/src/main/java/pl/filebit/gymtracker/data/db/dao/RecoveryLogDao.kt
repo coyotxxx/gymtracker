@@ -20,6 +20,10 @@ interface RecoveryLogDao {
     @Query("SELECT * FROM recovery_logs WHERE dateMs >= :startMs ORDER BY dateMs DESC LIMIT :limit")
     suspend fun getSince(startMs: Long, limit: Int = 30): List<RecoveryLog>
 
+    /** Najnowszy log w CAŁEJ historii (do liczenia świeżości — nie tylko okno 28d). */
+    @Query("SELECT * FROM recovery_logs ORDER BY dateMs DESC LIMIT 1")
+    suspend fun getMostRecent(): RecoveryLog?
+
     @Query("SELECT * FROM recovery_logs ORDER BY dateMs DESC LIMIT :limit")
     fun observeRecent(limit: Int = 14): Flow<List<RecoveryLog>>
 

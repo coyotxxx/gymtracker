@@ -36,7 +36,8 @@ enum class NotificationAction {
     ADD_WEIGHT,            // klik → measurements
     SEND_HEALTH_SCREEN,    // klik → health/screenshot
     START_WORKOUT,         // klik → start treningu
-    OPEN_PERIODIZATION_PLAN // v1.18.0 — klik → ekran "Plan cyklu"
+    OPEN_PERIODIZATION_PLAN, // v1.18.0 — klik → ekran "Plan cyklu"
+    LOG_RECOVERY           // v2.44.0 — klik → dialog oceny regeneracji (sen/stres)
 }
 
 @Singleton
@@ -54,9 +55,37 @@ class NotificationCenter @Inject constructor(
         val now = System.currentTimeMillis()
         val msPerDay = 24L * 3600 * 1000
 
+        // Treningi (raz, reużywane: gate sygnału regeneracji + sekcja „brak treningów").
+        val finishedWorkouts = runCatching { workoutDao.observeAllOnce() }.getOrNull()
+            .orEmpty().filter { it.finishedAt != null }
+        val isEngagedUser = finishedWorkouts.isNotEmpty()
+
         // === Recovery Score ===
         val score = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
-        if (score != null) {
+        // v2.44.0: PROAKTYWNY sygnał luki danych. Zastępuje pasywną kartę „Zbieram dane X/7"
+        // (która myliła „nowy user" z „przestał logować" i nie prosiła o akcję). Pokazujemy
+        // TYLKO gdy: user JEST zaangażowany (ma treningi — świeżego instala nie nagabujemy)
+        // ORAZ brak świeżego logu regeneracji (dziś/wczoraj). Jeden sygnał, niski priorytet —
+        // arbiter Coacha zwija go pod ważniejsze reakcje (zero spamu).
+        if (score != null && !score.isFresh && isEngagedUser) {
+            val (gapTitle, gapMsg) = if (score.lastLogDaysAgo == null) {
+                "🛌 Zacznij logować regenerację" to
+                    "Oceń sen i samopoczucie (10 s) — nauczę się Twojej normy i zacznę pilnować regeneracji."
+            } else {
+                "🛌 Brak świeżych danych regeneracji" to
+                    "Ostatni wpis ${score.lastLogDaysAgo} dni temu. Oceń dziś sen i stres, żebym mógł oceniać Twoją regenerację."
+            }
+            list.add(AppNotification(
+                id = "recovery_log_gap",
+                severity = NotificationSeverity.INFO,
+                title = gapTitle,
+                message = gapMsg,
+                actionType = NotificationAction.LOG_RECOVERY
+            ))
+        }
+        // Alerty o NISKIM recovery mają sens tylko przy ŚWIEŻYCH danych (inaczej oceniamy
+        // miesięczny log jako „dziś"). Stąd gate na isFresh.
+        if (score != null && score.isFresh) {
             when (score.zone) {
                 RecoveryZone.RED -> {
                     if (score.daysBelowThreshold >= 5) {
@@ -147,8 +176,7 @@ class NotificationCenter @Inject constructor(
         }
 
         // === Brak treningów >5 dni ===
-        val finished = workoutDao.observeAllOnce().filter { it.finishedAt != null }
-        val lastWorkout = finished.maxByOrNull { it.startedAt }
+        val lastWorkout = finishedWorkouts.maxByOrNull { it.startedAt }
         val daysSinceLast = lastWorkout?.let { (now - it.startedAt) / msPerDay } ?: 999L
         if (daysSinceLast in 5..30) {
             list.add(AppNotification(

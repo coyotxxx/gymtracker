@@ -82,12 +82,26 @@ class CoachOrchestrator @Inject constructor(
                 Triple(CoachDomain.CONSISTENCY, CoachPriority.CONSISTENCY, CoachActionType.OPEN_DIET)
             pl.filebit.gymtracker.ai.NotificationAction.SEND_HEALTH_SCREEN ->
                 Triple(CoachDomain.CONSISTENCY, CoachPriority.CONSISTENCY, CoachActionType.NONE)
+            // v2.44.0: luka danych regeneracji → akcja otwiera dialog oceny. Niski priorytet
+            // (CONSISTENCY) — realne sygnały (HEALTH/RECOVERY/RETURN) zawsze go przykrywają.
+            pl.filebit.gymtracker.ai.NotificationAction.LOG_RECOVERY ->
+                Triple(CoachDomain.RECOVERY, CoachPriority.CONSISTENCY, CoachActionType.OPEN_RECOVERY)
             pl.filebit.gymtracker.ai.NotificationAction.NONE ->
                 Triple(if (crit) CoachDomain.RECOVERY else CoachDomain.GOAL,
                     if (crit) CoachPriority.RECOVERY else CoachPriority.OPTIMIZATION, CoachActionType.NONE)
         }
+        // Etykieta przycisku = czytelna nazwa akcji (nie ucięty tytuł notyfikacji).
+        val actionLabel = when (action) {
+            CoachActionType.APPLY_DELOAD -> "Zastosuj deload"
+            CoachActionType.START_WORKOUT -> "Zacznij trening"
+            CoachActionType.OPEN_RECOVERY -> "Oceń regenerację"
+            CoachActionType.OPEN_DIET -> "Otwórz dietę"
+            CoachActionType.OPEN_TRAINING -> "Otwórz trening"
+            CoachActionType.OPEN_PERIODIZATION -> "Plan cyklu"
+            else -> n.title.take(24)
+        }
         val actions = buildList {
-            if (action != CoachActionType.NONE) add(CoachAction(action, n.title.take(24)))
+            if (action != CoachActionType.NONE) add(CoachAction(action, actionLabel))
             add(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI"))
         }
         return CoachReaction(

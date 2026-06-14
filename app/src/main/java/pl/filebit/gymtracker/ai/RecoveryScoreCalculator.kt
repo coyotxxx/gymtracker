@@ -44,7 +44,14 @@ data class RecoveryScore(
     /** Personal baselines obliczone z 28d. Pomocne w UI ("twoja norma"). */
     val baselines: PersonalBaselines,
     /** Stała dni z rzędu obniżonego score (dla decyzji o trwałym trendzie). */
-    val daysBelowThreshold: Int
+    val daysBelowThreshold: Int,
+    /**
+     * Dni od ostatniego logu regeneracji w CAŁEJ historii (nie tylko w oknie 28d).
+     * null = nigdy nie logowano. Rozróżnia „nowy user" od „przestał logować".
+     */
+    val lastLogDaysAgo: Int? = null,
+    /** Czy mamy ŚWIEŻY log (dziś/wczoraj). false = dane stare LUB brak — Coach nie ufa score. */
+    val isFresh: Boolean = false
 ) {
     val zone: RecoveryZone get() = when {
         score >= 75 -> RecoveryZone.GREEN
@@ -81,6 +88,8 @@ class RecoveryScoreCalculator @Inject constructor(
         const val EARLY_THRESHOLD_DAYS = 7
         /** Liczba dni z score <50 z rzędu by uznać za trwały trend. */
         const val PERSISTENT_TREND_DAYS = 5
+        /** Log uznajemy za „świeży" gdy jest z dziś lub wczoraj (≤2 dni). */
+        const val FRESH_WINDOW_DAYS = 2
     }
 
     suspend fun calculate(): RecoveryScore {
@@ -90,6 +99,12 @@ class RecoveryScoreCalculator @Inject constructor(
         val logs = runCatching {
             recoveryLogDao.getSince(cutoff28, 28)
         }.getOrNull().orEmpty().sortedByDescending { it.dateMs }
+
+        // Świeżość liczona od NAJNOWSZEGO logu w całej historii — rozróżnia
+        // „nowy user (uczę się)" od „logował miesiąc temu i przestał".
+        val mostRecent = runCatching { recoveryLogDao.getMostRecent() }.getOrNull()
+        val lastLogDaysAgo = mostRecent?.let { ((now - it.dateMs) / msPerDay).toInt().coerceAtLeast(0) }
+        val isFresh = lastLogDaysAgo != null && lastLogDaysAgo <= FRESH_WINDOW_DAYS
 
         val baselines = computeBaselines(logs)
         val daysOfData = logs.size
@@ -108,7 +123,9 @@ class RecoveryScoreCalculator @Inject constructor(
                 daysOfData = daysOfData,
                 factors = emptyList(),
                 baselines = baselines,
-                daysBelowThreshold = 0
+                daysBelowThreshold = 0,
+                lastLogDaysAgo = lastLogDaysAgo,
+                isFresh = isFresh
             )
         }
 
@@ -139,7 +156,9 @@ class RecoveryScoreCalculator @Inject constructor(
             daysOfData = daysOfData,
             factors = factors,
             baselines = baselines,
-            daysBelowThreshold = daysBelowThreshold
+            daysBelowThreshold = daysBelowThreshold,
+            lastLogDaysAgo = lastLogDaysAgo,
+            isFresh = isFresh
         )
     }
 
