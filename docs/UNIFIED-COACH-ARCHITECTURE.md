@@ -163,8 +163,10 @@ Cel/efekty: `GoalAchievementService`, `TrendAnalyzer`.
 | **U3** 🔨 rdzeń gotowy | Orchestrator | `data/coach/CoachReaction.kt` (jeden model: domena/priorytet/akcje + `CoachVerdict`) + `CoachOrchestrator.evaluate()` (wywołuje doradców) + czysty arbiter `arbitrateCoach()` (drabina priorytetów + anti-konflikt kontuzja>deload + dedup deloadu). **6 testów zielonych.** DODATKOWY, nie podłączony do UI (świadomie — patrz U4). NIE ruszono istniejących powierzchni. | rdzeń done, czeka na U4 |
 | **U4a** ✅ v2.33.0 | Orchestrator ŻYWY | `CoachOrchestrator.evaluate()` wpięty w `DailyReviewWorker` — wieczorny Bilans pokazuje zunifikowany werdykt coacha (trening+dieta) NA GÓRZE + braki. Koniec „dormant". ZERO usuwania powierzchni. | wykonane |
 | **U4b** ⏳ | Jeden kanał reakcji (replace) | Karta coacha na Home/Diecie z werdyktu; **zastąpienie** rozproszonych kart (deload/dieta/in-app bell). Akcje `CoachActionType` → istniejące serwisy. To krok „replace" — wymaga potwierdzenia Macieja co znika. | średnie/wyższe |
-| **U5** | AI-nadzór | Orchestrator konsultuje AI (MasterContext) przy ważnych/sprzecznych reakcjach; AI przeważa/łączy/wyjaśnia | wyższe |
-| **U6** | Per-goal + testy całościowe | Strojenie wag per cel + E2E „cel→sygnał→spójna reakcja" | — |
+| **U5** ✅ v2.41.0 | AI-nadzór | `DailyReviewWorker.reviewWithAi` — AI ocenia werdykt raz dziennie (wybór Macieja: tanio) z pełnym kontekstem; komentarz w Bilansie + log `coach_ai_review`. Łapie błędy algorytmu (slope-bug). Bez klucza pomijane. | wykonane |
+| **U6** ✅ v2.42.0 | Per-goal + E2E | Per-goal już w silnikach (CalorieAdjustmentEngine/deload goal-aware). `CoachOrchestratorE2ETest` — pusta baza = zero fałszywych reakcji (strażnik przeciw bugom typu slope) + dedup dismissed. | wykonane |
+
+**ROADMAPA U1-U6 KOMPLETNA (v2.32.0–v2.42.0).** System scalony: cel→sygnały→orchestrator(arbiter)→AI-nadzór→jeden kanał (Karta coacha Home+Dieta). Algorytm działa bez AI, AI poleruje gdy klucz jest.
 
 Każdy etap = osobny release, build+testy zielone, zero utraty danych, zero duplikacji.
 **Nowe reakcje od teraz przechodzą przez Orchestrator** — nie dokładamy obok.
