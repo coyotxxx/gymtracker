@@ -43,6 +43,10 @@ class DailyReviewWorker @AssistedInject constructor(
     private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao,
     // v2.33.0 (U4a): zunifikowany werdykt coacha (trening+dieta) w jednym punkcie.
     private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator,
+    // v2.41.0 (U5): AI-nadzór werdyktu RAZ DZIENNIE (tanio) — Tier B poleruje/łapie błędy Tier A.
+    private val aiClient: pl.filebit.gymtracker.ai.AiClient,
+    private val aiPrefs: pl.filebit.gymtracker.ai.AiPreferences,
+    private val masterContextBuilder: pl.filebit.gymtracker.ai.MasterAiContextBuilder,
     private val diag: DiagnosticLogger
 ) : CoroutineWorker(appContext, params) {
 
@@ -76,6 +80,10 @@ class DailyReviewWorker @AssistedInject constructor(
         val verdict = runCatching { coachOrchestrator.evaluate() }.getOrNull()
         val coachLine = verdict?.primary?.let { "💪 ${it.title}: ${it.message}" }
 
+        // === U5: AI-NADZÓR (raz dziennie, tanio) — Tier B sprawdza werdykt Tier A z pełnym
+        // kontekstem. Łapie błędy/niuanse algorytmu (jak slope-bug). Bez klucza → pomijamy.
+        val aiNote = verdict?.primary?.let { p -> reviewWithAi(p) }
+
         // Zbuduj listę braków (systematyczność).
         val parts = mutableListOf<String>()
         if (trainingGap) parts.add("🏋 Zaplanowany trening — jeszcze nie zrobiony.")
@@ -91,14 +99,49 @@ class DailyReviewWorker @AssistedInject constructor(
             return Result.success()
         }
 
-        // Werdykt coacha na górze (jeśli jest), potem braki.
-        val body = listOfNotNull(coachLine).plus(parts).joinToString("\n")
+        // Werdykt coacha na górze, komentarz AI pod spodem (jeśli jest), potem braki.
+        val body = listOfNotNull(coachLine, aiNote?.let { "🤖 Trener AI: $it" }).plus(parts).joinToString("\n")
         sendNotification(applicationContext, body)
         diag.info(DiagnosticCategory.REPORT, "DailyReviewWorker", "daily_review_fired",
             "Bilans dnia — werdykt coacha: ${verdict?.primary?.id ?: "brak"}, braki: ${parts.size}",
             dataJson = """{"coachPrimary":${verdict?.primary?.let { "\"${it.id}\"" } ?: "null"},"trainingGap":$trainingGap,"unmarkedMeals":$unmarkedMeals,"mealsPerDay":$mealsPerDay,"markedMeals":$markedMeals}""",
             success = true)
         return Result.success()
+    }
+
+    /**
+     * U5: AI recenzuje werdykt algorytmu z pełnym kontekstem. Zwraca krótki komentarz/korektę
+     * lub null (brak klucza / błąd / AI nic nie dodaje). NIE zmienia danych — tylko ocenia.
+     */
+    private suspend fun reviewWithAi(primary: pl.filebit.gymtracker.data.coach.CoachReaction): String? {
+        val cfg = runCatching { aiPrefs.load() }.getOrNull() ?: return null
+        if (!cfg.isConnected) return null
+        val ctx = runCatching { masterContextBuilder.build() }.getOrNull() ?: return null
+        val h = pl.filebit.gymtracker.ai.MasterAiContextPromptHelper
+        val contextStr = buildString {
+            append(h.toDailyTargetsSection(ctx))
+            append(h.toAdherenceSection(ctx))
+            append(h.toRecoverySection(ctx))
+            ctx.weightTrendSlopeKgPerWeek?.let { append("\n- Tempo wagi (regresja): %.2f kg/tydz\n".format(it)) }
+            ctx.weightAvg7d?.let { append("- Średnia waga 7d: %.1f kg\n".format(it)) }
+        }
+        val prompt = buildString {
+            append("Jesteś trenerem+dietetykiem nadzorującym algorytm tej aplikacji. ")
+            append("Algorytm zdecydował dla usera:\n\"${primary.title} — ${primary.message}\"\n\n")
+            append("Pełny kontekst usera:\n$contextStr\n")
+            append("Oceń KRÓTKO (max 2 zdania): czy ten werdykt ma sens przy tych danych? ")
+            append("Jeśli TAK — potwierdź jednym zdaniem. Jeśli widzisz BŁĄD lub ważny niuans ")
+            append("(np. tempo/liczby się nie zgadzają) — powiedz wprost co skorygować. Po polsku.")
+        }
+        val resp = aiClient.chat(
+            cfg,
+            listOf(pl.filebit.gymtracker.ai.AiMessage(pl.filebit.gymtracker.ai.AiRole.USER, prompt)),
+            source = "CoachAiOversight"
+        ).getOrNull()?.trim()?.takeIf { it.isNotBlank() }
+        diag.info(DiagnosticCategory.AI, "DailyReviewWorker", "coach_ai_review",
+            "AI ocenił werdykt '${primary.id}': ${if (resp != null) "komentarz dodany" else "brak"}",
+            dataJson = """{"reactionId":"${primary.id}","hasNote":${resp != null}}""", success = true)
+        return resp
     }
 
     private fun sendNotification(ctx: Context, body: String) {
