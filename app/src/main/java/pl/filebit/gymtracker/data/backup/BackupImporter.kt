@@ -192,11 +192,14 @@ class BackupImporter @Inject constructor(
                     showAdvancedSetFields = p.showAdvancedSetFields,
                     weightGoalType = runCatching { pl.filebit.gymtracker.data.entity.WeightGoalType.valueOf(p.weightGoalType) }
                         .getOrDefault(pl.filebit.gymtracker.data.entity.WeightGoalType.NONE),
-                    // v1.28.1 (Etap 2): backup treningu zna tylko legacy weightGoalType —
-                    // wyprowadzamy kanoniczny goalType, by importowany profil był spójny.
-                    goalType = runCatching { pl.filebit.gymtracker.data.entity.WeightGoalType.valueOf(p.weightGoalType) }
-                        .getOrDefault(pl.filebit.gymtracker.data.entity.WeightGoalType.NONE)
-                        .toDietGoal(),
+                    // v2.43.0: kanoniczny cel 8-wart. z backupu (jeśli jest). STARE backupy (brak
+                    // goalType) → wyprowadzamy z legacy weightGoalType (jak dotąd). Dzięki temu
+                    // RECOMP/STRENGTH/HEALTH NIE spłaszcza się do MAINTAIN przy restore.
+                    goalType = p.goalType
+                        ?.let { runCatching { pl.filebit.gymtracker.data.entity.DietGoalType.valueOf(it) }.getOrNull() }
+                        ?: runCatching { pl.filebit.gymtracker.data.entity.WeightGoalType.valueOf(p.weightGoalType) }
+                            .getOrDefault(pl.filebit.gymtracker.data.entity.WeightGoalType.NONE)
+                            .toDietGoal(),
                     targetWeightKg = p.targetWeightKg,
                     unfinishedWorkoutNotifyEnabled = p.unfinishedWorkoutNotifyEnabled,
                     unfinishedWorkoutNotifyHours = p.unfinishedWorkoutNotifyHours,

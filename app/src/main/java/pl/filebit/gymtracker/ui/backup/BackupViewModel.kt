@@ -75,6 +75,9 @@ data class ProfileDto(
     val injuriesNotes: String,
     val showAdvancedSetFields: Boolean = false,
     val weightGoalType: String = "NONE",
+    // v2.43.0: kanoniczny cel 8-wartościowy. null = stary backup (wyprowadź z weightGoalType).
+    // Bez tego cel RECOMP/STRENGTH/HEALTH spłaszczał się do MAINTAIN przy restore.
+    val goalType: String? = null,
     val targetWeightKg: Double? = null,
     val unfinishedWorkoutNotifyEnabled: Boolean = true,
     val unfinishedWorkoutNotifyHours: Int = 3,
@@ -264,6 +267,7 @@ class BackupViewModel @Inject constructor(
                         injuriesNotes = profile.injuriesNotes,
                         showAdvancedSetFields = profile.showAdvancedSetFields,
                         weightGoalType = profile.weightGoalType.name,
+                        goalType = profile.goalType.name,   // v2.43.0: pełny cel 8-wart.
                         targetWeightKg = profile.targetWeightKg,
                         unfinishedWorkoutNotifyEnabled = profile.unfinishedWorkoutNotifyEnabled,
                         unfinishedWorkoutNotifyHours = profile.unfinishedWorkoutNotifyHours,
