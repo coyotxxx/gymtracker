@@ -49,4 +49,31 @@ class NotificationsHistoryTest : TestHarness() {
         assertEquals("po otwarciu licznik gaśnie", 0, vm.unreadCount.value)
         assertTrue("wszystkie oznaczone przeczytane", vm.items.value.none { it.unread })
     }
+
+    @Test
+    fun `czysci stary format logu i zwija powtorki`() = runBlocking {
+        val now = System.currentTimeMillis()
+        // Stary format (meta-opis w message + JSON w dataJson):
+        seed(DiagnosticCategory.NOTIFICATION.name,
+            "Wysłano notyfikację trenera w tle: 🏃 Wracamy do rytmu", null, now - 1000)
+        // Przypomnienie ×3 w oknie 30 min z surowym JSON — powinno zwinąć się do 1, bez JSON.
+        seed(DiagnosticCategory.NOTIFICATION.name, "Przypomnienie o posiłku: kolacja",
+            """{"slotIndex":3,"mealType":"DINNER"}""", now - 2000)
+        seed(DiagnosticCategory.NOTIFICATION.name, "Przypomnienie o posiłku: kolacja",
+            """{"slotIndex":3,"mealType":"DINNER"}""", now - 3000)
+        seed(DiagnosticCategory.NOTIFICATION.name, "Przypomnienie o posiłku: kolacja",
+            """{"slotIndex":3,"mealType":"DINNER"}""", now - 4000)
+
+        val vm = NotificationsViewModel(db.diagnosticEventDao(), NotificationSeenPrefs(context))
+        var tries = 0
+        while (vm.loading.value && tries++ < 200) Thread.sleep(15)
+        val items = vm.items.value
+
+        assertEquals("3 powtórki kolacji zwinięte do 1 (+ 1 trener) = 2", 2, items.size)
+        assertTrue("prefiks 'Wysłano notyfikację…' zdjęty",
+            items.any { it.title == "🏃 Wracamy do rytmu" })
+        assertTrue("'Przypomnienie o posiłku: kolacja' → ludzki tytuł (spójny z nowym formatem)",
+            items.any { it.title == "🍽️ Pora na kolacja" })
+        assertTrue("surowy JSON nie trafia do treści", items.none { it.body.startsWith("{") })
+    }
 }

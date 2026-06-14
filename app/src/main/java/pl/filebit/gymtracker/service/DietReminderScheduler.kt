@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.service
 
 import android.content.Context
 import androidx.work.Data
+import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -52,7 +53,14 @@ class DietReminderScheduler @Inject constructor(
                 )
                 .build()
 
-            workManager.enqueue(request)
+            // v2.46.0 FIX: enqueueUniqueWork (nie enqueue) — inaczej każdy rescheduleAll()
+            // (np. każde otwarcie ekranu Diety) DOKŁADAŁ kolejną kopię workera, a cancelAll()
+            // po nazwie unikalnej nic nie anulował → ten sam posiłek przypominał N razy.
+            workManager.enqueueUniqueWork(
+                "${MealReminderWorker.WORK_NAME_PREFIX}$slotIndex",
+                ExistingWorkPolicy.REPLACE,
+                request
+            )
         }
     }
 

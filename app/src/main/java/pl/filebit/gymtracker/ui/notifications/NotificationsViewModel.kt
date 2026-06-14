@@ -51,20 +51,22 @@ class NotificationsViewModel @Inject constructor(
         viewModelScope.launch {
             val cat = DiagnosticCategory.NOTIFICATION.name
             val lastSeen = seenPrefs.lastSeenMs()
-            val events = runCatching { diagnosticEventDao.getRecentByCategory(cat, 60) }
+            val events = runCatching { diagnosticEventDao.getRecentByCategory(cat, 80) }
                 .getOrDefault(emptyList())
-            _items.value = events.map { e ->
+            val mapped = events.map { e ->
                 NotifHistoryItem(
                     id = e.id,
-                    title = e.message.ifBlank { e.event },
-                    body = e.dataJson.orEmpty(),
+                    title = cleanTitle(e.message.ifBlank { e.event }),
+                    body = cleanBody(e.dataJson),
                     timeMs = e.timestampMs,
                     unread = e.timestampMs > lastSeen
                 )
             }
-            _unreadCount.value = runCatching {
-                diagnosticEventDao.countByCategorySince(cat, lastSeen)
-            }.getOrDefault(0)
+            val deduped = dedupe(mapped)
+            _items.value = deduped
+            // Licznik liczony z ODFILTROWANEJ listy — spójny z tym, co user widzi (nie z surowych
+            // wierszy logu, gdzie powtórki zawyżałyby badge).
+            _unreadCount.value = deduped.count { it.unread }
             _loading.value = false
         }
     }
@@ -74,5 +76,45 @@ class NotificationsViewModel @Inject constructor(
         seenPrefs.markSeen()
         _unreadCount.value = 0
         _items.value = _items.value.map { it.copy(unread = false) }
+    }
+
+    companion object {
+        private const val DEDUP_WINDOW_MS = 30L * 60 * 1000  // 30 min
+
+        /**
+         * Czyści tytuł do ludzkiej postaci. Stare wpisy (sprzed v2.45.0) miały w `message`
+         * meta-opis logu („Wysłano notyfikację…") — zdejmujemy te prefiksy. Nowe wpisy mają
+         * już czysty tytuł, więc przechodzą bez zmian.
+         */
+        internal fun cleanTitle(raw: String): String {
+            var t = raw.trim()
+            t = t.removePrefix("Wysłano notyfikację trenera w tle: ").trim()
+            t = t.removePrefix("Wysłano notyfikację alertu: ").trim()
+            t = t.removePrefix("Wysłano notyfikację ").trim()
+            // „Przypomnienie o posiłku: kolacja" → „🍽️ Pora na kolację"
+            val mealPrefix = "Przypomnienie o posiłku: "
+            if (t.startsWith(mealPrefix)) {
+                t = "🍽️ Pora na " + t.removePrefix(mealPrefix).trim()
+            }
+            return t.ifBlank { "Powiadomienie" }
+        }
+
+        /** Surowy JSON debugowy ({"slotIndex":3,…}) nie jest treścią dla usera — ukrywamy. */
+        internal fun cleanBody(dataJson: String?): String {
+            val b = dataJson?.trim().orEmpty()
+            return if (b.startsWith("{") || b.startsWith("[")) "" else b
+        }
+
+        /** Zwija powtórki tego samego tytułu w oknie [DEDUP_WINDOW_MS] (np. przypomnienie ×9). */
+        internal fun dedupe(items: List<NotifHistoryItem>): List<NotifHistoryItem> {
+            val kept = mutableListOf<NotifHistoryItem>()
+            for (item in items) {  // wejście posortowane malejąco po czasie
+                val dup = kept.any {
+                    it.title == item.title && kotlin.math.abs(it.timeMs - item.timeMs) <= DEDUP_WINDOW_MS
+                }
+                if (!dup) kept += item
+            }
+            return kept
+        }
     }
 }
