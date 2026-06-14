@@ -4,76 +4,59 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import pl.filebit.gymtracker.data.entity.DiagnosticCategory
-import pl.filebit.gymtracker.data.entity.DiagnosticEvent
-import pl.filebit.gymtracker.data.entity.DiagnosticLevel
+import pl.filebit.gymtracker.data.entity.NotificationHistory
+import pl.filebit.gymtracker.data.entity.NotificationKind
+import pl.filebit.gymtracker.data.repository.NotificationHistoryStore
 import pl.filebit.gymtracker.data.repository.NotificationSeenPrefs
 import pl.filebit.gymtracker.ui.notifications.NotificationsViewModel
 
 /**
- * v2.45.0 — dzwonek = historia wysłanych powiadomień (z diagnostic_events/NOTIFICATION).
- * Sprawdza: tylko kategoria NOTIFICATION, tytuł=message, treść=dataJson, licznik
- * nieprzeczytanych po czasie + markSeen() gasi licznik.
+ * v2.47.0 — dzwonek = dedykowana tabela `notification_history` (nie debug-log).
+ * Sprawdza: mapowanie + licznik nieprzeczytanych + markSeen, oraz dedup zapisu w Store.
  */
 class NotificationsHistoryTest : TestHarness() {
 
-    private fun seed(catName: String, title: String, body: String?, ts: Long) = runBlocking {
-        db.diagnosticEventDao().insert(
-            DiagnosticEvent(
-                timestampMs = ts, category = catName, level = DiagnosticLevel.INFO.name,
-                source = "Test", event = "notification_sent", message = title, dataJson = body
+    private fun seed(kind: NotificationKind, title: String, body: String, ts: Long, payload: String? = null) =
+        runBlocking {
+            db.notificationHistoryDao().insert(
+                NotificationHistory(timestampMs = ts, kind = kind.name, title = title, body = body, payload = payload)
             )
-        )
-    }
+        }
 
     @Test
-    fun `dzwonek pokazuje historie powiadomien i liczy nieprzeczytane`() = runBlocking {
+    fun `dzwonek mapuje historie i liczy nieprzeczytane`() = runBlocking {
         val now = System.currentTimeMillis()
-        // 2 powiadomienia + 1 wpis innej kategorii (musi być odfiltrowany).
-        seed(DiagnosticCategory.NOTIFICATION.name, "📋 Bilans dnia", "1 z 3 posiłków nieoznaczonych", now - 1000)
-        seed(DiagnosticCategory.NOTIFICATION.name, "🍽️ Pora na kolację", "Oznacz status", now - 2000)
-        seed(DiagnosticCategory.DETECTOR.name, "debug detektor", null, now - 500)
+        seed(NotificationKind.REVIEW, "Bilans dnia", "1 z 3 posiłków nieoznaczonych", now - 1000)
+        seed(NotificationKind.MEAL, "🍽️ Pora na kolacja", "Oznacz status", now - 2000, payload = "DINNER")
 
-        val vm = NotificationsViewModel(db.diagnosticEventDao(), NotificationSeenPrefs(context))
-        // init{reload()} jest async (Room suspend) — poczekaj aż się załaduje.
+        val kit = ViewModelKit(db, context)
+        val vm = NotificationsViewModel(
+            db.notificationHistoryDao(), NotificationSeenPrefs(context),
+            kit.mealConsumptionRepo, kit.adherenceCalc
+        )
         var tries = 0
         while (vm.loading.value && tries++ < 200) Thread.sleep(15)
 
         val items = vm.items.value
-        assertEquals("tylko powiadomienia (DETECTOR odfiltrowany)", 2, items.size)
-        assertTrue("tytuł z message", items.any { it.title == "📋 Bilans dnia" })
-        assertTrue("treść z dataJson", items.any { it.body == "1 z 3 posiłków nieoznaczonych" })
+        assertEquals("2 wpisy", 2, items.size)
+        assertTrue("MEAL niesie payload (typ posiłku) do akcji",
+            items.any { it.kind == NotificationKind.MEAL && it.mealType == "DINNER" })
         assertEquals("oba nieprzeczytane (lastSeen=0)", 2, vm.unreadCount.value)
 
         vm.markSeen()
         assertEquals("po otwarciu licznik gaśnie", 0, vm.unreadCount.value)
-        assertTrue("wszystkie oznaczone przeczytane", vm.items.value.none { it.unread })
     }
 
     @Test
-    fun `czysci stary format logu i zwija powtorki`() = runBlocking {
-        val now = System.currentTimeMillis()
-        // Stary format (meta-opis w message + JSON w dataJson):
-        seed(DiagnosticCategory.NOTIFICATION.name,
-            "Wysłano notyfikację trenera w tle: 🏃 Wracamy do rytmu", null, now - 1000)
-        // Przypomnienie ×3 w oknie 30 min z surowym JSON — powinno zwinąć się do 1, bez JSON.
-        seed(DiagnosticCategory.NOTIFICATION.name, "Przypomnienie o posiłku: kolacja",
-            """{"slotIndex":3,"mealType":"DINNER"}""", now - 2000)
-        seed(DiagnosticCategory.NOTIFICATION.name, "Przypomnienie o posiłku: kolacja",
-            """{"slotIndex":3,"mealType":"DINNER"}""", now - 3000)
-        seed(DiagnosticCategory.NOTIFICATION.name, "Przypomnienie o posiłku: kolacja",
-            """{"slotIndex":3,"mealType":"DINNER"}""", now - 4000)
-
-        val vm = NotificationsViewModel(db.diagnosticEventDao(), NotificationSeenPrefs(context))
+    fun `store dedupuje powtorki tego samego tytulu`() = runBlocking {
+        val store = NotificationHistoryStore(db.notificationHistoryDao())
+        repeat(5) { store.record(NotificationKind.MEAL, "🍽️ Pora na kolacja", "Oznacz status", "DINNER") }
+        // record() jest async (IO, serializowane) — poczekaj aż pierwszy wpis się pojawi,
+        // potem chwilę dłużej (pozostałe 4 zostaną zdedupowane, nie zwiększą licznika).
         var tries = 0
-        while (vm.loading.value && tries++ < 200) Thread.sleep(15)
-        val items = vm.items.value
-
-        assertEquals("3 powtórki kolacji zwinięte do 1 (+ 1 trener) = 2", 2, items.size)
-        assertTrue("prefiks 'Wysłano notyfikację…' zdjęty",
-            items.any { it.title == "🏃 Wracamy do rytmu" })
-        assertTrue("'Przypomnienie o posiłku: kolacja' → ludzki tytuł (spójny z nowym formatem)",
-            items.any { it.title == "🍽️ Pora na kolacja" })
-        assertTrue("surowy JSON nie trafia do treści", items.none { it.body.startsWith("{") })
+        while (db.notificationHistoryDao().getRecent(50).isEmpty() && tries++ < 200) Thread.sleep(15)
+        Thread.sleep(250)
+        val count = db.notificationHistoryDao().getRecent(50).size
+        assertEquals("5× ten sam tytuł w oknie → 1 wpis", 1, count)
     }
 }

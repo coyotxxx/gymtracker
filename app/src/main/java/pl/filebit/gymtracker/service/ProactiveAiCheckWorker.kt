@@ -50,7 +50,8 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService,
     // v2.14.0 — kanoniczne alerty trenera (te same co na Home) w tle
     private val homeAlertNotifier: HomeAlertNotifier,
-    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger,
+    private val notifHistory: pl.filebit.gymtracker.data.repository.NotificationHistoryStore
 ) : CoroutineWorker(appContext, params) {
 
     private val diagCat = pl.filebit.gymtracker.data.entity.DiagnosticCategory.DETECTOR
@@ -229,9 +230,8 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
-        // v2.45.0: message=tytuł, dataJson=treść — dla historii dzwonka.
-        diag.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.NOTIFICATION, diagSrc,
-            "notification_sent", title, dataJson = body, success = true)
+        // v2.47.0: to samo co w pushu → historia dzwonka (tytuł z emoji — ekran zrobi ikonę).
+        notifHistory.record(pl.filebit.gymtracker.data.entity.NotificationKind.COACH, title, body)
     }
 
     /**

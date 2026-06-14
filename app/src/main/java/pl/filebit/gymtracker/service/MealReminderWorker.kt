@@ -13,8 +13,6 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import pl.filebit.gymtracker.MainActivity
 import pl.filebit.gymtracker.R
-import pl.filebit.gymtracker.data.entity.DiagnosticCategory
-import pl.filebit.gymtracker.data.repository.DiagnosticLogger
 
 /**
  * Wysyła powiadomienie "Pora na posiłek!" o wybranej godzinie.
@@ -28,7 +26,7 @@ import pl.filebit.gymtracker.data.repository.DiagnosticLogger
 class MealReminderWorker @AssistedInject constructor(
     @Assisted appContext: Context,
     @Assisted params: WorkerParameters,
-    private val diag: DiagnosticLogger
+    private val notifHistory: pl.filebit.gymtracker.data.repository.NotificationHistoryStore
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -86,10 +84,14 @@ class MealReminderWorker @AssistedInject constructor(
 
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(notificationId, notification)
-        // v2.45.0: message=tytuł, dataJson=treść — dla historii dzwonka.
-        diag.info(DiagnosticCategory.NOTIFICATION, "MealReminderWorker", "meal_reminder_sent",
+        // v2.47.0: to samo co w pushu → historia dzwonka. payload=typ posiłku → przyciski
+        // Zjedzone/Pominięte działają wprost z dzwonka (jak w powiadomieniu systemowym).
+        notifHistory.record(
+            pl.filebit.gymtracker.data.entity.NotificationKind.MEAL,
             "🍽️ Pora na $slotLabel",
-            dataJson = "Oznacz status — Zjedzone lub Pominięte.", success = true)
+            "Oznacz status — Zjedzone lub Pominięte.",
+            payload = mealTypeName
+        )
         return Result.success()
     }
 

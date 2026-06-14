@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,6 +25,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.remember
+import androidx.compose.foundation.clickable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -32,12 +36,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import pl.filebit.gymtracker.data.entity.NotificationKind
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
+import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -50,8 +56,9 @@ fun NotificationsScreen(
 ) {
     val items by vm.items.collectAsStateWithLifecycle()
     val loading by vm.loading.collectAsStateWithLifecycle()
+    // Lokalny stan oznaczenia posiłku (true=zjedzone, false=pominięte) per id wpisu.
+    val mealMarked = remember { mutableStateMapOf<Long, Boolean>() }
 
-    // Wejście na ekran = wszystko przeczytane (licznik dzwonka gaśnie).
     LaunchedEffect(Unit) { vm.markSeen() }
 
     Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
@@ -63,7 +70,6 @@ fun NotificationsScreen(
             }
             items.isEmpty() -> EmptyState()
             else -> {
-                // Grupowanie po dniu: DZIŚ / WCZORAJ / data.
                 val grouped = items.groupBy { dayBucket(it.timeMs) }
                 LazyColumn(
                     contentPadding = PaddingValues(16.dp),
@@ -72,7 +78,13 @@ fun NotificationsScreen(
                     grouped.forEach { (header, group) ->
                         item(key = "hdr_$header") { SectionHeader(header) }
                         items(group.size) { idx ->
-                            NotificationRow(group[idx])
+                            val it = group[idx]
+                            NotificationRow(
+                                item = it,
+                                marked = mealMarked[it.id],
+                                onConsumed = { vm.markMeal(it, true); mealMarked[it.id] = true },
+                                onSkipped = { vm.markMeal(it, false); mealMarked[it.id] = false }
+                            )
                         }
                     }
                 }
@@ -86,8 +98,7 @@ private fun SectionHeader(text: String) {
     Text(
         text,
         style = MaterialTheme.typography.labelSmall.copy(
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 1.2.sp
+            fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
         ),
         color = DarkOnSurfaceVariant,
         modifier = Modifier.padding(top = 10.dp, bottom = 2.dp, start = 2.dp)
@@ -95,24 +106,36 @@ private fun SectionHeader(text: String) {
 }
 
 @Composable
-private fun NotificationRow(item: NotifHistoryItem) {
+private fun NotificationRow(
+    item: NotifHistoryItem,
+    marked: Boolean?,
+    onConsumed: () -> Unit,
+    onSkipped: () -> Unit
+) {
+    val (icon, text) = splitIcon(item.title, item.kind)
+    val showMealActions = item.kind == NotificationKind.MEAL && isToday(item.timeMs)
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
         border = BorderStroke(1.dp, AccentOrange.copy(alpha = if (item.unread) 0.45f else 0.18f)),
         shape = RoundedCornerShape(13.dp)
     ) {
-        Row(modifier = Modifier.padding(14.dp)) {
-            if (item.unread) {
-                Box(
-                    Modifier.padding(top = 5.dp, end = 10.dp).size(7.dp)
-                        .background(AccentOrange, CircleShape)
-                )
-            }
+        Row(modifier = Modifier.padding(13.dp)) {
+            Box(
+                Modifier.size(34.dp).background(DarkBg, RoundedCornerShape(9.dp)),
+                contentAlignment = Alignment.Center
+            ) { Text(icon, fontSize = 17.sp) }
+            Spacer(Modifier.width(11.dp))
             Column(modifier = Modifier.fillMaxWidth()) {
                 Row(verticalAlignment = Alignment.Top) {
+                    if (item.unread) {
+                        Box(
+                            Modifier.padding(top = 6.dp, end = 7.dp).size(7.dp)
+                                .background(AccentOrange, CircleShape)
+                        )
+                    }
                     Text(
-                        item.title,
+                        text,
                         style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.SemiBold),
                         color = DarkOnSurface,
                         modifier = Modifier.weight(1f)
@@ -131,8 +154,42 @@ private fun NotificationRow(item: NotifHistoryItem) {
                         color = DarkOnSurfaceVariant
                     )
                 }
+                if (showMealActions) {
+                    Spacer(Modifier.height(9.dp))
+                    when (marked) {
+                        true -> StatusPill("✓ Zjedzone", SuccessGreen, filled = true)
+                        false -> StatusPill("✗ Pominięte", DarkOnSurfaceVariant, filled = true)
+                        null -> Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            ActionPill("✓ Zjedzone", SuccessGreen, onConsumed)
+                            ActionPill("✗ Pominięte", DarkOnSurfaceVariant, onSkipped)
+                        }
+                    }
+                }
             }
         }
+    }
+}
+
+@Composable
+private fun ActionPill(label: String, color: androidx.compose.ui.graphics.Color, onClick: () -> Unit) {
+    Box(
+        Modifier
+            .background(color.copy(alpha = 0.12f), RoundedCornerShape(8.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 12.dp, vertical = 6.dp)
+    ) {
+        Text(label, style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold), color = color)
+    }
+}
+
+@Composable
+private fun StatusPill(label: String, color: androidx.compose.ui.graphics.Color, filled: Boolean) {
+    Box(
+        Modifier
+            .background(color.copy(alpha = if (filled) 0.18f else 0.0f), RoundedCornerShape(8.dp))
+            .padding(horizontal = 12.dp, vertical = 6.dp)
+    ) {
+        Text(label, style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold), color = color)
     }
 }
 
@@ -158,10 +215,33 @@ private fun EmptyState() {
     }
 }
 
+/** Wyodrębnia wiodące emoji z tytułu jako ikonę; gdy brak — ikona domyślna z [kind]. */
+private fun splitIcon(title: String, kind: NotificationKind): Pair<String, String> {
+    val sp = title.indexOf(' ')
+    if (sp > 0) {
+        val head = title.substring(0, sp)
+        if (head.isNotEmpty() && head.none { it.isLetterOrDigit() }) {
+            return head to title.substring(sp + 1).trim()
+        }
+    }
+    return kindIcon(kind) to title
+}
+
+private fun kindIcon(kind: NotificationKind): String = when (kind) {
+    NotificationKind.MEAL -> "🍽️"
+    NotificationKind.REVIEW -> "📋"
+    NotificationKind.COACH -> "🏃"
+    NotificationKind.ALERT -> "⚠️"
+    NotificationKind.RECOVERY -> "🛌"
+    NotificationKind.GENERIC -> "🔔"
+}
+
 private val timeFmt = SimpleDateFormat("HH:mm", Locale.getDefault())
 private val dateFmt = SimpleDateFormat("d MMM", Locale.getDefault())
 
 private fun timeLabel(ms: Long): String = timeFmt.format(Date(ms))
+
+private fun isToday(ms: Long): Boolean = ms >= startOfDay(System.currentTimeMillis())
 
 private fun dayBucket(ms: Long): String {
     val startToday = startOfDay(System.currentTimeMillis())

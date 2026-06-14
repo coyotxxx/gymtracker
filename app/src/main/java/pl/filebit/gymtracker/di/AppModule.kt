@@ -704,6 +704,23 @@ object AppModule {
         }
     }
 
+    // v2.47.0: dedykowana tabela historii powiadomień (dzwonek). CREATE TABLE — additive,
+    // zero ryzyka dla danych usera. Indeks `timestampMs` MUSI == @Index w encji.
+    internal val MIGRATION_73_74 = object : Migration(73, 74) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `notification_history` (" +
+                    "`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                    "`timestampMs` INTEGER NOT NULL, " +
+                    "`kind` TEXT NOT NULL, " +
+                    "`title` TEXT NOT NULL, " +
+                    "`body` TEXT NOT NULL, " +
+                    "`payload` TEXT)"
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_notification_history_timestampMs` ON `notification_history` (`timestampMs`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -732,7 +749,8 @@ object AppModule {
                 MIGRATION_69_70,
                 MIGRATION_70_71,
                 MIGRATION_71_72,
-                MIGRATION_72_73
+                MIGRATION_72_73,
+                MIGRATION_73_74
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
@@ -776,6 +794,7 @@ object AppModule {
     @Provides fun provideDailyActivityLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DailyActivityLogDao = db.dailyActivityLogDao()
     @Provides fun provideDietPhaseDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DietPhaseDao = db.dietPhaseDao()
     @Provides fun provideDiagnosticEventDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DiagnosticEventDao = db.diagnosticEventDao()
+    @Provides fun provideNotificationHistoryDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.NotificationHistoryDao = db.notificationHistoryDao()
     @Provides fun provideMealPrepPlanDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.MealPrepPlanDao = db.mealPrepPlanDao()
     @Provides fun provideMealConsumptionDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.MealConsumptionDao = db.mealConsumptionDao()
     @Provides fun provideAiLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.AiLogDao = db.aiLogDao()

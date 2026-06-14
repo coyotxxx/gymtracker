@@ -7,32 +7,41 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import pl.filebit.gymtracker.data.db.dao.DiagnosticEventDao
-import pl.filebit.gymtracker.data.entity.DiagnosticCategory
+import pl.filebit.gymtracker.data.db.dao.NotificationHistoryDao
+import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
+import pl.filebit.gymtracker.data.entity.MealType
+import pl.filebit.gymtracker.data.entity.NotificationKind
+import pl.filebit.gymtracker.data.repository.AdherenceCalculator
+import pl.filebit.gymtracker.data.repository.MealConsumptionRepository
 import pl.filebit.gymtracker.data.repository.NotificationSeenPrefs
+import java.util.Calendar
 import javax.inject.Inject
 
-/** Jeden wpis historii powiadomień (to, co apka faktycznie wysłała). */
+/** Jeden wpis historii powiadomień (to, co apka faktycznie wysłała — to samo co w pushu). */
 data class NotifHistoryItem(
     val id: Long,
+    val kind: NotificationKind,
     val title: String,
     val body: String,
     val timeMs: Long,
-    val unread: Boolean
+    val unread: Boolean,
+    /** MealType.name dla MEAL — pozwala na akcje Zjedzone/Pominięte z dzwonka. */
+    val mealType: String?
 )
 
 /**
- * v2.45.0 — dzwonek = HISTORIA wysłanych powiadomień.
+ * v2.47.0 — dzwonek = HISTORIA wysłanych powiadomień z DEDYKOWANEJ tabeli
+ * (`notification_history`). To samo, co user dostał w pushu — plus akcje (MEAL).
  *
- * Źródło: `diagnostic_events` (kategoria NOTIFICATION) — log „co apka zrobiła",
- * który i tak powstaje. Zero nowej tabeli, zero duplikatu Karty coacha (ta pokazuje
- * stan „teraz", dzwonek — historię „co poszło"). Nieprzeczytane = wpisy nowsze niż
- * ostatnie otwarcie ([NotificationSeenPrefs]).
+ * Karta coacha = „co teraz"; dzwonek = „co apka wysłała". Nieprzeczytane = wpisy
+ * nowsze niż ostatnie otwarcie ([NotificationSeenPrefs]).
  */
 @HiltViewModel
 class NotificationsViewModel @Inject constructor(
-    private val diagnosticEventDao: DiagnosticEventDao,
-    private val seenPrefs: NotificationSeenPrefs
+    private val dao: NotificationHistoryDao,
+    private val seenPrefs: NotificationSeenPrefs,
+    private val consumptionRepo: MealConsumptionRepository,
+    private val adherenceCalc: AdherenceCalculator
 ) : ViewModel() {
 
     private val _items = MutableStateFlow<List<NotifHistoryItem>>(emptyList())
@@ -49,24 +58,22 @@ class NotificationsViewModel @Inject constructor(
     fun reload() {
         _loading.value = true
         viewModelScope.launch {
-            val cat = DiagnosticCategory.NOTIFICATION.name
             val lastSeen = seenPrefs.lastSeenMs()
-            val events = runCatching { diagnosticEventDao.getRecentByCategory(cat, 80) }
-                .getOrDefault(emptyList())
-            val mapped = events.map { e ->
+            val rows = runCatching { dao.getRecent(80) }.getOrDefault(emptyList())
+            val mapped = rows.map { r ->
                 NotifHistoryItem(
-                    id = e.id,
-                    title = cleanTitle(e.message.ifBlank { e.event }),
-                    body = cleanBody(e.dataJson),
-                    timeMs = e.timestampMs,
-                    unread = e.timestampMs > lastSeen
+                    id = r.id,
+                    kind = runCatching { NotificationKind.valueOf(r.kind) }
+                        .getOrDefault(NotificationKind.GENERIC),
+                    title = r.title,
+                    body = r.body,
+                    timeMs = r.timestampMs,
+                    unread = r.timestampMs > lastSeen,
+                    mealType = r.payload
                 )
             }
-            val deduped = dedupe(mapped)
-            _items.value = deduped
-            // Licznik liczony z ODFILTROWANEJ listy — spójny z tym, co user widzi (nie z surowych
-            // wierszy logu, gdzie powtórki zawyżałyby badge).
-            _unreadCount.value = deduped.count { it.unread }
+            _items.value = mapped
+            _unreadCount.value = mapped.count { it.unread }
             _loading.value = false
         }
     }
@@ -78,43 +85,26 @@ class NotificationsViewModel @Inject constructor(
         _items.value = _items.value.map { it.copy(unread = false) }
     }
 
-    companion object {
-        private const val DEDUP_WINDOW_MS = 30L * 60 * 1000  // 30 min
-
-        /**
-         * Czyści tytuł do ludzkiej postaci. Stare wpisy (sprzed v2.45.0) miały w `message`
-         * meta-opis logu („Wysłano notyfikację…") — zdejmujemy te prefiksy. Nowe wpisy mają
-         * już czysty tytuł, więc przechodzą bez zmian.
-         */
-        internal fun cleanTitle(raw: String): String {
-            var t = raw.trim()
-            t = t.removePrefix("Wysłano notyfikację trenera w tle: ").trim()
-            t = t.removePrefix("Wysłano notyfikację alertu: ").trim()
-            t = t.removePrefix("Wysłano notyfikację ").trim()
-            // „Przypomnienie o posiłku: kolacja" → „🍽️ Pora na kolację"
-            val mealPrefix = "Przypomnienie o posiłku: "
-            if (t.startsWith(mealPrefix)) {
-                t = "🍽️ Pora na " + t.removePrefix(mealPrefix).trim()
+    /** Akcja Zjedzone/Pominięte wprost z dzwonka — to samo co MealStatusReceiver. */
+    fun markMeal(item: NotifHistoryItem, consumed: Boolean) {
+        val mealType = runCatching { MealType.valueOf(item.mealType ?: return) }.getOrNull() ?: return
+        val status = if (consumed) MealConsumptionStatus.CONSUMED else MealConsumptionStatus.SKIPPED
+        val dateMs = startOfDay(item.timeMs)
+        viewModelScope.launch {
+            runCatching {
+                consumptionRepo.setStatus(dateMs, mealType, status)
+                adherenceCalc.computeForDate(dateMs)
             }
-            return t.ifBlank { "Powiadomienie" }
         }
+    }
 
-        /** Surowy JSON debugowy ({"slotIndex":3,…}) nie jest treścią dla usera — ukrywamy. */
-        internal fun cleanBody(dataJson: String?): String {
-            val b = dataJson?.trim().orEmpty()
-            return if (b.startsWith("{") || b.startsWith("[")) "" else b
-        }
-
-        /** Zwija powtórki tego samego tytułu w oknie [DEDUP_WINDOW_MS] (np. przypomnienie ×9). */
-        internal fun dedupe(items: List<NotifHistoryItem>): List<NotifHistoryItem> {
-            val kept = mutableListOf<NotifHistoryItem>()
-            for (item in items) {  // wejście posortowane malejąco po czasie
-                val dup = kept.any {
-                    it.title == item.title && kotlin.math.abs(it.timeMs - item.timeMs) <= DEDUP_WINDOW_MS
-                }
-                if (!dup) kept += item
-            }
-            return kept
-        }
+    private fun startOfDay(ms: Long): Long {
+        val cal = Calendar.getInstance()
+        cal.timeInMillis = ms
+        cal.set(Calendar.HOUR_OF_DAY, 0)
+        cal.set(Calendar.MINUTE, 0)
+        cal.set(Calendar.SECOND, 0)
+        cal.set(Calendar.MILLISECOND, 0)
+        return cal.timeInMillis
     }
 }

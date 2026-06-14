@@ -107,9 +107,10 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         pl.filebit.gymtracker.data.entity.QuarterlyRollup::class,
         pl.filebit.gymtracker.data.entity.TrainingMesocycle::class,
         pl.filebit.gymtracker.data.entity.PendingPeriodizationDecision::class,
-        pl.filebit.gymtracker.data.entity.DiagnosticEvent::class
+        pl.filebit.gymtracker.data.entity.DiagnosticEvent::class,
+        pl.filebit.gymtracker.data.entity.NotificationHistory::class
     ],
-    version = 73,
+    version = 74,
     // v1.14.1: eksportowane do app/schemas/. Wymagane dla MigrationTestHelper.
     exportSchema = true
 )
@@ -129,6 +130,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun aiChatMessageDao(): AiChatMessageDao
     abstract fun aiWeeklyReportDao(): AiWeeklyReportDao
     abstract fun diagnosticEventDao(): pl.filebit.gymtracker.data.db.dao.DiagnosticEventDao
+    abstract fun notificationHistoryDao(): pl.filebit.gymtracker.data.db.dao.NotificationHistoryDao
     abstract fun weeklyPlanOverrideDao(): WeeklyPlanOverrideDao
     abstract fun unlockedAchievementDao(): UnlockedAchievementDao
     abstract fun foodProductDao(): FoodProductDao

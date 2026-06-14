@@ -47,7 +47,8 @@ class DailyReviewWorker @AssistedInject constructor(
     private val aiClient: pl.filebit.gymtracker.ai.AiClient,
     private val aiPrefs: pl.filebit.gymtracker.ai.AiPreferences,
     private val masterContextBuilder: pl.filebit.gymtracker.ai.MasterAiContextBuilder,
-    private val diag: DiagnosticLogger
+    private val diag: DiagnosticLogger,
+    private val notifHistory: pl.filebit.gymtracker.data.repository.NotificationHistoryStore
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -164,9 +165,10 @@ class DailyReviewWorker @AssistedInject constructor(
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, notification)
-        // v2.45.0: message=tytuł, dataJson=treść — dla historii dzwonka.
-        diag.info(DiagnosticCategory.NOTIFICATION, "DailyReviewWorker", "notification_sent",
-            "📋 Bilans dnia", dataJson = body, success = true)
+        // v2.47.0: to samo co w pushu → historia dzwonka.
+        notifHistory.record(
+            pl.filebit.gymtracker.data.entity.NotificationKind.REVIEW, "Bilans dnia", body
+        )
     }
 
     private fun todayBounds(nowMs: Long): Pair<Long, Long> {

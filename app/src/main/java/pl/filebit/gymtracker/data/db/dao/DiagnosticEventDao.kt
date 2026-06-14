@@ -14,10 +14,6 @@ interface DiagnosticEventDao {
     @Query("SELECT * FROM diagnostic_events ORDER BY timestampMs DESC LIMIT :limit")
     suspend fun getRecent(limit: Int = 500): List<DiagnosticEvent>
 
-    /** Historia wysłanych powiadomień (dzwonek). category = DiagnosticCategory.NOTIFICATION.name */
-    @Query("SELECT * FROM diagnostic_events WHERE category = :category ORDER BY timestampMs DESC LIMIT :limit")
-    suspend fun getRecentByCategory(category: String, limit: Int = 60): List<DiagnosticEvent>
-
     @Query("SELECT COUNT(*) FROM diagnostic_events")
     suspend fun count(): Int
 
