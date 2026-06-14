@@ -85,11 +85,14 @@ fun DietScreen(
     onOpenBarcodeScanner: () -> Unit = {},
     onOpenFoodImageAnalyzer: () -> Unit = {},
     onOpenRecipeBrowser: () -> Unit = {},
+    onStartWorkout: () -> Unit = {},
+    onAskCoach: (String) -> Unit = {},   // v2.40.0: „Zapytaj AI" z Karty coacha → czat z kontekstem
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
     val adjustmentPreview by vm.adjustmentPreview.collectAsStateWithLifecycle()
+    val coachVerdict by vm.coachVerdict.collectAsStateWithLifecycle()   // v2.40.0 (U4b 3c)
     val substitutePrompt by vm.substitutePrompt.collectAsStateWithLifecycle()
     val slotAlternatives by vm.slotAlternatives.collectAsStateWithLifecycle()
     // v1.28.5: kafelki WODA/KROKI/REGEN przeniesione na Home (DailyTilesSection).
@@ -224,6 +227,30 @@ fun DietScreen(
                         onScanner = onOpenBarcodeScanner,
                         onFotoAi = onOpenFoodImageAnalyzer
                     )
+                }
+
+                // v2.40.0 (U4b 3c): JEDNA karta coacha też na Diecie (ten sam zunifikowany werdykt
+                // co na Home). Automatyczna — zastępuje ręczne „Sprawdź korektę" (usunięte niżej).
+                coachVerdict?.takeIf { !it.isEmpty }?.let { verdict ->
+                    item {
+                        pl.filebit.gymtracker.ui.home.CoachCard(
+                            verdict = verdict,
+                            onDismiss = { reaction -> vm.dismissCoach(reaction.id) }
+                        ) { reaction, actionType ->
+                            when (actionType) {
+                                pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_KCAL_ADJUST,
+                                pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_REFEED,
+                                pl.filebit.gymtracker.data.coach.CoachActionType.SIMPLIFY_PLAN ->
+                                    vm.applyCoachKcalAdjustment()
+                                pl.filebit.gymtracker.data.coach.CoachActionType.START_WORKOUT,
+                                pl.filebit.gymtracker.data.coach.CoachActionType.RETURN_LIGHT -> onStartWorkout()
+                                else -> onAskCoach(
+                                    "Trener pokazał mi: \"${reaction.title}\" — ${reaction.message}\n\n" +
+                                        "Porozmawiajmy o tym: co dokładnie zrobić i jak dostosować to do mnie?"
+                                )
+                            }
+                        }
+                    }
                 }
 
                 // v1.24.6: alert wahań kcal (cheat day + niedojadanie w 7 dni)

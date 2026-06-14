@@ -150,8 +150,35 @@ class DietViewModel @Inject constructor(
     private val bodyMeasurementDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
     private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao,
     // v2.28.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
-    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null
+    private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null,
+    // v2.40.0 (U4b 3c): zunifikowany werdykt coacha na ekranie Diety.
+    private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator? = null,
+    private val coachDismissPrefs: pl.filebit.gymtracker.data.coach.CoachDismissPrefs? = null
 ) : ViewModel() {
+
+    // === COACH (U4b 3c) — jedna karta coacha też na Diecie ===
+    private val _coachVerdict =
+        MutableStateFlow<pl.filebit.gymtracker.data.coach.CoachVerdict?>(null)
+    val coachVerdict: StateFlow<pl.filebit.gymtracker.data.coach.CoachVerdict?> = _coachVerdict.asStateFlow()
+
+    fun refreshCoachVerdict() {
+        viewModelScope.launch {
+            _coachVerdict.value = coachOrchestrator?.let { o ->
+                val dismissed = coachDismissPrefs?.activeDismissed() ?: emptySet()
+                runCatching { o.evaluate(dismissed) }.getOrNull()
+            }
+        }
+    }
+
+    fun dismissCoach(reactionId: String) {
+        coachDismissPrefs?.dismiss(reactionId)
+        refreshCoachVerdict()
+    }
+
+    /** Coach card „Zastosuj korektę kcal/refeed" → uruchamia istniejący szczegółowy podgląd. */
+    fun applyCoachKcalAdjustment() = checkForAdjustment()
+
+    init { refreshCoachVerdict() }
 
     // === MEAL CONSUMPTION STATUS ===
     private val _consumptions = MutableStateFlow<Map<MealType, pl.filebit.gymtracker.data.entity.MealConsumptionStatus>>(emptyMap())

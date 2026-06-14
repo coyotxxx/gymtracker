@@ -565,7 +565,13 @@ fun AppNavigation(
                     onOpenMealPrep = { navController.navigate(Screen.MealPrep.route) },
                     onOpenBarcodeScanner = { navController.navigate(Screen.BarcodeScanner.route) },
                     onOpenFoodImageAnalyzer = { navController.navigate(Screen.FoodImageAnalyzer.route) },
-                    onOpenRecipeBrowser = { navController.navigate(Screen.RecipeBrowser.route) }
+                    onOpenRecipeBrowser = { navController.navigate(Screen.RecipeBrowser.route) },
+                    // v2.40.0 (U4b 3c): akcje Karty coacha na Diecie.
+                    onStartWorkout = { navController.navigate(Screen.CoachWorkout.route) },
+                    onAskCoach = { prompt ->
+                        aiQuickAskInitialPrompt = prompt
+                        aiQuickAskVisible = true
+                    }
                 )
             }
             composable(Screen.DietAdherenceReport.route) {
