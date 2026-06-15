@@ -160,6 +160,36 @@ class AdherenceCalculator @Inject constructor(
     }
 
     /**
+     * v2.49.0 — rozbicie posiłków dnia na sloty ze statusem (do raportu: „który posiłek
+     * nie zjedzony"). Używa DOKŁADNIE tej samej reguły co adherence: zjedzony = CONSUMED
+     * lub ręczny wpis (nie SKIPPED). Sloty z [util.MealSlots] (config.mealsPerDay).
+     */
+    suspend fun mealBreakdownForDate(dateMs: Long): List<MealSlotStatus> {
+        val (start, _) = dayBounds(dateMs)
+        val config = runCatching { dietPrefs.load() }.getOrNull() ?: return emptyList()
+        val meals = runCatching { dietRepo.getMealsForDate(start) }.getOrDefault(emptyList())
+        val consumptions = runCatching { consumptionRepo.getForDate(start) }.getOrDefault(emptyList())
+        val statusByType = consumptions.associate { it.mealType to it.status }
+        val eatenTypes = meals.filter { m ->
+            when (statusByType[m.mealType]) {
+                pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> true
+                pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> false
+                else -> !m.isPlanned
+            }
+        }.map { it.mealType }.toSet()
+        return pl.filebit.gymtracker.util.MealSlots.typesFor(config.mealsPerDay).distinct().map { t ->
+            val state = when {
+                statusByType[t] == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> MealSlotState.SKIPPED
+                // explicit CONSUMED (np. z powiadomienia) = zjedzone, nawet bez wpisu jedzenia
+                statusByType[t] == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> MealSlotState.EATEN
+                t in eatenTypes -> MealSlotState.EATEN
+                else -> MealSlotState.MISSING
+            }
+            MealSlotStatus(t, pl.filebit.gymtracker.util.MealSlots.polishLabel(t), state)
+        }
+    }
+
+    /**
      * Średnia zgodność z N dni — wskaźnik dla CalorieAdjustmentEngine.
      * Bierzemy dni gdzie cokolwiek zostało zalogowane (mealsLoggedCount lub actualKcal).
      * v1.24.5: dodano `actualKcal > 0` żeby backup z aplikacji innej (np. zaimportowane
@@ -209,4 +239,13 @@ data class AdherenceSummary(
     val avgScore: Int = 0,
     val workoutsPlanned: Int = 0,
     val workoutsDone: Int = 0
+)
+
+/** Status pojedynczego slotu posiłkowego w danym dniu (raport zgodności). */
+enum class MealSlotState { EATEN, SKIPPED, MISSING }
+
+data class MealSlotStatus(
+    val mealType: pl.filebit.gymtracker.data.entity.MealType,
+    val label: String,
+    val state: MealSlotState
 )

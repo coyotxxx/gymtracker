@@ -10,13 +10,16 @@ import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.AdherenceLog
 import pl.filebit.gymtracker.data.repository.AdherenceCalculator
 import pl.filebit.gymtracker.data.repository.AdherenceSummary
+import pl.filebit.gymtracker.data.repository.MealSlotStatus
 import javax.inject.Inject
 
 data class AdherenceReportState(
     val loading: Boolean = true,
     val last7Days: AdherenceSummary = AdherenceSummary(),
     val last14Days: AdherenceSummary = AdherenceSummary(),
-    val recentDays: List<AdherenceLog> = emptyList()
+    val recentDays: List<AdherenceLog> = emptyList(),
+    /** v2.49.0 — rozbicie posiłków per dzień (klucz = dateMs) do widoku szczegółów. */
+    val mealBreakdowns: Map<Long, List<MealSlotStatus>> = emptyMap()
 )
 
 @HiltViewModel
@@ -34,11 +37,13 @@ class AdherenceReportViewModel @Inject constructor(
             val last7 = calc.avgAdherenceLastDays(7)
             val last14 = calc.avgAdherenceLastDays(14)
             val recent = calc.getRecent(14)
+            val breakdowns = recent.associate { it.dateMs to calc.mealBreakdownForDate(it.dateMs) }
             _state.value = AdherenceReportState(
                 loading = false,
                 last7Days = last7,
                 last14Days = last14,
-                recentDays = recent
+                recentDays = recent,
+                mealBreakdowns = breakdowns
             )
         }
     }

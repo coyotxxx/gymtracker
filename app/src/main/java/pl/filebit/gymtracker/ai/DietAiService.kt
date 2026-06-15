@@ -905,14 +905,9 @@ class DietAiService @Inject constructor(
         else -> "Posiłek $slot"
     }
 
-    private fun mealTypesForSlots(mealsCount: Int): List<MealType> = when (mealsCount) {
-        2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
-        3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-        4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
-        5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
-        6 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.SNACK, MealType.DINNER)
-        else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-    }
+    // v2.49.0: jedno źródło prawdy — pl.filebit.gymtracker.util.MealSlots.
+    private fun mealTypesForSlots(mealsCount: Int): List<MealType> =
+        pl.filebit.gymtracker.util.MealSlots.typesFor(mealsCount)
 
     private fun activityLabel(level: pl.filebit.gymtracker.data.entity.ActivityLevel): String = when (level) {
         pl.filebit.gymtracker.data.entity.ActivityLevel.SEDENTARY -> "siedzący tryb (biuro)"

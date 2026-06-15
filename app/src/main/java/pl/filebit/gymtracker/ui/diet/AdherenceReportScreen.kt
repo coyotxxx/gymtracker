@@ -79,7 +79,8 @@ fun AdherenceReportScreen(
                     )
                 }
                 items(state.recentDays.size) { idx ->
-                    DayLogRow(state.recentDays[idx])
+                    val day = state.recentDays[idx]
+                    DayLogRow(day, state.mealBreakdowns[day.dateMs].orEmpty())
                 }
                 if (state.recentDays.isEmpty() && !state.loading) {
                     item {
@@ -184,7 +185,7 @@ private fun MetricCol(label: String, value: String, color: Color) {
 }
 
 @Composable
-private fun DayLogRow(log: AdherenceLog) {
+private fun DayLogRow(log: AdherenceLog, meals: List<pl.filebit.gymtracker.data.repository.MealSlotStatus>) {
     val date = remember(log.dateMs) {
         SimpleDateFormat("EEEE, d MMM", Locale("pl", "PL")).format(Date(log.dateMs))
     }
@@ -247,6 +248,7 @@ private fun DayLogRow(log: AdherenceLog) {
                 MacroDetailRow("Tłuszcz", log.actualFatG, log.targetFatG, "g", log.fatAdherencePct)
                 Spacer(Modifier.height(8.dp))
                 DetailLine("Posiłki", "${log.mealsLoggedCount} / ${log.mealsPlannedCount} zalogowane", DarkOnSurface)
+                meals.forEach { slot -> MealSlotLine(slot) }
                 if (log.wasTrainingPlanned) {
                     DetailLine(
                         "Trening",
@@ -314,6 +316,31 @@ private fun DetailLine(label: String, value: String, valueColor: Color) {
             value,
             style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
             color = valueColor
+        )
+    }
+}
+
+@Composable
+private fun MealSlotLine(slot: pl.filebit.gymtracker.data.repository.MealSlotStatus) {
+    val (statusText, color) = when (slot.state) {
+        pl.filebit.gymtracker.data.repository.MealSlotState.EATEN -> "✓ zjedzone" to SuccessGreen
+        pl.filebit.gymtracker.data.repository.MealSlotState.SKIPPED -> "✗ pominięte" to ErrorRed
+        pl.filebit.gymtracker.data.repository.MealSlotState.MISSING -> "— nie zalogowano" to DarkOnSurfaceVariant
+    }
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(start = 12.dp, top = 2.dp, bottom = 2.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            slot.label.replaceFirstChar { it.uppercase() },
+            style = MaterialTheme.typography.bodySmall,
+            color = DarkOnSurface,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            statusText,
+            style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+            color = color
         )
     }
 }

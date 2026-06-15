@@ -109,6 +109,25 @@ class AdherenceCalculatorTest : TestHarness() {
         assertEquals("0 zalogowanych posiłków", 0, log.mealsLoggedCount)
     }
 
+    @Test
+    fun `mealBreakdownForDate pokazuje ktory posilek zjedzony pominiety niezalogowany`() = runBlocking {
+        seedProfile()
+        val now = System.currentTimeMillis()
+        val consRepo = MealConsumptionRepository(db.mealConsumptionDao())
+        // 3 posiłki (domyślne): śniadanie ZJEDZONE, obiad nietknięty, kolacja POMINIĘTA.
+        consRepo.setStatus(now, MealType.BREAKFAST, MealConsumptionStatus.CONSUMED)
+        consRepo.setStatus(now, MealType.DINNER, MealConsumptionStatus.SKIPPED)
+
+        val breakdown = calc().mealBreakdownForDate(now).associateBy { it.mealType }
+
+        assertEquals("śniadanie zjedzone",
+            pl.filebit.gymtracker.data.repository.MealSlotState.EATEN, breakdown[MealType.BREAKFAST]?.state)
+        assertEquals("obiad nie zalogowany",
+            pl.filebit.gymtracker.data.repository.MealSlotState.MISSING, breakdown[MealType.LUNCH]?.state)
+        assertEquals("kolacja pominięta",
+            pl.filebit.gymtracker.data.repository.MealSlotState.SKIPPED, breakdown[MealType.DINNER]?.state)
+    }
+
     // === v2.11.0: adherence = realne spożycie (plan AI vs ręczny dziennik) ===
 
     private suspend fun chicken(): Long = db.foodProductDao().upsert(FoodProduct(
