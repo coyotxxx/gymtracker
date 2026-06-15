@@ -116,6 +116,8 @@ fun DietScreen(
     val shownRecipeFor by vm.shownRecipeFor.collectAsStateWithLifecycle()
     val recipeVariantError by vm.recipeVariantError.collectAsStateWithLifecycle()
     val cookingDeviceTags by vm.cookingDeviceTags.collectAsStateWithLifecycle()
+    // v2.50.0: kontekst do systemowego druku planu (Drukuj / Zapisz PDF).
+    val printContext = androidx.compose.ui.platform.LocalContext.current
     // v1.28.3 (Etap 4): osobny kreator diety usunięty — ekran Diety zawsze się
     // pokazuje; pełną konfigurację diety user robi w ekranie „Konfiguracja".
     var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
@@ -325,7 +327,8 @@ fun DietScreen(
                         onPreferencje = onOpenMealPreferences,
                         onZakupy = onOpenShoppingList,
                         onMealPrep = onOpenMealPrep,
-                        onRecipes = onOpenRecipeBrowser
+                        onRecipes = onOpenRecipeBrowser,
+                        onPrintPlan = { DietPlanPrinter.print(printContext, state) }
                     )
                 }
 
@@ -1629,7 +1632,8 @@ private fun NarzedziaSection(
     onPreferencje: () -> Unit,
     onZakupy: () -> Unit,
     onMealPrep: () -> Unit,
-    onRecipes: () -> Unit = {}
+    onRecipes: () -> Unit = {},
+    onPrintPlan: () -> Unit = {}
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -1657,7 +1661,7 @@ private fun NarzedziaSection(
                         .padding(horizontal = 8.dp, vertical = 2.dp)
                 ) {
                     Text(
-                        "7",
+                        "8",
                         style = MaterialTheme.typography.labelMedium.copy(
                             fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace
                         ),
@@ -1690,7 +1694,7 @@ private fun NarzedziaSection(
                     Spacer(Modifier.height(8.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         ToolButton("📖", "Przepisy (79)", Modifier.weight(1f), onRecipes)
-                        Spacer(Modifier.weight(1f))
+                        ToolButton("🖨", "Drukuj plan", Modifier.weight(1f), onPrintPlan)
                     }
                 }
             }
