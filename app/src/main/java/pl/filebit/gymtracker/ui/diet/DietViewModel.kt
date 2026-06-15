@@ -210,9 +210,9 @@ class DietViewModel @Inject constructor(
     }
 
     /**
-     * v2.51.0 — kompaktowy plan tygodniowy do druku (Pn–Nd tygodnia wybranego dnia).
-     * Każdy dzień: trening/wolne + cel kcal/makro (z carb cyclingiem — dni treningowe
-     * mają inny rozkład węgli/tłuszczu). Bez rozpisywania posiłków.
+     * v2.53.0 — plan diety do druku. Menu jest takie samo każdego dnia → pokazujemy je RAZ
+     * (wzór z najnowszego dnia z posiłkami), a różnicę dni treningowych vs wolnych
+     * (carb cycling) jako dwie kolumny celów. Zwięźle, bez 7 powtórzeń.
      */
     suspend fun buildWeeklyPlan(): WeeklyPlan {
         val profile = runCatching { profileRepo.get() }.getOrNull()
@@ -224,32 +224,24 @@ class DietViewModel @Inject constructor(
             .getOrDefault(emptyList()).associateBy { it.id }
         val mealOrder = listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
 
-        // Ostatnie 7 dni KOŃCZĄCE się na wybranym dniu — zawsze zapełnione realnym menu
-        // (kalendarzowy tydzień Pn–Nd byłby pusty, gdy drukujesz w poniedziałek rano).
-        val startCal = java.util.Calendar.getInstance().apply {
-            timeInMillis = _selectedDateMs.value
+        fun startOfDay(ms: Long) = java.util.Calendar.getInstance().apply {
+            timeInMillis = ms
             set(java.util.Calendar.HOUR_OF_DAY, 0); set(java.util.Calendar.MINUTE, 0)
             set(java.util.Calendar.SECOND, 0); set(java.util.Calendar.MILLISECOND, 0)
-            add(java.util.Calendar.DAY_OF_YEAR, -6)
-        }
-        val startMs = startCal.timeInMillis
-        val dayFmt = java.text.SimpleDateFormat("EEEE d.MM", java.util.Locale("pl", "PL"))
-        val days = (0..6).map { offset ->
-            val dayMs = java.util.Calendar.getInstance().apply {
-                timeInMillis = startMs; add(java.util.Calendar.DAY_OF_YEAR, offset)
-            }.timeInMillis
-            val isTraining = runCatching { trainingDietBridge.isPlannedTrainingDay(dayMs) }.getOrDefault(false)
-            val effKcal = cfg.kcalForDate(dayMs) ?: cfg.manualKcal
-            val goal = if (profile != null) runCatching {
-                computeDailyGoal(
-                    profile, manualKcalOverride = effKcal, customDeficit = cfg.customDeficit,
-                    dietProfile = dietProfile, avgDailyCardioKcal = cardioBonus,
-                    latestMeasuredWeightKg = weight, isTrainingDay = isTraining
-                )
-            }.getOrNull() else null
-            // Posiłki dnia → zwięzłe linie (produkty w jednym wierszu).
-            val entries = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
-            val byType = entries.groupBy { it.mealType }
+        }.timeInMillis
+        fun plusDays(ms: Long, d: Int) = java.util.Calendar.getInstance().apply {
+            timeInMillis = ms; add(java.util.Calendar.DAY_OF_YEAR, d)
+        }.timeInMillis
+
+        // Menu WZORCOWE: najnowszy dzień (≤ wybrany, do 14 dni wstecz) z zapisanymi posiłkami.
+        val sel = startOfDay(_selectedDateMs.value)
+        val labelFmt = java.text.SimpleDateFormat("EEEE d.MM", java.util.Locale("pl", "PL"))
+        var menuMeals: List<WeekMealLine> = emptyList()
+        var menuLabel = "Brak zapisanego menu — zaloguj posiłki, żeby je wydrukować"
+        for (back in 0..13) {
+            val dayMs = plusDays(sel, -back)
+            val byType = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
+                .groupBy { it.mealType }
             val meals = mealOrder.mapNotNull { type ->
                 val es = byType[type]?.filter { products.containsKey(it.productId) } ?: return@mapNotNull null
                 if (es.isEmpty()) return@mapNotNull null
@@ -261,18 +253,43 @@ class DietViewModel @Inject constructor(
                 }
                 WeekMealLine(mealTypeLabel(type), kcal.roundToInt(), items)
             }
-            WeekDayPlan(
-                dateMs = dayMs,
-                dayLabel = dayFmt.format(java.util.Date(dayMs)).replaceFirstChar { it.uppercase() },
-                isTraining = isTraining,
-                mealsPerDay = cfg.mealsPerDay,
-                goal = goal,
-                meals = meals
-            )
+            if (meals.isNotEmpty()) {
+                menuMeals = meals
+                menuLabel = "Codzienne menu (wzór: ${labelFmt.format(java.util.Date(dayMs))})"
+                break
+            }
         }
-        val rangeFmt = java.text.SimpleDateFormat("d MMM", java.util.Locale("pl", "PL"))
-        val range = "${rangeFmt.format(java.util.Date(startMs))} – ${rangeFmt.format(java.util.Date(days.last().dateMs))}"
-        return WeeklyPlan(range, days)
+
+        // Cele: dzień treningowy vs wolny (carb cycling — różni się tylko węgle/tłuszcz).
+        fun goalFor(train: Boolean) = if (profile != null) runCatching {
+            computeDailyGoal(
+                profile, manualKcalOverride = cfg.manualKcal, customDeficit = cfg.customDeficit,
+                dietProfile = dietProfile, avgDailyCardioKcal = cardioBonus,
+                latestMeasuredWeightKg = weight, isTrainingDay = train
+            )
+        }.getOrNull() else null
+
+        // Dni treningowe (nazwy) — z planu, przez isPlannedTrainingDay na Pn..Nd.
+        val dowFmt = java.text.SimpleDateFormat("EEEE", java.util.Locale("pl", "PL"))
+        val monday = java.util.Calendar.getInstance().apply {
+            timeInMillis = sel
+            while (get(java.util.Calendar.DAY_OF_WEEK) != java.util.Calendar.MONDAY) {
+                add(java.util.Calendar.DAY_OF_YEAR, -1)
+            }
+        }.timeInMillis
+        val trainingDays = (0..6).mapNotNull { off ->
+            val dayMs = plusDays(monday, off)
+            if (runCatching { trainingDietBridge.isPlannedTrainingDay(dayMs) }.getOrDefault(false))
+                dowFmt.format(java.util.Date(dayMs)).replaceFirstChar { it.uppercase() } else null
+        }
+
+        return WeeklyPlan(
+            menuLabel = menuLabel,
+            trainingDaysLabel = if (trainingDays.isEmpty()) "brak (płaskie makro)" else trainingDays.joinToString(", "),
+            meals = menuMeals,
+            trainGoal = goalFor(true),
+            restGoal = goalFor(false)
+        )
     }
 
     // === v2.30.0: REAKCJA DIETETYKA NA POMINIĘTE POSIŁKI ===

@@ -6,46 +6,36 @@ import android.print.PrintManager
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import pl.filebit.gymtracker.util.DailyMacroGoal
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
-/** Jeden posiłek w planie dnia — zwięzła linia (produkty w jednym wierszu). */
+/** Jeden posiłek w menu — zwięzła linia (produkty w jednym wierszu). */
 data class WeekMealLine(
     val label: String,
     val kcal: Int,
-    /** Produkty z gramaturą: „Płatki owsiane 61 g, WPI 37 g, …". */
     val items: String
 )
 
-/** Jeden dzień w kompaktowym planie tygodniowym. */
-data class WeekDayPlan(
-    val dateMs: Long,
-    val dayLabel: String,
-    val isTraining: Boolean,
-    val mealsPerDay: Int,
-    val goal: DailyMacroGoal?,
-    val meals: List<WeekMealLine> = emptyList()
-)
-
+/**
+ * Plan diety do druku. Menu jest takie samo każdego dnia — pokazujemy je RAZ, a różnicę
+ * dni treningowych vs wolnych (carb cycling) jako dwie kolumny celów.
+ */
 data class WeeklyPlan(
-    val rangeLabel: String,
-    val days: List<WeekDayPlan>
+    val menuLabel: String,
+    val trainingDaysLabel: String,
+    val meals: List<WeekMealLine>,
+    val trainGoal: DailyMacroGoal?,
+    val restGoal: DailyMacroGoal?
 )
 
 /**
- * v2.51.0 — „Drukuj plan": kompaktowy plan na CAŁY TYDZIEŃ (1 wiersz/dzień) do druku/PDF.
- *
- * Każdy dzień: oznaczenie trening/wolne + cele (kcal, B/W/T). Bez rozpisywania każdego
- * posiłku — zwarte zestawienie. Dni treningowe mają inne makra (carb cycling) i to widać.
- * Render → systemowy PrintManager Androida (Drukuj / Zapisz jako PDF). Offline, bez backendu.
+ * v2.53.0 — „Drukuj plan": menu raz + cele w kolumnach (trening / wolne). Render → systemowy
+ * PrintManager Androida (Drukuj / Zapisz jako PDF). Offline, bez backendu.
  */
 object DietPlanPrinter {
 
     private var pending: WebView? = null
 
-    fun print(context: Context, week: WeeklyPlan) {
-        val html = buildHtml(week)
+    fun print(context: Context, plan: WeeklyPlan) {
+        val html = buildHtml(plan)
         val webView = WebView(context)
         webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String?) {
@@ -59,57 +49,74 @@ object DietPlanPrinter {
         webView.loadDataWithBaseURL(null, html, "text/html", "UTF-8", null)
     }
 
-    fun buildHtml(week: WeeklyPlan): String {
-        val daysHtml = buildString {
-            for (d in week.days) {
-                val cls = if (d.isTraining) " train" else ""
-                val badge = if (d.isTraining) "<span class=\"b train\">🏋 Trening</span>"
-                    else "<span class=\"b rest\">Wolne</span>"
-                val macros = d.goal?.let {
-                    " · <b>${it.kcal} kcal</b> · B${it.proteinG} W${it.carbsG} T${it.fatG} g"
-                } ?: ""
-                append("<div class=\"day$cls\">")
-                append("<div class=\"dhead\">").append(esc(d.dayLabel)).append(" ")
-                    .append(badge).append(macros).append("</div>")
-                if (d.meals.isEmpty()) {
-                    append("<div class=\"empty\">— brak rozpisanych posiłków —</div>")
-                } else {
-                    for (m in d.meals) {
-                        append("<div class=\"meal\"><span class=\"mn\">")
-                        append(esc(m.label)).append("</span> <span class=\"mk\">")
-                        append(m.kcal).append(" kcal</span><div class=\"items\">")
-                        append(esc(m.items)).append("</div></div>")
-                    }
-                }
-                append("</div>")
+    fun buildHtml(plan: WeeklyPlan): String {
+        val t = plan.trainGoal
+        val r = plan.restGoal
+        // Wiersz tabeli celów; podświetla różnicę między kolumnami.
+        fun row(label: String, tv: String, rv: String): String {
+            val diff = if (tv != rv) " class=\"diff\"" else ""
+            return "<tr$diff><td class=\"l\">$label</td><td>$tv</td><td>$rv</td></tr>"
+        }
+        val goalTable = if (t != null && r != null) {
+            """
+            <table class="goals">
+              <thead><tr><th class="l"></th><th>Dzień treningowy</th><th>Dzień wolny</th></tr></thead>
+              <tbody>
+                ${row("kcal", "${t.kcal}", "${r.kcal}")}
+                ${row("Białko", "${t.proteinG} g", "${r.proteinG} g")}
+                ${row("Węgle", "${t.carbsG} g", "${r.carbsG} g")}
+                ${row("Tłuszcz", "${t.fatG} g", "${r.fatG} g")}
+              </tbody>
+            </table>
+            """.trimIndent()
+        } else ""
+
+        val mealsHtml = if (plan.meals.isEmpty()) {
+            "<div class=\"empty\">— brak rozpisanych posiłków —</div>"
+        } else buildString {
+            for (m in plan.meals) {
+                append("<div class=\"meal\"><span class=\"mn\">").append(esc(m.label))
+                append("</span> <span class=\"mk\">").append(m.kcal).append(" kcal</span>")
+                append("<div class=\"items\">").append(esc(m.items)).append("</div></div>")
             }
         }
+
         return """
             <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
             <style>
               * { box-sizing: border-box; }
-              body { font-family: -apple-system, Roboto, Arial, sans-serif; color: #1a1a1a; margin: 22px; font-size: 12.5px; }
-              h1 { font-size: 19px; margin: 0 0 2px; }
-              .range { color: #666; font-size: 12.5px; margin-bottom: 14px; }
-              .day { border: 1px solid #e6e6ea; border-radius: 8px; padding: 9px 12px; margin-bottom: 9px; page-break-inside: avoid; }
-              .day.train { background: #fbf2e8; border-color: #ecd9c2; }
-              .dhead { font-size: 13.5px; margin-bottom: 6px; }
-              .b { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 9px; }
-              .b.train { background: #c27a3a; color: #fff; }
-              .b.rest { background: #e6e6ea; color: #666; }
-              .meal { padding: 3px 0; border-top: 1px solid #00000010; }
+              body { font-family: -apple-system, Roboto, Arial, sans-serif; color: #1a1a1a; margin: 24px; font-size: 13px; }
+              h1 { font-size: 20px; margin: 0 0 2px; }
+              .sub { color: #666; font-size: 12.5px; margin-bottom: 16px; }
+              h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .5px; color: #888; margin: 18px 0 8px; }
+              table.goals { border-collapse: collapse; font-size: 13px; min-width: 360px; }
+              table.goals th, table.goals td { padding: 6px 16px; text-align: right; border-bottom: 1px solid #eee; }
+              table.goals th { color: #888; font-size: 11px; text-transform: uppercase; }
+              table.goals th:nth-child(2) { color: #c27a3a; }
+              .l { text-align: left; }
+              tr.diff td { font-weight: 700; }
+              tr.diff td:nth-child(2) { color: #c27a3a; }
+              .train-days { background: #fbf2e8; border: 1px solid #ecd9c2; border-radius: 8px; padding: 8px 12px; font-size: 12.5px; margin-bottom: 4px; }
+              .meal { padding: 6px 0; border-top: 1px solid #eee; }
               .meal:first-of-type { border-top: none; }
               .mn { font-weight: 700; }
-              .mk { color: #888; font-size: 11px; margin-left: 6px; }
-              .items { color: #444; font-size: 11.5px; margin-top: 1px; }
-              .empty { color: #aaa; font-size: 11.5px; }
-              .legend { margin-top: 12px; color: #777; font-size: 11px; }
-              .foot { margin-top: 18px; color: #aaa; font-size: 10px; }
+              .mk { color: #888; font-size: 11.5px; margin-left: 6px; }
+              .items { color: #444; font-size: 12px; margin-top: 2px; }
+              .empty { color: #aaa; }
+              .note { margin-top: 10px; color: #777; font-size: 11.5px; }
+              .foot { margin-top: 22px; color: #aaa; font-size: 10px; }
             </style></head><body>
-            <h1>Plan diety — tydzień</h1>
-            <div class="range">${esc(week.rangeLabel)}</div>
-            $daysHtml
-            <div class="legend">🏋 dzień treningowy = więcej węglowodanów, mniej tłuszczu (ta sama liczba kcal). „Wolne" = odwrotnie.</div>
+            <h1>Plan diety</h1>
+            <div class="sub">${esc(plan.menuLabel)}</div>
+
+            <div class="train-days">🏋 Dni treningowe: <b>${esc(plan.trainingDaysLabel)}</b></div>
+            <h2>Cele dzienne</h2>
+            $goalTable
+            <div class="note">Menu jest takie samo każdego dnia — różni się tylko cel: w dni treningowe więcej węglowodanów, mniej tłuszczu (ta sama liczba kcal i białka).</div>
+
+            <h2>Menu (codziennie)</h2>
+            $mealsHtml
+
             <div class="foot">Wygenerowano w GymTracker</div>
             </body></html>
         """.trimIndent()
@@ -118,5 +125,5 @@ object DietPlanPrinter {
     private fun esc(s: String): String = s
         .replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
-    private const val JOB_NAME = "Plan diety — tydzień"
+    private const val JOB_NAME = "Plan diety"
 }
