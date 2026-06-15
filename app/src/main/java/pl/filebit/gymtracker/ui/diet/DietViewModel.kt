@@ -244,14 +244,14 @@ class DietViewModel @Inject constructor(
         val trainGoal = goalFor(true)
         val restGoal = goalFor(false)
 
-        // Menu WZORCOWE: najnowszy dzień (≤ wybrany, do 14 dni wstecz) z zapisanymi posiłkami.
-        // Produkt = nazwa + gramy + wkład węgli/tłuszczu (do wyboru „regulatora").
+        // Menu WZORCOWE (baza = dzień wolny): najnowszy dzień (≤ wybrany, do 14 dni wstecz)
+        // z zapisanymi posiłkami. Wariant treningowy = baza + węgle do regulatora, − tłuszcz.
         class Tmp(val name: String, val grams: Int, val carbs: Double, val fat: Double,
-                  val cp: Double, val fp: Double) { var delta = 0 }
+                  val cp: Double, val fp: Double, val kp: Double)
         val sel = startOfDay(_selectedDateMs.value)
         val labelFmt = java.text.SimpleDateFormat("EEEE d.MM", java.util.Locale("pl", "PL"))
         var menuLabel = "Brak zapisanego menu — zaloguj posiłki, żeby je wydrukować"
-        var mealsTmp: List<Triple<String, Int, List<Tmp>>> = emptyList()
+        var mealsTmp: List<Pair<String, List<Tmp>>> = emptyList()
         for (back in 0..13) {
             val dayMs = plusDays(sel, -back)
             val byType = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
@@ -259,46 +259,42 @@ class DietViewModel @Inject constructor(
             val built = mealOrder.mapNotNull { type ->
                 val es = byType[type]?.filter { products.containsKey(it.productId) } ?: return@mapNotNull null
                 if (es.isEmpty()) return@mapNotNull null
-                var kcal = 0.0
                 val ps = es.map { e ->
                     val p = products.getValue(e.productId)
                     val f = e.grams / 100.0
-                    kcal += p.kcalPer100g * f
                     Tmp(p.name, e.grams.roundToInt(), p.carbsPer100g * f, p.fatPer100g * f,
-                        p.carbsPer100g, p.fatPer100g)
+                        p.carbsPer100g, p.fatPer100g, p.kcalPer100g)
                 }
-                Triple(mealTypeLabel(type), kcal.roundToInt(), ps)
+                mealTypeLabel(type) to ps
             }
             if (built.isNotEmpty()) {
                 mealsTmp = built
-                menuLabel = "Codzienne menu (wzór: ${labelFmt.format(java.util.Date(dayMs))})"
+                menuLabel = "Menu z dnia: ${labelFmt.format(java.util.Date(dayMs))}"
                 break
             }
         }
 
         // „Regulatory": produkt z największym wkładem węgli (+ w trening) i tłuszczu (− w trening).
-        val all = mealsTmp.flatMap { it.third }
+        val all = mealsTmp.flatMap { it.second }
         val carbLever = all.filter { it.cp > 0 }.maxByOrNull { it.carbs }
         val fatLever = all.filter { it.fp > 0 }.maxByOrNull { it.fat }
-        if (trainGoal != null && restGoal != null) {
-            // Węgle: dodaj na trening do głównego źródła węgli (bez górnego limitu).
-            carbLever?.let { lev ->
-                if (lev.cp > 0) lev.delta += ((trainGoal.carbsG - restGoal.carbsG) / (lev.cp / 100.0)).roundToInt()
-            }
-            // Tłuszcz: odejmij na trening z głównego źródła — ale NIE więcej niż go jest
-            // (cap = usuń całość; swing carb cyclingu bywa większy niż pojedynczy produkt).
-            fatLever?.let { lev ->
-                if (lev !== carbLever && lev.fp > 0) {
-                    val removeG = ((restGoal.fatG - trainGoal.fatG) / (lev.fp / 100.0)).roundToInt()
-                    lev.delta -= removeG.coerceIn(0, lev.grams)
-                }
-            }
-        }
-        val menuMeals = mealsTmp.map { (label, kcal, ps) ->
-            PlanMeal(label, kcal, ps.map { PlanProduct(it.name, it.grams, it.delta) })
+        val carbAddG = if (carbLever != null && trainGoal != null && restGoal != null && carbLever.cp > 0)
+            ((trainGoal.carbsG - restGoal.carbsG) / (carbLever.cp / 100.0)).roundToInt().coerceAtLeast(0) else 0
+        val fatCutG = if (fatLever != null && fatLever !== carbLever && trainGoal != null && restGoal != null && fatLever.fp > 0)
+            ((restGoal.fatG - trainGoal.fatG) / (fatLever.fp / 100.0)).roundToInt().coerceIn(0, fatLever.grams) else 0
+
+        fun trainGrams(t: Tmp) = (t.grams + (if (t === carbLever) carbAddG else 0) -
+            (if (t === fatLever) fatCutG else 0)).coerceAtLeast(0)
+        fun mealKcal(ts: List<Tmp>, train: Boolean) =
+            ts.sumOf { it.kp * (if (train) trainGrams(it) else it.grams) / 100.0 }.roundToInt()
+        fun mealsFor(train: Boolean) = mealsTmp.map { (label, ts) ->
+            // Produkt zredukowany do 0 g (np. oliwa usunięta w trening) znika z listy.
+            val ps = ts.map { PlanProduct(it.name, if (train) trainGrams(it) else it.grams) }
+                .filter { it.grams > 0 }
+            PlanMeal(label, mealKcal(ts, train), ps)
         }
 
-        // Dni treningowe (nazwy) — z planu, przez isPlannedTrainingDay na Pn..Nd.
+        // Dni treningowe / nietreningowe (nazwy) — z planu, przez isPlannedTrainingDay na Pn..Nd.
         val dowFmt = java.text.SimpleDateFormat("EEEE", java.util.Locale("pl", "PL"))
         val monday = java.util.Calendar.getInstance().apply {
             timeInMillis = sel
@@ -306,18 +302,27 @@ class DietViewModel @Inject constructor(
                 add(java.util.Calendar.DAY_OF_YEAR, -1)
             }
         }.timeInMillis
-        val trainingDays = (0..6).mapNotNull { off ->
+        val trainNames = mutableListOf<String>()
+        val restNames = mutableListOf<String>()
+        for (off in 0..6) {
             val dayMs = plusDays(monday, off)
+            val name = dowFmt.format(java.util.Date(dayMs)).replaceFirstChar { it.uppercase() }
             if (runCatching { trainingDietBridge.isPlannedTrainingDay(dayMs) }.getOrDefault(false))
-                dowFmt.format(java.util.Date(dayMs)).replaceFirstChar { it.uppercase() } else null
+                trainNames += name else restNames += name
         }
 
         return WeeklyPlan(
             menuLabel = menuLabel,
-            trainingDaysLabel = if (trainingDays.isEmpty()) "brak (płaskie makro)" else trainingDays.joinToString(", "),
-            meals = menuMeals,
-            trainGoal = trainGoal,
-            restGoal = restGoal
+            training = DayMenu(
+                title = "Dzień treningowy",
+                daysLabel = if (trainNames.isEmpty()) "—" else trainNames.joinToString(", "),
+                goal = trainGoal, meals = mealsFor(true), isTraining = true
+            ),
+            rest = DayMenu(
+                title = "Dzień nietreningowy",
+                daysLabel = if (restNames.isEmpty()) "—" else restNames.joinToString(", "),
+                goal = restGoal, meals = mealsFor(false), isTraining = false
+            )
         )
     }
 

@@ -7,27 +7,33 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import pl.filebit.gymtracker.util.DailyMacroGoal
 
-/** Produkt w posiłku. trainDeltaG: ile dodać(+)/odjąć(−) w dzień treningowy (0 = bez zmian). */
-data class PlanProduct(val name: String, val grams: Int, val trainDeltaG: Int = 0)
+/** Produkt w posiłku (gramatura już konkretna dla danego typu dnia). */
+data class PlanProduct(val name: String, val grams: Int)
 
 /** Posiłek jako kolumna. */
 data class PlanMeal(val label: String, val kcal: Int, val products: List<PlanProduct>)
 
-/**
- * Plan diety do druku. Menu jest takie samo każdego dnia — pokazujemy je RAZ (kolumny posiłków).
- * Różnicę dni treningowych wpisujemy WPROST przy produktach: zielone „+X g" (dodaj w trening),
- * pomarańczowe „−Y g" (odejmij w trening). kcal i białko bez zmian.
- */
-data class WeeklyPlan(
-    val menuLabel: String,
-    val trainingDaysLabel: String,
+/** Pełny wariant dnia (treningowy / nietreningowy). */
+data class DayMenu(
+    val title: String,
+    val daysLabel: String,
+    val goal: DailyMacroGoal?,
     val meals: List<PlanMeal>,
-    val trainGoal: DailyMacroGoal?,
-    val restGoal: DailyMacroGoal?
+    val isTraining: Boolean
 )
 
 /**
- * v2.54.0 — „Drukuj plan": kolumny posiłków + delty trening/wolne wprost przy produktach.
+ * Plan diety: DWA pełne warianty (dzień treningowy / nietreningowy), każdy w 3 kolumnach.
+ * Gramatury już dostosowane (carb cycling) — bez liczenia w głowie.
+ */
+data class WeeklyPlan(
+    val menuLabel: String,
+    val training: DayMenu,
+    val rest: DayMenu
+)
+
+/**
+ * v2.55.0 — „Drukuj plan": dwa pełne warianty dnia (treningowy/nietreningowy), kolumny posiłków.
  * Render → systemowy PrintManager Androida (Drukuj / Zapisz jako PDF). Offline, bez backendu.
  */
 object DietPlanPrinter {
@@ -50,65 +56,64 @@ object DietPlanPrinter {
     }
 
     fun buildHtml(plan: WeeklyPlan): String {
-        val cols = if (plan.meals.isEmpty()) {
-            "<div class=\"empty\">— brak rozpisanych posiłków — zaloguj posiłki, żeby wydrukować plan —</div>"
-        } else buildString {
+        return """
+            <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
+            <style>
+              * { box-sizing: border-box; }
+              body { font-family: -apple-system, Roboto, Arial, sans-serif; color: #1a1a1a; margin: 20px; font-size: 12.5px; }
+              h1 { font-size: 20px; margin: 0 0 2px; }
+              .sub { color: #666; font-size: 12.5px; margin-bottom: 14px; }
+              .section { border-radius: 8px; padding: 12px; margin-bottom: 14px; page-break-inside: avoid; border: 1px solid #e6e6ea; }
+              .section.train { background: #fbf2e8; border-color: #ecd9c2; }
+              .shead { font-size: 15px; font-weight: 800; margin-bottom: 2px; }
+              .sgoal { color: #555; font-size: 11.5px; margin-bottom: 10px; }
+              .badge { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 8px; border-radius: 9px; margin-left: 6px; vertical-align: middle; }
+              .badge.train { background: #c27a3a; color: #fff; }
+              .badge.rest { background: #e6e6ea; color: #666; }
+              .cols { display: flex; gap: 10px; flex-wrap: wrap; }
+              .col { flex: 1 1 170px; background: #fff; border: 1px solid #e6e6ea; border-radius: 7px; padding: 9px; }
+              .ch { font-weight: 700; border-bottom: 2px solid #c27a3a; padding-bottom: 4px; margin-bottom: 5px; }
+              .ck { float: right; color: #888; font-weight: 400; font-size: 11px; }
+              ul { margin: 0; padding-left: 16px; }
+              li { margin: 3px 0; font-size: 12px; }
+              .empty { color: #aaa; }
+              .foot { margin-top: 14px; color: #aaa; font-size: 10px; }
+            </style></head><body>
+            <h1>Plan diety</h1>
+            <div class="sub">${esc(plan.menuLabel)}</div>
+            ${section(plan.training)}
+            ${section(plan.rest)}
+            <div class="foot">Wygenerowano w GymTracker. Kcal i białko są takie same w obu wariantach — różnią się węgle i tłuszcz (carb cycling).</div>
+            </body></html>
+        """.trimIndent()
+    }
+
+    private fun section(day: DayMenu): String {
+        val badge = if (day.isTraining) "<span class=\"badge train\">🏋 Trening</span>"
+            else "<span class=\"badge rest\">Wolne</span>"
+        val goalLine = day.goal?.let {
+            "Cel: ${it.kcal} kcal · Białko ${it.proteinG} g · Węgle ${it.carbsG} g · Tłuszcz ${it.fatG} g"
+        } ?: ""
+        val cols = if (day.meals.isEmpty()) "<div class=\"empty\">— brak rozpisanych posiłków —</div>"
+        else buildString {
             append("<div class=\"cols\">")
-            for (m in plan.meals) {
+            for (m in day.meals) {
                 append("<div class=\"col\"><div class=\"ch\">").append(esc(m.label))
                 append("<span class=\"ck\">").append(m.kcal).append(" kcal</span></div><ul>")
                 for (p in m.products) {
-                    append("<li>").append(esc(p.name)).append(" <b>").append(p.grams).append(" g</b>")
-                    if (p.trainDeltaG > 0) {
-                        append(" <span class=\"d up\">+").append(p.trainDeltaG).append(" g</span>")
-                    } else if (p.trainDeltaG < 0) {
-                        append(" <span class=\"d down\">−").append(-p.trainDeltaG).append(" g</span>")
-                    }
-                    append("</li>")
+                    append("<li>").append(esc(p.name)).append(" <b>").append(p.grams).append(" g</b></li>")
                 }
                 append("</ul></div>")
             }
             append("</div>")
         }
-        val goalLine = if (plan.trainGoal != null && plan.restGoal != null) {
-            val t = plan.trainGoal; val r = plan.restGoal
-            "Cele — <b>trening:</b> ${t.kcal} kcal · B${t.proteinG} W${t.carbsG} T${t.fatG} g · " +
-                "<b>wolne:</b> W${r.carbsG} T${r.fatG} g (kcal i białko bez zmian)"
-        } else ""
-
+        val cls = if (day.isTraining) "section train" else "section"
         return """
-            <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
-            <style>
-              * { box-sizing: border-box; }
-              body { font-family: -apple-system, Roboto, Arial, sans-serif; color: #1a1a1a; margin: 22px; font-size: 13px; }
-              h1 { font-size: 20px; margin: 0 0 2px; }
-              .sub { color: #666; font-size: 12.5px; margin-bottom: 14px; }
-              .cols { display: flex; gap: 10px; flex-wrap: wrap; }
-              .col { flex: 1 1 180px; border: 1px solid #e6e6ea; border-radius: 8px; padding: 10px; page-break-inside: avoid; }
-              .ch { font-weight: 700; border-bottom: 2px solid #c27a3a; padding-bottom: 4px; margin-bottom: 6px; }
-              .ck { float: right; color: #888; font-weight: 400; font-size: 11px; }
-              ul { margin: 0; padding-left: 16px; }
-              li { margin: 4px 0; font-size: 12px; }
-              .d { font-weight: 700; font-size: 11.5px; white-space: nowrap; }
-              .d.up { color: #2e7d32; }
-              .d.down { color: #b5532a; }
-              .legend { margin-top: 14px; background: #fbf2e8; border: 1px solid #ecd9c2; border-radius: 8px; padding: 9px 12px; font-size: 12px; }
-              .legend .up { color: #2e7d32; font-weight: 700; }
-              .legend .down { color: #b5532a; font-weight: 700; }
-              .goals { margin-top: 8px; color: #555; font-size: 12px; }
-              .foot { margin-top: 18px; color: #aaa; font-size: 10px; }
-            </style></head><body>
-            <h1>Plan diety</h1>
-            <div class="sub">${esc(plan.menuLabel)} · dni treningowe: <b>${esc(plan.trainingDaysLabel)}</b></div>
-            $cols
-            <div class="legend">
-              <b>Dni treningowe</b> (Pn/Śr/Pt): zastosuj zmiany przy produktach —
-              <span class="up">zielone +g dodaj</span>, <span class="down">pomarańczowe −g odejmij</span>.
-              W <b>dni wolne</b> jedz wersję bazową (bez tych zmian). Więcej węgli na trening, mniej tłuszczu — kcal i białko bez zmian.
+            <div class="$cls">
+              <div class="shead">${esc(day.title)}$badge</div>
+              <div class="sgoal">${esc(day.daysLabel)} · $goalLine</div>
+              $cols
             </div>
-            <div class="goals">$goalLine</div>
-            <div class="foot">Wygenerowano w GymTracker</div>
-            </body></html>
         """.trimIndent()
     }
 
