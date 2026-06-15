@@ -208,6 +208,55 @@ class DietViewModel @Inject constructor(
         _consumptions.value = list.associate { it.mealType to it.status }
     }
 
+    /**
+     * v2.51.0 — kompaktowy plan tygodniowy do druku (Pn–Nd tygodnia wybranego dnia).
+     * Każdy dzień: trening/wolne + cel kcal/makro (z carb cyclingiem — dni treningowe
+     * mają inny rozkład węgli/tłuszczu). Bez rozpisywania posiłków.
+     */
+    suspend fun buildWeeklyPlan(): WeeklyPlan {
+        val profile = runCatching { profileRepo.get() }.getOrNull()
+        val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
+        val cfg = dietPrefs.load()
+        val cardioBonus = runCatching { cardioKcalEstimator.avgDailyKcalLast7Days() }.getOrDefault(0)
+        val weight = runCatching { bodyMeasurementDao.getLatest()?.weightKg }.getOrNull()
+
+        // Poniedziałek tygodnia zawierającego wybrany dzień.
+        val cal = java.util.Calendar.getInstance().apply {
+            timeInMillis = _selectedDateMs.value
+            set(java.util.Calendar.HOUR_OF_DAY, 0); set(java.util.Calendar.MINUTE, 0)
+            set(java.util.Calendar.SECOND, 0); set(java.util.Calendar.MILLISECOND, 0)
+            while (get(java.util.Calendar.DAY_OF_WEEK) != java.util.Calendar.MONDAY) {
+                add(java.util.Calendar.DAY_OF_YEAR, -1)
+            }
+        }
+        val mondayMs = cal.timeInMillis
+        val dayFmt = java.text.SimpleDateFormat("EEEE d.MM", java.util.Locale("pl", "PL"))
+        val days = (0..6).map { offset ->
+            val dayMs = java.util.Calendar.getInstance().apply {
+                timeInMillis = mondayMs; add(java.util.Calendar.DAY_OF_YEAR, offset)
+            }.timeInMillis
+            val isTraining = runCatching { trainingDietBridge.isPlannedTrainingDay(dayMs) }.getOrDefault(false)
+            val effKcal = cfg.kcalForDate(dayMs) ?: cfg.manualKcal
+            val goal = if (profile != null) runCatching {
+                computeDailyGoal(
+                    profile, manualKcalOverride = effKcal, customDeficit = cfg.customDeficit,
+                    dietProfile = dietProfile, avgDailyCardioKcal = cardioBonus,
+                    latestMeasuredWeightKg = weight, isTrainingDay = isTraining
+                )
+            }.getOrNull() else null
+            WeekDayPlan(
+                dateMs = dayMs,
+                dayLabel = dayFmt.format(java.util.Date(dayMs)).replaceFirstChar { it.uppercase() },
+                isTraining = isTraining,
+                mealsPerDay = cfg.mealsPerDay,
+                goal = goal
+            )
+        }
+        val rangeFmt = java.text.SimpleDateFormat("d MMM", java.util.Locale("pl", "PL"))
+        val range = "${rangeFmt.format(java.util.Date(mondayMs))} – ${rangeFmt.format(java.util.Date(days.last().dateMs))}"
+        return WeeklyPlan(range, days)
+    }
+
     // === v2.30.0: REAKCJA DIETETYKA NA POMINIĘTE POSIŁKI ===
     // Wybór Macieja: karta na ekranie diety, próg = już po 1 pominiętym posiłku.
     // Dietetyk widzi pominięcie, liczy deficyt (kcal/białko) i proponuje korektę.

@@ -60,6 +60,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.repository.MealEntryWithMacros
 import pl.filebit.gymtracker.ui.theme.AccentOrange
@@ -118,6 +119,7 @@ fun DietScreen(
     val cookingDeviceTags by vm.cookingDeviceTags.collectAsStateWithLifecycle()
     // v2.50.0: kontekst do systemowego druku planu (Drukuj / Zapisz PDF).
     val printContext = androidx.compose.ui.platform.LocalContext.current
+    val printScope = androidx.compose.runtime.rememberCoroutineScope()
     // v1.28.3 (Etap 4): osobny kreator diety usunięty — ekran Diety zawsze się
     // pokazuje; pełną konfigurację diety user robi w ekranie „Konfiguracja".
     var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
@@ -328,7 +330,11 @@ fun DietScreen(
                         onZakupy = onOpenShoppingList,
                         onMealPrep = onOpenMealPrep,
                         onRecipes = onOpenRecipeBrowser,
-                        onPrintPlan = { DietPlanPrinter.print(printContext, state) }
+                        onPrintPlan = {
+                            printScope.launch {
+                                DietPlanPrinter.print(printContext, vm.buildWeeklyPlan())
+                            }
+                        }
                     )
                 }
 
