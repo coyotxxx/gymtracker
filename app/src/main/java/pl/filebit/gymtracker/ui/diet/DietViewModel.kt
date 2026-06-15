@@ -233,33 +233,6 @@ class DietViewModel @Inject constructor(
             timeInMillis = ms; add(java.util.Calendar.DAY_OF_YEAR, d)
         }.timeInMillis
 
-        // Menu WZORCOWE: najnowszy dzień (≤ wybrany, do 14 dni wstecz) z zapisanymi posiłkami.
-        val sel = startOfDay(_selectedDateMs.value)
-        val labelFmt = java.text.SimpleDateFormat("EEEE d.MM", java.util.Locale("pl", "PL"))
-        var menuMeals: List<WeekMealLine> = emptyList()
-        var menuLabel = "Brak zapisanego menu — zaloguj posiłki, żeby je wydrukować"
-        for (back in 0..13) {
-            val dayMs = plusDays(sel, -back)
-            val byType = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
-                .groupBy { it.mealType }
-            val meals = mealOrder.mapNotNull { type ->
-                val es = byType[type]?.filter { products.containsKey(it.productId) } ?: return@mapNotNull null
-                if (es.isEmpty()) return@mapNotNull null
-                var kcal = 0.0
-                val items = es.joinToString(", ") { e ->
-                    val p = products.getValue(e.productId)
-                    kcal += p.kcalPer100g * e.grams / 100.0
-                    "${p.name} ${e.grams.roundToInt()} g"
-                }
-                WeekMealLine(mealTypeLabel(type), kcal.roundToInt(), items)
-            }
-            if (meals.isNotEmpty()) {
-                menuMeals = meals
-                menuLabel = "Codzienne menu (wzór: ${labelFmt.format(java.util.Date(dayMs))})"
-                break
-            }
-        }
-
         // Cele: dzień treningowy vs wolny (carb cycling — różni się tylko węgle/tłuszcz).
         fun goalFor(train: Boolean) = if (profile != null) runCatching {
             computeDailyGoal(
@@ -268,6 +241,62 @@ class DietViewModel @Inject constructor(
                 latestMeasuredWeightKg = weight, isTrainingDay = train
             )
         }.getOrNull() else null
+        val trainGoal = goalFor(true)
+        val restGoal = goalFor(false)
+
+        // Menu WZORCOWE: najnowszy dzień (≤ wybrany, do 14 dni wstecz) z zapisanymi posiłkami.
+        // Produkt = nazwa + gramy + wkład węgli/tłuszczu (do wyboru „regulatora").
+        class Tmp(val name: String, val grams: Int, val carbs: Double, val fat: Double,
+                  val cp: Double, val fp: Double) { var delta = 0 }
+        val sel = startOfDay(_selectedDateMs.value)
+        val labelFmt = java.text.SimpleDateFormat("EEEE d.MM", java.util.Locale("pl", "PL"))
+        var menuLabel = "Brak zapisanego menu — zaloguj posiłki, żeby je wydrukować"
+        var mealsTmp: List<Triple<String, Int, List<Tmp>>> = emptyList()
+        for (back in 0..13) {
+            val dayMs = plusDays(sel, -back)
+            val byType = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
+                .groupBy { it.mealType }
+            val built = mealOrder.mapNotNull { type ->
+                val es = byType[type]?.filter { products.containsKey(it.productId) } ?: return@mapNotNull null
+                if (es.isEmpty()) return@mapNotNull null
+                var kcal = 0.0
+                val ps = es.map { e ->
+                    val p = products.getValue(e.productId)
+                    val f = e.grams / 100.0
+                    kcal += p.kcalPer100g * f
+                    Tmp(p.name, e.grams.roundToInt(), p.carbsPer100g * f, p.fatPer100g * f,
+                        p.carbsPer100g, p.fatPer100g)
+                }
+                Triple(mealTypeLabel(type), kcal.roundToInt(), ps)
+            }
+            if (built.isNotEmpty()) {
+                mealsTmp = built
+                menuLabel = "Codzienne menu (wzór: ${labelFmt.format(java.util.Date(dayMs))})"
+                break
+            }
+        }
+
+        // „Regulatory": produkt z największym wkładem węgli (+ w trening) i tłuszczu (− w trening).
+        val all = mealsTmp.flatMap { it.third }
+        val carbLever = all.filter { it.cp > 0 }.maxByOrNull { it.carbs }
+        val fatLever = all.filter { it.fp > 0 }.maxByOrNull { it.fat }
+        if (trainGoal != null && restGoal != null) {
+            // Węgle: dodaj na trening do głównego źródła węgli (bez górnego limitu).
+            carbLever?.let { lev ->
+                if (lev.cp > 0) lev.delta += ((trainGoal.carbsG - restGoal.carbsG) / (lev.cp / 100.0)).roundToInt()
+            }
+            // Tłuszcz: odejmij na trening z głównego źródła — ale NIE więcej niż go jest
+            // (cap = usuń całość; swing carb cyclingu bywa większy niż pojedynczy produkt).
+            fatLever?.let { lev ->
+                if (lev !== carbLever && lev.fp > 0) {
+                    val removeG = ((restGoal.fatG - trainGoal.fatG) / (lev.fp / 100.0)).roundToInt()
+                    lev.delta -= removeG.coerceIn(0, lev.grams)
+                }
+            }
+        }
+        val menuMeals = mealsTmp.map { (label, kcal, ps) ->
+            PlanMeal(label, kcal, ps.map { PlanProduct(it.name, it.grams, it.delta) })
+        }
 
         // Dni treningowe (nazwy) — z planu, przez isPlannedTrainingDay na Pn..Nd.
         val dowFmt = java.text.SimpleDateFormat("EEEE", java.util.Locale("pl", "PL"))
@@ -287,8 +316,8 @@ class DietViewModel @Inject constructor(
             menuLabel = menuLabel,
             trainingDaysLabel = if (trainingDays.isEmpty()) "brak (płaskie makro)" else trainingDays.joinToString(", "),
             meals = menuMeals,
-            trainGoal = goalFor(true),
-            restGoal = goalFor(false)
+            trainGoal = trainGoal,
+            restGoal = restGoal
         )
     }
 
