@@ -10,13 +10,22 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+/** Jeden posiłek w planie dnia — zwięzła linia (produkty w jednym wierszu). */
+data class WeekMealLine(
+    val label: String,
+    val kcal: Int,
+    /** Produkty z gramaturą: „Płatki owsiane 61 g, WPI 37 g, …". */
+    val items: String
+)
+
 /** Jeden dzień w kompaktowym planie tygodniowym. */
 data class WeekDayPlan(
     val dateMs: Long,
     val dayLabel: String,
     val isTraining: Boolean,
     val mealsPerDay: Int,
-    val goal: DailyMacroGoal?
+    val goal: DailyMacroGoal?,
+    val meals: List<WeekMealLine> = emptyList()
 )
 
 data class WeeklyPlan(
@@ -51,56 +60,55 @@ object DietPlanPrinter {
     }
 
     fun buildHtml(week: WeeklyPlan): String {
-        val rows = buildString {
+        val daysHtml = buildString {
             for (d in week.days) {
-                val cls = if (d.isTraining) " class=\"train\"" else ""
+                val cls = if (d.isTraining) " train" else ""
                 val badge = if (d.isTraining) "<span class=\"b train\">🏋 Trening</span>"
                     else "<span class=\"b rest\">Wolne</span>"
-                append("<tr$cls>")
-                append("<td class=\"l\">").append(esc(d.dayLabel)).append("</td>")
-                append("<td class=\"l\">").append(badge).append("</td>")
-                if (d.goal != null) {
-                    val perMeal = if (d.mealsPerDay > 0) d.goal.kcal / d.mealsPerDay else 0
-                    append("<td><b>").append(d.goal.kcal).append("</b></td>")
-                    append("<td>").append(d.goal.proteinG).append("</td>")
-                    append("<td>").append(d.goal.carbsG).append("</td>")
-                    append("<td>").append(d.goal.fatG).append("</td>")
-                    append("<td class=\"muted\">").append(d.mealsPerDay).append(" × ~")
-                        .append(perMeal).append(" kcal</td>")
+                val macros = d.goal?.let {
+                    " · <b>${it.kcal} kcal</b> · B${it.proteinG} W${it.carbsG} T${it.fatG} g"
+                } ?: ""
+                append("<div class=\"day$cls\">")
+                append("<div class=\"dhead\">").append(esc(d.dayLabel)).append(" ")
+                    .append(badge).append(macros).append("</div>")
+                if (d.meals.isEmpty()) {
+                    append("<div class=\"empty\">— brak rozpisanych posiłków —</div>")
                 } else {
-                    append("<td colspan=\"5\" class=\"muted\">— brak celu —</td>")
+                    for (m in d.meals) {
+                        append("<div class=\"meal\"><span class=\"mn\">")
+                        append(esc(m.label)).append("</span> <span class=\"mk\">")
+                        append(m.kcal).append(" kcal</span><div class=\"items\">")
+                        append(esc(m.items)).append("</div></div>")
+                    }
                 }
-                append("</tr>")
+                append("</div>")
             }
         }
         return """
             <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
             <style>
               * { box-sizing: border-box; }
-              body { font-family: -apple-system, Roboto, Arial, sans-serif; color: #1a1a1a; margin: 22px; }
-              h1 { font-size: 20px; margin: 0 0 2px; }
-              .range { color: #666; font-size: 13px; margin-bottom: 16px; }
-              table { width: 100%; border-collapse: collapse; font-size: 13px; }
-              th, td { padding: 8px 8px; text-align: right; border-bottom: 1px solid #eee; }
-              th { color: #888; font-weight: 600; font-size: 11px; text-transform: uppercase; }
-              .l { text-align: left; }
-              tr.train { background: #fbf2e8; }
-              .b { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+              body { font-family: -apple-system, Roboto, Arial, sans-serif; color: #1a1a1a; margin: 22px; font-size: 12.5px; }
+              h1 { font-size: 19px; margin: 0 0 2px; }
+              .range { color: #666; font-size: 12.5px; margin-bottom: 14px; }
+              .day { border: 1px solid #e6e6ea; border-radius: 8px; padding: 9px 12px; margin-bottom: 9px; page-break-inside: avoid; }
+              .day.train { background: #fbf2e8; border-color: #ecd9c2; }
+              .dhead { font-size: 13.5px; margin-bottom: 6px; }
+              .b { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 9px; }
               .b.train { background: #c27a3a; color: #fff; }
               .b.rest { background: #e6e6ea; color: #666; }
-              .muted { color: #999; font-size: 11.5px; }
-              .legend { margin-top: 14px; color: #777; font-size: 11.5px; }
-              .foot { margin-top: 22px; color: #aaa; font-size: 10px; }
+              .meal { padding: 3px 0; border-top: 1px solid #00000010; }
+              .meal:first-of-type { border-top: none; }
+              .mn { font-weight: 700; }
+              .mk { color: #888; font-size: 11px; margin-left: 6px; }
+              .items { color: #444; font-size: 11.5px; margin-top: 1px; }
+              .empty { color: #aaa; font-size: 11.5px; }
+              .legend { margin-top: 12px; color: #777; font-size: 11px; }
+              .foot { margin-top: 18px; color: #aaa; font-size: 10px; }
             </style></head><body>
             <h1>Plan diety — tydzień</h1>
             <div class="range">${esc(week.rangeLabel)}</div>
-            <table>
-              <thead><tr>
-                <th class="l">Dzień</th><th class="l">Typ</th>
-                <th>kcal</th><th>Białko</th><th>Węgle</th><th>Tłuszcz</th><th class="l">Na posiłek</th>
-              </tr></thead>
-              <tbody>$rows</tbody>
-            </table>
+            $daysHtml
             <div class="legend">🏋 dzień treningowy = więcej węglowodanów, mniej tłuszczu (ta sama liczba kcal). „Wolne" = odwrotnie.</div>
             <div class="foot">Wygenerowano w GymTracker</div>
             </body></html>

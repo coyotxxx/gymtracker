@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
+import kotlin.math.roundToInt
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
@@ -219,21 +220,23 @@ class DietViewModel @Inject constructor(
         val cfg = dietPrefs.load()
         val cardioBonus = runCatching { cardioKcalEstimator.avgDailyKcalLast7Days() }.getOrDefault(0)
         val weight = runCatching { bodyMeasurementDao.getLatest()?.weightKg }.getOrNull()
+        val products = runCatching { repo.observeAllProducts().first() }
+            .getOrDefault(emptyList()).associateBy { it.id }
+        val mealOrder = listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
 
-        // Poniedziałek tygodnia zawierającego wybrany dzień.
-        val cal = java.util.Calendar.getInstance().apply {
+        // Ostatnie 7 dni KOŃCZĄCE się na wybranym dniu — zawsze zapełnione realnym menu
+        // (kalendarzowy tydzień Pn–Nd byłby pusty, gdy drukujesz w poniedziałek rano).
+        val startCal = java.util.Calendar.getInstance().apply {
             timeInMillis = _selectedDateMs.value
             set(java.util.Calendar.HOUR_OF_DAY, 0); set(java.util.Calendar.MINUTE, 0)
             set(java.util.Calendar.SECOND, 0); set(java.util.Calendar.MILLISECOND, 0)
-            while (get(java.util.Calendar.DAY_OF_WEEK) != java.util.Calendar.MONDAY) {
-                add(java.util.Calendar.DAY_OF_YEAR, -1)
-            }
+            add(java.util.Calendar.DAY_OF_YEAR, -6)
         }
-        val mondayMs = cal.timeInMillis
+        val startMs = startCal.timeInMillis
         val dayFmt = java.text.SimpleDateFormat("EEEE d.MM", java.util.Locale("pl", "PL"))
         val days = (0..6).map { offset ->
             val dayMs = java.util.Calendar.getInstance().apply {
-                timeInMillis = mondayMs; add(java.util.Calendar.DAY_OF_YEAR, offset)
+                timeInMillis = startMs; add(java.util.Calendar.DAY_OF_YEAR, offset)
             }.timeInMillis
             val isTraining = runCatching { trainingDietBridge.isPlannedTrainingDay(dayMs) }.getOrDefault(false)
             val effKcal = cfg.kcalForDate(dayMs) ?: cfg.manualKcal
@@ -244,16 +247,31 @@ class DietViewModel @Inject constructor(
                     latestMeasuredWeightKg = weight, isTrainingDay = isTraining
                 )
             }.getOrNull() else null
+            // Posiłki dnia → zwięzłe linie (produkty w jednym wierszu).
+            val entries = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
+            val byType = entries.groupBy { it.mealType }
+            val meals = mealOrder.mapNotNull { type ->
+                val es = byType[type]?.filter { products.containsKey(it.productId) } ?: return@mapNotNull null
+                if (es.isEmpty()) return@mapNotNull null
+                var kcal = 0.0
+                val items = es.joinToString(", ") { e ->
+                    val p = products.getValue(e.productId)
+                    kcal += p.kcalPer100g * e.grams / 100.0
+                    "${p.name} ${e.grams.roundToInt()} g"
+                }
+                WeekMealLine(mealTypeLabel(type), kcal.roundToInt(), items)
+            }
             WeekDayPlan(
                 dateMs = dayMs,
                 dayLabel = dayFmt.format(java.util.Date(dayMs)).replaceFirstChar { it.uppercase() },
                 isTraining = isTraining,
                 mealsPerDay = cfg.mealsPerDay,
-                goal = goal
+                goal = goal,
+                meals = meals
             )
         }
         val rangeFmt = java.text.SimpleDateFormat("d MMM", java.util.Locale("pl", "PL"))
-        val range = "${rangeFmt.format(java.util.Date(mondayMs))} – ${rangeFmt.format(java.util.Date(days.last().dateMs))}"
+        val range = "${rangeFmt.format(java.util.Date(startMs))} – ${rangeFmt.format(java.util.Date(days.last().dateMs))}"
         return WeeklyPlan(range, days)
     }
 
