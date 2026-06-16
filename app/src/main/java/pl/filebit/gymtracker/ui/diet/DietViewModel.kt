@@ -176,8 +176,39 @@ class DietViewModel @Inject constructor(
         refreshCoachVerdict()
     }
 
-    /** Coach card „Zastosuj korektę kcal/refeed" → uruchamia istniejący szczegółowy podgląd. */
-    fun applyCoachKcalAdjustment() = checkForAdjustment()
+    // v2.58.0: feedback po „Zastosuj" z Karty coacha (jeden tap = zastosowano + komunikat).
+    private val _coachActionMessage = MutableStateFlow<String?>(null)
+    val coachActionMessage: StateFlow<String?> = _coachActionMessage.asStateFlow()
+    fun consumeCoachActionMessage() { _coachActionMessage.value = null }
+
+    /**
+     * Coach card „Zastosuj korektę kcal" — v2.58.0: STOSUJE OD RAZU (jeden tap), pokazuje wynik
+     * i ukrywa kartę na dziś (bez nag-loopu). Zmiana `customDeficit` reaktywnie odświeża cel diety
+     * (dietPrefs.state wpięte w stan). Wcześniej otwierał tylko podgląd → user nie wiedział czy
+     * coś się zastosowało (zgłoszenie Macieja 2026-06-16).
+     */
+    fun applyCoachKcalAdjustment(reactionId: String? = null) {
+        viewModelScope.launch {
+            val decision = runCatching { autoAdjust.analyzeNow() }.getOrNull()
+            val a = decision?.action
+            if (decision == null ||
+                a == pl.filebit.gymtracker.util.AdjustmentAction.HOLD ||
+                a == pl.filebit.gymtracker.util.AdjustmentAction.NEEDS_MORE_DATA ||
+                a == pl.filebit.gymtracker.util.AdjustmentAction.SIMPLIFY_PLAN) {
+                _coachActionMessage.value = "Brak korekty kalorii do zastosowania w tym momencie."
+                reactionId?.let { coachDismissPrefs?.dismiss(it) }
+                refreshCoachVerdict()
+                return@launch
+            }
+            val id = autoAdjust.savePreview(decision)
+            autoAdjust.applyDecision(id)
+            reactionId?.let { coachDismissPrefs?.dismiss(it) } // jeden tap → karta znika na dziś
+            refreshCoachVerdict()
+            val sign = if (decision.kcalDeltaProposed >= 0) "+" else ""
+            _coachActionMessage.value =
+                "Zastosowano: nowy cel ${decision.newKcal} kcal ($sign${decision.kcalDeltaProposed})."
+        }
+    }
 
     init { refreshCoachVerdict() }
 

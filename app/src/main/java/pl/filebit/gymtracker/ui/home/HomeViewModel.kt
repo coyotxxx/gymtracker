@@ -122,6 +122,8 @@ class HomeViewModel @Inject constructor(
     private val goalAchievementService: pl.filebit.gymtracker.data.repository.GoalAchievementService,  // v1.24.26
     private val goalRepo: pl.filebit.gymtracker.data.repository.GoalRepository,  // v1.24.26
     private val dietProfileRepo: pl.filebit.gymtracker.data.repository.UserDietProfileRepository,  // v1.24.26
+    // v2.58.0: stosowanie korekty kcal z Karty coacha bez przechodzenia do Diety.
+    private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService,
     // v2.34.0 (U4b): zunifikowany werdykt coacha. nullable-default — Hilt wstrzykuje realny,
     // ViewModelKit (testy) konstruuje bez niego.
     private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator? = null,
@@ -166,6 +168,33 @@ class HomeViewModel @Inject constructor(
     fun dismissCoach(reactionId: String) {
         coachDismissPrefs?.dismiss(reactionId)
         deloadRefresh.value = System.currentTimeMillis()  // przelicz werdykt bez odrzuconej
+    }
+
+    /**
+     * v2.58.0: „Zastosuj korektę kcal" z Karty coacha na HOME — STOSUJE OD RAZU (jeden tap),
+     * zamiast tylko przechodzić do Diety (wcześniej user klikał i „nic się nie działo").
+     * Wynik wraca przez `onResult` (snackbar). Karta znika (dismiss na dziś).
+     */
+    fun applyCoachKcalAdjustment(reactionId: String, onResult: (String) -> Unit) {
+        viewModelScope.launch {
+            val decision = runCatching { autoAdjust.analyzeNow() }.getOrNull()
+            val a = decision?.action
+            if (decision == null ||
+                a == pl.filebit.gymtracker.util.AdjustmentAction.HOLD ||
+                a == pl.filebit.gymtracker.util.AdjustmentAction.NEEDS_MORE_DATA ||
+                a == pl.filebit.gymtracker.util.AdjustmentAction.SIMPLIFY_PLAN) {
+                onResult("Brak korekty kalorii do zastosowania.")
+                coachDismissPrefs?.dismiss(reactionId)
+                deloadRefresh.value = System.currentTimeMillis()
+                return@launch
+            }
+            val id = autoAdjust.savePreview(decision)
+            autoAdjust.applyDecision(id)
+            coachDismissPrefs?.dismiss(reactionId)
+            deloadRefresh.value = System.currentTimeMillis()
+            val sign = if (decision.kcalDeltaProposed >= 0) "+" else ""
+            onResult("Zastosowano: nowy cel ${decision.newKcal} kcal ($sign${decision.kcalDeltaProposed}).")
+        }
     }
 
     // v1.14.0/v1.15.0: combine has typed overloads up to arity 5. Wrapping 4 flows w jedno żeby

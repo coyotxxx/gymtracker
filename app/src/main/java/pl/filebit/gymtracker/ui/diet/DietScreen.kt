@@ -243,9 +243,13 @@ fun DietScreen(
                         ) { reaction, actionType ->
                             when (actionType) {
                                 pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_KCAL_ADJUST,
-                                pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_REFEED,
+                                pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_REFEED ->
+                                    vm.applyCoachKcalAdjustment(reaction.id)
                                 pl.filebit.gymtracker.data.coach.CoachActionType.SIMPLIFY_PLAN ->
-                                    vm.applyCoachKcalAdjustment()
+                                    onAskCoach(
+                                        "Trener proponuje uprościć plan: \"${reaction.title}\" — ${reaction.message}\n\n" +
+                                            "Uprość mi dzisiejszy plan posiłków pod te kalorie i moje preferencje."
+                                    )
                                 pl.filebit.gymtracker.data.coach.CoachActionType.START_WORKOUT,
                                 pl.filebit.gymtracker.data.coach.CoachActionType.RETURN_LIGHT -> onStartWorkout()
                                 else -> onAskCoach(
@@ -445,6 +449,21 @@ substitutePrompt?.let { sp ->
             suggestion = s,
             onAccept = { vm.acceptPhaseSuggestion() },
             onDismiss = { vm.dismissPhaseSuggestion() }
+        )
+    }
+
+    // v2.58.0: feedback po „Zastosuj" z Karty coacha — potwierdzenie że korekta kcal zadziałała.
+    val coachActionMessage by vm.coachActionMessage.collectAsStateWithLifecycle()
+    coachActionMessage?.let { msg ->
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { vm.consumeCoachActionMessage() },
+            title = { Text("✅ Korekta diety", fontWeight = FontWeight.Bold) },
+            text = { Text(msg) },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { vm.consumeCoachActionMessage() }) {
+                    Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
+                }
+            }
         )
     }
 

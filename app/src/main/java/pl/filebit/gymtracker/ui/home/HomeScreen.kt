@@ -148,8 +148,13 @@ fun HomeScreen(
                             pl.filebit.gymtracker.data.coach.CoachActionType.START_WORKOUT,
                             pl.filebit.gymtracker.data.coach.CoachActionType.RETURN_LIGHT ->
                                 vm.startNextPlannedToday(onStartCoachWorkout)
+                            // v2.58.0: korekta kcal/refeed stosuje się OD RAZU (jeden tap) + snackbar,
+                            // zamiast tylko przechodzić do Diety (zgłoszenie Macieja „nic się nie dzieje").
                             pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_REFEED,
-                            pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_KCAL_ADJUST,
+                            pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_KCAL_ADJUST ->
+                                vm.applyCoachKcalAdjustment(reaction.id) { msg ->
+                                    scope.launch { snackbar.showSnackbar(msg) }
+                                }
                             pl.filebit.gymtracker.data.coach.CoachActionType.SIMPLIFY_PLAN,
                             pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_DIET -> onOpenDiet()
                             pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_TRAINING,
