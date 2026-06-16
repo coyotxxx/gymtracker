@@ -196,7 +196,8 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     val autoAdjust = AutoAdjustmentService(
         userProfileRepo, dietProfileRepo, dietPrefs, db.bodyMeasurementDao(),
         adherenceCalc, db.dietAdjustmentDao(), aiDecisionExplainer, recoveryRepo,
-        recoveryAnalyzer, hydrationRepo, hydrationCalc, activityRepo, neatAnalyzer
+        recoveryAnalyzer, hydrationRepo, hydrationCalc, activityRepo, neatAnalyzer,
+        db.workoutDao(), planRepo
     )
     val dietAiService = DietAiService(
         aiClient, aiPrefs, userProfileRepo, dietProfileRepo, dietRepo, workoutRepo,

@@ -74,12 +74,19 @@ przy braku treningu w redukcji traci mięśnie. To **dwa głosy**, nie jeden.
 
 ## 6. Plan wdrożenia (fazy U7–U12, każda = osobny release)
 
-### U7 — Dieta widzi FAKTYCZNY trening (szew S1) ⟶ najważniejsze dla Macieja
-- Wprowadzić do `CalorieAdjustmentEngine`/`AutoAdjustmentService` sygnał: realna częstotliwość/
-  wolumen treningu (z `TrainingDaySummary`/`Workout`), nie tylko planowane dni.
-- Reguła „nie trenujesz" (np. 0 realnych sesji w 14 dniach mimo planu) → strategia diety:
-  chroń mięśnie (utrzymaj wysokie białko, **mniejszy deficyt / maintenance-lean**), zamiast „cut as usual + HOLD".
-- Carb cycling: rozważyć oparcie o FAKT treningu (lub jawne „brak treningu = płaskie makro").
+### U7 — Dieta widzi FAKTYCZNY trening (szew S1) ✅ ZROBIONE (v2.57.0)
+- `CalorieAdjustmentEngine.analyze()` dostał PEWNE źródło: `realWorkouts14d` (liczba ukończonych
+  `Workout` w 14 dni z `WorkoutDao`) + `hasTrainingPlan`. `AutoAdjustmentService` je liczy i podaje.
+  **Świadomie NIE** opieramy się na `adherence.workoutsDone` (pochodzi z leniwie tworzonego
+  `TrainingDaySummary` — bywa pusty u diet-usera). Adherence = tylko fallback dla testów.
+- Reguła w `analyzeCut`: gdy `hasTrainingPlan` i `<2` realnych treningów w 14 dni:
+  - chudniesz ≥0.4 kg/tydz → `INCREASE_KCAL +150` (`cut_no_training_protect_muscle`, chroń mięśnie),
+  - wolniej → `HOLD` (`cut_no_training_hold`, nie tnij dalej). Oba z poleceniem „białko ≥2 g/kg".
+- `CoachOrchestrator.dietReaction` surfacuje OBA wyniki jako kartę „Dieta bez treningu"
+  (priorytet CONSISTENCY), zamiast nagabywać „idź ćwiczyć".
+- Testy: `CalorieAdjustmentEngineTest` — INCREASE/HOLD bez treningu, pewne źródło nadpisuje
+  adherence, brak planu = brak wnioskowania, backward-compat z treningiem.
+- Carb cycling (FAKT vs plan) — przeniesione do U8 (koordynacja silników).
 
 ### U8 — Trening widzi stan DIETY + koordynacja silników (S2, S3, S4)
 - `DeloadService` dostaje fazę/deficyt/adherence → koordynacja timingu (deload vs diet break).

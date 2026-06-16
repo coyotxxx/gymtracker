@@ -201,8 +201,15 @@ class CoachOrchestrator @Inject constructor(
         )
         AdjustmentAction.DECREASE_KCAL, AdjustmentAction.INCREASE_KCAL -> CoachReaction(
             id = "diet_kcal_adjust",
-            domain = CoachDomain.DIET, priority = CoachPriority.OPTIMIZATION,
-            title = if (d.action == AdjustmentAction.DECREASE_KCAL) "Korekta: mniej kcal" else "Korekta: więcej kcal",
+            // U7: gdy korekta wynika z braku treningu — podnieś priorytet (regeneracja/spójność),
+            // bo to ochrona mięśni, nie zwykła optymalizacja makro.
+            domain = CoachDomain.DIET,
+            priority = if (d.reason == "cut_no_training_protect_muscle") CoachPriority.CONSISTENCY else CoachPriority.OPTIMIZATION,
+            title = when {
+                d.reason == "cut_no_training_protect_muscle" -> "Dieta bez treningu"
+                d.action == AdjustmentAction.DECREASE_KCAL -> "Korekta: mniej kcal"
+                else -> "Korekta: więcej kcal"
+            },
             message = d.explanation,
             actions = listOf(
                 CoachAction(CoachActionType.APPLY_KCAL_ADJUST, "Zastosuj (${d.kcalDeltaProposed} kcal)"),
@@ -210,8 +217,16 @@ class CoachOrchestrator @Inject constructor(
             ),
             source = "AutoAdjustmentService.${d.action.name}"
         )
-        // HOLD / NEEDS_MORE_DATA → brak reakcji (plan działa / za mało danych — modułowość).
-        AdjustmentAction.HOLD, AdjustmentAction.NEEDS_MORE_DATA -> null
+        // U7: HOLD „nie trenujesz w redukcji" — dietetyk reaguje na fakt braku treningu
+        // (chroni mięśnie), więc surfacujemy mimo HOLD. Inne HOLD/NEEDS_MORE_DATA = cisza.
+        AdjustmentAction.HOLD -> if (d.reason == "cut_no_training_hold") CoachReaction(
+            id = "diet_no_training",
+            domain = CoachDomain.DIET, priority = CoachPriority.CONSISTENCY,
+            title = "Dieta bez treningu", message = d.explanation,
+            actions = listOf(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")),
+            source = "AutoAdjustmentService.no_training"
+        ) else null
+        AdjustmentAction.NEEDS_MORE_DATA -> null
     }
 
     private fun logVerdict(verdict: CoachVerdict, candidateCount: Int) {

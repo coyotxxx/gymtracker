@@ -88,7 +88,15 @@ object CalorieAdjustmentEngine {
         daysSinceLastRefeed: Int = 999,
         /** v1.27.0: cel diety (8 typów). Gdy podany — wyznacza strategię korekt.
          *  Gdy null — fallback do `profile.weightGoalType` (cel wagowy treningu). */
-        dietGoal: DietGoalType? = null
+        dietGoal: DietGoalType? = null,
+        /** U7 (v2.57.0): PEWNE źródło faktycznego treningu — liczba ukończonych
+         *  `Workout` w ostatnich 14 dniach (z WorkoutDao). Gdy podane razem z
+         *  `hasTrainingPlan`, zastępuje zawodny sygnał z adherence (TrainingDaySummary
+         *  tworzony leniwie). null = brak danych → fallback do adherence (testy). */
+        realWorkouts14d: Int? = null,
+        /** U7 (v2.57.0): czy istnieje aktywny plan treningowy (≥1 dzień/tydz). Bez planu
+         *  nie wnioskujemy „nie trenujesz" (mógł świadomie nie planować treningu). */
+        hasTrainingPlan: Boolean = false
     ): AdjustmentDecision {
 
         // === Brak danych → poczekaj ===
@@ -197,9 +205,19 @@ object CalorieAdjustmentEngine {
         val workoutsCompletionPct = if (adherence14d.workoutsPlanned > 0) {
             adherence14d.workoutsDone * 100 / adherence14d.workoutsPlanned
         } else 100
+        // U7 (unified coach): dietetyk widzi FAKTYCZNY trening. „Nie trenuje" = MA plan, ale go
+        // nie realizuje (<2 ukończone treningi w 14 dni). Bez planu nie wnioskujemy
+        // (trainingActive=true). Wtedy w redukcji chronimy mięśnie zamiast nagabywać „idź ćwiczyć".
+        // Źródło PEWNE: realWorkouts14d z Workout (gdy podane). Fallback: adherence (TrainingDaySummary
+        // tworzony leniwie, bywa pusty) — tylko gdy realWorkouts14d == null (np. testy jednostkowe).
+        val trainingActive = when {
+            realWorkouts14d != null && hasTrainingPlan -> realWorkouts14d >= 2
+            realWorkouts14d != null && !hasTrainingPlan -> true // bez planu nie wnioskujemy
+            else -> adherence14d.workoutsPlanned == 0 || adherence14d.workoutsDone >= 2
+        }
 
         return when (strategy) {
-            CalorieStrategy.CUT -> analyzeCut(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct, cutDurationDays, daysSinceLastRefeed)
+            CalorieStrategy.CUT -> analyzeCut(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct, trainingActive, realWorkouts14d, cutDurationDays, daysSinceLastRefeed)
             CalorieStrategy.BULK -> analyzeBulk(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct)
             CalorieStrategy.MAINTAIN -> analyzeMaintain(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence)
             null -> AdjustmentDecision(
@@ -220,6 +238,8 @@ object CalorieAdjustmentEngine {
         highAdherence: Boolean,
         lowAdherence: Boolean,
         workoutsPct: Int,
+        trainingActive: Boolean = true,
+        realWorkouts14d: Int? = null,
         cutDurationDays: Int = 0,
         daysSinceLastRefeed: Int = 999
     ): AdjustmentDecision {
@@ -283,6 +303,34 @@ object CalorieAdjustmentEngine {
                     "Sugestia: prostsze posiłki, mniej składników, łatwiejsze do przygotowania.",
                 confidence = Confidence.HIGH,
                 warnings = listOf("Niska zgodność z planem — sprawdź czy posiłki nie są za skomplikowane.")
+            )
+        }
+
+        // U7 (unified coach): NIE TRENUJESZ w redukcji → chroń mięśnie, nie nagabuj „idź ćwiczyć".
+        // Dietetyk reaguje na fakt braku treningu: bez bodźca siłowego deficyt zżera mięśnie.
+        if (!trainingActive) {
+            val slope = trend.slopeKgPerWeek
+            if (slope != null && slope <= -0.4) {
+                return AdjustmentDecision(
+                    action = AdjustmentAction.INCREASE_KCAL,
+                    kcalDeltaProposed = +150,
+                    newKcal = currentKcal + 150,
+                    reason = "cut_no_training_protect_muscle",
+                    explanation = "Nie trenujesz (${realWorkouts14d ?: adherence.workoutsDone} treningów w 14 dni), a chudniesz ${"%.2f".format(-slope)} kg/tydz. " +
+                        "Bez treningu siłowego taki deficyt zżera mięśnie — łagodzę go o +150 kcal i trzymaj wysokie białko (≥2 g/kg masy). " +
+                        "Jeśli znajdziesz nawet 2× 20 min w tygodniu, ochronisz formę i przyspieszysz.",
+                    confidence = Confidence.HIGH,
+                    warnings = listOf("Redukcja bez treningu siłowego = ryzyko utraty mięśni. Białko + minimalny ruch to ochrona.")
+                )
+            }
+            return AdjustmentDecision(
+                action = AdjustmentAction.HOLD,
+                kcalDeltaProposed = 0,
+                newKcal = currentKcal,
+                reason = "cut_no_training_hold",
+                explanation = "Nie trenujesz, więc nie obniżam dalej kalorii — bez treningu cięcie zżera mięśnie. " +
+                    "Utrzymaj wysokie białko (≥2 g/kg) i codzienne kroki. Gdy wrócisz do treningu, dostosujemy tempo redukcji.",
+                confidence = Confidence.MEDIUM
             )
         }
 

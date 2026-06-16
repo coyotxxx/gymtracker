@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.data.repository
 import pl.filebit.gymtracker.ai.AiDecisionExplainer
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 import pl.filebit.gymtracker.data.db.dao.DietAdjustmentDao
+import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.entity.DietAdjustment
 import pl.filebit.gymtracker.util.AdjustmentAction
 import pl.filebit.gymtracker.util.AdjustmentDecision
@@ -35,6 +36,9 @@ class AutoAdjustmentService @Inject constructor(
     private val hydrationCalc: HydrationCalculator,
     private val activityRepo: ActivityRepository,
     private val neatAnalyzer: NeatAnalyzer,
+    // U7 (v2.57.0): PEWNE źródło faktycznego treningu (Workout) + istnienia planu.
+    private val workoutDao: WorkoutDao,
+    private val planRepo: PlanRepository,
     // v2.29.0: nullable-default — Hilt wstrzykuje realny logger, testy konstruują bez niego.
     private val diag: DiagnosticLogger? = null
 ) {
@@ -87,6 +91,18 @@ class AutoAdjustmentService @Inject constructor(
             ?.let { ((nowMs - it.dateMs) / dayMs).toInt().coerceAtLeast(0) }
             ?: 999
 
+        // U7 (unified coach): PEWNY pomiar faktycznego treningu — liczba ukończonych
+        // treningów w ostatnich 14 dniach + czy w ogóle jest aktywny plan. Niezależne od
+        // leniwie tworzonych TrainingDaySummary. Dzięki temu dietetyk reaguje na fakt
+        // „mam plan, ale nie trenuję" (chroni mięśnie), zamiast nagabywać „idź ćwiczyć".
+        val cutoff14d = nowMs - 14L * dayMs
+        val realWorkouts14d = runCatching {
+            workoutDao.observeAllOnce().count { it.finishedAt != null && it.startedAt >= cutoff14d }
+        }.getOrDefault(0)
+        val hasTrainingPlan = runCatching {
+            planRepo.getActivePlan()?.daysOfWeek?.isNotEmpty() == true
+        }.getOrDefault(false)
+
         // Silnik regułowy z pełnym kontekstem
         val raw = CalorieAdjustmentEngine.analyze(
             profile = profile,
@@ -101,7 +117,10 @@ class AutoAdjustmentService @Inject constructor(
             daysSinceLastRefeed = daysSinceLastRefeed,
             // v1.27.0: cel diety steruje strategią korekt — wszystkie 8 typów
             // (wcześniej silnik znał tylko 4 cele wagowe, ignorował RECOMP itd.)
-            dietGoal = dietProfile?.goalType
+            dietGoal = dietProfile?.goalType,
+            // U7: pewne źródło faktycznego treningu
+            realWorkouts14d = realWorkouts14d,
+            hasTrainingPlan = hasTrainingPlan
         )
 
         // SafetyGuard cap — v1.24.23: przekazujemy BMR z dietProfile (jeśli dostępne)

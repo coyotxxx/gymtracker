@@ -182,4 +182,85 @@ class CalorieAdjustmentEngineTest {
         assertTrue("strategia z dietGoal (BULK), nie z WeightGoalType (CUT)",
             d.action != AdjustmentAction.REFEED_DAY)
     }
+
+    // === U7 (unified coach): dietetyk widzi FAKTYCZNY trening ===
+
+    /** Adherence diet-usera Macieja: ma plan treningowy, ale go NIE realizuje. */
+    private fun adherenceNoTraining(workoutsPlanned: Int = 6, workoutsDone: Int = 0) =
+        adherence().copy(workoutsPlanned = workoutsPlanned, workoutsDone = workoutsDone)
+
+    @Test
+    fun `CUT bez treningu i chudniecie - chron miesnie INCREASE_KCAL`() {
+        // Maciej: trzyma dietę, ma plan, ale nie trenuje; chudnie 0.5 kg/tydz.
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = cutProfile, currentKcal = 2400,
+            weightTrend = trend().copy(slopeKgPerWeek = -0.5),
+            adherence14d = adherenceNoTraining(), adherence7d = adherenceNoTraining()
+        )
+        report("cut-no-training-loss", d)
+        assertEquals("redukcja bez treningu + chudnięcie → chroń mięśnie (+kcal)",
+            AdjustmentAction.INCREASE_KCAL, d.action)
+        assertEquals("cut_no_training_protect_muscle", d.reason)
+        assertEquals("+150 kcal ochrony mięśni", 150, d.kcalDeltaProposed)
+    }
+
+    @Test
+    fun `CUT bez treningu i wolne chudniecie - nie tnij dalej HOLD`() {
+        // Plan jest, treningu brak, ale waga schodzi wolno (-0.3) → tylko trzymaj.
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = cutProfile, currentKcal = 2400,
+            weightTrend = trend(),
+            adherence14d = adherenceNoTraining(), adherence7d = adherenceNoTraining()
+        )
+        report("cut-no-training-hold", d)
+        assertEquals("redukcja bez treningu → nie obniżaj kcal",
+            AdjustmentAction.HOLD, d.action)
+        assertEquals("cut_no_training_hold", d.reason)
+        assertEquals("zero korekty", 0, d.kcalDeltaProposed)
+    }
+
+    @Test
+    fun `CUT pewne zrodlo - realWorkouts0 + plan nadpisuje adherence INCREASE`() {
+        // adherence twierdzi że trenuje (workoutsDone=5), ale PEWNE źródło: 0 realnych
+        // treningów + jest plan → silnik ufa Workout, nie zawodnemu TrainingDaySummary.
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = cutProfile, currentKcal = 2400,
+            weightTrend = trend().copy(slopeKgPerWeek = -0.5),
+            adherence14d = adherenceNoTraining(workoutsPlanned = 6, workoutsDone = 5),
+            adherence7d = adherenceNoTraining(workoutsPlanned = 3, workoutsDone = 3),
+            realWorkouts14d = 0, hasTrainingPlan = true
+        )
+        report("cut-real-source-no-training", d)
+        assertEquals("pewne źródło (0 treningów + plan) → chroń mięśnie",
+            AdjustmentAction.INCREASE_KCAL, d.action)
+        assertEquals("cut_no_training_protect_muscle", d.reason)
+    }
+
+    @Test
+    fun `CUT pewne zrodlo - brak planu nie wnioskuje braku treningu`() {
+        // 0 realnych treningów, ale BEZ planu — user świadomie nie planuje → nie nagabuj.
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = cutProfile, currentKcal = 2400,
+            weightTrend = trend(direction = TrendDirection.FLAT, stagnation = true),
+            adherence14d = adherence(), adherence7d = adherence(),
+            realWorkouts14d = 0, hasTrainingPlan = false
+        )
+        report("cut-real-source-no-plan", d)
+        assertTrue("bez planu reguła no_training nie odpala",
+            d.reason != "cut_no_training_hold" && d.reason != "cut_no_training_protect_muscle")
+    }
+
+    @Test
+    fun `CUT z treningiem - reguly bez zmian (backward-compat)`() {
+        // Realnie trenuje (workoutsDone>=2) → nowa reguła NIE odpala, stagnacja działa jak dawniej.
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = cutProfile, currentKcal = 2400,
+            weightTrend = trend(direction = TrendDirection.FLAT, stagnation = true),
+            adherence14d = adherenceNoTraining(workoutsPlanned = 6, workoutsDone = 5),
+            adherence7d = adherenceNoTraining(workoutsPlanned = 3, workoutsDone = 3)
+        )
+        report("cut-with-training", d)
+        assertTrue("trenuje → reguła no_training nie odpala",
+            d.reason != "cut_no_training_hold" && d.reason != "cut_no_training_protect_muscle")
+    }
 }
