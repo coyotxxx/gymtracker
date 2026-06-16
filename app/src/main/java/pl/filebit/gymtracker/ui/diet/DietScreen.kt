@@ -240,8 +240,11 @@ fun DietScreen(
                         pl.filebit.gymtracker.ui.home.CoachCard(
                             verdict = verdict,
                             onDismiss = { reaction -> vm.dismissCoach(reaction.id) }
-                        ) { reaction, actionType ->
-                            when (actionType) {
+                        ) { reaction, action ->
+                            when (action.type) {
+                                // v2.59.0 (U9+U10): trener pyta „dlaczego nie trenujesz" — zapis powodu.
+                                pl.filebit.gymtracker.data.coach.CoachActionType.RECORD_PAUSE_REASON ->
+                                    action.payload?.let { vm.recordTrainingPause(it) }
                                 pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_KCAL_ADJUST,
                                 pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_REFEED ->
                                     vm.applyCoachKcalAdjustment(reaction.id)

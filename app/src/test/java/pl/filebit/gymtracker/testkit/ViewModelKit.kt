@@ -158,11 +158,12 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     val rpeOpinion = RpeOpinionService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao()
     )
+    val deloadPrefs = pl.filebit.gymtracker.data.repository.DeloadPreferences(context)
     val masterAiContext = MasterAiContextBuilder(
         userProfileRepo, dietProfileRepo, db.bodyMeasurementDao(), dietRepo,
         mealFeedbackRepo, exerciseRepo, adherenceCalc, recoveryRepo, recoveryAnalyzer,
         activityRepo, hydrationRepo, hydrationCalc, dietPhaseRepo, trainingDietBridge,
-        muscleRecoveryAnalyzer, readinessAnalyzer, statsRepo, dietPrefs
+        muscleRecoveryAnalyzer, readinessAnalyzer, statsRepo, dietPrefs, deloadPrefs
     )
     val aiPlanApplier = AiPlanApplier(planRepo, db.exerciseDao())
     val workoutPlanAi = WorkoutPlanAiService(
@@ -223,7 +224,7 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
         db.trainingPlanDao(), db.planExerciseDao(), db.planExerciseSetDao(),
         db.workoutDao(), db.workoutSetDao(), db.exerciseDao(), statsCacheService,
         db.trainingEventDao(), db.weeklyRollupDao(), db.monthlyRollupDao(),
-        db.quarterlyRollupDao()
+        db.quarterlyRollupDao(), deloadPrefs
     )
     val aiToolHandler = AiToolHandler(
         statsCacheService, db.bodyMeasurementDao(), db.trainingEventDao(),
@@ -236,7 +237,9 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
         dietPrefs,
         pl.filebit.gymtracker.data.repository.DiagnosticLogger(db.diagnosticEventDao()),
         // v2.23.0 (K5) — recompute adherence po add_meal
-        adherenceCalc
+        adherenceCalc,
+        // v2.59.0 (U9+U10) — record_training_pause
+        deloadPrefs
     )
     val weeklyReportService = WeeklyReportService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),

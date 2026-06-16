@@ -154,7 +154,9 @@ class DietViewModel @Inject constructor(
     private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger? = null,
     // v2.40.0 (U4b 3c): zunifikowany werdykt coacha na ekranie Diety.
     private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator? = null,
-    private val coachDismissPrefs: pl.filebit.gymtracker.data.coach.CoachDismissPrefs? = null
+    private val coachDismissPrefs: pl.filebit.gymtracker.data.coach.CoachDismissPrefs? = null,
+    // v2.59.0 (U9+U10): pamięć przyczyny przerwy w treningach (istniejący store).
+    private val deloadPreferences: pl.filebit.gymtracker.data.repository.DeloadPreferences? = null
 ) : ViewModel() {
 
     // === COACH (U4b 3c) — jedna karta coacha też na Diecie ===
@@ -174,6 +176,23 @@ class DietViewModel @Inject constructor(
     fun dismissCoach(reactionId: String) {
         coachDismissPrefs?.dismiss(reactionId)
         refreshCoachVerdict()
+    }
+
+    /**
+     * v2.59.0 (U9+U10): odpowiedź na pytanie „dlaczego nie trenujesz?" — zapis powodu
+     * (DeloadPreferences). Trener wycisza nagabywanie do terminu; dieta zostaje w ochronie mięśni.
+     */
+    fun recordTrainingPause(reasonName: String) {
+        val prefs = deloadPreferences ?: return
+        val reason = runCatching {
+            pl.filebit.gymtracker.data.repository.TrainingPauseReason.valueOf(reasonName)
+        }.getOrNull() ?: return
+        val days = reason.defaultResumeDays()
+        prefs.setTrainingPause(reason, resumeInDays = days)
+        refreshCoachVerdict()
+        _coachActionMessage.value =
+            "Zanotowane: ${reason.label.lowercase()}. Nie zawracam głowy treningiem przez $days dni — " +
+                "pilnuję diety i białka. Wrócę do tematu wtedy."
     }
 
     // v2.58.0: feedback po „Zastosuj" z Karty coacha (jeden tap = zastosowano + komunikat).

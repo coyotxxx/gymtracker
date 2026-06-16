@@ -50,7 +50,9 @@ class AiContextBuilder @Inject constructor(
     private val trainingEventDao: pl.filebit.gymtracker.data.db.dao.TrainingEventDao,
     private val weeklyRollupDao: pl.filebit.gymtracker.data.db.dao.WeeklyRollupDao,
     private val monthlyRollupDao: pl.filebit.gymtracker.data.db.dao.MonthlyRollupDao,
-    private val quarterlyRollupDao: pl.filebit.gymtracker.data.db.dao.QuarterlyRollupDao
+    private val quarterlyRollupDao: pl.filebit.gymtracker.data.db.dao.QuarterlyRollupDao,
+    // v2.59.0 (U9+U10): zapamiętana przyczyna przerwy w treningach — Trener AI ma ją znać.
+    private val deloadPrefs: pl.filebit.gymtracker.data.repository.DeloadPreferences
 ) {
 
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
@@ -187,6 +189,15 @@ class AiContextBuilder @Inject constructor(
                 put("bodyweightKg", profile.bodyweightKg ?: -1.0)
                 put("weightGoalType", profile.weightGoalType.name)
                 put("targetWeightKg", profile.targetWeightKg ?: -1.0)
+                // U9+U10: user JUŻ powiedział dlaczego nie trenuje — NIE namawiaj „idź ćwiczyć",
+                // reaguj adekwatnie (kontuzja=ostrożnie; brak czasu=NEAT+białko+mini-trening).
+                runCatching { deloadPrefs.trainingPause() }.getOrNull()?.let { pause ->
+                    putJsonObject("training_pause") {
+                        put("reason", pause.reasonEnum().label)
+                        put("resume_in_days", pause.resumeInDays(System.currentTimeMillis()))
+                        put("hint", "Przerwa z podanego powodu. NIE nagabuj o trening; chroń mięśnie dietą/białkiem.")
+                    }
+                }
             }
 
             putJsonObject("stats_overview") {

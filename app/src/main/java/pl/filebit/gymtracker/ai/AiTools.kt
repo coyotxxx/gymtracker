@@ -50,6 +50,7 @@ object AiTools {
         add(toolDeleteMeal())     // v2.37.0 — AI podmienia/usuwa posiłek
         add(toolSetCalorieTarget())
         add(toolSetDietGoal())
+        add(toolRecordTrainingPause())  // v2.59.0
     }
 
     /** Lista nazw narzędzi (do walidacji w handlerze). */
@@ -78,7 +79,9 @@ object AiTools {
         "set_diet_goal",
         // v2.37.0 — odczyt + podmiana posiłków (AI widzi i zmienia kolację)
         "get_meals",
-        "delete_meal"
+        "delete_meal",
+        // v2.59.0 (U9+U10) — zapamiętanie przyczyny przerwy w treningach
+        "record_training_pause"
     )
 
     // === v2.22.0: narzędzia ZAPISU danych (na prośbę usera) ===
@@ -133,6 +136,22 @@ object AiTools {
                 putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
             }
             putJsonArray("required") { add("product"); add("grams") }
+        }
+    }
+
+    private fun toolRecordTrainingPause(): JsonObject = buildJsonObject {
+        put("name", "record_training_pause")
+        put("description", "Zapamiętuje PRZYCZYNĘ przerwy w treningach gdy user wyjaśni dlaczego nie ćwiczy " +
+            "(np. 'nie mam jak, wrócę za tydzień', 'kontuzja kolana'). Dzięki temu trener przestaje nagabywać " +
+            "o trening do umówionego terminu i chroni mięśnie dietą. Użyj GDY user poda powód braku treningu.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("reason") { put("type", "string"); put("description", "NO_TIME / NO_ACCESS / INJURY / OTHER") }
+                putJsonObject("note") { put("type", "string"); put("description", "Krótka notatka własnymi słowami usera (opcjonalnie)") }
+                putJsonObject("resume_in_days") { put("type", "integer"); put("description", "Za ile dni wrócić do tematu (domyślnie 7, kontuzja 14)") }
+            }
+            putJsonArray("required") { add("reason") }
         }
     }
 

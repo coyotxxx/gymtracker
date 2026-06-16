@@ -35,6 +35,9 @@ class CoachOrchestrator @Inject constructor(
     // brak treningu/brak wagi. Dzięki temu orchestrator jest nadzbiorem dzwonka in-app i można
     // go bezpiecznie usunąć (U4b krok 3) bez utraty funkcji.
     private val notificationCenter: pl.filebit.gymtracker.ai.NotificationCenter,
+    // v2.59.0 (U9+U10): pamięć przyczyny przerwy w treningach (istniejący store stanu alertów).
+    // nullable-default — testy bez niego = stare zachowanie (nagabywanie).
+    private val deloadPreferences: pl.filebit.gymtracker.data.repository.DeloadPreferences? = null,
     private val diag: DiagnosticLogger? = null
 ) {
 
@@ -59,6 +62,9 @@ class CoachOrchestrator @Inject constructor(
         runCatching { notificationCenter.computeNotifications() }.getOrNull()?.forEach { n ->
             candidates += notificationReaction(n)
         }
+
+        // === U9+U10: trener PYTA o przyczynę zamiast nagabywać „idź ćwiczyć" ===
+        applyTrainingPause(candidates)
 
         val visible = if (dismissedIds.isEmpty()) candidates
             else candidates.filterNot { it.id in dismissedIds }
@@ -108,6 +114,21 @@ class CoachOrchestrator @Inject constructor(
             id = "nc_${n.id}", domain = domain, priority = priority,
             title = n.title, message = n.message, actions = actions, source = "NotificationCenter"
         )
+    }
+
+    /**
+     * U9+U10: gdy ZNAMY przyczynę przerwy (zapamiętaną w DeloadPreferences) → wyciszamy
+     * nagabywanie o trening do terminu powrotu. Gdy NIE znamy, a jest nagabywanie → zamieniamy
+     * je na JEDNO pytanie „co się stało?" (czysta reguła `applyTrainingPauseRule`). Bez store
+     * (testy konstruujące orchestrator wprost) — stare zachowanie.
+     */
+    private fun applyTrainingPause(candidates: MutableList<CoachReaction>) {
+        val prefs = deloadPreferences ?: return
+        val pauseActive = runCatching { prefs.trainingPause() }.getOrNull() != null
+        val hadPause = runCatching { prefs.hadTrainingPause() }.getOrDefault(false)
+        val transformed = applyTrainingPauseRule(candidates, pauseActive, hadPause)
+        candidates.clear()
+        candidates.addAll(transformed)
     }
 
     // === MAPOWANIA doradca → CoachReaction ===

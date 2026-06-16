@@ -135,8 +135,15 @@ fun HomeScreen(
                     CoachCard(
                         verdict = verdict,
                         onDismiss = { reaction -> vm.dismissCoach(reaction.id) }
-                    ) { reaction, actionType ->
-                        when (actionType) {
+                    ) { reaction, action ->
+                        when (action.type) {
+                            // v2.59.0 (U9+U10): trener pyta „dlaczego nie trenujesz" — zapis powodu.
+                            pl.filebit.gymtracker.data.coach.CoachActionType.RECORD_PAUSE_REASON ->
+                                action.payload?.let { reasonName ->
+                                    vm.recordTrainingPause(reasonName) { msg ->
+                                        scope.launch { snackbar.showSnackbar(msg) }
+                                    }
+                                }
                             pl.filebit.gymtracker.data.coach.CoachActionType.APPLY_DELOAD -> {
                                 // Siła deloadu z realnej rekomendacji (jak stara karta), fallback MED.
                                 val sev = (state.deloadCard as? pl.filebit.gymtracker.data.repository.DeloadCardState.Suggestion)

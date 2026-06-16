@@ -56,7 +56,9 @@ class MasterAiContextBuilder @Inject constructor(
     private val readinessAnalyzer: TrainingReadinessAnalyzer,
     private val statsRepo: StatsRepository,
     // v2.38.0: cele makro absolutne — AI ma znać liczby, nie tylko %.
-    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
+    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences,
+    // v2.59.0 (U9+U10): zapamiętana przyczyna przerwy w treningach — AI ma ją znać.
+    private val deloadPrefs: pl.filebit.gymtracker.data.repository.DeloadPreferences
 ) {
 
     suspend fun build(): MasterAiContext {
@@ -215,6 +217,11 @@ class MasterAiContextBuilder @Inject constructor(
             mealsLoggedDays = adherence14.sampleDays,
             workoutsPlanned14d = adherence14.workoutsPlanned,
             workoutsDone14d = adherence14.workoutsDone,
+            // U9+U10: zapamiętana przyczyna przerwy (jeśli aktywna).
+            trainingPauseReason = runCatching { deloadPrefs.trainingPause() }.getOrNull()
+                ?.reasonEnum()?.label,
+            trainingPauseResumeInDays = runCatching { deloadPrefs.trainingPause() }.getOrNull()
+                ?.resumeInDays(System.currentTimeMillis()),
 
             // v2.38.0: absolutne cele makro
             targetKcal = dailyGoal?.kcal ?: 0,

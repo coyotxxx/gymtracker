@@ -73,7 +73,9 @@ class AiToolHandler @Inject constructor(
     private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences,
     private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger,
     // v2.23.0 (K5 fix): recompute adherence po add_meal (jak każda ścieżka UI)
-    private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator
+    private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator,
+    // v2.59.0 (U9+U10): zapamiętanie przyczyny przerwy w treningach
+    private val deloadPrefs: pl.filebit.gymtracker.data.repository.DeloadPreferences
 ) {
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
@@ -138,6 +140,7 @@ class AiToolHandler @Inject constructor(
             "add_meal" -> execAddMeal(input)
             "delete_meal" -> execDeleteMeal(input)    // v2.37.0: AI usuwa/podmienia posiłek
             "set_calorie_target" -> execSetCalorieTarget(input)
+            "record_training_pause" -> execRecordTrainingPause(input)  // v2.59.0
             "set_diet_goal" -> execSetDietGoal(input)
             else -> {
                 diag.warn(pl.filebit.gymtracker.data.entity.DiagnosticCategory.AI, "AiToolHandler",
@@ -247,6 +250,21 @@ class AiToolHandler @Inject constructor(
         dietPrefs.save(dietPrefs.load().copy(manualKcal = kcal))
         diag.info(diagCat, "AiToolHandler", "ai_set_kcal", "AI ustawił cel kcal: $kcal", success = true)
         return toolOk("Ustawiłem dzienny cel kaloryczny: $kcal kcal.")
+    }
+
+    private suspend fun execRecordTrainingPause(input: JsonObject): String {
+        val reasonRaw = input["reason"]?.jsonPrimitive?.contentOrNull?.uppercase()
+            ?: return toolErr("Brak 'reason' (NO_TIME/NO_ACCESS/INJURY/OTHER)")
+        val reason = runCatching {
+            pl.filebit.gymtracker.data.repository.TrainingPauseReason.valueOf(reasonRaw)
+        }.getOrNull() ?: pl.filebit.gymtracker.data.repository.TrainingPauseReason.OTHER
+        val note = input["note"]?.jsonPrimitive?.contentOrNull ?: ""
+        val days = input["resume_in_days"]?.jsonPrimitive?.intOrNull ?: reason.defaultResumeDays()
+        deloadPrefs.setTrainingPause(reason, note, days.coerceIn(1, 60))
+        diag.info(diagCat, "AiToolHandler", "ai_record_training_pause",
+            "AI zapamiętał przyczynę przerwy: ${reason.label}${if (note.isBlank()) "" else " — $note"} (powrót za $days dni)",
+            success = true)
+        return toolOk("Zanotowane: ${reason.label}. Nie nagabuję o trening przez $days dni, pilnuję diety i białka. Wrócę do tematu wtedy.")
     }
 
     private suspend fun execSetDietGoal(input: JsonObject): String {

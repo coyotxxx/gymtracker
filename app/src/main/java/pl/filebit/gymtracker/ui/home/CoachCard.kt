@@ -55,7 +55,8 @@ import pl.filebit.gymtracker.ui.theme.ErrorRed
 fun CoachCard(
     verdict: CoachVerdict,
     onDismiss: (CoachReaction) -> Unit = {},
-    onAction: (CoachReaction, CoachActionType) -> Unit
+    // v2.59.0: przekazujemy CAŁĄ akcję (z `payload`, np. powodem przerwy), nie sam typ.
+    onAction: (CoachReaction, CoachAction) -> Unit
 ) {
     val primary = verdict.primary ?: return
     val accent = priorityColor(primary.priority)
@@ -102,7 +103,7 @@ fun CoachCard(
         if (primary.actions.isNotEmpty()) {
             Spacer(Modifier.height(12.dp))
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                primary.actions.forEach { a -> ActionButton(a, accent) { onAction(primary, a.type) } }
+                primary.actions.forEach { a -> ActionButton(a, accent) { onAction(primary, a) } }
             }
         }
         // Poboczne reakcje (po rozwinięciu) — zastępują listę z dawnego dzwonka in-app.
@@ -135,7 +136,7 @@ fun CoachCard(
                 if (sec.actions.isNotEmpty()) {
                     Spacer(Modifier.height(6.dp))
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        sec.actions.forEach { a -> ActionButton(a, priorityColor(sec.priority)) { onAction(sec, a.type) } }
+                        sec.actions.forEach { a -> ActionButton(a, priorityColor(sec.priority)) { onAction(sec, a) } }
                     }
                 }
             }

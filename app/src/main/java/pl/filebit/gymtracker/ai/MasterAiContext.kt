@@ -74,6 +74,12 @@ data class MasterAiContext(
     val workoutsPlanned14d: Int,
     val workoutsDone14d: Int,
 
+    // === U9+U10 (v2.59.0): ZAPAMIĘTANA przyczyna przerwy w treningach ===
+    // Trener spytał „dlaczego nie trenujesz?", user odpowiedział — AI MA TO WIEDZIEĆ i nie
+    // pytać drugi raz, tylko adekwatnie reagować (kontuzja ≠ brak czasu). null = brak/wygasła.
+    val trainingPauseReason: String? = null,   // etykieta PL (np. „Brak czasu")
+    val trainingPauseResumeInDays: Int? = null, // za ile dni wraca do tematu
+
     // === CELE MAKRO (dzienne, ABSOLUTNE) — v2.38.0: AI ma znać LICZBY, nie tylko % ===
     val targetKcal: Int = 0,
     val targetProteinG: Int = 0,
@@ -243,6 +249,14 @@ object MasterAiContextPromptHelper {
         if (ctx.workoutsPlanned14d > 0) {
             val pct = ctx.workoutsDone14d * 100 / ctx.workoutsPlanned14d
             append("- Treningi: ${ctx.workoutsDone14d}/${ctx.workoutsPlanned14d} ($pct%)\n")
+        }
+        // U9+U10: user JUŻ powiedział dlaczego nie trenuje — nie pytaj drugi raz, reaguj adekwatnie.
+        ctx.trainingPauseReason?.let { reason ->
+            val days = ctx.trainingPauseResumeInDays
+            append("- ⏸ PRZERWA W TRENINGACH (user podał powód): $reason")
+            if (days != null) append(" — wraca do tematu za $days dni")
+            append(". NIE namawiaj „idź ćwiczyć”; dostosuj się do powodu (kontuzja=ostrożnie; ")
+            append("brak czasu=NEAT+białko+mini-trening). Chroń mięśnie dietą.\n")
         }
     }
 

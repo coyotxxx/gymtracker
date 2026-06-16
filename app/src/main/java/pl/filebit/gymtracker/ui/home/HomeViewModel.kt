@@ -128,7 +128,9 @@ class HomeViewModel @Inject constructor(
     // ViewModelKit (testy) konstruuje bez niego.
     private val coachOrchestrator: pl.filebit.gymtracker.data.coach.CoachOrchestrator? = null,
     // v2.34.1: zamknięcie Karty coacha (odrzucone na dziś).
-    private val coachDismissPrefs: pl.filebit.gymtracker.data.coach.CoachDismissPrefs? = null
+    private val coachDismissPrefs: pl.filebit.gymtracker.data.coach.CoachDismissPrefs? = null,
+    // v2.59.0 (U9+U10): pamięć przyczyny przerwy w treningach (istniejący store).
+    private val deloadPreferences: pl.filebit.gymtracker.data.repository.DeloadPreferences? = null
 ) : ViewModel() {
 
     init {
@@ -168,6 +170,25 @@ class HomeViewModel @Inject constructor(
     fun dismissCoach(reactionId: String) {
         coachDismissPrefs?.dismiss(reactionId)
         deloadRefresh.value = System.currentTimeMillis()  // przelicz werdykt bez odrzuconej
+    }
+
+    /**
+     * v2.59.0 (U9+U10): user odpowiada na pytanie „dlaczego nie trenujesz?" — zapamiętujemy
+     * powód (DeloadPreferences), trener przestaje nagabywać do umówionego terminu i wraca z
+     * pytaniem „wracasz?". Dieta zostaje w trybie ochrony mięśni (U7). `onResult` → snackbar.
+     */
+    fun recordTrainingPause(reasonName: String, onResult: (String) -> Unit) {
+        val prefs = deloadPreferences ?: return
+        val reason = runCatching {
+            pl.filebit.gymtracker.data.repository.TrainingPauseReason.valueOf(reasonName)
+        }.getOrNull() ?: return
+        val days = reason.defaultResumeDays()
+        prefs.setTrainingPause(reason, resumeInDays = days)
+        deloadRefresh.value = System.currentTimeMillis()
+        onResult(
+            "Zanotowane: ${reason.label.lowercase()}. Nie zawracam głowy treningiem przez $days dni — " +
+                "pilnuję diety i białka. Wrócę do tematu wtedy."
+        )
     }
 
     /**
