@@ -32,7 +32,8 @@ class CoachOrchestratorE2ETest : TestHarness() {
         )
         val notificationCenter = NotificationCenter(
             kit.recoveryScoreCalculator, kit.trainingLoadAnalyzer, kit.phaseAnalyzer,
-            db.workoutDao(), db.bodyMeasurementDao(), db.trainingMesocycleDao()
+            db.workoutDao(), db.bodyMeasurementDao(), db.trainingMesocycleDao(),
+            kit.adherenceCalc
         )
         return CoachOrchestrator(deloadService, kit.autoAdjust, notificationCenter)
     }
@@ -81,6 +82,28 @@ class CoachOrchestratorE2ETest : TestHarness() {
 
         assertTrue("Coach proponuje akcję OPEN_RECOVERY (zaloguj regenerację)",
             verdict.all.any { r -> r.actions.any { it.type == CoachActionType.OPEN_RECOVERY } })
+    }
+
+    @Test
+    fun `diet-user z waga bez treningow tez dostaje reakcje coacha`() = runBlocking {
+        // v2.56.0: user logujący WAGĘ/dietę (0 treningów) jest „zaangażowany" — Coach
+        // NIE może milczeć. Wcześniej gate „masz trening" dławił reakcje dla diet-userów.
+        val now = System.currentTimeMillis()
+        val day = 24L * 3600 * 1000
+        UserProfileRepository(db.userProfileDao()).save(
+            UserProfile(bodyweightKg = 84.0, gender = Gender.MALE, goalType = DietGoalType.MAINTAIN))
+        db.bodyMeasurementDao().upsert(
+            pl.filebit.gymtracker.data.entity.BodyMeasurement(date = now, weightKg = 84.0))
+        // regeneracja sprzed miesiąca → nudge „zaloguj regenerację" powinien się pokazać
+        db.recoveryLogDao().insert(RecoveryLog(dateMs = now - 30 * day, sleepHours = 7.0))
+
+        val verdict = orchestrator().evaluate()
+
+        assertTrue("Coach reaguje dla zaangażowanego diet-usera (nie milczy)", !verdict.isEmpty)
+        assertTrue("jest sygnał regeneracji LUB logowania treningu",
+            verdict.all.any { r -> r.actions.any {
+                it.type == CoachActionType.OPEN_RECOVERY || it.type == CoachActionType.START_WORKOUT
+            } })
     }
 
     @Test

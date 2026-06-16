@@ -48,17 +48,23 @@ class NotificationCenter @Inject constructor(
     private val workoutDao: WorkoutDao,
     private val bodyDao: BodyMeasurementDao,
     // v1.18.0 — alert "deload kończy się za X dni"
-    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
+    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao,
+    // v2.56.0 — sygnał „masz plan, ale nie potwierdzasz posiłków".
+    private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator
 ) {
     suspend fun computeNotifications(): List<AppNotification> {
         val list = mutableListOf<AppNotification>()
         val now = System.currentTimeMillis()
         val msPerDay = 24L * 3600 * 1000
 
-        // Treningi (raz, reużywane: gate sygnału regeneracji + sekcja „brak treningów").
+        // Treningi + waga (raz, reużywane). v2.56.0: „zaangażowany" = treningi LUB waga LUB
+        // historia regeneracji — bo user diety/wagi też ma dostawać reakcje (wcześniej gate
+        // tylko na treningi dławił Coacha dla osób logujących wyłącznie dietę).
         val finishedWorkouts = runCatching { workoutDao.observeAllOnce() }.getOrNull()
             .orEmpty().filter { it.finishedAt != null }
-        val isEngagedUser = finishedWorkouts.isNotEmpty()
+        val bodyMeasurements = runCatching { bodyDao.getAllAsc() }.getOrDefault(emptyList())
+        val isEngagedUser = finishedWorkouts.isNotEmpty() ||
+            bodyMeasurements.any { it.weightKg != null }
 
         // === Recovery Score ===
         val score = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
@@ -175,21 +181,34 @@ class NotificationCenter @Inject constructor(
             }
         }
 
-        // === Brak treningów >5 dni ===
+        // === Treningi: brak / dawno temu (v2.56.0: także gdy 0 treningów u zaangażowanego usera —
+        // wcześniej 999 dni nie mieściło się w 5..30 i Coach milczał). ===
         val lastWorkout = finishedWorkouts.maxByOrNull { it.startedAt }
-        val daysSinceLast = lastWorkout?.let { (now - it.startedAt) / msPerDay } ?: 999L
-        if (daysSinceLast in 5..30) {
-            list.add(AppNotification(
-                id = "no_workout_${daysSinceLast}d",
-                severity = NotificationSeverity.INFO,
-                title = "🏋️ ${daysSinceLast} dni bez treningu",
-                message = "Czas wrócić do regularności. Nawet 30 min lekkiej sesji uruchomi z powrotem rytm.",
-                actionType = NotificationAction.START_WORKOUT
-            ))
+        if (isEngagedUser) {
+            if (lastWorkout == null) {
+                list.add(AppNotification(
+                    id = "no_workout_ever",
+                    severity = NotificationSeverity.INFO,
+                    title = "🏋️ Zacznij logować treningi",
+                    message = "Nie masz zalogowanych sesji. Zaloguj trening, żebym mógł pilnować progresji i regeneracji.",
+                    actionType = NotificationAction.START_WORKOUT
+                ))
+            } else {
+                val daysSinceLast = (now - lastWorkout.startedAt) / msPerDay
+                if (daysSinceLast in 5..60) {
+                    list.add(AppNotification(
+                        id = "no_workout_${daysSinceLast}d",
+                        severity = NotificationSeverity.INFO,
+                        title = "🏋️ ${daysSinceLast} dni bez treningu",
+                        message = "Czas wrócić do regularności. Nawet 30 min lekkiej sesji uruchomi z powrotem rytm.",
+                        actionType = NotificationAction.START_WORKOUT
+                    ))
+                }
+            }
         }
 
         // === Brak wagi >10 dni ===
-        val lastWeight = bodyDao.getAllAsc().filter { it.weightKg != null }.maxByOrNull { it.date }
+        val lastWeight = bodyMeasurements.filter { it.weightKg != null }.maxByOrNull { it.date }
         val daysSinceWeight = lastWeight?.let { (now - it.date) / msPerDay } ?: 999L
         if (daysSinceWeight in 10..60) {
             list.add(AppNotification(
@@ -199,6 +218,25 @@ class NotificationCenter @Inject constructor(
                 message = "Trend wagi pomaga AI dostosować kalorie. Zważ się i wgraj zrzut.",
                 actionType = NotificationAction.SEND_HEALTH_SCREEN
             ))
+        }
+
+        // === v2.56.0: masz PLAN na dziś, ale nie potwierdzasz posiłków ===
+        // Po południu (≥14:00) gdy są zaplanowane posiłki, a 0 oznaczonych jako zjedzone —
+        // to powód, dla którego zgodność czyta 0% mimo pełnego planu (plan ≠ zjedzone).
+        val cal = java.util.Calendar.getInstance()
+        if (cal.get(java.util.Calendar.HOUR_OF_DAY) >= 14) {
+            cal.set(java.util.Calendar.HOUR_OF_DAY, 0); cal.set(java.util.Calendar.MINUTE, 0)
+            cal.set(java.util.Calendar.SECOND, 0); cal.set(java.util.Calendar.MILLISECOND, 0)
+            val todayLog = runCatching { adherenceCalc.getForDate(cal.timeInMillis) }.getOrNull()
+            if (todayLog != null && todayLog.mealsPlannedCount > 0 && todayLog.mealsLoggedCount == 0) {
+                list.add(AppNotification(
+                    id = "meals_unconfirmed_today",
+                    severity = NotificationSeverity.WARNING,
+                    title = "🍽️ Potwierdź dzisiejsze posiłki",
+                    message = "Masz plan na dziś (${todayLog.mealsPlannedCount} posiłki), ale 0 oznaczonych jako zjedzone. Oznacz, co zjadłeś — inaczej zgodność czyta 0% mimo pełnego planu.",
+                    actionType = NotificationAction.NONE
+                ))
+            }
         }
 
         // v1.11.69: deduplikacja po actionType - max 1 notification per akcja (priorytet
