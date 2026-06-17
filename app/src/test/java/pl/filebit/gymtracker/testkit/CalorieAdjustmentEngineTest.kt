@@ -251,6 +251,21 @@ class CalorieAdjustmentEngineTest {
     }
 
     @Test
+    fun `CUT przejadanie - jesz powyzej celu (cut_overeating)`() {
+        // v2.62.0 (sweep): kcal 130% + waga rośnie na redukcji → wprost „jesz za dużo",
+        // a nie cichy default_hold. NIE obniżamy targetu (i tak przekraczany).
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = cutProfile, currentKcal = 2400,
+            weightTrend = trend(direction = TrendDirection.RISING),
+            adherence14d = adherence(kcalPct = 130), adherence7d = adherence(kcalPct = 130)
+        )
+        report("cut-overeating", d)
+        assertEquals(AdjustmentAction.HOLD, d.action)
+        assertEquals("cut_overeating", d.reason)
+        assertEquals("nie ruszamy targetu", 0, d.kcalDeltaProposed)
+    }
+
+    @Test
     fun `CUT z treningiem - reguly bez zmian (backward-compat)`() {
         // Realnie trenuje (workoutsDone>=2) → nowa reguła NIE odpala, stagnacja działa jak dawniej.
         val d = CalorieAdjustmentEngine.analyze(

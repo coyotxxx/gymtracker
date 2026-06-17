@@ -111,14 +111,14 @@ object TrendAnalyzer {
 
         // v1.24.20: Wczesny plateau — 7 dni bez wyraźnej zmiany.
         // Wymaga ≥3 pomiarów w ostatnich 7 dniach (żeby nie reagować na 1 wpis).
-        // Próg: |slope_7d| < 0.05 kg/tydz (czyli waga praktycznie stoi).
+        // v2.62.0 FIX (sweep): wcześniej tylko `max-min < 0.5 kg` — to MYLIŁO równe, gładkie
+        // chudnięcie (np. 0.5 kg/tydz bez dziennych skoków) z plateau i niepotrzebnie tnęło kcal.
+        // Teraz dodatkowo wymagamy, by ogólny trend NIE spadał wyraźnie (slope > -0.2 kg/tydz) —
+        // jeśli realnie chudniesz, to NIE jest plateau, choćby dzienne wahania były małe.
         val recent7 = recentWeek
-        val isEarlyPlateau = recent7.size >= 3 && run {
-            val maxW = recent7.max()
-            val minW = recent7.min()
-            // różnica max-min < 0.5 kg = waga stoi
-            (maxW - minW) < 0.5
-        }
+        val isEarlyPlateau = recent7.size >= 3 &&
+            (recent7.max() - recent7.min()) < 0.5 &&
+            slope != null && slope > -0.2
 
         // daysWithoutProgress: liczba dni od ostatniej zmiany ≥0.2 kg
         val lastChange = withWeight.findLast { w ->

@@ -284,6 +284,18 @@ class CoachOrchestrator @Inject constructor(
                 actions = listOf(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")),
                 source = "AutoAdjustmentService.hold_low_workouts"
             )
+            // v2.62.0: jesz powyżej celu na redukcji → wprost, to nie cisza. Wyżej niż inne HOLD
+            // (CONSISTENCY) — bo to realnie blokuje cel, user powinien to zobaczyć.
+            "cut_overeating" -> CoachReaction(
+                id = "diet_overeating",
+                domain = CoachDomain.DIET, priority = CoachPriority.CONSISTENCY,
+                title = "Jesz powyżej celu", message = d.explanation,
+                actions = listOf(
+                    CoachAction(CoachActionType.OPEN_DIET, "Otwórz dietę"),
+                    CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")
+                ),
+                source = "AutoAdjustmentService.overeating"
+            )
             // cut_progressing / cut_default_hold / adjustment_cooldown / inne → cisza.
             else -> null
         }

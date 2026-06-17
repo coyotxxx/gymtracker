@@ -392,6 +392,25 @@ object CalorieAdjustmentEngine {
             )
         }
 
+        // 6. v2.62.0 (sweep): PRZEJADASZ cel — kcal wyraźnie powyżej planu (>115%) i waga NIE spada
+        //    (rośnie lub stoi). Problem to SPOŻYCIE, nie cel — NIE obniżam targetu (i tak go
+        //    przekraczasz), tylko mówię wprost. Wcześniej wpadało w cichy default_hold (brak reakcji).
+        if (trend.direction != TrendDirection.FALLING && adherence.avgKcalPct > 115) {
+            val rising = trend.direction == TrendDirection.RISING
+            return AdjustmentDecision(
+                action = AdjustmentAction.HOLD,
+                kcalDeltaProposed = 0,
+                newKcal = currentKcal,
+                reason = "cut_overeating",
+                explanation = "Jesz średnio ${adherence.avgKcalPct}% celu kalorii (powyżej planu), a waga " +
+                    "${if (rising) "rośnie" else "stoi"} — na redukcji nie ma wtedy deficytu. " +
+                    "Problem to spożycie, nie cel: NIE obniżam targetu ($currentKcal kcal), bo i tak go przekraczasz. " +
+                    "Wróćmy do trzymania kalorii — to ruszy wagę.",
+                confidence = Confidence.HIGH,
+                warnings = listOf("Spożycie powyżej celu = brak deficytu mimo 'redukcji'.")
+            )
+        }
+
         // Default
         return AdjustmentDecision(
             action = AdjustmentAction.HOLD,

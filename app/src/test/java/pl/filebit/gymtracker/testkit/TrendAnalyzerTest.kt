@@ -75,6 +75,20 @@ class TrendAnalyzerTest {
      * NIE mogą dawać fałszywego "fast loss". Stara metoda 'recent.avg − prev.avg' dawała −1.575
      * (→ błędny INCREASE_KCAL), regresja liniowa daje ~−1.0 (realne). Dane = realny przypadek.
      */
+    /**
+     * v2.62.0 REGRESJA (sweep 37 scenariuszy): RÓWNE, gładkie chudnięcie (0.5 kg/tydz bez
+     * dziennych skoków ≥0.2 kg) NIE może być „early plateau". Stara logika (tylko max-min<0.5)
+     * myliła to z plateau i silnik niepotrzebnie tnął kcal. Fix: wymagamy też slope > -0.2.
+     */
+    @Test
+    fun `rowne gladkie chudniecie NIE jest early plateau`() {
+        val data = (0..14).map { i -> m(28 - i * 2, 85.0 - i * (2.0 / 14)) } // 85→83 przez 28 dni
+        val t = TrendAnalyzer.analyze(data, nowMs = now)
+        report("steady-loss-not-plateau", t)
+        assertEquals("realnie spada", TrendDirection.FALLING, t.direction)
+        assertFalse("równe chudnięcie ~0.5 kg/tydz to NIE plateau", t.isEarlyPlateau)
+    }
+
     @Test
     fun `rzadkie pomiary nie daja falszywego fast loss`() {
         val data = listOf(
