@@ -150,6 +150,56 @@ class MigrationTest {
         assertEquals("exercises pusty po Migration 65→66 (intentional v2.0.0)", 0, exercises.size)
     }
 
+    /**
+     * v2.63.0 (test kampania Macieja) — ŻELAZNA ZASADA „zero utraty danych": realne dane usera
+     * (waga + pomiary ciała + profil + trening) wstawione w v56 MUSZĄ przeżyć pełną migrację
+     * do v74 z DOKŁADNYMI wartościami. To bezpośredni test bezpieczeństwa 3.5 roku danych Macieja.
+     */
+    @Test
+    fun `dane usera waga profil trening przezywaja migracje v56 do v74`() = runBlocking {
+        buildV56Database()
+        val raw = SQLiteDatabase.openDatabase(dbFile.path, null, SQLiteDatabase.OPEN_READWRITE)
+        // pomiar ciała: waga + talia + tkanka
+        raw.execSQL("INSERT INTO body_measurements " +
+            "(date, weightKg, waistCm, bodyFatPercent, notes, createdAt) " +
+            "VALUES (1700000000000, 85.5, 90.0, 18.0, 'test', 1700000000000)")
+        // profil: cel CUT, waga, imię, onboarding done
+        raw.execSQL("INSERT INTO user_profile " +
+            "(id, displayName, goal, experience, daysPerWeek, sessionMinutes, preferredUnit, " +
+            "defaultRestSeconds, injuriesNotes, showAdvancedSetFields, weightGoalType, targetWeightKg, " +
+            "unfinishedWorkoutNotifyEnabled, unfinishedWorkoutNotifyHours, gender, bodyweightKg, " +
+            "flashOnTimerEnd, aiOverlayEnabled, onboardingCompleted, aiProactiveChecksEnabled, availableEquipmentCsv) " +
+            "VALUES (1, 'Maciej', 'BUILD_MUSCLE', 'INTERMEDIATE', 3, 60, 'KG', 90, '', 0, 'CUT', 78.0, " +
+            "1, 3, 'MALE', 85.5, 0, 1, 1, 1, '')")
+        // trening
+        raw.execSQL("INSERT INTO workouts (startedAt, finishedAt, notes) " +
+            "VALUES (1699990000000, 1699993600000, 'trening testowy')")
+        raw.close()
+
+        val db = openWithMigrations()
+        val measurements = db.bodyMeasurementDao().getAllAsc()
+        val profile = db.userProfileDao().get()
+        val workouts = db.workoutDao().observeAllOnce()
+        db.close()
+
+        TraceReport("migration-userdata-survival")
+            .section("PRZEŻYCIE DANYCH USERA v56→v74")
+            .kv("pomiary wagi", measurements.size.toString())
+            .kv("waga", measurements.firstOrNull()?.weightKg?.toString() ?: "BRAK")
+            .kv("profil cel", profile?.weightGoalType?.name ?: "BRAK")
+            .kv("treningi", workouts.size.toString())
+            .emit()
+
+        assertEquals("pomiar ciała przeżył", 1, measurements.size)
+        assertEquals("waga zachowana dokładnie", 85.5, measurements[0].weightKg ?: -1.0, 0.001)
+        assertEquals("talia zachowana", 90.0, measurements[0].waistCm ?: -1.0, 0.001)
+        assertTrue("profil przeżył", profile != null)
+        assertEquals("cel wagowy zachowany", pl.filebit.gymtracker.data.entity.WeightGoalType.CUT, profile!!.weightGoalType)
+        assertEquals("waga w profilu zachowana", 85.5, profile.bodyweightKg ?: -1.0, 0.001)
+        assertEquals("onboarding zachowany", true, profile.onboardingCompleted)
+        assertEquals("trening przeżył", 1, workouts.size)
+    }
+
     @Test
     fun `lancuch migracji 49 do 67 jest ciagly`() {
         // Room znajduje ścieżkę migracji tylko gdy łańcuch jest ciągły.
