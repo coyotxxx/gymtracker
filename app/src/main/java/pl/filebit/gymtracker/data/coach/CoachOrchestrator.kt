@@ -238,15 +238,55 @@ class CoachOrchestrator @Inject constructor(
             ),
             source = "AutoAdjustmentService.${d.action.name}"
         )
-        // U7: HOLD „nie trenujesz w redukcji" — dietetyk reaguje na fakt braku treningu
-        // (chroni mięśnie), więc surfacujemy mimo HOLD. Inne HOLD/NEEDS_MORE_DATA = cisza.
-        AdjustmentAction.HOLD -> if (d.reason == "cut_no_training_hold") CoachReaction(
-            id = "diet_no_training",
-            domain = CoachDomain.DIET, priority = CoachPriority.CONSISTENCY,
-            title = "Dieta bez treningu", message = d.explanation,
-            actions = listOf(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")),
-            source = "AutoAdjustmentService.no_training"
-        ) else null
+        // HOLD: dietetyk WYJAŚNIA dlaczego nie zmienia diety (zamiast milczeć) — gdy powód jest
+        // ochronny/actionable. „Szczęśliwe" HOLD (cut_progressing/default) i karencja = cisza,
+        // żeby nie spamować. Każda taka karta jest zamykalna (X) per dzień.
+        AdjustmentAction.HOLD -> when (d.reason) {
+            "cut_no_training_hold" -> CoachReaction(
+                id = "diet_no_training",
+                domain = CoachDomain.DIET, priority = CoachPriority.CONSISTENCY,
+                title = "Dieta bez treningu", message = d.explanation,
+                actions = listOf(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")),
+                source = "AutoAdjustmentService.no_training"
+            )
+            // Wstrzymanie z powodu regeneracji — akcja prowadzi do oceny regeneracji.
+            "cut_recovery_poor_sleep_stress" -> CoachReaction(
+                id = "diet_hold_recovery",
+                domain = CoachDomain.RECOVERY, priority = CoachPriority.OPTIMIZATION,
+                title = "Trzymam dietę — regeneracja", message = d.explanation,
+                actions = listOf(
+                    CoachAction(CoachActionType.OPEN_RECOVERY, "Oceń regenerację"),
+                    CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")
+                ),
+                source = "AutoAdjustmentService.hold_recovery"
+            )
+            // Wstrzymanie bo spadły kroki (NEAT), nie metabolizm — popraw kroki, nie tnij.
+            "cut_neat_drop" -> CoachReaction(
+                id = "diet_hold_neat",
+                domain = CoachDomain.DIET, priority = CoachPriority.OPTIMIZATION,
+                title = "Trzymam dietę — kroki", message = d.explanation,
+                actions = listOf(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")),
+                source = "AutoAdjustmentService.hold_neat"
+            )
+            // Wstrzymanie bo niskie nawodnienie maskuje progres.
+            "cut_low_hydration" -> CoachReaction(
+                id = "diet_hold_hydration",
+                domain = CoachDomain.DIET, priority = CoachPriority.OPTIMIZATION,
+                title = "Trzymam dietę — nawodnienie", message = d.explanation,
+                actions = listOf(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")),
+                source = "AutoAdjustmentService.hold_hydration"
+            )
+            // Waga stoi, ale realizujesz <80% treningów — najpierw frekwencja, nie cięcie.
+            "cut_stagnation_low_workouts" -> CoachReaction(
+                id = "diet_hold_low_workouts",
+                domain = CoachDomain.CONSISTENCY, priority = CoachPriority.OPTIMIZATION,
+                title = "Trzymam dietę — frekwencja", message = d.explanation,
+                actions = listOf(CoachAction(CoachActionType.ASK_AI, "Zapytaj AI")),
+                source = "AutoAdjustmentService.hold_low_workouts"
+            )
+            // cut_progressing / cut_default_hold / adjustment_cooldown / inne → cisza.
+            else -> null
+        }
         AdjustmentAction.NEEDS_MORE_DATA -> null
     }
 
