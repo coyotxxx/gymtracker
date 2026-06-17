@@ -102,9 +102,11 @@ fun WeeklyReportScreen(
                         }
                         Spacer(Modifier.height(8.dp))
                         Text(
-                            "AI przeanalizuje Twoje sesje z bieżącego tygodnia (Pon–Nd) " +
-                                "i da konkretne rekomendacje na następny tydzień: per partia mięśniowa, " +
-                                "trend RPE, stagnacje, volume.",
+                            // v2.64.0: opis neutralny dla każdego trybu (dieta/trening/oba) —
+                            // raport to retrospektywa tygodnia, nie tylko trening.
+                            "Podsumowanie minionego tygodnia (Pon–Nd): bilans diety, wagi, " +
+                                "treningu i regeneracji + jedna rzecz strategiczna na następny tydzień. " +
+                                "Codzienne akcje masz na Karcie Coacha.",
                             style = MaterialTheme.typography.bodySmall,
                             color = DarkOnSurfaceVariant
                         )
@@ -150,9 +152,23 @@ fun WeeklyReportScreen(
                 }
             }
 
-            // Sekcja akcji od AI dla NAJNOWSZEGO raportu
+            // Sekcja akcji od AI dla NAJNOWSZEGO raportu — TYLKO gdy świeży (v2.64.0 redesign).
+            // Nieaktualny raport (>10 dni) NIE pokazuje akcji jako bieżących — zamiast tego baner.
             val latestReport = reports.firstOrNull()
-            if (latestReport != null) {
+            val staleThresholdMs = 10L * 24 * 3600 * 1000
+            val isStale = latestReport != null &&
+                latestReport.weekEndMillis < (System.currentTimeMillis() - staleThresholdMs)
+            if (latestReport != null && isStale) {
+                item(key = "stale-banner") {
+                    val df = remember { java.text.SimpleDateFormat("d MMM", java.util.Locale("pl")) }
+                    StaleReportBanner(
+                        weekLabel = "${df.format(java.util.Date(latestReport.weekStartMillis))}–" +
+                            df.format(java.util.Date(latestReport.weekEndMillis)),
+                        onGenerate = { vm.generate() }
+                    )
+                }
+            }
+            if (latestReport != null && !isStale) {
                 item(key = "actions-card") {
                     val actions = remember(latestReport.id) { vm.parseActions(latestReport.content) }
                     if (actions.isNotEmpty()) {
@@ -270,7 +286,8 @@ private fun WeeklyActionsCard(
                 )
                 Spacer(Modifier.size(8.dp))
                 Text(
-                    "Sugerowane akcje",
+                    // v2.64.0: tylko akcje PLANU treningowego (nie codzienne nudge'y — te na Karcie Coacha).
+                    "Dostosowanie planu treningowego",
                     style = MaterialTheme.typography.titleMedium.copy(
                         fontWeight = FontWeight.Bold,
                         fontSize = 15.sp
@@ -280,7 +297,8 @@ private fun WeeklyActionsCard(
             }
             Spacer(Modifier.height(4.dp))
             Text(
-                "Zaznacz akcje, które chcesz zastosować do planu. AI przygotuje poprawioną wersję.",
+                "Zaznacz zmiany w planie, które chcesz zastosować. AI przygotuje poprawioną wersję. " +
+                    "Codzienne akcje (logowanie, korekty diety) znajdziesz na Karcie Coacha.",
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
@@ -514,11 +532,37 @@ private fun stripActionsJsonBlock(content: String): String {
         Regex("```json\\s*\\[[\\s\\S]+?\\]\\s*```", RegexOption.MULTILINE),
         ""
     )
-    // Usuń też nagłówek '## AKCJE DO ZASTOSOWANIA (JSON)' i jego krótki opis
+    // Usuń nagłówek bloku akcji (stary 'AKCJE DO ZASTOSOWANIA' + nowy 'DOSTOSOWANIE PLANU') + opis
     val withoutHeader = withoutJson.replace(
-        Regex("##\\s*AKCJE\\s+DO\\s+ZASTOSOWANIA[^\\n]*\\n+", RegexOption.IGNORE_CASE),
+        Regex("##\\s*(AKCJE\\s+DO\\s+ZASTOSOWANIA|DOSTOSOWANIE\\s+PLANU)[^\\n]*\\n+", RegexOption.IGNORE_CASE),
         ""
     )
     return withoutHeader.trim()
+}
+
+/** v2.64.0 — baner gdy najnowszy raport jest nieaktualny (>10 dni). Zamiast pokazywać stare
+ *  akcje jako bieżące, zachęca do wygenerowania świeżego. */
+@androidx.compose.runtime.Composable
+private fun StaleReportBanner(weekLabel: String, onGenerate: () -> Unit) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(AccentOrange.copy(alpha = 0.12f), RoundedCornerShape(12.dp))
+            .border(androidx.compose.foundation.BorderStroke(1.dp, AccentOrange.copy(alpha = 0.4f)), RoundedCornerShape(12.dp))
+            .padding(14.dp)
+    ) {
+        Text("Raport nieaktualny", fontWeight = FontWeight.Bold, color = DarkOnSurface,
+            style = MaterialTheme.typography.titleSmall)
+        Spacer(Modifier.height(4.dp))
+        Text("Najnowszy raport dotyczy tygodnia $weekLabel — sprzed ponad tygodnia. " +
+            "Wygeneruj świeży, żeby zobaczyć aktualne podsumowanie. Bieżące akcje masz na Karcie Coacha.",
+            style = MaterialTheme.typography.bodySmall, color = DarkOnSurfaceVariant)
+        Spacer(Modifier.height(10.dp))
+        androidx.compose.material3.Button(
+            onClick = onGenerate,
+            colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                containerColor = AccentOrange, contentColor = androidx.compose.ui.graphics.Color.Black)
+        ) { Text("Wygeneruj aktualny raport") }
+    }
 }
 

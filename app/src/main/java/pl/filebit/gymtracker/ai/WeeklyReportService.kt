@@ -250,16 +250,23 @@ class WeeklyReportService @Inject constructor(
 
         val workouts = workoutDao.observeAllOnce()
             .filter { it.finishedAt != null && it.startedAt in weekStartMillis until weekEndMillis }
-        if (workouts.isEmpty()) {
-            return Result.failure(IllegalStateException("Brak ukończonych treningów w tym tygodniu"))
-        }
 
         // Per workout: zaliczone sety (bez warmupów)
         val allSets = workouts.flatMap { w ->
             setDao.getForWorkout(w.id).filter { it.isCompleted && it.setType != SetType.WARMUP }
         }
-        if (allSets.isEmpty()) {
-            return Result.failure(IllegalStateException("Brak zaliczonych serii w tym tygodniu"))
+        // v2.64.0 (redesign): raport działa dla KAŻDEGO trybu (diet-only/training/oba).
+        // Brak treningów NIE blokuje — robimy retrospektywę diety/wagi/regeneracji.
+        // Wymóg: cokolwiek do podsumowania (trening LUB zalogowana dieta/waga).
+        val hasTraining = workouts.isNotEmpty() && allSets.isNotEmpty()
+        if (!hasTraining) {
+            val ctxCheck = runCatching { masterContextBuilder.build() }.getOrNull()
+            val hasDietOrWeight = (ctxCheck?.mealsLoggedDays ?: 0) > 0 ||
+                (ctxCheck?.weightTrendSlopeKgPerWeek != null)
+            if (!hasDietOrWeight) {
+                return Result.failure(IllegalStateException(
+                    "Brak danych w tym tygodniu — zaloguj trening, posiłki lub wagę, żeby był z czego zrobić raport."))
+            }
         }
 
         // Cache exercise per id
@@ -317,9 +324,15 @@ class WeeklyReportService @Inject constructor(
         // Build prompt
         val withFeedback = workouts.filter { it.wellbeingRating != null || it.painArea != null }
         val prompt = buildString {
-            append("Jesteś trenerem personalnym. Przeanalizuj poniższy tydzień treningowy ")
-            append("użytkownika i daj rekomendacje na następny tydzień. Bądź konkretny — ")
-            append("cytuj liczby z danych. Bazuj na zasadach RP, MASS i Israetela. Polski język.\n\n")
+            // v2.64.0 (redesign): raport = LUSTRO TYGODNIA (retrospektywa + trend + 1 wniosek
+            // strategiczny), NIE druga lista codziennych nudge'y (te są na Karcie Coacha).
+            append("Jesteś trenerem personalnym i dietetykiem w jednej osobie. Zrób ZWIĘZŁE ")
+            append("podsumowanie minionego tygodnia użytkownika i wskaż JEDNĄ najważniejszą rzecz ")
+            append("na następny. To retrospektywa (lustro tygodnia), nie lista zadań — codzienne ")
+            append("akcje user widzi na Karcie Coacha, więc ICH NIE POWTARZAJ. Polski język. ")
+            append("Bazuj na RP/MASS/Israetela. ")
+            append("WAŻNE: cytuj WYŁĄCZNIE liczby obecne w danych poniżej — NIE wymyślaj pomiarów, ")
+            append("wag, dat ani RPE, których tu nie ma. Gdy danych brak, napisz wprost 'brak danych'.\n\n")
 
             // Pełen kontekst z całej aplikacji (recovery, sen, NEAT, adherence diety,
             // faza, PRy) — pozwala AI łączyć kropki: trening + dieta + regeneracja
@@ -332,6 +345,13 @@ class WeeklyReportService @Inject constructor(
                 append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
                 append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
                 append("\n")
+                // U9+U10: jeśli user podał powód przerwy w treningach — NIE nagabuj o trening.
+                masterCtx.trainingPauseReason?.let { reason ->
+                    append("# TRYB UŻYTKOWNIKA: przerwa w treningach z powodu: $reason")
+                    masterCtx.trainingPauseResumeInDays?.let { append(" (wraca za $it dni)") }
+                    append(".\nNIE pisz 'zacznij trenować' jako problem — to świadomy wybór. ")
+                    append("Skup się na ochronie mięśni dietą/białkiem i tym, co user faktycznie robi.\n\n")
+                }
             }
             if (withFeedback.isNotEmpty()) {
                 append("# FEEDBACK Z TRENINGÓW (samopoczucie 1-5 + ból)\n")
@@ -350,73 +370,72 @@ class WeeklyReportService @Inject constructor(
                 append("to silny sygnał na dostosowanie planu/deloadu.\n\n")
             }
 
-            append("# DANE TYGODNIA: $mondayDate – ${mondayDate.plus(6, DateTimeUnit.DAY)}\n")
-            append("- Sesji: ${workouts.size}, łącznie ${totalDurationMin} min\n")
-            append("- Łączna objętość: ${formatKg(totalVolume)} kg (${allSets.size} setów roboczych)\n")
-            append("- Cel treningowy: $goal\n\n")
+            // === Sekcje TRENINGOWE — tylko gdy był trening (diet-only → pomijamy) ===
+            if (hasTraining) {
+                append("# DANE TYGODNIA (trening): $mondayDate – ${mondayDate.plus(6, DateTimeUnit.DAY)}\n")
+                append("- Sesji: ${workouts.size}, łącznie ${totalDurationMin} min\n")
+                append("- Łączna objętość: ${formatKg(totalVolume)} kg (${allSets.size} setów roboczych)\n")
+                append("- Cel treningowy: $goal\n\n")
 
-            append("## Per partia mięśniowa\n")
-            byMuscle.forEach { (muscle, sessions, setsAndVol) ->
-                val (setsCount, vol) = setsAndVol
-                append("- ${muscle.name}: $sessions sesji, $setsCount setów, ${formatKg(vol)} kg objętości\n")
-            }
-
-            append("\n## Per ćwiczenie (top set + trend RPE)\n")
-            byExercise.sortedByDescending { it.sessions }.forEach { e ->
-                append("- ${e.name} (${e.muscle}): ${e.sessions} sesji, ${e.setCount} setów, ")
-                append("top ${e.topSet}, ${e.rpeTrend}\n")
-            }
-
-            // v2.5.0: balans wzorców ruchowych (push/pull/hinge/squat...) z canonical.
-            // Pozwala AI wykryć dysbalans niewidoczny w podziale per partia
-            // (np. dużo push poziomego, mało pull pionowego → ryzyko barków).
-            val byPattern = byExercise
-                .filter { it.movementPattern != null }
-                .groupBy { it.movementPattern!! }
-                .mapValues { (_, list) -> list.sumOf { it.setCount } }
-                .toList().sortedByDescending { it.second }
-            if (byPattern.isNotEmpty()) {
-                append("\n## Balans wzorców ruchowych (serie/wzorzec)\n")
-                byPattern.forEach { (pattern, setCount) ->
-                    append("- $pattern: $setCount serii\n")
+                append("## Per partia mięśniowa\n")
+                byMuscle.forEach { (muscle, sessions, setsAndVol) ->
+                    val (setsCount, vol) = setsAndVol
+                    append("- ${muscle.name}: $sessions sesji, $setsCount setów, ${formatKg(vol)} kg objętości\n")
                 }
-                append("→ Sprawdź balans: push vs pull (antagoniści), poziom vs pion, ")
-                append("kolana (squat) vs biodra (hinge). Wskaż dysproporcje.\n")
-            }
 
-            if (stagnations.isNotEmpty()) {
-                append("\n## STAGNACJE wykryte\n")
-                stagnations.forEach { s ->
-                    append("- ${s.exerciseName}: ${s.workoutsAtSameWeight} treningów z rzędu na ${formatKg(s.stuckAtKg)} kg\n")
+                append("\n## Per ćwiczenie (top set + trend RPE)\n")
+                byExercise.sortedByDescending { it.sessions }.forEach { e ->
+                    append("- ${e.name} (${e.muscle}): ${e.sessions} sesji, ${e.setCount} setów, ")
+                    append("top ${e.topSet}, ${e.rpeTrend}\n")
                 }
+
+                // v2.5.0: balans wzorców ruchowych (push/pull/hinge/squat...) z canonical.
+                val byPattern = byExercise
+                    .filter { it.movementPattern != null }
+                    .groupBy { it.movementPattern!! }
+                    .mapValues { (_, list) -> list.sumOf { it.setCount } }
+                    .toList().sortedByDescending { it.second }
+                if (byPattern.isNotEmpty()) {
+                    append("\n## Balans wzorców ruchowych (serie/wzorzec)\n")
+                    byPattern.forEach { (pattern, setCount) -> append("- $pattern: $setCount serii\n") }
+                    append("→ Sprawdź balans: push vs pull, poziom vs pion, kolana vs biodra.\n")
+                }
+
+                if (stagnations.isNotEmpty()) {
+                    append("\n## STAGNACJE wykryte\n")
+                    stagnations.forEach { s ->
+                        append("- ${s.exerciseName}: ${s.workoutsAtSameWeight} treningów z rzędu na ${formatKg(s.stuckAtKg)} kg\n")
+                    }
+                }
+                append("\n")
+            } else {
+                append("# TRENING: brak zalogowanych treningów w tym tygodniu (raport skupia się na diecie/wadze/regeneracji).\n\n")
             }
 
-            append("\n# OCZEKIWANY FORMAT ODPOWIEDZI (Markdown)\n\n")
-            append("## Mocne strony\n(2-3 punkty oparte na liczbach)\n\n")
-            append("## Wnioski per partia mięśniowa\n")
-            append("**Klatka:** rekomendacja na następny tydzień (konkretna waga / reps / liczba sesji)\n")
-            append("**Plecy:** ...\n(itd. dla każdej partii którą trenowano)\n\n")
-            append("## Konkretne kroki na następny tydzień\n")
-            append("1. (akcja z liczbami)\n2. ...\n\n")
-            append("## Ostrzeżenia\n")
-            append("(jeśli są — np. volume za niski/wysoki, brak partii, stagnacje wymagają deloadu)\n\n")
-
-            append("## AKCJE DO ZASTOSOWANIA (JSON)\n")
-            append("Na końcu raportu dodaj blok ```json z listą 3-7 konkretnych akcji do zaznaczenia ")
-            append("przez użytkownika. Każda akcja ma być zwięzła (max 100 znaków), JEDNOZNACZNA i ")
-            append("wykonalna w planie treningowym (zwiększ/zmniejsz X, dodaj/usuń ćwiczenie, zmień zakres reps, ")
-            append("zaproponuj deload). Severity: 'NORMAL' (zalecenie), 'IMPORTANT' (priorytetowe), 'WARNING' (pilne).\n")
-            append("```json\n")
-            append("[\n")
-            append("  {\"id\": 1, \"label\": \"Zwiększ objętość pleców z 10 do 14 setów/tydz\", \"severity\": \"IMPORTANT\"},\n")
-            append("  {\"id\": 2, \"label\": \"Wymień martwy ciąg klasyczny na rumuński (deload stagnacji)\", \"severity\": \"WARNING\"}\n")
-            append("]\n")
-            append("```\n\n")
+            // === FORMAT: RETROSPEKTYWA, nie lista nudge'y ===
+            append("# OCZEKIWANY FORMAT ODPOWIEDZI (Markdown, zwięźle, maks ~350 słów)\n\n")
+            append("## Bilans tygodnia\n")
+            append("Krótko, LICZBAMI z danych: dieta (adherence kcal/białko %, dni logowane), ")
+            append("waga (trend kg/tydz + vs cel), ")
+            if (hasTraining) append("trening (sesje, objętość), ")
+            append("regeneracja (sen/stres, dni logowane). Tylko to co realnie jest w danych.\n\n")
+            append("## Co poszło dobrze\n(MAKS 2 punkty — najmocniejsze wzorce tygodnia)\n\n")
+            append("## Na co uważać\n(MAKS 2 punkty — najważniejsze ryzyka/wzorce; NIE codzienne przypomnienia)\n\n")
+            append("## Jedna rzecz na następny tydzień\n(JEDNA rzecz o największej dźwigni — strategiczna, nie checklista)\n\n")
+            if (hasTraining) {
+                append("## Wnioski treningowe\n(krótko, per partia którą trenowano: waga/reps/sesje na nast. tydzień)\n\n")
+                append("## DOSTOSOWANIE PLANU (JSON)\n")
+                append("Na końcu dodaj blok ```json z 0–5 akcji DOTYCZĄCYCH WYŁĄCZNIE PLANU TRENINGOWEGO ")
+                append("(zwiększ/zmniejsz objętość, dodaj/usuń/wymień ćwiczenie, zmień reps, deload). ")
+                append("NIE dodawaj 'loguj wagę/posiłki/regenerację' ani akcji diety — te należą do Karty Coacha. ")
+                append("Pusta lista [] gdy plan OK. Severity: NORMAL/IMPORTANT/WARNING.\n")
+                append("```json\n[{\"id\":1,\"label\":\"Zwiększ objętość pleców z 10 do 14 setów/tydz\",\"severity\":\"IMPORTANT\"}]\n```\n\n")
+            }
             append("---\n\n")
-            append("Reguły volume na tydzień (wg literatury): 10–20 setów / partia / tydzień (hipertrofia), ")
-            append("8–14 (siła). Jeśli stagnacja 3+ treningów → sugeruj −10% deload na ten tydzień ")
-            append("LUB wymianę wariantu ćwiczenia. Maks 600 słów. Zachowaj balans motywacji i ")
-            append("konkretu — bądź pomocny, nie laudator.")
+            append("Codzienne akcje (zaloguj wagę/posiłki, zastosuj korektę kcal) NALEŻĄ do Karty Coacha — ")
+            append("tu jest tylko retrospektywa tygodnia. NIE powtarzaj tych nudge'y. ")
+            append("Reguły volume (jeśli trening): 10–20 setów/partia/tydz hipertrofia, 8–14 siła. ")
+            append("Bądź pomocny i konkretny, bez laurki.")
         }
 
         val result = client.chat(
