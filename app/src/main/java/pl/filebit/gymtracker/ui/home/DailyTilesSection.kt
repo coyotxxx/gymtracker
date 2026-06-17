@@ -27,7 +27,6 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.ui.diet.HydrationLogDialog
-import pl.filebit.gymtracker.ui.diet.RecoveryDialog
 import pl.filebit.gymtracker.ui.diet.StepsDialog
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
@@ -53,7 +52,7 @@ fun DailyTilesSection(
     val hcConnected by vm.hcConnected.collectAsStateWithLifecycle()
     val showHydration by vm.showHydrationDialog.collectAsStateWithLifecycle()
     val showSteps by vm.showStepsDialog.collectAsStateWithLifecycle()
-    val showRecovery by vm.showRecoveryDialog.collectAsStateWithLifecycle()
+    // showRecovery: render dialogu przeniesiony na HomeScreen (poza LazyColumn) — v2.60.0.
 
     MiniTilesRow(
         hydrationToday = hydrationToday,
@@ -82,14 +81,9 @@ fun DailyTilesSection(
             onDismiss = { vm.dismissStepsDialog() }
         )
     }
-    if (showRecovery) {
-        RecoveryDialog(
-            onSave = { sleep, sleepQ, stress, hunger, energy, soreness, difficulty ->
-                vm.saveRecoveryLog(sleep, sleepQ, stress, hunger, energy, soreness, difficulty)
-            },
-            onDismiss = { vm.dismissRecoveryDialog() }
-        )
-    }
+    // v2.60.0: RecoveryDialog przeniesiony na poziom HomeScreen (poza LazyColumn) — patrz
+    // komentarz tam. Tu NIE renderujemy (uniknięcie podwójnego dialogu). `showRecovery` nadal
+    // wystawia stan, ale renderem zarządza ekran.
 }
 
 // === UI kafelków (przeniesione z DietScreen — v1.28.5) ===

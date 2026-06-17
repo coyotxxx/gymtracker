@@ -255,6 +255,10 @@ fun DietScreen(
                                     )
                                 pl.filebit.gymtracker.data.coach.CoachActionType.START_WORKOUT,
                                 pl.filebit.gymtracker.data.coach.CoachActionType.RETURN_LIGHT -> onStartWorkout()
+                                // v2.60.0 (fix): „Oceń regenerację" otwiera dialog oceny (wcześniej
+                                // leciało w else → czat AI, nie przenosiło do oceny regeneracji).
+                                pl.filebit.gymtracker.data.coach.CoachActionType.OPEN_RECOVERY ->
+                                    vm.openRecoveryDialog()
                                 else -> onAskCoach(
                                     "Trener pokazał mi: \"${reaction.title}\" — ${reaction.message}\n\n" +
                                         "Porozmawiajmy o tym: co dokładnie zrobić i jak dostosować to do mnie?"
@@ -452,6 +456,17 @@ substitutePrompt?.let { sp ->
             suggestion = s,
             onAccept = { vm.acceptPhaseSuggestion() },
             onDismiss = { vm.dismissPhaseSuggestion() }
+        )
+    }
+
+    // v2.60.0 (fix): dialog oceny regeneracji też na Diecie (akcja Coacha „Oceń regenerację").
+    val showRecoveryDiet by vm.showRecoveryDialog.collectAsStateWithLifecycle()
+    if (showRecoveryDiet) {
+        RecoveryDialog(
+            onSave = { sleep, sleepQ, stress, hunger, energy, soreness, difficulty ->
+                vm.saveRecoveryLog(sleep, sleepQ, stress, hunger, energy, soreness, difficulty)
+            },
+            onDismiss = { vm.dismissRecoveryDialog() }
         )
     }
 

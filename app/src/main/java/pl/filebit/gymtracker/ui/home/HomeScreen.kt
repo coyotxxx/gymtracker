@@ -516,6 +516,19 @@ fun HomeScreen(
         )
     }
 
+    // v2.60.0 (fix): RecoveryDialog na poziomie ekranu (POZA LazyColumn) — wcześniej był
+    // renderowany wewnątrz DailyTilesSection (kafel REGEN); gdy kafel zjechał z ekranu, item
+    // był usuwany z kompozycji i akcja Coacha „Oceń regenerację" nie otwierała dialogu.
+    val showRecovery by dailyTilesVm.showRecoveryDialog.collectAsStateWithLifecycle()
+    if (showRecovery) {
+        pl.filebit.gymtracker.ui.diet.RecoveryDialog(
+            onSave = { sleep, sleepQ, stress, hunger, energy, soreness, difficulty ->
+                dailyTilesVm.saveRecoveryLog(sleep, sleepQ, stress, hunger, energy, soreness, difficulty)
+            },
+            onDismiss = { dailyTilesVm.dismissRecoveryDialog() }
+        )
+    }
+
     androidx.compose.material3.SnackbarHost(
         hostState = snackbar,
         modifier = Modifier

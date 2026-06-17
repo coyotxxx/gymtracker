@@ -91,6 +91,17 @@ class AutoAdjustmentService @Inject constructor(
             ?.let { ((nowMs - it.dateMs) / dayMs).toInt().coerceAtLeast(0) }
             ?: 999
 
+        // v2.60.0: KARENCJA po zastosowaniu korekty kcal. Bez tego coach proponował tę samą
+        // zmianę CODZIENNIE (zgłoszenie Macieja: „wczoraj zmieniłem dietę, dziś znów pyta o 150").
+        // Po zmianie kalorii dajemy organizmowi 14 dni (standardowa kadencja), żeby zobaczyć
+        // efekt na wadze, zanim znów ruszymy cel — inaczej kręcimy się w kółko.
+        val kcalChangeCodes = setOf("INCREASE_KCAL", "DECREASE_KCAL", "REFEED_DAY", "DELOAD")
+        val daysSinceLastKcalChange = recentAdjustments
+            .filter { it.applied && it.actionCode in kcalChangeCodes }
+            .maxByOrNull { it.appliedAt ?: it.dateMs }
+            ?.let { ((nowMs - (it.appliedAt ?: it.dateMs)) / dayMs).toInt().coerceAtLeast(0) }
+            ?: 999
+
         // U7 (unified coach): PEWNY pomiar faktycznego treningu — liczba ukończonych
         // treningów w ostatnich 14 dniach + czy w ogóle jest aktywny plan. Niezależne od
         // leniwie tworzonych TrainingDaySummary. Dzięki temu dietetyk reaguje na fakt
@@ -122,6 +133,29 @@ class AutoAdjustmentService @Inject constructor(
             realWorkouts14d = realWorkouts14d,
             hasTrainingPlan = hasTrainingPlan
         )
+
+        // v2.60.0: KARENCJA — jeśli korektę kcal zastosowano < 14 dni temu, NIE proponuj kolejnej
+        // (czekamy aż waga pokaże efekt). Wyjątek: groźny szybki spadek (cut_fast_loss) = bezpieczeństwo.
+        if (daysSinceLastKcalChange < 14 &&
+            raw.action in setOf(AdjustmentAction.INCREASE_KCAL, AdjustmentAction.DECREASE_KCAL,
+                AdjustmentAction.REFEED_DAY, AdjustmentAction.DELOAD) &&
+            raw.reason != "cut_fast_loss"
+        ) {
+            diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET, "AutoAdjustmentService",
+                "kcal_adjust_cooldown",
+                "Korekta ${raw.action.name} wstrzymana — ostatnia zmiana $daysSinceLastKcalChange dni temu (karencja 14 dni)",
+                success = true)
+            return raw.copy(
+                action = AdjustmentAction.HOLD,
+                kcalDeltaProposed = 0,
+                newKcal = currentGoal.kcal,
+                reason = "adjustment_cooldown",
+                explanation = "Cel kalorii zmieniłeś $daysSinceLastKcalChange dni temu. Daję organizmowi czas " +
+                    "(14 dni), żeby waga pokazała efekt, zanim znów ruszę cel — inaczej kręcilibyśmy się w kółko. " +
+                    "Trzymaj obecne kcal i białko, obserwujemy trend.",
+                confidence = Confidence.MEDIUM
+            )
+        }
 
         // SafetyGuard cap — v1.24.23: przekazujemy BMR z dietProfile (jeśli dostępne)
         // żeby min kcal floor uwzględnił najmniejszą bezpieczną wartość dla tego usera.
