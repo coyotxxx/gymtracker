@@ -291,6 +291,11 @@ class AiTrainerViewModel @Inject constructor(
             // (biblioteka ćw + profile, cacheable ephemeral 5min) od dynamic
             // (recent_workouts, pytanie). Cache read = 10% kosztu vs standard input.
             val combined = "Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\n" +
+                // v2.63.0 (test AI): twarda reguła anty-fabrykacji — AI miało tendencję do
+                // zmyślania pomiarów (np. „87 kg start" którego nie było w danych).
+                "WAŻNA ZASADA: Cytuj WYŁĄCZNIE liczby (wagi, daty, pomiary, RPE) obecne w powyższym " +
+                "kontekście. NIE wymyślaj ani nie 'dopowiadaj' wartości, których tu nie ma — nawet jeśli " +
+                "pasowałyby do typowej historii. Gdy danych brak, napisz wprost: 'brak danych'.\n\n" +
                 "${pl.filebit.gymtracker.ai.CACHE_BREAKPOINT_MARKER}\n\n" +
                 "Pytanie/prośba:\n$prompt"
 

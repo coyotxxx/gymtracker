@@ -107,7 +107,9 @@ class AiQuickAskViewModel @Inject constructor(
                     append("=== KONTEKST DIETY ===\n$dietSection\n")
                 }
                 append("Pytanie: $question\n\n")
-                append("Odpowiedz krótko (max 5-6 zdań), konkretnie i po polsku. Cytuj liczby z kontekstu jeśli pasują.")
+                append("Odpowiedz krótko (max 5-6 zdań), konkretnie i po polsku. Cytuj liczby z kontekstu jeśli pasują. ")
+                // v2.63.0 (test AI): anty-fabrykacja — NIE zmyślaj liczb spoza kontekstu.
+                append("Używaj WYŁĄCZNIE liczb obecnych w kontekście; NIE wymyślaj pomiarów/wag/dat, których tu nie ma.")
             }
             val apiMessages = _state.value.messages.dropLast(1).map {
                 AiMessage(it.role, it.text)
