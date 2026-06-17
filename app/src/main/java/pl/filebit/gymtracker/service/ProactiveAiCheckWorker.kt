@@ -48,6 +48,8 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao,
     // v2.12.0 — reguła opuszczonego zaplanowanego treningu
     private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService,
+    // v2.65.0 — TA SAMA pamięć przerwy, której słucha CoachOrchestrator i Bilans dnia
+    private val deloadPreferences: pl.filebit.gymtracker.data.repository.DeloadPreferences,
     // v2.14.0 — kanoniczne alerty trenera (te same co na Home) w tle
     private val homeAlertNotifier: HomeAlertNotifier,
     private val diag: pl.filebit.gymtracker.data.repository.DiagnosticLogger,
@@ -97,14 +99,28 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
             statsRepo.detectStagnation(lastWorkoutId, threshold = 3).firstOrNull()
         } else null
 
-        // 3. Opuszczony zaplanowany trening (v2.12.0)
-        val missed = runCatching { deloadService.missedWorkoutSignal() }.getOrNull()
+        // v2.65.0 — pamięć przerwy treningowej (ta sama, której słucha CoachOrchestrator
+        // i Bilans dnia). Gdy user zapisał powód (brak czasu / kontuzja / …), NIE nagabujemy
+        // o trening — to dieta/Coach prowadzą rozmowę. Jeden głos na wszystkich kanałach.
+        val trainingPause = runCatching { deloadPreferences.trainingPause() }.getOrNull()
 
-        // 4. Partia >7 dni bez treningu
+        // 3. Opuszczony zaplanowany trening (v2.12.0) — wyciszony przy świadomej przerwie
+        val missedRaw = runCatching { deloadService.missedWorkoutSignal() }.getOrNull()
+        val missed = if (trainingPause == null) missedRaw else null
+
+        // 4. Partia >7 dni bez treningu — też wyciszona przy świadomej przerwie
         val recovery = statsRepo.recoveryByMuscleFast(statsCacheService.snapshot())
-        val staleMuscle = recovery
+        val staleMuscle = if (trainingPause != null) null else recovery
             .filter { it.daysAgo >= 7 }
             .maxByOrNull { it.daysAgo }
+
+        if (trainingPause != null && (missedRaw != null || recovery.any { it.daysAgo >= 7 })) {
+            diag.info(
+                diagCat, diagSrc, "training_nag_suppressed",
+                "Pomijam nagabywanie o trening — zapisana przerwa: ${trainingPause.reasonEnum().label}",
+                success = true
+            )
+        }
 
         val (title, body, prompt) = when {
             recurringPain != null -> {
@@ -125,11 +141,16 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
                 "Już ${stagnation.workoutsAtSameWeight} treningów na tej samej wadze. Czas na deload?",
                 "DELOAD"
             )
+            // v2.65.0 — U9: pytamy „co się stało", nie komenderujemy „zacznij dziś".
+            // Akcja ASK_RETURN nie pasuje do żadnego QuickAction → otwiera czysty czat
+            // AI Trenera (bez auto-komendy), gdzie AI może zapisać przyczynę przerwy
+            // narzędziem record_training_pause i dostosować plan. Spójne z Kartą Coacha.
             missed != null -> Triple(
-                if (missed.severity == pl.filebit.gymtracker.util.MissedWorkoutSeverity.FIRM)
-                    "🏋 Wracamy do rytmu" else "🏋 Przegapiony trening",
-                missed.reason.take(180),
-                "TODAY"
+                "🏋 Nie trenowałeś — co się stało?",
+                "Widzę przerwę w treningach. Otwórz i powiedz mi, co się dzieje (brak czasu / " +
+                    "kontuzja / coś innego) — dostosuję plan i przestanę nagabywać. " +
+                    "Chcesz po prostu wrócić? Też pomogę zacząć.",
+                "ASK_RETURN"
             )
             staleMuscle != null -> Triple(
                 "💪 ${staleMuscle.muscle.displayName()} bez treningu ${staleMuscle.daysAgo} dni",
