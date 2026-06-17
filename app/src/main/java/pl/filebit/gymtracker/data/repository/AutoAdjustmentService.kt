@@ -182,8 +182,8 @@ class AutoAdjustmentService @Inject constructor(
 
         diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET, "AutoAdjustmentService",
             "kcal_adjust_analyzed",
-            "Analiza korekty kalorii: ${raw.action.name} (Δ${raw.kcalDeltaProposed} → ${raw.newKcal} kcal)",
-            dataJson = """{"action":"${raw.action.name}","kcalDelta":${raw.kcalDeltaProposed},"newKcal":${raw.newKcal},"confidence":"${raw.confidence.name}"}""",
+            "Analiza korekty kalorii: ${raw.action.name} [${raw.reason}] (Δ${raw.kcalDeltaProposed} → ${raw.newKcal} kcal)",
+            dataJson = """{"action":"${raw.action.name}","reason":"${raw.reason}","kcalDelta":${raw.kcalDeltaProposed},"newKcal":${raw.newKcal},"confidence":"${raw.confidence.name}"}""",
             success = true)
         return raw
     }
