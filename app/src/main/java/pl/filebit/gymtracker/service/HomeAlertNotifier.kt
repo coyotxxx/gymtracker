@@ -92,12 +92,25 @@ class HomeAlertNotifier @Inject constructor(
         }
         is DeloadCardState.MissedWorkout -> {
             val r = cardState.recommendation
-            NotificationContent(
-                type = AlertType.MISSED_WORKOUT,
-                title = "GymTracker — opuszczony trening",
-                body = r.reason.take(200),
-                hash = "MIS:${r.severity}:${r.missedCount}:${r.plannedCount}"
-            )
+            // v2.66.0 — JEDEN GŁOS: push o opuszczonym treningu przechodzi przez tę samą
+            // regułę U9 co Karta Coacha (`applyTrainingPauseRule`). Wcześniej leciał surowy
+            // `r.reason` („Zacznijmy dziś") z pominięciem CoachOrchestratora → sprzeczność
+            // z dietą/Coachem. Teraz: znamy powód przerwy → milczymy; nie znamy → pytamy
+            // „co się stało?" (NIE komenderujemy). Reużywamy `trainingPauseQuestion()` =
+            // jedno źródło tekstu, identyczne z kartą na Home.
+            val pause = runCatching { prefs.trainingPause() }.getOrNull()
+            if (pause != null) {
+                null  // świadoma przerwa — dieta/Coach prowadzą, nie nagabujemy
+            } else {
+                val everRecorded = runCatching { prefs.hadTrainingPause() }.getOrDefault(false)
+                val q = pl.filebit.gymtracker.data.coach.trainingPauseQuestion(everRecorded)
+                NotificationContent(
+                    type = AlertType.MISSED_WORKOUT,
+                    title = q.title,
+                    body = q.message.take(200),
+                    hash = "MISq:${everRecorded}:${r.severity}:${r.missedCount}:${r.plannedCount}"
+                )
+            }
         }
         is DeloadCardState.Active,
         is DeloadCardState.None -> null  // Active = już zastosowany, None = brak alertu
