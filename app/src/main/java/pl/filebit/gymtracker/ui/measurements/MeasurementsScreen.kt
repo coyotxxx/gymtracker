@@ -137,12 +137,15 @@ fun MeasurementsScreen(
                         modifier = Modifier.weight(1f),
                         icon = Icons.Default.Straighten,
                         label = "Tkanka tł.",
-                        value = state.latestBf?.let { formatWeight(it) } ?: "—",
-                        suffix = if (state.latestBf != null) "%" else null,
+                        value = state.latestBf?.let { formatWeight(it) }
+                            ?: state.estimatedBf?.let { "~" + formatWeight(it.percent) } ?: "—",
+                        suffix = if (state.latestBf != null || state.estimatedBf != null) "%" else null,
                         trend = state.bfTrend30d,
                         goalType = state.goalType,
                         isWeight = false,
-                        bfStyle = true
+                        bfStyle = true,
+                        subtitle = if (state.latestBf == null)
+                            state.estimatedBf?.let { "szac. • ${it.method.label}" } else null
                     )
                     LastDateCard(
                         modifier = Modifier.weight(1f),
@@ -263,7 +266,8 @@ private fun TopMetricCard(
     trend: TrendInfo?,
     goalType: WeightGoalType,
     isWeight: Boolean,
-    bfStyle: Boolean = false
+    bfStyle: Boolean = false,
+    subtitle: String? = null
 ) {
     Column(
         modifier = modifier
@@ -312,6 +316,13 @@ private fun TopMetricCard(
         Spacer(Modifier.height(2.dp))
         if (trend != null) {
             MiniTrend(trend = trend, goalType = goalType, isWeight = isWeight, bfStyle = bfStyle)
+        } else if (subtitle != null) {
+            // v2.69.0 — wartość szacowana (Navy/Deurenberg), nie z wagi impedancyjnej.
+            Text(
+                subtitle,
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 9.sp),
+                color = AccentOrange.copy(alpha = 0.85f)
+            )
         } else {
             Text(
                 "brak trendu",

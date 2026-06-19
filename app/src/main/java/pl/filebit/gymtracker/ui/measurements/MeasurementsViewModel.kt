@@ -37,6 +37,8 @@ data class MeasurementsUiState(
     val latestWeight: Double? = null,
     val latestWaist: Double? = null,
     val latestBf: Double? = null,
+    /** v2.69.0 — szacowana tkanka (Navy/Deurenberg) gdy brak wpisanej. Wpisana ma pierwszeństwo. */
+    val estimatedBf: pl.filebit.gymtracker.util.BodyFatEstimate? = null,
     val daysSinceLastWeight: Int? = null,
     val weightTrend30d: TrendInfo? = null,
     val bfTrend30d: TrendInfo? = null,
@@ -97,6 +99,19 @@ class MeasurementsViewModel @Inject constructor(
         val bfTrend = computeTrend(all, { it.bodyFatPercent }, rangeDays = 30, now = now)
         val waistTrend = computeTrend(all, { it.waistCm }, rangeDays = 30, now = now)
 
+        // v2.69.0 — brak wpisanej tkanki → oszacuj z obwodów (Navy) lub BMI (Deurenberg).
+        val estimatedBf = if (latestWithBf == null) {
+            pl.filebit.gymtracker.util.BodyFatEstimator.estimate(
+                weightKg = latestWithWeight?.weightKg ?: profile.bodyweightKg,
+                heightCm = profile.heightCm,
+                ageYears = profile.ageYears,
+                gender = profile.gender,
+                waistCm = sortedDesc.firstOrNull { it.waistCm != null }?.waistCm,
+                neckCm = sortedDesc.firstOrNull { it.neckCm != null }?.neckCm,
+                hipsCm = sortedDesc.firstOrNull { it.hipsCm != null }?.hipsCm
+            )
+        } else null
+
         // Goal — start = pierwsza waga w okresie celu (najstarsza waga), aktualne = ostatnia
         val target = profile.targetWeightKg
         val current = latestWithWeight?.weightKg
@@ -117,6 +132,7 @@ class MeasurementsViewModel @Inject constructor(
                 latestWeight = latestWithWeight?.weightKg,
                 latestWaist = latestWithWaist?.waistCm,
                 latestBf = latestWithBf?.bodyFatPercent,
+                estimatedBf = estimatedBf,
                 daysSinceLastWeight = daysSinceLastWeight,
                 weightTrend30d = weightTrend,
                 bfTrend30d = bfTrend,

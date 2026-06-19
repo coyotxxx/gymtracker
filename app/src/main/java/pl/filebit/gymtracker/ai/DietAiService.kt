@@ -416,12 +416,24 @@ class DietAiService @Inject constructor(
 
             // Pomiary obwodów (jeśli świeże)
             latestMeasurement?.let { m ->
-                if (m.waistCm != null || m.chestCm != null || m.bodyFatPercent != null) {
+                // v2.69.0 — brak wpisanej tkanki → podaj OSZACOWANĄ (Navy/Deurenberg), wyraźnie
+                // oznaczoną jako szacunek, by dietetyk mógł ocenić beztłuszczową masę / cel białka.
+                val bfText = m.bodyFatPercent?.let { "BF% $it" }
+                    ?: pl.filebit.gymtracker.util.BodyFatEstimator.estimate(
+                        weightKg = currentWeight,
+                        heightCm = profile.heightCm,
+                        ageYears = profile.ageYears,
+                        gender = profile.gender,
+                        waistCm = m.waistCm,
+                        neckCm = m.neckCm,
+                        hipsCm = m.hipsCm
+                    )?.let { "BF% ~%.1f%% (szacowane, %s)".format(it.percent, it.method.label) }
+                if (m.waistCm != null || m.chestCm != null || bfText != null) {
                     append("- Ostatnie pomiary: ")
                     val parts = listOfNotNull(
                         m.waistCm?.let { "talia $it cm" },
                         m.chestCm?.let { "klatka $it cm" },
-                        m.bodyFatPercent?.let { "BF% $it" }
+                        bfText
                     )
                     append(parts.joinToString(", "))
                     append("\n")
