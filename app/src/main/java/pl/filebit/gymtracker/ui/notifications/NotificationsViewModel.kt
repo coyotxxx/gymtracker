@@ -31,7 +31,10 @@ data class NotifHistoryItem(
     val timeMs: Long,
     val unread: Boolean,
     /** MealType.name dla MEAL — pozwala na akcje Zjedzone/Pominięte z dzwonka. */
-    val mealType: String?
+    val mealType: String?,
+    /** v2.68.0 — utrwalony status konsumpcji (dla „dziś"): CONSUMED/SKIPPED/PLANNED/null.
+     *  Ekran renderuje stan z bazy, nie z ulotnego stanu UI → po powrocie pokazuje „zjedzone". */
+    val mealStatus: MealConsumptionStatus? = null
 )
 
 /**
@@ -52,27 +55,39 @@ class NotificationsViewModel @Inject constructor(
     private val _loading = MutableStateFlow(true)
     val loading: StateFlow<Boolean> = _loading.asStateFlow()
 
+    private val todayStart = startOfDay(System.currentTimeMillis())
+
     // v2.67.0 — JEDNO REAKTYWNE ŹRÓDŁO: wpisy z DB (Room Flow) × ostatnie otwarcie dzwonka
     // (Singleton StateFlow). Dzwonek (instancja VM w topbarze) i ekran historii (osobna
     // instancja) obserwują TE SAME Singletony, więc `markSeen()` gasi licznik NATYCHMIAST
     // wszędzie — koniec „zapala się 2, znika dopiero za drugim razem".
+    // v2.68.0 — + status konsumpcji „dziś" (consumptionRepo): wpis MEAL niesie utrwalony
+    // stan, więc po powrocie pokazuje „zjedzone" zamiast znów pytać. Spójne z ekranem Diety
+    // w obie strony (oznaczysz w Diecie → dzwonek to widzi, i odwrotnie).
     private val recent: StateFlow<List<NotifHistoryItem>> =
-        dao.observeRecent(80)
-            .onEach { _loading.value = false }
-            .combine(seenPrefs.lastSeenFlow) { rows, lastSeen ->
-                rows.map { r ->
-                    NotifHistoryItem(
-                        id = r.id,
-                        kind = runCatching { NotificationKind.valueOf(r.kind) }
-                            .getOrDefault(NotificationKind.GENERIC),
-                        title = r.title,
-                        body = r.body,
-                        timeMs = r.timestampMs,
-                        unread = r.timestampMs > lastSeen,
-                        mealType = r.payload
-                    )
-                }
+        combine(
+            dao.observeRecent(80),
+            seenPrefs.lastSeenFlow,
+            consumptionRepo.observeForDate(todayStart)
+        ) { rows, lastSeen, consumptions ->
+            val statusByMeal = consumptions.associate { it.mealType to it.status }
+            rows.map { r ->
+                val mealType = r.payload?.let { runCatching { MealType.valueOf(it) }.getOrNull() }
+                val isToday = startOfDay(r.timestampMs) == todayStart
+                NotifHistoryItem(
+                    id = r.id,
+                    kind = runCatching { NotificationKind.valueOf(r.kind) }
+                        .getOrDefault(NotificationKind.GENERIC),
+                    title = r.title,
+                    body = r.body,
+                    timeMs = r.timestampMs,
+                    unread = r.timestampMs > lastSeen,
+                    mealType = r.payload,
+                    mealStatus = if (mealType != null && isToday) statusByMeal[mealType] else null
+                )
             }
+        }
+            .onEach { _loading.value = false }
             .stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
 
     val items: StateFlow<List<NotifHistoryItem>> = recent

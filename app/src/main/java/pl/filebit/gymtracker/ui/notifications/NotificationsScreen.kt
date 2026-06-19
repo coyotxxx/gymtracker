@@ -25,8 +25,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateMapOf
-import androidx.compose.runtime.remember
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
 import pl.filebit.gymtracker.data.entity.NotificationKind
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
@@ -56,8 +55,6 @@ fun NotificationsScreen(
 ) {
     val items by vm.items.collectAsStateWithLifecycle()
     val loading by vm.loading.collectAsStateWithLifecycle()
-    // Lokalny stan oznaczenia posiłku (true=zjedzone, false=pominięte) per id wpisu.
-    val mealMarked = remember { mutableStateMapOf<Long, Boolean>() }
 
     LaunchedEffect(Unit) { vm.markSeen() }
 
@@ -81,9 +78,9 @@ fun NotificationsScreen(
                             val it = group[idx]
                             NotificationRow(
                                 item = it,
-                                marked = mealMarked[it.id],
-                                onConsumed = { vm.markMeal(it, true); mealMarked[it.id] = true },
-                                onSkipped = { vm.markMeal(it, false); mealMarked[it.id] = false }
+                                status = it.mealStatus,
+                                onConsumed = { vm.markMeal(it, true) },
+                                onSkipped = { vm.markMeal(it, false) }
                             )
                         }
                     }
@@ -108,7 +105,7 @@ private fun SectionHeader(text: String) {
 @Composable
 private fun NotificationRow(
     item: NotifHistoryItem,
-    marked: Boolean?,
+    status: MealConsumptionStatus?,
     onConsumed: () -> Unit,
     onSkipped: () -> Unit
 ) {
@@ -156,10 +153,12 @@ private fun NotificationRow(
                 }
                 if (showMealActions) {
                     Spacer(Modifier.height(9.dp))
-                    when (marked) {
-                        true -> StatusPill("✓ Zjedzone", SuccessGreen, filled = true)
-                        false -> StatusPill("✗ Pominięte", DarkOnSurfaceVariant, filled = true)
-                        null -> Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    // v2.68.0 — stan z bazy (utrwalony), nie z ulotnego stanu UI.
+                    when (status) {
+                        MealConsumptionStatus.CONSUMED -> StatusPill("✓ Zjedzone", SuccessGreen, filled = true)
+                        MealConsumptionStatus.SKIPPED -> StatusPill("✗ Pominięte", DarkOnSurfaceVariant, filled = true)
+                        // PLANNED / null → jeszcze nieoznaczony, pokaż akcje
+                        else -> Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             ActionPill("✓ Zjedzone", SuccessGreen, onConsumed)
                             ActionPill("✗ Pominięte", DarkOnSurfaceVariant, onSkipped)
                         }

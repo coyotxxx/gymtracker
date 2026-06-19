@@ -4,6 +4,8 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
+import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.entity.NotificationHistory
 import pl.filebit.gymtracker.data.entity.NotificationKind
 import pl.filebit.gymtracker.data.repository.NotificationHistoryStore
@@ -49,6 +51,29 @@ class NotificationsHistoryTest : TestHarness() {
         var seenTries = 0
         while (vm.unreadCount.value != 0 && seenTries++ < 200) Thread.sleep(15)
         assertEquals("po otwarciu licznik gaśnie", 0, vm.unreadCount.value)
+    }
+
+    @Test
+    fun `wpis MEAL niesie utrwalony status konsumpcji (po powrocie pokazuje zjedzone)`() = runBlocking {
+        val now = System.currentTimeMillis()
+        seed(NotificationKind.MEAL, "🍽️ Pora na obiad", "Oznacz status", now - 1000, payload = "LUNCH")
+
+        val kit = ViewModelKit(db, context)
+        // user oznaczył obiad jako zjedzony (jak z ekranu Diety) — setStatus normalizuje datę do start-dnia
+        kit.mealConsumptionRepo.setStatus(now, MealType.LUNCH, MealConsumptionStatus.CONSUMED)
+
+        val vm = NotificationsViewModel(
+            db.notificationHistoryDao(), NotificationSeenPrefs(context),
+            kit.mealConsumptionRepo, kit.adherenceCalc
+        )
+        // czekaj aż reaktywny pipeline (Room Flow × lastSeen × consumption) dostarczy status
+        var tries = 0
+        while (vm.items.value.firstOrNull { it.mealType == "LUNCH" }?.mealStatus !=
+            MealConsumptionStatus.CONSUMED && tries++ < 200) Thread.sleep(15)
+
+        val item = vm.items.value.first { it.mealType == "LUNCH" }
+        assertEquals("status z bazy (nie z ulotnego UI) = CONSUMED",
+            MealConsumptionStatus.CONSUMED, item.mealStatus)
     }
 
     @Test
