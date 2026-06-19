@@ -112,12 +112,23 @@ class HealthScreenshotViewModel @Inject constructor(
                     if (data.activeCalories != null) saved += "kcal ${data.activeCalories}"
                 }
 
-                if (data.weightKg != null && data.weightKg > 0) {
-                    bodyDao.upsert(BodyMeasurement(
-                        date = dateMs,
-                        weightKg = data.weightKg
-                    ))
-                    saved += "waga ${"%.1f".format(data.weightKg)}kg"
+                // v2.70.0 — zapisuj też tkankę i masę mięśniową (nie tylko wagę). Scalamy z
+                // istniejącym pomiarem z tego dnia, żeby nie tworzyć duplikatu i nie gubić obwodów.
+                val weight = data.weightKg?.takeIf { it > 0 }
+                val bodyFat = data.bodyFatPercent?.takeIf { it > 0 }
+                val muscle = data.muscleMassKg?.takeIf { it > 0 }
+                if (weight != null || bodyFat != null || muscle != null) {
+                    val dayEnd = dateMs + 86_400_000L
+                    val existing = bodyDao.getForDay(dateMs, dayEnd)
+                    val merged = (existing ?: BodyMeasurement(date = dateMs)).copy(
+                        weightKg = weight ?: existing?.weightKg,
+                        bodyFatPercent = bodyFat ?: existing?.bodyFatPercent,
+                        muscleMassKg = muscle ?: existing?.muscleMassKg
+                    )
+                    bodyDao.upsert(merged)
+                    weight?.let { saved += "waga ${"%.1f".format(it)}kg" }
+                    bodyFat?.let { saved += "tkanka ${"%.1f".format(it)}%" }
+                    muscle?.let { saved += "mięśnie ${"%.1f".format(it)}kg" }
                 }
             }
             _state.value = HealthScreenshotState.Saved(saved)

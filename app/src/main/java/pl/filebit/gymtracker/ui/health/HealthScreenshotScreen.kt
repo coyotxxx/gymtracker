@@ -290,6 +290,8 @@ private fun ExamplesCard() {
             Text(
                 "• Sen (np. \"4 godz. 19 min\")\n" +
                     "• Waga (np. \"77,2 kg\")\n" +
+                    "• Tkanka tłuszczowa (np. \"24,9%\")\n" +
+                    "• Masa mięśniowa (np. \"34,2 kg\")\n" +
                     "• Tętno spoczynkowe (np. \"64 ud./min\")\n" +
                     "• SpO2 (np. \"97%\")\n" +
                     "• Stres (Huawei: 0-99 → 1-5)\n" +
@@ -300,7 +302,7 @@ private fun ExamplesCard() {
             )
             Spacer(Modifier.height(8.dp))
             Text(
-                "Sen i stres trafiają do RecoveryLog (używane przez analyzer regeneracji + AI). Waga do BodyMeasurement (trend wagi). Pozostałe metryki są informacyjne.",
+                "Sen i stres trafiają do RecoveryLog (używane przez analyzer regeneracji + AI). Waga, tkanka tłuszczowa i masa mięśniowa do BodyMeasurement (trend + dietetyk). Pozostałe metryki są informacyjne.",
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
@@ -361,6 +363,8 @@ private fun ResultCard(idx: Int, total: Int, data: HealthScreenshotData) {
             data.detectedDate?.let { ResultLine("Data", it) }
             data.sleepHours?.let { ResultLine("Sen", "%.1fh".format(it)) }
             data.weightKg?.let { ResultLine("Waga", "%.1f kg".format(it)) }
+            data.bodyFatPercent?.let { ResultLine("Tkanka tłuszczowa", "%.1f%%".format(it)) }
+            data.muscleMassKg?.let { ResultLine("Masa mięśniowa", "%.1f kg".format(it)) }
             data.steps?.let { ResultLine("Kroki", "$it") }
             data.restingHeartRateBpm?.let { ResultLine("Tętno spoczynkowe", "$it bpm") }
             data.spO2Pct?.let { ResultLine("SpO2", "$it%") }

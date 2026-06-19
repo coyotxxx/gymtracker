@@ -31,4 +31,8 @@ interface BodyMeasurementDao {
 
     @Query("SELECT * FROM body_measurements ORDER BY date DESC LIMIT 1")
     suspend fun getLatest(): BodyMeasurement?
+
+    /** v2.70.0 — pomiar z danego dnia (zakres [startMs, endMs)) do scalania importu z wagi. */
+    @Query("SELECT * FROM body_measurements WHERE date >= :startMs AND date < :endMs ORDER BY date DESC LIMIT 1")
+    suspend fun getForDay(startMs: Long, endMs: Long): BodyMeasurement?
 }

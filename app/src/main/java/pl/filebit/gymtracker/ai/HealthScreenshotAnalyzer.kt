@@ -17,6 +17,10 @@ data class HealthScreenshotData(
     val sleepHours: Double? = null,
     /** Waga w kg (jeśli widoczna na zrzucie). */
     val weightKg: Double? = null,
+    /** % tkanki tłuszczowej (np. '24,9%' z wagi analitycznej → 24.9). */
+    val bodyFatPercent: Double? = null,
+    /** Masa mięśniowa / masa mięśni szkieletowych w kg (np. '34,2 kg' → 34.2). */
+    val muscleMassKg: Double? = null,
     /** Liczba kroków dziennie. */
     val steps: Int? = null,
     /** Tętno spoczynkowe (bpm) — np. "Tętno 64 ud./min" w Huawei Health. */
@@ -75,6 +79,8 @@ class HealthScreenshotAnalyzer @Inject constructor(
             append("METRYKI:\n")
             append("• sleepHours — sen w godzinach (zamień '4 godz. 19 min' → 4.32, '7h 45min' → 7.75)\n")
             append("• weightKg — waga w kg (np. '77,2 kg' → 77.2)\n")
+            append("• bodyFatPercent — % tkanki tłuszczowej z wagi analitycznej ('Procentowa zawartość tkanki tłuszczowej 24,9%' → 24.9). NIE myl z trzewną tkanką (poziom 1-59) ani wodą.\n")
+            append("• muscleMassKg — masa mięśniowa / mięśni szkieletowych w kg ('Masa mięśni szkieletowych 34,2 kg' → 34.2). NIE myl z masą beztłuszczową.\n")
             append("• steps — liczba kroków dziś (np. '857 kroków' → 857)\n")
             append("• restingHeartRateBpm — tętno spoczynkowe ('64 ud./min', '64 bpm' → 64)\n")
             append("• spO2Pct — saturacja '97%' → 97\n")
@@ -96,6 +102,8 @@ class HealthScreenshotAnalyzer @Inject constructor(
             {
               "sleepHours": 4.32,
               "weightKg": 77.2,
+              "bodyFatPercent": 24.9,
+              "muscleMassKg": 34.2,
               "steps": 857,
               "restingHeartRateBpm": 64,
               "spO2Pct": 97,
