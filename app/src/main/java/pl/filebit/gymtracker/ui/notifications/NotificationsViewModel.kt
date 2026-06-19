@@ -4,8 +4,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.db.dao.NotificationHistoryDao
 import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
@@ -44,45 +49,42 @@ class NotificationsViewModel @Inject constructor(
     private val adherenceCalc: AdherenceCalculator
 ) : ViewModel() {
 
-    private val _items = MutableStateFlow<List<NotifHistoryItem>>(emptyList())
-    val items: StateFlow<List<NotifHistoryItem>> = _items.asStateFlow()
-
     private val _loading = MutableStateFlow(true)
     val loading: StateFlow<Boolean> = _loading.asStateFlow()
 
-    private val _unreadCount = MutableStateFlow(0)
-    val unreadCount: StateFlow<Int> = _unreadCount.asStateFlow()
-
-    init { reload() }
-
-    fun reload() {
-        _loading.value = true
-        viewModelScope.launch {
-            val lastSeen = seenPrefs.lastSeenMs()
-            val rows = runCatching { dao.getRecent(80) }.getOrDefault(emptyList())
-            val mapped = rows.map { r ->
-                NotifHistoryItem(
-                    id = r.id,
-                    kind = runCatching { NotificationKind.valueOf(r.kind) }
-                        .getOrDefault(NotificationKind.GENERIC),
-                    title = r.title,
-                    body = r.body,
-                    timeMs = r.timestampMs,
-                    unread = r.timestampMs > lastSeen,
-                    mealType = r.payload
-                )
+    // v2.67.0 — JEDNO REAKTYWNE ŹRÓDŁO: wpisy z DB (Room Flow) × ostatnie otwarcie dzwonka
+    // (Singleton StateFlow). Dzwonek (instancja VM w topbarze) i ekran historii (osobna
+    // instancja) obserwują TE SAME Singletony, więc `markSeen()` gasi licznik NATYCHMIAST
+    // wszędzie — koniec „zapala się 2, znika dopiero za drugim razem".
+    private val recent: StateFlow<List<NotifHistoryItem>> =
+        dao.observeRecent(80)
+            .onEach { _loading.value = false }
+            .combine(seenPrefs.lastSeenFlow) { rows, lastSeen ->
+                rows.map { r ->
+                    NotifHistoryItem(
+                        id = r.id,
+                        kind = runCatching { NotificationKind.valueOf(r.kind) }
+                            .getOrDefault(NotificationKind.GENERIC),
+                        title = r.title,
+                        body = r.body,
+                        timeMs = r.timestampMs,
+                        unread = r.timestampMs > lastSeen,
+                        mealType = r.payload
+                    )
+                }
             }
-            _items.value = mapped
-            _unreadCount.value = mapped.count { it.unread }
-            _loading.value = false
-        }
-    }
+            .stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
 
-    /** Wywoływane gdy user otwiera ekran — wszystko do teraz staje się „przeczytane". */
+    val items: StateFlow<List<NotifHistoryItem>> = recent
+
+    val unreadCount: StateFlow<Int> = recent
+        .map { list -> list.count { it.unread } }
+        .stateIn(viewModelScope, SharingStarted.Eagerly, 0)
+
+    /** Wywoływane gdy user otwiera ekran — wszystko do teraz staje się „przeczytane".
+     *  Aktualizuje wspólny Singleton → licznik dzwonka gaśnie reaktywnie (bez reload). */
     fun markSeen() {
         seenPrefs.markSeen()
-        _unreadCount.value = 0
-        _items.value = _items.value.map { it.copy(unread = false) }
     }
 
     /** Akcja Zjedzone/Pominięte wprost z dzwonka — to samo co MealStatusReceiver. */

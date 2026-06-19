@@ -44,6 +44,10 @@ class NotificationsHistoryTest : TestHarness() {
         assertEquals("oba nieprzeczytane (lastSeen=0)", 2, vm.unreadCount.value)
 
         vm.markSeen()
+        // v2.67.0 — licznik jest teraz REAKTYWNY (Room Flow × lastSeenFlow): markSeen
+        // aktualizuje wspólny Singleton, a przeliczenie leci przez combine asynchronicznie.
+        var seenTries = 0
+        while (vm.unreadCount.value != 0 && seenTries++ < 200) Thread.sleep(15)
         assertEquals("po otwarciu licznik gaśnie", 0, vm.unreadCount.value)
     }
 

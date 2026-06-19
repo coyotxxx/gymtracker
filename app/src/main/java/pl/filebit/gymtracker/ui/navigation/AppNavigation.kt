@@ -183,7 +183,7 @@ fun AppNavigation(
                 AppTopBar(
                     onOpenAiAssistant = { aiChoiceVisible = true },
                     onOpenNotifications = {
-                        notificationsVm.reload()
+                        // v2.67.0 — licznik reaktywny (Room Flow × lastSeenFlow); brak ręcznego reload.
                         navController.navigate(Screen.Notifications.route)
                     },
                     notificationsCount = unreadNotificationsCount
