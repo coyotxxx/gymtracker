@@ -1,6 +1,12 @@
 package pl.filebit.gymtracker.ui.ai
 
+import android.content.Context
+import android.graphics.BitmapFactory
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -20,15 +26,21 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Send
+import androidx.compose.material.icons.filled.AddPhotoAlternate
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import java.io.ByteArrayOutputStream
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -80,6 +92,18 @@ fun AiTrainerScreen(
     val listState = rememberLazyListState()
     val context = LocalContext.current
     val toastText = stringResource(R.string.ai_plan_applied_toast)
+
+    // v2.71.0: wybór zdjęć z galerii (wiele naraz — np. kilka zrzutów planu diety).
+    val pickImagesLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetMultipleContents()
+    ) { uris: List<Uri> ->
+        uris.forEach { uri ->
+            readChatImageBytes(context, uri)?.let { bytes ->
+                val b64 = android.util.Base64.encodeToString(bytes, android.util.Base64.NO_WRAP)
+                vm.attachImage(b64, "image/jpeg")
+            }
+        }
+    }
 
     LaunchedEffect(state.messages.size) {
         if (state.messages.isNotEmpty()) {
@@ -312,6 +336,23 @@ fun AiTrainerScreen(
                 }
             }
 
+            // v2.71.0: miniatury załączonych zdjęć nad polem wpisywania
+            if (state.pendingImages.isNotEmpty()) {
+                LazyRow(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    itemsIndexed(state.pendingImages) { idx, img ->
+                        PendingImageThumb(
+                            base64 = img.base64,
+                            onRemove = { vm.removePendingImage(idx) }
+                        )
+                    }
+                }
+            }
+
             // Input
             Row(
                 modifier = Modifier
@@ -319,6 +360,24 @@ fun AiTrainerScreen(
                     .padding(8.dp),
                 verticalAlignment = Alignment.Bottom
             ) {
+                // v2.71.0: przycisk dołączania zdjęć (galeria)
+                val attachEnabled = state.isConnected && !state.isLoading
+                Box(
+                    modifier = Modifier
+                        .size(48.dp)
+                        .background(DarkSurfaceVariant, RoundedCornerShape(14.dp))
+                        .clickable(enabled = attachEnabled) {
+                            pickImagesLauncher.launch("image/*")
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        Icons.Default.AddPhotoAlternate,
+                        contentDescription = "Dołącz zdjęcie",
+                        tint = if (attachEnabled) AccentOrange else DarkOnSurfaceVariant
+                    )
+                }
+                Spacer(Modifier.size(8.dp))
                 OutlinedTextField(
                     value = input,
                     onValueChange = { input = it },
@@ -344,7 +403,9 @@ fun AiTrainerScreen(
                     )
                 )
                 Spacer(Modifier.size(8.dp))
-                val sendEnabled = input.isNotBlank() && state.isConnected && !state.isLoading
+                // v2.71.0: można wysłać same zdjęcia (bez tekstu)
+                val sendEnabled = (input.isNotBlank() || state.pendingImages.isNotEmpty()) &&
+                    state.isConnected && !state.isLoading
                 Box(
                     modifier = Modifier
                         .size(48.dp)
@@ -557,6 +618,13 @@ private fun MessageBubble(
             )
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
+                // v2.71.0: zdjęcia dołączone przez usera
+                if (message.images.isNotEmpty()) {
+                    message.images.forEach { img ->
+                        ChatImage(base64 = img.base64)
+                        Spacer(Modifier.height(6.dp))
+                    }
+                }
                 SelectionContainer {
                     if (isUser) {
                         Text(
@@ -671,6 +739,91 @@ private fun TargetPlanSelector(
             }
         }
     }
+}
+
+/** v2.71.0: miniatura załączonego (jeszcze nie wysłanego) zdjęcia z przyciskiem usuwania. */
+@Composable
+private fun PendingImageThumb(base64: String, onRemove: () -> Unit) {
+    val bmp = remember(base64) { decodeBase64ToBitmap(base64) }
+    Box(modifier = Modifier.size(64.dp)) {
+        if (bmp != null) {
+            Image(
+                bitmap = bmp.asImageBitmap(),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(DarkSurface, RoundedCornerShape(8.dp)),
+                contentScale = ContentScale.Crop
+            )
+        }
+        Box(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(2.dp)
+                .size(20.dp)
+                .background(Color.Black.copy(alpha = 0.6f), RoundedCornerShape(50))
+                .clickable(onClick = onRemove),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                Icons.Default.Close,
+                contentDescription = "Usuń zdjęcie",
+                tint = Color.White,
+                modifier = Modifier.size(14.dp)
+            )
+        }
+    }
+}
+
+/** v2.71.0: zdjęcie w bańce wiadomości (historia czatu). */
+@Composable
+private fun ChatImage(base64: String) {
+    val bmp = remember(base64) { decodeBase64ToBitmap(base64) }
+    if (bmp != null) {
+        Image(
+            bitmap = bmp.asImageBitmap(),
+            contentDescription = null,
+            modifier = Modifier
+                .widthIn(max = 220.dp)
+                .background(DarkSurface, RoundedCornerShape(8.dp)),
+            contentScale = ContentScale.Fit
+        )
+    }
+}
+
+private fun decodeBase64ToBitmap(base64: String): android.graphics.Bitmap? = try {
+    val bytes = android.util.Base64.decode(base64, android.util.Base64.NO_WRAP)
+    BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+} catch (_: Exception) {
+    null
+}
+
+/**
+ * v2.71.0: odczyt + downscale zdjęcia do JPEG (long edge 1568 px — zalecenie Anthropic).
+ * Identyczna logika jak w FoodImageAnalyzerScreen: normalizuje format (PNG/HEIC/WebP → JPEG),
+ * zmniejsza base64 i unika 400 z API przez mismatch media_type.
+ */
+private fun readChatImageBytes(context: Context, uri: Uri): ByteArray? = try {
+    context.contentResolver.openInputStream(uri)?.use { stream ->
+        val raw = stream.readBytes()
+        val bitmap = BitmapFactory.decodeByteArray(raw, 0, raw.size) ?: return@use raw
+        val maxEdge = 1568
+        val longEdge = maxOf(bitmap.width, bitmap.height)
+        val scaled = if (longEdge > maxEdge) {
+            val ratio = maxEdge.toFloat() / longEdge
+            android.graphics.Bitmap.createScaledBitmap(
+                bitmap,
+                (bitmap.width * ratio).toInt().coerceAtLeast(1),
+                (bitmap.height * ratio).toInt().coerceAtLeast(1),
+                true
+            )
+        } else bitmap
+        val output = ByteArrayOutputStream()
+        scaled.compress(android.graphics.Bitmap.CompressFormat.JPEG, 85, output)
+        output.toByteArray()
+    }
+} catch (_: Exception) {
+    null
 }
 
 @Composable

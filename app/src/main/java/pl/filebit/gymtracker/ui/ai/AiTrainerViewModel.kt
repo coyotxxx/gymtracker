@@ -12,6 +12,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
 import pl.filebit.gymtracker.ai.AiClient
 import pl.filebit.gymtracker.ai.AiContextBuilder
 import pl.filebit.gymtracker.ai.AiMessage
@@ -27,6 +29,7 @@ data class ChatMessage(
     val id: Long = 0L,           // 0 dopóki nie zapisana w DB
     val role: AiRole,
     val text: String,
+    val images: List<pl.filebit.gymtracker.ai.AiImage> = emptyList(),  // v2.71.0: zdjęcia usera
     val proposal: AiPlanProposal? = null,
     val applied: Boolean = false
 )
@@ -53,7 +56,9 @@ data class AiTrainerUiState(
     val availablePlans: List<pl.filebit.gymtracker.data.entity.TrainingPlan> = emptyList(),
     val improvementPreview: pl.filebit.gymtracker.ai.AiPlanProposal? = null,
     /** Ostatnia wysłana wiadomość USER — używana przez retry() gdy AI failuje. */
-    val lastUserPrompt: String? = null
+    val lastUserPrompt: String? = null,
+    // v2.71.0: zdjęcia dołączone do następnej wiadomości (przed wysłaniem).
+    val pendingImages: List<pl.filebit.gymtracker.ai.AiImage> = emptyList()
 ) {
     /** Ostatnia wiadomość ASSISTANT z planem, której jeszcze nie zastosowano. */
     val pendingProposalMessage: ChatMessage?
@@ -145,6 +150,26 @@ class AiTrainerViewModel @Inject constructor(
         Toast.makeText(app, text, Toast.LENGTH_SHORT).show()
     }
 
+    private val chatJson = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
+
+    /** v2.71.0: dołącza zdjęcie do następnej wiadomości (max [MAX_CHAT_IMAGES]). */
+    fun attachImage(base64: String, mimeType: String) {
+        val current = _state.value.pendingImages
+        if (current.size >= MAX_CHAT_IMAGES) {
+            toast("Maks. $MAX_CHAT_IMAGES zdjęć na wiadomość")
+            return
+        }
+        _state.value = _state.value.copy(
+            pendingImages = current + pl.filebit.gymtracker.ai.AiImage(base64, mimeType)
+        )
+    }
+
+    fun removePendingImage(index: Int) {
+        _state.value = _state.value.copy(
+            pendingImages = _state.value.pendingImages.filterIndexed { i, _ -> i != index }
+        )
+    }
+
     // 0L = nowa konwersacja (utworzy się przy pierwszej wiadomości)
     private val initialConversationId: Long =
         savedStateHandle.get<String>("conversationId")?.toLongOrNull() ?: 0L
@@ -200,10 +225,16 @@ class AiTrainerViewModel @Inject constructor(
     private fun AiChatMessageEntity.toChatMessage(): ChatMessage {
         val parsedRole = if (role == AiRole.USER.name) AiRole.USER else AiRole.ASSISTANT
         val proposal = if (parsedRole == AiRole.ASSISTANT) planApplier.extractProposal(text) else null
+        val imgs = imagesJson?.let { raw ->
+            runCatching {
+                chatJson.decodeFromString<List<pl.filebit.gymtracker.ai.AiImage>>(raw)
+            }.getOrNull()
+        } ?: emptyList()
         return ChatMessage(
             id = id,
             role = parsedRole,
             text = text,
+            images = imgs,
             proposal = proposal,
             applied = applied
         )
@@ -219,8 +250,9 @@ class AiTrainerViewModel @Inject constructor(
     }
 
     fun sendMessage(text: String) {
-        if (text.isBlank()) return
-        sendInternal(text)
+        // v2.71.0: dozwolone same zdjęcia (bez tekstu) — wtedy domyślna prośba.
+        if (text.isBlank() && _state.value.pendingImages.isEmpty()) return
+        sendInternal(text.ifBlank { "Przeanalizuj załączone zdjęcia." })
     }
 
     fun runQuickAction(action: QuickAction) {
@@ -237,16 +269,19 @@ class AiTrainerViewModel @Inject constructor(
             return
         }
         val isFirstMessage = _state.value.messages.isEmpty()
+        // v2.71.0: zdjęcia dołączone do tej wiadomości — przechwytujemy i czyścimy bufor.
+        val images = _state.value.pendingImages
         // UI i DB widzą displayText (krótka forma). API dostaje pełen prompt
         // (przez `combined` poniżej). Jeśli user pisał ręcznie — displayText==prompt.
         val uiText = displayText ?: prompt
-        val userMsgUi = ChatMessage(role = AiRole.USER, text = uiText)
+        val userMsgUi = ChatMessage(role = AiRole.USER, text = uiText, images = images)
         _state.value = _state.value.copy(
             messages = _state.value.messages + userMsgUi,
             isLoading = true,
             error = null,
             planAppliedId = null,
-            lastUserPrompt = prompt
+            lastUserPrompt = prompt,
+            pendingImages = emptyList()
         )
 
         viewModelScope.launch {
@@ -257,7 +292,8 @@ class AiTrainerViewModel @Inject constructor(
                 AiChatMessageEntity(
                     conversationId = convId,
                     role = AiRole.USER.name,
-                    text = uiText  // v1.24.48: DB zapisuje user-friendly displayText
+                    text = uiText,  // v1.24.48: DB zapisuje user-friendly displayText
+                    imagesJson = if (images.isEmpty()) null else chatJson.encodeToString(images)
                 )
             )
             // przepnij ostatnią user wiadomość na zapisaną wersję z id
@@ -297,11 +333,22 @@ class AiTrainerViewModel @Inject constructor(
                 "kontekście. NIE wymyślaj ani nie 'dopowiadaj' wartości, których tu nie ma — nawet jeśli " +
                 "pasowałyby do typowej historii. Gdy danych brak, napisz wprost: 'brak danych'.\n\n" +
                 "${pl.filebit.gymtracker.ai.CACHE_BREAKPOINT_MARKER}\n\n" +
-                "Pytanie/prośba:\n$prompt"
+                "Pytanie/prośba:\n$prompt" +
+                // v2.71.0: gdy user załączył zdjęcia — confirm-first przed zapisem.
+                if (images.isNotEmpty()) {
+                    "\n\n[Użytkownik załączył ${images.size} zdjęć — odczytaj je dokładnie.] " +
+                    "Jeśli prośba dotyczy ZAPISU danych (plan diety, posiłki, pomiary wagi/ciała, " +
+                    "plan treningu): NAJPIERW wypisz czytelnie co rozpoznałeś na zdjęciach i POPROŚ " +
+                    "o potwierdzenie. Użyj narzędzi zapisujących (add_meal, log_weight itd.) DOPIERO " +
+                    "po wyraźnym potwierdzeniu użytkownika ('tak'/'zapisz'). Nie zapisuj nic bez zgody."
+                } else ""
 
+            // v2.71.0: obrazy idą tylko z bieżącą (ostatnią) wiadomością user. Historia
+            // przekazywana jako tekst — AI pamięta swój wcześniejszy opis zdjęć, więc przy
+            // potwierdzeniu w kolejnej turze nie trzeba przesyłać obrazów ponownie (koszt).
             val apiMessages = _state.value.messages.dropLast(1).map {
                 AiMessage(it.role, it.text)
-            } + AiMessage(AiRole.USER, combined)
+            } + AiMessage(AiRole.USER, combined, images = images)
 
             // v1.11.67: chatWithTools - AI moze poprosic o deep dive (get_workouts,
             // get_events, get_rollups, get_exercise_history, get_body_history)
@@ -525,5 +572,10 @@ class AiTrainerViewModel @Inject constructor(
 
     fun consumePlanAppliedNav() {
         _state.value = _state.value.copy(planAppliedId = null)
+    }
+
+    companion object {
+        /** v2.71.0: limit zdjęć na jedną wiadomość (koszt/tokeny). */
+        const val MAX_CHAT_IMAGES = 6
     }
 }

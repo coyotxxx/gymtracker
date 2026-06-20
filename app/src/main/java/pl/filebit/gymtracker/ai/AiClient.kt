@@ -25,7 +25,24 @@ import javax.inject.Singleton
 
 enum class AiRole { USER, ASSISTANT }
 
-data class AiMessage(val role: AiRole, val content: String)
+/**
+ * v2.71.0 — obraz dołączony do wiadomości użytkownika (multimodal).
+ * [base64] bez wrap, [mimeType] np. "image/jpeg". Serializowalny, bo
+ * przechowywany w Room (AiChatMessageEntity.imagesJson) do redisplay historii.
+ */
+@kotlinx.serialization.Serializable
+data class AiImage(val base64: String, val mimeType: String)
+
+/**
+ * v2.71.0 — [images] pozwala dołączyć zdjęcia do user message (czat z obrazami).
+ * Obsługiwane tylko ścieżką Anthropic tool-use (callAnthropicWithTools); zwykły
+ * chat/OpenAI ignorują obrazy.
+ */
+data class AiMessage(
+    val role: AiRole,
+    val content: String,
+    val images: List<AiImage> = emptyList()
+)
 
 /**
  * v1.25.3 — sentinel oddzielający stable context (cached) od dynamic (fresh)
@@ -348,7 +365,7 @@ class AiClientImpl @Inject constructor(
         initialMessages.forEachIndexed { idx, m ->
             messagesArray.add(buildJsonObject {
                 put("role", if (m.role == AiRole.USER) "user" else "assistant")
-                put("content", buildContentArrayWithCacheBreak(m.content, applyCache = idx == lastUserIdx))
+                put("content", buildMessageContent(m, applyCache = idx == lastUserIdx))
             })
         }
 
@@ -631,6 +648,32 @@ class AiClientImpl @Inject constructor(
      * Anthropic min cache size: 1024 tokens dla Opus/Sonnet, 2048 dla Haiku.
      * Mniejszy block jest po prostu nie cached (no error).
      */
+    /**
+     * v2.71.0 — buduje content array Anthropic dla wiadomości, która może nieść obrazy.
+     * Obrazy idą PRZED tekstem (zalecenie Anthropic: image blocks, potem pytanie).
+     * Część tekstowa zachowuje logikę cache breakpoint (buildContentArrayWithCacheBreak).
+     */
+    private fun buildMessageContent(
+        m: AiMessage,
+        applyCache: Boolean
+    ): kotlinx.serialization.json.JsonArray {
+        val textBlocks = buildContentArrayWithCacheBreak(m.content, applyCache)
+        if (m.images.isEmpty()) return textBlocks
+        return buildJsonArray {
+            m.images.forEach { img ->
+                add(buildJsonObject {
+                    put("type", "image")
+                    put("source", buildJsonObject {
+                        put("type", "base64")
+                        put("media_type", img.mimeType)
+                        put("data", img.base64)
+                    })
+                })
+            }
+            textBlocks.forEach { add(it) }
+        }
+    }
+
     private fun buildContentArrayWithCacheBreak(
         content: String,
         applyCache: Boolean

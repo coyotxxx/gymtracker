@@ -721,6 +721,14 @@ object AppModule {
         }
     }
 
+    // v2.71.0: czat AI z obrazami — kolumna imagesJson (JSON List<AiImage>).
+    // ALTER TABLE additive, nullable → zero ryzyka dla danych usera.
+    internal val MIGRATION_74_75 = object : Migration(74, 75) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `ai_chat_messages` ADD COLUMN `imagesJson` TEXT")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -750,7 +758,8 @@ object AppModule {
                 MIGRATION_70_71,
                 MIGRATION_71_72,
                 MIGRATION_72_73,
-                MIGRATION_73_74
+                MIGRATION_73_74,
+                MIGRATION_74_75
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
