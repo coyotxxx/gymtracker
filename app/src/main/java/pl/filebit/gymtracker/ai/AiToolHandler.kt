@@ -41,8 +41,9 @@ data class ToolLimits(
     val maxBodyHistory: Int = 365,
     /** Max rozmiar wyniku JSON — chroni context AI przed overflow. */
     val maxResultSizeBytes: Int = 500 * 1024,
-    /** Max wywołań tools per minuta — chroni przed runaway AI loop. */
-    val maxCallsPerMinute: Int = 30
+    /** Max wywołań tools per minuta — chroni przed runaway AI loop.
+     *  v2.72.0: 30→60 (siatka bezpieczeństwa; zbiorczy zapis idzie teraz przez save_diet_plan). */
+    val maxCallsPerMinute: Int = 60
 )
 
 /**
@@ -138,6 +139,7 @@ class AiToolHandler @Inject constructor(
             "log_weight" -> execLogWeight(input)
             "get_meals" -> execGetMeals(input)        // v2.37.0: AI widzi posiłki dnia (id do podmiany)
             "add_meal" -> execAddMeal(input)
+            "save_diet_plan" -> execSaveDietPlan(input)  // v2.72.0: atomowy zapis całego planu dnia
             "delete_meal" -> execDeleteMeal(input)    // v2.37.0: AI usuwa/podmienia posiłek
             "set_calorie_target" -> execSetCalorieTarget(input)
             "record_training_pause" -> execRecordTrainingPause(input)  // v2.59.0
@@ -242,6 +244,83 @@ class AiToolHandler @Inject constructor(
         diag.info(diagCat, "AiToolHandler", "ai_add_meal",
             "AI dodał ${grams.toInt()}g ${product.name} do ${mealType.name}", success = true)
         return toolOk("Dodałem ${grams.toInt()} g ${product.name} do posiłku ${mealType.name}.")
+    }
+
+    /**
+     * v2.72.0: zapis CAŁEGO planu dnia jednym wywołaniem (atomowo). Rozwiązuje crash, w którym
+     * AI zapisywał plan po jednym składniku przez add_meal → przebicie limitów + lawina delete_meal.
+     * Posiłki uporządkowane = Posiłek 1..N; mealType wyliczany z kolejności (MealSlots), o ile AI go nie poda.
+     * Brakujące w bazie produkty są pomijane i zgłaszane (auto-dodawanie z OpenFoodFacts → ETAP 3).
+     */
+    private suspend fun execSaveDietPlan(input: JsonObject): String {
+        val mealsArr = input["meals"] as? kotlinx.serialization.json.JsonArray
+            ?: return toolErr("Brak listy 'meals'")
+        if (mealsArr.isEmpty()) return toolErr("Lista 'meals' jest pusta")
+        val dateMs = parseDateOrNow(input)
+        val n = mealsArr.size
+        val slotTypes = pl.filebit.gymtracker.util.MealSlots.typesFor(n)
+        val products = runCatching { dietRepo.observeAllProducts().first() }.getOrDefault(emptyList())
+        fun findProduct(name: String): pl.filebit.gymtracker.data.entity.FoodProduct? =
+            products.firstOrNull { it.name.equals(name, ignoreCase = true) }
+                ?: products.firstOrNull { it.name.contains(name, ignoreCase = true) }
+
+        val entries = mutableListOf<pl.filebit.gymtracker.data.entity.MealEntry>()
+        val skipped = mutableListOf<String>()
+        var savedMeals = 0
+        mealsArr.forEachIndexed { idx, mealEl ->
+            val meal = mealEl.jsonObject
+            val mealName = meal["name"]?.jsonPrimitive?.contentOrNull?.trim().orEmpty()
+            val mealType = meal["mealType"]?.jsonPrimitive?.contentOrNull?.uppercase()
+                ?.let { runCatching { pl.filebit.gymtracker.data.entity.MealType.valueOf(it) }.getOrNull() }
+                ?: slotTypes.getOrElse(idx) { pl.filebit.gymtracker.data.entity.MealType.SNACK }
+            val ingredients = meal["ingredients"] as? kotlinx.serialization.json.JsonArray
+            var anyAdded = false
+            ingredients?.forEach { ingEl ->
+                val ing = ingEl.jsonObject
+                val pname = ing["product"]?.jsonPrimitive?.contentOrNull?.trim() ?: return@forEach
+                val grams = ing["grams"]?.jsonPrimitive?.doubleOrNull ?: return@forEach
+                if (grams < 1 || grams > 2000) { skipped.add("$pname (gramatura poza zakresem)"); return@forEach }
+                val product = findProduct(pname)
+                if (product == null) { skipped.add(pname); return@forEach }
+                entries.add(
+                    pl.filebit.gymtracker.data.entity.MealEntry(
+                        dateMs = dateMs, mealType = mealType,
+                        productId = product.id, grams = grams,
+                        notes = mealName, isPlanned = true
+                    )
+                )
+                anyAdded = true
+            }
+            if (anyAdded) savedMeals++
+        }
+
+        if (entries.isEmpty()) {
+            return toolErr("Nie zapisano żadnego posiłku — brak produktów w bazie: " +
+                skipped.distinct().joinToString(", ").take(300))
+        }
+
+        dietRepo.replaceMealsForDate(dateMs, entries)
+        // Liczba posiłków dnia = liczba posiłków planu (clamp do dozwolonego zakresu).
+        val cfg = dietPrefs.load()
+        val clampedN = n.coerceIn(2, 6)
+        if (cfg.mealsPerDay != clampedN) dietPrefs.save(cfg.copy(mealsPerDay = clampedN))
+        // Przelicz adherence dnia (jak każda ścieżka zapisu posiłku).
+        runCatching { adherenceCalc.computeForDate(dateMs) }
+        diag.info(diagCat, "AiToolHandler", "ai_save_diet_plan",
+            "AI zapisał plan dnia: $savedMeals posiłków, ${entries.size} pozycji" +
+                if (skipped.isEmpty()) "" else ", pominięto ${skipped.size}", success = true)
+
+        return buildJsonObject {
+            put("status", "ok")
+            put("saved_meals", savedMeals)
+            put("saved_items", entries.size)
+            put("meals_per_day_set", clampedN)
+            if (skipped.isNotEmpty()) {
+                putJsonArray("skipped_products") { skipped.distinct().take(30).forEach { add(it) } }
+            }
+            put("message", "Zapisałem plan: $savedMeals posiłków (${entries.size} pozycji)." +
+                if (skipped.isEmpty()) "" else " Pominięto brakujące w bazie: ${skipped.distinct().joinToString(", ").take(200)}.")
+        }.toString()
     }
 
     private suspend fun execSetCalorieTarget(input: JsonObject): String {

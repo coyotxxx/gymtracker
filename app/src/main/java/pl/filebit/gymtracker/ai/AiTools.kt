@@ -47,6 +47,7 @@ object AiTools {
         add(toolLogWeight())
         add(toolGetMeals())       // v2.37.0 — AI widzi posiłki dnia
         add(toolAddMeal())
+        add(toolSaveDietPlan())   // v2.72.0 — atomowy zapis CAŁEGO planu dnia (1 wywołanie)
         add(toolDeleteMeal())     // v2.37.0 — AI podmienia/usuwa posiłek
         add(toolSetCalorieTarget())
         add(toolSetDietGoal())
@@ -75,6 +76,7 @@ object AiTools {
         // v2.22.0 — zapis danych
         "log_weight",
         "add_meal",
+        "save_diet_plan",                // v2.72.0 — zapis całego planu dnia jednym wywołaniem
         "set_calorie_target",
         "set_diet_goal",
         // v2.37.0 — odczyt + podmiana posiłków (AI widzi i zmienia kolację)
@@ -136,6 +138,46 @@ object AiTools {
                 putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
             }
             putJsonArray("required") { add("product"); add("grams") }
+        }
+    }
+
+    private fun toolSaveDietPlan(): JsonObject = buildJsonObject {
+        put("name", "save_diet_plan")
+        put("description", "Zapisuje CAŁY plan dnia JEDNYM wywołaniem (atomowo zastępuje posiłki dnia). " +
+            "Użyj GDY user poda gotowy plan diety (np. ze zdjęcia lub listę kilku posiłków naraz) — " +
+            "NIE wywołuj add_meal po jednym składniku (to przekracza limity i psuje zapis). " +
+            "Posiłki w kolejności = Posiłek 1..N. Produkty muszą istnieć w bazie produktów (brakujące zostaną pominięte i zgłoszone w wyniku). " +
+            "Ustawia też liczbę posiłków dnia na liczbę przekazanych posiłków.")
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
+                putJsonObject("meals") {
+                    put("type", "array")
+                    put("description", "Lista posiłków W KOLEJNOŚCI (1..N). Każdy posiłek = nazwa + składniki.")
+                    putJsonObject("items") {
+                        put("type", "object")
+                        putJsonObject("properties") {
+                            putJsonObject("name") { put("type", "string"); put("description", "Nazwa dania (opcjonalnie, np. 'Owsianka z bananem')") }
+                            putJsonObject("mealType") { put("type", "string"); put("description", "BREAKFAST/LUNCH/DINNER/SNACK (opcjonalnie — domyślnie wyliczane z kolejności)") }
+                            putJsonObject("ingredients") {
+                                put("type", "array")
+                                put("description", "Składniki posiłku (produkt + gramatura)")
+                                putJsonObject("items") {
+                                    put("type", "object")
+                                    putJsonObject("properties") {
+                                        putJsonObject("product") { put("type", "string"); put("description", "Nazwa produktu (musi pasować do bazy produktów)") }
+                                        putJsonObject("grams") { put("type", "number"); put("description", "Gramatura (1-2000)") }
+                                    }
+                                    putJsonArray("required") { add("product"); add("grams") }
+                                }
+                            }
+                        }
+                        putJsonArray("required") { add("ingredients") }
+                    }
+                }
+            }
+            putJsonArray("required") { add("meals") }
         }
     }
 

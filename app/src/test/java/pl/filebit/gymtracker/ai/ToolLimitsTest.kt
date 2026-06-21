@@ -20,7 +20,7 @@ class ToolLimitsTest {
     @Test
     fun `defaults sane`() {
         val l = ToolLimits()
-        assertEquals(30, l.maxCallsPerMinute)
+        assertEquals(60, l.maxCallsPerMinute)   // v2.72.0: 30→60
         assertEquals(500 * 1024, l.maxResultSizeBytes)
         assertEquals(30, l.maxWorkouts)
         assertEquals(100, l.maxEvents)

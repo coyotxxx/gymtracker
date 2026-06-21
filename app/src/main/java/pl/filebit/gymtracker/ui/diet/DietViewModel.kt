@@ -1301,20 +1301,16 @@ class DietViewModel @Inject constructor(
                                 ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                         )
                     }
-                    // v1.24.14: SKIPPED posiłki NIE liczą się w totals dnia.
-                    // Filozofia: user mówi "pominąłem" → system to respektuje (nie liczy kcal).
-                    // PLANNED+CONSUMED traktujemy jako "planowane do zjedzenia / zjedzone".
-                    val countingGroups = groups.filter {
-                        it.consumptionStatus != pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED
-                    }
-                    val totals = countingGroups.fold(DayTotals()) { acc, g ->
-                        DayTotals(
-                            acc.kcal + g.totals.kcal,
-                            acc.protein + g.totals.protein,
-                            acc.carbs + g.totals.carbs,
-                            acc.fat + g.totals.fat
-                        )
-                    }
+                    // v2.72.0: totale liczone RAZ z wpisów (withMacros), NIE z grup.
+                    // Wcześniej przy 5-6 posiłkach SNACK powtarzał się w kilku slotach,
+                    // a grupowanie po typie zwracało te same wpisy → kcal/makro liczone ×2/×3.
+                    // SKIPPED posiłki nadal nie liczą się do totali (user świadomie pominął).
+                    val skippedTypes = consumptionMap
+                        .filterValues { it == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED }
+                        .keys
+                    val totals = withMacros
+                        .filter { it.entry.mealType !in skippedTypes }
+                        .fold(DayTotals()) { acc, m -> acc + m }
                     val mealsTotal = groups.count { it.entries.isNotEmpty() }
                     val mealsConfirmed = groups.count {
                         it.consumptionStatus == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED &&

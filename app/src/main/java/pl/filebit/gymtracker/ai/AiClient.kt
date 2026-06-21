@@ -369,7 +369,7 @@ class AiClientImpl @Inject constructor(
             })
         }
 
-        val maxIterations = 6  // bezpieczna granica multi-turn
+        val maxIterations = 12  // v2.72.0: 6→12 (siatka bezpieczeństwa dla złożonych multi-turn; zbiorczy zapis planu idzie przez save_diet_plan)
         var iteration = 0
         while (iteration < maxIterations) {
             iteration++

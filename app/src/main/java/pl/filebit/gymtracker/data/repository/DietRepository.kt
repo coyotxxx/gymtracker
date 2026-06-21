@@ -46,6 +46,15 @@ class DietRepository @Inject constructor(
     suspend fun updateMeal(entry: MealEntry) { mealDao.upsert(entry) }
     suspend fun deleteMeal(id: Long) = mealDao.delete(id)
 
+    /**
+     * v2.72.0: atomowo zastępuje wszystkie posiłki dnia (czyść + wstaw w 1 transakcji).
+     * Wpisy dostają dateMs = początek dnia (spójnie z odczytem po zakresie dnia).
+     */
+    suspend fun replaceMealsForDate(dateMs: Long, entries: List<MealEntry>) {
+        val (start, end) = dayBounds(dateMs)
+        mealDao.replaceForDateRange(start, end, entries.map { it.copy(dateMs = start) })
+    }
+
     // ===== Fasting window =====
     fun observeActiveFasting(): Flow<FastingWindow?> = fastingDao.observeActive()
     suspend fun getActiveFasting(): FastingWindow? = fastingDao.getActive()
