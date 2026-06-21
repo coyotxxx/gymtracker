@@ -76,7 +76,9 @@ class AiToolHandler @Inject constructor(
     // v2.23.0 (K5 fix): recompute adherence po add_meal (jak każda ścieżka UI)
     private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator,
     // v2.59.0 (U9+U10): zapamiętanie przyczyny przerwy w treningach
-    private val deloadPrefs: pl.filebit.gymtracker.data.repository.DeloadPreferences
+    private val deloadPrefs: pl.filebit.gymtracker.data.repository.DeloadPreferences,
+    // v2.74.0 (ETAP 3): brakujący produkt → dociągnij z OpenFoodFacts zamiast pomijać
+    private val productResolver: pl.filebit.gymtracker.data.repository.ProductResolver
 ) {
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
@@ -229,10 +231,9 @@ class AiToolHandler @Inject constructor(
         val mealTypeStr = (input["mealType"]?.jsonPrimitive?.contentOrNull ?: "LUNCH").uppercase()
         val mealType = runCatching { pl.filebit.gymtracker.data.entity.MealType.valueOf(mealTypeStr) }.getOrNull()
             ?: return toolErr("Niepoprawny posiłek '$mealTypeStr' (BREAKFAST/LUNCH/DINNER/SNACK)")
-        val products = runCatching { dietRepo.observeAllProducts().first() }.getOrDefault(emptyList())
-        val product = products.firstOrNull { it.name.equals(name, ignoreCase = true) }
-            ?: products.firstOrNull { it.name.contains(name, ignoreCase = true) }
-            ?: return toolErr("Nie znaleziono produktu '$name' w bazie produktów")
+        // v2.74.0: lokalnie → OpenFoodFacts (dodaje realny produkt do bazy), inaczej błąd.
+        val product = productResolver.resolveOrNull(name)
+            ?: return toolErr("Nie znaleziono produktu '$name' (brak w bazie i w OpenFoodFacts)")
         val dateMs = parseDateOrNow(input)
         // v2.73.0: posiłek identyfikowany numerem slotu. AI może podać 'mealSlot' wprost,
         // inaczej wyliczamy slot z tagu mealType wg konfiguracji liczby posiłków.
@@ -257,7 +258,8 @@ class AiToolHandler @Inject constructor(
      * v2.72.0: zapis CAŁEGO planu dnia jednym wywołaniem (atomowo). Rozwiązuje crash, w którym
      * AI zapisywał plan po jednym składniku przez add_meal → przebicie limitów + lawina delete_meal.
      * Posiłki uporządkowane = Posiłek 1..N; mealType wyliczany z kolejności (MealSlots), o ile AI go nie poda.
-     * Brakujące w bazie produkty są pomijane i zgłaszane (auto-dodawanie z OpenFoodFacts → ETAP 3).
+     * v2.74.0 (ETAP 3): brakujący produkt → dociągany z OpenFoodFacts (ProductResolver);
+     * dopiero gdy OFF nic nie ma — pomijany i zgłaszany.
      */
     private suspend fun execSaveDietPlan(input: JsonObject): String {
         val mealsArr = input["meals"] as? kotlinx.serialization.json.JsonArray
@@ -266,10 +268,6 @@ class AiToolHandler @Inject constructor(
         val dateMs = parseDateOrNow(input)
         val n = mealsArr.size
         val slotTypes = pl.filebit.gymtracker.util.MealSlots.typesFor(n)
-        val products = runCatching { dietRepo.observeAllProducts().first() }.getOrDefault(emptyList())
-        fun findProduct(name: String): pl.filebit.gymtracker.data.entity.FoodProduct? =
-            products.firstOrNull { it.name.equals(name, ignoreCase = true) }
-                ?: products.firstOrNull { it.name.contains(name, ignoreCase = true) }
 
         val entries = mutableListOf<pl.filebit.gymtracker.data.entity.MealEntry>()
         val skipped = mutableListOf<String>()
@@ -287,7 +285,8 @@ class AiToolHandler @Inject constructor(
                 val pname = ing["product"]?.jsonPrimitive?.contentOrNull?.trim() ?: return@forEach
                 val grams = ing["grams"]?.jsonPrimitive?.doubleOrNull ?: return@forEach
                 if (grams < 1 || grams > 2000) { skipped.add("$pname (gramatura poza zakresem)"); return@forEach }
-                val product = findProduct(pname)
+                // lokalnie → OpenFoodFacts (dodaje realny produkt do bazy), inaczej pomiń
+                val product = productResolver.resolveOrNull(pname)
                 if (product == null) { skipped.add(pname); return@forEach }
                 entries.add(
                     pl.filebit.gymtracker.data.entity.MealEntry(

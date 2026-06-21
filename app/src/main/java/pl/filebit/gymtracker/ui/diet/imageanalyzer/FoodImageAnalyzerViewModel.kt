@@ -29,7 +29,8 @@ class FoodImageAnalyzerViewModel @Inject constructor(
     private val analyzer: FoodImageAnalyzer,
     private val dietRepo: DietRepository,
     private val foodProductDao: pl.filebit.gymtracker.data.db.dao.FoodProductDao,
-    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
+    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences,
+    private val productResolver: pl.filebit.gymtracker.data.repository.ProductResolver
 ) : ViewModel() {
 
     /** v2.73.0: liczba posiłków/dzień — do pickera „Posiłek N". */
@@ -52,41 +53,32 @@ class FoodImageAnalyzerViewModel @Inject constructor(
 
     /**
      * Zapisuje analizowane składniki jako MealEntry w wybranym slocie.
-     * Każdy składnik staje się oddzielnym MealEntry. Brakujące produkty w bazie
-     * → utwórz custom FoodProduct z source="image_analysis".
+     * Każdy składnik staje się oddzielnym MealEntry. Brakujący produkt:
+     *   v2.74.0 (ETAP 3) → najpierw dociągamy z OpenFoodFacts (ProductResolver),
+     *   a dopiero gdy OFF nic nie ma — placeholder z 0 makro (user uzupełni).
      */
     fun saveAsMealEntries(analysis: FoodAnalysis, slot: Int, dateMs: Long) {
         viewModelScope.launch {
             val tag = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, dietPrefs.load().mealsPerDay)
-            val products = foodProductDao.getAll().associateBy { it.name.lowercase() }
             var added = 0
             // Cel: jeden zbiorczy notes per posiłek
             val dishNotes = analysis.dishName
 
             for (ing in analysis.ingredients) {
-                val key = ing.productName.lowercase()
-                val matched = products[key]
-                    ?: products.entries.firstOrNull { (k, _) -> k.contains(key) || key.contains(k) }?.value
-
-                val productId = if (matched != null) {
-                    matched.id
-                } else {
-                    // Tworzymy custom product z analyz + 0 makro per 100g (bo AI dał total na cały składnik)
-                    // Wartości per100g obliczamy z gramatury
-                    val factor = if (ing.grams > 0) 100.0 / ing.grams else 1.0
-                    // AI nie podaje makro per ingredient, więc wstawiamy 0 → user może edytować potem
-                    foodProductDao.upsert(FoodProduct(
-                        name = ing.productName,
-                        category = FoodCategory.OTHER,
-                        kcalPer100g = 0.0,
-                        proteinPer100g = 0.0,
-                        carbsPer100g = 0.0,
-                        fatPer100g = 0.0,
-                        isCustom = true,
-                        source = "image_analysis",
-                        notes = "Z analizy zdjęcia — zaktualizuj makro ręcznie"
-                    ))
-                }
+                // 1) lokalnie → 2) OpenFoodFacts (dodaje realny produkt do bazy)
+                val resolved = runCatching { productResolver.resolveOrNull(ing.productName) }.getOrNull()
+                val productId = resolved?.id ?: foodProductDao.upsert(FoodProduct(
+                    // 3) fallback: OFF też nie zna → placeholder z 0 makro
+                    name = ing.productName,
+                    category = FoodCategory.OTHER,
+                    kcalPer100g = 0.0,
+                    proteinPer100g = 0.0,
+                    carbsPer100g = 0.0,
+                    fatPer100g = 0.0,
+                    isCustom = true,
+                    source = "image_analysis",
+                    notes = "Z analizy zdjęcia — zaktualizuj makro ręcznie"
+                ))
                 dietRepo.addMeal(MealEntry(
                     dateMs = dateMs,
                     mealType = tag,

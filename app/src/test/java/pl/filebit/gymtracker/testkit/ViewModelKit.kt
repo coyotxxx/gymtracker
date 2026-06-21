@@ -239,7 +239,12 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
         // v2.23.0 (K5) — recompute adherence po add_meal
         adherenceCalc,
         // v2.59.0 (U9+U10) — record_training_pause
-        deloadPrefs
+        deloadPrefs,
+        // v2.74.0 (ETAP 3) — brakujący produkt → OpenFoodFacts
+        pl.filebit.gymtracker.data.repository.ProductResolver(
+            db.foodProductDao(),
+            pl.filebit.gymtracker.data.network.OpenFoodFactsClient()
+        )
     )
     val weeklyReportService = WeeklyReportService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),
