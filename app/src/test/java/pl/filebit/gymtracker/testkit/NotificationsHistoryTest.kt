@@ -29,7 +29,7 @@ class NotificationsHistoryTest : TestHarness() {
     fun `dzwonek mapuje historie i liczy nieprzeczytane`() = runBlocking {
         val now = System.currentTimeMillis()
         seed(NotificationKind.REVIEW, "Bilans dnia", "1 z 3 posiłków nieoznaczonych", now - 1000)
-        seed(NotificationKind.MEAL, "🍽️ Pora na kolacja", "Oznacz status", now - 2000, payload = "DINNER")
+        seed(NotificationKind.MEAL, "🍽️ Pora na Posiłek 3", "Oznacz status", now - 2000, payload = "3")
 
         val kit = ViewModelKit(db, context)
         val vm = NotificationsViewModel(
@@ -41,8 +41,8 @@ class NotificationsHistoryTest : TestHarness() {
 
         val items = vm.items.value
         assertEquals("2 wpisy", 2, items.size)
-        assertTrue("MEAL niesie payload (typ posiłku) do akcji",
-            items.any { it.kind == NotificationKind.MEAL && it.mealType == "DINNER" })
+        assertTrue("MEAL niesie payload (numer slotu) do akcji",
+            items.any { it.kind == NotificationKind.MEAL && it.mealSlot == 3 })
         assertEquals("oba nieprzeczytane (lastSeen=0)", 2, vm.unreadCount.value)
 
         vm.markSeen()
@@ -56,11 +56,11 @@ class NotificationsHistoryTest : TestHarness() {
     @Test
     fun `wpis MEAL niesie utrwalony status konsumpcji (po powrocie pokazuje zjedzone)`() = runBlocking {
         val now = System.currentTimeMillis()
-        seed(NotificationKind.MEAL, "🍽️ Pora na obiad", "Oznacz status", now - 1000, payload = "LUNCH")
+        seed(NotificationKind.MEAL, "🍽️ Pora na Posiłek 2", "Oznacz status", now - 1000, payload = "2")
 
         val kit = ViewModelKit(db, context)
-        // user oznaczył obiad jako zjedzony (jak z ekranu Diety) — setStatus normalizuje datę do start-dnia
-        kit.mealConsumptionRepo.setStatus(now, MealType.LUNCH, MealConsumptionStatus.CONSUMED)
+        // user oznaczył Posiłek 2 jako zjedzony (jak z ekranu Diety) — setStatus normalizuje datę do start-dnia
+        kit.mealConsumptionRepo.setStatus(now, 2, MealConsumptionStatus.CONSUMED)
 
         val vm = NotificationsViewModel(
             db.notificationHistoryDao(), NotificationSeenPrefs(context),
@@ -68,10 +68,10 @@ class NotificationsHistoryTest : TestHarness() {
         )
         // czekaj aż reaktywny pipeline (Room Flow × lastSeen × consumption) dostarczy status
         var tries = 0
-        while (vm.items.value.firstOrNull { it.mealType == "LUNCH" }?.mealStatus !=
+        while (vm.items.value.firstOrNull { it.mealSlot == 2 }?.mealStatus !=
             MealConsumptionStatus.CONSUMED && tries++ < 200) Thread.sleep(15)
 
-        val item = vm.items.value.first { it.mealType == "LUNCH" }
+        val item = vm.items.value.first { it.mealSlot == 2 }
         assertEquals("status z bazy (nie z ulotnego UI) = CONSUMED",
             MealConsumptionStatus.CONSUMED, item.mealStatus)
     }

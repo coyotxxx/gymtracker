@@ -33,7 +33,6 @@ class MealReminderWorker @AssistedInject constructor(
         val ctx = applicationContext
         val slotIndex = inputData.getInt("slot_index", 1)
         val slotLabel = inputData.getString("slot_label") ?: "Posiłek $slotIndex"
-        val mealTypeName = inputData.getString("meal_type") ?: "SNACK"
         val notificationId = NOTIFICATION_BASE_ID + slotIndex
 
         val openIntent = Intent(ctx, MainActivity::class.java).apply {
@@ -48,7 +47,7 @@ class MealReminderWorker @AssistedInject constructor(
         // Akcja "Zjedzone"
         val consumedIntent = Intent(ctx, MealStatusReceiver::class.java).apply {
             action = MealStatusReceiver.ACTION
-            putExtra(MealStatusReceiver.EXTRA_MEAL_TYPE, mealTypeName)
+            putExtra(MealStatusReceiver.EXTRA_MEAL_SLOT, slotIndex)
             putExtra(MealStatusReceiver.EXTRA_STATUS, "CONSUMED")
             putExtra(MealStatusReceiver.EXTRA_NOTIFICATION_ID, notificationId)
         }
@@ -61,7 +60,7 @@ class MealReminderWorker @AssistedInject constructor(
         // Akcja "Pominięte"
         val skippedIntent = Intent(ctx, MealStatusReceiver::class.java).apply {
             action = MealStatusReceiver.ACTION
-            putExtra(MealStatusReceiver.EXTRA_MEAL_TYPE, mealTypeName)
+            putExtra(MealStatusReceiver.EXTRA_MEAL_SLOT, slotIndex)
             putExtra(MealStatusReceiver.EXTRA_STATUS, "SKIPPED")
             putExtra(MealStatusReceiver.EXTRA_NOTIFICATION_ID, notificationId)
         }
@@ -90,7 +89,7 @@ class MealReminderWorker @AssistedInject constructor(
             pl.filebit.gymtracker.data.entity.NotificationKind.MEAL,
             "🍽️ Pora na $slotLabel",
             "Oznacz status — Zjedzone lub Pominięte.",
-            payload = mealTypeName
+            payload = slotIndex.toString()   // v2.73.0: payload = numer slotu (akcje z dzwonka)
         )
         return Result.success()
     }

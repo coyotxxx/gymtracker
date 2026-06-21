@@ -53,25 +53,25 @@ class DietFlowTest : TestHarness() {
             return db.adherenceLogDao().getRecent(1).first().kcalAdherencePct
         }
 
-        // KROK 1 — user loguje śniadanie
+        // KROK 1 — user loguje śniadanie (Posiłek 1)
         kit.dietRepo.addMeal(MealEntry(
-            dateMs = now, mealType = MealType.BREAKFAST, productId = oatsId, grams = 100.0))
+            dateMs = now, mealType = MealType.BREAKFAST, mealSlot = 1, productId = oatsId, grams = 100.0))
         val after1 = adherenceAfterMeals()
         tr.section("KROK 1 — śniadanie")
             .kv("kcalAdherence", "$after1%")
 
-        // KROK 2 — user loguje obiad
+        // KROK 2 — user loguje obiad (Posiłek 2 — 2 produkty w tym samym slocie)
         kit.dietRepo.addMeal(MealEntry(
-            dateMs = now, mealType = MealType.LUNCH, productId = chickenId, grams = 250.0))
+            dateMs = now, mealType = MealType.LUNCH, mealSlot = 2, productId = chickenId, grams = 250.0))
         kit.dietRepo.addMeal(MealEntry(
-            dateMs = now, mealType = MealType.LUNCH, productId = riceId, grams = 200.0))
+            dateMs = now, mealType = MealType.LUNCH, mealSlot = 2, productId = riceId, grams = 200.0))
         val after2 = adherenceAfterMeals()
         tr.section("KROK 2 — obiad")
             .kv("kcalAdherence", "$after2%")
 
-        // KROK 3 — user loguje kolację
+        // KROK 3 — user loguje kolację (Posiłek 3)
         kit.dietRepo.addMeal(MealEntry(
-            dateMs = now, mealType = MealType.DINNER, productId = chickenId, grams = 200.0))
+            dateMs = now, mealType = MealType.DINNER, mealSlot = 3, productId = chickenId, grams = 200.0))
         val after3 = adherenceAfterMeals()
         tr.section("KROK 3 — kolacja")
             .kv("kcalAdherence", "$after3%")

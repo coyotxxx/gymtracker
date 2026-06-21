@@ -77,13 +77,8 @@ fun GeneratePlanPreferencesDialog(
     var preferFavorites by remember { mutableStateOf(initial.preferFavorites) }
     var expandedIdx by remember { mutableStateOf(-1) }
 
-    val typesForSlots: List<MealType> = when (mealsCount) {
-        2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
-        3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-        4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
-        5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
-        else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-    }
+    // v2.73.0: jedno źródło slotów (obsługa 2-8); etykiety „Posiłek N".
+    val typesForSlots: List<MealType> = pl.filebit.gymtracker.util.MealSlots.typesFor(mealsCount)
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -185,7 +180,7 @@ fun GeneratePlanPreferencesDialog(
                     Spacer(Modifier.height(5.dp))
                     typesForSlots.forEachIndexed { idx, type ->
                         MealSlotRow(
-                            label = labelForSlotIdx(idx + 1, mealsCount),
+                            label = pl.filebit.gymtracker.util.MealSlots.label(idx + 1),
                             type = type,
                             current = slotStyles[type] ?: MealStyle.DEFAULT,
                             expanded = expandedIdx == idx,
@@ -374,24 +369,6 @@ private fun MealSlotRow(
             }
         }
     }
-}
-
-private fun labelForSlotIdx(slot: Int, total: Int): String = when {
-    total == 2 && slot == 1 -> "Śniadanie"
-    total == 2 -> "Kolacja"
-    total == 3 && slot == 1 -> "Śniadanie"
-    total == 3 && slot == 2 -> "Obiad"
-    total == 3 -> "Kolacja"
-    total == 4 && slot == 1 -> "Śniadanie"
-    total == 4 && slot == 2 -> "II Śniadanie"
-    total == 4 && slot == 3 -> "Obiad"
-    total == 4 -> "Kolacja"
-    total == 5 && slot == 1 -> "Śniadanie"
-    total == 5 && slot == 2 -> "II Śniadanie"
-    total == 5 && slot == 3 -> "Obiad"
-    total == 5 && slot == 4 -> "Podwieczorek"
-    total == 5 -> "Kolacja"
-    else -> "Posiłek $slot"
 }
 
 /** Sensowne style do pokazania per typ posiłku. */

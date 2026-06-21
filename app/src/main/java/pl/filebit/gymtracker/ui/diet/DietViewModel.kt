@@ -45,6 +45,9 @@ data class DayTotals(
 }
 
 data class MealGroup(
+    /** v2.73.0: numer slotu (1..N) — tożsamość posiłku. */
+    val slot: Int,
+    /** Tag (kontekst trening / dopasowanie przepisu). Wyliczany z slotu. */
     val type: MealType,
     val entries: List<MealEntryWithMacros>,
     val totals: DayTotals,
@@ -111,7 +114,8 @@ sealed class AiPlanState {
  * Próg: już po 1 pominiętym posiłku dziś. Liczy deficyt kcal/białka i komentuje.
  */
 data class SkippedMealAlert(
-    val skippedTypes: List<MealType>,
+    /** v2.73.0: numery pominiętych slotów (Posiłek N). */
+    val skippedSlots: List<Int>,
     val missingKcal: Int,
     val missingProteinG: Int,
     val message: String
@@ -232,12 +236,13 @@ class DietViewModel @Inject constructor(
     init { refreshCoachVerdict() }
 
     // === MEAL CONSUMPTION STATUS ===
-    private val _consumptions = MutableStateFlow<Map<MealType, pl.filebit.gymtracker.data.entity.MealConsumptionStatus>>(emptyMap())
-    val consumptions: StateFlow<Map<MealType, pl.filebit.gymtracker.data.entity.MealConsumptionStatus>> = _consumptions.asStateFlow()
+    // v2.73.0: status per NUMER slotu (Posiłek N), nie per mealType.
+    private val _consumptions = MutableStateFlow<Map<Int, pl.filebit.gymtracker.data.entity.MealConsumptionStatus>>(emptyMap())
+    val consumptions: StateFlow<Map<Int, pl.filebit.gymtracker.data.entity.MealConsumptionStatus>> = _consumptions.asStateFlow()
 
-    fun cycleConsumption(mealType: MealType) {
+    fun cycleConsumption(slot: Int) {
         viewModelScope.launch {
-            consumptionRepo.cycleStatus(_selectedDateMs.value, mealType)
+            consumptionRepo.cycleStatus(_selectedDateMs.value, slot)
             refreshConsumptions()
             // v2.11.0: zmiana statusu (zjedzone/pominięte) MUSI przeliczyć adherence,
             // inaczej oznaczenie posiłku nie wpływa na wynik.
@@ -245,9 +250,9 @@ class DietViewModel @Inject constructor(
         }
     }
 
-    fun setConsumption(mealType: MealType, status: pl.filebit.gymtracker.data.entity.MealConsumptionStatus) {
+    fun setConsumption(slot: Int, status: pl.filebit.gymtracker.data.entity.MealConsumptionStatus) {
         viewModelScope.launch {
-            consumptionRepo.setStatus(_selectedDateMs.value, mealType, status)
+            consumptionRepo.setStatus(_selectedDateMs.value, slot, status)
             refreshConsumptions()
             // v2.11.0: jak wyżej — recompute po jawnym ustawieniu statusu.
             runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
@@ -256,7 +261,7 @@ class DietViewModel @Inject constructor(
 
     private suspend fun refreshConsumptions() {
         val list = consumptionRepo.getForDate(_selectedDateMs.value)
-        _consumptions.value = list.associate { it.mealType to it.status }
+        _consumptions.value = list.associate { it.mealSlot to it.status }
     }
 
     /**
@@ -272,7 +277,6 @@ class DietViewModel @Inject constructor(
         val weight = runCatching { bodyMeasurementDao.getLatest()?.weightKg }.getOrNull()
         val products = runCatching { repo.observeAllProducts().first() }
             .getOrDefault(emptyList()).associateBy { it.id }
-        val mealOrder = listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
 
         fun startOfDay(ms: Long) = java.util.Calendar.getInstance().apply {
             timeInMillis = ms
@@ -304,10 +308,10 @@ class DietViewModel @Inject constructor(
         var mealsTmp: List<Pair<String, List<Tmp>>> = emptyList()
         for (back in 0..13) {
             val dayMs = plusDays(sel, -back)
-            val byType = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
-                .groupBy { it.mealType }
-            val built = mealOrder.mapNotNull { type ->
-                val es = byType[type]?.filter { products.containsKey(it.productId) } ?: return@mapNotNull null
+            val bySlot = runCatching { repo.getMealsForDate(dayMs) }.getOrDefault(emptyList())
+                .groupBy { it.mealSlot }
+            val built = bySlot.keys.sorted().mapNotNull { slot ->
+                val es = bySlot[slot]?.filter { products.containsKey(it.productId) } ?: return@mapNotNull null
                 if (es.isEmpty()) return@mapNotNull null
                 val ps = es.map { e ->
                     val p = products.getValue(e.productId)
@@ -315,7 +319,7 @@ class DietViewModel @Inject constructor(
                     Tmp(p.name, e.grams.roundToInt(), p.carbsPer100g * f, p.fatPer100g * f,
                         p.carbsPer100g, p.fatPer100g, p.kcalPer100g)
                 }
-                mealTypeLabel(type) to ps
+                pl.filebit.gymtracker.util.MealSlots.label(slot) to ps
             }
             if (built.isNotEmpty()) {
                 mealsTmp = built
@@ -379,7 +383,7 @@ class DietViewModel @Inject constructor(
     // === v2.30.0: REAKCJA DIETETYKA NA POMINIĘTE POSIŁKI ===
     // Wybór Macieja: karta na ekranie diety, próg = już po 1 pominiętym posiłku.
     // Dietetyk widzi pominięcie, liczy deficyt (kcal/białko) i proponuje korektę.
-    private val _skippedDismissed = MutableStateFlow<Set<MealType>>(emptySet())
+    private val _skippedDismissed = MutableStateFlow<Set<Int>>(emptySet())
     // UWAGA: `val skippedMealAlert` zadeklarowany PO `state` (combine wymaga zainicjalizowanego
     // `state` — kolejność inicjalizacji properties top-down). Patrz niżej, przy deklaracji `state`.
 
@@ -391,8 +395,8 @@ class DietViewModel @Inject constructor(
         return dateMs == cal.timeInMillis
     }
 
-    private fun buildSkippedMealMessage(skipped: Collection<MealType>, missKcal: Int, missProtein: Int): String {
-        val names = skipped.joinToString(", ") { mealTypePolish(it) }
+    private fun buildSkippedMealMessage(skipped: Collection<Int>, missKcal: Int, missProtein: Int): String {
+        val names = skipped.sorted().joinToString(", ") { pl.filebit.gymtracker.util.MealSlots.label(it) }
         val plural = skipped.size > 1
         val head = if (plural) "Widzę, że pominąłeś dziś: $names." else "Widzę, że pominąłeś dziś $names."
         return "$head Brakuje około $missKcal kcal i $missProtein g białka do dziennego celu. " +
@@ -400,20 +404,13 @@ class DietViewModel @Inject constructor(
             "pilnuj tygodniowego bilansu, jeden pominięty posiłek to nie problem, ale powtarzalność spowalnia efekty."
     }
 
-    private fun mealTypePolish(t: MealType): String = when (t) {
-        MealType.BREAKFAST -> "śniadanie"
-        MealType.LUNCH -> "obiad"
-        MealType.DINNER -> "kolację"
-        MealType.SNACK -> "przekąskę"
-    }
-
     /** User akceptuje/zamyka alert pominiętego posiłku. */
     fun dismissSkippedMealAlert() {
         val current = skippedMealAlert.value ?: return
-        _skippedDismissed.value = _skippedDismissed.value + current.skippedTypes
+        _skippedDismissed.value = _skippedDismissed.value + current.skippedSlots
         diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.USER_ACTION, "DietViewModel",
-            "skipped_alert_dismissed", "User zamknął alert pominiętych posiłków (${current.skippedTypes.joinToString { it.name }})",
-            dataJson = """{"types":[${current.skippedTypes.joinToString(",") { "\"${it.name}\"" }}],"missingKcal":${current.missingKcal}}""")
+            "skipped_alert_dismissed", "User zamknął alert pominiętych posiłków (${current.skippedSlots.joinToString()})",
+            dataJson = """{"slots":[${current.skippedSlots.joinToString(",")}],"missingKcal":${current.missingKcal}}""")
     }
 
     // === HEALTH CONNECT ===
@@ -629,6 +626,10 @@ class DietViewModel @Inject constructor(
         viewModelScope.launch {
             val products = state.value.productsAll
             val byName = products.associateBy { it.name.lowercase() }
+            // v2.73.0: dopasuj posiłek awaryjny do slotu o pasującym tagu (lub ostatni slot).
+            val mealsPerDay = state.value.config.mealsPerDay
+            val slot = pl.filebit.gymtracker.util.MealSlots.typesFor(mealsPerDay)
+                .indexOf(s.mealType).let { if (it >= 0) it + 1 else mealsPerDay }
             var added = 0
             for (ing in s.recipe.ingredients) {
                 val key = ing.productName.lowercase()
@@ -638,6 +639,7 @@ class DietViewModel @Inject constructor(
                 repo.addMeal(pl.filebit.gymtracker.data.entity.MealEntry(
                     dateMs = _selectedDateMs.value,
                     mealType = s.mealType,
+                    mealSlot = slot,
                     productId = product.id,
                     grams = ing.grams.toDouble(),
                     notes = s.recipe.name
@@ -976,6 +978,7 @@ class DietViewModel @Inject constructor(
                 pl.filebit.gymtracker.data.entity.MealEntry(
                     dateMs = cur.entry.dateMs,
                     mealType = cur.entry.mealType,
+                    mealSlot = cur.entry.mealSlot,   // v2.73.0: zamiana zostaje w tym samym slocie
                     productId = newProduct.id,
                     grams = newGrams,
                     notes = cur.entry.notes,
@@ -996,13 +999,14 @@ class DietViewModel @Inject constructor(
      * Używane do "Pokaż przepis" w MealGroupCard. Transient — żyje od generacji do
      * wygenerowania nowego planu lub zamknięcia VM.
      */
-    private val _slotRecipes = MutableStateFlow<Map<MealType, pl.filebit.gymtracker.ai.AiMealRecipe>>(emptyMap())
-    val slotRecipes: StateFlow<Map<MealType, pl.filebit.gymtracker.ai.AiMealRecipe>> = _slotRecipes.asStateFlow()
+    // v2.73.0: mapy przepisów/alternatyw kluczowane po NUMERZE slotu (1..N).
+    private val _slotRecipes = MutableStateFlow<Map<Int, pl.filebit.gymtracker.ai.AiMealRecipe>>(emptyMap())
+    val slotRecipes: StateFlow<Map<Int, pl.filebit.gymtracker.ai.AiMealRecipe>> = _slotRecipes.asStateFlow()
 
-    private val _shownRecipeFor = MutableStateFlow<MealType?>(null)
-    val shownRecipeFor: StateFlow<MealType?> = _shownRecipeFor.asStateFlow()
+    private val _shownRecipeFor = MutableStateFlow<Int?>(null)
+    val shownRecipeFor: StateFlow<Int?> = _shownRecipeFor.asStateFlow()
 
-    fun showRecipeFor(type: MealType) { _shownRecipeFor.value = type }
+    fun showRecipeFor(slot: Int) { _shownRecipeFor.value = slot }
     fun dismissRecipe() { _shownRecipeFor.value = null }
 
     /** v1.29.2: tag wariantu w trakcie pobierania — wewnętrzny guard przed równoległymi zapytaniami. */
@@ -1017,8 +1021,8 @@ class DietViewModel @Inject constructor(
      * i zapisuje go w przepisie planu. Kolejne otwarcia czytają z zapisu —
      * bez ponownego zapytania do AI (oszczędność tokenów).
      */
-    fun loadRecipeVariant(mealType: MealType, deviceTag: String) {
-        val recipe = _slotRecipes.value[mealType] ?: return
+    fun loadRecipeVariant(slot: Int, deviceTag: String) {
+        val recipe = _slotRecipes.value[slot] ?: return
         val homeTag = recipe.device?.takeIf { it.isNotBlank() } ?: "Klasyczny"
         if (deviceTag == homeTag || recipe.instructionsByDevice.containsKey(deviceTag)) return
         if (_recipeVariantLoading.value != null) return
@@ -1035,7 +1039,7 @@ class DietViewModel @Inject constructor(
                     instructionsByDevice = recipe.instructionsByDevice + (deviceTag to instructions)
                 )
                 _slotRecipes.value = _slotRecipes.value.toMutableMap().apply {
-                    put(mealType, updated)
+                    put(slot, updated)
                 }
                 persistPlanRecipes()
             } else {
@@ -1056,23 +1060,24 @@ class DietViewModel @Inject constructor(
      * Map<MealType, List<AiAlternative>>. Czyszczone przy nowej generacji.
      */
     private val _slotAlternatives =
-        MutableStateFlow<Map<MealType, List<pl.filebit.gymtracker.ai.AiAlternative>>>(emptyMap())
-    val slotAlternatives: StateFlow<Map<MealType, List<pl.filebit.gymtracker.ai.AiAlternative>>> =
+        MutableStateFlow<Map<Int, List<pl.filebit.gymtracker.ai.AiAlternative>>>(emptyMap())
+    val slotAlternatives: StateFlow<Map<Int, List<pl.filebit.gymtracker.ai.AiAlternative>>> =
         _slotAlternatives.asStateFlow()
 
     /**
      * Wybór alternatywy dla danego slotu — zastępuje WSZYSTKIE entries tego slotu
      * w bieżącym dniu zawartością alternatywy.
      */
-    fun selectAlternative(mealType: MealType, alternative: pl.filebit.gymtracker.ai.AiAlternative) {
+    fun selectAlternative(slot: Int, alternative: pl.filebit.gymtracker.ai.AiAlternative) {
         viewModelScope.launch {
             val products = state.value.productsAll
             val byNameLower = products.associateBy { it.name.lowercase() }
             val dateMs = _selectedDateMs.value
+            val tag = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, state.value.config.mealsPerDay)
 
             // Usuń istniejące entries tego slotu w dniu
             state.value.groups
-                .firstOrNull { it.type == mealType }
+                .firstOrNull { it.slot == slot }
                 ?.entries
                 ?.forEach { e -> repo.deleteMeal(e.entry.id) }
 
@@ -1083,7 +1088,8 @@ class DietViewModel @Inject constructor(
                     repo.addMeal(
                         MealEntry(
                             dateMs = dateMs,
-                            mealType = mealType,
+                            mealType = tag,
+                            mealSlot = slot,
                             productId = product.id,
                             grams = ing.grams.toDouble(),
                             notes = alternative.name,
@@ -1095,7 +1101,7 @@ class DietViewModel @Inject constructor(
             runCatching { adherenceCalc.computeForDate(dateMs) }
             // Zastąp recipe w slotRecipes wybraną alternatywą (z toRecipe — zachowuje instructions jeśli były)
             _slotRecipes.value = _slotRecipes.value.toMutableMap().apply {
-                put(mealType, alternative.toRecipe())
+                put(slot, alternative.toRecipe())
             }
             persistPlanRecipes()
         }
@@ -1110,8 +1116,9 @@ class DietViewModel @Inject constructor(
         runCatching {
             dietPrefs.saveLastPlanRecipes(
                 pl.filebit.gymtracker.ai.DayPlanRecipes(
-                    recipesByType = _slotRecipes.value.entries.associate { (t, r) -> t.name to r },
-                    alternativesByType = _slotAlternatives.value.entries.associate { (t, a) -> t.name to a }
+                    // v2.73.0: klucz = numer slotu jako String (wcześniej MealType.name).
+                    recipesByType = _slotRecipes.value.entries.associate { (slot, r) -> slot.toString() to r },
+                    alternativesByType = _slotAlternatives.value.entries.associate { (slot, a) -> slot.toString() to a }
                 )
             )
         }
@@ -1121,11 +1128,12 @@ class DietViewModel @Inject constructor(
     private fun restorePlanRecipes() {
         runCatching {
             val snap = dietPrefs.loadLastPlanRecipes()
+            // v2.73.0: klucz = numer slotu (String). Stare snapshoty z MealType.name → odrzucone (toIntOrNull=null).
             _slotRecipes.value = snap.recipesByType.mapNotNull { (k, v) ->
-                runCatching { MealType.valueOf(k) }.getOrNull()?.let { it to v }
+                k.toIntOrNull()?.let { it to v }
             }.toMap()
             _slotAlternatives.value = snap.alternativesByType.mapNotNull { (k, v) ->
-                runCatching { MealType.valueOf(k) }.getOrNull()?.let { it to v }
+                k.toIntOrNull()?.let { it to v }
             }.toMap()
         }
     }
@@ -1274,42 +1282,31 @@ class DietViewModel @Inject constructor(
                     val withMacros = meals.mapNotNull { e ->
                         productMap[e.productId]?.let { p -> e.macrosFor(p) }
                     }
-                    val byType = withMacros.groupBy { it.entry.mealType }
+                    // v2.73.0 (POSIŁKI N): grupowanie po NUMERZE slotu (1..N), nie po mealType.
+                    val bySlot = withMacros.groupBy { it.entry.mealSlot }
                     val cfg = config
                     val mealHours = cfg.mealHoursDecimal()
-                    // Mapowanie slot index → MealType (max 4 — bo enum ma 4 wartości).
-                    // Dla 5-6 posiłków SNACK się powtarza wizualnie ale w bazie wszystkie
-                    // dodatkowe są SNACK.
-                    val typesForSlots: List<MealType> = when (cfg.mealsPerDay) {
-                        2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
-                        3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-                        4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
-                        5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
-                        6 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.SNACK, MealType.DINNER)
-                        else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-                    }
-                    val groups = typesForSlots.mapIndexed { idx, type ->
-                        val entries = byType[type].orEmpty()
+                    val groups = (1..cfg.mealsPerDay).map { slot ->
+                        val entries = bySlot[slot].orEmpty()
                         val tot = entries.fold(DayTotals()) { acc, m -> acc + m }
                         MealGroup(
-                            type = type,
+                            slot = slot,
+                            type = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, cfg.mealsPerDay),
                             entries = entries,
                             totals = tot,
-                            timeLabel = mealHours.getOrNull(idx)?.let { cfg.formatTime(it) } ?: "",
-                            customLabel = labelForSlot(idx + 1, cfg.mealsPerDay),
-                            consumptionStatus = consumptionMap[type]
+                            timeLabel = mealHours.getOrNull(slot - 1)?.let { cfg.formatTime(it) } ?: "",
+                            customLabel = pl.filebit.gymtracker.util.MealSlots.label(slot),
+                            consumptionStatus = consumptionMap[slot]
                                 ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                         )
                     }
                     // v2.72.0: totale liczone RAZ z wpisów (withMacros), NIE z grup.
-                    // Wcześniej przy 5-6 posiłkach SNACK powtarzał się w kilku slotach,
-                    // a grupowanie po typie zwracało te same wpisy → kcal/makro liczone ×2/×3.
-                    // SKIPPED posiłki nadal nie liczą się do totali (user świadomie pominął).
-                    val skippedTypes = consumptionMap
+                    // SKIPPED sloty nie liczą się do totali (user świadomie pominął).
+                    val skippedSlots = consumptionMap
                         .filterValues { it == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED }
                         .keys
                     val totals = withMacros
-                        .filter { it.entry.mealType !in skippedTypes }
+                        .filter { it.entry.mealSlot !in skippedSlots }
                         .fold(DayTotals()) { acc, m -> acc + m }
                     val mealsTotal = groups.count { it.entries.isNotEmpty() }
                     val mealsConfirmed = groups.count {
@@ -1386,7 +1383,7 @@ class DietViewModel @Inject constructor(
         val perMealKcal = if (s.perMealKcal > 0) s.perMealKcal else (s.goal.kcal / s.config.mealsPerDay)
         val perMealProtein = if (s.config.mealsPerDay > 0) s.goal.proteinG / s.config.mealsPerDay else 0
         SkippedMealAlert(
-            skippedTypes = skipped.toList(),
+            skippedSlots = skipped.toList(),
             missingKcal = perMealKcal * skipped.size,
             missingProteinG = perMealProtein * skipped.size,
             message = buildSkippedMealMessage(skipped, perMealKcal * skipped.size, perMealProtein * skipped.size)
@@ -1397,19 +1394,21 @@ class DietViewModel @Inject constructor(
     fun setCategoryFilter(c: FoodCategory?) { _categoryFilter.value = c }
     fun setFavoritesOnly(only: Boolean) { _favoritesOnly.value = only }
 
-    fun addMeal(productId: Long, grams: Double, mealType: MealType) {
+    fun addMeal(productId: Long, grams: Double, slot: Int) {
         viewModelScope.launch {
+            val tag = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, state.value.config.mealsPerDay)
             repo.addMeal(
                 MealEntry(
                     dateMs = _selectedDateMs.value,
-                    mealType = mealType,
+                    mealType = tag,
+                    mealSlot = slot,
                     productId = productId,
                     grams = grams
                 )
             )
             diag?.info(pl.filebit.gymtracker.data.entity.DiagnosticCategory.DIET, "DietViewModel",
-                "meal_added_manual", "Ręcznie dodano produkt do ${mealType.name} (${grams.toInt()}g)",
-                dataJson = """{"productId":$productId,"grams":${grams.toInt()},"mealType":"${mealType.name}"}""", success = true)
+                "meal_added_manual", "Ręcznie dodano produkt do Posiłek $slot (${grams.toInt()}g)",
+                dataJson = """{"productId":$productId,"grams":${grams.toInt()},"mealSlot":$slot}""", success = true)
             // Update adherence po każdej zmianie posiłków
             runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
         }
@@ -1425,14 +1424,16 @@ class DietViewModel @Inject constructor(
     }
 
     /** Quick Compose — dodaje wszystkie wybrane produkty (po obliczonych gramach) jako MealEntry tego slotu. */
-    fun quickComposeAdd(mealType: MealType, picks: List<Pair<pl.filebit.gymtracker.data.entity.FoodProduct, Int>>) {
+    fun quickComposeAdd(slot: Int, picks: List<Pair<pl.filebit.gymtracker.data.entity.FoodProduct, Int>>) {
         viewModelScope.launch {
             val dateMs = _selectedDateMs.value
+            val tag = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, state.value.config.mealsPerDay)
             picks.forEach { (product, grams) ->
                 repo.addMeal(
                     MealEntry(
                         dateMs = dateMs,
-                        mealType = mealType,
+                        mealType = tag,
+                        mealSlot = slot,
                         productId = product.id,
                         grams = grams.toDouble()
                     )
@@ -1483,7 +1484,10 @@ class DietViewModel @Inject constructor(
                         g.entries.forEach { e -> repo.deleteMeal(e.entry.id) }
                     }
 
-                    plan.mealsForSlots.forEach { (mealType, recipe) ->
+                    // v2.73.0: mealsForSlots = lista (numer slotu → przepis). Tag mealType ze slotu.
+                    val nSlots = plan.mealsForSlots.size
+                    plan.mealsForSlots.forEach { (slot, recipe) ->
+                        val tag = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, nSlots)
                         var anyAdded = false
                         recipe.ingredients.forEach { ing ->
                             val product = byNameLower[ing.productName.lowercase()]
@@ -1491,7 +1495,8 @@ class DietViewModel @Inject constructor(
                                 repo.addMeal(
                                     MealEntry(
                                         dateMs = dateMs,
-                                        mealType = mealType,
+                                        mealType = tag,
+                                        mealSlot = slot,
                                         productId = product.id,
                                         grams = ing.grams.toDouble(),
                                         notes = recipe.name,
@@ -1509,10 +1514,10 @@ class DietViewModel @Inject constructor(
                     runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
                     // Alternatywy per slot
                     _slotAlternatives.value = plan.mealsForSlots
-                        .associate { (type, recipe) -> type to recipe.alternatives }
+                        .associate { (slot, recipe) -> slot to recipe.alternatives }
                         .filterValues { it.isNotEmpty() }
                     // Recipe per slot — do wyświetlenia "Pokaż przepis"
-                    _slotRecipes.value = plan.mealsForSlots.associate { (type, recipe) -> type to recipe }
+                    _slotRecipes.value = plan.mealsForSlots.associate { (slot, recipe) -> slot to recipe }
                     // v1.27.5: zapisz snapshot — przeżyje restart aplikacji, więc
                     // przeniesiony przez carry-over posiłek zachowa przyciski Inna/Przepis.
                     persistPlanRecipes()
@@ -1588,26 +1593,6 @@ class DietViewModel @Inject constructor(
 
     fun rescheduleReminders() {
         viewModelScope.launch { reminderScheduler.rescheduleAll(dietPrefs.load()) }
-    }
-
-    private fun labelForSlot(slot: Int, total: Int): String = when {
-        total == 2 && slot == 1 -> "Śniadanie"
-        total == 2 -> "Kolacja"
-        total == 3 && slot == 1 -> "Śniadanie"
-        total == 3 && slot == 2 -> "Obiad"
-        total == 3 -> "Kolacja"
-        total == 4 && slot == 1 -> "Śniadanie"
-        total == 4 && slot == 2 -> "Drugie śniadanie"
-        total == 4 && slot == 3 -> "Obiad"
-        total == 4 -> "Kolacja"
-        total == 5 && slot == 1 -> "Śniadanie"
-        total == 5 && slot == 2 -> "Drugie śniadanie"
-        total == 5 && slot == 3 -> "Obiad"
-        total == 5 && slot == 4 -> "Podwieczorek"
-        total == 5 -> "Kolacja"
-        total >= 6 && slot == 1 -> "Śniadanie"
-        total >= 6 && slot == total -> "Kolacja"
-        else -> "Posiłek $slot"
     }
 
     private fun todayStartMs(): Long {

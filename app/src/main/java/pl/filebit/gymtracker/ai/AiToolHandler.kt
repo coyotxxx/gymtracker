@@ -198,6 +198,7 @@ class AiToolHandler @Inject constructor(
                 val f = m.grams / 100.0
                 add(buildJsonObject {
                     put("meal_entry_id", m.id)
+                    put("mealSlot", m.mealSlot)
                     put("mealType", m.mealType.name)
                     put("product", p?.name ?: "?")
                     put("grams", m.grams)
@@ -233,17 +234,23 @@ class AiToolHandler @Inject constructor(
             ?: products.firstOrNull { it.name.contains(name, ignoreCase = true) }
             ?: return toolErr("Nie znaleziono produktu '$name' w bazie produktów")
         val dateMs = parseDateOrNow(input)
+        // v2.73.0: posiłek identyfikowany numerem slotu. AI może podać 'mealSlot' wprost,
+        // inaczej wyliczamy slot z tagu mealType wg konfiguracji liczby posiłków.
+        val mealsPerDay = dietPrefs.load().mealsPerDay
+        val slot = (input["mealSlot"]?.jsonPrimitive?.intOrNull)?.coerceIn(1, mealsPerDay)
+            ?: pl.filebit.gymtracker.util.MealSlots.typesFor(mealsPerDay).indexOf(mealType)
+                .let { if (it >= 0) it + 1 else mealsPerDay }
         dietRepo.addMeal(
             pl.filebit.gymtracker.data.entity.MealEntry(
-                dateMs = dateMs, mealType = mealType,
+                dateMs = dateMs, mealType = mealType, mealSlot = slot,
                 productId = product.id, grams = grams
             )
         )
         // v2.23.0 (K5 fix): przelicz adherence dnia — inaczej dziennik się zmienia, a wynik nie.
         runCatching { adherenceCalc.computeForDate(dateMs) }
         diag.info(diagCat, "AiToolHandler", "ai_add_meal",
-            "AI dodał ${grams.toInt()}g ${product.name} do ${mealType.name}", success = true)
-        return toolOk("Dodałem ${grams.toInt()} g ${product.name} do posiłku ${mealType.name}.")
+            "AI dodał ${grams.toInt()}g ${product.name} do Posiłek $slot", success = true)
+        return toolOk("Dodałem ${grams.toInt()} g ${product.name} do posiłku: Posiłek $slot.")
     }
 
     /**
@@ -284,7 +291,7 @@ class AiToolHandler @Inject constructor(
                 if (product == null) { skipped.add(pname); return@forEach }
                 entries.add(
                     pl.filebit.gymtracker.data.entity.MealEntry(
-                        dateMs = dateMs, mealType = mealType,
+                        dateMs = dateMs, mealType = mealType, mealSlot = idx + 1,
                         productId = product.id, grams = grams,
                         notes = mealName, isPlanned = true
                     )

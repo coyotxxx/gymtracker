@@ -44,7 +44,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import pl.filebit.gymtracker.data.entity.MealType
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
@@ -313,7 +314,9 @@ private fun AnalysisResultCard(
     analysis: pl.filebit.gymtracker.ai.FoodAnalysis,
     vm: FoodImageAnalyzerViewModel
 ) {
-    var selectedMealType by remember { mutableStateOf(MealType.LUNCH) }
+    // v2.73.0: wybór slotu (Posiłek N), nie sztywnego mealType.
+    val mealsPerDay = remember { vm.mealsPerDay() }
+    var selectedSlot by remember { mutableStateOf(1) }
 
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -390,32 +393,30 @@ private fun AnalysisResultCard(
                 ),
                 color = DarkOnSurfaceVariant
             )
-            Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                MealType.values().forEach { mt ->
+            Row(
+                modifier = Modifier.horizontalScroll(rememberScrollState()),
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                (1..mealsPerDay).forEach { slot ->
                     Box(
                         modifier = Modifier
-                            .weight(1f)
                             .height(36.dp)
                             .background(
-                                if (selectedMealType == mt) AccentOrange.copy(alpha = 0.18f)
+                                if (selectedSlot == slot) AccentOrange.copy(alpha = 0.18f)
                                 else DarkSurfaceVariant,
                                 RoundedCornerShape(8.dp)
                             )
-                            .clickable { selectedMealType = mt },
+                            .clickable { selectedSlot = slot }
+                            .padding(horizontal = 12.dp),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            when (mt) {
-                                MealType.BREAKFAST -> "🌅 Śn"
-                                MealType.LUNCH -> "🍽 Obiad"
-                                MealType.DINNER -> "🌙 Kol"
-                                MealType.SNACK -> "🥨 Prz"
-                            },
+                            "🍽️ ${pl.filebit.gymtracker.util.MealSlots.label(slot)}",
                             style = MaterialTheme.typography.labelMedium.copy(
-                                fontWeight = if (selectedMealType == mt) FontWeight.Bold else FontWeight.Normal,
+                                fontWeight = if (selectedSlot == slot) FontWeight.Bold else FontWeight.Normal,
                                 fontSize = 11.sp
                             ),
-                            color = if (selectedMealType == mt) AccentOrange else DarkOnSurface
+                            color = if (selectedSlot == slot) AccentOrange else DarkOnSurface
                         )
                     }
                 }
@@ -430,14 +431,14 @@ private fun AnalysisResultCard(
                     .clickable {
                         vm.saveAsMealEntries(
                             analysis = analysis,
-                            mealType = selectedMealType,
+                            slot = selectedSlot,
                             dateMs = System.currentTimeMillis()
                         )
                     },
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    "✓ Zapisz do ${slotLabel(selectedMealType)}",
+                    "✓ Zapisz do ${pl.filebit.gymtracker.util.MealSlots.label(selectedSlot)}",
                     style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
                     color = AccentOrange
                 )
@@ -468,13 +469,6 @@ private fun ConfidenceBadge(confidence: String) {
             )
         }
     }
-}
-
-private fun slotLabel(mt: MealType): String = when (mt) {
-    MealType.BREAKFAST -> "śniadania"
-    MealType.LUNCH -> "obiadu"
-    MealType.DINNER -> "kolacji"
-    MealType.SNACK -> "przekąski"
 }
 
 private fun prepareCameraUri(context: Context): Uri {

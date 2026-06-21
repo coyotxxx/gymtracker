@@ -6,20 +6,23 @@ import pl.filebit.gymtracker.data.entity.DiagnosticCategory
 import pl.filebit.gymtracker.data.entity.DiagnosticLevel
 import pl.filebit.gymtracker.data.entity.MealConsumption
 import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
-import pl.filebit.gymtracker.data.entity.MealType
 import java.util.Calendar
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * v2.73.0 (POSIŁKI N): status konsumpcji kluczowany po NUMERZE slotu (dateMs, mealSlot),
+ * nie po mealType — dzięki temu każdy posiłek (także wiele przekąsek) ma niezależny status.
+ */
 @Singleton
 class MealConsumptionRepository @Inject constructor(
     private val dao: MealConsumptionDao,
     // v2.24.0: nullable-default — Hilt wstrzykuje realny logger w apce, testy konstruują bez niego.
     private val diag: DiagnosticLogger? = null
 ) {
-    suspend fun get(dateMs: Long, mealType: MealType): MealConsumption? {
+    suspend fun get(dateMs: Long, mealSlot: Int): MealConsumption? {
         val (start, _) = dayBounds(dateMs)
-        return dao.get(start, mealType)
+        return dao.get(start, mealSlot)
     }
 
     fun observeForDate(dateMs: Long): Flow<List<MealConsumption>> {
@@ -36,9 +39,9 @@ class MealConsumptionRepository @Inject constructor(
      * Cykl statusu: brak → CONSUMED → SKIPPED → PLANNED → CONSUMED ...
      * Trzy kliki = pełny cykl.
      */
-    suspend fun cycleStatus(dateMs: Long, mealType: MealType) {
+    suspend fun cycleStatus(dateMs: Long, mealSlot: Int) {
         val (start, _) = dayBounds(dateMs)
-        val current = dao.get(start, mealType)
+        val current = dao.get(start, mealSlot)
         val nextStatus = when (current?.status) {
             null, MealConsumptionStatus.PLANNED -> MealConsumptionStatus.CONSUMED
             MealConsumptionStatus.CONSUMED -> MealConsumptionStatus.SKIPPED
@@ -47,33 +50,33 @@ class MealConsumptionRepository @Inject constructor(
         dao.insert(MealConsumption(
             id = current?.id ?: 0,
             dateMs = start,
-            mealType = mealType,
+            mealSlot = mealSlot,
             status = nextStatus,
             notedAt = System.currentTimeMillis()
         ))
-        logStatus("meal_status_cycle", mealType, current?.status, nextStatus, start)
+        logStatus("meal_status_cycle", mealSlot, current?.status, nextStatus, start)
     }
 
-    suspend fun setStatus(dateMs: Long, mealType: MealType, status: MealConsumptionStatus) {
+    suspend fun setStatus(dateMs: Long, mealSlot: Int, status: MealConsumptionStatus) {
         val (start, _) = dayBounds(dateMs)
-        val current = dao.get(start, mealType)
+        val current = dao.get(start, mealSlot)
         dao.insert(MealConsumption(
             id = current?.id ?: 0,
             dateMs = start,
-            mealType = mealType,
+            mealSlot = mealSlot,
             status = status,
             notedAt = System.currentTimeMillis()
         ))
-        logStatus("meal_status_set", mealType, current?.status, status, start)
+        logStatus("meal_status_set", mealSlot, current?.status, status, start)
     }
 
     /**
      * v2.24.0: jeden punkt logujący KAŻDĄ zmianę statusu posiłku (UI, notyfikacja, AI).
-     * Dzięki temu w logu widać np. „kolacja → SKIPPED w piątek".
+     * Dzięki temu w logu widać np. „Posiłek 3 → SKIPPED w piątek".
      */
     private fun logStatus(
         eventCode: String,
-        mealType: MealType,
+        mealSlot: Int,
         from: MealConsumptionStatus?,
         to: MealConsumptionStatus,
         dayStart: Long
@@ -84,8 +87,8 @@ class MealConsumptionRepository @Inject constructor(
             level = level,
             source = "MealConsumptionRepository",
             event = eventCode,
-            message = "Posiłek ${mealType.name}: ${from?.name ?: "brak"} → ${to.name}",
-            dataJson = """{"mealType":"${mealType.name}","from":${from?.let { "\"${it.name}\"" } ?: "null"},"to":"${to.name}","dayStartMs":$dayStart}""",
+            message = "Posiłek $mealSlot: ${from?.name ?: "brak"} → ${to.name}",
+            dataJson = """{"mealSlot":$mealSlot,"from":${from?.let { "\"${it.name}\"" } ?: "null"},"to":"${to.name}","dayStartMs":$dayStart}""",
             success = true
         )
     }

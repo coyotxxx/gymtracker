@@ -61,7 +61,7 @@ class AdherenceCalculator @Inject constructor(
         // wygenerowany plan, którego user nie zjadł, nie zawyża adherence do fałszywego 100%.
         val meals = dietRepo.getMealsForDate(start)
         val consumptions = runCatching { consumptionRepo.getForDate(start) }.getOrDefault(emptyList())
-        val statusByType = consumptions.associate { it.mealType to it.status }
+        val statusBySlot = consumptions.associate { it.mealSlot to it.status }
         val products = dietRepo.observeAllProducts().first().associateBy { it.id }
         var actualKcal = 0.0
         var actualProtein = 0.0
@@ -69,9 +69,9 @@ class AdherenceCalculator @Inject constructor(
         var actualFat = 0.0
         // v1.28.9: liczymy POSIŁKI (sloty mealType), nie wpisy produktów. MealEntry to
         // jeden produkt — dzień z 17 produktami w 3 posiłkach dawał wcześniej "17/3 posiłków".
-        val loggedMealTypes = mutableSetOf<pl.filebit.gymtracker.data.entity.MealType>()
+        val loggedSlots = mutableSetOf<Int>()
         for (m in meals) {
-            val eaten = when (statusByType[m.mealType]) {
+            val eaten = when (statusBySlot[m.mealSlot]) {
                 pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> true
                 pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> false
                 // null (brak statusu) lub PLANNED: ręczny wpis liczymy, plan AI dopiero po potwierdzeniu
@@ -84,13 +84,13 @@ class AdherenceCalculator @Inject constructor(
             actualProtein += p.proteinPer100g * factor
             actualCarbs += p.carbsPer100g * factor
             actualFat += p.fatPer100g * factor
-            loggedMealTypes.add(m.mealType)
+            loggedSlots.add(m.mealSlot)
         }
 
         // v2.24.0: posiłki świadomie pominięte przez usera — to one „znikały" z raportu.
         val skippedTypes = consumptions
             .filter { it.status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED }
-            .map { it.mealType.name }
+            .map { "Posiłek ${it.mealSlot}" }
 
         // Trening — z TrainingDaySummary
         val training = trainingDietBridge.getForDate(start)
@@ -115,7 +115,7 @@ class AdherenceCalculator @Inject constructor(
                 fatAdherencePct = pct(actualFat, goal.fatG.toDouble()),
                 // v1.24.14: liczymy posiłki które user faktycznie zjadł (nie pominął)
                 // v1.28.9: liczba slotów posiłkowych z jedzeniem, nie wpisów produktów
-                mealsLoggedCount = loggedMealTypes.size,
+                mealsLoggedCount = loggedSlots.size,
                 mealsPlannedCount = config.mealsPerDay,
                 wasTrainingPlanned = wasTrainingPlanned,
                 wasTrainingDone = wasTrainingDone
@@ -132,14 +132,14 @@ class AdherenceCalculator @Inject constructor(
             source = "AdherenceCalculator",
             event = "adherence_computed",
             message = "Zgodność dnia: kcal $kcalPct% (${actualKcal.roundToInt()}/${goal.kcal}), " +
-                "posiłki ${loggedMealTypes.size}/${config.mealsPerDay}$skippedNote",
+                "posiłki ${loggedSlots.size}/${config.mealsPerDay}$skippedNote",
             dataJson = buildString {
                 append("{")
                 append("\"dayStartMs\":$start,")
                 append("\"kcalPct\":$kcalPct,")
                 append("\"actualKcal\":${actualKcal.roundToInt()},\"targetKcal\":${goal.kcal},")
                 append("\"proteinPct\":${pct(actualProtein, goal.proteinG.toDouble())},")
-                append("\"mealsLogged\":${loggedMealTypes.size},\"mealsPlanned\":${config.mealsPerDay},")
+                append("\"mealsLogged\":${loggedSlots.size},\"mealsPlanned\":${config.mealsPerDay},")
                 append("\"skipped\":[${skippedTypes.joinToString(",") { "\"$it\"" }}],")
                 append("\"isTrainingDay\":$isTrainingDay,\"trainingDone\":$wasTrainingDone")
                 append("}")
@@ -169,23 +169,24 @@ class AdherenceCalculator @Inject constructor(
         val config = runCatching { dietPrefs.load() }.getOrNull() ?: return emptyList()
         val meals = runCatching { dietRepo.getMealsForDate(start) }.getOrDefault(emptyList())
         val consumptions = runCatching { consumptionRepo.getForDate(start) }.getOrDefault(emptyList())
-        val statusByType = consumptions.associate { it.mealType to it.status }
-        val eatenTypes = meals.filter { m ->
-            when (statusByType[m.mealType]) {
+        val statusBySlot = consumptions.associate { it.mealSlot to it.status }
+        // v2.73.0: sloty 1..N (Posiłek N). Zjedzony = CONSUMED lub ręczny wpis (nie SKIPPED).
+        val eatenSlots = meals.filter { m ->
+            when (statusBySlot[m.mealSlot]) {
                 pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> true
                 pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> false
                 else -> !m.isPlanned
             }
-        }.map { it.mealType }.toSet()
-        return pl.filebit.gymtracker.util.MealSlots.typesFor(config.mealsPerDay).distinct().map { t ->
+        }.map { it.mealSlot }.toSet()
+        return (1..config.mealsPerDay).map { slot ->
             val state = when {
-                statusByType[t] == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> MealSlotState.SKIPPED
+                statusBySlot[slot] == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> MealSlotState.SKIPPED
                 // explicit CONSUMED (np. z powiadomienia) = zjedzone, nawet bez wpisu jedzenia
-                statusByType[t] == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> MealSlotState.EATEN
-                t in eatenTypes -> MealSlotState.EATEN
+                statusBySlot[slot] == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> MealSlotState.EATEN
+                slot in eatenSlots -> MealSlotState.EATEN
                 else -> MealSlotState.MISSING
             }
-            MealSlotStatus(t, pl.filebit.gymtracker.util.MealSlots.polishLabel(t), state)
+            MealSlotStatus(slot, pl.filebit.gymtracker.util.MealSlots.label(slot), state)
         }
     }
 
@@ -245,7 +246,8 @@ data class AdherenceSummary(
 enum class MealSlotState { EATEN, SKIPPED, MISSING }
 
 data class MealSlotStatus(
-    val mealType: pl.filebit.gymtracker.data.entity.MealType,
+    /** v2.73.0: numer slotu (1..N) zamiast mealType. */
+    val slot: Int,
     val label: String,
     val state: MealSlotState
 )

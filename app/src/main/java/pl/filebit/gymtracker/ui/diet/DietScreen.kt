@@ -122,15 +122,16 @@ fun DietScreen(
     val printScope = androidx.compose.runtime.rememberCoroutineScope()
     // v1.28.3 (Etap 4): osobny kreator diety usunięty — ekran Diety zawsze się
     // pokazuje; pełną konfigurację diety user robi w ekranie „Konfiguracja".
-    var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
-    var addMealForType by remember { mutableStateOf<MealType?>(null) }
+    // v2.73.0: dialogi adresowane numerem slotu (Posiłek N), nie mealType.
+    var showAlternativesFor by remember { mutableStateOf<Int?>(null) }
+    var addMealForType by remember { mutableStateOf<Int?>(null) }
     var showSettings by remember { mutableStateOf(false) }
     var showGoalBreakdown by remember { mutableStateOf(false) }
     var showStylePicker by remember { mutableStateOf(false) }
     var showQuickCompose by remember { mutableStateOf(false) }
     var showWeeklyKcal by remember { mutableStateOf(false) }
     // Stan rozwinięcia sekcji
-    val expandedSlots = remember { mutableStateMapOf<MealType, Boolean>() }
+    val expandedSlots = remember { mutableStateMapOf<Int, Boolean>() }
     var toolsExpanded by remember { mutableStateOf(false) }
     androidx.compose.runtime.LaunchedEffect(state.config.mealRemindersEnabled, state.config.mealsPerDay) {
         // Reschedule notyfikacji przy każdej zmianie config-u (oraz przy pierwszym wejściu)
@@ -201,7 +202,7 @@ fun DietScreen(
                     // v1.24.30: liczba PLANNED slotów = posiłki do końca dnia
                     // (CONSUMED/SKIPPED nie liczymy).
                     val mealsRemainingTotal = state.groups.count { group ->
-                        val st = consumptions[group.type]
+                        val st = consumptions[group.slot]
                             ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                         st == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                     }
@@ -285,7 +286,8 @@ fun DietScreen(
                     item {
                         SkippedMealCard(
                             alert = alert,
-                            onAddSnack = { addMealForType = MealType.SNACK },
+                            // v2.73.0: dodaj do pominiętego slotu (Posiłek N), inaczej do ostatniego.
+                            onAddSnack = { addMealForType = alert.skippedSlots.firstOrNull() ?: state.config.mealsPerDay },
                             onDismiss = { vm.dismissSkippedMealAlert() }
                         )
                     }
@@ -297,7 +299,7 @@ fun DietScreen(
                 items(state.groups.size) { idx ->
                     val group = state.groups[idx]
                     val targetKcal = state.perMealKcal
-                    val status = consumptions[group.type]
+                    val status = consumptions[group.slot]
                         ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                     val isCurrent = isCurrentSlot(group.timeLabel) &&
                         status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
@@ -310,22 +312,22 @@ fun DietScreen(
                         pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> false
                         pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED -> true
                     }
-                    val expanded = expandedSlots[group.type] ?: defaultExpanded
+                    val expanded = expandedSlots[group.slot] ?: defaultExpanded
                     MealGroupCard(
                         group = group,
                         targetKcalPerMeal = targetKcal,
                         expanded = expanded,
-                        onToggleExpanded = { expandedSlots[group.type] = !expanded },
+                        onToggleExpanded = { expandedSlots[group.slot] = !expanded },
                         consumptionStatus = status,
-                        onCycleStatus = { vm.cycleConsumption(group.type) },
+                        onCycleStatus = { vm.cycleConsumption(group.slot) },
                         isCurrent = isCurrent,
-                        onAdd = { addMealForType = group.type },
+                        onAdd = { addMealForType = group.slot },
                         onDelete = { id -> vm.deleteMeal(id) },
                         onSwap = { e -> vm.openSubstitutes(e.entry, e.product) },
-                        alternativesCount = slotAlternatives[group.type]?.size ?: 0,
-                        onShowAlternatives = { showAlternativesFor = group.type },
-                        hasRecipe = slotRecipes.containsKey(group.type),
-                        onShowRecipe = { vm.showRecipeFor(group.type) }
+                        alternativesCount = slotAlternatives[group.slot]?.size ?: 0,
+                        onShowAlternatives = { showAlternativesFor = group.slot },
+                        hasRecipe = slotRecipes.containsKey(group.slot),
+                        onShowRecipe = { vm.showRecipeFor(group.slot) }
                     )
                 }
 
@@ -416,13 +418,14 @@ fun DietScreen(
         val perMealFat = state.goal.fatG / mealsCount
         QuickComposeDialog(
             products = state.productsAll,
+            mealsCount = mealsCount,
             targetKcalPerSlot = perMealKcal,
             targetProteinPerSlot = perMealProt,
             targetFatPerSlot = perMealFat,
             composeService = vm.quickComposeService,
-            onAccept = { mealType, picks ->
+            onAccept = { slot, picks ->
                 showQuickCompose = false
-                vm.quickComposeAdd(mealType, picks)
+                vm.quickComposeAdd(slot, picks)
             },
             onDismiss = { showQuickCompose = false }
         )
@@ -440,11 +443,11 @@ substitutePrompt?.let { sp ->
         )
     }
 
-    showAlternativesFor?.let { mt ->
+    showAlternativesFor?.let { slot ->
         AlternativesDialog(
-            mealType = mt,
-            alternatives = slotAlternatives[mt].orEmpty(),
-            onSelect = { alt -> vm.selectAlternative(mt, alt) },
+            slot = slot,
+            alternatives = slotAlternatives[slot].orEmpty(),
+            onSelect = { alt -> vm.selectAlternative(slot, alt) },
             onDismiss = { showAlternativesFor = null }
         )
     }
@@ -733,13 +736,13 @@ substitutePrompt?.let { sp ->
     }
 
     // Dialog dodawania posiłku
-    addMealForType?.let { mealType ->
+    addMealForType?.let { slot ->
         AddMealDialog(
-            mealType = mealType,
+            slot = slot,
             allProducts = state.productsAll,
             onDismiss = { addMealForType = null },
             onAdd = { productId, grams ->
-                vm.addMeal(productId, grams, mealType)
+                vm.addMeal(productId, grams, slot)
                 addMealForType = null
             },
             onSearchQueryChange = vm::setSearchQuery,

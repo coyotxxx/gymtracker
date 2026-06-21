@@ -39,6 +39,12 @@ data class MealEntry(
     /** Data spożycia (start dnia w epoch ms). Bierzemy daty bez godziny. */
     val dateMs: Long,
     val mealType: MealType,
+    /**
+     * v2.73.0 (POSIŁKI N): numer slotu posiłku w dniu (1..N) — TOŻSAMOŚĆ posiłku.
+     * `mealType` pozostaje jako TAG (kontekst trening / dopasowanie przepisu / godziny).
+     * Grupowanie/identyfikacja posiłku idą po `mealSlot`, nie po `mealType`.
+     */
+    val mealSlot: Int = 1,
     val productId: Long,
     val grams: Double,
     val notes: String = "",

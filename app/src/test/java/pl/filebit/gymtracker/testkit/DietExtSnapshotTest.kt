@@ -72,7 +72,7 @@ class DietExtSnapshotTest : TestHarness() {
     @Test
     fun `RecipeBrowser laduje liste przepisow`() = runBlocking {
         val kit = ViewModelKit(db, context)
-        val vm = RecipeBrowserViewModel(db.recipeDao(), db.foodProductDao(), kit.dietRepo)
+        val vm = RecipeBrowserViewModel(db.recipeDao(), db.foodProductDao(), kit.dietRepo, pl.filebit.gymtracker.data.repository.DietPreferences(context))
         val s = withTimeout(5_000) { vm.state.first() }
 
         TraceReport("recipe-browser")

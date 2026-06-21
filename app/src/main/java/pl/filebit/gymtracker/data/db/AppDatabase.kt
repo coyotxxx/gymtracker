@@ -110,7 +110,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         pl.filebit.gymtracker.data.entity.DiagnosticEvent::class,
         pl.filebit.gymtracker.data.entity.NotificationHistory::class
     ],
-    version = 75,
+    version = 76,
     // v1.14.1: eksportowane do app/schemas/. Wymagane dla MigrationTestHelper.
     exportSchema = true
 )

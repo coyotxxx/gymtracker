@@ -14,7 +14,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.db.dao.NotificationHistoryDao
 import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
-import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.entity.NotificationKind
 import pl.filebit.gymtracker.data.repository.AdherenceCalculator
 import pl.filebit.gymtracker.data.repository.MealConsumptionRepository
@@ -30,8 +29,8 @@ data class NotifHistoryItem(
     val body: String,
     val timeMs: Long,
     val unread: Boolean,
-    /** MealType.name dla MEAL — pozwala na akcje Zjedzone/Pominięte z dzwonka. */
-    val mealType: String?,
+    /** v2.73.0: numer slotu (Posiłek N) dla MEAL — akcje Zjedzone/Pominięte z dzwonka. */
+    val mealSlot: Int?,
     /** v2.68.0 — utrwalony status konsumpcji (dla „dziś"): CONSUMED/SKIPPED/PLANNED/null.
      *  Ekran renderuje stan z bazy, nie z ulotnego stanu UI → po powrocie pokazuje „zjedzone". */
     val mealStatus: MealConsumptionStatus? = null
@@ -70,9 +69,9 @@ class NotificationsViewModel @Inject constructor(
             seenPrefs.lastSeenFlow,
             consumptionRepo.observeForDate(todayStart)
         ) { rows, lastSeen, consumptions ->
-            val statusByMeal = consumptions.associate { it.mealType to it.status }
+            val statusBySlot = consumptions.associate { it.mealSlot to it.status }
             rows.map { r ->
-                val mealType = r.payload?.let { runCatching { MealType.valueOf(it) }.getOrNull() }
+                val mealSlot = r.payload?.toIntOrNull()
                 val isToday = startOfDay(r.timestampMs) == todayStart
                 NotifHistoryItem(
                     id = r.id,
@@ -82,8 +81,8 @@ class NotificationsViewModel @Inject constructor(
                     body = r.body,
                     timeMs = r.timestampMs,
                     unread = r.timestampMs > lastSeen,
-                    mealType = r.payload,
-                    mealStatus = if (mealType != null && isToday) statusByMeal[mealType] else null
+                    mealSlot = mealSlot,
+                    mealStatus = if (mealSlot != null && isToday) statusBySlot[mealSlot] else null
                 )
             }
         }
@@ -104,12 +103,12 @@ class NotificationsViewModel @Inject constructor(
 
     /** Akcja Zjedzone/Pominięte wprost z dzwonka — to samo co MealStatusReceiver. */
     fun markMeal(item: NotifHistoryItem, consumed: Boolean) {
-        val mealType = runCatching { MealType.valueOf(item.mealType ?: return) }.getOrNull() ?: return
+        val slot = item.mealSlot ?: return
         val status = if (consumed) MealConsumptionStatus.CONSUMED else MealConsumptionStatus.SKIPPED
         val dateMs = startOfDay(item.timeMs)
         viewModelScope.launch {
             runCatching {
-                consumptionRepo.setStatus(dateMs, mealType, status)
+                consumptionRepo.setStatus(dateMs, slot, status)
                 adherenceCalc.computeForDate(dateMs)
             }
         }

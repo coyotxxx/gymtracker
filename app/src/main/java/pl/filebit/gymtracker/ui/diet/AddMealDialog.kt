@@ -48,7 +48,6 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import pl.filebit.gymtracker.data.entity.FoodCategory
 import pl.filebit.gymtracker.data.entity.FoodProduct
-import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
@@ -61,7 +60,7 @@ import kotlin.math.roundToInt
 
 @Composable
 fun AddMealDialog(
-    mealType: MealType,
+    slot: Int,
     allProducts: List<FoodProduct>,
     searchQuery: String,
     categoryFilter: FoodCategory?,
@@ -93,7 +92,7 @@ fun AddMealDialog(
                 // Header
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
-                        "Dodaj do ${mealTypeLabel(mealType)}",
+                        "Dodaj do ${pl.filebit.gymtracker.util.MealSlots.label(slot)}",
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.ExtraBold
                         ),

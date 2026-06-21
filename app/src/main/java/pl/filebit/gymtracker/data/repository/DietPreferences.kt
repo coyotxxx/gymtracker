@@ -32,7 +32,8 @@ class DietPreferences @Inject constructor(
     val state: StateFlow<DietConfig> = _state.asStateFlow()
 
     fun load(): DietConfig = DietConfig(
-        mealsPerDay = prefs.getInt(KEY_MEALS, 3).coerceIn(2, 6),
+        mealsPerDay = prefs.getInt(KEY_MEALS, 3)
+            .coerceIn(pl.filebit.gymtracker.util.MealSlots.MIN_MEALS, pl.filebit.gymtracker.util.MealSlots.MAX_MEALS),  // v2.73.0: 2-8
         eatingWindowHours = prefs.getInt(KEY_WINDOW_HOURS, 8).coerceIn(4, 24),
         windowStartHour = prefs.getInt(KEY_WINDOW_START, 12).coerceIn(0, 23),
         mealRemindersEnabled = prefs.getBoolean(KEY_REMINDERS, true),

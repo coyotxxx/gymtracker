@@ -107,7 +107,8 @@ data class DayPlanRecipes(
 )
 
 data class GeneratedDayPlan(
-    val mealsForSlots: List<Pair<MealType, AiMealRecipe>>,
+    /** v2.73.0: (numer slotu 1..N → przepis). Wcześniej (MealType → przepis). */
+    val mealsForSlots: List<Pair<Int, AiMealRecipe>>,
     /** SOFT warnings z walidatora — pokaż userowi (nie blokujące). */
     val warnings: List<ValidationIssue> = emptyList(),
     /** Suma kcal/makro POLICZONA Z LOKALNEJ BAZY (nie z deklaracji AI). */
@@ -872,16 +873,8 @@ class DietAiService @Inject constructor(
             "diet_generated", "AI wygenerowało plan diety: ${parsed.meals.size} posiłków (próby: $attempt)",
             dataJson = """{"meals":${parsed.meals.size},"attempts":$attempt}""", success = true)
 
-        // Mapowanie sloty → MealType
-        val typesForSlots: List<MealType> = when (mealsCount) {
-            2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
-            3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-            4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
-            5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
-            6 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.SNACK, MealType.DINNER)
-            else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-        }
-        val mealsForSlots = parsed.meals.zip(typesForSlots).map { (m, t) -> t to m }
+        // v2.73.0: sloty 1..N po kolejności posiłków z planu (tożsamość = numer slotu).
+        val mealsForSlots = parsed.meals.mapIndexed { idx, m -> (idx + 1) to m }
         return Result.success(GeneratedDayPlan(mealsForSlots, validation?.warnings.orEmpty(), validation?.correctedTotal))
     }
 

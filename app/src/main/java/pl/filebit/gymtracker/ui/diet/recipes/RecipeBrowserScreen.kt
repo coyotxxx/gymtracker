@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -181,7 +182,8 @@ fun RecipeBrowserScreen(
         RecipeDetailDialog(
             recipe = r,
             addResult = addResult,
-            onAddToDiet = { mt -> vm.addToDiet(r, mt, System.currentTimeMillis()) },
+            mealsCount = vm.mealsPerDay(),
+            onAddToDiet = { slot -> vm.addToDiet(r, slot, System.currentTimeMillis()) },
             onToggleFav = { vm.toggleFavorite(r) },
             onDismiss = { selectedRecipe = null; vm.consumeAddResult() }
         )
@@ -294,12 +296,17 @@ private fun RecipeRow(
 private fun RecipeDetailDialog(
     recipe: Recipe,
     addResult: RecipeBrowserViewModel.AddResult?,
-    onAddToDiet: (MealType) -> Unit,
+    mealsCount: Int,
+    onAddToDiet: (Int) -> Unit,
     onToggleFav: () -> Unit,
     onDismiss: () -> Unit
 ) {
-    var selectedMealType by remember(recipe.id) {
-        mutableStateOf(recipe.mealType)
+    // v2.73.0: domyślny slot z tagu przepisu (lub 1), wybór jako Posiłek N.
+    var selectedSlot by remember(recipe.id) {
+        mutableStateOf(
+            pl.filebit.gymtracker.util.MealSlots.typesFor(mealsCount).indexOf(recipe.mealType)
+                .let { if (it >= 0) it + 1 else 1 }
+        )
     }
 
     androidx.compose.ui.window.Dialog(
@@ -394,27 +401,28 @@ private fun RecipeDetailDialog(
                     Text("DODAJ DO SLOTU", style = MaterialTheme.typography.labelSmall.copy(
                         fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
                     ), color = DarkOnSurfaceVariant)
-                    Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                        MealType.values().forEach { mt ->
+                    Row(
+                        modifier = Modifier.horizontalScroll(rememberScrollState()),
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        (1..mealsCount).forEach { slot ->
                             Box(
                                 modifier = Modifier
-                                    .weight(1f)
                                     .height(34.dp)
                                     .background(
-                                        if (selectedMealType == mt) AccentOrange.copy(alpha = 0.18f) else DarkSurfaceVariant,
+                                        if (selectedSlot == slot) AccentOrange.copy(alpha = 0.18f) else DarkSurfaceVariant,
                                         RoundedCornerShape(8.dp)
                                     )
-                                    .clickable { selectedMealType = mt },
+                                    .clickable { selectedSlot = slot }
+                                    .padding(horizontal = 12.dp),
                                 contentAlignment = Alignment.Center
                             ) {
                                 Text(
-                                    when (mt) {
-                                        MealType.BREAKFAST -> "🌅"
-                                        MealType.LUNCH -> "🍽"
-                                        MealType.DINNER -> "🌙"
-                                        MealType.SNACK -> "🥨"
-                                    },
-                                    style = MaterialTheme.typography.titleSmall
+                                    pl.filebit.gymtracker.util.MealSlots.label(slot),
+                                    style = MaterialTheme.typography.labelMedium.copy(
+                                        fontWeight = if (selectedSlot == slot) FontWeight.Bold else FontWeight.Normal
+                                    ),
+                                    color = if (selectedSlot == slot) AccentOrange else DarkOnSurface
                                 )
                             }
                         }
@@ -450,7 +458,7 @@ private fun RecipeDetailDialog(
                     TextButton(onClick = onDismiss) {
                         Text("Zamknij", color = DarkOnSurfaceVariant)
                     }
-                    TextButton(onClick = { onAddToDiet(selectedMealType) }) {
+                    TextButton(onClick = { onAddToDiet(selectedSlot) }) {
                         Text("Dodaj do diety", color = AccentOrange, fontWeight = FontWeight.Bold)
                     }
                 }

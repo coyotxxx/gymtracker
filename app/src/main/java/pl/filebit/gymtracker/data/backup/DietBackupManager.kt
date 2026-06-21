@@ -72,7 +72,8 @@ data class MealEntryDto(
     val productName: String,  // używamy nazwy, nie ID — przenośność
     val grams: Double, val notes: String = "",
     val createdAt: Long,
-    val isPlanned: Boolean = false   // v2.11.0: plan AI vs ręczny wpis (default false = stare backupy)
+    val isPlanned: Boolean = false,  // v2.11.0: plan AI vs ręczny wpis (default false = stare backupy)
+    val mealSlot: Int = 0            // v2.73.0: numer slotu (1..N). 0 = stary backup → wyliczany z mealType
 )
 
 @Serializable
@@ -194,7 +195,7 @@ class DietBackupManager @Inject constructor(
         val meals = mealDao.getForDateRange(0L, Long.MAX_VALUE)
 
         return DietBackup(
-            version = 1,
+            version = 2,   // v2.73.0: dodano mealSlot
             exportedAt = now,
             userDietProfile = dietProfileRepo.get()?.toDto(),
             customFoodProducts = allCustomProducts.map { it.toDto() },
@@ -204,7 +205,7 @@ class DietBackupManager @Inject constructor(
                     dateMs = e.dateMs, mealType = e.mealType.name,
                     productName = p.name, grams = e.grams,
                     notes = e.notes, createdAt = e.createdAt,
-                    isPlanned = e.isPlanned
+                    isPlanned = e.isPlanned, mealSlot = e.mealSlot
                 )
             },
             fastingWindows = fastingDao.getRecent(10000).map { it.toDto() },
@@ -301,6 +302,16 @@ class DietBackupManager @Inject constructor(
         // 3. MealEntries — przelicz productName → productId
         val productsByNameAfter = foodDao.getAll().associateBy { it.name.lowercase() }
         val mealDao = db.mealEntryDao()
+        // v2.73.0: dla starych backupów (mealSlot=0) wylicz slot kontiguous per dzień z mealType
+        // (ta sama reguła co migracja 75→76: ranga B<SNACK<L<D, slot = liczba różnych typów ≤ mój).
+        val typeRank = mapOf("BREAKFAST" to 1, "SNACK" to 2, "LUNCH" to 3, "DINNER" to 4)
+        fun legacySlot(dayMs: Long, type: String): Int {
+            val myRank = typeRank[type] ?: 9
+            return backup.mealEntries.filter { it.dateMs == dayMs }
+                .map { it.mealType }.distinct()
+                .count { (typeRank[it] ?: 9) <= myRank }
+                .coerceAtLeast(1)
+        }
         for (dto in backup.mealEntries) {
             val product = productsByNameAfter[dto.productName.lowercase()]
             if (product == null) {
@@ -313,6 +324,7 @@ class DietBackupManager @Inject constructor(
             mealDao.upsert(MealEntry(
                 dateMs = dto.dateMs,
                 mealType = runCatching { MealType.valueOf(dto.mealType) }.getOrDefault(MealType.LUNCH),
+                mealSlot = if (dto.mealSlot > 0) dto.mealSlot else legacySlot(dto.dateMs, dto.mealType),
                 productId = product.id, grams = dto.grams,
                 notes = dto.notes, createdAt = dto.createdAt,
                 isPlanned = dto.isPlanned

@@ -11,10 +11,10 @@ import pl.filebit.gymtracker.data.entity.MealEntry
 @Dao
 interface MealEntryDao {
 
-    @Query("SELECT * FROM meal_entries WHERE dateMs >= :startMs AND dateMs < :endMs ORDER BY mealType ASC, createdAt ASC")
+    @Query("SELECT * FROM meal_entries WHERE dateMs >= :startMs AND dateMs < :endMs ORDER BY mealSlot ASC, createdAt ASC")
     fun observeForDateRange(startMs: Long, endMs: Long): Flow<List<MealEntry>>
 
-    @Query("SELECT * FROM meal_entries WHERE dateMs >= :startMs AND dateMs < :endMs ORDER BY mealType ASC, createdAt ASC")
+    @Query("SELECT * FROM meal_entries WHERE dateMs >= :startMs AND dateMs < :endMs ORDER BY mealSlot ASC, createdAt ASC")
     suspend fun getForDateRange(startMs: Long, endMs: Long): List<MealEntry>
 
     @Query("SELECT * FROM meal_entries WHERE id = :id")

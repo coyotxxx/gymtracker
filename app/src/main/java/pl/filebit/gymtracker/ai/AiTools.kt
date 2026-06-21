@@ -134,7 +134,8 @@ object AiTools {
             putJsonObject("properties") {
                 putJsonObject("product") { put("type", "string"); put("description", "Nazwa produktu (musi pasować do bazy produktów)") }
                 putJsonObject("grams") { put("type", "number"); put("description", "Gramatura (1-2000)") }
-                putJsonObject("mealType") { put("type", "string"); put("description", "BREAKFAST/LUNCH/DINNER/SNACK (domyślnie LUNCH)") }
+                putJsonObject("mealSlot") { put("type", "integer"); put("description", "Numer posiłku 1..N (Posiłek N). Jeśli pominięte — wyliczany z mealType.") }
+                putJsonObject("mealType") { put("type", "string"); put("description", "BREAKFAST/LUNCH/DINNER/SNACK (domyślnie LUNCH) — używane gdy brak mealSlot") }
                 putJsonObject("date") { put("type", "string"); put("description", "Data YYYY-MM-DD (opcjonalnie, domyślnie dziś)") }
             }
             putJsonArray("required") { add("product"); add("grams") }

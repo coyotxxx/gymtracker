@@ -729,6 +729,63 @@ object AppModule {
         }
     }
 
+    // v2.73.0 (POSIŁKI N): posiłek identyfikowany NUMEREM slotu (1..N), nie mealType.
+    // - meal_entries: dodaj mealSlot + backfill kontiguous per dzień (B/L/D → 1/2/3).
+    // - meal_consumptions: przebudowa (usuń mealType, dodaj mealSlot, nowy UNIQUE),
+    //   slot statusu = slot wpisu posiłku tego samego typu w tym dniu; orphan statusy odrzucone.
+    // ZAŁOŻENIE (spełnione przez 100% danych z UI): wpisy i statusy mają dateMs = początek
+    // dnia (00:00 lokalny), więc dopasowanie po dateMs jest poprawne. mealType ZOSTAJE jako tag.
+    internal val MIGRATION_75_76 = object : Migration(75, 76) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            // Rank kanoniczny typu (do uporządkowania slotów w dniu): B < SNACK < L < D.
+            fun rank(col: String) =
+                "(CASE $col WHEN 'BREAKFAST' THEN 1 WHEN 'SNACK' THEN 2 WHEN 'LUNCH' THEN 3 WHEN 'DINNER' THEN 4 ELSE 9 END)"
+
+            // 1. meal_entries: dodaj mealSlot + backfill.
+            //    slot = liczba RÓŻNYCH typów obecnych tego dnia o randze <= mój typ → 1..N kontiguous.
+            db.execSQL("ALTER TABLE `meal_entries` ADD COLUMN `mealSlot` INTEGER NOT NULL DEFAULT 1")
+            db.execSQL(
+                """
+                UPDATE meal_entries SET mealSlot = (
+                    SELECT COUNT(DISTINCT m2.mealType) FROM meal_entries m2
+                    WHERE m2.dateMs = meal_entries.dateMs
+                      AND ${rank("m2.mealType")} <= ${rank("meal_entries.mealType")}
+                )
+                """.trimIndent()
+            )
+
+            // 2. meal_consumptions: przebudowa tabeli (usuń mealType, dodaj mealSlot).
+            db.execSQL(
+                """
+                CREATE TABLE `meal_consumptions_new` (
+                    `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    `dateMs` INTEGER NOT NULL,
+                    `mealSlot` INTEGER NOT NULL,
+                    `status` TEXT NOT NULL,
+                    `notedAt` INTEGER NOT NULL
+                )
+                """.trimIndent()
+            )
+            db.execSQL(
+                """
+                INSERT INTO meal_consumptions_new (id, dateMs, mealSlot, status, notedAt)
+                SELECT mc.id, mc.dateMs,
+                    (SELECT COUNT(DISTINCT m.mealType) FROM meal_entries m
+                       WHERE m.dateMs = mc.dateMs
+                         AND ${rank("m.mealType")} <= ${rank("mc.mealType")}) AS slot,
+                    mc.status, mc.notedAt
+                FROM meal_consumptions mc
+                WHERE EXISTS (
+                    SELECT 1 FROM meal_entries m WHERE m.dateMs = mc.dateMs AND m.mealType = mc.mealType
+                )
+                """.trimIndent()
+            )
+            db.execSQL("DROP TABLE meal_consumptions")
+            db.execSQL("ALTER TABLE meal_consumptions_new RENAME TO meal_consumptions")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_meal_consumptions_dateMs_mealSlot` ON `meal_consumptions` (`dateMs`, `mealSlot`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -759,7 +816,8 @@ object AppModule {
                 MIGRATION_71_72,
                 MIGRATION_72_73,
                 MIGRATION_73_74,
-                MIGRATION_74_75
+                MIGRATION_74_75,
+                MIGRATION_75_76
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

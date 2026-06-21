@@ -38,7 +38,6 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import pl.filebit.gymtracker.data.entity.FoodCategory
 import pl.filebit.gymtracker.data.entity.FoodProduct
-import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.repository.QuickComposeService
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
@@ -60,15 +59,16 @@ import pl.filebit.gymtracker.ui.theme.SuccessGreen
 @Composable
 fun QuickComposeDialog(
     products: List<FoodProduct>,
+    mealsCount: Int,
     targetKcalPerSlot: Int,
     targetProteinPerSlot: Int,
     targetFatPerSlot: Int,
     composeService: QuickComposeService,
-    onAccept: (mealType: MealType, picks: List<Pair<FoodProduct, Int>>) -> Unit,
+    onAccept: (slot: Int, picks: List<Pair<FoodProduct, Int>>) -> Unit,
     onDismiss: () -> Unit
 ) {
     var step by remember { mutableStateOf(QcStep.MEAL_TYPE) }
-    var selectedMeal by remember { mutableStateOf<MealType?>(null) }
+    var selectedSlot by remember { mutableStateOf<Int?>(null) }
     var selectedProtein by remember { mutableStateOf<FoodProduct?>(null) }
     var selectedCarb by remember { mutableStateOf<FoodProduct?>(null) }
     var selectedFat by remember { mutableStateOf<FoodProduct?>(null) }
@@ -144,24 +144,23 @@ fun QuickComposeDialog(
 
                 when (step) {
                     QcStep.MEAL_TYPE -> {
-                        Text("1. Wybierz porę posiłku:", color = DarkOnSurface, style = MaterialTheme.typography.titleSmall)
+                        Text("1. Wybierz posiłek:", color = DarkOnSurface, style = MaterialTheme.typography.titleSmall)
                         Spacer(Modifier.height(8.dp))
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            listOf(
-                                MealType.BREAKFAST to "🍳 Śniadanie",
-                                MealType.LUNCH to "🍗 Obiad",
-                                MealType.DINNER to "🥗 Kolacja",
-                                MealType.SNACK to "🍎 Przekąska"
-                            ).forEach { (t, label) ->
-                                BigChoiceButton(label, selected = selectedMeal == t) {
-                                    selectedMeal = t
+                            // v2.73.0: sloty dynamicznie 1..N (Posiłek N), nie sztywne 4 typy.
+                            (1..mealsCount).forEach { slot ->
+                                BigChoiceButton(
+                                    "🍽️ ${pl.filebit.gymtracker.util.MealSlots.label(slot)}",
+                                    selected = selectedSlot == slot
+                                ) {
+                                    selectedSlot = slot
                                     step = QcStep.PICK_PRODUCTS
                                 }
                             }
                         }
                     }
                     QcStep.PICK_PRODUCTS -> {
-                        Text("Slot: ${slotName(selectedMeal!!)}", color = AccentOrange, style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold))
+                        Text("Slot: ${pl.filebit.gymtracker.util.MealSlots.label(selectedSlot!!)}", color = AccentOrange, style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold))
                         Text("Cel: $targetKcalPerSlot kcal · B${targetProteinPerSlot}g T${targetFatPerSlot}g",
                             color = DarkOnSurfaceVariant, style = MaterialTheme.typography.bodySmall)
                         Spacer(Modifier.height(12.dp))
@@ -240,7 +239,7 @@ fun QuickComposeDialog(
                                     picks += selectedCarb!! to result.carbGrams
                                     picks += selectedFat!! to result.fatGrams
                                     if (selectedVeg != null) picks += selectedVeg!! to result.vegetableGrams
-                                    onAccept(selectedMeal!!, picks)
+                                    onAccept(selectedSlot!!, picks)
                                 },
                                 enabled = canAccept
                             ) {
@@ -400,9 +399,3 @@ private fun categoryLabelPL(c: FoodCategory): String = when (c) {
     FoodCategory.OTHER -> "produkt"
 }
 
-private fun slotName(t: MealType): String = when (t) {
-    MealType.BREAKFAST -> "Śniadanie"
-    MealType.LUNCH -> "Obiad"
-    MealType.DINNER -> "Kolacja"
-    MealType.SNACK -> "Przekąska"
-}

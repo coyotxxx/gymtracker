@@ -65,8 +65,12 @@ data class RecipeBrowserUiState(
 class RecipeBrowserViewModel @Inject constructor(
     private val dao: RecipeDao,
     private val productDao: FoodProductDao,
-    private val dietRepo: DietRepository
+    private val dietRepo: DietRepository,
+    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
 ) : ViewModel() {
+
+    /** v2.73.0: liczba posiłków/dzień — do pickera „Posiłek N". */
+    fun mealsPerDay(): Int = dietPrefs.load().mealsPerDay
 
     private val _filter = MutableStateFlow(RecipeFilter.ALL)
     private val _category = MutableStateFlow(CategoryFilter.ALL)
@@ -107,8 +111,9 @@ class RecipeBrowserViewModel @Inject constructor(
 
     fun consumeAddResult() { _addResult.value = null }
 
-    fun addToDiet(recipe: Recipe, mealType: MealType, dateMs: Long) {
+    fun addToDiet(recipe: Recipe, slot: Int, dateMs: Long) {
         viewModelScope.launch {
+            val tag = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, dietPrefs.load().mealsPerDay)
             val raw = recipe.rawIngredientsText
             if (raw.isNullOrBlank()) {
                 _addResult.value = AddResult.Failed("Przepis nie ma listy składników")
@@ -147,7 +152,8 @@ class RecipeBrowserViewModel @Inject constructor(
 
                 dietRepo.addMeal(MealEntry(
                     dateMs = dateMs,
-                    mealType = mealType,
+                    mealType = tag,
+                    mealSlot = slot,
                     productId = product.id,
                     grams = qty,
                     notes = recipe.name

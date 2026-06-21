@@ -28,8 +28,12 @@ sealed class AnalysisState {
 class FoodImageAnalyzerViewModel @Inject constructor(
     private val analyzer: FoodImageAnalyzer,
     private val dietRepo: DietRepository,
-    private val foodProductDao: pl.filebit.gymtracker.data.db.dao.FoodProductDao
+    private val foodProductDao: pl.filebit.gymtracker.data.db.dao.FoodProductDao,
+    private val dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
 ) : ViewModel() {
+
+    /** v2.73.0: liczba posiłków/dzień — do pickera „Posiłek N". */
+    fun mealsPerDay(): Int = dietPrefs.load().mealsPerDay
 
     private val _state = MutableStateFlow<AnalysisState>(AnalysisState.Idle)
     val state: StateFlow<AnalysisState> = _state.asStateFlow()
@@ -51,8 +55,9 @@ class FoodImageAnalyzerViewModel @Inject constructor(
      * Każdy składnik staje się oddzielnym MealEntry. Brakujące produkty w bazie
      * → utwórz custom FoodProduct z source="image_analysis".
      */
-    fun saveAsMealEntries(analysis: FoodAnalysis, mealType: MealType, dateMs: Long) {
+    fun saveAsMealEntries(analysis: FoodAnalysis, slot: Int, dateMs: Long) {
         viewModelScope.launch {
+            val tag = pl.filebit.gymtracker.util.MealSlots.mealTypeForSlot(slot, dietPrefs.load().mealsPerDay)
             val products = foodProductDao.getAll().associateBy { it.name.lowercase() }
             var added = 0
             // Cel: jeden zbiorczy notes per posiłek
@@ -84,7 +89,8 @@ class FoodImageAnalyzerViewModel @Inject constructor(
                 }
                 dietRepo.addMeal(MealEntry(
                     dateMs = dateMs,
-                    mealType = mealType,
+                    mealType = tag,
+                    mealSlot = slot,
                     productId = productId,
                     grams = ing.grams.toDouble(),
                     notes = dishNotes

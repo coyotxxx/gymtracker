@@ -28,7 +28,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import pl.filebit.gymtracker.ai.AiAlternative
-import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
@@ -37,13 +36,13 @@ import pl.filebit.gymtracker.ui.theme.DarkSurface
 
 @Composable
 fun AlternativesDialog(
-    mealType: MealType,
+    slot: Int,
     alternatives: List<AiAlternative>,
     onSelect: (AiAlternative) -> Unit,
     onDismiss: () -> Unit
 ) {
     ScrollableSheetShell(
-        title = "🔁 Inne opcje na ${mealTypeLabel(mealType).lowercase()}",
+        title = "🔁 Inne opcje na ${pl.filebit.gymtracker.util.MealSlots.label(slot)}",
         onDismiss = onDismiss,
         actions = {
             TextButton(onClick = onDismiss) {

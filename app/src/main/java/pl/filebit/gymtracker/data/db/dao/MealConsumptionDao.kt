@@ -8,13 +8,13 @@ import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 import pl.filebit.gymtracker.data.entity.MealConsumption
 import pl.filebit.gymtracker.data.entity.MealConsumptionStatus
-import pl.filebit.gymtracker.data.entity.MealType
 
 @Dao
 interface MealConsumptionDao {
 
-    @Query("SELECT * FROM meal_consumptions WHERE dateMs = :dateMs AND mealType = :mealType LIMIT 1")
-    suspend fun get(dateMs: Long, mealType: MealType): MealConsumption?
+    // v2.73.0 (POSIŁKI N): status kluczowany po numerze slotu (dateMs, mealSlot), nie mealType.
+    @Query("SELECT * FROM meal_consumptions WHERE dateMs = :dateMs AND mealSlot = :mealSlot LIMIT 1")
+    suspend fun get(dateMs: Long, mealSlot: Int): MealConsumption?
 
     @Query("SELECT * FROM meal_consumptions WHERE dateMs = :dateMs")
     fun observeForDate(dateMs: Long): Flow<List<MealConsumption>>
@@ -28,8 +28,8 @@ interface MealConsumptionDao {
     @Update
     suspend fun update(c: MealConsumption)
 
-    @Query("DELETE FROM meal_consumptions WHERE dateMs = :dateMs AND mealType = :mealType")
-    suspend fun delete(dateMs: Long, mealType: MealType)
+    @Query("DELETE FROM meal_consumptions WHERE dateMs = :dateMs AND mealSlot = :mealSlot")
+    suspend fun delete(dateMs: Long, mealSlot: Int)
 
     @Query("DELETE FROM meal_consumptions")
     suspend fun deleteAll()

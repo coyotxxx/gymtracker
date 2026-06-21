@@ -188,9 +188,9 @@ fun DietSettingsDialog(
                 SettingSection("Liczba posiłków: $meals") {
                     Slider(
                         value = meals.toFloat(),
-                        onValueChange = { meals = it.toInt().coerceIn(2, 6) },
-                        valueRange = 2f..6f,
-                        steps = 3,
+                        onValueChange = { meals = it.toInt().coerceIn(2, 8) },   // v2.73.0: 2-8
+                        valueRange = 2f..8f,
+                        steps = 5,
                         colors = SliderDefaults.colors(
                             thumbColor = AccentOrange,
                             activeTrackColor = AccentOrange

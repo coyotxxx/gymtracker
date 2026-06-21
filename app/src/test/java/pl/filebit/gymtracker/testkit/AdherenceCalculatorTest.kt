@@ -66,9 +66,9 @@ class AdherenceCalculatorTest : TestHarness() {
             name = "Ryż", category = FoodCategory.CARBS,
             kcalPer100g = 130.0, proteinPer100g = 2.7, carbsPer100g = 28.0, fatPer100g = 0.3))
         db.mealEntryDao().upsert(MealEntry(
-            dateMs = now, mealType = MealType.LUNCH, productId = chickenId, grams = 300.0))
+            dateMs = now, mealType = MealType.LUNCH, mealSlot = 2, productId = chickenId, grams = 300.0))
         db.mealEntryDao().upsert(MealEntry(
-            dateMs = now, mealType = MealType.DINNER, productId = riceId, grams = 200.0))
+            dateMs = now, mealType = MealType.DINNER, mealSlot = 3, productId = riceId, grams = 200.0))
 
         calc().computeForDate(now)
         val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
@@ -115,17 +115,17 @@ class AdherenceCalculatorTest : TestHarness() {
         val now = System.currentTimeMillis()
         val consRepo = MealConsumptionRepository(db.mealConsumptionDao())
         // 3 posiłki (domyślne): śniadanie ZJEDZONE, obiad nietknięty, kolacja POMINIĘTA.
-        consRepo.setStatus(now, MealType.BREAKFAST, MealConsumptionStatus.CONSUMED)
-        consRepo.setStatus(now, MealType.DINNER, MealConsumptionStatus.SKIPPED)
+        consRepo.setStatus(now, 1, MealConsumptionStatus.CONSUMED)  // Posiłek 1 (śniadanie)
+        consRepo.setStatus(now, 3, MealConsumptionStatus.SKIPPED)   // Posiłek 3 (kolacja)
 
-        val breakdown = calc().mealBreakdownForDate(now).associateBy { it.mealType }
+        val breakdown = calc().mealBreakdownForDate(now).associateBy { it.slot }
 
-        assertEquals("śniadanie zjedzone",
-            pl.filebit.gymtracker.data.repository.MealSlotState.EATEN, breakdown[MealType.BREAKFAST]?.state)
-        assertEquals("obiad nie zalogowany",
-            pl.filebit.gymtracker.data.repository.MealSlotState.MISSING, breakdown[MealType.LUNCH]?.state)
-        assertEquals("kolacja pominięta",
-            pl.filebit.gymtracker.data.repository.MealSlotState.SKIPPED, breakdown[MealType.DINNER]?.state)
+        assertEquals("Posiłek 1 zjedzony",
+            pl.filebit.gymtracker.data.repository.MealSlotState.EATEN, breakdown[1]?.state)
+        assertEquals("Posiłek 2 nie zalogowany",
+            pl.filebit.gymtracker.data.repository.MealSlotState.MISSING, breakdown[2]?.state)
+        assertEquals("Posiłek 3 pominięty",
+            pl.filebit.gymtracker.data.repository.MealSlotState.SKIPPED, breakdown[3]?.state)
     }
 
     // === v2.11.0: adherence = realne spożycie (plan AI vs ręczny dziennik) ===
@@ -141,7 +141,7 @@ class AdherenceCalculatorTest : TestHarness() {
         val c = chicken()
         // wpis Z PLANU AI (isPlanned=true), brak statusu konsumpcji → niezjedzony
         db.mealEntryDao().upsert(MealEntry(
-            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0, isPlanned = true))
+            dateMs = now, mealType = MealType.LUNCH, mealSlot = 2, productId = c, grams = 300.0, isPlanned = true))
 
         calc().computeForDate(now)
         val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
@@ -157,9 +157,9 @@ class AdherenceCalculatorTest : TestHarness() {
         val now = System.currentTimeMillis()
         val c = chicken()
         db.mealEntryDao().upsert(MealEntry(
-            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0, isPlanned = true))
+            dateMs = now, mealType = MealType.LUNCH, mealSlot = 2, productId = c, grams = 300.0, isPlanned = true))
         MealConsumptionRepository(db.mealConsumptionDao())
-            .setStatus(now, MealType.LUNCH, MealConsumptionStatus.CONSUMED)
+            .setStatus(now, 2, MealConsumptionStatus.CONSUMED)
 
         calc().computeForDate(now)
         val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
@@ -175,9 +175,9 @@ class AdherenceCalculatorTest : TestHarness() {
         val c = chicken()
         // wpis RĘCZNY (isPlanned=false default) ale jawnie pominięty
         db.mealEntryDao().upsert(MealEntry(
-            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0))
+            dateMs = now, mealType = MealType.LUNCH, mealSlot = 2, productId = c, grams = 300.0))
         MealConsumptionRepository(db.mealConsumptionDao())
-            .setStatus(now, MealType.LUNCH, MealConsumptionStatus.SKIPPED)
+            .setStatus(now, 2, MealConsumptionStatus.SKIPPED)
 
         calc().computeForDate(now)
         val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
@@ -194,12 +194,12 @@ class AdherenceCalculatorTest : TestHarness() {
         val now = System.currentTimeMillis()
         val c = chicken()
         db.mealEntryDao().upsert(MealEntry(
-            dateMs = now, mealType = MealType.DINNER, productId = c, grams = 300.0))
+            dateMs = now, mealType = MealType.DINNER, mealSlot = 3, productId = c, grams = 300.0))
 
         val diag = pl.filebit.gymtracker.data.repository.DiagnosticLogger(db.diagnosticEventDao())
         // 1) zmiana statusu na SKIPPED przez repo z loggerem
         MealConsumptionRepository(db.mealConsumptionDao(), diag)
-            .setStatus(now, MealType.DINNER, MealConsumptionStatus.SKIPPED)
+            .setStatus(now, 3, MealConsumptionStatus.SKIPPED)
         // 2) wyliczenie adherence z loggerem
         val kit = HomeDetectors(db, context)
         AdherenceCalculator(
@@ -227,10 +227,10 @@ class AdherenceCalculatorTest : TestHarness() {
         val statusEvent = events.firstOrNull { it.event == "meal_status_set" }
         val adherenceEvent = events.firstOrNull { it.event == "adherence_computed" }
         assertTrue("log zmiany statusu posiłku istnieje", statusEvent != null)
-        assertTrue("status DINNER→SKIPPED w logu", statusEvent!!.message.contains("DINNER") && statusEvent.message.contains("SKIPPED"))
+        assertTrue("status Posiłek 3→SKIPPED w logu", statusEvent!!.message.contains("Posiłek 3") && statusEvent.message.contains("SKIPPED"))
         assertTrue("log wyliczenia adherence istnieje", adherenceEvent != null)
-        assertTrue("adherence_computed zawiera pominiętą kolację (DINNER)",
-            adherenceEvent!!.dataJson?.contains("DINNER") == true)
+        assertTrue("adherence_computed zawiera pominięty Posiłek 3",
+            adherenceEvent!!.dataJson?.contains("Posiłek 3") == true)
         assertEquals("pominięty posiłek = WARN", "WARN", adherenceEvent.level)
     }
 
@@ -241,7 +241,7 @@ class AdherenceCalculatorTest : TestHarness() {
         val c = chicken()
         // wpis RĘCZNY bez statusu → domyślnie zjedzony (nie psujemy dziennika)
         db.mealEntryDao().upsert(MealEntry(
-            dateMs = now, mealType = MealType.LUNCH, productId = c, grams = 300.0))
+            dateMs = now, mealType = MealType.LUNCH, mealSlot = 2, productId = c, grams = 300.0))
 
         calc().computeForDate(now)
         val log = db.adherenceLogDao().getRecent(5).firstOrNull()!!
