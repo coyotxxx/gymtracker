@@ -402,6 +402,7 @@ fun DietScreen(
         GeneratePlanPreferencesDialog(
             mealsCount = state.config.mealsPerDay,
             initial = vm.mealStylePreferences(),
+            onMealsCountChange = { vm.setMealsPerDay(it) },
             onGenerate = { stylePrefs ->
                 showStylePicker = false
                 vm.generateAiDayPlan(stylePrefs)

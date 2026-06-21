@@ -1595,6 +1595,22 @@ class DietViewModel @Inject constructor(
         viewModelScope.launch { reminderScheduler.rescheduleAll(dietPrefs.load()) }
     }
 
+    /**
+     * v2.74.0: zmiana liczby posiłków wprost z okna generowania planu.
+     * Persist od razu (generator czyta dietPrefs.load()) + reschedule przypomnień.
+     */
+    fun setMealsPerDay(count: Int) {
+        val n = count.coerceIn(
+            pl.filebit.gymtracker.util.MealSlots.MIN_MEALS,
+            pl.filebit.gymtracker.util.MealSlots.MAX_MEALS
+        )
+        val cfg = dietPrefs.load()
+        if (cfg.mealsPerDay == n) return
+        val updated = cfg.copy(mealsPerDay = n)
+        dietPrefs.save(updated)
+        viewModelScope.launch { reminderScheduler.rescheduleAll(updated) }
+    }
+
     private fun todayStartMs(): Long {
         val cal = java.util.Calendar.getInstance(java.util.TimeZone.getDefault())
         cal.set(java.util.Calendar.HOUR_OF_DAY, 0)

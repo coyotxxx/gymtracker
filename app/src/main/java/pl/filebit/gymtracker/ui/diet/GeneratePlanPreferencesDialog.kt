@@ -66,6 +66,8 @@ fun GeneratePlanPreferencesDialog(
     mealsCount: Int,
     onGenerate: (MealStylePreferences) -> Unit,
     onDismiss: () -> Unit,
+    /** v2.74.0: zmiana liczby posiłków wprost w oknie (persist + reschedule w VM). */
+    onMealsCountChange: (Int) -> Unit = {},
     /** v1.27.1: ostatnio użyte preferencje — okno otwiera się z nimi. */
     initial: MealStylePreferences = MealStylePreferences()
 ) {
@@ -77,8 +79,11 @@ fun GeneratePlanPreferencesDialog(
     var preferFavorites by remember { mutableStateOf(initial.preferFavorites) }
     var expandedIdx by remember { mutableStateOf(-1) }
 
+    // v2.74.0: lokalny stan liczby posiłków (inicjowany z configu); zmiana persistuje w VM.
+    var meals by remember(mealsCount) { mutableStateOf(mealsCount) }
+
     // v2.73.0: jedno źródło slotów (obsługa 2-8); etykiety „Posiłek N".
-    val typesForSlots: List<MealType> = pl.filebit.gymtracker.util.MealSlots.typesFor(mealsCount)
+    val typesForSlots: List<MealType> = pl.filebit.gymtracker.util.MealSlots.typesFor(meals)
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -109,6 +114,30 @@ fun GeneratePlanPreferencesDialog(
                         style = MaterialTheme.typography.bodySmall,
                         color = DarkOnSurfaceVariant
                     )
+
+                    // === LICZBA POSIŁKÓW (v2.74.0) ===
+                    SectionLabel("Liczba posiłków: $meals")
+                    SectionHint("Zmiana zapisuje się od razu i przelicza plan dnia.")
+                    FlowRow(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                        verticalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        (pl.filebit.gymtracker.util.MealSlots.MIN_MEALS..pl.filebit.gymtracker.util.MealSlots.MAX_MEALS).forEach { n ->
+                            SelectableChip(
+                                text = n.toString(),
+                                selected = meals == n,
+                                pill = true,
+                                onClick = {
+                                    if (meals != n) {
+                                        meals = n
+                                        expandedIdx = -1
+                                        onMealsCountChange(n)
+                                    }
+                                }
+                            )
+                        }
+                    }
 
                     // === CHARAKTER DAŃ (jeden) ===
                     SectionLabel("Charakter dań")
