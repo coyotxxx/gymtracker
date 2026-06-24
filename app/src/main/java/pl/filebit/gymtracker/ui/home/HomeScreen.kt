@@ -332,21 +332,10 @@ fun HomeScreen(
                 val readinessDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS in state.dismissedCards
                 if (readiness.maturity != DataMaturity.LEARNING && readiness.hasRecentTraining && !readinessDismissed) {
                     item {
-                        // v1.14.0: unified canApplyDeloadNow zastępuje 3 osobne checki w kartach.
-                        // Sprawdza i TrainingPhase, i aktywny mesocykl (MesocyclePhase.DELOAD).
+                        // v2.77.0: karta = czysta metryka; akcje (deload) wyłącznie w Karcie Coacha.
                         TrainingReadinessCard(
                             readiness = readiness,
                             muscleReport = state.muscleRecovery,
-                            canApplyDeload = vm.canApplyDeloadNow(),
-                            onApplyDeload = { severity ->
-                                vm.applyDeload(severity) { result ->
-                                    scope.launch {
-                                        snackbar.showSnackbar(
-                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
-                                        )
-                                    }
-                                }
-                            },
                             onDismiss = {
                                 vm.dismissCard(pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS)
                             }
@@ -2170,47 +2159,17 @@ private fun TrainingLoadCard(
 private fun TrainingReadinessCard(
     readiness: TrainingReadiness,
     muscleReport: MuscleRecoveryReport?,
-    canApplyDeload: Boolean,
-    onApplyDeload: (pl.filebit.gymtracker.util.DeloadSeverity) -> Unit,
     onDismiss: () -> Unit
 ) {
+    // v2.77.0: karta = czysta METRYKA. Bez przycisku deload (to jedyny głos Karty Coacha)
+    // i bez prozy-werdyktu — strefa opisuje POZIOM gotowości, nie wydaje poleceń.
     val (accent, label) = when (readiness.zone) {
-        ReadinessZone.PEAK -> SuccessGreen to "PEAK — gotów na PR"
-        ReadinessZone.GOOD -> SuccessGreen to "GOOD — normalnie"
-        ReadinessZone.MODERATE -> AccentOrange to "MODERATE — łagodnie"
-        ReadinessZone.REST -> ErrorRed to "REST — odpuść"
+        ReadinessZone.PEAK -> SuccessGreen to "PEAK — szczyt formy"
+        ReadinessZone.GOOD -> SuccessGreen to "GOOD — dobra forma"
+        ReadinessZone.MODERATE -> AccentOrange to "MODERATE — obniżona"
+        ReadinessZone.REST -> ErrorRed to "REST — niska"
     }
     var expanded by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
-    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
-    val showActionButton = canApplyDeload && (readiness.zone == ReadinessZone.REST || readiness.zone == ReadinessZone.MODERATE)
-    val severity = when (readiness.zone) {
-        ReadinessZone.REST -> pl.filebit.gymtracker.util.DeloadSeverity.HIGH
-        ReadinessZone.MODERATE -> pl.filebit.gymtracker.util.DeloadSeverity.LOW
-        else -> pl.filebit.gymtracker.util.DeloadSeverity.LOW
-    }
-    val severityLabel = when (readiness.zone) {
-        ReadinessZone.REST -> "deload (-30%)"
-        ReadinessZone.MODERATE -> "lekki deload (-15%)"
-        else -> "deload"
-    }
-
-    if (showConfirm) {
-        androidx.compose.material3.AlertDialog(
-            onDismissRequest = { showConfirm = false },
-            title = { androidx.compose.material3.Text("Zastosować $severityLabel?", fontWeight = FontWeight.Bold) },
-            text = { androidx.compose.material3.Text("Training Readiness ${readiness.score}/100. Algorytm sugeruje redukcję obciążenia. Możesz w każdej chwili przywrócić oryginalne wagi.") },
-            confirmButton = {
-                androidx.compose.material3.TextButton(onClick = { showConfirm = false; onApplyDeload(severity) }) {
-                    androidx.compose.material3.Text("Zastosuj", color = accent, fontWeight = FontWeight.Bold)
-                }
-            },
-            dismissButton = {
-                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
-                    androidx.compose.material3.Text("Anuluj")
-                }
-            }
-        )
-    }
 
     androidx.compose.material3.Card(
         modifier = Modifier
@@ -2261,36 +2220,12 @@ private fun TrainingReadinessCard(
                     )
                 }
             }
-            Spacer(Modifier.height(6.dp))
-            pl.filebit.gymtracker.ui.components.AiMarkdown(
-                text = readiness.recommendation,
-                contentColor = DarkOnSurface
-            )
             // Komponenty z procentami
             Spacer(Modifier.height(10.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 ReadinessMini("Sen/HRV", readiness.recoveryComponent, "50%")
                 ReadinessMini("Tonaż", readiness.loadComponent, "30%")
                 ReadinessMini("Mięśnie", readiness.muscleComponent, "20%")
-            }
-
-            // Przycisk akcji gdy MODERATE/REST (sugeruje deload)
-            if (showActionButton) {
-                Spacer(Modifier.height(10.dp))
-                androidx.compose.material3.Button(
-                    onClick = { showConfirm = true },
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                        containerColor = accent,
-                        contentColor = androidx.compose.ui.graphics.Color.White
-                    ),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    androidx.compose.material3.Text(
-                        "Zastosuj $severityLabel",
-                        fontWeight = FontWeight.Bold
-                    )
-                }
             }
 
             // Expandable: muscle recovery

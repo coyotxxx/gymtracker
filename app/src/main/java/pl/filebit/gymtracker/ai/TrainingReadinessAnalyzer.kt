@@ -29,7 +29,6 @@ data class TrainingReadiness(
     val recoveryComponent: Int,              // 0-100 z 50%
     val loadComponent: Int,                  // 0-100 z 30%
     val muscleComponent: Int,                // 0-100 z 20%
-    val recommendation: String,
     val maturity: DataMaturity,
     /**
      * v2.76.0: czy jest ŚWIEŻA aktywność treningowa (≥1 ukończony trening w 14 dni).
@@ -99,66 +98,17 @@ class TrainingReadinessAnalyzer @Inject constructor(
             else -> ReadinessZone.REST
         }
 
-        // Inteligentna rekomendacja — bazuje na tym co najbardziej obniża score
-        // v1.11.68: gdy phase=DELOAD, rekomendacja świadoma (nie sugeruje "zastosuj deload")
-        val rec = buildRecommendation(zone, recoveryScore, loadFactor, muscleAvg, muscle, currentPhase)
-
+        // v2.77.0: czujnik NIE pisze już prozy-werdyktu („gotów na PR"/„odpuść dziś").
+        // Akcyjny głos to wyłącznie Karta Coacha (CoachOrchestrator). Tu zostają czyste dane.
         return TrainingReadiness(
             score = score,
             zone = zone,
             recoveryComponent = recoveryScore,
             loadComponent = loadFactor,
             muscleComponent = muscleAvg,
-            recommendation = rec,
             maturity = recovery?.maturity ?: DataMaturity.LEARNING,
             hasRecentTraining = hasRecentTraining
         )
-    }
-
-    private fun buildRecommendation(
-        zone: ReadinessZone,
-        recovery: Int,
-        load: Int,
-        muscle: Int,
-        muscleReport: MuscleRecoveryReport?,
-        currentPhase: TrainingPhase = TrainingPhase.NO_DATA
-    ): String {
-        // v1.11.68: gdy faza cyklu = DELOAD, dostosowane rekomendacje. Nie sugerujemy
-        // "zastosuj deload" bo user JUŻ jest w deloadzie.
-        if (currentPhase == TrainingPhase.DELOAD) {
-            return when (zone) {
-                ReadinessZone.PEAK, ReadinessZone.GOOD ->
-                    "Tydzień deload — utrzymuj niskie volume i RPE 6-7. Po deloadzie wracasz do akumulacji z większą energią."
-                ReadinessZone.MODERATE ->
-                    "Tydzień deload — niskie volume celowe. Skupiaj się na technice i regeneracji, nie próbuj zwiększać obciążenia."
-                ReadinessZone.REST ->
-                    "Tydzień deload + niska regeneracja — odpuść dziś trening. Sen i odżywianie priorytetem."
-            }
-        }
-        return when (zone) {
-            ReadinessZone.PEAK -> {
-                val freshList = muscleReport?.freshGroups?.take(3)
-                    ?.joinToString(", ") { it.name.lowercase() } ?: ""
-                "Jesteś gotowy na ciężki trening. ${if (freshList.isNotEmpty()) "Najświeższe partie: $freshList." else ""}"
-            }
-            ReadinessZone.GOOD -> {
-                "Dobra forma — trenuj zgodnie z planem. Wszystkie systemy w normie."
-            }
-            ReadinessZone.MODERATE -> {
-                // Znajdź najsłabszy komponent
-                val weakest = listOf(
-                    "regeneracja (sen/HRV)" to recovery,
-                    "obciążenie treningowe (ACWR)" to load,
-                    "regeneracja mięśni" to muscle
-                ).minByOrNull { it.second }
-                "Umiarkowana gotowość. Najbardziej obniża: ${weakest?.first ?: "?"} (${weakest?.second ?: 0}/100). " +
-                    "Trenuj łagodnie, RPE 7, krótsze sesje."
-            }
-            ReadinessZone.REST -> {
-                "Niska gotowość — wszystkie systemy sygnalizują zmęczenie. Dziś rest lub bardzo lekkie cardio Z1. " +
-                    "Po regeneracji wracaj na pełen plan."
-            }
-        }
     }
 }
 
@@ -180,7 +130,6 @@ object TrainingReadinessPromptHelper {
         append("- Regeneracja (sen/HRV): ${readiness.recoveryComponent}/100 (waga 50%)\n")
         append("- Obciążenie (ACWR): ${readiness.loadComponent}/100 (waga 30%)\n")
         append("- Regeneracja mięśni: ${readiness.muscleComponent}/100 (waga 20%)\n")
-        append("**Rekomendacja:** ${readiness.recommendation}\n")
         append("**Twoja rola:** gdy proponujesz trening na DZIŚ — bazuj na Score i konkretnych komponentach. ")
         append("Score <50 = sugestia rest. 50-70 = lżejszy plan. 70-90 = standard. 90+ = ciężki.\n")
     }

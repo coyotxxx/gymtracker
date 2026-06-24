@@ -25,7 +25,6 @@ import pl.filebit.gymtracker.ai.TrainingLoad
 import pl.filebit.gymtracker.ai.TrainingLoadAnalyzer
 import pl.filebit.gymtracker.ai.TrainingReadiness
 import pl.filebit.gymtracker.ai.TrainingReadinessAnalyzer
-import pl.filebit.gymtracker.ai.ReadinessZone
 import pl.filebit.gymtracker.ai.WorkoutAdjustment
 import pl.filebit.gymtracker.util.DeloadSeverity
 import pl.filebit.gymtracker.ai.TrainingPhase
@@ -352,21 +351,9 @@ class HomeViewModel @Inject constructor(
         }.getOrNull()
         // v1.9.0 Recovery per partia + Training Readiness (v1.11.68: phase-aware)
         val muscleRecovery = runCatching { muscleRecoveryAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
-        val rawReadiness = runCatching { readinessAnalyzer.analyze(currentPhase) }.getOrNull()
-        // v1.11.69: gdy Readiness=GOOD/PEAK ale HealthInsight=REST/DELOAD_TODAY,
-        // dopisz ostrzezenie. Powod: Readiness uzywa 28d baseline, HealthInsight ma
-        // swieze dane (1-2 noce) - swieze dane powinny byc widoczne nawet przy wysokim score.
-        val trainingReadiness = if (
-            rawReadiness != null && healthInsight != null &&
-            (rawReadiness.zone == ReadinessZone.PEAK || rawReadiness.zone == ReadinessZone.GOOD) &&
-            (healthInsight.workoutAdjustment == WorkoutAdjustment.REST_RECOMMENDED ||
-                healthInsight.workoutAdjustment == WorkoutAdjustment.DELOAD_TODAY)
-        ) {
-            rawReadiness.copy(
-                recommendation = rawReadiness.recommendation +
-                    "\n\n⚠ ALE świeże dane (sen/HRV) sygnalizują niską regenerację — dziś lżej niż score sugeruje."
-            )
-        } else rawReadiness
+        // v2.77.0: readiness = czysta metryka (bez doklejania prozy-ostrzeżeń). Niska regeneracja
+        // (sen/HRV) i tak wychodzi przez Kartę Coacha (recovery → deload), bez dublowania głosu.
+        val trainingReadiness = runCatching { readinessAnalyzer.analyze(currentPhase) }.getOrNull()
 
         // Stan B: Next planned day — używa effective schedule (z overrides)
         val nextPlannedDay: NextPlannedDay? = if (todaysPlan == null) {

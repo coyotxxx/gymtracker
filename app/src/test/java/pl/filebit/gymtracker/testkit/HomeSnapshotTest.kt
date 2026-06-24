@@ -40,7 +40,7 @@ class HomeSnapshotTest {
         TrainingLoad(1000.0, 1000.0, acwr, zone, 20, 6, "")
 
     private fun readiness(maturity: DataMaturity) =
-        TrainingReadiness(72, ReadinessZone.GOOD, 70, 75, 70, "", maturity, hasRecentTraining = true)
+        TrainingReadiness(72, ReadinessZone.GOOD, 70, 75, 70, maturity, hasRecentTraining = true)
 
     private fun deloadSuggestion() =
         DeloadCardState.Suggestion(DeloadRecommendation(DeloadSeverity.HIGH, "RPE 10 przez 2 tyg"))
