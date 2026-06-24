@@ -330,7 +330,7 @@ fun HomeScreen(
             // v1.9.0: Training Readiness + Muscle Recovery (na samej górze — primary metric)
             state.trainingReadiness?.let { readiness ->
                 val readinessDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS in state.dismissedCards
-                if (readiness.maturity != DataMaturity.LEARNING && !readinessDismissed) {
+                if (readiness.maturity != DataMaturity.LEARNING && readiness.hasRecentTraining && !readinessDismissed) {
                     item {
                         // v1.14.0: unified canApplyDeloadNow zastępuje 3 osobne checki w kartach.
                         // Sprawdza i TrainingPhase, i aktywny mesocykl (MesocyclePhase.DELOAD).

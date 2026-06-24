@@ -88,6 +88,9 @@ object HomeCardsResolver {
             when {
                 r.maturity == DataMaturity.LEARNING ->
                     hidden += HiddenCard("TRAINING_READINESS", "za mało danych (maturity=LEARNING)")
+                // v2.76.0: brak świeżej aktywności treningowej → werdykt z wartości domyślnych, chowamy.
+                !r.hasRecentTraining ->
+                    hidden += HiddenCard("TRAINING_READINESS", "brak treningu w 14 dni — gotowość nieoznaczona")
                 dismissed ->
                     hidden += HiddenCard("TRAINING_READINESS", "user zamknął kartę")
                 else ->

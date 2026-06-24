@@ -30,7 +30,14 @@ data class TrainingReadiness(
     val loadComponent: Int,                  // 0-100 z 30%
     val muscleComponent: Int,                // 0-100 z 20%
     val recommendation: String,
-    val maturity: DataMaturity
+    val maturity: DataMaturity,
+    /**
+     * v2.76.0: czy jest ŚWIEŻA aktywność treningowa (≥1 ukończony trening w 14 dni).
+     * Bez niej Tonaż (→80 neutral) i Mięśnie (→100 nic nietrenowane) to wartości
+     * DOMYŚLNE, które zawyżają werdykt do PEAK/„gotów na PR" mimo braku bazy treningowej.
+     * Gdy false → karta jest chowana (jak przy maturity=LEARNING) i sekcja w prompt AI pomijana.
+     */
+    val hasRecentTraining: Boolean
 )
 
 enum class ReadinessZone {
@@ -58,6 +65,11 @@ class TrainingReadinessAnalyzer @Inject constructor(
             recovery.maturity != DataMaturity.LEARNING
         val recoveryScore = recovery?.score ?: 75   // tylko do wyświetlenia komponentu
         val muscleAvg = muscle?.avgRecoveryPct ?: 80
+
+        // v2.76.0: gotowość ma sens TYLKO przy świeżej aktywności treningowej.
+        // Bez treningu w 14 dni load=INSUFFICIENT (loadFactor→80) i muscle=100 to
+        // wartości domyślne — score windowany do PEAK/„gotów na PR" mimo zerowej bazy.
+        val hasRecentTraining = load != null && load.workoutsCount14d > 0
 
         // LoadFactor: ACWR optimum 0.8-1.3 → 100; im dalej tym mniej
         // v1.11.68: gdy phase=DELOAD niski ACWR jest CELOWY → loadFactor neutralny (80)
@@ -98,7 +110,8 @@ class TrainingReadinessAnalyzer @Inject constructor(
             loadComponent = loadFactor,
             muscleComponent = muscleAvg,
             recommendation = rec,
-            maturity = recovery?.maturity ?: DataMaturity.LEARNING
+            maturity = recovery?.maturity ?: DataMaturity.LEARNING,
+            hasRecentTraining = hasRecentTraining
         )
     }
 
@@ -152,6 +165,9 @@ class TrainingReadinessAnalyzer @Inject constructor(
 object TrainingReadinessPromptHelper {
     fun toPromptSection(readiness: TrainingReadiness): String = buildString {
         if (readiness.maturity == DataMaturity.LEARNING) return@buildString
+        // v2.76.0: bez świeżej aktywności treningowej werdykt jest oparty na wartościach
+        // domyślnych — nie karmimy mózgu fałszywym „PEAK/gotów na PR" (AI i tak widzi historię treningów).
+        if (!readiness.hasRecentTraining) return@buildString
         append("\n=== TRAINING READINESS (kompozyt — gotowość do treningu) ===\n")
         append("Score: ${readiness.score}/100 — ")
         append(when (readiness.zone) {
