@@ -778,24 +778,9 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    /**
-     * v1.14.0 — unified check czy mogę aplikować deload TERAZ.
-     * Jedno źródło prawdy dla kart treningowych (Readiness/Phase/Load) — wcześniej
-     * każda miała własny check, co dawało inkonsystencje.
-     */
-    fun canApplyDeloadNow(): Boolean {
-        val phase = state.value.trainingPhase?.phase
-        val mesoState = state.value.periodizationState
-        val mesoPhase = (mesoState as? PeriodizationState.Active)?.meso?.phase
-        return activePlanIdForDeload() != null &&
-                phase != TrainingPhase.DELOAD &&
-                phase != TrainingPhase.NEEDS_DELOAD &&
-                mesoPhase != MesocyclePhase.DELOAD
-    }
-
-    /** Plan id do podglądu wag w dialogu confirm Apply. */
-    fun activePlanIdForDeload(): Long? =
-        state.value.todaysPlan?.id ?: state.value.nextPlannedDay?.planId
+    // v2.78.0: usunięto canApplyDeloadNow()/activePlanIdForDeload() — karty Readiness/Faza/
+    // Obciążenie nie mają już przycisków deload (akcje wyłącznie w Karcie Coacha), więc check
+    // stał się martwy. Karta Coacha stosuje deload przez applyDeload() bez tego gate'u.
 
     fun startWorkoutAdhoc(onReady: () -> Unit) {
         viewModelScope.launch {

@@ -25,7 +25,8 @@ enum class CoachPriority(val rank: Int) {
 /** Typ akcji przyciskowej (działa BEZ AI — to są deterministyczne akcje Tier A). */
 enum class CoachActionType {
     NONE,
-    APPLY_DELOAD, APPLY_REFEED, APPLY_KCAL_ADJUST, SIMPLIFY_PLAN, REST_INJURY, RETURN_LIGHT,
+    // v2.78.0: INCREASE_LOAD — gdy ACWR DETRAINING (trenujesz lżej niż zwykle) Coach proponuje +obciążenie.
+    APPLY_DELOAD, INCREASE_LOAD, APPLY_REFEED, APPLY_KCAL_ADJUST, SIMPLIFY_PLAN, REST_INJURY, RETURN_LIGHT,
     START_WORKOUT, ADD_SNACK, OPEN_DIET, OPEN_TRAINING, OPEN_PERIODIZATION, OPEN_RECOVERY,
     // v2.59.0 (U9+U10): trener pyta „dlaczego nie trenujesz?" — payload = TrainingPauseReason.name.
     RECORD_PAUSE_REASON,

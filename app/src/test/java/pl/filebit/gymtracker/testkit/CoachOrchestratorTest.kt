@@ -68,6 +68,18 @@ class CoachOrchestratorTest {
     }
 
     @Test
+    fun `increase load - sam dominuje, ale kontuzja go ucisza`() {
+        // v2.78.0: ACWR DETRAINING → „zwiększ obciążenie" (TRAINING/OPTIMIZATION).
+        val inc = r("acwr_detraining", CoachDomain.TRAINING, CoachPriority.OPTIMIZATION, CoachActionType.INCREASE_LOAD)
+        assertEquals("acwr_detraining", arbitrateCoach(listOf(inc)).primary?.id)
+        // Z kontuzją: nie dokładamy obciążenia przy bólu → reakcja uciszona przez anti-konflikt.
+        val injury = r("injury", CoachDomain.HEALTH, CoachPriority.HEALTH, CoachActionType.REST_INJURY)
+        val v = arbitrateCoach(listOf(inc, injury))
+        assertEquals("injury", v.primary?.id)
+        assertTrue("zwiększ obciążenie uciszone przy kontuzji", v.all.none { it.id == "acwr_detraining" })
+    }
+
+    @Test
     fun `pelna drabina priorytetow sortuje poprawnie`() {
         val opt = r("opt", CoachDomain.DIET, CoachPriority.OPTIMIZATION)
         val cons = r("cons", CoachDomain.CONSISTENCY, CoachPriority.CONSISTENCY)

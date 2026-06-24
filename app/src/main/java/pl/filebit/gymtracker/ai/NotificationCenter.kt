@@ -37,7 +37,8 @@ enum class NotificationAction {
     SEND_HEALTH_SCREEN,    // klik → health/screenshot
     START_WORKOUT,         // klik → start treningu
     OPEN_PERIODIZATION_PLAN, // v1.18.0 — klik → ekran "Plan cyklu"
-    LOG_RECOVERY           // v2.44.0 — klik → dialog oceny regeneracji (sen/stres)
+    LOG_RECOVERY,          // v2.44.0 — klik → dialog oceny regeneracji (sen/stres)
+    INCREASE_LOAD          // v2.78.0 — klik → +5% wag w aktywnym planie (ACWR DETRAINING)
 }
 
 @Singleton
@@ -130,22 +131,31 @@ class NotificationCenter @Inject constructor(
         // === ACWR (training load) ===
         val load = runCatching { trainingLoadAnalyzer.analyze() }.getOrNull()
         if (load != null && load.isReliable) {
+            // v2.78.0: język bez żargonu — mówimy po ludzku, liczbę ACWR zostawiamy tylko jako detal.
             when (load.zone) {
                 LoadZone.RISKY -> list.add(AppNotification(
                     id = "acwr_risky",
                     severity = NotificationSeverity.CRITICAL,
                     title = "⚠️ Wysokie ryzyko kontuzji",
-                    message = "ACWR ${"%.2f".format(load.acwr)} (norma 0.8-1.3). Tonaż 7d zbyt wysoki vs twoja zwykła średnia. Zalecana redukcja -20%.",
+                    message = "Ostatni tydzień był dużo cięższy niż zwykle — wysokie ryzyko przemęczenia. Odpuść trochę (≈-20% objętości) w tym tygodniu.",
                     actionType = NotificationAction.AUDIT_PLAN
                 ))
                 LoadZone.OVERREACHING -> list.add(AppNotification(
                     id = "acwr_overreach",
                     severity = NotificationSeverity.WARNING,
-                    title = "🔶 Tonaż podwyższony",
-                    message = "ACWR ${"%.2f".format(load.acwr)}. Tydzień ciężki — rozważ lżejszy następny.",
+                    title = "🔶 Cięższy tydzień",
+                    message = "Ten tydzień był cięższy niż zwykle — rozważ lżejszy następny, żeby się nie przemęczyć.",
                     actionType = NotificationAction.NONE
                 ))
-                else -> { /* OPTIMAL/DETRAINING — brak alertu */ }
+                // v2.78.0: DETRAINING — trenujesz lżej niż zwykle → propozycja dołożenia obciążenia.
+                LoadZone.DETRAINING -> list.add(AppNotification(
+                    id = "acwr_detraining",
+                    severity = NotificationSeverity.INFO,
+                    title = "💪 Możesz dołożyć ciężaru",
+                    message = "Ostatnio trenujesz lżej niż zwykle — jest miejsce, żeby dołożyć obciążenia (≈+5%) i dalej robić progres.",
+                    actionType = NotificationAction.INCREASE_LOAD
+                ))
+                else -> { /* OPTIMAL/DELOAD_PROPER — brak alertu */ }
             }
         }
 
@@ -155,8 +165,8 @@ class NotificationCenter @Inject constructor(
             list.add(AppNotification(
                 id = "phase_needs_deload",
                 severity = NotificationSeverity.WARNING,
-                title = "🔋 Czas na deload",
-                message = "${phase.weeksSinceLastDeload} tyg bez deloadu. Tydzień lekki pozwoli CNS się zregenerować.",
+                title = "🔋 Czas na lżejszy tydzień",
+                message = "Już ${phase.weeksSinceLastDeload} tyg bez lekkiego tygodnia — zrób teraz lżejszy tydzień, żeby ciało nadrobiło regenerację i wrócił progres.",
                 actionType = NotificationAction.APPLY_DELOAD
             ))
         }

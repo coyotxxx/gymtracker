@@ -92,6 +92,9 @@ class CoachOrchestrator @Inject constructor(
             // (CONSISTENCY) — realne sygnały (HEALTH/RECOVERY/RETURN) zawsze go przykrywają.
             pl.filebit.gymtracker.ai.NotificationAction.LOG_RECOVERY ->
                 Triple(CoachDomain.RECOVERY, CoachPriority.CONSISTENCY, CoachActionType.OPEN_RECOVERY)
+            // v2.78.0: trenujesz lżej niż zwykle → propozycja dołożenia obciążenia (przejmuje funkcję karty Obciążenie).
+            pl.filebit.gymtracker.ai.NotificationAction.INCREASE_LOAD ->
+                Triple(CoachDomain.TRAINING, CoachPriority.OPTIMIZATION, CoachActionType.INCREASE_LOAD)
             pl.filebit.gymtracker.ai.NotificationAction.NONE ->
                 Triple(if (crit) CoachDomain.RECOVERY else CoachDomain.GOAL,
                     if (crit) CoachPriority.RECOVERY else CoachPriority.OPTIMIZATION, CoachActionType.NONE)
@@ -99,6 +102,7 @@ class CoachOrchestrator @Inject constructor(
         // Etykieta przycisku = czytelna nazwa akcji (nie ucięty tytuł notyfikacji).
         val actionLabel = when (action) {
             CoachActionType.APPLY_DELOAD -> "Zastosuj deload"
+            CoachActionType.INCREASE_LOAD -> "Zwiększ obciążenie"
             CoachActionType.START_WORKOUT -> "Zacznij trening"
             CoachActionType.OPEN_RECOVERY -> "Oceń regenerację"
             CoachActionType.OPEN_DIET -> "Otwórz dietę"
