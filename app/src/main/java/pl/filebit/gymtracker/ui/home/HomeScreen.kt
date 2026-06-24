@@ -61,17 +61,14 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.ai.DataMaturity
-import pl.filebit.gymtracker.ai.HealthInsight
 import pl.filebit.gymtracker.ai.LoadZone
 import pl.filebit.gymtracker.ai.MuscleRecoveryReport
 import pl.filebit.gymtracker.ai.ReadinessZone
-import pl.filebit.gymtracker.ai.RecoveryStatus
 import pl.filebit.gymtracker.ai.TrainingLoad
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
 import pl.filebit.gymtracker.ai.TrainingReadiness
 import pl.filebit.gymtracker.ai.TrainingRecommendation
-import pl.filebit.gymtracker.ai.WorkoutAdjustment
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
@@ -1760,155 +1757,6 @@ private fun MesocycleCountdownBlock(
                 }
             }
         }
-    }
-}
-
-@androidx.compose.runtime.Composable
-private fun RecoveryCard(
-    insight: HealthInsight,
-    canApplyDeload: Boolean,
-    onApplyDeload: () -> Unit
-) {
-    val (accent, emoji, label) = when (insight.recoveryStatus) {
-        RecoveryStatus.EXCELLENT -> Triple(SuccessGreen, "✅", "Doskonała")
-        RecoveryStatus.GOOD -> Triple(SuccessGreen, "✅", "Dobra")
-        RecoveryStatus.MODERATE -> Triple(AccentOrange, "⚠️", "Umiarkowana")
-        RecoveryStatus.POOR -> Triple(ErrorRed, "❌", "Słaba")
-        RecoveryStatus.NO_DATA -> Triple(DarkOnSurfaceVariant, "❓", "Brak danych")
-    }
-    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
-    val deloadPctLabel = when (insight.workoutAdjustment) {
-        WorkoutAdjustment.LIGHT_VOLUME -> "lekki deload (-15%)"
-        WorkoutAdjustment.DELOAD_TODAY -> "deload (-30%)"
-        WorkoutAdjustment.REST_RECOMMENDED -> "deload (-30%)"
-        WorkoutAdjustment.AS_PLANNED -> ""
-    }
-    val showDeloadButton = canApplyDeload && insight.workoutAdjustment != WorkoutAdjustment.AS_PLANNED
-    if (showConfirm) {
-        androidx.compose.material3.AlertDialog(
-            onDismissRequest = { showConfirm = false },
-            title = {
-                androidx.compose.material3.Text(
-                    "Zastosować $deloadPctLabel?",
-                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
-                )
-            },
-            text = {
-                androidx.compose.material3.Text(
-                    "Plan zostanie zmodyfikowany — obciążenia zmniejszone. Możesz w każdej chwili przywrócić oryginalne wagi (kafel 'Aktywny deload')."
-                )
-            },
-            confirmButton = {
-                androidx.compose.material3.TextButton(onClick = {
-                    showConfirm = false
-                    onApplyDeload()
-                }) {
-                    androidx.compose.material3.Text(
-                        "Zastosuj",
-                        color = accent,
-                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
-                    )
-                }
-            },
-            dismissButton = {
-                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
-                    androidx.compose.material3.Text("Anuluj")
-                }
-            }
-        )
-    }
-    androidx.compose.material3.Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = androidx.compose.material3.CardDefaults.cardColors(
-            containerColor = accent.copy(alpha = 0.10f)
-        ),
-        border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Column(modifier = Modifier.padding(14.dp)) {
-            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-                androidx.compose.material3.Text(
-                    emoji,
-                    style = androidx.compose.material3.MaterialTheme.typography.titleMedium
-                )
-                Spacer(Modifier.width(10.dp))
-                Column(modifier = Modifier.weight(1f)) {
-                    androidx.compose.material3.Text(
-                        "REGENERACJA",
-                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
-                            fontSize = 10.sp,
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-                            letterSpacing = 1.4.sp
-                        ),
-                        color = DarkOnSurfaceVariant
-                    )
-                    androidx.compose.material3.Text(
-                        label,
-                        style = androidx.compose.material3.MaterialTheme.typography.bodyLarge.copy(
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.ExtraBold
-                        ),
-                        color = accent
-                    )
-                }
-            }
-            // Liczby — sen + HRV (jeśli są)
-            if (insight.lastNightSleepHours != null || insight.avgSleepHours7d != null || insight.avgHrvMs7d != null) {
-                Spacer(Modifier.height(8.dp))
-                Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                    insight.lastNightSleepHours?.let {
-                        MetricMini(label = "Ostatnia noc", value = "%.1fh".format(it))
-                    }
-                    insight.avgSleepHours7d?.let {
-                        MetricMini(label = "Sen 7d", value = "%.1fh".format(it))
-                    }
-                    insight.avgHrvMs7d?.let {
-                        MetricMini(label = "HRV 7d", value = "%.0f ms".format(it))
-                    }
-                }
-            }
-            Spacer(Modifier.height(8.dp))
-            pl.filebit.gymtracker.ui.components.AiMarkdown(
-                text = insight.recommendation,
-                contentColor = DarkOnSurface
-            )
-            if (showDeloadButton) {
-                Spacer(Modifier.height(10.dp))
-                androidx.compose.material3.Button(
-                    onClick = { showConfirm = true },
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                        containerColor = accent,
-                        contentColor = androidx.compose.ui.graphics.Color.White
-                    ),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    androidx.compose.material3.Text(
-                        "Zastosuj $deloadPctLabel",
-                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
-                    )
-                }
-            } else if (canApplyDeload && insight.workoutAdjustment == WorkoutAdjustment.AS_PLANNED) {
-                // Brak przycisku, ale daj subtelny hint że plan jest OK
-            }
-        }
-    }
-}
-
-@androidx.compose.runtime.Composable
-private fun MetricMini(label: String, value: String) {
-    Column {
-        androidx.compose.material3.Text(
-            label,
-            style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-            color = DarkOnSurfaceVariant
-        )
-        androidx.compose.material3.Text(
-            value,
-            style = androidx.compose.material3.MaterialTheme.typography.bodyMedium.copy(
-                fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold
-            ),
-            color = DarkOnSurface
-        )
     }
 }
 
