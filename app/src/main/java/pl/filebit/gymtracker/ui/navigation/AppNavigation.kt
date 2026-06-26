@@ -454,7 +454,6 @@ fun AppNavigation(
                     onEditMeasurement = { id ->
                         navController.navigate(Screen.MeasurementAdd.create(id))
                     },
-                    onOpenHistory = { /* TODO v0.71 */ },
                     onOpenBodyMap = { navController.navigate(Screen.BodyMap.route) }
                 )
             }

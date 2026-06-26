@@ -83,12 +83,13 @@ fun MeasurementsScreen(
     onBack: () -> Unit,
     onAddMeasurement: () -> Unit,
     onEditMeasurement: (Long) -> Unit,
-    onOpenHistory: () -> Unit,
     onOpenBodyMap: () -> Unit,
     vm: MeasurementsViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    // v2.80.0: „Pełna historia" rozwija listę w miejscu (dane są już w state.measurements).
+    var showAllHistory by remember { mutableStateOf(false) }
 
     LaunchedEffect(state.savedToast, state.errorMessage) {
         state.savedToast?.let {
@@ -189,7 +190,7 @@ fun MeasurementsScreen(
                 }
             }
 
-            // Historia (skrót — pełna w osobnym ekranie)
+            // Historia — skrót (5) z przełącznikiem „Pełna historia ↔ Zwiń" (rozwija w miejscu).
             if (state.measurements.size >= 1) {
                 item {
                     Row(
@@ -197,18 +198,24 @@ fun MeasurementsScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         LabelUp("Historia", modifier = Modifier.weight(1f))
-                        Text(
-                            "Pełna historia →",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 11.sp
-                            ),
-                            color = AccentOrange,
-                            modifier = Modifier.clickable(onClick = onOpenHistory).padding(4.dp)
-                        )
+                        // Link tylko gdy jest co rozwijać (>5 pomiarów).
+                        if (state.measurements.size > 5) {
+                            Text(
+                                if (showAllHistory) "Zwiń ↑" else "Pełna historia (${state.measurements.size}) ↓",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = 11.sp
+                                ),
+                                color = AccentOrange,
+                                modifier = Modifier
+                                    .clickable { showAllHistory = !showAllHistory }
+                                    .padding(4.dp)
+                            )
+                        }
                     }
                 }
-                state.measurements.take(5).forEach { m ->
+                val shown = if (showAllHistory) state.measurements else state.measurements.take(5)
+                shown.forEach { m ->
                     item(key = m.id) {
                         HistoryRow(measurement = m, onClick = { onEditMeasurement(m.id) })
                     }
